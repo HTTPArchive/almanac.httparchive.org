@@ -401,13 +401,13 @@ Du point de vue de l’accessibilité, la balise `<track>` peut être utilisée 
 
 Le lecteur vidéo natif HTML5 ne fonctionne pas pour une lecture plus avancée (et pour lire des flux vidéo). Il existe quelques vidéothèques populaires qui sont utilisées pour lire la vidéo&nbsp;:
 
-<figure>
-  <a href="/static/images/2019/media/fig23_top_javascript_video_players.png">
-    <img src="/static/images/2019/media/fig23_top_javascript_video_players.png" alt="Figure 23. Principaux lecteurs vidéo JavaScript." aria-labelledby="fig23-caption" aria-describedby="fig23-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=215677194&format=interactive">
-  </a>
-  <div id="fig23-description" class="visually-hidden">Diagramme à barres montrant que 'flowplayer' est utilisé par 3&nbsp;365 sites de bureau (3&nbsp;400 mobiles), 'hls' par 52&nbsp;375 sites de bureau (40&nbsp;925 mobiles), 'jwplayer' par 110&nbsp;280 sites de bureau (96&nbsp;945 mobiles), 'shaka' par 325 sites de bureau (275 mobiles) et 'video' par 377&nbsp;990 sites de bureau (391&nbsp;330 mobiles)</div>
-  <figcaption id="fig23-caption">Figure 23. Principaux lecteurs vidéo JavaScript.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig23_top_javascript_video_players.png",
+  caption="Principaux lecteurs vidéo JavaScript.",
+  description="Diagramme à barres montrant que 'flowplayer' est utilisé par 3&nbsp;365 sites de bureau (3&nbsp;400 mobiles), 'hls' par 52&nbsp;375 sites de bureau (40&nbsp;925 mobiles), 'jwplayer' par 110&nbsp;280 sites de bureau (96&nbsp;945 mobiles), 'shaka' par 325 sites de bureau (275 mobiles) et 'video' par 377&nbsp;990 sites de bureau (391&nbsp;330 mobiles)",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=215677194&format=interactive"
+  )
+}}
 
 Le plus populaire (et de loin) est video.js, suivi de JWPLayer et HLS.js. Les auteurs admettent qu’il est possible qu’il existe d’autres fichiers portant le nom "video.js" qui ne soient pas de la même bibliothèque de lecture vidéo.
 
