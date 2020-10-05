@@ -14,7 +14,7 @@ last_updated: 2020-09-21T00:00:00.000Z
 ---
 
 ## Introdução
-O HTTP/2 foi a primeira grande atualização do principal protocolo de transporte da web em quase 20 anos. Ele chegou com muitas expectativas: prometia um aumento de desempenho gratuito e sem desvantagens. Mais do que isso, poderíamos deixar de lado todos as adaptações e saídas mirabolantes a que o HTTP/1.1 nos forçava, devido às suas ineficiências. Técnicas como bundling, spriting, inlining e até mesmo sharding se tornariam não canônicos em um mundo com HTTP/2, visto que a performance otimizada já seria fornecida por padrão.
+O HTTP/2 foi a primeira grande atualização do principal protocolo de transporte da web em quase 20 anos. Ele chegou com muitas expectativas: prometia um aumento de desempenho gratuito e sem desvantagens. Mais do que isso, poderíamos deixar de lado todos as adaptações e saídas mirabolantes a que o HTTP/1.1 nos forçava, devido às suas ineficiências. Técnicas como bundling, spriting, inlining e até mesmo sharding se tornariam não canônicas em um mundo com HTTP/2, visto que a performance otimizada já seria fornecida por padrão.
 
 Isso significava que mesmo aqueles sem as habilidades e os recursos para se concentrar na [performance na web](./performance) de repente teriam sites com bom desempenho. Contudo, a realidade foi, como sempre, um pouco mais matizada que isso. Já se passaram mais de quatro anos desde a aprovação formal do HTTP/2 como um padrão em maio de 2015 como [RFC 7540](https://tools.ietf.org/html/rfc7540), assim agora é um bom momento para verificar como essa tecnologia relativamente nova se saiu no mundo real.
 
