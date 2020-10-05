@@ -46,9 +46,9 @@ Si on ne considère que les octets par page, on ne tient compte que du coût en 
 
 Il y a trois mesures à prendre en compte lorsqu’on regarde le volume des pixels&nbsp;: les pixels CSS, les pixels naturels et les pixels de l’écran.
 
-* Les _pixels CSS_ se mesurent dans la mise en page CSS. Cette mesure se concentre sur les boîtes englobantes dans lesquelles une image ou une vidéo pourrait être étirée ou comprimée. Elle ne prend pas non plus en compte les pixels réels du fichier ni les pixels d’affichage à l’écran
+* Les _pixels CSS_ se mesurent dans la mise en page CSS. Cette mesure se concentre sur les boîtes englobantes dans lesquelles une image ou une vidéo pourrait être étirée ou comprimée. Elle ne prend pas non plus en compte les pixels réels du fichier ni les pixels d’affichage à l’écran.
 * Les _pixels naturels_ se réfèrent aux pixels logiques représentés dans un fichier. Si vous chargiez cette image dans GIMP ou Photoshop, les dimensions du fichier de pixels seraient les pixels naturels.
-* Les _pixels de l’écran_ se réfèrent à l’électronique physique de l’écran. Avant les téléphones mobiles et les écrans modernes à haute résolution, il existait une relation 1:1 entre les pixels CSS et les points LED d’un écran. Cependant, comme les appareils mobiles sont tenus plus près de l'œil et que les écrans d’ordinateurs portables sont plus proches que les anciens terminaux <i lang="en">mainframe</i>, les écrans modernes ont un rapport plus élevé entre les pixels physiques et les pixels CSS traditionnels. Ce rapport est appelé "<span lang="en">Device-Pixel-Ratio</span>" ou, plus communément, "affichage Retina™".
+* Les _pixels de l’écran_ se réfèrent à l’électronique physique de l’écran. Avant les téléphones mobiles et les écrans modernes à haute résolution, il existait une relation 1:1 entre les pixels CSS et les points LED d’un écran. Cependant, comme les appareils mobiles sont tenus plus près de l'œil et que les écrans d’ordinateurs portables sont plus proches que les anciens terminaux <i lang="en">mainframe</i>, les écrans modernes ont un rapport plus élevé entre les pixels physiques et les pixels CSS traditionnels. Ce rapport est appelé &laquo;&nbsp;<span lang="en">Device-Pixel-Ratio</span>&nbsp;&raquo; ou, plus communément, &laquo;&nbsp;affichage Retina™&nbsp;&raquo;.
  
 {{ figure_markup(
   image="fig3_image_pixel_per_page_mobile_css_v_actual.png",
@@ -347,7 +347,7 @@ En août 2019, Chrome 76 a été lancé avec le support du <i lang="en">lazy loa
 
 Au cœur de l’accessibilité des images se trouve la balise `alt`. Lorsque la balise `alt` est ajoutée à une image, ce texte peut être utilisé pour décrire l’image à un utilisateur ou une utilisatrice qui ne peut pas la voir (soit en raison d’un handicap, soit d’une mauvaise connexion Internet).
 
-Nous pouvons détecter toutes les balises d’images contenues dans les fichiers HTML de l’ensemble de données. Sur 13 millions de balises d’images sur les ordinateurs de bureau et 15 millions sur les téléphones portables, 91,6&nbsp;% des images ont une balise `alt` présente. À première vue, il semble que l’accessibilité des images soit en très bonne santé sur le web. Cependant, après un examen plus approfondi, les perspectives ne sont pas aussi bonnes. Si nous examinons la longueur des balises `alt` présentes dans l’ensemble de données, nous constatons que la longueur médiane de la balise `alt` est de six caractères. Cela correspond à une balise `alt` vide (apparaissant comme `alt=""`). Seulement 39&nbsp;% des images utilisent un texte `alt` de plus de six caractères. La valeur médiane du "vrai" texte `alt` est de 31 caractères, dont 25 décrivent réellement l’image.
+Nous pouvons détecter toutes les balises d’images contenues dans les fichiers HTML de l’ensemble de données. Sur 13 millions de balises d’images sur les ordinateurs de bureau et 15 millions sur les téléphones portables, 91,6&nbsp;% des images ont une balise `alt` présente. À première vue, il semble que l’accessibilité des images soit en très bonne santé sur le web. Cependant, après un examen plus approfondi, les perspectives ne sont pas aussi bonnes. Si nous examinons la longueur des balises `alt` présentes dans l’ensemble de données, nous constatons que la longueur médiane de la balise `alt` est de six caractères. Cela correspond à une balise `alt` vide (apparaissant comme `alt=""`). Seulement 39&nbsp;% des images utilisent un texte `alt` de plus de six caractères. La valeur médiane du &laquo;&nbsp;vrai&nbsp;&raquo; texte `alt` est de 31 caractères, dont 25 décrivent réellement l’image.
 
 ## Vidéo
 
@@ -355,7 +355,7 @@ Alors que les images dominent les médias diffusés sur les pages web, les vidé
 
 ### Formats vidéo
 
-Les vidéos peuvent être diffusées avec de nombreux formats et lecteurs différents. Les formats dominants pour les téléphones portables et les ordinateurs de bureau sont le ".ts" (segments de streaming HLS) et le ".mp4" (le MPEG H264)&nbsp;:
+Les vidéos peuvent être diffusées avec de nombreux formats et lecteurs différents. Les formats dominants pour les téléphones portables et les ordinateurs de bureau sont le &laquo;&nbsp;.ts&nbsp;&raquo; (segments de streaming HLS) et le &laquo;&nbsp;.mp4&nbsp;&raquo; (le MPEG H264)&nbsp;:
 
 {{ figure_markup(
   image="fig20_video_files_by_extension.png",
@@ -410,7 +410,7 @@ Le lecteur vidéo natif HTML5 ne fonctionne pas pour une lecture plus avancée (
   )
 }}
 
-Le plus populaire (et de loin) est video.js, suivi de JWPLayer et HLS.js. Les auteurs admettent qu’il est possible qu’il existe d’autres fichiers portant le nom "video.js" qui ne soient pas de la même bibliothèque de lecture vidéo.
+Le plus populaire (et de loin) est video.js, suivi de JWPLayer et HLS.js. Les auteurs admettent qu’il est possible qu’il existe d’autres fichiers portant le nom &laquo;&nbsp;video.js&nbsp;&raquo; qui ne soient pas de la même bibliothèque de lecture vidéo.
 
 ## Conclusion
 Presque toutes les pages web utilisent des images et des vidéos dans une certaine mesure pour améliorer l’expérience utilisateur et donner du sens. Ces fichiers médias utilisent une grande quantité de ressources et représentent un pourcentage important du poids des sites web (et ils ne vont pas disparaître&nbsp;!). L’utilisation de formats alternatifs, le <i lang="en">lazy loading</i>, les images adaptatives et l’optimisation des images peuvent contribuer grandement à réduire la taille des médias sur le web. 
