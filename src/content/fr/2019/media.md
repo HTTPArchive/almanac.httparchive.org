@@ -174,13 +174,13 @@ Bien entendu, les pages web n’utilisent pas toutes le contenu des images de la
 
 Bien que la page médiane comporte neuf JPEG et quatre PNG, et que les GIF n’aient été utilisés que dans les 25&nbsp;% de pages les plus importantes, cela ne rend pas compte du taux d’adoption. L’utilisation et la fréquence de chaque format par page ne donnent pas d’indications sur l’adoption des formats plus modernes. Plus précisément, quel pourcentage de pages comprend au moins une image dans chaque format&nbsp;?
 
-<figure>
-  <a href="/static/images/2019/media/fig9_pages_using_at_least_1_image.png">
-    <img src="/static/images/2019/media/fig9_pages_using_at_least_1_image.png" alt="Figure 9. Pourcentage de pages utilisant au moins une image." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1024386063&format=interactive">
-  </a>
-  <div id="fig9-description" class="visually-hidden">Un diagramme à barres montrant que les JPEG sont utilisés sur 90&nbsp;% des pages, les PNG sur 89&nbsp;%, les WebP sur 9&nbsp;%, les GIF sur 37&nbsp;% et les SVG sur 22&nbsp;%.</div>
-  <figcaption id="fig9-caption">Figure 9. Pourcentage de pages utilisant au moins une image.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig9_pages_using_at_least_1_image.png",
+  caption="Pourcentage de pages utilisant au moins une image.",
+  description="Un diagramme à barres montrant que les JPEG sont utilisés sur 90&nbsp;% des pages, les PNG sur 89&nbsp;%, les WebP sur 9&nbsp;%, les GIF sur 37&nbsp;% et les SVG sur 22&nbsp;%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1024386063&format=interactive"
+  )
+}}
 
 Ceci explique pourquoi, même au 90e percentile des pages, la fréquence de WebP est toujours nulle&nbsp;; seules 9&nbsp;% des pages web contiennent ne serait-ce qu’une seule ressource. De nombreuses raisons peuvent expliquer que le WebP ne soit pas le bon choix pour une image, mais l’adoption des bonnes pratiques médias, comme l’adoption du WebP lui-même, n’en est encore qu’à ses débuts. 
 
