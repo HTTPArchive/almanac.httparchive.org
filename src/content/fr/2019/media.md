@@ -58,13 +58,13 @@ Il y a trois mesures à prendre en compte lorsqu’on regarde le volume des pixe
   )
 }}
 
-<figure>
-  <a href="/static/images/2019/media/fig4_image_pixel_per_page_desktop_css_v_actual.png">
-    <img src="/static/images/2019/media/fig4_image_pixel_per_page_desktop_css_v_actual.png" alt="Figure 4. Pixels d’image par page (ordinateurs de bureau)&nbsp;: pixels CSS par rapport aux pixels naturels." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1364487787&format=interactive">
-  </a>
-  <div id="fig4-description" class="visually-hidden">Une comparaison des pixels CSS alloués au contenu de l’image par rapport aux pixels d’image naturels pour les ordinateurs de bureau, montrant le 10e percentile (0,09&nbsp;MP réels, 0,05&nbsp;MP CSS), le 25e percentile (0,52&nbsp;MP réel, 0,29&nbsp;MP CSS), le 50e percentile (2,1&nbsp;MP réel, 1,1&nbsp;MP CSS), le 75e percentile (6,0&nbsp;MP réel, 2,78&nbsp;MP CSS), et le 90e percentile (14&nbsp;MP réel, 6,3&nbsp;MP CSS)</div>
-  <figcaption id="fig4-caption">Figure 4. Pixels d’image par page (ordinateurs de bureau)&nbsp;: pixels CSS par rapport aux pixels naturels.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig4_image_pixel_per_page_desktop_css_v_actual.png",
+  caption="Pixels d’image par page (ordinateurs de bureau)&nbsp;: pixels CSS par rapport aux pixels naturels.",
+  description="Une comparaison des pixels CSS alloués au contenu de l’image par rapport aux pixels d’image naturels pour les ordinateurs de bureau, montrant le 10e percentile (0,09&nbsp;MP réels, 0,05&nbsp;MP CSS), le 25e percentile (0,52&nbsp;MP réel, 0,29&nbsp;MP CSS), le 50e percentile (2,1&nbsp;MP réel, 1,1&nbsp;MP CSS), le 75e percentile (6,0&nbsp;MP réel, 2,78&nbsp;MP CSS), et le 90e percentile (14&nbsp;MP réel, 6,3&nbsp;MP CSS)",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1364487787&format=interactive"
+  )
+}}
 
 En regardant le volume de pixels CSS et le volume de pixels naturels, on peut voir que le site web médian a une mise en page qui affiche un mégapixel (MP) de contenu média. Au 90e percentile, le volume de pixels de la mise en page CSS passe à 4,6&nbsp;MP et 6,3&nbsp;MP respectivement pour les mobiles et les ordinateurs de bureau. Cela est intéressant non seulement parce que la mise en page adaptative (<i lang="en">responsive</i>) est probablement différente, mais aussi parce que la forme du matériel est différente. En bref, la mise en page pour mobiles offre moins d’espace alloué aux médias que celle pour ordinateurs de bureau.
 
