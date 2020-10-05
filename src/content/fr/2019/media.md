@@ -197,7 +197,7 @@ Il y a deux façons de considérer la taille des fichiers d’images&nbsp;: les 
 
 Grâce à ces informations, nous pouvons commencer à avoir une idée de la taille d’une ressource typique sur le web. Cependant, cela ne nous donne pas encore une idée du volume de pixels représentés à l’écran pour ces distributions de fichiers. Pour ce faire, nous pouvons diviser chaque octet de ressource par le volume naturel de pixels de l’image. Un faible nombre d’octets par pixel indique une transmission plus efficace du contenu visuel.
 
- {{ figure_markup(
+{{ figure_markup(
   image="fig11_bytes_per_pixel.png",
   caption="Octets par pixel.",
   description="Un graphique en chandeliers japonais montrant qu’au 10e percentile, nous avons 0,1175 octets par pixel pour le JPEG, 0,1197 pour le PNG, 0,1702 pour le GIF, 0,0586 pour le WebP et 0,0293 pour le SVG. Au 25e percentile, nous avons 0,1848 octets par pixel pour les JPEG, 0,2874 pour les PNG, 0,3641 pour les GIF, 0,1025 pour les WebP et 0,174 pour les SVG. Au 50e percentile, nous avons 0,2997 octets par pixel pour les JPEG, 0,6918 pour les PNG, 0,7967 pour les GIF, 0,183 pour les WebP et 0,6766 pour les SVG. Au 75e percentile, nous avons 0,5456 octets par pixel pour les JPEG, 1,4548 pour les PNG, 2,515 pour les GIF, 0,3272 pour les WebP et 1,9261 pour les SVG. Au 90e percentile, nous avons 0,9822 octets par pixel pour les JPEG, 2,5026 pour les PNG, 8,5151 pour les GIF, 0,6474 pour les WebP et 4,1075 pour les SVG.",
@@ -231,10 +231,10 @@ Un des contrôles de [Lighthouse](./methodology#lighthouse) est un test A/B comp
 
 Les gains obtenus dans ce test A/B Lighthouse ne concernent pas seulement les réductions potentielles en termes d’octets, qui peuvent s’élever à plusieurs Mo au 95e percentile, ils démontrent également l’amélioration des performances des pages. 
 
- {{ figure_markup(
+{{ figure_markup(
   image="fig13_project_perf_improvements_image_optimization.png",
-  alt="Projection que fait Lighthouse de l’amélioration des performances des pages grâce à l’optimisation des images.",
-  caption="Diagramme à barres montrant qu’au 10e percentile, 0&nbsp;ms pourrait être sauvée, de même au 25e percentile. Au 50e percentile, 150&nbsp;ms pourraient être sauvées. Au 75e percentile, 1460&nbsp;ms pourraient être sauvées et 90e percentile, 5720&nbsp;ms pourraient être sauvées.",
+  caption="Projection que fait Lighthouse de l’amélioration des performances des pages grâce à l’optimisation des images.",
+  description="Diagramme à barres montrant qu’au 10e percentile, 0&nbsp;ms pourrait être sauvée, de même au 25e percentile. Au 50e percentile, 150&nbsp;ms pourraient être sauvées. Au 75e percentile, 1460&nbsp;ms pourraient être sauvées et 90e percentile, 5720&nbsp;ms pourraient être sauvées.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=167590779"
   )
 }}
@@ -251,7 +251,7 @@ Un autre axe d’amélioration des performances des pages consiste à utiliser d
 
 La méthode la plus courante pour implémenter des images adaptatives est de construire une liste d’images alternatives en utilisant soit `<img srcset>` soit `<source srcset>`. Si le `srcset` est basé sur le DPR, le navigateur peut sélectionner la bonne image dans la liste sans information supplémentaire. Cependant, la plupart des implémentations utilisent également `<img sizes>` pour aider à indiquer au navigateur comment effectuer le calcul de mise en page nécessaire pour sélectionner l’image correcte dans le `srcset` basé sur les dimensions des pixels.
 
- {{ figure_markup(
+{{ figure_markup(
   image="fig14_html_usage_of_responsive_images.png",
   caption="Pourcentage de pages utilisant des images adaptatives avec HTML.",
   description="Un diagramme à barres montre que 18&nbsp;% des images utilisent `sizes`, 21&nbsp;% `srcset` et 2&nbsp;% `images`.",
@@ -284,7 +284,7 @@ L’utilité de `srcset` dépend généralement de la précision de la requête 
 
 * **`<img sizes="auto">`** - c’est l’utilisation la plus populaire, qui n’est en fait pas normalisée et qui est un artefact de l’utilisation de la bibliothèque JavaScript `lazy_sizes`. Celle-ci utilise du code côté client pour injecter un meilleur calcul des `sizes` pour le navigateur. L’inconvénient de cette méthode est qu’elle dépend du chargement du JavaScript et du DOM pour être totalement prête, ce qui retarde considérablement le chargement des images. 
 
- {{ figure_markup(
+{{ figure_markup(
   image="fig16_top_patterns_of_img_sizes.png",
   alt="Top patterns of img sizes.",
   caption="Principaux modèles de conception de <code><img sizes></code>.",
