@@ -18,13 +18,13 @@ Les images, les animations et les vidéos constituent une partie significative d
 
 D’un point de vue purement octet, HTTP Archive a [historiquement remarqué](https://legacy.httparchive.org/interesting.php#bytesperpage) qu’en moyenne, plus de deux tiers des octets proviennent de ressources associées aux médias. Du point de vue de la distribution, nous pouvons voir que pratiquement chaque page web dépend d’images et de vidéos. Même au dixième percentile, nous constatons que 44&nbsp;% des octets proviennent des médias et peuvent atteindre 91&nbsp;% du total des octets au 90e percentile des pages.
 
-<figure>
-  <a href="/static/images/2019/media/fig1_bytes_images_and_video_versus_other.png">
-    <img src="/static/images/2019/media/fig1_bytes_images_and_video_versus_other.png" alt="Figure 1. Octets de pages web&nbsp;: image et vidéo par rapport au reste." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1189524305&format=interactive">
-  </a>
-  <div id="fig1-description" class="visually-hidden">Diagramme à barres montrant qu’au 10e percentile, 44,1&nbsp;% des octets de page sont des médias, au 25e percentile, 52,7&nbsp;% sont des médias, au 50e percentile, 67,0&nbsp;% sont des médias, au 75e percentile, 81,7&nbsp;% sont des médias et au 90e percentile, 91,2&nbsp;% sont des médias.</div>
-  <figcaption id="fig1-caption">Figure 1. Octets de pages web&nbsp;: image et vidéo par rapport au reste.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig1_bytes_images_and_video_versus_other.png",
+  caption="Octets de pages web&nbsp;: image et vidéo par rapport au reste.",
+  description="Diagramme à barres montrant qu’au 10e percentile, 44,1&nbsp;% des octets de page sont des médias, au 25e percentile, 52,7&nbsp;% sont des médias, au 50e percentile, 67,0&nbsp;% sont des médias, au 75e percentile, 81,7&nbsp;% sont des médias et au 90e percentile, 91,2&nbsp;% sont des médias.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1189524305&format=interactive"
+  )
+}}
 
 Bien que les médias soient essentiels pour l’expérience visuelle, l’impact de ce volume élevé d’octets a deux effets secondaires.
 
