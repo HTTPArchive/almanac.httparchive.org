@@ -197,13 +197,13 @@ Il y a deux façons de considérer la taille des fichiers d’images&nbsp;: les 
 
 Grâce à ces informations, nous pouvons commencer à avoir une idée de la taille d’une ressource typique sur le web. Cependant, cela ne nous donne pas encore une idée du volume de pixels représentés à l’écran pour ces distributions de fichiers. Pour ce faire, nous pouvons diviser chaque octet de ressource par le volume naturel de pixels de l’image. Un faible nombre d’octets par pixel indique une transmission plus efficace du contenu visuel.
 
- <figure>
-  <a href="/static/images/2019/media/fig11_bytes_per_pixel.png">
-    <img src="/static/images/2019/media/fig11_bytes_per_pixel.png" alt="Figure 11. Octets par pixel." aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1379541850&format=interactive">
-  </a>
-  <div id="fig11-description" class="visually-hidden">Un graphique en chandeliers japonais montrant qu’au 10e percentile, nous avons 0,1175 octets par pixel pour le JPEG, 0,1197 pour le PNG, 0,1702 pour le GIF, 0,0586 pour le WebP et 0,0293 pour le SVG. Au 25e percentile, nous avons 0,1848 octets par pixel pour les JPEG, 0,2874 pour les PNG, 0,3641 pour les GIF, 0,1025 pour les WebP et 0,174 pour les SVG. Au 50e percentile, nous avons 0,2997 octets par pixel pour les JPEG, 0,6918 pour les PNG, 0,7967 pour les GIF, 0,183 pour les WebP et 0,6766 pour les SVG. Au 75e percentile, nous avons 0,5456 octets par pixel pour les JPEG, 1,4548 pour les PNG, 2,515 pour les GIF, 0,3272 pour les WebP et 1,9261 pour les SVG. Au 90e percentile, nous avons 0,9822 octets par pixel pour les JPEG, 2,5026 pour les PNG, 8,5151 pour les GIF, 0,6474 pour les WebP et 4,1075 pour les SVG.</div>
-  <figcaption id="fig11-caption">Figure 11. Octets par pixel.</figcaption>
-</figure>
+ {{ figure_markup(
+  image="fig11_bytes_per_pixel.png",
+  caption="Octets par pixel.",
+  description="Un graphique en chandeliers japonais montrant qu’au 10e percentile, nous avons 0,1175 octets par pixel pour le JPEG, 0,1197 pour le PNG, 0,1702 pour le GIF, 0,0586 pour le WebP et 0,0293 pour le SVG. Au 25e percentile, nous avons 0,1848 octets par pixel pour les JPEG, 0,2874 pour les PNG, 0,3641 pour les GIF, 0,1025 pour les WebP et 0,174 pour les SVG. Au 50e percentile, nous avons 0,2997 octets par pixel pour les JPEG, 0,6918 pour les PNG, 0,7967 pour les GIF, 0,183 pour les WebP et 0,6766 pour les SVG. Au 75e percentile, nous avons 0,5456 octets par pixel pour les JPEG, 1,4548 pour les PNG, 2,515 pour les GIF, 0,3272 pour les WebP et 1,9261 pour les SVG. Au 90e percentile, nous avons 0,9822 octets par pixel pour les JPEG, 2,5026 pour les PNG, 8,5151 pour les GIF, 0,6474 pour les WebP et 4,1075 pour les SVG.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1379541850&format=interactive"
+  )
+}}
 
 Alors qu’auparavant, il semblait que les fichiers GIF étaient plus petits que les JPEG, nous pouvons maintenant voir clairement que la raison pour laquelle les ressources JPEG sont plus importantes est due au volume des pixels. Il n’est probablement pas surprenant que le GIF présente une très faible densité de pixels par rapport aux autres formats. Par ailleurs, alors que le PNG peut gérer une grande profondeur de bits et ne souffre pas du flou du sous-échantillonnage chromatique, il est environ deux fois plus lourd que le JPG ou le WebP pour un même volume de pixels.
 
