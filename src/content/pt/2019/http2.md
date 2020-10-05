@@ -2,7 +2,7 @@
 part_number: IV
 chapter_number: 20
 title: HTTP/2
-description: Capítulo de HTTP/2 de 2019 Web Almanac que cobre a adoção e o impacto de HTTP/2, HTTP/2 Push, HTTP/2 Issues e HTTP/3.
+description: Capítulo de HTTP/2 de 2019 do Web Almanac que cobre a adoção e o impacto do HTTP/2, HTTP/2 Push, Problemas do HTTP/2 e HTTP/3.
 authors: [bazzadp]
 reviewers: [bagder, rmarx, dotjs]
 translators: [elaynelemos]
@@ -14,18 +14,18 @@ last_updated: 2020-09-21T00:00:00.000Z
 ---
 
 ## Introdução
-HTTP/2 foi a primeira grande atualização do principal protocolo de transporte da web em quase 20 anos. Ele chegou com muitas expectativas: prometia um aumento de desempenho gratuito e sem desvantagens. Mais do que isso, poderíamos deixar de lado todos as adaptações e saídas mirabolantes a que o HTTP/1.1 nos forçava, devido às suas ineficiências. Técnicas como bundling, spriting, inlining e até mesmo sharding se tornariam não canônicos em um mundo com HTTP/2, visto que a performance otimizada já seria fornecida por padrão.
+O HTTP/2 foi a primeira grande atualização do principal protocolo de transporte da web em quase 20 anos. Ele chegou com muitas expectativas: prometia um aumento de desempenho gratuito e sem desvantagens. Mais do que isso, poderíamos deixar de lado todos as adaptações e saídas mirabolantes a que o HTTP/1.1 nos forçava, devido às suas ineficiências. Técnicas como bundling, spriting, inlining e até mesmo sharding se tornariam não canônicos em um mundo com HTTP/2, visto que a performance otimizada já seria fornecida por padrão.
 
 Isso significava que mesmo aqueles sem as habilidades e os recursos para se concentrar na [performance na web](./performance) de repente teriam sites com bom desempenho. Contudo, a realidade foi, como sempre, um pouco mais matizada que isso. Já se passaram mais de quatro anos desde a aprovação formal do HTTP/2 como um padrão em maio de 2015 como [RFC 7540](https://tools.ietf.org/html/rfc7540), assim agora é um bom momento para verificar como essa tecnologia relativamente nova se saiu no mundo real.
 
 ## O que é HTTP/2?
 Para aqueles que não estão familiarizados com a tecnologia, um pouco de experiência é útil para aproveitar ao máximo as métricas e descobertas neste capítulo. Até recentemente, o HTTP sempre foi um protocolo baseado em texto. Um cliente HTTP como um navegador web abria uma conexão TCP com um servidor, e então enviava um comando como `GET /index.html` para solicitar um recurso.
 
-Isso foi aprimorado no HTTP/1.0 ao adicionar *HTTP headers* (cabeçalhos HTTP), asim várias partes de metadados poderiam ser incluídas além da solicitação, como qual é navegador, que formatos entende, etc. Esses cabeçalhos também eram baseados em texto e e separados por caracteres de nova linha. Os servidores analisavam as requisições recebidas, lendo a solicitação e quaisquer cabeçalhos linha por linha, e em seguida respondiam com seus próprios cabeçalhos HTTP de resposta junto ao recurso de fato sendo solicitado.
+Isso foi aprimorado no HTTP/1.0 ao adicionar *HTTP headers* (cabeçalhos HTTP), asim várias partes de metadados poderiam ser incluídas além da requisição, como qual é o navegador, que formatos entende, etc. Esses cabeçalhos também eram baseados em texto e e separados por caracteres de nova linha. Os servidores analisavam as requisições recebidas, lendo a requisição e quaisquer cabeçalhos linha por linha, e em seguida respondiam com seus próprios cabeçalhos HTTP de resposta junto ao recurso de fato sendo solicitado.
 
 O protocolo parecia simples, mas também apresentava limitações. Como o HTTP era essencialmente síncrono, uma vez que uma requisição HTTP era feita, toda a conexão TCP ficava basicamente fora do alcance de qualquer outra coisa até que a resposta fosse retornada, lida e processada. Isso era incrivelmente ineficiente e exigia múltiplas conexões TCP (os navegadores normalmente usam 6) para permitir uma forma limitada de paralelização.
 
-Isso por si só já trás seus próprios problemas considerando que as conexões TCP demandam tempo e recursos para serem estabelecidas e obter eficiência total, especialmente ao usar HTTPS, que requer etapas adicionais para configurar a criptografia. O HTTP/1.1 melhorou isso em alguma medida, permitindo a reutilização de conexões TCP para solicitações subsequentes, mas ainda não resolveu a dificuldade em paralelização.
+Isso por si só já trás seus próprios problemas considerando que as conexões TCP demandam tempo e recursos para serem estabelecidas e obter eficiência total, especialmente ao usar HTTPS, que requer etapas adicionais para configurar a criptografia. O HTTP/1.1 melhorou isso em alguma medida, permitindo a reutilização de conexões TCP para requisições subsequentes, mas ainda não resolveu a dificuldade em paralelização.
 
 Apesar do HTTP ser baseado em texto, a realidade é que ele raramente era usado para transportar texto, ao menos em seu formato puro. Embora fosse verdade que os cabeçalhos ainda eram texto, os payloads em si frequentemente não eram. Arquivos de texto como [HTML](./markup), [JS](./javascript) e [CSS](./css) costumam ser [compactados](./compression) para transporte em formato binário usando gzip, brotli ou similar. Arquivos não textuais como [imagens e vídeos](./media) são distribuidos em seus próprio formatos. A mensagem HTTP completa é então costumeiramente encapsulada em HTTPS para criptografar as mensagens por razões de [segurança](./security).
 
@@ -48,15 +48,14 @@ O HTTP/2 tem os seguintes conceitos-chave:
 
 **Formato binário** significa que as mensagens HTTP/2 são encapsuladas em quadros de um formato predefinido, fazendo com que as mensagens HTTP sejam mais fáceis de analisar e não precisem mais da verificação de caracteres de nova linha. Isso é melhor para a segurança já que havia um número considerável de [exploits](https://www.owasp.org/index.php/HTTP_Response_Splitting) para as versões anteriores do HTTP. Isso também quer dizer que as conexões HTTP/2 podem ser **multiplexadas**. Quadros diferentes para fluxos diferentes podem ser enviados na mesma conexão sem a interferência de um no outro, pois cada quadro inclui um identificador de fluxo e seu comprimento. A multiplexação permite o uso bem mais eficiente de uma única conexão TCP sem a sobrecarga de abrir conexões adicionais. Idealmente, abriríamos uma única conexão por domínio ou mesmo para [vários domínios](https://daniel.haxx.se/blog/2016/08/18/http2-connection-coalescing/)!
 
-Ter fluxos separados introduz algumas complexidades junto com alguns benefícios potenciais. O HTTP/2 precisa do conceito de **controle de fluxo** para permitir que os diferentes fluxos enviem dados em taxas diferentes, enquanto anteriormente, com apenas uma resposta em movimento a qualquer momento, isso era controlado a nível de conexão pelo controle de fluxo do TCP. Da mesma forma, a **priorização** permite que múltiplas solicitações sejam enviadas juntas, mas com as requisições mais importantes obtendo mais largura de banda.
+Ter fluxos separados introduz algumas complexidades junto com alguns benefícios potenciais. O HTTP/2 precisa do conceito de **controle de fluxo** para permitir que os diferentes fluxos enviem dados em taxas diferentes, enquanto anteriormente, com apenas uma resposta em movimento a qualquer momento, isso era controlado a nível de conexão pelo controle de fluxo do TCP. Da mesma forma, a **priorização** permite que múltiplas requisições sejam enviadas juntas, mas com as requisições mais importantes obtendo mais largura de banda.
 
-Por fim, o HTTP/2 introduziu dois novos conceitos: **compactação de cabeçalho** e **HTTP/2 push**. A compactação de cabeçalho permitiu que os cabeçalhos HTTP baseados em texto fossem enviados com mais eficiência, usando um formato [HPACK](https://tools.ietf.org/html/rfc7541) específico de HTTP/2 por motivos de segurança. O push HTTP/2 permitia que mais de uma resposta fosse enviada em retorno a uma solicitação, permitindo que o servidor enviasse (desse um "push") recursos antes mesmo que o cliente soubesse que precisava deles. O push deveria acabar com a solução alternativa de performance de ter de incorporar recursos como CSS e JavaScript diretamente no HTML para evitar que a página fique suspensa enquanto esses recursos são solicitados. Com o HTTP/2, o CSS e o JavaScript podem permanecer como arquivos externos, mas ser enviados junto com o HTML inicial para que estejam disponíveis imediatamente. As requisições subsequentes da página não enviariam esses recursos, uma vez que agora eles estariam armazenados na cache e, portanto, não desperdiçariam largura de banda.
+Por fim, o HTTP/2 introduziu dois novos conceitos: **compactação de cabeçalho** e **HTTP/2 push**. A compactação de cabeçalho permitiu que os cabeçalhos HTTP baseados em texto fossem enviados com mais eficiência, usando um formato [HPACK](https://tools.ietf.org/html/rfc7541) específico do HTTP/2 por motivos de segurança. O HTTP/2 push permitia que mais de uma resposta fosse enviada em retorno a uma requisição, permitindo que o servidor enviasse recursos antes mesmo que o cliente soubesse que precisava deles. O push deveria acabar com a solução alternativa de performance de ter de incorporar recursos como CSS e JavaScript diretamente no HTML para evitar que a página fique suspensa enquanto esses recursos são solicitados. Com o HTTP/2, o CSS e o JavaScript podem permanecer como arquivos externos, mas ser enviados junto com o HTML inicial para que estejam disponíveis imediatamente. As requisições subsequentes da página não enviariam esses recursos, uma vez que agora eles estariam armazenados na cache e, portanto, não desperdiçariam largura de banda.
 
 Este passeio rápido pelo HTTP/2 fornece a história e os conceitos principais do protocolo mais recente. Como deve ficar claro a partir dessa explicação, o principal benefício do HTTP/2 é abordar as limitações de desempenho do protocolo HTTP/1.1. Também houve melhorias de segurança — talvez o mais importante é tratar dos problemas de desempenho do uso de HTTPS, uma vez que HTTP/2, mesmo sobre HTTPS, [costuma ser muito mais rápido do que o HTTP simples](https://www.httpvshttps.com/). Exceto pelo navegador web que empacota as mensagens HTTP no novo formato binário e pelo servidor web que as desempacota no outro lado, os princípios básicos do próprio HTTP permaneceram praticamente os mesmos. Isso significa que os aplicativos web não precisam fazer quaisquer alterações para suportar o HTTP/2, uma vez que o navegador e o servidor cuidam disso. Ativá-lo deve ser um aumento de desempenho gratuito, portanto, a adoção deve ser relativamente fácil. Obviamente, existem maneiras dos desenvolvedores web otimizarem para HTTP/2 para aproveitar ao máximo suas diferenças.
 
 ## Adoção do HTTP/2
-Como mencionado acima, os protocolos da internet são frequentemente difíceis de adotar, uma vez que estão enraizados em grande parte da infraestrutura que compõe a internet. Isso torna a introdução de quaisquer mudanças lenta e difícil. O IPv6, por exemplo, existe há 20 anos, mas tem [dificuldade de ser adotado](https://www.google.com/intl/en/ipv6/statistics.html).
-
+Como mencionado acima, os protocolos da internet são frequentemente difíceis de adotar, uma vez que estão enraizados em grande parte da infraestrutura que compõe a internet. Isso torna a introdução de quaisquer mudanças lenta e difícil. O IPv6, por exemplo, existe há 20 anos, mas tem [dificuldade de ser adotado](https://www.google.com/intl/pt/ipv6/statistics.html).
 
 {{ figure_markup(
   caption="O percentual dos usuários no mundo que podem utilizar HTTP/2.",
@@ -97,7 +96,7 @@ A Figura 20.3 mostra que o HTTP/1.1 e o HTTP/2 são as versões usadas pela gran
 
 Não obstante haja uma porcentagem um pouco maior de ruído do que gostaríamos, isso não altera a mensagem geral transmitida aqui. Fora isso, a semelhança mobile/desktop não é inesperada; Testes do HTTP Archive com Chrome, que oferece suporte a HTTP/2 para desktop e dispositivo móvel. O uso no mundo real pode ter estatísticas ligeiramente diferentes com alguns usos mais antigos de navegadores em ambos, mas mesmo assim o suporte é generalizado, logo, não esperamos uma grande variação entre desktop e mobile.
 
-No momento, o HTTP Archive não rastreia HTTP no [QUIC](https://www.chromium.org/quic) (em breve padronizado como [HTTP/3](#http3)) separadamente, então, essas solicitações estão listadas no momento sob HTTP/2, mas veremos outras maneiras de medir isso posteriormente neste capítulo.
+No momento, o HTTP Archive não rastreia HTTP no [QUIC](https://www.chromium.org/quic) (em breve padronizado como [HTTP/3](#http3)) separadamente, então, essas requisições estão listadas no momento sob HTTP/2, mas veremos outras maneiras de medir isso posteriormente neste capítulo.
 
 Olhar para o número de requisições distorce um pouco os resultados devido a requisições populares. Por exemplo, muitos sites carregam o Google Analytics, que suporta o HTTP/2 e, portanto, seria exibido como uma requisição HTTP/2, mesmo se o próprio site incorporando não oferecer suporte ao HTTP/2. Por outro lado, sites populares que tendem a oferecer suporte a HTTP/2 também são sub-representados nas estatísticas acima, pois são medidos apenas uma vez (por exemplo, "google.com" e "obscuresite.com" recebem pesos iguais). _Há mentiras, mentiras tremendas e estatísticas._
 
@@ -232,12 +231,12 @@ Essa baixa taxa de mudança pode talvez ser atribuída às observações mencion
 
 O fato do número de requisições permanecer praticamente estático é interessante, dado o [peso da página](./page-weight) sempre crescente, embora talvez isso não esteja totalmente relacionado ao HTTP/2.
 
-## Push do HTTP/2
-O processo de push do HTTP/2 tem uma história mista, apesar de ser uma funcionalidade nova muito elogiada do HTTP/2. Os outros recursos eram basicamente melhorias de desempenho sob o capô, mas o push era um conceito totalmente novo que quebrou completamente a natureza de requisição única para resposta única do HTTP. Isso permitiu que respostas extras fossem retornadas; quando você pedisse pela página web, o servidor poderia responder com a página HTML como de costume, mas também enviá-lo o CSS e o JavaScript críticos, evitando assim quaisquer viagens de ida e volta adicionais para determinados recursos. Teoricamente, isso nos permitiria parar de inserir CSS e JavaScript diretamente no HTML e ainda obter os mesmos ganhos de desempenho de fazê-lo. Resolver isso, poderia depois levar a todos os tipos de casos de uso novos e interessantes.
+## HTTP/2 Push
+O processo de HTTP/2 push tem uma história mista, apesar de ser uma funcionalidade nova muito elogiada do HTTP/2. Os outros recursos eram basicamente melhorias de desempenho sob o capô, mas o push era um conceito totalmente novo que quebrou completamente a natureza de requisição única para resposta única do HTTP. Isso permitiu que respostas extras fossem retornadas; quando você pedisse pela página web, o servidor poderia responder com a página HTML como de costume, mas também enviá-lo o CSS e o JavaScript críticos, evitando assim quaisquer viagens de ida e volta adicionais para determinados recursos. Teoricamente, isso nos permitiria parar de inserir CSS e JavaScript diretamente no HTML e ainda obter os mesmos ganhos de desempenho de fazê-lo. Resolver isso, poderia depois levar a todos os tipos de casos de uso novos e interessantes.
 
-A realidade tem sido, bem, um pouco decepcionante. O push do HTTP/2 provou ser muito mais difícil de usar de maneira efetiva do que o previsto originalmente. Parte disso foi atribuído à [complexidade de como o push do HTTP/2 funciona](https://jakearchibald.com/2017/h2-push-tougher-than-i-thought/) e aos problemas de implementação devido a isso.
+A realidade tem sido, bem, um pouco decepcionante. O HTTP/2 push provou ser muito mais difícil de usar de maneira efetiva do que o previsto originalmente. Parte disso foi atribuído à [complexidade de como o HTTP/2 push funciona](https://jakearchibald.com/2017/h2-push-tougher-than-i-thought/) e aos problemas de implementação devido a isso.
 
-Uma preocupação maior é que o push pode facilmente causar, em vez de resolver, problemas de desempenho. O excesso de push é um risco real. Frequentemente, o navegador está no melhor lugar para decidir *o que* solicitar, e tão crucialmente *quando* solicitá-lo, mas o push do HTTP/2 coloca essa responsabilidade no servidor. Enviar recursos que um navegador já possui em seu cache é um desperdício de largura de banda (embora, em minha opinião, igualmente seja incluir CSS diretamente no HTML, mas isso é menos difícil do que o push HTTP/2!).
+Uma preocupação maior é que o push pode facilmente causar, em vez de resolver, problemas de desempenho. O excesso de push é um risco real. Frequentemente, o navegador está no melhor lugar para decidir *o que* solicitar, e tão crucialmente *quando* solicitá-lo, mas o HTTP/2 push coloca essa responsabilidade no servidor. Enviar recursos que um navegador já possui em seu cache é um desperdício de largura de banda (embora, em minha opinião, igualmente seja incluir CSS diretamente no HTML, mas isso é menos difícil do que o HTTP/2 push!).
 
 [As propostas de informar o servidor sobre o status do cache do navegador foram bloqueadas](https://lists.w3.org/Archives/Public/ietf-http-wg/2019JanMar/0033.html) especialmente em questões de privacidade. Mesmo sem esse problema, existem outros problemas potenciais se o push não for usado corretamente. Por exemplo, enviar imagens grandes e, portanto, impedir o envio de CSS e JavaScript essenciais levará a sites mais lentos do que se você nem tivesse feito push!
 
@@ -255,15 +254,15 @@ Putting that aside let's look at the usage of HTTP/2 push.
 </figure>
 
 <figure markdown>
-| Cliente | Méd. de Requisições com Push | Méd. KB com Push |
-| ------- | ---------------------------- | ---------------- |
-| Desktop |  7.86                        | 162.38           |
-| Mobile  |  6.35                        | 122.78           |
+| Cliente | Méd. de Requisições Enviadas | Méd. de KB Enviados |
+| ------- | ---------------------------- | ------------------- |
+| Desktop |  7.86                        | 162.38              |
+| Mobile  |  6.35                        | 122.78              |
 
 <figcaption>{{ figure_link(caption="Quanto é enviado em push quando é usado.") }}</figcaption>
 </figure>
 
-Essas estatísticas mostram que a aceitação do push do HTTP/2 é muito baixa, provavelmente por causa dos problemas descritos anteriormente. No entanto, quando os sites usam push, eles tendem a usá-lo bastante, em vez de para um ou recursos, conforme mostrado na Figura 20.12.
+Essas estatísticas mostram que a aceitação do HTTP/2 push é muito baixa, provavelmente por causa dos problemas descritos anteriormente. No entanto, quando os sites usam push, eles tendem a usá-lo bastante, em vez de para um ou recursos, conforme mostrado na Figura 20.12.
 
 Essa é uma preocupação, pois o conselho anterior era ser conservador com o push e ["enviar apenas recursos suficientes para preencher o tempo de rede ocioso e nada mais"](https://docs.google.com/document/d/1K0NykTXBbbbTlv60t5MyJvXjqKGsCVNYHyLEXIxYMv0/edit). As estatísticas acima sugerem que muitos recursos de um tamanho combinado significativo são enviados.
 
@@ -281,7 +280,7 @@ Uma preocupação levantada por alguns é que as implementações HTTP/2 redesig
 
 No entanto, o uso relativamente baixo de fontes e imagens pode significar que o risco não está sendo percebido tanto quanto se temia. As tags `<link rel=" preload "...>` são comumente usadas no HTML ao invés dos cabeçalhos `link` no HTTP e as meta tags não são um sinal de envio. As estatísticas no capítulo de [Sugestão de Recursos](./resource-hints) mostram que menos de 1% dos sites usam o cabeçalho `link` do HTTP pré-carregado e aproximadamente a mesma quantidade usam pré-conexão, que não tem significado algum no HTTP/2, portanto, isso sugeriria que não é tanto um problema. Embora haja uma número de fontes e outros recursos sendo enviados, o que pode ser um sinal disso.
 
-Como um contra argumento a essas reclamações, se um recurso é importante o suficiente para pré-carregar, então pode-se argumentar que esses recursos devem ser enviados se possível, já que os navegadores tratam uma sugestão de pré-carregamento como requisições de prioridade muito alta de qualquer forma. Qualquer preocupação com o desempenho é, portanto (mais uma vez, sem dúvida), no uso excessivo do pré-carregamento, em vez do push do HTTP/2 que resulta disso.
+Como um contra argumento a essas reclamações, se um recurso é importante o suficiente para pré-carregar, então pode-se argumentar que esses recursos devem ser enviados se possível, já que os navegadores tratam uma sugestão de pré-carregamento como requisições de prioridade muito alta de qualquer forma. Qualquer preocupação com o desempenho é, portanto (mais uma vez, sem dúvida), no uso excessivo do pré-carregamento, em vez do HTTP/2 push que resulta disso.
 
 Para contornar esse push não intencional, você pode fornecer o atributo `nopush` em seu cabeçalho de pré-carregamento:
 
@@ -289,7 +288,7 @@ Para contornar esse push não intencional, você pode fornecer o atributo `nopus
 link: </assets/jquery.js>; rel=preload; as=script; nopush
 ```
 
-5% dos cabeçalhos HTTP pré-carregados usam esse atributo, que é maior do que eu esperava, pois consideraria isso uma otimização de nicho. Então, novamente, também é o uso de cabeçalhos HTTP pré-carregados e/ou push do HTTP/2 em si!
+5% dos cabeçalhos HTTP pré-carregados usam esse atributo, que é maior do que eu esperava, pois consideraria isso uma otimização de nicho. Então, novamente, também é o uso de cabeçalhos HTTP pré-carregados e/ou HTTP/2 push em si!
 
 ## Problemas do HTTP/2
 O HTTP/2 é principalmente parte de uma atualização contínua que, uma vez que seu servidor suporte, você pode fazer uso sem a necessidade de alterar seu site ou aplicativo. Você pode otimizar para HTTP/2 ou parar de usar as soluções alternativas do HTTP/1.1, mas em geral, um site normalmente funcionará sem a necessidade de nenhuma alteração — será apenas mais rápido. Entretanto, existem algumas pegadinhas de que você deve ter ciência, que podem afetar qualquer atualização, e alguns sites descobriram isso da maneira mais difícil.
