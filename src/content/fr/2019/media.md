@@ -233,7 +233,7 @@ Les gains obtenus dans ce test A/B <span lang="en">Lighthouse</span> ne concerne
 
 {{ figure_markup(
   image="fig13_project_perf_improvements_image_optimization.png",
-  caption="Projection que fait <span lang=\"en\">Lighthouse</span> de l’amélioration des performances des pages grâce à l’optimisation des images.",
+  caption='Projection que fait <span lang="en">Lighthouse</span> de l’amélioration des performances des pages grâce à l’optimisation des images.',
   description="Diagramme à barres montrant qu’au 10e percentile, 0&nbsp;ms pourrait être sauvée, de même au 25e percentile. Au 50e percentile, 150&nbsp;ms pourraient être sauvées. Au 75e percentile, 1460&nbsp;ms pourraient être sauvées et 90e percentile, 5720&nbsp;ms pourraient être sauvées.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=167590779"
   )
