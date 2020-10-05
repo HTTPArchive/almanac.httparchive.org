@@ -221,13 +221,13 @@ D’autres particularités du format permettent de simplement organiser le conte
 
 Un des contrôles de [Lighthouse](./methodology#lighthouse) est un test A/B comparant la ligne de base avec un JPEG progressif. Cela donne une indication sur la possibilité d’optimiser davantage les images dans leur ensemble avec des techniques sans perte et éventuellement avec des techniques avec perte comme l’utilisation de différents niveaux de qualité. 
 
- <figure>
-  <a href="/static/images/2019/media/fig12_percentage_optimized_images.png">
-    <img src="/static/images/2019/media/fig12_percentage_optimized_images.png" alt="Figure 12. Pourcentage d’images &laquo;&nbsp;optimisées&nbsp;&raquo;." aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1569150767">
-  </a>
-  <div id="fig12-description" class="visually-hidden">Diagramme à barres montrant qu’au 10e percentile, 100&nbsp;% des images sont optimisées, de même au 25e percentile. Au 50e percentile, 98&nbsp;% des images sont optimisées (2&nbsp;% ne le sont pas). Au 75e percentile, 83&nbsp;% des images sont optimisées (17&nbsp;%, non), et au 90e percentile, 59&nbsp;% des images sont optimisées et 41&nbsp;% ne le sont pas.</div>
-  <figcaption id="fig12-caption">Figure 12. Pourcentage d’images &laquo;&nbsp;optimisées&nbsp;&raquo;.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig12_percentage_optimized_images.png",
+  caption="Pourcentage d’images &laquo;&nbsp;optimisées&nbsp;&raquo;.",
+  description="Diagramme à barres montrant qu’au 10e percentile, 100&nbsp;% des images sont optimisées, de même au 25e percentile. Au 50e percentile, 98&nbsp;% des images sont optimisées (2&nbsp;% ne le sont pas). Au 75e percentile, 83&nbsp;% des images sont optimisées (17&nbsp;%, non), et au 90e percentile, 59&nbsp;% des images sont optimisées et 41&nbsp;% ne le sont pas.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1569150767"
+  )
+}}
 
 Les gains obtenus dans ce test A/B Lighthouse ne concernent pas seulement les réductions potentielles en termes d’octets, qui peuvent s’élever à plusieurs Mo au 95e percentile, ils démontrent également l’amélioration des performances des pages. 
 
