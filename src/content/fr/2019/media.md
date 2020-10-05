@@ -372,7 +372,7 @@ La taille médiane des vidéos pour chaque format est indiquée ci-dessous&nbsp;
 {{ figure_markup(
   image="fig21_median_vidoe_file_size_by_extension.png",
   caption="Taille médiane de fichier par extension vidéo.",
-  description="Un diagramme à barres montrant la taille moyenne du fichier "ts" à 335&nbsp;Ko pour le bureau (156&nbsp;Ko pour le mobile), "mp4" à 175&nbsp;Ko pour le bureau (128&nbsp;Ko pour le mobile), "webm" à 359&nbsp;Ko pour le bureau (192&nbsp;Ko pour le mobile), "mov" à 128&nbsp;Ko pour le bureau (96&nbsp;Ko pour le mobile), "m4s" à 324&nbsp;Ko pour le bureau (246&nbsp;Ko pour le mobile), et "m4v" à 383&nbsp;Ko pour le bureau (161&nbsp;Ko pour le mobile).",
+  description="Un diagramme à barres montrant la taille moyenne du fichier 'ts' à 335&nbsp;Ko pour le bureau (156&nbsp;Ko pour le mobile), 'mp4' à 175&nbsp;Ko pour le bureau (128&nbsp;Ko pour le mobile), 'webm' à 359&nbsp;Ko pour le bureau (192&nbsp;Ko pour le mobile), 'mov' à 128&nbsp;Ko pour le bureau (96&nbsp;Ko pour le mobile), 'm4s' à 324&nbsp;Ko pour le bureau (246&nbsp;Ko pour le mobile), et 'm4v' à 383&nbsp;Ko pour le bureau (161&nbsp;Ko pour le mobile).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=821311770&format=interactive"
   )
 }}
