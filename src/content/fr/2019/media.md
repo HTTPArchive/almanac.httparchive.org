@@ -153,13 +153,14 @@ Chaque format a ses propres mérites et a des utilisations idéales pour le web.
 
 Dans l’ensemble, à travers l’ensemble des pages, nous voyons en effet la prédominance de ces formats. Le JPEG, l’un des plus anciens formats du web, est de loin le format d’image le plus utilisé avec 60&nbsp;% des requêtes d’image et 65&nbsp;% de tous les octets d’image. Il est intéressant de noter que le PNG est le deuxième format d’image le plus utilisé&nbsp;: 28&nbsp;% des requêtes d’images et des octets. La généralisation de son support ainsi que la précision des couleurs et la créativité de son contenu expliquent probablement sa large utilisation. En revanche, le SVG, le GIF et le WebP partagent presque la même utilisation avec 4&nbsp;%.
 
-<figure>
-  <a href="/static/images/2019/media/fig7_image_format_usage.png">
-    <img alt="Figure 7. Utilisation des formats d’image." aria-labelledby="fig7-caption" aria-describedby="fig7-description" src="/static/images/2019/media/fig7_image_format_usage.png" width="600" height="376">
-  </a>
-  <div id="fig7-description" class="visually-hidden">Une carte arborescente montrant que le JPEG est utilisé 60,27&nbsp;% du temps, le PNG 28,2&nbsp;%, le WebP 4,2&nbsp;%, le GIF 3,67&nbsp;% et le SVG 3,63&nbsp;%.</div>
-  <figcaption id="fig7-caption">Figure 7. Utilisation des formats d’image.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig7_image_format_usage.png",
+  caption="Utilisation des formats d’image.",
+  description="Une carte arborescente montrant que le JPEG est utilisé 60,27&nbsp;% du temps, le PNG 28,2&nbsp;%, le WebP 4,2&nbsp;%, le GIF 3,67&nbsp;% et le SVG 3,63&nbsp;%.",
+  width=600,
+  height=376
+  )
+}}
 
 Bien entendu, les pages web n’utilisent pas toutes le contenu des images de la même manière. Certaines dépendent des images plus que d’autres. Il suffit de regarder la page d’accueil de `google.com` pour voir très peu d’images par rapport à un site d’information typique. En effet, le site web médian compte 13 images, 61 images au 90e percentile, et un nombre impressionnant de 229 images au 99e percentile.
 
