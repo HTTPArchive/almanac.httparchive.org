@@ -356,13 +356,13 @@ Alors que les images dominent les médias diffusés sur les pages web, les vidé
 
 Les vidéos peuvent être diffusées avec de nombreux formats et lecteurs différents. Les formats dominants pour les téléphones portables et les ordinateurs de bureau sont le ".ts" (segments de streaming HLS) et le ".mp4" (le MPEG H264)&nbsp;:
 
-<figure>
-  <a href="/static/images/2019/media/fig20_video_files_by_extension.png">
-    <img src="/static/images/2019/media/fig20_video_files_by_extension.png" alt="Figure 20. Nombre de fichiers vidéo par extension." aria-labelledby="fig20-caption" aria-describedby="fig20-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=999894252&format=interactive">
-  </a>
-  <div id="fig20-description" class="visually-hidden">Un diagramme à barres montrant que 1&#8239;283&#8239;439 fichiers "ts" sont utilisés sur ordinateurs de bureau (792&#8239;952 sur mobiles), 729&#8239;757&#8239;000 "mp4" sur les ordinateurs de bureau (662&#8239;015 sur mobiles), 38&#8239;591 de "webm" sur ordinateurs de bureau (32&#8239;417 sur mobiles), 22&#8239;194 fichiers "mov" sur ordinateurs de bureau (14&#8239;986 sur mobiles), 17&#8239;338 fichiers "m4s" sur ordinateurs de bureau (16&#8239;046 sur mobiles), 7&#8239;466 fichiers "m4v" sur ordinateurs de bureau (6&#8239;169 sur mobiles).</div>
-  <figcaption id="fig20-caption">Figure 20. Nombre de fichiers vidéo par extension.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig20_video_files_by_extension.png",
+  caption="Nombre de fichiers vidéo par extension.",
+  description="Un diagramme à barres montrant que 1&#8239;283&#8239;439 fichiers "ts" sont utilisés sur ordinateurs de bureau (792&#8239;952 sur mobiles), 729&#8239;757&#8239;000 "mp4" sur les ordinateurs de bureau (662&#8239;015 sur mobiles), 38&#8239;591 de "webm" sur ordinateurs de bureau (32&#8239;417 sur mobiles), 22&#8239;194 fichiers "mov" sur ordinateurs de bureau (14&#8239;986 sur mobiles), 17&#8239;338 fichiers "m4s" sur ordinateurs de bureau (16&#8239;046 sur mobiles), 7&#8239;466 fichiers "m4v" sur ordinateurs de bureau (6&#8239;169 sur mobiles).",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=999894252&format=interactive"
+  )
+}}
 
 D’autres formats sont également utilisés, notamment `webm`, `mov`, `m4s` et `m4v` (segments de streaming MPEG-DASH). Il est clair que la majorité des flux sur le web sont en HLS, et que le format principal pour les vidéos statiques est le `mp4`.
 
