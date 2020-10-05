@@ -298,13 +298,14 @@ Les Indications Client, ou [<span lang="en">Client Hints</span>](https://develop
 
 Pour activer les Indications Client, la page web doit envoyer un signal au navigateur en utilisant soit un en-tête HTTP supplémentaire `Accept-CH: DPR, Width, Viewport-Width` _ou_ en ajoutant dans le balisage HTML `<meta http-equiv="Accept-CH" content="DPR, Width, Viewport-Width">`. Le choix de l’une ou l’autre technique dépend de l’équipe qui la met en œuvre et les deux sont proposées pour des raisons de commodité.
 
-<figure>
-  <a href="/static/images/2019/media/fig17_usage_of_accept-ch_http_v_html.png">
-    <img src="/static/images/2019/media/fig17_usage_of_accept-ch_http_v_html.png" alt="Figure 17. Utilisation de Accept-CH: HTTP comparé à HTML." aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=284657706&format=interactive">
-  </a>
-  <div id="fig17-description" class="visually-hidden">Graphique en barres montrant que 71&nbsp;% utilisent le `meta http-equiv`, 30&nbsp;% utilisent l’en-tête HTTP `Accept-CH` et 1&nbsp;% utilisent les deux.</div>
-  <figcaption id="fig17-caption">Figure 17. Utilisation de l’en-tête <code>Accept-CH</code> comparé à son équivalent <code>&lt;meta></code> tag.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig17_usage_of_accept-ch_http_v_html.png",
+  alt="Utilisation de l’en-tête Accept-CH comparé à son équivalent meta tag.",
+  caption="Utilisation de l’en-tête <code>Accept-CH</code> comparé à son équivalent <code><meta></code> tag.",
+  description="Graphique en barres montrant que 71&nbsp;% utilisent le `meta http-equiv`, 30&nbsp;% utilisent l’en-tête HTTP `Accept-CH` et 1&nbsp;% utilisent les deux.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=284657706&format=interactive"
+  )
+}}
 
 L’utilisation de la balise `<meta>` en HTML pour énoncer les Indications Client est beaucoup plus courante que l’en-tête HTTP. Cela reflète probablement la facilité avec laquelle on peut modifier les gabarits HTML par rapport à l’ajout d’en-têtes HTTP dans les outils intermédiaires. Cependant, si l’on considère l’utilisation de l’en-tête HTTP, plus de 50&nbsp;% de ces cas proviennent d’une seule plate-forme SaaS (Mercado).
 
