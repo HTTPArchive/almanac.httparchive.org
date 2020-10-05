@@ -1,6 +1,5 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION getGradientFunctions(css STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getMaxColorStops(css STRING) RETURNS STRING LANGUAGE js AS '''
 try {
   function compute(ast) {
     let ret = {
@@ -134,45 +133,46 @@ try {
 
   const ast = JSON.parse(css);
   let gradient = compute(ast);
-  return Object.keys(gradient.functions);
+  return String(gradient.max_stops).padStart(3, 0) + gradient.max_stops_gradient[0];
 } catch (e) {
-  return [];
+  return null;
 }
 '''
 OPTIONS (library="gs://httparchive/lib/css-utils.js");
 
+# https://www.stevenmoseley.com/blog/tech/high-performance-sql-correlated-scalar-aggregate-reduction-queries
+CREATE TEMPORARY FUNCTION getGradient(value STRING) RETURNS STRING AS (
+  SUBSTR(value, 4)
+);
+CREATE TEMPORARY FUNCTION getStops(value STRING) RETURNS INT64 AS (
+  CAST(SUBSTR(value, 0, 3) AS INT64)
+);
+
 SELECT
+  percentile,
   client,
-  function,
-  COUNT(DISTINCT page) AS pages,
-  total,
-  COUNT(DISTINCT page) / total AS pct
+  APPROX_QUANTILES(getStops(max_color_stops), 1000)[OFFSET(percentile * 10)] AS max_color_stops,
+  getGradient(APPROX_QUANTILES(max_color_stops, 1000)[OFFSET(percentile * 10)]) AS gradient
 FROM (
-  SELECT DISTINCT
+  SELECT
     client,
     page,
-    function
+    MAX(getMaxColorStops(css)) AS max_color_stops
   FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getGradientFunctions(css)) AS function
+    `httparchive.almanac.parsed_css`
   WHERE
     date = '2020-08-01' AND
     # Limit the size of the CSS to avoid OOM crashes.
-    LENGTH(css) < 0.1 * 1024 * 1024 AND
-    function IS NOT NULL)
-JOIN (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    COUNT(0) AS total
-  FROM
-    `httparchive.summary_pages.2020_08_01_*`
+    LENGTH(css) < 0.1 * 1024 * 1024
   GROUP BY
-    client)
-USING
-  (client)
+    client,
+    page),
+  UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+WHERE
+  getStops(max_color_stops) > 0
 GROUP BY
-  client,
-  function,
-  total
+  percentile,
+  client
 ORDER BY
-  pct DESC
+  percentile,
+  client

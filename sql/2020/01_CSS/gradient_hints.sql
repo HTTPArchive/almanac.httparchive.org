@@ -1,6 +1,5 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION getGradientFunctions(css STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getGradientHints(css STRING) RETURNS INT64 LANGUAGE js AS '''
 try {
   function compute(ast) {
     let ret = {
@@ -134,32 +133,32 @@ try {
 
   const ast = JSON.parse(css);
   let gradient = compute(ast);
-  return Object.keys(gradient.functions);
+  return gradient.hints;
 } catch (e) {
-  return [];
+  return 0;
 }
 '''
 OPTIONS (library="gs://httparchive/lib/css-utils.js");
 
 SELECT
   client,
-  function,
-  COUNT(DISTINCT page) AS pages,
+  COUNTIF(hints > 0) AS pages,
   total,
-  COUNT(DISTINCT page) / total AS pct
+  COUNTIF(hints > 0) / total AS pct
 FROM (
-  SELECT DISTINCT
+  SELECT
     client,
     page,
-    function
+    SUM(getGradientHints(css)) AS hints
   FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getGradientFunctions(css)) AS function
+    `httparchive.almanac.parsed_css`
   WHERE
     date = '2020-08-01' AND
     # Limit the size of the CSS to avoid OOM crashes.
-    LENGTH(css) < 0.1 * 1024 * 1024 AND
-    function IS NOT NULL)
+    LENGTH(css) < 0.1 * 1024 * 1024
+  GROUP BY
+    client,
+    page)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -172,7 +171,4 @@ USING
   (client)
 GROUP BY
   client,
-  function,
   total
-ORDER BY
-  pct DESC
