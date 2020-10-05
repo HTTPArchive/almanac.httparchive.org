@@ -1,8 +1,8 @@
 ---
 part_number: II
 chapter_number: 9
-title: Accessibility
-description: Accessibility chapter of the 2019 Web Almanac covering ease of reading, media, ease of navigation, and compatibility with assistive technologies.
+title: Acessibilidade
+description: Capítulo de acessibilidade do Web Almanac de 2019 cobrindo facilidade de leitura, mídia, facilidade de navegação e compatibilidade com tecnologias assistivas.
 authors: [nektarios-paisios, obto, kleinab]
 reviewers: [ljme]
 translators: [eduqg]
@@ -230,7 +230,6 @@ Apesar disso, apenas 4,32% das páginas com tabelas apresentam legendas.
 Uma das especificações mais populares e amplamente utilizadas para acessibilidade na web é o padrão [Accessible Rich Internet Applications](https://www.w3.org/WAI/standards-guidelines/aria/) (ARIA). Este padrão oferece uma grande variedade de atributos HTML adicionais para ajudar a transmitir o propósito por trás dos elementos visuais (ou seja, seu significado semântico) e de quais tipos de ações eles são capazes.
 
 Usar o ARIA de maneira correta e apropriada pode ser desafiador. Por exemplo, das páginas que utilizam atributos ARIA, encontramos 12,31% com valores inválidos aos seus atributos. Isso é problemático porque qualquer erro no uso de um atributo ARIA não tem efeito visual na página. Alguns desses erros podem ser detectados com o uso de uma ferramenta de validação automatizada, mas geralmente exigem o uso prático de software de assistência real (como um leitor de tela). Esta seção examinará como o ARIA é usado na web e, especificamente, quais partes do padrão são mais predominantes.
-
 
 {{ figure_markup(
   image="fig8.png",
