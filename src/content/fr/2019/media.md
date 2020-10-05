@@ -382,13 +382,14 @@ Les valeurs médianes sont plus petites sur les mobiles, ce qui signifie probabl
 
 Lors de la diffusion de vidéos sur le web, la plupart des vidéos sont livrées avec le lecteur vidéo HTML5. Il est possible de personnaliser le lecteur vidéo HTML afin de diffuser des vidéos à des fins diverses. Par exemple, pour diffuser automatiquement une vidéo, les paramètres `auto-play` et `muted` seront ajoutés. L’attribut `controls` permet à l’utilisateur de démarrer/arrêter et de parcourir la vidéo. En analysant les balises vidéo dans l’archive HTTP, nous sommes en mesure de voir l’utilisation de chacun de ces attributs&nbsp;:
 
-<figure>
-  <a href="/static/images/2019/media/fig22_html_video_tag_attributes_usage.png">
-    <img src="/static/images/2019/media/fig22_html_video_tag_attributes_usage.png" alt="Figure 21. Utilisation des attributs de la balise video HTML." aria-labelledby="fig21-caption" aria-describedby="fig21-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=593556050&format=interactive">
-  </a>
-  <div id="fig22-description" class="visually-hidden">Un diagramme à barres indiquant que pour ordinateur de bureau&nbsp;: `autoplay` à 11,84&nbsp;%, `buffered` à 0&nbsp;%, `controls` à 12,05&nbsp;%, `crossorigin` à 0,45&nbsp;%, ` currenttime` à 0,01&nbsp;%, `disablepictureinpicture` à 0,01&nbsp;%, `disableremoteplayback` à 0,01&nbsp;%, `duration` à 0. 05&nbsp;%, `height` à 7,33&nbsp;%, `intrinsicsize` à 0&nbsp;%, `loop` à 14,57&nbsp;%, `mute` à 13,92&nbsp;%, ` playsinline` à 6,49&nbsp;%, `poster` à 8,98&nbsp;%, `preload` à 11,62&nbsp;%, `src` à 3,67&nbsp;%, `use-credentials` à 0&nbsp;%, et `width` à 9&nbsp;%. Et pour les mobiles, `autoplay` à 12,38&nbsp;%, `buffered` à 0&nbsp;%, `controls` à 13,88&nbsp;%, `crossorigin` à 0,16&nbsp;%, `currenttime` à 0,01&nbsp;%, `disablepictureinpicture` à 0,01&nbsp;%, `disableremoteplayback` à 0,02&nbsp;%, `duration` à 0. 09&nbsp;%, `height` à 6,54&nbsp;%, `intrinsicsize` à 0&nbsp;%, `loop` à 14,44&nbsp;%, `mute` à 13,55&nbsp;%, `playsinline` à 6,15&nbsp;%, `poster` à 9,29&nbsp;%, `preload` à 10,34&nbsp;%, `src` à 4,13&nbsp;%, `use-credentials` à 0&nbsp;%, et `width` à 9,03&nbsp;%.</div>
-  <figcaption id="fig22-caption">Figure 22. Utilisation des attributs de la balise video HTML.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig22_html_video_tag_attributes_usage.png",
+  caption="Utilisation des attributs de la balise video HTML.",
+  description="Un diagramme à barres indiquant que pour ordinateur de bureau&nbsp;: `autoplay` à 11,84&nbsp;%, `buffered` à 0&nbsp;%, `controls` à 12,05&nbsp;%, `crossorigin` à 0,45&nbsp;%, ` currenttime` à 0,01&nbsp;%, `disablepictureinpicture` à 0,01&nbsp;%, `disableremoteplayback` à 0,01&nbsp;%, `duration` à 0. 05&nbsp;%, `height` à 7,33&nbsp;%, `intrinsicsize` à 0&nbsp;%, `loop` à 14,57&nbsp;%, `mute` à 13,92&nbsp;%, ` playsinline` à 6,49&nbsp;%, `poster` à 8,98&nbsp;%, `preload` à 11,62&nbsp;%, `src` à 3,67&nbsp;%, `use-credentials` à 0&nbsp;%, et `width` à 9&nbsp;%. Et pour les mobiles, `autoplay` à 12,38&nbsp;%, `buffered` à 0&nbsp;%, `controls` à 13,88&nbsp;%, `crossorigin` à 0,16&nbsp;%, `currenttime` à 0,01&nbsp;%, `disablepictureinpicture` à 0,01&nbsp;%, `disableremoteplayback` à 0,02&nbsp;%, `duration` à 0. 09&nbsp;%, `height` à 6,54&nbsp;%, `intrinsicsize` à 0&nbsp;%, `loop` à 14,44&nbsp;%, `mute` à 13,55&nbsp;%, `playsinline` à 6,15&nbsp;%, `poster` à 9,29&nbsp;%, `preload` à 10,34&nbsp;%, `src` à 4,13&nbsp;%, `use-credentials` à 0&nbsp;%, et `width` à 9,03&nbsp;%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=593556050&format=interactive"
+  )
+}}
+
 
 Les attributs les plus courants sont `autoplay`, `muted` et `loop`, suivis par `preload`, `width` et `height`. L’attribut `loop` est utilisé dans les vidéos de fond, et aussi lorsque les vidéos sont utilisées pour remplacer des GIF animés, il n’est donc pas surprenant de voir qu’il est souvent utilisé sur les pages d’accueil des sites web.
 
