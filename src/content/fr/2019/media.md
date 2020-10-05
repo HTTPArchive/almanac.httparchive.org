@@ -251,13 +251,13 @@ Un autre axe d’amélioration des performances des pages consiste à utiliser d
 
 La méthode la plus courante pour implémenter des images adaptatives est de construire une liste d’images alternatives en utilisant soit `<img srcset>` soit `<source srcset>`. Si le `srcset` est basé sur le DPR, le navigateur peut sélectionner la bonne image dans la liste sans information supplémentaire. Cependant, la plupart des implémentations utilisent également `<img sizes>` pour aider à indiquer au navigateur comment effectuer le calcul de mise en page nécessaire pour sélectionner l’image correcte dans le `srcset` basé sur les dimensions des pixels.
 
- <figure>
-  <a href="/static/images/2019/media/fig14_html_usage_of_responsive_images.png">
-    <img src="/static/images/2019/media/fig14_html_usage_of_responsive_images.png" alt="Figure 14. Pourcentage de pages utilisant des images adaptatives avec HTML." aria-labelledby="fig14-caption" aria-describedby="fig14-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=582530039&format=interactive">
-  </a>
-  <div id="fig14-description" class="visually-hidden">Un diagramme à barres montre que 18&nbsp;% des images utilisent `sizes`, 21&nbsp;% `srcset` et 2&nbsp;% `images`.</div>
-  <figcaption id="fig14-caption">Figure 14. Pourcentage de pages utilisant des images adaptatives avec HTML.</figcaption>
-</figure>
+ {{ figure_markup(
+  image="fig14_html_usage_of_responsive_images.png",
+  caption="Pourcentage de pages utilisant des images adaptatives avec HTML.",
+  description="Un diagramme à barres montre que 18&nbsp;% des images utilisent `sizes`, 21&nbsp;% `srcset` et 2&nbsp;% `images`.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=582530039&format=interactive"
+  )
+}}
 
 L’utilisation nettement plus faible de `<picture>` n’est pas surprenante dans la mesure où cet élément est le plus souvent utilisé pour des gabarits adaptatifs avancés en termes de [direction artistique](https://developer.mozilla.org/fr/docs/Apprendre/HTML/Comment/Ajouter_des_images_adaptatives_%C3%A0_une_page_web#D%C3%A9cision_de_nature_artistique).
 
