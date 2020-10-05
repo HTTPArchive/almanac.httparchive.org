@@ -27,7 +27,7 @@ FROM (
     country,
     COUNT(0) AS freq_typeface,
     SUM(COUNT(0)) OVER (PARTITION BY client) AS total_typeface,
-    COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct,
+    COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct,
     ROW_NUMBER() OVER (PARTITION BY client, country ORDER BY COUNT(0) DESC) AS sort_row
   FROM
     `httparchive.almanac.parsed_css`,

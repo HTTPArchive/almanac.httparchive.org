@@ -5,11 +5,11 @@ SELECT
   NET.HOST(url) AS host,
   COUNT(0) AS freq_host,
   SUM(COUNT(0)) OVER(PARTITION BY client) AS TOTAL,
-  COUNT(0) * 100 / SUM(COUNT(0)) OVER(PARTITION BY client) AS pct_host,
-  COUNTIF(fast_fcp>=0.75) * 100 / COUNT(0) AS pct_good_fcp,
+  COUNT(0) / SUM(COUNT(0)) OVER(PARTITION BY client) AS pct_host,
+  COUNTIF(fast_fcp>=0.75) / COUNT(0) AS pct_good_fcp,
   COUNTIF(NOT(slow_fcp >= 0.25)
-      AND NOT(fast_fcp >= 0.75)) * 100 / COUNT(0) AS pct_ni_fcp,
-  COUNTIF(slow_fcp>=0.25) * 100 / COUNT(0) AS pct_poor_fcp,
+      AND NOT(fast_fcp >= 0.75)) / COUNT(0) AS pct_ni_fcp,
+  COUNTIF(slow_fcp>=0.25) / COUNT(0) AS pct_poor_fcp,
 FROM
   `httparchive.almanac.requests`
 JOIN (

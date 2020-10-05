@@ -1,0 +1,49 @@
+#standardSQL
+#variable_font_with_fcp
+SELECT
+  client,
+  variable_fonts > 0 AS uses_variable_fonts,
+  COUNT(DISTINCT IF(variable_fonts > 0, page, NULL)) AS pages_with_variable_fonts,
+  total,
+  COUNT(DISTINCT IF(variable_fonts > 0, page, NULL)) / total AS pct,
+  COUNTIF(fast_fcp >= 0.75) / COUNT(DISTINCT page) AS pct_good_fcp,
+  COUNTIF(NOT(slow_fcp >= 0.25) AND NOT(fast_fcp >= 0.75)) / COUNT(DISTINCT page) AS pct_ni_fcp,
+  COUNTIF(slow_fcp >= 0.25) / COUNT(DISTINCT page) AS pct_poor_fcp,
+FROM (
+  SELECT
+    client,
+    page,
+    COUNTIF(REGEXP_CONTAINS(JSON_EXTRACT(payload, '$._font_details.table_sizes'), '(?i)gvar')) AS variable_fonts
+  FROM
+    `httparchive.almanac.requests`
+  WHERE
+    date = '2020-09-01'
+  GROUP BY
+    client,
+    page)
+JOIN (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    COUNT(0) AS total
+  FROM
+    `httparchive.summary_pages.2020_09_01_*`
+  GROUP BY
+    _TABLE_SUFFIX) 
+USING
+  (client)
+JOIN (
+  SELECT DISTINCT
+    CONCAT(origin, '/') AS page,
+    IF(device = 'desktop', 'desktop', 'mobile') AS client,
+    fast_fcp,
+    slow_fcp,
+  FROM
+    `chrome-ux-report.materialized.device_summary`
+  WHERE
+    date = '2020-08-01')
+USING
+  (client, page)
+GROUP BY
+  client,
+  total,
+  uses_variable_fonts

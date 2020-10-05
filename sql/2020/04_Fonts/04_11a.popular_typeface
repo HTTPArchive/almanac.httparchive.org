@@ -25,7 +25,7 @@ FROM (
     font_family,
     COUNT(0) AS freq_typeface,
     SUM(COUNT(0)) OVER (PARTITION BY client) AS total_typeface,
-    COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
+    COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
   FROM
     `httparchive.almanac.parsed_css`,
     UNNEST(getFontFamilies(css)) AS font_family

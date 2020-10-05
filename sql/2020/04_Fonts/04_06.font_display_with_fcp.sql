@@ -32,11 +32,11 @@ SELECT
   font_display,
   COUNT(DISTINCT page) AS freq_display,
   total_page,
-  COUNT(DISTINCT page) * 100 / total_page AS pct_display,
-  COUNTIF(fast_fcp >= 0.75) * 100 / COUNT(0) AS pct_good_fcp_display,
+  COUNT(DISTINCT page) / total_page AS pct_display,
+  COUNTIF(fast_fcp >= 0.75) / COUNT(0) AS pct_good_fcp_display,
   COUNTIF(NOT(slow_fcp >= 0.25)
-    AND NOT(fast_fcp >= 0.75)) * 100 / COUNT(0) AS pct_ni_fcp_display,
-  COUNTIF(slow_fcp >= 0.25)*100 / COUNT(0) AS pct_poor_fcp_display,
+    AND NOT(fast_fcp >= 0.75)) / COUNT(0) AS pct_ni_fcp_display,
+  COUNTIF(slow_fcp >= 0.25) / COUNT(0) AS pct_poor_fcp_display,
 FROM (
   SELECT DISTINCT
     client,

@@ -5,7 +5,7 @@ SELECT
   font_host.value AS host,
   font_host.count AS freq,
   total_requests AS total,
-  ROUND(font_host.count * 100 / total_requests, 2) AS pct_requests
+  font_host.count / total_requests AS pct_requests
 FROM (
   SELECT
     client,

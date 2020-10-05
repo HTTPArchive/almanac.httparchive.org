@@ -33,10 +33,10 @@ SELECT
   font_subset,
   COUNT(DISTINCT page) AS freq_subset,
   total_page,
-  COUNT(DISTINCT page)*100/total_page AS pct_subset,
-  COUNTIF(fast_fcp>=0.75)*100/COUNT(0) AS pct_good_fcp_subset,
+  COUNT(DISTINCT page) / total_page AS pct_subset,
+  COUNTIF(fast_fcp>=0.75) / COUNT(0) AS pct_good_fcp_subset,
   COUNTIF(NOT(slow_fcp >=0.25)
-    AND NOT(fast_fcp>=0.75)) *100/COUNT(0) AS pct_ni_fcp_subset 
+    AND NOT(fast_fcp>=0.75)) / COUNT(0) AS pct_ni_fcp_subset 
 FROM (
   SELECT
     *
