@@ -180,3 +180,6 @@ USING (row, device)
 FULL JOIN
   ttfb
 USING (row, device)
+ORDER BY
+  row,
+  device
