@@ -1,7 +1,6 @@
 #standardSQL
 # Median of Largest contentful paint 75% score by month
 
-
 SELECT
   date,
   device,
@@ -9,7 +8,8 @@ SELECT
 FROM
   `chrome-ux-report.materialized.device_summary`
 WHERE
-  date = '2019-09-01' AND
+  date >= '2019-09-01' AND
+  date <= '2020-09-01'
   device IN ('desktop','phone')
 GROUP BY
   date,
