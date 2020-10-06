@@ -11,7 +11,7 @@ discuss: 1760
 results: https://docs.google.com/spreadsheets/d/1iC4WkdadDdkqkrTY32g7hHKhXs9iHrr3Bva8CuPjVrQ/
 queries: 05_Third_Parties
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-09-21T00:00:00.000Z
+last_updated: 2020-10-06T00:00:00.000Z
 ---
 
 ## Introduction

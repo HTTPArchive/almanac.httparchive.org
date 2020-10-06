@@ -11,7 +11,7 @@ discuss: 1767
 results: https://docs.google.com/spreadsheets/d/1dPBDeHigqx9FVaqzfq7CYTz4KjllkMTkfq4DG4utE_g/
 queries: 12_Mobile_Web
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-09-21T00:00:00.000Z
+last_updated: 2020-10-06T00:00:00.000Z
 ---
 
 ## Introduction

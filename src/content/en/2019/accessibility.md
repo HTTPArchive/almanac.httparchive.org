@@ -11,7 +11,7 @@ discuss: 1764
 results: https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/
 queries: 09_Accessibility
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-09-21T00:00:00.000Z
+last_updated: 2020-10-06T00:00:00.000Z
 ---
 
 ## Introduction
