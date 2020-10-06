@@ -9,7 +9,7 @@ FROM
   `chrome-ux-report.materialized.device_summary`
 WHERE
   date >= '2019-09-01' AND
-  date <= '2020-09-01'
+  date <= '2020-08-01'
   device IN ('desktop','phone')
 GROUP BY
   date,

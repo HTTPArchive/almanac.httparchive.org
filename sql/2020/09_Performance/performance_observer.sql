@@ -9,5 +9,5 @@ SELECT
 FROM
   `httparchive.blink_features.usage`
 WHERE
-  yyyymmdd = '20200901' AND
+  yyyymmdd = '20200801' AND
   feature = 'PerformanceObserverForWindow'

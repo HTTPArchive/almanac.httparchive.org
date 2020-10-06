@@ -47,7 +47,7 @@ WITH
   FROM
     `chrome-ux-report.materialized.country_summary`
   WHERE
-    yyyymm = 202009
+    yyyymm = 202008
   GROUP BY
     origin,
     country_code
