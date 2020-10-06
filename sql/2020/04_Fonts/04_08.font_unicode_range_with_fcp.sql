@@ -32,9 +32,9 @@ SELECT
     WHEN unicode != " " THEN "unicode_ranges"
   ELSE "none"
   END AS use_unicode,
-  COUNT(0) AS freq_range,
+  COUNT(DISTINCT page) AS freq_range,
   total_page,
-  COUNT(0) * 100 / total_page AS pct_range,
+  COUNT(DISTINCT page) / total_page AS pct_range,
   COUNTIF(fast_fcp >= 0.75) / COUNT(0) AS pct_good_fcp_unicode,
   COUNTIF(NOT(slow_fcp >= 0.25)
     AND NOT(fast_fcp >= 0.75)) / COUNT(0) AS pct_ni_fcp_unicode,

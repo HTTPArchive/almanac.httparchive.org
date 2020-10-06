@@ -12,8 +12,8 @@ OPTIONS (library="gs://httparchive/lib/css-utils.js");
 SELECT
   client,
   COUNTIF(animates_variable_fonts > 0) AS animates_variable_fonts,
-  COUNT(0) AS total,
-  COUNTIF(animates_variable_fonts > 0) / COUNT(0) AS pct
+  COUNT(DISTINCT page) AS total,
+  COUNTIF(animates_variable_fonts > 0) / COUNT(DISTINCT page) AS pct
 FROM (
   SELECT
     client,

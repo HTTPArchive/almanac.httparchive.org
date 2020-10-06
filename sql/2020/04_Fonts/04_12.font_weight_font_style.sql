@@ -39,9 +39,9 @@ SELECT
   style,
   weight,
   stretch,
-  COUNT(0) AS freq,
+  COUNT(DISTINCT page) AS freq,
   total,
-  COUNT(0) / total AS pct
+  COUNT(DISTINCT page) / total AS pct
 FROM (
   SELECT DISTINCT
     client,

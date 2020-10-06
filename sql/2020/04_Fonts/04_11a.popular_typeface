@@ -12,27 +12,21 @@ try {
     return [];
 }
 ''';
-
 SELECT
   client,
   font_family,
-  freq_typeface,
-  total_typeface,
-  pct
-FROM (
-  SELECT
-    client,
-    font_family,
-    COUNT(0) AS freq_typeface,
-    SUM(COUNT(0)) OVER (PARTITION BY client) AS total_typeface,
-    COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getFontFamilies(css)) AS font_family
- WHERE
-   date="2020-08-01"
-  GROUP BY
-    client,
-    font_family
-  ORDER BY
-    client, font_family, freq_typeface DESC)
+  COUNT(DISTINCT page) AS freq_typeface,
+  SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total_typeface,
+  COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct
+FROM
+  `httparchive.almanac.parsed_css`,
+  UNNEST(getFontFamilies(css)) AS font_family
+WHERE
+  date="2020-08-01"
+GROUP BY
+  client,
+  font_family
+ORDER BY
+  pct DESC
+LIMIT
+  1000

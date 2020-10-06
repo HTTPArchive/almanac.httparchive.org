@@ -25,9 +25,9 @@ FROM (
     client,
     font_family,
     country,
-    COUNT(0) AS freq_typeface,
-    SUM(COUNT(0)) OVER (PARTITION BY client) AS total_typeface,
-    COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct,
+    COUNT(DISTINCT page) AS freq_typeface,
+    SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total_typeface,
+    COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct,
     ROW_NUMBER() OVER (PARTITION BY client, country ORDER BY COUNT(0) DESC) AS sort_row
   FROM
     `httparchive.almanac.parsed_css`,

@@ -22,9 +22,9 @@ SELECT
  client,
  REGEXP_EXTRACT(LOWER(values), '[\'"]([\\w]{4})[\'"]') AS axis,
  CAST(REGEXP_EXTRACT(value, '\\d+') AS NUMERIC) AS num_axis,
- COUNT(0) AS freq_axis,
- SUM(COUNT(0)) OVER (PARTITION BY client) AS total_axis,
- COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
+ COUNT(DISTINCT page) AS freq_axis,
+ SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total_axis,
+ COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct
 FROM 
  `httparchive.almanac.parsed_css`,
  UNNEST(getFontVariationSettings(css)) AS value,

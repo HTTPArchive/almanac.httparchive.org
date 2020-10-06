@@ -1,5 +1,5 @@
 #standardSQL
-#font_subset_with_fcp(??NoResult)
+#font_subset_with_fcp
 CREATE TEMPORARY FUNCTION
   getFont(css STRING)
   RETURNS ARRAY<STRING>
@@ -36,7 +36,8 @@ SELECT
   COUNT(DISTINCT page) / total_page AS pct_subset,
   COUNTIF(fast_fcp>=0.75) / COUNT(0) AS pct_good_fcp_subset,
   COUNTIF(NOT(slow_fcp >=0.25)
-    AND NOT(fast_fcp>=0.75)) / COUNT(0) AS pct_ni_fcp_subset 
+    AND NOT(fast_fcp>=0.75)) / COUNT(0) AS pct_ni_fcp_subset,
+   COUNTIF(slow_fcp >= 0.25) / COUNT(0) AS pct_poor_fcp_subset
 FROM (
   SELECT
     *
