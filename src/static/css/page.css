@@ -191,7 +191,8 @@
 }
 
 .byline.reviewers,
-.byline.translators {
+.byline.translators,
+.byline.analysts {
   font-weight: normal;
 }
 

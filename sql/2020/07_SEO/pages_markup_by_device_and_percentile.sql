@@ -9,7 +9,12 @@ RETURNS STRUCT<
   images_with_alt_blank INT64,
   images_with_alt_missing INT64
 > LANGUAGE js AS '''
-var result = {};
+var result = {
+  images_img_total: 0,
+  images_with_alt_present: 0,
+  images_with_alt_blank: 0,
+  images_with_alt_missing: 0
+};
 try {
     var markup = JSON.parse(markup_string); 
 

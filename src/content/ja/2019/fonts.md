@@ -5,12 +5,13 @@ title: フォント
 description: フォントがどこから読み込まれるか、フォントのフォーマット、フォントの読み込み性能、可変フォント、カラーフォントを網羅した2019年Web AlmanacのFontsの章。
 authors: [zachleat]
 reviewers: [hyperpress, AymenLoukil]
+analysts: [tjmonsi, rviscomi]
 translators: [ksakae]
 discuss: 1761
 results: https://docs.google.com/spreadsheets/d/108g6LXdC3YVsxmX1CCwrmpZ3-DmbB8G_wwgQHX5pn6Q/
 queries: 06_Fonts
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-09-25T00:00:00.000Z
+last_updated: 2020-10-06T00:00:00.000Z
 ---
 
 ## 序章
@@ -165,7 +166,7 @@ Googleは`https://fonts.googleapis.com`でホストされているサードパ�
 ここでのGoogle Fontsの優位性は、同時に驚くべきことであると同時に意外性のないものであった。期待していたという点では予想外でしたが、サービスの圧倒的な人気の高さには驚きました。フォントリクエストの75％というのは驚異的だ。TypeKitは一桁台の遠い2位で、Bootstrapライブラリがさらに遠い3位を占めていました。
 
 {{ figure_markup(
-  caption="ドキュメント内にGoogle Fontsスタイルシートのリンクを含むページの割合 <code>&lt;head&gt;</code> 。",
+  caption="ドキュメント内にGoogle Fontsスタイルシートのリンクを含むページの割合 <code><head></code> 。",
   content="29%",
   classes="big-number"
 )
@@ -178,7 +179,7 @@ Googleは`https://fonts.googleapis.com`でホストされているサードパ�
 - あるいは、超ありえないシナリオにまで踏み込んでみたいのであれば、多くの人が代わりに[HTTP `Link:`ヘッダー](https://developer.mozilla.org/ja/docs/Web/HTTP)を使ってGoogle Fontsを使っているということになるかもしれません。
 
 {{ figure_markup(
-  caption="ドキュメントの最初の子としてGoogle Fontsスタイルシートのリンクを含むページの割合 <code>&lt;head&gt;</code>。",
+  caption="ドキュメントの最初の子としてGoogle Fontsスタイルシートのリンクを含むページの割合 <code><head></code>。",
   content="0.4%",
   classes="big-number"
 )

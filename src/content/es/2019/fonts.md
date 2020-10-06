@@ -5,12 +5,13 @@ title: Fuentes
 description: Capítulo Fuentes del Almanaque Web de 2019 que cubre desde dónde se cargan las fuentes, formatos de fuente, rendimiento de carga de fuentes, fuentes variables y fuentes de color.
 authors: [zachleat]
 reviewers: [hyperpress, AymenLoukil]
+analysts: [tjmonsi, rviscomi]
 translators: [c-torres]
 discuss: 1761
 results: https://docs.google.com/spreadsheets/d/108g6LXdC3YVsxmX1CCwrmpZ3-DmbB8G_wwgQHX5pn6Q/
 queries: 06_Fonts
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-09-25T00:00:00.000Z
+last_updated: 2020-10-06T00:00:00.000Z
 ---
 
 ## Introducción
@@ -165,7 +166,7 @@ Tenga en cuenta que, si bien `preload` sería una buena adición para cargar los
 El dominio de Google Fonts aquí fue simultáneamente sorprendente y no sorprendente. No fue sorprendente porque esperaba que el servicio fuera el más popular y sorprendente por el dominio absoluto de su popularidad. El 75% de las solicitudes de fuentes es asombroso. TypeKit fue un distante segundo lugar de un solo dígito, con la biblioteca Bootstrap representando un tercer lugar aún más distante.
 
 {{ figure_markup(
-  caption="Porcentaje de páginas que incluyen un vínculo de hoja de estilo de Google Fonts en el documento <code>&lt;head&gt;</code>.",
+  caption="Porcentaje de páginas que incluyen un vínculo de hoja de estilo de Google Fonts en el documento <code><head></code>.",
   content="29%",
   classes="big-number"
 )
@@ -178,7 +179,7 @@ Si bien el alto uso de Google Fonts aquí es muy impresionante, también es dign
 - O si queremos irnos al extremo profundo hacia escenarios súper improbables, podría significar que muchas personas están usando Google Fonts con un [HTTP `Link:` header](https://developer.mozilla.org/es/docs/Web/HTTP/Headers/Link) en su lugar.
 
 {{ figure_markup(
-  caption="Porcentaje de páginas que incluyen un vínculo de hoja de estilo de Google Fonts como primer elemento secundario del documento <code>&lt;head&gt;</code>.",
+  caption="Porcentaje de páginas que incluyen un vínculo de hoja de estilo de Google Fonts como primer elemento secundario del documento <code><head></code>.",
   content="0.4%",
   classes="big-number"
 )
