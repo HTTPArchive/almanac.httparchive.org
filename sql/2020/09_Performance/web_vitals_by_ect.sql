@@ -2,16 +2,16 @@
 # WebVitals by effective connection type
 
 CREATE TEMP FUNCTION IS_GOOD (good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
-  good / (good + needs_improvement + poor) >= 0.75
+  SAFE_DIVIDE(good, (good + needs_improvement + poor)) >= 0.75
 );
 
 CREATE TEMP FUNCTION IS_NI (good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
-  good / (good + needs_improvement + poor) < 0.75
-  AND poor / (good + needs_improvement + poor) < 0.25
+  SAFE_DIVIDE(good, (good + needs_improvement + poor)) < 0.75 AND 
+  SAFE_DIVIDE(poor, (good + needs_improvement + poor)) < 0.25
 );
 
 CREATE TEMP FUNCTION IS_POOR (good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
-  poor / (good + needs_improvement + poor) >= 0.25
+  SAFE_DIVIDE(poor, (good + needs_improvement + poor)) >= 0.25
 );
 
 CREATE TEMP FUNCTION IS_NON_ZERO (good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (

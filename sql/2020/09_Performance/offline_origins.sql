@@ -12,6 +12,5 @@ FROM (
   FROM
     `chrome-ux-report.materialized.metrics_summary`
   WHERE
-    date >= '2020-09-01'
-    AND date <= "2020-09-30"
+    date = '2020-09-01'
 )
