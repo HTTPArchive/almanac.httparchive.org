@@ -5,12 +5,13 @@ title: SEO
 description: コンテンツ、メタタグ、インデクサビリティ、リンク、速度、構造化データ、国際化、SPA、AMP、セキュリティをカバーする2019 Web AlmanacのSEOの章。
 authors: [ymschaap, rachellcostello, AVGP]
 reviewers: [clarkeclark, andylimn, AymenLoukil, catalinred, mattludwig]
+analysts: [ymschaap]
 translators: [MSakamaki]
 discuss: 1765
 results: https://docs.google.com/spreadsheets/d/1uARtBWwz9nJOKqKPFinAMbtoDgu5aBtOhsBNmsCoTaA/
 queries: 10_SEO
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-09-21T00:00:00.000Z
+last_updated: 2020-10-06T00:00:00.000Z
 ---
 
 ## 導入
@@ -86,7 +87,7 @@ SEOとアクセシビリティのための`H1`と見出しの処理に関する�
 #### ページのタイトル
 
 {{ figure_markup(
-  caption="<code>&lt;title&gt;</code> タグを含むモバイルページの割合。",
+  caption="<code><title></code> タグを含むモバイルページの割合。",
   content="97%",
   classes="big-number"
 )

@@ -5,12 +5,13 @@ title: JavaScript
 description: JavaScript chapter of the 2019 Web Almanac covering how much JavaScript we use on the web, compression, libraries and frameworks, loading, and source maps.
 authors: [housseindjirdeh]
 reviewers: [obto, paulcalvano, mathiasbynens]
+analysts: [rviscomi]
 translators: []
 discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/
 queries: 01_JavaScript
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-09-25T00:00:00.000Z
+last_updated: 2020-10-06T00:00:00.000Z
 ---
 
 ## Introduction

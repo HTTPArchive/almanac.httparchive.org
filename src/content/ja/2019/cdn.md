@@ -5,12 +5,13 @@ title: CDN
 description: CDNの採用と使用法、RTTとTLSの管理、HTTP/2の採用、キャッシング、および共通ライブラリとコンテンツCDNをカバーする2019 Web AlmanacのCDNの章。
 authors: [andydavies, colinbendell]
 reviewers: [yoavweiss, paulcalvano, pmeenan, enygren]
+analysts: [raghuramakrishnan71, rviscomi]
 translators: [ksakae]
 discuss: 1772
 results: https://docs.google.com/spreadsheets/d/1Y7kAxjxUl8puuTToe6rL3kqJLX1ftOb0nCcD8m3lZBw/
 queries: 17_CDN
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-09-25T00:00:00.000Z
+last_updated: 2020-10-06T00:00:00.000Z
 ---
 
 ## 導入

@@ -5,12 +5,13 @@ title: Markup
 description: Markup chapter of the 2019 Web Almanac covering elements used, custom elements, value, products, and common use cases.
 authors: [bkardell]
 reviewers: [zcorpan, tomhodgins, matthewp]
+analysts: [rviscomi]
 translators: []
 discuss: 1758
 results: https://docs.google.com/spreadsheets/d/1WnDKLar_0Btlt9UgT53Giy2229bpV4IM2D_v6OM_WzA/
 queries: 03_Markup
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-09-21T00:00:00.000Z
+last_updated: 2020-10-06T00:00:00.000Z
 ---
 
 ## Introduction

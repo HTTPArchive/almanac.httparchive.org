@@ -5,12 +5,13 @@ title: 无障碍可访问性
 description: 2019 Web Almanac 网络年鉴的无障碍易访问性章节，涵盖易阅读、媒体、易于导航和与辅助技术的兼容性。
 authors: [nektarios-paisios, obto, kleinab]
 reviewers: [ljme]
+analysts: [dougsillars, rviscomi, obto]
 translators: [chengxicn]
 discuss: 1764
 results: https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/
 queries: 09_Accessibility
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-09-21T00:00:00.000Z
+last_updated: 2020-10-06T00:00:00.000Z
 ---
 
 ## 介绍
