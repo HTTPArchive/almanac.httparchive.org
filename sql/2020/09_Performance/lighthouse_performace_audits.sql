@@ -26,7 +26,7 @@ SELECT
   COUNTIF(audits.score > 0) AS num_pages,
   COUNT(0) AS total,
   COUNTIF(audits.score > 0) / COUNT(0) AS pct,
-  APPROX_QUANTILES(audits.weight, 100)[OFFSET(50)] AS median_weight,
+  APPROX_QUANTILES(audits.weight, 1000)[OFFSET(500)] AS median_weight,
   MAX(audits.audit_group) AS audit_group,
   MAX(audits.description) AS description
 FROM
