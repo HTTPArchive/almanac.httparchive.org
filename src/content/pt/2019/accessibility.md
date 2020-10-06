@@ -5,6 +5,7 @@ title: Acessibilidade
 description: Capítulo de acessibilidade do Web Almanac de 2019 cobrindo facilidade de leitura, mídia, facilidade de navegação e compatibilidade com tecnologias assistivas.
 authors: [nektarios-paisios, obto, kleinab]
 reviewers: [ljme]
+analysts: [dougsillars, rviscomi, obto]
 translators: [eduqg]
 discuss: 1764
 results: https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/
