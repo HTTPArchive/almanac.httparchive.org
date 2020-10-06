@@ -7,12 +7,6 @@
 {% block styles %}
 {{ super() }}
 <style nonce="{{ csp_nonce() }}">
-.main {
-  margin-bottom: 100px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
 .contents-wrapper {
   display: grid;
   grid-template-areas: 'parts characters';
@@ -82,10 +76,6 @@
   .contents-wrapper {
     display: block;
   }
-  .main {
-    padding-left: 0;
-    padding-right: 0;
-  }
   .parts {
     max-width: 100%;
   }
@@ -151,7 +141,7 @@
       </section>
     </div>
 
-    {% if ebook_exists(lang, year) %}
+    {% if ebook_size_in_mb > 0 %}
     <section class="part">
       <h2 id="ebook" class="part-name"><a href="#ebook" class="anchor-link">{{ self.ebook_title() }}</a></h2>
       <div class="chapters">

@@ -5,23 +5,20 @@ title: マークアップ
 description: 使われている要素、カスタム要素、価値、製品、及び一般的なユースケースについて抑えてある 2019 Web Almanac マークアップの章
 authors: [bkardell]
 reviewers: [zcorpan, tomhodgins, matthewp]
+analysts: [rviscomi]
 translators: [MSakamaki]
 discuss: 1758
 results: https://docs.google.com/spreadsheets/d/1WnDKLar_0Btlt9UgT53Giy2229bpV4IM2D_v6OM_WzA/
 queries: 03_Markup
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-05-19T00:00:00.000Z
+last_updated: 2020-10-06T00:00:00.000Z
 ---
 
 ## 導入
 
-2005年にIan "Hixie" Hicksonはこれまでの研究に基づいた[マークアップデータの分析](https://web.archive.org/web/20060203035414/http://code.google.com/webstats/index.html)を投稿しました。
-この作業のほとんどは、クラス名を調査して、内々で開発者が採用しているセマンティクスを確認し、標準化する意味があるかの確認をすることが目的でした。
-この研究の一部は、HTML5の新要素の参考として役に立ちました。
+2005年にIan "Hixie" Hicksonはこれまでの研究に基づいた[マークアップデータの分析](https://web.archive.org/web/20060203035414/http://code.google.com/webstats/index.html)を投稿しました。この作業のほとんどは、クラス名を調査して、内々で開発者が採用しているセマンティクスを確認し、標準化する意味があるかの確認をすることが目的でした。この研究の一部は、HTML5の新要素の参考として役に立ちました。
 
-14年すぎて、新しい見方をする時が来ました。
-以降、[カスタム要素(Custom Elements)](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements)と[Extensible Web Manifesto](https://extensiblewebmanifesto.org/)の導入により、開発者は要素そのものの空間を探し、標準化団体が[辞書編集者のようになる](https://bkardell.com/blog/Dropping-The-F-Bomb-On-Standards.html)ことで、牛の通り道を舗装する(pave the cowpaths)よりよい方法を見つけることを推奨しています。
-様々なものに使われる可能性があるCSSクラス名とは異なり、非標準の*要素*は作成者が要素であることを意識しているため、さらに確実なものとなります。
+14年すぎて、新しい見方をする時が来ました。以降、[カスタム要素(Custom Elements)](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements)と[Extensible Web Manifesto](https://extensiblewebmanifesto.org/)の導入により、開発者は要素そのものの空間を探し、標準化団体が[辞書編集者のようになる](https://bkardell.com/blog/Dropping-The-F-Bomb-On-Standards.html)ことで、牛の通り道を舗装する(pave the cowpaths)よりよい方法を見つけることを推奨しています。様々なものに使われる可能性があるCSSクラス名とは異なり、非標準の*要素*は作成者が要素であることを意識しているため、さらに確実なものとなります。
 
  2019年7月の時点で、HTTP Archiveは、約440万のデスクトップホームページと約530万のモバイルホームページのDOMで使用されているすべての*要素*名の収集を開始しました。 _([方法論](./methodology)の詳細を御覧ください)_
 
@@ -31,28 +28,17 @@ last_updated: 2020-05-19T00:00:00.000Z
 
 各ページの要素の名前は、JavaScriptの初期化後DOMより収集されました。
 
-現実の要素出現数を確認することは標準の要素であっても有用ではありません、検出されたすべての要素の約25%は`<div>`です。
-そして、約17%が`<a>`で、11%が`<span>`となっており、これらは10%以上を占める唯一の要素たちです。
-言語は[一般的にこのようなもの](https://www.youtube.com/watch?v=fCn8zs912OE)ですが、これと比較してみると驚くほど少ない用語が使われています。
-さらに、非標準の要素の取り込みを検討してみると、１つのサイトが特定の要素を1000回も使用しているために、とても人気があるように見えてしまい、大きな誤解を招く可能性があります。
+現実の要素出現数を確認することは標準の要素であっても有用ではありません、検出されたすべての要素の約25%は`<div>`です。そして、約17%が`<a>`で、11%が`<span>`となっており、これらは10%以上を占める唯一の要素たちです。言語は[一般的にこのようなもの](https://www.youtube.com/watch?v=fCn8zs912OE)ですが、これと比較してみると驚くほど少ない用語が使われています。さらに、非標準の要素の取り込みを検討してみると、１つのサイトが特定の要素を1000回も使用しているために、とても人気があるように見えてしまい、大きな誤解を招く可能性があります。
 
 そのような方法を取らず、私達はHixieの元の研究のようにホームページに各要素が少なくとも1回は含まれているサイトの数に着目しました。
 
-<p class="note">
-注意: この方法は潜在的なバイアスが無いとは言い切れません。
-人気のある製品は複数のサイトで使われています。これにより個々の作成者は意識していない非標準のマークアップが導入されるでしょう。
-したがって、この方法は一般的なニーズに対応するのと同じように、作成者の直接的な知識や意識的な採用を意味しないことに注意する必要があります。
-調査中に、このような例はいくつか見つかりました。
-</p>
+<p class="note">注意: この方法は潜在的なバイアスが無いとは言い切れません。人気のある製品は複数のサイトで使われています。これにより個々の作成者は意識していない非標準のマークアップが導入されるでしょう。したがって、この方法は一般的なニーズに対応するのと同じように、作成者の直接的な知識や意識的な採用を意味しないことに注意する必要があります。調査中に、このような例はいくつか見つかりました。</p>
 
 ## 上位の要素と概説
 
-2005年、Hixieはページ中に最もよく使用されていて、頻度の少ない上位要素を調査しました。
-トップ３は `html`、`head`、`body`でした、これらはオプションなので省略されてもパーサーによって作成されており、彼は興味深いと述べています。
-パーサーによる解析後のDOMを使って調査すると、データは普遍的に表示されます。なので、４番目に使用頻度の高い要素からはじめました。
-以下は、その時点から現在までのデータの比較です。(ここでは面白いので出現数を含めました)
+2005年、Hixieはページ中に最もよく使用されていて、頻度の少ない上位要素を調査しました。トップ３は `html`、`head`、`body`でした、これらはオプションなので省略されてもパーサーによって作成されており、彼は興味深いと述べています。パーサーによる解析後のDOMを使って調査すると、データは普遍的に表示されます。なので、４番目に使用頻度の高い要素からはじめました。以下は、その時点から現在までのデータの比較です。(ここでは面白いので出現数を含めました)
 
-<figure id="fig1" data-markdown="1">
+<figure data-markdown="1">
 
 2005 (サイト毎) | 2019 (サイト毎) | 2019 (出現数)
 -- | -- | --
@@ -65,40 +51,46 @@ table | script | script
 td | img | p
 tr | span | option
 
-<figcaption>図1. 2005年から2019年までの上位要素の比較。</figcaption>
+<figcaption>{{ figure_link(caption="2005年から2019年までの上位要素の比較。") }}</figcaption>
 </figure>
 
 ### ページ毎の要素
 
-<figure id="fig2">
-  <img src="/static/images/2019/markup/hixie_elements_per_page.png" alt="Hixieによる2005年の要素頻度の分布" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="318">
-    <div id="fig2-description" class="visually-hidden">要素数が増加するにつれて相対頻度の分布が減少することを示すグラフ</div>
-  <figcaption id="fig2-caption">図2. Hixieによる2005年の要素頻度の分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="hixie_elements_per_page.png",
+  caption="Hixieによる2005年の要素頻度の分布。",
+  description="要素数が増加するにつれて相対頻度の分布が減少することを示すグラフ",
+  width=600,
+  height=318
+  )
+}}
 
-<figure id="fig3">
-  <a href="/static/images/2019/markup/fig3.png">
-    <img src="/static/images/2019/markup/fig3.png" alt="図3. 2019年の要素頻度" aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=2141583176&amp;format=interactive">
-  </a>
-  <div id="fig3-description" class="visually-hidden">約2,500ページからなるグラフは、約30個の要素から開始します。そして2,000個の要素を含む327ページまで直線的に追従する前の283個の要素を持つ6,876ページあたりでピークに達します。</div>
-  <figcaption id="fig3-caption">図3. 2019年の要素頻度。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig3.png",
+  caption="2019年の要素頻度。",
+  description="約2,500ページからなるグラフは、約30個の要素から開始します。そして2,000個の要素を含む327ページまで直線的に追従する前の283個の要素を持つ6,876ページあたりでピークに達します。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=2141583176&format=interactive"
+  )
+}}
 
-図2の2005年のHixieのレポートと図3の最新データを比較すると、DOMツリーの平均サイズが大きくなっていることがわかります。
+図3.2の2005年のHixieのレポートと図3.3の最新データを比較すると、DOMツリーの平均サイズが大きくなっていることがわかります。
 
-<figure id="fig4">
-  <img src="/static/images/2019/markup/hixie_element_types_per_page.png" alt="図4. 2005年にHixieが分析したページ毎の要素タイプのヒストグラム" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="320">
-   <div id="fig4-description" class="visually-hidden">相対周波数が19個の要素点の周りで釣鐘曲線となっていることを示すグラフ</div>
-  <figcaption id="fig4-caption">図4. 2005年にHixieが分析したページ毎の要素タイプのヒストグラム。</figcaption>
-</figure>
+{{ figure_markup(
+  image="hixie_element_types_per_page.png",
+  caption="2005年にHixieが分析したページ毎の要素タイプのヒストグラム。",
+  description="相対周波数が19個の要素点の周りで釣鐘曲線となっていることを示すグラフ",
+  width=600,
+  height=320
+  )
+}}
 
-<figure id="fig5">
-    <a href="/static/images/2019/markup/fig5.png">
-      <img src="/static/images/2019/markup/fig5.png" alt="図5. 2019年時点でのページ毎の要素タイプのヒストグラム。" aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1500675289&amp;format=interactive">
-    </a>
-    <div id="fig5-description" class="visually-hidden">308,168,000のサイトで使用されている平均要素数を示すグラフは、マークされた30個の要素の周りで釣鐘曲線になっています。</div>
-  <figcaption id="fig5-caption">図5. 2019年時点でのページ毎の要素タイプのヒストグラム。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig5.png",
+  caption="2019年時点でのページ毎の要素タイプのヒストグラム。",
+  description="308,168,000のサイトで使用されている平均要素数を示すグラフは、マークされた30個の要素の周りで釣鐘曲線になっています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1500675289&format=interactive"
+  )
+}}
 
 ページあたりの要素の種類の平均数と、ユニークな要素数の最大値の両方が増加していることがわかります。
 
@@ -116,8 +108,7 @@ tr | span | option
 * 54個のSVG要素
 * 23個のMathML要素
 
-デスクトップのデータセットでは、検出された4,834個の非標準要素のデータを収集しました。
-次がそれに当たります。
+デスクトップのデータセットでは、検出された4,834個の非標準要素のデータを収集しました。次がそれに当たります。
 
 * 155個（3％）は、非常に高い確率でマークアップまたはエスケープの例外として識別できます（解析されたタグ名にマークアップが破損していることを暗示する文字が含まれていました）
 * 341個（7％）はXMLスタイルのコロン名前空間を使っています（ただし、HTMLとしてはXML名前空間は使っていません）
@@ -129,31 +120,34 @@ tr | span | option
 
 <p class="note">注意：この結果は、それぞれのの作成者がマークアップを手動で作成しているのではなく、何らかの製品を使っている為と考えられます。</p>
 
-<figure id="fig6">
-    <a href="/static/images/2019/markup/fig6.png">
-      <img src="/static/images/2019/markup/fig6.png" alt="図6.最も頻繁に使われている非推奨の要素。" aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1304237557&amp;format=interactive">
-    </a>
-    <div id="fig6-description" class="visually-hidden">デスクトップの8.31％（モバイルの7.96％）で使用中の「center」、デスクトップサイトの8.01％（モバイルの7.38％）で使用中の「font」、デスクトップサイトの1.07％（モバイルの1.20％）で使用中の「marquee」 、デスクトップサイトの0.71％（モバイルの0.55％）で使用中の「nobr」、デスクトップサイトの0.53％（モバイルの0.47％）で使用中の「big」、デスクトップサイトの0.39%（モバイルの0.35％）で使用中の「frameset」、デスクトップサイトの0.39％（モバイルの0.35％）による「frame」の使用、デスクトップサイトの0.33％（モバイルの0.27％）による「strike」、デスクトップサイトの0.25％（モバイルの0.27％）で使用中の「noframes」を示す棒グラフ。</div>
-  <figcaption id="fig6-caption">図6.最も頻繁に使われている非推奨の要素。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig6.png",
+  caption="最も頻繁に使われている非推奨の要素。",
+  description="デスクトップの8.31％（モバイルの7.96％）で使用中の「center」、デスクトップサイトの8.01％（モバイルの7.38％）で使用中の「font」、デスクトップサイトの1.07％（モバイルの1.20％）で使用中の「marquee」 、デスクトップサイトの0.71％（モバイルの0.55％）で使用中の「nobr」、デスクトップサイトの0.53％（モバイルの0.47％）で使用中の「big」、デスクトップサイトの0.39%（モバイルの0.35％）で使用中の「frameset」、デスクトップサイトの0.39％（モバイルの0.35％）による「frame」の使用、デスクトップサイトの0.33％（モバイルの0.27％）による「strike」、デスクトップサイトの0.25％（モバイルの0.27％）で使用中の「noframes」を示す棒グラフ。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1304237557&format=interactive"
+  )
+}}
 
-上記の図6は、最も頻繁に使われている非推奨の要素トップ10を表しています。
+上記の図3.6は、最も頻繁に使われている非推奨の要素トップ10を表しています。
 これらは非常に小さな数値に見えますが、この観点は重要です。
 
 ## 価値観と使用法
 
 要素の使い方に関する数値（標準、非推奨、またはカスタム）を議論する為には、まず何らかの観点を確立する必要があります。
 
-<figure id="fig7">
-    <a href="/static/images/2019/markup/fig7_full.png">
-      <img src="/static/images/2019/markup/fig7.png" alt="図7.トップ150の要素。" aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="778" data-width="600" data-height="778" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1694360298&amp;format=interactive">
-    </a>
-    <div id="fig7-description" class="visually-hidden">使用される要素を減少の割合で降順で並べた棒グラフ：html、head、body、titleは使用率99％を超えるています、meta、a、divは98％を超える使用率です、link、script、img、spanが90％を超 えています、ul、li、p、style、input、br、formなどが70%を超えています、h2、h1、iframe、h3、button、footer、header、navは50％を超えています、50％未満からほぼ0％に低下するその他のあまり知られていないタグもあります。</div>
-  <figcaption id="fig7-caption">図7.トップ150の要素（<a href="/static/images/2019/markup/fig7_full.png">詳細</a>）。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig7_full.png",
+  caption='トップ150の要素（<a href="/static/images/2019/markup/fig7_full.png">詳細</a>）。',
+  description="使用される要素を減少の割合で降順で並べた棒グラフ：html、head、body、titleは使用率99％を超えるています、meta、a、divは98％を超える使用率です、link、script、img、spanが90％を超 えています、ul、li、p、style、input、br、formなどが70%を超えています、h2、h1、iframe、h3、button、footer、header、navは50％を超えています、50％未満からほぼ0％に低下するその他のあまり知られていないタグもあります。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1694360298&format=interactive",
+  width=600,
+  height=778,
+  data_width=600,
+  data_height=778
+  )
+}}
 
-上記の図7は、ページ中に現れたかどうかでカウントされた要素のトップ150を表示しています。
-利用率がどのように落ちていくかに着目してください。
+上記の図3.7は、ページ中に現れたかどうかでカウントされた要素のトップ150を表示しています。利用率がどのように落ちていくかに着目してください。
 
 ページの90%以上で使われている要素は11個しかありません。
 
@@ -189,68 +183,39 @@ tr | span | option
 
 また、ページ中に5％以上使われている要素は40個のみでした。
 
-`<video>`でさえ、ぎりぎりその範囲内に収まっていません。
-デスクトップデータセット内の4％という結果で現れています（モバイルでは3％）。
-この数字はとても低いように聞こえますが、実のところ4％はかなり人気だったりします。
-事実、ページ中1％以上の要素は98個しかありません。
+`<video>`でさえ、ぎりぎりその範囲内に収まっていません。デスクトップデータセット内の4％という結果で現れています（モバイルでは3％）。この数字はとても低いように聞こえますが、実のところ4％はかなり人気だったりします。事実、ページ中1％以上の要素は98個しかありません。
 
 これらの要素の分布を抑え、どの要素が1％以上使われているのかを見るのは興味深いことです。
 
-<figure id="fig8">
-  <a href="https://rainy-periwinkle.glitch.me/scatter/html">
-    <img src="/static/images/2019/markup/element_categories.png" alt="図8. 標準化によって人気になった要素の分類" aria-labelledby="fig8-caption" width="600" height="1065">
-  </a>
-  <div id="fig8-description" class="visually-hidden">HTML、SVG、Math MLを示す散布図は比較的少数のタグを使用しますが、非標準要素（「in global ns」、「dasherized」、「colon」に分けられる）ははるかに広がっています。</div>
-  <figcaption id="fig8-caption">図8. 標準化によって人気になった要素の分類。</figcaption>
-</figure>
+{{ figure_markup(
+  link="https://rainy-periwinkle.glitch.me/scatter/html",
+  image="element_categories.png",
+  caption="標準化によって人気になった要素の分類。",
+  description="HTML、SVG、Math MLを示す散布図は比較的少数のタグを使用しますが、非標準要素（「in global ns」、「dasherized」、「colon」に分けられる）ははるかに広がっています。",
+  width=600,
+  height=1065
+  )
+}}
 
-図8は、各要素の順位とそれらがどのカテゴリに属するかを示しています。
-データポイントを単純に見ることができるように、個別の塊へ分割しました（そうしなければ、全データを表現するために十分なピクセル領域がありませんでした）、これは人気を一つの「線」として表します。
-一番下が最も一般的で、上が一般的では無いものです。
-矢印は、ページの1％以上に表示される要素の終端を指しています。
+図3.8は、各要素の順位とそれらがどのカテゴリに属するかを示しています。データポイントを単純に見ることができるように、個別の塊へ分割しました（そうしなければ、全データを表現するために十分なピクセル領域がありませんでした）、これは人気を一つの「線」として表します。一番下が最も一般的で、上が一般的では無いものです。矢印は、ページの1％以上に表示される要素の終端を指しています。
 
-ここでは2つのことを確認できます。
-まず、使用率が1％を超える要素の塊は、HTMLだけではありません。実際、*最も人気のある100個の要素のうち27個はHTMLではなく*SVGです！ 
-さらに、*その隙間または近くには非標準のタグもあります*！
-そして多くのHTML要素がページ毎に1％未満として現れている事に注意してください。
+ここでは2つのことを確認できます。まず、使用率が1％を超える要素の塊は、HTMLだけではありません。実際、*最も人気のある100個の要素のうち27個はHTMLではなく*SVGです！ さらに、*その隙間または近くには非標準のタグもあります*！そして多くのHTML要素がページ毎に1％未満として現れている事に注意してください。
 
-では、これらのページで1％の利用率となっている要素はすべて無駄ですか？、いいえ絶対にあえりえません。
-これが視点を確立することが重要な理由です。
-Webには約20億のWebサイトがあります。
-データセットのすべてのWebサイトの0.1％に何かが表示される時、これはWeb全体で*約200万のWebサイト*を表していると推定できます。
-0.01％でさえ_20万のサイト_を推定できます。
-これは、良い思想では無い古い要素であったとしても、めったに要素のサポートを打ち切らない理由でもあります。
-数十万または数百万のサイトを壊すことは、ブラウザベンダーが簡単にできることではありません。
+では、これらのページで1％の利用率となっている要素はすべて無駄ですか？、いいえ絶対にあえりえません。これが視点を確立することが重要な理由です。Webには約20億のWebサイトがあります。データセットのすべてのWebサイトの0.1％に何かが表示される時、これはWeb全体で*約200万のWebサイト*を表していると推定できます。0.01％でさえ_20万のサイト_を推定できます。これは、良い思想では無い古い要素であったとしても、めったに要素のサポートを打ち切らない理由でもあります。数十万または数百万のサイトを壊すことは、ブラウザベンダーが簡単にできることではありません。
 
-ほとんどの要素は、ネイティブの物も含めてページの1％未満として現れていますが、それでも非常に重要であり成功しています。
-たとえば`<code>`は私が頻繁に使用する要素です。 これは間違いなく便利で重要ですが、ページの0.57％でしか使われていません。
-この部分は私達の測定対象に基づいているため偏っています。
-通常、ホームページは特定の種類のもの（たとえば`<code>` など）が含まれる可能性は低いでしょう。
-例えば、ホームページでは見出し、段落、リンク、リスト以外はあまり一般的ではないでしょう。
-ただし、データには一般的に価値があります。
+ほとんどの要素は、ネイティブの物も含めてページの1％未満として現れていますが、それでも非常に重要であり成功しています。たとえば`<code>`は私が頻繁に使用する要素です。 これは間違いなく便利で重要ですが、ページの0.57％でしか使われていません。この部分は私達の測定対象に基づいているため偏っています。通常、ホームページは特定の種類のもの（たとえば`<code>` など）が含まれる可能性は低いでしょう。例えば、ホームページでは見出し、段落、リンク、リスト以外はあまり一般的ではないでしょう。ただし、データには一般的に価値があります。
 
-また、著者が定義した（ネイティブではない）`.shadowRoot`を含むページに関する情報も収集しました。
-デスクトップページの約0.22％とモバイルページの約0.15％にシャドウルートが確認できています。
-数が少ないように聞こえるかもしれませんが、これはモバイルデータセット内の約6.5kサイトとデスクトップ上の10kサイトであり、いくつかのHTML要素よりも多くなっています。
-たとえば、`<summary>` はデスクトップ上で同レベルで利用されており、146番目に人気のある要素です。
-`<datalist>` はホームページの0.04％に使われており、201番目に人気のある要素です。
+また、著者が定義した（ネイティブではない）`.shadowRoot`を含むページに関する情報も収集しました。デスクトップページの約0.22％とモバイルページの約0.15％にシャドウルートが確認できています。数が少ないように聞こえるかもしれませんが、これはモバイルデータセット内の約6.5kサイトとデスクトップ上の10kサイトであり、いくつかのHTML要素よりも多くなっています。たとえば、`<summary>` はデスクトップ上で同レベルで利用されており、146番目に人気のある要素です。`<datalist>` はホームページの0.04％に使われており、201番目に人気のある要素です。
 
-実際、HTMLで定義されている要素の15％以上は、デスクトップデータセットのトップ200から圏外です。
-`<meter>`は、HTMLがLiving Standardモデルに移行する前、2004-2011頃の最も人気のない「HTML5時代」の要素です。
-そしてこの要素の人気は1,000番目です。
-最近導入された要素（2016年4月）である`<slot>`の人気は1,400番目となっています。
+実際、HTMLで定義されている要素の15％以上は、デスクトップデータセットのトップ200から圏外です。`<meter>`は、HTMLがLiving Standardモデルに移行する前、2004-2011頃の最も人気のない「HTML5時代」の要素です。そしてこの要素の人気は1,000番目です。最近導入された要素（2016年4月）である`<slot>`の人気は1,400番目となっています。
 
 ## 大量データ：実際のWeb上の実際のDOM
 
 データセット中のネイティブ/標準機能をどのように使っているかと言う観点を念頭に置いて、非標準のものについて話しましょう。
 
-測定したほとんどの要素は単一のWebページでのみ使用されると思われるかもしれませんが、実際には5,048個の要素すべてが複数のページに出現しています。
-データセット中、最も出現数が少ない要素は15ページに存在しています。
-そして、約5分の1は100ページ以上に存在します。
-約7％は1,000ページ以上に存在します。
+測定したほとんどの要素は単一のWebページでのみ使用されると思われるかもしれませんが、実際には5,048個の要素すべてが複数のページに出現しています。データセット中、最も出現数が少ない要素は15ページに存在しています。そして、約5分の1は100ページ以上に存在します。約7％は1,000ページ以上に存在します。
 
-データ分析を支援するために[Glitchで小さなツール](https://rainy-periwinkle.glitch.me)を共同で作りました。
-このツールはあなたも使うことができます。そして、あなたの観測した内容をパーマリンクと共に[@HTTPArchive](https://twitter.com/HTTPArchive)へシェアしてください。（Tommy Hodginsは、同じように洞察に使える[CLIツール](https://github.com/tomhodgins/hade)を作成しています。）
+データ分析を支援するために[Glitchで小さなツール](https://rainy-periwinkle.glitch.me)を共同で作りました。このツールはあなたも使うことができます。そして、あなたの観測した内容をパーマリンクと共に[@HTTPArchive](https://twitter.com/HTTPArchive)へシェアしてください。（Tommy Hodginsは、同じように洞察に使える[CLIツール](https://github.com/tomhodgins/hade)を作成しています。）
 
 それでは、いくつかのデータを見ていきましょう。
 
@@ -274,32 +239,27 @@ Webには約20億のWebサイトがあります。
 
 これらを5％未満のネイティブHTML要素と比べてみましょう。
 
-<figure id="fig9">
-  <a href="/static/images/2019/markup/fig9.png">
-    <img src="/static/images/2019/markup/fig9.png" alt="図9. 採用率が5％以下での、製品固有とネイティブで人気の要素。" aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="370" data-width="600" data-height="370" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=962404708&amp;format=interactive">
-  </a>
-  <div id="fig9-description" class="visually-hidden">videoは184,149サイト、canvasは108,355、ym-measure（製品固有のタグ）は52,146、コードは25,075、g:plusone（製品固有のタグ）は21,098、fb:like（製品固有のタグ）は12,773、fb:like-box（製品固有のタグ）は6,792、app-root（製品固有のタグ）は8,468、summaryは6,578、templateは5,913、meterは0を示す棒グラフ。</div>
-  <figcaption id="fig9-caption">図9. 採用率が5％以下での、製品固有とネイティブで人気の要素。</figcaption>
-</figure>
-
+{{ figure_markup(
+  image="fig9.png",
+  caption="採用率が5％以下での、製品固有とネイティブで人気の要素。",
+  description="videoは184,149サイト、canvasは108,355、ym-measure（製品固有のタグ）は52,146、コードは25,075、g:plusone（製品固有のタグ）は21,098、fb:like（製品固有のタグ）は12,773、fb:like-box（製品固有のタグ）は6,792、app-root（製品固有のタグ）は8,468、summaryは6,578、templateは5,913、meterは0を示す棒グラフ。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=962404708&format=interactive",
+  width=600,
+  height=370,
+  data_width=600,
+  data_height=370
+  )
+}}
 
 このような興味深い洞察を一日中行うことができます。
 
-これは少々違うものですが、人気のある要素には製品のエラーによって引き起こされる可能性もあります。
-たとえば1,000を超えるサイトで`<pclass="ddc-font-size-large">` が出現しています。
-しかしこれは、これは人気のある"as-a-service"製品がスペースを取り忘れているために発生していました。
-幸いなことに、このエラーは調査中に報告されて、すぐに修正されました。
+これは少々違うものですが、人気のある要素には製品のエラーによって引き起こされる可能性もあります。たとえば1,000を超えるサイトで`<pclass="ddc-font-size-large">` が出現しています。しかしこれは、これは人気のある"as-a-service"製品がスペースを取り忘れているために発生していました。幸いなことに、このエラーは調査中に報告されて、すぐに修正されました。
 
 Hixieはオリジナルの論文で次のように述べています。
 
 <blockquote>この非標準マークアップに対して楽天的でいられる間は少なくとも、これらの要素にはベンダープレフィックスを明確に利用しているため、これは良い考えだと言えます。これにより、標準化団体が新しく作る要素と属性が、それらと衝突する可能性を大幅に減らすことができます。</blockquote>
 
-ただし、上で述べた通りこれは一般的ではありません。
-記録できた非標準要素の25％以上は、グローバル名前空間の汚染を避けるために、いかなる名前空間戦略も使っていません。
-例えば、[モバイルデータセットにある1157個の要素一覧](https://rainy-periwinkle.glitch.me/permalink/53567ec94b328de965eb821010b8b5935b0e0ba316e833267dc04f1fb3b53bd5.html)を表示します。
-見ての通り、これらの多くは曖昧な名前やつづりの間違など、問題がない可能性があります。
-しかし、少なくともこれはいくつかの挑むべき課題を示しています。
-例えば、 `<toast>`（Google社員が`<std-toast>`として最近[提案しようとした仕様](https://www.chromestatus.com/feature/5674896879255552)）がこの一覧に含まれています。
+ただし、上で述べた通りこれは一般的ではありません。記録できた非標準要素の25％以上は、グローバル名前空間の汚染を避けるために、いかなる名前空間戦略も使っていません。例えば、[モバイルデータセットにある1157個の要素一覧](https://rainy-periwinkle.glitch.me/permalink/53567ec94b328de965eb821010b8b5935b0e0ba316e833267dc04f1fb3b53bd5.html)を表示します。見ての通り、これらの多くは曖昧な名前やつづりの間違など、問題がない可能性があります。しかし、少なくともこれはいくつかの挑むべき課題を示しています。例えば、 `<toast>`（Google社員が`<std-toast>`として最近[提案しようとした仕様](https://www.chromestatus.com/feature/5674896879255552)）がこの一覧に含まれています。
 
 それほど難しくない一般的な要素もいくつかあります。
 
@@ -309,27 +269,23 @@ Hixieはオリジナルの論文で次のように述べています。
 
 前回のチャートに今回のデータを配置すると、次のようになります（改めて、データセットに基づいて少しだけ変わっています）
 
-<figure id="fig10">
-    <a href="/static/images/2019/markup/fig10.png">
-      <img src="/static/images/2019/markup/fig10.png" alt="図10. 採用率が5％以下での、製品固有のコンテキストまたはネイティブで人気のあるその他の要素。" aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="370" data-width="600" data-height="370" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=468373762&amp;format=interactive">
-    </a>
-    <div id="fig10-description" class="visually-hidden">videoは184,149サイトで使用され、canvasは108,355、ym-measureは52,416、codeは25,075、g:plusoneは21,098、db:likeは12,773、cufonは10,523、ymapsは8,303、fb:like-boxは6,972、app-rootが8,468、summaryが6,578、templateが5,913、meterが0を示す棒グラフ。</div>
-  <figcaption id="fig10-caption">図10. 採用率が5％以下での、製品固有のコンテキストまたはネイティブで人気のあるその他の要素。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig10.png",
+  caption="採用率が5％以下での、製品固有のコンテキストまたはネイティブで人気のあるその他の要素。",
+  description="videoは184,149サイトで使用され、canvasは108,355、ym-measureは52,416、codeは25,075、g:plusoneは21,098、db:likeは12,773、cufonは10,523、ymapsは8,303、fb:like-boxは6,972、app-rootが8,468、summaryが6,578、templateが5,913、meterが0を示す棒グラフ。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=468373762&format=interactive",
+  width=600,
+  height=370,
+  data_width=600,
+  data_height=370
+  )
+}}
 
-この結果には興味深い点があります、それは一つのツールが他の便利になる手段も提供していると言うことです。
-データ空間を調べることに興味がある場合に、具体的なタグ名は想定される尺度の一つでしかありません。
-良い「俗語」の発展を見つけることができれば、それは間違いなく最強の指標でしょう。
-しかし、それが私たちの興味の範囲外である場合はどうなりますか？
+この結果には興味深い点があります、それは一つのツールが他の便利になる手段も提供していると言うことです。データ空間を調べることに興味がある場合に、具体的なタグ名は想定される尺度の一つでしかありません。良い「俗語」の発展を見つけることができれば、それは間違いなく最強の指標でしょう。しかし、それが私たちの興味の範囲外である場合はどうなりますか？
 
 ### 一般的なユースケースとソリューション
 
-たとえば、一般的なユースケースの解決に興味が人々の場合はどうでしょうか？
-これは、現在抱えているユースケースに対応したソリューションを探している場合や、標準化を促進するために人々が解決しようとしている一般的なユースケースをさらに研究するようなものがあります。
-一般的な例として「タブ」を取り上げます。
-長年にわたって、タブのようなものに対して多くの要求がありました。あいまいな検索をしてみると[タブには多くのバリエーション](https://rainy-periwinkle.glitch.me/permalink/c6d39f24d61d811b55fc032806cade9f0be437dcb2f5735a4291adb04aa7a0ea.html)があることがわかります。
-同一のページに2つの要素が存在しているかを簡単に識別できないため、利用されているかどうかを数えるのは少し難しくなります。そのためこの計測条件は地味ですが、最大のカウントを持つものを単純に使用します。
-ほとんどの場合、実際のページ数はそれより大幅に増えるでしょう。
+たとえば、一般的なユースケースの解決に興味が人々の場合はどうでしょうか？これは、現在抱えているユースケースに対応したソリューションを探している場合や、標準化を促進するために人々が解決しようとしている一般的なユースケースをさらに研究するようなものがあります。一般的な例として「タブ」を取り上げます。長年にわたって、タブのようなものに対して多くの要求がありました。あいまいな検索をしてみると[タブには多くのバリエーション](https://rainy-periwinkle.glitch.me/permalink/c6d39f24d61d811b55fc032806cade9f0be437dcb2f5735a4291adb04aa7a0ea.html)があることがわかります。同一のページに2つの要素が存在しているかを簡単に識別できないため、利用されているかどうかを数えるのは少し難しくなります。そのためこの計測条件は地味ですが、最大のカウントを持つものを単純に使用します。ほとんどの場合、実際のページ数はそれより大幅に増えるでしょう。
 
 また、数多くの[アコーディオン](https://rainy-periwinkle.glitch.me/permalink/e573cf279bf1d2f0f98a90f0d7e507ac8dbd3e570336b20c6befc9370146220b.html)や[ダイアログ](https://rainy-periwinkle.glitch.me/permalink/0bb74b808e7850a441fc9b93b61abf053efc28f05e0a1bc2382937e3b78695d9.html)、少なくとも65種類の[カルーセル](https://rainy-periwinkle.glitch.me/permalink/651e592cb2957c14cdb43d6610b6acf696272b2fbd0d58a74c283e5ad4c79a12.html)、それと[ポップアップ](https://rainy-periwinkle.glitch.me/permalink/981967b19a9346ac466482c51b35c49fc1c1cc66177ede440ab3ee51a7912187.html)に関するもの、そして最低でも27種類存在する[トグルとスイッチ](https://rainy-periwinkle.glitch.me/permalink/2e6827af7c9d2530cb3d2f39a3f904091c523c2ead14daccd4a41428f34da5e8.html)があります。
 
@@ -348,6 +304,4 @@ Hixieはオリジナルの論文で次のように述べています。
 * 既に大量のカスタムマークアップがあります。様々な形式がありますが、ダッシュを含む要素は確実に削除されたようです。
 * 牛の通り道を舗装する(pave the cowpaths)ために、このデータをさらに調査して、適切な観測結果を出す必要があります。
 
-最後はあなたの出番です。
-大規模なコミュニティの創造性と好奇心を利用し、いくつかのツール([https://rainy-periwinkle.glitch.me/](https://rainy-periwinkle.glitch.me/)など)を使うことでこのデータを探索することができます。
-興味深い観察結果を共有して、知識と理解の共有の場を作ってください。
+最後はあなたの出番です。大規模なコミュニティの創造性と好奇心を利用し、いくつかのツール([https://rainy-periwinkle.glitch.me/](https://rainy-periwinkle.glitch.me/)など)を使うことでこのデータを探索することができます。興味深い観察結果を共有して、知識と理解の共有の場を作ってください。

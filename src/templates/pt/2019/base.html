@@ -1,0 +1,210 @@
+{% extends "base/2019/base.html" %}
+
+{% block description %}Web Almanac é um estado anual do relatório da Web que combina a experiência da comunidade da Web com os dados e as tendências do HTTP Archive.{% endblock %}
+
+{% block twitter_image_alt %}{{ year }} Web Almanac{% endblock %}
+
+{% block skip_navigation %}Pular navegação{% endblock %}
+
+{% block organization %}Web Almanac por HTTP Archive{% endblock %}
+{% block web_almanac_logo %}
+<span class="wa">Web Almanac</span>
+<span class="line-group">
+  <span class="pre">Por</span>
+  <span class="ha">HTTP Archive</span>
+</span>
+{% endblock %}
+
+{% block mission %}
+Nossa missão é combinar as estatísticas brutas e as tendências do HTTP Archive com a experiência da comunidade da web. O Web Almanac é um relatório abrangente sobre o estado da Web, apoiado por dados reais e especialistas confiáveis da Web. É composto por 20 capítulos que abrangem aspectos do conteúdo da página, experiência do usuário, publicação e distribuição.
+{% endblock %}
+
+{% block http_archive_link %}Página inicial HTTP Archive{% endblock %}
+
+{% block page_navigation %}Navegação de página{% endblock %}
+
+{% block help_translate %}Ajudar Traduzir{% endblock %}
+{% block translation_not_available %}Inglês - não disponível em Português{% endblock %}
+{% block language_switcher %}Selecione o Idioma{% endblock %}
+{% block year_switcher %}Selecione o Ano{% endblock %}
+
+{% block home %}Início{% endblock %}
+{% block table_of_contents_title %}Tabela de Conteúdos{% endblock %}
+{% block contributors_title %}Contribuintes{% endblock %}
+{% block methodology_title %}Metodologia{% endblock %}
+
+{% block part %}Parte{% endblock %}
+{% block chapter %}Capítulo{% endblock %}
+
+{% block start_exploring %}Comece a explorar{% endblock %}
+
+{% block menu_title %}Menu da Página{% endblock %}
+{% block open_the_menu %}Abra o menu{% endblock %}
+{% block close_the_menu %}Feche o menu{% endblock %}
+
+{% block index_nav_title %}Chapter table of contents{% endblock %}
+{% block index_title %}Index{% endblock %}
+{% block open_the_index %}Abrir índice de conteúdos{% endblock %}
+{% block close_the_index %}Fechar índice de conteúdos{% endblock %}
+
+{% block and %}e{% endblock %}
+{% block comma %}, {% endblock %}
+
+{% block open %}Abrir{% endblock %}
+{% block close %}Fechar{% endblock %}
+
+{% macro figure_text(metadata, id) %}Figura {{ figure_id(metadata, id) }}.{% endmacro %}
+{% macro show_description(metadata, id) %}Mostrar descrição da figura {{ figure_id(metadata, id) }}{% endmacro %}
+{% macro hide_description(metadata, id) %}Ocultar descrição da figura {{ figure_id(metadata, id) }}{% endmacro %}
+
+{% block written_by_before %}Escrito por{% endblock %}
+{% block reviewed_by_before %}Revisado por{% endblock %}
+{% block translated_by_before %}Traduzido por{% endblock %}
+{% block analysis_by_before %}Análise por{% endblock %}
+{% block written_by_after %}{% endblock %}
+{% block reviewed_by_after %}{% endblock %}
+{% block translated_by_after %}{% endblock %}
+{% block analysis_by_after %}{% endblock %}
+
+{% block author %}Autor(a){% endblock %}
+{% block authors %}Autores{% endblock %}
+
+{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} no Twitter{% endmacro %}
+{% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} no GitHub{% endmacro %}
+{% macro onLinkedIn(authorName) %}{{authorName}} no LinkedIn{% endmacro %}
+{% macro website(authorName) %}{{authorName}} website{% endmacro %}
+
+{% macro edition(year) %}{{ year }} Edição{% endmacro %}
+
+{% block footer_title %}Navegação no rodapé{% endblock %}
+{% block copyright %}© Web Almanac. Licenciado sob <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
+{% block accessibility_statement %}Declaração de acessibilidade{% endblock %}
+
+{% block featured_chapter %}Capítulo em Destaque{% endblock %}
+{% macro readChapter(chapter) %}Leia o Capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
+
+{% block contributors_description %}
+O Web Almanac Isso foi possível graças ao trabalho árduo da comunidade da web. {{ self.contributors() }} as pessoas ofereceram inúmeras horas nas fases de planejamento, pesquisa, redação e produção.
+{% endblock %}
+{% block contributors_link %}Veja os colaboradores{% endblock %}
+
+{% block methodology_stat_1_title %}Sites testados{% endblock %}
+{% block methodology_stat_1 %}5.8M{% endblock %}
+{% block methodology_stat_2_title %}Dados processados{% endblock %}
+{% block methodology_stat_2 %}20.9 TB{% endblock %}
+{% block methodology_description %}
+Salvo indicação em contrário, as métricas em todos os 20 capítulos do Web Almanac são originárias do conjunto de dados do HTTP Archive. O HTTP Archive é um projeto administrado pela comunidade que acompanha como a Web é criada desde 2010. Usando o WebPageTest e o Lighthouse, os metadados de cerca de 6 milhões de sites são testados mensalmente e incluídos em um banco de dados público do BigQuery para análise. O conjunto de dados de julho de 2019 foi usado como base para as métricas do Web Almanac. Para mais informações, consulte a página Metodologia.
+{% endblock %}
+{% block methodology_link %}Conheça nossa Metodologia{% endblock %}
+
+{% block introduction %}Introdução{% endblock %}
+
+{% block foreword_title %}Prefácio{% endblock %}
+
+{% block foreword %}
+    <p>
+      A web aberta é uma rede de tecnologias incrivelmente complexa e em evolução. Indústrias e carreiras inteiras são construídas na Web e dependem de seu vibrante ecossistema para ter sucesso. Por mais crítica que seja a web, entender como está se saindo tem sido surpreendentemente evasivo. Desde 2010, a missão do projeto HTTP Archive é rastrear como a Web é construída e está fazendo um trabalho incrível. No entanto, houve uma lacuna que foi especialmente difícil de resolver: trazer significado aos dados que o projeto HTTP Archive está coletando e permitir que a comunidade entenda facilmente o desempenho da web. É aí que entra o Web Almanac.
+    </p>
+
+    <p>
+      A missão do Web Almanac é levar o tesouro de insights que, de outra forma, seriam acessíveis apenas a intrépidos mineradores de dados e empacotá-lo de uma maneira fácil de entender. Isso é possível com a ajuda de especialistas do setor, que podem entender os dados e nos dizer o que eles significam. Cada um dos 20 capítulos do Web Almanac se concentra em um aspecto específico da Web, e cada um foi criado e revisado por especialistas em seu campo. A força do Web Almanac flui diretamente da experiência das pessoas que o escrevem.
+    </p>
+
+    <p>
+      Muitas das conclusões do Web Almanac são dignas de comemoração, mas também é um lembrete importante do trabalho ainda necessário para oferecer experiências de usuário de alta qualidade. As análises orientadas por dados em cada capítulo são uma forma de responsabilidade que todos compartilhamos pelo desenvolvimento de uma Web melhor. Não se trata de envergonhar aqueles que estão errando, mas de iluminar o caminho das melhores práticas, para que haja uma maneira clara e correta de fazer as coisas. Com a ajuda contínua da comunidade da web, esperamos fazer disso uma tradição anual, para que a cada ano possamos acompanhar nosso progresso e fazer as correções necessárias, conforme necessário.
+    </p>
+
+    <p>
+      Há muito o que aprender neste relatório. Portanto, comece a explorar e compartilhar suas sugestões com a comunidade para que possamos avançar coletivamente em nossa compreensão do estado da web.
+    </p>
+
+    <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>, criador do Web Almanac</em></p>
+{% endblock %}
+
+{% block appendix %}Apêndice{% endblock %}
+{% block appendices %}Apêndices{% endblock %}
+
+{% block ebook_title %}Ebook{% endblock %}
+{% block ebook_download %}Faça o download do Web Almanac {{ year }} completo em formato PDF ({{ ebook_size_in_mb }}MB){% endblock %}
+{% block ebook_download_note %}(gerado em <a href="https://www.princexml.com/">www.princexml.com</a>){% endblock %}
+
+{% 
+  set localizedPartTitles = {
+    "I. Page Content": "I. Conteúdo da Página",
+    "II. User Experience": "II. Experiência de usuário",
+    "III. Content Publishing": "III. Publicação de conteúdo",
+    "IV. Content Distribution": "IV. Distribuição de Conteúdo"
+  }
+%}
+{%
+  set localizedChapterTitles = {
+    "javascript": "JavaScript",
+    "css": "CSS",
+    "markup": "Marcação",
+    "media": "Mídia",
+    "third-parties": "Terceiros",
+    "fonts": "Fontes",
+    "performance": "Desempenho",
+    "security": "Segurança",
+    "accessibility": "Acessibilidade",
+    "seo": "SEO",
+    "pwa": "PWA",
+    "mobile-web": "Web móvel",
+    "ecommerce": "Comércio eletrônico",
+    "cms": "CMS",
+    "compression": "Comércio eletrônico",
+    "caching": "Armazenamento em Cache",
+    "cdn": "CDN",
+    "page-weight": "Peso da página",
+    "resource-hints": "Dicas de Recursos",
+    "http2": "HTTP/2",
+    "privacy": "Privacidade",
+    "capabilities": "Capacidades",
+    "jamstack": "Jamstack"
+  }
+%}
+
+{% set localizedTeamNames = {
+  "analysts": "Analistas",
+  "authors": "Autores",
+  "brainstormers": "Pensadores",
+  "designers": "Designers",
+  "developers": "Desenvolvedores",
+  "editors": "Editores",
+  "leads": "Lider",
+  "reviewers": "Revisores",
+  "translators": "Tradutores",
+  }
+%}
+
+{% set localizedContributors = {
+  "kleinab": 'Abigail Klein é engenheira de software do Google. Ela trabalhou na acessibilidade da web do Google Docs, Sheets e Slides, onde adicionou  <a href="https://www.blog.google/outreach-initiatives/accessibility/whats-you-say-present-captions-google-slides/">legendas automáticas para a Apresentações Google</a>, além de melhorar o suporte ao leitor de tela, braille, ampliador de tela e alto contraste. Atualmente, ela trabalha com acessibilidade no Google Chrome e ChromeOS. Ela é bacharel e mestre em ciência da computação pelo MIT, onde co-fundou uma hackathon de tecnologia assistiva e foi assistente de laboratório e palestrante convidada da classe de tecnologia assistida.',
+  "argyleink": 'Adam Argyle é um membro de relações com desenvolvedores do Google Chrome focado em CSS; Ele é um viciado em web com um desejo insaciável por grandes UX & amp; UI; Encontrá-lo na web  <a href="https://twitter.com/argyleink">@argyleink</a> ou check-out seu site <a href="https://nerdy.dev">https://nerdy.dev</a>;',
+  "alankent": 'Alan Kent é um advogado do desenvolvedor do Google focado em ecossistemas de comércio eletrônico e conteúdo. Ele bloga em <a href="https://alankent.me">alankent.me</a> e os tweets como <a href="https://twitter.com/akent99">@akent99</a>.',
+  "amedina": 'Alberto Medina é advogado do desenvolvedor da equipe de ecossistemas de conteúdo da Web do Google, com foco no avanço da proliferação de conteúdo de qualidade na web por meio de tecnologias progressivas como Amp e o uso de APIs da Web modernas. Atualmente, o trabalho de Alberto tem um forte foco em sistemas de gerenciamento de conteúdo, pois ele lidera uma área do ecossistema de conteúdo chamada CMS Developer Relations.',
+  "andydavies": 'Andy Davies é consultor freelancer de desempenho na Web e ajudou alguns dos principais varejistas, jornais e empresas de serviços financeiros do Reino Unido a tornar seus sites mais rápidos. Ele escreveu o <i lang="en">Pocket Guide to Web Performance</i>, é co-autor do Using WebPageTest e também organizador do encontro sobre o London Web Performance. Você pode encontrar Andy no Twitter como <a href="https://twitter.com/andydavies">@AndyDavies</a>, e ele ocasionalmente bloga em <a href="https://andydavies.me">https://andydavies.me</a>',
+  "arturjanc": 'Artur Janc é um engenheiro de segurança da informação do Google, que trabalha no design e na adoção de mecanismos de segurança de plataformas da Web no Google e na Web em geral. Ele argumenta com as pessoas na internet como <a href="https://twitter.com/arturjanc">@arturjanc on Twitter</a>.',
+  "bazzadp": 'Barry Pollard é um desenvolvedor de software e autor do livro Manning <a href="https://www.manning.com/books/http2-in-action"><i lang="en">HTTP/2 in Action</i></a>. Ele acha a web incrível, mas quer torná-la ainda melhor. Você pode encontrá-lo twittar <a href="https://twitter.com/tunetheweb">@tunetheweb</a> e bloga em <a href="https://www.tunetheweb.com">www.tunetheweb.com</a>.',
+  "bkardell": 'Brian Kardell é desenvolvedor advogado no <a href="https://igalia.com">Igalia</a>, colaborador normas, <a href="https://bkardell.com">blogger</a>, e é atualmente o representante W3C Comité Consultivo para a <a href="https://openjsf.org/"><i lang="en">Open JS Foundation</i></a>. Ele foi o fundador do <i lang="en">Extensible Web Community Group</i> e co-autor de <a href="https://extensiblewebmanifesto.org"><i lang="en">The Extensible Web Manifesto</i></a>.',
+  "colinbendell": 'Colin é parte do escritório CTO da <a href="https://cloudinary.com/">Cloudinary</a>  co-autor do O\'Reilly livro <a href="https://www.oreilly.com/library/view/high-performance-images/9781491925799/"><i lang="en">High Performance Images</i></a>. Ele passa grande parte do tempo na interseção de dados, mídias, navegadores e padrões de alto volume. Você pode encontrá-lo no Twitter <a href="https://twitter.com/colinbendell">@colinbendell</a> e em blogs em <a href="https://bendell.ca/">https://bendell.ca</a>.',
+  "obto": 'David Fox é o principal pesquisador de usabilidade e fundador da LookZook, uma empresa obcecada em descobrir tudo o que há para saber sobre a construção de experiências na Web que atendem às expectativas do usuário. Ele é um psicólogo de sites que procura sites para aprender não apenas com o que os usuários estão enfrentando, mas por que e como melhorar sua experiência. Ele também é colaborador do Google Chromium, palestrante e fornecedor de seminários on-line e treinamento em UX.',
+  "dougsillars": 'Doug Sillars é um nômade digital freelancer que trabalha na interseção de desempenho e mídia. Ele tweets de <a href="https://twitter.com/dougsillars">@dougsillars</a>, e blogs regularmente em <a href="https://dougsillars.com">dougsillars.com</a>.',
+  "housseindjirdeh": 'Houssein é um advogado do desenvolvedor do Google que trabalha com velocidade, desempenho e no ecossistema da estrutura da web. Ele os tweets em <a href="https://twitter.com/hdjirdeh">@hdjirdeh</a> e bloga em <a href="https://houssein.me/">https://houssein.me/</a>.',
+  "jeffposnick": 'Jeff Posnick é membro da equipe de Relações com desenvolvedores da Web do Google, com sede em Nova York. Seu foco está em <a href="https://developers.google.com/web/tools/workbox/">Workbox</a>, um conjunto de bibliotecas trabalhador de serviço para Progressive Web Apps. Ele bloga em <a href="https://jeffy.info">https://jeffy.info</a> e tweeta como <a href="https://twitter.com/jeffposnick">@jeffposnick</a>.',
+  "khempenius": 'Katie Hempenius é engenheira da equipe do Chrome, onde trabalha para tornar a web mais rápida.',
+  "AVGP": 'Martin Splitt é um defensor de desenvolvedores da equipe de ecossistemas da Web no Google, onde trabalha para manter a Web detectável.',
+  "nektarios-paisios": 'Nektarios Paisios é um engenheiro de software que trabalha com acessibilidade do Chrome nos últimos 5 anos. Ele se concentra principalmente em tornar o Chrome compatível com software auxiliar de terceiros, como leitores e ampliadores de tela. Antes de trabalhar na acessibilidade do Chrome, Nektarios trabalhou em várias outras funções na empresa, como acessibilidade do GSuite e anúncios gráficos. Nektarios é Ph.D. em Ciência da Computação pela New York University.',
+  "patrickhulce": 'Patrick Hulce é um ex-engenheiro Chrome, fundador do <a href="https://eris.ventures/">Eris Ventures</a>, membro da equipe do núcleo de <a href="https://github.com/GoogleChrome/lighthouse">Lighthouse</a> e <a href="https://github.com/GoogleChrome/lighthouse-ci">Lighthouse CI</a>, co-organizador do <a href="https://www.meetup.com/DallasJS/">DallasJS</a> meetup, e autor do projeto <a href="https://github.com/patrickhulce/third-party-web">third-party-web</a>.',
+  "paulcalvano": 'Paul Calvano é um Arquiteto de Desempenho Web em <a href="https://www.akamai.com/">Akamai</a>, onde ele ajuda as empresas a melhorar o desempenho de seus sites. Ele também é co-mantenedor do projeto HTTP Archive. Você pode encontrá-lo twittar em <a href="https://twitter.com/paulcalvano">@paulcalvano</a>, o blog em <a href="https://paulcalvano.com">http://paulcalvano.com</a> E compartilhamento de pesquisa HTTP Archive em <a href="https://discuss.httparchive.org">https://discuss.httparchive.org</a>.',
+  "rachellcostello": 'Rachel Costello é uma SEO técnica &amp; Content Manager em <a href="https://www.deepcrawl.com/">DeepCrawl</a> um conferencista internacional que gasta seu tempo pesquisando e comunicar os mais recentes desenvolvimentos em pesquisa e. Rachel atualmente administra a produção de <a href="https://www.deepcrawl.com/knowledge/white-papers/">technical SEO white papers</a> e peças de pesquisa para DeepCrawl, e é um colunista regular para <a href="https://www.searchenginejournal.com/author/rachel-costello/">Search Engine Journal</a>.',
+  "ernee": 'Renee Johnson é consultora de produtos e web, entusiasta do WordPress, organizadora e voluntária frequente do WordCamp. Atualmente, ela trabalha com a equipe de Relações com desenvolvedores do sistema de gerenciamento de conteúdo do Google como especialista em suporte ao produto. ',
+  "rviscomi": 'Rick Viscomi é engenheiro sênior de programas de desenvolvedor do Google, trabalhando em projetos de transparência na Web como o HTTP Archive e o Chrome UX Report, e estudando a interseção de como os sites são construídos e experimentados. Rick é o anfitrião de <a href="https://www.youtube.com/playlist?list=PLNYkxOF6rcIBGvYSYO-VxOsaYQDw5rifJ"><i lang="en">The State of the Web</i></a> em que especialistas discutem como a web está tendendo. Rick é co-autor de <a href="https://usingwpt.com"><i lang="en">Using WebPageTest</i></a>, Um guia para testar o desempenho da web, e escreve com frequência sobre a web em <a href="https://dev.to/rick_viscomi">dev.to</a> e no Twitter em <a href="https://twitter.com/rick_viscomi">@rick_viscomi</a>.',
+  "samdutton": 'Sam Dutton trabalha com a equipe do Google Chrome como advogado do desenvolvedor desde 2011. Ele organizou e apresentou em vários eventos, criou e ministrou vários cursos de desenvolvimento da web e trabalhou em vários vídeos, codelabs e orientação por escrito sobre PWA, desempenho, mídia, imagem e iniciativas de \'<i lang="en">Next Billion Users</i>\'. Ele mantém <a href="https://simpl.info">simpl.info</a>, que fornece mais simples exemplos possíveis de HTML, CSS e JavaScript. Sam cresceu no sul da Austrália, estudou em Sydney e vive desde 1986 em Londres.',
+  "ScottHelme": 'Scott Helme é um pesquisador de segurança e fundador da <a href="https://report-uri.com">report-uri.com</a> e <a href="https://securityheaders.com">securityheaders.com</a>. Você pode encontrá-lo falar sobre segurança no Twitter <a href="https://twitter.com/Scott_Helme">@Scott_Helme</a> e bloga em <a href="https://scotthelme.co.uk">scotthelme.co.uk</a>.',
+  "tammyeverts": 'Tammy Everts passou mais de duas décadas estudando usabilidade e UX. Nos últimos dez anos, ela se concentrou na interseção do UX com desempenho e negócios da Web. Ela é CXO em <a href="https://speedcurve.com/">SpeedCurve</a>, co-presidente do <a href="https://perfnow.nl/">performance.now() conference</a>, e autor do livro O\'Reilly <em><a href="http://shop.oreilly.com/product/0636920041450.do"><i lang="en">Time Is Money: The Business Value of Performance</i></a></em>.',
+  "tomayac": 'Thomas Steiner é um advogado de desenvolvedores da Web no Google Hamburg, focado em tornar a Web um lugar melhor por meio da padronização, criação e compartilhamento de melhores práticas e pesquisa. Ele bloga em <a href="https://blog.tomayac.com/">blog.tomayac.com</a> e os tweets como <a href="https://twitter.com/tomayac">@tomayac</a>.',
+  "una": 'Una Kravets é palestrante pública internacional do Brooklyn, redatora técnica e advogada de desenvolvedores de design de materiais no Google. A Una hospeda <a href="https://www.youtube.com/watch?v=YK8GZBx3hpg"><i lang="en">Designing the Browser</i></a> e a série <a href="https://spec.fm/podcasts/toolsday">Toolsday</a> podcast de desenvolvedor. Siga-a no <a href="https://twitter.com/una">Twitter</a> para encontrar suas reflexões sobre CSS criativo, experiências do usuário e práticas recomendadas de desenvolvimento da web.',
+  "ymschaap": 'Fundador técnico da consultoria SEO  <a href="https://build.amsterdam/">build.amsterdam</a>. Anteriormente, fundou várias empresas da web que atingiram mais de 1 bilhão de usuários. Blogar sobre suas últimas (ad) ventures desde 2005 em <a href="https://yvoschaap.com/">yvoschaap.com</a>.',
+  "zachleat": 'Zach é um desenvolvedor Web com <a href="https://www.filamentgroup.com/">Filament Group</a>. Ele está atualmente fixado em <a href="https://www.zachleat.com/web/fonts/">web fonts</a> e <a href="https://www.zachleat.com/web/introducing-eleventy/">static site generators</a>. Sua <a href="https://www.zachleat.com/web/speaking/">public speaking résumé</a> inclui palestras em oito países diferentes em eventos como JAMstack_conf, Beyond Tellerrand, Smashing Conference, CSSConf, e <a href="https://www.zachleat.com/web/whitehouse/">The White House</a>. Ele também ajuda em <a href="http://nejsconf.com/">NEJS CONF</a> e o <a href="http://nebraskajs.com">NebraskaJS</a> meetup.',
+  }
+%}

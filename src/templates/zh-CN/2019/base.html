@@ -4,9 +4,6 @@
 
 {% block twitter_image_alt %}{{ year }} Web Almanac{% endblock %}
 
-{% block date_published %}2019-11-04T12:00:00.000Z{% endblock %}
-{% block date_modified %}2020-07-14T00:00:00.000Z{% endblock %}
-
 {% block skip_navigation %}跳过导航{% endblock %}
 
 {% block organization %}Web Almanac 源于 HTTP Archive{% endblock %}
@@ -36,7 +33,7 @@
 {% block contributors_title %}贡献者{% endblock %}
 {% block methodology_title %}方法论{% endblock %}
 
-{% block part %}部{% endblock %}
+{% block part %}部分{% endblock %}
 {% block chapter %}章{% endblock %}
 
 {% block start_exploring %}开始探索{% endblock %}
@@ -51,25 +48,30 @@
 {% block close_the_index %}关闭目录{% endblock %}
 
 {% block and %}和{% endblock %}
+{% block comma %}、{% endblock %}
 
 {% block open %}打开{% endblock %}
 {% block close %}关闭{% endblock %}
 
-{% macro show_description(id) %}显示图像描述 {{ id }}{% endmacro %}
-{% macro hide_description(id) %}隐藏图像描述 {{ id }}{% endmacro %}
+{% macro figure_text(metadata, id) %}图 {{ figure_id(metadata, id) }}.{% endmacro %}
+{% macro show_description(metadata, id) %}显示图像描述 {{ figure_id(metadata, id) }}{% endmacro %}
+{% macro hide_description(metadata, id) %}隐藏图像描述 {{ figure_id(metadata, id) }}{% endmacro %}
 
-{% block written_by_before %}撰写 by{% endblock %}
-{% block reviewed_by_before %}审阅 by{% endblock %}
-{% block translated_by_before %}翻译 by{% endblock %}
+{% block written_by_before %}作者： {% endblock %}
+{% block reviewed_by_before %}审稿者： {% endblock %}
+{% block translated_by_before %}翻译者： {% endblock %}
+{% block analysis_by_before %}分析者: {% endblock %}
 {% block written_by_after %}{% endblock %}
 {% block reviewed_by_after %}{% endblock %}
 {% block translated_by_after %}{% endblock %}
+{% block analysis_by_after %}{% endblock %}
 
 {% block author %}作者{% endblock %}
 {% block authors %}作者{% endblock %}
 
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} 在 Twitter{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} 在 GitHub{% endmacro %}
+{% macro onLinkedIn(authorName) %}{{authorName}} 在 LinkedIn{% endmacro %}
 {% macro website(authorName) %}{{authorName}} 网站{% endmacro %}
 
 {% macro edition(year) %}{{ year }} 版{% endmacro %}
@@ -77,6 +79,9 @@
 {% block footer_title %}页脚导航{% endblock %}
 {% block copyright %}© Web Almanac.的许可是基于 <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
 {% block accessibility_statement %}无障碍可访问声明{% endblock %}
+
+{% block featured_chapter%}章节精选{% endblock %}
+{% macro readChapter(chapter) %}阅读 <span class="featured-chapter-name">{{ chapter }}</span> 章节{% endmacro %}
 
 {% block contributors_description %}
 是web社区的辛勤工作才让 Web Almanac 网络年鉴成为可能。 {{ self.contributors() }} 成员在计划、研究、写作和发布阶段奉献投入了难以估量的时间。
@@ -88,7 +93,7 @@
 {% block methodology_stat_2_title %}处理的数据{% endblock %}
 {% block methodology_stat_2 %}20.9 TB{% endblock %}
 {% block methodology_description %}
-除非另有说明，在所有20章的Web Almanac网络年鉴的指标都来自HTTP Archive数据集。HTTP Archive是一个社区运行的项目，自2010年以来一直在跟踪web是如何构建的。使用WebPageTest和Lighthouse，每月测试大约600万个网站的元数据，并将其包含在一个公开的BigQuery数据库中进行分析。Web Almanac 网络年鉴使用了2019年7月的数据集作为度量的基础。有关更多信息，请参见方法学页面。
+除非另有说明，在所有20章的Web Almanac网络年鉴的指标都来自HTTP Archive数据集。HTTP Archive是一个社区运行的项目，自2010年以来一直在跟踪web是如何构建的。使用WebPageTest和Lighthouse，每月测试大约600万个网站的元数据，并将其包含在一个公开的BigQuery数据库中进行分析。Web Almanac 网络年鉴使用了2019年7月的数据集作为度量的基础。有关更多信息，请参见方法论页面。
 {% endblock %}
 {% block methodology_link %}了解方法论{% endblock %}
 
@@ -113,15 +118,15 @@
       在这份报告中有太需要学习的东西，所以开始探索并与社区分享你的见解吧，这样我们就可以共同推进我们对网络状态的理解。
     </p>
 
-    <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>, Web Almanac网络年鉴的创造者</em></p>
+    <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>, Web Almanac网络年鉴的创建者</em></p>
 {% endblock %}
 
 {% block appendix %}附录{% endblock %}
 {% block appendices %}附录{% endblock %}
 
 {% block ebook_title %}Ebook{% endblock %}
-{% block ebook_download %}下载 {{ year }} Web Almanac网络年鉴 ：PDF 格式{% endblock %}
-{% block ebook_download_note %}(generated with <a href="https://www.princexml.com/">www.princexml.com</a>){% endblock %}
+{% block ebook_download %}下载 {{ year }} Web Almanac网络年鉴 ：PDF 格式 ({{ ebook_size_in_mb }}MB){% endblock %}
+{% block ebook_download_note %}(使用 <a href="https://www.princexml.com/">www.princexml.com</a>生成){% endblock %}
 
 {% 
   set localizedPartTitles = {
@@ -152,7 +157,10 @@
     "cdn": "CDN",
     "page-weight": "页面重量",
     "resource-hints": "资源提示",
-    "http2": "HTTP/2"
+    "http2": "HTTP/2",
+    "privacy": "隐私",
+    "capabilities": "能力",
+    "jamstack": "Jamstack"
   }
 %}
 

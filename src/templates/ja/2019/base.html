@@ -4,8 +4,6 @@
 
 {% block twitter_image_alt %}{{ year }} Web Almanac{% endblock %}
 
-{% block date_published %}2019-11-04T12:00:00.000Z{% endblock %}
-{% block date_modified %}2020-07-27T00:00:00.000Z{% endblock %}
 {% block skip_navigation %}ナビゲーションをスキップ{% endblock %}
 
 {% block organization %}HTTP ArchiveによるWeb Almanac{% endblock %}
@@ -14,6 +12,8 @@
   <span class="pre">による</span>
   <span class="wa">Web Almanac</span>
 {% endblock %}
+
+
 
 {% block mission %}
 私たちの使命は、HTTP Archiveの生の統計やトレンドを、ウェブコミュニティの専門知識と組み合わせることです。Web Almanacは、実際のデータと信頼できるウェブの専門家に裏付けられた、ウェブの状態に関する包括的なレポートです。ページコンテンツ、ユーザー体験、パブリッシング、配布などの側面を網羅した20の章で構成されています。
@@ -48,6 +48,7 @@
 {% block close_the_index %}目次を閉じる{% endblock %}
 
 {% block and %} と {% endblock %}
+{% block comma %}、{% endblock %}
 
 {% block open %}開く{% endblock %}
 {% block close %}閉じる{% endblock %}
@@ -55,18 +56,23 @@
 {% block written_by_before %}{% endblock %}
 {% block reviewed_by_before %}{% endblock %}
 {% block translated_by_before %}{% endblock %}
+{% block analysis_by_before %}{% endblock %}
 {% block written_by_after %}によって書かれた。{% endblock %}
 {% block reviewed_by_after %}によってレビュ。{% endblock %}
 {% block translated_by_after %}によって翻訳された。{% endblock %}
+{% block analysis_by_after %}による分析。{% endblock %}
 
 {% block author %}著者{% endblock %}
 {% block authors %}著者{% endblock %}
 
-{% macro show_description(id) %}図{{ id }}の説明を表示{% endmacro %}
-{% macro hide_description(id) %}図{{ id }}の説明を非表示{% endmacro %}
 
-{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} on Twitter{% endmacro %}
-{% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} on GitHub{% endmacro %}
+{% macro figure_text(metadata, id) %}図{{ figure_id(metadata, id) }}.{% endmacro %}
+{% macro show_description(metadata, id) %}図{{ figure_id(metadata, id) }}の説明を表示{% endmacro %}
+{% macro hide_description(metadata, id) %}図{{ figure_id(metadata, id) }}の説明を非表示{% endmacro %}
+
+{% macro onTwitter(twitterHandle) %}Twitterの@{{twitterHandle}}{% endmacro %}
+{% macro onGitHub(gitHubHandle) %}GitHubの{{gitHubHandle}}{% endmacro %}
+{% macro onLinkedIn(authorName) %}LinkedInの{{authorName}}{% endmacro %}
 {% macro website(authorName) %}{{authorName}} ウェブサイト{% endmacro %}
 
 {% macro edition(year) %}{{ year }} 版{% endmacro %}
@@ -74,6 +80,9 @@
 {% block footer_title %}フッターナビゲーション{% endblock %}
 {% block copyright %}© Web Almanac. Licensed under <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
 {% block accessibility_statement %}アクセシビリティに関する声明{% endblock %}
+
+{% block featured_chapter%}注目の章{% endblock %}
+{% macro readChapter(chapter) %}<span class="featured-chapter-name">{{ chapter }}</span>の章を読む{% endmacro %}
 
 {% block contributors_description %}
 Web Almanacは、ウェブ・コミュニティの努力によって実現しています。{{ self.contributors() }}人々は、企画、調査、執筆、制作の段階で数え切れないほどの時間をボランティアで費やしてきました。
@@ -117,7 +126,7 @@ Web Almanacは、ウェブ・コミュニティの努力によって実現して
 {% block appendices %}付属資料{% endblock %}
 
 {% block ebook_title %}電子ブック{% endblock %}
-{% block ebook_download %} {{ year }} Web AlmanacのPDFファイルをダウンロードする{% endblock %}
+{% block ebook_download %} {{ year }} Web AlmanacのPDFファイルをダウンロードする ({{ ebook_size_in_mb }}MB){% endblock %}
 {% block ebook_download_note %}(generated with <a href="https://www.princexml.com/">www.princexml.com</a>){% endblock %}
 
 {% 
@@ -149,7 +158,10 @@ Web Almanacは、ウェブ・コミュニティの努力によって実現して
     "cdn": "CDN",
     "page-weight": "Page Weight",
     "resource-hints": "リソースのヒント",
-    "http2": "HTTP/2"
+    "http2": "HTTP/2",
+    "privacy": "プライバシー",
+    "capabilities": "能力",
+    "jamstack": "Jamstack"
   }
 %}
 

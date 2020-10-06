@@ -5,12 +5,13 @@ title: Web Mobile
 description: Chapitre sur les web mobile du Web Almanac 2019, couvrant le chargement des pages, du contenu textuel, du zoom et de la mise à l’échelle, des boutons et des liens, ainsi que de la facilité à remplir les formulaires.
 authors: [obto]
 reviewers: [AymenLoukil, hyperpress]
+analysts: [ymschaap, rviscomi]
 translators: [borisschapira]
 discuss: 1767
 results: https://docs.google.com/spreadsheets/d/1dPBDeHigqx9FVaqzfq7CYTz4KjllkMTkfq4DG4utE_g/
 queries: 12_Mobile_Web
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-05-27T00:00:00.000Z
+last_updated: 2020-10-06T00:00:00.000Z
 ---
 
 ## Introduction
@@ -46,7 +47,7 @@ Commençons par le téléphone dont dispose ce profil-type. Le téléphone Andro
     <td><a href="https://www.gsmarena.com/samsung_galaxy_s6-6849.php">Galaxy S6</a> — <a href="https://www.notebookcheck.net/A11-Bionic-vs-7420-Octa_9250_6662.247596.0.html">4× plus lent</a> qu’un iPhone 8 (score Octane V2)</td>
   </tr>
 </table>
-<figcaption>Figure 1. Profil-type, cible mobile.</figcaption>
+<figcaption>{{ figure_link(caption="Profil-type, cible mobile.") }}</figcaption>
 </figure>
 
 J’imagine que des personnes seront surprises par ces résultats. Il se peut que les conditions soient bien pires que celles avec lesquelles vous avez testé votre site. Mais maintenant que nous sommes sur la même longueur d’onde en ce qui concerne le profil d’une personne sur mobile, commençons.
@@ -57,14 +58,17 @@ La quantité de code JavaScript sur le web mobile est alarmante. Selon le [rappo
 
 Pourquoi est-ce un problème&nbsp;? Parce que les sites qui chargent autant de JS peuvent prendre plus de [10 secondes](https://httparchive.org/reports/loading-speed?start=earliest&end=2019_07_01&view=list#ttci) pour devenir durablement interactifs. En d’autres termes, votre page peut sembler entièrement chargée, mais lorsqu’une personne clique sur l’un de vos boutons ou menus, il peut ne rien se passer parce que le JavaScript n’a pas fini de s’exécuter. Dans le pire des scénarios, les personnes concernées se sentiront obligées de cliquer sur le bouton pendant plus de 10 secondes, en attendant le moment magique où quelque chose se passe enfin. Pensez à combien cela peut être déroutant et frustrant.
 
-<figure>
-  <iframe class="fig-mobile fig-desktop video-embed" width="560" height="315" src="https://www.youtube.com/embed/Lx1cYJAVnzA" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen aria-labelledby="fig2-caption" aria-describedby="fig2-description"></iframe>
-  <a class="video-fallback-image" href="https://www.youtube.com/embed/Lx1cYJAVnzA">
-    <img src="/static/images/2019/mobile-web/fig2.png" alt="Figure 2. Exemple d’une expérience pénible où l’on attend que JS se charge." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="610" height="343" loading="lazy">
-  </a>
-  <div id="fig2-description" class="visually-hidden">Vidéo montrant deux pages web en train de se charger. Sur chaque page, un doigt tape à plusieurs reprises sur un bouton tout au long de la vidéo, sans effet. Il y a une horloge qui fait tic-tac à partir de 0 seconde en haut, et un premier visage d'emoji heureux pour chaque site web, qui commence à devenir moins heureux lorsque l'horloge passe 6 secondes, les yeux écarquillés à 8 secondes, en colère à 10 secondes, vraiment en colère à 13 secondes et pleurant à 19 secondes, peu de temps après que la vidéo se soit terminée.</div>
-  <figcaption id="fig2-caption">Figure 2. Exemple d’une expérience pénible où l’on attend que JS se charge.</figcaption>
-</figure>
+{{ figure_markup(
+  video="https://www.youtube.com/embed/Lx1cYJAVnzA",
+  video_width=560,
+  video_height=315,
+  image="fig2.png",
+  caption="Exemple d’une expérience pénible où l’on attend que JS se charge.",
+  description="Vidéo montrant deux pages web en train de se charger. Sur chaque page, un doigt tape à plusieurs reprises sur un bouton tout au long de la vidéo, sans effet. Il y a une horloge qui fait tic-tac à partir de 0 seconde en haut, et un premier visage d'emoji heureux pour chaque site web, qui commence à devenir moins heureux lorsque l'horloge passe 6 secondes, les yeux écarquillés à 8 secondes, en colère à 10 secondes, vraiment en colère à 13 secondes et pleurant à 19 secondes, peu de temps après que la vidéo se soit terminée.",
+  width=610,
+  height=343
+  )
+}}
 
 Allons plus loin et examinons une autre mesure qui se concentre davantage sur _comment_ chaque page utilise JavaScript. Par exemple, a-t-elle vraiment besoin d’autant de JavaScript pendant qu’elle se charge&nbsp;? Nous appelons cette mesure le <i lang="en">JavaScript Bloat Score</i> (en français, score de surcharge de JavaScript), basé sur le [web bloat score](https://www.webbloatscore.com/). L’idée derrière tout cela est la suivante&nbsp;:
 
@@ -90,13 +94,14 @@ Mais bien qu’ils soient disponibles depuis 2016 et mis en œuvre sur tous les 
 
 L’une des plus belles réussites du web est la façon dont les pages web se chargent progressivement. Les navigateurs téléchargent et affichent le contenu dès qu’ils le peuvent, afin que les utilisateurs puissent y accéder le plus rapidement possible. Cependant, cela peut avoir un effet négatif si vous ne concevez pas votre site dans cette optique. Plus précisément, le contenu peut changer de position au fur et à mesure que les ressources se chargent, ce qui nuit à l’expérience utilisateur.
 
-<figure>
-  <a href="/static/images/2019/mobile-web/example-of-a-site-shifting-content-while-it-loads-lookzook.gif">
-    <img src="/static/images/2019/mobile-web/example-of-a-site-shifting-content-while-it-loads-lookzook.gif" alt="Figure 3. Exemple de décalage du contenu qui distrait le lecteur. CLS total de 42,59&nbsp;%. Image reproduite avec l’aimable autorisation de LookZook" aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="360" height="640">
-  </a>
-  <div id="fig3-description" class="visually-hidden">Une vidéo montrant le chargement progressif d’un site web. Le texte s’affiche rapidement, mais à mesure que les images continuent à se charger, le texte se déplace de plus en plus vers le bas de la page, ce qui rend la lecture très frustrante. Le CLS calculé pour cet exemple est de 42,59&nbsp;%. Image reproduite avec l’aimable autorisation de LookZook</div>
-  <figcaption id="fig3-caption">Figure 3. Exemple de décalage du contenu qui distrait le lecteur. CLS total de 42,59&nbsp;%. Image reproduite avec l’aimable autorisation de LookZook</figcaption>
-</figure>
+{{ figure_markup(
+  image="example-of-a-site-shifting-content-while-it-loads-lookzook.gif",
+  caption="Exemple de décalage du contenu qui distrait le lecteur. CLS total de 42,59&nbsp;%. Image reproduite avec l’aimable autorisation de LookZook",
+  description="Une vidéo montrant le chargement progressif d’un site web. Le texte s’affiche rapidement, mais à mesure que les images continuent à se charger, le texte se déplace de plus en plus vers le bas de la page, ce qui rend la lecture très frustrante. Le CLS calculé pour cet exemple est de 42,59&nbsp;%. Image reproduite avec l’aimable autorisation de LookZook",
+  width=360,
+  height=640
+  )
+}}
 
 Imaginez que vous êtes en train de lire un article quand, tout à coup, une image se charge et repousse le texte que vous lisez tout en bas de l’écran. Vous devez maintenant chercher où vous étiez ou simplement abandonner la lecture de l’article. Ou, pire encore, vous commencez à cliquer sur un lien juste avant qu’une annonce se charge au même endroit, ce qui se traduit par un clic accidentel sur l’annonce au lieu du lien.
 
@@ -116,7 +121,7 @@ Que constatons-nous lorsque nous regardons le CLS sur le web&nbsp;?
 
 1. Près de deux sites sur trois (65,32&nbsp;%) ont des CLS moyens ou grands pour 50&nbsp;% ou plus de toutes les expériences utilisateurs.
 
-2. 20,52&nbsp;% des sites ont des CLS importants pour au moins la moitié de toutes les expériences des utilisateurs. Cela représente environ un site sur cinq. N’oubliez pas que la vidéo de la figure 3 n’a qu’un CLS de 42,59&nbsp;%. Ces expériences sont donc encore pires&nbsp;!
+2. 20,52&nbsp;% des sites ont des CLS importants pour au moins la moitié de toutes les expériences des utilisateurs. Cela représente environ un site sur cinq. N’oubliez pas que la vidéo de la figure 12.3 n’a qu’un CLS de 42,59&nbsp;%. Ces expériences sont donc encore pires&nbsp;!
 
 Nous pensons que cette situation est due en grande partie au fait que les sites web ne fournissent pas une largeur et une hauteur explicites pour les ressources qui se chargent après que le texte a été affiché à l’écran, comme les publicités et les images. Avant que les navigateurs puissent afficher une ressource à l’écran, ils doivent savoir quelle surface la ressource occupera. À moins qu’une taille explicite ne soit fournie via des attributs CSS ou HTML, les navigateurs n’ont aucun moyen de connaître la taille réelle de la ressource. Ils affichent donc celle-ci avec une largeur et une hauteur de 0&nbsp;px jusqu’à ce qu’elle soit chargée. Lorsque la ressource est chargée et que les navigateurs savent enfin quelle est sa taille, ils déplacent le reste du contenu de la page, créant ainsi une instabilité dans la mise en page.
 
@@ -138,13 +143,14 @@ Lorsque nous concevons nos sites, nous avons tendance à être dans des conditio
 
 Pour nous aider à surmonter ces problèmes, il existe des [directives d’accessibilité](https://dequeuniversity.com/rules/axe/2.2/color-contrast) que nous pouvons suivre pour choisir nos couleurs de texte et de fond. Comment respectons-nous ces lignes directrices&nbsp;? Seuls 22,04&nbsp;% des sites donnent à l’ensemble de leur texte un contraste de couleur suffisant. Cette valeur est en fait une limite inférieure, car nous n’avons pu analyser que les textes avec un fond plein. Les images et les fonds dégradés n’ont pas pu être analysés.
 
-<figure>
-  <a href="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.svg">
-    <img src="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.svg" alt="Figure 4. Exemple de ce à quoi ressemble un texte dont le contraste des couleurs est insuffisant. Avec l’aimable autorisation de LookZook" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="568" height="300">
-  </a>
-  <div id="fig4-description" class="visually-hidden">Quatre cases colorées de tons marron et gris avec du texte blanc superposé à l’intérieur créant deux colonnes, une où la couleur de fond n’est pas assez colorée par rapport au texte blanc et une où la couleur de fond est recommandée par rapport au texte blanc. Le code hexadécimal de chaque couleur est affiché, le blanc est <code>#FFFFFF</code>, la nuance claire du fond marron est <code>#FCA469</code>, et la nuance recommandée du fond marron est <code>#BD5B0E</code>. Les équivalents en niveaux de gris sont respectivement <code>#B8B8B8</code> et <code>#707070</code>. Image reproduite avec l’aimable autorisation de LookZook</div>
-  <figcaption id="fig4-caption">Figure 4. Exemple de ce à quoi ressemble un texte dont le contraste des couleurs est insuffisant. Avec l’aimable autorisation de LookZook</figcaption>
-</figure>
+{{ figure_markup(
+  image="example-of-good-and-bad-color-contrast-lookzook.svg",
+  caption="Exemple de ce à quoi ressemble un texte dont le contraste des couleurs est insuffisant. Avec l’aimable autorisation de LookZook",
+  description="Quatre cases colorées de tons marron et gris avec du texte blanc superposé à l’intérieur créant deux colonnes, une où la couleur de fond n’est pas assez colorée par rapport au texte blanc et une où la couleur de fond est recommandée par rapport au texte blanc. Le code hexadécimal de chaque couleur est affiché, le blanc est <code>#FFFFFF</code>, la nuance claire du fond marron est <code>#FCA469</code>, et la nuance recommandée du fond marron est <code>#BD5B0E</code>. Les équivalents en niveaux de gris sont respectivement <code>#B8B8B8</code> et <code>#707070</code>. Image reproduite avec l’aimable autorisation de LookZook",
+  width=568,
+  height=300
+  )
+}}
 
 Pour des statistiques sur le daltonisme dans d’autres groupes démographiques, voir [ce document](https://web.archive.org/web/20180304115406/http://www.allpsych.uni-giessen.de/karl/colbook/sharpe.pdf).
 
@@ -168,13 +174,17 @@ Pour cette raison, les équipes de développement ont la possibilité de désact
 
 2. `maximum-scale` défini à `1`, `1.0`, etc.
 
-<figure>
-  <a href="/static/images/2019/mobile-web/fig5.png">
-    <img src="/static/images/2019/mobile-web/fig5.png" alt="Figure 5. Pourcentage de sites web de bureau et mobiles qui activent ou désactivent la possibilité de zoomer&nbsp;/&nbsp;la mise à l’échelle." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="370" data-width="600" data-height="370" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQcVHQTKIULwgs3f2Jy8IQiHwVAJjKoHrfcvwYX5UAlb4s3bsEA2owiku4c14YZiJeG8H8acgSUul2N/pubchart?oid=655301645&amp;format=interactive">
-  </a>
-  <div id="fig5-description" class="visually-hidden">Diagramme à barres verticales groupées intitulé «&nbsp;Le zoom et la mise à l’échelle sont-ils activés&nbsp;?&nbsp;» mesurant les données en pourcentage, allant de 0 à 80 par incréments de 20, par rapport au type d’appareil, regroupées en bureau et mobile. Activé sur le bureau&nbsp;: 75,46&nbsp;%&nbsp;; bureau désactivé 24,54&nbsp;%&nbsp;; mobile activé&nbsp;: 67,79&nbsp;%&nbsp;; Mobile désactivé&nbsp;: 32,21&nbsp;%.</div>
-  <figcaption id="fig5-caption">Figure 5. Pourcentage de sites web de bureau et mobiles qui activent ou désactivent la possibilité de zoomer&nbsp;/&nbsp;la mise à l’échelle.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig5.png",
+  caption="Pourcentage de sites web de bureau et mobiles qui activent ou désactivent la possibilité de zoomer&nbsp;/&nbsp;la mise à l’échelle.",
+  description="Diagramme à barres verticales groupées intitulé «&nbsp;Le zoom et la mise à l’échelle sont-ils activés&nbsp;?&nbsp;» mesurant les données en pourcentage, allant de 0 à 80 par incréments de 20, par rapport au type d’appareil, regroupées en bureau et mobile. Activé sur le bureau&nbsp;: 75,46&nbsp;%&nbsp;; bureau désactivé 24,54&nbsp;%&nbsp;; mobile activé&nbsp;: 67,79&nbsp;%&nbsp;; Mobile désactivé&nbsp;: 32,21&nbsp;%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQcVHQTKIULwgs3f2Jy8IQiHwVAJjKoHrfcvwYX5UAlb4s3bsEA2owiku4c14YZiJeG8H8acgSUul2N/pubchart?oid=655301645&format=interactive",
+  width=600,
+  height=370,
+  data_width=600,
+  data_height=370
+  )
+}}
 
 Cependant, les équipes de développement ont tellement abusé de cette fonctionnalité qu’aujourd’hui, près d’un site sur trois (32,21&nbsp;%) la désactive, et Apple (à partir d’iOS 10) ne permet plus aux équipes de développement web de désactiver le zoom. Safari Mobile ignore simplement [la balise](https://archive.org/details/ios-10-beta-release-notes). Tous les sites, quoi qu’il en soit, peuvent être zoomés et mis à l’échelle sur les nouveaux appareils Apple, qui représentent plus de [11&nbsp;%](https://gs.statcounter.com/) de tout le trafic web dans le monde&nbsp;!
 
@@ -190,13 +200,14 @@ Nous sommes habitués à avoir des dispositifs de pointage précis, comme des so
 
 Il peut être difficile de concevoir des cibles d’appui appropriées pour atténuer ce problème en raison de la grande variété de taille des doigts. Cependant, de nombreuses recherches ont été menées et il existe des [normes](https://developers.google.com/web/tools/lighthouse/audits/tap-targets) sûres concernant la taille des boutons et la distance qui doit les séparer.
 
-<figure>
-  <a href="/static/images/2019/mobile-web/example-of-easy-to-hit-tap-targets-lookzook.png">
-    <img src="/static/images/2019/mobile-web/example-of-easy-to-hit-tap-targets-lookzook.png" alt="Figure 6. Normes de dimensionnement et d’espacement des cibles d’appui. Image reproduite avec l’aimable autorisation de LookZook." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="800" height="430">
-  </a>
-  <div id="fig6-description" class="visually-hidden">Un diagramme montrant deux exemples de boutons difficiles à toucher. Le premier exemple montre deux boutons sans espacement entre eux. L’exemple ci-dessous montre les mêmes boutons mais avec l’espacement recommandé (8&nbsp;px ou 1-2&nbsp;mm). Le second exemple montre un bouton beaucoup trop petit pour être appuyé&nbsp;; l’exemple ci-dessous montre le même bouton agrandi à la taille recommandée de 40-48&nbsp;px (environ 8&nbsp;mm). Image reproduite avec l’aimable autorisation de LookZook</div>
-  <figcaption id="fig6-caption">Figure 6. Normes de dimensionnement et d’espacement des cibles d’appui. Image reproduite avec l’aimable autorisation de LookZook.</figcaption>
-</figure>
+{{ figure_markup(
+  image="example-of-easy-to-hit-tap-targets-lookzook.png",
+  caption="Normes de dimensionnement et d’espacement des cibles d’appui. Image reproduite avec l’aimable autorisation de LookZook.",
+  description="Un diagramme montrant deux exemples de boutons difficiles à toucher. Le premier exemple montre deux boutons sans espacement entre eux. L’exemple ci-dessous montre les mêmes boutons mais avec l’espacement recommandé (8&nbsp;px ou 1-2&nbsp;mm). Le second exemple montre un bouton beaucoup trop petit pour être appuyé&nbsp;; l’exemple ci-dessous montre le même bouton agrandi à la taille recommandée de 40-48&nbsp;px (environ 8&nbsp;mm). Image reproduite avec l’aimable autorisation de LookZook",
+  width=800,
+  height=430
+  )
+}}
 
 À l’heure actuelle, 34,43&nbsp;% des sites ont des cibles d’appui suffisamment grandes. Nous avons donc encore beaucoup de chemin à parcourir avant que les erreurs liées aux «&nbsp;gros doigts&nbsp;» soient derrière nous.
 
@@ -239,19 +250,21 @@ Lors de l’analyse des sites contenant une saisie d’email, 56,42&nbsp;% utili
       <td class="numeric">833</td>
     </tr>
   </table>
-  <figcaption>Figure 7. Types de saisie invalides les plus couramment utilisés</figcaption>
+  <figcaption>{{ figure_link(caption="Types de saisie invalides les plus couramment utilisés") }}</figcaption>
 </figure>
 
-Assurez-vous de bien vous informer et de renseigner les autres sur la grande quantité de types de saisie disponibles et vérifiez que vous n’avez pas de fautes de frappe, à l’image des plus courantes, reprises dans la figure 7 ci-dessus.
+Assurez-vous de bien vous informer et de renseigner les autres sur la grande quantité de types de saisie disponibles et vérifiez que vous n’avez pas de fautes de frappe, à l’image des plus courantes, reprises dans la figure 12.7 ci-dessus.
 
 ### Activation de l’autocomplétion pour les saisies
 
 L’attribut [`autocomplete`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) de l’élément `<input>` permet aux gens de remplir les champs du formulaire en un seul clic. Ils remplissent des tonnes de formulaires, souvent avec exactement les mêmes informations à chaque fois. Conscients de ce fait, les navigateurs ont commencé à stocker ces informations de manière sécurisée afin de pouvoir les réutiliser. Tout ce que les équipes de développement doivent faire, c’est utiliser cet attribut `autocomplete` pour indiquer aux navigateurs quelle est l’information exacte à remplir, et le navigateur fait le reste.
 
-<figure>
-  <div class="big-number">29,62&nbsp;%</div>
-  <figcaption>Figure 8. Pourcentage des pages utilisant <code>autocomplete</code>.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="Pourcentage des pages utilisant <code>autocomplete</code>.",
+  content="29,62&nbsp;%",
+  classes="big-number"
+)
+}}
 
 Actuellement, seules 29,62&nbsp;% des pages comportant des champs de saisie utilisent cette fonction.
 
@@ -269,13 +282,15 @@ Comment nous débrouillons-nous pour répondre aux besoins des utilisateurs de t
 
 Le web mobile existe maintenant depuis assez longtemps pour qu’il y ait toute une génération d’enfants pour qui c’est le seul internet qu’ils aient jamais connu. Et quel genre d’expérience leur donnons-nous&nbsp;? Nous les ramenons essentiellement à l’ère du modem (heureusement qu’AOL vend encore ces CD qui offrent 1000 heures d’accès gratuit à l’internet)&nbsp;!
 
-<figure>
-  <a href="/static/images/2019/mobile-web/america-online-1000-hours-free.jpg">
-    <img alt="Un CD d’essai gratuit de AOL (1000 heures)" src="/static/images/2019/mobile-web/america-online-1000-hours-free.jpg" aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="300" height="285">
-  </a>
-  <div id="fig9-description" class="visually-hidden">Une photo d’un CD-ROM AOL offrant 1000 heures gratuites.</div>
-  <figcaption id="fig9-caption">Figure 9. 1000 heures d’AOL gratuites, image issue de <a href="https://archive.org/details/America_Online_1000_Hours_Free_for_45_Days_Version_7.0_Faster_Than_Ever_AM402R28">archive.org</a>.</figcaption>
-</figure>
+{{ figure_markup(
+  image="america-online-1000-hours-free.jpg",
+  alt="1000 heures d’AOL gratuites, image issue de archive.org.",
+  caption='1000 heures d’AOL gratuites, image issue de <a href="https://archive.org/details/America_Online_1000_Hours_Free_for_45_Days_Version_7.0_Faster_Than_Ever_AM402R28">archive.org</a>.',
+  description="Une photo d’un CD-ROM AOL offrant 1000 heures gratuites.",
+  width=300,
+  height=285
+  )
+}}
 
 <p class="note" data-markdown="1">Notes&nbsp;:
 

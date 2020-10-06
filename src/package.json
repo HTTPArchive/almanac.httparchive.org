@@ -14,17 +14,20 @@
   },
   "homepage": "https://github.com/HTTPArchive/almanac.httparchive.org#readme",
   "scripts": {
+    "test": "node ./tools/test",
     "generate": "node ./tools/generate",
     "ebooks": "node ./tools/generate/generate_ebook_pdfs",
-    "deploy": "echo \"Y\" | gcloud app deploy --project webalmanac --stop-previous-version"
+    "deploy": "./tools/scripts/deploy.sh"
   },
   "devDependencies": {
-    "ejs": "^3.1.3",
-    "fs-extra": "^9.0.1",
-    "jsdom": "^16.3.0",
-    "prettier": "^2.0.5",
-    "recursive-readdir": "^2.2.2",
-    "showdown": "^1.9.1",
-    "web-vitals": "^0.2.4"
+    "ejs": "3.1.5",
+    "fs-extra": "9.0.1",
+    "jsdom": "16.4.0",
+    "prettier": "2.1.2",
+    "recursive-readdir": "2.2.2",
+    "showdown": "1.9.1",
+    "web-vitals": "0.2.4",
+    "node-fetch": "2.6.1",
+    "xml-js": "1.6.11"
   }
 }

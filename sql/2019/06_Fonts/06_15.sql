@@ -19,7 +19,7 @@ SELECT
 FROM
   (SELECT _TABLE_SUFFIX AS client, url AS page, payload FROM `httparchive.pages.2019_07_01_*`)
 JOIN
-  (SELECT client, page, url FROM `httparchive.almanac.requests` WHERE type = 'font')
+  (SELECT client, page, url FROM `httparchive.almanac.requests` WHERE date = '2019-07-01' AND type = 'font')
 USING
   (client, page)
 JOIN

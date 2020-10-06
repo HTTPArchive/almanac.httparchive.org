@@ -5,12 +5,13 @@ title: Indices de Ressources
 description: Chapitre sur les indices de ressources du Web Almanac 2019, couvrant les usages de dns-prefetch, preconnect, preload, prefetch, les indices de priorités et le lazy loading natif.
 authors: [khempenius]
 reviewers: [andydavies, bazzadp, yoavweiss]
+analysts: [rviscomi]
 translators: [borisschapira]
 discuss: 1774
 results: https://docs.google.com/spreadsheets/d/14QBP8XGkMRfWRBbWsoHm6oDVPkYhAIIpfxRn4iOkbUU/
 queries: 19_Resource_Hints
 published: 2019-12-24T00:00:00.000Z
-last_updated: 2020-06-30T00:00:00.000Z
+last_updated: 2020-10-06T00:00:00.000Z
 ---
 
 ## Introduction
@@ -96,7 +97,7 @@ Comme l'utilisation des indices de ressources dans les en-têtes HTTP est très 
      </td>
     </tr>
   </table>
-  <figcaption>Figure 1. Adoption des indices de ressources.</figcaption>
+  <figcaption>{{ figure_link(caption="Adoption des indices de ressources.") }}</figcaption>
 </figure>
 
 La popularité relative de `dns-prefetch` n'est pas surprenante&nbps;: c'est une API bien connue (elle est apparue pour la première fois en [2009](https://caniuse.com/#feat=link-rel-dns-prefetch)), elle est prise en charge par tous les principaux navigateurs et c'est le moins "coûteux" de tous les indices de ressources. Parce que `dns-prefetch` n'effectue que des recherches DNS, il consomme très peu de données et il y a donc très peu d'inconvénients à l'utiliser. `dns-prefetch` est particulièrement utile dans les situations de latence élevée.
@@ -153,10 +154,10 @@ Cela étant dit, si un site n'a pas besoin de supporter IE11 et les versions inf
      </td>
     </tr>
   </table>
-  <figcaption>Figure 2. Médiane en 90e percentile du nombre d'indices de ressources utilisés sur les pages en utilisant au moins un.</figcaption>
+  <figcaption>{{ figure_link(caption="Médiane en 90e percentile du nombre d'indices de ressources utilisés sur les pages en utilisant au moins un.") }}</figcaption>
 </figure>
 
-Les indices de ressources sont plus efficaces lorsqu'ils sont utilisés de manière sélective (_"quand tout est important, rien ne l'est"_). La figure 2 ci-dessus montre le nombre d'indices de ressources sur les pages en utilisant au moins un. Bien qu'il n'existe pas de règle précise pour définir ce qu'est un nombre approprié d'indices de ressources, il semble que la plupart des sites les utilisent de manière appropriée.
+Les indices de ressources sont plus efficaces lorsqu'ils sont utilisés de manière sélective (_"quand tout est important, rien ne l'est"_). La figure 19.2 ci-dessus montre le nombre d'indices de ressources sur les pages en utilisant au moins un. Bien qu'il n'existe pas de règle précise pour définir ce qu'est un nombre approprié d'indices de ressources, il semble que la plupart des sites les utilisent de manière appropriée.
 
 ## L'attribut `crossorigin`
 
@@ -198,7 +199,7 @@ Pour les types de ressources plus récentes (par exemple les polices, les requê
      </td>
     </tr>
   </table>
-  <figcaption>Figure 3. Adoption de l'attribut <code>crossorigin</code> en pourcentage du nombre d'indices de ressources.</figcaption>
+  <figcaption>{{ figure_link(caption="Adoption de l'attribut <code>crossorigin</code> en pourcentage du nombre d'indices de ressources.") }}</figcaption>
 </figure>
 
 Dans le contexte des indices de ressources, l'utilisation de l'attribut `crossorigin` leur permet de correspondre au mode CORS des ressources auxquelles ils sont censés correspondre et indique les références à inclure dans la requête. Par exemple, `anonymous` active le mode CORS et indique qu'aucun identifiant ne doit être inclus pour ces requêtes `cross-origin`&nbsp;:
@@ -212,10 +213,12 @@ Bien que d'autres éléments HTML prennent en charge l'attribut `crossorigin`, c
 
 `as` est un attribut qui doit être utilisé avec le indices de ressources `preload` pour informer le navigateur du type (par exemple, image, script, style, etc.) de la ressource demandée. Cela aide le navigateur à classer correctement la requête par ordre de priorité et à appliquer la politique de sécurité du contenu (ou <i lang="en">Content Security Policy</i>, [CSP](https://developers.google.com/web/fundamentals/security/csp)). La CSP est un mécanisme de [sécurité](./security), exprimé par un en-tête HTTP, qui contribue à atténuer l'impact des attaques XSS et d'autres attaques malveillantes en déclarant une liste de sources fiables ; seul le contenu de ces sources peut alors être rendu ou exécuté.
 
-<figure>
-  <div class="big-number">88&nbsp;%</div>
-  <figcaption>Figure 4. Pourcentage des indices de ressources qui utilisent l'attribut <code>as</code>.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="Pourcentage des indices de ressources qui utilisent l'attribut <code>as</code>.",
+  content="88&nbsp;%",
+  classes="big-number"
+)
+}}
 
 88&nbsp;% des indices de ressources utilisent l'attribut `as`. Quand `as` est spécifié, il est utilisé de façon écrasante pour les scripts : 92&nbsp;% de l'utilisation concerne les scripts, 3&nbsp;% les polices et 3&nbsp;% les styles. Ce n'est pas surprenant étant donné le rôle prépondérant que les scripts jouent dans l'architecture de la plupart des sites ainsi que la fréquence élevée à laquelle les scripts sont utilisés comme vecteurs d'attaque (d'où l'importance particulière de leur appliquer la bonne CSP).
 
@@ -234,15 +237,17 @@ Les [indices de priorités](https://wicg.github.io/priority-hints/) sont une API
   &lt;img src="cat2.jpg" importance="low">
   &lt;img src="cat3.jpg" importance="low">
 &lt;/carousel></code></pre></div>
-<figcaption>Figure 5. Exemple HTML d'utilisation d'indices de priorités sur un carrousel d'images.</figcaption>
+<figcaption>{{ figure_link(caption="Exemple HTML d'utilisation d'indices de priorités sur un carrousel d'images.") }}</figcaption>
 </figure>
 
 Par exemple, si vous disposez d'un carrousel d'images, des indices de priorités pourraient être utilisés pour prioriser l'image que les utilisateurs voient immédiatement et déprioriser les images ultérieures.
 
-<figure>
-  <div class="big-number">0,04&nbsp;%</div>
-  <figcaption>Figure 6. Taux d'adoption des indices de priorités.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="Taux d'adoption des indices de priorités.",
+  content="0,04&nbsp;%",
+  classes="big-number"
+)
+}}
 
 Les indices de priorités sont [mis en œuvre](https://www.chromestatus.com/feature/5273474901737472) et peuvent être testés au moyen d'un drapeau de fonctionnalité dans les versions 70 et supérieures du navigateur Chromium. Étant donné qu'il s'agit encore d'une technologie expérimentale, il n'est pas surprenant qu'elle soit utilisée par 0,04&nbsp;% des sites.
 

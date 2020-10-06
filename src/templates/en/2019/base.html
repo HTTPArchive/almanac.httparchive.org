@@ -4,9 +4,6 @@
 
 {% block twitter_image_alt %}{{ year }} Web Almanac{% endblock %}
 
-{% block date_published %}2019-11-04T12:00:00.000Z{% endblock %}
-{% block date_modified %}2020-07-27T00:00:00.000Z{% endblock %}
-
 {% block skip_navigation %}Skip navigation{% endblock %}
 
 {% block organization %}Web Almanac by HTTP Archive{% endblock %}
@@ -51,25 +48,30 @@ Our mission is to combine the raw stats and trends of the HTTP Archive with the 
 {% block close_the_index %}Close the Table of Contents{% endblock %}
 
 {% block and %}and{% endblock %}
+{% block comma %}, {% endblock %}
 
 {% block open %}Open{% endblock %}
 {% block close %}Close{% endblock %}
 
-{% macro show_description(id) %}Show description of Figure {{ id }}{% endmacro %}
-{% macro hide_description(id) %}Hide description of Figure {{ id }}{% endmacro %}
+{% macro figure_text(metadata, id) %}Figure {{ figure_id(metadata, id) }}.{% endmacro %}
+{% macro show_description(metadata, id) %}Show description of Figure {{ figure_id(metadata, id) }}{% endmacro %}
+{% macro hide_description(metadata, id) %}Hide description of Figure {{ figure_id(metadata, id) }}{% endmacro %}
 
 {% block written_by_before %}Written by{% endblock %}
 {% block reviewed_by_before %}Reviewed by{% endblock %}
 {% block translated_by_before %}Translated by{% endblock %}
+{% block analysis_by_before %}Analysis by{% endblock %}
 {% block written_by_after %}{% endblock %}
 {% block reviewed_by_after %}{% endblock %}
 {% block translated_by_after %}{% endblock %}
+{% block analysis_by_after %}{% endblock %}
 
 {% block author %}Author{% endblock %}
 {% block authors %}Authors{% endblock %}
 
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} on Twitter{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} on GitHub{% endmacro %}
+{% macro onLinkedIn(authorName) %}{{authorName}} on LinkedIn{% endmacro %}
 {% macro website(authorName) %}{{authorName}} website{% endmacro %}
 
 {% macro edition(year) %}{{ year }} Edition{% endmacro %}
@@ -77,6 +79,9 @@ Our mission is to combine the raw stats and trends of the HTTP Archive with the 
 {% block footer_title %}Footer navigation{% endblock %}
 {% block copyright %}© Web Almanac. Licensed under <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
 {% block accessibility_statement %}Accessibility Statement{% endblock %}
+
+{% block featured_chapter %}Featured Chapter{% endblock %}
+{% macro readChapter(chapter) %}Read the <span class="featured-chapter-name">{{ chapter }}</span> Chapter{% endmacro %}
 
 {% block contributors_description %}
 The Web Almanac has been made possible by the hard work of the web community. {{ self.contributors() }} people have volunteered countless hours in the planning, research, writing and production phases.
@@ -120,7 +125,7 @@ Unless otherwise noted, the metrics in all of the 20 chapters of the Web Almanac
 {% block appendices %}Appendices{% endblock %}
 
 {% block ebook_title %}Ebook{% endblock %}
-{% block ebook_download %}Download the entire {{ year }} Web Almanac in PDF format{% endblock %}
+{% block ebook_download %}Download the entire {{ year }} Web Almanac in PDF format ({{ ebook_size_in_mb }}MB){% endblock %}
 {% block ebook_download_note %}(generated with <a href="https://www.princexml.com/">www.princexml.com</a>){% endblock %}
 
 {% 
@@ -152,7 +157,10 @@ Unless otherwise noted, the metrics in all of the 20 chapters of the Web Almanac
     "cdn": "CDN",
     "page-weight": "Page Weight",
     "resource-hints": "Resource Hints",
-    "http2": "HTTP/2"
+    "http2": "HTTP/2",
+    "privacy": "Privacy",
+    "capabilities": "Capabilities",
+    "jamstack": "Jamstack"
   }
 %}
 
@@ -163,7 +171,7 @@ Unless otherwise noted, the metrics in all of the 20 chapters of the Web Almanac
   "designers": "Designers",
   "developers": "Developers",
   "editors": "Editors",
-  "leads": "Leads",
+  "leads": "Project Leads",
   "reviewers": "Reviewers",
   "translators": "Translators", 
   }

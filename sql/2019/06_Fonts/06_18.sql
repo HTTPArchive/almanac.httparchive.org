@@ -12,6 +12,7 @@ JOIN
 USING
   (client)
 WHERE
+  date = '2019-07-01' AND
   type = 'font' AND
   JSON_EXTRACT_SCALAR(payload, '$._font_details.table_sizes.gvar') IS NOT NULL
 GROUP BY

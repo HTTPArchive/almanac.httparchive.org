@@ -1,19 +1,32 @@
 const generate_figure_ids = (html) => {
-  const re = /<figure>|<figure markdown>|<figure data-markdown="1">/gi;
 
-  let i = 1;
-  html = html.replace(re, () => `<figure id='fig-${i++}'>`);
+  let figure_count = 0;
 
-  //Add the show description button
-  html = html.replace(/<div id="fig([0-9]+)-description"/gi, '<button hidden class="fig-description-button" aria-expanded="false" aria-controls="fig$1-description" data-show-text="{{ show_description($1) }}" data-hide-text="{{ hide_description($1) }}">{{ show_description($1) }}</button><div id="fig$1-description"');
+  // Add metadata and _figid_ placeholders to figure_markups
+  let re = /figure_markup\s*\(/g;
+  html = html.replace(re, () => 'figure_markup(metadata=metadata, id=_figid_, ');
 
-  //Some of our 2019 chapters (markdown and performance) had different fig ids
-  const figcaption_regex = /<figcaption(.*?)>(.*?)([0-9]+)\./gi;
-  if (html.includes('<figure id="fig1"')) {
-    return html.replace(figcaption_regex, '<figcaption$1><a href="#fig$3" class="anchor-link">$2 $3.</a>');
-  } else {
-    return html.replace(figcaption_regex, '<figcaption$1><a href="#fig-$3" class="anchor-link">$2 $3.</a>');
-  }
+  // Add handle tables which don't use figure_markups
+  // Need to add id in <figure> element at top of table
+  // and also in figure_link call from <figcaption> element
+  // at bottom of table.
+  re = /<figure>|<figure markdown>|<figure data-markdown="1">/gi;
+  html = html.replace(re, () => '<figure id="fig-_figid_">');
+  re = /figure_link\s*\(/g;
+  html = html.replace(re, () => 'figure_link(metadata=metadata, id=_figidn_, ');
+
+  // replace _figid_ with i and increment
+  // replace _figidn_ with i and do not increment
+  re = /_figid(n?)_/g;
+  html = html.replace(re, ($1, $2) => {
+    if ($2) {
+      return figure_count;
+    } else {
+      return ++figure_count;
+    }
+  });
+
+  return html;
 };
 
 module.exports = {

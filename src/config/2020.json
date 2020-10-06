@@ -2,7 +2,7 @@
   "settings": [
     {
       "is_live": true,
-      "supported_languages": ["en","es","fr","ja","zh_CN"],
+      "supported_languages": ["en","es","fr","ja","pt","zh-CN"],
       "ebook_languages": []
     }
   ],
@@ -92,6 +92,12 @@
         {
           "part": "II",
           "chapter": "13",
+          "title": "Capabilities",
+          "slug": "capabilities"
+        },
+        {
+          "part": "II",
+          "chapter": "14",
           "title": "PWA",
           "slug": "pwa"
         }
@@ -103,20 +109,20 @@
       "chapters": [
         {
           "part": "III",
-          "chapter": "14",
+          "chapter": "15",
           "title": "CMS",
           "slug": "cms"
         },
         {
           "part": "III",
-          "chapter": "15",
+          "chapter": "16",
           "title": "Ecommerce",
           "slug": "ecommerce"
         },
         {
           "part": "III",
-          "chapter": "16",
-          "title": "JAMstack",
+          "chapter": "17",
+          "title": "Jamstack",
           "slug": "jamstack"
         }
       ]
@@ -127,31 +133,31 @@
       "chapters": [
         {
           "part": "IV",
-          "chapter": "17",
+          "chapter": "18",
           "title": "Page Weight",
           "slug": "page-weight"
         },
         {
           "part": "IV",
-          "chapter": "18",
+          "chapter": "19",
           "title": "Compression",
           "slug": "compression"
         },
         {
           "part": "IV",
-          "chapter": "19",
+          "chapter": "20",
           "title": "Caching",
           "slug": "caching"
         },
         {
           "part": "IV",
-          "chapter": "20",
+          "chapter": "21",
           "title": "Resource Hints",
           "slug": "resource-hints"
         },
         {
           "part": "IV",
-          "chapter": "21",
+          "chapter": "22",
           "title": "HTTP/2",
           "slug": "http2"
         }
@@ -164,6 +170,9 @@
     },
     "authors": {
       "name": "Authors"
+    },
+    "designers": {
+      "name": "Designers"
     },
     "developers": {
       "name": "Developers"
@@ -212,6 +221,17 @@
       "website": "https://aagar.github.io/",
       "github": "AAgar",
       "twitter": "AAgar"
+    },
+     "adityapandey1998": {
+      "name": "Aditya Pandey",
+      "teams": [
+        "analysts",
+        "developers"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/31750960?v=4&s=200",
+      "github": "adityapandey1998",
+      "twitter": "adityapandey98",
+      "linkedin": "adityapandey98"
     },
     "alexdenning": {
       "name": "Alex Denning",
@@ -318,6 +338,7 @@
       "avatar_url": "https://avatars3.githubusercontent.com/u/10931297?v=4&s=200",
       "website": "https://www.tunetheweb.com",
       "github": "bazzadp",
+      "linkedin": "barry-pollard-developer",
       "twitter": "tunetheweb"
     },
     "bseymour": {
@@ -690,7 +711,7 @@
         "reviewers"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/13718746?v=4&s=200",
-      "website": "https://www.linkedin.com/in/johnfox/",
+      "linkedin": "johnfox",
       "github": "clarkeclark"
     },
     "logicalphase": {
@@ -799,6 +820,15 @@
       "github": "LPardue",
       "twitter": "SimmerVigor"
     },
+    "Super-Fly": {
+      "name": "Lyubomir Angelov",
+      "teams": [
+        "developers"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/866229?v=4&s=200",
+      "github": "Super-Fly",
+      "twitter": "angelovcode"
+    },
     "mandymichael": {
       "name": "Mandy Michael",
       "teams": [
@@ -867,6 +897,12 @@
       "github": "ipullrank",
       "twitter": "IPullRank"
     },
+    "michelleoconnor": {
+      "name": "Michelle O'Connor",
+      "teams": [
+        "designers"
+      ]
+    },
     "MikeBishop": {
       "name": "Mike Bishop",
       "teams": [
@@ -881,7 +917,7 @@
         "translators"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/868584?v=4&s=200",
-      "website": "https://www.linkedin.com/in/miguelcarlosmartinezdiaz/",
+      "linkedin": "miguelcarlosmartinezdiaz",
       "github": "mcmd",
       "twitter": "mcmd"
     },
@@ -1008,14 +1044,6 @@
       "github": "pmeenan",
       "twitter": "patmeenan"
     },
-    "tungpatrick": {
-      "name": "Patrick Tung",
-      "teams": [
-        "analysts"
-      ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/43163296?v=4&s=200",
-      "github": "tungpatrick"
-    },
     "paulcalvano": {
       "name": "Paul Calvano",
       "teams": [
@@ -1124,7 +1152,9 @@
         "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/1718757?v=4&s=200",
-      "github": "rockeynebhwani"
+      "github": "rockeynebhwani",
+      "twitter": "rnebhwani",
+      "linkedin": "rockeynebhwani"
     },
     "RoelN": {
       "name": "Roel Nieskens",
@@ -1290,6 +1320,16 @@
       "website": "https://websiteadvantage.com.au/",
       "github": "Tiggerito",
       "twitter": "TonyMcCreath"
+    },
+    "HakaCode": {
+      "name": "William Sandres",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars0.githubusercontent.com/u/33907565?v=4&s=200",
+      "website": "https://hakacode.github.io",
+      "github": "HakaCode",
+      "twitter": "hakacode"
     },
     "ydimova": {
       "name": "Yana Dimova",

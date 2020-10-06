@@ -1,4 +1,4 @@
-{%- set featured_chapter = ("third-parties","third-parties") | random %}
+{%- set featured_chapter = ("third-parties","fonts") | random %}
 {#
   Below is the full set of chapters. If all are translated then replace above line with this one.
   Other than add chapters to above first line as they are translated (min of two chapters so repeat if only one chapter)
@@ -20,8 +20,8 @@
   {%- set featured_chapter_quote = "La web abierta es vasta, enlazable e interoperable por diseño. La capacidad de tomar la biblioteca compleja de otra persona y usarla en su sitio con un solo elemento <code>&lt;link></code> or <code>&lt;script></code> ha incrementado la productividad de los desarrolladores y ha permitido nuevas e increíbles experiencias web; por otro lado, la inmensa popularidad de unos pocos servicios de terceros seleccionados plantea importantes problemas de rendimiento y privacidad. Este capítulo examina la prevalencia y el impacto del código de servicios de terceros en la web en 2019, los patrones de uso de la web que conducen a la popularidad de las soluciones de servicios de terceros y las posibles repercusiones para el futuro del rendimiento y la privacidad de la web." %}
   {%- set featured_chapter_stats = {"stat1":"93%","label1":"Páginas con SdT","stat2":"49%","label2":"Peticiones SdT","stat3":"28%","label3":"Bytes SdT"} %}
 {%- elif featured_chapter == "fonts" %}
-  {%- set featured_chapter_quote = "Web fonts enable beautiful and functional typography on the web. Using web fonts not only empowers design, but it democratizes a subset of design, as it allows easier access to those who might not have particularly strong design skills. However, for all the good they can do, web fonts can also do great harm to your site's performance if they are not loaded properly." %}
-  {%- set featured_chapter_stats = {"stat1":"74.9%","label1":"3P Font Requests that use Google Fonts","stat2":"29%","label2":"Percent of pages that include a Google Fonts stylesheet link","stat3":"718","label3":"Most font requests on a single page"} %}
+  {%- set featured_chapter_quote = "Las fuentes web permiten una tipografía hermosa y funcional en la web. El uso de fuentes web no solo fortalece el diseño, sino que democratiza un subconjunto del diseño, ya que permite un acceso más fácil a aquellos que quizás no tengan habilidades de diseño particularmente sólidas. Sin embargo, a pesar de todo lo bueno que pueden hacer, las fuentes web también pueden causar un gran daño al rendimiento de su sitio si no se cargan correctamente." %}
+  {%- set featured_chapter_stats = {"stat1":"74.9%","label1":"3P Solicitudes de fuentes que utilizan Google Fonts","stat2":"29%","label2":"Porcentaje de páginas que incluyen un enlace de hoja de estilo de Google Fonts","stat3":"718","label3":"Mayor cantidad de solicitudes de fuentes por una sola página"} %}
 {%- elif featured_chapter == "performance" %}
   {%- set featured_chapter_quote = "Performance is a visceral part of the user experience. For many websites, an improvement to the user experience by speeding up the page load time aligns with an improvement to conversion rates. Conversely, when performance is poor, users don't convert as often and have even been observed to be rage clicking on the page in frustration." %}
   {%- set featured_chapter_stats = {"stat1":"13%","label1":"Sites with fast FCP","stat2":"42%","label2":"Sites with slow TTFB","stat3":"40%","label3":"Sites with fast FID"} %}
@@ -65,35 +65,4 @@
   {%- set featured_chapter_quote = "HTTP/2 was the first major update to the main transport protocol of the web in nearly 20 years. It arrived with a wealth of expectations: it promised a free performance boost with no downsides. More than that, we could stop doing all the hacks and work arounds that HTTP/1.1 forced us into, due to its inefficiencies. Bundling, spriting, inlining, and even sharding domains would all become anti-patterns in an HTTP/2 world, as improved performance would be provided by default. This chapter examines how this relatively new technology has fared in the real world." %}
   {%- set featured_chapter_stats = {"stat1":"95%","label1":"Users who can use HTTP/2","stat2":"27.83%","label2":"Requests with HTTP/2 prioritisation issues","stat3":"8.38%","label3":"Sites supporting QUIC"} %}
 {%- endif %}
-<section id="featured-chapter" class="featured-chapter">
-  <div class="featured-chapter-content">
-    <h2 class="title title-center">Capítulo Destacado</h2>
-    <h3>{{ localizedChapterTitles[featured_chapter] }}</h3>
-    <blockquote>
-      {{ featured_chapter_quote|safe }}
-    </blockquote>
-    <div class="featured-chapter-content-data">
-      {% if featured_chapter_stats.get('stat1') %}
-      <div class="featured-chapter-content-data-item">
-        <div>{{ featured_chapter_stats.get('stat1')|safe }}</div>
-        <div>{{ featured_chapter_stats.get('label1')|safe }}</div>
-      </div>
-      {% endif %}
-      {% if featured_chapter_stats.get('stat2') %}
-      <div class="featured-chapter-content-data-item">
-        <div>{{ featured_chapter_stats.get('stat2')|safe }}</div>
-        <div>{{ featured_chapter_stats.get('label2')|safe }}</div>
-      </div>
-      {% endif %}
-      {% if featured_chapter_stats.get('stat3') %}
-      <div class="featured-chapter-content-data-item">
-        <div>{{ featured_chapter_stats.get('stat3')|safe }}</div>
-        <div>{{ featured_chapter_stats.get('label3')|safe }}</div>
-      </div>
-      {% endif %}
-    </div>
-    <a href="{{ url_for('chapter', year=year, chapter=featured_chapter, lang=lang) }}" class="btn">
-      Lea el Capítulo: {{ localizedChapterTitles[featured_chapter] }}
-    </a>
-  </div>
-</section>
+{{ featuredChapter(featured_chapter, featured_chapter_quote, featured_chapter_stats) }}

@@ -4,9 +4,6 @@
 
 {% block twitter_image_alt %}{{ year }} Web Almanac{% endblock %}
 
-{% block date_published %}2019-11-04T12:00:00.000Z{% endblock %}
-{% block date_modified %}2020-07-27T00:00:00.000Z{% endblock %}
-
 {% block skip_navigation %}Saltar navegación{% endblock %}
 
 {% block organization %}Web Almanac por HTTP Archive{% endblock %}
@@ -51,25 +48,30 @@ Nuestra misión es combinar las estadísticas y tendencias sin procesar del HTTP
 {% block close_the_index %}Cerrar la tabla de contenido{% endblock %}
 
 {% block and %}y{% endblock %}
+{% block comma %}, {% endblock %}
 
 {% block open %}Abre{% endblock %}
 {% block close %}Cierra{% endblock %}
 
-{% macro show_description(id) %}Mostrar descripción de la Figura {{ id }}{% endmacro %}
-{% macro hide_description(id) %}Ocultar descripción de la Figura {{ id }}{% endmacro %}
+{% macro figure_text(metadata, id) %}Figura {{ figure_id(metadata, id) }}.{% endmacro %}
+{% macro show_description(metadata, id) %}Mostrar descripción de la Figura {{ figure_id(metadata, id) }}{% endmacro %}
+{% macro hide_description(metadata, id) %}Ocultar descripción de la Figura {{ figure_id(metadata, id) }}{% endmacro %}
 
 {% block written_by_before %}Escrito por{% endblock %}
 {% block reviewed_by_before %}Revisado por{% endblock %}
 {% block translated_by_before %}Traducido por{% endblock %}
+{% block analysis_by_before %}Análisis por{% endblock %}
 {% block written_by_after %}{% endblock %}
 {% block reviewed_by_after %}{% endblock %}
 {% block translated_by_after %}{% endblock %}
+{% block analysis_by_after %}{% endblock %}
 
 {% block author %}Autor(a){% endblock %}
 {% block authors %}Autores{% endblock %}
 
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} en Twitter{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} en GitHub{% endmacro %}
+{% macro onLinkedIn(authorName) %}{{authorName}} en LinkedIn{% endmacro %}
 {% macro website(authorName) %}{{authorName}} sitio web{% endmacro %}
 
 {% macro edition(year) %}Edición {{ year }}{% endmacro %}
@@ -77,6 +79,9 @@ Nuestra misión es combinar las estadísticas y tendencias sin procesar del HTTP
 {% block footer_title %}Navegación de pie de página{% endblock %}
 {% block copyright %}© Web Almanac. Con licencia <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
 {% block accessibility_statement %}Declaración de accesibilidad{% endblock %}
+
+{% block featured_chapter %}Capítulo Destacado{% endblock %}
+{% macro readChapter(chapter) %}Lea el Capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
 
 {% block contributors_description %}
 Web Almanac ha sido posible gracias al arduo trabajo de la comunidad web. {{ self.contributors() }} personas han ofrecido incontables horas en las fases de planificación, investigación, redacción y producción.
@@ -120,7 +125,7 @@ A menos que se indique lo contrario, las métricas en los 20 capítulos del Web 
 {% block appendices %}Apéndices{% endblock %}
 
 {% block ebook_title %}Libro electronico{% endblock %}
-{% block ebook_download %}Download the entire {{ year }} Web Almanac in PDF format{% endblock %}
+{% block ebook_download %}Download the entire {{ year }} Web Almanac in PDF format ({{ ebook_size_in_mb }}MB){% endblock %}
 {% block ebook_download_note %}(generated with <a href="https://www.princexml.com/">www.princexml.com</a>){% endblock %}
 
 {% 
@@ -139,7 +144,7 @@ A menos que se indique lo contrario, las métricas en los 20 capítulos del Web 
       "media": "Media",
       "third-parties": "Contenido de Terceros",
       "fonts": "Fuentes",
-      "performance": "Performance",
+      "performance": "Rendimiento",
       "security": "Seguridad",
       "accessibility": "Accesibilidad",
       "seo": "SEO",
@@ -152,7 +157,10 @@ A menos que se indique lo contrario, las métricas en los 20 capítulos del Web 
       "cdn": "CDN",
       "page-weight": "Peso de las Páginas",
       "resource-hints": "Sugerencias de Recursos",
-      "http2": "HTTP/2"
+      "http2": "HTTP/2",
+      "privacy": "Intimidad",
+      "capabilities": "Capacidades",
+      "jamstack": "Jamstack"
     }
   %}
   
@@ -197,7 +205,7 @@ A menos que se indique lo contrario, las métricas en los 20 capítulos del Web 
     "tomayac": '<i lang="en">Thomas Steiner is a Web Developer Advocate at Google Hamburg, focused on making the Web a better place through standardization, creating and sharing best practices, and doing research. He blogs at <a href="https://blog.tomayac.com/">blog.tomayac.com</a> and tweets as <a href="https://twitter.com/tomayac">@tomayac</a>.</i>',
     "una": '<i lang="en">Una Kravets is a Brooklyn-based international public speaker, technical writer, and Developer Advocate for Material Design at Google. Una hosts the <a href="https://www.youtube.com/watch?v=YK8GZBx3hpg">Designing the Browser</a> web series and the <a href="https://spec.fm/podcasts/toolsday">Toolsday</a> developer podcast. Follow her on <a href="https://twitter.com/una">Twitter</a> to find her musings on creative CSS, user experiences, and web development best practices.</i>',
     "ymschaap": '<i lang="en">Founder at technical SEO consultancy <a href="https://build.amsterdam/">build.amsterdam</a>. Previously founded several web companies that reached over 1 billions users. Blogging about his latest (ad)ventures since 2005 on <a href="https://yvoschaap.com/">yvoschaap.com</a>.</i>',
-    "zachleat": '<i lang="en">Zach is a Web Developer with <a href="https://www.filamentgroup.com/">Filament Group</a>. He’s currently fixated on <a href="https://www.zachleat.com/web/fonts/">web fonts</a> and <a href="https://www.zachleat.com/web/introducing-eleventy/">static site generators</a>. His <a href="https://www.zachleat.com/web/speaking/">public speaking résumé</a> includes talks in eight different countries at events like JAMstack_conf, Beyond Tellerrand, Smashing Conference, CSSConf, and <a href="https://www.zachleat.com/web/whitehouse/">The White House</a>. He also helps herd <a href="http://nejsconf.com/">NEJS CONF</a> and the <a href="http://nebraskajs.com">NebraskaJS</a> meetup.</i>',
+    "zachleat": '<i lang="en">Zach es un Desarrollador Web en <a href="https://www.filamentgroup.com/">Filament Group</a>. Actualmente está obsesionado con <a href="https://www.zachleat.com/web/fonts/">las fuentes web</a> y <a href="https://www.zachleat.com/web/introducing-eleventy/">generadores de sitios estáticos</a>. Su <a href="https://www.zachleat.com/web/speaking/">currículum de expositor</a> incluye charlas en ocho países diferentes en eventos como JAMstack_conf, Beyond Tellerrand, Smashing Conference, CSSConf, y <a href="https://www.zachleat.com/web/whitehouse/">La Casa Blanca</a>. Él también ayuda a organizar <a href="http://nejsconf.com/">NEJS CONF</a> y las reuniones de <a href="http://nebraskajs.com">NebraskaJS</a>.</i>',
     }
   %}
   

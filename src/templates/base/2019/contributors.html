@@ -7,10 +7,6 @@
 {% block styles %}
 {{ super() }}
 <style nonce="{{ csp_nonce() }}">
-.main {
-  padding-left: 10px;
-  padding-right: 10px;
-}
 .team {
   display: flex;
   flex-direction: row;
@@ -74,7 +70,7 @@
 
 .contributor-grid:not([data-rendered='true']) .contributor {
   transform: translateY(30px);
-  opacity: 1;
+  opacity: 0;
   will-change: opacity;
 }
 
@@ -107,8 +103,13 @@
   margin: 10px;
 }
 
-.contributor:focus .contributor-avatar{
-    transform: scale(1.1);
+.contributor:focus .contributor-avatar {
+  transform: scale(1.1);
+}
+
+.contributor:focus {
+  border: 2px solid #f7f779;
+  outline: none;
 }
 
 .contributor-avatar {
@@ -129,10 +130,6 @@
   margin-bottom: 0.588em;
 }
 
-.contributor-social {
-  flex: 1
-}
-
 .contributor-social a {
   display: inline-block;
   margin: 0 5px;
@@ -141,19 +138,13 @@
 .contributor-teams {
   margin-top: 5px;
   text-align: center;
+  color: #757575;
 }
 
 .contributor-team {
   font-size: 14px;
   font-size: 0.875rem;
-  color: #757575;
   white-space: nowrap;
-}
-.contributor-team::after {
-  content: ', ';
-}
-.contributor-team:last-child::after {
-  content: '';
 }
 
 {% for id in config.teams.keys() %}
@@ -168,10 +159,6 @@
 {% endfor %}
 
 @media (max-width: 600px) {
-  .main {
-    padding-left: 0;
-    padding-right: 0;
-  }
   .team {
     height: 100px;
   }
@@ -264,6 +251,14 @@
   }
 }
 </style>
+<noscript>
+  <style nonce="{{ csp_nonce() }}">
+    .contributor-grid:not([data-rendered='true']) .contributor {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  </style>
+</noscript>
 {% endblock %}
 
 {% block main %}
@@ -311,28 +306,35 @@
         </a>
       </li>
     {% for id, contributor in config.contributors.items() %}
-      <li class="contributor {{ ' '.join(contributor.teams) }}" id="{{ id }}">
+      <li class="contributor {{ ' '.join(contributor.teams) }}" id="{{ id }}" tabindex="-1">
         <img class="contributor-avatar" src="{{contributor.avatar_url}}" height="100" width="100" alt="{{ contributor.name }} avatar" loading="lazy" />
         <div class="contributor-name">{{ contributor.name }}</div>
 
         <div class="contributor-social">
           {% if contributor.twitter %}
           <a href="https://twitter.com/{{ contributor.twitter }}" aria-label="{{ onTwitter(contributor.twitter) }}">
-            <svg width="22" height="22">
+            <svg width="22" height="22" role="img">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
             </svg>
           </a>
           {% endif %}
           {% if contributor.github %}
           <a href="https://github.com/{{ contributor.github }}" aria-label="{{ onGitHub(contributor.github) }}">
-            <svg width="22" height="22">
+            <svg width="22" height="22" role="img">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+            </svg>
+          </a>
+          {% endif %}
+          {% if contributor.linkedin %}
+          <a href="https://www.linkedin.com/in/{{ contributor.linkedin }}/" aria-label="{{ onLinkedIn(contributor.name) }}">
+            <svg width="22" height="22" role="img">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
             </svg>
           </a>
           {% endif %}
           {% if contributor.website %}
           <a href="{{ contributor.website }}" aria-label="{{ website(contributor.name) }}">
-            <svg width="22" height="22">
+            <svg width="22" height="22" role="img">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
             </svg>
           </a>
@@ -341,7 +343,7 @@
 
         <div class="contributor-teams">
           {% for id in contributor.teams | sort() %}
-            <span class="contributor-team team-{{ id }}">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</span>
+            <span class="contributor-team team-{{ id }}">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</span>{{ self.comma() if not loop.last }}
           {% endfor %}
         </div>
       </li>
@@ -354,15 +356,31 @@
 {% block scripts %}
   {{ super() }}
   <script nonce="{{ csp_nonce() }}">
-(function loaded() {
+  
+  // Randomise the contributors on reload as server-side random will be cached at CDN.
+  // Only run this if the page is reloaded for performance reasons.
+  
+  // Support both newer PerformanceNavigationTiming API for newer browsers
+  // and older Navigation Timing API for older browsers
+  if ((performance.getEntriesByType("navigation")[0] && performance.getEntriesByType("navigation")[0].type === "reload")
+      ||
+        (performance.navigation && performance.navigation.type === performance.navigation.TYPE_RELOAD)) {
+    var ul = document.querySelector('.contributor-grid');
+    for (var i = ul.children.length; i >= 1; i--) {
+        // Ensure position 1 is minimum to leave "Join the team" icon at beginning
+        ul.appendChild(ul.children[Math.floor(Math.random() * i) + 1]);
+    }
+  }
+
+  function loaded() {
     var teams = ['{{ "','".join(config.teams.keys()) | safe }}'];
     var buttons = document.querySelectorAll('.filter-container button');
     var contributors = document.querySelector('.contributors');
-    var contributorsGrid = document.querySelector('.contributor-grid');
     var counter = document.querySelector('#filtered-contributors');
     var totalText = document.querySelector('#contributors-total-text');
     var totalContributors = document.querySelector('#contributors-total');
     var shadowNode = document.createElement('div');
+
     var urlObject = new URL(document.location);
 
     function getFilteredContributorCount() {
@@ -424,14 +442,15 @@
 
         event && event.preventDefault();
         var urlObject = new URL(document.location);
+
         if(urlObject.searchParams.has('teams')) {
 
             var hash = urlObject.searchParams.get('teams');
             var filterTeams = hash.split(',');
 
             if(teams.includes(filterTeams[0])) {
-                contributors.classList.remove(...teams);
-                contributors.classList.add(...filterTeams);
+                contributors.classList.remove.apply(contributors.classList,teams);
+                contributors.classList.add.apply(contributors.classList,filterTeams);
             }
 
             for (index = 0; index < buttons.length; ++index) {
@@ -440,12 +459,13 @@
             }
 
         } else {
-            contributors.classList.add(...teams);
+            contributors.classList.add.apply(contributors.classList,teams);
             for (index = 0; index < buttons.length; ++index) {
               var button = buttons[index];
               button.setAttribute('aria-pressed',false);
             }
         }
+        
         var filteredCount = getFilteredContributorCount();
         counter.innerText = filteredCount;
         if ( counter.innerText ===  totalContributors.innerText ) {
@@ -456,10 +476,20 @@
     }
     window.addEventListener('popstate', handleFilterUrl);
     handleFilterUrl();
+  }
 
-    contributorsGrid.setAttribute('data-rendered', true);
-})();
+  try {
+    loaded() 
+  } catch(e) {
+    gtag('event', 'exception', {
+      'description': e,
+      'fatal': false
+    });
+  }
 
+  var contributorsGrid = document.querySelector('.contributor-grid');
+  contributorsGrid.setAttribute('data-rendered', true);
+    
   </script>
   <!-- add chapter.js to handle print mode and avoid duplicating code -->
   <script src="/static/js/chapter.js?v=20200527181403" defer></script>

@@ -21,6 +21,8 @@ FROM (
     REGEXP_CONTAINS(resp_cache_control, r'(?i)(^\s*|,\s*)private(\s*,|\s*$)') AS uses_private
   FROM
     `httparchive.almanac.requests`
+  WHERE
+    date = '2019-07-01'
 )
 GROUP BY
   client
