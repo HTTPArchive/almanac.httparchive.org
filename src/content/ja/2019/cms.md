@@ -5,6 +5,7 @@ title: CMS
 description: 2019年版Web AlmanacCMS章では、CMSの採用、CMS組み合わせの構築方法、CMSを搭載したWebサイトのユーザーエクスペリエンス、CMSのイノベーションを取り上げています。
 authors: [ernee, amedina]
 reviewers: [sirjonathan]
+analysts: [rviscomi]
 translators: [ksakae]
 discuss: 1769
 results: https://docs.google.com/spreadsheets/d/1FDYe6QdoY3UtXodE2estTdwMsTG-hHNrOe9wEYLlwAw/

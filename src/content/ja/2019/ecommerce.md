@@ -5,6 +5,7 @@ title: Eコマース
 description: 2019年Web AlmanacのEコマースの章では、Eコマースのプラットフォーム、ペイロード、画像、サードパーティ、パフォーマンス、SEO、PWAをカバーしています。
 authors: [samdutton, alankent]
 reviewers: [voltek62]
+analysts: [rviscomi]
 translators: [ksakae]
 discuss: 1768
 results: https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/

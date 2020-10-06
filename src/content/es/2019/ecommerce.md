@@ -5,6 +5,7 @@ title: Ecommerce
 description: Capítulo sobre comercio electrónico del Almanaque Web de 2019 que cubre plataformas de comercio electrónico, payloads, imágenes, third-parties, rendimiento, seo y PWAs.
 authors: [samdutton, alankent]
 reviewers: [voltek62]
+analysts: [rviscomi]
 translators: [JMPerez]
 discuss: 1768
 results: https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/

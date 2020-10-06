@@ -5,6 +5,7 @@ title: CDN
 description: CDN chapter of the 2019 Web Almanac covering CDN adoption and usage, RTT & TLS management, HTTP/2 adoption, caching and common library and content CDNs.
 authors: [andydavies, colinbendell]
 reviewers: [yoavweiss, paulcalvano, pmeenan, enygren]
+analysts: [raghuramakrishnan71, rviscomi]
 translators: []
 discuss: 1772
 results: https://docs.google.com/spreadsheets/d/1Y7kAxjxUl8puuTToe6rL3kqJLX1ftOb0nCcD8m3lZBw/

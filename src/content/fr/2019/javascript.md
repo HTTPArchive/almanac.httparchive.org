@@ -5,6 +5,7 @@ title: JavaScript
 description: Chapitre JavaScript du Web Almanac 2019 couvrant la quantité de JavaScript que nous utilisons sur le web, la compression, les bibliothèques et les frameworks, le chargement et les cartographies de code source (source maps).
 authors: [housseindjirdeh]
 reviewers: [obto, paulcalvano, mathiasbynens]
+analysts: [rviscomi]
 translators: [borisschapira]
 discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/

@@ -5,6 +5,7 @@ title: セキュリティ
 description: トランスポート・レイヤー・セキュリティ(TLS()、混合コンテンツ、セキュリティヘッダ、Cookie、サブリソース完全性を網羅した2019年版Web Almanacのセキュリティの章。
 authors: [ScottHelme, arturjanc]
 reviewers: [bazzadp, ghedo, paulcalvano]
+analysts: [dotjs, jrharalson]
 translators: [ksakae]
 discuss: 1763
 results: https://docs.google.com/spreadsheets/d/1Zq2tQhPE06YZUcbzryRrBE6rdZgHHlqEp2XcgS37cm8/

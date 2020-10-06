@@ -81,6 +81,10 @@ const parse_file = async (markdown,chapter) => {
   if (m.translators) {
     translators = parse_array(m.translators);
   }
+  let analysts;
+  if (m.analysts) {
+    analysts = parse_array(m.analysts);
+  }
 
   const metadata = {
     ...m,
@@ -88,7 +92,8 @@ const parse_file = async (markdown,chapter) => {
     chapter,
     authors,
     reviewers,
-    translators
+    translators,
+    analysts
   };
 
   return { metadata, body, toc };

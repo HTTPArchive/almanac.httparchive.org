@@ -5,6 +5,7 @@ title: HTTP/2
 description: HTTP/2、HTTP/2プッシュ、HTTP/2の問題、およびHTTP/3の採用と影響をカバーするWeb Almanac 2019のHTTP/2章
 authors: [bazzadp]
 reviewers: [bagder, rmarx, dotjs]
+analysts: [paulcalvano]
 translators: [ksakae]
 discuss: 1775
 results: https://docs.google.com/spreadsheets/d/1z1gdS3YVpe8J9K3g2UdrtdSPhRywVQRBz5kgBeqCnbw/
