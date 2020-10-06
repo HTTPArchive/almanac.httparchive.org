@@ -5,6 +5,7 @@ title: Media
 description: Chapitre Média du Web Almanac 2019 couvrant les tailles et formats des fichiers d’images, les images adaptatives, les Indications Client, le lazy loading, l’accessibilité et la vidéo.
 authors: [colinbendell, dougsillars]
 reviewers: [ahmadawais, eeeps]
+analysts: [dougsillars, rviscomi]
 translators: [borisschapira]
 discuss: 1759
 results: https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/
