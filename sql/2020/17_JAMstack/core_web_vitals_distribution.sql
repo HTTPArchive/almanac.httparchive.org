@@ -5,7 +5,7 @@
 # Performance of sites with millions of visitors as weighted the same as small sites.
 SELECT
   app,
-	CDN,
+  CDN,
   client,
   COUNT(DISTINCT origin) AS origins,
   SUM(fast_lcp) / (SUM(fast_lcp) + SUM(avg_lcp) + SUM(slow_lcp)) AS good_lcp,
@@ -19,49 +19,53 @@ SELECT
   SUM(small_cls) / (SUM(small_cls) + SUM(medium_cls) + SUM(large_cls)) AS good_cls,
   SUM(medium_cls) / (SUM(small_cls) + SUM(medium_cls) + SUM(large_cls)) AS ni_cls,
   SUM(large_cls) / (SUM(small_cls) + SUM(medium_cls) + SUM(large_cls)) AS poor_cls,
-FROM
-  `chrome-ux-report.materialized.device_summary`
+FROM (
+  SELECT
+    IF(device = 'desktop', 'desktop', 'mobile') AS client,
+    CONCAT(origin, '/') AS url,
+    *
+  FROM
+    `chrome-ux-report.materialized.device_summary`
+  WHERE
+    date = '2020-08-01')
 JOIN (
-	SELECT
-		CASE
-			WHEN REGEXP_EXTRACT(LOWER(CONCAT(respOtherHeaders, resp_x_powered_by, resp_via, resp_server)), '(x-github-request)') = 'x-github-request' THEN 'GitHub'
-			WHEN REGEXP_EXTRACT(LOWER(CONCAT(respOtherHeaders, resp_x_powered_by, resp_via, resp_server)), '(netlify)') = 'netlify' THEN 'Netlify'
-			WHEN _cdn_provider = 'Microsoft Azure' THEN 'Azure'
-			WHEN _cdn_provider = 'Vercel' THEN 'Vercel'
-			WHEN _cdn_provider = 'Amazon CloudFront' THEN 'AWS'
-			WHEN _cdn_provider = 'Akamai' THEN 'Akamai'
-			WHEN _cdn_provider = 'Cloudflare' THEN 'Cloudflare'
-			ELSE NULL
-		END AS CDN,
-		_TABLE_SUFFIX as client,
-		url,
-		app
-	FROM
-		`httparchive.summary_requests.2020_08_01_*`
-	JOIN (
-		SELECT
-			_TABLE_SUFFIX,
-			app,
-			url
-		FROM
-			`httparchive.technologies.2020_08_01_*`
-		WHERE
-			LOWER(category) = "static site generator" OR
-			app = "Next.js"
-	)
-	USING (url, _TABLE_SUFFIX)
-	WHERE firstHtml
-)
-ON
-  CONCAT(origin, '/') = url AND
-  IF(device = 'desktop', 'desktop', 'mobile') = client
+  SELECT
+    CASE
+      WHEN REGEXP_EXTRACT(LOWER(CONCAT(respOtherHeaders, resp_x_powered_by, resp_via, resp_server)), '(x-github-request)') = 'x-github-request' THEN 'GitHub'
+      WHEN REGEXP_EXTRACT(LOWER(CONCAT(respOtherHeaders, resp_x_powered_by, resp_via, resp_server)), '(netlify)') = 'netlify' THEN 'Netlify'
+      WHEN _cdn_provider = 'Microsoft Azure' THEN 'Azure'
+      WHEN _cdn_provider = 'Vercel' THEN 'Vercel'
+      WHEN _cdn_provider = 'Amazon CloudFront' THEN 'AWS'
+      WHEN _cdn_provider = 'Akamai' THEN 'Akamai'
+      WHEN _cdn_provider = 'Cloudflare' THEN 'Cloudflare'
+      ELSE NULL
+    END AS CDN,
+    client,
+    page AS url
+  FROM
+    `httparchive.almanac.requests`
+  WHERE
+    date = '2020-08-01' AND
+    firstHtml)
+USING
+  (client, url)
+JOIN (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    app,
+    url
+  FROM
+    `httparchive.technologies.2020_08_01_*`
+  WHERE
+    LOWER(category) = "static site generator" OR
+    app = "Next.js"
+  )
+USING (client, url)
 WHERE
-  # The CrUX 202008 dataset is not available until September 8.
-  date = '2020-08-01' AND
-	CDN IS NOT NULL
+  CDN IS NOT NULL
 GROUP BY
   app,
-	CDN,
+  CDN,
   client
 ORDER BY
   origins DESC
