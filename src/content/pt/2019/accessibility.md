@@ -158,7 +158,7 @@ Todos esses elementos são projetados principalmente para suporte de acessibilid
 {{ figure_markup(
   image="fig5.png",
   caption="Uso de vários elementos semânticos HTML.",
-  description="Gráfico de barras verticais com barras para cada tipo de elemento vs porcentagem de páginas que variam de 0 a 60 em incrementos de 20. nav: 53,94%; header: 54,82%; footer: 55,92%; main: 18,47%; aside: 16,99% ; article: 22,59%; hr: 19,1%; section: 36,55%."
+  description="Gráfico de barras verticais com barras para cada tipo de elemento vs porcentagem de páginas que variam de 0 a 60 em incrementos de 20. nav: 53,94%; header: 54,82%; footer: 55,92%; main: 18,47%; aside: 16,99% ; article: 22,59%; hr: 19,1%; section: 36,55%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=708035719&format=interactive"
   )
 }}
