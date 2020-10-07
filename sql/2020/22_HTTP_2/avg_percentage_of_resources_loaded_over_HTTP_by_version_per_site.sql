@@ -8,7 +8,7 @@ FROM (
   SELECT 
     client,
     page,
-    IF(JSON_EXTRACT_SCALAR(payload, '$._protocol') IN ('http/0.9', 'http/1.0', 'http/1.1', 'HTTP/2', 'QUIC'), JSON_EXTRACT_SCALAR(payload, '$._protocol'), 'other') AS protocol,
+    IF(JSON_EXTRACT_SCALAR(payload, '$._protocol') IN ('http/0.9', 'http/1.0', 'http/1.1', 'HTTP/2', 'QUIC', 'http/2+quic/46', 'HTTP/3'), JSON_EXTRACT_SCALAR(payload, '$._protocol'), 'other') AS protocol,
     COUNT(0) AS num_requests,
     SUM(COUNT(0)) OVER (PARTITION BY client, page) AS total_requests
   FROM 
