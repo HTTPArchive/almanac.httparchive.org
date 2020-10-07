@@ -16,7 +16,7 @@ last_updated: 2020-09-21T00:00:00.000Z
 
 ## Introdução
 
-A acessibilidade na web é essencial para uma sociedade inclusiva e igualitária. À medida que mais de nossas vidas sociais e profissionais mudam para o mundo online, torna-se ainda mais importante para as pessoas com deficiência poderem participar de todas as interações online sem barreiras. Assim como os arquitetos de edifícios podem criar ou não recursos de acessibilidade, como rampas para cadeiras de rodas, os desenvolvedores da web podem ajudar ou atrapalhar em tecnologias assistivas que os usuários confiam.
+A acessibilidade na web é essencial para uma sociedade inclusiva e igualitária. À medida que mais de nossas vidas sociais e profissionais mudam para o mundo online, torna-se ainda mais importante para as pessoas com deficiência poderem participar de todas as interações online sem barreiras. Assim como os arquitetos de edifícios podem criar ou não recursos de acessibilidade, como rampas para cadeiras de rodas, os desenvolvedores da web podem ajudar ou atrapalhar na adoção de tecnologias assistivas de que os usuários dependem.
 
 Ao pensar sobre usuários com deficiências, devemos lembrar que suas jornadas de usuário são frequentemente as mesmas, eles apenas usam ferramentas diferentes. Essas ferramentas populares incluem, mas não se limitam a: leitores de tela, ampliadores de tela, zoom do navegador ou do tamanho do texto e controles de voz.
 
