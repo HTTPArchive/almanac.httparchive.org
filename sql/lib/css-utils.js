@@ -391,7 +391,7 @@ function extractFunctionCalls(value, test) {
 	// First, extract all function calls
 	let ret = [];
 
-	for (let match of value.matchAll(/\b(?<name>[\w-]+)\(/gi)) {
+	for (let match of value.matchAll(/(?<name>[\w-]+)\(/gi)) {
 		let index = match.index;
 		let openParen = index + match[0].length;
 		let rawArgs = parsel.gobbleParens(value, openParen - 1);
