@@ -19,17 +19,17 @@ A acessibilidade na web é essencial para uma sociedade inclusiva e igualitária
 
 Ao pensar sobre usuários com deficiências, devemos lembrar que suas jornadas de usuário são frequentemente as mesmas, eles apenas usam ferramentas diferentes. Essas ferramentas populares incluem, mas não se limitam a: leitores de tela, ampliadores de tela, zoom do navegador ou do tamanho do texto e controles de voz.
 
-Frequentemente, melhorar a acessibilidade do seu site traz benefícios para todos. Embora normalmente pensamos nas pessoas com deficiência como pessoas com deficiências permanentes, qualquer pessoa pode ter uma deficiência temporária de situação. Por exemplo, alguém pode ser cego de forma permanente, ter uma infecção ocular temporária ou, em situações, estar ao ar livre sob um sol forte. Tudo isso pode explicar por que alguém não consegue ver sua tela. Todos têm deficiências situacionais e, portanto, melhorar a acessibilidade de sua página da web irá melhorar a experiência de todos os usuários em qualquer situação.
+Frequentemente, melhorar a acessibilidade do seu site traz benefícios para todos. Embora normalmente pensamos nas pessoas com deficiência como pessoas com deficiências permanentes, qualquer pessoa pode ter uma deficiência temporária ou situacional. Por exemplo, alguém pode ser cego de forma permanente, ter uma infecção ocular temporária ou, circunstancialmente, estar ao ar livre sob um sol forte. Tudo isso pode explicar por que alguém não consegue ver sua tela. Todos têm deficiências situacionais e, portanto, melhorar a acessibilidade de sua página web irá melhorar a experiência de todos os usuários em qualquer situação.
 
 As [Diretrizes de acessibilidade de conteúdo da Web](https://www.w3.org/WAI/WCAG21/quickref/) (Web Content Accessibility Guidelines - WCAG) aconselham sobre como tornar um site acessível. Essas diretrizes foram usadas como base para nossa análise. No entanto, em muitos casos, é difícil analisar programaticamente a acessibilidade de um site. Por exemplo, a plataforma da web fornece várias maneiras de obter resultados funcionais semelhantes, mas o código que os alimenta pode ser completamente diferente. Portanto, nossa análise é apenas uma aproximação da acessibilidade geral da web.
 
-Dividimos nossos insights mais interessantes em quatro categorias: facilidade de leitura, mídia na web, facilidade de navegação na página e compatibilidade com tecnologias de assistência.
+Dividimos nossos insights mais interessantes em quatro categorias: facilidade de leitura, mídia na web, facilidade de navegação na página e compatibilidade com tecnologias assistivas.
 
-Nenhuma diferença significativa na acessibilidade foi encontrada entre computador de mesa (desktop) e celular durante o teste. Como resultado, todas as nossas métricas apresentadas são o resultado de nossa análise de desktop, a menos que indicado de outra forma.
+Nenhuma diferença significativa na acessibilidade foi encontrada entre desktop e dispositivos móveis durante o teste. Como resultado, todas as nossas métricas apresentadas são o resultado de nossa análise de desktop, a menos que indicado de outra forma.
 
 ## Facilidade de leitura
 
-O objetivo principal de uma página da web é fornecer conteúdo com o qual os usuários desejam se envolver. Esse conteúdo pode ser um vídeo ou uma variedade de imagens, mas muitas vezes é simplesmente o texto da página. É extremamente importante que nosso conteúdo textual seja legível para nossos leitores. Se os visitantes não conseguem ler uma página da web, eles não conseguem interagir com ela, o que acaba fazendo com que eles saiam. Nesta seção, veremos três áreas em que os sites tiveram dificuldades.
+O objetivo principal de uma página web é fornecer conteúdo com o qual os usuários desejam se envolver. Esse conteúdo pode ser um vídeo ou uma variedade de imagens, mas muitas vezes é simplesmente o texto da página. É extremamente importante que nosso conteúdo textual seja legível para nossos leitores. Se os visitantes não conseguem ler uma página web, eles não conseguem interagir com ela, o que acaba fazendo com que eles saiam. Nesta seção, veremos três áreas em que os sites tiveram dificuldades.
 
 ### Contraste de cor
 
@@ -40,7 +40,7 @@ Para garantir que o seu site seja legível nessas condições, é fundamental qu
 {{ figure_markup(
   image="example-of-good-and-bad-color-contrast-lookzook.svg",
   caption="Exemplo de como é o texto com contraste de cor insuficiente. Cortesia de LookZook",
-  description="Quatro caixas coloridas de tons de marrom e cinza com texto branco sobreposto dentro, criando duas colunas. A coluna da esquerda diz Muito levemente colorido e tem a cor de fundo marrom escrita como <code> # FCA469 </code>. A coluna da direita diz Recomendado e a cor de fundo marrom é escrita como <code> # BD5B0E </code>. A caixa superior em cada coluna tem um fundo marrom com texto branco <code> #FFFFFF </code> e a caixa inferior tem um fundo cinza com branco text <code> #FFFFFF </code>. Os equivalentes em tons de cinza são <code> # B8B8B8 </code> e <code> # 707070 </code> respectivamente. Cortesia de LookZook",
+  description="Quatro caixas coloridas de tons de marrom e cinza com texto branco sobreposto dentro, criando duas colunas. A coluna da esquerda diz Muito levemente colorido e tem a cor de fundo marrom escrita como <code>#FCA469</code>. A coluna da direita diz Recomendado e a cor de fundo marrom é escrita como <code>#BD5B0E</code>. A caixa superior em cada coluna tem um fundo marrom com texto branco <code>#FFFFFF</code> e a caixa inferior tem um fundo cinza com branco text <code>#FFFFFF</code>. Os equivalentes em tons de cinza são <code>#B8B8B8</code> e <code>#707070</code> respectivamente. Cortesia de LookZook",
   width=568,
   height=300
   )
@@ -52,7 +52,7 @@ Apenas 22,04% dos sites deram contraste de cor suficiente a todo o texto. Ou em 
 
 ### Ampliando (zoom) e dimensionando páginas
 
-Usando um [tamanho de fonte legível](https://accessibleweb.com/question-answer/minimum-font-size/) e [tamanho alvo](https://www.w3.org/WAI/WCAG21/quickref/#target-size) ajuda os usuários a ler e interagir com seu site. Mas mesmo os sites que seguem perfeitamente todas essas diretrizes não podem atender às necessidades específicas de cada visitante. É por isso que recursos do dispositivo, como a pinça para aplicar zoom e dimensionamento, são tão importantes: eles permitem que os usuários ajustem suas páginas para que suas necessidades sejam atendidas. Ou, no caso de sites particularmente inacessíveis que usam fontes e botões minúsculos, dá aos usuários a chance de usar o site.
+Usar um [tamanho de fonte legível](https://accessibleweb.com/question-answer/minimum-font-size/) e [tamanho alvo](https://www.w3.org/WAI/WCAG21/quickref/#target-size) ajuda os usuários a ler e interagir com seu site. Mas mesmo os sites que seguem perfeitamente todas essas diretrizes não podem atender às necessidades específicas de cada visitante. É por isso que recursos do dispositivo, como a pinça para aplicar zoom e dimensionamento, são tão importantes: eles permitem que os usuários ajustem suas páginas para que suas necessidades sejam atendidas. Ou, no caso de sites particularmente inacessíveis que usam fontes e botões minúsculos, dá aos usuários a chance de usar o site.
 
 Existem raros casos em que a desativação do escalonamento é aceitável, como quando a página em questão é um jogo baseado na web que usa controles de toque. Se deixado ativado neste caso, os telefones dos jogadores irão aumentar e diminuir o zoom cada vez que o jogador tocar duas vezes no jogo, ironicamente tornando-o inacessível.
 
@@ -67,7 +67,7 @@ Infelizmente, os desenvolvedores abusaram tanto disso que quase um em cada três
 {{ figure_markup(
   image="fig2.png",
   caption="Porcentagem de sites que desativam o zoom e o dimensionamento em comparação ao tipo de dispositivo.",
-  description="Dados de porcentagem de medição vertical, variando de 0 a 80 em incrementos de 20, vs. o tipo de dispositivo, agrupado em desktop e celular. Desktop habilitado: 75,46%; Desktop desabilitado 24,54%; Mobile habilitado: 67,79%; Celular desabilitado: 32,21%.",
+  description="Dados de porcentagem de medição vertical, variando de 0 a 80 em incrementos de 20, vs. o tipo de dispositivo, agrupado em desktop e dispositivos móveis. Habilitado em desktop: 75,46%; Desabilitado em desktop 24,54%; Habilitado em dispositivos móveis: 67,79%; Desabilitado em dispositivos móveis: 32,21%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=2053904956&format=interactive"
   )
 }}
@@ -106,7 +106,7 @@ De sites usando elementos [`<audio>`](https://developer.mozilla.org/pt-BR/docs/W
 
 ## Facilidade de navegação na página
 
-Ao abrir o menu em um restaurante, a primeira coisa que você provavelmente fará é ler todos os cabeçalhos das seções: aperitivos, saladas, prato principal e sobremesa. Isso permite que você leia um menu para todas as opções e pule rapidamente para os pratos mais interessantes para você. Da mesma forma, quando um visitante abre uma página da web, seu objetivo é encontrar as informações nas quais está mais interessado - o motivo pelo qual ele veio para a página em primeiro lugar. Para ajudar os usuários a encontrar o conteúdo desejado o mais rápido possível (e evitar que eles pressionem o botão Voltar), tentamos separar o conteúdo de nossas páginas em várias seções visualmente distintas, por exemplo: um cabeçalho do site para navegação, vários cabeçalhos em nossos artigos para que os usuários possam lê-los rapidamente, um rodapé para outros recursos externos e muito mais.
+Ao abrir o menu em um restaurante, a primeira coisa que você provavelmente fará é ler todos os cabeçalhos das seções: aperitivos, saladas, prato principal e sobremesa. Isso permite que você leia um menu para todas as opções e pule rapidamente para os pratos mais interessantes para você. Da mesma forma, quando um visitante abre uma página web, seu objetivo é encontrar as informações nas quais está mais interessado - o motivo pelo qual ele veio para a página em primeiro lugar. Para ajudar os usuários a encontrar o conteúdo desejado o mais rápido possível (e evitar que eles pressionem o botão Voltar), tentamos separar o conteúdo de nossas páginas em várias seções visualmente distintas, por exemplo: um cabeçalho do site para navegação, vários cabeçalhos em nossos artigos para que os usuários possam lê-los rapidamente, um rodapé para outros recursos externos e muito mais.
 
 Embora isso seja excepcionalmente importante, precisamos ter o cuidado de marcar nossas páginas para que os computadores de nossos visitantes possam perceber essas seções distintas também. Por quê? Enquanto a maioria dos leitores usa um mouse para navegar nas páginas, muitos outros dependem de teclados e leitores de tela. Essas tecnologias dependem muito de quão bem seus computadores entendem sua página.
 
@@ -125,21 +125,21 @@ Com isso dito, aqui estão nossos resultados:
 {{ figure_markup(
   image="fig3.png",
   caption="Popularidade dos níveis de título.",
-  description="Gráfico de barras verticais medindo dados percentuais, variando de 0 a 80 em incrementos de 20, contra barras que representam cada nível de título h1 a h6. H1: 63,25%; H2: 67,86%; H3: 58,63%; H4: 36,38% ; H5: 14,64%; H6: 6,91%.",
+  description="Gráfico de barras verticais medindo dados percentuais, variando de 0 a 80 em incrementos de 20 vs barras que representam cada nível de título h1 a h6. H1: 63,25%; H2: 67,86%; H3: 58,63%; H4: 36,38% ; H5: 14,64%; H6: 6,91%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1123601243&format=interactive"
   )
 }}
 
-### Marco principal
+### A role main
 
-Um [marco principal](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Main_role) indica aos leitores de tela onde o conteúdo principal de uma página da web começa para que os usuários possam ir direto. Sem isso, os usuários leitores de tela precisam pular manualmente sua navegação sempre que acessam uma nova página do site. Obviamente, isso é bastante frustrante.
+A [role main](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Main_role) indica aos leitores de tela onde o conteúdo principal de uma página web começa para que os usuários possam ir direto. Sem isso, os usuários leitores de tela precisam pular manualmente sua navegação sempre que acessam uma nova página do site. Obviamente, isso é bastante frustrante.
 
 Encontramos apenas uma em cada quatro páginas (26,03%) que inclui um marco principal. E, surpreendentemente, 8,06% das páginas continham erroneamente mais de um ponto de referência principal, deixando esses usuários adivinhando qual ponto de referência contém o conteúdo principal real.
 
 {{ figure_markup(
   image="fig4.png",
-  caption="Porcentagem de páginas pelo número de pontos de referência principais.",
-  description="Gráfico de barras verticais exibindo dados percentuais, variando de 0 a 80 em incrementos de 20, contra barras que representam o número de pontos de referência principais por página de 0 a 4. Fonte: Arquivo HTTP (julho de 2019). Zero: 73,97 %; Um: 17,97%; Dois: 7,41%; Três: 0,15%; 4: 0,06%.",
+  caption="Porcentagem de páginas pelo número de pontos de referência main.",
+  description="Gráfico de barras verticais exibindo dados percentuais, variando de 0 a 80 em incrementos de 20 vs barras que representam o número de pontos de referência main por página de 0 a 4. Fonte: Arquivo HTTP (julho de 2019). Zero: 73,97 %; Um: 17,97%; Dois: 7,41%; Três: 0,15%; 4: 0,06%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1420590464&format=interactive"
   )
 }}
@@ -157,7 +157,7 @@ Todos esses elementos são projetados principalmente para suporte de acessibilid
 {{ figure_markup(
   image="fig5.png",
   caption="Uso de vários elementos semânticos HTML.",
-  description="Gráfico de barras verticais com barras para cada tipo de elemento vs porcentagem de páginas que variam de 0 a 60 em incrementos de 20. nav: 53,94%; cabeçalho: 54,82%; rodapé: 55,92%; principal: 18,47%; à parte: 16,99% ; artigo: 22,59%; hr: 19,1%; seção: 36,55%.",
+  description="Gráfico de barras verticais com barras para cada tipo de elemento vs porcentagem de páginas que variam de 0 a 60 em incrementos de 20. nav: 53,94%; header: 54,82%; footer: 55,92%; main: 18,47%; aside: 16,99% ; article: 22,59%; hr: 19,1%; section: 36,55%."
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=708035719&format=interactive"
   )
 }}
@@ -169,7 +169,7 @@ Muitos leitores de tela populares também permitem que os usuários naveguem pul
 {{ figure_markup(
   image="fig6.png",
   caption="Outros elementos HTML usados ​​para navegação.",
-  description="Gráfico de barras verticais com barras para cada tipo de elemento vs porcentagem de páginas que variam de 0 a 100 em incrementos de 25. a: 98,22%; ul: 88,62%; entrada: 76,63%; iframe: 60,39%; botão: 56,74% ; selecionar: 19,68%; área do texto: 12,03%.",
+  description="Gráfico de barras verticais com barras para cada tipo de elemento vs porcentagem de páginas que variam de 0 a 100 em incrementos de 25. a: 98.22%; ul: 88.62%; input: 76.63%; iframe: 60.39%; button: 56.74%; select: 19.68%; textarea: 12.03%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=389034849&format=interactive"
   )
 }}
@@ -183,7 +183,7 @@ Se você gostaria de ver um skip link em ação, você pode! Basta fazer uma pes
 {{ figure_markup(
   image="example-of-a-skip-link-on-google.com.png",
   caption="Qual é a aparência de um link para pular no google.com.",
-  description="Captura de tela da página de resultados de pesquisa do Google para pesquisar (arquivo http). O link visível (Pular para o conteúdo principal) é cercado por um destaque azul e uma caixa amarela sobreposta com uma seta vermelha apontando para o link de pular (link em google.com).",
+  description="Captura de tela da página de resultados de pesquisa do Google para a pesquisa 'http archive'. O link visível 'Skip to main content' é cercado por um destaque azul e uma caixa amarela sobreposta com uma seta vermelha apontando para o skip link lê-se 'A skip link on google.com'.",
   width=600,
   height=333
   )
@@ -191,7 +191,7 @@ Se você gostaria de ver um skip link em ação, você pode! Basta fazer uma pes
 
 Na verdade, você não precisa nem mesmo sair deste site, pois nós [os usamos aqui também](https://github.com/HTTPArchive/almanac.httparchive.org/pull/645)!
 
-É difícil determinar com precisão o que é um skip link ao analisar sites. Para esta análise, se encontramos um link âncora (`href = # header1`) dentro dos primeiros 3 links na página, nós o definimos como uma página com um skip link. Portanto, 14,19% é um limite superior estrito.
+É difícil determinar com precisão o que é um skip link ao analisar sites. Para esta análise, se encontramos um link âncora (`href=#header1`) dentro dos primeiros 3 links na página, nós o definimos como uma página com um skip link. Portanto, 14,19% é um limite superior estrito.
 
 ### Atalhos
 
@@ -234,7 +234,7 @@ Usar o ARIA de maneira correta e apropriada pode ser desafiador. Por exemplo, da
 {{ figure_markup(
   image="fig8.png",
   caption="Porcentagem do total de páginas vs atributo ARIA.",
-  description="Gráfico de barras verticais exibindo dados de porcentagem, variando de 0 a 25 em incrementos de 5, vs. barras que representam cada atributo. Ária-oculta: 23,46%, ária-rótulo: 17,67%, ária-expandida: 8,68%, ária- atual: 7,76%, ária-marcada por: 6,85%, ária-controles: 3,56%, ária-haspopup: 2,62%, ária-inválido: 2,68%, ária-descrita por: 1,69%, ária-viva: 1,04%, ária necessária: 1%",
+  description="Gráfico de barras verticais exibindo dados de porcentagem, variando de 0 a 25 em incrementos de 5, vs. barras que representam cada atributo. Aria-hidden: 23.46%, aria-label: 17.67%, aria-expanded: 8.68%, aria-current: 7.76%, aria-labelledby: 6.85%, aria-controls: 3.56%, aria-haspopup: 2.62%, aria-invalid: 2.68%, aria-describedby: 1.69%, aria-live: 1.04%, aria-required: 1%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=792161340&format=interactive"
   )
 }}
@@ -248,7 +248,7 @@ Atualmente, 46,91% das páginas usam pelo menos um atributo de função ARIA. Na
 {{ figure_markup(
   image="fig9.png",
   caption="Top 10 papéis ária.",
-  description="Gráfico de barras verticais com barras para cada tipo de função vs porcentagem de sites usando variando de 0 a 25 em incrementos de 5. Navegação: 20,4%; pesquisa: 15,49%; principal: 14,39%; banner: 13,62%; informações de conteúdo: 11,23%; botão: 10,59%; diálogo: 7,87%; complementar: 6,06%; menu: 4,71%; formulário: 3,75%",
+  description="Gráfico de barras verticais com barras para cada tipo de função vs porcentagem de sites usando variando de 0 a 25 em incrementos de 5. Navigation: 20.4%; search: 15.49%; main: 14.39%; banner: 13.62%; contentinfo: 11.23%; button: 10.59%; dialog: 7.87%; complementary: 6.06%; menu: 4.71%; form: 3.75%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=176877741&format=interactive"
   )
 }}
