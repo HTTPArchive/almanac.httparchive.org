@@ -24,5 +24,6 @@ FROM (
   FROM `httparchive.sample_data.pages_mobile_10k`
   CROSS JOIN UNNEST(getCssInJS(payload)) AS cssInJs
 )
+WHERE cssInJs != 'NONE'
 GROUP BY cssInJs
 ORDER BY freq

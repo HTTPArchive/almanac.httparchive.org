@@ -1,6 +1,6 @@
 var parsel = (() => {
 const TOKENS = {
-	attribute: /\[\s*(?:(?<namespace>\*|[-\w]*)\|)?(?<name>[-\w\u{0080}-\u{FFFF}]+)\s*(?:(?<operator>\W?=)\s*(?<value>.+?)\s*(?<i>i)?\s*)?\]/gu,
+	attribute: /\[\s*(?:(?<namespace>\*|[-\w]*)\|)?(?<name>[-\w\u{0080}-\u{FFFF}]+)\s*(?:(?<operator>\W?=)\s*(?<value>.+?)\s*(?<caseSensitive>[iIsS])?\s*)?\]/gu,
 	id: /#(?<name>(?:[-\w\u{0080}-\u{FFFF}]|\\.)+)/gu,
 	class: /\.(?<name>(?:[-\w\u{0080}-\u{FFFF}]|\\.)+)/gu,
 	comma: /\s*,\s*/g, // must be before combinator
@@ -201,10 +201,6 @@ function nestTokens(tokens, {list = true} = {}) {
 			let left = tokens.slice(0, i);
 			let right = tokens.slice(i + 1);
 
-			if (left.length === 0 || right.length === 0) {
-				throw new Error(`Combinator ${token.content} used in selector ${left.length === 0? "start" : "end"}`);
-			}
-
 			return {
 				type: "complex",
 				combinator: token.content,
@@ -212,6 +208,10 @@ function nestTokens(tokens, {list = true} = {}) {
 				right: nestTokens(right)
 			};
 		}
+	}
+
+	if (tokens.length === 0) {
+		return null;
 	}
 
 	// If we're here, there are no combinators, so it's just a list
@@ -223,6 +223,10 @@ function nestTokens(tokens, {list = true} = {}) {
 
 // Traverse an AST (or part thereof), in depth-first order
 function walk(node, callback, o, parent) {
+	if (!node) {
+		return;
+	}
+
 	if (node.type === "complex") {
 		walk(node.left, callback, o, node);
 		walk(node.right, callback, o, node);
@@ -387,7 +391,7 @@ function extractFunctionCalls(value, test) {
 	// First, extract all function calls
 	let ret = [];
 
-	for (let match of value.matchAll(/\b(?<name>[\w-]+)\(/gi)) {
+	for (let match of value.matchAll(/(?<name>[\w-]+)\(/gi)) {
 		let index = match.index;
 		let openParen = index + match[0].length;
 		let rawArgs = parsel.gobbleParens(value, openParen - 1);
@@ -463,7 +467,9 @@ function matches(value, test, not) {
 		return test(value);
 	}
 	else if (test instanceof RegExp) {
-		return test.test(value);
+		let ret = test.test(value);
+		test.lastIndex = 0;
+		return ret;
 	}
 
 	return false;
