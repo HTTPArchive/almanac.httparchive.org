@@ -1,22 +1,40 @@
 # standardSQL
-# Distribution of TLS versions
+# Distribution of TLS versions by HHTP Version
 SELECT
   client,
-  http_version,
+  protocol,
   tls_version,
-  COUNT(0) AS freq,
-  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-  ROUND(COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client), 4) pct
+  COUNT(DISTINCT page) AS freq,
+  total,
+  COUNT(DISTINCT page) / total AS pct
 FROM (
   SELECT
     client,
-    JSON_EXTRACT_SCALAR(payload, '$._protocol') as http_version,
-    JSON_EXTRACT_SCALAR(payload, '$._tls_version') AS tls_version
-  FROM `httparchive.almanac.requests` WHERE date='2020-08-01'
-  )
+    page,
+    IF(JSON_EXTRACT_SCALAR(payload, '$._protocol') IN ('http/0.9', 'http/1.0', 'http/1.1', 'HTTP/2', 'QUIC', 'http/2+quic/46', 'HTTP/3'), JSON_EXTRACT_SCALAR(payload, '$._protocol'), 'other') AS protocol,
+    IFNULL(JSON_EXTRACT_SCALAR(payload, '$._tls_version'), JSON_EXTRACT_SCALAR(payload, '$._securityDetails.protocol')) AS tls_version
+  FROM
+    `httparchive.almanac.requests`
+  WHERE
+    date = '2020-08-01' AND
+    STARTS_WITH(url, 'https') AND
+    firstHtml)
+JOIN (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    COUNT(0) AS total
+  FROM
+    `httparchive.summary_pages.2020_08_01_*`
+  WHERE
+    STARTS_WITH(url, 'https')
+  GROUP BY
+    client)
+USING
+  (client)
 GROUP BY
   client,
-  http_version,
-  tls_version
+  protocol,
+  tls_version,
+  total
 ORDER BY
-  freq / total DESC
+  pct DESC
