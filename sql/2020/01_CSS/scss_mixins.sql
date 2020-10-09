@@ -16,7 +16,7 @@ try {
 
 SELECT
   client,
-  name,
+  mixin,
   COUNT(DISTINCT url) AS freq,
   total,
   COUNT(DISTINCT url) / total AS pct
@@ -24,23 +24,24 @@ FROM (
   SELECT
     _TABLE_SUFFIX AS client,
     url,
-    getMixinNames(payload) AS names,
+    mixin,
     total
   FROM
+    `httparchive.pages.2020_08_01_*`,
+    UNNEST(getMixinNames(payload)) AS mixin)
+JOIN (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    COUNT(DISTINCT url) AS total
+  FROM
     `httparchive.pages.2020_08_01_*`
-  JOIN (
-    SELECT
-      _TABLE_SUFFIX,
-      COUNT(DISTINCT url) AS total
-    FROM
-      `httparchive.pages.2020_08_01_*`
-    GROUP BY
-      _TABLE_SUFFIX)
-  USING (_TABLE_SUFFIX)),
-  UNNEST(names) AS name
+  GROUP BY
+    _TABLE_SUFFIX)
+USING
+  (client)
 GROUP BY
   client,
-  name,
+  mixin,
   total
 ORDER BY
   pct DESC
