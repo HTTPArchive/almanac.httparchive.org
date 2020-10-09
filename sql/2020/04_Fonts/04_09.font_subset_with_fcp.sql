@@ -16,7 +16,7 @@ try {
             return values;
         }
         rule.declarations.forEach(d => {
-            if (d.property.toLowerCase() == 'subset') {
+            if (d.property.toLowerCase() == 'subset' || d.property.toLowerCase() == 'text'  ) {
                 values.push(d.value);
             }
         });
@@ -34,10 +34,9 @@ SELECT
   COUNT(DISTINCT page) AS freq_subset,
   total_page,
   COUNT(DISTINCT page) / total_page AS pct_subset,
-  COUNTIF(fast_fcp>=0.75) / COUNT(0) AS pct_good_fcp_subset,
-  COUNTIF(NOT(slow_fcp >=0.25)
-    AND NOT(fast_fcp>=0.75)) / COUNT(0) AS pct_ni_fcp_subset,
-   COUNTIF(slow_fcp >= 0.25) / COUNT(0) AS pct_poor_fcp_subset
+  COUNT(DISTINCT IF(fast_fcp >= 0.75, page, NULL)) / COUNT(DISTINCT page) AS pct_good_fcp,
+  COUNT(DISTINCT IF(NOT(slow_fcp >= 0.25) AND NOT(fast_fcp >= 0.75), page, null))  / COUNT(DISTINCT page) AS pct_ni_fcp,
+  COUNT(DISTINCT IF(slow_fcp >= 0.25, page, null)) / COUNT(DISTINCT page) AS pct_poor_fcp,
 FROM (
   SELECT
     *

@@ -52,4 +52,4 @@ FROM (
   ORDER BY
     client, font_family, freq_typeface DESC)
 WHERE
-  sort_row<=20
+  sort_row<=10
