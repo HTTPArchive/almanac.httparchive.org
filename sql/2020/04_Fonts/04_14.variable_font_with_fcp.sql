@@ -19,9 +19,9 @@ SELECT
   COUNT(DISTINCT page) AS freq_vf,
   total_page,
   COUNT(DISTINCT page) / total_page AS pct_vf,
-  COUNTIF(fast_fcp >= 0.75) / COUNT(DISTINCT page) AS pct_good_fcp_vf,
-  COUNTIF(NOT(slow_fcp >= 0.25) AND NOT(fast_fcp >= 0.75)) / COUNT(DISTINCT page) AS pct_ni_fcp_vf,
-  COUNTIF(slow_fcp >= 0.25) / COUNT(DISTINCT page) AS pct_poor_fcp_vf,
+  COUNT(DISTINCT IF(fast_fcp >= 0.75, page, NULL)) / COUNT(DISTINCT page) AS pct_good_fcp_vf,
+  COUNT(DISTINCT IF(NOT(slow_fcp >= 0.25) AND NOT(fast_fcp >= 0.75), page, null))  / COUNT(DISTINCT page) AS pct_ni_fcp_vf,
+  COUNT(DISTINCT IF(slow_fcp >= 0.25, page, null)) / COUNT(DISTINCT page) AS pct_poor_fcp_vf,
 FROM (
   SELECT
     client,

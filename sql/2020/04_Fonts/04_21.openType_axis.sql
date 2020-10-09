@@ -15,7 +15,7 @@ try {
 ''';
 SELECT
   client,
-  getName(JSON_EXTRACT(payload, '$._font_details')) AS name
+  getName(JSON_EXTRACT(payload, '$._font_details')) AS name,
   axisValue,
   axisTag,
   axisSize,
