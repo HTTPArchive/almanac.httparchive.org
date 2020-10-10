@@ -1,5 +1,5 @@
 #standardSQL
-# Percent of pages with third party requests by device
+# Percent of pages with third party requests by client
 
 WITH requests AS (
   SELECT
