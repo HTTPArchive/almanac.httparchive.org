@@ -55,7 +55,8 @@ SELECT
   APPROX_QUANTILES(body_size, 1000)[OFFSET(percentile * 10)] AS body_size,
   APPROX_QUANTILES(header_size, 1000)[OFFSET(percentile * 10)] AS header_size,
   APPROX_QUANTILES(time, 1000)[OFFSET(percentile * 10)] AS time
-FROM base,
+FROM
+  base,
 UNNEST([0, 10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   category,
