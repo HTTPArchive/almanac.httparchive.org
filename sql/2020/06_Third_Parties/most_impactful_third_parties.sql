@@ -3,13 +3,23 @@
 
 WITH requests AS (
   SELECT
-    'mobile' AS client,
+    'desktop' AS client,
     pageid AS page,
     req_host AS host,
     respBodySize AS body_size,
     time
   FROM
-    `httparchive.summary_requests.2020_08_01_mobile`
+    `httparchive.summary_requests.2020_08_01_desktop`
+  UNION ALL (
+    SELECT
+      'mobile' AS client,
+      pageid AS page,
+      req_host AS host,
+      respBodySize AS body_size,
+      time
+    FROM
+      `httparchive.summary_requests.2020_08_01_mobile`
+  )
 ),
 third_party AS (
   SELECT
@@ -23,6 +33,7 @@ third_party AS (
 ),
 base AS (
   SELECT
+    client,
     canonicalDomain,
     IFNULL(category, IF(domain IS NULL, 'first-party', 'other') ) AS category,
     APPROX_QUANTILES(body_size, 1000)[OFFSET(500)] AS body_size,
@@ -34,11 +45,13 @@ base AS (
   ON
     NET.HOST(requests.host) = NET.HOST(third_party.domain)
   GROUP BY
+    client,
     canonicalDomain,
     category
 )
 
 SELECT
+  client,
   ranking,
   category,
   canonicalDomain,
@@ -46,6 +59,7 @@ SELECT
 FROM (
   SELECT
     'top10_body_size' AS ranking,
+    client,
     category,
     canonicalDomain,
     body_size AS metric
@@ -57,6 +71,7 @@ FROM (
 UNION ALL (
   SELECT
     'top10_time' AS ranking,
+    client,
     category,
     canonicalDomain,
     time AS metric

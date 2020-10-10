@@ -24,7 +24,6 @@ third_party AS (
 base AS (
   SELECT
     page,
-    host,
     IFNULL(category, IF(domain IS NULL, 'first-party', 'other') ) AS category,
     body_size,
     header_size,
@@ -40,8 +39,6 @@ base AS (
 SELECT
   category,
   percentile,
-  COUNT(category) AS category_requests,
-  COUNT(category) / SUM(COUNT(0)) OVER () AS pct_category_request,
   APPROX_QUANTILES(body_size, 1000)[OFFSET(percentile * 10)] AS body_size,
   APPROX_QUANTILES(header_size, 1000)[OFFSET(percentile * 10)] AS header_size,
   APPROX_QUANTILES(time, 1000)[OFFSET(percentile * 10)] AS time
