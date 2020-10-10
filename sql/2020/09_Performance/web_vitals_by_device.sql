@@ -21,6 +21,7 @@ CREATE TEMP FUNCTION IS_NON_ZERO (good FLOAT64, needs_improvement FLOAT64, poor 
 WITH
   base AS (
   SELECT
+    date,
     origin,
     device,
 
@@ -48,10 +49,11 @@ WITH
     `chrome-ux-report.materialized.device_summary`
   WHERE
     device IN ('desktop','phone')
-    AND date = '2020-08-01'
+    AND date IN ('2019-08-01', '2020-08-01')
   )
 
 SELECT
+  date,
   device,
   
   COUNT(DISTINCT origin) AS total_origins,
@@ -149,4 +151,5 @@ SELECT
 FROM
   base
 GROUP BY
+  date,
   device
