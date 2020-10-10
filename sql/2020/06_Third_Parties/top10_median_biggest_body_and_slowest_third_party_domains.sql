@@ -34,8 +34,8 @@ base AS (
     client,
     canonicalDomain,
     IFNULL(category, 'first-party') AS category,
-    APPROX_QUANTILES(body_size, 1000)[OFFSET(500)] AS body_size,
-    APPROX_QUANTILES(time, 1000)[OFFSET(500)] AS time
+    APPROX_QUANTILES(body_size, 1000)[OFFSET(500)] AS median_body_size,
+    APPROX_QUANTILES(time, 1000)[OFFSET(500)] AS median_time
   FROM
     requests
   LEFT JOIN
@@ -56,26 +56,26 @@ SELECT
   metric
 FROM (
   SELECT
-    'top10_body_size' AS ranking,
+    'top10_median_body_size' AS ranking,
     client,
     category,
     canonicalDomain,
-    body_size AS metric
+    median_body_size AS metric
   FROM base
   ORDER BY
-    body_size DESC
+    median_body_size DESC
   LIMIT 10
 )
 UNION ALL (
   SELECT
-    'top10_time' AS ranking,
+    'top10_median_time' AS ranking,
     client,
     category,
     canonicalDomain,
-    time AS metric
+    median_time AS metric
   FROM base
   ORDER BY
-    time DESC
+    median_time DESC
   LIMIT 10
 )
 ORDER BY

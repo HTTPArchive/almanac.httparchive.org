@@ -1,5 +1,5 @@
 #standardSQL
-# Percentage of total bytes that are from third party requests broken down by third party category by resource type.
+# Percentage of number and total bytes of third party requests by device, category and content type.
 
 WITH requests AS (
   SELECT
@@ -43,23 +43,17 @@ base AS (
     third_party
   ON
     NET.HOST(requests.host) = NET.HOST(third_party.domain)
-)
-
-SELECT
-  client,
-  category,
-  contentType,
-  AVG(total_body_size) AS avg_total_body_size,
-  AVG(SAFE_DIVIDE(total_body_size, total_page_size)) AS avg_pct_body_size
-FROM (
+),
+requests_per_page_and_category AS (
   SELECT
     client,
     page,
     category,
     contentType,
     SUM(SUM(body_size)) OVER (PARTITION BY page) AS total_page_size,
-    SUM(body_size) AS total_body_size,
-    SAFE_DIVIDE(SUM(body_size), SUM(SUM(body_size)) OVER (PARTITION BY page)) AS pct_body_size
+    SUM(body_size) AS body_size,
+    SUM(COUNT(0)) OVER (PARTITION BY page) AS total_page_requests,
+    COUNT(0) AS requests
   FROM
     base
   GROUP BY
@@ -68,6 +62,16 @@ FROM (
     category,
     contentType
 )
+
+SELECT
+  client,
+  category,
+  contentType,
+  AVG(requests) AS avg_requests_per_page,
+  SAFE_DIVIDE(SUM(requests), SUM(total_page_requests)) AS avg_pct_requests_per_page,
+  AVG(body_size) AS avg_body_size_per_page,
+  SAFE_DIVIDE(SUM(body_size), SUM(total_page_size)) AS avg_pct_body_size_per_page
+FROM requests_per_page_and_category
 GROUP BY
     client,
     category,
