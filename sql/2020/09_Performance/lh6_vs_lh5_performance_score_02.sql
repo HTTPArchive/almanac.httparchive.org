@@ -24,7 +24,7 @@ FROM (
         CAST(JSON_EXTRACT(lh6.report, '$.categories.performance.score') AS NUMERIC) AS perf_score_lh6,
         CAST(JSON_EXTRACT(lh5.report, '$.categories.performance.score') AS NUMERIC) AS perf_score_lh5
         FROM `httparchive.lighthouse.2020_09_01_mobile` lh6
-        JOIN `httparchive.lighthouse.2020_05_01_mobile` lh5 ON lh5.url=lh6.url
+        JOIN `httparchive.lighthouse.2019_07_01_mobile` lh5 ON lh5.url=lh6.url
     )
   )
 )
