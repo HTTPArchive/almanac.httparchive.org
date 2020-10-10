@@ -31,7 +31,7 @@ thirdParty AS (
 
 SELECT
   client,
-  IFNULL(category, IF(domain IS NULL, 'first-party', 'other') ) AS category,
+  IFNULL(category, 'first-party') AS category,
   contentType,
   COUNT(0) AS requests,
   COUNT(0) / SUM(COUNT(0)) OVER () AS pct_requests
@@ -40,6 +40,10 @@ FROM
   LEFT JOIN thirdParty
   ON NET.HOST(requests.host) = NET.HOST(thirdParty.domain)
 GROUP BY
+  client,
+  category,
+  contentType
+ORDER BY
   client,
   category,
   contentType

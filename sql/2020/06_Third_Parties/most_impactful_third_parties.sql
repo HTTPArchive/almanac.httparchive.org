@@ -4,7 +4,6 @@
 WITH requests AS (
   SELECT
     'desktop' AS client,
-    pageid AS page,
     req_host AS host,
     respBodySize AS body_size,
     time
@@ -13,7 +12,6 @@ WITH requests AS (
   UNION ALL (
     SELECT
       'mobile' AS client,
-      pageid AS page,
       req_host AS host,
       respBodySize AS body_size,
       time
@@ -35,7 +33,7 @@ base AS (
   SELECT
     client,
     canonicalDomain,
-    IFNULL(category, IF(domain IS NULL, 'first-party', 'other') ) AS category,
+    IFNULL(category, 'first-party') AS category,
     APPROX_QUANTILES(body_size, 1000)[OFFSET(500)] AS body_size,
     APPROX_QUANTILES(time, 1000)[OFFSET(500)] AS time
   FROM
@@ -51,8 +49,8 @@ base AS (
 )
 
 SELECT
-  client,
   ranking,
+  client,
   category,
   canonicalDomain,
   metric
@@ -80,3 +78,8 @@ UNION ALL (
     time DESC
   LIMIT 10
 )
+ORDER BY
+  ranking,
+  client,
+  category,
+  canonicalDomain
