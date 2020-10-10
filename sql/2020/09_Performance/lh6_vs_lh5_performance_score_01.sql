@@ -16,6 +16,6 @@ FROM (
     JOIN `httparchive.lighthouse.2019_07_01_mobile` lh5 ON lh5.url=lh6.url
   )
 ),
-UNNEST([10, 25, 50, 75, 90]) AS percentile
+UNNEST([0, 10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY percentile
 ORDER BY percentile
