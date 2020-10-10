@@ -1,5 +1,5 @@
 #standardSQL
-# Distribution of third party requests size and time by category and type
+# Distribution of third party requests size and time by category and content type
 
 WITH requests AS (
   SELECT

@@ -67,6 +67,7 @@ SELECT
   client,
   category,
   contentType,
+  SUM(requests) AS requests,
   AVG(requests) AS avg_requests_per_page,
   SAFE_DIVIDE(SUM(requests), SUM(total_page_requests)) AS avg_pct_requests_per_page,
   AVG(body_size) AS avg_body_size_per_page,
