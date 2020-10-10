@@ -1,5 +1,5 @@
 #standardSQL
-# Distribution of third party requests by origin
+# Distribution of third party requests per page
 
 WITH requests AS (
   SELECT
@@ -29,7 +29,7 @@ base AS (
   SELECT
     client,
     page,
-    COUNT(domain) AS third_party_requests_per_page
+    COUNT(domain) AS third_parties_per_page
   FROM
     requests
   LEFT JOIN
@@ -44,7 +44,7 @@ base AS (
 SELECT
   client,
   percentile,
-  APPROX_QUANTILES(third_party_requests_per_page, 1000)[OFFSET(percentile * 10)] AS approx_third_party_requests_per_page
+  APPROX_QUANTILES(third_parties_per_page, 1000)[OFFSET(percentile * 10)] AS approx_third_parties_per_page
 FROM
   base,
 UNNEST([0, 10, 25, 50, 75, 90, 100]) AS percentile
