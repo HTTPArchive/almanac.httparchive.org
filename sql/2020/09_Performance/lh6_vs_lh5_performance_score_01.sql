@@ -6,7 +6,7 @@ SELECT
   APPROX_QUANTILES(abs_perf_score_delta, 1000)[OFFSET(percentile * 10)] AS abs_perf_score_delta
 FROM (
   SELECT
-    ABS(perf_score_lh6 - perf_score_lh5) AS abs_perf_score_delta
+    perf_score_lh6 - perf_score_lh5 AS perf_score_delta
   FROM
   (
     SELECT
