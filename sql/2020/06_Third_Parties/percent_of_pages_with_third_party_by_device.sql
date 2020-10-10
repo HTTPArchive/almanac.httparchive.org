@@ -2,19 +2,19 @@
 # Percent of pages with third party requests by device
 
 WITH requests AS (
-SELECT
-  'desktop' AS client,
-  pageid as page,
-  req_host as host
-FROM
-  `httparchive.summary_requests.2020_08_01_desktop`
-UNION ALL
-SELECT
-  'mobile' AS client,
-  pageid as page,
-  req_host as host
-FROM
-  `httparchive.summary_requests.2020_08_01_mobile`
+  SELECT
+    'desktop' AS client,
+    pageid as page,
+    req_host as host
+  FROM
+    `httparchive.summary_requests.2020_08_01_desktop`
+  UNION ALL (
+    SELECT
+      'mobile' AS client,
+      pageid as page,
+      req_host as host
+    FROM
+      `httparchive.summary_requests.2020_08_01_mobile`)
 ),
 thirdParty AS (
   SELECT
@@ -29,20 +29,19 @@ base AS (
     client,
     page,
     COUNTIF(domain IS NOT NULL) AS thirdparty_requests
-  FROM
-    (
-      SELECT
-        requests.client,
-        requests.page,
-        thirdParty.domain
-      FROM
-        requests
-        LEFT JOIN thirdParty ON NET.HOST(requests.host) = NET.HOST(thirdParty.domain)
-      GROUP BY
-        client,
-        page,
-        domain
-    )
+  FROM (
+    SELECT
+      requests.client,
+      requests.page,
+      thirdParty.domain
+    FROM
+      requests
+      LEFT JOIN thirdParty ON NET.HOST(requests.host) = NET.HOST(thirdParty.domain)
+    GROUP BY
+      client,
+      page,
+      domain
+  )
   GROUP BY
     client,
     page
