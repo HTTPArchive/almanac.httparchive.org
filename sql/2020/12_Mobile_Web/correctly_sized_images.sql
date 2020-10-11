@@ -1,0 +1,13 @@
+#standardSQL
+#
+SELECT
+  COUNTIF(properly_sized_images_score IS NOT NULL) AS total_applicable,
+  COUNTIF(properly_sized_images_score = 1) AS total_with_properly_sized_images,
+  COUNTIF(properly_sized_images_score = 1) / COUNTIF(properly_sized_images_score IS NOT NULL) AS perc_with_properly_sized_images
+FROM (
+  SELECT
+    SAFE_CAST(JSON_EXTRACT_SCALAR(report, '$.audits.uses-responsive-images.score') AS NUMERIC) AS properly_sized_images_score
+  FROM
+    `httparchive.sample_data.lighthouse_*`
+    # `httparchive.lighthouse.2020_08_01_mobile`
+)
