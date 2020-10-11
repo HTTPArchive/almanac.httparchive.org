@@ -4,7 +4,7 @@ CREATE TEMPORARY FUNCTION getResourceHintAttrs(payload STRING)
 RETURNS ARRAY<STRUCT<name STRING, attribute STRING, value STRING>>
 LANGUAGE js AS '''
 var hints = new Set(['preload', 'prefetch', 'preconnect', 'prerender', 'dns-prefetch']);
-var attributes = ['as', 'crossorigin'];
+var attributes = ['as', 'crossorigin', 'media'];
 try {
   var $ = JSON.parse(payload);
   var almanac = JSON.parse($._almanac);
@@ -13,7 +13,6 @@ try {
     if (!hints.has(hint)) {
       return results;
     }
-
     attributes.forEach(attribute => {
       var value = link[attribute];
       results.push({
@@ -23,7 +22,6 @@ try {
         value: typeof value == 'string' ? value : null
       });
     });
-
     return results;
   }, []);
 } catch (e) {
