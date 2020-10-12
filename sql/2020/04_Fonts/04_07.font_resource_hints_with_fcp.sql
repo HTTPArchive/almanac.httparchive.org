@@ -23,6 +23,7 @@ try {
 SELECT
   client,
   name,
+  type,
   COUNT(DISTINCT page) AS freq_hints,
   total_page,
   COUNT(DISTINCT page) / total_page AS pct_hints,
@@ -51,6 +52,16 @@ JOIN (
     yyyymm = 202008)
 USING
   (client, page)
+LEFT JOIN (
+  SELECT
+    client,
+    page,
+    type
+  FROM
+    `httparchive.almanac.requests`
+   where date='2020-08-01')
+USING
+  (client, page)  
 GROUP BY
   client,
   name,
