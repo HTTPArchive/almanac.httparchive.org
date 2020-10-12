@@ -42,7 +42,11 @@ SELECT
   COUNTIF(media_info.num_picture_formats = 1) AS num_picture_formats_1,
   COUNTIF(media_info.num_picture_formats = 2) AS num_picture_formats_2,
   COUNTIF(media_info.num_picture_formats = 3) AS num_picture_formats_3,
-  COUNTIF(media_info.num_picture_formats >= 4) AS num_picture_formats_4
+  COUNTIF(media_info.num_picture_formats >= 4) AS num_picture_formats_4_and_more,
+  COUNTIF('image/webp' IN UNNEST(media_info.picture_formats)) as num_webp,
+  COUNTIF('image/gif' IN UNNEST(media_info.picture_formats)) as num_gif,
+  COUNTIF('image/jpg' IN UNNEST(media_info.picture_formats)) as num_jpg,
+  COUNTIF('image/png' IN UNNEST(media_info.picture_formats)) as num_png
 FROM
   (
   SELECT
