@@ -5,7 +5,7 @@
 {% block date_published %}{{ metadata.published }}{% endblock %}
 {% block date_modified %}{{ metadata.last_updated }}{% endblock %}
 
-{% block image_url %}https://almanac.httparchive.org{{ chapter_image_dir }}/hero_lg.jpg{% endblock %}
+{% block image_url %}https://almanac.httparchive.org/images/hero-images/{{ metadata.chapter }}/hero_lg.jpg{% endblock %}
 {% block image_height %}433{% endblock %}
 {% block image_width %}866{% endblock %}
 
@@ -283,13 +283,13 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
             </h1>
             <!-- Show large image for large screens and high density screens and use webp when supported -->
             <picture>
-              <source media="(min-width: 327px)" type="image/webp" srcset="{{ chapter_image_dir }}/hero_lg.webp" />
-              <source media="(min-width: 327px)" type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_lg.jpg" />
-              <source type="image/webp" srcset="{{ chapter_image_dir }}/hero_lg.webp 2x" />
-              <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_lg.jpg 2x" />
-              <source type="image/webp" srcset="{{ chapter_image_dir }}/hero_sm.webp" />
-              <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_sm.jpg" />
-              <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" width="866" height="433" loading="eager" />
+              <source media="(min-width: 327px)" type="image/webp" srcset="/static/images/hero-images/{{ metadata.chapter }}/hero_lg.webp" />
+              <source media="(min-width: 327px)" type="image/jpeg" srcset="/static/images/hero-images/{{ metadata.chapter }}/hero_lg.jpg" />
+              <source type="image/webp" srcset="/static/images/hero-images/{{ metadata.chapter }}/hero_lg.webp 2x" />
+              <source type="image/jpeg" srcset="/static/images/hero-images/{{ metadata.chapter }}/hero_lg.jpg 2x" />
+              <source type="image/webp" srcset="/static/images/hero-images/{{ metadata.chapter }}/hero_sm.webp" />
+              <source type="image/jpeg" srcset="/static/images/hero-images/{{ metadata.chapter }}/hero_sm.jpg" />
+              <img src="/static/images/hero-images/{{ metadata.chapter }}/hero_lg.jpg" class="content-banner" alt="" width="866" height="433" loading="eager" />
             </picture>
             {{ render_byline() }}
             {{ self.main_content() }}
