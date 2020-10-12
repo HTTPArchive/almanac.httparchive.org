@@ -36,6 +36,8 @@ node_modules/
 node_modules/*
 static/html
 static/html/*
+static/images/psds
+static/images/psds/*
 .DS_Store
 **/.DS_Store
 Dockerfile
