@@ -1,5 +1,5 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION getColorFunctions(css STRING)
+CREATE TEMPORARY FUNCTION getHexColorTypes(css STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
   function compute(ast) {
@@ -142,7 +142,21 @@ try {
 
   const ast = JSON.parse(css);
   let color = compute(ast);
-  return Object.keys(color.functions);
+  return Object.keys(color.hex).map(l => {
+    if (l == 3) {
+      return '#rgb';
+    }
+    if (l == 4) {
+      return '#rgba';
+    }
+    if (l == 6) {
+      return '#rrggbb';
+    }
+    if (l == 8) {
+      return '#rrggbbaa';
+    }
+    return l;
+  });
 } catch (e) {
   return [];
 }
@@ -151,28 +165,34 @@ OPTIONS (library="gs://httparchive/lib/css-utils.js");
 
 SELECT
   client,
-  function,
+  type,
   COUNT(DISTINCT page) AS pages,
-  total,
-  COUNT(DISTINCT page) / total AS pct
+  total_pages,
+  COUNT(DISTINCT page) / total_pages AS pct_pages,
+  SUM(freq) AS instances,
+  SUM(SUM(freq)) OVER (PARTITION BY client, type) AS total_instances,
+  SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client, type) AS pct_instances
 FROM (
-  SELECT DISTINCT
+  SELECT
     client,
     page,
-    LOWER(function) AS function
+    type,
+    COUNT(0) AS freq,
   FROM
-    `httparchive.almanac.parsed_css`
-  LEFT JOIN
-    UNNEST(getColorFunctions(css)) AS function
+    `httparchive.almanac.parsed_css`,
+    UNNEST(getHexColorTypes(css)) AS type
   WHERE
     date = '2020-08-01' AND
     # Limit the size of the CSS to avoid OOM crashes.
-    LENGTH(css) < 0.1 * 1024 * 1024 AND
-    function IS NOT NULL)
+    LENGTH(css) < 0.1 * 1024 * 1024
+  GROUP BY
+    client,
+    page,
+    type)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
-    COUNT(0) AS total
+    COUNT(0) AS total_pages
   FROM
     `httparchive.summary_pages.2020_08_01_*`
   GROUP BY
@@ -181,7 +201,7 @@ USING
   (client)
 GROUP BY
   client,
-  total,
-  function
+  total_pages,
+  type
 ORDER BY
-  pct DESC
+  pct_pages DESC
