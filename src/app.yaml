@@ -13,10 +13,6 @@ handlers:
   script: auto
   secure: always
 
-- url: /static/images/2019/.*/hero.*$
-  script: auto
-  secure: always
-
 - url: /static
   static_dir: static
   secure: always

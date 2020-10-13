@@ -115,13 +115,7 @@ def ebook(lang, year):
     return render_template('%s/%s/ebook.html' % (lang, year), config=config)
 
 
-# Redirect requests for the older hero image URLs to new URLs
-@app.route('/static/images/2019/<folder>/<regex("hero.*"):image>')
-def redirect_hero_images(folder, image):
-    return redirect("/static/images/hero-images/%s/%s" % (folder, image)), 301
-
-
-# Redirect requests for the older chapter image URLs to new URLs
+# Redirect requests for the older image URLs to new URLs
 @app.route('/static/images/2019/<regex("[0-2][0-9]_.*"):folder>/<image>')
 def redirect_old_images(folder, image):
     return redirect("/static/images/2019/%s/%s" % (convert_old_image_path(folder), image)), 301
