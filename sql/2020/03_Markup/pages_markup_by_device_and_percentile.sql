@@ -132,7 +132,7 @@ FROM (
     get_markup_info(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info
   FROM
   `httparchive.pages.2020_08_01_*`, 
-  UNNEST([10, 25, 50, 75, 90]) AS percentile
+  UNNEST([10, 25, 50, 75, 90, 95, 96, 97, 98, 99]) AS percentile
 )
 GROUP BY
   percentile,
