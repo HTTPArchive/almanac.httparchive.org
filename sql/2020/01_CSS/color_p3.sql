@@ -1,6 +1,6 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION getColorFunctions(css STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getP3Usage(css STRING)
+RETURNS ARRAY<STRUCT<name STRING, value INT64>> LANGUAGE js AS '''
 try {
   function compute(ast) {
     let usage = {
@@ -89,10 +89,10 @@ try {
     }
 
     walkDeclarations(ast, ({property, value}) => {
-      usage.hex[3] += countMatches(value, /#[a-f0-9]{3}\b/gi);
-      usage.hex[4] += countMatches(value, /#[a-f0-9]{4}\b/gi);
-      usage.hex[6] += countMatches(value, /#[a-f0-9]{6}\b/gi);
-      usage.hex[8] += countMatches(value, /#[a-f0-9]{8}\b/gi);
+      usage.hex[3] += countMatches(value, /#[a-f0-9]{3}\\b/gi);
+      usage.hex[4] += countMatches(value, /#[a-f0-9]{4}\\b/gi);
+      usage.hex[6] += countMatches(value, /#[a-f0-9]{6}\\b/gi);
+      usage.hex[8] += countMatches(value, /#[a-f0-9]{8}\\b/gi);
 
       for (let f of extractFunctionCalls(value, {names: functionNames})) {
         let {name, args} = f;
@@ -120,14 +120,14 @@ try {
       }
 
       for (let match of value.matchAll(keywordRegex)) {
-        incrementByKey(usage.keywords, match[0]);
+        incrementByKey(usage.keywords, match[0].toLowerCase());
       }
 
       for (let match of value.matchAll(systemRegex)) {
-        incrementByKey(usage.system, match[0]);
+        incrementByKey(usage.system, system.find(kw => kw.toLowerCase() == match[0].toLowerCase()));
       }
 
-      for (let match of value.matchAll(/\b(?<!\\-)(?:currentColor|transparent)\b/gi)) {
+      for (let match of value.matchAll(/\\b(?<!\\-)(?:currentColor|transparent)\\b/gi)) {
         incrementByKey(usage, match[0].toLowerCase());
       }
     }, {
@@ -142,7 +142,8 @@ try {
 
   const ast = JSON.parse(css);
   let color = compute(ast);
-  return Object.keys(color.functions);
+  if (!color.p3.sRGB_in && !color.p3.sRGB_out) return  [];
+  return Object.entries(color.p3).map(([name, value]) => ({name, value}));
 } catch (e) {
   return [];
 }
@@ -151,37 +152,26 @@ OPTIONS (library="gs://httparchive/lib/css-utils.js");
 
 SELECT
   client,
-  function,
+  name AS p3,
   COUNT(DISTINCT page) AS pages,
-  total,
-  COUNT(DISTINCT page) / total AS pct
+  SUM(value) AS freq,
+  SUM(SUM(value)) OVER (PARTITION BY client) AS total,
+  SAFE_DIVIDE(SUM(value), SUM(SUM(value)) OVER (PARTITION BY client)) AS pct
 FROM (
-  SELECT DISTINCT
+  SELECT
     client,
     page,
-    LOWER(function) AS function
+    p3.name,
+    p3.value
   FROM
-    `httparchive.almanac.parsed_css`
-  LEFT JOIN
-    UNNEST(getColorFunctions(css)) AS function
+    `httparchive.almanac.parsed_css`,
+    UNNEST(getP3Usage(css)) AS p3
   WHERE
     date = '2020-08-01' AND
     # Limit the size of the CSS to avoid OOM crashes.
-    LENGTH(css) < 0.1 * 1024 * 1024 AND
-    function IS NOT NULL)
-JOIN (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    COUNT(0) AS total
-  FROM
-    `httparchive.summary_pages.2020_08_01_*`
-  GROUP BY
-    client)
-USING
-  (client)
+    LENGTH(css) < 0.1 * 1024 * 1024)
 GROUP BY
   client,
-  total,
-  function
+  p3
 ORDER BY
   pct DESC

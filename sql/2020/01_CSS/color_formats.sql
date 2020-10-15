@@ -1,6 +1,6 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION getColorFunctions(css STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getColorFormats(css STRING)
+RETURNS ARRAY<STRUCT<name STRING, value INT64>> LANGUAGE js AS '''
 try {
   function compute(ast) {
     let usage = {
@@ -89,10 +89,10 @@ try {
     }
 
     walkDeclarations(ast, ({property, value}) => {
-      usage.hex[3] += countMatches(value, /#[a-f0-9]{3}\b/gi);
-      usage.hex[4] += countMatches(value, /#[a-f0-9]{4}\b/gi);
-      usage.hex[6] += countMatches(value, /#[a-f0-9]{6}\b/gi);
-      usage.hex[8] += countMatches(value, /#[a-f0-9]{8}\b/gi);
+      usage.hex[3] += countMatches(value, /#[a-f0-9]{3}\\b/gi);
+      usage.hex[4] += countMatches(value, /#[a-f0-9]{4}\\b/gi);
+      usage.hex[6] += countMatches(value, /#[a-f0-9]{6}\\b/gi);
+      usage.hex[8] += countMatches(value, /#[a-f0-9]{8}\\b/gi);
 
       for (let f of extractFunctionCalls(value, {names: functionNames})) {
         let {name, args} = f;
@@ -127,7 +127,7 @@ try {
         incrementByKey(usage.system, match[0]);
       }
 
-      for (let match of value.matchAll(/\b(?<!\\-)(?:currentColor|transparent)\b/gi)) {
+      for (let match of value.matchAll(/\\b(?<!\\-)(?:currentColor|transparent)\\b/gi)) {
         incrementByKey(usage, match[0].toLowerCase());
       }
     }, {
@@ -142,7 +142,21 @@ try {
 
   const ast = JSON.parse(css);
   let color = compute(ast);
-  return Object.keys(color.functions);
+  return [
+    {name: '#rgb', value: color.hex[3]},
+    {name: '#rgba', value: color.hex[4]},
+    {name: '#rrggbb', value: color.hex[6]},
+    {name: '#rrggbbaa', value: color.hex[8]},
+    {name: 'rgb()', value: color.functions.rgb},
+    {name: 'rgba()', value: color.functions.rgba},
+    {name: 'hsl()', value: color.functions.hsl},
+    {name: 'hsla()', value: color.functions.hsla},
+    {name: 'color()', value: color.functions.color},
+    {name: 'namedColor', value: Object.values(color.keywords).reduce((total, i) => total += i, 0)},
+    {name: 'system', value: Object.values(color.system).reduce((total, i) => total += i, 0)},
+    {name: 'currentColor', value: color.currentcolor},
+    {name: 'transparent', value: color.transparent}
+  ];
 } catch (e) {
   return [];
 }
@@ -151,37 +165,24 @@ OPTIONS (library="gs://httparchive/lib/css-utils.js");
 
 SELECT
   client,
-  function,
-  COUNT(DISTINCT page) AS pages,
-  total,
-  COUNT(DISTINCT page) / total AS pct
+  name AS format,
+  SUM(value) AS freq,
+  SUM(SUM(value)) OVER (PARTITION BY client) AS total,
+  SUM(value) / SUM(SUM(value)) OVER (PARTITION BY client) AS pct
 FROM (
-  SELECT DISTINCT
+  SELECT
     client,
-    page,
-    LOWER(function) AS function
+    format.name,
+    format.value
   FROM
-    `httparchive.almanac.parsed_css`
-  LEFT JOIN
-    UNNEST(getColorFunctions(css)) AS function
+    `httparchive.almanac.parsed_css`,
+    UNNEST(getColorFormats(css)) AS format
   WHERE
     date = '2020-08-01' AND
     # Limit the size of the CSS to avoid OOM crashes.
-    LENGTH(css) < 0.1 * 1024 * 1024 AND
-    function IS NOT NULL)
-JOIN (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    COUNT(0) AS total
-  FROM
-    `httparchive.summary_pages.2020_08_01_*`
-  GROUP BY
-    client)
-USING
-  (client)
+    LENGTH(css) < 0.1 * 1024 * 1024)
 GROUP BY
   client,
-  total,
-  function
+  format
 ORDER BY
   pct DESC
