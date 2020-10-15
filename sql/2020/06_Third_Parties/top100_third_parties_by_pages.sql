@@ -60,7 +60,7 @@ FROM (
     client = 'desktop'
   ORDER BY
     total_pages DESC
-  LIMIT 10
+  LIMIT 100
 ) UNION ALL (
   SELECT
     client,
@@ -72,7 +72,7 @@ FROM (
     client = 'mobile'
   ORDER BY
     total_pages DESC
-  LIMIT 10
+  LIMIT 100
 )
 ORDER BY
   client,

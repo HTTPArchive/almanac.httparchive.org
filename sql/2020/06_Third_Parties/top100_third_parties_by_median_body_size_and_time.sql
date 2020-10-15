@@ -56,7 +56,7 @@ SELECT
   metric
 FROM (
   SELECT
-    'top10_median_body_size' AS ranking,
+    'top100_median_body_size' AS ranking,
     client,
     category,
     canonicalDomain,
@@ -64,11 +64,11 @@ FROM (
   FROM base
   ORDER BY
     median_body_size DESC
-  LIMIT 10
+  LIMIT 100
 )
 UNION ALL (
   SELECT
-    'top10_median_time' AS ranking,
+    'top100_median_time' AS ranking,
     client,
     category,
     canonicalDomain,
@@ -76,7 +76,7 @@ UNION ALL (
   FROM base
   ORDER BY
     median_time DESC
-  LIMIT 10
+  LIMIT 100
 )
 ORDER BY
   ranking,
