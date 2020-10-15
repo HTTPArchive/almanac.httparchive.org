@@ -9,7 +9,7 @@ SELECT
 FROM
   `httparchive.almanac.summary_requests`
 JOIN
-  (SELECT _TABLE_SUFFIX AS client, url AS page FROM `httparchive.technologies.2020_07_01_*` WHERE category = 'Ecommerce')
+  (SELECT _TABLE_SUFFIX AS client, url AS page FROM `httparchive.technologies.2020_08_01_*` WHERE category = 'Ecommerce')
 USING (client, page)
 WHERE
   type = 'image'
