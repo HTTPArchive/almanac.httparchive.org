@@ -44,10 +44,10 @@ base AS (
 SELECT
   client,
   percentile,
-  APPROX_QUANTILES(third_parties_per_page, 1000)[OFFSET(percentile * 10)] AS approx_third_parties_per_page
+  APPROX_QUANTILES(third_parties_per_page, 1000)[OFFSET(percentile)] AS approx_third_parties_per_page
 FROM
   base,
-UNNEST([0, 10, 25, 50, 75, 90, 100]) AS percentile
+UNNEST(GENERATE_ARRAY(0, 1000, 1)) AS percentile
 GROUP BY
   client,
   percentile

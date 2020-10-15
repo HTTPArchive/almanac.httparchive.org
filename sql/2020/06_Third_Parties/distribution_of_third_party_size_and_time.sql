@@ -52,12 +52,12 @@ SELECT
   category,
   contentType,
   percentile,
-  APPROX_QUANTILES(body_size, 1000)[OFFSET(percentile * 10)] AS body_size,
-  APPROX_QUANTILES(header_size, 1000)[OFFSET(percentile * 10)] AS header_size,
-  APPROX_QUANTILES(time, 1000)[OFFSET(percentile * 10)] AS time
+  APPROX_QUANTILES(body_size, 1000)[OFFSET(percentile)] AS body_size,
+  APPROX_QUANTILES(header_size, 1000)[OFFSET(percentile)] AS header_size,
+  APPROX_QUANTILES(time, 1000)[OFFSET(percentile)] AS time
 FROM
   base,
-UNNEST([0, 10, 25, 50, 75, 90, 100]) AS percentile
+UNNEST(GENERATE_ARRAY(0, 1000, 1)) AS percentile
 GROUP BY
   category,
   contentType,

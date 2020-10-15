@@ -47,10 +47,10 @@ base AS (
 SELECT
   client,
   percentile,
-  APPROX_QUANTILES(pages_per_third_party, 1000)[OFFSET(percentile * 10)] AS approx_pages_per_third_party
+  APPROX_QUANTILES(pages_per_third_party, 1000)[OFFSET(percentile)] AS approx_pages_per_third_party
 FROM
   base,
-UNNEST([0, 10, 25, 50, 75, 90, 100]) AS percentile
+UNNEST(GENERATE_ARRAY(0, 1000, 1)) AS percentile
 GROUP BY
   client,
   percentile
