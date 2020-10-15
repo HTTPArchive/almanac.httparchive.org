@@ -25,7 +25,7 @@ try {
     let parsedSelectors = {};
 
     walkDeclarations(ast, ({property, value}, rule) => {
-      if (matches(value, /\bvar\\(\\s*--/)) {
+      if (matches(value, /\\bvar\\(\\s*--/)) {
         if (!property.startsWith("--")) {
           incrementByKey(ret.properties, property);
         }
@@ -34,7 +34,7 @@ try {
           if (call.name === "var") {
             let fallback = call.args.split(",").slice(1).join(",");
 
-            if (matches(fallback, /\bvar\\(\\s*--/)) {
+            if (matches(fallback, /\\bvar\\(\\s*--/)) {
               ret.fallback.var++;
             }
             else if (fallback) {
