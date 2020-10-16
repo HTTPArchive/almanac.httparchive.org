@@ -1,5 +1,5 @@
 #standardSQL
-# Distribution of third party requests per page
+# Distribution of response body size by redirected third parties
 # HTTP status codes documentation: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
 
 WITH requests AS (
@@ -52,5 +52,8 @@ UNNEST(GENERATE_ARRAY(0, 1000, 1)) AS percentile
 WHERE
   redirected = 1
 GROUP BY
+  client,
+  percentile
+ORDER BY
   client,
   percentile
