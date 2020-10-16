@@ -1,6 +1,6 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION getColorRGBAComma(css STRING)
-RETURNS STRUCT<commas INT64, nocommas INT64> LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getColorSpaces(css STRING)
+RETURNS ARRAY<STRUCT<name STRING, value INT64>> LANGUAGE js AS '''
 try {
   function compute(ast) {
     let usage = {
@@ -89,10 +89,10 @@ try {
     }
 
     walkDeclarations(ast, ({property, value}) => {
-      usage.hex[3] += countMatches(value, /#[a-f0-9]{3}\b/gi);
-      usage.hex[4] += countMatches(value, /#[a-f0-9]{4}\b/gi);
-      usage.hex[6] += countMatches(value, /#[a-f0-9]{6}\b/gi);
-      usage.hex[8] += countMatches(value, /#[a-f0-9]{8}\b/gi);
+      usage.hex[3] += countMatches(value, /#[a-f0-9]{3}\\b/gi);
+      usage.hex[4] += countMatches(value, /#[a-f0-9]{4}\\b/gi);
+      usage.hex[6] += countMatches(value, /#[a-f0-9]{6}\\b/gi);
+      usage.hex[8] += countMatches(value, /#[a-f0-9]{8}\\b/gi);
 
       for (let f of extractFunctionCalls(value, {names: functionNames})) {
         let {name, args} = f;
@@ -120,14 +120,14 @@ try {
       }
 
       for (let match of value.matchAll(keywordRegex)) {
-        incrementByKey(usage.keywords, match[0]);
+        incrementByKey(usage.keywords, match[0].toLowerCase());
       }
 
       for (let match of value.matchAll(systemRegex)) {
-        incrementByKey(usage.system, match[0]);
+        incrementByKey(usage.system, system.find(kw => kw.toLowerCase() == match[0].toLowerCase()));
       }
 
-      for (let match of value.matchAll(/\b(?<!\\-)(?:currentColor|transparent)\b/gi)) {
+      for (let match of value.matchAll(/\\b(?<!\\-)(?:currentColor|transparent)\\b/gi)) {
         incrementByKey(usage, match[0].toLowerCase());
       }
     }, {
@@ -142,29 +142,35 @@ try {
 
   const ast = JSON.parse(css);
   let color = compute(ast);
-  return color.args;
+  return Object.entries(color.spaces).map(([name, value]) => ({name, value}));
 } catch (e) {
-  return null;
+  return [];
 }
 '''
 OPTIONS (library="gs://httparchive/lib/css-utils.js");
 
 SELECT
   client,
-  SUM(rgba.commas) AS freq_commas,
-  SUM(rgba.nocommas) AS freq_no_commas,
-  SUM(rgba.commas + rgba.nocommas) AS total,
-  SUM(rgba.commas) / SUM(rgba.commas + rgba.nocommas) AS pct_commas,
-  SUM(rgba.nocommas) / SUM(rgba.commas + rgba.nocommas) AS pct_no_commas
+  color_space,
+  COUNT(DISTINCT page) AS pages,
+  SUM(value) AS freq,
+  SUM(SUM(value)) OVER (PARTITION BY client) AS total,
+  SAFE_DIVIDE(SUM(value), SUM(SUM(value)) OVER (PARTITION BY client)) AS pct
 FROM (
   SELECT
     client,
-    getColorRGBAComma(css) AS rgba
+    page,
+    color_space.name AS color_space,
+    color_space.value
   FROM
-    `httparchive.almanac.parsed_css`
+    `httparchive.almanac.parsed_css`,
+    UNNEST(getColorSpaces(css)) AS color_space
   WHERE
     date = '2020-08-01' AND
     # Limit the size of the CSS to avoid OOM crashes.
     LENGTH(css) < 0.1 * 1024 * 1024)
 GROUP BY
-  client
+  client,
+  color_space
+ORDER BY
+  pct DESC
