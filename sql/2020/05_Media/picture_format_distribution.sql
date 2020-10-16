@@ -46,7 +46,8 @@ SELECT
   COUNTIF('image/webp' IN UNNEST(media_info.picture_formats)) as num_webp,
   COUNTIF('image/gif' IN UNNEST(media_info.picture_formats)) as num_gif,
   COUNTIF('image/jpg' IN UNNEST(media_info.picture_formats)) as num_jpg,
-  COUNTIF('image/png' IN UNNEST(media_info.picture_formats)) as num_png
+  COUNTIF('image/png' IN UNNEST(media_info.picture_formats)) as num_png,
+  COUNTIF('image/avif' IN UNNEST(media_info.picture_formats)) as num_avif
 FROM
   (
   SELECT
