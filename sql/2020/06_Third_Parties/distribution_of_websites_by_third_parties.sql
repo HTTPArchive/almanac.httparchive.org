@@ -1,5 +1,5 @@
 #standardSQL
-# Distribution of pages per third party
+# Distribution of websites by third parties
 
 WITH requests AS (
   SELECT
@@ -52,5 +52,8 @@ FROM
   base,
 UNNEST(GENERATE_ARRAY(0, 1000, 1)) AS percentile
 GROUP BY
+  client,
+  percentile
+ORDER BY
   client,
   percentile

@@ -1,5 +1,5 @@
 #standardSQL
-# Percent of third party requests per content type.
+# Percent of third party requests by content type.
 
 WITH requests AS (
   SELECT
@@ -28,7 +28,8 @@ third_party AS (
 base AS (
   SELECT
     client,
-    contentType
+    contentType,
+    COUNT(0) OVER (PARTITION BY client) AS total_requests,
   FROM
     requests
   LEFT JOIN
@@ -42,9 +43,15 @@ base AS (
 SELECT
   client,
   contentType,
-  COUNT(0) / COUNT(0) OVER (PARTITION BY client) AS pct_third_party
+  total_requests,
+  COUNT(0) AS requests,
+  COUNT(0) / total_requests AS pct_requests
 FROM
   base
 GROUP BY
+  client,
+  contentType,
+  total_requests
+ORDER BY
   client,
   contentType

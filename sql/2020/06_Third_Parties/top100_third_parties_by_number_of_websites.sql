@@ -1,5 +1,5 @@
 #standardSQL
-# Top third party domains by number of pages broken down by client
+# Top 100 third parties by number of websites
 
 WITH requests AS (
   SELECT
@@ -48,32 +48,19 @@ base AS (
 SELECT
   client,
   canonicalDomain,
-  total_pages
+  total_pages,
+  rank
 FROM (
   SELECT
     client,
     canonicalDomain,
+    DENSE_RANK() OVER(PARTITION BY client ORDER BY total_pages DESC) AS rank,
     total_pages
   FROM
     base
-  WHERE
-    client = 'desktop'
-  ORDER BY
-    total_pages DESC
-  LIMIT 100
-) UNION ALL (
-  SELECT
-    client,
-    canonicalDomain,
-    total_pages
-  FROM
-    base
-  WHERE
-    client = 'mobile'
-  ORDER BY
-    total_pages DESC
-  LIMIT 100
 )
+WHERE
+  rank <= 100
 ORDER BY
   client,
   total_pages DESC

@@ -1,5 +1,5 @@
 #standardSQL
-# Percent of pages with third party per client
+# Percent of websites with third parties
 
 WITH requests AS (
   SELECT

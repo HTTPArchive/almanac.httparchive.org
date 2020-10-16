@@ -1,5 +1,5 @@
 #standardSQL
-# Biggest response and slowest third-parties by category
+# Top 100 third parties by median response body size, time
 
 WITH requests AS (
   SELECT
@@ -32,10 +32,10 @@ third_party AS (
 base AS (
   SELECT
     client,
-    canonicalDomain,
     IFNULL(category, 'first-party') AS category,
-    APPROX_QUANTILES(body_size, 1000)[OFFSET(500)] AS median_body_size,
-    APPROX_QUANTILES(time, 1000)[OFFSET(500)] AS median_time
+    canonicalDomain,
+    APPROX_QUANTILES(body_size, 1000)[OFFSET(500)] / 1024 AS median_body_size_kb,
+    APPROX_QUANTILES(time, 1000)[OFFSET(500)] /1000 AS median_time_s
   FROM
     requests
   LEFT JOIN
@@ -44,8 +44,8 @@ base AS (
     NET.HOST(requests.host) = NET.HOST(third_party.domain)
   GROUP BY
     client,
-    canonicalDomain,
-    category
+    category,
+    canonicalDomain
 )
 
 SELECT
@@ -53,33 +53,31 @@ SELECT
   client,
   category,
   canonicalDomain,
-  metric
+  metric,
+  rank
 FROM (
   SELECT
-    'top100_median_body_size' AS ranking,
+    'median_body_size_kb' AS ranking,
     client,
     category,
     canonicalDomain,
-    median_body_size AS metric
+    median_body_size_kb AS metric,
+    DENSE_RANK() OVER(PARTITION BY client ORDER BY median_body_size_kb DESC) AS rank
   FROM base
-  ORDER BY
-    median_body_size DESC
-  LIMIT 100
+  UNION ALL (
+    SELECT
+      'median_time_s' AS ranking,
+      client,
+      category,
+      canonicalDomain,
+      median_time_s AS metric,
+      DENSE_RANK() OVER(PARTITION BY client ORDER BY median_time_s DESC) AS rank
+    FROM base
+  )
 )
-UNION ALL (
-  SELECT
-    'top100_median_time' AS ranking,
-    client,
-    category,
-    canonicalDomain,
-    median_time AS metric
-  FROM base
-  ORDER BY
-    median_time DESC
-  LIMIT 100
-)
+WHERE
+  rank<=100
 ORDER BY
   ranking,
   client,
-  category,
-  canonicalDomain
+  metric DESC

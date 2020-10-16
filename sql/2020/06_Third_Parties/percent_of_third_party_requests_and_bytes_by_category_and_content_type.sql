@@ -1,5 +1,5 @@
 #standardSQL
-# Percent of third party requests and bytes per client, category and content type.
+# Percent of third party requests and bytes by category and content type.
 
 WITH requests AS (
   SELECT
