@@ -26,5 +26,5 @@ GROUP BY
   client,
   type
 ORDER BY
-  type,
-  client
+  client,
+  type
