@@ -10,15 +10,15 @@ FROM
   `httparchive.almanac.requests`,
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 WHERE
-  date = '2020-08-01'
+  date = '2020-08-01' AND
   expAge > 0
 GROUP BY
-  percentile,
   client,
-  party,
-  type
-ORDER BY
   type,
-  percentile,
+  party,
+  percentile
+ORDER BY
   client,
-  party
+  type,
+  party,
+  percentile
