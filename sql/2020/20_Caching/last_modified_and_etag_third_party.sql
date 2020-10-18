@@ -4,12 +4,10 @@ SELECT
   client,
   party,
   COUNT(0) AS total_requests,
-
   COUNTIF(uses_etag) AS total_etag,
   COUNTIF(uses_last_modified) AS total_last_modified,
   COUNTIF(uses_etag AND uses_last_modified) AS total_using_both,
   COUNTIF(NOT uses_etag AND NOT uses_last_modified) AS total_using_neither,
-
   ROUND(COUNTIF(uses_etag) * 100 / COUNT(0), 2) AS pct_etag,
   ROUND(COUNTIF(uses_last_modified) * 100 / COUNT(0), 2) AS pct_last_modified,
   ROUND(COUNTIF(uses_etag AND uses_last_modified) * 100 / COUNT(0), 2) AS pct_uses_both,
@@ -23,7 +21,7 @@ FROM (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = '2019-07-01'
+    date = '2020-08-01'
 )
 GROUP BY
   client,
