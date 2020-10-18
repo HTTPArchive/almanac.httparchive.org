@@ -42,7 +42,7 @@ FROM (
     UNNEST(getResourceHints(payload)) AS hint)
 JOIN (
   SELECT DISTINCT
-    IF(device='desktop','desktop', IF(device='phone','mobile',null)) AS client,
+    IF(device = 'desktop', 'desktop', 'mobile') AS client,
     CONCAT(origin, '/') AS page,
     fast_fcp,
     slow_fcp

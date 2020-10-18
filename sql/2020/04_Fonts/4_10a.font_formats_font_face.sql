@@ -37,9 +37,12 @@ return [];
 SELECT
  client,
  format,
- COUNT(DISTINCT page) AS freq,
- SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total,
- COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct
+ COUNT(DISTINCT page) AS freq_req,
+ SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total_req,
+ COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct_req,
+ COUNT(DISTINCT page) AS freq_page,
+ SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total_page,
+ COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct_page,
 FROM
  `httparchive.almanac.parsed_css`,
  UNNEST(getFontFormats(css)) AS format
@@ -49,4 +52,4 @@ GROUP BY
  client,
  format
 ORDER BY
- client, pct DESC
+ client, pct_page DESC

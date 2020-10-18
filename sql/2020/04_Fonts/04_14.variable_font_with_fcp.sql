@@ -46,7 +46,7 @@ USING
 JOIN (
   SELECT DISTINCT
     CONCAT(origin, '/') AS page,
-    IF(device='desktop','desktop', IF(device='phone','mobile',null)) AS client,
+    IF(device = 'desktop', 'desktop', 'mobile') AS client,
     fast_fcp,
     slow_fcp,
   FROM
