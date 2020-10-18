@@ -50,7 +50,44 @@ RETURNS STRUCT<
   # structured data
   has_raw_jsonld_or_microdata BOOL,
   has_rendered_jsonld_or_microdata BOOL,
-  rendering_changes_structured_data BOOL
+  rendering_changes_structured_data BOOL,
+
+  # meta robots 
+  rendered_otherbot_status_index BOOL,
+  rendered_otherbot_status_follow BOOL,
+  rendered_otherbot_noarchive BOOL,
+  rendered_otherbot_nosnippet BOOL,
+  rendered_otherbot_unavailable_after BOOL,
+  rendered_otherbot_max_snippet BOOL,
+  rendered_otherbot_max_image_preview BOOL,
+  rendered_otherbot_max_video_preview BOOL,
+  rendered_otherbot_notranslate BOOL,
+  rendered_otherbot_noimageindex BOOL,
+  rendered_otherbot_nocache BOOL,
+
+  rendered_googlebot_status_index BOOL,
+  rendered_googlebot_status_follow BOOL,
+  rendered_googlebot_noarchive BOOL,
+  rendered_googlebot_nosnippet BOOL,
+  rendered_googlebot_unavailable_after BOOL,
+  rendered_googlebot_max_snippet BOOL,
+  rendered_googlebot_max_image_preview BOOL,
+  rendered_googlebot_max_video_preview BOOL,
+  rendered_googlebot_notranslate BOOL,
+  rendered_googlebot_noimageindex BOOL,
+  rendered_googlebot_nocache BOOL,
+
+  rendered_googlebot_news_status_index BOOL,
+  rendered_googlebot_news_status_follow BOOL,
+  rendered_googlebot_news_noarchive BOOL,
+  rendered_googlebot_news_nosnippet BOOL,
+  rendered_googlebot_news_unavailable_after BOOL,
+  rendered_googlebot_news_max_snippet BOOL,
+  rendered_googlebot_news_max_image_preview BOOL,
+  rendered_googlebot_news_max_video_preview BOOL,
+  rendered_googlebot_news_notranslate BOOL,
+  rendered_googlebot_news_noimageindex BOOL,
+  rendered_googlebot_news_nocache BOOL
 > LANGUAGE js AS '''
 var result = {};
 try {
@@ -168,6 +205,44 @@ try {
       {
         result.rendering_changed_robots_meta_tag = false;
       }
+
+      result.rendered_otherbot_status_index = rendered.otherbot.status_index;
+      result.rendered_otherbot_status_follow = rendered.otherbot.status_follow;
+      result.rendered_otherbot_noarchive = rendered.otherbot.noarchive === true;
+      result.rendered_otherbot_nosnippet = rendered.otherbot.nosnippet === true;
+      result.rendered_otherbot_unavailable_after = rendered.otherbot.unavailable_after === true;
+      result.rendered_otherbot_max_snippet = rendered.otherbot.max_snippet === true;
+      result.rendered_otherbot_max_image_preview = rendered.otherbot.max_image_preview === true;
+      result.rendered_otherbot_max_video_preview = rendered.otherbot.max_video_preview === true;
+      result.rendered_otherbot_notranslate = rendered.otherbot.notranslate === true;
+      result.rendered_otherbot_noimageindex = rendered.otherbot.noimageindex === true;
+      result.rendered_otherbot_nocache = rendered.otherbot.nocache === true;
+
+      result.rendered_googlebot_status_index = rendered.googlebot.status_index;
+      result.rendered_googlebot_status_follow = rendered.googlebot.status_follow;
+      result.rendered_googlebot_noarchive = rendered.googlebot.noarchive === true;
+      result.rendered_googlebot_nosnippet = rendered.googlebot.nosnippet === true;
+      result.rendered_googlebot_unavailable_after = rendered.googlebot.unavailable_after === true;
+      result.rendered_googlebot_max_snippet = rendered.googlebot.max_snippet === true;
+      result.rendered_googlebot_max_image_preview = rendered.googlebot.max_image_preview === true;
+      result.rendered_googlebot_max_video_preview = rendered.googlebot.max_video_preview === true;
+      result.rendered_googlebot_notranslate = rendered.googlebot.notranslate === true;
+      result.rendered_googlebot_noimageindex = rendered.googlebot.noimageindex === true;
+      result.rendered_googlebot_nocache = rendered.googlebot.nocache === true;
+
+      result.rendered_googlebot_news_status_index = rendered.googlebot_news.status_index;
+      result.rendered_googlebot_news_status_follow = rendered.googlebot_news.status_follow;
+      result.rendered_googlebot_news_noarchive = rendered.googlebot_news.noarchive === true;
+      result.rendered_googlebot_news_nosnippet = rendered.googlebot_news.nosnippet === true;
+      result.rendered_googlebot_news_unavailable_after = rendered.googlebot_news.unavailable_after === true;
+      result.rendered_googlebot_news_max_snippet = rendered.googlebot_news.max_snippet === true;
+      result.rendered_googlebot_news_max_image_preview = rendered.googlebot_news.max_image_preview === true;
+      result.rendered_googlebot_news_max_video_preview = rendered.googlebot_news.max_video_preview === true;
+      result.rendered_googlebot_news_notranslate = rendered.googlebot_news.notranslate === true;
+      result.rendered_googlebot_news_noimageindex = rendered.googlebot_news.noimageindex === true;
+      result.rendered_googlebot_news_nocache = rendered.googlebot_news.nocache === true;
+
+
       // result.rendering_changed_robots_meta_tag = JSON.stringify(robots.raw) === JSON.stringify(robots.rendered);
     }
   }
@@ -302,6 +377,9 @@ SELECT
   # Rendering changed Robots
   AS_PERCENT(COUNTIF(wpt_bodies_info.rendering_changed_robots_meta_tag), COUNT(0)) AS pct_rendering_changed_robots_meta_tag,
 
+
+
+
   # Pages with canonical
   AS_PERCENT(COUNTIF(wpt_bodies_info.has_canonicals), COUNT(0)) AS pct_has_canonical,
 
@@ -367,6 +445,42 @@ SELECT
 
   # http or https
   AS_PERCENT(COUNTIF(protocol = "https"), COUNT(0)) AS pct_https,
+
+  # meta robots
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_otherbot_status_index), COUNT(0)) AS pct_rendered_otherbot_status_index,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_otherbot_status_follow), COUNT(0)) AS pct_rendered_otherbot_status_follow,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_otherbot_noarchive), COUNT(0)) AS pct_rendered_otherbot_noarchive,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_otherbot_nosnippet), COUNT(0)) AS pct_rendered_otherbot_nosnippet,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_otherbot_unavailable_after), COUNT(0)) AS pct_rendered_otherbot_unavailable_after,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_otherbot_max_snippet), COUNT(0)) AS pct_rendered_otherbot_max_snippet,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_otherbot_max_image_preview), COUNT(0)) AS pct_rendered_otherbot_max_image_preview,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_otherbot_max_video_preview), COUNT(0)) AS pct_rendered_otherbot_max_video_preview,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_otherbot_notranslate), COUNT(0)) AS pct_rendered_otherbot_notranslate,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_otherbot_noimageindex), COUNT(0)) AS pct_rendered_otherbot_noimageindex,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_otherbot_nocache), COUNT(0)) AS pct_rendered_otherbot_nocache,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_status_index), COUNT(0)) AS pct_rendered_googlebot_status_index,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_status_follow), COUNT(0)) AS pct_rendered_googlebot_status_follow,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_noarchive), COUNT(0)) AS pct_rendered_googlebot_noarchive,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_nosnippet), COUNT(0)) AS pct_rendered_googlebot_nosnippet,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_unavailable_after), COUNT(0)) AS pct_rendered_googlebot_unavailable_after,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_max_snippet), COUNT(0)) AS pct_rendered_googlebot_max_snippet,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_max_image_preview), COUNT(0)) AS pct_rendered_googlebot_max_image_preview,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_max_video_preview), COUNT(0)) AS pct_rendered_googlebot_max_video_preview,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_notranslate), COUNT(0)) AS pct_rendered_googlebot_notranslate,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_noimageindex), COUNT(0)) AS pct_rendered_googlebot_noimageindex,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_nocache), COUNT(0)) AS pct_rendered_googlebot_nocache,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_news_status_index), COUNT(0)) AS pct_rendered_googlebot_news_status_index,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_news_status_follow), COUNT(0)) AS pct_rendered_googlebot_news_status_follow,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_news_noarchive), COUNT(0)) AS pct_rendered_googlebot_news_noarchive,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_news_nosnippet), COUNT(0)) AS pct_rendered_googlebot_news_nosnippet,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_news_unavailable_after), COUNT(0)) AS pct_rendered_googlebot_news_unavailable_after,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_news_max_snippet), COUNT(0)) AS pct_rendered_googlebot_news_max_snippet,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_news_max_image_preview), COUNT(0)) AS pct_rendered_googlebot_news_max_image_preview,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_news_max_video_preview), COUNT(0)) AS pct_rendered_googlebot_news_max_video_preview,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_news_notranslate), COUNT(0)) AS pct_rendered_googlebot_news_notranslate,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_news_noimageindex), COUNT(0)) AS pct_rendered_googlebot_news_noimageindex,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_news_nocache), COUNT(0)) AS pct_rendered_googlebot_news_nocache,
+
 
   FROM
     ( 
