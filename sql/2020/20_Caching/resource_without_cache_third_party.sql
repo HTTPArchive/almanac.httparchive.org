@@ -8,7 +8,6 @@ SELECT
   COUNTIF(not_cacheable) AS total_not_cacheable,
   COUNTIF(NOT not_cacheable AND uses_cache) AS total_using_cache,
   COUNTIF(NOT not_cacheable AND NOT uses_cache) AS total_not_using_cache,
-
   ROUND(COUNTIF(not_cacheable) * 100 / COUNT(0), 2) AS perc_not_cacheable,
   ROUND(COUNTIF(NOT not_cacheable AND uses_cache) * 100 / COUNT(0), 2) AS perc_using_cache,
   ROUND(COUNTIF(NOT not_cacheable AND NOT uses_cache) * 100 / COUNT(0), 2) AS perc_not_using_cache
@@ -26,9 +25,9 @@ FROM (
 )
 GROUP BY
   client,
-  type,
-  party
+  party,
+  type
 ORDER BY
   client,
-  type,
-  party
+  party,
+  type
