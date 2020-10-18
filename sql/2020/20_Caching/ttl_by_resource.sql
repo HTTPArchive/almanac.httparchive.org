@@ -12,10 +12,10 @@ WHERE
   date = '2020-08-01' AND
   expAge > 0
 GROUP BY
-  percentile,
   client,
-  type
-ORDER BY
   type,
-  percentile,
-  client
+  percentile
+ORDER BY
+  client,
+  type,
+  percentile
