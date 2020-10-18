@@ -22,13 +22,13 @@ FROM (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = '2019-07-01'
+    date = '2020-08-01'
 )
 GROUP BY
   client,
   type,
   party
 ORDER BY
-  type,
   client,
+  type,
   party
