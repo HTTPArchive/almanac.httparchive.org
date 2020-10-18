@@ -1,5 +1,5 @@
 #standardSQL
-#
+# Sites with perfect scores on the properly sized images audit
 SELECT
   COUNTIF(properly_sized_images_score IS NOT NULL) AS total_applicable,
   COUNTIF(properly_sized_images_score = 1) AS total_with_properly_sized_images,

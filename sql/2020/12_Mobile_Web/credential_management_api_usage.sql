@@ -1,5 +1,5 @@
 #standardSQL
-#
+# Usage of Credential Manager
 SELECT
   client,
   feature,

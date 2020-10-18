@@ -1,5 +1,5 @@
 #standardSQL
-#
+# Ecommerce sites using type=search inputs
 CREATE TEMPORARY FUNCTION getSearchInputStats(payload STRING)
 RETURNS STRUCT<has_inputs BOOLEAN, has_search_inputs BOOLEAN> LANGUAGE js AS '''
   try {

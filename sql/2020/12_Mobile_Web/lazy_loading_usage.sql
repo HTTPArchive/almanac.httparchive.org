@@ -1,5 +1,5 @@
 #standardSQL
-#
+# Usage of native lazy loading
 SELECT
   client,
   COUNTIF(total_img > 0) AS sites_with_images,
