@@ -27,10 +27,10 @@ jobs:
       - name: Set VALIDATE_ALL_CODEBASE variable to false
         # Only run the full workflow for manual runs or if upgrading the super linter
         if: |
-            github.event_name != 'workflow' &&
+            github.event_name != 'workflow_dispatch' &&
             startsWith(github.event.pull_request.title,'Bump github/super-linter') != true
         run: |
-          echo "::set-env name=VALIDATE_ALL_CODEBASE::false"
+          echo "VALIDATE_ALL_CODEBASE=false" >> $GITHUB_ENV
       - name: Lint Code Base
         uses: github/super-linter@v3.13.1
         env:
