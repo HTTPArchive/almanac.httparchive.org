@@ -37,7 +37,6 @@ jobs:
       with:
         node-version: 12.x
     - name: Test Template Changes
-      id: test-template-changes
       run: ./src/tools/scripts/test_template_changes.sh
     - name: 'Comment PR'
       uses: actions/github-script@0.3.0
