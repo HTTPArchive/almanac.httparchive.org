@@ -33,6 +33,7 @@ return result;
 ''';
 
 SELECT
+  client,
   COUNT(0) AS total_pages,
   COUNTIF(media_info.num_video_nodes > 0) AS num_video_nodes,
   COUNTIF('autoplay' IN UNNEST(media_info.video_nodes_attributes)) as autoplay,
