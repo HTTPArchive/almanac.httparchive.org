@@ -19,8 +19,7 @@ FROM (
     CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '$.images.sources.total') AS INT64) AS total_source,
     CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '$.images.total_with_srcset') AS INT64) AS total_srcset,
   FROM
-    `httparchive.sample_data.pages_*`
-    # `httparchive.pages.2020_08_01_*`
+    `httparchive.pages.2020_08_01_*`
 )
 GROUP BY
   client
