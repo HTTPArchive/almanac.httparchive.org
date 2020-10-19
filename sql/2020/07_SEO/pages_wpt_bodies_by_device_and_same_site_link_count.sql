@@ -57,15 +57,13 @@ SELECT
         total,
         get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info      
       FROM
-        #`httparchive.pages.2020_08_01_*`
-        `httparchive.sample_data.pages_*`
+        `httparchive.pages.2020_08_01_*`
         JOIN
         ( 
             # to get an accurate total of pages per device. also seems fast
             SELECT _TABLE_SUFFIX, COUNT(0) AS total 
             FROM 
-                #`httparchive.pages.2020_08_01_*`
-                `httparchive.sample_data.pages_*`
+                `httparchive.pages.2020_08_01_*`
 
             GROUP BY _TABLE_SUFFIX
         ) 
