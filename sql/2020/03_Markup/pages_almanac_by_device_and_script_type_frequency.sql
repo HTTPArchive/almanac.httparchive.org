@@ -33,8 +33,8 @@ FROM
 GROUP BY
   client,
   type_name
+HAVING
+  freq > 1000
 ORDER BY
   freq DESC,
   client
-LIMIT
-  1000
