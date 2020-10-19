@@ -1,6 +1,6 @@
 #standardSQL
-# pages markup metrics grouped by device and image loading attributes
-# Note: this query only reports if an attribute was ever used on a page. It is not a per img report.
+# pages markup metrics grouped by device and iframe loading attributes
+# Note: this query only reports if an attribute was ever used on a page. It is not a per iframe report.
 
 # helper to create percent fields
 CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
@@ -31,8 +31,8 @@ try {
   
     if (Array.isArray(markup) || typeof markup != 'object') return result;
 
-    if (markup.images && markup.images.img && markup.images.img.loading) {
-      result.loading = getKey(markup.images.img.loading);
+    if (markup.iframes && markup.iframes.loading) {
+      result.loading = getKey(markup.iframes.loading);
     }
 } catch (e) {}
 return result;
@@ -43,6 +43,7 @@ client,
 loading, 
 total, 
 COUNT(0) AS count,
+SUM(COUNT(0)) OVER (PARTITION BY client) AS device_count,
 AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct
 FROM
     ( 
