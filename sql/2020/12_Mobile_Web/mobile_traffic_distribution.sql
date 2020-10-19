@@ -7,7 +7,8 @@ FROM
   `chrome-ux-report.materialized.device_summary`,
   UNNEST(GENERATE_ARRAY(1, 100)) AS percentile
 WHERE
-  date = '2020-08-01'
+  date = '2020-08-01' AND
+  device = 'phone'
 GROUP BY
   percentile
 ORDER BY

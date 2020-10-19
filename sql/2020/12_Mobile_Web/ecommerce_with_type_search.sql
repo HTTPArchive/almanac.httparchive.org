@@ -32,16 +32,14 @@ FROM (
     getSearchInputStats(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS search_input_stats,
     url
   FROM
-    `httparchive.sample_data.pages_*`
-    # `httparchive.pages.2020_08_01_*`
+    `httparchive.pages.2020_08_01_*`
 )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
     url
   FROM
-    `httparchive.sample_data.technologies_*`
-    # `httparchive.technologies.2019_07_01_*`
+    `httparchive.technologies.2020_08_01_*`
   WHERE
     category = 'Ecommerce'
 )
