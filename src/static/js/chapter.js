@@ -139,13 +139,13 @@ function googleSheetsPixelNotLoaded() {
   this.parentElement.removeChild(this);
 
   var all_fig_imgs = document.querySelectorAll('figure .fig-mobile');
-  for (index = 0; index < all_fig_imgs.length; ++index) {
+  for (var index = 0; index < all_fig_imgs.length; ++index) {
     var fig_img = all_fig_imgs[index];
     fig_img.classList.remove("fig-mobile");
   }
 
   var all_fig_iframes = document.querySelectorAll('figure .fig-iframe');
-  for (index = 0; index < all_fig_iframes.length; ++index) {
+  for (var index = 0; index < all_fig_iframes.length; ++index) {
     var fig_iframe = all_fig_iframes[index];
     fig_iframe.parentElement.removeChild(fig_iframe);
   }
@@ -166,7 +166,7 @@ function upgradeInteractiveFigures() {
       //Find each image and create the iframe
       var all_fig_imgs = document.querySelectorAll('figure img');
 
-      for (index = 0; index < all_fig_imgs.length; ++index) {
+      for (var index = 0; index < all_fig_imgs.length; ++index) {
         var fig_img = all_fig_imgs[index];
 
         if (fig_img.getAttribute('data-iframe')) {
@@ -289,7 +289,7 @@ function indexHighlighter() {
   // Check if 'position:sticky' is supported (as this is not great UX when not so don't bother)
   // Add the sticky class (which sets 'position:sticky') and then test if that stuck :-)
   // Also use endsWith to support vendor prefixes (Safari v12 needs this)
-  chapterIndex && chapterIndex.classList.add('sticky');
+  chapterIndex.classList.add('sticky');
   var chapterIndexStyles = getComputedStyle(chapterIndex);
   if (!chapterIndexStyles || !chapterIndexStyles.position || !chapterIndexStyles.position.endsWith('sticky')) {
     gtag('event', 'index-highlighter', { 'event_category': 'user', 'event_label': 'not-enabled', 'value': 0 });
@@ -341,7 +341,7 @@ function indexHighlighter() {
     threshold: null
   };
   var observer = new IntersectionObserver(function(entries) {
-    for (index = 0; index < entries.length; ++index) {
+    for (var index = 0; index < entries.length; ++index) {
       var entry = entries[index];
 
       if (entry.isIntersecting && entry.target && entry.target.id) {
@@ -352,7 +352,7 @@ function indexHighlighter() {
 
   // Add an intersection observer to each heading
   var all_headings = document.querySelectorAll('article h1, article h2, article h3');
-  for (index = 0; index < all_headings.length; ++index) {
+  for (var index = 0; index < all_headings.length; ++index) {
     var heading = all_headings[index];
     observer.observe(heading);
   };
@@ -362,16 +362,16 @@ function indexHighlighter() {
 }
 
 function toggleDescription(event) {
-  event_button = event.target;
+  var event_button = event.target;
   if (!event_button) {
     return;
   }
-  description_id = event_button.getAttribute('aria-controls');
+  var description_id = event_button.getAttribute('aria-controls');
   if (!description_id) {
     return;
   }
 
-  description = document.querySelector('#' + description_id);
+  var description = document.querySelector('#' + description_id);
   if (!description) {
     return;
   }
@@ -385,11 +385,11 @@ function toggleDescription(event) {
 function addShowDescription() {
   var all_desc_buttons = document.querySelectorAll('.fig-description-button');
 
-  for (index = 0; index < all_desc_buttons.length; ++index) {
+  for (var index = 0; index < all_desc_buttons.length; ++index) {
     var desc_button = all_desc_buttons[index];
     desc_button.addEventListener('click', toggleDescription);
     desc_button.hidden = false;
-    description = document.querySelector('#' + desc_button.getAttribute('aria-controls'));
+    var description = document.querySelector('#' + desc_button.getAttribute('aria-controls'));
     if(description) {
       description.classList.remove('visually-hidden');
       description.classList.add('fig-description');

@@ -39,7 +39,7 @@ const test_status_code = async (page, status, location) => {
     // Don't follow redirects
     const options = {
       redirect: 'manual'
-    }
+    };
 
     const response = await fetch(base_url + page, options);
 
