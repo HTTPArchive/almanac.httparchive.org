@@ -18,7 +18,7 @@ jobs:
     - name: Checkout branch
       uses: actions/checkout@v2.3.3
       with:
-        # Fetch all commits so super-linter can compare branches fully
+        # Full git history is needed to get a proper list of changed files within `super-linter`
         fetch-depth: 0
     - name: Setup Node.js for use with actions
       uses: actions/setup-node@v1.4.2
