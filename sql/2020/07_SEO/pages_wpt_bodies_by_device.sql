@@ -242,7 +242,6 @@ try {
       result.rendered_googlebot_news_noimageindex = rendered.googlebot_news.noimageindex === true;
       result.rendered_googlebot_news_nocache = rendered.googlebot_news.nocache === true;
 
-
       // result.rendering_changed_robots_meta_tag = JSON.stringify(robots.raw) === JSON.stringify(robots.rendered);
     }
   }
