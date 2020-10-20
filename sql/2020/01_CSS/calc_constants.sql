@@ -65,14 +65,14 @@ OPTIONS (library="gs://httparchive/lib/css-utils.js");
 SELECT
   client,
   const,
-  COUNT(DISTINCT url) AS pages,
+  COUNT(DISTINCT page) AS pages,
   COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM (
   SELECT
     client,
-    url,
+    page,
     const
   FROM
     `httparchive.almanac.parsed_css`,
@@ -84,7 +84,7 @@ FROM (
 GROUP BY
   client,
   const
-HAVING
-  pages >= 100
 ORDER BY
   pct DESC
+LIMIT
+  200
