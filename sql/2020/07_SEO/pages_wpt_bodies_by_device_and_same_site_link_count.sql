@@ -1,5 +1,6 @@
 #standardSQL
 # page wpt_bodies metrics grouped by device and number of same_site links
+# this query aims to highlight sites with few same site links, like SPAs
 
 # helper to create percent fields
 CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
