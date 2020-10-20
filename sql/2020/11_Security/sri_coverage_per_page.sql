@@ -1,7 +1,7 @@
 #standardSQL
 # Subresource integrity: percentage of scripts on a page that have the integrity attribute
 CREATE TEMP FUNCTION getNumScriptElements(sris ARRAY<STRING>) AS (
-  (SELECT COUNT(0) FROM UNNEST(sris) as sri WHERE JSON_EXTRACT_SCALAR(sri, '$.tagname') = 'script')
+  (SELECT COUNT(0) FROM UNNEST(sris) AS sri WHERE JSON_EXTRACT_SCALAR(sri, '$.tagname') = 'script')
 );
 
 SELECT
@@ -10,7 +10,7 @@ SELECT
   APPROX_QUANTILES(getNumScriptElements(sris) / num_scripts, 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS integrity_pct
 FROM (
   SELECT
-    _TABLE_SUFFIX as client,
+    _TABLE_SUFFIX AS client,
     JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), "$.sri-integrity") AS sris,
     SAFE_CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._element_count'), '$.script') AS INT64) AS num_scripts
   FROM

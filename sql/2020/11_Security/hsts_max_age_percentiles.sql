@@ -7,12 +7,13 @@ SELECT
 FROM (
   SELECT
     client,
-    SAFE_CAST(REGEXP_EXTRACT(REGEXP_EXTRACT(respOtherHeaders, r'(?i)\W?strict-transport-security =([^,]+)'), r'(?i)max-age=\s*-?(\d+)') AS NUMERIC) AS max_age
+    SAFE_CAST(REGEXP_EXTRACT(REGEXP_EXTRACT(respOtherHeaders, r'(?i)strict-transport-security =([^,]+)'), r'(?i)max-age=\s*(-?\d+)') AS NUMERIC) AS max_age
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = "2020-08-01"),
-  UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+    date = "2020-08-01"
+),
+UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,
   client

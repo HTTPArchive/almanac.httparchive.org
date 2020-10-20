@@ -12,7 +12,7 @@ CREATE TEMPORARY FUNCTION getSetCookieHeaders(headers STRING)
 SELECT
   client,
   party,
-  COUNT(0) AS total,
+  COUNT(0) AS total_cookies,
   COUNTIF(REGEXP_CONTAINS(cookie_value, r'(?i);.*httponly')) AS count_httponly,
   COUNTIF(REGEXP_CONTAINS(cookie_value, r'(?i);.*httponly')) / COUNT(0) AS pct_httponly,
   COUNTIF(REGEXP_CONTAINS(cookie_value, r'(?i);.*secure')) AS count_secure,
@@ -34,10 +34,12 @@ FROM (
     client,
     getSetCookieHeaders(JSON_EXTRACT(payload, '$.response.headers')) AS cookie_values,
     IF(NET.REG_DOMAIN(url) = NET.REG_DOMAIN(page), 1, 3) AS party
-  FROM `httparchive.almanac.requests`
+  FROM
+    `httparchive.almanac.requests`
   WHERE
     date = '2020-08-01'
-), UNNEST(cookie_values) AS cookie_value
+),
+UNNEST(cookie_values) AS cookie_value
 GROUP BY
   client,
   party

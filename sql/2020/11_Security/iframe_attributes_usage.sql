@@ -2,7 +2,7 @@
 # usage of allow and sandbox attribute of iframe elements, per page and over all iframe elements
 SELECT
   client,
-  COUNT(0) AS total_frames,
+  COUNT(0) AS total_iframes,
   COUNTIF(allow IS NOT NULL) AS freq_allow,
   COUNTIF(allow IS NOT NULL) / COUNT(0) AS pct_allow_frames,
   COUNTIF(sandbox IS NOT NULL) AS freq_sandbox,
@@ -22,7 +22,7 @@ FROM (
     JSON_EXTRACT_SCALAR(iframeAttr, '$.sandbox') AS sandbox
   FROM (
     SELECT
-      _TABLE_SUFFIX as client,
+      _TABLE_SUFFIX AS client,
       url,
       JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), "$.iframe-allow-sandbox") AS iframeAttrs
     FROM

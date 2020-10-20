@@ -14,7 +14,7 @@ CREATE TEMPORARY FUNCTION getHeader(headers STRING, headername STRING)
 SELECT
   client,
   csp_header,
-  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total_csp_headers,
   COUNT(0) AS freq,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM (
@@ -24,8 +24,9 @@ FROM (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = "2020-08-01" AND firstHtml
-   )
+    date = "2020-08-01" AND
+    firstHtml
+)
 WHERE
   csp_header IS NOT NULL
 GROUP BY

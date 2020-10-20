@@ -3,19 +3,21 @@
 CREATE TEMP FUNCTION getNumWithSandboxAttribute(payload STRING) AS ((
   SELECT
     COUNT(0)
-  FROM UNNEST(JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), "$.iframe-allow-sandbox")) as iframeAttr 
-  WHERE JSON_EXTRACT_SCALAR(iframeAttr, '$.sandbox') IS NOT NULL
+  FROM
+    UNNEST(JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), "$.iframe-allow-sandbox")) AS iframeAttr 
+  WHERE
+    JSON_EXTRACT_SCALAR(iframeAttr, '$.sandbox') IS NOT NULL
 ));
 
 SELECT
   client,
   TRIM(sandbox_attr) AS directive,
-  total,
+  total_iframes_with_sandbox,
   COUNT(0) AS freq,
-  COUNT(0) / total AS pct
+  COUNT(0) / total_iframes_with_sandbox AS pct
 FROM (
   SELECT
-    _TABLE_SUFFIX as client,
+    _TABLE_SUFFIX AS client,
     JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), "$.iframe-allow-sandbox") AS iframeAttrs
   FROM
     `httparchive.pages.2020_08_01_*`),
@@ -23,8 +25,8 @@ FROM (
   UNNEST(SPLIT(JSON_EXTRACT_SCALAR(iframeAttr, '$.sandbox'), ' ')) AS sandbox_attr
 JOIN (
   SELECT
-    _TABLE_SUFFIX as client,
-    SUM(getNumWithSandboxAttribute(payload)) AS total
+    _TABLE_SUFFIX AS client,
+    SUM(getNumWithSandboxAttribute(payload)) AS total_iframes_with_sandbox
   FROM
     `httparchive.pages.2020_08_01_*`
   GROUP BY
@@ -33,7 +35,7 @@ JOIN (
 GROUP BY
   client,
   directive,
-  total
+  total_iframes_with_sandbox
 ORDER BY
   client,
   pct DESC

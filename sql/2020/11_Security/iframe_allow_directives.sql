@@ -3,16 +3,18 @@
 CREATE TEMP FUNCTION getNumWithAllowAttribute(payload STRING) AS ((
   SELECT
     COUNT(0)
-  FROM UNNEST(JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), "$.iframe-allow-sandbox")) as iframeAttr 
-  WHERE JSON_EXTRACT_SCALAR(iframeAttr, '$.allow') IS NOT NULL
+  FROM
+    UNNEST(JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), "$.iframe-allow-sandbox")) AS iframeAttr 
+  WHERE
+    JSON_EXTRACT_SCALAR(iframeAttr, '$.allow') IS NOT NULL
 ));
 
 SELECT
   client,
   SPLIT(TRIM(allow_attr), ' ')[OFFSET(0)] AS directive,
-  total,
+  total_iframes_with_allow,
   COUNT(0) AS freq,
-  COUNT(0) / total AS pct
+  COUNT(0) / total_iframes_with_allow AS pct
 FROM (
   SELECT
     _TABLE_SUFFIX as client,
@@ -24,7 +26,7 @@ FROM (
 JOIN (
   SELECT
     _TABLE_SUFFIX as client,
-    SUM(getNumAllowAttributes(payload)) AS total
+    SUM(getNumWithAllowAttribute(payload)) AS total_iframes_with_allow
   FROM
     `httparchive.pages.2020_08_01_*`
   GROUP BY
@@ -33,7 +35,9 @@ JOIN (
 GROUP BY
   client,
   directive,
-  total
+  total_iframes_with_allow
+HAVING
+  pct > 0.001
 ORDER BY
   client,
   pct DESC

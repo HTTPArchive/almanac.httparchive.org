@@ -14,7 +14,7 @@ CREATE TEMPORARY FUNCTION getHeader(headers STRING, headername STRING)
 SELECT
   client,
   csp_allowed_host,
-  SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total,
+  SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total_pages,
   COUNT(DISTINCT page) AS freq,
   COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct
 FROM (
@@ -25,9 +25,10 @@ FROM (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = "2020-08-01" AND firstHtml
-   ),
-   UNNEST(REGEXP_EXTRACT_ALL(csp_header, r'(?i)\W(https*://[^\s;]+)[\s;]')) AS csp_allowed_host
+    date = "2020-08-01" AND
+    firstHtml
+),
+UNNEST(REGEXP_EXTRACT_ALL(csp_header, r'(?i)(https*://[^\s;]+)[\s;]')) AS csp_allowed_host
 WHERE
   csp_header IS NOT NULL
 GROUP BY

@@ -11,14 +11,14 @@ CREATE TEMPORARY FUNCTION getHeader(headers STRING, headername STRING)
   return null;
 ''';
 CREATE TEMP FUNCTION getNumUniqueHosts(str STRING) AS (
-  (SELECT COUNT(DISTINCT x) FROM UNNEST(REGEXP_EXTRACT_ALL(str, r'(?i)\W(https*://[^\s;]+)[\s;]')) as x)
+  (SELECT COUNT(DISTINCT x) FROM UNNEST(REGEXP_EXTRACT_ALL(str, r'(?i)(https*://[^\s;]+)[\s;]')) AS x)
 );
 
 SELECT
   client,
   percentile,
-  COUNT(0) AS total,
-  COUNTIF(csp_header IS NOT NULL) AS num_csp_headers,
+  COUNT(0) AS total_requests,
+  COUNTIF(csp_header IS NOT NULL) AS total_csp_headers,
   COUNTIF(csp_header IS NOT NULL) / COUNT(0) AS pct_csp_headers,
   COUNT(DISTINCT csp_header) AS num_unique_csp_headers,
   APPROX_QUANTILES(LENGTH(csp_header), 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS csp_header_length,
@@ -30,9 +30,10 @@ FROM (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = "2020-08-01" AND firstHtml
-   ),
-  UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+    date = "2020-08-01" AND
+    firstHtml
+),
+UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   client,
   percentile

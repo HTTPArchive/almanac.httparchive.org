@@ -14,9 +14,9 @@ CREATE TEMPORARY FUNCTION getHeader(headers STRING, headername STRING)
 SELECT
   client,
   directive,
-  COUNT(0) AS total,
-  COUNTIF(REGEXP_CONTAINS(csp_header, CONCAT(r'(?i)\W', directive, r'\W'))) AS num_with_directive,
-  COUNTIF(REGEXP_CONTAINS(csp_header, CONCAT(r'(?i)\W', directive, r'\W'))) / COUNT(0) AS pct_with_directive,
+  COUNT(0) AS total_csp_headers,
+  COUNTIF(REGEXP_CONTAINS(CONCAT(' ', csp_header, ' '), CONCAT(r'(?i)\W', directive, r'\W'))) AS num_with_directive,
+  COUNTIF(REGEXP_CONTAINS(CONCAT(' ', csp_header, ' '), CONCAT(r'(?i)\W', directive, r'\W'))) / COUNT(0) AS pct_with_directive,
 FROM (
   SELECT
     client,
@@ -24,9 +24,10 @@ FROM (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = "2020-08-01" AND firstHtml
-   ),
-  UNNEST(['child-src', 'connect-src', 'default-src', 'font-src', 'frame-src', 'img-src', 'manifest-src', 'media-src', 'object-src', 'prefetch-src', 'script-src', 'script-src-elem', 'script-src-attr', 'style-src', 'style-src-elem', 'style-src-attr', 'worker-src', 'base-uri', 'plugin-types', 'sandbox', 'form-action', 'frame-ancestors', 'navigate-to', 'report-uri', 'report-to', 'block-all-mixed-content', 'referrer', 'require-sri-for', 'require-trusted-types-for', 'trusted-types', 'upgrade-insecure-requests']) AS directive
+    date = "2020-08-01" AND
+    firstHtml
+),
+UNNEST(['child-src', 'connect-src', 'default-src', 'font-src', 'frame-src', 'img-src', 'manifest-src', 'media-src', 'object-src', 'prefetch-src', 'script-src', 'script-src-elem', 'script-src-attr', 'style-src', 'style-src-elem', 'style-src-attr', 'worker-src', 'base-uri', 'plugin-types', 'sandbox', 'form-action', 'frame-ancestors', 'navigate-to', 'report-uri', 'report-to', 'block-all-mixed-content', 'referrer', 'require-sri-for', 'require-trusted-types-for', 'trusted-types', 'upgrade-insecure-requests']) AS directive
 WHERE
   csp_header IS NOT NULL
 GROUP BY

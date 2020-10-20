@@ -16,7 +16,7 @@ SELECT
   COUNT(DISTINCT IF(JSON_EXTRACT_SCALAR(sri, '$.tagname') = 'link', url, NULL)) / COUNT(DISTINCT url) AS pct_link_urls,
 FROM (
   SELECT
-    _TABLE_SUFFIX as client,
+    _TABLE_SUFFIX AS client,
     url,
     JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), "$.sri-integrity") AS sris
   FROM

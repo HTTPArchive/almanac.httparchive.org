@@ -3,7 +3,7 @@
 SELECT
   client,
   NET.HOST(JSON_EXTRACT_SCALAR(sri, '$.src')) AS host,
-  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total_sri_scripts,
   COUNT(0) AS freq,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct,
   SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS total_urls,
@@ -11,7 +11,7 @@ SELECT
   COUNT(DISTINCT url) / SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS pct_urls
 FROM (
   SELECT
-    _TABLE_SUFFIX as client,
+    _TABLE_SUFFIX AS client,
     url,
     JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), "$.sri-integrity") AS sris
   FROM

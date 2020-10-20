@@ -3,21 +3,24 @@
 SELECT
   client,
   tls_version,
-  COUNT(0) AS freq,
-  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
+  SUM(COUNT(DISTINCT host)) OVER (PARTITION BY client) AS total_hosts,
+  COUNT(DISTINCT host) AS freq,
+  COUNT(DISTINCT host) / SUM(COUNT(DISTINCT host)) OVER (PARTITION BY client) AS pct
 FROM (
   SELECT
     client,
-    JSON_EXTRACT_SCALAR(payload, '$._tls_version') AS tls_version
+    NET.HOST(url) AS host,
+    IFNULL(JSON_EXTRACT_SCALAR(payload, '$._tls_version'), JSON_EXTRACT_SCALAR(payload, '$._securityDetails.protocol')) AS tls_version
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = '2020-08-01')
+    date = '2020-08-01' AND
+    STARTS_WITH(url, 'https'))
 WHERE
   tls_version IS NOT NULL
 GROUP BY
   client,
   tls_version
 ORDER BY
+  client,
   pct DESC
