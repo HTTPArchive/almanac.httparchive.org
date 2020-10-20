@@ -39,12 +39,12 @@ return result;
 ''';
 
 SELECT
-client,
-loading, 
-total, 
-COUNT(0) AS count,
-SUM(COUNT(0)) OVER (PARTITION BY client) AS device_count,
-AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct
+  client,
+  loading, 
+  total, 
+  COUNT(0) AS count,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS device_count,
+  AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct
 FROM
     ( 
       SELECT 
