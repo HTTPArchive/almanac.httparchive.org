@@ -479,8 +479,7 @@ SELECT
   AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_news_nocache), COUNT(0)) AS pct_rendered_googlebot_news_nocache,
 
 
-  FROM
-    ( 
+FROM ( 
       SELECT 
         _TABLE_SUFFIX AS client,
         SPLIT(url, ":")[OFFSET(0)] as protocol,
