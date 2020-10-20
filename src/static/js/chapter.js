@@ -351,7 +351,7 @@ function indexHighlighter() {
   }, options);
 
   // Add an intersection observer to each heading
-  var all_headings = document.querySelectorAll('article h1, article h2, article h3');
+  var all_headings = document.querySelectorAll('article h1, article h2, article h3, article h4, article h5, article h6');
   for (var index = 0; index < all_headings.length; ++index) {
     var heading = all_headings[index];
     observer.observe(heading);
