@@ -477,7 +477,6 @@ SELECT
   AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_news_noimageindex), COUNT(0)) AS pct_rendered_googlebot_news_noimageindex,
   AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_news_nocache), COUNT(0)) AS pct_rendered_googlebot_news_nocache,
 
-
 FROM ( 
       SELECT 
         _TABLE_SUFFIX AS client,
