@@ -453,14 +453,14 @@
                 contributors.classList.add.apply(contributors.classList,filterTeams);
             }
 
-            for (index = 0; index < buttons.length; ++index) {
+            for (var index = 0; index < buttons.length; ++index) {
               var button = buttons[index];
               button.setAttribute('aria-pressed', hash.includes(button.className));
             }
 
         } else {
             contributors.classList.add.apply(contributors.classList,teams);
-            for (index = 0; index < buttons.length; ++index) {
+            for (var index = 0; index < buttons.length; ++index) {
               var button = buttons[index];
               button.setAttribute('aria-pressed',false);
             }

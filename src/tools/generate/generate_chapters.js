@@ -29,7 +29,7 @@ const generate_chapters = async () => {
   
   configs = await get_yearly_configs();
   for (const year in configs) {  
-    sitemap_languages[year] = configs[year].settings[0].supported_languages
+    sitemap_languages[year] = configs[year].settings[0].supported_languages;
   }
 
   for (const file of await find_markdown_files()) {
