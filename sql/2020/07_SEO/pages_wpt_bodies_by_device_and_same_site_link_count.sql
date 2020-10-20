@@ -74,5 +74,6 @@ GROUP BY
   client,
   links_same_site,
   total
-ORDER BY links_same_site ASC
+ORDER BY
+  links_same_site ASC
 LIMIT 100
