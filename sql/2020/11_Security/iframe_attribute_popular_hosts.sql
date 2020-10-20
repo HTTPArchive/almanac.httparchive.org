@@ -11,9 +11,9 @@ SELECT
   client,
   policy_type,
   hostname,
-  SUM(COUNTIF(has_policy)) OVER (PARTITION BY client, policy_type) AS total_iframes,
+  total_iframes,
   COUNTIF(has_policy) AS freq,
-  COUNTIF(has_policy) / SUM(COUNTIF(has_policy)) OVER (PARTITION BY client, policy_type) AS pct
+  COUNTIF(has_policy) / total_iframes AS pct
 FROM (
   SELECT
     client,
@@ -22,18 +22,31 @@ FROM (
     hasPolicy(iframeAttr, policy_type) AS has_policy
   FROM (
     SELECT
-      _TABLE_SUFFIX AS client,
+      _TABLE_SUFFIX as client,
       JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), "$.iframe-allow-sandbox") AS iframeAttrs
     FROM
       `httparchive.pages.2020_08_01_*`),
     UNNEST(iframeAttrs) AS iframeAttr,
     UNNEST(['allow', 'sandbox']) AS policy_type
-  )
+)
+JOIN (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    SUM(ARRAY_LENGTH(JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), "$.iframe-allow-sandbox"))) AS total_iframes
+  FROM
+    `httparchive.pages.2020_08_01_*`
+  GROUP BY
+    client)
+USING
+  (client)
 GROUP BY
   client,
+  total_iframes,
   policy_type,
   hostname
 HAVING
   pct > 0.001
 ORDER BY
+  client,
   pct DESC
+  
