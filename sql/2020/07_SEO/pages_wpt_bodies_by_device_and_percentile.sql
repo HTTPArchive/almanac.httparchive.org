@@ -49,7 +49,6 @@ try {
       result.image_links = anchors_rendered.image_links;
       result.text_links = anchors_rendered.text_links;
 
-
       result.hash_link = anchors_rendered.hash_link;
       result.hash_only_link = anchors_rendered.hash_only_link;
       result.javascript_void_links = anchors_rendered.javascript_void_links;
