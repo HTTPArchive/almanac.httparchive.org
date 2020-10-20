@@ -22,7 +22,7 @@ try {
 
   if (Array.isArray(wpt_bodies) || typeof wpt_bodies != 'object') return result;
 
- if (wpt_bodies.anchors && wpt_bodies.anchors.rendered) {
+  if (wpt_bodies.anchors && wpt_bodies.anchors.rendered) {
       var anchors_rendered = wpt_bodies.anchors.rendered;
 
       result.links_same_site = anchors_rendered.same_site;
