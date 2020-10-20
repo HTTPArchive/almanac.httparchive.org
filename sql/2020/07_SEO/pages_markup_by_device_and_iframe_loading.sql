@@ -45,19 +45,25 @@ SELECT
   COUNT(0) AS count,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS device_count,
   AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct
-FROM
-    ( 
+FROM ( 
       SELECT 
         _TABLE_SUFFIX AS client,
         total,
         get_markup_info(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info      
       FROM
         `httparchive.pages.2020_08_01_*` 
-        JOIN
-  (SELECT _TABLE_SUFFIX, COUNT(0) AS total 
-  FROM 
-  `httparchive.pages.2020_08_01_*` 
-  GROUP BY _TABLE_SUFFIX) # to get an accurate total of pages per device. also seems fast
-USING (_TABLE_SUFFIX)
-    ),UNNEST(markup_info.loading) AS loading
-GROUP BY total, loading, client
+      JOIN (
+        SELECT
+          _TABLE_SUFFIX,
+          COUNT(0) AS total
+        FROM
+          `httparchive.pages.2020_08_01_*` 
+        GROUP BY
+           _TABLE_SUFFIX) # to get an accurate total of pages per device. also seems fast
+      USING
+        (_TABLE_SUFFIX)
+    ),
+UNNEST
+  (markup_info.loading) AS loading
+GROUP BY
+  total, loading, client
