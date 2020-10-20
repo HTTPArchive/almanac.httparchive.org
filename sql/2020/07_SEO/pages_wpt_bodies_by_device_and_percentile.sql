@@ -104,8 +104,6 @@ SELECT
   APPROX_QUANTILES(wpt_bodies_info.visible_words_rendered_count, 1000)[OFFSET(percentile * 10)] AS visible_words_rendered,
   APPROX_QUANTILES(wpt_bodies_info.visible_words_raw_count, 1000)[OFFSET(percentile * 10)] AS visible_words_raw
 
-
-
 FROM (
   SELECT 
     _TABLE_SUFFIX AS client,
