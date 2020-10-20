@@ -49,7 +49,6 @@ try {
       result.image_links = anchors_rendered.image_links;
       result.text_links = anchors_rendered.text_links;
 
-
       result.hash_link = anchors_rendered.hash_link;
       result.hash_only_link = anchors_rendered.hash_only_link;
       result.javascript_void_links = anchors_rendered.javascript_void_links;
@@ -104,8 +103,6 @@ SELECT
   # words
   APPROX_QUANTILES(wpt_bodies_info.visible_words_rendered_count, 1000)[OFFSET(percentile * 10)] AS visible_words_rendered,
   APPROX_QUANTILES(wpt_bodies_info.visible_words_raw_count, 1000)[OFFSET(percentile * 10)] AS visible_words_raw
-
-
 
 FROM (
   SELECT 

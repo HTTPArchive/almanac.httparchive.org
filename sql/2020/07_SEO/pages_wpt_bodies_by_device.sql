@@ -377,9 +377,6 @@ SELECT
   # Rendering changed Robots
   AS_PERCENT(COUNTIF(wpt_bodies_info.rendering_changed_robots_meta_tag), COUNT(0)) AS pct_rendering_changed_robots_meta_tag,
 
-
-
-
   # Pages with canonical
   AS_PERCENT(COUNTIF(wpt_bodies_info.has_canonicals), COUNT(0)) AS pct_has_canonical,
 
@@ -482,8 +479,7 @@ SELECT
   AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_news_nocache), COUNT(0)) AS pct_rendered_googlebot_news_nocache,
 
 
-  FROM
-    ( 
+FROM ( 
       SELECT 
         _TABLE_SUFFIX AS client,
         SPLIT(url, ":")[OFFSET(0)] as protocol,
