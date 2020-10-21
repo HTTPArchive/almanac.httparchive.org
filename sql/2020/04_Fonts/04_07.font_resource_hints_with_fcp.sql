@@ -23,35 +23,25 @@ try {
 SELECT
   client,
   name,
-  type,
   COUNT(DISTINCT page) AS freq_hints,
   total_page,
   COUNT(DISTINCT page) / total_page AS pct_hints,
-  COUNT(DISTINCT IF(fast_fcp >= 0.75, page, NULL)) / COUNT(DISTINCT page) AS pct_good_fcp,
-  COUNT(DISTINCT IF(NOT(slow_fcp >= 0.25) AND NOT(fast_fcp >= 0.75), page, null))  / COUNT(DISTINCT page) AS pct_ni_fcp,
-  COUNT(DISTINCT IF(slow_fcp >= 0.25, page, null)) / COUNT(DISTINCT page) AS pct_poor_fcp,
+  APPROX_QUANTILES(fcp, 1000)[OFFSET(500)] AS median_fcp,
+  APPROX_QUANTILES(lcp, 1000)[OFFSET(500)] AS median_lcp
 FROM (
-  SELECT DISTINCT
-    _TABLE_SUFFIX AS client,
+  SELECT
+    DISTINCT _TABLE_SUFFIX AS client,
     url AS page,
     COUNT(DISTINCT url) OVER (PARTITION BY _TABLE_SUFFIX) AS total_page,
-    hint.name
+    hint.name,
+    CAST(JSON_EXTRACT_SCALAR(payload,
+        "$['_chromeUserTiming.firstContentfulPaint']") AS INT64) AS fcp,
+    CAST(JSON_EXTRACT_SCALAR(payload,
+        "$['_chromeUserTiming.LargestContentfulPaint']") AS INT64) AS lcp,
   FROM
     `httparchive.pages.2020_08_01_*`
   LEFT JOIN
     UNNEST(getResourceHints(payload)) AS hint)
-JOIN (
-  SELECT DISTINCT
-    IF(device = 'desktop', 'desktop', 'mobile') AS client,
-    CONCAT(origin, '/') AS page,
-    fast_fcp,
-    slow_fcp
-  FROM
-    `chrome-ux-report.materialized.device_summary`
-  WHERE
-    yyyymm = 202008)
-USING
-  (client, page)
 LEFT JOIN (
   SELECT
     client,
@@ -59,9 +49,12 @@ LEFT JOIN (
     type
   FROM
     `httparchive.almanac.requests`
-   where date='2020-08-01')
+  WHERE
+    date='2020-08-01')
 USING
-  (client, page)  
+  (client, page)
+WHERE
+  type='font'
 GROUP BY
   client,
   name,

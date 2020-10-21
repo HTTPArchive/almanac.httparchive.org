@@ -34,41 +34,38 @@ SELECT
   COUNT(DISTINCT page) AS freq_subset,
   total_page,
   COUNT(DISTINCT page) / total_page AS pct_subset,
-  COUNT(DISTINCT IF(fast_fcp >= 0.75, page, NULL)) / COUNT(DISTINCT page) AS pct_good_fcp,
-  COUNT(DISTINCT IF(NOT(slow_fcp >= 0.25) AND NOT(fast_fcp >= 0.75), page, null))  / COUNT(DISTINCT page) AS pct_ni_fcp,
-  COUNT(DISTINCT IF(slow_fcp >= 0.25, page, null)) / COUNT(DISTINCT page) AS pct_poor_fcp,
+  APPROX_QUANTILES(fcp, 1000)[OFFSET(500)] AS median_fcp,
+  APPROX_QUANTILES(lcp, 1000)[OFFSET(500)] AS median_lcp
 FROM (
   SELECT
     *
   FROM
     `httparchive.almanac.parsed_css`
-    LEFT JOIN UNNEST(getFont(css)) AS font_subset
+  LEFT JOIN
+    UNNEST(getFont(css)) AS font_subset
   WHERE
     date='2020-08-01')
-JOIN (
-  SELECT DISTINCT
-    origin, device,
-    fast_fcp,
-    slow_fcp
-  FROM
-    `chrome-ux-report.materialized.device_summary`
-  WHERE
-    date='2020-08-01')
-ON
-  CONCAT(origin, '/')=page AND
-  IF(device='desktop','desktop','mobile')=client
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
-    COUNT(0) AS total_page
+    url AS page,
+    COUNT(0) AS total_page,
+    CAST(JSON_EXTRACT_SCALAR(payload,
+        "$['_chromeUserTiming.firstContentfulPaint']") AS INT64) AS fcp,
+    CAST(JSON_EXTRACT_SCALAR(payload,
+        "$['_chromeUserTiming.LargestContentfulPaint']") AS INT64) AS lcp,
   FROM
-    `httparchive.summary_pages.2020_08_01_*`
+    `httparchive.pages.2020_08_01_*`
   GROUP BY
     _TABLE_SUFFIX,
-    client)
+    url,
+    payload)
 USING
-  (client)
+  (client,
+    page)
 GROUP BY
   client,
   font_subset,
   total_page
+ORDER BY
+  freq_subset, client DESC

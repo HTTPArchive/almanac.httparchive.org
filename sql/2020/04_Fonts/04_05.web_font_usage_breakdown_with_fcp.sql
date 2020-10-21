@@ -2,41 +2,45 @@
 #web_font_usage_breakdown_with_fcp
 SELECT
   client,
-  NET.HOST(url) AS host,
-  COUNT(0) AS freq_host_req,
-  SUM(COUNT(0)) OVER(PARTITION BY client) AS TOTAL_req,
-  COUNT(0) / SUM(COUNT(0)) OVER(PARTITION BY client) AS pct_host_req,
-  COUNTIF(fast_fcp>=0.75) / COUNT(0) AS pct_good_fcp,
-  COUNTIF(NOT(slow_fcp >= 0.25)
-      AND NOT(fast_fcp >= 0.75)) / COUNT(0) AS pct_ni_fcp,
-  COUNTIF(slow_fcp>=0.25) / COUNT(0) AS pct_poor_fcp,
-  COUNT(DISTINCT page) AS freq_page,
-SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total_page,
-COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct_page,
-COUNT(DISTINCT IF(fast_fcp >= 0.75, page, NULL)) / COUNT(DISTINCT page) AS pct_good_fcp_page,
-COUNT(DISTINCT IF(NOT(slow_fcp >= 0.25) AND NOT(fast_fcp >= 0.75), page, null))  / COUNT(DISTINCT page) AS pct_ni_fcp_page,
-COUNT(DISTINCT IF(slow_fcp >= 0.25, page, null)) / COUNT(DISTINCT page) AS pct_poor_fcp_page,
-FROM
-  `httparchive.almanac.requests`
-JOIN (
-  SELECT DISTINCT
-    origin, 
-    device,
-    fast_fcp,
-    slow_fcp,
+  CASE
+    WHEN pct_locally_hosted = 0 THEN 'external'
+    ELSE 'both' END
+  AS font_host,
+  NET.HOST(url) AS host,  
+  COUNT(DISTINCT page) AS pages,
+  SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total,
+  COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct,
+  APPROX_QUANTILES(fcp, 1000)[OFFSET(500)] AS median_fcp,
+  APPROX_QUANTILES(lcp, 1000)[OFFSET(500)] AS median_lcp 
+FROM (
+  SELECT
+    client,
+    page,
+    url,
+    COUNTIF(NET.HOST(page) = NET.HOST(url)) / COUNT(0) AS pct_locally_hosted
   FROM
-    `chrome-ux-report.materialized.device_summary`
+    `httparchive.almanac.requests`
   WHERE
-    date='2020-08-01')
-ON
-  CONCAT(origin, '/')=page AND
-  IF(device='desktop','desktop','mobile')=client 
+    date = '2020-08-01' AND type = 'font'
+  GROUP BY
+    client, url,
+    page)
+JOIN (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    url AS page,
+    CAST(JSON_EXTRACT_SCALAR(payload, "$['_chromeUserTiming.firstContentfulPaint']") AS INT64) AS fcp,
+    CAST(JSON_EXTRACT_SCALAR(payload, "$['_chromeUserTiming.LargestContentfulPaint']") AS INT64) AS lcp,
+  FROM
+    `httparchive.pages.2020_08_01_*`)
+USING
+  (client, page)
 WHERE
-  type = 'font'
-  AND NET.HOST(url) != NET.HOST(page)
-  AND date='2020-08-01'
+ pct_locally_hosted!=1 
 GROUP BY
-  client,
-  host
+  client, url,
+  font_host
 ORDER BY
-  freq_host_req DESC
+  pages,
+  font_host,
+  client DESC
