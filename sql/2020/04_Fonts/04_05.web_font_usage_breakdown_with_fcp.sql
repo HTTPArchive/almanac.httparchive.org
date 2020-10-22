@@ -2,10 +2,6 @@
 #web_font_usage_breakdown_with_fcp
 SELECT
   client,
-  CASE
-    WHEN pct_locally_hosted = 0 THEN 'external'
-    ELSE 'both' END
-  AS font_host,
   NET.HOST(url) AS host,  
   COUNT(DISTINCT page) AS pages,
   SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total,
@@ -36,11 +32,8 @@ JOIN (
 USING
   (client, page)
 WHERE
- pct_locally_hosted!=1 
+ pct_locally_hosted!=1 AND NET.HOST(page)!=NET.HOST(url)
 GROUP BY
-  client, url,
-  font_host
+  client, url
 ORDER BY
-  pages,
-  font_host,
   client DESC

@@ -43,7 +43,8 @@ FROM (
     CONCAT(origin, '/')=page AND
     IF(device='desktop', 'desktop', 'mobile')=client
   WHERE
-    pct_locally_hosted!=1 AND country='Korea, Republic of' AND country='Iran (Islamic Republic of)' AND country='Turkey' AND country='Slovenia' AND country='Australia' AND country='Greece' AND country='United States of America' AND country='China' AND country='British Indian Ocean Territory' AND country='Eritrea' AND country='Falkland Islands (Malvinas)' AND country='Saint Helena, Ascension and Tristan da Cunha' AND country='Macaoa' AND country='Japan' AND country='China' 
+    pct_locally_hosted!=1 
+    AND (country='Korea, Republic of' OR country='Iran (Islamic Republic of)' OR country='Turkey' OR country='Slovenia' OR country='Australia' OR country='Greece' OR country='United States of America' OR country='China' OR country='British Indian Ocean Territory' OR country='Eritrea' OR country='Falkland Islands (Malvinas)' OR country='Saint Helena, Ascension and Tristan da Cunha' OR country='Macaoa' OR country='Japan' OR country='China') 
 GROUP BY
     client,
     page,

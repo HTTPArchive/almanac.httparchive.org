@@ -6,7 +6,6 @@ SELECT
   COUNTIF(reqFont>0) AS freq_fonts,
   COUNT(0) AS total,
   COUNTIF(reqFont > 0) / COUNT(0) AS pct_fonts,
-  APPROX_QUANTILES(bytesFont, 1000)[OFFSET(500)]/1024 AS median_kbyteFont,
 FROM
   `httparchive.summary_pages.*`
 WHERE

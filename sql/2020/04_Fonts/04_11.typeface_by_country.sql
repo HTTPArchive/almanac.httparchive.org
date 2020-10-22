@@ -28,7 +28,6 @@ FROM (
     COUNT(DISTINCT page) AS freq_typeface,
     SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total_typeface,
     COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct,
-    ROW_NUMBER() OVER (PARTITION BY client, country ORDER BY COUNT(0) DESC) AS sort_row
   FROM
     `httparchive.almanac.parsed_css`,
     UNNEST(getFontFamilies(css)) AS font_family
@@ -45,11 +44,10 @@ FROM (
     IF(device='desktop','desktop','mobile')=client
   WHERE
     date='2020-08-01'
+    AND (country='Korea, Republic of' OR country='Iran (Islamic Republic of)' OR country='Turkey' OR country='Slovenia' OR country='Australia' OR country='Greece' OR country='United States of America' OR country='China' OR country='British Indian Ocean Territory' OR country='Eritrea' OR country='Falkland Islands (Malvinas)' OR country='Saint Helena, Ascension and Tristan da Cunha' OR country='Macaoa' OR country='Japan' OR country='China') 
   GROUP BY
     client,
     font_family,
     country
   ORDER BY
     client, font_family, freq_typeface DESC)
-WHERE
-  sort_row<=10
