@@ -1,6 +1,6 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION getTransitionProperties(css STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getTimingFunctions(css STRING)
+RETURNS ARRAY<STRUCT<fn STRING, freq INT64>> LANGUAGE js AS '''
 try {
   function compute(ast) {
     let ret = {
@@ -86,7 +86,9 @@ try {
 
   const ast = JSON.parse(css);
   let transitions = compute(ast);
-  return Array.from(transitions.properties);
+  return Object.entries(transitions.timing_functions).map(([fn, freq]) => {
+    return {fn, freq};
+  });
 } catch (e) {
   return [];
 }
@@ -94,39 +96,32 @@ try {
 OPTIONS (library="gs://httparchive/lib/css-utils.js");
 
 SELECT
-  client,
-  property,
-  COUNT(DISTINCT page) AS pages,
-  total,
-  COUNT(DISTINCT page) / total AS pct
+  *
 FROM (
-  SELECT DISTINCT
-    client,
-    page,
-    property
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getTransitionProperties(css)) AS property
-  WHERE
-    date = '2020-08-01' AND
-    # Limit the size of the CSS to avoid OOM crashes.
-    LENGTH(css) < 0.1 * 1024 * 1024 AND
-    property IS NOT NULL)
-JOIN (
   SELECT
-    _TABLE_SUFFIX AS client,
-    COUNT(0) AS total
-  FROM
-    `httparchive.summary_pages.2020_08_01_*`
+    client,
+    fn,
+    COUNT(DISTINCT page) AS pages,
+    SUM(freq) AS freq,
+    SUM(SUM(freq)) OVER (PARTITION BY client) AS total,
+    SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client) AS pct
+  FROM (
+    SELECT
+      client,
+      page,
+      transition.fn,
+      transition.freq
+    FROM
+      `httparchive.almanac.parsed_css`,
+      UNNEST(getTimingFunctions(css)) AS transition
+    WHERE
+      date = '2020-08-01' AND
+      # Limit the size of the CSS to avoid OOM crashes.
+      LENGTH(css) < 0.1 * 1024 * 1024)
   GROUP BY
-    client)
-USING
-  (client)
-GROUP BY
-  client,
-  property,
-  total
-HAVING
-  pages >= 100
+    client,
+    fn)
+WHERE
+  pct >= 0.01
 ORDER BY
   pct DESC

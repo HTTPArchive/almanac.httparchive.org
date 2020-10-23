@@ -1,5 +1,5 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION getTransitionProperties(css STRING)
+CREATE TEMPORARY FUNCTION getTransitionDurations(css STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
   function compute(ast) {
@@ -86,7 +86,11 @@ try {
 
   const ast = JSON.parse(css);
   let transitions = compute(ast);
-  return Array.from(transitions.properties);
+  return Object.entries(transitions.durations).filter(([duration]) => {
+    return !isNaN(+duration);
+  }).flatMap(([duration, freq]) => {
+    return new Array(freq).fill(duration);
+  });
 } catch (e) {
   return [];
 }
@@ -94,39 +98,18 @@ try {
 OPTIONS (library="gs://httparchive/lib/css-utils.js");
 
 SELECT
+  percentile,
   client,
-  property,
-  COUNT(DISTINCT page) AS pages,
-  total,
-  COUNT(DISTINCT page) / total AS pct
-FROM (
-  SELECT DISTINCT
-    client,
-    page,
-    property
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getTransitionProperties(css)) AS property
-  WHERE
-    date = '2020-08-01' AND
-    # Limit the size of the CSS to avoid OOM crashes.
-    LENGTH(css) < 0.1 * 1024 * 1024 AND
-    property IS NOT NULL)
-JOIN (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    COUNT(0) AS total
-  FROM
-    `httparchive.summary_pages.2020_08_01_*`
-  GROUP BY
-    client)
-USING
-  (client)
+  APPROX_QUANTILES(duration, 1000)[OFFSET(percentile * 10)] AS duration
+FROM
+  `httparchive.almanac.parsed_css`,
+  UNNEST(getTransitionDurations(css)) AS duration,
+  UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+WHERE
+  date = '2020-08-01'
 GROUP BY
-  client,
-  property,
-  total
-HAVING
-  pages >= 100
+  percentile,
+  client
 ORDER BY
-  pct DESC
+  percentile,
+  client

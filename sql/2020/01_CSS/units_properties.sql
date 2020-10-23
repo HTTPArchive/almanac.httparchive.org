@@ -1,33 +1,35 @@
 #standardSQL
+# TODO: resolve undefined removeFunctionCalls
 CREATE TEMPORARY FUNCTION getPropertyUnits(css STRING) RETURNS
 ARRAY<STRUCT<property STRING, unit STRING, freq INT64>> LANGUAGE js AS '''
 try {
   function compute(ast) {
     let ret = {
+      zeroes: {},
       by_property: {}
     };
 
-    const lengths = /(?<!-)\\b(?<number>-?\\d*\\.?\\d+)(?<unit>%|[a-z]{1,4}\\b|(?=\\s|$|,|\\*|\\/)\\b)/gi;
+    const lengths = /(?<![-#\\w])\\b(?<number>-?\\d*\\.?\\d+)(?<unit>%|[a-z]{1,4}\\b|(?=\\s|$|,|\\*|\\/)\\b)/gi;
 
     walkDeclarations(ast, ({property, value}) => {
+      // Remove color functions to avoid mucking results
+      value = removeFunctionCalls(value, {names: ["rgb", "rgba", "hsl", "hsla"]});
+
       for (let length of value.matchAll(lengths)) {
         let {number, unit} = length.groups;
         ret.by_property[property] = ret.by_property[property] || {};
+
+        if (number === "0") {
+          incrementByKey(ret.zeroes, unit || "<number>");
+        }
 
         if (unit) {
           incrementByKey(ret, unit);
           incrementByKey(ret.by_property[property], unit);
         }
         else {
-          if (number === "0") {
-            // Unitless 0
-            incrementByKey(ret, "0");
-            incrementByKey(ret.by_property[property], "0");
-          }
-          else {
-            incrementByKey(ret, "<number>");
-            incrementByKey(ret.by_property[property], "<number>");
-          }
+          incrementByKey(ret, "<number>");
+          incrementByKey(ret.by_property[property], "<number>");
         }
 
         incrementByKey(ret, "total"); // for calculating %
@@ -39,12 +41,13 @@ try {
       // This helped: https://codepen.io/leaverou/pen/rNergbW?editors=0010
       properties: [
         "baseline-shift",
+        "box-shadow",
         "vertical-align",
-        /^column[s-]|^inset\\b/g,
+        "clip-path",
+        /^column[s-]|^inset\b/g,
         "contain-intrinsic-size",
         "cx",
         "cy",
-        "flex",
         "flex-basis",
         "letter-spacing",
         "perspective",
@@ -55,6 +58,7 @@ try {
         "ry",
         "tab-size",
         "text-indent",
+        "text-shadow",
         "translate",
         "vertical-align",
         "word-spacing",
@@ -64,7 +68,7 @@ try {
       ],
       not: {
         // Drop prefixed properties and custom properties
-        properties: /^-/
+        properties: /^-|-color$/
       }
     });
 
@@ -92,30 +96,33 @@ try {
 OPTIONS (library="gs://httparchive/lib/css-utils.js");
 
 SELECT
-  client,
-  unit,
-  property,
-  SUM(freq) AS freq,
-  SUM(SUM(freq)) OVER (PARTITION BY client, unit) AS total,
-  SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client, unit) AS pct
+  *
 FROM (
   SELECT
     client,
-    unit.property,
-    unit.unit,
-    unit.freq
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getPropertyUnits(css)) AS unit
-  WHERE
-    date = '2020-08-01' AND
-    # Limit the size of the CSS to avoid OOM crashes.
-    LENGTH(css) < 0.1 * 1024 * 1024)
-GROUP BY
-  client,
-  unit,
-  property
-HAVING
+    unit,
+    property,
+    SUM(freq) AS freq,
+    SUM(SUM(freq)) OVER (PARTITION BY client, unit) AS total,
+    SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client, unit) AS pct
+  FROM (
+    SELECT
+      client,
+      unit.property,
+      unit.unit,
+      unit.freq
+    FROM
+      `httparchive.almanac.parsed_css`,
+      UNNEST(getPropertyUnits(css)) AS unit
+    WHERE
+      date = '2020-08-01' AND
+      # Limit the size of the CSS to avoid OOM crashes.
+      LENGTH(css) < 0.1 * 1024 * 1024)
+  GROUP BY
+    client,
+    unit,
+    property)
+WHERE
   pct >= 0.01
 ORDER BY
   client,

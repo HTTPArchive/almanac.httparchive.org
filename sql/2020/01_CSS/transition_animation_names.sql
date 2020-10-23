@@ -1,6 +1,5 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION getTransitionProperties(css STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getAnimationNames(css STRING) RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
   function compute(ast) {
     let ret = {
@@ -86,7 +85,7 @@ try {
 
   const ast = JSON.parse(css);
   let transitions = compute(ast);
-  return Array.from(transitions.properties);
+  return transitions.animation_names;
 } catch (e) {
   return [];
 }
@@ -94,39 +93,31 @@ try {
 OPTIONS (library="gs://httparchive/lib/css-utils.js");
 
 SELECT
-  client,
-  property,
-  COUNT(DISTINCT page) AS pages,
-  total,
-  COUNT(DISTINCT page) / total AS pct
+  *
 FROM (
-  SELECT DISTINCT
-    client,
-    page,
-    property
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getTransitionProperties(css)) AS property
-  WHERE
-    date = '2020-08-01' AND
-    # Limit the size of the CSS to avoid OOM crashes.
-    LENGTH(css) < 0.1 * 1024 * 1024 AND
-    property IS NOT NULL)
-JOIN (
   SELECT
-    _TABLE_SUFFIX AS client,
-    COUNT(0) AS total
-  FROM
-    `httparchive.summary_pages.2020_08_01_*`
+    client,
+    animation_name,
+    COUNT(DISTINCT page) AS pages,
+    COUNT(0) AS freq,
+    SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+    COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
+  FROM (
+    SELECT
+      client,
+      page,
+      animation_name
+    FROM
+      `httparchive.almanac.parsed_css`,
+      UNNEST(getAnimationNames(css)) AS animation_name
+    WHERE
+      date = '2020-08-01' AND
+      # Limit the size of the CSS to avoid OOM crashes.
+      LENGTH(css) < 0.1 * 1024 * 1024)
   GROUP BY
-    client)
-USING
-  (client)
-GROUP BY
-  client,
-  property,
-  total
-HAVING
-  pages >= 100
+    client,
+    animation_name)
+WHERE
+  pct >= 0.001
 ORDER BY
   pct DESC
