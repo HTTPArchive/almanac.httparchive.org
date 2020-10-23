@@ -31,9 +31,9 @@ try {
 SELECT
  client,
  format,
- COUNT(DISTINCT page) AS freq_page,
- SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total_page,
- COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct_page,
+ COUNT(0) AS freq,
+ SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+ COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct,
 FROM
  `httparchive.almanac.parsed_css`,
  UNNEST(getFontFormats(css)) AS format
@@ -43,4 +43,4 @@ GROUP BY
  client,
  format
 ORDER BY
- client, pct_page DESC
+ client, pct DESC

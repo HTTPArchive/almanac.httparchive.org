@@ -3,9 +3,9 @@
 SELECT
  client,
  LOWER(IFNULL(REGEXP_EXTRACT(mimeType, '/(?:x-)?(?:font-)?(.*)'), ext)) AS mime_type,
- COUNT(DISTINCT page) AS freq_page,
- SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total_page,
- COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct_page,
+ COUNT(0) AS freq,
+ SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+ COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct,
 FROM
  `httparchive.almanac.requests`
 WHERE
@@ -14,4 +14,4 @@ GROUP BY
  client,
  mime_type
 ORDER BY
- freq_req DESC
+ client, pct DESC

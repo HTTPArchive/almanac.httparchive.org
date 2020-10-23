@@ -15,9 +15,9 @@ try {
 SELECT
   client,
   font_family,
-  COUNT(DISTINCT page) AS freq_typeface,
-  SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total_typeface,
-  COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct
+  COUNT(0) AS freq,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM
   `httparchive.almanac.parsed_css`,
   UNNEST(getFontFamilies(css)) AS font_family
@@ -26,7 +26,9 @@ WHERE
 GROUP BY
   client,
   font_family
+HAVEING
+  freq >= 1000 
 ORDER BY
-  pct DESC
+  client, pct DESC
 LIMIT
   1000

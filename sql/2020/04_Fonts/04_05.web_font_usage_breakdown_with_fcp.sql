@@ -12,12 +12,13 @@ FROM (
   SELECT
     client,
     page,
-    url,
-    COUNTIF(NET.HOST(page) = NET.HOST(url)) / COUNT(0) AS pct_locally_hosted
+    url
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = '2020-08-01' AND type = 'font'
+    date = '2020-08-01' AND
+    type = 'font' AND
+    NET.HOST(page) != NET.HOST(url)
   GROUP BY
     client, url,
     page)
@@ -31,9 +32,10 @@ JOIN (
     `httparchive.pages.2020_08_01_*`)
 USING
   (client, page)
-WHERE
- pct_locally_hosted!=1 AND NET.HOST(page)!=NET.HOST(url)
 GROUP BY
-  client, url
+  client,
+  host
+HAVING
+  pages >= 1000
 ORDER BY
-  client DESC
+  pct DESC

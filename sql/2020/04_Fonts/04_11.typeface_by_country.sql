@@ -1,5 +1,5 @@
 #standardSQL
-#typeface by country
+#popular typeface by country
 CREATE TEMPORARY FUNCTION getFontFamilies(css STRING)
 RETURNS ARRAY < STRING > LANGUAGE js AS '''
 try {
@@ -15,19 +15,20 @@ try {
 
 SELECT
   client,
-  font_family,
   country,
-  freq_typeface,
-  total_typeface,
+  font_family,
+  freq,
+  total,
   pct
 FROM (
   SELECT
     client,
-    font_family,
     country,
-    COUNT(DISTINCT page) AS freq_typeface,
-    SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total_typeface,
-    COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct,
+    font_family,
+    COUNT(0) as freq,
+    SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+    COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct,
+    ROW_NUMBER() OVER (PARTITION BY client, country ORDER BY COUNT(0) DESC) AS sort_row,
   FROM
     `httparchive.almanac.parsed_css`,
     UNNEST(getFontFamilies(css)) AS font_family
@@ -44,10 +45,11 @@ FROM (
     IF(device='desktop','desktop','mobile')=client
   WHERE
     date='2020-08-01'
-    AND (country='Korea, Republic of' OR country='Iran (Islamic Republic of)' OR country='Turkey' OR country='Slovenia' OR country='Australia' OR country='Greece' OR country='United States of America' OR country='China' OR country='British Indian Ocean Territory' OR country='Eritrea' OR country='Falkland Islands (Malvinas)' OR country='Saint Helena, Ascension and Tristan da Cunha' OR country='Macaoa' OR country='Japan' OR country='China') 
   GROUP BY
     client,
-    font_family,
-    country
+    country,
+    font_family
   ORDER BY
-    client, font_family, freq_typeface DESC)
+    client, country, freq DESC)
+WHERE
+  sort_row<=1
