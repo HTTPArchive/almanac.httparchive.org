@@ -1,5 +1,5 @@
 #standardSQL
-# page wpt_bodies metrics grouped by device and structured data format
+# page wpt_bodies metrics grouped by device and structured data format used on a page
 
 # helper to create percent fields
 CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
@@ -45,7 +45,7 @@ client,
 format, 
 total, 
 COUNT(0) AS count,
-AS_PERCENT(COUNT(0), total) AS pct
+AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct
 
 FROM
     ( 
