@@ -55,11 +55,6 @@
   </style>
 {% endblock %}
 
-{# Hide the TOC and Methodology for now #}
-{% block non_chapter_nav_links %}
-<li><a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a></li>
-{% endblock %}
-
 {% block container %}
 <main id="maincontent">
   <section id="intro" class="intro-container">

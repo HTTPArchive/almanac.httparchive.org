@@ -1,4 +1,4 @@
-{% extends "base/2020/index.html" %}
+{% extends "base/2019/index.html" %}
 
 {% block title %}{{ year }} Web Almanac{% endblock %}
 {% block description %}Web Almanacは、Webコミュニティの専門知識とHTTP Archiveのデータやトレンドを組み合わせた、毎年恒例のWeb状態のレポートです。{% endblock %}
@@ -8,17 +8,11 @@
 {% block date_published %}2020-07-06T00:00:00.000Z{% endblock %}
 {% block date_modified %}2020-08-07T00:00:00.000Z{% endblock %}
 
-{% block intro_title %}もうすぐです！{% endblock %}
+{% block intro_title %}{{ self.coming_soon() }}{% endblock %}
 {% block intro_sub_title %}{{ year }}の<b>web状況</b>報告{% endblock %}
 
 {% block mission %}
 <p>
   現在、ウェブ・コミュニティの専門家たちが、年末に発行を予定しているWeb Almanac {{ year }}年版に向けて、企画、分析、コンテンツの執筆に奔走しています。
 </p>
-
-<p>
-  このプロジェクトには、著者、レビュアー、アナリスト、編集者、翻訳者、開発者など、新たな貢献者に参加していただくための多くの機会が用意されています。{{ year }}年版への貢献に興味のある方は、ぜひご参加ください。
-</p>
-
-<a href="https://github.com/HTTPArchive/almanac.httparchive.org#contributing" class="btn">チームに参加しよう！</a>
 {% endblock %}
