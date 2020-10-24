@@ -1,4 +1,20 @@
-# Capabilities
+---
+part_number: II
+chapter_number: 13
+title: Capabilities
+description: Capabilities chapter of the 2020 Web Almanac covering brand-new, powerful web platform APIs.
+authors: [christianliebel]
+reviewers: [logicalphase,tomayac]
+analysts: [tomayac]
+translators: []
+discuss: 0
+results: https://docs.google.com/spreadsheets/d/1N6j1qKv7vc51p1W9z_RrbJX9Se3Pmb-Uersfz4gWqqs/
+queries: 13_Capabilities
+published: 2020-11-07T00:00:00.000Z
+last_updated: 2020-11-07T00:00:00.000Z
+---
+
+## Introduction
 
 The Capabilities Project, informally also known as Project Fugu, is a cross-company effort by
 Google, Microsoft, and Intel to close the gap between native applications and web apps. To do so,
