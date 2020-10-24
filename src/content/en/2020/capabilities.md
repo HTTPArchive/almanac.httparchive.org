@@ -85,7 +85,14 @@ called `navigator.clipboard.read()`. Currently, most browsers only support HTML 
 images as additional data formats. Due to privacy reasons, reading from the clipboard always
 requires the user's consent.
 
-(IMAGE: Async Clipboard API)
+{{ figure_markup(
+  image="async_clipboard_api.png",
+  caption="Async Clipboard API",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1740212588&format=interactive",
+  sheets_gid="2077755325"
+  )
+}}
 
 The Async Clipboard API is comparatively new, so its usage is currently rather low. In March 2020,
 Safari added support for the Async Clipboard API in Safari 13.1. Over the course of 2020, the usage
@@ -131,7 +138,15 @@ Developers can estimate the available storage by calling `navigator.storage.esti
 returns a promise resolving to an object with two properties: `usage` shows the number of bytes used
 by the application and `quota` contains the maximum number of bytes available.
 
-(IMAGE: StorageManager API :: Estimate)
+{{ figure_markup(
+  image="storage_manager_api_estimate.png",
+  caption="StorageManager API :: Estimate",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1853644024&format=interactive",
+  sheets_gid="1811313356",
+  sql_file="13_01.sql"
+  )
+}}
 
 The Storage Manager API is supported in Chrome since 2016, Firefox since 2017, and the new
 Chromium-based Edge. HTTP Archive data shows that the API is used in 0.36 percent of all desktop
@@ -151,7 +166,15 @@ storage, developers need to call the `navigator.storage.persist()` method. Depen
 and site engagement, a permission prompt may show, or the request will automatically be accepted or
 denied.
 
-(IMAGE: StorageManager API :: Persist)
+{{ figure_markup(
+  image="storage_manager_api_persist.png",
+  caption="StorageManager API :: Persist",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=644836316&format=interactive",
+  sheets_gid="1095648844",
+  sql_file="13_02.sql"
+  )
+}}
 
 The `persist()` API is less often called than the `estimate()` method. Only about 0.003 percent of
 mobile websites make use of this API, compared to around 0.0005 percent of desktop websites. While
@@ -179,7 +202,14 @@ removes the badge again. Badging API is a great choice for email clients, social
 messengers. The Twitter PWA makes use of the Badging API to show the number of unread notifications
 on the application's badge.
 
-(IMAGE: Badging API)
+{{ figure_markup(
+  image="badging_api.png",
+  caption="Badging API",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1145004925&format=interactive",
+  sheets_gid="1154751352"
+  )
+}}
 
 In April 2020, Google Chrome 81 shipped the new Badging API, followed by Microsoft Edge 84 in July.
 After Chrome shipped the API, the usage numbers shot up. In October 2020, on 0.022 percent of all
@@ -206,7 +236,14 @@ registration.showNotification('Title', {
 });
 ```
 
-(IMAGE: Notification Triggers)
+{{ figure_markup(
+  image="notification_triggers_api.png",
+  caption="Notification Triggers API",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1388597384&format=interactive",
+  sheets_gid="1740370570"
+  )
+}}
 
 The Fugu team first experimented with Notification Triggers in an origin trial from Chrome 80 to 83,
 pausing development afterwards due to the lack of feedback by developers. Starting from Chrome 86
@@ -232,7 +269,15 @@ the `release()` method on this object, so developers need to store the reference
 automatically release the lock when the tab is inactive, or the user minimizes the window. Also, the
 browser may deny a request and reject the promise, for example due to low battery.
 
-(IMAGE: Screen Wake Lock API)
+{{ figure_markup(
+  image="screen_wake_lock_api.png",
+  caption="Screen Wake Lock API",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=718278185&format=interactive",
+  sheets_gid="1008442251",
+  sql_file="13_03.sql"
+  )
+}}
 
 BettyCrocker.com, a popular cooking website in the US, offers their users an option to prevent the
 screen from going dark while cooking with the help of the Screen Wake Lock API. In a
@@ -264,7 +309,14 @@ method. The method takes a configuration object with two parameters: A `threshol
 in milliseconds that the user has to be idle (the minimum is a minute). Optionally, developers can
 pass an `AbortSignal` to the `abort` property, which serves to abort idle detection later on.
 
-(IMAGE: Idle Detection API)
+{{ figure_markup(
+  image="idle_detection_api.png",
+  caption="Idle Detection API",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=963792757&format=interactive",
+  sheets_gid="1324588405"
+  )
+}}
 
 At the time of this writing, the Idle Detection API is in an origin trial, so its API shape may
 change in the future. For the same reason, its usage is very low and hardly measurable.
@@ -317,7 +369,15 @@ The [site engagement score](https://www.chromium.org/developers/design-documents
 the website defines if and how often periodic sync events can be invoked. In the current
 conservative implementation, websites can sync content once a day.
 
-(IMAGE: Periodic Sync API)
+{{ figure_markup(
+  image="periodic_background_sync_api.png",
+  caption="Periodic Background Sync API",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1444904371&format=interactive",
+  sheets_gid="386193538",
+  sql_file="13_04.sql"
+  )
+}}
 
 The use of the interface is currently very low. Apart from two outliers, the use on mobile and
 desktop websites is very close together.
@@ -346,7 +406,15 @@ relatedApps.forEach((app) => {
 });
 ```
 
-(IMAGE: gIRA)
+{{ figure_markup(
+  image="get_installed_related_apps.png",
+  caption="getInstalledRelatedApps()",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1774881171&format=interactive",
+  sheets_gid="860146688",
+  sql_file="13_05.sql"
+  )
+}}
 
 Over the course of 2020, the `getInstalledRelatedApps()` API shows exponential growth on mobile
 websites. In September, 0.005 percent of mobile websites tracked by the HTTP Archive made use of
@@ -372,7 +440,14 @@ into different categories such as articles, homepages, or videos. The `delete()`
 removing content from the index again, and the `getAll()` method returns a list of all indexed
 entries.
 
-(IMAGE: Content Indexing API :: Add)
+{{ figure_markup(
+  image="content_indexing_api.png",
+  caption="Content Indexing API :: Add",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=258329620&format=interactive",
+  sheets_gid="626752011"
+  )
+}}
 
 The Content Indexing API launched with Chrome 84 in July 2020. Directly after shipping, the API was
 used during approximately 0.0002 percent of page loads in Chrome. In October 2020, this value has
@@ -406,7 +481,14 @@ const writer = writable.getWriter();
 The WebSocketStream API transparently solves backpressure, as the stream readers and writers will
 only proceed if it's safe to do so.
 
-(IMAGE: Web Socket Streams)
+{{ figure_markup(
+  image="websocketstreams.png",
+  caption="WebSocketStreams",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1714443590&format=interactive",
+  sheets_gid="691106754"
+  )
+}}
 
 The WebSocketStream API has completed its first origin trial and is now back in the experimentation
 phase again. This also explains why the usage of this API currently is so low that it's hardly
@@ -435,7 +517,14 @@ API and adds support for scenarios where minimal latency is more important than 
 message order. This makes it a good choice for games and applications dealing with high-frequency
 events.
 
-(IMAGE: QUIC)
+{{ figure_markup(
+  image="quic.png",
+  caption="QUIC",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1571330893&format=interactive",
+  sheets_gid="708893754"
+  )
+}}
 
 The use of the interface is currently still so low that it's hardly measurable.
 
