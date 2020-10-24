@@ -385,6 +385,7 @@ function countDeclarationsByProperty(rules, test) {
  * @param {Object} [test]
  * @param {string|RegExp|Function|Array} test.names
  * @param {string|RegExp|Function|Array} test.args
+ * @param {Boolean} test.topLevel If true, only return top-level functions
  * @return {Array<Object>} Array of objects, one for each function call with `{name, args, pos}` keys
  */
 function extractFunctionCalls(value, test) {
@@ -402,9 +403,31 @@ function extractFunctionCalls(value, test) {
 	}
 
 	if (test) {
-		ret = ret.filter(f => {
-			return matches(f.name, test && test.names) && matches(f.args, test && test.args);
-		});
+		if (test.names || test.args) {
+			ret = ret.filter(f => {
+				return matches(f.name, test.names) && matches(f.args, test.args);
+			});
+		}
+
+		if (test.topLevel && ret.length > 0) {
+			// Filter out nested functions
+			let [start, end] = ret[0].pos;
+
+			// Note that because we did the rest of the filtering earlier, this only takes into account
+			// the functions that passed the test. E.g. if we're only extracting rgb() functions, it will
+			// NOT consider linear-gradient(rgb(...)) as nested.
+			ret = ret.filter(f => {
+				let [s, e] = f.pos;
+				if (s > start && e < end) {
+					// Nested
+					return false;
+				}
+
+				// Not nested
+				[start, end] = [s, e];
+				return true;
+			});
+		}
 	}
 
 	return ret;
@@ -473,6 +496,32 @@ function matches(value, test, not) {
 	}
 
 	return false;
+}
+
+
+/* removeFunctionCalls.js */
+/**
+ * Remove function calls from a string
+ * @param {string} value - @see {@link module:extractFunctionCalls} for arguments
+ * @param {Object} [test] @see {@link module:extractFunctionCalls} for arguments.
+ *                        Except `topLevel` which is always true, as it doesn't make sense otherwise.
+ * @return {String} The string
+ */
+function removeFunctionCalls(value, test = {}) {
+	test.topLevel = true;
+	let offset = 0;
+
+	for (let f of extractFunctionCalls(value, test)) {
+		let [start, end] = f.pos;
+		console.log(start, end, offset);
+		start -= offset;
+		end -= offset;
+
+		value = value.substring(0, start) + value.substring(end);
+		offset += end - start;
+	}
+
+	return value;
 }
 
 
