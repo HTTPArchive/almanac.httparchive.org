@@ -7,7 +7,7 @@ authors: [christianliebel]
 reviewers: [logicalphase,tomayac]
 analysts: [tomayac]
 translators: []
-discuss: 0
+discuss: 1981
 results: https://docs.google.com/spreadsheets/d/1N6j1qKv7vc51p1W9z_RrbJX9Se3Pmb-Uersfz4gWqqs/
 queries: 13_Capabilities
 published: 2020-11-07T00:00:00.000Z
