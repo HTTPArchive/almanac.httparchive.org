@@ -431,7 +431,9 @@ try {
   var ast = JSON.parse(css);
   var props = compute(ast);
 
-  return Object.entries(props.shorthands_before_longhands).map(([property, freq]) => {
+  return Object.entries(props.shorthands_before_longhands).filter(([property]) => {
+    return property != 'total';
+  }).map(([property, freq]) => {
     return {property, freq};
   });
 } catch (e) {

@@ -1,6 +1,6 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION getShorthandProperties(css STRING) RETURNS
-ARRAY<STRUCT<property STRING, freq INT64>> LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getShorthandValueCounts(css STRING) RETURNS
+ARRAY<STRUCT<property STRING, values ARRAY<INT64>>> LANGUAGE js AS '''
 try {
   function compute(ast) {
     let ret = {
@@ -431,10 +431,10 @@ try {
   var ast = JSON.parse(css);
   var props = compute(ast);
 
-  return Object.entries(props.shorthands).filter(([property]) => {
-    return property != 'total';
-  }).map(([property, freq]) => {
-    return {property, freq};
+  return Object.entries(props.values).flatMap(([property, values]) => {
+    return Object.entries(values).flatMap(([value, freq]) => {
+      return {property, values: Array(freq).fill(value)};
+    });
   });
 } catch (e) {
   return [];
@@ -444,26 +444,21 @@ OPTIONS (library="gs://httparchive/lib/css-utils.js");
 
 SELECT
   client,
-  property,
-  COUNT(DISTINCT page) AS pages,
-  SUM(freq) AS freq,
-  SUM(SUM(freq)) OVER (PARTITION BY client) AS total,
-  SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client) AS pct
+  shorthand,
+  APPROX_QUANTILES(value, 1000)[OFFSET(500)] AS median_number_of_values
 FROM (
   SELECT
     client,
-    page,
-    property.property,
-    property.freq
+    shorthand.property AS shorthand,
+    value
   FROM
     `httparchive.almanac.parsed_css`,
-    UNNEST(getShorthandProperties(css)) AS property
+    UNNEST(getShorthandValueCounts(css)) AS shorthand,
+    UNNEST(shorthand.values) AS value
   WHERE
     date = '2020-08-01')
 GROUP BY
   client,
-  property
+  shorthand
 ORDER BY
-  pct DESC
-LIMIT
-  500
+  median_number_of_values DESC

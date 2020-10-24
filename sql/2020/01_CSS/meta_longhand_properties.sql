@@ -431,7 +431,9 @@ try {
   var ast = JSON.parse(css);
   var props = compute(ast);
 
-  return Object.entries(props.longhands).map(([property, freq]) => {
+  return Object.entries(props.longhands).filter(([property]) => {
+    return property != 'total';
+  }).map(([property, freq]) => {
     return {property, freq};
   });
 } catch (e) {
@@ -455,7 +457,7 @@ FROM (
     property.freq
   FROM
     `httparchive.almanac.parsed_css`,
-    UNNEST(getShorthandProperties(css)) AS property
+    UNNEST(getLonghandProperties(css)) AS property
   WHERE
     date = '2020-08-01')
 GROUP BY
