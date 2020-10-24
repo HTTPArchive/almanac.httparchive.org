@@ -85,7 +85,5 @@ FROM (
 GROUP BY
   client,
   operator
-HAVING
-  pages >= 100
 ORDER BY
   pct DESC

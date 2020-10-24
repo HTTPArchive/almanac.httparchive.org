@@ -6,23 +6,58 @@ RETURNS ARRAY<STRING> LANGUAGE js AS '''
     var $ = JSON.parse(payload);
     var css = JSON.parse($._css);
 
-    return css && Array.isArray(css.css_in_js) && css.css_in_js.length > 0 ? css.css_in_js : ['NONE'];
+    if (!Array.isArray(css.css_in_js)) {
+      return [];
+    }
+
+    // Use a safe-list to avoid parse error garbage.
+    var frameworks = new Set([
+      "Styled Components",
+      "Radium",
+      "React JSS",
+      "Emotion",
+      "Goober",
+      "Merge Styles",
+      "Styled Jsx",
+      "Aphrodite",
+      "Fela",
+      "Styletron",
+      "React Native for Web",
+      "Glamor"
+    ]);
+
+    return css.css_in_js.filter(i => frameworks.has(i));
   } catch (e) {
-    return ['Error:' + e.message];
+    return [];
   }
 ''';
 
 SELECT
+  client,
   cssInJs,
-  COUNT(0) AS freq,
-  SUM(COUNT(0)) OVER () AS total,
-  COUNT(0) / SUM(COUNT(0)) OVER () AS pct
+  COUNT(DISTINCT url) AS pages,
+  total,
+  COUNT(DISTINCT url) / total AS pct
 FROM (
   SELECT
+    _TABLE_SUFFIX AS client,
     url,
     cssInJs
-  FROM `httparchive.sample_data.pages_mobile_10k`
-  CROSS JOIN UNNEST(getCssInJS(payload)) AS cssInJs
-)
-GROUP BY cssInJs
-ORDER BY freq
+  FROM
+    `httparchive.pages.2020_08_01_*`,
+    UNNEST(getCssInJS(payload)) AS cssInJs)
+JOIN (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    COUNT(0) AS total
+  FROM
+    `httparchive.summary_pages.2020_08_01_*`
+  GROUP BY
+    client)
+USING (client)
+GROUP BY
+  client,
+  cssInJs,
+  total
+ORDER BY
+  pct DESC
