@@ -290,7 +290,6 @@ p {
 }
 
 @media (max-width: 1400px) and (min-width: 901px) {
-  
   .people {
     height: auto;
   }
