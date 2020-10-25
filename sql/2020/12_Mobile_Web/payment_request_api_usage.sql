@@ -3,32 +3,29 @@
 SELECT
   client,
   COUNT(0) AS total_ecommerce,
-  COUNTIF(payment_request_uses > 0) AS total_using_payment_request,
+  COUNTIF(uses_payment_requst) AS total_using_payment_request,
 
-  COUNTIF(payment_request_uses > 0) / COUNT(0) AS pct_using_payment_request
+  COUNTIF(uses_payment_requst) / COUNT(0) AS pct_using_payment_request
 FROM (
   SELECT
     client,
-    page,
-    COUNTIF(body LIKE '%new paymentrequest(%') AS payment_request_uses,
+    url,
+    TRUE as uses_payment_requst
   FROM
-    `httparchive.almanac.summary_response_bodies`
+    `httparchive.blink_features.features`
   WHERE
-    date = '2020-08-01' AND
-    type = 'script'
-  GROUP BY
-    client,
-    page
+    yyyymmdd = '20200801' AND
+    feature = 'PaymentRequestInitialized'
 )
-JOIN (
+RIGHT JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
-    url AS page
+    url
   FROM
     `httparchive.technologies.2020_08_01_*`
   WHERE
     category = 'Ecommerce'
 )
-USING (client, page)
+USING (client, url)
 GROUP BY
   client
