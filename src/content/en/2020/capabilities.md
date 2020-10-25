@@ -296,8 +296,8 @@ const stream = await transport.createSendStream();
 QuicTransport is a valid alternative to WebSockets, as it supports the use cases from the WebSocket API and adds support for scenarios where minimal latency is more important than reliability and message order. This makes it a good choice for games and applications dealing with high-frequency events.
 
 {{ figure_markup(
-  image="quic.png",
-  caption="QUIC",
+  image="quic_transport.png",
+  caption="QuicTransport",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1571330893&format=interactive",
   sheets_gid="708893754"
