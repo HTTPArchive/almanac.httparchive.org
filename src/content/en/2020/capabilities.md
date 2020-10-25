@@ -73,7 +73,7 @@ Developers can estimate the available storage by calling `navigator.storage.esti
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1853644024&format=interactive",
   sheets_gid="1811313356",
-  sql_file="storage_manager_api_estimate.sql"
+  sql_file="durable_storage_estimate_usage.sql"
   )
 }}
 
@@ -89,7 +89,7 @@ There are two categories of web storage: "Best Effort" and "Persistent", with th
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=644836316&format=interactive",
   sheets_gid="1095648844",
-  sql_file="storage_manager_api_persist.sql"
+  sql_file="durable_storage_persist_usage.sql"
   )
 }}
 
@@ -148,7 +148,7 @@ To obtain a wake lock, call the `navigator.wakeLock.request()` method. This meth
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=718278185&format=interactive",
   sheets_gid="1008442251",
-  sql_file="screen_wake_lock_api.sql"
+  sql_file="wake_lock_acquire_screen_lock_usage.sql"
   )
 }}
 
@@ -205,7 +205,7 @@ At the time of this writing, only Chromium-based browsers implement this API. On
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1444904371&format=interactive",
   sheets_gid="386193538",
-  sql_file="periodic_background_sync_api.sql"
+  sql_file="periodic_background_sync_usage.sql"
   )
 }}
 
@@ -230,7 +230,7 @@ relatedApps.forEach((app) => {
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1774881171&format=interactive",
   sheets_gid="860146688",
-  sql_file="get_installed_related_apps.sql"
+  sql_file="get_installed_related_apps_usage.sql"
   )
 }}
 
