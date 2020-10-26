@@ -26,7 +26,8 @@ FROM
 GROUP BY
   elements,
   client
+HAVING 
+  elements <= 2000
 ORDER BY
   elements,
   client
-LIMIT 2000

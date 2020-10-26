@@ -29,4 +29,3 @@ GROUP BY
 ORDER BY
   element_types,
   client
-LIMIT 2000
