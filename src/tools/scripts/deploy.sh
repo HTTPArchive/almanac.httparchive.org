@@ -61,19 +61,30 @@ function check_continue {
 
 echo "Beginning the Web Almanac deployment process"
 
+# This script must be run from src directory
+if [ -d "src" ]; then
+  cd src
+fi
+
+if [ "${no_promote}" == "1" ]; then
+  echo "Deploying to GCP (no promote)"
+  echo "Y" | gcloud app deploy --project webalmanac --no-promote
+  echo "Done"
+  exit 0
+fi
+
 # Check branch is clean first
 if [ -n "$(git status --porcelain)" ]; then 
   check_continue "Your branch is not clean. Do you still want to continue deploying?"
 fi
+
 check_continue "Please confirm you've updated the eBooks via GitHub Actions."
 
-if [ "${no_promote}" == "0" ]; then
-  echo "Update local production branch"
-  git checkout production
-  git status
-  git pull
-  git pull origin main
-fi
+echo "Update local production branch"
+git checkout production
+git status
+git pull
+git pull origin main
 
 if [ "$(pgrep -f 'python main.py')" ]; then
   echo "Killing existing server to run a fresh version"
@@ -82,13 +93,6 @@ fi
 
 echo "Run and test website"
 ./tools/scripts/run_and_test_website.sh
-
-if [ "${no_promote}" == "1" ]; then
-  echo "Deploying to GCP (no promote)"
-  echo "Y" | gcloud app deploy --project webalmanac --no-promote
-  echo "Done"
-  echo "exit 0"
-fi
 
 echo "Please test the site locally"
 
