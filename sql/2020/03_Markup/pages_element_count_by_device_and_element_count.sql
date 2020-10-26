@@ -5,11 +5,11 @@
 CREATE TEMPORARY FUNCTION get_element_count(element_count_string STRING)
 RETURNS INT64 LANGUAGE js AS '''
 try {
-    if (!element_count_string) return result;
+    if (!element_count_string) return null;
 
     var element_count = JSON.parse(element_count_string);
 
-    if (Array.isArray(element_count) || typeof element_count != 'object') return result;
+    if (Array.isArray(element_count) || typeof element_count != 'object') return null;
 
     return Object.values(element_count).reduce((total, freq) => total + (parseInt(freq, 10) || 0), 0);  
 
@@ -29,3 +29,4 @@ GROUP BY
 ORDER BY
   elements,
   client
+LIMIT 2000
