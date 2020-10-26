@@ -26,9 +26,7 @@ WHERE
 GROUP BY
   client,
   font_family
-HAVEING
+HAVING
   freq >= 1000 
 ORDER BY
   client, pct DESC
-LIMIT
-  1000

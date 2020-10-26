@@ -30,7 +30,7 @@ try {
 SELECT
   client,
   font_display,
-  COUNT(DISTINCT page) AS freq_display,
+  COUNT(DISTINCT page) AS pages,
   total_page,
   COUNT(DISTINCT page) / total_page AS pct_display,
   APPROX_QUANTILES(fcp, 1000)[OFFSET(500)] AS median_fcp,
@@ -67,6 +67,6 @@ USING
 GROUP BY
   client,
   font_display,
-  total_page
+  total_page  
 ORDER BY
-  freq_display DESC
+  pages DESC
