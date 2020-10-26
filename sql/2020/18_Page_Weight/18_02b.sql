@@ -11,8 +11,8 @@ SELECT
   APPROX_QUANTILES(reqJson, 1000)[OFFSET(percentile * 10)] AS json_req,
   APPROX_QUANTILES(reqOther, 1000)[OFFSET(percentile * 10)] AS other_req
 FROM
-  `httparchive.summary_pages.2019_08_01_*`,
-  UNNEST([10, 25, 50, 75, 90]) AS percentile
+  `httparchive.summary_pages.2019_07_01_*`,
+  UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,
   client
