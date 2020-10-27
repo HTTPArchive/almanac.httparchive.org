@@ -3,105 +3,73 @@ CREATE TEMPORARY FUNCTION getPropertyPairs(css STRING) RETURNS
 ARRAY<STRUCT<pair STRING, freq INT64>> LANGUAGE js AS '''
 try {
   function compute(ast) {
-    // Total number of rules to descend and try to extend the subset by one
-    const MIN_TOTAL_FOR_DESCENT = 5;
+    let usedTogether = {};
 
-    // Min % of rules child property appears in compared to parent combination to
-    // try to extend the subset by one
-    const MIN_PERCENT_FOR_DESCENT = .35;
+    walkRules(ast.stylesheet.rules, rule => {
+      let props = new Set();
 
-    // Properties or combinations used this many times will be pruned
-    const MAX_TOTAL_FOR_PRUNE = 3;
+      if (!rule.declarations) {
+        return;
+      }
 
-    // Child properties used in that many instances of the parent combination will be pruned
-    const MAX_PERCENT_FOR_PRUNE = .15;
-
-    let sets = [];
-    let frequent = {};
-    let allUsage = {};
-    let rules = Symbol("rules");
-    let totalRules = 0;
-
-    walkRules(ast, rule => {
       let ruleProps = rule.declarations
-          // Ignore custom properties and prefixed ones. CP because they don't generalize
-          // and prefixed ones because they will trivially correlate with each other and the non-prefixed version
-          .filter(d => !d.property.startsWith("-"))
-          .map(d => d.property);
+        // Ignore custom properties and prefixed ones. CP because they don't generalize
+        // and prefixed ones because they will trivially correlate with each other and the non-prefixed version
+        .filter(d => !d.property.startsWith("-"))
+        .map(d => d.property);
 
-      let props = new Set(ruleProps);
-      sets.push(props);
-      totalRules++;
+      for (let prop of ruleProps) {
+        props.add(prop);
+      }
+
+      for (let prop of props) {
+        usedTogether[prop] = usedTogether[prop] || {};
+
+        for (let prop2 of props) {
+          if (prop === prop2) {
+            continue;
+          }
+
+          usedTogether[prop][prop2] = usedTogether[prop][prop2] || 0;
+          usedTogether[prop][prop2]++;
+        }
+      }
     }, {
-      rules: r => r.declarations,
+      // rules: r => Boolean(r.declarations),
       not: {
         type: "font-face"
       }
     });
 
-    function countProps(usage, sets, property, parent) {
-      for (let rule of sets) {
-        for (let prop of rule) {
-          if (prop <= property) {
-            continue;
-          }
+    let ret = {};
 
-          usage[prop] = usage[prop] || {total: 0, [rules]: []};
-          usage[prop].total++;
+    // Now sort by usage count
+    for (let prop in usedTogether) {
+      let obj = usedTogether[prop];
 
-          let p = new Set(rule);
-          p.delete(prop);
-
-          if (p.size > 0) {
-            usage[prop][rules].push(p);
-          }
-        }
-      }
-
-      for (let prop in usage) {
-        if (prop === "total") {
-          continue;
-        }
-
-        let u = usage[prop];
-
-        if (u.total >= MIN_TOTAL_FOR_DESCENT && (!usage.total || u.total >= usage.total * MIN_PERCENT_FOR_DESCENT)) {
-          countProps(u, u[rules], prop, usage);
-        }
-        else if (u.total <= MAX_TOTAL_FOR_PRUNE || u.total <= usage.total * MAX_PERCENT_FOR_PRUNE) {
-          delete usage[prop];
-        }
-      }
-    }
-
-    function walkUsage(usage, properties = []) {
-      for (let property in usage) {
-        if (property === "total") {
-          continue;
-        }
-
-        let u = usage[property];
-        let path = [...properties, property];
-
-        if (path.length >= 2) {
-          frequent[path.join(", ")] = u.total;
-        }
-
-        if (Object.keys(u).length <= 1) {
-          // Replace {total: N} with number
-          usage[property] = u.total;
+      // Remove properties that are only used together once
+      for (let p in obj) {
+        if (obj[p] === 1) {
+          delete obj[p];
         }
         else {
-          walkUsage(u, path);
+          let key = [prop, p].sort();
+          ret[key] = ret[key] || 0;
+          ret[key] += obj[p];
         }
       }
+
+      // let sortedEntries = Object.entries(obj).sort((a, b) => b[1] - a[1]);
+      //
+      // if (sortedEntries.length > 0) {
+      //  usedTogether[prop] = Object.fromEntries(sortedEntries);
+      // }
+      // else {
+      //  delete usedTogether[prop];
+      // }
     }
 
-    countProps(allUsage, sets);
-    walkUsage(allUsage);
-
-    // return allUsage;
-    return sortObject(frequent);
+    return sortObject(ret);
   }
 
   var ast = JSON.parse(css);

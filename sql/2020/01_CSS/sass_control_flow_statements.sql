@@ -12,10 +12,15 @@ try {
   return Object.entries(scss.scss.stats).filter(([prop]) => {
     return statements.has(prop);
   }).map(([statement, obj]) => {
-    if (isArray(obj)) {
+    if (statement == 'ifs') {
       return {statement, freq: obj.length};
     }
-    return {statement, freq: Object.values(obj).reduce((total, i) => total += i, 0)};
+    return {statement, freq: Object.values(obj).reduce((total, i) => {
+      if (isNaN(i)) {
+        return total;
+      }
+      return total + i;
+    }, 0)};
   });
 } catch (e) {
   return [];
@@ -25,7 +30,7 @@ try {
 SELECT
   client,
   statement,
-  COUNT(DISTINCT page) AS pages,
+  COUNT(DISTINCT IF(freq > 0, page, NULL)) AS pages,
   SUM(freq) AS freq,
   SUM(SUM(freq)) OVER (PARTITION BY client) AS total,
   SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client) AS pct
@@ -34,10 +39,14 @@ FROM (
     _TABLE_SUFFIX AS client,
     url AS page,
     statement.statement,
-    statement.freq
+    SUM(statement.freq) AS freq
   FROM
     `httparchive.pages.2020_08_01_*`,
-    UNNEST(getStatements(payload)) AS statement)
+    UNNEST(getStatements(payload)) AS statement
+  GROUP BY
+    client,
+    page,
+    statement)
 GROUP BY
   client,
   statement
