@@ -1,6 +1,6 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION getPropertyUnits(css STRING) RETURNS
-ARRAY<STRUCT<property STRING, unit STRING, freq INT64>> LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getZeroUnits(css STRING) RETURNS
+ARRAY<STRUCT<unit STRING, freq INT64>> LANGUAGE js AS '''
 try {
   function compute(ast) {
     let ret = {
@@ -81,12 +81,8 @@ try {
   }
   var ast = JSON.parse(css);
   var units = compute(ast);
-  return Object.entries(units.by_property).flatMap(([property, units]) => {
-    return Object.entries(units).filter(([unit]) => {
-      return unit != 'total';
-    }).map(([unit, freq]) => {
-      return {property, unit, freq};
-    });
+  return Object.entries(units.zeroes).map(([unit, freq]) => {
+    return {unit, freq}
   });
 } catch (e) {
   return [];
@@ -99,31 +95,22 @@ SELECT
 FROM (
   SELECT
     client,
-    unit,
-    property,
-    SUM(freq) AS freq,
-    SUM(SUM(freq)) OVER (PARTITION BY client, unit) AS total,
-    SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client, unit) AS pct
-  FROM (
-    SELECT
-      client,
-      unit.property,
-      unit.unit,
-      unit.freq
-    FROM
-      `httparchive.almanac.parsed_css`,
-      UNNEST(getPropertyUnits(css)) AS unit
-    WHERE
-      date = '2020-08-01' AND
-      # Limit the size of the CSS to avoid OOM crashes.
-      LENGTH(css) < 0.1 * 1024 * 1024)
+    unit.unit,
+    COUNT(DISTINCT page) AS pages,
+    SUM(unit.freq) AS freq,
+    SUM(SUM(unit.freq)) OVER (PARTITION BY client) AS total,
+    SUM(unit.freq) / SUM(SUM(unit.freq)) OVER (PARTITION BY client) AS pct
+  FROM
+    `httparchive.almanac.parsed_css`,
+    UNNEST(getZeroUnits(css)) AS unit
+  WHERE
+    date = '2020-08-01' AND
+    # Limit the size of the CSS to avoid OOM crashes.
+    LENGTH(css) < 0.1 * 1024 * 1024
   GROUP BY
     client,
-    unit,
-    property)
+    unit)
 WHERE
-  total >= 1000 AND
-  pct >= 0.01
+  freq >= 1000
 ORDER BY
-  total DESC,
   pct DESC

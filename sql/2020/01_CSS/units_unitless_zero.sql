@@ -1,6 +1,5 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION getPropertyUnits(css STRING) RETURNS
-ARRAY<STRUCT<property STRING, unit STRING, freq INT64>> LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION hasUnitlessZero(css STRING) RETURNS BOOLEAN LANGUAGE js AS '''
 try {
   function compute(ast) {
     let ret = {
@@ -81,49 +80,28 @@ try {
   }
   var ast = JSON.parse(css);
   var units = compute(ast);
-  return Object.entries(units.by_property).flatMap(([property, units]) => {
-    return Object.entries(units).filter(([unit]) => {
-      return unit != 'total';
-    }).map(([unit, freq]) => {
-      return {property, unit, freq};
-    });
-  });
+  return units.zeroes['<number>'] > 0;
 } catch (e) {
-  return [];
+  return false;
 }
 '''
 OPTIONS (library="gs://httparchive/lib/css-utils.js");
 
 SELECT
-  *
+  client,
+  COUNT(DISTINCT IF(has_unitless_zero, page, NULL)) AS pages,
+  COUNT(DISTINCT page) AS total,
+  COUNT(DISTINCT IF(has_unitless_zero, page, NULL)) / COUNT(DISTINCT page) AS pct
 FROM (
   SELECT
     client,
-    unit,
-    property,
-    SUM(freq) AS freq,
-    SUM(SUM(freq)) OVER (PARTITION BY client, unit) AS total,
-    SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client, unit) AS pct
-  FROM (
-    SELECT
-      client,
-      unit.property,
-      unit.unit,
-      unit.freq
-    FROM
-      `httparchive.almanac.parsed_css`,
-      UNNEST(getPropertyUnits(css)) AS unit
-    WHERE
-      date = '2020-08-01' AND
-      # Limit the size of the CSS to avoid OOM crashes.
-      LENGTH(css) < 0.1 * 1024 * 1024)
-  GROUP BY
-    client,
-    unit,
-    property)
-WHERE
-  total >= 1000 AND
-  pct >= 0.01
-ORDER BY
-  total DESC,
-  pct DESC
+    page,
+    hasUnitlessZero(css) AS has_unitless_zero
+  FROM
+    `httparchive.almanac.parsed_css`
+  WHERE
+    date = '2020-08-01' AND
+    # Limit the size of the CSS to avoid OOM crashes.
+    LENGTH(css) < 0.1 * 1024 * 1024)
+GROUP BY
+  client
