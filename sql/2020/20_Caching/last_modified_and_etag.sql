@@ -11,14 +11,14 @@ SELECT
   COUNTIF(uses_last_modified) AS total_last_modified,
   COUNTIF(uses_etag AND uses_last_modified) AS total_using_both,
   COUNTIF(NOT uses_etag AND NOT uses_last_modified) AS total_using_neither,
-  COUNTIF(uses_no_etag) * 100 / COUNT(0) AS pct_noetag,
+  COUNTIF(uses_no_etag) * 100 / COUNT(0) AS pct_no_etag,
   COUNTIF(uses_etag) * 100 / COUNT(0) AS pct_etag,
   COUNTIF(weak_etag) * 100 / COUNT(0) AS pct_weak_etag,
   COUNTIF(strong_etag) * 100 / COUNT(0) AS pct_strong_etag,
   COUNTIF(NOT weak_etag AND NOT strong_etag AND uses_etag) * 100 / COUNT(0) AS pct_invalid_etag,
   COUNTIF(uses_last_modified) * 100 / COUNT(0) AS pct_last_modified,
-  COUNTIF(uses_etag AND uses_last_modified) * 100 / COUNT(0) AS pct_uses_both,
-  COUNTIF(NOT uses_etag AND NOT uses_last_modified) * 100 / COUNT(0) AS pct_uses_neither
+  COUNTIF(uses_etag AND uses_last_modified) * 100 / COUNT(0) AS pct_using_both,
+  COUNTIF(NOT uses_etag AND NOT uses_last_modified) * 100 / COUNT(0) AS pct_using_neither
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
