@@ -23,7 +23,7 @@ try {
 SELECT
   client,
   name,
-  COUNT(DISTINCT page) AS freq_hints,
+  COUNT(DISTINCT page) AS pages,
   total_page,
   COUNT(DISTINCT page) / total_page AS pct_hints,
   APPROX_QUANTILES(fcp, 1000)[OFFSET(500)] AS median_fcp,

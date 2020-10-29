@@ -16,7 +16,7 @@ FROM (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = '2020-09-01'
+    date = '2020-09-01' 
   GROUP BY
     client,
     page)

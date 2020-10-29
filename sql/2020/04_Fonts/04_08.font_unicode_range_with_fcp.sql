@@ -32,9 +32,9 @@ SELECT
     WHEN unicode != " " THEN "unicode_ranges"
   ELSE "none"
   END AS use_unicode,
-  COUNT(DISTINCT page) AS freq_range,
-  total_page,
-  COUNT(DISTINCT page) / total_page AS pct_range,
+  COUNT(DISTINCT page) AS pages,
+  SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total,
+  COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct_range,
   APPROX_QUANTILES(fcp, 1000)[OFFSET(500)] AS median_fcp,
   APPROX_QUANTILES(lcp, 1000)[OFFSET(500)] AS median_lcp
 FROM (
@@ -55,7 +55,7 @@ FROM (
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
-    COUNT(0) AS total_page,
+    url AS page,
     CAST(JSON_EXTRACT_SCALAR(payload,
         "$['_chromeUserTiming.firstContentfulPaint']") AS INT64) AS fcp,
     CAST(JSON_EXTRACT_SCALAR(payload,
@@ -63,13 +63,11 @@ JOIN (
   FROM
     `httparchive.pages.2020_08_01_*`
   GROUP BY
-    _TABLE_SUFFIX,
-    payload)
+    _TABLE_SUFFIX, page, payload)
 USING
-  (client)
+  (client, page)
 GROUP BY
   client,
-  use_unicode,
-  total_page
+  use_unicode
 ORDER BY
-  freq_range, client DESC
+  pages, client DESC
