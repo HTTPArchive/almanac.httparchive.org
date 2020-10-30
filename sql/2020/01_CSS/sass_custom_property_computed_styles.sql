@@ -1,0 +1,68 @@
+#standardSQL
+CREATE TEMPORARY FUNCTION getCustomPropertiesWithComputedStyle(payload STRING) RETURNS
+ARRAY<STRING> LANGUAGE js AS '''
+try {
+  var $ = JSON.parse(payload);
+  var vars = JSON.parse($['_css-variables']);
+
+  function walkElements(node, callback) {
+    if (Array.isArray(node)) {
+      for (let n of node) {
+        walkElements(n, callback);
+      }
+    }
+    else {
+      callback(node);
+
+      if (node.children) {
+        walkElements(node.children, callback);
+      }
+    }
+  }
+
+  let ret = new Set();
+
+  walkElements(vars.computed, node => {
+    if (node.declarations) {
+      for (let property in node.declarations) {
+        let value;
+        let o = node.declarations[property];
+
+        if (property.startsWith("--") && o.type) {
+          ret.add(property);
+        }
+      }
+    }
+  });
+
+  return [...ret];
+} catch (e) {
+  return [];
+}
+''';
+
+SELECT
+  *
+FROM (
+  SELECT
+    client,
+    prop,
+    COUNT(DISTINCT page) AS pages,
+    COUNT(0) AS freq,
+    SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+    COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
+  FROM (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      url AS page,
+      prop
+    FROM
+      `httparchive.pages.2020_08_01_*`,
+      UNNEST(getCustomPropertiesWithComputedStyle(payload)) AS prop)
+  GROUP BY
+    client,
+    prop)
+WHERE
+  freq >= 1000
+ORDER BY
+  pct DESC
