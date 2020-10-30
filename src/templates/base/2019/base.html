@@ -99,10 +99,91 @@
 {% block contributors %}{{ config.contributors.keys() | length }}{% endblock %}
 
 {% block non_chapter_nav_links %}
-<li><a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a></li>
 <li><a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a></li>
 <li><a href="{{ url_for('methodology', year=year, lang=lang) }}">{{ self.methodology_title() }}</a></li>
 {% endblock %}
+
+{% macro nav_table_of_contents(switcher_name) %}
+  {% if switcher_name == "mobile" or switcher_name == "mobile-footer" %}
+    {{ native_table_of_contents_dropdown(switcher_name) }}
+  {% else %}
+    {{ styled_table_of_contents_dropdown(switcher_name) }}
+  {% endif %}
+{% endmacro %}
+
+{% macro native_table_of_contents_dropdown(switcher_name) %}
+{% set current_title = metadata.get('title') if metadata else None %}
+<div class="table-of-contents-switcher">
+  <label for="table-of-contents-switcher-{{switcher_name}}" class="visually-hidden">
+    Table Of Contents
+  </label>
+  <select id="language-switcher-{{switcher_name}}">
+  <option value="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</option>
+  {% for part_config in config.outline %}
+  {% for chapter_config in part_config.chapters %}
+    {% set title = localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title %}
+    {% if chapter_config.todo %}
+      <option disabled>
+        {{ self.chapter() }} {{ chapter_config.chapter }}: {{title}}
+      </option>
+    {% else %}
+      {% if chapter_lang_exists(lang, year, chapter_config.slug) %}
+      <option 
+        {% if current_title == title %} selected {% endif %}
+        value="{{ url_for('chapter', year=year, lang=lang, chapter=chapter_config.slug) }}">
+        {{ self.chapter() }} {{ chapter_config.chapter }}: {{title}}
+      </option>
+      {% else %}
+      <option 
+        {% if current_title == title %} selected {% endif %}
+        value="{{ url_for('chapter', year=year, lang='en', chapter=chapter_config.slug) }}">
+        {{ self.chapter() }} {{ chapter_config.chapter }}: {{title}}
+      </option>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  {% endfor %}
+  </select>
+</div>
+{% endmacro %}
+
+{% macro styled_table_of_contents_dropdown(switcher_name) %}
+{% set current_title = metadata.get('title') if metadata else None %}
+<div class="nav-dropdown {{switcher_name}} table-of-contents">
+  <button class="nav-dropdown-btn" aria-expanded="false" aria-label="{{ self.table_of_contents_title() }}" >{{ self.table_of_contents_title() }}</button>
+  <ul class="nav-dropdown-list hidden {{switcher_name}}-list">
+    <li class="nav-dropdown-list__header">
+      <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a>
+    </li> 
+    <div class="nav-dropdown-list__horizontalrule"></div>
+      {% for part_config in config.outline %}
+      <li class="nav-dropdown-list__part">
+        {{ self.part() }} {{ localizedPartTitles[part_config.part] if localizedPartTitles[part_config.part]|length else chapter_config.title }}
+      </li>
+      {% for chapter_config in part_config.chapters %}
+      {% set title = localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title %}
+      <li class="nav-dropdown-list__chapter {% if current_title == title %}active{% endif %}">
+        {% if chapter_config.todo %}
+        <span class="nav-dropdown-list__todo">{{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }}</span>
+        {% else %}
+          {% if chapter_lang_exists(lang, year, chapter_config.slug) %}
+          <a href="{{ url_for('chapter', year=year, lang=lang, chapter=chapter_config.slug) }}">
+            {{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }}
+          </a>
+          {% else %}
+          <a href="{{ url_for('chapter', year=year, lang='en', chapter=chapter_config.slug) }}">
+            {{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }} <span class="not-translated">({{ self.translation_not_available() }})</span>
+          </a>
+          {% endif %}
+        {% endif %}
+      </li>
+      {% endfor %}
+      <hr class="nav-dropdown-list__horizontalrule">
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endmacro %}
 
 {% block content%}
   <div id="skiptocontent"><a href="#maincontent">{{ self.skip_navigation() }}</a></div>
@@ -116,6 +197,9 @@
         <nav id="header-page-navigation" aria-label="{{ self.page_navigation() }}">
           <ul>
             {{ self.non_chapter_nav_links() }}
+            <li>
+              {{ nav_table_of_contents('header') }}
+            </li>
             <li>
               {{ year_switcher('header') }}
             </li>
@@ -132,6 +216,9 @@
           </button>
           <ul class="menu">
             {{ self.non_chapter_nav_links() }}
+            <li>
+              {{ nav_table_of_contents('mobile') }}
+            </li>
             <li>
               {{ year_switcher('mobile') }}
             </li>
@@ -196,6 +283,9 @@
           <ul>
             {{ self.non_chapter_nav_links() }}
             <li>
+              {{ nav_table_of_contents('footer') }}
+            </li>
+            <li>
               {{ year_switcher('footer') }}
             </li>
             <li>
@@ -206,6 +296,9 @@
         <nav id="mobile-footer-nav-items" aria-label="{{ self.footer_title() }}" class="nav-items">
           <ul>
             {{ self.non_chapter_nav_links() }}
+            <li>
+              {{ nav_table_of_contents('mobile-footer') }}
+            </li>
             <li>
               {{ year_switcher('mobile-footer') }}
             </li>
@@ -277,7 +370,7 @@
     <script nonce="{{ csp_nonce() }}">
       (function() {
         // Language and Year switching
-        var languageYearSwitchers = document.querySelectorAll('.language-switcher select, .year-switcher select');
+        var languageYearSwitchers = document.querySelectorAll('.language-switcher select, .year-switcher select, .table-of-contents-switcher select');
         for (var i = 0; i < languageYearSwitchers.length; i++) {
           languageYearSwitchers[i].addEventListener('change', function(e) {
             //Reset the selector back in case user uses Back button
