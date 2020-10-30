@@ -35,7 +35,7 @@ JOIN (
     `httparchive.summary_requests.2020_09_01_mobile`
   WHERE
     type = 'script' AND
-    NET.HOST(url) IN (SELECT domain FROM `httparchive.almanac.third_parties` WHERE date = '2019-07-01' AND category != 'hosting')
+    NET.HOST(url) IN (SELECT domain FROM `httparchive.almanac.third_parties` WHERE date = '2020-08-01' AND category != 'hosting')
   GROUP BY
     pageid)
 USING
