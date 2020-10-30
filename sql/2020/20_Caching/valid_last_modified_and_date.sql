@@ -10,14 +10,14 @@ SELECT
   COUNTIF(uses_last_modified AND NOT has_valid_last_modified) AS total_invalid_last_modified,
   COUNTIF(uses_expires AND NOT has_valid_expires) AS total_invalid_expires,
   COUNTIF((uses_date AND NOT has_valid_date_header) OR (uses_last_modified AND NOT has_valid_last_modified) OR (uses_expires AND NOT has_valid_expires)) AS total_has_invalid_header,
-  COUNTIF(uses_date) * 100/ COUNT(0) AS pct_date,
-  COUNTIF(uses_last_modified) * 100/ COUNT(0) AS pct_last_modified,
-  COUNTIF(uses_expires) * 100/ COUNT(0) AS pct_expires,
-  COUNTIF(uses_date AND NOT has_valid_date_header) * 100 / COUNTIF(uses_date) AS pct_invalid_date_header,
-  COUNTIF(uses_last_modified AND NOT has_valid_last_modified) * 100 / COUNTIF(uses_last_modified) AS pct_invalid_last_modified,
-  COUNTIF(uses_expires AND NOT has_valid_expires) * 100 / COUNTIF(uses_expires) AS pct_invalid_expires,
-  COUNTIF(uses_date AND uses_last_modified AND uses_expires) * 100 / COUNT(0) AS pct_req_using_all,
-  COUNTIF((uses_date AND NOT has_valid_date_header) OR (uses_last_modified AND NOT has_valid_last_modified) OR (uses_expires AND NOT has_valid_expires)) * 100 / COUNT(0) AS pct_req_with_invalid_header
+  COUNTIF(uses_date) / COUNT(0) AS pct_date,
+  COUNTIF(uses_last_modified) / COUNT(0) AS pct_last_modified,
+  COUNTIF(uses_expires) / COUNT(0) AS pct_expires,
+  COUNTIF(uses_date AND NOT has_valid_date_header) / COUNTIF(uses_date) AS pct_invalid_date_header,
+  COUNTIF(uses_last_modified AND NOT has_valid_last_modified) / COUNTIF(uses_last_modified) AS pct_invalid_last_modified,
+  COUNTIF(uses_expires AND NOT has_valid_expires) / COUNTIF(uses_expires) AS pct_invalid_expires,
+  COUNTIF(uses_date AND uses_last_modified AND uses_expires) / COUNT(0) AS pct_req_using_all,
+  COUNTIF((uses_date AND NOT has_valid_date_header) OR (uses_last_modified AND NOT has_valid_last_modified) OR (uses_expires AND NOT has_valid_expires)) / COUNT(0) AS pct_req_with_invalid_header
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
