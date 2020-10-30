@@ -24,15 +24,14 @@ SELECT
   client,
   name,
   COUNT(DISTINCT page) AS pages,
-  total_page,
-  COUNT(DISTINCT page) / total_page AS pct_hints,
+  SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total,
+  COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct_hints,
   APPROX_QUANTILES(fcp, 1000)[OFFSET(500)] AS median_fcp,
   APPROX_QUANTILES(lcp, 1000)[OFFSET(500)] AS median_lcp
 FROM (
   SELECT
     DISTINCT _TABLE_SUFFIX AS client,
     url AS page,
-    COUNT(DISTINCT url) OVER (PARTITION BY _TABLE_SUFFIX) AS total_page,
     hint.name,
     CAST(JSON_EXTRACT_SCALAR(payload,
         "$['_chromeUserTiming.firstContentfulPaint']") AS INT64) AS fcp,
@@ -58,7 +57,6 @@ WHERE
 GROUP BY
   client,
   name,
-  type,
-  total_page
+  type
 ORDER BY
   pct_hints DESC

@@ -22,8 +22,8 @@ SELECT
  client,
  REGEXP_EXTRACT(LOWER(values), '[\'"]([\\w]{4})[\'"]') AS axis,
  CAST(REGEXP_EXTRACT(value, '\\d+') AS NUMERIC) AS num_axis,
- COUNT(DISTINCT page) AS freq_axis,
- SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total_axis,
+ COUNT(DISTINCT page) AS pages,
+ SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total,
  COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct
 FROM 
  `httparchive.almanac.parsed_css`,
@@ -36,4 +36,4 @@ GROUP BY
 HAVING 
  axis IS NOT NULL
 ORDER BY  
- freq_axis DESC
+ pages DESC

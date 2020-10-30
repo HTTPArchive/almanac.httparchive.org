@@ -18,7 +18,7 @@ try {
 
 SELECT
  client,
- COUNT(DISTINCT page) AS freq_ficon,
+ COUNT(DISTINCT page) AS pages,
  total_page,
  COUNT(DISTINCT page) / total_page AS pct_ficon
 FROM
@@ -32,4 +32,4 @@ WHERE
 GROUP BY
  client, url, total_page
 ORDER BY
- client, freq_ficon DESC
+ client, pages DESC
