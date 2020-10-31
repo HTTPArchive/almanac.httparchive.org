@@ -15,26 +15,37 @@ jobs:
     runs-on: ubuntu-latest
     if: github.repository == 'HTTPArchive/almanac.httparchive.org'
     steps:
-    - name: Checkout branch
-      uses: actions/checkout@v2.3.3
-      with:
-        # Full git history is needed to get a proper list of changed files within `super-linter`
-        fetch-depth: 0
-    - name: Setup Node.js for use with actions
-      uses: actions/setup-node@v1.4.2
-      with:
-        node-version: 12.x
-    - name: Set up Python 3.8
-      uses: actions/setup-python@v2.1.4
-      with:
-        python-version: '3.8'
-    - name: Run the website
-      run: ./src/tools/scripts/run_and_test_website.sh
-    - name: Remove node modules to avoid linting errors
-      run: rm -rf src/node_modules
-    - name: Lint Generated HTML
-      uses: github/super-linter@v3.13.2
-      env:
-        DEFAULT_BRANCH: main
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        VALIDATE_HTML: true
+      - name: Checkout branch
+        uses: actions/checkout@v2.3.3
+        with:
+          # Full git history is needed to get a proper list of changed files within `super-linter`
+          fetch-depth: 0
+      - name: Setup Node.js for use with actions
+        uses: actions/setup-node@v1.4.2
+        with:
+          node-version: 12.x
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2.1.4
+        with:
+          python-version: '3.8'
+      - name: Run the website
+        run: ./src/tools/scripts/run_and_test_website.sh
+      - name: Remove node modules to avoid linting errors
+        run: rm -rf src/node_modules
+      - name: Lint Generated HTML
+        uses: github/super-linter@v3.13.2
+        env:
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_HTML: true
+      - name: Audit URLs using Lighthouse
+        uses: treosh/lighthouse-ci-action@v3
+        with:
+          urls: |
+            http://127.0.0.1:8080/en/2019/
+            http://127.0.0.1:8080/en/2019/css
+            http://127.0.0.1:8080/en/2020/
+          assertionPath: .github/lighthouse-assertions.json # test assertion budgets
+          budgetPath: .github/lighthouse-budget.json # test performance budgets
+          uploadArtifacts: true # save results as an action artifacts
+          temporaryPublicStorage: true # upload lighthouse report to the temporary storage
