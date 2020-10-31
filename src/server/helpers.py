@@ -51,6 +51,11 @@ def render_template(template, *args, **kwargs):
 def render_error_template(error, status_code):
     lang = request.view_args.get('lang')
     year = request.view_args.get('year')
+
+    # Special error handling for base templates
+    if lang == 'base':
+        lang = DEFAULT_LANGUAGE.lang_code
+
     if not (os.path.isfile(TEMPLATES_DIR + '/%s/%s/error.html' % (lang, year))):
         if os.path.isfile(TEMPLATES_DIR + '/%s/%s/error.html' % (lang, DEFAULT_YEAR)):
             year = DEFAULT_YEAR
