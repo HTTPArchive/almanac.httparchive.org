@@ -32,12 +32,12 @@ jobs:
         run: ./src/tools/scripts/run_and_test_website.sh
       - name: Remove node modules to avoid linting errors
         run: rm -rf src/node_modules
-      - name: Lint Generated HTML
-        uses: github/super-linter@v3.13.2
-        env:
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VALIDATE_HTML: true
+        #- name: Lint Generated HTML
+        #  uses: github/super-linter@v3.13.2
+        #  env:
+        #    DEFAULT_BRANCH: main
+        #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        #    VALIDATE_HTML: true
       - name: Audit URLs using Lighthouse
         uses: treosh/lighthouse-ci-action@v3
         with:
@@ -45,7 +45,7 @@ jobs:
             http://127.0.0.1:8080/en/2019/
             http://127.0.0.1:8080/en/2019/css
             http://127.0.0.1:8080/en/2020/
-          configPath: .github/lighthouse-assertions.json # test assertion budgets
-          budgetPath: .github/lighthouse-budget.json # test performance budgets
+          configPath: .github/lighthhouse/lighthouse-assertions.json # test assertions
+          budgetPath: .github/lighthhouse/lighthouse-budget.json # test performance budgets
           uploadArtifacts: true # save results as an action artifacts
           temporaryPublicStorage: true # upload lighthouse report to the temporary storage
