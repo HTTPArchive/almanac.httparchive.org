@@ -38,14 +38,14 @@ jobs:
         DEFAULT_BRANCH: main
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         VALIDATE_HTML: true
-      - name: Audit URLs using Lighthouse
-        uses: treosh/lighthouse-ci-action@v3
-        with:
-          urls: |
-            http://127.0.0.1:8080/en/2019/
-            http://127.0.0.1:8080/en/2019/css
-            http://127.0.0.1:8080/en/2020/
-          configPath: .github/lighthouse/lighthouse-assertions.json # test assertions
-          budgetPath: .github/lighthouse/lighthouse-budget.json # test performance budgets
-          uploadArtifacts: true # save results as an action artifacts
-          temporaryPublicStorage: true # upload lighthouse report to the temporary storage
+    - name: Audit URLs using Lighthouse
+      uses: treosh/lighthouse-ci-action@v3
+      with:
+        urls: |
+          http://127.0.0.1:8080/en/2019/
+          http://127.0.0.1:8080/en/2019/css
+          http://127.0.0.1:8080/en/2020/
+        configPath: .github/lighthouse/lighthouse-assertions.json # test assertions
+        budgetPath: .github/lighthouse/lighthouse-budget.json # test performance budgets
+        uploadArtifacts: true # save results as an action artifacts
+        temporaryPublicStorage: true # upload lighthouse report to the temporary storage
