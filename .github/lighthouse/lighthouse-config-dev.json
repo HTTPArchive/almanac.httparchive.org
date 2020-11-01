@@ -2,9 +2,8 @@
   "ci": {
     "assert": {
       "assertions": {
-        "categories:performance": ["error", {"minScore": 0.85}],
-        "categories:accessibility": ["error", {"minScore": 1}],
-        "categories:best-practice": ["error", {"minScore": 0.93}],
+        "categories:accessibility": ["error", {"minScore": 0.98}],
+        "categories:best-practices": ["error", {"minScore": 0.93}],
         "categories:seo": ["error", {"minScore": 0.86}],
         "categories:pwa": ["error", {"minScore": 0.50}]
       }
