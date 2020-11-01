@@ -5,7 +5,14 @@
       "assertions": {
         "canonical": "off",
         "is-crawlable": "off",
-        "is-on-https:": "off"
+        "is-on-https:": "off",
+        "unminified-css": "off",
+        "unminified-javascript": "off",
+        "unused-css-rules": "off",
+        "uses-rel-preconnect": "off",
+        "uses-text-compression": "off",
+        "uses-responsive-images": "off",
+        "font-display": "off"
       }
     }
   }
