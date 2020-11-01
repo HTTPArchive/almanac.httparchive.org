@@ -51,9 +51,12 @@ if [ "${production}" == "1" ]; then
     # Get the production URLs from the production sitemap
     LIGHTHOUSE_URLS=$(curl -s https://almanac.httparchive.org/sitemap.xml | grep "<loc" | grep -v static | sed 's/ *<loc>//g' | sed 's/<\/loc>//g')
     LIGHTHOUSE_CONFIG_FILE="${LIGHTHOUSE_PROD_CONFIG_FILE}"
-elif [ "${RUN_TYPE}" != "workflow_dispatch" ] && [ "${COMMIT_SHA}" != "" ]; then
+elif [ "${RUN_TYPE}" == "pull_request" ] && [ "${COMMIT_SHA}" != "" ]; then
+    git pull quiet
+    git checkout main
     # If this is part of pull request then get list of files as those changed
-    CHANGED_FILES=$(git diff --diff-filter=d --no-commit-id --name-only "main...${GITHUB_SHA}" content templates | grep -v base.html | grep -v ejs | grep -v base_ | grep -v toc.html | grep -v sitemap)
+    CHANGED_FILES=$(git diff --name-only "main...${COMMIT_SHA}" | grep -v base.html | grep -v ejs | grep -v base_ | grep -v toc.html | grep -v sitemap)
+    git checkout --progress --force "${COMMIT_SHA}"
 
     LIGHTHOUSE_URLS=$(echo "${CHANGED_FILES}" | sed 's/src\/content/http:\/\/127.0.0.1:8080/g' | sed 's/\.md//g' | sed 's/\/base\//\/en\//g' | sed 's/src\/templates/http:\/\/127.0.0.1:8080/g' | sed 's/\.html//g' | sed 's/_/-/g' | sed 's/\/2019\/accessibility-statement/\/accessibility-statement/g' )
     if [ "${LIGHTHOUSE_URLS}" = "" ]; then
@@ -74,7 +77,7 @@ LIGHTHOUSE_URLS=$(echo "${LIGHTHOUSE_URLS}" | sed 's/^ */          "/' | sed 's/
 LIGHTHOUSE_URLS=${LIGHTHOUSE_URLS:0:${#LIGHTHOUSE_URLS}-1}
 
 # Take all but the first two lines of the existing config
-# So as to maintain assertions
+# so as to maintain assertions
 LIGHTHOUSE_CONFIG=$(sed "1,2d" ${LIGHTHOUSE_CONFIG_FILE})
 
 # Write the new config file - inclduing the URLs
