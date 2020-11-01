@@ -3,7 +3,8 @@
 # exit when any command fails instead of trying to continue on
 set -e
 
-LIGHTHOUSE_CONFIG_FILE="../.github/lighthouse/lighthouse-config.json"
+LIGHTHOUSE_CONFIG_FILE="../.github/lighthouse/lighthouse-config-dev.json"
+LIGHTHOUSE_PROD_CONFIG_FILE="../.github/lighthouse/lighthouse-config-prod.json"
 
 # Usage info
 show_help() {
@@ -49,7 +50,8 @@ END
 if [ "${production}" == "1" ]; then
     # Get the production URLs from the production sitemap
     LIGHTHOUSE_URLS=$(curl -s https://almanac.httparchive.org/sitemap.xml | grep "<loc" | grep -v static | sed 's/ *<loc>//g' | sed 's/<\/loc>//g')
-elif [ "${COMMIT_SHA}" != "" ]; then
+    LIGHTHOUSE_CONFIG_FILE="${LIGHTHOUSE_PROD_CONFIG_FILE}"
+elif [ "RUN_TYPE" != "workflow_dispatch" && "${COMMIT_SHA}" != "" ]; then
     # If this is part of pull request then get list of files as those changed
     CHANGED_FILES=$(git diff-tree --diff-filter=AM --no-commit-id --name-only -r "${COMMIT_SHA}" "content/")
     LIGHTHOUSE_URLS=$(echo "${CHANGED_FILES}" | sed 's/src\/content/http:\/\/localhost:8080/g' )
@@ -71,7 +73,7 @@ LIGHTHOUSE_URLS=${LIGHTHOUSE_URLS:0:${#LIGHTHOUSE_URLS}-1}
 # So as to maintain assertions
 LIGHTHOUSE_CONFIG=$(sed "1,2d" ${LIGHTHOUSE_CONFIG_FILE})
 
-#
+# Write the new config file - inclduing the URLs
 cat > "${LIGHTHOUSE_CONFIG_FILE}" << END_CONFIG
 {
   "ci": {
@@ -82,5 +84,3 @@ ${LIGHTHOUSE_URLS}
     },
 ${LIGHTHOUSE_CONFIG}
 END_CONFIG
-
-#echo 'LIGHTHOUSE_URLS="${LIGHTHOUSE_URLS}"' >> $GITHUB_ENV
