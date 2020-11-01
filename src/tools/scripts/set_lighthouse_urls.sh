@@ -42,7 +42,9 @@ LIGHTHOUSE_URLS=""
 # to ensure basic coverage
 BASE_URLS=$(cat <<-END
 http://127.0.0.1:8080/en/2019/
-http://127.0.0.1:8080/en/2019/css
+http://127.0.0.1:8080/en/2019/javascript
+http://127.0.0.1:8080/en/2019/mobile-web
+http://127.0.0.1:8080/en/2019/seo
 http://127.0.0.1:8080/en/2020/
 END
 )
@@ -54,7 +56,7 @@ if [ "${production}" == "1" ]; then
 elif [ "${RUN_TYPE}" != "workflow_dispatch" ] && [ "${COMMIT_SHA}" != "" ]; then
     # If this is part of pull request then get list of files as those changed
     CHANGED_FILES=$(git diff-tree --diff-filter=AM --no-commit-id --name-only -r "${COMMIT_SHA}" content templates | grep -v base.html | grep -v ejs | grep -v base_ | grep -v toc.html | grep -v sitemap)
-    
+
     LIGHTHOUSE_URLS=$(echo "${CHANGED_FILES}" | sed 's/src\/content/http:\/\/127.0.0.1:8080/g' | sed 's/\.md//g' | sed 's/\/base\//\/en\//g' | sed 's/src\/templates/http:\/\/127.0.0.1:8080/g' | sed 's/\.html//g' | sed 's/_/-/g' | sed 's/\/2019\/accessibility-statement/\/accessibility-statement/g' )
     if [ "${LIGHTHOUSE_URLS}" = "" ]; then
         LIGHTHOUSE_URLS="${BASE_URLS}"

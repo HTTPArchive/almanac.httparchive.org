@@ -165,7 +165,6 @@
 
 .content ul li {
   list-style: none;
-  margin: 5px 0;
 }
 
 .content ul li::before {
@@ -647,6 +646,10 @@ figure .fig-desktop {
   .anchor-link:hover::before,
   .anchor-link:focus::before {
     content: '';
+  }
+
+  .content ul li {
+    padding: 6px 0;
   }
 }
 
