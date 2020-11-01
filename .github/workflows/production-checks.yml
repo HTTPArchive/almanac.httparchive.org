@@ -26,7 +26,7 @@ jobs:
       - name: Set the list of URLs for Lighthouse to check
         run: ./src/tools/scripts/set_lighthouse_urls.sh -p
       - name: Audit URLs using Lighthouse
-        uses: treosh/lighthouse-ci-action@v3.1.0
+        uses: treosh/lighthouse-ci-action@3.1.0
         id: LHCIAction
         with:
           configPath: .github/lighthouse/lighthouse-config-prod.json # test assertions

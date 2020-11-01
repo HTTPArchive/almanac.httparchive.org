@@ -45,7 +45,7 @@ jobs:
         COMMIT_SHA: ${{ github.sha }}
       run: ./src/tools/scripts/set_lighthouse_urls.sh
     - name: Audit URLs using Lighthouse
-      uses: treosh/lighthouse-ci-action@v3.1.0
+      uses: treosh/lighthouse-ci-action@3.1.0
       id: LHCIAction
       with:
         configPath: .github/lighthouse/lighthouse-config-dev.json # test assertions
