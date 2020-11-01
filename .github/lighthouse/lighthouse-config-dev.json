@@ -1,13 +1,11 @@
 {
   "ci": {
     "assert": {
+      "preset": "lighthouse:no-pwa",
       "assertions": {
         "canonical": "off",
         "is-crawlable": "off",
-        "is-on-https:": "off",
-        "categories:accessibility": ["error", {"minScore": 1}],
-        "categories:best-practices": ["error", {"minScore": 1}],
-        "categories:seo": ["error", {"minScore": 1}]
+        "is-on-https:": "off"
       }
     }
   }
