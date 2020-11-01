@@ -34,8 +34,8 @@ jobs:
       run: rm -rf src/node_modules
     - name: Lint Generated HTML
       uses: github/super-linter@v3.13.2
-        DEFAULT_BRANCH: main
       env:
+        DEFAULT_BRANCH: main
         FILTER_REGEX_INCLUDE: src/static/html/.*
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         VALIDATE_HTML: true
