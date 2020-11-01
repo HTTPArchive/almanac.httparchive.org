@@ -39,7 +39,7 @@ jobs:
         FILTER_REGEX_INCLUDE: src/static/html/.*
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         VALIDATE_HTML: true
-    - name: Set the list of URLs to check
+    - name: Set the list of URLs for Lighthouse to check
       env:
         RUN_TYPE: ${{ github.event_name }}
         COMMIT_SHA: ${{ github.sha }}
@@ -54,4 +54,4 @@ jobs:
     - name: Show Lighthouse outputs
       run: |
         # All results by URL:
-        echo ${{ steps.LHCIAction.outputs.manifest }} | jq -r '.[] | (.summary|tostring) + " for " + .url'
+        echo ${{ steps.LHCIAction.outputs.manifest }} | jq -r "[] | (.summary|tostring) + \" for \" + .url"

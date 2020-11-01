@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.repository == 'bazzadp/almanac.httparchive.org'
     steps:
-      - name: Set the list of URLs to check
+      - name: Set the list of URLs for Lighthouse to check
         run: ./src/tools/scripts/set_lighthouse_urls.sh -p
       - name: Audit URLs using Lighthouse
         uses: treosh/lighthouse-ci-action@v3
@@ -35,4 +35,4 @@ jobs:
       - name: Show Lighthouse outputs
         run: |
           # All results by URL:
-          echo ${{ steps.LHCIAction.outputs.manifest }} | jq -r '.[] | (.summary|tostring) + " for " + .url'
+          echo ${{steps.LHCIAction.outputs.manifest}} | jq -r ".[] | (.summary|tostring) + \" for \" + .url"
