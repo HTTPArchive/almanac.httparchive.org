@@ -242,141 +242,85 @@ Accordingly we looked at the number of `details` and `summary` elements and it s
 
 Another look at element popularity, how likely is it to find a certain element in the DOM of a page? Surely, `html`, `head`, `body` are present on every page (even though [their tags are all optional](https://meiert.com/en/blog/optional-html/)), making them common elements, but what other elements are to be found?
 
-@@
-
-Element
-Probability
-title
-99.34%
-meta
-99%
-div
-98.42%
-a
-98.32%
-link
-97.79%
-script
-97.73%
-img
-95.83%
-span
-93.98%
-p
-88.71%
-ul
-87.68%
+| Element | Probability |
+|---|---|
+| `title` | 99.34% |
+| `meta` | 99% |
+| `div` | 98.42% |
+| `a` | 98.32% |
+| `link` | 97.79% |
+| `script` | 97.73% |
+| `img` | 95.83% |
+| `span` | 93.98% |
+| `p` | 88.71% |
+| `ul` | 87.68% |
 
 What standard elements—elements that are or were part of the HTML specification—are you really rarely to find? In our sample, that would bring up the following:
 
-Element
-Probability
-dir
-0.0082%
-rp
-0.0087%
-basefont
-0.0092%
-Custom elements
-The 2019 edition of the Web Almanac handled this part a little differently, discussing several non-standard elements. However, we found it valuable to have a closer look at custom elements. How did we define these? Roughly by looking at their definition, notably their use of a hyphen. Let’s focus on the top elements, in this case elements used on ≥1% of all URLs in the sample:
+| Element | Probability |
+|---|---|
+| `dir` | 0.0082% |
+| `rp` | 0.0087% |
+| `basefont` | 0.0092% |
 
-Element
-Occurrences
-Percentage
-ym-measure
-141,156
-2.22%
-wix-image
-76,969
-1.21%
-rs-module-wrap
-71,272
-1.12%
-rs-module
-71,271
-1.12%
-rs-slide
-70,970
-1.12%
-rs-slides
-70,993
-1.12%
-rs-sbg-px
-70,414
-1.11%
-rs-sbg-wrap
-70,414
-1.11%
-rs-sbg
-70,413
-1.11%
-rs-progress
-70,651
-1.11%
-rs-mask-wrap
-63,871
-1.01%
-rs-loop-wrap
-63,870
-1.01%
-rs-layer-wrap
-63,849
-1.01%
-wix-iframe
-63,590
-1%
+### Custom elements
 
-These elements come from three sources: Yandex Metrics (ym-), an analytics solution we’ve also seen last year; Slider Revolution (rs-), a WordPress slider, for which there are more elements to be found near the top of the sample; and Wix (wix-), a website builder.
+The 2019 edition of the Web Almanac handled this part [a little differently](../2019/markup#custom-elements), discussing several non-standard elements. However, we found it valuable to have a closer look at custom elements. How did we determine these? Roughly by looking at [their definition](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-core-concepts), notably their use of a hyphen. Let’s focus on the top elements, in this case elements used on ≥1% of all URLs in the sample:
 
-Other groups that stand out include AMP markup with amp- elements like amp-img (11,700 cases), amp-analytics (10,256) and amp-auto-ads (7,621), as well as Angular app- elements like app-root (16,314), app-footer (6,745), and app-header (5,274).
-Obsolete elements
-There are more questions to ask about the use of HTML, and one may relate to obsolete elements—elements like applet, bgsound, blink, center, font, frame, isindex, marquee, or spacer.
+| Element | Occurrences | Percentage |
+|---|---|---|
+| `ym-measure` | 141,156 | 2.22% |
+| `wix-image` | 76,969 | 1.21% |
+| `rs-module-wrap` | 71,272 | 1.12% |
+| `rs-module` | 71,271 | 1.12% |
+| `rs-slide` | 70,970 | 1.12% |
+| `rs-slides` | 70,993 | 1.12% |
+| `rs-sbg-px` | 70,414 | 1.11% |
+| `rs-sbg-wrap` | 70,414 | 1.11% |
+| `rs-sbg` | 70,413 | 1.11% |
+| `rs-progress` | 70,651 | 1.11% |
+| `rs-mask-wrap` | 63,871 | 1.01% |
+| `rs-loop-wrap` | 63,870 | 1.01% |
+| `rs-layer-wrap` | 63,849 | 1.01% |
+| `wix-iframe` | 63,590 | 1% |
+
+These elements come from three sources: [Yandex Metrics](https://metrica.yandex.com/about) (`ym-`), an analytics solution we’ve also seen last year; [Slider Revolution](https://www.sliderrevolution.com/) (`rs-`), a WordPress slider, for which there are more elements to be found near the top of the sample; and [Wix](https://www.wix.com/) (`wix-`), a website builder.
+
+Other groups that stand out include [AMP markup](https://amp.dev/) with `amp-` elements like `amp-img` (11,700 cases), `amp-analytics` (10,256) and `amp-auto-ads` (7,621), as well as [Angular](https://angular.io/) `app-` elements like `app-root` (16,314), `app-footer` (6,745), and `app-header` (5,274).
+
+### Obsolete elements
+
+There are more questions to ask about the use of HTML, and one may relate to obsolete elements—elements like `applet`, `bgsound`, `blink`, `center`, `font`, `frame`, `isindex`, `marquee`, or `spacer`.
 
 In our mobile data set of 6.3 million pages, around 0.9 million pages (14.01%) contained one or more of these elements. Here are the Top 9, those elements that were used more than 10,000 times:
 
-Element
-Occurrences
-Percentage of pages with this element
-center
-458,402
-7.22%
-font
-430,987
-6.79%
-marquee
-67,781
-1.07%
-nobr
-31,138
-0.49%
-big
-27,578
-0.43%
-frame
-19,363
-0.31%
-frameset
-19,163
-0.30%
-strike
-17,438
-0.27%
-noframes
-15,016
-0.24%
+| Element | Occurrences | Percentage of pages with this element |
+|---|---|---|
+| `center` | 458,402 | 7.22% |
+| `font` | 430,987 | 6.79% |
+| `marquee` | 67,781 | 1.07% |
+| `nobr` | 31,138 | 0.49% |
+| `big` | 27,578 | 0.43% |
+| `frame` | 19,363 | 0.31% |
+| `frameset` | 19,163 | 0.30% |
+| `strike` | 17,438 | 0.27% |
+| `noframes` | 15,016 | 0.24% |
 
-Why are these still alive—even spacer is still being used 1,584 times, and present on every 5,000th page. We know that Google has been using a center element on their homepage for 22 years now, but does that find so many imitators?
+Why are these still alive—even `spacer` is still being used 1,584 times, and present on every 5,000th page. We know that Google has been using a `center` element on [their homepage](https://www.google.com/) [for 22 years](https://web.archive.org/web/19981202230410/https://www.google.com/) now, but does that find so many imitators?
 
 <div class="note">
 
-#### isindex
+#### `isindex`
 
-If you were wondering: The isindex element was used present once. (It was part of the HTML specs until version 4.01, and of XHTML in 1.0, yet only properly specified in 2006, and removed in 2016.)
+If you were wondering: The [`isindex` element](https://www.w3.org/TR/html401/interact/forms.html#edef-ISINDEX) was present once. (It was part of the HTML specs [until version 4.01, and of XHTML in 1.0](https://meiert.com/en/indices/html-elements/), yet only properly [specified in 2006](https://lists.w3.org/Archives/Public/public-whatwg-archive/2006Feb/0111.html), and [removed in 2016](https://github.com/whatwg/html/pull/1095).)
 
 </div>
 
-Proprietary and made-up elements
+### Proprietary and made-up elements
+
 In our set of elements we found some that were neither standard HTML (nor SVG nor MathML) elements, nor custom ones, nor obsolete ones, but somewhat proprietary ones. The Top 10 that we identified were the following:
+
+@@
 
 Element
 Percentage of pages with this element
