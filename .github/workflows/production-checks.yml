@@ -35,4 +35,4 @@ jobs:
       - name: Show Lighthouse outputs
         run: |
           # All results by URL:
-          echo ${{steps.LHCIAction.outputs.manifest}} | jq -r ".[] | (.summary|tostring) + \" for \" + .url"
+          echo '${{ steps.LHCIAction.outputs.manifest }}' | jq -r '.[] | (.summary|tostring) + " - " + .url'
