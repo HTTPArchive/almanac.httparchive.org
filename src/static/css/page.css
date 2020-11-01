@@ -647,10 +647,6 @@ figure .fig-desktop {
   .anchor-link:focus::before {
     content: '';
   }
-
-  .content ul li {
-    padding: 6px 0;
-  }
 }
 
 /* Code highlighting */
