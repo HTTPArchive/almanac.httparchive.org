@@ -32,20 +32,20 @@ jobs:
       run: ./src/tools/scripts/run_and_test_website.sh
     - name: Remove node modules to avoid linting errors
       run: rm -rf src/node_modules
-      #- name: Lint Generated HTML
-      #  uses: github/super-linter@v3.13.2
-      #    DEFAULT_BRANCH: main
-      #  env:
-      #    FILTER_REGEX_INCLUDE: src/static/html/.*
-      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #    VALIDATE_HTML: true
+    - name: Lint Generated HTML
+      uses: github/super-linter@v3.13.2
+        DEFAULT_BRANCH: main
+      env:
+        FILTER_REGEX_INCLUDE: src/static/html/.*
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        VALIDATE_HTML: true
     - name: Set the list of URLs for Lighthouse to check
       env:
         RUN_TYPE: ${{ github.event_name }}
         COMMIT_SHA: ${{ github.sha }}
       run: ./src/tools/scripts/set_lighthouse_urls.sh
     - name: Audit URLs using Lighthouse
-      uses: treosh/lighthouse-ci-action@v3
+      uses: treosh/lighthouse-ci-action@v3.1.0
       id: LHCIAction
       with:
         configPath: .github/lighthouse/lighthouse-config-dev.json # test assertions
