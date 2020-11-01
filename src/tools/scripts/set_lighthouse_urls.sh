@@ -3,18 +3,20 @@
 # exit when any command fails instead of trying to continue on
 set -e
 
+echo "Setting Lighthouse URLs"
+
 LIGHTHOUSE_CONFIG_FILE="../.github/lighthouse/lighthouse-config-dev.json"
 LIGHTHOUSE_PROD_CONFIG_FILE="../.github/lighthouse/lighthouse-config-prod.json"
 
 # Usage info
 show_help() {
-cat << EOF
+cat << EOH
 Usage: ${0##*/} [-p]
 Get a list of URLs to run a lighthouse test on
 
     -h   display this help and exit
     -p   get all production URLs from sitemap.xml
-EOF
+EOH
 }
 
 OPTIND=1 # Reseting is good practive
