@@ -36,9 +36,12 @@ jobs:
       uses: github/super-linter@v3.13.2
       env:
         DEFAULT_BRANCH: main
+        FILTER_REGEX_INCLUDE: src/static/html/.*
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         VALIDATE_HTML: true
     - name: Set the list of URLs to check
+      env:
+        COMMIT_SHA: ${{ github.sha }}
       run: ./src/tools/scripts/set_lighthouse_urls.sh
     - name: Audit URLs using Lighthouse
       uses: treosh/lighthouse-ci-action@v3

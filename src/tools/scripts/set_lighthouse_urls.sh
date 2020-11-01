@@ -60,7 +60,7 @@ elif [ "${COMMIT_SHA}" != "" ]; then
     fi
 else
     # Else test every URL (except PDFs) in sitemap
-    LIGHTHOUSE_URLS=$(grep loc templates/sitemap.xml | grep -v static | sed 's/ *<loc>//g' | sed 's/<\/loc>//g' | sed 's/https:\/\/almanac.httparchive.org/http:\/\/localhost/g')
+    LIGHTHOUSE_URLS=$(grep loc templates/sitemap.xml | grep -v static | sed 's/ *<loc>//g' | sed 's/<\/loc>//g' | sed 's/https:\/\/almanac.httparchive.org/http:\/\/localhost:8080/g')
 fi
 
 # Format the URLs for the lighthouse config:
