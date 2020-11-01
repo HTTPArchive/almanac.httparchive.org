@@ -195,83 +195,54 @@ Not that much changed [compared to 2019](../2019/markup#fig-3)!
 
 Last year, the Almanac featured the most frequently used elements in reference to [Ian Hickson’s work in 2005](https://web.archive.org/web/20060203031713/http://code.google.com/webstats/2005-12/elements.html). We found this useful and had a look at that data again:
 
-@@
+| 2005 | 2019 | 2020 |
+|---|---|---|
+| `title` | `div` | `div` |
+| `a` | `a` | `a` |
+| `img` | `span` | `span` |
+| `meta` | `li` | `li` |
+| `br` | `img` | `img` |
+| `table` | `script` | `script` |
+| `td` | `p` | `p` |
+| `tr` | `option` | `link` |
+| | | `i` |
+| | | `option`|
 
-2005
-2019
-2020
-title
-div
-div
-a
-a
-a
-img
-span
-span
-meta
-li
-li
-br
-img
-img
-table
-script
-script
-td
-p
-p
-tr
-option
-link
-
-
-
-
-i
-
-
-
-
-option
-
-Nothing changed in the Top 7, but the option element went a little out of favor and dropped from 8 to 10, letting both the link and the i element pass in popularity. These elements have risen in use, possibly due to an increase in use of resource hints (as with prerendering and prefetching), as well icon solutions like Font Awesome (which de facto misuses i elements for the purpose of displaying icons).
+Nothing changed in the Top 7, but the `option` element went a little out of favor and dropped from 8 to 10, letting both the `link` and the `i` element pass in popularity. These elements have risen in use, possibly due to an increase in use of [resource hints](https://www.w3.org/TR/resource-hints/) (as with prerendering and prefetching), as well icon solutions like [Font Awesome](https://fontawesome.com/) (which _de facto_ misuses `i` elements for the purpose of displaying icons).
 
 <div class="note">
 
-#### details and summary
+#### `details` and `summary`
 
-One thing we were curious about, too, was use of the details and summary elements, especially since 2020 brought broad support. Are they being used? Are they attractive for, even popular among authors? As it turns out, only 0.39% of all tested pages are using them—although it’s hard to gauge whether they were all used the correct way in exactly the situations when you need them, “popular” is the wrong word.
+One thing we were curious about, too, was use of [the `details` and `summary` elements](https://html.spec.whatwg.org/multipage/rendering.html#the-details-and-summary-elements), especially since 2020 [brought broad support](https://caniuse.com/details). Are they being used? Are they attractive for, even popular among authors? As it turns out, only 0.39% of all tested pages are using them—although it’s hard to gauge whether they were all used the correct way in exactly the situations when you need them, “popular” is the wrong word.
 
-Here’s a simple example showing the use of summary in a details element:
+Here’s a simple example showing the use of `summary` in a `details` element:
 
+```html
 <details>
   <summary>Status: Operational</summary>
   <p>Velocity: 12m/s</p>
   <p>Direction: North</p>
 </details>
+```
 
-A while ago, Steve Faulkner pointed out how these two elements were used poorly in the wild. As you can tell from above, for each details element you’d need a summary element that may only be used as the first child of details. 
+A while ago, [Steve Faulkner pointed out](https://twitter.com/stevefaulkner/status/806474286592561152) how these two elements were used poorly in the wild. As you can tell from above, for each `details` element you’d need a `summary` element that may only be used as the [first child of `details`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary#Usage_notes). 
 
-Accordingly we looked at the number of details and summary elements and it seems that they do continue to be misused. The count of summary elements is higher on both mobile and desktop, with a ratio of 1.11 summary elements for every details element on mobile, and 1.19 on desktop, respectively:
+Accordingly we looked at the number of `details` and `summary` elements and it seems that they do continue to be misused. The count of `summary` elements is higher on both mobile and desktop, with a ratio of 1.11 `summary` elements for every `details` element on mobile, and 1.19 on desktop, respectively:
 
-Element
-Occurrences
-
-
-Mobile (0.39%)
-Desktop (0.22%)
-summary
-62,992
-43,936
-details
-56,603
-36,743
+| Element | Occurrences | |
+| | Mobile (0.39%) | Desktop (0.22%) |
+|---|---|---|
+| `summary` | 62,992 | 43,936 |
+| `details` | 56,603 | 36,743 |
 
 </div>
 
-Probability of element use
-Another look at element popularity, how likely is it to find a certain element in the DOM of a page? Surely, html, head, body are present on every page (even though their tags are all optional), making them common elements, but what other elements are to be found?
+### Probability of element use
+
+Another look at element popularity, how likely is it to find a certain element in the DOM of a page? Surely, `html`, `head`, `body` are present on every page (even though [their tags are all optional](https://meiert.com/en/blog/optional-html/)), making them common elements, but what other elements are to be found?
+
+@@
 
 Element
 Probability
