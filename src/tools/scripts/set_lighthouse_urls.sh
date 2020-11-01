@@ -3,7 +3,8 @@
 # exit when any command fails instead of trying to continue on
 set -e
 
-echo "Setting Lighthouse URLs"
+# debug
+set -x
 
 LIGHTHOUSE_CONFIG_FILE="../.github/lighthouse/lighthouse-config-dev.json"
 LIGHTHOUSE_PROD_CONFIG_FILE="../.github/lighthouse/lighthouse-config-prod.json"
