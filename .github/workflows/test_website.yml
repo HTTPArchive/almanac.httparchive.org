@@ -39,7 +39,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         VALIDATE_HTML: true
     - name: Set the list of URLs to check
-      run: ./src/tools/scripts/set_lightouse_urls.sh
+      run: ./src/tools/scripts/set_lighthouse_urls.sh
     - name: Audit URLs using Lighthouse
       uses: treosh/lighthouse-ci-action@v3
       with:

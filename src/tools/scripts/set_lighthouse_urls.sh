@@ -45,8 +45,6 @@ BASE_URLS=$(cat <<-END
     http://localhost:8080/en/2020/
 END
 )
-# Strip spaces
-BASE_URLS=$(echo "${BASE_URLS}" | sed 's/ *//g')
 
 if [ "${production}" == "1" ]; then
     # Get the production URLs from the production sitemap
@@ -66,12 +64,12 @@ else
 fi
 
 # Format the URLs for the lighthouse config:
-LIGHTHOUSE_URLS=$(echo "${LIGHTHOUSE_URLS}" | sed 's/^/          "/' | sed 's/$/",/')
+LIGHTHOUSE_URLS=$(echo "${LIGHTHOUSE_URLS}" | sed 's/^ */          "/' | sed 's/$/",/')
 LIGHTHOUSE_URLS=${LIGHTHOUSE_URLS:0:${#LIGHTHOUSE_URLS}-1}
 
 # Take all but the first two lines of the existing config
 # So as to maintain assertions
-LIGHTHOUSE_CONFIG=$(cat ${LIGHTHOUSE_CONFIG_FILE} | sed 1,2d)
+LIGHTHOUSE_CONFIG=$(sed "1,2d" ${LIGHTHOUSE_CONFIG_FILE})
 
 #
 cat > "${LIGHTHOUSE_CONFIG_FILE}" << END_CONFIG
