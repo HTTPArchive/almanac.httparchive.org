@@ -2,7 +2,7 @@
 part_number: I
 chapter_number: 3
 title: Markup
-description: Markup chapter of the 2020 Web Almanac covering @@.
+description: Markup chapter of the 2020 Web Almanac covering general observations, the use of elements and attributes, as well as trivia and trends.
 authors: [j9t, catalinred, iandevlin]
 reviewers: [zcorpan, matuzo, bkardell]
 analysts: [tiggerito]
@@ -10,8 +10,8 @@ translators: []
 discuss: @@
 results: https://docs.google.com/spreadsheets/d/1Ta7amoUeaL4pILhWzH-SCzMX9PsZeb1x_mwrX2C4eY8/
 queries: 03_Markup
-published: 2020-10-31T00:00:00.000Z
-last_updated: 2020-10-31T00:00:00.000Z
+published: 2020-11-01T00:00:00.000Z
+last_updated: 2020-11-01T00:00:00.000Z
 ---
 
 ## Introduction
@@ -22,139 +22,180 @@ How do we use HTML, then, how great of a foundation are we looking at (and in th
 
 Last year marked a first stab at 5,790,700 pages (of which 4,371,973 were tested on desktop, 5,297,442 on mobile) and a review of the data taken. This year we looked at 7,546,709 pages (5,593,642 on desktop, 6,347,919 on mobile) using the latest data on [which websites users are visiting in 2020](./methodology), to run another analysis. We do make some comparisons to last year—but, just as we’ve tried to take some additional metrics for additional insight, we’ve also given this chapter a new personality.
 
-ℹ️ The data for all Almanac chapters is open and available. Take a look at [the results](@@) and share your own observations!
+<p class="note">The data for all Almanac chapters is open and available. Take a look at [the results](@@) and share your own observations!</p>
 
 ## General
 
-@@
-
 In this section we’re having a look at higher-level aspects of HTML, like document types, the size of documents, as well as the use of comments and scripts. “Living HTML” is very much alive!
-Doctypes
-96.99% of the sampled pages use a doctype. That is useful, because, for historic reasons (“to avoid triggering quirks mode in browsers”) HTML documents need to declare a document type.
 
-What are the most popular ones?
+### Doctypes
 
-Doctype
-Pages
-Percentage
-HTML (“HTML5”)
-5,441,815
-85.73%
-XHTML 1.0 Transitional
-382,322
-6.02%
-XHTML 1.0 Strict
-107,351
-1.69%
-HTML 4.01 Transitional
-54,379
-0.86%
-HTML 4.01 Transitional (quirky)
-38,504
-0.61%
+96.99% of the sampled pages use a doctype. That is useful, because, for historic reasons (“[to avoid triggering quirks mode](https://lists.w3.org/Archives/Public/public-html-comments/2009Jul/0020.html) in browsers”) HTML documents need to declare a document type.
+
+What are the most popular ones
+
+| Doctype | Pages | Percentage |
+|---|---|---|
+| HTML (“HTML5”) | 5,441,815 | 85.73% |
+| XHTML 1.0 Transitional | 382,322 | 6.02% |
+| XHTML 1.0 Strict | 107,351 | 1.69% |
+| HTML 4.01 Transitional | 54,379 | 0.86% |
+| HTML 4.01 Transitional ([quirky](https://hsivonen.fi/doctype/#xml)) | 38,504 | 0.61% |
 
 You can already tell how after XHTML 1.0, the numbers decrease quite a bit, and we soon enter the long tail with a few standard, some esoteric, and also bogus doctypes.
 
 What stands out are two things:
 
-Almost 10 years after the announcement of living HTML (aka “HTML5”), living HTML has clearly become not only mainstream, but the norm.
-That it had not always been like that is exemplified by the next most popular doctypes, those of XHTML 1.0. XHTML, though likely delivered as HTML (with a MIME type of text/html), is not dead yet.
-Document size
+1. Almost 10 years after [the announcement of living HTML](https://blog.whatwg.org/html-is-the-new-html5) (aka “HTML5”), living HTML has clearly become not only mainstream, but the norm.
+2. That it had not always been like that is exemplified by the next most popular doctypes, those of XHTML 1.0. XHTML, though likely delivered as HTML (with a MIME type of `text/html`), is not dead yet.
+
+### Document size
+
 In the analysis we also had a look at document size, that is, HTML bytes transferred over the network. In the set of 6.3 million documents:
 
-1,110 documents are empty (0 bytes).
-The average document size is 50.35 KB (in most cases compressed).
-The (by far) largest document weighs 64.16 MB, almost deserving its own analysis and chapter in the Almanac.
+* 1,110 documents are empty (0 bytes).
+* The average document size is 50.35 KB ([in most cases compressed](https://w3techs.com/technologies/details/ce-gzipcompression)).
+* The (by far) largest document weighs 64.16 _MB_, almost deserving its own analysis and chapter in the Almanac.
 
 How is this situation in general, then? The median document weighs 25.24 KB:
 
-Document language
-We identified 2,863 different values for the lang attribute on the html start tag (compare that to the 7,117 spoken languages as per Ethnologue). Almost all of them, according to the Accessibility chapter, seem valid.
+{{ figure_markup(
+  image="document-size.png",
+  caption="Document size",
+  description="@@",
+  width=600,
+  height=371
+  )
+}}
 
-22.36% of all documents specify no lang attribute. The commonly accepted view is that they should—but beside the idea that software could eventually detect language automatically, document language can also be specified on the protocol level. This is something we didn’t check.
+### Document language
 
-Here’s the Top 10 of (normalized) languages in our sample. At first we contemplated merging same-language values, but as the difference between en-US and en-GB, to give just one example, is pronounced, we decided not to do so.
+We identified 2,863 different values for the `lang` attribute on the `html` start tag (compare that to the [7,117 spoken languages](https://www.ethnologue.com/guides/how-many-languages) as per Ethnologue). Almost all of them, [according to the Accessibility chapter](./accessibility), seem valid.
 
-Language
-Percentage
-en
-18.08%
-en-us
-13.27%
-ja
-5.47%
-es
-4.09%
-pt-br
-2.84%
-ru
-2.53%
-en-gb
-2.19%
-de
-1.92%
-de-de
-1.60%
-ru-ru
-1.60%
-Comments
+22.36% of all documents specify no `lang` attribute. The commonly accepted view is that [they should](https://www.w3.org/TR/i18n-html-tech-lang/#overall)—but beside the idea that software could eventually [detect language automatically](https://meiert.com/en/blog/lang/), document language can also be specified [on the protocol level](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language). This is something we didn’t check.
+
+Here’s the Top 10 of (normalized) languages in our sample. At first we contemplated merging same-language values, but as the difference between `en-US` and `en-GB`, to give just one example, is pronounced, we decided not to do so.
+
+| Language | Percentage |
+|---|---|
+| `en` | 18.08% |
+| `en-us` | 13.27% |
+| `ja` | 5.47% |
+| `es` | 4.09% |
+| `pt-br` | 2.84% |
+| `ru` | 2.53% |
+| `en-gb` | 2.19% |
+| `de` | 1.92% |
+| `de-de` | 1.60% |
+| `ru-ru` | 1.60% |
+
+### Comments
+
 Adding comments to code is a good practice and HTML comments are there to add notes to HTML documents, without having them rendered by user agents.
 
+```html
 <!-- This is a comment in HTML -->
+```
 
 Although many pages will have been stripped of comments for production, we found that index pages in the 90th percentile are using about 73 comments on mobile, respectively 79 comments on desktop, while in the 10th percentile the number of the comments is about 2.
 
 According to stats we’ve gathered, around 89% of the both mobile and desktop pages contain at least one HTML comment, while about 46% of them contain a conditional comment, too.
-Conditional comments
+
+#### Conditional comments
+
+```html
 <!--[if IE 8]>
   <p>This renders in Internet Explorer 8 only.</p>
 <![endif]-->
+```
 
-The above is a non-standard HTML conditional comment. While those have proved to be helpful in the past in order to tackle browser differences, they are history for some time as Microsoft dropped conditional comments in Internet Explorer 10.
+The above is a non-standard HTML conditional comment. While those have proved to be helpful in the past in order to tackle browser differences, they are history for some time as Microsoft [dropped conditional comments](https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/hh801214(v=vs.85)) in Internet Explorer 10.
 
 Still, on the above percentile extremes, we found that web pages are using about 6 conditional comments in the 90th percentile, and 1 comment while in the 10th percentile.  Most of the pages include them for helpers such as html5shiv, selectivizr, and respond.js. While being decentish and still active pages, our conclusion is that many of them were using obsolete CMS themes.
 
 For production, HTML comments are usually stripped by build tools. Considering all the above counts and percentages—and referring to the use of comments in general—, we can only guess that lots of pages are served without involving an HTML minifier.
-Script use 
-As the top elements table will show, the script is the 6th most frequently used HTML element. From the standpoint of the Markup chapter, we were interested in the ways the script element is used across these millions of pages from the data set.
 
-Overall, around 2% (1.96% on desktop and 2.04% on mobile) of the pages we analyzed contain no scripting at all, not even scripts with the type attribute set to application/ld+json. Considering that nowadays it’s pretty common for a page to include at least one script for an analytics solution, this seems noteworthy.
+### Script use 
+
+As the top elements will show, the `script` is the 6th most frequently used HTML element. From the standpoint of the Markup chapter, we were interested in the ways the `script` element is used across these millions of pages from the data set.
+
+Overall, around 2% (1.96% on desktop and 2.04% on mobile) of the pages we analyzed contain no scripting at all, not even scripts with the `type` attribute set to `application/ld+json`. Considering that nowadays it’s pretty common for a page to include at least one script for an analytics solution, this seems noteworthy.
 
 At the opposite end of the spectrum, the numbers show that more than 97% of pages (97.65% on desktop and 97.63% on mobile) contain at least one script, either inline or external.
 
+{{ figure_markup(
+  image="script-use.png",
+  caption="Script use",
+  description="@@",
+  width=600,
+  height=371
+  )
+}}
 
+When scripting is unsupported or turned off in the browser, the `noscript` element helps to add an HTML section within a page. Considering the above script numbers, we were curious about the `noscript` element as well. 
 
-When scripting is unsupported or turned off in the browser, the noscript element helps to add an HTML section within a page. Considering the above script numbers, we were curious about the noscript element as well. 
+Following the analysis, we found that about 49% of both mobile and desktop index pages are using a `noscript` element. At the same time, 15.78% of `noscript` elements on mobile, and 17.43% of `noscript` elements on desktop were containing an `iframe` with a `src` value referring to “googletagmanager.com.”
 
-Following the analysis, we found that about 49% of both mobile and desktop index pages are using a noscript element. At the same time, 15.78% of noscript elements on mobile, and 17.43% of noscript elements on desktop were containing an iframe with a src value referring to “googletagmanager.com.”
+This seems to confirm the theory that the total number of `noscript`s in the wild may be affected by common scripts like Google Tag Manager which enforce users to add a `noscript` snippet after the `<body>` start tag on a page.
 
-This seems to confirm the theory that the total number of noscript elements in the wild may be affected by common scripts like Google Tag Manager which enforce users to add a noscript snippet after the <body> start tag on a page.
+<div class="note">
 
-ℹ️ What type attribute values are used with script elements? text/javascript (60.03%), application/ld+json (1.68%), application/json (0.41%), text/template (0.41%), and text/html (!) (0.27%).
+What `type` attribute values are used with `script` elements? `text/javascript` (60.03%), `application/ld+json` (1.68%), `application/json` (0.41%), `text/template` (0.41%), and `text/html` (!) (0.27%).
 
-When it comes to loading JavaScript module scripts using type="module", we found 0.13% of scripts to specify type="module" at the moment, with only 0.95% of them using the corresponding nomodule attribute.
+When it comes to loading JavaScript module scripts using `type="module"`, we found 0.13% of scripts to specify `type="module"` at the moment, with only 0.95% of them using the corresponding `nomodule` attribute.
 
 No value has been set on 36.38% of all scripts.
-Elements
+
+</div>
+
+## Elements
+
 In this section, the focus is on elements: What elements are used, how frequently, which elements are likely to appear on a given page, and how the situation is with respect to custom, obsolete, and proprietary elements. Is “divitis” still a thing? Yes.
-Element diversity
+
+### Element diversity
+
 Let’s have a look at how diverse use of HTML actually is: Do authors use many different elements, or are we looking at a landscape that makes use of relatively few elements?
 
 The median web page, it turns out, uses 30 different elements, 587 times:
 
+{{ figure_markup(
+  image="element-diversity-element-types.png",
+  caption="Element diversity: element types",
+  description="@@",
+  width=600,
+  height=371
+  )
+}}
 
+{{ figure_markup(
+  image="element-diversity.png",
+  caption="Element diversity",
+  description="@@",
+  width=600,
+  height=371
+  )
+}}
 
-
-
-Given that living HTML currently has 112 elements, the 90th percentile not using more than 41 elements may suggest that HTML is not nearly being exhausted by most documents. Yet it’s hard to interpret what this really means for HTML and our use of it, as the semantic wealth that HTML offers doesn’t mean that every document would need all of it: HTML elements should be used per purpose (semantics), not per availability.
+Given that [living HTML](https://html.spec.whatwg.org/multipage/) currently has 112 elements, the 90th percentile not using more than 41 elements may suggest that HTML is not nearly being exhausted by most documents. Yet it’s hard to interpret what this really means for HTML and our use of it, as the semantic wealth that HTML offers doesn’t mean that every document would need all of it: HTML elements should be used per purpose (semantics), not per availability.
 
 How are these elements distributed?
 
+{{ figure_markup(
+  image="distribution-of-elements-per-page.png",
+  caption="Distribution of elements per page",
+  description="@@",
+  width=600,
+  height=371
+  )
+}}
 
+Not that much changed [compared to 2019](../2019/markup#fig-3)!
 
-Not that much changed compared to 2019!
-Top elements
-Last year, the Almanac featured the most frequently used elements in reference to Ian Hickson’s work in 2005. We found this useful and had a look at that data again:
+### Top elements
+
+Last year, the Almanac featured the most frequently used elements in reference to [Ian Hickson’s work in 2005](https://web.archive.org/web/20060203031713/http://code.google.com/webstats/2005-12/elements.html). We found this useful and had a look at that data again:
+
+@@
 
 2005
 2019
@@ -195,7 +236,11 @@ i
 option
 
 Nothing changed in the Top 7, but the option element went a little out of favor and dropped from 8 to 10, letting both the link and the i element pass in popularity. These elements have risen in use, possibly due to an increase in use of resource hints (as with prerendering and prefetching), as well icon solutions like Font Awesome (which de facto misuses i elements for the purpose of displaying icons).
-ℹ️ details and summary
+
+<div class="note">
+
+#### details and summary
+
 One thing we were curious about, too, was use of the details and summary elements, especially since 2020 brought broad support. Are they being used? Are they attractive for, even popular among authors? As it turns out, only 0.39% of all tested pages are using them—although it’s hard to gauge whether they were all used the correct way in exactly the situations when you need them, “popular” is the wrong word.
 
 Here’s a simple example showing the use of summary in a details element:
@@ -222,6 +267,9 @@ summary
 details
 56,603
 36,743
+
+</div>
+
 Probability of element use
 Another look at element popularity, how likely is it to find a certain element in the DOM of a page? Surely, html, head, body are present on every page (even though their tags are all optional), making them common elements, but what other elements are to be found?
 
@@ -347,8 +395,15 @@ noframes
 0.24%
 
 Why are these still alive—even spacer is still being used 1,584 times, and present on every 5,000th page. We know that Google has been using a center element on their homepage for 22 years now, but does that find so many imitators?
-ℹ️ isindex
+
+<div class="note">
+
+#### isindex
+
 If you were wondering: The isindex element was used present once. (It was part of the HTML specs until version 4.01, and of XHTML in 1.0, yet only properly specified in 2006, and removed in 2016.)
+
+</div>
+
 Proprietary and made-up elements
 In our set of elements we found some that were neither standard HTML (nor SVG nor MathML) elements, nor custom ones, nor obsolete ones, but somewhat proprietary ones. The Top 10 that we identified were the following:
 
@@ -497,7 +552,8 @@ data-requirecontext
 
 Attributes like data-type, data-id, and data-src can have multiple generic uses although data-src is used a lot with lazy image loading via JavaScript (e.g., Bootstrap 4). Bootstrap again explains the presence of data-toggle, where it’s used as a state styling hook on toggle buttons. The Slick carousel plugin is the source of data-slick-index, whereas data-element_type is part of Elementor’s WordPress website builder. Both data-requiremodule and data-requirecontext, then, are part of RequireJS.
 
-ℹ️ Interestingly, the use of native lazy loading on images is similar to that of data-src. 3.86% of img elements use the loading attribute with a value of lazy (this appears to be growing very fast, as back in February, this number was about 0.8%). It’s possible that these are being used together for a cross-browser solution.
+<p class="note">Interestingly, the use of native lazy loading on images is similar to that of data-src. 3.86% of img elements use the loading attribute with a value of lazy (this appears to be growing very fast, as back in February, this number was about 0.8%). It’s possible that these are being used together for a cross-browser solution.</p>
+
 Miscellaneous
 We’ve covered use of HTML in general as well as the situation around elements and attributes. In this section we’re reviewing special cases around viewports, favicons, buttons and inputs, but also links. Too many links may still point to “http” URLs is one thing we note here.
 viewport specifications
@@ -531,7 +587,8 @@ width=device-width
 
 The results show that almost half of the pages we analyzed are using the typical viewport content value. Still, around 688K mobile pages (and 904K desktop pages) are entirely missing a proper content value for the meta viewport element, with the rest of them using an improper combination of maximum-scale, minimum-scale, user-scalable=no, or user-scalable=0.
 
-ℹ️ For a while now the Edge mobile browser allows to zoom into a web page to at least 500%, regardless of the zoom settings defined by a web page employing the viewport meta element.
+<p class="note">For a while now the Edge mobile browser allows to zoom into a web page to at least 500%, regardless of the zoom settings defined by a web page employing the viewport meta element.</p>
+
 Favicons
 The situation around favicons is fascinating: Favicons work with or without markup—some browsers would fall back to looking at the domain root—, accept several image formats, and then also promote several dozen sizes (some tools are reported to generate 45 of them; realfavicongenerator.net would return 37 if requested to handle every case). There is, as a side note, an issue open for the HTML spec to help improve the situation.
 
@@ -606,7 +663,9 @@ Page percentage
 
 According to the numbers we gathered, about 60% of the pages contain a button element and more than half of them (32.43%) fail to specify a type attribute.
 
-ℹ️ The button element has a default type of submit, meaning that the default behavior of a button is to submit the current form data. For extra clarity, consider specifying the button type in order to avoid unexpected situations.
+<div class="note">
+
+The button element has a default type of submit, meaning that the default behavior of a button is to submit the current form data. For extra clarity, consider specifying the button type in order to avoid unexpected situations.
 
 The following table shows that a page in the 90th percentile has at least 13 native buttons, while the pages in the 10th and 25th percentiles contain no buttons at all:
 
@@ -620,6 +679,9 @@ Buttons
 5
 90
 13
+
+</div>
+
 Link targets
 What protocols do anchors—a elements—point to? We looked at that information to identify the most popular protocols. How to read this information? Each row shows how many links with that protocol we count, and on how many of all documents at least one such protocol link is being used.
 
@@ -672,7 +734,8 @@ Pages
 
 As a rule of thumb—also for usability reasons—, prefer not to use target=_blank. 
 
-ℹ️  Within the latest Safari and Firefox versions, setting target="_blank" on a elements implicitly provides the same rel behavior as setting rel="noopener". This is currently being implemented in Chromium as well.
+<p class="note">Within the latest Safari and Firefox versions, setting target="_blank" on a elements implicitly provides the same rel behavior as setting rel="noopener". This is currently being implemented in Chromium as well.</p>
+
 Status and trends
 We’ve sprinkled some observations throughout the chapter, and you’ll have made your own observations. At the end of this 2020 analysis, here are some things that stood out for us.
 
