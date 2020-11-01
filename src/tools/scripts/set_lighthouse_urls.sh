@@ -35,12 +35,6 @@ if [ -d "src" ]; then
   cd src || exit
 fi
 
-SED_FLAGS=(-i -e)
-if [ "$(uname)" = "Darwin" ]; then
-  echo "Running MacOS"
-  SED_FLAGS=(-i "" -e)
-fi
-
 LIGHTHOUSE_URLS=""
 
 # Set some URLs that should always be checked on pull requests
