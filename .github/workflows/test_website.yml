@@ -43,12 +43,12 @@ jobs:
       env:
         RUN_TYPE: ${{ github.event_name }}
         COMMIT_SHA: ${{ github.sha }}
-      run: ./src/tools/scripts/set_lighthouse_urls.sh -p
+      run: ./src/tools/scripts/set_lighthouse_urls.sh
     - name: Audit URLs using Lighthouse
       uses: treosh/lighthouse-ci-action@v3
       id: LHCIAction
       with:
-        configPath: .github/lighthouse/lighthouse-config-prod.json # test assertions
+        configPath: .github/lighthouse/lighthouse-config-dev.json # test assertions
         uploadArtifacts: true # save results as an action artifacts
         temporaryPublicStorage: true # upload lighthouse report to the temporary storage
     - name: Show Lighthouse outputs
