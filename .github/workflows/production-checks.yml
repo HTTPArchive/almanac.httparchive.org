@@ -6,7 +6,6 @@
 #
 name: Production Checks
 on:
-  workflow_dispatch:
   schedule:
     #        ┌───────────── minute (0 - 59)
     #        │ ┌───────────── hour (0 - 23)
@@ -18,19 +17,20 @@ on:
     #        │ │ │ │ │
     #        * * * * *
     - cron: '30 1 * * 0'
+  workflow_dispatch:
 jobs:
   checks:
     runs-on: ubuntu-latest
     if: github.repository == 'bazzadp/almanac.httparchive.org'
     steps:
-    - name: Set the list of URLs to check
-      run: ./src/tools/scripts/set_lighthouse_urls.sh -p
-    - name: Audit URLs using Lighthouse
-      uses: treosh/lighthouse-ci-action@v3
-      id: LHCIAction
-      with:
-        configPath: .github/lighthouse/lighthouse-config-prod.json # test assertions
-        uploadArtifacts: true # save results as an action artifacts
-        temporaryPublicStorage: true # upload lighthouse report to the temporary storage
-    - name: Show Lighthouse outputs
-      run: echo ${{steps.LHCIAction.outputs.manifest}}
+      - name: Set the list of URLs to check
+        run: ./src/tools/scripts/set_lighthouse_urls.sh -p
+      - name: Audit URLs using Lighthouse
+        uses: treosh/lighthouse-ci-action@v3
+        id: LHCIAction
+        with:
+          configPath: .github/lighthouse/lighthouse-config-prod.json # test assertions
+          uploadArtifacts: true # save results as an action artifacts
+          temporaryPublicStorage: true # upload lighthouse report to the temporary storage
+      - name: Show Lighthouse outputs
+        run: echo ${{steps.LHCIAction.outputs.manifest}}

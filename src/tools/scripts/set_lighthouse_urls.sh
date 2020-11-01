@@ -41,9 +41,9 @@ LIGHTHOUSE_URLS=""
 # Set some URLs that should always be checked on pull requests
 # to ensure basic coverage
 BASE_URLS=$(cat <<-END
-    http://127.0.0.1:8080/en/2019/
-    http://127.0.0.1:8080/en/2019/css
-    http://127.0.0.1:8080/en/2020/
+http://127.0.0.1:8080/en/2019/
+http://127.0.0.1:8080/en/2019/css
+http://127.0.0.1:8080/en/2020/
 END
 )
 
@@ -64,6 +64,9 @@ else
     # Else test every URL (except PDFs) in sitemap
     LIGHTHOUSE_URLS=$(grep loc templates/sitemap.xml | grep -v static | sed 's/ *<loc>//g' | sed 's/<\/loc>//g' | sed 's/https:\/\/almanac.httparchive.org/http:\/\/127.0.0.1:8080/g')
 fi
+
+echo "URLS to check:"
+echo "${LIGHTHOUSE_URLS}"
 
 # Format the URLs for the lighthouse config:
 LIGHTHOUSE_URLS=$(echo "${LIGHTHOUSE_URLS}" | sed 's/^ */          "/' | sed 's/$/",/')
