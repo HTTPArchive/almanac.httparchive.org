@@ -65,8 +65,7 @@ try {
 
 SELECT
   client,
-  COUNT(DISTINCT page) AS pages,
-  COUNT(0) AS freq
+  COUNT(DISTINCT page) AS pages
 FROM (
   SELECT
     client,
