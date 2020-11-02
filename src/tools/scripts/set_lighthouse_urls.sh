@@ -55,7 +55,7 @@ elif [ "${RUN_TYPE}" == "pull_request" ] && [ "${COMMIT_SHA}" != "" ]; then
     git pull --quiet
     git checkout main
     # If this is part of pull request then get list of files as those changed
-    CHANGED_FILES=$(git diff --name-only "main...${COMMIT_SHA}" | grep -v base.html | grep -v ejs | grep -v base_ | grep -v toc.html | grep -v sitemap)
+    CHANGED_FILES=$(git diff --name-only "main...${COMMIT_SHA}" --diff-filter=d content templates | grep -v base.html | grep -v ejs | grep -v base_ | grep -v toc.html | grep -v sitemap)
     git checkout --progress --force "${COMMIT_SHA}"
 
     LIGHTHOUSE_URLS=$(echo "${CHANGED_FILES}" | sed 's/src\/content/http:\/\/127.0.0.1:8080/g' | sed 's/\.md//g' | sed 's/\/base\//\/en\//g' | sed 's/src\/templates/http:\/\/127.0.0.1:8080/g' | sed 's/\.html//g' | sed 's/_/-/g' | sed 's/\/2019\/accessibility-statement/\/accessibility-statement/g' )
