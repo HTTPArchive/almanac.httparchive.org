@@ -686,6 +686,7 @@ header .cta {
 .year-switcher select::-ms-expand {
   display: none;
 }
+
 .table-of-contents-switcher option,
 .language-switcher option,
 .year-switcher option {
@@ -1328,6 +1329,7 @@ p.copyright a {
   bottom: 60px;
   border-radius: 29px 29px 29px 0;
 }
+
 .footer:not(.table-of-contents) .nav-dropdown-list {
   flex-direction: column-reverse;
 }
@@ -1365,26 +1367,29 @@ p.copyright a {
   font-weight: bold;
   font-size: 20px;
 }
+
 .nav-dropdown-list__chapter.active {
   font-weight: bold;
   text-decoration: underline;
 }
+
 .nav-dropdown-list__chapter a {
   padding: 8px 8px 8px 20px;
 }
+
 .nav-dropdown-list__chapter.foreword {
   padding-top: 24px;
 }
+
 .nav-dropdown-list__chapter.ebook {
   display: flex;
   flex-direction: column;
 }
-.nav-dropdown-list__chapter.ebook small {
-  padding-bottom: 0;
-}
+
 .nav-dropdown-list__chapter.ebook small {
   padding: 0 0 24px 20px;
 }
+
 .nav-dropdown-list__todo {
   opacity: 0.3;
 }
