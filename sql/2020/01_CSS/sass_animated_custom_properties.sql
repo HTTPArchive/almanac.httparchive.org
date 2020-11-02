@@ -1,4 +1,27 @@
 #standardSQL
+CREATE TEMPORARY FUNCTION getAnimatedCustomProperties(css STRING) RETURNS
+ARRAY<STRING> LANGUAGE js AS '''
+try {
+  const ast = JSON.parse(css);
+  let ret = new Set();
+
+  walkRules(ast, rule => {
+    walkDeclarations(rule.keyframes, ({property, value}) => {
+      ret.add(property);
+    }, {
+      properties: /^--/
+    });
+  }, {
+    type: "keyframes"
+  });
+
+  return [...ret];
+} catch (e) {
+  return [];
+}
+'''
+OPTIONS (library="gs://httparchive/lib/css-utils.js");
+
 CREATE TEMPORARY FUNCTION getCustomPropertiesWithComputedStyle(payload STRING) RETURNS
 ARRAY<STRING> LANGUAGE js AS '''
 try {
@@ -40,51 +63,29 @@ try {
 }
 ''';
 
-CREATE TEMPORARY FUNCTION getAnimatedCustomProperties(css STRING) RETURNS
-ARRAY<STRING> LANGUAGE js AS '''
-try {
-  const ast = JSON.parse(css);
-  let ret = new Set();
-
-  walkRules(ast, rule => {
-    walkDeclarations(rule.keyframes, ({property, value}) => {
-      ret.add(property);
-    }, {
-      properties: /^--/
-    });
-  }, {
-    type: "keyframes"
-  });
-
-  return [...ret];
-} catch (e) {
-  return [];
-}
-'''
-OPTIONS (library="gs://httparchive/lib/css-utils.js");
-
 SELECT
-  *
+  client,
+  COUNT(DISTINCT page) AS pages,
+  COUNT(0) AS freq
 FROM (
   SELECT
     client,
-    prop,
-    COUNT(DISTINCT page) AS pages,
-    COUNT(0) AS freq,
-    SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-    COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
-  FROM (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      url AS page,
-      prop
-    FROM
-      `httparchive.pages.2020_08_01_*`,
-      UNNEST(getCustomPropertiesWithComputedStyle(payload)) AS prop)
-  GROUP BY
-    client,
-    prop)
-WHERE
-  freq >= 1000
-ORDER BY
-  pct DESC
+    page,
+    prop
+  FROM
+    `httparchive.almanac.parsed_css`,
+    UNNEST(getAnimatedCustomProperties(css)) AS prop
+  WHERE
+    date = '2020-08-01')
+JOIN (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    url AS page,
+    prop
+  FROM
+    `httparchive.pages.2020_08_01_*`,
+    UNNEST(getCustomPropertiesWithComputedStyle(payload)) AS prop)
+USING
+  (client, page, prop)
+GROUP BY
+  client
