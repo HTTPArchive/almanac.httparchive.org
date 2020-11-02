@@ -104,10 +104,12 @@
 {% endblock %}
 
 {% macro nav_table_of_contents(switcher_name) %}
-  {% if switcher_name == "mobile" or switcher_name == "mobile-footer" %}
-    {{ native_table_of_contents_dropdown(switcher_name) }}
-  {% else %}
-    {{ styled_table_of_contents_dropdown(switcher_name) }}
+  {% if year == '2019' %}
+    {% if switcher_name == "mobile" or switcher_name == "mobile-footer" %}
+      {{ native_table_of_contents_dropdown(switcher_name) }}
+    {% else %}
+      {{ styled_table_of_contents_dropdown(switcher_name) }}
+    {% endif %}
   {% endif %}
 {% endmacro %}
 
@@ -115,34 +117,53 @@
 {% set current_title = metadata.get('title') if metadata else None %}
 <div class="table-of-contents-switcher">
   <label for="table-of-contents-switcher-{{switcher_name}}" class="visually-hidden">
-    Table Of Contents
+    {{ self.table_of_contents_title() }}
   </label>
   <select id="language-switcher-{{switcher_name}}">
-  <option value="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</option>
-  {% for part_config in config.outline %}
-  {% for chapter_config in part_config.chapters %}
-    {% set title = localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title %}
-    {% if chapter_config.todo %}
-      <option disabled>
-        {{ self.chapter() }} {{ chapter_config.chapter }}: {{title}}
-      </option>
-    {% else %}
-      {% if chapter_lang_exists(lang, year, chapter_config.slug) %}
-      <option 
-        {% if current_title == title %} selected {% endif %}
-        value="{{ url_for('chapter', year=year, lang=lang, chapter=chapter_config.slug) }}">
-        {{ self.chapter() }} {{ chapter_config.chapter }}: {{title}}
-      </option>
+    <option disabled selected value> {{ self.table_of_contents_title() }} </option>
+    <option value="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.foreword_title() }}</option>
+    {% for part_config in config.outline %}
+    {% for chapter_config in part_config.chapters %}
+      {% set title = localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title %}
+      {% if chapter_config.todo %}
+        <option disabled>
+          {{ self.chapter() }} {{ chapter_config.chapter }}: {{title}}
+        </option>
       {% else %}
-      <option 
-        {% if current_title == title %} selected {% endif %}
-        value="{{ url_for('chapter', year=year, lang='en', chapter=chapter_config.slug) }}">
-        {{ self.chapter() }} {{ chapter_config.chapter }}: {{title}}
-      </option>
+        {% if chapter_lang_exists(lang, year, chapter_config.slug) %}
+          {% if current_title == title %}
+            <option selected value="{{ url_for('chapter', year=year, lang=lang, chapter=chapter_config.slug) }}">
+              {{ self.chapter() }} {{ chapter_config.chapter }}: {{title}}
+            </option>
+          {% else %}
+            <option value="{{ url_for('chapter', year=year, lang=lang, chapter=chapter_config.slug) }}">
+              {{ self.chapter() }} {{ chapter_config.chapter }}: {{title}}
+            </option>
+          {% endif %}
+        {% else %}
+        {% if current_title == title %}
+          <option selected value="{{ url_for('chapter', year=year, lang='en', chapter=chapter_config.slug) }}">
+            {{ self.chapter() }} {{ chapter_config.chapter }}: {{title}}
+          </option>
+        {% else %}
+          <option value="{{ url_for('chapter', year=year, lang='en', chapter=chapter_config.slug) }}">
+            {{ self.chapter() }} {{ chapter_config.chapter }}: {{title}}
+          </option>
+        {% endif %}
+        {% endif %}
       {% endif %}
-    {% endif %}
-  {% endfor %}
-  {% endfor %}
+    {% endfor %}
+    {% endfor %}
+
+    <option value="{{ url_for('methodology', year=year, lang=lang) }}">
+      {{ self.methodology_title() }}
+    </option>
+    <option value="{{ url_for('contributors', year=year, lang=lang) }}">
+      {{ self.contributors_title() }}
+    </option>
+    <option value="/static/pdfs/web_almanac_{{ year }}_{{ lang }}.pdf">
+      {{ self.ebook_title() }}
+    </option>
   </select>
 </div>
 {% endmacro %}
@@ -150,37 +171,58 @@
 {% macro styled_table_of_contents_dropdown(switcher_name) %}
 {% set current_title = metadata.get('title') if metadata else None %}
 <div class="nav-dropdown {{switcher_name}} table-of-contents">
-  <button class="nav-dropdown-btn" aria-expanded="false" aria-label="{{ self.table_of_contents_title() }}" >{{ self.table_of_contents_title() }}</button>
+  <button class="nav-dropdown-btn enable-script" aria-expanded="false" aria-label="{{ self.table_of_contents_title() }}" >
+    <a class="js-enable-script-remove-tag" href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a>
+  </button>
   <ul class="nav-dropdown-list hidden {{switcher_name}}-list">
-    <li class="nav-dropdown-list__header">
-      <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a>
-    </li> 
-    <div class="nav-dropdown-list__horizontalrule"></div>
-      {% for part_config in config.outline %}
-      <li class="nav-dropdown-list__part">
-        {{ self.part() }} {{ localizedPartTitles[part_config.part] if localizedPartTitles[part_config.part]|length else chapter_config.title }}
-      </li>
-      {% for chapter_config in part_config.chapters %}
-      {% set title = localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title %}
-      <li class="nav-dropdown-list__chapter {% if current_title == title %}active{% endif %}">
-        {% if chapter_config.todo %}
-        <span class="nav-dropdown-list__todo">{{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }}</span>
+    
+    <li class="nav-dropdown-list__chapter foreword">
+      <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.foreword_title() }}</a>
+    </li>
+
+    {% for part_config in config.outline %}
+    <li class="nav-dropdown-list__part">
+      {{ self.part() }} {{ localizedPartTitles[part_config.part] if localizedPartTitles[part_config.part]|length else chapter_config.title }}
+    </li>
+    {% for chapter_config in part_config.chapters %}
+    {% set title = localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title %}
+    <li class="nav-dropdown-list__chapter {% if current_title == title %}active{% endif %}">
+      {% if chapter_config.todo %}
+      <span class="nav-dropdown-list__todo">{{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }}</span>
+      {% else %}
+        {% if chapter_lang_exists(lang, year, chapter_config.slug) %}
+        <a href="{{ url_for('chapter', year=year, lang=lang, chapter=chapter_config.slug) }}">
+          {{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }}
+        </a>
         {% else %}
-          {% if chapter_lang_exists(lang, year, chapter_config.slug) %}
-          <a href="{{ url_for('chapter', year=year, lang=lang, chapter=chapter_config.slug) }}">
-            {{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }}
-          </a>
-          {% else %}
-          <a href="{{ url_for('chapter', year=year, lang='en', chapter=chapter_config.slug) }}">
-            {{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }} <span class="not-translated">({{ self.translation_not_available() }})</span>
-          </a>
-          {% endif %}
+        <a href="{{ url_for('chapter', year=year, lang='en', chapter=chapter_config.slug) }}">
+          {{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }} <span class="not-translated">({{ self.translation_not_available() }})</span>
+        </a>
         {% endif %}
-      </li>
-      {% endfor %}
-      <hr class="nav-dropdown-list__horizontalrule">
+      {% endif %}
     </li>
     {% endfor %}
+    {% endfor %}
+
+    <li class="nav-dropdown-list__part">
+      {{ self.appendices() }}
+    </li>
+    <li class="nav-dropdown-list__chapter">
+      <a href="{{ url_for('methodology', year=year, lang=lang) }}">{{ self.methodology_title() }}</a>
+    </li>
+    <li class="nav-dropdown-list__chapter">
+      <a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a>
+    </li>
+
+    {% if ebook_size_in_mb and ebook_size_in_mb > 0 %}
+    <li class="nav-dropdown-list__part">
+      {{ self.ebook_title() }}
+    </li>
+    <li class="nav-dropdown-list__chapter ebook">
+      <a href="/static/pdfs/web_almanac_{{ year }}_{{ lang }}.pdf">{{ self.ebook_download() }}</a>
+      <small>{{ self.ebook_download_note() }}</small>
+    </li>
+    {% endif %}
   </ul>
 </div>
 {% endmacro %}
@@ -369,6 +411,13 @@
   {% block scripts %}
     <script nonce="{{ csp_nonce() }}">
       (function() {
+        document.querySelectorAll('.js-enable-script-remove-tag').forEach(element => {
+          var text = element.textContent;
+          var parentEl = element.parentElement;
+          parentEl.removeChild(element);
+          parentEl.innerText = text;
+        });
+
         // Language and Year switching
         var languageYearSwitchers = document.querySelectorAll('.language-switcher select, .year-switcher select, .table-of-contents-switcher select');
         for (var i = 0; i < languageYearSwitchers.length; i++) {
@@ -499,7 +548,6 @@
             }
           }
         });
-
       })();
     </script>
   {% endblock %}

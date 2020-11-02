@@ -1324,7 +1324,7 @@ p.copyright a {
   margin-top: -1px;
 }
 
-.footer.table-of-contents .nav-dropdown-list {
+.footer .nav-dropdown-list {
   bottom: 60px;
   border-radius: 29px 29px 29px 0;
 }
@@ -1358,16 +1358,10 @@ p.copyright a {
   width: max-content;
   min-width: 100%;
 }
-hr.nav-dropdown-list__horizontalrule {
-  border: 0;
-  border-top: 1px dashed #bdbdbd;
-  margin: 16px 0 0 0;
-  width: 100%;
-  opacity: 1;
-}
+
 .nav-dropdown-list__part {
   white-space: nowrap;
-  padding: 24px 8px 8px 8px;
+  padding: 16px 8px 8px 8px;
   font-weight: bold;
   font-size: 20px;
 }
@@ -1378,11 +1372,24 @@ hr.nav-dropdown-list__horizontalrule {
 .nav-dropdown-list__chapter a {
   padding: 8px 8px 8px 20px;
 }
+.nav-dropdown-list__chapter.foreword {
+  padding-top: 24px;
+}
+.nav-dropdown-list__chapter.ebook {
+  display: flex;
+  flex-direction: column;
+}
+.nav-dropdown-list__chapter.ebook small {
+  padding-bottom: 0;
+}
+.nav-dropdown-list__chapter.ebook small {
+  padding: 0 0 24px 20px;
+}
 .nav-dropdown-list__todo {
   opacity: 0.3;
 }
 
-.nav-dropdown-list .help-translate　{
+.nav-dropdown-list .help-translate {
   border-top: 1px dashed #bdbdbd;
 }
 
