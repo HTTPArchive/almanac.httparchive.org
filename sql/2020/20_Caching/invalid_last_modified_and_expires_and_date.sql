@@ -6,15 +6,15 @@ SELECT
   COUNTIF(uses_date) AS total_using_date,
   COUNTIF(uses_last_modified) AS total_using_last_modified,
   COUNTIF(uses_expires) AS total_using_expires,
-  COUNTIF(has_valid_date) AS total_using_valid_date,
-  COUNTIF(has_valid_last_modified) AS total_using_valid_last_modified,
-  COUNTIF(has_valid_expires) AS total_using_valid_expires,
+  COUNTIF(uses_date AND NOT has_valid_date) AS total_using_invalid_date,
+  COUNTIF(uses_last_modified AND NOT has_valid_last_modified) AS total_using_invalid_last_modified,
+  COUNTIF(uses_expires AND NOT has_valid_expires) AS total_using_invalid_expires,
   COUNTIF(uses_date) / COUNT(0) AS pct_using_date,
   COUNTIF(uses_last_modified) / COUNT(0) AS pct_using_last_modified,
   COUNTIF(uses_expires) / COUNT(0) AS pct_using_expires,
-  COUNTIF(has_valid_date) / COUNT(uses_date) AS pct_using_valid_date,
-  COUNTIF(has_valid_last_modified) / COUNT(uses_last_modified) AS pct_using_valid_last_modified,
-  COUNTIF(has_valid_expires) / COUNT(uses_expires) AS pct_using_valid_expires
+  COUNTIF(uses_date AND NOT has_valid_date) / COUNT(uses_date) AS pct_using_invalid_date,
+  COUNTIF(uses_last_modified AND NOT has_valid_last_modified) / COUNT(uses_last_modified) AS pct_using_invalid_last_modified,
+  COUNTIF(uses_expires AND NOT has_valid_expires) / COUNT(uses_expires) AS pct_using_invalid_expires
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
