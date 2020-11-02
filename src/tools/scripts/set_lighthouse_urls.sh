@@ -52,7 +52,7 @@ if [ "${production}" == "1" ]; then
     LIGHTHOUSE_URLS=$(curl -s https://almanac.httparchive.org/sitemap.xml | grep "<loc" | grep -v static | sed 's/ *<loc>//g' | sed 's/<\/loc>//g')
     LIGHTHOUSE_CONFIG_FILE="${LIGHTHOUSE_PROD_CONFIG_FILE}"
 elif [ "${RUN_TYPE}" == "pull_request" ] && [ "${COMMIT_SHA}" != "" ]; then
-    git pull quiet
+    git pull --quiet
     git checkout main
     # If this is part of pull request then get list of files as those changed
     CHANGED_FILES=$(git diff --name-only "main...${COMMIT_SHA}" | grep -v base.html | grep -v ejs | grep -v base_ | grep -v toc.html | grep -v sitemap)
