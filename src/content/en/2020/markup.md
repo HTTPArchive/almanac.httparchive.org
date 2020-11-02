@@ -320,76 +320,54 @@ If you were wondering: The [`isindex` element](https://www.w3.org/TR/html401/int
 
 In our set of elements we found some that were neither standard HTML (nor SVG nor MathML) elements, nor custom ones, nor obsolete ones, but somewhat proprietary ones. The Top 10 that we identified were the following:
 
-@@
+| Element | Percentage of pages with this element |
+|---|---|
+| `noindex` | 0.89% |
+| `jdiv` | 0.85% |
+| `mediaelementwrapper` | 0.49% |
+| `ymaps` | 0.26% |
+| `yatag` | 0.20% |
+| `ss` | 0.11% |
+| `include` | 0.08% |
+| `olark` | 0.07% |
+| `h7` | 0.06% |
+| `limespot` | 0.05% |
 
-Element
-Percentage of pages with this element
-noindex
-0.89%
-jdiv
-0.85%
-mediaelementwrapper
-0.49%
-ymaps
-0.26%
-yatag
-0.20%
-ss
-0.11%
-include
-0.08%
-olark
-0.07%
-h7
-0.06%
-limespot
-0.05%
+The source of these elements appears to be mixed, as in some are unknown while others can be traced. The most popular one, `noindex`, is probably due to [Yandex’s recommendation](https://yandex.com/support/webmaster/adding-site/indexing-prohibition.html) of it to prohibit page indexing. `jdiv` was noted in last year’s Almanac and is from JivoChat. `mediaelementwrapper` comes from the MediaElement media player. Both `ymaps` and `yatag` are also from Yandex. The `ss` element could be from ProStores, a former ecommerce product from eBay, and `olark` may be from the Olark chat software. `h7` appears to be a mistake. `limespot` is probably related to the Limespot personalization program for ecommerce. None of these elements are part of a web standard.
 
-The source of these elements appears to be mixed, as in some are unknown while others can be traced. The most popular one, noindex, is probably due to Yandex’s recommendation of it to prohibit page indexing. jdiv was noted in last year’s Almanac and is from JivoChat. mediaelementwrapper comes from the MediaElement media player. Both ymaps and yatag are also from Yandex. The ss element could be from ProStores, a former ecommerce product from eBay, and olark may be from the Olark chat software. h7 appears to be a mistake. limespot is probably related to the Limespot personalization program for ecommerce. None of these elements are part of a web standard.
-Headings
-Headings make for a special category of elements that play an important role in sectioning and for accessibility.
+### Headings
 
-Heading
-Occurrences
-Average per page
-h1
-10,524,810
-1.66
-h2
-37,312,338
-5.88
-h3
-44,135,313
-6.96
-h4
-20,473,598
-3.23
-h5
-8,594,500
-1.36
-h6
-3,527,470
-0.56
+[Headings](https://html.spec.whatwg.org/multipage/dom.html#heading-content) make for a special category of elements that play an important role in [sectioning](https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2) and for [accessibility](https://www.w3.org/WAI/tutorials/page-structure/headings/).
+
+| Heading | Occurrences | Average per page |
+|---|---|---|
+| `h1` | 10,524,810 | 1.66 |
+| `h2` | 37,312,338 | 5.88 |
+| `h3` | 44,135,313 | 6.96 |
+| `h4` | 20,473,598 | 3.23 |
+| `h5` | 8,594,500 | 1.36 |
+| `h6` | 3,527,470 | 0.56 |
 
 Wait.
 
-Heading
-Occurrences
-Average per page
-h7
-30,073
-0.005
-h8
-9,266
-0.0015
+| Heading | Occurrences | Average per page |
+|---|---|---|
+| `h7` | 30,073 | 0.005 |
+| `h8` | 9,266 | 0.0015 |
 
 The last two have never been part of HTML, of course, and should not be used.
-Attributes
-In our analysis of attributes we were interested to see how attributes are used in documents, and how the situation is around data- attributes. We diagnose that class is the queen of all attributes.
-Top attributes
-Similar to popular elements, we were curious about the most popular attributes. Given how important the href attribute is for the Web itself, or the alt attribute in order to make information accessible, would these be most popular?
 
-Yet the most popular attribute is class—with almost 3 billion occurrences in our sample and constituting 34% of attributes in use, it’s by far the prevalent attribute:
+## Attributes
+
+In our analysis of attributes we were interested to see how attributes are used in documents, and how the situation is around `data-` attributes. We diagnose that `class` is the queen of all attributes.
+
+### Top attributes
+
+Similar to popular elements, we were curious about the most popular attributes. Given how important the `href` attribute is for the Web itself, or the `alt` attribute in order to make information [accessible](./accessibility), would these be most popular?
+
+Yet the most popular attribute is `class`—with almost 3 billion occurrences in our sample and constituting 34% of attributes in use, it’s by far the prevalent attribute:
+
+@@
 
 Attribute
 Occurrences
