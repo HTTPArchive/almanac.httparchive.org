@@ -10,6 +10,13 @@ translators: []
 discuss: 1769
 results: https://docs.google.com/spreadsheets/d/1FDYe6QdoY3UtXodE2estTdwMsTG-hHNrOe9wEYLlwAw/
 queries: 14_CMS
+featured_quote: The general term Content Management System (CMS) refers to systems enabling individuals and organizations to create, manage, and publish content. A CMS for web content, specifically, is a system aimed at creating, managing, and publishing content to be consumed and experienced via the open web. Each CMS implements some subset of a wide range of content management capabilities and the corresponding mechanisms for users to build websites easily and effectively around their content.
+featured_stat_1: 40%
+featured_stat_label_1: Pages powered by a CMS
+featured_stat_2: 74%
+featured_stat_label_2: CMS sites that use WordPress
+featured_stat_3: 1,232 KB
+featured_stat_label_3: Median image KB loaded per desktop CMS page.
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-10-06T00:00:00.000Z
 ---

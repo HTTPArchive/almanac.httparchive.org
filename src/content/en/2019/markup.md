@@ -10,6 +10,13 @@ translators: []
 discuss: 1758
 results: https://docs.google.com/spreadsheets/d/1WnDKLar_0Btlt9UgT53Giy2229bpV4IM2D_v6OM_WzA/
 queries: 03_Markup
+featured_quote: As of July 2019, the HTTP Archive has begun collecting all used <em>element</em> names in the DOM for about 4.4 million desktop home pages, and about 5.3 million mobile home pages which we can now begin to research and dissect. This crawl encountered over 5,000 distinct <em>non-standard element names</em> in these pages, so we capped the total distinct number of elements that we count to the 'top' 5,048.
+featured_stat_1: 11
+featured_stat_label_1: Elements used on more than 90% of pages
+featured_stat_2: 15%
+featured_stat_label_2: Pages that contain deprecated elements
+featured_stat_3: 65
+featured_stat_label_3: Variants of carousels found
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-10-06T00:00:00.000Z
 ---

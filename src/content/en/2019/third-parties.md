@@ -10,6 +10,13 @@ translators: []
 discuss: 1760
 results: https://docs.google.com/spreadsheets/d/1iC4WkdadDdkqkrTY32g7hHKhXs9iHrr3Bva8CuPjVrQ/
 queries: 05_Third_Parties
+featured_quote: The open web is vast, linkable, and interoperable by design. The ability to grab someone else’s complex library and use it on your site with a single <code>&lt;link&gt;</code> or <code>&lt;script&gt;</code> element has supercharged developers’ productivity and enabled awesome new web experiences; on the flip side, the immense popularity of a select few third-party providers raises important performance and privacy concerns. This chapter examines the prevalence and impact of third-party code on the web in 2019, the web usage patterns that lead to the popularity of third-party solutions, and potential repercussions for the future of web performance and privacy.
+featured_stat_1: 93%
+featured_stat_label_1: Pages with 3P
+featured_stat_2: 49%
+featured_stat_label_2: 3P requests
+featured_stat_3: 28%
+featured_stat_label_3: 3P bytes
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-10-06T00:00:00.000Z
 ---

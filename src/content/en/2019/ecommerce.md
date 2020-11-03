@@ -10,6 +10,13 @@ translators: []
 discuss: 1768
 results: https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/
 queries: 13_Ecommerce
+featured_quote: Nearly 10% of the home pages in this study were found to be on an ecommerce platform. An <em>ecommerce platform</em> is a set of software or services that enables you to create and operate an online store, including Paid-for services such as Shopify, software platforms such as Magento Open Source, and Hosted platforms such as Magento Commerce.
+featured_stat_1: 3.98%
+featured_stat_label_1: Sites using WooCommerce the most popular ecommerce platform
+featured_stat_2: 116
+featured_stat_label_2: Number of ecommerce platforms detected
+featured_stat_3: 1,517 KB
+featured_stat_label_3: Median image bytes per mobile ecommerce page
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-10-06T00:00:00.000Z
 ---

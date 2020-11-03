@@ -10,6 +10,13 @@ translators: []
 discuss: 1761
 results: https://docs.google.com/spreadsheets/d/108g6LXdC3YVsxmX1CCwrmpZ3-DmbB8G_wwgQHX5pn6Q/
 queries: 06_Fonts
+featured_quote: Web fonts enable beautiful and functional typography on the web. Using web fonts not only empowers design, but it democratizes a subset of design, as it allows easier access to those who might not have particularly strong design skills. However, for all the good they can do, web fonts can also do great harm to your site's performance if they are not loaded properly.
+featured_stat_1: 74.9%
+featured_stat_label_1: 3P Font Requests that use Google Fonts
+featured_stat_2: 29%
+featured_stat_label_2: Percent of pages that include a Google Fonts stylesheet link
+featured_stat_3: 718
+featured_stat_label_3: Most font requests on a single page
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-10-06T00:00:00.000Z
 ---

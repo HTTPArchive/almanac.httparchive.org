@@ -10,6 +10,13 @@ translators: []
 discuss: 1773
 results: https://docs.google.com/spreadsheets/d/1nWOo8efqDgzmA0wt1ipplziKhlReAxnVCW1HkjuFAxU/
 queries: 18_PageWeight
+featured_quote: The common argument as to why page size doesn't matter anymore is that, thanks to high-speed internet and our souped-up devices, we can serve massive, complex (and massively complex) pages to the general population. This assumption works fine, as long as you're okay with ignoring the vast swathe of internet users who don't have access to said high-speed internet and souped-up devices.
+featured_stat_1: 20%
+featured_stat_label_1: Sites sending more than 6 MB of Data
+featured_stat_2: 434 KB
+featured_stat_label_2: Increase in median desktop size in last year
+featured_stat_3: 69
+featured_stat_label_3: Median requests per home page
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-10-06T00:00:00.000Z
 ---

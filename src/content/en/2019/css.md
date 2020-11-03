@@ -10,6 +10,13 @@ translators: []
 discuss: 1757
 results: https://docs.google.com/spreadsheets/d/1uFlkuSRetjBNEhGKWpkrXo4eEIsgYelxY-qR9Pd7QpM/
 queries: 02_CSS
+featured_quote: Cascading Style Sheets (CSS) are used to paint, format, and layout web pages. Their capabilities span concepts as simple as text color to 3D perspective. It also has hooks to empower developers to handle varying screen sizes, viewing contexts, and printing. CSS helps developers wrangle content and ensure it's adapting properly to the user.
+featured_stat_1: 5%
+featured_stat_label_1: Pages using custom properties
+featured_stat_2: 2%
+featured_stat_label_2: Sites that use CSS Grid
+featured_stat_3: 780
+featured_stat_label_3: Number of digits in largest Z-Index value
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-10-06T00:00:00.000Z
 ---

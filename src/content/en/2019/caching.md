@@ -10,6 +10,13 @@ translators: []
 discuss: 1771
 results: https://docs.google.com/spreadsheets/d/1mnq03DqrRBwxfDV05uEFETK0_hPbYOynWxZkV3tFgNk/
 queries: 16_Caching
+featured_quote: Caching is a technique that enables the reuse of previously downloaded content. It provides a significant performance benefit by avoiding costly network requests and it also helps scale an application by reducing the traffic to a website's origin infrastructure. There's an old saying, &quot;the fastest request is the one that you don't have to make,&quot; and caching is one of the key ways to avoid having to make requests.
+featured_stat_1: 27%
+featured_stat_label_1: Responses not using any caching headers
+featured_stat_2: 39%
+featured_stat_label_2: Responses using the <code>Vary</code> header
+featured_stat_3: 82%
+featured_stat_label_3: Sites that could save 1Mb by optimising caching better
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-10-06T00:00:00.000Z
 ---
