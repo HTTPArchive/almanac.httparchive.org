@@ -212,7 +212,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
               {{ localizedChapterTitles[prev_chapter['slug']] if localizedChapterTitles[prev_chapter['slug']]|length else prev_chapter['title'] }}
           </span>
       </a>
-      {% else %}
+      {% elif chapter_lang_exists('en', year, prev_chapter['slug']) %}
       <a id="previous-chapter" title="{{ self.previous() }}" href="/en/{{year}}/{{prev_chapter['slug']}}">
           <span class="arrow" aria-hidden="true">&#8963;</span>
           <span class="chapter-no">
@@ -229,7 +229,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
   {% endif %}
 
   {% if next_chapter %}
-    {% if chapter_lang_exists(lang, year, next_chapter['title'].lower().replace(' ', '-').replace('/', '') ) %}
+    {% if chapter_lang_exists(lang, year, next_chapter['slug']) %}
     <a id="next-chapter" title="{{ self.next() }}" href="/{{lang}}/{{year}}/{{next_chapter['title'].lower().replace(' ', '-').replace('/', '')}}">
             <span class="arrow" aria-hidden="true">&#8963;</span>
             <span class="chapter-no">
@@ -239,7 +239,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
               {{ localizedChapterTitles[next_chapter['slug']] if localizedChapterTitles[next_chapter['slug']]|length else next_chapter['title'] }}
             </span>
     </a>
-    {% else %}
+    {% elif chapter_lang_exists('en', year, next_chapter['slug']) %}
     <a id="next-chapter" title="{{ self.next() }}" href="/en/{{year}}/{{next_chapter['title'].lower().replace(' ', '-').replace('/', '')}}">
             <span class="arrow" aria-hidden="true">&#8963;</span>
             <span class="chapter-no">

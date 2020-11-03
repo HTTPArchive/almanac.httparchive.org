@@ -9,7 +9,7 @@ try {
   return null;
 }
 '''
-OPTIONS (library="gs://httparchive/lib/rework-utils.js");
+OPTIONS (library="gs://httparchive/lib/css-utils.js");
 
 SELECT
   percentile,
