@@ -10,6 +10,13 @@ translators: [allemas]
 discuss: 1771
 results: https://docs.google.com/spreadsheets/d/1mnq03DqrRBwxfDV05uEFETK0_hPbYOynWxZkV3tFgNk/
 queries: 16_Caching
+featured_quote: La mise en cache est une technique permettant de réutiliser un contenu précédemment téléchargé. Elle offre un avantage significatif en termes de performance en évitant de rejouer de coûteuses requêtes. La mise en cache facilite la montée en charge d'une application, en réduisant le trafic sur le réseau à destination du serveur d'origine. Un vieux dicton dit que "la requête la plus rapide est celle que vous n'avez pas à faire " et la mise en cache est l'un des principaux moyens d'éviter d'avoir à refaire des requêtes.
+featured_stat_1: 27 %
+featured_stat_label_1: des réponses n’utilisent aucun en-tête de cache.
+featured_stat_2: 39 %
+featured_stat_label_2: des réponses utilisent l’en-tête <code>Vary</code>.
+featured_stat_3: 82 %
+featured_stat_label_3: des sites pourraient économiser 1 Mo en optimisant le cache.
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-10-06T00:00:00.000Z
 ---

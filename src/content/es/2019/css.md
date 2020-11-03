@@ -12,11 +12,11 @@ results: https://docs.google.com/spreadsheets/d/1uFlkuSRetjBNEhGKWpkrXo4eEIsgYel
 queries: 02_CSS
 featured_quote: Las Hojas de Estilo en Cascada (CSS por sus siglas en inglés) se utilizan para pintar, formatear y diseñar páginas web. Sus capacidades abarcan conceptos tan simples como el color del texto hasta perspectiva 3D. También tiene ganchos para permitir a los desarrolladores manejar diferentes tamaños de pantalla, contextos de visualización e impresión. CSS ayuda a los desarrolladores a lidiar con el contenido y a asegurarse de que se adapte correctamente al usuario.
 featured_stat_1: 5%
-featured_stat_label_1: Páginas que utilizan <i lang='en'>custom properties</i>
+featured_stat_label_1: Páginas que utilizan custom properties
 featured_stat_2: 2%
-featured_stat_label_2: Sitios que utilizan <i lang='en'>CSS Grid</i>
+featured_stat_label_2: Sitios que utilizan CSS Grid
 featured_stat_3: 780
-featured_stat_label_3: Número de dígitos en el valor <i lang='en'>Z-Index</i> más grande
+featured_stat_label_3: Número de dígitos en el valor Z-Index más grande
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-11-03T00:00:00.000Z
 ---

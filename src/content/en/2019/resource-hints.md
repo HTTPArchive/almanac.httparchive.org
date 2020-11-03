@@ -14,7 +14,7 @@ featured_quote: Resource hints provide <em>hints</em> to the browser about what 
 featured_stat_1: 29%
 featured_stat_label_1: Sites using <code>dns-prefetch</code>
 featured_stat_2: 88%
-featured_stat_label_2: Resource hints using the <code>as</code> attribute.
+featured_stat_label_2: Resource hints using the <code>as</code> attribute
 featured_stat_3: 0.04%
 featured_stat_label_3: Usage of priority hints
 published: 2019-11-11T00:00:00.000Z
