@@ -5,12 +5,13 @@ title: Ecommerce
 description: Ecommerce chapter of the 2019 Web Almanac covering ecommerce platforms, payloads, images, third-parties, performance, seo, and PWAs.
 authors: [samdutton, alankent]
 reviewers: [voltek62]
+analysts: [rviscomi]
 translators: []
 discuss: 1768
 results: https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/
 queries: 13_Ecommerce
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-09-21T00:00:00.000Z
+last_updated: 2020-10-06T00:00:00.000Z
 ---
 
 ## Introduction

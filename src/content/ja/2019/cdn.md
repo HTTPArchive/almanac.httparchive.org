@@ -5,12 +5,13 @@ title: CDN
 description: CDNの採用と使用法、RTTとTLSの管理、HTTP/2の採用、キャッシング、および共通ライブラリとコンテンツCDNをカバーする2019 Web AlmanacのCDNの章。
 authors: [andydavies, colinbendell]
 reviewers: [yoavweiss, paulcalvano, pmeenan, enygren]
+analysts: [raghuramakrishnan71, rviscomi]
 translators: [ksakae]
 discuss: 1772
 results: https://docs.google.com/spreadsheets/d/1Y7kAxjxUl8puuTToe6rL3kqJLX1ftOb0nCcD8m3lZBw/
 queries: 17_CDN
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-09-21T00:00:00.000Z
+last_updated: 2020-10-06T00:00:00.000Z
 ---
 
 ## 導入
@@ -1487,6 +1488,7 @@ Webサイトは、さまざまなHTTPヘッダーを使用して、ブラウザ�
 
 {{ figure_markup(
   image="use_of_vary_on_cdn.png",
+  alt="CDNから提供されるHTMLのVaryの使用法。",
   caption="CDNから提供されるHTMLの <code>Vary</code> の使用法。",
   description="accept-encodingを示すツリーマップグラフは使用率が異なり、チャートの73％が使用されます。 Cookie（13％）とユーザーエージェント（8％）がある程度使用され、その後に他のヘッダーが完全に混在しています。",
   width=600,
@@ -1502,6 +1504,7 @@ HTMLページの場合、`Vary`の最も一般的な使用法は、`User-Agent`�
 
 {{ figure_markup(
   image="use_of_vary.png",
+  alt="HTMLとoriginとCDNから提供されるリソースのVary使用の比較。",
   caption="HTMLとoriginとCDNから提供されるリソースの <code>Vary</code> 使用の比較。",
   description="ホームページを提供するCDNの場合、Varyの最大の用途はCookieであり、その後にuser-agentが続くことを示す4つのツリーマップグラフのセット、他のリソースを提供するCDNの場合は、originであり、その後にaccept、user-agent、x-origin、およびreferrerが続きます。 originsとホームページの場合、それはuser-agentであり、その後にcookieが続きます。最後に、originsおよびその他のリソースについては、主にuser-agentであり、その後にorigin、accept、range、hostが続きます。"
   )
@@ -1525,6 +1528,7 @@ HTMLページの場合、`Vary`の最も一般的な使用法は、`User-Agent`�
 
 {{ figure_markup(
   image="fig26.png",
+  alt="CDN応答全体でのs-maxageの採用。",
   caption="CDN応答全体での <code>s-maxage</code> の採用。",
   description="jsDelivrの82％がs-maxage、レベル3の14％、Amazon CloudFrontの6.3％、Akamaiの3.3％、Fastlyの3.1％、Highwindsの3％、Cloudflareの2％、ORIGINの0.91％の応答を提供する棒グラフ、Edgecastの0.75％、Googleの0.07％。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1215102767&format=interactive"

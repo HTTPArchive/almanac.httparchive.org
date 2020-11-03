@@ -5,12 +5,13 @@ title: Caching
 description: Caching chapter of the 2019 Web Almanac covering cache-control, expires, TTLs, validitaty, vary, set-cookies, AppCache, Service Workers and opportunities.
 authors: [paulcalvano]
 reviewers: [obto, bkardell]
+analysts: [paulcalvano, obto]
 translators: []
 discuss: 1771
 results: https://docs.google.com/spreadsheets/d/1mnq03DqrRBwxfDV05uEFETK0_hPbYOynWxZkV3tFgNk/
 queries: 16_Caching
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-09-21T00:00:00.000Z
+last_updated: 2020-10-06T00:00:00.000Z
 ---
 
 ## Introduction
@@ -83,6 +84,7 @@ The tool [RedBot.org](https://redbot.org/) allows you to input a URL and see a d
 
 {{ figure_markup(
   image="ch16_fig1_redbot_example.jpg",
+  alt="Cache-Control information from RedBot.",
   caption="<code>Cache-Control</code> information from RedBot.",
   description="Redbot example response showing detailed information about when the resource was changed, whether caches can store it, how long it can be considered fresh for and warnings.",
   width=600,
@@ -96,6 +98,7 @@ If no caching headers are present in a response, then the [client is permitted t
 
 {{ figure_markup(
   image="fig2.png",
+  alt="Presence of HTTP Cache-Control and Expires headers.",
   caption="Presence of HTTP <code>Cache-Control</code> and <code>Expires</code> headers.",
   description="Two identical bar charts for mobile and desktop showing 72% of requests use Cache-Control headers, 56% use Expires and the 27% use neither.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1611664016&format=interactive"
@@ -264,6 +267,7 @@ HTTP/1.1 introduced the `Cache-Control` header, and most modern clients support 
 
 {{ figure_markup(
   image="fig7.png",
+  alt="Usage of Cache-Control versus Expires headers.",
   caption="Usage of <code>Cache-Control</code> versus <code>Expires</code> headers.",
   description="A bar chart showing 53% of responses have a `Cache-Control: max-age`, 54%-55% use `Expires`, 41%-42% use both, and 34% use neither. The figures are given for both desktop and mobile but the figures are near identical with mobile having a percentage point higher in use of expires.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1909701542&format=interactive"
@@ -336,6 +340,7 @@ For example, `cache-control: public, max-age=43200` indicates that a cached entr
 
 {{ figure_markup(
   image="fig9.png",
+  alt="Usage of Cache-Control directives on mobile.",
   caption="Usage of <code>Cache-Control</code> directives on mobile.",
   description="A bar chart of 15 cache control directives and their usage ranging from 74.8% for max-age, 37.8% for public, 27.8% for no-cache, 18% for no-store, 14.3% for private, 3.4% for immutable, 3.3% for no-transform, 2.4% for stale-while-revalidate, 2.2% for pre-check, 2.2% for post-check, 1.9% for s-maxage, 1.6% for proxy-revalidate, 0.3% for set-cookie and 0.2% for stale-if-error. The stats are near identical for desktop and mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1054108345&format=interactive",
@@ -476,6 +481,7 @@ Overall, 65% of responses are served with a `Last-Modified` header, 42% are serv
 
 {{ figure_markup(
   image="fig12.png",
+  alt="Adoption of validating freshness via Last-Modified and ETag headers for desktop websites.",
   caption="Adoption of validating freshness via <code>Last-Modified</code> and <code>ETag</code> headers for desktop websites.",
   description="A bar chart showing 64.4% of desktop requests have a last modified, 42.8% have an ETag, 37.9% have both and 30.7% have neither. The stats for mobile are almost identical at 65.3% for Last Modified, 42.8% for ETag, 38.0% for both and 29.9% for neither.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=20297100&format=interactive"
@@ -577,6 +583,7 @@ One of the risks of caching responses with `Set-Cookie` is that the cookie value
 
 {{ figure_markup(
   image="ch16_fig16_cacheable_responses_set_cookie.jpg",
+  alt="Cacheable responses of Set-Cookie responses.",
   caption="Cacheable responses of <code>Set-Cookie</code> responses.",
   description="A bar chart showing 97% of responses do not use Set-Cookie, and 3% do. This 3% is zoomed into for another bar chart showing the split of 15.3% private, 84.7% public for desktop and similar for mobile at 18.4% public and 81.6% private.",
   width=600,

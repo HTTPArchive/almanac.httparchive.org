@@ -191,7 +191,8 @@
 }
 
 .byline.reviewers,
-.byline.translators {
+.byline.translators,
+.byline.analysts {
   font-weight: normal;
 }
 
@@ -645,6 +646,10 @@ figure .fig-desktop {
   .anchor-link:hover::before,
   .anchor-link:focus::before {
     content: '';
+  }
+
+  .content ul li {
+    padding: 5px 0;
   }
 }
 

@@ -5,12 +5,13 @@ title: Fonts
 description: Fonts chapter of the 2019 Web Almanac covering where fonts are loaded from, font formats, font loading performance, variable fonts and color fonts.
 authors: [zachleat]
 reviewers: [hyperpress, AymenLoukil]
+analysts: [tjmonsi, rviscomi]
 translators: []
 discuss: 1761
 results: https://docs.google.com/spreadsheets/d/108g6LXdC3YVsxmX1CCwrmpZ3-DmbB8G_wwgQHX5pn6Q/
 queries: 06_Fonts
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-09-21T00:00:00.000Z
+last_updated: 2020-10-06T00:00:00.000Z
 ---
 
 ## Introduction
@@ -165,7 +166,7 @@ Note that while `preload` would be a nice addition to load the font files higher
 The dominance of Google Fonts here was simultaneously surprising and unsurprising at the same time. It was unsurprising in that I expected the service to be the most popular and surprising in the sheer dominance of its popularity. 75% of font requests is astounding. TypeKit was a distant single-digit second place, with the Bootstrap library accounting for an even more distant third place.
 
 {{ figure_markup(
-  caption="Percent of pages that include a Google Fonts stylesheet link in the document <code>&lt;head&gt;</code>.",
+  caption="Percent of pages that include a Google Fonts stylesheet link in the document <code><head></code>.",
   content="29%",
   classes="big-number"
 )
@@ -178,7 +179,7 @@ While the high usage of Google Fonts here is very impressive, it is also notewor
 - Or if we want to go off the deep end into super unlikely scenarios, it could mean that many people are using Google Fonts with an [HTTP `Link:` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link) instead.
 
 {{ figure_markup(
-  caption="Percent of pages that include a Google Fonts stylesheet link as the first child in the document <code>&lt;head&gt;</code>.",
+  caption="Percent of pages that include a Google Fonts stylesheet link as the first child in the document <code><head></code>.",
   content="0.4%",
   classes="big-number"
 )
@@ -538,6 +539,7 @@ Let's have a look at what `font-display` values are popular:
 
 {{ figure_markup(
   image="fig11.png",
+  alt="Usage of font-display values.",
   caption="Usage of <code>font-display</code> values.",
   description="Bar chart showing the usage of the font-display style. 2.6% of mobile pages set this style to \"swap\", 1.5% to \"auto\", 0.7% to \"block\", 0.4% to \"fallback\", 0.2% to optional, and 0.1% to \"swap\" enclosed in quotes, which is invalid. The desktop distribution is similar except \"swap\" usage is lower by 0.4 percentage points and \"auto\" usage is higher by 0.1 percentage points.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1988783738&format=interactive"
@@ -641,6 +643,7 @@ Even at 1.8% this was higher than expected, although I am excited to see this ta
 
 {{ figure_markup(
   image="fig19.png",
+  alt="Usage of font-variation-settings axes.",
   caption="Usage of <code>font-variation-settings</code> axes.",
   description="Bar chart showing the usage of the font-variation-settings property. 42% of properties on desktop pages are set to the \"opsz\" value, 32% to \"wght\", 16% to \"wdth\", 2% or fewer to \"roun\", \"crsb\", \"slnt\", \"inln\", and more. The most notable differences between desktop and mobile pages are 26% usage of \"opsz\", 38% of \"wght\", and 23% of \"wdth\".",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=699343351&format=interactive"

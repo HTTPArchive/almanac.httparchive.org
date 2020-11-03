@@ -2,7 +2,7 @@
   "settings": [
     {
       "is_live": true,
-      "supported_languages": ["en","es","fr","ja","zh-CN"],
+      "supported_languages": ["en","es","fr","ja","pt","zh-CN"],
       "ebook_languages": ["en","ja"]
     }
   ],
@@ -469,6 +469,24 @@
       "website": "https://dougsillars.com",
       "github": "dougsillars",
       "twitter": "dougsillars"
+    },
+    "eduqg": {
+      "name": "Eduardo Q. Gomes",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/17773211?v=4&s=200",
+      "website": "https://eduqg.github.io/",
+      "github": "eduqg"
+    },
+    "elaynelemos": {
+      "name": "Elayne Lemos",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars2.githubusercontent.com/u/24370436?v=4&s=200",
+      "github": "elaynelemos",
+      "linkedin": "elaynelemos"
     },
     "meyerweb": {
       "name": "Eric A. Meyer",
@@ -1050,11 +1068,21 @@
       "name": "Vincent Terrasi",
       "teams": [
         "brainstormers",
-        "authors"
+        "reviewers"
       ],
       "avatar_url": "https://avatars3.githubusercontent.com/u/2698956?v=4&s=200",
       "website": "https://data-seo.com",
       "github": "voltek62"
+    },
+    "HakaCode": {
+      "name": "William Sandres",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars0.githubusercontent.com/u/33907565?v=4&s=200",
+      "website": "https://hakacode.github.io",
+      "github": "HakaCode",
+      "twitter": "hakacode"
     },
     "yoavweiss": {
       "name": "Yoav Weiss",

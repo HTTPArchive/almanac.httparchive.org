@@ -5,12 +5,13 @@ title: CDN
 description: CDN chapter of the 2019 Web Almanac covering CDN adoption and usage, RTT & TLS management, HTTP/2 adoption, caching and common library and content CDNs.
 authors: [andydavies, colinbendell]
 reviewers: [yoavweiss, paulcalvano, pmeenan, enygren]
+analysts: [raghuramakrishnan71, rviscomi]
 translators: []
 discuss: 1772
 results: https://docs.google.com/spreadsheets/d/1Y7kAxjxUl8puuTToe6rL3kqJLX1ftOb0nCcD8m3lZBw/
 queries: 17_CDN
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-09-21T00:00:00.000Z
+last_updated: 2020-10-06T00:00:00.000Z
 ---
 
 ## Introduction
@@ -1487,6 +1488,7 @@ Another useful tool is the use of the `Vary` HTTP header. This header instructs 
 
 {{ figure_markup(
   image="use_of_vary_on_cdn.png",
+  alt="Usage of Vary for HTML served from CDNs.",
   caption="Usage of <code>Vary</code> for HTML served from CDNs.",
   description="Treemap graph showing accept-encoding dominates vary usage with 73% of the chart taken up with that. Cookie (13%) and user-agent (8%) having some usage, then a complete mixed of other headers.",
   width=600,
@@ -1502,6 +1504,7 @@ In a similar way, `Vary: Cookie` usually indicates that content that will change
 
 {{ figure_markup(
   image="use_of_vary.png",
+  alt="Comparison of Vary usage for HTML and resources served from origin and CDN.",
   caption="Comparison of <code>Vary</code> usage for HTML and resources served from origin and CDN.",
   description="Set of four treemap graphs showing that for CDNs serving home pages the biggest use of Vary is for Cookie, followed by User-agent. For CDNs serving other resources it's origin, followed by accept, user-agent, x-origin and referrer. For Origins and home pages it's user-agent, followed by cookie. Finally for Origins and other resources it's primarily user-agent followed by origin, accept, then range and host."
   )
@@ -1525,6 +1528,7 @@ The `s-maxage` directive informs proxies for how long they may cache a response.
 
 {{ figure_markup(
   image="fig26.png",
+  alt="Adoption of s-maxage across CDN responses.",
   caption="Adoption of <code>s-maxage</code> across CDN responses.",
   description="Bar chart showing 82% of jsDelivr serves responses with s-maxage, 14% of Level 3, 6.3% of Amazon CloudFront, 3.3% of Akamai, 3.1% of Fastly, 3% of Highwinds, 2% of Cloudflare, 0.91% of ORIGIN, 0.75% of Edgecast, 0.07% of Google.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1215102767&format=interactive"

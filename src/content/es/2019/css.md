@@ -5,12 +5,13 @@ title: CSS
 description: Capítulo CSS del 2019 Web Almanac que cubre el color, las unidades, los selectores, el diseño, la tipografía y las fuentes, el espaciado, la decoración, la animación y las consultas de medios.
 authors: [una, argyleink]
 reviewers: [meyerweb, huijing]
+analysts: [rviscomi]
 translators: [c-torres]
 discuss: 1757
 results: https://docs.google.com/spreadsheets/d/1uFlkuSRetjBNEhGKWpkrXo4eEIsgYelxY-qR9Pd7QpM/
 queries: 02_CSS
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-09-21T00:00:00.000Z
+last_updated: 2020-11-03T00:00:00.000Z
 ---
 
 ## Introducción
@@ -99,7 +100,7 @@ Como era de esperar, en la Figura 2.5, `px` es el tipo de unidad más utilizado,
 
 Cuando se trata de unidades basadas en el espacio físico, la unidad `cm` (or centímetros) es la más popular por mucho, seguida por `in` (pulgadas), y luego por  `Q`.Sabemos que este tipo de unidades son específicamente útiles para imprimir hojas de estilo, ¡pero ni siquiera sabíamos que la unidad `Q` existía hasta esta encuesta! ¿Sabías?
 
-<p class="note">Una versión anterior de este capítulo discutia la inesperada popularidad de la unidad<code>Q</code>. Gracias a la discusión de la comunidad <a href="https://discuss.httparchive.org/t/chapter-2-css/1757/6"></a> alrededor de este capítulo, hemos identificado que esto fue un error en nuestro análisis y hemos actualizado la Figura 2.5 en consecuencia.</p>
+<p class="note">Una versión anterior de este capítulo discutia la inesperada popularidad de la unidad<code>Q</code>. Gracias a la <a href="https://discuss.httparchive.org/t/chapter-2-css/1757/6">discusión de la comunidad</a> alrededor de este capítulo, hemos identificado que esto fue un error en nuestro análisis y hemos actualizado la Figura 2.5 en consecuencia.</p>
 
 ### Unidades basadas en el viewport
 

@@ -31,7 +31,7 @@ const generate_chapters = async () => {
   
   configs = await get_yearly_configs();
   for (const year in configs) {  
-    sitemap_languages[year] = configs[year].settings[0].supported_languages
+    sitemap_languages[year] = configs[year].settings[0].supported_languages;
   }
 
   for (const file of await find_markdown_files()) {
@@ -96,6 +96,10 @@ const parse_file = async (markdown,chapter) => {
   if (m.translators) {
     translators = parse_array(m.translators);
   }
+  let analysts;
+  if (m.analysts) {
+    analysts = parse_array(m.analysts);
+  }
 
   const metadata = {
     ...m,
@@ -103,14 +107,15 @@ const parse_file = async (markdown,chapter) => {
     chapter,
     authors,
     reviewers,
-    translators
+    translators,
+    analysts
   };
 
   return { metadata, body, toc };
 };
 
 const write_template = async (language, year, chapter, metadata, body, toc) => {
-  const template = `templates/base/${year}/chapter.ejs.html`;
+  const template = `templates/base/2019/chapter.ejs.html`;
   const path = `templates/${language}/${year}/chapters/${chapter}.html`;
 
   if (fs.existsSync(template)) {

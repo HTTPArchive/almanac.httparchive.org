@@ -16,8 +16,12 @@
 
 
 {% block mission %}
+<p>
 私たちの使命は、HTTP Archiveの生の統計やトレンドを、ウェブコミュニティの専門知識と組み合わせることです。Web Almanacは、実際のデータと信頼できるウェブの専門家に裏付けられた、ウェブの状態に関する包括的なレポートです。ページコンテンツ、ユーザー体験、パブリッシング、配布などの側面を網羅した20の章で構成されています。
+</p>
 {% endblock %}
+
+{% block read_last_years_almanac %}{{ year | int - 1 }} Web Almanacを読む{% endblock %}
 
 {% block http_archive_link %}HTTP ArchiveによるWeb Almanac{% endblock %}
 
@@ -56,9 +60,11 @@
 {% block written_by_before %}{% endblock %}
 {% block reviewed_by_before %}{% endblock %}
 {% block translated_by_before %}{% endblock %}
+{% block analysis_by_before %}{% endblock %}
 {% block written_by_after %}によって書かれた。{% endblock %}
 {% block reviewed_by_after %}によってレビュ。{% endblock %}
 {% block translated_by_after %}によって翻訳された。{% endblock %}
+{% block analysis_by_after %}による分析。{% endblock %}
 
 {% block author %}著者{% endblock %}
 {% block authors %}著者{% endblock %}
@@ -80,7 +86,11 @@
 {% block accessibility_statement %}アクセシビリティに関する声明{% endblock %}
 
 {% block featured_chapter%}注目の章{% endblock %}
-{% macro readChapter(chapter) %}<span class="featured-chapter-name">{{ chapter }}</span>の章を読む{% endmacro %}
+
+{# Check if read_chapter already defined in child template as macros can't be overridden #}
+{% if not read_chapter %}
+{% macro read_chapter(chapter) %}<span class="featured-chapter-name">{{ chapter }}</span>の章を読む{% endmacro %}
+{% endif %}
 
 {% block contributors_description %}
 Web Almanacは、ウェブ・コミュニティの努力によって実現しています。{{ self.contributors() }}人々は、企画、調査、執筆、制作の段階で数え切れないほどの時間をボランティアで費やしてきました。
@@ -119,6 +129,8 @@ Web Almanacは、ウェブ・コミュニティの努力によって実現して
 
     <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>、Web Almanacの作成者。</em></p>
 {% endblock %}
+
+{% block coming_soon %}もうすぐです！{% endblock %}
 
 {% block appendix %}付属資料{% endblock %}
 {% block appendices %}付属資料{% endblock %}

@@ -16,13 +16,16 @@ jobs:
     if: github.repository == 'HTTPArchive/almanac.httparchive.org'
     steps:
     - name: Checkout branch
-      uses: actions/checkout@v2.3.2
+      uses: actions/checkout@v2.3.3
+      with:
+        # Full git history is needed to get a proper list of changed files within `super-linter`
+        fetch-depth: 0
     - name: Setup Node.js for use with actions
       uses: actions/setup-node@v1.4.2
       with:
         node-version: 12.x
     - name: Set up Python 3.8
-      uses: actions/setup-python@v2.1.2
+      uses: actions/setup-python@v2.1.4
       with:
         python-version: '3.8'
     - name: Run the website
@@ -30,8 +33,26 @@ jobs:
     - name: Remove node modules to avoid linting errors
       run: rm -rf src/node_modules
     - name: Lint Generated HTML
-      uses: github/super-linter@v3.10.2
+      uses: docker://github/super-linter:v3.13.1
       env:
         DEFAULT_BRANCH: main
+        FILTER_REGEX_INCLUDE: src/static/html/.*
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         VALIDATE_HTML: true
+    - name: Set the list of URLs for Lighthouse to check
+      env:
+        RUN_TYPE: ${{ github.event_name }}
+        COMMIT_SHA: ${{ github.sha }}
+      run: ./src/tools/scripts/set_lighthouse_urls.sh
+    - name: Audit URLs using Lighthouse
+      uses: treosh/lighthouse-ci-action@v3
+      id: LHCIAction
+      with:
+        # For dev, turn off all timing perf audits (too unreliable) and a few others that don't work on dev
+        configPath: .github/lighthouse/lighthouse-config-dev.json
+        uploadArtifacts: true # save results as an action artifacts
+        temporaryPublicStorage: true # upload lighthouse report to the temporary storage
+    - name: Show Lighthouse outputs
+      run: |
+        # All results by URL:
+        echo '${{ steps.LHCIAction.outputs.manifest }}' | jq -r '.[] | (.summary|tostring) + " - " + .url'

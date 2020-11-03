@@ -5,12 +5,13 @@ title: CSS
 description: 色、単位、セレクター、レイアウト、タイポグラフィとフォント、間隔、装飾、アニメーション、およびメディアクエリをカバーする2019 Web AlmanacのCSS章。
 authors: [una, argyleink]
 reviewers: [meyerweb, huijing]
+analysts: [rviscomi]
 translators: [ksakae]
 discuss: 1757
 results: https://docs.google.com/spreadsheets/d/1uFlkuSRetjBNEhGKWpkrXo4eEIsgYelxY-qR9Pd7QpM/
 queries: 02_CSS
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-09-21T00:00:00.000Z
+last_updated: 2020-10-06T00:00:00.000Z
 ---
 
 ## 導入

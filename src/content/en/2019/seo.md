@@ -5,12 +5,13 @@ title: SEO
 description: SEO chapter of the 2019 Web Almanac covering content, meta tags, indexability, linking, speed, structured data, internationalization, SPAs, AMP and security.
 authors: [ymschaap, rachellcostello, AVGP]
 reviewers: [clarkeclark, andylimn, AymenLoukil, catalinred, mattludwig]
+analysts: [ymschaap]
 translators: []
 discuss: 1765
 results: https://docs.google.com/spreadsheets/d/1uARtBWwz9nJOKqKPFinAMbtoDgu5aBtOhsBNmsCoTaA/
 queries: 10_SEO
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-09-21T00:00:00.000Z
+last_updated: 2020-10-06T00:00:00.000Z
 ---
 
 ## Introduction
@@ -86,7 +87,7 @@ Meta tags allow us to give specific instructions and information to search engin
 #### Page titles
 
 {{ figure_markup(
-  caption="Percent of mobile pages that include a <code>&lt;title></code> tag.",
+  caption="Percent of mobile pages that include a <code><title></code> tag.",
   content="97%",
   classes="big-number"
 )

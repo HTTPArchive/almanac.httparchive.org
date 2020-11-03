@@ -5,12 +5,13 @@ title: フォント
 description: フォントがどこから読み込まれるか、フォントのフォーマット、フォントの読み込み性能、可変フォント、カラーフォントを網羅した2019年Web AlmanacのFontsの章。
 authors: [zachleat]
 reviewers: [hyperpress, AymenLoukil]
+analysts: [tjmonsi, rviscomi]
 translators: [ksakae]
 discuss: 1761
 results: https://docs.google.com/spreadsheets/d/108g6LXdC3YVsxmX1CCwrmpZ3-DmbB8G_wwgQHX5pn6Q/
 queries: 06_Fonts
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-09-21T00:00:00.000Z
+last_updated: 2020-10-06T00:00:00.000Z
 ---
 
 ## 序章
@@ -165,7 +166,7 @@ Googleは`https://fonts.googleapis.com`でホストされているサードパ�
 ここでのGoogle Fontsの優位性は、同時に驚くべきことであると同時に意外性のないものであった。期待していたという点では予想外でしたが、サービスの圧倒的な人気の高さには驚きました。フォントリクエストの75％というのは驚異的だ。TypeKitは一桁台の遠い2位で、Bootstrapライブラリがさらに遠い3位を占めていました。
 
 {{ figure_markup(
-  caption="ドキュメント内にGoogle Fontsスタイルシートのリンクを含むページの割合 <code>&lt;head&gt;</code> 。",
+  caption="ドキュメント内にGoogle Fontsスタイルシートのリンクを含むページの割合 <code><head></code> 。",
   content="29%",
   classes="big-number"
 )
@@ -178,7 +179,7 @@ Googleは`https://fonts.googleapis.com`でホストされているサードパ�
 - あるいは、超ありえないシナリオにまで踏み込んでみたいのであれば、多くの人が代わりに[HTTP `Link:`ヘッダー](https://developer.mozilla.org/ja/docs/Web/HTTP)を使ってGoogle Fontsを使っているということになるかもしれません。
 
 {{ figure_markup(
-  caption="ドキュメントの最初の子としてGoogle Fontsスタイルシートのリンクを含むページの割合 <code>&lt;head&gt;</code>。",
+  caption="ドキュメントの最初の子としてGoogle Fontsスタイルシートのリンクを含むページの割合 <code><head></code>。",
   content="0.4%",
   classes="big-number"
 )
@@ -365,6 +366,7 @@ Google Fontsのドキュメントでは、Google Fonts CSSの`<link>`はペー�
 
 {{ figure_markup(
   image="fig8.png",
+  alt="@font-face宣言におけるフォントフォーマットの人気度。",
   caption="<code>@font-face</code> 宣言におけるフォントフォーマットの人気度。",
   description="フォントフェイス宣言で使用されるフォーマットの人気を示す棒グラフ。デスクトップページの@font-face宣言の 69%がWOFF2形式を指定しており、11%がWOFF、10%がTrueType、8%がSVG、2%がEOT、1%未満でOpenType、TTF、OTFを指定しています。モバイルページの分布も同様です。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=700778025&format=interactive"
@@ -538,6 +540,7 @@ Google Fontsを使っているなら、スニペットを更新しよう！　Go
 
 {{ figure_markup(
   image="fig11.png",
+  alt="font-displayの値の使用法。",
   caption="<code>font-display</code> の値の使用法。",
   description="フォント表示スタイルの利用状況を示す棒グラフ。モバイルページの2.6％がこのスタイルを「swap」、1.5％が「auto」、0.7％が「block」、0.4％が「fallback」、0.2％が「optional」、0.1％が引用符で囲んだ「swap」に設定しているが、これは無効である。デスクトップの分布は、「swap」の利用率が0.4％ポイント低く、「auto」の利用率が0.1％ポイント高くなっている以外は似ている。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1988783738&format=interactive"
@@ -641,6 +644,7 @@ Google FontsはそのCSSのほとんど（すべてではないにしても）�
 
 {{ figure_markup(
   image="fig19.png",
+  alt="font-variation-settings軸の使用法。",
   caption="<code>font-variation-settings</code> 軸の使用法。",
   description="font-variation-settingsプロパティの使用状況を示す棒グラフ。デスクトップページのプロパティの42%が\"opsz\"の値に設定されており、32%が\"wght\"、16%が\"wdth\"、2%以下が\"roun\"、\"crsb\"、\"slnt\"、\"inln\"などに設定されています。デスクトップページとモバイルページで顕著な違いは、\"opsz\"の使用率が26％、\"wght\"の使用率が38％、\"wdth\"の使用率が23％となっており、\"wght\"の使用率は、\"wght\"の使用率と\"wght\"の使用率の差が大きい。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=699343351&format=interactive"

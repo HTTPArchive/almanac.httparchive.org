@@ -5,12 +5,13 @@ title: PWA
 description: PWA chapter of the 2019 Web Almanac covering service workers (registations, installability, events and filesizes), Web App Manifests properties, and Workbox.
 authors: [tomayac, jeffposnick]
 reviewers: [hyperpress, ahmadawais]
+analysts: [jrharalson]
 translators: []
 discuss: 1766
 results: https://docs.google.com/spreadsheets/d/19BI3RQc_vR9bUPPZfVsF_4gpFWLNT6P0pLcAdL-A56c/
 queries: 11_PWA
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-09-21T00:00:00.000Z
+last_updated: 2020-10-06T00:00:00.000Z
 ---
 
 ## Introduction

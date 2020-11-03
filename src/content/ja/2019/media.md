@@ -5,12 +5,13 @@ title: メディア
 description: 2019年版Web Almanacのメディアの章では、画像ファイルのサイズとフォーマット、レスポンシブ画像、クライアントのヒント、遅延読み込み、アクセシビリティ、動画を取り上げています。
 authors: [colinbendell, dougsillars]
 reviewers: [ahmadawais, eeeps]
+analysts: [dougsillars, rviscomi]
 translators: [ksakae]
 discuss: 1759
 results: https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/
 queries: 04_Media
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-09-21T00:00:00.000Z
+last_updated: 2020-10-06T00:00:00.000Z
 ---
 
 ## 序章
@@ -234,6 +235,7 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
 
  {{ figure_markup(
   image="fig13_project_perf_improvements_image_optimization.png",
+  alt="Lighthouseからの画像最適化によるページパフォーマンスの向上を予測。",
   caption="Lighthouseからの画像最適化によるページパフォーマンスの向上を予測。",
   description="10パーセンタイルでは0ms、25パーセンタイルでも同じ、50パーセンタイルでは150ms、75パーセンタイルでは1,460ms、90パーセンタイルでは5,720msの保存が可能であることを示す棒グラフです。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=167590779"
@@ -287,7 +289,7 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
 
  {{ figure_markup(
   image="fig16_top_patterns_of_img_sizes.png",
-  caption="<code>&lt;img sizes&gt;</code> のトップパターン。",
+  caption="<code><img sizes></code> のトップパターン。",
   description="1,130万枚の画像が「img sizes=\"(max-width: 300px) 100vw, 300px\"」を使用しており、「auto」が160万枚、「img sizes=\"(max-width: 767px) 89vwなどなど\"」が100万枚、「100vw」が23万枚、「300px」が13万枚であることを棒グラフで示しています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=663985412&format=interactive"
   )
@@ -301,7 +303,7 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
 
 {{ figure_markup(
   image="fig17_usage_of_accept-ch_http_v_html.png",
-  caption="<code>Accept-CH</code> ヘッダーと同等の <code>&lt;meta&gt;</code> タグの使用法。",
+  caption="<code>Accept-CH</code> ヘッダーと同等の <code><meta></code> タグの使用法。",
   description="71%が'meta http-equiv'を使用し、30% が'Accept-CH'HTTPヘッダーを使用し、1%が両方を使用していることを示す棒グラフです。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=284657706&format=interactive"
   )
@@ -329,6 +331,7 @@ HTMLでクライアントヒントを呼び出すために`<meta>`タグを使�
 
 {{ figure_markup(
   image="fig19_lighthouse_audit_offscreen.png",
+  alt="Lighthouse監査：オフスクリーン。",
   caption="Lighthouse監査：オフスクリーン。",
   description="10パーセンタイルでは画像の0%が画面外、25パーセンタイルでは2%が画面外、50パーセンタイルでは27%が画面外、75パーセンタイルでは64%が画面外、90パーセンタイルでは 84%が画面外であることを示す棒グラフです。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2123391693&format=interactive"

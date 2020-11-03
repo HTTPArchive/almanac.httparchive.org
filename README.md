@@ -14,6 +14,7 @@ The 2019 Web Almanac is available in:
 - [English](https://almanac.httparchive.org/en/2019/)
 - [French](https://almanac.httparchive.org/fr/2019/)
 - [Japanese](https://almanac.httparchive.org/ja/2019/)
+- [Portuguese](https://almanac.httparchive.org/pt/2019/)
 - [Simplified Chinese](https://almanac.httparchive.org/zh-CN/2019/)
 - [Spanish](https://almanac.httparchive.org/es/2019/)
 
@@ -28,7 +29,7 @@ See [our contributing guide](CONTRIBUTING.md).
 - August 2020: Gathering HTTP Archive data
 - September 2020: Analyzing data
 - October 2020: Writing, editing, and translating content
-- November 2020: Publishing the 2020 edition
+- December 2020: Publishing the 2020 edition
 
 ## Where to find us
 

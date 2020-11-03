@@ -5,12 +5,13 @@ title: JavaScript
 description: JavaScript chapter of the 2019 Web Almanac covering how much JavaScript we use on the web, compression, libraries and frameworks, loading, and source maps.
 authors: [housseindjirdeh]
 reviewers: [obto, paulcalvano, mathiasbynens]
+analysts: [rviscomi]
 translators: []
 discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/
 queries: 01_JavaScript
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-09-21T00:00:00.000Z
+last_updated: 2020-10-21==06T00:00:00.000Z
 featured_quote: JavaScript is the most costly resource we send to browsers; having to be downloaded, parsed, compiled, and finally executed. Although browsers have significantly decreased the time it takes to parse and compile scripts, download and execution have become the most expensive stages when JavaScript is processed by a web page.
 featured_stat_1: 89%
 featured_stat_label_1: Sites with more third-party code than first-party
@@ -76,6 +77,7 @@ Although this data shows how much longer it can take for a mobile device to proc
 
 {{ figure_markup(
   image="js-processing-reddit.png",
+  alt="JavaScript processing times for reddit.com.",
   caption='JavaScript processing times for reddit.com. From <a href="https://v8.dev/blog/cost-of-javascript-2019">The cost of JavaScript in 2019</a>.',
   description="Bar chart showing 3 different devices: at the top a Pixel 3 has small amount on both the main thread and the worker thread of less than 400ms. For a Moto G4 it is approximately 900 ms on main thread and a further 300 ms on worker thread. And the final bar is an Alcatel 1X 5059D with over 2,000 ms on the main thread and over 500 ms on worker thread.",
   width=600,
@@ -305,6 +307,7 @@ In the past number of years, the JavaScript ecosystem has seen a rise in open-so
 
 {{ figure_markup(
   image="fig12.png",
+  alt="Most frequently used frameworks on desktop.",
   caption="Most frequently used frameworks on desktop.",
   description="Bar chart showing 4.6% of sites use React, 2.0% AngularJS, 1.8% Backbone.js, 0.8% Vue.js, 0.4% Knockout.js, 0.3% Zone.js, 0.3% Angular, 0.1% AMP, 0.1% Ember.js.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1699359221&format=interactive"
@@ -426,6 +429,7 @@ Although useful, there are a number of reasons why many sites may not want to in
 
 {{ figure_markup(
   image="fig18.png",
+  alt="Percentage of sites using source maps.",
   caption="Percentage of sites using source maps.",
   description="Bar chart showing 18% of desktop sites and 17% of mobile sites use source maps.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=906754154&format=interactive"

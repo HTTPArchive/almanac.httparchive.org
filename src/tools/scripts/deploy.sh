@@ -7,6 +7,36 @@
 # exit when any command fails instead of trying to continue on
 set -e
 
+# Usage info
+show_help() {
+cat << EOF
+Usage: ${0##*/} [-hv] [-f OUTFILE] [FILE]...
+Release the Web Alamanac to Google Cloud Platform
+Requires Permissions on Google Cloud Platform for the Web Amanac account
+
+    -h   display this help and exit
+    -f   force mode (no interactive prompts for each step)
+    -n   no-promote - release a test version
+EOF
+}
+
+OPTIND=1 #Reseting is good practive
+force=0
+no_promote=0
+while getopts "h?fn" opt; do
+    case "$opt" in
+    h|\?)
+        show_help
+        exit 0
+        ;;
+    f)  force=1
+        ;;
+    n)  no_promote=1
+        ;;
+    esac
+done
+shift "$((OPTIND-1))" # Discard the options and sentinel --
+
 # These color codes allow us to colour text output when used with "echo -e"
 RED="\033[0;31m"
 GREEN="\033[0;32m"
@@ -15,6 +45,10 @@ RESET_COLOR="\033[0m" # No Color
 
 # A helper function to ask if it is OK to continue with [y/N] answer
 function check_continue {
+  if [ "$force" == "1" ]; then
+    return
+  fi
+
   read -r -n 1 -p "${1} [y/N]: " REPLY
   if [ "${REPLY}" != "Y" ] && [ "${REPLY}" != "y" ]; then
     echo
@@ -26,6 +60,18 @@ function check_continue {
 }
 
 echo "Beginning the Web Almanac deployment process"
+
+# This script must be run from src directory
+if [ -d "src" ]; then
+  cd src
+fi
+
+if [ "${no_promote}" == "1" ]; then
+  echo "Deploying to GCP (no promote)"
+  echo "Y" | gcloud app deploy --project webalmanac --no-promote
+  echo "Done"
+  exit 0
+fi
 
 # Check branch is clean first
 if [ -n "$(git status --porcelain)" ]; then 
