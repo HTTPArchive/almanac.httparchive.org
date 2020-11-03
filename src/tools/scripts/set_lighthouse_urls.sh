@@ -82,4 +82,6 @@ echo "URLS to check:"
 echo "${LIGHTHOUSE_URLS}"
 
 # Use jq to insert the URLs into the config file:
-echo ${LIGHTHOUSE_URLS} | jq -Rs '. | split("\n") | map(select(length > 0))' | jq -s '.[0] * {ci: {collect: {url: .[1]}}}' "${LIGHTHOUSE_CONFIG_FILE}" - > "${LIGHTHOUSE_CONFIG_FILE}"
+LIGHTHOUSE_CONFIG_WITH_URLS=$(echo "${LIGHTHOUSE_URLS}" | jq -Rs '. | split("\n") | map(select(length > 0))' | jq -s '.[0] * {ci: {collect: {url: .[1]}}}' "${LIGHTHOUSE_CONFIG_FILE}" -)
+
+echo "${LIGHTHOUSE_CONFIG_WITH_URLS}" > "${LIGHTHOUSE_CONFIG_FILE}"
