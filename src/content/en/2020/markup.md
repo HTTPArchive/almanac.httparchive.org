@@ -413,210 +413,141 @@ Attributes like `data-type`, `data-id`, and `data-src` can have multiple generic
 
 ## Miscellaneous
 
-@@
-
 We’ve covered use of HTML in general as well as the situation around elements and attributes. In this section we’re reviewing special cases around viewports, favicons, buttons and inputs, but also links. Too many links may still point to “http” URLs is one thing we note here.
-viewport specifications
-The viewport meta element is used to control layout on mobile browsers. While years ago the motto was kind of “Don’t forget the viewport meta element” when building a web page, eventually this became a common practice and the motto changed to “Make sure zooming and scaling are not disabled.”
 
-Users should be able to zoom and scale the text up to 500%, that’s why audits in popular tools like Lighthouse or axe fail when user-scalable="no" is used within the meta name="viewport" element, and when the maximum-scale attribute value is less than 5.
+### `viewport` specifications
 
-We had a look at the data and in order to better understand the results, we normalized it by removing spaces, converting everything to lowercase, and sorting by comma values of the content attribute.
+The viewport meta element is used to [control layout on mobile browsers](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag). While years ago the motto was kind of “Don’t forget the viewport meta element” when building a web page, eventually this became a common practice and the motto changed to “Make sure zooming and scaling are not disabled.”
 
-Content attribute value
-Occurrences
-Percentage
-initial-scale=1,width=device-width
-2,728,491
-42,98%
-blank
-688,293
-10,84%
-initial-scale=1,maximum-scale=1,width=device-width
-373,136
-5,88%
-initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width
-352,972
-5,56%
-initial-scale=1,maximum-scale=1,user-scalable=0,width=device-width
-249,662
-3,93%
-width=device-width
-231,668
-3,65%
+[Users should be able to zoom](https://dequeuniversity.com/rules/axe/4.0/meta-viewport-large) and scale the text up to 500%, that’s why audits in popular tools like [Lighthouse](https://developers.google.com/web/tools/lighthouse) or [axe](https://www.deque.com/axe/) fail when `user-scalable="no"` is used within the `meta name="viewport"` element, and when the `maximum-scale` attribute value is less than `5`.
 
-The results show that almost half of the pages we analyzed are using the typical viewport content value. Still, around 688K mobile pages (and 904K desktop pages) are entirely missing a proper content value for the meta viewport element, with the rest of them using an improper combination of maximum-scale, minimum-scale, user-scalable=no, or user-scalable=0.
+We had a look at the data and in order to better understand the results, we normalized it by removing spaces, converting everything to lowercase, and sorting by comma values of the `content` attribute.
 
-<p class="note">For a while now the Edge mobile browser allows to zoom into a web page to at least 500%, regardless of the zoom settings defined by a web page employing the viewport meta element.</p>
+| Content attribute value | Occurrences | Percentage |
+|---|---|---|
+| `initial-scale=1,width=device-width` | 2,728,491 | 42,98% |
+| blank | 688,293 | 10,84% |
+| `initial-scale=1,maximum-scale=1,width=device-width` | 373,136 | 5,88% |
+| `initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width` | 352,972 | 5,56% |
+| `initial-scale=1,maximum-scale=1,user-scalable=0,width=device-width` | 249,662 | 3,93% |
+| `width=device-width` | 231,668 | 3,65% |
 
-Favicons
-The situation around favicons is fascinating: Favicons work with or without markup—some browsers would fall back to looking at the domain root—, accept several image formats, and then also promote several dozen sizes (some tools are reported to generate 45 of them; realfavicongenerator.net would return 37 if requested to handle every case). There is, as a side note, an issue open for the HTML spec to help improve the situation.
+The results show that almost half of the pages we analyzed are using the typical viewport `content` value. Still, around 688K mobile pages (and 904K desktop pages) are entirely missing a proper `content` value for the viewport meta element, with the rest of them using an improper combination of `maximum-scale`, `minimum-scale`, `user-scalable=no`, or `user-scalable=0`.
 
-When we built our tests we didn’t check for the presence of images, but only looked at the markup. That means, when you review the following note that it’s more about how favicons are referenced rather than whether or how often they are used.
+<p class="note">For a while now the Edge mobile browser allows to [zoom into a web page to at least 500%](https://blogs.windows.com/windows-insider/2017/01/12/announcing-windows-10-insider-preview-build-15007-pc-mobile/), regardless of the zoom settings defined by a web page employing the viewport meta element.</p>
 
-Favicon format
-Ooccurrences
-Percentage
-ICO
-2,245,646
-35.38%
-PNG
-1,966,530
-30.98%
-No favicon defined
-1,643,136
-25.88%
-JPG
-319,935
-5.04%
-No extension specified (no format identifiable)
-37,011
-0.58%
-GIF
-34,559
-0.54%
-WebP
-10,605
-0.17%
-…
+### Favicons
 
+The situation around favicons is fascinating: Favicons work with or without markup—some browsers would fall back to [looking at the domain root](https://realfavicongenerator.net/faq#why_icons_in_root)—, accept several image formats, and then also promote several dozen sizes (some tools are reported to generate 45 of them; [realfavicongenerator.net](https://realfavicongenerator.net/) would return _37_ if requested to handle every case). There is, as a side note, an issue open for the HTML spec to help [improve the situation](https://github.com/whatwg/html/issues/4758).
 
+When we built our tests we didn’t check for the presence of images, but only looked at the markup. That means, when you review the following note that it’s more about _how_ favicons are referenced rather than whether or how often they are used.
 
-
-SVG
-5,328
-0.08%
+| Favicon format | Occurrences | Percentage |
+|---|---|---|
+| ICO | 2,245,646 | 35.38% |
+| PNG | 1,966,530 | 30.98% |
+| No favicon defined | 1,643,136 | 25.88% |
+| JPG | 319,935 | 5.04% |
+| No extension specified (no format identifiable) | 37,011 | 0.58% |
+| GIF | 34,559 | 0.54% |
+| WebP | 10,605 | 0.17% |
+| … | | |
+| SVG | 5,328 | 0.08% |
 
 There may be a couple of surprises in here:
 
-Support for other formats is there but ICO is still the go-to format for favicons on the Web.
-JPG is a relatively popular favicon format even though it may not yield the best results (or a comparatively large file size) for many favicon sizes.
-WebP is—twice as popular as SVG! (This might change, however, with SVG favicon support improving.)
+* Support for other formats is there but ICO is still the go-to format for favicons on the Web.
+* JPG is a relatively popular favicon format even though it may not yield the best results (or a comparatively large file size) for many favicon sizes.
+* WebP is—twice as popular as SVG! (This might change, however, with [SVG favicon support improving](https://caniuse.com/link-icon-svg).)
 
-Button and input types
+### Button and input types
+
 There has been a lot of discussion on buttons lately and how often they are misused. We looked into this to present findings on some of the native HTML buttons:
 
-Elements
-Occurrences
-Page percentage
-<button type="button">...</button>
-15,926,061
-36.41%
-<button> without type
-11,838,110
-32.43%
-<button type="submit">...</button>
-4,842,946
-28.55%
-<input type="submit" value="...">
-4,000,844
-31.82%
-<input type="button" value="...">
-1,087,182
-4.07%
-<input type="image" src="...">
-322,855
-2.69%
-<button type="reset">...</button>
-41,735
-0.49%
+| Elements | Occurrences | Page percentage |
+|---|---|---|
+| `<button type="button">…</button>` | 15,926,061 | 36.41% |
+| `<button>` without type | 11,838,110 | 32.43% |
+| `<button type="submit">…</button>` | 4,842,946 | 28.55% |
+| `<input type="submit" value="…">` | 4,000,844 | 31.82% |
+| `<input type="button" value="…">` | 1,087,182 | 4.07% |
+| `<input type="image" src="…">` | 322,855 | 2.69% |
+| `<button type="reset">…</button>` | 41,735 | 0.49% |
 
-According to the numbers we gathered, about 60% of the pages contain a button element and more than half of them (32.43%) fail to specify a type attribute.
+According to the numbers we gathered, about 60% of the pages contain a button element and more than half of them (32.43%) fail to specify a `type` attribute.
 
 <div class="note">
 
-The button element has a default type of submit, meaning that the default behavior of a button is to submit the current form data. For extra clarity, consider specifying the button type in order to avoid unexpected situations.
+The button element has a [default type of `submit`](https://dev.w3.org/html5/spec-LC/the-button-element.html), meaning that the default behavior of a button is to submit the current form data. For extra clarity, consider specifying the button type in order to avoid unexpected situations.
 
 The following table shows that a page in the 90th percentile has at least 13 native buttons, while the pages in the 10th and 25th percentiles contain no buttons at all:
 
-Percentile
-Buttons
-25
-0
-50
-1
-75
-5
-90
-13
+| Percentile | Buttons |
+|---|---|
+| 25 | 0 |
+| 50 | 1 |
+| 75 | 5 |
+| 90 | 13 |
 
 </div>
 
-Link targets
-What protocols do anchors—a elements—point to? We looked at that information to identify the most popular protocols. How to read this information? Each row shows how many links with that protocol we count, and on how many of all documents at least one such protocol link is being used.
+### Link targets
 
-Protocol
-Number of pages referencing the protocol
-Percentage
-https
-5,756,444
-90.69%
-http
-4,089,769
-64.43%
-mailto
-1,691,220
-26.64%
-javascript
-1,583,814
-24.95%
-tel
-1,335,919
-21.05%
-whatsapp
-34,643
-0.55%
-viber
-25,951
-0.41%
-skype
-22,378
-0.35%
-sms
-17,304
-0.27%
-intent
-12,807
-0.20%
+What protocols do anchors—`a` elements—point to? We looked at that information to identify the most popular protocols. How to read this information? Each row shows how many links with that protocol we count, and on how many of all documents at least one such protocol link is being used.
+
+| Protocol | Number of pages referencing the protocol | Percentage |
+|---|---|---|
+| https | 5,756,444 | 90.69% |
+| http | 4,089,769 | 64.43% |
+| mailto | 1,691,220 | 26.64% |
+| javascript | 1,583,814 | 24.95% |
+| tel | 1,335,919 | 21.05% |
+| whatsapp | 34,643 | 0.55% |
+| viber | 25,951 | 0.41% |
+| skype | 22,378 | 0.35% |
+| sms | 17,304 | 0.27% |
+| intent | 12,807 | 0.20% |
 
 We can see how “https” and “http” are most dominant, followed by “benign” links to make writing email, making phone calls, and sending messages easier. “javascript” stands out as a link target that’s still very popular even though JavaScript offers native and gracefully degrading options to work with.
-Links in new windows
-Using target="_blank" is known as a security vulnerability for some time now. Yet, within the data set we analyzed, 71.35% of the pages contain links with target="_blank", without noopener or noreferrer:
 
-Elements
-Pages
-<a target="_blank" rel="noopener noreferrer">
-13.63%
-<a target="_blank" rel="noopener">
-14.14%
-<a target="_blank" rel="noreferrer">
-0.56%
+### Links in new windows
 
-As a rule of thumb—also for usability reasons—, prefer not to use target=_blank. 
+Using `target="_blank"` is known as a [security vulnerability](https://mathiasbynens.github.io/rel-noopener/) for some time now. Yet, within the data set we analyzed, 71.35% of the pages contain links with `target="_blank"`, without `noopener` or `noreferrer`:
 
-<p class="note">Within the latest Safari and Firefox versions, setting target="_blank" on a elements implicitly provides the same rel behavior as setting rel="noopener". This is currently being implemented in Chromium as well.</p>
+| Elements | Pages |
+|---|---|
+| `<a target="_blank" rel="noopener noreferrer">` | 13.63% |
+| `<a target="_blank" rel="noopener">` | 14.14% |
+| `<a target="_blank" rel="noreferrer">` | 0.56% |
 
-Status and trends
+As a rule of thumb—also [for usability reasons](https://www.nngroup.com/articles/new-browser-windows-and-tabs/)—, prefer not to use `target=_blank`. 
+
+<p class="note">Within the latest Safari and Firefox versions, setting `target="_blank"` on a elements implicitly provides the same `rel` behavior as setting `rel="noopener"`. This is currently being [implemented in Chromium](https://bugs.chromium.org/p/chromium/issues/detail?id=898942) as well.</p>
+
+## Status and trends
+
 We’ve sprinkled some observations throughout the chapter, and you’ll have made your own observations. At the end of this 2020 analysis, here are some things that stood out for us.
 
-Fewer pages land in quirks mode. In 2016, that number was at around 7.4%, at the end of 2019, we observed 4.85%, and now we’re at about 3.97%. This trend, to quote Simon Pieters in his review of this chapter, seems indeed clear and encouraging.
+Fewer pages land in quirks mode. In 2016, that number was at [around 7.4%](https://discuss.httparchive.org/t/how-many-and-which-pages-are-in-quirks-mode/777), at the end of 2019, we observed [4.85%](https://twitter.com/zcorpan/status/1205242913908838400), and now we’re at about 3.97%. This trend, to quote Simon Pieters in his review of this chapter, seems indeed clear and encouraging.
 
-Although we lack historic data to draw the full development, “meaningless” div and span (and also i) markup has pretty much replaced the table markup we’ve observed in the 90s and early 2000’s. While one may question whether div and span elements are always used without there being a semantically more appropriate alternative, these elements are still preferable to table markup, though, as during the heyday of the old Web, these were used for everything but tabular data.
+Although we lack historic data to draw the full development, “meaningless” `div` and `span` (and also `i`) markup has pretty much replaced the table markup we’ve observed in the 90s and early 2000’s. While one may question whether `div` and `span` elements are always used without there being a semantically more appropriate alternative, these elements are still preferable to table markup, though, as during the heyday of the old Web, these were used for everything but tabular data.
 
 Elements per page and element types per page stayed roughly the same, showing no significant change in our HTML writing practice when compared to 2019. Such changes may require more time to manifest.
 
-Proprietary product-specific elements like g:plusone (used on 17,607 pages in the mobile sample) and fb:like (11,335) have almost disappeared after still being among the most popular ones last year. However, we observe more custom elements for things like Slider Revolution, AMP, and Angular. And: Elements like ym-measure, jdiv, and ymaps persist. What we imagine seeing here is that under the sea of slowly-changing practices, HTML is very much being developed and maintained, as authors toss deprecated markup and embrace new solutions.
+Proprietary product-specific elements like `g:plusone` (used on 17,607 pages in the mobile sample) and `fb:like` (11,335) have almost disappeared after still being [among the most popular ones](../2019/markup#products-and-libraries-and-their-custom-markup) last year. However, we observe more custom elements for things like Slider Revolution, AMP, and Angular. And: Elements like `ym-measure`, `jdiv`, and `ymaps` persist. What we imagine seeing here is that under the sea of slowly-changing practices, HTML is very much being developed and maintained, as authors toss deprecated markup and embrace new solutions.
 
-We’re leaving this open: What do you observe? What has caught your eye? What do you think has taken a turn for the worse—and what did improve? Leave a comment to share your thoughts!
-Conclusion
-When we don’t need to cover 14 years for analysis but only 1, one could almost get the impression that HTML is rather inert, that not much changes.
+We’re leaving this open: What do you observe? What has caught your eye? What do you think has taken a turn for the worse—and what did improve? [Leave a comment](@@) to share your thoughts!
+
+## Conclusion
+
+When we don’t need to [cover 14 years](../2019/markup) for analysis but only 1, one could almost get the impression that HTML is rather inert, that not much changes.
 
 Yet what we observe with this year’s data is that there’s lots of movement at the bottom and near the shore of said sea of HTML: We approach near-complete adoption of living HTML, are quick to prune our pages of fads (like Google and Facebook widgets), and we’re fast in adopting and shunning frameworks (both Angular and AMP—though a “component framework”—seem to have significantly lost in popularity, likely for solutions like React and Vue).
 
-And still, there are no signs we exhausted the options HTML gives us. The median of 30 different elements used on a given page, which is roughly a quarter of the elements HTML provides us with, suggests a rather one-sided use of HTML. That is supported by the immense popularity of elements like div and span, and no custom elements to potentially meet the demands that these two elements may represent. Unfortunately we couldn’t validate each document in the sample (yet we learned—to be used with caution—that of W3C-tested documents, 79% have errors), but after everything we’ve seen it looks like we’re still far from mastering the craft of HTML.
+And still, there are no signs we exhausted the options HTML gives us. The median of 30 different elements used on a given page, which is roughly a quarter of the elements HTML provides us with, suggests a rather one-sided use of HTML. That is supported by the immense popularity of elements like `div` and `span`, and no custom elements to potentially meet the demands that these two elements may represent. Unfortunately we couldn’t validate each document in the sample (yet we learned—to be used with caution—that of W3C-tested documents, [79% have errors](https://github.com/HTTPArchive/almanac.httparchive.org/issues/899#issuecomment-717856201)), but after everything we’ve seen it looks like we’re still far from mastering the craft of HTML.
 
 That suggests us to close with an appeal:
 
-Pay attention to HTML. Focus on HTML. It’s important and worthwhile to invest in HTML. HTML is a document language that may not have the charm of a programming language, and yet the Web is built on it. Use less HTML—learn what’s really needed. Use more appropriate HTML—learn what’s available and what it’s there for. And validate your HTML. Everyone can write invalid HTML—just invite the next person you meet to write an HTML document and validate the output—, but a professional developer can be expected to produce valid HTML. Writing correct and valid HTML is a craft to take pride in.
+Pay attention to HTML. Focus on HTML. It’s important and worthwhile to invest in HTML. HTML is a document language that may not have the charm of a programming language, and yet the Web is built on it. Use less HTML—learn what’s really needed. Use more appropriate HTML—learn what’s available and what it’s there for. And [validate](https://validator.w3.org/docs/why.html) your HTML. Everyone can write invalid HTML—just invite the next person you meet to write an HTML document and validate the output—, but a professional developer can be expected to produce valid HTML. Writing correct and valid HTML is a craft to take pride in.
 
 For the next edition of the Web Almanac’s chapter, let’s prepare to look closer at the craft of writing HTML—and, hopefully, how we’ve been improving on it.
