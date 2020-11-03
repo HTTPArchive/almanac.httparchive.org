@@ -1,0 +1,17 @@
+{% extends "%s/2019/base.html" % lang %}
+
+{% block featured_chapter %}Featured Chapter<br/>from the 2019 Web Almanac{% endblock %}
+{% macro read_chapter(chapter) %}Read the 2019 <span class="featured-chapter-name">{{ chapter }}</span> Chapter{% endmacro %}
+
+{% block methodology_stat_1 %}7.5M{% endblock %}
+{% block methodology_stat_2 %}31.3 TB{% endblock %}
+{% block methodology_description %}
+Unless otherwise noted, the metrics in all of the 22 chapters of the Web Almanac are sourced from the HTTP Archive dataset. HTTP Archive is a community-run project that has been tracking how the web is built since 2010. Using WebPageTest and Lighthouse under the hood, metadata about over 7.5 million websites are tested monthly and included in a public BigQuery database for analysis. The August 2020 dataset was used as the basis for the Web Almanac's metrics. For more information, see the Methodology page.
+{% endblock %}
+
+{% block foreword %}
+{% endblock %}
+
+{% set localizedContributors = {
+  }
+%}
