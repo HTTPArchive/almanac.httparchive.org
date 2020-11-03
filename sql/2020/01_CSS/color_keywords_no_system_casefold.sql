@@ -41,7 +41,7 @@ try {
 
     // Lookbehind to prevent matching on e.g. var(--color-red)
     const keywordRegex = RegExp(`\\\\b(?<!\\-)(?:${keywords.join("|")})\\\\b`, "gi");
-    const systemRegex = RegExp(`\\\\b(?<!\\-)(?:${system.join("|")})\\\\b`, "gi");
+    const systemRegex = RegExp(`\\\\b(?<!\\-)(?:${system.join("|")})\\\\b`, "g");
     const functionNames = /^(?:rgba?|hsla?|color|lab|lch|hwb)$/gi;
 
     function countMatches(haystack, needle) {
@@ -130,7 +130,7 @@ try {
       }
 
       for (let match of value.matchAll(systemRegex)) {
-        incrementByKey(usage.system, system.find(kw => kw.toLowerCase() == match[0].toLowerCase()));
+        incrementByKey(usage.system, match[0]);
       }
 
       for (let match of value.matchAll(/\\b(?<!\\-)(?:currentColor|transparent)\\b/gi)) {
