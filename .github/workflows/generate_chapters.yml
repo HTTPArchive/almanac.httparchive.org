@@ -45,14 +45,14 @@ jobs:
       with:
         node-version: 12.x
     - name: Set up Python 3.8
-      uses: actions/setup-python@v2.1.2
+      uses: actions/setup-python@v2.1.4
       with:
         python-version: '3.8'
     - name: Run the website
       run: ./src/tools/scripts/run_and_test_website.sh
     - name: Create Pull Request
       id: cpr
-      uses: peter-evans/create-pull-request@v3.4.0
+      uses: peter-evans/create-pull-request@v3.4.1
       with:
         title: Update datestamps and generate chapters
         branch-suffix: timestamp

@@ -1,11 +1,11 @@
-{% extends "%s/2019/base.html" % lang %}
+{% extends "%s/%s/base.html" % (lang, year) %}
 
 {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 
 {% block date_published %}{{ metadata.published }}{% endblock %}
 {% block date_modified %}{{ metadata.last_updated }}{% endblock %}
 
-{% block image_url %}https://almanac.httparchive.org{{ chapter_image_dir }}/hero_lg.jpg{% endblock %}
+{% block image_url %}https://almanac.httparchive.org/images/2019/{{ metadata.chapter }}/hero_lg.jpg{% endblock %}
 {% block image_height %}433{% endblock %}
 {% block image_width %}866{% endblock %}
 
@@ -29,7 +29,7 @@
 
 {% block styles %}
 {{ super() }}
-<link rel="stylesheet" href="/static/css/page.css?v=20200818061352">
+<link rel="stylesheet" href="/static/css/page.css?v=20201006091512">
 {% endblock %}
 
 {% block scripts %}
@@ -55,7 +55,7 @@ document.addEventListener("keyup", function onPress(event) {
 window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}.json";
 </script>
 
-<script src="/static/js/chapter.js?v=20200527181403" defer></script>
+<script src="/static/js/chapter.js?v=20201020135830" defer></script>
 
 {% endblock %}
 
@@ -98,6 +98,15 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
     {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %}
   {% endfor %}{{ self.reviewed_by_after() }}
   </div>
+
+  {% if metadata.get('analysts') and metadata.get('analysts') | length >= 1 %}
+  <div class="byline analysts">{{ self.analysis_by_before() }}
+  {% for analyst in metadata.get('analysts') %}
+    <a class="analyst" href="{{ url_for('contributors', year=year, lang=lang, _anchor=analyst) }}">{{ config.contributors[analyst].name if analyst in config.contributors else analyst }}</a>{{ self.comma() if not loop.last and loop.length > 2 }}
+    {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %}
+  {% endfor %}{{ self.analysis_by_after() }}
+  </div>
+  {% endif %}
 
   {% if metadata.get('translators') | length >= 1 %}
   <div class="byline translators">{{ self.translated_by_before() }}
@@ -203,7 +212,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
               {{ localizedChapterTitles[prev_chapter['slug']] if localizedChapterTitles[prev_chapter['slug']]|length else prev_chapter['title'] }}
           </span>
       </a>
-      {% else %}
+      {% elif chapter_lang_exists('en', year, prev_chapter['slug']) %}
       <a id="previous-chapter" title="{{ self.previous() }}" href="/en/{{year}}/{{prev_chapter['slug']}}">
           <span class="arrow" aria-hidden="true">&#8963;</span>
           <span class="chapter-no">
@@ -220,7 +229,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
   {% endif %}
 
   {% if next_chapter %}
-    {% if chapter_lang_exists(lang, year, next_chapter['title'].lower().replace(' ', '-').replace('/', '') ) %}
+    {% if chapter_lang_exists(lang, year, next_chapter['slug']) %}
     <a id="next-chapter" title="{{ self.next() }}" href="/{{lang}}/{{year}}/{{next_chapter['title'].lower().replace(' ', '-').replace('/', '')}}">
             <span class="arrow" aria-hidden="true">&#8963;</span>
             <span class="chapter-no">
@@ -230,7 +239,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
               {{ localizedChapterTitles[next_chapter['slug']] if localizedChapterTitles[next_chapter['slug']]|length else next_chapter['title'] }}
             </span>
     </a>
-    {% else %}
+    {% elif chapter_lang_exists('en', year, next_chapter['slug']) %}
     <a id="next-chapter" title="{{ self.next() }}" href="/en/{{year}}/{{next_chapter['title'].lower().replace(' ', '-').replace('/', '')}}">
             <span class="arrow" aria-hidden="true">&#8963;</span>
             <span class="chapter-no">
@@ -274,13 +283,13 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
             </h1>
             <!-- Show large image for large screens and high density screens and use webp when supported -->
             <picture>
-              <source media="(min-width: 327px)" type="image/webp" srcset="{{ chapter_image_dir }}/hero_lg.webp" />
-              <source media="(min-width: 327px)" type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_lg.jpg" />
-              <source type="image/webp" srcset="{{ chapter_image_dir }}/hero_lg.webp 2x" />
-              <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_lg.jpg 2x" />
-              <source type="image/webp" srcset="{{ chapter_image_dir }}/hero_sm.webp" />
-              <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_sm.jpg" />
-              <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" width="866" height="433" loading="eager" />
+              <source media="(min-width: 327px)" type="image/webp" srcset="/static/images/2019/{{ metadata.chapter }}/hero_lg.webp" />
+              <source media="(min-width: 327px)" type="image/jpeg" srcset="/static/images/2019/{{ metadata.chapter }}/hero_lg.jpg" />
+              <source type="image/webp" srcset="/static/images/2019/{{ metadata.chapter }}/hero_lg.webp 2x" />
+              <source type="image/jpeg" srcset="/static/images/2019/{{ metadata.chapter }}/hero_lg.jpg 2x" />
+              <source type="image/webp" srcset="/static/images/2019/{{ metadata.chapter }}/hero_sm.webp" />
+              <source type="image/jpeg" srcset="/static/images/2019/{{ metadata.chapter }}/hero_sm.jpg" />
+              <img src="/static/images/2019/{{ metadata.chapter }}/hero_lg.jpg" class="content-banner" alt="" width="866" height="433" loading="eager" />
             </picture>
             {{ render_byline() }}
             {{ self.main_content() }}

@@ -14,7 +14,13 @@ RETURNS STRUCT<
   meta_description_words INT64,
   meta_description_characters INT64,
   image_links INT64, 
-  text_links INT64
+  text_links INT64,
+  hash_link INT64,
+  hash_only_link INT64,
+  javascript_void_links INT64,
+  same_page_jumpto_total INT64,
+  same_page_dynamic_total INT64,
+  same_page_other_total INT64
 > LANGUAGE js AS '''
 var result = {};
 try {
@@ -42,6 +48,14 @@ try {
     
       result.image_links = anchors_rendered.image_links;
       result.text_links = anchors_rendered.text_links;
+
+      result.hash_link = anchors_rendered.hash_link;
+      result.hash_only_link = anchors_rendered.hash_only_link;
+      result.javascript_void_links = anchors_rendered.javascript_void_links;
+      result.same_page_jumpto_total = anchors_rendered.same_page.jumpto.total;
+      result.same_page_dynamic_total = anchors_rendered.same_page.dynamic.total;
+      result.same_page_other_total = anchors_rendered.same_page.other.total;
+
     }
 
     if (wpt_bodies.meta_description && wpt_bodies.meta_description.rendered && wpt_bodies.meta_description.rendered.primary) {
@@ -75,6 +89,13 @@ SELECT
 
   APPROX_QUANTILES(wpt_bodies_info.image_links, 1000)[OFFSET(percentile * 10)] AS image_links,
   APPROX_QUANTILES(wpt_bodies_info.text_links, 1000)[OFFSET(percentile * 10)] AS text_links,
+
+  APPROX_QUANTILES(wpt_bodies_info.hash_link, 1000)[OFFSET(percentile * 10)] AS hash_links,
+  APPROX_QUANTILES(wpt_bodies_info.hash_only_link, 1000)[OFFSET(percentile * 10)] AS hash_only_links,
+  APPROX_QUANTILES(wpt_bodies_info.javascript_void_links, 1000)[OFFSET(percentile * 10)] AS javascript_void_links,
+  APPROX_QUANTILES(wpt_bodies_info.same_page_jumpto_total, 1000)[OFFSET(percentile * 10)] AS same_page_jumpto_links,
+  APPROX_QUANTILES(wpt_bodies_info.same_page_dynamic_total, 1000)[OFFSET(percentile * 10)] AS same_page_dynamic_links,
+  APPROX_QUANTILES(wpt_bodies_info.same_page_other_total, 1000)[OFFSET(percentile * 10)] AS same_page_other_links,
 
   # percent of links are image links
   ROUND(APPROX_QUANTILES(SAFE_DIVIDE(wpt_bodies_info.image_links, wpt_bodies_info.image_links + wpt_bodies_info.text_links), 1000)[OFFSET(percentile * 10)], 4) AS image_links_percent,

@@ -16,8 +16,12 @@
 {% endblock %}
 
 {% block mission %}
+<p>
 Nuestra misión es combinar las estadísticas y tendencias sin procesar del HTTP Archive con la experiencia de la comunidad web. Web Almanac es un informe exhaustivo sobre el estado de la web, respaldado por datos reales y expertos web de confianza. Se compone de 20 capítulos que abarcan aspectos del contenido de la página, la experiencia del usuario, la publicación y la distribución.
+</p>
 {% endblock %}
+
+{% block read_last_years_almanac %}Lea el Web Almanac {{ year | int - 1 }}{% endblock %}
 
 {% block http_archive_link %}Página de Inicio HTTP Archive{% endblock %}
 
@@ -60,9 +64,11 @@ Nuestra misión es combinar las estadísticas y tendencias sin procesar del HTTP
 {% block written_by_before %}Escrito por{% endblock %}
 {% block reviewed_by_before %}Revisado por{% endblock %}
 {% block translated_by_before %}Traducido por{% endblock %}
+{% block analysis_by_before %}Análisis por{% endblock %}
 {% block written_by_after %}{% endblock %}
 {% block reviewed_by_after %}{% endblock %}
 {% block translated_by_after %}{% endblock %}
+{% block analysis_by_after %}{% endblock %}
 
 {% block author %}Autor(a){% endblock %}
 {% block authors %}Autores{% endblock %}
@@ -79,7 +85,11 @@ Nuestra misión es combinar las estadísticas y tendencias sin procesar del HTTP
 {% block accessibility_statement %}Declaración de accesibilidad{% endblock %}
 
 {% block featured_chapter %}Capítulo Destacado{% endblock %}
-{% macro readChapter(chapter) %}Lea el Capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
+
+{# Check if read_chapter already defined in child template as macros can't be overridden #}
+{% if not read_chapter %}
+{% macro read_chapter(chapter) %}Lea el Capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
+{% endif %}
 
 {% block contributors_description %}
 Web Almanac ha sido posible gracias al arduo trabajo de la comunidad web. {{ self.contributors() }} personas han ofrecido incontables horas en las fases de planificación, investigación, redacción y producción.
@@ -118,6 +128,8 @@ A menos que se indique lo contrario, las métricas en los 20 capítulos del Web 
 
     <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>, creador del Web Almanac</em></p>
 {% endblock %}
+
+{% block coming_soon %}¡Próximamente!{% endblock %}
 
 {% block appendix %}Apéndice{% endblock %}
 {% block appendices %}Apéndices{% endblock %}
