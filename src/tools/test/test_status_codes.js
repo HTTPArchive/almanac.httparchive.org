@@ -118,6 +118,8 @@ const test_status_codes = async () => {
   //Test 404s
   await test_404_pages();
   await test_status_code('/zz/', 404);
+  await test_status_code('/zz/2018/', 404);
+  await test_status_code('/en/2018/', 404);
   await test_status_code('/base/', 404);
   await test_status_code('/base/2019/', 404);
   await test_status_code('/base/2019/methodology', 404);
