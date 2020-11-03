@@ -81,23 +81,5 @@ fi
 echo "URLS to check:"
 echo "${LIGHTHOUSE_URLS}"
 
-# Format the URLs for the lighthouse config:
-LIGHTHOUSE_URLS=$(echo "${LIGHTHOUSE_URLS}" | sed 's/^ */          "/' | sed 's/$/",/')
-# Remove the comma on the last URL
-LIGHTHOUSE_URLS=${LIGHTHOUSE_URLS:0:${#LIGHTHOUSE_URLS}-1}
-
-# Remove the first two lines form the config
-# (we'll insert them again below when adding the URLs)
-LIGHTHOUSE_CONFIG=$(sed "1,2d" ${LIGHTHOUSE_CONFIG_FILE})
-
-# Write the new config file - including the URLs
-cat > "${LIGHTHOUSE_CONFIG_FILE}" << END_CONFIG
-{
-  "ci": {
-    "collect": {
-      "url": [
-${LIGHTHOUSE_URLS}
-      ]
-    },
-${LIGHTHOUSE_CONFIG}
-END_CONFIG
+# Use jq to insert the URLs into the config file:
+echo ${LIGHTHOUSE_URLS} | jq -Rs '. | split("\n") | map(select(length > 0))' | jq -s '.[0] * {ci: {collect: {url: .[1]}}}' "${LIGHTHOUSE_CONFIG_FILE}" - > "${LIGHTHOUSE_CONFIG_FILE}"
