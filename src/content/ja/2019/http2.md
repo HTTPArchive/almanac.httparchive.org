@@ -10,6 +10,13 @@ translators: [ksakae]
 discuss: 1775
 results: https://docs.google.com/spreadsheets/d/1z1gdS3YVpe8J9K3g2UdrtdSPhRywVQRBz5kgBeqCnbw/
 queries: 20_HTTP_2
+featured_quote: HTTP/2は、ほぼ20年ぶりになるWebのメイン送信プロトコルの初となるメジャーアップデートでした。それは多くの期待を持って到来し、欠点なしで無料のパフォーマンス向上を約束しました。それ以上に、HTTP/1.1が非効率なため強制されていたすべてのハックや回避策をやめることができました。デフォルトでパフォーマンスが向上するため、ドメインのバンドル、分割、インライン化、さらにはシャーディングなどはすべてHTTP/2の世界でアンチパターンになります。" %}
+featured_stat_1: 95%
+featured_stat_label_1: HTTP/2を使用できるグローバルユーザーの割合。
+featured_stat_2: 27.83%
+featured_stat_label_2:  準最適なHTTP/2優先順位付けによるモバイル要求の割合。
+featured_stat_3: 8.38%
+featured_stat_label_3:  QUICをサポートするモバイルサイトの割合。
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-10-06T00:00:00.000Z
 ---

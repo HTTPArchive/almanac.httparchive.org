@@ -10,6 +10,13 @@ translators: [ksakae]
 discuss: 1774
 results: https://docs.google.com/spreadsheets/d/14QBP8XGkMRfWRBbWsoHm6oDVPkYhAIIpfxRn4iOkbUU/
 queries: 19_Resource_Hints
+featured_quote: リソースヒントは、どのようなリソースがすぐに必要になるかについてブラウザに<em>ヒント</em>を提供します。このヒントを受け取った結果としてブラウザが取るアクションは、リソースヒントのタイプによって異なります。リソースヒントが正しく使用されていれば、重要なアクションを先取りすることでページのパフォーマンスを向上させることができます。" %}
+featured_stat_1: 29%
+featured_stat_label_1: <code>dns-prefetch</code>を使用しているサイト
+featured_stat_2: 88%
+featured_stat_label_2:  <code>as</code>属性を使用したリソースヒント。
+featured_stat_3: 0.04%
+featured_stat_label_3:  優先順位のヒントの使い方
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-10-06T00:00:00.000Z
 ---

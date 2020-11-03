@@ -10,6 +10,13 @@ translators: [ksakae]
 discuss: 1769
 results: https://docs.google.com/spreadsheets/d/1FDYe6QdoY3UtXodE2estTdwMsTG-hHNrOe9wEYLlwAw/
 queries: 14_CMS
+featured_quote: 一般的にコンテンツ管理システム（CMS）とは、個人や組織がコンテンツを作成、管理、公開するためのシステムのことを指します。特にウェブコンテンツのためのCMSとは、オープンウェブを介して消費され、体験されるコンテンツを作成、管理、公開することを目的としたシステムのことです。各CMSは、コンテンツ管理機能の一部を実装しており、ユーザーがコンテンツを中心としたウェブサイトを簡単かつ効果的に構築するための仕組みを提供しています。" %}
+featured_stat_1: 40%
+featured_stat_label_1: CMSを利用したページ
+featured_stat_2: 74%
+featured_stat_label_2:  WordPressを利用したCMSサイト
+featured_stat_3: 1,232 KB
+featured_stat_label_3:  デスクトップCMSページごとに読み込まれる画像KBの中央値。
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-10-06T00:00:00.000Z
 ---

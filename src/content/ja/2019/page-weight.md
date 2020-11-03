@@ -10,6 +10,13 @@ translators: [ksakae]
 discuss: 1773
 results: https://docs.google.com/spreadsheets/d/1nWOo8efqDgzmA0wt1ipplziKhlReAxnVCW1HkjuFAxU/
 queries: 18_PageWeight
+featured_quote: なぜページサイズはもう重要ではないのかという共通の議論は、高速インターネットとスープアップされたデバイスのおかげで、私たちは一般の人々に大規模で複雑な（そして大規模に複雑な）ページを提供することができるということです。この仮定は、あなたが言った高速インターネットとスープアップデバイスへのアクセスを持っていないインターネットユーザーの広大な範囲を無視して大丈夫だとしている限り、うまく動作します。" %}
+featured_stat_1: 10%
+featured_stat_label_1: 6MB以上のデータを送信しているサイト
+featured_stat_2: 434 KB
+featured_stat_label_2:  昨年のデスクトップサイズ中央値の増加
+featured_stat_3: 69
+featured_stat_label_3:  ホームページあたりのリクエストの中央値
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-10-06T00:00:00.000Z
 ---
