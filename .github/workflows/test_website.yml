@@ -54,4 +54,5 @@ jobs:
         temporaryPublicStorage: true # upload lighthouse report to the temporary storage
     - name: Show Lighthouse outputs
       run: |
+        # All results by URL:
         echo '${{ steps.LHCIAction.outputs.manifest }}' | jq -r '.[] | (.summary|tostring) + " - " + .url'

@@ -48,7 +48,7 @@ END
 if [ "${production}" == "1" ]; then
     
     # Get the production URLs from the production sitemap
-    LIGHTHOUSE_URLS=$(curl -s https://almanac.httparchive.org/sitemap.xml | grep "<loc" | grep -v static | sed 's/ *<loc>//g' | sed 's/<\/loc>//g')
+    LIGHTHOUSE_URLS=$(curl -s https://almanac.httparchive.org/sitemap.xml | grep "<loc" | grep -v "/static/" | sed 's/ *<loc>//g' | sed 's/<\/loc>//g')
 
     # Switch to the Production Config file
     LIGHTHOUSE_CONFIG_FILE="${LIGHTHOUSE_PROD_CONFIG_FILE}"
@@ -56,7 +56,7 @@ if [ "${production}" == "1" ]; then
 elif [ "${RUN_TYPE}" == "pull_request" ] && [ "${COMMIT_SHA}" != "" ]; then
 
     # If this is part of pull request then get list of files as those changed
-    # Uses similar logic to GitHub Super Linter
+    # Uses similar logic to GitHub Super Linter (https://github.com/github/super-linter/blob/master/lib/buildFileList.sh)
     # First checkout main to get list of differences
     git pull --quiet
     git checkout main
@@ -67,16 +67,14 @@ elif [ "${RUN_TYPE}" == "pull_request" ] && [ "${COMMIT_SHA}" != "" ]; then
 
     # Transform the files to http://127.0.0.1:8080 URLs
     LIGHTHOUSE_URLS=$(echo "${CHANGED_FILES}" | sed 's/src\/content/http:\/\/127.0.0.1:8080/g' | sed 's/\.md//g' | sed 's/\/base\//\/en\//g' | sed 's/src\/templates/http:\/\/127.0.0.1:8080/g' | sed 's/\.html//g' | sed 's/_/-/g' | sed 's/\/2019\/accessibility-statement/\/accessibility-statement/g' )
-    if [ "${LIGHTHOUSE_URLS}" = "" ]; then
-        LIGHTHOUSE_URLS="${BASE_URLS}"
-    else
-        LIGHTHOUSE_URLS=$( echo -e "${LIGHTHOUSE_URLS}\n${BASE_URLS}")
-    fi
+    
+    # Add base URLs and strip out newlines
+    LIGHTHOUSE_URLS=$(echo -e "${LIGHTHOUSE_URLS}\n${BASE_URLS}" | sed '/^$/d')
 
 else
 
     # Else test every URL (except PDFs) in the sitemap
-    LIGHTHOUSE_URLS=$(grep loc templates/sitemap.xml | grep -v static | sed 's/ *<loc>//g' | sed 's/<\/loc>//g' | sed 's/https:\/\/almanac.httparchive.org/http:\/\/127.0.0.1:8080/g')
+    LIGHTHOUSE_URLS=$(grep loc templates/sitemap.xml | grep -v "/static/" | sed 's/ *<loc>//g' | sed 's/<\/loc>//g' | sed 's/https:\/\/almanac.httparchive.org/http:\/\/127.0.0.1:8080/g')
 
 fi
 
