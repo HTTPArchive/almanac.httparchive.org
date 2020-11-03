@@ -36,5 +36,6 @@ jobs:
       uses: docker://github/super-linter:v3.13.1
       env:
         DEFAULT_BRANCH: main
+        FILTER_REGEX_INCLUDE: src/static/html/.*
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         VALIDATE_HTML: true
