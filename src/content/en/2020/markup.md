@@ -142,7 +142,7 @@ This seems to confirm the theory that the total number of `noscript`s in the wil
 
 What `type` attribute values are used with `script` elements? `text/javascript` (60.03%), `application/ld+json` (1.68%), `application/json` (0.41%), `text/template` (0.41%), and `text/html` (!) (0.27%).
 
-@@ When it comes to loading JavaScript module scripts using `type="module"`, we found 0.13% of scripts to specify `type="module"` at the moment, with only 0.95% of them using the corresponding `nomodule` attribute.
+When it comes to loading JavaScript module scripts using `type="module"`, we found 0.13% of `script`s to currently specify this attribute-value combination. `nomodule`, then, is used by 0.95% of all tested pages. (Note that one metric relates to elements, the other to pages.)
 
 No value has been set on 36.38% of all scripts.
 
