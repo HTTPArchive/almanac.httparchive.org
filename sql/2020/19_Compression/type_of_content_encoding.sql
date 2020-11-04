@@ -5,6 +5,7 @@ SELECT
   mimeType,
   resp_content_encoding,
   COUNT(0) AS num_requests,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM
   `httparchive.almanac.requests`
