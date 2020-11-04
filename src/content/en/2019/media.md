@@ -10,6 +10,8 @@ translators: []
 discuss: 1759
 results: https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/
 queries: 04_Media
+colinbendell_bio: Colin is part of the CTO Office at <a href="https://cloudinary.com/">Cloudinary</a> and co-author of the O'Reilly book <a href="https://www.oreilly.com/library/view/high-performance-images/9781491925799/">High Performance Images</a>. He spends much of his time at the intersection of high volume data, media, browsers and standards. You can find him on tweeting <a href="https://twitter.com/colinbendell">@colinbendell</a> and at blogging at <a href="https://bendell.ca/">https://bendell.ca</a>.
+dougsillars_bio: Doug Sillars is a freelance digital nomad working on the intersection of performance and media. He tweets <a href="https://twitter.com/dougsillars">@dougsillars</a>, and blogs regularly at <a href="https://dougsillars.com">dougsillars.com</a>.
 featured_quote: Images, animations, and videos are an important part of the web experience. They are important for many reasons&colon; they help tell stories, engage audiences, and provide artistic expression in ways that often cannot be easily produced with other web technologies. The importance of these media resources can be demonstrated in two ways&colon; by the sheer volume of bytes required to download for a page, and also the volume of pixels painted with media.
 featured_stat_1: 1 MB
 featured_stat_label_1: Median size of home pages

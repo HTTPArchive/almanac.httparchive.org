@@ -10,6 +10,9 @@ translators: []
 discuss: 1765
 results: https://docs.google.com/spreadsheets/d/1uARtBWwz9nJOKqKPFinAMbtoDgu5aBtOhsBNmsCoTaA/
 queries: 10_SEO
+ymschaap_bio: Founder at technical SEO consultancy <a href="https://build.amsterdam/">build.amsterdam</a>. Previously founded several web companies that reached over 1 billions users. Blogging about his latest (ad)ventures since 2005 on <a href="https://yvoschaap.com/">yvoschaap.com</a>.
+rachellcostello_bio: Rachel Costello is a Technical SEO & Content Manager at <a href="https://www.deepcrawl.com/">DeepCrawl</a> and an international conference speaker who spends her time researching and communicating the latest developments in search. Rachel currently manages the production of <a href="https://www.deepcrawl.com/knowledge/white-papers/">technical SEO white papers</a> and research pieces for DeepCrawl, and is a regular columnist for <a href="https://www.searchenginejournal.com/author/rachel-costello/">Search Engine Journal</a>.
+AVGP_bio: Martin Splitt is a developer advocate on the web ecosystem team at Google where he works on keeping the web discoverable.
 featured_quote: Search Engine Optimization (SEO) isn't just a hobby or a side project for digital marketers, it is crucial for the success of a website. The primary goal of SEO is to make sure that a website is optimized for the search engine bots that need to crawl and index its pages, as well as for the users that will be navigating the website and consuming its content. SEO impacts everyone working on a website, from the developer who is building it, through to the digital marketer who will need to promote it to new potential customers.
 featured_stat_1: 346
 featured_stat_label_1: No. of words on median page

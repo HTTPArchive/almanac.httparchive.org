@@ -9,6 +9,9 @@ translators: [AymenLoukil]
 discuss: 1765
 results: https://docs.google.com/spreadsheets/d/1uARtBWwz9nJOKqKPFinAMbtoDgu5aBtOhsBNmsCoTaA/
 queries: 10_SEO
+ymschaap_bio: Fondateur d’une agence de conseil en SEO technique <a href="https://build.amsterdam/">build.amsterdam</a>. Auparavant, il a fondé plusieurs sociétés Web qui ont atteint plus d’un milliard d’utilisateurs. Il blogue sur ses dernières aventures depuis 2005 sur <a href="https://yvoschaap.com/">yvoschaap.com</a>.
+rachellcostello_bio: Rachel Costello est technical SEO & Content Manager chez <a href="https://www.deepcrawl.com/">DeepCrawl</a> et une conférencière internationale qui passe son temps à rechercher et à communiquer sur les derniers développements dans le SEO. Rachel gère actuellement la production de <a href="https://www.deepcrawl.com/knowledge/white-papers/">livres blancs sur les techniques de référencement </a> et des articles de recherche pour DeepCrawl, et est une chroniqueuse régulière pour <a href="https://www.searchenginejournal.com/author/rachel-costello/">Search Engine Journal</a>.
+AVGP_bio: Martin Splitt est un DevRel au sein de l’équipe Écosystème Web chez Google, où il travaille à garder le Web découvrable.
 featured_quote: L’optimisation pour les moteurs de recherche (SEO) n'est pas seulement un passe-temps ou un projet parallèle pour les spécialistes du marketing digital, ce métier est crucial pour le succès d'un site web. Le but principal du référencement naturel est de s'assurer qu’un site internet est optimisé pour les robots des moteurs de recherche qui ont besoin d’explorer et d'indexer ses pages, ainsi que pour les utilisateurs qui naviguent et consomment des contenus. Le référencement a un impact sur tous ceux qui travaillent sur un site web, du développeur qui le construit au marketeur digital qui en fait la promotion auprès de nouveaux clients potentiels.
 featured_stat_1: 346
 featured_stat_label_1: mots par page, en médiane.

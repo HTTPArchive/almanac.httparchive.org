@@ -10,6 +10,7 @@ translators: [MSakamaki]
 discuss: 1758
 results: https://docs.google.com/spreadsheets/d/1WnDKLar_0Btlt9UgT53Giy2229bpV4IM2D_v6OM_WzA/
 queries: 03_Markup
+bkardell_bio: Brian Kardellは、<a href="https://igalia.com">Igalia</a> の開発者提唱者、標準化貢献者、<a href="https://bkardell.com">ブロガー</a>であり、現在は <a href="https://openjsf.org/">Open JS Foundation</a> の W3C 諮問委員会代表を務めています。彼はExtensible Web Community Groupの創設者であり、<a href="https://extensiblewebmanifesto.org">The Extensible Web Manifesto</a> の共著者でもあります。
 featured_quote: 2019年7月現在、HTTP Archiveは、約440万件のデスクトップホームページと約530万件のモバイルホームページについて、DOM内で使用されているすべての<em>要素</em>名の収集を開始しており、これにより調査と解剖を開始することができるようになりました。このクロールでは、これらのページで5,000以上の明確な<em>非標準要素名</em>に遭遇したので、私たちがカウントしている要素の合計の明確な数を「トップ」の5,048に制限しました。
 featured_stat_1: 11
 featured_stat_label_1: 90%以上のページで使用されている要素

@@ -10,6 +10,7 @@ translators: [c-torres]
 discuss: 1761
 results: https://docs.google.com/spreadsheets/d/108g6LXdC3YVsxmX1CCwrmpZ3-DmbB8G_wwgQHX5pn6Q/
 queries: 06_Fonts
+zachleat_bio: <i lang="en">Zach es un Desarrollador Web en <a href="https://www.filamentgroup.com/">Filament Group</a>. Actualmente está obsesionado con <a href="https://www.zachleat.com/web/fonts/">las fuentes web</a> y <a href="https://www.zachleat.com/web/introducing-eleventy/">generadores de sitios estáticos</a>. Su <a href="https://www.zachleat.com/web/speaking/">currículum de expositor</a> incluye charlas en ocho países diferentes en eventos como JAMstack_conf, Beyond Tellerrand, Smashing Conference, CSSConf, y <a href="https://www.zachleat.com/web/whitehouse/">La Casa Blanca</a>. Él también ayuda a organizar <a href="http://nejsconf.com/">NEJS CONF</a> y las reuniones de <a href="http://nebraskajs.com">NebraskaJS</a>.</i>
 featured_quote: Las fuentes web permiten una tipografía hermosa y funcional en la web. El uso de fuentes web no solo fortalece el diseño, sino que democratiza un subconjunto del diseño, ya que permite un acceso más fácil a aquellos que quizás no tengan habilidades de diseño particularmente sólidas. Sin embargo, a pesar de todo lo bueno que pueden hacer, las fuentes web también pueden causar un gran daño al rendimiento de su sitio si no se cargan correctamente.
 featured_stat_1: 74.9%
 featured_stat_label_1: 3P Solicitudes de fuentes que utilizan Google Fonts

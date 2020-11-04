@@ -10,6 +10,7 @@ translators: [borisschapira, SilentJMA]
 discuss: 1758
 results: https://docs.google.com/spreadsheets/d/1WnDKLar_0Btlt9UgT53Giy2229bpV4IM2D_v6OM_WzA/
 queries: 03_Markup
+bkardell_bio: Brian Kardell est <i lang="en">Developer Advocate</i> chez <a href="https://igalia.com">Igalia</a>, contributeur des standards du web, <a href="https://bkardell.com">blogueur</a>, et est actuellement le représentant du comité consultatif du W3C pour la <a href="https://openjsf.org/" lang="en">Open JS Foundation</a>. Il a fondé <i lang="en">l’Extensible Web Community Group</i> et est co-auteur du <a href="https://extensiblewebmanifesto.org" lang="en">The Extensible Web Manifesto</a>.
 featured_quote: À partir de juillet 2019, HTTP Archive a commencé à collecter tous les noms de *éléments* utilisés dans le DOM, environ 4,4 millions de pages d’accueil pour ordinateurs de bureau et environ 5,3 millions de pages d’accueil sur mobiles que nous pouvons maintenant commencer à analyser et à disséquer. Lors de cette collecte, nous avons découvert *plus de 5 000 noms d’éléments non standard distincts* dans les pages. Nous avons donc limité le nombre total d’éléments distincts que nous comptons aux 5 048 &quot;premiers&quot;.
 featured_stat_1: 11
 featured_stat_label_1: éléments sont utilisés sur plus de 90 % des pages.
