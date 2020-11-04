@@ -26,6 +26,7 @@
         "uses-rel-preconnect": "off",
         "uses-rel-preload": "off",
         "uses-responsive-images": "off",
+        "uses-text-compression": "off",
         "uses-webp-images": "off"
       }
     }
