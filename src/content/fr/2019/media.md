@@ -10,6 +10,8 @@ translators: [borisschapira]
 discuss: 1759
 results: https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/
 queries: 04_Media
+colinbendell_bio: Colin fait partie du <i lang="en">CTO Office</i> de <a href="https://cloudinary.com/">Cloudinary</a> et est co-auteur du livre O’Reilly <a href="https://www.oreilly.com/library/view/high-performance-images/9781491925799/" lang="en">High Performance Images</a>. Il passe une grande partie de son temps à l’intersection des données à haut volume, des médias, des navigateurs et des standards. Vous le trouverez twittant en tant que <a href="https://twitter.com/colinbendell">@colinbendell</a> et sur son blog <a href="https://bendell.ca/">https://bendell.ca</a>.
+dougsillars_bio: Doug Sillars est un nomade numérique indépendant qui travaille à l’intersection de la performance et des médias. Il tweete sous <a href="https://twitter.com/dougsillars">@dougsillars</a>, et blogue régulièrement sur <a href="https://dougsillars.com">dougsillars.com</a>.
 featured_quote: Les images, les animations et les vidéos constituent une partie significative de l’expérience Web. Elles sont importantes pour de nombreuses raisons&nbsp;&colon; elles aident à raconter des histoires, à faire participer le public et à fournir une expression artistique d’une manière qui, souvent, ne peut pas être facilement produite avec d’autres technologies du web. L’importance de ces ressources médias peut être démontrée de deux façons&nbsp;&colon; par le volume d’octets téléchargés pour une page, mais aussi par la quantité de pixels utilisés pour afficher ces médias.
 featured_stat_1: 1 Mo
 featured_stat_label_1: taille médiane d’une page d’accueil

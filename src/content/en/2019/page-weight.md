@@ -10,6 +10,8 @@ translators: []
 discuss: 1773
 results: https://docs.google.com/spreadsheets/d/1nWOo8efqDgzmA0wt1ipplziKhlReAxnVCW1HkjuFAxU/
 queries: 18_PageWeight
+tammyeverts_bio: Tammy Everts has spent more than two decades studying usability and UX. For the past ten years, she's focused on the intersection of UX with web performance and business. She is CXO at <a href="https://speedcurve.com/">SpeedCurve</a>, co-chair of the <a href="https://perfnow.nl/">performance.now() conference</a>, and author of the O'Reilly book <em><a href="http://shop.oreilly.com/product/0636920041450.do">Time Is Money_bio&colon; The Business Value of Performance</a></em>.
+khempenius_bio: Katie Hempenius is an engineer on the Chrome team where she works on making the web faster.
 featured_quote: The common argument as to why page size doesn't matter anymore is that, thanks to high-speed internet and our souped-up devices, we can serve massive, complex (and massively complex) pages to the general population. This assumption works fine, as long as you're okay with ignoring the vast swathe of internet users who don't have access to said high-speed internet and souped-up devices.
 featured_stat_1: 20%
 featured_stat_label_1: Sites sending more than 6 MB of Data

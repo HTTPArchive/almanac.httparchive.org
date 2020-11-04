@@ -10,6 +10,7 @@ translators: [ksakae]
 discuss: 1760
 results: https://docs.google.com/spreadsheets/d/1iC4WkdadDdkqkrTY32g7hHKhXs9iHrr3Bva8CuPjVrQ/
 queries: 05_Third_Parties
+patrickhulce_bio: Patrick Hulceは元Chromeのエンジニアであり、<a href="https://eris.ventures/">Eris Ventures</a>の創設者であり、<a href="https://github.com/GoogleChrome/lighthouse">Lighthouse</a>のコアチームメンバーであり、<a href="https://github.com/GoogleChrome/lighthouse-ci">Lighthouse CI</a>, <a href="https://www.meetup.com/DallasJS/">DallasJS</a> meetup の共同主催者、<a href="https://github.com/patrickhulce/third-party-web">third-party-web</a> プロジェクトの執筆者。
 featured_quote: オープンウェブは広大で、リンク可能で、相互運用可能な設計になっています。他の誰かの複雑なライブラリを取得し、単一の <code>&lt;link&gt;</code> または <code>&lt;script&gt;</code> 要素を使用して自分のサイトで使用する能力は、開発者の生産性を高め、素晴らしい新しいウェブ体験を可能にしました。本章では、2019年のWebにおけるサードパーティコードの普及と影響、サードパーティソリューションの人気につながるWebの利用パターン、Webのパフォーマンスとプライバシーの将来に対する潜在的な影響を検証します。
 featured_stat_1: 93%
 featured_stat_label_1: サードパーティを含むページ

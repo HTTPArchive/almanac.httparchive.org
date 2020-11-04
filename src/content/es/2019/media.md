@@ -10,6 +10,8 @@ translators: [garcaplay]
 discuss: 1759
 results: https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/
 queries: 04_Media
+colinbendell_bio: <i lang="en">Colin is part of the CTO Office at <a href="https://cloudinary.com/">Cloudinary</a> and co-author of the OReilly book <a href="https://www.oreilly.com/library/view/high-performance-images/9781491925799/">High Performance Images</a>. He spends much of his time at the intersection of high volume data, media, browsers and standards. You can find him on tweeting <a href="https://twitter.com/colinbendell">@colinbendell</a> and at blogging at <a href="https://bendell.ca/">https://bendell.ca</a>.</i>
+dougsillars_bio: <i lang="en">Doug Sillars is a freelance digital nomad working on the intersection of performance and media. He tweets <a href="https://twitter.com/dougsillars">@dougsillars</a>, and blogs regularly at <a href="https://dougsillars.com">dougsillars.com</a>.</i>
 featured_quote: Las imágenes, animaciones y vídeos son una parte importante de la experiencia web. Son importantes por muchas razones&colon; ayudan a contar historias, atraen a la audiencia y proporcionan expresión artística de una forma que a menudo no puede ser conseguida fácilmente a través de otras tecnologías web. La importancia de estos recursos multimedia puede ser demostrada de dos formas&colon; por la gran cantidad de bytes que se requieren para descargar cada página, y también por la cantidad de píxeles que componen esos recursos.
 featured_stat_1: 1 MB
 featured_stat_label_1: Tamaño medio de las páginas de inicio

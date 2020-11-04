@@ -10,6 +10,8 @@ translators: [c-torres]
 discuss: 1757
 results: https://docs.google.com/spreadsheets/d/1uFlkuSRetjBNEhGKWpkrXo4eEIsgYelxY-qR9Pd7QpM/
 queries: 02_CSS
+una_bio: <i lang="en">Una Kravets is a Brooklyn-based international public speaker, technical writer, and Developer Advocate for Material Design at Google. Una hosts the <a href="https://www.youtube.com/watch?v=YK8GZBx3hpg">Designing the Browser</a> web series and the <a href="https://spec.fm/podcasts/toolsday">Toolsday</a> developer podcast. Follow her on <a href="https://twitter.com/una">Twitter</a> to find her musings on creative CSS, user experiences, and web development best practices.</i>
+argyleink_bio: <i lang="en">Adam Argyle is a Google Chrome developer relations member focused on CSS; He's a web addict with an insatiable lust for great UX & UI; Find him on the web <a href="https://twitter.com/argyleink">@argyleink</a> or checkout his website <a href="https://nerdy.dev">https://nerdy.dev</a>.</i>
 featured_quote: Las Hojas de Estilo en Cascada (CSS por sus siglas en inglés) se utilizan para pintar, formatear y diseñar páginas web. Sus capacidades abarcan conceptos tan simples como el color del texto hasta perspectiva 3D. También tiene ganchos para permitir a los desarrolladores manejar diferentes tamaños de pantalla, contextos de visualización e impresión. CSS ayuda a los desarrolladores a lidiar con el contenido y a asegurarse de que se adapte correctamente al usuario.
 featured_stat_1: 5%
 featured_stat_label_1: Páginas que utilizan custom properties

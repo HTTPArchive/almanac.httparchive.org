@@ -10,6 +10,7 @@ translators: []
 discuss: 1771
 results: https://docs.google.com/spreadsheets/d/1mnq03DqrRBwxfDV05uEFETK0_hPbYOynWxZkV3tFgNk/
 queries: 16_Caching
+paulcalvano_bio: Paul Calvano is a Web Performance Architect at <a href="https://www.akamai.com/">Akamai</a>, where he helps businesses improve the performance of their websites. He's also a co-maintainer of the HTTP Archive project. You can find him tweeting at <a href="https://twitter.com/paulcalvano">@paulcalvano</a>, blogging at <a href="https://paulcalvano.com">http://paulcalvano.com</a> and sharing HTTP Archive research at <a href="https://discuss.httparchive.org">https://discuss.httparchive.org</a>.
 featured_quote: Caching is a technique that enables the reuse of previously downloaded content. It provides a significant performance benefit by avoiding costly network requests and it also helps scale an application by reducing the traffic to a website's origin infrastructure. There's an old saying, &quot;the fastest request is the one that you don't have to make,&quot; and caching is one of the key ways to avoid having to make requests.
 featured_stat_1: 27%
 featured_stat_label_1: Responses not using any caching headers
