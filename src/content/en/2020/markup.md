@@ -11,7 +11,7 @@ discuss: 2039
 results: https://docs.google.com/spreadsheets/d/1Ta7amoUeaL4pILhWzH-SCzMX9PsZeb1x_mwrX2C4eY8/
 queries: 03_Markup
 published: 2020-11-01T00:00:00.000Z
-last_updated: 2020-11-01T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introduction
@@ -22,7 +22,7 @@ How do we use HTML, then, how great of a foundation are we looking at (and in th
 
 Last year marked a first stab at 5,790,700 pages (of which 4,371,973 were tested on desktop, 5,297,442 on mobile) and a review of the data taken. This year we looked at 7,546,709 pages (5,593,642 on desktop, 6,347,919 on mobile) using the latest data on [which websites users are visiting in 2020](./methodology), to run another analysis. We do make some comparisons to last year—but, just as we’ve tried to take some additional metrics for additional insight, we’ve also given this chapter a new personality.
 
-<p class="note">The data for all Almanac chapters is open and available. Take a look at [the results](@@) and share your own observations!</p>
+<p class="note">The data for all Almanac chapters is open and available. Take a look at [the results](https://docs.google.com/spreadsheets/d/1Ta7amoUeaL4pILhWzH-SCzMX9PsZeb1x_mwrX2C4eY8/) and share your own observations!</p>
 
 ## General
 
