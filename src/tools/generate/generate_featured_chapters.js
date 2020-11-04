@@ -1,6 +1,5 @@
 const fs = require('fs-extra');
 const ejs = require('ejs');
-const { JSDOM } = require('jsdom');
 
 const { size_of } = require('./shared');
 
@@ -8,7 +7,7 @@ const generate_chapter_featured_quote = (metadata) => {
   let featured_quote = metadata.featured_quote;
 
   let featured_quote_obj = {};
-  featured_stats = [];
+  let featured_stats = [];
   if (featured_quote) {
     // Showdown replaces & with &amp; so convert those back to avoid escape issues
     featured_quote = featured_quote.replace(/&amp;/g ,'&');
@@ -62,7 +61,6 @@ const write_template = async (language, year, featured_quotes) => {
 
   if (fs.existsSync(template)) {
     let html = await ejs.renderFile(template, { featured_quotes });
-
     await fs.outputFile(path, html, 'utf8');
     await size_of(path);
   }

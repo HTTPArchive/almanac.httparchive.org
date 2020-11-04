@@ -1,7 +1,5 @@
 const fs = require('fs-extra');
 const ejs = require('ejs');
-const prettier = require('prettier');
-
 const { size_of } = require('./shared');
 
 const update_links = (chapter) => {

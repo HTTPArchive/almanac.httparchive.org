@@ -35,7 +35,6 @@ const generate_chapters = async () => {
   }
 
   for (const file of await find_markdown_files()) {
-
     const re = (process.platform != 'win32') 
                   ? /content\/(.*)\/(.*)\/(.*).md/ 
                   : /content\\(.*)\\(.*)\\(.*).md/;
