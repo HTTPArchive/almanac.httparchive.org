@@ -18,7 +18,7 @@ featured_stat_label_2: Sites using TLSv1.3
 featured_stat_3: 4.43%
 featured_stat_label_3: Sites using CSP
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introduction

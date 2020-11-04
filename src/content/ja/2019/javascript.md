@@ -18,7 +18,7 @@ featured_stat_label_2: jQueryを使用しているサイト
 featured_stat_3: 4.6%
 featured_stat_label_3: Reactを使ったホームページ
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## 序章

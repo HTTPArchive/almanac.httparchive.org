@@ -18,7 +18,7 @@ featured_stat_label_2: サービスワーカーを利用したページビュー
 featured_stat_3: 57%
 featured_stat_label_3: <code>standalone</code> <code>display</code>プロパティを使用するPWA
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## 導入
