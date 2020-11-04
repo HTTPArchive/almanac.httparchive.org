@@ -118,13 +118,13 @@ const write_template = async (language, year, chapter, metadata, body, toc) => {
   const path = `templates/${language}/${year}/chapters/${chapter}.html`;
 
   if (fs.existsSync(template)) {
-    let html = await ejs.renderFile(template, { metadata, body, toc });
-    let fomatted_html = prettier.format(html, {
+    body = prettier.format(body, {
       parser: 'html',
       printWidth: Number.MAX_SAFE_INTEGER
     });
+    let html = await ejs.renderFile(template, { metadata, body, toc });
 
-    await fs.outputFile(path, fomatted_html, 'utf8');
+    await fs.outputFile(path, html, 'utf8');
     await size_of(path);
   }
 };

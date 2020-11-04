@@ -4,15 +4,6 @@ const { JSDOM } = require('jsdom');
 
 const { size_of } = require('./shared');
 
-const getElementContents = (dom,selector) => {
-  if (dom.window.document.querySelector(selector)) {
-    let contents = dom.window.document.querySelector(selector).innerHTML;
-    // Fix some double escapes:
-    contents = contents.replace(/&amp;([a-z]+);/g,'&$1;');
-    return contents;
-  }
-}
-
 const generate_chapter_featured_quote = (metadata) => {
   let featured_quote = metadata.featured_quote;
 

@@ -10,13 +10,13 @@ translators: [ksakae]
 discuss: 1759
 results: https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/
 queries: 04_Media
-featured_quote: 画像、アニメーション、動画はウェブ体験の重要な一部です。それらが重要な理由はたくさんあります。ストーリーを伝えたり、視聴者の関心を引きつけたり、他のウェブ技術では簡単には作れないような芸術的な表現を提供したりするのに役立ちます。これらのメディアリソースの重要性は、2つの方法で示すことができます。1つは、1ページのダウンロードに必要なバイト数の多さ、もう1つは、メディアで描かれたピクセル数の多さです。" %}
+featured_quote: 画像、アニメーション、動画はウェブ体験の重要な一部です。それらが重要な理由はたくさんあります。ストーリーを伝えたり、視聴者の関心を引きつけたり、他のウェブ技術では簡単には作れないような芸術的な表現を提供したりするのに役立ちます。これらのメディアリソースの重要性は、2つの方法で示すことができます。1つは、1ページのダウンロードに必要なバイト数の多さ、もう1つは、メディアで描かれたピクセル数の多さです。
 featured_stat_1: 1 MB
 featured_stat_label_1: ホームページのサイズの中央値
 featured_stat_2: 60%
-featured_stat_label_2:  画像間でのJPEG利用
+featured_stat_label_2: 画像間でのJPEG利用
 featured_stat_3: 2%
-featured_stat_label_3:  <code>&lt;picture&gt;</code>要素の使用
+featured_stat_label_3: <code>&lt;picture&gt;</code>要素の使用
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-10-06T00:00:00.000Z
 ---

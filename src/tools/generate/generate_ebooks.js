@@ -77,12 +77,7 @@ const write_template = async (language, year, ebook) => {
 
   if (fs.existsSync(template)) {
     let html = await ejs.renderFile(template, { ebook });
-    let fomatted_html = prettier.format(html, {
-      parser: 'html',
-      printWidth: Number.MAX_SAFE_INTEGER
-    });
-
-    await fs.outputFile(path, fomatted_html, 'utf8');
+    await fs.outputFile(path, html, 'utf8');
     await size_of(path);
   }
 };

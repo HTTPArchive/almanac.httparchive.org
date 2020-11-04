@@ -10,13 +10,13 @@ translators: [MSakamaki]
 discuss: 1762
 results: https://docs.google.com/spreadsheets/d/1zWzFSQ_ygb-gGr1H1BsJCfB7Z89zSIf7GX0UayVEte4/
 queries: 07_Performance
-featured_quote: パフォーマンスはユーザー体験の内臓的な部分です。多くのウェブサイトでは、ページの読み込み時間を高速化してユーザー体験を向上させることは、コンバージョン率の向上につながります。逆に、パフォーマンスが悪いと、ユーザーは頻繁にコンバージョンしないし、不満でページを激怒してクリックしてしまうことさえ観察されています。" %}
+featured_quote: パフォーマンスはユーザー体験の内臓的な部分です。多くのウェブサイトでは、ページの読み込み時間を高速化してユーザー体験を向上させることは、コンバージョン率の向上につながります。逆に、パフォーマンスが悪いと、ユーザーは頻繁にコンバージョンしないし、不満でページを激怒してクリックしてしまうことさえ観察されています。
 featured_stat_1: 13%
 featured_stat_label_1: FCPが速いサイト
 featured_stat_2: 42%
-featured_stat_label_2:  TTFBが遅いサイト
+featured_stat_label_2: TTFBが遅いサイト
 featured_stat_3: 40%
-featured_stat_label_3:  FIDが速いサイト
+featured_stat_label_3: FIDが速いサイト
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-10-06T00:00:00.000Z
 ---

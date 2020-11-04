@@ -10,13 +10,13 @@ translators: [ksakae]
 discuss: 1772
 results: https://docs.google.com/spreadsheets/d/1Y7kAxjxUl8puuTToe6rL3kqJLX1ftOb0nCcD8m3lZBw/
 queries: 17_CDN
-featured_quote: コンテンツデリバリネットワークを使用する&quot;は、Webサイトの読み込みを高速化するためのSteve Soudersのオリジナルの推奨事項の1つです。Web Almanacのこの章では、スティーブの推奨事項がどれだけ広く採用されているか、サイトがどのようにコンテンツデリバリネットワーク(CDN)を使用しているか、そして使用している機能のいくつかを探っていきます。" %}
+featured_quote: コンテンツデリバリネットワークを使用する&quot;は、Webサイトの読み込みを高速化するためのSteve Soudersのオリジナルの推奨事項の1つです。Web Almanacのこの章では、スティーブの推奨事項がどれだけ広く採用されているか、サイトがどのようにコンテンツデリバリネットワーク(CDN)を使用しているか、そして使用している機能のいくつかを探っていきます。
 featured_stat_1: 20%
 featured_stat_label_1: CDNが提供するホームページ
 featured_stat_2: 9.61%
-featured_stat_label_2:  最も人気のあるCDN（Cloudflare）が提供するホームページ
+featured_stat_label_2: 最も人気のあるCDN（Cloudflare）が提供するホームページ
 featured_stat_3: 30%
-featured_stat_label_3:  Googleを利用したサードパーティCDNリクエスト
+featured_stat_label_3: Googleを利用したサードパーティCDNリクエスト
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-10-06T00:00:00.000Z
 ---

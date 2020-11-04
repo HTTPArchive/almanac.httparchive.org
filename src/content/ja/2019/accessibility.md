@@ -10,13 +10,13 @@ translators: [MSakamaki]
 discuss: 1764
 results: https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/
 queries: 09_Accessibility
-featured_quote: ウェブ上のアクセシビリティは、包括的で公平な社会にとって不可欠です。私たちの社会生活や仕事の多くがオンラインの世界に移行するにつれ、障害を持つ人々が障害なくすべてのオンライン上の交流に参加できることがさらに重要になってきています。建築家が車椅子用スロープなどのアクセシビリティ機能を作成したり省略したりできるように、ウェブ開発者はユーザーが利用する支援技術を支援したり、妨げたりすることができます。" %}
+featured_quote: ウェブ上のアクセシビリティは、包括的で公平な社会にとって不可欠です。私たちの社会生活や仕事の多くがオンラインの世界に移行するにつれ、障害を持つ人々が障害なくすべてのオンライン上の交流に参加できることがさらに重要になってきています。建築家が車椅子用スロープなどのアクセシビリティ機能を作成したり省略したりできるように、ウェブ開発者はユーザーが利用する支援技術を支援したり、妨げたりすることができます。
 featured_stat_1: 22%
 featured_stat_label_1: 十分なカラーコントラストを使用しているサイト
 featured_stat_2: 50%
-featured_stat_label_2:  画像のalt属性がないサイト
+featured_stat_label_2: 画像のalt属性がないサイト
 featured_stat_3: 14%
-featured_stat_label_3:  スキップリンクを使用しているサイト
+featured_stat_label_3: スキップリンクを使用しているサイト
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-10-06T00:00:00.000Z
 ---

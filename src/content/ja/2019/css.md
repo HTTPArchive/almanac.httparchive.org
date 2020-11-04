@@ -10,13 +10,13 @@ translators: [ksakae]
 discuss: 1757
 results: https://docs.google.com/spreadsheets/d/1uFlkuSRetjBNEhGKWpkrXo4eEIsgYelxY-qR9Pd7QpM/
 queries: 02_CSS
-featured_quote: Cascading Style Sheets (CSS) は、Web ページのペイント、フォーマット、レイアウトに使用されます。その機能は、テキストの色から3Dパースペクティブと、シンプルな概念にまで及びます。また、さまざまな画面サイズ、表示コンテキスト、および印刷を処理するために開発者に力を与えるフックを持っています。CSS は、開発者がコンテンツを調整し、ユーザーに適切に適応することを確認するのに役立ちます。" %}
+featured_quote: Cascading Style Sheets (CSS) は、Web ページのペイント、フォーマット、レイアウトに使用されます。その機能は、テキストの色から3Dパースペクティブと、シンプルな概念にまで及びます。また、さまざまな画面サイズ、表示コンテキスト、および印刷を処理するために開発者に力を与えるフックを持っています。CSS は、開発者がコンテンツを調整し、ユーザーに適切に適応することを確認するのに役立ちます。
 featured_stat_1: 5%
 featured_stat_label_1: カスタムプロパティを使用したページ
 featured_stat_2: 2%
-featured_stat_label_2:  CSS Gridを使用しているサイト
+featured_stat_label_2: CSS Gridを使用しているサイト
 featured_stat_3: 780
-featured_stat_label_3:  Z-Indexの最大値の桁数
+featured_stat_label_3: Z-Indexの最大値の桁数
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-10-06T00:00:00.000Z
 ---

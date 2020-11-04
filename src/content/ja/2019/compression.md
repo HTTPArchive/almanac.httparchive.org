@@ -10,13 +10,13 @@ translators: [ksakae]
 discuss: 1770
 results: https://docs.google.com/spreadsheets/d/1IK9kaScQr_sJUwZnWMiJcmHEYJV292C9DwCfXH6a50o/
 queries: 15_Compression
-featured_quote: HTTP圧縮とは、元の表現よりも少ないビット数で情報をエンコードすることを可能にする技術です。ウェブコンテンツの配信に使用すると、ウェブサーバーがクライアントに送信するデータ量を減らすことができます。これにより、クライアントの利用可能な帯域幅の効率が向上し、ページの重さが軽減され、ウェブパフォーマンスが向上します。" %}
+featured_quote: HTTP圧縮とは、元の表現よりも少ないビット数で情報をエンコードすることを可能にする技術です。ウェブコンテンツの配信に使用すると、ウェブサーバーがクライアントに送信するデータ量を減らすことができます。これにより、クライアントの利用可能な帯域幅の効率が向上し、ページの重さが軽減され、ウェブパフォーマンスが向上します。
 featured_stat_1: 38%
 featured_stat_label_1: テキストベースの圧縮を使用したHTTPレスポンス
 featured_stat_2: 80%
-featured_stat_label_2:  gzip圧縮の使用
+featured_stat_label_2: gzip圧縮の使用
 featured_stat_3: 56%
-featured_stat_label_3:  圧縮を使用していないHTMLレスポンス
+featured_stat_label_3: 圧縮を使用していないHTMLレスポンス
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-10-06T00:00:00.000Z
 ---

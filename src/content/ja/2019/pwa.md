@@ -10,13 +10,13 @@ translators: [ksakae]
 discuss: 1766
 results: https://docs.google.com/spreadsheets/d/19BI3RQc_vR9bUPPZfVsF_4gpFWLNT6P0pLcAdL-A56c/
 queries: 11_PWA
-featured_quote: プログレッシブウェブアプリ（PWA）は、サービスワーカーAPIのようなプラットフォームプリミティブの上に構築された新しいクラスのウェブアプリケーションです。サービスワーカーは、アプリケーションがネットワークプロキシとして動作し、ウェブアプリの送信要求を傍受し、プログラム的な応答またはキャッシュされた応答で応答することで、ネットワークに依存しないロードをサポートすることを可能にします。" %}
+featured_quote: プログレッシブウェブアプリ（PWA）は、サービスワーカーAPIのようなプラットフォームプリミティブの上に構築された新しいクラスのウェブアプリケーションです。サービスワーカーは、アプリケーションがネットワークプロキシとして動作し、ウェブアプリの送信要求を傍受し、プログラム的な応答またはキャッシュされた応答で応答することで、ネットワークに依存しないロードをサポートすることを可能にします。
 featured_stat_1: 0.44%
 featured_stat_label_1: サービスワーカーを登録しているサイト
 featured_stat_2: 15%
-featured_stat_label_2:  サービスワーカーを利用したページビュー
+featured_stat_label_2: サービスワーカーを利用したページビュー
 featured_stat_3: 57%
-featured_stat_label_3:  <code>standalone</code> <code>display</code>プロパティを使用するPWA
+featured_stat_label_3: <code>standalone</code> <code>display</code>プロパティを使用するPWA
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-10-06T00:00:00.000Z
 ---
