@@ -1,4 +1,4 @@
-{% extends "%s/2019/base.html" % lang %}
+{% extends "%s/%s/base.html" % (lang, year) %}
 
 {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 
@@ -29,7 +29,7 @@
 
 {% block styles %}
 {{ super() }}
-<link rel="stylesheet" href="/static/css/page.css?v=20201006091512">
+<link rel="stylesheet" href="/static/css/page.css?v=20201103210350">
 {% endblock %}
 
 {% block scripts %}

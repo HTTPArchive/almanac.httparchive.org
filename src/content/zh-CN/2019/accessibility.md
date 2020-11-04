@@ -10,8 +10,15 @@ translators: [chengxicn]
 discuss: 1764
 results: https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/
 queries: 09_Accessibility
+featured_quote: 互联网的无障碍可访问性对一个包容和公平的社会至关重要。随着我们的社会生活和工作生活越来越多地转移到网络世界，残障人士能够无障碍地参与所有在线互动就变得更加重要了。正如建筑设计师可以创建或省略无障碍功能，例如轮椅坡道，web开发人员可以帮助或阻碍用户依赖的辅助技术。
+featured_stat_1: 22%
+featured_stat_label_1: 使用充分的色彩对比的网站
+featured_stat_2: 50%
+featured_stat_label_2: 缺少图像alt属性的网站
+featured_stat_3: 14%
+featured_stat_label_3: 使用跳过链接的网站
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## 介绍

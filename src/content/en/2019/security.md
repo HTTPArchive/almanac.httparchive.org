@@ -10,8 +10,15 @@ translators: []
 discuss: 1763
 results: https://docs.google.com/spreadsheets/d/1Zq2tQhPE06YZUcbzryRrBE6rdZgHHlqEp2XcgS37cm8/
 queries: 08_Security
+featured_quote: As the web grows in capabilities and allows access to more and more sensitive data, it becomes increasingly important for developers to adopt web security features to protect their applications. The security features reviewed in this chapter are defenses built into the web platform itself, available to every web author.
+featured_stat_1: 79%
+featured_stat_label_1: Sites using HTTPS
+featured_stat_2: 41%
+featured_stat_label_2: Sites using TLSv1.3
+featured_stat_3: 4.43%
+featured_stat_label_3: Sites using CSP
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introduction

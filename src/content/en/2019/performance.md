@@ -10,8 +10,15 @@ translators: []
 discuss: 1762
 results: https://docs.google.com/spreadsheets/d/1zWzFSQ_ygb-gGr1H1BsJCfB7Z89zSIf7GX0UayVEte4/
 queries: 07_Performance
+featured_quote: Performance is a visceral part of the user experience. For many websites, an improvement to the user experience by speeding up the page load time aligns with an improvement to conversion rates. Conversely, when performance is poor, users don't convert as often and have even been observed to be rage clicking on the page in frustration.
+featured_stat_1: 13%
+featured_stat_label_1: Sites with fast FCP
+featured_stat_2: 42%
+featured_stat_label_2: Sites with slow TTFB
+featured_stat_3: 40%
+featured_stat_label_3: Sites with fast FID
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introduction

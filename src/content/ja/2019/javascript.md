@@ -10,8 +10,15 @@ translators: [ksakae]
 discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/
 queries: 01_JavaScript
+featured_quote: JavaScript はブラウザに送信するリソースの中で最もコストのかかるもので、ダウンロード、解析、コンパイル、そして最終的に実行されます。ブラウザはスクリプトの解析とコンパイルにかかる時間を大幅に短縮しましたが、ダウンロードと実行は、JavaScriptがWebページで処理される際に最もコストのかかる段階となっています。
+featured_stat_1: 89%
+featured_stat_label_1: ファーストパーティよりもサードパーティのコードが多いサイト
+featured_stat_2: 83%
+featured_stat_label_2: jQueryを使用しているサイト
+featured_stat_3: 4.6%
+featured_stat_label_3: Reactを使ったホームページ
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## 序章

@@ -1,4 +1,4 @@
-{% extends "base/2020/index.html" %}
+{% extends "base/2019/index.html" %}
 
 {% block title %}{{ year }} Web Almanac网络年鉴{% endblock %}
 {% block description %}Web Almanac 网络年鉴是结合了网络社区的专业知识和HTTP Archive的数据和趋势的网络年度报告{% endblock %}
@@ -6,19 +6,13 @@
 {% block twitter_image_alt %}{{ year }} Web Almanac网络年鉴{% endblock %}
 
 {% block date_published %}2020-07-06T00:00:00.000Z{% endblock %}
-{% block date_modified %}2020-07-11T00:00:00.000Z{% endblock %}
+{% block date_modified %}2020-11-03T00:00:00.000Z{% endblock %}
 
-{% block intro_title %}即将到来！{% endblock %}
+{% block intro_title %}{{ self.coming_soon() }}{% endblock %}
 {% block intro_sub_title %}{{ year }} <b>网络状态</b> 报告{% endblock %}
 
 {% block mission %}
 <p>
   来自网络社区的专家们目前正在努力地为{{ year }}版本的 Web Almanac 网络年鉴规划、分析和编写内容，预计将在今年年底发布。
 </p>
-
-<p>
-  新贡献者有很多参与这个项目的机会, 包括分析者, 作者, 设计者, 开发者, 编辑者, 领导者，审稿者和翻译者。 如果你对  {{ year }} 版本感兴趣,我们希望你能加入!
-</p>
-
-<a href="https://github.com/HTTPArchive/almanac.httparchive.org#contributing" class="btn">加入团队</a>
 {% endblock %}

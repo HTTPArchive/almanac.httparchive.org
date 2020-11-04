@@ -10,8 +10,15 @@ translators: [ksakae]
 discuss: 1767
 results: https://docs.google.com/spreadsheets/d/1dPBDeHigqx9FVaqzfq7CYTz4KjllkMTkfq4DG4utE_g/
 queries: 12_Mobile_Web
+featured_quote: 2007年以降、モバイルウェブは爆発的な成長を遂げました。そして13年後の現在、2019年7月のAkamaimPulseのデータによると、モバイルはすべての検索の59%を占め、ウェブトラフィックの58.7%を占めています。モバイルはもはや余計なものではなく、人々がウェブを体験する主要な手段となっています。モバイルの重要性を考えると、当社は訪問者にどのような体験を提供しているのでしょうか？どこが不足しているのか？それを探ってみましょう。
+featured_stat_1: 65%
+featured_stat_label_1: ロード中に中または大きくシフトするサイト
+featured_stat_2: 32%
+featured_stat_label_2: ズームを無効にしているサイト
+featured_stat_3: 34%
+featured_stat_label_3: 十分なサイズのタップターゲットを持つサイト
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## 序章Introduction

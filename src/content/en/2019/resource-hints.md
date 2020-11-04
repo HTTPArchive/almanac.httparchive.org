@@ -10,8 +10,15 @@ translators: []
 discuss: 1774
 results: https://docs.google.com/spreadsheets/d/14QBP8XGkMRfWRBbWsoHm6oDVPkYhAIIpfxRn4iOkbUU/
 queries: 19_Resource_Hints
+featured_quote: Resource hints provide <em>hints</em> to the browser about what resources will be needed soon. The action that the browser takes as a result of receiving this hint will vary depending on the type of resource hint; different resource hints kick off different actions. When used correctly, they can improve page performance by giving a head start to important anticipated actions.
+featured_stat_1: 29%
+featured_stat_label_1: Sites using <code>dns-prefetch</code>
+featured_stat_2: 88%
+featured_stat_label_2: Resource hints using the <code>as</code> attribute
+featured_stat_3: 0.04%
+featured_stat_label_3: Usage of priority hints
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introduction

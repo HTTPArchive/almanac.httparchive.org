@@ -10,8 +10,15 @@ translators: [ksakae]
 discuss: 1771
 results: https://docs.google.com/spreadsheets/d/1mnq03DqrRBwxfDV05uEFETK0_hPbYOynWxZkV3tFgNk/
 queries: 16_Caching
+featured_quote: キャッシングは、以前にダウンロードしたコンテンツの再利用を可能にする技術です。高価なネットワークリクエストを回避することでパフォーマンスに大きなメリットがあり、また、ウェブサイトのオリジンインフラストラクチャへのトラフィックを減らすことでアプリケーションの拡張性を高めることができます。古いことわざに「最速のリクエストは、作る必要のないものである」というものがありますが、キャッシングはリクエストをしなくても済むようにするための重要な方法の一つです。
+featured_stat_1: 27%
+featured_stat_label_1: キャッシングヘッダを使用していないレスポンス
+featured_stat_2: 39%
+featured_stat_label_2: <code>Vary</code>ヘッダーを使用したレスポンス
+featured_stat_3: 82%
+featured_stat_label_3: キャッシングを最適化することで1Mbを節約できるサイト
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## 導入

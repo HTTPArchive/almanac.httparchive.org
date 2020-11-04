@@ -10,8 +10,15 @@ translators: []
 discuss: 1764
 results: https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/
 queries: 09_Accessibility
+featured_quote: Accessibility on the web is essential for an inclusive and equitable society. As more of our social and work lives move to the online world, it becomes even more important for people with disabilities to be able to participate in all online interactions without barriers. Just as building architects can create or omit accessibility features such as wheelchair ramps, web developers can help or hinder the assistive technology users rely on.
+featured_stat_1: 22%
+featured_stat_label_1: Sites using sufficient colour contrast
+featured_stat_2: 50%
+featured_stat_label_2: Sites with missing image alt attributes
+featured_stat_3: 14%
+featured_stat_label_3: Sites using a skip link
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introduction

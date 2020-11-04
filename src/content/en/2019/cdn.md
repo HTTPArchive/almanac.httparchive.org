@@ -10,8 +10,15 @@ translators: []
 discuss: 1772
 results: https://docs.google.com/spreadsheets/d/1Y7kAxjxUl8puuTToe6rL3kqJLX1ftOb0nCcD8m3lZBw/
 queries: 17_CDN
+featured_quote: &quot;Use a Content Delivery Network&quot; was one of Steve Souders original recommendations for making web sites load faster. It's advice that remains valid today, and in this chapter of the Web Almanac we're going to explore how widely Steve's recommendation has been adopted, how sites are using Content Delivery Networks (CDNs), and some of the features they're using.
+featured_stat_1: 20%
+featured_stat_label_1: Home pages served by CDN
+featured_stat_2: 9.61%
+featured_stat_label_2: Homepages served by most popular CDN (Cloudflare)
+featured_stat_3: 30%
+featured_stat_label_3: 3P CDN requests that use Google
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introduction

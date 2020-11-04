@@ -10,8 +10,15 @@ translators: [borisschapira]
 discuss: 1767
 results: https://docs.google.com/spreadsheets/d/1dPBDeHigqx9FVaqzfq7CYTz4KjllkMTkfq4DG4utE_g/
 queries: 12_Mobile_Web
+featured_quote: Depuis 2007, le web mobile s’est développé à un rythme explosif. Aujourd’hui, 13 ans plus tard, le mobile représente 59&nbsp;% de toutes les recherches et 58,7&nbsp;% de tout le trafic web, selon les données de Akamai mPulse en juillet 2019. Ce n’est plus un usage secondaire, mais la principale façon dont les gens vivent le web. Alors, étant donné l’importance du mobile, quel genre d’expérience offrons-nous à nos visiteurs et visiteuses&nbsp;? Quels sont les points faibles&nbsp;? C’est ce que nous allons découvrir.
+featured_stat_1: 65 %
+featured_stat_label_1: des sites sont victimes de déplacements de contenu moyens ou importants pendant le chargement
+featured_stat_2: 32 %
+featured_stat_label_2: des sites désactive le zoom
+featured_stat_3: 34 %
+featured_stat_label_3: des sites ont des cibles d'appui de tailles suffisantes
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introduction

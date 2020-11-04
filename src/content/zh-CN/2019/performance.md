@@ -10,8 +10,15 @@ translators: [chengxicn]
 discuss: 1762
 results: https://docs.google.com/spreadsheets/d/1zWzFSQ_ygb-gGr1H1BsJCfB7Z89zSIf7GX0UayVEte4/
 queries: 07_Performance
+featured_quote: 性能是用户体验的重要组成部分。对于许多网站来说，通过降低页面加载时间来改善用户体验与转化率的提高是一致的。相反，当性能不佳时，用户的转化率就不会像往常那样高，甚至还会在导致沮丧的页面观察到愤怒点击。
+featured_stat_1: 13%
+featured_stat_label_1: 有快速FCP的站点
+featured_stat_2: 42%
+featured_stat_label_2: 有缓慢TTFB的站点
+featured_stat_3: 40%
+featured_stat_label_3: 有快速FID的站点
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## 介绍

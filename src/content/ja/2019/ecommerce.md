@@ -10,8 +10,15 @@ translators: [ksakae]
 discuss: 1768
 results: https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/
 queries: 13_Ecommerce
+featured_quote: この調査では、ホームページの10%近くがeコマース・プラットフォーム上にあることが判明しました。<em>eコマースプラットフォーム</em> は、オンラインストアを作成して運営することを可能にするソフトウェア ソフトウェアまたはサービスのセットです。Shopifyなどの有料サービス、Magentoオープンソースなどのソフトウェアプラットフォーム、およびMagento Commerceなどのホスト型プラットフォームなどが含まれます。
+featured_stat_1: 3.98%
+featured_stat_label_1: WooCommerceを使用してサイト最も人気のあるEコマースプラットフォーム
+featured_stat_2: 116
+featured_stat_label_2: 検出されたEコマースプラットフォームの数
+featured_stat_3: 1,517 KB
+featured_stat_label_3: モバイルEコマースページあたりの画像バイト数の中央値。
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## 序章

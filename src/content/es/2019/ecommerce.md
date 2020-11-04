@@ -10,8 +10,15 @@ translators: [JMPerez]
 discuss: 1768
 results: https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/
 queries: 13_Ecommerce
+featured_quote: Casi el 10% de las páginas de inicio en este estudio resultaron ser parte de una plataforma de comercio electrónico. Una "plataforma de comercio electrónico" es un conjunto de software o servicios que permiten crear y operar una tienda en línea, incluidos los servicios de pago como Shopify, plataformas de software como Magento Open Source y plataformas alojadas como Magento Commerce.
+featured_stat_1: 3.98%
+featured_stat_label_1: Sitios que utilizan WooCommerce, la plataforma de comercio electrónico más popular
+featured_stat_2: 116
+featured_stat_label_2: Número de plataformas de comercio electrónico detectadas
+featured_stat_3: 1,517 KB
+featured_stat_label_3: Mediana de bytes de imagen por página de comercio electrónico móvil
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introducción

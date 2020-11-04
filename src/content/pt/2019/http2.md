@@ -10,8 +10,15 @@ analysts: [paulcalvano]
 discuss: 1775
 results: https://docs.google.com/spreadsheets/d/1z1gdS3YVpe8J9K3g2UdrtdSPhRywVQRBz5kgBeqCnbw/
 queries: 20_HTTP_2
+featured_quote: O HTTP/2 foi a primeira grande atualização do principal protocolo de transporte da web em quase 20 anos. Ele chegou com muitas expectativas&colon; prometia um aumento de desempenho gratuito e sem desvantagens. Mais do que isso, poderíamos deixar de lado todos as adaptações e saídas mirabolantes a que o HTTP/1.1 nos forçava, devido às suas ineficiências. Técnicas como bundling, spriting, inlining e até mesmo sharding se tornariam não canônicas em um mundo com HTTP/2, visto que a performance otimizada já seria fornecida por padrão. Este capítulo examina como essa tecnologia relativamente nova se saiu no mundo real.
+featured_stat_1: 95%
+featured_stat_label_1: Usuários que podem usar HTTP/2
+featured_stat_2: 27.83%
+featured_stat_label_2: Requisições com problemas de priorização no HTTP/2
+featured_stat_3: 8.38%
+featured_stat_label_3: Sites que suportam QUIC
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-10T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introdução

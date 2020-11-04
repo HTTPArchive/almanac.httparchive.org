@@ -10,8 +10,15 @@ translators: [HakaCode]
 discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/
 queries: 01_JavaScript
+featured_quote: JavaScript é o recurso mais caro que enviamos aos navegadores; tendo que ser baixado, analisado, compilado e finalmente executado. Embora os navegadores tenham diminuído significativamente o tempo que leva para analisar e compilar scripts, download e execução tornaram as etapas mais caras quando o JavaScript é processado por uma página da web.
+featured_stat_1: 89%
+featured_stat_label_1: Sites com mais código de terceiros do que de origem
+featured_stat_2: 83%
+featured_stat_label_2: Sites que usam jQuery
+featured_stat_3: 4.6%
+featured_stat_label_3: Páginas iniciais usando React
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introdução

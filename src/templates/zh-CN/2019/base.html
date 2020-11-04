@@ -16,8 +16,12 @@
 {% endblock %}
 
 {% block mission %}
+<p>
 我们的任务是将HTTP Archive的原始统计数据和趋势与web社区的专业知识结合起来。Web Almanac网络年鉴是一个关于网络状态的综合报告，由真实的数据和可信的网络专家支持。它由20个章节组成，涵盖了页面内容、用户体验、发布和分发的各个方面。
+</p>
 {% endblock %}
+
+{% block read_last_years_almanac %}阅读 {{ year | int - 1 }} Web Almanac{% endblock %}
 
 {% block http_archive_link %}HTTP Archive主页{% endblock %}
 
@@ -81,7 +85,11 @@
 {% block accessibility_statement %}无障碍可访问声明{% endblock %}
 
 {% block featured_chapter%}章节精选{% endblock %}
-{% macro readChapter(chapter) %}阅读 <span class="featured-chapter-name">{{ chapter }}</span> 章节{% endmacro %}
+
+{# Check if read_chapter already defined in child template as macros can't be overridden #}
+{% if not read_chapter %}
+{% macro read_chapter(chapter) %}阅读 <span class="featured-chapter-name">{{ chapter }}</span> 章节{% endmacro %}
+{% endif %}
 
 {% block contributors_description %}
 是web社区的辛勤工作才让 Web Almanac 网络年鉴成为可能。 {{ self.contributors() }} 成员在计划、研究、写作和发布阶段奉献投入了难以估量的时间。
@@ -120,6 +128,8 @@
 
     <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>, Web Almanac网络年鉴的创建者</em></p>
 {% endblock %}
+
+{% block coming_soon %}即将到来！{% endblock %}
 
 {% block appendix %}附录{% endblock %}
 {% block appendices %}附录{% endblock %}

@@ -29,7 +29,7 @@ See [our contributing guide](CONTRIBUTING.md).
 - August 2020: Gathering HTTP Archive data
 - September 2020: Analyzing data
 - October 2020: Writing, editing, and translating content
-- November 2020: Publishing the 2020 edition
+- December 2020: Publishing the 2020 edition
 
 ## Where to find us
 

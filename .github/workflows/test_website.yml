@@ -33,8 +33,26 @@ jobs:
     - name: Remove node modules to avoid linting errors
       run: rm -rf src/node_modules
     - name: Lint Generated HTML
-      uses: github/super-linter@v3.13.2
+      uses: docker://github/super-linter:v3.13.1
       env:
         DEFAULT_BRANCH: main
+        FILTER_REGEX_INCLUDE: src/static/html/.*
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         VALIDATE_HTML: true
+    - name: Set the list of URLs for Lighthouse to check
+      env:
+        RUN_TYPE: ${{ github.event_name }}
+        COMMIT_SHA: ${{ github.sha }}
+      run: ./src/tools/scripts/set_lighthouse_urls.sh
+    - name: Audit URLs using Lighthouse
+      uses: treosh/lighthouse-ci-action@v3
+      id: LHCIAction
+      with:
+        # For dev, turn off all timing perf audits (too unreliable) and a few others that don't work on dev
+        configPath: .github/lighthouse/lighthouse-config-dev.json
+        uploadArtifacts: true # save results as an action artifacts
+        temporaryPublicStorage: true # upload lighthouse report to the temporary storage
+    - name: Show Lighthouse outputs
+      run: |
+        # All results by URL:
+        echo '${{ steps.LHCIAction.outputs.manifest }}' | jq -r '.[] | (.summary|tostring) + " - " + .url'

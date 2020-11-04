@@ -16,8 +16,12 @@
 {% endblock %}
 
 {% block mission %}
+<p>
 Nossa missão é combinar as estatísticas brutas e as tendências do HTTP Archive com a experiência da comunidade da web. O Web Almanac é um relatório abrangente sobre o estado da Web, apoiado por dados reais e especialistas confiáveis da Web. É composto por 20 capítulos que abrangem aspectos do conteúdo da página, experiência do usuário, publicação e distribuição.
+</p>
 {% endblock %}
+
+{% block read_last_years_almanac %}Leia o  {{ year | int - 1 }} Web Almanac{% endblock %}
 
 {% block http_archive_link %}Página inicial HTTP Archive{% endblock %}
 
@@ -81,7 +85,11 @@ Nossa missão é combinar as estatísticas brutas e as tendências do HTTP Archi
 {% block accessibility_statement %}Declaração de acessibilidade{% endblock %}
 
 {% block featured_chapter %}Capítulo em Destaque{% endblock %}
-{% macro readChapter(chapter) %}Leia o Capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
+
+{# Check if read_chapter already defined in child template as macros can't be overridden #}
+{% if not read_chapter %}
+{% macro read_chapter(chapter) %}Leia o Capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
+{% endif %}
 
 {% block contributors_description %}
 O Web Almanac Isso foi possível graças ao trabalho árduo da comunidade da web. {{ self.contributors() }} as pessoas ofereceram inúmeras horas nas fases de planejamento, pesquisa, redação e produção.
@@ -120,6 +128,8 @@ Salvo indicação em contrário, as métricas em todos os 20 capítulos do Web A
 
     <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>, criador do Web Almanac</em></p>
 {% endblock %}
+
+{% block coming_soon %}Em breve!{% endblock %}
 
 {% block appendix %}Apêndice{% endblock %}
 {% block appendices %}Apêndices{% endblock %}

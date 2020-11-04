@@ -10,8 +10,15 @@ translators: [c-torres]
 discuss: 1761
 results: https://docs.google.com/spreadsheets/d/108g6LXdC3YVsxmX1CCwrmpZ3-DmbB8G_wwgQHX5pn6Q/
 queries: 06_Fonts
+featured_quote: Las fuentes web permiten una tipografía hermosa y funcional en la web. El uso de fuentes web no solo fortalece el diseño, sino que democratiza un subconjunto del diseño, ya que permite un acceso más fácil a aquellos que quizás no tengan habilidades de diseño particularmente sólidas. Sin embargo, a pesar de todo lo bueno que pueden hacer, las fuentes web también pueden causar un gran daño al rendimiento de su sitio si no se cargan correctamente.
+featured_stat_1: 74.9%
+featured_stat_label_1: 3P Solicitudes de fuentes que utilizan Google Fonts
+featured_stat_2: 29%
+featured_stat_label_2: Porcentaje de páginas que incluyen un enlace de hoja de estilo de Google Fonts
+featured_stat_3: 718
+featured_stat_label_3: Mayor cantidad de solicitudes de fuentes por una sola página
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introducción
