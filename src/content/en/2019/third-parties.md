@@ -10,6 +10,7 @@ translators: []
 discuss: 1760
 results: https://docs.google.com/spreadsheets/d/1iC4WkdadDdkqkrTY32g7hHKhXs9iHrr3Bva8CuPjVrQ/
 queries: 05_Third_Parties
+patrickhulce_bio: Patrick Hulce is an ex-Chrome engineer, founder of <a href="https://eris.ventures/">Eris Ventures</a>, core team member of <a href="https://github.com/GoogleChrome/lighthouse">Lighthouse</a> and <a href="https://github.com/GoogleChrome/lighthouse-ci">Lighthouse CI</a>, co-organizer of the <a href="https://www.meetup.com/DallasJS/">DallasJS</a> meetup, and author of the <a href="https://github.com/patrickhulce/third-party-web">third-party-web</a> project.
 featured_quote: The open web is vast, linkable, and interoperable by design. The ability to grab someone else’s complex library and use it on your site with a single <code>&lt;link&gt;</code> or <code>&lt;script&gt;</code> element has supercharged developers’ productivity and enabled awesome new web experiences; on the flip side, the immense popularity of a select few third-party providers raises important performance and privacy concerns. This chapter examines the prevalence and impact of third-party code on the web in 2019, the web usage patterns that lead to the popularity of third-party solutions, and potential repercussions for the future of web performance and privacy.
 featured_stat_1: 93%
 featured_stat_label_1: Pages with 3P

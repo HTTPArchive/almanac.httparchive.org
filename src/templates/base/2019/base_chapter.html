@@ -180,13 +180,15 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
                 </div>
               {% endif %}
               {% if authordata.tagline %}
-                  <div class="tagline">
-                      {{ authordata.tagline }}
-                  </div>
+                <div class="tagline">
+                    {{ authordata.tagline }}
+                </div>
               {% endif %}
-              <div class="bio">
-                {{ localizedContributors[author] | safe if localizedContributors[author]|length }}
-              </div>
+              {% if metadata.get(author + '_bio') %}
+                <div class="bio">
+                  {{ metadata.get(author + '_bio') | replace('&quot;','"') | safe }}
+                </div>
+              {% endif %}
           </div>
       </li>
     {% else %}

@@ -10,6 +10,9 @@ translators: [MSakamaki]
 discuss: 1765
 results: https://docs.google.com/spreadsheets/d/1uARtBWwz9nJOKqKPFinAMbtoDgu5aBtOhsBNmsCoTaA/
 queries: 10_SEO
+ymschaap_bio: 技術的なSEOコンサルタント<a href="https://build.amsterdam/">build.amsterdam</a>の創設者。以前は、10億人以上のユーザーに達したいくつかのウェブ会社を設立しました。2005年以来、彼の最新の（広告）ベンチャーについてブログを書いている。
+rachellcostello_bio: Rachel Costelloは、<a href="https://www.deepcrawl.com/">DeepCrawl</a>のテクニカルSEO &コンテンツマネージャーであり、検索の最新動向を研究し、伝えることに時間を費やしている国際会議のスピーカーでもあります。Rachelは現在、<a href="https://www.deepcrawl.com/knowledge/white-papers/">技術的なSEOのホワイトペーパー</a>とDeepCrawlのための研究作品の制作を管理しており、<a href="https://www.searchenginejournal.com/author/rachel-costello/">Search Engine Journal</a>のレギュラーコラムニストでもあります。
+AVGP_bio: Martin SplittはGoogleのウェブエコシステムチームの開発者アドボケートで、ウェブを発見しやすい状態に保つことに取り組んでいます。
 featured_quote: 検索エンジン最適化（SEO）は、デジタルマーケッターの趣味やサイドプロジェクトではなく、ウェブサイトの成功に欠かせないものです。SEOの主な目標は、ウェブサイトが検索エンジンのボットに最適化されていることを確認し、ページをクロールしてインデックスを作成し、ウェブサイトをナビゲートしてコンテンツを消費するユーザーのために最適化することです。SEOは、それを構築している開発者から、新しい潜在的な顧客にそれを促進する必要がありますデジタルマーケッターまで、ウェブサイト上で働くすべての人に影響を与えます。
 featured_stat_1: 346
 featured_stat_label_1: 中央値ページの単語数
