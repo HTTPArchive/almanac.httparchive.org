@@ -18,7 +18,7 @@ featured_stat_label_2: Resource hints using the <code>as</code> attribute
 featured_stat_3: 0.04%
 featured_stat_label_3: Usage of priority hints
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introduction

@@ -18,7 +18,7 @@ featured_stat_label_2: 缺少图像alt属性的网站
 featured_stat_3: 14%
 featured_stat_label_3: 使用跳过链接的网站
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## 介绍

@@ -18,7 +18,7 @@ featured_stat_label_2: 画像間でのJPEG利用
 featured_stat_3: 2%
 featured_stat_label_3: <code>&lt;picture&gt;</code>要素の使用
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## 序章

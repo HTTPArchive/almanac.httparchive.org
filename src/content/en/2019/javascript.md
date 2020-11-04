@@ -18,7 +18,7 @@ featured_stat_label_2: Sites that use jQuery
 featured_stat_3: 4.6%
 featured_stat_label_3: Home pages using React
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introduction

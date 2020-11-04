@@ -18,7 +18,7 @@ featured_stat_label_2: Pageviews that use a Service Worker
 featured_stat_3: 57%
 featured_stat_label_3: PWAs that use the <code>standalone</code> <code>display</code> property
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introduction
