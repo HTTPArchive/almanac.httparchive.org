@@ -10,6 +10,13 @@ translators: []
 discuss: 1765
 results: https://docs.google.com/spreadsheets/d/1uARtBWwz9nJOKqKPFinAMbtoDgu5aBtOhsBNmsCoTaA/
 queries: 10_SEO
+featured_quote: Search Engine Optimization (SEO) isn't just a hobby or a side project for digital marketers, it is crucial for the success of a website. The primary goal of SEO is to make sure that a website is optimized for the search engine bots that need to crawl and index its pages, as well as for the users that will be navigating the website and consuming its content. SEO impacts everyone working on a website, from the developer who is building it, through to the digital marketer who will need to promote it to new potential customers.
+featured_stat_1: 346
+featured_stat_label_1: No. of words on median page
+featured_stat_2: 11%
+featured_stat_label_2: Pages with no heading tags
+featured_stat_3: 15%
+featured_stat_label_3: Sites eligible for rich results
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-10-06T00:00:00.000Z
 ---
