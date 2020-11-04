@@ -144,8 +144,8 @@ ttfb AS (
 )
 
 SELECT
-  row,
   device,
+  row,
   
   fast_fid,
   avg_fid,
@@ -181,5 +181,5 @@ FULL JOIN
   ttfb
 USING (row, device)
 ORDER BY
-  row,
-  device
+  device,
+  row
