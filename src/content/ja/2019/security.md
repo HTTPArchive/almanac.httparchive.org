@@ -10,6 +10,13 @@ translators: [ksakae]
 discuss: 1763
 results: https://docs.google.com/spreadsheets/d/1Zq2tQhPE06YZUcbzryRrBE6rdZgHHlqEp2XcgS37cm8/
 queries: 08_Security
+featured_quote: Webの機能が向上し、より多くの機密データへのアクセスが可能になるにつれ、開発者が自社のアプリケーションを保護するためにWebセキュリティ機能を採用することがますます重要になってきています。この章で紹介するセキュリティ機能は、Webプラットフォーム自体に組み込まれた防御機能であり、すべてのWeb制作者が利用できます。
+featured_stat_1: 79%
+featured_stat_label_1: HTTPSを使用しているサイト
+featured_stat_2: 41%
+featured_stat_label_2: TLSv1.3を使用しているサイト
+featured_stat_3: 4.43%
+featured_stat_label_3: CSPを使用しているサイト
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-10-06T00:00:00.000Z
 ---

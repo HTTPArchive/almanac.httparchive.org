@@ -10,6 +10,13 @@ translators: [borisschapira]
 discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/
 queries: 01_JavaScript
+featured_quote: JavaScript est la ressource la plus consommatrice que nous envoyons aux navigateurs&nbsp;; il doit être téléchargé, analysé, compilé et enfin exécuté. Bien que les navigateurs aient considérablement réduit le temps nécessaire pour analyser et compiler les scripts, le téléchargement et l’exécution sont devenus les étapes les plus coûteuses lorsque JavaScript est traité par une page web.
+featured_stat_1: 89 %
+featured_stat_label_1: des sites ont plus de code tiers que de code maison
+featured_stat_2: 83 %
+featured_stat_label_2: des sites utilisent jQuery
+featured_stat_3: 4.6 %
+featured_stat_label_3: des pages d’accueil utilisent React
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-10-06T00:00:00.000Z
 ---

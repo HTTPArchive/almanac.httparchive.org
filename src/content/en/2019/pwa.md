@@ -10,6 +10,13 @@ translators: []
 discuss: 1766
 results: https://docs.google.com/spreadsheets/d/19BI3RQc_vR9bUPPZfVsF_4gpFWLNT6P0pLcAdL-A56c/
 queries: 11_PWA
+featured_quote: Progressive Web Apps (PWAs) are a new class of web applications, building on top of platform primitives like the Service Worker APIs. Service workers allow apps to support network-independent loading by acting as a network proxy, intercepting your web app's outgoing requests, and replying with programmatic or cached responses.
+featured_stat_1: 0.44%
+featured_stat_label_1: Sites that register a service worker
+featured_stat_2: 15%
+featured_stat_label_2: Pageviews that use a Service Worker
+featured_stat_3: 57%
+featured_stat_label_3: PWAs that use the <code>standalone</code> <code>display</code> property
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-10-06T00:00:00.000Z
 ---

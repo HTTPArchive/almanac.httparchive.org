@@ -10,6 +10,13 @@ translators: [allemas]
 discuss: 1770
 results: https://docs.google.com/spreadsheets/d/1IK9kaScQr_sJUwZnWMiJcmHEYJV292C9DwCfXH6a50o/
 queries: 15_Compression
+featured_quote: La compression HTTP est une technique qui permet de coder des informations en utilisant moins de bits que la représentation originale. Lorsqu’elle est utilisée pour la diffusion de contenu web, elle permet aux serveurs web de réduire la quantité de données transmises aux clients. La compression HTTP augmente l’efficacité de la bande passante disponible au client, réduit le poids des pages, et améliore les performances web.
+featured_stat_1: 38 %
+featured_stat_label_1: Réponses HTTP avec compression de texte
+featured_stat_2: 80 %
+featured_stat_label_2: Utilisent la compression gzip
+featured_stat_3: 56 %
+featured_stat_label_3: Réponses HTML n'utilisant pas de compression
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-10-06T00:00:00.000Z
 ---

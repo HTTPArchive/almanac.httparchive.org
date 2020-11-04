@@ -10,6 +10,13 @@ translators: [eduqg]
 discuss: 1764
 results: https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/
 queries: 09_Accessibility
+featured_quote: A acessibilidade na web é essencial para uma sociedade inclusiva e igualitária. À medida que mais de nossas vidas sociais e profissionais mudam para o mundo online, torna-se ainda mais importante para as pessoas com deficiência poderem participar de todas as interações online sem barreiras. Assim como os arquitetos de edifícios podem criar ou não recursos de acessibilidade, como rampas para cadeiras de rodas, os desenvolvedores da web podem ajudar ou atrapalhar com a tecnologia assistiva que usuários dependem.
+featured_stat_1: 22%
+featured_stat_label_1: Sites usando contraste de cor suficient
+featured_stat_2: 50%
+featured_stat_label_2: Sites sem atributos alt de imagem
+featured_stat_3: 14%
+featured_stat_label_3: Sites usando um link para pular
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-10-07T00:00:00.000Z
 ---

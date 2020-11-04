@@ -10,6 +10,13 @@ translators: [c-torres]
 discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/
 queries: 01_JavaScript
+featured_quote: JavaScript es el recurso más costoso que enviamos a los navegadores, ya que tiene que ser descargado, analizado, compilado y finalmente ejecutado. Aunque los navegadores han disminuido significativamente el tiempo que lleva analizar y compilar scripts, la descarga y la ejecución se han convertido en las etapas más costosas cuando JavaScript es procesado por una página web.
+featured_stat_1: 89%
+featured_stat_label_1: Sitios con más código de terceros que de origen
+featured_stat_2: 83%
+featured_stat_label_2: Sitios que usan jQuery
+featured_stat_3: 4.6%
+featured_stat_label_3: Páginas de inicio usando React
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-10-06T00:00:00.000Z
 ---
