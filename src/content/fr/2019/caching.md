@@ -18,7 +18,7 @@ featured_stat_label_2: des réponses utilisent l’en-tête <code>Vary</code>.
 featured_stat_3: 82 %
 featured_stat_label_3: des sites pourraient économiser 1 Mo en optimisant le cache.
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introduction

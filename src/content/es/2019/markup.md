@@ -18,7 +18,7 @@ featured_stat_label_2: Páginas que contienen elementos obsoletos
 featured_stat_3: 65
 featured_stat_label_3: Variantes de carruseles encontradas
 published: 2019-11-04T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introduction

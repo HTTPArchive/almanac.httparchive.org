@@ -18,7 +18,7 @@ featured_stat_label_2: Sites ayant des attributs alt manquants
 featured_stat_3: 14 %
 featured_stat_label_3: Sites utilisant des liens d’évitement
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introduction

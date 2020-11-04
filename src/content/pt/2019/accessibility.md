@@ -18,7 +18,7 @@ featured_stat_label_2: Sites sem atributos alt de imagem
 featured_stat_3: 14%
 featured_stat_label_3: Sites usando um link para pular
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-07T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introdução

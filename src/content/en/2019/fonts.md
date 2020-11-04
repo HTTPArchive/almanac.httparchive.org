@@ -18,7 +18,7 @@ featured_stat_label_2: Percent of pages that include a Google Fonts stylesheet l
 featured_stat_3: 718
 featured_stat_label_3: Most font requests on a single page
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introduction

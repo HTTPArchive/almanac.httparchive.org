@@ -18,7 +18,7 @@ featured_stat_label_2: des sites désactive le zoom
 featured_stat_3: 34 %
 featured_stat_label_3: des sites ont des cibles d'appui de tailles suffisantes
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introduction
