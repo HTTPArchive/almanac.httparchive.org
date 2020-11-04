@@ -17,6 +17,7 @@ featured_stat_2: 27.83%
 featured_stat_label_2: Requests with HTTP/2 prioritisation issues
 featured_stat_3: 8.38%
 featured_stat_label_3: Sites supporting QUIC
+bazzadp_bio: Barry Pollard is a software developer and author of the Manning book <a href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a>. He thinks the web is amazing but wants to make it even better. You can find him tweeting <a href="https://twitter.com/tunetheweb">@tunetheweb</a> and blogging at <a href="https://www.tunetheweb.com">www.tunetheweb.com</a>.
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-11-04T00:00:00.000Z
 ---

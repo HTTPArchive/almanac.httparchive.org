@@ -185,7 +185,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
                   </div>
               {% endif %}
               <div class="bio">
-                {{ localizedContributors[author] | safe if localizedContributors[author]|length }}
+                {{ metadata.get(author + '_bio') | replace('&quot;','"') | safe }}
               </div>
           </div>
       </li>

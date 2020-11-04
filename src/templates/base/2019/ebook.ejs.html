@@ -129,7 +129,7 @@
                             </div>
                         {% endif %}
                         <div class="bio">
-                            {{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}
+                            {{ add_footnote_links(metadata.get(author + '_bio') | replace('&quot;','"')) | safe }}
                         </div>
                     </div>
                 </li>
