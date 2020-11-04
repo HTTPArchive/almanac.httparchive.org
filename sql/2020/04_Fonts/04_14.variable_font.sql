@@ -19,8 +19,6 @@ SELECT
   COUNT(DISTINCT page) AS freq_vf,
   total_page,
   COUNT(DISTINCT page) / total_page AS pct_vf,
-  APPROX_QUANTILES(fcp, 1000)[OFFSET(500)] AS median_fcp,
-  APPROX_QUANTILES(lcp, 1000)[OFFSET(500)] AS median_lcp 
 FROM (
   SELECT
     client,
@@ -36,9 +34,7 @@ JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
     url AS page,
-    COUNT(0) AS total_page,
-    CAST(JSON_EXTRACT_SCALAR(payload, "$['_chromeUserTiming.firstContentfulPaint']") AS INT64) AS fcp,
-    CAST(JSON_EXTRACT_SCALAR(payload, "$['_chromeUserTiming.LargestContentfulPaint']") AS INT64) AS lcp,
+    COUNT(0) AS total_page
   FROM
     `httparchive.pages.2020_09_01_*`
   GROUP BY
