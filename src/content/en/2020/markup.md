@@ -52,7 +52,7 @@ What are the most popular ones
 | XHTML 1.0 Strict | 107,351 | 1.69% |
 | HTML 4.01 Transitional | 54,379 | 0.86% |
 | HTML 4.01 Transitional ([quirky](https://hsivonen.fi/doctype/#xml)) | 38,504 | 0.61% |
-<figcaption>{{ figure_link(caption="@@", sheets_gid="@@", sql_file="@@") }}</figcaption>
+<figcaption>{{ figure_link(caption="The 5 most popular doctypes.", sheets_gid="1981441894", sql_file="summary_pages_by_device_and_doctype.sql") }}</figcaption>
 </figure>
 
 You can already tell how after XHTML 1.0, the numbers decrease quite a bit, and we soon enter the long tail with a few standard, some esoteric, and also bogus doctypes.
@@ -76,6 +76,7 @@ How is this situation in general, then? The median document weighs 25.24 KB:
   image="document-size.png",
   caption="Document size",
   description="Document size in bytes per percentile, with the median document weighing 26.62 KB on desktop.",
+  sheets_gid="2066175354",
   width=600,
   height=371
   )
@@ -102,7 +103,7 @@ Here’s the Top 10 of (normalized) languages in our sample. At first we contemp
 | `de` | 1.92% |
 | `de-de` | 1.60% |
 | `ru-ru` | 1.60% |
-<figcaption>{{ figure_link(caption="@@", sheets_gid="@@", sql_file="@@") }}</figcaption>
+<figcaption>{{ figure_link(caption="Top 10 languages.", sheets_gid="2047285366", sql_file="pages_almanac_by_device_and_html_lang.sql") }}</figcaption>
 </figure>
 
 ### Comments
@@ -143,6 +144,7 @@ At the opposite end of the spectrum, the numbers show that more than 97% of page
   image="script-use.png",
   caption="Script use",
   description="Percentages of pages (not) containing scripts, and scripts are present in almost every form on almost every page.",
+  sheets_gid="150962402",
   width=600,
   height=371
   )
@@ -178,6 +180,7 @@ The median web page, it turns out, uses 30 different elements, 587 times:
   image="element-diversity-element-types.png",
   caption="Element diversity: element types",
   description="Element types per percentile, with 90% of pages using at least 20 different elements.",
+  sheets_gid="46490104",
   width=600,
   height=371
   )
@@ -187,6 +190,7 @@ The median web page, it turns out, uses 30 different elements, 587 times:
   image="element-diversity.png",
   caption="Element diversity",
   description="Elements per percentile, showing how 10% of all pages employ more than 1,665 elements.",
+  sheets_gid="46490104",
   width=600,
   height=371
   )
@@ -200,6 +204,7 @@ How are these elements distributed?
   image="distribution-of-elements-per-page.png",
   caption="Distribution of elements per page",
   description="Element distribution in a scatter plot, and even for a trained observer it’s hard to parse it; interesting is a large group of about 7,500 pages each using roughly 250 elements, after which fewer and fewer pages get back to more and more elements.",
+  sheets_gid="1361520223",
   width=600,
   height=371
   )
@@ -224,7 +229,7 @@ Last year, the Almanac featured the most frequently used elements in reference t
 | `tr` | `option` | `link` |
 | | | `i` |
 | | | `option`|
-<figcaption>{{ figure_link(caption="@@", sheets_gid="@@", sql_file="@@") }}</figcaption>
+<figcaption>{{ figure_link(caption="Popular elements 2005, 2019, and 2020.", sheets_gid="781932961", sql_file="pages_element_count_by_device_and_element_type_frequency.sql") }}</figcaption>
 </figure>
 
 Nothing changed in the Top 7, but the `option` element went a little out of favor and dropped from 8 to 10, letting both the `link` and the `i` element pass in popularity. These elements have risen in use, possibly due to an increase in use of [resource hints](https://www.w3.org/TR/resource-hints/) (as with prerendering and prefetching), as well icon solutions like [Font Awesome](https://fontawesome.com/) (which _de facto_ misuses `i` elements for the purpose of displaying icons).
@@ -255,7 +260,7 @@ Accordingly we looked at the number of `details` and `summary` elements and it s
 |---|---|---|
 | `summary` | 62,992 | 43,936 |
 | `details` | 56,603 | 36,743 |
-<figcaption>{{ figure_link(caption="@@", sheets_gid="@@", sql_file="@@") }}</figcaption>
+<figcaption>{{ figure_link(caption="Use of the `details` and `summary` team.", sheets_gid="1406534257", sql_file="pages_element_count_by_device.sql") }}</figcaption>
 </figure>
 
 </div>
@@ -277,7 +282,7 @@ Another look at element popularity, how likely is it to find a certain element i
 | `span` | 93.98% |
 | `p` | 88.71% |
 | `ul` | 87.68% |
-<figcaption>{{ figure_link(caption="@@", sheets_gid="@@", sql_file="@@") }}</figcaption>
+<figcaption>{{ figure_link(caption="High probabilities of finding a given element in pages of the Web Almanac 2020 sample.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
 </figure>
 
 What standard elements—elements that are or were part of the HTML specification—are you really rarely to find? In our sample, that would bring up the following:
@@ -288,7 +293,7 @@ What standard elements—elements that are or were part of the HTML specificatio
 | `dir` | 0.0082% |
 | `rp` | 0.0087% |
 | `basefont` | 0.0092% |
-<figcaption>{{ figure_link(caption="@@", sheets_gid="@@", sql_file="@@") }}</figcaption>
+<figcaption>{{ figure_link(caption="Low probabilities of finding a given element in pages of the sample.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
 </figure>
 
 ### Custom elements
@@ -312,7 +317,7 @@ The 2019 edition of the Web Almanac handled this part [a little differently](../
 | `rs-loop-wrap` | 63,870 | 1.01% |
 | `rs-layer-wrap` | 63,849 | 1.01% |
 | `wix-iframe` | 63,590 | 1% |
-<figcaption>{{ figure_link(caption="@@", sheets_gid="@@", sql_file="@@") }}</figcaption>
+<figcaption>{{ figure_link(caption="The 14 most popular custom elements.", sheets_gid="770933671", sql_file="pages_element_count_by_device_and_custom_dash_elements.sql") }}</figcaption>
 </figure>
 
 These elements come from three sources: [Yandex Metrics](https://metrica.yandex.com/about) (`ym-`), an analytics solution we’ve also seen last year; [Slider Revolution](https://www.sliderrevolution.com/) (`rs-`), a WordPress slider, for which there are more elements to be found near the top of the sample; and [Wix](https://www.wix.com/) (`wix-`), a website builder.
@@ -337,7 +342,7 @@ In our mobile data set of 6.3 million pages, around 0.9 million pages (14.01%) c
 | `frameset` | 19,163 | 0.30% |
 | `strike` | 17,438 | 0.27% |
 | `noframes` | 15,016 | 0.24% |
-<figcaption>{{ figure_link(caption="@@", sheets_gid="@@", sql_file="@@") }}</figcaption>
+<figcaption>{{ figure_link(caption="Obsolete elements with more than 10,000 uses.", sheets_gid="1972617631", sql_file="pages_element_count_by_device_and_obsolete_elements.sql") }}</figcaption>
 </figure>
 
 Why are these still alive—even `spacer` is still being used 1,584 times, and present on every 5,000th page. We know that Google has been using a `center` element on [their homepage](https://www.google.com/) [for 22 years](https://web.archive.org/web/19981202230410/https://www.google.com/) now, but does that find so many imitators?
@@ -367,7 +372,7 @@ In our set of elements we found some that were neither standard HTML (nor SVG no
 | `olark` | 0.07% |
 | `h7` | 0.06% |
 | `limespot` | 0.05% |
-<figcaption>{{ figure_link(caption="@@", sheets_gid="@@", sql_file="@@") }}</figcaption>
+<figcaption>{{ figure_link(caption="Elements of questionable heritage.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
 </figure>
 
 The source of these elements appears to be mixed, as in some are unknown while others can be traced. The most popular one, `noindex`, is probably due to [Yandex’s recommendation](https://yandex.com/support/webmaster/adding-site/indexing-prohibition.html) of it to prohibit page indexing. `jdiv` was noted in last year’s Almanac and is from JivoChat. `mediaelementwrapper` comes from the MediaElement media player. Both `ymaps` and `yatag` are also from Yandex. The `ss` element could be from ProStores, a former ecommerce product from eBay, and `olark` may be from the Olark chat software. `h7` appears to be a mistake. `limespot` is probably related to the Limespot personalization program for ecommerce. None of these elements are part of a web standard.
@@ -385,7 +390,7 @@ The source of these elements appears to be mixed, as in some are unknown while o
 | `h4` | 20,473,598 | 3.23 |
 | `h5` | 8,594,500 | 1.36 |
 | `h6` | 3,527,470 | 0.56 |
-<figcaption>{{ figure_link(caption="@@", sheets_gid="@@", sql_file="@@") }}</figcaption>
+<figcaption>{{ figure_link(caption="Frequency and average use of standard heading elements,", sheets_gid="277662548", sql_file="pages_wpt_bodies_by_device_and_percentile_and_heading_level.sql") }}</figcaption>
 </figure>
 
 Wait.
@@ -395,7 +400,7 @@ Wait.
 |---|---|---|
 | `h7` | 30,073 | 0.005 |
 | `h8` | 9,266 | 0.0015 |
-<figcaption>{{ figure_link(caption="@@", sheets_gid="@@", sql_file="@@") }}</figcaption>
+<figcaption>{{ figure_link(caption="Frequency and average use of non-standard heading elements,", sheets_gid="277662548", sql_file="pages_wpt_bodies_by_device_and_percentile_and_heading_level.sql") }}</figcaption>
 </figure>
 
 The last two have never been part of HTML, of course, and should not be used.
@@ -423,7 +428,7 @@ Yet the most popular attribute is `class`—with almost 3 billion occurrences in
 | `alt` | 172,668,703 | 1.97% |
 | `rel` | 171,802,460 | 1.96% |
 | `value` | 140,666,779 | 1.61% |
-<figcaption>{{ figure_link(caption="@@", sheets_gid="@@", sql_file="@@") }}</figcaption>
+<figcaption>{{ figure_link(caption="Top 10 attributes.", sheets_gid="1348855449", sql_file="pages_almanac_by_device_and_attribute_name_frequency.sql") }}</figcaption>
 </figure>
 
 The `value` attribute, which specifies the value of an `input` element, surprisingly completes the top ten—surprising because on our end, subjectively, we didn’t get the impression values were used that frequently.
@@ -453,7 +458,7 @@ The most popular ones stand out because they are almost twice as popular than ea
 | `data-type` | 11,130,662 | 1.37% |
 | `data-requiremodule` | 8,303,675 | 1.02% |
 | `data-requirecontext` | 8,302,335 | 1.02% |
-<figcaption>{{ figure_link(caption="@@", sheets_gid="@@", sql_file="@@") }}</figcaption>
+<figcaption>{{ figure_link(caption="The most popular `data-*` attributes.", sheets_gid="764700773", sql_file="pages_almanac_by_device_and_data_attribute_name_frequency.sql") }}</figcaption>
 </figure>
 
 Attributes like `data-type`, `data-id`, and `data-src` can have multiple generic uses although `data-src` is used a lot with lazy image loading via JavaScript (e.g., Bootstrap 4). [Bootstrap](https://getbootstrap.com/) again explains the presence of `data-toggle`, where it’s used as a state styling hook on toggle buttons. The [Slick carousel plugin](https://kenwheeler.github.io/slick/) is the source of `data-slick-index`, whereas `data-element_type` is part of [Elementor’s WordPress website builder](https://elementor.com/). Both `data-requiremodule` and `data-requirecontext`, then, are part of [RequireJS](https://requirejs.org/).
@@ -481,7 +486,7 @@ We had a look at the data and in order to better understand the results, we norm
 | `initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width` | 352,972 | 5,56% |
 | `initial-scale=1,maximum-scale=1,user-scalable=0,width=device-width` | 249,662 | 3,93% |
 | `width=device-width` | 231,668 | 3,65% |
-<figcaption>{{ figure_link(caption="@@", sheets_gid="@@", sql_file="@@") }}</figcaption>
+<figcaption>{{ figure_link(caption="`viewport` specifications, and lack thereof.", sheets_gid="1414206386", sql_file="summary_pages_by_device_and_viewport.sql") }}</figcaption>
 </figure>
 
 The results show that almost half of the pages we analyzed are using the typical viewport `content` value. Still, around 688K mobile pages (and 904K desktop pages) are entirely missing a proper `content` value for the viewport meta element, with the rest of them using an improper combination of `maximum-scale`, `minimum-scale`, `user-scalable=no`, or `user-scalable=0`.
@@ -506,7 +511,7 @@ When we built our tests we didn’t check for the presence of images, but only l
 | WebP | 10,605 | 0.17% |
 | … | | |
 | SVG | 5,328 | 0.08% |
-<figcaption>{{ figure_link(caption="@@", sheets_gid="@@", sql_file="@@") }}</figcaption>
+<figcaption>{{ figure_link(caption="Common favicon approaches.", sheets_gid="1930085905", sql_file="pages_almanac_by_device_and_favicon_image_type.sql") }}</figcaption>
 </figure>
 
 There may be a couple of surprises in here:
@@ -529,7 +534,7 @@ There has been a lot of discussion on buttons lately and how often they are misu
 | `<input type="button" value="…">` | 1,087,182 | 4.07% |
 | `<input type="image" src="…">` | 322,855 | 2.69% |
 | `<button type="reset">…</button>` | 41,735 | 0.49% |
-<figcaption>{{ figure_link(caption="@@", sheets_gid="@@", sql_file="@@") }}</figcaption>
+<figcaption>{{ figure_link(caption="Top 7 button setups.", sheets_gid="410549982", sql_file="pages_markup_by_device.sql") }}</figcaption>
 </figure>
 
 According to the numbers we gathered, about 60% of the pages contain a button element and more than half of them (32.43%) fail to specify a `type` attribute.
@@ -547,7 +552,7 @@ The following table shows that a page in the 90th percentile has at least 13 nat
 | 50 | 1 |
 | 75 | 5 |
 | 90 | 13 |
-<figcaption>{{ figure_link(caption="@@", sheets_gid="@@", sql_file="@@") }}</figcaption>
+<figcaption>{{ figure_link(caption="Button percentiles.", sheets_gid="309769153", sql_file="pages_markup_by_device_and_percentile.sql") }}</figcaption>
 </figure>
 
 </div>
@@ -569,7 +574,7 @@ What protocols do anchors—`a` elements—point to? We looked at that informati
 | skype | 22,378 | 0.35% |
 | sms | 17,304 | 0.27% |
 | intent | 12,807 | 0.20% |
-<figcaption>{{ figure_link(caption="@@", sheets_gid="@@", sql_file="@@") }}</figcaption>
+<figcaption>{{ figure_link(caption="Top 10 link target protocols.", sheets_gid="1963376224", sql_file="pages_wpt_bodies_by_device_and_protocol.sql") }}</figcaption>
 </figure>
 
 We can see how “https” and “http” are most dominant, followed by “benign” links to make writing email, making phone calls, and sending messages easier. “javascript” stands out as a link target that’s still very popular even though JavaScript offers native and gracefully degrading options to work with.
@@ -584,7 +589,7 @@ Using `target="_blank"` is known as a [security vulnerability](https://mathiasby
 | `<a target="_blank" rel="noopener noreferrer">` | 13.63% |
 | `<a target="_blank" rel="noopener">` | 14.14% |
 | `<a target="_blank" rel="noreferrer">` | 0.56% |
-<figcaption>{{ figure_link(caption="@@", sheets_gid="@@", sql_file="@@") }}</figcaption>
+<figcaption>{{ figure_link(caption="Blank relationships.", sheets_gid="1876528165", sql_file="pages_wpt_bodies_by_device.sql") }}</figcaption>
 </figure>
 
 As a rule of thumb—also [for usability reasons](https://www.nngroup.com/articles/new-browser-windows-and-tabs/)—, prefer not to use `target=_blank`. 
