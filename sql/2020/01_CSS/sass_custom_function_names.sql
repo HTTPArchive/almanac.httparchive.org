@@ -17,11 +17,8 @@ SELECT
   client,
   sass_custom_function,
   COUNT(DISTINCT url) AS pages,
-  total_pages,
-  COUNT(DISTINCT url) / total_pages AS pct_pages,
-  COUNT(0) AS freq,
-  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
+  total_sass,
+  COUNT(DISTINCT url) / total_sass AS pct_pages
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -33,17 +30,17 @@ FROM (
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
-    COUNT(DISTINCT url) AS total_pages
+    COUNTIF(SAFE_CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._sass'), '$.scss.size') AS INT64) > 0) AS total_sass
   FROM
     `httparchive.pages.2020_08_01_*`
   GROUP BY
-    _TABLE_SUFFIX)
+    client)
 USING
   (client)
 GROUP BY
   client,
   sass_custom_function,
-  total_pages
+  total_sass
 ORDER BY
   pct DESC
 LIMIT

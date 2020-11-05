@@ -1,5 +1,5 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION getGradientHardStops(css STRING) RETURNS INT64 LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getColorStops(css STRING) RETURNS ARRAY<INT64> LANGUAGE js AS '''
 try {
   function compute(ast) {
     let ret = {
@@ -38,7 +38,7 @@ try {
         let {name, args} = gradient;
         incrementByKey(ret.functions, name);
 
-        incrementByKey(ret.properties, property.indexOf("--") === 0? "--*" : property);
+        incrementByKey(ret.properties, property.indexOf("--") === 0? "--" : property);
 
         let stops;
 
@@ -147,42 +147,28 @@ try {
 
   const ast = JSON.parse(css);
   let gradient = compute(ast);
-  return gradient.hard_stops;
+  return gradient.stop_count;
 } catch (e) {
-  return 0;
+  return [];
 }
 '''
 OPTIONS (library="gs://httparchive/lib/css-utils.js");
 
 SELECT
+  percentile,
   client,
-  COUNTIF(hard_stops > 0) AS pages,
-  total,
-  COUNTIF(hard_stops > 0) / total AS pct
-FROM (
-  SELECT
-    client,
-    page,
-    SUM(getGradientHardStops(css)) AS hard_stops
-  FROM
-    `httparchive.almanac.parsed_css`
-  WHERE
-    date = '2020-08-01' AND
-    # Limit the size of the CSS to avoid OOM crashes.
-    LENGTH(css) < 0.1 * 1024 * 1024
-  GROUP BY
-    client,
-    page)
-JOIN (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    COUNT(0) AS total
-  FROM
-    `httparchive.summary_pages.2020_08_01_*`
-  GROUP BY
-    client)
-USING
-  (client)
+  APPROX_QUANTILES(color_stops, 1000 IGNORE NULLS)[OFFSET(500)] AS median_color_stop
+FROM
+  `httparchive.almanac.parsed_css`,
+  UNNEST(getColorStops(css)) AS color_stops,
+  UNNEST([10, 25, 50, 75, 90]) AS percentile
+WHERE
+  date = '2020-08-01' AND
+  # Limit the size of the CSS to avoid OOM crashes.
+  LENGTH(css) < 0.1 * 1024 * 1024
 GROUP BY
-  client,
-  total
+  percentile,
+  client
+ORDER BY
+  percentile,
+  client
