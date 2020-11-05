@@ -41,4 +41,3 @@ ORDER BY
   client,
   firstHTML,
   CDN
-  
