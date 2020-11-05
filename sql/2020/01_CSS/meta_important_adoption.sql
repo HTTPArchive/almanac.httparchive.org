@@ -30,6 +30,7 @@ OPTIONS (library="gs://httparchive/lib/css-utils.js");
 SELECT
   percentile,
   client,
+  COUNTIF(pct_important = 100) AS all_important_pages,
   APPROX_QUANTILES(pct_important, 1000)[OFFSET(percentile * 10)] AS pct_important_props
 FROM (
   SELECT

@@ -50,7 +50,7 @@ try {
       for (let match of haystack.matchAll(needle)) {
         ret++;
       }
-      
+
       return ret;
     }
 
@@ -89,6 +89,12 @@ try {
     }
 
     walkDeclarations(ast, ({property, value}) => {
+      // First remove url() references to avoid them mucking the results
+      for (let f of extractFunctionCalls(value, {names: "url"})) {
+        let [start, end] = f.pos;
+        value = value.substring(0, start) + "url()" + " ".repeat(end - start - 5) + value.substring(end);
+      }
+
       usage.hex[3] += countMatches(value, /#[a-f0-9]{3}\\b/gi);
       usage.hex[4] += countMatches(value, /#[a-f0-9]{4}\\b/gi);
       usage.hex[6] += countMatches(value, /#[a-f0-9]{6}\\b/gi);
@@ -102,14 +108,14 @@ try {
 
         if (name === "color") {
           // Let's look at color() more closely
-          let match = args.match(/^(?<space>[\\w-]+)\\s+(?<params>.+)$/);
+          let match = args.match(/^(?<space>[\\w-]+)\\s+(?<params>[-\\d\\s.%\\/]+)$/);
 
           if (match) {
             let {space, params} = match.groups;
 
             incrementByKey(usage.spaces, space);
 
-            if (/^[-\\d.+%\\s]+$/.test(params) && space === "display-p3") {
+            if (space === "display-p3") {
               let percents = params.indexOf("%") > -1;
               let coords = params.trim().split(/\\s+/).map(c => parseFloat(c) / (percents? 100 : 1));
 
@@ -120,11 +126,11 @@ try {
       }
 
       for (let match of value.matchAll(keywordRegex)) {
-        incrementByKey(usage.keywords, match[0]);
+        incrementByKey(usage.keywords, match[0].toLowerCase());
       }
 
       for (let match of value.matchAll(systemRegex)) {
-        incrementByKey(usage.system, match[0]);
+        incrementByKey(usage.system, system.find(kw => kw.toLowerCase() == match[0].toLowerCase()));
       }
 
       for (let match of value.matchAll(/\\b(?<!\\-)(?:currentColor|transparent)\\b/gi)) {

@@ -18,7 +18,8 @@ try {
     }
 
     let ret = {
-      depths: {}
+      max_length: 0,
+      cycles_or_initial: 0
     };
 
     function countDependencyLength(node, property) {
@@ -54,12 +55,16 @@ try {
           let o = node.declarations[property];
           if (o.computed && o.computed.trim() !== o.value.trim() && (o.computed === "initial" || o.computed === "null")) {
             // Cycle or missing ref
-            incrementByKey(ret, "cycles_or_initial");
+            ret.cycles_or_initial++;
           }
           else {
             let depth = countDependencyLength(node, property);
 
-            incrementByKey(ret.depths, depth);
+            if (depth > ret.max_length) {
+              ret.max_length = depth;
+            }
+
+            incrementByKey(ret, depth);
           }
         }
       }
