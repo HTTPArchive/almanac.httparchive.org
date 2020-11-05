@@ -1,4 +1,4 @@
-{% extends "%s/%s/base_ebook.html" % (lang, year) %}
+{% extends "%s/2019/base_ebook.html" % lang %}
 
 {% set metadata = {} %}
 
@@ -128,9 +128,11 @@
                                 {{ authordata.tagline }}
                             </div>
                         {% endif %}
-                        <div class="bio">
-                            {{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}
-                        </div>
+                        {% if metadata.get(author + '_bio') %}
+                            <div class="bio">
+                                {{ add_footnote_links(metadata.get(author + '_bio') | replace('&quot;','"')) | safe }}
+                            </div>
+                        {% endif %}
                     </div>
                 </li>
             {% endfor %}

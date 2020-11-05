@@ -10,6 +10,8 @@ translators: [ksakae]
 discuss: 1757
 results: https://docs.google.com/spreadsheets/d/1uFlkuSRetjBNEhGKWpkrXo4eEIsgYelxY-qR9Pd7QpM/
 queries: 02_CSS
+una_bio: Una Kravetsは、ブルックリンを拠点とする国際的な講演者であり、テクニカルライターであり、Googleのマテリアルデザインの開発提唱者でもあります。Unaは、<a href="https://www.youtube.com/watch?v=YK8GZBx3hpg">Designing the Browser</a> のウェブシリーズと <a href="https://spec.fm/podcasts/toolsday">Toolsday</a> の開発者向けポッドキャストを主催しています。<a href="https://twitter.com/una">Twitter</a> で彼女をフォローして、クリエイティブなCSS、ユーザー体験、ウェブ開発のベストプラクティスについての彼女の考察を見つけてください。
+argyleink_bio: Adam ArgyleはGoogle Chrome開発者リレーションズのメンバーで、CSSを中心に活動しています。優れたUX & UIを求める飽くなき欲望を持つウェブ中毒者です。<a href="https://twitter.com/argyleink">@argyleink</a> or checkout his website <a href="https://nerdy.dev">https://nerdy.dev</a>。
 featured_quote: Cascading Style Sheets (CSS) は、Web ページのペイント、フォーマット、レイアウトに使用されます。その機能は、テキストの色から3Dパースペクティブと、シンプルな概念にまで及びます。また、さまざまな画面サイズ、表示コンテキスト、および印刷を処理するために開発者に力を与えるフックを持っています。CSS は、開発者がコンテンツを調整し、ユーザーに適切に適応することを確認するのに役立ちます。
 featured_stat_1: 5%
 featured_stat_label_1: カスタムプロパティを使用したページ

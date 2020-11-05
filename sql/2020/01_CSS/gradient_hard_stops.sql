@@ -30,7 +30,7 @@ try {
       "GrayText", "Highlight", "HighlightText", "InactiveBorder", "InactiveCaption", "InactiveCaptionText", "InfoBackground", "InfoText",
       "Menu", "MenuText", "Scrollbar", "ThreeDDarkShadow", "ThreeDFace", "ThreeDHighlight", "ThreeDLightShadow", "ThreeDShadow", "Window", "WindowFrame", "WindowText"
     ];
-    const keywordRegex = RegExp(`\\b(?<!\\-)(?:${keywords.join("|")})\\b`, "gi");
+    const keywordRegex = RegExp(`\\\\b(?<!\\-)(?:${keywords.join("|")})\\\\b`, "gi");
 
     walkDeclarations(ast, ({property, value}) => {
       for (let gradient of extractFunctionCalls(value, {names: /-gradient$/})) {
@@ -38,22 +38,34 @@ try {
         let {name, args} = gradient;
         incrementByKey(ret.functions, name);
 
-        incrementByKey(ret.properties, property.indexOf("--") === 0? "--" : property);
+        incrementByKey(ret.properties, property.indexOf("--") === 0? "--*" : property);
+
+        let stops;
 
         // Light color stop parsing
+        if (name === "-webkit-gradient") {
+          // -webkit-gradient() has completely different syntax
+          stops = extractFunctionCalls(args, {names: "color-stop"});
 
-        // Collapse nested function calls into empty function calls
-        for (let i=0, lastIndex; (i = args.indexOf("(", lastIndex + 1)) > -1; ) {
-          let a = parsel.gobbleParens(args, i);
-          args = args.substring(0, i) + "()" + args.substring(i + a.length);
-          lastIndex = i;
+          stops = stops.map(c => {
+            let parts = c.args.split(",");
+            return {pos: [parts.unshift()], color: parts.join(",")};
+          });
         }
+        else {
+          // Collapse nested function calls into empty function calls for easier parsing
+          for (let i=0, lastIndex; (i = args.indexOf("(", lastIndex + 1)) > -1; ) {
+            let a = parsel.gobbleParens(args, i);
+            args = args.substring(0, i) + "()" + args.substring(i + a.length);
+            lastIndex = i;
+          }
 
-        let stops = args.split(/\\s*,\\s*/);
+          stops = args.split(/\\s*,\\s*/);
 
-        // Remove first arg if it's params and not a color stop
-        if (/^(at|to|from)\\s|ellipse|circle|(?:farthest|closest)-(?:side|corner)|[\\d.]+(deg|grad|rad|turn)/.test(stops[0])) {
-          stops.shift();
+          // Remove first arg if it's params and not a color stop
+          if (/^(at|to|from)\\s|ellipse|circle|(?:farthest|closest)-(?:side|corner)|^[\\d.]+(deg|grad|rad|turn)$|^(?:(?:top|right|bottom|left)\\s*){1,2}$/.test(stops[0])) {
+            stops.shift();
+          }
         }
 
         stopCount.push(stops.length);
@@ -67,28 +79,30 @@ try {
           ret.max_stops_gradient.push(value.substring(...gradient.pos));
         }
 
-        // The rest will fail if we have variables with fallbacks in the args so let's just skip those altogether for now
-        if (/\\bvar\\(/.test(args)) {
-          continue;
+        if (name !== "-webkit-gradient") {
+          // The rest will fail if we have variables with fallbacks in the args so let's just skip those altogether for now
+          if (/\\bvar\\(/.test(args)) {
+            continue;
+          }
+
+          // Separate color and position(s)
+          stops = stops.map(s => {
+            if (/\\s/.test(s)) {
+              // Even though the spec doesn't mandate an order, all browsers implement the older grammar
+              // with the position after the color, so placing the position before the color must be extremely rare.
+              let parts = s.split(/\\s+/);
+              return {color: parts[0], pos: parts.slice(1)};
+            }
+
+            // We only have one thing, is it a color or a position?
+            if (/#[a-f0-9]+|(?:rgba?|hsla?|color)\\(/i.test(s) || keywordRegex.test(s)) {
+              keywordRegex.lastIndex = 0;
+              return {color: s};
+            }
+
+            return {pos: s};
+          });
         }
-
-        // Separate color and position(s)
-        stops = stops.map(s => {
-          if (/\\s/.test(s)) {
-            // Even though the spec doesn't mandate an order, all browsers implement the older grammar
-            // with the position after the color, so placing the position before the color must be extremely rare.
-            let parts = s.split(/\\s+/);
-            return {color: parts[0], pos: parts.slice(1)};
-          }
-
-          // We only have one thing, is it a color or a position?
-          if (/#[a-f0-9]+|(?:rgba?|hsla?|color)\\(/.test(s) || keywordRegex.test(s)) {
-            keywordRegex.lastIndex = 0;
-            return {color: s};
-          }
-
-          return {pos: s};
-        });
 
         for (let i=0; i<stops.length; i++) {
           let s = stops[i];

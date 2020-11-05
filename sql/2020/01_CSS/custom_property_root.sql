@@ -62,17 +62,32 @@ SELECT
   name AS root,
   SUM(freq) AS freq,
   SUM(SUM(freq)) OVER (PARTITION BY client) AS total,
-  SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client) AS pct
+  SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client) AS pct,
+  COUNT(DISTINCT page) AS pages,
+  total_pages,
+  COUNT(DISTINCT page) / total_pages AS pct_pages
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
+    url AS page,
     root.name,
     root.freq
   FROM
     `httparchive.pages.2020_08_01_*`,
     UNNEST(getCustomPropertyRoots(payload)) AS root)
+JOIN (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    COUNT(0) AS total_pages
+  FROM
+    `httparchive.summary_pages.2020_08_01_*`
+  GROUP BY
+    client)
+USING
+  (client)
 GROUP BY
   client,
-  root
+  root,
+  total_pages
 ORDER BY
   pct DESC

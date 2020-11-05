@@ -7,13 +7,16 @@ try {
   let ret = {};
 
   walkDeclarations(ast, ({property, value}) => {
-    let key = value;
+    let key;
 
     if (property === "float") {
       key = "floats";
     }
     else if (/^table(-|$)/.test(value)) {
       key = "css-tables";
+    }
+    else {
+      key = value.replace(/-(webkit|moz|o|webkit|khtml)-|!.+$/g, "").toLowerCase();
     }
 
     incrementByKey(ret, key);
@@ -38,27 +41,41 @@ try {
 OPTIONS (library="gs://httparchive/lib/css-utils.js");
 
 SELECT
-  client,
-  layout,
-  COUNT(DISTINCT page) AS pages,
-  SUM(value) AS freq,
-  SUM(SUM(value)) OVER (PARTITION BY client) AS total,
-  SUM(value) / SUM(SUM(value)) OVER (PARTITION BY client) AS pct
+  *,
+  pages / total_pages AS pct_pages
 FROM (
   SELECT
     client,
-    page,
-    layout.name AS layout,
-    layout.value
+    layout,
+    SUM(value) AS freq,
+    SUM(SUM(value)) OVER (PARTITION BY client) AS total,
+    SUM(value) / SUM(SUM(value)) OVER (PARTITION BY client) AS pct,
+    COUNT(DISTINCT page) AS pages,
+  FROM (
+    SELECT
+      client,
+      page,
+      layout.name AS layout,
+      layout.value
+    FROM
+      `httparchive.almanac.parsed_css`,
+      UNNEST(getLayoutUsage(css)) AS layout
+    WHERE
+      date = '2020-08-01')
+  GROUP BY
+    client,
+    layout)
+JOIN (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    COUNT(0) AS total_pages
   FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getLayoutUsage(css)) AS layout
-  WHERE
-    date = '2020-08-01')
-GROUP BY
-  client,
-  layout
-HAVING
+    `httparchive.summary_pages.2020_08_01_*`
+  GROUP BY
+    client)
+USING
+  (client)
+WHERE
   pages >= 100
 ORDER BY
   pct DESC

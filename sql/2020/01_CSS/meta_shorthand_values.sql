@@ -443,9 +443,10 @@ try {
 OPTIONS (library="gs://httparchive/lib/css-utils.js");
 
 SELECT
+  percentile,
   client,
   shorthand,
-  APPROX_QUANTILES(value, 1000)[OFFSET(500)] AS median_number_of_values
+  APPROX_QUANTILES(value, 1000)[OFFSET(percentile * 10)] AS number_of_values
 FROM (
   SELECT
     client,
@@ -456,9 +457,13 @@ FROM (
     UNNEST(getShorthandValueCounts(css)) AS shorthand,
     UNNEST(shorthand.values) AS value
   WHERE
-    date = '2020-08-01')
+    date = '2020-08-01'),
+  UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
+  percentile,
   client,
   shorthand
 ORDER BY
-  median_number_of_values DESC
+  percentile,
+  client,
+  shorthand
