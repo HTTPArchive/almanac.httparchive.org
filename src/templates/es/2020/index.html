@@ -1,4 +1,4 @@
-{% extends "base/2020/index.html" %}
+{% extends "base/2019/index.html" %}
 
 {% block title %}Web Almanac {{ year }}{% endblock %}
 {% block description %}Web Almanac es un informe anual del estado la Web que combina la experiencia de la comunidad con los datos y tendencias del HTTP Archive.{% endblock %}
@@ -6,19 +6,13 @@
 {% block twitter_image_alt %}Web Almanac {{ year }}{% endblock %}
 
 {% block date_published %}2020-07-06T00:00:00.000Z{% endblock %}
-{% block date_modified %}2020-07-23T00:00:00.000Z{% endblock %}
+{% block date_modified %}2020-11-03T00:00:00.000Z{% endblock %}
 
-{% block intro_title %}¡Próximamente!{% endblock %}
+{% block intro_title %}{{ self.coming_soon() }}{% endblock %}
 {% block intro_sub_title %}El informe del <b>estado de la Web</b> de {{ year }}{% endblock %}
 
 {% block mission %}
 <p>
   Expertos de la comunidad web están trabajando duro ahora mismo, preparando, analizando y escribiendo contenido para la edición del Web Almanac de {{ year }}, cuya publicación está prevista pra finales de año.
 </p>
-
-<p>
-  Hay muchas oportunidades disponibles para nuevos colaboradores que quieran incorporarse al proyecto, incluyendo autoría, revisión, edición y traducción de contenidos, análisis de datos o desarrollo. Si estás interesado/a en participar en la edición de {{ year }}, nos encataría poder contar contigo.
-</p>
-
-<a href="https://github.com/HTTPArchive/almanac.httparchive.org#contributing" class="btn">¡Únete al equipo!</a>
 {% endblock %}

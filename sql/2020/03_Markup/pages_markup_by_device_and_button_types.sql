@@ -19,7 +19,13 @@ try {
     if (Array.isArray(markup) || typeof markup != 'object') return result;
 
     if (markup.buttons && markup.buttons.types) {
-      return Object.entries(markup.buttons.types).map(([name, freq]) => ({name, freq})); 
+      var total = markup.buttons.total;
+      var withType = 0;
+      result = Object.entries(markup.buttons.types).map(([name, freq]) => { withType+=freq; return  {name: name.toLowerCase().trim(), freq};});
+
+      result.push({name:"NO_TYPE", freq: total - withType})
+
+      return result; 
     }
 
 } catch (e) {}
@@ -28,7 +34,7 @@ return result;
 
 SELECT
   _TABLE_SUFFIX AS client,
-  LOWER(TRIM(button_type_info.name)) AS button_type,
+  button_type_info.name AS button_type,
   COUNTIF(button_type_info.freq > 0) AS freq_page_with_button, 
   AS_PERCENT(COUNTIF(button_type_info.freq > 0), total) AS pct_page_with_button,
   SUM(button_type_info.freq) AS freq_button, 

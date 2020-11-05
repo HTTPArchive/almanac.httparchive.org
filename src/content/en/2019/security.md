@@ -10,8 +10,17 @@ translators: []
 discuss: 1763
 results: https://docs.google.com/spreadsheets/d/1Zq2tQhPE06YZUcbzryRrBE6rdZgHHlqEp2XcgS37cm8/
 queries: 08_Security
+ScottHelme_bio: Scott Helme is a Security Researcher and founder of <a href="https://report-uri.com">report-uri.com</a> and <a href="https://securityheaders.com">securityheaders.com</a>. You can find him talking about security on Twitter <a href="https://twitter.com/Scott_Helme">@Scott_Helme</a> and blogging at <a href="https://scotthelme.co.uk">scotthelme.co.uk</a>.
+arturjanc_bio: Artur Janc is an Information Security Engineer at Google, working on designing and adopting web platform security mechanisms across Google and the web at large. He argues with people on the internet as <a href="https://twitter.com/arturjanc">@arturjanc on Twitter</a>.
+featured_quote: As the web grows in capabilities and allows access to more and more sensitive data, it becomes increasingly important for developers to adopt web security features to protect their applications. The security features reviewed in this chapter are defenses built into the web platform itself, available to every web author.
+featured_stat_1: 79%
+featured_stat_label_1: Sites using HTTPS
+featured_stat_2: 41%
+featured_stat_label_2: Sites using TLSv1.3
+featured_stat_3: 4.43%
+featured_stat_label_3: Sites using CSP
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introduction

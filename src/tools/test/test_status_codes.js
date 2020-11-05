@@ -4,7 +4,7 @@ const convert = require('xml-js');
 
 const { get_yearly_configs } = require('../generate/shared');
 
-const default_year = 2019;
+const default_year = 2020;
 const default_language = 'en';
 const base_url = "http://127.0.0.1:8080";
 
@@ -39,7 +39,7 @@ const test_status_code = async (page, status, location) => {
     // Don't follow redirects
     const options = {
       redirect: 'manual'
-    }
+    };
 
     const response = await fetch(base_url + page, options);
 
@@ -118,6 +118,11 @@ const test_status_codes = async () => {
   //Test 404s
   await test_404_pages();
   await test_status_code('/zz/', 404);
+  await test_status_code('/zz/2018/', 404);
+  await test_status_code('/en/2018/', 404);
+  await test_status_code('/base/', 404);
+  await test_status_code('/base/2019/', 404);
+  await test_status_code('/base/2019/methodology', 404);
   
   console.log('Passes:', passes, "Failures:", failures);
   process.exitCode = failures;

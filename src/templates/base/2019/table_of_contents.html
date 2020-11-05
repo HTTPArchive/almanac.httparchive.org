@@ -1,4 +1,4 @@
-{% extends "%s/2019/base.html" % lang %}
+{% extends "%s/%s/base.html" % (lang, year) %}
 
 {% block image_url %}https://almanac.httparchive.org/static/images/methodology-characters-bg.png{% endblock %}
 {% block image_height %}354{% endblock %}
@@ -98,8 +98,10 @@
   <h1 class="title title-lg">{{ self.table_of_contents_title() }}</h1>
 
   <section>
+    {% if year < "2020" %}
     <h2 id="forward"><a href="#forward" class="anchor-link">{{ self.foreword_title() }}</a></h2>
     {{ self.foreword() }}
+    {% endif %}
   </section>
 
   <div class="contents-wrapper">
@@ -110,17 +112,21 @@
           <div class="chapters">
             {% for chapter_config in part_config.chapters %}
               <div class="chapter">
-                {% if chapter_config.todo %}
-                <span class="todo">{{ self.chapter() }} {{ chapter_config.chapter }}: {{ localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title }}</span>
+                {% if year > "2019" %}
+                <span class="todo">{{ self.chapter() }} {{ chapter_config.chapter }}: {{ localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title }} - {{ self.coming_soon() }}</span>
                 {% else %}
-                  {% if chapter_lang_exists(lang, year, chapter_config.slug) %}
-                  <a href="{{ url_for('chapter', year=year, lang=lang, chapter=chapter_config.slug) }}">
-                    {{ self.chapter() }} {{ chapter_config.chapter }}: {{ localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title }}
-                  </a>
+                  {% if chapter_config.todo %}
+                  <span class="todo">{{ self.chapter() }} {{ chapter_config.chapter }}: {{ localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title }}</span>
                   {% else %}
-                  <a href="{{ url_for('chapter', year=year, lang='en', chapter=chapter_config.slug) }}">
-                    {{ self.chapter() }} {{ chapter_config.chapter }}: {{ localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title }} <span class="not-translated">({{ self.translation_not_available() }})</span>
-                  </a>
+                    {% if chapter_lang_exists(lang, year, chapter_config.slug) %}
+                    <a href="{{ url_for('chapter', year=year, lang=lang, chapter=chapter_config.slug) }}">
+                      {{ self.chapter() }} {{ chapter_config.chapter }}: {{ localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title }}
+                    </a>
+                    {% else %}
+                    <a href="{{ url_for('chapter', year=year, lang='en', chapter=chapter_config.slug) }}">
+                      {{ self.chapter() }} {{ chapter_config.chapter }}: {{ localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title }} <span class="not-translated">({{ self.translation_not_available() }})</span>
+                    </a>
+                    {% endif %}
                   {% endif %}
                 {% endif %}
               </div>

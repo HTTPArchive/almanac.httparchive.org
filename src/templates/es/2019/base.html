@@ -16,8 +16,12 @@
 {% endblock %}
 
 {% block mission %}
+<p>
 Nuestra misión es combinar las estadísticas y tendencias sin procesar del HTTP Archive con la experiencia de la comunidad web. Web Almanac es un informe exhaustivo sobre el estado de la web, respaldado por datos reales y expertos web de confianza. Se compone de 20 capítulos que abarcan aspectos del contenido de la página, la experiencia del usuario, la publicación y la distribución.
+</p>
 {% endblock %}
+
+{% block read_last_years_almanac %}Lea el Web Almanac {{ year | int - 1 }}{% endblock %}
 
 {% block http_archive_link %}Página de Inicio HTTP Archive{% endblock %}
 
@@ -81,7 +85,11 @@ Nuestra misión es combinar las estadísticas y tendencias sin procesar del HTTP
 {% block accessibility_statement %}Declaración de accesibilidad{% endblock %}
 
 {% block featured_chapter %}Capítulo Destacado{% endblock %}
-{% macro readChapter(chapter) %}Lea el Capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
+
+{# Check if read_chapter already defined in child template as macros can't be overridden #}
+{% if not read_chapter %}
+{% macro read_chapter(chapter) %}Lea el Capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
+{% endif %}
 
 {% block contributors_description %}
 Web Almanac ha sido posible gracias al arduo trabajo de la comunidad web. {{ self.contributors() }} personas han ofrecido incontables horas en las fases de planificación, investigación, redacción y producción.
@@ -120,6 +128,8 @@ A menos que se indique lo contrario, las métricas en los 20 capítulos del Web 
 
     <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>, creador del Web Almanac</em></p>
 {% endblock %}
+
+{% block coming_soon %}¡Próximamente!{% endblock %}
 
 {% block appendix %}Apéndice{% endblock %}
 {% block appendices %}Apéndices{% endblock %}
@@ -176,37 +186,3 @@ A menos que se indique lo contrario, las métricas en los 20 capítulos del Web 
     "translators": "Traductores", 
     }
   %}
-
-  {% set localizedContributors = {
-    "kleinab": '<i lang="en">Abigail Klein is a Google software engineer. She worked on Google Docs, Sheets, and Slides web accessibility where she added <a href="https://www.blog.google/outreach-initiatives/accessibility/whats-you-say-present-captions-google-slides/">automatic captions to Google Slides</a>, as well as improving screen reader, braille, screen magnifier, and high contrast support. She currently works on Google Chrome and ChromeOS accessibility. She has a bachelor\'s and master\'s degree in computer science from MIT, where she co-founded an assistive technology hackathon and was a lab assistant and guest lecturer of the assistive technology class.</i>',
-    "argyleink": '<i lang="en">Adam Argyle is a Google Chrome developer relations member focused on CSS; He\'s a web addict with an insatiable lust for great UX &amp; UI; Find him on the web <a href="https://twitter.com/argyleink">@argyleink</a> or checkout his website <a href="https://nerdy.dev">https://nerdy.dev</a>;</i>',
-    "alankent": '<i lang="en">Alan Kent is a Developer Advocate at Google focusing on e-commerce and content ecosystems. He blogs at <a href="https://alankent.me">alankent.me</a> and tweets as <a href="https://twitter.com/akent99">@akent99</a>.</i>',
-    "amedina": '<i lang="en">Alberto Medina is a Developer Advocate in the Web Content Ecosystems Team at Google, focusing on advancing the proliferation of quality content on the web via progressive technologies such as Amp, and the use of modern Web APIs. Alberto\'s work currently has a strong focus on Content Management Systems as he leads an area of Content Ecosystem called CMS Developer Relations.</i>',
-    "andydavies": '<i lang="en">Andy Davies is a Freelance Web Performance Consultant and has helped some of the UK\'s leading retailers, newspapers and financial services companies to make their sites faster. He wrote The Pocket Guide to Web Performance, is co-author of Using WebPageTest and also an organizer of the London Web Performance meetup. You can find Andy on Twitter as <a href="https://twitter.com/andydavies">@AndyDavies</a>, and he occasionally blogs at <a href="https://andydavies.me">https://andydavies.me</a></i>',
-    "arturjanc": '<i lang="en">Artur Janc is an Information Security Engineer at Google, working on designing and adopting web platform security mechanisms across Google and the web at large. He argues with people on the internet as <a href="https://twitter.com/arturjanc">@arturjanc on Twitter</a>.</i>',
-    "bazzadp": '<i lang="en">Barry Pollard is a software developer and author of the Manning book <a href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a>. He thinks the web is amazing but wants to make it even better. You can find him tweeting <a href="https://twitter.com/tunetheweb">@tunetheweb</a> and blogging at <a href="https://www.tunetheweb.com">www.tunetheweb.com</a>.</i>',
-    "bkardell": '<i lang="en">Brian Kardell is developer advocate at <a href="https://igalia.com">Igalia</a>, standards contributor, <a href="https://bkardell.com">blogger</a>, and is currently the W3C Advisory Committee Representative for the <a href="https://openjsf.org/">Open JS Foundation</a>. He was a founder of the Extensible Web Community Group and co-author of <a href="https://extensiblewebmanifesto.org">The Extensible Web Manifesto</a>.</i>',
-    "colinbendell": '<i lang="en">Colin is part of the CTO Office at <a href="https://cloudinary.com/">Cloudinary</a> and co-author of the O\Reilly book <a href="https://www.oreilly.com/library/view/high-performance-images/9781491925799/">High Performance Images</a>. He spends much of his time at the intersection of high volume data, media, browsers and standards. You can find him on tweeting <a href="https://twitter.com/colinbendell">@colinbendell</a> and at blogging at <a href="https://bendell.ca/">https://bendell.ca</a>.</i>',
-    "obto": '<i lang="en">David Fox is the lead usability researcher and founder of LookZook, a company obsessed with finding out everything there is to know about building web experiences that meet user expectations. He is a website psychologist who digs into sites to learn not just what users are struggling with, but why, and how to best improve their experience. He is also a Google Chromium contributor, speaker, and provider of webinars and UX training.</i>',
-    "dougsillars": '<i lang="en">Doug Sillars is a freelance digital nomad working on the intersection of performance and media. He tweets <a href="https://twitter.com/dougsillars">@dougsillars</a>, and blogs regularly at <a href="https://dougsillars.com">dougsillars.com</a>.</i>',
-    "housseindjirdeh": '<i lang="en">Houssein is a Developer Advocate at Google working on speed, performance and the web framework ecosystem. He tweets at <a href="https://twitter.com/hdjirdeh">@hdjirdeh</a> and blogs at <a href="https://houssein.me/">https://houssein.me/</a>.</i>',
-    "jeffposnick": '<i lang="en">Jeff Posnick is a member of Google\'s Web Developer Relations team, based in New York. His focus is on <a href="https://developers.google.com/web/tools/workbox/">Workbox</a>, a set of service worker libraries for Progressive Web Apps. He blogs at <a href="https://jeffy.info">https://jeffy.info</a> and tweets as <a href="https://twitter.com/jeffposnick">@jeffposnick</a>.</i>',
-    "khempenius": '<i lang="en">Katie Hempenius is an engineer on the Chrome team where she works on making the web faster.</i>',
-    "AVGP": '<i lang="en">Martin Splitt is a developer advocate on the web ecosystem team at Google where he works on keeping the web discoverable.</i>',
-    "nektarios-paisios": '<i lang="en">Nektarios Paisios is a software engineer working on Chrome accessibility for the last 5 years. He primarily focuses on making Chrome compatible with third party assistive software such as screen readers and screen magnifiers. Before working on Chrome accessibility, Nektarios worked in various other roles at the company, such as GSuite accessibility and display ads. Nektarios holds a Ph.D. in Computer Science from New York University.</i>',
-    "patrickhulce": '<i lang="en">Patrick Hulce is an ex-Chrome engineer, founder of <a href="https://eris.ventures/">Eris Ventures</a>, core team member of <a href="https://github.com/GoogleChrome/lighthouse">Lighthouse</a> and <a href="https://github.com/GoogleChrome/lighthouse-ci">Lighthouse CI</a>, co-organizer of the <a href="https://www.meetup.com/DallasJS/">DallasJS</a> meetup, and author of the <a href="https://github.com/patrickhulce/third-party-web">third-party-web</a> project.</i>',
-    "paulcalvano": '<i lang="en">Paul Calvano is a Web Performance Architect at <a href="https://www.akamai.com/">Akamai</a>, where he helps businesses improve the performance of their websites. He\'s also a co-maintainer of the HTTP Archive project. You can find him tweeting at <a href="https://twitter.com/paulcalvano">@paulcalvano</a>, blogging at <a href="https://paulcalvano.com">http://paulcalvano.com</a> and sharing HTTP Archive research at <a href="https://discuss.httparchive.org">https://discuss.httparchive.org</a>.</i>',
-    "rachellcostello": '<i lang="en">Rachel Costello is a Technical SEO &amp; Content Manager at <a href="https://www.deepcrawl.com/">DeepCrawl</a> and an international conference speaker who spends her time researching and communicating the latest developments in search. Rachel currently manages the production of <a href="https://www.deepcrawl.com/knowledge/white-papers/">technical SEO white papers</a> and research pieces for DeepCrawl, and is a regular columnist for <a href="https://www.searchenginejournal.com/author/rachel-costello/">Search Engine Journal</a>.</i>',
-    "ernee": '<i lang="en">Renee Johnson is a web and product consultant, a WordPress enthusiast, and frequent WordCamp organizer and volunteer. She\'s currently working with the Content Management System Developer Relations team at Google as a Product Support Specialist.</i>',
-    "rviscomi": '<i lang="en">Rick Viscomi is a Senior Developer Programs Engineer at Google, working on web transparency projects like the HTTP Archive and Chrome UX Report, and studying the intersection of how websites are built and experienced. Rick is the host of <a href="https://www.youtube.com/playlist?list=PLNYkxOF6rcIBGvYSYO-VxOsaYQDw5rifJ">The State of the Web</a> in which experts discuss how the web is trending. Rick is the coauthor of <a href="https://usingwpt.com">Using WebPageTest</a>, a guide for testing web performance, and writes frequently about the web on <a href="https://dev.to/rick_viscomi">dev.to</a> and on Twitter at <a href="https://twitter.com/rick_viscomi">@rick_viscomi</a>.</i>',
-    "samdutton": '<i lang="en">Sam Dutton has worked with the Google Chrome team as a Developer Advocate since 2011. He has organized and presented at a number of events, created and taught several web development courses, and worked on a range of videos, codelabs and written guidance covering PWA, performance, media, image and \'Next Billion Users\' initiatives. He maintains <a href="https://simpl.info">simpl.info</a>, which provides simplest possible examples of HTML, CSS and JavaScript. Sam grew up in South Australia, went to university in Sydney, and has lived since 1986 in London.</i>',
-    "ScottHelme": '<i lang="en">Scott Helme is a Security Researcher and founder of <a href="https://report-uri.com">report-uri.com</a> and <a href="https://securityheaders.com">securityheaders.com</a>. You can find him talking about security on Twitter <a href="https://twitter.com/Scott_Helme">@Scott_Helme</a> and blogging at <a href="https://scotthelme.co.uk">scotthelme.co.uk</a>.</i>',
-    "tammyeverts": '<i lang="en">Tammy Everts has spent more than two decades studying usability and UX. For the past ten years, she\'s focused on the intersection of UX with web performance and business. She is CXO at <a href="https://speedcurve.com/">SpeedCurve</a>, co-chair of the <a href="https://perfnow.nl/">performance.now() conference</a>, and author of the O\Reilly book <em><a href="http://shop.oreilly.com/product/0636920041450.do">Time Is Money: The Business Value of Performance</a></em>.</i>',
-    "tomayac": '<i lang="en">Thomas Steiner is a Web Developer Advocate at Google Hamburg, focused on making the Web a better place through standardization, creating and sharing best practices, and doing research. He blogs at <a href="https://blog.tomayac.com/">blog.tomayac.com</a> and tweets as <a href="https://twitter.com/tomayac">@tomayac</a>.</i>',
-    "una": '<i lang="en">Una Kravets is a Brooklyn-based international public speaker, technical writer, and Developer Advocate for Material Design at Google. Una hosts the <a href="https://www.youtube.com/watch?v=YK8GZBx3hpg">Designing the Browser</a> web series and the <a href="https://spec.fm/podcasts/toolsday">Toolsday</a> developer podcast. Follow her on <a href="https://twitter.com/una">Twitter</a> to find her musings on creative CSS, user experiences, and web development best practices.</i>',
-    "ymschaap": '<i lang="en">Founder at technical SEO consultancy <a href="https://build.amsterdam/">build.amsterdam</a>. Previously founded several web companies that reached over 1 billions users. Blogging about his latest (ad)ventures since 2005 on <a href="https://yvoschaap.com/">yvoschaap.com</a>.</i>',
-    "zachleat": '<i lang="en">Zach es un Desarrollador Web en <a href="https://www.filamentgroup.com/">Filament Group</a>. Actualmente está obsesionado con <a href="https://www.zachleat.com/web/fonts/">las fuentes web</a> y <a href="https://www.zachleat.com/web/introducing-eleventy/">generadores de sitios estáticos</a>. Su <a href="https://www.zachleat.com/web/speaking/">currículum de expositor</a> incluye charlas en ocho países diferentes en eventos como JAMstack_conf, Beyond Tellerrand, Smashing Conference, CSSConf, y <a href="https://www.zachleat.com/web/whitehouse/">La Casa Blanca</a>. Él también ayuda a organizar <a href="http://nejsconf.com/">NEJS CONF</a> y las reuniones de <a href="http://nebraskajs.com">NebraskaJS</a>.</i>',
-    }
-  %}
-  
-  
