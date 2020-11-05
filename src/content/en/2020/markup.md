@@ -73,6 +73,7 @@ How is this situation in general, then? The median document weighs 25.24 KB:
   image="document-size.png",
   caption="Document size",
   description="Document size in bytes per percentile, with the median document weighing 26.62 KB on desktop.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=386686971&amp;format=interactive",
   width=600,
   height=371
   )
