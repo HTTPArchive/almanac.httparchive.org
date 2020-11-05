@@ -69,7 +69,7 @@ How is this situation in general, then? The median document weighs 25.24 KB:
 {{ figure_markup(
   image="document-size.png",
   caption="Document size",
-  description="@@",
+  description="Document size in bytes per percentile, with the median document weighing 26.62 KB on desktop.",
   width=600,
   height=371
   )
@@ -133,7 +133,7 @@ At the opposite end of the spectrum, the numbers show that more than 97% of page
 {{ figure_markup(
   image="script-use.png",
   caption="Script use",
-  description="@@",
+  description="Percentages of pages (not) containing scripts, and scripts are present in almost every form on almost every page.",
   width=600,
   height=371
   )
@@ -168,7 +168,7 @@ The median web page, it turns out, uses 30 different elements, 587 times:
 {{ figure_markup(
   image="element-diversity-element-types.png",
   caption="Element diversity: element types",
-  description="@@",
+  description="Element types per percentile, with 90% of pages using at least 20 different elements.",
   width=600,
   height=371
   )
@@ -177,7 +177,7 @@ The median web page, it turns out, uses 30 different elements, 587 times:
 {{ figure_markup(
   image="element-diversity.png",
   caption="Element diversity",
-  description="@@",
+  description="Elements per percentile, showing how 10% of all pages employ more than 1,665 elements.",
   width=600,
   height=371
   )
@@ -190,7 +190,7 @@ How are these elements distributed?
 {{ figure_markup(
   image="distribution-of-elements-per-page.png",
   caption="Distribution of elements per page",
-  description="@@",
+  description="Element distribution in a scatter plot, and even for a trained observer it’s hard to parse it; interesting is a large group of about 7,500 pages each using roughly 250 elements, after which fewer and fewer pages get back to more and more elements.",
   width=600,
   height=371
   )
