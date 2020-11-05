@@ -10,13 +10,13 @@ translators: []
 discuss: 2039
 results: https://docs.google.com/spreadsheets/d/1Ta7amoUeaL4pILhWzH-SCzMX9PsZeb1x_mwrX2C4eY8/
 queries: 03_Markup
-# featured_quote: @@
-# featured_stat_1: @@
-# featured_stat_label_1: @@
-# featured_stat_2: @@
-# featured_stat_label_2: @@
-# featured_stat_3: @@
-# featured_stat_label_3: @@
+featured_quote: We approach near-complete adoption of living HTML, are quick to prune our pages of fads, and we’re fast in adopting and shunning frameworks. And still, there are no signs we exhausted the options HTML gives us.
+featured_stat_1: 85.73%
+featured_stat_label_1: Percentage of pages that use the “living” HTML doctype
+featured_stat_2: 30,073
+featured_stat_label_2: Number of non-standard `h7` elements
+featured_stat_3: 25.24 KB
+featured_stat_label_3: Weight of the median document
 published: 2020-11-01T00:00:00.000Z
 last_updated: 2020-11-04T00:00:00.000Z
 ---
