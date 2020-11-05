@@ -1347,12 +1347,3 @@ p.copyright a {
   width: max-content;
   min-width: 100%;
 }
-
-.nav-dropdown-list .help-translate {
-  border-top: 1px dashed #bdbdbd;
-}
-
-.footer .nav-dropdown-list .help-translate {
-  border-bottom: 1px dashed #bdbdbd;
-  border-top: none;
-}
