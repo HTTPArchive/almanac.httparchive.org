@@ -4,7 +4,7 @@ chapter_number: 3
 title: Markup
 description: Markup chapter of the 2020 Web Almanac covering general observations, the use of elements and attributes, as well as trivia and trends.
 authors: [j9t, catalinred, iandevlin]
-j9t_bio: Jens Oliver Meiert is a web developer and author ([“CSS Optimization Basics”](https://leanpub.com/css-optimization-basics), [“The Web Development Glossary”](https://leanpub.com/web-development-glossary)), who works as an engineering manager at [Jimdo](https://www.jimdo.com/). He’s an expert on web development where he specializes in HTML and CSS optimization. Jens contributes to technical standards and regularly writes about his work and research, particularly on his website, [meiert.com](https://meiert.com/en/).
+j9t_bio: Jens Oliver Meiert is a web developer and author (<a href="https://leanpub.com/css-optimization-basics">“CSS Optimization Basics”</a>, <a href="https://leanpub.com/web-development-glossary">“The Web Development Glossary”</a>), who works as an engineering manager at <a href="https://www.jimdo.com/">Jimdo</a>. He’s an expert on web development where he specializes in HTML and CSS optimization. Jens contributes to technical standards and regularly writes about his work and research, particularly on his website, <a href="https://meiert.com/en/">meiert.com</a>.
 # catalinred_bio: @@
 # iandevlin_bio: @@
 reviewers: [zcorpan, matuzo, bkardell]
@@ -77,6 +77,7 @@ How is this situation in general, then? The median document weighs 25.24 KB:
   caption="Document size",
   description="Document size in bytes per percentile, with the median document weighing 26.62 KB on desktop.",
   sheets_gid="2066175354",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=386686971&amp;format=interactive",
   width=600,
   height=371
   )
