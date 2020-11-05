@@ -4,7 +4,7 @@ chapter_number: 3
 title: Markup
 description: Markup chapter of the 2020 Web Almanac covering general observations, the use of elements and attributes, as well as trivia and trends.
 authors: [j9t, catalinred, iandevlin]
-j9t_bio: Jens Oliver Meiert is a web developer and author ([“CSS Optimization Basics”](https://leanpub.com/css-optimization-basics), [“The Web Development Glossary”](https://leanpub.com/web-development-glossary)), who works as an engineering manager at [Jimdo](https://www.jimdo.com/). He’s an expert on web development where he specializes in HTML and CSS optimization. Jens contributes to technical standards and regularly writes about his work and research, particularly on his website, [meiert.com](https://meiert.com/en/).
+j9t_bio: Jens Oliver Meiert is a web developer and author (<a href="https://leanpub.com/css-optimization-basics">“CSS Optimization Basics”</a>, <a href="https://leanpub.com/web-development-glossary">“The Web Development Glossary”</a>), who works as an engineering manager at <a href="https://www.jimdo.com/">Jimdo</a>. He’s an expert on web development where he specializes in HTML and CSS optimization. Jens contributes to technical standards and regularly writes about his work and research, particularly on his website, <a href="https://meiert.com/en/">meiert.com</a>.
 # catalinred_bio: @@
 # iandevlin_bio: @@
 reviewers: [zcorpan, matuzo, bkardell]
