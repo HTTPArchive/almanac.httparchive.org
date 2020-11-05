@@ -39,4 +39,3 @@ ORDER BY
   percentile,
   client,
   is_third_party
-  
