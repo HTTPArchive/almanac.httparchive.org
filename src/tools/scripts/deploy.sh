@@ -91,6 +91,10 @@ if [ "$(pgrep -f 'python main.py')" ]; then
   pkill -9 python main.py
 fi
 
+#Remove generated chapters (in case new one from other branch in there)
+echo "Removing Generated Chapters"
+rm -f ./templates/*/*/chapters/* | true
+
 echo "Run and test website"
 ./tools/scripts/run_and_test_website.sh
 
