@@ -1,0 +1,34 @@
+{
+  "ci": {
+    "assert": {
+      "preset": "lighthouse:no-pwa",
+      "assertions": {
+        "categories:accessibility": ["error", {"minScore": 1}],
+        "categories:best-practices": ["error", {"minScore": 1}],
+        "categories:seo": ["error", {"minScore": 1}],
+        "bootup-time": "off",
+        "dom-size": "off",
+        "first-contentful-paint": "off",
+        "first-cpu-idle": "off",
+        "first-meaningful-paint": "off",
+        "font-display": "off",
+        "interactive": "off",
+        "largest-contentful-paint": "off",
+        "mainthread-work-breakdown": "off",
+        "max-potential-fid": "off",
+        "speed-index": "off",
+        "render-blocking-resources": "off",
+        "unminified-css": "off",
+        "unminified-javascript": "off",
+        "unused-css-rules": "off",
+        "unused-javascript": "off",
+        "uses-long-cache-ttl": "off",
+        "uses-rel-preconnect": "off",
+        "uses-rel-preload": "off",
+        "uses-responsive-images": "off",
+        "uses-text-compression": "off",
+        "uses-webp-images": "off"
+      }
+    }
+  }
+}

@@ -16,8 +16,12 @@
 {% endblock %}
 
 {% block mission %}
+<p>
 我们的任务是将HTTP Archive的原始统计数据和趋势与web社区的专业知识结合起来。Web Almanac网络年鉴是一个关于网络状态的综合报告，由真实的数据和可信的网络专家支持。它由20个章节组成，涵盖了页面内容、用户体验、发布和分发的各个方面。
+</p>
 {% endblock %}
+
+{% block read_last_years_almanac %}阅读 {{ year | int - 1 }} Web Almanac{% endblock %}
 
 {% block http_archive_link %}HTTP Archive主页{% endblock %}
 
@@ -53,15 +57,18 @@
 {% block open %}打开{% endblock %}
 {% block close %}关闭{% endblock %}
 
-{% macro show_description(id) %}显示图像描述 {{ id }}{% endmacro %}
-{% macro hide_description(id) %}隐藏图像描述 {{ id }}{% endmacro %}
+{% macro figure_text(metadata, id) %}图 {{ figure_id(metadata, id) }}.{% endmacro %}
+{% macro show_description(metadata, id) %}显示图像描述 {{ figure_id(metadata, id) }}{% endmacro %}
+{% macro hide_description(metadata, id) %}隐藏图像描述 {{ figure_id(metadata, id) }}{% endmacro %}
 
 {% block written_by_before %}作者： {% endblock %}
 {% block reviewed_by_before %}审稿者： {% endblock %}
 {% block translated_by_before %}翻译者： {% endblock %}
+{% block analysis_by_before %}分析者: {% endblock %}
 {% block written_by_after %}{% endblock %}
 {% block reviewed_by_after %}{% endblock %}
 {% block translated_by_after %}{% endblock %}
+{% block analysis_by_after %}{% endblock %}
 
 {% block author %}作者{% endblock %}
 {% block authors %}作者{% endblock %}
@@ -78,7 +85,11 @@
 {% block accessibility_statement %}无障碍可访问声明{% endblock %}
 
 {% block featured_chapter%}章节精选{% endblock %}
-{% macro readChapter(chapter) %}阅读 <span class="featured-chapter-name">{{ chapter }}</span> 章节{% endmacro %}
+
+{# Check if read_chapter already defined in child template as macros can't be overridden #}
+{% if not read_chapter %}
+{% macro read_chapter(chapter) %}阅读 <span class="featured-chapter-name">{{ chapter }}</span> 章节{% endmacro %}
+{% endif %}
 
 {% block contributors_description %}
 是web社区的辛勤工作才让 Web Almanac 网络年鉴成为可能。 {{ self.contributors() }} 成员在计划、研究、写作和发布阶段奉献投入了难以估量的时间。
@@ -117,6 +128,8 @@
 
     <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>, Web Almanac网络年鉴的创建者</em></p>
 {% endblock %}
+
+{% block coming_soon %}即将到来！{% endblock %}
 
 {% block appendix %}附录{% endblock %}
 {% block appendices %}附录{% endblock %}
@@ -171,37 +184,5 @@
   "leads": "领导者",
   "reviewers": "审稿者",
   "translators": "翻译者", 
-  }
-%}
-
-{% set localizedContributors = {
-  "kleinab": 'Abigail Klein 是谷歌的软件工程师. 她致力于谷歌文档、表格和幻灯片的web可访问性 她为谷歌幻灯片添加了<a href="https://www.blog.google/outreach-initiatives/accessibility/whats-you-say-present-captions-google-slides/">自动字幕</a>,并改进了屏幕阅读器、盲文、屏幕放大镜和高对比度支持。 她目前致力于谷歌Chrome和ChromeOS的可访问性。她拥有麻省理工学院(MIT)计算机科学学士和硕士学位，在那里她参与创立了一个辅助技术黑客马拉松，她还是该辅助技术课程的实验室助理和客座讲师。',
-  "argyleink": 'Adam Argyle 是一个谷歌Chrome开发者关系成员,聚焦于CSS; 他是一个对伟大的用户体验和UI贪得无厌的网络成瘾者; 在网上找到他 <a href="https://twitter.com/argyleink">@argyleink</a> 或者去他的网站 <a href="https://nerdy.dev">https://nerdy.dev</a>;',
-  "alankent": 'Alan Kent 是是谷歌的开发人员倡导者，致力于电商和内容生态，他的博客是 <a href="https://alankent.me">alankent.me</a> 推特是 <a href="https://twitter.com/akent99">@akent99</a>.',
-  "amedina": 'Alberto Medina 是谷歌Web内容生态系统小组的Developer Advocate，致力于通过AMP等先进技术和现代Web API的使用来促进网络上高质量内容的传播。Alberto目前的工作全力集中于内容管理系统，他领导的内容生态系统领域叫做CMS开发者关系',
-  "andydavies": 'Andy Davies 是一名自由职业网络性能顾问，曾帮助英国一些领先的零售商，报纸和金融服务公司提高网站速度。 他写了The Pocket Guide to Web Performance, 也是 Using WebPageTest的合著者，他也是伦敦Web性能聚会的组织者。你可以在推特找到 Andy <a href="https://twitter.com/andydavies">@AndyDavies</a>, 他也偶尔发布博客 <a href="https://andydavies.me">https://andydavies.me</a>',
-  "arturjanc": 'Artur Janc 是谷歌的信息安全工程师，致力于在谷歌和整个网络上设计和采用Web平台安全机制。他与网友在这里争辩 <a href="https://twitter.com/arturjanc">@arturjanc on Twitter</a>.',
-  "bazzadp": 'Barry Pollard 是一位软件开发者同时也是Manning book <a href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a>的作者。他认为网络是神奇的，但希望让它变得更好。 你可以找到他的推特 <a href="https://twitter.com/tunetheweb">@tunetheweb</a> 和博客 <a href="https://www.tunetheweb.com">www.tunetheweb.com</a>.',
-  "bkardell": 'Brian Kardell是一名<a href="https://igalia.com">Igalia</a>的开发人员倡导者，标准贡献者， <a href="https://bkardell.com">博主</a>, 也同时是 W3C <a href="https://openjsf.org/">Open JS Foundation</a>咨询委员会代表. 他是可扩展网络社区小组的创始人和<a href="https://extensiblewebmanifesto.org">The Extensible Web Manifesto</a>的合著者',
-  "colinbendell": 'Colin 是 <a href="https://cloudinary.com/">Cloudinary</a>的CTO办公室的一部分， 并且是 O\'Reilly 书籍 <a href="https://www.oreilly.com/library/view/high-performance-images/9781491925799/">High Performance Images</a>的合著者。  他将大量时间花在大量数据，媒体，浏览器和标准的交汇处。 你可以关注他的推特 <a href="https://twitter.com/colinbendell">@colinbendell</a> 还有他的博客 <a href="https://bendell.ca/">https://bendell.ca</a>.',
-  "obto": 'David Fox 是LookZook的首席可用性研究人员和创始人，LookZook沉迷于发现有关构建满足用户期望的Web体验的所有一切。 他是一位网站心理学家，他深入研究网站不仅要学习用户正在苦苦挣扎的东西，而且要学习为什么以及如何最好地改善他们的体验。 他还是Google Chromium的撰稿人，演讲者以及网络研讨会和UX培训的提供者。',
-  "dougsillars": 'Doug Sillars 是从事性能和媒体交汇的自由数字游牧者。他的推特<a href="https://twitter.com/dougsillars">@dougsillars</a>, 同时时常在 <a href="https://dougsillars.com">dougsillars.com</a>发表博客',
-  "housseindjirdeh": 'Houssein 是谷歌的开发人员倡导者，致力于速度，性能和Web框架生态系统。他的推特 <a href="https://twitter.com/hdjirdeh">@hdjirdeh</a> 他的博客 <a href="https://houssein.me/">https://houssein.me/</a>.',
-  "jeffposnick": 'Jeff Posnick 是谷歌开发者关系团队的成员, 住在纽约。他致力于 <a href="https://developers.google.com/web/tools/workbox/">Workbox</a>, 渐进式Web应用程序的service worker库。他的博客<a href="https://jeffy.info">https://jeffy.info</a> 他的推特 <a href="https://twitter.com/jeffposnick">@jeffposnick</a>.',
-  "khempenius": '是Chrome团队的一名工程师，致力于提高网络速度。',
-  "AVGP": 'Martin Splitt 是Google网站生态系统小组的一名开发人员倡导者，他致力于使网络可发现。',
-  "nektarios-paisios": 'Nektarios Paisios 是过去5年致力于Chrome辅助功能的软件工程师。 他主要致力于使Chrome与第三方辅助软件（例如屏幕阅读器和屏幕放大镜）兼容。 在研究Chrome的辅助功能之前，Nektarios曾在公司担任过其他各种职务，例如GSuite辅助功能和展示广告。 Nektarios拥有博士学位。 纽约大学计算机科学专业。',
-  "patrickhulce": 'Patrick Hulce 是一位前Chrome工程师, <a href="https://eris.ventures/">Eris Ventures</a>创始人,  <a href="https://github.com/GoogleChrome/lighthouse">Lighthouse</a> 和 <a href="https://github.com/GoogleChrome/lighthouse-ci">Lighthouse CI</a>的核心成员, <a href="https://www.meetup.com/DallasJS/">DallasJS</a> 会议的协作组织者, 同时也是 <a href="https://github.com/patrickhulce/third-party-web">third-party-web</a> 项目的作者.',
-  "paulcalvano": 'Paul Calvano 是 <a href="https://www.akamai.com/">Akamai</a>的Web性能架构师, 他帮助企业来提升优化web站点的性能。同时，他也是 HTTP Archive 项目的共同维护者. 你可以在  <a href="https://twitter.com/paulcalvano">@paulcalvano</a>找到他发推特, 在<a href="https://paulcalvano.com">http://paulcalvano.com</a>发博客文章，在<a href="https://discuss.httparchive.org">https://discuss.httparchive.org</a>分享HTTP Archive的研究心得。',
-  "rachellcostello": 'Rachel Costello 是一位在 <a href="https://www.deepcrawl.com/">DeepCrawl</a> 的技术SEO和内容管理师，也是一位国际会议发言人，她投入了自己的时间研究和交流搜索的最新动态。 Rachel 目前管理DeepCrawl <a href="https://www.deepcrawl.com/knowledge/white-papers/">技术 SEO 白皮书</a> 和研究论文的生产，并且是<a href="https://www.searchenginejournal.com/author/rachel-costello/">搜索引擎杂志</a>的定期专栏作家',
-  "ernee": 'Renee Johnson 是一位网络和产品顾问，是WordPress爱好者，并且是WordCamp的组织者和志愿者。 她目前正在与Google的内容管理系统开发人员关系团队合作，担任产品支持专家。',
-  "rviscomi": 'Rick Viscomi 是谷歌的高级开发者项目工程师，从事网络透明度的工作，例如 HTTP Archive 和 Chrome UX Report, 并研究网站建设和体验的交集。Rick 是 <a href="https://www.youtube.com/playlist?list=PLNYkxOF6rcIBGvYSYO-VxOsaYQDw5rifJ">The State of the Web</a>的播主，专家们在其中讨论网络的发展趋势。 Rick 也是网站性能测试指南<a href="https://usingwpt.com">Using WebPageTest</a>的合著者, 他也经常在 <a href="https://dev.to/rick_viscomi">dev.to</a>发表关于Web的文章，他的推特是 <a href="https://twitter.com/rick_viscomi">@rick_viscomi</a>.',
-  "samdutton": '自2011年以来，Sam Dutton 一直作为开发者倡导者与Google Chrome团队合作。他组织并参加了许多活动，并创建和教授了许多网络开发课程，并参与了有关PWA， 性能，媒体，形象和“下一个十亿用户”计划。他维护着  <a href="https://simpl.info">simpl.info</a>, 它提供了最简单的HTML，CSS和JavaScript示例。 Sam在南澳大利亚长大，在悉尼上大学，自1986年以来一直住在伦敦。',
-  "ScottHelme": 'Scott Helme 是一位安全分析者和<a href="https://report-uri.com">report-uri.com</a> 以及 <a href="https://securityheaders.com">securityheaders.com</a>的创立者。 你可以在推特看到他讨论安全 <a href="https://twitter.com/Scott_Helme">@Scott_Helme</a> ，他的博客是 <a href="https://scotthelme.co.uk">scotthelme.co.uk</a>.',
-  "tammyeverts": 'Tammy Everts 花了二十多年的时间研究可用性和用户体验。 在过去的十年中，她专注于用户体验与Web性能和业务的结合。 她是 <a href="https://speedcurve.com/">SpeedCurve</a>, 的CXO，是 <a href="https://perfnow.nl/">performance.now() conference</a>的共同主席, 也是 O\'Reilly 书籍 <em><a href="http://shop.oreilly.com/product/0636920041450.do">Time Is Money: The Business Value of Performance</a></em>的作者',
-  "tomayac": 'Thomas Steiner 是谷歌汉堡的Web开发倡导者，致力于通过标准化，创建和共享最佳实践以及进行研究来使Web变得更好。他的博客 <a href="https://blog.tomayac.com/">blog.tomayac.com</a> ，推特 <a href="https://twitter.com/tomayac">@tomayac</a>.',
-  "una": 'Una Kravets 是位于布鲁克林的国际公众演讲者，技术撰稿人和谷歌材料设计的开发倡导者。 Una 是<a href="https://www.youtube.com/watch?v=YK8GZBx3hpg">Designing the Browser</a> 系列和 <a href="https://spec.fm/podcasts/toolsday">Toolsday</a> 开发者 podcast的播主。在 <a href="https://twitter.com/una">Twitter</a>关注她，来了解她在创意CSS，用户体验和网络开发最佳实践方面的想法。',
-  "ymschaap": 'SEO技术咨询公司的创始人 <a href="https://build.amsterdam/">build.amsterdam</a>。 之前建立了多家网络公司，用户超过10亿。 自2005年以来发表博客介绍他的最新冒险 <a href="https://yvoschaap.com/">yvoschaap.com</a>.',
-  "zachleat": 'Zach是一位<a href="https://www.filamentgroup.com/">Filament Group</a>的Web开发人员。 他目前专注于 <a href="https://www.zachleat.com/web/fonts/">web 字体</a> 和 <a href="https://www.zachleat.com/web/introducing-eleventy/">静态网站生成器</a>. 他的 <a href="https://www.zachleat.com/web/speaking/">公开演讲简历</a> 包括在八个不同国家/地区的演讲，例如JAMstack_conf，Beyond Tellerrand，Smashing Conference，CSSConf，还有 <a href="https://www.zachleat.com/web/whitehouse/">The White House</a>. 他还帮助组织 <a href="http://nejsconf.com/">NEJS CONF</a> 和 <a href="http://nebraskajs.com">NebraskaJS</a> 会议。',
   }
 %}

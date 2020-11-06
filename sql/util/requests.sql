@@ -49,7 +49,7 @@ LANGUAGE js AS """
       return 'script';
     } else if (['eot', 'ttf', 'woff', 'woff2', 'otf'].includes(ext)) {
       return 'font';
-    } else if (['png', 'gif', 'jpg', 'jpeg', 'webp', 'ico', 'svg']) {
+    } else if (['png', 'gif', 'jpg', 'jpeg', 'webp', 'ico', 'svg'].includes(ext)) {
       return 'image';
     } else if (['css', 'xml'].includes(ext)) {
       return ext;
@@ -94,7 +94,7 @@ LANGUAGE js AS """
 
       var maxAge = cc.match(/max-age=(\\d+)/);
       if (maxAge) {
-        return maxAge[1];
+        return Math.min(Number.MAX_SAFE_INTEGER, +maxAge[1]);
       }
 
       var expires = getHeader(headers, 'expires');

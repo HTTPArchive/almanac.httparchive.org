@@ -1,11 +1,11 @@
-{% extends "base/2020/contributors.html" %}
+{% extends "base/2019/contributors.html" %}
 
 {% block title %}{{ year }} 贡献者 | Web Almanac 源于 HTTP Archive{% endblock %}
 
 {% block description %}The {{ config.contributors.items() | length }} 为 {{ year }} Web Almanac 贡献的人员，包括分析者, 作者, 设计者, 开发者, 编辑者, 领导者，审稿者和翻译者。{% endblock %}
 
 {% block date_published %}2020-07-14T00:00:00.000Z{% endblock %}
-{% block date_modified %}2020-07-14T00:00:00.000Z{% endblock %}
+{% block date_modified %}2020-11-03T00:00:00.000Z{% endblock %}
 
 {% block filter_by_team %}按组过滤: <span id="filtered-contributors">{{ self.contributors() }}</span><span id="contributors-total-text" class="hidden"> of <span id="contributors-total">{{ config.contributors.items() | length }}</span></span> contributors.{% endblock %}
 {% block filter_by %}过滤{% endblock %}

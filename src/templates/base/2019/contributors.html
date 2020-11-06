@@ -1,4 +1,4 @@
-{% extends "%s/2019/base.html" % lang %}
+{% extends "%s/%s/base.html" % (lang, year) %}
 
 {% block image_url %}https://almanac.httparchive.org/static/images/methodology-characters-bg.png{% endblock %}
 {% block image_height %}354{% endblock %}
@@ -453,14 +453,14 @@
                 contributors.classList.add.apply(contributors.classList,filterTeams);
             }
 
-            for (index = 0; index < buttons.length; ++index) {
+            for (var index = 0; index < buttons.length; ++index) {
               var button = buttons[index];
               button.setAttribute('aria-pressed', hash.includes(button.className));
             }
 
         } else {
             contributors.classList.add.apply(contributors.classList,teams);
-            for (index = 0; index < buttons.length; ++index) {
+            for (var index = 0; index < buttons.length; ++index) {
               var button = buttons[index];
               button.setAttribute('aria-pressed',false);
             }
@@ -492,5 +492,5 @@
     
   </script>
   <!-- add chapter.js to handle print mode and avoid duplicating code -->
-  <script src="/static/js/chapter.js?v=20200527181403" defer></script>
+  <script src="/static/js/chapter.js?v=20201020135830" defer></script>
 {% endblock %}

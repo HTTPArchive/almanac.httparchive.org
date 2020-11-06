@@ -22,7 +22,7 @@ SELECT
 FROM
   (SELECT _TABLE_SUFFIX AS client, url AS page, getCompliantElements(payload) AS compliant_elements FROM `httparchive.pages.2019_07_01_*`)
 JOIN
-  (SELECT client, page, REGEXP_CONTAINS(body, '(?i)role=[\'"]?main') AS has_role_main FROM `httparchive.almanac.summary_response_bodies` WHERE firstHtml)
+  (SELECT client, page, REGEXP_CONTAINS(body, '(?i)role=[\'"]?main') AS has_role_main FROM `httparchive.almanac.summary_response_bodies` WHERE date = '2019-07-01' AND firstHtml)
 USING
   (client, page)
 JOIN

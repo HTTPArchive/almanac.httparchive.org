@@ -1,4 +1,4 @@
-{% extends "%s/2019/base.html" % lang %}
+{% extends "%s/%s/base.html" % (lang, year) %}
 
 {% set metadata = {"authors":["rviscomi"]} %}
 
@@ -18,7 +18,7 @@
 
 {% block styles %}
 {{ super() }}
-<link rel="stylesheet" href="/static/css/page.css?v=20200818061352" />
+<link rel="stylesheet" href="/static/css/page.css?v=20201103210350" />
 <link rel="stylesheet" href="/static/css/ebook.css?v=20200809210340" />
 
 <style nonce="{{ csp_nonce() }}">
@@ -390,7 +390,7 @@
           {% endif %}
           <div class="contributor-teams">
             {% for id in contributor.teams | sort() %}
-              <span class="contributor-team team-{{ id }}">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</span>{{ self.comma() if not loop.last }}
+              <span class="contributor-team team-{{ id }}">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</span>{{ self.comma() if not loop.last  and loop.length > 2 }}
             {% endfor %}
           </div>
         </div>
@@ -421,7 +421,7 @@
 
       <div class="ha-logo-wrapper">
         <svg role="img">
-          <title id="ha-logo">HTTP Archive home</title>
+          <title id="ha-logo-front-cover">HTTP Archive home</title>
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha"></use>
         </svg>
       </div>
@@ -446,7 +446,7 @@
 
       <div class="ha-logo-wrapper">
         <svg role="img">
-          <title id="ha-logo">HTTP Archive home</title>
+          <title id="ha-logo-spine">HTTP Archive home</title>
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha"></use>
         </svg>
       </div>
@@ -488,7 +488,7 @@
 
       <div class="ha-logo-wrapper">
         <svg role="img">
-          <title id="ha-logo">HTTP Archive home</title>
+          <title id="ha-logo-back-cover">HTTP Archive home</title>
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha"></use>
         </svg>
       </div>

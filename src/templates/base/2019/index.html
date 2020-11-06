@@ -1,4 +1,4 @@
-{% extends "%s/2019/base.html" % lang %}
+{% extends "%s/%s/base.html" % (lang, year) %}
 
 {% block image_url %}https://almanac.httparchive.org/static/images/home-hero-bg.png{% endblock %}
 {% block image_height %}562{% endblock %}
@@ -21,7 +21,7 @@
 
 {% block styles %}
   {{ super() }}
-  <link rel="stylesheet" href="/static/css/index.css?v=20200813141014">
+  <link rel="stylesheet" href="/static/css/index.css?v=20201103180407">
 {% endblock %}
 
 {% block container %}
@@ -31,16 +31,28 @@
       <div class="intro-year">{{ year }}</div>
       <h1 class="title title-lg title-alt">{{ self.intro_title() }}</h1>
       <h2>{{ self.intro_sub_title() }}</h2>
-      <p>{{ self.mission() }}</p>
+      {{ self.mission() }}
+      {% if year < "2020" %}
       <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}" class="btn">
         {{ self.start_exploring() }}
       </a>
+      {% else %}
+      <a href="{{ url_for('table_of_contents', year=2019, lang=lang) }}" class="btn">
+        {{ self.read_last_years_almanac() }}
+      </a>
+      {% endif %}
     </div>
     <div class="intro-image-wrapper">
+      {% if year < "2020" %}
       <svg viewBox="0 0 50 16">
         <text x="7" y="15">{{ year }}</text>
-      </svg>      
-      <img src="/static/images/home-hero.png" alt="" width="562" height="820">
+      </svg>
+      {% else %}
+      <svg viewBox="0 0 56 16">
+        <text x="8" y="15">{{ year }}</text>
+      </svg>
+      {% endif %}
+      <img src="/static/images/home-hero.png" alt="" width="820" height="562">
     </div>
   </section>
   {% block featured_chapter_section %}
@@ -72,8 +84,8 @@
         </div>
         {% endif %}
       </div>
-      <a href="{{ url_for('chapter', year=year, chapter=featured_chapter, lang=lang) }}" class="btn">
-        {{ readChapter(localizedChapterTitles[featured_chapter]) }}
+      <a href="{{ url_for('chapter', year=2019, chapter=featured_chapter, lang=lang) }}" class="btn">
+        {{ read_chapter(localizedChapterTitles[featured_chapter]) }}
       </a>
     </div>
   </section>
