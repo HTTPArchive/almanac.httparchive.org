@@ -541,6 +541,7 @@ When we built our tests we didn’t check for the presence of images, but only l
 | WebP | 10,605 | 0.17% |
 | … | | |
 | SVG | 5,328 | 0.08% |
+
 <figcaption>{{ figure_link(caption="Common favicon approaches.", sheets_gid="1930085905", sql_file="pages_almanac_by_device_and_favicon_image_type.sql") }}</figcaption>
 </figure>
 
