@@ -4,7 +4,7 @@ chapter_number: 3
 title: Markup
 description: Markup chapter of the 2020 Web Almanac covering general observations, the use of elements and attributes, as well as trivia and trends.
 authors: [j9t, catalinred, iandevlin]
-j9t_bio: Jens Oliver Meiert is a web developer and author (<a href="https://leanpub.com/css-optimization-basics"><cite>CSS Optimization Basics</cite></a>, <a href="https://leanpub.com/web-development-glossary"><cite>The Web Development Glossary</cite></a>), who works as an engineering manager at <a href="https://www.jimdo.com/">Jimdo</a>. He’s an expert on web development where he specializes in HTML and CSS optimization. Jens contributes to technical standards and regularly writes about his work and research, particularly on his website, <a href="https://meiert.com/en/">meiert.com</a>.
+j9t_bio: Jens Oliver Meiert is a web developer and author (<a href="https://leanpub.com/css-optimization-basics"><cite>CSS Optimization Basics</cite></a>, <a href="https://leanpub.com/web-development-glossary"><cite>The Web Development Glossary</cite></a>), who works as an engineering manager at <a href="https://www.jimdo.com/">Jimdo</a>. He's an expert on web development where he specializes in HTML and CSS optimization. Jens contributes to technical standards and regularly writes about his work and research, particularly on his website, <a href="https://meiert.com/en/">meiert.com</a>.
 # catalinred_bio: @@
 # iandevlin_bio: @@
 reviewers: [zcorpan, matuzo, bkardell]
@@ -13,9 +13,9 @@ translators: []
 discuss: 2039
 results: https://docs.google.com/spreadsheets/d/1Ta7amoUeaL4pILhWzH-SCzMX9PsZeb1x_mwrX2C4eY8/
 queries: 03_Markup
-featured_quote: We approach near-complete adoption of living HTML, are quick to prune our pages of fads, and we’re fast in adopting and shunning frameworks. And still, there are no signs we exhausted the options HTML gives us.
+featured_quote: We approach near-complete adoption of living HTML, are quick to prune our pages of fads, and we're fast in adopting and shunning frameworks. And still, there are no signs we exhausted the options HTML gives us.
 featured_stat_1: 85.73%
-featured_stat_label_1: Percentage of pages that use the “living” HTML doctype
+featured_stat_label_1: Percentage of pages that use the "living" HTML doctype
 featured_stat_2: 30,073
 featured_stat_label_2: Number of non-standard `h7` elements
 featured_stat_3: 25.24 KB
@@ -28,26 +28,26 @@ last_updated: 2020-11-06T00:00:00.000Z
 
 The Web is built on HTML. Without HTML: no web pages, no web sites, no web apps. Nothing. Plain-text documents, perhaps, or XML trees, in some parallel universe that enjoyed that particular kind of challenge. In this universe, HTML is the foundation of the user-facing Web. There are many standards that the Web is resting on, but HTML is certainly one of the most important ones.
 
-How do we use HTML, then, how great of a foundation are we looking at (and in this Markup chapter, we’re focusing almost exclusively on HTML)? The introduction of [last year’s markup chapter](../2019/markup#introduction) suggested that for a long time, we haven’t really known: There were some smaller samples, there was Ian Hickson’s, one of modern HTML’s parents, research [back in 2005](https://web.archive.org/web/20060203035414/http://code.google.com/webstats/index.html), then there were more small samples, but until last year we lacked major insight into how we as developers, as authors, make use of HTML. In 2019 we then had both [Catalin Rosu’s work](https://www.advancedwebranking.com/html/) (one of this chapter’s co-authors) as well as the 2019 edition of the Web Almanac to give a better view again, at HTML in practice.
+How do we use HTML, then, how great of a foundation are we looking at (and in this Markup chapter, we're focusing almost exclusively on HTML)? The introduction of [last year's markup chapter](../2019/markup#introduction) suggested that for a long time, we haven't really known: There were some smaller samples, there was Ian Hickson's, one of modern HTML's parents, research [back in 2005](https://web.archive.org/web/20060203035414/http://code.google.com/webstats/index.html), then there were more small samples, but until last year we lacked major insight into how we as developers, as authors, make use of HTML. In 2019 we then had both [Catalin Rosu's work](https://www.advancedwebranking.com/html/) (one of this chapter's co-authors) as well as the 2019 edition of the Web Almanac to give a better view again, at HTML in practice.
 
-Last year marked a first stab at 5,790,700 pages (of which 4,371,973 were tested on desktop, 5,297,442 on mobile) and a review of the data taken. This year we looked at 7,546,709 pages (5,593,642 on desktop, 6,347,919 on mobile) using the latest data on [which websites users are visiting in 2020](./methodology), to run another analysis. We do make some comparisons to last year—but, just as we’ve tried to take some additional metrics for additional insight, we’ve also given this chapter a new personality.
+Last year marked a first stab at 5,790,700 pages (of which 4,371,973 were tested on desktop, 5,297,442 on mobile) and a review of the data taken. This year we looked at 7,546,709 pages (5,593,642 on desktop, 6,347,919 on mobile) using the latest data on [which websites users are visiting in 2020](./methodology), to run another analysis. We do make some comparisons to last year—but, just as we've tried to take some additional metrics for additional insight, we've also given this chapter a new personality.
 
 <p class="note">The data for all Almanac chapters is open and available. Take a look at <a href="https://docs.google.com/spreadsheets/d/1Ta7amoUeaL4pILhWzH-SCzMX9PsZeb1x_mwrX2C4eY8/">the results</a> and share your own observations!</p>
 
 ## General
 
-In this section we’re having a look at higher-level aspects of HTML, like document types, the size of documents, as well as the use of comments and scripts. “Living HTML” is very much alive!
+In this section we're having a look at higher-level aspects of HTML, like document types, the size of documents, as well as the use of comments and scripts. "Living HTML" is very much alive!
 
 ### Doctypes
 
-96.99% of the sampled pages use a doctype. That is useful because for historic reasons (“[to avoid triggering quirks mode](https://lists.w3.org/Archives/Public/public-html-comments/2009Jul/0020.html) in browsers”) HTML documents need to declare a document type.
+96.99% of the sampled pages use a doctype. That is useful because for historic reasons ("[to avoid triggering quirks mode](https://lists.w3.org/Archives/Public/public-html-comments/2009Jul/0020.html) in browsers") HTML documents need to declare a document type.
 
 What are the most popular ones?
 
 <figure markdown>
 | Doctype | Pages | Percentage |
 |---|---|---|
-| HTML (“HTML5”) | 5,441,815 | 85.73% |
+| HTML ("HTML5") | 5,441,815 | 85.73% |
 | XHTML 1.0 Transitional | 382,322 | 6.02% |
 | XHTML 1.0 Strict | 107,351 | 1.69% |
 | HTML 4.01 Transitional | 54,379 | 0.86% |
@@ -60,7 +60,7 @@ You can already tell how after XHTML 1.0, the numbers decrease quite a bit, and 
 
 What stands out are two things:
 
-1. Almost 10 years after [the announcement of living HTML](https://blog.whatwg.org/html-is-the-new-html5) (aka “HTML5”), living HTML has clearly become not only mainstream, but the norm.
+1. Almost 10 years after [the announcement of living HTML](https://blog.whatwg.org/html-is-the-new-html5) (aka "HTML5"), living HTML has clearly become not only mainstream, but the norm.
 2. That it had not always been like that is exemplified by the next most popular doctypes, those of XHTML 1.0. XHTML, though likely delivered as HTML (with a MIME type of `text/html`), is not dead yet.
 
 ### Document size
@@ -88,9 +88,9 @@ How is this situation in general, then? The median document weighs 25.24 KB:
 
 We identified 2,863 different values for the `lang` attribute on the `html` start tag (compare that to the [7,117 spoken languages](https://www.ethnologue.com/guides/how-many-languages) as per Ethnologue). Almost all of them, [according to the Accessibility chapter](./accessibility), seem valid.
 
-22.36% of all documents specify no `lang` attribute. The commonly accepted view is that [they should](https://www.w3.org/TR/i18n-html-tech-lang/#overall)—but beside the idea that software could eventually [detect language automatically](https://meiert.com/en/blog/lang/), document language can also be specified [on the protocol level](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language). This is something we didn’t check.
+22.36% of all documents specify no `lang` attribute. The commonly accepted view is that [they should](https://www.w3.org/TR/i18n-html-tech-lang/#overall)—but beside the idea that software could eventually [detect language automatically](https://meiert.com/en/blog/lang/), document language can also be specified [on the protocol level](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language). This is something we didn't check.
 
-Here’s the Top 10 of (normalized) languages in our sample. At first we contemplated merging same-language values, but as the difference between `en-US` and `en-GB`, to give just one example, is pronounced, we decided not to do so.
+Here's the Top 10 of (normalized) languages in our sample. At first we contemplated merging same-language values, but as the difference between `en-US` and `en-GB`, to give just one example, is pronounced, we decided not to do so.
 
 <figure markdown>
 | Language | Percentage |
@@ -119,7 +119,7 @@ Adding comments to code is a good practice and HTML comments are there to add no
 
 Although many pages will have been stripped of comments for production, we found that index pages in the 90th percentile are using about 73 comments on mobile, respectively 79 comments on desktop, while in the 10th percentile the number of the comments is about 2.
 
-According to stats we’ve gathered, around 89% of the both mobile and desktop pages contain at least one HTML comment, while about 46% of them contain a conditional comment, too.
+According to stats we've gathered, around 89% of the both mobile and desktop pages contain at least one HTML comment, while about 46% of them contain a conditional comment, too.
 
 #### Conditional comments
 
@@ -139,7 +139,7 @@ For production, HTML comments are usually stripped by build tools. Considering a
 
 As the top elements will show, the `script` is the 6th most frequently used HTML element. From the standpoint of the Markup chapter, we were interested in the ways the `script` element is used across these millions of pages from the data set.
 
-Overall, around 2% (1.96% on desktop and 2.04% on mobile) of the pages we analyzed contain no scripting at all, not even scripts with the `type` attribute set to `application/ld+json`. Considering that nowadays it’s pretty common for a page to include at least one script for an analytics solution, this seems noteworthy.
+Overall, around 2% (1.96% on desktop and 2.04% on mobile) of the pages we analyzed contain no scripting at all, not even scripts with the `type` attribute set to `application/ld+json`. Considering that nowadays it's pretty common for a page to include at least one script for an analytics solution, this seems noteworthy.
 
 At the opposite end of the spectrum, the numbers show that more than 97% of pages (97.65% on desktop and 97.63% on mobile) contain at least one script, either inline or external.
 
@@ -156,7 +156,7 @@ At the opposite end of the spectrum, the numbers show that more than 97% of page
 
 When scripting is unsupported or turned off in the browser, the `noscript` element helps to add an HTML section within a page. Considering the above script numbers, we were curious about the `noscript` element as well. 
 
-Following the analysis, we found that about 49% of both mobile and desktop index pages are using a `noscript` element. At the same time, 15.78% of `noscript` elements on mobile, and 17.43% of `noscript` elements on desktop were containing an `iframe` with a `src` value referring to “googletagmanager.com.”
+Following the analysis, we found that about 49% of both mobile and desktop index pages are using a `noscript` element. At the same time, 15.78% of `noscript` elements on mobile, and 17.43% of `noscript` elements on desktop were containing an `iframe` with a `src` value referring to "googletagmanager.com."
 
 This seems to confirm the theory that the total number of `noscript`s in the wild may be affected by common scripts like Google Tag Manager which enforce users to add a `noscript` snippet after the `<body>` start tag on a page.
 
@@ -168,11 +168,11 @@ This seems to confirm the theory that the total number of `noscript`s in the wil
 
 ## Elements
 
-In this section, the focus is on elements: What elements are used, how frequently, which elements are likely to appear on a given page, and how the situation is with respect to custom, obsolete, and proprietary elements. Is “divitis” still a thing? Yes.
+In this section, the focus is on elements: What elements are used, how frequently, which elements are likely to appear on a given page, and how the situation is with respect to custom, obsolete, and proprietary elements. Is "divitis" still a thing? Yes.
 
 ### Element diversity
 
-Let’s have a look at how diverse use of HTML actually is: Do authors use many different elements, or are we looking at a landscape that makes use of relatively few elements?
+Let's have a look at how diverse use of HTML actually is: Do authors use many different elements, or are we looking at a landscape that makes use of relatively few elements?
 
 The median web page, it turns out, uses 30 different elements, 587 times:
 
@@ -198,14 +198,14 @@ The median web page, it turns out, uses 30 different elements, 587 times:
   )
 }}
 
-Given that [living HTML](https://html.spec.whatwg.org/multipage/) currently has 112 elements, the 90th percentile not using more than 41 elements may suggest that HTML is not nearly being exhausted by most documents. Yet it’s hard to interpret what this really means for HTML and our use of it, as the semantic wealth that HTML offers doesn’t mean that every document would need all of it: HTML elements should be used per purpose (semantics), not per availability.
+Given that [living HTML](https://html.spec.whatwg.org/multipage/) currently has 112 elements, the 90th percentile not using more than 41 elements may suggest that HTML is not nearly being exhausted by most documents. Yet it's hard to interpret what this really means for HTML and our use of it, as the semantic wealth that HTML offers doesn't mean that every document would need all of it: HTML elements should be used per purpose (semantics), not per availability.
 
 How are these elements distributed?
 
 {{ figure_markup(
   image="distribution-of-elements-per-page.png",
   caption="Distribution of elements per page",
-  description="Element distribution in a scatter plot, and even for a trained observer it’s hard to parse it; interesting is a large group of about 7,500 pages each using roughly 250 elements, after which fewer and fewer pages get back to more and more elements.",
+  description="Element distribution in a scatter plot, and even for a trained observer it's hard to parse it; interesting is a large group of about 7,500 pages each using roughly 250 elements, after which fewer and fewer pages get back to more and more elements.",
   sheets_gid="1361520223",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=1468756779&format=interactive",
   width=600,
@@ -217,7 +217,7 @@ Not that much changed [compared to 2019](../2019/markup#fig-3)!
 
 ### Top elements
 
-Last year, the Almanac featured the most frequently used elements in reference to [Ian Hickson’s work in 2005](https://web.archive.org/web/20060203031713/http://code.google.com/webstats/2005-12/elements.html). We found this useful and had a look at that data again:
+Last year, the Almanac featured the most frequently used elements in reference to [Ian Hickson's work in 2005](https://web.archive.org/web/20060203031713/http://code.google.com/webstats/2005-12/elements.html). We found this useful and had a look at that data again:
 
 <figure markdown>
 | 2005 | 2019 | 2020 |
@@ -240,8 +240,8 @@ Nothing changed in the Top 7, but the `option` element went a little out of favo
 
 <div class="note">
   <h4><code>details</code> and <code>summary</code></h4>
-  <p>One thing we were curious about, too, was use of <a href="https://html.spec.whatwg.org/multipage/rendering.html#the-details-and-summary-elements">the <code>details</code> and <code>summary</code> elements</a>, especially since 2020 <a href="https://caniuse.com/details">brought broad support</a>. Are they being used? Are they attractive for, even popular among authors? As it turns out, only 0.39% of all tested pages are using them—although it’s hard to gauge whether they were all used the correct way in exactly the situations when you need them, “popular” is the wrong word.</p>
-  <p>Here’s a simple example showing the use of a <code>summary</code> in a <code>details</code> element:</p>
+  <p>One thing we were curious about, too, was use of <a href="https://html.spec.whatwg.org/multipage/rendering.html#the-details-and-summary-elements">the <code>details</code> and <code>summary</code> elements</a>, especially since 2020 <a href="https://caniuse.com/details">brought broad support</a>. Are they being used? Are they attractive for, even popular among authors? As it turns out, only 0.39% of all tested pages are using them—although it's hard to gauge whether they were all used the correct way in exactly the situations when you need them, "popular" is the wrong word.</p>
+  <p>Here's a simple example showing the use of a <code>summary</code> in a <code>details</code> element:</p>
 </div>
 
 <!-- Really part of the note above, but kept outside for simplicity: -->
@@ -254,7 +254,7 @@ Nothing changed in the Top 7, but the `option` element went a little out of favo
 ```
 
 <div class="note">
-  <p>A while ago, <a href="https://twitter.com/stevefaulkner/status/806474286592561152">Steve Faulkner pointed out</a> how these two elements were used poorly in the wild. As you can tell from above, for each <code>details</code> element you’d need a <code>summary</code> element that may only be used as the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary#Usage_notes">first child of <code>details</code></a>.</p>
+  <p>A while ago, <a href="https://twitter.com/stevefaulkner/status/806474286592561152">Steve Faulkner pointed out</a> how these two elements were used poorly in the wild. As you can tell from above, for each <code>details</code> element you'd need a <code>summary</code> element that may only be used as the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary#Usage_notes">first child of <code>details</code></a>.</p>
   <p>Accordingly we looked at the number of <code>details</code> and <code>summary</code> elements and it seems that they do continue to be misused. The count of <code>summary</code> elements is higher on both mobile and desktop, with a ratio of 1.11 <code>summary</code> elements for every <code>details</code> element on mobile, and 1.19 on desktop, respectively:</p>
 </div>
 
@@ -323,7 +323,7 @@ What standard elements—elements that are or were part of the HTML specificatio
 
 ### Custom elements
 
-The 2019 edition of the Web Almanac handled this part [a little differently](../2019/markup#custom-elements), discussing several non-standard elements. However, we found it valuable to have a closer look at custom elements. How did we determine these? Roughly by looking at [their definition](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-core-concepts), notably their use of a hyphen. Let’s focus on the top elements, in this case elements used on ≥1% of all URLs in the sample:
+The 2019 edition of the Web Almanac handled this part [a little differently](../2019/markup#custom-elements), discussing several non-standard elements. However, we found it valuable to have a closer look at custom elements. How did we determine these? Roughly by looking at [their definition](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-core-concepts), notably their use of a hyphen. Let's focus on the top elements, in this case elements used on ≥1% of all URLs in the sample:
 
 <figure markdown>
 | Element | Occurrences | Percentage |
@@ -346,7 +346,7 @@ The 2019 edition of the Web Almanac handled this part [a little differently](../
 <figcaption>{{ figure_link(caption="The 14 most popular custom elements.", sheets_gid="770933671", sql_file="pages_element_count_by_device_and_custom_dash_elements.sql") }}</figcaption>
 </figure>
 
-These elements come from three sources: [Yandex Metrics](https://metrica.yandex.com/about) (`ym-`), an analytics solution we’ve also seen last year; [Slider Revolution](https://www.sliderrevolution.com/) (`rs-`), a WordPress slider, for which there are more elements to be found near the top of the sample; and [Wix](https://www.wix.com/) (`wix-`), a website builder.
+These elements come from three sources: [Yandex Metrics](https://metrica.yandex.com/about) (`ym-`), an analytics solution we've also seen last year; [Slider Revolution](https://www.sliderrevolution.com/) (`rs-`), a WordPress slider, for which there are more elements to be found near the top of the sample; and [Wix](https://www.wix.com/) (`wix-`), a website builder.
 
 Other groups that stand out include [AMP markup](https://amp.dev/) with `amp-` elements like `amp-img` (11,700 cases), `amp-analytics` (10,256) and `amp-auto-ads` (7,621), as well as [Angular](https://angular.io/) `app-` elements like `app-root` (16,314), `app-footer` (6,745), and `app-header` (5,274).
 
@@ -400,7 +400,7 @@ In our set of elements we found some that were neither standard HTML (nor SVG no
 <figcaption>{{ figure_link(caption="Elements of questionable heritage.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
 </figure>
 
-The source of these elements appears to be mixed, as in some are unknown while others can be traced. The most popular one, `noindex`, is probably due to [Yandex’s recommendation](https://yandex.com/support/webmaster/adding-site/indexing-prohibition.html) of it to prohibit page indexing. `jdiv` was noted in last year’s Almanac and is from JivoChat. `mediaelementwrapper` comes from the MediaElement media player. Both `ymaps` and `yatag` are also from Yandex. The `ss` element could be from ProStores, a former ecommerce product from eBay, and `olark` may be from the Olark chat software. `h7` appears to be a mistake. `limespot` is probably related to the Limespot personalization program for ecommerce. None of these elements are part of a web standard.
+The source of these elements appears to be mixed, as in some are unknown while others can be traced. The most popular one, `noindex`, is probably due to [Yandex's recommendation](https://yandex.com/support/webmaster/adding-site/indexing-prohibition.html) of it to prohibit page indexing. `jdiv` was noted in last year's Almanac and is from JivoChat. `mediaelementwrapper` comes from the MediaElement media player. Both `ymaps` and `yatag` are also from Yandex. The `ss` element could be from ProStores, a former ecommerce product from eBay, and `olark` may be from the Olark chat software. `h7` appears to be a mistake. `limespot` is probably related to the Limespot personalization program for ecommerce. None of these elements are part of a web standard.
 
 ### Headings
 
@@ -440,7 +440,7 @@ In our analysis of attributes we were interested to see how attributes are used 
 
 Similar to popular elements, we were curious about the most popular attributes. Given how important the `href` attribute is for the Web itself, or the `alt` attribute in order to make information [accessible](./accessibility), would these be most popular?
 
-Yet the most popular attribute is `class`—with almost 3 billion occurrences in our sample and constituting 34% of attributes in use, it’s by far the prevalent attribute:
+Yet the most popular attribute is `class`—with almost 3 billion occurrences in our sample and constituting 34% of attributes in use, it's by far the prevalent attribute:
 
 <figure markdown>
 | Attribute | Occurrences | Percentage |
@@ -459,13 +459,13 @@ Yet the most popular attribute is `class`—with almost 3 billion occurrences in
 <figcaption>{{ figure_link(caption="Top 10 attributes.", sheets_gid="1348855449", sql_file="pages_almanac_by_device_and_attribute_name_frequency.sql") }}</figcaption>
 </figure>
 
-The `value` attribute, which specifies the value of an `input` element, surprisingly completes the top ten—surprising because on our end, subjectively, we didn’t get the impression values were used that frequently.
+The `value` attribute, which specifies the value of an `input` element, surprisingly completes the top ten—surprising because on our end, subjectively, we didn't get the impression values were used that frequently.
 
 ### Attributes on pages
 
 Are there attributes that we find in every document? No—but almost. `href` (99.21%), `src` (99.18%), `content` (98.88%), `name` (98.61%), `type` (98.55%), `class` (98.24%), `rel` (97.98%), `id` (97.46%), `style` (95.95%), and `alt` (90.75%) make the Top 10 here, with each being found on at least 90% of sampled pages.
 
-This raises questions we cannot answer like yes, `type` is used on other elements, too, but why this tremendous popularity, given that it’s usually not needed to specify for style sheets or scripts (with CSS and JavaScript being assumed default)? Or how do we really fare with `alt`, do those 9.25% of pages that don’t include it not contain any images?
+This raises questions we cannot answer like yes, `type` is used on other elements, too, but why this tremendous popularity, given that it's usually not needed to specify for style sheets or scripts (with CSS and JavaScript being assumed default)? Or how do we really fare with `alt`, do those 9.25% of pages that don't include it not contain any images?
 
 To name all the attributes found on at least half of the pages, we would add `title` (85.5%), `target` (82.98%), `async` (81.96%), `lang` (79.1%), `width` (78.99%), `height` (76.36%—note the difference to `width`), `charset` (75.44%), `value` (67.57%), `role` (62.97%), `action` (62.34%), `http-equiv` (62.3%), `method` (60.27%), `media` (60.14%), `property` (55.68%), and `placeholder` (54.21%).
 
@@ -490,19 +490,19 @@ The most popular ones stand out because they are almost twice as popular than ea
 <figcaption>{{ figure_link(caption="The most popular <code>data-*</code> attributes.", sheets_gid="764700773", sql_file="pages_almanac_by_device_and_data_attribute_name_frequency.sql") }}</figcaption>
 </figure>
 
-Attributes like `data-type`, `data-id`, and `data-src` can have multiple generic uses although `data-src` is used a lot with lazy image loading via JavaScript (e.g., Bootstrap 4). [Bootstrap](https://getbootstrap.com/) again explains the presence of `data-toggle`, where it’s used as a state styling hook on toggle buttons. The [Slick carousel plugin](https://kenwheeler.github.io/slick/) is the source of `data-slick-index`, whereas `data-element_type` is part of [Elementor’s WordPress website builder](https://elementor.com/). Both `data-requiremodule` and `data-requirecontext`, then, are part of [RequireJS](https://requirejs.org/).
+Attributes like `data-type`, `data-id`, and `data-src` can have multiple generic uses although `data-src` is used a lot with lazy image loading via JavaScript (e.g., Bootstrap 4). [Bootstrap](https://getbootstrap.com/) again explains the presence of `data-toggle`, where it's used as a state styling hook on toggle buttons. The [Slick carousel plugin](https://kenwheeler.github.io/slick/) is the source of `data-slick-index`, whereas `data-element_type` is part of [Elementor's WordPress website builder](https://elementor.com/). Both `data-requiremodule` and `data-requirecontext`, then, are part of [RequireJS](https://requirejs.org/).
 
-<p class="note">Interestingly, the use of native lazy loading on images is similar to that of <code>data-src</code>. 3.86% of <code>img</code> elements use the <code>loading</code> attribute with a value of <code>lazy</code> (this appears to be growing very fast, as <a href="https://twitter.com/zcorpan/status/1237016679667970050">back in February, this number was about 0.8%</a>). It’s possible that these are being used together for a <a href="https://addyosmani.com/blog/lazy-loading/">cross-browser solution</a>.</p>
+<p class="note">Interestingly, the use of native lazy loading on images is similar to that of <code>data-src</code>. 3.86% of <code>img</code> elements use the <code>loading</code> attribute with a value of <code>lazy</code> (this appears to be growing very fast, as <a href="https://twitter.com/zcorpan/status/1237016679667970050">back in February, this number was about 0.8%</a>). It's possible that these are being used together for a <a href="https://addyosmani.com/blog/lazy-loading/">cross-browser solution</a>.</p>
 
 ## Miscellaneous
 
-We’ve covered use of HTML in general as well as the situation around elements and attributes. In this section we’re reviewing special cases around viewports, favicons, buttons and inputs, but also links. Too many links may still point to “http” URLs is one thing we note here.
+We've covered use of HTML in general as well as the situation around elements and attributes. In this section we're reviewing special cases around viewports, favicons, buttons and inputs, but also links. Too many links may still point to "http" URLs is one thing we note here.
 
 ### `viewport` specifications
 
-The viewport meta element is used to [control layout on mobile browsers](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag). While years ago the motto was kind of “Don’t forget the viewport meta element” when building a web page, eventually this became a common practice and the motto changed to “Make sure zooming and scaling are not disabled.”
+The viewport meta element is used to [control layout on mobile browsers](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag). While years ago the motto was kind of "Don't forget the viewport meta element" when building a web page, eventually this became a common practice and the motto changed to "Make sure zooming and scaling are not disabled."
 
-[Users should be able to zoom](https://dequeuniversity.com/rules/axe/4.0/meta-viewport-large) and scale the text up to 500%, that’s why audits in popular tools like [Lighthouse](https://developers.google.com/web/tools/lighthouse) or [axe](https://www.deque.com/axe/) fail when `user-scalable="no"` is used within the `meta name="viewport"` element, and when the `maximum-scale` attribute value is less than `5`.
+[Users should be able to zoom](https://dequeuniversity.com/rules/axe/4.0/meta-viewport-large) and scale the text up to 500%, that's why audits in popular tools like [Lighthouse](https://developers.google.com/web/tools/lighthouse) or [axe](https://www.deque.com/axe/) fail when `user-scalable="no"` is used within the `meta name="viewport"` element, and when the `maximum-scale` attribute value is less than `5`.
 
 We had a look at the data and in order to better understand the results, we normalized it by removing spaces, converting everything to lowercase, and sorting by comma values of the `content` attribute.
 
@@ -527,7 +527,7 @@ The results show that almost half of the pages we analyzed are using the typical
 
 The situation around favicons is fascinating: Favicons work with or without markup—some browsers would fall back to [looking at the domain root](https://realfavicongenerator.net/faq#why_icons_in_root)—, accept several image formats, and then also promote several dozen sizes (some tools are reported to generate 45 of them; [realfavicongenerator.net](https://realfavicongenerator.net/) would return _37_ if requested to handle every case). There is, as a side note, an issue open for the HTML spec to help [improve the situation](https://github.com/whatwg/html/issues/4758).
 
-When we built our tests we didn’t check for the presence of images, but only looked at the markup. That means, when you review the following note that it’s more about _how_ favicons are referenced rather than whether or how often they are used.
+When we built our tests we didn't check for the presence of images, but only looked at the markup. That means, when you review the following note that it's more about _how_ favicons are referenced rather than whether or how often they are used.
 
 <figure markdown>
 | Favicon format | Occurrences | Percentage |
@@ -609,7 +609,7 @@ What protocols do anchors—`a` elements—point to? We looked at that informati
 <figcaption>{{ figure_link(caption="Top 10 link target protocols.", sheets_gid="1963376224", sql_file="pages_wpt_bodies_by_device_and_protocol.sql") }}</figcaption>
 </figure>
 
-We can see how “https” and “http” are most dominant, followed by “benign” links to make writing email, making phone calls, and sending messages easier. “javascript” stands out as a link target that’s still very popular even though JavaScript offers native and gracefully degrading options to work with.
+We can see how "https" and "http" are most dominant, followed by "benign" links to make writing email, making phone calls, and sending messages easier. "javascript" stands out as a link target that's still very popular even though JavaScript offers native and gracefully degrading options to work with.
 
 ### Links in new windows
 
@@ -631,28 +631,28 @@ As a rule of thumb—also [for usability reasons](https://www.nngroup.com/articl
 
 ## Status and trends
 
-We’ve sprinkled some observations throughout the chapter, and you’ll have made your own observations. At the end of this 2020 analysis, here are some things that stood out for us.
+We've sprinkled some observations throughout the chapter, and you'll have made your own observations. At the end of this 2020 analysis, here are some things that stood out for us.
 
-Fewer pages land in quirks mode. In 2016, that number was at [around 7.4%](https://discuss.httparchive.org/t/how-many-and-which-pages-are-in-quirks-mode/777), at the end of 2019, we observed [4.85%](https://twitter.com/zcorpan/status/1205242913908838400), and now we’re at about 3.97%. This trend, to quote Simon Pieters in his review of this chapter, seems indeed clear and encouraging.
+Fewer pages land in quirks mode. In 2016, that number was at [around 7.4%](https://discuss.httparchive.org/t/how-many-and-which-pages-are-in-quirks-mode/777), at the end of 2019, we observed [4.85%](https://twitter.com/zcorpan/status/1205242913908838400), and now we're at about 3.97%. This trend, to quote Simon Pieters in his review of this chapter, seems indeed clear and encouraging.
 
-Although we lack historic data to draw the full development, “meaningless” `div` and `span` (and also `i`) markup has pretty much replaced the table markup we’ve observed in the 90s and early 2000’s. While one may question whether `div` and `span` elements are always used without there being a semantically more appropriate alternative, these elements are still preferable to table markup, though, as during the heyday of the old Web, these were used for everything but tabular data.
+Although we lack historic data to draw the full development, "meaningless" `div` and `span` (and also `i`) markup has pretty much replaced the table markup we've observed in the 90s and early 2000's. While one may question whether `div` and `span` elements are always used without there being a semantically more appropriate alternative, these elements are still preferable to table markup, though, as during the heyday of the old Web, these were used for everything but tabular data.
 
 Elements per page and element types per page stayed roughly the same, showing no significant change in our HTML writing practice when compared to 2019. Such changes may require more time to manifest.
 
 Proprietary product-specific elements like `g:plusone` (used on 17,607 pages in the mobile sample) and `fb:like` (11,335) have almost disappeared after still being [among the most popular ones](../2019/markup#products-and-libraries-and-their-custom-markup) last year. However, we observe more custom elements for things like Slider Revolution, AMP, and Angular. And: Elements like `ym-measure`, `jdiv`, and `ymaps` persist. What we imagine seeing here is that under the sea of slowly-changing practices, HTML is very much being developed and maintained, as authors toss deprecated markup and embrace new solutions.
 
-We’re leaving this open: What do you observe? What has caught your eye? What do you think has taken a turn for the worse—and what did improve? [Leave a comment](https://discuss.httparchive.org/t/2039) to share your thoughts!
+We're leaving this open: What do you observe? What has caught your eye? What do you think has taken a turn for the worse—and what did improve? [Leave a comment](https://discuss.httparchive.org/t/2039) to share your thoughts!
 
 ## Conclusion
 
-When we don’t need to [cover 14 years](../2019/markup) for analysis but only 1, one could almost get the impression that HTML is rather inert, that not much changes.
+When we don't need to [cover 14 years](../2019/markup) for analysis but only 1, one could almost get the impression that HTML is rather inert, that not much changes.
 
-Yet what we observe with this year’s data is that there’s lots of movement at the bottom and near the shore of said sea of HTML: We approach near-complete adoption of living HTML, are quick to prune our pages of fads (like Google and Facebook widgets), and we’re fast in adopting and shunning frameworks (both Angular and AMP—though a “component framework”—seem to have significantly lost in popularity, likely for solutions like React and Vue).
+Yet what we observe with this year's data is that there's lots of movement at the bottom and near the shore of said sea of HTML: We approach near-complete adoption of living HTML, are quick to prune our pages of fads (like Google and Facebook widgets), and we're fast in adopting and shunning frameworks (both Angular and AMP—though a "component framework"—seem to have significantly lost in popularity, likely for solutions like React and Vue).
 
-And still, there are no signs we exhausted the options HTML gives us. The median of 30 different elements used on a given page, which is roughly a quarter of the elements HTML provides us with, suggests a rather one-sided use of HTML. That is supported by the immense popularity of elements like `div` and `span`, and no custom elements to potentially meet the demands that these two elements may represent. Unfortunately we couldn’t validate each document in the sample (yet we learned—to be used with caution—that of W3C-tested documents, [79% have errors](https://github.com/HTTPArchive/almanac.httparchive.org/issues/899#issuecomment-717856201)), but after everything we’ve seen it looks like we’re still far from mastering the craft of HTML.
+And still, there are no signs we exhausted the options HTML gives us. The median of 30 different elements used on a given page, which is roughly a quarter of the elements HTML provides us with, suggests a rather one-sided use of HTML. That is supported by the immense popularity of elements like `div` and `span`, and no custom elements to potentially meet the demands that these two elements may represent. Unfortunately we couldn't validate each document in the sample (yet we learned—to be used with caution—that of W3C-tested documents, [79% have errors](https://github.com/HTTPArchive/almanac.httparchive.org/issues/899#issuecomment-717856201)), but after everything we've seen it looks like we're still far from mastering the craft of HTML.
 
 That suggests us to close with an appeal:
 
-Pay attention to HTML. Focus on HTML. It’s important and worthwhile to invest in HTML. HTML is a document language that may not have the charm of a programming language, and yet the Web is built on it. Use less HTML—learn what’s really needed. Use more appropriate HTML—learn what’s available and what it’s there for. And [validate](https://validator.w3.org/docs/why.html) your HTML. Everyone can write invalid HTML—just invite the next person you meet to write an HTML document and validate the output—, but a professional developer can be expected to produce valid HTML. Writing correct and valid HTML is a craft to take pride in.
+Pay attention to HTML. Focus on HTML. It's important and worthwhile to invest in HTML. HTML is a document language that may not have the charm of a programming language, and yet the Web is built on it. Use less HTML—learn what's really needed. Use more appropriate HTML—learn what's available and what it's there for. And [validate](https://validator.w3.org/docs/why.html) your HTML. Everyone can write invalid HTML—just invite the next person you meet to write an HTML document and validate the output—, but a professional developer can be expected to produce valid HTML. Writing correct and valid HTML is a craft to take pride in.
 
-For the next edition of the Web Almanac’s chapter, let’s prepare to look closer at the craft of writing HTML—and, hopefully, how we’ve been improving on it.
+For the next edition of the Web Almanac's chapter, let's prepare to look closer at the craft of writing HTML—and, hopefully, how we've been improving on it.
