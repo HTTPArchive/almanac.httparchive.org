@@ -297,6 +297,7 @@ What standard elements—elements that are or were part of the HTML specificatio
 | `dir` | 0.0082% |
 | `rp` | 0.0087% |
 | `basefont` | 0.0092% |
+
 <figcaption>{{ figure_link(caption="Low probabilities of finding a given element in pages of the sample.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
 </figure>
 
