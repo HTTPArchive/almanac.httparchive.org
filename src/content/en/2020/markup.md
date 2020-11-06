@@ -40,7 +40,7 @@ In this section we’re having a look at higher-level aspects of HTML, like docu
 
 ### Doctypes
 
-96.99% of the sampled pages use a doctype. That is useful, because, for historic reasons (“[to avoid triggering quirks mode](https://lists.w3.org/Archives/Public/public-html-comments/2009Jul/0020.html) in browsers”) HTML documents need to declare a document type.
+96.99% of the sampled pages use a doctype. That is useful because for historic reasons (“[to avoid triggering quirks mode](https://lists.w3.org/Archives/Public/public-html-comments/2009Jul/0020.html) in browsers”) HTML documents need to declare a document type.
 
 What are the most popular ones?
 
@@ -77,7 +77,7 @@ How is this situation in general, then? The median document weighs 25.24 KB:
   caption="Document size",
   description="Document size in bytes per percentile, with the median document weighing 26.62 KB on desktop.",
   sheets_gid="2066175354",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=386686971&amp;format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=386686971&format=interactive",
   width=600,
   height=371
   )
@@ -146,6 +146,7 @@ At the opposite end of the spectrum, the numbers show that more than 97% of page
   caption="Script use",
   description="Percentages of pages (not) containing scripts, and scripts are present in almost every form on almost every page.",
   sheets_gid="150962402",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=1895084382&format=interactive",
   width=600,
   height=371
   )
@@ -182,6 +183,7 @@ The median web page, it turns out, uses 30 different elements, 587 times:
   caption="Element diversity: element types",
   description="Element types per percentile, with 90% of pages using at least 20 different elements.",
   sheets_gid="46490104",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=924238918&format=interactive",
   width=600,
   height=371
   )
@@ -192,6 +194,7 @@ The median web page, it turns out, uses 30 different elements, 587 times:
   caption="Element diversity",
   description="Elements per percentile, showing how 10% of all pages employ more than 1,665 elements.",
   sheets_gid="46490104",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=680594018&format=interactive",
   width=600,
   height=371
   )
@@ -206,6 +209,7 @@ How are these elements distributed?
   caption="Distribution of elements per page",
   description="Element distribution in a scatter plot, and even for a trained observer it’s hard to parse it; interesting is a large group of about 7,500 pages each using roughly 250 elements, after which fewer and fewer pages get back to more and more elements.",
   sheets_gid="1361520223",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=1468756779&format=interactive",
   width=600,
   height=371
   )
