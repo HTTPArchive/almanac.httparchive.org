@@ -232,6 +232,7 @@ Last year, the Almanac featured the most frequently used elements in reference t
 | `tr` | `option` | `link` |
 | | | `i` |
 | | | `option`|
+
 <figcaption>{{ figure_link(caption="Popular elements 2005, 2019, and 2020.", sheets_gid="781932961", sql_file="pages_element_count_by_device_and_element_type_frequency.sql") }}</figcaption>
 </figure>
 
