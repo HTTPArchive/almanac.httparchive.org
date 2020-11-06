@@ -92,6 +92,8 @@
   {% endmacro %}
   {% if featured_chapters_exists(lang, 2019) %}
   {% include "%s/2019/featured_chapters.html" % lang %}
+  {% elif featured_chapters_exists('en', 2019) %}
+  {% include "en/2019/featured_chapters.html" %}
   {% endif %}
   {% endblock %}
   <section id="contributors" class="contributors-container alt-bg">
