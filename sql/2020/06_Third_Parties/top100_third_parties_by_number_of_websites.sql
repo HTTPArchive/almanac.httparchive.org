@@ -3,11 +3,10 @@
 
 WITH requests AS (
   SELECT
-    _TABLE_SUFFIX AS client,
     pageid AS page,
     req_host AS host
   FROM
-    `httparchive.summary_requests.2020_08_01_*`
+    `httparchive.summary_requests.2020_08_01_mobile`
 ),
 third_party AS (
   SELECT
@@ -20,9 +19,9 @@ third_party AS (
 ),
 base AS (
   SELECT
-    client,
     canonicalDomain,
-    COUNT(DISTINCT page) AS total_pages
+    COUNT(DISTINCT page) AS total_pages,
+    COUNT(DISTINCT page) / COUNT(DISTINCT page) OVER () AS pct_pages
   FROM
     requests
   LEFT JOIN
@@ -32,27 +31,24 @@ base AS (
   WHERE
     canonicalDomain IS NOT NULL
   GROUP BY
-    client,
     canonicalDomain
 )
 
 
 SELECT
-  client,
   canonicalDomain,
   total_pages,
-  rank
+  pct_pages
 FROM (
   SELECT
-    client,
     canonicalDomain,
-    DENSE_RANK() OVER(PARTITION BY client ORDER BY total_pages DESC) AS rank,
-    total_pages
+    total_pages,
+    pct_pages,
+    DENSE_RANK() OVER(PARTITION BY client ORDER BY total_pages DESC) AS rank
   FROM
     base
 )
 WHERE
   rank <= 100
 ORDER BY
-  client,
   total_pages DESC
