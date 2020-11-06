@@ -565,6 +565,7 @@ There has been a lot of discussion on buttons lately and how often they are misu
 | `<input type="button" value="…">` | 1,087,182 | 4.07% |
 | `<input type="image" src="…">` | 322,855 | 2.69% |
 | `<button type="reset">…</button>` | 41,735 | 0.49% |
+
 <figcaption>{{ figure_link(caption="Top 7 button setups.", sheets_gid="410549982", sql_file="pages_markup_by_device.sql") }}</figcaption>
 </figure>
 
