@@ -515,7 +515,8 @@ We had a look at the data and in order to better understand the results, we norm
 | `initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width` | 352,972 | 5,56% |
 | `initial-scale=1,maximum-scale=1,user-scalable=0,width=device-width` | 249,662 | 3,93% |
 | `width=device-width` | 231,668 | 3,65% |
-<figcaption>{{ figure_link(caption="`viewport` specifications, and lack thereof.", sheets_gid="1414206386", sql_file="summary_pages_by_device_and_viewport.sql") }}</figcaption>
+
+<figcaption>{{ figure_link(caption="<code>viewport</code> specifications, and lack thereof.", sheets_gid="1414206386", sql_file="summary_pages_by_device_and_viewport.sql") }}</figcaption>
 </figure>
 
 The results show that almost half of the pages we analyzed are using the typical viewport `content` value. Still, around 688K mobile pages (and 904K desktop pages) are entirely missing a proper `content` value for the viewport meta element, with the rest of them using an improper combination of `maximum-scale`, `minimum-scale`, `user-scalable=no`, or `user-scalable=0`.
