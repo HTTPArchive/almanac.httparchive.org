@@ -17,7 +17,8 @@
     "test": "node ./tools/test",
     "generate": "node ./tools/generate",
     "ebooks": "node ./tools/generate/generate_ebook_pdfs",
-    "deploy": "./tools/scripts/deploy.sh"
+    "deploy": "./tools/scripts/deploy.sh",
+    "start": "./tools/scripts/run_and_test_website.sh"
   },
   "devDependencies": {
     "ejs": "3.1.5",
