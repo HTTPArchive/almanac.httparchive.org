@@ -486,7 +486,8 @@ The most popular ones stand out because they are almost twice as popular than ea
 | `data-type` | 11,130,662 | 1.37% |
 | `data-requiremodule` | 8,303,675 | 1.02% |
 | `data-requirecontext` | 8,302,335 | 1.02% |
-<figcaption>{{ figure_link(caption="The most popular `data-*` attributes.", sheets_gid="764700773", sql_file="pages_almanac_by_device_and_data_attribute_name_frequency.sql") }}</figcaption>
+
+<figcaption>{{ figure_link(caption="The most popular <code>data-*</code> attributes.", sheets_gid="764700773", sql_file="pages_almanac_by_device_and_data_attribute_name_frequency.sql") }}</figcaption>
 </figure>
 
 Attributes like `data-type`, `data-id`, and `data-src` can have multiple generic uses although `data-src` is used a lot with lazy image loading via JavaScript (e.g., Bootstrap 4). [Bootstrap](https://getbootstrap.com/) again explains the presence of `data-toggle`, where it’s used as a state styling hook on toggle buttons. The [Slick carousel plugin](https://kenwheeler.github.io/slick/) is the source of `data-slick-index`, whereas `data-element_type` is part of [Elementor’s WordPress website builder](https://elementor.com/). Both `data-requiremodule` and `data-requirecontext`, then, are part of [RequireJS](https://requirejs.org/).
