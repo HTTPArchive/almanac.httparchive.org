@@ -1,0 +1,13 @@
+{% extends "%s/2019/base.html" % lang %}
+
+{% block featured_chapter %}精選章節<br/>從 2019 Web Almanac{% endblock %}
+{% macro read_chapter(chapter) %}閱讀 2019 <span class="featured-chapter-name">{{ chapter }}</span> 章節{% endmacro %}
+
+{% block methodology_stat_1 %}7.5百萬{% endblock %}
+{% block methodology_stat_2 %}31.3 兆位元組{% endblock %}
+{% block methodology_description %}
+除另有備註外，Web Almanac 網路年鑑22個章節的統計指標皆萃取自HTTP Archive數據集。HTTP Archive是社群推動的專案，自2010年開始持續追蹤網路如何建置，每月透過WebPageTest和Lighthouse測試將近7.5百萬個網站並將資料集公開置於BigQuery供眾分析。Web Almanac網路年鑑的統計指標採用2020年8月的數據集為基準，更多的資訊請參閱統計方法頁面。
+{% endblock %}
+
+{% block foreword %}
+{% endblock %}
