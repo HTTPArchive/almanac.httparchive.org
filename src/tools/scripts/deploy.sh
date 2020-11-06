@@ -92,8 +92,9 @@ if [ "$(pgrep -f 'python main.py')" ]; then
 fi
 
 #Remove generated chapters (in case new one from other branch in there)
+# Or with "true" to prevent failure if files don't exist
 echo "Removing Generated Chapters"
-rm -f ./templates/*/*/chapters/* | true
+rm -f ./templates/*/*/chapters/* || true
 
 echo "Run and test website"
 ./tools/scripts/run_and_test_website.sh
