@@ -611,7 +611,7 @@ Elements per page and element types per page stayed roughly the same, showing no
 
 Proprietary product-specific elements like `g:plusone` (used on 17,607 pages in the mobile sample) and `fb:like` (11,335) have almost disappeared after still being [among the most popular ones](../2019/markup#products-and-libraries-and-their-custom-markup) last year. However, we observe more custom elements for things like Slider Revolution, AMP, and Angular. And: Elements like `ym-measure`, `jdiv`, and `ymaps` persist. What we imagine seeing here is that under the sea of slowly-changing practices, HTML is very much being developed and maintained, as authors toss deprecated markup and embrace new solutions.
 
-We’re leaving this open: What do you observe? What has caught your eye? What do you think has taken a turn for the worse—and what did improve? [Leave a comment](@@) to share your thoughts!
+We’re leaving this open: What do you observe? What has caught your eye? What do you think has taken a turn for the worse—and what did improve? [Leave a comment](https://discuss.httparchive.org/t/2039) to share your thoughts!
 
 ## Conclusion
 
