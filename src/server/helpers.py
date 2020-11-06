@@ -77,6 +77,13 @@ def chapter_lang_exists(lang, year, chapter):
         return False
 
 
+def featured_chapters_exists(lang, year):
+    if os.path.isfile(TEMPLATES_DIR + '/%s/%s/featured_chapters.html' % (lang, year)):
+        return True
+    else:
+        return False
+
+
 def get_chapter_nextprev(config, chapter_slug):
     prev_chapter = None
     next_chapter = None
