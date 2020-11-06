@@ -42,7 +42,7 @@ In this section we’re having a look at higher-level aspects of HTML, like docu
 
 96.99% of the sampled pages use a doctype. That is useful, because, for historic reasons (“[to avoid triggering quirks mode](https://lists.w3.org/Archives/Public/public-html-comments/2009Jul/0020.html) in browsers”) HTML documents need to declare a document type.
 
-What are the most popular ones
+What are the most popular ones?
 
 <figure markdown>
 | Doctype | Pages | Percentage |
