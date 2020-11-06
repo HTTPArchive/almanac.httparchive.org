@@ -396,6 +396,7 @@ In our set of elements we found some that were neither standard HTML (nor SVG no
 | `olark` | 0.07% |
 | `h7` | 0.06% |
 | `limespot` | 0.05% |
+
 <figcaption>{{ figure_link(caption="Elements of questionable heritage.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
 </figure>
 
