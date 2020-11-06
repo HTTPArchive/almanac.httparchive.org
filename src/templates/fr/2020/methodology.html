@@ -2,11 +2,11 @@
 
 {% block title %}Méthodologie | Web Almanac par HTTP Archive{% endblock %}
 
-{% block description %}Décrit comment le Web Almanac 2019 a été conçu : Les ensembles de données et outils utilisés et la façon dont le projet a été exécuté.{% endblock %}
+{% block description %}Décrit comment le Web Almanac 2020 a été conçu : Les ensembles de données et outils utilisés et la façon dont le projet a été exécuté.{% endblock %}
 
 {% block twitter_image_alt %}Méthodologie du Web Almanac {{ year }}{% endblock %}
 
-{% block date_published %}2019-11-04T12:00:00.000Z{% endblock %}
+{% block date_published %}2020-10-24T00:00:00.000Z{% endblock %}
 {% block date_modified %}2020-11-06T00:00:00.000Z{% endblock %}
 
 {% block index %}
@@ -58,11 +58,11 @@
         </p>
 
         <p>
-        La mission du Web Almanac est de faciliter l’accès de la communauté Web au jeu de données de HTTP Archive en permettant aux expert·e·s du domaine d’y associer leur regard contextuel. On peut le considérer comme un référentiel annuel des connaissances sur l’état du web, 2019 étant sa première édition.
+        La mission du Web Almanac est de faciliter l’accès de la communauté Web au jeu de données de HTTP Archive en permettant aux expert·e·s du domaine d’y associer leur regard contextuel. On peut le considérer comme un référentiel annuel des connaissances sur l’état du web, 2020 étant sa deuxième édition.
         </p>
 
         <p>
-        L’édition 2019 du Web Almanac repose sur quatre piliers&nbsp;: le contenu, l’expérience utilisateur, la publication et la distribution. Chaque partie du rapport constitue un pilier et se compose de chapitres explorant ses différents aspects. Par exemple, la Partie II représente l’expérience utilisateur et comprend les chapitres Performance, Sécurité, Accessibilité, SEO, PWA et Web mobile.
+        L’édition 2020 du Web Almanac repose sur quatre piliers&nbsp;: le contenu, l’expérience utilisateur, la publication et la distribution. Chaque partie du rapport constitue un pilier et se compose de chapitres explorant ses différents aspects. Par exemple, la Partie II représente l’expérience utilisateur et comprend les chapitres Performance, Sécurité, Accessibilité, SEO, PWA et Web mobile.
         </p>
     </section>
 
@@ -70,11 +70,11 @@
       <h2 id="dataset"><a href="#dataset" class="anchor-link">À propos du jeu de données</a></h2>
 
         <p>
-        Le jeu de données HTTP Archive est continuellement mis à jour avec de nouvelles données mensuelles. Pour l’édition 2019 du Web Almanac, sauf indication contraire dans le chapitre, tous les paramètres ont été obtenus à partir de l’index de juillet 2019. Ces résultats sont <a href="https://github.com/HTTPArchive/httparchive.org/blob/master/docs/gettingstarted_bigquery.md">publiquement requêtables</a> sur BigQuery dans des tables préfixées par <code>2019_07_01</code>. 
+        Le jeu de données HTTP Archive est continuellement mis à jour avec de nouvelles données mensuelles. Pour l’édition 2020 du Web Almanac, sauf indication contraire dans le chapitre, tous les paramètres ont été obtenus à partir de l’index de août 2020. Ces résultats sont <a href="https://github.com/HTTPArchive/httparchive.org/blob/master/docs/gettingstarted_bigquery.md">publiquement requêtables</a> sur BigQuery dans des tables préfixées par <code>2020_08_01</code>. 
         </p>
 
         <p>
-        Toutes les statistiques présentées dans le Web Almanac sont reproductibles publiquement à l’aide de l’ensemble de données sur BigQuery. Vous pouvez parcourir les requêtes utilisées par tous les chapitres dans notre <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2019">dépôt GitHub</a>.
+        Toutes les statistiques présentées dans le Web Almanac sont reproductibles publiquement à l’aide de l’ensemble de données sur BigQuery. Vous pouvez parcourir les requêtes utilisées par tous les chapitres dans notre <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2020">dépôt GitHub</a>.
         </p>
 
         <p class="note">
@@ -112,7 +112,7 @@
         <h3 id="websites"><a href="#websites" class="anchor-link">Sites Web</a></h3>
 
         <p>
-        Il y a 5&nbsp;790&nbsp;700 sites Web dans l’ensemble de données. Parmi ceux-ci, 5&nbsp;297&nbsp;442 sont des sites Web mobiles et 4&nbsp;371&nbsp;973 sont des sites Web destinés aux ordinateurs de bureau. La plupart des sites Web sont inclus dans les deux sous-ensembles à la fois.
+        Il y a 7&nbsp;546&nbsp;709 sites Web dans l’ensemble de données. Parmi ceux-ci, 6&nbsp;347&nbsp;919 sont des sites Web mobiles et 5&nbsp;593&nbsp;642 sont des sites Web destinés aux ordinateurs de bureau. La plupart des sites Web sont inclus dans les deux sous-ensembles à la fois.
         </p>
 
         <p>
@@ -120,7 +120,11 @@
         </p>
 
         <p>
-        Le parcours de ces sites, réalisé par HTTP Archive en juillet 2019 et utilisé par le Web Almanac, a utilisé la dernière version disponible du Chrome UX Report, mai 2019 (201905), pour sa liste de sites Web. Cet ensemble de données a été publié le 11 juin 2019 et reflète les sites Web visités par les utilisateurs de Chrome pendant le mois de mai.
+        Le parcours de ces sites, réalisé par HTTP Archive en août 2020 et utilisé par le Web Almanac, a utilisé la dernière version disponible du Chrome UX Report, juin 2020 (201905), pour sa liste de sites Web. Cet ensemble de données a été publié le 14 juillet 2020 et reflète les sites Web visités par les utilisateurs de Chrome pendant le mois de mai.
+        </p>
+
+        <p>
+                Il y a eu une croissance de 20 à 30 % des sites web analysés par rapport au <a href="../2019/methodology#websites">nombre de sites analysés pour le Web Almanac 2019</a>. Cette augmentation a été analysée par <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='paulcalvano') }}}">Paul Calvano</a> dans son article <a href="https://paulcalvano.com/2020-09-29-growth-of-the-web-in-2020/" lang="en">Growth of the Web in 2020</a>.
         </p>
 
         <p>
@@ -189,10 +193,10 @@
           <tr>
             <td>User Agent</td>
             <td>
-              Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36 PTST/190704.170731
+              Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36 PTST/200805.230825
             </td>
             <td>
-              Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4) Build/MPJ24.139-64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.146 Mobile Safari/537.36 PTST/190628.140653
+              Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4) Build/MPJ24.139-64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.146 Mobile Safari/537.36 PTST/200815.130813
             </td>
           </tr>
 
@@ -228,7 +232,7 @@
       </p>
 
       <p>
-        Les sites Web mobiles sont visités à partir d’un environnement Chrome mobile sur un appareil Moto G4 émulé avec une vitesse réseau  équivalente à une connexion 3G. Notez que le User Agent mobile émulé s’identifie comme étant Chrome 65 mais est en réalité, Chrome 75.
+        Les sites Web mobiles sont visités à partir d’un environnement Chrome mobile sur un appareil Moto G4 émulé avec une vitesse réseau  équivalente à une connexion 3G. Notez que le User Agent mobile émulé s’identifie comme étant Chrome 65 mais est en réalité, Chrome 84.
       </p>
 
       <p>
@@ -252,7 +256,7 @@
       </p>
 
       <p>
-        HTTP Archive utilise la dernière version de Lighthouse pour toutes ses pages Web mobiles –&nbsp;pas pour les pages sur ordinateurs de bureau pour limiter la consommation de ressources. À partir de l’exploration de juillet 2019, HTTP Archive a utilisé la version <a href="https://github.com/GoogleChrome/lighthouse/releases/tag/v5.1.0">5.1.0</a> de Lighthouse.
+        HTTP Archive utilise la dernière version de Lighthouse pour toutes ses pages Web mobiles –&nbsp;pas pour les pages sur ordinateurs de bureau pour limiter la consommation de ressources. À partir de l’exploration de août 2020, HTTP Archive a utilisé la version <a href="https://github.com/GoogleChrome/lighthouse/releases/tag/v6.2.0">6.2.0</a> de Lighthouse.
       </p>
 
       <p>
@@ -269,7 +273,7 @@
         <tbody>
           <tr>
             <td>Ralentissement CPU</td>
-            <td>1x*</td>
+            <td>1x</td>
           </tr>
           <tr>
             <td>Débit descendant</td>
@@ -287,10 +291,6 @@
       </table>
       </div></div>
 
-      <p class="note">
-        * Notez que Lighthouse est normalement configuré pour avoir un ralentissement CPU de 4x, mais en raison d’un <a href="https://github.com/GoogleChrome/lighthouse/issues/9668#issuecomment-535134232">bug</a> dans WebPageTest, il était de 1x au moment des tests.
-      </p>
-
       <p>
         Pour plus d’informations sur Lighthouse et les audits disponibles dans HTTP Archive, reportez-vous à la section <a href="https://developers.google.com/web/tools/lighthouse/">documentation de Lighthouse relative au développement</a>.
       </p>
@@ -300,11 +300,11 @@
       <h3 id="wappalyzer"><a href="#wappalyzer" class="anchor-link">Wappalyzer</a></h3>
 
       <p>
-        <a href="https://www.wappalyzer.com/">Wappalyzer</a> est un outil de détection des technologies utilisées dans les pages Web. Il y a  <a href="https://www.wappalyzer.com/technologies">65 catégories</a> de technologies testées, allant des frameworks JavaScript, aux plates-formes CMS, en passant par les mineurs de cryptomonnaie. Plus de 1&nbsp;200 technologies sont prises en charge.
+        <a href="https://www.wappalyzer.com/">Wappalyzer</a> est un outil de détection des technologies utilisées dans les pages Web. Il y a  <a href="https://www.wappalyzer.com/technologies">64 catégories</a> de technologies testées, allant des frameworks JavaScript, aux plates-formes CMS, en passant par les mineurs de cryptomonnaie. Plus de 1&nbsp;400 technologies sont prises en charge.
       </p>
 
       <p>
-        HTTP Archive la dernière version de Wappalyzer sur toutes les pages. En juillet 2019, Web Almanac utilisait la  <a href="https://github.com/AliasIO/Wappalyzer/releases/tag/v5.8.3">version 5.8.3</a> de Wappalyzer.
+        HTTP Archive la dernière version de Wappalyzer sur toutes les pages. En août 2020, Web Almanac utilisait la  <a href="https://github.com/AliasIO/Wappalyzer/releases/tag/v6.2.0">version 6.2.0</a> de Wappalyzer.
       </p>
 
       <p>
@@ -324,7 +324,7 @@
       </p>
 
       <p>
-        Les indicateurs Web Almanac qui font référence à des données d’expérience utilisateur réelles sont tirés du rapport Chrome UX Report, plus précisément du jeu de données juillet 2019 (201907).
+        Les indicateurs Web Almanac qui font référence à des données d’expérience utilisateur réelles sont tirés du rapport Chrome UX Report, plus précisément du jeu de données août 2020 (202008).
       </p>
 
       <p>
@@ -369,18 +369,14 @@
     </section>
 
     <section>
-      <h3 id="brainstorming"><a href="#brainstorming" class="anchor-link">Réflexion préalable</a></h3>
+      <h3 id="brainstorming"><a href="#brainstorming" class="anchor-link">Réflexion</a></h3>
 
       <p>
-        L’idée du Web Almanac en né en janvier 2019 sous la forme d’une <a href="https://discuss.httparchive.org/t/planning-the-web-almanac-2019/1553">publication sur le forum HTTP Archive</a> décrivant l’initiative et appelant aux soutiens. En mars 2019, nous avons créé un <a href="http://bit.ly/web-almanac-brainstorm">document public de réflexion</a> dans lequel n’importe qui dans la communauté web pourrait écrire des idées pour des chapitres ou des métriques. Il s’agissait d’une étape cruciale pour s’assurer que nous nous concentrions sur les choses qui comptent pour la collectivité et que nous incluions un ensemble diversifié de voix dans le processus.
+        Le Web Almanach 2020 a été lancé en juin 2020 par un <a href="https://twitter.com/rick_viscomi/status/1273135952848977920?s=20">appel en direction de nouveaux auteurs et autrices</a>. Après une phase de réflexion, 22 chapitres ont été consolidés et nous avons commencé à <a href="https://github.com/HTTPArchive/almanac.httparchive.org/issues/876">assigner des experts et expertes sur chaque sujets et des pairs examinateurs et examinatrices à chaque chapitre</a>. Ce processus souffre d’un biais inhérent à la difficulté d’obtenir l’engagement de volontaires pour un projet de cette envergure. Ainsi, de nombreuses personnes qui contribuent au projet sont membres des mêmes cercles professionnels. Un objectif explicite des futures éditions du Web Almanac est d’encourager encore plus l’inclusion de voix sous-représentées et hétérogènes en tant qu’auteurs, autrices, relecteurs et relectrices.
       </p>
 
       <p>
-        À la suite de ce remue-méninge, 20 chapitres ont été confirmés et nous avons commencé à <a href="https://github.com/HTTPArchive/almanac.httparchive.org/issues/2">l’affectation d’expert·e·s et de relecteur·ice·s, ainsi que de pair·e·s pour les relecteurs inhérentes à chaque chapitre</a>. Ce processus comportait un biais inhérent lié à la difficulté  d’amener les bénévoles à s’engager dans un projet de cette envergure.  Ainsi, de nombreux contributeurs et contributrices sont membres des mêmes milieux professionnels. L’un des objectifs explicites des prochaines éditions du Web Almanac est d’encourager encore plus l’inclusion de voix sous-représentées et hétérogènes comme auteurs,  autrices, relecteurs et relectrices.
-      </p>
-
-      <p>
-        De mai à juin 2019, nous avons demandé à de nombreuses personnes leur avis sur les chapitres et obtenu leurs commentaires, ce qui nous a permis de finaliser, pour chaque chapitre, la liste des indicateurs qui le composeront.
+        Nous avons passé le mois de juillet 2020 à apparier les personnes avec les chapitres et à recueillir leurs commentaires pour finaliser les indicateurs particuliers qui constitueront chaque chapitre.
       </p>
     </section>
 
@@ -388,15 +384,15 @@
       <h3 id="analysis"><a href="#analysis" class="anchor-link">Analyse</a></h3>
 
       <p>
-        En juin 2019, une fois obtenue la liste finale des paramètres et chapitres, des analystes ont trié les indicateurs en fonction de leur difficulté d’obtention. Dans certains cas, <a href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/almanac.js">des indicateurs personnalisés</a> devaient être créés pour combler les lacunes de nos capacités analytiques.
+        En juillet et août 2020, ayant une liste bien établie de mesures et de chapitres, les analystes de données ont trié les mesures pour en déterminer la faisabilité. Dans certains cas, il a fallu créer des <a href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">mesures personnalisées</a> pour combler les lacunes de nos capacités analytiques.
       </p>
 
       <p>
-        Tout au long du mois de juillet 2019, le pipeline de données HTTP Archive a parcouru plusieurs millions de sites Web, rassemblant les métadonnées utilisées par le Web Almanac.
+        Tout au long du mois d’août 2020, le pipeline de données HTTP Archive a parcouru plusieurs millions de sites web, rassemblant les métadonnées à utiliser dans le Web Almanac.
       </p>
 
       <p>
-        À partir d’août 2019, les analystes ont commencé à rédiger des requêtes pour extraire les résultats pour chaque indicateur. Au total, <strong>431 requêtes</strong> furent écrites à la main&nbsp;! Vous pouvez parcourir toutes les requêtes, chapitre par chapitre, dans le répertoire <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2019">sql/2019</a> du dépôt Github de ce projet.
+        Les analystes de données ont commencé à rédiger des requêtes pour extraire les résultats de chaque mesure. Au total, les <strong> requêtes TBC</strong> ont été écrites à la main ! Vous pouvez parcourir toutes les requêtes par chapitre dans le répertoire <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2020">sql/2020</a> du dépôt GitHub du projet.
       </p>
     </section>
 
@@ -420,11 +416,11 @@
       <h2 id="looking-ahead"><a href="#looking-ahead" class="anchor-link">Perspectives</a></h2>
 
       <p>
-        L’édition 2019 du Web Almanac est la première de ce que nous espérons  être une tradition annuelle d’introspection et d’investissement positif au sein de la communauté Web. Parvenir à ce résultat a demandé un effort monumental de la part de nombreux <a href="{{ url_for('contributors', year=year, lang=lang) }}">contributeurs et contributrices</a> et nous espérons pouvoir grandement tirer parti de ce travail pour faciliter les éditions futures.
+        L’édition 2020 du Web Almanac est la deuxième d’une tradition annuelle dans la communauté du web d’introspection et d’engagement pour un changement positif. Pour en arriver là, un effort monumental a été fourni par de nombreux et dévoués <a href="{{ url_for('contributors', year=year, lang=lang) }}">contributeurs et contributrices</a> et nous espérons pouvoir grandement tirer parti de ce travail pour faciliter les éditions futures.
       </p>
 
       <p>
-        Si vous souhaitez contribuer à l’édition 2020 du Web Almanac, n’hésitez pas à nous le dire via <a href="https://forms.gle/Qyf3q5pKgdH1cBhq5">ce formulaire</a>. Nous serions ravi·e·s d’entendre vos idées pour rendre ce projet encore meilleur&nbsp;!
+        Si vous souhaitez contribuer à l’édition 2021 du Web Almanac, n’hésitez pas à nous le dire via <a href="https://forms.gle/VRBFegGAP7d99Bhp7">ce formulaire</a>. Nous serions ravi·e·s d’entendre vos idées pour rendre ce projet encore meilleur&nbsp;!
       </p>
     </section>
 {% endblock main_content %}
