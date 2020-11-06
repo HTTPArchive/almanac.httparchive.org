@@ -554,6 +554,7 @@ According to the numbers we gathered, about 60% of the pages contain a button el
 | 50 | 1 |
 | 75 | 5 |
 | 90 | 13 |
+
 <figcaption>{{ figure_link(caption="Button percentiles.", sheets_gid="309769153", sql_file="pages_markup_by_device_and_percentile.sql") }}</figcaption>
 </figure>
 
