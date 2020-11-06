@@ -259,13 +259,33 @@ Nothing changed in the Top 7, but the `option` element went a little out of favo
 </div>
 
 <!-- Really part of the note above, but kept outside for simplicity: -->
-<figure markdown>
-| Element | Occurrences | |
-| | Mobile (0.39%) | Desktop (0.22%) |
-|---|---|---|
-| `summary` | 62,992 | 43,936 |
-| `details` | 56,603 | 36,743 |
-<figcaption>{{ figure_link(caption="Use of the `details` and `summary` team.", sheets_gid="1406534257", sql_file="pages_element_count_by_device.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <td></td>
+        <th scope="colgroup" colspan="2" >Occurrences</th>
+      </tr>
+      <tr>
+        <th scope="col">Element</th>
+        <th scope="col">Mobile (0.39%)</th>
+        <th scope="col">Desktop (0.22%)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>summary</code></td>
+        <td>62,992</td>
+        <td>43,936</td>
+      </tr>
+      <tr>
+        <td><code>details</code></td>
+        <td>56,60</td>
+        <td>36,743</td>
+      </tr>
+    </tbody>
+  </table>
+<figcaption>{{ figure_link(caption="Use of the <code>details</code> and <code>summary</code> team.", sheets_gid="1406534257", sql_file="pages_element_count_by_device.sql") }}</figcaption>
 </figure>
 
 ### Probability of element use
