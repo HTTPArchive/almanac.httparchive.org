@@ -2,6 +2,7 @@
 .vscode/
 node_modules/
 templates/*/*/chapters/
+templates/*/*/featured_chapters.html
 templates/*/*/ebook.html
 templates/sitemap.xml
 static/html/

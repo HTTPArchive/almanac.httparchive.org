@@ -21,7 +21,7 @@
 
 {% block styles %}
   {{ super() }}
-  <link rel="stylesheet" href="/static/css/index.css?v=20200813141014">
+  <link rel="stylesheet" href="/static/css/index.css?v=20201103180407">
   <style nonce="{{ csp_nonce() }}">
 .intro {
   max-width: 600px;
@@ -53,11 +53,6 @@
 }
 
   </style>
-{% endblock %}
-
-{# Hide the TOC and Methodology for now #}
-{% block non_chapter_nav_links %}
-<li><a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a></li>
 {% endblock %}
 
 {% block container %}

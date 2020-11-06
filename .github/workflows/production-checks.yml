@@ -1,0 +1,42 @@
+######################################
+## Custom Web Almanac GitHub action ##
+######################################
+#
+# Run checks against the production website
+#
+name: Production Checks
+on:
+  schedule:
+    #        ┌───────────── minute (0 - 59)
+    #        │ ┌───────────── hour (0 - 23)
+    #        │ │ ┌───────────── day of the month (1 - 31)
+    #        │ │ │ ┌───────────── month (1 - 12 or JAN-DEC)
+    #        │ │ │ │ ┌───────────── day of the week (0 - 6 or SUN-SAT)
+    #        │ │ │ │ │
+    #        │ │ │ │ │
+    #        │ │ │ │ │
+    #        * * * * *
+    - cron: '45 13 * * 0'
+  workflow_dispatch:
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    if: github.repository == 'HTTPArchive/almanac.httparchive.org'
+    steps:
+    - name: Checkout branch
+      uses: actions/checkout@v2.3.3
+    - name: Set the list of URLs for Lighthouse to check
+      run: ./src/tools/scripts/set_lighthouse_urls.sh -p
+    - name: Audit URLs using Lighthouse
+      uses: treosh/lighthouse-ci-action@v3
+      id: LHCIAction
+      with:
+        # For prod, we simply check for 100% in Accessibility, Best Practices and SEO
+        # We don't check Performance as too much variability and no guarantees on perf in GitHub Actions.
+        configPath: .github/lighthouse/lighthouse-config-prod.json
+        uploadArtifacts: true # save results as an action artifacts
+        temporaryPublicStorage: true # upload lighthouse report to the temporary storage
+    - name: Show Lighthouse outputs
+      run: |
+        # All results by URL:
+        echo '${{ steps.LHCIAction.outputs.manifest }}' | jq -r '.[] | (.summary|tostring) + " - " + .url'
