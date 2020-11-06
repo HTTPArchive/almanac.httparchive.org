@@ -7,6 +7,7 @@ const { find_markdown_files, get_yearly_configs, size_of, parse_array } = requir
 const { generate_table_of_contents } = require('./generate_table_of_contents');
 const { generate_header_links } = require('./generate_header_links');
 const { generate_figure_ids } = require('./generate_figure_ids');
+const { generate_featured_chapters, generate_chapter_featured_quote } = require('./generate_featured_chapters');
 const { generate_sitemap } = require('./generate_sitemap');
 const { lazy_load_content } = require('./lazy_load_content');
 const { wrap_tables } = require('./wrap_tables');
@@ -26,10 +27,11 @@ const generate_chapters = async () => {
   let sitemap_languages = {};
   let ebook_chapters = [];
   let configs = {};
+  let featured_quotes = {};
   
   configs = await get_yearly_configs();
   for (const year in configs) {  
-    sitemap_languages[year] = configs[year].settings[0].supported_languages
+    sitemap_languages[year] = configs[year].settings[0].supported_languages;
   }
 
   for (const file of await find_markdown_files()) {
@@ -43,6 +45,16 @@ const generate_chapters = async () => {
 
       const markdown = await fs.readFile(file, 'utf-8');
       const { metadata, body, toc } = await parse_file(markdown,chapter);
+      const chapter_featured_quote = generate_chapter_featured_quote(metadata);
+      if (Object.keys(chapter_featured_quote).length > 0) {
+        if (!(language in featured_quotes)) {
+          featured_quotes[language] = {};
+        }
+        if (!(year in featured_quotes[language])) {
+          featured_quotes[language][year] = {};
+        }
+        featured_quotes[language][year][chapter] = chapter_featured_quote;
+      }
       if ( sitemap_languages[year].includes(language) ) {
         sitemap.push({ language, year, chapter, metadata });
       }
@@ -54,7 +66,8 @@ const generate_chapters = async () => {
       console.error('  Failed to generate chapter, moving onto the next one. ');
     }
   }
-  
+
+  await generate_featured_chapters(featured_quotes);
   await generate_ebooks(ebook_chapters,configs);
   await generate_js();
 
@@ -100,17 +113,17 @@ const parse_file = async (markdown,chapter) => {
 };
 
 const write_template = async (language, year, chapter, metadata, body, toc) => {
-  const template = `templates/base/${year}/chapter.ejs.html`;
+  const template = `templates/base/2019/chapter.ejs.html`;
   const path = `templates/${language}/${year}/chapters/${chapter}.html`;
 
   if (fs.existsSync(template)) {
-    let html = await ejs.renderFile(template, { metadata, body, toc });
-    let fomatted_html = prettier.format(html, {
+    body = prettier.format(body, {
       parser: 'html',
       printWidth: Number.MAX_SAFE_INTEGER
     });
+    let html = await ejs.renderFile(template, { metadata, body, toc });
 
-    await fs.outputFile(path, fomatted_html, 'utf8');
+    await fs.outputFile(path, html, 'utf8');
     await size_of(path);
   }
 };

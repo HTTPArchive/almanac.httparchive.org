@@ -1,5 +1,6 @@
 #standardSQL
 # pages markup metrics grouped by device and image loading attributes
+# Note: this query only reports if an attribute was ever used on a page. It is not a per img report.
 
 # helper to create percent fields
 CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
@@ -42,7 +43,7 @@ client,
 loading, 
 total, 
 COUNT(0) AS count,
-AS_PERCENT(COUNT(0), total) AS pct
+AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct
 FROM
     ( 
       SELECT 
