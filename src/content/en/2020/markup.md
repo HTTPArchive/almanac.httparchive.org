@@ -159,13 +159,9 @@ Following the analysis, we found that about 49% of both mobile and desktop index
 This seems to confirm the theory that the total number of `noscript`s in the wild may be affected by common scripts like Google Tag Manager which enforce users to add a `noscript` snippet after the `<body>` start tag on a page.
 
 <div class="note">
-
-What `type` attribute values are used with `script` elements? `text/javascript` (60.03%), `application/ld+json` (1.68%), `application/json` (0.41%), `text/template` (0.41%), and `text/html` (!) (0.27%).
-
-When it comes to loading JavaScript module scripts using `type="module"`, we found 0.13% of `script`s to currently specify this attribute-value combination. `nomodule`, then, is used by 0.95% of all tested pages. (Note that one metric relates to elements, the other to pages.)
-
-No value has been set on 36.38% of all scripts.
-
+  <p>What <code>type</code> attribute values are used with <code>script</code> elements? <code>text/javascript</code> (60.03%), <code>application/ld+json</code> (1.68%), <code>application/json</code> (0.41%), <code>text/template</code> (0.41%), and <code>text/html</code> (!) (0.27%).</p>
+  <p>When it comes to loading JavaScript module scripts using <code>type="module"</code>, we found 0.13% of <code>script</code>s to currently specify this attribute-value combination. <code>nomodule</code>, then, is used by 0.95% of all tested pages. (Note that one metric relates to elements, the other to pages.)</p>
+  <p>No value has been set on 36.38% of all scripts.</p>
 </div>
 
 ## Elements
@@ -240,13 +236,12 @@ Last year, the Almanac featured the most frequently used elements in reference t
 Nothing changed in the Top 7, but the `option` element went a little out of favor and dropped from 8 to 10, letting both the `link` and the `i` element pass in popularity. These elements have risen in use, possibly due to an increase in use of [resource hints](https://www.w3.org/TR/resource-hints/) (as with prerendering and prefetching), as well icon solutions like [Font Awesome](https://fontawesome.com/) (which _de facto_ misuses `i` elements for the purpose of displaying icons).
 
 <div class="note">
+  <h4><code>details</code> and <code>summary</code></h4>
+  <p>One thing we were curious about, too, was use of <a href="https://html.spec.whatwg.org/multipage/rendering.html#the-details-and-summary-elements">the <code>details</code> and <code>summary</code> elements</a>, especially since 2020 <a href="https://caniuse.com/details">brought broad support</a>. Are they being used? Are they attractive for, even popular among authors? As it turns out, only 0.39% of all tested pages are using them—although it’s hard to gauge whether they were all used the correct way in exactly the situations when you need them, “popular” is the wrong word.</p>
+  <p>Here’s a simple example showing the use of a <code>summary</code> in a <code>details</code> element:</p>
+</div>
 
-#### `details` and `summary`
-
-One thing we were curious about, too, was use of [the `details` and `summary` elements](https://html.spec.whatwg.org/multipage/rendering.html#the-details-and-summary-elements), especially since 2020 [brought broad support](https://caniuse.com/details). Are they being used? Are they attractive for, even popular among authors? As it turns out, only 0.39% of all tested pages are using them—although it’s hard to gauge whether they were all used the correct way in exactly the situations when you need them, “popular” is the wrong word.
-
-Here’s a simple example showing the use of `summary` in a `details` element:
-
+<!-- Really part of the note above, but kept outside for simplicity: -->
 ```html
 <details>
   <summary>Status: Operational</summary>
@@ -255,10 +250,12 @@ Here’s a simple example showing the use of `summary` in a `details` element:
 </details>
 ```
 
-A while ago, [Steve Faulkner pointed out](https://twitter.com/stevefaulkner/status/806474286592561152) how these two elements were used poorly in the wild. As you can tell from above, for each `details` element you’d need a `summary` element that may only be used as the [first child of `details`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary#Usage_notes). 
+<div class="note">
+  <p>A while ago, <a href="https://twitter.com/stevefaulkner/status/806474286592561152">Steve Faulkner pointed out</a> how these two elements were used poorly in the wild. As you can tell from above, for each <code>details</code> element you’d need a <code>summary</code> element that may only be used as the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary#Usage_notes">first child of <code>details</code></a>.</p>
+  <p>Accordingly we looked at the number of <code>details</code> and <code>summary</code> elements and it seems that they do continue to be misused. The count of <code>summary</code> elements is higher on both mobile and desktop, with a ratio of 1.11 <code>summary</code> elements for every <code>details</code> element on mobile, and 1.19 on desktop, respectively:</p>
+</div>
 
-Accordingly we looked at the number of `details` and `summary` elements and it seems that they do continue to be misused. The count of `summary` elements is higher on both mobile and desktop, with a ratio of 1.11 `summary` elements for every `details` element on mobile, and 1.19 on desktop, respectively:
-
+<!-- Really part of the note above, but kept outside for simplicity: -->
 <figure markdown>
 | Element | Occurrences | |
 | | Mobile (0.39%) | Desktop (0.22%) |
@@ -267,8 +264,6 @@ Accordingly we looked at the number of `details` and `summary` elements and it s
 | `details` | 56,603 | 36,743 |
 <figcaption>{{ figure_link(caption="Use of the `details` and `summary` team.", sheets_gid="1406534257", sql_file="pages_element_count_by_device.sql") }}</figcaption>
 </figure>
-
-</div>
 
 ### Probability of element use
 
@@ -353,11 +348,8 @@ In our mobile data set of 6.3 million pages, around 0.9 million pages (14.01%) c
 Why are these still alive—even `spacer` is still being used 1,584 times, and present on every 5,000th page. We know that Google has been using a `center` element on [their homepage](https://www.google.com/) [for 22 years](https://web.archive.org/web/19981202230410/https://www.google.com/) now, but does that find so many imitators?
 
 <div class="note">
-
-#### `isindex`
-
-If you were wondering: The [`isindex` element](https://www.w3.org/TR/html401/interact/forms.html#edef-ISINDEX) was present once. (It was part of the HTML specs [until version 4.01, and of XHTML in 1.0](https://meiert.com/en/indices/html-elements/), yet only properly [specified in 2006](https://lists.w3.org/Archives/Public/public-whatwg-archive/2006Feb/0111.html), and [removed in 2016](https://github.com/whatwg/html/pull/1095).)
-
+  <h4><code>isindex</code></h4>
+  <p>If you were wondering: The <a href="https://www.w3.org/TR/html401/interact/forms.html#edef-ISINDEX"><code>isindex</code> element</a> was present once. (It was part of the HTML specs <a href="https://meiert.com/en/indices/html-elements/">until version 4.01, and of XHTML in 1.0</a>, yet only properly <a href="https://lists.w3.org/Archives/Public/public-whatwg-archive/2006Feb/0111.html">specified in 2006</a>, and <a href="https://github.com/whatwg/html/pull/1095">removed in 2016</a>.)</p>
 </div>
 
 ### Proprietary and made-up elements
@@ -468,7 +460,7 @@ The most popular ones stand out because they are almost twice as popular than ea
 
 Attributes like `data-type`, `data-id`, and `data-src` can have multiple generic uses although `data-src` is used a lot with lazy image loading via JavaScript (e.g., Bootstrap 4). [Bootstrap](https://getbootstrap.com/) again explains the presence of `data-toggle`, where it’s used as a state styling hook on toggle buttons. The [Slick carousel plugin](https://kenwheeler.github.io/slick/) is the source of `data-slick-index`, whereas `data-element_type` is part of [Elementor’s WordPress website builder](https://elementor.com/). Both `data-requiremodule` and `data-requirecontext`, then, are part of [RequireJS](https://requirejs.org/).
 
-<p class="note">Interestingly, the use of native lazy loading on images is similar to that of `data-src`. 3.86% of `img` elements use the `loading` attribute with a value of `lazy` (this appears to be growing very fast, as [back in February, this number was about 0.8%](https://twitter.com/zcorpan/status/1237016679667970050)). It’s possible that these are being used together for a [cross-browser solution](https://addyosmani.com/blog/lazy-loading/).</p>
+<p class="note">Interestingly, the use of native lazy loading on images is similar to that of <code>data-src</code>. 3.86% of <code>img</code> elements use the <code>loading</code> attribute with a value of <code>lazy</code> (this appears to be growing very fast, as <a href="https://twitter.com/zcorpan/status/1237016679667970050">back in February, this number was about 0.8%</a>). It’s possible that these are being used together for a <a href="https://addyosmani.com/blog/lazy-loading/">cross-browser solution</a>.</p>
 
 ## Miscellaneous
 
@@ -496,7 +488,7 @@ We had a look at the data and in order to better understand the results, we norm
 
 The results show that almost half of the pages we analyzed are using the typical viewport `content` value. Still, around 688K mobile pages (and 904K desktop pages) are entirely missing a proper `content` value for the viewport meta element, with the rest of them using an improper combination of `maximum-scale`, `minimum-scale`, `user-scalable=no`, or `user-scalable=0`.
 
-<p class="note">For a while now the Edge mobile browser allows to [zoom into a web page to at least 500%](https://blogs.windows.com/windows-insider/2017/01/12/announcing-windows-10-insider-preview-build-15007-pc-mobile/), regardless of the zoom settings defined by a web page employing the viewport meta element.</p>
+<p class="note">For a while now the Edge mobile browser allows to <a href="https://blogs.windows.com/windows-insider/2017/01/12/announcing-windows-10-insider-preview-build-15007-pc-mobile/">zoom into a web page to at least 500%</a>, regardless of the zoom settings defined by a web page employing the viewport meta element.</p>
 
 ### Favicons
 
@@ -545,11 +537,11 @@ There has been a lot of discussion on buttons lately and how often they are misu
 According to the numbers we gathered, about 60% of the pages contain a button element and more than half of them (32.43%) fail to specify a `type` attribute.
 
 <div class="note">
+  <p>The button element has a <a href="https://dev.w3.org/html5/spec-LC/the-button-element.html">default type of <code>submit</code></a>, meaning that the default behavior of a button is to submit the current form data. For extra clarity, consider specifying the button type in order to avoid unexpected situations.</p>
+  <p>The following table shows that a page in the 90th percentile has at least 13 native buttons, while the pages in the 10th and 25th percentiles contain no buttons at all:</p>
+</div>
 
-The button element has a [default type of `submit`](https://dev.w3.org/html5/spec-LC/the-button-element.html), meaning that the default behavior of a button is to submit the current form data. For extra clarity, consider specifying the button type in order to avoid unexpected situations.
-
-The following table shows that a page in the 90th percentile has at least 13 native buttons, while the pages in the 10th and 25th percentiles contain no buttons at all:
-
+<!-- Really part of the note above, but kept outside for simplicity: -->
 <figure markdown>
 | Percentile | Buttons |
 |---|---|
@@ -559,8 +551,6 @@ The following table shows that a page in the 90th percentile has at least 13 nat
 | 90 | 13 |
 <figcaption>{{ figure_link(caption="Button percentiles.", sheets_gid="309769153", sql_file="pages_markup_by_device_and_percentile.sql") }}</figcaption>
 </figure>
-
-</div>
 
 ### Link targets
 
@@ -599,7 +589,7 @@ Using `target="_blank"` is known as a [security vulnerability](https://mathiasby
 
 As a rule of thumb—also [for usability reasons](https://www.nngroup.com/articles/new-browser-windows-and-tabs/)—, prefer not to use `target=_blank`. 
 
-<p class="note">Within the latest Safari and Firefox versions, setting `target="_blank"` on a elements implicitly provides the same `rel` behavior as setting `rel="noopener"`. This is currently being [implemented in Chromium](https://bugs.chromium.org/p/chromium/issues/detail?id=898942) as well.</p>
+<p class="note">Within the latest Safari and Firefox versions, setting <code>target="_blank"</code> on <code>a</code> elements implicitly provides the same <code>rel</code> behavior as setting <code>rel="noopener"</code>. This is currently being <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=898942">implemented in Chromium</a> as well.</p>
 
 ## Status and trends
 
