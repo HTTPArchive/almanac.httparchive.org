@@ -285,6 +285,7 @@ Another look at element popularity, how likely is it to find a certain element i
 | `span` | 93.98% |
 | `p` | 88.71% |
 | `ul` | 87.68% |
+
 <figcaption>{{ figure_link(caption="High probabilities of finding a given element in pages of the Web Almanac 2020 sample.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
 </figure>
 
