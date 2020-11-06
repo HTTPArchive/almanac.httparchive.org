@@ -8,10 +8,18 @@ Make sure you run the following commands from within the `src` directory by exec
 
 [Source](https://cloud.google.com/appengine/docs/flexible/python/quickstart)
 
+Make sure Python (3.8 or above) and NodeJS (v12) are installed on your machine.
+
 1. If you don't have virtualenv, install it using pip.
 
 ```
 sudo pip install virtualenv
+```
+
+Or for Windows
+
+```
+py -m pip install --user virtualenv
 ```
 
 2. Create an isolated Python environment, and install dependencies:
@@ -21,6 +29,15 @@ virtualenv --python python3 env
 source env/bin/activate
 pip install -r requirements.txt
 ```
+
+Or for those on Windows:
+
+```
+virtualenv --python python3 env
+env\Scripts\activate.bat
+pip install -r requirements.txt
+```
+
 
 3. Run the application:
 
