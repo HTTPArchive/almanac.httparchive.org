@@ -401,7 +401,7 @@ Wait.
 |---|---|---|
 | `h7` | 30,073 | 0.005 |
 | `h8` | 9,266 | 0.0015 |
-<figcaption>{{ figure_link(caption="Frequency and average use of non-standard heading elements,", sheets_gid="277662548", sql_file="pages_wpt_bodies_by_device_and_percentile_and_heading_level.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Frequency and average use of non-standard heading elements.", sheets_gid="277662548", sql_file="pages_wpt_bodies_by_device_and_percentile_and_heading_level.sql") }}</figcaption>
 </figure>
 
 The last two have never been part of HTML, of course, and should not be used.
