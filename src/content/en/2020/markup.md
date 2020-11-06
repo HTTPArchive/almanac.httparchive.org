@@ -368,6 +368,7 @@ In our mobile data set of 6.3 million pages, around 0.9 million pages (14.01%) c
 | `frameset` | 19,163 | 0.30% |
 | `strike` | 17,438 | 0.27% |
 | `noframes` | 15,016 | 0.24% |
+
 <figcaption>{{ figure_link(caption="Obsolete elements with more than 10,000 uses.", sheets_gid="1972617631", sql_file="pages_element_count_by_device_and_obsolete_elements.sql") }}</figcaption>
 </figure>
 
