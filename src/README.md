@@ -8,7 +8,7 @@ Make sure you run the following commands from within the `src` directory by exec
 
 [Source](https://cloud.google.com/appengine/docs/flexible/python/quickstart)
 
-Make sure Python (3.8 or above) and NodeJS (v12) are installed on your machine.
+Make sure Python (3.8 or above), pip and NodeJS (v12) are installed on your machine.
 
 1. If you don't have virtualenv, install it using pip.
 
@@ -36,11 +36,10 @@ virtualenv --python python3 env
 env\Scripts\activate.bat
 ```
 
-
 3. Install generate and run the website:
 
 ```
-npm run start
+npm run winstart
 ```
 
 Or on Windows:
