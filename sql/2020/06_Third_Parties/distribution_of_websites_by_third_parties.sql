@@ -3,19 +3,11 @@
 
 WITH requests AS (
   SELECT
-    'desktop' AS client,
+    _TABLE_SUFFIX AS client,
     pageid AS page,
     req_host AS host
   FROM
-    `httparchive.summary_requests.2020_08_01_desktop`
-  UNION ALL (
-    SELECT
-      'mobile' AS client,
-      pageid AS page,
-      req_host AS host
-    FROM
-      `httparchive.summary_requests.2020_08_01_mobile`
-  )
+    `httparchive.summary_requests.2020_08_01_*`
 ),
 third_party AS (
   SELECT
