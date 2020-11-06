@@ -415,6 +415,7 @@ The source of these elements appears to be mixed, as in some are unknown while o
 | `h4` | 20,473,598 | 3.23 |
 | `h5` | 8,594,500 | 1.36 |
 | `h6` | 3,527,470 | 0.56 |
+
 <figcaption>{{ figure_link(caption="Frequency and average use of standard heading elements.", sheets_gid="277662548", sql_file="pages_wpt_bodies_by_device_and_percentile_and_heading_level.sql") }}</figcaption>
 </figure>
 
