@@ -1,5 +1,5 @@
 #standardSQL
-# Distribution of websites by third parties
+# Distribution of third parties by number of websites
 
 WITH requests AS (
   SELECT
