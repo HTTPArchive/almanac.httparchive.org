@@ -573,6 +573,7 @@ What protocols do anchors—`a` elements—point to? We looked at that informati
 | skype | 22,378 | 0.35% |
 | sms | 17,304 | 0.27% |
 | intent | 12,807 | 0.20% |
+
 <figcaption>{{ figure_link(caption="Top 10 link target protocols.", sheets_gid="1963376224", sql_file="pages_wpt_bodies_by_device_and_protocol.sql") }}</figcaption>
 </figure>
 
