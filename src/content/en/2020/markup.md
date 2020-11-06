@@ -455,6 +455,7 @@ Yet the most popular attribute is `class`—with almost 3 billion occurrences in
 | `alt` | 172,668,703 | 1.97% |
 | `rel` | 171,802,460 | 1.96% |
 | `value` | 140,666,779 | 1.61% |
+
 <figcaption>{{ figure_link(caption="Top 10 attributes.", sheets_gid="1348855449", sql_file="pages_almanac_by_device_and_attribute_name_frequency.sql") }}</figcaption>
 </figure>
 
