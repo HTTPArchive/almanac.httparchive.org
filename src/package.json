@@ -18,7 +18,8 @@
     "generate": "node ./tools/generate",
     "ebooks": "node ./tools/generate/generate_ebook_pdfs",
     "deploy": "./tools/scripts/deploy.sh",
-    "start": "./tools/scripts/run_and_test_website.sh"
+    "start": "./tools/scripts/run_and_test_website.sh",
+    "winstart": "call tools/scripts/run_and_test_website.bat"
   },
   "devDependencies": {
     "ejs": "3.1.5",
