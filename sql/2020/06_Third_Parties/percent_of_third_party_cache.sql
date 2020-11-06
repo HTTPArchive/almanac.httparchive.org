@@ -9,6 +9,7 @@ WITH requests AS (
     status,
     respOtherHeaders,
     reqOtherHeaders,
+    type,
     req_host AS host
   FROM
     `httparchive.summary_requests.2020_08_01_*`
@@ -24,6 +25,7 @@ third_party AS (
 base AS (
   SELECT
     client,
+    type,
     IF(
     (
       status IN (301, 302, 307, 308, 410)
@@ -47,10 +49,11 @@ base AS (
 
 SELECT
   client,
+  type,
   COUNT(0) AS total_requests,
-  SUM(cached) AS cached_requests,
   SUM(cached) / COUNT(0) AS pct_cached_requests
 FROM
   base
 GROUP BY
-  client
+  client,
+  type
