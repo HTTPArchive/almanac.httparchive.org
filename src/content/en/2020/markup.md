@@ -105,6 +105,7 @@ Here’s the Top 10 of (normalized) languages in our sample. At first we contemp
 | `de` | 1.92% |
 | `de-de` | 1.60% |
 | `ru-ru` | 1.60% |
+
 <figcaption>{{ figure_link(caption="Top 10 languages.", sheets_gid="2047285366", sql_file="pages_almanac_by_device_and_html_lang.sql") }}</figcaption>
 </figure>
 
