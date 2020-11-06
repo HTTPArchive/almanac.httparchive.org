@@ -591,6 +591,7 @@ Using `target="_blank"` is known as a [security vulnerability](https://mathiasby
 | `<a target="_blank" rel="noopener noreferrer">` | 13.63% |
 | `<a target="_blank" rel="noopener">` | 14.14% |
 | `<a target="_blank" rel="noreferrer">` | 0.56% |
+
 <figcaption>{{ figure_link(caption="Blank relationships.", sheets_gid="1876528165", sql_file="pages_wpt_bodies_by_device.sql") }}</figcaption>
 </figure>
 
