@@ -1,13 +1,11 @@
 #standardSQL
-# Distribution of third party requests size and time by category and content type
+# Distribution of third party requests size and time by category
 
 WITH requests AS (
   SELECT
     _TABLE_SUFFIX AS client,
     req_host AS host,
-    type AS contentType,
     respBodySize AS body_size,
-    respHeadersSize AS header_size,
     time
   FROM
     `httparchive.summary_requests.2020_08_01_*`
@@ -24,14 +22,12 @@ third_party AS (
 base AS (
   SELECT
     client,
-    IFNULL(category, 'first-party') AS category,
-    contentType,
+    category,
     body_size,
-    header_size,
     time
   FROM
     requests
-  LEFT JOIN
+  INNER JOIN
     third_party
   ON
     NET.HOST(requests.host) = NET.HOST(third_party.domain)
@@ -39,19 +35,15 @@ base AS (
 
 SELECT
   category,
-  contentType,
   percentile,
   APPROX_QUANTILES(body_size, 1000)[OFFSET(percentile)] AS body_size,
-  APPROX_QUANTILES(header_size, 1000)[OFFSET(percentile)] AS header_size,
   APPROX_QUANTILES(time, 1000)[OFFSET(percentile)] AS time
 FROM
   base,
-UNNEST(GENERATE_ARRAY(0, 1000, 1)) AS percentile
+UNNEST(GENERATE_ARRAY(0, 100, 1)) AS percentile
 GROUP BY
   category,
-  contentType,
   percentile
 ORDER BY
   category,
-  contentType,
   percentile
