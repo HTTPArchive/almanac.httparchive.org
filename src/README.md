@@ -39,7 +39,7 @@ env\Scripts\activate.bat
 3. Install generate and run the website:
 
 ```
-npm run winstart
+npm run start
 ```
 
 Or on Windows:
