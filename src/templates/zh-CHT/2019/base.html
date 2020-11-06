@@ -1,6 +1,6 @@
 {% extends "base/2019/base.html" %}
 
-{% block description %}Web Almanac網路年鑑是網路狀態的年度報告，其集結網路社群的專業知識共同精萃HTTP Archive的數據與趨勢。{% endblock %}
+{% block description %}Web Almanac 網路年鑑是網路狀態的年度報告，其集結網路社群的專業知識共同精萃HTTP Archive的數據與趨勢。{% endblock %}
 
 {% block twitter_image_alt %}{{ year }} Web Almanac{% endblock %}
 
@@ -17,7 +17,7 @@
 
 {% block mission %}
 <p>
-我們的任務是結合網路社群的專業知識共同精萃HTTP Archive的原始數據與趨勢。Web Almanac網路年鑑是網路狀態的綜合報告，其由真實的數據和具信譽的網路專家支持。報告共有20個章節橫跨網頁內容、使用者體驗、網頁發佈、網頁傳遞的各個方面。
+我們的任務是結合網路社群的專業知識共同精萃HTTP Archive的原始數據與趨勢。Web Almanac 網路年鑑是網路狀態的綜合報告，其由真實的數據和具信譽的網路專家支持。報告共有20個章節橫跨網頁內容、使用者體驗、網頁發佈、網頁傳遞的各個方面。
 </p>
 {% endblock %}
 
@@ -88,11 +88,11 @@
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
-{% macro read_chapter(chapter) %}閱讀 <span class="featured-chapter-name">{{ chapter }}</span> Chapter{% endmacro %}
+{% macro read_chapter(chapter) %}閱讀 <span class="featured-chapter-name">{{ chapter }}</span> 章節{% endmacro %}
 {% endif %}
 
 {% block contributors_description %}
-Web Almanac網路年鑑是被熱情的網路社群擁抱而茁壯。 {{ self.contributors() }} 成員志願挹注難以計數的泉源在規劃、研究、撰寫、發佈的各個階段。
+Web Almanac 網路年鑑是被熱情的網路社群擁抱而茁壯。 {{ self.contributors() }} 團隊成員志願挹注難以計數的泉源在規劃、研究、撰寫、發佈的各個階段。
 {% endblock %}
 {% block contributors_link %}認識貢獻者{% endblock %}
 
@@ -111,7 +111,7 @@ Web Almanac網路年鑑是被熱情的網路社群擁抱而茁壯。 {{ self.con
 
 {% block foreword %}
     <p>
-      當你踏進科技網絡世界後會發現開放的網路是如此撲朔迷離的美麗，透過緊密相連的網路生態系統讓擁抱網路的產業與職業共創成功。我們瞭解網路很重要，但卻難以捉摸網路究竟如何運行。自從2010年，HTTP Archive啟動這個迷人的專案，開始持續追蹤網路如何建構。然而還有一件使命深深吸引著Web Almanac網路年鑑的挑戰：賦予這些數據集生命力並促使社群能更容易瞭解網路究竟如何運行，這也是Web Almanac網路年鑑熱情傳播的所在。
+      當你踏進科技網絡世界後會發現開放的網路是如此撲朔迷離的美麗，透過緊密相連的網路生態系統讓擁抱網路的產業與職業共創成功。我們瞭解網路很重要，但卻難以捉摸網路究竟如何運行。自從2010年，HTTP Archive啟動這個迷人的專案，開始持續追蹤網路如何建構。然而還有一件使命深深吸引著Web Almanac網路年鑑的挑戰：賦予這些數據集生命力並促使社群能更容易瞭解網路如何運行，這也是Web Almanac網路年鑑熱情傳播的所在。
     </p>
 
     <p>
@@ -126,7 +126,7 @@ Web Almanac網路年鑑是被熱情的網路社群擁抱而茁壯。 {{ self.con
       你將會發現這本年鑑有許多值得學習的地方，現在就啟程探索並向社群分享你的想法，這將讓我們可以瞭解使用者閱讀網路年鑑的體驗。
     </p>
 
-    <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>, creator of the Web Almanac</em></p>
+    <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>, Web Almanac 創辦者</em></p>
 {% endblock %}
 
 {% block coming_soon %}即將來到!{% endblock %}
