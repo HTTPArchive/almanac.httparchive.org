@@ -8,7 +8,7 @@ j9t_bio: Jens Oliver Meiert is a web developer and author (<a href="https://lean
 # catalinred_bio: @@
 # iandevlin_bio: @@
 reviewers: [zcorpan, matuzo, bkardell]
-analysts: [tiggerito]
+analysts: [Tiggerito]
 translators: []
 discuss: 2039
 results: https://docs.google.com/spreadsheets/d/1Ta7amoUeaL4pILhWzH-SCzMX9PsZeb1x_mwrX2C4eY8/
