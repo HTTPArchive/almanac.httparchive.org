@@ -342,6 +342,7 @@ The 2019 edition of the Web Almanac handled this part [a little differently](../
 | `rs-loop-wrap` | 63,870 | 1.01% |
 | `rs-layer-wrap` | 63,849 | 1.01% |
 | `wix-iframe` | 63,590 | 1% |
+
 <figcaption>{{ figure_link(caption="The 14 most popular custom elements.", sheets_gid="770933671", sql_file="pages_element_count_by_device_and_custom_dash_elements.sql") }}</figcaption>
 </figure>
 
