@@ -52,6 +52,7 @@ What are the most popular ones?
 | XHTML 1.0 Strict | 107,351 | 1.69% |
 | HTML 4.01 Transitional | 54,379 | 0.86% |
 | HTML 4.01 Transitional ([quirky](https://hsivonen.fi/doctype/#xml)) | 38,504 | 0.61% |
+
 <figcaption>{{ figure_link(caption="The 5 most popular doctypes.", sheets_gid="1981441894", sql_file="summary_pages_by_device_and_doctype.sql") }}</figcaption>
 </figure>
 
