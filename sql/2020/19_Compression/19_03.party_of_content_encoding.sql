@@ -10,7 +10,7 @@ SELECT
     WHERE
       date = '2020-08-01' AND
       category != 'hosting'
-  ), 'third party', 'first party') AS party
+  ), 'third party', 'first party') AS party,
   resp_content_encoding,
   COUNT(0) AS num_requests,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
@@ -21,7 +21,7 @@ WHERE
   date='2020-08-01'
 GROUP BY
   client,
-  req_host,
+  party,
   resp_content_encoding
 ORDER BY
   num_requests DESC
