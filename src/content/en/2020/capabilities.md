@@ -10,6 +10,7 @@ translators: []
 discuss: 2049
 results: https://docs.google.com/spreadsheets/d/1N6j1qKv7vc51p1W9z_RrbJX9Se3Pmb-Uersfz4gWqqs/
 queries: 13_Capabilities
+christianliebel_bio: Christian Liebel is a consultant at <a href="https://thinktecture.com">Thinktecture</a>, supporting clients from various business areas in implementing first-class web applications. He is a Microsoft MVP for Developer Technologies, Google GDE for Web/Capabilities and Angular, and participates in the W3C Web Applications Working Group.
 published: 2020-11-07T00:00:00.000Z
 last_updated: 2020-11-07T00:00:00.000Z
 ---
