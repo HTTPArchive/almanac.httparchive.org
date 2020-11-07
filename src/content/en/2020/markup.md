@@ -26,21 +26,23 @@ last_updated: 2020-11-06T00:00:00.000Z
 
 ## Introduction
 
-The Web is built on HTML. Without HTML: no web pages, no web sites, no web apps. Nothing. Plain-text documents, perhaps, or XML trees, in some parallel universe that enjoyed that particular kind of challenge. In this universe, HTML is the foundation of the user-facing Web. There are many standards that the Web is resting on, but HTML is certainly one of the most important ones.
+The web is built on HTML. Without HTML: no web pages, no web sites, no web apps. Nothing. Plain-text documents, perhaps, or XML trees, in some parallel universe that enjoyed that particular kind of challenge. In this universe, HTML is the foundation of the user-facing Web. There are many standards that the Web is resting on, but HTML is certainly one of the most important ones.
 
-How do we use HTML, then, how great of a foundation are we looking at (and in this Markup chapter, we're focusing almost exclusively on HTML)? The introduction of [last year's markup chapter](../2019/markup#introduction) suggested that for a long time, we haven't really known: There were some smaller samples, there was Ian Hickson's, one of modern HTML's parents, research [back in 2005](https://web.archive.org/web/20060203035414/http://code.google.com/webstats/index.html), then there were more small samples, but until last year we lacked major insight into how we as developers, as authors, make use of HTML. In 2019 we then had both [Catalin Rosu's work](https://www.advancedwebranking.com/html/) (one of this chapter's co-authors) as well as the 2019 edition of the Web Almanac to give a better view again, at HTML in practice.
+How do we use HTML, then, how great of a foundation are we looking at? The introduction section of the [2019 Markup chapter](../2019/markup#introduction) suggested that for a long time, we haven't really known. There were some smaller samples, there was [Ian Hickson's research](https://web.archive.org/web/20060203035414/http://code.google.com/webstats/index.html) (one of modern HTML's parents), then there were more small samples, but until last year we lacked major insight into how we as developers, as authors, make use of HTML. In 2019 we then had both [Catalin Rosu's work](https://www.advancedwebranking.com/html/) (one of this chapter's co-authors) as well as the 2019 edition of the Web Almanac to give a better view again, at HTML in practice.
 
 Last year marked a first stab at 5,790,700 pages (of which 4,371,973 were tested on desktop, 5,297,442 on mobile) and a review of the data taken. This year we looked at 7,546,709 pages (5,593,642 on desktop, 6,347,919 on mobile) using the latest data on [which websites users are visiting in 2020](./methodology), to run another analysis. We do make some comparisons to last year—but, just as we've tried to take some additional metrics for additional insight, we've also given this chapter a new personality.
 
-<p class="note">The data for all Almanac chapters is open and available. Take a look at <a href="https://docs.google.com/spreadsheets/d/1Ta7amoUeaL4pILhWzH-SCzMX9PsZeb1x_mwrX2C4eY8/">the results</a> and share your own observations!</p>
+<p class="note">
+  In this Markup chapter, we're focusing almost exclusively on HTML, rather than SVG or MathML, which are also considered markup languages. Additionally, the data for all Web Almanac chapters is open and available. Take a look at <a href="https://docs.google.com/spreadsheets/d/1Ta7amoUeaL4pILhWzH-SCzMX9PsZeb1x_mwrX2C4eY8/">the results</a> and <a href="https://discuss.httparchive.org/t/2039">share</a> your own observations!
+</p>
 
 ## General
 
-In this section we're having a look at higher-level aspects of HTML, like document types, the size of documents, as well as the use of comments and scripts. "Living HTML" is very much alive!
+In this section we're having a look at higher-level aspects of HTML like document types, the size of documents, as well as the use of comments and scripts. "Living HTML" is very much alive!
 
 ### Doctypes
 
-96.99% of the sampled pages use a doctype. That is useful because for historic reasons ("[to avoid triggering quirks mode](https://lists.w3.org/Archives/Public/public-html-comments/2009Jul/0020.html) in browsers") HTML documents need to declare a document type.
+96.99% of the sampled pages use a document type (doctype). That is useful because for historic reasons, "to avoid triggering quirks mode in browsers" ([Ian Hickson, 2009](https://lists.w3.org/Archives/Public/public-html-comments/2009Jul/0020.html)), HTML documents need to declare a doctype.
 
 What are the most popular ones?
 
@@ -65,17 +67,17 @@ What stands out are two things:
 
 ### Document size
 
-In the analysis we also had a look at document size, that is, HTML bytes transferred over the network. In the set of 6.3 million documents:
+A page's document size refers to the amount of HTML bytes transferred over the network, including compression if enabled. In the set of 6.3 million documents:
 
 * 1,110 documents are empty (0 bytes).
 * The average document size is 50.35 KB ([in most cases compressed](https://w3techs.com/technologies/details/ce-gzipcompression)).
-* The (by far) largest document weighs 64.16 _MB_, almost deserving its own analysis and chapter in the Almanac.
+* The (by far) largest document weighs 64.16 _MB_, almost deserving its own analysis and chapter in the Web Almanac.
 
 How is this situation in general, then? The median document weighs 25.24 KB:
 
 {{ figure_markup(
   image="document-size.png",
-  caption="Document size",
+  caption="The amount of HTML bytes transferred over the network, including compression if enabled.",
   description="Document size in bytes per percentile, with the median document weighing 26.62 KB on desktop.",
   sheets_gid="2066175354",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=386686971&format=interactive",
@@ -86,14 +88,15 @@ How is this situation in general, then? The median document weighs 25.24 KB:
 
 ### Document language
 
+{# TODO(editors): Link directly to the relevant Accessibility section. #}
 We identified 2,863 different values for the `lang` attribute on the `html` start tag (compare that to the [7,117 spoken languages](https://www.ethnologue.com/guides/how-many-languages) as per Ethnologue). Almost all of them, [according to the Accessibility chapter](./accessibility), seem valid.
 
 22.36% of all documents specify no `lang` attribute. The commonly accepted view is that [they should](https://www.w3.org/TR/i18n-html-tech-lang/#overall)—but beside the idea that software could eventually [detect language automatically](https://meiert.com/en/blog/lang/), document language can also be specified [on the protocol level](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language). This is something we didn't check.
 
-Here's the Top 10 of (normalized) languages in our sample. At first we contemplated merging same-language values, but as the difference between `en-US` and `en-GB`, to give just one example, is pronounced, we decided not to do so.
+Here are the 10 most popular (normalized) languages in our sample. At first we contemplated merging same-language values like `en-US` and `en-GB`, but the difference was pronounced, so we decided not to do so.
 
 <figure markdown>
-| Language | Percentage |
+| Language | Pages (%) |
 |---|---|
 | `en` | 18.08% |
 | `en-us` | 13.27% |
@@ -106,8 +109,10 @@ Here's the Top 10 of (normalized) languages in our sample. At first we contempla
 | `de-de` | 1.60% |
 | `ru-ru` | 1.60% |
 
-<figcaption>{{ figure_link(caption="Top 10 languages.", sheets_gid="2047285366", sql_file="pages_almanac_by_device_and_html_lang.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Top 10 <code><html lang></code> attribute values.", sheets_gid="2047285366", sql_file="pages_almanac_by_device_and_html_lang.sql") }}</figcaption>
 </figure>
+
+{# TODO(authors): Add an interpretation of the lang results and clarify if these are for desktop or mobile. #}
 
 ### Comments
 
@@ -119,6 +124,8 @@ Adding comments to code is a good practice and HTML comments are there to add no
 
 Although many pages will have been stripped of comments for production, we found that index pages in the 90th percentile are using about 73 comments on mobile, respectively 79 comments on desktop, while in the 10th percentile the number of the comments is about 2.
 
+{# TODO(authors): How about the median number for a typical website? #}
+
 According to stats we've gathered, around 89% of the both mobile and desktop pages contain at least one HTML comment, while about 46% of them contain a conditional comment, too.
 
 #### Conditional comments
@@ -129,23 +136,24 @@ According to stats we've gathered, around 89% of the both mobile and desktop pag
 <![endif]-->
 ```
 
-The above is a non-standard HTML conditional comment. While those have proved to be helpful in the past in order to tackle browser differences, they are history for some time as Microsoft [dropped conditional comments](https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/hh801214(v=vs.85)) in Internet Explorer 10.
+The above is a non-standard HTML conditional comment. While those have proven to be helpful in the past in order to tackle browser differences, they are history for some time as Microsoft [dropped conditional comments](https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/hh801214(v=vs.85)) in Internet Explorer 10.
 
 Still, on the above percentile extremes, we found that web pages are using about 6 conditional comments in the 90th percentile, and 1 comment while in the 10th percentile.  Most of the pages include them for helpers such as html5shiv, selectivizr, and respond.js. While being decentish and still active pages, our conclusion is that many of them were using obsolete CMS themes.
 
-For production, HTML comments are usually stripped by build tools. Considering all the above counts and percentages—and referring to the use of comments in general—, we can only guess that lots of pages are served without involving an HTML minifier.
+For production, HTML comments are usually stripped by build tools. Considering all the above counts and percentages, and referring to the use of comments in general, we can only guess that lots of pages are served without involving an HTML minifier.
 
 ### Script use 
 
-As the top elements will show, the `script` is the 6th most frequently used HTML element. From the standpoint of the Markup chapter, we were interested in the ways the `script` element is used across these millions of pages from the data set.
+As shown in the [Top elements](#top-elements) section below, the `script` element is the 6th most frequently used HTML element. From the standpoint of the Markup chapter, we were interested in the ways the `script` element is used across these millions of pages from the data set.
 
-Overall, around 2% (1.96% on desktop and 2.04% on mobile) of the pages we analyzed contain no scripting at all, not even scripts with the `type` attribute set to `application/ld+json`. Considering that nowadays it's pretty common for a page to include at least one script for an analytics solution, this seems noteworthy.
+Overall, around 2% of the pages we analyzed contain no scripting at all, not even structured data scripts with the `type` attribute set to `application/ld+json`. Considering that nowadays it's pretty common for a page to include at least one script for an analytics solution, this seems noteworthy.
 
-At the opposite end of the spectrum, the numbers show that more than 97% of pages (97.65% on desktop and 97.63% on mobile) contain at least one script, either inline or external.
+At the opposite end of the spectrum, the numbers show that about 97% of pages contain at least one script, either inline or external.
 
+{# TODO(editors): Wrap "script" in the caption in code tags so that it doesn't trigger code editor syntax highlighting confusion. #}
 {{ figure_markup(
   image="script-use.png",
-  caption="Script use",
+  caption="Usage of the script element.",
   description="Percentages of pages (not) containing scripts, and scripts are present in almost every form on almost every page.",
   sheets_gid="150962402",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=1895084382&format=interactive",
@@ -156,19 +164,25 @@ At the opposite end of the spectrum, the numbers show that more than 97% of page
 
 When scripting is unsupported or turned off in the browser, the `noscript` element helps to add an HTML section within a page. Considering the above script numbers, we were curious about the `noscript` element as well. 
 
-Following the analysis, we found that about 49% of both mobile and desktop index pages are using a `noscript` element. At the same time, 15.78% of `noscript` elements on mobile, and 17.43% of `noscript` elements on desktop were containing an `iframe` with a `src` value referring to "googletagmanager.com."
+Following the analysis, we found that about 49% of pages are using a `noscript` element. At the same time, about 16% of `noscript` elements were containing an `iframe` with a `src` value referring to "googletagmanager.com".
 
-This seems to confirm the theory that the total number of `noscript`s in the wild may be affected by common scripts like Google Tag Manager which enforce users to add a `noscript` snippet after the `<body>` start tag on a page.
+This seems to confirm the theory that the total number of `noscript` elements in the wild may be affected by common scripts like Google Tag Manager which enforce users to add a `noscript` snippet after the `body` start tag on a page.
 
-<div class="note">
-  <p>What <code>type</code> attribute values are used with <code>script</code> elements? <code>text/javascript</code> (60.03%), <code>application/ld+json</code> (1.68%), <code>application/json</code> (0.41%), <code>text/template</code> (0.41%), and <code>text/html</code> (!) (0.27%).</p>
-  <p>When it comes to loading JavaScript module scripts using <code>type="module"</code>, we found 0.13% of <code>script</code>s to currently specify this attribute-value combination. <code>nomodule</code>, then, is used by 0.95% of all tested pages. (Note that one metric relates to elements, the other to pages.)</p>
-  <p>No value has been set on 36.38% of all scripts.</p>
-</div>
+What `type` attribute values are used with `script` elements?
+
+- `text/javascript`: 60.03%
+- `application/ld+json`: 1.68%
+- `application/json`: 0.41%
+- `text/template`: 0.41%
+- `text/html` 0.27% (!)
+
+When it comes to loading JavaScript module scripts using `type="module"`, we found that 0.13% of `script` elements currently specify this attribute-value combination. `nomodule`, then, is used by 0.95% of all tested pages. Note that one metric relates to elements, the other to pages.
+
+36.38% of all scripts have no values set whatsoever.
 
 ## Elements
 
-In this section, the focus is on elements: What elements are used, how frequently, which elements are likely to appear on a given page, and how the situation is with respect to custom, obsolete, and proprietary elements. Is "divitis" still a thing? Yes.
+In this section, the focus is on elements: what elements are used, how frequently, which elements are likely to appear on a given page, and how the situation is with respect to custom, obsolete, and proprietary elements. Is _[divitis](https://en.wiktionary.org/wiki/divitis)_ still a thing? Yes.
 
 ### Element diversity
 
@@ -178,7 +192,7 @@ The median web page, it turns out, uses 30 different elements, 587 times:
 
 {{ figure_markup(
   image="element-diversity-element-types.png",
-  caption="Element diversity: element types",
+  caption="Distribution of the number of element types per page.",
   description="Element types per percentile, with 90% of pages using at least 20 different elements.",
   sheets_gid="46490104",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=924238918&format=interactive",
@@ -187,9 +201,11 @@ The median web page, it turns out, uses 30 different elements, 587 times:
   )
 }}
 
+{# Editors note: The caption for the two figures below is intentionally identical. #}
+
 {{ figure_markup(
   image="element-diversity.png",
-  caption="Element diversity",
+  caption="Distribution of the total number elements per page.",
   description="Elements per percentile, showing how 10% of all pages employ more than 1,665 elements.",
   sheets_gid="46490104",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=680594018&format=interactive",
@@ -204,7 +220,7 @@ How are these elements distributed?
 
 {{ figure_markup(
   image="distribution-of-elements-per-page.png",
-  caption="Distribution of elements per page",
+  caption="Distribution of the total number of elements per page.",
   description="Element distribution in a scatter plot, and even for a trained observer it's hard to parse it; interesting is a large group of about 7,500 pages each using roughly 250 elements, after which fewer and fewer pages get back to more and more elements.",
   sheets_gid="1361520223",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=1468756779&format=interactive",
@@ -217,7 +233,7 @@ Not that much changed [compared to 2019](../2019/markup#fig-3)!
 
 ### Top elements
 
-Last year, the Almanac featured the most frequently used elements in reference to [Ian Hickson's work in 2005](https://web.archive.org/web/20060203031713/http://code.google.com/webstats/2005-12/elements.html). We found this useful and had a look at that data again:
+In 2019, the Markup chapter of the of the Web Almanac featured the most frequently used elements in reference to [Ian Hickson's work in 2005](https://web.archive.org/web/20060203031713/http://code.google.com/webstats/2005-12/elements.html). We found this useful and had a look at that data again:
 
 <figure markdown>
 | 2005 | 2019 | 2020 |
@@ -233,18 +249,17 @@ Last year, the Almanac featured the most frequently used elements in reference t
 | | | `i` |
 | | | `option`|
 
-<figcaption>{{ figure_link(caption="Popular elements 2005, 2019, and 2020.", sheets_gid="781932961", sql_file="pages_element_count_by_device_and_element_type_frequency.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="The most popular elements in 2005, 2019, and 2020.", sheets_gid="781932961", sql_file="pages_element_count_by_device_and_element_type_frequency.sql") }}</figcaption>
 </figure>
 
-Nothing changed in the Top 7, but the `option` element went a little out of favor and dropped from 8 to 10, letting both the `link` and the `i` element pass in popularity. These elements have risen in use, possibly due to an increase in use of [resource hints](https://www.w3.org/TR/resource-hints/) (as with prerendering and prefetching), as well icon solutions like [Font Awesome](https://fontawesome.com/) (which _de facto_ misuses `i` elements for the purpose of displaying icons).
+Nothing changed in the Top 7, but the `option` element went a little out of favor and dropped from 8 to 10, letting both the `link` and the `i` element pass in popularity. These elements have risen in use, possibly due to an increase in use of [resource hints](./resource-hints) (as with prerendering and prefetching), as well icon solutions like [Font Awesome](https://fontawesome.com/), which _de facto_ misuses `i` elements for the purpose of displaying icons.
 
-<div class="note">
-  <h4><code>details</code> and <code>summary</code></h4>
-  <p>One thing we were curious about, too, was use of <a href="https://html.spec.whatwg.org/multipage/rendering.html#the-details-and-summary-elements">the <code>details</code> and <code>summary</code> elements</a>, especially since 2020 <a href="https://caniuse.com/details">brought broad support</a>. Are they being used? Are they attractive for, even popular among authors? As it turns out, only 0.39% of all tested pages are using them—although it's hard to gauge whether they were all used the correct way in exactly the situations when you need them, "popular" is the wrong word.</p>
-  <p>Here's a simple example showing the use of a <code>summary</code> in a <code>details</code> element:</p>
-</div>
+#### `details` and `summary`
 
-<!-- Really part of the note above, but kept outside for simplicity: -->
+Another thing we were curious about was the use of the [`details` and `summary` elements](https://html.spec.whatwg.org/multipage/rendering.html#the-details-and-summary-elements), especially since 2020 brought [broad support](https://caniuse.com/details). Are they being used? Are they attractive for—even popular—among authors? As it turns out, only 0.39% of all tested pages are using them, although it's hard to gauge whether they were all used the correct way in exactly the situations when you need them, "popular" is the wrong word.
+
+Here's a simple example showing the use of a `summary` in a `details` element:
+
 ```html
 <details>
   <summary>Status: Operational</summary>
@@ -253,12 +268,10 @@ Nothing changed in the Top 7, but the `option` element went a little out of favo
 </details>
 ```
 
-<div class="note">
-  <p>A while ago, <a href="https://twitter.com/stevefaulkner/status/806474286592561152">Steve Faulkner pointed out</a> how these two elements were used poorly in the wild. As you can tell from above, for each <code>details</code> element you'd need a <code>summary</code> element that may only be used as the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary#Usage_notes">first child of <code>details</code></a>.</p>
-  <p>Accordingly we looked at the number of <code>details</code> and <code>summary</code> elements and it seems that they do continue to be misused. The count of <code>summary</code> elements is higher on both mobile and desktop, with a ratio of 1.11 <code>summary</code> elements for every <code>details</code> element on mobile, and 1.19 on desktop, respectively:</p>
-</div>
+A while ago, Steve Faulkner [pointed out](https://twitter.com/stevefaulkner/status/806474286592561152) how these two elements were used poorly in the wild. As you can tell from the example above, for each `details` element you'd need a `summary` element that may only be used as the [first child](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary#Usage_notes) of `details`.
 
-<!-- Really part of the note above, but kept outside for simplicity: -->
+Accordingly, we looked at the number of `details` and `summary` elements and it seems that they do continue to be misused. The count of `summary` elements is higher on both mobile and desktop, with a ratio of 1.11 `summary` elements for every `details` element on mobile, and 1.19 on desktop, respectively:
+
 <figure>
   <table>
     <thead>
@@ -285,12 +298,12 @@ Nothing changed in the Top 7, but the `option` element went a little out of favo
       </tr>
     </tbody>
   </table>
-<figcaption>{{ figure_link(caption="Use of the <code>details</code> and <code>summary</code> team.", sheets_gid="1406534257", sql_file="pages_element_count_by_device.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Adoption of the <code>details</code> and <code>summary</code> elements.", sheets_gid="1406534257", sql_file="pages_element_count_by_device.sql") }}</figcaption>
 </figure>
 
 ### Probability of element use
 
-Another look at element popularity, how likely is it to find a certain element in the DOM of a page? Surely, `html`, `head`, `body` are present on every page (even though [their tags are all optional](https://meiert.com/en/blog/optional-html/)), making them common elements, but what other elements are to be found?
+Taking another look at element popularity, how likely is it to find a certain element in the DOM of a page? Surely, `html`, `head`, `body` are present on every page (even though [their tags are all optional](https://meiert.com/en/blog/optional-html/)), making them common elements, but what other elements are to be found?
 
 <figure markdown>
 | Element | Probability |
