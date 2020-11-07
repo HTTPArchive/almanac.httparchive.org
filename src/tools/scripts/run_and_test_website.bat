@@ -9,6 +9,8 @@ rem # It 's a simplified version of run_and_test_website.sh for windows users
 rem # It depends on Python 3.8, pip and nodejs 12 being installed already
 rem #
 
+echo "Kill any existing instances"
+wmic Path win32_process Where "Caption Like '%python.exe%' AND CommandLine Like '%main.py%'" Call Terminate
 
 echo "Installing and testing python environment"
 python -m pip install --upgrade pip

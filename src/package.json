@@ -21,7 +21,10 @@
     "deploy": "./tools/scripts/deploy.sh",
     "start": "run-script-os",
     "start:darwin:linux": "./tools/scripts/run_and_test_website.sh",
-    "start:win32": "call tools/scripts/run_and_test_website.bat"
+    "start:win32": "call tools/scripts/run_and_test_website.bat",
+    "stop": "run-script-os",
+    "stop:darwin:linux": "pkill -9 python main.py",
+    "stop:win32": "wmic Path win32_process Where \"Caption Like '%python.exe%' AND CommandLine Like '%main.py%'\" Call Terminate"
   },
   "devDependencies": {
     "ejs": "3.1.5",
