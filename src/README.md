@@ -45,6 +45,11 @@ npm run start
 
 4. In your web browser, enter the following address: http://127.0.0.1:8080
 
+To stop the server run the following:
+
+```
+npm run stop
+```
 
 ## Generating chapters
 
