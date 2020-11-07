@@ -5,7 +5,7 @@ title: Markup
 description: Markup chapter of the 2020 Web Almanac covering general observations, the use of elements and attributes, as well as trivia and trends.
 authors: [j9t, catalinred, iandevlin]
 j9t_bio: Jens Oliver Meiert is a web developer and author (<a href="https://leanpub.com/css-optimization-basics"><cite>CSS Optimization Basics</cite></a>, <a href="https://leanpub.com/web-development-glossary"><cite>The Web Development Glossary</cite></a>), who works as an engineering manager at <a href="https://www.jimdo.com/">Jimdo</a>. He's an expert on web development where he specializes in HTML and CSS optimization. Jens contributes to technical standards and regularly writes about his work and research, particularly on his website, <a href="https://meiert.com/en/">meiert.com</a>.
-# catalinred_bio: @@
+catalinred_bio: Catalin Rosu is a front-end developer at <a href="https://www.caphyon.com/">Caphyon</a> and currently works on <a href="https://www.wattspeed.com/">Wattspeed</a>. He has a passion for web standards and a keen eye for great UX & UI, things he <a href="https://twitter.com/catalinred">tweets</a> and writes about on <a href="https://catalin.red/">his website</a>.
 # iandevlin_bio: @@
 reviewers: [zcorpan, matuzo, bkardell]
 analysts: [Tiggerito]
