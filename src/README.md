@@ -1,6 +1,6 @@
 # Developing the Web Almanac
 
-The Web Almanac can be developed on macOS, Windows or Linux. It requires Node v12 and Python v3 to be installed. Alternatively, use Docker to avoid manually configuring the development environment.
+The Web Almanac can be developed on macOS, Windows or Linux. It requires Node v12, Python v3.8 and pip to be installed. Alternatively, use Docker to avoid manually configuring the development environment.
 
 ## Run Locally
 
@@ -8,7 +8,7 @@ Make sure you run the following commands from within the `src` directory by exec
 
 [Source](https://cloud.google.com/appengine/docs/flexible/python/quickstart)
 
-Make sure Python (3.8 or above) and NodeJS (v12) are installed on your machine.
+Make sure Python (3.8 or above), pip and NodeJS (v12) are installed on your machine.
 
 1. If you don't have virtualenv, install it using pip.
 
@@ -27,7 +27,6 @@ py -m pip install --user virtualenv
 ```
 virtualenv --python python3 env
 source env/bin/activate
-pip install -r requirements.txt
 ```
 
 Or for those on Windows:
@@ -35,39 +34,28 @@ Or for those on Windows:
 ```
 virtualenv --python python3 env
 env\Scripts\activate.bat
-pip install -r requirements.txt
 ```
 
-
-3. Run the application:
+3. Install generate and run the website:
 
 ```
-python main.py
+npm run install
+npm run start
 ```
 
 4. In your web browser, enter the following address: http://127.0.0.1:8080
 
-
-5. Run the tests:
-
-If you want to run all the tests, use [pytest](https://docs.pytest.org/en/latest/):
+To stop the server run the following:
 
 ```
-pytest
-```
-
-
-If you want to have the tests continue running (for example, while writing new tests), use [pytest-watch](https://pypi.org/project/pytest-watch/):
-
-```
-ptw
+npm run stop
 ```
 
 ## Generating chapters
 
 The chapter generation is dependent on nodejs, so you will need to have [nodejs](https://nodejs.org/en/) installed as well. All of the following commands must be run from within the `src` directory by executing `cd src` first.
 
-Note this is run automatically by a GitHub Action on merges to main, so does not need to be run manually unless you want to run the site locally.
+Note this is run automatically by the `npm run start command above` but is listed here separately in case you want to regenerate if making changes to chapters.
 
 Install the dependencies:
 
@@ -80,6 +68,32 @@ Run the generate chapters script:
 ```
 npm run generate
 ```
+
+If you have the server up you can test all the pages are being served correctly:
+
+```
+npm run test
+```
+
+You can also run single chapters, so you don't have to wait for the full run time:
+
+```
+npm run generate en/2019/css
+```
+
+Or even patterns (note patterns must be in quotes to prevent OS attempting to match to files):
+
+```
+npm run generate ".*/2019/css"
+npm run generate "en/.*/css"
+npm run generate ".*/2020/.*"
+```
+
+There is also a file watcher, which monitors the `content` directory and automatically regenerates a chapter when it sees it being modified:
+```
+npm run watch
+```
+
 
 ## Generating Ebooks
 
