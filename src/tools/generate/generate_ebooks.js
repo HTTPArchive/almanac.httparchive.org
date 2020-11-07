@@ -52,7 +52,8 @@ const generate_ebooks = async (ebook_chapters,configs) => {
 
         for (let chapter_config of part_config.chapters) {
           let chapter = ebook_chapters.find(
-            (c) => c.language === language && c.metadata.chapter_number == chapter_config.chapter && c.year === year
+            (c) => c.year === year && c.language === language
+                   && c.metadata.chapter_number == chapter_config.chapter
           );
 
           chapter.body = update_links(chapter);
