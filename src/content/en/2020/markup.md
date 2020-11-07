@@ -22,30 +22,35 @@ featured_stat_3: 25.24 KB
 featured_stat_label_3: Weight of the median document
 published: 2020-11-01T00:00:00.000Z
 last_updated: 2020-11-07T00:00:00.000Z
-unedited: true
 ---
 
 ## Introduction
 
-The web is built on HTML. Without HTML: no web pages, no web sites, no web apps. Nothing. Plain-text documents, perhaps, or XML trees, in some parallel universe that enjoyed that particular kind of challenge. In this universe, HTML is the foundation of the user-facing web. There are many standards that the web is resting on, but HTML is certainly one of the most important ones.
+The web is built on HTML. Without HTML there are no web pages, no web sites, no web apps. Nothing. There may be plain-text documents, perhaps, or XML trees, in some parallel universe that enjoyed that particular kind of challenge. In this universe, HTML is the foundation of the user-facing web. There are many standards that the web is resting on, but HTML is certainly one of the most important ones.
 
-How do we use HTML, then, how great of a foundation are we looking at? The introduction section of the [2019 Markup chapter](../2019/markup#introduction) suggested that for a long time, we haven't really known. There were some smaller samples, there was [Ian Hickson's research](https://web.archive.org/web/20060203035414/http://code.google.com/webstats/index.html) (one of modern HTML's parents), then there were more small samples, but until last year we lacked major insight into how we as developers, as authors, make use of HTML. In 2019 we then had both [Catalin Rosu's work](https://www.advancedwebranking.com/html/) (one of this chapter's co-authors) as well as the 2019 edition of the Web Almanac to give a better view again, at HTML in practice.
+How do we use HTML, then, how great of a foundation do we have? In the introductory section of the [2019 Markup chapter](../2019/markup#introduction), author [Brian Kardell](../2019/contributors#bkardell) suggested that for a long time, we haven't really known. There were some smaller samples. For example, there was [Ian Hickson's research](https://web.archive.org/web/20060203035414/http://code.google.com/webstats/index.html) (one of modern HTML's parents) among a few others, but until last year we lacked major insight into how we as developers, as authors, make use of HTML. In 2019 we had both [Catalin Rosu's work](https://www.advancedwebranking.com/html/) (one of this chapter's co-authors) as well as the 2019 edition of the Web Almanac to give us a better view again of HTML in practice.
 
-Last year marked a first stab at 5,790,700 pages (of which 4,371,973 were tested on desktop, 5,297,442 on mobile) and a review of the data taken. This year we looked at 7,546,709 pages (5,593,642 on desktop, 6,347,919 on mobile) using the latest data on [which websites users are visiting in 2020](./methodology), to run another analysis. We do make some comparisons to last year—but, just as we've tried to take some additional metrics for additional insight, we've also given this chapter a new personality.
+Last year's analysis was based on 5.8 million pages, of which 4.4 million were tested on desktop and 5.3 million on mobile. This year we analyzed 7.5 million pages, of which 5.6 million were tested on desktop and 6.3 million on mobile, using the [latest data](./methodology#websites) on the websites users are visiting in 2020. We do make some comparisons to last year, but just as we've tried to analyze additional metrics for new insights, we've also tried to impart our own personalities and perspectives throughout the chapter.
 
 <p class="note">
-  In this Markup chapter, we're focusing almost exclusively on HTML, rather than SVG or MathML, which are also considered markup languages. Unless otherwise noted, stats presented in this chapter refer to the set of mobile pages. Additionally, the data for all Web Almanac chapters is open and available. Take a look at <a href="https://docs.google.com/spreadsheets/d/1Ta7amoUeaL4pILhWzH-SCzMX9PsZeb1x_mwrX2C4eY8/">the results</a> and <a href="https://discuss.httparchive.org/t/2039">share</a> your own observations!
+  In this Markup chapter, we're focusing almost exclusively on HTML, rather than SVG or MathML, which are also considered markup languages. Unless otherwise noted, stats presented in this chapter refer to the set of mobile pages. Additionally, the data for all Web Almanac chapters is open and available. Take a look at <a href="https://docs.google.com/spreadsheets/d/1Ta7amoUeaL4pILhWzH-SCzMX9PsZeb1x_mwrX2C4eY8/">the results</a> and <a href="https://discuss.httparchive.org/t/2039">share your observations</a> with the community!
 </p>
 
 ## General
 
-In this section we're having a look at higher-level aspects of HTML like document types, the size of documents, as well as the use of comments and scripts. "Living HTML" is very much alive!
+In this section, we're covering the higher-level aspects of HTML like document types, the size of documents, as well as the use of comments and scripts. "Living HTML" is very much alive!
 
 ### Doctypes
 
-96.99% of the sampled pages use a document type (doctype). That is useful because for historic reasons, "to avoid triggering quirks mode in browsers" ([Ian Hickson, 2009](https://lists.w3.org/Archives/Public/public-html-comments/2009Jul/0020.html)), HTML documents need to declare a doctype.
+{{ figure_markup(
+  caption="Percent of pages with a doctype.",
+  content="96.82%",
+  classes="big-number",
+  sheets_gid="1981441894",
+  sql_file="summary_pages_by_device_and_doctype.sql"
+) }}
 
-What are the most popular ones?
+96.82% of pages declare a [_doctype_](https://developer.mozilla.org/en-US/docs/Glossary/Doctype). HTML documents declaring a doctype is useful for historical reasons, "to avoid triggering quirks mode in browsers" as Ian Hickson [wrote](https://lists.w3.org/Archives/Public/public-html-comments/2009Jul/0020.html) in 2009. So, what are the most popular values?
 
 <figure markdown>
 | Doctype | Pages | Percentage |
@@ -59,21 +64,23 @@ What are the most popular ones?
 <figcaption>{{ figure_link(caption="The 5 most popular doctypes.", sheets_gid="1981441894", sql_file="summary_pages_by_device_and_doctype.sql") }}</figcaption>
 </figure>
 
-You can already tell how after XHTML 1.0, the numbers decrease quite a bit, and we soon enter the long tail with a few standard, some esoteric, and also bogus doctypes.
+You can already tell how the numbers decrease quite a bit after XHTML 1.0, before entering the long tail with a few standard, some esoteric, and also bogus doctypes.
 
-What stands out are two things:
+Two things stand out from these results:
 
-1. Almost 10 years after [the announcement of living HTML](https://blog.whatwg.org/html-is-the-new-html5) (aka "HTML5"), living HTML has clearly become not only mainstream, but the norm.
-2. That it had not always been like that is exemplified by the next most popular doctypes, those of XHTML 1.0. XHTML, though likely delivered as HTML (with a MIME type of `text/html`), is not dead yet.
+1. Almost 10 years after [the announcement of living HTML](https://blog.whatwg.org/html-is-the-new-html5) (aka "HTML5"), living HTML has clearly become the norm.
+2. The web before living HTML can still be seen in the next most popular doctypes, like XHTML 1.0. XHTML. Although their documents were likely delivered as HTML with a MIME type of `text/html`, these older doctypes are not dead yet.
 
 ### Document size
 
-A page's document size refers to the amount of HTML bytes transferred over the network, including compression if enabled. In the set of 6.3 million documents:
+A page's document size refers to the amount of HTML bytes transferred over the network, including compression if enabled. At the extremes of the set of 6.3 million documents:
 
 * 1,110 documents are empty (0 bytes).
-* The average document size is 50.35 KB ([in most cases compressed](https://w3techs.com/technologies/details/ce-gzipcompression)).
-* The (by far) largest document weighs 64.16 _MB_, almost deserving its own analysis and chapter in the Web Almanac.
+* The average document size is 50.35 KB (in most cases [compressed](https://w3techs.com/technologies/details/ce-gzipcompression)).
+* The largest document by far weighs 64.16 _MB_, almost deserving its own analysis and chapter in the Web Almanac.
 
+{# TODO(analysts): Should 25,237 bytes be divided by 1000 or 1024 to convert to KB? 1000 seems to be used here but most chapters use 1024. Are the stats above also off? #}
+{# TODO(authors): What's the implication and your interpretation of this value? Is this a surprisingly big number? Or does it align with your expectations? #}
 How is this situation in general, then? The median document weighs 25.24 KB:
 
 {{ figure_markup(
@@ -90,9 +97,9 @@ How is this situation in general, then? The median document weighs 25.24 KB:
 ### Document language
 
 {# TODO(editors): Link directly to the relevant Accessibility section. #}
-We identified 2,863 different values for the `lang` attribute on the `html` start tag (compare that to the [7,117 spoken languages](https://www.ethnologue.com/guides/how-many-languages) as per Ethnologue). Almost all of them, [according to the Accessibility chapter](./accessibility), seem valid.
+We identified 2,863 different values for the `lang` attribute on the `html` start tag (compare that to the [7,117 spoken languages](https://www.ethnologue.com/guides/how-many-languages) as per Ethnologue). Almost all of them seem valid, according to the [Accessibility](./accessibility) chapter.
 
-22.36% of all documents specify no `lang` attribute. The commonly accepted view is that [they should](https://www.w3.org/TR/i18n-html-tech-lang/#overall)—but beside the idea that software could eventually [detect language automatically](https://meiert.com/en/blog/lang/), document language can also be specified [on the protocol level](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language). This is something we didn't check.
+22.36% of all documents specify no `lang` attribute. The commonly accepted view is that [they should](https://www.w3.org/TR/i18n-html-tech-lang/#overall), but beside the idea that software could eventually [detect language automatically](https://meiert.com/en/blog/lang/), document language can also be specified [on the protocol level](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language). This is something we didn't check.
 
 Here are the 10 most popular (normalized) languages in our sample. At first we contemplated merging same-language values like `en-US` and `en-GB`, but the difference was pronounced, so we decided not to do so.
 
@@ -117,7 +124,7 @@ Here are the 10 most popular (normalized) languages in our sample. At first we c
 
 ### Comments
 
-Adding comments to code is a good practice and HTML comments are there to add notes to HTML documents, without having them rendered by user agents.
+Adding comments to code is generally a good practice and HTML comments are there to add notes to HTML documents, without having them rendered by user agents.
 
 ```html
 <!-- This is a comment in HTML -->
@@ -127,7 +134,7 @@ Although many pages will have been stripped of comments for production, we found
 
 {# TODO(authors): How about the median number for a typical website? #}
 
-According to stats we've gathered, around 89% of the both mobile and desktop pages contain at least one HTML comment, while about 46% of them contain a conditional comment, too.
+Around 89% of pages contain at least one HTML comment, while about 46% of them contain a conditional comment.
 
 #### Conditional comments
 
@@ -145,9 +152,9 @@ For production, HTML comments are usually stripped by build tools. Considering a
 
 ### Script use 
 
-As shown in the [Top elements](#top-elements) section below, the `script` element is the 6th most frequently used HTML element. From the standpoint of the Markup chapter, we were interested in the ways the `script` element is used across these millions of pages from the data set.
+As shown in the [Top elements](#top-elements) section below, the `script` element is the 6th most frequently used HTML element. For the purposes of this chapter, we were interested in the ways the `script` element is used across these millions of pages from the data set.
 
-Overall, around 2% of the pages we analyzed contain no scripting at all, not even structured data scripts with the `type` attribute set to `application/ld+json`. Considering that nowadays it's pretty common for a page to include at least one script for an analytics solution, this seems noteworthy.
+Overall, around 2% of pages contain no scripting at all, not even structured data scripts with the `type="application/ld+json"` attribute. Considering that nowadays it's pretty common for a page to include at least one script for an analytics solution, this seems noteworthy.
 
 At the opposite end of the spectrum, the numbers show that about 97% of pages contain at least one script, either inline or external.
 
@@ -171,19 +178,20 @@ This seems to confirm the theory that the total number of `noscript` elements in
 
 What `type` attribute values are used with `script` elements?
 
+{# TODO(authors, analysts): Should this be a figure? #}
 - `text/javascript`: 60.03%
 - `application/ld+json`: 1.68%
 - `application/json`: 0.41%
 - `text/template`: 0.41%
 - `text/html` 0.27% (!)
 
-When it comes to loading JavaScript module scripts using `type="module"`, we found that 0.13% of `script` elements currently specify this attribute-value combination. `nomodule`, then, is used by 0.95% of all tested pages. Note that one metric relates to elements, the other to pages.
+When it comes to loading JavaScript module scripts using `type="module"`, we found that 0.13% of `script` elements currently specify this attribute-value combination. `nomodule` is used by 0.95% of all tested pages. Note that one metric relates to elements, the other to pages.
 
 36.38% of all scripts have no values set whatsoever.
 
 ## Elements
 
-In this section, the focus is on elements: what elements are used, how frequently, which elements are likely to appear on a given page, and how the situation is with respect to custom, obsolete, and proprietary elements. Is _[divitis](https://en.wiktionary.org/wiki/divitis)_ still a thing? Yes.
+In this section, the focus is on elements: what elements are used, how frequently, which elements are likely to appear on a given page, and how the situation is with respect to custom, obsolete, and proprietary elements. Is [_divitis_](https://en.wiktionary.org/wiki/divitis) still a thing? Yes.
 
 ### Element diversity
 
@@ -635,7 +643,7 @@ There has been a lot of discussion on buttons lately and how often they are misu
 <figcaption>{{ figure_link(caption="Adoption of button types.", sheets_gid="410549982", sql_file="pages_markup_by_device.sql") }}</figcaption>
 </figure>
 
-Our analysis shows that about 60% of pages contain a button element and more than half of pages with buttons (32.43%) have at least one that fails to specify a `type` attribute. Note that the button element has a [default type](https://dev.w3.org/html5/spec-LC/the-button-element.html) of `submit`, so the default behavior of buttons on these 32% of pages is to submit the current form data. To avoid possibly unexpected behavior like this, a best practice is to specify the type attribute.
+Our analysis shows that about 60% of pages contain a button element and more than half of the pages (32.43%) have at least one button that fails to specify a `type` attribute. Note that the button element has a [default type](https://dev.w3.org/html5/spec-LC/the-button-element.html) of `submit`, so the default behavior of buttons on these 32% of pages is to submit the current form data. To avoid possibly unexpected behavior like this, a best practice is to specify the type attribute.
 
 <figure markdown>
 | Percentile | Buttons per page |
@@ -653,7 +661,7 @@ Pages in the 10th and 25th percentiles contain no buttons at all, while a page i
 
 ### Link targets
 
-What protocols do anchors—`a` elements—point to? We looked at that information to identify the most popular protocols. How to read this information? Each row shows how many links with that protocol we count, and on how many of all documents at least one such protocol link is being used.
+The [anchor element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a), or `a` element, links web resources together. In this section, we analyze the adoption of the protocols included in these link targets.
 
 <figure markdown>
 | Protocol | Occurrences | Pages (%) |
@@ -672,11 +680,19 @@ What protocols do anchors—`a` elements—point to? We looked at that informati
 <figcaption>{{ figure_link(caption="Adoption of link target protocols.", sheets_gid="1963376224", sql_file="pages_wpt_bodies_by_device_and_protocol.sql") }}</figcaption>
 </figure>
 
-We can see how "https" and "http" are most dominant, followed by "benign" links to make writing email, making phone calls, and sending messages easier. "javascript" stands out as a link target that's still very popular even though JavaScript offers native and gracefully degrading options to work with.
+We can see how `https` and `http` are most dominant, followed by "benign" links to make writing email, making phone calls, and sending messages easier. `javascript` stands out as a link target that's still very popular even though JavaScript offers native and gracefully degrading options to work with.
 
 ### Links in new windows
 
-Using `target="_blank"` is known as a [security vulnerability](https://mathiasbynens.github.io/rel-noopener/) for some time now. Yet, within the data set we analyzed, 71.35% of the pages contain links with `target="_blank"`, without `noopener` or `noreferrer`:
+{{ figure_markup(
+  caption="Percent of pages having neither `noopener` nor `noreferrer` attributes on `target=\"_blank\"` links.",
+  content="71.35%",
+  classes="big-number",
+  sheets_gid="1876528165",
+  sql_file="pages_wpt_bodies_by_device.sql"
+) }}
+
+Using `target="_blank"` has been known to be a [security vulnerability](https://mathiasbynens.github.io/rel-noopener/) for some time now. Yet 71.35% of pages contain links with `target="_blank"`, without `noopener` or `noreferrer`.
 
 <figure markdown>
 | Elements | Pages |
@@ -688,34 +704,35 @@ Using `target="_blank"` is known as a [security vulnerability](https://mathiasby
 <figcaption>{{ figure_link(caption="Blank relationships.", sheets_gid="1876528165", sql_file="pages_wpt_bodies_by_device.sql") }}</figcaption>
 </figure>
 
-As a rule of thumb—also [for usability reasons](https://www.nngroup.com/articles/new-browser-windows-and-tabs/)—, prefer not to use `target=_blank`. 
+As a rule of thumb and for [usability reasons](https://www.nngroup.com/articles/new-browser-windows-and-tabs/), prefer not to use `target="_blank"`. 
 
 <p class="note">Within the latest Safari and Firefox versions, setting <code>target="_blank"</code> on <code>a</code> elements implicitly provides the same <code>rel</code> behavior as setting <code>rel="noopener"</code>. This is currently being <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=898942">implemented in Chromium</a> as well.</p>
 
+{# TODO(editors, authors): The following two sections each read like conclusions. Consider merging. #}
 ## Status and trends
 
 We've sprinkled some observations throughout the chapter, and you'll have made your own observations. At the end of this 2020 analysis, here are some things that stood out for us.
 
-Fewer pages land in quirks mode. In 2016, that number was at [around 7.4%](https://discuss.httparchive.org/t/how-many-and-which-pages-are-in-quirks-mode/777), at the end of 2019, we observed [4.85%](https://twitter.com/zcorpan/status/1205242913908838400), and now we're at about 3.97%. This trend, to quote Simon Pieters in his review of this chapter, seems indeed clear and encouraging.
+{# TODO(authors): Where does 3.97% come from? Can we link to it? #}
+{# TODO(authors): Changed Simon's quote to a paraphrase, since it's not clear which part is verbatim. If there's a quote, let's wrap it in quotes.  #}
+Fewer pages land in quirks mode. In 2016, that number was at [around 7.4%](https://discuss.httparchive.org/t/how-many-and-which-pages-are-in-quirks-mode/777). At the end of 2019, we observed [4.85%](https://twitter.com/zcorpan/status/1205242913908838400). And now, we're at about 3.97%. This trend, to paraphrase [Simon Pieters](./contributors#zcorpan) in his review of this chapter, seems indeed clear and encouraging.
 
-Although we lack historic data to draw the full development, "meaningless" `div` and `span` (and also `i`) markup has pretty much replaced the table markup we've observed in the 90s and early 2000's. While one may question whether `div` and `span` elements are always used without there being a semantically more appropriate alternative, these elements are still preferable to table markup, though, as during the heyday of the old web, these were used for everything but tabular data.
+Although we lack historic data to draw the full development picture, "meaningless" `div`, `span`, and `i` markup has pretty much [replaced](#top-elements) the `table` markup we've observed in the 1990s and early 2000s. While one may question whether `div` and `span` elements are always used without there being a semantically more appropriate alternative, these elements are still preferable to `table` markup, though, as during the heyday of the old web, these were seemingly used for everything but tabular data.
 
-Elements per page and element types per page stayed roughly the same, showing no significant change in our HTML writing practice when compared to 2019. Such changes may require more time to manifest.
+Elements per page and element types per page stayed roughly the same, showing [no significant change](#element-diversity) in our HTML writing practice when compared to 2019. Such changes may require more time to manifest.
 
-Proprietary product-specific elements like `g:plusone` (used on 17,607 pages in the mobile sample) and `fb:like` (11,335) have almost disappeared after still being [among the most popular ones](../2019/markup#products-and-libraries-and-their-custom-markup) last year. However, we observe more custom elements for things like Slider Revolution, AMP, and Angular. And: Elements like `ym-measure`, `jdiv`, and `ymaps` persist. What we imagine seeing here is that under the sea of slowly-changing practices, HTML is very much being developed and maintained, as authors toss deprecated markup and embrace new solutions.
+Proprietary product-specific elements like `g:plusone` (used on 17,607 pages in the mobile sample) and `fb:like` (11,335) have almost disappeared after still being [among the most popular ones](../2019/markup#products-and-libraries-and-their-custom-markup) last year. However, we observe more [custom elements](#custom-elements) for things like Slider Revolution, AMP, and Angular. Elements like `ym-measure`, `jdiv`, and `ymaps` are still prevalent. What we imagine we're seeing here is that, under the sea of slowly changing practices, HTML is very much being developed and maintained, as authors toss deprecated markup and embrace new solutions.
 
-We're leaving this open: What do you observe? What has caught your eye? What do you think has taken a turn for the worse—and what did improve? [Leave a comment](https://discuss.httparchive.org/t/2039) to share your thoughts!
+We're leaving this open to you. What are your observations? What has caught your eye? What do you think has taken a turn for the worse, and what has improved? [Leave a comment](https://discuss.httparchive.org/t/2039) to share your thoughts!
 
 ## Conclusion
 
 When we don't need to [cover 14 years](../2019/markup) for analysis but only 1, one could almost get the impression that HTML is rather inert, that not much changes.
 
-Yet what we observe with this year's data is that there's lots of movement at the bottom and near the shore of said sea of HTML: We approach near-complete adoption of living HTML, are quick to prune our pages of fads (like Google and Facebook widgets), and we're fast in adopting and shunning frameworks (both Angular and AMP—though a "component framework"—seem to have significantly lost in popularity, likely for solutions like React and Vue).
+Yet what we observe with this year's data is that there's a lot of movement at the bottom and near the shore of said sea of HTML. We approach near-complete adoption of living HTML, are quick to prune our pages of fads like Google and Facebook widgets, and we're fast in adopting and shunning frameworks. Both Angular and AMP, though "component frameworks", seem to have significantly lost in popularity, likely for solutions like React and Vue.
 
-And still, there are no signs we exhausted the options HTML gives us. The median of 30 different elements used on a given page, which is roughly a quarter of the elements HTML provides us with, suggests a rather one-sided use of HTML. That is supported by the immense popularity of elements like `div` and `span`, and no custom elements to potentially meet the demands that these two elements may represent. Unfortunately we couldn't validate each document in the sample (yet we learned—to be used with caution—that of W3C-tested documents, [79% have errors](https://github.com/HTTPArchive/almanac.httparchive.org/issues/899#issuecomment-717856201)), but after everything we've seen it looks like we're still far from mastering the craft of HTML.
+And still, there are no signs we exhausted the options HTML gives us. The median of 30 different elements used on a given page, which is roughly a quarter of the elements HTML provides us with, suggests a rather one-sided use of HTML. That is supported by the immense popularity of elements like `div` and `span`, and no custom elements to potentially meet the demands that these two elements may represent. Unfortunately, we couldn't validate each document in the sample. However, anecdotally and to be taken with caution, we learned that [79%](https://github.com/HTTPArchive/almanac.httparchive.org/issues/899#issuecomment-717856201) of W3C-tested documents have validation errors. After everything we've seen, it looks like we're still far from mastering the craft of HTML.
 
-That suggests us to close with an appeal:
+That compels us to close with an appeal. Pay attention to HTML. Focus on HTML. It's important and worthwhile to invest in HTML. HTML is a document language that may not have the charm of a programming language, and yet the web is built on it. Use less HTML and learn what's really needed. Use more appropriate HTML—learn what's available and what it's there for. And [validate](https://validator.w3.org/docs/why.html) your HTML. Anyone can write invalid HTML (just invite the next person you meet to write an HTML document and validate the output) but a professional developer can be expected to produce valid HTML. Writing correct and valid HTML is a craft to take pride in.
 
-Pay attention to HTML. Focus on HTML. It's important and worthwhile to invest in HTML. HTML is a document language that may not have the charm of a programming language, and yet the web is built on it. Use less HTML—learn what's really needed. Use more appropriate HTML—learn what's available and what it's there for. And [validate](https://validator.w3.org/docs/why.html) your HTML. Everyone can write invalid HTML—just invite the next person you meet to write an HTML document and validate the output—, but a professional developer can be expected to produce valid HTML. Writing correct and valid HTML is a craft to take pride in.
-
-For the next edition of the Web Almanac's chapter, let's prepare to look closer at the craft of writing HTML—and, hopefully, how we've been improving on it.
+For the next edition of the Web Almanac's chapter, let's prepare to look closer at the craft of writing HTML and, hopefully, how we've been improving on it.
