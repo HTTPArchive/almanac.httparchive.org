@@ -12,6 +12,12 @@ results: https://docs.google.com/spreadsheets/d/1N6j1qKv7vc51p1W9z_RrbJX9Se3Pmb-
 queries: 13_Capabilities
 christianliebel_bio: Christian Liebel is a consultant at <a href="https://thinktecture.com">Thinktecture</a>, supporting clients from various business areas in implementing first-class web applications. He is a Microsoft MVP for Developer Technologies, Google GDE for Web/Capabilities and Angular, and participates in the W3C Web Applications Working Group.
 featured_quote: The state of web capabilities in 2020 is healthy, as new powerful APIs regularly ship with new releases of Chromium-based browsers. The first APIs have already made their way into other browsers as well.
+featured_stat_1: 0.0006%
+featured_stat_label_1: (Chrome) Page loads using Async Clipboard API
+featured_stat_2: 0.49%
+featured_stat_label_2: Sites using Storage Manager API
+featured_stat_3: 363
+featured_stat_label_3: Sites allow installing related apps
 published: 2020-11-09T00:00:00.000Z
 last_updated: 2020-11-09T00:00:00.000Z
 ---
