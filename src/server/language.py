@@ -36,6 +36,7 @@ class Language(object):
     ZH_CN = _Language('简体中文', 'zh-CN')
     ZH_CHT = _Language('繁體中文', 'zh-CHT')
 
+
 DEFAULT_LANGUAGE = Language.EN
 
 
