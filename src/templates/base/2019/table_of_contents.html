@@ -112,11 +112,8 @@
           <div class="chapters">
             {% for chapter_config in part_config.chapters %}
               <div class="chapter">
-                {% if year > "2019" %}
-                <span class="todo">{{ self.chapter() }} {{ chapter_config.chapter }}: {{ localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title }} - {{ self.coming_soon() }}</span>
-                {% else %}
                   {% if chapter_config.todo %}
-                  <span class="todo">{{ self.chapter() }} {{ chapter_config.chapter }}: {{ localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title }}</span>
+                  <span class="todo">{{ self.chapter() }} {{ chapter_config.chapter }}: {{ localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title }} - {{ self.coming_soon() }}</span>
                   {% else %}
                     {% if chapter_lang_exists(lang, year, chapter_config.slug) %}
                     <a href="{{ url_for('chapter', year=year, lang=lang, chapter=chapter_config.slug) }}">
@@ -128,7 +125,6 @@
                     </a>
                     {% endif %}
                   {% endif %}
-                {% endif %}
               </div>
             {% endfor %}
           </div>
