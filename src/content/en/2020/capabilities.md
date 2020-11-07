@@ -46,7 +46,7 @@ The Async Clipboard API provides two methods for reading content from the clipbo
 
 {{ figure_markup(
   image="async_clipboard_api.png",
-  caption="Async Clipboard API",
+  caption='Percentage of page loads in Chrome using Async Clipboard API. (Source: <a href="https://chromestatus.com/metrics/feature/timeline/popularity/2369">Chrome Platform Status metrics for Async Clipboard Read</a>, <a href="https://chromestatus.com/metrics/feature/timeline/popularity/2370">Chrome Platform Status metrics for Async Clipboard Write</a>)',
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1740212588&format=interactive",
   sheets_gid="2077755325"
@@ -109,7 +109,7 @@ On several platforms, it's common for applications to present a badge on the app
 
 {{ figure_markup(
   image="badging_api.png",
-  caption="Badging API",
+  caption='Percentage of page loads in Chrome using Badging API. (Source: <a href="https://chromestatus.com/metrics/feature/timeline/popularity/2726">Chrome Platform Status metrics for Badge Set</a>, <a href="https://chromestatus.com/metrics/feature/timeline/popularity/2727">Chrome Platform Status metrics for Badge Clear</a>)',
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1145004925&format=interactive",
   sheets_gid="1154751352"
@@ -131,7 +131,7 @@ registration.showNotification('Title', {
 
 {{ figure_markup(
   image="notification_triggers_api.png",
-  caption="Notification Triggers API",
+  caption='Percentage of page loads in Chrome using Notification Triggers API. (Source: <a href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">Chrome Platform Status metrics</a>)',
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1388597384&format=interactive",
   sheets_gid="1740370570"
@@ -166,7 +166,7 @@ To do so, the API provides a new `IdleDetector` interface on the global `window`
 
 {{ figure_markup(
   image="idle_detection_api.png",
-  caption="Idle Detection API",
+  caption='Percentage of page loads in Chrome using Idle Detection API. (Source: <a href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">Chrome Platform Status metrics</a>)',
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=963792757&format=interactive",
   sheets_gid="1324588405"
@@ -248,14 +248,14 @@ The Content Indexing API extends the Service Worker API by providing a new `Cont
 
 {{ figure_markup(
   image="content_indexing_api.png",
-  caption="Content Indexing API :: Add",
+  caption='Percentage of page loads in Chrome using Content Indexing API. (Source: <a href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">Chrome Platform Status metrics</a>)',
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=258329620&format=interactive",
   sheets_gid="626752011"
   )
 }}
 
-The Content Indexing API launched with Chrome 84 in July 2020. Directly after shipping, the API was used during approximately 0.0002 percent of page loads in Chrome. In October 2020, this value has quadrupled.
+The Content Indexing API launched with Chrome 84 in July 2020. Directly after shipping, the API was used during approximately 0.0002 percent of page loads in Chrome. In October 2020, this value has increased almost tenfold.
 
 ## New Transport APIs
 
@@ -276,7 +276,7 @@ The WebSocketStream API transparently solves backpressure, as the stream readers
 
 {{ figure_markup(
   image="websocketstreams.png",
-  caption="WebSocketStreams",
+  caption='Percentage of page loads in Chrome using WebSocketStreams. (Source: <a href="https://chromestatus.com/metrics/feature/timeline/popularity/3018">Chrome Platform Status metrics</a>)',
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1714443590&format=interactive",
   sheets_gid="691106754"
@@ -301,14 +301,14 @@ QuicTransport is a valid alternative to WebSockets, as it supports the use cases
 
 {{ figure_markup(
   image="quic_transport.png",
-  caption="QuicTransport",
+  caption='Percentage of page loads in Chrome using QuicTransport. (Source: <a href="https://chromestatus.com/metrics/feature/timeline/popularity/3184">Chrome Platform Status metrics</a>)',
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1571330893&format=interactive",
   sheets_gid="708893754"
   )
 }}
 
-The use of the interface is currently still so low that it's hardly measurable.
+The use of the interface is currently still so low that it's hardly measurable. In October 2020, it has increased strongly.
 
 ## Conclusion
 
