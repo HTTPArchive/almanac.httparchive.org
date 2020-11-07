@@ -21,24 +21,45 @@ converter.setOption('simpleLineBreaks', false);
 converter.setOption('tablesHeaderId', false);
 converter.setOption('ghMentions', false);
 
-const generate_chapters = async () => {
+const generate_chapters = async (chapter_match) => {
 
   let sitemap = [];
   let sitemap_languages = {};
   let ebook_chapters = [];
   let configs = {};
   let featured_quotes = {};
+  let re;
   
   configs = await get_yearly_configs();
   for (const year in configs) {  
     sitemap_languages[year] = configs[year].settings[0].supported_languages;
   }
 
+  if (chapter_match) {
+    // Remove any trailing .md and replace all paths with brackets to capture components
+    // en/2019/javascript.md -> (en)/(2019)/(javascript).md
+    chapter_match = chapter_match.replace(/\.md$/,'');
+    chapter_match = chapter_match.replace(/^content[\/\\]*/,'');
+    chapter_match = (process.platform != 'win32')
+                ? 'content\/' +  '(' + chapter_match.replace(/\//g,')/(') + ')\.md'
+                : 'content\\' +  '(' + chapter_match.replace(/\\/g,')\(') + ')\.md';
+    re = new RegExp(chapter_match);
+  } else {
+    re = (process.platform != 'win32')
+                ? /content\/(.*)\/(.*)\/(.*).md/
+                : /content\\(.*)\\(.*)\\(.*).md/;
+  }
+
   for (const file of await find_markdown_files()) {
-    const re = (process.platform != 'win32') 
-                  ? /content\/(.*)\/(.*)\/(.*).md/ 
-                  : /content\\(.*)\\(.*)\\(.*).md/;
-    const [path, language, year, chapter] = file.match(re);
+
+    let path, language, year, chapter;
+
+    try {
+      [path, language, year, chapter] = file.match(re);
+    } catch(error) {
+      // No match - skip to next in for loop
+      continue;
+    }
 
     try {
       console.log(`\n Generating chapter: ${language}, ${year}, ${chapter}`);
@@ -67,12 +88,16 @@ const generate_chapters = async () => {
     }
   }
 
-  await generate_featured_chapters(featured_quotes);
-  await generate_ebooks(ebook_chapters,configs);
-  await generate_js();
+  // For partial generation stop there, else generate everything else
+  if (!chapter_match) {
+    await generate_featured_chapters(featured_quotes);
+    await generate_ebooks(ebook_chapters,configs);
+    await generate_js();
 
-  const sitemap_path = await generate_sitemap(sitemap,sitemap_languages);
-  await size_of(sitemap_path);
+    const sitemap_path = await generate_sitemap(sitemap,sitemap_languages);
+    await size_of(sitemap_path);
+  }
+
 };
 
 const parse_file = async (markdown,chapter) => {
