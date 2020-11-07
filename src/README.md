@@ -43,13 +43,6 @@ npm run install
 npm run start
 ```
 
-Or on Windows:
-
-```
-npm run install
-npm run winstart
-```
-
 4. In your web browser, enter the following address: http://127.0.0.1:8080
 
 
