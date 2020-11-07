@@ -70,6 +70,22 @@ If you have the server up you can test all the pages are being served correctly:
 npm run test
 ```
 
+You can also run single chapters:
+
+```
+npm run generate en/2019/css
+```
+
+Or event patterns (note patterns must be in quotes to prevent OS attempting to match to files):
+
+```
+npm run generate ".*/2019/css"
+npm run generate "en/.*/css"
+npm run generate ".*/2020/.*"
+```
+
+
+
 ## Generating Ebooks
 
 For generating PDFs of the ebook, you need to install Prince. Follow the instructions on [the Prince Website](https://www.princexml.com/) and pdftk.
