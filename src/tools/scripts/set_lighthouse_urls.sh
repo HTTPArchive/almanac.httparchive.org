@@ -61,7 +61,7 @@ elif [ "${RUN_TYPE}" == "pull_request" ] && [ "${COMMIT_SHA}" != "" ]; then
     git pull --quiet
     git checkout main
     # Then get the changes
-    CHANGED_FILES=$(git diff --name-only "main...${COMMIT_SHA}" --diff-filter=d content templates | grep -v base.html | grep -v ejs | grep -v base_ | grep -v toc.html | grep -v sitemap)
+    CHANGED_FILES=$(git diff --name-only "main...${COMMIT_SHA}" --diff-filter=d content templates | grep -v base.html | grep -v ejs | grep -v base_ | grep -v toc.html | grep -v sitemap | grep -v error.html)
     # Then back to the pull request changes
     git checkout --progress --force "${COMMIT_SHA}"
 
