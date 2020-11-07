@@ -26,14 +26,14 @@ last_updated: 2020-11-06T00:00:00.000Z
 
 ## Introduction
 
-The web is built on HTML. Without HTML: no web pages, no web sites, no web apps. Nothing. Plain-text documents, perhaps, or XML trees, in some parallel universe that enjoyed that particular kind of challenge. In this universe, HTML is the foundation of the user-facing Web. There are many standards that the Web is resting on, but HTML is certainly one of the most important ones.
+The web is built on HTML. Without HTML: no web pages, no web sites, no web apps. Nothing. Plain-text documents, perhaps, or XML trees, in some parallel universe that enjoyed that particular kind of challenge. In this universe, HTML is the foundation of the user-facing web. There are many standards that the web is resting on, but HTML is certainly one of the most important ones.
 
 How do we use HTML, then, how great of a foundation are we looking at? The introduction section of the [2019 Markup chapter](../2019/markup#introduction) suggested that for a long time, we haven't really known. There were some smaller samples, there was [Ian Hickson's research](https://web.archive.org/web/20060203035414/http://code.google.com/webstats/index.html) (one of modern HTML's parents), then there were more small samples, but until last year we lacked major insight into how we as developers, as authors, make use of HTML. In 2019 we then had both [Catalin Rosu's work](https://www.advancedwebranking.com/html/) (one of this chapter's co-authors) as well as the 2019 edition of the Web Almanac to give a better view again, at HTML in practice.
 
 Last year marked a first stab at 5,790,700 pages (of which 4,371,973 were tested on desktop, 5,297,442 on mobile) and a review of the data taken. This year we looked at 7,546,709 pages (5,593,642 on desktop, 6,347,919 on mobile) using the latest data on [which websites users are visiting in 2020](./methodology), to run another analysis. We do make some comparisons to last year—but, just as we've tried to take some additional metrics for additional insight, we've also given this chapter a new personality.
 
 <p class="note">
-  In this Markup chapter, we're focusing almost exclusively on HTML, rather than SVG or MathML, which are also considered markup languages. Additionally, the data for all Web Almanac chapters is open and available. Take a look at <a href="https://docs.google.com/spreadsheets/d/1Ta7amoUeaL4pILhWzH-SCzMX9PsZeb1x_mwrX2C4eY8/">the results</a> and <a href="https://discuss.httparchive.org/t/2039">share</a> your own observations!
+  In this Markup chapter, we're focusing almost exclusively on HTML, rather than SVG or MathML, which are also considered markup languages. Unless otherwise noted, stats presented in this chapter refer to the set of mobile pages. Additionally, the data for all Web Almanac chapters is open and available. Take a look at <a href="https://docs.google.com/spreadsheets/d/1Ta7amoUeaL4pILhWzH-SCzMX9PsZeb1x_mwrX2C4eY8/">the results</a> and <a href="https://discuss.httparchive.org/t/2039">share</a> your own observations!
 </p>
 
 ## General
@@ -309,7 +309,7 @@ Taking another look at element popularity, how likely is it to find a certain el
 | Element | Probability |
 |---|---|
 | `title` | 99.34% |
-| `meta` | 99% |
+| `meta` | 99.00% |
 | `div` | 98.42% |
 | `a` | 98.32% |
 | `link` | 97.79% |
@@ -322,7 +322,7 @@ Taking another look at element popularity, how likely is it to find a certain el
 <figcaption>{{ figure_link(caption="High probabilities of finding a given element in pages of the Web Almanac 2020 sample.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
 </figure>
 
-What standard elements—elements that are or were part of the HTML specification—are you really rarely to find? In our sample, that would bring up the following:
+Standard elements are those that are or were part of the HTML specification. Which ones are you really rarely to find? In our sample, that would bring up the following:
 
 <figure markdown>
 | Element | Probability |
@@ -334,9 +334,13 @@ What standard elements—elements that are or were part of the HTML specificatio
 <figcaption>{{ figure_link(caption="Low probabilities of finding a given element in pages of the sample.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
 </figure>
 
+{# TODO(authors): Interpet results. #}
+
 ### Custom elements
 
-The 2019 edition of the Web Almanac handled this part [a little differently](../2019/markup#custom-elements), discussing several non-standard elements. However, we found it valuable to have a closer look at custom elements. How did we determine these? Roughly by looking at [their definition](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-core-concepts), notably their use of a hyphen. Let's focus on the top elements, in this case elements used on ≥1% of all URLs in the sample:
+The 2019 edition of the Web Almanac handled [custom elements](../2019/markup#custom-elements) by discussing several non-standard elements. This year, we found it valuable to have a closer look at custom elements. How did we determine these? Roughly by looking at [their definition](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-core-concepts), notably their use of a hyphen. Let's focus on the top elements, in this case elements used on ≥1% of all URLs in the sample:
+
+{# TODO(authors, analysts): Clarify occurrences and percentages _of what_. Pages? Elements? And for desktop or mobile? #}
 
 <figure markdown>
 | Element | Occurrences | Percentage |
@@ -359,18 +363,20 @@ The 2019 edition of the Web Almanac handled this part [a little differently](../
 <figcaption>{{ figure_link(caption="The 14 most popular custom elements.", sheets_gid="770933671", sql_file="pages_element_count_by_device_and_custom_dash_elements.sql") }}</figcaption>
 </figure>
 
-These elements come from three sources: [Yandex Metrics](https://metrica.yandex.com/about) (`ym-`), an analytics solution we've also seen last year; [Slider Revolution](https://www.sliderrevolution.com/) (`rs-`), a WordPress slider, for which there are more elements to be found near the top of the sample; and [Wix](https://www.wix.com/) (`wix-`), a website builder.
+These elements come from three sources: [Yandex Metrica](https://metrica.yandex.com/about) (`ym-`), an analytics solution we've also seen last year; [Slider Revolution](https://www.sliderrevolution.com/) (`rs-`), a WordPress slider, for which there are more elements to be found near the top of the sample; and [Wix](https://www.wix.com/) (`wix-`), a website builder.
+
+{# TODO(authors, analysts): What do "cases" mean here: pages/elements? And for desktop or mobile? #}
 
 Other groups that stand out include [AMP markup](https://amp.dev/) with `amp-` elements like `amp-img` (11,700 cases), `amp-analytics` (10,256) and `amp-auto-ads` (7,621), as well as [Angular](https://angular.io/) `app-` elements like `app-root` (16,314), `app-footer` (6,745), and `app-header` (5,274).
 
 ### Obsolete elements
 
-There are more questions to ask about the use of HTML, and one may relate to obsolete elements—elements like `applet`, `bgsound`, `blink`, `center`, `font`, `frame`, `isindex`, `marquee`, or `spacer`.
+There are more questions to ask about the use of HTML, and one may relate to obsolete elements, which are elements like `applet`, `bgsound`, `blink`, `center`, `font`, `frame`, `isindex`, `marquee`, or `spacer`.
 
-In our mobile data set of 6.3 million pages, around 0.9 million pages (14.01%) contained one or more of these elements. Here are the Top 9, those elements that were used more than 10,000 times:
+In our mobile dataset of 6.3 million pages, around 0.9 million pages (14.01%) contained one or more of these elements. Here are the top 9, which have been used more than 10,000 times:
 
 <figure markdown>
-| Element | Occurrences | Percentage of pages with this element |
+| Element | Occurrences | Pages (%) |
 |---|---|---|
 | `center` | 458,402 | 7.22% |
 | `font` | 430,987 | 6.79% |
@@ -385,19 +391,19 @@ In our mobile data set of 6.3 million pages, around 0.9 million pages (14.01%) c
 <figcaption>{{ figure_link(caption="Obsolete elements with more than 10,000 uses.", sheets_gid="1972617631", sql_file="pages_element_count_by_device_and_obsolete_elements.sql") }}</figcaption>
 </figure>
 
-Why are these still alive—even `spacer` is still being used 1,584 times, and present on every 5,000th page. We know that Google has been using a `center` element on [their homepage](https://www.google.com/) [for 22 years](https://web.archive.org/web/19981202230410/https://www.google.com/) now, but does that find so many imitators?
+Why are these still alive? Even `spacer` is still being used 1,584 times, and present on every 5,000th page. We know that Google has been using a `center` element on [their homepage](https://www.google.com/) [for 22 years](https://web.archive.org/web/19981202230410/https://www.google.com/) now, but why are there so many imitators?
 
-<div class="note">
-  <h4><code>isindex</code></h4>
-  <p>If you were wondering: The <a href="https://www.w3.org/TR/html401/interact/forms.html#edef-ISINDEX"><code>isindex</code> element</a> was present once. (It was part of the HTML specs <a href="https://meiert.com/en/indices/html-elements/">until version 4.01, and of XHTML in 1.0</a>, yet only properly <a href="https://lists.w3.org/Archives/Public/public-whatwg-archive/2006Feb/0111.html">specified in 2006</a>, and <a href="https://github.com/whatwg/html/pull/1095">removed in 2016</a>.)</p>
-</div>
+#### `isindex`
+
+{# TODO(authors): What is the significance of this section? There are no new stats provided. #}
+If you were wondering: The [`isindex`](https://www.w3.org/TR/html401/interact/forms.html#edef-ISINDEX) element was present once. It was part of the HTML specs until [version 4.01](https://meiert.com/en/indices/html-elements/), and of XHTML in 1.0, yet only properly [specified](https://lists.w3.org/Archives/Public/public-whatwg-archive/2006Feb/0111.html) in 2006, and [removed](https://github.com/whatwg/html/pull/1095) in 2016.
 
 ### Proprietary and made-up elements
 
-In our set of elements we found some that were neither standard HTML (nor SVG nor MathML) elements, nor custom ones, nor obsolete ones, but somewhat proprietary ones. The Top 10 that we identified were the following:
+In our set of elements we found some that were neither standard HTML (nor SVG nor MathML) elements, nor custom ones, nor obsolete ones, but somewhat proprietary ones. The top 10 that we identified were the following:
 
 <figure markdown>
-| Element | Percentage of pages with this element |
+| Element | Pages (%) |
 |---|---|
 | `noindex` | 0.89% |
 | `jdiv` | 0.85% |
@@ -413,7 +419,7 @@ In our set of elements we found some that were neither standard HTML (nor SVG no
 <figcaption>{{ figure_link(caption="Elements of questionable heritage.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
 </figure>
 
-The source of these elements appears to be mixed, as in some are unknown while others can be traced. The most popular one, `noindex`, is probably due to [Yandex's recommendation](https://yandex.com/support/webmaster/adding-site/indexing-prohibition.html) of it to prohibit page indexing. `jdiv` was noted in last year's Almanac and is from JivoChat. `mediaelementwrapper` comes from the MediaElement media player. Both `ymaps` and `yatag` are also from Yandex. The `ss` element could be from ProStores, a former ecommerce product from eBay, and `olark` may be from the Olark chat software. `h7` appears to be a mistake. `limespot` is probably related to the Limespot personalization program for ecommerce. None of these elements are part of a web standard.
+The source of these elements appears to be mixed, as in some are unknown while others can be traced. The most popular one, `noindex`, is probably due to [Yandex's recommendation](https://yandex.com/support/webmaster/adding-site/indexing-prohibition.html) of it to prohibit page indexing. `jdiv` was noted in [last year's Web Almanac](../2019/markup#products-and-libraries-and-their-custom-markup) and is from JivoChat. `mediaelementwrapper` comes from the MediaElement media player. Both `ymaps` and `yatag` are also from Yandex. The `ss` element could be from ProStores, a former ecommerce product from eBay, and `olark` may be from the Olark chat software. `h7` appears to be a mistake. `limespot` is probably related to the Limespot personalization program for ecommerce. None of these elements are part of a web standard.
 
 ### Headings
 
@@ -432,6 +438,7 @@ The source of these elements appears to be mixed, as in some are unknown while o
 <figcaption>{{ figure_link(caption="Frequency and average use of standard heading elements.", sheets_gid="277662548", sql_file="pages_wpt_bodies_by_device_and_percentile_and_heading_level.sql") }}</figcaption>
 </figure>
 
+{# TODO(authors): Expand on this to include more discussion and interpretation of the results. #}
 Wait.
 
 <figure markdown>
@@ -447,13 +454,11 @@ The last two have never been part of HTML, of course, and should not be used.
 
 ## Attributes
 
-In our analysis of attributes we were interested to see how attributes are used in documents, and how the situation is around `data-*` attributes. We diagnose that `class` is the queen of all attributes.
+This section focuses on how attributes are used in documents and explores patterns in `data-*` usage. Our findings show that `class` is the queen of all attributes.
 
 ### Top attributes
 
-Similar to popular elements, we were curious about the most popular attributes. Given how important the `href` attribute is for the Web itself, or the `alt` attribute in order to make information [accessible](./accessibility), would these be most popular?
-
-Yet the most popular attribute is `class`—with almost 3 billion occurrences in our sample and constituting 34% of attributes in use, it's by far the prevalent attribute:
+Similar to the section on the most [popular elements](#top-elements), this section delves into the most popular attributes on the web. Given how important the `href` attribute is for the web itself, or the `alt` attribute in order to make information [accessible](./accessibility), would these be most popular attributes?
 
 <figure markdown>
 | Attribute | Occurrences | Percentage |
@@ -469,22 +474,58 @@ Yet the most popular attribute is `class`—with almost 3 billion occurrences in
 | `rel` | 171,802,460 | 1.96% |
 | `value` | 140,666,779 | 1.61% |
 
-<figcaption>{{ figure_link(caption="Top 10 attributes.", sheets_gid="1348855449", sql_file="pages_almanac_by_device_and_attribute_name_frequency.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Top 10 attributes by frequency of use.", sheets_gid="1348855449", sql_file="pages_almanac_by_device_and_attribute_name_frequency.sql") }}</figcaption>
 </figure>
 
-The `value` attribute, which specifies the value of an `input` element, surprisingly completes the top ten—surprising because on our end, subjectively, we didn't get the impression values were used that frequently.
+The most popular attribute is `class`, with nearly 3 billion occurrences in our dataset and constituting 34% of all attributes in use. `class` is by far the most prevalent attribute.
+
+The `value` attribute, which specifies the value of an `input` element, surprisingly completes the top ten. It's surprising to us because, subjectively, we didn't get the impression values were used that frequently.
 
 ### Attributes on pages
 
-Are there attributes that we find in every document? No—but almost. `href` (99.21%), `src` (99.18%), `content` (98.88%), `name` (98.61%), `type` (98.55%), `class` (98.24%), `rel` (97.98%), `id` (97.46%), `style` (95.95%), and `alt` (90.75%) make the Top 10 here, with each being found on at least 90% of sampled pages.
+Are there attributes that we find in every document? Not quite, but almost:
 
-This raises questions we cannot answer like yes, `type` is used on other elements, too, but why this tremendous popularity, given that it's usually not needed to specify for style sheets or scripts (with CSS and JavaScript being assumed default)? Or how do we really fare with `alt`, do those 9.25% of pages that don't include it not contain any images?
+<figure markdown>
+Element | Pages (%)
+-- | --
+href | 99.21%
+src | 99.18%
+content | 98.88%
+name | 98.61%
+type | 98.55%
+class | 98.24%
+rel | 97.98%
+id | 97.46%
+style | 95.95%
+alt | 90.75%
+title | 85.50%
+target | 82.98%
+async | 81.96%
+lang | 79.10%
+width | 78.99%
+height | 76.36%
+charset | 75.44%
+value | 67.57%
+role | 62.97%
+action | 62.34%
+http-equiv | 62.30%
+method | 60.27%
+media | 60.14%
+property | 55.68%
+placeholder | 54.21%
 
-To name all the attributes found on at least half of the pages, we would add `title` (85.5%), `target` (82.98%), `async` (81.96%), `lang` (79.1%), `width` (78.99%), `height` (76.36%—note the difference to `width`), `charset` (75.44%), `value` (67.57%), `role` (62.97%), `action` (62.34%), `http-equiv` (62.3%), `method` (60.27%), `media` (60.14%), `property` (55.68%), and `placeholder` (54.21%).
+<figcaption>{{ figure_link(
+  caption="Top 25 attributes by page.",
+  sheets_gid="1185369559",
+  sql_file="pages_almanac_by_device_and_attribute_name_present.sql"
+)}}</figcaption>
+</figure>
+
+These results raise some questions that we cannot answer. For example, `type` is used on other elements too, but why this tremendous popularity? Especially given that it's usually not needed to specify for style sheets or scripts, with CSS and JavaScript being assumed default. Or, how do we really fare with `alt`? Do those 9.25% of pages not contain any images or are they just inaccessible? The rest of these 25 attributes make up all of those found on at least half of all pages.
 
 ### `data-*` attributes
 
-What we were also curious about were [`data-*` attributes](https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes). How are these used? What are the popular ones? Is there anything interesting here?
+Per the HTML spec,[`data-*` attributes](https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes) "are intended to store custom data, state, annotations, and similar, private to the page or application, for which there are no more appropriate attributes or elements." How are they used? What are the popular ones? Is there anything interesting here?
 
 The most popular ones stand out because they are almost twice as popular than each of the attributes that followed (with >1% use):
 
@@ -505,45 +546,47 @@ The most popular ones stand out because they are almost twice as popular than ea
 
 Attributes like `data-type`, `data-id`, and `data-src` can have multiple generic uses although `data-src` is used a lot with lazy image loading via JavaScript (e.g., Bootstrap 4). [Bootstrap](https://getbootstrap.com/) again explains the presence of `data-toggle`, where it's used as a state styling hook on toggle buttons. The [Slick carousel plugin](https://kenwheeler.github.io/slick/) is the source of `data-slick-index`, whereas `data-element_type` is part of [Elementor's WordPress website builder](https://elementor.com/). Both `data-requiremodule` and `data-requirecontext`, then, are part of [RequireJS](https://requirejs.org/).
 
-<p class="note">Interestingly, the use of native lazy loading on images is similar to that of <code>data-src</code>. 3.86% of <code>img</code> elements use the <code>loading</code> attribute with a value of <code>lazy</code> (this appears to be growing very fast, as <a href="https://twitter.com/zcorpan/status/1237016679667970050">back in February, this number was about 0.8%</a>). It's possible that these are being used together for a <a href="https://addyosmani.com/blog/lazy-loading/">cross-browser solution</a>.</p>
+Interestingly, the use of native lazy loading on images is similar to that of `data-src`. 3.86% of `img` elements use the `loading` attribute with a value of `lazy`. This appears to be growing very fast, as back in February, this number was about [0.8%](https://twitter.com/zcorpan/status/1237016679667970050). It's possible that these are being used together for a [cross-browser solution](https://addyosmani.com/blog/lazy-loading/).
 
 ## Miscellaneous
 
-We've covered use of HTML in general as well as the situation around elements and attributes. In this section we're reviewing special cases around viewports, favicons, buttons and inputs, but also links. Too many links may still point to "http" URLs is one thing we note here.
+We've covered the use of HTML in general as well as the adoption of top elements and attributes. In this section, we're reviewing some of the special cases of viewports, favicons, buttons, inputs, and links. Specifically, we will also be looking at links that may still point to "http" URLs.
 
 ### `viewport` specifications
 
-The viewport meta element is used to [control layout on mobile browsers](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag). While years ago the motto was kind of "Don't forget the viewport meta element" when building a web page, eventually this became a common practice and the motto changed to "Make sure zooming and scaling are not disabled."
+The [viewport](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag) meta element is used to control layout on mobile browsers. While years ago, the motto was kind of "don't forget the viewport meta element" when building a web page, eventually this became a common practice and the motto changed to "make sure zooming and scaling are not disabled."
 
-[Users should be able to zoom](https://dequeuniversity.com/rules/axe/4.0/meta-viewport-large) and scale the text up to 500%, that's why audits in popular tools like [Lighthouse](https://developers.google.com/web/tools/lighthouse) or [axe](https://www.deque.com/axe/) fail when `user-scalable="no"` is used within the `meta name="viewport"` element, and when the `maximum-scale` attribute value is less than `5`.
+Users should be able to zoom and scale the text [up to 500%](https://dequeuniversity.com/rules/axe/4.0/meta-viewport-large). That's why audits in popular tools like [Lighthouse](https://developers.google.com/web/tools/lighthouse) or [axe](https://www.deque.com/axe/) fail when `user-scalable="no"` is used within the `meta name="viewport"` element, and when the `maximum-scale` attribute value is less than `5`.
 
 We had a look at the data and in order to better understand the results, we normalized it by removing spaces, converting everything to lowercase, and sorting by comma values of the `content` attribute.
 
 <figure markdown>
-| Content attribute value | Occurrences | Percentage |
+| Content attribute value | Occurrences | Pages (%) |
 |---|---|---|
-| `initial-scale=1,width=device-width` | 2,728,491 | 42,98% |
+| `initial-scale=1,width=device-width` | 2,728,491 | 42.98% |
 | blank | 688,293 | 10,84% |
-| `initial-scale=1,maximum-scale=1,width=device-width` | 373,136 | 5,88% |
-| `initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width` | 352,972 | 5,56% |
-| `initial-scale=1,maximum-scale=1,user-scalable=0,width=device-width` | 249,662 | 3,93% |
-| `width=device-width` | 231,668 | 3,65% |
+| `initial-scale=1,maximum-scale=1,width=device-width` | 373,136 | 5.88% |
+| `initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width` | 352,972 | 5.56% |
+| `initial-scale=1,maximum-scale=1,user-scalable=0,width=device-width` | 249,662 | 3.93% |
+| `width=device-width` | 231,668 | 3.65% |
 
 <figcaption>{{ figure_link(caption="<code>viewport</code> specifications, and lack thereof.", sheets_gid="1414206386", sql_file="summary_pages_by_device_and_viewport.sql") }}</figcaption>
 </figure>
 
-The results show that almost half of the pages we analyzed are using the typical viewport `content` value. Still, around 688K mobile pages (and 904K desktop pages) are entirely missing a proper `content` value for the viewport meta element, with the rest of them using an improper combination of `maximum-scale`, `minimum-scale`, `user-scalable=no`, or `user-scalable=0`.
+The results show that almost half of the pages we analyzed are using the typical viewport `content` value. Still, around 10% of mobile pages are entirely missing a proper `content` value for the viewport meta element, with the rest of them using an improper combination of `maximum-scale`, `minimum-scale`, `user-scalable=no`, or `user-scalable=0`.
 
-<p class="note">For a while now the Edge mobile browser allows to <a href="https://blogs.windows.com/windows-insider/2017/01/12/announcing-windows-10-insider-preview-build-15007-pc-mobile/">zoom into a web page to at least 500%</a>, regardless of the zoom settings defined by a web page employing the viewport meta element.</p>
+<p class="note">
+  For a while now, the Edge mobile browser allows users to zoom into a web page to <a href="https://blogs.windows.com/windows-insider/2017/01/12/announcing-windows-10-insider-preview-build-15007-pc-mobile/">at least 500%</a>, regardless of the zoom settings defined by a web page employing the viewport meta element.
+</p>
 
 ### Favicons
 
-The situation around favicons is fascinating: Favicons work with or without markup—some browsers would fall back to [looking at the domain root](https://realfavicongenerator.net/faq#why_icons_in_root)—, accept several image formats, and then also promote several dozen sizes (some tools are reported to generate 45 of them; [realfavicongenerator.net](https://realfavicongenerator.net/) would return _37_ if requested to handle every case). There is, as a side note, an issue open for the HTML spec to help [improve the situation](https://github.com/whatwg/html/issues/4758).
+The state of favicons is fascinating. Favicons work with or without markup, for example some browsers would fall back to [looking at the domain root](https://realfavicongenerator.net/faq#why_icons_in_root), browsers accept favicons in several image formats, and they are also supported in several dozen sizes. In fact, some tools are reported to generate 45 favicon sizes! For example, one favicon tool, [realfavicongenerator.net](https://realfavicongenerator.net/), would return _37_ favicon sizes if requested to handle every case. As of this time of writing, there is an [open issue](https://github.com/whatwg/html/issues/4758) for the HTML spec to help improve the situation.
 
-When we built our tests we didn't check for the presence of images, but only looked at the markup. That means, when you review the following note that it's more about _how_ favicons are referenced rather than whether or how often they are used.
+When we built our tests we didn't check for the presence of images, but only looked at the markup. That means, when you review the following, note that it's more about _how_ favicons are referenced rather than whether or how often they are used.
 
 <figure markdown>
-| Favicon format | Occurrences | Percentage |
+| Favicon format | Occurrences | Pages (%) |
 |---|---|---|
 | ICO | 2,245,646 | 35.38% |
 | PNG | 1,966,530 | 30.98% |
@@ -555,58 +598,64 @@ When we built our tests we didn't check for the presence of images, but only loo
 | … | | |
 | SVG | 5,328 | 0.08% |
 
-<figcaption>{{ figure_link(caption="Common favicon approaches.", sheets_gid="1930085905", sql_file="pages_almanac_by_device_and_favicon_image_type.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Common favicon formats.", sheets_gid="1930085905", sql_file="pages_almanac_by_device_and_favicon_image_type.sql") }}</figcaption>
 </figure>
 
-There may be a couple of surprises in here:
+There are a couple of surprises in here:
 
-* Support for other formats is there but ICO is still the go-to format for favicons on the Web.
+* Support for other formats is there but ICO is still the go-to format for favicons on the web.
 * JPG is a relatively popular favicon format even though it may not yield the best results (or a comparatively large file size) for many favicon sizes.
-* WebP is—twice as popular as SVG! (This might change, however, with [SVG favicon support improving](https://caniuse.com/link-icon-svg).)
+* WebP is twice as popular as SVG! This might change, however, with [SVG favicon support](https://caniuse.com/link-icon-svg) improving.
 
 ### Button and input types
 
-There has been a lot of discussion on buttons lately and how often they are misused. We looked into this to present findings on some of the native HTML buttons:
+{# TODO(authors): Can you cite any examples of this discussion? And what do the findings say about button misuse? #}
+There has been a lot of discussion on buttons lately and how often they are misused. We looked into this to present findings on some of the native HTML buttons.
+
+{{ figure_markup(
+  caption="Percent of pages with button elements.",
+  content="60.56%",
+  classes="big-number",
+  sheets_gid="410549982",
+  sql_file="pages_markup_by_device.sql"
+) }}
 
 <figure markdown>
-| Elements | Occurrences | Page percentage |
+| Button types | Occurrences | Percentage |
 |---|---|---|
-| `<button type="button">…</button>` | 15,926,061 | 36.41% |
+| `<button type="button">` | 15,926,061 | 36.41% |
 | `<button>` without type | 11,838,110 | 32.43% |
-| `<button type="submit">…</button>` | 4,842,946 | 28.55% |
+| `<button type="submit">` | 4,842,946 | 28.55% |
 | `<input type="submit" value="…">` | 4,000,844 | 31.82% |
 | `<input type="button" value="…">` | 1,087,182 | 4.07% |
 | `<input type="image" src="…">` | 322,855 | 2.69% |
-| `<button type="reset">…</button>` | 41,735 | 0.49% |
+| `<button type="reset">` | 41,735 | 0.49% |
 
-<figcaption>{{ figure_link(caption="Top 7 button setups.", sheets_gid="410549982", sql_file="pages_markup_by_device.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Adoption of button types.", sheets_gid="410549982", sql_file="pages_markup_by_device.sql") }}</figcaption>
 </figure>
 
-According to the numbers we gathered, about 60% of the pages contain a button element and more than half of them (32.43%) fail to specify a `type` attribute.
+Our analysis shows that about 60% of pages contain a button element and more than half of pages with buttons (32.43%) have at least one that fails to specify a `type` attribute. Note that the button element has a [default type](https://dev.w3.org/html5/spec-LC/the-button-element.html) of `submit`, so the default behavior of buttons on these 32% of pages is to submit the current form data. To avoid possibly unexpected behavior like this, a best practice is to specify the type attribute.
 
-<div class="note">
-  <p>The button element has a <a href="https://dev.w3.org/html5/spec-LC/the-button-element.html">default type of <code>submit</code></a>, meaning that the default behavior of a button is to submit the current form data. For extra clarity, consider specifying the button type in order to avoid unexpected situations.</p>
-  <p>The following table shows that a page in the 90th percentile has at least 13 native buttons, while the pages in the 10th and 25th percentiles contain no buttons at all:</p>
-</div>
-
-<!-- Really part of the note above, but kept outside for simplicity: -->
 <figure markdown>
-| Percentile | Buttons |
+| Percentile | Buttons per page |
 |---|---|
+| 10 | 0 |
 | 25 | 0 |
 | 50 | 1 |
 | 75 | 5 |
 | 90 | 13 |
 
-<figcaption>{{ figure_link(caption="Button percentiles.", sheets_gid="309769153", sql_file="pages_markup_by_device_and_percentile.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Distribution of the number of buttons per page.", sheets_gid="309769153", sql_file="pages_markup_by_device_and_percentile.sql") }}</figcaption>
 </figure>
+
+Pages in the 10th and 25th percentiles contain no buttons at all, while a page in the 90th percentile contains 13 native `button` elements. In other words, 10% of pages contain 13 or more buttons.
 
 ### Link targets
 
 What protocols do anchors—`a` elements—point to? We looked at that information to identify the most popular protocols. How to read this information? Each row shows how many links with that protocol we count, and on how many of all documents at least one such protocol link is being used.
 
 <figure markdown>
-| Protocol | Number of pages referencing the protocol | Percentage |
+| Protocol | Occurrences | Pages (%) |
 |---|---|---|
 | https | 5,756,444 | 90.69% |
 | http | 4,089,769 | 64.43% |
@@ -619,7 +668,7 @@ What protocols do anchors—`a` elements—point to? We looked at that informati
 | sms | 17,304 | 0.27% |
 | intent | 12,807 | 0.20% |
 
-<figcaption>{{ figure_link(caption="Top 10 link target protocols.", sheets_gid="1963376224", sql_file="pages_wpt_bodies_by_device_and_protocol.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Adoption of link target protocols.", sheets_gid="1963376224", sql_file="pages_wpt_bodies_by_device_and_protocol.sql") }}</figcaption>
 </figure>
 
 We can see how "https" and "http" are most dominant, followed by "benign" links to make writing email, making phone calls, and sending messages easier. "javascript" stands out as a link target that's still very popular even though JavaScript offers native and gracefully degrading options to work with.
@@ -648,7 +697,7 @@ We've sprinkled some observations throughout the chapter, and you'll have made y
 
 Fewer pages land in quirks mode. In 2016, that number was at [around 7.4%](https://discuss.httparchive.org/t/how-many-and-which-pages-are-in-quirks-mode/777), at the end of 2019, we observed [4.85%](https://twitter.com/zcorpan/status/1205242913908838400), and now we're at about 3.97%. This trend, to quote Simon Pieters in his review of this chapter, seems indeed clear and encouraging.
 
-Although we lack historic data to draw the full development, "meaningless" `div` and `span` (and also `i`) markup has pretty much replaced the table markup we've observed in the 90s and early 2000's. While one may question whether `div` and `span` elements are always used without there being a semantically more appropriate alternative, these elements are still preferable to table markup, though, as during the heyday of the old Web, these were used for everything but tabular data.
+Although we lack historic data to draw the full development, "meaningless" `div` and `span` (and also `i`) markup has pretty much replaced the table markup we've observed in the 90s and early 2000's. While one may question whether `div` and `span` elements are always used without there being a semantically more appropriate alternative, these elements are still preferable to table markup, though, as during the heyday of the old web, these were used for everything but tabular data.
 
 Elements per page and element types per page stayed roughly the same, showing no significant change in our HTML writing practice when compared to 2019. Such changes may require more time to manifest.
 
@@ -666,6 +715,6 @@ And still, there are no signs we exhausted the options HTML gives us. The median
 
 That suggests us to close with an appeal:
 
-Pay attention to HTML. Focus on HTML. It's important and worthwhile to invest in HTML. HTML is a document language that may not have the charm of a programming language, and yet the Web is built on it. Use less HTML—learn what's really needed. Use more appropriate HTML—learn what's available and what it's there for. And [validate](https://validator.w3.org/docs/why.html) your HTML. Everyone can write invalid HTML—just invite the next person you meet to write an HTML document and validate the output—, but a professional developer can be expected to produce valid HTML. Writing correct and valid HTML is a craft to take pride in.
+Pay attention to HTML. Focus on HTML. It's important and worthwhile to invest in HTML. HTML is a document language that may not have the charm of a programming language, and yet the web is built on it. Use less HTML—learn what's really needed. Use more appropriate HTML—learn what's available and what it's there for. And [validate](https://validator.w3.org/docs/why.html) your HTML. Everyone can write invalid HTML—just invite the next person you meet to write an HTML document and validate the output—, but a professional developer can be expected to produce valid HTML. Writing correct and valid HTML is a craft to take pride in.
 
 For the next edition of the Web Almanac's chapter, let's prepare to look closer at the craft of writing HTML—and, hopefully, how we've been improving on it.
