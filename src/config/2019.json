@@ -179,6 +179,13 @@
     }
   },
   "contributors": {
+    "AbbyTsai": {
+      "name": "Abby Tsai",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/44442451?v=4&s=200"
+    },
     "kleinab": {
       "name": "Abigail Klein",
       "teams": [
