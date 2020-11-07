@@ -16,7 +16,7 @@ pip install -r requirements.txt
 pytest
 
 echo "Installing node modules"
-CALL npm install
+call npm install
 
 echo "Building website"
 call npm run generate
