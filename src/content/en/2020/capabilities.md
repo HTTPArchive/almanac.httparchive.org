@@ -4,7 +4,7 @@ chapter_number: 13
 title: Capabilities
 description: Capabilities chapter of the 2020 Web Almanac covering brand-new, powerful web platform APIs.
 authors: [christianliebel]
-reviewers: [logicalphase,tomayac]
+reviewers: [tomayac]
 analysts: [tomayac]
 translators: []
 discuss: 2049
