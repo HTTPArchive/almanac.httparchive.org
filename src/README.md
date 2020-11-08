@@ -45,6 +45,11 @@ npm run start
 
 4. In your web browser, enter the following address: http://127.0.0.1:8080
 
+To stop the server run the following:
+
+```
+npm run stop
+```
 
 ## Generating chapters
 
@@ -69,6 +74,26 @@ If you have the server up you can test all the pages are being served correctly:
 ```
 npm run test
 ```
+
+You can also run single chapters, so you don't have to wait for the full run time:
+
+```
+npm run generate en/2019/css
+```
+
+Or even patterns (note patterns must be in quotes to prevent OS attempting to match to files):
+
+```
+npm run generate ".*/2019/css"
+npm run generate "en/.*/css"
+npm run generate ".*/2020/.*"
+```
+
+There is also a file watcher, which monitors the `content` directory and automatically regenerates a chapter when it sees it being modified:
+```
+npm run watch
+```
+
 
 ## Generating Ebooks
 
