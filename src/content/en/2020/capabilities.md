@@ -83,7 +83,7 @@ Developers can estimate the available storage by calling `navigator.storage.esti
   image="storage_manager_api_estimate.png",
   alt="Number of top pages using the estimate method of the StorageManager API",
   caption="Number of top pages using the estimate method of the StorageManager API.",
-  description="Chart of the usage of StorageManager API's estimate method, based on the percent of pages monitored by HTTPArchive. It compares the usage on mobile and desktop devices. It shows a linear growth on the desktop, while it shows a hockey stick growth for mobile devices. In October, approximately 0.5 percent of both mobile and desktop pages make use of it.",
+  description="Chart of the usage of StorageManager API's estimate method, based on the number of pages monitored by HTTPArchive. It compares the usage on mobile and desktop devices. It shows a linear growth on the desktop, while it shows a hockey stick growth for mobile devices. In October, approximately 34,000 mobile sites and 27,000 desktop sites make use of it.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1853644024&format=interactive",
   sheets_gid="1811313356",
   sql_file="durable_storage_estimate_usage.sql"
