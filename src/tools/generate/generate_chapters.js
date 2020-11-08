@@ -27,14 +27,25 @@ const generate_chapters = async (chapter_match) => {
   let sitemap_languages = {};
   let ebook_chapters = [];
   let configs = {};
+  let chapter_config = {};
   let featured_quotes = {};
   let re;
   
   configs = await get_yearly_configs();
   for (const year in configs) {  
     sitemap_languages[year] = configs[year].settings[0].supported_languages;
+    for (const part in configs[year].outline) {
+      for (const chapter in configs[year].outline[part].chapters) {
+        const theconfig = configs[year].outline[part].chapters[chapter];
+        const slug = theconfig.slug;
+        if (!(year in chapter_config)) {
+          chapter_config[year] = {};
+        }
+        chapter_config[year][slug] = theconfig;
+      }
+    }
   }
-
+  
   if (chapter_match) {
     // Remove any trailing .md and replace all paths with brackets to capture components
     // en/2019/javascript.md -> (en)/(2019)/(javascript).md
@@ -66,20 +77,24 @@ const generate_chapters = async (chapter_match) => {
 
       const markdown = await fs.readFile(file, 'utf-8');
       const { metadata, body, toc } = await parse_file(markdown,chapter);
-      const chapter_featured_quote = generate_chapter_featured_quote(metadata);
-      if (Object.keys(chapter_featured_quote).length > 0) {
-        if (!(language in featured_quotes)) {
-          featured_quotes[language] = {};
+
+      // Only included "done" chapters in featured quotes, sitemaps...etc.
+      if (!chapter_config[year][chapter].todo) {
+        const chapter_featured_quote = generate_chapter_featured_quote(metadata);
+        if (Object.keys(chapter_featured_quote).length > 0) {
+          if (!(language in featured_quotes)) {
+            featured_quotes[language] = {};
+          }
+          if (!(year in featured_quotes[language])) {
+            featured_quotes[language][year] = {};
+          }
+          featured_quotes[language][year][chapter] = chapter_featured_quote;
         }
-        if (!(year in featured_quotes[language])) {
-          featured_quotes[language][year] = {};
+        if ( sitemap_languages[year].includes(language) ) {
+          sitemap.push({ language, year, chapter, metadata });
         }
-        featured_quotes[language][year][chapter] = chapter_featured_quote;
+        ebook_chapters.push({ language, year, chapter, metadata, body, toc });
       }
-      if ( sitemap_languages[year].includes(language) ) {
-        sitemap.push({ language, year, chapter, metadata });
-      }
-      ebook_chapters.push({ language, year, chapter, metadata, body, toc });
 
       await write_template(language, year, chapter, metadata, body, toc);
     } catch (error) {
