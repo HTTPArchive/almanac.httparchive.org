@@ -46,4 +46,7 @@ pgrep -f "python main.py"
 echo "Testing website"
 npm run test
 
+echo "Monitoring templates for changes"
+npm run watch &
+
 echo "Website started successfully"

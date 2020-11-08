@@ -31,4 +31,7 @@ timeout /t 2 /nobreak
 echo "Testing website"
 call npm run test
 
+echo "Monitoring templates for changes"
+start npm run watch
+
 echo "Website started successfully"
