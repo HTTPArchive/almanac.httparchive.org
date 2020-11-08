@@ -85,11 +85,15 @@
 {% block copyright %}© Web Almanac. Licensed under <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
 {% block accessibility_statement %}アクセシビリティに関する声明{% endblock %}
 
-{% block featured_chapter%}注目の章{% endblock %}
+{% block featured_chapter %}注目の章{% endblock %}
+{% block featured_chapter_last_year %}{{ year|int -1 }} Web Alamanc<br />注目の章{% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
 {% macro read_chapter(chapter) %}<span class="featured-chapter-name">{{ chapter }}</span>の章を読む{% endmacro %}
+{% endif %}
+{% if not read_last_years_chapter %}
+{% macro read_last_years_chapter(chapter) %}<span class="featured-chapter-name">{{ chapter }}</span>の章を読む{{ year|int -1 }}{% endmacro %}
 {% endif %}
 
 {% block contributors_description %}
