@@ -24,7 +24,7 @@ echo "Building website"
 call npm run generate
 
 echo "Starting website"
-start python main.py background
+start python main.py
 rem # Sleep for a couple of seconds to make sure server is up
 timeout /t 2 /nobreak
 
