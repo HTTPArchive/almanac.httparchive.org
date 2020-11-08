@@ -77,6 +77,9 @@ npm run watch &
 
 echo "Website started successfully"
 
+# If in debug more then restart server in debug mode so it picks up new files
+# Annoyingly Flask doesn't like backgrounding debug mode immeadiately
+# So need to run debug mode at end without backgrounding
 if [ "${debug}" == "1" ]; then
   if [ "$(pgrep -f 'python main.py')" ]; then
     echo "Killing server to run a fresh version in debug mode"
