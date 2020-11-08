@@ -27,7 +27,7 @@ unedited: true
 
 [Progressive Web Apps](./pwa) (PWA) are a cross-platform application model based on web technology. With the help of Service Workers, these applications run even when the user is offline. The Web App Manifest allows users to add a PWA to their home screen or program list. When opened from there, a PWA appears as a native application. However, PWAs can only use the functions and capabilities that are exposed through web platform APIs. Arbitrary native interfaces cannot be called, leaving a gap between native applications and web apps.
 
-The [Capabilities Project](https://www.chromium.org/teams/web-capabilities-fugu), informally also known as Project Fugu, is a cross-company effort by Google, Microsoft, and Intel to bridge the gap between web and native. To do so, the Chromium contributors implement new APIs exposing capabilities of the operating system to the web, while maintaining user security, privacy, and trust. These capabilities include, but are not limited to:
+The [Capabilities Project](https://www.chromium.org/teams/web-capabilities-fugu), informally also known as Project Fugu, is a cross-company effort by Google, Microsoft, and Intel to bridge the gap between web and native. This is important to keep the web relevant as a platform. To do so, the Chromium contributors implement new APIs exposing capabilities of the operating system to the web, while maintaining user security, privacy, and trust. These capabilities include, but are not limited to:
 
 - [File System Access API](https://web.dev/file-system-access/) for accessing files on the local file system
 - [File Handling API](https://web.dev/file-handling/) for registering as a handler for certain file extensions
