@@ -32,7 +32,7 @@
       <h1 class="title title-lg title-alt">{{ self.intro_title() }}</h1>
       <h2>{{ self.intro_sub_title() }}</h2>
       {{ self.mission() }}
-      {% if year < "2020" %}
+      {% if year < "2021" %}
       <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}" class="btn">
         {{ self.start_exploring() }}
       </a>
@@ -84,16 +84,16 @@
         </div>
         {% endif %}
       </div>
-      <a href="{{ url_for('chapter', year=2019, chapter=featured_chapter, lang=lang) }}" class="btn">
+      <a href="{{ url_for('chapter', year=year, chapter=featured_chapter, lang=lang) }}" class="btn">
         {{ read_chapter(localizedChapterTitles[featured_chapter]) }}
       </a>
     </div>
   </section>
   {% endmacro %}
-  {% if featured_chapters_exists(lang, 2019) %}
-  {% include "%s/2019/featured_chapters.html" % lang %}
-  {% elif featured_chapters_exists('en', 2019) %}
-  {% include "en/2019/featured_chapters.html" %}
+  {% if featured_chapters_exists(lang, year) %}
+  {% include "%s/%s/featured_chapters.html" % (lang, year) %}
+  {% elif featured_chapters_exists('en', year) %}
+  {% include "en/%s/featured_chapters.html" % year %}
   {% endif %}
   {% endblock %}
   <section id="contributors" class="contributors-container alt-bg">
