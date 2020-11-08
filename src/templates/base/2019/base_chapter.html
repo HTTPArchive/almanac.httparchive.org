@@ -66,7 +66,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
       <title>{{ self.discuss_this_chapter() }}</title>
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#comment"></use>
     </svg>    
-    <span id="num_comments">{{ self.comments() }}</span> <span data-translation id="comment-singular">{{ self.comment() }}</span>
+    <span id="num_comments">{{ self.comments_fallback() }}</span> <span data-translation id="comment-singular">{{ self.comment() }}</span>
     <span data-translation id="comment-plural">{{ self.comments() }}</span>
   </a>
   <a class="alt btn" href="{{ metadata.get('results') }}/">
