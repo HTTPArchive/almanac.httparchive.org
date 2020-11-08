@@ -1,22 +1,12 @@
 #standardSQL
 # Percent of third-party requests loaded before DOM Content Loaded event
 
-CREATE TEMP FUNCTION get_load_end_time(payload STRING)
-RETURNS INT64 LANGUAGE js AS '''
-  try {
-    var $ = JSON.parse(payload);
-    return $._load_end
-  } catch (e) {
-    return false;
-  }
-''';
-
 WITH requests AS (
   SELECT
     _TABLE_SUFFIX AS client,
     page,
     url,
-    get_load_end_time(payload) as load_end
+    SAFE_CAST(JSON_EXTRACT_SCALAR(payload, '$._load_end') AS INT64) AS load_end
   FROM
     `httparchive.requests.2020_08_01_*`
 ),
