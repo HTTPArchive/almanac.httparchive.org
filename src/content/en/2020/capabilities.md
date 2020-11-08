@@ -81,8 +81,8 @@ Developers can estimate the available storage by calling `navigator.storage.esti
 
 {{ figure_markup(
   image="storage_manager_api_estimate.png",
-  alt="Percent of top pages using the estimate method of the StorageManager API",
-  caption="Percent of top pages using the estimate method of the StorageManager API.",
+  alt="Number of top pages using the estimate method of the StorageManager API",
+  caption="Number of top pages using the estimate method of the StorageManager API.",
   description="Chart of the usage of StorageManager API's estimate method, based on the percent of pages monitored by HTTPArchive. It compares the usage on mobile and desktop devices. It shows a linear growth on the desktop, while it shows a hockey stick growth for mobile devices. In October, approximately 0.5 percent of both mobile and desktop pages make use of it.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1853644024&format=interactive",
   sheets_gid="1811313356",
@@ -90,7 +90,7 @@ Developers can estimate the available storage by calling `navigator.storage.esti
   )
 }}
 
-The Storage Manager API is supported in Chrome since 2016, Firefox since 2017, and the new Chromium-based Edge. HTTP Archive data shows that the API is used in 0.49 percent of all desktop websites tracked by the archive, and 0.48 percent of all mobile websites. Over the course of 2020, the usage of the Storage Manager API kept growing. This also makes this interface the most commonly used API in this chapter.
+The Storage Manager API is supported in Chrome since 2016, Firefox since 2017, and the new Chromium-based Edge. HTTP Archive data shows that the API is used in 27,056 desktop websites (0.49 percent) tracked by the archive, and 34,042 mobile websites (0.48 percent). Over the course of 2020, the usage of the Storage Manager API kept growing. This also makes this interface the most commonly used API in this chapter.
 
 ### Opt-in to persistent storage
 
