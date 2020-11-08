@@ -9,7 +9,7 @@ rem #
 rem 
 
 echo "Kill webserver"
-wmic Path win32_process Where "Caption Like '%python.exe%' AND CommandLine Like '%main.py%'" Call Terminate
+wmic Path win32_process Where "Caption Like '%%python.exe%%' AND CommandLine Like '%%main.py%%'" Call Terminate
 
 echo "Kill chapter_watcher"
-wmic Path win32_process Where "Caption Like '%node.exe%' AND CommandLine Like '%chapter_watcher%'" Call Terminate
+wmic Path win32_process Where "Caption Like '%%node.exe%%' AND CommandLine Like '%%chapter_watcher%%'" Call Terminate
