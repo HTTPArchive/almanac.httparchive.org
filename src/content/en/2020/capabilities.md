@@ -40,7 +40,7 @@ Everyone can propose a new capability by [creating a ticket in the Chromium bug 
 
 The codename of the Capabilities project is named after a Japanese dish: Correctly prepared, the meat of the blowfish is a special taste experience. If prepared incorrectly, however, it can be fatal. The powerful APIs of Project Fugu are extremely exciting for developers. However, they can affect the security and privacy of the user. Therefore, the Fugu team pays special attention to these issues: For instance, new interfaces require the website to be sent over a secure connection (HTTPS). Some of them require a user gesture, such as a click or key press, to prevent fraud. Other capabilities require explicit permission by the user. Developers can use all APIs as a progressive enhancement: By feature detecting the APIs, applications won't break in browsers lacking support for those capabilities. In browsers that support them, users can get a better user experience. This way, web apps [progressively enhance](https://web.dev/progressively-enhance-your-pwa/) according to the user's particular browser.
 
-This chapter gives an overview of various modern web APIs, and the state of web capabilities in 2020 based on usage data by the HTTP Archive. Due to technical limitations, the HTTP Archive only has data available for APIs that require neither permission, nor a user gesture. Where no data is available, the percentage of page loads in Google Chrome according to [Chrome Platform Status](https://chromestatus.com/metrics/feature/timeline/popularity) will be shown instead. Since some interfaces are brand-new and their usage is still very low, the statistics are not necessarily meaningful. However, in many cases trends can still be read from the data. Unless otherwise noted, the APIs are only available in Chromium-based browsers, and their specifications are in the early stages of standardization.
+This chapter gives an overview of various modern web APIs, and the state of web capabilities in 2020 based on usage data by the HTTP Archive. Due to technical limitations, the HTTP Archive only has data available for APIs that require neither permission, nor a user gesture. Where no data is available, the percentage of page loads in Google Chrome according to [Chrome Platform Status](https://chromestatus.com/metrics/feature/timeline/popularity) will be shown instead. Since some interfaces are brand-new and their usage is still very low, the statistics are not necessarily meaningful. Unlike most chapters, stats will be presented as the absolute numbers of pages rather than relative percentages, where available. However, in many cases trends can still be read from the data. Unless otherwise noted, the APIs are only available in Chromium-based browsers, and their specifications are in the early stages of standardization.
 
 ## Async Clipboard API
 
@@ -52,8 +52,9 @@ The Async Clipboard API provides two methods for reading content from the clipbo
 
 {{ figure_markup(
   image="async_clipboard_api.png",
+  alt="Percentage of page loads in Chrome using Async Clipboard API",
   caption='Percentage of page loads in Chrome using Async Clipboard API. (Source: <a href="https://chromestatus.com/metrics/feature/timeline/popularity/2369">Chrome Platform Status metrics for Async Clipboard Read</a>, <a href="https://chromestatus.com/metrics/feature/timeline/popularity/2370">Chrome Platform Status metrics for Async Clipboard Write</a>)',
-  description="TODO",
+  description="Chart of Async Clipboard API usage, based on the percentage of page loads in Chrome using this feature. It compares the usage of the read and write methods, showing an exponential growth for write over the course of 2020, while read grows linear. In October 2020, read was called during 0.0003 percent of all page loads in Chrome, write for 0.0006 percent.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1740212588&format=interactive",
   sheets_gid="2077755325"
   )
@@ -79,15 +80,16 @@ Developers can estimate the available storage by calling `navigator.storage.esti
 
 {{ figure_markup(
   image="storage_manager_api_estimate.png",
-  caption="StorageManager API :: Estimate",
-  description="TODO",
+  alt="Percent of top pages using the estimate method of the StorageManager API"
+  caption="Percent of top pages using the estimate method of the StorageManager API.",
+  description="Chart of the usage of StorageManager API's estimate method, based on the percent of pages monitored by HTTPArchive. It compares the usage on mobile and desktop devices. It shows a linear growth on the desktop, while it shows a hockey stick growth for mobile devices. In October, approximately 0.5 percent of both mobile and desktop pages make use of it.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1853644024&format=interactive",
   sheets_gid="1811313356",
   sql_file="durable_storage_estimate_usage.sql"
   )
 }}
 
-The Storage Manager API is supported in Chrome since 2016, Firefox since 2017, and the new Chromium-based Edge. HTTP Archive data shows that the API is used in 0.36 percent of all desktop websites tracked by the archive, and 0.21 percent of all mobile websites. Over the course of 2020, the usage of the Storage Manager API kept growing. This also makes this interface the most commonly used API in this chapter.
+The Storage Manager API is supported in Chrome since 2016, Firefox since 2017, and the new Chromium-based Edge. HTTP Archive data shows that the API is used in 0.49 percent of all desktop websites tracked by the archive, and 0.48 percent of all mobile websites. Over the course of 2020, the usage of the Storage Manager API kept growing. This also makes this interface the most commonly used API in this chapter.
 
 ### Opt-in to persistent storage
 
@@ -95,15 +97,16 @@ There are two categories of web storage: "Best Effort" and "Persistent", with th
 
 {{ figure_markup(
   image="storage_manager_api_persist.png",
-  caption="StorageManager API :: Persist",
-  description="TODO",
+  alt="Percent of top pages using the persist method of the StorageManager API"
+  caption="Percent of top pages using the persist method of the StorageManager API.",
+  description="Chart of the usage of StorageManager API's persist method, based on the number of pages monitored by HTTPArchive. It compares the usage on mobile and desktop devices. On desktop pages, the usage is almost steady, while there's more fluctuation on mobile devices. In October 2020, 25 desktop pages and 176 mobile pages make use of the API.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=644836316&format=interactive",
   sheets_gid="1095648844",
   sql_file="durable_storage_persist_usage.sql"
   )
 }}
 
-The `persist()` API is less often called than the `estimate()` method. Only about 0.003 percent of mobile websites make use of this API, compared to around 0.0005 percent of desktop websites. While usage on the desktop seems to remain at this low level, there is no clear trend on mobile devices.
+The `persist()` API is less often called than the `estimate()` method. Only 176 mobile pages make use of this API, compared to 25 desktop websites. While usage on the desktop seems to remain at this low level, there is no clear trend on mobile devices.
 
 ## New Notification APIs
 
@@ -115,14 +118,15 @@ On several platforms, it's common for applications to present a badge on the app
 
 {{ figure_markup(
   image="badging_api.png",
+  alt="Percentage of page loads in Chrome using Badging API",
   caption='Percentage of page loads in Chrome using Badging API. (Source: <a href="https://chromestatus.com/metrics/feature/timeline/popularity/2726">Chrome Platform Status metrics for Badge Set</a>, <a href="https://chromestatus.com/metrics/feature/timeline/popularity/2727">Chrome Platform Status metrics for Badge Clear</a>)',
-  description="TODO",
+  description="Chart of Badging API usage, based on the percentage of page loads in Chrome using this feature. It compares the set and clear methods. The usage of both methods is growing over time, with the set method generally being called more often. In October 2020, there's a sudden growth for both methods, peaking at 0.025 percent of page loads for the set method and 0.016 percent for clear.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1145004925&format=interactive",
   sheets_gid="1154751352"
   )
 }}
 
-In April 2020, Google Chrome 81 shipped the new Badging API, followed by Microsoft Edge 84 in July. After Chrome shipped the API, the usage numbers shot up. In October 2020, on 0.022 percent of all page loads in Google Chrome, the `setAppBadge()` method is called. The `clearAppBadge()` method is less often called, during around 0.014 percent of page loads.
+In April 2020, Google Chrome 81 shipped the new Badging API, followed by Microsoft Edge 84 in July. After Chrome shipped the API, the usage numbers shot up. In October 2020, on 0.025 percent of all page loads in Google Chrome, the `setAppBadge()` method is called. The `clearAppBadge()` method is less often called, during around 0.016 percent of page loads.
 
 ### Notification Triggers API
 
@@ -137,8 +141,9 @@ registration.showNotification('Title', {
 
 {{ figure_markup(
   image="notification_triggers_api.png",
+  alt="Percentage of page loads in Chrome using Notification Triggers API",
   caption='Percentage of page loads in Chrome using Notification Triggers API. (Source: <a href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">Chrome Platform Status metrics</a>)',
-  description="TODO",
+  description="Chart of Notification Triggers API usage, based on the percentage of page loads in Chrome using this feature. It shows a peak in March 2020 with approximately 0.00003 percent of page loads, dropping to zero in October 2020.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1388597384&format=interactive",
   sheets_gid="1740370570"
   )
@@ -154,15 +159,16 @@ To obtain a wake lock, call the `navigator.wakeLock.request()` method. This meth
 
 {{ figure_markup(
   image="screen_wake_lock_api.png",
-  caption="Screen Wake Lock API",
-  description="TODO",
+  alt="Number of top pages using Screen Wake Lock API",
+  caption="Numbers of top pages using Screen Wake Lock API.",
+  description="Chart of Screen Wake Lock API usage, based on the number of pages monitored by the HTTP Archive, comparing desktop and mobile pages. In October 2020, the API is used by 10 desktop and 5 mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=718278185&format=interactive",
   sheets_gid="1008442251",
   sql_file="wake_lock_acquire_screen_lock_usage.sql"
   )
 }}
 
-BettyCrocker.com, a popular cooking website in the US, offers their users an option to prevent the screen from going dark while cooking with the help of the Screen Wake Lock API. In a [case study](https://web.dev/betty-crocker/), they published that the average session duration was 3.1 times longer than normal, the bounce rate reduced by 50%, and purchase intent indicators increased by about 300 percent. The interface therefore has a directly measurable effect on the success of the website or application, repectively. The Screen Wake Lock API shipped with Google Chrome 84 in July 2020. The HTTP Archive only has data for April, May, August and September. After the release of Chrome 84, usage data quickly rose to 0.00011 percent on desktop and 0.00009 percent on mobile.
+BettyCrocker.com, a popular cooking website in the US, offers their users an option to prevent the screen from going dark while cooking with the help of the Screen Wake Lock API. In a [case study](https://web.dev/betty-crocker/), they published that the average session duration was 3.1 times longer than normal, the bounce rate reduced by 50%, and purchase intent indicators increased by about 300 percent. The interface therefore has a directly measurable effect on the success of the website or application, repectively. The Screen Wake Lock API shipped with Google Chrome 84 in July 2020. The HTTP Archive only has data for April, May, August, September and October. After the release of Chrome 84, usage rose quickly. In October 2020, the API was adopted on 10 desktop and 5 mobile pages.
 
 ## Idle Detection API
 
@@ -172,8 +178,9 @@ To do so, the API provides a new `IdleDetector` interface on the global `window`
 
 {{ figure_markup(
   image="idle_detection_api.png",
+  alt="Percentage of page loads in Chrome using Idle Detection API"
   caption='Percentage of page loads in Chrome using Idle Detection API. (Source: <a href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">Chrome Platform Status metrics</a>)',
-  description="TODO",
+  description="Chart of Idle Detection API usage, based on the percentage of page loads in Chrome using this feature. There's only data available for July and October 2020, showing a very low adoption of the API.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=963792757&format=interactive",
   sheets_gid="1324588405"
   )
@@ -211,15 +218,16 @@ At the time of this writing, only Chromium-based browsers implement this API. On
 
 {{ figure_markup(
   image="periodic_background_sync_api.png",
-  caption="Periodic Background Sync API",
-  description="TODO",
+  alt="Number of top pages using Periodic Background Sync API",
+  caption="Number of top pages using Periodic Background Sync API.",
+  description="Chart of Idle Detection API usage, based on the number of pages monitored by HTTPArchive. It compares the usage on mobile and desktop devices. Since April 2020, the API is used by one to two desktop and mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1444904371&format=interactive",
   sheets_gid="386193538",
   sql_file="periodic_background_sync_usage.sql"
   )
 }}
 
-The use of the interface is currently very low. Apart from two outliers, the use on mobile and desktop websites is very close together.
+The use of the interface is currently very low. Over 2020, only one or two pages monitored by HTTPArchive made use of this API. 
 
 ## Integration with native app stores
 
@@ -236,15 +244,16 @@ relatedApps.forEach((app) => {
 
 {{ figure_markup(
   image="get_installed_related_apps.png",
-  caption="getInstalledRelatedApps()",
-  description="TODO",
+  alt="Number of top pages using getInstalledRelatedApps()",
+  caption="Number of top pages using getInstalledRelatedApps().",
+  description="Chart of getInstalledRelatedApps() usage, based on the number of pages monitored by HTTPArchive. It compares the usage on mobile and desktop devices. It shows a steady growth for mobile devices, peaking at 363 pages in October 2020 compared to 44 desktop pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1774881171&format=interactive",
   sheets_gid="860146688",
   sql_file="get_installed_related_apps_usage.sql"
   )
 }}
 
-Over the course of 2020, the `getInstalledRelatedApps()` API shows exponential growth on mobile websites. In September, 0.005 percent of mobile websites tracked by the HTTP Archive made use of this API. On the desktop, the API does not grow quite as fast, but still strictly monotonous. This could also be due to Android stores currently providing significantly more apps than the Microsoft Store does for Windows.
+Over the course of 2020, the `getInstalledRelatedApps()` API shows a strictly monotone growth on mobile websites. In October, 363 mobile pages tracked by the HTTP Archive made use of this API. On the desktop, the API does not grow quite as fast. This could also be due to Android stores currently providing significantly more apps than the Microsoft Store does for Windows.
 
 ## Content Indexing API
 
@@ -254,8 +263,9 @@ The Content Indexing API extends the Service Worker API by providing a new `Cont
 
 {{ figure_markup(
   image="content_indexing_api.png",
+  alt="Percentage of page loads in Chrome using Content Indexing API"
   caption='Percentage of page loads in Chrome using Content Indexing API. (Source: <a href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">Chrome Platform Status metrics</a>)',
-  description="TODO",
+  description="Chart of Content Indexing API usage, based on the percentage of page loads in Chrome using this feature. It shows a relatively low usage at first, until it suddenly grows tenfold in October 2020, being used during 0.0021 percent of page loads in Chrome.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=258329620&format=interactive",
   sheets_gid="626752011"
   )
@@ -282,8 +292,9 @@ The WebSocketStream API transparently solves backpressure, as the stream readers
 
 {{ figure_markup(
   image="websocketstreams.png",
+  alt="Percentage of page loads in Chrome using WebSocketStreams",
   caption='Percentage of page loads in Chrome using WebSocketStreams. (Source: <a href="https://chromestatus.com/metrics/feature/timeline/popularity/3018">Chrome Platform Status metrics</a>)',
-  description="TODO",
+  description="Chart of WebSocketStreams usage, based on the percentage of page loads in Chrome using this feature. It shows a peak in June and July 2020, where the API was used during approximately 0.0008 percent pf page loads.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1714443590&format=interactive",
   sheets_gid="691106754"
   )
@@ -307,14 +318,15 @@ QuicTransport is a valid alternative to WebSockets, as it supports the use cases
 
 {{ figure_markup(
   image="quic_transport.png",
+  alt="Percentage of page loads in Chrome using QuicTransport",
   caption='Percentage of page loads in Chrome using QuicTransport. (Source: <a href="https://chromestatus.com/metrics/feature/timeline/popularity/3184">Chrome Platform Status metrics</a>)',
-  description="TODO",
+  description="Chart of QuicTransport usage, based on the percentage of page loads in Chrome using this feature. It shows a peak in October 2020, where the API was used during approximately 0.00089 percent pf page loads.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1571330893&format=interactive",
   sheets_gid="708893754"
   )
 }}
 
-The use of the interface is currently still so low that it's hardly measurable. In October 2020, it has increased strongly.
+The use of the interface is currently still so low that it's hardly measurable. In October 2020, it has increased strongly and is now used during 0.00089 percent of page loads in Chrome.
 
 ## Conclusion
 
