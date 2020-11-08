@@ -20,6 +20,7 @@ featured_stat_3: 363
 featured_stat_label_3: Sites allow installing related apps
 published: 2020-11-09T00:00:00.000Z
 last_updated: 2020-11-09T00:00:00.000Z
+unedited: true
 ---
 
 ## Introduction
@@ -80,7 +81,7 @@ Developers can estimate the available storage by calling `navigator.storage.esti
 
 {{ figure_markup(
   image="storage_manager_api_estimate.png",
-  alt="Percent of top pages using the estimate method of the StorageManager API"
+  alt="Percent of top pages using the estimate method of the StorageManager API",
   caption="Percent of top pages using the estimate method of the StorageManager API.",
   description="Chart of the usage of StorageManager API's estimate method, based on the percent of pages monitored by HTTPArchive. It compares the usage on mobile and desktop devices. It shows a linear growth on the desktop, while it shows a hockey stick growth for mobile devices. In October, approximately 0.5 percent of both mobile and desktop pages make use of it.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1853644024&format=interactive",
@@ -97,7 +98,7 @@ There are two categories of web storage: "Best Effort" and "Persistent", with th
 
 {{ figure_markup(
   image="storage_manager_api_persist.png",
-  alt="Percent of top pages using the persist method of the StorageManager API"
+  alt="Percent of top pages using the persist method of the StorageManager API",
   caption="Percent of top pages using the persist method of the StorageManager API.",
   description="Chart of the usage of StorageManager API's persist method, based on the number of pages monitored by HTTPArchive. It compares the usage on mobile and desktop devices. On desktop pages, the usage is almost steady, while there's more fluctuation on mobile devices. In October 2020, 25 desktop pages and 176 mobile pages make use of the API.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=644836316&format=interactive",
@@ -178,7 +179,7 @@ To do so, the API provides a new `IdleDetector` interface on the global `window`
 
 {{ figure_markup(
   image="idle_detection_api.png",
-  alt="Percentage of page loads in Chrome using Idle Detection API"
+  alt="Percentage of page loads in Chrome using Idle Detection API",
   caption='Percentage of page loads in Chrome using Idle Detection API. (Source: <a href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">Chrome Platform Status metrics</a>)',
   description="Chart of Idle Detection API usage, based on the percentage of page loads in Chrome using this feature. There's only data available for July and October 2020, showing a very low adoption of the API.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=963792757&format=interactive",
@@ -263,7 +264,7 @@ The Content Indexing API extends the Service Worker API by providing a new `Cont
 
 {{ figure_markup(
   image="content_indexing_api.png",
-  alt="Percentage of page loads in Chrome using Content Indexing API"
+  alt="Percentage of page loads in Chrome using Content Indexing API",
   caption='Percentage of page loads in Chrome using Content Indexing API. (Source: <a href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">Chrome Platform Status metrics</a>)',
   description="Chart of Content Indexing API usage, based on the percentage of page loads in Chrome using this feature. It shows a relatively low usage at first, until it suddenly grows tenfold in October 2020, being used during 0.0021 percent of page loads in Chrome.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=258329620&format=interactive",
