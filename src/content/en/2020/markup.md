@@ -17,7 +17,7 @@ featured_quote: We approach near-complete adoption of living HTML, are quick to 
 featured_stat_1: 85.73%
 featured_stat_label_1: Percentage of pages that use the "living" HTML doctype
 featured_stat_2: 30,073
-featured_stat_label_2: Number of non-standard `h7` elements
+featured_stat_label_2: Number of non-standard <code>h7</code> elements
 featured_stat_3: 25.24 KB
 featured_stat_label_3: Weight of the median document
 published: 2020-11-01T00:00:00.000Z
