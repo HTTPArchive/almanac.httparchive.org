@@ -98,8 +98,8 @@ There are two categories of web storage: "Best Effort" and "Persistent", with th
 
 {{ figure_markup(
   image="storage_manager_api_persist.png",
-  alt="Percent of top pages using the persist method of the StorageManager API",
-  caption="Percent of top pages using the persist method of the StorageManager API.",
+  alt="Number of top pages using the persist method of the StorageManager API",
+  caption="Number of top pages using the persist method of the StorageManager API.",
   description="Chart of the usage of StorageManager API's persist method, based on the number of pages monitored by HTTPArchive. It compares the usage on mobile and desktop devices. On desktop pages, the usage is almost steady, while there's more fluctuation on mobile devices. In October 2020, 25 desktop pages and 176 mobile pages make use of the API.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=644836316&format=interactive",
   sheets_gid="1095648844",
