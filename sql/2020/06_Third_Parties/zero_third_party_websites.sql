@@ -5,38 +5,48 @@
 
 WITH requests AS (
   SELECT
+    _TABLE_SUFFIX AS client,
     pageid AS page,
+    crawlid,
     req_host AS host
   FROM
-    `httparchive.summary_requests.2020_08_01_mobile`
+    `httparchive.summary_requests.2020_08_01_*`
 ),
 pages AS (
   SELECT
+    _TABLE_SUFFIX AS client,
     pageid,
+    crawlid,
+    wptid,
+    reqTotal,
     url
   FROM
-    `httparchive.summary_pages.2020_08_01_mobile`
+    `httparchive.summary_pages.2020_08_01_*`
 ),
 base AS (
   SELECT
     LOGICAL_AND(NET.HOST(host) = NET.HOST(url)) zero_third_party,
-    url
+    url,
+    requests.crawlid AS requests_crawl,
+    pages.crawlid AS pages_crawl,
+    wptid,
+    reqTotal
   FROM
     requests
-  INNER JOIN
+  JOIN
     pages
   ON
     requests.page = pages.pageid
   GROUP BY
-    url
+    url, requests_crawl, pages_crawl, wptid, reqTotal
+  HAVING
+    zero_third_party = TRUE
+
 )
 
 SELECT
-  url
+  url, requests_crawl, pages_crawl, wptid, reqTotal
 FROM
   base
-WHERE
-  zero_third_party = TRUE
-  AND REGEXP_CONTAINS(url, r"^https:\/\/www\.[a-z]+\.com\/$")
 ORDER BY
-  url
+  reqTotal DESC
