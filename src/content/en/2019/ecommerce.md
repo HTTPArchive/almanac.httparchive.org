@@ -2,7 +2,7 @@
 part_number: III
 chapter_number: 13
 title: Ecommerce
-description: Ecommerce chapter of the 2019 Web Almanac covering ecommerce platforms, payloads, images, third-parties, performance, seo, and PWAs.
+description: Ecommerce chapter of the 2019 Web Almanac covering ecommerce platforms, payloads, images, third-parties, performance, SEO, and PWAs.
 authors: [samdutton, alankent]
 reviewers: [voltek62]
 analysts: [rviscomi]
