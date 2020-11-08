@@ -19,7 +19,7 @@ pages AS (
 ),
 base AS (
   SELECT
-    LOGICAL_AND(IF(NET.HOST(host) = NET.HOST(url), TRUE, FALSE)) zero_third_party,
+    LOGICAL_AND(NET.HOST(host) = NET.HOST(url)) zero_third_party,
     url
   FROM
     requests
