@@ -3,7 +3,7 @@
 part_number: II
 chapter_number: 14
 title: PWA
-description: TODO
+description: PWA chapter of the 2020 Web Almanac covering service workers (registations, installability, events and filesizes), Web App Manifests properties, and Workbox.
 authors: [hemanth, logicalphase]
 reviewers: [thepassle, jadjoubran, pearlbea, gokulkrishh, jaisanth]
 analysts: [bazzadp]

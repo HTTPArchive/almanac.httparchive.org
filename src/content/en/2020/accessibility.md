@@ -3,7 +3,7 @@
 part_number: II
 chapter_number: 8
 title: Accessibility
-description: TODO
+description: Accessibility chapter of the 2020 Web Almanac covering ease of reading, media, ease of navigation, and compatibility with assistive technologies.
 authors: [oluoluoxenfree, alextait1]
 reviewers: [aardrian, ericwbailey, obto]
 analysts: [obto]

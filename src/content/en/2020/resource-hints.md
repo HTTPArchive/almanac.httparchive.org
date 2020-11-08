@@ -3,7 +3,7 @@
 part_number: IV
 chapter_number: 21
 title: Resource Hints
-description: TODO
+description: Resource Hints chapter of the 2020 Web Almanac covering usage of dns-prefetch, preconnect, preload, prefetch, priority hints, and native lazy loading.
 authors: [Zizzamia]
 reviewers: [notwillk, giopunt, jessnicolet, pmeenan, mgechev]
 analysts: [khempenius]

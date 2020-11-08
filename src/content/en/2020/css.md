@@ -3,7 +3,7 @@
 part_number: I
 chapter_number: 1
 title: CSS
-description: TODO
+description: CSS chapter of the 2020 Web Almanac covering color, units, selectors, layout, typography and fonts, spacing, decoration, animation, and media queries.
 authors: [LeaVerou, svgeesus, rachelandrew]
 reviewers: [fantasai, mirisuzanne, j9t, catalinred, hankchizljaw]
 analysts: [Tiggerito]

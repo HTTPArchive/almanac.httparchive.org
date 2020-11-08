@@ -3,7 +3,7 @@
 part_number: II
 chapter_number: 7
 title: SEO
-description: TODO
+description: SEO chapter of the 2020 Web Almanac covering content, meta tags, indexability, linking, speed, structured data, internationalization, SPAs, AMP and security.
 authors: [aleyda, ipullrank, fellowhuman1101]
 reviewers: [clarkeclark, natedame, catalinred, aysunakarsu, ashleyish, dsottimano, dwsmart, en3r0, Gathea, rachellcostello, ibnesayeed]
 analysts: [Tiggerito, max-ostapenko, antoineeripret]

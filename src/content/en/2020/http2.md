@@ -3,7 +3,7 @@
 part_number: IV
 chapter_number: 22
 title: HTTP/2
-description: TODO
+description: HTTP/2 chapter of the 2020 Web Almanac covering adoption and impact of HTTP/2, HTTP/2 Push, HTTP/2 Issues, and HTTP/3.
 authors: [dotjs]
 reviewers: [MikeBishop, LPardue, rmarx, ibnesayeed, pmeenan, Nooshu, gregorywolf, bazzadp]
 analysts: [gregorywolf]

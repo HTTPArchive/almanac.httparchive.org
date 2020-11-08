@@ -3,7 +3,7 @@
 part_number: I
 chapter_number: 4
 title: Fonts
-description: TODO
+description: Fonts chapter of the 2020 Web Almanac covering where fonts are loaded from, font formats, font loading performance, variable fonts and color fonts.
 authors: [jpamental, davelab6]
 reviewers: [malchata, RoelN, notwaldorf, mandymichael, svgeesus, rsheeter]
 analysts: [AbbyTsai]

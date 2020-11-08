@@ -3,7 +3,7 @@
 part_number: IV
 chapter_number: 19
 title: Compression
-description: TODO
+description: Compression chapter of the 2020 Web Almanac covering HTTP compression, algorithms, content types, 1st party and 3rd party compression and opportunities.
 authors: [mo271]
 reviewers: [jyrkialakuijala, sboukortt, veluca93, paulcalvano]
 analysts: [AbbyTsai]

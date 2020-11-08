@@ -3,7 +3,7 @@
 part_number: II
 chapter_number: 11
 title: Security
-description: TODO
+description: Security chapter of the 2020 Web Almanac covering Transport Layer Security (TLS(), mixed content, security headers, cookies, and Subresource Integrity.
 authors: [nrllh, tomvangoethem]
 reviewers: [cqueern, bazzadp, edmondwwchan]
 analysts: [AAgar, tomvangoethem]

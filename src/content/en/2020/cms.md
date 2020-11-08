@@ -3,7 +3,7 @@
 part_number: III
 chapter_number: 15
 title: CMS
-description: TODO
+description: CMS chapter of the 2020 Web Almanac covering CMS adoption, how CMS suites are built, User experience of CMS powered websites, and CMS innovation.
 authors: [alexdenning]
 reviewers: [sirjonathan, ernee, amedina]
 analysts: [GregBrimble, rviscomi]

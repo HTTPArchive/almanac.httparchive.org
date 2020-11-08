@@ -3,7 +3,7 @@
 part_number: II
 chapter_number: 10
 title: Privacy
-description: TODO
+description: Privacy chapter of the 2020 Web Almanac covering online tracking cookies, privacy enhancing technologies (PET) and privacy policies
 authors: [ydimova]
 reviewers: [ldevernay]
 analysts: [ydimova, max-ostapenko]

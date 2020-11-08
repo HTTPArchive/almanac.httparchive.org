@@ -3,7 +3,7 @@
 part_number: III
 chapter_number: 16
 title: Ecommerce
-description: TODO
+description: Ecommerce chapter of the 2020 Web Almanac covering ecommerce platforms, payloads, images, third-parties, performance, SEO, and PWAs.
 authors: [rockeynebhwani]
 reviewers: [jrharalson, drewzboto]
 analysts: [jrharalson]

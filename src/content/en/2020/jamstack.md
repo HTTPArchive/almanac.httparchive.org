@@ -3,7 +3,7 @@
 part_number: III
 chapter_number: 17
 title: Jamstack
-description: TODO
+description: Jamstack chapter of the 2020 Web Almanac covering the use of JamStack across the web including static site generators, static site hosting and headless CMSss
 authors: [ahmadawais]
 reviewers: [tpiros, phacks, YuLingCheng]
 analysts: [denar90, remotesynth]

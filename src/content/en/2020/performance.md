@@ -3,7 +3,7 @@
 part_number: II
 chapter_number: 9
 title: Performance
-description: TODO
+description: Performance chapter of the 2020 Web Almanac covering First Contentful Paint (FCP), Time to First Byte (TTFB), and First Input Delay (FID).
 authors: [thefoxis]
 reviewers: [dimension85, borisschapira, estelle, zeman, rviscomi, obto, noamr, ashrith-kulai, Zizzamia]
 analysts: [max-ostapenko, dooman87]

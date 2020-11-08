@@ -3,7 +3,7 @@
 part_number: IV
 chapter_number: 18
 title: Page Weight
-description: TODO
+description: Page Weight chapter of the 2020 Web Almanac covering why page weight matters, bandwidth, complex pages, page weight over time, page requests, and file formats.
 authors: [henrihelvetica]
 reviewers: [tammyeverts, borisschapira, khempenius]
 analysts: [paulcalvano]

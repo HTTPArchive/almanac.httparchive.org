@@ -3,7 +3,7 @@
 part_number: I
 chapter_number: 6
 title: Third Parties
-description: TODO
+description: Third Parties chapter of the 2020 Web Almanac covering data of what third parties are used, what they are used for, performance impacts and privacy impacts.
 authors: [simonhearne]
 reviewers: [tammyeverts, jzyang]
 analysts: [max-ostapenko]

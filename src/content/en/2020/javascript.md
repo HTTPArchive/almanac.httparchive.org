@@ -3,7 +3,7 @@
 part_number: I
 chapter_number: 2
 title: JavaScript
-description: TODO
+description: JavaScript chapter of the 2020 Web Almanac covering how much JavaScript we use on the web, compression, libraries and frameworks, loading, and source maps.
 authors: [tkadlec]
 reviewers: [ibnesayeed, jadjoubran, ahmadawais, denar90]
 analysts: [rviscomi, paulcalvano]

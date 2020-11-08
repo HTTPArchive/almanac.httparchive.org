@@ -3,7 +3,7 @@
 part_number: II
 chapter_number: 12
 title: Mobile Web
-description: TODO
+description: Mobile Web chapter of the 2020 Web Almanac covering page loading, textual content, zooming and scaling, buttons and links, and ease of filling out forms.
 authors: [spanicker, mdiblasio]
 reviewers: [malchata, obto, cheneytsai]
 analysts: [obto]

@@ -3,7 +3,7 @@
 part_number: I
 chapter_number: 5
 title: Media
-description: TODO
+description: Media chapter of the 2020 Web Almanac covering image file sizes and formats, responsive images, client hints, lazy loading, accessibility and video.
 authors: [tpiros, bseymour]
 reviewers: [nhoizey, zcorpan, colinbendell, dougsillars]
 analysts: [smatei]
