@@ -58,7 +58,7 @@ const nest_headings = (source, current_level = 1) => {
   return target;
 };
 
-const get_level = (element) => Number(element.localName.match(/\d+/)[0]);
+const get_level = (element) => element && Number(element.localName.match(/\d+/)[0]);
 
 module.exports = {
   generate_table_of_contents

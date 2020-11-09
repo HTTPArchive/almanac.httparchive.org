@@ -10,8 +10,16 @@ translators: [ksakae]
 discuss: 1761
 results: https://docs.google.com/spreadsheets/d/108g6LXdC3YVsxmX1CCwrmpZ3-DmbB8G_wwgQHX5pn6Q/
 queries: 06_Fonts
+zachleat_bio: Zachは<a href="https://www.filamentgroup.com/">Filament Group</a>のWeb開発者だ。彼は現在、<a href="https://www.zachleat.com/web/fonts/">web fonts</a>と<a href="https://www.zachleat.com/web/introducing-eleventy/">static site generators</a>に夢中だ。彼の<a href="https://www.zachleat.com/web/speaking/">講演履歴</a>には、JAMstack_conf、Beyond Tellerrand、Smashing Conference、CSSConf、そして<a href="https://www.zachleat.com/web/whitehouse/">The White House</a>のようなイベントでの8カ国での講演が含まれています。また、<a href="http://nejsconf.com/">NEJS CONF</a>や<a href="http://nebraskajs.com">NebraskaJS</a>のミートアップも手伝っている。
+featured_quote: ウェブフォントは、ウェブ上で美しく機能的なタイポグラフィを可能にします。ウェブフォントを使用することは、デザインに力を与えるだけでなく、デザインのサブセットを民主化します。しかし、どんなに良いことがあっても、ウェブフォントが適切に読み込まれていないと、サイトのパフォーマンスに大きな悪影響を及ぼすこともあります。
+featured_stat_1: 74.9%
+featured_stat_label_1: 3P Googleフォントを使用したフォントリクエスト
+featured_stat_2: 29%
+featured_stat_label_2: Google Fontsスタイルシートのリンクを含むページの割合
+featured_stat_3: 718
+featured_stat_label_3: 1ページでのフォントのリクエストが多い
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## 序章

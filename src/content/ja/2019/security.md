@@ -10,8 +10,17 @@ translators: [ksakae]
 discuss: 1763
 results: https://docs.google.com/spreadsheets/d/1Zq2tQhPE06YZUcbzryRrBE6rdZgHHlqEp2XcgS37cm8/
 queries: 08_Security
+ScottHelme_bio: Scott Helmeはセキュリティ研究者であり、<a href="https://report-uri.com">report-uri.com</a> と <a href="https://securityheaders.com">securityheaders.com</a> の創設者でもあります。Twitterでは、<a href="https://twitter.com/Scott_Helme">@Scott_Helme</a>でセキュリティの話をしたり、<a href="https://scotthelme.co.uk">scotthelme.co.uk</a>でブログを書いたりしています。
+arturjanc_bio: Artur Jancは Google の情報セキュリティエンジニアで、GoogleとWeb全体のWebプラットフォームのセキュリティメカニズムの設計と採用に取り組んでいます。<a href="https://twitter.com/arturjanc">@arturjanc on Twitter</a>として、インターネット上の人々と議論しています。
+featured_quote: Webの機能が向上し、より多くの機密データへのアクセスが可能になるにつれ、開発者が自社のアプリケーションを保護するためにWebセキュリティ機能を採用することがますます重要になってきています。この章で紹介するセキュリティ機能は、Webプラットフォーム自体に組み込まれた防御機能であり、すべてのWeb制作者が利用できます。
+featured_stat_1: 79%
+featured_stat_label_1: HTTPSを使用しているサイト
+featured_stat_2: 41%
+featured_stat_label_2: TLSv1.3を使用しているサイト
+featured_stat_3: 4.43%
+featured_stat_label_3: CSPを使用しているサイト
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## 序章

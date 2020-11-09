@@ -10,8 +10,17 @@ translators: [ksakae]
 discuss: 1766
 results: https://docs.google.com/spreadsheets/d/19BI3RQc_vR9bUPPZfVsF_4gpFWLNT6P0pLcAdL-A56c/
 queries: 11_PWA
+tomayac_bio: Thomas SteinerはGoogle HamburgのWeb Developer Advocateで、標準化、ベストプラクティスの作成と共有、研究を通じた Web のより良い場所づくりに焦点を当てています。彼は <a href="https://blog.tomayac.com/">blog.tomayac.com</a> でブログを書いており、<a href="https://twitter.com/tomayac">@tomayac</a> としてツイートしています。
+jeffposnick_bio: Jeff PosnickはGoogleのWeb Developer Relationsチームのメンバーで、ニューヨークに拠点を置いています。彼の関心事は、<a href="https://developers.google.com/web/tools/workbox/">Workbox</a>、プログレッシブウェブアプリのためのサービスワーカーライブラリのセットです。<a href="https://jeffy.info">https://jeffy.info</a> でブログを書いており、<a href="https://twitter.com/jeffposnick">@jeffposnick</a> としてツイートしています。
+featured_quote: プログレッシブウェブアプリ（PWA）は、サービスワーカーAPIのようなプラットフォームプリミティブの上に構築された新しいクラスのウェブアプリケーションです。サービスワーカーは、アプリケーションがネットワークプロキシとして動作し、ウェブアプリの送信要求を傍受し、プログラム的な応答またはキャッシュされた応答で応答することで、ネットワークに依存しないロードをサポートすることを可能にします。
+featured_stat_1: 0.44%
+featured_stat_label_1: サービスワーカーを登録しているサイト
+featured_stat_2: 15%
+featured_stat_label_2: サービスワーカーを利用したページビュー
+featured_stat_3: 57%
+featured_stat_label_3: <code>standalone</code> <code>display</code>プロパティを使用するPWA
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## 導入

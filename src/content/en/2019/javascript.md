@@ -10,8 +10,16 @@ translators: []
 discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/
 queries: 01_JavaScript
+housseindjirdeh_bio: Houssein is a Developer Advocate at Google working on speed, performance and the web framework ecosystem. He tweets at <a href="https://twitter.com/hdjirdeh">@hdjirdeh</a> and blogs at <a href="https://houssein.me/">https://houssein.me/</a>.
+featured_quote: JavaScript is the most costly resource we send to browsers; having to be downloaded, parsed, compiled, and finally executed. Although browsers have significantly decreased the time it takes to parse and compile scripts, download and execution have become the most expensive stages when JavaScript is processed by a web page.
+featured_stat_1: 89%
+featured_stat_label_1: Sites with more third-party code than first-party
+featured_stat_2: 83%
+featured_stat_label_2: Sites that use jQuery
+featured_stat_3: 4.6%
+featured_stat_label_3: Home pages using React
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introduction

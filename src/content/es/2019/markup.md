@@ -1,7 +1,7 @@
 ---
 part_number: I
 chapter_number: 3
-title: Markup
+title: Marcado Web
 description: Capítulo sobre marcado del Web Almanac de 2019 que cubre elementos utilizados, elementos personalizados, valor, productos y casos de uso comunes.
 authors: [bkardell]
 reviewers: [zcorpan, tomhodgins, matthewp]
@@ -10,8 +10,16 @@ translators: [c-torres]
 discuss: 1758
 results: https://docs.google.com/spreadsheets/d/1WnDKLar_0Btlt9UgT53Giy2229bpV4IM2D_v6OM_WzA/
 queries: 03_Markup
+bkardell_bio: <i lang="en">Brian Kardell is developer advocate at <a href="https://igalia.com">Igalia</a>, standards contributor, <a href="https://bkardell.com">blogger</a>, and is currently the W3C Advisory Committee Representative for the <a href="https://openjsf.org/">Open JS Foundation</a>. He was a founder of the Extensible Web Community Group and co-author of <a href="https://extensiblewebmanifesto.org">The Extensible Web Manifesto</a>.</i>
+featured_quote: A partir de julio de 2019, el HTTP Archive ha comenzado a recopilar todos los nombres de elementos usados en el DOM para aproximadamente 4,4 millones de páginas de inicio de computadoras de escritorio y alrededor de 5,3 millones de páginas de inicio de dispositivos móviles que ahora podemos comenzar a investigar y diseccionar. Esta exploración encontró *más de 5.000 nombres distintos de elementos no estándar* en estas páginas, por lo que limitamos el número total de elementos distintos que contamos a los 'principales' (explicado a continuación) 5.048.
+featured_stat_1: 11
+featured_stat_label_1: Elementos utilizados en más del 90% de las páginas
+featured_stat_2: 15%
+featured_stat_label_2: Páginas que contienen elementos obsoletos
+featured_stat_3: 65
+featured_stat_label_3: Variantes de carruseles encontradas
 published: 2019-11-04T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introduction

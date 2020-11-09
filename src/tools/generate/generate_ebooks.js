@@ -1,7 +1,5 @@
 const fs = require('fs-extra');
 const ejs = require('ejs');
-const prettier = require('prettier');
-
 const { size_of } = require('./shared');
 
 const update_links = (chapter) => {
@@ -54,7 +52,8 @@ const generate_ebooks = async (ebook_chapters,configs) => {
 
         for (let chapter_config of part_config.chapters) {
           let chapter = ebook_chapters.find(
-            (c) => c.language === language && c.metadata.chapter_number == chapter_config.chapter
+            (c) => c.year === year && c.language === language
+                   && c.metadata.chapter_number == chapter_config.chapter
           );
 
           chapter.body = update_links(chapter);
@@ -77,12 +76,7 @@ const write_template = async (language, year, ebook) => {
 
   if (fs.existsSync(template)) {
     let html = await ejs.renderFile(template, { ebook });
-    let fomatted_html = prettier.format(html, {
-      parser: 'html',
-      printWidth: Number.MAX_SAFE_INTEGER
-    });
-
-    await fs.outputFile(path, fomatted_html, 'utf8');
+    await fs.outputFile(path, html, 'utf8');
     await size_of(path);
   }
 };

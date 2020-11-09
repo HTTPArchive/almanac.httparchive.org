@@ -10,8 +10,16 @@ translators: [MSakamaki]
 discuss: 1762
 results: https://docs.google.com/spreadsheets/d/1zWzFSQ_ygb-gGr1H1BsJCfB7Z89zSIf7GX0UayVEte4/
 queries: 07_Performance
+rviscomi_bio: Rick ViscomiはGoogle のシニア開発プログラムエンジニアで、HTTP ArchiveやChrome UX Reportなどのウェブ透過性プロジェクトに携わり、ウェブサイトの構築方法と体験の交差点を研究しています。Rickは、<a href="https://www.youtube.com/playlist?list=PLNYkxOF6rcIBGvYSYO-VxOsaYQDw5rifJ">The State of the Web</a>のホストを務めており、専門家がウェブのトレンドについて議論しています。Rickは、ウェブのパフォーマンスをテストするためのガイドである <a href="https://usingwpt.com">Using WebPageTest</a> の共著者であり、<a href="https://dev.to/rick_viscomi">dev.to</a> でウェブについて頻繁に執筆していますし、<a href="https://twitter.com/rick_viscomi">@rick_viscomi </a> の Twitter でもウェブについて書いています。
+featured_quote: パフォーマンスはユーザー体験の内臓的な部分です。多くのウェブサイトでは、ページの読み込み時間を高速化してユーザー体験を向上させることは、コンバージョン率の向上につながります。逆に、パフォーマンスが悪いと、ユーザーは頻繁にコンバージョンしないし、不満でページを激怒してクリックしてしまうことさえ観察されています。
+featured_stat_1: 13%
+featured_stat_label_1: FCPが速いサイト
+featured_stat_2: 42%
+featured_stat_label_2: TTFBが遅いサイト
+featured_stat_3: 40%
+featured_stat_label_3: FIDが速いサイト
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## 導入

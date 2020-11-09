@@ -8,11 +8,24 @@ When prototyping queries, it's advisable to use the [`parsed_css_1k`](https://co
 
 ## [CSS utils](../../lib/css-utils.js)
 
+This file provides JS utility functions to be used by the queries that depend on the `parsed_css` table.
+It consists of two libraries:
+
+### Rework Utils
+
+Utilities to make it easier to write metrics that operate on the Rework AST
+
 - **Source**: https://github.com/LeaVerou/rework-utils/tree/master/src
 - **Playground**: https://projects.verou.me/rework-utils/
 - **Docs**: https://projects.verou.me/rework-utils/docs/
 
-This file provides JS utility functions to be used by the queries that depend on the `parsed_css` table.
+### Parsel
+
+A selector parser & specificity calculator.
+
+- **Source**: https://github.com/LeaVerou/parsel/tree/master/
+- **Playground**: https://projects.verou.me/parsel/
+- **Docs**: https://projects.verou.me/parsel/#api
 
 ## Related resources
 
