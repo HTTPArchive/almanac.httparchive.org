@@ -242,7 +242,7 @@ Not that much changed [compared to 2019](../2019/markup#fig-3)!
 
 ### Top elements
 
-In 2019, the Markup chapter of the of the Web Almanac featured the most frequently used elements in reference to [Ian Hickson's work in 2005](https://web.archive.org/web/20060203031713/http://code.google.com/webstats/2005-12/elements.html). We found this useful and had a look at that data again:
+In 2019, the Markup chapter of the Web Almanac featured the most frequently used elements in reference to [Ian Hickson's work in 2005](https://web.archive.org/web/20060203031713/http://code.google.com/webstats/2005-12/elements.html). We found this useful and had a look at that data again:
 
 <figure markdown>
 | 2005 | 2019 | 2020 |
@@ -706,7 +706,7 @@ Using `target="_blank"` has been known to be a [security vulnerability](https://
 
 As a rule of thumb and for [usability reasons](https://www.nngroup.com/articles/new-browser-windows-and-tabs/), prefer not to use `target="_blank"`. 
 
-<p class="note">Within the latest Safari and Firefox versions, setting <code>target="_blank"</code> on <code>a</code> elements implicitly provides the same <code>rel</code> behavior as setting <code>rel="noopener"</code>. This is currently being <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=898942">implemented in Chromium</a> as well.</p>
+<p class="note">Within the latest Safari and Firefox versions, setting <code>target="_blank"</code> on <code>a</code> elements implicitly provides the same <code>rel</code> behavior as setting <code>rel="noopener"</code>. This is already <a href="https://chromium-review.googlesource.com/c/chromium/src/+/1630010">implemented in Chromium</a> as well and will land in Chrome 88.</p>
 
 {# TODO(editors, authors): The following two sections each read like conclusions. Consider merging. #}
 ## Status and trends
