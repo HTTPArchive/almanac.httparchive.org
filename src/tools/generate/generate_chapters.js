@@ -20,6 +20,7 @@ converter.setFlavor('github');
 converter.setOption('simpleLineBreaks', false);
 converter.setOption('tablesHeaderId', false);
 converter.setOption('ghMentions', false);
+converter.setOption('customizedHeaderId', true);
 
 const generate_chapters = async (chapter_match) => {
 
