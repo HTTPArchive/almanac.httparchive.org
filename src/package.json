@@ -19,12 +19,13 @@
     "watch": "node ./tools/generate/chapter_watcher",
     "ebooks": "node ./tools/generate/generate_ebook_pdfs",
     "deploy": "./tools/scripts/deploy.sh",
+    "stage": "./tools/scripts/deploy.sh -n",
     "start": "run-script-os",
-    "start:darwin:linux": "./tools/scripts/run_and_test_website.sh",
+    "start:darwin:linux": "./tools/scripts/run_and_test_website.sh -d",
     "start:win32": "call tools/scripts/run_and_test_website.bat",
     "stop": "run-script-os",
-    "stop:darwin:linux": "pkill -9 python main.py",
-    "stop:win32": "wmic Path win32_process Where \"Caption Like '%python.exe%' AND CommandLine Like '%main.py%'\" Call Terminate"
+    "stop:darwin:linux": "./tools/scripts/stop_website.sh",
+    "stop:win32": "call tools/scripts/stop_website.bat"
   },
   "devDependencies": {
     "ejs": "3.1.5",
