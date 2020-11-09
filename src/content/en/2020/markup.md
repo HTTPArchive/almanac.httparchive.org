@@ -21,7 +21,7 @@ featured_stat_label_2: Number of non-standard `h7` elements
 featured_stat_3: 25.24 KB
 featured_stat_label_3: Weight of the median document
 published: 2020-11-01T00:00:00.000Z
-last_updated: 2020-11-07T00:00:00.000Z
+last_updated: 2020-11-09T00:00:00.000Z
 unedited: true
 ---
 
