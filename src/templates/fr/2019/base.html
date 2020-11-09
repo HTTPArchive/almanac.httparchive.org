@@ -86,10 +86,14 @@ Notre mission est de combiner les statistiques brutes et les tendances de HTTP A
 {% block accessibility_statement %}Déclaration d’accessibilité{% endblock %}
 
 {% block featured_chapter %}Focus sur le chapitre…{% endblock %}
+{% block featured_chapter_last_year %}Focus sur le chapitre<br />de le {{ year|int-1 }} Web Almanac{% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
 {% macro read_chapter(chapter) %}Lire le chapitre&nbsp;: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
+{% endif %}
+{% if not read_last_years_chapter %}
+{% macro read_last_years_chapter(chapter) %}Lire le {{ year|int-1 }} chapitre&nbsp;: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
 {% endif %}
 
 {% block contributors_description %}
