@@ -52,8 +52,8 @@ const generate_chapters = async (chapter_match) => {
     chapter_match = chapter_match.replace(/\.md$/,'');
     chapter_match = chapter_match.replace(/^content[\/\\]*/,'');
     chapter_match = (process.platform != 'win32')
-                ? 'content\/' +  '(' + chapter_match.replace(/\//g,')/(') + ')\.md'
-                : 'content\\' +  '(' + chapter_match.replace(/\\/g,')\(') + ')\.md';
+                ? 'content\/' +  '(' + chapter_match.replace(/\//g,')/(') + ').md'
+                : 'content\\\\' +  '(' + chapter_match.replace(/\\/g,')\\\\(') + ').md';
     re = new RegExp(chapter_match);
   } else {
     re = (process.platform != 'win32')
