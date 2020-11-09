@@ -23,7 +23,7 @@ This script installs all the required dependencies needed to run the
 Web Almanac website providing you have python and node installed.
 
     -h   display this help and exit
-    -d   debug mode (watches files to change)
+    -d   debug mode (watches files for changes)
 EOF
 }
 
@@ -72,15 +72,16 @@ pgrep -f "python main.py"
 echo "Testing website"
 npm run test
 
-echo "Monitoring templates for changes"
-npm run watch &
-
 echo "Website started successfully"
 
 # If in debug more then restart server in debug mode so it picks up new files
 # Annoyingly Flask doesn't like backgrounding debug mode immeadiately
 # So need to run debug mode at end without backgrounding
 if [ "${debug}" == "1" ]; then
+
+  echo "Monitoring templates for changes"
+  npm run watch &
+
   if [ "$(pgrep -f 'python main.py')" ]; then
     echo "Killing server to run a fresh version in debug mode"
     pkill -9 python main.py
@@ -88,4 +89,5 @@ if [ "${debug}" == "1" ]; then
 
   echo "Starting website in foreground mode so it reloads on file changes"
   python main.py
+
 fi
