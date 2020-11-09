@@ -4,11 +4,7 @@
 {% block image_height %}562{% endblock %}
 {% block image_width %}715{% endblock %}
 
-{% if featured_chapters_exists(lang, year) or featured_chapters_exists('en', year) %}
-{% set year_with_chapters = true %}
-{% else %}
-{% set year_with_chapters = false %}
-{% endif %}
+{% set year_with_chapters = featured_chapters_exists(lang, year) or featured_chapters_exists('en', year) %}
 
 {% block breadcrumb %}
 <script type="application/ld+json">
