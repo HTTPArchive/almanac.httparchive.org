@@ -25,12 +25,17 @@
             <li><a href="#wappalyzer">Wappalyzer</a></li>
             <li><a href="#chrome-ux-report">Chrome UX Report</a></li>
             <li><a href="#third-party-web">Third Party Web</a></li>
-            <li><a href="#rework-css">Rework CSS</a></li>
+            <li><a href="#rework-css">Rework CSS</a>
+              <ul>
+                <li><a href="#rework-utils">Rework Utils</a></li>
+              </ul>
+            </li>
+            <li><a href="#parsel">Parsel</a></li>
           </ul>
         </li>
         <li><a href="#process">Analytical process</a>
           <ul>
-            <li><a href="#brainstorming">Brainstorming</a></li>
+            <li><a href="#planning">Planning</a></li>
             <li><a href="#analysis">Analysis</a></li>
             <li><a href="#interpretation">Interpretation</a></li>
           </ul>
@@ -54,15 +59,15 @@
         <h2 id="overview"><a href="#overview" class="anchor-link">Overview</a></h2>
 
         <p>
-          The Web Almanac is a project organized by <a href="https://httparchive.org">HTTP Archive</a>. HTTP Archive was started in 2010 by Steve Souders with the mission to track how the web is built. It evaluates the composition of millions of web pages on a monthly basis and makes its terabytes of metadata available for analysis on <a href="https://httparchive.org/faq#how-do-i-use-bigquery-to-write-custom-queries-over-the-data">BigQuery</a>. Learn more <a href="https://httparchive.org/about">about HTTP Archive</a>.
+          The Web Almanac is a project organized by <a href="https://httparchive.org">HTTP Archive</a>. HTTP Archive was started in 2010 by Steve Souders with the mission to track how the web is built. It evaluates the composition of millions of web pages on a monthly basis and makes its terabytes of metadata available for analysis on <a href="https://httparchive.org/faq#how-do-i-use-bigquery-to-write-custom-queries-over-the-data">BigQuery</a>.
         </p>
 
         <p>
-          The mission of the Web Almanac is to make the data warehouse of HTTP Archive even more accessible to the web community by having subject matter experts provide contextualized insights. You can think of it as an annual repository of knowledge about the state of the web, 2020 being its second edition.
+          The Web Almanac's mission is to become an annual repository of public knowledge about the state of the web. Our goal is to make the data warehouse of HTTP Archive even more accessible to the web community by having subject matter experts provide contextualized insights.
         </p>
 
         <p>
-          The 2020 edition of the Web Almanac is comprised of four pillars: content, experience, publishing, and distribution. Each part of the written report represents a pillar and is made up of chapters exploring its different aspects. For example, Part II represents the user experience and includes the Performance, Security, Accessibility, SEO, PWA, and Mobile Web chapters.
+          The 2020 edition of the Web Almanac is broken into four parts: content, experience, publishing, and distribution. Within each part, several chapters explore their overarching theme from different angles. For example, Part II explores different angles of the user experience in the Performance, Security, and Accessibility chapters, among others.
         </p>
     </section>
 
@@ -104,7 +109,7 @@
         </div>
 
         <p>
-          Results for each metric are publicly viewable in chapter-specific spreadsheets, for example <a href="https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/edit?usp=sharing">JavaScript results</a>.
+          Results for each metric are publicly viewable in chapter-specific spreadsheets, for example <a href="https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/edit?usp=sharing">JavaScript results</a>. Scroll to the bottom of each chapter for links to their queries, results, and comments from readers.
         </p>
     </section>
 
@@ -120,11 +125,11 @@
         </p>
 
         <p>
-          The August 2020 HTTP Archive crawl used by the Web Almanac used the most recently available Chrome UX Report release, June 2020 (202006), for its list of websites. This dataset was released on July 14, 2020 and captures websites visited by Chrome users during the month of June.
+          The August 2020 HTTP Archive crawl used by the Web Almanac used the most recently available Chrome UX Report release for its list of websites. The 202006 dataset was released on July 14, 2020 and captures websites visited by Chrome users during the month of June.
         </p>
 
         <p>
-          There was was a 20-30% growth on websites analysed compared to the <a href="../2019/methodology#websites">number of sites analysed for the 2019 Web Almanac</a>. This increase has been analysed by <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='paulcalvano') }}">Paul Calvano</a> in his <a href="https://paulcalvano.com/2020-09-29-growth-of-the-web-in-2020/">Growth of the Web in 2020</a> post.
+          There was was a 20-30% growth in the number of websites analysed compared to those in the <a href="../2019/methodology#websites">2019 Web Almanac</a>. This increase has been analysed by <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='paulcalvano') }}">Paul Calvano</a> in his <a href="https://paulcalvano.com/2020-09-29-growth-of-the-web-in-2020/">Growth of the Web in 2020</a> post.
         </p>
 
         <p>
@@ -132,7 +137,7 @@
         </p>
 
         <p>
-          HTTP Archive is also considered a lab testing tool, meaning it tests websites from a datacenter and does not collect data from real-world user experiences. Therefore, all website home pages are tested with an empty cache in a logged out state.
+          HTTP Archive is also considered a lab testing tool, meaning it tests websites from a datacenter and does not collect data from real-world user experiences. All pages are tested with an empty cache in a logged out state, which may not reflect how real users would access them.
         </p>
     </section>
 
@@ -140,7 +145,7 @@
       <h3 id="metrics"><a href="#metrics" class="anchor-link">Metrics</a></h3>
 
       <p>
-        HTTP Archive collects metrics about how the web is built. It includes basic metrics like the number of bytes per page, whether the page was loaded over HTTPS, and individual request and response headers. The majority of these metrics are provided by <a href="#webpagetest">WebPageTest</a>, which acts as the test runner for each website.
+        HTTP Archive collects thousands of metrics about how the web is built. It includes basic metrics like the number of bytes per page, whether the page was loaded over HTTPS, and individual request and response headers. The majority of these metrics are provided by <a href="#webpagetest">WebPageTest</a>, which acts as the test runner for each website.
       </p>
 
       <p>
@@ -240,7 +245,7 @@
       </p>
 
       <p>
-        HTTP Archive's private instance of WebPageTest is kept in sync with the latest public version and augmented with <a href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">custom metrics</a>. These are snippets of JavaScript that are evaluated on each website at the end of the test. The <a href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/almanac.js">almanac.js</a> custom metric includes several metrics that were otherwise infeasible to calculate, for example those that depend on  DOM state.
+        HTTP Archive's private instance of WebPageTest is kept in sync with the latest public version and augmented with <a href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">custom metrics</a>. These are snippets of JavaScript that are evaluated on each website at the end of the test. Thanks to the <a href="https://github.com/HTTPArchive/legacy.httparchive.org/commits/master/custom_metrics">contributions</a> of many data analysts, especially the <a href="https://github.com/HTTPArchive/legacy.httparchive.org/pulls?q=is%3Apr+author%3ATiggerito+sort%3Acreated-asc">herculean efforts</a> of <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='Tiggerito') }}">Tony McCreath</a>, the 2020 edition of the Web Almanac greatly expanded the capabilities of HTTP Archive's test infrastructure with over 3,000 lines of new code.
       </p>
 
       <p>
@@ -333,7 +338,7 @@
     </section>
 
     <section>
-      <h3 id="third-party-web"><a href="#third-party-web">Third Party Web</a></h3>
+      <h3 id="third-party-web"><a href="#third-party-web" class="anchor-link">Third Party Web</a></h3>
 
       <p>
         <a href="https://www.thirdpartyweb.today/">Third Party Web</a> is a research project by <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='patrickhulce') }}">Patrick Hulce</a>, author of the <a href="{{ url_for('chapter', year=2019, lang=lang, chapter='third-parties') }}">2019 Third Parties</a> chapter, that uses HTTP Archive and Lighthouse data to identify and analyze the impact of third party resources on the web.
@@ -361,22 +366,68 @@
     </section>
 
     <section>
-      <h2 id="process"><a href="#process" class="anchor-link">Analytical process</a></h2>
+      <h4 id="rework-utils"><a href="#rework-utils" class="anchor-link">Rework Utils</a></h4>
 
       <p>
-        The Web Almanac took about a year to plan and execute with the coordination of dozens of contributors from the web community. This section describes why we chose the metrics you see in the Web Almanac, how they were queried, and interpreted.
+        This year's <a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a> chapter led by <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='LeaVerou') }}">Lea Verou</a> took a significantly more detailed look at the state of CSS, spread over <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2020/01_CSS">100+ queries</a>. For perspective, that's 2.5x more queries than in 2019. To make this scale of analysis feasible, Lea open sourced the <a href="https://github.com/LeaVerou/rework-utils">Rework Utils</a>. These utilities take the JSON data from Rework to the next level by providing helpful scripts to more easily extract CSS insights. Most of the stats you see in the CSS chapter are powered by these scripts.
       </p>
     </section>
 
     <section>
-      <h3 id="brainstorming"><a href="#brainstorming" class="anchor-link">Brainstorming</a></h3>
+        <h4 id="parsel"><a href="#parsel" class="anchor-link">Parsel</a></h4>
+
+        <p>
+            <a href="https://projects.verou.me/parsel/">Parsel</a> is a CSS selector parser and specificity calculator, originally written by <a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a> chapter lead <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='LeaVerou') }}">Lea Verou</a> and open sourced as a separate library.
+            It is used extensively in all CSS metrics that relate to selectors and specificity.
+        </p>
+    </section>
+
+    <section>
+      <h2 id="process"><a href="#process" class="anchor-link">Analytical process</a></h2>
 
       <p>
-        The 2020 Web Almanac kicked off in June 2020 as a <a href="https://twitter.com/rick_viscomi/status/1273135952848977920?s=20">request for new authors</a>. After a round of brainstorming, 22 chapters were solidified and we began <a href="https://github.com/HTTPArchive/almanac.httparchive.org/issues/876">assigning subject matter experts and peer reviewers to each chapter</a>. This process had some inherent bias because of the challenge of getting volunteers to commit to a project of this scale. Thus, many of the contributors are members of the same professional circles. One explicit goal for future editions of the Web Almanac is to encourage even more inclusion of underrepresented and heterogeneous voices as authors and peer reviewers.
+        The Web Almanac took about a year to plan and execute with the coordination of more than a hundred <a href="{{ url_for('contributors', year=year, lang=lang) }}">contributors</a> from the web community. This section describes why we chose the chapters you see in the Web Almanac, how their metrics were queried, and how they were interpreted.
+      </p>
+    </section>
+
+    <section>
+      <h3 id="planning"><a href="#planning" class="anchor-link">Planning</a></h3>
+
+      <p>
+        The 2020 Web Almanac kicked off in <a href="https://twitter.com/rick_viscomi/status/1273135952848977920">June 2020</a>, later than the 2019 timeline due to the unrest related to COVID-19 and the social justice protests. These and other events of 2020 were an undercurrent throughout the entire production process and put a lot of additional strain on our contributors beyond the stresses of a fast-paced project like this.
       </p>
 
       <p>
-        We spent July 2020 pairing people with chapters and getting their input to finalize the individual metrics that will make up each chapter.
+        As we <a href="https://almanac.httparchive.org/en/2019/methodology#brainstorming">stated in last year's Methodology</a>:
+      </p>
+
+      <blockquote>
+        One explicit goal for future editions of the Web Almanac is to encourage even more inclusion of underrepresented and heterogeneous voices as authors and peer reviewers.
+      </blockquote>
+
+      <p>
+        To that end, this year we've made systematic changes to the way that we seek and select authors:
+
+        <ul>
+          <li>
+            Previous authors were specifically discouraged from writing again to make room for different perspectives.
+          </li>
+          <li>
+            Everyone endorsing 2020 authors were asked to be especially conscious not to nominate people who all look or think alike.
+          </li>
+          <li>
+            Many 2019 authors were Google employees and this year we tried to get a greater balance of perspectives from the broader web community. We believe that the voices in the Web Almanac should be a reflection of the community itself, and not skewed towards any specific company to avoid creating echo chambers.
+          </li>
+          <li>
+            The project leads reviewed all of the author nominations and made an effort to select authors who will bring new perspectives and amplify the voices of underrepresented groups in the community.
+          </li>
+        </ul>
+
+        We hope to iterate on this process in the future to ensure that the Web Almanac is a more diverse and inclusive project with contributors from all backgrounds.
+      </p>
+
+      <p>
+        Finally, in July 2020, after rounds of brainstorming and nominations, 22 chapters were solidified and we formed content teams for each chapter tasked with writing, reviewing, and analysis.
       </p>
     </section>
 
@@ -384,7 +435,7 @@
       <h3 id="analysis"><a href="#analysis" class="anchor-link">Analysis</a></h3>
 
       <p>
-        In July and August 2020, with the stable list of metrics and chapters, data analysts triaged the metrics for feasibility. In some cases, <a href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">custom metrics</a> needed to be created to fill gaps in our analytic capabilities.
+        In July and August 2020, with the stable list of metrics and chapters, data analysts triaged the metrics for feasibility. In some cases, <a href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">custom metrics</a> were created to fill gaps in our analytic capabilities.
       </p>
 
       <p>
@@ -392,7 +443,7 @@
       </p>
 
       <p>
-        The data analysts began writing queries to extract the results for each metric. In total, <strong>TBC queries</strong> were written by hand! You can browse all of the queries by chapter in the <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2020">sql/2020</a> directory of the project's GitHub repository.
+        The data analysts began writing queries to extract the results for each metric. In total, hundreds of queries were written by hand! You can browse all of the queries by year and chapter in our open source <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2020">query repository</a> on GitHub.
       </p>
     </section>
 
@@ -404,7 +455,7 @@
       </p>
 
       <p>
-        To make the results more easily understandable to readers, web developers and analysts created data visualizations to embed in the chapter. Some visualizations are simplified to make the conclusions easier to grasp. For example, rather than showing a full histogram of a distribution, only a handful of percentiles are shown. Unless otherwise noted, all distributions are summarized using percentiles, especially medians (50th percentile), and not averages.
+        To make the results more easily understandable to readers, web developers and analysts created data visualizations to embed in the chapter. Some visualizations are simplified to make the points more clearly. For example, rather than showing a full distribution, only a handful of percentiles are shown. Unless otherwise noted, all distributions are summarized using percentiles, especially medians (the 50th percentile), and not averages.
       </p>
 
       <p>
@@ -416,11 +467,11 @@
       <h2 id="looking-ahead"><a href="#looking-ahead" class="anchor-link">Looking ahead</a></h2>
 
       <p>
-        The 2020 edition of the Web Almanac is the second in an annual tradition in the web community of introspection and a commitment to positive change. Getting to this point has been a monumental effort thanks to many dedicated <a href="{{ url_for('contributors', year=year, lang=lang) }}">contributors</a> and we hope to leverage as much of this work as possible to make future editions even more streamlined.
+        The 2020 edition of the Web Almanac is the second in what we hope to continue as an annual tradition in the web community of introspection and a commitment to positive change. Getting to this point has been a monumental effort thanks to many dedicated <a href="{{ url_for('contributors', year=year, lang=lang) }}">contributors</a> and we hope to leverage as much of this work as possible to make future editions even more streamlined.
       </p>
 
       <p>
-        If you're interested in contributing to the 2021 edition of the Web Almanac, please fill out our <a href="https://forms.gle/VRBFegGAP7d99Bhp7">interest form</a>. We'd love to hear your ideas for making this project even better!
+        If you're interested in contributing to the 2021 edition of the Web Almanac, please fill out our <a href="https://forms.gle/VRBFegGAP7d99Bhp7">interest form</a>. Let's work together to track the state of the web!
       </p>
     </section>
 {% endblock main_content %}
