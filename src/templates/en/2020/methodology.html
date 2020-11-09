@@ -30,6 +30,7 @@
                 <li><a href="#rework-utils">Rework Utils</a></li>
               </ul>
             </li>
+            <li><a href="#parsel">Parsel</a></li>
           </ul>
         </li>
         <li><a href="#process">Analytical process</a>
@@ -368,8 +369,17 @@
       <h4 id="rework-utils"><a href="#rework-utils" class="anchor-link">Rework Utils</a></h4>
 
       <p>
-        This year's <a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a> chapter led by <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='LeaVerou') }}">Lea Verou</a> took a significantly more detailed look at the state of CSS, spread over <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2020/01_CSS">100+ queries</a>. For perspective, that's 2.5x more queries than in 2019. To make this scale of analysis feasible, Lea open sourced the <a href="https://github.com/LeaVerou/rework-utils">Rework Utils</a> and <a href="https://github.com/LeaVerou/parsel">Parsel</a> tools. These utilities take the JSON data from Rework to the next level by providing helpful scripts to more easily extract CSS insights. Most of the stats you see in the CSS chapter are powered by these scripts.
+        This year's <a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a> chapter led by <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='LeaVerou') }}">Lea Verou</a> took a significantly more detailed look at the state of CSS, spread over <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2020/01_CSS">100+ queries</a>. For perspective, that's 2.5x more queries than in 2019. To make this scale of analysis feasible, Lea open sourced the <a href="https://github.com/LeaVerou/rework-utils">Rework Utils</a>. These utilities take the JSON data from Rework to the next level by providing helpful scripts to more easily extract CSS insights. Most of the stats you see in the CSS chapter are powered by these scripts.
       </p>
+    </section>
+
+    <section>
+        <h4 id="parsel"><a href="#parsel" class="anchor-link">Parsel</a></h4>
+
+        <p>
+            <a href="https://projects.verou.me/parsel/">Parsel</a> is a CSS selector parser and specificity calculator, originally written by CSS chapter lead Lea Verou and open sourced as a separate library.
+            It is used extensively in all CSS metrics that relate to selectors and specificity.
+        </p>
     </section>
 
     <section>
