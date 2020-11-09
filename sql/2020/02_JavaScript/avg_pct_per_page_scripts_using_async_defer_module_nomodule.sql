@@ -6,39 +6,31 @@ SELECT
   AVG(pct_external_defer) AS avg_pct_external_defer,
   AVG(pct_external_module) AS avg_pct_external_module,
   AVG(pct_external_nomodule) AS avg_pct_external_nomodule
-FROM
-(
+FROM (
   SELECT 
     client,
     page,
-    COUNT(*) as external_scripts,
-    SUM(IF(script LIKE "%async%",1,0)) AS async,
-    SUM(IF(script LIKE "%defer%",1,0)) AS defer,
-    SUM(IF(script LIKE "%module%",1,0)) AS module,
-    SUM(IF(script LIKE "%nomodule%",1,0)) AS nomodule,
-    SUM(IF(script LIKE "%async%",1,0))    / COUNT(*) AS pct_external_async,
-    SUM(IF(script LIKE "%defer%",1,0))    / COUNT(*) AS pct_external_defer,
-    SUM(IF(script LIKE "%module%",1,0))   / COUNT(*) AS pct_external_module,
-    SUM(IF(script LIKE "%nomodule%",1,0)) / COUNT(*) AS pct_external_nomodule
-  FROM 
-  (
+    COUNT(0) AS external_scripts,
+    COUNTIF(REGEXP_CONTAINS(script, r'\basync\b'))    / COUNT(0) AS pct_external_async,
+    COUNTIF(REGEXP_CONTAINS(script, r'\bdefer\b'))    / COUNT(0) AS pct_external_defer,
+    COUNTIF(REGEXP_CONTAINS(script, r'\bmodule\b'))   / COUNT(0) AS pct_external_module,
+    COUNTIF(REGEXP_CONTAINS(script, r'\bnomodule\b')) / COUNT(0) AS pct_external_nomodule
+  FROM (
     SELECT  
-      _TABLE_SUFFIX AS client,
+      client,
       page, 
       url,
-      REGEXP_EXTRACT_ALL(LOWER(body), "(<script [^>]*)") AS scripts
+      REGEXP_EXTRACT_ALL(body, "(?i)(<script [^>]*)") AS scripts
     FROM 
-      `httparchive.response_bodies.2020_08_01_*` 
-    WHERE  
-      LOWER(body) LIKE "%<html%"
-  )
-  CROSS JOIN
-    UNNEST(scripts) as script
+      `httparchive.almanac.summary_response_bodies` 
+    WHERE
+      date = '2020-08-01' AND
+      firstHtml),
+    UNNEST(scripts) AS script
   WHERE 
-    script LIKE "%src%"
+    REGEXP_CONTAINS(script, r'\bsrc\b')
   GROUP BY 
     client,
-    page
-)
+    page)
 GROUP BY 
   client
