@@ -20,6 +20,11 @@ if [ -d "src" ]; then
   cd src
 fi
 
+if [ "$(pgrep -f 'python main.py')" ]; then
+  echo "Killing existing server to run a fresh version"
+  pkill -9 python main.py
+fi
+
 echo "Installing and testing python environment"
 python -m pip install --upgrade pip
 pip install -r requirements.txt

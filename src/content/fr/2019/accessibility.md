@@ -10,8 +10,18 @@ translators: [nico3333fr]
 discuss: 1764
 results: https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/
 queries: 09_Accessibility
+nektarios-paisios_bio: Nektarios Paisios est un <i lang="en">software engineer</i> travaillant sur l’accessibilité de Chrome depuis 5 ans. Il se concentre principalement sur la compatibilité de Chrome avec les logiciels d’assistance tiers tels que les lecteurs d’écran et les loupes d’écran. Avant de travailler sur l’accessibilité de Chrome, Nektarios a occupé divers autres postes au sein de l’entreprise, tels que l’accessibilité GSuite et les annonces publicitaires. Nektarios est titulaire d’un doctorat en informatique de l’Université de New York.
+obto_bio: David Fox est <i lang="en">lead usability researcher</i> et fondateur de LookZook, une entreprise obsédée par tout ce qu’il y a à savoir sur la création d’expériences Web qui répondent aux attentes des utilisateurs. Il est un psychologue de sites Web qui fouille dans ces derniers pour apprendre non seulement avec quels problèmes les utilisateurs se débattent, mais pourquoi et comment améliorer au mieux leur expérience. Il est également un contributeur, un conférencier et un fournisseur de Google Chromium de webinaires et de formations UX.
+kleinab_bio: Abigail Klein est <i lang="en">Software Engineer</i> chez Google. Elle a travaillé sur l’accessibilité web de Google Docs, Sheets et Slides où elle a ajouté les <a href="https://www.blog.google/outreach-initiatives/accessibility/whats-you-say-present-captions-google-slides/">légendes automatiques de Google Slides</a>, ainsi que l’amélioration du lecteur d’écran, du braille, de la loupe d’écran et de la prise en charge du contraste élevé. Elle travaille actuellement sur l’accessibilité de Google Chrome et ChromeOS. Elle détient un baccalauréat et une maîtrise en informatique du MIT, où elle a cofondé un hackathon de technologie d’assistance et a été assistante de laboratoire et conférencière invitée de la classe de technologie d’assistance.
+featured_quote: L’accessibilité sur le web est essentielle pour une société inclusive et équitable. Alors que nos vies sociales et professionnelles se déplacent de plus en plus vers le monde en ligne, il devient encore plus important pour les personnes handicapées de pouvoir participer à toutes les interactions en ligne sans barrières. Tout comme les architectes en bâtiment peuvent créer ou omettre des fonctionnalités d’accessibilité telles que des rampes pour fauteuils roulants, les développeurs et développeuses web peuvent aider ou entraver la technologie d’assistance sur laquelle les utilisateurs se basent.
+featured_stat_1: 22 %
+featured_stat_label_1: Sites ayant des contrastes de couleurs insuffisants
+featured_stat_2: 50 %
+featured_stat_label_2: Sites ayant des attributs alt manquants
+featured_stat_3: 14 %
+featured_stat_label_3: Sites utilisant des liens d’évitement
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introduction

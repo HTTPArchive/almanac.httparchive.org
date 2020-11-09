@@ -1,6 +1,6 @@
 var parsel = (() => {
 const TOKENS = {
-	attribute: /\[\s*(?:(?<namespace>\*|[-\w]*)\|)?(?<name>[-\w\u{0080}-\u{FFFF}]+)\s*(?:(?<operator>\W?=)\s*(?<value>.+?)\s*(?<i>i)?\s*)?\]/gu,
+	attribute: /\[\s*(?:(?<namespace>\*|[-\w]*)\|)?(?<name>[-\w\u{0080}-\u{FFFF}]+)\s*(?:(?<operator>\W?=)\s*(?<value>.+?)\s*(?<caseSensitive>[iIsS])?\s*)?\]/gu,
 	id: /#(?<name>(?:[-\w\u{0080}-\u{FFFF}]|\\.)+)/gu,
 	class: /\.(?<name>(?:[-\w\u{0080}-\u{FFFF}]|\\.)+)/gu,
 	comma: /\s*,\s*/g, // must be before combinator
@@ -201,10 +201,6 @@ function nestTokens(tokens, {list = true} = {}) {
 			let left = tokens.slice(0, i);
 			let right = tokens.slice(i + 1);
 
-			if (left.length === 0 || right.length === 0) {
-				throw new Error(`Combinator ${token.content} used in selector ${left.length === 0? "start" : "end"}`);
-			}
-
 			return {
 				type: "complex",
 				combinator: token.content,
@@ -212,6 +208,10 @@ function nestTokens(tokens, {list = true} = {}) {
 				right: nestTokens(right)
 			};
 		}
+	}
+
+	if (tokens.length === 0) {
+		return null;
 	}
 
 	// If we're here, there are no combinators, so it's just a list
@@ -223,6 +223,10 @@ function nestTokens(tokens, {list = true} = {}) {
 
 // Traverse an AST (or part thereof), in depth-first order
 function walk(node, callback, o, parent) {
+	if (!node) {
+		return;
+	}
+
 	if (node.type === "complex") {
 		walk(node.left, callback, o, node);
 		walk(node.right, callback, o, node);
@@ -381,13 +385,14 @@ function countDeclarationsByProperty(rules, test) {
  * @param {Object} [test]
  * @param {string|RegExp|Function|Array} test.names
  * @param {string|RegExp|Function|Array} test.args
+ * @param {Boolean} test.topLevel If true, only return top-level functions
  * @return {Array<Object>} Array of objects, one for each function call with `{name, args, pos}` keys
  */
 function extractFunctionCalls(value, test) {
 	// First, extract all function calls
 	let ret = [];
 
-	for (let match of value.matchAll(/\b(?<name>[\w-]+)\(/gi)) {
+	for (let match of value.matchAll(/(?<name>[\w-]+)\(/gi)) {
 		let index = match.index;
 		let openParen = index + match[0].length;
 		let rawArgs = parsel.gobbleParens(value, openParen - 1);
@@ -398,9 +403,31 @@ function extractFunctionCalls(value, test) {
 	}
 
 	if (test) {
-		ret = ret.filter(f => {
-			return matches(f.name, test && test.names) && matches(f.args, test && test.args);
-		});
+		if (test.names || test.args) {
+			ret = ret.filter(f => {
+				return matches(f.name, test.names) && matches(f.args, test.args);
+			});
+		}
+
+		if (test.topLevel && ret.length > 0) {
+			// Filter out nested functions
+			let [start, end] = ret[0].pos;
+
+			// Note that because we did the rest of the filtering earlier, this only takes into account
+			// the functions that passed the test. E.g. if we're only extracting rgb() functions, it will
+			// NOT consider linear-gradient(rgb(...)) as nested.
+			ret = ret.filter(f => {
+				let [s, e] = f.pos;
+				if (s > start && e < end) {
+					// Nested
+					return false;
+				}
+
+				// Not nested
+				[start, end] = [s, e];
+				return true;
+			});
+		}
 	}
 
 	return ret;
@@ -463,10 +490,38 @@ function matches(value, test, not) {
 		return test(value);
 	}
 	else if (test instanceof RegExp) {
-		return test.test(value);
+		let ret = test.test(value);
+		test.lastIndex = 0;
+		return ret;
 	}
 
 	return false;
+}
+
+
+/* removeFunctionCalls.js */
+/**
+ * Remove function calls from a string
+ * @param {string} value - @see {@link module:extractFunctionCalls} for arguments
+ * @param {Object} [test] @see {@link module:extractFunctionCalls} for arguments.
+ *                        Except `topLevel` which is always true, as it doesn't make sense otherwise.
+ * @return {String} The string
+ */
+function removeFunctionCalls(value, test = {}) {
+	test.topLevel = true;
+	let offset = 0;
+
+	for (let f of extractFunctionCalls(value, test)) {
+		let [start, end] = f.pos;
+		console.log(start, end, offset);
+		start -= offset;
+		end -= offset;
+
+		value = value.substring(0, start) + value.substring(end);
+		offset += end - start;
+	}
+
+	return value;
 }
 
 

@@ -1,5 +1,6 @@
 #standardSQL
 # page wpt_bodies metrics grouped by device and rel attributes
+# Note: this query only reports if a rel attribute value was ever used on a page. It is not a per anchor report.
 
 # helper to create percent fields
 CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
@@ -43,8 +44,7 @@ client,
 rel,
 total, 
 COUNT(0) AS count,
-AS_PERCENT(COUNT(0), total) AS pct
-
+AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct
 FROM
 ( 
     SELECT 

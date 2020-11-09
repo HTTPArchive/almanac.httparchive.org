@@ -10,8 +10,16 @@ translators: []
 discuss: 1767
 results: https://docs.google.com/spreadsheets/d/1dPBDeHigqx9FVaqzfq7CYTz4KjllkMTkfq4DG4utE_g/
 queries: 12_Mobile_Web
+obto_bio: David Fox is the lead usability researcher and founder of LookZook, a company obsessed with finding out everything there is to know about building web experiences that meet user expectations. He is a website psychologist who digs into sites to learn not just what users are struggling with, but why, and how to best improve their experience. He is also a Google Chromium contributor, speaker, and provider of webinars and UX training.
+featured_quote: Since 2007, the mobile web has grown at an explosive rate. And now, 13 years later, mobile accounts for 59% of all searches and 58.7% of all web traffic, according to Akamai mPulse data in July 2019. It's no longer an afterthought, but the primary way people experience the web. So given how significant mobile is, what kind of experience are we providing our visitors? Where are we falling short? Let's find out.
+featured_stat_1: 65%
+featured_stat_label_1: Sites with medium or large content shifts during load
+featured_stat_2: 32%
+featured_stat_label_2: Sites that disable zooming
+featured_stat_3: 34%
+featured_stat_label_3: Sites with sufficiently sized tap targets
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introduction
