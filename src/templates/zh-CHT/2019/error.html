@@ -1,0 +1,27 @@
+{% extends "base/2019/error.html" %}
+
+{% block date_published %}2019-11-04T12:00:00.000Z{% endblock %}
+{% block date_modified %}2020-08-06T00:00:00.000Z{% endblock %}
+
+{% block unknown_error %}未知錯誤{% endblock %}
+
+{% 
+  set localizedStatusCode = {
+    400: "錯誤的請求",
+    404: "找不到頁面",
+    500: "內部伺服器錯誤",
+    502: "短暫伺服器錯誤"
+  }
+%}
+{% macro expandedTitle(errorTitle) %}錯誤： {{ errorTitle }}{% endmacro %}
+{%
+  set localizedErrorMessage = {
+    "Unsupported year requested": "不支援的年度請求",
+    "Unsupported chapter requested": "不支援的章節請求",
+    "Unsupported language requested": "不支援的語言請求",
+    "Not Found": "伺服器上找不到您的網址請求，若手動輸入請再檢查拼寫後重試。"
+  }
+%}
+{% macro expandedErrorMessage(errorCode, errorDescription, errorMessage) %}
+{{ errorCode }} {{ errorDescription }}: {{ errorMessage }}
+{% endmacro %}

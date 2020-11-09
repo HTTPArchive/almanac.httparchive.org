@@ -10,8 +10,18 @@ translators: [MSakamaki]
 discuss: 1764
 results: https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/
 queries: 09_Accessibility
+nektarios-paisios_bio: Nektarios Paisios氏は、過去5年間、Chromeアクセシビリティに取り組んできたソフトウェアエンジニアです。主にスクリーンリーダーや拡大鏡などのサードパーティの支援ソフトウェアとChromeの互換性を高めることに注力しています。Chromeアクセシビリティに携わる前は、GSuiteアクセシビリティやディスプレイ広告など、さまざまな役割を担っていました。Nektariosはニューヨーク大学でコンピュータサイエンスの博士号を取得しています。
+obto_bio: David Foxは、ユーザビリティ・リサーチャーのリーダーであり、LookZookの創設者でもあります。彼はウェブサイト心理学者であり、ユーザーが何に悩んでいるのかだけでなく、その理由や体験を改善するための最善の方法を学ぶためにサイトを掘り下げています。また、Google Chromiumのコントリビューターであり、講演者であり、ウェビナーやUXトレーニングの提供者でもある。
+kleinab_bio: Abigail Kleinは、Googleのソフトウェアエンジニアです。彼女は Google Docs、Sheets、Slides のウェブアクセシビリティに取り組み、<a href="https://www.blog.google/outreach-initiatives/accessibility/whats-you-say-present-captions-google-slides/">自動キャプションを Google Slides に追加しました</a> また、sc reen リーダー、点字、スクリーン拡大鏡、ハイコントラストのサポートを改善しました。現在は、Google Chrome と ChromeOS のアクセシビリティに取り組んでいます。MIT でコンピュータサイエンスの学士号と修士号を取得しており、支援技術ハッカソンを共同で立ち上げ、支援技術クラスのラボアシスタントとゲスト講師を務めました。
+featured_quote: ウェブ上のアクセシビリティは、包括的で公平な社会にとって不可欠です。私たちの社会生活や仕事の多くがオンラインの世界に移行するにつれ、障害を持つ人々が障害なくすべてのオンライン上の交流に参加できることがさらに重要になってきています。建築家が車椅子用スロープなどのアクセシビリティ機能を作成したり省略したりできるように、ウェブ開発者はユーザーが利用する支援技術を支援したり、妨げたりすることができます。
+featured_stat_1: 22%
+featured_stat_label_1: 十分なカラーコントラストを使用しているサイト
+featured_stat_2: 50%
+featured_stat_label_2: 画像のalt属性がないサイト
+featured_stat_3: 14%
+featured_stat_label_3: スキップリンクを使用しているサイト
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## 導入

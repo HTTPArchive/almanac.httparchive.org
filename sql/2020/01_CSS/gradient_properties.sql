@@ -39,7 +39,7 @@ try {
         let {name, args} = gradient;
         incrementByKey(ret.functions, name);
 
-        incrementByKey(ret.properties, property.indexOf("--") === 0? "--" : property);
+        incrementByKey(ret.properties, property.indexOf("--") === 0? "--*" : property);
 
         // Light color stop parsing
 

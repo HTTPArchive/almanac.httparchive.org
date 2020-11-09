@@ -49,8 +49,11 @@ def render_template(template, *args, **kwargs):
 
 # Render any error template by falling back to Default Year and also Default Lang if needed
 def render_error_template(error, status_code):
-    lang = request.view_args.get('lang')
-    year = request.view_args.get('year')
+    lang = request.view_args.get('lang') or DEFAULT_LANGUAGE.lang_code
+    year = request.view_args.get('year') or DEFAULT_YEAR
+
+    if not SUPPORTED_LANGUAGES.get(year):
+        year = DEFAULT_YEAR
 
     # Special error handling for base templates and other templates that might
     # exist but shouldn't be called
@@ -64,11 +67,18 @@ def render_error_template(error, status_code):
         elif os.path.isfile(TEMPLATES_DIR + '/%s/%s/error.html' % (DEFAULT_LANGUAGE.lang_code, DEFAULT_YEAR)):
             lang = DEFAULT_LANGUAGE.lang_code
             year = DEFAULT_YEAR
-    return render_template('%s/%s/error.html' % (lang, year), lang=lang, year=year, error=error), status_code
+    return render_template('%s/2019/error.html' % lang, lang=lang, year=year, error=error), status_code
 
 
 def chapter_lang_exists(lang, year, chapter):
     if os.path.isfile(TEMPLATES_DIR + '/%s/%s/chapters/%s.html' % (lang, year, chapter)):
+        return True
+    else:
+        return False
+
+
+def featured_chapters_exists(lang, year):
+    if os.path.isfile(TEMPLATES_DIR + '/%s/%s/featured_chapters.html' % (lang, year)):
         return True
     else:
         return False

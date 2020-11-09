@@ -38,7 +38,8 @@ try {
 OPTIONS (library="gs://httparchive/lib/css-utils.js");
 
 SELECT
-  *
+  *,
+  pages / total_pages AS pct_pages
 FROM (
   SELECT
     client,
@@ -46,7 +47,8 @@ FROM (
     kw.property,
     SUM(kw.freq) AS freq,
     SUM(SUM(kw.freq)) OVER (PARTITION BY client, kw.keyword) AS total,
-    SUM(kw.freq) / SUM(SUM(kw.freq)) OVER (PARTITION BY client, kw.keyword) AS pct
+    SUM(kw.freq) / SUM(SUM(kw.freq)) OVER (PARTITION BY client, kw.keyword) AS pct,
+    COUNT(DISTINCT page) AS pages
   FROM
     `httparchive.almanac.parsed_css`,
     UNNEST(getGlobalKeywords(css)) AS kw
@@ -56,6 +58,16 @@ FROM (
     client,
     keyword,
     property)
+JOIN (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    COUNT(0) AS total_pages
+  FROM
+    `httparchive.summary_pages.2020_08_01_*`
+  GROUP BY
+    client)
+USING
+  (client)
 WHERE
   pct >= 0.01
 ORDER BY
