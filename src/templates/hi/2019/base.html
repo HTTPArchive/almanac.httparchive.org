@@ -1,6 +1,6 @@
 {% extends "base/2019/base.html" %}
 
-{% block description %}The Web Almanac वेब रिपोर्ट की एक वार्षिक स्थिति है जो वेब समुदाय की विशेषज्ञता को HTTP संग्रह के डेटा और रुझानों के साथ जोड़ती है।{% endblock %}
+{% block description %}Web Almanac वेब रिपोर्ट की एक वार्षिक स्थिति है जो वेब समुदाय की विशेषज्ञता को HTTP संग्रह के डेटा और रुझानों के साथ जोड़ती है।{% endblock %}
 
 {% block twitter_image_alt %}{{ year }} Web Almanac{% endblock %}
 
@@ -28,7 +28,7 @@
 {% block page_navigation %}पेज नेविगेशन{% endblock %}
 
 {% block help_translate %}अनुवाद में मदद करें{% endblock %}
-{% block translation_not_available %}अंग्रेजी - अंग्रेजी में उपलब्ध नहीं है{% endblock %}
+{% block translation_not_available %}अंग्रेजी - हिन्दी में उपलब्ध नहीं है{% endblock %}
 {% block language_switcher %}भाषा परिवर्तन करें{% endblock %}
 {% block year_switcher %}वर्ष परिवर्तन करें{% endblock %}
 
@@ -85,10 +85,14 @@
 {% block accessibility_statement %}अभिगम्यता विवरण{% endblock %}
 
 {% block featured_chapter %}विशेष अध्याय{% endblock %}
+{% block featured_chapter_last_year %}विशेष अध्याय<br/>{{ year|int -1 }} Web Almanac से {% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
 {% macro read_chapter(chapter) %}अध्याय <span class="featured-chapter-name">{{ chapter }}</span> पढ़ें{% endmacro %}
+{% endif %}
+{% if not read_last_years_chapter %}
+{% macro read_last_years_chapter(chapter) %}अध्याय {{ year|int-1 }} <span class="featured-chapter-name">{{ chapter }}</span> पढ़ें{% endmacro %}
 {% endif %}
 
 {% block contributors_description %}
