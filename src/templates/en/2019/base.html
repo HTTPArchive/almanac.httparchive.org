@@ -85,10 +85,14 @@ Our mission is to combine the raw stats and trends of the HTTP Archive with the 
 {% block accessibility_statement %}Accessibility Statement{% endblock %}
 
 {% block featured_chapter %}Featured Chapter{% endblock %}
+{% block featured_chapter_last_year %}Featured Chapter<br/>from the {{ year|int -1 }} Web Almanac{% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
 {% macro read_chapter(chapter) %}Read the <span class="featured-chapter-name">{{ chapter }}</span> Chapter{% endmacro %}
+{% endif %}
+{% if not read_last_years_chapter %}
+{% macro read_last_years_chapter(chapter) %}Read the {{ year|int-1 }} <span class="featured-chapter-name">{{ chapter }}</span> Chapter{% endmacro %}
 {% endif %}
 
 {% block contributors_description %}

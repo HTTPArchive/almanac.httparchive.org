@@ -85,10 +85,14 @@ Nossa missão é combinar as estatísticas brutas e as tendências do HTTP Archi
 {% block accessibility_statement %}Declaração de acessibilidade{% endblock %}
 
 {% block featured_chapter %}Capítulo em Destaque{% endblock %}
+{% block featured_chapter_last_year %}Capítulo em Destaque<br />do Web Almanac {{ year|int -1 }}{% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
 {% macro read_chapter(chapter) %}Leia o Capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
+{% endif %}
+{% if not read_last_years_chapter %}
+{% macro read_last_years_chapter(chapter) %}Leia o {{ year|int -1 }} Capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
 {% endif %}
 
 {% block contributors_description %}
