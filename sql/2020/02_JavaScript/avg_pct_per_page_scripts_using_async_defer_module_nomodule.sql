@@ -25,15 +25,8 @@ FROM (
       `httparchive.almanac.summary_response_bodies` 
     WHERE
       date = '2020-08-01' AND
-<<<<<<< HEAD
-      firstHtml
-  )
-  CROSS JOIN
-    UNNEST(scripts) as script
-=======
       firstHtml),
     UNNEST(scripts) AS script
->>>>>>> 4b7408a562fe98bca27adcb4e3f4bd624b272110
   WHERE 
     REGEXP_CONTAINS(script, r'\bsrc\b')
   GROUP BY 
