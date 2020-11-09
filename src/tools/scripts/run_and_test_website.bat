@@ -37,6 +37,6 @@ echo "Testing website"
 call npm run test
 
 echo "Monitoring templates for changes"
-start npm run watch
+call npm run watch
 
 echo "Website started successfully"
