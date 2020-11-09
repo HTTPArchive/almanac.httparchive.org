@@ -23,14 +23,15 @@ FROM
   FROM 
   (
     SELECT  
-      _TABLE_SUFFIX AS client,
+      client,
       page, 
       url,
       REGEXP_EXTRACT_ALL(LOWER(body), "(<script [^>]*)") AS scripts
     FROM 
-      `httparchive.response_bodies.2020_08_01_*` 
-    WHERE  
-      LOWER(body) LIKE "%<html%"
+      `httparchive.almanac.summary_response_bodies` 
+    WHERE
+      date = '2020-08-01' AND
+      firstHtml
   )
   CROSS JOIN
     UNNEST(scripts) as script

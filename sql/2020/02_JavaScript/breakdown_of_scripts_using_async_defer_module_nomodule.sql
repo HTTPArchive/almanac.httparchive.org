@@ -17,15 +17,16 @@ SELECT
   SUM(IF(script LIKE "%nomodule%",1,0)) / SUM(IF(script LIKE "%src%",1,0)) AS pct_external_nomodule
 FROM 
 (
-  SELECT  
-    _TABLE_SUFFIX AS client,
-    page, 
-    url,
-    REGEXP_EXTRACT_ALL(LOWER(body), "(<script [^>]*)") AS scripts
-  FROM 
-    `httparchive.response_bodies.2020_08_01_*` 
-  WHERE  
-    LOWER(body) LIKE "%<html%"
+    SELECT  
+      client,
+      page, 
+      url,
+      REGEXP_EXTRACT_ALL(LOWER(body), "(<script [^>]*)") AS scripts
+    FROM 
+      `httparchive.almanac.summary_response_bodies` 
+    WHERE
+      date = '2020-08-01' AND
+      firstHtml
 )
 CROSS JOIN
   UNNEST(scripts) as script
