@@ -1,0 +1,27 @@
+{% extends "base/2019/error.html" %}
+
+{% block date_published %}2019-11-04T12:00:00.000Z{% endblock %}
+{% block date_modified %}2020-08-06T00:00:00.000Z{% endblock %}
+
+{% block unknown_error %}अज्ञात त्रुटि{% endblock %}
+
+{% 
+  set localizedStatusCode = {
+    400: "खराब अनुरोध",
+    404: "पेज नहीं मिला",
+    500: "आंतरिक सर्वर त्रुटि",
+    502: "अस्थायी सर्वर त्रुटि"
+  }
+%}
+{% macro expandedTitle(errorTitle) %}त्रुटि: {{ errorTitle }}{% endmacro %}
+{%
+  set localizedErrorMessage = {
+    "Unsupported year requested": "असमर्थित वर्ष का अनुरोध किया गया",
+    "Unsupported chapter requested": "असमर्थित अध्याय का अनुरोध किया",
+    "Unsupported language requested": "असमर्थित भाषा का अनुरोध किया",
+    "Not Found": "अनुरोधित URL सर्वर पर नहीं मिला। यदि आपने स्वयं URL दर्ज किया है तो कृपया अपनी वर्तनी की जाँच करें और पुनः प्रयास करें।"
+  }
+%}
+{% macro expandedErrorMessage(errorCode, errorDescription, errorMessage) %}
+{{ errorCode }} <i lang="en">{{ errorDescription }}</i>: {{ errorMessage }}
+{% endmacro %}
