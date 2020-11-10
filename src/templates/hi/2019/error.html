@@ -1,0 +1,27 @@
+{% extends "base/2019/error.html" %}
+
+{% block date_published %}2019-11-04T12:00:00.000Z{% endblock %}
+{% block date_modified %}2020-08-06T00:00:00.000Z{% endblock %}
+
+{% block unknown_error %}Unknown Error{% endblock %}
+
+{% 
+  set localizedStatusCode = {
+    400: "Bad Request",
+    404: "Page Not Found",
+    500: "Internal Server Error",
+    502: "Temporary Server Error"
+  }
+%}
+{% macro expandedTitle(errorTitle) %}Error: {{ errorTitle }}{% endmacro %}
+{%
+  set localizedErrorMessage = {
+    "Unsupported year requested": "Unsupported year requested",
+    "Unsupported chapter requested": "Unsupported chapter requested",
+    "Unsupported language requested": "Unsupported language requested",
+    "Not Found": "The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again."
+  }
+%}
+{% macro expandedErrorMessage(errorCode, errorDescription, errorMessage) %}
+{{ errorCode }} {{ errorDescription }}: {{ errorMessage }}
+{% endmacro %}
