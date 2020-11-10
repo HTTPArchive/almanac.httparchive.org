@@ -61,6 +61,11 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
 
 {# Calls to action for readers who want to engage more with this chapter. #}
 {% macro render_actions() %}
+  <h2 id="explore-results">
+    <a href="#explore-results" class="anchor-link">
+      {{ self.explore_the_results() }}
+    </a>
+  </h2>
   <a class="alt btn" href="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}">
     <svg width="18" height="18" role="img">
       <title>{{ self.discuss_this_chapter() }}</title>
@@ -297,7 +302,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
             {{ self.main_content() }}
         </article>
         <div class="chapter_links">
-            {{ render_actions() }}
+          {{ render_actions() }}
         </div>
         <section class="authors">
             {{ render_authors() }}
