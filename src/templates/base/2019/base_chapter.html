@@ -61,9 +61,9 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
 
 {# Calls to action for readers who want to engage more with this chapter. #}
 {% macro render_actions() %}
-  <h2 id="chapter-links">
-    <a href="#chapter-links" class="anchor-link">
-      {{ self.chapter_links() }}
+  <h2 id="explore-results">
+    <a href="#explore-results" class="anchor-link">
+      {{ self.explore_the_results() }}
     </a>
   </h2>
   <a class="alt btn" href="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}">
