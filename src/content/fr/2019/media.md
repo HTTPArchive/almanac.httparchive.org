@@ -332,7 +332,7 @@ En observant la manière dont les Indications Client sont énoncées, on peut vo
 
 Les Indications Client liés au réseau, `downlink`, `rtt`, et `ect`, ne sont disponibles que sur Chrome pour Android.
 
-### Lazy loading
+### <i lang="en">Lazy loading</i> {lazy-loading}
 
 L’amélioration des performances des pages web peut être partiellement caractérisée comme un jeu de miroirs&nbsp;: sans les supprimer, on décale les éléments les plus lents en dehors de la zone d’usage de l’utilisateur. Par exemple, le <span lang="en">lazy loading</span> d’images est une de ces illusions où les images et les contenus médias ne sont chargés que lorsque l’utilisateur fait défiler la page. Cela améliore les performances perçues, même sur des réseaux lents, et évite à l’utilisateur de télécharger des octets qui ne sont pas visualisés autrement.
 
