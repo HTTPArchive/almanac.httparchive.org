@@ -19,7 +19,7 @@ featured_stat_label_2: des indices de ressources utilisent l’attribut <code>as
 featured_stat_3: 0.04 %
 featured_stat_label_3: des pages utilisent des indices de priorité.
 published: 2019-12-24T00:00:00.000Z
-last_updated: 2020-11-04T00:00:00.000Z
+last_updated: 2020-11-10T00:00:00.000Z
 ---
 
 ## Introduction
