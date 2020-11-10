@@ -1,5 +1,5 @@
 #standardSQL
-# List of erroneous Cache-Control directive names.
+# List of invalid Cache-Control directive names.
 SELECT 
   client,
   total_requests,
