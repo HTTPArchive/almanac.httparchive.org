@@ -23,5 +23,5 @@
   }
 %}
 {% macro expandedErrorMessage(errorCode, errorDescription, errorMessage) %}
-{{ errorCode }} {{ errorDescription }}: {{ errorMessage }}
+{{ errorCode }} <i lang="en">{{ errorDescription }}</i>: {{ errorMessage }}
 {% endmacro %}
