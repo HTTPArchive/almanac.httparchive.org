@@ -76,38 +76,49 @@
         {{ featured_chapter_quote|safe }}
       </blockquote>
       {% endif %}
-      <div class="featured-chapter-content-data">
+      {% if quote_language != lang %}
+      <div lang="{{ quote_language }}" class="featured-chapter-content-data">
         {% if featured_chapter_stats.get('stat1') %}
         <div class="featured-chapter-content-data-item">
           <div>{{ featured_chapter_stats.get('stat1')|safe }}</div>
-          {% if quote_language != lang %}
-          <div lang="{{ quote_language }}">{{ featured_chapter_stats.get('label1')|safe }}</div>
-          {% else %}
           <div>{{ featured_chapter_stats.get('label1')|safe }}</div>
-          {% endif %}
         </div>
         {% endif %}
         {% if featured_chapter_stats.get('stat2') %}
         <div class="featured-chapter-content-data-item">
           <div>{{ featured_chapter_stats.get('stat2')|safe }}</div>
-          {% if quote_language != lang %}
-          <div lang="{{ quote_language }}">{{ featured_chapter_stats.get('label2')|safe }}</div>
-          {% else %}
           <div>{{ featured_chapter_stats.get('label2')|safe }}</div>
-          {% endif %}
         </div>
         {% endif %}
         {% if featured_chapter_stats.get('stat3') %}
         <div class="featured-chapter-content-data-item">
           <div>{{ featured_chapter_stats.get('stat3')|safe }}</div>
-          {% if quote_language != lang %}
-          <div lang="{{ quote_language }}">{{ featured_chapter_stats.get('label3')|safe }}</div>
-          {% else %}
           <div>{{ featured_chapter_stats.get('label3')|safe }}</div>
-          {% endif %}
         </div>
         {% endif %}
       </div>
+      {% else %}
+      <div class="featured-chapter-content-data">
+        {% if featured_chapter_stats.get('stat1') %}
+        <div class="featured-chapter-content-data-item">
+          <div>{{ featured_chapter_stats.get('stat1')|safe }}</div>
+          <div>{{ featured_chapter_stats.get('label1')|safe }}</div>
+        </div>
+        {% endif %}
+        {% if featured_chapter_stats.get('stat2') %}
+        <div class="featured-chapter-content-data-item">
+          <div>{{ featured_chapter_stats.get('stat2')|safe }}</div>
+          <div>{{ featured_chapter_stats.get('label2')|safe }}</div>
+        </div>
+        {% endif %}
+        {% if featured_chapter_stats.get('stat3') %}
+        <div class="featured-chapter-content-data-item">
+          <div>{{ featured_chapter_stats.get('stat3')|safe }}</div>
+          <div>{{ featured_chapter_stats.get('label3')|safe }}</div>
+        </div>
+        {% endif %}
+      </div>
+      {% endif %}
       {% if year_with_chapters %}
       <a href="{{ url_for('chapter', year=year, chapter=featured_chapter, lang=lang) }}" class="btn">
         {{ read_chapter(localizedChapterTitles[featured_chapter]) }}
