@@ -258,7 +258,7 @@ TTLの中央値のほとんどは高いですが、低いパーセンタイル�
 }}
 
 
-## Cache-ControlとExpires
+## `Cache-Control`と`Expires`
 
 HTTP/1.0では、`Expires`ヘッダーは、レスポンスが古くなったと見なされる日時を示すために使用されました。その値は、次のような日付のタイムスタンプです。
 
@@ -282,7 +282,7 @@ HTTPレスポンスの53％は、`max-age`ディレクティブを持つ`Cache-C
   )
 }}
 
-## Cache-Controlディレクティブ
+## `Cache-Control`ディレクティブ
 
 HTTP/1.1[仕様](https://tools.ietf.org/html/rfc7234#section-5.2.1)には、`Cache-Control`レスポンスヘッダーで使用できる複数のディレクティブが含まれており、以下で詳しく説明します。1つのレスポンスで複数を使用できることに注意してください。
 
@@ -369,7 +369,7 @@ HTTP/1.1[仕様](https://tools.ietf.org/html/rfc7234#section-5.2.1)には、`Cac
 
 ロングテールでは、レスポンスの0.28％で1,500を超える間違ったディレクティブが使用されています。これらはクライアントによって無視され、「nocache」「s-max-age」「smax-age」「maxage」などのスペルミスが含まれます。「max-stale」「proxy-public」「surrogate-control」など存在しないディレクティブも多数あります。
 
-## Cache-Control: no-store, no-cache and max-age=0
+## `Cache-Control`: `no-store`, `no-cache` and `max-age=0`
 
 レスポンスがキャッシュ可能でない場合、`Cache-Control` `no-store`ディレクティブを使用する必要があります。このディレクティブを使用しない場合、レスポンスはキャッシュ可能です。
 
