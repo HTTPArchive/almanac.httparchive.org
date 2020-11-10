@@ -1,6 +1,6 @@
 {% extends "base/2019/base_chapter.html" %}
 
-{% block title %}{{ metadata.get('title') }} | 2019 | Web Almanac por HTTP Archive{% endblock %}
+{% block title %}{{ metadata.get('title') }} | {{ year }} | Web Almanac por HTTP Archive{% endblock %}
 
 {% block description %}{{ metadata.get('description',metadata.get('title') + ' capítulo do ' + year + ' Web Almanac sondando o uso de ' + metadata.get('description',metadata.get('title')) + ' na web.') }}{% endblock %}
 
