@@ -19,7 +19,7 @@ featured_stat_label_2: des sites utilisent jQuery
 featured_stat_3: 4.6 %
 featured_stat_label_3: des pages d’accueil utilisent React
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-04T00:00:00.000Z
+last_updated: 2020-11-10T00:00:00.000Z
 ---
 
 ## Introduction
