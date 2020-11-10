@@ -58,7 +58,7 @@
     </div>
   </section>
   {% block featured_chapter_section %}
-  {% macro featuredChapter(featured_chapter, featured_chapter_quote, featured_chapter_stats) %}
+  {% macro featuredChapter(featured_chapter, featured_chapter_quote, featured_chapter_stats, quote_language) %}
   <section id="featured-chapter" class="featured-chapter">
     <div class="featured-chapter-content">
       {% if year_with_chapters %}
@@ -67,26 +67,44 @@
       <h2 class="title title-center">{{ self.featured_chapter_last_year() }}</h2>
       {% endif %}
       <h3>{{ localizedChapterTitles[featured_chapter] }}</h3>
+      {% if quote_language != lang %}
+      <blockquote lang="{{ quote_language }}">
+        {{ featured_chapter_quote|safe }}
+      </blockquote>
+      {% else %}
       <blockquote>
         {{ featured_chapter_quote|safe }}
       </blockquote>
+      {% endif %}
       <div class="featured-chapter-content-data">
         {% if featured_chapter_stats.get('stat1') %}
         <div class="featured-chapter-content-data-item">
           <div>{{ featured_chapter_stats.get('stat1')|safe }}</div>
+          {% if quote_language != lang %}
+          <div lang="{{ quote_language }}">{{ featured_chapter_stats.get('label1')|safe }}</div>
+          {% else %}
           <div>{{ featured_chapter_stats.get('label1')|safe }}</div>
+          {% endif %}
         </div>
         {% endif %}
         {% if featured_chapter_stats.get('stat2') %}
         <div class="featured-chapter-content-data-item">
           <div>{{ featured_chapter_stats.get('stat2')|safe }}</div>
+          {% if quote_language != lang %}
+          <div lang="{{ quote_language }}">{{ featured_chapter_stats.get('label2')|safe }}</div>
+          {% else %}
           <div>{{ featured_chapter_stats.get('label2')|safe }}</div>
+          {% endif %}
         </div>
         {% endif %}
         {% if featured_chapter_stats.get('stat3') %}
         <div class="featured-chapter-content-data-item">
           <div>{{ featured_chapter_stats.get('stat3')|safe }}</div>
+          {% if quote_language != lang %}
+          <div lang="{{ quote_language }}">{{ featured_chapter_stats.get('label3')|safe }}</div>
+          {% else %}
           <div>{{ featured_chapter_stats.get('label3')|safe }}</div>
+          {% endif %}
         </div>
         {% endif %}
       </div>
