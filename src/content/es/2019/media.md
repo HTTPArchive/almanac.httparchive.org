@@ -20,7 +20,7 @@ featured_stat_label_2: Uso de JPEG entre imágenes
 featured_stat_3: 2%
 featured_stat_label_3: Uso del elemento <code>&lt;picture&gt;</code>
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-04T00:00:00.000Z
+last_updated: 2020-11-10T00:00:00.000Z
 ---
 
 ## Introducción
