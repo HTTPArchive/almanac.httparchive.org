@@ -1,7 +1,7 @@
 #standardSQL
 # Use of AppCache and ServiceWorkers
 SELECT
-  SUBSTR(url, 0, 5) http_type,
+  IF(STARTS_WITH(url, 'https'), 'https', 'http') AS http_type,
   JSON_EXTRACT_SCALAR(report, "$.audits.appcache-manifest.score") AS using_appcache,
   JSON_EXTRACT_SCALAR(report, "$.audits.service-worker.score") AS using_serviceworkers,
   count(*) AS occurences     
