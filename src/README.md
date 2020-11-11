@@ -102,7 +102,7 @@ When you push changes to GitHub they will be linted using the GitHub Super-Linte
 
 It is possible to run the Super-Linter locally if you have Docker installed.
 
-First up pull the Super-Linter Docker image (only need to do this once or when you want to upgrade the version):
+First up pull the Super-Linter Docker image (this takes some time to download but only need to do this once or when you want to upgrade the version of the super-linter):
 
 ```
 docker pull github/super-linter:latest
