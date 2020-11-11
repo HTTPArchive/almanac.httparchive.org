@@ -22,6 +22,7 @@ return result;
 ''';
 
 SELECT
+  client,
   COUNT(0) AS total_pages,
   COUNTIF(media_info.num_srcset_all > 0) AS srcset_all,
   COUNTIF(media_info.num_srcset_candidates_avg >= 1 and media_info.num_srcset_candidates_avg <=3) AS srcset_candidates_1_3,
