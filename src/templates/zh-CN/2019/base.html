@@ -84,11 +84,15 @@
 {% block copyright %}© Web Almanac.的许可是基于 <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
 {% block accessibility_statement %}无障碍可访问声明{% endblock %}
 
-{% block featured_chapter%}章节精选{% endblock %}
+{% block featured_chapter %}章节精选{% endblock %}
+{% block featured_chapter_last_year %}{{ year|int -1 }} Web Alamanc<br />章节精选{% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
 {% macro read_chapter(chapter) %}阅读 <span class="featured-chapter-name">{{ chapter }}</span> 章节{% endmacro %}
+{% endif %}
+{% if not read_last_years_chapter %}
+{% macro read_last_years_chapter(chapter) %}阅读 {{ year|int -1 }} <span class="featured-chapter-name">{{ chapter }}</span> 章节{% endmacro %}
 {% endif %}
 
 {% block contributors_description %}

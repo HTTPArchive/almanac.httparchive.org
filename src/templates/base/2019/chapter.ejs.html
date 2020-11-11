@@ -13,7 +13,7 @@
 {% set metadata = <%- JSON.stringify(metadata) %> %}
 
 {% block index %}
-  <%- include('toc.html', { headings: toc }) %>
+  <%- include('toc.ejs.html', { headings: toc }) %>
 {% endblock %}
 
 {% block main_content %}

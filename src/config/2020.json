@@ -2,7 +2,7 @@
   "settings": [
     {
       "is_live": true,
-      "supported_languages": ["en","es","fr","ja","pt","zh-CN","zh-CHT"],
+      "supported_languages": ["en","es","fr","hi","ja","pt","zh-CN","zh-CHT"],
       "ebook_languages": []
     }
   ],
@@ -104,8 +104,7 @@
           "part": "II",
           "chapter": "13",
           "title": "Capabilities",
-          "slug": "capabilities",
-          "todo": true
+          "slug": "capabilities"
         },
         {
           "part": "II",
@@ -1125,6 +1124,16 @@
       "website": "https://pixboost.com",
       "github": "dooman87",
       "twitter": "otherpunk"
+    },
+    "PraveenPal4232": {
+      "name": "Praveen Pal",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/34737190?v=4&s=200",
+      "website": "https://praveenpal4232.github.io",
+      "github": "PraveenPal4232",
+      "twitter": "PraveenPal4232"
     },
     "rachelandrew": {
       "name": "Rachel Andrew",
