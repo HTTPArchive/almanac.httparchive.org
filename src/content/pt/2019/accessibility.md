@@ -10,8 +10,18 @@ translators: [eduqg]
 discuss: 1764
 results: https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/
 queries: 09_Accessibility
+nektarios-paisios_bio: Nektarios Paisios é um engenheiro de software que trabalha com acessibilidade do Chrome nos últimos 5 anos. Ele se concentra principalmente em tornar o Chrome compatível com software auxiliar de terceiros, como leitores e ampliadores de tela. Antes de trabalhar na acessibilidade do Chrome, Nektarios trabalhou em várias outras funções na empresa, como acessibilidade do GSuite e anúncios gráficos. Nektarios é Ph.D. em Ciência da Computação pela New York University.
+obto_bio: David Fox é o principal pesquisador de usabilidade e fundador da LookZook, uma empresa obcecada em descobrir tudo o que há para saber sobre a construção de experiências na Web que atendem às expectativas do usuário. Ele é um psicólogo de sites que procura sites para aprender não apenas com o que os usuários estão enfrentando, mas por que e como melhorar sua experiência. Ele também é colaborador do Google Chromium, palestrante e fornecedor de seminários on-line e treinamento em UX.
+kleinab_bio: Abigail Klein é engenheira de software do Google. Ela trabalhou na acessibilidade da web do Google Docs, Sheets e Slides, onde adicionou  <a href="https://www.blog.google/outreach-initiatives/accessibility/whats-you-say-present-captions-google-slides/">legendas automáticas para a Apresentações Google</a>, além de melhorar o suporte ao leitor de tela, braille, ampliador de tela e alto contraste. Atualmente, ela trabalha com acessibilidade no Google Chrome e ChromeOS. Ela é bacharel e mestre em ciência da computação pelo MIT, onde co-fundou uma hackathon de tecnologia assistiva e foi assistente de laboratório e palestrante convidada da classe de tecnologia assistida.
+featured_quote: A acessibilidade na web é essencial para uma sociedade inclusiva e igualitária. À medida que mais de nossas vidas sociais e profissionais mudam para o mundo online, torna-se ainda mais importante para as pessoas com deficiência poderem participar de todas as interações online sem barreiras. Assim como os arquitetos de edifícios podem criar ou não recursos de acessibilidade, como rampas para cadeiras de rodas, os desenvolvedores da web podem ajudar ou atrapalhar com a tecnologia assistiva que usuários dependem.
+featured_stat_1: 22%
+featured_stat_label_1: Sites usando contraste de cor suficient
+featured_stat_2: 50%
+featured_stat_label_2: Sites sem atributos alt de imagem
+featured_stat_3: 14%
+featured_stat_label_3: Sites usando um link para pular
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-07T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introdução

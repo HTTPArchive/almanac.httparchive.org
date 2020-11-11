@@ -10,8 +10,16 @@ translators: [ksakae]
 discuss: 1771
 results: https://docs.google.com/spreadsheets/d/1mnq03DqrRBwxfDV05uEFETK0_hPbYOynWxZkV3tFgNk/
 queries: 16_Caching
+paulcalvano_bio: Paul Calvanoは、<a href="https://www.akamai.com/">アカマイ</a> のウェブパフォーマンス・アーキテクトで、ウェブサイトのパフォーマンス向上を支援しています。また、HTTP Archiveプロジェクトの共同管理者でもあります。<a href="https://twitter.com/paulcalvano">@paulcalvano</a> でツイートしたり、<a href="https://paulcalvano.com">http://paulcalvano.com</a> でブログを書いたり、<a href="https://discuss.httparchive.org">https://discuss.httparchive.org</a> でHTTP Archiveの研究を共有したりしています。
+featured_quote: キャッシングは、以前にダウンロードしたコンテンツの再利用を可能にする技術です。高価なネットワークリクエストを回避することでパフォーマンスに大きなメリットがあり、また、ウェブサイトのオリジンインフラストラクチャへのトラフィックを減らすことでアプリケーションの拡張性を高めることができます。古いことわざに「最速のリクエストは、作る必要のないものである」というものがありますが、キャッシングはリクエストをしなくても済むようにするための重要な方法の一つです。
+featured_stat_1: 27%
+featured_stat_label_1: キャッシングヘッダを使用していないレスポンス
+featured_stat_2: 39%
+featured_stat_label_2: <code>Vary</code>ヘッダーを使用したレスポンス
+featured_stat_3: 82%
+featured_stat_label_3: キャッシングを最適化することで1Mbを節約できるサイト
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-10T00:00:00.000Z
 ---
 
 ## 導入
@@ -250,7 +258,7 @@ TTLの中央値のほとんどは高いですが、低いパーセンタイル�
 }}
 
 
-## Cache-ControlとExpires
+## `Cache-Control`と`Expires`
 
 HTTP/1.0では、`Expires`ヘッダーは、レスポンスが古くなったと見なされる日時を示すために使用されました。その値は、次のような日付のタイムスタンプです。
 
@@ -274,7 +282,7 @@ HTTPレスポンスの53％は、`max-age`ディレクティブを持つ`Cache-C
   )
 }}
 
-## Cache-Controlディレクティブ
+## `Cache-Control`ディレクティブ
 
 HTTP/1.1[仕様](https://tools.ietf.org/html/rfc7234#section-5.2.1)には、`Cache-Control`レスポンスヘッダーで使用できる複数のディレクティブが含まれており、以下で詳しく説明します。1つのレスポンスで複数を使用できることに注意してください。
 
@@ -361,7 +369,7 @@ HTTP/1.1[仕様](https://tools.ietf.org/html/rfc7234#section-5.2.1)には、`Cac
 
 ロングテールでは、レスポンスの0.28％で1,500を超える間違ったディレクティブが使用されています。これらはクライアントによって無視され、「nocache」「s-max-age」「smax-age」「maxage」などのスペルミスが含まれます。「max-stale」「proxy-public」「surrogate-control」など存在しないディレクティブも多数あります。
 
-## Cache-Control: no-store, no-cache and max-age=0
+## `Cache-Control`: `no-store`, `no-cache` and `max-age=0`
 
 レスポンスがキャッシュ可能でない場合、`Cache-Control` `no-store`ディレクティブを使用する必要があります。このディレクティブを使用しない場合、レスポンスはキャッシュ可能です。
 

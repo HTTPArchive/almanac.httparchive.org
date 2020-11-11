@@ -10,8 +10,16 @@ translators: [borisschapira]
 discuss: 1774
 results: https://docs.google.com/spreadsheets/d/14QBP8XGkMRfWRBbWsoHm6oDVPkYhAIIpfxRn4iOkbUU/
 queries: 19_Resource_Hints
+khempenius_bio: Katie Hempenius est ingénieur dans l’équipe Chrome où elle travaille à rendre le web plus rapide.
+featured_quote: Les indices de ressources fournissent des \"suggestions\" au navigateur sur les ressources qui seront rapidement nécessaires. L’action que le navigateur entreprend à la suite de cet indice varie selon le type d’indice ; différents indices déclenchent différentes actions. Lorsqu’ils sont utilisés correctement, ils peuvent améliorer les performances de la page en donnant une longueur d'avance aux actions importantes, par anticipation.
+featured_stat_1: 29 %
+featured_stat_label_1: des sites utilisent <code>dns-prefetch</code>.
+featured_stat_2: 88 %
+featured_stat_label_2: des indices de ressources utilisent l’attribut <code>as</code>.
+featured_stat_3: 0.04 %
+featured_stat_label_3: des pages utilisent des indices de priorité.
 published: 2019-12-24T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-10T00:00:00.000Z
 ---
 
 ## Introduction
@@ -253,7 +261,7 @@ Les indices de priorités sont [mis en œuvre](https://www.chromestatus.com/feat
 
 85 % de l'utilisation des indices de priorités se fait avec les balises `<img>`. Les indices de priorités sont surtout utilisés pour déprioriser des ressources : 72&nbsp;% de l'utilisation est `importance="low"` ; 28&nbsp;% de l'utilisation est `importance="high"`.
 
-### Le lazy loading natif
+### Le <i lang="en">lazy loading</i> natif {le-lazy-loading-natif}
 
 Le [<i lang="en">lazy loading</i> natif](https://web.dev/native-lazy-loading) est une API native permettant de différer le chargement des images et des iframes situées hors écran. Cela permet de libérer des ressources lors du chargement initial de la page et d'éviter de charger des ressources qui ne sont jamais utilisées. Auparavant, cette technique ne pouvait être réalisée qu'à l'aide de bibliothèques [JavaScript](./javascript) tierces.
 

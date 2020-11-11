@@ -1,6 +1,0 @@
-{% extends "%s/2019/contributors.html" % lang %}
-
-{# Hide the TOC and Methodology for now #}
-{% block non_chapter_nav_links %}
-<li><a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a></li>
-{% endblock %}

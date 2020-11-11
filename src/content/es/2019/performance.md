@@ -10,8 +10,16 @@ translators: [JMPerez]
 discuss: 1762
 results: https://docs.google.com/spreadsheets/d/1zWzFSQ_ygb-gGr1H1BsJCfB7Z89zSIf7GX0UayVEte4/
 queries: 07_Performance
+rviscomi_bio: <i lang="en">Rick Viscomi is a Senior Developer Programs Engineer at Google, working on web transparency projects like the HTTP Archive and Chrome UX Report, and studying the intersection of how websites are built and experienced. Rick is the host of <a href="https://www.youtube.com/playlist?list=PLNYkxOF6rcIBGvYSYO-VxOsaYQDw5rifJ">The State of the Web</a> in which experts discuss how the web is trending. Rick is the coauthor of <a href="https://usingwpt.com">Using WebPageTest</a>, a guide for testing web performance, and writes frequently about the web on <a href="https://dev.to/rick_viscomi">dev.to</a> and on Twitter at <a href="https://twitter.com/rick_viscomi">@rick_viscomi</a>.</i>
+featured_quote: El rendimiento es una parte esencial de la experiencia del usuario. En muchos sitios web, una mejora en la experiencia del usuario al acelerar el tiempo de carga de la página se corresponde con una mejora en las tasas de conversión. Por el contrario, cuando el rendimiento es deficiente, los usuarios no realizan conversiones con tanta frecuencia e incluso se ha observado que realizan ráfagas de clicks en la página como muestra de frustración.
+featured_stat_1: 13%
+featured_stat_label_1: Sitios con FCP rápido
+featured_stat_2: 42%
+featured_stat_label_2: Sitios con TTFB lento
+featured_stat_3: 40%
+featured_stat_label_3: Sitios con FID rápido
 published: 2019-11-04T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introducción

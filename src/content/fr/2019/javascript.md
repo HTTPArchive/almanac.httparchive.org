@@ -10,8 +10,16 @@ translators: [borisschapira]
 discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/
 queries: 01_JavaScript
+housseindjirdeh_bio: Houssein est <i lang="en">Developer Advocate</i> chez Google. Il travaille sur la vitesse, la performance et l’écosystème des frameworks web. Il tweete sur <a href="https://twitter.com/hdjirdeh">@hdjirdeh</a> et blogue sur <a href="https://houssein.me/">https://houssein.me/</a>.
+featured_quote: JavaScript est la ressource la plus consommatrice que nous envoyons aux navigateurs&nbsp;; il doit être téléchargé, analysé, compilé et enfin exécuté. Bien que les navigateurs aient considérablement réduit le temps nécessaire pour analyser et compiler les scripts, le téléchargement et l’exécution sont devenus les étapes les plus coûteuses lorsque JavaScript est traité par une page web.
+featured_stat_1: 89 %
+featured_stat_label_1: des sites ont plus de code tiers que de code maison
+featured_stat_2: 83 %
+featured_stat_label_2: des sites utilisent jQuery
+featured_stat_3: 4.6 %
+featured_stat_label_3: des pages d’accueil utilisent React
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-10T00:00:00.000Z
 ---
 
 ## Introduction
@@ -22,7 +30,7 @@ La spécification du langage elle-même, ainsi que les nombreuses bibliothèques
 
 [HTTP Archive](https://httparchive.org/) parcourt [des millions de pages](https://httparchive.org/reports/state-of-the-web#numUrls) chaque mois et les soumet à une instance privée de [WebPageTest](https://webpagetest.org/) pour stocker les informations clés de chaque page (vous pouvez en savoir plus à ce sujet dans notre [méthodologie](./methodology)). Dans le contexte de JavaScript, HTTP Archive fournit des informations détaillées sur l’utilisation du langage pour l’ensemble du web. Ce chapitre regroupe et analyse un grand nombre de ces tendances.
 
-## Combien de JavaScript utilisons-nous&nbsp;?
+## Combien de JavaScript utilisons-nous&nbsp;? {combien-de-javascript-utilisons-nous}
 
 JavaScript est la ressource la plus consommatrice que nous envoyons aux navigateurs&nbsp;: il doit être téléchargé, analysé, compilé et enfin exécuté. Bien que les navigateurs aient considérablement réduit le temps nécessaire pour analyser et compiler les scripts, [le téléchargement et l’exécution sont devenus les étapes les plus coûteuses](https://v8.dev/blog/cost-of-javascript-2019) lorsque JavaScript est traité par une page web.
 
@@ -412,7 +420,7 @@ Atomics (0,38&nbsp;%) et SharedArrayBuffer (0,20&nbsp;%) sont à peine visibles 
 
 Il est important de noter que les chiffres indiqués ici sont des approximations et qu’ils ne s’appuient pas sur [UseCounter](https://chromium.googlesource.com/chromium/src.git/+/master/docs/use_counter_wiki.md) pour mesurer l’utilisation des fonctionnalités.
 
-## Cartographies de code source (source maps)
+## Cartographies de code source (<i lang="en">source maps</i>) {cartographies-de-code-source-source-maps}
 
 Dans de nombreux moteurs de compilation, les fichiers JavaScript subissent une minification afin de minimiser leur taille et une transpilation pour les nouvelles fonctionnalités du langage qui ne sont pas encore prises en charge par de nombreux navigateurs. Par ailleurs, les surensembles de langage comme [TypeScript](https://www.typescriptlang.org/) se compilent en un résultat qui peut être sensiblement différent du code source original. Pour toutes ces raisons, le code final servi au navigateur peut être illisible et difficile à déchiffrer.
 

@@ -2,7 +2,7 @@
   "settings": [
     {
       "is_live": true,
-      "supported_languages": ["en","es","fr","ja","pt","zh-CN"],
+      "supported_languages": ["en","es","fr","hi","ja","pt","zh-CN","zh-CHT"],
       "ebook_languages": ["en","ja"]
     }
   ],
@@ -179,6 +179,14 @@
     }
   },
   "contributors": {
+    "AbbyTsai": {
+      "name": "Abby Tsai",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/44442451?v=4&s=200",
+      "github": "AbbyTsai"
+    },
     "kleinab": {
       "name": "Abigail Klein",
       "teams": [
@@ -867,6 +875,16 @@
       "avatar_url": "https://avatars3.githubusercontent.com/u/6407114?v=4&s=200",
       "github": "Pavel-Evdokimov",
       "twitter": "Pavel_Evdokimov"
+    },
+    "PraveenPal4232": {
+      "name": "Praveen Pal",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/34737190?v=4&s=200",
+      "website": "https://praveenpal4232.github.io",
+      "github": "PraveenPal4232",
+      "twitter": "PraveenPal4232"
     },
     "rachellcostello": {
       "name": "Rachel Costello",

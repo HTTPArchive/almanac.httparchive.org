@@ -10,8 +10,16 @@ translators: [allemas]
 discuss: 1771
 results: https://docs.google.com/spreadsheets/d/1mnq03DqrRBwxfDV05uEFETK0_hPbYOynWxZkV3tFgNk/
 queries: 16_Caching
+paulcalvano_bio: Paul Calvano est architecte performance web chez <a href="https://www.akamai.com/">Akamai</a>, où il aide les entreprises à améliorer les performances de leurs sites web. Il est également co-responsable du projet HTTP Archive. Vous pouvez le retrouver en train de tweeter à l’adresse <a href="https://twitter.com/paulcalvano">@paulcalvano</a>, en bloguant sur <a href="https://paulcalvano.com">http://paulcalvano.com</a> et partager ses recherches HTTP Archive à <a href="https://discuss.httparchive.org">https://discuss.httparchive.org</a>.
+featured_quote: La mise en cache est une technique permettant de réutiliser un contenu précédemment téléchargé. Elle offre un avantage significatif en termes de performance en évitant de rejouer de coûteuses requêtes. La mise en cache facilite la montée en charge d'une application, en réduisant le trafic sur le réseau à destination du serveur d'origine. Un vieux dicton dit que "la requête la plus rapide est celle que vous n'avez pas à faire " et la mise en cache est l'un des principaux moyens d'éviter d'avoir à refaire des requêtes.
+featured_stat_1: 27 %
+featured_stat_label_1: des réponses n’utilisent aucun en-tête de cache.
+featured_stat_2: 39 %
+featured_stat_label_2: des réponses utilisent l’en-tête <code>Vary</code>.
+featured_stat_3: 82 %
+featured_stat_label_3: des sites pourraient économiser 1 Mo en optimisant le cache.
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-10T00:00:00.000Z
 ---
 
 ## Introduction
@@ -105,7 +113,7 @@ Si aucun en-tête de mise en cache n'est renseigné dans la réponse, alors [l'a
   )
 }}
 
-## Quel type de contenu met-on en cache&nbsp;?
+## Quel type de contenu met-on en cache&nbsp;? {quel-type-de-contenu-met-on-en-cache}
 
 Une ressource mise en cache est stockée par le client pendant un certain temps et peut être réutilisée ultérieurement. Pour les requêtes HTTP, 80&nbsp;% des réponses peuvent certainement être mises en cache, ce qui signifie qu'un système de cache peut les stocker. En dehors de ça,
 
@@ -250,7 +258,7 @@ Les mêmes données pour le mobile sont présentées ci-dessous. Comme on peut l
 }}
 
 
-## Cache-Control vs Expires
+## `Cache-Control` vs `Expires`
 
 Dans HTTP/1.0, l'en-tête `Expires` était utilisé pour indiquer la date/heure après laquelle la réponse était considérée comme périmée. Sa valeur est un horodatage, par exemple&nbsp;:
 
@@ -274,7 +282,7 @@ HTTP/1.1 a introduit l'en-tête `Cache-Control`, et la plupart des clients moder
   )
 }}
 
-## Directives Cache-Control
+## Directives `Cache-Control`
 
 La [specification](https://tools.ietf.org/html/rfc7234#section-5.2.1)  HTTP/1.1 inclut de multiples directives qui peuvent être utilisées dans l'en-tête de réponse `Cache-Control` et sont détaillées ci-dessous. Notez que plusieurs directives peuvent être utilisées dans une seule réponse.
 
@@ -361,7 +369,7 @@ Un autre ensemble intéressant de directives à faire apparaître dans cette lis
 
 Il y a plus de 1&nbsp;500 directives erronées utilisées dans 0,28&nbsp;% des réponses. Ces directives sont ignorées par les clients, comprennent des erreurs d'orthographe telles que `nocache`, `s-max-age`, `smax-age` et `maxage`. Il y a aussi de nombreuses directives inexistantes comme `max-stale`, `proxy-public`, `subsrogate-control`, etc.
 
-## Cache-Control&nbsp;: no-store, no-cache et max-age=0
+## `Cache-Control`&nbsp;: `no-store`, `no-cache` et `max-age=0` {cache-control-no-store-no-cache-et-max-age0}
 
 Lorsqu'une réponse ne doit pas être mise en cache, la directive `Cache-Control` `no-store` doit être utilisée. Si cette directive n'est pas utilisée, alors la réponse peut être mise en cache.
 
@@ -378,7 +386,7 @@ Plus de 3 millions de réponses comprennent la combinaison de `no-store`, `no-ca
 
 La directive `max-age=0` est présente sur 1,1&nbsp;% des réponses (plus de quatre millions de réponses) où `no-store` n'est pas présent. Ces ressources seront mises en cache dans le navigateur mais devront être revalidées car elles sont immédiatement expirées.
 
-## Comment les TTL de cache se comparent-ils à l'âge des ressources&nbsp;?
+## Comment les TTL de cache se comparent-ils à l'âge des ressources&nbsp;? {comment-les-ttl-de-cache-se-comparent-ils-à-lâge-des-ressources}
 
 Jusqu'à présent, nous avons parlé de la façon dont les serveurs Web indiquent à un client ce qui peut être mis en cache, et pendant combien de temps. Lors de la conception des règles de mise en cache, il est également important de comprendre l'âge du contenu que vous servez.
 
@@ -534,7 +542,7 @@ Voici des exemples d'utilisations incorrectes de l'en-tête `Expires`&nbsp;:
 
 La plus grande source d'en-têtes `Expires` invalides provient de ressources servies par une tierce partie , dans lesquels un horodatage utilise le fuseau horaire EST, par exemple `Expires: Tue, 27 Apr 1971 19:44:06 EST`.
 
-## En-tête Vary
+## En-tête `Vary`
 
 L'une des étapes les plus importantes de la mise en cache est de déterminer si la ressource demandée est mise en cache ou non. Bien que cela puisse paraître simple, il arrive souvent que l'URL seule ne suffise pas à le déterminer. Par exemple, les requêtes ayant la même URL peuvent varier en fonction de la [compression](./compression) utilisée (gzip, brotli, etc.) ou être modifiées et adaptées aux visiteurs mobiles.
 

@@ -617,9 +617,15 @@
           </li>
         {% endif %}
       {% endfor %}
+      {% if supported_languages|length > 1 %}
       <li>
-        <a class="help-translate" href="https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Translators'-Guide">{{ self.help_translate() }}</a>
+        <a class="help-translate" href="https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Translators'-Guide"><em>{{ self.help_translate() }}</em></a>
       </li>
+      {% else %}
+      <li>
+        <a href="https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Translators'-Guide"><em>{{ self.help_translate() }}</em></a>
+      </li>
+      {% endif %}
     </ul>
   </div>
 {% endmacro %}

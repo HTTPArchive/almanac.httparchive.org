@@ -10,8 +10,17 @@ translators: [borisschapira]
 discuss: 1759
 results: https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/
 queries: 04_Media
+colinbendell_bio: Colin fait partie du <i lang="en">CTO Office</i> de <a href="https://cloudinary.com/">Cloudinary</a> et est co-auteur du livre O’Reilly <a href="https://www.oreilly.com/library/view/high-performance-images/9781491925799/" lang="en">High Performance Images</a>. Il passe une grande partie de son temps à l’intersection des données à haut volume, des médias, des navigateurs et des standards. Vous le trouverez twittant en tant que <a href="https://twitter.com/colinbendell">@colinbendell</a> et sur son blog <a href="https://bendell.ca/">https://bendell.ca</a>.
+dougsillars_bio: Doug Sillars est un nomade numérique indépendant qui travaille à l’intersection de la performance et des médias. Il tweete sous <a href="https://twitter.com/dougsillars">@dougsillars</a>, et blogue régulièrement sur <a href="https://dougsillars.com">dougsillars.com</a>.
+featured_quote: Les images, les animations et les vidéos constituent une partie significative de l’expérience Web. Elles sont importantes pour de nombreuses raisons&nbsp;&colon; elles aident à raconter des histoires, à faire participer le public et à fournir une expression artistique d’une manière qui, souvent, ne peut pas être facilement produite avec d’autres technologies du web. L’importance de ces ressources médias peut être démontrée de deux façons&nbsp;&colon; par le volume d’octets téléchargés pour une page, mais aussi par la quantité de pixels utilisés pour afficher ces médias.
+featured_stat_1: 1 Mo
+featured_stat_label_1: taille médiane d’une page d’accueil
+featured_stat_2: 60 %
+featured_stat_label_2: des images sont des JPEG
+featured_stat_3: 2 %
+featured_stat_label_3: des pages utilisent l’élément <code>&lt;picture&gt;</code>
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-10T00:00:00.000Z
 ---
 
 ## Introduction
@@ -323,7 +332,7 @@ En observant la manière dont les Indications Client sont énoncées, on peut vo
 
 Les Indications Client liés au réseau, `downlink`, `rtt`, et `ect`, ne sont disponibles que sur Chrome pour Android.
 
-### Lazy loading
+### <i lang="en">Lazy loading</i> {lazy-loading}
 
 L’amélioration des performances des pages web peut être partiellement caractérisée comme un jeu de miroirs&nbsp;: sans les supprimer, on décale les éléments les plus lents en dehors de la zone d’usage de l’utilisateur. Par exemple, le <span lang="en">lazy loading</span> d’images est une de ces illusions où les images et les contenus médias ne sont chargés que lorsque l’utilisateur fait défiler la page. Cela améliore les performances perçues, même sur des réseaux lents, et évite à l’utilisateur de télécharger des octets qui ne sont pas visualisés autrement.
 

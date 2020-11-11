@@ -31,9 +31,11 @@ class Language(object):
     EN = _Language('English', 'en')
     ES = _Language('Español', 'es')
     FR = _Language('Français', 'fr')
+    HI = _Language('हिन्दी', 'hi')
     JA = _Language('日本語', 'ja')
     PT = _Language('Português', 'pt')
     ZH_CN = _Language('简体中文', 'zh-CN')
+    ZH_CHT = _Language('繁體中文', 'zh-CHT')
 
 
 DEFAULT_LANGUAGE = Language.EN

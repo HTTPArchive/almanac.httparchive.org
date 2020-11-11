@@ -10,8 +10,17 @@ translators: [JustinyAhin]
 discuss: 1769
 results: https://docs.google.com/spreadsheets/d/1FDYe6QdoY3UtXodE2estTdwMsTG-hHNrOe9wEYLlwAw/
 queries: 14_CMS
+ernee_bio: Renee Johnson est consultante en développement et conception de produits web, passionnée de WordPress, et organisatrice et bénévole fréquente de WordCamp. Elle travaille actuellement avec l’équipe des relations avec les développeurs de systèmes de gestion de contenu chez Google en tant que spécialiste du support produit.
+amedina_bio: Alberto Medina est <i lang="en">Developer Advocate</i> dans l’équipe Écosystèmes de Contenus Web chez Google, spécialisé dans la progression de la qualité des contenus sur le web via des technologies innovantes comme Amp, et l’usage d’APIS web modernes. Le travail actuel d’Alberto se focalise sur les systèmes de gestion de contenus puisqu’il dirige une équipe au sein des Écosystèmes de Contenus appellée Relation avec les Équipe de Développement CMS.
+featured_quote: Le terme général Système de gestion de contenu (SGC, ou CMS pour Content Management System en anglais) désigne les systèmes permettant aux personnes et aux organisations de créer, de gérer et de publier du contenu. Un CMS pour le contenu web, plus précisément, est un système visant à créer, gérer et publier du contenu à consommer et à expérimenter via le web ouvert. Chaque CMS met en œuvre un sous-ensemble d’un large éventail de capacités de gestion de contenu et les mécanismes correspondants pour permettre aux utilisateurs de construire facilement et efficacement des sites web autour de leur contenu.
+featured_stat_1: 40 %
+featured_stat_label_1: des pages web sont propulsées par un CMS
+featured_stat_2: 74 %
+featured_stat_label_2: des sites utilisant un CMS utilisent WordPress
+featured_stat_3: 1,232 Ko
+featured_stat_label_3: poids des images sur page CMS (bureau)
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-10-06T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introduction

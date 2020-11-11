@@ -61,7 +61,7 @@ p {
   -ms-grid-column: 1;
   grid-area: intro;
   width: 100%;
-  max-width: 440px;
+  max-width: 550px;
   /* match the .container side padding */
   padding-left: 20px;
 }
@@ -160,6 +160,7 @@ p {
 
 /* Contributors */
 .contributors-container {
+  padding-left: 180px;
   -ms-grid-row: 3;
   grid-area: contributors;
   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDIiIGhlaWdodD0iMzMwIiB2aWV3Qm94PSIwIDAgMzAyIDMzMCI+CiAgPHBhdGggb3BhY2l0eT0iLjMiIGZpbGw9IiNmN2Y3NzkiIGQ9Ik0tMTcxMiAyNTdIMjI1djczaC0xOTM3eiIvPgogIDxwYXRoIG9wYWNpdHk9Ii45IiBmaWxsPSIjYThjYWJhIiBkPSJNLTE2NDAgMTM2SDI5N3Y3M2gtMTkzN3oiLz4KICA8cGF0aCBvcGFjaXR5PSIuOSIgZmlsbD0iI2Y3Zjc3OSIgZD0iTS0xNjc3IDE2NkgyNjB2NzNoLTE5Mzd6Ii8+CiAgPHBhdGggb3BhY2l0eT0iLjkiIGZpbGw9IiM0YTMyNDQiIGQ9Ik0tMTc3MiAzSDE2NXY3M2gtMTkzN3oiLz4KPC9zdmc+);
@@ -289,10 +290,6 @@ p {
 }
 
 @media (max-width: 1400px) and (min-width: 901px) {
-  .contributors-container {
-    padding-left: 180px;
-  }
-  
   .people {
     height: auto;
   }
@@ -507,6 +504,7 @@ p {
     justify-items: center;
     justify-content: center;
     overflow: hidden;
+    min-height: 1100px;
   }
 
   .intro {
@@ -623,6 +621,7 @@ p {
   }
 
   .methodology-characters {
+    margin-top: 20px;
     width: 350px;
   }
 

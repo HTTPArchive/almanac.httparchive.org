@@ -1,6 +1,6 @@
 {% extends "base/2019/base_chapter.html" %}
 
-{% block title %}{{ metadata.get('title') }} | 2019 | HTTP ArchiveによるWeb Almanac{% endblock %}
+{% block title %}{{ metadata.get('title') }} | {{ year }} | HTTP ArchiveによるWeb Almanac{% endblock %}
 
 {% block description %}{{ metadata.get('description',metadata.get('title') + ' の章 ' + year + ' Web Almanacの使用状況を調べる ' + metadata.get('description',metadata.get('title')) + ' をウェブ上で公開しています。') }}{% endblock %}
 
@@ -10,9 +10,11 @@
 
 {% block prev_next_title %}前後の章のナビゲーション{% endblock %}
 
+{% block explore_the_results %}結果を調べる{% endblock %}
 {% block discuss_this_chapter %}この章について話し合う{% endblock %}
 {% block comment %}コメント{% endblock %}
 {% block comments %}コメント{% endblock %}
+{% block comments_fallback %}コメント{% endblock %}
 {% block queries %}クエリを表示{% endblock %}
 {% block results %}結果を表示{% endblock %}
 
