@@ -362,7 +362,7 @@ Lorsqu’ils sont utilisés ensemble, les navigateurs qui prennent en charge les
 
 De même, très peu de sites (0,50&nbsp;%-0,80&nbsp;%) utilisent l’attribut `nomodule` pour leurs scripts.
 
-## Preload et prefetch
+## <span lang="en">Preload</span> et <span lang="en">prefetch</span> {preload-et-prefetch}
 
 [Preload](https://developer.mozilla.org/fr/docs/Web/HTML/Pr%C3%A9charger_du_contenu) et [prefetch](https://developer.mozilla.org/fr/docs/Web/HTTP/FAQ_sur_le_pr%C3%A9chargement_des_liens) sont des [Indices de Ressources](./resource-hints) qui permettent d’aider le navigateur à déterminer quelles ressources doivent être téléchargées.
 
