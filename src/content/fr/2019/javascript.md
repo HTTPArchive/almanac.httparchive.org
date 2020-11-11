@@ -19,7 +19,7 @@ featured_stat_label_2: des sites utilisent jQuery
 featured_stat_3: 4.6 %
 featured_stat_label_3: des pages d’accueil utilisent React
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-10T00:00:00.000Z
+last_updated: 2020-11-11T00:00:00.000Z
 ---
 
 ## Introduction
@@ -362,7 +362,7 @@ Lorsqu’ils sont utilisés ensemble, les navigateurs qui prennent en charge les
 
 De même, très peu de sites (0,50&nbsp;%-0,80&nbsp;%) utilisent l’attribut `nomodule` pour leurs scripts.
 
-## Preload et prefetch
+## <span lang="en">Preload</span> et <span lang="en">prefetch</span> {preload-et-prefetch}
 
 [Preload](https://developer.mozilla.org/fr/docs/Web/HTML/Pr%C3%A9charger_du_contenu) et [prefetch](https://developer.mozilla.org/fr/docs/Web/HTTP/FAQ_sur_le_pr%C3%A9chargement_des_liens) sont des [Indices de Ressources](./resource-hints) qui permettent d’aider le navigateur à déterminer quelles ressources doivent être téléchargées.
 

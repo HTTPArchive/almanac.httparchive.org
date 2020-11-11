@@ -19,7 +19,7 @@ featured_stat_label_2: des sites désactive le zoom
 featured_stat_3: 34 %
 featured_stat_label_3: des sites ont des cibles d'appui de tailles suffisantes
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-04T00:00:00.000Z
+last_updated: 2020-11-11T00:00:00.000Z
 ---
 
 ## Introduction
@@ -92,9 +92,9 @@ Notez que nous n’avons pas été en mesure de capturer et de mesurer les captu
 
 Pour une analyse plus approfondie des effets de JavaScript, consultez [«&nbsp;<i lang="en">The Cost of JavaScript</i>&nbsp;» (le coût de JavaScript) écrit en 2018](https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4) par Addy Osmani.
 
-### Utilisation de Service Workers
+### Utilisation de <span lang="en">Service Workers</span> {utilisation-de-service-workers}
 
-Les navigateurs chargent généralement toutes les pages de la même manière. Ils donnent la priorité au téléchargement de certaines ressources par rapport à d’autres, suivent les mêmes règles de mise en cache, etc. Grâce aux [Service Workers](https://developers.google.com/web/fundamentals/primers/service-workers), nous avons maintenant un moyen de contrôler directement la façon dont nos ressources sont gérées par la couche réseau, ce qui permet souvent d’améliorer considérablement le temps de chargement des pages.
+Les navigateurs chargent généralement toutes les pages de la même manière. Ils donnent la priorité au téléchargement de certaines ressources par rapport à d’autres, suivent les mêmes règles de mise en cache, etc. Grâce aux <a href="https://developers.google.com/web/fundamentals/primers/service-workers" lang="en">Service Workers</a>, nous avons maintenant un moyen de contrôler directement la façon dont nos ressources sont gérées par la couche réseau, ce qui permet souvent d’améliorer considérablement le temps de chargement des pages.
 
 Mais bien qu’ils soient disponibles depuis 2016 et mis en œuvre sur tous les principaux navigateurs, seuls 0,64&nbsp;% des sites les utilisent&nbsp;!
 
@@ -286,7 +286,7 @@ Permettre aux utilisateurs de copier et de coller leurs mots de passe dans votre
 
 Pendant plus de 13 ans, nous avons traité le web *mobile* de façon accessoire, comme une vulgaire alternative aux sites pour ordinateurs de bureau. Mais il est temps que cela change. Le web mobile est maintenant *le* web, et les sites pour ordinateurs de bureau tombent en désuétude. Il y a maintenant 4 milliards de smartphones actifs dans le monde, couvrant 70&nbsp;% de tous les utilisateurs potentiels. Qu’en est-il des ordinateurs de bureau&nbsp;? Ils sont actuellement 1,6 milliard et représentent de moins en moins d’utilisateurs du web chaque mois.
 
-Comment nous débrouillons-nous pour répondre aux besoins des utilisateurs de téléphones portables&nbsp;? Selon nos recherches, même si 71&nbsp;% des sites font des efforts pour adapter leur site au mobile, ils sont loin d’atteindre leur objectif. Les pages mettent une éternité à se charger et deviennent inutilisables en raison d’un abus de JavaScript, le texte est souvent impossible à lire, l’interaction avec les sites en cliquant sur des liens ou des boutons est source d’erreurs et d’exaspération, et des tonnes de fonctionnalités formidables inventées pour atténuer ces problèmes (Service Workers, saisie automatique, zoom, nouveaux formats d’image, etc) sont à peine utilisées.
+Comment nous débrouillons-nous pour répondre aux besoins des utilisateurs de téléphones portables&nbsp;? Selon nos recherches, même si 71&nbsp;% des sites font des efforts pour adapter leur site au mobile, ils sont loin d’atteindre leur objectif. Les pages mettent une éternité à se charger et deviennent inutilisables en raison d’un abus de JavaScript, le texte est souvent impossible à lire, l’interaction avec les sites en cliquant sur des liens ou des boutons est source d’erreurs et d’exaspération, et des tonnes de fonctionnalités formidables inventées pour atténuer ces problèmes (<span lang="en">Service Workers</span>, saisie automatique, zoom, nouveaux formats d’image, etc) sont à peine utilisées.
 
 Le web mobile existe maintenant depuis assez longtemps pour qu’il y ait toute une génération d’enfants pour qui c’est le seul internet qu’ils aient jamais connu. Et quel genre d’expérience leur donnons-nous&nbsp;? Nous les ramenons essentiellement à l’ère du modem (heureusement qu’AOL vend encore ces CD qui offrent 1000 heures d’accès gratuit à l’internet)&nbsp;!
 
