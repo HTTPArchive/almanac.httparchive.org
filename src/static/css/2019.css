@@ -1367,9 +1367,11 @@ p.copyright a {
   font-weight: bold;
   font-size: 1.25rem;
 }
+
 .nav-dropdown-list-part a {
   padding: 0;
 }
+
 .nav-dropdown-list-part.foreword {
   padding-top: 24px;
 }

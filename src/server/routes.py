@@ -69,7 +69,7 @@ def accessibility_statement(lang):
         return redirect("/%s/accessibility-statement" % (lang)), 301
     else:
         return render_template('%s/2019/accessibility_statement.html' % (lang),
-            config=config, ebook_size_in_mb=ebook_size_in_mb)
+                               config=config, ebook_size_in_mb=ebook_size_in_mb)
 
 
 @app.route('/sitemap.xml')
