@@ -1,0 +1,13 @@
+{%- set featured_chapter = ("markup") %}
+
+{%- if featured_chapter == "markup" %}
+  {%- set featured_chapter_quote = "We approach near-complete adoption of living HTML, are quick to prune our pages of fads, and we're fast in adopting and shunning frameworks. And still, there are no signs we exhausted the options HTML gives us." %}
+  {%- set featured_chapter_stats = {
+      "stat1":"85.73%","label1":"Percentage of pages that use the &quot;living&quot; HTML doctype",
+      "stat2":"30,073","label2":"Number of non-standard `h7` elements",
+      "stat3":"25.24 KB","label3":"Weight of the median document"
+    }
+  %}
+{% endif %}
+
+{{ featuredChapter(featured_chapter, featured_chapter_quote, featured_chapter_stats) }}
