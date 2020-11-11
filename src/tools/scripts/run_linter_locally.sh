@@ -61,4 +61,4 @@ else
 fi
 
 echo "Starting linting"
-docker run -e RUN_LOCAL=true -e VALIDATE_BASH=true -e VALIDATE_CSS=true -e VALIDATE_HTML=true -e VALIDATE_JAVASCRIPT_ES=true -e VALIDATE_JSON=true -e VALIDATE_MD=true -e VALIDATE_PYTHON_PYLINT=true -e VALIDATE_PYTHON_FLAKE8=true -e VALIDATE_YAML=true -v "/tmp/lint:/tmp/lint" github/super-linter
+docker run -e RUN_LOCAL=true -e LOG_LEVEL=VERBOSE -e VALIDATE_BASH=true -e VALIDATE_CSS=true -e VALIDATE_HTML=true -e VALIDATE_JAVASCRIPT_ES=true -e VALIDATE_JSON=true -e VALIDATE_MD=true -e VALIDATE_PYTHON_PYLINT=true -e VALIDATE_PYTHON_FLAKE8=true -e VALIDATE_YAML=true -v "/tmp/lint:/tmp/lint" github/super-linter | grep -v "\[DEBUG\]"
