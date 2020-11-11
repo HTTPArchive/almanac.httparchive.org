@@ -36,10 +36,10 @@ base AS (
 SELECT
   client,
   percentile,
-  APPROX_QUANTILES(body_size, 1000)[OFFSET(percentile)] AS approx_redirect_body_size
+  APPROX_QUANTILES(body_size, 1000)[OFFSET(percentile * 10)] AS approx_redirect_body_size
 FROM
   base,
-UNNEST(GENERATE_ARRAY(0, 1000, 1)) AS percentile
+  UNNEST([10, 25, 50, 75, 90]) AS percentile
 WHERE
   redirected = 1
 GROUP BY
