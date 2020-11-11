@@ -50,7 +50,7 @@ In this section, we're covering the higher-level aspects of HTML like document t
   sql_file="summary_pages_by_device_and_doctype.sql"
 ) }}
 
-96.82% of pages declare a [_doctype_](https://developer.mozilla.org/en-US/docs/Glossary/Doctype). HTML documents declaring a doctype is useful for historical reasons, "to avoid triggering quirks mode in browsers" as Ian Hickson [wrote](https://lists.w3.org/Archives/Public/public-html-comments/2009Jul/0020.html) in 2009. So, what are the most popular values?
+96.82% of pages declare a [_doctype_](https://developer.mozilla.org/en-US/docs/Glossary/Doctype). HTML documents declaring a doctype is useful for historical reasons, "to avoid triggering quirks mode in browsers" as [Ian Hickson wrote in 2009](https://lists.w3.org/Archives/Public/public-html-comments/2009Jul/0020.html). What are the most popular values?
 
 <figure markdown>
 | Doctype | Pages | Percentage |
@@ -69,14 +69,14 @@ You can already tell how the numbers decrease quite a bit after XHTML 1.0, befor
 Two things stand out from these results:
 
 1. Almost 10 years after [the announcement of living HTML](https://blog.whatwg.org/html-is-the-new-html5) (aka "HTML5"), living HTML has clearly become the norm.
-2. The web before living HTML can still be seen in the next most popular doctypes, like XHTML 1.0. XHTML. Although their documents were likely delivered as HTML with a MIME type of `text/html`, these older doctypes are not dead yet.
+2. The web before living HTML can still be seen in the next most popular doctypes, like XHTML 1.0. XHTML. Although their documents are likely delivered as HTML with a MIME type of `text/html`, these older doctypes are not dead yet.
 
 ### Document size
 
 A page's document size refers to the amount of HTML bytes transferred over the network, including compression if enabled. At the extremes of the set of 6.3 million documents:
 
 * 1,110 documents are empty (0 bytes).
-* The average document size is 50.35 KB (in most cases [compressed](https://w3techs.com/technologies/details/ce-gzipcompression)).
+* The average document size is 50.35 KB ([in most cases compressed](https://w3techs.com/technologies/details/ce-gzipcompression)).
 * The largest document by far weighs 64.16 _MB_, almost deserving its own analysis and chapter in the Web Almanac.
 
 {# TODO(analysts): Should 25,237 bytes be divided by 1000 or 1024 to convert to KB? 1000 seems to be used here but most chapters use 1024. Are the stats above also off? #}
@@ -117,7 +117,7 @@ Here are the 10 most popular (normalized) languages in our sample. At first we c
 | `de-de` | 1.60% |
 | `ru-ru` | 1.60% |
 
-<figcaption>{{ figure_link(caption="Top 10 <code><html lang></code> attribute values.", sheets_gid="2047285366", sql_file="pages_almanac_by_device_and_html_lang.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Top 10 <code>lang</code> attribute values.", sheets_gid="2047285366", sql_file="pages_almanac_by_device_and_html_lang.sql") }}</figcaption>
 </figure>
 
 {# TODO(authors): Add an interpretation of the lang results and clarify if these are for desktop or mobile. #}
@@ -148,7 +148,7 @@ The above is a non-standard HTML conditional comment. While those have proven to
 
 Still, on the above percentile extremes, we found that web pages are using about 6 conditional comments in the 90th percentile, and 1 comment while in the 10th percentile.  Most of the pages include them for helpers such as html5shiv, selectivizr, and respond.js. While being decentish and still active pages, our conclusion is that many of them were using obsolete CMS themes.
 
-For production, HTML comments are usually stripped by build tools. Considering all the above counts and percentages, and referring to the use of comments in general, we can only guess that lots of pages are served without involving an HTML minifier.
+For production, HTML comments are usually stripped by build tools. Considering all the above counts and percentages, and referring to the use of comments in general, we suppose that lots of pages are served without involving an HTML minifier.
 
 ### Script use 
 
@@ -185,7 +185,7 @@ What `type` attribute values are used with `script` elements?
 - `text/template`: 0.41%
 - `text/html` 0.27% (!)
 
-When it comes to loading [JavaScript module scripts](https://jakearchibald.com/2017/es-modules-in-browsers/) using `type="module"`, we found that 0.13% of `script` elements currently specify this attribute-value combination. `nomodule` is used by 0.95% of all tested pages. Note that one metric relates to elements, the other to pages.
+When it comes to loading [JavaScript module scripts](https://jakearchibald.com/2017/es-modules-in-browsers/) using `type="module"`, we found that 0.13% of `script` elements currently specify this attribute-value combination. `nomodule` is used by 0.95% of all tested pages. (Note that one metric relates to elements, the other to pages.)
 
 36.38% of all scripts have no values set whatsoever.
 
@@ -277,7 +277,7 @@ Here's a simple example showing the use of a `summary` in a `details` element:
 </details>
 ```
 
-A while ago, Steve Faulkner [pointed out](https://twitter.com/stevefaulkner/status/806474286592561152) how these two elements were used poorly in the wild. As you can tell from the example above, for each `details` element you'd need a `summary` element that may only be used as the [first child](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary#Usage_notes) of `details`.
+A while ago, Steve Faulkner [pointed out](https://twitter.com/stevefaulkner/status/806474286592561152) how these two elements were used inadequately in the wild. As you can tell from the example above, for each `details` element you'd need a `summary` element that may only be used as the [first child](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary#Usage_notes) of `details`.
 
 Accordingly, we looked at the number of `details` and `summary` elements and it seems that they do continue to be misused. The count of `summary` elements is higher on both mobile and desktop, with a ratio of 1.11 `summary` elements for every `details` element on mobile, and 1.19 on desktop, respectively:
 
@@ -382,7 +382,7 @@ Other groups that stand out include [AMP markup](https://amp.dev/) with `amp-` e
 
 There are more questions to ask about the use of HTML, and one may relate to obsolete elements, which are elements like `applet`, `bgsound`, `blink`, `center`, `font`, `frame`, `isindex`, `marquee`, or `spacer`.
 
-In our mobile dataset of 6.3 million pages, around 0.9 million pages (14.01%) contained one or more of these elements. Here are the top 9, which have been used more than 10,000 times:
+In our mobile dataset of 6.3 million pages, around 0.9 million pages (14.01%) contain one or more of these elements. Here are the top 9, which are used more than 10,000 times:
 
 <figure markdown>
 | Element | Occurrences | Pages (%) |
@@ -488,7 +488,7 @@ Similar to the section on the most [popular elements](#top-elements), this sect
 
 The most popular attribute is `class`, with nearly 3 billion occurrences in our dataset and constituting 34% of all attributes in use. `class` is by far the most prevalent attribute.
 
-The `value` attribute, which specifies the value of an `input` element, surprisingly completes the top ten. It's surprising to us because, subjectively, we didn't get the impression values were used that frequently.
+The `value` attribute, which specifies the value of an `input` element, surprisingly completes the top 10. It's surprising to us because, subjectively, we didn't get the impression `value` attributes were used that frequently.
 
 ### Attributes on pages
 
@@ -507,36 +507,21 @@ rel | 97.98%
 id | 97.46%
 style | 95.95%
 alt | 90.75%
-title | 85.50%
-target | 82.98%
-async | 81.96%
-lang | 79.10%
-width | 78.99%
-height | 76.36%
-charset | 75.44%
-value | 67.57%
-role | 62.97%
-action | 62.34%
-http-equiv | 62.30%
-method | 60.27%
-media | 60.14%
-property | 55.68%
-placeholder | 54.21%
 
 <figcaption>{{ figure_link(
-  caption="Top 25 attributes by page.",
+  caption="Top 10 attributes by page.",
   sheets_gid="1185369559",
   sql_file="pages_almanac_by_device_and_attribute_name_present.sql"
 )}}</figcaption>
 </figure>
 
-These results raise some questions that we cannot answer. For example, `type` is used on other elements too, but why this tremendous popularity? Especially given that it's usually not needed to specify for style sheets or scripts, with CSS and JavaScript being assumed default. Or, how do we really fare with `alt`? Do those 9.25% of pages not contain any images or are they just inaccessible? The rest of these 25 attributes make up all of those found on at least half of all pages.
+These results raise some questions that we cannot answer. For example, `type` is used on other elements too, but why this tremendous popularity? Especially given that it's usually not needed to specify for style sheets or scripts, with CSS and JavaScript being assumed default. Or, how do we really fare with `alt`? Do those 9.25% of pages not contain any images or are they just inaccessible?
 
 ### `data-*` attributes
 
-Per the HTML spec,[`data-*` attributes](https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes) "are intended to store custom data, state, annotations, and similar, private to the page or application, for which there are no more appropriate attributes or elements." How are they used? What are the popular ones? Is there anything interesting here?
+Per the HTML spec, [`data-*` attributes](https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes) "are intended to store custom data, state, annotations, and similar, private to the page or application, for which there are no more appropriate attributes or elements." How are they used? What are the popular ones? Is there anything interesting here?
 
-The most popular ones stand out because they are almost twice as popular than each of the attributes that followed (with >1% use):
+The two most popular ones stand out because they are almost twice as popular than each of the attributes that followed (with >1% use):
 
 <figure markdown>
 | Attribute | Occurrences | Percentage |
@@ -614,7 +599,7 @@ When we built our tests we didn't check for the presence of images, but only loo
 There are a couple of surprises in here:
 
 * Support for other formats is there but ICO is still the go-to format for favicons on the web.
-* JPG is a relatively popular favicon format even though it may not yield the best results (or a comparatively large file size) for many favicon sizes.
+* JPG is a relatively popular favicon format even though it may not yield the best results (or a comparatively large weight) for many favicon sizes.
 * WebP is twice as popular as SVG! This might change, however, with [SVG favicon support](https://caniuse.com/link-icon-svg) improving.
 
 ### Button and input types
@@ -643,7 +628,7 @@ There has been a lot of [discussion](https://adrianroselli.com/2016/01/links-but
 <figcaption>{{ figure_link(caption="Adoption of button types.", sheets_gid="410549982", sql_file="pages_markup_by_device.sql") }}</figcaption>
 </figure>
 
-Our analysis shows that about 60% of pages contain a button element and more than half of the pages (32.43%) have at least one button that fails to specify a `type` attribute. Note that the button element has a [default type](https://dev.w3.org/html5/spec-LC/the-button-element.html) of `submit`, so the default behavior of buttons on these 32% of pages is to submit the current form data. To avoid possibly unexpected behavior like this, a best practice is to specify the type attribute.
+Our analysis shows that about 60% of pages contain a button element and more than half of the pages (32.43%) have at least one button that fails to specify a `type` attribute. Note that the button element has a [default type](https://dev.w3.org/html5/spec-LC/the-button-element.html) of `submit`, so the default behavior of buttons on these 32% of pages is to submit the current form data. To avoid possibly unexpected behavior like this, a best practice is to specify the `type` attribute.
 
 <figure markdown>
 | Percentile | Buttons per page |
@@ -704,7 +689,7 @@ Using `target="_blank"` has been known to be a [security vulnerability](https://
 <figcaption>{{ figure_link(caption="Blank relationships.", sheets_gid="1876528165", sql_file="pages_wpt_bodies_by_device.sql") }}</figcaption>
 </figure>
 
-As a rule of thumb and for [usability reasons](https://www.nngroup.com/articles/new-browser-windows-and-tabs/), prefer not to use `target="_blank"`. 
+As a rule of thumb and for [usability reasons](https://www.nngroup.com/articles/new-browser-windows-and-tabs/), prefer not to use `target="_blank"` in the first place. 
 
 <p class="note">Within the latest Safari and Firefox versions, setting <code>target="_blank"</code> on <code>a</code> elements implicitly provides the same <code>rel</code> behavior as setting <code>rel="noopener"</code>. This is already <a href="https://chromium-review.googlesource.com/c/chromium/src/+/1630010">implemented in Chromium</a> as well and will land in Chrome 88.</p>
 
@@ -722,13 +707,13 @@ We've sprinkled some observations throughout the chapter, and you'll have made y
 ) }}
 
 {# TODO(authors): Changed Simon's quote to a paraphrase, since it's not clear which part is verbatim. If there's a quote, let's wrap it in quotes.  #}
-Fewer pages land in quirks mode. In 2016, that number was at [around 7.4%](https://discuss.httparchive.org/t/how-many-and-which-pages-are-in-quirks-mode/777). At the end of 2019, we observed [4.85%](https://twitter.com/zcorpan/status/1205242913908838400). And now, we're at about 3.97%. This trend, to paraphrase [Simon Pieters](./contributors#zcorpan) in his review of this chapter, seems indeed clear and encouraging.
+Fewer pages land in quirks mode. In 2016, that number was at [around 7.4%](https://discuss.httparchive.org/t/how-many-and-which-pages-are-in-quirks-mode/777). At the end of 2019, we observed [4.85%](https://twitter.com/zcorpan/status/1205242913908838400). And now, we're at about 3.97%. This trend, to paraphrase [Simon Pieters](./contributors#zcorpan) in his review of this chapter, seems clear and encouraging.
 
 Although we lack historic data to draw the full development picture, "meaningless" `div`, `span`, and `i` markup has pretty much [replaced](#top-elements) the `table` markup we've observed in the 1990s and early 2000s. While one may question whether `div` and `span` elements are always used without there being a semantically more appropriate alternative, these elements are still preferable to `table` markup, though, as during the heyday of the old web, these were seemingly used for everything but tabular data.
 
 Elements per page and element types per page stayed roughly the same, showing [no significant change](#element-diversity) in our HTML writing practice when compared to 2019. Such changes may require more time to manifest.
 
-Proprietary product-specific elements like `g:plusone` (used on 17,607 pages in the mobile sample) and `fb:like` (11,335) have almost disappeared after still being [among the most popular ones](../2019/markup#products-and-libraries-and-their-custom-markup) last year. However, we observe more [custom elements](#custom-elements) for things like Slider Revolution, AMP, and Angular. Elements like `ym-measure`, `jdiv`, and `ymaps` are still prevalent. What we imagine we're seeing here is that, under the sea of slowly changing practices, HTML is very much being developed and maintained, as authors toss deprecated markup and embrace new solutions.
+Proprietary product-specific elements like `g:plusone` (used on 17,607 pages in the mobile sample) and `fb:like` (11,335) have almost disappeared after still being [among the most popular ones](../2019/markup#products-and-libraries-and-their-custom-markup) last year. However, we observe more [custom elements](#custom-elements) for things like Slider Revolution, AMP, and Angular. Elements like `ym-measure`, `jdiv`, and `ymaps` are also still prevalent. What we imagine we're seeing here is that, under the sea of slowly changing practices, HTML is very much being developed and maintained, as authors toss deprecated markup and embrace new solutions.
 
 We're leaving this open to you. What are your observations? What has caught your eye? What do you think has taken a turn for the worse, and what has improved? [Leave a comment](https://discuss.httparchive.org/t/2039) to share your thoughts!
 
@@ -736,7 +721,7 @@ We're leaving this open to you. What are your observations? What has caught your
 
 When we don't need to [cover 14 years](../2019/markup) for analysis but only 1, one could almost get the impression that HTML is rather inert, that not much changes.
 
-Yet what we observe with this year's data is that there's a lot of movement at the bottom and near the shore of said sea of HTML. We approach near-complete adoption of living HTML, are quick to prune our pages of fads like Google and Facebook widgets, and we're fast in adopting and shunning frameworks. Both Angular and AMP, though "component frameworks", seem to have significantly lost in popularity, likely for solutions like React and Vue.
+Yet what we observe with this year's data is that there's a lot of movement at the bottom and near the shore of said sea of HTML. We approach near-complete adoption of living HTML. We are quick to prune our pages of fads like Google and Facebook widgets. We're also fast in adopting and shunning frameworks, as both Angular and AMP (though a "component framework") seem to have significantly lost in popularity, likely for solutions like React and Vue.
 
 And still, there are no signs we exhausted the options HTML gives us. The median of 30 different elements used on a given page, which is roughly a quarter of the elements HTML provides us with, suggests a rather one-sided use of HTML. That is supported by the immense popularity of elements like `div` and `span`, and no custom elements to potentially meet the demands that these two elements may represent. Unfortunately, we couldn't validate each document in the sample. However, anecdotally and to be taken with caution, we learned that [79%](https://github.com/HTTPArchive/almanac.httparchive.org/issues/899#issuecomment-717856201) of W3C-tested documents have validation errors. After everything we've seen, it looks like we're still far from mastering the craft of HTML.
 
