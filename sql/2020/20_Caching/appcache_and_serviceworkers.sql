@@ -14,6 +14,4 @@ GROUP BY
   using_appcache, 
   using_serviceworkers
 ORDER BY
-  http_type, 
-  using_appcache, 
-  using_serviceworkers
+  pct DESC
