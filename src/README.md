@@ -96,6 +96,24 @@ npm run watch
 ```
 
 
+## Linting files
+
+When you push changes to GitHub they will be linted using the GitHub Super-Linter.
+
+It is possible to run the Super-Linter locally if you have Docker installed"
+
+```
+npm run lint
+```
+
+This can take a while to run so you can lint just subsets of files or folders:
+
+```
+npm run lint content tool
+```
+
+
+
 ## Generating Ebooks
 
 For generating PDFs of the ebook, you need to install Prince. Follow the instructions on [the Prince Website](https://www.princexml.com/) and pdftk.

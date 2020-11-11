@@ -1,3 +1,4 @@
+<!--htmlhint attr-value-double-quotes:false -->
 {% extends "%s/2019/base_chapter.html" % lang %}
 
 <!--{# IMPORTANT!
@@ -10,6 +11,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
+<!-- htmlhint "attr-value-double-quotes":false -->
 {% set metadata = <%- JSON.stringify(metadata) %> %}
 
 {% block index %}
