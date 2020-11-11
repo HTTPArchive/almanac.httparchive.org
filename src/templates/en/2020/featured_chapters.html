@@ -1,13 +1,21 @@
-{%- set featured_chapter = ("markup") %}
+{%- set featured_chapter = ("capabilities","markup") | random %}
 
-{%- if featured_chapter == "markup" %}
-  {%- set featured_chapter_quote = "We approach near-complete adoption of living HTML, are quick to prune our pages of fads, and we're fast in adopting and shunning frameworks. And still, there are no signs we exhausted the options HTML gives us." %}
+{%- if featured_chapter == "capabilities" %}
+  {%- set featured_chapter_quote = "The state of web capabilities in 2020 is healthy, as new powerful APIs regularly ship with new releases of Chromium-based browsers. The first APIs have already made their way into other browsers as well." %}
   {%- set featured_chapter_stats = {
-      "stat1":"85.73%","label1":"Percentage of pages that use the &quot;living&quot; HTML doctype",
+      "stat1":"0.0006%","label1":"(Chrome) Page loads using Async Clipboard API",
+      "stat2":"0.49%","label2":"Sites using Storage Manager API",
+      "stat3":"363","label3":"Sites allow installing related apps"
+    }
+  %}
+{%- elif featured_chapter == "markup" %}
+  {%- set featured_chapter_quote = "We approach near-complete adoption of living HTML, are quick to prune our pages of fads, and we’re fast in adopting and shunning frameworks. And still, there are no signs we exhausted the options HTML gives us." %}
+  {%- set featured_chapter_stats = {
+      "stat1":"85.73%","label1":"Percentage of pages that use the “living” HTML doctype",
       "stat2":"30,073","label2":"Number of non-standard `h7` elements",
       "stat3":"25.24 KB","label3":"Weight of the median document"
     }
   %}
 {% endif %}
 
-{{ featuredChapter(featured_chapter, featured_chapter_quote, featured_chapter_stats) }}
+{{ featuredChapter(featured_chapter, featured_chapter_quote, featured_chapter_stats, "en") }}
