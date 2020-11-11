@@ -9,11 +9,10 @@ rem # It can be run to lint everthing if no params are passed
 rem # Or pass one or more params to just lint those files or folders
 rem #
 
-echo "Installing/Updating Linter (first time this can take a while)"
-docker pull github/super-linter:latest
-
 rem # Annoyingly super-linter includes node_modules and env which take a long time
-rem # so let's copy to /tmp folder and lint from there
+rem # https://github.com/github/super-linter/issues/985
+rem # So let's copy to /tmp folder and lint from there. It has the added advantage
+rem # of us being able to lint specific subsets of files easily.
 
 rem # Remove old files if they exist
 rmdir /Q /S c:\temp\lint
@@ -48,4 +47,4 @@ if [%1]==[] (
 )
 
 echo "Starting linting"
-docker run -e RUN_LOCAL=true -e LOG_LEVEL=VERBOSE -e VALIDATE_BASH=true -e VALIDATE_CSS=true -e VALIDATE_HTML=true -e VALIDATE_JAVASCRIPT_ES=true -e VALIDATE_JSON=true -e VALIDATE_MD=true -e VALIDATE_PYTHON_PYLINT=true -e VALIDATE_PYTHON_FLAKE8=true -e VALIDATE_YAML=true -v "c:\temp\lint:/tmp/lint" github/super-linter
+docker run -e RUN_LOCAL=true -e VALIDATE_BASH=true -e VALIDATE_CSS=true -e VALIDATE_HTML=true -e VALIDATE_JAVASCRIPT_ES=true -e VALIDATE_JSON=true -e VALIDATE_MD=true -e VALIDATE_PYTHON_PYLINT=true -e VALIDATE_PYTHON_FLAKE8=true -e VALIDATE_YAML=true -v "c:\temp\lint:/tmp/lint" github/super-linter

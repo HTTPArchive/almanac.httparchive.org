@@ -100,7 +100,15 @@ npm run watch
 
 When you push changes to GitHub they will be linted using the GitHub Super-Linter.
 
-It is possible to run the Super-Linter locally if you have Docker installed"
+It is possible to run the Super-Linter locally if you have Docker installed.
+
+First up pull the Super-Linter Docker image (only need to do this once or when you want to upgrade the version):
+
+```
+docker pull github/super-linter:latest
+```
+
+Then to run the linting do this:
 
 ```
 npm run lint
@@ -109,7 +117,7 @@ npm run lint
 This can take a while to run so you can lint just subsets of files or folders:
 
 ```
-npm run lint content tool
+npm run lint tools/generate templates/base
 ```
 
 

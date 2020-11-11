@@ -24,11 +24,10 @@ if [ ! "$(which docker)" ]; then
   exit 1
 fi
 
-echo "Installing/Updating Linter (first time this can take a while)"
-docker pull github/super-linter:latest
-
 # Annoyingly super-linter includes node_modules and env which take a long time
-# so let's copy to /tmp folder and lint from there
+# https://github.com/github/super-linter/issues/985
+# So let's copy to /tmp folder and lint from there. It has the added advantage
+# of us being able to lint specific subsets of files easily.
 
 # Remove old files if they exist
 rm -rf /tmp/lint
@@ -44,21 +43,19 @@ if [ "$#" -gt 0 ]; then
   for FILES in "$@"
   do
     echo "- Copying ${FILES}"
-    cp -r "${FILES}" /tmp/lint
+    cp -r "${FILES}" "/tmp/lint/"
   done
 else
   echo "Copying all files"
-  # Copy everything and then delete what you don't want linted
-  # This is a really inefficient way of doing this but can't find a robust method
-  # with MacOs and Linux support, without copying individual folders
+  # Copy everything except node_folders and env
   cp -r ../.github /tmp/lint
-  cp -r ../src /tmp/lint/
-  rm -rf /tmp/lint/src/node_modules
-  rm -rf /tmp/lint/src/env
+  mkdir /tmp/lint/src
+  find ./ -maxdepth 1 -not -name "." -not -name "node_modules" -not -name "env" -exec cp -r {} /tmp/lint/src/ \;
+  # Delete some large files
   rm -rf /tmp/lint/src/static/fonts
   rm -rf /tmp/lint/src/static/images
   rm -rf /tmp/lint/src/static/pdfs
 fi
 
 echo "Starting linting"
-docker run -e RUN_LOCAL=true -e LOG_LEVEL=VERBOSE -e VALIDATE_BASH=true -e VALIDATE_CSS=true -e VALIDATE_HTML=true -e VALIDATE_JAVASCRIPT_ES=true -e VALIDATE_JSON=true -e VALIDATE_MD=true -e VALIDATE_PYTHON_PYLINT=true -e VALIDATE_PYTHON_FLAKE8=true -e VALIDATE_YAML=true -v "/tmp/lint:/tmp/lint" github/super-linter | grep -v "\[DEBUG\]"
+docker run -e RUN_LOCAL=true -e VALIDATE_BASH=true -e VALIDATE_CSS=true -e VALIDATE_HTML=true -e VALIDATE_JAVASCRIPT_ES=true -e VALIDATE_JSON=true -e VALIDATE_MD=true -e VALIDATE_PYTHON_PYLINT=true -e VALIDATE_PYTHON_FLAKE8=true -e VALIDATE_YAML=true -v "/tmp/lint:/tmp/lint" github/super-linter
