@@ -185,7 +185,7 @@ What `type` attribute values are used with `script` elements?
 - `text/template`: 0.41%
 - `text/html` 0.27% (!)
 
-When it comes to loading JavaScript module scripts using `type="module"`, we found that 0.13% of `script` elements currently specify this attribute-value combination. `nomodule` is used by 0.95% of all tested pages. Note that one metric relates to elements, the other to pages.
+When it comes to loading [JavaScript module scripts](https://jakearchibald.com/2017/es-modules-in-browsers/) using `type="module"`, we found that 0.13% of `script` elements currently specify this attribute-value combination. `nomodule` is used by 0.95% of all tested pages. Note that one metric relates to elements, the other to pages.
 
 36.38% of all scripts have no values set whatsoever.
 
@@ -555,7 +555,8 @@ The most popular ones stand out because they are almost twice as popular than ea
 
 Attributes like `data-type`, `data-id`, and `data-src` can have multiple generic uses although `data-src` is used a lot with lazy image loading via JavaScript (e.g., Bootstrap 4). [Bootstrap](https://getbootstrap.com/) again explains the presence of `data-toggle`, where it's used as a state styling hook on toggle buttons. The [Slick carousel plugin](https://kenwheeler.github.io/slick/) is the source of `data-slick-index`, whereas `data-element_type` is part of [Elementor's WordPress website builder](https://elementor.com/). Both `data-requiremodule` and `data-requirecontext`, then, are part of [RequireJS](https://requirejs.org/).
 
-Interestingly, the use of native lazy loading on images is similar to that of `data-src`. 3.86% of `img` elements use the `loading` attribute with a value of `lazy`. This appears to be growing very fast, as back in February, this number was about [0.8%](https://twitter.com/zcorpan/status/1237016679667970050). It's possible that these are being used together for a [cross-browser solution](https://addyosmani.com/blog/lazy-loading/).
+{# TODO(authors): Update this interpretation given that the lazy loading stat is in terms of pages, not img elements. #}
+Interestingly, the use of native lazy loading on images is similar to that of `data-src`. 3.86% of pages use the `<img loading="lazy">` attribute. This appears to be growing very fast, as back in February, this number was about [0.8%](https://twitter.com/zcorpan/status/1237016679667970050). It's possible that these are being used together for a [cross-browser solution](https://addyosmani.com/blog/lazy-loading/).
 
 ## Miscellaneous
 
@@ -618,8 +619,7 @@ There are a couple of surprises in here:
 
 ### Button and input types
 
-{# TODO(authors): Can you cite any examples of this discussion? And what do the findings say about button misuse? #}
-There has been a lot of discussion on buttons lately and how often they are misused. We looked into this to present findings on some of the native HTML buttons.
+There has been a lot of [discussion](https://adrianroselli.com/2016/01/links-buttons-submits-and-divs-oh-hell.html) on buttons lately and how often they are misused. We looked into this to present findings on some of the native HTML buttons.
 
 {{ figure_markup(
   caption="Percent of pages with button elements.",
@@ -713,7 +713,14 @@ As a rule of thumb and for [usability reasons](https://www.nngroup.com/articles/
 
 We've sprinkled some observations throughout the chapter, and you'll have made your own observations. At the end of this 2020 analysis, here are some things that stood out for us.
 
-{# TODO(authors): Where does 3.97% come from? Can we link to it? #}
+{{ figure_markup(
+  caption="Percent of pages with a quirky doctype.",
+  content="3.97%",
+  classes="big-number",
+  sheets_gid="1981441894",
+  sql_file="summary_pages_by_device_and_doctype.sql"
+) }}
+
 {# TODO(authors): Changed Simon's quote to a paraphrase, since it's not clear which part is verbatim. If there's a quote, let's wrap it in quotes.  #}
 Fewer pages land in quirks mode. In 2016, that number was at [around 7.4%](https://discuss.httparchive.org/t/how-many-and-which-pages-are-in-quirks-mode/777). At the end of 2019, we observed [4.85%](https://twitter.com/zcorpan/status/1205242913908838400). And now, we're at about 3.97%. This trend, to paraphrase [Simon Pieters](./contributors#zcorpan) in his review of this chapter, seems indeed clear and encouraging.
 
