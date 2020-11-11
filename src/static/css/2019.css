@@ -1361,36 +1361,40 @@ p.copyright a {
   min-width: 100%;
 }
 
-.nav-dropdown-list__part {
+.nav-dropdown-list-part {
   white-space: nowrap;
   padding: 16px 8px 8px 8px;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
-
-.nav-dropdown-list__chapter.active {
-  font-weight: bold;
-  text-decoration: underline;
+.nav-dropdown-list-part a {
+  padding: 0;
 }
-
-.nav-dropdown-list__chapter a {
-  padding: 8px 8px 8px 20px;
-}
-
-.nav-dropdown-list__chapter.foreword {
+.nav-dropdown-list-part.foreword {
   padding-top: 24px;
 }
 
-.nav-dropdown-list__chapter.ebook {
+.nav-dropdown-list-chapter a,
+.nav-dropdown-list-chapter span {
+  padding: 8px 8px 8px 20px;
+}
+
+.nav-dropdown-list-chapter small a,
+.nav-dropdown-list-chapter a span {
+  padding: 0;
+}
+
+.nav-dropdown-list-chapter.ebook {
   display: flex;
   flex-direction: column;
 }
 
-.nav-dropdown-list__chapter.ebook small {
+.nav-dropdown-list-chapter.ebook small {
   padding: 0 0 24px 20px;
 }
 
-.nav-dropdown-list__todo {
+.nav-dropdown-list-todo,
+.nav-dropdown-list__current {
   opacity: 0.3;
 }
 

@@ -62,10 +62,13 @@ def methodology(lang, year):
 @app.route('/<lang>/accessibility-statement', strict_slashes=False)
 @validate
 def accessibility_statement(lang):
+    config = get_config(DEFAULT_YEAR)
+    ebook_size_in_mb = get_ebook_size_in_mb(lang, DEFAULT_YEAR)
+
     if request.base_url[-1] == "/":
         return redirect("/%s/accessibility-statement" % (lang)), 301
     else:
-        return render_template('%s/2019/accessibility_statement.html' % (lang))
+        return render_template('%s/2019/accessibility_statement.html' % (lang), config=config, ebook_size_in_mb=ebook_size_in_mb)
 
 
 @app.route('/sitemap.xml')
