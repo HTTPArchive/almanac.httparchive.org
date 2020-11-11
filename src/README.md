@@ -121,7 +121,6 @@ npm run lint tools/generate templates/base
 ```
 
 
-
 ## Generating Ebooks
 
 For generating PDFs of the ebook, you need to install Prince. Follow the instructions on [the Prince Website](https://www.princexml.com/) and pdftk.
