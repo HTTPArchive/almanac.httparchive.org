@@ -36,11 +36,11 @@ base AS (
 SELECT
   category,
   percentile,
-  APPROX_QUANTILES(body_size, 1000)[OFFSET(percentile)] AS body_size,
-  APPROX_QUANTILES(time, 1000)[OFFSET(percentile)] AS time
+  APPROX_QUANTILES(body_size, 1000)[OFFSET(percentile * 10)] AS body_size,
+  APPROX_QUANTILES(time, 1000)[OFFSET(percentile * 10)] AS time
 FROM
   base,
-UNNEST(GENERATE_ARRAY(0, 100, 1)) AS percentile
+  UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   category,
   percentile
