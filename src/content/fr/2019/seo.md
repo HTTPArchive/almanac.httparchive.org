@@ -20,7 +20,7 @@ featured_stat_label_2: des pages n’ont pas de titres HTML (Hn).
 featured_stat_3: 15 %
 featured_stat_label_3: des sites sont éligibles aux résultats enrichis.
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-04T00:00:00.000Z
+last_updated: 2020-11-10T00:00:00.000Z
 ---
 
 ## Introduction
@@ -413,7 +413,7 @@ Alors que 38,40 % des sites de bureau (33,79 % sur mobile) ont l'attribut HTML
 
 L'analyse n'a pas vérifié la bonne mise en œuvre, par exemple si les différentes versions linguistiques se lient correctement les unes aux autres. Cependant, en examinant la faible adoption d'une version x-default (seulement 3,77 % sur ordinateur et 1,30 % sur mobile), [comme cela est recommandé](https://support.google.com/webmasters/answer/189077?hl=fr), c'est un indicateur que cet élément est complexe et pas toujours facile à bien faire.
 
-### Exploration des SPA (Single Page Application)
+### Exploration des SPA (<i lang="en">Single Page Application</i>) {exploration-des-spa-single-page-application}
 
 Les applications monopages (SPA) construites avec des frameworks comme React et Vue.js ont leur propre complexité SEO. Les sites web utilisant une navigation basée sur le hachage, rendent particulièrement difficile pour les moteurs de recherche de les explorer et de les indexer correctement. Par exemple, Google avait une solution de contournement "AJAX crawling scheme" qui s'est avérée complexe pour les moteurs de recherche ainsi que pour les développeurs, elle a donc été [déconseillée en 2015](https://webmasters.googleblog.com/2015/10/deprecating-notre-ajax-crawling-scheme.html).
 

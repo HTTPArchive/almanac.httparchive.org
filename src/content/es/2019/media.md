@@ -20,7 +20,7 @@ featured_stat_label_2: Uso de JPEG entre imágenes
 featured_stat_3: 2%
 featured_stat_label_3: Uso del elemento <code>&lt;picture&gt;</code>
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-04T00:00:00.000Z
+last_updated: 2020-11-10T00:00:00.000Z
 ---
 
 ## Introducción
@@ -250,7 +250,7 @@ La ventaja de este test AB <i lang="en">Lighthouse</i> no es solo la potencial r
   )
 }}
 
-### Imágenes adaptables (responsive)
+### Imágenes adaptables (<i lang="en">responsive</i>) {imágenes-adaptables-responsive}
 
 Otra forma de mejorar el rendimiento de la página es usar imágenes <i lang="en">responsive</i>. Esta técnica se basa en la reducción de bytes por imagen, mediante la reducción de aquellos pixeles de más que no estarán visibles debido al encogimiento de la imagen. Al comenzar este capítulo, viste cómo la página web media, en escritorio, usaba un MP de marcadores de imagen aunque transfiere 2,1 MP de volumen de pixel. Dado que esto era un test de 1x DPR, 1,1 MP de píxeles fueron transferidos por la red, pero no mostrados. Para reducir esta carga, podemos usar cualquiera de estas dos (posiblemente tres) técnicas:
 
@@ -304,7 +304,7 @@ La utilidad de `srcset` normalmente depende de la precisión de la media query `
   )
 }}
 
-### Client Hints
+### <i lang="en">Client Hints</i> {client-hints}
 
 Los <i lang="en">[Client Hints](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints)</i> permiten a los creadores de contenido cambiar el redimensionamiento de imágenes por la negociación de contenido HTTP. De este modo, el HTML no necesita de `<img srcset>` adicionales para reordenar el marcado, y en su lugar depende de un servidor o [imagen CDN para elegir la imagen óptima](https://cloudinary.com/blog/client_hints_and_responsive_images_what_changed_in_chrome_67) en cada contexto. Esto permite simplificar el HTML y habilita a los servidores de origen para adaptar y desconectar el contenido y las capas de presentación.
 
@@ -333,7 +333,7 @@ De los <i lang="en">Client Hints</i> solicitados, la mayoría de las páginas lo
 
 Los <i lang="en">Client Hints</i> relacionados con la red, `downlink`, `rtt`, y `ect`, solamente están disponibles en Android Chrome.
 
-### Lazy loading
+### <i lang="en">Lazy loading</i> {lazy-loading}
 
 Mejorar el rendimiento de una página web puede ser parcialmente descrito como un juego de ilusiones; moviendo las cosas más lentas fuera de banda y lejos de la vista del usuario. De este modo, el <i lang="en">lazy loading</i> de imágenes es una de esas ilusiones donde la imagen y el contenido multimedia solamente se cargan cuando el usuario se desplaza por la página. Esto mejora el rendimiento que se percibe, incluso en conexiones lentas, y evita al usuario la descarga de bytes que no van a estar visibles.
 

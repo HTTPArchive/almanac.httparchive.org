@@ -19,7 +19,7 @@ featured_stat_label_2: Sites using Storage Manager API
 featured_stat_3: 363
 featured_stat_label_3: Sites allow installing related apps
 published: 2020-11-09T00:00:00.000Z
-last_updated: 2020-11-09T00:00:00.000Z
+last_updated: 2020-11-10T00:00:00.000Z
 unedited: true
 ---
 
@@ -35,7 +35,7 @@ The [Capabilities Project](https://www.chromium.org/teams/web-capabilities-fugu)
 - [Web Share API](https://web.dev/web-share/) for sharing files with other applications
 - [Contact Picker API](https://web.dev/contact-picker/) to access contacts from the user's address book
 - [Shape Detection API](https://web.dev/shape-detection/) for efficient detection of faces or barcodes in images
-- [Web NFC](https://web.dev/nfc/), [Web Serial](https://web.dev/serial/), Web USB, Web Bluetooth, and other APIs (for the entire list, see the [Fugu API Tracker](https://goo.gle/fugu-api-tracker))
+- [Web NFC](https://web.dev/nfc/), [Web Serial](https://web.dev/serial/), [Web USB](https://web.dev/usb/), [Web Bluetooth](https://web.dev/bluetooth/), and other APIs (for the entire list, see the [Fugu API Tracker](https://goo.gle/fugu-api-tracker))
 
 Everyone can propose a new capability by [creating a ticket in the Chromium bug tracker](https://bit.ly/new-fugu-request). The Chromium contributors examine the proposals and discuss all APIs with other developers and browser vendors through the appropriate standards bodies. Meanwhile, the Fugu team implements the API in Chromium, where it is initially implemented behind a flag. In the further process, the API is made available to a limited audience via an [origin trial](https://web.dev/origin-trials/). During this phase, developers can sign up for a token to test the API on a specific origin. If the API turns out to be robust enough, the API ships in Chromium and, if the vendors decide so, other browsers. The [Capability Status](https://web.dev/fugu-status/) site shows where the different Capability APIs are in the process.
 
