@@ -200,7 +200,7 @@
     {% set title = localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title %}
     <li class="nav-dropdown-list-chapter {% if current_title == title %}nav-dropdown-list__current{% endif %}">
       {% if chapter_config.todo %}
-      <apan class="nav-dropdown-list-todo">{{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }}</span>
+      <span class="nav-dropdown-list-todo">{{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }}</span>
       {% else %}
         {% if chapter_lang_exists(lang, year, chapter_config.slug) %}
         <a href="{{ url_for('chapter', year=year, lang=lang, chapter=chapter_config.slug) }}">
