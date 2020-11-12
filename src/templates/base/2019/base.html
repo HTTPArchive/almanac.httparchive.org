@@ -115,11 +115,16 @@
 {% set current_title = metadata.get('title') if metadata else None %}
 <div class="table-of-contents-switcher">
   <label for="table-of-contents-switcher-{{switcher_name}}" class="visually-hidden">
-    {{ self.table_of_contents_title() }}
+    {{ self.table_of_contents_switcher() }}
   </label>
   <select id="table-of-contents-switcher-{{switcher_name}}">
-    <option value="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</option>
-    <option value="{{ url_for('table_of_contents', year=year, lang=lang) }}#forward">{{ self.foreword_title() }}</option>
+    {% if request.path.endswith("table-of-contents") %}
+      <option selected disabled value="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</option>
+      <option disabled value="{{ url_for('table_of_contents', year=year, lang=lang) }}#foreword">{{ self.foreword_title() }}</option>
+    {% else %}
+      <option value="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</option>
+      <option value="{{ url_for('table_of_contents', year=year, lang=lang) }}#foreword">{{ self.foreword_title() }}</option>
+    {% endif %}
     {% for part_config in config.outline %}
     {% for chapter_config in part_config.chapters %}
       {% set title = localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title %}
@@ -188,7 +193,11 @@
   <ul class="nav-dropdown-list hidden {{switcher_name}}-list">
     
     <li class="nav-dropdown-list-part foreword">
+      {% if request.path.endswith("table-of-contents") %}
+      <span class="nav-dropdown-list-current">{{ self.foreword_title() }}</span>
+      {% else %}
       <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.foreword_title() }}</a>
+      {% endif %}
     </li>
 
     {% for part_config in config.outline %}
