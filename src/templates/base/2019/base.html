@@ -118,7 +118,7 @@
     {{ self.table_of_contents_title() }}
   </label>
   <select id="table-of-contents-switcher-{{switcher_name}}">
-    <option value="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.foreword_title() }}</option>
+    <option value="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</option>
     {% for part_config in config.outline %}
     {% for chapter_config in part_config.chapters %}
       {% set title = localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title %}
