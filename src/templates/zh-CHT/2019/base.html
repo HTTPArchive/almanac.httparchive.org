@@ -1,6 +1,6 @@
 {% extends "base/2019/base.html" %}
 
-{% block description %}Web Almanac 網路年鑑是網路狀態的年度報告，其集結網路社群的專業知識共同精萃HTTP Archive的數據與趨勢。{% endblock %}
+{% block description %}Web Almanac 網路年鑑是網路狀態的年度報告，集結網路社群的專業知識共同精萃HTTP Archive的數據與趨勢。{% endblock %}
 
 {% block twitter_image_alt %}{{ year }} Web Almanac{% endblock %}
 
@@ -17,7 +17,7 @@
 
 {% block mission %}
 <p>
-我們的任務是結合網路社群的專業知識共同精萃HTTP Archive的原始數據與趨勢。Web Almanac 網路年鑑是網路狀態的綜合報告，其由真實的數據和具信譽的網路專家支持。報告共有20個章節橫跨網頁內容、使用者體驗、網頁發佈、網頁傳遞的各個方面。
+我們的任務是結合網路社群的專業知識共同精萃HTTP Archive的原始數據與趨勢。Web Almanac 網路年鑑是網路狀態的綜合報告，由真實的數據和具信譽的網路專家支持。報告共有20個章節橫跨網頁內容、使用者體驗、網頁發佈、網頁傳遞的各個方面。
 </p>
 {% endblock %}
 
@@ -92,14 +92,14 @@
 {% endif %}
 
 {% block contributors_description %}
-Web Almanac 網路年鑑是被熱情的網路社群擁抱而茁壯。 {{ self.contributors() }} 團隊成員志願挹注難以計數的泉源在規劃、研究、撰寫、發佈的各個階段。
+Web Almanac 網路年鑑是被熱情的網路社群擁抱而茁壯。 {{ self.contributors() }} 位團隊成員志願挹注難以計數的泉源在規劃、研究、撰寫、發佈的各個階段。
 {% endblock %}
 {% block contributors_link %}認識貢獻者{% endblock %}
 
-{% block methodology_stat_1_title %}網站測試數量{% endblock %}
-{% block methodology_stat_1 %}5.8 百萬{% endblock %}
-{% block methodology_stat_2_title %}數據處理數量Data Processed{% endblock %}
-{% block methodology_stat_2 %}20.9 兆位元組{% endblock %}
+{% block methodology_stat_1_title %}網站測試數{% endblock %}
+{% block methodology_stat_1 %}5.8 M{% endblock %}
+{% block methodology_stat_2_title %}數據處理數{% endblock %}
+{% block methodology_stat_2 %}20.9 TB{% endblock %}
 {% block methodology_description %}
 除另有備註外，Web Almanac 網路年鑑20個章節的統計指標皆萃取自HTTP Archive數據集。HTTP Archive是社群推動的專案，自2010年開始持續追蹤網路如何建置，每月透過WebPageTest和Lighthouse測試將近6百萬個網站並將資料集公開置於BigQuery供眾分析。Web Almanac網路年鑑的統計指標採用2019年7月的數據集為基準，更多的資訊請參閱統計方法頁面。
 {% endblock %}
