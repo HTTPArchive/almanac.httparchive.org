@@ -39,7 +39,7 @@ env\Scripts\activate.bat
 3. Install generate and run the website:
 
 ```
-npm run install
+npm install
 npm run start
 ```
 
