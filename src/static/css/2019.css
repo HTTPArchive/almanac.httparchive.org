@@ -1350,6 +1350,7 @@ p.copyright a {
 
 .nav-dropdown-list .help-translate {
   border-top: 1px dashed #bdbdbd;
+  min-width: 10rem;
 }
 
 .footer .nav-dropdown-list .help-translate {

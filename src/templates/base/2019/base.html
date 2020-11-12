@@ -329,7 +329,6 @@
             var btnBoundingRect = dropdownBtn.getBoundingClientRect();
             var listBoundingRect = list.getBoundingClientRect();
             if (listBoundingRect.width <= btnBoundingRect.width) {
-              list.style.minWidth = btnBoundingRect.width + "px";
               list.classList.add("align-center");
             } else if (btnBoundingRect.left + listBoundingRect.width > window.innerWidth) {
               list.classList.add("align-right");
