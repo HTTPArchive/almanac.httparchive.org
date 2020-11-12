@@ -19,7 +19,7 @@ featured_stat_label_2: Responses using the <code>Vary</code> header
 featured_stat_3: 82%
 featured_stat_label_3: Sites that could save 1Mb by optimising caching better
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-04T00:00:00.000Z
+last_updated: 2020-11-10T00:00:00.000Z
 ---
 
 ## Introduction
@@ -258,7 +258,7 @@ The same data for mobile is shown below. As can be seen, the cacheability of con
 }}
 
 
-## Cache-Control vs Expires
+## `Cache-Control` vs `Expires`
 
 In HTTP/1.0, the `Expires` header was used to indicate the date/time after which the response is considered stale. Its value is a date timestamp, such as:
 
@@ -282,7 +282,7 @@ HTTP/1.1 introduced the `Cache-Control` header, and most modern clients support 
   )
 }}
 
-## Cache-Control directives
+## `Cache-Control` directives
 
 The HTTP/1.1 [specification](https://tools.ietf.org/html/rfc7234#section-5.2.1) includes multiple directives that can be used in the `Cache-Control` response header and are detailed below. Note that multiple can be used in a single response.
 
@@ -369,7 +369,7 @@ Another interesting set of directives to show up in this list are `pre-check` an
 
 In the long tail, there are more than 1,500 erroneous directives in use across 0.28% of responses. These are ignored by clients, and include misspellings such as "nocache", "s-max-age", "smax-age", and "maxage". There are also numerous non-existent directives such as "max-stale", "proxy-public", "surrogate-control", etc. 
 
-## Cache-Control: no-store, no-cache and max-age=0
+## `Cache-Control`: `no-store`, `no-cache` and `max-age=0`
 
 When a response is not cacheable, the `Cache-Control` `no-store` directive should be used. If this directive is not used, then the response is cacheable.
 
@@ -542,7 +542,7 @@ Examples of some of the invalid uses of the `Expires` header are:
 
 The largest source of invalid `Expires` headers is from assets served from a popular third-party, in which a date/time uses the EST time zone, for example `Expires: Tue, 27 Apr 1971 19:44:06 EST`.
 
-## Vary header
+## `Vary` header
 
 One of the most important steps in caching is determining if the resource being requested is cached or not. While this may seem simple, many times the URL alone is not enough to determine this. For example, requests with the same URL could vary in what [compression](./compression) they used (gzip, brotli, etc.) or be modified and tailored for mobile visitors.
 

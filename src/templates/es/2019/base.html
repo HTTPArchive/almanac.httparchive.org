@@ -31,6 +31,7 @@ Nuestra misión es combinar las estadísticas y tendencias sin procesar del HTTP
 {% block translation_not_available %}en inglés - no disponible en español{% endblock %}
 {% block language_switcher %}Selector de idioma{% endblock %}
 {% block year_switcher %}Selector de año{% endblock %}
+{% block table_of_contents_switcher %}Selector de Tabla de Contenidos{% endblock %}
 
 {% block home %}Página de inicio{% endblock %}
 {% block table_of_contents_title %}Tabla de Contenidos{% endblock %}
@@ -85,11 +86,16 @@ Nuestra misión es combinar las estadísticas y tendencias sin procesar del HTTP
 {% block accessibility_statement %}Declaración de accesibilidad{% endblock %}
 
 {% block featured_chapter %}Capítulo Destacado{% endblock %}
+{% block featured_chapter_last_year %}Capítulo Destacado<br/>del Web Almanac {{ year|int -1 }}{% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
 {% macro read_chapter(chapter) %}Lea el Capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
 {% endif %}
+{% if not read_last_years_chapter %}
+{% macro read_last_years_chapter(chapter) %}Lea el {{ year|int -1 }} Capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
+{% endif %}
+
 
 {% block contributors_description %}
 Web Almanac ha sido posible gracias al arduo trabajo de la comunidad web. {{ self.contributors() }} personas han ofrecido incontables horas en las fases de planificación, investigación, redacción y producción.

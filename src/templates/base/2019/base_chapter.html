@@ -5,7 +5,7 @@
 {% block date_published %}{{ metadata.published }}{% endblock %}
 {% block date_modified %}{{ metadata.last_updated }}{% endblock %}
 
-{% block image_url %}https://almanac.httparchive.org/images/2019/{{ metadata.chapter }}/hero_lg.jpg{% endblock %}
+{% block image_url %}https://almanac.httparchive.org/static/images/2019/{{ metadata.chapter }}/hero_lg.jpg{% endblock %}
 {% block image_height %}433{% endblock %}
 {% block image_width %}866{% endblock %}
 
@@ -29,7 +29,7 @@
 
 {% block styles %}
 {{ super() }}
-<link rel="stylesheet" href="/static/css/page.css?v=20201103210350">
+<link rel="stylesheet" href="/static/css/page.css?v=20201110175416">
 {% endblock %}
 
 {% block scripts %}
@@ -61,12 +61,17 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
 
 {# Calls to action for readers who want to engage more with this chapter. #}
 {% macro render_actions() %}
+  <h2 id="explore-results">
+    <a href="#explore-results" class="anchor-link">
+      {{ self.explore_the_results() }}
+    </a>
+  </h2>
   <a class="alt btn" href="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}">
     <svg width="18" height="18" role="img">
       <title>{{ self.discuss_this_chapter() }}</title>
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#comment"></use>
     </svg>    
-    <span id="num_comments"></span> <span data-translation id="comment-singular">{{ self.comment() }}</span>
+    <span id="num_comments">{{ self.comments_fallback() }}</span> <span data-translation id="comment-singular">{{ self.comment() }}</span>
     <span data-translation id="comment-plural">{{ self.comments() }}</span>
   </a>
   <a class="alt btn" href="{{ metadata.get('results') }}/">
@@ -297,7 +302,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
             {{ self.main_content() }}
         </article>
         <div class="chapter_links">
-            {{ render_actions() }}
+          {{ render_actions() }}
         </div>
         <section class="authors">
             {{ render_authors() }}

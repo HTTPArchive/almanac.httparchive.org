@@ -21,7 +21,7 @@ featured_stat_label_2: Sites ayant des attributs alt manquants
 featured_stat_3: 14 %
 featured_stat_label_3: Sites utilisant des liens d’évitement
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-04T00:00:00.000Z
+last_updated: 2020-11-10T00:00:00.000Z
 ---
 
 ## Introduction
@@ -266,7 +266,7 @@ Actuellement, 46,91&nbsp;% des pages utilisent au moins un attribut de rôle ARI
 
 En examinant les résultats de la figure 9.9, nous avons trouvé deux informations intéressantes&nbsp;: la mise à jour des <i lang="en">frameworks</i> d’interface pourrait avoir un impact profond sur l’accessibilité sur le web, et le nombre impressionnant de sites tentant de rendre les modales accessibles.
 
-##### Mettre à jour les <i lang="en">frameworks</i> d’interface pourrait être la voie à suivre pour l’accessibilité du web
+##### Mettre à jour les <i lang="en">frameworks</i> d’interface pourrait être la voie à suivre pour l’accessibilité du web {mettre-à-jour-les-frameworks-d’interface-pourrait-être-la-voie-à-suivre-pour-l’accessibilité-du-web}
 
 Les 5 premiers rôles, tous apparaissant sur 11&nbsp;% des pages ou plus, sont des rôles de type <i lang="en">landmark</i>. Ils sont utilisés pour faciliter la navigation, pas pour décrire les fonctionnalités d’un widget, comme une zone de liste déroulante. C’est un résultat surprenant, car le principal facteur de motivation du développement d’ARIA était justement de donner aux développeurs et développeuses web la possibilité de décrire la fonctionnalité de widgets constitués d’éléments HTML génériques (comme un `<div>`).
 

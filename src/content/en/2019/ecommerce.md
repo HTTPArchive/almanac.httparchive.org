@@ -2,7 +2,7 @@
 part_number: III
 chapter_number: 13
 title: Ecommerce
-description: Ecommerce chapter of the 2019 Web Almanac covering ecommerce platforms, payloads, images, third-parties, performance, seo, and PWAs.
+description: Ecommerce chapter of the 2019 Web Almanac covering ecommerce platforms, payloads, images, third-parties, performance, SEO, and PWAs.
 authors: [samdutton, alankent]
 reviewers: [voltek62]
 analysts: [rviscomi]
@@ -20,7 +20,7 @@ featured_stat_label_2: Number of ecommerce platforms detected
 featured_stat_3: 1,517 KB
 featured_stat_label_3: Median image bytes per mobile ecommerce page
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-04T00:00:00.000Z
+last_updated: 2020-11-08T00:00:00.000Z
 ---
 
 ## Introduction

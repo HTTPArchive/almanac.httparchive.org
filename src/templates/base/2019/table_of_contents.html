@@ -46,7 +46,8 @@
 }
 
 .chapter .todo {
-  opacity: 0.3;
+  opacity: 0.65;
+  font-style: italic;
 }
 .chapter a {
   text-decoration: none;
@@ -99,7 +100,7 @@
 
   <section>
     {% if year < "2020" %}
-    <h2 id="forward"><a href="#forward" class="anchor-link">{{ self.foreword_title() }}</a></h2>
+    <h2 id="foreword"><a href="#foreword" class="anchor-link">{{ self.foreword_title() }}</a></h2>
     {{ self.foreword() }}
     {% endif %}
   </section>
@@ -112,11 +113,8 @@
           <div class="chapters">
             {% for chapter_config in part_config.chapters %}
               <div class="chapter">
-                {% if year > "2019" %}
-                <span class="todo">{{ self.chapter() }} {{ chapter_config.chapter }}: {{ localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title }} - {{ self.coming_soon() }}</span>
-                {% else %}
                   {% if chapter_config.todo %}
-                  <span class="todo">{{ self.chapter() }} {{ chapter_config.chapter }}: {{ localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title }}</span>
+                  <span class="todo">{{ self.chapter() }} {{ chapter_config.chapter }}: {{ localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title }} - {{ self.coming_soon() }}</span>
                   {% else %}
                     {% if chapter_lang_exists(lang, year, chapter_config.slug) %}
                     <a href="{{ url_for('chapter', year=year, lang=lang, chapter=chapter_config.slug) }}">
@@ -128,7 +126,6 @@
                     </a>
                     {% endif %}
                   {% endif %}
-                {% endif %}
               </div>
             {% endfor %}
           </div>

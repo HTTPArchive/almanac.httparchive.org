@@ -2,7 +2,11 @@
   "settings": [
     {
       "is_live": true,
+<<<<<<< HEAD
       "supported_languages": ["en","es","fr","ja","pt","zh-CN","zh-CHT"],
+=======
+      "supported_languages": ["en","es","fr","hi","ja","pt","zh-CN","zh-CHT"],
+>>>>>>> upstream/main
       "ebook_languages": []
     }
   ],
@@ -15,13 +19,15 @@
           "part": "I",
           "chapter": "1",
           "title": "CSS",
-          "slug": "css"
+          "slug": "css",
+          "todo": true
         },
         {
           "part": "I",
           "chapter": "2",
           "title": "JavaScript",
-          "slug": "javascript"
+          "slug": "javascript",
+          "todo": true
         },
         {
           "part": "I",
@@ -33,19 +39,22 @@
           "part": "I",
           "chapter": "4",
           "title": "Fonts",
-          "slug": "fonts"
+          "slug": "fonts",
+          "todo": true
         },
         {
           "part": "I",
           "chapter": "5",
           "title": "Media",
-          "slug": "media"
+          "slug": "media",
+          "todo": true
         },
         {
           "part": "I",
           "chapter": "6",
           "title": "Third Parties",
-          "slug": "third-parties"
+          "slug": "third-parties",
+          "todo": true
         }
       ]
     },
@@ -57,37 +66,43 @@
           "part": "II",
           "chapter": "7",
           "title": "SEO",
-          "slug": "seo"
+          "slug": "seo",
+          "todo": true
         },
         {
           "part": "II",
           "chapter": "8",
           "title": "Accessibility",
-          "slug": "accessibility"
+          "slug": "accessibility",
+          "todo": true
         },
         {
           "part": "II",
           "chapter": "9",
           "title": "Performance",
-          "slug": "performance"
+          "slug": "performance",
+          "todo": true
         },
         {
           "part": "II",
           "chapter": "10",
           "title": "Privacy",
-          "slug": "privacy"
+          "slug": "privacy",
+          "todo": true
         },
         {
           "part": "II",
           "chapter": "11",
           "title": "Security",
-          "slug": "security"
+          "slug": "security",
+          "todo": true
         },
         {
           "part": "II",
           "chapter": "12",
           "title": "Mobile Web",
-          "slug": "mobile-web"
+          "slug": "mobile-web",
+          "todo": true
         },
         {
           "part": "II",
@@ -99,7 +114,8 @@
           "part": "II",
           "chapter": "14",
           "title": "PWA",
-          "slug": "pwa"
+          "slug": "pwa",
+          "todo": true
         }
       ]
     },
@@ -111,19 +127,22 @@
           "part": "III",
           "chapter": "15",
           "title": "CMS",
-          "slug": "cms"
+          "slug": "cms",
+          "todo": true
         },
         {
           "part": "III",
           "chapter": "16",
           "title": "Ecommerce",
-          "slug": "ecommerce"
+          "slug": "ecommerce",
+          "todo": true
         },
         {
           "part": "III",
           "chapter": "17",
           "title": "Jamstack",
-          "slug": "jamstack"
+          "slug": "jamstack",
+          "todo": true
         }
       ]
     },
@@ -135,31 +154,36 @@
           "part": "IV",
           "chapter": "18",
           "title": "Page Weight",
-          "slug": "page-weight"
+          "slug": "page-weight",
+          "todo": true
         },
         {
           "part": "IV",
           "chapter": "19",
           "title": "Compression",
-          "slug": "compression"
+          "slug": "compression",
+          "todo": true
         },
         {
           "part": "IV",
           "chapter": "20",
           "title": "Caching",
-          "slug": "caching"
+          "slug": "caching",
+          "todo": true
         },
         {
           "part": "IV",
           "chapter": "21",
           "title": "Resource Hints",
-          "slug": "resource-hints"
+          "slug": "resource-hints",
+          "todo": true
         },
         {
           "part": "IV",
           "chapter": "22",
           "title": "HTTP/2",
-          "slug": "http2"
+          "slug": "http2",
+          "todo": true
         }
       ]
     }
@@ -191,6 +215,15 @@
     }
   },
   "contributors": {
+    "AbbyTsai": {
+      "name": "Abby Tsai",
+      "teams": [
+        "analysts",
+        "translators"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/44442451?v=4&s=200",
+      "github": "AbbyTsai"
+    },
     "aardrian": {
       "name": "Adrian Roselli",
       "teams": [
@@ -1095,6 +1128,16 @@
       "website": "https://pixboost.com",
       "github": "dooman87",
       "twitter": "otherpunk"
+    },
+    "PraveenPal4232": {
+      "name": "Praveen Pal",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/34737190?v=4&s=200",
+      "website": "https://praveenpal4232.github.io",
+      "github": "PraveenPal4232",
+      "twitter": "PraveenPal4232"
     },
     "rachelandrew": {
       "name": "Rachel Andrew",
