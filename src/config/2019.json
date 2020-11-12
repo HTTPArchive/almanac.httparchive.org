@@ -2,11 +2,7 @@
   "settings": [
     {
       "is_live": true,
-<<<<<<< HEAD
       "supported_languages": ["en","es","fr","ja","pt","zh-CN","zh-CHT"],
-=======
-      "supported_languages": ["en","es","fr","hi","ja","pt","zh-CN","zh-CHT"],
->>>>>>> upstream/main
       "ebook_languages": ["en","ja"]
     }
   ],
