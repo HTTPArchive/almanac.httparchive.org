@@ -10,6 +10,8 @@
 # It can be run to lint everthing if no params are passed
 # Or pass one or more params to just lint those files or folders
 #
+# Note this script should only be called from the super-linter Docker container and not directly
+#
 
 # exit when any command fails instead of trying to continue on
 set -e
@@ -17,11 +19,6 @@ set -e
 # This script must be run from src directory
 if [ -d "src" ]; then
   cd src
-fi
-
-if [ ! "$(which docker)" ]; then
-  echo "Docker must be installed to run linter locally"
-  exit 1
 fi
 
 # Annoyingly super-linter includes node_modules and env which take a long time
@@ -57,5 +54,17 @@ else
   rm -rf /tmp/lint/src/static/pdfs
 fi
 
+# set all the necessary environments variables
+export RUN_LOCAL=true
+export VALIDATE_BASH=true
+export VALIDATE_CSS=true
+export VALIDATE_HTML=true
+export VALIDATE_JAVASCRIPT_ES=true
+export VALIDATE_JSON=true
+export VALIDATE_MD=true
+export VALIDATE_PYTHON_PYLINT=true
+export VALIDATE_PYTHON_FLAKE8=true
+export VALIDATE_YAML=true
+
 echo "Starting linting"
-docker run -e RUN_LOCAL=true -e VALIDATE_BASH=true -e VALIDATE_CSS=true -e VALIDATE_HTML=true -e VALIDATE_JAVASCRIPT_ES=true -e VALIDATE_JSON=true -e VALIDATE_MD=true -e VALIDATE_PYTHON_PYLINT=true -e VALIDATE_PYTHON_FLAKE8=true -e VALIDATE_YAML=true -v "/tmp/lint:/tmp/lint" github/super-linter
+/action/lib/linter.sh "$@"
