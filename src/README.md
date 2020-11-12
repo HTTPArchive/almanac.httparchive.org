@@ -271,3 +271,17 @@ root@[CID]:/app# exit
 ```
 docker image build --build-arg PYVER=3.7 --build-arg NODEVER=14.x --build-arg SKIPGC=false -t webalmanac:custom .
 ```
+
+7. If you want to run the GitHub Super-Linter without `npm` being installed you need to call the command directly as given in `package.json`.
+
+This will depend on your operating system but for MacOS/Linux this would be:
+
+```
+docker container run -it --rm -v "$PWD/..":/app -w /app/src --entrypoint=./tools/scripts/run_linter_locally.sh github/super-linter
+```
+
+And for Windows:
+
+```
+docker container run --rm -v %cd%\\..:/app -w /app/src --entrypoint=./tools/scripts/run_linter_locally.sh github/super-linter
+```
