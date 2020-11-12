@@ -589,6 +589,7 @@ footer nav li {
 }
 
 header nav .menu li .year-switcher,
+header nav .menu li .table-of-contents-switcher,
 header nav .menu li .language-switcher {
   margin-bottom: 4em;
 }
@@ -618,6 +619,7 @@ header .cta {
   flex-direction: row-reverse;
 }
 
+.table-of-contents-switcher,
 .language-switcher,
 .year-switcher {
   display: flex;
@@ -628,11 +630,13 @@ header .cta {
   font-size: 0.875rem;
 }
 
+.table-of-contents-switcher:hover,
 .language-switcher:hover,
 .year-switcher:hover {
   color: #f7f779;
 }
 
+.table-of-contents-switcher::after,
 .language-switcher::after,
 .year-switcher::after {
   content: "";
@@ -655,6 +659,7 @@ header .cta {
   transform: rotate(135deg);
 }
 
+.table-of-contents-switcher select,
 .language-switcher select,
 .year-switcher select {
   border: 1px solid currentColor;
@@ -670,24 +675,29 @@ header .cta {
   min-width: 6.35rem;
 }
 
+.table-of-contents-switcher select,
 .language-switcher select {
   min-width: 120px;
   min-width: 7.5rem;
 }
 
+.table-of-contents-switcher select::-ms-expand,
 .language-switcher select::-ms-expand,
 .year-switcher select::-ms-expand {
   display: none;
 }
 
+.table-of-contents-switcher option,
 .language-switcher option,
 .year-switcher option {
   color: #1a2b49;
   background-color: white;
 }
 
+.table-of-contents-switcher:focus-within,
 .language-switcher:focus-within,
 .year-switcher:focus-within,
+.table-of-contents-switcher select:focus,
 .language-switcher select:focus,
 .year-switcher select:focus {
   border-color: #f7f779;
@@ -1317,8 +1327,8 @@ p.copyright a {
 
 .footer .nav-dropdown-list {
   bottom: 60px;
-  flex-direction: column-reverse;
   border-radius: 29px 29px 29px 0;
+  flex-direction: column-reverse;
 }
 
 .nav-dropdown-list.align-right {
@@ -1346,6 +1356,49 @@ p.copyright a {
   padding: 15px 45px 15px 20px;
   width: max-content;
   min-width: 100%;
+}
+
+.nav-dropdown-list-part {
+  white-space: nowrap;
+  padding: 16px 8px 8px 16px;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.nav-dropdown-list-part a {
+  padding: 0;
+}
+
+.header-list li:last-child:not(.ebook) {
+  padding-bottom: 16px;
+}
+
+.footer-list li:last-child:not(.ebook) {
+  padding-top: 16px;
+}
+
+.nav-dropdown-list-chapter a,
+.nav-dropdown-list-chapter span {
+  padding: 8px 8px 8px 24px;
+}
+
+.nav-dropdown-list-chapter small a,
+.nav-dropdown-list-chapter a span {
+  padding: 0;
+}
+
+.nav-dropdown-list-chapter.ebook {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-dropdown-list-chapter.ebook small {
+  padding: 0 0 24px 20px;
+}
+
+.nav-dropdown-list-todo,
+.nav-dropdown-list-current {
+  opacity: 0.3;
 }
 
 .nav-dropdown-list .help-translate {
