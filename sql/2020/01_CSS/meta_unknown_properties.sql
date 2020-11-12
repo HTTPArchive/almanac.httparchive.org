@@ -36,13 +36,15 @@ OPTIONS (library="gs://httparchive/lib/css-utils.js");
 SELECT
   *
 FROM (
-  SELECT
+  SELECT DISTINCT
     client,
     property,
-    COUNT(DISTINCT page) AS pages,
-    SUM(freq) AS freq,
-    SUM(SUM(freq)) OVER (PARTITION BY client) AS total,
-    SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client) AS pct
+    COUNT(DISTINCT page) OVER (PARTITION BY client, property) AS pages,
+    COUNT(DISTINCT page) OVER (PARTITION BY client) AS total,
+    COUNT(DISTINCT page) OVER (PARTITION BY client, property) / COUNT(DISTINCT page) OVER (PARTITION BY client) AS pct_pages,
+    SUM(freq) OVER (PARTITION BY client, property) AS freq,
+    SUM(freq) OVER (PARTITION BY client) AS total,
+    SUM(freq) OVER (PARTITION BY client, property) / SUM(freq) OVER (PARTITION BY client) AS pct
   FROM (
     SELECT
       client,
@@ -54,10 +56,7 @@ FROM (
       UNNEST(getUnknownProperties(css)) AS property
     WHERE
       date = '2020-08-01' AND
-      LENGTH(property) > 1)
-  GROUP BY
-    client,
-    property)
+      LENGTH(property.property) > 1))
 WHERE
   pct >= 0.01
 ORDER BY

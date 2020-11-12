@@ -63,9 +63,9 @@ SELECT
   SUM(freq) AS freq,
   SUM(SUM(freq)) OVER (PARTITION BY client) AS total,
   SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client) AS pct,
-  COUNT(DISTINCT page) AS pages,
+  COUNT(DISTINCT IF(freq > 0, page, NULL)) AS pages,
   total_pages,
-  COUNT(DISTINCT page) / total_pages AS pct_pages
+  COUNT(DISTINCT IF(freq > 0, page, NULL)) / total_pages AS pct_pages
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,

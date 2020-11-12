@@ -157,7 +157,7 @@ OPTIONS (library="gs://httparchive/lib/css-utils.js");
 SELECT
   percentile,
   client,
-  APPROX_QUANTILES(color_stops, 1000 IGNORE NULLS)[OFFSET(500)] AS median_color_stop
+  APPROX_QUANTILES(color_stops, 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS color_stops_per_gradient
 FROM
   `httparchive.almanac.parsed_css`,
   UNNEST(getColorStops(css)) AS color_stops,

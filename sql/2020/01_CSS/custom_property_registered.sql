@@ -40,17 +40,14 @@ try {
 }
 ''';
 
-SELECT
+SELECT DISTINCT
   _TABLE_SUFFIX AS client,
   prop,
-  COUNT(0) AS pages,
-  SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS total,
-  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS pct
+  COUNT(DISTINCT url) OVER (PARTITION BY _TABLE_SUFFIX, prop) AS pages,
+  COUNT(DISTINCT url) OVER (PARTITION BY _TABLE_SUFFIX) AS total,
+  COUNT(DISTINCT url) OVER (PARTITION BY _TABLE_SUFFIX, prop) / COUNT(DISTINCT url) OVER (PARTITION BY _TABLE_SUFFIX) AS pct
 FROM
   `httparchive.pages.2020_08_01_*`,
   UNNEST(getCustomPropertiesWithComputedStyle(payload)) AS prop
-GROUP BY
-  client,
-  prop
 ORDER BY
   pct DESC
