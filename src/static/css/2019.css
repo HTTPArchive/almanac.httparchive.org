@@ -1328,9 +1328,6 @@ p.copyright a {
 .footer .nav-dropdown-list {
   bottom: 60px;
   border-radius: 29px 29px 29px 0;
-}
-
-.footer:not(.table-of-contents) .nav-dropdown-list {
   flex-direction: column-reverse;
 }
 
@@ -1363,7 +1360,7 @@ p.copyright a {
 
 .nav-dropdown-list-part {
   white-space: nowrap;
-  padding: 16px 8px 8px 8px;
+  padding: 16px 8px 8px 16px;
   font-weight: bold;
   font-size: 1.25rem;
 }
@@ -1372,13 +1369,17 @@ p.copyright a {
   padding: 0;
 }
 
-.nav-dropdown-list-part.foreword {
-  padding-top: 24px;
+.header-list li:last-child:not(.ebook) {
+  padding-bottom: 16px;
+}
+
+.footer-list li:last-child:not(.ebook) {
+  padding-top: 16px;
 }
 
 .nav-dropdown-list-chapter a,
 .nav-dropdown-list-chapter span {
-  padding: 8px 8px 8px 20px;
+  padding: 8px 8px 8px 24px;
 }
 
 .nav-dropdown-list-chapter small a,
@@ -1396,7 +1397,7 @@ p.copyright a {
 }
 
 .nav-dropdown-list-todo,
-.nav-dropdown-list__current {
+.nav-dropdown-list-current {
   opacity: 0.3;
 }
 
