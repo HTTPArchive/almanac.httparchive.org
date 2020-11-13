@@ -78,7 +78,7 @@ if [ -n "$(git status --porcelain)" ]; then
   check_continue "Your branch is not clean. Do you still want to continue deploying?"
 fi
 
-check_continue "Please confirm you've updated the eBooks via GitHub Actions."
+check_continue "Please confirm you've updated the Timestamps and eBooks via GitHub Actions."
 
 echo "Update local production branch"
 git checkout production
