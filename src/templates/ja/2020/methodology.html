@@ -20,17 +20,22 @@
         </li>
         <li><a href="#tools">ツール</a>
           <ul>
-            <li><a href="#webpagetest">WebPageTest</a></li>
+            <li><a href="#webpagetest">ウェブページテスト</a></li>
             <li><a href="#lighthouse">Lighthouse</a></li>
             <li><a href="#wappalyzer">Wappalyzer</a></li>
             <li><a href="#chrome-ux-report">Chrome UXレポート</a></li>
             <li><a href="#third-party-web">サードパーティーウェブ</a></li>
-            <li><a href="#rework-css">Rework CSS</a></li>
+            <li><a href="#rework-css">Rework CSS</a>
+              <ul>
+                <li><a href="#rework-utils">Rework Utils</a></li>
+              </ul>
+            </li>
+            <li><a href="#parsel">Parsel</a></li>
           </ul>
         </li>
         <li><a href="#process">分析プロセス</a>
           <ul>
-            <li><a href="#brainstorming">ブレインストーミング</a></li>
+            <li><a href="#planning">プランニング</a></li>
             <li><a href="#analysis">分析</a></li>
             <li><a href="#interpretation">解釈</a></li>
           </ul>
@@ -54,15 +59,15 @@
         <h2 id="overview"><a href="#overview" class="anchor-link">概要</a></h2>
 
         <p>
-          Web Almanacは、<a href="https://httparchive.org">HTTP Archive</a>によって組織されたプロジェクトです。HTTP Archiveは、ウェブがどのように構築されているかを追跡することを使命として、2010年に Steve Souders によって開始されました。何百万ものウェブページの構成を毎月評価し、そのテラバイトのメタデータを<a href="https://httparchive.org/faq#how-do-i-use-bigquery-to-write-custom-queries-over-the-data">BigQuery</a>で分析できるようにしています。詳細は<a href="https://httparchive.org/about">HTTP Archive</a>をご覧ください。
+          Web Almanacは、<a href="https://httparchive.org">HTTP Archive</a>によって組織されたプロジェクトです。HTTP Archiveは、ウェブがどのように構築されているかを追跡することを使命として、2010年に Steve Souders によって開始されました。何百万ものウェブページの構成を毎月評価し、そのテラバイトのメタデータを<a href="https://httparchive.org/faq#how-do-i-use-bigquery-to-write-custom-queries-over-the-data">BigQuery</a>で分析できるようにしています。
         </p>
 
         <p>
-          Web Almanacの使命は、主題の専門家が文脈に沿った洞察を提供することで、HTTP Archiveのデータウェアハウスをウェブコミュニティにさらにアクセスしやすくすることです。2020年が第2版となる2020年は、ウェブの状態に関する知識の年次リポジトリと考えることができます。
+          Web Almanacの使命は、ウェブの状態に関する一般的な知識の年次リポジトリになることです。私たちの目標は、主題の専門家が文脈に沿った洞察を提供することで、HTTP Archiveのデータウェアハウスをウェブコミュニティがさらに利用しやすいものにすることです。
         </p>
 
         <p>
-          Web Almanacの2020年版は、コンテンツ、体験、パブリッシング、ディストリビューションの4つの柱で構成されています。書かれたレポートの各パートは柱を表し、その異なる側面を探求する章で構成されています。例えば、パートIIはユーザー体験を表し、パフォーマンス、セキュリティ、アクセシビリティ、SEO、PWA、モバイルウェブの各章が含まれています。
+          Web Almanacの2020年版は、コンテンツ、体験、パブリッシング、ディストリビューションの4つのパートに分かれています。各パートの、いくつかの章では、その全体的なテーマをさまざまな角度から探求しています。例えば、パートIIでは、パフォーマンス、セキュリティ、アクセシビリティの各章で、ユーザー体験をさまざまな角度から探求しています。
         </p>
     </section>
 
@@ -104,7 +109,7 @@
         </div>
 
         <p>
-          各指標の結果は、<a href="https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/edit?usp=sharing">JavaScriptの結果</a>のように、章ごとのスプレッドシートで公開されています。
+          各指標の結果は、<a href="https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/edit?usp=sharing">JavaScriptの結果</a>のように、章ごとのスプレッドシートで公開されています。各章の下までスクロールすると、クエリ、結果、読者からのコメントへのリンクが表示されます。
         </p>
     </section>
 
@@ -120,11 +125,11 @@
         </p>
 
         <p>
-          Web Almanacが使用した2020年8月のHTTP Archiveのクロールでは、Webサイトのリストに、最新のChrome UXレポートリリースである2020年6月（202006）を使用しました。このデータセットは2020年7月14日にリリースされたもので、6月中にChromeユーザーが訪問したウェブサイトをキャプチャしています。
+          Web Almanacが使用した2020年8月のHTTPアーカイブのクロールでは、Webサイトのリストに、最新のChrome UXレポートのリリースを使用しました。202006データセットは2020年7月14日にリリースされたもので、6月中にChromeユーザーが訪問したウェブサイトをキャプチャしています。
         </p>
 
         <p>
-          <a href="../2019/methodology#websites">2019年のWeb Almanac</a>のために分析したサイト数と比較して、分析したウェブサイトで20～30%の増加がありました。この増加は、<a href="{{ url_for('contributors', year=year, lang=lang, _anchor='paulcalvano') }}">Paul Calvano</a>が<a href="https://paulcalvano.com/2020-09-29-growth-of-the-web-in-2020/">Growth of the Web in 2020</a>の投稿で分析したものです。
+          分析したウェブサイトの数は、<a href=".../2019/methodology#websites">2019 Web Almanac</a>に掲載されているウェブサイトと比較して、20～30%の増加が見られました。この増加は、<a href="{{ url_for('contributors', year=year, lang=lang, _anchor='paulcalvano')}}">Paul Calvano</a>が、<a href="https://paulcalvano.com/2020-09-29-growth-of-the-web-in-2020/">Growth of the Web in 2020</a>の投稿で分析しています。
         </p>
 
         <p>
@@ -132,7 +137,7 @@
         </p>
 
         <p>
-          HTTP Archiveは、データセンターからウェブサイトをテストし、実際のユーザー体験からデータを収集しないという意味で、ラボテストツールとも考えられています。そのため、すべてのウェブサイトのホームページは、ログアウトした状態で空のキャッシュを使ってテストされます。
+          HTTP Archiveは、データセンターからウェブサイトをテストし、実際のユーザー体験からデータを収集しないという意味で、ラボテストツールとも考えられています。そのため、すべてのページはログアウト状態で空のキャッシュを使ってテストされており、実際のユーザーがどのようにアクセスするかを反映していない可能性があります。
         </p>
     </section>
 
@@ -140,7 +145,7 @@
       <h3 id="metrics"><a href="#metrics" class="anchor-link">メトリクス</a></h3>
 
       <p>
-        HTTP Archiveは、Webがどのように構築されているかについてのメトリクスを収集します。これには、ページあたりのバイト数、ページがHTTPSで読み込まれたかどうか、個々のリクエストヘッダーとレスポンスヘッダーなどの基本的なメトリクスが含まれています。これらのメトリクスの大部分は、<a href="#webpagetest">WebPageTest</a> によって提供されており、各ウェブサイトのテストランナーとして機能します。
+        HTTP Archiveは、Webがどのように構築されているかについて数千のメトリクスを収集します。これには、ページあたりのバイト数、ページがHTTPSで読み込まれたかどうか、個々のリクエストヘッダーとレスポンスヘッダーなどの基本的なメトリクスが含まれています。これらのメトリクスの大部分は、<a href="#webpagetest">WebPageTest</a> によって提供されており、各ウェブサイトのテストランナーとして機能します。
       </p>
 
       <p>
@@ -240,7 +245,7 @@
       </p>
 
       <p>
-        HTTP ArchiveのWebPageTestのプライベートインスタンスは、最新のパブリックバージョンと同期して維持され、<a href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">カスタムメトリクス</a>で強化されています。これらは、テストの最後に各ウェブサイトで評価されるJavaScriptのスニペットです。<a href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/almanac.js">almanac.js</a>カスタムメトリクスには、DOMの状態に依存するメトリクスなど、そうでなければ計算できないいくつかのメトリクスが含まれています。
+        HTTP ArchiveのWebPageTestのプライベートインスタンスは、最新のパブリックバージョンと同期して維持され、<a href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">カスタムメトリクス</a>で強化されています。これらは、テストの最後に各ウェブサイトで評価されるJavaScriptのスニペットです。多くのデータアナリストの<a href="https://github.com/HTTPArchive/legacy.httparchive.org/commits/master/custom_metrics">貢献</a>のおかげで、特に <a href="https://github.com/HTTPArchive/legacy.httparchive.org/pulls?q=is%3Apr+author%3ATiggerito+sort%3Acreated-asc"><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='Tiggerito') }}">Tony McCreath</a>の献身的な努力</a>により、Web Almanacの2020年版では、HTTPアーカイブのテストインフラストラクチャの機能が3,000行以上の新しいコードで大幅に拡張されました。
       </p>
 
       <p>
@@ -333,7 +338,7 @@
     </section>
 
     <section>
-      <h3 id="third-party-web"><a href="#third-party-web">サードパーティウェブ</a></h3>
+      <h3 id="third-party-web" class="anchor-link"><a href="#third-party-web">サードパーティウェブ</a></h3>
 
       <p>
         <a href="https://www.thirdpartyweb.today/">サードパーティウェブ</a>は、<a href="{{ url_for('contributors', year=year, lang=lang, _anchor='patrickhulce') }}">Patrick Hulce</a>の研究プロジェクトで、<a href="{{ url_for('chapter', year=2019, lang=lang, chapter='third-parties') }}">2019サードパーティ</a>の章では、HTTP ArchiveとLighthouseのデータを使用して、サードパーティのリソースがウェブに与える影響を特定して分析しています。
@@ -361,22 +366,68 @@
     </section>
 
     <section>
-      <h2 id="process"><a href="#process" class="anchor-link">分析プロセス</a></h2>
+      <h4 id="rework-utils"><a href="#rework-utils" class="anchor-link">Rework Utils</a></h4>
 
       <p>
-        Web Almanacの計画と実行には、Webコミュニティの数十人の貢献者の協力を得て、約1年を要しました。このセクションでは、Web Almanacに掲載されているメトリクスを選択した理由、それらがどのようにして照会されたか、そして解釈されたかについて説明します。
+        今年の<a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a>の章では、<a href="{{ url_for('contributors', year=year, lang=lang, _anchor='LeaVerou') }}">Lea Verou</a>がCSSの状態をかなり詳細に見ており、<a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2020/01_CSS">100以上のクエリ</a>にわたっています。視点を変えれば、2019年の2.5倍のクエリ数になります。この規模の分析を実現可能にするために、Leaは<a href="https://github.com/LeaVerou/rework-utils">Rework Utils</a>をオープンソース化しました。これらのユーティリティは、CSSの洞察をより簡単に抽出するための有用なスクリプトを提供することで、ReworkからJSONデータを次のレベルに引き上げます。CSSの章で見る統計情報のほとんどは、これらのスクリプトによって提供されています。
       </p>
     </section>
 
     <section>
-      <h3 id="brainstorming"><a href="#brainstorming" class="anchor-link">ブレインストーミング</a></h3>
+        <h4 id="parsel"><a href="#parsel" class="anchor-link">Parsel</a></h4>
+
+        <p>
+            <a href="https://projects.verou.me/parsel/">Parsel</a>はCSSセレクタパーサとspecificity calculatorで、元々は<a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a>の章をリードする<a href="{{ url_for('contributors', year=year, lang=lang, _anchor='LeaVerou') }}">Lea Verou</a>と別のライブラリとしてオープンソース化されています。
+            これは、セレクタと特異性に関連するすべてのCSSメトリクスで広く使われています。
+        </p>
+    </section>
+
+    <section>
+      <h2 id="process"><a href="#process" class="anchor-link">分析プロセス</a></h2>
 
       <p>
-        2020年Web Almanacは、2020年6月に<a href="https://twitter.com/rick_viscomi/status/1273135952848977920?s=20">新規執筆者を募集して</a>スタートしました。ブレーンストーミングのラウンドの後、22の章が固まり、私たちは<a href="https://github.com/HTTPArchive/almanac.httparchive.org/issues/876">各章に主題専門家とレビュワーを割り当てる作業を開始しました</a>。このプロセスには、この規模のプロジェクトにコミットするためにボランティアを集めるという課題があったため、いくつかの固有の偏りがありました。したがって、寄稿者の多くは同じ専門家サークルのメンバーです。Web Almanacの今後のエディションの明確な目標の1つは、著者やレビュワーとして、代表性の低い、異質な声をより多く取り入れることを奨励することです。
+        Web Almanacの計画と実行には、100人以上のWebコミュニティの<a href="{{ url_for('contributors', year=year, lang=lang) }}">投稿者</a>の協力を得て、約1年を要しました。このセクションでは、Web Almanacに掲載されているチャプターを選んだ理由、それらのメトリクスがどのようにして照会されたか、そしてどのように解釈されたかを説明します。
+      </p>
+    </section>
+
+    <section>
+      <h3 id="planning"><a href="#planning" class="anchor-link">プランニング</a></h3>
+
+      <p>
+        2020年のWeb Almanacは、<a href="https://twitter.com/rick_viscomi/status/1273135952848977920">2020年6月</a>にキックオフしましたが、COVID-19に関連した不安や社会正義の抗議活動のため、2019年のタイムラインよりも遅くなりました。2020年のこれらの出来事やその他の出来事は、制作プロセス全体の下火となり、このようなテンポの速いプロジェクトのストレスを超えて、私たちの貢献者に多くの追加的な負担をかけました。
       </p>
 
       <p>
-        私たちは2020年7月に、人々と支部のペアリングを行い、各支部を構成する個々の指標を最終的に決定するために、彼らの意見を聞きました。
+        昨年の方法論</a>で述べたように、<a href="https://almanac.httparchive.org/en/2019/methodology#brainstorming">。
+      </p>
+
+      <blockquote>
+        Web Almanacの今後のエディションの明確な目標の1つは、著者やレビュワーとして、代表性の低い声や異質な声をより多く取り入れることを奨励することです。
+      </blockquote>
+
+      <p>
+        そのために、今年は著者の探し方、選び方を体系的に変えてみました。
+
+        <ul>
+          <li>
+            これまでの著者は、異なる視点のためのスペースを確保するために、再び書くことを特別に望まれていませんでした。
+          </li>
+          <li>
+            2020年の著者を支持する人たちは皆、見た目や考え方が似ている人を指名しないように特に意識するように求められました。
+          </li>
+          <li>
+            2019年の執筆者の多くはGoogleの社員であり、今年はより広いウェブコミュニティからの視点をよりバランスよく得ることを試みました。Web Alamanacの声はコミュニティそのものを反映したものであるべきであり、反響室を作らないように特定の企業に偏ったものではないと考えています。
+          </li>
+          <li>
+            プロジェクトのリーダーは、すべての著者の推薦を検討し、新しい視点をもたらし、地域社会の中での未発表グループの声を増幅させる著者の選定に尽力しました。
+          </li>
+        </ul>
+
+        将来的には、このプロセスを繰り返していくことで、Web Almanacがより多様で包括的なプロジェクトとなり、さまざまなバックグラウンドを持つ投稿者が参加できるようにしたいと考えています。
+      </p>
+
+      <p>
+        最終的には、2020年7月にブレインストーミングとノミネートを経て、22のチャプターが固まり、各チャプターごとにコンテンツチームを編成して、執筆、レビュー、分析を行いました。
       </p>
     </section>
 
@@ -384,7 +435,7 @@
       <h3 id="analysis"><a href="#analysis" class="anchor-link">分析</a></h3>
 
       <p>
-        2020年7月と8月に、メトリクスとチャプターの安定したリストを持って、データアナリストは、実現可能性のためにメトリクスをトリアージしました。場合によっては、分析能力のギャップを埋めるために、<a href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">カスタムメトリクス</a>を作成する必要がありました。
+        2020年7月と8月に、メトリクスとチャプターの安定したリストを持って、データアナリストは、実現可能性のためにメトリクスをトリアージしました。場合によっては、分析能力のギャップを埋めるために、<a href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">カスタムメトリクス</a>を作成されました。
       </p>
 
       <p>
@@ -392,7 +443,7 @@
       </p>
 
       <p>
-        データアナリストは、各メトリクスの結果を抽出するためのクエリを書き始めました。合計すると、<strong>TBC クエリ</strong>が手書きで書かれていました! プロジェクトのGitHubリポジトリの <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2020">sql/2020</a> ディレクトリで、章ごとにすべてのクエリを閲覧できます。
+        データアナリストは、各メトリクスの結果を抽出するためのクエリを書き始めました。合計すると、何百ものクエリが手書きで書かれていました。GitHubのオープンソース<a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2020">クエリのリポジトリ</a> で、年別、章別にすべてのクエリを閲覧することができます。
       </p>
     </section>
 
@@ -404,7 +455,7 @@
       </p>
 
       <p>
-        読者に結果をよりわかりやすく伝えるために、ウェブ開発者やアナリストは、この章に埋め込むデータの可視化を作成しました。いくつかの可視化は、結論を把握しやすくするために簡略化されています。たとえば、分布の完全なヒストグラムを表示するのではなく、ほんの一握りのパーセンタイルだけを表示しています。特に断りのない限り、すべての分布は、平均ではなくパーセンタイル、特に中央値（50％）を使用して要約されています。
+        読者に結果をよりわかりやすく伝えるために、ウェブ開発者やアナリストは、この章に埋め込むデータの可視化を作成しました。いくつかの可視化は、ポイントをより明確にするために簡略化されています。たとえば、完全な分布を表示するのではなく、ほんの一握りのパーセンタイルのみを表示しています。特に断りのない限り、すべての分布は、平均値ではなくパーセンタイル、特に中央値（50 パーセンタイル）を使用して要約されています。
       </p>
 
       <p>
@@ -416,11 +467,11 @@
       <h2 id="looking-ahead"><a href="#looking-ahead" class="anchor-link">将来を見据えて</a></h2>
 
       <p>
-        Web Almanacの2020年版は毎年恒例、Webコミュニティ伝統の2回目で、内省と前向きな変化への取り組みです。ここまで来れたのは、多くの献身的な<a href="{{ url_for('contributors', year=year, lang=lang) }}">コントリビューター</a>のおかげで、記念碑的な努力をしてきました。
+        Web Almanacの2020年版は毎年恒例、Webコミュニティ伝統の2回目で、内省と前向きな変化への取り組みを続けていきたいです。ここまで来れたのは、多くの献身的な<a href="{{ url_for('contributors', year=year, lang=lang) }}">コントリビューター</a>のおかげで、記念碑的な努力をしてきました。
       </p>
 
       <p>
-        Web Almanacの2021年版への貢献にご興味のある方は、<a href="https://forms.gle/VRBFegGAP7d99Bhp7">関心フォーム</a>にご記入ください。このプロジェクトをより良いものにするためのアイデアをお待ちしています！
+        Web Almanacの2021年版への貢献にご興味のある方は、<a href="https://forms.gle/VRBFegGAP7d99Bhp7">関心フォーム</a>にご記入ください。みんなで協力してウェブの状態を追いかけていきましょう！
       </p>
     </section>
 {% endblock main_content %}
