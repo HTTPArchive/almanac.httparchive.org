@@ -113,11 +113,12 @@
 
 {% macro native_table_of_contents_dropdown(switcher_name) %}
 {% set current_title = metadata.get('title') if metadata else None %}
-<div class="table-of-contents-switcher">
+<div class="table-of-contents-switcher js-switcher-menu">
   <label for="table-of-contents-switcher-{{switcher_name}}" class="visually-hidden">
     {{ self.table_of_contents_switcher() }}
   </label>
-  <select id="table-of-contents-switcher-{{switcher_name}}">
+  <a class="js-hide" href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a>
+  <select id="table-of-contents-switcher-{{switcher_name}}" class="js-unhide">
     {% if request.path.endswith("table-of-contents") %}
       <option selected disabled value="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</option>
       <option disabled value="{{ url_for('table_of_contents', year=year, lang=lang) }}#foreword">{{ self.foreword_title() }}</option>
@@ -446,6 +447,9 @@
         document.querySelectorAll('.js-unhide').forEach(element => {
           element.classList.remove('js-unhide');
         });
+        document.querySelectorAll('.js-switcher-menu').forEach(element => {
+          element.classList.remove('js-switcher-menu');
+        });
 
         // Language and Year switching
         var languageYearSwitchers = document.querySelectorAll('.language-switcher select, .year-switcher select, .table-of-contents-switcher select');
@@ -590,7 +594,7 @@
 {% endmacro %}
 
 {% macro native_lang_dropdown(switcher_name) %}
-  <div class="language-switcher">
+  <div class="language-switcher js-switcher-menu">
     <label for="language-switcher-{{switcher_name}}" class="visually-hidden">{{ self.language_switcher() }}</label>
     <select id="language-switcher-{{switcher_name}}">
       {% for l in supported_languages | sort(attribute='_local_name') %}
@@ -730,7 +734,7 @@
 {%- endmacro %}
 
 {% macro native_year_dropdown(switcher_name)%}
-  <div class="year-switcher">
+  <div class="year-switcher js-switcher-menu">
     <label for="year-switcher-{{switcher_name}}" class="visually-hidden">{{ self.year_switcher() }}</label>
     <select id="year-switcher-{{switcher_name}}">
       {% for y in supported_years | sort %}

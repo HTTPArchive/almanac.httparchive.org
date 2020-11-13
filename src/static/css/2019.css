@@ -659,6 +659,13 @@ header .cta {
   transform: rotate(135deg);
 }
 
+.js-switcher-menu::after {
+  height: 0;
+  width: 0;
+  margin-top: 0;
+  border: 0
+}
+
 .table-of-contents-switcher select,
 .language-switcher select,
 .year-switcher select {
@@ -972,7 +979,8 @@ p.copyright a {
   display: none;
 }
 
-button.js-unhide {
+button.js-unhide,
+select.js-unhide {
   display: none;
 }
 
