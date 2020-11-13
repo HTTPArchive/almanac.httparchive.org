@@ -21,7 +21,8 @@ featured_stat_label_2: Number of non-standard <code>h7</code> elements
 featured_stat_3: 25.24 KB
 featured_stat_label_3: Weight of the median document
 published: 2020-11-09T00:00:00.000Z
-last_updated: 2020-11-09T00:00:00.000Z
+last_updated: 2020-11-13T00:00:00.000Z
+unedited: true
 ---
 
 ## Introduction
@@ -160,6 +161,7 @@ Overall, around 2% of pages contain no scripting at all, not even structured dat
 At the opposite end of the spectrum, the numbers show that about 97% of pages contain at least one script, either inline or external.
 
 {# TODO(editors): Wrap "script" in the caption in code tags so that it doesn't trigger code editor syntax highlighting confusion. #}
+{# TODO(analysts): We still have a problem here with the x-axis label (“Containing”). Can someone help out and look at this? #}
 {{ figure_markup(
   image="script-use.png",
   caption="Usage of the script element.",
@@ -182,11 +184,12 @@ This seems to confirm the theory that the total number of `noscript` elements in
 What `type` attribute values are used with `script` elements?
 
 {# TODO(authors, analysts): Should this be a figure? #}
+{# TODO(authors): Explain the significance of the "!" in text. #}
 - `text/javascript`: 60.03%
 - `application/ld+json`: 1.68%
 - `application/json`: 0.41%
 - `text/template`: 0.41%
-- `text/html` 0.27% (!)
+- `text/html` (!) 0.27%
 
 When it comes to loading [JavaScript module scripts](https://jakearchibald.com/2017/es-modules-in-browsers/) using `type="module"`, we found that 0.13% of `script` elements currently specify this attribute-value combination. `nomodule` is used by 0.95% of all tested pages. (Note that one metric relates to elements, the other to pages.)
 
@@ -616,6 +619,7 @@ There has been a lot of [discussion](https://adrianroselli.com/2016/01/links-but
   sql_file="pages_markup_by_device.sql"
 ) }}
 
+{# TODO(analysts): Where do these "occurrences" come from? Ideally we have a single sheet to link to with the results used by this table. #}
 <figure markdown>
 | Button types | Occurrences | Percentage |
 |---|---|---|
