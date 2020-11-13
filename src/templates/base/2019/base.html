@@ -188,7 +188,7 @@
 {% set current_title = metadata.get('title') if metadata else None %}
 <div class="nav-dropdown {{switcher_name}} table-of-contents">
   <a class="js-hide" href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a>
-  <button class="nav-dropdown-btn hidden js-unhide" aria-expanded="false" aria-label="{{ self.table_of_contents_title() }}" >
+  <button class="nav-dropdown-btn js-unhide" aria-expanded="false" aria-label="{{ self.table_of_contents_title() }}" >
     {{ self.table_of_contents_title() }}
   </button>
   <ul class="nav-dropdown-list hidden {{switcher_name}}-list">
