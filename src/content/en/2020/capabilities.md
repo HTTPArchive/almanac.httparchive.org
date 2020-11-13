@@ -48,8 +48,7 @@ With the help of the `document.execCommand()` method, websites could already acc
 
 ### Read Access
 
-{# TODO(author): Are there any "privacy reasons" we can cite/link here? #}
-The Async Clipboard API provides two methods for reading content from the clipboard: a shorthand method for plain text, called `navigator.clipboard.readText()`, and a method for arbitrary data, called `navigator.clipboard.read()`. Currently, most browsers only support HTML content and PNG images as additional data formats. Due to privacy reasons, reading from the clipboard always requires the user's consent.
+The Async Clipboard API provides two methods for reading content from the clipboard: a shorthand method for plain text, called `navigator.clipboard.readText()`, and a method for arbitrary data, called `navigator.clipboard.read()`. Currently, most browsers only support HTML content and PNG images as additional data formats. As the clipboard may contain sensitive data, reading from it requires the user's consent.
 
 {{ figure_markup(
   image="async_clipboard_api.png",
@@ -158,7 +157,6 @@ The `navigator.wakeLock.request()` method creates a wake lock. This method takes
 
 {{ figure_markup(
   image="screen_wake_lock_api.png",
-  alt="Number of pages using Screen Wake Lock API",
   caption="Numbers of pages using Screen Wake Lock API.",
   description="Chart of Screen Wake Lock API usage, based on the number of pages monitored by the HTTP Archive, comparing desktop and mobile pages. In October 2020, the API is used by 10 desktop and 5 mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=718278185&format=interactive",
@@ -250,8 +248,7 @@ relatedApps.forEach((app) => {
   )
 }}
 
-{# TODO(author): Consider rephrasing "strictly monotone growth". #}
-Over the course of 2020, the `getInstalledRelatedApps()` API shows a strictly monotone growth on mobile websites. In October, 363 mobile pages tracked by the HTTP Archive made use of this API. On desktop pages, the API does not grow quite as fast. This could also be due to Android stores currently providing significantly more apps than the Microsoft Store does for Windows.
+Over the course of 2020, the `getInstalledRelatedApps()` API shows a steady growth on mobile websites. In October, 363 mobile pages tracked by the HTTP Archive made use of this API. On desktop pages, the API does not grow quite as fast. This could also be due to Android stores currently providing significantly more apps than the Microsoft Store does for Windows.
 
 ## Content Indexing API
 
@@ -330,5 +327,4 @@ The use of the interface is currently still so low that it's hardly measurable. 
 
 The state of web capabilities in 2020 is healthy, as new, powerful APIs regularly ship with new releases of Chromium-based browsers. Some interfaces like the Content Indexing API or Idle Detection API help to add finishing touches to certain web applications. Other APIs, such as the File System Access and Async Clipboard API, allow a whole new application category, namely productivity apps, to finally fully make the shift to the web. Some APIs such as Async Clipboard and Web Share API have already made their way into other, non-Chromium browsers. Safari even was the first mobile browser to implement the Web Share API.
 
-{# TODO(author): PTAL at the last sentence, rephrased for clarity. It's your closing statement so I want to make sure I'm not changing your meaning. #}
 Through its [rigorous process](https://developers.google.com/web/updates/capabilities#process), the Fugu team ensures that access to these features takes place in a secure and privacy-friendly manner. Additionally, the Fugu team actively solicits the [feedback](mailto:fugu-dev@chromium.org) from other browser vendors and web developers. While the usage of most of these new APIs is comparatively low, some APIs presented in this chapter show an exponential or even hockey stick-like growth, such as the Badging or Content Indexing API. The state of web capabilities in 2021 will depend on the web developers themselves. The author encourages the community to build great web applications, make use of the powerful APIs in a backwards-compatible manner, and help make the web a more capable platform.
