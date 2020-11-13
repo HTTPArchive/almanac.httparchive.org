@@ -1,4 +1,4 @@
-#standartSQL
+#standardSQL
 SELECT
   client,
   feature,

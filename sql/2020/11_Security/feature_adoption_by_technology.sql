@@ -7,9 +7,9 @@ SELECT
   headername,
   COUNT(DISTINCT url) AS total_pages_with_technology,
   COUNT(DISTINCT IF(STARTS_WITH(url, 'https'), url, NULL)) AS total_https_pages,
-  COUNT(DISTINCT IF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername)), url, NULL)) AS freq,
-  COUNT(DISTINCT IF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername)), url, NULL)) / COUNT(DISTINCT url) AS pct,
-  COUNT(DISTINCT IF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername)) AND STARTS_WITH(url, 'https'), url, NULL)) / COUNT(DISTINCT IF(STARTS_WITH(url, 'https'), url, NULL)) AS pct_https
+  COUNT(DISTINCT IF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername, ' ')), url, NULL)) AS freq,
+  SAFE_DIVIDE(COUNT(DISTINCT IF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername, ' ')), url, NULL)), COUNT(DISTINCT url)) AS pct,
+  SAFE_DIVIDE(COUNT(DISTINCT IF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername, ' ')) AND STARTS_WITH(url, 'https'), url, NULL)), COUNT(DISTINCT IF(STARTS_WITH(url, 'https'), url, NULL))) AS pct_https
 FROM (
   SELECT 
     t._TABLE_SUFFIX AS client,
@@ -26,7 +26,7 @@ FROM (
   WHERE
     firstHtml
 ),
-UNNEST(['Content-Security-Policy', 'Cross-Origin-Embedder-Policy', 'Cross-Origin-Opener-Policy', 'Cross-Origin-Resource-Policy', 'Expect-CT', 'Feature-Policy', 'Permissions-Policy', 'Referrer-Policy', 'Report-To', 'Strict-Transport-Security', 'X-Content-Type-Options', 'X-Frame-Options', 'X-XSS-Protection']) AS headername
+UNNEST(['Content-Security-Policy', 'Content-Security-Policy-Report-Only', 'Cross-Origin-Embedder-Policy', 'Cross-Origin-Opener-Policy', 'Cross-Origin-Resource-Policy', 'Expect-CT', 'Feature-Policy', 'Permissions-Policy', 'Referrer-Policy', 'Report-To', 'Strict-Transport-Security', 'X-Content-Type-Options', 'X-Frame-Options', 'X-XSS-Protection']) AS headername
 GROUP BY
   client,
   category,

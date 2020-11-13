@@ -1,4 +1,4 @@
-#standartSQL
+#standardSQL
 SELECT
   _TABLE_SUFFIX AS client,
   app,
