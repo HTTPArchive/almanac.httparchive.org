@@ -42,12 +42,18 @@ if [ "$#" -gt 0 ]; then
     echo "- Copying ${FILES}"
     cp -r "${FILES}" "/tmp/lint/"
   done
+  # Delete some templates that don't lint
+  rm -rf /tmp/lint/templates/*/*/chapters
+  rm -rf /tmp/lint/templates/*/*/ebook.html
 else
   echo "Copying all files"
   # Copy everything except node_folders and env
   cp -r ../.github /tmp/lint
   mkdir /tmp/lint/src
   find ./ -maxdepth 1 -not -name "." -not -name "node_modules" -not -name "env" -exec cp -r {} /tmp/lint/src/ \;
+  # Delete some templates that don't lint
+  rm -rf /tmp/lint/src/templates/*/*/chapters
+  rm -rf /tmp/lint/src/templates/*/*/ebook.html
   # Delete some large files
   rm -rf /tmp/lint/src/static/fonts
   rm -rf /tmp/lint/src/static/images
