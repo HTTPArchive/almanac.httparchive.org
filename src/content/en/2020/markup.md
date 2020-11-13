@@ -75,6 +75,7 @@ Two things stand out from these results:
 
 A page's document size refers to the amount of HTML bytes transferred over the network, including compression if enabled. At the extremes of the set of 6.3 million documents:
 
+{# TODO(authors, analysts): Revisit the "largest document" stat and interpretation. #}
 * 1,110 documents are empty (0 bytes).
 * The average document size is 50.35 KB ([in most cases compressed](https://w3techs.com/technologies/details/ce-gzipcompression)).
 * The largest document by far weighs 64.16 _MB_, almost deserving its own analysis and chapter in the Web Almanac.
@@ -175,6 +176,8 @@ When scripting is unsupported or turned off in the browser, the `noscript` eleme
 Following the analysis, we found that about 49% of pages are using a `noscript` element. At the same time, about 16% of `noscript` elements were containing an `iframe` with a `src` value referring to "googletagmanager.com".
 
 This seems to confirm the theory that the total number of `noscript` elements in the wild may be affected by common scripts like Google Tag Manager which enforce users to add a `noscript` snippet after the `body` start tag on a page.
+
+#### Script types
 
 What `type` attribute values are used with `script` elements?
 
@@ -400,16 +403,15 @@ In our mobile dataset of 6.3 million pages, around 0.9 million pages (14.01%) co
 <figcaption>{{ figure_link(caption="Obsolete elements with more than 10,000 uses.", sheets_gid="1972617631", sql_file="pages_element_count_by_device_and_obsolete_elements.sql") }}</figcaption>
 </figure>
 
-Why are these still alive? Even `spacer` is still being used 1,584 times, and present on every 5,000th page. We know that Google has been using a `center` element on [their homepage](https://www.google.com/) [for 22 years](https://web.archive.org/web/19981202230410/https://www.google.com/) now, but why are there so many imitators?
+Even `spacer` is still being used 1,584 times, and present on every 5,000th page. We know that Google has been using a `center` element on [their homepage](https://www.google.com/) [for 22 years](https://web.archive.org/web/19981202230410/https://www.google.com/) now, but why are there so many imitators?
 
 #### `isindex`
 
-{# TODO(authors): What is the significance of this section? There are no new stats provided. #}
 If you were wondering: The [`isindex`](https://www.w3.org/TR/html401/interact/forms.html#edef-ISINDEX) element was present once. It was part of the HTML specs until [version 4.01](https://meiert.com/en/indices/html-elements/), and of XHTML in 1.0, yet only properly [specified](https://lists.w3.org/Archives/Public/public-whatwg-archive/2006Feb/0111.html) in 2006, and [removed](https://github.com/whatwg/html/pull/1095) in 2016.
 
 ### Proprietary and made-up elements
 
-In our set of elements we found some that were neither standard HTML (nor SVG nor MathML) elements, nor custom ones, nor obsolete ones, but somewhat proprietary ones. The top 10 that we identified were the following:
+In our set of elements we found some that were neither standard HTML (nor SVG nor MathML) elements, nor custom ones, nor obsolete ones, but somewhat proprietary ones. The top 10 that we identified are the following:
 
 <figure markdown>
 | Element | Pages (%) |
@@ -545,7 +547,7 @@ Interestingly, the use of native lazy loading on images is similar to that of `d
 
 ## Miscellaneous
 
-We've covered the use of HTML in general as well as the adoption of top elements and attributes. In this section, we're reviewing some of the special cases of viewports, favicons, buttons, inputs, and links. Specifically, we will also be looking at links that may still point to "http" URLs.
+We've covered the use of HTML in general as well as the adoption of top elements and attributes. In this section, we're reviewing some of the special cases of viewports, favicons, buttons, inputs, and links. One thing we note here is that too many links still point to "http" URLs.
 
 ### `viewport` specifications
 
@@ -576,7 +578,7 @@ The results show that almost half of the pages we analyzed are using the typical
 
 ### Favicons
 
-The state of favicons is fascinating. Favicons work with or without markup, for example some browsers would fall back to [looking at the domain root](https://realfavicongenerator.net/faq#why_icons_in_root), browsers accept favicons in several image formats, and they are also supported in several dozen sizes. In fact, some tools are reported to generate 45 favicon sizes! For example, one favicon tool, [realfavicongenerator.net](https://realfavicongenerator.net/), would return _37_ favicon sizes if requested to handle every case. As of this time of writing, there is an [open issue](https://github.com/whatwg/html/issues/4758) for the HTML spec to help improve the situation.
+The situation around favicons is fascinating. Favicons work with or without markup—some browsers would fall back to [looking at the domain root](https://realfavicongenerator.net/faq#why_icons_in_root)—, accept several image formats, and then also promote several dozen sizes (some tools are reported to generate 45 of them; [realfavicongenerator.net](https://realfavicongenerator.net/) would return _37_ if requested to handle every case). As of this time of writing, there is an [open issue](https://github.com/whatwg/html/issues/4758) for the HTML spec to help improve the situation.
 
 When we built our tests we didn't check for the presence of images, but only looked at the markup. That means, when you review the following, note that it's more about _how_ favicons are referenced rather than whether or how often they are used.
 
@@ -719,11 +721,9 @@ We're leaving this open to you. What are your observations? What has caught your
 
 ## Conclusion
 
-When we don't need to [cover 14 years](../2019/markup) for analysis but only 1, one could almost get the impression that HTML is rather inert, that not much changes.
+The [2019 Web Almanac Markup chapter](../2019/markup) had 14 years of catch up to do since the last major study on the topic, so you'd think we wouldn't have much to cover in the year since. Yet what we observe with this year's data is that there's a lot of movement at the bottom and near the shore of said sea of HTML. We approach near-complete adoption of living HTML. We are quick to prune our pages of fads like Google and Facebook widgets. We're also fast in adopting and shunning frameworks, as both Angular and AMP (though a "component framework") seem to have significantly lost in popularity, likely for solutions like React and Vue.
 
-Yet what we observe with this year's data is that there's a lot of movement at the bottom and near the shore of said sea of HTML. We approach near-complete adoption of living HTML. We are quick to prune our pages of fads like Google and Facebook widgets. We're also fast in adopting and shunning frameworks, as both Angular and AMP (though a "component framework") seem to have significantly lost in popularity, likely for solutions like React and Vue.
-
-And still, there are no signs we exhausted the options HTML gives us. The median of 30 different elements used on a given page, which is roughly a quarter of the elements HTML provides us with, suggests a rather one-sided use of HTML. That is supported by the immense popularity of elements like `div` and `span`, and no custom elements to potentially meet the demands that these two elements may represent. Unfortunately, we couldn't validate each document in the sample. However, anecdotally and to be taken with caution, we learned that [79%](https://github.com/HTTPArchive/almanac.httparchive.org/issues/899#issuecomment-717856201) of W3C-tested documents have validation errors. After everything we've seen, it looks like we're still far from mastering the craft of HTML.
+And still, there are no signs we exhausted the options HTML gives us. The median of 30 different elements used on a given page, which is roughly a quarter of the elements HTML provides us with, suggests a rather one-sided use of HTML. That is supported by the immense popularity of elements like `div` and `span`, and no custom elements to potentially meet the demands that these two elements may represent. Unfortunately, we couldn't validate each document in the sample; however, anecdotally and to be taken with caution, we learned that [79%](https://github.com/HTTPArchive/almanac.httparchive.org/issues/899#issuecomment-717856201) of W3C-tested documents have validation errors. After everything we've seen, it looks like we're still far from mastering the craft of HTML.
 
 That compels us to close with an appeal. Pay attention to HTML. Focus on HTML. It's important and worthwhile to invest in HTML. HTML is a document language that may not have the charm of a programming language, and yet the web is built on it. Use less HTML and learn what's really needed. Use more appropriate HTML—learn what's available and what it's there for. And [validate](https://validator.w3.org/docs/why.html) your HTML. Anyone can write invalid HTML (just invite the next person you meet to write an HTML document and validate the output) but a professional developer can be expected to produce valid HTML. Writing correct and valid HTML is a craft to take pride in.
 
