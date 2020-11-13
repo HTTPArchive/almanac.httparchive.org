@@ -79,7 +79,7 @@
     {% block content %}{% endblock %}
 
     {% block bodyend %}
-    <script defer src="/static/js/web-vitals.js{{ get_file_date_info('static/js/web-vitals.js', 'hash') }}" ></script>
+    <script defer src="/static/js/web-vitals.js?v={{ get_file_date_info('static/js/web-vitals.js', 'hash') }}" ></script>
     <script nonce="{{ csp_nonce() }}">
         function sendWebVitalsGAEvents(metric) {
           gtag('event', metric.name, {
