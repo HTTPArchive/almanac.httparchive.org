@@ -187,8 +187,9 @@
 {% macro styled_table_of_contents_dropdown(switcher_name) %}
 {% set current_title = metadata.get('title') if metadata else None %}
 <div class="nav-dropdown {{switcher_name}} table-of-contents">
-  <button class="nav-dropdown-btn enable-script" aria-expanded="false" aria-label="{{ self.table_of_contents_title() }}" >
-    <a class="js-enable-script-remove-tag" href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a>
+  <a class="js-hide" href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a>
+  <button class="nav-dropdown-btn hidden js-unhide" aria-expanded="false" aria-label="{{ self.table_of_contents_title() }}" >
+    {{ self.table_of_contents_title() }}
   </button>
   <ul class="nav-dropdown-list hidden {{switcher_name}}-list">
     
@@ -439,11 +440,11 @@
   {% block scripts %}
     <script nonce="{{ csp_nonce() }}">
       (function() {
-        document.querySelectorAll('.js-enable-script-remove-tag').forEach(element => {
-          var text = element.textContent;
-          var parentEl = element.parentElement;
-          parentEl.removeChild(element);
-          parentEl.innerText = text;
+        document.querySelectorAll('.js-hide').forEach(element => {
+          element.classList.add('hidden');
+        });
+        document.querySelectorAll('.js-unhide').forEach(element => {
+          element.classList.remove('js-unhide');
         });
 
         // Language and Year switching

@@ -972,6 +972,10 @@ p.copyright a {
   display: none;
 }
 
+button.js-unhide {
+  display: none;
+}
+
 #skiptocontent a {
   padding: 6px;
   position: absolute;
