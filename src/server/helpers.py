@@ -1,5 +1,5 @@
 from flask import request, redirect, url_for, render_template as flask_render_template
-from .config import STATIC_DIR, TEMPLATES_DIR, get_config, get_timestamps_config, get_entries_from_json, DEFAULT_YEAR, SUPPORTED_LANGUAGES, SUPPORTED_YEARS
+from .config import STATIC_DIR, TEMPLATES_DIR, get_config, get_timestamps_config, DEFAULT_YEAR, SUPPORTED_LANGUAGES, SUPPORTED_YEARS
 from .language import get_language, DEFAULT_LANGUAGE
 from werkzeug.routing import BaseConverter
 import os.path
@@ -68,7 +68,8 @@ def render_error_template(error, status_code):
         elif os.path.isfile(TEMPLATES_DIR + '/%s/%s/error.html' % (DEFAULT_LANGUAGE.lang_code, DEFAULT_YEAR)):
             lang = DEFAULT_LANGUAGE.lang_code
             year = DEFAULT_YEAR
-    return render_template('%s/2019/error.html' % lang, lang=lang, year=year, error=error, get_file_date_info=get_file_date_info), status_code
+    return render_template('%s/2019/error.html' % lang, lang=lang, year=year, error=error,
+                           get_file_date_info=get_file_date_info), status_code
 
 
 def chapter_lang_exists(lang, year, chapter):
@@ -140,7 +141,8 @@ def convert_old_image_path(folder):
 # anyway, so I think this is the cleanest.
 def get_ebook_methodology(lang, year):
     config = get_config(year)
-    methodology_template = render_template('%s/%s/methodology.html' % (lang, year), config=config, get_file_date_info=get_file_date_info)
+    methodology_template = render_template('%s/%s/methodology.html' % (lang, year), config=config,
+                                           get_file_date_info=get_file_date_info)
     methodology_maincontent = re.search('<article id="maincontent" class="content">(.+?)</article>',
                                         methodology_template, re.DOTALL | re.MULTILINE)
     if not methodology_maincontent:

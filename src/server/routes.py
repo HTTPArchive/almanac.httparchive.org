@@ -11,7 +11,8 @@ import random
 def home(lang, year):
     config = get_config(year)
     ebook_size_in_mb = get_ebook_size_in_mb(lang, year)
-    return render_template('%s/%s/index.html' % (lang, year), config=config, get_file_date_info=get_file_date_info, ebook_size_in_mb=ebook_size_in_mb)
+    return render_template('%s/%s/index.html' % (lang, year), config=config,
+                           get_file_date_info=get_file_date_info, ebook_size_in_mb=ebook_size_in_mb)
 
 
 @app.route('/<lang>/')
@@ -33,8 +34,8 @@ def root(lang):
 def table_of_contents(lang, year):
     config = get_config(year)
     ebook_size_in_mb = get_ebook_size_in_mb(lang, year)
-    return render_template('%s/%s/table_of_contents.html' % (lang, year), config=config, get_file_date_info=get_file_date_info,
-                           ebook_size_in_mb=ebook_size_in_mb)
+    return render_template('%s/%s/table_of_contents.html' % (lang, year), config=config,
+                           get_file_date_info=get_file_date_info, ebook_size_in_mb=ebook_size_in_mb)
 
 
 @app.route('/<lang>/<year>/contributors')
@@ -45,7 +46,8 @@ def contributors(lang, year):
     contributors_list = list(config["contributors"].items())
     random.shuffle(contributors_list)
     config["contributors"] = dict(contributors_list)
-    return render_template('%s/%s/contributors.html' % (lang, year), config=config, get_file_date_info=get_file_date_info, ebook_size_in_mb=ebook_size_in_mb)
+    return render_template('%s/%s/contributors.html' % (lang, year), config=config,
+                           get_file_date_info=get_file_date_info, ebook_size_in_mb=ebook_size_in_mb)
 
 
 @app.route('/<lang>/<year>/methodology')
@@ -53,7 +55,8 @@ def contributors(lang, year):
 def methodology(lang, year):
     config = get_config(year)
     ebook_size_in_mb = get_ebook_size_in_mb(lang, year)
-    return render_template('%s/%s/methodology.html' % (lang, year), config=config, get_file_date_info=get_file_date_info, ebook_size_in_mb=ebook_size_in_mb)
+    return render_template('%s/%s/methodology.html' % (lang, year), config=config,
+                           get_file_date_info=get_file_date_info, ebook_size_in_mb=ebook_size_in_mb)
 
 
 # Accessibility Statement needs special case handling for trailing slashes
@@ -69,7 +72,8 @@ def accessibility_statement(lang):
         return redirect("/%s/accessibility-statement" % (lang)), 301
     else:
         return render_template('%s/2019/accessibility_statement.html' % (lang),
-                               config=config, get_file_date_info=get_file_date_info, ebook_size_in_mb=ebook_size_in_mb)
+                               config=config, get_file_date_info=get_file_date_info,
+                               ebook_size_in_mb=ebook_size_in_mb)
 
 
 @app.route('/sitemap.xml')
@@ -101,8 +105,9 @@ def chapter(lang, year, chapter):
     config = get_config(year)
     ebook_size_in_mb = get_ebook_size_in_mb(lang, year)
     (prev_chapter, next_chapter) = get_chapter_nextprev(config, chapter)
-    return render_template('%s/%s/chapters/%s.html' % (lang, year, chapter), config=config, get_file_date_info=get_file_date_info,
-                           prev_chapter=prev_chapter, next_chapter=next_chapter, ebook_size_in_mb=ebook_size_in_mb)
+    return render_template('%s/%s/chapters/%s.html' % (lang, year, chapter), config=config,
+                           get_file_date_info=get_file_date_info, prev_chapter=prev_chapter,
+                           next_chapter=next_chapter, ebook_size_in_mb=ebook_size_in_mb)
 
 
 @app.route('/robots.txt')
