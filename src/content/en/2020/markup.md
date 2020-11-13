@@ -407,7 +407,7 @@ Even `spacer` is still being used 1,584 times, and present on every 5,000th page
 
 #### `isindex`
 
-If you were wondering: The [`isindex`](https://www.w3.org/TR/html401/interact/forms.html#edef-ISINDEX) element was present once. It was part of the HTML specs until [version 4.01](https://meiert.com/en/indices/html-elements/), and of XHTML in 1.0, yet only properly [specified](https://lists.w3.org/Archives/Public/public-whatwg-archive/2006Feb/0111.html) in 2006, and [removed](https://github.com/whatwg/html/pull/1095) in 2016.
+If you were wondering: The total number of [`isindex`](https://www.w3.org/TR/html401/interact/forms.html#edef-ISINDEX) elements in this dataset is: one. Exactly one page used an `isindex` element. It was part of the specs until [HTML 4.01 and XHTML 1.0](https://meiert.com/en/indices/html-elements/), yet only properly [specified](https://lists.w3.org/Archives/Public/public-whatwg-archive/2006Feb/0111.html) in 2006 (aligning with how it was implemented in browsers), and then [removed](https://github.com/whatwg/html/pull/1095) in 2016.
 
 ### Proprietary and made-up elements
 
