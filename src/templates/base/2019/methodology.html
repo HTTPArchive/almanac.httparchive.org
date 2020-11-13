@@ -4,9 +4,12 @@
 
 {% block description %}Describes how the 2019 Web Almanac was put together: The Datasets and Tools used and how the project was run.{% endblock %}
 
+{% block date_published %}{{ get_file_date_info("%s/%s/%s" % (lang, year, "methodology"), "published_date") }}{% endblock %}
+{% block date_modified %}{{ get_file_date_info("%s/%s/%s" % (lang, year, "methodology"), "last_updated_date") }}{% endblock %}
+
 {% block styles %}
 {{ super() }}
-<link rel="stylesheet" href="/static/css/page.css?v=20201110175416">
+<link rel="stylesheet" href="/static/css/page.css?v={{ get_file_date_info('static/css/page.css', 'hash') }}">
 {% endblock %}
 
 {% block main %}
@@ -31,5 +34,5 @@
 {% block scripts %}
 {{ super() }}
 {{ self.index_menu_script() }}
-<script src="/static/js/chapter.js?v=20201020135830" defer></script>
+<script src="/static/js/chapter.js?v={{ get_file_date_info('static/js/chapter.js', 'hash') }}" defer></script>
 {% endblock %}

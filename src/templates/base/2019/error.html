@@ -1,5 +1,8 @@
 {% extends "%s/%s/base.html" % (lang, year) %}
 
+{% block date_published %}{{ get_file_date_info("%s/%s/%s" % (lang, year, "error"), "published_date") }}{% endblock %}
+{% block date_modified %}{{ get_file_date_info("%s/%s/%s" % (lang, year, "error"), "last_updated_date") }}{% endblock %}
+
 {% block title %}
   {% block error %}
     {{ localizedStatusCode[error.code] if localizedStatusCode[error.code]|length else self.unknown_error() }}

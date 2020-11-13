@@ -4,6 +4,9 @@
 {% block image_height %}354{% endblock %}
 {% block image_width %}984{% endblock %}
 
+{% block date_published %}{{ get_file_date_info("%s/%s/%s" % (lang, year, "contributors"), "published_date") }}{% endblock %}
+{% block date_modified %}{{ get_file_date_info("%s/%s/%s" % (lang, year, "contributors"), "last_updated_date") }}{% endblock %}
+
 {% block styles %}
 {{ super() }}
 <style nonce="{{ csp_nonce() }}">
@@ -492,5 +495,5 @@
     
   </script>
   <!-- add chapter.js to handle print mode and avoid duplicating code -->
-  <script src="/static/js/chapter.js?v=20201020135830" defer></script>
+  <script src="/static/js/chapter.js?v={{ get_file_date_info('static/js/chapter.js', 'hash') }}" defer></script>
 {% endblock %}

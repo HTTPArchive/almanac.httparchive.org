@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% block head %}
       <title>{% block title %}The Web Almanac{% endblock %}</title>
-      <link rel="stylesheet" href="/static/css/normalize.css?v=20200630133215">
+      <link rel="stylesheet" href="/static/css/normalize.css?v={{ get_file_date_info('static/css/normalize.css', 'hash') }}">
       {% block styles %}{% endblock %}
-      <link rel="stylesheet" media="print" href="/static/css/print.css?v=20201112105930">
+      <link rel="stylesheet" media="print" href="/static/css/print.css?v={{ get_file_date_info('static/css/print.css', 'hash') }}">
     {% endblock %}
     <link rel="shortcut icon" href="/static/images/favicon.ico">
     <link rel="apple-touch-icon" href="/static/images/apple-touch-icon.png">
@@ -79,7 +79,7 @@
     {% block content %}{% endblock %}
 
     {% block bodyend %}
-    <script defer src="/static/js/web-vitals.js" ></script>
+    <script defer src="/static/js/web-vitals.js{{ get_file_date_info('static/js/web-vitals.js', 'hash') }}" ></script>
     <script nonce="{{ csp_nonce() }}">
         function sendWebVitalsGAEvents(metric) {
           gtag('event', metric.name, {
