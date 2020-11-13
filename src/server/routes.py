@@ -1,6 +1,7 @@
 from flask import redirect, url_for, request, send_from_directory
 from . import app, talisman
-from .helpers import render_template, convert_old_image_path, get_chapter_nextprev, get_ebook_size_in_mb, get_file_date_info
+from .helpers import render_template, convert_old_image_path, get_chapter_nextprev, get_ebook_size_in_mb, \
+                     get_file_date_info
 from .validate import validate
 from .config import get_config, DEFAULT_YEAR
 import random
