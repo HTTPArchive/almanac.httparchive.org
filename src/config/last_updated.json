@@ -1,10 +1,7 @@
 {
   "en/2019/": {
     "published_date": "2019-11-04T12:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-06-21T00:00:00.000Z{% endblock %}",
-      "2020-06-21T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-06-21T00:00:00.000Z",
     "hash": "e3a6946dfd559a2a122420bdfa243862"
   },
   "en/2019/accessibility": {
@@ -34,10 +31,7 @@
   },
   "en/2019/contributors": {
     "published_date": "2019-11-04T12:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-07-17T00:00:00.000Z{% endblock %}",
-      "2020-07-17T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-07-17T00:00:00.000Z",
     "hash": "bc8a5d941428ec9429f369218ed7c0c3"
   },
   "en/2019/css": {
@@ -82,10 +76,7 @@
   },
   "en/2019/methodology": {
     "published_date": "2019-11-04T12:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-11-06T00:00:00.000Z{% endblock %}",
-      "2020-11-06T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-11-06T00:00:00.000Z",
     "hash": "935ed11cda4d2a13dbe95972b23b36ea"
   },
   "en/2019/mobile-web": {
@@ -125,10 +116,7 @@
   },
   "en/2019/table-of-contents": {
     "published_date": "2019-11-04T12:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-06-21T00:00:00.000Z{% endblock %}",
-      "2020-06-21T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-06-21T00:00:00.000Z",
     "hash": "801c7e1efc7be7d3c02a76258184fbc9"
   },
   "en/2019/third-parties": {
@@ -138,10 +126,7 @@
   },
   "en/2020/": {
     "published_date": "2020-07-06T00:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-11-03T00:00:00.000Z{% endblock %}",
-      "2020-11-03T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-11-03T00:00:00.000Z",
     "hash": "021340b546d4c27a68a7dcc32503ffb1"
   },
   "en/2020/accessibility": {
@@ -171,10 +156,7 @@
   },
   "en/2020/contributors": {
     "published_date": "2020-07-14T00:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-11-03T00:00:00.000Z{% endblock %}",
-      "2020-11-03T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-11-03T00:00:00.000Z",
     "hash": "366b006815a1809f9bb2efad1382488b"
   },
   "en/2020/css": {
@@ -219,10 +201,7 @@
   },
   "en/2020/methodology": {
     "published_date": "2020-10-24T00:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-11-12T00:00:00.000Z{% endblock %}",
-      "2020-11-12T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-11-12T00:00:00.000Z",
     "hash": "abdfd3a32c6664a34b243663fb3e3582"
   },
   "en/2020/mobile-web": {
@@ -267,10 +246,7 @@
   },
   "en/2020/table-of-contents": {
     "published_date": "2020-10-24T00:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-11-03T00:00:00.000Z{% endblock %}",
-      "2020-11-03T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-11-03T00:00:00.000Z",
     "hash": "f4699e5c6a2bcf484b5014a9ad9b3161"
   },
   "en/2020/third-parties": {
@@ -280,26 +256,17 @@
   },
   "en/accessibility-statement": {
     "published_date": "2020-02-03T12:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-08-12T00:00:00.000Z{% endblock %}",
-      "2020-08-12T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-08-12T00:00:00.000Z",
     "hash": "c8e4ba6cb070cea26246eba169b17353"
   },
   "es/2019/": {
     "published_date": "2019-11-04T12:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-06-21T00:00:00.000Z{% endblock %}",
-      "2020-06-21T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-06-21T00:00:00.000Z",
     "hash": "a14f0536c4fba230f0db464b750de445"
   },
   "es/2019/contributors": {
     "published_date": "2019-11-04T12:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-07-17T00:00:00.000Z{% endblock %}",
-      "2020-07-17T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-07-17T00:00:00.000Z",
     "hash": "30b37b1e466ea9f0e8c77433f20110f2"
   },
   "es/2019/css": {
@@ -339,42 +306,27 @@
   },
   "es/2019/table-of-contents": {
     "published_date": "2019-11-04T12:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-06-21T00:00:00.000Z{% endblock %}",
-      "2020-06-21T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-06-21T00:00:00.000Z",
     "hash": "8fd9ce20a3a912fb3110861689f6e39c"
   },
   "es/2020/": {
     "published_date": "2020-07-06T00:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-11-03T00:00:00.000Z{% endblock %}",
-      "2020-11-03T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-11-03T00:00:00.000Z",
     "hash": "d7c205412743a64115a62b74ea79849f"
   },
   "es/2020/contributors": {
     "published_date": "2020-07-14T00:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-11-03T00:00:00.000Z{% endblock %}",
-      "2020-11-03T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-11-03T00:00:00.000Z",
     "hash": "2fb979e43bc5ddad76c1cd4d7944c523"
   },
   "es/2020/table-of-contents": {
     "published_date": "2020-10-24T00:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-11-03T00:00:00.000Z{% endblock %}",
-      "2020-11-03T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-11-03T00:00:00.000Z",
     "hash": "b0224e11e9e7d1bab5cc3241dc669997"
   },
   "fr/2019/": {
     "published_date": "2019-11-04T12:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-06-21T00:00:00.000Z{% endblock %}",
-      "2020-06-21T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-06-21T00:00:00.000Z",
     "hash": "9087f716f6e51eeb11288b695e246490"
   },
   "fr/2019/accessibility": {
@@ -399,10 +351,7 @@
   },
   "fr/2019/contributors": {
     "published_date": "2019-11-04T12:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-07-17T00:00:00.000Z{% endblock %}",
-      "2020-07-17T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-07-17T00:00:00.000Z",
     "hash": "067fd0e25e2ae5c833feb0dc3f80f2d0"
   },
   "fr/2019/javascript": {
@@ -422,10 +371,7 @@
   },
   "fr/2019/methodology": {
     "published_date": "2019-11-04T12:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-11-06T00:00:00.000Z{% endblock %}",
-      "2020-11-06T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-11-06T00:00:00.000Z",
     "hash": "ae1d089ffb2a1f75e521e316c5eaf6dc"
   },
   "fr/2019/mobile-web": {
@@ -445,10 +391,7 @@
   },
   "fr/2019/table-of-contents": {
     "published_date": "2019-11-04T12:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-06-21T00:00:00.000Z{% endblock %}",
-      "2020-06-21T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-06-21T00:00:00.000Z",
     "hash": "5f5fb5f7699cede9ee97edbda960bc0d"
   },
   "fr/2019/third-parties": {
@@ -458,98 +401,62 @@
   },
   "fr/2020/": {
     "published_date": "2020-07-06T00:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-11-03T00:00:00.000Z{% endblock %}",
-      "2020-11-03T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-11-03T00:00:00.000Z",
     "hash": "50b58b590e496a381061d8ee404bcf02"
   },
   "fr/2020/contributors": {
     "published_date": "2020-07-14T00:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-11-03T00:00:00.000Z{% endblock %}",
-      "2020-11-03T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-11-03T00:00:00.000Z",
     "hash": "455b341f1642464e9bf3c2ce5f27ae34"
   },
   "fr/2020/methodology": {
     "published_date": "2020-10-24T00:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-11-12T00:00:00.000Z{% endblock %}",
-      "2020-11-12T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-11-12T00:00:00.000Z",
     "hash": "1b31c6d5698b62ecc2902affee89e8f7"
   },
   "fr/2020/table-of-contents": {
     "published_date": "2020-10-24T00:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-11-03T00:00:00.000Z{% endblock %}",
-      "2020-11-03T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-11-03T00:00:00.000Z",
     "hash": "76f8710614bbb392fd0cef2a22dd8304"
   },
   "fr/accessibility-statement": {
     "published_date": "2020-02-03T12:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-08-12T00:00:00.000Z{% endblock %}",
-      "2020-08-12T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-08-12T00:00:00.000Z",
     "hash": "c790186408399a59cbf9fdd426e9a6d9"
   },
   "hi/2019/": {
     "published_date": "2019-11-04T12:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-11-10T00:00:00.000Z{% endblock %}",
-      "2020-11-10T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-11-10T00:00:00.000Z",
     "hash": "f6de2d0657774c540582d39a1986b6fe"
   },
   "hi/2019/contributors": {
     "published_date": "2019-11-04T12:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-11-10T00:00:00.000Z{% endblock %}",
-      "2020-11-10T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-11-10T00:00:00.000Z",
     "hash": "6cd0b818fb2a1e5818fed503fbca0983"
   },
   "hi/2019/table-of-contents": {
     "published_date": "2019-11-04T12:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-11-10T00:00:00.000Z{% endblock %}",
-      "2020-11-10T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-11-10T00:00:00.000Z",
     "hash": "306839ae9289a419053fe6d7b32da9cb"
   },
   "hi/2020/": {
     "published_date": "2020-07-06T00:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-11-10T00:00:00.000Z{% endblock %}",
-      "2020-11-10T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-11-10T00:00:00.000Z",
     "hash": "2dec8689b8ea2d9297a14280760d3385"
   },
   "hi/2020/contributors": {
     "published_date": "2020-07-14T00:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-11-10T00:00:00.000Z{% endblock %}",
-      "2020-11-10T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-11-10T00:00:00.000Z",
     "hash": "4feed6079ba11845154cc5cca76bccb6"
   },
   "hi/2020/table-of-contents": {
     "published_date": "2020-10-24T00:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-11-10T00:00:00.000Z{% endblock %}",
-      "2020-11-10T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-11-10T00:00:00.000Z",
     "hash": "5f8b00a736a6cf47522f4c1287382fbb"
   },
   "ja/2019/": {
     "published_date": "2019-11-04T12:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-08-07T00:00:00.000Z{% endblock %}",
-      "2020-08-07T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-08-07T00:00:00.000Z",
     "hash": "5372a792ae5d476322aee69587b7a6bb"
   },
   "ja/2019/accessibility": {
@@ -579,10 +486,7 @@
   },
   "ja/2019/contributors": {
     "published_date": "2019-11-04T12:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-08-07T00:00:00.000Z{% endblock %}",
-      "2020-08-07T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-08-07T00:00:00.000Z",
     "hash": "34cb5f9c85feea2991be27182123723c"
   },
   "ja/2019/css": {
@@ -627,10 +531,7 @@
   },
   "ja/2019/methodology": {
     "published_date": "2019-11-04T12:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-11-06T00:00:00.000Z{% endblock %}",
-      "2020-11-06T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-11-06T00:00:00.000Z",
     "hash": "6a8e531ccc3dde67846770adf615082f"
   },
   "ja/2019/mobile-web": {
@@ -670,10 +571,7 @@
   },
   "ja/2019/table-of-contents": {
     "published_date": "2019-11-04T12:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-06-21T00:00:00.000Z{% endblock %}",
-      "2020-06-21T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-06-21T00:00:00.000Z",
     "hash": "b2bb9bd7df3e246f073041f7c470a6a6"
   },
   "ja/2019/third-parties": {
@@ -683,50 +581,32 @@
   },
   "ja/2020/": {
     "published_date": "2020-07-06T00:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-11-03T00:00:00.000Z{% endblock %}",
-      "2020-11-03T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-11-03T00:00:00.000Z",
     "hash": "2a4082151893a45c021e2d3784ba47dd"
   },
   "ja/2020/contributors": {
     "published_date": "2020-07-14T00:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-11-03T00:00:00.000Z{% endblock %}",
-      "2020-11-03T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-11-03T00:00:00.000Z",
     "hash": "11ef5d75d13b10f7db35b93a3ff39f11"
   },
   "ja/2020/methodology": {
     "published_date": "2020-10-24T00:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-11-08T00:00:00.000Z{% endblock %}",
-      "2020-11-08T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-11-08T00:00:00.000Z",
     "hash": "8911c428282b71617b267fb1873d2ed0"
   },
   "ja/2020/table-of-contents": {
     "published_date": "2020-10-24T00:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-11-03T00:00:00.000Z{% endblock %}",
-      "2020-11-03T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-11-03T00:00:00.000Z",
     "hash": "a28760a110f126b6f1aa33ed50afc628"
   },
   "ja/accessibility-statement": {
     "published_date": "2020-02-03T12:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-08-12T00:00:00.000Z{% endblock %}",
-      "2020-08-12T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-08-12T00:00:00.000Z",
     "hash": "fe55d9ae02bfb228d48ed59e6bf55397"
   },
   "pt/2019/": {
     "published_date": "2019-11-04T12:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-08-16T00:00:00.000Z{% endblock %}",
-      "2020-08-16T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-08-16T00:00:00.000Z",
     "hash": "ce8754deeb57ad10248d844af7a5da3c"
   },
   "pt/2019/accessibility": {
@@ -736,10 +616,7 @@
   },
   "pt/2019/contributors": {
     "published_date": "2019-11-04T12:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-08-16T00:00:00.000Z{% endblock %}",
-      "2020-08-16T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-08-16T00:00:00.000Z",
     "hash": "741f6cb3999034812088dfacc99990dd"
   },
   "pt/2019/http2": {
@@ -754,34 +631,22 @@
   },
   "pt/2019/table-of-contents": {
     "published_date": "2019-11-04T12:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-08-16T00:00:00.000Z{% endblock %}",
-      "2020-08-16T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-08-16T00:00:00.000Z",
     "hash": "f9685d9bce23ba6c589351929f7085cf"
   },
   "pt/2020/": {
     "published_date": "2020-07-06T00:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-11-03T00:00:00.000Z{% endblock %}",
-      "2020-11-03T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-11-03T00:00:00.000Z",
     "hash": "3490311b808fb5d8642fbd98a383619f"
   },
   "pt/2020/contributors": {
     "published_date": "2020-07-14T00:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-11-03T00:00:00.000Z{% endblock %}",
-      "2020-11-03T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-11-03T00:00:00.000Z",
     "hash": "03b656c905e2fc9a4c8df4431d2ca3b3"
   },
   "pt/2020/table-of-contents": {
     "published_date": "2020-10-24T00:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-11-03T00:00:00.000Z{% endblock %}",
-      "2020-11-03T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-11-03T00:00:00.000Z",
     "hash": "8ac71527f5762ebc62391071ea5bfeb1"
   },
   "static/css/2019.css": {
@@ -1134,58 +999,37 @@
   },
   "zh-CHT/2019/": {
     "published_date": "2019-11-04T12:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-06-21T00:00:00.000Z{% endblock %}",
-      "2020-06-21T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-06-21T00:00:00.000Z",
     "hash": "b7398299a57188462f84814d0a50d0d5"
   },
   "zh-CHT/2019/contributors": {
     "published_date": "2019-11-04T12:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-07-17T00:00:00.000Z{% endblock %}",
-      "2020-07-17T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-07-17T00:00:00.000Z",
     "hash": "a34855dccff7bfb47958d03be95dcfca"
   },
   "zh-CHT/2019/table-of-contents": {
     "published_date": "2019-11-04T12:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-06-21T00:00:00.000Z{% endblock %}",
-      "2020-06-21T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-06-21T00:00:00.000Z",
     "hash": "5595062c0d5cb78f71ed5255888d6c4c"
   },
   "zh-CHT/2020/": {
     "published_date": "2020-07-06T00:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-11-03T00:00:00.000Z{% endblock %}",
-      "2020-11-03T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-11-03T00:00:00.000Z",
     "hash": "8aef3fc506e8ea1472d0bccaf9383ff7"
   },
   "zh-CHT/2020/contributors": {
     "published_date": "2020-07-14T00:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-11-03T00:00:00.000Z{% endblock %}",
-      "2020-11-03T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-11-03T00:00:00.000Z",
     "hash": "f8a915467f4b92e8e42eb11266c21441"
   },
   "zh-CHT/2020/table-of-contents": {
     "published_date": "2020-10-24T00:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-11-03T00:00:00.000Z{% endblock %}",
-      "2020-11-03T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-11-03T00:00:00.000Z",
     "hash": "678869210768994da10b4ab0a26bc899"
   },
   "zh-CN/2019/": {
     "published_date": "2019-11-04T12:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-06-21T00:00:00.000Z{% endblock %}",
-      "2020-06-21T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-06-21T00:00:00.000Z",
     "hash": "b8c36b74b8ca162be5f666e745f61e04"
   },
   "zh-CN/2019/accessibility": {
@@ -1195,18 +1039,12 @@
   },
   "zh-CN/2019/contributors": {
     "published_date": "2019-11-04T12:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-06-21T00:00:00.000Z{% endblock %}",
-      "2020-06-21T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-06-21T00:00:00.000Z",
     "hash": "4a28d1bc914a9e1f7a2c9c44c3dda0b5"
   },
   "zh-CN/2019/methodology": {
     "published_date": "2019-11-04T12:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-11-06T00:00:00.000Z{% endblock %}",
-      "2020-11-06T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-11-06T00:00:00.000Z",
     "hash": "7b917d12d65f19aab3a270fd5577f827"
   },
   "zh-CN/2019/performance": {
@@ -1216,42 +1054,27 @@
   },
   "zh-CN/2019/table-of-contents": {
     "published_date": "2019-11-04T12:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-08-12T00:00:00.000Z{% endblock %}",
-      "2020-08-12T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-08-12T00:00:00.000Z",
     "hash": "405124c091161d2c10f18eefd07820f3"
   },
   "zh-CN/2020/": {
     "published_date": "2020-07-06T00:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-11-03T00:00:00.000Z{% endblock %}",
-      "2020-11-03T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-11-03T00:00:00.000Z",
     "hash": "0a07020dba64fdc218589763e8902453"
   },
   "zh-CN/2020/contributors": {
     "published_date": "2020-07-14T00:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-11-03T00:00:00.000Z{% endblock %}",
-      "2020-11-03T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-11-03T00:00:00.000Z",
     "hash": "ffeffca3bc092abb129397882c9d6529"
   },
   "zh-CN/2020/table-of-contents": {
     "published_date": "2020-10-24T00:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-11-03T00:00:00.000Z{% endblock %}",
-      "2020-11-03T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-11-03T00:00:00.000Z",
     "hash": "2e275ad354b755e6bd4bace3ab1827ae"
   },
   "zh-CN/accessibility-statement": {
     "published_date": "2020-02-03T12:00:00",
-    "last_updated_date": [
-      "{% block date_modified %}2020-08-12T00:00:00.000Z{% endblock %}",
-      "2020-08-12T00:00:00.000Z"
-    ],
+    "last_updated_date": "2020-08-12T00:00:00.000Z",
     "hash": "a1bdf7d2396b0983b1117da8e964e409"
   }
 }
