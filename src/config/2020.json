@@ -123,8 +123,7 @@
           "part": "III",
           "chapter": "15",
           "title": "CMS",
-          "slug": "cms",
-          "todo": true
+          "slug": "cms"
         },
         {
           "part": "III",
@@ -261,6 +260,15 @@
       "github": "adityapandey1998",
       "twitter": "adityapandey98",
       "linkedin": "adityapandey98"
+    },
+    "amedina": {
+      "name": "Alberto Medina",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars0.githubusercontent.com/u/506089?v=4&s=200",
+      "github": "amedina",
+      "twitter": "iAlbMedina"
     },
     "alexdenning": {
       "name": "Alex Denning",
