@@ -102,7 +102,7 @@ The 1 CMS with a share over 2% is WordPress, which has a 31% usage share. This i
   description="Bar chart showing Wordpress dominating with 28.91% share in 2019, growing to 31.04% in 2020. This is followed by 4 other CMSs with less than 2.5% share each: Joomla (2.24% for 2019 and 2.05% for 2020), Drupal (2.21% and 1.98% respectively), Wix (0.91% and 1.28%) and Squarespace (0.76% and 0.97%). Dupal and Joomla have dropped in usage in 2020 while the rest have increased.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkUxfuK-FCn3_IYDJiEsKDmdmyKb0TSEhG8dFc0XBIXej1NO2uUOmd-9NCbWuh-MZ3xzMhK_kNT-4u/pubchart?oid=1429803707&format=interactive",
   sheets_gid="1594044364",
-  sql_file="top_cmss_yoy_all_clients.sql"
+  sql_file="top_cms_platforms_compared_to_2019.sql"
   )
 }}
 
@@ -111,11 +111,11 @@ Joomla and Drupal have lost 0.18% and 0.23% adoption share respectively, whilst 
 These numbers are broadly consistent when split across desktop and mobile:
 
 {{ figure_markup(
-  image="cms-adoption-share-for-top-5-cmss.png",
-  caption="CMS adoption share for top 5 CMSs.",
-  description="Bar chart showing Wordpress dominating with 28.91% share in 2019, growing to 31.04% in 2020. This is followed by 4 other CMSs with less than 2.5% share each: Joomla (2.24% for 2019 and 2.05% for 2020), Drupal (2.21% and 1.98% respectively), Wix (0.91% and 1.28%) and Squarespace (0.76% and 0.97%). Dupal and Joomla have dropped in usage in 2020 while the rest have increased.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkUxfuK-FCn3_IYDJiEsKDmdmyKb0TSEhG8dFc0XBIXej1NO2uUOmd-9NCbWuh-MZ3xzMhK_kNT-4u/pubchart?oid=1429803707&format=interactive",
-  sheets_gid="1594044364",
+  image="cms-top-5-cms-by-client.png",
+  caption="Top 5 CMSs by client.",
+  description="Bar chart showing Wordpress dominating with 31.37% share on desktop and 31.39% share on mobile compared to less than 2.5% for the other CMSs: Drupal has 2.32% on desktop and 1.99% on mobile, Joomla has 1.96% on desktop and 2.12% on mobile, Squarespace has 1.08% on desktop and 0.85% on mobile, and Wiz has 1.05% on desktop and 1.24% on mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkUxfuK-FCn3_IYDJiEsKDmdmyKb0TSEhG8dFc0XBIXej1NO2uUOmd-9NCbWuh-MZ3xzMhK_kNT-4u/pubchart?oid=2098327336&amp;format=interactive",
+  sheets_gid="908727245",
   sql_file="top_cmss_yoy_all_clients.sql"
   )
 }}
