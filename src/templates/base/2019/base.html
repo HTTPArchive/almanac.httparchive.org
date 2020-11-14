@@ -724,7 +724,7 @@
   {%- elif content != "" %}
   <div class="{{ classes }}">{{ content|safe }}</div>
   {%- endif %}
-  <figcaption id="{{ anchor }}-caption">{{ figure_link(metadata, id, caption, ebook=ebook)|safe }}</figcaption>
+  <figcaption id="{{ anchor }}-caption">{{ figure_link(metadata, id, caption, ebook=ebook) }}</figcaption>
 </figure>
 {%- endmacro %}
 
