@@ -972,7 +972,8 @@ p.copyright a {
   display: none;
 }
 
-div.js-show {
+div.js-show,
+#menu.js-show {
   display: none;
 }
 
