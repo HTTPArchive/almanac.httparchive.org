@@ -212,14 +212,26 @@
       {% if chapter_config.todo %}
       <span class="nav-dropdown-list-todo">{{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }}</span>
       {% else %}
-        {% if chapter_lang_exists(lang, year, chapter_config.slug) %}
-        <a href="{{ url_for('chapter', year=year, lang=lang, chapter=chapter_config.slug) }}">
-          {{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }}
-        </a>
+        {% if current_title == title %}
+          {% if chapter_lang_exists(lang, year, chapter_config.slug) %}
+          <span class="nav-dropdown-list-current">
+            {{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }}
+          </span>
+          {% else %}
+          <span class="nav-dropdown-list-current">
+            {{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }} <span class="not-translated">({{ self.translation_not_available() }})</span>
+          </span>
+          {% endif %}
         {% else %}
-        <a href="{{ url_for('chapter', year=year, lang='en', chapter=chapter_config.slug) }}">
-          {{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }} <span class="not-translated">({{ self.translation_not_available() }})</span>
-        </a>
+          {% if chapter_lang_exists(lang, year, chapter_config.slug) %}
+          <a href="{{ url_for('chapter', year=year, lang=lang, chapter=chapter_config.slug) }}">
+            {{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }}
+          </a>
+          {% else %}
+          <a href="{{ url_for('chapter', year=year, lang='en', chapter=chapter_config.slug) }}">
+            {{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }} <span class="not-translated">({{ self.translation_not_available() }})</span>
+          </a>
+          {% endif %}
         {% endif %}
       {% endif %}
     </li>
