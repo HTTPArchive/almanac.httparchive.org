@@ -722,9 +722,9 @@
   <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="{{ anchor }}-description" data-show-text="{{ show_description(metadata,id) }}" data-hide-text="{{ hide_description(metadata,id) }}">{{ show_description(metadata,id) }}</button>
   <div id="{{ anchor }}-description" class="visually-hidden">{{ description|safe }}</div>
   {%- elif content != "" %}
-  <div class="{{ classes }}">{{ content }}</div>
+  <div class="{{ classes }}">{{ content|safe }}</div>
   {%- endif %}
-  <figcaption id="{{ anchor }}-caption">{{ figure_link(metadata, id, caption, ebook=ebook) }}</figcaption>
+  <figcaption id="{{ anchor }}-caption">{{ figure_link(metadata, id, caption, ebook=ebook)|safe }}</figcaption>
 </figure>
 {%- endmacro %}
 
