@@ -178,9 +178,11 @@
     </option>
     {% endif %}
 
+    {% if ebook_size_in_mb and ebook_size_in_mb > 0 %}
     <option value="/static/pdfs/web_almanac_{{ year }}_{{ lang }}.pdf">
-      {{ self.ebook_title() }}
+      {{ self.ebook_download_short() }}
     </option>
+    {% endif %}
   </select>
 </div>
 {% endmacro %}
@@ -273,8 +275,7 @@
       <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}#ebook">{{ self.ebook_title() }}</a>
     </li>
     <li class="nav-dropdown-list-chapter ebook">
-      <a href="/static/pdfs/web_almanac_{{ year }}_{{ lang }}.pdf">{{ self.ebook_download() }}</a>
-      <small>{{ self.ebook_download_note() }}</small>
+      <a href="/static/pdfs/web_almanac_{{ year }}_{{ lang }}.pdf">{{ self.ebook_download_short() }}</a>
     </li>
     {% endif %}
   </ul>

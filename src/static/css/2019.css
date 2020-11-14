@@ -1414,8 +1414,8 @@ div.js-show,
   flex-direction: column;
 }
 
-.nav-dropdown-list-chapter.ebook small {
-  padding: 0 0 24px 20px;
+.nav-dropdown-list-chapter.ebook {
+  padding: 0 0 24px 24px;
 }
 
 .nav-dropdown-list-todo,
