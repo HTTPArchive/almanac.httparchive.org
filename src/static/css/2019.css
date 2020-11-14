@@ -1412,9 +1412,6 @@ div.js-show,
 .nav-dropdown-list-chapter.ebook {
   display: flex;
   flex-direction: column;
-}
-
-.nav-dropdown-list-chapter.ebook {
   padding: 0 0 24px 24px;
 }
 
