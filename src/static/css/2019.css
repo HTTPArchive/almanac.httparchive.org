@@ -968,9 +968,19 @@ p.copyright a {
   white-space: nowrap; /* added line */
 }
 
-.hidden,
-.js-show {
-  display: none;
+.hidden {
+  display: none !important;
+}
+
+.nav-dropdown-btn.js-enable,
+.nav-dropdown-btn.js-enable:hover {
+  opacity: 0.5;
+  color: unset;
+  cursor: unset;
+}
+
+.nav-dropdown-btn.js-hide:after {
+  border: 0;
 }
 
 #skiptocontent a {

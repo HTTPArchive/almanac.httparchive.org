@@ -114,7 +114,7 @@
 {% macro native_table_of_contents_dropdown(switcher_name) %}
 {% set current_title = metadata.get('title') if metadata else None %}
 <a class="js-hide" href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a>
-<div class="table-of-contents-switcher js-show">
+<div class="table-of-contents-switcher js-enable hidden" disabled>
   <label for="table-of-contents-switcher-{{switcher_name}}" class="visually-hidden">
     {{ self.table_of_contents_switcher() }}
   </label>
@@ -189,8 +189,8 @@
 
 {% macro styled_table_of_contents_dropdown(switcher_name) %}
 {% set current_title = metadata.get('title') if metadata else None %}
-<a class="js-hide" href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a>
-<div class="nav-dropdown {{switcher_name}} table-of-contents js-show">
+<a class="nav-dropdown-btn js-hide" href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a>
+<div class="nav-dropdown {{switcher_name}} table-of-contents js-enable hidden" disabled>
   <button class="nav-dropdown-btn" aria-expanded="false" aria-label="{{ self.table_of_contents_title() }}" >
     {{ self.table_of_contents_title() }}
   </button>
@@ -305,8 +305,13 @@
             </li>
           </ul>
         </nav>
-        <nav aria-label="{{ self.menu_title() }}" id="menu" aria-labelledby="menu-btn" class="js-show">
-          <button type="button" class="menu-btn" id="menu-btn" aria-label="{{ self.open_the_menu() }}" aria-expanded="false" data-open-text="{{ self.open_the_menu() }}" data-close-text="{{ self.close_the_menu() }}">
+        <nav id="menu" aria-labelledby="menu-btn">
+          <a href="#footer" class="menu-btn js-hide" aria-label="{{ self.menu_title() }}">
+            <span class="menu-btn__bar"></span>
+            <span class="menu-btn__bar"></span>
+            <span class="menu-btn__bar"></span>
+          </a>
+          <button type="button" class="menu-btn js-enable hidden" disabled id="menu-btn" aria-label="{{ self.open_the_menu() }}" aria-expanded="false" data-open-text="{{ self.open_the_menu() }}" data-close-text="{{ self.close_the_menu() }}">
             <span class="menu-btn__bar"></span>
             <span class="menu-btn__bar"></span>
             <span class="menu-btn__bar"></span>
@@ -467,10 +472,14 @@
     <script nonce="{{ csp_nonce() }}">
       (function() {
         document.querySelectorAll('.js-hide').forEach(element => {
-          element.classList.add('hidden');
+          // Don't just hide it - delete it completely to avoid any specifity issues
+          element.parentNode.removeChild(element);
         });
-        document.querySelectorAll('.js-show').forEach(element => {
-          element.classList.remove('js-show');
+        document.querySelectorAll('.js-enable').forEach(element => {
+          element.classList.remove('js-enable');
+          element.classList.remove('hidden');
+          element.disabled = false;
+          element.hidden = false;
         });
 
         // Language and Year switching
@@ -641,8 +650,8 @@
 {% endmacro %}
 
 {% macro styled_lang_dropdown(switcher_name) %}
-  <div class="nav-dropdown {{switcher_name}} js-show">
-    <button class="nav-dropdown-btn" aria-expanded="false" aria-label="{{ self.language_switcher() }}" >{{ language }}</button>
+  <div class="nav-dropdown {{switcher_name}}">
+    <button class="nav-dropdown-btn js-enable" disabled aria-expanded="false" aria-label="{{ self.language_switcher() }}" >{{ language }}</button>
     <ul class="nav-dropdown-list hidden {{switcher_name}}-list">
       {% for l in supported_languages | sort(attribute='_local_name') %}
         {% if l != language %}
@@ -788,8 +797,8 @@
 {% endmacro %}
 
 {% macro styled_year_dropdown(switcher_name)%}
-  <div class="nav-dropdown {{switcher_name}} js-show">
-    <button class="nav-dropdown-btn" aria-expanded="false" aria-label="{{ self.year_switcher() }}">{{ year }}</button>
+  <div class="nav-dropdown {{switcher_name}}">
+    <button class="nav-dropdown-btn js-enable" disabled aria-expanded="false" aria-label="{{ self.year_switcher() }}">{{ year }}</button>
     <ul class="nav-dropdown-list hidden {{switcher_name}}-list">
       {% for y in supported_years | sort %}
         {% if y != year %}
