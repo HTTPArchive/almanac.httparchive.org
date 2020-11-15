@@ -968,10 +968,7 @@ p.copyright a {
   white-space: nowrap; /* added line */
 }
 
-.hidden {
-  display: none;
-}
-
+.hidden,
 div.js-show,
 #menu.js-show {
   display: none;
