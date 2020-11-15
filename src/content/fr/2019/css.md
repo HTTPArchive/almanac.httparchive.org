@@ -25,7 +25,7 @@ last_updated: 2020-10-06T00:00:00.000Z
 
 ## Introduction
 
-Les feuilles de style en cascade (CSS) sont utilisées pour peindre, mettre en forme et en page des pages Web. Leurs capacités couvrent des concepts aussi simples que la couleur du texte à la perspective 3D. Elles disposent également de possibilités pour permettre aux développeurs de gérer différentes tailles d’écran, différents contextes de visualisation, ainsi que l’impression. CSS aide les développeurs à gérer le contenu et à s’assurer qu’il s’adapte correctement à l’utilisateur.
+Les feuilles de style en cascade (CSS) sont utilisées pour peindre, mettre en forme et organiser visuellement le contenu des pages Web. Leurs capacités couvrent des concepts aussi simples que la couleur du texte ou la perspective 3D. Elles disposent également de possibilités pour permettre aux développeurs de gérer différentes tailles d’écran, différents contextes de visualisation, ainsi que l’impression. CSS aide les développeurs et développeuses à gérer le contenu et à s’assurer qu’il s’adapte correctement aux personnes.
 
 Lorsque vous décrivez CSS à celles et ceux qui ne sont pas familiers avec les technologies Web, il peut être utile de le considérer comme le langage pour peindre les murs de la maison&nbsp;: décrivant la taille et la position des fenêtres et des portes, ainsi que des décorations florissantes telles que du papier peint ou des plantes. La tournure amusante de cette histoire est que, selon l’utilisateur qui traverse la maison, un développeur peut adapter la maison aux préférences ou aux contextes de cet utilisateur spécifique&nbsp;!
 
