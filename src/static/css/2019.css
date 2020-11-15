@@ -969,8 +969,7 @@ p.copyright a {
 }
 
 .hidden,
-div.js-show,
-#menu.js-show {
+.js-show {
   display: none;
 }
 
