@@ -4,8 +4,7 @@ import inspect
 
 from flask import request, abort, redirect
 from functools import wraps
-from .language import DEFAULT_LANGUAGE, SIMPLIFIED_CHINESE_LANG_CODE, SIMPLIFIED_CHINESE_OTHER, \
-    TRADITIONAL_CHINESE_LANG_CODE, TRADITIONAL_CHINESE_OTHER
+from .language import DEFAULT_LANGUAGE, LANGUAGE_MAPPING
 
 from .config import SUPPORTED_YEARS, DEFAULT_YEAR, SUPPORTED_CHAPTERS, SUPPORTED_LANGUAGES
 
@@ -33,8 +32,8 @@ def validate(func):
 
         if 'lang' in accepted_args:
             kwargs.update({'lang': lang})
-            if lang != lang_arg:
-                return redirect('%s' % request.full_path.replace(lang_arg, lang,1), code=302)
+            if lang != lang_arg and lang_arg != None:
+                return redirect('%s' % request.full_path.replace(lang_arg, lang, 1), code=302)
 
         if 'year' in accepted_args:
             kwargs.update({'year': year})
@@ -83,17 +82,18 @@ def validate_lang_and_year(lang, year):
     if lang is not None and lang not in supported_langs:
         logging.debug('Unsupported language set: %s.' % lang)
 
-        # Split on '-' to see if we support lang (e.g. en-US -> en)
+        # Check it's not just a simple case issue
+        if lang.lower() in supported_langs:
+            return (lang.lower(), year)
+
+        # Handle lookups for special cases (e.g. Chinese)
+        if lang.lower() in LANGUAGE_MAPPING:
+            return (LANGUAGE_MAPPING.get(lang.lower()), year)
+
+        # Split on '-' to see if we support base lang (e.g. en-US -> en)
         lang_only = lang.split('-')[0].lower()
         if lang_only in supported_langs:
             return (lang_only, year)
-        # Special handling for Chinese which comes in two forms
-        # Traditional Chinese is used in Taiwan, Hong Kong and Macau
-        if lang.lower() in TRADITIONAL_CHINESE_OTHER:
-            return (TRADITIONAL_CHINESE_LANG_CODE, year)
-         # Simplified Chinese is used in Mainland China and Singapore
-        if lang.lower() in SIMPLIFIED_CHINESE_OTHER:
-            return (SIMPLIFIED_CHINESE_LANG_CODE, year)
 
         # If still can't find a match then 404:
         abort(404, 'Unsupported language requested')

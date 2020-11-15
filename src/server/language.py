@@ -24,10 +24,19 @@ class _Language(object):
     def lang_code(self):
         return self._lang_code
 
-TRADITIONAL_CHINESE_LANG_CODE = 'zh-CHT'
-TRADITIONAL_CHINESE_OTHER = ['zh-hant', 'zh-tw', 'zh-hk', 'zh-mo']
-SIMPLIFIED_CHINESE_LANG_CODE = 'zh-CN'
-SIMPLIFIED_CHINESE_OTHER = ['zn', 'zh-hans', 'zh-sg']
+# Allow maping of one language to another for when country agnostic lookip
+# will not work (e.g. Chinese)
+LANGUAGE_MAPPING = {
+    'zh-cht': 'zh-CHT',
+    'zh-hant': 'zh-CHT',
+    'zh-tw': 'zh-CHT',
+    'zh-hk': 'zh-CHT',
+    'zh-mo': 'zh-CHT',
+    'zh-cn': 'zh-CN',
+    'zh-hans': 'zh-CN',
+    'zh-sg': 'zh-CN',
+    'zh': 'zh-CN'
+}
 
 # Mostly we use region-agnostic languages, but can add region where
 # there are significant differences (e.g. Chinese)
