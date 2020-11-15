@@ -110,7 +110,7 @@ En ce qui concerne les unités basées sur l’espace physique, l’unité `cm` 
 
 <p class="note">Une version antérieure de ce chapitre parlait de la popularité inattendue de l’unité <code>Q</code>. Grâce à la <a href="https://discuss.httparchive.org/t/chapter-2-css/1757/6">discussion de la communauté</a> concernant ce chapitre, nous avons identifié qu’il s’agissait d’un bogue dans notre analyse et avons mis à jour la figure 2.5 en conséquence.</p>
 
-### Unités basées sur la taille de fenêtre (viewport)
+### Unités basées sur la taille de fenêtre (<i lang="en">viewport</i> {unites-basees-sur-la-taille-de-fenetre-viewport}
 
 Nous avons constaté des différences plus importantes pour les unités basées sur le <i lang="en">viewport</i> entre les appareils mobiles et les ordinateurs de bureau. 36,8&nbsp;% des sites mobiles utilisent `vh` (hauteur de <i lang="en">viewport</i>), alors que seuls 31&nbsp;% des sites pour ordinateur le font. Nous avons également constaté que `vh` est plus courant que `vw` (largeur de <i lang="en">viewport</i>) d’environ 11&nbsp;%. `vmin` (<i lang="en">viewport</i> minimum) est plus populaire que `vmax` (<i lang="en">viewport</i> maximum), avec environ 8&nbsp;% d’utilisation de `vmin` sur mobile tandis que` vmax` n’est utilisé que par 1&nbsp;% des sites Web.
 
