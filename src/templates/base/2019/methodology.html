@@ -4,9 +4,6 @@
 
 {% block description %}Describes how the 2019 Web Almanac was put together: The Datasets and Tools used and how the project was run.{% endblock %}
 
-{% block date_published %}{{ get_file_date_info("%s/%s/%s" % (lang, year, "methodology"), "published_date") }}{% endblock %}
-{% block date_modified %}{{ get_file_date_info("%s/%s/%s" % (lang, year, "methodology"), "last_updated_date") }}{% endblock %}
-
 {% block styles %}
 {{ super() }}
 <link rel="stylesheet" href="/static/css/page.css?v={{ get_file_date_info('static/css/page.css', 'hash') }}">

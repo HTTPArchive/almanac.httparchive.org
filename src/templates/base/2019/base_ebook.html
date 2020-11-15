@@ -6,15 +6,12 @@
 {% block image_height %}562{% endblock %}
 {% block image_width %}715{% endblock %}
 
-{% block date_published %}{{ get_file_date_info("%s/%s/%s" % (lang, year, "ebook"), "published_date") }}{% endblock %}
-{% block date_modified %}{{ get_file_date_info("%s/%s/%s" % (lang, year, "ebook"), "last_updated_date") }}{% endblock %}
-
 {% block head %}
 {{ super() }}
 <meta name="robots" content="noindex">
 <!--Prince meta date-->
 <meta name="subject" content="{{ self.description() }}">
-<meta name="date" content="{{ self.date_modified()[:-5] }}">
+<meta name="date" content="{{ date_modified[:-5] }}">
 <meta name="author" content="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang) }}">
 <meta name="keywords" content="Web Almanac 2019 HTTPArchive {{ ' '.join(localizedChapterTitles.values()) }}">
 {% endblock %}

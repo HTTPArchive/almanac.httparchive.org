@@ -1,7 +1,6 @@
 from flask import redirect, url_for, request, send_from_directory
 from . import app, talisman
-from .helpers import render_template, convert_old_image_path, get_chapter_nextprev, get_ebook_size_in_mb, \
-                     get_file_date_info
+from .helpers import render_template, convert_old_image_path, get_chapter_nextprev, get_ebook_size_in_mb
 from .validate import validate
 from .config import get_config, DEFAULT_YEAR
 import random
@@ -11,9 +10,7 @@ import random
 @validate
 def home(lang, year):
     config = get_config(year)
-    ebook_size_in_mb = get_ebook_size_in_mb(lang, year)
-    return render_template('%s/%s/index.html' % (lang, year), config=config,
-                           get_file_date_info=get_file_date_info, ebook_size_in_mb=ebook_size_in_mb)
+    return render_template('%s/%s/index.html' % (lang, year), config=config)
 
 
 @app.route('/<lang>/')
@@ -34,30 +31,24 @@ def root(lang):
 @validate
 def table_of_contents(lang, year):
     config = get_config(year)
-    ebook_size_in_mb = get_ebook_size_in_mb(lang, year)
-    return render_template('%s/%s/table_of_contents.html' % (lang, year), config=config,
-                           get_file_date_info=get_file_date_info, ebook_size_in_mb=ebook_size_in_mb)
+    return render_template('%s/%s/table_of_contents.html' % (lang, year), config=config)
 
 
 @app.route('/<lang>/<year>/contributors')
 @validate
 def contributors(lang, year):
     config = get_config(year)
-    ebook_size_in_mb = get_ebook_size_in_mb(lang, year)
     contributors_list = list(config["contributors"].items())
     random.shuffle(contributors_list)
     config["contributors"] = dict(contributors_list)
-    return render_template('%s/%s/contributors.html' % (lang, year), config=config,
-                           get_file_date_info=get_file_date_info, ebook_size_in_mb=ebook_size_in_mb)
+    return render_template('%s/%s/contributors.html' % (lang, year), config=config)
 
 
 @app.route('/<lang>/<year>/methodology')
 @validate
 def methodology(lang, year):
     config = get_config(year)
-    ebook_size_in_mb = get_ebook_size_in_mb(lang, year)
-    return render_template('%s/%s/methodology.html' % (lang, year), config=config,
-                           get_file_date_info=get_file_date_info, ebook_size_in_mb=ebook_size_in_mb)
+    return render_template('%s/%s/methodology.html' % (lang, year), config=config)
 
 
 # Accessibility Statement needs special case handling for trailing slashes
@@ -73,8 +64,7 @@ def accessibility_statement(lang):
         return redirect("/%s/accessibility-statement" % (lang)), 301
     else:
         return render_template('%s/2019/accessibility_statement.html' % (lang),
-                               config=config, get_file_date_info=get_file_date_info,
-                               ebook_size_in_mb=ebook_size_in_mb)
+                               config=config)
 
 
 @app.route('/sitemap.xml')
@@ -104,11 +94,9 @@ def sitemap():
 @validate
 def chapter(lang, year, chapter):
     config = get_config(year)
-    ebook_size_in_mb = get_ebook_size_in_mb(lang, year)
     (prev_chapter, next_chapter) = get_chapter_nextprev(config, chapter)
     return render_template('%s/%s/chapters/%s.html' % (lang, year, chapter), config=config,
-                           get_file_date_info=get_file_date_info, prev_chapter=prev_chapter,
-                           next_chapter=next_chapter, ebook_size_in_mb=ebook_size_in_mb)
+                           prev_chapter=prev_chapter, next_chapter=next_chapter)
 
 
 @app.route('/robots.txt')
@@ -127,7 +115,7 @@ def ebook(lang, year):
     config = get_config(year)
     sorted_contributors = sorted(config["contributors"].items(), key=lambda items: items[1]['name'])
     config["contributors"] = dict(sorted_contributors)
-    return render_template('%s/%s/ebook.html' % (lang, year), config=config, get_file_date_info=get_file_date_info)
+    return render_template('%s/%s/ebook.html' % (lang, year), config=config)
 
 
 # Redirect requests for the older image URLs to new URLs

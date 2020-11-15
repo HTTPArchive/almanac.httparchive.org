@@ -2,9 +2,6 @@
 
 {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 
-{% block date_published %}{{ get_file_date_info("%s/%s/%s" % (lang, year, metadata.chapter), "published_date") }}{% endblock %}
-{% block date_modified %}{{ get_file_date_info("%s/%s/%s" % (lang, year, metadata.chapter), "last_updated_date") }}{% endblock %}
-
 {% block image_url %}https://almanac.httparchive.org/static/images/2019/{{ metadata.chapter }}/hero_lg.jpg{% endblock %}
 {% block image_height %}433{% endblock %}
 {% block image_width %}866{% endblock %}

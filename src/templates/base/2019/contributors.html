@@ -4,9 +4,6 @@
 {% block image_height %}354{% endblock %}
 {% block image_width %}984{% endblock %}
 
-{% block date_published %}{{ get_file_date_info("%s/%s/%s" % (lang, year, "contributors"), "published_date") }}{% endblock %}
-{% block date_modified %}{{ get_file_date_info("%s/%s/%s" % (lang, year, "contributors"), "last_updated_date") }}{% endblock %}
-
 {% block styles %}
 {{ super() }}
 <style nonce="{{ csp_nonce() }}">

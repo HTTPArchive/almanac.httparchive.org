@@ -6,9 +6,6 @@
 
 {% block page_url %}https://almanac.httparchive.org{{ url_for(request.endpoint, **get_view_args(lang=language.lang_code)) }}{% endblock %}
 
-{% block date_published %}{{ get_file_date_info("%s/%s" % (lang, "accessibility-statement"), "published_date") }}{% endblock %}
-{% block date_modified %}{{ get_file_date_info("%s/%s" % (lang, "accessibility-statement"), "last_updated_date") }}{% endblock %}
-
 {% block author_structured_data %}
 {
   "@type": "Person",

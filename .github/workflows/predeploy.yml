@@ -2,10 +2,14 @@
 ## Custom Web Almanac GitHub action ##
 ######################################
 #
-# Generate the ebooks when this GitHub Action is run manually
-# This should be run everytime before release
+# A pre-deploy script that must be run in GitHub Actions to:
+# - Update timestamps and hashes
+# - Generate the ebooks
+# - Submit a Pull Request with the changes
 #
-name: Generate Timestamps and Ebooks
+# This should be run before every release
+#
+name: Predeploy script
 
 env:
   # Update periodically from https://www.princexml.com/latest/

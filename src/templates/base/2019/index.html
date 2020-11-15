@@ -4,9 +4,6 @@
 {% block image_height %}562{% endblock %}
 {% block image_width %}715{% endblock %}
 
-{% block date_published %}{{ get_file_date_info("%s/%s/" % (lang, year), "published_date") }}{% endblock %}
-{% block date_modified %}{{ get_file_date_info("%s/%s/" % (lang, year), "last_updated_date") }}{% endblock %}
-
 {% set year_with_chapters = featured_chapters_exists(lang, year) or featured_chapters_exists('en', year) %}
 
 {% block breadcrumb %}
