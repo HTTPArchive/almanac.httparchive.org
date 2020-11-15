@@ -623,7 +623,7 @@ Il est commun, populaire, pratique et puissant d’utiliser une bibliothèque CS
     </thead>
     <tbody>
       <tr>
-        <td>Bootstrap</td>
+        <td lang="en">Bootstrap</td>
         <td class="numeric">27.8&nbsp;%</td>
         <td class="numeric">26.9&nbsp;%</td>
       </tr>
