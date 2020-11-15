@@ -449,7 +449,7 @@ Lorsque les gens écrivent une <i lang="en">media query</i>, visent-ils généra
 
 {{ figure_markup(
   image="fig31.png",
-  caption="Adoption des propriétés utilisées dans les <i lang="en">breakpoints</i> des <i lang="en">media queries</i>",
+  caption='Adoption des propriétés utilisées dans les <i lang="en">breakpoints</i> des <i lang="en">media queries</i>',
   description="Diagramme à barres montrant que 74&nbsp;% des pages de bureau utilisent `max-width`, 70&nbsp;% `min-width` et 68&nbsp;% utilisant les deux propriétés. L’adoption est similaire pour les pages mobiles.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=2091525146&format=interactive"
   )
