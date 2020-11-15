@@ -683,7 +683,7 @@ Il est commun, populaire, pratique et puissant d’utiliser une bibliothèque CS
         <td class="numeric">0.0&nbsp;%</td>
       </tr>
       <tr>
-        <td>Milligram</td>
+        <td lang="en">Milligram</td>
         <td class="numeric">0.0&nbsp;%</td>
         <td class="numeric">0.0&nbsp;%</td>
       </tr>
