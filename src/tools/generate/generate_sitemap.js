@@ -130,6 +130,7 @@ const convert_file_name = (url) => {
       return url.substr(0, url.length - 5).replace(/_/g,'-');
     }
   };
+  return url.replace(/_/g,'-');
 };
 
 module.exports = {
