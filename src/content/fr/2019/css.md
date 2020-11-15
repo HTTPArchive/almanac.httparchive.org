@@ -6,7 +6,7 @@ description: Chapitre CSS du Web Almanac 2019, couvrant les couleurs, unités, s
 authors: [una, argyleink]
 reviewers: [meyerweb, huijing]
 analysts: [rviscomi]
-translators: []
+translators: [nico3333fr]
 discuss: 1757
 results: https://docs.google.com/spreadsheets/d/1uFlkuSRetjBNEhGKWpkrXo4eEIsgYelxY-qR9Pd7QpM/
 queries: 02_CSS
