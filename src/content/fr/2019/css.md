@@ -713,7 +713,7 @@ Voyons donc combien de sites en utilisent un&nbsp;! Leur existence semble tout �
   )
 }}
 
-Il s’avère qu’environ un tiers du Web utilise [`normalize.css`](https://necolas.github.io/normalize.css), ce qui pourrait être considéré comme une approche douce, en tout cas plus que celle d’un pur <i lang="en">reset</i> CSS. Nous avons regardé un peu plus en profondeur, et il s’avère que Bootstrap inclut `normalize.css`, ce qui représente probablement une grande partie de son utilisation. Il convient également de noter que `normalize.css` a plus d’adoption que Bootstrap, donc il y a beaucoup de gens qui l’utilisent seul.
+Il s’avère qu’environ un tiers du Web utilise [`normalize.css`](https://necolas.github.io/normalize.css), ce qui pourrait être considéré comme une approche douce, en tout cas plus que celle d’un pur <i lang="en">reset</i> CSS. Nous avons regardé un peu plus en profondeur, et il s’avère que <span lang="en">Bootstrap</span> inclut `normalize.css`, ce qui représente probablement une grande partie de son utilisation. Il convient également de noter que `normalize.css` a plus d’adoption que <span lang="en">Bootstrap</span>, donc il y a beaucoup de gens qui l’utilisent seul.
 
 ### `@supports` et `@import`
 
