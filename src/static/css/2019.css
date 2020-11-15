@@ -979,7 +979,7 @@ p.copyright a {
   cursor: unset;
 }
 
-.nav-dropdown-btn.js-hide:after {
+.nav-dropdown-btn.js-hide::after {
   border: 0;
 }
 
