@@ -648,7 +648,7 @@ Il est commun, populaire, pratique et puissant d’utiliser une bibliothèque CS
         <td class="numeric">0.3&nbsp;%</td>
       </tr>
       <tr>
-        <td>Materialize CSS</td>
+        <td lang="en">Materialize CSS</td>
         <td class="numeric">0.2&nbsp;%</td>
         <td class="numeric">0.2&nbsp;%</td>
       </tr>
