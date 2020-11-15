@@ -73,8 +73,7 @@ Combien de différentes couleurs de polices sont utilisées sur le Web&nbsp;? Ce
 {{ figure_markup(
   image="fig3.png",
   caption="Répartition des couleurs par page.",
-  description="202/5000
-Distribution montrant les 10e, 25e, 50e, 75e et 90e percentile de couleurs par page sur bureau et mobile. Sur le bureau, la distribution est de 8, 22, 48, 83 et 131. Les pages mobiles ont tendance à avoir plus de couleurs de 1 à 10.",
+  description="202/5000 Distribution montrant les 10e, 25e, 50e, 75e et 90e percentile de couleurs par page sur bureau et mobile. Sur le bureau, la distribution est de 8, 22, 48, 83 et 131. Les pages mobiles ont tendance à avoir plus de couleurs de 1 à 10.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1361184636&format=interactive"
   )
 }}
