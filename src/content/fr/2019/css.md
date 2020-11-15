@@ -668,7 +668,7 @@ Il est commun, populaire, pratique et puissant d’utiliser une bibliothèque CS
         <td class="numeric">0.1&nbsp;%</td>
       </tr>
       <tr>
-        <td>Bulma</td>
+        <td lang="en">Bulma</td>
         <td class="numeric">0.0&nbsp;%</td>
         <td class="numeric">0.0&nbsp;%</td>
       </tr>
