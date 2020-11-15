@@ -20,7 +20,7 @@
         </li>
         <li><a href="#tools">ツール</a>
           <ul>
-            <li><a href="#webpagetest">ウェブページテスト</a></li>
+            <li><a href="#webpagetest">WebPageTest</a></li>
             <li><a href="#lighthouse">Lighthouse</a></li>
             <li><a href="#wappalyzer">Wappalyzer</a></li>
             <li><a href="#chrome-ux-report">Chrome UXレポート</a></li>
@@ -35,7 +35,7 @@
         </li>
         <li><a href="#process">分析プロセス</a>
           <ul>
-            <li><a href="#planning">プランニング</a></li>
+            <li><a href="#planning">計画</a></li>
             <li><a href="#analysis">分析</a></li>
             <li><a href="#interpretation">解釈</a></li>
           </ul>
@@ -67,7 +67,7 @@
         </p>
 
         <p>
-          Web Almanacの2020年版は、コンテンツ、体験、パブリッシング、ディストリビューションの4つのパートに分かれています。各パートの、いくつかの章では、その全体的なテーマをさまざまな角度から探求しています。例えば、パートIIでは、パフォーマンス、セキュリティ、アクセシビリティの各章で、ユーザー体験をさまざまな角度から探求しています。
+          Web Almanacの2020年版は、ページコンテンツ、体験、公開、配信の4つの部に分かれています。各部の、いくつかの章では、その全体的なテーマをさまざまな角度から探求しています。例えば、部IIではユーザー体験を、パフォーマンスやセキュリティ、アクセシビリティの各章で、さまざまな角度から探求しています。
         </p>
     </section>
 
@@ -377,8 +377,8 @@
         <h4 id="parsel"><a href="#parsel" class="anchor-link">Parsel</a></h4>
 
         <p>
-            <a href="https://projects.verou.me/parsel/">Parsel</a>はCSSセレクタパーサとspecificity calculatorで、元々は<a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a>の章をリードする<a href="{{ url_for('contributors', year=year, lang=lang, _anchor='LeaVerou') }}">Lea Verou</a>と別のライブラリとしてオープンソース化されています。
-            これは、セレクタと特異性に関連するすべてのCSSメトリクスで広く使われています。
+            <a href="https://projects.verou.me/parsel/">Parsel</a>はCSSセレクターの構文解析と詳細度の計算ツールで、元々は<a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a>の章をリードする<a href="{{ url_for('contributors', year=year, lang=lang, _anchor='LeaVerou') }}">Lea Verou</a>によって書かれたものであり、個別のライブラリとしてオープンソース化されています。
+            これは、セレクターと詳細度に関連するすべてのCSSの分析で広く使われています。
         </p>
     </section>
 
@@ -386,7 +386,7 @@
       <h2 id="process"><a href="#process" class="anchor-link">分析プロセス</a></h2>
 
       <p>
-        Web Almanacの計画と実行には、100人以上のWebコミュニティの<a href="{{ url_for('contributors', year=year, lang=lang) }}">投稿者</a>の協力を得て、約1年を要しました。このセクションでは、Web Almanacに掲載されているチャプターを選んだ理由、それらのメトリクスがどのようにして照会されたか、そしてどのように解釈されたかを説明します。
+        Web Almanacの計画と実行には、100人以上のWebコミュニティの<a href="{{ url_for('contributors', year=year, lang=lang) }}">貢献者</a>の協力を得て、約1年を要しました。このセクションでは、Web Almanacに掲載されている章を選んだ理由、それらのメトリクスがどのようにして分析されたか、そしてどのように解釈されたかを説明します。
       </p>
     </section>
 
@@ -394,7 +394,7 @@
       <h3 id="planning"><a href="#planning" class="anchor-link">プランニング</a></h3>
 
       <p>
-        2020年のWeb Almanacは、<a href="https://twitter.com/rick_viscomi/status/1273135952848977920">2020年6月</a>にキックオフしましたが、COVID-19に関連した不安や社会正義の抗議活動のため、2019年のタイムラインよりも遅くなりました。2020年のこれらの出来事やその他の出来事は、制作プロセス全体の下火となり、このようなテンポの速いプロジェクトのストレスを超えて、私たちの貢献者に多くの追加的な負担をかけました。
+        2020年のWeb Almanacは、<a href="https://twitter.com/rick_viscomi/status/1273135952848977920">2020年6月</a>に開始されましたが、COVID-19に関連した不安や社会正義の抗議活動のため、2019年のタイムラインよりも遅くなりました。2020年のこれらの出来事やその他の出来事は、制作プロセス全体の下火となり、このようなテンポの速いプロジェクトのストレスを超えて、私たちの貢献者に多くの追加的な負担をかけました。
       </p>
 
       <p>
