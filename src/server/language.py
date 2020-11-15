@@ -38,6 +38,7 @@ LANGUAGE_MAPPING = {
     'zh': 'zh-CN'
 }
 
+
 # Mostly we use region-agnostic languages, but can add region where
 # there are significant differences (e.g. Chinese)
 class Language(object):

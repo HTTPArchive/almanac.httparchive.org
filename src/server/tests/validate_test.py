@@ -13,7 +13,6 @@ def assert_validate_lang(lang, year, expected_lang, expected_year):
     assert (expected_lang, expected_year) == validate_lang_and_year(lang, year)
 
 
-
 def assert_language(accept_language_header, expected_lang):
     lang = parse_accept_language(accept_language_header, SUPPORTED_LANGUAGES)
     assert lang == expected_lang

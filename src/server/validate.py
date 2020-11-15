@@ -32,7 +32,7 @@ def validate(func):
 
         if 'lang' in accepted_args:
             kwargs.update({'lang': lang})
-            if lang != lang_arg and lang_arg != None:
+            if lang != lang_arg and lang_arg is not None:
                 return redirect('%s' % request.full_path.replace(lang_arg, lang, 1), code=302)
 
         if 'year' in accepted_args:
