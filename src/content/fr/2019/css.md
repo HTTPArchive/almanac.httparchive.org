@@ -215,7 +215,7 @@ Cela montre à quel point la communauté de développement Web a relativement pe
 
 ### Modes d’écriture
 
-Le Web et CSS sont des fonctionnalités de plate-forme internationale, et les modes d’écriture offrent un moyen pour HTML et CSS d’indiquer la direction de lecture et d’écriture préférées d’un utilisateur dans nos éléments.
+Le Web et CSS sont des fonctionnalités de plate-forme internationale, et les modes d’écriture offrent un moyen pour HTML et CSS d’indiquer la direction de lecture et d’écriture préférées d’un utilisateur ou une utilisatrice dans nos éléments.
 
 {{ figure_markup(
   image="fig14.png",
