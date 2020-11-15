@@ -23,13 +23,14 @@ const find_markdown_files = async () => {
   return await recursive('content', [filter]);
 };
 
-const find_css_and_js_files = async () => {
+const find_asset_files = async () => {
   const filter = (file, stats) => {
     const isJS = file && file.endsWith('.js');
     const isCSS = file && file.endsWith('.css');
+    const isPDF = file && file.endsWith('.pdf');
     const isDirectory = stats && stats.isDirectory();
 
-    return !isJS && !isCSS && !isDirectory;
+    return !isJS && !isCSS && !isPDF && !isDirectory;
   };
 
   return await recursive('static', [filter]);
@@ -84,7 +85,7 @@ const parse_array = (array_as_string) => {
 module.exports = {
   find_markdown_files,
   find_template_files,
-  find_css_and_js_files,
+  find_asset_files,
   find_config_files,
   get_yearly_configs,
   size_of,

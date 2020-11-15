@@ -1,4 +1,82 @@
 {
+  "/static/css/2019.css": {
+    "published_date": "2020-11-13T00:00:00.000Z",
+    "hash": "db00356411064459cd1f4f1af4caf410"
+  },
+  "/static/css/ebook.css": {
+    "published_date": "2020-11-13T00:00:00.000Z",
+    "last_updated_date": "2020-11-13T00:00:00.000Z",
+    "hash": "aa3a5681b979938459f20b2546f4d387"
+  },
+  "/static/css/index.css": {
+    "published_date": "2020-11-13T00:00:00.000Z",
+    "last_updated_date": "2020-11-13T00:00:00.000Z",
+    "hash": "137e5e584b68c07a49ad8f37feb0b8cf"
+  },
+  "/static/css/normalize.css": {
+    "published_date": "2020-11-13T00:00:00.000Z",
+    "last_updated_date": "2020-11-13T00:00:00.000Z",
+    "hash": "112272e51c80ffe5bd01becd2ce7d656"
+  },
+  "/static/css/page.css": {
+    "published_date": "2020-11-13T00:00:00.000Z",
+    "last_updated_date": "2020-11-13T00:00:00.000Z",
+    "hash": "cf5caf0430032f4fb5c3d80e68dd88c1"
+  },
+  "/static/css/print.css": {
+    "published_date": "2020-11-13T00:00:00.000Z",
+    "last_updated_date": "2020-11-13T00:00:00.000Z",
+    "hash": "9922e4f844ead203c855f069ee4b0f79"
+  },
+  "/static/css/splash.css": {
+    "published_date": "2020-11-13T00:00:00.000Z",
+    "last_updated_date": "2020-11-13T00:00:00.000Z",
+    "hash": "4f330dd8fdc6e5a660c93c7a83734516"
+  },
+  "/static/js/chapter.js": {
+    "published_date": "2020-11-13T00:00:00.000Z",
+    "last_updated_date": "2020-11-13T00:00:00.000Z",
+    "hash": "1ecad2e3d7d48f40098abfd6adedff4b"
+  },
+  "/static/js/web-vitals.js": {
+    "published_date": "2020-11-13T00:00:00.000Z",
+    "last_updated_date": "2020-11-13T00:00:00.000Z",
+    "hash": "97c16f36a58e67ddcc26c40db4b026c3"
+  },
+  "/static/pdfs/web_almanac_2019_en.pdf": {
+    "published_date": "2020-11-15T00:00:00.000Z",
+    "last_updated_date": "2020-11-15T00:00:00.000Z",
+    "hash": "344049db36252d914c24b6004db8f56a",
+    "size": 17
+  },
+  "/static/pdfs/web_almanac_2019_en_cover_A5.pdf": {
+    "published_date": "2020-11-15T00:00:00.000Z",
+    "last_updated_date": "2020-11-15T00:00:00.000Z",
+    "hash": "6fbc91beebbb424e0b65f7098ff60696"
+  },
+  "/static/pdfs/web_almanac_2019_en_print_A5.pdf": {
+    "published_date": "2020-11-15T00:00:00.000Z",
+    "last_updated_date": "2020-11-15T00:00:00.000Z",
+    "hash": "5c27a03efd862769399be8aae5b1b8ae",
+    "size": 17
+  },
+  "/static/pdfs/web_almanac_2019_ja.pdf": {
+    "published_date": "2020-11-15T00:00:00.000Z",
+    "last_updated_date": "2020-11-15T00:00:00.000Z",
+    "hash": "5d5d12d2e935882e3abb6bbeb2128086",
+    "size": 17
+  },
+  "/static/pdfs/web_almanac_2019_ja_cover_A5.pdf": {
+    "published_date": "2020-11-15T00:00:00.000Z",
+    "last_updated_date": "2020-11-15T00:00:00.000Z",
+    "hash": "76d6512b99595416fb7488e339e9ee12"
+  },
+  "/static/pdfs/web_almanac_2019_ja_print_A5.pdf": {
+    "published_date": "2020-11-15T00:00:00.000Z",
+    "last_updated_date": "2020-11-15T00:00:00.000Z",
+    "hash": "58e57248b4aa2f18f42f814df6605286",
+    "size": 17
+  },
   "en/2019/accessibility_statement.html": {
     "published_date": "2020-02-03T12:00:00.000Z",
     "last_updated_date": "2020-08-12T00:00:00.000Z",
@@ -648,50 +726,6 @@
     "published_date": "2020-10-24T00:00:00.000Z",
     "last_updated_date": "2020-11-03T00:00:00.000Z",
     "hash": "8ac71527f5762ebc62391071ea5bfeb1"
-  },
-  "/static/css/2019.css": {
-    "published_date": "2020-11-13T00:00:00.000Z",
-    "hash": "db00356411064459cd1f4f1af4caf410"
-  },
-  "/static/css/ebook.css": {
-    "published_date": "2020-11-13T00:00:00.000Z",
-    "last_updated_date": "2020-11-13T00:00:00.000Z",
-    "hash": "aa3a5681b979938459f20b2546f4d387"
-  },
-  "/static/css/index.css": {
-    "published_date": "2020-11-13T00:00:00.000Z",
-    "last_updated_date": "2020-11-13T00:00:00.000Z",
-    "hash": "137e5e584b68c07a49ad8f37feb0b8cf"
-  },
-  "/static/css/normalize.css": {
-    "published_date": "2020-11-13T00:00:00.000Z",
-    "last_updated_date": "2020-11-13T00:00:00.000Z",
-    "hash": "112272e51c80ffe5bd01becd2ce7d656"
-  },
-  "/static/css/page.css": {
-    "published_date": "2020-11-13T00:00:00.000Z",
-    "last_updated_date": "2020-11-13T00:00:00.000Z",
-    "hash": "cf5caf0430032f4fb5c3d80e68dd88c1"
-  },
-  "/static/css/print.css": {
-    "published_date": "2020-11-13T00:00:00.000Z",
-    "last_updated_date": "2020-11-13T00:00:00.000Z",
-    "hash": "9922e4f844ead203c855f069ee4b0f79"
-  },
-  "/static/css/splash.css": {
-    "published_date": "2020-11-13T00:00:00.000Z",
-    "last_updated_date": "2020-11-13T00:00:00.000Z",
-    "hash": "4f330dd8fdc6e5a660c93c7a83734516"
-  },
-  "/static/js/chapter.js": {
-    "published_date": "2020-11-13T00:00:00.000Z",
-    "last_updated_date": "2020-11-13T00:00:00.000Z",
-    "hash": "1ecad2e3d7d48f40098abfd6adedff4b"
-  },
-  "/static/js/web-vitals.js": {
-    "published_date": "2020-11-13T00:00:00.000Z",
-    "last_updated_date": "2020-11-13T00:00:00.000Z",
-    "hash": "97c16f36a58e67ddcc26c40db4b026c3"
   },
   "zh-CHT/2019/contributors.html": {
     "published_date": "2019-11-04T12:00:00.000Z",

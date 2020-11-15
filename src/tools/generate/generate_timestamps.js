@@ -1,6 +1,6 @@
 const fs = require('fs-extra');
 const { find_markdown_files } = require('./shared');
-const { find_css_and_js_files } = require('./shared');
+const { find_asset_files } = require('./shared');
 const { get_yearly_configs } = require('./shared');
 const crypto = require('crypto');
 
@@ -22,7 +22,7 @@ let file_dates = {};
 
 let now = "";
 
-const check_and_update_date = (file, hash) => {
+const check_and_update_date = (file, hash, size) => {
 
   //file = convert_file_name(file);
   file=file.replace(/content\/(.*)\/([0-9]*)\/(.*)\.md$/,"$1/$2/chapter/$3.html");
@@ -33,6 +33,7 @@ const check_and_update_date = (file, hash) => {
       console.log("Updating existing date for: " + file + " to " + now);
       file_dates[file].hash = hash;
       file_dates[file].last_updated_date = now;
+      if (size) file_dates[file].size = size;
       return;
     }
 
@@ -41,11 +42,20 @@ const check_and_update_date = (file, hash) => {
   }
 
   console.log("Adding new date for: " + file + " to " + now);
-  file_dates[file] = {
-    "published_date": now,
-    "last_updated_date": now,
-    "hash": hash
-  };
+  if (size) {
+    file_dates[file] = {
+      "published_date": now,
+      "last_updated_date": now,
+      "hash": hash,
+      "size": size
+    };
+  } else {
+    file_dates[file] = {
+      "published_date": now,
+      "last_updated_date": now,
+      "hash": hash
+    };
+  }
 
 }
 
@@ -56,19 +66,24 @@ const get_chapter_dates = async () => {
     // Read the content of the file
     let content = await fs.readFile(file, 'utf-8');
     let hash = crypto.createHash('md5').update(content).digest("hex")
-    check_and_update_date(file, hash);
+    check_and_update_date(file, hash, null);
 
   }
 };
 
-const get_css_js_dates = async () => {
+const get_asset_file_dates = async () => {
 
-  for (const file of await find_css_and_js_files()) {
+  for (const file of await find_asset_files()) {
 
     // Read the content of the file
     let content = await fs.readFile(file, 'utf-8');
     let hash = crypto.createHash('md5').update(content).digest("hex")
-    check_and_update_date('/' + file, hash);
+    let size = null;
+    if (file.endsWith('.pdf')) {
+      size = Math.round(fs.statSync(file).size / (1024*1024),0);
+      console.log('Got a file size', size);
+    }
+    check_and_update_date('/' + file, hash, size);
 
   }
 };
@@ -95,7 +110,7 @@ const get_template_pages_dates = async (supported_languages) => {
     if (fs.existsSync(`templates/${file}`)) {
       let content = await fs.readFile(`templates/${file}`, 'utf-8');
       let hash = crypto.createHash('md5').update(content).digest("hex");
-      check_and_update_date(file, hash);
+      check_and_update_date(file, hash, null);
     }
   }
 
@@ -138,7 +153,7 @@ const generate_timestamps = async () => {
 
   await get_chapter_dates();
   await get_template_pages_dates(supported_languages);
-  await get_css_js_dates();
+  await get_asset_file_dates();
   await write_files_dates_file();
 
 }

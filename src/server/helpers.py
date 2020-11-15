@@ -113,17 +113,6 @@ def get_chapter_nextprev(config, chapter_slug):
     return prev_chapter, next_chapter
 
 
-def get_ebook_size_in_mb(lang, year):
-    ebook_file = STATIC_DIR + '/pdfs/web_almanac_%s_%s.pdf' % (year, lang)
-    if os.path.isfile(ebook_file):
-        size = os.path.getsize(ebook_file)
-        # Convert to MB
-        size = int(round(size / 1024 / 1024, 0))
-        return size
-
-    return 0
-
-
 def get_view_args(lang=None, year=None):
     view_args = request.view_args.copy()
     if lang:
@@ -207,7 +196,7 @@ def get_file_date_info(file, type):
     timestamps_config = get_timestamps_config()
     # Default Published and Last Updated to today
     today = datetime.datetime.utcnow().isoformat()
-    if type == 'hash':
+    if type == 'hash' or type == 'size':
         return timestamps_config.get(file, {}).get(type)
     else:
         return timestamps_config.get(file, {}).get(type, today)
@@ -219,6 +208,11 @@ def get_versioned_filename(path):
         return '%s?v=%s' % (path, version)
     else:
         return '%s' % path
+
+
+def get_ebook_size_in_mb(lang, year):
+    ebook_file = '/static/pdfs/web_almanac_%s_%s.pdf' % (year, lang)
+    return int(get_file_date_info(ebook_file,'size') or 0)
 
 
 class RegexConverter(BaseConverter):
