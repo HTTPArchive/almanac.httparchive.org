@@ -29,7 +29,7 @@ app = WebAlmanacServer(__name__, template_folder=TEMPLATES_DIR, static_folder=ST
 def add_header(response):
     # Make sure bad responses are not cached
     #
-    # Cache good responses for 3 hours if no other Cache-Control header set
+    # Cache good responses for 10 mins if no other Cache-Control header set
     # This is used for the dynamically generated files (e.g. the HTML)
     # (currently don't use unique filenames so cannot use long caches and
     # some say they are overrated anyway as caches smaller than we think).
@@ -41,7 +41,7 @@ def add_header(response):
             response.cache_control.max_age = 0
         if response.status_code == 200 or response.status_code == 304:
             response.cache_control.public = True
-            response.cache_control.max_age = 10800
+            response.cache_control.max_age = 600
     return response
 
 
