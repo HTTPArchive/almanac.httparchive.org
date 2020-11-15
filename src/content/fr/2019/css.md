@@ -721,8 +721,8 @@ CSS `@supports` est un moyen pour le navigateur de vérifier si une combinaison 
 
 {{ figure_markup(
   image="fig38.png",
-  caption=’Popularité des règles CSS «@».’,
-  description=’Diagramme à barres montrant la popularité des règles `@import` et `@supports`. Sur le bureau, `@import` est utilisé sur 28&nbsp;% des pages et `@supports` sur 31&nbsp;%. Pour mobile, `@import` est utilisé sur 26&nbsp;% des pages et `@supports` sur 29&nbsp;%’,
+  caption='Popularité des règles CSS «@».",
+  description="Diagramme à barres montrant la popularité des règles `@import` et `@supports`. Sur le bureau, `@import` est utilisé sur 28&nbsp;% des pages et `@supports` sur 31&nbsp;%. Pour mobile, `@import` est utilisé sur 26&nbsp;% des pages et `@supports` sur 29&nbsp;%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1739611283&format=interactive"
   )
 }}
