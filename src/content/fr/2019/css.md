@@ -437,8 +437,8 @@ Dans les <i lang="en">media queries</i> de largeur et de hauteur que nous avons 
 
 {{ figure_markup(
   image="fig30.png",
-  caption="Adoption d’unités dans les <i lang="en">breakpoints</i> des <i lang="en">media queries</i>.",
-  description="Diagramme à barres montrant 75&nbsp;% <i lang="en">breakpoints</i> des <i lang="en">media queries</i> spécifiant les pixels, 8&nbsp;% spécifiant ems et 1&nbsp;% spécifiant les rems.",
+  caption='Adoption d’unités dans les <i lang="en">breakpoints</i> des <i lang="en">media queries</i>.',
+  description='Diagramme à barres montrant 75&nbsp;% <i lang="en">breakpoints</i> des <i lang="en">media queries</i> spécifiant les pixels, 8&nbsp;% spécifiant ems et 1&nbsp;% spécifiant les rems.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=305563768&format=interactive"
   )
 }}
