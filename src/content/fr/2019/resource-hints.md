@@ -19,7 +19,7 @@ featured_stat_label_2: des indices de ressources utilisent l’attribut <code>as
 featured_stat_3: 0.04 %
 featured_stat_label_3: des pages utilisent des indices de priorité.
 published: 2019-12-24T00:00:00.000Z
-last_updated: 2020-11-04T00:00:00.000Z
+last_updated: 2020-11-10T00:00:00.000Z
 ---
 
 ## Introduction
@@ -261,7 +261,7 @@ Les indices de priorités sont [mis en œuvre](https://www.chromestatus.com/feat
 
 85 % de l'utilisation des indices de priorités se fait avec les balises `<img>`. Les indices de priorités sont surtout utilisés pour déprioriser des ressources : 72&nbsp;% de l'utilisation est `importance="low"` ; 28&nbsp;% de l'utilisation est `importance="high"`.
 
-### Le lazy loading natif
+### Le <i lang="en">lazy loading</i> natif {le-lazy-loading-natif}
 
 Le [<i lang="en">lazy loading</i> natif](https://web.dev/native-lazy-loading) est une API native permettant de différer le chargement des images et des iframes situées hors écran. Cela permet de libérer des ressources lors du chargement initial de la page et d'éviter de charger des ressources qui ne sont jamais utilisées. Auparavant, cette technique ne pouvait être réalisée qu'à l'aide de bibliothèques [JavaScript](./javascript) tierces.
 

@@ -19,7 +19,7 @@ featured_stat_label_2: des sites utilisent jQuery
 featured_stat_3: 4.6 %
 featured_stat_label_3: des pages d’accueil utilisent React
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-04T00:00:00.000Z
+last_updated: 2020-11-11T00:00:00.000Z
 ---
 
 ## Introduction
@@ -30,7 +30,7 @@ La spécification du langage elle-même, ainsi que les nombreuses bibliothèques
 
 [HTTP Archive](https://httparchive.org/) parcourt [des millions de pages](https://httparchive.org/reports/state-of-the-web#numUrls) chaque mois et les soumet à une instance privée de [WebPageTest](https://webpagetest.org/) pour stocker les informations clés de chaque page (vous pouvez en savoir plus à ce sujet dans notre [méthodologie](./methodology)). Dans le contexte de JavaScript, HTTP Archive fournit des informations détaillées sur l’utilisation du langage pour l’ensemble du web. Ce chapitre regroupe et analyse un grand nombre de ces tendances.
 
-## Combien de JavaScript utilisons-nous&nbsp;?
+## Combien de JavaScript utilisons-nous&nbsp;? {combien-de-javascript-utilisons-nous}
 
 JavaScript est la ressource la plus consommatrice que nous envoyons aux navigateurs&nbsp;: il doit être téléchargé, analysé, compilé et enfin exécuté. Bien que les navigateurs aient considérablement réduit le temps nécessaire pour analyser et compiler les scripts, [le téléchargement et l’exécution sont devenus les étapes les plus coûteuses](https://v8.dev/blog/cost-of-javascript-2019) lorsque JavaScript est traité par une page web.
 
@@ -362,7 +362,7 @@ Lorsqu’ils sont utilisés ensemble, les navigateurs qui prennent en charge les
 
 De même, très peu de sites (0,50&nbsp;%-0,80&nbsp;%) utilisent l’attribut `nomodule` pour leurs scripts.
 
-## Preload et prefetch
+## <span lang="en">Preload</span> et <span lang="en">prefetch</span> {preload-et-prefetch}
 
 [Preload](https://developer.mozilla.org/fr/docs/Web/HTML/Pr%C3%A9charger_du_contenu) et [prefetch](https://developer.mozilla.org/fr/docs/Web/HTTP/FAQ_sur_le_pr%C3%A9chargement_des_liens) sont des [Indices de Ressources](./resource-hints) qui permettent d’aider le navigateur à déterminer quelles ressources doivent être téléchargées.
 
@@ -420,7 +420,7 @@ Atomics (0,38&nbsp;%) et SharedArrayBuffer (0,20&nbsp;%) sont à peine visibles 
 
 Il est important de noter que les chiffres indiqués ici sont des approximations et qu’ils ne s’appuient pas sur [UseCounter](https://chromium.googlesource.com/chromium/src.git/+/master/docs/use_counter_wiki.md) pour mesurer l’utilisation des fonctionnalités.
 
-## Cartographies de code source (source maps)
+## Cartographies de code source (<i lang="en">source maps</i>) {cartographies-de-code-source-source-maps}
 
 Dans de nombreux moteurs de compilation, les fichiers JavaScript subissent une minification afin de minimiser leur taille et une transpilation pour les nouvelles fonctionnalités du langage qui ne sont pas encore prises en charge par de nombreux navigateurs. Par ailleurs, les surensembles de langage comme [TypeScript](https://www.typescriptlang.org/) se compilent en un résultat qui peut être sensiblement différent du code source original. Pour toutes ces raisons, le code final servi au navigateur peut être illisible et difficile à déchiffrer.
 

@@ -1,6 +1,6 @@
 {% extends "base/2019/base_chapter.html" %}
 
-{% block title %}{{ metadata.get('title') }} | 2019 | The Web Almanac by HTTP Archive{% endblock %}
+{% block title %}{{ metadata.get('title') }} | {{ year }} | The Web Almanac by HTTP Archive{% endblock %}
 
 {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac probing into the use of ' + metadata.get('description',metadata.get('title')) + ' on the web.') }}{% endblock %}
 
@@ -10,6 +10,7 @@
 
 {% block prev_next_title %}Previous and next chapter navigation{% endblock %}
 
+{% block explore_the_results %}Explore the results{% endblock %}
 {% block discuss_this_chapter %}Discuss this chapter{% endblock %}
 {% block comment %}comment{% endblock %}
 {% block comments %}comments{% endblock %}

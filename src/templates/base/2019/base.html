@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block styles %}
-  <link rel="stylesheet" href="/static/css/2019.css?v=20200916144232">
+  <link rel="stylesheet" href="/static/css/2019.css?v=20201115165704">
 {% endblock %}
 
 {% block page_url %}https://almanac.httparchive.org{{ url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}{% endblock %}
@@ -99,10 +99,188 @@
 {% block contributors %}{{ config.contributors.keys() | length }}{% endblock %}
 
 {% block non_chapter_nav_links %}
-<li><a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a></li>
 <li><a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a></li>
 <li><a href="{{ url_for('methodology', year=year, lang=lang) }}">{{ self.methodology_title() }}</a></li>
 {% endblock %}
+
+{% macro nav_table_of_contents(switcher_name) %}
+  {% if switcher_name == "mobile" or switcher_name == "mobile-footer" %}
+    {{ native_table_of_contents_dropdown(switcher_name) }}
+  {% else %}
+    {{ styled_table_of_contents_dropdown(switcher_name) }}
+  {% endif %}
+{% endmacro %}
+
+{% macro native_table_of_contents_dropdown(switcher_name) %}
+{% set current_title = metadata.get('title') if metadata else None %}
+<a class="js-hide" href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a>
+<div class="table-of-contents-switcher js-enable hidden" disabled>
+  <label for="table-of-contents-switcher-{{switcher_name}}" class="visually-hidden">
+    {{ self.table_of_contents_switcher() }}
+  </label>
+  <select id="table-of-contents-switcher-{{switcher_name}}">
+    {% if request.path.endswith("table-of-contents") %}
+      <option selected disabled value="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</option>
+      <option disabled value="{{ url_for('table_of_contents', year=year, lang=lang) }}#foreword">{{ self.foreword_title() }}</option>
+    {% else %}
+      <option value="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</option>
+      <option value="{{ url_for('table_of_contents', year=year, lang=lang) }}#foreword">{{ self.foreword_title() }}</option>
+    {% endif %}
+    {% for part_config in config.outline %}
+    {% for chapter_config in part_config.chapters %}
+      {% set title = localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title %}
+      {% if chapter_config.todo %}
+        <option disabled>
+          {{ self.chapter() }} {{ chapter_config.chapter }}: {{title}}
+        </option>
+      {% else %}
+        {% if chapter_lang_exists(lang, year, chapter_config.slug) %}
+          {% if current_title == title %}
+            <option disabled selected value="{{ url_for('chapter', year=year, lang=lang, chapter=chapter_config.slug) }}">
+              {{ self.chapter() }} {{ chapter_config.chapter }}: {{title}}
+            </option>
+          {% else %}
+            <option value="{{ url_for('chapter', year=year, lang=lang, chapter=chapter_config.slug) }}">
+              {{ self.chapter() }} {{ chapter_config.chapter }}: {{title}}
+            </option>
+          {% endif %}
+        {% else %}
+        {% if current_title == title %}
+          <option disabled selected value="{{ url_for('chapter', year=year, lang='en', chapter=chapter_config.slug) }}">
+            {{ self.chapter() }} {{ chapter_config.chapter }}: {{title}}
+          </option>
+        {% else %}
+          <option value="{{ url_for('chapter', year=year, lang='en', chapter=chapter_config.slug) }}">
+            {{ self.chapter() }} {{ chapter_config.chapter }}: {{title}}
+          </option>
+        {% endif %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    {% endfor %}
+
+    {% if request.path.endswith("methodology") %}
+    <option selected disabled value="{{ url_for('methodology', year=year, lang=lang) }}">
+      {{ self.methodology_title() }}
+    </option>
+    {% else %}
+    <option value="{{ url_for('methodology', year=year, lang=lang) }}">
+      {{ self.methodology_title() }}
+    </option>
+    {% endif %}
+    {% if request.path.endswith("contributors") %}
+    <option selected disabled value="{{ url_for('contributors', year=year, lang=lang) }}">
+      {{ self.contributors_title() }}
+    </option>
+    {% else %}
+    <option value="{{ url_for('contributors', year=year, lang=lang) }}">
+      {{ self.contributors_title() }}
+    </option>
+    {% endif %}
+
+    {% if ebook_size_in_mb and ebook_size_in_mb > 0 %}
+    <option value="/static/pdfs/web_almanac_{{ year }}_{{ lang }}.pdf">
+      {{ self.ebook_download_short() }}
+    </option>
+    {% endif %}
+  </select>
+</div>
+{% endmacro %}
+
+{% macro styled_table_of_contents_dropdown(switcher_name) %}
+{% set current_title = metadata.get('title') if metadata else None %}
+<a class="nav-dropdown-btn js-hide" href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a>
+<div class="nav-dropdown {{switcher_name}} table-of-contents js-enable hidden" disabled>
+  <button class="nav-dropdown-btn" aria-expanded="false" aria-label="{{ self.table_of_contents_title() }}" >
+    {{ self.table_of_contents_title() }}
+  </button>
+  <ul class="nav-dropdown-list hidden {{switcher_name}}-list">
+    
+    {% if request.path.endswith('table-of-contents') %}
+    <li class="nav-dropdown-list-part foreword nav-dropdown-list-current">
+      <span>{{ self.foreword_title() }}</span>
+    </li>
+    {% else %}
+    <li class="nav-dropdown-list-part foreword">
+      <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.foreword_title() }}</a>
+    </li>
+    {% endif %}
+
+    {% for part_config in config.outline %}
+    <li class="nav-dropdown-list-part">
+      <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}#part-{{ part_config.part_number }}">{{ self.part() }} {{ localizedPartTitles[part_config.part] if localizedPartTitles[part_config.part]|length else chapter_config.title }}</a>
+    </li>
+    {% for chapter_config in part_config.chapters %}
+    {% set title = localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title %}
+    {% if current_title == title %}
+    <li class="nav-dropdown-list-chapter nav-dropdown-list-current">
+      {% if chapter_config.todo %}
+      <span class="nav-dropdown-list-todo">{{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }}</span>
+      {% else %}
+          {% if chapter_lang_exists(lang, year, chapter_config.slug) %}
+          <span>
+            {{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }}
+          </span>
+          {% else %}
+          <span>
+            {{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }} <span class="not-translated">({{ self.translation_not_available() }})</span>
+          </span>
+          {% endif %}
+      {% endif %}
+    </li>
+    {% else %}
+    <li class="nav-dropdown-list-chapter">
+      {% if chapter_config.todo %}
+      <span class="nav-dropdown-list-todo">{{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }}</span>
+      {% else %}
+        {% if chapter_lang_exists(lang, year, chapter_config.slug) %}
+        <a href="{{ url_for('chapter', year=year, lang=lang, chapter=chapter_config.slug) }}">
+          {{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }}
+        </a>
+        {% else %}
+        <a href="{{ url_for('chapter', year=year, lang='en', chapter=chapter_config.slug) }}">
+          {{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }} <span class="not-translated">({{ self.translation_not_available() }})</span>
+        </a>
+        {% endif %}
+      {% endif %}
+    </li>
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+
+    <li class="nav-dropdown-list-part">
+      <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}#appendices">{{ self.appendices() }}</a>
+    </li>
+    {% if request.path.endswith("methodology") %}
+    <li class="nav-dropdown-list-chapter nav-dropdown-list-current">
+      <span>{{ self.methodology_title() }}</span>
+    </li>
+    {% else %}
+    <li class="nav-dropdown-list-chapter">
+      <a href="{{ url_for('methodology', year=year, lang=lang) }}">{{ self.methodology_title() }}</a>
+    </li>
+    {% endif %}
+    {% if request.path.endswith("contributors") %}
+    <li class="nav-dropdown-list-chapter nav-dropdown-list-current">
+      <span>{{ self.contributors_title() }}</span>
+    </li>
+    {% else %}
+    <li class="nav-dropdown-list-chapter">
+      <a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a>
+    </li>
+    {% endif %}
+
+    {% if ebook_size_in_mb and ebook_size_in_mb > 0 %}
+    <li class="nav-dropdown-list-part">
+      <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}#ebook">{{ self.ebook_title() }}</a>
+    </li>
+    <li class="nav-dropdown-list-chapter ebook">
+      <a href="/static/pdfs/web_almanac_{{ year }}_{{ lang }}.pdf">{{ self.ebook_download_short() }}</a>
+    </li>
+    {% endif %}
+  </ul>
+</div>
+{% endmacro %}
 
 {% block content%}
   <div id="skiptocontent"><a href="#maincontent">{{ self.skip_navigation() }}</a></div>
@@ -117,6 +295,9 @@
           <ul>
             {{ self.non_chapter_nav_links() }}
             <li>
+              {{ nav_table_of_contents('header') }}
+            </li>
+            <li>
               {{ year_switcher('header') }}
             </li>
             <li>
@@ -124,14 +305,22 @@
             </li>
           </ul>
         </nav>
-        <nav aria-label="{{ self.menu_title() }}" id="menu" aria-labelledby="menu-btn">
-          <button type="button" class="menu-btn" id="menu-btn" aria-label="{{ self.open_the_menu() }}" aria-expanded="false" data-open-text="{{ self.open_the_menu() }}" data-close-text="{{ self.close_the_menu() }}">
+        <nav id="menu" aria-labelledby="menu-btn">
+          <a href="#footer" class="menu-btn js-hide" aria-label="{{ self.menu_title() }}">
+            <span class="menu-btn__bar"></span>
+            <span class="menu-btn__bar"></span>
+            <span class="menu-btn__bar"></span>
+          </a>
+          <button type="button" class="menu-btn js-enable hidden" disabled id="menu-btn" aria-label="{{ self.open_the_menu() }}" aria-expanded="false" data-open-text="{{ self.open_the_menu() }}" data-close-text="{{ self.close_the_menu() }}">
             <span class="menu-btn__bar"></span>
             <span class="menu-btn__bar"></span>
             <span class="menu-btn__bar"></span>
           </button>
           <ul class="menu">
             {{ self.non_chapter_nav_links() }}
+            <li>
+              {{ nav_table_of_contents('mobile') }}
+            </li>
             <li>
               {{ year_switcher('mobile') }}
             </li>
@@ -196,6 +385,9 @@
           <ul>
             {{ self.non_chapter_nav_links() }}
             <li>
+              {{ nav_table_of_contents('footer') }}
+            </li>
+            <li>
               {{ year_switcher('footer') }}
             </li>
             <li>
@@ -206,6 +398,9 @@
         <nav id="mobile-footer-nav-items" aria-label="{{ self.footer_title() }}" class="nav-items">
           <ul>
             {{ self.non_chapter_nav_links() }}
+            <li>
+              {{ nav_table_of_contents('mobile-footer') }}
+            </li>
             <li>
               {{ year_switcher('mobile-footer') }}
             </li>
@@ -276,8 +471,19 @@
   {% block scripts %}
     <script nonce="{{ csp_nonce() }}">
       (function() {
+        document.querySelectorAll('.js-hide').forEach(element => {
+          // Don't just hide it - delete it completely to avoid any specifity issues
+          element.parentNode.removeChild(element);
+        });
+        document.querySelectorAll('.js-enable').forEach(element => {
+          element.classList.remove('js-enable');
+          element.classList.remove('hidden');
+          element.disabled = false;
+          element.hidden = false;
+        });
+
         // Language and Year switching
-        var languageYearSwitchers = document.querySelectorAll('.language-switcher select, .year-switcher select');
+        var languageYearSwitchers = document.querySelectorAll('.language-switcher select, .year-switcher select, .table-of-contents-switcher select');
         for (var i = 0; i < languageYearSwitchers.length; i++) {
           languageYearSwitchers[i].addEventListener('change', function(e) {
             //Reset the selector back in case user uses Back button
@@ -329,7 +535,6 @@
             var btnBoundingRect = dropdownBtn.getBoundingClientRect();
             var listBoundingRect = list.getBoundingClientRect();
             if (listBoundingRect.width <= btnBoundingRect.width) {
-              list.style.minWidth = btnBoundingRect.width + "px";
               list.classList.add("align-center");
             } else if (btnBoundingRect.left + listBoundingRect.width > window.innerWidth) {
               list.classList.add("align-right");
@@ -406,7 +611,6 @@
             }
           }
         });
-
       })();
     </script>
   {% endblock %}
@@ -421,7 +625,7 @@
 {% endmacro %}
 
 {% macro native_lang_dropdown(switcher_name) %}
-  <div class="language-switcher">
+  <div class="language-switcher js-show">
     <label for="language-switcher-{{switcher_name}}" class="visually-hidden">{{ self.language_switcher() }}</label>
     <select id="language-switcher-{{switcher_name}}">
       {% for l in supported_languages | sort(attribute='_local_name') %}
@@ -447,7 +651,7 @@
 
 {% macro styled_lang_dropdown(switcher_name) %}
   <div class="nav-dropdown {{switcher_name}}">
-    <button class="nav-dropdown-btn" aria-expanded="false" aria-label="{{ self.language_switcher() }}" >{{ language }}</button>
+    <button class="nav-dropdown-btn js-enable" disabled aria-expanded="false" aria-label="{{ self.language_switcher() }}" >{{ language }}</button>
     <ul class="nav-dropdown-list hidden {{switcher_name}}-list">
       {% for l in supported_languages | sort(attribute='_local_name') %}
         {% if l != language %}
@@ -554,14 +758,14 @@
   <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="{{ anchor }}-description" data-show-text="{{ show_description(metadata,id) }}" data-hide-text="{{ hide_description(metadata,id) }}">{{ show_description(metadata,id) }}</button>
   <div id="{{ anchor }}-description" class="visually-hidden">{{ description|safe }}</div>
   {%- elif content != "" %}
-  <div class="{{ classes }}">{{ content }}</div>
+  <div class="{{ classes }}">{{ content|safe }}</div>
   {%- endif %}
   <figcaption id="{{ anchor }}-caption">{{ figure_link(metadata, id, caption, ebook=ebook) }}</figcaption>
 </figure>
 {%- endmacro %}
 
 {% macro native_year_dropdown(switcher_name)%}
-  <div class="year-switcher">
+  <div class="year-switcher js-show">
     <label for="year-switcher-{{switcher_name}}" class="visually-hidden">{{ self.year_switcher() }}</label>
     <select id="year-switcher-{{switcher_name}}">
       {% for y in supported_years | sort %}
@@ -594,7 +798,7 @@
 
 {% macro styled_year_dropdown(switcher_name)%}
   <div class="nav-dropdown {{switcher_name}}">
-    <button class="nav-dropdown-btn" aria-expanded="false" aria-label="{{ self.year_switcher() }}">{{ year }}</button>
+    <button class="nav-dropdown-btn js-enable" disabled aria-expanded="false" aria-label="{{ self.year_switcher() }}">{{ year }}</button>
     <ul class="nav-dropdown-list hidden {{switcher_name}}-list">
       {% for y in supported_years | sort %}
         {% if y != year %}

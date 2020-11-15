@@ -1,6 +1,6 @@
 {% extends "base/2019/base_chapter.html" %}
 
-{% block title %}{{ metadata.get('title') }} | 2019 | Le Web Almanac par HTTP Archive{% endblock %}
+{% block title %}{{ metadata.get('title') }} | {{ year }} | Le Web Almanac par HTTP Archive{% endblock %}
 
 {% block description %}{{ metadata.get('description','Chapitre' + metadata.get('title') + ' du Web Almanac'+ year + " explorant l’utilisation des " + metadata.get('description',metadata.get('title')) + ' sur le web.') }}{% endblock %}
 
@@ -10,6 +10,7 @@
 
 {% block prev_next_title %}Navigation vers les chapitres précédent et suivant{% endblock %}
 
+{% block explore_the_results %}Explorez les résultats{% endblock %}
 {% block discuss_this_chapter %}Discuter de ce chapitre{% endblock %}
 {% block comment %}commentaire{% endblock %}
 {% block comments %}commentaires{% endblock %}

@@ -504,6 +504,7 @@ p {
     justify-items: center;
     justify-content: center;
     overflow: hidden;
+    min-height: 1100px;
   }
 
   .intro {

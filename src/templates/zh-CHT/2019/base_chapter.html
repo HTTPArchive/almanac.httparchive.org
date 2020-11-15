@@ -1,6 +1,6 @@
 {% extends "base/2019/base_chapter.html" %}
 
-{% block title %}{{ metadata.get('title') }} | 2019 | Web Almanac 精粹自 HTTP Archive{% endblock %}
+{% block title %}{{ metadata.get('title') }} | {{ year }} | Web Almanac 精粹自 HTTP Archive{% endblock %}
 
 {% block description %}{{ metadata.get('description',metadata.get('title') + ' 章節 ' + year + ' Web Almanac 探索使用狀況 ' + metadata.get('description',metadata.get('title')) + ' 在網路中。') }}{% endblock %}
 
@@ -10,6 +10,7 @@
 
 {% block prev_next_title %}上章節和下章節導航{% endblock %}
 
+{% block explore_the_results %}探索結果{% endblock %}
 {% block discuss_this_chapter %}討論本章節{% endblock %}
 {% block comment %}評論{% endblock %}
 {% block comments %}評論{% endblock %}
