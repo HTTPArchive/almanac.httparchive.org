@@ -1,6 +1,5 @@
 const fs = require('fs-extra');
 const ejs = require('ejs');
-const { convert_file_name } = require('./shared');
 
 const min_publish_date = '2019-11-11';
 const sitemap_template = `templates/sitemap.ejs.xml`;
@@ -115,6 +114,24 @@ const set_min_date = (date) => {
   } else {
     return new Date().toISOString().substr(0, 10);
   }
+};
+
+const convert_file_name = (filename) => {
+  if ( filename.substr(filename.length - 10) == "index.html" ) {
+    return filename.substr(0, filename.length - 10);
+  };
+  if ( filename.endsWith(".html")) {
+    if ( filename.endsWith("accessibility_statement.html")) {
+      // Strip year from Accessibility Statement
+      return filename.substr(0, filename.length - 5).replace(/_/g,'-').replace(/\/[0-9]{4}/,'');
+    } else {
+      return filename.substr(0, filename.length - 5).replace(/_/g,'-');
+    }
+  };
+  if ( filename.endsWith(".md")) {
+    return filename.substr(0, filename.length - 3).replace(/^content\//,'');
+  }
+  return filename.replace(/_/g,'-');
 };
 
 module.exports = {

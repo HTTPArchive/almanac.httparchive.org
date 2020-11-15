@@ -54,7 +54,7 @@ const get_yearly_configs = async () => {
                   ? /config\/([0-9]*).json/ 
                   : /config\\([0-9]*).json/;
     const [path,year] = config_file.match(re);
-
+    
     configs[year] = JSON.parse(await fs.readFile(`config/${year}.json`, 'utf8'));
   }
   return configs;
@@ -81,24 +81,6 @@ const parse_array = (array_as_string) => {
     .map((value) => value.trim()));
 };
 
-const convert_file_name = (filename) => {
-  if ( filename.substr(filename.length - 10) == "index.html" ) {
-    return filename.substr(0, filename.length - 10);
-  };
-  if ( filename.endsWith(".html")) {
-    if ( filename.endsWith("accessibility_statement.html")) {
-      // Strip year from Accessibility Statement
-      return filename.substr(0, filename.length - 5).replace(/_/g,'-').replace(/\/[0-9]{4}/,'');
-    } else {
-      return filename.substr(0, filename.length - 5).replace(/_/g,'-');
-    }
-  };
-  if ( filename.endsWith(".md")) {
-    return filename.substr(0, filename.length - 3).replace(/^content\//,'');
-  }
-  return filename.replace(/_/g,'-');
-};
-
 module.exports = {
   find_markdown_files,
   find_template_files,
@@ -106,6 +88,5 @@ module.exports = {
   find_config_files,
   get_yearly_configs,
   size_of,
-  parse_array,
-  convert_file_name
+  parse_array
 };
