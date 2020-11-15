@@ -45,8 +45,8 @@ def render_template(template, *args, **kwargs):
         if os.path.isfile(year_lang_template):
             template_supported_years.append(y)
 
-    date_published = get_file_date_info(template, "published_date")
-    date_modified = get_file_date_info(template, "last_updated_date")
+    date_published = get_file_date_info(template, "date_published")
+    date_modified = get_file_date_info(template, "date_modified")
     ebook_size_in_mb = get_ebook_size_in_mb(lang, year)
 
     kwargs.update(year=year, lang=lang, language=language, supported_languages=template_supported_languages,

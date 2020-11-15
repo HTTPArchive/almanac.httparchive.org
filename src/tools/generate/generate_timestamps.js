@@ -32,7 +32,7 @@ const check_and_update_date = (file, hash, size) => {
     if (file_dates[file].hash !== hash) {
       console.log("Updating existing date for: " + file + " to " + now);
       file_dates[file].hash = hash;
-      file_dates[file].last_updated_date = now;
+      file_dates[file].date_modified = now;
       if (size) file_dates[file].size = size;
       return;
     }
@@ -44,15 +44,15 @@ const check_and_update_date = (file, hash, size) => {
   console.log("Adding new date for: " + file + " to " + now);
   if (size) {
     file_dates[file] = {
-      "published_date": now,
-      "last_updated_date": now,
+      "date_published": now,
+      "date_modified": now,
       "hash": hash,
       "size": size
     };
   } else {
     file_dates[file] = {
       "published_date": now,
-      "last_updated_date": now,
+      "date_modified": now,
       "hash": hash
     };
   }
@@ -81,7 +81,6 @@ const get_asset_file_dates = async () => {
     let size = null;
     if (file.endsWith('.pdf')) {
       size = Math.round(fs.statSync(file).size / (1024*1024),0);
-      console.log('Got a file size', size);
     }
     check_and_update_date('/' + file, hash, size);
 
