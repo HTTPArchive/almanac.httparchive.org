@@ -31,7 +31,7 @@ Lorsque vous décrivez CSS à celles et ceux qui ne sont pas familiers avec les 
 
 Dans ce chapitre, nous allons inspecter, compter et extraire des données sur la façon dont CSS est utilisé sur le Web. Notre objectif est de comprendre de manière globale quelles fonctionnalités sont utilisées, comment elles sont utilisées et comment CSS se développe et est adopté.
 
-Prêt à fouiller dans des données fascinantes&nbsp;?! Beaucoup des nombres suivants peuvent être petits, mais ne commettez pas l’erreur de les voir comme insignifiants&nbsp;! De nombreuses années peuvent être nécessaires avant que de nouvelles choses n’envahissent le Web.
+Prêt à fouiller dans des données fascinantes&nbsp;?! Beaucoup des nombres suivants peuvent être petits, mais ne commettez pas l’erreur de les voir comme insignifiants&nbsp;! De nombreuses années peuvent être nécessaires avant que de nouvelles choses s'imposent le Web.
 
 ## Couleur
 
