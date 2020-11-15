@@ -129,7 +129,7 @@ Nous avons eu l’impression que c’était une information passionnante, car el
 
 ## Sélecteurs
 
-### Sélecteurs via ID vs class 
+### Sélecteurs via ID vs classes
 
 CSS a plusieurs façons pour cibler des éléments dans la page, alors opposons donc les ID et les classes pour voir ce qui est le plus répandu&nbsp;! Les résultats ne devraient pas être trop surprenants&nbsp;: les classes sont plus populaires&nbsp;!
 
