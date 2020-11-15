@@ -24,6 +24,7 @@ class _Language(object):
     def lang_code(self):
         return self._lang_code
 
+
 # Allow maping of one language to another for when country agnostic lookip
 # will not work (e.g. Chinese)
 LANGUAGE_MAPPING = {
