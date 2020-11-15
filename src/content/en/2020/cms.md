@@ -207,9 +207,6 @@ This is different to First Contentful Pain (FCP), which measures from page load 
 
 A “good” LCP is regarded as under 2.5 seconds. The average website on one of the top five CMSs does not have a good LCP. Only Drupal on desktop scores over 50% here. We see major discrepancies between desktop and mobile scores: WordPress is fairly even at 33% on desktop and 25% on mobile, but Squarespace scores 37% on desktop and only 12% on mobile.
 
-IMAGE
-
-
 {{ figure_markup(
   image="cms-real-user-largest-contentful-paint-experiences.png",
   caption="Real-user Largest Contentful Paint experiences.",
@@ -247,9 +244,9 @@ Cumulative Layout Shift (CLS) measures the instability of content on a web page 
 A score of 0.1 or below is good, over 0.25 is poor, and anything in between needs improvement.
 
 {{ figure_markup(
-  image="cms-real-user-cummulative-layout-shift-experiences.png",
-  caption="Real-user Cummulative Layout Shift experiences.",
-  description='Bar chart showing the top 5 CMSs and whether they have a "good" First Input Delay experience. Wordpress has a 47% of desktop sites with a "good experience" and 57% of mobile sites. Drupal has 58% for desktop and 70% for mobile, Joomla has 51% for desktop and 63% for mobile, Squarespace has 35% for desktop and 44% for mobile, and Wix has 58% for desktop and 59% for mobile.',
+  image="cms-real-user-cumulative-layout-shift-experiences.png",
+  caption="Real-user Cumulative Layout Shift experiences.",
+  description='Bar chart showing the top 5 CMSs and whether they have a "good" Cumulative Layout Shift experience. Wordpress has a 47% of desktop sites with a "good experience" and 57% of mobile sites. Drupal has 58% for desktop and 70% for mobile, Joomla has 51% for desktop and 63% for mobile, Squarespace has 35% for desktop and 44% for mobile, and Wix has 58% for desktop and 59% for mobile.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkUxfuK-FCn3_IYDJiEsKDmdmyKb0TSEhG8dFc0XBIXej1NO2uUOmd-9NCbWuh-MZ3xzMhK_kNT-4u/pubchart?oid=1265001868&format=interactive",
   sheets_gid="465267881",
   sql_file="core_web_vitals_distribution.sql"
