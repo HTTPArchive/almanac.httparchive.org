@@ -375,7 +375,7 @@ CSS a ce formidable pouvoir d’interpolation qui peut être simplement utilisé
   )
 }}
 
-C’est plutôt bien&nbsp;! Nous avons vu `animate.css` comme une bibliothèque populaire à inclure, qui apporte une tonne d’animations de transition, mais il est toujours agréable de voir que les gens considèrent les effets de transition pour leurs interfaces utilisateur.
+C’est plutôt bien&nbsp;! Nous avons vu `animate.css` comme une bibliothèque populaire à inclure, qui apporte une tonne d’animations de transition, mais il est toujours agréable de voir que les gens considèrent les effets de transition pour leurs interfaces.
 
 ### Animations d’images clés
 
