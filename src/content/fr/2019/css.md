@@ -678,7 +678,7 @@ Il est commun, populaire, pratique et puissant d’utiliser une bibliothèque CS
         <td class="numeric">0.0&nbsp;%</td>
       </tr>
       <tr>
-        <td>tailwindcss</td>
+        <td lang="en">tailwindcss</td>
         <td class="numeric">0.0&nbsp;%</td>
         <td class="numeric">0.0&nbsp;%</td>
       </tr>
