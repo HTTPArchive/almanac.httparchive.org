@@ -658,7 +658,7 @@ Il est commun, populaire, pratique et puissant d’utiliser une bibliothèque CS
         <td class="numeric">0.1&nbsp;%</td>
       </tr>
       <tr>
-        <td>Angular Material</td>
+        <td lang="en">Angular Material</td>
         <td class="numeric">0.1&nbsp;%</td>
         <td class="numeric">0.1&nbsp;%</td>
       </tr>
