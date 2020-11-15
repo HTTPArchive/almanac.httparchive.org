@@ -1,5 +1,5 @@
 from flask import request, redirect, url_for, render_template as flask_render_template
-from .config import STATIC_DIR, TEMPLATES_DIR, get_config, get_timestamps_config, \
+from .config import TEMPLATES_DIR, get_config, get_timestamps_config, \
                     DEFAULT_YEAR, SUPPORTED_LANGUAGES, SUPPORTED_YEARS
 from .language import get_language, DEFAULT_LANGUAGE
 from werkzeug.routing import BaseConverter
