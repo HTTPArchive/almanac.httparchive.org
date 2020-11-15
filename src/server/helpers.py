@@ -214,11 +214,11 @@ def get_file_date_info(file, type):
 
 
 def get_versioned_filename(path):
-  version = get_file_date_info(path, 'hash')
-  if version:
-      return '%s?v=%s' % (path, version)
-  else:
-      return '%s' % path
+    version = get_file_date_info(path, 'hash')
+    if version:
+        return '%s?v=%s' % (path, version)
+    else:
+        return '%s' % path
 
 
 class RegexConverter(BaseConverter):
