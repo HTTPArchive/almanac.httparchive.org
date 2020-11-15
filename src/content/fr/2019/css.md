@@ -653,7 +653,7 @@ Il est commun, populaire, pratique et puissant d’utiliser une bibliothèque CS
         <td class="numeric">0.2&nbsp;%</td>
       </tr>
       <tr>
-        <td>Pure CSS</td>
+        <td lang="en">Pure CSS</td>
         <td class="numeric">0.1&nbsp;%</td>
         <td class="numeric">0.1&nbsp;%</td>
       </tr>
