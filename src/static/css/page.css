@@ -196,6 +196,11 @@
   font-weight: normal;
 }
 
+.byline .author,
+.byline .reviewer {
+  white-space: nowrap;
+}
+
 .chapter_links .btn {
   display: inline-block;
   margin: 10px;
