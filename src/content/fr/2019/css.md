@@ -296,7 +296,7 @@ C’est beaucoup, semble-t-il&nbsp;! La page de bureau médiane a 96 valeurs de 
 )
 }}
 
-Nous estimons que l’hégémonie de `margin-left` et `padding-top` sera de durée limitée, bientôt complétée par leur syntaxe de propriété logique. Bien que nous soyons optimistes, l’utilisation actuelle est assez faible à 0,67&nbsp;% d’utilisation sur les pages de bureau. Pour nous, cela ressemble à un changement d’habitude que nous devrons développer en tant qu’industrie, tout en formant, espérons-le, de nouveaux développeurs à utiliser la nouvelle syntaxe.
+Nous estimons que l’hégémonie de `margin-left` et `padding-top` sera de durée limitée, bientôt complétée par leur syntaxe de propriété logique. Bien que nous soyons optimistes, l’utilisation actuelle est assez faible à 0,67&nbsp;% d’utilisation sur les pages de bureau. Pour nous, cela ressemble à un changement d’habitude que nous devrons développer en tant qu’industrie, tout en formant, espérons-le, de nouveaux développeurs et développeuses à utiliser la nouvelle syntaxe.
 
 ### z-index
 
