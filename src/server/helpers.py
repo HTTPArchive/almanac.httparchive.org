@@ -212,7 +212,7 @@ def get_versioned_filename(path):
 
 def get_ebook_size_in_mb(lang, year):
     ebook_file = '/static/pdfs/web_almanac_%s_%s.pdf' % (year, lang)
-    return int(get_file_date_info(ebook_file,'size') or 0)
+    return int(get_file_date_info(ebook_file, 'size') or 0)
 
 
 class RegexConverter(BaseConverter):
