@@ -697,7 +697,7 @@ Il est commun, populaire, pratique et puissant d’utiliser une bibliothèque CS
   <figcaption>{{ figure_link(caption="Pourcentage de pages qui incluent une bibliothèque CSS donnée.") }}</figcaption>
 </figure>
 
-Ce graphique suggère que [Bootstrap](https://getbootstrap.com/) est une bibliothèque précieuse à connaître pour vous aider à trouver un emploi. Regardez toutes les opportunités qui vous sont offertes&nbsp;! Il convient également de noter qu’il ne s’agit que d’un signal positif&nbsp;: les calculs ne totalisent pas 100&nbsp;% car tous les sites n’utilisent pas de bibliothèque CSS. Un peu plus de la moitié de tous les sites _n’utilisent pas_ de bibliothèque CSS connue. Très intéressant, non&nbsp;?!
+Ce graphique suggère que [<span lang="en">Bootstrap</span>](https://getbootstrap.com/) est une bibliothèque précieuse à connaître pour vous aider à trouver un emploi. Regardez toutes les opportunités qui vous sont offertes&nbsp;! Il convient également de noter qu’il ne s’agit que d’un signal positif&nbsp;: les calculs ne totalisent pas 100&nbsp;% car tous les sites n’utilisent pas de bibliothèque CSS. Un peu plus de la moitié de tous les sites _n’utilisent pas_ de bibliothèque CSS connue. Très intéressant, non&nbsp;?!
 
 ### Resets CSS
 
