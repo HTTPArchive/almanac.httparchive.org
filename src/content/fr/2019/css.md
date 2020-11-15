@@ -287,7 +287,7 @@ Une marge est l’espace en dehors des éléments, comme l’espace que vous exi
 
 C’est beaucoup, semble-t-il&nbsp;! La page de bureau médiane a 96 valeurs de marge distinctes et 104 sur mobile. Cela crée de nombreux cas d’espacements uniques dans votre conception. Nous sommes curieux de savoir&nbsp;: combien de marges avez-vous sur votre site&nbsp;? Comment pouvons-nous rendre tous ces espacements plus gérables&nbsp;?
 
-### Propriétés logique (Logical properties)
+### Propriétés logiques (<i lang="en">Logical properties</i>) {proprietes-logiques-logical-properties}
 
 {{ figure_markup(
   caption="Pourcentage de pages de bureau et mobiles qui incluent des propriétés logiques.",
