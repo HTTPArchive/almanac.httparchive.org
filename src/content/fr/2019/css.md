@@ -663,7 +663,7 @@ Il est commun, populaire, pratique et puissant d’utiliser une bibliothèque CS
         <td class="numeric">0.1&nbsp;%</td>
       </tr>
       <tr>
-        <td>Semantic-ui</td>
+        <td lang="en">Semantic-ui</td>
         <td class="numeric">0.1&nbsp;%</td>
         <td class="numeric">0.1&nbsp;%</td>
       </tr>
