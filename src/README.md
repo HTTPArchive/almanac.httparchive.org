@@ -39,7 +39,7 @@ env\Scripts\activate.bat
 3. Install generate and run the website:
 
 ```
-npm run install
+npm install
 npm run start
 ```
 
@@ -93,6 +93,31 @@ There is also a file watcher, which monitors the `content` directory and automat
 
 ```
 npm run watch
+```
+
+
+## Linting files
+
+When you push changes to GitHub they will be linted using the GitHub Super-Linter.
+
+It is possible to run the Super-Linter locally if you have Docker installed.
+
+First up pull the Super-Linter Docker image (this takes some time to download but only need to do this once or when you want to upgrade the version of the super-linter):
+
+```
+docker pull github/super-linter:latest
+```
+
+Then to run the linting do this:
+
+```
+npm run lint
+```
+
+This can take a while to run so you can lint just subsets of files or folders:
+
+```
+npm run lint tools/generate templates/base
 ```
 
 
@@ -245,4 +270,18 @@ root@[CID]:/app# exit
 
 ```
 docker image build --build-arg PYVER=3.7 --build-arg NODEVER=14.x --build-arg SKIPGC=false -t webalmanac:custom .
+```
+
+7. If you want to run the GitHub Super-Linter without `npm` being installed you need to call the command directly as given in `package.json`.
+
+This will depend on your operating system but for MacOS/Linux this would be:
+
+```
+docker container run -it --rm -v "$PWD/..":/app -w /app/src --entrypoint=./tools/scripts/run_linter_locally.sh github/super-linter
+```
+
+And for Windows:
+
+```
+docker container run --rm -v %cd%\\..:/app -w /app/src --entrypoint=./tools/scripts/run_linter_locally.sh github/super-linter
 ```

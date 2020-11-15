@@ -143,7 +143,7 @@ OPTIONS (library="gs://httparchive/lib/css-utils.js");
 
 SELECT
   client,
-  IF(REGEXP_CONTAINS(property, r'(?i)^(-webkit-|-o-|-moz-|-ms-)?background(-image)?'), 'bg', 'other') AS property_type,
+  IF(REGEXP_CONTAINS(property, r'(?i)(\b|_)background\b'), 'bg', 'other') AS property_type,
   COUNT(DISTINCT page) AS pages,
   total,
   COUNT(DISTINCT page) / total AS pct

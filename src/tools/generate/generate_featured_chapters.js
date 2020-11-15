@@ -60,7 +60,7 @@ const write_template = async (language, year, featured_quotes) => {
   const path = `templates/${language}/${year}/featured_chapters.html`;
 
   if (fs.existsSync(template)) {
-    let html = await ejs.renderFile(template, { featured_quotes });
+    let html = await ejs.renderFile(template, { featured_quotes, language });
     await fs.outputFile(path, html, 'utf8');
     await size_of(path);
   }
