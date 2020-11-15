@@ -196,10 +196,10 @@ def get_file_date_info(file, type):
     timestamps_config = get_timestamps_config()
     # Default Published and Last Updated to today
     today = datetime.datetime.utcnow().isoformat()
-    if type == 'hash' or type == 'size':
-        return timestamps_config.get(file, {}).get(type)
-    else:
+    if type == 'date_published' or type == 'date_modified':
         return timestamps_config.get(file, {}).get(type, today)
+    else:
+        return timestamps_config.get(file, {}).get(type)
 
 
 def get_versioned_filename(path):
