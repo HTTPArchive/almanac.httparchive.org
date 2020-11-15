@@ -1,6 +1,6 @@
 from flask import redirect, url_for, request, send_from_directory
 from . import app, talisman
-from .helpers import render_template, convert_old_image_path, get_chapter_nextprev, get_ebook_size_in_mb
+from .helpers import render_template, convert_old_image_path, get_chapter_nextprev
 from .validate import validate
 from .config import get_config, DEFAULT_YEAR
 import random
@@ -54,14 +54,11 @@ def methodology(lang, year):
 @app.route('/<lang>/accessibility-statement', strict_slashes=False)
 @validate
 def accessibility_statement(lang):
-    config = get_config(DEFAULT_YEAR)
-    ebook_size_in_mb = get_ebook_size_in_mb(lang, DEFAULT_YEAR)
 
     if request.base_url[-1] == "/":
         return redirect("/%s/accessibility-statement" % (lang)), 301
     else:
-        return render_template('%s/2019/accessibility_statement.html' % (lang),
-                               config=config)
+        return render_template('%s/2019/accessibility_statement.html' % (lang))
 
 
 @app.route('/sitemap.xml')

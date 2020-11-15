@@ -6,7 +6,6 @@ from werkzeug.routing import BaseConverter
 import os.path
 import re
 import datetime
-import logging
 
 
 def render_template(template, *args, **kwargs):
@@ -217,9 +216,9 @@ def get_file_date_info(file, type):
 def get_versioned_filename(path):
   version = get_file_date_info(path, 'hash')
   if version:
-    return '%s?v=%s' % (path, version)
+      return '%s?v=%s' % (path, version)
   else:
-    return '%s' % path
+      return '%s' % path
 
 
 class RegexConverter(BaseConverter):
