@@ -633,7 +633,7 @@ Il est commun, populaire, pratique et puissant d’utiliser une bibliothèque CS
         <td class="numeric">6.4&nbsp;%</td>
       </tr>
       <tr>
-        <td>ZURB Foundation</td>
+        <td lang="en">ZURB Foundation</td>
         <td class="numeric">2.5&nbsp;%</td>
         <td class="numeric">2.6&nbsp;%</td>
       </tr>
