@@ -186,7 +186,7 @@ Avec la montée en puissance des approches CSS comme OOCSS, <i lang="en">Atomic 
 
 ## Disposition
 
-### Flexbox
+### <i lang="en">Flexbox</i> {flexbox}
 
 [Flexbox](https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Flexible_Box_Layout/Concepts_de_base_flexbox) est une disposition qui, une fois appliquée à un conteneur, dirige et aligne ses enfants&nbsp;: c’est-à-dire qu’elle aide à la mise en page d’une manière contraignante. Elle a connu un début assez difficile sur le Web, car sa spécification a subi deux ou trois changements assez drastiques entre 2010 et 2013. Heureusement, elle s’est installée et a été implémentée sur tous les navigateurs en 2014. Compte tenu de cet historique, son taux d’adoption a évolué lentement, mais plusieurs années se sont écoulées depuis&nbsp;! Elle est maintenant très populaire et de nombreux articles à son sujet expliquent comment en tirer parti, mais elle est encore nouvelle comparée à d’autres méthodes de mise en page.
 
