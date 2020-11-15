@@ -275,7 +275,7 @@ C’est amusant, car si vous demandiez à un utilisateur combien de tailles de p
 
 ### Marges
 
-Une marge est l’espace en dehors des éléments, comme l’espace que vous exigez lorsque vous poussez vos bras hors de vous-même. Cela ressemble souvent à l’espacement entre les éléments, mais ce n’est pas limité à cet effet. Dans un site Web ou une application, l’espacement joue un rôle important dans l’expérience utilisateur et la conception. Voyons combien de code d’espacement de marge il y a  dans une feuille de style, d’accord&nbsp;?
+Une marge est l’espace en dehors des éléments, comme l’espace que vous exigez lorsque vous écartez les bras. On pourrait penser que cela ne sert souvent qu'à l’espacement entre les éléments, mais ce n’est pas limité à cet effet. Dans un site Web ou une application, l’espacement joue un rôle important dans l’expérience d'utilisation et la conception. Voyons combien de code d’espacement de marge il y a  dans une feuille de style, d’accord&nbsp;?
 
 {{ figure_markup(
   image="fig18.png",
