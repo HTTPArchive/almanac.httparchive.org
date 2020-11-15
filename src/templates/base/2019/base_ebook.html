@@ -18,8 +18,8 @@
 
 {% block styles %}
 {{ super() }}
-<link rel="stylesheet" href="/static/css/page.css?v={{ get_file_date_info('static/css/print.css', 'hash') }}" />
-<link rel="stylesheet" href="/static/css/ebook.css?v={{ get_file_date_info('static/css/ebook.css', 'hash') }}" />
+<link rel="stylesheet" href="{{ get_versioned_filename('/static/css/page.css') }}" />
+<link rel="stylesheet" href="{{ get_versioned_filename('/static/css/ebook.css') }}" />
 
 <style nonce="{{ csp_nonce() }}">
 /* Add a print query param to format the book for printer (mirror headers and footers) */

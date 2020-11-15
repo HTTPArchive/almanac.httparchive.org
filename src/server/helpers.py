@@ -13,6 +13,7 @@ def render_template(template, *args, **kwargs):
     # If the year has already been set (e.g. for error pages) then use that
     # Otherwise the requested year, otherwise the default year
     year = kwargs.get('year', request.view_args.get('year', DEFAULT_YEAR))
+    config = kwargs.get('config', get_config(year))
 
     # If the lang has already been set (e.g. for error pages) then use that
     # Otherwise the requested lang, otherwise the default lang
@@ -49,12 +50,10 @@ def render_template(template, *args, **kwargs):
     date_modified = get_file_date_info(template, "last_updated_date")
     ebook_size_in_mb = get_ebook_size_in_mb(lang, year)
 
-    logging.exception(template)
-
     kwargs.update(year=year, lang=lang, language=language, supported_languages=template_supported_languages,
                   supported_years=template_supported_years, all_supported_years=SUPPORTED_YEARS,
                   date_published=date_published, date_modified=date_modified, ebook_size_in_mb=ebook_size_in_mb,
-                  get_file_date_info=get_file_date_info)
+                  get_file_date_info=get_file_date_info, config=config)
     return flask_render_template(template, *args, **kwargs)
 
 
@@ -149,8 +148,7 @@ def convert_old_image_path(folder):
 # content to base.html, or duplicate the content, but all will need regexs
 # anyway, so I think this is the cleanest.
 def get_ebook_methodology(lang, year):
-    config = get_config(year)
-    methodology_template = render_template('%s/%s/methodology.html' % (lang, year), config=config)
+    methodology_template = render_template('%s/%s/methodology.html' % (lang, year))
     methodology_maincontent = re.search('<article id="maincontent" class="content">(.+?)</article>',
                                         methodology_template, re.DOTALL | re.MULTILINE)
     if not methodology_maincontent:
@@ -209,8 +207,19 @@ def accentless_sort(value):
 def get_file_date_info(file, type):
     timestamps_config = get_timestamps_config()
     # Default Published and Last Updated to today
-    today = value = datetime.datetime.utcnow().isoformat()
-    return timestamps_config.get(file, {}).get(type, today)
+    today = datetime.datetime.utcnow().isoformat()
+    if type == 'hash':
+        return timestamps_config.get(file, {}).get(type)
+    else:
+        return timestamps_config.get(file, {}).get(type, today)
+
+
+def get_versioned_filename(path):
+  version = get_file_date_info(path, 'hash')
+  if version:
+    return '%s?v=%s' % (path, version)
+  else:
+    return '%s' % path
 
 
 class RegexConverter(BaseConverter):

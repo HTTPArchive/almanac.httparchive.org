@@ -2,7 +2,6 @@ const fs = require('fs-extra');
 const { find_markdown_files } = require('./shared');
 const { find_css_and_js_files } = require('./shared');
 const { get_yearly_configs } = require('./shared');
-const { convert_file_name } = require('./shared');
 const crypto = require('crypto');
 
 const static_pages = [
@@ -25,7 +24,8 @@ let now = "";
 
 const check_and_update_date = (file, hash) => {
 
-  file = convert_file_name(file);
+  //file = convert_file_name(file);
+  file=file.replace(/content\/(.*)\/([0-9]*)\/(.*)\.md$/,"$1/$2/chapter/$3.html");
 
   if (file_dates[file]) {
 
@@ -68,7 +68,7 @@ const get_css_js_dates = async () => {
     // Read the content of the file
     let content = await fs.readFile(file, 'utf-8');
     let hash = crypto.createHash('md5').update(content).digest("hex")
-    check_and_update_date(file, hash);
+    check_and_update_date('/' + file, hash);
 
   }
 };

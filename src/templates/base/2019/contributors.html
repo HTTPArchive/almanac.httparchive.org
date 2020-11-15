@@ -492,5 +492,5 @@
     
   </script>
   <!-- add chapter.js to handle print mode and avoid duplicating code -->
-  <script src="/static/js/chapter.js?v={{ get_file_date_info('static/js/chapter.js', 'hash') }}" defer></script>
+  <script src="{{ get_versioned_filename('/static/js/chapter.js') }}" defer></script>
 {% endblock %}

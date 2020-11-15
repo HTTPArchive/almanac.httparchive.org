@@ -23,7 +23,7 @@
 
 {% block styles %}
   {{ super() }}
-  <link rel="stylesheet" href="/static/css/index.css?v={{ get_file_date_info('static/css/index.css', 'hash') }}">
+  <link rel="stylesheet" href="{{ get_versioned_filename('/static/css/index.css') }}">
 {% endblock %}
 
 {% block container %}

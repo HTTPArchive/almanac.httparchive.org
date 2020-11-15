@@ -26,7 +26,7 @@
 
 {% block styles %}
 {{ super() }}
-<link rel="stylesheet" href="/static/css/page.css?v={{ get_file_date_info('static/css/print.css', 'hash') }}">
+<link rel="stylesheet" href="{{ get_versioned_filename('/static/css/page.css') }}">
 {% endblock %}
 
 {% block scripts %}
@@ -52,7 +52,7 @@ document.addEventListener("keyup", function onPress(event) {
 window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}.json";
 </script>
 
-<script src="/static/js/chapter.js?v={{ get_file_date_info('static/js/chapter.js', 'hash') }}" defer></script>
+<script src="{{ get_versioned_filename('/static/js/chapter.js') }}" defer></script>
 
 {% endblock %}
 

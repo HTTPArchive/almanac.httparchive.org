@@ -9,8 +9,7 @@ import random
 @app.route('/<lang>/<year>/')
 @validate
 def home(lang, year):
-    config = get_config(year)
-    return render_template('%s/%s/index.html' % (lang, year), config=config)
+    return render_template('%s/%s/index.html' % (lang, year))
 
 
 @app.route('/<lang>/')
@@ -30,8 +29,7 @@ def root(lang):
 @app.route('/<lang>/<year>/table-of-contents')
 @validate
 def table_of_contents(lang, year):
-    config = get_config(year)
-    return render_template('%s/%s/table_of_contents.html' % (lang, year), config=config)
+    return render_template('%s/%s/table_of_contents.html' % (lang, year))
 
 
 @app.route('/<lang>/<year>/contributors')
@@ -47,8 +45,7 @@ def contributors(lang, year):
 @app.route('/<lang>/<year>/methodology')
 @validate
 def methodology(lang, year):
-    config = get_config(year)
-    return render_template('%s/%s/methodology.html' % (lang, year), config=config)
+    return render_template('%s/%s/methodology.html' % (lang, year))
 
 
 # Accessibility Statement needs special case handling for trailing slashes
