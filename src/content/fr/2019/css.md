@@ -638,7 +638,7 @@ Il est commun, populaire, pratique et puissant d’utiliser une bibliothèque CS
         <td class="numeric">2.6&nbsp;%</td>
       </tr>
       <tr>
-        <td>UIKit</td>
+        <td lang="en">UIKit</td>
         <td class="numeric">0.5&nbsp;%</td>
         <td class="numeric">0.6&nbsp;%</td>
       </tr>
