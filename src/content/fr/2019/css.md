@@ -389,7 +389,7 @@ Les animations d’images clés (<i lang="en">keyframe</i>) CSS sont une excelle
   )
 }}
 
-## Requête de media (media queries)
+## Requêtes de media (<i lang="en">media queries</i>) {requetes-de-media-queries}
 
 Les <i lang="en">media queries</i> permettent à CSS de se connecter à diverses variables au niveau du système afin de s’adapter de manière appropriée à l’utilisation du visiteur. Certaines de ces <i lang="en">media queries</i> peuvent gérer les styles d’impression, les styles d’écran du projecteur et la taille de la fenêtre/de l’écran. Pendant longtemps, les <i lang="en">media queries</i> ont été principalement exploitées pour leur connaissance de la fenêtre d’affichage. Les concepteurs et les développeurs pouvaient adapter leurs mises en page aux petits écrans, aux grands écrans, etc. Plus tard, le Web a commencé à apporter de plus en plus de fonctionnalités et de possibilités, ce qui signifie que les <i lang="en">media queries</i> peuvent désormais gérer les fonctionnalités d’accessibilité en plus des fonctionnalités de la fenêtre.
 
