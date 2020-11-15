@@ -643,7 +643,7 @@ Il est commun, populaire, pratique et puissant d’utiliser une bibliothèque CS
         <td class="numeric">0.6&nbsp;%</td>
       </tr>
       <tr>
-        <td>Material Design Lite</td>
+        <td lang="en">Material Design Lite</td>
         <td class="numeric">0.3&nbsp;%</td>
         <td class="numeric">0.3&nbsp;%</td>
       </tr>
