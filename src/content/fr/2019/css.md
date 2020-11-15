@@ -114,7 +114,7 @@ En ce qui concerne les unités basées sur l’espace physique, l’unité `cm` 
 
 Nous avons constaté des différences plus importantes pour les unités basées sur le <i lang="en">viewport</i> entre les appareils mobiles et les ordinateurs de bureau. 36,8&nbsp;% des sites mobiles utilisent `vh` (hauteur de <i lang="en">viewport</i>), alors que seuls 31&nbsp;% des sites pour ordinateur le font. Nous avons également constaté que `vh` est plus courant que `vw` (largeur de <i lang="en">viewport</i>) d’environ 11&nbsp;%. `vmin` (<i lang="en">viewport</i> minimum) est plus populaire que `vmax` (<i lang="en">viewport</i> maximum), avec environ 8&nbsp;% d’utilisation de `vmin` sur mobile tandis que` vmax` n’est utilisé que par 1&nbsp;% des sites Web.
 
-### Propriétés personnalisées (custom properties)
+### Propriétés personnalisées (<i lang="en">custom properties</i>) {proprietes-personnalisees-custom-properties}
 
 Les propriétés personnalisées sont ce que beaucoup appellent les variables CSS. Elles sont cependant plus dynamiques qu’une variable statique classique&nbsp;! Elles sont très puissantes et en tant que communauté, nous découvrons encore leur potentiel.
 
