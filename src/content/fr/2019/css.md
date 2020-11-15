@@ -707,8 +707,8 @@ Voyons donc combien de sites en utilisent un&nbsp;! Leur existence semble tout �
 
 {{ figure_markup(
   image="fig37.png",
-  caption="Adoption des <i lang="en">resets</i> CSS.",
-  description="Diagramme à barres montrant l’adoption de trois <i lang="en">resets</i> CSS&nbsp;: Normalize.css (33&nbsp;%), Reset CSS (3&nbsp;%) et Pure CSS (0&nbsp;%). Il n’y a aucune différence d’adoption entre les pages de bureau et mobiles.",
+  caption='Adoption des <i lang="en">resets</i> CSS.',
+  description='Diagramme à barres montrant l’adoption de trois <i lang="en">resets</i> CSS&nbsp;: Normalize.css (33&nbsp;%), Reset CSS (3&nbsp;%) et Pure CSS (0&nbsp;%). Il n’y a aucune différence d’adoption entre les pages de bureau et mobiles.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1318910215&format=interactive"
   )
 }}
