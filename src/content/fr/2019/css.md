@@ -628,7 +628,7 @@ Il est commun, populaire, pratique et puissant d’utiliser une bibliothèque CS
         <td class="numeric">26.9&nbsp;%</td>
       </tr>
       <tr>
-        <td>animate.css</td>
+        <td lang="en">animate.css</td>
         <td class="numeric">6.1&nbsp;%</td>
         <td class="numeric">6.4&nbsp;%</td>
       </tr>
