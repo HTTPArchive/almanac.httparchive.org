@@ -979,10 +979,6 @@ p.copyright a {
   cursor: unset;
 }
 
-.nav-dropdown-btn.js-hide::after {
-  border: 0;
-}
-
 #skiptocontent a {
   padding: 6px;
   position: absolute;
