@@ -116,22 +116,20 @@ const set_min_date = (date) => {
   }
 };
 
-const convert_file_name = (filename) => {
-  if ( filename.substr(filename.length - 10) == "index.html" ) {
-    return filename.substr(0, filename.length - 10);
+const convert_file_name = (url) => {
+  if ( url.substr(url.length - 10) == "index.html" ) {
+    return url.substr(0, url.length - 10);
   };
-  if ( filename.endsWith(".html")) {
-    if ( filename.endsWith("accessibility_statement.html")) {
+  if ( url.endsWith(".html")) {
+    if ( url.endsWith("accessibility_statement.html")) {
       // Strip year from Accessibility Statement
-      return filename.substr(0, filename.length - 5).replace(/_/g,'-').replace(/\/[0-9]{4}/,'');
+      // TODO must fix this properly to avoid clashes
+      // once we know how we'll handle this in future years
+      return url.substr(0, url.length - 5).replace(/_/g,'-').replace(/\/[0-9]{4}/,'');
     } else {
-      return filename.substr(0, filename.length - 5).replace(/_/g,'-');
+      return url.substr(0, url.length - 5).replace(/_/g,'-');
     }
   };
-  if ( filename.endsWith(".md")) {
-    return filename.substr(0, filename.length - 3).replace(/^content\//,'');
-  }
-  return filename.replace(/_/g,'-');
 };
 
 module.exports = {
