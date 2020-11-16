@@ -464,7 +464,7 @@ Les sites Web ressemblent à du papier numérique, non&nbsp;? En tant qu’utili
 {{ figure_markup(
   image="fig32.png",
   caption='Adoption des medias `all`, `print`, `screen` et `speech` pour les <i lang="en">media queries</i>.',
-  description=’Diagramme à barres montrant 35&nbsp;% des pages de bureau utilisent le type de requête `all`, 46&nbsp;% utilisent `print`, 72&nbsp;% utilisent `screen` et 0&nbsp;% utilisent `speech`. L’adoption est inférieure d’environ 5&nbsp;% pour les ordinateurs de bureau par rapport aux mobiles.’,
+  description='Diagramme à barres montrant 35&nbsp;% des pages de bureau utilisent le type de requête `all`, 46&nbsp;% utilisent `print`, 72&nbsp;% utilisent `screen` et 0&nbsp;% utilisent `speech`. L’adoption est inférieure d’environ 5&nbsp;% pour les ordinateurs de bureau par rapport aux mobiles.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=939890574&format=interactive"
   )
 }}
