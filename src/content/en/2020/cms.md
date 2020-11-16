@@ -50,7 +50,7 @@ In this chapter, we seek to help understand the current state of the CMS ecosyst
 This second edition of the Web Almanac builds on last year’s work. We now have the benefit of being able to compare the 2020 results to 2019 in order to start establishing trends. Let’s dive into our analysis.
 
 
-## What is the overall level of CMS adoption amongst all websites, across desktop and mobile?
+## CMS adoption
 
 Our analysis throughout this work looks at desktop and mobile websites. The vast majority of URLs we looked at are in both datasets, but some URLs are only accessed by desktop or mobile devices. This can cause small divergences in the data, and we thus look at desktop and mobile results separately.
 
