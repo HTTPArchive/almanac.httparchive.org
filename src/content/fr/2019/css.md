@@ -423,8 +423,8 @@ La valeur la plus populaire semble être `768px`, ce qui a attisé notre curiosi
 
 {{ figure_markup(
   image="fig29.png",
-  caption="Adoption des modes d’orientation des <i lang="en">media queries</i>.",
-  description="Diagramme à barres montrant l’adoption des modes d’orientation portrait et paysage des <i lang="en">media queries</i>. 31&nbsp;% des pages spécifient paysage, 8&nbsp;% spécifient portrait et 7&nbsp;% spécifient les deux. L’adoption est la même pour les pages de bureau et mobiles.",
+  caption='Adoption des modes d’orientation des <i lang="en">media queries</i>.',
+  description='Diagramme à barres montrant l’adoption des modes d’orientation portrait et paysage des <i lang="en">media queries</i>. 31&nbsp;% des pages spécifient paysage, 8&nbsp;% spécifient portrait et 7&nbsp;% spécifient les deux. L’adoption est la même pour les pages de bureau et mobiles.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=295845630&format=interactive"
   )
 }}
