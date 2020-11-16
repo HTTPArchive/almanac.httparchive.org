@@ -492,9 +492,9 @@ Webサイトはデジタルペーパーのように感じますか？　ユー�
   <table>
     <thead>
       <tr>
-        <th>スタイルシート名</th>
-        <th>デスクトップ</th>
-        <th>モバイル</th>
+        <th scope="col">スタイルシート名</th>
+        <th scope="col">デスクトップ</th>
+        <th scope="col">モバイル</th>
       </tr>
     </thead>
     <tbody>
@@ -617,9 +617,9 @@ Webサイトが各コンテンツタイプにロードするバイト数の詳�
   <table>
     <thead>
       <tr>
-        <th>ライブラリ</th>
-        <th>デスクトップ</th>
-        <th>モバイル</th>
+        <th scope="col">ライブラリ</th>
+        <th scope="col">デスクトップ</th>
+        <th scope="col">モバイル</th>
       </tr>
     </thead>
     <tbody>
