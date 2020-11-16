@@ -41,7 +41,7 @@ People and organizations use a CMS in 2020 as in many cases CMSs offer a shortcu
 
 Whichever CMS is in use, it is in use because it solves a problem for the user or organization. It’s beyond our scope to explore why each CMS is chosen, but later we do explore why the most popular CMS, WordPress, is disproportionately chosen. 
 
-**The goal of this chapter**
+### The goal of this chapter
 
 There are many interesting and important aspects to analyze and questions to answer in our quest to understand the CMS space and its role in the present and the future of the web. We acknowledge the vastness and complexity of the CMS platforms space and bring to it our curiosity along with deep expertise on some of the major players in the space.
 
