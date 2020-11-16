@@ -6,6 +6,7 @@ from werkzeug.routing import BaseConverter
 import os.path
 import re
 import datetime
+import logging
 
 
 def render_template(template, *args, **kwargs):
@@ -207,6 +208,7 @@ def get_versioned_filename(path):
     if version:
         return '%s?v=%s' % (path, version)
     else:
+        logging.exception('An un-versioned file was used: %s', path)
         return '%s' % path
 
 
