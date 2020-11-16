@@ -296,7 +296,7 @@ The median Lighthouse accessibility score for the top 5 CMSs is all above 80%. A
 The bar should be higher here, though. An average score of 78% across all CMSs still leaves significant room for improvement, and the maximum score of 98% shows even the “best” CMS for accessibility compliance has room for improvement. Improving accessibility is essential and urgent work.
 
 
-## What’s the impact of CMSs on the environment?
+## Environmental impact
 
 This year we’ve sought to better understand the impact of CMSs on the environment. [The information and communications technology (ICT) industry accounts for 2% of global carbon emissions](https://www.nature.com/articles/d41586-018-06610-y), and data centers specifically account for 0.3% of global carbon emissions. This puts the ICT industry’s carbon footprint equivalent to the aviation industry’s emissions from fuel. We don’t have data on the role of CMSs here, but with our research showing 42% of websites use a CMS, it is clear CMSs play an important role in the efficiency of websites and their impact on the environment.
 
