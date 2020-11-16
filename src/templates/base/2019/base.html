@@ -114,7 +114,7 @@
 {% macro native_table_of_contents_dropdown(switcher_name) %}
 {% set current_title = metadata.get('title') if metadata else None %}
 <a class="js-hide" href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a>
-<div class="table-of-contents-switcher js-enable hidden" disabled>
+<div class="table-of-contents-switcher js-enable hidden">
   <label for="table-of-contents-switcher-{{switcher_name}}" class="visually-hidden">
     {{ self.table_of_contents_switcher() }}
   </label>
@@ -190,7 +190,7 @@
 {% macro styled_table_of_contents_dropdown(switcher_name) %}
 {% set current_title = metadata.get('title') if metadata else None %}
 <a class="nav-dropdown-btn js-hide" href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a>
-<div class="nav-dropdown {{switcher_name}} table-of-contents js-enable hidden" disabled>
+<div class="nav-dropdown {{switcher_name}} table-of-contents js-enable hidden">
   <button class="nav-dropdown-btn" aria-expanded="false" aria-label="{{ self.table_of_contents_title() }}" >
     {{ self.table_of_contents_title() }}
   </button>
