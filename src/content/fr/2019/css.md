@@ -166,7 +166,7 @@ CSS a des sélecteurs de comparaison très puissants. Ce sont des sélecteurs co
 {{ figure_markup(
   image="fig10.png",
   caption="Popularité des opérateurs par sélecteur d’attribut de classe.",
-  description="Diagramme à barres montrant la popularité des opérateurs utilisés par les sélecteurs d’attributs de classe. 57&nbsp;% des pages utilisent des «`*=`». 36&nbsp;% utilisent «`^=`». 1&nbsp;% utilise «`=`» et «`$=`». 0&nbsp;% utilise «`~=`».",
+  description="Diagramme à barres montrant la popularité des opérateurs utilisés par les sélecteurs d’attributs de classe. 57&nbsp;% des pages utilisent des `*=`. 36&nbsp;% utilisent `^=`. 1&nbsp;% utilise `=` et `$=`. 0&nbsp;% utilise `~=`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=377805296&format=interactive"
   )
 }}
