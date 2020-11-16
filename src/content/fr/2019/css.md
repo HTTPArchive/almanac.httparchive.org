@@ -14,11 +14,11 @@ una_bio: Una Kravets est une conférencière internationale basée à Brooklyn, 
 argyleink_bio: Adam Argyle est un membre de l’équipe <i lang="en">Google Chrome Developer Relations</i>, spécialisé dans le CSS. C’est un accro du web avec une soif insatiable de super UX & UI. Retrouvez-le sur le web <a href="https://twitter.com/argyleink">@argyleink</a> ou consultez son site <a href="https://nerdy.dev">https://nerdy.dev</a>.
 featured_quote: Les feuilles de style en cascade (CSS) sont utilisées pour peindre, mettre en forme et organiser visuellement le contenu des pages Web. Leurs capacités couvrent des concepts aussi simples que la couleur du texte ou la perspective 3D. Elles disposent également de possibilités pour permettre aux développeurs de gérer différentes tailles d’écran, différents contextes de visualisation, ainsi que l’impression. CSS aide les développeurs et développeuses à gérer le contenu et à s’assurer qu’il s’adapte correctement aux personnes.
 featured_stat_1: 5%
-featured_stat_label_1: Pages using custom properties
+featured_stat_label_1: Pages utilisant les propriétés personnalisées
 featured_stat_2: 2%
-featured_stat_label_2: Sites that use CSS Grid
+featured_stat_label_2: Sites qui utilisent CSS Grid
 featured_stat_3: 780
-featured_stat_label_3: Number of digits in largest Z-Index value
+featured_stat_label_3: Nombre de chiffres dans la plus grosse valeur de z-index
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-10-06T00:00:00.000Z
 ---
