@@ -18,7 +18,7 @@ featured_stat_label_1: Pages utilisant les propriétés personnalisées
 featured_stat_2: 2%
 featured_stat_label_2: Sites qui utilisent CSS Grid
 featured_stat_3: 780
-featured_stat_label_3: Nombre de chiffres dans la plus grosse valeur de z-index
+featured_stat_label_3: Nombre de chiffres pour la plus grande valeur de z-index
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-10-06T00:00:00.000Z
 ---
