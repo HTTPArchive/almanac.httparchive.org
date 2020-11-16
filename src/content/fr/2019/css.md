@@ -409,8 +409,8 @@ Pour les <i lang="en">media queries</i> basées sur la fenêtre d’affichage, t
 
 {{ figure_markup(
   image="fig28.png",
-  caption="Valeurs les plus fréquemment utilisées dans les <i lang="en">media queries</i>.",
-  description="Diagramme à barres des valeurs les plus courantes utilisées avec les <i lang="en">media queries</i>. 768px et 767px sont respectivement les plus populaires à 23&nbsp;% et 16&nbsp;%. La liste tombe rapidement après cela, avec 992px utilisé 6&nbsp;% du temps et 1200px utilisé 4&nbsp;% du temps. Le bureau et le mobile ont une utilisation similaire.",
+  caption='Valeurs les plus fréquemment utilisées dans les <i lang="en">media queries</i>.',
+  description='Diagramme à barres des valeurs les plus courantes utilisées avec les <i lang="en">media queries</i>. 768px et 767px sont respectivement les plus populaires à 23&nbsp;% et 16&nbsp;%. La liste tombe rapidement après cela, avec 992px utilisé 6&nbsp;% du temps et 1200px utilisé 4&nbsp;% du temps. Le bureau et le mobile ont une utilisation similaire.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1353707515&format=interactive"
   )
 }}
