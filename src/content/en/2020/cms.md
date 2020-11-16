@@ -90,7 +90,7 @@ Some of them are open source (e.g. WordPress, Joomla, others) and some of them a
 The CMS space as a whole is a complex, federated universe of CMS ecosystems, all separated and at the same time intertwined. Our research shows CMSs are only getting more important. The minimum of 5% increase in adoption of CMSs shows that in a year when COVID-19 has created immense uncertainty, solid CMS platforms have provided some stability. As we discussed last year, these platforms play a key role for us to succeed in our collective quest for an evergreen, healthy, and vibrant web. This has become more true since, and we expect it to continue to be the case going forward.
 
 
-## Which are the most common CMS platforms, across desktop and mobile sites?
+## Top CMSs
 
 Our analysis counted 222 separate CMSs. While this is a high count, 204 (92%) of these have an adoption share of 0.01% or lower. This leaves only 13 CMSs with an adoption share of between 0.1 and 1%, and 4 with a share of between 1 and 2%, and 1 with a share over this.
 
