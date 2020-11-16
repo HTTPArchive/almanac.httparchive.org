@@ -19,7 +19,7 @@ featured_stat_label_2: Sites that disable zooming
 featured_stat_3: 34%
 featured_stat_label_3: Sites with sufficiently sized tap targets
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-04T00:00:00.000Z
+last_updated: 2020-11-16T00:00:00.000Z
 ---
 
 ## Introduction

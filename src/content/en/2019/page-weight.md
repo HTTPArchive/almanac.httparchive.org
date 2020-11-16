@@ -20,7 +20,7 @@ featured_stat_label_2: Increase in median desktop size in last year
 featured_stat_3: 69
 featured_stat_label_3: Median requests per home page
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-04T00:00:00.000Z
+last_updated: 2020-11-16T00:00:00.000Z
 ---
 
 ## Introduction
