@@ -397,8 +397,8 @@ Un bon point de départ avec les <i lang="en">media queries</i>&nbsp;: combien s
 
 {{ figure_markup(
   image="fig27.png",
-  caption="Répartition du nombre de <i lang="en">media queries</i> par page.",
-  description="Diagramme à barres montrant la répartition des <i lang="en">media queries</i> par page. Pour les pages de bureau, les 10e, 25e, 50e, 75e et 90e centiles sont&nbsp;: 0, 3, 14, 27 et 43 media-queries. La distribution de bureau est similaire à la distribution mobile.",
+  caption='Répartition du nombre de <i lang="en">media queries</i> par page.',
+  description='Diagramme à barres montrant la répartition des <i lang="en">media queries</i> par page. Pour les pages de bureau, les 10e, 25e, 50e, 75e et 90e centiles sont&nbsp;: 0, 3, 14, 27 et 43 media-queries. La distribution de bureau est similaire à la distribution mobile.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1892465673&format=interactive"
   )
 }}
