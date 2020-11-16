@@ -20,7 +20,7 @@ featured_stat_label_2: Uso de JPEG entre imágenes
 featured_stat_3: 2%
 featured_stat_label_3: Uso del elemento <code>&lt;picture&gt;</code>
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-10T00:00:00.000Z
+last_updated: 2020-11-16T00:00:00.000Z
 ---
 
 ## Introducción
@@ -201,7 +201,7 @@ Hay dos formas de analizar los tamaños de archivo de imagen: total de bytes por
 {{ figure_markup(
   image="fig10_image_format_size.png",
   caption="Tamaño de archivo (KB) por formato de imagen.",
-  description="Un gráfico mostrando que en el percentil 10 se usan 4 KB de JPEGs, 2 KB de PNGs y 2 KB de GIFs, en el percentil 25 se usan 9KB de JPGs, 4 KB de PNGs, 7 KB de WebP, y 3 KB de GIFs, en el percentil 50 se usan 24 KB de JPGs, 11 KB de PNGs, 17 KB de WebP, 6 KB de GIFs y 1 KB de SVGs, en el percentil 75 se usan 68 KB de JPEGs, 43 KB de PNGs 41 KB de WebPs, 17 KB de GIFs y 2 KB de SVGs, y en el percentil 90 se usan 116 KB de JPGs, 152 KB de PNGs, 90 KB de WebPs, 87 KB de GIFs y 8 KB de SVGs."
+  description="Un gráfico mostrando que en el percentil 10 se usan 4 KB de JPEGs, 2 KB de PNGs y 2 KB de GIFs, en el percentil 25 se usan 9 KB de JPGs, 4 KB de PNGs, 7 KB de WebP, y 3 KB de GIFs, en el percentil 50 se usan 24 KB de JPGs, 11 KB de PNGs, 17 KB de WebP, 6 KB de GIFs y 1 KB de SVGs, en el percentil 75 se usan 68 KB de JPEGs, 43 KB de PNGs 41 KB de WebPs, 17 KB de GIFs y 2 KB de SVGs, y en el percentil 90 se usan 116 KB de JPGs, 152 KB de PNGs, 90 KB de WebPs, 87 KB de GIFs y 8 KB de SVGs."
   )
 }}
 
