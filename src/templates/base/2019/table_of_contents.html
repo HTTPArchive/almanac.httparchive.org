@@ -99,10 +99,8 @@
   <h1 class="title title-lg">{{ self.table_of_contents_title() }}</h1>
 
   <section>
-    {% if year < "2020" %}
     <h2 id="foreword"><a href="#foreword" class="anchor-link">{{ self.foreword_title() }}</a></h2>
     {{ self.foreword() }}
-    {% endif %}
   </section>
 
   <div class="contents-wrapper">

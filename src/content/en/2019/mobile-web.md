@@ -19,7 +19,7 @@ featured_stat_label_2: Sites that disable zooming
 featured_stat_3: 34%
 featured_stat_label_3: Sites with sufficiently sized tap targets
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-04T00:00:00.000Z
+last_updated: 2020-11-16T00:00:00.000Z
 ---
 
 ## Introduction
@@ -44,11 +44,11 @@ Let's start with what phone the typical mobile user has. The average Android pho
     </tr>
     <tr>
       <th>Latency</th>
-      <td>300 - 400ms</td>
+      <td>300 - 400 ms</td>
     </tr>
     <tr>
       <th>Bandwidth</th>
-      <td>0.4 - 1.6Mbps</td>
+      <td>0.4 - 1.6 Mbps</td>
     </tr>
     <tr>
       <th>Phone</th>
