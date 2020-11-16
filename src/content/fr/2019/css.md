@@ -596,7 +596,7 @@ Regardez tous ces noms de fichiers créatifs&nbsp;! `style`, `styles`, `main`, `
 
 ### Poids de la feuille de style
 
-Quelle est le poids de ces feuilles de style&nbsp;? Est-ce que notre embonpoint CSS est quelque chose à craindre&nbsp;? À en juger par ces données, CSS n’est pas le principal coupable du gonflement des pages.
+Quel est le poids de ces feuilles de style&nbsp;? Est-ce que notre embonpoint CSS est quelque chose à craindre&nbsp;? À en juger par ces données, CSS n’est pas le principal coupable du gonflement des pages.
 
 {{ figure_markup(
   image="fig35.png",
