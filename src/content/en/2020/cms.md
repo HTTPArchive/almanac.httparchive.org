@@ -77,7 +77,7 @@ Year     | Desktop | Mobile
 </figure>
 
 
-The increase in desktop web pages powered by a CMS platform is 5.43% from last year. On mobile this increase is roughly a quarter higher, at 6.71%. In 2019 there were more mobile than desktop web pages created by a CMS; this year the roles have reversed.
+The increase in desktop web pages powered by a CMS platform is 5.43% from last year. On mobile this increase is roughly a quarter higher, at 6.71%.
 
 As with [last year](../2019/cms#cms-adoption), we see different results from other datasets for tracking market share of CMS platforms, such as [W3Techs](https://w3techs.com/technologies/history_overview/content_management). W3Techs reports at the time of writing that 60.6% of web pages are created by CMSs, up from 56.4% a year ago. This is a 6.4% increase, which broadly matches our findings.
 
@@ -99,7 +99,7 @@ The 1 CMS with a share over 2% is WordPress, which has a 31% usage share. This i
 {{ figure_markup(
   image="cms-adoption-share-for-top-5-cmss.png",
   caption="CMS adoption share for top 5 CMSs.",
-  description="Bar chart showing Wordpress dominating with 28.91% share in 2019, growing to 31.04% in 2020. This is followed by 4 other CMSs with less than 2.5% share each: Joomla (2.24% for 2019 and 2.05% for 2020), Drupal (2.21% and 1.98% respectively), Wix (0.91% and 1.28%) and Squarespace (0.76% and 0.97%). Dupal and Joomla have dropped in usage in 2020 while the rest have increased.",
+  description="Bar chart showing WordPress dominating with 28.91% share in 2019, growing to 31.04% in 2020. This is followed by 4 other CMSs with less than 2.5% share each: Joomla (2.24% for 2019 and 2.05% for 2020), Drupal (2.21% and 1.98% respectively), Wix (0.91% and 1.28%) and Squarespace (0.76% and 0.97%). Dupal and Joomla have dropped in usage in 2020 while the rest have increased.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkUxfuK-FCn3_IYDJiEsKDmdmyKb0TSEhG8dFc0XBIXej1NO2uUOmd-9NCbWuh-MZ3xzMhK_kNT-4u/pubchart?oid=1429803707&format=interactive",
   sheets_gid="1594044364",
   sql_file="top_cms_platforms_compared_to_2019.sql"
@@ -113,7 +113,7 @@ These numbers are broadly consistent when split across desktop and mobile:
 {{ figure_markup(
   image="cms-top-5-cms-by-client.png",
   caption="Top 5 CMSs by client.",
-  description="Bar chart showing Wordpress dominating with 31.37% share on desktop and 31.39% share on mobile compared to less than 2.5% for the other CMSs: Drupal has 2.32% on desktop and 1.99% on mobile, Joomla has 1.96% on desktop and 2.12% on mobile, Squarespace has 1.08% on desktop and 0.85% on mobile, and Wiz has 1.05% on desktop and 1.24% on mobile.",
+  description="Bar chart showing WordPress dominating with 31.37% share on desktop and 31.39% share on mobile compared to less than 2.5% for the other CMSs: Drupal has 2.32% on desktop and 1.99% on mobile, Joomla has 1.96% on desktop and 2.12% on mobile, Squarespace has 1.08% on desktop and 0.85% on mobile, and Wiz has 1.05% on desktop and 1.24% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkUxfuK-FCn3_IYDJiEsKDmdmyKb0TSEhG8dFc0XBIXej1NO2uUOmd-9NCbWuh-MZ3xzMhK_kNT-4u/pubchart?oid=2098327336&amp;format=interactive",
   sheets_gid="908727245",
   sql_file="top_cmss_yoy_all_clients.sql"
@@ -316,7 +316,7 @@ We found that the median CMS page load resulted in the transfer of 2.41 MB and t
 
 CMSs power every type of website, so this discrepancy is not surprising. CMSs can, however, influence at the platform-level the efficiency of websites they create.
 
-Page weights are important here. The average desktop CMS web page loads 2.4 MB of video, image, script, font, CSS, and audio data. 10% of pages, however, load over 7 MB of this data. On mobile devices the average web page loads 0.1 MB fewer than on desktop, with at least this number being true across all percentiles:
+Page weights are important here. The average desktop CMS web page loads 2.4 MB of HTML, CSS, JavaScript, media, etc. 10% of pages, however, load over 7 MB of this data. On mobile devices the average web page loads 0.1 MB fewer than on desktop, with at least this number being true across all percentiles:
 
 {{ figure_markup(
   image="cms-distribution-of-cms-pages-sizes.png",
@@ -354,7 +354,7 @@ One of the main ways a CMS can influence its page load size is by supporting and
   )
 }}
 
-Video contributes a larger percentage per resource type here. Making video more efficient is an interesting area for future research. Here our focus is on images. Popular image formats are JPG, PNG, GIF, SVG, WebP, and ICO. Of these, [WebP is the most efficient in most situations](https://developers.google.com/speed/webp/), with WebP lossless images [26% smaller](https://developers.google.com/speed/webp/docs/webp_lossless_alpha_study#results) than equivalent PNGs and [25-34% smaller](https://developers.google.com/speed/webp/docs/webp_study) than comparable JPGs. We see, however, that WebP is the second least popular image format across all CMS pages:
+Video contributes a larger percentage per resource type here. Making video more efficient, or other mechanisms such as the impact of stopping autoplay, are interesting areas for future research. Here our focus is on images. Popular image formats are JPG, PNG, GIF, SVG, WebP, and ICO. Of these, [WebP is the most efficient in most situations](https://developers.google.com/speed/webp/), with WebP lossless images [26% smaller](https://developers.google.com/speed/webp/docs/webp_lossless_alpha_study#results) than equivalent PNGs and [25-34% smaller](https://developers.google.com/speed/webp/docs/webp_study) than comparable JPGs. We see, however, that WebP is the second least popular image format across all CMS pages:
 
 {{ figure_markup(
   image="cms-popularity-of-image-formats.png",
@@ -370,7 +370,9 @@ Of the top 5 CMSs, only Wix automatically converts and serves images in the WebP
 
 As we saw earlier, Wix had the lowest proportion of sites with a “good” LCP. We can make a reasonable link between page weight and page load time, so clearly automatically converting to WebP is not a solution in isolation to page weights and thus CO2 emissions. It is, however, a more efficient format and improved native support for the format by the most popular CMSs would be beneficial.
 
-We’re unable to fully answer the question “What is the impact of CMSs on the environment?”, but we are contributing to an answer. CMSs have a responsibility to take environmental impact seriously, and decreasing the average page weight is important work. 
+Image formats are one mechanism for making images more efficient. Other mechanisms such as "lazy loading" images would benefit from future research.
+
+We’re unable to fully answer the question of the impact of CMSs on the environment, but we are contributing to an answer. CMSs have a responsibility to take environmental impact seriously, and decreasing the average page weight is important work. 
 
 
 ## Conclusion
