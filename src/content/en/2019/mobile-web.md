@@ -44,11 +44,11 @@ Let's start with what phone the typical mobile user has. The average Android pho
     </tr>
     <tr>
       <th>Latency</th>
-      <td>300 - 400ms</td>
+      <td>300 - 400 ms</td>
     </tr>
     <tr>
       <th>Bandwidth</th>
-      <td>0.4 - 1.6Mbps</td>
+      <td>0.4 - 1.6 Mbps</td>
     </tr>
     <tr>
       <th>Phone</th>
