@@ -606,7 +606,7 @@ Quelle est le poids de ces feuilles de style&nbsp;? Est-ce que notre embonpoint 
   )
 }}
 
-Voir le chapitre [Poids des page](./page-weight) pour un aperçu plus détaillé du nombre d’octets que les sites Web chargent pour chaque type de contenu.
+Voir le chapitre [Poids des pages](./page-weight) pour un aperçu plus détaillé du nombre d’octets que les sites Web chargent pour chaque type de contenu.
 
 ### Bibliothèques
 
