@@ -31,7 +31,7 @@ Lorsque vous décrivez CSS à celles et ceux qui ne sont pas familiers avec les 
 
 Dans ce chapitre, nous allons inspecter, compter et extraire des données sur la façon dont CSS est utilisé sur le Web. Notre objectif est de comprendre de manière globale quelles fonctionnalités sont utilisées, comment elles sont utilisées et comment CSS se développe et est adopté.
 
-Prêt à fouiller dans des données fascinantes&nbsp;?! Beaucoup des nombres suivants peuvent être petits, mais ne commettez pas l’erreur de les voir comme insignifiants&nbsp;! De nombreuses années peuvent être nécessaires avant que de nouvelles choses s'imposent le Web.
+Prêt à fouiller dans des données fascinantes&nbsp;?! Beaucoup des nombres suivants peuvent être petits, mais ne commettez pas l’erreur de les voir comme insignifiants&nbsp;! De nombreuses années peuvent être nécessaires avant que de nouvelles choses s’imposent le Web.
 
 ## Couleur
 
@@ -275,7 +275,7 @@ C’est amusant, car si vous demandiez à un utilisateur combien de tailles de p
 
 ### Marges
 
-Une marge est l’espace en dehors des éléments, comme l’espace que vous exigez lorsque vous écartez les bras. On pourrait penser que cela ne sert souvent qu'à l’espacement entre les éléments, mais ce n’est pas limité à cet effet. Dans un site Web ou une application, l’espacement joue un rôle important dans l’expérience d'utilisation et la conception. Voyons combien de code d’espacement de marge il y a  dans une feuille de style, d’accord&nbsp;?
+Une marge est l’espace en dehors des éléments, comme l’espace que vous exigez lorsque vous écartez les bras. On pourrait penser que cela ne sert souvent qu’à l’espacement entre les éléments, mais ce n’est pas limité à cet effet. Dans un site Web ou une application, l’espacement joue un rôle important dans l’expérience d’utilisation et la conception. Voyons combien de code d’espacement de marge il y a  dans une feuille de style, d’accord&nbsp;?
 
 {{ figure_markup(
   image="fig18.png",
