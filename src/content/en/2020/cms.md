@@ -7,17 +7,17 @@ authors: [alexdenning]
 reviewers: [sirjonathan, ernee, amedina]
 analysts: [GregBrimble, rviscomi]
 translators: []
-#alexdenning_bio: TODO
+alexdenning_bio: Alex Denning is the Founder of <a href="https://getellipsis.com/">Ellipsis Marketing</a>, a marketing agency for WordPress businesses. Alex is a WordPress Core Contributor and has helped organise <a href="https://london.wordcamp.org/">WordCamp London</a>.
 discuss: 2051
 results: https://docs.google.com/spreadsheets/d/1vTf459CcCbBuYeGvgo-RSidppR62SfM-VTkW-dfS3K4/
 queries: 15_CMS
-#featured_quote: TODO
-#featured_stat_1: TODO
-#featured_stat_label_1: TODO
-#featured_stat_2: TODO
-#featured_stat_label_2: TODO
-#featured_stat_3: TODO
-#featured_stat_label_3: TODO
+featured_quote: The term Content Management System (CMS) refers to systems enabling individuals and organizations to create, manage, and publish content. A CMS for web content, specifically, is a system aimed at creating, managing, and publishing content to be consumed and experienced via the internet.
+featured_stat_1: 42%
+featured_stat_label_1: Web pages are powered by a CMS
+featured_stat_2: 1.5 grams
+featured_stat_label_2: CO2 emitted by the median CMS page load
+featured_stat_3: 74%
+featured_stat_label_3: CMS using WordPress (same as last year!)
 published: 2020-12-09T00:00:00.000Z
 last_updated: 2020-11-08T00:00:00.000Z
 unedited: true
