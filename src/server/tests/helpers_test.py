@@ -1,7 +1,19 @@
 from server.helpers import get_file_date_info, get_versioned_filename, get_ebook_size_in_mb
+from server.config import get_config, SUPPORTED_YEARS, get_entries_from_json
 import re
+import pytest
+
 
 MIN_DATE = "2019-11-01T00:00:00.000Z"
+all_ebooks = []
+
+
+# Get all configured ebooks across all years
+for year in SUPPORTED_YEARS:
+    ebook_languages = get_entries_from_json(get_config(year), 'settings', 'ebook_languages')[0]
+    for ebook_language in ebook_languages:
+        year_lang = [ebook_language, year]
+        all_ebooks.append(year_lang)
 
 
 def test_date_published_is_returned_and_correct_format():
@@ -51,12 +63,13 @@ def test_non_versioned_css_file_is_of_correct_format():
     assert versioned_filename == '/static/css/random.css'
 
 
-def test_en_ebook_size_at_least_16_mb_function():
+def test_en_ebook_size_at_least_16_mb():
     assert get_ebook_size_in_mb('en', '2019') > 16
 
 
-def test_ja_ebook_size_at_least_16_mb_function():
-    assert get_ebook_size_in_mb('ja', '2019') > 16
+@pytest.mark.parametrize('config', all_ebooks)
+def test_all_configured_ebooks_at_least_16_mb(config):
+    assert get_ebook_size_in_mb(config[0], config[1]) > 16
 
 
 def test_ebook_size_non_existant_language_is_zero():
