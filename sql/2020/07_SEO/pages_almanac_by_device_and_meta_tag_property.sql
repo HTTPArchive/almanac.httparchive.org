@@ -52,6 +52,10 @@ FROM
   USING (_TABLE_SUFFIX)
 ),
 UNNEST(almanac_info) AS meta_tag_property
-GROUP BY total, meta_tag_property, client
-ORDER BY count DESC
+GROUP BY
+  total,
+  meta_tag_property,
+  client
+ORDER BY
+  count DESC
 LIMIT 1000
