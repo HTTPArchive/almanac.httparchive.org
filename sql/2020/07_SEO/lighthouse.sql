@@ -17,12 +17,12 @@ neither BOOL
 > DETERMINISTIC LANGUAGE js AS '''
 var result = {disallow:false, noindex:false};
 try {
-var $ = JSON.parse(report);
-var items = $.audits['is-crawlable'].details.items;
-result.noindex = items.filter(item => item.source.type ==='node').length > 0;
-result.disallow = items.filter(item => item.source.type ==='source-location').length > 0;
-result.both = result.noindex && result.disallow;
-result.neither = !result.noindex && !result.disallow;
+    var $ = JSON.parse(report);
+    var items = $.audits['is-crawlable'].details.items;
+    result.noindex = items.filter(item => item.source.type ==='node').length > 0;
+    result.disallow = items.filter(item => item.source.type ==='source-location').length > 0;
+    result.both = result.noindex && result.disallow;
+    result.neither = !result.noindex && !result.disallow;
 } catch (e) {
 }
 return result;
