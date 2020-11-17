@@ -196,8 +196,7 @@
   font-weight: normal;
 }
 
-.byline .author,
-.byline .reviewer {
+.byline a {
   white-space: nowrap;
 }
 
