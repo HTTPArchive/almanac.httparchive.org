@@ -29,17 +29,17 @@ return result;
 SELECT
     COUNT(0) AS total,
 
-    COUNTIF(is_canonical) AS canonical,
-    AS_PERCENT(COUNTIF(is_canonical), COUNT(0)) AS pct_canonical,
+    COUNTIF(is_canonical) AS is_canonical,
+    AS_PERCENT(COUNTIF(is_canonical), COUNT(0)) AS pct_is_canonical,
 
-    COUNTIF(has_title) AS title,
-    AS_PERCENT(COUNTIF(has_title), COUNT(0)) AS pct_title,
+    COUNTIF(has_title) AS has_title,
+    AS_PERCENT(COUNTIF(has_title), COUNT(0)) AS pct_has_title,
 
-    COUNTIF(has_meta_description) AS meta_description,
-    AS_PERCENT(COUNTIF(has_meta_description), COUNT(0)) AS pct_meta_description,
+    COUNTIF(has_meta_description) AS has_meta_description,
+    AS_PERCENT(COUNTIF(has_meta_description), COUNT(0)) AS pct_has_meta_description,
 
-    COUNTIF(has_title AND has_meta_description) AS title_and_meta_description, 
-    AS_PERCENT(COUNTIF(has_title AND has_meta_description), COUNT(0)) AS pct_title_and_meta_description,
+    COUNTIF(has_title AND has_meta_description) AS has_title_and_meta_description, 
+    AS_PERCENT(COUNTIF(has_title AND has_meta_description), COUNT(0)) AS pct_has_title_and_meta_description,
 
     COUNTIF(img_alt_on_all) AS img_alt_on_all,
     AS_PERCENT(COUNTIF(img_alt_on_all), COUNT(0)) AS pct_img_alt_on_all,
@@ -50,26 +50,26 @@ SELECT
     COUNTIF(robots_txt_valid) AS robots_txt_valid,
     AS_PERCENT(COUNTIF(robots_txt_valid), COUNT(0)) AS pct_robots_txt_valid,
 
-    COUNTIF(is_crawlable) AS crawlable_pass,
-    AS_PERCENT(COUNTIF(is_crawlable), COUNT(0)) AS pct_crawlable_pass,
+    COUNTIF(is_crawlable) AS is_crawlable,
+    AS_PERCENT(COUNTIF(is_crawlable), COUNT(0)) AS pct_is_crawlable,
 
-    COUNTIF(is_crawlable_details.noindex) AS crawlable_noindex,
-    AS_PERCENT(COUNTIF(is_crawlable_details.noindex), COUNT(0)) AS pct_crawlable_noindex,  
+    COUNTIF(is_crawlable_details.noindex) AS noindex,
+    AS_PERCENT(COUNTIF(is_crawlable_details.noindex), COUNT(0)) AS pct_noindex,  
 
-    COUNTIF(is_crawlable_details.disallow) AS crawlable_disallow,
-    AS_PERCENT(COUNTIF(is_crawlable_details.disallow), COUNT(0)) AS pct_crawlable_disallow,  
+    COUNTIF(is_crawlable_details.disallow) AS disallow,
+    AS_PERCENT(COUNTIF(is_crawlable_details.disallow), COUNT(0)) AS pct_disallow,  
 
-    COUNTIF(is_crawlable_details.disallow AND is_crawlable_details.noindex) AS crawlable_disallow_noindex,
-    AS_PERCENT(COUNTIF(is_crawlable_details.disallow AND is_crawlable_details.noindex), COUNT(0)) AS pct_crawlable_disallow_noindex,  
+    COUNTIF(is_crawlable_details.disallow AND is_crawlable_details.noindex) AS disallow_noindex,
+    AS_PERCENT(COUNTIF(is_crawlable_details.disallow AND is_crawlable_details.noindex), COUNT(0)) AS pct_disallow_noindex,  
 
-    COUNTIF(NOT(is_crawlable_details.disallow) AND NOT(is_crawlable_details.noindex)) AS crawlable_allow_index,
-    AS_PERCENT(COUNTIF(NOT(is_crawlable_details.disallow) AND NOT(is_crawlable_details.noindex)), COUNT(0)) AS pct_crawlable_allow_index,
+    COUNTIF(NOT(is_crawlable_details.disallow) AND NOT(is_crawlable_details.noindex)) AS allow_index,
+    AS_PERCENT(COUNTIF(NOT(is_crawlable_details.disallow) AND NOT(is_crawlable_details.noindex)), COUNT(0)) AS pct_allow_index,
 
-    COUNTIF(is_crawlable_details.disallow AND NOT(is_crawlable_details.noindex)) AS crawlable_disallow_index,
-    AS_PERCENT(COUNTIF(is_crawlable_details.disallow AND NOT(is_crawlable_details.noindex)), COUNT(0)) AS pct_crawlable_disallow_index,
+    COUNTIF(is_crawlable_details.disallow AND NOT(is_crawlable_details.noindex)) AS disallow_index,
+    AS_PERCENT(COUNTIF(is_crawlable_details.disallow AND NOT(is_crawlable_details.noindex)), COUNT(0)) AS pct_disallow_index,
 
-    COUNTIF(NOT(is_crawlable_details.disallow) AND is_crawlable_details.noindex) AS crawlable_allow_noindex,
-    AS_PERCENT(COUNTIF(NOT(is_crawlable_details.disallow) AND is_crawlable_details.noindex), COUNT(0)) AS pct_crawlable_allow_noindex
+    COUNTIF(NOT(is_crawlable_details.disallow) AND is_crawlable_details.noindex) AS allow_noindex,
+    AS_PERCENT(COUNTIF(NOT(is_crawlable_details.disallow) AND is_crawlable_details.noindex), COUNT(0)) AS pct_allow_noindex
 FROM (
   SELECT
     JSON_EXTRACT_SCALAR(report, '$.audits.is-crawlable.score') = '1' AS is_crawlable,
