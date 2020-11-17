@@ -25,15 +25,15 @@ py -m pip install --user virtualenv
 2. Create an isolated Python environment, and install dependencies:
 
 ```
-virtualenv --python python3 env
-source env/bin/activate
+virtualenv --python python3 .venv
+source .venv/bin/activate
 ```
 
 Or for those on Windows:
 
 ```
-virtualenv --python python3 env
-env\Scripts\activate.bat
+virtualenv --python python3 .venv
+.venv\Scripts\activate.bat
 ```
 
 3. Install generate and run the website:
