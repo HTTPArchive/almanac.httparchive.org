@@ -5,12 +5,21 @@ title: Fonts
 description: Fonts chapter of the 2019 Web Almanac covering where fonts are loaded from, font formats, font loading performance, variable fonts and color fonts.
 authors: [zachleat]
 reviewers: [hyperpress, AymenLoukil]
+analysts: [tjmonsi, rviscomi]
 translators: []
 discuss: 1761
 results: https://docs.google.com/spreadsheets/d/108g6LXdC3YVsxmX1CCwrmpZ3-DmbB8G_wwgQHX5pn6Q/
 queries: 06_Fonts
+zachleat_bio: Zach is a Web Developer with <a href="https://www.filamentgroup.com/">Filament Group</a>. He’s currently fixated on <a href="https://www.zachleat.com/web/fonts/">web fonts</a> and <a href="https://www.zachleat.com/web/introducing-eleventy/">static site generators</a>. His <a href="https://www.zachleat.com/web/speaking/">public speaking résumé</a> includes talks in eight different countries at events like JAMstack_conf, Beyond Tellerrand, Smashing Conference, CSSConf, and <a href="https://www.zachleat.com/web/whitehouse/">The White House</a>. He also helps herd <a href="http://nejsconf.com/">NEJS CONF</a> and the <a href="http://nebraskajs.com">NebraskaJS</a> meetup.
+featured_quote: Web fonts enable beautiful and functional typography on the web. Using web fonts not only empowers design, but it democratizes a subset of design, as it allows easier access to those who might not have particularly strong design skills. However, for all the good they can do, web fonts can also do great harm to your site's performance if they are not loaded properly.
+featured_stat_1: 74.9%
+featured_stat_label_1: 3P Font Requests that use Google Fonts
+featured_stat_2: 29%
+featured_stat_label_2: Percent of pages that include a Google Fonts stylesheet link
+featured_stat_3: 718
+featured_stat_label_3: Most font requests on a single page
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-03-02T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introduction
@@ -31,13 +40,13 @@ Differentiating self-hosting against third-party hosting is increasingly relevan
 
 Recommendations to mitigate the performance costs of loading web fonts from another host include using the `preconnect`, `dns-prefetch`, and `preload` [resource hints](./resource-hints), but high priority web fonts should be same-host requests to minimize the performance impact of web fonts. This is especially important for fonts used by very visually prominent content or body copy occupying the majority of a page.
 
-<figure>
-  <a href="/static/images/2019/fonts/fig1.png">
-    <img src="/static/images/2019/fonts/fig1.png" alt="Figure 1. Popular web font hosting strategies." aria-labelledby="fig1-description" aria-describedby="fig1-caption" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&amp;format=interactive">
-  </a>
-  <div id="fig1-description" class="visually-hidden">Bar chart showing the popularity of third-party and self-hosting strategies for web fonts. 75% of mobile web pages use third-party hosts and 25% self-host. Desktop websites have similar usage.</div>
-  <figcaption id="fig1-caption">Figure 1. Popular web font hosting strategies.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig1.png",
+  caption="Popular web font hosting strategies.",
+  description="Bar chart showing the popularity of third-party and self-hosting strategies for web fonts. 75% of mobile web pages use third-party hosts and 25% self-host. Desktop websites have similar usage.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&format=interactive"
+  )
+}}
 
 The fact that three quarters are hosted is perhaps unsurprising given Google Fonts dominance that we will discuss [below](#what-are-the-most-popular-third-party-hosts).
 
@@ -159,15 +168,17 @@ Note that while `preload` would be a nice addition to load the font files higher
       </tr>
     </tbody>
   </table>
-  <figcaption>Figure 2. Top 20 font hosts by percent of requests.</figcaption>
+  <figcaption>{{ figure_link(caption="Top 20 font hosts by percent of requests.") }}</figcaption>
 </figure>
 
 The dominance of Google Fonts here was simultaneously surprising and unsurprising at the same time. It was unsurprising in that I expected the service to be the most popular and surprising in the sheer dominance of its popularity. 75% of font requests is astounding. TypeKit was a distant single-digit second place, with the Bootstrap library accounting for an even more distant third place.
 
-<figure>
-  <div class="big-number">29%</div>
-  <figcaption>Figure 3. Percent of pages that include a Google Fonts stylesheet link in the document <code>&lt;head&gt;</code>.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="Percent of pages that include a Google Fonts stylesheet link in the document <code><head></code>.",
+  content="29%",
+  classes="big-number"
+)
+}}
 
 While the high usage of Google Fonts here is very impressive, it is also noteworthy that only 29% of pages included a Google Fonts `<link>` element. This could mean a few things:
 
@@ -175,10 +186,12 @@ While the high usage of Google Fonts here is very impressive, it is also notewor
 - Or a more unlikely story is that it could mean that a lot of people are using Google Fonts with `@import` instead of `<link>`.
 - Or if we want to go off the deep end into super unlikely scenarios, it could mean that many people are using Google Fonts with an [HTTP `Link:` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link) instead.
 
-<figure>
-  <div class="big-number">0.4%</div>
-  <figcaption>Figure 4. Percent of pages that include a Google Fonts stylesheet link as the first child in the document <code>&lt;head&gt;</code>.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="Percent of pages that include a Google Fonts stylesheet link as the first child in the document <code><head></code>.",
+  content="0.4%",
+  classes="big-number"
+)
+}}
 
 Google Fonts documentation encourages the `<link>` for the Google Fonts CSS to be placed as the first child in the `<head>` of a page. This is a big ask! In practice, this is not common as only half a percent of all pages (about 20,000 pages) took this advice.
 
@@ -188,10 +201,12 @@ More so, if a page is using `preconnect` or `dns-prefetch` as `<link>` elements,
 
 As mentioned above, a super easy way to speed up web font requests to a third-party host is to use the `preconnect` [resource hint](./resource-hints).
 
-<figure>
-  <div class="big-number">1.7%</div>
-  <figcaption>Figure 5. Percent of mobile pages preconnecting to a web font host.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="Percent of mobile pages preconnecting to a web font host.",
+  content="1.7%",
+  classes="big-number"
+)
+}}
 
 Wow! Less than 2% of pages are using [`preconnect`](https://web.dev/uses-rel-preconnect)! Given that Google Fonts is at 75%, this should be higher! Developers: if you use Google Fonts, use `preconnect`! Google Fonts: proselytize `preconnect` more!
 
@@ -334,7 +349,7 @@ In fact, if you're using Google Fonts go ahead and add this to your `<head>` if 
         </tr>
       </tbody>
     </table>
-  <figcaption>Figure 6. Top 20 font families as a percent of all font declarations.</figcaption>
+  <figcaption>{{ figure_link(caption="Top 20 font families as a percent of all font declarations.") }}</figcaption>
 </figure>
 
 It is unsurprising that the top entries here seem to match up very similarly to [Google Fonts' list of fonts sorted by popularity](https://fonts.google.com/?sort=popularity).
@@ -343,13 +358,13 @@ It is unsurprising that the top entries here seem to match up very similarly to 
 
 [WOFF2 is pretty well supported](https://caniuse.com/#feat=woff2) in web browsers today. Google Fonts serves WOFF2, a format that offers improved compression over its predecessor WOFF, which was itself already an improvement over other existing font formats.
 
-<figure>
-  <a href="/static/images/2019/fonts/fig7.png">
-    <img src="/static/images/2019/fonts/fig7.png" alt="Figure 7. Popularity of web font MIME types." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=998584594&amp;format=interactive">
-  </a>
-  <div id="fig7-description" class="visually-hidden">Bar chart showing the popularity of web font MIME types. WOFF2 is used on 74% of fonts, followed by 13% WOFF, 6% octet-stream, 3% TTF, 2% plain, 1% HTML, 1% SFNT, and fewer than 1% for all other types. Desktop and mobile have similar distributions.</div>
-  <figcaption id="fig7-caption">Figure 7. Popularity of web font MIME types.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig7.png",
+  caption="Popularity of web font MIME types.",
+  description="Bar chart showing the popularity of web font MIME types. WOFF2 is used on 74% of fonts, followed by 13% WOFF, 6% octet-stream, 3% TTF, 2% plain, 1% HTML, 1% SFNT, and fewer than 1% for all other types. Desktop and mobile have similar distributions.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=998584594&format=interactive"
+  )
+}}
 
 From my perspective, an argument could be made to go WOFF2-only for web fonts after seeing the results here. I wonder where the double-digit WOFF usage is coming from? Perhaps developers still serving web fonts to Internet Explorer?
 
@@ -357,17 +372,17 @@ Third place `octet-stream` (and `plain` a little further down) would seem to sug
 
 Let's dig a bit deeper and look at the `format()` values used in the `src:` property of `@font-face` declarations:
 
-<figure>
-  <a href="/static/images/2019/fonts/fig8.png">
-    <img src="/static/images/2019/fonts/fig8.png" alt="Figure 8. Popularity of font formats in <code>@font-face</code> declarations." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=700778025&amp;format=interactive">
-  </a>
-  <div id="fig8-description" class="visually-hidden">Bar chart showing the popularity of formats used in font-face declarations. 69% of desktop pages' @font-face declarations specify the WOFF2 format, 11% WOFF, 10% TrueType, 8% SVG, 2% EOT, and fewer than 1% OpenType, TTF, and OTF. The distribution for mobile pages is similar.</div>
-  <figcaption id="fig8-caption">Figure 8. Popularity of font formats in <code>@font-face</code> declarations.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig8.png",
+  caption="Popularity of font formats in <code>@font-face</code> declarations.",
+  description="Bar chart showing the popularity of formats used in font-face declarations. 69% of desktop pages' @font-face declarations specify the WOFF2 format, 11% WOFF, 10% TrueType, 8% SVG, 2% EOT, and fewer than 1% OpenType, TTF, and OTF. The distribution for mobile pages is similar.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=700778025&format=interactive"
+  )
+}}
 
 I was hoping to see [SVG fonts](https://caniuse.com/#feat=svg-fonts) on the decline. They're buggy and implementations have been removed from every browser except Safari. Time to drop these, y'all.
 
-The SVG data point here also makes me wonder what MIME type y'all are serving these SVG fonts with. I don't see `image/svg+xml` anywhere in Figure 7. Anyway, don't worry about fixing that, just get rid of them!
+The SVG data point here also makes me wonder what MIME type y'all are serving these SVG fonts with. I don't see `image/svg+xml` anywhere in Figure 6.7. Anyway, don't worry about fixing that, just get rid of them!
 
 ### WOFF2-only
 
@@ -504,7 +519,7 @@ The SVG data point here also makes me wonder what MIME type y'all are serving th
       </tr>
     </tbody>
   </table>
-  <figcaption>Figure 9. Top 20 font format combinations.</figcaption>
+  <figcaption>{{ figure_link(caption="Top 20 font format combinations.") }}</figcaption>
 </figure>
 
 This dataset seems to suggest that the majority of people are already using WOFF2-only in their `@font-face` blocks. But this is misleading of course, per our earlier discussion on the dominance of Google Fonts in the data set. Google Fonts does some sniffing methods to serve a streamlined CSS file and only includes the most modern `format()`. Unsurprisingly, WOFF2 dominates the results here for that reason, as browser support for WOFF2 has been pretty broad for some time now.
@@ -517,10 +532,12 @@ The number one tool we have to fight the default web font loading behavior of "i
 
 [Browser support](https://caniuse.com/#feat=mdn-css_at-rules_font-face_font-display) is great too. Internet Explorer and pre-Chromium Edge don't have support but they also render fallback text by default when a web font loads (no FOITs allowed here). For our Chrome tests, how commonly is `font-display` used?
 
-<figure>
-  <div class="big-number">26%</div>
-  <figcaption>Figure 10. Percent of mobile pages that utilize the <code>font-display</code> style.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="Percent of mobile pages that utilize the <code>font-display</code> style.",
+  content="26%",
+  classes="big-number"
+)
+}}
 
 I assume this will be creeping up over time, especially now that [Google Fonts is adding `font-display` to all new code snippets](https://www.zachleat.com/web/google-fonts-display/) copied from their site.
 
@@ -528,13 +545,14 @@ If you're using Google Fonts, update your snippets! If you're not using Google F
 
 Let's have a look at what `font-display` values are popular:
 
-<figure>
-  <a href="/static/images/2019/fonts/fig11.png">
-    <img src="/static/images/2019/fonts/fig11.png" alt="Figure 11. Usage of 'font-display' values." aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1988783738&amp;format=interactive">
-  </a>
-  <div id="fig11-description" class="visually-hidden">Bar chart showing the usage of the font-display style. 2.6% of mobile pages set this style to "swap", 1.5% to "auto", 0.7% to "block", 0.4% to "fallback", 0.2% to optional, and 0.1% to "swap" enclosed in quotes, which is invalid. The desktop distribution is similar except "swap" usage is lower by 0.4 percentage points and "auto" usage is higher by 0.1 percentage points.</div>
-  <figcaption id="fig11-caption">Figure 11. Usage of <code>font-display</code> values.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig11.png",
+  alt="Usage of font-display values.",
+  caption="Usage of <code>font-display</code> values.",
+  description="Bar chart showing the usage of the font-display style. 2.6% of mobile pages set this style to \"swap\", 1.5% to \"auto\", 0.7% to \"block\", 0.4% to \"fallback\", 0.2% to optional, and 0.1% to \"swap\" enclosed in quotes, which is invalid. The desktop distribution is similar except \"swap\" usage is lower by 0.4 percentage points and \"auto\" usage is higher by 0.1 percentage points.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1988783738&format=interactive"
+  )
+}}
 
 As an easy way to show fallback text while a web font is loading, `font-display: swap` reigns supreme and is the most common value. `swap` is also the default value used by new Google Fonts code snippets too. I would have expected `optional` (only render if cached) to have a bit more usage here as a few prominent developer evangelists lobbied for it a bit, but no dice.
 
@@ -542,23 +560,23 @@ As an easy way to show fallback text while a web font is loading, `font-display:
 
 This is a question that requires some measure of nuance. How are the fonts being used? For how much content on the page? Where does this content live in the layout? How are the fonts being rendered? In lieu of nuance however let's dive right into some broad and heavy handed analysis specifically centered on request counts.
 
-<figure>
-  <a href="/static/images/2019/fonts/fig12.png">
-    <img src="/static/images/2019/fonts/fig12.png" alt="Figure 12. Distribution of font requests per page." aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=451821825&amp;format=interactive">
-  </a>
-  <div id="fig12-description" class="visually-hidden">Bar chart showing the distribution of font requests per page. The 10, 25, 50, 75, and 90th percentiles for desktop are: 0, 1, 3, 6, and 9 font requests. The distribution for mobile is identical until the 75th and 90th percentiles, where mobile pages request 1 fewer font.</div>
-  <figcaption id="fig12-caption">Figure 12. Distribution of font requests per page.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig12.png",
+  caption="Distribution of font requests per page.",
+  description="Bar chart showing the distribution of font requests per page. The 10, 25, 50, 75, and 90th percentiles for desktop are: 0, 1, 3, 6, and 9 font requests. The distribution for mobile is identical until the 75th and 90th percentiles, where mobile pages request 1 fewer font.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=451821825&format=interactive"
+  )
+}}
 
 The median web page makes three web font requests. At the 90th percentile, requested six and nine web fonts on mobile and desktop, respectively.
 
-<figure>
-  <a href="/static/images/2019/fonts/fig13.png">
-    <img src="/static/images/2019/fonts/fig13.png" alt="Figure 13. Histogram of web fonts requested per page." aria-labelledby="fig13-description" aria-describedby="fig13-caption" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1755200484&amp;format=interactive">
-  </a>
-  <div id="fig13-description" class="visually-hidden">Histogram showing the distribution of the number of font requests per page. The most popular number of font requests is 0 at 22% of desktop pages. The distribution drops to 9% of pages having 1 font, then crests at 10% for 2-4 fonts before falling as the number of fonts increases. The desktop and mobile distributions are similar, although the mobile distribution skews slightly toward having fewer fonts per page.</div>
-  <figcaption id="fig13-caption">Figure 13. Histogram of web fonts requested per page.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig13.png",
+  caption="Histogram of web fonts requested per page.",
+  description="Histogram showing the distribution of the number of font requests per page. The most popular number of font requests is 0 at 22% of desktop pages. The distribution drops to 9% of pages having 1 font, then crests at 10% for 2-4 fonts before falling as the number of fonts increases. The desktop and mobile distributions are similar, although the mobile distribution skews slightly toward having fewer fonts per page.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1755200484&format=interactive"
+  )
+}}
 
 It does seem quite interesting that web font requests seem to be pretty steady across desktop and mobile. I'm glad to see the [recommendation to hide `@font-face` blocks inside of a `@media` queries](https://css-tricks.com/snippets/css/using-font-face/#article-header-id-6) didn't catch on (don't get any ideas).
 
@@ -566,10 +584,12 @@ That said there are marginally more requests for fonts made on mobile devices. M
 
 ### You don't want to win this award
 
-<figure>
-  <div class="big-number">718</div>
-  <figcaption>Figure 14. The most web font requests on a single page.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="The most web font requests on a single page.",
+  content="718",
+  classes="big-number"
+)
+}}
 
 The award for the page that requests the most web fonts goes to a site that made **718** web font requests!
 
@@ -579,10 +599,12 @@ Ironic that a performance optimization plugin can make your performance much wor
 
 ## More accurate matching with `unicode-range`
 
-<figure>
-  <div class="big-number">56%</div>
-  <figcaption>Figure 15. Percent of mobile pages that declare a web font with the <code>unicode-range</code> property.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="Percent of mobile pages that declare a web font with the <code>unicode-range</code> property.",
+  content="56%",
+  classes="big-number"
+)
+}}
 
 [`unicode-range`](https://developer.mozilla.org/en-US/docs/Web/CSS/%40font-face/unicode-range) is a great CSS property to let the browser know specifically which code points the page would like to use in the font file. If the `@font-face` declaration has a `unicode-range`, content on the page must match one of the code points in the range before the font is requested. It is a very good thing.
 
@@ -590,10 +612,12 @@ This is another metric that I expect was skewed by Google Fonts usage, as Google
 
 ## Don't request web fonts if a system font exists
 
-<figure>
-  <div class="big-number">59%</div>
-  <figcaption>Figure 16. Percent of mobile pages that declare a web font with the <code>local()</code> property.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="Percent of mobile pages that declare a web font with the <code>local()</code> property.",
+  content="59%",
+  classes="big-number"
+)
+}}
 
 `local()` is a nice way to reference a system font in your `@font-face` `src`. If the `local()` font exists, it doesn't need to make a request for a web font at all. This is used both extensively and controversially by Google Fonts, so it is likely another example of skewed data if we're trying to glean patterns from user land.
 
@@ -601,10 +625,12 @@ It should also be noted here that it has been said by smarter people than I (Bra
 
 ## Condensed fonts and `font-stretch`
 
-<figure>
-  <div class="big-number">7%</div>
-  <figcaption>Figure 17. Percent of desktop and mobile pages that include a style with the <code>font-stretch</code> property.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="Percent of desktop and mobile pages that include a style with the <code>font-stretch</code> property.",
+  content="7%",
+  classes="big-number"
+)
+}}
 
 Historically, `font-stretch` has suffered from poor browser support and was not a well-known `@font-face` property. Read more about [`font-stretch` on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch). But [browser support](https://caniuse.com/#feat=css-font-stretch) has broadened.
 
@@ -614,29 +640,34 @@ It has been suggested that using condensed fonts on smaller viewports allows mor
 
 [Variable fonts](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide) allow several font weights and styles to be included in the one font file.
 
-<figure>
-  <div class="big-number">1.8%</div>
-  <figcaption>Figure 18. Percent of pages that include a variable font.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="Percent of pages that include a variable font.",
+  content="1.8%",
+  classes="big-number"
+)
+}}
 
 Even at 1.8% this was higher than expected, although I am excited to see this take off. [Google Fonts v2](https://developers.google.com/fonts/docs/css2) does include some support for variable fonts.
 
-<figure>
-  <a href="/static/images/2019/fonts/fig19.png">
-    <img src="/static/images/2019/fonts/fig19.png" alt="Figure 19. Usage of 'font-variation-settings' axes." aria-labelledby="fig19-caption" aria-describedby="fig19-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=699343351&amp;format=interactive">
-  </a>
-  <div id="fig19-description" class="visually-hidden">Bar chart showing the usage of the font-variation-settings property. 42% of properties on desktop pages are set to the "opsz" value, 32% to "wght", 16% to "wdth", 2% or fewer to "roun", "crsb", "slnt", "inln", and more. The most notable differences between desktop and mobile pages are 26% usage of "opsz", 38% of "wght", and 23% of "wdth".</div>
-  <figcaption id="fig19-caption">Figure 19. Usage of <code>font-variation-settings</code> axes.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig19.png",
+  alt="Usage of font-variation-settings axes.",
+  caption="Usage of <code>font-variation-settings</code> axes.",
+  description="Bar chart showing the usage of the font-variation-settings property. 42% of properties on desktop pages are set to the \"opsz\" value, 32% to \"wght\", 16% to \"wdth\", 2% or fewer to \"roun\", \"crsb\", \"slnt\", \"inln\", and more. The most notable differences between desktop and mobile pages are 26% usage of \"opsz\", 38% of \"wght\", and 23% of \"wdth\".",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=699343351&format=interactive"
+  )
+}}
 
 Through the lens of this large data set, these are very low sample sizes-take these results with a grain of salt. However, `opsz` as the most common axis on desktop pages is notable, with `wght` and `wdth` trailing. In my experience, the introductory demos for variable fonts are usually weight-based.
 
 ## Color fonts might also be the future?
 
-<figure>
-  <div class="big-number">117</div>
-  <figcaption>Figure 20. The number of desktop web pages that include a color font.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="The number of desktop web pages that include a color font.",
+  content="117",
+  classes="big-number"
+)
+}}
 
 Usage here of these is basically nonexistent but you can check out the excellent resource [Color Fonts! WTF?](https://www.colorfonts.wtf/) for more information. Similar (but not at all) to the SVG format for fonts (which is bad and going away), this allows you to embed SVG inside of OpenType files, which is awesome and cool.
 

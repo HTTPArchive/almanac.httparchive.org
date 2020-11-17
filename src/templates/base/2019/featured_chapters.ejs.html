@@ -1,0 +1,27 @@
+<% if (Object.keys(featured_quotes).length === 1) { -%>
+{%- set featured_chapter = ("<%- Object.keys(featured_quotes) %>") %}
+<% } else { -%>
+{%- set featured_chapter = ("<%- Object.keys(featured_quotes).join('","') %>") | random %}
+<% } -%>
+
+<% let loop = 0 -%>
+<% for (chapter in featured_quotes) { -%>
+<% if (loop === 0) { -%>
+{%- if featured_chapter == "<%- chapter %>" %}
+<% } else { -%>
+{%- elif featured_chapter == "<%- chapter %>" %}
+<% } %><% loop++ -%>
+  {%- set featured_chapter_quote = "<%- featured_quotes[chapter].quote %>" %}
+  {%- set featured_chapter_stats = {
+<% for (stat in featured_quotes[chapter].stats) { -%>
+<% let stat_count = stat; stat_count++; -%>
+<% if (featured_quotes[chapter].stats) { -%>
+      "stat<%- stat_count -%>":"<%- featured_quotes[chapter].stats[stat][0] %>","label<%- stat_count -%>":"<%- featured_quotes[chapter].stats[stat][1] -%>"<% if (stat_count < featured_quotes[chapter].stats.length) { -%>,<% } %>
+<% } -%>
+<% } -%>
+    }
+  %}
+<% } -%>
+{% endif %}
+
+{{ featuredChapter(featured_chapter, featured_chapter_quote, featured_chapter_stats, "<%- language %>") }}

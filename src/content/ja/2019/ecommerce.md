@@ -5,12 +5,22 @@ title: Eコマース
 description: 2019年Web AlmanacのEコマースの章では、Eコマースのプラットフォーム、ペイロード、画像、サードパーティ、パフォーマンス、SEO、PWAをカバーしています。
 authors: [samdutton, alankent]
 reviewers: [voltek62]
+analysts: [rviscomi]
 translators: [ksakae]
 discuss: 1768
 results: https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/
 queries: 13_Ecommerce
+samdutton_bio: Sam Duttonは2011年からDeveloper AdvocateとしてGoogle Chromeチームで働いています。数々のイベントを企画して発表し、いくつかのウェブ開発コースを作成して教え、PWA、パフォーマンス、メディア、イメージ、「Next Billion Users」イニシアティブをカバーする様々なビデオ、コードラボ、文書化されたガイダンスに取り組んできました。彼は<a href="https://simpl.info">simpl.info</a>を管理しており、HTML、CSS、JavaScriptの最もシンプルな例を提供しています。南オーストラリアで育ち、シドニーの大学に進学し、1986年からロンドンに住んでいます。
+alankent_bio: Alan KentはGoogleのDeveloper Advocateで、Eコマースとコンテンツエコシステムに焦点を当てています。彼は <a href="https://alankent.me">alankent.me</a> でブログを書いており、<a href="https://twitter.com/akent99">@akent99</a> としてツイートしています。
+featured_quote: この調査では、ホームページの10%近くがeコマース・プラットフォーム上にあることが判明しました。<em>eコマースプラットフォーム</em> は、オンラインストアを作成して運営することを可能にするソフトウェア ソフトウェアまたはサービスのセットです。Shopifyなどの有料サービス、Magentoオープンソースなどのソフトウェアプラットフォーム、およびMagento Commerceなどのホスト型プラットフォームなどが含まれます。
+featured_stat_1: 3.98%
+featured_stat_label_1: WooCommerceを使用してサイト最も人気のあるEコマースプラットフォーム
+featured_stat_2: 116
+featured_stat_label_2: 検出されたEコマースプラットフォームの数
+featured_stat_3: 1,517 KB
+featured_stat_label_3: モバイルEコマースページあたりの画像バイト数の中央値。
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-06-30T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## 序章
@@ -21,10 +31,12 @@ last_updated: 2020-06-30T00:00:00.000Z
 - [Magento Open Source](https://magento.com/products/magento-open-source)のような**ソフトウェアプラットフォーム**は自分で設定し、ホストし、管理できます。これらのプラットフォームは強力で柔軟性がありますが、Shopifyのようなサービスよりもセットアップや運用が複雑になることがあります。
 - [Magento Commerce](https://magento.com/products/magento-commerce)のような**ホスト付きプラットフォーム**は、ホスティングがサードパーティによってサービスとして管理されていることを除いて、彼らのセルフホスティングされた対応と同じ機能を提供しています。
 
-<figure>
-  <div class="big-number">10%</div>
-  <figcaption>図1. Eコマースプラットフォーム上のページの割合。</figcaption>
-</figure>
+{{ figure_markup(
+  caption="Eコマースプラットフォーム上のページの割合。",
+  content="10%",
+  classes="big-number"
+)
+}}
 
 この分析では、Eコマース・プラットフォーム上に構築されたサイトのみを検出できました。つまり、Amazon、JD、eBayなどの大規模なオンラインストアやマーケットプレイスはここには含まれていません。また、ここでのデータはホームページのみを対象としており、カテゴリ、商品、その他のページは含まれていないことにも注意してください。当社の[方法論](./methodology)の詳細については、こちらをご覧ください。
 
@@ -63,7 +75,7 @@ last_updated: 2020-06-30T00:00:00.000Z
       </tr>
     </tbody>
   </table>
-  <figcaption>図2. 検出されたEコマースプラットフォームの割合。</figcaption>
+  <figcaption>{{ figure_link(caption="検出されたEコマースプラットフォームの割合。") }}</figcaption>
 </figure>
 
 ## Eコマースプラットフォーム
@@ -110,32 +122,40 @@ last_updated: 2020-06-30T00:00:00.000Z
       </tr>
     </tbody>
   </table>
-  <figcaption>図3. 上位6つのEコマースプラットフォームの採用。</figcaption>
+  <figcaption>{{ figure_link(caption="上位6つのEコマースプラットフォームの採用。") }}</figcaption>
 </figure>
 
 検出された116のEコマースプラットフォームのうち、デスクトップまたはモバイルサイトの0.1％以上で検出されたのは6つだけでした。これらの結果には国別、サイトの規模別、その他の類似した指標による変動は示されていません。
 
-上記の図3を見ると、WooCommerceの採用率が最も高く、デスクトップおよびモバイルサイトの約4％を占めていることがわかります。Shopifyは約1.6％の採用で2位です。Magento、PrestaShop、Bigcommerce、Shopwareが0.1％に近づき、採用率が小さくなっています。
+上記の図13.3を見ると、WooCommerceの採用率が最も高く、デスクトップおよびモバイルサイトの約4％を占めていることがわかります。Shopifyは約1.6％の採用で2位です。Magento、PrestaShop、Bigcommerce、Shopwareが0.1％に近づき、採用率が小さくなっています。
 
 ### ロングテール
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig4.png">
-    <img src="/static/images/2019/ecommerce/fig4.png" alt="図4. トップのEコマースプラットフォームの採用。" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="414" data-width="600" data-height="414" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1565776696&amp;format=interactive">
-  </a>
-  <div id="fig4-description" class="visually-hidden">上位20のEコマースプラットフォームの採用状況の棒グラフ。上位6プラットフォームの採用状況のデータ表は、上記の図3を参照してください。</div>
-  <figcaption id="fig4-caption">図4. トップのEコマースプラットフォームの採用。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig4.png",
+  caption="トップのEコマースプラットフォームの採用。",
+  description="上位20のEコマースプラットフォームの採用状況の棒グラフ。上位6プラットフォームの採用状況のデータ表は、上記の図13.3を参照してください。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1565776696&format=interactive",
+  width=600,
+  height=414,
+  data_width=600,
+  data_height=414
+  )
+}}
 
 110のEコマースプラットフォームがあり、それぞれがデスクトップまたはモバイルのウェブサイトの0.1％未満を持っています。そのうち約60社は、モバイルかデスクトップのウェブサイトの0.01％未満を占めています。
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig5.png">
-    <img src="/static/images/2019/ecommerce/fig5.png" alt="図5. 上位6つのEコマースプラットフォームと他の110のプラットフォームとの複合的な採用。" aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="361" data-width="600" data-height="361" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=2093212206&amp;format=interactive">
-  </a>
-  <div id="fig5-description" class="visually-hidden">上位6つのEコマースプラットフォームは、すべてのウェブサイトの8％を占めています。残りの110のプラットフォームはウェブサイトの1.5％を占めているに過ぎません。デスクトップとモバイルの結果は似ています。</div>
-  <figcaption id="fig5-caption">図5. 上位6つのEコマースプラットフォームと他の110のプラットフォームとの複合的な採用。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig5.png",
+  caption="上位6つのEコマースプラットフォームと他の110のプラットフォームとの複合的な採用。",
+  description="上位6つのEコマースプラットフォームは、すべてのウェブサイトの8％を占めています。残りの110のプラットフォームはウェブサイトの1.5％を占めているに過ぎません。デスクトップとモバイルの結果は似ています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=2093212206&format=interactive",
+  width=600,
+  height=361,
+  data_width=600,
+  data_height=361
+  )
+}}
 
 モバイルでのリクエストの7.87％、デスクトップでのリクエストの8.06％は、上位6つのEコマース・プラットフォームのうちの1つのホームページが対象となっています。さらにモバイルでのリクエストの1.52％、デスクトップでのリクエストの1.59％は、他の110のEコマース・プラットフォームのホームページが対象となっています。
 
@@ -143,13 +163,17 @@ last_updated: 2020-06-30T00:00:00.000Z
 
 合計で、デスクトップページの9.7％、モバイルページの9.5％がEコマースプラットフォームを利用していました。
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig6.png">
-    <img src="/static/images/2019/ecommerce/fig6.png" alt="図6. 任意のEコマースプラットフォームを使用しているページの割合。" aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="363" data-width="600" data-height="363" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1360307171&amp;format=interactive">
-  </a>
-  <div id="fig6-description" class="visually-hidden">デスクトップページの9.7%がEコマースプラットフォームを使用しており、モバイルページの9.5%がEコマースプラットフォームを使用しています。</div>
-  <figcaption id="fig6-caption">図6. 任意のEコマースプラットフォームを使用しているページの割合。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig6.png",
+  caption="任意のEコマースプラットフォームを使用しているページの割合。",
+  description="デスクトップページの9.7%がEコマースプラットフォームを使用しており、モバイルページの9.5%がEコマースプラットフォームを使用しています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1360307171&format=interactive",
+  width=600,
+  height=363,
+  data_width=600,
+  data_height=363
+  )
+}}
 
 ウェブサイトのデスクトップ比率は全体的に若干高くなっていますが、一部の人気プラットフォーム（WooCommerce、PrestaShop、Shopwareを含む）では、実際にはデスクトップウェブサイトよりもモバイル性が高くなっています。
 
@@ -157,21 +181,29 @@ last_updated: 2020-06-30T00:00:00.000Z
 
 Eコマースプラットフォームの[ページの重さ](./page-weight)は、すべてのHTML、CSS、JavaScript、JSON、XML、画像、オーディオ、およびビデオを含んでいます。
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig7.png">
-    <img src="/static/images/2019/ecommerce/fig7.png" alt="図7. Eコマースのページ重量の分布。" aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="363" data-width="600" data-height="363" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=448248428&amp;format=interactive">
-  </a>
-  <div id="fig7-description" class="visually-hidden">10、25、50、75、およびEコマースページの重量の90パーセンタイルの分布。中央値のデスクトップEコマースページは2.7MBをロードします。10パーセンタイルは1.0MB、25パーセンタイルは1.6MB、75パーセンタイルは4.5MB、90パーセンタイルは7.6MBです。デスクトップのウェブサイトは、メガバイトの10分の1の割合でモバイルよりもわずかに高くなっています。</div>
-  <figcaption id="fig7-caption">図7. Eコマースのページ重量の分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig7.png",
+  caption="Eコマースのページ重量の分布。",
+  description="10、25、50、75、およびEコマースページの重量の90パーセンタイルの分布。中央値のデスクトップEコマースページは2.7MBをロードします。10パーセンタイルは1.0MB、25パーセンタイルは1.6MB、75パーセンタイルは4.5MB、90パーセンタイルは7.6MBです。デスクトップのウェブサイトは、メガバイトの10分の1の割合でモバイルよりもわずかに高くなっています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=448248428&format=interactive",
+  width=600,
+  height=363,
+  data_width=600,
+  data_height=363
+  )
+}}
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig8.png">
-    <img src="/static/images/2019/ecommerce/fig8.png" alt="図8. Eコマースページごとのリクエストの分布。" aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="363" data-width="600" data-height="363" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1968521689&amp;format=interactive">
-  </a>
-  <div id="fig8-description" class="visually-hidden">Eコマースページあたりのリクエストの10、25、50、75、および 90パーセンタイルの分布。中央値のデスクトップ Eコマースページは108リクエストを行います。10パーセンタイルは53リクエスト、25パーセンタイルは76、75パーセンタイルは153、90パーセンタイルは210です。デスクトップのウェブサイトは、約10リクエストでモバイルよりもわずかに高くなっています。</div>
-  <figcaption id="fig8-caption">図8. Eコマースページごとのリクエストの分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig8.png",
+  caption="Eコマースページごとのリクエストの分布。",
+  description="Eコマースページあたりのリクエストの10、25、50、75、および 90パーセンタイルの分布。中央値のデスクトップ Eコマースページは108リクエストを行います。10パーセンタイルは53リクエスト、25パーセンタイルは76、75パーセンタイルは153、90パーセンタイルは210です。デスクトップのウェブサイトは、約10リクエストでモバイルよりもわずかに高くなっています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1968521689&format=interactive",
+  width=600,
+  height=363,
+  data_width=600,
+  data_height=363
+  )
+}}
 
 デスクトップEコマースプラットフォームのページの読み込み量の中央値は108リクエストと2.7MBです。すべてのデスクトップページの重量の中央値は74リクエストと[1.9 MB](./page-weight#ページの重さ) です。言い換えれば、Eコマースページは他のウェブページよりも50％近く多くのリクエストを行い、ペイロードは約35％大きくなっています。比較すると、[amazon.com](https://amazon.com)のホームページは、最初のロード時に約5MBのページ重量に対して約300リクエストを行い、[ebay.com](https://ebay.com)は約3MBのページウェイトに対して約150リクエストを行います。Eコマースプラットフォーム上のホームページのページ重量とリクエスト数は、各パーセンタイルでモバイルの方が若干小さくなっていますが、すべてのEコマースのホームページの約10％が7MB以上をロードし200以上のリクエストをしています。
 
@@ -278,7 +310,7 @@ Eコマース・プラットフォーム上の多くのホームページが、�
       </tr>
     </tbody>
   </table>
-<figcaption>図9. リソースタイプ別のページ重量分布（KB単位）のパーセンタイル。</figcaption>
+<figcaption>{{ figure_link(caption="リソースタイプ別のページ重量分布（KB単位）のパーセンタイル。") }}</figcaption>
 </figure>
 
 <figure>
@@ -376,7 +408,7 @@ Eコマース・プラットフォーム上の多くのホームページが、�
       </tr>
     </tbody>
   </table>
-  <figcaption>図10リソースタイプ別の1ページあたりのリクエストの分布のパーセンタイル。</figcaption>
+  <figcaption>{{ figure_link(caption="リソースタイプ別の1ページあたりのリクエストの分布のパーセンタイル。") }}</figcaption>
 </figure>
 
 Eコマースページでは、画像が最大のリクエスト数とバイト数の割合を占めています。デスクトップEコマースページの中央値には、1,514KB(1.5MB)の重さの画像が39枚含まれています。
@@ -385,13 +417,13 @@ Eコマースページでは、画像が最大のリクエスト数とバイト�
 
 ## HTMLペイロードサイズ
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig11.png">
-    <img src="/static/images/2019/ecommerce/fig11.png" alt="図11. EコマースページあたりのHTMLバイト数の分布（KB単位）。" aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=908924961&amp;format=interactive">
-  </a>
-  <div id="fig11-description" class="visually-hidden">EコマースページあたりのHTMLバイトの10、25、50、75、および90パーセンタイルの分布。中央値のデスクトップ Eコマースページには、36KBのHTMLがあります。10パーセンタイルは12KB、25パーセンタイルは20、75パーセンタイルは66、90パーセンタイルは118です。デスクトップWebサイトの HTMLバイト数は、モバイルよりも1～2KB多いです。</div>
-  <figcaption id="fig11-caption">図11. EコマースページあたりのHTMLバイト数の分布（KB単位）。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig11.png",
+  caption="EコマースページあたりのHTMLバイト数の分布（KB単位）。",
+  description="EコマースページあたりのHTMLバイトの10、25、50、75、および90パーセンタイルの分布。中央値のデスクトップ Eコマースページには、36KBのHTMLがあります。10パーセンタイルは12KB、25パーセンタイルは20、75パーセンタイルは66、90パーセンタイルは118です。デスクトップWebサイトの HTMLバイト数は、モバイルよりも1～2KB多いです。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=908924961&format=interactive"
+  )
+}}
 
 HTMLペイロードには、外部リンクとして参照されるのではなく、マークアップ自体にインラインJSON、JavaScript、CSSなどの他のコードが直接含まれている場合があることに注意してください。EコマースページのHTMLペイロードのサイズの中央値は、モバイルで34KB、デスクトップで36KBです。しかし、Eコマースページの10％には、115KB以上のHTMLペイロードがあります。
 
@@ -399,30 +431,32 @@ HTMLペイロードには、外部リンクとして参照されるのではな�
 
 ## 画像の統計
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig12.png">
-    <img src="/static/images/2019/ecommerce/fig12.png" alt="図12. Eコマースページごとの画像バイト数の分布（KB単位）。" aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=323146848&amp;format=interactive">
-  </a>
-  <div id="fig12-description" class="visually-hidden">Eコマースページあたりの画像バイト数の10、25、50、75、および90パーセンタイルの分布。中央値のモバイルEコマースページには、1,517KBの画像があります。10パーセンタイルは318KB、25パーセンタイルは703、75パーセンタイルは3,132、90パーセンタイルは5,881です。デスクトップとモバイルのウェブサイトでは、同様の分布を示しています。</div>
-  <figcaption id="fig12-caption">図12. Eコマースページごとの画像バイト数の分布（KB単位）。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig12.png",
+  caption="Eコマースページごとの画像バイト数の分布（KB単位）。",
+  description="Eコマースページあたりの画像バイト数の10、25、50、75、および90パーセンタイルの分布。中央値のモバイルEコマースページには、1,517KBの画像があります。10パーセンタイルは318KB、25パーセンタイルは703、75パーセンタイルは3,132、90パーセンタイルは5,881です。デスクトップとモバイルのウェブサイトでは、同様の分布を示しています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=323146848&format=interactive"
+  )
+}}
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig13.png">
-    <img src="/static/images/2019/ecommerce/fig13.png" alt="図13. Eコマースページごとの画像リクエストの分布。" aria-labelledby="fig13-caption" aria-describedby="fig13-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1483037371&amp;format=interactive">
-  </a>
-  <div id="fig13-description" class="visually-hidden">Eコマースページあたりの画像リクエストの10、25、50、75、および90パーセンタイルの分布。中央値のデスクトップEコマースページでは、40件の画像リクエストが発生します。10パーセンタイルはリクエストが16件、25パーセンタイルは25件、75パーセンタイルは62件、90パーセンタイルは97件です。デスクトップの分布は、各パーセンタイルで2～10件のリクエストがモバイルよりもわずかに高くなっています。</div>
-  <figcaption id="fig13-caption">図13. Eコマースページごとの画像リクエストの分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig13.png",
+  caption="Eコマースページごとの画像リクエストの分布。",
+  description="Eコマースページあたりの画像リクエストの10、25、50、75、および90パーセンタイルの分布。中央値のデスクトップEコマースページでは、40件の画像リクエストが発生します。10パーセンタイルはリクエストが16件、25パーセンタイルは25件、75パーセンタイルは62件、90パーセンタイルは97件です。デスクトップの分布は、各パーセンタイルで2～10件のリクエストがモバイルよりもわずかに高くなっています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1483037371&format=interactive"
+  )
+}}
 
 <p class="note">私たちのデータ収集<a href="./methodology">方法論</a>はクリックやスクロールなど、ページ上でのユーザー操作をシミュレートしていないため、遅延して読み込まれた画像はこれらの結果には表示されないことに注意してください。</p>
 
-上記の図12と13で中央値のEコマースページには、モバイルでは37枚の画像と1,517KBの画像ペイロードがあり、デスクトップでは40枚の画像と1,524KBの画像ペイロードがあることを示しています。ホームページの10％は、90以上の画像と6MB近くの画像ペイロードを持っています！
+上記の図13.12と13.13で中央値のEコマースページには、モバイルでは37枚の画像と1,517KBの画像ペイロードがあり、デスクトップでは40枚の画像と1,524KBの画像ペイロードがあることを示しています。ホームページの10％は、90以上の画像と6MB近くの画像ペイロードを持っています！
 
-<figure>
-  <div class="big-number">1,517 KB</div>
-  <figcaption>図14. モバイルEコマースページあたりの画像バイト数の中央値。</figcaption>
-</figure>
+{{ figure_markup(
+  caption="モバイルEコマースページあたりの画像バイト数の中央値。",
+  content="1,517 KB",
+  classes="big-number"
+)
+}}
 
 Eコマースページのかなりの割合で、大きな画像ペイロードを持ち、最初のロード時に大量の画像リクエストを行います。詳細については、HTTP Archiveの[State of Images](https://httparchive.org/reports/state-of-images)レポート、および[media](./media)と[page weight](./page weight)の章を参照してください。
 
@@ -432,13 +466,13 @@ Eコマースページのかなりの割合で、大きな画像ペイロード�
 
 ## Popular image formats
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig15.png">
-    <img src="/static/images/2019/ecommerce/fig15.png" alt="図15. 一般的な画像フォーマット。" aria-labelledby="fig15-caption" aria-describedby="fig15-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=2108999644&amp;format=interactive">
-  </a>
-  <div id="fig15-description" class="visually-hidden">様々な画像フォーマットの人気を示す棒グラフ。JPEGが最も人気のあるフォーマットで、デスクトップEコマースページの画像の54％を占めています。次いでPNGが27％、GIFが14％、SVGが2％、WebPとICOがそれぞれ1％となっています。</div>
-  <figcaption id="fig15-caption">図15. 一般的な画像フォーマット。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig15.png",
+  caption="一般的な画像フォーマット。",
+  description="様々な画像フォーマットの人気を示す棒グラフ。JPEGが最も人気のあるフォーマットで、デスクトップEコマースページの画像の54％を占めています。次いでPNGが27％、GIFが14％、SVGが2％、WebPとICOがそれぞれ1％となっています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=2108999644&format=interactive"
+  )
+}}
 
 <p class="note">画像サービスやCDNの中には、`.jpg`や`.png`という接尾辞を持つURLであっても、WebPをサポートしているプラットフォームには自動的にWebP(JPEGやPNGではなく)を配信するものがあることに注意してください。たとえば、<a href="https://res.cloudinary.com/webdotdev/f_auto/w_500/IMG_20190113_113201.jpg">IMG_20190113_113201.jpg</a>はChromeでWebP画像を返します。しかし、HTTP Archive<a href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/31a25b9064a365d746d4811a1d6dda516c0e4985/bulktest/batch_lib.inc#L994">画像フォーマットを検出する方法</a>は、最初にMIMEタイプのキーワードをチェックしてから、ファイルの拡張子にフォールバックするというものです。つまり、HTTP ArchiveがユーザーエージェントとしてWebPをサポートしているため、上記のようなURLを持つ画像のフォーマットはWebPとして与えられることになります。</p>
 
@@ -510,7 +544,7 @@ WebPをPNGのフォールバックで使用したり、無地の色の背景でW
       </tr>
     </tbody>
   </table>
-  <figcaption>図16. Eコマースページごとの固有画像の寸法（ピクセル単位）の分布。</figcaption>
+  <figcaption>{{ figure_link(caption="Eコマースページごとの固有画像の寸法（ピクセル単位）の分布。") }}</figcaption>
 </figure>
 
 Eコマースページで要求された画像の中央値（「中間値」）は、モバイルで247X196px、デスクトップで240X192pxです。Eコマースページで要求される画像の10％は、モバイルでは693X512px以上、デスクトップでは800X546px以上です。これらの寸法は画像の本質的なサイズであり、表示サイズではないことに注意してください。
@@ -523,21 +557,21 @@ Eコマースページで要求された画像の中央値（「中間値」）�
 
 多くのウェブサイト、特にオンラインストアでは、分析、A/Bテスト、顧客行動追跡、広告、ソーシャルメディアのサポートなどのためにサードパーティのコードやコンテンツを大量にロードしています。サードパーティのコンテンツは、[パフォーマンスに大きな影響を与える](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript)ことがあります。 [Patrick Hulce](https://twitter.com/patrickhulce)の[サードパーティウェブツール](https://github.com/patrickhulce/third-party-web)は、本レポートのサードパーティのリクエストを判断するために使用されており、これについては[サードパーティ](./third-parties)の章で詳しく説明しています。
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig17.png">
-    <img src="/static/images/2019/ecommerce/fig17.png" alt="図17. Eコマースページごとのサードパーティリクエストの分布。" aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=865791628&amp;format=interactive">
-  </a>
-  <div id="fig17-description" class="visually-hidden">Eコマースページあたりのサードパーティリクエストの10、25、50、75、90パーセンタイルの分布。デスクトップでのサードパーティリクエストの数の中央値は19です。10、25、75、90パーセンタイルは4、9、34、54となっています。デスクトップの分布は、各パーセンタイルでモバイルよりも1-2件のリクエスト数だけ高くなっています。</div>
-  <figcaption id="fig17-caption">図17. Eコマースページごとのサードパーティリクエストの分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig17.png",
+  caption="Eコマースページごとのサードパーティリクエストの分布。",
+  description="Eコマースページあたりのサードパーティリクエストの10、25、50、75、90パーセンタイルの分布。デスクトップでのサードパーティリクエストの数の中央値は19です。10、25、75、90パーセンタイルは4、9、34、54となっています。デスクトップの分布は、各パーセンタイルでモバイルよりも1-2件のリクエスト数だけ高くなっています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=865791628&format=interactive"
+  )
+}}
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig18.png">
-    <img src="/static/images/2019/ecommerce/fig18.png" alt="図18. Eコマースページあたりのサードパーティのバイト数の分布。" aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=164264869&amp;format=interactive">
-  </a>
-  <div id="fig18-description" class="visually-hidden">Eコマースページあたりのサードパーティのバイト数の10、25、50、75、90パーセンタイルの分布。デスクトップでのサードパーティのバイト数の中央値は320KBです。10、25、75、90パーセンタイルは次のとおりです。42、129、651、1,071。デスクトップの分布は、各パーセンタイルでモバイルよりも10～30KB高くなっています。</div>
-  <figcaption id="fig18-caption">図18. Eコマースページあたりのサードパーティのバイト数の分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig18.png",
+  caption="Eコマースページあたりのサードパーティのバイト数の分布。",
+  description="Eコマースページあたりのサードパーティのバイト数の10、25、50、75、90パーセンタイルの分布。デスクトップでのサードパーティのバイト数の中央値は320KBです。10、25、75、90パーセンタイルは次のとおりです。42、129、651、1,071。デスクトップの分布は、各パーセンタイルでモバイルよりも10～30KB高くなっています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=164264869&format=interactive"
+  )
+}}
 
 Eコマースプラットフォーム上の中央値（「中規模」）のホームページでは、サードパーティのコンテンツに対するリクエストは、モバイルで17件、デスクトップで19件となっています。Eコマース・プラットフォーム上のすべてのホームページの10％は、サードパーティのコンテンツに対して50件以上のリクエストを行い、その総ペイロードは1MBを超えています。
 
@@ -547,21 +581,21 @@ Eコマースプラットフォーム上の中央値（「中規模」）のホ�
 
 以下の表は、モバイルのみのデータを示しています。
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig19.png">
-    <img src="/static/images/2019/ecommerce/fig19.png" alt="図19. 各Eコマースプラットフォームのモバイルページごとのサードパーティリクエストの分布。" aria-labelledby="fig19-caption" aria-describedby="fig19-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1242665725&amp;format=interactive">
-  </a>
-  <div id="fig19-description" class="visually-hidden">各プラットフォームのEコマースページあたりのサードパーティリクエストの10、25、50、75、および90パーセンタイルの分布。ShopifyとBigcommerceは、分布の中央値で約40件のサードパーティのリクエストをロードしています。</div>
-  <figcaption id="fig19-caption">図19. 各Eコマースプラットフォームのモバイルページごとのサードパーティリクエストの分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig19.png",
+  caption="各Eコマースプラットフォームのモバイルページごとのサードパーティリクエストの分布。",
+  description="各プラットフォームのEコマースページあたりのサードパーティリクエストの10、25、50、75、および90パーセンタイルの分布。ShopifyとBigcommerceは、分布の中央値で約40件のサードパーティのリクエストをロードしています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1242665725&format=interactive"
+  )
+}}
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig20.png">
-    <img src="/static/images/2019/ecommerce/fig20.png" alt="図20. 各Eコマースプラットフォームのモバイルページあたりのサードパーティのバイト数（KB）分布。" aria-labelledby="fig20-caption" aria-describedby="fig20-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1017068803&amp;format=interactive">
-  </a>
-  <div id="fig20-description" class="visually-hidden">各プラットフォームのEコマースページあたりのサードパーティのバイト数(KB)の10、25、50、75、および90パーセンタイルの分布。ShopifyとBigcommerceは、中央値で1,000KBを超え、分布全体で最も多くのサードパーティのバイトをロードします。</div>
-  <figcaption id="fig20-caption">図20. 各Eコマースプラットフォームのモバイルページあたりのサードパーティのバイト数（KB）分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig20.png",
+  caption="各Eコマースプラットフォームのモバイルページあたりのサードパーティのバイト数（KB）分布。",
+  description="各プラットフォームのEコマースページあたりのサードパーティのバイト数(KB)の10、25、50、75、および90パーセンタイルの分布。ShopifyとBigcommerceは、中央値で1,000KBを超え、分布全体で最も多くのサードパーティのバイトをロードします。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1017068803&format=interactive"
+  )
+}}
 
 Shopifyのようなプラットフォームでは、クライアントサイドのJavaScriptを使ってサービスを拡張することがありますが、Magentoのような他のプラットフォームではサーバーサイドの拡張機能が多く使われています。このアーキテクチャの違いが、ここで見る数字に影響を与えています。
 
@@ -569,13 +603,13 @@ Shopifyのようなプラットフォームでは、クライアントサイド�
 
 ## コンテンツの初回ペイント(FCP)
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig21.png">
-    <img src="/static/images/2019/ecommerce/fig21.png" alt="図21. Eコマースプラットフォーム毎のFCP体験の平均分布。" aria-labelledby="fig21-caption" aria-describedby="fig21-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1341906463&amp;format=interactive">
-  </a>
-  <div id="fig21-description" class="visually-hidden">上位6つのEコマースプラットフォームのFCPエクスペリエンスの平均分布の棒グラフ。WooCommerceは、遅いFCP体験の密度が43%と最も高くなっています。Shopifyは、高速FCP体験の密度が47%で最も高くなっています。</div>
-  <figcaption id="fig21-caption">図21. Eコマースプラットフォーム毎のFCP体験の平均分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig21.png",
+  caption="Eコマースプラットフォーム毎のFCP体験の平均分布。",
+  description="上位6つのEコマースプラットフォームのFCPエクスペリエンスの平均分布の棒グラフ。WooCommerceは、遅いFCP体験の密度が43%と最も高くなっています。Shopifyは、高速FCP体験の密度が47%で最も高くなっています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1341906463&format=interactive"
+  )
+}}
 
 [コンテンツの初回ペイント](./performance#コンテンツの初回ペイントfirst-contentful-paint)は、ナビゲーションからテキストや画像などのコンテンツが最初に表示されるまでの時間を測定します。この文脈では、**速い**は1秒未満のFCP、**遅い**は3秒以上のFCP、**中程度**はその中間のすべてを意味します。サードパーティのコンテンツやコードは、FCPに大きな影響を与える可能性があることに注意してください。
 
@@ -587,13 +621,13 @@ FCPがデスクトップよりもモバイルの方が悪い理由を明らか�
 
 Eコマースサイト以外のこのトピックの詳細については、[PWAの章](./pwa)も参照してください。
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig22.png">
-    <img src="/static/images/2019/ecommerce/fig22.png" alt="図22. モバイルEコマースページのLighthouse PWAカテゴリスコアの分布。" aria-labelledby="fig22-caption" aria-describedby="fig22-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1148584930&amp;format=interactive">
-  </a>
-  <div id="fig22-description" class="visually-hidden">EコマースページのLighthouseのPWAカテゴリスコアの分布。0（失敗）から1（完璧）のスケールで、ページの40％が0.33のスコアを取得します。ページの1％が0.6以上のスコアを取得しています。</div>
-  <figcaption id="fig22-caption">図22. モバイルEコマースページのLighthouse PWAカテゴリスコアの分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig22.png",
+  caption="モバイルEコマースページのLighthouse PWAカテゴリスコアの分布。",
+  description="EコマースページのLighthouseのPWAカテゴリスコアの分布。0（失敗）から1（完璧）のスケールで、ページの40％が0.33のスコアを取得します。ページの1％が0.6以上のスコアを取得しています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1148584930&format=interactive"
+  )
+}}
 
 Eコマースのプラットフォーム上のホームページの60％以上は、0.25と0.35の間に[Lighthouse PWAスコア](https://developers.google.com/web/ilt/pwa/lighthouse-pwa-analysis-tool)を取得します。Eコマースのプラットフォーム上のホームページの20％未満は、0.5以上のスコアを取得し、ホームページの1％未満は0.6以上のスコアを取得します。
 

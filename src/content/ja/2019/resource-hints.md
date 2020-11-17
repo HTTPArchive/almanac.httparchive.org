@@ -5,12 +5,21 @@ title: リソースヒント
 description: 2019年のWeb Almanacのリソースヒントの章では、dns-prefetch、preconnect、preload、prefetch、priority hints、ネイティブの遅延ローディングの使用法をカバーしています。
 authors: [khempenius]
 reviewers: [andydavies, bazzadp, yoavweiss]
+analysts: [rviscomi]
 translators: [ksakae]
 discuss: 1774
 results: https://docs.google.com/spreadsheets/d/14QBP8XGkMRfWRBbWsoHm6oDVPkYhAIIpfxRn4iOkbUU/
 queries: 19_Resource_Hints
+khempenius_bio: Katie HempeniusはChromeチームのエンジニアで、ウェブの高速化に取り組んでいます。
+featured_quote: リソースヒントは、どのようなリソースがすぐに必要になるかについてブラウザに<em>ヒント</em>を提供します。このヒントを受け取った結果としてブラウザが取るアクションは、リソースヒントのタイプによって異なります。リソースヒントが正しく使用されていれば、重要なアクションを先取りすることでページのパフォーマンスを向上させることができます。
+featured_stat_1: 29%
+featured_stat_label_1: <code>dns-prefetch</code>を使用しているサイト
+featured_stat_2: 88%
+featured_stat_label_2: <code>as</code>属性を使用したリソースヒント。
+featured_stat_3: 0.04%
+featured_stat_label_3: 優先順位のヒントの使い方
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-06-30T00:00:00.000Z
+last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## 序章
@@ -96,7 +105,7 @@ HTTPヘッダー内のリソースヒントの使用量が非常に少ないた�
      </td>
     </tr>
   </table>
-  <figcaption>図1. リソースヒントの採用。</figcaption>
+  <figcaption>{{ figure_link(caption="リソースヒントの採用。") }}</figcaption>
 </figure>
 
 `dns-prefetch`の相対的な人気は驚くに値しません。これはよく知られたAPIであり（[2009](https://caniuse.com/#feat=link-rel-dns-prefetch)ではじめて登場しました）、すべての主要なブラウザでサポートされており、すべてのリソースヒントの中でもっとも「安価」なものです。`dns-prefetch`はDNSの検索を行うだけなので、データの消費量が非常に少なく、使用する上でのデメリットはほとんどありません。`dns-prefetch`はレイテンシの高い状況でもっとも有用である。
@@ -153,10 +162,10 @@ HTTPヘッダー内のリソースヒントの使用量が非常に少ないた�
      </td>
     </tr>
   </table>
-  <figcaption>図2. そのリソースヒントを使用している全ページのうち、1ページあたりに使用されているリソースヒントの数の中央値と90パーセンタイル。</figcaption>
+  <figcaption>{{ figure_link(caption="そのリソースヒントを使用している全ページのうち、1ページあたりに使用されているリソースヒントの数の中央値と90パーセンタイル。") }}</figcaption>
 </figure>
 
-リソースヒントは、選択的に使用されるときにもっとも効果的です（_"すべてが重要なときには、何も重要ではない"_）。上の図2は、少なくとも1つのリソースヒントを使用しているページの1ページあたりのリソースヒントの数を示しています。適切なリソースヒントの数を定義する明確なルールはありませんが、ほとんどのサイトが適切にリソースヒントを使用しているように見えます。
+リソースヒントは、選択的に使用されるときにもっとも効果的です（_"すべてが重要なときには、何も重要ではない"_）。上の図19.2は、少なくとも1つのリソースヒントを使用しているページの1ページあたりのリソースヒントの数を示しています。適切なリソースヒントの数を定義する明確なルールはありませんが、ほとんどのサイトが適切にリソースヒントを使用しているように見えます。
 
 ## `crossorigin`属性
 
@@ -198,7 +207,7 @@ HTTPヘッダー内のリソースヒントの使用量が非常に少ないた�
      </td>
     </tr>
   </table>
-  <figcaption>図3. リソースヒントインスタンスの割合としての<code>クロスオリジン</code>属性の採用。</figcaption>
+  <figcaption>{{ figure_link(caption="リソースヒントインスタンスの割合としての <code>クロスオリジン</code> 属性の採用。") }}</figcaption>
 </figure>
 
 リソースヒントのコンテキストでは、`crossorigin`属性を使用することで、マッチすることになっているリソースのCORSモードにマッチし、リクエストに含めるべき資格情報を示すことができます。たとえば、`anonymous`はCORSを有効にし、クロスオリジンリクエストには資格情報を含めるべきではないことを示します。
@@ -212,10 +221,12 @@ HTTPヘッダー内のリソースヒントの使用量が非常に少ないた�
 
 `as`は`preload`リソースヒントと一緒に使用されるべき属性で、要求されたリソースの種類（画像、スクリプト、スタイルなど）をブラウザに知らせるため使用されます。これにより、ブラウザがリクエストに正しく優先順位をつけ、正しいコンテンツセキュリティポリシー([CSP](https://developers.google.com/web/fundamentals/security/csp))を適用するのに役立ちます。CSPはHTTPヘッダーで表現される[セキュリティ](./security)メカニズムです、信頼できるソースのセーフリストを宣言することで、XSSやその他の悪意のある攻撃の影響を緩和するのに役立ちます。
 
-<figure>
-  <div class="big-number">88%</div>
-  <figcaption>図4. <code>as</code>属性を使用したリソースヒントインスタンスの割合。</figcaption>
-</figure>
+{{ figure_markup(
+  caption="<code>as</code> 属性を使用したリソースヒントインスタンスの割合。",
+  content="88%",
+  classes="big-number"
+)
+}}
 
 リソースヒントインスタンスの88%は`as`属性を使用しています。`as`が指定されている場合、圧倒的にスクリプトに使われています。92%がスクリプト、3%がフォント、3%がスタイルです。これはスクリプトがほとんどのサイトのアーキテクチャで重要な役割を果たしていることと、スクリプトが攻撃のベクターとして使用される頻度が高いことを考えると当然のことです（したがって、スクリプトが正しいCSPを適用されることがとくに重要です）。
 
@@ -234,15 +245,17 @@ HTTPヘッダー内のリソースヒントの使用量が非常に少ないた�
   &lt;img src="cat2.jpg" importance="low">
   &lt;img src="cat3.jpg" importance="low">
 &lt;/carousel></code></pre></div>
-<figcaption>図5. 画像のカルーセルで優先度ヒントを使用するHTMLの例。</figcaption>
+<figcaption>{{ figure_link(caption="画像のカルーセルで優先度ヒントを使用するHTMLの例。") }}</figcaption>
 </figure>
 
 たとえば、画像カルーセルがある場合、優先度ヒントを使用して、ユーザーがすぐに見る画像に優先順位をつけ、後の画像に優先順位をつけることができます。
 
-<figure>
-  <div class="big-number">0.04%</div>
-  <figcaption>図6. 優先ヒントの採用率。</figcaption>
-</figure>
+{{ figure_markup(
+  caption="優先ヒントの採用率。",
+  content="0.04%",
+  classes="big-number"
+)
+}}
 
 優先度ヒントは[実装](https://www.chromestatus.com/feature/5273474901737472)されており、Chromiumブラウザのバージョン70以降では機能フラグを使ってテストできます。まだ実験的な技術であることを考えると、0.04%のサイトでしか使用されていないのは当然のことです。
 

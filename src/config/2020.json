@@ -2,7 +2,7 @@
   "settings": [
     {
       "is_live": true,
-      "supported_languages": ["en","es","fr","ja","zh_CN"],
+      "supported_languages": ["en","es","fr","hi","ja","pt","zh-CN","zh-CHT"],
       "ebook_languages": []
     }
   ],
@@ -15,13 +15,15 @@
           "part": "I",
           "chapter": "1",
           "title": "CSS",
-          "slug": "css"
+          "slug": "css",
+          "todo": true
         },
         {
           "part": "I",
           "chapter": "2",
           "title": "JavaScript",
-          "slug": "javascript"
+          "slug": "javascript",
+          "todo": true
         },
         {
           "part": "I",
@@ -33,19 +35,22 @@
           "part": "I",
           "chapter": "4",
           "title": "Fonts",
-          "slug": "fonts"
+          "slug": "fonts",
+          "todo": true
         },
         {
           "part": "I",
           "chapter": "5",
           "title": "Media",
-          "slug": "media"
+          "slug": "media",
+          "todo": true
         },
         {
           "part": "I",
           "chapter": "6",
           "title": "Third Parties",
-          "slug": "third-parties"
+          "slug": "third-parties",
+          "todo": true
         }
       ]
     },
@@ -57,43 +62,56 @@
           "part": "II",
           "chapter": "7",
           "title": "SEO",
-          "slug": "seo"
+          "slug": "seo",
+          "todo": true
         },
         {
           "part": "II",
           "chapter": "8",
           "title": "Accessibility",
-          "slug": "accessibility"
+          "slug": "accessibility",
+          "todo": true
         },
         {
           "part": "II",
           "chapter": "9",
           "title": "Performance",
-          "slug": "performance"
+          "slug": "performance",
+          "todo": true
         },
         {
           "part": "II",
           "chapter": "10",
           "title": "Privacy",
-          "slug": "privacy"
+          "slug": "privacy",
+          "todo": true
         },
         {
           "part": "II",
           "chapter": "11",
           "title": "Security",
-          "slug": "security"
+          "slug": "security",
+          "todo": true
         },
         {
           "part": "II",
           "chapter": "12",
           "title": "Mobile Web",
-          "slug": "mobile-web"
+          "slug": "mobile-web",
+          "todo": true
         },
         {
           "part": "II",
           "chapter": "13",
+          "title": "Capabilities",
+          "slug": "capabilities"
+        },
+        {
+          "part": "II",
+          "chapter": "14",
           "title": "PWA",
-          "slug": "pwa"
+          "slug": "pwa",
+          "todo": true
         }
       ]
     },
@@ -103,21 +121,24 @@
       "chapters": [
         {
           "part": "III",
-          "chapter": "14",
-          "title": "CMS",
-          "slug": "cms"
-        },
-        {
-          "part": "III",
           "chapter": "15",
-          "title": "Ecommerce",
-          "slug": "ecommerce"
+          "title": "CMS",
+          "slug": "cms",
+          "todo": true
         },
         {
           "part": "III",
           "chapter": "16",
-          "title": "JAMstack",
-          "slug": "jamstack"
+          "title": "Ecommerce",
+          "slug": "ecommerce",
+          "todo": true
+        },
+        {
+          "part": "III",
+          "chapter": "17",
+          "title": "Jamstack",
+          "slug": "jamstack",
+          "todo": true
         }
       ]
     },
@@ -127,33 +148,38 @@
       "chapters": [
         {
           "part": "IV",
-          "chapter": "17",
-          "title": "Page Weight",
-          "slug": "page-weight"
-        },
-        {
-          "part": "IV",
           "chapter": "18",
-          "title": "Compression",
-          "slug": "compression"
+          "title": "Page Weight",
+          "slug": "page-weight",
+          "todo": true
         },
         {
           "part": "IV",
           "chapter": "19",
-          "title": "Caching",
-          "slug": "caching"
+          "title": "Compression",
+          "slug": "compression",
+          "todo": true
         },
         {
           "part": "IV",
           "chapter": "20",
-          "title": "Resource Hints",
-          "slug": "resource-hints"
+          "title": "Caching",
+          "slug": "caching",
+          "todo": true
         },
         {
           "part": "IV",
           "chapter": "21",
+          "title": "Resource Hints",
+          "slug": "resource-hints",
+          "todo": true
+        },
+        {
+          "part": "IV",
+          "chapter": "22",
           "title": "HTTP/2",
-          "slug": "http2"
+          "slug": "http2",
+          "todo": true
         }
       ]
     }
@@ -164,6 +190,9 @@
     },
     "authors": {
       "name": "Authors"
+    },
+    "designers": {
+      "name": "Designers"
     },
     "developers": {
       "name": "Developers"
@@ -182,6 +211,15 @@
     }
   },
   "contributors": {
+    "AbbyTsai": {
+      "name": "Abby Tsai",
+      "teams": [
+        "analysts",
+        "translators"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/44442451?v=4&s=200",
+      "github": "AbbyTsai"
+    },
     "aardrian": {
       "name": "Adrian Roselli",
       "teams": [
@@ -212,6 +250,17 @@
       "website": "https://aagar.github.io/",
       "github": "AAgar",
       "twitter": "AAgar"
+    },
+     "adityapandey1998": {
+      "name": "Aditya Pandey",
+      "teams": [
+        "analysts",
+        "developers"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/31750960?v=4&s=200",
+      "github": "adityapandey1998",
+      "twitter": "adityapandey98",
+      "linkedin": "adityapandey98"
     },
     "alexdenning": {
       "name": "Alex Denning",
@@ -318,6 +367,7 @@
       "avatar_url": "https://avatars3.githubusercontent.com/u/10931297?v=4&s=200",
       "website": "https://www.tunetheweb.com",
       "github": "bazzadp",
+      "linkedin": "barry-pollard-developer",
       "twitter": "tunetheweb"
     },
     "bseymour": {
@@ -340,6 +390,16 @@
       "website": "https://boris.schapira.dev",
       "github": "borisschapira",
       "twitter": "boostmarks"
+    },
+    "bkardell": {
+      "name": "Brian Kardell",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/870501?v=4&s=200",
+      "website": "https://bkardell.com",
+      "github": "bkardell",
+      "twitter": "briankardell"
     },
     "cqueern": {
       "name": "Caleb Queern",
@@ -690,7 +750,7 @@
         "reviewers"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/13718746?v=4&s=200",
-      "website": "https://www.linkedin.com/in/johnfox/",
+      "linkedin": "johnfox",
       "github": "clarkeclark"
     },
     "logicalphase": {
@@ -799,6 +859,15 @@
       "github": "LPardue",
       "twitter": "SimmerVigor"
     },
+    "Super-Fly": {
+      "name": "Lyubomir Angelov",
+      "teams": [
+        "developers"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/866229?v=4&s=200",
+      "github": "Super-Fly",
+      "twitter": "angelovcode"
+    },
     "mandymichael": {
       "name": "Mandy Michael",
       "teams": [
@@ -867,6 +936,12 @@
       "github": "ipullrank",
       "twitter": "IPullRank"
     },
+    "michelleoconnor": {
+      "name": "Michelle O'Connor",
+      "teams": [
+        "designers"
+      ]
+    },
     "MikeBishop": {
       "name": "Mike Bishop",
       "teams": [
@@ -881,7 +956,7 @@
         "translators"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/868584?v=4&s=200",
-      "website": "https://www.linkedin.com/in/miguelcarlosmartinezdiaz/",
+      "linkedin": "miguelcarlosmartinezdiaz",
       "github": "mcmd",
       "twitter": "mcmd"
     },
@@ -1008,14 +1083,6 @@
       "github": "pmeenan",
       "twitter": "patmeenan"
     },
-    "tungpatrick": {
-      "name": "Patrick Tung",
-      "teams": [
-        "analysts"
-      ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/43163296?v=4&s=200",
-      "github": "tungpatrick"
-    },
     "paulcalvano": {
       "name": "Paul Calvano",
       "teams": [
@@ -1057,6 +1124,16 @@
       "website": "https://pixboost.com",
       "github": "dooman87",
       "twitter": "otherpunk"
+    },
+    "PraveenPal4232": {
+      "name": "Praveen Pal",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/34737190?v=4&s=200",
+      "website": "https://praveenpal4232.github.io",
+      "github": "PraveenPal4232",
+      "twitter": "PraveenPal4232"
     },
     "rachelandrew": {
       "name": "Rachel Andrew",
@@ -1124,7 +1201,9 @@
         "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/1718757?v=4&s=200",
-      "github": "rockeynebhwani"
+      "github": "rockeynebhwani",
+      "twitter": "rnebhwani",
+      "linkedin": "rockeynebhwani"
     },
     "RoelN": {
       "name": "Roel Nieskens",
@@ -1290,6 +1369,16 @@
       "website": "https://websiteadvantage.com.au/",
       "github": "Tiggerito",
       "twitter": "TonyMcCreath"
+    },
+    "HakaCode": {
+      "name": "William Sandres",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars0.githubusercontent.com/u/33907565?v=4&s=200",
+      "website": "https://hakacode.github.io",
+      "github": "HakaCode",
+      "twitter": "hakacode"
     },
     "ydimova": {
       "name": "Yana Dimova",

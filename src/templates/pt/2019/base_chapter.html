@@ -1,0 +1,22 @@
+{% extends "base/2019/base_chapter.html" %}
+
+{% block title %}{{ metadata.get('title') }} | {{ year }} | Web Almanac por HTTP Archive{% endblock %}
+
+{% block description %}{{ metadata.get('description',metadata.get('title') + ' capítulo do ' + year + ' Web Almanac sondando o uso de ' + metadata.get('description',metadata.get('title')) + ' na web.') }}{% endblock %}
+
+{% block twitter_image_alt %}Imagem do capítulo {{ metadata.get('title') }} capítulo de {{ year }} Web Almanac{% endblock %}
+
+{% block unedited %}[Não editado]{% endblock %}
+
+{% block prev_next_title %}Navegação do capítulo anterior e seguinte{% endblock %}
+
+{% block explore_the_results %}Explore os resultados{% endblock %}
+{% block discuss_this_chapter %}Discuta este capítulo{% endblock %}
+{% block comment %}comente{% endblock %}
+{% block comments %}comentários{% endblock %}
+{% block comments_fallback %}Comentários{% endblock %}
+{% block queries %}Ver consultas{% endblock %}
+{% block results %}Ver resultados{% endblock %}
+
+{% block previous %}Capítulo anterior (pressione 'p' ou ','){% endblock %}
+{% block next %}Próximo Capítulo (pressione 'n' ou '.'){% endblock %}

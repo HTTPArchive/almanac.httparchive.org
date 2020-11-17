@@ -13,6 +13,7 @@ FROM
   `httparchive.almanac.summary_response_bodies`,
   UNNEST(REGEXP_EXTRACT_ALL(LOWER(body), '<[^>]+\\b(aria-\\w+)=[\'"]?[\\w-]+')) AS attr
 WHERE
+  date = '2019-07-01' AND
   firstHtml AND
   attr IS NOT NULL
 GROUP BY

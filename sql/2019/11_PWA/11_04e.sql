@@ -18,6 +18,8 @@ SELECT
   ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct
 FROM
   `httparchive.almanac.manifests`
+WHERE
+  date = '2019-07-01'
 GROUP BY
   client,
   prefers_native

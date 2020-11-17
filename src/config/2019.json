@@ -2,7 +2,7 @@
   "settings": [
     {
       "is_live": true,
-      "supported_languages": ["en","es","fr","ja","zh_CN"],
+      "supported_languages": ["en","es","fr","hi","ja","pt","zh-CN","zh-CHT"],
       "ebook_languages": ["en","ja"]
     }
   ],
@@ -179,6 +179,14 @@
     }
   },
   "contributors": {
+    "AbbyTsai": {
+      "name": "Abby Tsai",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/44442451?v=4&s=200",
+      "github": "AbbyTsai"
+    },
     "kleinab": {
       "name": "Abigail Klein",
       "teams": [
@@ -339,6 +347,7 @@
       "avatar_url": "https://avatars3.githubusercontent.com/u/10931297?v=4&s=200",
       "website": "https://www.tunetheweb.com",
       "github": "bazzadp",
+      "linkedin": "barry-pollard-developer",
       "twitter": "tunetheweb"
     },
     "borisschapira": {
@@ -469,6 +478,24 @@
       "github": "dougsillars",
       "twitter": "dougsillars"
     },
+    "eduqg": {
+      "name": "Eduardo Q. Gomes",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/17773211?v=4&s=200",
+      "website": "https://eduqg.github.io/",
+      "github": "eduqg"
+    },
+    "elaynelemos": {
+      "name": "Elayne Lemos",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars2.githubusercontent.com/u/24370436?v=4&s=200",
+      "github": "elaynelemos",
+      "linkedin": "elaynelemos"
+    },
     "meyerweb": {
       "name": "Eric A. Meyer",
       "teams": [
@@ -591,7 +618,7 @@
         "reviewers"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/13718746?v=4&s=200",
-      "website": "https://www.linkedin.com/in/johnfox/",
+      "linkedin": "johnfox",
       "github": "clarkeclark"
     },
     "hyperpress": {
@@ -849,6 +876,16 @@
       "github": "Pavel-Evdokimov",
       "twitter": "Pavel_Evdokimov"
     },
+    "PraveenPal4232": {
+      "name": "Praveen Pal",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/34737190?v=4&s=200",
+      "website": "https://praveenpal4232.github.io",
+      "github": "PraveenPal4232",
+      "twitter": "PraveenPal4232"
+    },
     "rachellcostello": {
       "name": "Rachel Costello",
       "teams": [
@@ -1049,11 +1086,21 @@
       "name": "Vincent Terrasi",
       "teams": [
         "brainstormers",
-        "authors"
+        "reviewers"
       ],
       "avatar_url": "https://avatars3.githubusercontent.com/u/2698956?v=4&s=200",
       "website": "https://data-seo.com",
       "github": "voltek62"
+    },
+    "HakaCode": {
+      "name": "William Sandres",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars0.githubusercontent.com/u/33907565?v=4&s=200",
+      "website": "https://hakacode.github.io",
+      "github": "HakaCode",
+      "twitter": "hakacode"
     },
     "yoavweiss": {
       "name": "Yoav Weiss",
