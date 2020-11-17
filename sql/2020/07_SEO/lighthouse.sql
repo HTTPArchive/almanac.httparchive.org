@@ -75,7 +75,7 @@ FROM (
     JSON_EXTRACT_SCALAR(report, '$.audits.image-alt.score') = '1' AS img_alt_on_all,
     JSON_EXTRACT_SCALAR(report, '$.audits.robots-txt.score') = '1' AS robots_txt_valid,
     JSON_EXTRACT_SCALAR(report, '$.audits.link-text.score') = '1' AS link_text_descriptive,
-    isCrawlable(report) AS isCrawlable
+    isCrawlable(report) AS is_crawlable_details
   FROM
     #`httparchive.lighthouse.2020_08_01_*`
     `httparchive.sample_data.lighthouse_mobile_10k`
