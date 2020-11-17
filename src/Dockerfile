@@ -23,4 +23,4 @@ RUN     pip install -r requirements.txt
 RUN     npm install
 COPY    . ./
 
-CMD     ["python", "main.py"]
+CMD     ["npm", "run", "start"]
