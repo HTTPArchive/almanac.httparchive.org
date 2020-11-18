@@ -25,15 +25,15 @@ py -m pip install --user virtualenv
 2. Create an isolated Python environment, and install dependencies:
 
 ```
-virtualenv --python python3 env
-source env/bin/activate
+virtualenv --python python3 .venv
+source .venv/bin/activate
 ```
 
 Or for those on Windows:
 
 ```
-virtualenv --python python3 env
-env\Scripts\activate.bat
+virtualenv --python python3 .venv
+.venv\Scripts\activate.bat
 ```
 
 3. Install generate and run the website:
@@ -269,7 +269,7 @@ root@[CID]:/app# exit
 6. To customize the image use `PYVER`, `NODEVER`, and `SKIPGC` build arguments to control which versions of Python and Node are used and whether Google Cloud SDK is installed.
 
 ```
-docker image build --build-arg PYVER=3.7 --build-arg NODEVER=14.x --build-arg SKIPGC=false -t webalmanac:custom .
+docker image build --build-arg PYVER=3.8 --build-arg NODEVER=14.x --build-arg SKIPGC=false -t webalmanac:custom .
 ```
 
 7. If you want to run the GitHub Super-Linter without `npm` being installed you need to call the command directly as given in `package.json`.
@@ -277,11 +277,11 @@ docker image build --build-arg PYVER=3.7 --build-arg NODEVER=14.x --build-arg SK
 This will depend on your operating system but for MacOS/Linux this would be:
 
 ```
-docker container run -it --rm -v "$PWD/..":/app -w /app/src --entrypoint=./tools/scripts/run_linter_locally.sh github/super-linter
+docker container run -it --rm -v /app/node_modules -v "$PWD/..":/app -w /app/src --entrypoint=./tools/scripts/run_linter_locally.sh github/super-linter
 ```
 
 And for Windows:
 
 ```
-docker container run --rm -v %cd%\\..:/app -w /app/src --entrypoint=./tools/scripts/run_linter_locally.sh github/super-linter
+docker container run --rm -v /app/node_modules -v %cd%\\..:/app -w /app/src --entrypoint=./tools/scripts/run_linter_locally.sh github/super-linter
 ```
