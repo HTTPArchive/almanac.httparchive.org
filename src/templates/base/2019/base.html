@@ -439,7 +439,7 @@
         <p class="copyright">
           <span>{{ self.copyright() }}</span>
           <br>
-          <a href="{{ url_for('accessibility_statement', lang=lang) }}">{{ self.accessibility_statement() }}</a>
+          <a class="accessibility-statement" href="{{ url_for('accessibility_statement', lang=lang) }}">{{ self.accessibility_statement() }}</a>
         </p>
         <a class="ha-logo not-mobile" href="https://httparchive.org/" aria-labelledby="ha-logo-footer">
           <svg width="70" height="35" role="img">
