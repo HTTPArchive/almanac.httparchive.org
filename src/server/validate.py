@@ -87,7 +87,7 @@ def validate_lang_and_year(lang, year):
             return (lang.lower(), year)
 
         # Handle lookups for special cases (e.g. Chinese)
-        if lang.lower() in LANGUAGE_MAPPING:
+        if lang.lower() in LANGUAGE_MAPPING and LANGUAGE_MAPPING.get(lang.lower()) in supported_langs:
             return (LANGUAGE_MAPPING.get(lang.lower()), year)
 
         # Split on '-' to see if we support base lang (e.g. en-US -> en)
