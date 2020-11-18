@@ -48,19 +48,17 @@ fi
 
 if [ "$(pgrep -f 'python main.py')" ]; then
   echo "Killing existing server to run a fresh version"
-  pkill -9 python main.py
+  pkill -9 -f "python main.py"
+fi
+
+if [ "$(pgrep -f 'node ./tools/generate/chapter_watcher')" ]; then
+  echo "Killing existing watcher to run a fresh version"
+  pkill -9 -f "node ./tools/generate/chapter_watcher"
 fi
 
 echo "Installing and testing python environment"
 python -m pip install --upgrade pip
 pip install -r requirements.txt
-pytest
-
-echo "Installing node modules"
-npm install
-
-echo "Building website"
-npm run generate
 
 echo "Starting website in background mode for tests"
 python main.py background &
@@ -68,6 +66,15 @@ python main.py background &
 sleep 2
 # Check website is running as won't have got feedback as backgrounded
 pgrep -f "python main.py"
+
+# Run pytests
+pytest
+
+echo "Installing node modules"
+npm install
+
+echo "Building website"
+npm run generate
 
 echo "Testing website"
 npm run test
@@ -84,7 +91,7 @@ if [ "${debug}" == "1" ]; then
 
   if [ "$(pgrep -f 'python main.py')" ]; then
     echo "Killing server to run a fresh version in debug mode"
-    pkill -9 python main.py
+    pkill -9 -f "python main.py"
   fi
 
   echo "Starting website in foreground mode so it reloads on file changes"

@@ -52,7 +52,7 @@ jobs:
         npm run ebooks
     - name: Create Pull Request
       id: cpr
-      uses: peter-evans/create-pull-request@v3.4.1
+      uses: peter-evans/create-pull-request@v3.5.0
       with:
         title: Regenerate Ebooks
         branch-suffix: timestamp
