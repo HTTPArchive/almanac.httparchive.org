@@ -18,7 +18,7 @@ jobs:
     if: github.repository == 'HTTPArchive/almanac.httparchive.org'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/github-script@v3.0.0
+      - uses: actions/github-script@v3.1
         if: github.event_name == 'workflow_dispatch' || contains(github.event.issue.labels.*.name, env.FILTER_LABEL)
         with:
           script: |
