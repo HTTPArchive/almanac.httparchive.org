@@ -41,7 +41,7 @@ jobs:
         COMMIT_SHA: ${{ github.sha }}
       run: ./src/tools/scripts/update_timestamps_versions.sh
     - name: Setup Node.js for use with actions
-      uses: actions/setup-node@v1.4.2
+      uses: actions/setup-node@v1.4.4
       with:
         node-version: 12.x
     - name: Set up Python 3.8
@@ -52,7 +52,7 @@ jobs:
       run: ./src/tools/scripts/run_and_test_website.sh
     - name: Create Pull Request
       id: cpr
-      uses: peter-evans/create-pull-request@v3.4.1
+      uses: peter-evans/create-pull-request@v3.5.0
       with:
         title: Update datestamps and generate chapters
         branch-suffix: timestamp
