@@ -25,7 +25,7 @@ class _Language(object):
         return self._lang_code
 
 
-# Allow maping of one language to another for when country agnostic lookip
+# Allow maping of one language to another for when country agnostic lookup
 # will not work (e.g. Chinese)
 LANGUAGE_MAPPING = {
     'zh-cht': 'zh-CHT',
