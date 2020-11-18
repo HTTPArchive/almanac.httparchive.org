@@ -37,7 +37,7 @@
     "prettier": "2.1.2",
     "recursive-readdir": "2.2.2",
     "showdown": "1.9.1",
-    "web-vitals": "0.2.4",
+    "web-vitals": "1.0.1",
     "node-fetch": "2.6.1",
     "xml-js": "1.6.11",
     "run-script-os": "1.1.3",
