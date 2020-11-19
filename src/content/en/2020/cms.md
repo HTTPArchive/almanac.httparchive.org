@@ -257,7 +257,7 @@ A score of 0.1 or below is good, over 0.25 is poor, and anything in between need
 
 The top 5 CMSs do poorly here. Only 50% of web pages loaded by a top 5 CMS have a “good” CLS experience, with this figure rising to 59% on mobile. Across all CMSs the average desktop score is 59% and average mobile score is 67%. This shows us all CMSs have work to do here, but the top 5 CMSs in particular need improvement. 
 
-**Lighthouse scores**
+### Lighthouse scores
 
 [Lighthouse](https://almanac.httparchive.org/en/2019/methodology#lighthouse) is an open-source, automated tool designed to help developers assess and improve the quality of their websites. One key aspect of the tool is that it provides a set of audits to assess the status of a website in terms of performance, accessibility, progressive web apps, and more. For the purposes of this chapter, we are interested in two specific audits categories: PWA and accessibility.
 
