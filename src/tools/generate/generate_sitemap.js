@@ -62,7 +62,7 @@ const get_static_pages = async (sitemap_languages) => {
   for (const loc of await files) {
     if (fs.existsSync(`templates/${loc}`)) {
       const lastmod = get_lastmod_date(loc);
-      const url = loc;
+      const url = convert_file_name(loc);
 
       urls.push({ url, lastmod });
     }
