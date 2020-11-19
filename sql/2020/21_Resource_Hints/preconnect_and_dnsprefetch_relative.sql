@@ -1,5 +1,5 @@
 #standardSQL
-# 21_06: Frequency of link tags that set both preconnect & dns-prefetch
+# Pages that combine preconnect and dns-prefetch hints divided by pages with either hint.
 CREATE TEMPORARY FUNCTION preconnectsAndPrefetchesDns(payload STRING)
 RETURNS STRUCT<both BOOLEAN, either BOOLEAN> LANGUAGE js AS '''
 try {
