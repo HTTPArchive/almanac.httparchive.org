@@ -186,7 +186,7 @@ WordPress’ adoption share growth of 7.40% from 2019 to 2020 outstrips the over
 With the adoption share of CMSs explored, let’s now turn our attention to user experience.
 
 
-## What’s the user experience of CMS-powered websites?
+## CMS user experience
 
 CMSs must offer a good user experience. With so much of the web relying on CMSs to serve pages, it’s the responsibility of the CMS at the platform-level to ensure the user experience is good. Our aim is to shed light on real-world user experience when using CMS-powered websites.
 
