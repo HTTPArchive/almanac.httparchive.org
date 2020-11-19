@@ -239,7 +239,7 @@ FID is very fast for the average CMS website on desktop – only Wix scores lowe
 
 The FID scores are generally good here, but this does not translate to similar LCP scores. As suggested, the weight of individual pages on CMSs in addition to mobile connection quality, could play a role in the performance gaps that we see here. There is a small margin of difference between the resources shipped to desktop and mobile versions of a website. Last year we noted that optimizing for the mobile experience was necessary. Average scores have increased on desktop and mobile, but further attention is required here.
 
-**Cumulative Layout Shift**
+### Cumulative Layout Shift
 
 Cumulative Layout Shift (CLS) measures the instability of content on a web page within the first 500ms of user input. CLS measures any layout changes which happen after user input. This is important on mobile in particular, where the user will tap where they want to take an action – such as a search bar – only for the location to move as additional images, ads, or similar load.
 
