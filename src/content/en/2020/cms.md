@@ -261,7 +261,7 @@ The top 5 CMSs do poorly here. Only 50% of web pages loaded by a top 5 CMS have 
 
 [Lighthouse](https://almanac.httparchive.org/en/2019/methodology#lighthouse) is an open-source, automated tool designed to help developers assess and improve the quality of their websites. One key aspect of the tool is that it provides a set of audits to assess the status of a website in terms of performance, accessibility, progressive web apps, and more. For the purposes of this chapter, we are interested in two specific audits categories: PWA and accessibility.
 
-**PWA**
+#### PWA
 
 The term [Progressive Web App (PWA)](https://web.dev/progressive-web-apps/) refers to web-based user experiences that are considered as being reliable, fast, and engaging. Lighthouse provides a set of audits which returns a PWA score between 0 (worst) and 1 (best). These audits are based on the [Baseline PWA Checklist](https://developers.google.com/web/progressive-web-apps/checklist#baseline), which lists 14 requirements. Lighthouse has automated audits for 11 of the 14 requirements. The remaining 3 can only be tested manually. Each of the 11 automated PWA audits are weighted equally, so each one contributes approximately 9 points to your PWA score.
 
