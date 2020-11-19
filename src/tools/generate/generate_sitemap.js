@@ -89,7 +89,7 @@ const get_lastmod_date = (file) => {
   if (lastmod.length > 10) lastmod = lastmod.substr(0, 10);
   if (lastmod < min_publish_date) lastmod = min_publish_date;
   return lastmod;
-}
+};
 
 const convert_file_name = (url) => {
   if ( url.substr(url.length - 10) == "index.html" ) {
