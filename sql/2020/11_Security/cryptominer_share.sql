@@ -5,7 +5,7 @@ WITH
   SELECT
     COUNT(0) AS ttl
   FROM
-    `httparchive.technologies.2020_10_01_desktop`
+    `httparchive.technologies.2020_08_01_desktop`
   WHERE
     category = 'Cryptominers'
     OR category='Cryptominer')
