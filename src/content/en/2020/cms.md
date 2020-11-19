@@ -221,7 +221,7 @@ A “good” LCP is regarded as under 2.5 seconds. The average website on one of
 
 High page weights are a possible explanation here; we’ll explore this, and the possible impact of this on the environment in a later section. It is clear here, however, that LCP performance is generally bad for CMSs, and the impact on the user experience is also bad.
 
-**First Input Delay**
+### First Input Delay
 
 First Input Delay (FID) measures the time from when a user first interacts with your site (i.e. when they click a link, tap on a button, or use a custom, JavaScript-powered control) to the time when the browser is actually able to respond to that interaction. A "fast" FID from a user's perspective would be immediate feedback from their actions on a site rather than a stalled experience. This delay (a pain point) could correlate with interference from other aspects of the site loading when the user tries to interact with the site.
 
