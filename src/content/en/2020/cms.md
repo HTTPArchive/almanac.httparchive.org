@@ -201,7 +201,7 @@ In this section we take a look at four important factors which can shed light on
 
 These metrics aim to cover the core elements which are indicative of a great web user experience. Let’s review each of these in turn.
 
-**Largest Contentful Paint**
+### Largest Contentful Paint
 
 Largest Contentful Paint (LCP) measures the point when the page’s main content has likely loaded and thus the page is useful to the user. It does this by measuring the render time of the largest image or text block visible within the viewport.
 
