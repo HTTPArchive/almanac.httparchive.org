@@ -25,7 +25,7 @@ let now = "";
 const check_and_update_date = (file, hash, size) => {
 
   //file = convert_file_name(file);
-  file=file.replace(/content\/(.*)\/([0-9]*)\/(.*)\.md$/,"$1/$2/chapter/$3.html");
+  file=file.replace(/content\/(.*)\/([0-9]*)\/(.*)\.md$/,"$1/$2/chapters/$3.html");
 
   if (file_dates[file]) {
 

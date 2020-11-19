@@ -19,8 +19,6 @@ featured_stat_2: 116
 featured_stat_label_2: 検出されたEコマースプラットフォームの数
 featured_stat_3: 1,517 KB
 featured_stat_label_3: モバイルEコマースページあたりの画像バイト数の中央値。
-published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## 序章
