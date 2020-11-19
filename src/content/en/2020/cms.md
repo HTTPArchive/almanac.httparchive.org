@@ -277,7 +277,7 @@ The term [Progressive Web App (PWA)](https://web.dev/progressive-web-apps/) refe
 
 The median Lighthouse PWA score is 29% for the top 5 CMSs, with the exception of WordPress which comes in at 32%. Across all CMSs, the average median score is 34%, with a minimum of 4% and a maximum of 71%.
 
-**Accessibility**
+#### Accessibility
 
 An accessible website is a site designed and developed so that people with disabilities can use them; web accessibility also benefits people without disabilities, such as those on slow internet connections. [A full discussion can be seen here](https://www.w3.org/WAI/fundamentals/accessibility-intro/#what). Lighthouse provides a set of accessibility audits and it returns a weighted average of all of them (see [Scoring Details](https://docs.google.com/spreadsheets/d/1Cxzhy5ecqJCucdf1M0iOzM8mIxNc7mmx107o5nj38Eo/edit#gid=1567011065) for a full list of how each audit is weighted).
 
