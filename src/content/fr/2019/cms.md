@@ -19,8 +19,6 @@ featured_stat_2: 74 %
 featured_stat_label_2: des sites utilisant un CMS utilisent WordPress
 featured_stat_3: 1,232 Ko
 featured_stat_label_3: poids des images sur page CMS (bureau)
-published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introduction

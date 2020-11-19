@@ -1,15 +1,19 @@
 from flask import request, redirect, url_for, render_template as flask_render_template
-from .config import STATIC_DIR, TEMPLATES_DIR, get_config, DEFAULT_YEAR, SUPPORTED_LANGUAGES, SUPPORTED_YEARS
+from .config import TEMPLATES_DIR, get_config, get_timestamps_config, \
+                    DEFAULT_YEAR, SUPPORTED_LANGUAGES, SUPPORTED_YEARS
 from .language import get_language, DEFAULT_LANGUAGE
 from werkzeug.routing import BaseConverter
 import os.path
 import re
+import datetime
+import logging
 
 
 def render_template(template, *args, **kwargs):
     # If the year has already been set (e.g. for error pages) then use that
     # Otherwise the requested year, otherwise the default year
     year = kwargs.get('year', request.view_args.get('year', DEFAULT_YEAR))
+    config = kwargs.get('config', get_config(year))
 
     # If the lang has already been set (e.g. for error pages) then use that
     # Otherwise the requested lang, otherwise the default lang
@@ -42,8 +46,14 @@ def render_template(template, *args, **kwargs):
         if os.path.isfile(year_lang_template):
             template_supported_years.append(y)
 
+    date_published = get_file_date_info(template, "date_published")
+    date_modified = get_file_date_info(template, "date_modified")
+    ebook_size_in_mb = get_ebook_size_in_mb(lang, year)
+
     kwargs.update(year=year, lang=lang, language=language, supported_languages=template_supported_languages,
-                  supported_years=template_supported_years, all_supported_years=SUPPORTED_YEARS)
+                  supported_years=template_supported_years, all_supported_years=SUPPORTED_YEARS,
+                  date_published=date_published, date_modified=date_modified, ebook_size_in_mb=ebook_size_in_mb,
+                  get_file_date_info=get_file_date_info, config=config)
     return flask_render_template(template, *args, **kwargs)
 
 
@@ -104,17 +114,6 @@ def get_chapter_nextprev(config, chapter_slug):
     return prev_chapter, next_chapter
 
 
-def get_ebook_size_in_mb(lang, year):
-    ebook_file = STATIC_DIR + '/pdfs/web_almanac_%s_%s.pdf' % (year, lang)
-    if os.path.isfile(ebook_file):
-        size = os.path.getsize(ebook_file)
-        # Convert to MB
-        size = int(round(size / 1024 / 1024, 0))
-        return size
-
-    return 0
-
-
 def get_view_args(lang=None, year=None):
     view_args = request.view_args.copy()
     if lang:
@@ -138,8 +137,7 @@ def convert_old_image_path(folder):
 # content to base.html, or duplicate the content, but all will need regexs
 # anyway, so I think this is the cleanest.
 def get_ebook_methodology(lang, year):
-    config = get_config(year)
-    methodology_template = render_template('%s/%s/methodology.html' % (lang, year), config=config)
+    methodology_template = render_template('%s/%s/methodology.html' % (lang, year))
     methodology_maincontent = re.search('<article id="maincontent" class="content">(.+?)</article>',
                                         methodology_template, re.DOTALL | re.MULTILINE)
     if not methodology_maincontent:
@@ -193,6 +191,30 @@ def strip_accents(string):
 
 def accentless_sort(value):
     return sorted(value, key=lambda i: strip_accents(i[1]).lower())
+
+
+def get_file_date_info(file, type):
+    timestamps_config = get_timestamps_config()
+    # Default Published and Last Updated to today
+    today = datetime.datetime.utcnow().isoformat()
+    if type == 'date_published' or type == 'date_modified':
+        return timestamps_config.get(file, {}).get(type, today)
+    else:
+        return timestamps_config.get(file, {}).get(type)
+
+
+def get_versioned_filename(path):
+    version = get_file_date_info(path, 'hash')
+    if version:
+        return '%s?v=%s' % (path, version)
+    else:
+        logging.exception('An un-versioned file was used: %s', path)
+        return '%s' % path
+
+
+def get_ebook_size_in_mb(lang, year):
+    ebook_file = '/static/pdfs/web_almanac_%s_%s.pdf' % (year, lang)
+    return int(get_file_date_info(ebook_file, 'size') or 0)
 
 
 class RegexConverter(BaseConverter):

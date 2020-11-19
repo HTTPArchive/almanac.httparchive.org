@@ -19,13 +19,17 @@
     "watch": "node ./tools/generate/chapter_watcher",
     "ebooks": "node ./tools/generate/generate_ebook_pdfs",
     "deploy": "./tools/scripts/deploy.sh",
+    "lint": "run-script-os",
+    "lint:darwin:linux": "docker container run -it --rm -v \"$PWD/..\":/app -w /app/src --entrypoint=./tools/scripts/run_linter_locally.sh github/super-linter",
+    "lint:win32": "docker container run --rm -v \"%cd%\\..\":/app -w /app/src --entrypoint=./tools/scripts/run_linter_locally.sh github/super-linter",
     "stage": "./tools/scripts/deploy.sh -n",
     "start": "run-script-os",
     "start:darwin:linux": "./tools/scripts/run_and_test_website.sh -d",
     "start:win32": "call tools/scripts/run_and_test_website.bat",
     "stop": "run-script-os",
     "stop:darwin:linux": "./tools/scripts/stop_website.sh",
-    "stop:win32": "call tools/scripts/stop_website.bat"
+    "stop:win32": "call tools/scripts/stop_website.bat",
+    "timestamps": "node ./tools/generate/generate_timestamps"
   },
   "devDependencies": {
     "ejs": "3.1.5",
@@ -34,7 +38,7 @@
     "prettier": "2.1.2",
     "recursive-readdir": "2.2.2",
     "showdown": "1.9.1",
-    "web-vitals": "0.2.4",
+    "web-vitals": "1.0.1",
     "node-fetch": "2.6.1",
     "xml-js": "1.6.11",
     "run-script-os": "1.1.3",

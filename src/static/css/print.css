@@ -3,9 +3,12 @@
 .discuss,
 #chapter-navigation,
 footer .navigation-logo,
+footer #mobile-footer-nav-items,
 footer .nav-items,
+footer .table-of-contents,
 footer .language-switcher,
 footer .social-media,
+footer .accessibility-statement,
 footer hr {
   display: none;
 }
@@ -29,6 +32,10 @@ p.copyright a {
 
 p.copyright {
   margin: 0 auto;
+}
+
+footer .ha-logo {
+  color: #62718b;
 }
 
 figure iframe {

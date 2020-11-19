@@ -18,8 +18,6 @@ featured_stat_2: 80 %
 featured_stat_label_2: Utilisent la compression gzip
 featured_stat_3: 56 %
 featured_stat_label_3: Réponses HTML n'utilisant pas de compression
-published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introduction

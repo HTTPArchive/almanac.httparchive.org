@@ -153,9 +153,14 @@ p {
   text-align: center;
 }
 
+.featured-chapter-content-data div {
+  padding: 0 3px;
+}
+
 .featured-chapter-content-data-item div:first-of-type {
   font-size: 2rem;
   font-weight: bold;
+  padding-bottom: 0.5rem;
 }
 
 /* Contributors */

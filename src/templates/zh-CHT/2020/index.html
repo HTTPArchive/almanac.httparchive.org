@@ -1,18 +1,16 @@
 {% extends "base/2019/index.html" %}
 
 {% block title %}The {{ year }} Web Almanac{% endblock %}
-{% block description %}Web Almanac 網路年鑑是網路狀態的年度報告，其集結網路社群的專業知識共同精萃HTTP Archive的數據與趨勢。{% endblock %}
+{% block description %}Web Almanac 網路年鑑是網路狀態的年度報告，集結網路社群的專業知識共同精萃HTTP Archive的數據與趨勢。{% endblock %}
 
 {% block twitter_image_alt %} {{ year }} Web Almanac{% endblock %}
 
-{% block date_published %}2020-07-06T00:00:00.000Z{% endblock %}
-{% block date_modified %}2020-11-03T00:00:00.000Z{% endblock %}
 
 {% block intro_title %}{{ self.coming_soon() }}{% endblock %}
-{% block intro_sub_title %} {{ year }} <b>網路狀態的</b> 報告{% endblock %}
+{% block intro_sub_title %} {{ year }} <b>網路年鑑</b> 報告{% endblock %}
 
 {% block mission %}
 <p>
-  網路社群的專家目前正如火如荼地籌備、分析、撰寫各章節於 {{ year }} Web Almanac版本，預計將在年底前發布。
+  網路社群的專家目前正如火如荼地籌備、分析、撰寫各章節的 {{ year }} Web Almanac版本，預計將在年底前發布。
 </p>
 {% endblock %}
