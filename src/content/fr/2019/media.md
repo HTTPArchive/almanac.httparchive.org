@@ -19,8 +19,6 @@ featured_stat_2: 60 %
 featured_stat_label_2: des images sont des JPEG
 featured_stat_3: 2 %
 featured_stat_label_3: des pages utilisent l’élément <code>&lt;picture&gt;</code>
-published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-10T00:00:00.000Z
 ---
 
 ## Introduction

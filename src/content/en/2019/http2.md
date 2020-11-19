@@ -18,8 +18,6 @@ featured_stat_2: 27.83%
 featured_stat_label_2: Requests with HTTP/2 prioritisation issues
 featured_stat_3: 8.38%
 featured_stat_label_3: Sites supporting QUIC
-published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introduction

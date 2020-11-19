@@ -18,8 +18,6 @@ featured_stat_2: 42%
 featured_stat_label_2: Sitios con TTFB lento
 featured_stat_3: 40%
 featured_stat_label_3: Sitios con FID rápido
-published: 2019-11-04T00:00:00.000Z
-last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introducción

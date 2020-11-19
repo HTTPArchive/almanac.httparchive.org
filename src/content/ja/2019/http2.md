@@ -18,8 +18,6 @@ featured_stat_2: 27.83%
 featured_stat_label_2: 準最適なHTTP/2優先順位付けによるモバイル要求の割合。
 featured_stat_3: 8.38%
 featured_stat_label_3: QUICをサポートするモバイルサイトの割合。
-published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## 導入
