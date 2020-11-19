@@ -19,8 +19,6 @@ featured_stat_2: 74%
 featured_stat_label_2: CMS sites that use WordPress
 featured_stat_3: 1,232 KB
 featured_stat_label_3: Median image KB loaded per desktop CMS page.
-published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-16T00:00:00.000Z
 ---
 
 ## Introduction

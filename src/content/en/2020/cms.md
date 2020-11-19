@@ -18,8 +18,6 @@ featured_stat_2: 1.5 grams
 featured_stat_label_2: CO2 emitted by the median CMS page load
 featured_stat_3: 74%
 featured_stat_label_3: CMS using WordPress (same as last year!)
-published: 2020-12-09T00:00:00.000Z
-last_updated: 2020-11-08T00:00:00.000Z
 unedited: true
 ---
 

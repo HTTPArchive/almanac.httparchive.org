@@ -18,8 +18,6 @@ featured_stat_2: 0.49%
 featured_stat_label_2: Sites using Storage Manager API
 featured_stat_3: 363
 featured_stat_label_3: Sites allow installing related apps
-published: 2020-11-09T00:00:00.000Z
-last_updated: 2020-11-13T00:00:00.000Z
 ---
 
 ## Introduction

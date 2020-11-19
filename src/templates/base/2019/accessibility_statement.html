@@ -35,7 +35,7 @@
 
 {% block styles %}
 {{ super() }}
-<link rel="stylesheet" href="/static/css/page.css?v=20201117231124">
+<link rel="stylesheet" href="{{ get_versioned_filename('/static/css/page.css') }}">
 {% endblock %}
 
 {# Don't need year switcher for this template so blank it out #}
@@ -65,5 +65,5 @@
 {% block scripts %}
 {{ super() }}
 {{ self.index_menu_script() }}
-<script src="/static/js/chapter.js?v=20201020135830" defer></script>
+<script src="{{ get_versioned_filename('/static/js/chapter.js') }}" defer></script>
 {% endblock %}

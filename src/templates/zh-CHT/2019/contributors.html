@@ -4,8 +4,6 @@
 
 {% block description %} {{ config.contributors.items() | length }} Web Almanac 2019年的貢獻團隊有分析者、作者、腦力激盪者、設計者、開發者、編輯者、審稿者和翻譯者。{% endblock %}
 
-{% block date_published %}2019-11-04T12:00:00.000Z{% endblock %}
-{% block date_modified %}2020-07-17T00:00:00.000Z{% endblock %}
 
 {% block filter_by_team %}按類組篩選： <span id="filtered-contributors">{{ self.contributors() }}</span><span id="contributors-total-text" class="hidden"> 的 <span id="contributors-total">{{ config.contributors.items() | length }}</span></span> 貢獻者。{% endblock %}
 {% block filter_by %}篩選{% endblock %}

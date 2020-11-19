@@ -18,8 +18,6 @@ featured_stat_2: 39%
 featured_stat_label_2: Responses using the <code>Vary</code> header
 featured_stat_3: 82%
 featured_stat_label_3: Sites that could save 1 MB by optimizing caching better
-published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-16T00:00:00.000Z
 ---
 
 ## Introduction

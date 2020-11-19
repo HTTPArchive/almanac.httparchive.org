@@ -18,8 +18,6 @@ featured_stat_2: 39%
 featured_stat_label_2: <code>Vary</code>ヘッダーを使用したレスポンス
 featured_stat_3: 82%
 featured_stat_label_3: キャッシングを最適化することで1Mbを節約できるサイト
-published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-10T00:00:00.000Z
 ---
 
 ## 導入
