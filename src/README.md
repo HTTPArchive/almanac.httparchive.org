@@ -25,7 +25,7 @@ py -m pip install --user virtualenv
 2. Create an isolated Python environment, and install dependencies:
 
 ```
-virtualenv --python python3 .venv
+virtualenv --python python3.8 .venv
 source .venv/bin/activate
 ```
 
@@ -252,17 +252,17 @@ docker container run --rm -it -v "$PWD":/app -p 8080:8080 webalmanac
 4. Make changes in the code using any text editor and run tests (need to build the image again if any Python or Node dependencies are changed):
 
 ```
-docker container run --rm -it -v "$PWD":/app webalmanac pytest
+docker container run --rm -it -v "$PWD":/app webalmanac npm run pytest
 ```
 
 5. To avoid running commands in one-off mode run `bash` in a container (with necessary volumes mounted and ports mapped) then run successive commands:
 
 ```
 docker container run --rm -it -v "$PWD":/app -v /app/node_modules -p 8080:8080 webalmanac bash
-root@[CID]:/app# pytest
 root@[CID]:/app# python main.py
 ^C
 root@[CID]:/app# npm run generate
+root@[CID]:/app# npm run pytest
 root@[CID]:/app# exit
 ```
 

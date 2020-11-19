@@ -67,14 +67,14 @@ sleep 2
 # Check website is running as won't have got feedback as backgrounded
 pgrep -f "python main.py"
 
-# Run pytests
-pytest
-
 echo "Installing node modules"
 npm install
 
 echo "Building website"
 npm run generate
+
+echo "Running pytest"
+npm run pytest
 
 echo "Testing website"
 npm run test
