@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block styles %}
-  <link rel="stylesheet" href="/static/css/2019.css?v=20201118164256">
+  <link rel="stylesheet" href="{{ get_versioned_filename('/static/css/2019.css') }}">
 {% endblock %}
 
 {% block page_url %}https://almanac.httparchive.org{{ url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}{% endblock %}
@@ -68,8 +68,8 @@
     "author":
       {{ self.author_structured_data() }},
       "description": "{{ self.description() }}",
-      "datePublished": "{{ self.date_published() }}",
-      "dateModified": "{{ self.date_modified() }}"
+      "datePublished": "{{ date_published }}",
+      "dateModified": "{{ date_modified }}"
 	}
   </script>
   {% endblock %}
