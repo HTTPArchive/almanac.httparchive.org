@@ -1,12 +1,16 @@
 from server.config import DEFAULT_YEAR, SUPPORTED_YEARS
 from server.language import Language, DEFAULT_LANGUAGE
-from server.validate import parse_accept_language
+from server.validate import parse_accept_language, validate_lang_and_year
 
 
 SUPPORTED_LANGUAGES = (Language.EN.lang_code, Language.JA.lang_code)
 DEFAULT_LANGUAGE_CODE = DEFAULT_LANGUAGE.lang_code
 JAPANESE_LANGUAGE_CODE = Language.JA.lang_code
 ENGLISH_LANGUAGE_CODE = Language.EN.lang_code
+
+
+def assert_validate_lang(lang, year, expected_lang, expected_year):
+    assert (expected_lang, expected_year) == validate_lang_and_year(lang, year)
 
 
 def assert_language(accept_language_header, expected_lang):
@@ -60,3 +64,31 @@ def test_returns_best_match_language_if_multiple_codes_are_specified():
 
 def test_returns_default_if_multiple_codes_are_specified_but_none_supported():
     assert_language('de-DE, ko-KR', DEFAULT_LANGUAGE_CODE)
+
+
+def test_returns_same_year_and_lang_if_supported():
+    assert_validate_lang('en', '2019', 'en', '2019')
+
+
+def test_returns_lowercase_lang():
+    assert_validate_lang('EN', '2019', 'en', '2019')
+
+
+def test_returns_lang_without_country_when_supported():
+    assert_validate_lang('en-GB', '2019', 'en', '2019')
+
+
+def test_returns_preferred_simplified_chinese():
+    assert_validate_lang('zh-SG', '2019', 'zh-CN', '2019')
+
+
+def test_returns_preferred_traditional_chinese():
+    assert_validate_lang('zh-TW', '2019', 'zh-CHT', '2019')
+
+
+def test_returns_preferred_chinese():
+    assert_validate_lang('zh', '2019', 'zh-CN', '2019')
+
+
+def test_returns_default_year():
+    assert_validate_lang('en', None, 'en', DEFAULT_YEAR)
