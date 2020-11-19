@@ -9,5 +9,7 @@
 # It is useful as sometimes these are backgrounded so this offers a quick way of stopping them.
 #
 
-pkill -9 python main.py
-pkill -9 node ./tools/generate/chapter_watcher
+pkill -9 -f "python main.py"
+pkill -9 -f "./tools/generate/chapter_watcher"
+
+exit 0

@@ -1,4 +1,5 @@
 env/
+.venv/
 *.log
 *.pyc
 **/.DS_Store
