@@ -92,7 +92,7 @@ const generate_chapters = async (chapter_match) => {
           featured_quotes[language][year][chapter] = chapter_featured_quote;
         }
         if ( sitemap_languages[year].includes(language) ) {
-          sitemap.push({ language, year, chapter, metadata });
+          sitemap.push({ language, year, chapter });
         }
         ebook_chapters.push({ language, year, chapter, metadata, body, toc });
       }
