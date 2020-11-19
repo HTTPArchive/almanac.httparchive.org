@@ -167,6 +167,8 @@ When we look at CMS adoption share relative to other CMSs (thus excluding websit
   )
 }}
 
+### WordPress usage
+
 WordPress dominates this space and thus deserves further discussion.
 
 [WordPress is an open source project](https://wordpress.org/about/) with a mission to “democratize publishing”. The CMS is free; while this is likely an important factor in its adoption share, the two next most popular CMSs – Joomla and Drupal – are also free. WordPress’ community, contributors, and business ecosystem are likely the major differentiators.
