@@ -51,7 +51,7 @@ const check_and_update_date = (file, hash, size) => {
     };
   } else {
     file_dates[file] = {
-      "published_date": now,
+      "date_published": now,
       "date_modified": now,
       "hash": hash
     };
