@@ -19,8 +19,6 @@ featured_stat_2: 116
 featured_stat_label_2: Número de plataformas de comercio electrónico detectadas
 featured_stat_3: 1,517 KB
 featured_stat_label_3: Mediana de bytes de imagen por página de comercio electrónico móvil
-published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introducción

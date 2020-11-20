@@ -11,15 +11,15 @@
 <meta name="robots" content="noindex">
 <!--Prince meta date-->
 <meta name="subject" content="{{ self.description() }}">
-<meta name="date" content="{{ self.date_modified()[:-5] }}">
+<meta name="date" content="{{ date_modified[:-5] }}">
 <meta name="author" content="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang) }}">
 <meta name="keywords" content="Web Almanac 2019 HTTPArchive {{ ' '.join(localizedChapterTitles.values()) }}">
 {% endblock %}
 
 {% block styles %}
 {{ super() }}
-<link rel="stylesheet" href="/static/css/page.css?v=20201117231124" />
-<link rel="stylesheet" href="/static/css/ebook.css?v=20200809210340" />
+<link rel="stylesheet" href="{{ get_versioned_filename('/static/css/page.css') }}" />
+<link rel="stylesheet" href="{{ get_versioned_filename('/static/css/ebook.css') }}" />
 
 <style nonce="{{ csp_nonce() }}">
 /* Add a print query param to format the book for printer (mirror headers and footers) */

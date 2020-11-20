@@ -25,6 +25,21 @@ class _Language(object):
         return self._lang_code
 
 
+# Allow mapping of one language to another for when country agnostic lookup
+# will not work (e.g. Chinese)
+LANGUAGE_MAPPING = {
+    'zh-cht': 'zh-CHT',
+    'zh-hant': 'zh-CHT',
+    'zh-tw': 'zh-CHT',
+    'zh-hk': 'zh-CHT',
+    'zh-mo': 'zh-CHT',
+    'zh-cn': 'zh-CN',
+    'zh-hans': 'zh-CN',
+    'zh-sg': 'zh-CN',
+    'zh': 'zh-CN'
+}
+
+
 # Mostly we use region-agnostic languages, but can add region where
 # there are significant differences (e.g. Chinese)
 class Language(object):

@@ -20,11 +20,17 @@ SUPPORTED_CHAPTERS = {}
 SUPPORTED_LANGUAGES = {}
 
 config_json = {}
+timestamps_json = {}
 
 
 def get_config(year):
     global config_json
     return config_json[year] if year in config_json else None
+
+
+def get_timestamps_config():
+    global timestamps_json
+    return timestamps_json
 
 
 def get_entries_from_json(json_config, p_key, s_key):
@@ -67,12 +73,17 @@ def update_config():
     global SUPPORTED_CHAPTERS
     global SUPPORTED_LANGUAGES
     global config_json
+    global timestamps_json
 
     config_files = []
 
     for root, directories, files in os.walk(ROOT_DIR + '/config'):
         for file in files:
-            if '.json' in file:
+            if file == 'last_updated.json':
+                config_filename = 'config/%s' % file
+                with open(config_filename, 'r') as config_file:
+                    timestamps_json = json.load(config_file)
+            elif '.json' in file:
                 config_files.append(file[0:4])
 
     for year in config_files:
