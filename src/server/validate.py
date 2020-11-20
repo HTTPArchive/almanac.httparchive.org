@@ -33,6 +33,11 @@ def validate(func):
         if 'lang' in accepted_args:
             kwargs.update({'lang': lang})
             if lang != lang_arg and lang_arg is not None:
+                # Normally we return a 302 for a language not yet supported
+                # but for zh-CHT migration we want a 301 to get Google to reindex
+                # TODO - Remove in future?
+                if lang_arg == 'zh-CHT':
+                    return redirect('%s' % request.full_path.replace(lang_arg, lang, 1), code=301)
                 return redirect('%s' % request.full_path.replace(lang_arg, lang, 1), code=302)
 
         if 'year' in accepted_args:
