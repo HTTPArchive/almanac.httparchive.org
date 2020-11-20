@@ -1,5 +1,4 @@
 #standardSQL
-# TODO: Investigate UDF timeouts
 CREATE TEMPORARY FUNCTION getCustomPropertyValueTypes(payload STRING)
 RETURNS ARRAY<STRUCT<type STRING, freq INT64>> LANGUAGE js AS '''
 try {
@@ -77,6 +76,7 @@ try {
             let type;
 
             let call = null;
+            // NOTE(rviscomi): Excluding XL values to avoid UDF timeouts.
             if (value.length < 1000) {
               call = extractFunctionCalls(value).filter(c => c.pos[0] === 0 && c.pos[1] === value.length)[0];
             }
