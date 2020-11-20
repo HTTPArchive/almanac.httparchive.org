@@ -19,8 +19,6 @@ featured_stat_2: 74%
 featured_stat_label_2: WordPressを利用したCMSサイト
 featured_stat_3: 1,232 KB
 featured_stat_label_3: デスクトップCMSページごとに読み込まれる画像KBの中央値。
-published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## 序章

@@ -20,8 +20,6 @@ featured_stat_2: 11%
 featured_stat_label_2: Pages with no heading tags
 featured_stat_3: 15%
 featured_stat_label_3: Sites eligible for rich results
-published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introduction

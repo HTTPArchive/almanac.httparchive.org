@@ -19,8 +19,6 @@ featured_stat_2: 9.61%
 featured_stat_label_2: Homepages served by most popular CDN (Cloudflare)
 featured_stat_3: 30%
 featured_stat_label_3: 3P CDN requests that use Google
-published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introduction
