@@ -15,11 +15,9 @@ featured_quote: Depuis 2007, le web mobile s’est développé à un rythme expl
 featured_stat_1: 65 %
 featured_stat_label_1: des sites sont victimes de déplacements de contenu moyens ou importants pendant le chargement
 featured_stat_2: 32 %
-featured_stat_label_2: des sites désactive le zoom
+featured_stat_label_2: des sites désactivent le zoom
 featured_stat_3: 34 %
 featured_stat_label_3: des sites ont des cibles d'appui de tailles suffisantes
-published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-11T00:00:00.000Z
 ---
 
 ## Introduction

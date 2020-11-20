@@ -18,8 +18,6 @@ featured_stat_2: 49 %
 featured_stat_label_2: des requêtes.
 featured_stat_3: 28 %
 featured_stat_label_3: des octets.
-published: 2019-12-23T00:00:00.000Z
-last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introduction

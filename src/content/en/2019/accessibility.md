@@ -20,8 +20,6 @@ featured_stat_2: 50%
 featured_stat_label_2: Sites with missing image alt attributes
 featured_stat_3: 14%
 featured_stat_label_3: Sites using a skip link
-published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introduction

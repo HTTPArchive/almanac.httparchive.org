@@ -19,8 +19,6 @@ featured_stat_2: 2%
 featured_stat_label_2: CSS Gridを使用しているサイト
 featured_stat_3: 780
 featured_stat_label_3: Z-Indexの最大値の桁数
-published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## 導入
@@ -492,9 +490,9 @@ Webサイトはデジタルペーパーのように感じますか？　ユー�
   <table>
     <thead>
       <tr>
-        <th>スタイルシート名</th>
-        <th>デスクトップ</th>
-        <th>モバイル</th>
+        <th scope="col">スタイルシート名</th>
+        <th scope="col">デスクトップ</th>
+        <th scope="col">モバイル</th>
       </tr>
     </thead>
     <tbody>
@@ -617,9 +615,9 @@ Webサイトが各コンテンツタイプにロードするバイト数の詳�
   <table>
     <thead>
       <tr>
-        <th>ライブラリ</th>
-        <th>デスクトップ</th>
-        <th>モバイル</th>
+        <th scope="col">ライブラリ</th>
+        <th scope="col">デスクトップ</th>
+        <th scope="col">モバイル</th>
       </tr>
     </thead>
     <tbody>

@@ -814,7 +814,11 @@ footer .ha-logo {
 }
 
 footer .nav-items > ul > li > * {
-  margin-left: 2vw;
+  margin-right: 2vw;
+}
+
+footer .nav-items > ul > li:last-child > * {
+  margin-right: 0;
 }
 
 footer .language-switcher {
