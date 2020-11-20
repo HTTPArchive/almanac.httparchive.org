@@ -115,7 +115,8 @@ const test_status_codes = async () => {
   await test_no_year_redirects();
   await test_status_code('/zz', 308, `/zz/`);
   await test_status_code('/zh/', 302, `/zh-CN/`);
-  await test_status_code('/zh-HANT/', 302, `/zh-CHT/`);
+  await test_status_code('/zh-HANT/', 302, `/zh-TW/`);
+  await test_status_code('/zh-CHT/', 301, `/zh-TW/`);
   await test_status_code('/zh-hans/', 302, `/zh-CN/`);
   await test_status_code('/en-GB/', 302, `/en/`);
   await test_status_code('/EN/', 302, `/en/`);
