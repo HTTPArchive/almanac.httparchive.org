@@ -9,7 +9,7 @@ SELECT client,
   countif(has_img_src) as has_img_src,
   countif(rel_preconnect) as rel_preconnect
 FROM
-(
+  (
   SELECT
     client,
     page,
@@ -21,6 +21,6 @@ FROM
   WHERE
     date = '2020-08-01' AND
     firstHtml
-)
+  )
 GROUP BY
   client;
