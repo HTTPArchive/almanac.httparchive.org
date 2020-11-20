@@ -18,8 +18,6 @@ featured_stat_2: 15%
 featured_stat_label_2: 非推奨の要素を含むページ
 featured_stat_3: 65
 featured_stat_label_3: カルーセルのバリエーションが見つかりました
-published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## 導入

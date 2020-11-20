@@ -98,5 +98,10 @@ const generate_ebook_pdfs = async () => {
 };
 
 (async () => {
-  await generate_ebook_pdfs();
+  try {
+    await generate_ebook_pdfs();
+  } catch (error) {
+    console.error(error);
+    process.exit(1);
+  }
 })();

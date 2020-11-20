@@ -19,8 +19,6 @@ featured_stat_2: 2%
 featured_stat_label_2: CSS Gridを使用しているサイト
 featured_stat_3: 780
 featured_stat_label_3: Z-Indexの最大値の桁数
-published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-16T00:00:00.000Z
 ---
 
 ## 導入
