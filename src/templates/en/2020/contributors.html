@@ -4,6 +4,7 @@
 
 {% block description %}The {{ config.contributors.items() | length }} people who contributed to the {{ year }} Web Almanac as Analysts, Authors, Designers, Developers, Editors, Leaders, Reviewers and Translators.{% endblock %}
 
+
 {% block filter_by_team %}Filter by team: <span id="filtered-contributors">{{ self.contributors() }}</span><span id="contributors-total-text" class="hidden"> of <span id="contributors-total">{{ config.contributors.items() | length }}</span></span> contributors.{% endblock %}
 {% block filter_by %}Filter by{% endblock %}
 
