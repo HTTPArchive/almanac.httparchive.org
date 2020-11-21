@@ -4,7 +4,6 @@
 
 {% block description %}El {{ config.contributors.items() | length }} personas que contribuyeron al 2019 Web Almanac commo Analistas, Autores, Pensadores, Diseñadores, Desarrolladores, Editores, Revisores y Traductores.{% endblock %}
 
-
 {% block filter_by_team %}Filtrar por equipo: <span id="filtered-contributors">{{ self.contributors() }}</span><span id="contributors-total-text" class="hidden"> de <span id="contributors-total">{{ config.contributors.items() | length }}</span></span> contributors.{% endblock %}
 {% block filter_by %}Filtrar por{% endblock %}
 
