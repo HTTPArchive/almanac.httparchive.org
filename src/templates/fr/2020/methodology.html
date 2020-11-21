@@ -6,7 +6,6 @@
 
 {% block twitter_image_alt %}Méthodologie du Web Almanac {{ year }}{% endblock %}
 
-
 {% block index %}
       <ul>
         <li><a href="#overview">Vue d’ensemble</a></li>
@@ -375,8 +374,7 @@
         <h4 id="parsel"><a href="#parsel" lang="en" class="anchor-link">Parsel</a></h4>
 
         <p>
-            <a href="https://projects.verou.me/parsel/" lang="en">Parsel</a> est un analyseur de sélecteur CSS et un calculateur de spécificité, écrit à l’origine par la responsable du chapitre <a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a>, <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='LeaVerou') }}" lang="en">Lea Verou</a>, et dont elle a ouvert le code source dans une bibliothèque distincte.
-            Il est largement utilisé pour tous les indicateurs du CSS qui concernent les sélecteurs et la spécificité.
+          <a href="https://projects.verou.me/parsel/" lang="en">Parsel</a> est un analyseur de sélecteur CSS et un calculateur de spécificité, écrit à l’origine par la responsable du chapitre <a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a>, <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='LeaVerou') }}" lang="en">Lea Verou</a>, et dont elle a ouvert le code source dans une bibliothèque distincte. Il est largement utilisé pour tous les indicateurs du CSS qui concernent les sélecteurs et la spécificité.
         </p>
     </section>
 
