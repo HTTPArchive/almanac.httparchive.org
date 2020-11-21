@@ -19,8 +19,6 @@ featured_stat_2: 2%
 featured_stat_label_2: Sites that use CSS Grid
 featured_stat_3: 780
 featured_stat_label_3: Number of digits in largest Z-Index value
-published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introduction
@@ -394,12 +392,12 @@ CSS keyframe animations are a great solution for your more complex animations or
 
 Media queries let CSS hook into various system-level variables in order to adapt appropriately for the visiting user. Some of these queries could handle print styles, projector screen styles, and viewport/screen size. For a long time, media queries were primarily leveraged for their viewport knowledge. Designers and developers could adapt their layouts for small screens, large screens, and so forth. Later, the web started bringing more and more capabilities and queries, meaning media queries can now manage accessibility features on top of viewport features.
 
-A good place to start with Media Queries, is just about how many are used per page? How many different moments or contexts does the typical page feel they want to respond to?
+A good place to start with media queries, is just about how many are used per page? How many different moments or contexts does the typical page feel they want to respond to?
 
 {{ figure_markup(
   image="fig27.png",
   caption="Distribution of the number of media queries per page.",
-  description="Bar chart showing the distribution of media queries per page. For desktop pages the 10, 25, 50, 75, and 90th percentiles are: 0, 3, 14, 27, and 43 keyframes. The desktop distribution is similar to the mobile distribution.",
+  description="Bar chart showing the distribution of media queries per page. For desktop pages the 10, 25, 50, 75, and 90th percentiles are: 0, 3, 14, 27, and 43 media queries. The desktop distribution is similar to the mobile distribution.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1892465673&format=interactive"
   )
 }}
@@ -492,9 +490,9 @@ What do you name your stylesheets? Have you been consistent throughout your care
   <table>
     <thead>
       <tr>
-        <th>Stylesheet name</th>
-        <th>Desktop</th>
-        <th>Mobile</th>
+        <th scope="col">Stylesheet name</th>
+        <th scope="col">Desktop</th>
+        <th scope="col">Mobile</th>
       </tr>
     </thead>
     <tbody>
@@ -617,9 +615,9 @@ It's common, popular, convenient, and powerful to reach for a CSS library to kic
   <table>
     <thead>
       <tr>
-        <th>Library</th>
-        <th>Desktop</th>
-        <th>Mobile</th>
+        <th scope="col">Library</th>
+        <th scope="col">Desktop</th>
+        <th scope="col">Mobile</th>
       </tr>
     </thead>
     <tbody>

@@ -2,7 +2,8 @@ from flask import Flask
 from flask_talisman import Talisman
 from werkzeug.http import HTTP_STATUS_CODES
 from .helpers import get_view_args, chapter_lang_exists, featured_chapters_exists, \
-    get_ebook_methodology, add_footnote_links, year_live, accentless_sort, RegexConverter
+    get_ebook_methodology, add_footnote_links, year_live, accentless_sort, RegexConverter, \
+    get_versioned_filename
 from .config import TEMPLATES_DIR, STATIC_DIR
 from . import csp, feature_policy
 import logging
@@ -60,6 +61,7 @@ app.jinja_env.globals['HTTP_STATUS_CODES'] = HTTP_STATUS_CODES
 app.jinja_env.globals['get_ebook_methodology'] = get_ebook_methodology
 app.jinja_env.globals['add_footnote_links'] = add_footnote_links
 app.jinja_env.globals['year_live'] = year_live
+app.jinja_env.globals['get_versioned_filename'] = get_versioned_filename
 app.jinja_env.filters['accentless_sort'] = accentless_sort
 
 talisman = Talisman(app,

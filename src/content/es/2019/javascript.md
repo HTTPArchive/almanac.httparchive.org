@@ -18,8 +18,6 @@ featured_stat_2: 83%
 featured_stat_label_2: Sitios que usan jQuery
 featured_stat_3: 4.6%
 featured_stat_label_3: Páginas de inicio usando React
-published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introducción

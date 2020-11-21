@@ -196,6 +196,10 @@
   font-weight: normal;
 }
 
+.byline a {
+  white-space: nowrap;
+}
+
 .chapter_links .btn {
   display: inline-block;
   margin: 10px;

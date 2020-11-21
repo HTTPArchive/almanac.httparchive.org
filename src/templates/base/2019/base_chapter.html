@@ -2,9 +2,6 @@
 
 {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 
-{% block date_published %}{{ metadata.published }}{% endblock %}
-{% block date_modified %}{{ metadata.last_updated }}{% endblock %}
-
 {% block image_url %}https://almanac.httparchive.org/static/images/2019/{{ metadata.chapter }}/hero_lg.jpg{% endblock %}
 {% block image_height %}433{% endblock %}
 {% block image_width %}866{% endblock %}
@@ -29,7 +26,7 @@
 
 {% block styles %}
 {{ super() }}
-<link rel="stylesheet" href="/static/css/page.css?v=20201110175416">
+<link rel="stylesheet" href="{{ get_versioned_filename('/static/css/page.css') }}">
 {% endblock %}
 
 {% block scripts %}
@@ -55,7 +52,7 @@ document.addEventListener("keyup", function onPress(event) {
 window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}.json";
 </script>
 
-<script src="/static/js/chapter.js?v=20201020135830" defer></script>
+<script src="{{ get_versioned_filename('/static/js/chapter.js') }}" defer></script>
 
 {% endblock %}
 
