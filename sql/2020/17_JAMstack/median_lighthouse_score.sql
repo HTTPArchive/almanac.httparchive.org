@@ -8,9 +8,9 @@ SELECT
   APPROX_QUANTILES(CAST(JSON_EXTRACT_SCALAR(report, '$.categories.accessibility.score') AS NUMERIC), 1000)[OFFSET(500)] AS median_accessibility,
   APPROX_QUANTILES(CAST(JSON_EXTRACT_SCALAR(report, '$.categories.pwa.score') AS NUMERIC), 1000)[OFFSET(500)] AS median_pwa
 FROM
-  `httparchive.lighthouse.2020_10_01_*`
+  `httparchive.lighthouse.2020_09_01_*`
 JOIN
-  `httparchive.technologies.2020_10_01_*`
+  `httparchive.technologies.2020_09_01_*`
 USING
   (_TABLE_SUFFIX, url)
 WHERE
