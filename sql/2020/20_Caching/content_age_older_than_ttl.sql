@@ -4,7 +4,7 @@ CREATE TEMPORARY FUNCTION toTimestamp(date_string STRING)
 RETURNS INT64 LANGUAGE js AS '''
   try {
     var timestamp = Math.round(new Date(date_string).getTime() / 1000);
-    return isNaN(timestamp) ? -1 : timestamp;
+    return isNaN(timestamp) || timestamp < 0 ? -1 : timestamp;
   } catch (e) {
     return -1;
   }
