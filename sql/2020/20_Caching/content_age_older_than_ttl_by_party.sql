@@ -6,7 +6,7 @@ RETURNS INT64 LANGUAGE js AS '''
     var timestamp = Math.round(new Date(date_string).getTime() / 1000);
     return isNaN(timestamp) || timestamp < 0 ? -1 : timestamp;
   } catch (e) {
-    return -1;
+    return null;
   }
 ''';
 
