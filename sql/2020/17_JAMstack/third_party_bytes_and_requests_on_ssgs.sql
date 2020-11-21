@@ -19,13 +19,13 @@ FROM (
     FROM
       `httparchive.almanac.requests`
     WHERE
-      date = '2020-10-01')
+      date = '2020-08-01')
   JOIN (
     SELECT
       _TABLE_SUFFIX AS client,
       url AS page
     FROM
-      `httparchive.technologies.2020_10_01_*`
+      `httparchive.technologies.2020_08_01_*`
     WHERE
       LOWER(category) = "static site generator" OR
 	    app = "Next.js")
@@ -38,7 +38,7 @@ FROM (
       FROM
         `httparchive.almanac.third_parties`
       WHERE
-        date = '2020-10-01' AND
+        date = '2020-08-01' AND
         category != 'hosting')
   GROUP BY
     client,

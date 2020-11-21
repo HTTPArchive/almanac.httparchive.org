@@ -47,7 +47,7 @@ FROM (
   FROM
     `chrome-ux-report.materialized.device_summary`
   WHERE
-    date = '2020-10-01')
+    date = '2020-08-01')
 JOIN (
   SELECT
     CASE
@@ -70,7 +70,7 @@ JOIN (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = '2020-10-01' AND
+    date = '2020-08-01' AND
     firstHtml)
 USING
   (client, url)
@@ -80,7 +80,7 @@ JOIN (
     app,
     url
   FROM
-    `httparchive.technologies.2020_10_01_*`
+    `httparchive.technologies.2020_08_01_*`
   WHERE
     LOWER(category) = "static site generator" OR
     app = "Next.js"
