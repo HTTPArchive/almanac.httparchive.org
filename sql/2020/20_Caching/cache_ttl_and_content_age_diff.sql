@@ -4,7 +4,7 @@ CREATE TEMPORARY FUNCTION toTimestamp(date_string STRING)
 RETURNS INT64 LANGUAGE js AS '''
   try {
     var timestamp = Math.round(new Date(date_string).getTime() / 1000);
-    return isNaN(timestamp) ? -1 : timestamp;
+    return isNaN(timestamp) || timestamp < 0 ? -1 : timestamp;
   } catch (e) {
     return -1;
   }
@@ -18,7 +18,7 @@ FROM
   (
     SELECT
       _TABLE_SUFFIX AS client,
-      ROUND((expAge - (startedDateTime - toTimestamp(resp_last_modified))) / 86400, 2)  AS diff_in_days
+      ROUND((expAge - (startedDateTime - toTimestamp(resp_last_modified))) / (60 * 60 * 24), 2)  AS diff_in_days
     FROM
       `httparchive.summary_requests.2020_08_01_*`
     WHERE
