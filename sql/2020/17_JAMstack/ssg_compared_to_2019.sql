@@ -8,13 +8,13 @@ SELECT
   total,
   COUNT(0) / total AS pct
 FROM
-  `httparchive.technologies.2020_08_01_*`
+  `httparchive.technologies.2020_10_01_*`
 JOIN (
   SELECT
     _TABLE_SUFFIX,
     COUNT(0) AS total
   FROM
-    `httparchive.summary_pages.2020_08_01_*`
+    `httparchive.summary_pages.2020_10_01_*`
   GROUP BY
     _TABLE_SUFFIX)
 USING
@@ -35,13 +35,13 @@ SELECT
   total,
   COUNT(0) / total AS pct
 FROM
-  `httparchive.technologies.2019_07_01_*`
+  `httparchive.technologies.2019_10_01_*`
 JOIN (
   SELECT
     _TABLE_SUFFIX,
     COUNT(0) AS total
   FROM
-    `httparchive.summary_pages.2019_07_01_*`
+    `httparchive.summary_pages.2019_10_01_*`
   GROUP BY
     _TABLE_SUFFIX)
 USING
