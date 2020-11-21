@@ -1,6 +1,5 @@
 {% extends "base/error.html" %}
 
-
 {% block unknown_error %}Erreur inconnue{% endblock %}
 
 {% 
@@ -20,7 +19,6 @@
     "Not Found": "L'URL demandée est introuvable sur le serveur. Si vous avez entré l'URL manuellement, vérifiez l'orthographe et réessayez."
   }
 %}
-
 {% macro expandedErrorMessage(errorCode, errorDescription, errorMessage) %}
 {{ errorCode }} <i lang="en">{{ errorDescription }}</i>&nbsp;: {{ errorMessage }}
 {% endmacro %}
