@@ -698,7 +698,7 @@ As a rule of thumb and for [usability reasons](https://www.nngroup.com/articles/
 
 ## Conclusion
 
-At the end of this 2020 analysis, here are some things that stood out for us.
+We've touched on some observations throughout the chapter, but as a reflection on the state of markup in 2020, here are some things that stood out for us:
 
 {{ figure_markup(
   caption="Percent of pages with a quirky doctype.",
