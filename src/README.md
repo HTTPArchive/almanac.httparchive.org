@@ -2,6 +2,12 @@
 
 The Web Almanac can be developed on macOS, Windows or Linux. It requires Node v12, Python v3.8 and pip to be installed. Alternatively, use Docker to avoid manually configuring the development environment.
 
+## Style guide
+
+The Web Almanac uses a specific "style guide" for code, including 2 spaces for indentation (except Python which uses 4 spaces).
+
+An `.editorconfig` file exists for those using [EditorConfig](https://editorconfig.org/) to help enforce those styles. This may require installing the `editorconfig` node module via npm (we suggest installing globally - `npm install -g editorconfig` ) and then installing the extension for your IDE (for example there is a [Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)).
+
 ## Run Locally
 
 Make sure you run the following commands from within the `src` directory by executing `cd src` first.
