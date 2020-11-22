@@ -53,7 +53,12 @@ JOIN (
     CASE
       WHEN REGEXP_EXTRACT(LOWER(CONCAT(respOtherHeaders, resp_x_powered_by, resp_via, resp_server)), '(x-github-request)') = 'x-github-request' THEN 'GitHub'
       WHEN REGEXP_EXTRACT(LOWER(CONCAT(respOtherHeaders, resp_x_powered_by, resp_via, resp_server)), '(netlify)') = 'netlify' THEN 'Netlify'
+      WHEN REGEXP_EXTRACT(LOWER(CONCAT(respOtherHeaders, resp_x_powered_by, resp_via, resp_server)), '(x-nf-request-id)') IS NOT NULL THEN 'Netlify'
+      WHEN REGEXP_EXTRACT(LOWER(CONCAT(respOtherHeaders, resp_x_powered_by, resp_via, resp_server)), '(x-vercel-id)') IS NOT NULL THEN 'Vercel'
+      WHEN REGEXP_EXTRACT(LOWER(CONCAT(respOtherHeaders, resp_x_powered_by, resp_via, resp_server)), '(x-amz-cf-id)') IS NOT NULL THEN 'AWS'
+      WHEN REGEXP_EXTRACT(LOWER(CONCAT(respOtherHeaders, resp_x_powered_by, resp_via, resp_server)), '(x-azure-ref)') IS NOT NULL THEN 'Azure'
       WHEN _cdn_provider = 'Microsoft Azure' THEN 'Azure'
+      WHEN _cdn_provider = 'DigitalOcean Spaces CDN' THEN 'DigitalOcean'
       WHEN _cdn_provider = 'Vercel' THEN 'Vercel'
       WHEN _cdn_provider = 'Amazon CloudFront' THEN 'AWS'
       WHEN _cdn_provider = 'Akamai' THEN 'Akamai'
