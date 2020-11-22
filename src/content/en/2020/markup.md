@@ -450,7 +450,7 @@ The source of these elements appears to be mixed, as in some are unknown while o
 <figcaption>{{ figure_link(caption="Frequency and average use of standard heading elements.", sheets_gid="277662548", sql_file="pages_wpt_bodies_by_device_and_percentile_and_heading_level.sql") }}</figcaption>
 </figure>
 
-You expected to see only the heading elements you know from the specifications, but there’s more:
+You might have expected to only see the standard `<h1>` to `<h6>` elements, but some sites actually use more levels:
 
 <figure markdown>
 | Heading | Occurrences | Average per page |
