@@ -44,7 +44,7 @@ const test_status_code = async (page, status, location) => {
     const response = await fetch(base_url + page, options);
 
     if (response.status === status && response.headers.get('location') === location) {
-      console.log('Success - expected:', status, 'got:',response.status, 'for page:', page);
+      //console.log('Success - expected:', status, 'got:',response.status, 'for page:', page);
       passes++;
       if (status === 200 && response.headers.get('content-type').startsWith('text/html')) {
         if (page.slice(-1) === '/') page = page + 'index';
@@ -53,7 +53,7 @@ const test_status_code = async (page, status, location) => {
         await fs.outputFile(output_dir + page, body, 'utf8');
       }
     } else {
-      console.error('Failed - expected:', status, 'got:',response.status, 'for page:', page, 'location:', location);
+      console.error('Failed - expected:', status, 'got:', response.status, 'for page:', page, 'location:', location);
       failures++;
     }
 
@@ -127,8 +127,9 @@ const test_status_codes = async () => {
   await test_status_code('/zz/2018/', 404);
   await test_status_code('/en/2018/', 404);
   await test_status_code('/base/', 404);
-  await test_status_code('/base/2019/', 404);
-  await test_status_code('/base/2019/methodology', 404);
+  await test_status_code('/base/methodology', 308, `/base/methodology/`);
+  await test_status_code('/base/methodology/', 404);
+  await test_status_code('/base/2019/methodology/', 404);
   
   console.log('Passes:', passes, "Failures:", failures);
   process.exitCode = failures;
