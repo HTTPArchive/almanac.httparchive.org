@@ -43,3 +43,4 @@ static/html/*
 Dockerfile
 .dockerignore
 deployed.zip
+.coverage
