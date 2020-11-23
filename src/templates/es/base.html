@@ -102,37 +102,12 @@ Web Almanac ha sido posible gracias al arduo trabajo de la comunidad web. {{ sel
 {% block contributors_link %}Ver los contribuidores{% endblock %}
 
 {% block methodology_stat_1_title %}Sitios Web Analizados{% endblock %}
-{% block methodology_stat_1 %}5,8M{% endblock %}
 {% block methodology_stat_2_title %}Información Procesada{% endblock %}
-{% block methodology_stat_2 %}20,9 TB{% endblock %}
-{% block methodology_description %}
-A menos que se indique lo contrario, las métricas en los 20 capítulos del Web Almanac provienen del conjunto de datos del HTTP Archive. HTTP Archive es un proyecto administrado por la comunidad que ha estado rastreando cómo se construye la web desde 2010. Utilizando WebPageTest y Lighthouse bajo el capó, se prueban metadatos de aproximadamente 6 millones de sitios web mensualmente y se incluyen en una base de datos pública de BigQuery para su análisis. El conjunto de datos de Julio de 2019 se utilizó como base para las métricas de Web Almanac. Para obtener más información, consulte la página de Metodología.
-{% endblock %}
 {% block methodology_link %}Conozca nuestra Metodología{% endblock %}
 
 {% block introduction %}Introducción{% endblock %}
 
 {% block foreword_title %}Prefacio{% endblock %}
-
-{% block foreword %}
-    <p>
-      La web abierta es una red de tecnologías increíblemente compleja y en evolución. Industrias y carreras enteras se crean en la web y dependen de su vibrante ecosistema para tener éxito. Tan importante como es la web, comprender cómo está funcionando ha sido sorprendentemente difícil de alcanzar. Desde 2010, la misión del proyecto HTTP Archive ha sido rastrear cómo se construye la web, y ha estado haciendo un trabajo increíble. Sin embargo, ha habido una brecha que ha sido especialmente difícil de cerrar: dar sentido a los datos que el proyecto de HTTP Archive ha estado recopilando y permitir a la comunidad comprender fácilmente el rendimiento de la web. Ahí es donde entra el Web Almanac.
-    </p>
-
-    <p>
-      La misión de Web Almanac es tomar el tesoro de ideas que de otro modo serían accesibles solo para intrépidos mineros de datos, y empaquetarlo de una manera que sea fácil de entender. Esto es posible con la ayuda de expertos de la industria que pueden dar sentido a los datos y decirnos lo que significan. Cada uno de los 20 capítulos en Web Almanac se enfoca en un aspecto específico de la web, y cada uno ha sido escrito y revisado por expertos en su campo. La fuerza del Web Almanac fluye directamente de la experiencia de las personas que lo escriben.
-    </p>
-
-    <p>
-      Muchos de los hallazgos en Web Almanac son dignos de celebración, pero también es un recordatorio importante del trabajo que aún se requiere para brindar experiencias de usuario de alta calidad. Los análisis basados en datos en cada capítulo son una forma de responsabilidad que todos compartimos para desarrollar una mejor web. No se trata de avergonzar a los que se están equivocando, sino de iluminar el camino de las mejores prácticas para que haya una manera clara y correcta de hacer las cosas. Con la ayuda continua de la comunidad web, esperamos hacer de esto una tradición anual, para que cada año podamos seguir nuestro progreso y hacer correcciones de cursos según sea necesario.
-    </p>
-
-    <p>
-      Hay mucho que aprender en este informe, así que comience a explorar y comparta sus conclusiones con la comunidad para que podamos avanzar colectivamente en nuestra comprensión del estado de la web.
-    </p>
-
-    <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>, creador del Web Almanac</em></p>
-{% endblock %}
 
 {% block coming_soon %}¡Próximamente!{% endblock %}
 
@@ -144,7 +119,7 @@ A menos que se indique lo contrario, las métricas en los 20 capítulos del Web 
 {% block ebook_download %}Download the entire {{ year }} Web Almanac in PDF format ({{ ebook_size_in_mb }}MB){% endblock %}
 {% block ebook_download_note %}(generated with <a href="https://www.princexml.com/">www.princexml.com</a>){% endblock %}
 
-{% 
+{%
     set localizedPartTitles = {
       "I. Page Content": "I. Contenido de las Páginas",
       "II. User Experience": "II. Experiencia de Usuario",
@@ -179,7 +154,7 @@ A menos que se indique lo contrario, las métricas en los 20 capítulos del Web 
       "jamstack": "Jamstack"
     }
   %}
-  
+
   {% set localizedTeamNames = {
     "analysts": "Analistas",
     "authors": "Autores",
@@ -189,6 +164,6 @@ A menos que se indique lo contrario, las métricas en los 20 capítulos del Web 
     "editors": "Editores",
     "leads": "Lider",
     "reviewers": "Revisores",
-    "translators": "Traductores", 
+    "translators": "Traductores",
     }
   %}
