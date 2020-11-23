@@ -1,4 +1,4 @@
-ARG     PYVER=3
+ARG     PYVER=3.8
 FROM    python:${PYVER}
 
 # Enable unbuffered STDOUT logging
@@ -23,4 +23,4 @@ RUN     pip install -r requirements.txt
 RUN     npm install
 COPY    . ./
 
-CMD     ["python", "main.py"]
+CMD     ["./tools/scripts/run_and_test_website.sh", "-d"]

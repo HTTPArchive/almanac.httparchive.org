@@ -32,6 +32,8 @@ __pycache__/*
 
 env/
 env/*
+.venv/
+.venv/*
 node_modules/
 node_modules/*
 static/html
@@ -41,3 +43,4 @@ static/html/*
 Dockerfile
 .dockerignore
 deployed.zip
+.coverage

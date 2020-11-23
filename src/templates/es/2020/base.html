@@ -1,0 +1,12 @@
+{% extends "%s/base.html" % lang %}
+
+{% block methodology_stat_1 %}7,5M{% endblock %}
+{% block methodology_stat_2 %}31,3 TB{% endblock %}
+{% block methodology_description %}
+A menos que se indique lo contrario, las métricas en los 22 capítulos del Web Almanac provienen del conjunto de datos del HTTP Archive. HTTP Archive es un proyecto administrado por la comunidad que ha estado rastreando cómo se construye la web desde 2010. Utilizando WebPageTest y Lighthouse bajo el capó, se prueban metadatos de más de 7.5 millones de sitios web mensualmente y se incluyen en una base de datos pública de BigQuery para su análisis. El conjunto de datos de Agosto de 2020 se utilizó como base para las métricas de Web Almanac. Para obtener más información, consulte la página de Metodología.
+{% endblock %}
+
+{% block foreword %}
+{# TODO - Write this! #}
+{{ self.coming_soon() }}
+{% endblock %}

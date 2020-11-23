@@ -5,12 +5,20 @@ title: セキュリティ
 description: トランスポート・レイヤー・セキュリティ(TLS()、混合コンテンツ、セキュリティヘッダ、Cookie、サブリソース完全性を網羅した2019年版Web Almanacのセキュリティの章。
 authors: [ScottHelme, arturjanc]
 reviewers: [bazzadp, ghedo, paulcalvano]
+analysts: [dotjs, jrharalson]
 translators: [ksakae]
 discuss: 1763
 results: https://docs.google.com/spreadsheets/d/1Zq2tQhPE06YZUcbzryRrBE6rdZgHHlqEp2XcgS37cm8/
 queries: 08_Security
-published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-06-30T00:00:00.000Z
+ScottHelme_bio: Scott Helmeはセキュリティ研究者であり、<a href="https://report-uri.com">report-uri.com</a> と <a href="https://securityheaders.com">securityheaders.com</a> の創設者でもあります。Twitterでは、<a href="https://twitter.com/Scott_Helme">@Scott_Helme</a>でセキュリティの話をしたり、<a href="https://scotthelme.co.uk">scotthelme.co.uk</a>でブログを書いたりしています。
+arturjanc_bio: Artur Jancは Google の情報セキュリティエンジニアで、GoogleとWeb全体のWebプラットフォームのセキュリティメカニズムの設計と採用に取り組んでいます。<a href="https://twitter.com/arturjanc">@arturjanc on Twitter</a>として、インターネット上の人々と議論しています。
+featured_quote: Webの機能が向上し、より多くの機密データへのアクセスが可能になるにつれ、開発者が自社のアプリケーションを保護するためにWebセキュリティ機能を採用することがますます重要になってきています。この章で紹介するセキュリティ機能は、Webプラットフォーム自体に組み込まれた防御機能であり、すべてのWeb制作者が利用できます。
+featured_stat_1: 79%
+featured_stat_label_1: HTTPSを使用しているサイト
+featured_stat_2: 41%
+featured_stat_label_2: TLSv1.3を使用しているサイト
+featured_stat_3: 4.43%
+featured_stat_label_3: CSPを使用しているサイト
 ---
 
 ## 序章
@@ -19,37 +27,49 @@ Web Almanacのこの章では、Web上のセキュリティの現状を見てい
 ## トランスポートレイヤーセキュリティ
 現在、オンラインでのセキュリティとプライバシーを向上させるための最大の後押しは、おそらくトランスポート・レイヤー・セキュリティ（TLS）の普及です。TLS（または古いバージョンのSSL）は、HTTPSの「S」を提供し、安全でプライベートなWebサイトのブラウジングを可能にするプロトコルです。[ウェブ上でのHTTPSの使用が大幅に増加している](https://httparchive.org/reports/state-of-the-web#pctHttps)だけでなく、TLSv1.2やTLSv1.3のような最新バージョンのTLSが増加していることも重要です。
 
-<figure>
-  <a href="/static/images/2019/security/fig1.png">
-    <img src="/static/images/2019/security/fig1.png" alt="図1.HTTPとHTTPS の使用法。" aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="760" height="470" data-width="760" data-height="470" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=933123879&amp;format=interactive">
-  </a>
-  <div id="fig1-description" class="visually-hidden">横棒グラフは、モバイルのHTTPSが79%、HTTPが21%、その下にデスクトップのHTTPSが 80.51%、HTTPが19.49%であることを示しています。</div>
-  <figcaption id="fig1-caption" >図1.HTTPとHTTPS の使用法。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig1.png",
+  caption="HTTPとHTTPS の使用法。",
+  description="横棒グラフは、モバイルのHTTPSが79%、HTTPが21%、その下にデスクトップのHTTPSが 80.51%、HTTPが19.49%であることを示しています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=933123879&format=interactive",
+  width=760,
+  height=470,
+  data_width=760,
+  data_height=470
+  )
+}}
 
 ### プロトコルのバージョン
 
-<figure>
-  <a href="/static/images/2019/security/fig2.png">
-    <img src="/static/images/2019/security/fig2.png" alt="図2. TLSプロトコルのバージョン使用状況" aria-labelledby="fig2-caption"  aria-describedby="fig2-description" width="760" height="470" data-width="760" data-height="470" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=1441324762&amp;format=interactive">
-  </a>
-  <div id="fig2-description" class="visually-hidden">横棒グラフは、デスクトップとモバイルのTLSの使用状況を示しています。TLSv1.2が58%、TLSv1.3が41%、TLSv1.0の使用率はほとんどなく (0.75%)、TLSv1.1の使用率はわずかです。</div>
-  <figcaption id="fig2-caption" >図2. TLSプロトコルのバージョン使用状況</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig2.png",
+  caption="TLSプロトコルのバージョン使用状況",
+  description="横棒グラフは、デスクトップとモバイルのTLSの使用状況を示しています。TLSv1.2が58%、TLSv1.3が41%、TLSv1.0の使用率はほとんどなく (0.75%)、TLSv1.1の使用率はわずかです。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=1441324762&format=interactive",
+  width=760,
+  height=470,
+  data_width=760,
+  data_height=470
+  )
+}}
 
-図2は、さまざまなプロトコルバージョンのサポートを示しています。TLSv1.0やTLSv1.1のようなレガシーなTLSバージョンの使用は最小限であり、ほとんどすべてのサポートはプロトコルの新しいバージョンであるTLSv1.2やTLSv1.3に対応しています。TLSv1.3はまだ標準としては非常に若いですが（TLSv1.3は[2018年8月](https://tools.ietf.org/html/rfc8446)に正式に承認されたばかりです）、TLSを使用するリクエストの40％以上が最新バージョンを使用しています！　TLSv1.0やTLSv1.1のようなレガシーバージョンの使用はほとんどありません。
+図8.2は、さまざまなプロトコルバージョンのサポートを示しています。TLSv1.0やTLSv1.1のようなレガシーなTLSバージョンの使用は最小限であり、ほとんどすべてのサポートはプロトコルの新しいバージョンであるTLSv1.2やTLSv1.3に対応しています。TLSv1.3はまだ標準としては非常に若いですが（TLSv1.3は[2018年8月](https://tools.ietf.org/html/rfc8446)に正式に承認されたばかりです）、TLSを使用するリクエストの40％以上が最新バージョンを使用しています！　TLSv1.0やTLSv1.1のようなレガシーバージョンの使用はほとんどありません。
 
 これは、多くのサイトが[サードパーティコンテンツ](./third-parties)のために大きなプレイヤーからのリクエストを使用していることが原因であると考えられます。例えば、どのようなサイトでもGoogle Analytics、Google AdWords、またはGoogle FontsをロードしGoogleのような大規模なプレイヤーは通常新しいプロトコルのためのアーリーアダプターです。
 
 ホームページだけを見て、それ以外のサイトのリクエストをすべて見ない場合、TLSの使用率は予想通りかなり高いですが、Wordpressのような[CMS](./cms)サイトや[CDN](./cdn)のようなサイトが原因である可能性は高いです。
 
-<figure>
-   <a href="/static/images/2019/security/fig3.png">
-    <img src="/static/images/2019/security/fig3.png" alt="図3. ホームページリクエストだけのTLSプロトコルバージョン使用状況。" aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="760" height="470" data-width="760" data-height="470" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=897771966&amp;format=interactive">
-  </a>
-  <div id="fig3-description" class="visually-hidden">横棒グラフは、デスクトップとモバイルの類似したTLSの使用状況を示しています。デスクトップでは47%(モバイルでは43%)がTLSv1.2、デスクトップでは20.2%(モバイルでは19.7%)がTLSv1.3を使用しており、TLSv1.0の使用量はほとんどなく(1.1%～1.2%)、TLSv1.1の使用量はわずかです。</div>
-  <figcaption id="fig3-caption">図3. ホームページリクエストだけのTLSプロトコルバージョン使用状況。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig3.png",
+  caption="ホームページリクエストだけのTLSプロトコルバージョン使用状況。",
+  description="横棒グラフは、デスクトップとモバイルの類似したTLSの使用状況を示しています。デスクトップでは47%(モバイルでは43%)がTLSv1.2、デスクトップでは20.2%(モバイルでは19.7%)がTLSv1.3を使用しており、TLSv1.0の使用量はほとんどなく(1.1%～1.2%)、TLSv1.1の使用量はわずかです。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=897771966&format=interactive",
+  width=760,
+  height=470,
+  data_width=760,
+  data_height=470
+  )
+}}
 
 一方で、Web Almanacが使用している[方法論](./methodology)は、大規模サイトの利用状況を*過小評価*します。なぜなら、大規模サイトはそのサイト自体が現実世界ではより大きなインターネット・トラフィックを形成している可能性が高いにもかかわらず、これらの統計のために一度しかクロールされないからです。
 
@@ -71,7 +91,7 @@ Web Almanacのこの章では、Web上のセキュリティの現状を見てい
 | Amazon                                          |     4.71%  |   4.45% |
 | COMODO ECC Domain Validation Secure Server CA 2 |     3.22%  |   2.75% |
 
-<figcaption>図4. 使用されている認証局トップ10。</figcaption>
+<figcaption>{{ figure_link(caption=" 使用されている認証局トップ10。") }}</figcaption>
 </figure>
 
 前述したように、Googleのボリュームは他のサイトでGoogleアナリティクス、Google Adwords、またはGoogle Fontsを繰り返し使用していることを反映している可能性が高い。
@@ -93,7 +113,7 @@ HTTPSを使用するという重要な要件と並行して、適切な構成を
 | RSA Keys  |    48.67%  |  58.8%  |
 | ECDA Keys |    21.47%  |  26.41% |
 
-<figcaption>図5. 使用する認証キーの種類</figcaption>
+<figcaption>{{ figure_link(caption=" 使用する認証キーの種類") }}</figcaption>
 </figure>
 
 ECDSA鍵はより強力な鍵であるため、より小さな鍵の使用が可能となりRSA鍵よりも優れたパフォーマンスを発揮しますが、下位互換性に関する懸念やその間の両方のサポートの複雑さが一部のウェブサイト運営者の移行を妨げる要因となっています。
@@ -117,7 +137,7 @@ TLSでは、さまざまな暗号スイートを使用できます。従来、TL
 | `CHACHA20_POLY1305` |     0.69%  |   0.79% |
 | `3DES_EDE_CBC`      |     0.06%  |   0.04% |
 
-<figcaption>図6. 使用されている暗号スイートの使用法</figcaption>
+<figcaption>{{ figure_link(caption=" 使用されている暗号スイートの使用法") }}</figcaption>
 </figure>
 
 古いCBC暗号は安全性が低いので、GCM暗号がこのように広く使われるようになったのはポジティブなことです。[CHACHA20_POLY1305](https://blog.cloudflare.com/it-takes-two-to-chacha-poly/)はまだニッチな暗号スイートであり、私たちはまだ[安全でないトリプルDES暗号](https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%AA%E3%83%97%E3%83%ABDES#%E5%AE%89%E5%85%A8%E6%80%A7)をごくわずかしか使っていません。
@@ -134,7 +154,7 @@ TLSでは、さまざまな暗号スイートを使用できます。従来、TL
 | 任意のコンテンツが混在しているページ  |    16.27%  |  15.37% |
 | アクティブな混合コンテンツのページ    |     3.99%  |   4.13% |
 
-<figcaption>図7. 混在コンテンツの利用状況。</figcaption>
+<figcaption>{{ figure_link(caption=" 混在コンテンツの利用状況。") }}</figcaption>
 </figure>
 
 モバイル（645,485サイト）とデスクトップ（594,072サイト）では、約20％のサイトが何らかの形で混合コンテンツを表示していることがわかります。画像のようなパッシブな混合コンテンツの危険性は低いですが、混合コンテンツを持つサイトのほぼ4分の1がアクティブな混合コンテンツを持っていることがわかります。JavaScriptのようなアクティブな混合コンテンツは、攻撃者が自分の敵対的なコードを簡単にページに挿入できるため、より危険です。
@@ -144,13 +164,17 @@ TLSでは、さまざまな暗号スイートを使用できます。従来、TL
 ## セキュリティヘッダ
 サイト運営者がユーザーをより良く保護するための多くの新しい機能が、ブラウザに組み込まれたセキュリティ保護を設定したり制御したりできる新しいHTTPレスポンスヘッダの形で提供されています。これらの機能の中には、簡単に有効にして大きなレベルの保護を提供するものもあれば、サイト運営者が少し作業を必要とするものもあります。サイトがこれらのヘッダを使用しており、正しく設定されているかどうかを確認したい場合は、[Security Headers](https://securityheaders.com/)ツールを使用してスキャンできます。
 
-<figure>
-   <a href="/static/images/2019/security/fig8.png">
-    <img src="/static/images/2019/security/fig8.png" alt="図8. セキュリティヘッダの使用法" aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="760" height="450" data-width="760" data-height="450" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=2029255231&amp;format=interactive">
-  </a>
-  <div id="fig8-description" class="visually-hidden">デスクトップ、モバイルともに、左から順にセキュリティヘッダリストの使用量が増加していることを縦棒グラフで示しています。左から順に、Cross-origin-resource-policy(両方とも0サイト)、feature policy(デスクトップとモバイルで約8k)、report-to(デスクトップで74k、モバイルで83k)、nel(デスクトップで74k、モバイルで83k)、referrer-policy(デスクトップで142k、モバイルで156k)、content-security-policy(デスクトップで240k)のリストです。252k モバイル）、strict-transport-security（648k デスクトップ、679k モバイル）、x-xss-protection（642k デスクトップ、805k モバイル）、x-frame-options（743k デスクトップ、782k モバイル）、そして最後にx-content-type-options（770k デスクトップ、932k モバイル）です。</div>
-  <figcaption id="fig8-caption" >図8. セキュリティヘッダの使用法</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig8.png",
+  caption="セキュリティヘッダの使用法",
+  description="デスクトップ、モバイルともに、左から順にセキュリティヘッダリストの使用量が増加していることを縦棒グラフで示しています。左から順に、Cross-origin-resource-policy(両方とも0サイト)、feature policy(デスクトップとモバイルで約8k)、report-to(デスクトップで74k、モバイルで83k)、nel(デスクトップで74k、モバイルで83k)、referrer-policy(デスクトップで142k、モバイルで156k)、content-security-policy(デスクトップで240k)のリストです。252k モバイル）、strict-transport-security（648k デスクトップ、679k モバイル）、x-xss-protection（642k デスクトップ、805k モバイル）、x-frame-options（743k デスクトップ、782k モバイル）、そして最後にx-content-type-options（770k デスクトップ、932k モバイル）です。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=2029255231&format=interactive",
+  width=760,
+  height=450,
+  data_width=760,
+  data_height=450
+  )
+}}
 
 ### HTTP Strict Transport Security
 [HSTS](https://tools.ietf.org/html/rfc6797) ヘッダーは、Webサイトがブラウザに、安全なHTTPS接続でのみサイトと通信するように指示することを可能にします。これは、http:// URLを使用しようとする試みは、リクエストが行われる前に自動的にhttps://に変換されることを意味します。リクエストの40％以上がTLSを使用できることを考えると、要求するようにブラウザに指示しているリクエストの割合はかなり低いと考えられます。
@@ -163,7 +187,7 @@ TLSでは、さまざまな暗号スイートを使用できます。従来、TL
 | `includeSubDomains`  |     3.86%  |   3.29% |
 | `preload`            |     2.27%  |   1.99% |
 
-<figcaption>図9. HSTS ディレクティブの使用法</figcaption>
+<figcaption>{{ figure_link(caption=" HSTS ディレクティブの使用法") }}</figcaption>
 </figure>
 
 モバイルページやデスクトップページの15％未満が`max-age`ディレクティブ付きのHSTSを発行しています。これは有効なポリシーの最低条件です。また、`includeSubDomains`ディレクティブでサブドメインをポリシーに含めているページはさらに少なく、HSTSのプリロードを行っているページはさらに少ないです。HSTSの`max-age`の中央値を見ると、これを使用している場合はデスクトップとモバイルの両方で15768000となっており、半年(60X60X24X365/2)に相当する強力な設定であることがわかります。
@@ -210,7 +234,7 @@ TLSでは、さまざまな暗号スイートを使用できます。従来、TL
     </tbody>
   </table>
 
-<figcaption>図10. HSTSの`max-age`ポリシーのパーセンタイル別の中値。</figcaption>
+<figcaption>{{ figure_link(caption=" HSTSの`max-age`ポリシーのパーセンタイル別の中値。") }}</figcaption>
 </figure>
 
 #### HSTSプリロード
@@ -244,7 +268,7 @@ CSPがページにデプロイされると、インラインスクリプトや`e
 #### `upgrade-insecure-requests`
 先に、サイト運営者がHTTPからHTTPSへの移行で直面する共通の問題として、一部のコンテンツがHTTPSページのHTTP上に誤って読み込まれてしまう可能性があることを述べました。この問題は混合コンテンツとして知られており、CSPはこの問題を解決する効果的な方法を提供します。upgrade-insecure-requests`ディレクティブは、ブラウザにページ上のすべてのサブリソースを安全な接続で読み込むように指示し、例としてHTTPリクエストをHTTPSリクエストに自動的にアップグレードします。ページ上のサブリソースのためのHSTSのようなものと考えてください。
 
-先に図7で示したように、デスクトップで調査したHTTPSページのうち、16.27％のページが混合コンテンツを読み込んでおり、3.99％のページがJS/CSS/fontsなどのアクティブな混合コンテンツを読み込んでいることがわかる。モバイルページでは、HTTPSページの15.37％が混合コンテンツを読み込み、4.13％がアクティブな混合コンテンツを読み込みました。HTTP上でJavaScriptなどのアクティブなコンテンツを読み込むことで、攻撃者は簡単に敵対的なコードをページに注入して攻撃を開始できます。これは、CSPの`upgrade-insecure-requests` ディレクティブが防御しているものです。
+先に図8.7で示したように、デスクトップで調査したHTTPSページのうち、16.27％のページが混合コンテンツを読み込んでおり、3.99％のページがJS/CSS/fontsなどのアクティブな混合コンテンツを読み込んでいることがわかる。モバイルページでは、HTTPSページの15.37％が混合コンテンツを読み込み、4.13％がアクティブな混合コンテンツを読み込みました。HTTP上でJavaScriptなどのアクティブなコンテンツを読み込むことで、攻撃者は簡単に敵対的なコードをページに注入して攻撃を開始できます。これは、CSPの`upgrade-insecure-requests` ディレクティブが防御しているものです。
 
 `upgrade-insecure-requests`ディレクティブは、デスクトップページの3.24％とモバイルページの2.84％のCSPに含まれており、採用が増えることで大きな利益が得られることを示しています。以下のようなポリシーで、幅広いカテゴリをホワイトリスト化し、`unsafe-inline`や`unsafe-eval`を含めることで、完全にロックダウンされたCSPや複雑さを必要とせずに比較的簡単に導入できます。
 
@@ -278,7 +302,7 @@ Content-Security-Policy: upgrade-insecure-requests; default-src https:
 | `strict-origin`                   |     4.35%  |   4.14% |
 | `origin`                          |     3.63%  |   3.23% |
    
-<figcaption>図11. `Referrer-Policy` 設定オプションの使用法。</figcaption>
+<figcaption>{{ figure_link(caption=" `Referrer-Policy` 設定オプションの使用法。") }}</figcaption>
 </figure>
 
 この表はページによって設定された有効な値を示しており、このヘッダーを使用するページのうち、デスクトップでは99.75％、モバイルでは96.55％のページが有効なポリシーを設定していることがわかる。最も人気のある設定は`no-referrer-when-downgrade`で、これはユーザがHTTPSページからHTTPページに移動する際`Refererer`ヘッダが送信されないようにするものです。2番目に人気のある選択は`strict-origin-when-cross-origin`で、これはスキームのダウングレード(HTTPSからHTTPナビゲーション)時に情報が送信されるのを防ぎ、`Refererer`で情報が送信される際にはソースのオリジンのみを含み、完全なURLは含まれません(例えば、`https://www.example.com/page/`ではなく`https://www.example.com`)。その他の有効な設定の詳細は、[Referrerer Policy specification](https://www.w3.org/TR/referrer-policy/#referrer-policies)に記載されています、`unsafe-url`の多用はさらなる調査を必要としますが、アナリティクスや広告ライブラリのような[サードパーティ](./third-parties)コンポーネントである可能性が高いです。
@@ -298,7 +322,7 @@ Content-Security-Policy: upgrade-insecure-requests; default-src https:
 | `geolocation`     |     9.38%  |   9.41% |
 | `gyroscope`       |     7.92%  |   7.90% |
 
-<figcaption>図12. 使用される `Feature-Policy` オプションの上位5つ。</figcaption>
+<figcaption>{{ figure_link(caption=" 使用される `Feature-Policy` オプションの上位5つ。") }}</figcaption>
 </figure>
 
 コントロールできる最も人気のある機能はマイクで、デスクトップとモバイルページのほぼ11％がマイクを含むポリシーを発行していることがわかります。データを掘り下げていくと、これらのページが何を許可しているか、またはブロックしているかを見ることができます。
@@ -314,7 +338,7 @@ Content-Security-Policy: upgrade-insecure-requests; default-src https:
 | `microphone` | `*`           | 0.64% |
 | `microphone` | `*`           | 0.53% |
 
-<figcaption>図13. マイク機能の設定.</figcaption>
+<figcaption>{{ figure_link(caption=" マイク機能の設定.") }}</figcaption>
 </figure>
 
 圧倒的に最も一般的なアプローチは、ここではそのアプローチを取っているページの約9％で、完全にマイクの使用をブロックすることです。少数のページでは、独自のオリジンによるマイクの使用を許可しており、興味深いことにページ内のコンテンツを読み込んでいる任意のオリジンによるマイクの使用を意図的に許可しているページの少数選択があります。
@@ -332,7 +356,7 @@ Content-Security-Policy: upgrade-insecure-requests; default-src https:
 | `deny`        |    13.54%  |  14.50% |
 | `allow-from`  |     1.53%  |   1.64% |
 
-<figcaption>図14. 使用される `X-Frame-Options` の設定。</figcaption>
+<figcaption>{{ figure_link(caption=" 使用される `X-Frame-Options` の設定。") }}</figcaption>
 </figure>
 
 大多数のページでは、そのページのオリジンのみにフレーミングを制限しているようで、次の重要なアプローチはフレーミングを完全に防止することです。これはCSPの`frame-ancestors`と似ており、これら2つのアプローチが最も一般的です。また、`allow-from`オプションは、理論的にはサイト所有者がフレーム化を許可するサードパーティのドメインをリストアップできるようにするものですが、[決して十分にサポートされていないので](https://developer.mozilla.org/ja/docs/Web/HTTP/X-Frame-Options#Browser_compatibility)、非推奨とされています。
@@ -345,7 +369,7 @@ Content-Security-Policy: upgrade-insecure-requests; default-src https:
 ### `X-XSS-Protection`
 [X-XSS-Protection`](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/X-XSS-Protection)ヘッダーは、サイトがブラウザに組み込まれたXSS AuditorやXSS Filterを制御することを可能にし、理論的には何らかのXSS保護を提供するはずです。
 
-デスクトップリクエストの14.69％とモバイルリクエストの15.2％が`X-XSS-Protection`ヘッダを使用していた。データを掘り下げてみると、ほとんどのサイト運営者がどのような意図を持っているかが図13に示されています。
+デスクトップリクエストの14.69％とモバイルリクエストの15.2％が`X-XSS-Protection`ヘッダを使用していた。データを掘り下げてみると、ほとんどのサイト運営者がどのような意図を持っているかが図7.13に示されています。
 
 <figure data-markdown="1">
 
@@ -356,7 +380,7 @@ Content-Security-Policy: upgrade-insecure-requests; default-src https:
 | `0`            |     2.58%  |   3.11% |
 | `1;report=`    |     0.12%  |   0.09% |
 
-<figcaption>図15. `X-XSS-Protection` の利用設定。</figcaption>
+<figcaption>{{ figure_link(caption=" `X-XSS-Protection` の利用設定。") }}</figcaption>
 </figure>
 
 値`1`はフィルタ/監査を有効にし、`mode=block`は(理論的には)XSS攻撃が疑われる場合にページを表示しないような最も強い保護を設定します。2番目に多かった設定は、単に監査/フィルタがオンになっていることを確認するために`1`という値を提示したもので、3番目に多かった設定は非常に興味深いものでした。
@@ -406,7 +430,7 @@ NELは信じられないほど貴重な情報を提供しており、情報の�
 | `lax`         |    45.85%  |  47.42% |
 | `none`        |     0.51%  |   0.41% |
 
-<figcaption>図16. SameSite設定の使用法。</figcaption>
+<figcaption>{{ figure_link(caption=" SameSite設定の使用法。") }}</figcaption>
 </figure>
 
 既にSame-Siteのクッキーを利用しているページのうち、半分以上が`strict`モードで利用していることがわかる。これに続いて、`lax`モードでSame-Siteを利用しているサイト、そして少数のサイトでは`none`を利用しているサイトが続いています。この最後の値は、ブラウザベンダーが`lax`モードをデフォルトで実装する可能性があるという今後の変更をオプトアウトするために使用されます。
@@ -453,7 +477,7 @@ NELは信じられないほど貴重な情報を提供しており、情報の�
     </tbody>
   </table>
 
-<figcaption>図17. クッキーのプレフィックスの使用法</figcaption>
+<figcaption>{{ figure_link(caption=" クッキーのプレフィックスの使用法") }}</figcaption>
 </figure>
 
 図が示すように、どちらのプレフィックスの使用率も信じられないほど低いのですが、2つのプレフィックスが緩和されているため`__Secure-`プレフィックスの方がすでに利用率は高いです。
@@ -503,4 +527,3 @@ Webの機能が向上し、より多くの機密データへのアクセスが�
 しかし、これらのメカニズムの採用は、より機密性の高いユーザーデータを頻繁に扱う大規模なウェブアプリケーションに偏っていることに注意することが重要です。これらのサイトの開発者は、一般的な脆弱性に対する様々な保護を可能にすることを含め、ウェブの防御力を向上させるために投資することが多くなっています。[Mozilla Observatory](https://observatory.mozilla.org/)や[Security Headers](https://securityheaders.com/)などのツールは、ウェブで利用可能なセキュリティ機能の便利なチェックリストを提供してくれます。
 
 ウェブアプリケーションが機密性の高いユーザーデータを扱う場合はユーザーを保護し、ウェブをより安全にするためこのセクションで概説されているセキュリティメカニズムを有効にすることを検討してください。
-

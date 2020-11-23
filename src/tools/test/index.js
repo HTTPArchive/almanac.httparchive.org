@@ -1,5 +1,10 @@
 let { test_status_codes } = require('./test_status_codes');
 
 (async () => {
-  await test_status_codes();
+  try {
+    await test_status_codes();
+  } catch (error) {
+    console.error(error);
+    process.exit(1);
+  }
 })();

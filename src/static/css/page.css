@@ -191,8 +191,13 @@
 }
 
 .byline.reviewers,
-.byline.translators {
+.byline.translators,
+.byline.analysts {
   font-weight: normal;
+}
+
+.byline a {
+  white-space: nowrap;
 }
 
 .chapter_links .btn {
@@ -216,13 +221,16 @@
   display: none;
 }
 
-.authors h2 {
+.authors h2,
+.chapter_links h2 {
   padding: 16px 0;
   padding: 1rem 0;
 }
 
 .authors,
-.authors h2 {
+.authors h2,
+.chapter_links,
+.chapter_links h2 {
   border-bottom: 1px solid #1a2b490a;
   font-size: 17px;
   font-size: 1.0625rem;
@@ -645,6 +653,10 @@ figure .fig-desktop {
   .anchor-link:hover::before,
   .anchor-link:focus::before {
     content: '';
+  }
+
+  .content ul li {
+    padding: 5px 0;
   }
 }
 

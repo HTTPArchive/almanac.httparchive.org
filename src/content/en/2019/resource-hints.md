@@ -5,12 +5,19 @@ title: Resource Hints
 description: Resource Hints chapter of the 2019 Web Almanac covering usage of dns-prefetch, preconnect, preload, prefetch, priority hints, and native lazy loading.
 authors: [khempenius]
 reviewers: [andydavies, bazzadp, yoavweiss]
+analysts: [rviscomi]
 translators: []
 discuss: 1774
 results: https://docs.google.com/spreadsheets/d/14QBP8XGkMRfWRBbWsoHm6oDVPkYhAIIpfxRn4iOkbUU/
 queries: 19_Resource_Hints
-published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-06-30T00:00:00.000Z
+khempenius_bio: Katie Hempenius is an engineer on the Chrome team where she works on making the web faster.
+featured_quote: Resource hints provide <em>hints</em> to the browser about what resources will be needed soon. The action that the browser takes as a result of receiving this hint will vary depending on the type of resource hint; different resource hints kick off different actions. When used correctly, they can improve page performance by giving a head start to important anticipated actions.
+featured_stat_1: 29%
+featured_stat_label_1: Sites using <code>dns-prefetch</code>
+featured_stat_2: 88%
+featured_stat_label_2: Resource hints using the <code>as</code> attribute
+featured_stat_3: 0.04%
+featured_stat_label_3: Usage of priority hints
 ---
 
 ## Introduction
@@ -96,7 +103,7 @@ Because the usage of resource hints in HTTP headers is so low, the remainder of 
      </td>
     </tr>
   </table>
-  <figcaption>Figure 1. Adoption of resource hints.</figcaption>
+  <figcaption>{{ figure_link(caption="Adoption of resource hints.") }}</figcaption>
 </figure>
 
 The relative popularity of `dns-prefetch` is unsurprising; it's a well-established API (it first appeared in [2009](https://caniuse.com/#feat=link-rel-dns-prefetch)), it is supported by all major browsers, and it is the most "inexpensive" of all resource hints. Because `dns-prefetch` only performs DNS lookups, it consumes very little data, and therefore there is very little downside to using it. `dns-prefetch` is most useful in high-latency situations.
@@ -153,10 +160,10 @@ That being said, if a site does not need to support IE11 and below, switching fr
      </td>
     </tr>
   </table>
-  <figcaption>Figure 2. Median and 90th percentiles of the number of resource hints used per page, of all pages using that resource hint.</figcaption>
+  <figcaption>{{ figure_link(caption="Median and 90th percentiles of the number of resource hints used per page, of all pages using that resource hint.") }}</figcaption>
 </figure>
 
-Resource hints are most effective when they're used selectively (_"when everything is important, nothing is"_). Figure 2 above shows the number of resource hints per page for pages using at least one resource hint. Although there is no clear cut rule for defining what an appropriate number of resource hints is, it appears that most sites are using resource hints appropriately.
+Resource hints are most effective when they're used selectively (_"when everything is important, nothing is"_). Figure 19.2 above shows the number of resource hints per page for pages using at least one resource hint. Although there is no clear cut rule for defining what an appropriate number of resource hints is, it appears that most sites are using resource hints appropriately.
 
 ## The `crossorigin` attribute
 
@@ -198,7 +205,7 @@ For newer resource types (e.g. fonts, `fetch()` requests, ES modules), the brows
      </td>
     </tr>
   </table>
-  <figcaption>Figure 3. Adoption of the <code>crossorigin</code> attribute as a percent of resource hint instances.</figcaption>
+  <figcaption>{{ figure_link(caption="Adoption of the <code>crossorigin</code> attribute as a percent of resource hint instances.") }}</figcaption>
 </figure>
 
 In the context of resource hints, usage of the `crossorigin` attribute enables them to match the CORS mode of the resources they are supposed to match and indicates the credentials to include in the request. For example, `anonymous` enables CORS and indicates that no credentials should be included for those cross-origin requests:
@@ -212,10 +219,12 @@ Although other HTML elements support the crossorigin attribute, this analysis on
 
 `as` is an attribute that should be used with the `preload` resource hint to inform the browser of the type (e.g. image, script, style, etc.) of the requested resource. This helps the browser correctly prioritize the request and apply the correct Content Security Policy ([CSP](https://developers.google.com/web/fundamentals/security/csp)). CSP is a [security](./security) mechanism, expressed via HTTP header, that helps mitigate the impact of XSS and other malicious attacks by declaring a safelist of trusted sources; only content from these sources can be rendered or executed.
 
-<figure>
-  <div class="big-number">88%</div>
-  <figcaption>Figure 4. The percent of resource hint instances using the <code>as</code> attribute.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="The percent of resource hint instances using the <code>as</code> attribute.",
+  content="88%",
+  classes="big-number"
+)
+}}
 
 88% of resource hint instances use the `as` attribute. When `as` is specified, it is overwhelmingly used for scripts: 92% of usage is script, 3% font, and 3% styles. This is unsurprising given the prominent role that scripts play in most sites' architecture as well the high frequency with which scripts are used as attack vectors (thereby making it therefore particularly important that scripts get the correct CSP applied to them).
 
@@ -234,15 +243,17 @@ At the moment, there are no proposals to expand the current set of resource hint
   &lt;img src="cat2.jpg" importance="low">
   &lt;img src="cat3.jpg" importance="low">
 &lt;/carousel></code></pre></div>
-<figcaption>Figure 5. Example HTML of using priority hints on a carousel of images.</figcaption>
+<figcaption>{{ figure_link(caption="Example HTML of using priority hints on a carousel of images.") }}</figcaption>
 </figure>
 
 For example, if you had an image carousel, priority hints could be used to prioritize the image that users see immediately and deprioritize later images.
 
-<figure>
-  <div class="big-number">0.04%</div>
-  <figcaption>Figure 6. The rate of priority hint adoption.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="The rate of priority hint adoption.",
+  content="0.04%",
+  classes="big-number"
+)
+}}
 
 Priority hints are [implemented](https://www.chromestatus.com/feature/5273474901737472) and can be tested via a feature flag in Chromium browsers versions 70 and up. Given that it is still an experimental technology, it is unsurprising that it is only used by 0.04% of sites.
 

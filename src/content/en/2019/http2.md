@@ -5,12 +5,19 @@ title: HTTP/2
 description: HTTP/2 chapter of the 2019 Web Almanac covering adoption and impact of HTTP/2, HTTP/2 Push, HTTP/2 Issues, and HTTP/3.
 authors: [bazzadp]
 reviewers: [bagder, rmarx, dotjs]
+analysts: [paulcalvano]
 translators: []
 discuss: 1775
 results: https://docs.google.com/spreadsheets/d/1z1gdS3YVpe8J9K3g2UdrtdSPhRywVQRBz5kgBeqCnbw/
 queries: 20_HTTP_2
-published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-05-05T00:00:00.000Z
+bazzadp_bio: Barry Pollard is a software developer and author of the Manning book <a href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a>. He thinks the web is amazing but wants to make it even better. You can find him tweeting <a href="https://twitter.com/tunetheweb">@tunetheweb</a> and blogging at <a href="https://www.tunetheweb.com">www.tunetheweb.com</a>.
+featured_quote: HTTP/2 was the first major update to the main transport protocol of the web in nearly 20 years. It arrived with a wealth of expectations&colon; it promised a free performance boost with no downsides. More than that, we could stop doing all the hacks and work arounds that HTTP/1.1 forced us into, due to its inefficiencies. Bundling, spriting, inlining, and even sharding domains would all become anti-patterns in an HTTP/2 world, as improved performance would be provided by default. This chapter examines how this relatively new technology has fared in the real world.
+featured_stat_1: 95%
+featured_stat_label_1: Users who can use HTTP/2
+featured_stat_2: 27.83%
+featured_stat_label_2: Requests with HTTP/2 prioritisation issues
+featured_stat_3: 8.38%
+featured_stat_label_3: Sites supporting QUIC
 ---
 
 ## Introduction
@@ -57,23 +64,26 @@ This whistle-stop tour of HTTP/2 gives the main history and concepts of the newi
 ## Adoption of HTTP/2
 As mentioned above, internet protocols are often difficult to adopt since they are ingrained into so much of the infrastructure that makes up the internet. This makes introducing any changes slow and difficult. IPv6 for example has been around for 20 years but has [struggled to be adopted](https://www.google.com/intl/en/ipv6/statistics.html).
 
-<figure>
-  <div class="big-number">95%</div>
-  <figcaption>Figure 1. The percent of global users who can use HTTP/2.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="The percent of global users who can use HTTP/2.",
+  content="95%",
+  classes="big-number"
+)
+}}
 
 HTTP/2 however, was different as it was effectively hidden in HTTPS (at least for the browser uses cases), removing barriers to adoption as long as both the browser and server supported it. Browser support has been very strong for some time and the advent of auto updating *evergreen* browsers has meant that an estimated [95% of global users now support HTTP/2](https://caniuse.com/#feat=http2).
 
 Our analysis is sourced from the HTTP Archive, which tests approximately 5 million of the top desktop and mobile websites in the Chrome browser. (Learn more about our [methodology](./methodology).)
 
-
-<figure>
-  <a href="/static/images/2019/http2/ch20_fig2_http2_usage_by_request.png">
-    <img alt="Figure 2. HTTP/2 usage by request." aria-labelledby="fig2-caption" aria-describedby="fig2-description" src="/static/images/2019/http2/ch20_fig2_http2_usage_by_request.png" width="600" height="321">
-  </a>
-  <div id="fig2-description" class="visually-hidden">Timeseries chart of HTTP/2 usage showing adoption at 55% for both desktop and mobile as of July 2019. The trend is growing steadily at about 15 points per year.</div>
-  <figcaption id="fig2-caption">Figure 2. HTTP/2 usage by request. (Source: <a href="https://httparchive.org/reports/state-of-the-web#h2">HTTP Archive</a>)</figcaption>
-</figure>
+{{ figure_markup(
+  image="ch20_fig2_http2_usage_by_request.png",
+  alt="HTTP/2 usage by request.",
+  caption='HTTP/2 usage by request. (Source: <a href="https://httparchive.org/reports/state-of-the-web#h2">HTTP Archive</a>)',
+  description="Timeseries chart of HTTP/2 usage showing adoption at 55% for both desktop and mobile as of July 2019. The trend is growing steadily at about 15 points per year.",
+  width=600,
+  height=321
+  )
+}}
 
 The results show that HTTP/2 usage is now the majority protocol-an impressive feat just 4 short years after formal standardization! Looking at the breakdown of all HTTP versions by request we see the following:
 
@@ -86,14 +96,14 @@ The results show that HTTP/2 usage is now the majority protocol-an impressive fe
 | HTTP/1.1 | 40.36%  | 45.01% | 42.79% |
 | HTTP/2   | 53.96%  | 54.37% | 54.18% |
 
-<figcaption>Figure 3. HTTP version usage by request.</figcaption>
+<figcaption>{{ figure_link(caption="HTTP version usage by request.") }}</figcaption>
 </figure>
 
-Figure 3 shows that HTTP/1.1 and HTTP/2 are the versions used by the vast majority of requests as expected. There is only a very small number of requests on the older HTTP/1.0 and HTTP/0.9 protocols. Annoyingly, there is a larger percentage where the protocol was not correctly tracked by the HTTP Archive crawl, particularly on desktop. Digging into this has shown various reasons, some of which can be explained and some of which can't. Based on spot checks, they mostly appear to be HTTP/1.1 requests and, assuming they are, desktop and mobile usage is similar.
+Figure 20.3 shows that HTTP/1.1 and HTTP/2 are the versions used by the vast majority of requests as expected. There is only a very small number of requests on the older HTTP/1.0 and HTTP/0.9 protocols. Annoyingly, there is a larger percentage where the protocol was not correctly tracked by the HTTP Archive crawl, particularly on desktop. Digging into this has shown various reasons, some of which can be explained and some of which can't. Based on spot checks, they mostly appear to be HTTP/1.1 requests and, assuming they are, desktop and mobile usage is similar.
 
 Despite there being a little larger percentage of noise than we'd like, it doesn't alter the overall message being conveyed here. Other than that, the mobile/desktop similarity is not unexpected; HTTP Archive tests with Chrome, which supports HTTP/2 for both desktop and mobile. Real-world usage may have slightly different stats with some older usage of browsers on both, but even then support is widespread, so we would not expect a large variation between desktop and mobile.
 
-At present, HTTP Archive does not track HTTP over [QUIC](https://www.chromium.org/quic) (soon to be standardized as [HTTP/3](#http3) separately, so these requests are currently listed under HTTP/2, but we'll look at other ways of measuring that later in this chapter.
+At present, HTTP Archive does not track HTTP over [QUIC](https://www.chromium.org/quic) (soon to be standardized as [HTTP/3](#http3)) separately, so these requests are currently listed under HTTP/2, but we'll look at other ways of measuring that later in this chapter.
 
 Looking at the number of requests will skew the results somewhat due to popular requests. For example, many sites load Google Analytics, which does support HTTP/2, and so would show as an HTTP/2 request, even if the embedding site itself does not support HTTP/2. On the other hand, popular websites tend to support HTTP/2 are also underrepresented in the above stats as they are only measured once (e.g. "google.com" and "obscuresite.com" are given equal weighting). _There are lies, damn lies, and statistics._
 
@@ -107,10 +117,10 @@ However, our findings are corroborated by other sources, like [Mozilla's telemet
 | HTTP/1.1 | 62.36%  | 63.92% | 63.22% |
 | HTTP/2   | 37.46%  | 35.92% | 36.61% |
 
-<figcaption>Figure 4. HTTP version usage for home pages.</figcaption>
+<figcaption>{{ figure_link(caption="HTTP version usage for home pages.") }}</figcaption>
 </figure>
 
-It is still interesting to look at home pages only to get a rough figure on the number of sites that support HTTP/2 (at least on their home page). Figure 4 shows less support than overall requests, as expected, at around 36%.
+It is still interesting to look at home pages only to get a rough figure on the number of sites that support HTTP/2 (at least on their home page). Figure 20.4 shows less support than overall requests, as expected, at around 36%.
 
 HTTP/2 is only supported by browsers over HTTPS, even though officially HTTP/2 can be used over HTTPS or over unencrypted non-HTTPS connections. As mentioned previously, hiding the new protocol in encrypted HTTPS connections prevents networking appliances which do not understand this new protocol from interfering with (or rejecting!) its usage. Additionally, the HTTPS handshake allows an easy method of the client and server agreeing to use HTTP/2.
 
@@ -122,10 +132,10 @@ HTTP/2 is only supported by browsers over HTTPS, even though officially HTTP/2 c
 | HTTP/1.1 | 45.81%  | 44.31% | 45.01% |
 | HTTP/2   | 54.04%  | 55.53% | 54.83% |
 
-<figcaption>Figure 5. HTTP version usage for HTTPS home pages.</figcaption>
+<figcaption>{{ figure_link(caption="HTTP version usage for HTTPS home pages.") }}</figcaption>
 </figure>
 
-The web is moving to HTTPS, and HTTP/2 turns the traditional argument of HTTPS being bad for performance almost completely on its head. Not every site has made the transition to HTTPS, so HTTP/2 will not even be available to those that have not. Looking at just those sites that use HTTPS, in Figure 5 we do see a higher adoption of HTTP/2 at around 55%, similar to the percent of *all requests* in Figure 2.
+The web is moving to HTTPS, and HTTP/2 turns the traditional argument of HTTPS being bad for performance almost completely on its head. Not every site has made the transition to HTTPS, so HTTP/2 will not even be available to those that have not. Looking at just those sites that use HTTPS, in Figure 20.5 we do see a higher adoption of HTTP/2 at around 55%, similar to the percent of *all requests* in Figure 20.2.
 
 We have shown that browser support for HTTP/2 is strong and that there is a safe road to adoption, so why doesn't every site (or at least every HTTPS site) support HTTP/2? Well, here we come to the final item for support we have not measured yet: server support.
 
@@ -144,7 +154,7 @@ This is more problematic than browser support as, unlike modern browsers, server
 | openresty     |   2.15% |  2.01% |  2.07% |
 | ...           |   ...   |  ...   |  ...   |
 
-<figcaption>Figure 6. Servers used for HTTP/2.</figcaption>
+<figcaption>{{ figure_link(caption="Servers used for HTTP/2.") }}</figcaption>
 </figure>
 
 Nginx provides package repositories that allow ease of installing or upgrading to the latest version, so it is no surprise to see it leading the way here. Cloudflare is the most popular [CDN](./cdn) and enables HTTP/2 by default, so again it is not surprising to see it hosts a large percentage of HTTP/2 sites. Incidently, Cloudflare uses a [heavily customized](https://blog.cloudflare.com/nginx-structural-enhancements-for-http-2-performance/) version of nginx as their web server. After those, we see Apache at around 20% of usage, followed by some servers who choose to hide what they are, and then the smaller players such as LiteSpeed, IIS, Google Servlet Engine, and openresty, which is nginx based.
@@ -164,7 +174,7 @@ What is more interesting is those servers that that do *not* support HTTP/2:
 | openresty     |   1.22% |  1.36% |  1.30% |
 | ...           |   ...   |  ...   |  ...   |
 
-<figcaption>Figure 7. Servers used for HTTP/1.1 or lower.</figcaption>
+<figcaption>{{ figure_link(caption="Servers used for HTTP/1.1 or lower.") }}</figcaption>
 </figure>
 
 Some of this will be non-HTTPS traffic that would use HTTP/1.1 even if the server supported HTTP/2, but a bigger issue is those that do not support HTTP/2 at all. In these stats, we see a much greater share for Apache and IIS, which are likely running older versions.
@@ -188,35 +198,39 @@ Merging these two stats together, we can see the percentage of installs per serv
 | Microsoft-IIS |  14.10% | 13.47% |
 | ...           |   ...   |  ...   |
 
-<figcaption>Figure 8. Percentage installs of each server used to provide HTTP/2.</figcaption>
+<figcaption>{{ figure_link(caption="Percentage installs of each server used to provide HTTP/2.") }}</figcaption>
 </figure>
 
 It's clear that Apache and IIS fall way behind with 18% and 14% of their installed based supporting HTTP/2, which has to be (at least in part) a consequence of it being more difficult to upgrade them. A full operating system upgrade is often required for many servers to get this support easily. Hopefully this will get easier as new versions of operating systems become the norm.
 
-None of this is a comment on the HTTP/2 implementations here ([I happen to think Apache has one of the best implementations](https://twitter.com/tunetheweb/status/988196156697169920?s=20)), but more about the ease of enabling HTTP/2 in each of these servers-or lack thereof.
+None of this is a comment on the HTTP/2 implementations here ([I happen to think Apache has one of the best implementations](https://twitter.com/tunetheweb/status/988196156697169920?s=20)), but more about the ease of enabling HTTP/2 in each of these servers–or lack thereof.
 
 ## Impact of HTTP/2
 The impact of HTTP/2 is much more difficult to measure, especially using the HTTP Archive [methodology](./methodology). Ideally, sites should be crawled with both HTTP/1.1 and HTTP/2 and the difference measured, but that is not possible with the statistics we are investigating here. Additionally, measuring whether the average HTTP/2 site is faster than the average HTTP/1.1 site introduces too many other variables that require a more exhaustive study than we can cover here.
 
 One impact that can be measured is in the changing use of HTTP now that we are in an HTTP/2 world. Multiple connections were a workaround with HTTP/1.1 to allow a limited form of parallelization, but this is in fact the opposite of what usually works best with HTTP/2. A single connection reduces the overhead of TCP setup, TCP slow start, and HTTPS negotiation, and it also allows the potential of cross-request prioritization.
 
-<figure>
-  <a href="/static/images/2019/http2/ch20_fig9_num_tcp_connections_trend_over_years.png">
-    <img alt="Figure 9. TCP connections per page." aria-labelledby="fig9-caption" aria-describedby="fig9-description" src="/static/images/2019/http2/ch20_fig9_num_tcp_connections_trend_over_years.png" width="600" height="320">
-  </a>
-  <div id="fig9-description" class="visually-hidden">Timeseries chart of the number of TCP connections per page, with the median desktop page having 14 connections and the median mobile page having 16 connections as of July 2019.</div>
-  <figcaption id="fig9-caption">Figure 9. TCP connections per page. (Source: <a href="https://httparchive.org/reports/state-of-the-web#tcp">HTTP Archive</a>)</figcaption>
-</figure>
+{{ figure_markup(
+  image="ch20_fig9_num_tcp_connections_trend_over_years.png",
+  alt="TCP connections per page.",
+  caption='TCP connections per page. (Source: <a href="https://httparchive.org/reports/state-of-the-web#tcp">HTTP Archive</a>)',
+  description="Timeseries chart of the number of TCP connections per page, with the median desktop page having 14 connections and the median mobile page having 16 connections as of July 2019.",
+  width=600,
+  height=320
+  )
+}}
 
 HTTP Archive measures the number of TCP connections per page, and that is dropping steadily as more sites support HTTP/2 and use its single connection instead of six separate connections.
 
-<figure>
-  <a href="/static/images/2019/http2/ch20_fig10_total_requests_per_page_trend_over_years.png">
-    <img alt="Figure 10. Total requests per page." aria-labelledby="fig10-caption" aria-describedby="fig10-description" src="/static/images/2019/http2/ch20_fig10_total_requests_per_page_trend_over_years.png" width="600" height="320">
-  </a>
-  <div id="fig10-description" class="visually-hidden">Timeseries chart of the number of requests per page, with the median desktop page having 74 requests and the median mobile page having 69 requests as of July 2019. The trend is relatively flat.</div>
-  <figcaption id="fig10-caption">Figure 10. Total requests per page. (Source: <a href="https://httparchive.org/reports/state-of-the-web#reqTotal">HTTP Archive</a>)</figcaption>
-</figure>
+{{ figure_markup(
+  image="ch20_fig10_total_requests_per_page_trend_over_years.png",
+  alt="Total requests per page.",
+  caption='Total requests per page. (Source: <a href="https://httparchive.org/reports/state-of-the-web#reqTotal">HTTP Archive</a>)',
+  description="Timeseries chart of the number of requests per page, with the median desktop page having 74 requests and the median mobile page having 69 requests as of July 2019. The trend is relatively flat.",
+  width=600,
+  height=320
+  )
+}}
 
 Bundling assets to obtain fewer requests was another HTTP/1.1 workaround that went by many names: bundling, concatenation, packaging, spriting, etc. This is less necessary when using HTTP/2 as there is less overhead with requests, but it should be noted that requests are not free in HTTP/2, and [those that experimented with removing bundling completely have noticed a loss in performance](https://engineering.khanacademy.org/posts/js-packaging-http2.htm). Looking at the number of requests loaded per page over time, we do see a slight decrease in requests, rather than the expected increase.
 
@@ -243,7 +257,7 @@ Putting that aside let's look at the usage of HTTP/2 push.
 | Desktop |  22,581                 | 0.52%                       |
 | Mobile  |  31,452                 | 0.59%                       |
 
-<figcaption>Figure 11. Sites using HTTP/2 push.</figcaption>
+<figcaption>{{ figure_link(caption="Sites using HTTP/2 push.") }}</figcaption>
 </figure>
 
 <figure markdown>
@@ -252,22 +266,22 @@ Putting that aside let's look at the usage of HTTP/2 push.
 | Desktop |  7.86               | 162.38        |
 | Mobile  |  6.35               | 122.78        |
 
-<figcaption>Figure 12. How much is pushed when it is used.</figcaption>
+<figcaption>{{ figure_link(caption="How much is pushed when it is used.") }}</figcaption>
 </figure>
 
-These stats show that the uptake of HTTP/2 push is very low, most likely because of the issues described previously. However, when sites do use push, they tend to use it a lot rather than for one or two assets as shown in Figure 12.
+These stats show that the uptake of HTTP/2 push is very low, most likely because of the issues described previously. However, when sites do use push, they tend to use it a lot rather than for one or two assets as shown in Figure 20.12.
 
 This is a concern as previous advice has been to be conservative with push and to ["push just enough resources to fill idle network time, and no more"](https://docs.google.com/document/d/1K0NykTXBbbbTlv60t5MyJvXjqKGsCVNYHyLEXIxYMv0/edit). The above statistics suggest many resources of a significant combined size are pushed.
 
-<figure>
-  <a href="/static/images/2019/http2/ch20_fig13_what_push_is_used_for.png">
-    <img src="/static/images/2019/http2/ch20_fig13_what_push_is_used_for.png" aria-labelledby="fig13-caption" alt="Figure 13. What asset types is push used for?" aria-describedby="fig13-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQLxLA5Nojw28P7ceisqti3oTmNSM-HIRIR0bDb2icJS5TzONvRhdqxQcooh_45TmK97XVpot4kEQA0/pubchart?oid=466353517&amp;format=interactive">
-  </a>
-  <div id="fig13-description" class="visually-hidden">Pie chart breaking down the percent of asset types that are pushed. JavaScript makes up almost half of the assets, then CSS with about a quarter, images about an eighth, and various text-based types making up the rest.</div>
-  <figcaption id="fig13-caption">Figure 13. What asset types is push used for?</figcaption>
-</figure>
+{{ figure_markup(
+  image="ch20_fig13_what_push_is_used_for.png",
+  caption="What asset types is push used for?",
+  description="Pie chart breaking down the percent of asset types that are pushed. JavaScript makes up almost half of the assets, then CSS with about a quarter, images about an eighth, and various text-based types making up the rest.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQLxLA5Nojw28P7ceisqti3oTmNSM-HIRIR0bDb2icJS5TzONvRhdqxQcooh_45TmK97XVpot4kEQA0/pubchart?oid=466353517&format=interactive"
+  )
+}}
 
-Figure 13 shows us which assets are most commonly pushed. JavaScript and CSS are the overwhelming majority of pushed items, both by volume and by bytes. After this, there is a ragtag assortment of images, fonts, and data. At the tail end we see around 100 sites pushing video, which may be intentional, or it may be a sign of over-pushing the wrong types of assets!
+Figure 20.13 shows us which assets are most commonly pushed. JavaScript and CSS are the overwhelming majority of pushed items, both by volume and by bytes. After this, there is a ragtag assortment of images, fonts, and data. At the tail end we see around 100 sites pushing video, which may be intentional, or it may be a sign of over-pushing the wrong types of assets!
 
 One concern raised by some is that HTTP/2 implementations have repurposed the `preload` HTTP `link` header as a signal to push. One of the most popular uses of the `preload` resource hint is to inform the browser of late-discovered resources, like fonts and images, that the browser will not see until the CSS has been requested, downloaded, and parsed. If these are now pushed based on that header, there was a concern that reusing this may result in a lot of unintended pushes.
 
@@ -308,15 +322,17 @@ HTTP/2 has a complex prioritization model (too complex many say - hence why it i
 | Netlify           | Fail                   |  0.23%  |  0.15% |  0.19% |
 | OVH CDN           | Unknown                |  0.19%  |  0.18% |  0.18% |
 
-<figcaption>Figure 14. HTTP/2 prioritization support in common CDNs.</figcaption>
+<figcaption>{{ figure_link(caption="HTTP/2 prioritization support in common CDNs.") }}</figcaption>
 </figure>
 
-Figure 14 shows that a fairly significant portion of traffic is subject to the identified issue, totaling 26.82% on desktop and 27.83% on mobile. How much of a problem this is depends on exactly how the page loads and whether high priority resources are discovered late or not for the sites affected.
+Figure 20.14 shows that a fairly significant portion of traffic is subject to the identified issue, totaling 26.82% on desktop and 27.83% on mobile. How much of a problem this is depends on exactly how the page loads and whether high priority resources are discovered late or not for the sites affected.
 
-<figure>
-  <div class="big-number">27.83%</div>
-  <figcaption>Figure 15. The percent of mobile requests with sub-optimal HTTP/2 prioritization.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="The percent of mobile requests with sub-optimal HTTP/2 prioritization.",
+  content="27.83%",
+  classes="big-number"
+)
+}}
 
 Another issue is with the `upgrade` HTTP header being used incorrectly. Web servers can respond to requests with an `upgrade` HTTP header suggesting that it supports a better protocol that the client might wish to use (e.g. advertise HTTP/2 to a client only using HTTP/1.1). You might think this would be useful as a way of informing the browser a server supports HTTP/2, but since browsers only support HTTP/2 over HTTPS and since use of HTTP/2 can be negotiated through the HTTPS handshake, the use of this `upgrade` header for advertising HTTP/2 is pretty limited (for browsers at least).
 
@@ -337,10 +353,12 @@ QUIC has been implemented by Google for a number of years and it is now undergoi
 
 Because HTTP/3 uses QUIC over UDP rather than TCP, it makes the discovery of HTTP/3 support a bigger challenge than HTTP/2 discovery. With HTTP/2 we can mostly use the HTTPS handshake, but as HTTP/3 is on a completely different connection, that is not an option here. HTTP/2 also used the `upgrade` HTTP header to inform the browser of HTTP/2 support, and although that was not that useful for HTTP/2, a similar mechanism has been put in place for QUIC that is more useful. The *alternative services* HTTP header (`alt-svc`) advertises alternative protocols that can be used on completely different connections, as opposed to alternative protocols that can be used on this connection, which is what the `upgrade` HTTP header is used for.
 
-<figure>
-  <div class="big-number">8.38%</div>
-  <figcaption>Figure 16. The percent of mobile sites which support QUIC.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="The percent of mobile sites which support QUIC.",
+  content="8.38%",
+  classes="big-number"
+)
+}}
 
 Analysis of this header shows that 7.67% of desktop sites and 8.38% of mobile sites already support QUIC, which roughly represents Google's percentage of traffic, unsurprisingly enough, as it has been using this for a while. And 0.04% are already supporting HTTP/3. I would imagine by next year's Web Almanac, this number will have increased significantly.
 

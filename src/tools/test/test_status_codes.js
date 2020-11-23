@@ -4,7 +4,7 @@ const convert = require('xml-js');
 
 const { get_yearly_configs } = require('../generate/shared');
 
-const default_year = 2019;
+const default_year = 2020;
 const default_language = 'en';
 const base_url = "http://127.0.0.1:8080";
 
@@ -39,12 +39,12 @@ const test_status_code = async (page, status, location) => {
     // Don't follow redirects
     const options = {
       redirect: 'manual'
-    }
+    };
 
     const response = await fetch(base_url + page, options);
 
     if (response.status === status && response.headers.get('location') === location) {
-      console.log('Success - expected:', status, 'got:',response.status, 'for page:', page);
+      //console.log('Success - expected:', status, 'got:',response.status, 'for page:', page);
       passes++;
       if (status === 200 && response.headers.get('content-type').startsWith('text/html')) {
         if (page.slice(-1) === '/') page = page + 'index';
@@ -53,7 +53,7 @@ const test_status_code = async (page, status, location) => {
         await fs.outputFile(output_dir + page, body, 'utf8');
       }
     } else {
-      console.error('Failed - expected:', status, 'got:',response.status, 'for page:', page, 'location:', location);
+      console.error('Failed - expected:', status, 'got:', response.status, 'for page:', page, 'location:', location);
       failures++;
     }
 
@@ -114,10 +114,22 @@ const test_status_codes = async () => {
   await test_status_code('/', 302, `/${default_language}/${default_year}/`);
   await test_no_year_redirects();
   await test_status_code('/zz', 308, `/zz/`);
+  await test_status_code('/zh/', 302, `/zh-CN/`);
+  await test_status_code('/zh-HANT/', 302, `/zh-TW/`);
+  await test_status_code('/zh-CHT/', 301, `/zh-TW/`);
+  await test_status_code('/zh-hans/', 302, `/zh-CN/`);
+  await test_status_code('/en-GB/', 302, `/en/`);
+  await test_status_code('/EN/', 302, `/en/`);
 
   //Test 404s
   await test_404_pages();
   await test_status_code('/zz/', 404);
+  await test_status_code('/zz/2018/', 404);
+  await test_status_code('/en/2018/', 404);
+  await test_status_code('/base/', 404);
+  await test_status_code('/base/methodology', 308, `/base/methodology/`);
+  await test_status_code('/base/methodology/', 404);
+  await test_status_code('/base/2019/methodology/', 404);
   
   console.log('Passes:', passes, "Failures:", failures);
   process.exitCode = failures;

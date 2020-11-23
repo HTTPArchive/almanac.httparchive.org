@@ -1,207 +1,27 @@
-{% extends "base/2019/base.html" %}
+{% extends "%s/base.html" % lang %}
 
-{% block description %}Web Almanacは、Webコミュニティの専門知識とHTTP Archiveのデータやトレンドを組み合わせた、毎年恒例のWeb状況のレポートです。{% endblock %}
-
-{% block twitter_image_alt %}{{ year }} Web Almanac{% endblock %}
-
-{% block skip_navigation %}ナビゲーションをスキップ{% endblock %}
-
-{% block organization %}HTTP ArchiveによるWeb Almanac{% endblock %}
-{% block web_almanac_logo %}
-  <span class="ha line-group">HTTP Archive</span>
-  <span class="pre">による</span>
-  <span class="wa">Web Almanac</span>
-{% endblock %}
-
-
-
-{% block mission %}
-私たちの使命は、HTTP Archiveの生の統計やトレンドを、ウェブコミュニティの専門知識と組み合わせることです。Web Almanacは、実際のデータと信頼できるウェブの専門家に裏付けられた、ウェブの状態に関する包括的なレポートです。ページコンテンツ、ユーザー体験、パブリッシング、配布などの側面を網羅した20の章で構成されています。
-{% endblock %}
-
-{% block http_archive_link %}HTTP ArchiveによるWeb Almanac{% endblock %}
-
-{% block page_navigation %}ページナビゲーション{% endblock %}
-
-{% block help_translate %}翻訳ヘルプ{% endblock %}
-{% block translation_not_available %}英語-日本語では使用できません{% endblock %}
-{% block language_switcher %}言語ピッカー{% endblock %}
-{% block year_switcher %}年ピッカー{% endblock %}
-
-{% block home %}ホームページ{% endblock %}
-{% block table_of_contents_title %}目次{% endblock %}
-{% block contributors_title %}貢献者{% endblock %}
-{% block methodology_title %}方法論{% endblock %}
-
-{% block part %}部{% endblock %}
-{% block chapter %}章{% endblock %}
-
-{% block start_exploring %}探索を開始{% endblock %}
-
-{% block menu_title %}ページメニュー{% endblock %}
-{% block open_the_menu %}メニューを開く{% endblock %}
-{% block close_the_menu %}メニューを閉じる{% endblock %}
-
-{% block index_nav_title %}章の目次{% endblock %}
-{% block index_title %}インデックス{% endblock %}
-{% block open_the_index %}目次を開く{% endblock %}
-{% block close_the_index %}目次を閉じる{% endblock %}
-
-{% block and %} と {% endblock %}
-{% block comma %}、{% endblock %}
-
-{% block open %}開く{% endblock %}
-{% block close %}閉じる{% endblock %}
-
-{% block written_by_before %}{% endblock %}
-{% block reviewed_by_before %}{% endblock %}
-{% block translated_by_before %}{% endblock %}
-{% block written_by_after %}によって書かれた。{% endblock %}
-{% block reviewed_by_after %}によってレビュ。{% endblock %}
-{% block translated_by_after %}によって翻訳された。{% endblock %}
-
-{% block author %}著者{% endblock %}
-{% block authors %}著者{% endblock %}
-
-{% macro show_description(id) %}図{{ id }}の説明を表示{% endmacro %}
-{% macro hide_description(id) %}図{{ id }}の説明を非表示{% endmacro %}
-
-{% macro onTwitter(twitterHandle) %}Twitterの@{{twitterHandle}}{% endmacro %}
-{% macro onGitHub(gitHubHandle) %}GitHubの{{gitHubHandle}}{% endmacro %}
-{% macro onLinkedIn(authorName) %}LinkedInの{{authorName}}{% endmacro %}
-{% macro website(authorName) %}{{authorName}} ウェブサイト{% endmacro %}
-
-{% macro edition(year) %}{{ year }} 版{% endmacro %}
-
-{% block footer_title %}フッターナビゲーション{% endblock %}
-{% block copyright %}© Web Almanac. Licensed under <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
-{% block accessibility_statement %}アクセシビリティに関する声明{% endblock %}
-
-{% block featured_chapter%}注目の章{% endblock %}
-{% macro readChapter(chapter) %}<span class="featured-chapter-name">{{ chapter }}</span>の章を読む{% endmacro %}
-
-{% block contributors_description %}
-Web Almanacは、ウェブ・コミュニティの努力によって実現しています。{{ self.contributors() }}人々は、企画、調査、執筆、制作の段階で数え切れないほどの時間をボランティアで費やしてきました。
-{% endblock %}
-{% block contributors_link %}投稿者を見る{% endblock %}
-
-{% block methodology_stat_1_title %}テストしたウェブサイト{% endblock %}
 {% block methodology_stat_1 %}5.8M{% endblock %}
-{% block methodology_stat_2_title %}処理されたデータ{% endblock %}
 {% block methodology_stat_2 %}20.9 TB{% endblock %}
 {% block methodology_description %}
 特に断りのない限り、Web Almanacの20章すべてのメトリクスは、HTTP Archiveのデータセットから取得しています。HTTP Archiveは、2010年以来、ウェブの構築方法を追跡してきたコミュニティが運営するプロジェクトです。WebPageTestとLighthouseをアンダーグラウンドに使用して、約600万のWebサイトに関するメタデータが毎月テストされ、分析のために公開されているBigQueryデータベースに含まれています。2019年7月のデータセットは、Web Almanacのメトリクスの基礎として使用されました。詳細については、方法論のページを参照してください。
 {% endblock %}
-{% block methodology_link %}方法論についてはこちらをご覧ください。{% endblock %}
-
-{% block introduction %}導入{% endblock %}
-
-{% block foreword_title %}序章{% endblock %}
 
 {% block foreword %}
-    <p>
-      オープンウェブは、驚くほど複雑で進化するテクノロジーのネットワークです。あらゆる産業やキャリアはウェブの上に構築されており、成功するためにはウェブの活気あるエコシステムに依存しています。ウェブが非常に重要であるにもかかわらず、ウェブがどのように機能しているかを理解することは、驚くほど難しいものでした。2010年以来、HTTP Archiveプロジェクトの使命は、ウェブがどのように構築されているかを追跡することであり、それは素晴らしい仕事をしてきました。それは、HTTP Archiveプロジェクトが収集してきたデータに意味を持たせ、コミュニティがウェブのパフォーマンスを簡単に理解できるようにすることです。そこでWeb Almanacの出番です。
-    </p>
+  <p>
+    オープンウェブは、驚くほど複雑で進化するテクノロジーのネットワークです。あらゆる産業やキャリアはウェブの上に構築されており、成功するためにはウェブの活気あるエコシステムに依存しています。ウェブが非常に重要であるにもかかわらず、ウェブがどのように機能しているかを理解することは、驚くほど難しいものでした。2010年以来、HTTP Archiveプロジェクトの使命は、ウェブがどのように構築されているかを追跡することであり、それは素晴らしい仕事をしてきました。それは、HTTP Archiveプロジェクトが収集してきたデータに意味を持たせ、コミュニティがウェブのパフォーマンスを簡単に理解できるようにすることです。そこでWeb Almanacの出番です。
+  </p>
 
-    <p>
-      Web Almanacの使命は、データを掘り起こす勇気のある人しかアクセスできないような洞察の宝庫を、理解しやすい形でパッケージ化することにあります。これは、データの意味を理解し、それが何を意味するのかを教えてくれる業界の専門家の助けを借りて可能にしたものです。Web Almanacの20の章はそれぞれ、ウェブの特定の側面に焦点を当てており、各章はそれぞれの分野の専門家によって執筆され、レビューを受けています。Web Almanacの強みは、執筆者の専門知識から生まれます。
-    </p>
+  <p>
+    Web Almanacの使命は、データを掘り起こす勇気のある人しかアクセスできないような洞察の宝庫を、理解しやすい形でパッケージ化することにあります。これは、データの意味を理解し、それが何を意味するのかを教えてくれる業界の専門家の助けを借りて可能にしたものです。Web Almanacの20の章はそれぞれ、ウェブの特定の側面に焦点を当てており、各章はそれぞれの分野の専門家によって執筆され、レビューを受けています。Web Almanacの強みは、執筆者の専門知識から生まれます。
+  </p>
 
-    <p>
-      Web Almanacに掲載されている調査結果の多くは、賞賛に値するものですが、高品質のユーザー体験を提供するためには、まだまだ必要な作業があることを思い出させてくれる重要なものでもあります。各章のデータに基づいた分析は、より良いWebを開発するために私たちが共有している説明責任の一形態です。それは、間違ったやり方をしている人たちを非難することではなく、ベストプラクティスの道筋に光を当てることで、明確で正しいやり方があることを示しています。ウェブコミュニティの継続的な支援を得て、これを毎年の恒例行事にしたいと考えています。
-    </p>
+  <p>
+    Web Almanacに掲載されている調査結果の多くは、賞賛に値するものですが、高品質のユーザー体験を提供するためには、まだまだ必要な作業があることを思い出させてくれる重要なものでもあります。各章のデータに基づいた分析は、より良いWebを開発するために私たちが共有している説明責任の一形態です。それは、間違ったやり方をしている人たちを非難することではなく、ベストプラクティスの道筋に光を当てることで、明確で正しいやり方があることを示しています。ウェブコミュニティの継続的な支援を得て、これを毎年の恒例行事にしたいと考えています。
+  </p>
 
-    <p>
-      このレポートには学ぶべきことがたくさんありますので、あなたが得たものをコミュニティで共有することで、ウェブの状態についての理解を深めることができます。
-    </p>
+  <p>
+    このレポートには学ぶべきことがたくさんありますので、あなたが得たものをコミュニティで共有することで、ウェブの状態についての理解を深めることができます。
+  </p>
 
-    <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>、Web Almanacの作成者。</em></p>
+  <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>、Web Almanacの作成者。</em></p>
 {% endblock %}
-
-{% block appendix %}付属資料{% endblock %}
-{% block appendices %}付属資料{% endblock %}
-
-{% block ebook_title %}電子ブック{% endblock %}
-{% block ebook_download %} {{ year }} Web AlmanacのPDFファイルをダウンロードする ({{ ebook_size_in_mb }}MB){% endblock %}
-{% block ebook_download_note %}(generated with <a href="https://www.princexml.com/">www.princexml.com</a>){% endblock %}
-
-{% 
-  set localizedPartTitles = {
-    "I. Page Content": "I. ページコンテンツ",
-    "II. User Experience": "II. ユーザー体験",
-    "III. Content Publishing": "III. コンテンツ公開",
-    "IV. Content Distribution": "IV. コンテンツ配信"
-  }
-%}
-{%
-  set localizedChapterTitles = {
-    "javascript": "JavaScript",
-    "css": "CSS",
-    "markup": "マークアップ",
-    "media": "メディア",
-    "third-parties": "サードパーティ",
-    "fonts": "フォント",
-    "performance": "パフォーマンス",
-    "security": "セキュリティ",
-    "accessibility": "アクセシビリティ",
-    "seo": "SEO",
-    "pwa": "PWA",
-    "mobile-web": "モバイルウェブ",
-    "ecommerce": "Eコマース",
-    "cms": "CMS",
-    "compression": "圧縮",
-    "caching": "キャッシング",
-    "cdn": "CDN",
-    "page-weight": "Page Weight",
-    "resource-hints": "リソースのヒント",
-    "http2": "HTTP/2",
-    "privacy": "プライバシー",
-    "capabilities": "能力",
-    "jamstack": "Jamstack"
-  }
-%}
-
-{% set localizedTeamNames = {
-  "analysts": "分析者",
-  "authors": "著作者",
-  "brainstormers": "ブレインストーマー",
-  "designers": "デザイナー",
-  "developers": "開発者",
-  "editors": "編集者",
-  "leads": "リーダー",
-  "reviewers": "レビュワー",
-  "translators": "翻訳者", 
-  }
-%}
-
-{% set localizedContributors = {
-  "kleinab": 'Abigail Kleinは、Googleのソフトウェアエンジニアです。彼女は Google Docs、Sheets、Slides のウェブアクセシビリティに取り組み、<a href="https://www.blog.google/outreach-initiatives/accessibility/whats-you-say-present-captions-google-slides/">自動キャプションを Google Slides に追加しました</a> また、sc reen リーダー、点字、スクリーン拡大鏡、ハイコントラストのサポートを改善しました。現在は、Google Chrome と ChromeOS のアクセシビリティに取り組んでいます。MIT でコンピュータサイエンスの学士号と修士号を取得しており、支援技術ハッカソンを共同で立ち上げ、支援技術クラスのラボアシスタントとゲスト講師を務めました。',
-  "argyleink": 'Adam ArgyleはGoogle Chrome開発者リレーションズのメンバーで、CSSを中心に活動しています。優れたUX &amp; UIを求める飽くなき欲望を持つウェブ中毒者です。<a href="https://twitter.com/argyleink">@argyleink</a> or checkout his website <a href="https://nerdy.dev">https://nerdy.dev</a>',
-  "alankent": 'Alan KentはGoogleのDeveloper Advocateで、Eコマースとコンテンツエコシステムに焦点を当てています。彼は <a href="https://alankent.me">alankent.me</a> でブログを書いており、<a href="https://twitter.com/akent99">@akent99</a> としてツイートしています。',
-  "amedina": 'Alberto MedinaはGoogleのWeb Content Ecosystemsチームの開発提唱者で、Ampのような先進的な技術や最新のWeb APIの利用を通じたWeb上の質の高いコンテンツの普及促進に焦点を当てています。Albertoの仕事は現在、コンテンツ管理システムに重点を置いており、CMS開発者関係と呼ばれるコンテンツエコシステムの分野をリードしている。',
-  "andydavies": 'Andy Daviesはフリーランスのウェブパフォーマンスコンサルタントであり、英国の大手小売業者、新聞社、金融サービス会社のサイトの高速化を支援してきました。彼は『ウェブパフォーマンスのポケットガイド』を執筆し、『Using WebPageTest』の共著者であり、ロンドンのウェブパフォーマンス・ミートアップの主催者でもあります。アンディは Twitter で <a href="https://twitter.com/andydavies">@AndyDavies</a> として活動しており、<a href="https://andydavies.me">https://andydavies.me</a> で時々ブログを更新しています。',
-  "arturjanc": 'Artur Jancは Google の情報セキュリティエンジニアで、GoogleとWeb全体のWebプラットフォームのセキュリティメカニズムの設計と採用に取り組んでいます。<a href="https://twitter.com/arturjanc">@arturjanc on Twitter</a>として、インターネット上の人々と議論しています。',
-  "bazzadp": 'Barry Pollardはソフトウェア開発者であり、Manningの本 <a href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a> の著者でもあります。彼はウェブは素晴らしいと思っていますが、それをさらに良くしたいと思っています。<a href="https://twitter.com/tunetheweb">@tunetheweb</a> でツイートしたり、<a href="https://www.tunetheweb.com">www.tunetheweb.com</a> でブログを書いたりしています。',
-  "bkardell": 'Brian Kardellは、<a href="https://igalia.com">Igalia</a> の開発者提唱者、標準化貢献者、<a href="https://bkardell.com">ブロガー</a>であり、現在は <a href="https://openjsf.org/">Open JS Foundation</a> の W3C 諮問委員会代表を務めています。彼はExtensible Web Community Groupの創設者であり、<a href="https://extensiblewebmanifesto.org">The Extensible Web Manifesto</a> の共著者でもあります。',
-  "colinbendell": 'Colinは、<a href="https://cloudinary.com/">Cloudinary</a>のCTOオフィスの一員であり、オライリーの本<a href="https://www.oreilly.com/library/view/high-performance-images/9781491925799/">High Performance Images</a>の共著者でもあります。彼は、大容量データ、メディア、ブラウザ、標準の交差点で多くの時間を過ごしています。<a href="https://twitter.com/colinbendell">@colinbendell</a> や <a href="https://bendell.ca/">https://bendell.ca</a> のブログで彼を見つけることができます。',
-  "obto": 'David Foxは、ユーザビリティ・リサーチャーのリーダーであり、LookZookの創設者でもあります。彼はウェブサイト心理学者であり、ユーザーが何に悩んでいるのかだけでなく、その理由や体験を改善するための最善の方法を学ぶためにサイトを掘り下げています。また、Google Chromiumのコントリビューターであり、講演者であり、ウェビナーやUXトレーニングの提供者でもある。',
-  "dougsillars": 'Doug Sillarsはフリーランスのデジタルノマドで、パフォーマンスとメディアの交差点で活動しています。彼は<a href="https://twitter.com/dougsillars">@dougsillars</a>をツイートし、<a href="https://dougsillars.com">dougsillars.com</a>で定期的にブログを更新しています。',
-  "housseindjirdeh": 'HousseinはGoogleの開発提唱者で、スピード、パフォーマンス、ウェブフレームワークのエコシステムに取り組んでいます。彼は <a href="https://twitter.com/hdjirdeh">@hdjirdeh</a> でツイートし、<a href="https://houssein.me/">https://houssein.me/</a> でブログを書いています。',
-  "jeffposnick": 'Jeff PosnickはGoogleのWeb Developer Relationsチームのメンバーで、ニューヨークに拠点を置いています。彼の関心事は、<a href="https://developers.google.com/web/tools/workbox/">Workbox</a>、プログレッシブウェブアプリのためのサービスワーカーライブラリのセットです。<a href="https://jeffy.info">https://jeffy.info</a> でブログを書いており、<a href="https://twitter.com/jeffposnick">@jeffposnick</a> としてツイートしています。',
-  "khempenius": 'Katie HempeniusはChromeチームのエンジニアで、ウェブの高速化に取り組んでいます。',
-  "AVGP": 'Martin SplittはGoogleのウェブエコシステムチームの開発者アドボケートで、ウェブを発見しやすい状態に保つことに取り組んでいます。',
-  "nektarios-paisios": 'Nektarios Paisios氏は、過去5年間、Chromeアクセシビリティに取り組んできたソフトウェアエンジニアです。主にスクリーンリーダーや拡大鏡などのサードパーティの支援ソフトウェアとChromeの互換性を高めることに注力しています。Chromeアクセシビリティに携わる前は、GSuiteアクセシビリティやディスプレイ広告など、さまざまな役割を担っていました。Nektariosはニューヨーク大学でコンピュータサイエンスの博士号を取得しています。',
-  "patrickhulce": 'Patrick Hulceは元Chromeのエンジニアであり、<a href="https://eris.ventures/">Eris Ventures</a>の創設者であり、<a href="https://github.com/GoogleChrome/lighthouse">Lighthouse</a>のコアチームメンバーであり、<a href="https://github.com/GoogleChrome/lighthouse-ci">Lighthouse CI</a>, <a href="https://www.meetup.com/DallasJS/">DallasJS</a> meetup の共同主催者、<a href="https://github.com/patrickhulce/third-party-web">third-party-web</a> プロジェクトの執筆者。',
-  "paulcalvano": 'Paul Calvanoは、<a href="https://www.akamai.com/">アカマイ</a> のウェブパフォーマンス・アーキテクトで、ウェブサイトのパフォーマンス向上を支援しています。また、HTTP Archiveプロジェクトの共同管理者でもあります。<a href="https://twitter.com/paulcalvano">@paulcalvano</a> でツイートしたり、<a href="https://paulcalvano.com">http://paulcalvano.com</a> でブログを書いたり、<a href="https://discuss.httparchive.org">https://discuss.httparchive.org</a> でHTTP Archiveの研究を共有したりしています。',
-  "rachellcostello": 'Rachel Costelloは、<a href="https://www.deepcrawl.com/">DeepCrawl</a>のテクニカルSEO &amp;コンテンツマネージャーであり、検索の最新動向を研究し、伝えることに時間を費やしている国際会議のスピーカーでもあります。Rachelは現在、<a href="https://www.deepcrawl.com/knowledge/white-papers/">技術的なSEOのホワイトペーパー</a>とDeepCrawlのための研究作品の制作を管理しており、<a href="https://www.searchenginejournal.com/author/rachel-costello/">Search Engine Journal</a>のレギュラーコラムニストでもあります。',
-  "ernee": 'Renee Johnsonは、ウェブと製品のコンサルタントであり、WordPressの愛好家であり、WordCampの主催者でありボランティアでもあります。現在は、GoogleのContent Man agement System Developer Relationsチームでプロダクトサポートスペシャリストとして働いています。',
-  "rviscomi": 'Rick ViscomiはGoogle のシニア開発プログラムエンジニアで、HTTP ArchiveやChrome UX Reportなどのウェブ透過性プロジェクトに携わり、ウェブサイトの構築方法と体験の交差点を研究しています。Rickは、<a href="https://www.youtube.com/playlist?list=PLNYkxOF6rcIBGvYSYO-VxOsaYQDw5rifJ">The State of the Web</a>のホストを務めており、専門家がウェブのトレンドについて議論しています。Rickは、ウェブのパフォーマンスをテストするためのガイドである <a href="https://usingwpt.com">Using WebPageTest</a> の共著者であり、<a href="https://dev.to/rick_viscomi">dev.to</a> でウェブについて頻繁に執筆していますし、<a href="https://twitter.com/rick_viscomi">@rick_viscomi </a> の Twitter でもウェブについて書いています。',
-  "samdutton": 'Sam Duttonは2011年からDeveloper AdvocateとしてGoogle Chromeチームで働いています。数々のイベントを企画して発表し、いくつかのウェブ開発コースを作成して教え、PWA、パフォーマンス、メディア、イメージ、「Next Billion Users」イニシアティブをカバーする様々なビデオ、コードラボ、文書化されたガイダンスに取り組んできました。彼は<a href="https://simpl.info">simpl.info</a>を管理しており、HTML、CSS、JavaScriptの最もシンプルな例を提供しています。南オーストラリアで育ち、シドニーの大学に進学し、1986年からロンドンに住んでいます。',
-  "ScottHelme": 'Scott Helmeはセキュリティ研究者であり、<a href="https://report-uri.com">report-uri.com</a> と <a href="https://securityheaders.com">securityheaders.com</a> の創設者でもあります。Twitterでは、<a href="https://twitter.com/Scott_Helme">@Scott_Helme</a>でセキュリティの話をしたり、<a href="https://scotthelme.co.uk">scotthelme.co.uk</a>でブログを書いたりしています。',
-  "tammyeverts": 'Tammy Evertsは、20年以上にわたってユーザビリティとUXを研究してきました。過去10年間、彼女はウェブパフォーマンスとビジネスのUX交差に焦点を当ててきました。彼女は、<a href="https://speedcurve.com/">SpeedCurve</a>のCXOであり、<a href="https://perfnow.nl/">performance.now()カンファレンス</a>の共同議長であり、O\'Reillyの本の著者<em><a href="http://shop.oreilly.com/product/0636920041450.do">時は金なり。パフォーマンスのビジネス価値。</a></em>.',
-  "tomayac": 'Thomas SteinerはGoogle HamburgのWeb Developer Advocateで、標準化、ベストプラクティスの作成と共有、研究を通じた Web のより良い場所づくりに焦点を当てています。彼は <a href="https://blog.tomayac.com/">blog.tomayac.com</a> でブログを書いており、<a href="https://twitter.com/tomayac">@tomayac</a> としてツイートしています。',
-  "una": 'Una Kravetsは、ブルックリンを拠点とする国際的な講演者であり、テクニカルライターであり、Googleのマテリアルデザインの開発提唱者でもあります。Unaは、<a href="https://www.youtube.com/watch?v=YK8GZBx3hpg">Designing the Browser</a> のウェブシリーズと <a href="https://spec.fm/podcasts/toolsday">Toolsday</a> の開発者向けポッドキャストを主催しています。<a href="https://twitter.com/una">Twitter</a> で彼女をフォローして、クリエイティブなCSS、ユーザー体験、ウェブ開発のベストプラクティスについての彼女の考察を見つけてください。',
-  "ymschaap": '技術的なSEOコンサルタント<a href="https://build.amsterdam/">build.amsterdam</a>の創設者。以前は、10億人以上のユーザーに達したいくつかのウェブ会社を設立しました。2005年以来、彼の最新の（広告）ベンチャーについてブログを書いている。',
-  "zachleat": 'Zachは<a href="https://www.filamentgroup.com/">Filament Group</a>のWeb開発者だ。彼は現在、<a href="https://www.zachleat.com/web/fonts/">web fonts</a>と<a href="https://www.zachleat.com/web/introducing-eleventy/">static site generators</a>に夢中だ。彼の<a href="https://www.zachleat.com/web/speaking/">講演履歴</a>には、JAMstack_conf、Beyond Tellerrand、Smashing Conference、CSSConf、そして<a href="https://www.zachleat.com/web/whitehouse/">The White House</a>のようなイベントでの8カ国での講演が含まれています。また、<a href="http://nejsconf.com/">NEJS CONF</a>や<a href="http://nebraskajs.com">NebraskaJS</a>のミートアップも手伝っている。',
-  }
-%}
