@@ -13,7 +13,7 @@ FROM
     mimetype,
     ext
   FROM
-    `httparchive.almanac.summary_response_bodies`
+    `httparchive.almanac.requests`
   WHERE
     date = '2020-08-01' and type='image'
   # some images show up multiple times with the same info  
