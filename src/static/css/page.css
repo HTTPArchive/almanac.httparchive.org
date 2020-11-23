@@ -395,6 +395,41 @@ figure .anchor-link {
   text-decoration: underline;
 }
 
+figure figcaption {
+  display: flex;
+}
+
+.figure-dropdown {
+  position: relative;
+}
+
+.figure-dropdown-mobile,
+.figure-dropdown-desktop {
+  margin-left: 10px;
+}
+
+.figure-dropdown-mobile {
+  display: none;
+}
+
+.figure-dropdown-desktop button {
+  border: 1px solid black;
+  border-radius: 5px;
+  color: grey;
+  width: 10px;
+}
+
+.figure-dropdown-desktop button:focus,
+.figure-dropdown-desktop button:hover {
+  color: black;
+}
+
+.figure-dropdown-list {
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
 .anchor-link:hover::before,
 .anchor-link:focus::before {
   content: url('/static/images/link.svg');
@@ -626,6 +661,18 @@ figure .fig-desktop {
     display: block;
     max-width: 100%;
     height: auto;
+  }
+
+  figcaption .figure-dropdown-mobile {
+    display: block;
+  }
+
+  figcaption .figure-dropdown-desktop {
+    display: none;
+  }
+
+  .figure-dropdown-mobile select {
+    width: 1.125rem;
   }
 
   .fig-description-button {

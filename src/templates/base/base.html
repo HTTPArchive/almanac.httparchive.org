@@ -195,7 +195,7 @@
     {{ self.table_of_contents_title() }}
   </button>
   <ul class="nav-dropdown-list hidden {{switcher_name}}-list">
-    
+
     {% if request.path.endswith('table-of-contents') %}
     <li class="nav-dropdown-list-part foreword nav-dropdown-list-current">
       <span>{{ self.foreword_title() }}</span>
@@ -483,7 +483,7 @@
         });
 
         // Language and Year switching
-        var languageYearSwitchers = document.querySelectorAll('.language-switcher select, .year-switcher select, .table-of-contents-switcher select');
+        var languageYearSwitchers = document.querySelectorAll('.language-switcher select, .year-switcher select, .table-of-contents-switcher select, .figure-dropdown-mobile select');
         for (var i = 0; i < languageYearSwitchers.length; i++) {
           languageYearSwitchers[i].addEventListener('change', function(e) {
             //Reset the selector back in case user uses Back button
@@ -530,7 +530,7 @@
           var isListVisible =  !list.classList.toggle('hidden');
           var dropdownOpen = dropdownBtn.classList.toggle('dropdown-open');
           dropdownBtn.setAttribute('aria-expanded', dropdownOpen);
-          
+
           if (isListVisible) {
             var btnBoundingRect = dropdownBtn.getBoundingClientRect();
             var listBoundingRect = list.getBoundingClientRect();
@@ -616,6 +616,68 @@
   {% endblock %}
 {% endblock %}
 
+{% macro figure_dropdown(metadata, id, sheets_gid="", sql_file="", image="") %}
+    {{ native_figure_dropdown(metadata, id, sheets_gid, sql_file, image) }}
+    {{ styled_figure_dropdown(metadata, id, sheets_gid, sql_file, image) }}
+{% endmacro %}
+
+{% macro native_figure_dropdown(metadata, id, sheets_gid="", sql_file="", image="") %}
+{% if sheets_gid != "" or  sql_file != "" %}
+  <div class="figure-dropdown-mobile js-enable hidden">
+    <label for="figure-dropdown-select" class="visually-hidden">Figure Switcher</label>
+    <select id="figure-dropdown-select">
+      <option selected="selected" disabled value="">
+        More Information
+      </option>
+      <option disabled value="" aria-hidden="true">
+        ────
+      </option>
+      {% if sheets_gid != "" %}
+      <option value="{{ metadata.get('results') }}#gid={{ sheets_gid }}">
+        Show Data
+      </option>
+      {% endif %}
+      {% if sql_file != "" %}
+      <option value="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/{{ year }}/{{ metadata.get('queries')  }}/{{ sql_file }}">
+        Show SQL
+      </option>
+      {% endif %}
+      {% if image != "" %}
+      <option value="{{ image }}">
+        Show Image
+      </option>
+      {% endif %}
+    </select>
+  </div>
+  {% endif %}
+{% endmacro %}
+
+{% macro styled_figure_dropdown(metadata, id, sheets_gid="", sql_file="", image="") %}
+  {% if sheets_gid != "" or  sql_file != "" or image != "" %}
+  <div class="figure-dropdown-desktop nav-dropdown">
+    <button class="nav-dropdown-btn js-enable hidden" disabled aria-expanded="false"><span class="visually-hidden">More Information</span></button>
+    <ul class="figure-dropdown-list nav-dropdown-list hidden">
+      {% if sheets_gid != "" %}
+      <li>
+        <a href="{{ metadata.get('results') }}#gid={{ sheets_gid }}">Show Data</a>
+      </li>
+      {% endif %}
+      {% if sql_file != "" %}
+      <li>
+        <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/{{ year }}/{{ metadata.get('queries')  }}/{{ sql_file }}">Show SQL</a>
+      </li>
+      {% endif %}
+      {% if image != "" %}
+      <li>
+        <a href="{{ image }}">Show Image</a>
+      </li>
+      {% endif %}
+    </ul>
+  </div>
+  {% endif %}
+{% endmacro %}
+
+
 {% macro language_switcher(switcher_name) %}
   {% if switcher_name == "mobile" or switcher_name == "mobile-footer" %}
     {{ native_lang_dropdown(switcher_name) }}
@@ -693,16 +755,24 @@
 {% macro figure_link(
   metadata,
   id,
-  caption, 
+  caption,
   sheets_gid="",
   sql_file="",
+  image="",
   ebook=false
   )
 %}
 {% if ebook %}
+<div class="figure-caption">
 <a href="#fig-{{ metadata.chapter_number }}-{{ id }}" class="anchor-link">{{ figure_text(metadata, id) }}</a> {{ caption|safe }}
+</div>
 {% else %}
+<div class="figure-caption">
 <a href="#fig-{{ id }}" class="anchor-link">{{ figure_text(metadata, id) }}</a> {{ caption|safe }}
+</div>
+<div class="figure-dropdown">
+{{ figure_dropdown(metadata, id, sheets_gid, sql_file, image) }}
+</div>
 {% endif %}
 {% endmacro %}
 
@@ -760,7 +830,7 @@
   {%- elif content != "" %}
   <div class="{{ classes }}">{{ content|safe }}</div>
   {%- endif %}
-  <figcaption id="{{ anchor }}-caption">{{ figure_link(metadata, id, caption, ebook=ebook) }}</figcaption>
+  <figcaption id="{{ anchor }}-caption">{{ figure_link(metadata, id, caption, ebook=ebook, sheets_gid=sheets_gid, sql_file=sql_file, image=image) }}</figcaption>
 </figure>
 {%- endmacro %}
 
