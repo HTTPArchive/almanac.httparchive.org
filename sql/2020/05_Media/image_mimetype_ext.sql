@@ -22,5 +22,5 @@ FROM
   )
 GROUP BY
   client, ext, mimetype
-order by
+ORDER BY
   client, image_count desc;
