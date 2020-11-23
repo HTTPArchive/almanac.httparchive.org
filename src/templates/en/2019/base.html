@@ -1,0 +1,27 @@
+{% extends "%s/base.html" % lang %}
+
+{% block methodology_stat_1 %}5.8M{% endblock %}
+{% block methodology_stat_2 %}20.9 TB{% endblock %}
+{% block methodology_description %}
+Unless otherwise noted, the metrics in all of the 20 chapters of the Web Almanac are sourced from the HTTP Archive dataset. HTTP Archive is a community-run project that has been tracking how the web is built since 2010. Using WebPageTest and Lighthouse under the hood, metadata about nearly 6 million websites are tested monthly and included in a public BigQuery database for analysis. The July 2019 dataset was used as the basis for the Web Almanac's metrics. For more information, see the Methodology page.
+{% endblock %}
+
+{% block foreword %}
+  <p>
+    The open web is an amazingly complex, evolving network of technologies. Entire industries and careers are built on the web and depend on its vibrant ecosystem to succeed. As critical as the web is, understanding how it's doing has been surprisingly elusive. Since 2010, the mission of the HTTP Archive project has been to track how the web is built, and it's been doing an amazing job of it. However, there has been one gap that has been especially challenging to close: bringing meaning to the data that the HTTP Archive project has been collecting and enabling the community to easily understand how the web is performing. That's where the Web Almanac comes in.
+  </p>
+
+  <p>
+    The mission of the Web Almanac is to take the treasure trove of insights that would otherwise be accessible only to intrepid data miners, and package it up in a way that's easy to understand. This is made possible with the help of industry experts who can make sense of the data and tell us what it means. Each of the 20 chapters in the Web Almanac focuses on a specific aspect of the web, and each one has been authored and peer reviewed by experts in their field. The strength of the Web Almanac flows directly from the expertise of the people who write it.
+  </p>
+
+  <p>
+    Many of the findings in the Web Almanac are worthy of celebration, but it's also an important reminder of the work still required to deliver high-quality user experiences. The data-driven analyses in each chapter are a form of accountability we all share for developing a better web. It's not about shaming those that are getting it wrong, but about shining a guiding light on the path of best practices so there is a clear, right way to do things. With the continued help of the web community, we hope to make this an annual tradition, so each year we can track our progress and make course corrections as needed.
+  </p>
+
+  <p>
+    There is so much to learn in this report, so start exploring and share your takeaways with the community so we can collectively advance our understanding of the state of the web.
+  </p>
+
+  <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>, creator of the Web Almanac</em></p>
+{% endblock %}
