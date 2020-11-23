@@ -7,3 +7,4 @@ templates/*/*/ebook.html
 templates/sitemap.xml
 static/html/
 deployed.zip
+.coverage

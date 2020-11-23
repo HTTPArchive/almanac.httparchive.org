@@ -92,7 +92,7 @@ const generate_chapters = async (chapter_match) => {
           featured_quotes[language][year][chapter] = chapter_featured_quote;
         }
         if ( sitemap_languages[year].includes(language) ) {
-          sitemap.push({ language, year, chapter, metadata });
+          sitemap.push({ language, year, chapter });
         }
         ebook_chapters.push({ language, year, chapter, metadata, body, toc });
       }
@@ -154,7 +154,7 @@ const parse_file = async (markdown,chapter) => {
 };
 
 const write_template = async (language, year, chapter, metadata, body, toc) => {
-  const template = `templates/base/2019/chapter.ejs.html`;
+  const template = `templates/base/chapter.ejs.html`;
   const path = `templates/${language}/${year}/chapters/${chapter}.html`;
 
   if (fs.existsSync(template)) {

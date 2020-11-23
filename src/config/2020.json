@@ -2,7 +2,7 @@
   "settings": [
     {
       "is_live": true,
-      "supported_languages": ["en","es","fr","hi","ja","pt","zh-CN","zh-CHT"],
+      "supported_languages": ["en","es","fr","hi","ja","pt","ru","zh-CN","zh-TW"],
       "ebook_languages": []
     }
   ],
@@ -290,6 +290,15 @@
       "website": "https://togethertech.ca/",
       "github": "alextait1",
       "twitter": "at_fresh_dev"
+    },
+    "lex111": {
+      "name": "Alexey Pyltsyn",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/4408379?v=4&s=200",
+      "website": "https://lex111.ru/",
+      "github": "lex111"
     },
     "aleyda": {
       "name": "Aleyda Solis",
