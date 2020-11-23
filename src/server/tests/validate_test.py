@@ -83,7 +83,11 @@ def test_returns_preferred_simplified_chinese():
 
 
 def test_returns_preferred_traditional_chinese():
-    assert_validate_lang('zh-TW', '2019', 'zh-CHT', '2019')
+    assert_validate_lang('zh-TW', '2019', 'zh-TW', '2019')
+
+
+def test_returns_preferred_traditional_chinese_from_CHT():
+    assert_validate_lang('zh-CHT', '2019', 'zh-TW', '2019')
 
 
 def test_returns_preferred_chinese():

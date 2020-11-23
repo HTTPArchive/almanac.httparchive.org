@@ -1,0 +1,27 @@
+{% extends "%s/base.html" % lang %}
+
+{% block methodology_stat_1 %}5.8 M{% endblock %}
+{% block methodology_stat_2 %}20.9 TB{% endblock %}
+{% block methodology_description %}
+除另有備註外，Web Almanac 網路年鑑20個章節的統計指標皆萃取自HTTP Archive數據集。HTTP Archive是社群推動的專案，自2010年開始持續追蹤網路如何建置，每月透過WebPageTest和Lighthouse測試將近6百萬個網站並將資料集公開置於BigQuery供眾分析。Web Almanac網路年鑑的統計指標採用2019年7月的數據集為基準，更多的資訊請參閱統計方法頁面。
+{% endblock %}
+
+{% block foreword %}
+  <p>
+    當你踏進科技網絡世界後會發現開放的網路是如此撲朔迷離的美麗，透過緊密相連的網路生態系統讓擁抱網路的產業與職業共創成功。我們瞭解網路很重要，但卻難以捉摸網路究竟如何運行。自從2010年，HTTP Archive啟動這個迷人的專案，開始持續追蹤網路如何建構。然而還有一件使命深深吸引著Web Almanac網路年鑑的挑戰：賦予這些數據集生命力並促使社群能更容易瞭解網路如何運行，這也是Web Almanac網路年鑑熱情傳播的所在。
+  </p>
+
+  <p>
+    Web Almanac網路年鑑的任務是將原本只有數據挖礦勇者才能發掘的寶藏公諸大眾並將其整理為簡單易懂的年鑑，這是產業專家們熱情的挹注才讓數據重燃生命展現脈絡。Web Almanac的20個章節分別展現網路的各種脈絡，由各個領域的專家作者撰寫後再由夥伴互相審稿後誕生，Web Almanac網路年鑑的養分是由撰寫撫育它茁壯的專家經驗知識堆疊。
+  </p>
+
+  <p>
+    Web Almanac網路年鑑收穫許多值得慶祝的里程碑，但它也提醒我們切磋琢磨高品質的使用者體驗。透過各個章節的數據脈絡分析讓我們更勇於承擔使命，並分享如何開發更好的網路，這就像是為迷途羞愧的羔羊點燃熊熊烈火指引明亮的康莊大道。透過網路社群不斷挹注養分的推動，我們希望將統計年鑑視為年度傳統，讓每年都能視需要追蹤進度，並重燃照耀康莊大道。
+  </p>
+
+  <p>
+    你將會發現這本年鑑有許多值得學習的地方，現在就啟程探索並向社群分享你的想法，這讓我們可以更瞭解使用者閱讀網路年鑑的體驗。
+  </p>
+
+  <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>, Web Almanac 創辦者</em></p>
+{% endblock %}

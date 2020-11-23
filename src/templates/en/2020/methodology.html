@@ -1,11 +1,10 @@
-{% extends "base/2019/methodology.html" %}
+{% extends "base/methodology.html" %}
 
 {% block title %}Methodology | The Web Almanac by HTTP Archive{% endblock %}
 
 {% block description %}Describes how the 2020 Web Almanac was put together: The Datasets and Tools used and how the project was run.{% endblock %}
 
 {% block twitter_image_alt %}{{ year }} Web Almanac methodology{% endblock %}
-
 
 {% block index %}
       <ul>
@@ -375,8 +374,7 @@
         <h4 id="parsel"><a href="#parsel" class="anchor-link">Parsel</a></h4>
 
         <p>
-            <a href="https://projects.verou.me/parsel/">Parsel</a> is a CSS selector parser and specificity calculator, originally written by <a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a> chapter lead <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='LeaVerou') }}">Lea Verou</a> and open sourced as a separate library.
-            It is used extensively in all CSS metrics that relate to selectors and specificity.
+            <a href="https://projects.verou.me/parsel/">Parsel</a> is a CSS selector parser and specificity calculator, originally written by <a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a> chapter lead <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='LeaVerou') }}">Lea Verou</a> and open sourced as a separate library. It is used extensively in all CSS metrics that relate to selectors and specificity.
         </p>
     </section>
 

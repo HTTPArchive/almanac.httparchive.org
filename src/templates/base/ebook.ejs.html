@@ -1,0 +1,145 @@
+{% extends "%s/base_ebook.html" % lang %}
+
+{% set metadata = {} %}
+
+{% block chapters %}
+
+    <% for (let part of ebook.parts) { %>
+    <% for (let chapter of part.chapters) { %>
+
+    {% set metadata = <%- JSON.stringify(chapter.metadata) %> %}
+    {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
+    <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
+        <div class="body" id="{{ metadata.get('chapter') }}">
+
+            <div class="subtitle">
+                {{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}
+            </div>
+            <h1 class="title title-lg">
+                {{ metadata.get('title') }}
+                {% if metadata.get('unedited', false) %}
+                <span class="chapter-unedited">{{ self.unedited() }}</span>
+                {% endif %}
+            </h1>
+
+            <!-- Show large image for large screens and high density screens and use webp when supported -->
+            <picture>
+                <source media="(min-width: 327px)" type="image/webp" srcset="/static/images/2019/{{ metadata.chapter }}/hero_lg.webp" />
+                <source media="(min-width: 327px)" type="image/jpeg" srcset="/static/images/2019/{{ metadata.chapter }}/hero_lg.jpg" />
+                <source type="image/webp" srcset="/static/images/2019/{{ metadata.chapter }}/hero_lg.webp 2x" />
+                <source type="image/jpeg" srcset="/static/images/2019/{{ metadata.chapter }}/hero_lg.jpg 2x" />
+                <source type="image/webp" srcset="/static/images/2019/{{ metadata.chapter }}/hero_sm.webp" />
+                <source type="image/jpeg" srcset="/static/images/2019/{{ metadata.chapter }}/hero_sm.jpg" />
+                <img src="/static/images/2019/{{ metadata.chapter }}/hero_lg.jpg" class="content-banner" alt="" width="866" height="433" />
+            </picture>
+
+            <div class="byline">{{ self.written_by_before() }}
+                {% for author in metadata.get('authors') %}
+                <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{{ self.comma() if not loop.last and loop.length > 2 }}
+                {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %}
+                {% endfor %}{{ self.written_by_after() }}
+            </div>
+
+            <div class="byline reviewers">{{ self.reviewed_by_before() }}
+                {% for reviewer in metadata.get('reviewers') %}
+                <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{{ self.comma() if not loop.last and loop.length > 2 }}
+                {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %}
+                {% endfor %}{{ self.reviewed_by_after() }}
+            </div>
+
+            {% if metadata.get('analysts') and metadata.get('analysts') | length >= 1 %}
+            <div class="byline analysts">{{ self.analysis_by_before() }}
+                {% for analyst in metadata.get('analysts') %}
+                <a class="analyst" href="#contributors-{{ analyst }}">{{ config.contributors[analyst].name if analyst in config.contributors else analyst }}</a>{{ self.comma() if not loop.last and loop.length > 2 }}
+                {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %}
+                {% endfor %}{{ self.analysis_by_after() }}
+            </div>
+            {% endif %}
+
+            {% if metadata.get('translators') | length >= 1 %}
+            <div class="byline translators">{{ self.translated_by_before() }}
+                {% for translator in metadata.get('translators') %}
+                <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{{ self.comma() if not loop.last and loop.length > 2 }}
+                {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %}
+                {% endfor %}{{ self.translated_by_after() }}
+            </div>
+            {% endif %}
+            <%- chapter.body %>
+        </div>
+
+        <div class="authors">
+            {% for author in metadata.get('authors') %}
+            {% if loop.index == 1 %}
+            <h2 id="{{ metadata.get('chapter') }}-authors">
+                <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link">
+                {% if loop.length == 1 %}{{ self.author() }}{% endif -%}
+                {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %}
+                </a>
+            </h2>
+            <ul>
+            {% endif %}
+                {% set authordata = config.contributors[author] if author in config.contributors else None %}
+                <li>
+                    <a class="avatar-link" href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
+                    <div class="info">
+                        <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
+                        {% if authordata.twitter or authordata.github or authordata.linkedin or authordata.website %}
+                            <div class="social">
+                                {% if authordata.twitter %}
+                                <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
+                                    <svg aria-hidden="true">
+                                        <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+                                    </svg>
+                                    @{{ authordata.twitter }}
+                                </a>
+                                {% endif %}
+                                {% if authordata.github %}
+                                <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
+                                    <svg aria-hidden="true">
+                                        <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+                                    </svg>
+                                    {{ authordata.github }}
+                                </a>
+                                {% endif %}
+                                {% if authordata.linkedin %}
+                                <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+                                    <svg aria-hidden="true">
+                                        <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+                                    </svg>
+                                    {{ authordata.linkedin }}
+                                </a>
+                                {% endif %}
+                                {% if authordata.website %}
+                                <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
+                                    <svg aria-hidden="true">
+                                        <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+                                    </svg>
+                                    {{ authordata.website }}
+                                </a>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                        {% if authordata.tagline %}
+                            <div class="tagline">
+                                {{ authordata.tagline }}
+                            </div>
+                        {% endif %}
+                        {% if metadata.get(author + '_bio') %}
+                            <div class="bio">
+                                {{ add_footnote_links(metadata.get(author + '_bio') | replace('&quot;','"')) | safe }}
+                            </div>
+                        {% endif %}
+                    </div>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </section>
+    <% } %>
+    <% } %>
+
+{% endblock %}

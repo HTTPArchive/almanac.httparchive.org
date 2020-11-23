@@ -10,13 +10,14 @@ The Web Almanac is HTTP Archive's annual **state of the web** report.
 
 Our mission is to combine the raw stats and trends of the HTTP Archive with the expertise of the web community. The Web Almanac is a comprehensive report on the state of the web, backed by real data and trusted web experts. It is comprised of 20 chapters spanning aspects of page content, user experience, publishing, and distribution.
 
-The 2019 Web Almanac is available in:
-- [English](https://almanac.httparchive.org/en/2019/)
-- [French](https://almanac.httparchive.org/fr/2019/)
-- [Japanese](https://almanac.httparchive.org/ja/2019/)
-- [Portuguese](https://almanac.httparchive.org/pt/2019/)
-- [Simplified Chinese](https://almanac.httparchive.org/zh-CN/2019/)
-- [Spanish](https://almanac.httparchive.org/es/2019/)
+The Web Almanac is available in the original [English](https://almanac.httparchive.org/en/) but has also been translated (sometimes only partially) to:
+- [Chinese (Simplified)](https://almanac.httparchive.org/zh-CN/)
+- [Chinese (Traditional)](https://almanac.httparchive.org/zh-TW/)
+- [French](https://almanac.httparchive.org/fr/)
+- [Japanese](https://almanac.httparchive.org/ja/)
+- [Portuguese](https://almanac.httparchive.org/pt/)
+- [Russian](https://almanac.httparchive.org/ru/)
+- [Spanish](https://almanac.httparchive.org/es/)
 
 ## Contributing
 

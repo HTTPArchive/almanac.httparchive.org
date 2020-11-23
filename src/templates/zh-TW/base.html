@@ -1,0 +1,169 @@
+{% extends "base/base.html" %}
+
+{% block description %}Web Almanac 網路年鑑是網路狀態的年度報告，集結網路社群的專業知識共同精萃HTTP Archive的數據與趨勢。{% endblock %}
+
+{% block twitter_image_alt %}{{ year }} Web Almanac{% endblock %}
+
+{% block skip_navigation %}離開導覽{% endblock %}
+
+{% block organization %}Web Almanac 精粹自 HTTP Archive{% endblock %}
+{% block web_almanac_logo %}
+  <span class="wa">Web Almanac</span>
+  <span class="line-group">
+    <span class="pre">精粹自</span>
+    <span class="ha">HTTP Archive</span>
+  </span>
+{% endblock %}
+
+{% block mission %}
+<p>
+我們的任務是結合網路社群的專業知識共同精萃HTTP Archive的原始數據與趨勢。Web Almanac 網路年鑑是網路狀態的綜合報告，由真實的數據和具信譽的網路專家支持。報告共有20個章節橫跨網頁內容、使用者體驗、網頁發佈、網頁傳遞的各個方面。
+</p>
+{% endblock %}
+
+{% block read_last_years_almanac %}閱讀 {{ year | int - 1 }} Web Almanac{% endblock %}
+
+{% block http_archive_link %}HTTP Archive 主頁{% endblock %}
+
+{% block page_navigation %}網頁導覽{% endblock %}
+
+{% block help_translate %}幫助翻譯{% endblock %}
+{% block translation_not_available %}英文 - 中文不能使用{% endblock %}
+{% block language_switcher %}選擇語言{% endblock %}
+{% block year_switcher %}選擇年度{% endblock %}
+{% block table_of_contents_switcher %}選擇目錄{% endblock %}
+
+{% block home %}主頁{% endblock %}
+{% block table_of_contents_title %}目錄{% endblock %}
+{% block contributors_title %}貢獻者{% endblock %}
+{% block methodology_title %}統計方法{% endblock %}
+
+{% block part %}部分{% endblock %}
+{% block chapter %}章{% endblock %}
+
+{% block start_exploring %}開始探索{% endblock %}
+
+{% block menu_title %}頁面目錄{% endblock %}
+{% block open_the_menu %}開啟頁面目錄{% endblock %}
+{% block close_the_menu %}關閉頁面目錄{% endblock %}
+
+{% block index_nav_title %}章節目錄{% endblock %}
+{% block index_title %}索引{% endblock %}
+{% block open_the_index %}開啟章節目錄{% endblock %}
+{% block close_the_index %}關閉章節目錄{% endblock %}
+
+{% block and %}和{% endblock %}
+{% block comma %}, {% endblock %}
+
+{% block open %}開啟{% endblock %}
+{% block close %}關閉{% endblock %}
+
+{% macro figure_text(metadata, id) %}圖表 {{ figure_id(metadata, id) }}.{% endmacro %}
+{% macro show_description(metadata, id) %}顯示圖表說明 {{ figure_id(metadata, id) }}{% endmacro %}
+{% macro hide_description(metadata, id) %}隱藏圖表說明 {{ figure_id(metadata, id) }}{% endmacro %}
+
+{% block written_by_before %}作者：{% endblock %}
+{% block reviewed_by_before %}審稿者：{% endblock %}
+{% block translated_by_before %}翻譯者：{% endblock %}
+{% block analysis_by_before %}分析者：{% endblock %}
+{% block written_by_after %}{% endblock %}
+{% block reviewed_by_after %}{% endblock %}
+{% block translated_by_after %}{% endblock %}
+{% block analysis_by_after %}{% endblock %}
+
+{% block author %}作者{% endblock %}
+{% block authors %}作者{% endblock %}
+
+{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} Twitter{% endmacro %}
+{% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} GitHub{% endmacro %}
+{% macro onLinkedIn(authorName) %}{{authorName}} LinkedIn{% endmacro %}
+{% macro website(authorName) %}{{authorName}} 網站{% endmacro %}
+
+{% macro edition(year) %}{{ year }} 版{% endmacro %}
+
+{% block footer_title %}註腳導覽{% endblock %}
+{% block copyright %}© Web Almanac. 版權聲明 <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
+{% block accessibility_statement %}無障礙網頁聲明{% endblock %}
+
+{% block featured_chapter %}章節精選{% endblock %}
+{% block featured_chapter_last_year %}精選章節<br/>從 {{ year|int -1 }} Web Almanac{% endblock %}
+
+{# Check if read_chapter already defined in child template as macros can't be overridden #}
+{% if not read_chapter %}
+{% macro read_chapter(chapter) %}閱讀 <span class="featured-chapter-name">{{ chapter }}</span> 章節{% endmacro %}
+{% endif %}
+{% if not read_last_years_chapter %}
+{% macro read_last_years_chapter(chapter) %}閱讀 {{ year|int -1 }} <span class="featured-chapter-name">{{ chapter }}</span> 章節{% endmacro %}
+{% endif %}
+
+{% block contributors_description %}
+Web Almanac 網路年鑑是被熱情的網路社群擁抱而茁壯。 {{ self.contributors() }} 位團隊成員志願挹注難以計數的泉源在規劃、研究、撰寫、發佈的各個階段。
+{% endblock %}
+{% block contributors_link %}認識貢獻者{% endblock %}
+
+{% block methodology_stat_1_title %}網站測試數{% endblock %}
+{% block methodology_stat_2_title %}數據處理數{% endblock %}
+{% block methodology_link %}瞭解統計方法{% endblock %}
+
+{% block introduction %}介紹{% endblock %}
+
+{% block foreword_title %}前言{% endblock %}
+
+{% block coming_soon %}即將來到!{% endblock %}
+
+{% block appendix %}附錄{% endblock %}
+{% block appendices %}附錄{% endblock %}
+
+{% block ebook_title %}電子書{% endblock %}
+{% block ebook_download_short %}電子書PDF ({{ ebook_size_in_mb }}MB){% endblock %}
+{% block ebook_download %}下載 {{ year }} Web Almanac 網路年鑑： PDF 格式 ({{ ebook_size_in_mb }}MB){% endblock %}
+{% block ebook_download_note %}(使用 <a href="https://www.princexml.com/">www.princexml.com</a>){% endblock %}
+
+{%
+  set localizedPartTitles = {
+    "I. Page Content": "I. 頁面內容",
+    "II. User Experience": "II. 使用者體驗",
+    "III. Content Publishing": "III. 內容發布",
+    "IV. Content Distribution": "IV. 內容傳遞"
+  }
+%}
+{%
+  set localizedChapterTitles = {
+    "javascript": "JavaScript",
+    "css": "CSS",
+    "markup": "標記",
+    "media": "媒體",
+    "third-parties": "第三方",
+    "fonts": "字體",
+    "performance": "效能",
+    "security": "安全",
+    "accessibility": "無障礙網頁",
+    "seo": "搜尋引擎優化",
+    "pwa": "漸進式網頁應用程式",
+    "mobile-web": "行動裝置網頁",
+    "ecommerce": "電子商務",
+    "cms": "內容管理系統",
+    "compression": "壓縮",
+    "caching": "緩存",
+    "cdn": "內容傳遞網路",
+    "page-weight": "網頁大小",
+    "resource-hints": "資源提示",
+    "http2": "超文字傳輸協定/第2版",
+    "privacy": "隱私",
+    "capabilities": "功能",
+    "jamstack": "Jamstack"
+  }
+%}
+
+{% set localizedTeamNames = {
+  "analysts": "分析者",
+  "authors": "作者",
+  "brainstormers": "腦力激盪者",
+  "designers": "設計者",
+  "developers": "開發者",
+  "editors": "審稿者",
+  "leads": "專案主導者",
+  "reviewers": "審稿者",
+  "translators": "翻譯者",
+  }
+%}
