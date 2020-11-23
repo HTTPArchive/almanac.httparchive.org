@@ -77,7 +77,7 @@ def render_error_template(error, status_code):
         elif os.path.isfile(TEMPLATES_DIR + '/%s/%s/error.html' % (DEFAULT_LANGUAGE.lang_code, DEFAULT_YEAR)):
             lang = DEFAULT_LANGUAGE.lang_code
             year = DEFAULT_YEAR
-    return render_template('%s/2019/error.html' % lang, lang=lang, year=year, error=error), status_code
+    return render_template('%s/error.html' % lang, lang=lang, year=year, error=error), status_code
 
 
 def chapter_lang_exists(lang, year, chapter):
