@@ -40,4 +40,6 @@ FROM
     `httparchive.pages.2020_08_01_*`
   )
 GROUP BY
+  client
+ORDER BY
   client;

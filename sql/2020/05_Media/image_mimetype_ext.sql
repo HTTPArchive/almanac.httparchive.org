@@ -23,4 +23,4 @@ FROM
 GROUP BY
   client, ext, mimetype
 order by
-  total_images desc;
+  client, image_count desc;

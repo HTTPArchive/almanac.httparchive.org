@@ -23,4 +23,6 @@ FROM
     firstHtml
   )
 GROUP BY
+  client
+ORDER BY
   client;
