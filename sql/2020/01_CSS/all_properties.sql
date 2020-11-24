@@ -4,23 +4,18 @@ try {
 	function compute(ast) {
 		let ret = {};
 
-		walkRules(ast, rule => {
-			walkDeclarations(rule.rules, ({
-				property,
-				value
-			}) => {
-				incrementByKey(ret, property);
-			});
+		walkDeclarations(ast, ({property, value}) => {
+			incrementByKey(ret, property);
 		});
 
 		return sortObject(ret);
 	}
 
-    let ast = JSON.parse(css);
-    let props = compute(ast);
-    return Object.entries(props).flatMap(([prop, freq]) => {
-    	return Array(freq).fill(prop);
-    });
+	let ast = JSON.parse(css);
+	let props = compute(ast);
+	return Object.entries(props).flatMap(([prop, freq]) => {
+		return Array(freq).fill(prop);
+	});
 }
 catch (e) {
 	return [];
