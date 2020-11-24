@@ -18,7 +18,7 @@ try {
     result.total = markup.images.img.total;
     result.alt_missing = markup.images.img.alt.missing;
     result.alt_blank = markup.images.img.alt.blank;
-	  result.alt_present = markup.images.img.alt.present;
+    result.alt_present = markup.images.img.alt.present;
 
 } catch (e) {}
 return result;
@@ -26,11 +26,14 @@ return result;
 
 SELECT
   client,
-  COUNT(0) AS total_pages,
-  COUNTIF(markup_info.total > 0) AS img_total,
-  COUNTIF(markup_info.alt_missing > 0) AS alt_missing,
-  COUNTIF(markup_info.alt_blank > 0) AS alt_blank,
-  COUNTIF(markup_info.alt_present > 0) AS alt_present
+  SAFE_DIVIDE(COUNTIF(markup_info.total > 0), COUNT(0)) AS pages_with_img_pct,
+  SAFE_DIVIDE(COUNTIF(markup_info.alt_missing > 0), COUNT(0)) AS pages_with_alt_missing_pct,
+  SAFE_DIVIDE(COUNTIF(markup_info.alt_blank > 0), COUNT(0)) AS pages_with_alt_blank_pct,
+  SAFE_DIVIDE(COUNTIF(markup_info.alt_present > 0), COUNT(0)) AS pages_with_alt_present_pct,
+  SUM(markup_info.total) AS img_total,
+  SAFE_DIVIDE(SUM(markup_info.alt_missing), SUM(markup_info.total)) AS imgs_alt_missing_pct,
+  SAFE_DIVIDE(SUM(markup_info.alt_blank), SUM(markup_info.total)) AS img_alt_blank_pct,
+  SAFE_DIVIDE(SUM(markup_info.alt_present), SUM(markup_info.total)) AS img_alt_present_pct
 FROM
   (
   SELECT
