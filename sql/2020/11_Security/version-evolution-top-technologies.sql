@@ -30,7 +30,8 @@ FROM (
     GROUP BY
       category,
       app
-    ORDER BY num DESC
+    ORDER BY
+      num DESC
     LIMIT 20
   ) AS top ON (tech.category = top.category AND tech.app = top.app)
   WHERE
@@ -41,7 +42,8 @@ FROM (
     tech.app,
     info,
     _TABLE_SUFFIX)
-WHERE pct > 0.01
+WHERE
+  pct > 0.01
 ORDER BY
   client,
   category,
