@@ -2,25 +2,21 @@
 # images mimetype vs extension
 SELECT
   client,
-  COUNT(0) AS image_count,
   ext,
-  mimetype
+  mimetype,
+  COUNT(0) AS ext_mime_image_count,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total_images,
+  SAFE_DIVIDE(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS total_image_pct,
+  SAFE_DIVIDE(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client, ext)) AS ext_pct,
+  SAFE_DIVIDE(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client, mimetype)) AS mime_pct
 FROM
-  (
-  SELECT
-    client,
-    url,
-    mimetype,
-    ext
-  FROM
-    `httparchive.almanac.requests`
-  WHERE
-    date = '2020-08-01' and type='image'
-  # some images show up multiple times with the same info  
-  GROUP BY
-    client, url, mimetype, ext
-  )
+  `httparchive.almanac.requests`
+WHERE
+  date = '2020-08-01' and
+  type='image'
 GROUP BY
   client, ext, mimetype
+HAVING
+  ext_mime_image_count > 10000
 ORDER BY
-  client, image_count desc;
+  ext_mime_image_count desc, client;
