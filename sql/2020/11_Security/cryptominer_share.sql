@@ -1,38 +1,19 @@
 #standardSQL
---share of cryptominers
-WITH
-  total AS (
-  SELECT
-    COUNT(0) AS ttl
-  FROM
-    `httparchive.technologies.2020_08_01_desktop`
-  WHERE
-    category = 'Cryptominers'
-    OR category='Cryptominer')
+# Share of cryptominers
 SELECT
   app,
-  freq,
-  ROUND((freq/(
-      SELECT
-        ttl
-      FROM
-        total)),2) AS pct
-FROM (
-  SELECT
-    SUM(freq) AS freq,
-    app
-  FROM (
-    SELECT
-      COUNT(0) AS freq,
-      app
-    FROM
-      `httparchive.technologies.2020_08_01_desktop`
-    WHERE
-      category = 'Cryptominers'
-      OR category='Cryptominer'
-    GROUP BY
-      app)
-  GROUP BY
-    app)
+  _TABLE_SUFFIX AS client,
+  SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS total_cryptominers,
+  COUNT(0) AS freq,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS pct
+FROM
+  `httparchive.technologies.2020_08_01_*`
+WHERE
+  category = 'Cryptominers'
+  OR category = 'Cryptominer'
+GROUP BY
+  client,
+  app
 ORDER BY
-  pct DESC
+   client,
+   pct DESC
