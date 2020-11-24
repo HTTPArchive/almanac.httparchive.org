@@ -1,0 +1,24 @@
+{% extends "base/error.html" %}
+
+{% block unknown_error %}不明なエラー{% endblock %}
+
+{% 
+  set localizedStatusCode = {
+    400: "要求の形式が正しくありません",
+    404: "ページが見つかりません",
+    500: "内部サーバーエラー",
+    502: "一時的なサーバーエラー"
+  }
+%}
+{% macro expandedTitle(errorTitle) %}エラー: {{ errorTitle }}{% endmacro %}
+{%
+  set localizedErrorMessage = {
+    "Unsupported year requested": "サポートされていない年がリクエストされました",
+    "Unsupported chapter requested": "サポートされていない章が要求されました",
+    "Unsupported language requested": "サポートされていない言語がリクエストされました",
+    "Not Found": "要求されたURLはサーバーで見つかりませんでした。 URLを手動で入力した場合は、スペルを確認してもう一度お試しください。"
+  }
+%}
+{% macro expandedErrorMessage(errorCode, errorDescription, errorMessage) %}
+{{ errorCode }} <i lang="en">{{ errorDescription }}</i>: {{ errorMessage }}
+{% endmacro %}

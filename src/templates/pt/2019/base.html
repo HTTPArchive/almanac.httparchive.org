@@ -1,194 +1,27 @@
-{% extends "base/2019/base.html" %}
+{% extends "%s/base.html" % lang %}
 
-{% block description %}Web Almanac é um estado anual do relatório da Web que combina a experiência da comunidade da Web com os dados e as tendências do HTTP Archive.{% endblock %}
-
-{% block twitter_image_alt %}{{ year }} Web Almanac{% endblock %}
-
-{% block skip_navigation %}Pular navegação{% endblock %}
-
-{% block organization %}Web Almanac por HTTP Archive{% endblock %}
-{% block web_almanac_logo %}
-<span class="wa">Web Almanac</span>
-<span class="line-group">
-  <span class="pre">Por</span>
-  <span class="ha">HTTP Archive</span>
-</span>
-{% endblock %}
-
-{% block mission %}
-<p>
-Nossa missão é combinar as estatísticas brutas e as tendências do HTTP Archive com a experiência da comunidade da web. O Web Almanac é um relatório abrangente sobre o estado da Web, apoiado por dados reais e especialistas confiáveis da Web. É composto por 20 capítulos que abrangem aspectos do conteúdo da página, experiência do usuário, publicação e distribuição.
-</p>
-{% endblock %}
-
-{% block read_last_years_almanac %}Leia o  {{ year | int - 1 }} Web Almanac{% endblock %}
-
-{% block http_archive_link %}Página inicial HTTP Archive{% endblock %}
-
-{% block page_navigation %}Navegação de página{% endblock %}
-
-{% block help_translate %}Ajudar Traduzir{% endblock %}
-{% block translation_not_available %}Inglês - não disponível em Português{% endblock %}
-{% block language_switcher %}Selecione o Idioma{% endblock %}
-{% block year_switcher %}Selecione o Ano{% endblock %}
-{% block table_of_contents_switcher %}Selecione o Tabela de Conteúdos{% endblock %}
-
-{% block home %}Início{% endblock %}
-{% block table_of_contents_title %}Tabela de Conteúdos{% endblock %}
-{% block contributors_title %}Contribuintes{% endblock %}
-{% block methodology_title %}Metodologia{% endblock %}
-
-{% block part %}Parte{% endblock %}
-{% block chapter %}Capítulo{% endblock %}
-
-{% block start_exploring %}Comece a explorar{% endblock %}
-
-{% block menu_title %}Menu da Página{% endblock %}
-{% block open_the_menu %}Abra o menu{% endblock %}
-{% block close_the_menu %}Feche o menu{% endblock %}
-
-{% block index_nav_title %}Chapter table of contents{% endblock %}
-{% block index_title %}Index{% endblock %}
-{% block open_the_index %}Abrir índice de conteúdos{% endblock %}
-{% block close_the_index %}Fechar índice de conteúdos{% endblock %}
-
-{% block and %}e{% endblock %}
-{% block comma %}, {% endblock %}
-
-{% block open %}Abrir{% endblock %}
-{% block close %}Fechar{% endblock %}
-
-{% macro figure_text(metadata, id) %}Figura {{ figure_id(metadata, id) }}.{% endmacro %}
-{% macro show_description(metadata, id) %}Mostrar descrição da figura {{ figure_id(metadata, id) }}{% endmacro %}
-{% macro hide_description(metadata, id) %}Ocultar descrição da figura {{ figure_id(metadata, id) }}{% endmacro %}
-
-{% block written_by_before %}Escrito por{% endblock %}
-{% block reviewed_by_before %}Revisado por{% endblock %}
-{% block translated_by_before %}Traduzido por{% endblock %}
-{% block analysis_by_before %}Análise por{% endblock %}
-{% block written_by_after %}{% endblock %}
-{% block reviewed_by_after %}{% endblock %}
-{% block translated_by_after %}{% endblock %}
-{% block analysis_by_after %}{% endblock %}
-
-{% block author %}Autor(a){% endblock %}
-{% block authors %}Autores{% endblock %}
-
-{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} no Twitter{% endmacro %}
-{% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} no GitHub{% endmacro %}
-{% macro onLinkedIn(authorName) %}{{authorName}} no LinkedIn{% endmacro %}
-{% macro website(authorName) %}{{authorName}} website{% endmacro %}
-
-{% macro edition(year) %}{{ year }} Edição{% endmacro %}
-
-{% block footer_title %}Navegação no rodapé{% endblock %}
-{% block copyright %}© Web Almanac. Licenciado sob <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
-{% block accessibility_statement %}Declaração de acessibilidade{% endblock %}
-
-{% block featured_chapter %}Capítulo em Destaque{% endblock %}
-{% block featured_chapter_last_year %}Capítulo em Destaque<br />do Web Almanac {{ year|int -1 }}{% endblock %}
-
-{# Check if read_chapter already defined in child template as macros can't be overridden #}
-{% if not read_chapter %}
-{% macro read_chapter(chapter) %}Leia o Capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
-{% endif %}
-{% if not read_last_years_chapter %}
-{% macro read_last_years_chapter(chapter) %}Leia o {{ year|int -1 }} Capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
-{% endif %}
-
-{% block contributors_description %}
-O Web Almanac Isso foi possível graças ao trabalho árduo da comunidade da web. {{ self.contributors() }} as pessoas ofereceram inúmeras horas nas fases de planejamento, pesquisa, redação e produção.
-{% endblock %}
-{% block contributors_link %}Veja os colaboradores{% endblock %}
-
-{% block methodology_stat_1_title %}Sites testados{% endblock %}
 {% block methodology_stat_1 %}5.8M{% endblock %}
-{% block methodology_stat_2_title %}Dados processados{% endblock %}
 {% block methodology_stat_2 %}20.9 TB{% endblock %}
 {% block methodology_description %}
 Salvo indicação em contrário, as métricas em todos os 20 capítulos do Web Almanac são originárias do conjunto de dados do HTTP Archive. O HTTP Archive é um projeto administrado pela comunidade que acompanha como a Web é criada desde 2010. Usando o WebPageTest e o Lighthouse, os metadados de cerca de 6 milhões de sites são testados mensalmente e incluídos em um banco de dados público do BigQuery para análise. O conjunto de dados de julho de 2019 foi usado como base para as métricas do Web Almanac. Para mais informações, consulte a página Metodologia.
 {% endblock %}
-{% block methodology_link %}Conheça nossa Metodologia{% endblock %}
-
-{% block introduction %}Introdução{% endblock %}
-
-{% block foreword_title %}Prefácio{% endblock %}
 
 {% block foreword %}
-    <p>
-      A web aberta é uma rede de tecnologias incrivelmente complexa e em evolução. Indústrias e carreiras inteiras são construídas na Web e dependem de seu vibrante ecossistema para ter sucesso. Por mais crítica que seja a web, entender como está se saindo tem sido surpreendentemente evasivo. Desde 2010, a missão do projeto HTTP Archive é rastrear como a Web é construída e está fazendo um trabalho incrível. No entanto, houve uma lacuna que foi especialmente difícil de resolver: trazer significado aos dados que o projeto HTTP Archive está coletando e permitir que a comunidade entenda facilmente o desempenho da web. É aí que entra o Web Almanac.
-    </p>
+  <p>
+    A web aberta é uma rede de tecnologias incrivelmente complexa e em evolução. Indústrias e carreiras inteiras são construídas na Web e dependem de seu vibrante ecossistema para ter sucesso. Por mais crítica que seja a web, entender como está se saindo tem sido surpreendentemente evasivo. Desde 2010, a missão do projeto HTTP Archive é rastrear como a Web é construída e está fazendo um trabalho incrível. No entanto, houve uma lacuna que foi especialmente difícil de resolver: trazer significado aos dados que o projeto HTTP Archive está coletando e permitir que a comunidade entenda facilmente o desempenho da web. É aí que entra o Web Almanac.
+  </p>
 
-    <p>
-      A missão do Web Almanac é levar o tesouro de insights que, de outra forma, seriam acessíveis apenas a intrépidos mineradores de dados e empacotá-lo de uma maneira fácil de entender. Isso é possível com a ajuda de especialistas do setor, que podem entender os dados e nos dizer o que eles significam. Cada um dos 20 capítulos do Web Almanac se concentra em um aspecto específico da Web, e cada um foi criado e revisado por especialistas em seu campo. A força do Web Almanac flui diretamente da experiência das pessoas que o escrevem.
-    </p>
+  <p>
+    A missão do Web Almanac é levar o tesouro de insights que, de outra forma, seriam acessíveis apenas a intrépidos mineradores de dados e empacotá-lo de uma maneira fácil de entender. Isso é possível com a ajuda de especialistas do setor, que podem entender os dados e nos dizer o que eles significam. Cada um dos 20 capítulos do Web Almanac se concentra em um aspecto específico da Web, e cada um foi criado e revisado por especialistas em seu campo. A força do Web Almanac flui diretamente da experiência das pessoas que o escrevem.
+  </p>
 
-    <p>
-      Muitas das conclusões do Web Almanac são dignas de comemoração, mas também é um lembrete importante do trabalho ainda necessário para oferecer experiências de usuário de alta qualidade. As análises orientadas por dados em cada capítulo são uma forma de responsabilidade que todos compartilhamos pelo desenvolvimento de uma Web melhor. Não se trata de envergonhar aqueles que estão errando, mas de iluminar o caminho das melhores práticas, para que haja uma maneira clara e correta de fazer as coisas. Com a ajuda contínua da comunidade da web, esperamos fazer disso uma tradição anual, para que a cada ano possamos acompanhar nosso progresso e fazer as correções necessárias, conforme necessário.
-    </p>
+  <p>
+    Muitas das conclusões do Web Almanac são dignas de comemoração, mas também é um lembrete importante do trabalho ainda necessário para oferecer experiências de usuário de alta qualidade. As análises orientadas por dados em cada capítulo são uma forma de responsabilidade que todos compartilhamos pelo desenvolvimento de uma Web melhor. Não se trata de envergonhar aqueles que estão errando, mas de iluminar o caminho das melhores práticas, para que haja uma maneira clara e correta de fazer as coisas. Com a ajuda contínua da comunidade da web, esperamos fazer disso uma tradição anual, para que a cada ano possamos acompanhar nosso progresso e fazer as correções necessárias, conforme necessário.
+  </p>
 
-    <p>
-      Há muito o que aprender neste relatório. Portanto, comece a explorar e compartilhar suas sugestões com a comunidade para que possamos avançar coletivamente em nossa compreensão do estado da web.
-    </p>
+  <p>
+    Há muito o que aprender neste relatório. Portanto, comece a explorar e compartilhar suas sugestões com a comunidade para que possamos avançar coletivamente em nossa compreensão do estado da web.
+  </p>
 
-    <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>, criador do Web Almanac</em></p>
+  <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>, criador do Web Almanac</em></p>
 {% endblock %}
-
-{% block coming_soon %}Em breve!{% endblock %}
-
-{% block appendix %}Apêndice{% endblock %}
-{% block appendices %}Apêndices{% endblock %}
-
-{% block ebook_title %}Ebook{% endblock %}
-{% block ebook_download_short %}Ebook PDF ({{ ebook_size_in_mb }}MB){% endblock %}
-{% block ebook_download %}Faça o download do Web Almanac {{ year }} completo em formato PDF ({{ ebook_size_in_mb }}MB){% endblock %}
-{% block ebook_download_note %}(gerado em <a href="https://www.princexml.com/">www.princexml.com</a>){% endblock %}
-
-{% 
-  set localizedPartTitles = {
-    "I. Page Content": "I. Conteúdo da Página",
-    "II. User Experience": "II. Experiência de usuário",
-    "III. Content Publishing": "III. Publicação de conteúdo",
-    "IV. Content Distribution": "IV. Distribuição de Conteúdo"
-  }
-%}
-{%
-  set localizedChapterTitles = {
-    "javascript": "JavaScript",
-    "css": "CSS",
-    "markup": "Marcação",
-    "media": "Mídia",
-    "third-parties": "Terceiros",
-    "fonts": "Fontes",
-    "performance": "Desempenho",
-    "security": "Segurança",
-    "accessibility": "Acessibilidade",
-    "seo": "SEO",
-    "pwa": "PWA",
-    "mobile-web": "Web móvel",
-    "ecommerce": "Comércio eletrônico",
-    "cms": "CMS",
-    "compression": "Comércio eletrônico",
-    "caching": "Armazenamento em Cache",
-    "cdn": "CDN",
-    "page-weight": "Peso da página",
-    "resource-hints": "Dicas de Recursos",
-    "http2": "HTTP/2",
-    "privacy": "Privacidade",
-    "capabilities": "Capacidades",
-    "jamstack": "Jamstack"
-  }
-%}
-
-{% set localizedTeamNames = {
-  "analysts": "Analistas",
-  "authors": "Autores",
-  "brainstormers": "Pensadores",
-  "designers": "Designers",
-  "developers": "Desenvolvedores",
-  "editors": "Editores",
-  "leads": "Lider",
-  "reviewers": "Revisores",
-  "translators": "Tradutores",
-  }
-%}

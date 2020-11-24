@@ -58,7 +58,7 @@ def accessibility_statement(lang):
     if request.base_url[-1] == "/":
         return redirect("/%s/accessibility-statement" % (lang)), 301
     else:
-        return render_template('%s/2019/accessibility_statement.html' % (lang))
+        return render_template('%s/accessibility_statement.html' % (lang))
 
 
 @app.route('/sitemap.xml')

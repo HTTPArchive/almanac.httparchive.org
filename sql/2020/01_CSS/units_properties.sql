@@ -99,11 +99,11 @@ SELECT
 FROM (
   SELECT
     client,
-    unit,
     property,
+    unit,
     SUM(freq) AS freq,
-    SUM(SUM(freq)) OVER (PARTITION BY client, unit) AS total,
-    SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client, unit) AS pct
+    SUM(SUM(freq)) OVER (PARTITION BY client, property) AS total,
+    SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client, property) AS pct
   FROM (
     SELECT
       client,
