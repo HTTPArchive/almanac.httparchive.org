@@ -23,13 +23,12 @@ return result;
 
 SELECT
   client,
-  COUNT(0) AS total_pages,
-  COUNTIF(media_info.num_srcset_all > 0) AS srcset_all,
-  COUNTIF(media_info.num_srcset_candidates_avg >= 1 and media_info.num_srcset_candidates_avg <=3) AS srcset_candidates_1_3,
-  COUNTIF(media_info.num_srcset_candidates_avg >= 1 and media_info.num_srcset_candidates_avg <= 5) AS srcset_candidates_1_5,
-  COUNTIF(media_info.num_srcset_candidates_avg > 5 and media_info.num_srcset_candidates_avg <= 10) AS srcset_candidates_5_10,
-  COUNTIF(media_info.num_srcset_candidates_avg > 10 and media_info.num_srcset_candidates_avg <= 15) AS srcset_candidates_10_15,
-  COUNTIF(media_info.num_srcset_candidates_avg > 15 and media_info.num_srcset_candidates_avg <= 20) AS srcset_candidates_15_20
+  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_all > 0), COUNT(0)) AS pages_with_srcset_pct,
+  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_candidates_avg >= 1 and media_info.num_srcset_candidates_avg <=3), COUNT(0)) AS pages_with_srcset_candidates_1_3_pct,
+  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_candidates_avg >= 1 and media_info.num_srcset_candidates_avg <= 5), COUNT(0)) AS pages_with_srcset_candidates_1_5_pct,
+  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_candidates_avg > 5 and media_info.num_srcset_candidates_avg <= 10), COUNT(0)) AS pages_with_srcset_candidates_5_10_pct,
+  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_candidates_avg > 10 and media_info.num_srcset_candidates_avg <= 15), COUNT(0)) AS pages_with_srcset_candidates_10_15_pct,
+  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_candidates_avg > 15 and media_info.num_srcset_candidates_avg <= 20), COUNT(0)) AS pages_with_srcset_candidates_15_20_pct
 FROM
   (
   SELECT
