@@ -22,9 +22,9 @@ return result;
 
 SELECT
   client,
-  COUNT(0) AS total_pages,
-  COUNTIF(media_info.num_picture_img > 0) AS picture_all,
-  COUNTIF(media_info.num_picture_using_min_resolution > 0) AS picture_min_resolution
+  SAFE_DIVIDE(COUNTIF(media_info.num_picture_img > 0) * 100, COUNT(0)) AS pages_with_picture_pct,
+  SAFE_DIVIDE(COUNTIF(media_info.num_picture_using_min_resolution > 0) * 100, COUNTIF(media_info.num_picture_img > 0)) AS pages_with_picture_min_resolution_pct,
+  SAFE_DIVIDE(SUM(media_info.num_picture_using_min_resolution) * 100, SUM(media_info.num_picture_img)) AS occurences_of_picture_min_resolution_pct
 FROM
   (
   SELECT

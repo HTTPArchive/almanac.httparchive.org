@@ -26,14 +26,14 @@ return result;
 
 SELECT
   client,
-  ROUND(SAFE_DIVIDE(COUNTIF(markup_info.total > 0) * 100, COUNT(0)), 2) AS pages_with_img_pct,
-  ROUND(SAFE_DIVIDE(COUNTIF(markup_info.alt_missing > 0) * 100, COUNT(0)), 2) AS pages_with_alt_missing_pct,
-  ROUND(SAFE_DIVIDE(COUNTIF(markup_info.alt_blank > 0) * 100, COUNT(0)), 2) AS pages_with_alt_blank_pct,
-  ROUND(SAFE_DIVIDE(COUNTIF(markup_info.alt_present > 0) * 100, COUNT(0)), 2) AS pages_with_alt_present_pct,
+  SAFE_DIVIDE(COUNTIF(markup_info.total > 0) * 100, COUNT(0)) AS pages_with_img_pct,
+  SAFE_DIVIDE(COUNTIF(markup_info.alt_missing > 0) * 100, COUNT(0)) AS pages_with_alt_missing_pct,
+  SAFE_DIVIDE(COUNTIF(markup_info.alt_blank > 0) * 100, COUNT(0)) AS pages_with_alt_blank_pct,
+  SAFE_DIVIDE(COUNTIF(markup_info.alt_present > 0) * 100, COUNT(0)) AS pages_with_alt_present_pct,
   SUM(markup_info.total) AS img_total,
-  ROUND(SAFE_DIVIDE(SUM(markup_info.alt_missing) * 100, SUM(markup_info.total)), 2) AS imgs_alt_missing_pct,
-  ROUND(SAFE_DIVIDE(SUM(markup_info.alt_blank) * 100, SUM(markup_info.total)), 2) AS img_alt_blank_pct,
-  ROUND(SAFE_DIVIDE(SUM(markup_info.alt_present) * 100, SUM(markup_info.total)), 2) AS img_alt_present_pct
+  SAFE_DIVIDE(SUM(markup_info.alt_missing) * 100, SUM(markup_info.total)) AS imgs_alt_missing_pct,
+  SAFE_DIVIDE(SUM(markup_info.alt_blank) * 100, SUM(markup_info.total)) AS img_alt_blank_pct,
+  SAFE_DIVIDE(SUM(markup_info.alt_present) * 100, SUM(markup_info.total)) AS img_alt_present_pct
 FROM
   (
   SELECT

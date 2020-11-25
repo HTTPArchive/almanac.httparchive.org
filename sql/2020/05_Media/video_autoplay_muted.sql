@@ -34,12 +34,11 @@ return result;
 
 SELECT
   client,
-  COUNT(0) AS total_pages,
-  COUNTIF(media_info.num_video_nodes > 0) AS num_video_nodes,
-  COUNTIF('autoplay' IN UNNEST(media_info.video_nodes_attributes)) as autoplay,
-  COUNTIF('muted' IN UNNEST(media_info.video_nodes_attributes)) as muted,
-  COUNTIF('autoplay' IN UNNEST(media_info.video_nodes_attributes) 
-      AND 'muted' IN UNNEST(media_info.video_nodes_attributes)) as autoplay_muted
+  SAFE_DIVIDE(COUNTIF(media_info.num_video_nodes > 0) * 100, COUNT(0)) AS pages_with_video_nodes_pct,
+  SAFE_DIVIDE(COUNTIF('autoplay' IN UNNEST(media_info.video_nodes_attributes)) * 100, COUNTIF(media_info.num_video_nodes > 0)) AS pages_with_video_autoplay_pct,
+  SAFE_DIVIDE(COUNTIF('muted' IN UNNEST(media_info.video_nodes_attributes)) * 100, COUNTIF(media_info.num_video_nodes > 0)) AS pages_with_video_muted_pct,
+  SAFE_DIVIDE(COUNTIF('autoplay' IN UNNEST(media_info.video_nodes_attributes)
+      AND 'muted' IN UNNEST(media_info.video_nodes_attributes)) * 100, COUNTIF(media_info.num_video_nodes > 0)) AS pages_with_video_autoplay_muted_pct
 FROM
   (
   SELECT

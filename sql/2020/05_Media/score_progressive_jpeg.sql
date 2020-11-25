@@ -4,11 +4,11 @@
 
 SELECT
   client,
-  ROUND(COUNTIF(score < 0) * 100 / COUNT(0), 2) AS percent_negative,
-  ROUND(COUNTIF(score >= 0 AND score < 25) * 100 / COUNT(0), 2) AS percent_0_25,
-  ROUND(COUNTIF(score >= 25 AND score < 50) * 100 / COUNT(0), 2) AS percent_25_50,
-  ROUND(COUNTIF(score >= 50 AND score < 75) * 100 / COUNT(0), 2) AS percent_50_75,
-  ROUND(COUNTIF(score >= 75 AND score <= 100) * 100 / COUNT(0), 2) AS percent_75_100
+  COUNTIF(score < 0) * 100 / COUNT(0) AS percent_negative,
+  COUNTIF(score >= 0 AND score < 25) * 100 / COUNT(0) AS percent_0_25,
+  COUNTIF(score >= 25 AND score < 50) * 100 / COUNT(0) AS percent_25_50,
+  COUNTIF(score >= 50 AND score < 75) * 100 / COUNT(0) AS percent_50_75,
+  COUNTIF(score >= 75 AND score <= 100) * 100 / COUNT(0) AS percent_75_100
 FROM
   (
   SELECT

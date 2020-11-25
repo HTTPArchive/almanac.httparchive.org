@@ -22,11 +22,11 @@ return result;
 
 SELECT
   client,
-  ROUND(SAFE_DIVIDE(COUNTIF(media_info.num_srcset_all > 0) * 100, COUNT(0)), 2) AS pages_with_srcset_pct,
-  ROUND(SAFE_DIVIDE(COUNTIF(media_info.num_srcset_sizes > 0) * 100, COUNT(0)), 2) AS pages_with_srcset_sizes_pct,
-  ROUND(SAFE_DIVIDE((COUNTIF(media_info.num_srcset_all > 0) - COUNTIF(media_info.num_srcset_sizes > 0)) * 100, COUNT(0)), 2) AS pages_with_srcset_wo_sizes_pct,
-  ROUND(SAFE_DIVIDE(SUM(media_info.num_srcset_sizes) * 100, SUM(media_info.num_srcset_all)), 2) AS instances_of_srcset_sizes_pct,
-  ROUND(SAFE_DIVIDE((SUM(media_info.num_srcset_all) - SUM(media_info.num_srcset_sizes)) * 100, SUM(media_info.num_srcset_all)), 2) AS instances_of_srcset_wo_sizes_pct
+  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_all > 0) * 100, COUNT(0)) AS pages_with_srcset_pct,
+  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_sizes > 0) * 100, COUNT(0)) AS pages_with_srcset_sizes_pct,
+  SAFE_DIVIDE((COUNTIF(media_info.num_srcset_all > 0) - COUNTIF(media_info.num_srcset_sizes > 0)) * 100, COUNT(0)) AS pages_with_srcset_wo_sizes_pct,
+  SAFE_DIVIDE(SUM(media_info.num_srcset_sizes) * 100, SUM(media_info.num_srcset_all)) AS instances_of_srcset_sizes_pct,
+  SAFE_DIVIDE((SUM(media_info.num_srcset_all) - SUM(media_info.num_srcset_sizes)) * 100, SUM(media_info.num_srcset_all)) AS instances_of_srcset_wo_sizes_pct
 FROM
   (
   SELECT
