@@ -71,8 +71,8 @@ def render_error_template(error, status_code):
     if lang not in supported_langs:
         lang = DEFAULT_LANGUAGE.lang_code
 
-    if not (os.path.isfile(TEMPLATES_DIR + '/%s/error.html' % (lang))):
-        if os.path.isfile(TEMPLATES_DIR + '/%s/error.html' % (DEFAULT_LANGUAGE.lang_code)):
+    if not (os.path.isfile(TEMPLATES_DIR + '/%s/error.html' % lang)):
+        if os.path.isfile(TEMPLATES_DIR + '/%s/error.html' % DEFAULT_LANGUAGE.lang_code):
             lang = DEFAULT_LANGUAGE.lang_code
     return render_template('%s/error.html' % lang, lang=lang, year=year, error=error), status_code
 
