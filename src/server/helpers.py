@@ -108,7 +108,7 @@ def get_chapter_nextprev(config, chapter_slug):
         if found and next_chapter:
             break
 
-    if found is False:
+    if not found:
         return None
 
     return prev_chapter, next_chapter
