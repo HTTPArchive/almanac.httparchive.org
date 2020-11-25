@@ -24,10 +24,11 @@ return result;
 
 SELECT
   client,
-  COUNT(0) AS total_pages,
-  COUNTIF(media_info.num_srcset_all > 0) AS srcset_all,
-  COUNTIF(media_info.num_srcset_descriptor_x > 0) AS srcset_descriptor_x,
-  COUNTIF(media_info.num_srcset_descriptor_w > 0) AS srcset_descriptor_w
+  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_all > 0), COUNT(0)) AS pages_with_srcset_pct,
+  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_descriptor_x > 0), COUNT(0)) AS pages_with_srcset_descriptor_x_pct,
+  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_descriptor_w > 0), COUNT(0)) AS pages_with_srcset_descriptor_w_pct,
+  SAFE_DIVIDE(SUM(media_info.num_srcset_descriptor_x), SUM(media_info.num_srcset_all)) AS instances_of_srcset_descriptor_x_pct,
+  SAFE_DIVIDE(SUM(media_info.num_srcset_descriptor_w), SUM(media_info.num_srcset_all)) AS instances_of_srcset_descriptor_w_pct
 FROM
   (
   SELECT
