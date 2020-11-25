@@ -1,19 +1,19 @@
 #standardSQL
 # non custom metrics sql that uses regexp on response bodies
-# TODO: replace sample database with the real one when done
 # img src vs data-uri
 # count rel=preconnect
 # video with src
 # video with source
+# figure
+# figure with figcaption
+
 SELECT client,
-  COUNT(0) as total,
-  COUNTIF(has_img_data_uri) AS has_img_data_uri,
-  COUNTIF(has_img_src) AS has_img_src,
-  COUNTIF(rel_preconnect) AS rel_preconnect,
-  COUNTIF(has_video_src) AS has_video_src,
-  COUNTIF(has_video_source) AS has_video_source,
-  COUNTIF(has_figure) AS has_figure,
-  COUNTIF(has_figcaption) AS has_figcaption
+  COUNTIF(has_img_data_uri) * 100 / COUNTIF(has_img_src) AS pages_with_img_data_uri_pct,
+  COUNTIF(rel_preconnect) * 100 / COUNT(0) AS rel_preconnect,
+  COUNTIF(has_video_src) * 100 / COUNT(0) AS pages_with_video_src_pct,
+  COUNTIF(has_video_source) * 100 / COUNT(0) AS pages_with_video_source_pct,
+  COUNTIF(has_figure) * 100 / COUNT(0) AS pages_with_figure_pct,
+  COUNTIF(has_figcaption) * 100 / COUNT(0) AS pages_with_figcaption_pct
 FROM
   (
   SELECT
@@ -27,7 +27,7 @@ FROM
     regexp_contains(body, r'<figure[^><]*>') as has_figure,
     regexp_contains(body, r'<figure[^><]*>.*?<figcaption[^><]*>.*?</figure>') as has_figcaption
   FROM
-    `httparchive.sample_data.summary_response_bodies_firstHtml`
+    `httparchive.almanac.summary_response_bodies`
   WHERE
     date = '2020-08-01' AND
     firstHtml
