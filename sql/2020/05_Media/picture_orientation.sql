@@ -22,9 +22,8 @@ return result;
 
 SELECT
   client,
-  COUNT(0) AS total_pages,
-  COUNTIF(media_info.num_picture_img > 0) AS picture_pages_count,
-  COUNTIF(media_info.num_picture_using_orientation > 0) AS picture_orientation_pages_count
+  SAFE_DIVIDE(COUNTIF(media_info.num_picture_using_orientation > 0), COUNTIF(media_info.num_picture_img > 0)) AS pages_with_picture_orientation_pct,
+  SAFE_DIVIDE(SUM(media_info.num_picture_using_orientation), SUM(media_info.num_picture_img)) AS occurences_of_picture_orientation_pct
 FROM
   (
   SELECT
