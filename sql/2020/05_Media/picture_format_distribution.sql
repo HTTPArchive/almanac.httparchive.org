@@ -36,18 +36,16 @@ return result;
 
 SELECT
   client,
-  COUNT(0) AS total_pages,
-  COUNTIF(media_info.num_picture_img > 0) AS num_picture_img,
-  COUNTIF(media_info.num_picture_formats > 0) AS num_picture_formats,
-  COUNTIF(media_info.num_picture_formats = 1) AS num_picture_formats_1,
-  COUNTIF(media_info.num_picture_formats = 2) AS num_picture_formats_2,
-  COUNTIF(media_info.num_picture_formats = 3) AS num_picture_formats_3,
-  COUNTIF(media_info.num_picture_formats >= 4) AS num_picture_formats_4_and_more,
-  COUNTIF('image/webp' IN UNNEST(media_info.picture_formats)) as num_webp,
-  COUNTIF('image/gif' IN UNNEST(media_info.picture_formats)) as num_gif,
-  COUNTIF('image/jpg' IN UNNEST(media_info.picture_formats)) as num_jpg,
-  COUNTIF('image/png' IN UNNEST(media_info.picture_formats)) as num_png,
-  COUNTIF('image/avif' IN UNNEST(media_info.picture_formats)) as num_avif
+  SAFE_DIVIDE(COUNTIF(media_info.num_picture_formats > 0), COUNTIF(media_info.num_picture_img > 0)) AS pages_with_picture_formats_pct,
+  SAFE_DIVIDE(COUNTIF(media_info.num_picture_formats = 1), COUNTIF(media_info.num_picture_formats > 0)) AS pages_with_picture_formats_1_pct,
+  SAFE_DIVIDE(COUNTIF(media_info.num_picture_formats = 2), COUNTIF(media_info.num_picture_formats > 0)) AS pages_with_picture_formats_2_pct,
+  SAFE_DIVIDE(COUNTIF(media_info.num_picture_formats = 3), COUNTIF(media_info.num_picture_formats > 0)) AS pages_with_picture_formats_3_pct,
+  SAFE_DIVIDE(COUNTIF(media_info.num_picture_formats >= 4), COUNTIF(media_info.num_picture_formats > 0)) AS pages_with_picture_formats_4_and_more_pct,
+  SAFE_DIVIDE(COUNTIF('image/webp' IN UNNEST(media_info.picture_formats)), COUNTIF(media_info.num_picture_formats > 0)) as pages_with_webp_pct,
+  SAFE_DIVIDE(COUNTIF('image/gif' IN UNNEST(media_info.picture_formats)), COUNTIF(media_info.num_picture_formats > 0)) as pages_with_gif_pct,
+  SAFE_DIVIDE(COUNTIF('image/jpg' IN UNNEST(media_info.picture_formats)), COUNTIF(media_info.num_picture_formats > 0)) as pages_with_jpg_pct,
+  SAFE_DIVIDE(COUNTIF('image/png' IN UNNEST(media_info.picture_formats)), COUNTIF(media_info.num_picture_formats > 0)) as pages_with_png_pct,
+  SAFE_DIVIDE(COUNTIF('image/avif' IN UNNEST(media_info.picture_formats)), COUNTIF(media_info.num_picture_formats > 0)) as pages_with_avif_pct
 FROM
   (
   SELECT
