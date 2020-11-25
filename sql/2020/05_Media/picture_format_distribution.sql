@@ -36,16 +36,16 @@ return result;
 
 SELECT
   client,
-  SAFE_DIVIDE(COUNTIF(media_info.num_picture_formats > 0), COUNTIF(media_info.num_picture_img > 0)) AS pages_with_picture_formats_pct,
-  SAFE_DIVIDE(COUNTIF(media_info.num_picture_formats = 1), COUNTIF(media_info.num_picture_formats > 0)) AS pages_with_picture_formats_1_pct,
-  SAFE_DIVIDE(COUNTIF(media_info.num_picture_formats = 2), COUNTIF(media_info.num_picture_formats > 0)) AS pages_with_picture_formats_2_pct,
-  SAFE_DIVIDE(COUNTIF(media_info.num_picture_formats = 3), COUNTIF(media_info.num_picture_formats > 0)) AS pages_with_picture_formats_3_pct,
-  SAFE_DIVIDE(COUNTIF(media_info.num_picture_formats >= 4), COUNTIF(media_info.num_picture_formats > 0)) AS pages_with_picture_formats_4_and_more_pct,
-  SAFE_DIVIDE(COUNTIF('image/webp' IN UNNEST(media_info.picture_formats)), COUNTIF(media_info.num_picture_formats > 0)) as pages_with_webp_pct,
-  SAFE_DIVIDE(COUNTIF('image/gif' IN UNNEST(media_info.picture_formats)), COUNTIF(media_info.num_picture_formats > 0)) as pages_with_gif_pct,
-  SAFE_DIVIDE(COUNTIF('image/jpg' IN UNNEST(media_info.picture_formats)), COUNTIF(media_info.num_picture_formats > 0)) as pages_with_jpg_pct,
-  SAFE_DIVIDE(COUNTIF('image/png' IN UNNEST(media_info.picture_formats)), COUNTIF(media_info.num_picture_formats > 0)) as pages_with_png_pct,
-  SAFE_DIVIDE(COUNTIF('image/avif' IN UNNEST(media_info.picture_formats)), COUNTIF(media_info.num_picture_formats > 0)) as pages_with_avif_pct
+  ROUND(SAFE_DIVIDE(COUNTIF(media_info.num_picture_formats > 0) * 100, COUNTIF(media_info.num_picture_img > 0)), 2) AS pages_with_picture_formats_pct,
+  ROUND(SAFE_DIVIDE(COUNTIF(media_info.num_picture_formats = 1) * 100, COUNTIF(media_info.num_picture_formats > 0)), 2) AS pages_with_picture_formats_1_pct,
+  ROUND(SAFE_DIVIDE(COUNTIF(media_info.num_picture_formats = 2) * 100, COUNTIF(media_info.num_picture_formats > 0)), 2) AS pages_with_picture_formats_2_pct,
+  ROUND(SAFE_DIVIDE(COUNTIF(media_info.num_picture_formats = 3) * 100, COUNTIF(media_info.num_picture_formats > 0)), 2) AS pages_with_picture_formats_3_pct,
+  ROUND(SAFE_DIVIDE(COUNTIF(media_info.num_picture_formats >= 4) * 100, COUNTIF(media_info.num_picture_formats > 0)), 2) AS pages_with_picture_formats_4_and_more_pct,
+  ROUND(SAFE_DIVIDE(COUNTIF('image/webp' IN UNNEST(media_info.picture_formats)) * 100, COUNTIF(media_info.num_picture_formats > 0)), 2) AS pages_with_webp_pct,
+  ROUND(SAFE_DIVIDE(COUNTIF('image/gif' IN UNNEST(media_info.picture_formats)) * 100, COUNTIF(media_info.num_picture_formats > 0)), 2) AS pages_with_gif_pct,
+  ROUND(SAFE_DIVIDE(COUNTIF('image/jpg' IN UNNEST(media_info.picture_formats)) * 100, COUNTIF(media_info.num_picture_formats > 0)), 2) AS pages_with_jpg_pct,
+  ROUND(SAFE_DIVIDE(COUNTIF('image/png' IN UNNEST(media_info.picture_formats)) * 100, COUNTIF(media_info.num_picture_formats > 0)), 2) AS pages_with_png_pct,
+  ROUND(SAFE_DIVIDE(COUNTIF('image/avif' IN UNNEST(media_info.picture_formats)) * 100, COUNTIF(media_info.num_picture_formats > 0)), 2) AS pages_with_avif_pct
 FROM
   (
   SELECT

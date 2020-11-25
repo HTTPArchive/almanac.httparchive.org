@@ -23,12 +23,12 @@ return result;
 
 SELECT
   client,
-  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_all > 0), COUNT(0)) AS pages_with_srcset_pct,
-  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_candidates_avg >= 1 and media_info.num_srcset_candidates_avg <=3), COUNT(0)) AS pages_with_srcset_candidates_1_3_pct,
-  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_candidates_avg >= 1 and media_info.num_srcset_candidates_avg <= 5), COUNT(0)) AS pages_with_srcset_candidates_1_5_pct,
-  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_candidates_avg > 5 and media_info.num_srcset_candidates_avg <= 10), COUNT(0)) AS pages_with_srcset_candidates_5_10_pct,
-  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_candidates_avg > 10 and media_info.num_srcset_candidates_avg <= 15), COUNT(0)) AS pages_with_srcset_candidates_10_15_pct,
-  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_candidates_avg > 15 and media_info.num_srcset_candidates_avg <= 20), COUNT(0)) AS pages_with_srcset_candidates_15_20_pct
+  ROUND(SAFE_DIVIDE(COUNTIF(media_info.num_srcset_all > 0) * 100, COUNT(0)), 2) AS pages_with_srcset_pct,
+  ROUND(SAFE_DIVIDE(COUNTIF(media_info.num_srcset_candidates_avg >= 1 and media_info.num_srcset_candidates_avg <=3) * 100, COUNTIF(media_info.num_srcset_all > 0)), 2) AS pages_with_srcset_candidates_1_3_pct,
+  ROUND(SAFE_DIVIDE(COUNTIF(media_info.num_srcset_candidates_avg >= 1 and media_info.num_srcset_candidates_avg <= 5) * 100, COUNTIF(media_info.num_srcset_all > 0)), 2) AS pages_with_srcset_candidates_1_5_pct,
+  ROUND(SAFE_DIVIDE(COUNTIF(media_info.num_srcset_candidates_avg > 5 and media_info.num_srcset_candidates_avg <= 10) * 100, COUNTIF(media_info.num_srcset_all > 0)), 2) AS pages_with_srcset_candidates_5_10_pct,
+  ROUND(SAFE_DIVIDE(COUNTIF(media_info.num_srcset_candidates_avg > 10 and media_info.num_srcset_candidates_avg <= 15) * 100, COUNTIF(media_info.num_srcset_all > 0)), 2) AS pages_with_srcset_candidates_10_15_pct,
+  ROUND(SAFE_DIVIDE(COUNTIF(media_info.num_srcset_candidates_avg > 15 and media_info.num_srcset_candidates_avg <= 20) * 100, COUNTIF(media_info.num_srcset_all > 0)), 2) AS pages_with_srcset_candidates_15_20_pct
 FROM
   (
   SELECT
