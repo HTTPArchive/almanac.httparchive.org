@@ -1,194 +1,27 @@
-{% extends "base/2019/base.html" %}
+{% extends "%s/base.html" % lang %}
 
-{% block description %}Web Almanac — это ежегодный отчёт о состоянии веба на основе данных и тенденций, собранных HTTP Archive и с учётом мнения сообщества.{% endblock %}
-
-{% block twitter_image_alt %}Web Almanac за {{ year }} год{% endblock %}
-
-{% block skip_navigation %}Пропустить навигацию{% endblock %}
-
-{% block organization %}Web Almanac от HTTP Archive{% endblock %}
-{% block web_almanac_logo %}
-  <span class="wa">Web Almanac</span>
-  <span class="line-group">
-    <span class="pre">От</span>
-    <span class="ha">HTTP Archive</span>
-  </span>
-{% endblock %}
-
-{% block mission %}
-<p>
-Наша миссия заключается в том, чтобы объединить необработанные статистические данные и тренды HTTP Archive, опираясь на опыт веб-сообщества. Web Almanac — это всеобъемлющий отчёт о состоянии веба, подкрепленный реальными данными и подтверждённый доверенными экспертами в области веба. Он состоит из 20 глав, охватывающих аспекты содержания страниц, особенности пользовательского взаимодействия, публикации и распространения.
-</p>
-{% endblock %}
-
-{% block read_last_years_almanac %}Прочитать отчёт Web Almanac за {{ year | int - 1 }} год{% endblock %}
-
-{% block http_archive_link %}Главная страница HTTP Archive{% endblock %}
-
-{% block page_navigation %}Навигация по страницам{% endblock %}
-
-{% block help_translate %}Помочь с переводом{% endblock %}
-{% block translation_not_available %}На английском, нет перевода на русском{% endblock %}
-{% block language_switcher %}Переключатель языка{% endblock %}
-{% block year_switcher %}Переключатель года{% endblock %}
-{% block table_of_contents_switcher %}Переключатель по содержимому{% endblock %}
-
-{% block home %}Главная страница{% endblock %}
-{% block table_of_contents_title %}Содержание{% endblock %}
-{% block contributors_title %}Участники{% endblock %}
-{% block methodology_title %}Методология{% endblock %}
-
-{% block part %}Часть{% endblock %}
-{% block chapter %}Глава{% endblock %}
-
-{% block start_exploring %}Перейти к результатам{% endblock %}
-
-{% block menu_title %}Меню страницы{% endblock %}
-{% block open_the_menu %}Открыть меню{% endblock %}
-{% block close_the_menu %}Закрыть меню{% endblock %}
-
-{% block index_nav_title %}Глава содержания{% endblock %}
-{% block index_title %}Указатель{% endblock %}
-{% block open_the_index %}Открыть содержание{% endblock %}
-{% block close_the_index %}Закрыть содержание{% endblock %}
-
-{% block and %}и{% endblock %}
-{% block comma %}, {% endblock %}
-
-{% block open %}Открыть{% endblock %}
-{% block close %}Закрыть{% endblock %}
-
-{% macro figure_text(metadata, id) %}Фигура {{ figure_id(metadata, id) }}.{% endmacro %}
-{% macro show_description(metadata, id) %}Показать описание фигуры {{ figure_id(metadata, id) }}{% endmacro %}
-{% macro hide_description(metadata, id) %}Скрыть описание фигуры {{ figure_id(metadata, id) }}{% endmacro %}
-
-{% block written_by_before %}Авторы:{% endblock %}
-{% block reviewed_by_before %}Редакторы:{% endblock %}
-{% block translated_by_before %}Переводчики:{% endblock %}
-{% block analysis_by_before %}Аналитики:{% endblock %}
-{% block written_by_after %}{% endblock %}
-{% block reviewed_by_after %}{% endblock %}
-{% block translated_by_after %}{% endblock %}
-{% block analysis_by_after %}{% endblock %}
-
-{% block author %}Автор{% endblock %}
-{% block authors %}Авторы{% endblock %}
-
-{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} на Twitter{% endmacro %}
-{% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} на GitHub{% endmacro %}
-{% macro onLinkedIn(authorName) %}{{authorName}} на LinkedIn{% endmacro %}
-{% macro website(authorName) %}Сайт {{authorName}}{% endmacro %}
-
-{% macro edition(year) %}Издание от {{ year }} года{% endmacro %}
-
-{% block footer_title %}Навигация по футеру{% endblock %}
-{% block copyright %}© Web Almanac. Распространяется по лицензии <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
-{% block accessibility_statement %}Информация о доступности{% endblock %}
-
-{% block featured_chapter %}Лучшая глава{% endblock %}
-{% block featured_chapter_last_year %}Лучшая глава<br/>в Web Almanac из {{ year|int -1 }} года{% endblock %}
-
-{# Check if read_chapter already defined in child template as macros can't be overridden #}
-{% if not read_chapter %}
-{% macro read_chapter(chapter) %}Перейти к главе <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
-{% endif %}
-{% if not read_last_years_chapter %}
-{% macro read_last_years_chapter(chapter) %}Перейти к главе <span class="featured-chapter-name">{{ chapter }}</span> от {{ year|int-1 }} года{% endmacro %}
-{% endif %}
-
-{% block contributors_description %}
-Проект Web Almanac работает благодаря упорному труду веб-сообщества. {{ self.contributors() }} людей добровольно предложили свою помощь, посвятив бесчисленное количество часов планированию, исследованию, написанию и публикации контента.
-{% endblock %}
-{% block contributors_link %}Посмотреть список всех участников{% endblock %}
-
-{% block methodology_stat_1_title %}Количество проверенных сайтов{% endblock %}
 {% block methodology_stat_1 %}5.8 млн{% endblock %}
-{% block methodology_stat_2_title %}Размер обработанных данных{% endblock %}
 {% block methodology_stat_2 %}20.9 Тб{% endblock %}
 {% block methodology_description %}
 Если не указано иное, метрики во всех 20 главах Web Almanac получены из набора данных HTTP Archive. HTTP Archive — это управляемый сообществом проект по исследованию веба с 2010 года. При помощи WebPageTest и Lighthouse ежемесячно проверяются метаданные около 6 миллионов сайтов, которые затем вносятся в общедоступную базу данных BigQuery для последующего анализа. В качестве основы для метрик Web Almanac был использован набор данных за июль 2019 года. Дополнительную информацию смотрите на странице по методологии.
 {% endblock %}
-{% block methodology_link %}Узнать подробнее про методологию{% endblock %}
-
-{% block introduction %}Введение{% endblock %}
-
-{% block foreword_title %}Предисловие{% endblock %}
 
 {% block foreword %}
-    <p>
-      Открытый веб — это удивительно сложная и развивающаяся сеть технологий. Целые отрасли и карьеры создаются в вебе и для достижения успеха полагаются на его активную экосистему. Сложно понять веб, каким бы важным он не был. С момента своего запуска в 2010 году задачей проекта HTTP Archive является отслеживание развития веба, с чем он справляется до сих пор. Однако был один серьёзный недостаток: придать смысла набору данных, собранном проектом HTTP Archive, чтобы облегчить понимание сообществу того, как работает веб. Вот тогда зародилась идея нового проекта Web Almanac.
-    </p>
+  <p>
+    Открытый веб — это удивительно сложная и развивающаяся сеть технологий. Целые отрасли и карьеры создаются в вебе и для достижения успеха полагаются на его активную экосистему. Сложно понять веб, каким бы важным он не был. С момента своего запуска в 2010 году задачей проекта HTTP Archive является отслеживание развития веба, с чем он справляется до сих пор. Однако был один серьёзный недостаток: придать смысла набору данных, собранном проектом HTTP Archive, чтобы облегчить понимание сообществу того, как работает веб. Вот тогда зародилась идея нового проекта Web Almanac.
+  </p>
 
-    <p>
-      Задача Web Almanac — собрать воедино сокровища данных, которые ранее были доступны только отважным датамайнерам, и представить их в лёгкой и понятой форме. Это стало возможным при помощи экспертов, специализирующихся в области обработки данных. Каждая из 20 глав в Web Almanac посвящена определённому аспекту веба, и написана и рецензирована экспертами в своей области. Успех Web Almanac напрямую зависит от опыта и знаний его авторов.
-    </p>
+  <p>
+    Задача Web Almanac — собрать воедино сокровища данных, которые ранее были доступны только отважным датамайнерам, и представить их в лёгкой и понятой форме. Это стало возможным при помощи экспертов, специализирующихся в области обработки данных. Каждая из 20 глав в Web Almanac посвящена определённому аспекту веба, и написана и рецензирована экспертами в своей области. Успех Web Almanac напрямую зависит от опыта и знаний его авторов.
+  </p>
 
-    <p>
-      Многие выводы, сделанные в Web Almanac, заслуживают внимания и похвалы, но они также напоминают нам о той работе, которую ещё предстоит проделать, чтобы обеспечить высокое качество функционирования веба для его пользователей. Представленный в каждой главе анализ на основе полученных данных указывает на то, что все мы одинаково разделяем идеи развития более лучшего веба. И в данном случае речь не о том, чтобы как-то показать пальцем на тех, кто делает что-то не так, а в том, чтобы указать путь к рекомендуемым практикам, чтобы составить понятный и правильный план действия. С постоянной помощью веб-сообщества мы надеемся сделать подобное ежегодной традицией, каждый год отслеживая прогресс и корректируя намеченный курс, если это нужно.
-    </p>
+  <p>
+    Многие выводы, сделанные в Web Almanac, заслуживают внимания и похвалы, но они также напоминают нам о той работе, которую ещё предстоит проделать, чтобы обеспечить высокое качество функционирования веба для его пользователей. Представленный в каждой главе анализ на основе полученных данных указывает на то, что все мы одинаково разделяем идеи развития более лучшего веба. И в данном случае речь не о том, чтобы как-то показать пальцем на тех, кто делает что-то не так, а в том, чтобы указать путь к рекомендуемым практикам, чтобы составить понятный и правильный план действия. С постоянной помощью веб-сообщества мы надеемся сделать подобное ежегодной традицией, каждый год отслеживая прогресс и корректируя намеченный курс, если это нужно.
+  </p>
 
-    <p>
-      Из этого отчёта можно многое почерпнуть для себя интересного, поэтому приступите к его изучению и поделитесь своими мыслями с сообществом, чтобы мы все вместе смогли лучше понять состояние веба.
-    </p>
+  <p>
+    Из этого отчёта можно многое почерпнуть для себя интересного, поэтому приступите к его изучению и поделитесь своими мыслями с сообществом, чтобы мы все вместе смогли лучше понять состояние веба.
+  </p>
 
-    <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Рик Вискоми (Rick Viscomi)</a>, создатель Web Almanac</em></p>
+  <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Рик Вискоми (Rick Viscomi)</a>, создатель Web Almanac</em></p>
 {% endblock %}
-
-{% block coming_soon %}Уже скоро!{% endblock %}
-
-{% block appendix %}Приложение{% endblock %}
-{% block appendices %}Приложения{% endblock %}
-
-{% block ebook_title %}Электронная книга{% endblock %}
-{% block ebook_download_short %}Отчёт в формате PDF ({{ ebook_size_in_mb }} Мб){% endblock %}
-{% block ebook_download %}Скачать полный отчёт Web Almanac за {{ year }} год в формате PDF ({{ ebook_size_in_mb }} Мб){% endblock %}
-{% block ebook_download_note %}(сгенерировано с помощью <a href="https://www.princexml.com/">www.princexml.com</a>){% endblock %}
-
-{%
-  set localizedPartTitles = {
-    "I. Page Content": "I. Контент страницы",
-    "II. User Experience": "II. Пользовательские ощущения",
-    "III. Content Publishing": "III. Публикация контента",
-    "IV. Content Distribution": "IV. Распространение контента"
-  }
-%}
-{%
-  set localizedChapterTitles = {
-    "javascript": "JavaScript",
-    "css": "CSS",
-    "markup": "Разметка",
-    "media": "Медиа",
-    "third-parties": "Сторонний код",
-    "fonts": "Шрифты",
-    "performance": "Производительность",
-    "security": "Безопасность",
-    "accessibility": "Доступность",
-    "seo": "SEO",
-    "pwa": "PWA",
-    "mobile-web": "Мобильный веб",
-    "ecommerce": "Электронная коммерция",
-    "cms": "CMS",
-    "compression": "Сжатие",
-    "caching": "Кеширование",
-    "cdn": "CDN",
-    "page-weight": "Размер страницы",
-    "resource-hints": "Ресурсные подсказки",
-    "http2": "HTTP/2",
-    "privacy": "Приватность",
-    "capabilities": "Возможности",
-    "jamstack": "Jamstack"
-  }
-%}
-
-{% set localizedTeamNames = {
-  "analysts": "Аналитики",
-  "authors": "Авторы",
-  "brainstormers": "Участники мозгового штурма",
-  "designers": "Дизайнеры",
-  "developers": "Разработчики",
-  "editors": "Редакторы",
-  "leads": "Руководители проекта",
-  "reviewers": "Проверяющие",
-  "translators": "Переводчики",
-  }
-%}

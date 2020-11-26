@@ -71,14 +71,12 @@ const generate_ebooks = async (ebook_chapters,configs) => {
 };
 
 const write_template = async (language, year, ebook) => {
-  const template = `templates/base/${year}/ebook.ejs.html`;
+  const template = `templates/base/ebook.ejs.html`;
   const path = `templates/${language}/${year}/ebook.html`;
 
-  if (fs.existsSync(template)) {
-    let html = await ejs.renderFile(template, { ebook });
-    await fs.outputFile(path, html, 'utf8');
-    await size_of(path);
-  }
+  let html = await ejs.renderFile(template, { ebook });
+  await fs.outputFile(path, html, 'utf8');
+  await size_of(path);
 };
 
 module.exports = {

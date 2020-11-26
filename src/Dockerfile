@@ -1,4 +1,4 @@
-ARG     PYVER=3
+ARG     PYVER=3.8
 FROM    python:${PYVER}
 
 # Enable unbuffered STDOUT logging
