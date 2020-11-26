@@ -104,7 +104,7 @@ The 1 CMS with a share over 2% is WordPress, which has a 31% usage share. This i
   )
 }}
 
-Joomla and Drupal have lost 0.18% and 0.23% adoption share respectively, whilst Wix and Squarespace have gained 0.38% and 0.21% adoption share respectively. WordPress has gained 2.14% adoption share in the last year, which is a larger increase than the total share for Joomla, the next most popular CMS.
+Joomla and Drupal have lost 8% and 10% of their adoption share respectively, whilst Wix and Squarespace have gained an extra 41% and 28% adoption share respectively. WordPress has gained an extra 7% adoption share in the last year, which is a larger absolute increase than the total share for Joomla, the next most popular CMS.
 
 These numbers are broadly consistent when split across desktop and mobile:
 
@@ -118,7 +118,7 @@ These numbers are broadly consistent when split across desktop and mobile:
   )
 }}
 
-For WordPress the numbers are within 0.1%; for the other CMSs the difference is larger. Drupal and Squarespace have 16.7 and 26.3% more websites on desktop than mobile respectively, whilst Joomla and Wix have 7.5 and 15.2% more times on mobile than desktop.
+For WordPress the numbers are very similar; for the other CMSs the difference is larger. Drupal and Squarespace have 16.7 and 26.3% more websites on desktop than mobile respectively, whilst Joomla and Wix have 7.5 and 15.2% more times on mobile than desktop.
 
 The 0.1 to 1% adoption share category sees significantly more movement. These account for CMSs powering up to 50,000 websites.
 
@@ -235,11 +235,11 @@ FID is very fast for the average CMS website on desktop – only Wix scores lowe
   )
 }}
 
-The FID scores are generally good here, but this does not translate to similar LCP scores. As suggested, the weight of individual pages on CMSs in addition to mobile connection quality, could play a role in the performance gaps that we see here. There is a small margin of difference between the resources shipped to desktop and mobile versions of a website. Last year we noted that optimizing for the mobile experience was necessary. Average scores have increased on desktop and mobile, but further attention is required here.
+The FID scores are generally good here, but this does not translate to similar LCP scores. As suggested, the weight of individual pages on CMSs in addition to mobile connection quality or the lower performance of mobile devices relative to desktop, could play a role in the performance gaps that we see here. There is a small margin of difference between the resources shipped to desktop and mobile versions of a website. Last year we noted that optimizing for the mobile experience was necessary. Average scores have increased on desktop and mobile, but further attention is required here.
 
 ### Cumulative Layout Shift
 
-Cumulative Layout Shift (CLS) measures the instability of content on a web page within the first 500ms of user input. CLS measures any layout changes which happen after user input. This is important on mobile in particular, where the user will tap where they want to take an action – such as a search bar – only for the location to move as additional images, ads, or similar load.
+Cumulative Layout Shift (CLS) measures the instability of content on a web page after the first 500ms of user input, and after the first user input. This is important on mobile in particular, where the user will tap where they want to take an action – such as a search bar – only for the location to move as additional images, ads, or similar load.
 
 A score of 0.1 or below is good, over 0.25 is poor, and anything in between needs improvement.
 
@@ -291,7 +291,7 @@ Each accessibility audit is pass or fail, but unlike other Lighthouse audits, a 
   )
 }}
 
-The median Lighthouse accessibility score for the top 5 CMSs is all above 80%. Across all CMSs, the average median Lighthouse score is 78%, with a minimum of 44% and a maximum of 98%. We thus see that the top 5 CMSs are better than average, with some better than others. Wix and Squarespace have the highest scores of the top 5. Possibly these platforms being proprietary helps here. 
+The median Lighthouse accessibility score for the top 5 CMSs is all above 80%. Across all CMSs, the average median Lighthouse score is 78%, with a minimum of 44% and a maximum of 98%. We thus see that the top 5 CMSs are better than average, with some better than others. Wix and Squarespace have the highest scores of the top 5. Possibly these platforms being proprietary helps here, as they're able to control the sites which are created more closely.
 
 The bar should be higher here, though. An average score of 78% across all CMSs still leaves significant room for improvement, and the maximum score of 98% shows even the “best” CMS for accessibility compliance has room for improvement. Improving accessibility is essential and urgent work.
 
@@ -368,7 +368,7 @@ Video contributes a larger percentage per resource type here. Making video more 
 
 Of the top 5 CMSs, only Wix automatically converts and serves images in the WebP format. WordPress, Drupal, and Joomla support WebP with extensions, whilst at the time of writing Squarespace does not support WebP.
 
-As we saw earlier, Wix had the lowest proportion of sites with a “good” LCP. We can make a reasonable link between page weight and page load time, so clearly automatically converting to WebP is not a solution in isolation to page weights and thus CO2 emissions. It is, however, a more efficient format and improved native support for the format by the most popular CMSs would be beneficial.
+As we saw earlier, Wix had the lowest proportion of sites with a “good” LCP. While we know that Wix is making efficient use of image bytes in WebP, there are clearly other issues affecting its LCP performance beyond image formats that we aren't controlling for here. WebP is, however, a more efficient format and improved native support for the format by the most popular CMSs would be beneficial.
 
 Image formats are one mechanism for making images more efficient. Other mechanisms such as "lazy loading" images would benefit from future research.
 
