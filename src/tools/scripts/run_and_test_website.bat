@@ -18,7 +18,6 @@ wmic Path win32_process Where "Caption Like '%%node.exe%%' AND CommandLine Like 
 echo "Installing and testing python environment"
 python -m pip install --upgrade pip
 pip install -r requirements.txt
-pytest
 
 echo "Installing node modules"
 call npm install
@@ -32,6 +31,9 @@ rem # Sleep for 5 seconds to make sure server is up
 timeout /t 5 /nobreak
 rem # Use sleep as well in case running in GitBash where above command fails
 sleep 5
+
+echo "Running pytest"
+npm run pytest
 
 echo "Testing website"
 call npm run test

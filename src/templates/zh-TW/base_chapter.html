@@ -1,0 +1,22 @@
+{% extends "base/base_chapter.html" %}
+
+{% block title %}{{ metadata.get('title') }} | {{ year }} | Web Almanac 精粹自 HTTP Archive{% endblock %}
+
+{% block description %}{{ metadata.get('description',metadata.get('title') + ' 章節 ' + year + ' Web Almanac 探索使用狀況 ' + metadata.get('description',metadata.get('title')) + ' 在網路中。') }}{% endblock %}
+
+{% block twitter_image_alt %}圖片 {{ metadata.get('title') }} 章節 {{ year }} Web Almanac{% endblock %}
+
+{% block unedited %}[Unedited]{% endblock %}
+
+{% block prev_next_title %}上章節和下章節導航{% endblock %}
+
+{% block explore_the_results %}探索結果{% endblock %}
+{% block discuss_this_chapter %}討論本章節{% endblock %}
+{% block comment %}評論{% endblock %}
+{% block comments %}評論{% endblock %}
+{% block comments_fallback %}評論{% endblock %}
+{% block queries %}查看查詢{% endblock %}
+{% block results %}查看結果{% endblock %}
+
+{% block previous %}上章節 (按 'p' 或 ','){% endblock %}
+{% block next %}下章節 (按 'n' 或 '.'){% endblock %}

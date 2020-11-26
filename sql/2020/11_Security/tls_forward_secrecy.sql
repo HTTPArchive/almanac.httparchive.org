@@ -11,10 +11,14 @@ FROM (
     JSON_EXTRACT(payload, '$._securityDetails.keyExchange') AS key_exchange,
     JSON_EXTRACT_SCALAR(payload, '$._securityDetails.protocol') AS protocol
   FROM
-   `httparchive.almanac.requests`)
+    `httparchive.almanac.requests`
+  WHERE
+    date = '2020-08-01'
+  )
 WHERE
   protocol IS NOT NULL
 GROUP BY
   client
 ORDER BY
+  client,
   pct DESC
