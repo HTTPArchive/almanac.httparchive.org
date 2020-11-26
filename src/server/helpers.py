@@ -108,6 +108,9 @@ def get_chapter_nextprev(config, chapter_slug):
         if found and next_chapter:
             break
 
+    if not found:
+        return None
+
     return prev_chapter, next_chapter
 
 
@@ -135,9 +138,13 @@ def convert_old_image_path(folder):
 # anyway, so I think this is the cleanest.
 def get_ebook_methodology(lang, year):
     methodology_template = render_template('%s/%s/methodology.html' % (lang, year))
+    if not isinstance(methodology_template, str):
+        return False
     methodology_maincontent = re.search('<article id="maincontent" class="content">(.+?)</article>',
                                         methodology_template, re.DOTALL | re.MULTILINE)
-    if not methodology_maincontent:
+
+    # Can't test this as should never end up here unless bad template to 'pragma no cover' it is
+    if not methodology_maincontent:  # pragma no cover
         return False
 
     methodology_maincontent = methodology_maincontent.group(1)
