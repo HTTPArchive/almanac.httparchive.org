@@ -71,12 +71,9 @@ def render_error_template(error, status_code):
     if lang not in supported_langs:
         lang = DEFAULT_LANGUAGE.lang_code
 
-    if not (os.path.isfile(TEMPLATES_DIR + '/%s/%s/error.html' % (lang, year))):
-        if os.path.isfile(TEMPLATES_DIR + '/%s/%s/error.html' % (lang, DEFAULT_YEAR)):
-            year = DEFAULT_YEAR
-        elif os.path.isfile(TEMPLATES_DIR + '/%s/%s/error.html' % (DEFAULT_LANGUAGE.lang_code, DEFAULT_YEAR)):
+    if not (os.path.isfile(TEMPLATES_DIR + '/%s/error.html' % lang)):
+        if os.path.isfile(TEMPLATES_DIR + '/%s/error.html' % DEFAULT_LANGUAGE.lang_code):
             lang = DEFAULT_LANGUAGE.lang_code
-            year = DEFAULT_YEAR
     return render_template('%s/error.html' % lang, lang=lang, year=year, error=error), status_code
 
 
@@ -111,6 +108,9 @@ def get_chapter_nextprev(config, chapter_slug):
         if found and next_chapter:
             break
 
+    if not found:
+        return None
+
     return prev_chapter, next_chapter
 
 
@@ -138,9 +138,13 @@ def convert_old_image_path(folder):
 # anyway, so I think this is the cleanest.
 def get_ebook_methodology(lang, year):
     methodology_template = render_template('%s/%s/methodology.html' % (lang, year))
+    if not isinstance(methodology_template, str):
+        return False
     methodology_maincontent = re.search('<article id="maincontent" class="content">(.+?)</article>',
                                         methodology_template, re.DOTALL | re.MULTILINE)
-    if not methodology_maincontent:
+
+    # Can't test this as should never end up here unless bad template to 'pragma no cover' it is
+    if not methodology_maincontent:  # pragma no cover
         return False
 
     methodology_maincontent = methodology_maincontent.group(1)

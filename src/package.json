@@ -22,7 +22,7 @@
     "lint": "run-script-os",
     "lint:darwin:linux": "docker container run -it --rm -v \"$PWD/..\":/app -w /app/src --entrypoint=./tools/scripts/run_linter_locally.sh github/super-linter",
     "lint:win32": "docker container run --rm -v \"%cd%\\..\":/app -w /app/src --entrypoint=./tools/scripts/run_linter_locally.sh github/super-linter",
-    "pytest": "pytest --cov server --cov-fail-under=65 --cov-report=term-missing -s",
+    "pytest": "pytest --cov server --cov-fail-under=85 --cov-report=term-missing -s",
     "stage": "./tools/scripts/deploy.sh -n",
     "start": "run-script-os",
     "start:darwin:linux": "./tools/scripts/run_and_test_website.sh -d",
