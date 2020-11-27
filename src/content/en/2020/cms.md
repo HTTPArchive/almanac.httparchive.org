@@ -205,7 +205,7 @@ In this section we take a look at four important factors which can shed light on
 - First Contentful Paint (FCP)
 - First Input Delay (FID)
 - Cumulative Layout Shift (CLS)
-- Lighthouse scores, which cover Progressive Web Apps, and Accessibility
+- Lighthouse scores, which cover SEO, and Accessibility
 
 These metrics aim to cover the core elements which are indicative of a great web user experience. Let’s review each of these in turn.
 
@@ -267,23 +267,23 @@ The top 5 CMSs do poorly here. Only 50% of web pages loaded by a top 5 CMS have 
 
 ### Lighthouse scores
 
-[Lighthouse](https://almanac.httparchive.org/en/2019/methodology#lighthouse) is an open-source, automated tool designed to help developers assess and improve the quality of their websites. One key aspect of the tool is that it provides a set of audits to assess the status of a website in terms of performance, accessibility, progressive web apps, and more. For the purposes of this chapter, we are interested in two specific audits categories: PWA and accessibility.
+[Lighthouse](https://almanac.httparchive.org/en/2019/methodology#lighthouse) is an open-source, automated tool designed to help developers assess and improve the quality of their websites. One key aspect of the tool is that it provides a set of audits to assess the status of a website in terms of performance, accessibility, SEO, progressive web apps, and more. For this years chaper, we looked at two specific audits categories: SEO and accessibility.
 
-#### PWA
+#### SEO
 
-The term [Progressive Web App (PWA)](https://web.dev/progressive-web-apps/) refers to web-based user experiences that are considered as being reliable, fast, and engaging. Lighthouse provides a set of audits which returns a PWA score between 0 (worst) and 1 (best). These audits are based on the [Baseline PWA Checklist](https://developers.google.com/web/progressive-web-apps/checklist#baseline), which lists 14 requirements. Lighthouse has automated audits for 11 of the 14 requirements. The remaining 3 can only be tested manually. Each of the 11 automated PWA audits are weighted equally, so each one contributes approximately 9 points to your PWA score.
+Search Engine Optimisation (or SEO) is the practice of optimising websites to make your website content more eaily found in search engines. This is covered in more in depth in our [SEO](../seo) chapter, but one part involves ensuring the site is coded in such a way to serve as much information to search engine crawlers as possible to make it as easy as possible for them to serve your site appropriately in search engine results. Compared to a custom created website, you would expect an CMS to provide good SEO capabilities, and the Lighthouse scores in this category show high marks:
 
 {{ figure_markup(
-  image="cms-pwa-compliance-lighthouse-score.png",
-  caption="PWA compliance.",
-  description="Bar chart showing the median PWA compliance score for each of the top 5 cmss. Wordpress has a median score of 32% and the rest (Joomla, Drupal, Wix and Squarespace) all have 29%.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkUxfuK-FCn3_IYDJiEsKDmdmyKb0TSEhG8dFc0XBIXej1NO2uUOmd-9NCbWuh-MZ3xzMhK_kNT-4u/pubchart?oid=904129607&format=interactive",
-  sheets_gid="1497775920",
+  image="cms-seo-lighthouse-score.png",
+  caption="SEO Lighthouse scores for Top 5 CMSs.",
+  description="Bar chart showing the median SEO score for each of the top 5 CMSs. Wordpress has a median score of 0.9, Joomla 0.86, Drupal 0.83, Wix 0.93, and Squarespace 0.93",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkUxfuK-FCn3_IYDJiEsKDmdmyKb0TSEhG8dFc0XBIXej1NO2uUOmd-9NCbWuh-MZ3xzMhK_kNT-4u/pubchart?oid=895876622&format=interactive",
+  sheets_gid="1671385936",
   sql_file="median_lighthouse_score.sql"
   )
 }}
 
-The median Lighthouse PWA score is 29% for the top 5 CMSs, with the exception of WordPress which comes in at 32%. Across all CMSs, the average median score is 34%, with a minimum of 4% and a maximum of 71%.
+All of the top 5 CMSs score highly here with median scores of 0.83 or above, with some reaching as high as 0.93. SEO can depend on the website owner making use of capabilities of a CMS, but making those options easy to use in a CMS, and good defaults can have big benefits for sites run on those CMSs.
 
 #### Accessibility
 
@@ -292,18 +292,18 @@ An accessible website is a site designed and developed so that people with disab
 Each accessibility audit is pass or fail, but unlike other Lighthouse audits, a page doesn't get points for partially passing an accessibility audit. For example, if some elements have screen reader-friendly names, but others don't, that page gets a 0 for the screen reader-friendly-names audit.
 
 {{ figure_markup(
-  image="cms-accessibility-compliance-lighthouse-score.png",
-  caption="Accessibility compliance.",
-  description="Bar chart showing the median Accessibility compliance score for each of the top 5 cmss. Wordpress has a median score of 84%, Joomla 80%, Drupal 84%, Wiz is leading with 94% and Squarespace has 90%",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkUxfuK-FCn3_IYDJiEsKDmdmyKb0TSEhG8dFc0XBIXej1NO2uUOmd-9NCbWuh-MZ3xzMhK_kNT-4u/pubchart?oid=1331234903&format=interactive",
-  sheets_gid="1497775920",
+  image="cms-accessibility-lighthouse-score.png",
+  caption="Accessibility Lighthouse scores for Top 5 CMSs.",
+  description="Bar chart showing the median Accessibility compliance score for each of the top 5 CMSs. Wordpress has a median score of 0.84, Joomla 0.80, Drupal 0.84, Wiz is leading with 0.94, and Squarespace has 0.90",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkUxfuK-FCn3_IYDJiEsKDmdmyKb0TSEhG8dFc0XBIXej1NO2uUOmd-9NCbWuh-MZ3xzMhK_kNT-4u/pubchart?oid=721104287&format=interactive",
+  sheets_gid="1671385936",
   sql_file="median_lighthouse_score.sql"
   )
 }}
 
-The median Lighthouse accessibility score for the top 5 CMSs is all above 80%. Across all CMSs, the average median Lighthouse score is 78%, with a minimum of 44% and a maximum of 98%. We thus see that the top 5 CMSs are better than average, with some better than others. Wix and Squarespace have the highest scores of the top 5. Possibly these platforms being proprietary helps here, as they're able to control the sites which are created more closely.
+The median Lighthouse accessibility score for the top 5 CMSs is all above 0.80. Across all CMSs, the average median Lighthouse score is 0.78, with a minimum of 0.44 and a maximum of 0.98. We thus see that the top 5 CMSs are better than average, with some better than others. Wix and Squarespace have the highest scores of the top 5. Possibly these platforms being proprietary helps here, as they're able to control the sites which are created more closely.
 
-The bar should be higher here, though. An average score of 78% across all CMSs still leaves significant room for improvement, and the maximum score of 98% shows even the “best” CMS for accessibility compliance has room for improvement. Improving accessibility is essential and urgent work.
+The bar should be higher here, though. An average score of 0.78 across all CMSs still leaves significant room for improvement, and the maximum score of 0.98 shows even the “best” CMS for accessibility compliance has room for improvement. Improving accessibility is essential and urgent work.
 
 
 ## Environmental impact
