@@ -9,7 +9,7 @@
 
 SELECT client,
   COUNTIF(has_img_data_uri) / COUNTIF(has_img_src) AS pages_with_img_data_uri_pct,
-  COUNTIF(rel_preconnect) / COUNT(0) AS rel_preconnect,
+  COUNTIF(rel_preconnect) / COUNT(0) AS pages_with_rel_preconnect_pct,
   COUNTIF(has_video_src) / COUNT(0) AS pages_with_video_src_pct,
   COUNTIF(has_video_source) / COUNT(0) AS pages_with_video_source_pct,
   COUNTIF(has_figure) / COUNT(0) AS pages_with_figure_pct,
