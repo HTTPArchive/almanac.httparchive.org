@@ -58,9 +58,9 @@
 {% block open %}Открыть{% endblock %}
 {% block close %}Закрыть{% endblock %}
 
-{% macro figure_text(metadata, id) %}Фигура {{ figure_id(metadata, id) }}.{% endmacro %}
-{% macro show_description(metadata, id) %}Показать описание фигуры {{ figure_id(metadata, id) }}{% endmacro %}
-{% macro hide_description(metadata, id) %}Скрыть описание фигуры {{ figure_id(metadata, id) }}{% endmacro %}
+{% macro figure_text(metadata, id) %}График {{ figure_id(metadata, id) }}.{% endmacro %}
+{% macro show_description(metadata, id) %}Показать описание графика {{ figure_id(metadata, id) }}{% endmacro %}
+{% macro hide_description(metadata, id) %}Скрыть описание графика {{ figure_id(metadata, id) }}{% endmacro %}
 
 {% block written_by_before %}Авторы:{% endblock %}
 {% block reviewed_by_before %}Редакторы:{% endblock %}
