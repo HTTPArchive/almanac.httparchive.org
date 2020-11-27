@@ -101,7 +101,7 @@ def get_chapter_nextprev(config, chapter_slug):
             if found and 'todo' not in chapter:
                 next_chapter = chapter
                 break
-            elif chapter.get('slug') == chapter_slug and 'todo' not in chapter:
+            elif chapter.get('slug') == chapter_slug not in chapter:
                 found = True
             elif 'todo' not in chapter:
                 prev_chapter = chapter
@@ -109,7 +109,7 @@ def get_chapter_nextprev(config, chapter_slug):
             break
 
     if not found:
-        return None
+        return (None, None)
 
     return prev_chapter, next_chapter
 
