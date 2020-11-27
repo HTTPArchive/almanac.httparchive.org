@@ -1,194 +1,27 @@
-{% extends "base/base.html" %}
+{% extends "%s/base.html" % lang %}
 
-{% block description %}Web Almanac网络年鉴是Web报告的年度状态，它结合了Web社区的专业知识和HTTP Archive的数据和趋势{% endblock %}
-
-{% block twitter_image_alt %}{{ year }} Web Almanac{% endblock %}
-
-{% block skip_navigation %}跳过导航{% endblock %}
-
-{% block organization %}Web Almanac 源于 HTTP Archive{% endblock %}
-{% block web_almanac_logo %}
-  <span class="wa">Web Almanac</span>
-  <span class="line-group">  
-    <span class="pre">源于</span>
-    <span class="ha">HTTP Archive</span>
-  </span>
-{% endblock %}
-
-{% block mission %}
-<p>
-我们的任务是将HTTP Archive的原始统计数据和趋势与web社区的专业知识结合起来。Web Almanac网络年鉴是一个关于网络状态的综合报告，由真实的数据和可信的网络专家支持。它由20个章节组成，涵盖了页面内容、用户体验、发布和分发的各个方面。
-</p>
-{% endblock %}
-
-{% block read_last_years_almanac %}阅读 {{ year | int - 1 }} Web Almanac{% endblock %}
-
-{% block http_archive_link %}HTTP Archive主页{% endblock %}
-
-{% block page_navigation %}页面导航{% endblock %}
-
-{% block help_translate %}帮助翻译{% endblock %}
-{% block translation_not_available %}英语-中文不能使用{% endblock %}
-{% block language_switcher %}语言切换{% endblock %}
-{% block year_switcher %}年份切换{% endblock %}
-{% block table_of_contents_switcher %}目录切换{% endblock %}
-
-{% block home %}主页{% endblock %}
-{% block table_of_contents_title %}目录{% endblock %}
-{% block contributors_title %}贡献者{% endblock %}
-{% block methodology_title %}方法论{% endblock %}
-
-{% block part %}部分{% endblock %}
-{% block chapter %}章{% endblock %}
-
-{% block start_exploring %}开始探索{% endblock %}
-
-{% block menu_title %}页面菜单{% endblock %}
-{% block open_the_menu %}打开菜单{% endblock %}
-{% block close_the_menu %}关闭菜单{% endblock %}
-
-{% block index_nav_title %}章节目录{% endblock %}
-{% block index_title %}索引{% endblock %}
-{% block open_the_index %}打开目录{% endblock %}
-{% block close_the_index %}关闭目录{% endblock %}
-
-{% block and %}和{% endblock %}
-{% block comma %}、{% endblock %}
-
-{% block open %}打开{% endblock %}
-{% block close %}关闭{% endblock %}
-
-{% macro figure_text(metadata, id) %}图 {{ figure_id(metadata, id) }}.{% endmacro %}
-{% macro show_description(metadata, id) %}显示图像描述 {{ figure_id(metadata, id) }}{% endmacro %}
-{% macro hide_description(metadata, id) %}隐藏图像描述 {{ figure_id(metadata, id) }}{% endmacro %}
-
-{% block written_by_before %}作者： {% endblock %}
-{% block reviewed_by_before %}审稿者： {% endblock %}
-{% block translated_by_before %}翻译者： {% endblock %}
-{% block analysis_by_before %}分析者: {% endblock %}
-{% block written_by_after %}{% endblock %}
-{% block reviewed_by_after %}{% endblock %}
-{% block translated_by_after %}{% endblock %}
-{% block analysis_by_after %}{% endblock %}
-
-{% block author %}作者{% endblock %}
-{% block authors %}作者{% endblock %}
-
-{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} 在 Twitter{% endmacro %}
-{% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} 在 GitHub{% endmacro %}
-{% macro onLinkedIn(authorName) %}{{authorName}} 在 LinkedIn{% endmacro %}
-{% macro website(authorName) %}{{authorName}} 网站{% endmacro %}
-
-{% macro edition(year) %}{{ year }} 版{% endmacro %}
-
-{% block footer_title %}页脚导航{% endblock %}
-{% block copyright %}© Web Almanac.的许可是基于 <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
-{% block accessibility_statement %}无障碍可访问声明{% endblock %}
-
-{% block featured_chapter %}章节精选{% endblock %}
-{% block featured_chapter_last_year %}{{ year|int -1 }} Web Alamanc<br />章节精选{% endblock %}
-
-{# Check if read_chapter already defined in child template as macros can't be overridden #}
-{% if not read_chapter %}
-{% macro read_chapter(chapter) %}阅读 <span class="featured-chapter-name">{{ chapter }}</span> 章节{% endmacro %}
-{% endif %}
-{% if not read_last_years_chapter %}
-{% macro read_last_years_chapter(chapter) %}阅读 {{ year|int -1 }} <span class="featured-chapter-name">{{ chapter }}</span> 章节{% endmacro %}
-{% endif %}
-
-{% block contributors_description %}
-是web社区的辛勤工作才让 Web Almanac 网络年鉴成为可能。 {{ self.contributors() }} 成员在计划、研究、写作和发布阶段奉献投入了难以估量的时间。
-{% endblock %}
-{% block contributors_link %}查看贡献者{% endblock %}
-
-{% block methodology_stat_1_title %}测试的站点{% endblock %}
 {% block methodology_stat_1 %}5.8M{% endblock %}
-{% block methodology_stat_2_title %}处理的数据{% endblock %}
 {% block methodology_stat_2 %}20.9 TB{% endblock %}
 {% block methodology_description %}
 除非另有说明，在所有20章的Web Almanac网络年鉴的指标都来自HTTP Archive数据集。HTTP Archive是一个社区运行的项目，自2010年以来一直在跟踪web是如何构建的。使用WebPageTest和Lighthouse，每月测试大约600万个网站的元数据，并将其包含在一个公开的BigQuery数据库中进行分析。Web Almanac 网络年鉴使用了2019年7月的数据集作为度量的基础。有关更多信息，请参见方法论页面。
 {% endblock %}
-{% block methodology_link %}了解方法论{% endblock %}
-
-{% block introduction %}介绍{% endblock %}
-
-{% block foreword_title %}前言{% endblock %}
 
 {% block foreword %}
-    <p>
-      开放的网络是一个复杂的、不断发展的技术网络。整个行业和职业都建立在网络之上，并依赖其充满活力的生态系统取得成功。和网络本身一样重要的是，要理解它是如何运作总是出乎意料难以捉摸。自2010年以来，HTTP Archive项目的任务就是跟踪网络是如何构建的，它在这方面做得非常出色。然而，存在一个特别具有挑战性的缺口:使HTTP Archive项目收集的数据具有意义，并使社区能够容易地理解网络是如何执行的。这就是Web Almanac网络年鉴的用兵之处。
-    </p>
+  <p>
+    开放的网络是一个复杂的、不断发展的技术网络。整个行业和职业都建立在网络之上，并依赖其充满活力的生态系统取得成功。和网络本身一样重要的是，要理解它是如何运作总是出乎意料难以捉摸。自2010年以来，HTTP Archive项目的任务就是跟踪网络是如何构建的，它在这方面做得非常出色。然而，存在一个特别具有挑战性的缺口:使HTTP Archive项目收集的数据具有意义，并使社区能够容易地理解网络是如何执行的。这就是Web Almanac网络年鉴的用兵之处。
+  </p>
 
-    <p>
-      Web Almanac 网络年鉴的任务是获取见知的宝藏，并以易于理解的方式打包，否则这些见解只能由无畏的数据挖掘者才能得到。 在行业专家的帮助下这一切成为了可能，他们能够理解数据并告诉我们它的含义。Web Almanac 的20章中的每一章都集中在Web的一个特定方面，而且每一章都是由各自领域的专家编写和同行评审。Web Almanac 的力量直接来自于编写它的人的专业知识。
-    </p>
+  <p>
+    Web Almanac 网络年鉴的任务是获取见知的宝藏，并以易于理解的方式打包，否则这些见解只能由无畏的数据挖掘者才能得到。 在行业专家的帮助下这一切成为了可能，他们能够理解数据并告诉我们它的含义。Web Almanac 的20章中的每一章都集中在Web的一个特定方面，而且每一章都是由各自领域的专家编写和同行评审。Web Almanac 的力量直接来自于编写它的人的专业知识。
+  </p>
 
-    <p>
-      Web Almanac网络年鉴中的许多发现都值得庆祝，但它也提醒我们，交付高质量的用户体验还需要做很多工作。每一章中以数据为依据的分析都要求我们去承担一个开发更好网络的使命责任。这不是要羞辱那些做错的人，而是要在最佳实践的道路上点亮一盏指路明灯，这样就有了一种清晰、正确的做事方式。在网络社区的持续帮助下，我们希望将其成为年度传统，这样我们每年都可以跟踪我们的进度并根据需要进行修正。
-    </p>
+  <p>
+    Web Almanac网络年鉴中的许多发现都值得庆祝，但它也提醒我们，交付高质量的用户体验还需要做很多工作。每一章中以数据为依据的分析都要求我们去承担一个开发更好网络的使命责任。这不是要羞辱那些做错的人，而是要在最佳实践的道路上点亮一盏指路明灯，这样就有了一种清晰、正确的做事方式。在网络社区的持续帮助下，我们希望将其成为年度传统，这样我们每年都可以跟踪我们的进度并根据需要进行修正。
+  </p>
 
-    <p>
-      在这份报告中有太需要学习的东西，所以开始探索并与社区分享你的见解吧，这样我们就可以共同推进我们对网络状态的理解。
-    </p>
+  <p>
+    在这份报告中有太需要学习的东西，所以开始探索并与社区分享你的见解吧，这样我们就可以共同推进我们对网络状态的理解。
+  </p>
 
-    <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>, Web Almanac网络年鉴的创建者</em></p>
+  <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>, Web Almanac网络年鉴的创建者</em></p>
 {% endblock %}
-
-{% block coming_soon %}即将到来！{% endblock %}
-
-{% block appendix %}附录{% endblock %}
-{% block appendices %}附录{% endblock %}
-
-{% block ebook_title %}Ebook{% endblock %}
-{% block ebook_download_short %}Ebook PDF ({{ ebook_size_in_mb }}MB){% endblock %}
-{% block ebook_download %}下载 {{ year }} Web Almanac网络年鉴 ：PDF 格式 ({{ ebook_size_in_mb }}MB){% endblock %}
-{% block ebook_download_note %}(使用 <a href="https://www.princexml.com/">www.princexml.com</a>生成){% endblock %}
-
-{% 
-  set localizedPartTitles = {
-    "I. Page Content": "I. 页面内容",
-    "II. User Experience": "II. 用户体验",
-    "III. Content Publishing": "III. 内容发布",
-    "IV. Content Distribution": "IV. 内容分发"
-  }
-%}
-{%
-  set localizedChapterTitles = {
-    "javascript": "JavaScript",
-    "css": "CSS",
-    "markup": "标记",
-    "media": "媒体",
-    "third-parties": "第三方",
-    "fonts": "字体",
-    "performance": "性能",
-    "security": "安全",
-    "accessibility": "无障碍可访问性",
-    "seo": "SEO",
-    "pwa": "PWA",
-    "mobile-web": "移动网络",
-    "ecommerce": "电商",
-    "cms": "CMS",
-    "compression": "压缩",
-    "caching": "缓存",
-    "cdn": "CDN",
-    "page-weight": "页面重量",
-    "resource-hints": "资源提示",
-    "http2": "HTTP/2",
-    "privacy": "隐私",
-    "capabilities": "能力",
-    "jamstack": "Jamstack"
-  }
-%}
-
-{% set localizedTeamNames = {
-  "analysts": "分析者",
-  "authors": "作者",
-  "brainstormers": "头脑风暴者",
-  "designers": "设计者",
-  "developers": "开发者",
-  "editors": "编辑",
-  "leads": "领导者",
-  "reviewers": "审稿者",
-  "translators": "翻译者", 
-  }
-%}

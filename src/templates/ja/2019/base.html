@@ -1,194 +1,27 @@
-{% extends "base/base.html" %}
+{% extends "%s/base.html" % lang %}
 
-{% block description %}Web Almanacは、Webコミュニティの専門知識とHTTP Archiveのデータやトレンドを組み合わせた、毎年恒例のWeb状況のレポートです。{% endblock %}
-
-{% block twitter_image_alt %}{{ year }} Web Almanac{% endblock %}
-
-{% block skip_navigation %}ナビゲーションをスキップ{% endblock %}
-
-{% block organization %}HTTP ArchiveによるWeb Almanac{% endblock %}
-{% block web_almanac_logo %}
-  <span class="ha line-group">HTTP Archive</span>
-
-  <span class="pre">による</span>
-  <span class="wa">Web Almanac</span>
-  
-{% endblock %}
-
-{% block mission %}
-<p>
-私たちの使命は、HTTP Archiveの生の統計やトレンドを、ウェブコミュニティの専門知識と組み合わせることです。Web Almanacは、実際のデータと信頼できるウェブの専門家に裏付けられた、ウェブの状態に関する包括的なレポートです。ページコンテンツ、ユーザー体験、パブリッシング、配布などの側面を網羅した20の章で構成されています。
-</p>
-{% endblock %}
-
-{% block read_last_years_almanac %}{{ year | int - 1 }} Web Almanacを読む{% endblock %}
-
-{% block http_archive_link %}HTTP ArchiveによるWeb Almanac{% endblock %}
-
-{% block page_navigation %}ページナビゲーション{% endblock %}
-
-{% block help_translate %}翻訳ヘルプ{% endblock %}
-{% block translation_not_available %}英語-日本語では使用できません{% endblock %}
-{% block language_switcher %}言語ピッカー{% endblock %}
-{% block year_switcher %}年ピッカー{% endblock %}
-{% block table_of_contents_switcher %}年ピッカー{% endblock %}
-
-{% block home %}ホームページ{% endblock %}
-{% block table_of_contents_title %}目次{% endblock %}
-{% block contributors_title %}貢献者{% endblock %}
-{% block methodology_title %}方法論{% endblock %}
-
-{% block part %}部{% endblock %}
-{% block chapter %}章{% endblock %}
-
-{% block start_exploring %}探索を開始{% endblock %}
-
-{% block menu_title %}ページメニュー{% endblock %}
-{% block open_the_menu %}メニューを開く{% endblock %}
-{% block close_the_menu %}メニューを閉じる{% endblock %}
-
-{% block index_nav_title %}章の目次{% endblock %}
-{% block index_title %}インデックス{% endblock %}
-{% block open_the_index %}目次を開く{% endblock %}
-{% block close_the_index %}目次を閉じる{% endblock %}
-
-{% block and %} と {% endblock %}
-{% block comma %}、{% endblock %}
-
-{% block open %}開く{% endblock %}
-{% block close %}閉じる{% endblock %}
-
-{% block written_by_before %}{% endblock %}
-{% block reviewed_by_before %}{% endblock %}
-{% block translated_by_before %}{% endblock %}
-{% block analysis_by_before %}{% endblock %}
-{% block written_by_after %}によって書かれた。{% endblock %}
-{% block reviewed_by_after %}によってレビュ。{% endblock %}
-{% block translated_by_after %}によって翻訳された。{% endblock %}
-{% block analysis_by_after %}による分析。{% endblock %}
-
-{% block author %}著者{% endblock %}
-{% block authors %}著者{% endblock %}
-
-{% macro figure_text(metadata, id) %}図{{ figure_id(metadata, id) }}.{% endmacro %}
-{% macro show_description(metadata, id) %}図{{ figure_id(metadata, id) }}の説明を表示{% endmacro %}
-{% macro hide_description(metadata, id) %}図{{ figure_id(metadata, id) }}の説明を非表示{% endmacro %}
-
-{% macro onTwitter(twitterHandle) %}Twitterの@{{twitterHandle}}{% endmacro %}
-{% macro onGitHub(gitHubHandle) %}GitHubの{{gitHubHandle}}{% endmacro %}
-{% macro onLinkedIn(authorName) %}LinkedInの{{authorName}}{% endmacro %}
-{% macro website(authorName) %}{{authorName}} ウェブサイト{% endmacro %}
-
-{% macro edition(year) %}{{ year }} 版{% endmacro %}
-
-{% block footer_title %}フッターナビゲーション{% endblock %}
-{% block copyright %}© Web Almanac. Licensed under <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
-{% block accessibility_statement %}アクセシビリティに関する声明{% endblock %}
-
-{% block featured_chapter %}注目の章{% endblock %}
-{% block featured_chapter_last_year %}{{ year|int -1 }} Web Alamanc<br />注目の章{% endblock %}
-
-{# Check if read_chapter already defined in child template as macros can't be overridden #}
-{% if not read_chapter %}
-{% macro read_chapter(chapter) %}<span class="featured-chapter-name">{{ chapter }}</span>の章を読む{% endmacro %}
-{% endif %}
-{% if not read_last_years_chapter %}
-{% macro read_last_years_chapter(chapter) %}<span class="featured-chapter-name">{{ chapter }}</span>の章を読む{{ year|int -1 }}{% endmacro %}
-{% endif %}
-
-{% block contributors_description %}
-Web Almanacは、ウェブ・コミュニティの努力によって実現しています。{{ self.contributors() }}人々は、企画、調査、執筆、制作の段階で数え切れないほどの時間をボランティアで費やしてきました。
-{% endblock %}
-{% block contributors_link %}投稿者を見る{% endblock %}
-
-{% block methodology_stat_1_title %}テストしたウェブサイト{% endblock %}
 {% block methodology_stat_1 %}5.8M{% endblock %}
-{% block methodology_stat_2_title %}処理されたデータ{% endblock %}
 {% block methodology_stat_2 %}20.9 TB{% endblock %}
 {% block methodology_description %}
 特に断りのない限り、Web Almanacの20章すべてのメトリクスは、HTTP Archiveのデータセットから取得しています。HTTP Archiveは、2010年以来、ウェブの構築方法を追跡してきたコミュニティが運営するプロジェクトです。WebPageTestとLighthouseをアンダーグラウンドに使用して、約600万のWebサイトに関するメタデータが毎月テストされ、分析のために公開されているBigQueryデータベースに含まれています。2019年7月のデータセットは、Web Almanacのメトリクスの基礎として使用されました。詳細については、方法論のページを参照してください。
 {% endblock %}
-{% block methodology_link %}方法論についてはこちらをご覧ください。{% endblock %}
-
-{% block introduction %}導入{% endblock %}
-
-{% block foreword_title %}序章{% endblock %}
 
 {% block foreword %}
-    <p>
-      オープンウェブは、驚くほど複雑で進化するテクノロジーのネットワークです。あらゆる産業やキャリアはウェブの上に構築されており、成功するためにはウェブの活気あるエコシステムに依存しています。ウェブが非常に重要であるにもかかわらず、ウェブがどのように機能しているかを理解することは、驚くほど難しいものでした。2010年以来、HTTP Archiveプロジェクトの使命は、ウェブがどのように構築されているかを追跡することであり、それは素晴らしい仕事をしてきました。それは、HTTP Archiveプロジェクトが収集してきたデータに意味を持たせ、コミュニティがウェブのパフォーマンスを簡単に理解できるようにすることです。そこでWeb Almanacの出番です。
-    </p>
+  <p>
+    オープンウェブは、驚くほど複雑で進化するテクノロジーのネットワークです。あらゆる産業やキャリアはウェブの上に構築されており、成功するためにはウェブの活気あるエコシステムに依存しています。ウェブが非常に重要であるにもかかわらず、ウェブがどのように機能しているかを理解することは、驚くほど難しいものでした。2010年以来、HTTP Archiveプロジェクトの使命は、ウェブがどのように構築されているかを追跡することであり、それは素晴らしい仕事をしてきました。それは、HTTP Archiveプロジェクトが収集してきたデータに意味を持たせ、コミュニティがウェブのパフォーマンスを簡単に理解できるようにすることです。そこでWeb Almanacの出番です。
+  </p>
 
-    <p>
-      Web Almanacの使命は、データを掘り起こす勇気のある人しかアクセスできないような洞察の宝庫を、理解しやすい形でパッケージ化することにあります。これは、データの意味を理解し、それが何を意味するのかを教えてくれる業界の専門家の助けを借りて可能にしたものです。Web Almanacの20の章はそれぞれ、ウェブの特定の側面に焦点を当てており、各章はそれぞれの分野の専門家によって執筆され、レビューを受けています。Web Almanacの強みは、執筆者の専門知識から生まれます。
-    </p>
+  <p>
+    Web Almanacの使命は、データを掘り起こす勇気のある人しかアクセスできないような洞察の宝庫を、理解しやすい形でパッケージ化することにあります。これは、データの意味を理解し、それが何を意味するのかを教えてくれる業界の専門家の助けを借りて可能にしたものです。Web Almanacの20の章はそれぞれ、ウェブの特定の側面に焦点を当てており、各章はそれぞれの分野の専門家によって執筆され、レビューを受けています。Web Almanacの強みは、執筆者の専門知識から生まれます。
+  </p>
 
-    <p>
-      Web Almanacに掲載されている調査結果の多くは、賞賛に値するものですが、高品質のユーザー体験を提供するためには、まだまだ必要な作業があることを思い出させてくれる重要なものでもあります。各章のデータに基づいた分析は、より良いWebを開発するために私たちが共有している説明責任の一形態です。それは、間違ったやり方をしている人たちを非難することではなく、ベストプラクティスの道筋に光を当てることで、明確で正しいやり方があることを示しています。ウェブコミュニティの継続的な支援を得て、これを毎年の恒例行事にしたいと考えています。
-    </p>
+  <p>
+    Web Almanacに掲載されている調査結果の多くは、賞賛に値するものですが、高品質のユーザー体験を提供するためには、まだまだ必要な作業があることを思い出させてくれる重要なものでもあります。各章のデータに基づいた分析は、より良いWebを開発するために私たちが共有している説明責任の一形態です。それは、間違ったやり方をしている人たちを非難することではなく、ベストプラクティスの道筋に光を当てることで、明確で正しいやり方があることを示しています。ウェブコミュニティの継続的な支援を得て、これを毎年の恒例行事にしたいと考えています。
+  </p>
 
-    <p>
-      このレポートには学ぶべきことがたくさんありますので、あなたが得たものをコミュニティで共有することで、ウェブの状態についての理解を深めることができます。
-    </p>
+  <p>
+    このレポートには学ぶべきことがたくさんありますので、あなたが得たものをコミュニティで共有することで、ウェブの状態についての理解を深めることができます。
+  </p>
 
-    <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>、Web Almanacの作成者。</em></p>
+  <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>、Web Almanacの作成者。</em></p>
 {% endblock %}
-
-{% block coming_soon %}もうすぐです！{% endblock %}
-
-{% block appendix %}付属資料{% endblock %}
-{% block appendices %}付属資料{% endblock %}
-
-{% block ebook_title %}電子ブック{% endblock %}
-{% block ebook_download_short %}電子ブックPDF ({{ ebook_size_in_mb }}MB){% endblock %}
-{% block ebook_download %} {{ year }} Web AlmanacのPDFファイルをダウンロードする ({{ ebook_size_in_mb }}MB){% endblock %}
-{% block ebook_download_note %}(generated with <a href="https://www.princexml.com/">www.princexml.com</a>){% endblock %}
-
-{% 
-  set localizedPartTitles = {
-    "I. Page Content": "I. ページコンテンツ",
-    "II. User Experience": "II. ユーザー体験",
-    "III. Content Publishing": "III. コンテンツ公開",
-    "IV. Content Distribution": "IV. コンテンツ配信"
-  }
-%}
-{%
-  set localizedChapterTitles = {
-    "javascript": "JavaScript",
-    "css": "CSS",
-    "markup": "マークアップ",
-    "media": "メディア",
-    "third-parties": "サードパーティ",
-    "fonts": "フォント",
-    "performance": "パフォーマンス",
-    "security": "セキュリティ",
-    "accessibility": "アクセシビリティ",
-    "seo": "SEO",
-    "pwa": "PWA",
-    "mobile-web": "モバイルウェブ",
-    "ecommerce": "Eコマース",
-    "cms": "CMS",
-    "compression": "圧縮",
-    "caching": "キャッシング",
-    "cdn": "CDN",
-    "page-weight": "Page Weight",
-    "resource-hints": "リソースのヒント",
-    "http2": "HTTP/2",
-    "privacy": "プライバシー",
-    "capabilities": "能力",
-    "jamstack": "Jamstack"
-  }
-%}
-
-{% set localizedTeamNames = {
-  "analysts": "分析者",
-  "authors": "著作者",
-  "brainstormers": "ブレインストーマー",
-  "designers": "デザイナー",
-  "developers": "開発者",
-  "editors": "編集者",
-  "leads": "リーダー",
-  "reviewers": "レビュワー",
-  "translators": "翻訳者", 
-  }
-%}

@@ -1,4 +1,4 @@
-{% extends "%s/2019/base_ebook.html" % lang %}
+{% extends "%s/base_ebook.html" % lang %}
 
 {% set metadata = {} %}
 
@@ -6,7 +6,7 @@
 
     <% for (let part of ebook.parts) { %>
     <% for (let chapter of part.chapters) { %>
-        
+
     {% set metadata = <%- JSON.stringify(chapter.metadata) %> %}
     {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
     <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
@@ -39,14 +39,14 @@
                 {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %}
                 {% endfor %}{{ self.written_by_after() }}
             </div>
-            
+
             <div class="byline reviewers">{{ self.reviewed_by_before() }}
                 {% for reviewer in metadata.get('reviewers') %}
                 <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{{ self.comma() if not loop.last and loop.length > 2 }}
                 {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %}
                 {% endfor %}{{ self.reviewed_by_after() }}
             </div>
-            
+
             {% if metadata.get('analysts') and metadata.get('analysts') | length >= 1 %}
             <div class="byline analysts">{{ self.analysis_by_before() }}
                 {% for analyst in metadata.get('analysts') %}
@@ -55,7 +55,7 @@
                 {% endfor %}{{ self.analysis_by_after() }}
             </div>
             {% endif %}
-            
+
             {% if metadata.get('translators') | length >= 1 %}
             <div class="byline translators">{{ self.translated_by_before() }}
                 {% for translator in metadata.get('translators') %}
@@ -142,4 +142,4 @@
     <% } %>
     <% } %>
 
-{% endblock %} 
+{% endblock %}
