@@ -1533,7 +1533,7 @@ pre .entity.function {
 
 pre .attribute,
 pre .variable {
-  color: #000000;
+  color: #000;
 }
 
 pre .string,
