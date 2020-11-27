@@ -8,12 +8,12 @@
 # figure with figcaption
 
 SELECT client,
-  COUNTIF(has_img_data_uri) * 100 / COUNTIF(has_img_src) AS pages_with_img_data_uri_pct,
-  COUNTIF(rel_preconnect) * 100 / COUNT(0) AS rel_preconnect,
-  COUNTIF(has_video_src) * 100 / COUNT(0) AS pages_with_video_src_pct,
-  COUNTIF(has_video_source) * 100 / COUNT(0) AS pages_with_video_source_pct,
-  COUNTIF(has_figure) * 100 / COUNT(0) AS pages_with_figure_pct,
-  COUNTIF(has_figcaption) * 100 / COUNT(0) AS pages_with_figcaption_pct
+  COUNTIF(has_img_data_uri) / COUNTIF(has_img_src) AS pages_with_img_data_uri_pct,
+  COUNTIF(rel_preconnect) / COUNT(0) AS rel_preconnect,
+  COUNTIF(has_video_src) / COUNT(0) AS pages_with_video_src_pct,
+  COUNTIF(has_video_source) / COUNT(0) AS pages_with_video_source_pct,
+  COUNTIF(has_figure) / COUNT(0) AS pages_with_figure_pct,
+  COUNTIF(has_figcaption) / COUNT(0) AS pages_with_figcaption_pct
 FROM
   (
   SELECT

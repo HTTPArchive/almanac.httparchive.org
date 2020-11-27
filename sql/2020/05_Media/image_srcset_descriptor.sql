@@ -24,11 +24,11 @@ return result;
 
 SELECT
   client,
-  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_all > 0) * 100, COUNT(0)) AS pages_with_srcset_pct,
-  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_descriptor_x > 0) * 100, COUNT(0)) AS pages_with_srcset_descriptor_x_pct,
-  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_descriptor_w > 0) * 100, COUNT(0)) AS pages_with_srcset_descriptor_w_pct,
-  SAFE_DIVIDE(SUM(media_info.num_srcset_descriptor_x) * 100, SUM(media_info.num_srcset_all)) AS instances_of_srcset_descriptor_x_pct,
-  SAFE_DIVIDE(SUM(media_info.num_srcset_descriptor_w) * 100, SUM(media_info.num_srcset_all)) AS instances_of_srcset_descriptor_w_pct
+  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_all > 0), COUNT(0)) AS pages_with_srcset_pct,
+  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_descriptor_x > 0), COUNT(0)) AS pages_with_srcset_descriptor_x_pct,
+  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_descriptor_w > 0), COUNT(0)) AS pages_with_srcset_descriptor_w_pct,
+  SAFE_DIVIDE(SUM(media_info.num_srcset_descriptor_x), SUM(media_info.num_srcset_all)) AS instances_of_srcset_descriptor_x_pct,
+  SAFE_DIVIDE(SUM(media_info.num_srcset_descriptor_w), SUM(media_info.num_srcset_all)) AS instances_of_srcset_descriptor_w_pct
 FROM
   (
   SELECT
