@@ -3,7 +3,6 @@ const showdown = require('showdown');
 const ejs = require('ejs');
 const prettier = require('prettier');
 
-
 const { find_markdown_files, get_yearly_configs, size_of, parse_array } = require('./shared');
 const { generate_table_of_contents } = require('./generate_table_of_contents');
 const { generate_header_links } = require('./generate_header_links');
@@ -118,15 +117,12 @@ const generate_chapters = async (chapter_match) => {
 
 };
 
-
 const parse_file = async (markdown,chapter) => {
   const html = converter.makeHtml(markdown);
   let body = html;
 
-  // Syntax Highlighting
-  body = generate_syntax_highlighting(body);
-
   const m = converter.getMetadata();
+  body = generate_syntax_highlighting(body);
   body = generate_header_links(body);
   body = generate_figure_ids(body);
   body = wrap_tables(body);

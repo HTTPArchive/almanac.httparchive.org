@@ -1449,7 +1449,6 @@ p.copyright a {
 /* Syntax Highlighting */
 pre {
   margin: 0;
-  border: 1px solid #ccc;
   word-wrap: break-word;
   padding: 6px 10px;
   line-height: 19px;
@@ -1464,23 +1463,14 @@ pre code {
 }
 
 code {
-  border: 1px solid #eaeaea;
   margin: 0px 2px;
   padding: 0px 5px;
-  font-size: 12px;
+  font-size: 1rem;
 }
 
 pre,
 code {
-  font-family: Consolas, 'Liberation Mono', Courier, monospace;
   color: #333;
-  background: #f8f8f8;
-  border-radius: 3px;
-}
-
-pre,
-pre code {
-  font-size: 13px;
 }
 
 pre .comment {
@@ -1513,6 +1503,10 @@ pre .css-value,
 pre .vendor-fix,
 pre .support.namespace {
   color: #333;
+}
+
+pre .function.call{
+  color: navy;
 }
 
 pre .constant.numeric,
