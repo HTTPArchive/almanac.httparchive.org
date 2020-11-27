@@ -2,10 +2,8 @@ const fs = require('fs-extra');
 const showdown = require('showdown');
 const ejs = require('ejs');
 const prettier = require('prettier');
-const rainbow = require('rainbow-code');
 
 
-const { JSDOM } = require('jsdom');
 const { find_markdown_files, get_yearly_configs, size_of, parse_array } = require('./shared');
 const { generate_table_of_contents } = require('./generate_table_of_contents');
 const { generate_header_links } = require('./generate_header_links');
@@ -17,6 +15,7 @@ const { wrap_tables } = require('./wrap_tables');
 const { remove_unnecessary_markup } = require('./remove_unnecessary_markup');
 const { generate_ebooks } = require('./generate_ebooks');
 const { generate_js } = require('./generate_js');
+const { generate_syntax_highlighting } = require('./generate_syntax_highlighting');
 
 const converter = new showdown.Converter({ tables: true, metadata: true });
 converter.setFlavor('github');
@@ -34,9 +33,9 @@ const generate_chapters = async (chapter_match) => {
   let chapter_config = {};
   let featured_quotes = {};
   let re;
-  
+
   configs = await get_yearly_configs();
-  for (const year in configs) {  
+  for (const year in configs) {
     sitemap_languages[year] = configs[year].settings[0].supported_languages;
     for (const part in configs[year].outline) {
       for (const chapter in configs[year].outline[part].chapters) {
@@ -49,7 +48,7 @@ const generate_chapters = async (chapter_match) => {
       }
     }
   }
-  
+
   if (chapter_match) {
     // Remove any trailing .md and replace all paths with brackets to capture components
     // en/2019/javascript.md -> (en)/(2019)/(javascript).md
@@ -119,38 +118,13 @@ const generate_chapters = async (chapter_match) => {
 
 };
 
-const generate_syntex_snippet = (element, body, type) => {
-  const snippet_clean = element.innerHTML.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
-  const snippet_converted = rainbow.colorSync(snippet_clean, type);
-  body = body.replace(element.innerHTML, snippet_converted);
-  return body;
-};
 
 const parse_file = async (markdown,chapter) => {
   const html = converter.makeHtml(markdown);
   let body = html;
 
-  // Syntax Highlighting 
-  const dom = new JSDOM(body);
-  const html_codes = dom.window.document.querySelectorAll('code.language-html');
-  const css_codes = dom.window.document.querySelectorAll('code.language-css');
-  const js_codes = dom.window.document.querySelectorAll('code.language-js');
-  const sql_codes = dom.window.document.querySelectorAll('code.language-sql');
-
-  html_codes.forEach(element => {
-    body = generate_syntex_snippet(element, body, "html");
-  });
-  css_codes.forEach(element => {
-    body = generate_syntex_snippet(element, body, "css");
-  });
-  js_codes.forEach(element => {
-    body = generate_syntex_snippet(element, body, "javascript");
-  });
-  sql_codes.forEach(element => {
-    body = generate_syntex_snippet(element, body, "sql");
-  });
-
-
+  // Syntax Highlighting
+  body = generate_syntax_highlighting(body);
 
   const m = converter.getMetadata();
   body = generate_header_links(body);
