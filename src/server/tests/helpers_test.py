@@ -148,7 +148,9 @@ def test_get_chapter_nextprev_last_chapter():
 
 def test_get_chapter_nextprev_unknown_chapter():
     nextprev = get_chapter_nextprev(get_config('2019'), 'random')
-    assert nextprev is None
+    prev_slug = nextprev[0]
+    next_slug = nextprev[1]
+    assert prev_slug is None and next_slug is None
 
 
 def test_convert_old_image_path_http2():
