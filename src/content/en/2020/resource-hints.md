@@ -312,7 +312,7 @@ So far only 0.77% websites adopted this new hint as Chrome is still [actively](h
 The largest use is with script elements, which is unsurprising as the number of JS primary and third-party files continues to grow.
 
 {{ figure_markup(
-  caption="Priority hints on mobile have "low" importance",
+  caption="Priority hints on mobile have \"low\" importance",
   content="16.11%",
   classes="big-number",
   sheets_gid="1805612941",
