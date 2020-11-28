@@ -13,9 +13,9 @@ queries: 13_Capabilities
 christianliebel_bio: Кристиан Либел работает консультантом в компании Thinktecture, помогая клиентам из различных сфер бизнеса создавать качественные веб-приложения. Он обладатель награды Microsoft MVP в области технологий для разработчиков, Google GDE для веба/возможностей и Angular, а также участвует в рабочей группе W3C по веб-приложениям.
 featured_quote: Состояние веб-возможностей в 2020 году хорошее, поскольку новые и мощные API регулярно появляются в новых версия Chromium-браузеров. Некоторые API уже доступны и в других браузерах.
 featured_stat_1: 0.0006%
-featured_stat_label_1: (Chrome) Страница загружается с помощью <span lang="en">Async Clipboard API</span>
+featured_stat_label_1: (Chrome) Страница загружается с помощью Async Clipboard API
 featured_stat_2: 0.49%
-featured_stat_label_2: Сайты, использующие <span lang="en">Storage Manager API</span>
+featured_stat_label_2: Сайты, использующие Storage Manager API
 featured_stat_3: 363
 featured_stat_label_3: Сайты, позволяющие устанавливать связанные с ним приложения
 ---
