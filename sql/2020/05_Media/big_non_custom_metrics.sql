@@ -19,13 +19,13 @@ FROM (
   SELECT
     client,
     page,
-    regexp_contains(body, r'(?i)<img[^><]*src=(?:\"|\')*data[:]image/(?:\"|\')*[^><]*>') AS has_img_data_uri,
-    regexp_contains(body, r'(?i)<img[^><]*src=[^><]*>') AS has_img_src,
-    regexp_contains(body, r'(?i)<link[^><]*rel=(?:\"|\')*preconnect/(?:\"|\')*[^><]*>') AS rel_preconnect,
-    regexp_contains(body, r'(?i)<video[^><]*src=[^><]*>') AS has_video_src,
-    regexp_contains(body, r'(?i)<video[^><]*>.*?<source[^><]*>.*?</video>') AS has_video_source,
-    regexp_contains(body, r'(?i)<figure[^><]*>') AS has_figure,
-    regexp_contains(body, r'(?i)<figure[^><]*>.*?<figcaption[^><]*>.*?</figure>') AS has_figcaption
+    REGEXP_CONTAINS(body, r'(?i)<img[^><]*src=(?:\"|\')*data[:]image/(?:\"|\')*[^><]*>') AS has_img_data_uri,
+    REGEXP_CONTAINS(body, r'(?i)<img[^><]*src=[^><]*>') AS has_img_src,
+    REGEXP_CONTAINS(body, r'(?i)<link[^><]*rel=(?:\"|\')*preconnect/(?:\"|\')*[^><]*>') AS rel_preconnect,
+    REGEXP_CONTAINS(body, r'(?i)<video[^><]*src=[^><]*>') AS has_video_src,
+    REGEXP_CONTAINS(body, r'(?i)<video[^><]*>.*?<source[^><]*>.*?</video>') AS has_video_source,
+    REGEXP_CONTAINS(body, r'(?i)<figure[^><]*>') AS has_figure,
+    REGEXP_CONTAINS(body, r'(?i)<figure[^><]*>.*?<figcaption[^><]*>.*?</figure>') AS has_figcaption
   FROM
     `httparchive.almanac.summary_response_bodies`
   WHERE
