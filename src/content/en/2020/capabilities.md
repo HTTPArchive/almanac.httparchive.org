@@ -163,7 +163,7 @@ The `navigator.wakeLock.request()` method creates a wake lock. This method takes
   )
 }}
 
-BettyCrocker.com, a popular cooking website in the US, offers their users an option to prevent the screen from going dark while cooking with the help of the Screen Wake Lock API. In a [case study](https://web.dev/betty-crocker/), they published that the average session duration was 3.1 times longer than normal, the bounce rate reduced by 50%, and purchase intent indicators increased by about 300%. The interface therefore has a directly measurable effect on the success of the website or application, repectively. The Screen Wake Lock API shipped with Google Chrome 84 in July 2020. The HTTP Archive only has data for April, May, August, September and October. After the release of Chrome 84, usage rose quickly. In October 2020, the API was adopted on 10 desktop and 5 mobile pages.
+BettyCrocker.com, a popular cooking website in the US, offers their users an option to prevent the screen from going dark while cooking with the help of the Screen Wake Lock API. In a [case study](https://web.dev/betty-crocker/), they published that the average session duration was 3.1 times longer than normal, the bounce rate reduced by 50%, and purchase intent indicators increased by about 300%. The interface therefore has a directly measurable effect on the success of the website or application, respectively. The Screen Wake Lock API shipped with Google Chrome 84 in July 2020. The HTTP Archive only has data for April, May, August, September and October. After the release of Chrome 84, usage rose quickly. In October 2020, the API was adopted on 10 desktop and 5 mobile pages.
 
 ## Idle Detection API
 
@@ -221,7 +221,7 @@ At the time of this writing, only Chromium-based browsers implement this API. On
   )
 }}
 
-The use of the interface is currently very low. Over 2020, only one or two pages monitored by HTTP Archive made use of this API. 
+The use of the interface is currently very low. Over 2020, only one or two pages monitored by HTTP Archive made use of this API.
 
 ## Integration with native app stores
 
