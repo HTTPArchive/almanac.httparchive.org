@@ -156,7 +156,14 @@ With `preload` many different content-types can be preloaded and the[full list](
 
 This is likely related to a large group of sites built as Single Page Apps that need the main bundle as soon as possible to start downloading the rest of their JS dependencies. Subsequent usage comes from font at 8%, style at 5%, image at 1%, and fetch at 1%.
 
-// TODO @zizzamia Add chart 3
+{{ figure_markup(
+  image="TODO",
+  caption="TODO",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYAbLxN40s6mNR1jo0XDe_V4siN8TAsx2mryMp5IQmlJ-9O9eJxYROz7Rw6ozyFP6hlIZHxxh95GqX/pubchart?oid=903180926&format=interactive",
+  sheets_gid="1829901599",
+  sql_file="as_attribute_by_year.sql"
+) }}
 
 Compared to the trend in 2019, we've seen rapid growth in font and style usage with the `as` attribute. This is likely related to both developers increasing the priority of critical CSS and also combining `preload` fonts with `display:optional` to [improve](https://web.dev/optimize-cls/#web-fonts-causing-foutfoit) Cumulative Layout Shift ([CLS](https://web.dev/cls/)).
 
