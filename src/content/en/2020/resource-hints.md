@@ -88,7 +88,14 @@ Based on the HTTP Archive, let's jump into analyzing the 2020 trends, and compar
 
 More and more web pages are using the main Resource Hints, and in 2020 we are seeing the adoption remains incredibly consistent between desktop & mobile.
 
-// TODO @zizzamia Add Chart
+{{ figure_markup(
+  image="TODO",
+  caption="TODO",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYAbLxN40s6mNR1jo0XDe_V4siN8TAsx2mryMp5IQmlJ-9O9eJxYROz7Rw6ozyFP6hlIZHxxh95GqX/pubchart?oid=1550112064&format=interactive",
+  sheets_gid="1805612941",
+  sql_file="adoption.sql"
+) }}
 
 This is a great representation of how year over year we continue to focus on improving not only for desktop but also for mobile experiences. One take we will probably analyze even further next year is how HighEnd vs LowEnd devices will diverge in hints usage.
 
