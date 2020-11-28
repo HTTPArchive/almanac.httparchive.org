@@ -38,8 +38,7 @@ FROM
       url,
       get_media_info(JSON_EXTRACT_SCALAR(payload, '$._media')) AS media_info
     FROM
-      # `httparchive.pages.2020_08_01_*`
-      `httparchive.sample_data.pages_*`
+      `httparchive.pages.2020_08_01_*`
     )
   FULL OUTER JOIN
     (
@@ -48,8 +47,7 @@ FROM
       page as url,
       LOWER(REGEXP_EXTRACT(url, '(?i)(hls|video|shaka|jwplayer|brightcove-player-loader|flowplayer)[(?:\\.min)]?\\.js')) AS player
     FROM
-      # `httparchive.almanac.requests`
-      `httparchive.sample_data.requests`
+      `httparchive.almanac.requests`
     WHERE
       date = '2020-08-01' AND
       type = 'script'
