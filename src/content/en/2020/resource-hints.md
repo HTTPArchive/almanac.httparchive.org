@@ -294,7 +294,14 @@ One solution to this, is to use the [PRPL Pattern](https://addyosmani.com/blog/t
 
 For both `preload` and `prefetch` we've had an increase in adoption when the page is controlled by a [Service Worker](https://developers.google.com/web/fundamentals/primers/service-workers). This is because of the potential to both improve the resource prioritization by preloading when the Service Worker is not active yet and intelligently prefetching future resources while letting the Service Worker cache them before they're needed by the user.
 
-// TODO @zizzamia Add chart 4
+{{ figure_markup(
+  image="TODO",
+  caption="TODO",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYAbLxN40s6mNR1jo0XDe_V4siN8TAsx2mryMp5IQmlJ-9O9eJxYROz7Rw6ozyFP6hlIZHxxh95GqX/pubchart?oid=252958553&format=interactive",
+  sheets_gid="691299508",
+  sql_file="adoption_service_workers.sql"
+) }}
 
 For `preload` on desktop we have an outstanding 47% rate of adoption and `prefetch` a 10% rate of adoption. In both cases the data is much higher compared to average adoption without a Service Worker.
 
