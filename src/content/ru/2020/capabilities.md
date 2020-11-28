@@ -26,13 +26,13 @@ featured_stat_label_3: Сайты, позволяющие устанавлива
 
 <a lang="en" href="https://www.chromium.org/teams/web-capabilities-fugu">Capabilities Project</a>, также известный как <span lang="en">Project Fugu</span> — совместный проект компаний Google, Microsoft и Intel, целью которого является устранение существующего разрыва между веб- и нативными приложениями. Это важно для поддержания актуальности веб как платформы. Для достижения этой цели команда Chromium реализует новые API, которые позволяют использовать возможности операционной системы в вебе, сохраняя при этом безопасность и конфиденциальность для пользователей. К этим возможностям относятся, в частности:
 
-- [File System Access API](https://web.dev/file-system-access/) для доступа к файлам на локальной файловой системе
-- [File Handling API](https://web.dev/file-handling/) для регистрации обработчиков определенных файловых расширений
-- [Async Clipboard API](https://web.dev/async-clipboard/) для доступа к пользовательскому буферу обмена
-- [Web Share API](https://web.dev/web-share/) для совместного использования файлов с другими приложениями
-- [Contact Picker API](https://web.dev/contact-picker/) для доступа к контактам в пользовательской адресной книги
-- [Shape Detection API](https://web.dev/shape-detection/) для эффективного распознавания лиц или штрих-кодов на изображениях.
-- [Web NFC](https://web.dev/nfc/), [Web Serial](https://web.dev/serial/), [Web USB](https://web.dev/usb/), [Web Bluetooth](https://web.dev/bluetooth/) и другие API-интерфейсы (полный список смотрите на странице [Fugu API Tracker](https://goo.gle/fugu-api-tracker))
+- <a lang="en" href="https://web.dev/file-system-access/">File System Access API</a> для доступа к файлам на локальной файловой системе
+- <a lang="en" href="">File Handling API](https://web.dev/file-handling/) для регистрации обработчиков определенных файловых расширений
+- <a lang="en" href="">Async Clipboard API](https://web.dev/async-clipboard/) для доступа к пользовательскому буферу обмена
+- <a lang="en" href="">Web Share API](https://web.dev/web-share/) для совместного использования файлов с другими приложениями
+- <a lang="en" href="">Contact Picker API](https://web.dev/contact-picker/) для доступа к контактам в пользовательской адресной книги
+- <a lang="en" href="">Shape Detection API](https://web.dev/shape-detection/) для эффективного распознавания лиц или штрих-кодов на изображениях.
+- <a lang="en" href="https://web.dev/nfc/">Web NFC</a>, <a lang="en" href="https://web.dev/serial/">Web Serial</a>, <a lang="en" href="https://web.dev/usb/">Web USB</a>, <a lang="en" href="https://web.dev/bluetooth/">Web Bluetooth</a> и другие API-интерфейсы (полный список смотрите на странице <a lang="en" href="https://goo.gle/fugu-api-tracker">Fugu API Tracker</a>)
 
 Любой желающий может предложить новую возможность, если [создаст тикет в багтрекере Chromium](https://bit.ly/new-fugu-request). Команда Chromium рассматривает предложения и обсуждают все API с другими разработчиками и создателями браузеров в соответствующих группах стандартов. В это же время команда Fugu реализует API в Chromium, активируемого с помощью флагов. Позже API станет доступен для ограниченного числа разработчиков через механизм [origin trial](https://web.dev/origin-trials/). Во время этого этапа разработчики могут запросить токен, чтобы протестировать API на определенной веб-странице. Если API окажется достаточно надежным для работы, то сначала он появится в Chromium, а затем и в других браузерах (если они решат включить его). На странице [Capability Status](https://web.dev/fugu-status/) можно узнать текущий статус API-возможности.
 
