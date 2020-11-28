@@ -24,21 +24,18 @@ return result;
 SELECT
   client,
   SAFE_DIVIDE(COUNTIF(media_info.num_srcset_all > 0), COUNT(0)) AS pages_with_srcset_pct,
-  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_candidates_avg >= 1 and media_info.num_srcset_candidates_avg <=3), COUNTIF(media_info.num_srcset_all > 0)) AS pages_with_srcset_candidates_1_3_pct,
-  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_candidates_avg >= 1 and media_info.num_srcset_candidates_avg <= 5), COUNTIF(media_info.num_srcset_all > 0)) AS pages_with_srcset_candidates_1_5_pct,
-  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_candidates_avg > 5 and media_info.num_srcset_candidates_avg <= 10), COUNTIF(media_info.num_srcset_all > 0)) AS pages_with_srcset_candidates_5_10_pct,
-  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_candidates_avg > 10 and media_info.num_srcset_candidates_avg <= 15), COUNTIF(media_info.num_srcset_all > 0)) AS pages_with_srcset_candidates_10_15_pct,
-  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_candidates_avg > 15 and media_info.num_srcset_candidates_avg <= 20), COUNTIF(media_info.num_srcset_all > 0)) AS pages_with_srcset_candidates_15_20_pct
-FROM
-  (
+  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_candidates_avg >= 1 AND media_info.num_srcset_candidates_avg <=3), COUNTIF(media_info.num_srcset_all > 0)) AS pages_with_srcset_candidates_1_3_pct,
+  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_candidates_avg >= 1 AND media_info.num_srcset_candidates_avg <= 5), COUNTIF(media_info.num_srcset_all > 0)) AS pages_with_srcset_candidates_1_5_pct,
+  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_candidates_avg > 5 AND media_info.num_srcset_candidates_avg <= 10), COUNTIF(media_info.num_srcset_all > 0)) AS pages_with_srcset_candidates_5_10_pct,
+  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_candidates_avg > 10 AND media_info.num_srcset_candidates_avg <= 15), COUNTIF(media_info.num_srcset_all > 0)) AS pages_with_srcset_candidates_10_15_pct,
+  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_candidates_avg > 15 AND media_info.num_srcset_candidates_avg <= 20), COUNTIF(media_info.num_srcset_all > 0)) AS pages_with_srcset_candidates_15_20_pct
+FROM (
   SELECT
     _TABLE_SUFFIX AS client,
-    url,
     get_media_info(JSON_EXTRACT_SCALAR(payload, '$._media')) AS media_info
   FROM
-    `httparchive.pages.2020_08_01_*`
-  )
+    `httparchive.pages.2020_08_01_*`)
 GROUP BY
   client
 ORDER BY
-  client;
+  client

@@ -22,29 +22,22 @@ return result;
 SELECT
   client,
   COUNTIF(video_nodes) / COUNT(0) AS video_tag_pct,
-  COUNTIF(player is not null) / COUNT(0) AS js_video_player_pct,
-  COUNTIF(video_nodes AND player is not null) / COUNT(0) both_video_tag_js_player_pct
-FROM
-  (
+  COUNTIF(player IS NOT NULL) / COUNT(0) AS js_video_player_pct,
+  COUNTIF(video_nodes AND player IS NOT NULL) / COUNT(0) both_video_tag_js_player_pct
+FROM (
   SELECT
     client,
-    url,
     media_info.num_video_nodes > 0 AS video_nodes,
     player
-  FROM
-    (
+  FROM (
     SELECT
       _TABLE_SUFFIX AS client,
-      url,
       get_media_info(JSON_EXTRACT_SCALAR(payload, '$._media')) AS media_info
     FROM
-      `httparchive.pages.2020_08_01_*`
-    )
-  FULL OUTER JOIN
-    (
+      `httparchive.pages.2020_08_01_*`)
+  FULL OUTER JOIN (
     SELECT
       client,
-      page as url,
       LOWER(REGEXP_EXTRACT(url, '(?i)(hls|video|shaka|jwplayer|brightcove-player-loader|flowplayer)[(?:\\.min)]?\\.js')) AS player
     FROM
       `httparchive.almanac.requests`
@@ -54,8 +47,7 @@ FROM
     GROUP BY
       client,
       page,
-      player
-    )
+      player)
   USING (client, url)
   GROUP BY
     client,
@@ -63,9 +55,8 @@ FROM
     video_nodes,
     player
   HAVING
-    video_nodes OR player is not null
-  )
+    video_nodes OR player IS NOT NULL)
 GROUP BY
   client
 ORDER BY
-  client;
+  client

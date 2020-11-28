@@ -13,10 +13,13 @@ FROM
   `httparchive.almanac.requests`
 WHERE
   date = '2020-08-01' and
-  type='image'
+  type = 'image'
 GROUP BY
-  client, ext, mimetype
+  client,
+  ext,
+  mimetype
 HAVING
   ext_mime_image_count > 10000
 ORDER BY
-  ext_mime_image_count desc, client;
+  ext_mime_image_count DESC,
+  client

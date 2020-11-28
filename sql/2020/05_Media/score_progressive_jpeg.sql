@@ -9,16 +9,13 @@ SELECT
   COUNTIF(score >= 25 AND score < 50) / COUNT(0) AS percent_25_50,
   COUNTIF(score >= 50 AND score < 75) / COUNT(0) AS percent_50_75,
   COUNTIF(score >= 75 AND score <= 100) / COUNT(0) AS percent_75_100
-FROM
-  (
+FROM (
   SELECT
     _TABLE_SUFFIX AS client,
-    url,
     CAST(JSON_EXTRACT(payload, '$._score_progressive_jpeg') AS NUMERIC) AS score
   FROM
-    `httparchive.pages.2020_08_01_*`
-  )
+    `httparchive.pages.2020_08_01_*`)
 GROUP BY
   client
 ORDER BY
-  client;
+  client

@@ -34,16 +34,14 @@ SELECT
   SAFE_DIVIDE(SUM(markup_info.alt_missing), SUM(markup_info.total)) AS imgs_alt_missing_pct,
   SAFE_DIVIDE(SUM(markup_info.alt_blank), SUM(markup_info.total)) AS img_alt_blank_pct,
   SAFE_DIVIDE(SUM(markup_info.alt_present), SUM(markup_info.total)) AS img_alt_present_pct
-FROM
-  (
+FROM (
   SELECT
     _TABLE_SUFFIX AS client,
     url,
     get_markup_info(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info
   FROM
-    `httparchive.pages.2020_08_01_*`
-  )
+    `httparchive.pages.2020_08_01_*`)
 GROUP BY
   client
 ORDER BY
-  client;
+  client

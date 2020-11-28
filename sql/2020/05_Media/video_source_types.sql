@@ -18,4 +18,4 @@ GROUP BY
   video_type
 ORDER BY
   client,
-  video_type_count desc;
+  video_type_count DESC
