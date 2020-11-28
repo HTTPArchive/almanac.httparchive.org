@@ -11,7 +11,7 @@ discuss: 1774
 results: https://docs.google.com/spreadsheets/d/14QBP8XGkMRfWRBbWsoHm6oDVPkYhAIIpfxRn4iOkbUU/
 queries: 19_Resource_Hints
 khempenius_bio: Katie Hempenius est ingénieur dans l’équipe Chrome où elle travaille à rendre le web plus rapide.
-featured_quote: Les indices de ressources fournissent des \"suggestions\" au navigateur sur les ressources qui seront rapidement nécessaires. L’action que le navigateur entreprend à la suite de cet indice varie selon le type d’indice ; différents indices déclenchent différentes actions. Lorsqu’ils sont utilisés correctement, ils peuvent améliorer les performances de la page en donnant une longueur d'avance aux actions importantes, par anticipation.
+featured_quote: Les indices de ressources fournissent des "suggestions" au navigateur sur les ressources qui seront rapidement nécessaires. L’action que le navigateur entreprend à la suite de cet indice varie selon le type d’indice ; différents indices déclenchent différentes actions. Lorsqu’ils sont utilisés correctement, ils peuvent améliorer les performances de la page en donnant une longueur d'avance aux actions importantes, par anticipation.
 featured_stat_1: 29 %
 featured_stat_label_1: des sites utilisent <code>dns-prefetch</code>.
 featured_stat_2: 88 %
@@ -27,7 +27,7 @@ Les [indices de ressources](https://www.w3.org/TR/resource-hints/) fournissent d
 [Quelques exemples](https://youtu.be/YJGCZCaIZkQ?t=1956) d'amélioration de performance suite à l'usage d'indices des ressources&nbsp;:
 
 * Jabong a réduit son Time To Interactive de 1,5 seconde en préchargeant les scripts critiques.
-* Barefoot Wine a réduit le Time To Interactive des futures pages de 2,7 secondes en préchargeant les liens visibles. 
+* Barefoot Wine a réduit le Time To Interactive des futures pages de 2,7 secondes en préchargeant les liens visibles.
 * Chrome.com a réduit sa latence de 0,7 seconde en se préconnectant à des domaines critiques.
 
 La plupart des navigateurs actuels prennent en charge quatre indices de ressources distincts&nbsp;: `dns-prefetch`, `preconnect`, `preload` et `prefetch`.
