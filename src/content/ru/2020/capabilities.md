@@ -94,8 +94,9 @@ API Storage Manager доступен в Chrome с 2016 года, Firefox — с 
 
 {{ figure_markup(
   image="storage_manager_api_persist.png",
-  caption="Количество страниц в Chrome, использующих persist-метод из StorageManager API.",
-  description="График использования persist-метода в StorageManager API от количества страниц, отслеживаемых HTTPArchive. Сравнение как по мобильным, так и обычным веб-страницам. На обычных страницах использование почти неизменно, в то время как на мобильных наблюдается небольшие изменения. В октябре 2020 года этот API вызывался на 25 обычных веб-страниц и 176 мобильных страницах.",
+  alt="Количество страниц в Chrome, использующих persist-метод из StorageManager API.",
+  caption='Количество страниц в Chrome, использующих persist-метод из <span lang="en">StorageManager API</span>.',
+  description='График использования persist-метода в <span lang="en">StorageManager API</span> от количества страниц, отслеживаемых HTTPArchive. Сравнение как по мобильным, так и обычным веб-страницам. На обычных страницах использование почти неизменно, в то время как на мобильных наблюдается небольшие изменения. В октябре 2020 года этот API вызывался на 25 обычных веб-страниц и 176 мобильных страницах.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=644836316&format=interactive",
   sheets_gid="1095648844",
   sql_file="durable_storage_persist_usage.sql"
