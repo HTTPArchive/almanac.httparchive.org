@@ -5,7 +5,7 @@ chapter_number: 21
 title: Resource Hints
 description: Resource Hints chapter of the 2020 Web Almanac covering usage of dns-prefetch, preconnect, preload, prefetch, priority hints, and native lazy loading.
 authors: [Zizzamia]
-reviewers: [notwillk, giopunt, jessnicolet, pmeenan, mgechev]
+reviewers: [jessnicolet, pmeenan, giopunt, mgechev, notwillk]
 analysts: [khempenius]
 translators: []
 zizzamia_bio: Staff Software Engineer, Retail Growth at Coinbase
@@ -104,7 +104,7 @@ This is a great representation of how year over year we continue to focus on imp
   content="33%",
   classes="big-number",
   sheets_gid="1805612941",
-  sql_file="// TODO @zizzamia Add sql"
+  sql_file="adoption.sql"
 ) }}
 
 The relative popularity of `dns-prefetch` is unsurprising as it first appeared in 2009, and has the widest support out of all major Resource Hints. It had a 4% increase in Desktop adoption, compared to [2019](https://almanac.httparchive.org/en/2019/resource-hints#resource-hints). We saw a similar increase for `preconnect` as well. One key reason this was the largest growth between all hints, is the clear and useful advice the Lighthouse audit is giving on this matter. Starting from this year's report we also introduce how the latest dataset performs against Lighthouse recommendations.
@@ -135,7 +135,7 @@ However, this hasn't stopped some misuse of the `preload` hint, since in one ins
   content="20,931",
   classes="big-number",
   sheets_gid="175042082",
-  sql_file="// TODO @zizzamia Add sql"
+  sql_file="hints_per_page.sql"
 ) }}
 
 As we create more and more automation with Resource Hints, be cautious when dynamically injecting preload hints - or any elements for that matter!
@@ -150,8 +150,8 @@ With `preload` many different content-types can be preloaded and the[full list](
   caption="The percent of preload hints on mobile using the scripts type.",
   content="64%",
   classes="big-number",
-  sheets_gid="1805612941",
-  sql_file="// TODO @zizzamia Add sql"
+  sheets_gid="1829901599",
+  sql_file="as_attribute_by_year.sql"
 ) }}
 
 This is likely related to a large group of sites built as Single Page Apps that need the main bundle as soon as possible to start downloading the rest of their JS dependencies. Subsequent usage comes from font at 8%, style at 5%, image at 1%, and fetch at 1%.
@@ -210,8 +210,8 @@ Implementing a `dns-prefetch` fallback in the same `<link>` tag causes a [bug](h
   caption="Resource hints on desktop that use either preconnect or dns-prefetch use both in the same hint.",
   content="1.93%",
   classes="big-number",
-  sheets_gid="1805612941",
-  sql_file="// TODO @zizzamia Add sql"
+  sheets_gid="281984550",
+  sql_file="preconnect_and_dnsprefetch_relative.sql"
 ) }}
 
 Close to 2% of pages (~40k) reported the issue of both `preconnect` & `dns-prefetch` in a single resource.
@@ -220,18 +220,18 @@ Close to 2% of pages (~40k) reported the issue of both `preconnect` & `dns-prefe
   caption="Pages that pass the preconnect Lighthouse audit",
   content="19.67%",
   classes="big-number",
-  sheets_gid="1805612941",
-  sql_file="// TODO @zizzamia Add sql"
+  sheets_gid="152449420",
+  sql_file="lighthouse_preconnect.sql"
 ) }}
 
 We saw only 19.67% of pages passing Lighthouse’s "[Preconnect to required origins](https://web.dev/uses-rel-preconnect/)" audit, creating a large opportunity for thousands of websites to start using `preconnect` or `dns-prefetch` to establish early connections to important third-party origins.
 
 {{ figure_markup(
-  caption="Pages that pass the  preload Lighthouse audit",
+  caption="Pages that pass the preload Lighthouse audit",
   content="84.6%",
   classes="big-number",
-  sheets_gid="1805612941",
-  sql_file="// TODO @zizzamia Add sql"
+  sheets_gid="1047875076",
+  sql_file="lighthouse_preload.sql"
 ) }}
 
 Running Lighthouse’s "[Preload key requests](https://web.dev/uses-rel-preload/)" audit resulted in 84.6% of pages passing the test, which is an astonishing result. If you are looking to use `preload` for the first time, remember, fonts and critical scripts are a good place to start.
@@ -244,8 +244,8 @@ Now let’s celebrate the first year of the [Native Lazy Loading](https://addyos
   caption="Percentage of pages using native lazy loading set to “lazy”",
   content="3.87%",
   classes="big-number",
-  sheets_gid="1805612941",
-  sql_file="// TODO @zizzamia Add sql"
+  sheets_gid="2039808014",
+  sql_file="native_lazy_loading_attrs.sql"
 ) }}
 
 Adoption is still in its early days, especially with the official thresholds earlier this year being too conservative, and only [recently](https://addyosmani.com/blog/better-image-lazy-loading-in-chrome/) aligning with developer expectations. With almost 72% of browsers supporting native image/source lazy loading, this is another area of opportunity especially for pages looking to improve data usage and performance on low-end devices. 
@@ -254,8 +254,8 @@ Adoption is still in its early days, especially with the official thresholds ear
   caption="Percentage of pages passing the offscreen images Lighthouse audit",
   content="68.65%",
   classes="big-number",
-  sheets_gid="1805612941",
-  sql_file="// TODO @zizzamia Add sql"
+  sheets_gid="1357389632",
+  sql_file="lighthouse_offscreen_images.sql"
 ) }}
 
 Running Lighthouse's "[Defer offscreen images](https://web.dev/offscreen-images/)" audit resulted in 68.65% of pages passing the test. For those pages there is an opportunity to lazy-load images after all critical resources have finished loading.
@@ -280,8 +280,8 @@ HTTP/2 has a feature called server push that can potentially improve page perfor
   caption="Percentage of HTTP/2 Push pages using preload/nopush",
   content="75.36%",
   classes="big-number",
-  sheets_gid="1805612941",
-  sql_file="// TODO @zizzamia Add sql"
+  sheets_gid="308166349",
+  sql_file="h2_preload_nopush.sql"
 ) }}
 
 In the 2020 dataset we have seen 1% of mobile pages using HTTP/2 Push, and of those 75% of preload header links use the nopush option in the firstHtml request. This means that even though a website is using preload, the majority of requests prefer to disable the push option.
@@ -323,8 +323,8 @@ With `preload` and `prefetch`, the priority is set by the browser depending on t
   caption="The rate of priority hint adoption on mobile",
   content="0.77%",
   classes="big-number",
-  sheets_gid="1805612941",
-  sql_file="// TODO @zizzamia Add sql"
+  sheets_gid="1596669035",
+  sql_file="priority_hints.sql"
 ) }}
 
 So far only 0.77% websites adopted this new hint as Chrome is still [actively](https://www.chromestatus.com/features/5273474901737472) experimenting, and at the time of this article's release the feature is on-hold.
@@ -333,8 +333,8 @@ So far only 0.77% websites adopted this new hint as Chrome is still [actively](h
   caption="Priority hints on mobile are on script elements",
   content="80%",
   classes="big-number",
-  sheets_gid="1805612941",
-  sql_file="// TODO @zizzamia Add sql"
+  sheets_gid="800402946",
+  sql_file="priority_hints_by_element.sql"
 ) }}
 
 The largest use is with script elements, which is unsurprising as the number of JS primary and third-party files continues to grow.
@@ -343,8 +343,8 @@ The largest use is with script elements, which is unsurprising as the number of 
   caption="Priority hints on mobile have \"low\" importance",
   content="16.11%",
   classes="big-number",
-  sheets_gid="1805612941",
-  sql_file="// TODO @zizzamia Add sql"
+  sheets_gid="1098063134",
+  sql_file="priority_hints_by_element_and_importance.sql"
 ) }}
 
 There are over 79% of resources with "high" priority, but something we should pay even more attention to is the 16% of resources with "low" priority. Priority Hints have a clear advantage as a defense mechanism rather than an offense, by helping the browser decide what to de-prioritize and giving back significant CPU and Bandwidth to complete critical requests first.
