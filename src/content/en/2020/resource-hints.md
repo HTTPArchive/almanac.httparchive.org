@@ -117,7 +117,14 @@ The relative popularity of `dns-prefetch` is unsurprising as it first appeared i
 
 Across the board developers are learning how to better use Resource Hints, and compared to [2019](https://almanac.httparchive.org/en/2019/resource-hints#resource-hints) we've seen an improved use of `preload`, `prefetch` and `preconnect`. For expensive operations like preload and preconnect the median usage on desktop decreased from 2 to 1. We have seen the opposite for loading future resources with a lower priority with `prefetch`, with an increase from 1 to 2 in median per page.
 
-// TODO @zizzamia Add chart 2
+{{ figure_markup(
+  image="TODO",
+  caption="TODO",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYAbLxN40s6mNR1jo0XDe_V4siN8TAsx2mryMp5IQmlJ-9O9eJxYROz7Rw6ozyFP6hlIZHxxh95GqX/pubchart?oid=320451644&format=interactive",
+  sheets_gid="175042082",
+  sql_file="hints_per_page.sql"
+) }}
 
 Resource hints are most effective when they're used selectively ("when everything is important, nothing is"). Having a more clear definition of what resources help improve Largest Contentful Paint moved the focus away from using `preconnect` and more towards `prefetch` by shifting some of the resource prioritization and freeing up bandwidth for what most helps the user at first.
 
