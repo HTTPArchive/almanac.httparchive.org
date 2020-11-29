@@ -204,7 +204,7 @@ registration.periodicSync.register('articles', {
 
 В каждый заданный интервал времени браузер генерирует событие сервис-воркера `periodicsync` (при условии, что устройство находится в сети). Затем скрипт сервис-воркера может выполнить необходимые действия для синхронизации данных:
 
-```
+```js
 self.addEventListener('periodicsync', (event) => {
   if (event.tag === 'articles') {
     event.waitUntil(syncStuff());
@@ -233,7 +233,7 @@ PWA — универсальная модель приложения. Однак
 
 Для определения, установлено ли у пользователя нативное приложение или PWA, разработчики могут воспользоваться [методом getInstalledRelatedApps()](https://web.dev/get-installed-related-apps/) ([черновик проекта на WICG](https://wicg.github.io/get-installed-related-apps/spec/)) в объекте `navigator`. Сейчас этот метод работает в браузерах на Chromium и поддерживает приложения на Android и на универсальной платформе Windows (UWP). Разработчикам необходимо подкорректировать нативные бандлы приложений, указав в них сайт, а также в файле манифеста PWA добавить информацию о нативных приложениях. Вызов метода `getInstalledRelatedApps()` вернёт список установленных приложений на устройстве пользователя:
 
-```
+```js
 const relatedApps = await navigator.getInstalledRelatedApps();
 relatedApps.forEach((app) => {
   console.log(app.id, app.platform, app.url);

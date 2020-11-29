@@ -51,11 +51,13 @@ Le rôle de [`dns-prefetch`](https://developer.mozilla.org/en-US/docs/Learn/Perf
 ## Syntaxe
 
 97&nbsp;% des usages d'indices de ressources sont spécifiés par le tag [`<link>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link). Par exemple&nbsp;:
-```
+
+```html
 <link rel="prefetch" href="shopping-cart.js">
 ```
 
 Seuls 3&nbsp;% des indices de ressources proviennent [d'en-têtes HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link) permettant de les spécifier. Par exemple&nbsp;:
+
 ```
 Link: <https://example.com/shopping-cart.js>; rel=prefetch
 ```
@@ -209,7 +211,8 @@ Pour les types de ressources plus récentes (par exemple les polices, les requê
 </figure>
 
 Dans le contexte des indices de ressources, l'utilisation de l'attribut `crossorigin` leur permet de correspondre au mode CORS des ressources auxquelles ils sont censés correspondre et indique les références à inclure dans la requête. Par exemple, `anonymous` active le mode CORS et indique qu'aucun identifiant ne doit être inclus pour ces requêtes `cross-origin`&nbsp;:
-```
+
+```html
 <link rel="prefetch" href="https://other-server.com/shopping-cart.css" crossorigin="anonymous">
 ```
 
