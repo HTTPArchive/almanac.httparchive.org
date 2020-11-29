@@ -147,7 +147,7 @@ Canonical tags -as described by [Google here](https://developers.google.com/sear
   image="seo-presence-of-canonical-tag.png",
   caption="Presence of Canonical Tag",
   description="Bar chart showing presence of canonical tags. The majority of our analyzed web pages include a canonical tag, the main part being self-referential (47.88% for desktop and 45.31% for mobile). The percentage of canonicalized web pages is higher on mobile (8.45%) than on desktop (4.1%).",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1777344456format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1777344456&format=interactive",
   sheets_gid="337739550",
   sql_file="pages_wpt_bodies_by_device.sql"
  )
