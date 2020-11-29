@@ -158,7 +158,7 @@ When we look at CMS adoption share relative to other CMSs (thus excluding websit
 {{ figure_markup(
   image="cms-adoption-share-2020.png",
   caption="CMS adoption share 2020.",
-  description="Pie chart showing the adoption of CMSs dominated by Wordpress taking nearly three quarters of the share (74.92%), and other CMSs making up less than 5% each: Joomla at 4.9%, Drupal at 4.7%, Wix at 3.1%, Squarespace at 2.3%, 1 C-Bitrix at 1.5% and TYPO3 CMS at 1.2%.",
+  description="Pie chart showing the adoption of CMSs dominated by WordPress taking nearly three quarters of the share (74.92%), and other CMSs making up less than 5% each: Joomla at 4.9%, Drupal at 4.7%, Wix at 3.1%, Squarespace at 2.3%, 1 C-Bitrix at 1.5% and TYPO3 CMS at 1.2%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkUxfuK-FCn3_IYDJiEsKDmdmyKb0TSEhG8dFc0XBIXej1NO2uUOmd-9NCbWuh-MZ3xzMhK_kNT-4u/pubchart?oid=701401011&format=interactive",
   sheets_gid="1594044364",
   sql_file="top_cmss_yoy_all_clients.sql"
@@ -177,8 +177,8 @@ Deriving from this flexibility, WordPress also has a low barrier of entry for de
 
 {{ figure_markup(
   image="cms-wordpress-plugin-resource-per-page.png",
-  caption="Wordpress Plugin resources per page.",
-  description="Bar chart showing the number of Wordpress plugins per page with 4 plugins for mobile and desktop at the 10th percentil, 8 for both at 25th percentile, 22 for both at 50th percentile, 46 for desktop and 44 for mobile at 75th percentile, 76 for desktop and 74 for mobile at 90th percentile and 1918 for desktop and 1948 for mobile at 100th percentile.",
+  caption="WordPress plugin resources per page.",
+  description="Bar chart showing the number of WordPress plugins per page with 4 plugins for mobile and desktop at the 10th percentile, 8 for both at 25th percentile, 22 for both at 50th percentile, 46 for desktop and 44 for mobile at 75th percentile, 76 for desktop and 74 for mobile at 90th percentile and 1918 for desktop and 1948 for mobile at 100th percentile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkUxfuK-FCn3_IYDJiEsKDmdmyKb0TSEhG8dFc0XBIXej1NO2uUOmd-9NCbWuh-MZ3xzMhK_kNT-4u/pubchart?oid=1286172532&format=interactive",
   sheets_gid="1543932766",
   sql_file="wp_resources.sql"
@@ -220,7 +220,7 @@ A “good” LCP is regarded as under 2.5 seconds. The average website on one of
 {{ figure_markup(
   image="cms-real-user-largest-contentful-paint-experiences.png",
   caption="Real-user Largest Contentful Paint experiences.",
-  description='Bar chart showing the top 5 CMSs and whether they have a "good" Largest Contentful Paint experience. Wordpress is middling with 33% on desktop and 25% on mobile, Drupal is the best with 61% on desktop and 47% on mobile, Joomla is second best with 48% on desktop and 28% on mobile, Squarespace has 37% on desktop but only 12% on mobile and Wix is the lowest with 9% on desktop and 9% on mobile.',
+  description='Bar chart showing the top 5 CMSs and whether they have a "good" Largest Contentful Paint experience. WordPress is middling with 33% on desktop and 25% on mobile, Drupal is the best with 61% on desktop and 47% on mobile, Joomla is second best with 48% on desktop and 28% on mobile, Squarespace has 37% on desktop but only 12% on mobile and Wix is the lowest with 9% on desktop and 9% on mobile.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkUxfuK-FCn3_IYDJiEsKDmdmyKb0TSEhG8dFc0XBIXej1NO2uUOmd-9NCbWuh-MZ3xzMhK_kNT-4u/pubchart?oid=188727692&format=interactive",
   sheets_gid="465267881",
   sql_file="core_web_vitals_distribution.sql"
@@ -238,7 +238,7 @@ FID is very fast for the average CMS website on desktop – only Wix scores lowe
 {{ figure_markup(
   image="cms-real-user-first-input-delay-experiences.png",
   caption="Real-user First Input Delay experiences.",
-  description='Bar chart showing the top 5 CMSs and whether they have a "good" First Input Delay experience. All have a 100% experience score on desktop, except Wix with 87%. For mobile Wordpress has 88%, Drupal 76%, Joomla 71%, Squarespace 91% and Wix 46%.',
+  description='Bar chart showing the top 5 CMSs and whether they have a "good" First Input Delay experience. All have a 100% experience score on desktop, except Wix with 87%. For mobile WordPress has 88%, Drupal 76%, Joomla 71%, Squarespace 91% and Wix 46%.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkUxfuK-FCn3_IYDJiEsKDmdmyKb0TSEhG8dFc0XBIXej1NO2uUOmd-9NCbWuh-MZ3xzMhK_kNT-4u/pubchart?oid=893606466&format=interactive",
   sheets_gid="465267881",
   sql_file="core_web_vitals_distribution.sql"
@@ -256,7 +256,7 @@ A score of 0.1 or below is good, over 0.25 is poor, and anything in between need
 {{ figure_markup(
   image="cms-real-user-cumulative-layout-shift-experiences.png",
   caption="Real-user Cumulative Layout Shift experiences.",
-  description='Bar chart showing the top 5 CMSs and whether they have a "good" Cumulative Layout Shift experience. Wordpress has a 47% of desktop sites with a "good experience" and 57% of mobile sites. Drupal has 58% for desktop and 70% for mobile, Joomla has 51% for desktop and 63% for mobile, Squarespace has 35% for desktop and 44% for mobile, and Wix has 58% for desktop and 59% for mobile.',
+  description='Bar chart showing the top 5 CMSs and whether they have a "good" Cumulative Layout Shift experience. WordPress has a 47% of desktop sites with a "good experience" and 57% of mobile sites. Drupal has 58% for desktop and 70% for mobile, Joomla has 51% for desktop and 63% for mobile, Squarespace has 35% for desktop and 44% for mobile, and Wix has 58% for desktop and 59% for mobile.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkUxfuK-FCn3_IYDJiEsKDmdmyKb0TSEhG8dFc0XBIXej1NO2uUOmd-9NCbWuh-MZ3xzMhK_kNT-4u/pubchart?oid=1265001868&format=interactive",
   sheets_gid="465267881",
   sql_file="core_web_vitals_distribution.sql"
@@ -276,7 +276,7 @@ Search Engine Optimisation (or SEO) is the practice of optimising websites to ma
 {{ figure_markup(
   image="cms-seo-lighthouse-score.png",
   caption="SEO Lighthouse scores for Top 5 CMSs.",
-  description="Bar chart showing the median SEO score for each of the top 5 CMSs. Wordpress has a median score of 0.9, Joomla 0.86, Drupal 0.83, Wix 0.93, and Squarespace 0.93",
+  description="Bar chart showing the median SEO score for each of the top 5 CMSs. WordPress has a median score of 0.9, Joomla 0.86, Drupal 0.83, Wix 0.93, and Squarespace 0.93",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkUxfuK-FCn3_IYDJiEsKDmdmyKb0TSEhG8dFc0XBIXej1NO2uUOmd-9NCbWuh-MZ3xzMhK_kNT-4u/pubchart?oid=895876622&format=interactive",
   sheets_gid="1671385936",
   sql_file="median_lighthouse_score.sql"
@@ -294,7 +294,7 @@ Each accessibility audit is pass or fail, but unlike other Lighthouse audits, a 
 {{ figure_markup(
   image="cms-accessibility-lighthouse-score.png",
   caption="Accessibility Lighthouse scores for Top 5 CMSs.",
-  description="Bar chart showing the median Accessibility compliance score for each of the top 5 CMSs. Wordpress has a median score of 0.84, Joomla 0.80, Drupal 0.84, Wiz is leading with 0.94, and Squarespace has 0.90",
+  description="Bar chart showing the median Accessibility compliance score for each of the top 5 CMSs. WordPress has a median score of 0.84, Joomla 0.80, Drupal 0.84, Wiz is leading with 0.94, and Squarespace has 0.90",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkUxfuK-FCn3_IYDJiEsKDmdmyKb0TSEhG8dFc0XBIXej1NO2uUOmd-9NCbWuh-MZ3xzMhK_kNT-4u/pubchart?oid=721104287&format=interactive",
   sheets_gid="1671385936",
   sql_file="median_lighthouse_score.sql"
