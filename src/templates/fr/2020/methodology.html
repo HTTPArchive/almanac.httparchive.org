@@ -72,7 +72,7 @@
         <h2 id="dataset"><a href="#dataset" class="anchor-link">À propos du jeu de données</a></h2>
 
         <p>
-          Le jeu de données HTTP Archive est continuellement mis à jour avec de nouvelles données mensuelles. Pour l’édition 2020 du Web Almanac, sauf indication contraire dans le chapitre, tous les paramètres ont été obtenus à partir de l’index de août 2020. Ces résultats sont <a href="https://github.com/HTTPArchive/httparchive.org/blob/master/docs/gettingstarted_bigquery.md">publiquement requêtables</a> sur BigQuery dans des tables préfixées par <code>2020_08_01</code>. 
+          Le jeu de données HTTP Archive est continuellement mis à jour avec de nouvelles données mensuelles. Pour l’édition 2020 du Web Almanac, sauf indication contraire dans le chapitre, tous les paramètres ont été obtenus à partir de l’index de août 2020. Ces résultats sont <a href="https://github.com/HTTPArchive/httparchive.org/blob/master/docs/gettingstarted_bigquery.md">publiquement requêtables</a> sur BigQuery dans des tables préfixées par <code>2020_08_01</code>.
         </p>
 
         <p>
@@ -88,19 +88,19 @@
         </p>
 
         <div class="code-block floating-card">
-          <pre><code tabindex="0"><span class="code-comment">#standardSQL
-# 01_01b: Distribution of JS bytes by client</span>
-<span class="code-keyword">SELECT</span>
+          <pre><code class="sql language-sql"><span class="comment">#standardSQL</span>
+<span class="comment"># 01_01b: Distribution of JS bytes by client</span>
+<span class="keyword">SELECT</span>
   percentile,
-  _TABLE_SUFFIX <span class="code-keyword">AS</span> client,
-  <span class="code-function">APPROX_QUANTILES</span>(<span class="code-function">ROUND</span>(bytesJs <span class="code-keyword">/</span> <span class="code-number">1024</span>, <span class="code-number">2</span>), <span class="code-number">1000</span>)[<span class="code-function">OFFSET</span>(percentile <span class="code-keyword">*</span> <span class="code-number">10</span>)] <span class="code-keyword">AS</span> js_kbytes
-<span class="code-keyword">FROM</span>
-  <span class="code-string">`httparchive.summary_pages.2019_07_01_*`</span>,
-  <span class="code-function">UNNEST</span>([<span class="code-number">10</span>, <span class="code-number">25</span>, <span class="code-number">50</span>, <span class="code-number">75</span>, <span class="code-number">90</span>]) <span class="code-keyword">AS</span> percentile
-<span class="code-keyword">GROUP BY</span>
+  _TABLE_SUFFIX <span class="keyword">AS</span> client,
+  <span class="function call">APPROX_QUANTILES</span>(<span class="function call">ROUND</span>(bytesJs / <span class="constant numeric">1024</span>, <span class="constant numeric">2</span>), <span class="constant numeric">1000</span>)[<span class="function call">OFFSET</span>(percentile <span class="keyword operator">*</span> <span class="constant numeric">10</span>)] <span class="keyword">AS</span> js_kbytes
+<span class="keyword">FROM</span>
+  <span class="string">`httparchive.summary_pages.2019_07_01_*`</span>,
+  <span class="function call">UNNEST</span>([<span class="constant numeric">10</span>, <span class="constant numeric">25</span>, <span class="constant numeric">50</span>, <span class="constant numeric">75</span>, <span class="constant numeric">90</span>]) <span class="keyword">AS</span> percentile
+<span class="keyword">GROUP</span> <span class="keyword">BY</span>
   percentile,
   client
-<span class="code-keyword">ORDER BY</span>
+<span class="keyword">ORDER</span> <span class="keyword">BY</span>
   percentile,
   client</code></pre>
         </div>
@@ -419,7 +419,7 @@
           Les responsables du projet ont examiné toutes les nominations d’auteurs et d’autrices et se sont efforcés de sélectionner des personnes qui apportent de nouvelles perspectives et amplifient les voix des groupes sous-représentés dans la communauté.
         </li>
       </ul>
-    
+
       <p>
         Nous espérons réitérer ce processus à l’avenir afin de garantir que le Web Almanac soit un projet plus diversifié et inclusif avec des contributeurs et contributrices de tous horizons.
       </p>
