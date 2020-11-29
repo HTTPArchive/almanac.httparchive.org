@@ -83,7 +83,7 @@ Response Code | All Devices | Mobile | Desktop
 6XX | 0.00% | 0.00% | 0.00%
 7XX | 0.00% | 0.15% | 0.12%
 
-<figcaption>{{ figure_link(caption="Robots.txt response codes."), sheets_gid="TODO", sql_file="TODO.sql" }}</figcaption>
+<figcaption>{{ figure_link(caption="Robots.txt response codes.", sheets_gid="TODO", sql_file="TODO.sql") }}</figcaption>
 </figure>
 
 In addition to similar status code behavior, disallow statement use was consistent between mobile and desktop versions of robots.txt files.
@@ -101,7 +101,7 @@ mediapartners-google | 5.55% | 3.83%
 mj12bot | 5.49% | 5.30%
 ahrefsbot | 4.80% | 4.66%
 
-<figcaption>{{ figure_link(caption="Robots.txt user-agent directives."), sheets_gid="TODO", sql_file="TODO.sql" }}</figcaption>
+<figcaption>{{ figure_link(caption="Robots.txt user-agent directives.", sheets_gid="TODO", sql_file="TODO.sql") }}</figcaption>
 </figure>
 
 
@@ -493,7 +493,7 @@ initial-scale=1,maximum-scale=1,width=device-width | 5.88% | 5.72%
 initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width | 5.56% | 4.81%
 initial-scale=1,maximum-scale=1,user-scalable=0,width=device-width | 3.93% | 3.73%
 
-<figcaption>{{ figure_link(caption="Viewport meta values."), sheets_gid="TODO", sql_file="TODO.sql" }}</figcaption>
+<figcaption>{{ figure_link(caption="Viewport meta values.", sheets_gid="TODO", sql_file="TODO.sql") }}</figcaption>
 </figure>
 
 #### CSS Media Queries
@@ -511,7 +511,7 @@ min-width | 75.04% | 73.75%
 orientation | 33.48% | 33.49%
 max-device-width | 26.23% | 28.15%
 
-<figcaption>{{ figure_link(caption="Media query usage."), sheets_gid="TODO", sql_file="TODO.sql" }}</figcaption>
+<figcaption>{{ figure_link(caption="Media query usage.", sheets_gid="TODO", sql_file="TODO.sql") }}</figcaption>
 </figure>
 
 #### Vary User-Agent in HTTP Header
@@ -581,7 +581,7 @@ First Meaning Paint (FMP) | -- | 7%
 First CPU Idle (FCI) | -- | 13%
 Max Potential FID (mpFID) | -- | 0%
 
-<figcaption>{{ figure_link(caption="Lighthouse changes"), sheets_gid="TODO", sql_file="TODO.sql" }}</figcaption>
+<figcaption>{{ figure_link(caption="Lighthouse changes", sheets_gid="TODO", sql_file="TODO.sql") }}</figcaption>
 </figure>
 
 Previously, performance scores and methods of measurement varied by tool. Google announced a set of unified performance metrics called [Core Web Vitals in May 2020](https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html).
