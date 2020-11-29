@@ -5,10 +5,10 @@ chapter_number: 7
 title: SEO
 description: SEO chapter of the 2020 Web Almanac covering content, meta tags, indexability, linking, speed, structured data, internationalization, SPAs, AMP and security.
 authors: [aleyda, ipullrank, fellowhuman1101]
-reviewers: [clarkeclark, natedame, catalinred, aysunakarsu, ashleyish, dsottimano, dwsmart, en3r0, Gathea, rachellcostello, ibnesayeed]
+reviewers: [natedame, catalinred, dsottimano, dwsmart, en3r0, ibnesayeed, bazzadp]
 analysts: [Tiggerito, antoineeripret]
 translators: []
-#aleyda_bio: TODO
+#aleyda_bio: SEO consultant, author, speaker and entrepreneur. Founder of [Orainti] (https://www.orainti.com/) (a boutique SEO consultancy working with some of the top Web properties and brands, from SaaS to marketplaces) and co-founder of [Remoters.net] (https://remoters.net/) (a free remote work hub, featuring remote jobs, tools, events, guides, and more to facilitate remote work). Aleyda enjoys sharing about SEO through her [blog] (https://www.aleydasolis.com/en/blog/), the [#SEOFOMO newsletter] (https://www.aleydasolis.com/en/seo-tips/), the [Crawling Mondays] (https://www.aleydasolis.com/en/crawling-mondays-videos/) video and podcast series and over [twitter] (https://twitter.com/aleyda).  
 #ipullrank_bio: TODO
 #fellowhuman1101_bio: TODO
 discuss: 2043
