@@ -119,7 +119,7 @@ Robots meta tag and X-Robots-Tag in HTTP headers are an extension of the propose
 Meta tags were the dominant method of granular execution with 27.70% of desktop and 27.96% of mobile pages using the tag. X-Robots-Tag directives were found on 0.27% and 0.40% of desktop and mobile respectively.
 
 {{ figure_markup(
-  image="fig1_on_page_robots_directive_use.png",
+  image="seo-on-page-robots-directive-use.png",
   caption="On-Page Robots Directive Use",
   description="Bar chart showing robots usage. Meta-Robots is 27.70% for desktop and 27.96% for mobile, X-Robots barely registers on the chart with a mere 0.27% of pages on desktop and 0.40% on mobile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=99993402&format=interactive",
@@ -144,7 +144,7 @@ Canonical tags -as described by [Google here](https://developers.google.com/sear
 [Last year](../2019/seo#canonicalization), it was identified that 48.34% of mobile home pages were using a canonical tag. This year the number of mobile home pages featuring a canonical tag has grown to 53.61%.
 
 {{ figure_markup(
-  image="fig2_presence_of_canonical_tag.png",
+  image="seo-presence-of-canonical-tag.png",
   caption="Presence of Canonical Tag",
   description="Bar chart showing presence of canonical tags. The majority of our analyzed web pages include a canonical tag, the main part being self-referential (47.88% for desktop and 45.31% for mobile). The percentage of canonicalized web pages is higher on mobile (8.45%) than on desktop (4.1%).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1777344456format=interactive",
@@ -162,7 +162,7 @@ Not only mobile home pages are featuring more canonical tags than desktop ones (
 Canonical URLs can be specified through different methods, by using the canonical link via the HTTP headers or the HTML head of a page, or by submitting them in XML Sitemaps. When analyzing which is the most popular canonical link implementation method, it was found that only 1.03% of desktop homepages and 0.88% of mobile ones are relying on the HTTP headers for their implementation, meaning that canonical tags are prominently implemented via the HTML head of a page.
 
 {{ figure_markup(
-  image="fig3_canonical_implementation_method.png",
+  image="seo-canonical-implementation-method.png",
   caption="Canonical Implementation Method",
   description="Bar chart showing the canonical tag implementation method. We observed that only 1.03% of desktop homepages and 0.88% of mobile ones are relying on the HTTP headers for their implementation, meaning that canonical tags are prominently implemented via the HTML head of a page.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=542127514&format=interactive",
@@ -193,7 +193,7 @@ Search engines encounter pages through its crawling activity, but may or may not
 We assessed word count in context of that disparity.
 
 {{ figure_markup(
-  image="fig4_visible_words_per_page_raw.png",
+  image="seo-visible-words-per-page-raw.png",
   caption="Visible Words Per Page (raw)",
   description="Bar chart showing the number of words per page (in raw response) per percentile (10, 25, 50, 75, and 90). The median mobile site displays 13.33% less text content than its desktop counterpart.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=831714745&format=interactive",
@@ -206,7 +206,7 @@ We found that the median desktop site features 13.46% more words when rendered t
 
 
 {{ figure_markup(
-  image="fig5_visible_words_per_page_rendered.png",
+  image="seo-visible-words-per-page-rendered.png",
   caption="Visible Words Per Page (rendered)",
   description="Bar chart showing the number of visible words per page (in rendered response) per percentile (10, 25, 50, 75, and 90). The median mobile site displays 11.5% more words when rendered than its raw HTML counterpart.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=961460345&format=interactive",
@@ -226,7 +226,7 @@ This year, the median desktop home page was found to have 402 words and the mobi
 Heading elements (h1-h6) act as a mechanism to visually indicate structure in a page’s content. Although these HTML elements don’t carry the weight they used to in search rankings, they still act as a valuable way to structure pages and signal other elements in the SERPs like Featured Snippets or other extraction methods that align with [Google’s new passage indexing](https://www.blog.google/products/search/search-on/).
 
 {{ figure_markup(
-  image="fig6_presence_of_h_tag.png",
+  image="seo-presence-of-h-tag.png",
   caption="Presence of H Tag",
   description="Bar chart showing the percent of pages with a heading tag (level 1,2,3 and 4). Over 60% of pages feature H1 elements in both the mobile and desktop contexts. These numbers hover around 60%+ through H2 and H3 and around 40% for H4.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=2103713054&format=interactive",
@@ -242,7 +242,7 @@ These numbers hover around 60%+ through H2 and H3. The incidence rate of H4 elem
 The prevalence of more H2 elements than H1s suggests that less pages are using multiple H1s.
 
 {{ figure_markup(
-  image="fig7_presence_of_non_empty_h_tags.png",
+  image="seo-presence-of-non-empty-h-tags.png",
   caption="Presence of Non-Empty H Tags",
   description="Bar chart showing the percent of pages with non empty heading tags (level 1,2,3 and 4). We observed that 7.55% of H1s, 1.4% of H2s, 1.5% of H3s, and 1.1% of H4 elements feature no text",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=833166653&format=interactive",
@@ -270,7 +270,7 @@ When analyzing the usage of the title tag, it was found that 98.75% of desktop h
 The median homepage features a page title that is six words long. There is no difference in the word count between the mobile and desktop contexts within our dataset. This suggests that the page title element is an element that is not modified between different page template types.
 
 {{ figure_markup(
-  image="fig8_title_word_count.png",
+  image="seo-title-word-count.png",
   caption="Title Word Count",
   description="Bar chart showing the number of words in the title tag per percentile (10, 25, 50, 75, and 90). The median homepage features a page title that is six words long. There is no difference in the word count between the mobile and desktop contexts within our dataset",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=2028212539&format=interactive",
@@ -282,7 +282,7 @@ The median homepage features a page title that is six words long. There is no di
 The median page title character count is 38 characters on both mobile and desktop. Interestingly, this is up from 20 characters on desktop and 21 characters on mobile from [last year’s analysis](../2019/seo#page-titles). The disparity between the contexts has disappeared year-over-year except within the 90th percentile wherein there is a one character disparity.
 
 {{ figure_markup(
-  image="fig9_title_character_count.png",
+  image="seo-title-character-count.png",
   caption="Title Character Count",
   description="Bar chart showing the number of characters in the title tag per percentile (10, 25, 50, 75, and 90). The median page title character count is 38 characters on both mobile and desktop.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1040977563&format=interactive",
@@ -299,7 +299,7 @@ When analyzing the usage of meta description, it was found that 68.62% of deskto
 
 
 {{ figure_markup(
-  image="fig10_meta_description_word_length.png",
+  image="seo-meta-description-word-length.png",
   caption="Meta Description Word Length",
   description="Bar chart showing the number of words in the meta description tag per percentile (10, 25, 50, 75, and 90). The median length of the meta description in our dataset is 19 words.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=156955276&format=interactive",
@@ -311,7 +311,7 @@ When analyzing the usage of meta description, it was found that 68.62% of deskto
 The median length of the meta description in our dataset is 19 words. The only disparity in word count takes place in the 90th percentile where the desktop content features one more word than mobile.
 
 {{ figure_markup(
-  image="fig11_meta_description_character_length.png",
+  image="seo-meta-description-character-length.png",
   caption="Meta Description Character Length",
   description="Bar chart showing the number of characters in the meta description tag per percentile (10, 25, 50, 75, and 90). The median character count for the meta description is 138 characters on desktop pages and 136 characters on mobile pages",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1293879233&format=interactive",
@@ -331,7 +331,7 @@ The usage of images, particularly using `<img>` tags, within a page often sugges
 The median desktop page features 21 image tags and the median mobile page features 19 image tags. The web continues to trend toward image-heaviness with the growth of bandwidth and the ubiquity of smartphones. However, this comes at a cost of performance.
 
 {{ figure_markup(
-  image="fig12_img_tags_per_page.png",
+  image="seo-img-tags-per-page.png",
   caption="img tags per page",
   description="Bar chart showing the number of image tag per page per percentile (10, 25, 50, 75, and 90). The median desktop page features 21 image tags and the median mobile page features 19 image tags..",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=923860709&format=interactive",
@@ -343,7 +343,7 @@ The median desktop page features 21 image tags and the median mobile page featur
 The median web page is missing 2.99% alt attributes on desktop and 2.44% of alt attributes on mobile.
 
 {{ figure_markup(
-  image="fig13_percent_of_missing_img_alt_attribute.png",
+  image="seo-percent-of-missing-img-alt-attribute.png",
   caption="Percent of missing img alt attributes",
   description="Bar chart showing the percent of missing alt attributes per percentile (10, 25, 50, 75, and 90). The median web page is missing 2.99% alt attributes on desktop and 2.44% of alt attributes on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=862590664&format=interactive",
@@ -355,7 +355,7 @@ The median web page is missing 2.99% alt attributes on desktop and 2.44% of alt 
 It  was also found that only 53.86% of desktop and 51.22% of mobile home pages featured image alt attributes. Although this might seem low, it is an improvement from [last year](../2019/seo#image-alt-tags) when it was found that only 46.71% of mobile pages used alt attributes on all of their images.
 
 {{ figure_markup(
-  image="fig14_percent_of_img_alt_attributes_present.png",
+  image="seo-percent-of-img-alt-attributes-present.png",
   caption="Percent of img alt attributes present",
   description="Bar chart showing the percentage of atl attributes present per percentile (10, 25, 50, 75, and 90). It was found that only 53.86% of desktop and 51.22% of mobile home pages featured image alt attributes..",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=827771545&format=interactive",
@@ -367,7 +367,7 @@ It  was also found that only 53.86% of desktop and 51.22% of mobile home pages f
 The median web page features 10% blank alt attributes on desktop and 11.11% blank alt attributes on mobile.
 
 {{ figure_markup(
-  image="fig15_percent_of_img_alt_attributes_blank.png",
+  image="seo-percent-of-img-alt-attributes-blank.png",
   caption="Percent of img alt attributes blank",
   description="Bar chart showing the percent of featured alt blank attributes per percentile (10, 25, 50, 75, and 90). The median web page features 10% blank alt attributes on desktop and 11.11% blank alt attributes on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=378651979&format=interactive",
@@ -385,7 +385,7 @@ Modern search engines use hyperlinks between pages for the discovery of new cont
 The median desktop homepage features 76 outgoing links while the median mobile homepage features 67. Historically, the direction from Google suggested that links be limited to 100 per page. While that recommendation is outdated on the modern web, the median page in our dataset adheres to it.
 
 {{ figure_markup(
-  image="fig16_outgoing_links.png",
+  image="seo-outgoing-links.png",
   caption="Outgoing Links",
   description="Bar chart showing the number of outgoing links per percentile (10, 25, 50, 75, and 90). The median desktop homepage features 76 outgoing links while the median mobile homepage features 67.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=284216213&format=interactive",
@@ -397,7 +397,7 @@ The median desktop homepage features 76 outgoing links while the median mobile h
 The median desktop page features 61 outgoing internal links while the median mobile page features 54 outgoing internal links. This is down 12.8% and 10% respectively from [last year’s analysis](../2019/seo#linking). This suggests that sites are not maximizing the ability to improve the crawlability and link equity flow through their pages in the way they did the year before.
 
 {{ figure_markup(
-  image="fig17_outgoing_links_internal.png",
+  image="seo-outgoing-links-internal.png",
   caption="Outgoing Links (Internal)",
   description="Bar chart showing the number of internal outgoing links per percentile (10, 25, 50, 75, and 90). The median desktop page features 61 outgoing internal links while the median mobile page features 54 outgoing internal links.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=739265254&format=interactive",
@@ -409,7 +409,7 @@ The median desktop page features 61 outgoing internal links while the median mob
 The median homepage is linking to external sites 7 times on desktop and 6 times on mobile.
 
 {{ figure_markup(
-  image="fig18_outgoing_links_external.png",
+  image="seo-outgoing-links-external.png",
   caption="Outgoing Links (External)",
   description="Bar chart showing the number of external outgoing links per percentile (10, 25, 50, 75, and 90). The median homepage is linking to external sites 7 times on desktop and 6 times on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=391564643&format=interactive",
@@ -423,7 +423,7 @@ The median homepage is linking to external sites 7 times on desktop and 6 times 
 There is a disparity in the links between mobile and desktop that will negatively impact sites as Google becomes more committed to mobile-only indexing rather than just mobile-first indexing. This is illustrated in the 62 links on mobile versus the 68 links on desktop for the median web page.
 
 {{ figure_markup(
-  image="fig19_text_links.png",
+  image="seo-text-links.png",
   caption="Text Links",
   description="Bar chart showing the number of text links per percentile (19, 25, 50, 75, and 90). There is a disparity in the links between mobile and desktop (62 links on mobile versus 68 links on desktop).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1588324966&format=interactive",
@@ -440,7 +440,7 @@ In September of 2019, [Google introduced attributes](https://webmasters.googlebl
 Our review of pages indicates that 28.58% of homepages feature nofollow attributes on their desktop versions and 30.74% on mobile. However, rel-ugc and rel-sponsored adoption is quite low with less than 0.3% pages featuring either. Since these attributes don’t add any more value to a publisher than rel-nofollow, it is reasonable to expect that adoption will continue to be slow.
 
 {{ figure_markup(
-  image="fig20_nofollow_ugc_sponsored_attributes.png",
+  image="seo-nofollow-ugc-sponsored-attributes.png",
   caption="Nofollow, UGC, Sponsored Attributes",
   description="Bar chart showing the usage (in percent) of rel attributes on desktop and mobile. Our review indicates that 28.58% of homepages feature nofollow attributes on their desktop versions and 30.74% on mobile. However, rel-ugc and rel-sponsored adoption is quite low with less than 0.3% pages featuring either. ",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1177251312&format=interactive",
@@ -454,7 +454,7 @@ Our review of pages indicates that 28.58% of homepages feature nofollow attribut
 The median web page features 9.80% image links on desktop and 9.82% image links on mobile. These links represent lost opportunities to implement keyword-relevant anchor text. This only becomes a significant issue at the 90th percentile of pages.
 
 {{ figure_markup(
-  image="fig21_image_links.png",
+  image="seo-image-links.png",
   caption="Image Links",
   description="Bar chart showing the percentage of image links per percentile (10, 25, 50, 75, and 90). The median web page features 9.80% image links on desktop and 9.82% image links on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1292929825&format=interactive",
@@ -619,7 +619,7 @@ Poor | 59.06% | 71.42%
 It is important to note that two of the three new metrics in v6 make up 50% of the weighted performance score. This change in focus sets new, more refined goals. Overall, most pages saw minimal impact with 83.32% of tests shifting ten points or less on the shift to v6.
 
 {{ figure_markup(
-  image="fig22_lighthouse_v5_vs_v6.png",
+  image="seo-lighthouse-v5-vs-v6.png",
   caption="Lighthouse Performance score difference between versions 5 and 6",
   description="Horizontal bar chart showing the score difference between Lighthouse V5 and V6. In tests using v5 of Lighthouse, 15.44% of pages tested scored at or above the 'passing' 85% score. Tests using Version 6 saw only 8.39% of tests achieve a passing score.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=219926122&format=interactive",
@@ -637,7 +637,7 @@ More information on the Lighthouse performance testing results and score details
 Desktop continues to be the more performant platform for users despite more users on mobile devices. 33.13% of websites scored 'Good' Core Web Vitals for desktop while only 19.96% of their mobile counterparts passed the Core Web Vitals assessment.
 
 {{ figure_markup(
-  image="fig23_good_core_web_vitals_score_per_device.png",
+  image="seo-good-core-web-vitals-score-per-device.png",
   caption="Good Core Web Vitals score per device",
   description="Bar chart showing the percent of websites with a good core web vitals score per device. 33.13% of websites scored 'Good' Core Web Vitals for desktop while only 19.96% of their mobile counterparts passed the Core Web Vitals assessment.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1601210449&format=interactive",
@@ -653,7 +653,7 @@ A user's physical location impacts performance perception as their locally avail
 Users located in the United States recorded the largest number of websites with 'Good' Core Web Vitals experiences but these 'Good' accounted for only 31.88% of all websites. At 56.63%, China recorded the highest percentage of 'Good' Core Web Vital experiences. The portion of websites each country represents in the Chrome User Experience Report data set is worth noting as 1,622,765 total origin records generated from users in the United States dwarfs the 21,270 origins requested from users in China.
 
 {{ figure_markup(
-  image="fig24_aggregate_cwv_performance_by_country.png",
+  image="seo-aggregate-cwv-performance-by-country.png",
   caption="Aggregate CWV performance by country",
   description="Horizontal bar chart showing the aggregate core web vitals performance by country.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=2077593128&format=interactive",
@@ -777,7 +777,7 @@ We found that 77.44% of desktop pages and 73.22% of mobile pages have adopted HT
 All of these things have likely contributed to the higher adoption rate year over year.
 
 {{ figure_markup(
-  image="fig25_percent_of_https.png",
+  image="seo-percent-of-https.png",
   caption="Percent of HTTPS",
   description="Bar chart showing the percent of pages using HTTPS protocol by device. We found that 77.44% of desktop pages and 73.22% of mobile pages have adopted HTTPS.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=422955435&format=interactive",
