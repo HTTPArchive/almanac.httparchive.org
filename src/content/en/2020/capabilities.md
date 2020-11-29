@@ -163,7 +163,7 @@ The `navigator.wakeLock.request()` method creates a wake lock. This method takes
   )
 }}
 
-BettyCrocker.com, a popular cooking website in the US, offers their users an option to prevent the screen from going dark while cooking with the help of the Screen Wake Lock API. In a [case study](https://web.dev/betty-crocker/), they published that the average session duration was 3.1 times longer than normal, the bounce rate reduced by 50%, and purchase intent indicators increased by about 300%. The interface therefore has a directly measurable effect on the success of the website or application, repectively. The Screen Wake Lock API shipped with Google Chrome 84 in July 2020. The HTTP Archive only has data for April, May, August, September and October. After the release of Chrome 84, usage rose quickly. In October 2020, the API was adopted on 10 desktop and 5 mobile pages.
+BettyCrocker.com, a popular cooking website in the US, offers their users an option to prevent the screen from going dark while cooking with the help of the Screen Wake Lock API. In a [case study](https://web.dev/betty-crocker/), they published that the average session duration was 3.1 times longer than normal, the bounce rate reduced by 50%, and purchase intent indicators increased by about 300%. The interface therefore has a directly measurable effect on the success of the website or application, respectively. The Screen Wake Lock API shipped with Google Chrome 84 in July 2020. The HTTP Archive only has data for April, May, August, September and October. After the release of Chrome 84, usage rose quickly. In October 2020, the API was adopted on 10 desktop and 5 mobile pages.
 
 ## Idle Detection API
 
@@ -201,7 +201,7 @@ registration.periodicSync.register('articles', {
 
 For each tick of the interval, and if the device is online, the browser triggers the Service Worker's `periodicsync` event. Then, the Service Worker script can perform the necessary steps to synchronize the data:
 
-```
+```js
 self.addEventListener('periodicsync', (event) => {
   if (event.tag === 'articles') {
     event.waitUntil(syncStuff());
@@ -221,7 +221,7 @@ At the time of this writing, only Chromium-based browsers implement this API. On
   )
 }}
 
-The use of the interface is currently very low. Over 2020, only one or two pages monitored by HTTP Archive made use of this API. 
+The use of the interface is currently very low. Over 2020, only one or two pages monitored by HTTP Archive made use of this API.
 
 ## Integration with native app stores
 
@@ -229,7 +229,7 @@ PWAs are a versatile application model. However, in some cases, it may still mak
 
 To detect if the user already has a related native application or PWA on the system, developers can use the [getInstalledRelatedApps() method](https://web.dev/get-installed-related-apps/) ([WICG Draft Community Group Report](https://wicg.github.io/get-installed-related-apps/spec/)) on the `navigator` object. This method is currently provided by Chromium-based browsers and works for both Android and Universal Windows Platform (UWP) apps. Developers need to adjust the native app bundles to refer to the website and add information about the native app(s) to the Web App Manifest of the PWA. Calling the `getInstalledRelatedApps()` method will then return the list of apps installed on the user's device:
 
-```
+```js
 const relatedApps = await navigator.getInstalledRelatedApps();
 relatedApps.forEach((app) => {
   console.log(app.id, app.platform, app.url);
@@ -287,7 +287,7 @@ The WebSocketStream API transparently solves backpressure, as the stream readers
   image="websocketstreams.png",
   alt="Percentage of page loads in Chrome using WebSocketStreams",
   caption='Percentage of page loads in Chrome using WebSocketStreams.<br>(Source: <a href="https://chromestatus.com/metrics/feature/timeline/popularity/3018">WebSocketStream</a>)',
-  description="Chart of WebSocketStreams usage, based on the percentage of page loads in Chrome using this feature. It shows a peak in June and July 2020, where the API was used during approximately 0.0008% pf page loads.",
+  description="Chart of WebSocketStreams usage, based on the percentage of page loads in Chrome using this feature. It shows a peak in June and July 2020, where the API was used during approximately 0.0008% of page loads.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1714443590&format=interactive",
   sheets_gid="691106754"
   )
