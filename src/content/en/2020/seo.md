@@ -8,7 +8,7 @@ authors: [aleyda, ipullrank, fellowhuman1101]
 reviewers: [natedame, catalinred, dsottimano, dwsmart, en3r0, ibnesayeed, bazzadp]
 analysts: [Tiggerito, antoineeripret]
 translators: []
-aleyda_bio: SEO consultant, author, speaker and entrepreneur. Founder of <a href="https://www.orainti.com/">Orainti</a> (a boutique SEO consultancy working with some of the top Web properties and brands, from SaaS to marketplaces) and co-founder of <a href="https://remoters.net/">Remoters.net</a> (a free remote work hub, featuring remote jobs, tools, events, guides, and more to facilitate remote work). Aleyda enjoys sharing about SEO through her <a href="https://www.aleydasolis.com/en/blog/">blog</a>, the <a href="https://www.aleydasolis.com/en/seo-tips/">#SEOFOMO newsletter</a>, the <a href="https://www.aleydasolis.com/en/crawling-mondays-videos/">Crawling Mondays</a> video and podcast series and over <a href="https://twitter.com/aleyda">twitter</a>.  
+aleyda_bio: SEO consultant, author, speaker and entrepreneur. Founder of <a href="https://www.orainti.com/">Orainti</a> (a boutique SEO consultancy working with some of the top Web properties and brands, from SaaS to marketplaces) and co-founder of <a href="https://remoters.net/">Remoters.net</a> (a free remote work hub, featuring remote jobs, tools, events, guides, and more to facilitate remote work). Aleyda enjoys sharing about SEO through her <a href="https://www.aleydasolis.com/en/blog/">blog</a>, the <a href="https://www.aleydasolis.com/en/seo-tips/">#SEOFOMO newsletter</a>, the <a href="https://www.aleydasolis.com/en/crawling-mondays-videos/">Crawling Mondays</a> video and podcast series and over <a href="https://twitter.com/aleyda">twitter</a>.
 #ipullrank_bio: TODO
 #fellowhuman1101_bio: TODO
 discuss: 2043
@@ -119,8 +119,8 @@ Robots meta tag and X-Robots-Tag in HTTP headers are an extension of the propose
 Meta tags were the dominant method of granular execution with 27.70% of desktop and 27.96% of mobile pages using the tag. X-Robots-Tag directives were found on 0.27% and 0.40% of desktop and mobile respectively.
 
 {{ figure_markup(
-  image="seo-on-page-robots-directive-use.png",
-  caption="On-Page Robots Directive Use",
+  image="seo-robots-directive-use.png",
+  caption="Robots directive usage",
   description="Bar chart showing robots usage. Meta-Robots is 27.70% for desktop and 27.96% for mobile, X-Robots barely registers on the chart with a mere 0.27% of pages on desktop and 0.40% on mobile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=99993402&format=interactive",
   sheets_gid="337739550",
@@ -147,7 +147,7 @@ Canonical tags -as described by [Google here](https://developers.google.com/sear
   image="seo-presence-of-canonical-tag.png",
   caption="Presence of Canonical Tag",
   description="Bar chart showing presence of canonical tags. The majority of our analyzed web pages include a canonical tag, the main part being self-referential (47.88% for desktop and 45.31% for mobile). The percentage of canonicalized web pages is higher on mobile (8.45%) than on desktop (4.1%).",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1777344456format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1777344456&format=interactive",
   sheets_gid="337739550",
   sql_file="pages_wpt_bodies_by_device.sql"
  )
@@ -226,9 +226,9 @@ This year, the median desktop home page was found to have 402 words and the mobi
 Heading elements (h1-h6) act as a mechanism to visually indicate structure in a page’s content. Although these HTML elements don’t carry the weight they used to in search rankings, they still act as a valuable way to structure pages and signal other elements in the SERPs like Featured Snippets or other extraction methods that align with [Google’s new passage indexing](https://www.blog.google/products/search/search-on/).
 
 {{ figure_markup(
-  image="seo-presence-of-h-tag.png",
-  caption="Presence of H Tag",
-  description="Bar chart showing the percent of pages with a heading tag (level 1,2,3 and 4). Over 60% of pages feature H1 elements in both the mobile and desktop contexts. These numbers hover around 60%+ through H2 and H3 and around 40% for H4.",
+  image="seo-presence-of-h-elements.png",
+  caption="Presence of H elements",
+  description="Bar chart showing the percent of pages with a heading element (level 1,2,3 and 4). Over 60% of pages feature H1 elements in both the mobile and desktop contexts. These numbers hover around 60%+ through H2 and H3 and around 40% for H4.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=2103713054&format=interactive",
   sheets_gid="337739550",
   sql_file="pages_wpt_bodies_by_device.sqll"
@@ -242,9 +242,9 @@ These numbers hover around 60%+ through H2 and H3. The incidence rate of H4 elem
 The prevalence of more H2 elements than H1s suggests that less pages are using multiple H1s.
 
 {{ figure_markup(
-  image="seo-presence-of-non-empty-h-tags.png",
-  caption="Presence of Non-Empty H Tags",
-  description="Bar chart showing the percent of pages with non empty heading tags (level 1,2,3 and 4). We observed that 7.55% of H1s, 1.4% of H2s, 1.5% of H3s, and 1.1% of H4 elements feature no text",
+  image="seo-presence-of-non-empty-h-elements.png",
+  caption="Presence of non-empty H elements",
+  description="Bar chart showing the percent of pages with non empty heading elements (level 1,2,3 and 4). We observed that 7.55% of H1s, 1.4% of H2s, 1.5% of H3s, and 1.1% of H4 elements feature no text",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=833166653&format=interactive",
   sheets_gid="337739550",
   sql_file="pages_wpt_bodies_by_device.sqll"
@@ -271,7 +271,7 @@ The median homepage features a page title that is six words long. There is no di
 
 {{ figure_markup(
   image="seo-title-word-count.png",
-  caption="Title Word Count",
+  caption="Title word count",
   description="Bar chart showing the number of words in the title tag per percentile (10, 25, 50, 75, and 90). The median homepage features a page title that is six words long. There is no difference in the word count between the mobile and desktop contexts within our dataset",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=2028212539&format=interactive",
   sheets_gid="775602646",
@@ -331,7 +331,7 @@ The usage of images, particularly using `<img>` elements, within a page often su
 The median desktop page features 21 image tags and the median mobile page features 19 image tags. The web continues to trend toward image-heaviness with the growth of bandwidth and the ubiquity of smartphones. However, this comes at a cost of performance.
 
 {{ figure_markup(
-  image="seo-img-tags-per-page.png",
+  image="seo-img-elements-per-page.png",
   alt="img elements per page",
   caption="`<img>` elements per page",
   description="Bar chart showing the number of `<img>` elements per page per percentile (10, 25, 50, 75, and 90). The median desktop page features 21 `<img>` elements and the median mobile page features 19 `<<img>` tags..",
@@ -344,7 +344,7 @@ The median desktop page features 21 image tags and the median mobile page featur
 The median web page is missing 2.99% `alt` attributes on desktop and 2.44% of `alt` attributes on mobile.
 
 {{ figure_markup(
-  image="seo-percent-of-missing-img-alt-attribute.png",
+  image="seo-percentage-of-missing-img-alt-attribute.png",
   alt="Percent of missing image alt attributes",
   caption="Percent of missing image `alt` attributes",
   description="Bar chart showing the percent of missing `alt` attributes per percentile (10, 25, 50, 75, and 90). The median web page is missing 2.99% `alt` attributes on desktop and 2.44% of `alt` attributes on mobile.",
@@ -357,7 +357,7 @@ The median web page is missing 2.99% `alt` attributes on desktop and 2.44% of `a
 It was also found that only 53.86% of desktop and 51.22% of mobile home pages featured image `alt` attributes. Although this might seem low, it is an improvement from [last year](../2019/seo#image-alt-tags) when it was found that only 46.71% of mobile pages used `alt` attributes on all of their images.
 `
 {{ figure_markup(
-  image="seo-percent-of-img-alt-attributes-present.png",
+  image="seo-percentage-of-img-alt-attributes-present.png",
   alt="Percent of image alt attributes present",
   caption="Percent of image <code>alt</code> attributes present",
   description="Bar chart showing the percentage of <code>alt</code> attributes present per percentile (10, 25, 50, 75, and 90). It was found that only 53.86% of desktop and 51.22% of mobile home pages featured image <code>alt</code> attributes.",
@@ -370,9 +370,9 @@ It was also found that only 53.86% of desktop and 51.22% of mobile home pages fe
 The median web page features 10% blank `alt` attributes on desktop and 11.11% blank `alt` attributes on mobile.
 
 {{ figure_markup(
-  image="seo-percent-of-img-alt-attributes-blank.png",
-  alt="Percent of image alt attributes blank",
-  caption="Percent of image `alt` attributes blank",
+  image="seo-percentage-of-blank-img-alt-attributes.png",
+  alt="Percent of blank image alt attributes",
+  caption="Percent of blank image `alt` attributes",
   description="Bar chart showing the percent of featured `alt` blank attributes per percentile (10, 25, 50, 75, and 90). The median web page features 10% blank `alt` attributes on desktop and 11.11% blank `alt` attributes on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=378651979&format=interactive",
   sheets_gid="1317352222",
@@ -384,13 +384,13 @@ The median web page features 10% blank `alt` attributes on desktop and 11.11% bl
 
 Modern search engines use hyperlinks between pages for the discovery of new content for indexing and as an indication of authority for ranking. The link graph is something that search engines actively police both algorithmically and through manual review. Web pages pass link equity through their sites and to other sites through these hyperlinks therefore it is important to ensure that there are a wealth of links throughout any given page.
 
-#### Outgoing Links
+#### Outgoing links
 
 The median desktop homepage features 76 outgoing links while the median mobile homepage features 67. Historically, the direction from Google suggested that links be limited to 100 per page. While that recommendation is outdated on the modern web, the median page in our dataset adheres to it.
 
 {{ figure_markup(
   image="seo-outgoing-links.png",
-  caption="Outgoing Links",
+  caption="Outgoing links",
   description="Bar chart showing the number of outgoing links per percentile (10, 25, 50, 75, and 90). The median desktop homepage features 76 outgoing links while the median mobile homepage features 67.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=284216213&format=interactive",
   sheets_gid="775602646",
@@ -445,11 +445,11 @@ Our review of pages indicates that 28.58% of homepages feature `nofollow` attrib
 
 {{ figure_markup(
   image="seo-nofollow-ugc-sponsored-attributes.png",
-  alt="Usage of nofollow, ugc, sponsored Attributes",
+  alt="Usage of nofollow, ugc, sponsored attributes",
   caption="Usage of `nofollow`, `ugc`, `sponsored` Attributes",
   description="Bar chart showing the usage (in percent) of `rel` attributes on desktop and mobile. Our review indicates that 28.58% of homepages feature `nofollow` attributes on their desktop versions and 30.74% on mobile. However, `ugc` and `sponsored` adoption is quite low with less than 0.3% pages featuring either. ",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1177251312&format=interactive",
-  sheets_gid="769973954",
+  sheets_gid="1271677392",
   sql_file="pages_robots_txt_by_device_and_status.sql"
   )
 }}
@@ -460,7 +460,7 @@ The median web page features 9.80% image links on desktop and 9.82% image links 
 
 {{ figure_markup(
   image="seo-image-links.png",
-  caption="Image Links",
+  caption="Image links",
   description="Bar chart showing the percentage of image links per percentile (10, 25, 50, 75, and 90). The median web page features 9.80% image links on desktop and 9.82% image links on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1292929825&format=interactive",
   sheets_gid="775602646",
@@ -627,8 +627,8 @@ It is important to note that two of the three new metrics in v6 make up 50% of t
   image="seo-lighthouse-v5-vs-v6.png",
   caption="Lighthouse Performance score difference between versions 5 and 6",
   description="Horizontal bar chart showing the score difference between Lighthouse V5 and V6. In tests using v5 of Lighthouse, 15.44% of pages tested scored at or above the 'passing' 85% score. Tests using Version 6 saw only 8.39% of tests achieve a passing score.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=219926122&format=interactive",
-  sheets_gid="2112991617",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=976167005&format=interactive",
+  sheets_gid="1909295182",
   sql_file="lighthouse.sql"
   )
 }}
@@ -663,7 +663,9 @@ Users located in the United States recorded the largest number of websites with 
   description="Horizontal bar chart showing the aggregate core web vitals performance by country.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=2077593128&format=interactive",
   sheets_gid="220428774",
-  sql_file="lighthouse.sql"
+  sql_file="lighthouse.sql",
+  width=645,
+  height=792
   )
 }}
 
@@ -782,7 +784,7 @@ We found that 77.44% of desktop pages and 73.22% of mobile pages have adopted HT
 All of these things have likely contributed to the higher adoption rate year over year.
 
 {{ figure_markup(
-  image="seo-percent-of-https.png",
+  image="seo-percentage-of-https.png",
   caption="Percent of HTTPS",
   description="Bar chart showing the percent of pages using HTTPS protocol by device. We found that 77.44% of desktop pages and 73.22% of mobile pages have adopted HTTPS.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=422955435&format=interactive",
