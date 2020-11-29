@@ -237,7 +237,7 @@ Heading elements (h1-h6) act as a mechanism to visually indicate structure in a 
 
 Over 60% of pages feature H1 elements in both the mobile and desktop contexts.
 
-These numbers hover around 60%+ through H2 and H3. The incidence rate of H4 elements is lower than 4% suggesting that the level of specificity is not required for most pages or the developers style other headings tags differently to support the visual structure of the content.
+These numbers hover around 60%+ through H2 and H3. The incidence rate of H4 elements is lower than 4% suggesting that the level of specificity is not required for most pages or the developers style other headings elements differently to support the visual structure of the content.
 
 The prevalence of more H2 elements than H1s suggests that less pages are using multiple H1s.
 
