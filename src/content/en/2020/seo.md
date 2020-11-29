@@ -83,7 +83,7 @@ Response Code | All Devices | Mobile | Desktop
 6XX | 0.00% | 0.00% | 0.00%
 7XX | 0.00% | 0.15% | 0.12%
 
-<figcaption>{{ figure_link(caption="Robots.txt response codes.", sheets_gid="TODO", sql_file="TODO.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Robots.txt response codes.", sheets_gid="769973954", sql_file="pages_robots_txt_by_device_and_status.sql") }}</figcaption>
 </figure>
 
 In addition to similar status code behavior, disallow statement use was consistent between mobile and desktop versions of robots.txt files.
@@ -101,7 +101,7 @@ mediapartners-google | 5.55% | 3.83%
 mj12bot | 5.49% | 5.30%
 ahrefsbot | 4.80% | 4.66%
 
-<figcaption>{{ figure_link(caption="Robots.txt user-agent directives.", sheets_gid="TODO", sql_file="TODO.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Robots.txt user-agent directives.", sheets_gid="243594173", sql_file="pages_robots_txt_by_device_and_useragent.sql") }}</figcaption>
 </figure>
 
 
@@ -498,7 +498,7 @@ Viewport | Mobile | Desktop
 `initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width` | 5.56% | 4.81%
 `initial-scale=1,maximum-scale=1,user-scalable=0,width=device-width` | 3.93% | 3.73%
 
-<figcaption>{{ figure_link(caption="Viewport meta values.", sheets_gid="TODO", sql_file="TODO.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Viewport meta values.", sheets_gid="479500659", sql_file="../03_Markup/summary_pages_by_device_and_viewport.sql") }}</figcaption>
 </figure>
 
 #### CSS Media Queries
@@ -516,7 +516,7 @@ Feature | Mobile | Desktop
 `orientation` | 33.48% | 33.49%
 `max-device-width` | 26.23% | 28.15%
 
-<figcaption>{{ figure_link(caption="Media query usage.", sheets_gid="TODO", sql_file="TODO.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Media query usage.", sheets_gid="1141218471", sql_file="TODO.sql") }}</figcaption>
 </figure>
 
 #### Vary User-Agent in HTTP Header
@@ -586,7 +586,7 @@ First Meaning Paint (FMP) | -- | 7%
 First CPU Idle (FCI) | -- | 13%
 Max Potential FID (mpFID) | -- | 0%
 
-<figcaption>{{ figure_link(caption="Lighthouse changes", sheets_gid="TODO", sql_file="TODO.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Lighthouse changes") }}</figcaption>
 </figure>
 
 Previously, performance scores and methods of measurement varied by tool. Google announced a set of unified performance metrics called [Core Web Vitals in May 2020](https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html).
@@ -618,7 +618,7 @@ Good | 15.44% | 8.39%
 Average | 25.49% | 20.19%
 Poor | 59.06% | 71.42%
 
-<figcaption>{{ figure_link(caption="Good, Average and Poor ratios of Lighthouse v5 versus v6", sheets_gid="TODO", sql_file="TODO.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Good, Average and Poor ratios of Lighthouse v5 versus v6", sheets_gid="692150551", sql_file="TODO.sql") }}</figcaption>
 </figure>
 
 It is important to note that two of the three new metrics in v6 make up 50% of the weighted performance score. This change in focus sets new, more refined goals. Overall, most pages saw minimal impact with 83.32% of tests shifting ten points or less on the shift to v6.
@@ -710,7 +710,7 @@ Values | Mobile | Desktop
 `de-de` | 0.69% | 0.78%
 `tr` | 0.69% | 0.66%
 
-<figcaption>{{ figure_link(caption="Top Hreflang Values in HTML Head.", sheets_gid="TODO", sql_file="TODO.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Top Hreflang Values in HTML Head.", sheets_gid="1272459525", sql_file="pages_wpt_bodies_hreflang_by_device_and_link_tag_value.sql") }}</figcaption>
 </figure>
 
 Something slightly different was found in top hreflang language and country values implemented via the HTTP headers, with English (`en`) being again the most popular one, although in this case followed by French (`fr`), German (`de`), Spanish (`es`) and Dutch (`nl`) as the top values.
@@ -724,7 +724,7 @@ Values | Mobile | Desktop
 `es` | 0.01% | 0.01%
 `nl` | 0.01% | 0.01%
 
-<figcaption>{{ figure_link(caption="Top Hreflang Values in HTTP Headers.", sheets_gid="TODO", sql_file="TODO.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Top Hreflang Values in HTTP Headers.", sheets_gid="1726610181", sql_file="pages_wpt_bodies_hreflang_by_device_and_http_header_value.sql") }}</figcaption>
 </figure>
 
 #### Content-Language Meta Tag and HTTP Headers
@@ -753,7 +753,7 @@ Values | Mobile | Desktop
 `it` | 0.13% | 0.13%
 `ja` | 0.08% | 0.10%
 
-<figcaption>{{ figure_link(caption="Top content-language Values in HTTP Headers.", sheets_gid="TODO", sql_file="TODO.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Top content-language Values in HTTP Headers.", sheets_gid="962106511", sql_file="summary_requests_by_device_and_http_content_language.sql") }}</figcaption>
 </figure>
 
 <figure markdown>
@@ -770,7 +770,7 @@ Values | Mobile | Desktop
 `cs` | 0.12% | 0.12%
 `pl` | 0.11% | 0.09%
 
-<figcaption>{{ figure_link(caption="Top content-language Values in HTML Meta Tag.", sheets_gid="TODO", sql_file="TODO.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Top content-language Values in HTML Meta Tag.", sheets_gid="1056888726", sql_file="pages_almanac_by_device_and_content_language.sql") }}</figcaption>
 </figure>
 
 ### Security
