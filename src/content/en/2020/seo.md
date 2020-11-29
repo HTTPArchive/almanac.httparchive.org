@@ -124,7 +124,7 @@ Meta tags were the dominant method of granular execution with 27.70% of desktop 
   description="Bar chart showing robots usage. Meta-Robots is 27.70% for desktop and 27.96% for mobile, X-Robots barely registers on the chart with a mere 0.27% of pages on desktop and 0.40% on mobile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=99993402&format=interactive",
   sheets_gid="337739550",
-  sql_file="pages_wpt_bodies_by_device.sqll"
+  sql_file="pages_wpt_bodies_by_device.sql"
   )
 }}
 
