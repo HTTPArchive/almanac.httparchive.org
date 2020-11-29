@@ -272,8 +272,6 @@ Webアプリは、キャッシュストレージやインデックスDBなど、
 
 ### WebSocketsのBackpressure
 
-The WebSocket API is a great choice for bidirectional communication between websites and servers. However, the WebSocket API does not allow for backpressure, so applications dealing with high-frequency messages may freeze. The [WebSocketStream API](https://web.dev/websocketstream/) ([Explainer](https://github.com/ricea/websocketstream-explainer/blob/master/README.md), not on the standards track yet) wants to bring easy-to-use backpressure support to the WebSocket API by extending it with streams. Instead of using the usual `WebSocket` constructor, developers need to create a new instance of the `WebSocketStream` interface. The `connection` property of the stream returns a promise that resolves to a readable and writable stream that allow to obtain a stream reader or writer, respectively:
-
 WebSocket APIは、Webサイトとサーバー間の双方向通信に最適です。しかし、WebSocket APIはbackpressureを許さないので、高頻度のメッセージを扱うアプリケーションはフリーズする可能性があります。[WebSocketStream API](https://web.dev/websocketstream/)（[の説明者](https://github.com/ricea/websocketstream-explainer/blob/master/README.md)は、まだ標準化トラックには乗っていません）は、WebSocket APIをストリームで拡張することは、使いやすいbackpressureのサポートをWebSocket APIにもたらしたいと考えています。通常の`WebSocket`コンストラクタを使う代わりに、開発者は`WebSocketStream`インターフェイスの新しいインスタンスを作成する必要があります。ストリームの`connection`プロパティは、読み込みと書き込み可能なストリームへ解決する約束を返します。
 
 ```js
@@ -326,7 +324,5 @@ QuicTransportは、WebSocket APIのユースケースをサポートし、信頼
 ## 結論
 
 2020年のWeb機能の状態は健全であり、Chromiumベースのブラウザの新しいリリースには、新しくて強力なAPIが定期的に提供されています。コンテンツインデックスAPIやアイドル検出APIのようないくつかのインターフェイスは、特定のWebアプリケーションに仕上げの機能を追加するのに役立ちます。ファイルシステムアクセスや非同期クリップボードAPIのような他のAPIは、生産性アプリケーションという全く新しいアプリケーションカテゴリをWebに完全に移行させることを可能にします。非同期クリップボードやWeb共有APIのようなAPIの一部は、すでに他の非Chromiumブラウザにも導入されています。Safariは、Web共有APIを実装した最初のモバイルブラウザでした。
-
-Through its [rigorous process](https://developers.google.com/web/updates/capabilities#process), the Fugu team ensures that access to these features takes place in a secure and privacy-friendly manner. Additionally, the Fugu team actively solicits the [feedback](mailto:fugu-dev@chromium.org) from other browser vendors and web developers. While the usage of most of these new APIs is comparatively low, some APIs presented in this chapter show an exponential or even hockey stick-like growth, such as the Badging or Content Indexing API. The state of web capabilities in 2021 will depend on the web developers themselves. The author encourages the community to build great web applications, make use of the powerful APIs in a backwards-compatible manner, and help make the web a more capable platform.
 
 ふぐチームは、[厳格なプロセス](https://developers.google.com/web/updates/capabilities#process)を通じて、これらの機能へのアクセスが安全かつプライバシーに配慮した方法で行われることを保証します。さらに、ふぐチームは他のブラウザベンダーやウェブ開発者からの[フィードバック](mailto:fugu-dev@chromium.org)を積極的に募集しています。これらの新しいAPIのほとんどの使用率は比較的低いですが、本章で紹介するAPIの中にはバッジAPIやコンテンツインデックスAPIのように指数関数的、あるいはホッケーの棒のように成長しているものもあります。2021年のウェブ機能のあり方は、ウェブ開発者自身にかかっています。著者は素晴らしいWebアプリケーションを構築し、強力なAPIを後方互換性のある方法で活用して、Webをより有能なプラットフォームにするための手助けをすることをコミュニティに奨励しています。
