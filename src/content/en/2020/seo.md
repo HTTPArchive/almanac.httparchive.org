@@ -6,7 +6,7 @@ title: SEO
 description: SEO chapter of the 2020 Web Almanac covering content, meta tags, indexability, linking, speed, structured data, internationalization, SPAs, AMP and security.
 authors: [aleyda, ipullrank, fellowhuman1101]
 reviewers: [clarkeclark, natedame, catalinred, aysunakarsu, ashleyish, dsottimano, dwsmart, en3r0, Gathea, rachellcostello, ibnesayeed]
-analysts: [Tiggerito, max-ostapenko, antoineeripret]
+analysts: [Tiggerito, antoineeripret]
 translators: []
 #aleyda_bio: TODO
 #ipullrank_bio: TODO
@@ -26,7 +26,7 @@ unedited: true
 
 ## Introduction
 
-Search Engine Optimization (SEO) is the practice of optimizing  websites' technical configuration, content relevance, and link popularity to make their information easily findable and more relevant to fulfill users’ search needs. As a consequence, websites improve their visibility in search engines’ results  for  relevant user queries regarding their content and business, growing their traffic, conversions, and profits.
+Search Engine Optimization (SEO) is the practice of optimizing websites' technical configuration, content relevance, and link popularity to make their information easily findable and more relevant to fulfill users’ search needs. As a consequence, websites improve their visibility in search engines’ results for relevant user queries regarding their content and business, growing their traffic, conversions, and profits.
 
 Despite its complex multidisciplinary nature, in recent years SEO has evolved to become one of the most popular digital marketing strategies and channels.
 
@@ -55,7 +55,7 @@ Search engines use web crawlers (also called spiders) to discover new or updated
 
 Search crawlers discover content by following links between URLs, as well as using additional sources that website owners can provide, like the generation of XML Sitemaps (a list of URLs that a website’s owner wants search engines to index) or through direct crawl requests via search engines tools (e.g., the Google Search Console).
 
-Once  search engines access web content they need to "render" - similar to what web browsers do - and index it. Search engines will then analyze and catalogue the identified information, trying to understand it as users do, to ultimately store it in its "index" or web database.
+Once  search engines access web content they need to "render"–similar to what web browsers do–and index it. Search engines will then analyze and catalogue the identified information, trying to understand it as users do, to ultimately store it in its "index" or web database.
 
 When users enter a query, search engines search their index to find the best content to display on the search results pages to answer their queries, using a variety of factors to determine which pages are shown first, second, third, etc.
 
@@ -95,7 +95,7 @@ The most frequently used directives focused on search engines and their paid mar
 <figure markdown>
 User-agent | % of mobile robots.txt | % of desktop robots.txt
 -- | -- | --
-* | 74.40% | 73.16%
+`*` | 74.40% | 73.16%
 adsbot-google | 5.63% | 5.68%
 mediapartners-google | 5.55% | 3.83%
 mj12bot | 5.49% | 5.30%
@@ -326,50 +326,54 @@ With meta descriptions continuing to power other snippets such as social and new
 
 #### Images
 
-The usage of images, particularly using `<img>` tags, within a page often suggests a focus on visual presentation of content. Although search engine capabilities regarding computer vision have continued to improve, we have no indication that this technology is being used in the ranking of pages. Alt attributes remain the primary way to explain an image in lieu of a search engine’s inability to "see" it. Alt attributes also support accessibility and clarify the elements on the page for users that are visually impaired.
+The usage of images, particularly using `<img>` elements, within a page often suggests a focus on visual presentation of content. Although search engine capabilities regarding computer vision have continued to improve, we have no indication that this technology is being used in the ranking of pages. `alt` attributes remain the primary way to explain an image in lieu of a search engine’s inability to "see" it. `alt` attributes also support accessibility and clarify the elements on the page for users that are visually impaired.
 
 The median desktop page features 21 image tags and the median mobile page features 19 image tags. The web continues to trend toward image-heaviness with the growth of bandwidth and the ubiquity of smartphones. However, this comes at a cost of performance.
 
 {{ figure_markup(
   image="seo-img-tags-per-page.png",
-  caption="img tags per page",
-  description="Bar chart showing the number of image tag per page per percentile (10, 25, 50, 75, and 90). The median desktop page features 21 image tags and the median mobile page features 19 image tags..",
+  alt="img elements per page",
+  caption="`<img>` elements per page",
+  description="Bar chart showing the number of `<img>` elements per page per percentile (10, 25, 50, 75, and 90). The median desktop page features 21 `<img>` elements and the median mobile page features 19 `<<img>` tags..",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=923860709&format=interactive",
   sheets_gid="1317352222",
   sql_file="pages_markup_by_device_and_percentile.sql"
   )
 }}
 
-The median web page is missing 2.99% alt attributes on desktop and 2.44% of alt attributes on mobile.
+The median web page is missing 2.99% `alt` attributes on desktop and 2.44% of `alt` attributes on mobile.
 
 {{ figure_markup(
   image="seo-percent-of-missing-img-alt-attribute.png",
-  caption="Percent of missing img alt attributes",
-  description="Bar chart showing the percent of missing alt attributes per percentile (10, 25, 50, 75, and 90). The median web page is missing 2.99% alt attributes on desktop and 2.44% of alt attributes on mobile.",
+  alt="Percent of missing image alt attributes",
+  caption="Percent of missing image `alt` attributes",
+  description="Bar chart showing the percent of missing `alt` attributes per percentile (10, 25, 50, 75, and 90). The median web page is missing 2.99% `alt` attributes on desktop and 2.44% of `alt` attributes on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=862590664&format=interactive",
   sheets_gid="1317352222",
   sql_file="pages_markup_by_device_and_percentile.sql"
   )
 }}
 
-It  was also found that only 53.86% of desktop and 51.22% of mobile home pages featured image alt attributes. Although this might seem low, it is an improvement from [last year](../2019/seo#image-alt-tags) when it was found that only 46.71% of mobile pages used alt attributes on all of their images.
-
+It was also found that only 53.86% of desktop and 51.22% of mobile home pages featured image `alt` attributes. Although this might seem low, it is an improvement from [last year](../2019/seo#image-alt-tags) when it was found that only 46.71% of mobile pages used `alt` attributes on all of their images.
+`
 {{ figure_markup(
   image="seo-percent-of-img-alt-attributes-present.png",
-  caption="Percent of img alt attributes present",
-  description="Bar chart showing the percentage of atl attributes present per percentile (10, 25, 50, 75, and 90). It was found that only 53.86% of desktop and 51.22% of mobile home pages featured image alt attributes..",
+  alt="Percent of image alt attributes present",
+  caption="Percent of image <code>alt</code> attributes present",
+  description="Bar chart showing the percentage of <code>alt</code> attributes present per percentile (10, 25, 50, 75, and 90). It was found that only 53.86% of desktop and 51.22% of mobile home pages featured image <code>alt</code> attributes.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=827771545&format=interactive",
   sheets_gid="1317352222",
   sql_file="pages_markup_by_device_and_percentile.sql"
   )
 }}
 
-The median web page features 10% blank alt attributes on desktop and 11.11% blank alt attributes on mobile.
+The median web page features 10% blank `alt` attributes on desktop and 11.11% blank `alt` attributes on mobile.
 
 {{ figure_markup(
   image="seo-percent-of-img-alt-attributes-blank.png",
-  caption="Percent of img alt attributes blank",
-  description="Bar chart showing the percent of featured alt blank attributes per percentile (10, 25, 50, 75, and 90). The median web page features 10% blank alt attributes on desktop and 11.11% blank alt attributes on mobile.",
+  alt="Percent of image alt attributes blank",
+  caption="Percent of image `alt` attributes blank",
+  description="Bar chart showing the percent of featured `alt` blank attributes per percentile (10, 25, 50, 75, and 90). The median web page features 10% blank `alt` attributes on desktop and 11.11% blank `alt` attributes on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=378651979&format=interactive",
   sheets_gid="1317352222",
   sql_file="pages_markup_by_device_and_percentile.sql"
@@ -435,14 +439,15 @@ There is a disparity in the links between mobile and desktop that will negativel
 
 #### Rel Nofollow, UGC, Sponsored Attributes Usage
 
-In September of 2019, [Google introduced attributes](https://webmasters.googleblog.com/2019/09/evolving-nofollow-new-ways-to-identify.html) that allow publishers to classify links as being sponsored or user generated content. These attributes are in addition to `nofollow` which was previously [introduced in 2005](https://googleblog.blogspot.com/2005/01/preventing-comment-spam.html). The new attributes, rel-ugc and rel-sponsored, are meant to clarify or qualify the reason as to why these links are appearing on a given web page.
+In September of 2019, [Google introduced attributes](https://webmasters.googleblog.com/2019/09/evolving-nofollow-new-ways-to-identify.html) that allow publishers to classify links as being sponsored or user generated content. These attributes are in addition to `nofollow` which was previously [introduced in 2005](https://googleblog.blogspot.com/2005/01/preventing-comment-spam.html). The new attributes, `rel-ugc` and `rel-sponsored`, are meant to clarify or qualify the reason as to why these links are appearing on a given web page.
 
-Our review of pages indicates that 28.58% of homepages feature nofollow attributes on their desktop versions and 30.74% on mobile. However, rel-ugc and rel-sponsored adoption is quite low with less than 0.3% pages featuring either. Since these attributes don’t add any more value to a publisher than rel-nofollow, it is reasonable to expect that adoption will continue to be slow.
+Our review of pages indicates that 28.58% of homepages feature `nofollow` attributes on their desktop versions and 30.74% on mobile. However, rel-ugc and rel-sponsored adoption is quite low with less than 0.3% pages featuring either. Since these attributes don’t add any more value to a publisher than rel-nofollow, it is reasonable to expect that adoption will continue to be slow.
 
 {{ figure_markup(
   image="seo-nofollow-ugc-sponsored-attributes.png",
-  caption="Nofollow, UGC, Sponsored Attributes",
-  description="Bar chart showing the usage (in percent) of rel attributes on desktop and mobile. Our review indicates that 28.58% of homepages feature nofollow attributes on their desktop versions and 30.74% on mobile. However, rel-ugc and rel-sponsored adoption is quite low with less than 0.3% pages featuring either. ",
+  alt="Usage of nofollow, ugc, sponsored Attributes",
+  caption="Usage of `nofollow`, `ugc`, `sponsored` Attributes",
+  description="Bar chart showing the usage (in percent) of `rel` attributes on desktop and mobile. Our review indicates that 28.58% of homepages feature `nofollow` attributes on their desktop versions and 30.74% on mobile. However, `ugc` and `sponsored` adoption is quite low with less than 0.3% pages featuring either. ",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1177251312&format=interactive",
   sheets_gid="769973954",
   sql_file="pages_robots_txt_by_device_and_status.sql"
@@ -482,16 +487,16 @@ A mobile friendly website can be implemented through different configurations: b
 
 The browser’s viewport is the visible area of a page content, that changes depending on the used device. The "viewport meta tag" allows you to specify to browsers the width and scaling of the viewport, so that it is correctly sized across different devices. Responsive websites use the viewport meta tag as well as CSS media queries to deliver a mobile friendly experience.
 
-When looking at the viewport tag inclusion, it was found that 42.98% of the analyzed mobile home pages and 43.2% desktop ones are featuring it with an "initial-scale=1,width=device-width" content attribute value; but that 10.84% of mobile home pages and 16.18% of desktop ones are not including the tag at all, suggesting that they are not yet mobile friendly.
+When looking at the viewport tag inclusion, it was found that 42.98% of the analyzed mobile home pages and 43.2% desktop ones are featuring it with an `initial-scale=1,width=device-width` content attribute value; but that 10.84% of mobile home pages and 16.18% of desktop ones are not including the tag at all, suggesting that they are not yet mobile friendly.
 
 <figure markdown>
 Viewport | Mobile | Desktop
 -- | -- | --
-initial-scale=1,width=device-width | 42.98% | 43.20%
-  | 10.84% | 16.18%
-initial-scale=1,maximum-scale=1,width=device-width | 5.88% | 5.72%
-initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width | 5.56% | 4.81%
-initial-scale=1,maximum-scale=1,user-scalable=0,width=device-width | 3.93% | 3.73%
+`initial-scale=1,width=device-width` | 42.98% | 43.20%
+*not-set*  | 10.84% | 16.18%
+`initial-scale=1,maximum-scale=1,width=device-width` | 5.88% | 5.72%
+`initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width` | 5.56% | 4.81%
+`initial-scale=1,maximum-scale=1,user-scalable=0,width=device-width` | 3.93% | 3.73%
 
 <figcaption>{{ figure_link(caption="Viewport meta values.", sheets_gid="TODO", sql_file="TODO.sql") }}</figcaption>
 </figure>
@@ -505,11 +510,11 @@ When analyzing their use it was found that 80.29% of desktop homepages and 82.92
 <figure markdown>
 Feature | Mobile | Desktop
 -- | -- | --
-max-width | 78.98% | 78.33%
-min-width | 75.04% | 73.75%
--webkit-min-device-pixel-ratio | 44.63% | 38.78%
-orientation | 33.48% | 33.49%
-max-device-width | 26.23% | 28.15%
+`max-width` | 78.98% | 78.33%
+`min-width` | 75.04% | 73.75%
+`-webkit-min-device-pixel-ratio` | 44.63% | 38.78%
+`orientation` | 33.48% | 33.49%
+`max-device-width` | 26.23% | 28.15%
 
 <figcaption>{{ figure_link(caption="Media query usage.", sheets_gid="TODO", sql_file="TODO.sql") }}</figcaption>
 </figure>
@@ -526,7 +531,7 @@ Only 13.48% of the mobile home pages and 12.6% of the desktop ones were found to
 
 Separate mobile websites are recommended to include the "rel="alternate" media="only screen and (max-width: 640px)"" tag in the head of the HTML of their desktop pages to refer to their mobile versions.
 
-Only 0.64% of the analyzed desktop home pages were found to be including the tag with the specified media attribute value.
+Only 0.64% of the analyzed desktop home pages were found to be including the tag with the specified `media` attribute value.
 
 ### Web Performance
 
@@ -808,7 +813,7 @@ These frameworks required special SEO considerations though Google has worked to
 
 Single page applications should utilize the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) for granular control of caching. The API allows for the passing of Request objects with specific cache overrides set and can be used to set the necessary `if-modified` and `etag` headers.
 
-Undiscoverable resources are still the primary concern of search engines as their web crawlers. Search crawlers look for the `href`  attributes in `<a>` tags  to find linked pages. Without these, the page is seen as isolated without internal linking. 5.59% of desktop pages studied contained no internal links as well as 6.04% of mobile-rendered pages. This is a marker that the page is part of a JavaScript framework SPA and missing the necessary `<a>` tag with valid href attributes required for their internal linking to be discovered.
+Undiscoverable resources are still the primary concern of search engines as their web crawlers. Search crawlers look for the `href`  attributes in `<a>` tags  to find linked pages. Without these, the page is seen as isolated without internal linking. 5.59% of desktop pages studied contained no internal links as well as 6.04% of mobile-rendered pages. This is a marker that the page is part of a JavaScript framework SPA and missing the necessary `<a>` tag with valid `href` attributes required for their internal linking to be discovered.
 
 The discoverability of links in popular JS frameworks used for SPAs increased dramatically in 2020 over [the previous year](../2019/seo#spa-crawlability). In 2019, 13.08% of mobile navigation links on React sites used deprecated hash URLs. For 2020, only 6.12% of the tested React links were hashed.
 
@@ -826,12 +831,12 @@ Additionally, it was also identified that there has been a slight improvement fr
 - **Canonical tag**: Last year it was identified that 48.34% of mobile homepages were using a canonical tag vs. 53.61% this year.
 - **Title element**: This year it was found that 98.75% of the desktop homepages are featuring one, while 98.7% of mobile home pages are also including it. Last year it was found that 97.1% of mobile pages were featuring a title tag.
 - **Meta Description**: This year, 68.62% of desktop homepages and 68.22% of mobile ones were found to be featuring a meta description, an improvement from last year when it was found that 64.02% of mobile home pages had one.
-- **Images’ ALT attribute**: This year, 53.86% of desktop and 51.22% of mobile home pages featured image alt attributes. Although this might seem low, it is an improvement from last year when it was found that 46.71% of mobile pages used alt attributes on all of their images.
+- **Images’ `alt` attribute**: This year, 53.86% of desktop and 51.22% of mobile home pages featured image `alt` attributes. Although this might seem low, it is an improvement from last year when it was found that 46.71% of mobile pages used `alt` attributes on all of their images.
 - **HTTPS usage**: 77.44% of desktop pages and 73.22% of mobile pages have adopted HTTPS. This is up 10.38% from last year.
 
 However, not everything has improved vs. last year configurations.
 
-This year, the median desktop page features 61 outgoing internal links while the median mobile page features 54 outgoing internal links. This is down 12.8% and 10% respectively from [last year’s analysis](../2019/seo#linking), suggesting that sites are not maximizing the ability to improve the crawlability and  link equity flow through their pages.
+This year, the median desktop page features 61 outgoing internal links while the median mobile page features 54 outgoing internal links. This is down 12.8% and 10% respectively from [last year’s analysis](../2019/seo#linking), suggesting that sites are not maximizing the ability to improve the crawlability and link equity flow through their pages.
 
 It is also important to note how there’s still an important opportunity for improvement across many critical SEO related areas and configurations.
 
@@ -845,7 +850,7 @@ This could negatively impact sites as Google completely migrates to a [mobile-fi
 
 Disparities were found across rendered vs non-rendered HTML. For example the median mobile site displays 11.5% more words when rendered than its raw HTML, showing a reliance on client side JavaScript to show web pages content.
 
-Search crawlers look for the ‘href’  attributes in <a> tags  to find linked pages. Without these, the page is seen as isolated without internal linking. 5.59% of desktop pages studied contained no internal links as well as 6.04% of mobile-rendered pages.
+Search crawlers look for the `href`  attributes in `<a>` tags  to find linked pages. Without these, the page is seen as isolated without internal linking. 5.59% of desktop pages studied contained no internal links as well as 6.04% of mobile-rendered pages.
 
 These findings suggest that search engines are continually evolving in their capacity to effectively crawl, index and rank websites, and some of the most important SEO configurations are now also better taken into consideration.
 
