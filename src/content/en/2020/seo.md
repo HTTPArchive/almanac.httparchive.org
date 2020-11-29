@@ -167,7 +167,7 @@ Canonical URLs can be specified through different methods, by using the canonica
   description="Bar chart showing the canonical tag implementation method. We observed that only 1.03% of desktop homepages and 0.88% of mobile ones are relying on the HTTP headers for their implementation, meaning that canonical tags are prominently implemented via the HTML head of a page.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=542127514&format=interactive",
   sheets_gid="337739550",
-  sql_file="pages_wpt_bodies_by_device.sqll"
+  sql_file="pages_wpt_bodies_by_device.sql"
   )
 }}
 
@@ -231,7 +231,7 @@ Heading elements (h1-h6) act as a mechanism to visually indicate structure in a 
   description="Bar chart showing the percent of pages with a heading element (level 1,2,3 and 4). Over 60% of pages feature H1 elements in both the mobile and desktop contexts. These numbers hover around 60%+ through H2 and H3 and around 40% for H4.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=2103713054&format=interactive",
   sheets_gid="337739550",
-  sql_file="pages_wpt_bodies_by_device.sqll"
+  sql_file="pages_wpt_bodies_by_device.sql"
   )
 }}
 
@@ -247,7 +247,7 @@ The prevalence of more H2 elements than H1s suggests that less pages are using m
   description="Bar chart showing the percent of pages with non empty heading elements (level 1,2,3 and 4). We observed that 7.55% of H1s, 1.4% of H2s, 1.5% of H3s, and 1.1% of H4 elements feature no text",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=833166653&format=interactive",
   sheets_gid="337739550",
-  sql_file="pages_wpt_bodies_by_device.sqll"
+  sql_file="pages_wpt_bodies_by_device.sql"
   )
 }}
 
@@ -394,7 +394,7 @@ The median desktop homepage features 76 outgoing links while the median mobile h
   description="Bar chart showing the number of outgoing links per percentile (10, 25, 50, 75, and 90). The median desktop homepage features 76 outgoing links while the median mobile homepage features 67.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=284216213&format=interactive",
   sheets_gid="775602646",
-  sql_file="pages_wpt_bodies_by_device_and_percentile.sqll"
+  sql_file="pages_wpt_bodies_by_device_and_percentile.sql"
   )
 }}
 
@@ -789,7 +789,7 @@ All of these things have likely contributed to the higher adoption rate year ove
   description="Bar chart showing the percent of pages using HTTPS protocol by device. We found that 77.44% of desktop pages and 73.22% of mobile pages have adopted HTTPS.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=422955435&format=interactive",
   sheets_gid="337739550",
-  sql_file="pages_wpt_bodies_by_device.sqll"
+  sql_file="pages_wpt_bodies_by_device.sql"
   )
 }}
 
