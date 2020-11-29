@@ -12,7 +12,7 @@ const rainbow = require('rainbow-code');
  * @returns body with highlighting syntax snippet of a particular language.
  */
 const generate_syntax_highlighting_for_language = (dom, body, language, alias="") => {
-  const query_selector = alias ? `code.language-${alias}` : `code.language-${language}`;
+  const query_selector = alias ? `code.language-${language}, code.language-${alias}` : `code.language-${language}`;
   const code_snippets = dom.window.document.querySelectorAll(query_selector);
   code_snippets.forEach(element => {
     const snippet_clean = element.innerHTML.replace(/&lt;/g, '<').replace(/&gt;/g, '>');

@@ -1468,13 +1468,8 @@ code {
   font-size: 1rem;
 }
 
-pre,
-code {
-  color: #333;
-}
-
 pre .comment {
-  color: #998;
+  color: #006400;
 }
 
 pre .support {
@@ -1483,7 +1478,7 @@ pre .support {
 
 pre .tag,
 pre .tag-name {
-  color: navy;
+  color: #4a3244;
 }
 
 pre .keyword,
@@ -1496,6 +1491,7 @@ pre .css-value,
 pre .entity.function,
 pre .storage.function {
   font-weight: bold;
+  color: #4a3244;
 }
 
 pre .css-property,
@@ -1513,7 +1509,7 @@ pre .constant.numeric,
 pre .keyword.unit,
 pre .hex-color {
   font-weight: normal;
-  color: #099;
+  color: #00f;
 }
 
 pre .entity.class {
@@ -1533,7 +1529,7 @@ pre .variable {
 pre .string,
 pre .support.value {
   font-weight: normal;
-  color: #d14;
+  color: #2c4a73;
 }
 
 pre .regexp {
