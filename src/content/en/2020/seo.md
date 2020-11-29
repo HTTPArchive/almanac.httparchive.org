@@ -8,7 +8,7 @@ authors: [aleyda, ipullrank, fellowhuman1101]
 reviewers: [natedame, catalinred, dsottimano, dwsmart, en3r0, ibnesayeed, bazzadp]
 analysts: [Tiggerito, antoineeripret]
 translators: []
-aleyda_bio: SEO consultant, author, speaker and entrepreneur. Founder of <a href="https://www.orainti.com/">Orainti</a> (a boutique SEO consultancy working with some of the top Web properties and brands, from SaaS to marketplaces) and co-founder of <a href="https://remoters.net/">Remoters.net</a> (a free remote work hub, featuring remote jobs, tools, events, guides, and more to facilitate remote work). Aleyda enjoys sharing about SEO through her <a href="https://www.aleydasolis.com/en/blog/">blog</a>, the <a href="https://www.aleydasolis.com/en/seo-tips/">#SEOFOMO newsletter</a>, the <a href="https://www.aleydasolis.com/en/crawling-mondays-videos/">Crawling Mondays</a> video and podcast series and over <a href="https://twitter.com/aleyda">twitter</a>.
+aleyda_bio: SEO consultant, author, speaker and entrepreneur. Founder of <a href="https://www.orainti.com/">Orainti</a> (a boutique SEO consultancy working with some of the top Web properties and brands, from SaaS to marketplaces) and co-founder of <a href="https://remoters.net/">Remoters.net</a> (a free remote work hub, featuring remote jobs, tools, events, guides, and more to facilitate remote work). Aleyda enjoys sharing about SEO through her <a href="https://www.aleydasolis.com/en/blog/">blog</a>, the <a href="https://www.aleydasolis.com/en/seo-tips/">#SEOFOMO newsletter</a>, the <a href="https://www.aleydasolis.com/en/crawling-mondays-videos/">Crawling Mondays</a> video and podcast series and over <a href="https://twitter.com/aleyda">Twitter</a>.
 #ipullrank_bio: TODO
 #fellowhuman1101_bio: TODO
 discuss: 2043
@@ -185,7 +185,7 @@ To understand what search engines are able to effectively extract, we have broke
 
 #### Text
 
-### Rendered vs Non-rendered Content
+##### Rendered vs Non-rendered Text Content
 The usage of Single Page Application (SPA) JavaScript technologies has exploded with the growth of the web. This design pattern introduces difficulties for search engine spiders because both the execution of JavaScript transformations at runtime and user interactions with the page after load can cause additional content to appear or be rendered.
 
 Search engines encounter pages through its crawling activity, but may or may not choose to implement a second step of rendering a page. As a result, there may be disparities between the content that a user sees and the content that a search engine indexes and considers for rankings.
@@ -221,7 +221,7 @@ Across our sample set, there are disparities across the combination of mobile/de
 
 This year, the median desktop home page was found to have 402 words and the mobile 348 words. While [last year](../2019/seo#word-count), the median desktop home page had 346 words, and the median mobile home page had a slightly lower word count at 306 words. This represents 16.2% and 13.7% growth respectively.
 
-### Headings
+##### Headings
 
 Heading elements (h1-h6) act as a mechanism to visually indicate structure in a page’s content. Although these HTML elements don’t carry the weight they used to in search rankings, they still act as a valuable way to structure pages and signal other elements in the SERPs like Featured Snippets or other extraction methods that align with [Google’s new passage indexing](https://www.blog.google/products/search/search-on/).
 
@@ -255,13 +255,13 @@ In reviewing the incidence rate of non-empty heading elements, we understand tha
 
 Learn more about the usage of Headings in the [Markup chapter](./markup#headings), including the misuse of h7 and h8 elements that have never been part of HTML.
 
-## Metadata
+##### Metadata
 
 Metadata is an opportunity to describe and explain the value of the content on the other side of the click. While page titles are believed to be weighed directly in search rankings, meta descriptions are not. Both elements can encourage or discourage a user to click or not click based on their contents.
 
 We examined these features to see how pages are quantitatively aligning with best practices to drive traffic from Organic Search.
 
-### Page Titles
+###### Titles
 
 The page title is shown as the anchor text in search engine results and is generally considered one of the most valuable on-page elements that impacts a page’s ability to rank.
 
@@ -291,7 +291,7 @@ The median page title character count is 38 characters on both mobile and deskto
   )
 }}
 
-### Meta Descriptions
+###### Meta Descriptions
 
 The meta description acts as the advertising tagline for a webpage. Although [a recent study suggests that this tag is ignored and rewritten by Google 70% of the time](https://www.searchenginejournal.com/google-rewrites-meta-descriptions-over-70-of-the-time/382140/), it is an element that is prepared with the goal of enticing a user to click through.
 
@@ -324,7 +324,7 @@ The median character count for the meta description is 138 characters on desktop
 
 With meta descriptions continuing to power other snippets such as social and news feed snippets and Google continually rewriting them, and not considering them a direct ranking factor, it is reasonable to expect that meta descriptions will continue to grow beyond the 160 character limitation.
 
-#### Images
+####  Images
 
 The usage of images, particularly using `<img>` elements, within a page often suggests a focus on visual presentation of content. Although search engine capabilities regarding computer vision have continued to improve, we have no indication that this technology is being used in the ranking of pages. `alt` attributes remain the primary way to explain an image in lieu of a search engine’s inability to "see" it. `alt` attributes also support accessibility and clarify the elements on the page for users that are visually impaired.
 
