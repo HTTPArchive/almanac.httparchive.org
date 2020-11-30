@@ -98,6 +98,9 @@ jobs:
                   tasks.push('☑')
                 }
               })
+              if (tasks[tasks.length - 1] === '☑') {
+                tasks[tasks.length - 1] = '🚀'
+              }
               return tasks
             }
 
