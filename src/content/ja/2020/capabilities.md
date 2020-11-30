@@ -174,7 +174,11 @@ registration.showNotification('Title', {
 {{ figure_markup(
   image="idle_detection_api.png",
   alt="アイドル検出APIを使用したChromeでのページロードの割合",
+<<<<<<< HEAD
   caption='アイドル検出APIを使用したChromeでのページロードの割合<br>(出典. <a href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">アイドル検出</a>。)',
+=======
+  caption='アイドル検出APIを使用したChromeでのページロードの割合<br>(出典. <a href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">アイドル検出</a>.)',
+>>>>>>> 7cbbddd1d53bdd68c54abbf24c7283a5c6bf896c
   description="この機能を使用してChromeでページを読み込んだ割合に基づく、アイドル検出APIの使用状況のグラフです。利用可能なデータは2020年7月と10月のみで、APIの採用率は非常に低いことを示しています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=963792757&format=interactive",
   sheets_gid="1324588405"
