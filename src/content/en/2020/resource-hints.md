@@ -8,7 +8,7 @@ authors: [Zizzamia]
 reviewers: [jessnicolet, pmeenan, giopunt, mgechev, notwillk]
 analysts: [khempenius]
 translators: []
-zizzamia_bio: Staff Software Engineer, Retail Growth at Coinbase
+zizzamia_bio: Staff Software Engineer, Retail Growth at <a href="https://www.coinbase.com/">Coinbase</a>
 discuss: 2057
 results: https://docs.google.com/spreadsheets/d/1lXjd8ogB7kYfG09eUdGYXUlrMjs4mq1Z7nNldQnvkVA/
 queries: 21_Resource_Hints
