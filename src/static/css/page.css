@@ -31,8 +31,16 @@
   margin: 0 -1rem;
 }
 
+.width-20 {
+  width: 20%;
+}
+
 .width-45 {
   width: 45%;
+}
+
+.no-wrap {
+  white-space: nowrap;
 }
 
 .index {
