@@ -138,7 +138,7 @@ registration.showNotification('Title', {
 {{ figure_markup(
   image="notification_triggers_api.png",
   alt="Notification Triggers APIを使用したChromeでのページロードの割合",
-  caption='Notification Triggers APIを使用したChromeでのページ読み込みの割合<br>（出典 <a href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">通知トリガー</a>）',
+  caption='Notification Triggers APIを使用したChromeでのページ読み込みの割合<br>（出典 <a href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">通知トリガー</a>）',
   description="この機能を使用しているChromeでのページ読み込みの割合に基づいた通知トリガーAPIの使用状況のグラフです。ページロードの約0.00003%で2020年3月にピークを迎え、2020年10月にはゼロになることを示しています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1388597384&format=interactive",
   sheets_gid="1740370570"
