@@ -56,7 +56,7 @@ Be mindful when you use `preconnect`:
 - Avoid warm up origins used too late in the initial load.
 - Use it for no more than three origins because it can have CPU and battery cost.
 
-Lastly, `preconnect` is not available for [Internet Explorer or Firefox](https://caniuse.com/?search=preconnect), and [using](https://web.dev/preconnect-and-dns-prefetch/#resolve-domain-name-early-with-reldns-prefetch)[`dns-prefetch` as a fallback](https://web.dev/preconnect-and-dns-prefetch/#resolve-domain-name-early-with-reldns-prefetch) is highly advised.
+Lastly, `preconnect` is not available for [Internet Explorer or Firefox](https://caniuse.com/?search=preconnect), and [using `dns-prefetch` as a fallback](https://web.dev/preconnect-and-dns-prefetch/#resolve-domain-name-early-with-reldns-prefetch) is highly advised.
 
 ### preload
 
