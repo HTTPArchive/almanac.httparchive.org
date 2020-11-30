@@ -511,14 +511,9 @@ QUIC is dependent on TLS1.3, which is used for around 41% of requests, which mea
 
 From the discussion above, we expect QUIC and TCP to continue running in parallel for some time. We expect servers (e.g., nginx/apache/nodejs) to offer easy ways to do so, but this is still likely to complicate localhost test setups. Furthermore, there's probably a longer term impact on the HTTP Archive and WebPageTest projects.  The amount of pages crawled will increase substantially if we want to crawl both the HTTP/3 and H2/H1 versions, or the runtimes will increase if we want to prioritize HTTP/3. 
 
-Currently, some browsers provide (temporary) command line arguments to force QUIC on a certain origin to make this easier, but this is not the most user-friendly option of course. Over time, this will probably become easier to configure. 
+Currently, some browsers provide (temporary) command line arguments to force QUIC on a certain origin to make this easier, but this is not the most user-friendly option of course. Over time, this will probably become easier to configure. For example, this command will force Chrome to try a QUIC connection to localhost immediately without having to discover it via alternative services :
 
-<figure markdown>
-```
-% chrome --enable-quic --quic-version=h3-29 --origin-to-force-quic-on=localhost:6121 http://localhost:6121/
-```
-<figcaption>{{ figure_link(caption="For example, this command will force Chrome to try a QUIC connection to localhost immediately without having to discover it via alternative services") }}</figcaption>
-</figure>
+`% chrome --enable-quic --quic-version=h3-29 --origin-to-force-quic-on=localhost:6121 http://localhost:6121/`
 
 ### Not everything is implemented
 
