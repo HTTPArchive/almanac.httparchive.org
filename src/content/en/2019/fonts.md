@@ -210,7 +210,9 @@ Wow! Less than 2% of pages are using [`preconnect`](https://web.dev/uses-rel-pre
 
 In fact, if you're using Google Fonts go ahead and add this to your `<head>` if it's not there already:
 
-```<link rel="preconnect" href="https://fonts.gstatic.com/">```
+```html
+<link rel="preconnect" href="https://fonts.gstatic.com/">
+```
 
 ### Most popular typefaces
 
