@@ -366,6 +366,30 @@ h6,
   line-height: 1.2em;
 }
 
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+h4 {
+  font-size: 1.15em;
+}
+
+h5 {
+  font-size: 1.075em;
+}
+
+h6 {
+  font-size: 1em;
+}
+
 b {
   font-weight: bold;
 }
