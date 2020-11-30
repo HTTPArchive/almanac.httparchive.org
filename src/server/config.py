@@ -1,6 +1,4 @@
-import hashlib
 import json
-import urllib.parse
 import os
 
 from .language import Language
