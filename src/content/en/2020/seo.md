@@ -556,7 +556,7 @@ Core Web Vitals consist of:
 - Goal: <2.5 seconds
 - Lighthouse v6 Performance Score Weight: 25%
 
-**[First Input Delay](https://web.dev/fid/) (FID)|**
+**[First Input Delay](https://web.dev/fid/) (FID)**
 - Represents: Responsiveness to user input
 - Measurement: the time from when a user first interacts with a page to the time when the browser is actually able to begin processing event handlers in response to that interaction.
 - Noteworthy: [Total Blocking Time](https://web.dev/tbt/) (TBT) is the lab data counterpart for First Input Delay (FID)
