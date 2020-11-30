@@ -8,7 +8,7 @@ authors: [dotjs, rmarx, MikeBishop]
 reviewers: [LPardue, bazzadp]
 analysts: [gregorywolf]
 translators: []
-#dotjs_bio: TODO
+dotjs_bio: Andrew works at Cloudflare helping to make the web faster and more secure. He spends his time deploying, measuring and improving new protocols and asset delivery to improve end-user web site performance.
 discuss: 2058
 results: https://docs.google.com/spreadsheets/d/1M1tijxf04wSN3KU0ZUunjPYCrVsaJfxzuRCXUeRQ-YU/
 queries: 22_HTTP_2
@@ -18,7 +18,7 @@ featured_stat_label_1: Requests served over HTTP/2
 featured_stat_2: 31.7%
 featured_stat_label_2: CDN Requests with incorrect HTTP/2 prioritiztion  
 featured_stat_3: 80%
-featured_stat_label_3: pages served over HTTP/2 if a CDN is used
+featured_stat_label_3: pages served over HTTP/2 if a CDN is used, 30% if CDN not used
 unedited: true
 ---
 
