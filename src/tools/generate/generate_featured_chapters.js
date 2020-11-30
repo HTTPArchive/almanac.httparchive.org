@@ -56,7 +56,7 @@ const generate_featured_chapters = async (featured_quotes) => {
 };
 
 const write_template = async (language, year, featured_quotes) => {
-  const template = `templates/base/2019/featured_chapters.ejs.html`;
+  const template = `templates/base/featured_chapters.ejs.html`;
   const path = `templates/${language}/${year}/featured_chapters.html`;
 
   if (fs.existsSync(template)) {

@@ -158,6 +158,11 @@ const generate_timestamps = async () => {
 }
 
 (async () => {
-  await generate_timestamps();
+  try {
+    await generate_timestamps();
+  } catch (error) {
+    console.error(error);
+    process.exit(1);
+  }
 })();
 

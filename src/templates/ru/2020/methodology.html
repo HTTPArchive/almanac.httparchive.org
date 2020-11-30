@@ -1,0 +1,475 @@
+{% extends "base//methodology.html" %}
+
+{% block title %}Методология | Web Almanac от HTTP Archive{% endblock %}
+
+{% block description %}На этой странице описано, как был составлен Web Almanac в 2020 году: используемые наборы данных и инструменты, а также как был организован проект.{% endblock %}
+
+{% block twitter_image_alt %}Методология Web Almanac в {{ year }} году{% endblock %}
+
+{% block index %}
+      <ul>
+        <li><a href="#overview">Краткий обзор</a></li>
+        <li><a href="#dataset">О наборе данных</a>
+          <ul>
+            <li><a href="#websites">Сайты</a></li>
+            <li><a href="#metrics">Метрики</a></li>
+          </ul>
+        </li>
+        <li><a href="#tools">Инструменты</a>
+          <ul>
+            <li><a href="#webpagetest">WebPageTest</a></li>
+            <li><a href="#lighthouse">Lighthouse</a></li>
+            <li><a href="#wappalyzer">Wappalyzer</a></li>
+            <li><a href="#chrome-ux-report">Chrome UX Report</a></li>
+            <li><a href="#third-party-web">Сторонний веб</a></li>
+            <li><a href="#rework-css">Rework CSS</a>
+              <ul>
+                <li><a href="#rework-utils">Утилиты Rework</a></li>
+              </ul>
+            </li>
+            <li><a href="#parsel">Parsel</a></li>
+          </ul>
+        </li>
+        <li><a href="#process">Аналитический процесс</a>
+          <ul>
+            <li><a href="#planning">Планирование</a></li>
+            <li><a href="#analysis">Анализ</a></li>
+            <li><a href="#interpretation">Обработка</a></li>
+          </ul>
+        </li>
+        <li><a href="#looking-ahead">Перспективы на будущее</a></li>
+      </ul>
+{% endblock %}
+
+{% block main_content %}
+    <section>
+      <!-- Show large image for large screens and high density screens and use webp when supported -->
+      <picture>
+          <source media="(min-width: 327px)" type="image/webp" srcset="/static/images/methodology-banner.webp" />
+          <source media="(min-width: 327px)" type="image/jpeg" srcset="/static/images/methodology-banner.png" />
+          <source type="image/webp" srcset="/static/images/methodology-banner.webp 2x" />
+          <source type="image/jpeg" srcset="/static/images/methodology-banner.png 2x" />
+          <source type="image/webp" srcset="/static/images/methodology-banner-sm.webp" />
+          <source type="image/jpeg" srcset="/static/images/methodology-banner-sm.png" />
+          <img src="/static/images/methodology-banner.png" class="content-banner" alt="" width="1200" height="984" loading="eager" />
+        </picture>
+        <h2 id="overview"><a href="#overview" class="anchor-link">Краткий обзор</a></h2>
+
+        <p>
+          The Web Almanac — это проект, организованный <a href="https://httparchive.org">HTTP Archive</a>. HTTP Archive был запущен в 2010 Стивом Садерсом (Steve Souders), чтобы отслеживать развитие веба. Каждый месяц этот сервис анализирует содержимое миллионов веб-страниц и записывает терабайты метаданных в <a href="https://httparchive.org/faq#how-do-i-use-bigquery-to-write-custom-queries-over-the-data">BigQuery</a> для последующего анализ.
+        </p>
+
+        <p>
+          Задача Web Almanac состоит в том, чтобы стать ежегодным хранилищем общедоступных сведений о состоянии веба. Наша цель — понятно рассказать о данных, собранных HTTP Archive, для этого мы приглашаем профильных экспертов.
+        </p>
+
+        <p>
+          Выпуск Web Almanac в 2020 году поделён на четыре части: контент, пользовательские ощущения, публикация и распространение. В каждой части есть несколько глав, которые рассматривают главную тему с разных точек зрения. Например, во второй части пользовательские ощущения в соответствующих главах рассматриваются с разных сторон, а именно: производительности, безопасности и доступности.
+        </p>
+    </section>
+
+    <section>
+        <h2 id="dataset"><a href="#dataset" class="anchor-link">О наборе данных</a></h2>
+
+        <p>
+          Набор данных HTTP Archive постоянно растёт каждый месяц. Для издания Web Almanac 2020 года, если в главе не указано иное, все метрики были взяты из сканирования сайтов за август 2020 года. Эти показатели можно <a href="https://github.com/HTTPArchive/httparchive.org/blob/master/docs/gettingstarted_bigquery.md">свободно запросить</a> из таблиц с префиксом <code>2020_08_01</code> на BigQuery.
+        </p>
+
+        <p>
+          Все метрики, представленные в Web Almanac, можно получить из набора данных на BigQuery. Вы можете посмотреть запросы, используемые во всех главах, в нашем <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2020">репозитории на GitHub</a>.
+        </p>
+
+        <p class="note">
+          Обратите внимание, что некоторые запросы могут быть достаточно большими и <a href="https://cloud.google.com/bigquery/pricing">дорогостоящими</a> для выполнения, так как оплата за пользование BigQuery начинается после обработки одного терабайта данных. Для того, чтобы помочь вам контролировать расходы, прочитайте пост Тима Кадлека (Tim Kadlec) <a lang="en" href="https://timkadlec.com/remembers/2019-12-10-using-bigquery-without-breaking-the-bank/">Using BigQuery Without Breaking the Bank</a>.
+        </p>
+
+        <p>
+          Например, чтобы выяснить среднее количество байт JavaScript-кода в десктопной и мобильной версиях страницы, посмотрите запрос <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2019/01_JavaScript/01_01b.sql">01_01b.sql</a>.
+        </p>
+
+        <div class="code-block floating-card">
+          <pre><code><span class="code-comment">#standardSQL
+# 01_01b: Distribution of JS bytes by client</span>
+<span class="code-keyword">SELECT</span>
+  percentile,
+  _TABLE_SUFFIX <span class="code-keyword">AS</span> client,
+  <span class="code-function">APPROX_QUANTILES</span>(<span class="code-function">ROUND</span>(bytesJs <span class="code-keyword">/</span> <span class="code-number">1024</span>, <span class="code-number">2</span>), <span class="code-number">1000</span>)[<span class="code-function">OFFSET</span>(percentile <span class="code-keyword">*</span> <span class="code-number">10</span>)] <span class="code-keyword">AS</span> js_kbytes
+<span class="code-keyword">FROM</span>
+  <span class="code-string">`httparchive.summary_pages.2019_07_01_*`</span>,
+  <span class="code-function">UNNEST</span>([<span class="code-number">10</span>, <span class="code-number">25</span>, <span class="code-number">50</span>, <span class="code-number">75</span>, <span class="code-number">90</span>]) <span class="code-keyword">AS</span> percentile
+<span class="code-keyword">GROUP BY</span>
+  percentile,
+  client
+<span class="code-keyword">ORDER BY</span>
+  percentile,
+  client</code></pre>
+        </div>
+
+        <p>
+          Результаты каждой метрики доступны для просмотра в таблицах, созданных специально для каждой главы, например, <a href="https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/edit?usp=sharing">результаты по JavaScript</a>. В конце каждой главы приведены ссылки на запросы метрик, результаты и комментарии читателей.
+        </p>
+    </section>
+
+    <section>
+        <h3 id="websites"><a href="#websites" class="anchor-link">Сайты</a></h3>
+
+        <p>
+          В набор данных находятся 7,546,709 сайтов. Из них 6,347,919 — мобильные сайты, а 5,593,642 — обычные сайты (или десктопные, т.е. для компьютеров). Большинство этих сайтов состоят как в мобильных, так в и десктопных выборках.
+        </p>
+
+        <p>
+          HTTP Archive берёт URL-адреса сайтов для тестирования из <a href="#chrome-ux-report">отчёта Chrome UX Report</a>. Отчёт Chrome UX Report — это общедоступный набор данных от Google, который агрегирует информацию о пользовательских ощущениях от использования миллионов сайтов, активно посещаемых с помощью браузера Chrome. В этом отчете содержится актуальный список сайтов, отражающий реальное использование веба. Набор данных отчета Chrome UX учитывает тип устройства, используемое для просмотра сайтов.
+        </p>
+
+        <p>
+          HTTP Archive для сканирования сайтов в августе 2020 года (на основе которых строится текущий Web Almanac) использовал последнюю редакцию отчёта Chrome UX. Набор данных 202006 был выпущен 14 июля 2020 года и содержит сайты, посещенные пользователями Chrome в течение июня.
+        </p>
+
+        <p>
+          Количество протестированных сайтов выросло на 20-30% по сравнению с <a href="../2019/methodology#websites">Web Almanac в 2019 году</a>. Этот рост был проанализирован <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='paulcalvano') }}">Полом Кальвано (Paul Calvano)</a> в его посте <a href="https://paulcalvano.com/2020-09-29-growth-of-the-web-in-2020/">Growth of the Web in 2020</a>.
+        </p>
+
+        <p>
+          Из-за ограниченности ресурсов, HTTP Archive может проверить только одну страницу каждого сайта в отчете Chrome UX Report. Поэтому чтобы можно было сопоставить данные, в отчёте рассматриваются только главные страницы. Следует отметить, что это приводит к искажению результатов, поскольку главная страница не всегда является репрезентативной для всего сайта.
+        </p>
+
+        <p>
+          Также HTTP Archive следует рассматривать с точки зрения синтетического инструмента тестирования, т.к. он анализирует сайты из дата-центра и не собирает данные на основе фактического взаимодействия пользователя с сайтом. Следовательно, все страницы сканируются с очищенным кешом в режиме инкогнито, а это не отражает реальную картину работы пользователя с сайтом.
+        </p>
+    </section>
+
+    <section>
+      <h3 id="metrics"><a href="#metrics" class="anchor-link">Метрики</a></h3>
+
+      <p>
+        HTTP Archive собирает тысячи метрик, отражающих устройство веба. Эта коллекция включает основные метрики, такие как количество байт на страницу, была ли страница загружена по протоколу HTTPS, а также отдельные заголовки запросов и ответов. Большинство из этих метрик предоставляет <a href="#webpagetest">WebPageTest</a>, выступающий в качестве исполнителя тестов для каждого сайта.
+      </p>
+
+      <p>
+        Другие инструменты тестирования используются для определения более сложных метрик страницы. Например, <a href="#lighthouse">Lighthouse</a> запускается для аудита качества страницы с разных аспектов, таких как доступности или SEO. В следующем разделе <a href="#tools">Инструменты</a> содержится более подробная информация по каждому из применяемых инструментов.
+      </p>
+
+      <p>
+        Чтобы обойти ограничения, присущие синтетическим (лабораторным) наборам данных, Web Almanac использует <a href="#chrome-ux-report">отчёт Chrome UX Report</a> для получения метрик, связанных с пользовательскими ощущениями от посещения сайтов, особенное внимание уделяется производительности.
+      </p>
+
+      <p>
+        Некоторые метрики полностью недоступны. Например, не всегда удаётся возможность обнаружить технологии, используемые для создания сайта. Если сайт был создан при помощи утилиты create-react-app, то мы знаем, что он использует библиотеку React, однако это не означает, что применялся именно этот инструмент сборки. Если инструменты разработки не оставляли никаких следов в коде, которые бы указывали на них, то невозможно определить их использование.
+      </p>
+
+      <p>
+        Другие метрики возможно измерить, но это трудно или ненадежно. Например, некоторые аспекты веб-дизайна по своей сути носят визуальный характер, поэтому сложно выяснить, например, есть ли на странице навязчивые модальные окна.
+      </p>
+    </section>
+
+    <section>
+      <h2 id="tools"><a href="#tools" class="anchor-link">Инструменты</a></h2>
+
+      <p>
+        Web Almanac нельзя представить без использования перечисленных ниже опенсорс-инструментов.
+      </p>
+    </section>
+
+    <section>
+      <h3 id="webpagetest"><a href="#webpagetest" class="anchor-link">WebPageTest</a></h3>
+
+      <p>
+        <a href="https://www.webpagetest.org/">WebPageTest</a> — хорошо известный инструмент тестирования производительности веб-страниц и главная опора HTTP Archive. Мы используем <a href="https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Private%20Instances/README.md">приватный экземпляр</a> WebPageTest вместе с агентами тестирования — браузерами, которые проверяют каждую веб-страницу. Обычные и мобильные сайты проверяются на разных конфигурациях:
+      </p>
+      <div class="table-wrap"><div class="table-wrap-container">
+      <table>
+        <thead>
+          <tr>
+              <th>Конфигурация</th>
+              <th>Компьютер</th>
+              <th>Мобильное устройство</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Устройство</td>
+            <td>Виртуальная машина с Linux</td>
+            <td>Эмулируемый Moto G4</td>
+          </tr>
+
+          <tr>
+            <td>User Agent</td>
+            <td>
+              Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36 PTST/200805.230825
+            </td>
+            <td>
+              Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4) Build/MPJ24.139-64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.146 Mobile Safari/537.36 PTST/200815.130813
+            </td>
+          </tr>
+
+          <tr>
+            <td>Локация</td>
+            <td>
+              Редвуд-Сити, штат Калифорния, США<br>
+              Даллес, штат Орегон, США
+            </td>
+            <td>
+              Редвуд-Сити, штат Калифорния, США<br>
+              Даллес, штат Орегон, США
+            </td>
+          </tr>
+
+          <tr>
+            <td>Тип подключения</td>
+            <td>Кабельный (5/1 Mbps 28ms RTT)</td>
+            <td>3G (1.600/0.768 Mbps 300ms RTT)</td>
+          </tr>
+
+          <tr>
+            <td>Вьюпорт</td>
+            <td>1024 x 768px</td>
+            <td>512 x 360px</td>
+          </tr>
+        </tbody>
+      </table>
+      </div></div>
+
+      <p>
+        Обычные сайты запускаются из Chrome на виртуальной машине с Linux. Скорость сети эквивалентна кабельному соединению.
+      </p>
+
+      <p>
+        Сайты для мобильных устройств запускаются в мобильном Chrome на эмулируемом устройстве Moto G4 со скоростью сети, эквивалентной 3G-соединению. Обратите внимание, что в эмулируемом устройстве заголовок User Agent будет определяться как Chrome 65, но на самом деле это Chrome 84.
+      </p>
+
+      <p>
+        Тесты выполняются из двух локаций в США: Калифорния и Орегон. HTTP Archive имеет собственное оборудование, на которой запущен агент тестирования, которое находится в дата-центре <a href="https://archive.org">Internet Archive</a> в Калифорнии. По мере необходимости добавляются дополнительные агенты тестирования на локацию us-west-1 из <a href="https://cloud.google.com/compute/docs/regions-zones/#locations">Google Cloud Platform</a> в штате Орегон.
+      </p>
+
+      <p>
+        Приватный экземпляр WebPageTest в HTTP Archive синхронизирован с последней публичной версией и дополнен  <a href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">собственными метриками</a>. Это фрагменты JavaScript-кода, которые выполняются на каждом сайте в конце теста. Благодаря <a href="https://github.com/HTTPArchive/legacy.httparchive.org/commits/master/custom_metrics">помощи</a> многих аналитиков данных, в частности, <a href="https://github.com/HTTPArchive/legacy.httparchive.org/pulls?q=is%3Apr+author%3ATiggerito+sort%3Acreated-asc">титаническим усилиям</a> <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='Tiggerito') }}">Тони МакКреа (Tony McCreath)</a>, выпуск Web Almanac от 2020 года  значительно расширил возможности тестовой инфраструктуры HTTP Archive вместе с более 3000 строк нового кода.
+      </p>
+
+      <p>
+        Результаты каждого теста доступны в виде <a href="https://en.wikipedia.org/wiki/HAR_(file_format)">HAR-файла</a> — архивного файла в формате JSON, содержащего метаданные о веб-странице.
+      </p>
+    </section>
+
+    <section>
+      <h3 id="lighthouse"><a href="#lighthouse" class="anchor-link">Lighthouse</a></h3>
+
+      <p>
+        <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a> — это автоматизированный инструмент контроля качества сайтов от компании Google. Он проводит проверку страницу по разным метрикам, выявляя ошибки вроде неоптимизированных изображений или недоступного контента.
+      </p>
+
+      <p>
+        HTTP Archive запускает последнюю версию Lighthouse на всех мобильных веб-страницах, декстопные версии не учитываются в силу ограниченности ресурсов. На момент сканирования за август 2020 года HTTP Archive использовался Lighthouse версии <a href="https://github.com/GoogleChrome/lighthouse/releases/tag/v6.2.0">6.2.0</a>.
+      </p>
+
+      <p>
+        Lighthouse запускается в виде отдельного теста внутри <a href="#webpagetest">WebPageTest</a>, но с использованием отдельной настройки конфигурации:
+      </p>
+      <div class="table-wrap"><div class="table-wrap-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Конфигурация</th>
+            <th>Значение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Замедление процессора</td>
+            <td>1x/4x</td>
+          </tr>
+          <tr>
+            <td>Пропускная способность скачивания</td>
+            <td>1.6 Mbps</td>
+          </tr>
+          <tr>
+            <td>Пропускная способность загрузки</td>
+            <td>0.768 Mbps</td>
+          </tr>
+          <tr>
+            <td>RTT</td>
+            <td>150 ms</td>
+          </tr>
+        </tbody>
+      </table>
+      </div></div>
+
+      <p>
+        Для получения более подробной информации о Lighthouse и аудитах, используемых HTTP Archive, обратитесь к <a href="https://developers.google.com/web/tools/lighthouse/">документации Lighthouse для разработчиков</a>.
+      </p>
+    </section>
+
+    <section>
+      <h3 id="wappalyzer"><a href="#wappalyzer" class="anchor-link">Wappalyzer</a></h3>
+
+      <p>
+        <a href="https://www.wappalyzer.com/">Wappalyzer</a> — это инструмент для определения используемых на сайте технологий. Обнаруживаются <a href="https://www.wappalyzer.com/technologies">64 категории</a> технологий, начиная от JavaScript-фреймворков и заканчивая CMS-платформами и даже криптовалютными майнерами. Всего поддерживается отслеживание более 1400 технологий.
+      </p>
+
+      <p>
+        HTTP Archive запускает последнюю версию Wappalyzer на всех веб-страниц. По состоянию на август 2020 года Web Almanac использовал Wappalyzer <a href="https://github.com/AliasIO/Wappalyzer/releases/tag/v6.2.0">версии 6.2.0</a>.
+      </p>
+
+      <p>
+        Многие главы снабжены данными из Wappalyzer, которые анализируют популярность инструментов, таких  как WordPress, Bootstrap и jQuery. Например, информация из глав <a href="{{ url_for('chapter', year=year, lang=lang, chapter='ecommerce') }}">Электронная коммерция</a> и <a href="{{ url_for('chapter', year=year, lang=lang, chapter='cms') }}">CMS</a> в значительной степени опирается на соответствующих категориях технологий <a href="https://www.wappalyzer.com/categories/ecommerce">Ecommerce</a> и <a href="https://www.wappalyzer.com/categories/cms">CMS</a>, обнаруживаемых Wappalyzer.
+      </p>
+
+      <p>
+        Все инструменты распознания используемых технологий, включая Wappalyzer, имеют свои ограничения. Достоверность результатов всегда будет зависеть от точности алгоритмов определения. Web Almanac добавляет примечание в каждой главе, где используется Wappalyzer, но его анализ по определённым причинам может быть не точным.
+      </p>
+    </section>
+
+    <section>
+      <h3 id="chrome-ux-report"><a href="#chrome-ux-report" class="anchor-link">Отчёт Chrome UX Report</a></h3>
+
+      <p>
+        <a href="https://developers.google.com/web/tools/chrome-user-experience-report">Chrome UX Report</a> — это публичный набор данных, содержащий пользовательские ощущения от посещения сайтов через браузер Chrome. Впечатления пользователей сгруппированы по каждому сайту (например, <code>https://www.example.com</code>). Набор данных включает распределение UX-метрик типа отрисовки, загрузки, взаимодействия и стабильности раскладки. В дополнение к группировке по месяцам, восприятие сайта пользователем также можно разбить по таким параметрам, как страна, форм-фактор устройства (десктоп, телефон, планшет) и тип соединения (4G, 3G и т.д.).
+      </p>
+
+      <p>
+        В основе метрик Web Almanac, относящиеся к пользовательским впечатлениям от использования сайтов, лежит набор данных отчёта Chrome UX Report за август 2020 года (номер 202008).
+      </p>
+
+      <p>
+        Подробнее о наборе данных можно узнать в руководстве <a href="https://web.dev/chrome-ux-report-bigquery">Using the Chrome UX Report on BigQuery</a> на сайте <a href="https://web.dev/">web.dev</a>.
+      </p>
+    </section>
+
+    <section>
+      <h3 id="third-party-web"><a href="#third-party-web" class="anchor-link">Сторонний код в вебе</a></h3>
+
+      <p>
+        <a href="https://www.thirdpartyweb.today/">Third Party Web</a> — это исследовательский проект <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='patrickhulce') }}">Патрика Халса (Patrick Hulce)</a>, автора главы про <a href="{{ url_for('chapter', year=2019, lang=lang, chapter='third-parties') }}">сторонний код в 2019 году</a>, который использует данные HTTP Archive и Lighthouse для определения и анализа влияния ресурсов сторонних сервисов на веб.
+      </p>
+
+      <p>
+        Домены считаются сторонними сервисами, если они используются на более чем 50 уникальных страницах. Проект также группирует сервисы по категориям, таких как реклама, аналитика и соцсети.
+      </p>
+
+      <p>
+        Несколько глав Web Almanac используют домены и категории из этого набора данных, чтобы выяснить влияние сторонних сервисов.
+      </p>
+    </section>
+
+    <section>
+      <h3 id="rework-css"><a href="#rework-css" class="anchor-link">Rework CSS</a></h3>
+
+      <p>
+        <a href="https://github.com/reworkcss/css">Rework CSS</a> — это парсер CSS-кода, написанный на JavaScript. Он анализирует все таблицы стилей, распознавая каждое правило, селектор, директиву и значение из CSS-стилей, а затем возвращает объект со всеми этим данными, преобразованный в JSON-формат.
+      </p>
+
+      <p>
+        Этот специальный инструмент значительно улучшил точность многих метрик в главе по <a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a>. Для этого CSS-код во всех внешних таблицах стилях и в встроенных блоках на каждой странице был проанализирован. Читайте <a href="https://discuss.httparchive.org/t/analyzing-stylesheets-with-a-js-based-parser/1683">следующую ветку с обсуждениями</a>, если хотите подробнее узнать о том, как этот инструмент был интегрирован с набором данных HTTP Archive на BigQuery.
+      </p>
+    </section>
+
+    <section>
+      <h4 id="rework-utils"><a href="#rework-utils" class="anchor-link">Утилиты Rework</a></h4>
+
+      <p>
+        В этом году в главе по <a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a> под руководством <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='LeaVerou') }}">Леа Вероу (Lea Verou)</a> гораздо подробнее рассмотрено состояние CSS, для чего потребовалось выполнить более <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2020/01_CSS">100 запросов</a>. Для сравнения: это в 2,5 раза больше запросов, чем в 2019 году. Чтобы справиться с таким масштабом анализа, Леа создала опенсорс-проект <a href="https://github.com/LeaVerou/rework-utils">Rework Utils</a>. Это утилиты, при помощи которых JSON-данные из Rework выходят на более высокий уровень, упрощая понимание CSS-кода и тем самым позволяя делать интересные выводы из полученной информации. Большая часть статистики в главе CSS получена с помощью этих скриптов.
+      </p>
+    </section>
+
+    <section>
+        <h4 id="parsel"><a href="#parsel" class="anchor-link">Parsel</a></h4>
+
+        <p>
+          <a href="https://projects.verou.me/parsel/">Parsel</a> — парсер CSS-селекторов и калькулятор специфичности, написанный ведущим авторов главы по <a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a> <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='LeaVerou') }}">Леа Вероу (Lea Verou)</a>, который доступен в виде отдельной опенсорс-библиотеки. Она широко используется во всех CSS-метриках, связанных с селекторами и специфичностью.
+        </p>
+    </section>
+
+    <section>
+      <h2 id="process"><a href="#process" class="anchor-link">Аналитический процесс</a></h2>
+
+      <p>
+        Планирование и реализация Web Almanac заняло около года при сотрудничестве более сотни <a href="{{ url_for('contributors', year=year, lang=lang) }}">участников</a> из веб-сообщества. В этом разделе объясняется про главы Web Almanac, как были получены метрики для них, и как они обрабатывались.
+      </p>
+    </section>
+
+    <section>
+      <h3 id="planning"><a href="#planning" class="anchor-link">Планирование</a></h3>
+
+      <p>
+        Web Almanac 2020 стартовал в <a href="https://twitter.com/rick_viscomi/status/1273135952848977920">июне 2020 года</a>, это случилось позже, чем в прошлом 2019 году, из-за последствий COVID-19 и протестов за социальную справедливость. Эти и другие события в 2020 году подорвали весь производственный цикл и создали дополнительные нагрузки на наших участников, помимо того уже стресса, связанного с нашим динамичным проектом.
+      </p>
+
+      <p>
+        Как мы написали в <a href="https://almanac.httparchive.org/en/2019/methodology#brainstorming">прошлогодней методологии</a>:
+      </p>
+
+      <blockquote>
+        Одной из чёткой и конкретной целью будущих изданий Web Almanac является ещё большее вовлечение в него представителей меньшинств в качестве авторов и рецензентов.
+      </blockquote>
+
+      <p>
+        Для этого в этом году мы поменяли способ поиска и отбора авторов:
+      </p>
+
+      <ul>
+        <li>
+          Предыдущим авторов было предложено не выступать снова в качестве авторов, чтобы быть оставить места для других точек зрения.
+        </li>
+        <li>
+          Всем тем, кто утверждал авторов на 2020 год, было предложено не выдвигать людей, кто выглядит как они или сходится во мнениях с ними.
+        </li>
+        <li>
+          Многие авторы в 2019 году были сотрудниками Google, поэтому в этом году мы попытались лучше сбалансировать точки зрения для охвата более широкого веб-сообщества. Мы считаем, что мнения в Web Almanac должны быть отражением самого сообщества, а не смещены в сторону какой-либо определенной компании, чтобы избежать создания замкнутого мира.
+        </li>
+        <li>
+          Руководители проекта рассмотрели все номинации авторов и постарались отобрать авторов, которые привнесут новые идеи и повысят роль представителей меньшинств в сообществе.
+        </li>
+      </ul>
+
+      <p>
+        Мы надеемся, что в будущем повторим этот процесс отбора, чтобы Web Almanac стал более разнообразным и инклюзивным проектом, в котором участвуют авторы любого происхождения и социальных групп.
+      </p>
+
+      <p>
+        Наконец, в июле 2020 года, после серии мозговых штурмов и номинаций, были приняты 22 главы, а по каждой главе сформированы группы для написания, проверки и анализа контента.
+      </p>
+    </section>
+
+    <section>
+      <h3 id="analysis"><a href="#analysis" class="anchor-link">Анализ</a></h3>
+
+      <p>
+        В июле и августе 2020 года, имея составленный список метрик и глав, аналитики данных отсортировали метрики для дальнейшего анализа. В некоторых случаях мы создали <a href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">собственные метрики</a> для заполнения пробелов в нашем аналитическом потенциале.
+      </p>
+
+      <p>
+        В течение августа 2020 года HTTP Archive обработал несколько миллионов сайтов, чтобы собрать метаданные для Web Almanac.
+      </p>
+
+      <p>
+        Аналитики начали писать запросы для извлечения результатов по каждой метрике. В общей сложности было вручную составлено сотни запросов! Вы можете посмотреть все запросы по годам и главам в <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2020">репозитории запросов</a> на GitHub.
+      </p>
+    </section>
+
+    <section>
+      <h3 id="interpretation"><a href="#interpretation" class="anchor-link">Обработка</a></h3>
+
+      <p>
+        Авторы работали с аналитиками, чтобы корректно обработать результаты и подготовить соответствующие выводы. При написании своих глав авторы опирались на полученные статистические выводы, чтобы сформировать своё видение состояния веба. Рецензенты сотрудничали с авторами, чтобы добиться правильности анализа с технической точки зрения.
+      </p>
+
+      <p>
+        Чтобы сделать результаты более понятными для читателей, веб-разработчики и аналитики визуализировали их. Некоторые визуализации для большой ясности были упрощены. Например, вместо того, чтобы показывать полное распределение, показывается только несколько процентилей. Если не указано иное, все распределения суммируются с использованием перцентилей, прежде всего медианы (50-й перцентиль), а не средних значений.
+      </p>
+
+      <p>
+        Наконец, редакторы просмотрели главы, чтобы исправить простые грамматические ошибки и добиться согласованности во время чтения.
+      </p>
+    </section>
+
+    <section>
+      <h2 id="looking-ahead"><a href="#looking-ahead" class="anchor-link">Перспективы на будущее</a></h2>
+
+      <p>
+        Выпуск Web Almanac в 2020 году — второй по счёту, который, как мы надеемся, станет продолжением ежегодной традицией по оценке позитивных изменений в жизни веб-сообщества. Выпуск очередного этого отчёта стал возможным благодаря колоссальной работе, проделанной множеством самоотверженных <a href="{{ url_for('contributors', year=year, lang=lang) }}">участников</a>, и мы будем использовать как можно эффективнее результаты этой работы, чтобы сделать будущие выпуски ещё более лучше.
+      </p>
+
+      <p>
+        Если вам интересно поучаствовать в издании Web Almanac в 2021 году, дайте нам знать об этом, заполнив <a href="https://forms.gle/VRBFegGAP7d99Bhp7">форму</a>. Давайте работать сообща, чтобы отслеживать состояние веба!
+      </p>
+    </section>
+{% endblock main_content %}

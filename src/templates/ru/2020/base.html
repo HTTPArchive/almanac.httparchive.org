@@ -1,0 +1,12 @@
+{% extends "%s/base.html" % lang %}
+
+{% block methodology_stat_1 %}7.5 млн{% endblock %}
+{% block methodology_stat_2 %}31.3 Тб{% endblock %}
+{% block methodology_description %}
+Если не указано иное, метрики во всех 22 главах Web Almanac получены из набора данных HTTP Archive. HTTP Archive — это управляемый сообществом проект по исследованию веба с 2010 года. При помощи WebPageTest и Lighthouse ежемесячно проверяются метаданные около 7,5 миллионов сайтов, которые затем вносятся в общедоступную базу данных BigQuery для последующего анализа. В качестве основы для метрик Web Almanac был использован набор данных за август 2020 года. Дополнительную информацию смотрите на странице методологии.
+{% endblock %}
+
+{% block foreword %}
+{# TODO - Write this! #}
+{{ self.coming_soon() }}
+{% endblock %}
