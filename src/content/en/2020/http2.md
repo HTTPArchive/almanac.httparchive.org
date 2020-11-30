@@ -281,7 +281,7 @@ Figure 22.14 shows the breakdown of HTTP/2 responses for 3rd party CDNs for mobi
       </tr>
     </tbody>
   </table>
-<figcaption>{{ figure_link(caption="Percentage of HTTP/2 requests served by the third-party resouce CDNs over mobile, sheets_gid="781660433", sql_file="cdn_detail_by_cdn.sql"") }}</figcaption>
+<figcaption>{{ figure_link(caption="Percentage of HTTP/2 requests served by the third-party resouce CDNs over mobile", sheets_gid="781660433", sql_file="cdn_detail_by_cdn.sql") }}</figcaption>
 </figure>
 
 ## How is HTTP/2 performing ?
