@@ -1,7 +1,7 @@
 #standardSQL
 CREATE TEMPORARY FUNCTION getPrefixStats(css STRING) RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
-	function compute() {
+	function compute(ast) {
 		let ret = {
 			total: {},
 			pseudo_classes: {},
