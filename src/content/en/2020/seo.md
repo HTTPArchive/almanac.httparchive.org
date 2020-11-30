@@ -539,75 +539,41 @@ Having a fast loading website is fundamental to provide a great user search expe
 
 As of November 2020, 3 performance metrics known as [Core Web Vital](https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html) are roadmapped to be a ranking factor as part of the "page experience" signals since May 2021. Sites should expect Googlebot to crawl using its [mobile user-agent](https://support.google.com/webmasters/answer/1061943) with the [Chromium](https://webmasters.googleblog.com/2019/10/updating-user-agent-of-googlebot.html) version details updating as the web Rendering Service updates with new Chromium releases.
 
-#### Changes to core measure: Lighthouse v6 vs. v5
+#### Lighthouse v6 and Web Core Vitals
 
-For SEOs, performance disambiguated from "speed" with changes to Lighthouse's core measurement methodology in update to version 6. The use case for Lighthouse has always been to emulate user experience in local tests. The update replaced three of the tool's six metrics to focus on user-centric diagnostics.
 
-Each new metric is intended to represent a portion of user experience. New metrics in version 6 include:
+For SEOs, performance disambiguated from "speed" with changes to Lighthouse's core measurement methodology in update to version 6.  Lighthouse is the scoring tool that populates key SEO performance tools such as web.dev, Chrome DevTools, and PageSpeed Insights.
+Previously, performance scores and methods of measurement varied by tool.  Google announced a set of unified performance metrics called [Core Web Vitals](https://developers.google.com/search/blog/2020/05/evaluating-page-experience) in May 2020.  
+
+Each of the metrics aligns to a phase in a user's experience.  The data source is the [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report/) (Crux).  This field data is aggregated from users who have opted-in to syncing their browsing history, have not set up a Sync passphrase, and have usage statistic reporting enabled.
+
+Core Web Vitals consist of:
+
 
 **[Largest Contentful Paint](https://web.dev/lcp/) (LCP)**
 - Represents: Perceived loading experience
 - Measurement: the point in the page load timeline when the page's largest image or text block is visible within the viewport.
 - Goal: <2.5 seconds
+- Lighthouse v6 Performance Score Weight: 25%
 
-**[Total Blocking Time](https://web.dev/tbt/) (TBT)|**
+**[First Input Delay](https://web.dev/fid/) (FID)|**
 - Represents: Responsiveness to user input
-- Measurement: Total time in which the main thread is occupied by tasks taking more than 50ms to complete.
-The main thread is considered "blocked" by tasks over 50ms because the browser cannot interrupt an in-progress task to receive user input. The user may perceive the page to be sluggish or janky as they wait for a task to finish and their input to be received.
-- Noteworthy: TBT is the lab data counterpart for First Input Delay (FID), one of the three Core Web Vital metrics
+- Measurement: the time from when a user first interacts with a page to the time when the browser is actually able to begin processing event handlers in response to that interaction.
+- Noteworthy: [Total Blocking Time](https://web.dev/tbt/) (TBT) is the lab data counterpart for First Input Delay (FID)
 - Goal: <300 milliseconds
+- Lighthouse v6 Performance Score Weight: 25% (as Total Blocking Time)
 
 **[Cumulative Layout Shift](https://web.dev/cls/) (CLS)**
 - Represents: Visual stability
 - Measurement: a calculation based on the number of frames in which element(s) visually moves and the total distance in pixels the element(s) moved.
 - Goal: >0.10
+- Lighthouse v6 Performance Score Weight: 5%
 
-Version 6 deprecated:
+In light of COVID-19, Google clarified in their official post that no immediate action is required.  Search Console now includes a [Core Web Vitals report](https://search.google.com/search-console/not-verified?original_url=/search-console/core-web-vitals) to help sites improve performance.  The report includes URL specific data grouped together by status, metric type, and URL group (groups of similar web pages).  In order to anonymize user data, a  minimum data threshold is in place.  If a URL does not have enough data from the Crux report, it is omitted.
 
-1. First Meaningful Paint
-Reason for deprecation: The metric was based on Chrome's rendering mechanism which did not allow a path to standardization as the metric .
-2. First CPU Idle
-Reason for deprecation: With its high similarity to Time to Interactive, the  metric did not provide a unique value. Time to Interactive and Total Blocking Time provided more meaningful measurements and diagnostics for interactivity.
-3. Max Potential FID
-Reason for deprecation: Total Blocking Time provides a more nuanced  measurement as TBT considers the expected 50ms task time in its calculation.
+In the announcement of updates to core measurement, Lighthouse shared their analysis of performance scoring differences between versions 5 and 6. The [limited data set](https://docs.google.com/spreadsheets/d/1BZFh7AyyaLHCj5LGAbrn3m72ysu4yv8okyHG-f3MoXI/edit#gid=1984498811) saw ~18.67% of sites improve, 33.33% with no change, and 48.00% score lower.   
 
-Each metric's weight in overall performance score shifted as well.
-
-<figure markdown>
-Metric Name | v6 Metric Weight | v5 Metric Weight
--- | -- | --
-Largest Contentful Paint (LCP) | 25% | --
-Total Blocking Time (TBT) | 25% | --
-First Contentful Paint (FCP) | 15% | 23%
-Speed Index (SI) | 15% | 27%
-Time To Interactive (TTI) | 15% | 33%
-Cumulative Layout Shift (CLS) | 5% | --
-First Meaning Paint (FMP) | -- | 7%
-First CPU Idle (FCI) | -- | 13%
-Max Potential FID (mpFID) | -- | 0%
-
-<figcaption>{{ figure_link(caption="Lighthouse changes") }}</figcaption>
-</figure>
-
-Previously, performance scores and methods of measurement varied by tool. Google announced a set of unified performance metrics called [Core Web Vitals in May 2020](https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html).
-
-Each of the metrics aligns to a phase in a user's experience. The data source is the [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report/) (Crux). This field data is aggregated from users who have opted-in to syncing their browsing history, have not set up a Sync passphrase, and have usage statistic reporting enabled.
-
-Core Web Vitals consist of:
-
-1. Largest Contentful Paint
-2. First Input Delay
-3. Cumulative Layout Shift
-
-Largest Contentful Paint and Cumulative Layout Shift are available in both emulated and field data sources. Those running local tests to emulate user experience should look to Total Blocking Time as a proxy for First Input Delay.
-
-These three metrics are roadmapped to be part of an upcoming [page experience](https://developers.google.com/web/tools/chrome-user-experience-report/) ranking signal, set to [roll out in May 2021](https://webmasters.googleblog.com/2020/11/timing-for-page-experience.html).
-
-In light of COVID-19, Google clarified in their official post that no immediate action is required. Search Console now includes a [Core Web Vitals report](https://search.google.com/search-console/core-web-vitals?utm_medium=referral&utm_campaign=9205520) to help sites improve performance. The report includes URL specific data grouped together by status, metric type, and URL group (groups of similar web pages). In order to anonymize user data, a  minimum data threshold is in place. If a URL does not have enough data from the Crux report, it is omitted.
-
-In the announcement of updates to core measurement, Lighthouse shared their analysis of performance scoring differences between versions 5 and 6. The [limited data set](https://docs.google.com/spreadsheets/d/1BZFh7AyyaLHCj5LGAbrn3m72ysu4yv8okyHG-f3MoXI/edit?usp=sharing) saw ~18.67% of sites improve, 33.33% with no change, and 48.00% score lower.
-
-The Performance Chapter of the Web Almanac compared two sets of sites; first testing with v5 in July 2019 and then again in September 2020 using version 6. Performance distribution scores are marked differently between the versions.
+Analysts for the Web Almanac saw marked different performance distribution scores between the versions.  Refer to the Performance Chapter of the Web Almanac for an in depth comparison between versions 5 and 6.   
 
 In tests using v5 of Lighthouse, 15.44% of pages tested scored at or above the 'passing' 85% score. Tests using Version 6 saw only 8.39% of tests achieve a passing score.
 
