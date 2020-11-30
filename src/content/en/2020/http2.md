@@ -5,10 +5,11 @@ chapter_number: 22
 title: HTTP/2
 description: HTTP/2 chapter of the 2020 Web Almanac covering adoption and impact of HTTP/2, HTTP/2 Push, HTTP/2 Issues, and HTTP/3.
 authors: [dotjs, rmarx, MikeBishop]
-reviewers: [LPardue, bazzadp]
+reviewers: [LPardue, bazzadp, ibnesayeed]
 analysts: [gregorywolf]
 translators: []
-dotjs_bio: Andrew works at Cloudflare helping to make the web faster and more secure. He spends his time deploying, measuring and improving new protocols and asset delivery to improve end-user web site performance.
+dotjs_bio: Andrew works at <a href="https://www.cloudflare.com/">Cloudflare</a> helping to make the web faster and more secure. He spends his time deploying, measuring and improving new protocols and asset delivery to improve end-user web site performance.
+rmarx_bio: Robin is a web protocol and performance researcher at <a href="https://www.uhasselt.be/edm">Hasselt University, Belgium</a>. He has been working on getting QUIC and HTTP/3 ready to use by creating tools like <a href="https://github.com/quiclog">qlog and qvis</a>. 
 discuss: 2058
 results: https://docs.google.com/spreadsheets/d/1M1tijxf04wSN3KU0ZUunjPYCrVsaJfxzuRCXUeRQ-YU/
 queries: 22_HTTP_2
@@ -18,7 +19,7 @@ featured_stat_label_1: Requests served over HTTP/2
 featured_stat_2: 31.7%
 featured_stat_label_2: CDN Requests with incorrect HTTP/2 prioritiztion  
 featured_stat_3: 80%
-featured_stat_label_3: pages served over HTTP/2 if a CDN is used, 30% if CDN not used
+featured_stat_label_3: Pages served over HTTP/2 if a CDN is used, 30% if CDN not used
 unedited: true
 ---
 
@@ -75,7 +76,7 @@ When comparing Figure 22.3 with last year’s results, there has been a **10% in
 | HTTP/2   | 63.70%  | 63.80% | 
 | gQUIC    | 1.72%   | 1.71%  |
 
-<figcaption>{{ figure_link(caption="HTTP version usage by request.") }}</figcaption>
+<figcaption>{{ figure_link(caption="HTTP version usage by request.", sheets_gid="2122693316", sql_file="adoption_of_http_2_by_site_and_requests.sql") }}</figcaption>
 </figure>
 
  ** As with last year's crawl, around 4% of desktop requests did not report a protocol version. Analysis shows these to mostly be HTTP/1.1 and we worked to fix this gap in our statistics for future crawls and analysis. Although we base the data on the August 2020 crawl, we confirmed the fix in the October 2020 data set before publication which did indeed show these were HTTP/1.1 requests and so have added them to that statistic in above table".
@@ -91,7 +92,7 @@ When comparing Figure 22.3 with last year’s results, there has been a **10% in
 | HTTP/1.1 | 49.22%  | 50.05% | 
 | HTTP/2   | 49.97%  | 49.28% | 
 
-<figcaption>{{ figure_link(caption="HTTP version usage for home pages.") }}</figcaption>
+<figcaption>{{ figure_link(caption="HTTP version usage for home pages.", sheets_gid="1447413141", sql_file="measure_of_all_http_versions_for_main_page_of_all_sites.sql") }}</figcaption>
 </figure>
 
 gQUIC is not seen in the home page data for two reasons. To measure a website over gQUIC the HTTP Archive crawl would have to perform protocol negotiation via the alternative service(link to section) header and then use this endpoint to load the site over gQUIC. This is not supported this year - expect it to be available in next year’s almanac. Also, gQUIC is predominantly used for third-party Google tools rather than serving home pages. 
@@ -104,7 +105,7 @@ The drive to increase security and privacy on the web has seen requests over TLS
 | HTTP/1.1 | 36.05%  | 34.04% | 
 | HTTP/2   | 63.95%  | 65.96% | 
 
-<figcaption>{{ figure_link(caption="HTTP version usage for TLS home pages.") }}</figcaption>
+<figcaption>{{ figure_link(caption="HTTP version usage for TLS home pages.", sheets_gid="900140630", sql_file="tls_adoption_by_http_version.sql") }}</figcaption>
 </figure>
 
 With over 60% of web sites being served over HTTP/2 or gQUIC, let’s look a little deeper into the pattern of protocol distribution for all requests made across individual sites.
@@ -135,7 +136,7 @@ Figure 22.7 orders every web site by the fraction of HTTP/2 requests for known t
 )
 }}
 
-Figure 22.8 shows the distribution of known third-party HTTP/2 or gQUIC requests by content-type. For example 90% of websites serve 100% of third party fonts and audio over HTTP/2 or gQUIC, only 5% over HTTP/1 and 5% are a mix.The majority of third-party assets are either scripts or images, and are solely served over HTTP/2 or gQUIC on 60% and 70% of web sites respectively.
+Figure 22.8 shows the distribution of known third-party HTTP/2 or gQUIC requests by content-type. For example 90% of websites serve 100% of third party fonts and audio over HTTP/2 or gQUIC, only 5% over HTTP/1 and 5% are a mix. The majority of third-party assets are either scripts or images, and are solely served over HTTP/2 or gQUIC on 60% and 70% of web sites respectively.
 
 {{ figure_markup(
   image="third_party_http2_usage_by_content_type.png",
@@ -161,7 +162,7 @@ Figure 22.9 looks at protocol usage by the third party category. Ads, analytics,
 
 ### HTTP/2 Server support
 
-Browser auto-update mechanisms are a driving factor for client-side adoption of new Web standards. It’s [estimated](https://caniuse.com/?search=http%2F2) that over 97% of global users support HTTP/2, up slightly from 95% measured last year.
+Browser auto-update mechanisms are a driving factor for client-side adoption of new Web standards. It’s [estimated](https://caniuse.com/http2) that over 97% of global users support HTTP/2, up slightly from 95% measured last year.
 
 Unfortunately, the upgrade path for servers is more difficult, especially with the requirement to support TLS. For mobile and desktop, Figure 22.10 shows the breakdown of HTTP server headers returned for sites that support HTTP/2 and HTTP/1.
 
@@ -180,7 +181,7 @@ The majority of HTTP/2 sites are served by nginx, Cloudflare, and Apache. Almost
 How has HTTP/2 adoption changed in the last year for each server. Figuure 22.11 shows the percentage of server installs that use HTTP/2 in 2019 and 2020. We see a general adoption increase of around 10% across all servers. Apache and IIS are still under 25% HTTP/2. This suggests that either new servers tend to be nginx or it is seen as too difficult or not worthwhile to upgrade Apache or IIS to HTTP/2 and/or TLS.
 
 {{ figure_markup(
-  image="h2_usage_by_sever.png",
+  image="h2_usage_by_server.png",
   caption="Percentage of pages served over HTTP/2 by sever",
   description="A bar chart comparing the percentge of web sites served over HTTP/2 between 2019 and 2020. Cloudflare increased to 93.08% from 85.40%. Litespeed increased to 81.91% from 70.80%. Openresty increased to 66.24% from 51.40%. Nginx increased to 60.84% from 49.20%. Apache increased to 27.19% from 18.10% and MIcorsoft-IIS increased to 22.82% from 14.10%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=936321266&format=interactive",
@@ -199,19 +200,38 @@ CDNs can be classed in two broad categories. The first category directly serves 
 Figure 22.12 shows the percentage of HTTP/2 requests served by the first-party CDNs over mobile. 
 
 <figure markdown>
-| HTTP/2 (%) | CDN |
-| ---------- | ------- |
-| 100%       |  Bison Grid ,CDNsun ,LeaseWeb CDN ,NYI FTW ,QUIC.cloud |
-|            |  Roast.io ,Sirv CDN,Twitter,Zycada Networks |
-| 90%+       | Automattic,Azion,BitGravity,Facebook,KeyCDN,Microsoft Azure,NGENIX,
-|            | Netlify,Yahoo,section.io,Airee,BunnyCDN,Cloudflare,GoCache,NetDNA,SFR,Sucuri Firewall |
-| 70-90%     |  Amazon CloudFront,BelugaCDN,CDN,CDN77,Erstream,Fastly,Highwinds |
-|            | OVH CDN,Yottaa,Edgecast,Myra Security CDN,StackPath,XLabs Security |
-| 30-60% | Akamai,Aryaka,Google,Limelight,Rackspace,Incapsula,Level 3,Medianova,OnApp |
-|        | Singular CDN,Vercel,Cachefly,Cedexis,Reflected Networks,Universal CDN,Yunjiasu,CDNetworks |
-| < 20%  |  Rocket CDN,BO.LT,ChinaCache,KINX CDN,Zenedge,ChinaNetCenter |
-
-<figcaption>{{ figure_link(caption="Percentage of HTTP/2 requests served by the first-party CDNs over mobiler.") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th scope="colgroup" class="no-wrap">HTTP/2 (%)</th>
+        <th scope="colgroup">CDN</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>100%</td>
+        <td>Bison Grid, CDNsun, LeaseWeb CDN, NYI FTW, QUIC.cloud, Roast.io, Sirv CDN, Twitter, Zycada Networks</td>
+      </tr>
+      <tr>
+        <td>90 - 99%</td>
+        <td>Automattic, Azion, BitGravity, Facebook, KeyCDN, Microsoft Azure, NGENIX, Netlify, Yahoo, section.io, Airee, BunnyCDN, Cloudflare, GoCache, NetDNA, SFR, Sucuri Firewall</td>
+      </tr>
+      <tr>
+        <td>70 - 89%</td>
+        <td>Amazon CloudFront, BelugaCDN, CDN, CDN77, Erstream, Fastly, Highwinds, OVH CDN, Yottaa, Edgecast, Myra Security CDN, StackPath, XLabs Security</td>
+      </tr>
+      <tr>
+        <td>20 - 69%</td>
+        <td>Akamai, Aryaka, Google, Limelight, Rackspace, Incapsula, Level 3, Medianova, OnApp, Singular CDN, Vercel, Cachefly, Cedexis, Reflected Networks, Universal CDN, Yunjiasu, CDNetworks</td>
+      </tr>
+      <tr>
+        <td> < 20%</td>
+        <td>Rocket CDN, BO.LT, ChinaCache, KINX CDN, Zenedge, ChinaNetCenter </td>
+      </tr>
+    </tbody>
+  </table>
+<figcaption>{{ figure_link(caption="Percentage of HTTP/2 requests served by the first-party CDNs over mobiler.", sheets_gid="781660433", sql_file="cdn_detail_by_cdn.sql") }}</figcaption>
 </figure>
 
 The second category are CDNs which are mainly used to serve third-party content. This content is typically shared resources (JavaScript or font CDNs), advertisements, or analytics. In all these cases, using a CDN will improve the performance and offload for the various SaaS solutions.
@@ -230,22 +250,38 @@ Figure 22.13 shows the difference in HTTP/2 and gQUIC adoption when a web site i
 
 Figure 22.14 shows the breakdown of HTTP/2 responses for 3rd party CDNs for mobile requests.
 
-<figure markdown>
-| HTTP/2 and gQUIC (%) | Third-party resource CDN |
-| ------------- | ------- |
-| 100%        |  Bison Grid,Hosting4CDN,MediaCloud,NYI FTW,PageCDN|
-|             | Pressable CDN,QUIC.cloud,Roast.io,SwiftyCDN,Zycada Networks |
-| 90%+         | Advanced Hosters CDN,Azion,CDN77,Facebook,GoCache,ImageEngine,KeyCDN |
-|              | Microsoft Azure,NetDNA,Netlify,Nexcess CDN,Reapleaf,Sirv CDN,Twitter,jsDelivr,section.io |
-|              | Airee,BunnyCDN,Cloudflare,Erstream,Internap,LeaseWeb CDN,Medianova,Myra Security CDN |
-|              | NGENIX,OnApp,SFR,StackPath,Sucuri Firewall,TRBCDN,VegaCDN,Yottaa |
-| 70-90% | Automattic,BelugaCDN,CDN,CDNsun,CDNvideo,Google,Highwinds,Rackspace,XLabs Security |
-|        | BitGravity,Cedexis,Fastly,OVH CDN,Reflected Networks,Rocket CDN,Universal CDN |
-| 30-60% | Amazon CloudFront,Aryaka,Edgecast,Vercel ,Incapsula,Yahoo,Yunjiasu,cubeCDN,Cachefly |
-|        | Level 3,SwiftCDN,Akamai,ChinaCache,Limelight |
-| < 20%  | Singular CDN,Zenedge,BO.LT,CDNetworks,ChinaNetCenter,Taobao,KINX CDN|
-
-<figcaption>{{ figure_link(caption="Percentage of HTTP/2 requests served by the third-party resouce CDNs over mobiler.") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th scope="colgroup" class="no-wrap">HTTP/2 and gQUIC (%)</th>
+        <th scope="colgroup">Third-party resource CDN</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>100%</td>
+        <td>Bison Grid, Hosting4CDN, MediaCloud, NYI FTW, PageCDN, Pressable CDN, QUIC.cloud, Roast.io, SwiftyCDN, Zycada Networks</td>
+      </tr>
+      <tr>
+        <td>90 - 99%</td>
+        <td>Advanced Hosters CDN, Azion, CDN77, Facebook, GoCache, ImageEngine, KeyCDN, Microsoft Azure,NetDNA,Netlify, Nexcess CDN, Reapleaf, Sirv CDN, Twitter, jsDelivr, section.io, Airee, BunnyCDN, Cloudflare,Erstream, Internap, LeaseWeb CDN, Medianova, Myra Security CDN, NGENIX, OnApp, SFR, StackPath, Sucuri Firewall, TRBCDN, VegaCDN, Yottaa</td>
+      </tr>
+      <tr>
+        <td>70 - 89%</td>
+        <td>Amazon CloudFront, BelugaCDN, CDN, CDN77, Erstream, Fastly, Highwinds, OVH CDN, Yottaa, Edgecast, Myra Security CDN, StackPath, XLabs Security</td>
+      </tr>
+      <tr>
+        <td>20 - 69%</td>
+        <td>Akamai, Aryaka, Google, Limelight, Rackspace, Incapsula, Level 3, Medianova, OnApp, Singular CDN, Vercel, Cachefly, Cedexis, Reflected Networks, Universal CDN, Yunjiasu, CDNetworks</td>
+      </tr>
+      <tr>
+        <td> < 20%</td>
+        <td>Rocket CDN, BO.LT, ChinaCache, KINX CDN, Zenedge, ChinaNetCenter </td>
+      </tr>
+    </tbody>
+  </table>
+<figcaption>{{ figure_link(caption="Percentage of HTTP/2 requests served by the third-party resouce CDNs over mobile, sheets_gid="781660433", sql_file="cdn_detail_by_cdn.sql"") }}</figcaption>
 </figure>
 
 ## How is HTTP/2 performing ?
@@ -299,7 +335,7 @@ A [test suite](https://github.com/andydavies/http2-prioritization-issues) and a 
 | Incapsula         | Fail    | 0.42%  | 0.34%  |
 | Netlify           | Fail    | 0.27%  | 0.20%  |
 
-<figcaption>{{ figure_link(caption="HTTP/2 prioritization support in common CDNs.") }}</figcaption>
+<figcaption>{{ figure_link(caption="HTTP/2 prioritization support in common CDNs.", sheets_gid="1152953475", sql_file="percentage_of_h2_and_h3_sites_affected_by_cdn_prioritization.sql") }}</figcaption>
 </figure>
 
 For non-CDN usage, I expect the number of servers that correctly apply HTTP/2 prioritization to be considerably smaller. For example, [NodeJS’s HTTP/2 implementation does not even support prioritization](https://twitter.com/jasnell/status/1245410283582918657). 
@@ -320,7 +356,7 @@ As can be seen from the FIgure 20.17 below, a very small percentage of sites use
 | Desktop |  44,257                 | 0.85%                       | 204                 | 0.04%                       |
 | Mobile  |  62,849                 | 1.06%                       | 326                 | 0.06%                       |
 
-<figcaption>{{ figure_link(caption="Pages using HTTP/2 or gQUIC server push.") }}</figcaption>
+<figcaption>{{ figure_link(caption="Pages using HTTP/2 or gQUIC server push.", sheets_gid="698874709", sql_file="number_of_h2_and_h3_pushed_resources_and_avg_bytes.sql") }}</figcaption>
 </figure>
 
 Looking further at the distributions for pushed assets in Figures 22.18 and 22.19, half of the sites push 4 or fewer resources with a total size of 140 KB on desktop and 3 or less resources with a size of 184 KB on mobile. For gQUIC, desktop is 7 or fewer and mobile 2. The worst offending page pushes 41 assets over gQUIC on desktop.
@@ -334,7 +370,7 @@ Looking further at the distributions for pushed assets in Figures 22.18 and 22.1
 | 75         | 8                  | 346.70               | 21                 | 203.59               | 
 | 90         | 17                 | 440.08               | 41                 | 390.91               | 
 
-<figcaption>{{ figure_link(caption="Distribtion of pushed assets on desktop.") }}</figcaption>
+<figcaption>{{ figure_link(caption="Distribtion of pushed assets on desktop.", sheets_gid="698874709", sql_file="number_of_h2_and_h3_pushed_resources_and_avg_bytes.sql") }}</figcaption>
 </figure>
 
 <figure markdown>
@@ -346,11 +382,11 @@ Looking further at the distributions for pushed assets in Figures 22.18 and 22.1
 | 75         | 10                 | 225.41               | 5                      | 204.65               |
 | 90         | 12                 | 351.05               | 18                     | 453.57               |
 
-<figcaption>{{ figure_link(caption="Distribtion of pushed assets on mobile.") }}</figcaption>
+<figcaption>{{ figure_link(caption="Distribtion of pushed assets on mobile.", sheets_gid="698874709", sql_file="number_of_h2_and_h3_pushed_resources_and_avg_bytes.sql") }}</figcaption>
 </figure>
 
 
-Looking at the frequeny of push by content type in Figure 22.20, we see 89% of pages push scripts and 68% push CSS. This makes sense, as these can be small files typically on the critical path to render a page. 
+Looking at the frequency of push by content type in Figure 22.20, we see 89% of pages push scripts and 68% push CSS. This makes sense, as these can be small files typically on the critical path to render a page. 
 
 {{ figure_markup(
   image="pushed_content_types.png",
@@ -373,7 +409,7 @@ Figures 22.21 and 22.22 show how the number of pushed resources and their size v
 | 75         | 16  | 20   | 4    | 11    | 8      | 1     |
 | 90         | 29  | 32   | 4    | 24    | 23     | 1     |
 
-<figcaption>{{ figure_link(caption="Distribtion of number pushed asset by content type on mobile.") }}</figcaption>
+<figcaption>{{ figure_link(caption="Distribtion of number pushed asset by content type on mobile.", sheets_gid="238923402", sql_file="number_of_h2_and_h3_pushed_resources_and_bytes_by_content_type.sql") }}</figcaption>
 </figure>
 
 Pushing of video dominates the higher percentiles of bandwidth use. This can however really negatively impact page performance by contending with the other resources required to render the page.
@@ -387,7 +423,7 @@ Pushing of video dominates the higher percentiles of bandwidth use. This can how
 | 75            | 204.2 | 983.6  | 81.1 | 501.2  | 344.8  | 3444.3 |
 | 100           | 316.3 | 1237.6 | 83.3 | 2770.7 | 603.0  | 3444.3 |
 
-<figcaption>{{ figure_link(caption="Distribtion of pushed asset sizes (KB) by content type on mobile.") }}</figcaption>
+<figcaption>{{ figure_link(caption="Distribtion of pushed asset sizes (KB) by content type on mobile.", sheets_gid="238923402", sql_file="number_of_h2_and_h3_pushed_resources_and_bytes_by_content_type.sql") }}</figcaption>
 </figure>
 
 Given the low adoption and after measuring how few of the pushed resources are actually useful (match a request that is not already cached), Google has announced the [intent to remove push support from Chrome]( https://groups.google.com/a/chromium.org/g/blink-dev/c/K3rYLvmQUBY/m/vOWBKZGoAQAJ) for both HTTP/2 and gQUIC. Chrome have also not implemented push for HTTP/3.
@@ -431,9 +467,11 @@ This is reflected by the usage numbers in the HTTP Archive data, where no HTTP/3
 However, even the numbers for the older gQUIC are relatively modest, accounting for less than 2% of requests overall. This is expected, since gQUIC was mostly deployed by Google and Akamai; other parties were waiting for IETF QUIC. As such, gQUIC is expected to be replaced entirely by HTTP/3 soon. 
 
 {{ figure_markup(
-  caption="The percentage of requests that use gQUIC on deskto and mobile",
+  caption="The percentage of requests that use gQUIC on desktop and mobile",
   content="1.72%",
-  classes="big-number"
+  classes="big-number",
+  sheets_gid="2122693316",
+  sql_file="adoption_of_http_2_by_site_and_requests.sql"
 )
 }}
 
