@@ -24,7 +24,7 @@ unedited: true
 
 ## Introduction
 
-Over the past decade [Resource Hints](https://www.w3.org/TR/resource-hints/) have become essential primitives that allow developers to improve page performance and therefore the user experience. 
+Over the past decade [resource hints](https://www.w3.org/TR/resource-hints/) have become essential primitives that allow developers to improve page performance and therefore the user experience. 
 
 Preloading resources and having browsers apply some intelligent prioritization is something that was actually started way back in 2009 by IE8 with something called the [preloader](https://speedcurve.com/blog/load-scripts-async/). In addition to the HTML parser, IE8 had a lightweight look-ahead preloader that scanned for tags that could initiate network requests (script, link, images).
 
