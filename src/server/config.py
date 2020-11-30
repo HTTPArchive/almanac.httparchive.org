@@ -101,4 +101,6 @@ def update_config():
                     if 'avatar_url' not in contributor:
                         contributor['avatar_url'] = DEFAULT_AVATAR_FOLDER_PATH + str(
                             hash(contributor_id) % AVATARS_NUMBER) + '.jpg'
+
+                            
 update_config()

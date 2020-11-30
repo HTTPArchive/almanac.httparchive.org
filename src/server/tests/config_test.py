@@ -1,8 +1,11 @@
-from server.config import get_config, get_chapters, get_languages, get_live, SUPPORTED_YEARS, SUPPORTED_CHAPTERS, SUPPORTED_LANGUAGES
+from server.config import get_config, get_chapters, get_languages, get_live, \
+    SUPPORTED_YEARS, SUPPORTED_CHAPTERS, SUPPORTED_LANGUAGES
+
 
 def test_get_config_in_suppoted_year():
     for year in SUPPORTED_YEARS:
         assert get_config(year) is not None
+
 
 def test_get_chapters_in_supported_chapters():
     for year in SUPPORTED_YEARS:
@@ -18,4 +21,4 @@ def test_get_languages_in_supported_languages():
 
 def test_get_live():
     for year in SUPPORTED_YEARS:
-        assert get_live(get_config(year)) == True
+        assert get_live(get_config(year)) is True
