@@ -90,12 +90,16 @@ jobs:
 
             const parseTasks = text => {
               const tasks = []
-              text.split('\n').forEach(line => {
+              text.split('\n').forEach((line, i, arr) => {
                 if (/^(\s{2,})?([*+-]|\d+\.)\s+\[ \]\s+\S+/.test(line)) {
                   tasks.push('')
                 }
                 if (/^(\s{2,})?([*+-]|\d+\.)\s+\[[xX]\]\s+\S+/.test(line)) {
-                  tasks.push('☑')
+                  if (i == arr.length - 1) {
+                    tasks.push('🚀')
+                  } else {
+                    tasks.push('☑')
+                  }
                 }
               })
               return tasks
