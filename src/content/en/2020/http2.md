@@ -518,7 +518,7 @@ Currently, some browsers provide (temporary) command line arguments to force QUI
 
 `chrome --enable-quic --quic-version=h3-29 --origin-to-force-quic-on=localhost:6121 https://localhost:6121/`
 
-### Looking ahead
+### Is HTTP/3 ready for use yet?
 
 So when can we start using HTTP/3 and QUIC for real? Not quite yet, but hopefully soon. There is a [large number of mature open source implementations](https://github.com/quicwg/base-drafts/wiki/Implementations) and the major browsers have experimental support. However, most of the typical servers have suffered some delays: nginx is a bit behind other stacks, apache hasn’t announced official support, and NodeJS relies on OpenSSL, which [won’t add QUIC support anytime soon](https://github.com/openssl/openssl/pull/8797). Even so, we expect to see HTTP/3 and QUIC deployments rise throughout 2021. 
 
