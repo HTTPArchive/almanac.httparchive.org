@@ -175,6 +175,7 @@ A “core” WordPress community maintains the CMS and services requirements for
 
 Deriving from this flexibility, WordPress also has a low barrier of entry for developers and site “builders” or “implementers”. We see a virtuous cycle: flexible extensions offer ever-easier site building, which lets more and more users build ever-more-powerful sites with WordPress. This increase in users makes it more attractive for developers to create better and better extensions, furthering the cycle.
 
+{# TODO(author): Review figure. #}
 {{ figure_markup(
   image="cms-wordpress-plugin-resource-per-page.png",
   caption="WordPress plugin resources per page.",
@@ -226,6 +227,8 @@ A “good” LCP is regarded as under 2.5 seconds. The average website on one of
   sql_file="core_web_vitals_distribution.sql"
   )
 }}
+
+{# TODO(author): Reconsider "glass half-full" approach. #}
 
 High page weights are a possible explanation here; we’ll explore this, and the possible impact of this on the environment in a later section. It is clear here, however, that LCP performance is generally bad for CMSs, and the impact on the user experience is also bad.
 
