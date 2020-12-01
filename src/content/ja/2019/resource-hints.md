@@ -51,11 +51,13 @@ featured_stat_label_3: 優先順位のヒントの使い方
 ## 文法
 
 リソースヒント使用率の97%は、リソースヒントを指定するために[`<link>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/link)タグを使用しています。たとえば、以下のようになります。
-```
+
+```html
 <link rel="prefetch" href="shopping-cart.js">
 ```
 
 リソースヒント使用率のわずか3%は、リソースヒントの指定に[HTTPヘッダ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link)を使用しました。たとえば、以下のようになります。
+
 ```
 Link: <https://example.com/shopping-cart.js>; rel=prefetch
 ```
@@ -209,7 +211,8 @@ HTTPヘッダー内のリソースヒントの使用量が非常に少ないた�
 </figure>
 
 リソースヒントのコンテキストでは、`crossorigin`属性を使用することで、マッチすることになっているリソースのCORSモードにマッチし、リクエストに含めるべき資格情報を示すことができます。たとえば、`anonymous`はCORSを有効にし、クロスオリジンリクエストには資格情報を含めるべきではないことを示します。
-```
+
+```html
 <link rel="prefetch" href="https://other-server.com/shopping-cart.css" crossorigin="anonymous">
 ```
 
