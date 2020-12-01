@@ -45,6 +45,16 @@ def test_get_languages_good_and_bad():
     languages = [str(language) for language in get_languages(get_config('2019'))]
     assert 'English' in languages
     assert 'random' not in languages
-def test_get_live():
+def test_get_live_for_all_supported_years():
     for year in SUPPORTED_YEARS:
         assert get_live(get_config(year)) is True
+
+
+def test_get_live_for_known_years():
+    assert get_live(get_config('2019')) is True
+    assert get_live(get_config('2020')) is True
+
+
+def test_get_live_for_bad_year_raises_error():
+    with pytest.raises(TypeError):
+        get_live(get_config('2018'))
