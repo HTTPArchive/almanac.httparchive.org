@@ -3,6 +3,9 @@ from server.config import DEFAULT_YEAR
 from server.language import DEFAULT_LANGUAGE
 import pytest
 
+
+# Create test client without https redirect
+# (normally taken care of by running in debug)
 @pytest.fixture
 def client():
     with app.test_client() as client:
@@ -10,15 +13,19 @@ def client():
         yield client
 
 
+# Add a function to test routes with optional location
 def assert_route(client, path, status, location=None):
-        response = client.get(path)
-        redirect_loc = response.location
-        if redirect_loc:
-            redirect_loc = redirect_loc.replace('http://localhost','')
-        if location is not None:
-            assert response.status_code == status and redirect_loc == location
-        else:
-            assert response.status_code == status
+    response = client.get(path)
+    redirect_loc = response.location
+    if redirect_loc:
+        redirect_loc = redirect_loc.replace('http://localhost', '')
+    if location is not None:
+        assert response.status_code == status and redirect_loc == location
+    else:
+        assert response.status_code == status
+
+
+# All the tests
 
 
 def test_render_en_2019_home(client):
