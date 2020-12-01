@@ -1,6 +1,6 @@
 from server.config import get_config, get_chapters, get_languages, get_live, \
     SUPPORTED_YEARS, SUPPORTED_CHAPTERS, SUPPORTED_LANGUAGES
-
+import pytest
 
 def test_get_config_year():
     assert get_config('2020') is not None
