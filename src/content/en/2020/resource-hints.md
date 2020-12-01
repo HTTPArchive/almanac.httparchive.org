@@ -286,7 +286,7 @@ HTTP/2 has a feature called server push that can potentially improve page perfor
 
 HTTP/2 Push is often initiated through the `preload` link header. In the 2020 dataset we have seen 1% of mobile pages using HTTP/2 Push, and of those 75% of preload header links use the `nopush` option in the page request. This means that even though a website is using the `preload` resource hint, the majority prefer to use just this and disable HTTP/2 pushing of that resource.
 
-It's important to mention that HTTP/2 Push can also damage performance if not used correctly.
+It's important to mention that HTTP/2 Push can also damage performance if not used correctly which probably explains why is often disabled.
 
 One solution to this, is to use the [PRPL Pattern](https://addyosmani.com/blog/the-prpl-pattern/) which stands for **Push** (or preload) the critical resources, **Render** the initial route as soon as possible, **Pre-cache** remaining assets, and **Lazy-load** other routes and non-critical assets. This is possible only if your website is a Progressive Web App and uses a Service Worker to improve the caching strategy. By doing this all subsequent requests never even go out to the network, and so there's no need to push all the time and we still get the best of both worlds.
 
