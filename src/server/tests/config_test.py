@@ -21,7 +21,7 @@ def test_get_config_for_all_supported_years():
         assert get_config(year) is not None
 
 
-def test_get_chapters_in_supported_chapters():
+def test_get_chapters_for_all_supported_chapters():
     for year in SUPPORTED_YEARS:
         for chapter in get_chapters(get_config(year)):
             assert chapter in SUPPORTED_CHAPTERS[year]
