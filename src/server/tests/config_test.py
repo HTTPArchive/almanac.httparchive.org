@@ -35,7 +35,7 @@ def test_get_chapters_bad_chapter():
     assert 'random' not in get_chapters(get_config('2019'))
 
 
-def test_get_languages_in_supported_languages():
+def test_get_languages_for_all_supported_languages():
     for year in SUPPORTED_YEARS:
         for language in get_languages(get_config(year)):
             assert language in SUPPORTED_LANGUAGES[year]
