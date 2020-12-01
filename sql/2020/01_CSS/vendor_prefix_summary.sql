@@ -28,28 +28,27 @@ try {
 
 			if (rule.declarations) {
 				walkDeclarations(rule, ({property, value}) => {
-				if (value.length > 1000) {
-					return;
-				}
 					// Prefixed properties
 					if (/^-[a-z]+-.+/.test(property)) {
 						incrementByKey(ret.properties, property);
 						ret.total.properties++;
 					}
 
-					// -prefix-function()
-					for (let call of extractFunctionCalls(value, {names: /^-[a-z]+-.+/})) {
-						incrementByKey(ret.functions, call.name);
-						ret.total.functions++;
-					}
-
-					// Prefixed keywords
-					if (!matches(property, /(^|-)(transition(-property)?|animation(-name)?)$/)) {
-						for (let k of value.matchAll(/(?<![-a-z])-[a-z]+-[a-z-]+(?=$|\\s|,|\\/)/g)) {
-							incrementByKey(ret.keywords, k);
-							ret.total.keywords++;
+					if (value.length <= 1000) {
+						// -prefix-function()
+						for (let call of extractFunctionCalls(value, {names: /^-[a-z]+-.+/})) {
+							incrementByKey(ret.functions, call.name);
+							ret.total.functions++;
 						}
-					}
+
+						// Prefixed keywords
+						if (!matches(property, /(^|-)(transition(-property)?|animation(-name)?)$/)) {
+							for (let k of value.matchAll(/(?<![-a-z])-[a-z]+-[a-z-]+(?=$|\\s|,|\\/)/g)) {
+								incrementByKey(ret.keywords, k);
+								ret.total.keywords++;
+							}
+						}
+					}					
 				});
 			}
 
@@ -100,8 +99,8 @@ FROM (
     prop,
     COUNT(DISTINCT page) AS pages,
     COUNT(0) AS freq,
-    SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-    COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
+    SUM(COUNT(0)) / 2 OVER (PARTITION BY client) AS total,
+    COUNT(0) / (SUM(COUNT(0)) / 2) OVER (PARTITION BY client) AS pct
   FROM
     `httparchive.almanac.parsed_css`,
     UNNEST(getPrefixStats(css)) AS prop
@@ -110,7 +109,5 @@ FROM (
   GROUP BY
     client,
     prop)
-WHERE
-  pages >= 1000
 ORDER BY
   pct DESC
