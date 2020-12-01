@@ -284,7 +284,7 @@ HTTP/2 has a feature called server push that can potentially improve page perfor
   sql_file="h2_preload_nopush.sql"
 ) }}
 
-In the 2020 dataset we have seen 1% of mobile pages using HTTP/2 Push, and of those 75% of preload header links use the nopush option in the firstHtml request. This means that even though a website is using preload, the majority of requests prefer to disable the push option.
+HTTP/2 Push is often initiated through the `preload` link header. In the 2020 dataset we have seen 1% of mobile pages using HTTP/2 Push, and of those 75% of preload header links use the `nopush` option in the page request. This means that even though a website is using the `preload` resource hint, the majority prefer to use just this and disable HTTP/2 pushing of that resource.
 
 It's important to mention that HTTP/2 Push can also damage performance if not used correctly.
 
