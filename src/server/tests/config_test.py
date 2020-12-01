@@ -16,7 +16,7 @@ def test_static_avatar():
             assert static_url is not None and static_url.startswith('/static')
 
 
-def test_get_config_in_supported_year():
+def test_get_config_for_all_supported_years():
     for year in SUPPORTED_YEARS:
         assert get_config(year) is not None
 
