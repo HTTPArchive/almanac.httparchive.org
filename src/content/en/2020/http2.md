@@ -80,11 +80,11 @@ When comparing Figure 22.3 with last year’s results, there has been a **10% in
 <figcaption>{{ figure_link(caption="HTTP version usage by request.", sheets_gid="2122693316", sql_file="adoption_of_http_2_by_site_and_requests.sql") }}</figcaption>
 </figure>
 
- ** As with last year's crawl, around 4% of desktop requests did not report a protocol version. Analysis shows these to mostly be HTTP/1.1 and we worked to fix this gap in our statistics for future crawls and analysis. Although we base the data on the August 2020 crawl, we confirmed the fix in the October 2020 data set before publication which did indeed show these were HTTP/1.1 requests and so have added them to that statistic in above table".
+<p class="note">As with last year's crawl, around 4% of desktop requests did not report a protocol version. Analysis shows these to mostly be HTTP/1.1 and we worked to fix this gap in our statistics for future crawls and analysis. Although we base the data on the August 2020 crawl, we confirmed the fix in the October 2020 data set before publication which did indeed show these were HTTP/1.1 requests and so have added them to that statistic in above table".</note>
 
- When reviewing the total number of web site requests, there will be a bias towards common third-party domains. To get a better understanding of the HTTP/2 adoption by server install we will look instead at the protocol used to serve the HTML from the home page of a site.
+When reviewing the total number of web site requests, there will be a bias towards common third-party domains. To get a better understanding of the HTTP/2 adoption by server install we will look instead at the protocol used to serve the HTML from the home page of a site.
 
- Last year around 37% of home pages were served over HTTP/2 and 63% over HTTP/1. This year, combining mobile and desktop, it is an equal 50% split with slightly more desktop sites being served over HTTP/2 for the first time, as shown in Figure 22.4.
+Last year around 37% of home pages were served over HTTP/2 and 63% over HTTP/1. This year, combining mobile and desktop, it is an equal 50% split with slightly more desktop sites being served over HTTP/2 for the first time, as shown in Figure 22.4.
 
  <figure markdown>
 | Protocol | Desktop | Mobile |
@@ -200,7 +200,6 @@ CDNs can be classed in two broad categories. The first category directly serves 
 
 Figure 22.12 shows the percentage of HTTP/2 requests served by the first-party CDNs over mobile.
 
-<figure markdown>
 <figure>
   <table>
     <thead>
@@ -232,7 +231,7 @@ Figure 22.12 shows the percentage of HTTP/2 requests served by the first-party C
       </tr>
     </tbody>
   </table>
-<figcaption>{{ figure_link(caption="Percentage of HTTP/2 requests served by the first-party CDNs over mobiler.", sheets_gid="781660433", sql_file="cdn_detail_by_cdn.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Percentage of HTTP/2 requests served by the first-party CDNs over mobile.", sheets_gid="781660433", sql_file="cdn_detail_by_cdn.sql") }}</figcaption>
 </figure>
 
 The second category are CDNs which are mainly used to serve third-party content. This content is typically shared resources (JavaScript or font CDNs), advertisements, or analytics. In all these cases, using a CDN will improve the performance and offload for the various SaaS solutions.
@@ -287,6 +286,8 @@ Figure 22.14 shows the breakdown of HTTP/2 responses for 3rd party CDNs for mobi
 
 ## How is HTTP/2 performing ?
 
+{# TODO add intro to avoid empty header #}
+
 ### Reducing connectons
 
 As discussed earlier, HTTP/1.1 only allowed a single request at a time over a TCP connection. Most browsers got around this by allowing 6 parallel connections per host. The major improvement with HTTP/2 is that multiple requests can be multiplexed over a single TCP connection.  This should reduce the total number of connections, and the associated time and resources required, to load a page.
@@ -340,6 +341,8 @@ A [test suite](https://github.com/andydavies/http2-prioritization-issues) and a 
 </figure>
 
 For non-CDN usage, I expect the number of servers that correctly apply HTTP/2 prioritization to be considerably smaller. For example, [NodeJS’s HTTP/2 implementation does not even support prioritization](https://twitter.com/jasnell/status/1245410283582918657).
+
+{# TODO consider rewording to come across as less of a dig. Or at least removing the word "even" #}
 
 ### Goodbye Server push?
 
@@ -514,7 +517,9 @@ From the discussion above, we expect QUIC and TCP to continue running in paralle
 
 Currently, some browsers provide (temporary) command line arguments to force QUIC on a certain origin to make this easier, but this is not the most user-friendly option of course. Over time, this will probably become easier to configure. For example, this command will force Chrome to try a QUIC connection to localhost immediately without having to discover it via alternative services :
 
-`% chrome --enable-quic --quic-version=h3-29 --origin-to-force-quic-on=localhost:6121 http://localhost:6121/`
+```
+chrome --enable-quic --quic-version=h3-29 --origin-to-force-quic-on=localhost:6121 http://localhost:6121/
+```
 
 ### Not everything is implemented
 
@@ -523,6 +528,8 @@ So when can we start using HTTP/3 and QUIC for real? Not quite yet, but hopefull
 As such, you yourself can start experimenting with HTTP/3 today, but be careful with drawing too general conclusions from the performance that you’re seeing today!
 
 ## Conclusion
+
+{# TODO This Conclusion seems like a conclusion to HTTP/3 rather than to the whole chapter. Should we add a paragraph concluding HTTP/2's usage on top of this? #}
 
 In conclusion, we can say that HTTP/3 and QUIC are nearly here, and we will start seeing their deployments rise throughout 2021. They are highly advanced protocols with powerful performance and security features, such as a new HTTP prioritization system, HOL blocking removal, and 0-RTT connection establishment.
 
