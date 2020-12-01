@@ -81,7 +81,7 @@ When comparing Figure 22.3 with last year’s results, there has been a **10% in
 <figcaption>{{ figure_link(caption="HTTP version usage by request.", sheets_gid="2122693316", sql_file="adoption_of_http_2_by_site_and_requests.sql") }}</figcaption>
 </figure>
 
-<p class="note">As with last year's crawl, around 4% of desktop requests did not report a protocol version. Analysis shows these to mostly be HTTP/1.1 and we worked to fix this gap in our statistics for future crawls and analysis. Although we base the data on the August 2020 crawl, we confirmed the fix in the October 2020 data set before publication which did indeed show these were HTTP/1.1 requests and so have added them to that statistic in above table".</note>
+<p class="note">As with last year's crawl, around 4% of desktop requests did not report a protocol version. Analysis shows these to mostly be HTTP/1.1 and we worked to fix this gap in our statistics for future crawls and analysis. Although we base the data on the August 2020 crawl, we confirmed the fix in the October 2020 data set before publication which did indeed show these were HTTP/1.1 requests and so have added them to that statistic in above table.</note>
 
 When reviewing the total number of web site requests, there will be a bias towards common third-party domains. To get a better understanding of the HTTP/2 adoption by server install we will look instead at the protocol used to serve the HTML from the home page of a site.
 
@@ -518,9 +518,7 @@ From the discussion above, we expect QUIC and TCP to continue running in paralle
 
 Currently, some browsers provide (temporary) command line arguments to force QUIC on a certain origin to make this easier, but this is not the most user-friendly option of course. Over time, this will probably become easier to configure. For example, this command will force Chrome to try a QUIC connection to localhost immediately without having to discover it via alternative services :
 
-```
-chrome --enable-quic --quic-version=h3-29 --origin-to-force-quic-on=localhost:6121 http://localhost:6121/
-```
+`chrome --enable-quic --quic-version=h3-29 --origin-to-force-quic-on=localhost:6121 https://localhost:6121/`
 
 ### Not everything is implemented
 
