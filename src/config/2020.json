@@ -262,13 +262,22 @@
       "twitter": "adityapandey98",
       "linkedin": "adityapandey98"
     },
+    "amedina": {
+      "name": "Alberto Medina",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars0.githubusercontent.com/u/506089?v=4&s=200",
+      "github": "amedina",
+      "twitter": "iAlbMedina"
+    },
     "alexdenning": {
       "name": "Alex Denning",
       "teams": [
         "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/3109255?v=4&s=200",
-      "website": "getellipsis.com",
+      "website": "https://getellipsis.com",
       "github": "alexdenning",
       "twitter": "AlexDenning"
     },
