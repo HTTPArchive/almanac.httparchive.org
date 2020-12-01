@@ -144,7 +144,7 @@ As we create more and more automation with Resource Hints, be cautious when dyna
 
 With `preload` and `prefetch`, it's crucial to use the `as` attribute to help the browser prioritize the resource more accurately. Doing so allows for proper storage in the cache for future requests, applying the correct Content Security Policy ([CSP](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)), and setting the correct `Accept` request headers.
 
-With `preload` many different content-types can be preloaded and the[full list](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#Attributes) follows the recommendations made in the Fetch [spec](https://fetch.spec.whatwg.org/#concept-request-destination). The most popular is the script `type` with 64% usage.
+With `preload` many different content-types can be preloaded and the[full list](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#Attributes) follows the recommendations made in the Fetch [spec](https://fetch.spec.whatwg.org/#concept-request-destination). The most popular is the `script` type with 64% usage.
 
 {{ figure_markup(
   caption="The percent of preload hints on mobile using the scripts type.",
