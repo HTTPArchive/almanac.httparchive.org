@@ -97,7 +97,7 @@ Last year around 37% of home pages were served over HTTP/2 and 63% over HTTP/1. 
 <figcaption>{{ figure_link(caption="HTTP version usage for home pages.", sheets_gid="1447413141", sql_file="measure_of_all_http_versions_for_main_page_of_all_sites.sql") }}</figcaption>
 </figure>
 
-gQUIC is not seen in the home page data for two reasons. To measure a website over gQUIC the HTTP Archive crawl would have to perform protocol negotiation via the alternative service(link to section) header and then use this endpoint to load the site over gQUIC. This is not supported this year - expect it to be available in next year’s almanac. Also, gQUIC is predominantly used for third-party Google tools rather than serving home pages.
+gQUIC is not seen in the home page data for two reasons. To measure a website over gQUIC the HTTP Archive crawl would have to perform protocol negotiation via the [alternative services](#alternative-services) header and then use this endpoint to load the site over gQUIC. This is not supported this year - expect it to be available in next year’s almanac. Also, gQUIC is predominantly used for third-party Google tools rather than serving home pages.
 
 The drive to increase security and privacy on the web has seen requests over TLS increase by over 150% in the last 4 years. Today, over 86% of all requests on mobile and desktop are encrypted. Looking just at web site home pages, the numbers are still an impressive, 78.1% of desktop and 74.7% of mobile. This is important because HTTP/2 is only supported by browsers over TLS. The proportion served over HTTP/2, as shown in Figure 22.5, has also increased 10% from last year, from 55% to 65%.
 
