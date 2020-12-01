@@ -309,7 +309,7 @@ As mentioned earlier, the [PRPL Pattern](https://addyosmani.com/blog/the-prpl-pa
 
 ## Future
 
-Let's dive into a couple of experimental hints. Very close to release we have Priority Hints, at the moment actively experimented with the web community. Lastly we have the 103 Early Hints in HTTP/2, which is still in early inception and there are a few players like Chrome and Fastly collaborating for upcoming test trials.
+Let's dive into a couple of experimental hints. Very close to release we have Priority Hints, at the moment actively experimented with the web community. Lastly we have the 103 Early Hints in HTTP/2, which is still in early inception and there are a few players like [Chrome and Fastly collaborating for upcoming test trials]](https://www.fastly.com/blog/beyond-server-push-experimenting-with-the-103-early-hints-status-code).
 
 ### Priority Hints
 
