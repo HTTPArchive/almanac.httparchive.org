@@ -41,6 +41,10 @@ def test_get_languages_for_all_supported_languages():
             assert language in SUPPORTED_LANGUAGES[year]
 
 
+def test_get_languages_good_and_bad():
+    languages = [str(language) for language in get_languages(get_config('2019'))]
+    assert 'English' in languages
+    assert 'random' not in languages
 def test_get_live():
     for year in SUPPORTED_YEARS:
         assert get_live(get_config(year)) is True
