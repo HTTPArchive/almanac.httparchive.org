@@ -1,13 +1,8 @@
-{% extends "base/2019/contributors.html" %}
+{% extends "base/contributors.html" %}
 
 {% block title %}Contributeurs et contributrices {{ year }} | Web Almanac par HTTP Archive{% endblock %}
 
 {% block description %}Les {{ config.contributors.items() | length }} personnes ayant contribué au Web Almanac {{ year }} par leurs analyses, leurs écrits, leurs participations au design, leur code, leurs éditions, leurs relectures, ou leurs traductions.{% endblock %}
-
-{% block twitter_image_alt %}Méthodologie du Web Almanac {{ year }}{% endblock %}
-
-{% block date_published %}2020-07-14T00:00:00.000Z{% endblock %}
-{% block date_modified %}2020-11-03T00:00:00.000Z{% endblock %}
 
 {% block filter_by_team %}Filtrer par équipe&nbsp;: <span id="filtered-contributors">{{ self.contributors() }}</span><span id="contributors-total-text" class="hidden"> sur <span id="contributors-total">{{ config.contributors.items() | length }}</span></span> contributeurs et contributrices.{% endblock %}
 {% block filter_by %}Filtrer par{% endblock %}

@@ -18,8 +18,6 @@ featured_stat_2: 80%
 featured_stat_label_2: Use of gzip compression
 featured_stat_3: 56%
 featured_stat_label_3: HTML responses not using compression
-published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introduction
@@ -354,7 +352,7 @@ Lighthouse also indicates how many bytes could be saved by enabling text-based c
 {{ figure_markup(
   image="fig12.png",
   caption="Lighthouse \"enable text compression\" audit potential byte savings.",
-  description="Stacked bar chart showing 82.11% of sites could save less than 1 Mb, 15.88% of sites could save 1 - 2 Mb and 2% of sites could save > 3 MB.",
+  description="Stacked bar chart showing 82.11% of sites could save less than 1 MB, 15.88% of sites could save 1 - 2 MB and 2% of sites could save > 3 MB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=738657382&format=interactive",
   width=760,
   height=331,

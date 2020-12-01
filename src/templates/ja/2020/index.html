@@ -1,12 +1,9 @@
-{% extends "base/2019/index.html" %}
+{% extends "base/index.html" %}
 
 {% block title %}{{ year }} Web Almanac{% endblock %}
 {% block description %}Web Almanacは、Webコミュニティの専門知識とHTTP Archiveのデータやトレンドを組み合わせた、毎年恒例のWeb状態のレポートです。{% endblock %}
 
 {% block twitter_image_alt %}{{ year }} Web Almanac{% endblock %}
-
-{% block date_published %}2020-07-06T00:00:00.000Z{% endblock %}
-{% block date_modified %}2020-11-03T00:00:00.000Z{% endblock %}
 
 {% block intro_title %}{{ self.coming_soon() }}{% endblock %}
 {% block intro_sub_title %}{{ year }}の<b>web状況</b>報告{% endblock %}

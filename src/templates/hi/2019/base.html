@@ -1,193 +1,27 @@
-{% extends "base/2019/base.html" %}
+{% extends "%s/base.html" % lang %}
 
-{% block description %}Web Almanac वेब रिपोर्ट की एक वार्षिक स्थिति है जो वेब समुदाय की विशेषज्ञता को HTTP संग्रह के डेटा और रुझानों के साथ जोड़ती है।{% endblock %}
-
-{% block twitter_image_alt %}{{ year }} Web Almanac{% endblock %}
-
-{% block skip_navigation %}नेविगेशन स्किप करें{% endblock %}
-
-{% block organization %}Web Almanac HTTP Archive के द्वारा{% endblock %}
-{% block web_almanac_logo %}
-  <span class="wa">Web Almanac</span>
-  <span class="line-group">  
-    <span class="ha">HTTP Archive</span>
-    <span class="pre">के द्वारा</span>
-  </span>
-{% endblock %}
-
-{% block mission %}
-<p>
-हमारा उद्देश्य वेब समुदाय की विशेषज्ञता के साथ HTTP Archive के कच्चे आँकड़ों और रुझानों को जोड़ना है। Web Almanac वेब की स्थिति पर एक व्यापक रिपोर्ट है, जो वास्तविक डेटा और विश्वसनीय वेब विशेषज्ञों द्वारा समर्थित है। यह पृष्ठ सामग्री, यूजर एक्सपीरियंस, प्रकाशन, और वितरण के पहलुओं को फैलाने वाले 20 अध्यायों से युक्त है।
-</p>
-{% endblock %}
-
-{% block read_last_years_almanac %}{{ year | int - 1 }} Web Almanac को पढ़िए{% endblock %}
-
-{% block http_archive_link %}HTTP Archive होम{% endblock %}
-
-{% block page_navigation %}पेज नेविगेशन{% endblock %}
-
-{% block help_translate %}अनुवाद में मदद करें{% endblock %}
-{% block translation_not_available %}अंग्रेजी - हिन्दी में उपलब्ध नहीं है{% endblock %}
-{% block language_switcher %}भाषा परिवर्तन करें{% endblock %}
-{% block year_switcher %}वर्ष परिवर्तन करें{% endblock %}
-{% block table_of_contents_switcher %}विषय सूची परिवर्तन करें{% endblock %}
-
-{% block home %}होम{% endblock %}
-{% block table_of_contents_title %}विषय सूची{% endblock %}
-{% block contributors_title %}योगदानकर्ता{% endblock %}
-{% block methodology_title %}कार्यप्रणाली{% endblock %}
-
-{% block part %}भाग{% endblock %}
-{% block chapter %}अध्याय{% endblock %}
-
-{% block start_exploring %}खोज शुरू करें{% endblock %}
-
-{% block menu_title %}पृष्ठ सूची{% endblock %}
-{% block open_the_menu %}मेनू को खोलें{% endblock %}
-{% block close_the_menu %}मेनू को बंद करें{% endblock %}
-
-{% block index_nav_title %}अध्याय विषय सूची{% endblock %}
-{% block index_title %}निर्देशिका{% endblock %}
-{% block open_the_index %}विषय सूची को खोलें{% endblock %}
-{% block close_the_index %}विषय सूची को बंद करें{% endblock %}
-
-{% block and %}और{% endblock %}
-{% block comma %}, {% endblock %}
-
-{% block open %}खोलें{% endblock %}
-{% block close %}बंद करें{% endblock %}
-
-{% macro figure_text(metadata, id) %}खंड {{ figure_id(metadata, id) }}.{% endmacro %}
-{% macro show_description(metadata, id) %}खंड का विवरण देखें {{ figure_id(metadata, id) }}{% endmacro %}
-{% macro hide_description(metadata, id) %}खंड का विवरण छिपाएँ {{ figure_id(metadata, id) }}{% endmacro %}
-
-{% block written_by_before %}द्वारा लिखित{% endblock %}
-{% block reviewed_by_before %}द्वारा समीक्षित{% endblock %}
-{% block translated_by_before %}द्वारा अनुवादिद्त{% endblock %}
-{% block analysis_by_before %}द्वारा विश्लेषित{% endblock %}
-{% block written_by_after %}{% endblock %}
-{% block reviewed_by_after %}{% endblock %}
-{% block translated_by_after %}{% endblock %}
-{% block analysis_by_after %}{% endblock %}
-
-{% block author %}लेखक{% endblock %}
-{% block authors %}लेखकों{% endblock %}
-
-{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} Twitter पर{% endmacro %}
-{% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} GitHub पर{% endmacro %}
-{% macro onLinkedIn(authorName) %}{{authorName}} LinkedIn पर{% endmacro %}
-{% macro website(authorName) %}{{authorName}} वेबसाइट{% endmacro %}
-
-{% macro edition(year) %}{{ year }} संस्करण{% endmacro %}
-
-{% block footer_title %}फुटर नेविगेशन{% endblock %}
-{% block copyright %}© Web Almanac. <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a> के तहत लाइसेंस प्राप्त है।{% endblock %}
-{% block accessibility_statement %}अभिगम्यता विवरण{% endblock %}
-
-{% block featured_chapter %}विशेष अध्याय{% endblock %}
-{% block featured_chapter_last_year %}विशेष अध्याय<br/>{{ year|int -1 }} Web Almanac से {% endblock %}
-
-{# Check if read_chapter already defined in child template as macros can't be overridden #}
-{% if not read_chapter %}
-{% macro read_chapter(chapter) %}अध्याय <span class="featured-chapter-name">{{ chapter }}</span> पढ़ें{% endmacro %}
-{% endif %}
-{% if not read_last_years_chapter %}
-{% macro read_last_years_chapter(chapter) %}अध्याय {{ year|int-1 }} <span class="featured-chapter-name">{{ chapter }}</span> पढ़ें{% endmacro %}
-{% endif %}
-
-{% block contributors_description %}
-Web Almanac वेब समुदाय की मेहनत से संभव हो पाया हैं। {{ self.contributors() }} लोगों ने नियोजन, अनुसंधान, लेखन और उत्पादन चरणों में अनगिनत घंटे काम किए हैं।
-{% endblock %}
-{% block contributors_link %}योगदानकर्ताओं को देखें{% endblock %}
-
-{% block methodology_stat_1_title %}वेबसाइटों का परीक्षण किया गया{% endblock %}
 {% block methodology_stat_1 %}5.8M{% endblock %}
-{% block methodology_stat_2_title %}डेटा संसाधित किया गया{% endblock %}
 {% block methodology_stat_2 %}20.9 TB{% endblock %}
 {% block methodology_description %}
 जब तक अन्यथा नोट न किया जाए, Web Almanac के सभी 20 अध्यायों में मौजूद मेट्रिक्स HTTP Archive के स्रोतों से लिये जाते हैं। HTTP Archive एक समुदाय द्वारा संचालित परियोजना है, जो 2010 के बाद से वेब कैसे बनाया जा रहा है इस पर निगाह रखें हुए हैं। WebPageTest और Lighthouse का अति उत्कृष्ट उपयोग करते हुए, लगभग 6 मिलियन वेबसाइटों के बारे में मेटाडेटा को मासिक रूप से परीक्षण किया जाता है और विश्लेषण के लिए एक सार्वजनिक BigQuery डेटाबेस में शामिल किया जाता है। जुलाई 2019 डेटासेट का उपयोग Web Almanac के मैट्रिक्स के आधार के रूप में किया गया था। अधिक जानकारी के लिए, कार्यप्रणाली पृष्ठ देखें।
 {% endblock %}
-{% block methodology_link %}हमारी कार्यप्रणाली के बारे में जानें{% endblock %}
-
-{% block introduction %}परिचय{% endblock %}
-
-{% block foreword_title %}प्रस्तावना{% endblock %}
 
 {% block foreword %}
-    <p>
-      खुला वेब प्रौद्योगिकियों का एक अद्भुत जटिल, विकसित नेटवर्क है। संपूर्ण उद्योग और करियर वेब पर निर्मित होते हैं और सफल होने के लिए इसके जीवंत पारिस्थितिकी तंत्र पर निर्भर करते हैं। वेब जितना महत्वपूर्ण है, यह समझना कि यह कैसे काम कर  रहा है, आश्चर्यजनक रूप से मायावी है। 2010 से, HTTP Archive परियोजना का मिशन इस पर नजर रखना है कि वेब कैसे बनाया गया है, और यह इस पर अद्भुत काम कर रहा है। हालांकि, एक अंतराल रहा है जो विशेष रूप से बंद करने के लिए चुनौतीपूर्ण रहा है: उस डेटा को अर्थ में लाना जो HTTP Archive परियोजना एकत्रित कर रही है और समुदाय को आसानी से समझने में सक्षम कर रही है कि वेब कैसा प्रदर्शन कर रहा है। और यहीं से Web Almanac की उत्पत्ति होती है।
-    </p>
+  <p>
+    खुला वेब प्रौद्योगिकियों का एक अद्भुत जटिल, विकसित नेटवर्क है। संपूर्ण उद्योग और करियर वेब पर निर्मित होते हैं और सफल होने के लिए इसके जीवंत पारिस्थितिकी तंत्र पर निर्भर करते हैं। वेब जितना महत्वपूर्ण है, यह समझना कि यह कैसे काम कर  रहा है, आश्चर्यजनक रूप से मायावी है। 2010 से, HTTP Archive परियोजना का मिशन इस पर नजर रखना है कि वेब कैसे बनाया गया है, और यह इस पर अद्भुत काम कर रहा है। हालांकि, एक अंतराल रहा है जो विशेष रूप से बंद करने के लिए चुनौतीपूर्ण रहा है: उस डेटा को अर्थ में लाना जो HTTP Archive परियोजना एकत्रित कर रही है और समुदाय को आसानी से समझने में सक्षम कर रही है कि वेब कैसा प्रदर्शन कर रहा है। और यहीं से Web Almanac की उत्पत्ति होती है।
+  </p>
 
-    <p>
-      Web Almanac का मिशन इनसाइट्स के खजाने को निकलना,और इसे इस तरह से पैकेज करना है जो समझने में आसान हो, जो अन्यथा केवल डेटा विशेषज्ञों की पहुंच तक ही  सीमित था। यह विशेषज्ञों की मदद से संभव बनाया गया है जो डेटा को समझ सकते हैं और हमें बता सकते हैं कि इसका क्या मतलब है। Web Almanac में 20 अध्यायों में से प्रत्येक वेब के एक विशिष्ट पहलू पर केंद्रित है, और प्रत्येक को अपने क्षेत्र के विशेषज्ञों द्वारा लेखक और सहकर्मी की समीक्षा की गई है। Web Almanac को ताकत इसे लिखने वाले लोगों की विशेषज्ञता से प्राप्त होती है।
-    </p>
+  <p>
+    Web Almanac का मिशन इनसाइट्स के खजाने को निकलना,और इसे इस तरह से पैकेज करना है जो समझने में आसान हो, जो अन्यथा केवल डेटा विशेषज्ञों की पहुंच तक ही  सीमित था। यह विशेषज्ञों की मदद से संभव बनाया गया है जो डेटा को समझ सकते हैं और हमें बता सकते हैं कि इसका क्या मतलब है। Web Almanac में 20 अध्यायों में से प्रत्येक वेब के एक विशिष्ट पहलू पर केंद्रित है, और प्रत्येक को अपने क्षेत्र के विशेषज्ञों द्वारा लेखक और सहकर्मी की समीक्षा की गई है। Web Almanac को ताकत इसे लिखने वाले लोगों की विशेषज्ञता से प्राप्त होती है।
+  </p>
 
-    <p>
-      Web Almanac के कई निष्कर्ष उत्सव के योग्य हैं, लेकिन यह उच्च गुणवत्ता वाले यूजर एक्सपीरियंस को वितरित करने के लिए आवश्यक कार्य की एक महत्वपूर्ण अनुस्मारक भी है। प्रत्येक अध्याय में डेटा-संचालित विश्लेषण एक बेहतर वेब विकसित करने के लिए हम सभी की जवाबदेही का एक रूप है। यह उन लोगों को शर्मसार करने के बारे में नहीं है जो इसे गलत कर रहे हैं, बल्कि सर्वोत्तम प्रथाओं के मार्ग पर एक मार्गदर्शक प्रकाश डालने के बारे में है ताकि हमारे पास चीजों को करने का एक स्पष्ट और सही तरीका हो। वेब समुदाय की निरंतर मदद से, हम इसे एक वार्षिक परंपरा बनाने की उम्मीद करते हैं, इसलिए प्रत्येक वर्ष हम अपनी प्रगति को ट्रैक कर सकते हैं और आवश्यकतानुसार सुधार कर सकते हैं।
-    </p>
+  <p>
+    Web Almanac के कई निष्कर्ष उत्सव के योग्य हैं, लेकिन यह उच्च गुणवत्ता वाले यूजर एक्सपीरियंस को वितरित करने के लिए आवश्यक कार्य की एक महत्वपूर्ण अनुस्मारक भी है। प्रत्येक अध्याय में डेटा-संचालित विश्लेषण एक बेहतर वेब विकसित करने के लिए हम सभी की जवाबदेही का एक रूप है। यह उन लोगों को शर्मसार करने के बारे में नहीं है जो इसे गलत कर रहे हैं, बल्कि सर्वोत्तम प्रथाओं के मार्ग पर एक मार्गदर्शक प्रकाश डालने के बारे में है ताकि हमारे पास चीजों को करने का एक स्पष्ट और सही तरीका हो। वेब समुदाय की निरंतर मदद से, हम इसे एक वार्षिक परंपरा बनाने की उम्मीद करते हैं, इसलिए प्रत्येक वर्ष हम अपनी प्रगति को ट्रैक कर सकते हैं और आवश्यकतानुसार सुधार कर सकते हैं।
+  </p>
 
-    <p>
-      इस रिपोर्ट में सीखने के लिए बहुत कुछ है, इसलिए समुदाय के साथ अपने परिणामों और खोजों को साझा करना शुरू करें ताकि हम सामूहिक रूप से वेब की स्थिति के बारे में अपनी समझ को आगे बढ़ा सकें।
-    </p>
+  <p>
+    इस रिपोर्ट में सीखने के लिए बहुत कुछ है, इसलिए समुदाय के साथ अपने परिणामों और खोजों को साझा करना शुरू करें ताकि हम सामूहिक रूप से वेब की स्थिति के बारे में अपनी समझ को आगे बढ़ा सकें।
+  </p>
 
-    <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>, Web Almanac के निर्माता</em></p>
+  <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>, Web Almanac के निर्माता</em></p>
 {% endblock %}
-
-{% block coming_soon %}जल्द आ रहा है!{% endblock %}
-
-{% block appendix %}शेषसंग्रह{% endblock %}
-{% block appendices %}परिशिष्ट{% endblock %}
-
-{% block ebook_title %}ईबुक{% endblock %}
-{% block ebook_download %}पीडीएफ प्रारूप में पूरे {{ year }} Web Almanac को डाउनलोड करें ({{ ebook_size_in_mb }}MB){% endblock %}
-{% block ebook_download_note %}(generated with <a href="https://www.princexml.com/">www.princexml.com</a>){% endblock %}
-
-{% 
-  set localizedPartTitles = {
-    "I. Page Content": "I. पृष्ठ सामग्री",
-    "II. User Experience": "II. यूजर एक्सपीरियंस",
-    "III. Content Publishing": "III. सामग्री प्रकाशन",
-    "IV. Content Distribution": "IV. सामग्री वितरण"
-  }
-%}
-{%
-  set localizedChapterTitles = {
-    "javascript": "JavaScript",
-    "css": "CSS",
-    "markup": "मार्कअप",
-    "media": "मीडिया",
-    "third-parties": "तीसरे पक्ष",
-    "fonts": "लिपि",
-    "performance": "प्रदर्शन",
-    "security": "सुरक्षा",
-    "accessibility": "अभिगम्यता",
-    "seo": "SEO",
-    "pwa": "PWA",
-    "mobile-web": "मोबाइल वेब",
-    "ecommerce": "ई-कॉमर्स",
-    "cms": "CMS",
-    "compression": "कम्प्रेशन",
-    "caching": "कैशिंग",
-    "cdn": "CDN",
-    "page-weight": "पेज वेट",
-    "resource-hints": "संसाधन संकेत",
-    "http2": "HTTP/2",
-    "privacy": "गोपनीयता",
-    "capabilities": "क्षमता",
-    "jamstack": "Jamstack"
-  }
-%}
-
-{% set localizedTeamNames = {
-  "analysts": "विश्लेषक",
-  "authors": "लेखक",
-  "brainstormers": "ब्रैनस्टोमर ",
-  "designers": "डिजाइनर",
-  "developers": "डेवलपर",
-  "editors": "संपादक",
-  "leads": "प्रोजेक्ट लीड्स",
-  "reviewers": "समीक्षक",
-  "translators": "अनुवादक", 
-  }
-%}

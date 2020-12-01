@@ -20,8 +20,6 @@ featured_stat_2: 30,073
 featured_stat_label_2: Number of non-standard <code>h7</code> elements
 featured_stat_3: 25.24 KB
 featured_stat_label_3: Weight of the median document
-published: 2020-11-09T00:00:00.000Z
-last_updated: 2020-11-14T00:00:00.000Z
 unedited: true
 ---
 
@@ -92,7 +90,8 @@ How is this situation in general, then? The median document weighs 25.24 KB:
   sheets_gid="2066175354",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=386686971&format=interactive",
   width=600,
-  height=371
+  height=371,
+  sql_file="summary_pages_by_device_and_percentile.sql"
   )
 }}
 
@@ -122,7 +121,7 @@ Here are the 10 most popular (normalized) languages in our sample. At first we c
 <figcaption>{{ figure_link(caption="Top 10 <code>lang</code> attribute values.", sheets_gid="2047285366", sql_file="pages_almanac_by_device_and_html_lang.sql") }}</figcaption>
 </figure>
 
-{# TODO(authors): Add an interpretation of the lang results and clarify if these are for desktop or mobile. #}
+{# TODO(authors): Add an interpretation of the lang results. #}
 
 ### Comments
 
@@ -169,7 +168,8 @@ At the opposite end of the spectrum, the numbers show that about 97% of pages co
   sheets_gid="150962402",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=1895084382&format=interactive",
   width=600,
-  height=371
+  height=371,
+  sql_file="pages_almanac_by_device.sql"
   )
 }}
 
@@ -212,7 +212,8 @@ The median web page, it turns out, uses 30 different elements, 587 times:
   sheets_gid="46490104",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=924238918&format=interactive",
   width=600,
-  height=371
+  height=371,
+  sql_file="pages_element_count_by_device_and_percentile.sql"
   )
 }}
 
@@ -225,7 +226,8 @@ The median web page, it turns out, uses 30 different elements, 587 times:
   sheets_gid="46490104",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=680594018&format=interactive",
   width=600,
-  height=371
+  height=371,
+  sql_file="pages_element_count_by_device_and_percentile.sql"
   )
 }}
 
@@ -240,7 +242,8 @@ How are these elements distributed?
   sheets_gid="1361520223",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=1468756779&format=interactive",
   width=600,
-  height=371
+  height=371,
+  sql_file="pages_element_count_by_device_and_element_count.sql"
   )
 }}
 
@@ -452,8 +455,7 @@ The source of these elements appears to be mixed, as in some are unknown while o
 <figcaption>{{ figure_link(caption="Frequency and average use of standard heading elements.", sheets_gid="277662548", sql_file="pages_wpt_bodies_by_device_and_percentile_and_heading_level.sql") }}</figcaption>
 </figure>
 
-{# TODO(authors): Expand on this to include more discussion and interpretation of the results. #}
-Wait.
+You might have expected to only see the standard `<h1>` to `<h6>` elements, but some sites actually use more levels:
 
 <figure markdown>
 | Heading | Occurrences | Average per page |
@@ -699,10 +701,9 @@ As a rule of thumb and for [usability reasons](https://www.nngroup.com/articles/
 
 <p class="note">Within the latest Safari and Firefox versions, setting <code>target="_blank"</code> on <code>a</code> elements implicitly provides the same <code>rel</code> behavior as setting <code>rel="noopener"</code>. This is already <a href="https://chromium-review.googlesource.com/c/chromium/src/+/1630010">implemented in Chromium</a> as well and will land in Chrome 88.</p>
 
-{# TODO(editors, authors): The following two sections each read like conclusions. Consider merging. #}
-## Status and trends
+## Conclusion
 
-We've sprinkled some observations throughout the chapter, and you'll have made your own observations. At the end of this 2020 analysis, here are some things that stood out for us.
+We've touched on some observations throughout the chapter, but as a reflection on the state of markup in 2020, here are some things that stood out for us:
 
 {{ figure_markup(
   caption="Percent of pages with a quirky doctype.",
@@ -721,14 +722,12 @@ Elements per page and element types per page stayed roughly the same, showing [n
 
 Proprietary product-specific elements like `g:plusone` (used on 17,607 pages in the mobile sample) and `fb:like` (11,335) have almost disappeared after still being [among the most popular ones](../2019/markup#products-and-libraries-and-their-custom-markup) last year. However, we observe more [custom elements](#custom-elements) for things like Slider Revolution, AMP, and Angular. Elements like `ym-measure`, `jdiv`, and `ymaps` are also still prevalent. What we imagine we're seeing here is that, under the sea of slowly changing practices, HTML is very much being developed and maintained, as authors toss deprecated markup and embrace new solutions.
 
-We're leaving this open to you. What are your observations? What has caught your eye? What do you think has taken a turn for the worse, and what has improved? [Leave a comment](https://discuss.httparchive.org/t/2039) to share your thoughts!
-
-## Conclusion
-
-The [2019 Web Almanac Markup chapter](../2019/markup) had 14 years of catch up to do since the last major study on the topic, so you'd think we wouldn't have much to cover in the year since. Yet what we observe with this year's data is that there's a lot of movement at the bottom and near the shore of said sea of HTML. We approach near-complete adoption of living HTML. We are quick to prune our pages of fads like Google and Facebook widgets. We're also fast in adopting and shunning frameworks, as both Angular and AMP (though a "component framework") seem to have significantly lost in popularity, likely for solutions like React and Vue.
+Now, the [2019 Web Almanac Markup chapter](../2019/markup) had 14 years of catch up to do since the last major study on the topic, so you'd think we wouldn't have much to cover in the year since. Yet what we observe with this year's data is that there's a lot of movement at the bottom and near the shore of said sea of HTML. We approach near-complete adoption of living HTML. We are quick to prune our pages of fads like Google and Facebook widgets. We're also fast in adopting and shunning frameworks, as both Angular and AMP (though a "component framework") seem to have significantly lost in popularity, likely for solutions like React and Vue.
 
 And still, there are no signs we exhausted the options HTML gives us. The median of 30 different elements used on a given page, which is roughly a quarter of the elements HTML provides us with, suggests a rather one-sided use of HTML. That is supported by the immense popularity of elements like `div` and `span`, and no custom elements to potentially meet the demands that these two elements may represent. Unfortunately, we couldn't validate each document in the sample; however, anecdotally and to be taken with caution, we learned that [79%](https://github.com/HTTPArchive/almanac.httparchive.org/issues/899#issuecomment-717856201) of W3C-tested documents have validation errors. After everything we've seen, it looks like we're still far from mastering the craft of HTML.
 
-That compels us to close with an appeal. Pay attention to HTML. Focus on HTML. It's important and worthwhile to invest in HTML. HTML is a document language that may not have the charm of a programming language, and yet the web is built on it. Use less HTML and learn what's really needed. Use more appropriate HTML—learn what's available and what it's there for. And [validate](https://validator.w3.org/docs/why.html) your HTML. Anyone can write invalid HTML (just invite the next person you meet to write an HTML document and validate the output) but a professional developer can be expected to produce valid HTML. Writing correct and valid HTML is a craft to take pride in.
+That compels us to close with an appeal: Pay attention to HTML. Focus on HTML. It's important and worthwhile to invest in HTML. HTML is a document language that may not have the charm of a programming language, and yet the web is built on it. Use less HTML and learn what's really needed. Use more appropriate HTML—learn what's available and what it's there for. And [validate](https://validator.w3.org/docs/why.html) your HTML. Anyone can write invalid HTML (just invite the next person you meet to write an HTML document and validate the output) but a professional developer can be expected to produce valid HTML. Writing correct and valid HTML is a craft to take pride in.
 
 For the next edition of the Web Almanac's chapter, let's prepare to look closer at the craft of writing HTML and, hopefully, how we've been improving on it.
+
+We're leaving this open to you. What are your observations? What has caught your eye? What do you think has taken a turn for the worse, and what has improved? [Leave a comment](https://discuss.httparchive.org/t/2039) to share your thoughts!

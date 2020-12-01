@@ -1,0 +1,11 @@
+{% extends "base//contributors.html" %}
+
+{% block title %}Участники за {{ year }} | Web Almanac от HTTP Archive{% endblock %}
+
+{% block description %}{{ config.contributors.items() | length }} человек, внесших свой вклад в Web Almanac за 2019 год — это аналитики, авторы, участники мозговых штурмов, дизайнеры, разработчики, редакторы, руководители, проверяющие и переводчики.{% endblock %}
+
+{% block filter_by_team %}Фильтр по ролям в команде: <span id="filtered-contributors">{{ self.contributors() }}</span><span id="contributors-total-text" class="hidden"> из <span id="contributors-total">{{ config.contributors.items() | length }}</span></span> участников.{% endblock %}
+{% block filter_by %}Отфильтровать по{% endblock %}
+
+{% block join_the_team_title%}Присоединяйтесь к команде Web Almanac{% endblock %}
+{% block join_the_team_text%}Здесь могли быть вы!{% endblock %}

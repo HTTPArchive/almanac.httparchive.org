@@ -2,7 +2,7 @@
   "settings": [
     {
       "is_live": true,
-      "supported_languages": ["en","es","fr","hi","ja","pt","zh-CN","zh-CHT"],
+      "supported_languages": ["en","es","fr","hi","ja","pt","ru","zh-CN","zh-TW"],
       "ebook_languages": []
     }
   ],
@@ -277,7 +277,7 @@
         "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/3109255?v=4&s=200",
-      "website": "getellipsis.com",
+      "website": "https://getellipsis.com",
       "github": "alexdenning",
       "twitter": "AlexDenning"
     },
@@ -290,6 +290,15 @@
       "website": "https://togethertech.ca/",
       "github": "alextait1",
       "twitter": "at_fresh_dev"
+    },
+    "lex111": {
+      "name": "Alexey Pyltsyn",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/4408379?v=4&s=200",
+      "website": "https://lex111.ru/",
+      "github": "lex111"
     },
     "aleyda": {
       "name": "Aleyda Solis",
@@ -1308,6 +1317,16 @@
       "avatar_url": "https://avatars2.githubusercontent.com/u/244772?v=4&s=200",
       "github": "zcorpan",
       "twitter": "zcorpan"
+    },
+    "sudheendrachari": {
+      "name": "Sudheendra chari",
+      "teams": [
+        "developers"
+      ],
+      "avatar_url": "https://avatars0.githubusercontent.com/u/10291571?v=4&s=200",
+      "github": "sudheendrachari",
+      "twitter": "itsmesudheendra",
+      "linkedin": "sudheendrachari"
     },
     "smatei": {
       "name": "Stefan Matei",

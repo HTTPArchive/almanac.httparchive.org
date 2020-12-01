@@ -1,0 +1,24 @@
+{% extends "base/error.html" %}
+
+{% block unknown_error %}Error Desconocido{% endblock %}
+
+{% 
+  set localizedStatusCode = {
+    400: "Solicitud Incorrecta",
+    404: "Página no Encontrada",
+    500: "Error de Servidor Interno",
+    502: "Error Temporal del Servidor"
+  }
+%}
+{% macro expandedTitle(errorTitle) %}Error: {{ errorTitle }}{% endmacro %}
+{%
+  set localizedErrorMessage = {
+    "Unsupported year requested": "Año no Admitido Solicitado",
+    "Unsupported chapter requested": "Capítulo no Admitido Solicitado",
+    "Unsupported language requested": "Idioma no Admitido Solicitado",
+    "Not Found": "La URL solicitada no se encontró en el servidor. Si ingresó la URL manualmente, verifique su ortografía e intente nuevamente."
+  }
+%}
+{% macro expandedErrorMessage(errorCode, errorDescription, errorMessage) %}
+{{ errorCode }} <i lang="en">{{ errorDescription }}</i>: {{ errorMessage }}
+{% endmacro %}

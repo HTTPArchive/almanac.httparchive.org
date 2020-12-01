@@ -1,0 +1,169 @@
+{% extends "base/base.html" %}
+
+{% block description %}Web Almanac 2019 por HTTP Archive es un estado anual de la web que combina las estadísticas y tendencias sin procesar del HTTP Archive con la experiencia de la comunidad web{% endblock %}
+
+{% block twitter_image_alt %}{{ year }} Web Almanac{% endblock %}
+
+{% block skip_navigation %}Saltar navegación{% endblock %}
+
+{% block organization %}Web Almanac por HTTP Archive{% endblock %}
+{% block web_almanac_logo %}
+  <span class="wa">Web Almanac</span>
+  <span class="line-group">
+    <span class="pre">Por</span>
+    <span class="ha">HTTP Archive</span>
+  </span>
+{% endblock %}
+
+{% block mission %}
+<p>
+Nuestra misión es combinar las estadísticas y tendencias sin procesar del HTTP Archive con la experiencia de la comunidad web. Web Almanac es un informe exhaustivo sobre el estado de la web, respaldado por datos reales y expertos web de confianza. Se compone de 20 capítulos que abarcan aspectos del contenido de la página, la experiencia del usuario, la publicación y la distribución.
+</p>
+{% endblock %}
+
+{% block read_last_years_almanac %}Lea el Web Almanac {{ year | int - 1 }}{% endblock %}
+
+{% block http_archive_link %}Página de Inicio HTTP Archive{% endblock %}
+
+{% block page_navigation %}Navegación de página{% endblock %}
+
+{% block help_translate %}Ayuda a traducir{% endblock %}
+{% block translation_not_available %}en inglés - no disponible en español{% endblock %}
+{% block language_switcher %}Selector de idioma{% endblock %}
+{% block year_switcher %}Selector de año{% endblock %}
+{% block table_of_contents_switcher %}Selector de Tabla de Contenidos{% endblock %}
+
+{% block home %}Página de inicio{% endblock %}
+{% block table_of_contents_title %}Tabla de Contenidos{% endblock %}
+{% block contributors_title %}Contribuidores{% endblock %}
+{% block methodology_title %}Metodología{% endblock %}
+
+{% block part %}Parte{% endblock %}
+{% block chapter %}Capítulo{% endblock %}
+
+{% block start_exploring %}Empieza a Explorar{% endblock %}
+
+{% block menu_title %}Menú de página{% endblock %}
+{% block open_the_menu %}Abre el menu{% endblock %}
+{% block close_the_menu %}Cierra el menú{% endblock %}
+
+{% block index_nav_title %}Tabla de contenido del capítulo{% endblock %}
+{% block index_title %}Índice{% endblock %}
+{% block open_the_index %}Abrir la tabla de contenido{% endblock %}
+{% block close_the_index %}Cerrar la tabla de contenido{% endblock %}
+
+{% block and %}y{% endblock %}
+{% block comma %}, {% endblock %}
+
+{% block open %}Abre{% endblock %}
+{% block close %}Cierra{% endblock %}
+
+{% macro figure_text(metadata, id) %}Figura {{ figure_id(metadata, id) }}.{% endmacro %}
+{% macro show_description(metadata, id) %}Mostrar descripción de la Figura {{ figure_id(metadata, id) }}{% endmacro %}
+{% macro hide_description(metadata, id) %}Ocultar descripción de la Figura {{ figure_id(metadata, id) }}{% endmacro %}
+
+{% block written_by_before %}Escrito por{% endblock %}
+{% block reviewed_by_before %}Revisado por{% endblock %}
+{% block translated_by_before %}Traducido por{% endblock %}
+{% block analysis_by_before %}Análisis por{% endblock %}
+{% block written_by_after %}{% endblock %}
+{% block reviewed_by_after %}{% endblock %}
+{% block translated_by_after %}{% endblock %}
+{% block analysis_by_after %}{% endblock %}
+
+{% block author %}Autor(a){% endblock %}
+{% block authors %}Autores{% endblock %}
+
+{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} en Twitter{% endmacro %}
+{% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} en GitHub{% endmacro %}
+{% macro onLinkedIn(authorName) %}{{authorName}} en LinkedIn{% endmacro %}
+{% macro website(authorName) %}{{authorName}} sitio web{% endmacro %}
+
+{% macro edition(year) %}Edición {{ year }}{% endmacro %}
+
+{% block footer_title %}Navegación de pie de página{% endblock %}
+{% block copyright %}© Web Almanac. Con licencia <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
+{% block accessibility_statement %}Declaración de accesibilidad{% endblock %}
+
+{% block featured_chapter %}Capítulo Destacado{% endblock %}
+{% block featured_chapter_last_year %}Capítulo Destacado<br/>del Web Almanac {{ year|int -1 }}{% endblock %}
+
+{# Check if read_chapter already defined in child template as macros can't be overridden #}
+{% if not read_chapter %}
+{% macro read_chapter(chapter) %}Lea el Capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
+{% endif %}
+{% if not read_last_years_chapter %}
+{% macro read_last_years_chapter(chapter) %}Lea el {{ year|int -1 }} Capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
+{% endif %}
+
+{% block contributors_description %}
+Web Almanac ha sido posible gracias al arduo trabajo de la comunidad web. {{ self.contributors() }} personas han ofrecido incontables horas en las fases de planificación, investigación, redacción y producción.
+{% endblock %}
+{% block contributors_link %}Ver los contribuidores{% endblock %}
+
+{% block methodology_stat_1_title %}Sitios Web Analizados{% endblock %}
+{% block methodology_stat_2_title %}Información Procesada{% endblock %}
+{% block methodology_link %}Conozca nuestra Metodología{% endblock %}
+
+{% block introduction %}Introducción{% endblock %}
+
+{% block foreword_title %}Prefacio{% endblock %}
+
+{% block coming_soon %}¡Próximamente!{% endblock %}
+
+{% block appendix %}Apéndice{% endblock %}
+{% block appendices %}Apéndices{% endblock %}
+
+{% block ebook_title %}Libro electronico{% endblock %}
+{% block ebook_download_short %}Libro electronico PDF ({{ ebook_size_in_mb }}MB){% endblock %}
+{% block ebook_download %}Download the entire {{ year }} Web Almanac in PDF format ({{ ebook_size_in_mb }}MB){% endblock %}
+{% block ebook_download_note %}(generated with <a href="https://www.princexml.com/">www.princexml.com</a>){% endblock %}
+
+{%
+    set localizedPartTitles = {
+      "I. Page Content": "I. Contenido de las Páginas",
+      "II. User Experience": "II. Experiencia de Usuario",
+      "III. Content Publishing": "III. Publicación de Contenido",
+      "IV. Content Distribution": "IV. Distribución de Contenido"
+    }
+  %}
+  {%
+    set localizedChapterTitles = {
+      "javascript": "JavaScript",
+      "css": "CSS",
+      "markup": "Marcado Web",
+      "media": "Media",
+      "third-parties": "Contenido de Terceros",
+      "fonts": "Fuentes",
+      "performance": "Rendimiento",
+      "security": "Seguridad",
+      "accessibility": "Accesibilidad",
+      "seo": "SEO",
+      "pwa": "PWA",
+      "mobile-web": "Web Móvil",
+      "ecommerce": "E-commerce",
+      "cms": "CMS",
+      "compression": "Compresión",
+      "caching": "Almacenamiento en Caché",
+      "cdn": "CDN",
+      "page-weight": "Peso de las Páginas",
+      "resource-hints": "Sugerencias de Recursos",
+      "http2": "HTTP/2",
+      "privacy": "Intimidad",
+      "capabilities": "Capacidades",
+      "jamstack": "Jamstack"
+    }
+  %}
+
+  {% set localizedTeamNames = {
+    "analysts": "Analistas",
+    "authors": "Autores",
+    "brainstormers": "Pensadores",
+    "designers": "Diseñadores",
+    "developers": "Desarrolladores",
+    "editors": "Editores",
+    "leads": "Lider",
+    "reviewers": "Revisores",
+    "translators": "Traductores",
+    }
+  %}

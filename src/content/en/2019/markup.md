@@ -18,8 +18,6 @@ featured_stat_2: 15%
 featured_stat_label_2: Pages that contain deprecated elements
 featured_stat_3: 65
 featured_stat_label_3: Variants of carousels found
-published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introduction

@@ -1,10 +1,12 @@
-{% extends "%s/2019/base.html" % lang %}
+{% extends "%s/base.html" % lang %}
 
-{% block methodology_stat_1 %}7.5&nbsp;M{% endblock %}
-{% block methodology_stat_2 %}31.3&nbsp;TB{% endblock %}
+{% block methodology_stat_1 %}7,5&nbsp;M{% endblock %}
+{% block methodology_stat_2 %}31,3&nbsp;TB{% endblock %}
 {% block methodology_description %}
 Sauf indication contraire, les statistiques des 22 chapitres du Web Almanac proviennent du jeu de données HTTP Archive, un projet communautaire qui suit l’évolution de la construction du web depuis 2010. Grâce à WebPageTest et Lighthouse, HTTP Archive collecte chaque mois les métadonnées de plus de 7.5 millions de sites Web et les insère dans une base de données publique BigQuery pour les analyser. Le jeu de données de août 2020 a servi de base aux mesures du Web Almanac. Pour plus d’informations, consultez la page Méthodologie.
 {% endblock %}
 
 {% block foreword %}
+{# TODO - Write this! #}
+{{ self.coming_soon() }}
 {% endblock %}

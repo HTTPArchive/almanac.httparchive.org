@@ -2,6 +2,12 @@
 
 The Web Almanac can be developed on macOS, Windows or Linux. It requires Node v12, Python v3.8 and pip to be installed. Alternatively, use Docker to avoid manually configuring the development environment.
 
+## Style guide
+
+The Web Almanac uses a specific "style guide" for code, including 2 spaces for indentation (except Python which uses 4 spaces).
+
+An `.editorconfig` file exists for those using [EditorConfig](https://editorconfig.org/) to help enforce those styles. This may require installing the `editorconfig` node module via npm (we suggest installing globally - `npm install -g editorconfig` ) and then installing the extension for your IDE (for example there is a [Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)).
+
 ## Run Locally
 
 Make sure you run the following commands from within the `src` directory by executing `cd src` first.
@@ -25,15 +31,15 @@ py -m pip install --user virtualenv
 2. Create an isolated Python environment, and install dependencies:
 
 ```
-virtualenv --python python3 env
-source env/bin/activate
+virtualenv --python python3.8 .venv
+source .venv/bin/activate
 ```
 
 Or for those on Windows:
 
 ```
-virtualenv --python python3 env
-env\Scripts\activate.bat
+virtualenv --python python3 .venv
+.venv\Scripts\activate.bat
 ```
 
 3. Install generate and run the website:
@@ -252,24 +258,24 @@ docker container run --rm -it -v "$PWD":/app -p 8080:8080 webalmanac
 4. Make changes in the code using any text editor and run tests (need to build the image again if any Python or Node dependencies are changed):
 
 ```
-docker container run --rm -it -v "$PWD":/app webalmanac pytest
+docker container run --rm -it -v "$PWD":/app webalmanac npm run pytest
 ```
 
 5. To avoid running commands in one-off mode run `bash` in a container (with necessary volumes mounted and ports mapped) then run successive commands:
 
 ```
 docker container run --rm -it -v "$PWD":/app -v /app/node_modules -p 8080:8080 webalmanac bash
-root@[CID]:/app# pytest
 root@[CID]:/app# python main.py
 ^C
 root@[CID]:/app# npm run generate
+root@[CID]:/app# npm run pytest
 root@[CID]:/app# exit
 ```
 
 6. To customize the image use `PYVER`, `NODEVER`, and `SKIPGC` build arguments to control which versions of Python and Node are used and whether Google Cloud SDK is installed.
 
 ```
-docker image build --build-arg PYVER=3.7 --build-arg NODEVER=14.x --build-arg SKIPGC=false -t webalmanac:custom .
+docker image build --build-arg PYVER=3.8 --build-arg NODEVER=14.x --build-arg SKIPGC=false -t webalmanac:custom .
 ```
 
 7. If you want to run the GitHub Super-Linter without `npm` being installed you need to call the command directly as given in `package.json`.
@@ -277,11 +283,11 @@ docker image build --build-arg PYVER=3.7 --build-arg NODEVER=14.x --build-arg SK
 This will depend on your operating system but for MacOS/Linux this would be:
 
 ```
-docker container run -it --rm -v "$PWD/..":/app -w /app/src --entrypoint=./tools/scripts/run_linter_locally.sh github/super-linter
+docker container run -it --rm -v /app/node_modules -v "$PWD/..":/app -w /app/src --entrypoint=./tools/scripts/run_linter_locally.sh github/super-linter
 ```
 
 And for Windows:
 
 ```
-docker container run --rm -v %cd%\\..:/app -w /app/src --entrypoint=./tools/scripts/run_linter_locally.sh github/super-linter
+docker container run --rm -v /app/node_modules -v %cd%\\..:/app -w /app/src --entrypoint=./tools/scripts/run_linter_locally.sh github/super-linter
 ```

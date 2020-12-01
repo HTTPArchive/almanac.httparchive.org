@@ -18,8 +18,6 @@ featured_stat_2: 49%
 featured_stat_label_2: サードパーティのリクエスト
 featured_stat_3: 28%
 featured_stat_label_3: サードパーティのバイト数
-published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## 導入

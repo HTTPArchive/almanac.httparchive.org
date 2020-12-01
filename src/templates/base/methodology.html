@@ -1,0 +1,35 @@
+{% extends "%s/%s/base.html" % (lang, year) %}
+
+{% block title %}Methodology | The Web Almanac by HTTP Archive{% endblock %}
+
+{% block description %}Describes how the 2019 Web Almanac was put together: The Datasets and Tools used and how the project was run.{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{ get_versioned_filename('/static/css/page.css') }}">
+{% endblock %}
+
+{% block main %}
+<main id="methodology" class="main">
+  <nav class="index">
+    <div class="index-box floating-card">
+      <h2 class="header">
+        <button class="index-btn">{{ self.index_title() }}</button>
+        <span class="no-button">{{ self.index_title() }}</span>
+      </h2>
+      {{ self.index() }}
+    </div>
+  </nav>
+
+  <article id="maincontent" class="content">
+    <h1 class="title title-lg">{{ self.methodology_title() }}</h1>
+    {{ self.main_content() }}
+  </article>
+</main>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+{{ self.index_menu_script() }}
+<script src="{{ get_versioned_filename('/static/js/chapter.js') }}" defer></script>
+{% endblock %}

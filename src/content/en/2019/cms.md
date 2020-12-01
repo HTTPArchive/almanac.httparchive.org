@@ -19,8 +19,6 @@ featured_stat_2: 74%
 featured_stat_label_2: CMS sites that use WordPress
 featured_stat_3: 1,232 KB
 featured_stat_label_3: Median image KB loaded per desktop CMS page.
-published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-11-04T00:00:00.000Z
 ---
 
 ## Introduction
@@ -263,7 +261,7 @@ How do CMS pages compare to pages on the web as a whole? In the [Page Weight](./
 
 When we look closer at the types of resources that load on mobile or desktop CMS pages, images and video immediately stand out as primary contributors to their weight.
 
-The impact doesn't necessarily correlate with the number of requests, but rather how much data is associated with those individual requests. For example, in the case of video resources with only two requests made at the median, they carry more than 1MB of associated load. Multimedia experiences also come with the use of scripts to integrate interactivity, deliver functionality and data to name a few use cases. In both mobile and desktop pages, those are the 3rd heaviest resource.
+The impact doesn't necessarily correlate with the number of requests, but rather how much data is associated with those individual requests. For example, in the case of video resources with only two requests made at the median, they carry more than 1 MB of associated load. Multimedia experiences also come with the use of scripts to integrate interactivity, deliver functionality and data to name a few use cases. In both mobile and desktop pages, those are the 3rd heaviest resource.
 
 With our CMS experiences saturated with these resources, we must consider the impact this has on website visitors on the frontend- is their experience fast or slow? Additionally, when comparing mobile and desktop resource usage, the amount of requests and weight show little difference. This means that the same amount and weight of resources are powering both mobile and desktop CMS experiences. Variation in connection speed and mobile device quality adds [another layer of complexity](https://medinathoughts.com/2017/12/03/the-perils-of-mobile-web-performance-part-iii/). Later in this chapter, we'll use data from CrUX to assess user experience in the CMS space.
 
