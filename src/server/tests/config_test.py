@@ -2,13 +2,10 @@ from server.config import get_config, get_chapters, get_languages, get_live, \
     SUPPORTED_YEARS, SUPPORTED_CHAPTERS, SUPPORTED_LANGUAGES
 
 
-test_year = ['2020', '2019', '2018']
-
-
 def test_get_config_year():
-    assert get_config(test_year[0]) is not None
-    assert get_config(test_year[1]) is not None
-    assert get_config(test_year[2]) is None
+    assert get_config('2020') is not None
+    assert get_config('2019') is not None
+    assert get_config('2018') is None
 
 
 def test_static_avatar():
