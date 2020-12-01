@@ -287,7 +287,7 @@ Figure 22.14 shows the breakdown of HTTP/2 responses for 3rd party CDNs for mobi
 
 ## How is HTTP/2 performing ?
 
-{# TODO add intro to avoid empty header #}
+Measuring the impact of how a protocol is performing is difficult with the current HTTPArchive approach. It would be really fascinating to be able to quantify the impact of concurrent connections, the effect of packet loss and differrent congestion control mechanisms. To really compare performance each web site would have to be crawled over each protocol over different network conditions. What we can do  instead is to look into the impact on the number of connections a web site uses.
 
 ### Reducing connectons
 
@@ -341,9 +341,7 @@ This [test suite](https://github.com/andydavies/http2-prioritization-issues) mea
 <figcaption>{{ figure_link(caption="HTTP/2 prioritization support in common CDNs.", sheets_gid="1152953475", sql_file="percentage_of_h2_and_h3_sites_affected_by_cdn_prioritization.sql") }}</figcaption>
 </figure>
 
-For non-CDN usage, I expect the number of servers that correctly apply HTTP/2 prioritization to be considerably smaller. For example, [NodeJS’s HTTP/2 implementation does not even support prioritization](https://twitter.com/jasnell/status/1245410283582918657).
-
-{# TODO consider rewording to come across as less of a dig. Or at least removing the word "even" #}
+For non-CDN usage, I expect the number of servers that correctly apply HTTP/2 prioritization to be considerably smaller. For example, [NodeJS’s HTTP/2 implementation does not support prioritization](https://twitter.com/jasnell/status/1245410283582918657).
 
 ### Goodbye Server push?
 
