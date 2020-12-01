@@ -126,7 +126,7 @@ Push APIとNotifications APIの助けを借りて、Webアプリケーション�
 
 ### 通知トリガーAPI
 
-Push APIでは、ユーザーが通知を受け取るためにはオンラインである必要があります。ゲーム、リマインダーやTo-doアプリ、カレンダー、目覚まし時計など、一部のアプリケーションでは、ローカルで通知の対象日を決定してスケジュールを組むことも可能でした。この機能をサポートするために、Chromeチームは<a lang="en" href="">通知トリガー</a>(https://web.dev/notification-triggers/)（<a lang="en" href="">の説明者</a>(https://github.com/beverloo/notification-triggers/blob/master/README.md)と呼ばれる新しいAPIを使って実験を行っています。このAPIは`options`マップに`showTrigger`という新しいプロパティを追加し、サービスワーカーの登録時に`showNotification()`メソッドへ渡すことができます。このAPIは将来的にさまざまな種類のトリガーに対応できるように設計されていますが、現時点では時間ベースのトリガーのみが実装されています。特定の日時に基づいて通知をスケジューリングするために、開発者は`TimestampTrigger`の新しいインスタンスを作成し、ターゲットのタイムスタンプをそれに渡すことができる。
+Push APIでは、ユーザーが通知を受け取るためにはオンラインである必要があります。ゲーム、リマインダーやTo-doアプリ、カレンダー、目覚まし時計など、一部のアプリケーションでは、ローカルで通知の対象日を決定してスケジュールを組むことも可能でした。この機能をサポートするために、Chromeチームは<a lang="en" href="https://web.dev/notification-triggers/">通知トリガー</a>（<a lang="en" href="https://github.com/beverloo/notification-triggers/blob/master/README.md">の説明者</a>と呼ばれる新しいAPIを使って実験を行っています。このAPIは`options`マップに`showTrigger`という新しいプロパティを追加し、サービスワーカーの登録時に`showNotification()`メソッドへ渡すことができます。このAPIは将来的にさまざまな種類のトリガーに対応できるように設計されていますが、現時点では時間ベースのトリガーのみが実装されています。特定の日時に基づいて通知をスケジューリングするために、開発者は`TimestampTrigger`の新しいインスタンスを作成し、ターゲットのタイムスタンプをそれに渡すことができる。
 
 ```js
 registration.showNotification('Title', {
