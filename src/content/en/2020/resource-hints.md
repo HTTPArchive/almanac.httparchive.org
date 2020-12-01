@@ -262,7 +262,7 @@ Running Lighthouse's "[Defer offscreen images](https://web.dev/offscreen-images/
 
 Be mindful to run the audit on both desktop and mobile as images may move off screen when the viewport changes.
 
-## Machine Learning
+## Predictive prefetching
 
 Combining `prefetch` with Machine Learning can help with performance improvement of the subsequent page(s). One solution is [Guess.js](https://github.com/guess-js/guess) which made the initial breakthrough in predictive-prefetching, with over a dozen websites already using it in production.
 
