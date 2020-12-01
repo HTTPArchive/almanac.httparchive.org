@@ -2,6 +2,7 @@ from server.config import get_config, get_chapters, get_languages, get_live, \
     SUPPORTED_YEARS, SUPPORTED_CHAPTERS, SUPPORTED_LANGUAGES
 import pytest
 
+
 def test_get_config_year():
     assert get_config('2020') is not None
     assert get_config('2019') is not None
@@ -45,6 +46,8 @@ def test_get_languages_good_and_bad():
     languages = [str(language) for language in get_languages(get_config('2019'))]
     assert 'English' in languages
     assert 'random' not in languages
+
+
 def test_get_live_for_all_supported_years():
     for year in SUPPORTED_YEARS:
         assert get_live(get_config(year)) is True
