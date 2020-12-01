@@ -10,7 +10,7 @@ analysts: [gregorywolf]
 translators: []
 dotjs_bio: Andrew works at <a href="https://www.cloudflare.com/">Cloudflare</a> helping to make the web faster and more secure. He spends his time deploying, measuring and improving new protocols and asset delivery to improve end-user web site performance.
 rmarx_bio: Robin is a web protocol and performance researcher at <a href="https://www.uhasselt.be/edm">Hasselt University, Belgium</a>. He has been working on getting QUIC and HTTP/3 ready to use by creating tools like <a href="https://github.com/quiclog">qlog and qvis</a>.
-#@MikeBishop_bio: TODO
+#MikeBishop_bio: TODO
 discuss: 2058
 results: https://docs.google.com/spreadsheets/d/1M1tijxf04wSN3KU0ZUunjPYCrVsaJfxzuRCXUeRQ-YU/
 queries: 22_HTTP_2
