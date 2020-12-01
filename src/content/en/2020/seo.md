@@ -183,9 +183,8 @@ The primary purpose that both search engines and Search Engine Optimization serv
 
 To understand what search engines are able to effectively extract, we have broken out the components of that content and examined the incidence rate of those features between the mobile and desktop contexts. We also reviewed the disparity between mobile and desktop content. The mobile vs desktop disparity is especially valuable because Google has moved to Mobile First Indexing (MFI) for all new sites and as of March of 2021 will move to a mobile-only index wherein content that does not appear within the mobile context will not be evaluated for ranking.
 
-#### Text
 
-##### Rendered vs Non-rendered Text Content
+#### Rendered vs Non-rendered Text Content
 The usage of Single Page Application (SPA) JavaScript technologies has exploded with the growth of the web. This design pattern introduces difficulties for search engine spiders because both the execution of JavaScript transformations at runtime and user interactions with the page after load can cause additional content to appear or be rendered.
 
 Search engines encounter pages through its crawling activity, but may or may not choose to implement a second step of rendering a page. As a result, there may be disparities between the content that a user sees and the content that a search engine indexes and considers for rankings.
@@ -221,7 +220,7 @@ Across our sample set, there are disparities across the combination of mobile/de
 
 This year, the median desktop home page was found to have 402 words and the mobile 348 words. While [last year](../2019/seo#word-count), the median desktop home page had 346 words, and the median mobile home page had a slightly lower word count at 306 words. This represents 16.2% and 13.7% growth respectively.
 
-##### Headings
+#### Headings
 
 Heading elements (h1-h6) act as a mechanism to visually indicate structure in a page’s content. Although these HTML elements don’t carry the weight they used to in search rankings, they still act as a valuable way to structure pages and signal other elements in the SERPs like Featured Snippets or other extraction methods that align with [Google’s new passage indexing](https://www.blog.google/products/search/search-on/).
 
@@ -255,13 +254,13 @@ In reviewing the incidence rate of non-empty heading elements, we understand tha
 
 Learn more about the usage of Headings in the [Markup chapter](./markup#headings), including the misuse of h7 and h8 elements that have never been part of HTML.
 
-##### Metadata
+#### Metadata
 
 Metadata is an opportunity to describe and explain the value of the content on the other side of the click. While page titles are believed to be weighed directly in search rankings, meta descriptions are not. Both elements can encourage or discourage a user to click or not click based on their contents.
 
 We examined these features to see how pages are quantitatively aligning with best practices to drive traffic from Organic Search.
 
-###### Titles
+##### Titles
 
 The page title is shown as the anchor text in search engine results and is generally considered one of the most valuable on-page elements that impacts a page’s ability to rank.
 
@@ -291,7 +290,7 @@ The median page title character count is 38 characters on both mobile and deskto
   )
 }}
 
-###### Meta Descriptions
+##### Meta Descriptions
 
 The meta description acts as the advertising tagline for a webpage. Although [a recent study suggests that this tag is ignored and rewritten by Google 70% of the time](https://www.searchenginejournal.com/google-rewrites-meta-descriptions-over-70-of-the-time/382140/), it is an element that is prepared with the goal of enticing a user to click through.
 
@@ -477,7 +476,7 @@ With the increasing popularity of mobile devices to browse and search across the
 
 In fact, [since a few years ago](https://developers.google.com/search/blog/2016/11/mobile-first-indexing) Google has been moving to a Mobile first index, meaning that the content that is crawled, indexed and ranked, is the one accessible to mobile users and the Smartphone Googlebot.
 
-Additionally, [since July last yea](https://developers.google.com/search/blog/2020/07/prepare-for-mobile-first-indexing-with) Google is using the Mobile first index for all new websites and in March earlier this year, it announced that [70% of pages shown in their search results have already shifted over](https://webmasters.googleblog.com/2020/03/announcing-mobile-first-indexing-for.html_). It is now expected that Google [fully switches to a Mobile first index in March 2021](https://webmasters.googleblog.com/2020/07/prepare-for-mobile-first-indexing-with.html).
+Additionally, [since July last year](https://developers.google.com/search/blog/2020/07/prepare-for-mobile-first-indexing-with) Google is using the Mobile first index for all new websites and in March earlier this year, it announced that [70% of pages shown in their search results have already shifted over](https://webmasters.googleblog.com/2020/03/announcing-mobile-first-indexing-for.html_). It is now expected that Google [fully switches to a Mobile first index in March 2021](https://webmasters.googleblog.com/2020/07/prepare-for-mobile-first-indexing-with.html).
 
 Mobile friendliness should be then fundamental for any website looking to provide a good search experience -and as a consequence, grow in search results.
 
