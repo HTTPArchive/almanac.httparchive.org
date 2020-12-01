@@ -287,7 +287,7 @@ Figure 22.14 shows the breakdown of HTTP/2 responses for 3rd party CDNs for mobi
 
 ## How is HTTP/2 performing ?
 
-Measuring the impact of how a protocol is performing is difficult with the current HTTPArchive approach. It would be really fascinating to be able to quantify the impact of concurrent connections, the effect of packet loss and differrent congestion control mechanisms. To really compare performance each web site would have to be crawled over each protocol over different network conditions. What we can do  instead is to look into the impact on the number of connections a web site uses.
+Measuring the impact of how a protocol is performing is difficult with the current HTTPArchive approach. It would be really fascinating to be able to quantify the impact of concurrent connections, the effect of packet loss and differrent congestion control mechanisms. To really compare performance each web site would have to be crawled over each protocol over different network conditions. What we can do instead is to look into the impact on the number of connections a web site uses.
 
 ### Reducing connectons
 
