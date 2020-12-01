@@ -159,11 +159,10 @@ Overall, around 2% of pages contain no scripting at all, not even structured dat
 
 At the opposite end of the spectrum, the numbers show that about 97% of pages contain at least one script, either inline or external.
 
-{# TODO(editors): Wrap "script" in the caption in code tags so that it doesn't trigger code editor syntax highlighting confusion. #}
 {# TODO(analysts): We still have a problem here with the x-axis label (“Containing”). Can someone help out and look at this? #}
 {{ figure_markup(
   image="script-use.png",
-  caption="Usage of the script element.",
+  caption="Usage of the <code>script</code> element.",
   description="Percentages of pages (not) containing scripts, and scripts are present in almost every form on almost every page.",
   sheets_gid="150962402",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=1895084382&format=interactive",
