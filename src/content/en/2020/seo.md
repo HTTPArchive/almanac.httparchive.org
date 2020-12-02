@@ -279,29 +279,29 @@ Finally, we found that 4.46% of desktop pages and 4.62% of mobile pages feature 
 
 ##### Most Active Structured Data Objects
 
-[As seen last year](https://almanac.httparchive.org/en/2019/seo#structured-data), the most prevalent structured data objects remain to be WebSite, SearchAction, WebPage, Organization and ImageObject, and their usage has grown further: 
+[As seen last year](https://almanac.httparchive.org/en/2019/seo#structured-data), the most prevalent structured data objects remain to be `WebSite`, `SearchAction`, `WebPage`, `Organization` and `ImageObject`, and their usage has grown further: 
 
-* Website has grown 9.37% on desktop and 10.5% on mobile 
-* SearchAction has grown 7.64% on both desktop and mobile
-* WebPage has grown on desktop 6.83% and 7.09% on mobile
-* Organization has grown on desktop 4.75% and 4.98% on  mobile 
-* ImageObject has grown 6.39% on desktop and 6.13% on mobile 
+* `Website` has grown 9.37% on desktop and 10.5% on mobile 
+* `SearchAction` has grown 7.64% on both desktop and mobile
+* `WebPage` has grown on desktop 6.83% and 7.09% on mobile
+* `Organization` has grown on desktop 4.75% and 4.98% on  mobile 
+* `ImageObject` has grown 6.39% on desktop and 6.13% on mobile 
 
-It should be noted that WebSite, SearchAction and Organization are all typically  associated with homepages, so this highlights the bias of the dataset and does not reflect the bulk of structured data implemented on the web.
+It should be noted that `WebSite`, `SearchAction` and `Organization` are all typically  associated with homepages, so this highlights the bias of the dataset and does not reflect the bulk of structured data implemented on the web.
 
-In contrast, despite the fact that reviews are not supposed to be associated with homepages the data indicates that AggregateRating is up 23.9% on mobile and 23.7% on desktop. 
+In contrast, despite the fact that reviews are not supposed to be associated with homepages the data indicates that `AggregateRating` is up 23.9% on mobile and 23.7% on desktop. 
 
-It’s also interesting to see the growth of the [VideoObject to annotate videos](https://developers.google.com/search/docs/data-types/video). Although [YouTube videos dominate video search results in Google](https://moz.com/blog/youtube-dominates-google-video-results-in-2020), the usage of VideoObject grew 30.11% on desktop and 27.7% on mobile
+It’s also interesting to see the growth of the [`VideoObject` to annotate videos](https://developers.google.com/search/docs/data-types/video). Although [YouTube videos dominate video search results in Google](https://moz.com/blog/youtube-dominates-google-video-results-in-2020), the usage of `VideoObject` grew 30.11% on desktop and 27.7% on mobile
 
 This growth is a general indication of increased adoption of structured data. 
 
 There’s also an indication of what Google gives visibility within search features increases the incidence rates of lesser used objects. 
 
-Google announced the [FAQPage](https://developers.google.com/search/docs/data-types/faqpage), [HowTo](https://developers.google.com/search/docs/data-types/how-to), and [QAPage](https://developers.google.com/search/docs/data-types/qapage) objects as visibility opportunities in 2019 and they sustained significant year over year growth: 
+Google announced the [`FAQPage`](https://developers.google.com/search/docs/data-types/faqpage), [`HowTo`](https://developers.google.com/search/docs/data-types/how-to), and [`QAPage`](https://developers.google.com/search/docs/data-types/qapage) objects as visibility opportunities in 2019 and they sustained significant year over year growth: 
 
-* FAQPage markup grew 3,261% on desktop and 3,000% on mobile. 
-* HowTo markup grew 605% on desktop and 623% on mobile. 
-* QAPage markup grew 166.7% on desktop and 192.1% on mobile. 
+* `FAQPage` markup grew 3,261% on desktop and 3,000% on mobile. 
+* `HowTo` markup grew 605% on desktop and 623% on mobile. 
+* `QAPage` markup grew 166.7% on desktop and 192.1% on mobile. 
 
 Note that this data might not be representative of their actual level of growth since these objects are usually placed on internal pages.
 
@@ -852,6 +852,7 @@ Additionally, it was also identified that there has been a slight improvement fr
 - **Canonical tag**: Last year it was identified that 48.34% of mobile homepages were using a canonical tag vs. 53.61% this year.
 - **Title element**: This year it was found that 98.75% of the desktop homepages are featuring one, while 98.7% of mobile home pages are also including it. Last year it was found that 97.1% of mobile pages were featuring a title tag.
 - **Meta Description**: This year, 68.62% of desktop homepages and 68.22% of mobile ones were found to be featuring a meta description, an improvement from last year when it was found that 64.02% of mobile home pages had one.
+- **Structured Data**: Despite the fact that reviews are not supposed to be associated with homepages the data indicates that `AggregateRating` is up 23.9% on mobile and 23.7% on desktop.
 - **Images’ `alt` attribute**: This year, 53.86% of desktop and 51.22% of mobile home pages featured image `alt` attributes. Although this might seem low, it is an improvement from last year when it was found that 46.71% of mobile pages used `alt` attributes on all of their images.
 - **HTTPS usage**: 77.44% of desktop pages and 73.22% of mobile pages have adopted HTTPS. This is up 10.38% from last year.
 
