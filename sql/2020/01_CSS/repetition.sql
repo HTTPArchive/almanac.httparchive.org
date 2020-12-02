@@ -23,8 +23,6 @@ try {
         return ret;
     }
 
-
-
   const ast = JSON.parse(css);
   return compute(ast);
 } catch (e) {
@@ -52,13 +50,11 @@ FROM (
     FROM
       `httparchive.almanac.parsed_css`
     WHERE
-      date = '2020-08-01' AND
-      # Limit the size of the CSS to avoid OOM crashes. This loses ~20% of stylesheets.
-      LENGTH(css) < 0.1 * 1024 * 1024)
+      date = '2020-08-01')
   GROUP BY
     client,
     page),
-  UNNEST([10, 25, 50, 75, 90]) AS percentile
+  UNNEST([10, 25, 50, 75, 90, 95, 100]) AS percentile
 GROUP BY
   percentile,
   client
