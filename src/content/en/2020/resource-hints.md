@@ -250,9 +250,13 @@ We saw only 19.67% of pages passing Lighthouse’s "[Preconnect to required orig
 
 Running Lighthouse’s "[Preload key requests](https://web.dev/uses-rel-preload/)" audit resulted in 84.6% of pages passing the test, which is an astonishing result. If you are looking to use `preload` for the first time, remember, fonts and critical scripts are a good place to start.
 
+{# TODO - revisit this sentence - Ref https://github.com/HTTPArchive/almanac.httparchive.org/pull/1587#discussion_r532291496 #}
+
 ### Native Lazy Loading
 
 Now let’s celebrate the first year of the [Native Lazy Loading](https://addyosmani.com/blog/lazy-loading/) API, which at the time of publishing already has over [72%](https://caniuse.com/loading-lazy-attr) browser support. This new API can be used to defer the load of below-the-fold iframes and images on the page until the user scrolls near them. This can reduce data usage, memory usage, and helps speed up above-the-fold content. Opting-in to lazy load is as simple as adding `loading=lazy`  on `<iframe>` or `<img>` elements.
+
+{# TODO - revisit this sentence - Ref https://github.com/HTTPArchive/almanac.httparchive.org/pull/1587#discussion_r533106799 #}
 
 {{ figure_markup(
   caption="Percentage of pages using native lazy loading set to “lazy”",
@@ -261,6 +265,8 @@ Now let’s celebrate the first year of the [Native Lazy Loading](https://addyos
   sheets_gid="2039808014",
   sql_file="native_lazy_loading_attrs.sql"
 ) }}
+
+{# TODO - revisit this figure - Ref https://github.com/HTTPArchive/almanac.httparchive.org/pull/1587#discussion_r532292106 #}
 
 Adoption is still in its early days, especially with the official thresholds earlier this year being too conservative, and only [recently](https://addyosmani.com/blog/better-image-lazy-loading-in-chrome/) aligning with developer expectations. With almost 72% of browsers supporting native image/source lazy loading, this is another area of opportunity especially for pages looking to improve data usage and performance on low-end devices. 
 
@@ -332,6 +338,8 @@ Let's dive into a couple of experimental hints. Very close to release we have Pr
 This new hint can be used either as an HTML tag or by changing the priority of fetch requests via the `importance` option, which takes the same values as the HTML attribute.
 
 With `preload` and `prefetch`, the priority is set by the browser depending on the type of resource. By using Priority Hints we can force the browser to change the default option.
+
+{# TODO - simplify all these figures #}
 
 {{ figure_markup(
   caption="The rate of priority hint adoption on mobile",
