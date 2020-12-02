@@ -257,11 +257,11 @@ Learn more about the usage of Headings in the [Markup chapter](./markup#headings
 #### Structured Data
 
 
-Over the course of the past decade, search engines, particularly Google, have continued to push towards becoming the presentation layer of the web. These advancements are partially driven by their improved ability to extract information from unstructured content (e.g., [passage indexing](https://blog.google/products/search/search-on/)) and the adoption of semantic markup in the form of structured data. Content creators and developers have been encouraged to implement structured data to give more visibility to elements represented in their content within components of search results. 
+Over the course of the past decade, search engines, particularly Google, have continued to push towards becoming the presentation layer of the web. These advancements are partially driven by their improved ability to extract information from unstructured content (e.g., [passage indexing](https://blog.google/products/search/search-on/)) and the adoption of semantic markup in the form of structured data. Content creators and developers have been encouraged to implement structured data to give more visibility to their content within components of search results. 
 
 In a move from “strings to things” , search engines have agreed upon a broad vocabulary of objects in support of marking up a variety of people, places, and things within web content. However, only a subset of that vocabulary triggers inclusion within search results components. As search engines evolve to reflect more of these elements in search results, the incidence rates of the different  vocabulary changes across the web.
 
-As part of our examination, we took a look at the incidence rates of different types of structured markup. The available formats include [RDFa](https://www.w3.org/TR/rdfa-primer/) and [Schema.org](https://schema.org/) which come in both the microformats and JSON-LD flavors. Google has recently [dropped the support for data-vocabulary](https://developers.google.com/search/blog/2020/01/data-vocabulary), a vocabulary that was primarily used to implement breadcrumbs. 
+As part of our examination, we took a look at the incidence rates of different types of structured markup. The available formats include [RDFa](https://www.w3.org/TR/rdfa-primer/) and [Schema.org](https://schema.org/) which come in both the microformats and [JSON-LD](https://www.w3.org/TR/json-ld11/) flavors. Google has recently [dropped the support for data-vocabulary](https://developers.google.com/search/blog/2020/01/data-vocabulary), a vocabulary that was primarily used to implement breadcrumbs. 
 
 JSON-LD is generally considered the more portable and easy to manage implementation and has become the preferred format. As a result, we see that JSON-LD appears on 29.78% of mobile pages and 30.60% of desktop pages.
 
@@ -289,7 +289,7 @@ It should be noted that WebSite, SearchAction and Organization are all typically
 
 In contrast, despite the fact that reviews are not supposed to be associated with homepages the data indicates that AggregateRating is up 23.9% on mobile and 23.7% on desktop. 
 
-It’s also interesting to see the growth of the [VideoObject to annotate videos](https://developers.google.com/search/docs/data-types/video). Although [Youtube videos dominate video search results in Google](https://moz.com/blog/youtube-dominates-google-video-results-in-2020), the usage of VideoObject grew 30.11% on desktop and 27.7% on mobile
+It’s also interesting to see the growth of the [VideoObject to annotate videos](https://developers.google.com/search/docs/data-types/video). Although [YouTube videos dominate video search results in Google](https://moz.com/blog/youtube-dominates-google-video-results-in-2020), the usage of VideoObject grew 30.11% on desktop and 27.7% on mobile
 
 This growth is a general indication of increased adoption of structured data. 
 
