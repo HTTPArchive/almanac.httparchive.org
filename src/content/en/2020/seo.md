@@ -820,7 +820,7 @@ When there’s an AMP version available for a page, it will be shown by Google i
 
 It is also important to note that while AMP usage is not a ranking factor for Google (or any other search engine), web speed is a ranking factor.
 
-Additionally, AMP is at the moment a requirement to be featured in Google’s Top Stories carousel in mobile search results–which is an important feature for news related publications, although this is expected to change sometime next year to be replaced by the new page experience metric, that will become a ranking factor for Top Stories, [which was announced by Google earlier this year](https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html).
+Additionally, AMP is at the moment a requirement to be featured in Google’s Top Stories carousel in mobile search results–which is an important feature for news related publications. However, this will change in May next year, when non-AMP content will become eligible as long as it meets the [Google News content policies](https://support.google.com/news/publisher-center/answer/6204050) and provides a great [page experience](https://developers.google.com/search/docs/guides/page-experience) as [announced by Google in November this year](https://developers.google.com/search/blog/2020/11/timing-for-page-experience).
 
 When checking the usage of AMP as an alternate version of a non-AMP based page, it was found that 0.69% of mobile web home pages and 0.81% of desktop ones were including an "amphtml" tag pointing to an AMP version. Although the adoption is still very low, this is a slight improvement from [last year's AMP related Web Almanac data findings](../2019/seo#amp), in which only 0.62% of mobile home pages contained a link to an AMP version.
 
