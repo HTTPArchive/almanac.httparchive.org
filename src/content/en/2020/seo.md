@@ -254,6 +254,58 @@ In reviewing the incidence rate of non-empty heading elements, we understand tha
 
 Learn more about the usage of Headings in the [Markup chapter](./markup#headings), including the misuse of h7 and h8 elements that have never been part of HTML.
 
+#### Structured Data
+
+
+Over the course of the past decade, search engines, particularly Google, have continued to push towards becoming the presentation layer of the web. These advancements are partially driven by their improved ability to extract information from unstructured content (e.g., [passage indexing](https://blog.google/products/search/search-on/)) and the adoption of semantic markup in the form of structured data. Content creators and developers have been encouraged to implement structured data to give more visibility to elements represented in their content within components of search results. 
+
+In a move from “strings to things” , search engines have agreed upon a broad vocabulary of objects in support of marking up a variety of people, places, and things within web content. However, only a subset of that vocabulary triggers inclusion within search results components. As search engines evolve to reflect more of these elements in search results, the incidence rates of the different  vocabulary changes across the web.
+
+As part of our examination, we took a look at the incidence rates of different types of structured markup. The available formats include [RDFa](https://www.w3.org/TR/rdfa-primer/) and [Schema.org](https://schema.org/) which come in both the microformats and JSON-LD flavors. Google has recently [dropped the support for data-vocabulary](https://developers.google.com/search/blog/2020/01/data-vocabulary), a vocabulary that was primarily used to implement breadcrumbs. 
+
+JSON-LD is generally considered the more portable and easy to manage implementation and has become the preferred format. As a result, we see that JSON-LD appears on 29.78% of mobile pages and 30.60% of desktop pages.
+
+We find that the disparity between mobile and desktop continues with this type of data. Microdata appeared on 19.55% of mobile pages and 17.94% of desktop pages. RDFa appeared on 1.42% of mobile pages and 1.63% of mobile pages.
+
+##### Rendered vs Non-rendered Structured Data
+
+Additionally, we found that 38.61% of desktop pages and 39.26% of mobile pages feature JSON-LD or microformat structured data in the raw HTML, while 40.09% of desktop pages and 40.97% of mobile pages feature structured data in the rendered DOM. 
+
+When reviewing this in more detail, we found that 1.49% of desktop pages and 1.77% of mobile pages only featured this type of structured data in the rendered DOM due to JavaScript transformations. 
+
+Finally, we found that 4.46% of desktop pages and 4.62% of mobile pages feature structured data that appears in the raw HTML and is subsequently changed by JavaScript transformations in the rendered DOM.
+
+##### Most Active Structured Data Objects
+
+[As seen last year](https://almanac.httparchive.org/en/2019/seo#structured-data), the most prevalent structured data objects remain to be WebSite, SearchAction, WebPage, Organization and ImageObject, and their usage has grown further: 
+
+* Website has grown 9.37% on desktop and 10.5% on mobile 
+* SearchAction has grown 7.64% on both desktop and mobile
+* WebPage has grown on desktop 6.83% and 7.09% on mobile
+* Organization has grown on desktop 4.75% and 4.98% on  mobile 
+* ImageObject has grown 6.39% on desktop and 6.13% on mobile 
+
+It should be noted that WebSite, SearchAction and Organization are all typically  associated with homepages, so this highlights the bias of the dataset and does not reflect the bulk of structured data implemented on the web.
+
+In contrast, despite the fact that reviews are not supposed to be associated with homepages the data indicates that AggregateRating is up 23.9% on mobile and 23.7% on desktop. 
+
+It’s also interesting to see the growth of the [VideoObject to annotate videos](https://developers.google.com/search/docs/data-types/video). Although [Youtube videos dominate video search results in Google](https://moz.com/blog/youtube-dominates-google-video-results-in-2020), the usage of VideoObject grew 30.11% on desktop and 27.7% on mobile
+
+This growth is a general indication of increased adoption of structured data. 
+
+There’s also an indication of what Google gives visibility within search features increases the incidence rates of lesser used objects. 
+
+Google announced the [FAQPage](https://developers.google.com/search/docs/data-types/faqpage), [HowTo](https://developers.google.com/search/docs/data-types/how-to), and [QAPage](https://developers.google.com/search/docs/data-types/qapage) objects as visibility opportunities in 2019 and they sustained significant year over year growth: 
+
+* FAQPage markup grew 3,261% on desktop and 3,000% on mobile. 
+* HowTo markup grew 605% on desktop and 623% on mobile. 
+* QAPage markup grew 166.7% on desktop and 192.1% on mobile. 
+
+Note that this data might not be representative of their actual level of growth since these objects are usually placed on internal pages.
+
+The adoption of structured data is a boon for the web as extracting data is valuable to a wealth of use cases. We expect this to continue to grow as search engines expand their usage and as it begins to power applications beyond search engines.
+
+
 #### Metadata
 
 Metadata is an opportunity to describe and explain the value of the content on the other side of the click. While page titles are believed to be weighed directly in search rankings, meta descriptions are not. Both elements can encourage or discourage a user to click or not click based on their contents.
