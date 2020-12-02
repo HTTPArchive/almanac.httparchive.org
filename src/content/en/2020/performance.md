@@ -46,6 +46,8 @@ Additionally, **the score is now calculated using different reference points for
   caption="Difference in Lighthouse Performance Score between versions 5 and 6.",
   description="Column chart showcasing the change in Performance Score between versions 5 and 6. The highest percentage of websites (4%) observed no changes to the score, and the number of sites with score decreases outweighs score improvements.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=786955541&format=interactive"
+  sheets_gid="2077755325"
+  sql_file="lh6_vs_lh5_performance_score_02.sql"
   )
 }}
 
@@ -56,6 +58,8 @@ Above, **we observe that 4% of websites recorded no Performance Score change, bu
   caption="Lighthouse Performance Score distribution for Lighthouse 5 and 6.",
   description="Scatter chart showcasing the percent of sites receiving 0-100 Performance Score in Lighthouse 5 and 6. With Lighthouse 6 algorithm, the percentage of sites with scores between 0-25 rises, and the amount of sites with scores between 50 and 100 decreases.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1258119108&format=interactive"
+  sheets_gid="2077755325"
+  sql_file="lh6_vs_lh5_performance_score_distribution.sql"
   )
 }}
 
@@ -74,6 +78,8 @@ Largest Contentful Paint (LCP) is a landmark timing-based metric that reports th
   caption="Aggregate LCP performance split by device type.",
   description="Bar chart showing that 53% of desktop and 43% of mobile website experiences are categorized as good.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=696629857&format=interactive"
+  sheets_gid="2077755325"
+  sql_file="web_vitals_by_device.sql"
   )
 }}
 
@@ -86,6 +92,8 @@ In the chart above, we can observe that between 43% and 53% of websites have goo
   caption="Aggregate LCP performance split by country.",
   description="Bar chart showing that the highest percentages of good LCP performance are distributed between European and Asian countries. The Republic of Korea leads with 76% good readings, while India is last with 16% of good readings.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1936626175&format=interactive"
+  sheets_gid="2077755325"
+  sql_file="web_vitals_by_country.sql"
   )
 }}
 
@@ -100,6 +108,8 @@ India remains the last one in the set with only 16% of good experiences. While t
   caption="Aggregate LCP performance split by connection type.",
   description="Bar chart showing that 48% of websites have good LCP on 4G. The amount of good-rated website decreases to 8% on 3G, 1% on 2G, 0% on slow 2G and 18% on offline connections.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=97874305&format=interactive"
+  sheets_gid="2077755325"
+  sql_file="web_vitals_by_ect.sql"
   )
 }}
 
@@ -120,6 +130,8 @@ In that way, CLS is a different, new type of a UX holistic metric in comparison 
   caption="Aggregate CLS performance split by device type.",
   description="Bar chart showcasing that more than half of websites have good CLS with 54% on desktop and 60% on mobile. In both scenarios, only 21% websites are graded as having poor CLS.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1672696367&format=interactive"
+  sheets_gid="2077755325"
+  sql_file="web_vitals_by_device.sql"
   )
 }}
 
@@ -132,6 +144,8 @@ According to CrUX data, both in cases of desktop and mobile devices, **more than
   caption="Aggregate CLS performance split by country.",
   description="Bar chart showcasing that the top 28 countries have at least 50% of websites reporting good CLS. Moderate (needs improvement) readings are steady at 11-15% across the board.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1861585123&format=interactive"
+  sheets_gid="2077755325"
+  sql_file="web_vitals_by_country.sql"
   )
 }}
 
@@ -146,6 +160,8 @@ Visual stability is less affected by geography and latency to other metrics, lik
   caption="Aggregate CLS performance split by connection type.",
   description="Bar chart showing an even distribution of good, needs improvement and poor CLS measurements. Offline and 4G lead with 70% and 64% of good experiences, respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=151288279&format=interactive"
+  sheets_gid="2077755325"
+  sql_file="web_vitals_by_ect.sql"
   )
 }}
 
@@ -164,6 +180,8 @@ First Input Delay (FID) measures the time between first user interaction and whe
   caption="Aggregate FID performance split by device type.",
   description="Bar chart showcasing high percentages of good FID performance on desktop (100%) and mobile (80%).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=2090682651&format=interactive"
+  sheets_gid="2077755325"
+  sql_file="web_vitals_by_device.sql"
   )
 }}
 
@@ -178,6 +196,8 @@ On mobile, **80% of sites are graded as good**. A likely explanation is the redu
   caption="Aggregate FID performance split by country.",
   description="Bar chart showcasing excellent FID performance on per-country basis. The top 28 countries report between 79% to 97% good FID experiences with nearly to none poor experiences.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1107653062&format=interactive"
+  sheets_gid="2077755325"
+  sql_file="web_vitals_by_country.sql"
   )
 }}
 
@@ -192,6 +212,8 @@ Again, it isn’t easy to speculate why that might be. Assuming FID correlates t
   caption="Aggregate FID performance split by connection type.",
   description="Bar chart showcasing a consistently high distribution of good FID performance across different types of networks. Offline, 3G and 4G lead with above 80% of good-rated website experiences.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=808962538&format=interactive"
+  sheets_gid="2077755325"
+  sql_file="web_vitals_by_ect.sql"
   )
 }}
 
@@ -208,6 +230,8 @@ First Contentful Paint (FCP) measures the first time at which the browser render
   caption="Distribution of websites labeled as having fast, average and slow FCP performance on desktop.",
   description="Distribution of websites labeled as having fast, average and slow FCP performance on desktop. The distribution of fast websites appears linear with a bulge in the middle. There are more fast and slow FCP experiences compared to 2019, while the amount of average experiences shrinks due to changes in FCP categorization.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1953305743&format=interactive"
+  sheets_gid="2077755325"
+  sql_file="web_vitals_distribution_by_device.sql"
   )
 }}
 
@@ -216,6 +240,8 @@ First Contentful Paint (FCP) measures the first time at which the browser render
   caption="Distribution of websites labeled as having fast, average and slow FCP performance on mobile.",
   description="Distribution of websites labeled as having fast, average and slow FCP performance on desktop. The distribution of fast websites appears linear without a bulge observed on the desktop chart. There are more fast and slow FCP experiences compared to 2019, while the amount of average experiences shrinks due to changes in FCP categorization.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=38297781&format=interactive"
+  sheets_gid="2077755325"
+  sql_file="web_vitals_distribution_by_device.sql"
   )
 }}
 
@@ -226,6 +252,8 @@ In the charts above, the FCP distributions are broken down by desktop and mobile
   caption="A comparison of distribution of websites labeled as having good, needs improvement and poor FCP mobile performance between 2019 and 2020.",
   description="Bar chart showing how the distribution of good, needs improvement and poor mobile FCP has changed between 2019 and 2020. In 2020, 75% of websites have a sub-par FCP.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=2037503700&format=interactive"
+  sheets_gid="2077755325"
+  sql_file="web_vitals_by_device.sql"
   )
 }}
 
@@ -240,6 +268,8 @@ It’s challenging to deduce why FCP isn’t improving, as numerous factors can 
   caption="Aggregate FCP performance split by country.",
   description="Bar chart showing that only 7 out of 28 countries have more than 40% websites with good FCP performance. The amount of good and poor results rises in comparison to 2019 due to changes in value ranges for FCP.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=78259488&format=interactive"
+  sheets_gid="2077755325"
+  sql_file="web_vitals_by_country.sql"
   )
 }}
 
@@ -258,6 +288,8 @@ Again, hypothesizing on reasons for the specific rankings is difficult, especial
   caption="Aggregate FCP performance split by connection type.",
   description="Bar chart showcasing that only 31% of websites report good FCP on 4G. Offline that number decreases to 10%, while remaining connection types nearly exclusively provide poor FCP experiences.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1949864731&format=interactive"
+  sheets_gid="2077755325"
+  sql_file="web_vitals_by_ect.sql"
   )
 }}
 
@@ -280,6 +312,8 @@ Time to First Byte (TTFB) is the time taken from the initial HTML request being 
   caption="Aggregate TTFB performance split by device type.",
   description="Bar chart showcasing that 76% websites have poor TTFB on desktop and 83% on mobile. The amount of websites with good TTFB doesn’t exceed 24%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1981576071&format=interactive"
+  sheets_gid="2077755325"
+  sql_file="web_vitals_by_device.sql"
   )
 }}
 
@@ -292,6 +326,8 @@ Time to First Byte (TTFB) is the time taken from the initial HTML request being 
   caption="Aggregate TTFB performance split by country.",
   description="Bar chart showcasing that TTFB performance is consistently sub-par, with only 4 out of 28 countries having more than 30% websites with good TTFB. There is a significant amount of websites categorised as needs improvement (always above 40%) with the fraction of poor experiences rising as the ranking position is lower.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1981576071&format=interactive"
+  sheets_gid="2077755325"
+  sql_file="web_vitals_by_country.sql"
   )
 }}
 
@@ -304,6 +340,8 @@ Likening this years’ TTFB geo readings to [2019 results](https://almanac.httpa
   caption="Aggregate TTFB performance split by connection type.",
   description="Bar chart showing that TTFB is heavily affected by connection type with only 21% and 22% of good experiences on 4G and offline, respectively. Other connection types provide nearly none (with the exception of 1% on 3G) good TTFB readings.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=810992122&format=interactive"
+  sheets_gid="2077755325"
+  sql_file="web_vitals_by_ect.sql"
   )
 }}
 
@@ -322,6 +360,8 @@ There are dozens of different user-centric metrics that can be used to assess we
   caption="Performance Observer usage by device type.",
   description="Bar chart showing that the adoption of PErformance Observer API is low, at 6.6% on desktop and 7% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=632678090&format=interactive"
+  sheets_gid="2077755325"
+  sql_file="performance_observer.sql"
   )
 }}
 
