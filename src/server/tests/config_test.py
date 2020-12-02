@@ -11,10 +11,8 @@ def test_get_config_year():
 
 def test_static_avatar():
     # For this test we use an existing contributor with no avatar as they should be assigned one on initial load
-    for contributor in get_config('2020'):
-        if contributor == 'michelleoconnor':
-            static_url = contributor['avatar_url']
-            assert static_url is not None and static_url.startswith('/static')
+    static_url = get_config('2020').get('contributors').get('michelleoconnor').get('avatar_url')
+    assert static_url is not None and static_url.startswith('/static/images/avatars/')
 
 
 def test_get_config_for_all_supported_years():
