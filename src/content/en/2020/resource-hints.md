@@ -204,7 +204,7 @@ When it's time to choose a resource for use with different screen sizes, reach f
 <link rel="preload" href="mobile.css" as="style" media=”~~~”>
 ```
 
-The most popular media value used with `preload` is a combination of `only screen and (max-width: 768px)` and `screen and (min-width: 767px)`. Seeing over 2,100 different combinations of media queries in the 2020 dataset encourages us to consider how wide the variance is between concept and implementation of responsive design from site to site.
+Seeing over 2,100 different combinations of media queries in the 2020 dataset encourages us to consider how wide the variance is between concept and implementation of responsive design from site to site. The ever popular `767px/768px` breakpoints (as popularised by Bootstrap amongst others) can be seen in the data.
 
 ### Best practices
 
