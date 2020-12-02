@@ -2,22 +2,22 @@
 part_number: II
 chapter_number: 9
 title: Performance
-description: Performance chapter of the 2020 Web Almanac covering First Contentful Paint (FCP), Time to First Byte (TTFB), and First Input Delay (FID).
+description: Performance chapter of the 2020 Web Almanac covering Core Web Vitals, Lighthouse Performance Score, First Contentful Paint (FCP) and Time to First Byte (TTFB).
 authors: [thefoxis]
-reviewers: [dimension85, borisschapira, estelle, zeman, rviscomi, obto, noamr, ashrith-kulai, Zizzamia]
+reviewers: [borisschapira, rviscomi, obto, noamr, Zizzamia]
 analysts: [max-ostapenko, dooman87]
 translators: []
-#thefoxis_bio: TODO
+thefoxis_bio: Karolina is a Product Design Lead at <a href="https://calibreapp.com/">Calibre</a>, working on creating the most comprehensive speed monitoring platform. She curates <a href="https://perf.email/">Performance Newsletter</a>, your source of performance news and resources. Karolina also <a href="https://calibreapp.com/blog/category/web-platform">frequently writes</a> about how performance affects user experience.
 discuss: 2045
 results: https://docs.google.com/spreadsheets/d/164FVuCQ7gPhTWUXJl1av5_hBxjncNi0TK8RnNseNPJQ/
 queries: 09_Performance
-#featured_quote: TODO
-#featured_stat_1: TODO
-#featured_stat_label_1: TODO
-#featured_stat_2: TODO
-#featured_stat_label_2: TODO
-#featured_stat_3: TODO
-#featured_stat_label_3: TODO
+featured_quote: Poor performance doesn’t only cause frustration or negatively affects conversion—it creates real-life barriers to entry. This year’s global pandemic made those existing barriers even more apparent.
+featured_stat_1: 25%
+featured_stat_label_1: Sites with good FCP on mobile
+featured_stat_2: 18%
+featured_stat_label_2: Sites with good TTFB on mobile
+featured_stat_3: 4%
+featured_stat_label_3: Sites with unchanged Performance Score
 unedited: true
 ---
 
