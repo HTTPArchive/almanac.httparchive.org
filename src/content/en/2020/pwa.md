@@ -23,13 +23,6 @@ queries: 14_PWA
 unedited: true
 ---
 
-PWA
-
-Web Almanac 2020
-
-![](https://lh6.googleusercontent.com/SGZ4UHI5jM7J5kLzetmvz9_R9bNQVvpC5qhZYwgpHPu3zuyxo3topCbo3ZINjO-l7_n4aWMEiPEy9XjrfpO3UVX25qcJ22SHI0L92jlaYtSQPfnBVLMjHsYtJ8Fa-goTLccXVgFk)
-
-
 # Introduction
 
 In 1990 we had the first ever browser called the “WorldWideWeb” and ever since the web and the browser has been evolving and for web to progress itself into a native behaviour is a big win special in this ear of mobile domination, URLs have provided an ubiquitous way to distribute information and nothing better than the browser to handle them and hence a technology which provides such capabilities to the browser becomes a game changer and Progressive Web Apps provide such advantages for the web to win yet again.
