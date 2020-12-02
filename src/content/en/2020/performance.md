@@ -43,7 +43,7 @@ The new scoring algorithm is prioritizing the new generation of performance metr
 Additionally, **the score is now calculated using different reference points for desktop and mobile**. What this means in practice is that it will be less forgiving on desktop (expecting fast websites) and more relaxed on mobile (since benchmark performance on mobile is less quick than desktop). You can compare your Lighthouse 5 and 6 score difference in [the Lighthouse Score calculator](https://googlechrome.github.io/lighthouse/scorecalc/). So, how did the scores really change?
 
 {{ figure_markup(
-  image="TODO",
+  image="performance-change-in-lighthouse-score.png",
   caption="TODO",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=786955541&format=interactive"
@@ -53,7 +53,7 @@ Additionally, **the score is now calculated using different reference points for
 Above, **we observe that 4% of websites recorded no Performance Score change, but the number of sites with negative changes outweighs the ones with score improvements**. The Performance Score grades have gotten worse (with the most prominent decrease curve in the 10-25 points area), which is portrayed even more directly below.
 
 {{ figure_markup(
-  image="TODO",
+  image="performance-lighthouse-score-distributions-yoy.png",
   caption="TODO",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1258119108&format=interactive"
@@ -71,7 +71,7 @@ Largest Contentful Paint (LCP) is a landmark timing-based metric that reports th
 #### LCP by device
 
 {{ figure_markup(
-  image="TODO",
+  image="performance-lcp-by-device.png",
   caption="TODO",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=696629857&format=interactive"
@@ -83,7 +83,7 @@ In the chart above, we can observe that between 43% and 53% of websites have goo
 #### LCP by geographic location
 
 {{ figure_markup(
-  image="TODO",
+  image="performance-lcp-by-geo.png",
   caption="TODO",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1936626175&format=interactive"
@@ -97,7 +97,7 @@ India remains the last one in the set with only 16% of good experiences. While t
 #### LCP by connection type
 
 {{ figure_markup(
-  image="TODO",
+  image="performance-lcp-by-connection-type.png",
   caption="TODO",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=97874305&format=interactive"
@@ -117,7 +117,7 @@ In that way, CLS is a different, new type of a UX holistic metric in comparison 
 #### CLS by device
 
 {{ figure_markup(
-  image="TODO",
+  image="performance-cls-by-geo.png",
   caption="TODO",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1672696367&format=interactive"
@@ -129,7 +129,7 @@ According to CrUX data, both in cases of desktop and mobile devices, **more than
 #### CLS by geographic location
 
 {{ figure_markup(
-  image="TODO",
+  image="performance-cls-by-geo.png",
   caption="TODO",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1861585123&format=interactive"
@@ -143,7 +143,7 @@ Visual stability is less affected by geography and latency to other metrics, lik
 #### CLS by connection type
 
 {{ figure_markup(
-  image="TODO",
+  image="performance-cls-by-connection-type.png",
   caption="TODO",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=151288279&format=interactive"
@@ -161,7 +161,7 @@ First Input Delay (FID) measures the time between first user interaction and whe
 #### FID by device
 
 {{ figure_markup(
-  image="TODO",
+  image="performance-fid-by-device.png",
   caption="TODO",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=2090682651&format=interactive"
@@ -175,7 +175,7 @@ On mobile, **80% of sites are graded as good**. A likely explanation is the redu
 #### FID by geographic location
 
 {{ figure_markup(
-  image="TODO",
+  image="performance-fid-by-geo.png",
   caption="TODO",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1107653062&format=interactive"
@@ -189,7 +189,7 @@ Again, it isn’t easy to speculate why that might be. Assuming FID correlates t
 #### FID by connection type
 
 {{ figure_markup(
-  image="TODO",
+  image="performance-fid-by-connection-type.png",
   caption="TODO",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=808962538&format=interactive"
@@ -205,7 +205,7 @@ First Contentful Paint (FCP) measures the first time at which the browser render
 #### FCP by device
 
 {{ figure_markup(
-  image="TODO",
+  image="performance-fcp-desktop-distribution.png",
   caption="TODO",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1953305743&format=interactive"
@@ -213,7 +213,7 @@ First Contentful Paint (FCP) measures the first time at which the browser render
 }}
 
 {{ figure_markup(
-  image="TODO",
+  image="performance-fcp-mobile-distribution.png",
   caption="TODO",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=38297781&format=interactive"
@@ -223,7 +223,7 @@ First Contentful Paint (FCP) measures the first time at which the browser render
 In the charts above, the FCP distributions are broken down by desktop and mobile. [Comparing to last year](https://almanac.httparchive.org/en/2019/performance#fcp-by-device), there are noticeably less average FCP readings, while the percentage of fast and slow user experiences has risen no matter the device type. We can still observe the same trend, where mobile users will experience slower FCP more frequently than desktop users. Overall, users are more likely to have a good or poor experience, rather than a mediocre experience.
 
 {{ figure_markup(
-  image="TODO",
+  image="performance-fcp-mobile-year-on-year.png",
   caption="TODO",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=2037503700&format=interactive"
@@ -237,7 +237,7 @@ It’s challenging to deduce why FCP isn’t improving, as numerous factors can 
 #### FCP by geographic location
 
 {{ figure_markup(
-  image="TODO",
+  image="performance-fcp-by-geo.png",
   caption="TODO",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=78259488&format=interactive"
@@ -255,7 +255,7 @@ Again, hypothesizing on reasons for the specific rankings is difficult, especial
 #### FCP by connection type
 
 {{ figure_markup(
-  image="TODO",
+  image="performance-fcp-by-connection-type.png",
   caption="TODO",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1949864731&format=interactive"
@@ -277,7 +277,7 @@ Time to First Byte (TTFB) is the time taken from the initial HTML request being 
 #### TTFB by device
 
 {{ figure_markup(
-  image="TODO",
+  image="performance-ttfb-by-device.png",
   caption="TODO",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1981576071&format=interactive"
@@ -289,7 +289,7 @@ Time to First Byte (TTFB) is the time taken from the initial HTML request being 
 #### TTFB by geographic location
 
 {{ figure_markup(
-  image="TODO",
+  image="performance-ttfb-by-geo.png",
   caption="TODO",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1981576071&format=interactive"
@@ -301,7 +301,7 @@ Likening this years’ TTFB geo readings to [2019 results](https://almanac.httpa
 #### TTFB by connection type
 
 {{ figure_markup(
-  image="TODO",
+  image="performance-ttfb-by-connection-type.png",
   caption="TODO",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=810992122&format=interactive"
@@ -319,7 +319,7 @@ What’s surprising is the relatively the same amount of good TTFB results betwe
 There are dozens of different user-centric metrics that can be used to assess websites and applications. However, sometimes the predefined metrics don’t quite fit our specific scenarios and needs. The PerformanceObserver API allows us to obtain custom metric data obtained with User Timing API, Long Task API, Event Timing API and [a handful of other low-level APIs](https://web.dev/custom-metrics/). For example, with their help, we could record the timing transitions between pages or quantify server-side-rendered (SSR) application hydration.
 
 {{ figure_markup(
-  image="TODO",
+  image="performance-performance-observer-usage.png",
   caption="TODO",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=632678090&format=interactive"
