@@ -5,7 +5,7 @@ chapter_number: 20
 title: Caching
 description: Caching chapter of the 2020 Web Almanac covering cache-control, expires, TTLs, validitaty, vary, set-cookies, AppCache, Service Workers and opportunities.
 authors: [roryhewitt]
-reviewers: [csswizardry, jzyang, jaisanth, Soham-S-Sarkar]
+reviewers: [csswizardry, jzyang, jaisanth, Soham-S-Sarkar, raghuramakrishnan71]
 analysts: [raghuramakrishnan71]
 translators: []
 #roryhewitt_bio: TODO
@@ -58,8 +58,8 @@ In this chapter, we will primarily be discussing caching within web browsers (1-
 
 The key to understanding how caching (and the web) works is to remember that it all consists of transactions between a requesting entity (e.g. a browser) and a responding entity (e.g. a server). Each transaction consists of two parts: 
 
-* The request from the requesting entity (*"I want object X"*), and 
-* The response from the responding entity (*"Here is object X"*). 
+* The request from the requesting entity ("*I want object X*"), and 
+* The response from the responding entity ("*Here is object X*"). 
 
 When we talk about caching, it refers to the object (HTML page, image, etc.) cached by the requesting entity.
 
@@ -209,13 +209,47 @@ The above figure illustrates the 11 `Cache-Control` directives in use on mobile 
 
 As we head out to the long tail, there are a small percentage of 'invalid' directives that can be found; these are ignored by browsers, and just end up wasting header bytes. Broadly they fall into two categories:
 
-* Misspelled directives such as `nocache` and `s-max-age` and invalid directive syntax, such as using : instead of = or using _ instead of -
-* Non-existent directives such as `max-stale`, `proxy-public`, `surrogate-control`
+* Misspelled directives such as `nocache` and `s-max-age` and invalid directive syntax, such as using : instead of = or using _ instead of -.
+* Non-existent directives such as `max-stale`, `proxy-public`, `surrogate-control`.
 
-The most interesting standout in the list of invalid directives is the use of `no-cache=”set-cookie”` (even at only 0.2% of all `Cache-Control` header values, it still makes up more than all the other invalid directives combined). In some early discussions on the `Cache-Control` header, this syntax was raised as a possible way to ensure that any `Set-Cookie` response headers (which might be user-specific) would not be cached with the object itself by any intermediate proxies such as CDNs. However, this syntax was not included in the final RFC; nearly equivalent functionality can be implemented using the `private` directive, and the `no-cache` directive does not allow a value.
+The most interesting standout in the list of invalid directives is the use of `no-cache="set-cookie"` (even at only 0.2% of all `Cache-Control` header values, it still makes up more than all the other invalid directives combined). In some early discussions on the `Cache-Control` header, this syntax was raised as a possible way to ensure that any `Set-Cookie` response headers (which might be user-specific) would not be cached with the object itself by any intermediate proxies such as CDNs. However, this syntax was not included in the final RFC; nearly equivalent functionality can be implemented using the `private` directive, and the `no-cache` directive does not allow a value.
+
+## Cache-Control: no-store, no-cache and max-age=0
+
+When a response absolutely must not be cached, the `Cache-Control no-store` directive should be used; if this directive is not specified, then the response *is considered cacheable and may be cached*. Note that if `no-store` is specified, it takes precedence over other directive - this makes sense, since serious privacy and security issues could occur if a resource is cached which should not be.
+
+We can see a few common errors that are made when attempting to configure a response to be non-cacheable:
+
+* Specifying `Cache-Control: no-cache` may sound like a directive to not cache the resource. However, as noted above, the `no-cache` directive does allow the resource to be cached - it simply informs the browser to revalidate the resource prior to use and is not the same as stopping the resource from being cached at all.
+* Setting `Cache-Control: max-age=0` sets the TTL to 0 seconds, but again, that is not the same as being `non-cacheable`. When `max-age=0` is specified, the resource is cached, but is marked as stale, resulting in the browser having to immediately revalidate its freshness.
+
+Functionally, `no-cache` and `max-age=0` are similar, since they both require revalidation of a cached resource. The no-cache directive can also be used alongside a `max-age` directive that is greater than 0 - this results in the object being cached for the specified TTL, but being revalidated prior to every use.
+
+### Statistics
+
+When looking at the above three discussed directives, 2.3% of responses include the combination of all three `no-store`, `no-cache` and `max-age=0`	directives, 6.6% of responses include both `no-store` and `no-cache`, and a negligible number of responses (< 1%) include `no-store` alone.
+
+As noted above, where `no-store` is specified with either/both of `no-cache` and `max-age=0`, the no-store directive takes precedence, and the other directives are ignored. Therefore, if you don’t want content to be cached anywhere, simply specifying `Cache-Control: no-store` is sufficient, and is both simple and uses the minimum number of header bytes.
+
+The `max-age=0` directive is present on less than 2% of responses where `no-store` is not specified. In such cases, the resource will be cached in the browser but will require revalidation as it is immediately marked as stale.
+
+## Conditional requests and Revalidation
+
+There are often cases where a browser has previously requested an object and already has it in its cache but the cache entry has already exceeded its TTL (and is therefore marked as stale) or where the object is defined as one that must be revalidated prior to use.
+
+In these cases, the browser can make a conditional request to the server - effectively saying "*I have object X in my cache - can I use it, or do you have a more recent version I should use instead?*". The server can respond in one of two ways:
 
 
+* "*Yes, the version of object X you have in cache is fine to use*" - in this case the server response consists of a 304 Not Modified status code and response headers, but no response body 
+* "*No, here is a more recent version of object X - use this instead*" - in this case the server response consists of a 200 OK status code, response headers, and a new response body (the actual new version of object X)
 
+In either case, the server can optionally include updated caching response headers, possibly extending the TTL of the object so the browser can use the object for a further period of time without needing to make more conditional requests.
+
+The above is known as *revalidation* and if implemented correctly can significantly improve perceived performance - since a `304 Not Modified` response consists only of headers, it is much smaller than a `200 OK` response, resulting in reduced bandwidth and a quicker response.
+
+So how does the server identify a conditional request from a regular request?
+
+It actually all comes down to the initial request for the object. When a browser requests an object which it does not already have in its cache, it simply makes a GET request, like this (some headers removed for clarity):
 
 
 
