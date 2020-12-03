@@ -96,7 +96,7 @@ Storage Manager APIは2016年からChrome、2017年からFirefox、そして新�
 {{ figure_markup(
   image="storage_manager_api_persist.png",
   alt="StorageManager APIのpersistメソッドの使用ページ数。",
-  caption='<span lang="en">StorageManager API</span>の<span lang="en>persist</span>メソッドの使用ページ数。',
+  caption='<span lang="en">StorageManager API</span>の<span lang="en">persist</span>メソッドの使用ページ数。',
   description='HTTPArchiveで監視しているページ数をもとに、<span lang="en">StorageManager API</span>の<span lang="en">persist</span>メソッドの使用状況をグラフ化したものです。モバイルデバイスとデスクトップデバイスでの使用状況を比較しています。デスクトップページでは利用状況はほぼ安定していますが、モバイル端末では変動が大きくなっています。2020年10月には、デスクトップページで25ページ、モバイルページで176ページがAPIを利用しています。',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=644836316&format=interactive",
   sheets_gid="1095648844",
