@@ -78,7 +78,8 @@ featured_stat_label_3: 関連アプリのインストールを許可している
 
 {{ figure_markup(
   image="storage_manager_api_estimate.png",
-  caption="StorageManager APIの推定方法を利用したページ数の推移",
+  alt="StorageManager APIの推定方法を利用したページ数の推移",
+  caption='<span lang="en">StorageManager API</span>の推定方法を利用したページ数の推移',
   description="HTTPArchiveで監視しているページ数をもとに、StorageManager APIの推定方法の利用状況をグラフ化したものです。モバイル デバイスとデスクトップ デバイスでの使用状況を比較しています。デスクトップでは直線的な伸びを示していますが、モバイルではホッケーのような伸びを示しています。10月はモバイルサイトが約34,000件、デスクトップサイトが約27,000件利用しています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1853644024&format=interactive",
   sheets_gid="1811313356",
@@ -94,8 +95,9 @@ Storage Manager APIは2016年からChrome、2017年からFirefox、そして新�
 
 {{ figure_markup(
   image="storage_manager_api_persist.png",
-  caption="StorageManager APIのpersistメソッドの使用ページ数。",
-  description="HTTPArchiveで監視しているページ数をもとに、StorageManager APIのpersistメソッドの使用状況をグラフ化したものです。モバイルデバイスとデスクトップデバイスでの使用状況を比較しています。デスクトップページでは利用状況はほぼ安定していますが、モバイル端末では変動が大きくなっています。2020年10月には、デスクトップページで25ページ、モバイルページで176ページがAPIを利用しています。",
+  alt="StorageManager APIのpersistメソッドの使用ページ数。",
+  caption='<span lang="en">StorageManager API</span>の<span lang="en>persist</span>メソッドの使用ページ数。',
+  description='HTTPArchiveで監視しているページ数をもとに、<span lang="en">StorageManager API</span>の<span lang="en">persist</span>メソッドの使用状況をグラフ化したものです。モバイルデバイスとデスクトップデバイスでの使用状況を比較しています。デスクトップページでは利用状況はほぼ安定していますが、モバイル端末では変動が大きくなっています。2020年10月には、デスクトップページで25ページ、モバイルページで176ページがAPIを利用しています。',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=644836316&format=interactive",
   sheets_gid="1095648844",
   sql_file="durable_storage_persist_usage.sql"
@@ -106,7 +108,7 @@ Storage Manager APIは2016年からChrome、2017年からFirefox、そして新�
 
 ## 新しい通知API
 
-Push APIとNotifications APIの助けを借りて、Webアプリケーションは以前からプッシュメッセージを受信したり、通知バナーを表示したりすることができるようになっていました。しかし、いくつかの部分が欠けていました。これまではプッシュメッセージはサーバーを経由して送信しなければならず、オフラインでスケジュールを立てることができませんでした。また、システムにインストールされているWebアプリケーションでは、アイコンにバッジを表示することができませんでした。バッジと通知トリガーAPIは、両方のシナリオを可能にします。
+<span lang="en">Push API</span>と<span lang="en">Notifications API</span>の助けを借りて、Webアプリケーションは以前からプッシュメッセージを受信したり、通知バナーを表示したりすることができるようになっていました。しかし、いくつかの部分が欠けていました。これまではプッシュメッセージはサーバーを経由して送信しなければならず、オフラインでスケジュールを立てることができませんでした。また、システムにインストールされているWebアプリケーションでは、アイコンにバッジを表示することができませんでした。バッジと通知トリガーAPIは、両方のシナリオを可能にします。
 
 ### バッジAPI
 
@@ -155,8 +157,9 @@ registration.showNotification('Title', {
 
 {{ figure_markup(
   image="screen_wake_lock_api.png",
-  caption="Screen Wake Lock APIを利用しているページ数",
-  description="HTTP Archiveで監視しているページ数に基づいて、デスクトップページとモバイルページを比較したScreen Wake Lock APIの利用状況のグラフです。2020年10月時点では、デスクトップ10ページ、モバイル5ページでAPIが利用されています。",
+  alt="Screen Wake Lock APIを利用しているページ数",
+  caption='<span lang="en">Screen Wake Lock API</span>を利用しているページ数',
+  description='HTTP Archiveで監視しているページ数に基づいて、デスクトップページとモバイルページを比較した<span lang="en">Screen Wake Lock API</span>の利用状況のグラフです。2020年10月時点では、デスクトップ10ページ、モバイル5ページでAPIが利用されています。',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=718278185&format=interactive",
   sheets_gid="1008442251",
   sql_file="wake_lock_acquire_screen_lock_usage.sql"
