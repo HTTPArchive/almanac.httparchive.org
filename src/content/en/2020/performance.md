@@ -290,7 +290,7 @@ It is challenging to deduce why FCP isn't improving, as numerous factors can del
   description="Bar chart showing that only 7 out of 28 countries have more than 40% websites with good FCP performance. The number of good and poor results rises in comparison to 2019 due to changes in value ranges for FCP.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=78259488&format=interactive",
   sheets_gid="1708427314",
-  width=645",
+  width="645",
   height="792",
   sql_file="web_vitals_by_country.sql"
   )
