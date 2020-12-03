@@ -18,7 +18,6 @@ featured_stat_2: 18%
 featured_stat_label_2: Sites with good TTFB on mobile
 featured_stat_3: 4%
 featured_stat_label_3: Sites with unchanged Performance Score in LH6
-unedited: true
 ---
 
 {# TODO throughout - change black on red to white on red #}
