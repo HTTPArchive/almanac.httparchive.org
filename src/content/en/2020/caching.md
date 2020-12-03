@@ -49,23 +49,23 @@ Caching benefits both the end users (they get their web pages quickly) and the c
 
 Web architectures typically involve multiple tiers of caching. There are four main places ('caching entities') where caching can occur:
 
-* An end user's web browser.
-* A service worker cache running in the end user's web browser.
-* A Content Delivery Network (CDN) or similar proxy, which sits between the end user’s web browser and the origin server.
-* The origin server itself.
+1. An end user's web browser.
+1. A service worker cache running in the end user's web browser.
+1. A Content Delivery Network (CDN) or similar proxy, which sits between the end user’s web browser and the origin server.
+1. The origin server itself.
 
 In this chapter, we will primarily be discussing caching within web browsers (1-2), as opposed to caching at the origin server or in a CDN. Nevertheless, many of the specific caching topics discussed in this chapter rely on the relationship between the browser and the server (or CDN, if one is used).
 
 The key to understanding how caching (and the web) works is to remember that it all consists of transactions between a requesting entity (e.g. a browser) and a responding entity (e.g. a server). Each transaction consists of two parts: 
 
-* The request from the requesting entity ("*I want object X*"), and 
-* The response from the responding entity ("*Here is object X*"). 
+1. The request from the requesting entity ("*I want object X*"), and 
+1. The response from the responding entity ("*Here is object X*"). 
 
 When we talk about caching, it refers to the object (HTML page, image, etc.) cached by the requesting entity.
 
 Below is a diagram showing how a typical request/response flow works for an object (e.g. a web page).  A CDN sits between the browser and the server. Note that at each point in the browser → CDN → server flow, each of the caching entities first checks whether it has the object in its cache.  It returns the cached object to the requester if found, before forwarding the request to the next caching entity in the chain:
 
-Placeholder for Figure 1
+**Placeholder for Figure 1**
 
 ### Caveat
 Unless specified otherwise, all statistics in this chapter are for desktop, on the understanding that mobile statistics are similar. Where mobile and desktop statistics differ significantly, that is called out.
@@ -148,7 +148,7 @@ The simple example below shows a request and response for a JavaScript file (som
 
 RFC 7234 says that if no caching headers are present in a response, then the browser is allowed to *heuristically* cache the response - it suggests a cache duration of 10% of the time since the `Last-Modified header` (if passed). In such cases, most browsers implement a variation of this suggestion, but some may cache the response indefinitely and some may not cache it at all. Because of this variation between browsers, it is important to explicitly set specific caching rules to ensure that you are in control of the cacheability of your content.
 
-Placeholder for Figure 2: Usage of HTTP Cache-Control and Expires headers.
+**Placeholder for Figure 2: Usage of HTTP Cache-Control and Expires headers.**
 
 ### Statistics
 * 73.6% of responses are served with a `Cache-Control` header
@@ -196,7 +196,7 @@ This indicates that the object can be cached for 86,400 seconds (1 day) and it c
 * 60.2% of responses include a `Cache-Control` header with the `max-age` directive.
 * 45.5% of responses include the `Cache-Control` header with the `max-age` directive and the `Expires` header, which means that 10% of responses are caching solely based on the older `Expires` header.
 
-Placeholder for Figure 3: Usage of Cache-Control directives
+**Placeholder for Figure 3: Usage of Cache-Control directives.**
 
 The above figure illustrates the 11 `Cache-Control` directives in use on mobile and desktop websites. There are a few interesting observations about the popularity of these cache directives:
 * `max-age` is used by about 60.2% of `Cache-Control` headers, and `no-store` is used by about 9.2% (see below for some discussion on the meaning and use of the no-store directive).
@@ -261,11 +261,12 @@ If both headers are present, `ETag` takes precedence.
 ### Example - Last-Modified
 When the server receives the request for the file, it can include the date/time that the file was most recently changed as a response header, like this:
 
-<pre><code>< HTTP/2 200
+<pre><code>
+< HTTP/2 200
 < Date: Thu, 23 Jul 2020 03:04:17 GMT
 < <span class="keyword">Last-Modified: Mon, 20 Jul 2020 11:43:22 GMT</span>
 < Cache-Control: max-age=600
-
+< 
 < <html>...lots of html here...</html></code></pre>
 
 The browser will cache this object for 600 seconds (as defined in the `Cache-Control` header), after which it will mark the object as stale. If the browser needs to use the file again, it requests the file from the server just as it did initially, but this time it includes an additional request header, called `If-Modified-Since`, which it sets to the value that was passed in the `Last-Modified` response header in the initial response:
@@ -275,8 +276,93 @@ The browser will cache this object for 600 seconds (as defined in the `Cache-Con
 <pre><code>> GET /index.html HTTP/2
 > Host: www.example.org
 > Accept: */*
-> If-Modified-Since: Mon, 20 Jul 2020 11:43:22 GMT</code></pre>
+> <span class="keyword">If-Modified-Since: Mon, 20 Jul 2020 11:43:22 GMT</span></code></pre>
 
 When the server receives this request, it can check whether the object has changed by comparing the `If-Modified-Since` header value with the date that it most recently changed the file.
 
 If the two values are the same, then the server knows that the browser has the latest version of the file and the server can return a `304 Not Modified` response with just headers (including the same `Last-Modified` header value) and no response body:
+
+<pre><code>
+< HTTP/2 304
+< Date: Thu, 23 Jul 2020 03:14:17 GMT
+< Last-Modified: Mon, 20 Jul 2020 11:43:22 GMT
+< Cache-Control: max-age=600</code></pre>
+
+However, if the file on the server has changed since it was last requested by the browser, then the server returns a `200 OK` response consisting of headers (including an updated `Last-Modified` header) and the new version of the file in the body:
+
+<pre><code>
+< HTTP/2 200
+< Date: Thu, 23 Jul 2020 03:14:17 GMT
+< Last-Modified: Thu, 23 Jul 2020 03:12:42 GMT
+< Cache-Control: max-age=600
+< 
+< <html>...lots of html here...</html></code></pre>
+
+As you can see, the `Last-Modified` response header and `If-Modified-Since` request header work as a pair.
+
+### Example - ETag
+The functionality here is almost exactly the same as the date-based `Last-Modified` / `If-Modified-Since` conditional request processing described above.
+
+However, in this case, the Server sends an `ETag` response header - rather than a date timestamp, an `ETag` is simply a string - often a hash of the file contents or a version number calculated by the server. The format of this string is entirely up to the server - the only important fact is that the server changes the `ETag` value whenever it changes the file.
+
+In this example, when the server receives the initial request for the file, it can return the file’s version in an `ETag` response header, like this:
+
+<pre><code>
+< HTTP/2 200
+< Date: Thu, 23 Jul 2020 03:04:17 GMT
+< ETag: "v123.4.01"
+< Cache-Control: max-age=600
+<
+< <html>...lots of html here...</html></code></pre>
+
+As with the `If-Modified-Since` example above, the browser will cache this object for 600 seconds, as defined in the `Cache-Control` header. When it needs to request the object from the server again, it includes an additional request header, called `If-None-Match`, which has the value passed in the `ETag` response header in the initial response:
+
+<pre><code>> GET /index.html HTTP/2
+> Host: www.example.org
+> Accept: */*
+> If-None-Match: "v123.4.01"</code></pre>
+
+When the server receives this request, it can check whether the object has changed by comparing the `If-None-Match` header value with the current version it has of the file.
+If the two values are the same, then the browser has the latest version of the file and the server can return a `304 Not Modified` response with just headers:
+
+<pre><code>
+< HTTP/2 304
+< Date: Thu, 23 Jul 2020 03:14:17 GMT
+< ETag: "v123.4.01"
+< Cache-Control: max-age=600</code></pre>
+
+However, if the values are different, then the version of the file on the server is more recent than the version that the browser has, so the server returns a 200 OK response consisting of headers (including an updated `ETag` header) and the new version of the file:
+
+<pre><code>
+< HTTP/2 200
+< Date: Thu, 23 Jul 2020 03:14:17 GMT
+< ETag: "v123.5.06"
+< Cache-Control: public, max-age=600
+< 
+< <html>...lots of html here...<html></code></pre>
+
+Again, we see a pair of headers being used for this conditional request processing - the `ETag` response header and the `If-None-Match` request header.
+
+In the same way that the `Cache-Control` header has more power and flexibility than the `Expires` header, the `ETag` header is in many ways an improvement over the `Last-Modified` header. There are two reasons for this:
+
+1. The server can define its own format for the `ETag` header. The example above shows a version string, but it could be a hash, or a random string. By allowing this, versions of an object are not explicitly linked to dates, and this allows a server to create a new version of a file and yet give it the same ETag as the prior version - perhaps if the file change is unimportant
+1. `ETags` can be defined as either ‘strong’ or ‘weak’, which allows browsers to validate them differently. A full understanding and discussion of this functionality is beyond the scope of this chapter, but can be found in [RFC 7232](https://tools.ietf.org/html/rfc7232).
+
+### Statistics
+
+* 73.5% of responses are served with a Last-Modified header. Its usage has marginally increased (by < 1%) in comparison to 2019.
+* 47.9% of responses are served with an ETag header. Out of these responses, 36% are ‘strong’, 98.2% are ‘weak’, and the remaining 1.8% are invalid. In contrast with Last-Modified, the usage of ETag headers has marginally decreased (by <1%) in comparison to 2019.
+* 42.8% of responses are served with both headers (as noted above, in this case, the ETag header takes precedence).
+* 21.4% of responses include neither a Last-Modified or ETag header.
+
+**Placeholder for Figure 4: Adoption of validating freshness via Last-Modified and ETag headers.**
+
+**Placeholder for Figure 5: Adoption of validating freshness via Last-Modified and ETag headers (2019).**
+
+### Note
+
+Correctly-implemented revalidation using conditional requests can significantly reduce bandwidth (304 responses are typically much smaller than 200 responses) , load on servers (only a small amount of processing is required to compare change dates or hashes) and improve perceived performance (servers respond more quickly with a 304). However, as we can see from the above statistics, more than a fifth of all requests are not using any form of conditional requests.
+
+* Only 0.1% of the responses had a 304 status.
+* 20.5% of the responses had no ETag header and contained the same `Last-Modified` value, passed in the `If-Modified-Since` header of the corresponding request. Out of these, 86% had a 304 status.
+* 86.1% of the responses contained the same `ETag` value, passed in the `If-None-Match` header of the corresponding request. If the `If-Modified-Since` header is also present, `ETag` takes precedence. Out of these, 88.9% had a 304 status.
