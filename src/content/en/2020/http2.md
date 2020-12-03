@@ -7,7 +7,7 @@ authors: [dotjs, rmarx, MikeBishop]
 reviewers: [LPardue, bazzadp, ibnesayeed]
 analysts: [gregorywolf]
 translators: []
-dotjs_bio: Andrew works at <a href="https://www.cloudflare.com/">Cloudflare</a> helping to make the web faster and more secure. He spends his time deploying, measuring and improving new protocols and asset delivery to improve end-user web site performance.
+dotjs_bio: Andrew works at <a href="https://www.cloudflare.com/">Cloudflare</a> helping to make the web faster and more secure. He spends his time deploying, measuring and improving new protocols and asset delivery to improve end-user website performance.
 rmarx_bio: Robin is a web protocol and performance researcher at <a href="https://www.uhasselt.be/edm">Hasselt University, Belgium</a>. He has been working on getting QUIC and HTTP/3 ready to use by creating tools like <a href="https://github.com/quiclog">qlog and qvis</a>.
 MikeBishop_bio: Editor of HTTP/3 with @quicwg. Architect in Akamai's Foundry group.
 discuss: 2058
@@ -26,24 +26,23 @@ featured_stat_label_3: Pages served over HTTP/2 if a CDN is used, 30% if CDN not
 
 HTTP is an application layer protocol designed to transfer information between networked devices and runs on top of other layers of the network protocol stack. After HTTP/1 was released, it took over 20 years until the first major update, HTTP/2, was made a standard in 2015.
 
-It didn't stop there however: over the last four years, HTTP/3 and QUIC (a new latency-reducing, reliable, and secure transport protocol) have been under standards development in the IETF QUIC working group. There are actually two protocols that share the same name: "Google QUIC" ("gQUIC" for short), the original protocol that was designed and used by Google, and the newer IETF standardized version (IETF QUIC/QUIC). IETF QUIC was based on gQUIC, but has grown to be quite different in design and implementation. On October 21, draft 32 of IETF QUIC reached a significant milestone when it moved to [Last Call](https://mailarchive.ietf.org/arch/msg/quic/ye1LeRl7oEz898RxjE6D3koWhn0/). This is the part of the standardisation process when the working group believes they are almost finished and requests a final review from the wider IETF community.
+It didn't stop there: over the last four years, HTTP/3 and QUIC (a new latency-reducing, reliable, and secure transport protocol) have been under standards development in the IETF QUIC working group. There are actually two protocols that share the same name: "Google QUIC" ("gQUIC" for short), the original protocol that was designed and used by Google, and the newer IETF standardized version (IETF QUIC/QUIC). IETF QUIC was based on gQUIC, but has grown to be quite different in design and implementation. On October 21, 2020, draft 32 of IETF QUIC reached a significant milestone when it moved to [Last Call](https://mailarchive.ietf.org/arch/msg/quic/ye1LeRl7oEz898RxjE6D3koWhn0/). This is the part of the standardization process when the working group believes they are almost finished and requests a final review from the wider IETF community.
 
 This chapter reviews the current state of HTTP/2 and gQUIC deployment, to establish how well some of the newer features of the protocol, such as prioritization and server push, have been adopted. We then look at the motivations for HTTP/3, describe the major differences between the protocol versions and discuss the potential challenges in upgrading to a UDP-based transport protocol with QUIC.
 
 ### HTTP/1.0 to HTTP/2
 
-As the HTTP protocol has evolved the semantics of HTTP have stayed the same, with no changes to the HTTP methods (such as GET or POST), status codes (200, or the dreaded 404), URIs, or header fields. The differences have been the wire-encoding and use of features of  the underlying transport.
+As the HTTP protocol has evolved, the semantics of HTTP have stayed the same, with no changes to the HTTP methods (such as GET or POST), status codes (200, or the dreaded 404), URIs, or header fields. Where the HTTP protocol has changed, the differences have been the wire-encoding and the use of features of the underlying transport.
 
-HTTP/1.0, published in 1996, defined the text-based application protocol, allowing clients and servers to exchange messages in order to request resources.
-A new TCP connection was required for each request/response which introduced overhead. TCP connections use a congestion control algorithm to maximise how much data can be in-flight. This process takes time for each new connection. This "slow-start" means that not all the available bandwidth is used immediately.
+HTTP/1.0, published in 1996, defined the text-based application protocol, allowing clients and servers to exchange messages in order to request resources. A new TCP connection was required for each request/response, which introduced overhead. TCP connections use a congestion control algorithm to maximise how much data can be in-flight. This process takes time for each new connection. This "slow-start" means that not all the available bandwidth is used immediately.
 
-In 1997, HTTP/1.1 was introduced to allow TCP connection reuse by adding 'keep-alives', aimed at reducing the total cost of connection start-ups. Over time, increasing website performance expectations led to the need for concurrency of requests. HTTP/1.1 could only request another resource after the previous response had completed. Therefore additional TCP connections had to be established, reducing the impact of the keep-alive connections and further increasing overhead.
+In 1997, HTTP/1.1 was introduced to allow TCP connection reuse by adding "keep-alives", aimed at reducing the total cost of connection start-ups. Over time, increasing website performance expectations led to the need for concurrency of requests. HTTP/1.1 could only request another resource after the previous response had completed. Therefore additional TCP connections had to be established, reducing the impact of the keep-alive connections and further increasing overhead.
 
 HTTP/2, published in 2015, is a binary-based protocol that introduced the concept of bidirectional streams between client and server. Using these streams, a browser can make optimal use of a single TCP connection to **multiplex** multiple HTTP requests/responses concurrently. HTTP/2 also introduced a prioritization scheme to steer this multiplexing; clients can signal a request priority that allows more important resources to be sent ahead of others.
 
-## HTTP/2 Adoption and Impact
+## Adoption and impact
 
-The data used in this chapter is sourced from the HTTP Archive and tests over 7 million websites with a Chrome browser.  As with other chapters, the analysis is split by mobile and desktop websites. You can find more details on the [methodology](./methodology). page. When reviewing this data, please bear in mind that each website will receive equal weight regardless of the number of requests. I suggest you think of this more as investigating the trends across a broad range of active websites.
+The data used in this chapter is sourced from the HTTP Archive and tests over seven million websites with a Chrome browser.  As with other chapters, the analysis is split by mobile and desktop websites. You can find more details on the [Methodology](./methodology) page. When reviewing this data, please bear in mind that each website will receive equal weight regardless of the number of requests. We suggest you think of this more as investigating the trends across a broad range of active websites.
 
 {{ figure_markup(
   image="http2-h2-usage.png",
@@ -69,46 +68,108 @@ Last year's analysis of HTTP Archive data showed that HTTP/2 was used for over 5
 
 When comparing Figure 22.3 with last year's results, there has been a **10% increase in HTTP/2 requests** and a corresponding 10% decrease in HTTP/1 requests. This is the first year that gQUIC can be seen in the dataset.
 
-<figure markdown>
-| Protocol | Desktop | Mobile |
-| -------- | ------- | ------ |
-| HTTP/1.1 | 34.47%** | 34.11% |
-| HTTP/2   | 63.70%  | 63.80% |
-| gQUIC    | 1.72%   | 1.71%  |
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Protocol</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>HTTP/1.1</td>
+        <td class="numeric">**34.47%</td>
+        <td class="numeric">34.11%</td>
+      </tr>
+      <tr>
+        <td>HTTP/2</td>
+        <td class="numeric">63.70%</td>
+        <td class="numeric">63.80%</td>
+      </tr>
+      <tr>
+        <td>gQUIC</td>
+        <td class="numeric">1.72%</td>
+        <td class="numeric">1.71%</td>
+      </tr>
+    </tbody>
+  </table>
 
-<figcaption>{{ figure_link(caption="HTTP version usage by request.", sheets_gid="2122693316", sql_file="adoption_of_http_2_by_site_and_requests.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="HTTP version usage by request.", sheets_gid="2122693316", sql_file="adoption_of_http_2_by_site_and_requests.sql") }}</figcaption>
 </figure>
 
-<p class="note">As with last year's crawl, around 4% of desktop requests did not report a protocol version. Analysis shows these to mostly be HTTP/1.1 and we worked to fix this gap in our statistics for future crawls and analysis. Although we base the data on the August 2020 crawl, we confirmed the fix in the October 2020 data set before publication which did indeed show these were HTTP/1.1 requests and so have added them to that statistic in above table.</note>
+<p class="note">
+  ** As with last year's crawl, around 4% of desktop requests did not report a protocol version. Analysis shows these to mostly be HTTP/1.1 and we worked to fix this gap in our statistics for future crawls and analysis. Although we base the data on the August 2020 crawl, we confirmed the fix in the October 2020 data set before publication which did indeed show these were HTTP/1.1 requests and so have added them to that statistic in above table.
+</note>
 
-When reviewing the total number of web site requests, there will be a bias towards common third-party domains. To get a better understanding of the HTTP/2 adoption by server install we will look instead at the protocol used to serve the HTML from the home page of a site.
+When reviewing the total number of website requests, there will be a bias towards common third-party domains. To get a better understanding of the HTTP/2 adoption by server install, we will look instead at the protocol used to serve the HTML from the home page of a site.
 
 Last year around 37% of home pages were served over HTTP/2 and 63% over HTTP/1. This year, combining mobile and desktop, it is an equal 50% split with slightly more desktop sites being served over HTTP/2 for the first time, as shown in Figure 22.4.
 
- <figure markdown>
-| Protocol | Desktop | Mobile |
-| -------- | ------- | ------ |
-| HTTP/1.0 |  0.06%  |  0.05% |
-| HTTP/1.1 | 49.22%  | 50.05% |
-| HTTP/2   | 49.97%  | 49.28% |
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Protocol</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>HTTP/1.0</td>
+        <td class="numeric">0.06%</td>
+        <td class="numeric">0.05%</td>
+      </tr>
+      <tr>
+        <td>HTTP/1.1</td>
+        <td class="numeric">49.22%</td>
+        <td class="numeric">50.05%</td>
+      </tr>
+      <tr>
+        <td>HTTP/2</td>
+        <td class="numeric">49.97%</td>
+        <td class="numeric">49.28%</td>
+      </tr>
+    </tbody>
+  </table>
 
-<figcaption>{{ figure_link(caption="HTTP version usage for home pages.", sheets_gid="1447413141", sql_file="measure_of_all_http_versions_for_main_page_of_all_sites.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="HTTP version usage for home pages.", sheets_gid="1447413141", sql_file="measure_of_all_http_versions_for_main_page_of_all_sites.sql") }}</figcaption>
 </figure>
 
-gQUIC is not seen in the home page data for two reasons. To measure a website over gQUIC the HTTP Archive crawl would have to perform protocol negotiation via the [alternative services](#alternative-services) header and then use this endpoint to load the site over gQUIC. This is not supported this year - expect it to be available in next year's almanac. Also, gQUIC is predominantly used for third-party Google tools rather than serving home pages.
+gQUIC is not seen in the home page data for two reasons. To measure a website over gQUIC, the HTTP Archive crawl would have to perform protocol negotiation via the [alternative services](#alternative-services) header and then use this endpoint to load the site over gQUIC. This was not supported this year, but expect it to be available in next year's Web Almanac. Also, gQUIC is predominantly used for third-party Google tools rather than serving home pages.
 
-The drive to increase security and privacy on the web has seen requests over TLS increase by over 150% in the last 4 years. Today, over 86% of all requests on mobile and desktop are encrypted. Looking just at web site home pages, the numbers are still an impressive, 78.1% of desktop and 74.7% of mobile. This is important because HTTP/2 is only supported by browsers over TLS. The proportion served over HTTP/2, as shown in Figure 22.5, has also increased 10% from last year, from 55% to 65%.
+{# TODO(authors, analysts): Where does the 150% stat come from? Can we link to it or show it as a figure? #}
+The drive to increase [security](./security) and [privacy](./privacy) on the web has seen requests over TLS increase by over 150% in the last 4 years. Today, over 86% of all requests on mobile and desktop are encrypted. Looking only at home pages, the numbers are still an impressive 78.1% of desktop and 74.7% of mobile. This is important because HTTP/2 is only supported by browsers over TLS. The proportion served over HTTP/2, as shown in Figure 22.5, has also increased by 10 percentage points from [last year](../2019/http2#fig-5), from 55% to 65%.
 
-<figure markdown>
-| Protocol | Desktop | Mobile |
-| -------- | ------- | ------ |
-| HTTP/1.1 | 36.05%  | 34.04% |
-| HTTP/2   | 63.95%  | 65.96% |
-
-<figcaption>{{ figure_link(caption="HTTP version usage for TLS home pages.", sheets_gid="900140630", sql_file="tls_adoption_by_http_version.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Protocol</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>HTTP/1.1</td>
+        <td class="numeric">36.05%</td>
+        <td class="numeric">34.04%</td>
+      </tr>
+      <tr>
+        <td>HTTP/2</td>
+        <td class="numeric">63.95%</td>
+        <td class="numeric">65.96%</td>
+      </tr>
+    </tbody>
+  </table>
+  {# TODO(authors): Last year's version of this stat (linked above) used "HTTPS home pages" instead of "TLS home pages". Are they interchangeable? Is it better to be consistent or is TLS more correct? #}
+  <figcaption>{{ figure_link(caption="HTTP version usage for TLS home pages.", sheets_gid="900140630", sql_file="tls_adoption_by_http_version.sql") }}</figcaption>
 </figure>
 
-With over 60% of web sites being served over HTTP/2 or gQUIC, let's look a little deeper into the pattern of protocol distribution for all requests made across individual sites.
+With over 60% of websites being served over HTTP/2 or gQUIC, let's look a little deeper into the pattern of protocol distribution for all requests made across individual sites.
 
 {{ figure_markup(
   image="http2-h2-or-gquic-requests-per-page.png",
@@ -124,23 +185,23 @@ Figure 22.6 shows the fraction of HTTP/2 or gQUIC requests per page, ordered by 
 
 What about the breakdown of the page itself? We typically talk about the difference between first-party and third-party content. Third-party is defined as content not within the direct control of the site owner; providing functionality such as advertising, marketing or analytics. The definition of known third parties is taken from the [third party web](https://github.com/patrickhulce/third-party-web/blob/8afa2d8cadddec8f0db39e7d715c07e85fb0f8ec/data/entities.json5) repository.
 
-Figure 22.7 orders every web site by the fraction of HTTP/2 requests for known third parties or first party requests compared to other requests. There is a noticeable difference as over 40% of all sites have no first-party HTTP/2 or gQUIC requests at all. By contrast, even the lowest 5% of pages have 30% of third-party content served over HTTP/2. This indicates that a large part of HTTP/2's broad adoption is driven by the third parties.
+Figure 22.7 orders every website by the fraction of HTTP/2 requests for known third parties or first party requests compared to other requests. There is a noticeable difference as over 40% of all sites have no first-party HTTP/2 or gQUIC requests at all. By contrast, even the lowest 5% of pages have 30% of third-party content served over HTTP/2. This indicates that a large part of HTTP/2's broad adoption is driven by the third parties.
 
 {{ figure_markup(
   image="http2-first-and-third-party-http2-usage.png",
   caption="The distribution of the fraction of third-party and first-party HTTP/2 requests per page.",
-  description="A line chart comparing the fraction of first-party HTTP/2 requests with third-party HTTP/2 or gQUIC requests. The chart orders he web sites by fraction of HTTP/2 requests. 45% of web sites have no HTTP/2 first-party requests. Over half of web sites serve third-party requests only over HTTP/2 or gQUIC. 80% of web sites have 76% or more third-party HTTP/2 or gQUIC requests.",
+  description="A line chart comparing the fraction of first-party HTTP/2 requests with third-party HTTP/2 or gQUIC requests. The chart orders he websites by fraction of HTTP/2 requests. 45% of websites have no HTTP/2 first-party requests. Over half of websites serve third-party requests only over HTTP/2 or gQUIC. 80% of websites have 76% or more third-party HTTP/2 or gQUIC requests.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=1409316276&format=interactive",
   sql_file="http2_%_1st_party_vs_3rd_party.sql",
   sheets_gid="733872185"
 )
 }}
 
-Figure 22.8 shows the distribution of known third-party HTTP/2 or gQUIC requests by content-type. For example 90% of websites serve 100% of third party fonts and audio over HTTP/2 or gQUIC, only 5% over HTTP/1 and 5% are a mix. The majority of third-party assets are either scripts or images, and are solely served over HTTP/2 or gQUIC on 60% and 70% of web sites respectively.
+Figure 22.8 shows the distribution of known third-party HTTP/2 or gQUIC requests by content-type. For example 90% of websites serve 100% of third party fonts and audio over HTTP/2 or gQUIC, only 5% over HTTP/1 and 5% are a mix. The majority of third-party assets are either scripts or images, and are solely served over HTTP/2 or gQUIC on 60% and 70% of websites respectively.
 
 {{ figure_markup(
   image="http2-third-party-http2-usage-by-content-type.png",
-  caption="The fraction of known third-party HTTP/2 or gQUIC requests by content-type per web site.",
+  caption="The fraction of known third-party HTTP/2 or gQUIC requests by content-type per website.",
   description="A bar chart comparing the fraction of third-party HTTP/2 requests by content-type. All third-party requests are served over HTTP/2 or gQUIC for 90% of audio and fonts, 80% of css and video, 70% of html, image and text and 60% of scripts.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=1264128523&format=interactive",
   sheets_gid="419557288",
@@ -152,8 +213,8 @@ Figure 22.9 looks at protocol usage by the third party category. Ads, analytics,
 
 {{ figure_markup(
   image="http2-third-party-http2-usage-by-category.png",
-  caption="The fraction of known third-party HTTP/2 or gQUIC requests by category per web site.",
-  description="A bar chart comparing the fraction of third-party HTTP/2 or gQUIC requests by category. All third-party requests for all web sites are served over HTTP/2 or gQUIC for 95% of tag managers, 90% of analytics and CDN, 80% of ads, social, hosting and utility, 40% of marketing and 30% of customer-success.",
+  caption="The fraction of known third-party HTTP/2 or gQUIC requests by category per website.",
+  description="A bar chart comparing the fraction of third-party HTTP/2 or gQUIC requests by category. All third-party requests for all websites are served over HTTP/2 or gQUIC for 95% of tag managers, 90% of analytics and CDN, 80% of ads, social, hosting and utility, 40% of marketing and 30% of customer-success.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=1419102835&format=interactive",
   sheets_gid="1059610651",
   sql_file="http2_3rd_party_by_types.sql"
@@ -169,7 +230,7 @@ Unfortunately, the upgrade path for servers is more difficult, especially with t
 {{ figure_markup(
   image="http2-server-protocol-usage.png",
   caption="Server usage by HTTP protocol on mobile",
-  description="A bar chart showinging the number of web sites served by either HTTP/1 or HTTP/2 for the most popular servers to mobile clients. Nginx serves 727,181 HTTP/1 and 727,181 HTTP/2 sites. Cloudflare 59,981 HTTP/1 and 679,616 HTTP/2. Apache 1,521,753 HTTP/1 and 585,096 HTTP/2. Litespeed 50,502 HTTP/1 and 166,721 HTTP/2. Microsoft-IIS 284,047 HTTP/1 and 81,490 HTTP/2.",
+  description="A bar chart showinging the number of websites served by either HTTP/1 or HTTP/2 for the most popular servers to mobile clients. Nginx serves 727,181 HTTP/1 and 727,181 HTTP/2 sites. Cloudflare 59,981 HTTP/1 and 679,616 HTTP/2. Apache 1,521,753 HTTP/1 and 585,096 HTTP/2. Litespeed 50,502 HTTP/1 and 166,721 HTTP/2. Microsoft-IIS 284,047 HTTP/1 and 81,490 HTTP/2.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=718663369&format=interactive",
   sheets_gid="306338094",
   sql_file="count_of_h2_and_h3_sites_grouped_by_server.sql"
@@ -183,7 +244,7 @@ How has HTTP/2 adoption changed in the last year for each server. Figuure 22.11 
 {{ figure_markup(
   image="http2-h2-usage-by-server.png",
   caption="Percentage of pages served over HTTP/2 by sever",
-  description="A bar chart comparing the percentge of web sites served over HTTP/2 between 2019 and 2020. Cloudflare increased to 93.08% from 85.40%. Litespeed increased to 81.91% from 70.80%. Openresty increased to 66.24% from 51.40%. Nginx increased to 60.84% from 49.20%. Apache increased to 27.19% from 18.10% and MIcorsoft-IIS increased to 22.82% from 14.10%.",
+  description="A bar chart comparing the percentge of websites served over HTTP/2 between 2019 and 2020. Cloudflare increased to 93.08% from 85.40%. Litespeed increased to 81.91% from 70.80%. Openresty increased to 66.24% from 51.40%. Nginx increased to 60.84% from 49.20%. Apache increased to 27.19% from 18.10% and MIcorsoft-IIS increased to 22.82% from 14.10%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=936321266&format=interactive",
   sheets_gid="306338094",
   sql_file="count_of_h2_and_h3_sites_grouped_by_server.sql"
@@ -238,14 +299,14 @@ The second category are CDNs which are mainly used to serve third-party content.
 {{ figure_markup(
   image="http2-cdn-http2-usage.png",
   caption="Comparsion of HTTP/2 and gQUIC usage for websites using a CDN.",
-  description="A line chart comparing the fraction of reqests served using HTTP/2 or gQUIC for web sites that use a CDN compared to sites that do not. The x-axis show the percentiles of web page ordered by percentage of requests. 23% of web sites that do not use a CDN have no HTTP/2 or gQUIC usage. In comparision the 60% of web sites using a CDN have all HTTP/2 or gQUIC usage. 93% of web sites that use a CDN and 47% of non-CDN sites have 50% or more HTTP/2 or gQUIC usage.",
+  description="A line chart comparing the fraction of reqests served using HTTP/2 or gQUIC for websites that use a CDN compared to sites that do not. The x-axis show the percentiles of web page ordered by percentage of requests. 23% of websites that do not use a CDN have no HTTP/2 or gQUIC usage. In comparision the 60% of websites using a CDN have all HTTP/2 or gQUIC usage. 93% of websites that use a CDN and 47% of non-CDN sites have 50% or more HTTP/2 or gQUIC usage.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=1779365083&format=interactive",
   sheets_gid="1457263817",
   sql_file="cdn_summary.sql"
 )
 }}
 
-Figure 22.13 shows the difference in HTTP/2 and gQUIC adoption when a web site is using a CDN. 70% of pages use HTTP/2 for all 3rd party requests when a CDN is used. Without a CDN, only 25% of pages use HTTP/2 for all third party requests.
+Figure 22.13 shows the difference in HTTP/2 and gQUIC adoption when a website is using a CDN. 70% of pages use HTTP/2 for all 3rd party requests when a CDN is used. Without a CDN, only 25% of pages use HTTP/2 for all third party requests.
 
 Figure 22.14 shows the breakdown of HTTP/2 responses for 3rd party CDNs for mobile requests.
 
@@ -283,9 +344,9 @@ Figure 22.14 shows the breakdown of HTTP/2 responses for 3rd party CDNs for mobi
 <figcaption>{{ figure_link(caption="Percentage of HTTP/2 requests served by the third-party resouce CDNs over mobile", sheets_gid="781660433", sql_file="cdn_detail_by_cdn.sql") }}</figcaption>
 </figure>
 
-## How is HTTP/2 performing ?
+## How is HTTP/2 performing?
 
-Measuring the impact of how a protocol is performing is difficult with the current HTTPArchive approach. It would be really fascinating to be able to quantify the impact of concurrent connections, the effect of packet loss and differrent congestion control mechanisms. To really compare performance each web site would have to be crawled over each protocol over different network conditions. What we can do instead is to look into the impact on the number of connections a web site uses.
+Measuring the impact of how a protocol is performing is difficult with the current HTTPArchive approach. It would be really fascinating to be able to quantify the impact of concurrent connections, the effect of packet loss and differrent congestion control mechanisms. To really compare performance each website would have to be crawled over each protocol over different network conditions. What we can do instead is to look into the impact on the number of connections a website uses.
 
 ### Reducing connectons
 
@@ -459,7 +520,7 @@ While Alt-Svc can point to an entirely different host, support for this capabili
 
 Given the rarity of support for cross-host HTTP/2, it's not surprising that there were virtually no (0.007%) advertisements for HTTP/2 endpoints using Alt-Svc.  Alt-Svc was typically used to indicate support for HTTP/3 (74.6% of Alt-Svc headers) or gQUIC (38.7% of Alt-Svc headers).
 
-## Looking Toward the Future:  HTTP/3
+## Looking Toward the Future: HTTP/3
 
 As discussed above, HTTP/2 is a powerful protocol which has found considerable adoption in just a few years. However, HTTP/3 over QUIC is already peeking around the corner! Over 4 years in the making, this next version of HTTP is almost standardized at the IETF (expected in the first half of 2021). At this time, there are already [many QUIC and HTTP/3 implementations available](https://github.com/quicwg/base-drafts/wiki/Implementations), both for servers and browsers. While these are relatively mature, they can still be said to be in an experimental state.
 
@@ -524,7 +585,7 @@ HTTP/3 and QUIC are highly advanced protocols with powerful performance and secu
 
 ## Conclusion
 
-This year HTTP/2 has become the dominant protocol serving 64% of all requests, having grown by 10% during the year. Home pages have seen a 13% increase in HTTP/2 adoption, leading to an even split of pages served over HTTP/1 and HTTP/2. Using a CDN to serve your home page pushes HTTP/2 adoption up to 80% compared with 30% for non CDN usage. There remain some older servers: apache and IIS, that are proving resistant to upgrading to HTTP/2 and TLS. A big success has been the decrease in web site connection usage due to HTTP/2 connection multiplexing. The median number of connections in 2016 was 23 compared to 13 in 2020.
+This year HTTP/2 has become the dominant protocol serving 64% of all requests, having grown by 10% during the year. Home pages have seen a 13% increase in HTTP/2 adoption, leading to an even split of pages served over HTTP/1 and HTTP/2. Using a CDN to serve your home page pushes HTTP/2 adoption up to 80% compared with 30% for non CDN usage. There remain some older servers: apache and IIS, that are proving resistant to upgrading to HTTP/2 and TLS. A big success has been the decrease in website connection usage due to HTTP/2 connection multiplexing. The median number of connections in 2016 was 23 compared to 13 in 2020.
 
 HTTP/2 prioritisation and server push have turned out to be way more complex to deploy at large. Under certain implementations they show clear performance benefits. There is, however, a significant barrier to deploying and tuning existing servers to use these features effectively. There are still a large proportion of CDNs who do not support prioritization effectively. There have also been issues with consistent browser support.
 
