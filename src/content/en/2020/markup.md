@@ -76,16 +76,15 @@ A page's document size refers to the amount of HTML bytes transferred over the n
 
 {# TODO(authors, analysts): Revisit the "largest document" stat and interpretation. #}
 * 1,110 documents are empty (0 bytes).
-* The average document size is 50.35 KB ([in most cases compressed](https://w3techs.com/technologies/details/ce-gzipcompression)).
-* The largest document by far weighs 64.16 _MB_, almost deserving its own analysis and chapter in the Web Almanac.
+* The average document size is 49.17 KB ([in most cases compressed](https://w3techs.com/technologies/details/ce-gzipcompression)).
+* The largest document by far weighs 62.65 _MB_, almost deserving its own analysis and chapter in the Web Almanac.
 
-{# TODO(analysts): Should 25,237 bytes be divided by 1000 or 1024 to convert to KB? 1000 seems to be used here but most chapters use 1024. Are the stats above also off? #}
-How is this situation in general, then? The median document weighs 25.24 KB, which comes [without surprises](https://httparchive.org/reports/page-weight):
+How is this situation in general, then? The median document weighs 24.65 KB, which comes [without surprises](https://httparchive.org/reports/page-weight):
 
 {{ figure_markup(
   image="document-size.png",
   caption="The amount of HTML bytes transferred over the network, including compression if enabled.",
-  description="Document size in bytes per percentile, with the median document weighing 26.62 KB on desktop.",
+  description="Document size in bytes per percentile, with the median document weighing 25.99 KB on desktop.",
   sheets_gid="2066175354",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=386686971&format=interactive",
   width=600,
