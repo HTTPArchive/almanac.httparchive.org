@@ -3,7 +3,7 @@
 
 SELECT
   client,
-  lower(video_type) as video_type,
+  LOWER(video_type) AS video_type,
   COUNT(0) AS video_type_count,
   SAFE_DIVIDE(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS video_type_pct
 FROM
