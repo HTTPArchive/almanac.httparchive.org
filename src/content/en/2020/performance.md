@@ -61,7 +61,7 @@ Above, we observe that 4% of websites recorded no Performance Score change, but 
   image="performance-lighthouse-score-distributions-yoy.png",
   caption="Lighthouse Performance Score distribution for Lighthouse 5 and 6.",
   description="Scatter chart showcasing the percent of sites receiving 0-100 Performance Score in Lighthouse 5 and 6. With Lighthouse 6 algorithm, the percentage of sites with scores between 0-25 rises, and the number of sites with scores between 50 and 100 decreases.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1258119108&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=926035471&format=interactive",
   sheets_gid="1303574513",
   sql_file="lh6_vs_lh5_performance_score_distribution.sql"
   )
@@ -98,6 +98,8 @@ In the chart above, we can observe that between 43% and 53% of websites have goo
   caption="Aggregate LCP performance split by country.",
   description="Bar chart showing that the highest percentages of good LCP performance are distributed between European and Asian countries. The Republic of Korea leads with 76% good readings, while India is last with 16% of good readings.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1936626175&format=interactive",
+  width="645",
+  height="792",
   sheets_gid="263037691",
   sql_file="web_vitals_by_country.sql"
   )
@@ -152,6 +154,8 @@ According to CrUX data, both in cases of desktop and mobile devices, more than h
   caption="Aggregate CLS performance split by country.",
   description="Bar chart showcasing that the top 28 countries have at least 50% of websites reporting good CLS. Moderate (needs improvement) readings are steady at 11-15% across the board.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1861585123&format=interactive",
+  width="645",
+  height="792",
   sheets_gid="47865955",
   sql_file="web_vitals_by_country.sql"
   )
@@ -206,6 +210,8 @@ On mobile, 80% of sites are graded as good. A likely explanation is the reduced 
   caption="Aggregate FID performance split by country.",
   description="Bar chart showcasing excellent FID performance on per-country basis. The top 28 countries report between 79% to 97% good FID experiences with nearly to none poor experiences.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1107653062&format=interactive",
+  width="645",
+  height="792",
   sheets_gid="2120295762",
   sql_file="web_vitals_by_country.sql"
   )
@@ -285,6 +291,8 @@ It is challenging to deduce why FCP isn't improving, as numerous factors can del
   description="Bar chart showing that only 7 out of 28 countries have more than 40% websites with good FCP performance. The number of good and poor results rises in comparison to 2019 due to changes in value ranges for FCP.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=78259488&format=interactive",
   sheets_gid="1708427314",
+  width=645",
+  height="792",
   sql_file="web_vitals_by_country.sql"
   )
 }}
@@ -343,7 +351,9 @@ On desktop, 76% of websites have a "not good" TTFB, while on mobile, that percen
   image="performance-ttfb-by-geo.png",
   caption="Aggregate TTFB performance split by country.",
   description="Bar chart showcasing that TTFB performance is consistently sub-par, with only 4 out of 28 countries having more than 30% websites with good TTFB. There is a significant number of websites categorised as needs improvement (always above 40%) with the fraction of poor experiences rising as the ranking position is lower.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1981576071&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1135415956&format=interactive",
+  width="645",
+  height="792",
   sheets_gid="1440255644",
   sql_file="web_vitals_by_country.sql"
   )
