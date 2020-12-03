@@ -1,5 +1,4 @@
 ---
-#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 part_number: IV
 chapter_number: 22
 title: HTTP/2
@@ -21,7 +20,6 @@ featured_stat_2: 31.7%
 featured_stat_label_2: CDN Requests with incorrect HTTP/2 prioritiztion
 featured_stat_3: 80%
 featured_stat_label_3: Pages served over HTTP/2 if a CDN is used, 30% if CDN not used
-unedited: true
 ---
 
 ## Introduction
