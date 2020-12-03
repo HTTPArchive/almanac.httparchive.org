@@ -123,7 +123,96 @@ The two HTTP response headers typically used for specifying freshness are `Cache
 * `Expires` specifies an explicit expiration date and time (i.e. when exactly the content expires)
 * `Cache-Control` specifies a cache duration (i.e. how long the content can be cached in the browser relative to when it was requested)
 
-Often, both these headers are specified; in that case Cache-Control takes precedence. These headers are discussed in more detail below.
+Often, both these headers are specified; in that case `Cache-Control` takes precedence. These headers are discussed in more detail below.
+
+## Cache-Control vs Expires
+
+In the early HTTP/1.0 days of the web, the `Expires` header was the only cache-related response header. As stated above, it is used to indicate the exact date/time after which the response is considered stale. Its value is a date and time, such as:
+
+`Expires: Thu, 01 Dec 1994 16:00:00 GMT`
+
+The `Expires` header can be thought of as a 'blunt instrument'.  If a relative cache TTL is required, then processing must be done on the server to generate an appropriate value based upon the current date/time.
+
+HTTP/1.1 introduced the `Cache-Control` header, which is supported by all modern browsers. The `Cache-Control` header provides much more extensibility and flexibility than `Expires` via *caching directives*, several of which can be specified together. Details on the various directives are below.
+
+### Example
+The simple example below shows a request and response for a JavaScript file (some headers have been removed for clarity). The `Date` header indicates the current date (specifically, the date that the content was served).  The `Expires` header indicates that it can be cached for 10 minutes (the difference between the `Expires` and `Date` headers). The `Cache-Control` header specifies the `max-age` directive, which indicates that the resource can be cached for 600 seconds (5 minutes). Since `Cache-Control` takes precedence over `Expires`, the browser will cache the response for 5 minutes, after which it will be marked as stale:
+
+```
+> GET /static/js/main.js HTTP/2
+> Host: www.example.org
+> Accept: */*
+
+< HTTP/2 200
+< Date: Thu, 23 Jul 2020 03:04:17 GMT
+< Expires: Thu, 23 Jul 2020 03:14:17 GMT
+< Cache-Control: public, max-age=600
+
+```
+
+RFC 7234 says that if no caching headers are present in a response, then the browser is allowed to *heuristically* cache the response - it suggests a cache duration of 10% of the time since the `Last-Modified header` (if passed). In such cases, most browsers implement a variation of this suggestion, but some may cache the response indefinitely and some may not cache it at all. Because of this variation between browsers, it is important to explicitly set specific caching rules to ensure that you are in control of the cacheability of your content.
+
+Placeholder for Figure 2: Usage of HTTP Cache-Control and Expires headers.
+
+### Statistics
+* 73.6% of responses are served with a `Cache-Control` header
+* 55.5% of responses are served with an `Expires` header
+* 54.8% of responses include both headers
+* 25.7% of responses did not include either header, and are therefore subject to heuristic caching
+
+These statistics are interesting, since, when compared with 2019, while we are seeing a noticeable increase in the use of the `Cache-Control` header, we are only seeing a very small decrease in the use of the older `Expires` header - effectively a higher percentage of servers are simply adding the `Cache-Control` header to their responses, without removing the `Expires` header.
+As we delve into the various directives allowed in the `Cache-Control` header, we will see how its flexibility and power make it a better fit in many cases.
+
+## Cache-Control directives
+When you use the `Cache-Control` header, you specify one or more *directives* - predefined values that indicate specific caching functionality. Multiple directives are separated by commas and can be specified in any order, although some of them 'clash' with one another (e.g. `public` and `private`). Some directives take a value, such as `max-age`.
+
+Below is a table showing the most common `Cache-Control` directives: 
+
+<figure>
+  <table>
+    <tr>
+     <th>Directive</th>
+     <th>Description</th>
+    </tr>
+    <tr>
+     <td>max-age</td>
+     <td>Indicates the number of seconds that a resource can be cached for, relative to the current time. For example `max-age=86400`.</td>
+    </tr>
+    <tr>
+     <td>public</td>
+     <td>Any cache may store the response, including the browser, and any proxies between the server and the browser, such as a CDN. This is assumed by default.</td>
+    </tr>
+  </table>
+  <figcaption>{{ figure_link(caption="`Cache-Control` directives.") }}</figcaption>
+</figure>
+
+The `max-age` directive is the most commonly-found, since it directly defines the TTL, in the same way that the `Expires` header does.
+
+### Example
+
+Here is an example of a valid Cache-Control header with multiple directives:
+
+`Cache-Control: public, max-age=86400, must-revalidate`
+
+This indicates that the object can be cached for 86,400 seconds (1 day) and it can be stored by all caches between the server and the browser, as well as in the browser itself. Once it has reached its TTL and is marked as stale, it can remain in cache, but must be conditionally revalidated before reuse.
+
+### Statistics
+* 60.2% of responses include a `Cache-Control` header with the `max-age` directive.
+* 45.5% of responses include the `Cache-Control` header with the `max-age` directive and the `Expires` header, which means that 10% of responses are caching solely based on the older `Expires` header.
+
+Placeholder for Figure 3: Usage of Cache-Control directives
+
+The above figure illustrates the 11 `Cache-Control` directives in use on mobile and desktop websites. There are a few interesting observations about the popularity of these cache directives:
+* `max-age` is used by about 60.2% of `Cache-Control` headers, and `no-store` is used by about 9.2% (see below for some discussion on the meaning and use of the no-store directive).
+* Explicitly specifying `public` isn’t ever really necessary since cached entries are assumed `public` unless `private` is specified. Nevertheless, almost one third of responses include `public` - a waste of a few header bytes on every response :)
+* The `immutable` directive is relatively new, introduced in 2017 and is only supported on Firefox and Safari - its usage is still only at about 3.5%, but it is widely seen in responses from Facebook, Google, Wix, Shopify and others. It has the potential to greatly improve cacheability for certain types of requests.
+
+As we head out to the long tail, there are a small percentage of 'invalid' directives that can be found; these are ignored by browsers, and just end up wasting header bytes. Broadly they fall into two categories:
+
+* Misspelled directives such as `nocache` and `s-max-age` and invalid directive syntax, such as using : instead of = or using _ instead of -
+* Non-existent directives such as `max-stale`, `proxy-public`, `surrogate-control`
+
+The most interesting standout in the list of invalid directives is the use of `no-cache=”set-cookie”` (even at only 0.2% of all `Cache-Control` header values, it still makes up more than all the other invalid directives combined). In some early discussions on the `Cache-Control` header, this syntax was raised as a possible way to ensure that any `Set-Cookie` response headers (which might be user-specific) would not be cached with the object itself by any intermediate proxies such as CDNs. However, this syntax was not included in the final RFC; nearly equivalent functionality can be implemented using the `private` directive, and the `no-cache` directive does not allow a value.
 
 
 
