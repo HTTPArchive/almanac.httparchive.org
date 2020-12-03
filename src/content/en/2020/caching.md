@@ -547,7 +547,6 @@ As we have seen, a cacheable resource is stored by the browser for a period of t
 
 The remaining 9.2% of responses are not permitted to be stored in browser caches - typically because of Cache-Control: no-store.
 
-
 **Placeholder for Figure 14: Distribution of cacheable and non-cacheable responses.**
 
 **Placeholder for Figure 15: Distribution of TTL in cacheable responses.**
@@ -555,6 +554,33 @@ The remaining 9.2% of responses are not permitted to be stored in browser caches
 The table below details the cache TTL values for desktop requests by type. Most content types are being cached, however CSS resources are consistently cached with high TTLs.
 
 **Placeholder for Table 4: Desktop cache TTL percentiles by resource type.**
+
+<figure>
+  <table>
+    <tr>
+     <th colspan="6">Cache TTL percentiles (in hours)</th>    
+    </tr>
+    <tr>
+     <th> </th>   
+     <th>10</th>
+     <th>25</th>
+     <th>50</th>
+     <th>75</th>
+     <th>90</th>
+    </tr>
+    <tr>
+     <td><span style="font-weight:bold">audio</span></td>
+     <td>6</td>
+     <td>6</td>
+     <td>240</td> 
+     <td>720</td> 
+     <td>8,760</td>
+    </tr>
+  </table>
+  <figcaption>{{ figure_link(caption="Desktop cache TTL percentiles by resource type.") }}</figcaption>
+</figure>
+
+
 
 While most of the median TTLs are high, the lower percentiles highlight some of the missed caching opportunities. For example, the median TTL for images is 720 hours (1 month); however the 25<sup>th</sup> percentile is just 168 hours (1 week) and the 10<sup>th</sup> percentile has dropped to just a few hours. Compare this with fonts, which have a very high TTL of 8760 hours (1 year) all the way down to the 25th percentile, with even the 10<sup>th</sup> percentile showing a TTL of 1 month.
 
