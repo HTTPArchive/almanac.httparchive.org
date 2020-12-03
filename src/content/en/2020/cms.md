@@ -306,7 +306,6 @@ A "core" WordPress community maintains the CMS and services requirements for add
 
 Deriving from this flexibility, WordPress also has a low barrier of entry for developers and site "builders" or "implementers". We see a virtuous cycle: flexible extensions offer ever-easier site building, which lets more and more users build ever-more-powerful sites with WordPress. This increase in users makes it more attractive for developers to create better and better extensions, furthering the cycle.
 
-{# TODO(author): Review figure. #}
 {{ figure_markup(
   image="cms-wordpress-plugin-resource-per-page.png",
   caption="WordPress plugin resources per page.",
@@ -358,8 +357,6 @@ A "good" LCP is regarded as under 2.5 seconds. The average website on one of the
   sql_file="core_web_vitals_distribution.sql"
   )
 }}
-
-{# TODO(author): Reconsider "glass half-full" approach: https://github.com/HTTPArchive/almanac.httparchive.org/pull/1513#discussion_r532132195 #}
 
 Even though we'd love to see CMSs performing much better here, there are still some positive takeaways from these results. For one, the fact that 61% of Drupal websites have good LCP is especially notable because it's much better than the global distribution of 48% of websites having good LCP, according to the [Chrome UX Report](https://twitter.com/ChromeUXReport/status/1293306510509039616). For 1 in 3 or 4 WordPress websites to have good LCP is also kind of amazing, given the sheer magnitude of the number of WordPress websites. Wix does have some catching up to do, but it's encouraging to see that Wix engineers are [actively](https://twitter.com/DanShappir/status/1308043752712343552) working on fixing performance issues, so this will be something to keep an eye on over the years.
 
