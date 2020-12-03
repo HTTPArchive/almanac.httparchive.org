@@ -78,6 +78,7 @@ Developers can estimate the available storage by calling `navigator.storage.esti
 
 {{ figure_markup(
   image="storage_manager_api_estimate.png",
+  alt="Number of pages using the estimate method of the StorageManager API.",
   caption="Number of pages using the estimate method of the StorageManager API.",
   description="Chart of the usage of StorageManager API's estimate method, based on the number of pages monitored by HTTPArchive. It compares the usage on mobile and desktop devices. It shows a linear growth on the desktop, while it shows a hockey stick growth for mobile devices. In October, approximately 34,000 mobile sites and 27,000 desktop sites make use of it.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1853644024&format=interactive",
@@ -94,6 +95,7 @@ There are two categories of web storage: "Best Effort" and "Persistent", with th
 
 {{ figure_markup(
   image="storage_manager_api_persist.png",
+  alt="Number of pages using the persist method of the StorageManager API.",
   caption="Number of pages using the persist method of the StorageManager API.",
   description="Chart of the usage of StorageManager API's persist method, based on the number of pages monitored by HTTPArchive. It compares the usage on mobile and desktop devices. On desktop pages, the usage is almost steady, while there's more fluctuation on mobile devices. In October 2020, 25 desktop pages and 176 mobile pages make use of the API.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=644836316&format=interactive",
@@ -155,6 +157,7 @@ The `navigator.wakeLock.request()` method creates a wake lock. This method takes
 
 {{ figure_markup(
   image="screen_wake_lock_api.png",
+  alt="Numbers of pages using Screen Wake Lock API.",
   caption="Numbers of pages using Screen Wake Lock API.",
   description="Chart of Screen Wake Lock API usage, based on the number of pages monitored by the HTTP Archive, comparing desktop and mobile pages. In October 2020, the API is used by 10 desktop and 5 mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=718278185&format=interactive",
@@ -213,6 +216,7 @@ At the time of this writing, only Chromium-based browsers implement this API. On
 
 {{ figure_markup(
   image="periodic_background_sync_api.png",
+  alt="Number of pages using Periodic Background Sync API.",
   caption="Number of pages using Periodic Background Sync API.",
   description="Chart of Idle Detection API usage, based on the number of pages monitored by HTTPArchive. It compares the usage on mobile and desktop devices. Since April 2020, the API is used by one to two desktop and mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1444904371&format=interactive",
