@@ -1,5 +1,15 @@
 #standardSQL
 # CSP: usage of default/script-src, and within the directive usage of strict-dynamic, nonce values, unsafe-inline and unsafe-eval
+CREATE TEMPORARY FUNCTION getHeader(headers STRING, headername STRING)
+  RETURNS STRING DETERMINISTIC
+  LANGUAGE js AS '''
+  const parsed_headers = JSON.parse(headers);
+  const matching_headers = parsed_headers.filter(h => h.name.toLowerCase() == headername.toLowerCase());
+  if (matching_headers.length > 0) {
+    return matching_headers[0].value;
+  }
+  return null;
+''';
 SELECT
   client,
   total_pages,
@@ -20,18 +30,24 @@ SELECT
   SAFE_DIVIDE(freq_unsafe_eval, freq_default_script_src) AS pct_unsafe_eval_over_csp_with_src,
 FROM (
   SELECT
-    _TABLE_SUFFIX AS client,
+    client,
     COUNT(0) AS total_pages,
-    COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)Content-Security-Policy ')) AS freq_csp,
-    COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)Content-Security-Policy .+(default|script)-src')) AS freq_default_script_src,
-    COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)Content-Security-Policy .+strict-dynamic')) AS freq_strict_dynamic,
-    COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)Content-Security-Policy .+nonce-')) AS freq_nonce,
-    COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)Content-Security-Policy .+unsafe-inline')) AS freq_unsafe_inline,
-    COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)Content-Security-Policy .+unsafe-eval')) AS freq_unsafe_eval
-  FROM
-    `httparchive.summary_requests.2020_08_01_*` AS r
-  WHERE
-    firstHtml
+    COUNTIF(csp_header IS NOT NULL) AS freq_csp,
+    COUNTIF(REGEXP_CONTAINS(csp_header, '(?i)(default|script)-src')) AS freq_default_script_src,
+    COUNTIF(REGEXP_CONTAINS(csp_header, '(?i)strict-dynamic')) AS freq_strict_dynamic,
+    COUNTIF(REGEXP_CONTAINS(csp_header, '(?i)nonce-')) AS freq_nonce,
+    COUNTIF(REGEXP_CONTAINS(csp_header, '(?i)unsafe-inline')) AS freq_unsafe_inline,
+    COUNTIF(REGEXP_CONTAINS(csp_header, '(?i)unsafe-eval')) AS freq_unsafe_eval
+  FROM (
+    SELECT
+      client,
+      getHeader(JSON_EXTRACT(payload, '$.response.headers'), 'Content-Security-Policy') AS csp_header
+    FROM
+      `httparchive.almanac.requests`
+    WHERE
+      date = "2020-08-01" AND
+      firstHtml
+  )
   GROUP BY
     client
 )
