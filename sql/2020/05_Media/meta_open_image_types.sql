@@ -18,7 +18,7 @@ try {
           result.image_types = [];
         var url = node['content'];
         // parse image extension from url
-        var rex = new RegExp('\\.([^/#?]+)[.]([^/#?]+)([#?][^/]*)?$');
+        var rex = new RegExp('([^/]+)[.]([^/#?&]+)([#?][^/]*)?$');
         var ext = url.match(rex);
         result.image_types.push(ext[2].toLowerCase().trim());  
       }

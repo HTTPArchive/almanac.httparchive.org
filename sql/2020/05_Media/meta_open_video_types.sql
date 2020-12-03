@@ -18,7 +18,7 @@ try {
           result.video_types = [];
         var url = node['content'];
         // parse video extension from url
-        var rex = new RegExp('\\.([^/#?]+)[.]([^/#?]+)([#?][^/]*)?$');
+        var rex = new RegExp('([^/]+)[.]([^/#?&]+)([#?][^/]*)?$');
         var ext = url.match(rex);
         result.video_types.push(ext[2].toLowerCase().trim());  
       }
@@ -43,7 +43,7 @@ FROM (
 GROUP BY
   client, video_type
 HAVING
-  video_type_count > 100
+  video_type_count > 10
 ORDER BY
   client,
   video_type_count DESC;
