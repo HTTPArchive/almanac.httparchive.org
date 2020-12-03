@@ -20,8 +20,6 @@ featured_stat_3: 4%
 featured_stat_label_3: Sites with unchanged Performance Score in LH6
 ---
 
-{# TODO throughout - change black on red to white on red #}
-
 ## Introduction
 
 There is an unquestionable, detrimental effect that slow speed has on overall user experience, and consequently, conversions. But poor performance doesn't just cause frustration or negatively affects business goals—it creates real-life barriers to entry. This year's global pandemic [made those existing barriers even more apparent](https://www.weforum.org/agenda/2020/04/coronavirus-covid-19-pandemic-digital-divide-internet-data-broadband-mobbile/). With the shift to remote learning, work and socializing, suddenly our entire lives were moved online. Poor connectivity and lack of access to capable devices made this change painful at best, if not impossible, to many. It has been a real test, highlighting connectivity, device and speed inequalities worldwide.
@@ -34,7 +32,7 @@ In this chapter, we will be looking at real-world performance data provided by t
 
 Let's dive in.
 
-### Lighthouse Performance Score
+## Lighthouse Performance Score
 
 In May 2020, [Lighthouse 6 was released](https://github.com/GoogleChrome/lighthouse/releases/tag/v6.0.0). The new major version of the popular performance auditing suite introduced notable changes to its Performance Score algorithm. The Performance Score is a high-level portrayal of site speed. In Lighthouse 6, the score is measured with six—not five—metrics: First Meaningful Paint and First CPU Idle were removed and replaced with Largest Contentful Paint (LCP), Total Blocking Time (TBT, the lab equivalent of First Input Delay) and Cumulative Layout Shift (CLS).
 
@@ -51,8 +49,6 @@ Additionally, the score is now calculated using different reference points for d
   sql_file="lh6_vs_lh5_performance_score_02.sql"
   )
 }}
-
-{# TODO - font looks wrong in chart. Asked for edit access to the sheet #}
 
 Above, we observe that 4% of websites recorded no Performance Score change, but the number of sites with negative changes outweighs the ones with score improvements. The Performance Score grades have gotten worse (with the most prominent decrease curve in the 10-25 points area), which is portrayed even more directly below:
 
@@ -72,11 +68,11 @@ In the comparison of Lighthouse 5 and Lighthouse 6, we can directly observe how 
 
 These overall changes are not unexpected considering a multitude of amendments to the algorithm itself.
 
-### Core Web Vitals: Largest Contentful Paint
+## Core Web Vitals: Largest Contentful Paint
 
 Largest Contentful Paint (LCP) is a landmark timing-based metric that reports the time at which the largest [above-the-fold element](https://web.dev/lcp/#what-elements-are-considered) was rendered.
 
-#### LCP by device
+### LCP by device
 
 {{ figure_markup(
   image="performance-lcp-by-device.png",
@@ -90,7 +86,7 @@ Largest Contentful Paint (LCP) is a landmark timing-based metric that reports th
 
 In the chart above, we can observe that between 43% and 53% of websites have good LCP performance (below 2.5s): the majority of websites manage to prioritize and load their critical, above-the-fold media fast. For a relatively new metric, this is an optimistic signal. The slight variance between desktop and mobile is likely to be caused by varying network speeds, device capabilities and image sizing (large, desktop-specific images will take longer to be downloaded and rendered).
 
-#### LCP by geographic location
+### LCP by geographic location
 
 {{ figure_markup(
   image="performance-lcp-by-geo.png",
@@ -104,13 +100,11 @@ In the chart above, we can observe that between 43% and 53% of websites have goo
   )
 }}
 
-{# TODO - why not the full list? #}
-
 The highest percentage of good LCP readings is mostly distributed amongst European and Asian countries with the Republic of Korea (South Korea) leading at 76% of good metric readings. South Korea is a consistent leader in mobile speeds, with an impressive 145 Mbps download [reported by Speedtest Global Index](https://www.speedtest.net/global-index) for October. Japan, Czechia, Taiwan, Germany and Belgium are also a handful of countries with reliably high mobile speeds. Australia, while leading in mobile network speeds, is let down by slow desktop connections and latency which places it at the bottom section of the ranking above. {# TODO should we split this by desktop and mobile to prove this? Or at least state that we did look at this to confirm this? #}
 
 India remains the last one in our set of data, with only 16% of good experiences. While the population of people connecting to the internet for the first time is continually growing, the mobile and desktop network speeds are [still an issue](https://www.opensignal.com/reports/2020/04/india/mobile-network-experience), with average downloads of 10Mbps for 4G, 3Mbps for 3G and below 50Mbps for desktop.
 
-#### LCP by connection type
+### LCP by connection type
 
 {{ figure_markup(
   image="performance-lcp-by-connection-type.png",
@@ -126,13 +120,13 @@ Since LCP is a timing showcasing when the largest above-the-fold element has bee
 
 There's a clear correlation of network speed and better LCP performance, but even on 4G, only 48% of results are categorized as good, leaving half of the readings in need of an improvement. Automating media optimization, serving the right dimensions and formats, as well as optimizing for Low Data Mode, could help move the needle. Learn more about [optimizing LCP in this guide](https://web.dev/optimize-lcp/).
 
-### Core Web Vitals: Cumulative Layout Shift
+## Core Web Vitals: Cumulative Layout Shift
 
 Cumulative Layout Shift (CLS) quantifies how much elements within the viewport move around during the page visit. It helps pinpoint the degree to which unexpected movement occurs on your websites to grade the user experience, rather than attempting to measure a specific part of interaction with the help of a unit like seconds or milliseconds.
 
 In that way, CLS is a different, new type of a UX holistic metric in comparison to others mentioned in this chapter.
 
-#### CLS by device
+### CLS by device
 
 {{ figure_markup(
   image="performance-cls-by-device.png",
@@ -146,7 +140,7 @@ In that way, CLS is a different, new type of a UX holistic metric in comparison 
 
 According to CrUX data, both in cases of desktop and mobile devices, more than half of the websites have a good CLS score. There's a slight difference (6 percentage points) between the number of good-rated websites between desktop and mobile, favoring the latter. We could speculate that phones lead in good CLS ratings due to mobile-optimized experiences that tend to be less feature and visuals-rich.
 
-#### CLS by geographic location
+### CLS by geographic location
 
 {{ figure_markup(
   image="performance-cls-by-geo.png",
@@ -160,13 +154,11 @@ According to CrUX data, both in cases of desktop and mobile devices, more than h
   )
 }}
 
-{# TODO use full graph #}
-
 The CLS performance in different geographical regions is primarily good, with at least 56% of sites with a good rating. This is excellent news for perceived visual stability. We can observe similar countries leading as we've seen in the LCP geo-distribution—Republic of Korea, Japan, Czechia, Germany, Poland.
 
 Visual stability is less affected by geography and latency to other metrics, like LCP. The difference in the percentage of good scores between the top and the bottom country is 61% for LCP and only 13% for CLS. The percentage of moderate-rating websites is relatively low across the board, giving way to 19%-29% of poor experiences across the board. There are numerous factors that can contribute to poor CLS—learn how to address them in the [Optimize Cumulative Layout Shift guide](https://web.dev/optimize-cls/).
 
-#### CLS by connection type
+### CLS by connection type
 
 {{ figure_markup(
   image="performance-cls-by-connection-type.png",
@@ -182,11 +174,11 @@ There's a reasonably even distribution of CLS scoring across most connection typ
 
 It is challenging to draw definite conclusions about 4G, but we can speculate that perhaps 4G+ connections are used as a method of internet access on desktop devices. If that assumption was valid, web fonts and imagery could be heavily cached, which positively affects CLS measurements.
 
-### Core Web Vitals: First Input Delay
+## Core Web Vitals: First Input Delay
 
 First Input Delay (FID) measures the time between first user interaction and when the browser is able to respond to that interaction. FID is a good indicator of how interactive your websites are.
 
-#### FID by device
+### FID by device
 
 {{ figure_markup(
   image="performance-fid-by-device.png",
@@ -202,7 +194,7 @@ It is relatively uncommon to see good scores distributed across such a high perc
 
 On mobile, 80% of sites are graded as good. A likely explanation is the reduced CPU capabilities in comparison to desktop, network latency on mobile (causing a delay in script download and execution) as well as battery efficiency and temperature limitations, capping the CPU potential of mobile devices. All of which directly affect interactivity metrics like FID.
 
-#### FID by geographic location
+### FID by geographic location
 
 {{ figure_markup(
   image="performance-fid-by-geo.png",
@@ -216,13 +208,11 @@ On mobile, 80% of sites are graded as good. A likely explanation is the reduced 
   )
 }}
 
-{# TODO use full graph #}
-
 The geographic distribution of FID scoring confirms the findings in the aggregate device chart shared earlier on. At worst, 79% of websites have good FID, with an impressive 97% on the top position with the Republic of Korea leading again. Interestingly, some top contenders from the CLS and LCP ranking, such as Czechia, Poland, Ukraine and Russian Federation here fall to the bottom of the hierarchy.
 
 Again, it isn't easy to speculate why that might be {# I think it IS easy to speculate why - precisely for the reasons you give! #}. Assuming FID correlates to JavaScript execution capabilities, countries where more capable devices are more expensive and treated as luxury items, might report lower FID ranking. Poland is a good example—with one of the [highest iPhone prices](https://qz.com/1106603/where-the-iphone-x-is-cheapest-and-most-expensive-in-dollars-pounds-and-yuan/) compared to the US market, combined with [relatively lower wages](https://en.wikipedia.org/wiki/List_of_European_countries_by_average_wage#Net_average_monthly_salary), a single salary isn't sufficient to purchase Apple's flagship product. To contrast, Australians with [average salaries](https://www.news.com.au/finance/average-australian-salary-how-much-you-have-to-earn-to-be-better-off-than-most/news-story/6fcdde092e87872b9957d2ab8eda1cbd) would be able to buy an iPhone with a weeks' worth of pay. Luckily, the percentage of websites with a low rating is mostly at 0, with a few exceptions of 1-2% readings, pointing towards a relatively speedy response to the interaction.
 
-#### FID by connection type
+### FID by connection type
 
 {{ figure_markup(
   image="performance-fid-by-connection-type.png",
@@ -236,11 +226,11 @@ Again, it isn't easy to speculate why that might be {# I think it IS easy to spe
 
 We can observe a direct correlation between network speed and fast FID, ranging from 73% on 2G to 87% on 4G networks. Faster networks will aid in speedier script download, which consequently speeds up the beginning of the parsing and fewer tasks blocking the main thread. It is optimistic to see such results, especially when the ratio of poorly rated site experiences doesn't exceed 5%.
 
-### First Contentful Paint
+## First Contentful Paint
 
 First Contentful Paint (FCP) measures the first time at which the browser rendered any text, image, non-white canvas or SVG content. FCP is a good indicator of perceived speed as it portrays how long people wait to see the first signs of a site loading.
 
-#### FCP by device
+### FCP by device
 
 {{ figure_markup(
   image="performance-fcp-desktop-distribution.png",
@@ -252,8 +242,6 @@ First Contentful Paint (FCP) measures the first time at which the browser render
   )
 }}
 
-{# TODO - font looks wrong in chart. Asked for edit access to the sheet #}
-
 {{ figure_markup(
   image="performance-fcp-mobile-distribution.png",
   caption="Distribution of websites labeled as having fast, average and slow FCP performance on mobile.",
@@ -263,8 +251,6 @@ First Contentful Paint (FCP) measures the first time at which the browser render
   sql_file="web_vitals_distribution_by_device.sql"
   )
 }}
-
-{# TODO - font looks wrong in chart. Asked for edit access to the sheet #}
 
 In the charts above, the FCP distributions are broken down by desktop and mobile. [Comparing to last year](../2019/performance#fcp-by-device), there are noticeably less average FCP readings, while the percentage of fast and slow user experiences has risen no matter the device type. We can still observe the same trend, where mobile users will experience slower FCP more frequently than desktop users. Overall, users are more likely to have a good or poor experience, rather than a mediocre experience.
 
@@ -282,7 +268,7 @@ Comparing FCP on mobile devices on a year-over-year basis, we observe fewer good
 
 It is challenging to deduce why FCP isn't improving, as numerous factors can delay paints, such as server latency (measured by a handful of metrics, such as [Time to First Byte (TTFB)](#time-to-first-byte-ttfb) and RTT), blocking JavaScript requests, or inappropriate handling of custom fonts to name a few. {# TODO - are those not good reasons? r do you mean it's challenging to pinpoint exactly which of these is the cause (or even something else). Consider to reword #}
 
-#### FCP by geographic location
+### FCP by geographic location
 
 {{ figure_markup(
   image="performance-fcp-by-geo.png",
@@ -296,8 +282,6 @@ It is challenging to deduce why FCP isn't improving, as numerous factors can del
   )
 }}
 
-{# TODO use full graph #}
-
 Before we dig into the analysis, it is noteworthy to mention that in the 2019 Performance chapter, the thresholds for "good" and "poor" classification were different from 2020. In 2019, sites with FCP below 1s were considered good, while those with FCP above 3s were categorized as poor. In 2020, those ranges shifted to 1.5s for good and 2.5s for poor.
 
 This change means that the distribution would shift towards more "good" and "poor" rated websites. We can observe that trend compared to [last year's results](../2019/performance#fcp-by-geography), as the percentage of good and poor websites rise. The top ten geographies with the highest rate of fast websites remain relatively unchanged from 2019, with the addition of Czechia and Belgium and the fall of the United States and the United Kingdom. The Republic of Korea leads with 62% of websites reporting fast FCP, nearly doubling since last year (which, again, is likely due to re-categorization of results). Other countries in the top of the ranking also double the number of good experiences.
@@ -306,7 +290,7 @@ While the mediocre ("needs improvement") percentage becomes smaller, the number 
 
 Again, hypothesizing on reasons for the specific rankings is difficult {# TODO hypothesizing is (relatively) easy, proving is difficult #} }, especially seeing outliers such as Australia at the lower end. Australia has one of the highest global smartphone penetration levels, one of the fastest mobile networks and relatively high average income levels. We'd easily assume it should be higher up. However, taking into account slow fixed connections, latency and lack of iOS representation in CrUX, its positioning starts making more sense. With an example like this (touched only on the surface), we can see how difficult understanding context for each of the countries would be.
 
-#### FCP by connection type
+### FCP by connection type
 
 {{ figure_markup(
   image="performance-fcp-by-connection-type.png",
@@ -326,11 +310,11 @@ The choice of [hosting provider](https://ismyhostfastyet.com/) or [CDN](https://
 
 Looking at the "offline" statistics, we can deduce that a substantial number of FCP issues are also _not_ correlated to the network type. We don't observe significant gains in this category, which we would if that statement was true. It appears would seem rendering is not so much delayed by fetching JavaScript, but it is affected by parsing and execution.
 
-### Time to First Byte
+## Time to First Byte
 
 Time to First Byte (TTFB) is the time taken from the initial HTML request being made until the first byte arrives back to the browser. Issues with swiftly processing requests can quickly cascade into affecting other performance metrics as they will delay not only paints but also any resource fetching.
 
-#### TTFB by device
+### TTFB by device
 
 {{ figure_markup(
   image="performance-ttfb-by-device.png",
@@ -344,7 +328,7 @@ Time to First Byte (TTFB) is the time taken from the initial HTML request being 
 
 On desktop, 76% of websites have a "not good" TTFB, while on mobile, that percentage rises to 83%. We might assume that the data portrays how TTFB is often an overlooked metric when it is assumed that most performance measurements and work is concentrated within front-end and visual rendering, not asset delivery and server-side work. High TTFB will have a direct, negative impact on a plethora of other performance signals, which is an area that still needs addressing.
 
-#### TTFB by geographic location
+### TTFB by geographic location
 
 {{ figure_markup(
   image="performance-ttfb-by-geo.png",
@@ -358,11 +342,9 @@ On desktop, 76% of websites have a "not good" TTFB, while on mobile, that percen
   )
 }}
 
-{# TODO incorrect graph #}
-
 Likening this years' TTFB geo readings to [2019 results](../2019/performance#ttfb-by-geo) again points to more fast websites, but similarly to FCP, the thresholds have changed. Previously, we considered TTFB below 200ms fast, and above 1000ms slow. In 2020, TTFB below 500ms is good and above 1500ms poor. Such generous changes in categorization can explain that we observe significant changes, such as a 36% rise in good website experiences in The Republic of Korea or 22% rise in Taiwan. Overall, we still observe similar regions, such as Asia-Pacific and selected European locales leading.
 
-#### TTFB by connection type
+### TTFB by connection type
 
 {{ figure_markup(
   image="performance-ttfb-by-connection-type.png",
@@ -380,7 +362,7 @@ Looking at the [mobile speeds worldwide for December 2018-November 2019](https:/
 
 What's surprising is the relatively the same number of good TTFB results between offline and 4G origins. With service workers, we could expect some of the TTFB issues to be mitigated, but that trend is not reflected in the chart above. {# TODO - any ideas why? #}
 
-### Performance Observer usage
+## Performance Observer usage
 
 There are dozens of different user-centric metrics that can be used to assess websites and applications. However, sometimes the predefined metrics don't quite fit our specific scenarios and needs. The [PerformanceObserver API](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver) allows us to obtain custom metric data obtained with [User Timing API](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API), [Long Task API](https://developer.mozilla.org/en-US/docs/Web/API/Long_Tasks_API), [Event Timing API](Event Timing API) and [a handful of other low-level APIs](https://web.dev/custom-metrics/). For example, with their help, we could record the timing transitions between pages or quantify server-side-rendered (SSR) application hydration.
 
@@ -398,7 +380,7 @@ The chart above showcases that Performance Observer, despite being available for
 
 {# TODO - that's actually higher than I expected as it's a bit niched. Shjould we frame this in a more positivie light as per out Glass Hlaf Full principal (https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#principles)? Also any thoughts on why this is so high? #}
 
-### Conclusion
+## Conclusion
 
 User experience is not only a spectrum but also depends on a wide variety of factors. To attempt understanding the state of performance without excluding the sub-par, underprivileged experiences, we must approach it intersectionally. Each website visit tells a story. Our personal and country-level socioeconomic status dictates the type of device and internet provider we can afford. The geopositioning of where we live affects latency (we Australians feel this pain regularly), and the economy dictates available cellular network coverage. What websites do we visit? What do we visit them for? Context is critical to not only analyzing data but also developing necessary empathy and care in building accessible, fast experiences for all.
 
