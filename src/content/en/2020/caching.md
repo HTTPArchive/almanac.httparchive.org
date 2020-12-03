@@ -266,7 +266,7 @@ When the server receives the request for the file, it can include the date/time 
 < Date: Thu, 23 Jul 2020 03:04:17 GMT
 < <span class="keyword">Last-Modified: Mon, 20 Jul 2020 11:43:22 GMT</span>
 < Cache-Control: max-age=600
-< 
+ 
 < <html>...lots of html here...</html></code></pre>
 
 The browser will cache this object for 600 seconds (as defined in the `Cache-Control` header), after which it will mark the object as stale. If the browser needs to use the file again, it requests the file from the server just as it did initially, but this time it includes an additional request header, called `If-Modified-Since`, which it sets to the value that was passed in the `Last-Modified` response header in the initial response:
@@ -295,7 +295,7 @@ However, if the file on the server has changed since it was last requested by th
 < Date: Thu, 23 Jul 2020 03:14:17 GMT
 < Last-Modified: Thu, 23 Jul 2020 03:12:42 GMT
 < Cache-Control: max-age=600
-< 
+
 < <html>...lots of html here...</html></code></pre>
 
 As you can see, the `Last-Modified` response header and `If-Modified-Since` request header work as a pair.
@@ -312,7 +312,7 @@ In this example, when the server receives the initial request for the file, it c
 < Date: Thu, 23 Jul 2020 03:04:17 GMT
 < ETag: "v123.4.01"
 < Cache-Control: max-age=600
-<
+
 < <html>...lots of html here...</html></code></pre>
 
 As with the `If-Modified-Since` example above, the browser will cache this object for 600 seconds, as defined in the `Cache-Control` header. When it needs to request the object from the server again, it includes an additional request header, called `If-None-Match`, which has the value passed in the `ETag` response header in the initial response:
@@ -338,7 +338,7 @@ However, if the values are different, then the version of the file on the server
 < Date: Thu, 23 Jul 2020 03:14:17 GMT
 < ETag: "v123.5.06"
 < Cache-Control: public, max-age=600
-< 
+ 
 < <html>...lots of html here...<html></code></pre>
 
 Again, we see a pair of headers being used for this conditional request processing - the `ETag` response header and the `If-None-Match` request header.
@@ -361,7 +361,7 @@ In the same way that the `Cache-Control` header has more power and flexibility t
 
 ### Note
 
-Correctly-implemented revalidation using conditional requests can significantly reduce bandwidth (304 responses are typically much smaller than 200 responses) , load on servers (only a small amount of processing is required to compare change dates or hashes) and improve perceived performance (servers respond more quickly with a 304). However, as we can see from the above statistics, more than a fifth of all requests are not using any form of conditional requests.
+Correctly-implemented revalidation using conditional requests can significantly reduce bandwidth (304 responses are typically much smaller than 200 responses), load on servers (only a small amount of processing is required to compare change dates or hashes) and improve perceived performance (servers respond more quickly with a 304). However, as we can see from the above statistics, more than a fifth of all requests are not using any form of conditional requests.
 
 * Only 0.1% of the responses had a 304 status.
 * 20.5% of the responses had no ETag header and contained the same `Last-Modified` value, passed in the `If-Modified-Since` header of the corresponding request. Out of these, 86% had a 304 status.
@@ -371,51 +371,56 @@ Correctly-implemented revalidation using conditional requests can significantly 
 
 ## Validity of date strings
 Throughout this document, we have discussed several caching-related HTTP headers used to convey timestamps:
-The Date response header indicates when the resource was served to a client.
-The Last-Modified response header indicates when a resource was last changed on the server.
-The Expires header is used to indicate for how long a resource is cacheable.
-All three of these HTTP headers use a date formatted string to represent timestamps. The date-formatted string is defined in RFC 2616, and must specify the ‘GMT’ timestamp string.
+
+* The `Date` response header indicates when the resource was served to a client.
+* The `Last-Modified` response header indicates when a resource was last changed on the server.
+* The `Expires` header is used to indicate for how long a resource is cacheable.
+
+All three of these HTTP headers use a date formatted string to represent timestamps. The date-formatted string is defined in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-3.3.1), and must specify the 'GMT' timestamp string.
 For example:
-GET /index.html HTTP/2
-Host: www.example.org
-Accept: */*
 
-HTTP/2 200
-Date: Thu, 23 Jul 2020 03:14:17 GMT
-Cache-Control: max-age=600
-Last-Modified: Mon, 20 Jul 2020 11:43:22 GMT
+<pre><code>> GET /index.html HTTP/2
+> Host: www.example.org
+> Accept: */*
 
-Invalid date strings are ignored by most browsers, which can affect the cacheability of the response on which they are served - for example, an invalid Last-Modified header will result in the browser being unable to subsequently perform a conditional request for the object, since it is cached without that invalid timestamp.
-Because the Date HTTP response header is almost always generated automatically by the web server, invalid values are extremely rare. Similarly Last-Modified headers had a very low percentage (0.5%) of invalid values. What was very surprising to see though, was that a relatively high 2.9% of Expires headers used an invalid date format (2.5% in mobile).
+< HTTP/2 200
+< Date: Thu, 23 Jul 2020 03:14:17 GMT
+< Cache-Control: max-age=600
+< Last-Modified: Mon, 20 Jul 2020 11:43:22 GMT</code></pre>
+
+Invalid date strings are ignored by most browsers, which can affect the cacheability of the response on which they are served - for example, an invalid `Last-Modified` header will result in the browser being unable to subsequently perform a conditional request for the object, since it is cached without that invalid timestamp.
+
+Because the `Date` HTTP response header is almost always generated automatically by the web server, invalid values are extremely rare. Similarly `Last-Modified` headers had a very low percentage (0.5%) of invalid values. What was very surprising to see though, was that a relatively high 2.9% of `Expires` headers used an invalid date format (2.5% in mobile).
 
 **Placeholder for Figure 7: Invalid date formats in response headers.**
 
-Examples of some of the invalid uses of the Expires header are:
-Valid date formats, but using a time zone other than ‘GMT’
-Numerical values such as 0 or -1
-Values that would be valid in a Cache-Control header
-One large source of invalid Expires headers is from assets served from a popular third party, in which a date/time uses the EST time zone, for example Expires: Tue, 27 Apr 1971 19:44:06 EST. Note that some browsers may understand and accept this date format, on the principle of robustness, but it should not be assumed that this will be the case.
+Examples of some of the invalid uses of the `Expires` header are:
+
+* Valid date formats, but using a time zone other than 'GMT'
+* Numerical values such as 0 or -1
+* Values that would be valid in a `Cache-Control` header
+
+One large source of invalid `Expires` headers is from assets served from a popular third party, in which a date/time uses the EST time zone, for example `Expires: Tue, 27 Apr 1971 19:44:06 EST`. Note that some browsers may understand and accept this date format, on the principle of robustness, but it should not be assumed that this will be the case.
 
 ## The Vary header
+
 We have discussed how a caching entity can determine whether a response object is cacheable, and for how long it can be cached. However, one of the most important steps the caching entity must take is determining if the resource being requested is already in its cache. While this may seem simple, many times the URL alone is not enough to determine this. For example, requests with the same URL could vary in what compression they used (gzip, brotli, etc.) or could be returned in different encodings (XML, JSON etc.).
-To solve this problem, when a caching entity caches an object, it gives the object a unique identifier (a cache key). When it needs to determine whether the object is in its cache, it checks for the existence of the object using the cache key as a lookup. By default, this cache key is simply the URL used to retrieve the object, but servers can tell the caching entity to include other ‘attributes’ of the response (such as compression method) in the cache key, by including the Vary response header, to ensure that the correct object is subsequently retrieved from cache - the Vary header identifies ‘variants’ of the object, based on factors other than the URL.
-The Vary response header instructs the browser to add the value of one or more request header values to the cache key. The most common example of this is Vary: Accept-Encoding, which will result in the browser caching the same object in different formats, based on the different Accept-Encoding request header values (i.e. gzip, br, deflate).
+
+To solve this problem, when a caching entity caches an object, it gives the object a unique identifier (a cache key). When it needs to determine whether the object is in its cache, it checks for the existence of the object using the cache key as a lookup. By default, this cache key is simply the URL used to retrieve the object, but servers can tell the caching entity to include other 'attributes' of the response (such as compression method) in the cache key, by including the Vary response header, to ensure that the correct object is subsequently retrieved from cache - the `Vary` header identifies 'variants' of the object, based on factors other than the URL.
+
+The `Vary` response header instructs the browser to add the value of one or more request header values to the cache key. The most common example of this is `Vary: Accept-Encoding`, which will result in the browser caching the same object in different formats, based on the different Accept-Encoding request header values (i.e. `gzip, br, deflate`).
+
 ### Example
 A caching entity sends a request for an HTML file, indicating that it will accept a gzipped response:
 
-GET /index.html HTTP/2
-Host: www.example.org
-Accept-Encoding: gzip
-The server responds with the object, and indicates that the version it is sending should include the value of the Accept-Encoding request header
-HTTP/2 200 OK
-Content-Type: text/html
-Vary: Accept-Encoding
-In this simplified example, the caching entity would cache the object using a combination of the URL and the Vary header.
-Another common value is Vary: Accept-Encoding, User-Agent, which instructs the client to include both the Accept-Encoding and User-Agent values in the cache key. When used from a browser, this might not make much sense - each browser has its own User-Agent value, so a browser would not make a request using different User-Agent values anyway. However, when discussing shared proxies and CDNs, using values other than Accept-Encoding can be problematic as it dilutes (‘fragments’) the cache and can reduce the amount of traffic served from cache. For instance, if a CDN attempts to cache many different variants of an object, including not just the URL and the Accept-Encoding header but also the User-Agent string (of which there are several thousand different varieties), it may end up filling up the cache with many almost identical (or indeed, identical) cached objects. This is very inefficient, and can lead to very sub-optimal caching within the CDN, resulting in fewer cache hits and greater latency.
-In general, you should only vary the cache if you are serving alternate content to clients based on that header.
-The Vary header is used on 43.4% of HTTP responses, and 84.2%  of these responses include a Cache-Control header.
-The graph below details the popularity for the top 10 Vary header values. Accept-Encoding accounts for almost 92% of Vary's use, with User-Agent at 10.7%, Origin (used for CORS processing) at 8%, and Accept at 4.1% making up much of the rest.
+<pre><code>> GET /index.html HTTP/2
+> Host: www.example.org
+> Accept-Encoding: gzip</code></pre>
 
-**Placeholder for Figure 8: Vary header usage.**
+The server responds with the object, and indicates that the version it is sending should include the value of the `Accept-Encoding` request header.
 
+<pre><code><HTTP/2 200 OK
+< Content-Type: text/html
+< Vary: Accept-Encoding</code></pre>
 
+In this simplified example, the caching entity would cache the object using a combination of the URL and the `Vary` header.
