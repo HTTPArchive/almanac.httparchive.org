@@ -18,6 +18,9 @@ try {
           result.image_types = [];
         var url = node['content'];
         // parse image extension from url
+        // https://www.example.com/filename.ext?param=1234#anchor
+        // first group is for file name, second for extension and 
+        // third one for the remaining of the url
         var rex = new RegExp('([^/]+)[.]([^/#?&]+)([#?][^/]*)?$');
         var ext = url.match(rex);
         result.image_types.push(ext[2].toLowerCase().trim());  
