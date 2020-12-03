@@ -419,8 +419,18 @@ A caching entity sends a request for an HTML file, indicating that it will accep
 
 The server responds with the object, and indicates that the version it is sending should include the value of the `Accept-Encoding` request header.
 
-<pre><code><HTTP/2 200 OK
+<pre><code>< HTTP/2 200 OK
 < Content-Type: text/html
 < Vary: Accept-Encoding</code></pre>
 
 In this simplified example, the caching entity would cache the object using a combination of the URL and the `Vary` header.
+
+Another common value is `Vary: Accept-Encoding, User-Agent`, which instructs the client to include both the `Accept-Encoding` and `User-Agent` values in the cache key. When used from a browser, this might not make much sense - each browser has its own User-Agent value, so a browser would not make a request using different `User-Agent` values anyway. However, when discussing shared proxies and CDNs, using values other than `Accept-Encoding` can be problematic as it dilutes ('fragments') the cache and can reduce the amount of traffic served from cache. For instance, if a CDN attempts to cache many different variants of an object, including not just the URL and the Accept-Encoding header but also the `User-Agent` string (of which there are several thousand different varieties), it may end up filling up the cache with many almost identical (or indeed, identical) cached objects. This is very inefficient, and can lead to very sub-optimal caching within the CDN, resulting in fewer cache hits and greater latency.
+In general, you should only vary the cache if you are serving alternate content to clients based on that header.
+
+The `Vary` header is used on 43.4% of HTTP responses, and 84.2%  of these responses include a `Cache-Control` header.
+
+The graph below details the popularity for the top 10 Vary header values. `Accept-Encoding` accounts for almost 92% of `Vary`'s use, with `User-Agent` at 10.7%, `Origin` (used for CORS processing) at 8%, and Accept at 4.1% making up much of the rest.
+
+**Placeholder for Figure 8: Vary header usage.**
+
