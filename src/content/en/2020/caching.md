@@ -47,7 +47,7 @@ It should be clear then, that browser caching provides a significant performance
 
 Caching benefits both the end users (they get their web pages quickly) and the companies serving the web pages (reducing the load on their servers). Caching really is a win-win!
 
-Web architectures typically involve multiple tiers of caching. There are 4 main places (‘caching entities’) where caching can occur:
+Web architectures typically involve multiple tiers of caching. There are four main places (‘caching entities’) where caching can occur:
 
 * An end user's web browser.
 * A service worker cache running in the end user's web browser.
@@ -58,8 +58,8 @@ In this chapter, we will primarily be discussing caching within web browsers (1-
 
 The key to understanding how caching (and the web) works is to remember that it all consists of transactions between a requesting entity (e.g. a browser) and a responding entity (e.g. a server). Each transaction consists of 2 parts: 
 
-* The request from the requesting entity (“I want object X”), and 
-* The response from the responding entity (“Here is object X”). 
+* The request from the requesting entity ("I want object X"), and 
+* The response from the responding entity ("Here is object X"). 
 
 When we talk about caching, it refers to the object (HTML page, image, etc.) cached by the requesting entity.
 
@@ -81,7 +81,7 @@ There are three guiding principles to caching web content:
 
 ### Cache as much as you can
 
-When considering what to cache, it is important to understand whether the response content is static or dynamic.
+When considering what to cache, it is important to understand whether the response content is `static` or `dynamic`.
 
 * An example of static content is an image.  For instance, a picture of a cat is the same regardless of who’s requesting it or where the requester is located.
 * An example of dynamic content is a list of events which are specific to a geographic location. The list will be different based on the requester’s location.
@@ -91,13 +91,39 @@ Static content is typically cacheable and often for long periods of time.  It ha
 Dynamically generated content can be more nuanced and requires careful consideration. Some dynamic content can be cached, but often for a shorter period of time. The example of a list of upcoming events will change, possibly from day to day. Different variants of the list may also need to be cached and what’s cached in a user’s browser may be a subset of what’s cached on the server or CDN. Nevertheless, it is possible to cache some dynamic contents.  It is incorrect to assume that “dynamic” is another word for “uncacheable”.
 
 ### Cache for as long as you can
-The length of time you would cache a resource is highly dependent on the content’s volatility (the likelihood and/or frequency of change). For example, an image or a versioned JavaScript file could be cached for a very long time.  An API response or a non-versioned JavaScript file may need a shorter cache duration to ensure users get the most up-to-date response. Some content might only be cached for a minute or less. And, of course, some content should not be cached at all. This is discussed in more detail in Identifying caching opportunities.
+The length of time you would cache a resource is highly dependent on the content’s `volatility` (the likelihood and/or frequency of change). For example, an image or a versioned JavaScript file could be cached for a very long time.  An API response or a non-versioned JavaScript file may need a shorter cache duration to ensure users get the most up-to-date response. Some content might only be cached for a minute or less. And, of course, some content should not be cached at all. This is discussed in more detail in Identifying caching opportunities.
 
-Another point to bear in mind is that no matter how long you tell a browser to cache content for, the browser may evict that content from cache before that point in time.  It may do so to make room for other content that is accessed more frequently, etc.. However, a browser will never cache content for longer than it is told.
+Another point to bear in mind is that no matter how long you `tell` a browser to cache content for, the browser may evict that content from cache before that point in time.  It may do so to make room for other content that is accessed more frequently, etc.. However, a browser will never cache content for longer than it is told.
 
 ### Cache as close to end users as you can
 
 Caching content close to the end user reduces download times by removing latency. For example, if a resource is cached in a user's browser, then the request never goes out to the network and it is available instantaneously every time the user needs it. For visitors that don't have entries in their browser’s cache, a CDN would be the next place a cached resource is returned from. In most cases, it will be faster to fetch a resource from a local cache or a CDN compared to an origin server.
+
+## Some terminology
+* Caching entity - the hardware or software that is doing the caching. Due to the focus of this chapter, we use “browser” as a synonym for “caching entity” unless otherwise specified.
+
+* TTL - the Time-To-Live of a cached object defines how long it can be stored in a cache, typically measured in seconds. After a cached object reaches its TTL, it is marked as ‘stale’ by the cache. Depending on how it was added to the cache (see the details of the caching headers below), it may be evicted from cache immediately, or it may remain in the cache but marked as a ‘stale’ object, requiring revalidation before reuse.
+
+* Eviction - the automated process by which an object is actually removed from a cache when/after it reaches its TTL or possibly when the cache is full.
+* Revalidation - a cached object that is marked as stale may need to be ‘revalidated’ with the server before it can be displayed to the user.  The browser must first check with the server that the object the browser has in its cache is still up-to-date and valid.
+
+## Overview of browser caching
+When a browser makes a request for a piece of content (e.g. a web page), it will receive a response which includes not just the content itself (the HTML markup), but also a number of response headers which describe the content, including information about its cacheability.
+
+The caching-related headers, or the absence of them, tell the browser three important pieces of information:
+
+* Cacheability: Is this content cacheable?
+* Freshness: If it is cacheable, how long can it be cached for?
+* Validation: If it is cacheable, how do I subsequently ensure that my cached version is still fresh?
+
+The full specifications for these caching headers are in RFC 7234, and discussed in sections 4.2 (Freshness) and 4.3 (Validation).
+
+The two HTTP response headers typically used for specifying freshness are `Cache-Control` and `Expires`:
+
+* `Expires` specifies an explicit expiration date and time (i.e. when exactly the content expires)
+* `Cache-Control` specifies a cache duration (i.e. how long the content can be cached in the browser relative to when it was requested)
+
+Often, both these headers are specified; in that case Cache-Control takes precedence. These headers are discussed in more detail below.
 
 
 
