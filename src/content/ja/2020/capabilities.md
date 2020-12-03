@@ -26,23 +26,23 @@ featured_stat_label_3: 関連アプリのインストールを許可している
 
 <a lang="en" href="https://www.chromium.org/teams/web-capabilities-fugu">Capabilities Project</a>は、非公式にはProject Fuguとしても知られていますがGoogle、Microsoft、Intelの3社によるWebとネイティブの間のギャップを埋めるためのクロスカンパニーの取り組みです。これは、プラットフォームとしてのWebの関連性を保つために重要です。そのために、Chromiumの貢献者たちは、ユーザーのセキュリティ、プライバシー、信頼性を維持しながらOSの機能をWebに公開する新しいAPIを実装しています。これらの機能には以下のものが含まれますが、これらに限定されません。
 
-- ローカルファイルシステム上のファイルにアクセスするための<a lang="en" href="https://web.dev/file-system-access/">ファイルシステムアクセスAPI</a>。
-- 特定のファイル拡張子のハンドラーとして登録するための<a lang="en" href="https://web.dev/file-handling/">ファイルハンドラーAPI</a>。
-- ユーザーのクリップボードにアクセスするには、<a lang="en" href="https://web.dev/async-clipboard/">非同期クリップボードAPI</a>を使用します。
-- 他のアプリケーションとファイルを共有するための<a lang="en" href="https://web.dev/web-share/">Web共有API</a>。
-- ユーザーのアドレス帳から連絡先にアクセスするには、<a lang="en" href="https://web.dev/contact-picker/">連絡先ピッカーAPI</a>を使用します。
-- 画像中の顔やバーコードを効率的に検出するための<a lang="en" href="https://web.dev/shape-detection/">形状検出API</a>。
+- ローカルファイルシステム上のファイルにアクセスするための[ファイルシステムアクセスAPI](https://web.dev/file-system-access/)
+- 特定のファイル拡張子のハンドラーとして登録するための[ファイルハンドラーAPI](https://web.dev/file-handling/)
+- ユーザーのクリップボードにアクセスするには、[非同期クリップボードAPI](https://web.dev/async-clipboard/)を使用します。
+- 他のアプリケーションとファイルを共有するための[Web共有API](https://web.dev/web-share/)
+- ユーザーのアドレス帳から連絡先にアクセスするには、[連絡先ピッカーAPI](https://web.dev/contact-picker/)を使用します。
+- 画像中の顔やバーコードを効率的に検出するための[形状検出API](https://web.dev/shape-detection/)
 - <a lang="en" href="https://web.dev/nfc/">Web NFC</a>、<a lang="en" href="https://web.dev/serial/">Web Serial</a>、<a lang="en" href="https://web.dev/usb/">Web USB</a>、<a lang="en" href="https://web.dev/bluetooth/">Web Bluetooth</a>、およびその他のAPI（全リストについては、<a lang="en" href="https://goo.gle/fugu-api-tracker">Fugu API Tracker</a>を参照）
 
-誰でも新しい機能を提案するには、<a lang="en" href="https://bit.ly/new-fugu-request">Chromiumバグトラッカーでチケットを作成</a>する必要があります。Chromiumのコントリビューターは提案を検討し、適切な標準化団体を通じて他の開発者やブラウザベンダーとすべてのAPIについて議論します。一方、ふぐチームはChromiumでAPIを実装します。その後、APIは<a lang="en" href="https://web.dev/origin-trials/">オリジントライアル</a>を通じて限られた人たちへ利用可能になります。この段階では開発者は特定のオリジンでAPIをテストするためのトークンにサインアップできます。APIが十分に堅牢であることが判明した場合、APIはChromiumで提供され、ベンダーが決定した場合は他のブラウザでも提供されます。<a lang="en" href="https://web.dev/fugu-status/">Capability Status</a>のサイトでは、異なるCapability APIがどこで行われているかを示しています。
+誰でも新しい機能を提案するには、[Chromiumバグトラッカーでチケットを作成](https://bit.ly/new-fugu-request)する必要があります。Chromiumのコントリビューターは提案を検討し、適切な標準化団体を通じて他の開発者やブラウザベンダーとすべてのAPIについて議論します。一方、ふぐチームはChromiumでAPIを実装します。その後、APIは[オリジントライアル](https://web.dev/origin-trials/)を通じて限られた人たちへ利用可能になります。この段階では開発者は特定のオリジンでAPIをテストするためのトークンにサインアップできます。APIが十分に堅牢であることが判明した場合、APIはChromiumで提供され、ベンダーが決定した場合は他のブラウザでも提供されます。<a lang="en" href="https://web.dev/fugu-status/">Capability Status</a>のサイトでは、異なるCapability APIがどこで行われているかを示しています。
 
-ふぐプロジェクト、Capabilitiesプロジェクトのコードネームであるふぐは、日本料理にちなんで名付けられたもので、正しく調理されたふぐの肉は特別な味を体験できる。しかし正しく調理されていない場合は、致命的になる可能性があります。ふぐプロジェクトの強力なAPIは、開発者にとって非常にエキサイティングなものです。ユーザーのセキュリティやプライバシーに影響を与える可能性があります。そのため、ふぐチームはこれらの問題に特別な注意を払っています。例えば新しいインターフェイスでは、Webサイトを安全な接続（HTTPS）で送信する必要があります。中には、不正行為を防ぐために、クリックやキーを押すといったユーザーのジェスチャーを必要とするものもあります。その他の機能では、ユーザーによる明示的な許可が必要となります。開発者は、すべてのAPIを段階的な強化として使用できます。APIを機能検出することで、これらの機能をサポートしていないブラウザでアプリケーションが壊れることはありません。APIをサポートしているブラウザでは、ユーザーはより良い体験を得ることができます。このようにしてWebアプリはユーザーの特定のブラウザに応じて<a lang="en" href="https://web.dev/progressively-enhance-your-pwa/">段階的に強化</a>します。
+ふぐプロジェクト、<span lang="en">Capabilities</a>プロジェクトのコードネームであるふぐは、日本料理にちなんで名付けられたもので、正しく調理されたふぐの肉は特別な味を体験できる。しかし正しく調理されていない場合は、致命的になる可能性があります。ふぐプロジェクトの強力なAPIは、開発者にとって非常にエキサイティングなものです。ユーザーのセキュリティやプライバシーに影響を与える可能性があります。そのため、ふぐチームはこれらの問題に特別な注意を払っています。例えば新しいインターフェイスでは、Webサイトを安全な接続（HTTPS）で送信する必要があります。中には、不正行為を防ぐために、クリックやキーを押すといったユーザーのジェスチャーを必要とするものもあります。その他の機能では、ユーザーによる明示的な許可が必要となります。開発者は、すべてのAPIを段階的な強化として使用できます。APIを機能検出することで、これらの機能をサポートしていないブラウザでアプリケーションが壊れることはありません。APIをサポートしているブラウザでは、ユーザーはより良い体験を得ることができます。このようにしてWebアプリはユーザーの特定のブラウザに応じて[段階的に強化](https://web.dev/progressively-enhance-your-pwa/)します。
 
-本章では、HTTP Archiveと<a lang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity">Chrome Platform Status</a>による利用状況データをもとに、様々な最新のWeb APIの概要と2020年のWeb機能の状況を紹介します。一部のインターフェイスは真新しいものもあるため、（相対的な）利用率は非常に低いです。そのため、他の章とは異なりHTTP Archiveの利用統計は相対的な割合ではなく、絶対的なページ数で表示されます。<a lang="en" href="./methodology#metrics">技術的な制限</a>のため、HTTP Archiveには、許可もユーザーのジェスチャーも必要としないAPIのデータしかありません。データがない場合は、代わりにChrome Platform Statusに従ったGoogle Chromeでのページロードのパーセンテージが表示されます。統計が必ずしも意味のあるものではないほど数値が小さくても、多くの場合はデータから傾向を読み取ることができます。また、これらの統計値は、この章の今後の年次版で、APIがどの程度成熟し、採用率が向上したかを振り返る際のベースラインとしても使用できます。特に断りのない限り、APIはChromiumベースのブラウザでのみ利用可能であり、その仕様は標準化の初期段階にあります。
+本章では、HTTP Archiveと<a lang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity">Chrome Platform Status</a>による利用状況データをもとに、様々な最新のWeb APIの概要と2020年のWeb機能の状況を紹介します。一部のインターフェイスは真新しいものもあるため、（相対的な）利用率は非常に低いです。そのため、他の章とは異なりHTTP Archiveの利用統計は相対的な割合ではなく、絶対的なページ数で表示されます。[技術的な制限](./methodology#metrics)のため、HTTP Archiveには、許可もユーザーのジェスチャーも必要としないAPIのデータしかありません。データがない場合は、代わりに<span lang="en">Chrome Platform Status</span>に従ったGoogle Chromeでのページロードのパーセンテージが表示されます。統計が必ずしも意味のあるものではないほど数値が小さくても、多くの場合はデータから傾向を読み取ることができます。また、これらの統計値は、この章の今後の年次版で、APIがどの程度成熟し、採用率が向上したかを振り返る際のベースラインとしても使用できます。特に断りのない限り、APIはChromiumベースのブラウザでのみ利用可能であり、その仕様は標準化の初期段階にあります。
 
 ## 非同期クリップボードAPI
 
-`document.execCommand()`メソッドの助けを借りて、Webサイトはすでにユーザのクリップボードにアクセスできました。しかしAPIは同期的であり（クリップボードの項目を処理するのが難しい）、DOM内の選択されたテキストとしか対話できないため、このアプローチには多少の制限があります。そこで登場するのが <a lang="en" href="https://webkit.org/blog/10855/async-clipboard-api/">非同期クリップボードAPI</a>(<a lang="en" href="https://www.w3.org/TR/clipboard-apis/#async-clipboard-api">W3C草案</a>です。この新しいAPIは非同期であるだけでなく、大きなデータの塊のためにページをブロックしたり、許可が下りるのを待ったりしないという意味でもあります。
+`document.execCommand()`メソッドの助けを借りて、Webサイトはすでにユーザのクリップボードにアクセスできました。しかしAPIは同期的であり（クリップボードの項目を処理するのが難しい）、DOM内の選択されたテキストとしか対話できないため、このアプローチには多少の制限があります。そこで登場するのが [非同期クリップボードAPI](https://webkit.org/blog/10855/async-clipboard-api/)([W3C草案](https://www.w3.org/TR/clipboard-apis/#async-clipboard-api)です。この新しいAPIは非同期であるだけでなく、大きなデータの塊のためにページをブロックしたり、許可が下りるのを待ったりしないという意味でもあります。
 
 ### 読み取りアクセス
 
@@ -64,13 +64,13 @@ featured_stat_label_3: 関連アプリのインストールを許可している
 
 読み込み操作とは別に、非同期クリップボードAPIにはクリップボードに内容を書き込むための2つのメソッドがあります。ここでもプレーンテキスト用の短縮メソッド `navigator.clipboard.writeText()` と、任意のデータ用のメソッド `navigator.clipboard.write()` があります。Chromiumベースのブラウザでは、タブがアクティブな状態でクリップボードに書き込むことは許可を必要としません。しかし、Webサイトがバックグラウンドにある時、クリップボードに書き込もうとすると許可が必要になります。この方法はユーザのジェスチャーとパーミッションが必要なので、HTTP Archiveのメトリクスの対象外となります。`read()` メソッドとは対照的に、`write()` メソッドの使用率は指数関数的に増加しており、2020年10月には全ページロードの0.0006%の一部になっています。
 
-ふぐのもう1つの機能である<a lang="en" href="https://bugs.chromium.org/p/chromium/issues/detail?id=897289">RawクリップボードアクセスAPI</a>は、任意のデータをクリップボードからコピーしたり、クリップボードに貼り付けたりできるようにすることで非同期クリップボードAPIをさらに強化できます。
+ふぐのもう1つの機能である[RawクリップボードアクセスAPI](https://bugs.chromium.org/p/chromium/issues/detail?id=897289)は、任意のデータをクリップボードからコピーしたり、クリップボードに貼り付けたりできるようにすることで非同期クリップボードAPIをさらに強化できます。
 
 ## ストレージマネージャーAPI
 
-ブラウザは、Cookies、インデックス化されたデータベース（IndexedDB）、サービスワーカーのキャッシュストレージ、またはWebストレージ（ローカルストレージ、セッションストレージ）など、さまざまな方法でユーザーのシステム上にデータを保存できます。最近のブラウザでは、開発者はブラウザに応じて簡単に<a lang="en" href="https://web.dev/storage-for-the-web/">数百メガバイト、さらにはそれ以上の容量を保存</a>できます。ブラウザが容量を使い果たすと、システムが限界を超えるまでデータをクリアしてしまい、データの損失につながることがあります。
+ブラウザは、Cookies、インデックス化されたデータベース（IndexedDB）、サービスワーカーのキャッシュストレージ、またはWebストレージ（ローカルストレージ、セッションストレージ）など、さまざまな方法でユーザーのシステム上にデータを保存できます。最近のブラウザでは、開発者はブラウザに応じて簡単に[数百メガバイト、さらにはそれ以上の容量を保存](https://web.dev/storage-for-the-web/)できます。ブラウザが容量を使い果たすと、システムが限界を超えるまでデータをクリアしてしまい、データの損失につながることがあります。
 
-<a lang="en" href="https://storage.spec.whatwg.org/#storagemanager">WHATWG Storage Living Standard</a>の一部である<a lang="en" href="https://developer.mozilla.org/ja/docs/Web/API/StorageManager">StorageManager API</a>のおかげで、ブラウザはもはやブラックボックスのように振る舞うことはありません。このAPIにより、開発者は残りの空き容量を推定して <a lang="en" href="https://web.dev/persistent-storage/">永続ストレージ</a> にオプトインでき、ディスク容量が少なくなってもブラウザがウェブサイトのデータをクリアしないことを意味します。そのため、このAPIでは、現在Chrome、Edge、Firefoxで利用可能な`navigator`オブジェクトに新しい`StorageManager`インターフェイスが導入されています。
+<a lang="en" href="https://storage.spec.whatwg.org/#storagemanager">WHATWG Storage Living Standard</a>の一部である<a lang="en" href="https://developer.mozilla.org/ja/docs/Web/API/StorageManager">StorageManager API</a>のおかげで、ブラウザはもはやブラックボックスのように振る舞うことはありません。このAPIにより、開発者は残りの空き容量を推定して[永続ストレージ](https://web.dev/persistent-storage/)にオプトインでき、ディスク容量が少なくなってもブラウザがウェブサイトのデータをクリアしないことを意味します。そのため、このAPIでは、現在Chrome、Edge、Firefoxで利用可能な`navigator`オブジェクトに新しい`StorageManager`インターフェイスが導入されています。
 
 ### 利用可能なストレージを見積もる
 
@@ -110,7 +110,7 @@ Push APIとNotifications APIの助けを借りて、Webアプリケーション�
 
 ### バッジAPI
 
-いくつかのプラットフォームでは、アプリケーションのアイコンに開いているアクションの量を示すバッジを表示するのが一般的です。例えば、バッジは未読のメールや通知、完了すべきTo-Do項目の数を表示できます。<a lang="en" href="https://web.dev/badging-api/">バッジAPI</a>(<a lang="en" href="https://w3c.github.io/badging/">W3C非公式ドラフト</a>では、インストールされたWebアプリケーションのアイコンにこのようなバッジを表示できます。開発者は `navigator.setAppBadge()` を呼び出すことでバッジを設定できます。このメソッドはアプリケーションのバッジに表示する番号を指定します。ブラウザはユーザーのデバイスに最も近い表示を行います。番号が指定されない場合は、一般的なバッジが表示されます（例: macOSでは白い点）。`navigator.clearAppBadge()`を呼び出すと、再びバッジが削除される。バッジAPIは、メールクライアントやソーシャルメディアアプリ、メッセンジャーに最適です。Twitter PWAでは、バッジAPIを利用してアプリのバッジに未読通知の数を表示しています。
+いくつかのプラットフォームでは、アプリケーションのアイコンに開いているアクションの量を示すバッジを表示するのが一般的です。例えば、バッジは未読のメールや通知、完了すべきTo-Do項目の数を表示できます。[バッジAPI](https://web.dev/badging-api/) ([W3C非公式ドラフト](https://w3c.github.io/badging/))では、インストールされたWebアプリケーションのアイコンにこのようなバッジを表示できます。開発者は `navigator.setAppBadge()` を呼び出すことでバッジを設定できます。このメソッドはアプリケーションのバッジに表示する番号を指定します。ブラウザはユーザーのデバイスに最も近い表示を行います。番号が指定されない場合は、一般的なバッジが表示されます（例: macOSでは白い点）。`navigator.clearAppBadge()`を呼び出すと、再びバッジが削除される。バッジAPIは、メールクライアントやソーシャルメディアアプリ、メッセンジャーに最適です。Twitter PWAでは、バッジAPIを利用してアプリのバッジに未読通知の数を表示しています。
 
 {{ figure_markup(
   image="badging_api.png",
@@ -126,7 +126,7 @@ Push APIとNotifications APIの助けを借りて、Webアプリケーション�
 
 ### 通知トリガーAPI
 
-Push APIでは、ユーザーが通知を受け取るためにはオンラインである必要があります。ゲーム、リマインダーやTo-doアプリ、カレンダー、目覚まし時計など、一部のアプリケーションでは、ローカルで通知の対象日を決定してスケジュールを組むことも可能でした。この機能をサポートするために、Chromeチームは<a lang="en" href="https://web.dev/notification-triggers/">通知トリガー</a>（<a lang="en" href="https://github.com/beverloo/notification-triggers/blob/master/README.md">の説明者</a>と呼ばれる新しいAPIを使って実験を行っています。このAPIは`options`マップに`showTrigger`という新しいプロパティを追加し、サービスワーカーの登録時に`showNotification()`メソッドへ渡すことができます。このAPIは将来的にさまざまな種類のトリガーに対応できるように設計されていますが、現時点では時間ベースのトリガーのみが実装されています。特定の日時に基づいて通知をスケジューリングするために、開発者は`TimestampTrigger`の新しいインスタンスを作成し、ターゲットのタイムスタンプをそれに渡すことができる。
+Push APIでは、ユーザーが通知を受け取るためにはオンラインである必要があります。ゲーム、リマインダーやTo-doアプリ、カレンダー、目覚まし時計など、一部のアプリケーションでは、ローカルで通知の対象日を決定してスケジュールを組むことも可能でした。この機能をサポートするために、Chromeチームは[通知トリガー](https://web.dev/notification-triggers/)（[の説明者](https://github.com/beverloo/notification-triggers/blob/master/README.md)と呼ばれる新しいAPIを使って実験を行っています。このAPIは`options`マップに`showTrigger`という新しいプロパティを追加し、サービスワーカーの登録時に`showNotification()`メソッドへ渡すことができます。このAPIは将来的にさまざまな種類のトリガーに対応できるように設計されていますが、現時点では時間ベースのトリガーのみが実装されています。特定の日時に基づいて通知をスケジューリングするために、開発者は`TimestampTrigger`の新しいインスタンスを作成し、ターゲットのタイムスタンプをそれに渡すことができる。
 
 ```js
 registration.showNotification('Title', {
@@ -149,7 +149,7 @@ registration.showNotification('Title', {
 
 ## Screen Wake Lock API
 
-エネルギーを節約するために、モバイルデバイスは画面のバックライトを暗くし、最終的にはデバイスのディスプレイをオフにしますが、これはほとんどの場合で理にかなっています。しかし、例えば料理中にレシピを読んだり、プレゼンテーションを見たりしているときなど、ユーザーがアプリケーションに明示的にディスプレイをオフにしておきたいと思うようなシナリオもあります。<a lang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/Screen_Wake_Lock_API">Screen Wake Lock API</a>(<a lang="en" href="https://www.w3.org/TR/screen-wake-lock/">W3C作業ドラフト</a>)は、画面をオンに保つメカニズムを提供することで、この問題を解決します。
+エネルギーを節約するために、モバイルデバイスは画面のバックライトを暗くし、最終的にはデバイスのディスプレイをオフにしますが、これはほとんどの場合で理にかなっています。しかし、例えば料理中にレシピを読んだり、プレゼンテーションを見たりしているときなど、ユーザーがアプリケーションに明示的にディスプレイをオフにしておきたいと思うようなシナリオもあります。<a lang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/Screen_Wake_Lock_API">Screen Wake Lock API</a>([W3C作業ドラフト](https://www.w3.org/TR/screen-wake-lock/))は、画面をオンに保つメカニズムを提供することで、この問題を解決します。
 
 `navigator.wakeLock.request()`メソッドはウェイクロックを作成する。このメソッドは `WakeLockType`パラメーターを取ります。将来的には、Wake Lock APIは画面をオフにしてCPUをオンにしたままにするなど、他のロックタイプを提供できるようになるかもしれません。今のところ、APIはスクリーンロックのみをサポートしているので、デフォルト値が `'screen'` のオプション引数を1つだけ用意しています。このメソッドは`WakeLockSentinel`オブジェクトに解決するプロミスを返す。開発者はこの参照を保存して`release()`メソッドを呼び出し、後で画面のウェイクロックを解除する必要があります。ブラウザはタブが非アクティブになったり、ユーザがウィンドウを最小化したりすると自動的にロックを解除します。またブラウザは、例えばバッテリー残量が少ないなどの理由で、要求を拒否して約束を拒否することがあります。
 
@@ -163,11 +163,11 @@ registration.showNotification('Title', {
   )
 }}
 
-米国で人気の料理サイトBettyCrocker.comは、Screen Wake Lock APIの助けを借りて、料理中に画面が暗くなるのを防ぐオプションをユーザーに提供している。<a lang="en" href="https://web.dev/betty-crocker/">ケーススタディ</a>では平均セッション時間が通常より3.1倍長くなり、バウンス率が50%減少し、購入意向指標が約300%増加したと発表しています。このように、インターフェイスは、Webサイトやアプリケーションの成功に直接的に測定可能な効果を持っています。Screen Wake Lock APIは、2020年7月にGoogle Chrome 84で提供されました。HTTP Archiveには4月、5月、8月、9月、10月のデータしかありません。Chrome 84のリリース後、利用率は一気に上昇しました。2020年10月には、デスクトップ10ページ、モバイル5ページでAPIが採用されました。
+米国で人気の料理サイトBettyCrocker.comは、Screen Wake Lock APIの助けを借りて、料理中に画面が暗くなるのを防ぐオプションをユーザーに提供している。[ケーススタディ](https://web.dev/betty-crocker/)では平均セッション時間が通常より3.1倍長くなり、バウンス率が50%減少し、購入意向指標が約300%増加したと発表しています。このように、インターフェイスは、Webサイトやアプリケーションの成功に直接的に測定可能な効果を持っています。Screen Wake Lock APIは、2020年7月にGoogle Chrome 84で提供されました。HTTP Archiveには4月、5月、8月、9月、10月のデータしかありません。Chrome 84のリリース後、利用率は一気に上昇しました。2020年10月には、デスクトップ10ページ、モバイル5ページでAPIが採用されました。
 
 ## アイドル検出API
 
-アプリケーションの中には、ユーザーがデバイスを積極的に使用しているか、アイドル状態にあるかを判断する必要があります。例えば、チャットアプリケーションは、ユーザーが不在であることを表示することがあります。画面やマウス、キーボードとのやりとりがないなど、様々な要因が考慮されます。<a lang="en" href="https://web.dev/idle-detection/">アイドル検出API</a>(<a lang="en" href="https://wicg.github.io/idle-detection/">WICGコミュニティグループ報告書</a>)では、ある閾値を設定することで、ユーザがアイドル状態か画面ロック状態かを確認することができる抽象的なAPIを提供しています。
+アプリケーションの中には、ユーザーがデバイスを積極的に使用しているか、アイドル状態にあるかを判断する必要があります。例えば、チャットアプリケーションは、ユーザーが不在であることを表示することがあります。画面やマウス、キーボードとのやりとりがないなど、様々な要因が考慮されます。[アイドル検出API](https://web.dev/idle-detection/) ([WICGコミュニティグループ報告書](https://wicg.github.io/idle-detection/))では、ある閾値を設定することで、ユーザがアイドル状態か画面ロック状態かを確認することができる抽象的なAPIを提供しています。
 
 これを実現するために、APIはグローバルな`window`オブジェクト上に新しい`IdleDetector`インターフェイスを提供します。開発者がこの機能を利用する前に、まず`IdleDetector.requestPermission()`を呼び出してパーミッションを要求しなければなりません。ユーザが許可を与えれば、開発者は`IdleDetector`の新しいインスタンスを作成できます。このオブジェクトは2つのプロパティを提供します。`userState`と`screenState`の2つのプロパティを提供します。このオブジェクトは、ユーザの状態と画面の状態のどちらかが変化したときに`change`イベントを発生させます。最後に、アイドル検出は`start()`メソッドを呼び出して起動する必要があります。このメソッドは2つのパラメーターを持つ設定オブジェクトを受け取ります。ユーザーがアイドル状態でなければならない時間をミリ秒単位で定義する`threshold`と、開発者はオプションで`AbortSignal`を`abort`プロパティに渡すことができます。
 
@@ -185,7 +185,7 @@ registration.showNotification('Title', {
 
 ## 周期的バックグラウンド同期API
 
-ユーザーがウェブアプリケーションを閉じると、バックエンドサービスとの通信ができなくなります。いくつかのケースでは、ネイティブアプリケーションができるように、開発者は多かれ少なかれ定期的にデータを同期させたいと思うかもしれません。例えば、ニュースアプリケーションは、ユーザーが目覚める前に最新のヘッドラインをダウンロードしたいかもしれません。<a lang="en" href="https://web.dev/periodic-background-sync/">周期的バックグラウンド同期API</a>(<a lang="en" href="https://wicg.github.io/periodic-background-sync/">WICGコミュニティグループ報告書</a>)は、Webとネイティブの間のこのギャップを埋めることを目指しています。
+ユーザーがウェブアプリケーションを閉じると、バックエンドサービスとの通信ができなくなります。いくつかのケースでは、ネイティブアプリケーションができるように、開発者は多かれ少なかれ定期的にデータを同期させたいと思うかもしれません。例えば、ニュースアプリケーションは、ユーザーが目覚める前に最新のヘッドラインをダウンロードしたいかもしれません。[周期的バックグラウンド同期API](https://web.dev/periodic-background-sync/) ([WICGコミュニティグループ報告書](https://wicg.github.io/periodic-background-sync/))は、Webとネイティブの間のこのギャップを埋めることを目指しています。
 
 ### 周期同期の登録
 
@@ -209,7 +209,7 @@ self.addEventListener('periodicsync', (event) => {
 });
 ```
 
-この記事を書いている時点で、このAPIを実装しているのはChromiumベースのブラウザのみです。これらのブラウザでは、APIを使用する前にアプリケーションをインストール（ホーム画面に追加）する必要があります。ウェブサイトの<a lang="en" href="https://www.chromium.org/developers/design-documents/site-engagement">サイトエンゲージメントスコア</a> は、定期的な同期イベントを呼び出せるか、どのくらいの頻度で呼び出せるかを定義します。現在の保守的な実装では、ウェブサイトは1日1回コンテンツを同期できます。
+この記事を書いている時点で、このAPIを実装しているのはChromiumベースのブラウザのみです。これらのブラウザでは、APIを使用する前にアプリケーションをインストール（ホーム画面に追加）する必要があります。ウェブサイトの[サイトエンゲージメントスコア](https://www.chromium.org/developers/design-documents/site-engagement)は、定期的な同期イベントを呼び出せるか、どのくらいの頻度で呼び出せるかを定義します。現在の保守的な実装では、ウェブサイトは1日1回コンテンツを同期できます。
 
 {{ figure_markup(
   image="periodic_background_sync_api.png",
@@ -227,7 +227,7 @@ self.addEventListener('periodicsync', (event) => {
 
 PWAは汎用性の高いアプリケーションモデルです。しかし、場合によっては、別個のネイティブアプリケーションを提供することはまだ意味があるかもしれません。例えば、アプリがウェブ上では利用できない機能を使用する必要がある場合や、アプリ開発者チームのプログラミング経験に基づいている場合などです。ユーザーがすでにネイティブアプリをインストールしている場合、アプリは通知を二度送信したり、対応するPWAのインストールを促進したくないかもしれません。
 
-ユーザーがシステム上に関連するネイティブアプリケーションやPWAを既に持っているかどうかを検出するため、開発者は`navigator`オブジェクト上で<a lang="en" href="https://web.dev/get-installed-related-apps/">getInstalledRelatedApps()メソッド</a><a lang="en" href="https://wicg.github.io/get-installed-related-apps/spec/">WICGコミュニティグループ報告書</a>）を使用できます。このメソッドは現在Chromiumベースのブラウザで提供されており、AndroidとUniversal Windows Platform(UWP)の両方のアプリで動作します。開発者はネイティブアプリのバンドルを調整してWebサイトを参照するようにし、ネイティブアプリに関する情報をPWAのWebアプリマニフェストに追加する必要があります。その後、`getInstalledRelatedApps()`メソッドを呼び出すと、ユーザのデバイスにインストールされているアプリのリストが返されます。
+ユーザーがシステム上に関連するネイティブアプリケーションやPWAを既に持っているかどうかを検出するため、開発者は`navigator`オブジェクト上で<a lang="en" href="https://web.dev/get-installed-related-apps/">getInstalledRelatedApps()</a>メソッド（[WICGコミュニティグループ報告書](https://wicg.github.io/get-installed-related-apps/spec/)）を使用できます。このメソッドは現在Chromiumベースのブラウザで提供されており、AndroidとUniversal Windows Platform(UWP)の両方のアプリで動作します。開発者はネイティブアプリのバンドルを調整してWebサイトを参照するようにし、ネイティブアプリに関する情報をPWAのWebアプリマニフェストに追加する必要があります。その後、`getInstalledRelatedApps()`メソッドを呼び出すと、ユーザのデバイスにインストールされているアプリのリストが返されます。
 
 ```js
 const relatedApps = await navigator.getInstalledRelatedApps();
@@ -250,7 +250,7 @@ relatedApps.forEach((app) => {
 
 ## コンテンツインデックスAPI
 
-Webアプリは、キャッシュストレージやインデックスDBなど、さまざまな方法でオフラインでコンテンツを保存できます。しかし、ユーザーにとっては、どのコンテンツがオフラインで利用可能かを発見するのは難しい。<a lang="en" href="https://web.dev/content-indexing-api/">コンテンツインデックスAPI</a>（<a lang="en" href="https://wicg.github.io/content-index/spec/">WICGエディター草案</a>）を利用することで、開発者はコンテンツをより目立つように露出させることができます。現在このAPIをサポートしているブラウザはAndroidのChromeだけです。このブラウザでは、ダウンロードメニューに「あなたのための記事」の一覧が表示されます。コンテンツインデックスAPIでインデックスされたコンテンツがそこに表示されます。
+Webアプリは、キャッシュストレージやインデックスDBなど、さまざまな方法でオフラインでコンテンツを保存できます。しかし、ユーザーにとっては、どのコンテンツがオフラインで利用可能かを発見するのは難しい。[コンテンツインデックスAPI](https://web.dev/content-indexing-api/)（[WICGエディタ草案](https://wicg.github.io/content-index/spec/)）を利用することで、開発者はコンテンツをより目立つように露出させることができます。現在このAPIをサポートしているブラウザはAndroidのChromeだけです。このブラウザでは、ダウンロードメニューに「あなたのための記事」の一覧が表示されます。コンテンツインデックスAPIでインデックスされたコンテンツがそこに表示されます。
 
 コンテンツインデックスAPIは、新しい`ContentIndex`インターフェイスを提供することでサービスワーカーAPIを拡張します。このインターフェイスは、サービスワーカーの登録の`index`プロパティで利用できます。`add()`メソッドを使うと、開発者はコンテンツをインデックスに追加できます。各コンテンツには、ID、URL、起動URL、タイトル、説明、アイコンのセットが必要です。オプションで、コンテンツを記事、ホームページ、動画などの異なるカテゴリにグループ化できます。`delete()` メソッドはインデックスからコンテンツを再び削除し、`getAll()` メソッドはインデックス化されたすべてのエントリのリストを返す。
 
@@ -270,9 +270,9 @@ Webアプリは、キャッシュストレージやインデックスDBなど、
 
 最後に、現在オリジントライアル中の2つの新しいトランスポート方式があります。1つ目は開発者がWebSocketsで高頻度のメッセージを受信できるようにするもので、2つ目はHTTPやWebSocketsとは別に全く新しい双方向通信プロトコルを導入しています。
 
-### WebSocketsのBackpressure
+### <span lang="en">WebSockets</span>の<span lang="en">Backpressure</span> {websocketsのbackpressure}
 
-WebSocket APIは、Webサイトとサーバー間の双方向通信に最適です。しかし、WebSocket APIはbackpressureを許さないので、高頻度のメッセージを扱うアプリケーションはフリーズする可能性があります。<a lang="en" href="https://web.dev/websocketstream/">WebSocketStream API</a>（<a lang="en" href="https://github.com/ricea/websocketstream-explainer/blob/master/README.md">の説明者</a>は、まだ標準化トラックには乗っていません）は、WebSocket APIをストリームで拡張することは、使いやすいbackpressureのサポートをWebSocket APIにもたらしたいと考えています。通常の`WebSocket`コンストラクタを使う代わりに、開発者は`WebSocketStream`インターフェイスの新しいインスタンスを作成する必要があります。ストリームの`connection`プロパティは、読み込みと書き込み可能なストリームへ解決する約束を返します。
+<span lang="en">WebSocket API</span>は、Webサイトとサーバー間の双方向通信に最適です。しかし、<span lang="en">WebSocket API</span>は<span lang="en">backpressure</span>を許さないので、高頻度のメッセージを扱うアプリケーションはフリーズする可能性があります。<a lang="en" href="https://web.dev/websocketstream/">WebSocketStream API</a>（[の説明者](https://github.com/ricea/websocketstream-explainer/blob/master/README.md)は、まだ標準化トラックには乗っていません）は、<span lang="en">WebSocket API</span>をストリームで拡張することは、使いやすい<span lang="en">backpressure</span>のサポートを<span lang="en">WebSocket API</span>にもたらしたいと考えています。通常の`WebSocket`コンストラクタを使う代わりに、開発者は`WebSocketStream`インターフェイスの新しいインスタンスを作成する必要があります。ストリームの`connection`プロパティは、読み込みと書き込み可能なストリームへ解決する約束を返します。
 
 ```js
 const wss = new WebSocketStream(WSS_URL);
@@ -293,11 +293,11 @@ WebSocketStream APIは、ストリームのリーダーとライターが安全�
   )
 }}
 
-WebSocketStream APIは最初のオリジントライアルを終え、再び実験段階に戻っています。これは、現在このAPIの使用率が非常に低く、ほとんど測定できない理由も説明しています。
+<span lang="en">WebSocketStream API</span>は最初のオリジントライアルを終え、再び実験段階に戻っています。これは、現在このAPIの使用率が非常に低く、ほとんど測定できない理由も説明しています。
 
 ### 速くする
 
-<a lang="en" href="https://www.chromium.org/quic">QUIC</a>(<a lang="en" href="https://www.ietf.org/archive/id/draft-ietf-quic-transport-31.txt">IETFインターネット草案</a>)は、UDP上に実装された多重化されたストリームベースの双方向トランスポートプロトコルです。これは、TCP上に実装されているHTTP/WebSocket APIに代わるものです。<a lang="en" href="https://web.dev/quictransport/">QuicTransport API</a>は、QUICサーバとメッセージを送受信するためのクライアント側APIです。開発者は、データグラムを介して信頼性のないデータを送信するか、そのストリームAPIを使用して信頼性の高いデータを送信するかを選択できます。
+[QUIC](https://www.chromium.org/quic)([IETFインターネット草案](https://www.ietf.org/archive/id/draft-ietf-quic-transport-31.txt))は、UDP上に実装された多重化されたストリームベースの双方向トランスポートプロトコルです。これは、TCP上に実装されている<span lang="en">HTTP/WebSocket API</span>に代わるものです。<a lang="en" href="https://web.dev/quictransport/">QuicTransport API</a>は、QUICサーバとメッセージを送受信するためのクライアント側APIです。開発者は、データグラムを介して信頼性のないデータを送信するか、そのストリームAPIを使用して信頼性の高いデータを送信するかを選択できます。
 
 ```js
 const transport = new QuicTransport(QUIC_URL);
@@ -325,4 +325,4 @@ QuicTransportは、WebSocket APIのユースケースをサポートし、信頼
 
 2020年のWeb機能の状態は健全であり、Chromiumベースのブラウザの新しいリリースには、新しくて強力なAPIが定期的に提供されています。コンテンツインデックスAPIやアイドル検出APIのようないくつかのインターフェイスは、特定のWebアプリケーションに仕上げの機能を追加するのに役立ちます。ファイルシステムアクセスや非同期クリップボードAPIのような他のAPIは、生産性アプリケーションという全く新しいアプリケーションカテゴリをWebに完全に移行させることを可能にします。非同期クリップボードやWeb共有APIのようなAPIの一部は、すでに他の非Chromiumブラウザにも導入されています。Safariは、Web共有APIを実装した最初のモバイルブラウザでした。
 
-ふぐチームは、<a lang="en" href="https://developers.google.com/web/updates/capabilities#process">厳格なプロセス</a>を通じて、これらの機能へのアクセスが安全かつプライバシーに配慮した方法で行われることを保証します。さらに、ふぐチームは他のブラウザベンダーやウェブ開発者からの<a lang="en" href="mailto:fugu-dev@chromium.org">フィードバック</a>を積極的に募集しています。これらの新しいAPIのほとんどの使用率は比較的低いですが、本章で紹介するAPIの中にはバッジAPIやコンテンツインデックスAPIのように指数関数的、あるいはホッケーの棒のように成長しているものもあります。2021年のウェブ機能のあり方は、ウェブ開発者自身にかかっています。著者は素晴らしいWebアプリケーションを構築し、強力なAPIを後方互換性のある方法で活用して、Webをより有能なプラットフォームにするための手助けをすることをコミュニティに奨励しています。
+ふぐチームは、[厳格なプロセス](https://developers.google.com/web/updates/capabilities#process)を通じて、これらの機能へのアクセスが安全かつプライバシーに配慮した方法で行われることを保証します。さらに、ふぐチームは他のブラウザベンダーやウェブ開発者からの[フィードバック](mailto:fugu-dev@chromium.org)を積極的に募集しています。これらの新しいAPIのほとんどの使用率は比較的低いですが、本章で紹介するAPIの中にはバッジAPIやコンテンツインデックスAPIのように指数関数的、あるいはホッケーの棒のように成長しているものもあります。2021年のウェブ機能のあり方は、ウェブ開発者自身にかかっています。著者は素晴らしいWebアプリケーションを構築し、強力なAPIを後方互換性のある方法で活用して、Webをより有能なプラットフォームにするための手助けをすることをコミュニティに奨励しています。
