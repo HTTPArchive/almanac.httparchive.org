@@ -27,21 +27,21 @@ Caching is a technique that enables the reuse of previously downloaded content. 
 
 Here’s a very high-level example:
 
-*Jane visits the home page of the www.example.com website. Jane lives in Los Angeles, CA, and the example.com server is located in Boston, MA.  Jane visiting www.example.com involves a network request which has to travel across the country.*
+  *Jane visits the home page of the www.example.com website. Jane lives in Los Angeles, CA, and the example.com server is located in Boston, MA.  Jane visiting www.example.com involves a network request which has to travel across the country.*
 
-*On the example.com server (a.k.a. Origin server), the home page is retrieved.  The server knows Jane is located in LA and adds dynamic content to the page - a list of upcoming events near her. Then the page is sent back across the country to Jane and displayed on her browser.*
+  *On the example.com server (a.k.a. Origin server), the home page is retrieved.  The server knows Jane is located in LA and adds dynamic content to the page - a list of upcoming events near her. Then the page is sent back across the country to Jane and displayed on her browser.*
 
-*If there is no caching, if Carlos in LA also visits www.example.com after Jane, his request must travel across the country to the example.com server.  The server has to build the same page, including the LA events list.  It will have to send the page back to Carlos.*
+  *If there is no caching, if Carlos in LA also visits www.example.com after Jane, his request must travel across the country to the example.com server.  The server has to build the same page, including the LA events list.  It will have to send the page back to Carlos.*
 
-*Worse, if Jane revisits the example.com home page, her subsequent requests will act like the first - the request must go across the country and the example.com server must rebuild the home page to send it back to her.*
+  *Worse, if Jane revisits the example.com home page, her subsequent requests will act like the first - the request must go across the country and the example.com server must rebuild the home page to send it back to her.*
 
-*So without any caching, the example.com server builds each request from scratch. That’s bad for the server because it’s more work. Additionally, any communication between either Jane or Carlos and the example.com server requires data to travel across the country.  All of this can add up to a slow experience that’s bad for both of them.*
+  *So without any caching, the example.com server builds each request from scratch. That’s bad for the server because it’s more work. Additionally, any communication between either Jane or Carlos and the example.com server requires data to travel across the country.  All of this can add up to a slow experience that’s bad for both of them.*
 
-*However, with server caching, when Jane makes her first request the server builds the LA variant of the home page.  It caches the data for reuse by all LA visitors. So when Carlos’s request gets to the example.com server, the server checks if it has the LA variant of the home page in its cache. Since that page is in cache as a result of Jane’s earlier request, the server saves time by returning the cached page.*
+  *However, with server caching, when Jane makes her first request the server builds the LA variant of the home page.  It caches the data for reuse by all LA visitors. So when Carlos’s request gets to the example.com server, the server checks if it has the LA variant of the home page in its cache. Since that page is in cache as a result of Jane’s earlier request, the server saves time by returning the cached page.*
 
-*More importantly, with browser caching, when Jane’s browser receives the page from the server for the first request, it caches the page. All of her future requests for the example.com home page will be served instantly from her browser's cache, without a network request.  The example.com server also benefits by not having to process or deal with Jane’s request.*
+  *More importantly, with browser caching, when Jane’s browser receives the page from the server for the first request, it caches the page. All of her future requests for the example.com home page will be served instantly from her browser's cache, without a network request.  The example.com server also benefits by not having to process or deal with Jane’s request.*
 
-*Jane is happy. Carlos is happy. The example.com folks are happy.  Everyone is happy.*
+  *Jane is happy. Carlos is happy. The example.com folks are happy.  Everyone is happy.*
 
 It should be clear then, that browser caching provides a significant performance benefit by avoiding costly network requests.  It also helps an application scale by reducing the traffic to a website's origin infrastructure. Server caching also significantly reduces the load on the underlying application.
 
@@ -112,9 +112,9 @@ When a browser makes a request for a piece of content (e.g. a web page), it will
 
 The caching-related headers, or the absence of them, tell the browser three important pieces of information:
 
-* Cacheability: Is this content cacheable?
-* Freshness: If it is cacheable, how long can it be cached for?
-* Validation: If it is cacheable, how do I subsequently ensure that my cached version is still fresh?
+* **Cacheability**: Is this content cacheable?
+* **Freshness**: If it is cacheable, how long can it be cached for?
+* **Validation**: If it is cacheable, how do I subsequently ensure that my cached version is still fresh?
 
 The full specifications for these caching headers are in [RFC 7234](https://tools.ietf.org/html/rfc7234#section-8), and discussed in sections 4.2 (Freshness) and 4.3 (Validation).
 
@@ -138,7 +138,7 @@ HTTP/1.1 introduced the `Cache-Control` header, which is supported by all modern
 ### Example
 The simple example below shows a request and response for a JavaScript file (some headers have been removed for clarity). The `Date` header indicates the current date (specifically, the date that the content was served).  The `Expires` header indicates that it can be cached for 10 minutes (the difference between the `Expires` and `Date` headers). The `Cache-Control` header specifies the `max-age` directive, which indicates that the resource can be cached for 600 seconds (5 minutes). Since `Cache-Control` takes precedence over `Expires`, the browser will cache the response for 5 minutes, after which it will be marked as stale:
 
-```
+<code><pre>
 > GET /static/js/main.js HTTP/2
 > Host: www.example.org
 > Accept: */*
@@ -147,8 +147,8 @@ The simple example below shows a request and response for a JavaScript file (som
 < Date: Thu, 23 Jul 2020 03:04:17 GMT
 < Expires: Thu, 23 Jul 2020 03:14:17 GMT
 < Cache-Control: public, max-age=600
+<code></pre>
 
-```
 
 RFC 7234 says that if no caching headers are present in a response, then the browser is allowed to *heuristically* cache the response - it suggests a cache duration of 10% of the time since the `Last-Modified header` (if passed). In such cases, most browsers implement a variation of this suggestion, but some may cache the response indefinitely and some may not cache it at all. Because of this variation between browsers, it is important to explicitly set specific caching rules to ensure that you are in control of the cacheability of your content.
 
@@ -240,8 +240,8 @@ There are often cases where a browser has previously requested an object and alr
 In these cases, the browser can make a conditional request to the server - effectively saying "*I have object X in my cache - can I use it, or do you have a more recent version I should use instead?*". The server can respond in one of two ways:
 
 
-* "*Yes, the version of object X you have in cache is fine to use*" - in this case the server response consists of a 304 Not Modified status code and response headers, but no response body 
-* "*No, here is a more recent version of object X - use this instead*" - in this case the server response consists of a 200 OK status code, response headers, and a new response body (the actual new version of object X)
+* "*Yes, the version of object X you have in cache is fine to use*" - in this case the server response consists of a `304 Not Modified` status code and response headers, but no response body 
+* "*No, here is a more recent version of object X - use this instead*" - in this case the server response consists of a `200 OK` status code, response headers, and a new response body (the actual new version of object X)
 
 In either case, the server can optionally include updated caching response headers, possibly extending the TTL of the object so the browser can use the object for a further period of time without needing to make more conditional requests.
 
@@ -251,5 +251,42 @@ So how does the server identify a conditional request from a regular request?
 
 It actually all comes down to the initial request for the object. When a browser requests an object which it does not already have in its cache, it simply makes a GET request, like this (some headers removed for clarity):
 
+<pre><code>
+> GET /index.html HTTP/2
+> Host: www.example.org
+> Accept: */*
+<code></pre>
 
+If the server wants to allow the browser to make use of conditional requests (this decision is entirely up to the server!), it can include one or both of two response headers which identify the object as being eligible for subsequent conditional requests. The two response headers are:
 
+* `Last-Modified` - this indicates when the object was last changed. Its value is a date timestamp.
+* `ETag` (Entity Tag) - this provides a unique identifier for the content as a quoted string. It can take any format that the server chooses; it is typically a hash of the file contents, but it could be a timestamp or a simple string.
+
+If both headers are present, `ETag` takes precedence.
+
+### Example - Last-Modified
+When the server receives the request for the file, it can include the date/time that the file was most recently changed as a response header, like this:
+
+<pre><code>
+< HTTP/2 200
+< Date: Thu, 23 Jul 2020 03:04:17 GMT
+< Last-Modified: Mon, 20 Jul 2020 11:43:22 GMT
+< Cache-Control: max-age=600
+
+< <html>...lots of html here...</html>
+<code></pre>
+
+The browser will cache this object for 600 seconds (as defined in the `Cache-Control` header), after which it will mark the object as stale. If the browser needs to use the file again, it requests the file from the server just as it did initially, but this time it includes an additional request header, called `If-Modified-Since`, which it sets to the value that was passed in the `Last-Modified` response header in the initial response:
+
+The browser will cache this object for 600 seconds (as defined in the `Cache-Control` header), after which it will mark the object as stale. If the browser needs to use the file again, it requests the file from the server just as it did initially, but this time it includes an additional request header, called `If-Modified-Since`, which it sets to the value that was passed in the `Last-Modified` response header in the initial response:
+
+<pre><code>
+> GET /index.html HTTP/2
+> Host: www.example.org
+> Accept: */*
+> If-Modified-Since: Mon, 20 Jul 2020 11:43:22 GMT
+<code></pre>
+
+When the server receives this request, it can check whether the object has changed by comparing the `If-Modified-Since` header value with the date that it most recently changed the file.
+
+If the two values are the same, then the server knows that the browser has the latest version of the file and the server can return a `304 Not Modified` response with just headers (including the same `Last-Modified` header value) and no response body:
