@@ -29,7 +29,7 @@ FROM (
     COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)Content-Security-Policy .+unsafe-inline')) AS freq_unsafe_inline,
     COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)Content-Security-Policy .+unsafe-eval')) AS freq_unsafe_eval
   FROM
-    `httparchive.sample_data.summary_requests_*` AS r
+    `httparchive.summary_requests.2020_08_01_*` AS r
   WHERE
     firstHtml
   GROUP BY
