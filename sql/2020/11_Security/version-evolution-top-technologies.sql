@@ -7,6 +7,7 @@ SELECT
   info,
   month,
   client,
+  freq,
   pct
 FROM (
   SELECT
@@ -15,6 +16,7 @@ FROM (
     tech.app AS app,
     LEFT(_TABLE_SUFFIX, 10) AS month,
     IF(ENDS_WITH(_TABLE_SUFFIX, '_desktop'), 'desktop', 'mobile') AS client,
+    COUNT(0) AS freq,
     COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX, tech.category, tech.app) AS pct
   FROM
     `httparchive.technologies.*` AS tech
