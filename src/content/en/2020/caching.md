@@ -516,7 +516,7 @@ In the table below, you can see that out of a total of 6,225,774 websites, only 
   <figcaption>{{ figure_link(caption="Number of websites using service workers.") }}</figcaption>
 </figure>
 
-If we break this out by HTTP vs HTTPS, then this gets even more interesting. Even though HTTPS is a requirement for using service workers, 1,469 of the sites using them are served over HTTP.
+If we break this out by HTTP vs HTTPS, then this gets even more interesting. Even though HTTPS is a requirement for using service workers, the following table shows that 1,469 of the sites using them are served over HTTP.
 
 <figure>
   <table>
@@ -552,8 +552,6 @@ The remaining 9.2% of responses are not permitted to be stored in browser caches
 **Placeholder for Figure 15: Distribution of TTL in cacheable responses.**
 
 The table below details the cache TTL values for desktop requests by type. Most content types are being cached, however CSS resources are consistently cached with high TTLs.
-
-**Placeholder for Table 4: Desktop cache TTL percentiles by resource type.**
 
 <figure>
   <table>
@@ -600,47 +598,57 @@ The table below details the cache TTL values for desktop requests by type. Most 
      <td>8,760</td> 
      <td>87,600</td>
     </tr>
+    <tr>
+     <td><span style="font-weight:bold">image</span></td>
+     <td>4</td>
+     <td>168</td>
+     <td>720</td> 
+     <td>8,760</td> 
+     <td>8,766</td>
+    </tr>
+    <tr>
+     <td><span style="font-weight:bold">other</span></td>
+     <td>0</td>
+     <td>1</td>
+     <td>30</td> 
+     <td>240</td> 
+     <td>8,760</td>
+    </tr>
+    <tr>
+     <td><span style="font-weight:bold">script</span></td>
+     <td>0</td>
+     <td>2</td>
+     <td>720</td> 
+     <td>8,760</td> 
+     <td>8,760</td>
+    </tr>
+    <tr>
+     <td><span style="font-weight:bold">text</span></td>
+     <td>0</td>
+     <td>1</td>
+     <td>6</td> 
+     <td>6</td> 
+     <td>720</td>
+    </tr>
+    <tr>
+     <td><span style="font-weight:bold">video</span></td>
+     <td>6</td>
+     <td>12</td>
+     <td>336</td> 
+     <td>336</td> 
+     <td>8,760</td>
+    </tr>
+    <tr>
+     <td><span style="font-weight:bold">xml</span></td>
+     <td>0</td>
+     <td>24</td>
+     <td>24</td> 
+     <td>24</td> 
+     <td>8,760</td>
+    </tr>    
   </table>
   <figcaption>{{ figure_link(caption="Desktop cache TTL percentiles by resource type.") }}</figcaption>
 </figure>
-
-image
-4
-168
-720
-8,760
-8,766
-other
-0
-1
-30
-240
-8,760
-script
-0
-2
-720
-8,760
-8,760
-text
-0
-1
-6
-6
-720
-video
-6
-12
-336
-336
-8,760
-xml
-0
-24
-24
-24
-8,760
-
 
 While most of the median TTLs are high, the lower percentiles highlight some of the missed caching opportunities. For example, the median TTL for images is 720 hours (1 month); however the 25<sup>th</sup> percentile is just 168 hours (1 week) and the 10<sup>th</sup> percentile has dropped to just a few hours. Compare this with fonts, which have a very high TTL of 8760 hours (1 year) all the way down to the 25th percentile, with even the 10<sup>th</sup> percentile showing a TTL of 1 month.
 
@@ -680,9 +688,31 @@ For example, the resource served below on 18 Oct 2020 was last modified on 30 Au
 
 Overall, 60.7% of resources served on the web have a cache TTL that could be considered too short compared to its content age. Furthermore, the median delta between the TTL and age is 25 days - again, an indication of significant under-caching.
 
-When we break this out by first party vs third party, we can see that more than two-thirds (61.6%) of first-party resources can benefit from a longer TTL. This clearly highlights a need to spend extra attention focusing on what is cacheable, and then ensuring that caching is configured correctly.
+When we break this out by first party vs third party in the following table, we can see that more than two-thirds (61.6%) of first-party resources can benefit from a longer TTL. This clearly highlights a need to spend extra attention focusing on what is cacheable, and then ensuring that caching is configured correctly.
 
-**Placeholder for Table 5: Percent of requests with short TTLs.**
+<figure>
+  <table>
+    <tr>
+     <th>Client</th>   
+     <th>1st party</th>
+     <th>3rd party</th>
+     <th>Overall</th>   
+    </tr>
+    <tr>
+     <td><span style="font-weight:bold">desktop</span></td>
+     <td>61.6%</td>
+     <td>59.3%</td>
+     <td>60.7%</td>      
+    </tr>
+    <tr>
+     <td><span style="font-weight:bold">mobile</span></td>
+     <td>61.8%</td>
+     <td>57.9%</td>
+     <td>60.2%</td>      
+    </tr>
+  </table>
+  <figcaption>{{ figure_link(caption="Percent of requests with short TTLs.") }}</figcaption>
+</figure>
 
 ## Identifying caching opportunities
 
