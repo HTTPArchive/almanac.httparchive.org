@@ -178,6 +178,42 @@ Below is a table showing the most common `Cache-Control` directives:
      <td>public</td>
      <td>Any cache may store the response, including the browser, and any proxies between the server and the browser, such as a CDN. This is assumed by default.</td>
     </tr>
+    <tr>
+     <td>no-cache</td>
+     <td>A cached entry must be revalidated prior to its use, via a conditional request, even if it is not marked as stale.</td>
+    </tr>
+    <tr>
+     <td>must-revalidate</td>
+     <td>A stale cached entry must be revalidated prior to its use, via a conditional request.</td>
+    </tr>
+    <tr>
+     <td>no-store</td>
+     <td>Indicates that the response must not be cached.</td>
+    </tr>
+    <tr>
+     <td>private</td>
+     <td>The response is intended for a specific user and should not be stored by shared caches such as proxies and CDNs.</td>
+    </tr>
+    <tr>
+     <td>proxy-revalidate</td>
+     <td>Same as must-revalidate but applies to shared caches.</td>
+    </tr>
+    <tr>
+     <td>s-maxage</td>
+     <td>Same as max-age but applies to shared caches (e.g. CDN’s) only.</td>
+    </tr>
+    <tr>
+     <td>immutable</td>
+     <td>Indicates that the cached entry will never change during its TTL, and that revalidation is not necessary.</td>
+    </tr>
+    <tr>
+     <td>stale-while-revalidate</td>
+     <td>Indicates that the client is willing to accept a stale response while asynchronously checking in the background for a fresh one.</td>
+    </tr>
+    <tr>
+     <td>stale-if-error</td>
+     <td>Indicates that the client is willing to accept a stale response if the check for a fresh one fails.</td>
+    </tr>
   </table>
   <figcaption>{{ figure_link(caption="`Cache-Control` directives.") }}</figcaption>
 </figure>
