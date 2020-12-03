@@ -138,7 +138,7 @@ HTTP/1.1 introduced the `Cache-Control` header, which is supported by all modern
 ### Example
 The simple example below shows a request and response for a JavaScript file (some headers have been removed for clarity). The `Date` header indicates the current date (specifically, the date that the content was served).  The `Expires` header indicates that it can be cached for 10 minutes (the difference between the `Expires` and `Date` headers). The `Cache-Control` header specifies the `max-age` directive, which indicates that the resource can be cached for 600 seconds (5 minutes). Since `Cache-Control` takes precedence over `Expires`, the browser will cache the response for 5 minutes, after which it will be marked as stale:
 
-```
+<pre><code>
 > GET /static/js/main.js HTTP/2
 > Host: www.example.org
 > Accept: */*
@@ -146,7 +146,7 @@ The simple example below shows a request and response for a JavaScript file (som
 < Date: Thu, 23 Jul 2020 03:04:17 GMT
 < Expires: Thu, 23 Jul 2020 03:14:17 GMT
 < Cache-Control: public, max-age=600
-```
+<code></pre>
 
 RFC 7234 says that if no caching headers are present in a response, then the browser is allowed to *heuristically* cache the response - it suggests a cache duration of 10% of the time since the `Last-Modified header` (if passed). In such cases, most browsers implement a variation of this suggestion, but some may cache the response indefinitely and some may not cache it at all. Because of this variation between browsers, it is important to explicitly set specific caching rules to ensure that you are in control of the cacheability of your content.
 
@@ -249,9 +249,11 @@ So how does the server identify a conditional request from a regular request?
 
 It actually all comes down to the initial request for the object. When a browser requests an object which it does not already have in its cache, it simply makes a GET request, like this (some headers removed for clarity):
 
-<pre><code>> GET /index.html HTTP/2
+<pre><code>
+> GET /index.html HTTP/2
 > Host: www.example.org
-> Accept: */*<code></pre>
+> Accept: */*
+<code></pre>
 
 If the server wants to allow the browser to make use of conditional requests (this decision is entirely up to the server!), it can include one or both of two response headers which identify the object as being eligible for subsequent conditional requests. The two response headers are:
 
@@ -263,12 +265,14 @@ If both headers are present, `ETag` takes precedence.
 ### Example - Last-Modified
 When the server receives the request for the file, it can include the date/time that the file was most recently changed as a response header, like this:
 
-<pre><code>< HTTP/2 200
+<pre><code>
+< HTTP/2 200
 < Date: Thu, 23 Jul 2020 03:04:17 GMT
-< Last-Modified: Mon, 20 Jul 2020 11:43:22 GMT
+< <span class="keyword">Last-Modified: Mon, 20 Jul 2020 11:43:22 GMT</span>
 < Cache-Control: max-age=600
 
-< <html>...lots of html here...</html></code></pre>
+< <html>...lots of html here...</html>
+<code></pre>
 
 The browser will cache this object for 600 seconds (as defined in the `Cache-Control` header), after which it will mark the object as stale. If the browser needs to use the file again, it requests the file from the server just as it did initially, but this time it includes an additional request header, called `If-Modified-Since`, which it sets to the value that was passed in the `Last-Modified` response header in the initial response:
 
