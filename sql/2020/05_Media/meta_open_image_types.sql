@@ -2,7 +2,7 @@
 # meta open graph image types
 
 # returns all the data we need from _almanac
-CREATE TEMPORARY FUNCTION get_almanac_meta_og_info(almanac_string STRING)
+CREATE TEMPORARY FUNCTION get_meta_og_image_types(almanac_string STRING)
 RETURNS STRUCT<
   image_types ARRAY<STRING>
 > LANGUAGE js AS '''
@@ -36,7 +36,7 @@ FROM (
   SELECT
     _TABLE_SUFFIX AS client,
     url,
-    get_almanac_meta_og_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info
+    get_meta_og_image_types(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info
   FROM
     `httparchive.pages.2020_08_01_*`),
   UNNEST(almanac_info.image_types) AS image_type
