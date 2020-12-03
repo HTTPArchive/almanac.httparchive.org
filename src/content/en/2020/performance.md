@@ -134,7 +134,7 @@ In that way, CLS is a different, new type of a UX holistic metric in comparison 
 #### CLS by device
 
 {{ figure_markup(
-  image="performance-cls-by-device-type.png",
+  image="performance-cls-by-device.png",
   caption="Aggregate CLS performance split by device type.",
   description="Bar chart showcasing that more than half of websites have good CLS with 54% on desktop and 60% on mobile. In both scenarios, only 21% websites are graded as having poor CLS.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1672696367&format=interactive",
@@ -247,6 +247,8 @@ First Contentful Paint (FCP) measures the first time at which the browser render
   )
 }}
 
+{# TODO - font looks wrong in chart. Asked for edit access to the sheet #}
+
 {{ figure_markup(
   image="performance-fcp-mobile-distribution.png",
   caption="Distribution of websites labeled as having fast, average and slow FCP performance on mobile.",
@@ -256,6 +258,8 @@ First Contentful Paint (FCP) measures the first time at which the browser render
   sql_file="web_vitals_distribution_by_device.sql"
   )
 }}
+
+{# TODO - font looks wrong in chart. Asked for edit access to the sheet #}
 
 In the charts above, the FCP distributions are broken down by desktop and mobile. [Comparing to last year](../2019/performance#fcp-by-device), there are noticeably less average FCP readings, while the percentage of fast and slow user experiences has risen no matter the device type. We can still observe the same trend, where mobile users will experience slower FCP more frequently than desktop users. Overall, users are more likely to have a good or poor experience, rather than a mediocre experience.
 
