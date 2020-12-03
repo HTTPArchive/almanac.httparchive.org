@@ -367,7 +367,7 @@ If the two values are the same, then the browser has the latest version of the f
 < ETag: "v123.4.01"
 < Cache-Control: max-age=600</code></pre>
 
-However, if the values are different, then the version of the file on the server is more recent than the version that the browser has, so the server returns a 200 OK response consisting of headers (including an updated `ETag` header) and the new version of the file:
+However, if the values are different, then the version of the file on the server is more recent than the version that the browser has, so the server returns a `200 OK` response consisting of headers (including an updated `ETag` header) and the new version of the file:
 
 <pre><code>
 < HTTP/2 200
@@ -470,3 +470,127 @@ The graph below details the popularity for the top 10 Vary header values. `Accep
 
 **Placeholder for Figure 8: Vary header usage.**
 
+## Setting cookies on cacheable responses
+
+When a response is cached, its entire set of response headers are included with the cached object as well. This is why you can see the response headers when inspecting a cached response in Chrome via DevTools:
+
+**Placeholder for Figure 9: Chrome Dev Tools for a cached resource.**
+
+But what happens if you have a `Set-Cookie` on a response? According to [RFC 7234 Section 8](https://tools.ietf.org/html/rfc7234#section-8), the presence of a `Set-Cookie` response header does not inhibit caching. This means that a cached entry might contain a `Set-Cookie` response header. The RFC goes on to recommend that you should configure appropriate `Cache-Control` headers to control how responses are cached.
+
+Since we have primarily been talking about browser caching, you may think this isn’t a big issue - the `Set-Cookie` response headers that were sent by the server to me in responses to my requests clearly contain my cookies, so there’s no problem if my browser caches them. However, if there is a CDN between myself and the server, the server must indicate to the CDN that the response should not be cached in the CDN itself, so that the response meant for me is not cached and then served (including my `Set-Cookie` headers!) to other users.
+
+For example, if a login cookie or a session cookie is present in a CDN’s cached object, then that cookie could potentially be reused by another client. The primary way to avoid this is for the server to send the `Cache-Control: private` directive, which tells the CDN not to cache the response, because it may only be cached by the client browser.
+
+41.4%% of cacheable responses contain a `Set-Cookie` header. Of those responses, only 4.6% use the `private` directive. The remaining 95.4% (189.2 million HTTP responses) contain at least one `Set-Cookie` response header and can be cached by both public cache servers, such as CDNs. This is concerning and may indicate a continued lack of understanding about how cacheability and cookies coexist.
+
+**Placeholder for Figure 10: `Set-Cookie` in Cacheable responses.**
+
+**Placeholder for Figure 11: `Set-Cookie` in Private and non Private Cacheable responses.**
+
+## Service Workers
+
+Service Workers are a feature of HTML5 that allow front-end developers to specify scripts that should run outside the 'normal' request/response flow of web pages, communicating with the web page via messages. Common uses of service workers are for background synchronization and push notifications and, obviously, for caching - and browser support has been rapidly growing for them.
+
+**Placeholder for Figure 12: Growth in service worker controlled pages from 2019.**
+
+Adoption is just at 1% of websites, but it has been steadily increasing since July 2019. The [Progressive Web App](https://almanac.httparchive.org/en/2020/pwa) chapter discusses this more, including the fact that it is used a lot more than this graph suggests due to its usage on popular sites, which are only counted once in the above graph.
+
+In the table below, you can see that out of a total of 6,225,774 websites, only 64,373 (1%) have implemented a service worker.
+
+**Placeholder for Table 2: Number of websites using service workers.**
+
+If we break this out by HTTP vs HTTPS, then this gets even more interesting. Even though HTTPS is a requirement for using service workers, 1,469 of the sites using them are served over HTTP.
+
+**Placeholder for Table 3: Number of websites using service workers by HTTP/HTTPS.**
+
+## What type of content are we caching?
+
+As we have seen, a cacheable resource is stored by the browser for a period of time and is available for reuse on subsequent requests. Across all HTTP(S) requests, 90.8% of responses are considered cacheable, meaning that a cache is permitted to store them. Out of these,
+
+* 4.2% of requests have a TTL of 0 seconds, which causes the object to be added to cache, but immediately marked as stale, requiring revalidation.
+* 28.2% are cached heuristically because of a lack of either a `Cache-Control` or `Expires` header.
+* 59.4% are cached for more than 0 seconds.
+
+The remaining 9.2% of responses are not permitted to be stored in browser caches - typically because of Cache-Control: no-store.
+
+
+**Placeholder for Figure 14: Distribution of cacheable and non-cacheable responses.**
+
+**Placeholder for Figure 15: Distribution of TTL in cacheable responses.**
+
+The table below details the cache TTL values for desktop requests by type. Most content types are being cached, however CSS resources are consistently cached with high TTLs.
+
+**Placeholder for Table 4: Desktop cache TTL percentiles by resource type.**
+
+While most of the median TTLs are high, the lower percentiles highlight some of the missed caching opportunities. For example, the median TTL for images is 720 hours (1 month); however the 25<sup>th</sup> percentile is just 168 hours (1 week) and the 10<sup>th</sup> percentile has dropped to just a few hours. Compare this with fonts, which have a very high TTL of 8760 hours (1 year) all the way down to the 25th percentile, with even the 10<sup>th</sup> percentile showing a TTL of 1 month.
+
+By exploring the cacheability by content type in more detail in figure below, we can see that while fonts, video and audio, and CSS files are browser cached at close to 100% (which makes sense, since these files are typically very static), approximately one third of all HTML responses are considered non-cacheable. 
+
+Additionally, 13.6% of images and scripts are non-cacheable. There is likely some room for improvement here, since no doubt some of these objects are also static and could be cached at a higher rate - remember: *cache as much as you can for as long as you can!*
+
+**Placeholder for Figure 16: Distribution of cacheability by content type.**
+
+## How do cache TTLs compare to resource age?
+
+So far we've talked about how servers tell a client what is cacheable, and how long it has been cached for. When designing cache rules, it is also important to understand how old the content you are serving is.
+
+When you (the server) are selecting a cache TTL to specify in response headers to send back to the client, ask yourself: "how often am I updating these assets?" and "what is their content sensitivity?". For example, if a hero image is going to be modified infrequently, then it could be cached with a very long TTL. By contrast, if a JavaScript file will change frequently, then either it should be versioned (for instance, by using an ETag or with a unique query string) and cached with a long TTL or it should be cached with a much shorter TTL.
+
+The graphs below illustrate the relative age of resources by content type. Some of the interesting observations in this data are:
+
+* First party HTML is the content type with the shortest age, with 42.5% of the requests having an age less than a week. In most of the other content types, third party content has a smaller resource age than first party content.
+* Some of the longest aged first party content on the web, with age eight weeks or more, are the traditionally cacheable objects like images (78.3%), scripts (68.6%), CSS (74.1%), web fonts (79.3%), audio (77.9%) and video (78.6%).
+* There is a significant gap in some first vs. third party resources having an age of more than a week. 93.5% of first party CSS are older than one week compared to 51.5% of 3rd party CSS, which are older than one week.
+
+**Placeholder for Figure 17: Resource age distribution by content type (1st party).**
+
+**Placeholder for Figure 18: Resource age distribution by content type (3rd party).**
+
+By comparing a resource's cacheability to its age, we can determine if the TTL is appropriate or too low.
+
+For example, the resource served below on 18 Oct 2020 was last modified on 30 Aug 2020, which means that it was well over a month old at the time of delivery - this indicates that it is an object which does not change frequently. However, the `Cache-Control` header says that the browser can cache it for only 86,400 seconds (one day). This is a case where a longer TTL might be appropriate, to avoid the browser needing to re-request it (even conditionally) - especially if the website is one that a user might visit multiple times over the course of several days.
+
+HTTP/1.1 200
+Date: Sun, 18 Oct 2020 19:36:57 GMT
+Content-Type: text/html; charset=utf-8
+Content-Length: 3052
+Vary: Accept-Encoding
+Last-Modified: Sun, 30 Aug 2020 16:00:30 GMT
+Cache-Control: public, max-age=86400
+
+Overall, 60.7% of resources served on the web have a cache TTL that could be considered too short compared to its content age. Furthermore, the median delta between the TTL and age is 25 days - again, an indication of significant under-caching.
+
+When we break this out by first party vs third party, we can see that more than two-thirds (61.6%) of first-party resources can benefit from a longer TTL. This clearly highlights a need to spend extra attention focusing on what is cacheable, and then ensuring that caching is configured correctly.
+
+**Placeholder for Table 5: Percent of requests with short TTLs.**
+
+## Identifying caching opportunities
+
+Google's [Lighthouse](https://developers.google.com/web/tools/lighthouse) tool enables users to run a series of audits against web pages, and the [cache policy audit](https://developers.google.com/web/tools/lighthouse/audits/cache-policy) evaluates whether a site can benefit from additional caching. It does this by comparing the content age (via the `Last-Modified` header) to the cache TTL and estimating the probability that the resource would be served from cache. Depending on the score, you may see a caching recommendation in the results, with a list of specific resources that could be cached.
+
+**Placeholder for Figure 19: Lighthouse report highlighting potential cache policy improvements.**
+
+Lighthouse computes a score for each audit, ranging from 0% to 100%, and those scores are then factored into the overall scores. The caching score is based on potential byte savings. When we examine the Lighthouse results, we can get a perspective of how many sites are doing well with their cache policies.
+
+**Placeholder for Figure 20: Distribution of Lighthouse audit scores for the "uses-long-cache-ttl" for mobile web pages.**
+
+Only 3.3% of sites scored a 100%, meaning that the vast majority of sites can benefit from some cache optimizations. Approximately two-thirds of sites score below 40%, with almost one-third of sites scoring less than 10%. Based on this, there is a significant amount of under-caching, resulting in excess requests and bytes being served across the network.
+
+Lighthouse also indicates how many bytes could be saved on repeat views by enabling a longer cache policy. Of the sites that could benefit from additional caching, 78.6% of them can reduce their page weight by up to 2MB!
+
+**Placeholder for Figure 21: Distribution of potential byte savings from the Lighthouse caching audit.**
+
+## Conclusion
+
+Caching is an incredibly powerful feature that allows browsers, proxies and other intermediaries (such as CDNs) to store web content and serve it to end users. The performance benefits of this are significant, since it reduces round trip times and minimizes costly network requests.
+
+Caching is also a very complex topic, and one that is often left until late in the development cycle (due to requirements to see the very latest version of a site while it is still being designed), then being added in at the last minute. Additionally, caching rules are often defined once and then never changed, even as the underlying content on a site changes. Frequently a default value is chosen without careful consideration.
+
+To correctly cache objects, there are numerous HTTP response headers that can convey freshness as well as validate cached entries, and `Cache-Control` directives provide a tremendous amount of flexibility and control.
+
+Many object types and content that are typically considered to be uncacheable can actually be cached (remember: *cache as much as you can!*) and many objects are cached for too short a period of time, requiring repeated requests and revalidation (remember: cache for as long as you can!).However, website developers should be cautious about the additional opportunities for mistakes that come with over-caching content.
+
+If the site is intended to be served through a CDN, additional opportunities for caching at the CDN to reduce server load and provide faster response to end-users should be considered, along with the related risks of accidentally caching private information.
+
+However, 'powerful' and 'complex' do not imply 'difficult' - like most everything else, caching is controlled by rules which can be defined fairly easily to provide the best mix of cacheability and privacy. Regularly auditing your site to ensure that cacheable resources are cached appropriately is recommended, and tools like [Lighthouse](https://developers.google.com/web/tools/lighthouse) and [REDbot](https://redbot.org/) do an excellent job of helping to simplify such an analysis.
