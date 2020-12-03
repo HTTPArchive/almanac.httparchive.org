@@ -339,7 +339,7 @@ In this section we take a look at three important factors provided by the [Chrom
 - First Input Delay (FID)
 - Cumulative Layout Shift (CLS)
 
-These metrics aim to cover the core elements which are indicative of a great web user experience. Let's review each of these in turn.
+These metrics aim to cover the core elements which are indicative of a great web user experience. The [./performance] chapter will cover these in more detail, but here we are interested in looking at these metrics specifically in terms of CMSs. Let's review each of these in turn.
 
 #### Largest Contentful Paint
 
