@@ -15,8 +15,8 @@ try {
     for (var node of almanac['meta-nodes']['nodes']) {
       if (node['property'] === 'og:video') {
         if (result.video_types == null)
-        result.video_types = [];
-        let url = node['content'];
+          result.video_types = [];
+        var url = node['content'];
         // parse video extension from url
         var rex = new RegExp('\\.([^/#?]+)[.]([^/#?]+)([#?][^/]*)?$');
         var ext = url.match(rex);

@@ -15,8 +15,8 @@ try {
     for (var node of almanac['meta-nodes']['nodes']) {
       if (node['property'] === 'og:image') {
         if (result.image_types == null)
-        result.image_types = [];
-        let url = node['content'];
+          result.image_types = [];
+        var url = node['content'];
         // parse image extension from url
         var rex = new RegExp('\\.([^/#?]+)[.]([^/#?]+)([#?][^/]*)?$');
         var ext = url.match(rex);
