@@ -498,11 +498,44 @@ Adoption is just at 1% of websites, but it has been steadily increasing since Ju
 
 In the table below, you can see that out of a total of 6,225,774 websites, only 64,373 (1%) have implemented a service worker.
 
-**Placeholder for Table 2: Number of websites using service workers.**
+<figure>
+  <table>
+    <tr>
+     <th> </th>   
+     <th>Does not use Service Worker</th>
+     <th>Uses Service Worker</th>
+     <th>Total</th>   
+    </tr>
+    <tr>
+     <td><span style="font-weight:bold">Sites</span></td>
+     <td>6,225,774</td>
+     <td>64,373</td>
+     <td>6,290,147</td>      
+    </tr>
+  </table>
+  <figcaption>{{ figure_link(caption="Number of websites using service workers.") }}</figcaption>
+</figure>
 
 If we break this out by HTTP vs HTTPS, then this gets even more interesting. Even though HTTPS is a requirement for using service workers, 1,469 of the sites using them are served over HTTP.
 
-**Placeholder for Table 3: Number of websites using service workers by HTTP/HTTPS.**
+<figure>
+  <table>
+    <tr>
+     <th> </th>   
+     <th>http</th>
+     <th>https</th>
+     <th>Total</th>   
+    </tr>
+    <tr>
+     <td><span style="font-weight:bold">Sites using service worker</span></td>
+     <td>1,469</td>
+     <td>62,904</td>
+     <td>64,373</td>      
+    </tr>
+  </table>
+  <figcaption>{{ figure_link(caption="Number of websites using service workers by HTTP/HTTPS.") }}</figcaption>
+</figure>
+
 
 ## What type of content are we caching?
 
@@ -551,13 +584,13 @@ By comparing a resource's cacheability to its age, we can determine if the TTL i
 
 For example, the resource served below on 18 Oct 2020 was last modified on 30 Aug 2020, which means that it was well over a month old at the time of delivery - this indicates that it is an object which does not change frequently. However, the `Cache-Control` header says that the browser can cache it for only 86,400 seconds (one day). This is a case where a longer TTL might be appropriate, to avoid the browser needing to re-request it (even conditionally) - especially if the website is one that a user might visit multiple times over the course of several days.
 
-HTTP/1.1 200
-Date: Sun, 18 Oct 2020 19:36:57 GMT
-Content-Type: text/html; charset=utf-8
-Content-Length: 3052
-Vary: Accept-Encoding
-Last-Modified: Sun, 30 Aug 2020 16:00:30 GMT
-Cache-Control: public, max-age=86400
+<pre><code>> HTTP/1.1 200
+> Date: Sun, 18 Oct 2020 19:36:57 GMT
+> Content-Type: text/html; charset=utf-8
+> Content-Length: 3052
+> Vary: Accept-Encoding
+> Last-Modified: Sun, 30 Aug 2020 16:00:30 GMT
+> Cache-Control: public, max-age=86400</code></pre>
 
 Overall, 60.7% of resources served on the web have a cache TTL that could be considered too short compared to its content age. Furthermore, the median delta between the TTL and age is 25 days - again, an indication of significant under-caching.
 
