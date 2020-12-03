@@ -2,7 +2,7 @@
 # meta open graph video types
 
 # returns all the data we need from _almanac
-CREATE TEMPORARY FUNCTION get_almanac_info(almanac_string STRING)
+CREATE TEMPORARY FUNCTION get_almanac_meta_og_info(almanac_string STRING)
 RETURNS STRUCT<
   video_types ARRAY<STRING>
 > LANGUAGE js AS '''
@@ -17,6 +17,7 @@ try {
         if (result.video_types == null)
         result.video_types = [];
         let url = node['content'];
+        // parse video extension from url
         var rex = new RegExp('\\.([^/#?]+)[.]([^/#?]+)([#?][^/]*)?$');
         var ext = url.match(rex);
         result.video_types.push(ext[2].toLowerCase().trim());  
@@ -35,7 +36,7 @@ FROM (
   SELECT
     _TABLE_SUFFIX AS client,
     url,
-    get_almanac_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info
+    get_almanac_meta_og_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info
   FROM
     `httparchive.pages.2020_08_01_*`),
   UNNEST(almanac_info.video_types) AS video_type

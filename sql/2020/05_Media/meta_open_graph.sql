@@ -2,7 +2,7 @@
 # usage meta open graph
 
 # returns all the data we need from _almanac
-CREATE TEMPORARY FUNCTION get_almanac_info(almanac_string STRING)
+CREATE TEMPORARY FUNCTION get_almanac_meta_og_info(almanac_string STRING)
 RETURNS STRUCT<
   meta_og_image BOOLEAN,
   meta_og_video BOOLEAN
@@ -34,7 +34,7 @@ FROM (
   SELECT
     _TABLE_SUFFIX AS client,
     url,
-    get_almanac_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info
+    get_almanac_meta_og_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info
   FROM
     `httparchive.pages.2020_08_01_*`)
 GROUP BY
