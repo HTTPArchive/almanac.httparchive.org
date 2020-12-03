@@ -216,6 +216,7 @@ self.addEventListener('periodicsync', (event) => {
 
 {{ figure_markup(
   image="periodic_background_sync_api.png",
+  alt="周期的バックグラウンド同期APIを使用しているページ数。",
   caption="周期的バックグラウンド同期APIを使用しているページ数。",
   description="HTTPArchiveで監視しているページ数に基づいたアイドル検出APIの使用状況のグラフです。モバイル端末とデスクトップ端末での利用状況を比較しています。2020年4月以降、デスクトップとモバイルでは1～2ページでAPIが利用されています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1444904371&format=interactive",
