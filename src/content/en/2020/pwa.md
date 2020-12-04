@@ -18,7 +18,7 @@ featured_stat_label_1: Percentage of page loads using a service worker.
 featured_stat_2: 27.97%
 featured_stat_label_2: Web apps that load fast enough for a PWA.
 featured_stat_3: 25%
-featured_stat_label_3: Percent of Mobile environments using importScripts.
+featured_stat_label_3: Percentage of mobile PWA sites using importScripts.
 unedited: true
 ---
 
