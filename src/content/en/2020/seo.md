@@ -14,12 +14,12 @@ ipullrank_bio: An artist and a technologist, all rolled into one, Michael King i
 discuss: 2043
 results: https://docs.google.com/spreadsheets/d/1ram47FshAjzvbQVJbAQPgxZN7PPOPCKIK67VJZCo92c/
 queries: 07_SEO
-#featured_quote: TODO
-#featured_stat_1: TODO
+#featured_quote: "Despite the growing use of mobile devices and Google’s move to a Mobile first index, non-trivial disparities were found across mobile vs. desktop pages, like the one between mobile and desktop links, illustrated in the 62 links on mobile versus the 68 links on desktop for the median web page."
+#featured_stat_1: 10.84% of mobile home pages and 16.18% of desktop ones are not including the viewport tag at all, suggesting that they are not yet mobile friendly.
 #featured_stat_label_1: TODO
-#featured_stat_2: TODO
+#featured_stat_2: 33.13% of websites scored 'Good' Core Web Vitals for desktop while only 19.96% of their mobile counterparts passed the Core Web Vitals assessment.
 #featured_stat_label_2: TODO
-#featured_stat_3: TODO
+#featured_stat_3: The median mobile site displays 11.5% more words when rendered than its raw HTML, showing a reliance on client side JavaScript to show web pages content.
 #featured_stat_label_3: TODO
 unedited: true
 ---
