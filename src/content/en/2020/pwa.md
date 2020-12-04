@@ -414,7 +414,7 @@ Around **30%** of the Desktop and **25%** of Mobile environments uses importScri
 
 ### Workbox Adoptions and package methods
 
-Out of many libraries available workbox stood first with an adoption rate of **12.86%** and **15.29%** on mobile and desktop environments respectively.
+Out of many libraries available, workbox was used the most with an adoption rate of **12.86%** and **15.29%** on mobile and desktop respectively, out of PWA sites.
 
 Out of many methods that workbox provides, we noticed that strategies were used by **29.53%** of Desktop and **25.71%** on Mobile, routing followed it with **18.91%** and **15.61%** adoption and finally precaching caught up with **16.54%** and **12.98%** on Desktop and mobile respectively.
 
