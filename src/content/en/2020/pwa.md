@@ -38,8 +38,7 @@ In this chapter of Web Almanac we will be looking into each of the ingredients t
 
 ### Service worker registrations and installability
 
-From the data we gathered it was derived that about **0.88%** for desktop, **0.87%** for mobile for the month of August 2020 it's 49,305 (out of 5,593,642) for desktop and 55,019 (out of 6,347,919) for mobile. It is important that we realize that it translates into **16.6%** of the entire [traffic]
-(https://www.chromestatus.com/metrics/feature/timeline/popularity/990).
+From the data we gathered it was derived that about **0.88%** for desktop, **0.87%** for mobile for the month of August 2020 it's 49,305 (out of 5,593,642) for desktop and 55,019 (out of 6,347,919) for mobile. It is important that we realize that it translates into **16.6%** of the entire [traffic](https://www.chromestatus.com/metrics/feature/timeline/popularity/990).
 
 {{ figure_markup(
   image="pwa-timeseries-of-service-worker-installations.png",
@@ -257,7 +256,6 @@ In order for a PWA to be fruitful it needs to have a Manifest and a Service Work
 }}
 
 ### Top Manifest display values
-
 
 {{ figure_markup(
   image="pwa-most-used-display-values-for-service-worker-pages.png",
