@@ -28,7 +28,7 @@ In 1990 we had the first ever browser called the “WorldWideWeb” and ever sin
 
 Simply put, a web application which progresses into a native-like application can be considered as a PWA, built using common web technologies including HTML, CSS and JavaScript and can operate seamlessly across devices and environments on a standards-compliant browser.
 
-The crux of a progressive web app is “The ServiceWorker”, which can be thought of as a proxy sitting between the browser and user and gives the developer total control over the network, rather than the network controlling the application.
+The crux of a progressive web app is the *service worker*, which can be thought of as a proxy sitting between the browser and user and gives the developer total control over the network, rather than the network controlling the application.
 
 It all started in December 2014 when Chrome 40 first implemented the meat of what is now known as Progressive Web Apps which was a collaborative effort for the web standards body and the terms was coined by [Frances Berriman and Alex Russell](https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/) in 2015.
 
