@@ -21,7 +21,9 @@ WITH app_headers AS (
     `httparchive.summary_requests.2020_08_01_*` AS r
   INNER JOIN 
     `httparchive.technologies.2020_08_01_*` AS t
-  ON r._TABLE_SUFFIX = t._TABLE_SUFFIX AND r.urlShort = t.url,
+  ON
+    r._TABLE_SUFFIX = t._TABLE_SUFFIX AND
+    r.urlShort = t.url,
   UNNEST(['Content-Security-Policy', 'Content-Security-Policy-Report-Only', 'Cross-Origin-Embedder-Policy', 'Cross-Origin-Opener-Policy', 'Cross-Origin-Resource-Policy', 'Expect-CT', 'Feature-Policy', 'Permissions-Policy', 'Referrer-Policy', 'Report-To', 'Strict-Transport-Security', 'X-Content-Type-Options', 'X-Frame-Options', 'X-XSS-Protection']) AS headername
   WHERE
     firstHtml AND
@@ -50,7 +52,8 @@ INNER JOIN (
       app,
       COUNT(DISTINCT IF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername, ' ')), url, NULL)) AS freq,
       SAFE_DIVIDE(COUNT(DISTINCT IF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername, ' ')), url, NULL)), COUNT(DISTINCT url)) AS pct
-    FROM app_headers
+    FROM
+      app_headers
     GROUP BY
       headername,
       client,
@@ -63,7 +66,8 @@ INNER JOIN (
   GROUP BY
     client,
     headername)
-USING (client, headername)
+USING
+  (client, headername)
 INNER JOIN (
   SELECT
     client,
@@ -74,7 +78,8 @@ INNER JOIN (
   GROUP BY
     client,
     headername)
-USING (client, headername),
+USING
+  (client, headername),
 UNNEST(GENERATE_ARRAY(1, 10)) AS topN
 GROUP BY
   client,
