@@ -140,7 +140,6 @@ Last year around 37% of home pages were served over HTTP/2 and 63% over HTTP/1. 
 
 gQUIC is not seen in the home page data for two reasons. To measure a website over gQUIC, the HTTP Archive crawl would have to perform protocol negotiation via the [alternative services](#alternative-services) header and then use this endpoint to load the site over gQUIC. This was not supported this year, but expect it to be available in next year's Web Almanac. Also, gQUIC is predominantly used for third-party Google tools rather than serving home pages.
 
-{# TODO(authors, analysts): Where does the 150% stat come from? Can we link to it or show it as a figure? #}
 The drive to increase [security](./security) and [privacy](./privacy) on the web has seen requests over TLS increase by [over 150% in the last 4 years](https://httparchive.org/reports/state-of-the-web#pctHttps). Today, over 86% of all requests on mobile and desktop are encrypted. Looking only at home pages, the numbers are still an impressive 78.1% of desktop and 74.7% of mobile. This is important because HTTP/2 is only supported by browsers over TLS. The proportion served over HTTP/2, as shown in Figure 22.5, has also increased by 10 percentage points from [last year](../2019/http2#fig-5), from 55% to 65%.
 
 <figure>
@@ -165,8 +164,8 @@ The drive to increase [security](./security) and [privacy](./privacy) on the web
       </tr>
     </tbody>
   </table>
-  {# TODO(authors): Last year's version of this stat (linked above) used "HTTPS home pages" instead of "TLS home pages". Are they interchangeable? Is it better to be consistent or is TLS more correct? #}
-  <figcaption>{{ figure_link(caption="HTTP version usage for TLS home pages.", sheets_gid="900140630", sql_file="tls_adoption_by_http_version.sql") }}</figcaption>
+ 
+  <figcaption>{{ figure_link(caption="HTTP version usage for HTTPS home pages.", sheets_gid="900140630", sql_file="tls_adoption_by_http_version.sql") }}</figcaption>
 </figure>
 
 With over 60% of websites being served over HTTP/2 or gQUIC, let's look a little deeper into the pattern of protocol distribution for all requests made across individual sites.
