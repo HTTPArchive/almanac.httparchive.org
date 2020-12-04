@@ -337,7 +337,7 @@ Out of which we noticed that portrait, any and portrait-primary properties took 
 
 ### Popular scripts pulling into service workers using ImportScript
 
-The importScripts() API of the WorkerGlobalScope interface synchronously imports one or more scripts into the worker's scope, the same is used to import external dependencies to the serviceworker.
+The [importScripts() API](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts) of the [WorkerGlobalScope interface](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope) synchronously imports one or more scripts into the worker's scope, the same is used to import external dependencies to the service worker.
 
 <figure>
 <table>
