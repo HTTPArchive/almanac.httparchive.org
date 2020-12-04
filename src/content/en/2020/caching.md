@@ -158,7 +158,7 @@ RFC 7234 says that if no caching headers are present in a response, then the bro
 
 {{ figure_markup(
   image="1_cache_control_and_max_age_and_expires.png",
-  caption="Usage of HTTP Cache-Control and Expires headers.",
+  caption="Usage of `Cache-Control` and `Expires` headers.",
   description="Bar chart showing the usage of Cache-Control and Expires headers. 73.6% of desktop and 73.5% of mobile responses are served with a Cache-Control header. 55.5% of desktop and 56.2% of mobile responses are served with an Expires header. 54.8% of desktop and 55.4% of mobile responses use both Cache-Control and Expires header. 25.6% of mobile and desktop responses did not include either header.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=188448640&format=interactive",
   sheets_gid="203111101",
@@ -245,7 +245,7 @@ This indicates that the object can be cached for 86,400 seconds (1 day) and it c
 **Placeholder for Figure 3: Distribution of Cache-Control directives.**
 {{ figure_markup(
   image="2_cache_control_directives.png",
-  caption="Distribution of Cache-Control directives.",
+  caption="Distribution of `Cache-Control` directives.",
   description="Bar chart showing the distribution of 11 Cache-Control directives. The usage for desktop ranges from 60.2% for max-age, 29.7% for public, 14.3% for no-cache, 12.1% for must-revalidate, 9.2% for no-store, 9.1% for private, 3.5% for immutable, 2.3% for no-transform, 2.1% for stale-while-revalidate, 1.5% for s-maxage, 1.0% for proxy-revalidate, 0.2% for stale-if-error. For mobile, the range is, 59.7% for max-age, 29.7% for public, 15.1% for no-cache, 12.5% for must-revalidate, 9.6% for no-store, 9.7% for private, 3.5% for immutable, 2.2% for no-transform, 2.2% for stale-while-revalidate, 1.2% for s-maxage, 1.1% for proxy-revalidate, 0.2% for stale-if-error.,
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=388795105&format=interactive",
   sheets_gid="203111102",
@@ -413,7 +413,7 @@ In the same way that the `Cache-Control` header has more power and flexibility t
 
 {{ figure_markup(
   image="3_last_modified_and_etag.png",
-  caption="Adoption of validating freshness via Last-Modified and ETag headers.",
+  caption="Adoption of validating freshness via `Last-Modified` and `ETag` headers.",
   description="A bar chart showing 73.5% of desktop requests have a Last-Modified, 47.9% have an ETag, 42.8% have both, and 21.4% have neither. The stats for mobile are almost identical at 72.0% for Last-Modified, 46.2% for ETag, 41.0% for both, and 22.9% for neither.,
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1171778982&format=interactive",
   sheets_gid="203111103",
@@ -425,7 +425,7 @@ In the same way that the `Cache-Control` header has more power and flexibility t
 
 {{ figure_markup(
   image="4_last_modified_and_etag_2019.png",
-  caption="Adoption of validating freshness via Last-Modified and ETag headers in 2019.",
+  caption="Adoption of validating freshness via `Last-Modified` and `ETag` headers in 2019.",
   description="A bar chart showing 72.7% of desktop requests have a Last-Modified, 48.0% have an ETag, 43.1% have both, and 22.4% have neither. The stats for mobile are almost identical at 72.0% for Last-Modified, 47.1% for ETag, 42.1% for both, and 23.1% for neither.,
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1775409512&format=interactive",
   sheets_gid="203111104",
@@ -446,7 +446,7 @@ Correctly-implemented revalidation using conditional requests can significantly 
 {{ figure_markup(
   image="5_valid_if_none_match_returns_304.png",
   caption="Distribution of 304 status.",
-  description="Bar chart showing the distribution of 304 status. 20.5% of the desktop responses had no ETag header and contained the same `Last-Modified` value, passed in the `If-Modified-Since` header of the corresponding request. Out of these, 86% had a 304 status. 86.1% of the responses contained the same `ETag` value, passed in the `If-None-Match` header of the corresponding request. Out of these, 88.9% had a 304 status. 17.2% of the mobile responses had no ETag header and contained the same `Last-Modified` value, passed in the `If-Modified-Since` header of the corresponding request. Out of these, 78.3% had a 304 status. 89.9% of the responses contained the same `ETag` value, passed in the `If-None-Match` header of the corresponding request. Out of these, 90.2% had a 304 status.,
+  description="Bar chart showing the distribution of 304 status. 20.5% of the desktop responses had no ETag header and contained the same Last-Modified value, passed in the If-Modified-Since header of the corresponding request. Out of these, 86% had a 304 status. 86.1% of the responses contained the same ETag value, passed in the If-None-Match header of the corresponding request. Out of these, 88.9% had a 304 status. 17.2% of the mobile responses had no ETag header and contained the same Last-Modified value, passed in the If-Modified-Since header of the corresponding request. Out of these, 78.3% had a 304 status. 89.9% of the responses contained the same ETag value, passed in the If-None-Match header of the corresponding request. Out of these, 90.2% had a 304 status.,
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1530788258&format=interactive",
   sheets_gid="2031111055",
   sql_file="valid_if_none_match_returns_304.sql"
@@ -530,7 +530,7 @@ The graph below details the popularity for the top 10 Vary header values. `Accep
 
 {{ figure_markup(
   image="7_vary_headers.png",
-  caption="Vary header usage.",
+  caption="`Vary` header usage.",
   description="Bar chart showing the distribution of Vary header. 91.8% of desktop responses use of Accept-Encoding, much smaller values for the rest with 10.7% for User-Agent, approximately 8.0% for origin and 0.5%-4.1% for accept, access-control-request-headers, access-control-request-method, cookie, x-forwarded-proto, accept-language, and range. 91.3% of mobile responses use of Accept-Encoding, much smaller values for the rest with 11.0% for User-Agent, approximately 9.1% for origin and 0.6%-3.9% for accept, access-control-request-headers, access-control-request-method, cookie, x-forwarded-proto, accept-language, and range., 
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=317375276&format=interactive",
   sheets_gid="2031111057",
@@ -556,7 +556,7 @@ For example, if a login cookie or a session cookie is present in a CDN’s cache
 
 {{ figure_markup(
   image="8_set_cookie.png",
-  caption="Set-Cookie in Cacheable responses.",
+  caption="`Set-Cookie` in Cacheable responses.",
   description="A bar chart showing Set-Cookie usage on cacheable responses. 41.4% of cacheable desktop responses and 40.4% of cacheable mobile responses contain a Set-Cookie header.,
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1106475158&format=interactive",
   sheets_gid="203111108",
@@ -564,12 +564,12 @@ For example, if a login cookie or a session cookie is present in a CDN’s cache
   )
 }}
 
-**Placeholder for Figure 11: `Set-Cookie` in Private and non Private Cacheable responses.**
+**Placeholder for Figure 11: `Set-Cookie` in private and non private Cacheable responses.**
 
 {{ figure_markup(
   image="9_set_cookie2.png",
-  caption="Adoption of validating freshness via Last-Modified and ETag headers.",
-  description="A bar chart showing Set-Cookie usage in private and non private cacheable responses. Of the desktop responses containing a Set-Cookie header, 4.6% use the private directive. 95.4% responses can be cached by both public cache servers. Of the mobile responses containing a Set-Cookie header, 4.9% use the private directive. 95.1% responses can be cached by both public cache servers.,
+  caption="`Set-Cookie` in `private` and non private Cacheable responses.",
+  description="A bar chart showing Set-Cookie usage in `private` and non private cacheable responses. Of the desktop responses containing a Set-Cookie header, 4.6% use the private directive. 95.4% responses can be cached by both public cache servers. Of the mobile responses containing a Set-Cookie header, 4.9% use the private directive. 95.1% responses can be cached by both public cache servers.,
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=97044455&format=interactive",
   sheets_gid="203111109",
   sql_file="set_cookie.sql"
