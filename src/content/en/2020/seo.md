@@ -1,5 +1,4 @@
 ---
-#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 part_number: II
 chapter_number: 7
 title: SEO
@@ -9,18 +8,18 @@ reviewers: [natedame, catalinred, dsottimano, dwsmart, en3r0, ibnesayeed, bazzad
 analysts: [Tiggerito, antoineeripret]
 translators: []
 aleyda_bio: SEO consultant, author, speaker and entrepreneur. Founder of <a href="https://www.orainti.com/">Orainti</a> (a boutique SEO consultancy working with some of the top Web properties and brands, from SaaS to marketplaces) and co-founder of <a href="https://remoters.net/">Remoters.net</a> (a free remote work hub, featuring remote jobs, tools, events, guides, and more to facilitate remote work). Aleyda enjoys sharing about SEO through her <a href="https://www.aleydasolis.com/en/blog/">blog</a>, the <a href="https://www.aleydasolis.com/en/seo-tips/">#SEOFOMO newsletter</a>, the <a href="https://www.aleydasolis.com/en/crawling-mondays-videos/">Crawling Mondays</a> video and podcast series and over <a href="https://twitter.com/aleyda">Twitter</a>.
-ipullrank_bio: An artist and a technologist, all rolled into one, Michael King is the founder of enterprise digital marketing agency, <A href="https://ipullrank.com">iPullRank</a> and founder of Natural Language Generation app <a href="https://www.copyscience.io">CopyScience</a>. Effortlessly leaning on his background as an independent hip-hop musician, Mr. King is a compelling content creator and an award-winning dynamic speaker who is called upon to contribute to technology and marketing conferences and blogs all over the world. You can find Mike talking trash on <a href="https://twitter.com/ipullrank">Twitter</a>
-#fellowhuman1101_bio: TODO
+ipullrank_bio: An artist and a technologist, all rolled into one, Michael King is the founder of enterprise digital marketing agency, <a href="https://ipullrank.com">iPullRank</a> and founder of Natural Language Generation app <a href="https://www.copyscience.io">CopyScience</a>. Effortlessly leaning on his background as an independent hip-hop musician, Mr. King is a compelling content creator and an award-winning dynamic speaker who is called upon to contribute to technology and marketing conferences and blogs all over the world. You can find Mike talking trash on <a href="https://twitter.com/ipullrank">Twitter</a>
+#fellowhuman1101_bio: TODO.
 discuss: 2043
 results: https://docs.google.com/spreadsheets/d/1ram47FshAjzvbQVJbAQPgxZN7PPOPCKIK67VJZCo92c/
 queries: 07_SEO
-#featured_quote: TODO
-#featured_stat_1: TODO
-#featured_stat_label_1: TODO
-#featured_stat_2: TODO
-#featured_stat_label_2: TODO
-#featured_stat_3: TODO
-#featured_stat_label_3: TODO
+#featured_quote: TODO.
+#featured_stat_1: TODO.
+#featured_stat_label_1: TODO.
+#featured_stat_2: TODO.
+#featured_stat_label_2: TODO.
+#featured_stat_3: TODO.
+#featured_stat_label_3: TODO.
 unedited: true
 ---
 
@@ -33,7 +32,7 @@ Despite its complex multidisciplinary nature, in recent years SEO has evolved to
 {{ figure_markup(
   image="seo-google-trends.png",
   caption="Search Engine Optimization Topic search vs. Pay-Per-click and Social media marketing in Google Trends.",
-  description="TODO",
+  description="TODO.",
   width=1600,
   height=844
   )
@@ -569,7 +568,7 @@ Feature | Mobile | Desktop
 `orientation` | 33.48% | 33.49%
 `max-device-width` | 26.23% | 28.15%
 
-<figcaption>{{ figure_link(caption="Media query usage.", sheets_gid="1141218471", sql_file="TODO.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Media query usage.", sheets_gid="1141218471", sql_file="TODO..sql") }}</figcaption>
 </figure>
 
 #### Vary User-Agent in HTTP Header
@@ -637,7 +636,7 @@ Good | 15.44% | 8.39%
 Average | 25.49% | 20.19%
 Poor | 59.06% | 71.42%
 
-<figcaption>{{ figure_link(caption="Good, Average and Poor ratios of Lighthouse v5 versus v6", sheets_gid="692150551", sql_file="TODO.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Good, Average and Poor ratios of Lighthouse v5 versus v6", sheets_gid="692150551", sql_file="TODO..sql") }}</figcaption>
 </figure>
 
 It is important to note that two of the three new metrics in v6 make up 50% of the weighted performance score. This change in focus sets new, more refined goals. Overall, most pages saw minimal impact with 83.32% of tests shifting ten points or less on the shift to v6.
