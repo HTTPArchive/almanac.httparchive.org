@@ -14,7 +14,7 @@ results: https://docs.google.com/spreadsheets/d/1AOqCkb5EggnE8BngpxvxGj_fCfssT9s
 queries: 14_PWA
 featured_quote: Web Apps which progresses into a native like application is a PWA!
 featured_stat_1: 16.6%
-featured_stat_label_1: Percatage of PWA for the entire traffic.
+featured_stat_label_1: Percentage of page loads using a service worker.
 featured_stat_2: 27.97%
 featured_stat_label_2: Web apps that load fast enough for a PWA.
 featured_stat_3: 25%
