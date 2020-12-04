@@ -148,13 +148,23 @@ The simple example below shows a request and response for a JavaScript file (som
 
 RFC 7234 says that if no caching headers are present in a response, then the browser is allowed to *heuristically* cache the response - it suggests a cache duration of 10% of the time since the `Last-Modified header` (if passed). In such cases, most browsers implement a variation of this suggestion, but some may cache the response indefinitely and some may not cache it at all. Because of this variation between browsers, it is important to explicitly set specific caching rules to ensure that you are in control of the cacheability of your content.
 
-**Placeholder for Figure 2: Usage of HTTP Cache-Control and Expires headers.**
-
 ### Statistics
 * 73.6% of responses are served with a `Cache-Control` header
 * 55.5% of responses are served with an `Expires` header
 * 54.8% of responses include both headers
-* 25.7% of responses did not include either header, and are therefore subject to heuristic caching
+* 25.6% of responses did not include either header, and are therefore subject to heuristic caching
+
+**Placeholder for Figure 2: Usage of HTTP Cache-Control and Expires headers.**
+
+{{ figure_markup(
+  image="cache_control_and_max_age_and_expires.png",
+  caption="Usage of HTTP Cache-Control and Expires headers.",
+  description="Bar chart showing the usage of Cache-Control and Expires headers. 73.6% of desktop and 73.5% of mobile responses are served with a Cache-Control header. 55.5% of desktop and 56.2% of mobile responses are served with an Expires header. 54.8% of desktop and 55.4% of mobile responses use both Cache-Control and Expires header. 25.6% of mobile and desktop responses did not include either header.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=188448640&format=interactive",
+  sheets_gid="203111101",
+  sql_file="cache_control_and_max_age_and_expires.sql"
+  )
+}}
 
 These statistics are interesting, since, when compared with 2019, while we are seeing a noticeable increase in the use of the `Cache-Control` header, we are only seeing a very small decrease in the use of the older `Expires` header - effectively a higher percentage of servers are simply adding the `Cache-Control` header to their responses, without removing the `Expires` header.
 As we delve into the various directives allowed in the `Cache-Control` header, we will see how its flexibility and power make it a better fit in many cases.
@@ -232,7 +242,16 @@ This indicates that the object can be cached for 86,400 seconds (1 day) and it c
 * 60.2% of responses include a `Cache-Control` header with the `max-age` directive.
 * 45.5% of responses include the `Cache-Control` header with the `max-age` directive and the `Expires` header, which means that 10% of responses are caching solely based on the older `Expires` header.
 
-**Placeholder for Figure 3: Usage of Cache-Control directives.**
+**Placeholder for Figure 3: Distribution of Cache-Control directives.**
+{{ figure_markup(
+  image="cache_control_directives.png",
+  caption="Distribution of Cache-Control directives.",
+  description="Bar chart showing the distribution of 11 Cache-Control directives. The usage for desktop ranges from 60.2% for max-age, 29.7% for public, 14.3% for no-cache, 12.1% for must-revalidate, 9.2% for no-store, 9.1% for private, 3.5% for immutable, 2.3% for no-transform, 2.1% for stale-while-revalidate, 1.5% for s-maxage, 1.0% for proxy-revalidate, 0.2% for stale-if-error. For mobile, the range is, 59.7% for max-age, 29.7% for public, 15.1% for no-cache, 12.5% for must-revalidate, 9.6% for no-store, 9.7% for private, 3.5% for immutable, 2.2% for no-transform, 2.2% for stale-while-revalidate, 1.2% for s-maxage, 1.1% for proxy-revalidate, 0.2% for stale-if-error.,
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=388795105&format=interactive",
+  sheets_gid="203111102",
+  sql_file="cache_control_directives.sql"
+  )
+}}
 
 The above figure illustrates the 11 `Cache-Control` directives in use on mobile and desktop websites. There are a few interesting observations about the popularity of these cache directives:
 * `max-age` is used by about 60.2% of `Cache-Control` headers, and `no-store` is used by about 9.2% (see below for some discussion on the meaning and use of the no-store directive).
