@@ -32,7 +32,7 @@ Despite its complex multidisciplinary nature, in recent years SEO has evolved to
 {{ figure_markup(
   image="seo-google-trends.png",
   caption="Search Engine Optimization Topic search vs. Pay-Per-click and Social media marketing in Google Trends.",
-  description="TODO.",
+  description="Screenshot from Google Trends showing the change in time for three three digital marketing related terms: Search Engine Optimization starts at 25% but shows an increasing importance over time to 75% now. Pay-per-click similarly starts at 25% but started falling in 2009 and looks to be less than 10% now. Social-media marketing starts very small (approximately 5%) and shows some slight growth over time ending up slightly above pay-per-click around the 10% mark.",
   width=1600,
   height=844
   )
