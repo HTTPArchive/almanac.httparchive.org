@@ -477,9 +477,9 @@ Unfortunately, with TCP congestion control in play, the data transfer starts off
 
 Another issue is that the server is not aware of resources the browser has already cached. When a server tries to push something that is unwanted, the client can send a `RST_STREAM` frame, but by the time this has happened, the server may well have already sent all the data.  This wastes bandwidth and the server has lost the opportunity of immediately sending something that the browser actually did require. There were [proposals](https://tools.ietf.org/html/draft-ietf-httpbis-cache-digest-05) to allow clients to inform the server of their cache status, but these suffered from privacy concerns.
 
-As can be seen from the FIgure 20.17 below, a very small percentage of sites use server push.
+As can be seen from the Figure 20.17 below, a very small percentage of sites use server push.
 
-<figure markdown>
+<figure>
   <table>
     <thead>
       <tr>
