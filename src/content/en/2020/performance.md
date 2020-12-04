@@ -100,7 +100,7 @@ In the chart above, we can observe that between 43% and 53% of websites have goo
   )
 }}
 
-The highest percentage of good LCP readings is mostly distributed amongst European and Asian countries with the Republic of Korea (South Korea) leading at 76% of good metric readings. South Korea is a consistent leader in mobile speeds, with an impressive 145 Mbps download [reported by Speedtest Global Index](https://www.speedtest.net/global-index) for October. Japan, Czechia, Taiwan, Germany and Belgium are also a handful of countries with reliably high mobile speeds. Australia, while leading in mobile network speeds, is let down by slow desktop connections and latency which places it at the bottom section of the ranking above. {# TODO should we split this by desktop and mobile to prove this? Or at least state that we did look at this to confirm this? #}
+The highest percentage of good LCP readings is mostly distributed amongst European and Asian countries with the Republic of Korea (South Korea) leading at 76% of good metric readings. South Korea is a consistent leader in mobile speeds, with an impressive 145 Mbps download [reported by Speedtest Global Index](https://www.speedtest.net/global-index) for October. Japan, Czechia, Taiwan, Germany and Belgium are also a handful of countries with reliably high mobile speeds. Australia, while leading in mobile network speeds, is let down by slow desktop connections and latency which places it at the bottom section of the ranking above.
 
 India remains the last one in our set of data, with only 16% of good experiences. While the population of people connecting to the internet for the first time is continually growing, the mobile and desktop network speeds are [still an issue](https://www.opensignal.com/reports/2020/04/india/mobile-network-experience), with average downloads of 10Mbps for 4G, 3Mbps for 3G and below 50Mbps for desktop.
 
@@ -264,9 +264,9 @@ In the charts above, the FCP distributions are broken down by desktop and mobile
   )
 }}
 
-Comparing FCP on mobile devices on a year-over-year basis, we observe fewer good experiences and more moderate and poor experiences. 75% of websites have sub-par FCP. We can speculate {# TODO: maybe add a link to images chapter or js chapter if there are findings there #} this high percentage of less than ideal FCP readings is a source of frustration and degraded user experience.
+Comparing FCP on mobile devices on a year-over-year basis, we observe fewer good experiences and more moderate and poor experiences. 75% of websites have sub-par FCP. We can speculate this high percentage of less than ideal FCP readings is a source of frustration and degraded user experience.
 
-It is challenging to deduce why FCP isn't improving, as numerous factors can delay paints, such as server latency (measured by a handful of metrics, such as [Time to First Byte (TTFB)](#time-to-first-byte-ttfb) and RTT), blocking JavaScript requests, or inappropriate handling of custom fonts to name a few. {# TODO - are those not good reasons? r do you mean it's challenging to pinpoint exactly which of these is the cause (or even something else). Consider to reword #}
+Numerous factors can delay paints, such as server latency (measured by a handful of metrics, such as [Time to First Byte (TTFB)](#time-to-first-byte-ttfb) and RTT), blocking JavaScript requests, or inappropriate handling of custom fonts to name a few.
 
 ### FCP by geographic location
 
@@ -288,7 +288,7 @@ This change means that the distribution would shift towards more "good" and "poo
 
 While the mediocre ("needs improvement") percentage becomes smaller, the number of poorly performing FCP sites rises, which is especially pronounced at the bottom of the ranking with Latin American and South Asian regions.
 
-Again, hypothesizing on reasons for the specific rankings is difficult {# TODO hypothesizing is (relatively) easy, proving is difficult #} }, especially seeing outliers such as Australia at the lower end. Australia has one of the highest global smartphone penetration levels, one of the fastest mobile networks and relatively high average income levels. We'd easily assume it should be higher up. However, taking into account slow fixed connections, latency and lack of iOS representation in CrUX, its positioning starts making more sense. With an example like this (touched only on the surface), we can see how difficult understanding context for each of the countries would be.
+Again, there are several reasons negatively affecting FCP, such as poor TTFB readings, but it is difficult to prove them without the necessary context. For example, if we were to analyze specific country performance, such as Australia, we surprisingly find it at the lower end. Australia has one of the highest global smartphone penetration levels, one of the fastest mobile networks and relatively high average income levels. We'd easily assume it should be higher up. However, taking into account slow fixed connections, latency and lack of iOS representation in CrUX, its positioning starts making more sense. With an example like this (touched only on the surface), we can see how difficult understanding context for each of the countries would be.
 
 ### FCP by connection type
 
@@ -360,7 +360,7 @@ TTFB is affected by network latency and connection type. The higher the latency 
 
 Looking at the [mobile speeds worldwide for December 2018-November 2019](https://www.speedtest.net/insights/blog/content/images/2020/02/Ookla_Mobile-Speeds-Poster_2020.png), we can see that globally, mobile connections aren't high-speed. Those network speeds and technology standards for cellular networks (such as 5G) are not evenly distributed and affect TTFB. As an example, [see this map of networks in Nigeria](https://www.mobilecoveragemaps.com/map_ng#7/8.744/7.670)—most of the country area has 2G and 3G coverage, with little 4G range.
 
-What's surprising is the relatively the same number of good TTFB results between offline and 4G origins. With service workers, we could expect some of the TTFB issues to be mitigated, but that trend is not reflected in the chart above. {# TODO - any ideas why? #}
+What's surprising is the relatively the same number of good TTFB results between offline and 4G origins. With service workers, we could expect some of the TTFB issues to be mitigated, but that trend is not reflected in the chart above.
 
 ## Performance Observer usage
 
@@ -376,9 +376,7 @@ There are dozens of different user-centric metrics that can be used to assess we
   )
 }}
 
-The chart above showcases that Performance Observer, despite being available for a while now (and [widely supported cross-browser](https://caniuse.com/mdn-api_performanceobserver)) is only used by 6-7% of tracked sites, depending on device type. Those websites will be leveraging the low-level APIs to create custom metrics, and the PerformanceObserver API to collate them, and then potentially use it with other performance reporting tooling. Such low adoption rates might indicate the tendency to lean on predefined metrics (for example, coming from Lighthouse), but also the yet to be leveraged potential of the API.
-
-{# TODO - that's actually higher than I expected as it's a bit niched. Shjould we frame this in a more positivie light as per out Glass Hlaf Full principal (https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#principles)? Also any thoughts on why this is so high? #}
+The chart above showcases that Performance Observer is used by 6-7% of tracked sites, depending on device type. Those websites will be leveraging the low-level APIs to create custom metrics, and the PerformanceObserver API to collate them, and then potentially use it with other performance reporting tooling. Such adoption rates might indicate the tendency to lean on predefined metrics (for example, coming from Lighthouse), but also are impressive for a relatively niche API.
 
 ## Conclusion
 
