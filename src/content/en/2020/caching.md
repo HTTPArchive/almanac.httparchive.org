@@ -63,9 +63,17 @@ The key to understanding how caching (and the web) works is to remember that it 
 
 When we talk about caching, it refers to the object (HTML page, image, etc.) cached by the requesting entity.
 
-Below is a diagram showing how a typical request/response flow works for an object (e.g. a web page).  A CDN sits between the browser and the server. Note that at each point in the browser → CDN → server flow, each of the caching entities first checks whether it has the object in its cache.  It returns the cached object to the requester if found, before forwarding the request to the next caching entity in the chain:
+Below figure shows how a typical request/response flow works for an object (e.g. a web page).  A CDN sits between the browser and the server. Note that at each point in the browser → CDN → server flow, each of the caching entities first checks whether it has the object in its cache.  It returns the cached object to the requester if found, before forwarding the request to the next caching entity in the chain:
 
 **Placeholder for Figure 1**
+
+{{ figure_markup(
+  image="0_request_response_flow_with_caching.png",
+  link="https://almanac.httparchive.org/static/images/2020/caching/0_request_response_flow_with_caching.png",
+  caption="Request/response flow for an object.".  
+  description="Sequence diagram showing the usage of cache in a typical request/response flow for an object."
+  )
+}}
 
 ### Caveat
 Unless specified otherwise, all statistics in this chapter are for desktop, on the understanding that mobile statistics are similar. Where mobile and desktop statistics differ significantly, that is called out.
@@ -635,9 +643,9 @@ As we have seen, a cacheable resource is stored by the browser for a period of t
 
 The remaining 9.2% of responses are not permitted to be stored in browser caches - typically because of Cache-Control: no-store.
 
-**Placeholder for Figure 14: Distribution of cacheable and non-cacheable responses.**
+**Placeholder for Figure 13: Distribution of cacheable and non-cacheable responses.**
 
-**Placeholder for Figure 15: Distribution of TTL in cacheable responses.**
+**Placeholder for Figure 14: Distribution of TTL in cacheable responses.**
 
 The table below details the cache TTL values for desktop requests by type. Most content types are being cached, however CSS resources are consistently cached with high TTLs.
 
@@ -744,7 +752,7 @@ By exploring the cacheability by content type in more detail in figure below, we
 
 Additionally, 13.6% of images and scripts are non-cacheable. There is likely some room for improvement here, since no doubt some of these objects are also static and could be cached at a higher rate - remember: *cache as much as you can for as long as you can!*
 
-**Placeholder for Figure 16: Distribution of cacheability by content type.**
+**Placeholder for Figure 15: Distribution of cacheability by content type.**
 
 ## How do cache TTLs compare to resource age?
 
@@ -758,9 +766,9 @@ The graphs below illustrate the relative age of resources by content type. Some 
 * Some of the longest aged first party content on the web, with age eight weeks or more, are the traditionally cacheable objects like images (78.3%), scripts (68.6%), CSS (74.1%), web fonts (79.3%), audio (77.9%) and video (78.6%).
 * There is a significant gap in some first vs. third party resources having an age of more than a week. 93.5% of first party CSS are older than one week compared to 51.5% of 3rd party CSS, which are older than one week.
 
-**Placeholder for Figure 17: Resource age distribution by content type (1st party).**
+**Placeholder for Figure 16: Resource age distribution by content type (1st party).**
 
-**Placeholder for Figure 18: Resource age distribution by content type (3rd party).**
+**Placeholder for Figure 17: Resource age distribution by content type (3rd party).**
 
 By comparing a resource's cacheability to its age, we can determine if the TTL is appropriate or too low.
 
@@ -806,17 +814,17 @@ When we break this out by first party vs third party in the following table, we 
 
 Google's [Lighthouse](https://developers.google.com/web/tools/lighthouse) tool enables users to run a series of audits against web pages, and the [cache policy audit](https://developers.google.com/web/tools/lighthouse/audits/cache-policy) evaluates whether a site can benefit from additional caching. It does this by comparing the content age (via the `Last-Modified` header) to the cache TTL and estimating the probability that the resource would be served from cache. Depending on the score, you may see a caching recommendation in the results, with a list of specific resources that could be cached.
 
-**Placeholder for Figure 19: Lighthouse report highlighting potential cache policy improvements.**
+**Placeholder for Figure 18: Lighthouse report highlighting potential cache policy improvements.**
 
 Lighthouse computes a score for each audit, ranging from 0% to 100%, and those scores are then factored into the overall scores. The caching score is based on potential byte savings. When we examine the Lighthouse results, we can get a perspective of how many sites are doing well with their cache policies.
 
-**Placeholder for Figure 20: Distribution of Lighthouse audit scores for the "uses-long-cache-ttl" for mobile web pages.**
+**Placeholder for Figure 19: Distribution of Lighthouse audit scores for the "uses-long-cache-ttl" for mobile web pages.**
 
 Only 3.3% of sites scored a 100%, meaning that the vast majority of sites can benefit from some cache optimizations. Approximately two-thirds of sites score below 40%, with almost one-third of sites scoring less than 10%. Based on this, there is a significant amount of under-caching, resulting in excess requests and bytes being served across the network.
 
 Lighthouse also indicates how many bytes could be saved on repeat views by enabling a longer cache policy. Of the sites that could benefit from additional caching, 78.6% of them can reduce their page weight by up to 2MB!
 
-**Placeholder for Figure 21: Distribution of potential byte savings from the Lighthouse caching audit.**
+**Placeholder for Figure 20: Distribution of potential byte savings from the Lighthouse caching audit.**
 
 ## Conclusion
 
