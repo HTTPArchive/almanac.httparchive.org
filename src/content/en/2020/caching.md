@@ -8,7 +8,7 @@ authors: [roryhewitt]
 reviewers: [csswizardry, jzyang, jaisanth, Soham-S-Sarkar, raghuramakrishnan71]
 analysts: [raghuramakrishnan71]
 translators: []
-#roryhewitt_bio: TODO
+#roryhewitt_bio: TODOT
 discuss: 2056
 results: https://docs.google.com/spreadsheets/d/1fYmpSN3diOiFrscS75NsjfsrKXzxxhUMNcYSqXnQJQU/
 queries: 20_Caching
@@ -405,14 +405,34 @@ In the same way that the `Cache-Control` header has more power and flexibility t
 
 ### Statistics
 
-* 73.5% of responses are served with a Last-Modified header. Its usage has marginally increased (by < 1%) in comparison to 2019.
-* 47.9% of responses are served with an ETag header. Out of these responses, 36% are ‘strong’, 98.2% are ‘weak’, and the remaining 1.8% are invalid. In contrast with Last-Modified, the usage of ETag headers has marginally decreased (by <1%) in comparison to 2019.
-* 42.8% of responses are served with both headers (as noted above, in this case, the ETag header takes precedence).
-* 21.4% of responses include neither a Last-Modified or ETag header.
+* 73.5% of responses are served with a `Last-Modified` header. Its usage has marginally increased (by < 1%) in comparison to 2019.
+* 47.9% of responses are served with an `ETag` header. Out of these responses, 36% are ‘strong’, 98.2% are ‘weak’, and the remaining 1.8% are invalid. In contrast with `Last-Modified`, the usage of `ETag` headers has marginally decreased (by <1%) in comparison to 2019.
+* 42.8% of responses are served with both headers (as noted above, in this case, the `ETag` header takes precedence).
+* 21.4% of responses include neither a `Last-Modified` or `ETag` header.
 
 **Placeholder for Figure 4: Adoption of validating freshness via Last-Modified and ETag headers.**
 
-**Placeholder for Figure 5: Adoption of validating freshness via Last-Modified and ETag headers (2019).**
+{{ figure_markup(
+  image="last_modified_and_etag.png",
+  caption="Adoption of validating freshness via Last-Modified and ETag headers.",
+  description="A bar chart showing 73.5% of desktop requests have a Last-Modified, 47.9% have an ETag, 42.8% have both, and 21.4% have neither. The stats for mobile are almost identical at 72.0% for Last-Modified, 46.2% for ETag, 41.0% for both, and 22.9% for neither.,
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1171778982&format=interactive",
+  sheets_gid="203111103",
+  sql_file="last_modified_and_etag.sql"
+  )
+}}
+
+**Placeholder for Figure 5: Adoption of validating freshness via Last-Modified and ETag headers in 2019.**
+
+{{ figure_markup(
+  image="last_modified_and_etag_2019.png",
+  caption="Adoption of validating freshness via Last-Modified and ETag headers in 2019.",
+  description="A bar chart showing 72.7% of desktop requests have a Last-Modified, 48.0% have an ETag, 43.1% have both, and 22.4% have neither. The stats for mobile are almost identical at 72.0% for Last-Modified, 47.1% for ETag, 42.1% for both, and 23.1% for neither.,
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1775409512&format=interactive",
+  sheets_gid="203111104",
+  sql_file="last_modified_and_etag_2019.sql"
+  )
+}}
 
 ### Note
 
