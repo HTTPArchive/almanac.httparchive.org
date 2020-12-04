@@ -528,6 +528,16 @@ The graph below details the popularity for the top 10 Vary header values. `Accep
 
 **Placeholder for Figure 8: Vary header usage.**
 
+{{ figure_markup(
+  image="vary_headers.png",
+  caption="Vary header usage.",
+  description="Bar chart showing the distribution of Vary header. 91.8% of desktop responses use of Accept-Encoding, much smaller values for the rest with 10.7% for User-Agent, approximately 8.0% for origin and 0.5%-4.1% for accept, access-control-request-headers, access-control-request-method, cookie, x-forwarded-proto, accept-language, and range. 91.3% of mobile responses use of Accept-Encoding, much smaller values for the rest with 11.0% for User-Agent, approximately 9.1% for origin and 0.6%-3.9% for accept, access-control-request-headers, access-control-request-method, cookie, x-forwarded-proto, accept-language, and range., 
+    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=317375276&format=interactive",
+  sheets_gid="2031111057",
+  sql_file="vary_headers.sql"
+  )
+}}
+
 ## Setting cookies on cacheable responses
 
 When a response is cached, its entire set of response headers are included with the cached object as well. This is why you can see the response headers when inspecting a cached response in Chrome via DevTools:
