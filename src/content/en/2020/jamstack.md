@@ -253,15 +253,15 @@ Probably worth noting here that Vercel created and maintains Next.js, particular
 
 Jamstack frameworks are improving the developer experience of building sites. Let’s work towards continued progress for improving the real-user experience of browsing Jamstack sites.
 
-[1]: https://httparchive.org/&sa=D&ust=1607098534235000&usg=AOvVaw2R775VQXUyZjntdk-mHHNW
-[2]: https://httparchive.org/reports/state-of-the-web%23numUrls&sa=D&ust=1607098534235000&usg=AOvVaw2BJsY67QPCr_dmVKbyrkaA
-[3]: https://webpagetest.org/&sa=D&ust=1607098534236000&usg=AOvVaw2mcp9-aGTu0fsiijaHLsoq
+[1]: https://httparchive.org/
+[2]: https://httparchive.org/reports/state-of-the-web#numUrls
+[3]: https://webpagetest.org/
 [4]: ./methodology
-[6]: https://www.nature.com/articles/d41586-018-06610-y&sa=D&ust=1607098534270000&usg=AOvVaw28OM8HGgA0E501o7_QU3ty
-[7]: https://gitlab.com/wholegrain/carbon-api-2-0/-/blob/master/includes/carbonapi.php%23L342&sa=D&ust=1607098534271000&usg=AOvVaw2Vrq3G6Z4WGeTLSfIYyDeF
-[8]: https://developers.google.com/speed/webp/&sa=D&ust=1607098534274000&usg=AOvVaw1R_tAYyDQ5vr1Q7ikkVhre
-[9]: https://developers.google.com/speed/webp/docs/webp_lossless_alpha_study%23results&sa=D&ust=1607098534274000&usg=AOvVaw0oFiKtSgU274IoAHpN7j13
-[10]: https://developers.google.com/speed/webp/docs/webp_study&sa=D&ust=1607098534275000&usg=AOvVaw2uAD0i-dIh1hTBE57FJBm4
-[11]: https://web.dev/learn-web-vitals/&sa=D&ust=1607098534277000&usg=AOvVaw3--KzAg_GIDOfpwy1Aqgh-
-[12]: https://vercel.com/docs/analytics%23real-experience-score&sa=D&ust=1607098534287000&usg=AOvVaw1rBzBB81ANaXwxyOX8mivi
-[13]: https://web.dev/measure/&sa=D&ust=1607098534287000&usg=AOvVaw2Xs1I6xhfgwIUA7l_sFsXl
+[6]: https://www.nature.com/articles/d41586-018-06610-y
+[7]: https://gitlab.com/wholegrain/carbon-api-2-0/-/blob/master/includes/carbonapi.php#L342
+[8]: https://developers.google.com/speed/webp/
+[9]: https://developers.google.com/speed/webp/docs/webp_lossless_alpha_study#results
+[10]: https://developers.google.com/speed/webp/docs/webp_study
+[11]: https://web.dev/learn-web-vitals/
+[12]: https://vercel.com/docs/analytics#real-experience-score
+[13]: https://web.dev/measure/
