@@ -290,7 +290,6 @@ There are often cases where a browser has previously requested an object and alr
 
 In these cases, the browser can make a conditional request to the server - effectively saying "*I have object X in my cache - can I use it, or do you have a more recent version I should use instead?*". The server can respond in one of two ways:
 
-
 * "*Yes, the version of object X you have in cache is fine to use*" - in this case the server response consists of a `304 Not Modified` status code and response headers, but no response body 
 * "*No, here is a more recent version of object X - use this instead*" - in this case the server response consists of a `200 OK` status code, response headers, and a new response body (the actual new version of object X)
 
@@ -444,6 +443,16 @@ Correctly-implemented revalidation using conditional requests can significantly 
 
 **Placeholder for Figure 6: Distribution of 304 status.**
 
+{{ figure_markup(
+  image="valid_if_none_match_returns_304.png",
+  caption="Distribution of 304 status.",
+  description="Bar chart showing the distribution of 304 status. 20.5% of the desktop responses had no ETag header and contained the same `Last-Modified` value, passed in the `If-Modified-Since` header of the corresponding request. Out of these, 86% had a 304 status. 86.1% of the responses contained the same `ETag` value, passed in the `If-None-Match` header of the corresponding request. Out of these, 88.9% had a 304 status. 17.2% of the mobile responses had no ETag header and contained the same `Last-Modified` value, passed in the `If-Modified-Since` header of the corresponding request. Out of these, 78.3% had a 304 status. 89.9% of the responses contained the same `ETag` value, passed in the `If-None-Match` header of the corresponding request. Out of these, 90.2% had a 304 status.,
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1530788258&format=interactive",
+  sheets_gid="2031111055",
+  sql_file="valid_if_none_match_returns_304.sql"
+  )
+}}
+
 ## Validity of date strings
 Throughout this document, we have discussed several caching-related HTTP headers used to convey timestamps:
 
@@ -468,6 +477,16 @@ Invalid date strings are ignored by most browsers, which can affect the cacheabi
 Because the `Date` HTTP response header is almost always generated automatically by the web server, invalid values are extremely rare. Similarly `Last-Modified` headers had a very low percentage (0.5%) of invalid values. What was very surprising to see though, was that a relatively high 2.9% of `Expires` headers used an invalid date format (2.5% in mobile).
 
 **Placeholder for Figure 7: Invalid date formats in response headers.**
+
+{{ figure_markup(
+  image="invalid_last_modified_and_expires_and_date.png",
+  caption="Invalid date formats in response headers.",
+  description="Bar chart showing the distribution of invalid date. 0.1% of desktop responses have an invalid date, 0.5% have an invalid Last-Modified and 2.5% have an invalid Expires. The stats for mobile are very similar with 0.1% of responses have an invalid date, 0.7% have an invalid Last-Modified and 2.9% have an invalid Expires.,
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=827586570&format=interactive",
+  sheets_gid="2031111056",
+  sql_file="invalid_last_modified_and_expires_and_date.sql"
+  )
+}}
 
 Examples of some of the invalid uses of the `Expires` header are:
 
