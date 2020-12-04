@@ -683,18 +683,6 @@ figure .fig-desktop {
     height: auto;
   }
 
-  figcaption .figure-dropdown-mobile {
-    display: block;
-  }
-
-  figcaption .figure-dropdown-desktop {
-    display: none;
-  }
-
-  .figure-dropdown-mobile select {
-    width: 1.125rem;
-  }
-
   .fig-description-button {
     margin-top: 10px;
     margin-top: 0.625rem;

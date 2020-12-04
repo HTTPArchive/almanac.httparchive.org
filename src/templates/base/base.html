@@ -483,7 +483,7 @@
         });
 
         // Language and Year switching
-        var languageYearSwitchers = document.querySelectorAll('.language-switcher select, .year-switcher select, .table-of-contents-switcher select, .figure-dropdown-mobile select');
+        var languageYearSwitchers = document.querySelectorAll('.language-switcher select, .year-switcher select, .table-of-contents-switcher select');
         for (var i = 0; i < languageYearSwitchers.length; i++) {
           languageYearSwitchers[i].addEventListener('change', function(e) {
             //Reset the selector back in case user uses Back button
@@ -628,17 +628,23 @@
     <ul class="figure-dropdown-list nav-dropdown-list floating-card hidden">
       {% if sheets_gid != "" %}
       <li>
-        <a href="{{ metadata.get('results') }}#gid={{ sheets_gid }}">Show Data</a>
+        <a href="{{ metadata.get('results') }}#gid={{ sheets_gid }}">
+          {{ self.figure_data() }}
+        </a>
       </li>
       {% endif %}
       {% if sql_file != "" %}
       <li>
-        <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/{{ year }}/{{ metadata.get('queries')  }}/{{ sql_file }}">Show SQL</a>
+        <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/{{ year }}/{{ metadata.get('queries')  }}/{{ sql_file }}">
+          {{ self.figure_sql() }}
+        </a>
       </li>
       {% endif %}
       {% if image != "" %}
       <li>
-        <a href="{{ image }}">Show Image</a>
+        <a href="{{ image }}">
+          {{ self.figure_image() }}
+        </a>
       </li>
       {% endif %}
     </ul>
@@ -732,13 +738,9 @@
   )
 %}
 {% if ebook %}
-<div class="figure-caption">
 <a href="#fig-{{ metadata.chapter_number }}-{{ id }}" class="anchor-link">{{ figure_text(metadata, id) }}</a> {{ caption|safe }}
-</div>
 {% else %}
-<div class="figure-caption">
 <a href="#fig-{{ id }}" class="anchor-link">{{ figure_text(metadata, id) }}</a> {{ caption|safe }}
-</div>
 {{ figure_dropdown(metadata, id, sheets_gid, sql_file, image) }}
 {% endif %}
 {% endmacro %}
