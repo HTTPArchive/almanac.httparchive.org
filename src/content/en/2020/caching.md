@@ -815,8 +815,14 @@ The graphs below illustrate the relative age of resources by content type. Some 
 * There is a significant gap in some first vs. third party resources having an age of more than a week. 93.5% of first party CSS are older than one week compared to 51.5% of 3rd party CSS, which are older than one week.
 
 **Placeholder for Figure 16: Resource age distribution by content type (1st party).**
+https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=2056330432&format=interactive
+resource_age_party_and_type_wise_groups.sql
+14_resource_age_party_and_type_wise_groups_1st_party.png
 
 **Placeholder for Figure 17: Resource age distribution by content type (3rd party).**
+https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1712948465&format=interactive
+resource_age_party_and_type_wise_groups.sql
+15_resource_age_party_and_type_wise_groups_3rd_party.png
 
 By comparing a resource's cacheability to its age, we can determine if the TTL is appropriate or too low.
 
@@ -864,15 +870,24 @@ Google's [Lighthouse](https://developers.google.com/web/tools/lighthouse) tool e
 
 **Placeholder for Figure 18: Lighthouse report highlighting potential cache policy improvements.**
 
+16_lighthouse_caching_audit.png
+
 Lighthouse computes a score for each audit, ranging from 0% to 100%, and those scores are then factored into the overall scores. The caching score is based on potential byte savings. When we examine the Lighthouse results, we can get a perspective of how many sites are doing well with their cache policies.
 
 **Placeholder for Figure 19: Distribution of Lighthouse audit scores for the "uses-long-cache-ttl" for mobile web pages.**
+https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=637059966&format=interactive
+cache_ttl_lighthouse_score.sql
+17_cache_ttl_lighthouse_score.png
 
 Only 3.3% of sites scored a 100%, meaning that the vast majority of sites can benefit from some cache optimizations. Approximately two-thirds of sites score below 40%, with almost one-third of sites scoring less than 10%. Based on this, there is a significant amount of under-caching, resulting in excess requests and bytes being served across the network.
 
 Lighthouse also indicates how many bytes could be saved on repeat views by enabling a longer cache policy. Of the sites that could benefit from additional caching, 78.6% of them can reduce their page weight by up to 2MB!
 
 **Placeholder for Figure 20: Distribution of potential byte savings from the Lighthouse caching audit.**
+https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=534991851&format=interactive
+
+cache_wastedbytes_lighthouse.sql
+18_cache_wastedbytes_lighthouse.png
 
 ## Conclusion
 
