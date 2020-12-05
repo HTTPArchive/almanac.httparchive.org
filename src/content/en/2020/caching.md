@@ -792,6 +792,16 @@ Additionally, 13.6% of images and scripts are non-cacheable. There is likely som
 
 **Placeholder for Figure 15: Distribution of cacheability by content type.**
 
+{{ figure_markup(
+  image="13_cacheable_by_resource_type.png",
+  caption="Distribution of cacheability by content type.",
+  description="A bar chart showing distribution of cacheable resource types. In desktop responses, 99.3% of audio, 99.3% of CSS, 99.8% of font, 67.9% of HTML, 91.2% of images, 66.3% of other types, 95.2% of scripts, 78.6% of text, 99.6% of video, and 81.4% of xml is cacheable. In mobile responses, 99.0% of audio, 99.0% of CSS, 99.8% of font, 71.5% of HTML, 89.9.2% of images, 67.9% of other types, 95.1% of scripts, 78.4% of text, 99.7% of video, and 80.6% of xml is cacheable.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1283939423&format=interactive",
+  sheets_gid="203111113",
+  sql_file="non_cacheable_by_resource_type.sql"
+  )
+}}
+
 ## How do cache TTLs compare to resource age?
 
 So far we've talked about how servers tell a client what is cacheable, and how long it has been cached for. When designing cache rules, it is also important to understand how old the content you are serving is.
