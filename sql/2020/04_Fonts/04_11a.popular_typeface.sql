@@ -14,20 +14,35 @@ try {
 ''';
 
 SELECT
-  *
+  client,
+  font_family,
+  pages,
+  total,
+  pages / total AS pct
 FROM (
-  SELECT DISTINCT
+  SELECT
     client,
     font_family,
-    COUNT(DISTINCT page) OVER (PARTITION BY client, font_family) AS pages,
-    COUNT(DISTINCT page) OVER (PARTITION BY client) AS total,
-    COUNT(DISTINCT page) OVER (PARTITION BY client, font_family) / COUNT(DISTINCT page) OVER (PARTITION BY client) AS pct
+    COUNT(DISTINCT page) AS pages
   FROM
     `httparchive.almanac.parsed_css`,
     UNNEST(getFontFamilies(css)) AS font_family
   WHERE
-    date = '2020-08-01')
+    date = '2020-08-01'
+  GROUP BY
+    client,
+    font_family)
+JOIN (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    COUNT(0) AS total
+  FROM
+    `httparchive.summary_pages.2020_08_01_*`
+  GROUP BY
+    client)
+USING
+  (client)
 WHERE
-  pages >= 1000
+  pages / total >= 0.01
 ORDER BY
   pct DESC
