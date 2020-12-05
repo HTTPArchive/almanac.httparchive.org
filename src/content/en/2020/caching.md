@@ -870,7 +870,14 @@ Google's [Lighthouse](https://developers.google.com/web/tools/lighthouse) tool e
 
 **Placeholder for Figure 18: Lighthouse report highlighting potential cache policy improvements.**
 
-16_lighthouse_caching_audit.png
+{{ figure_markup(
+  image="16_lighthouse_caching_audit.png",
+  link="https://almanac.httparchive.org/static/images/2020/caching/16_lighthouse_caching_audit.png",
+  caption="Lighthouse report highlighting potential cache policy improvements.".
+  description="Extract of the Lighthouse report highlighting potential cache policy improvements. The first and third party URLs, their cache TTL, and size is shown."
+  )
+}}
+
 
 Lighthouse computes a score for each audit, ranging from 0% to 100%, and those scores are then factored into the overall scores. The caching score is based on potential byte savings. When we examine the Lighthouse results, we can get a perspective of how many sites are doing well with their cache policies.
 
