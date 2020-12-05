@@ -811,7 +811,7 @@ There is ongoing work to define ways to discover HTTP/3 without needing the TCP 
 
 QUIC is dependent on TLS1.3, which is used for around 41% of requests, as shown in Figure 22.23 which leaves 60% of requests that will need to update their TLS stack to support HTTP/3.
 
-### Is HTTP/3 ready for use yet?
+### Is HTTP/3 ready yet?
 
 So, when can we start using HTTP/3 and QUIC for real? Not quite yet, but hopefully soon. There is a [large number of mature open source implementations](https://github.com/quicwg/base-drafts/wiki/Implementations) and the major browsers have experimental support. However, most of the typical servers have suffered some delays: nginx is a bit behind other stacks, Apache hasn't announced official support, and NodeJS relies on OpenSSL, which [won't add QUIC support anytime soon](https://github.com/openssl/openssl/pull/8797). Even so, we expect to see HTTP/3 and QUIC deployments rise throughout 2021. 
 
