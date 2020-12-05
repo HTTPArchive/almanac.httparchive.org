@@ -258,7 +258,6 @@ CDNs can be classed in two broad categories: those that serve the home page and/
 - **80%** of mobile home pages are served over HTTP/2 if a CDN is used
 - **30%** of mobile home pages are served over HTTP/2 if a CDN is not used
 
-{# TODO(authors, editors): Throughout the chapter there are several lead-ins to figures that are very similar/redundant with the existing figure captions. Is it worth writing these out? #}
 Figure 22.12 shows the more specific and the modern CDNs serve a higher proportion of traffic over HTTP/2.
 
 <figure>
@@ -321,15 +320,14 @@ As discussed [earlier](#http10-to-http2), HTTP/1.1 only allows a single request 
 {{ figure_markup(
   image="http2-total-number-of-connections-per-page.png",
   caption="Distriution of total number of connections per page",
-  description="A percentile chart of total connections, comparing 2016 with 2020. The median number of connections in 2016 is 23, in 2020 it is 13. At the 10th percentile, 6 connections in 2016, 5 in 2020. At the 25th percentile, 12 connections in 2016, 8 in 2020. At 75th percentile - 43 connections in 2016, 20 in 2020. At 90th percentile 76 connections in 2016 and 33 in 2020.",
+  description="A percentile chart of total connections, comparing 2016 with 2020 on desktop. The median number of connections in 2016 is 23, in 2020 it is 13. At the 10th percentile, 6 connections in 2016, 5 in 2020. At the 25th percentile, 12 connections in 2016, 8 in 2020. At 75th percentile - 43 connections in 2016, 20 in 2020. At 90th percentile 76 connections in 2016 and 33 in 2020.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=17394219&format=interactive",
   sheets_gid="1432183252",
   sql_file="measure_number_of_tcp_connections_per_site.sql"
 )
 }}
 
-{# TODO(authors, analysts): Clarify if this data is mobile-only. Also clarify what metric "the number of requests has only dropped from 74 to 73" is referring to. Median requests per page? #}
-Figure 22.15 shows the distribution of the number of TCP connections per page in 2020 compared with 2016. Half of all websites now use 13 or fewer TCP connections in 2020 compared with 23 connections in 2016; a 44% decrease. In the same time period the number of requests has only dropped from 74 to 73. The median number of requests per TCP connection has increased from 3.2 to 5.6.
+Figure 22.15 shows how the number of TCP connections per page has reduced in 2020 compared with 2016. Half of all websites now use 13 or fewer TCP connections in 2020 compared with 23 connections in 2016; a 44% decrease. In the same time period the [median number of requests](https://httparchive.org/reports/state-of-the-web#reqTotal) has only dropped from 74 to 73. The median number of requests per TCP connection has increased from 3.2 to 5.6.
 
 TCP was designed to maintain an average data flow that is both efficient and fair. Imagine a flow control process where each flow both exerts pressure on and is responsive to all other flows, to provide a fair share of the network. In a fair protocol, every TCP session does not crowd out any other session and over time will take 1/N of the path capacity.
 
