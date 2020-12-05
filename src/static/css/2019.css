@@ -898,7 +898,7 @@ p.copyright a {
 }
 
 .social-media a {
-  color: #8c99a3;
+  color: currentColor;
 }
 
 @media (max-width: 900px) and (min-width: 601px) {
@@ -1468,6 +1468,10 @@ p.copyright a {
     transition-duration: 0s !important;
     transition-delay: 0s !important;
   }
+}
+
+.no-wrap {
+  white-space: nowrap;
 }
 
 /* Syntax Highlighting */
