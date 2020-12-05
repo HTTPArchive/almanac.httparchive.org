@@ -663,7 +663,14 @@ The remaining 9.2% of responses are not permitted to be stored in browser caches
 
 **Placeholder for Figure 13: Distribution of cacheable and non-cacheable responses.**
 
+https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=430652203&format=interactive
+ttl.sql
+11_cacheable_and_non_cacheable.png
+
 **Placeholder for Figure 14: Distribution of TTL in cacheable responses.**
+https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1365998611&format=interactive
+ttl.sql
+12_ttl.png
 
 The table below details the cache TTL values for desktop requests by type. Most content types are being cached, however CSS resources are consistently cached with high TTLs.
 
