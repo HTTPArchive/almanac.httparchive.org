@@ -883,11 +883,11 @@ Google's [Lighthouse](https://developers.google.com/web/tools/lighthouse) tool e
 
 Lighthouse computes a score for each audit, ranging from 0% to 100%, and those scores are then factored into the overall scores. The caching score is based on potential byte savings. When we examine the Lighthouse results, we can get a perspective of how many sites are doing well with their cache policies.
 
-**Placeholder for Figure 19: Distribution of Lighthouse audit scores for the "uses-long-cache-ttl" for mobile web pages.**
+**Placeholder for Figure 19: Distribution of Lighthouse audit scores for the `uses-long-cache-ttl` for mobile web pages.**
 {{ figure_markup(
   image="17_cache_ttl_lighthouse_score.png",
-  caption="Distribution of Lighthouse audit scores for the "uses-long-cache-ttl" for mobile web pages.",
-  description="A bar chart showing the distribution of Lighthouse audit scores for the "uses-long-cache-ttl" for mobile web pages. 37.5% of the responses have a score less than 0.10, 28.8% have a score between 0.10-0.39, 17.7% have a score between 0.40-0.79, and 12.1% have a score between 0.80-0.99. 3.3% have a score of 1 and 0.6% have no score.",
+  caption="Distribution of Lighthouse audit scores for the `uses-long-cache-ttl` for mobile web pages.",
+  description="A bar chart showing the distribution of Lighthouse audit scores for the `uses-long-cache-ttl` for mobile web pages. 37.5% of the responses have a score less than 0.10, 28.8% have a score between 0.10-0.39, 17.7% have a score between 0.40-0.79, and 12.1% have a score between 0.80-0.99. 3.3% have a score of 1 and 0.6% have no score.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=637059966&format=interactive",
   sheets_gid="203111117",
   sql_file="cache_ttl_lighthouse_score.sql"
