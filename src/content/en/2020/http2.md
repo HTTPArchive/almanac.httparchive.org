@@ -40,7 +40,7 @@ In 1997, HTTP/1.1 was introduced to allow TCP connection reuse by adding "keep-a
 
 HTTP/2, published in 2015, is a binary-based protocol that introduced the concept of bidirectional streams between client and server. Using these streams, a browser can make optimal use of a single TCP connection to _multiplex_ multiple HTTP requests/responses concurrently. HTTP/2 also introduced a prioritization scheme to steer this multiplexing; clients can signal a request priority that allows more important resources to be sent ahead of others.
 
-## Adoption and impact
+## HTTP/2 Adoption
 
 The data used in this chapter is sourced from the HTTP Archive and tests over seven million websites with a Chrome browser.  As with other chapters, the analysis is split by mobile and desktop websites. When the results between desktop and mobile are similar, statitics are presented from the mobile dataset. You can find more details on the [Methodology](./methodology) page. When reviewing this data, please bear in mind that each website will receive equal weight regardless of the number of requests. We suggest you think of this more as investigating the trends across a broad range of active websites.
 
@@ -309,7 +309,7 @@ Types of content in the second category are typically shared resources (JavaScri
 In Figure 22.13 we can see the stark differnce in HTTP/2 and gQUIC adoption when a website is using a CDN. 70% of pages use HTTP/2 for all third-party requests when a CDN is used. Without a CDN, only 25% of pages use HTTP/2 for all third-party requests.
 
 {# TODO(authors, editors): Sort of a nit. Headings inconsistently ask questions and give short titles to describe the contents. It would be more natural to have a unified naming convention for headers. #}
-## How is HTTP/2 performing?
+## HTTP/2 impact
 
 Measuring the impact of how a protocol is performing is difficult with the current HTTP Archive [approach](./methodology). It would be really fascinating to be able to quantify the impact of concurrent connections, the effect of packet loss, and differrent congestion control mechanisms. To really compare performance, each website would have to be crawled over each protocol over different network conditions. What we can do instead is to look into the impact on the number of connections a website uses.
 
@@ -773,7 +773,7 @@ It's important to note that this low adoption only reflects gQUIC and HTTP/3 usa
 Now you might wonder: if not everyone is already using HTTP/2, why would we need HTTP/3 so soon? What benefits can we expect in practice? Let's take a closer look at its internal mechanisms.
 
 {# TODO(authors): I honestly found this section really interesting, but it doesn't contain any real-world data. How can we add an element of data to this? #}
-### Why do we need QUIC and HTTP/3?
+### QUIC and HTTP/3
 
 Past attempts to deploy new transport protocols on the internet have proven difficult, for example [Stream Control Transmission Protocol](https://en.wikipedia.org/wiki/Stream_Control_Transmission_Protocol) (SCTP). QUIC is a new transport protocol that runs on top of UDP. It provides similar features to TCP such as reliable in-order delivery and congestion control to prevent flooding the network.
 
@@ -787,11 +787,11 @@ Another benefit of QUIC is that it is able to migrate connections and keep them 
 
 Finally, TLS is already used to protect HTTP/1.1 and HTTP/2. QUIC, however, has a deep integration of TLS 1.3, protecting both HTTP/3 data and QUIC packet metadata, such as packet numbers. Using TLS in this way improves end-user privacy and security and makes continued protocol evolution easier. Combining the transport and cryptographic handshakes means that connection setup takes just a single RTT, compared to TCP's minimum of two and worst case of four. In some cases, QUIC can even go one step further and send HTTP data along with its very first message, which is called _0-RTT_. These fast connection setup times are expected to really help HTTP/3 outperform HTTP/2.
 
-#### So, will HTTP/3 help?
+**So, will HTTP/3 help?**
 
 On the surface, HTTP/3 is really not all that different from HTTP/2. It doesn't add any major features, but mainly changes how the existing ones work under the surface. The real improvements come from QUIC, which offers faster connection setups, increased robustness, and resilience to packet loss. As such, HTTP/3 is expected to do better than HTTP/2 on worse networks, while offering very similar performance on faster systems. However, that is if the web community can get HTTP/3 working, which can be challenging in practice.
 
-### Deploying and discovering QUIC and HTTP/3
+### Deploying and discovering HTTP/3
 
 Since QUIC and HTTP/3 run over UDP, things aren't as simple as with HTTP/1.1 or HTTP/2. Typically, an HTTP/3 client has to first discover that QUIC is available at the server. The recommended method for this is [HTTP Alternative Services](#alternative-services) . On its first visit to a website, a client connects to a server using TCP. It then discovers via `Alt-Svc` that HTTP/3 is available, and can set up a new QUIC connection. The `Alt-Svc` entry can be cached, allowing subsequent visits to avoid the TCP step, but the entry will eventually become stale and need revalidation. This likely will have to be done for each domain separately, which will probably lead to most page loads using a mix of HTTP/1, HTTP/2, and HTTP/3.
 
@@ -800,7 +800,7 @@ However, even if it is known that a server supports QUIC and HTTP/3, the network
 There is ongoing work to define ways to discover HTTP/3 without needing the TCP step. This should be considered an optimization though, as the UDP blocking issues are likely to mean that TCP-based HTTP sticks around. The [HTTPS DNS record](https://tools.ietf.org/html/draft-ietf-dnsop-svcb-https), is similar to HTTP Alternative Services and some CDNs are already [experimenting with these records](https://blog.cloudflare.com/speeding-up-https-and-http-3-negotiation-with-dns/).  In the long run, when most servers offer HTTP/3, browsers might switch to attempting that by default. But that will take a long time.
 
 <figure markdown>
-| TLS version | HTTP/1 desktop | HTTP/1 mobile | HTTP/2 desktop | HTTP/2 mobile |
+| TLS version | HTTP/1 <br /> desktop | HTTP/1 <br />mobile | HTTP/2 <br />desktop | HTTP/2 <br />mobile |
 | ------------ | ------ | ------ |  ---- | -----|
 | unknown   |  4.06%	 | 4.03%  | 5.05%	 | 7.28%  |
 | TLS 1.2	   | 26.56%  | 24.75% | 23.12%  | 23.14% |
