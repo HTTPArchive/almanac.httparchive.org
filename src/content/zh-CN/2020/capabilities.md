@@ -79,7 +79,7 @@ Web浏览器允许用户以不同的方式在用户系统上存储数据，如Co
 {{ figure_markup(
   image="storage_manager_api_estimate.png",
   caption="使用存储管理 API的预估方法的页数。",
-  description="根据HTTPArchive监控的页面数量，存储管理 API的预估方法的使用情况图。它比较了移动设备和桌面设备上的使用情况。它显示了桌面上的线性增长，而它同时显示了移动设备的爆炸性增长。在10月份，大约有34000个移动网站和27000个桌面网站利用它。"，
+  description="根据HTTPArchive监控的页面数量，存储管理 API的预估方法的使用情况图。它比较了移动设备和桌面设备上的使用情况。它显示了桌面上的线性增长，而它同时显示了移动设备的爆炸性增长。在10月份，大约有34000个移动网站和27000个桌面网站利用它。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1853644024&format=interactive",
   sheets_gid="1811313356",
   sql_file="durable_storage_estimate_usage.sql"
