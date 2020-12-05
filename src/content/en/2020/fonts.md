@@ -33,7 +33,7 @@ Web font technology has been fairly mature, with incremental improvements in com
 Web font usage has been growing steadily over time, with 82% of web pages for desktop using web fonts, and mobile at 80%.
 
 {{ figure_markup(
-  image="04_01.web_fonts_usage.png",
+  image="fonts-web-fonts-usage.png",
   caption="Web font usage over time.",
   description="Scatter plot showing fraction of mobile and desktop web pages containing web fonts, as a function of time.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1465601804&format=interactive",
@@ -47,7 +47,7 @@ Usage of web fonts is fairly consistent around the world, with a few outliers. T
 https://discuss.httparchive.org/t/how-does-web-font-usage-vary-by-country/1649
 
 {{ figure_markup(
-  image="04_02.web_fonts_usage_by_country.png",
+  image="fonts-web-fonts-usage-by-country.png",
   caption="Web fonts usage by country.",
   description="A map of the world showing the amount of web font usage for each country, measured as median kilobytes of web font data.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1005874204&format=interactive",
@@ -59,7 +59,7 @@ https://discuss.httparchive.org/t/how-does-web-font-usage-vary-by-country/1649
 The single top country is South Korea, which is not all that surprising given their consistently high internet speeds and the fact that Korean (Hangul) fonts are almost an order of magnitude larger than Latin. As we'll see in the "popular typefaces" chapter, Korean fonts are two of the top 14 most popular, further evidence they really like web fonts. Web font usage in Japan and Chinese-speaking countries is considerably lower, likely because CJK fonts are even larger and connections are not as fast.
 
 {{ figure_markup(
-  image="04_02.web_fonts_usage_top_countries.png",
+  image="fonts-web-fonts-usage-top-countries.png",
   caption="Web fonts usage, top countries.",
   description="A chart showing the top countries by usage of web fonts, measured as median kilobytes of web font data.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1772704624&format=interactive",
@@ -77,7 +77,7 @@ It likely comes as no surprise that Google Fonts remains by far the most popular
 Another surprise in the data is the rise in fonts being served by Shopify. Growing from roughly 1.1% in 2019 to about 4% in 2020, there has clearly been a significant uptick in usage of web fonts by sites hosted on that platform. It’s unclear if that is due to that service offering more fonts that they host on their CDN, if it’s growth in use of their platform, or both. However, the increase in usage of both Shopify and Bootstrap represent the largest amount of growth other than Google Fonts, making it a very noticeable data point.
 
 {{ figure_markup(
-  image="04_04.web_hosting_performance_desktop.png",
+  image="fonts-web-hosting-performance-desktop.png",
   caption="Web font hosting performance, desktop.",
   description="A bar chart showing the desktop median first content paint and last content paint (in milliseconds) for three different web font hosting strategies: local, external or both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=307595140&format=interactive",
@@ -87,7 +87,7 @@ Another surprise in the data is the rise in fonts being served by Shopify. Growi
 }}
 
 {{ figure_markup(
-  image="04_04.web_hosting_performance_mobile.png",
+  image="fonts-web-hosting-performance-mobile.png",
   caption="Web font hosting performance, mobile.",
   description="A bar chart showing the mobile median first content paint and last content paint (in milliseconds) for three different web font hosting strategies: local, external or both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=55793395&format=interactive",
@@ -103,7 +103,7 @@ The biggest performance concern about integrating web fonts is that they may del
 The [`font-display`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display) setting controls what happens while waiting for the web font to load, and is generally a tradeoff between performance and visual richness. The most popular is `swap`, used on about 10% of web pages, which displays using the fallback font if the web font doesn't load quickly, then swaps in the web font when it does load. Other settings include `block`, which delays displaying text at all (minimizing the potential flashing effect), and `fallback`, which is like `swap` but gives up quickly and uses the fallback font if the font doesn't load in a moderate amount of time, and `optional`, which immediately gives up and uses the fallback font; this is used by only 1% of web pages, presumably those most concerned with performance.
 
 {{ figure_markup(
-  image="04_06.usage_of_font_display.png",
+  image="fonts-usage-of-font-display.png",
   caption="Usage of font-display.",
   description="A bar chart showing the usage of the different font-display settings, on desktop and mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1831117368&format=interactive",
@@ -115,7 +115,7 @@ The [`font-display`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face
 We can analyze the effect of these settings on first content paint and last content paint. Not surprisingly, the `optional` setting has a major effect on last content paint. There is also an effect on first content paint, but that might be more correlation than causation, as all of the modes except for `block` display *some* text after an "extremely small block period."
 
 {{ figure_markup(
-  image="04_06.font_display_performance_desktop.png",
+  image="fonts-font-display-performance-desktop.png",
   caption="font-display, performance, desktop.",
   description="A bar chart showing the desktop median first content paint and last content paint (in milliseconds) for different font-display settings.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1351778595&format=interactive",
@@ -125,7 +125,7 @@ We can analyze the effect of these settings on first content paint and last cont
 }}
 
 {{ figure_markup(
-  image="04_06.font_display_performance_mobile.png",
+  image="fonts-font-display-performance-mobile.png",
   caption="font-display, performance, mobile.",
   description="A bar chart showing the mobile median first content paint and last content paint (in milliseconds) for different font-display settings.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=748174335&format=interactive",
@@ -147,7 +147,7 @@ While `font-display` can speed up the presentation of the page when the fonts ar
 Adding a `resource-hint` element in the HTML starts that second connection earlier. The various `resource-hint` settings control how far that gets before having the URL for the actual font resource. The most common (at about 32% of web pages) is `dns-prefetch`, but 
 
 {{ figure_markup(
-  image="04_07.resource_hints_use.png",
+  image="fonts-resource-hints-use.png",
   caption="resource-hints use on fonts.",
   description="A bar chart showing the usage of different resource-hints setting for font data.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=2115805374&format=interactive",
@@ -157,7 +157,7 @@ Adding a `resource-hint` element in the HTML starts that second connection earli
 }}
 
 {{ figure_markup(
-  image="04_07.resource_hints_performance_desktop.png",
+  image="fonts-resource-hints-performance-desktop.png",
   caption="resource-hints performance, desktop.",
   description="A bar chart showing the desktop median first content paint and last content paint (in milliseconds) for different resource-hints settings.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1518736765&format=interactive",
@@ -167,7 +167,7 @@ Adding a `resource-hint` element in the HTML starts that second connection earli
 }}
 
 {{ figure_markup(
-  image="04_07.resource_hints_performance_mobile.png",
+  image="fonts-resource-hints-performance-mobile.png",
   caption="resource-hints performance, mobile.",
   description="A bar chart showing the mobile median first content paint and last content paint (in milliseconds) for different resource-hints settings.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=448614843&format=interactive",
@@ -195,7 +195,7 @@ One older approach is for the HTML author to explicitly indicate a font subset. 
 The `unicode-range` feature is a newer approach to this problem. The font is sliced into subsets, each with a separate `@font-face` rule that indicates the Unicode coverage for that slice with a `unicode-range` descriptor. The browser then analyzes the content as part of its rendering pipeline, and downloads *only* the slices needed to render that content.
 
 {{ figure_markup(
-  image="04_08.usage_of_unicode_range.png",
+  image="fonts-usage-of-unicode-range.png",
   caption="usage of unicode-range.",
   description="A bar chart showing the fraction of unicode-range usage in mobile and desktop web pages that use web fonts.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=2018216759&format=interactive",
@@ -207,7 +207,7 @@ The `unicode-range` feature is a newer approach to this problem. The font is sli
 Correctly applying `unicode-range` is tricky, as there's a lot of complexity to the way text layout maps Unicode into glyphs, but Google Fonts does this automatically and transparently. It's only likely to be a win for fonts with large glyph counts. In any case, current usage is 37% on desktop and 38% on mobile.
 
 {{ figure_markup(
-  image="04_10.web_font_mime_types.png",
+  image="fonts-web-font-mime-types.png",
   caption="Popular web font MIME types.",
   description="A bar chart showing the breakdown of percentage of different MIME types for serving web fonts.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1771540678&format=interactive",
@@ -219,7 +219,7 @@ Correctly applying `unicode-range` is tricky, as there's a lot of complexity to 
 ## Popular fonts
 
 {{ figure_markup(
-  image="04_11a.popular_typefaces.png",
+  image="fonts-popular-typefaces.png",
   caption="Popular typefaces.",
   description="A bar chart showing the 14 most popular web fonts.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1129854167&format=interactive",
@@ -247,7 +247,7 @@ Lots more information about color fonts, including examples, are available at [c
 ## Variable fonts
 
 {{ figure_markup(
-  image="04_17.font-variation-settings-usage.png",
+  image="fonts-font-variation-settings-usage.png",
   caption="Usage of font-variation-settings axes.",
   description="A bar chart showing the usage of the 6 most popular axes for font variation settings.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=173491049&format=interactive",
