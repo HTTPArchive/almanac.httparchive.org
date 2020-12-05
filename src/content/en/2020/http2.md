@@ -789,35 +789,27 @@ Finally, TLS is already used to protect HTTP/1.1 and HTTP/2. QUIC, however, has 
 
 #### So, will HTTP/3 help?
 
-{# TODO(authors): Who is "we" at the end of this paragraph? Worth clarifying for the readers, or making it more ambiguous like "the web community" or "implementers". #}
-On the surface, HTTP/3 is really not all that different from HTTP/2. It doesn't add any major features, but mainly changes how the existing ones work under the surface. The real improvements come from QUIC, which offers faster connection setups, increased robustness, and resilience to packet loss. As such, HTTP/3 is expected to do better than HTTP/2 on worse networks, while offering very similar performance on faster systems. However, that is if we can get HTTP/3 working, which can be challenging in practice.
+On the surface, HTTP/3 is really not all that different from HTTP/2. It doesn't add any major features, but mainly changes how the existing ones work under the surface. The real improvements come from QUIC, which offers faster connection setups, increased robustness, and resilience to packet loss. As such, HTTP/3 is expected to do better than HTTP/2 on worse networks, while offering very similar performance on faster systems. However, that is if the web community can get HTTP/3 working, which can be challenging in practice.
 
 ### Deploying and discovering QUIC and HTTP/3
 
-{# TODO(authors): Where exactly is "HTTP Alternative Services" described earlier? This is the first instance of it in the chapter. #}
-Since QUIC and HTTP/3 run over UDP, things aren't as simple as with HTTP/1.1 or HTTP/2. Typically, an HTTP/3 client has to first discover that QUIC is available at the server. The recommended method for this is HTTP Alternative Services. On its first visit to a website, a client connects to a server using TCP. It then discovers via `Alt-Svc` that HTTP/3 is available, and can set up a new QUIC connection. The `Alt-Svc` entry can be cached, allowing subsequent visits to avoid the TCP step, but the entry will eventually become stale and need revalidation. This likely will have to be done for each domain separately, which will probably lead to most page loads using a mix of HTTP/1, HTTP/2, and HTTP/3.
+Since QUIC and HTTP/3 run over UDP, things aren't as simple as with HTTP/1.1 or HTTP/2. Typically, an HTTP/3 client has to first discover that QUIC is available at the server. The recommended method for this is [HTTP Alternative Services](#alternative-services) . On its first visit to a website, a client connects to a server using TCP. It then discovers via `Alt-Svc` that HTTP/3 is available, and can set up a new QUIC connection. The `Alt-Svc` entry can be cached, allowing subsequent visits to avoid the TCP step, but the entry will eventually become stale and need revalidation. This likely will have to be done for each domain separately, which will probably lead to most page loads using a mix of HTTP/1, HTTP/2, and HTTP/3.
 
 However, even if it is known that a server supports QUIC and HTTP/3, the network in-between might block it. UDP traffic is commonly used in DDoS attacks and blocked by default in for example many company networks. While exceptions could be made for QUIC, its encryption makes it difficult for firewalls to assess the traffic. There are potential solutions to these issues, but in the meantime it is expected that QUIC is most likely to succeed on well-known ports like 443. And it is entirely possible that it is blocked QUIC altogether. In practice, clients will likely use sophisticated mechanisms to fall back to TCP if QUIC fails. One option there is to "race" both a TCP and QUIC connection and use the one that completes first.
 
 There is ongoing work to define ways to discover HTTP/3 without needing the TCP step. This should be considered an optimization though, as the UDP blocking issues are likely to mean that TCP-based HTTP sticks around. The [HTTPS DNS record](https://tools.ietf.org/html/draft-ietf-dnsop-svcb-https), is similar to HTTP Alternative Services and some CDNs are already [experimenting with these records](https://blog.cloudflare.com/speeding-up-https-and-http-3-negotiation-with-dns/).  In the long run, when most servers offer HTTP/3, browsers might switch to attempting that by default. But that will take a long time.
 
-{# TODO(authors, analysts): Should 41% or 60% be figures here? Are they HTTP Archive stats? There has been a bit of a drought of data/figures towards the end, so it may be good to end with one. #}
-QUIC is dependent on TLS1.3, which is used for around 41% of requests, which means the other 60% of requests will need to update their TLS stack to support HTTP/3.
+<figure markdown>
+| TLS version | HTTP/1 desktop | HTTP/1 mobile | HTTP/2 desktop | HTTP/2 mobile |
+| ------------ | ------ | ------ |  ---- | -----|
+| unknown   |  4.06%	 | 4.03%  | 5.05%	 | 7.28%  |
+| TLS 1.2	   | 26.56%  | 24.75% | 23.12%  | 23.14% |
+| TLS 1.3	   | 5.25%	 | 5.11%  | 35.78%  | 35.54% |
 
-#### Dual stack deployment implications
+<figcaption>{{ figure_link(caption="TLS adoption by HTTP version.", sheets_gid="900140630", sql_file="tls_adoption_by_http_version.sql") }}</figcaption>
+</figure>
 
-{# TODO(authors): This section is an awkward fit because it is a meta discussion about our inability to test, and it doesn't introduce any new data. Perhaps consider dropping? #}
-We expect QUIC and TCP to continue running in parallel for some time. We expect servers (e.g., nginx, Apache, and NodeJS) to offer easy ways to do so, but this is still likely to complicate localhost test setups. Furthermore, there's probably a longer term impact on the HTTP Archive and WebPageTest projects.  The amount of pages crawled will increase substantially if we want to crawl both the HTTP/3 and H2/H1 versions, or the runtimes will increase if we want to prioritize HTTP/3.
-
-Currently, some browsers provide (temporary) command line arguments to force QUIC on a certain origin to make this easier, but this is not the most user-friendly option, of course. Over time, this will probably become easier to configure. For example, this command will force Chrome to try a QUIC connection to localhost immediately without having to discover it via alternative services:
-
-```sh
-chrome \
-  --enable-quic \
-  --quic-version=h3-29 \
-  --origin-to-force-quic-on=localhost:6121 \
-  https://localhost:6121/
-```
+QUIC is dependent on TLS1.3, which is used for around 41% of requests, as shown in Figure 22.23 which leaves 60% of requests that will need to update their TLS stack to support HTTP/3.
 
 ### Is HTTP/3 ready for use yet?
 
