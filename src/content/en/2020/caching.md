@@ -167,7 +167,7 @@ RFC 7234 says that if no caching headers are present in a response, then the bro
 {{ figure_markup(
   image="1_cache_control_and_max_age_and_expires.png",
   caption="Usage of `Cache-Control` and `Expires` headers.",
-  description="Bar chart showing the usage of `Cache-Control` and `Expires` headers. 73.6% of desktop and 73.5% of mobile responses are served with a `Cache-Control` header. 55.5% of desktop and 56.2% of mobile responses are served with an `Expires` header. 54.8% of desktop and 55.4% of mobile responses use both `Cache-Control` and `Expires` header. 25.6% of mobile and desktop responses did not include either header.",
+  description="A bar chart showing the usage of `Cache-Control` and `Expires` headers. 73.6% of desktop and 73.5% of mobile responses are served with a `Cache-Control` header. 55.5% of desktop and 56.2% of mobile responses are served with an `Expires` header. 54.8% of desktop and 55.4% of mobile responses use both `Cache-Control` and `Expires` header. 25.6% of mobile and desktop responses did not include either header.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=188448640&format=interactive",
   sheets_gid="203111101",
   sql_file="cache_control_and_max_age_and_expires.sql"
@@ -254,7 +254,7 @@ This indicates that the object can be cached for 86,400 seconds (1 day) and it c
 {{ figure_markup(
   image="2_cache_control_directives.png",
   caption="Distribution of `Cache-Control` directives.",
-  description="Bar chart showing the distribution of 11 `Cache-Control` directives. The usage for desktop ranges from 60.2% for `max-age`, 29.7% for `public`, 14.3% for `no-cache`, 12.1% for `must-revalidate`, 9.2% for `no-store`, 9.1% for `private`, 3.5% for `immutable`, 2.3% for `no-transform`, 2.1% for `stale-while-revalidate`, 1.5% for `s-maxage`, 1.0% for `proxy-revalidate`, and 0.2% for `stale-if-error`. For mobile, the range is, 59.7% for `max-age`, 29.7% for `public`, 15.1% for `no-cache`, 12.5% for `must-revalidate`, 9.6% for `no-store`, 9.7% for `private`, 3.5% for `immutable`, 2.2% for `no-transform`, 2.2% for `stale-while-revalidate`, 1.2% for `s-maxage`, 1.1% for `proxy-revalidate`, and 0.2% for `stale-if-error`.,
+  description="A bar chart showing the distribution of 11 `Cache-Control` directives. The usage for desktop ranges from 60.2% for `max-age`, 29.7% for `public`, 14.3% for `no-cache`, 12.1% for `must-revalidate`, 9.2% for `no-store`, 9.1% for `private`, 3.5% for `immutable`, 2.3% for `no-transform`, 2.1% for `stale-while-revalidate`, 1.5% for `s-maxage`, 1.0% for `proxy-revalidate`, and 0.2% for `stale-if-error`. For mobile, the range is, 59.7% for `max-age`, 29.7% for `public`, 15.1% for `no-cache`, 12.5% for `must-revalidate`, 9.6% for `no-store`, 9.7% for `private`, 3.5% for `immutable`, 2.2% for `no-transform`, 2.2% for `stale-while-revalidate`, 1.2% for `s-maxage`, 1.1% for `proxy-revalidate`, and 0.2% for `stale-if-error`.,
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=388795105&format=interactive",
   sheets_gid="203111102",
   sql_file="cache_control_directives.sql"
@@ -818,11 +818,13 @@ The graphs below illustrate the relative age of resources by content type. Some 
 https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=2056330432&format=interactive
 resource_age_party_and_type_wise_groups.sql
 14_resource_age_party_and_type_wise_groups_1st_party.png
+203111114
 
 **Placeholder for Figure 17: Resource age distribution by content type (3rd party).**
 https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1712948465&format=interactive
 resource_age_party_and_type_wise_groups.sql
 15_resource_age_party_and_type_wise_groups_3rd_party.png
+203111115
 
 By comparing a resource's cacheability to its age, we can determine if the TTL is appropriate or too low.
 
@@ -882,19 +884,30 @@ Google's [Lighthouse](https://developers.google.com/web/tools/lighthouse) tool e
 Lighthouse computes a score for each audit, ranging from 0% to 100%, and those scores are then factored into the overall scores. The caching score is based on potential byte savings. When we examine the Lighthouse results, we can get a perspective of how many sites are doing well with their cache policies.
 
 **Placeholder for Figure 19: Distribution of Lighthouse audit scores for the "uses-long-cache-ttl" for mobile web pages.**
-https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=637059966&format=interactive
-cache_ttl_lighthouse_score.sql
-17_cache_ttl_lighthouse_score.png
+{{ figure_markup(
+  image="17_cache_ttl_lighthouse_score.png",
+  caption="Distribution of Lighthouse audit scores for the "uses-long-cache-ttl" for mobile web pages.",
+  description="A bar chart showing the distribution of Lighthouse audit scores for the "uses-long-cache-ttl" for mobile web pages. 37.5% of the responses have a score less than 0.10, 28.8% have a score between 0.10-0.39, 17.7% have a score between 0.40-0.79, and 12.1% have a score between 0.80-0.99. 3.3% have a score of 1 and 0.6% have no score.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=637059966&format=interactive",
+  sheets_gid="203111117",
+  sql_file="cache_ttl_lighthouse_score.sql"
+  )
+}}
 
 Only 3.3% of sites scored a 100%, meaning that the vast majority of sites can benefit from some cache optimizations. Approximately two-thirds of sites score below 40%, with almost one-third of sites scoring less than 10%. Based on this, there is a significant amount of under-caching, resulting in excess requests and bytes being served across the network.
 
 Lighthouse also indicates how many bytes could be saved on repeat views by enabling a longer cache policy. Of the sites that could benefit from additional caching, 78.6% of them can reduce their page weight by up to 2MB!
 
 **Placeholder for Figure 20: Distribution of potential byte savings from the Lighthouse caching audit.**
-https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=534991851&format=interactive
-
-cache_wastedbytes_lighthouse.sql
-18_cache_wastedbytes_lighthouse.png
+{{ figure_markup(
+  image="18_cache_wastedbytes_lighthouse.png",
+  caption="Distribution of potential byte savings from the Lighthouse caching audit.",
+  description="A bar chart showing the distribution of potential byte savings from the Lighthouse caching audit for mobile web pages. 57.2% of the responses have a size saving less than 1 MB, 21.58% have a saving between 1-2 MB, 7.8% have a saving between 2-3 MB, and 4.3% have a saving between 3-4 MB. 9.2% have a saving of 4 MB or more.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=534991851&format=interactive",
+  sheets_gid="203111118",
+  sql_file="cache_wastedbytes_lighthouse.sql"
+  )
+}}
 
 ## Conclusion
 
