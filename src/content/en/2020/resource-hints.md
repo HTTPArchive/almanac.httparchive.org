@@ -1,5 +1,4 @@
 ---
-#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 part_number: IV
 chapter_number: 21
 title: Resource Hints
@@ -8,7 +7,7 @@ authors: [Zizzamia]
 reviewers: [jessnicolet, pmeenan, giopunt, mgechev, notwillk]
 analysts: [khempenius]
 translators: []
-zizzamia_bio: Staff Software Engineer, Retail Growth at <a href="https://www.coinbase.com/">Coinbase</a>
+zizzamia_bio: Leonardo is a Staff Software Engineer at <a href="https://www.coinbase.com/">Coinbase</a>, working on web performance and growth initiatives. He curates the <a href="https://ngrome.io">NGRome Conference</a>. Leo also maintains the <a href="https://github.com/Zizzamia/perfume.js">Perfume.js<a/> library, which helps companies prioritize roadmaps and business through performance analytics.
 discuss: 2057
 results: https://docs.google.com/spreadsheets/d/1lXjd8ogB7kYfG09eUdGYXUlrMjs4mq1Z7nNldQnvkVA/
 queries: 21_Resource_Hints
@@ -44,7 +43,9 @@ When used with each individual hint we advise to always measure the impact befor
 
 [dns-prefetch](https://web.dev/preconnect-and-dns-prefetch/) helps resolve the IP address for a given domain ahead of time. As the [oldest](https://caniuse.com/link-rel-dns-prefetch) resource hint available, it uses minimal CPU and network resources compared to `preconnect`, and helps the browser to avoid experiencing the "worst-case" delay for DNS resolution, which can be [over 1 second](https://www.chromium.org/developers/design-documents/dns-prefetching).
 
-{# TODO - add code example #}
+```html
+<link rel="dns-prefetch" href="https://www.googletagmanager.com/">
+```
 
 Be mindful when using `dns-prefetch` as even if they are lightweight to do it's easy to exhaust browser limits for the number of concurrent in-flight DNS requests allowed (Chrome still has a [limit of 6](https://source.chromium.org/chromium/chromium/src/+/master:net/dns/host_resolver_manager.cc;l=353)).
 
@@ -52,7 +53,9 @@ Be mindful when using `dns-prefetch` as even if they are lightweight to do it's 
 
 [preconnect](https://web.dev/uses-rel-preconnect/) helps resolve the IP address and open a TCP/TLS connection for a given domain ahead of time. Similar to `dns-prefetch` it is used for any cross-origin domain and helps the browser to warm up any resources used during the initial page load.
 
-{# TODO - add code example #}
+```html
+<link rel="preconnect" href="https://www.googletagmanager.com/">
+```
 
 Be mindful when you use `preconnect`:
 
@@ -66,7 +69,10 @@ Lastly, `preconnect` is not available for [Internet Explorer or Firefox](https:/
 
 The [preload](https://web.dev/uses-rel-preload/) hint initiates an early request. This is useful for loading important resources that would otherwise be discovered late by the parser.
 
-{# TODO - add code example #}
+```html
+<link rel="preload" href="style.css" as="style">
+<link rel="preload" href="main.js" as="script">
+```
 
 Be mindful of what you are going to `preload`, because it can delay the download of other resources, so use it only for what is most critical to help you improve the Largest Contentful Paint ([LCP](https://web.dev/lcp/)). Also, when used on Chrome, it tends to over-prioritize `preload` resources and potentially dispatches preloads before other critical resources.
 
@@ -76,7 +82,9 @@ Lastly, if used in a HTTP response header, some CDN's will also automatically tu
 
 The [prefetch](https://web.dev/link-prefetch/) hint allows us to initiate low-priority requests we expect to be used on the next navigation. The Hint will download the resources and drop it into the HTTP cache for later usage. Important to notice, `prefetch` will not execute or otherwise process the resource, and to execute it the page will still need to call the resource by the `<script>` tag.
 
-{# TODO - add code example #}
+```html
+<link rel="prefetch" as="script" href="next-page.bundle.js">
+```
 
 There are a variety of ways to implement the resources predictions logic, could be based on signals like user mouse movement, common user flows/journeys or even based on a combination of both on top of Machine Learning.
 
