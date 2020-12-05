@@ -137,8 +137,7 @@
           "part": "III",
           "chapter": "17",
           "title": "Jamstack",
-          "slug": "jamstack",
-          "todo": true
+          "slug": "jamstack"
         }
       ]
     },
@@ -428,6 +427,16 @@
       "website": "https://bkardell.com",
       "github": "bkardell",
       "twitter": "briankardell"
+    },
+    "remotesynth": {
+      "name": "Brian Rinaldi",
+      "teams": [
+        "analysts"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/216712?v=4&s=200",
+      "website": "https://remotesynthesis.com/",
+      "github": "remotesynth",
+      "twitter": "remotesynth"
     },
     "cqueern": {
       "name": "Caleb Queern",
@@ -895,6 +904,16 @@
       "avatar_url": "https://avatars3.githubusercontent.com/u/866229?v=4&s=200",
       "github": "Super-Fly",
       "twitter": "angelovcode"
+    },
+    "MaedahBatool": {
+      "name": "Maedah Batool",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/12712988?v=4&s=200",
+      "website": "https://maedahbatool.com/",
+      "github": "MaedahBatool",
+      "twitter": "maedahbatool"
     },
     "mandymichael": {
       "name": "Mandy Michael",
