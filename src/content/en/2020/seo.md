@@ -31,47 +31,49 @@ Despite its complex multidisciplinary nature, in recent years SEO has evolved to
 
 {{ figure_markup(
   image="seo-google-trends.png",
-  caption="Search Engine Optimization Topic search vs. Pay-Per-click and Social media marketing in Google Trends.",
+  caption="Google Trends comparison of SEO versus pay-per-click and social media marketing.",
   description="Screenshot from Google Trends showing the change in time for three three digital marketing related terms: Search Engine Optimization starts at 25% but shows an increasing importance over time to 75% now. Pay-per-click similarly starts at 25% but started falling in 2009 and looks to be less than 10% now. Social-media marketing starts very small (approximately 5%) and shows some slight growth over time ending up slightly above pay-per-click around the 10% mark.",
   width=1600,
   height=844
   )
 }}
 
-The goal of the Web Almanac's SEO chapter is to identify and assess main elements and configurations that play a role in a website's organic search optimization. By identifying these elements we hope that websites can leverage our findings to improve their ability to be crawled, indexed, and ranked by search engines. In this chapter we provide a snapshot of their status in 2020 and a summary of what has changed [since 2019](../2019/seo).
+The goal of the Web Almanac's SEO chapter is to identify and assess main elements and configurations that play a role in a website's organic search optimization. By identifying these elements, we hope that websites can leverage our findings to improve their ability to be crawled, indexed, and ranked by search engines. In this chapter, we provide a snapshot of their status in 2020 and a summary of what has changed [since 2019](../2019/seo).
 
-It is important to note that besides the [HTTP Archive](https://httparchive.org/) this analysis also includes data from [Lighthouse](https://developers.google.com/web/tools/lighthouse/), the [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report), as well as raw and rendered HTML elements. In the case of the HTTP Archive and Lighthouse it is limited to the data identified from websites' home pages only, not site-wide crawls. We have taken this into consideration when doing assessments. Keeping this distinction in mind is important when drawing conclusions from our results. You can learn more about it in our [methodology](./methodology) page.
+It is important to note that this chapter is based on analysis from [Lighthouse](https://developers.google.com/web/tools/lighthouse/), the [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report), as well as raw and rendered HTML elements from the [HTTP Archive](https://httparchive.org/) crawl. In the case of the HTTP Archive and Lighthouse, it is limited to the data identified from websites' home pages only, not site-wide crawls. We have taken this into consideration when doing assessments. Keeping this distinction in mind is important when drawing conclusions from our results. You can learn more about it on our [Methodology](./methodology) page.
 
-Let us go through this years' websites Organic Search optimization main findings.
+{# TODO(authors): Is "Organic Search" a proper noun? Or should it be lowercase? #}
+Let's go through this year's Organic Search optimization main findings.
 
 ## Fundamentals
 
-The fundamentals section features the optimization related findings of those web configurations and elements that set the base for search engines to correctly crawl, index and rank websites to provide users the best results for their queries.
+This section features the optimization-related findings of the web configurations and elements that make up the foundation for search engines to correctly crawl, index, and rank websites to provide users the best results for their queries.
 
-### Crawlability and Indexability
+### Crawlability and indexability
 
 Search engines use web crawlers (also called spiders) to discover new or updated content from websites, browsing the web by following links between pages. Crawling is the process of looking for new or updated web content (whether web pages, images, videos, etc.).
 
-Search crawlers discover content by following links between URLs, as well as using additional sources that website owners can provide, like the generation of XML Sitemaps (a list of URLs that a website's owner wants search engines to index) or through direct crawl requests via search engines tools (e.g., the Google Search Console).
+Search crawlers discover content by following links between URLs, as well as using additional sources that website owners can provide, like the generation of XML sitemaps, which are lists of URLs that a website's owner wants search engines to index, or through direct crawl requests via search engines tools, like Google's Search Console.
 
-Once  search engines access web content they need to "render"–similar to what web browsers do–and index it. Search engines will then analyze and catalogue the identified information, trying to understand it as users do, to ultimately store it in its "index" or web database.
+Once search engines access web content they need to _render_—similar to what web browsers do—and index it. Search engines will then analyze and catalog the identified information, trying to understand it as users do, to ultimately store it in its _index_, or web database.
 
-When users enter a query, search engines search their index to find the best content to display on the search results pages to answer their queries, using a variety of factors to determine which pages are shown first, second, third, etc.
+When users enter a query, search engines search their index to find the best content to display on the search results pages to answer their queries, using a variety of factors to determine which pages are shown before others.
 
-For websites looking to optimize their visibility in search results, it is important to follow certain crawlability and indexability best practices such as correctly configuring robots.txt, robots meta tags, X-Robots-Tag HTTP header, and canonical tags among others. These help search engines in accessing web content more easily and indexing them more accurately. A thorough analysis of these configurations is provided in the following sections.
+For websites looking to optimize their visibility in search results, it is important to follow certain crawlability and indexability best practices: correctly configuring `robots.txt`, robots `meta` tags, `X-Robots-Tag` HTTP headers, and canonical tags, among others. These best practices help search engines in accessing web content more easily and indexing them more accurately. A thorough analysis of these configurations is provided in the following sections.
 
-#### Robots.txt
+#### `robots.txt`
 
-Located at the root of a site, a robots.txt file is an effective tool in controlling which pages a search engine crawler should interact with, how quickly to crawl, and what to do with the discovered content.
+Located at the root of a site, a `robots.txt` file is an effective tool in controlling which pages a search engine crawler should interact with, how quickly to crawl them, and what to do with the discovered content.
 
-Google formally proposed making robots.txt an official internet standard in 2019. The [June 2020 draft](https://tools.ietf.org/html/draft-koster-rep-02) includes clear documentation on technical requirements for the robots.txt file. This has prompted more detailed information about how search engine crawlers should respond to non-standard content.
+Google formally proposed making `robots.txt` an official internet standard in 2019. The [June 2020 draft](https://tools.ietf.org/html/draft-koster-rep-02) includes clear documentation on technical requirements for the `robots.txt` file. This has prompted more detailed information about how search engine crawlers should respond to non-standard content.
 
-A robots.txt file must be plain text, encoded in UTF-8 and respond to requests with a 200 HTTP status code. A malformed robots.txt, a 4XX (client error) response, or more than 5 redirects are interpreted by search engine crawlers as a "full allow", meaning all content may be crawled. A 5XX (server error) response is understood as a "full disallow", meaning no content may be crawled. If the robots.txt is unreachable for more than 30 days, Google will use the last cached copy of it, as described in [their specifications](https://developers.google.com/search/reference/robots_txt#handling-http-result-codes).
+A `robots.txt` file must be plain text, encoded in UTF-8, and respond to requests with a 200 HTTP status code. A malformed `robots.txt`, a 4XX (client error) response, or more than five redirects are interpreted by search engine crawlers as a _full allow_, meaning all content may be crawled. A 5XX (server error) response is understood as a _full disallow_, meaning no content may be crawled. If the `robots.txt` is unreachable for more than 30 days, Google will use the last cached copy of it, as described in [their specifications](https://developers.google.com/search/reference/robots_txt#handling-http-result-codes).
 
-Overall, 80.05% of sites responded to robots.txt with a 2XX response. Of the 9,640,246 requests revolving with a 2XX response, 25.09% of these robots.txt files were not recognized as valid. This has slightly improved over 2019, when it was found that [72.16% of mobile sites had a valid robots.txt](../2019/seo#robotstxt).
+Overall, 80.05% of sites responded to `robots.txt` with a 2XX response. Of the 9,640,246 requests revolving with a 2XX response, 25.09% of these `robots.txt` files were not recognized as valid. This has slightly improved over 2019, when it was found that [72.16% of mobile sites had a valid `robots.txt`](../2019/seo#robotstxt).
 
-The data source for testing robots.txt validity, Lighthouse, introduced a [robots.txt audit](https://web.dev/robots-txt/) as part of the v6 update. This inclusion highlights that a successfully resolved request does not mean that the cornerstone file will be able to provide the necessary directives to web crawlers.
+The data source for testing `robots.txt` validity, Lighthouse, introduced a [robots.txt audit](https://web.dev/robots-txt/) as part of the v6 update. This inclusion highlights that a successfully resolved request does not mean that the cornerstone file will be able to provide the necessary directives to web crawlers.
 
+{# TODO(analysts, authors): Note that mobile and desktop can't be combined into "all devices" since they are overlapping datasets and most websites would be double-counted. When citing stats throughout the chapter, you need to specify which client you're referring to or include a disclaimer in the intro that stats are mobile unless specified otherwise. #}
 <figure markdown>
 Response Code | All Devices | Mobile | Desktop
 -- | -- | -- | --
@@ -85,14 +87,14 @@ Response Code | All Devices | Mobile | Desktop
 <figcaption>{{ figure_link(caption="Robots.txt response codes.", sheets_gid="769973954", sql_file="pages_robots_txt_by_device_and_status.sql") }}</figcaption>
 </figure>
 
-In addition to similar status code behavior, disallow statement use was consistent between mobile and desktop versions of robots.txt files.
+In addition to similar status code behavior, disallow statement use was consistent between mobile and desktop versions of `robots.txt` files.
 
-The most prevalent use-agent declaration statement was the wildcard, User-agent: *, appearing on 74.40% of mobile and 73.16% of desktop robots.txt requests. The second most prevalent user-agent declaration was adsbot-google, appearing in 5.63% of mobile and 5.68% of desktop robots.txt requests. Google AdsBot disregards wildcard statements and must be specifically named as the bot checks web page and app ad quality across devices.
+The most prevalent use-agent declaration statement was the wildcard, User-agent: *, appearing on 74.40% of mobile and 73.16% of desktop `robots.txt` requests. The second most prevalent user-agent declaration was adsbot-google, appearing in 5.63% of mobile and 5.68% of desktop `robots.txt` requests. Google AdsBot disregards wildcard statements and must be specifically named as the bot checks web page and app ad quality across devices.
 
 The most frequently used directives focused on search engines and their paid marketing counterparts. SEO tools Ahref and Majestic were in the top five disallow statements for both devices.
 
 <figure markdown>
-User-agent | % of mobile robots.txt | % of desktop robots.txt
+User-agent | % of mobile `robots.txt` | % of desktop `robots.txt`
 -- | -- | --
 `*` | 74.40% | 73.16%
 adsbot-google | 5.63% | 5.68%
@@ -105,11 +107,11 @@ ahrefsbot | 4.80% | 4.66%
 
 
 
-When analyzing the usage of the disallow statement in robots.txt by using Lighthouse-powered data of over 6 million sites, it was found that 97.84% of them were completely crawlable, with only 1.05% using a disallow statement.
+When analyzing the usage of the disallow statement in `robots.txt` by using Lighthouse-powered data of over 6 million sites, it was found that 97.84% of them were completely crawlable, with only 1.05% using a disallow statement.
 
-An analysis of the robots.txt disallow statement usage along the meta robots indexability directives was also done, finding 1.02% of the sites including a disallow statement along indexable pages -featuring a meta robots index tag-, with only 0.03% of sites using the disallow statement in robots.txt along noindexed page via the meta robots noindex directive.
+An analysis of the `robots.txt` disallow statement usage along the meta robots indexability directives was also done, finding 1.02% of the sites including a disallow statement along indexable pages -featuring a meta robots index tag-, with only 0.03% of sites using the disallow statement in `robots.txt` along noindexed page via the meta robots noindex directive.
 
-This is notable as [Google documentation](https://developers.google.com/search/docs/advanced/robots/intro) states sites should not use robots.txt as a means to hide web pages from Google Search as internal linking with descriptive text could result in the page being indexed without a crawler visiting the page, and use instead other methods, like a `noindex` directive via meta robots.
+This is notable as [Google documentation](https://developers.google.com/search/docs/advanced/robots/intro) states sites should not use `robots.txt` as a means to hide web pages from Google Search as internal linking with descriptive text could result in the page being indexed without a crawler visiting the page, and use instead other methods, like a `noindex` directive via meta robots.
 
 #### Meta Robots
 
@@ -127,9 +129,9 @@ Meta tags were the dominant method of granular execution with 27.70% of desktop 
   )
 }}
 
-When analyzing the usage of the meta robots tag in Lighthouse tests, 0.47% of crawlable pages were found to be noindexed. 0.44% of these pages used a noindex directive and did not disallow crawling of the page in the robots.txt.
+When analyzing the usage of the meta robots tag in Lighthouse tests, 0.47% of crawlable pages were found to be noindexed. 0.44% of these pages used a noindex directive and did not disallow crawling of the page in the `robots.txt`.
 
-The combination of disallow within robots.txt and noindex directive in meta robots were found on only 0.03% of pages. While this method offers 'belt and suspenders' redundancy, a page must not be blocked by a robots.txt file in order for an on-page noindex directive to be effective.
+The combination of disallow within `robots.txt` and noindex directive in meta robots were found on only 0.03% of pages. While this method offers 'belt and suspenders' redundancy, a page must not be blocked by a `robots.txt` file in order for an on-page noindex directive to be effective.
 
 Interestingly, rendering changed the meta-robots tag in 0.16% of pages. While there is no inherent issue with using JavaScript to add a meta robots tag to a page or change its content, SEOs should be judicious in execution. If a page loads with a noindex in the robots meta tag before rendering, [search engines won't run the JavaScript](https://developers.google.com/search/docs/guides/javascript-seo-basics#use-meta-robots-tags-carefully) that changes the tag value or index the page.
 
@@ -847,7 +849,7 @@ It is important to highlight how the link discoverability for major JS framework
 
 Additionally, it was also identified that there has been a slight improvement from last year's findings across many of the analyzed areas:
 
-- **Robots.txt**: Last year 72.16% of mobile sites had a valid robots.txt vs. 74.91%  this year.
+- **Robots.txt**: Last year 72.16% of mobile sites had a valid `robots.txt` vs. 74.91%  this year.
 - **Canonical tag**: Last year it was identified that 48.34% of mobile homepages were using a canonical tag vs. 53.61% this year.
 - **Title element**: This year it was found that 98.75% of the desktop homepages are featuring one, while 98.7% of mobile home pages are also including it. Last year it was found that 97.1% of mobile pages were featuring a title tag.
 - **Meta Description**: This year, 68.62% of desktop homepages and 68.22% of mobile ones were found to be featuring a meta description, an improvement from last year when it was found that 64.02% of mobile home pages had one.
