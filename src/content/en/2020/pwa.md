@@ -30,11 +30,13 @@ Simply put, a web application which progresses into a native-like application ca
 
 The crux of a progressive web app is the _service worker_, which can be thought of as a proxy sitting between the browser and user and gives the developer total control over the network, rather than the network controlling the application.
 
-As [last year's chapter](../2019/pwa) stated, it started in December 2014 when Chrome 40 first implemented the meat of what is now known as Progressive Web Apps (PWA). This was a collaborative effort for the web standards body and the term PWA was coined by [Frances Berriman and Alex Russell](https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/) in 2015.
+It all started in December 2014 when Chrome 40 first implemented the meat of what is now known as Progressive Web Apps which was a collaborative effort for the web standards body and the terms was coined by [Frances Berriman and Alex Russell](https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/) in 2015.
 
 In this chapter of Web Almanac we will be looking into each of the ingredients that make PWA what it is from a data-driven perspective.
 
 ## Service workers
+
+Serviceworkers are at the very center of the progressive webapps and can be thought as a proxy servers between web applications, browser which helps the developers control the network rather than the network controlling the application.
 
 ### Service worker registrations and installability
 
@@ -141,35 +143,35 @@ From the data we gathered it was derived that about **0.88%** for desktop, **0.8
 
 <p class="note">Note the Lighthouse performance stats were incorrect for August so the load-fast-enough-for-pwa stat has been replaced with September results.</p>
 
-A fast page load over a cellular network ensures a good mobile user experience. [Learn more](https://web.dev/load-fast-enough-for-pwa/)
+A [fast](https://web.dev/load-fast-enough-for-pwa/) page load over a cellular network ensures a good mobile user experience.
 
 **27.56%** of pages loaded fast enough for a PWA. Given how geo distributed the web is, having a fast load time with lighter pages matter the most of the next billion users of the web, most of them were introduced to the internet via a mobile device.
 
-If you're building a Progressive Web App, consider using a service worker so that your app can work offline. [Learn more](https://web.dev/works-offline/) **0.92%** of pages were offline ready.
+If you're building a Progressive Web App, consider using a service worker so that your app can [work offline](https://web.dev/works-offline/) **0.92%** of pages were offline ready.
 
-Browsers can proactively prompt users to add your app to their homescreen, which can lead to higher engagement. [Learn more](https://web.dev/installable-manifest/) **2.21%** of pages had an installable manifest. Manifest plays an important role in how the application starts, the looks and feel of the icon on the homescreen and as an impact on the engagement rate directly.
+Browsers can proactively prompt users to add your app to their homescreen, which can lead to higher engagement. **2.21%** of pages had an [Installable manifest](https://web.dev/installable-manifest/). Manifest plays an important role in how the application starts, the looks and feel of the icon on the homescreen and as an impact on the engagement rate directly.
 
-All sites should be protected with HTTPS, even ones that don't handle sensitive data. This includes avoiding [mixed content](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content), where some resources are loaded over HTTP despite the initial request being served over HTTPS. HTTPS prevents intruders from tampering with or passively listening in on the communications between your app and your users, and is a prerequisite for HTTP/2 and many new web platform APIs. [Learn more](https://web.dev/is-on-https/). **67.27%** of sites were on HTTPS and it is surprising that we haven’t reached there yet. This number is pretty decent and will get better as browsers mandate the applications to be on HTTPS and scrutinize those which are not on HTTPS.
+All sites should be protected with HTTPS, even ones that don't handle sensitive data. This includes avoiding [mixed content](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content), where some resources are loaded over HTTP despite the initial request being served over HTTPS. HTTPS prevents intruders from tampering with or passively listening in on the communications between your app and your users, and is a prerequisite for HTTP/2 and many new web platform APIs. Learn more about [is-on-https check](https://web.dev/is-on-https/). **67.27%** of sites were on HTTPS and it is surprising that we haven’t reached there yet. This number is pretty decent and will get better as browsers mandate the applications to be on HTTPS and scrutinize those which are not on HTTPS.
 
-If you've already set up HTTPS, make sure that you redirect all HTTP traffic to HTTPS in order to enable secure connection the users without changing the URL [Learn more](https://web.dev/redirects-http/) **69.92%** of the sites redirects HTTP. Redirecting all the HTTP to HTTPS on your application should be simple steps towards robustness, though the HTTP redirection to HTTPS has a decent number, it can do better.
+If you've already set up HTTPS, make sure that you [redirect all](https://web.dev/redirects-http/) HTTP traffic to HTTPS in order to enable secure connection the users without changing the URL **69.92%** of the sites redirects HTTP. Redirecting all the HTTP to HTTPS on your application should be simple steps towards robustness, though the HTTP redirection to HTTPS has a decent number, it can do better.
 
-By adding `<meta name="viewport">` tag to optimize your app for mobile screens. [Learn more](https://web.dev/viewport/). **88.43%** of the sites have the viewport meta tag. It is not surprising that the usage of viewport meta tag is on the higher side as most of the applications are aware and getting there in terms of viewport optimization.
+By adding `<meta name="viewport">` tag to optimize your app for mobile screens. **88.43%** of the sites have the [viewport]((https://web.dev/viewport/) meta tag. It is not surprising that the usage of viewport meta tag is on the higher side as most of the applications are aware and getting there in terms of viewport optimization.
 
-For ideal appearance on iOS, your progressive web app should define an `apple-touch-icon` meta tag. It must point to a non-transparent 192px (or 180px) square PNG. [Learn More](https://web.dev/apple-touch-icon/) **32.34%** of the sites use the apple touch icon.
+For ideal appearance on iOS, your progressive web app should define an `apple-touch-icon` meta tag. It must point to a non-transparent 192px (or 180px) square PNG. **32.34%** of the sites use the [apple touch icon](https://web.dev/apple-touch-icon/).
 
-If the width of your app's content doesn't match the width of the viewport, your app might not be optimized for mobile screens. [Learn more](https://web.dev/content-width/) **79.18%** of the sites have the content-width set.
+If the width of your app's content doesn't match the width of the viewport, your app might not be optimized for mobile screens. **79.18%** of the sites have the [content-width](https://web.dev/content-width/) set.
 
-A maskable icon ensures that the image fills the entire shape without being letterboxed when adding the progressive web app to the home screen.. [Learn more](https://web.dev/maskable-icon-audit/) **0.14%** of sites use this, given that it is a brand new feature, the percentage of adaptation is pretty decent. This being a new feature we were expecting the numbers to be low and for sure shall improve in the coming years.
+A [maskable icon](https://web.dev/maskable-icon-audit/) ensures that the image fills the entire shape without being letterboxed when adding the progressive web app to the home screen. **0.14%** of sites use this, given that it is a brand new feature, the percentage of adaptation is pretty decent. This being a new feature we were expecting the numbers to be low and for sure shall improve in the coming years.
 
-A service worker enables your web app to be reliable in unpredictable network conditions. [Learn more](https://web.dev/offline-start-url/) **0.77%** of sites has an offline start URL.
+A service worker enables your web app to be reliable in unpredictable network conditions. **0.77%** of sites has an [offline start URL](https://web.dev/offline-start-url/).
 
-The service worker is the feature that enables your app to use many Progressive Web App features, such as offline, add to homescreen, and push notifications. [Learn more](https://web.dev/service-worker/) **1.05%** of pages have service workers enabled, bare in mind this for the month of September 2020. Serviceworker helps to achieve offline support, which is the most important feature for a PWA, as flaky networks are the most common issue that the user of web applications face and this is circumvented with Serviceworkers, it is pretty surprising that number was this low for the month under investigation.
+The [service worker](https://web.dev/service-worker/) is the feature that enables your app to use many Progressive Web App features, such as offline, add to homescreen, and push notifications. **1.05%** of pages have service workers enabled, bare in mind this for the month of September 2020. Serviceworker helps to achieve offline support, which is the most important feature for a PWA, as flaky networks are the most common issue that the user of web applications face and this is circumvented with Serviceworkers, it is pretty surprising that number was this low for the month under investigation.
 
-A themed splash screen ensures a native like experience when users launch your app from their homescreens. [Learn more](https://web.dev/splash-screen/) **1.95%** of pages had splash screens.
+A themed [splash screen](https://web.dev/splash-screen/) ensures a native like experience when users launch your app from their homescreens. **1.95%** of pages had splash screens.
 
-The browser address bar can be themed to match your site. [Learn more](https://web.dev/themed-omnibox/) **3.98%** of pages had themed omnibox.
+The browser address bar can be themed to match your site. **3.98%** of pages had themed [omnibox](https://web.dev/themed-omnibox/).
 
-Your app should display some content when JavaScript is disabled, even if it's just a warning to the user that JavaScript is required to use the app. [Learn more](https://web.dev/without-javascript/) **96.23%** pages can work with JavaScript disabled.
+Your app should display some content when JavaScript is disabled, even if it's just a warning to the user that JavaScript is required to use the app. **96.23%** pages can work with JavaScript [disabled](https://web.dev/without-javascript/).
 
 ## Service worker events
 
@@ -257,7 +259,7 @@ In order for a PWA to be fruitful it needs to have a Manifest and a Service Work
 
 ### Top Manifest display values
 
-Out of the five most common `display` values, `standalone` dominated the list with `86.73%` of desktop and `89.28%` of mobile pages display mode was `standalone` which isn't suprising at all as this mode provide the native app like feel and next in the list was `minimal-ui` with `6.30%` of desktop and `5.00%` of mobile opting for them as it is closers to `standalone` apart for the fact that some the minimal set of UI elements for controlling navigation.
+Out of the five most common `display` values, `standalone` dominated the list with `86.73%` of desktop and `89.28%` of mobile pages display mode was `standalone` which isn't suprising at all as this mode provide the native app like feel and next in the list was `minimal-ui` with `6.30%` of desktop and `5.00%` of mobile opting for them as it is closers to `standalone` apart for the fact thatbut some browser UI is retained.
 
 {{ figure_markup(
   image="pwa-most-used-display-values-for-service-worker-pages.png",
@@ -272,7 +274,7 @@ Out of the five most common `display` values, `standalone` dominated the list wi
 
 ### Top manifest categories
 
-In [last year's section on manifests](../2019/pwa#web-app-manifests), we looked at all manifests in our datasets. This year we have decided to concentrate only on sites which have both a manifest and a service worker–in other words PWAs–and the data in this section therefore only details PWA manifests.
+Note these numbers are different than 2019 version as we are looking into PWA pages (i.e. Manifests and SW) as it makes more sense to concentrate on the PWA stats and ignoring the non-PWA for this section.
 
 Out of all the top `categories`, shopping stood at the top at with `13.16%` on the mobile traffic, which is pretty predictable as most of the PWAs are e-commerce applications and next in the position is news with `5.26%` on the mobile traffic.
 
