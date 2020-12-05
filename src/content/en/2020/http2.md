@@ -308,7 +308,6 @@ Types of content in the second category are typically shared resources (JavaScri
 
 In Figure 22.13 we can see the stark differnce in HTTP/2 and gQUIC adoption when a website is using a CDN. 70% of pages use HTTP/2 for all third-party requests when a CDN is used. Without a CDN, only 25% of pages use HTTP/2 for all third-party requests.
 
-{# TODO(authors, editors): Sort of a nit. Headings inconsistently ask questions and give short titles to describe the contents. It would be more natural to have a unified naming convention for headers. #}
 ## HTTP/2 impact
 
 Measuring the impact of how a protocol is performing is difficult with the current HTTP Archive [approach](./methodology). It would be really fascinating to be able to quantify the impact of concurrent connections, the effect of packet loss, and differrent congestion control mechanisms. To really compare performance, each website would have to be crawled over each protocol over different network conditions. What we can do instead is to look into the impact on the number of connections a website uses.
@@ -352,7 +351,7 @@ This [test suite](https://github.com/andydavies/http2-prioritization-issues) mai
     <thead>
       <tr>
         <th>CDN</th>
-        <th>Prioritize correctly</th>
+        <th>Prioritize <br />correctly</th>
         <th>Desktop</th>
         <th>Mobile</th>
       </tr>
@@ -573,151 +572,17 @@ Looking further at the distributions for pushed assets in Figures 22.18 and 22.1
 </figure>
 
 
-Looking at the frequency of push by content type in Figure 22.20, we see 89% of pages push scripts and 68% push CSS. This makes sense, as these can be small files typically on the critical path to render a page.
+Looking at the frequency of push by content type in Figure 22.20, we see 90% of pages push scripts and 56% push CSS. This makes sense, as these can be small files typically on the critical path to render a page.
 
 {# TODO(analysts): Should this chart differentiate desktop and mobile? #}
 {{ figure_markup(
   image="http2-pushed-content-types.png",
   caption="Percentage of pages pushing specific content types",
-  description="A bar chart showing for pages that push resourcs 89.1% push scripts, 67.9 css, 6.1% images, 1.3% fonts, 0.7% other and 0.7% html.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=1708672642&format=interactive",
+  description="A bar chart showing for pages that push resourcs on desktop 89.1% push scripts, 67.9% css, 6.1% images, 1.3% fonts, 0.7% other and 0.7% html. On mobile 90.29% push scripts, 56.8% css, 3.69% images, 0.97% fonts, 0.36% other and 0.39% html.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=1708672642&format=interactive",
   sheets_gid="238923402",
   sql_file="number_of_h2_and_h3_pushed_resources_and_bytes_by_content_type.sql"
 )
 }}
-
-Figures 22.21 and 22.22 show how the number of pushed resources and their size varies by content type. At the top end, there are examples of 20+ images and around 30 CSS and font files being pushed over mobile.
-
-<figure>
-  <table>
-    <thead>
-      <tr>
-        <th>Percentile</th>
-        <th>css</th>
-        <th>font</th>
-        <th>html</th>
-        <th>image</th>
-        <th>script</th>
-        <th>video</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="numeric">10</td>
-        <td class="numeric">2</td>
-        <td class="numeric">11</td>
-        <td class="numeric">2</td>
-        <td class="numeric">2</td>
-        <td class="numeric">2</td>
-        <td class="numeric">1</td>
-      </tr>
-      <tr>
-        <td class="numeric">25</td>
-        <td class="numeric">2</td>
-        <td class="numeric">12</td>
-        <td class="numeric">3</td>
-        <td class="numeric">2</td>
-        <td class="numeric">2</td>
-        <td class="numeric">1</td>
-      </tr>
-      <tr>
-        <td class="numeric">50</td>
-        <td class="numeric">4</td>
-        <td class="numeric">14</td>
-        <td class="numeric">4</td>
-        <td class="numeric">4</td>
-        <td class="numeric">4</td>
-        <td class="numeric">1</td>
-      </tr>
-      <tr>
-        <td class="numeric">75</td>
-        <td class="numeric">16</td>
-        <td class="numeric">20</td>
-        <td class="numeric">4</td>
-        <td class="numeric">11</td>
-        <td class="numeric">8</td>
-        <td class="numeric">1</td>
-      </tr>
-      <tr>
-        <td class="numeric">90</td>
-        <td class="numeric">29</td>
-        <td class="numeric">32</td>
-        <td class="numeric">4</td>
-        <td class="numeric">24</td>
-        <td class="numeric">23</td>
-        <td class="numeric">1</td>
-      </tr>
-    </tbody>
-  </table>
-  <figcaption>{{ figure_link(caption="Distribtion of number pushed asset by content type on mobile.", sheets_gid="238923402", sql_file="number_of_h2_and_h3_pushed_resources_and_bytes_by_content_type.sql") }}</figcaption>
-</figure>
-
-Pushing of video dominates the higher percentiles of bandwidth use. This can, however, negatively impact page performance by contending with the other resources required to render the page.
-
-<figure>
-  <table>
-    <thead>
-      <tr>
-        <th>Percentile</th>
-        <th>css</th>
-        <th>font</th>
-        <th>html</th>
-        <th>image</th>
-        <th>script</th>
-        <th>video</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="numeric">10</td>
-        <td class="numeric">21.1</td>
-        <td class="numeric">784.7</td>
-        <td class="numeric">1.5</td>
-        <td class="numeric">4.1</td>
-        <td class="numeric">4.0</td>
-        {# TODO(analysts): Please double check the video stats, which is 3444.3 for all percentiles. #}
-        <td class="numeric">3,444.3</td>
-      </tr>
-      <tr>
-        <td class="numeric">25</td>
-        <td class="numeric">51.0</td>
-        <td class="numeric">811.6</td>
-        <td class="numeric">23.0</td>
-        <td class="numeric">9.7</td>
-        <td class="numeric">36.4</td>
-        <td class="numeric">3,444.3</td>
-      </tr>
-      <tr>
-        <td class="numeric">50</td>
-        <td class="numeric">105.7</td>
-        <td class="numeric">916.0</td>
-        <td class="numeric">78.2</td>
-        <td class="numeric">61.3</td>
-        <td class="numeric">165.5</td>
-        <td class="numeric">3,444.3</td>
-      </tr>
-      <tr>
-        <td class="numeric">75</td>
-        <td class="numeric">204.2</td>
-        <td class="numeric">983.6</td>
-        <td class="numeric">81.1</td>
-        <td class="numeric">501.2</td>
-        <td class="numeric">344.8</td>
-        <td class="numeric">3,444.3</td>
-      </tr>
-      <tr>
-        <td class="numeric">100</td>
-        <td class="numeric">316.3</td>
-        <td class="numeric">1,237.6</td>
-        <td class="numeric">83.3</td>
-        <td class="numeric">2,770.7</td>
-        <td class="numeric">603.0</td>
-        <td class="numeric">3,444.3</td>
-      </tr>
-    </tbody>
-  </table>
-  <figcaption>{{ figure_link(caption="Distribtion of pushed asset sizes (KB) by content type on mobile.", sheets_gid="238923402", sql_file="number_of_h2_and_h3_pushed_resources_and_bytes_by_content_type.sql") }}</figcaption>
-</figure>
 
 Given the low adoption and after measuring how few of the pushed resources are actually useful (that is, they match a request that is not already cached), Google has announced the [intent to remove push support from Chrome]( https://groups.google.com/a/chromium.org/g/blink-dev/c/K3rYLvmQUBY/m/vOWBKZGoAQAJ) for both HTTP/2 and gQUIC. Chrome have also not implemented push for HTTP/3.
 
@@ -809,7 +674,7 @@ There is ongoing work to define ways to discover HTTP/3 without needing the TCP 
 <figcaption>{{ figure_link(caption="TLS adoption by HTTP version.", sheets_gid="900140630", sql_file="tls_adoption_by_http_version.sql") }}</figcaption>
 </figure>
 
-QUIC is dependent on TLS1.3, which is used for around 41% of requests, as shown in Figure 22.23 which leaves 60% of requests that will need to update their TLS stack to support HTTP/3.
+QUIC is dependent on TLS1.3, which is used for around 41% of requests, as shown in Figure 22.21 which leaves 60% of requests that will need to update their TLS stack to support HTTP/3.
 
 ### Is HTTP/3 ready yet?
 
