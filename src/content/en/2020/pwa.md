@@ -12,7 +12,7 @@ hemanth_bio: <a href="https://h3manth.com">Hemanth HN</a> is a FOSS Computer pol
 discuss: 2050
 results: https://docs.google.com/spreadsheets/d/1AOqCkb5EggnE8BngpxvxGj_fCfssT9sZ0ElCQKp4pOw/
 queries: 14_PWA
-featured_quote: Web Apps which progresses into a native like application is a PWA!
+featured_quote: Web application which progresses into a native-like application can be considered as a PWA.
 featured_stat_1: 16.6%
 featured_stat_label_1: Percentage of page loads using a service worker.
 featured_stat_2: 27.97%
@@ -28,7 +28,7 @@ In 1990 we had the first ever browser called the “WorldWideWeb” and ever sin
 
 Simply put, a web application which progresses into a native-like application can be considered as a PWA, built using common web technologies including HTML, CSS and JavaScript and can operate seamlessly across devices and environments on a standards-compliant browser.
 
-The crux of a progressive web app is the *service worker*, which can be thought of as a proxy sitting between the browser and user and gives the developer total control over the network, rather than the network controlling the application.
+The crux of a progressive web app is the _service worker_, which can be thought of as a proxy sitting between the browser and user and gives the developer total control over the network, rather than the network controlling the application.
 
 It all started in December 2014 when Chrome 40 first implemented the meat of what is now known as Progressive Web Apps which was a collaborative effort for the web standards body and the terms was coined by [Frances Berriman and Alex Russell](https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/) in 2015.
 
@@ -257,11 +257,13 @@ In order for a PWA to be fruitful it needs to have a Manifest and a Service Work
 
 ### Top Manifest display values
 
+Out of the five most common `display` values, `standalone` dominated the list with `86.73%` of desktop and `89.28%` of mobile pages display mode was `standalone` which isn't suprising at all as this mode provide the native app like feel and next in the list was `minimal-ui` with `6.30%` of desktop and `5.00%` of mobile opting for them as it is closers to `standalone` apart for the fact that some the minimal set of UI elements for controlling navigation.
+
 {{ figure_markup(
   image="pwa-most-used-display-values-for-service-worker-pages.png",
   alt="Most used display values for service worker pages.",
   caption="Most used `display` values for service worker pages.",
-  description="Bar chart showing the percenatge of pages using the 5 most common `display` values, dominated by `standalone` which is used by 86.73% of desktop and 89.28% of mobile pages, `minimal-ui` is used by 6.30% of desktop and 5.00% of mobile, `fullscreen` by 4.80% of desktop and 4.11% of mobile, 1.15% of desktop pages and 0.88% of mobile pages do not set a `display` value, and finally 1.00% of desktop and 0.72% of mobile set this to `browser`.",
+  description="Bar chart showing the percentage of pages using the 5 most common `display` values, dominated by `standalone` which is used by 86.73% of desktop and 89.28% of mobile pages, `minimal-ui` is used by 6.30% of desktop and 5.00% of mobile, `fullscreen` by 4.80% of desktop and 4.11% of mobile, 1.15% of desktop pages and 0.88% of mobile pages do not set a `display` value, and finally 1.00% of desktop and 0.72% of mobile set this to `browser`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRRpTSA4fsHwUap-ByQ08j95uo7Zm1kY6lTSvA-DZT54g2QZ0guV7db3QyQwQgMPzsKsJ43gbzqfJst/pubchart?oid=872942071&format=interactive",
   sheets_gid="1208193001",
   sql_file="top_manifest_display_values_sw.sql"
@@ -271,6 +273,8 @@ In order for a PWA to be fruitful it needs to have a Manifest and a Service Work
 ### Top manifest categories
 
 Note these numbers are different than 2019 version as we are looking into PWA pages (i.e. Manifests and SW) as it makes more sense to concentrate on the PWA stats and ignoring the non-PWA for this section.
+
+Out of all the top `categories`, shopping stood at the top at with `13.16%` on the mobile traffic, which is pretty predictable as most of the PWAs are e-commerce applications and next in the position is news with `5.26%` on the mobile traffic.
 
 {{ figure_markup(
   image="pwa-manifest-categories.png",
@@ -283,6 +287,8 @@ Note these numbers are different than 2019 version as we are looking into PWA pa
 }}
 
 ### Manifests preferring native
+
+`98.24%` of destop sites prefer native, and `98.52%` of mobile sites prefer native, this is a signal that there are many web applications that just have a manifest and isn't really a PWA yet, but is making use of the manifest to prefer native.
 
 {{ figure_markup(
   image="pwa-manifest-preferring-native.png",
@@ -334,6 +340,8 @@ Out of which we noticed that portrait, any and portrait-primary properties took 
 }}
 
 ## Servicewoker library Metrics
+
+There are many cases, where the serviceworkers would need many libraries as dependencies, may it be external dependencies or the application's internal dependencies that are fetched to the serviceworker via `importScripts` API, in this section we will look into stats on such libraries.
 
 ### Popular scripts pulling into service workers using ImportScript
 
@@ -408,7 +416,6 @@ The [importScripts() API](https://developer.mozilla.org/en-US/docs/Web/API/Worke
 </table>
 <figcaption>{{ figure_link(caption="PWA library usage.", sheets_gid="1399126426", sql_file="popular_pwa_libraries.sql") }}</figcaption>
 </figure>
-
 
 Around **30%** of the Desktop and **25%** of Mobile environments uses importScripts, which indicates that these use cases are requiring external libraries, out of which workbox, sw_toolbox and firebase take the first three positions respectively.
 
