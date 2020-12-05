@@ -552,6 +552,15 @@ When a response is cached, its entire set of response headers are included with 
 
 **Placeholder for Figure 9: Chrome Dev Tools for a cached resource.**
 
+{{ figure_markup(
+  image="7a_chrome_dev_tools.p",
+  link="https://almanac.httparchive.org/static/images/2020/caching/7a_chrome_dev_tools.png",
+  caption="Chrome Dev Tools for a cached resource.".  
+  description="Chrome Dev Tools showing that When a response is cached, its entire set of response headers are included with the cached object as well."
+  )
+}}
+
+
 But what happens if you have a `Set-Cookie` on a response? According to [RFC 7234 Section 8](https://tools.ietf.org/html/rfc7234#section-8), the presence of a `Set-Cookie` response header does not inhibit caching. This means that a cached entry might contain a `Set-Cookie` response header. The RFC goes on to recommend that you should configure appropriate `Cache-Control` headers to control how responses are cached.
 
 Since we have primarily been talking about browser caching, you may think this isn’t a big issue - the `Set-Cookie` response headers that were sent by the server to me in responses to my requests clearly contain my cookies, so there’s no problem if my browser caches them. However, if there is a CDN between myself and the server, the server must indicate to the CDN that the response should not be cached in the CDN itself, so that the response meant for me is not cached and then served (including my `Set-Cookie` headers!) to other users.
@@ -589,6 +598,16 @@ For example, if a login cookie or a session cookie is present in a CDN’s cache
 Service Workers are a feature of HTML5 that allow front-end developers to specify scripts that should run outside the 'normal' request/response flow of web pages, communicating with the web page via messages. Common uses of service workers are for background synchronization and push notifications and, obviously, for caching - and browser support has been rapidly growing for them.
 
 **Placeholder for Figure 12: Growth in service worker controlled pages from 2019.**
+
+{{ figure_markup(
+  image="10_appcache_and_serviceworkers_2019",
+  caption="Growth in service worker controlled pages from 2019.",
+  description="A bar chart showing the growth in service worker controlled pages. The adoption has grown from 0.6% in 2019 to 1% in 2020",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=893877591&format=interactive",
+  sheets_gid="203111110",
+  sql_file="appcache_and_serviceworkers_2019.sql"
+  )
+}}
 
 Adoption is just at 1% of websites, but it has been steadily increasing since July 2019. The [Progressive Web App](https://almanac.httparchive.org/en/2020/pwa) chapter discusses this more, including the fact that it is used a lot more than this graph suggests due to its usage on popular sites, which are only counted once in the above graph.
 
