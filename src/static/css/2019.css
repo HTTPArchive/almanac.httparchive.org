@@ -1470,6 +1470,10 @@ p.copyright a {
   }
 }
 
+.no-wrap {
+  white-space: nowrap;
+}
+
 /* Syntax Highlighting */
 pre {
   margin: 0;
