@@ -13,7 +13,7 @@ fellowhuman1101_bio: 100% human & totally not a robot, Jamie Indigo untangles te
 discuss: 2043
 results: https://docs.google.com/spreadsheets/d/1ram47FshAjzvbQVJbAQPgxZN7PPOPCKIK67VJZCo92c/
 queries: 07_SEO
-featured_quote: Despite the growing use of mobile devices and Google’s move to a Mobile first index, non-trivial disparities were found across mobile vs. desktop pages, like the one between mobile and desktop links.
+featured_quote: Despite the growing use of mobile devices and Google's move to a Mobile first index, non-trivial disparities were found across mobile vs. desktop pages, like the one between mobile and desktop links.
 featured_stat_1: 10.84%
 featured_stat_label_1: Mobile home pages are not including the viewport tag
 featured_stat_2: 19.96%
@@ -25,7 +25,7 @@ unedited: true
 
 ## Introduction
 
-Search Engine Optimization (SEO) is the practice of optimizing websites' technical configuration, content relevance, and link popularity to make their information easily findable and more relevant to fulfill users’ search needs. As a consequence, websites improve their visibility in search engines’ results for relevant user queries regarding their content and business, growing their traffic, conversions, and profits.
+Search Engine Optimization (SEO) is the practice of optimizing websites' technical configuration, content relevance, and link popularity to make their information easily findable and more relevant to fulfill users' search needs. As a consequence, websites improve their visibility in search engines' results for relevant user queries regarding their content and business, growing their traffic, conversions, and profits.
 
 Despite its complex multidisciplinary nature, in recent years SEO has evolved to become one of the most popular digital marketing strategies and channels.
 
@@ -38,11 +38,11 @@ Despite its complex multidisciplinary nature, in recent years SEO has evolved to
   )
 }}
 
-The goal of the Web Almanac’s SEO chapter is to identify and assess main elements and configurations that play a role in a website’s organic search optimization. By identifying these elements we hope that websites can leverage our findings to improve their ability to be crawled, indexed, and ranked by search engines. In this chapter we provide a snapshot of their status in 2020 and a summary of what has changed [since 2019](../2019/seo).
+The goal of the Web Almanac's SEO chapter is to identify and assess main elements and configurations that play a role in a website's organic search optimization. By identifying these elements we hope that websites can leverage our findings to improve their ability to be crawled, indexed, and ranked by search engines. In this chapter we provide a snapshot of their status in 2020 and a summary of what has changed [since 2019](../2019/seo).
 
-It is important to note that besides the [HTTP Archive](https://httparchive.org/) this analysis also includes data from [Lighthouse](https://developers.google.com/web/tools/lighthouse/), the [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report), as well as raw and rendered HTML elements. In the case of the HTTP Archive and Lighthouse it is limited to the data identified from websites’ home pages only, not site-wide crawls. We have taken this into consideration when doing assessments. Keeping this distinction in mind is important when drawing conclusions from our results. You can learn more about it in our [methodology](./methodology) page.
+It is important to note that besides the [HTTP Archive](https://httparchive.org/) this analysis also includes data from [Lighthouse](https://developers.google.com/web/tools/lighthouse/), the [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report), as well as raw and rendered HTML elements. In the case of the HTTP Archive and Lighthouse it is limited to the data identified from websites' home pages only, not site-wide crawls. We have taken this into consideration when doing assessments. Keeping this distinction in mind is important when drawing conclusions from our results. You can learn more about it in our [methodology](./methodology) page.
 
-Let us go through this years’ websites Organic Search optimization main findings.
+Let us go through this years' websites Organic Search optimization main findings.
 
 ## Fundamentals
 
@@ -52,7 +52,7 @@ The fundamentals section features the optimization related findings of those web
 
 Search engines use web crawlers (also called spiders) to discover new or updated content from websites, browsing the web by following links between pages. Crawling is the process of looking for new or updated web content (whether web pages, images, videos, etc.).
 
-Search crawlers discover content by following links between URLs, as well as using additional sources that website owners can provide, like the generation of XML Sitemaps (a list of URLs that a website’s owner wants search engines to index) or through direct crawl requests via search engines tools (e.g., the Google Search Console).
+Search crawlers discover content by following links between URLs, as well as using additional sources that website owners can provide, like the generation of XML Sitemaps (a list of URLs that a website's owner wants search engines to index) or through direct crawl requests via search engines tools (e.g., the Google Search Console).
 
 Once  search engines access web content they need to "render"–similar to what web browsers do–and index it. Search engines will then analyze and catalogue the identified information, trying to understand it as users do, to ultimately store it in its "index" or web database.
 
@@ -138,7 +138,7 @@ Interestingly, rendering changed the meta-robots tag in 0.16% of pages. While th
 Canonical tags -as described by [Google here](https://developers.google.com/search/docs/advanced/crawling/consolidate-duplicate-urls)- are used to specify to search engines which is the preferred canonical URL version to index and rank for a page -the one that is considered to be better representative of it- when there are many URLs featuring the same or very similar content. It is important to note that:
 
 - The canonical tag configuration is used along with other signals to select the canonical URL of a page; it is not the only one.
-- Although self-referencing canonical tags are sometimes used, these aren’t a requirement.
+- Although self-referencing canonical tags are sometimes used, these aren't a requirement.
 
 [Last year](../2019/seo#canonicalization), it was identified that 48.34% of mobile home pages were using a canonical tag. This year the number of mobile home pages featuring a canonical tag has grown to 53.61%.
 
@@ -152,7 +152,7 @@ Canonical tags -as described by [Google here](https://developers.google.com/sear
  )
 }}
 
-When analyzing this year’s mobile home pages canonical tag configuration, it was detected that 45.31% of them were self-referential and 8.45% were pointing to different URLs as the canonical ones.
+When analyzing this year's mobile home pages canonical tag configuration, it was detected that 45.31% of them were self-referential and 8.45% were pointing to different URLs as the canonical ones.
 
 On the other hand, 51.85% of the desktop home pages were found to be featuring a canonical tag this year, with 47.88% being self-referential and 4.10% pointing to a different URL.
 
@@ -170,9 +170,9 @@ Canonical URLs can be specified through different methods, by using the canonica
   )
 }}
 
-When analyzing the canonical tag implemented in the raw HTML vs. those relying on client side JavaScript rendering, it was identified that 0.68% of the mobile home pages and 0.54% of the desktop ones are detected to be featuring a canonical tag in the rendered but not the raw HTML. This means that there’s only a very small number of pages that are relying on JavaScript to implement canonical tags.
+When analyzing the canonical tag implemented in the raw HTML vs. those relying on client side JavaScript rendering, it was identified that 0.68% of the mobile home pages and 0.54% of the desktop ones are detected to be featuring a canonical tag in the rendered but not the raw HTML. This means that there's only a very small number of pages that are relying on JavaScript to implement canonical tags.
 
-On the other hand, in 0.93% of the mobile home pages and 0.76% of the desktop ones it was seen that there are canonical tags implemented via both the raw and the rendered HTML and there’s a conflict between the URL specified in the raw vs. the rendered HTML of the same pages, which can generate issues.
+On the other hand, in 0.93% of the mobile home pages and 0.76% of the desktop ones it was seen that there are canonical tags implemented via both the raw and the rendered HTML and there's a conflict between the URL specified in the raw vs. the rendered HTML of the same pages, which can generate issues.
 
 A similar conflict can be found with the different implementation methods, with 0.15% of the mobile home pages and 0.17% of the desktop ones showing conflicts between the canonical tags implemented via their HTTP headers and HTML head.
 
@@ -215,13 +215,13 @@ We found that the median desktop site features 13.46% more words when rendered t
 
 The median mobile site also displays 11.5% more words when rendered than its raw HTML counterpart.
 
-Across our sample set, there are disparities across the combination of mobile/desktop and rendered/non-rendered. This suggests that although search engines are continually improving in this area, most sites across the web are missing out on opportunities to improve their Organic Search visibility through a stronger focus on ensuring their content is available and indexable. This is also an issue of concern because the lion’s share of available SEO tools do not crawl in the above combination of contexts and automatically identify this as an issue.
+Across our sample set, there are disparities across the combination of mobile/desktop and rendered/non-rendered. This suggests that although search engines are continually improving in this area, most sites across the web are missing out on opportunities to improve their Organic Search visibility through a stronger focus on ensuring their content is available and indexable. This is also an issue of concern because the lion's share of available SEO tools do not crawl in the above combination of contexts and automatically identify this as an issue.
 
 This year, the median desktop home page was found to have 402 words and the mobile 348 words. While [last year](../2019/seo#word-count), the median desktop home page had 346 words, and the median mobile home page had a slightly lower word count at 306 words. This represents 16.2% and 13.7% growth respectively.
 
 #### Headings
 
-Heading elements (h1-h6) act as a mechanism to visually indicate structure in a page’s content. Although these HTML elements don’t carry the weight they used to in search rankings, they still act as a valuable way to structure pages and signal other elements in the SERPs like Featured Snippets or other extraction methods that align with [Google’s new passage indexing](https://www.blog.google/products/search/search-on/).
+Heading elements (h1-h6) act as a mechanism to visually indicate structure in a page's content. Although these HTML elements don't carry the weight they used to in search rankings, they still act as a valuable way to structure pages and signal other elements in the SERPs like Featured Snippets or other extraction methods that align with [Google's new passage indexing](https://www.blog.google/products/search/search-on/).
 
 {{ figure_markup(
   image="seo-presence-of-h-elements.png",
@@ -258,7 +258,7 @@ Learn more about the usage of Headings in the [Markup chapter](./markup#headings
 
 Over the course of the past decade, search engines, particularly Google, have continued to push towards becoming the presentation layer of the web. These advancements are partially driven by their improved ability to extract information from unstructured content (e.g., [passage indexing](https://blog.google/products/search/search-on/)) and the adoption of semantic markup in the form of structured data. Content creators and developers have been encouraged to implement structured data to give more visibility to their content within components of search results. 
 
-In a move from “strings to things” , search engines have agreed upon a broad vocabulary of objects in support of marking up a variety of people, places, and things within web content. However, only a subset of that vocabulary triggers inclusion within search results components. Google specifies those that they support and how they’re displayed in their [“Search Gallery”](https://developers.google.com/search/docs/guides/search-gallery), and provides [a tool](https://search.google.com/test/rich-results) to validate their support and implementation. 
+In a move from "strings to things" , search engines have agreed upon a broad vocabulary of objects in support of marking up a variety of people, places, and things within web content. However, only a subset of that vocabulary triggers inclusion within search results components. Google specifies those that they support and how they're displayed in their ["Search Gallery"](https://developers.google.com/search/docs/guides/search-gallery), and provides [a tool](https://search.google.com/test/rich-results) to validate their support and implementation. 
 
 As search engines evolve to reflect more of these elements in search results, the incidence rates of the different  vocabulary changes across the web.
 
@@ -290,11 +290,11 @@ It should be noted that `WebSite`, `SearchAction` and `Organization` are all typ
 
 In contrast, despite the fact that reviews are not supposed to be associated with homepages the data indicates that `AggregateRating` is up 23.9% on mobile and 23.7% on desktop. 
 
-It’s also interesting to see the growth of the [`VideoObject` to annotate videos](https://developers.google.com/search/docs/data-types/video). Although [YouTube videos dominate video search results in Google](https://moz.com/blog/youtube-dominates-google-video-results-in-2020), the usage of `VideoObject` grew 30.11% on desktop and 27.7% on mobile
+It's also interesting to see the growth of the [`VideoObject` to annotate videos](https://developers.google.com/search/docs/data-types/video). Although [YouTube videos dominate video search results in Google](https://moz.com/blog/youtube-dominates-google-video-results-in-2020), the usage of `VideoObject` grew 30.11% on desktop and 27.7% on mobile
 
 This growth is a general indication of increased adoption of structured data. 
 
-There’s also an indication of what Google gives visibility within search features increases the incidence rates of lesser used objects. 
+There's also an indication of what Google gives visibility within search features increases the incidence rates of lesser used objects. 
 
 Google announced the [`FAQPage`](https://developers.google.com/search/docs/data-types/faqpage), [`HowTo`](https://developers.google.com/search/docs/data-types/how-to), and [`QAPage`](https://developers.google.com/search/docs/data-types/qapage) objects as visibility opportunities in 2019 and they sustained significant year over year growth: 
 
@@ -315,7 +315,7 @@ We examined these features to see how pages are quantitatively aligning with bes
 
 ##### Titles
 
-The page title is shown as the anchor text in search engine results and is generally considered one of the most valuable on-page elements that impacts a page’s ability to rank.
+The page title is shown as the anchor text in search engine results and is generally considered one of the most valuable on-page elements that impacts a page's ability to rank.
 
 When analyzing the usage of the title tag, it was found that 98.75% of desktop homepages are featuring one, while 98.7% of mobile homepages are. This represents a slight improvement vs. [last year](../2019/seo#page-titles) when it was found that 97.1% of mobile pages were featuring a title tag.
 
@@ -331,7 +331,7 @@ The median homepage features a page title that is six words long. There is no di
   )
 }}
 
-The median page title character count is 38 characters on both mobile and desktop. Interestingly, this is up from 20 characters on desktop and 21 characters on mobile from [last year’s analysis](../2019/seo#page-titles). The disparity between the contexts has disappeared year-over-year except within the 90th percentile wherein there is a one character disparity.
+The median page title character count is 38 characters on both mobile and desktop. Interestingly, this is up from 20 characters on desktop and 21 characters on mobile from [last year's analysis](../2019/seo#page-titles). The disparity between the contexts has disappeared year-over-year except within the 90th percentile wherein there is a one character disparity.
 
 {{ figure_markup(
   image="seo-title-character-count.png",
@@ -378,7 +378,7 @@ With meta descriptions continuing to power other snippets such as social and new
 
 ####  Images
 
-The usage of images, particularly using `<img>` elements, within a page often suggests a focus on visual presentation of content. Although search engine capabilities regarding computer vision have continued to improve, we have no indication that this technology is being used in the ranking of pages. `alt` attributes remain the primary way to explain an image in lieu of a search engine’s inability to "see" it. `alt` attributes also support accessibility and clarify the elements on the page for users that are visually impaired.
+The usage of images, particularly using `<img>` elements, within a page often suggests a focus on visual presentation of content. Although search engine capabilities regarding computer vision have continued to improve, we have no indication that this technology is being used in the ranking of pages. `alt` attributes remain the primary way to explain an image in lieu of a search engine's inability to "see" it. `alt` attributes also support accessibility and clarify the elements on the page for users that are visually impaired.
 
 The median desktop page features 21 image tags and the median mobile page features 19 image tags. The web continues to trend toward image-heaviness with the growth of bandwidth and the ubiquity of smartphones. However, this comes at a cost of performance.
 
@@ -450,7 +450,7 @@ The median desktop homepage features 76 outgoing links while the median mobile h
   )
 }}
 
-The median desktop page features 61 outgoing internal links while the median mobile page features 54 outgoing internal links. This is down 12.8% and 10% respectively from [last year’s analysis](../2019/seo#linking). This suggests that sites are not maximizing the ability to improve the crawlability and link equity flow through their pages in the way they did the year before.
+The median desktop page features 61 outgoing internal links while the median mobile page features 54 outgoing internal links. This is down 12.8% and 10% respectively from [last year's analysis](../2019/seo#linking). This suggests that sites are not maximizing the ability to improve the crawlability and link equity flow through their pages in the way they did the year before.
 
 {{ figure_markup(
   image="seo-outgoing-links-internal.png",
@@ -493,7 +493,7 @@ There is a disparity in the links between mobile and desktop that will negativel
 
 In September of 2019, [Google introduced attributes](https://webmasters.googleblog.com/2019/09/evolving-nofollow-new-ways-to-identify.html) that allow publishers to classify links as being sponsored or user generated content. These attributes are in addition to `nofollow` which was previously [introduced in 2005](https://googleblog.blogspot.com/2005/01/preventing-comment-spam.html). The new attributes, `rel-ugc` and `rel-sponsored`, are meant to clarify or qualify the reason as to why these links are appearing on a given web page.
 
-Our review of pages indicates that 28.58% of homepages feature `nofollow` attributes on their desktop versions and 30.74% on mobile. However, rel-ugc and rel-sponsored adoption is quite low with less than 0.3% pages featuring either. Since these attributes don’t add any more value to a publisher than rel-nofollow, it is reasonable to expect that adoption will continue to be slow.
+Our review of pages indicates that 28.58% of homepages feature `nofollow` attributes on their desktop versions and 30.74% on mobile. However, rel-ugc and rel-sponsored adoption is quite low with less than 0.3% pages featuring either. Since these attributes don't add any more value to a publisher than rel-nofollow, it is reasonable to expect that adoption will continue to be slow.
 
 {{ figure_markup(
   image="seo-nofollow-ugc-sponsored-attributes.png",
@@ -521,7 +521,7 @@ The median web page features 9.80% image links on desktop and 9.82% image links 
 }}
 
 ## Advanced
-The advanced section features the optimization related findings of those web configurations and elements that although don’t directly affect a site's crawlability or indexability, have been confirmed by search engines to be used as ranking signals or whose configurations affect the capacity of websites to leverage search features.
+The advanced section features the optimization related findings of those web configurations and elements that although don't directly affect a site's crawlability or indexability, have been confirmed by search engines to be used as ranking signals or whose configurations affect the capacity of websites to leverage search features.
 
 ### Mobile Friendliness
 
@@ -537,7 +537,7 @@ A mobile friendly website can be implemented through different configurations: b
 
 #### Viewport Meta Tag
 
-The browser’s viewport is the visible area of a page content, that changes depending on the used device. The "viewport meta tag" allows you to specify to browsers the width and scaling of the viewport, so that it is correctly sized across different devices. Responsive websites use the viewport meta tag as well as CSS media queries to deliver a mobile friendly experience.
+The browser's viewport is the visible area of a page content, that changes depending on the used device. The "viewport meta tag" allows you to specify to browsers the width and scaling of the viewport, so that it is correctly sized across different devices. Responsive websites use the viewport meta tag as well as CSS media queries to deliver a mobile friendly experience.
 
 When looking at the viewport tag inclusion, it was found that 42.98% of the analyzed mobile home pages and 43.2% desktop ones are featuring it with an `initial-scale=1,width=device-width` content attribute value; but that 10.84% of mobile home pages and 16.18% of desktop ones are not including the tag at all, suggesting that they are not yet mobile friendly.
 
@@ -695,7 +695,7 @@ Internationalization covers the configurations that multilingual or multi-countr
 
 The two international configurations that have been analyzed are the "content-language" meta tag and the `hreflang` attributes, that can be used to specify the language and the content of each page. Additionally, `hreflang` annotations allow you to specify the alternate language or country versions of each page, besides itself.
 
-Search engines like [Google](https://support.google.com/webmasters/answer/189077?hl=en) and [Yandex](https://yandex.com/support/webmaster/yandex-indexing/locale-pages.html) use `hreflang` attributes as a signal to determine the page's language and country target, and although Google doesn’t use the HTML lang or the `content-language` meta tag, this last tag is used by Bing.
+Search engines like [Google](https://support.google.com/webmasters/answer/189077?hl=en) and [Yandex](https://yandex.com/support/webmaster/yandex-indexing/locale-pages.html) use `hreflang` attributes as a signal to determine the page's language and country target, and although Google doesn't use the HTML lang or the `content-language` meta tag, this last tag is used by Bing.
 
 #### Hreflang
 
@@ -815,11 +815,11 @@ All of these things have likely contributed to the higher adoption rate year ove
 
 [AMP](https://amp.dev/) (previously called Accelerated Mobile Pages) is an open source HTML framework that was launched by Google in 2015 as a way to help pages to give a faster loading speed, especially on mobile devices. AMP can be implemented as an alternate version of existing web pages or can be used to develop your pages using the AMP framework from scratch.
 
-When there’s an AMP version available for a page, it will be shown by Google in Mobile search results, along the AMP logo.
+When there's an AMP version available for a page, it will be shown by Google in Mobile search results, along the AMP logo.
 
 It is also important to note that while AMP usage is not a ranking factor for Google (or any other search engine), web speed is a ranking factor.
 
-Additionally, AMP is at the moment a requirement to be featured in Google’s Top Stories carousel in mobile search results–which is an important feature for news related publications. However, this will change in May next year, when non-AMP content will become eligible as long as it meets the [Google News content policies](https://support.google.com/news/publisher-center/answer/6204050) and provides a great [page experience](https://developers.google.com/search/docs/guides/page-experience) as [announced by Google in November this year](https://developers.google.com/search/blog/2020/11/timing-for-page-experience).
+Additionally, AMP is at the moment a requirement to be featured in Google's Top Stories carousel in mobile search results–which is an important feature for news related publications. However, this will change in May next year, when non-AMP content will become eligible as long as it meets the [Google News content policies](https://support.google.com/news/publisher-center/answer/6204050) and provides a great [page experience](https://developers.google.com/search/docs/guides/page-experience) as [announced by Google in November this year](https://developers.google.com/search/blog/2020/11/timing-for-page-experience).
 
 When checking the usage of AMP as an alternate version of a non-AMP based page, it was found that 0.69% of mobile web home pages and 0.81% of desktop ones were including an "amphtml" tag pointing to an AMP version. Although the adoption is still very low, this is a slight improvement from [last year's AMP related Web Almanac data findings](../2019/seo#amp), in which only 0.62% of mobile home pages contained a link to an AMP version.
 
@@ -845,23 +845,23 @@ Consistent with what was found and [concluded last year](../2019/seo#conclusion)
 
 It is important to highlight how the link discoverability for major JS frameworks used for SPAs increased dramatically compared to 2019. By testing mobile navigation links for hashed URLs, we saw -53%  instances of uncrawlable links from sites using React, -58% fewer from Vue.js powered sites, and a -91% reduction from Angular SPAs.
 
-Additionally, it was also identified that there has been a slight improvement from last year’s findings across many of the analyzed areas:
+Additionally, it was also identified that there has been a slight improvement from last year's findings across many of the analyzed areas:
 
 - **Robots.txt**: Last year 72.16% of mobile sites had a valid robots.txt vs. 74.91%  this year.
 - **Canonical tag**: Last year it was identified that 48.34% of mobile homepages were using a canonical tag vs. 53.61% this year.
 - **Title element**: This year it was found that 98.75% of the desktop homepages are featuring one, while 98.7% of mobile home pages are also including it. Last year it was found that 97.1% of mobile pages were featuring a title tag.
 - **Meta Description**: This year, 68.62% of desktop homepages and 68.22% of mobile ones were found to be featuring a meta description, an improvement from last year when it was found that 64.02% of mobile home pages had one.
 - **Structured Data**: Despite the fact that reviews are not supposed to be associated with homepages the data indicates that `AggregateRating` is up 23.9% on mobile and 23.7% on desktop.
-- **Images’ `alt` attribute**: This year, 53.86% of desktop and 51.22% of mobile home pages featured image `alt` attributes. Although this might seem low, it is an improvement from last year when it was found that 46.71% of mobile pages used `alt` attributes on all of their images.
+- **Images' `alt` attribute**: This year, 53.86% of desktop and 51.22% of mobile home pages featured image `alt` attributes. Although this might seem low, it is an improvement from last year when it was found that 46.71% of mobile pages used `alt` attributes on all of their images.
 - **HTTPS usage**: 77.44% of desktop pages and 73.22% of mobile pages have adopted HTTPS. This is up 10.38% from last year.
 
 However, not everything has improved vs. last year configurations.
 
-This year, the median desktop page features 61 outgoing internal links while the median mobile page features 54 outgoing internal links. This is down 12.8% and 10% respectively from [last year’s analysis](../2019/seo#linking), suggesting that sites are not maximizing the ability to improve the crawlability and link equity flow through their pages.
+This year, the median desktop page features 61 outgoing internal links while the median mobile page features 54 outgoing internal links. This is down 12.8% and 10% respectively from [last year's analysis](../2019/seo#linking), suggesting that sites are not maximizing the ability to improve the crawlability and link equity flow through their pages.
 
-It is also important to note how there’s still an important opportunity for improvement across many critical SEO related areas and configurations.
+It is also important to note how there's still an important opportunity for improvement across many critical SEO related areas and configurations.
 
-Despite the growing use of mobile devices and Google’s move to a Mobile first index:
+Despite the growing use of mobile devices and Google's move to a Mobile first index:
 
  - 10.84% of mobile home pages and 16.18% of desktop ones are not including the viewport tag at all, suggesting that they are not yet mobile friendly.
  - Non-trivial disparities were found across mobile vs. desktop pages, like the one between mobile and desktop links, illustrated in the 62 links on mobile versus the 68 links on desktop for the median web page.
