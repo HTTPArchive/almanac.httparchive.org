@@ -180,7 +180,7 @@ With over 60% of websites being served over HTTP/2 or gQUIC, let's look a little
   )
 }}
 
-Figure 22.6 shows the fraction of HTTP/2 or gQUIC requests per page, ordered by percentile, for this year compared to last year. The most noticeable change is that over half of sites now have 75% or more of their requests served over HTTP/2 or gQUIC compared to 46% last year. Less than 7% of sites make no HTTP/2 or gQUIC requests, while (only) 10% of sites are entirely HTTP/2 or gQUIC requests.
+Figure 22.6 compares how much HTTP/2 or gQUIC is used on a website between this year and last year. The most noticeable change is that over half of sites now have 75% or more of their requests served over HTTP/2 or gQUIC compared to 46% last year. Less than 7% of sites make no HTTP/2 or gQUIC requests, while (only) 10% of sites are entirely HTTP/2 or gQUIC requests.
 
 What about the breakdown of the page itself? We typically talk about the difference between first-party and third-party content. Third-party is defined as content not within the direct control of the site owner; providing functionality such as advertising, marketing or analytics. The definition of known third parties is taken from the [third party web](https://github.com/patrickhulce/third-party-web/blob/8afa2d8cadddec8f0db39e7d715c07e85fb0f8ec/data/entities.json5) repository.
 
@@ -196,7 +196,7 @@ Figure 22.7 orders every website by the fraction of HTTP/2 requests for known th
 )
 }}
 
-Figure 22.8 shows the distribution of known third-party HTTP/2 or gQUIC requests by content-type. For example 90% of websites serve 100% of third party fonts and audio over HTTP/2 or gQUIC, only 5% over HTTP/1 and 5% are a mix. The majority of third-party assets are either scripts or images, and are solely served over HTTP/2 or gQUIC on 60% and 70% of websites respectively.
+Is there any differnece in which content-types are served over HTTP/2 or gQUIC? Figure 22.8 shows, for example, that 90% of websites serve 100% of third party fonts and audio over HTTP/2 or gQUIC, only 5% over HTTP/1 and 5% are a mix. The majority of third-party assets are either scripts or images, and are solely served over HTTP/2 or gQUIC on 60% and 70% of websites respectively.
 
 {{ figure_markup(
   image="http2-third-party-http2-usage-by-content-type.png",
@@ -208,8 +208,7 @@ Figure 22.8 shows the distribution of known third-party HTTP/2 or gQUIC requests
 )
 }}
 
-{# TODO(authors, analysts): Is this breakdown specifically looking at mobile? I don't see a notice that all data is mobile unless otherwise noted, so it's worth clarifying here. #}
-Figure 22.9 looks at protocol usage by the third party category. Ads, analytics, content delivery network (CDN) resources, and tag-managers are predominantly served over HTTP/2 or gQUIC. Customer-success and marketing content is more likely to be served over HTTP/1.
+Ads, analytics, content delivery network (CDN) resources, and tag-managers are predominantly served over HTTP/2 or gQUIC as shown in Figure 22.9. Customer-success and marketing content is more likely to be served over HTTP/1.
 
 {{ figure_markup(
   image="http2-third-party-http2-usage-by-category.png",
@@ -225,7 +224,7 @@ Figure 22.9 looks at protocol usage by the third party category. Ads, analytics,
 
 Browser auto-update mechanisms are a driving factor for client-side adoption of new web standards. It's [estimated](https://caniuse.com/http2) that over 97% of global users support HTTP/2, up slightly from 95% measured last year.
 
-Unfortunately, the upgrade path for servers is more difficult, especially with the requirement to support TLS. For mobile and desktop, Figure 22.10 shows the breakdown of HTTP server headers returned for sites that support HTTP/2 and HTTP/1.
+Unfortunately, the upgrade path for servers is more difficult, especially with the requirement to support TLS. For mobile and desktop, we can see from Figure 22.10, that he majority of HTTP/2 sites are served by nginx, Cloudflare, and Apache. Almost half of the HTTP/1.1 sites are served by Apache.
 
 {# TODO(analysts, authors): Why is this figure in terms of the number of websites, rather than percent? Should the server values also be capitalized accordingly? (eg Cloudflare rather than cloudflare) #}
 {{ figure_markup(
@@ -238,11 +237,10 @@ Unfortunately, the upgrade path for servers is more difficult, especially with t
 )
 }}
 
-The majority of HTTP/2 sites are served by nginx, Cloudflare, and Apache. Almost half of the HTTP/1.1 sites are served by Apache.
 
-How has HTTP/2 adoption changed in the last year for each server? Figure 22.11 shows the percentage of server installs that use HTTP/2 in 2019 and 2020. We see a general adoption increase of around 10% across all servers. Apache and IIS are still under 25% HTTP/2. This suggests that either new servers tend to be nginx or it is seen as too difficult or not worthwhile to upgrade Apache or IIS to HTTP/2 and/or TLS.
 
-{# TODO(analysts, authors): Ditto on server capitalization. #}
+How has HTTP/2 adoption changed in the last year for each server? Figure 22.11 shows a general HTTP/2 adoption increase of around 10% across all servers since last year. Apache and IIS are still under 25% HTTP/2. This suggests that either new servers tend to be nginx or it is seen as too difficult or not worthwhile to upgrade Apache or IIS to HTTP/2 and/or TLS.
+
 {{ figure_markup(
   image="http2-h2-usage-by-server.png",
   caption="Percentage of pages served over HTTP/2 by sever",
@@ -257,12 +255,11 @@ A long-term recommendation to improve website performance has been to use a CDN.
 
 CDNs can be classed in two broad categories: those that serve the home page and/or asset subdomains, and those that are mainly used to serve third-party content. Examples of the first category are the larger generic CDNs (such as Cloudflare, Akamai, or Fastly) and the more specific (such as WordPress or Netlify). Looking at the difference in HTTP/2 adoption rates for home pages served with or without a CDN, we see:
 
-
 - **80%** of mobile home pages are served over HTTP/2 if a CDN is used
 - **30%** of mobile home pages are served over HTTP/2 if a CDN is not used
 
 {# TODO(authors, editors): Throughout the chapter there are several lead-ins to figures that are very similar/redundant with the existing figure captions. Is it worth writing these out? #}
-Figure 22.12 shows the percentage of HTTP/2 requests served by the first-party CDNs over mobile.
+Figure 22.12 shows the more specific and the modern CDNs serve a higher proportion of traffic over HTTP/2.
 
 <figure>
   <table>
@@ -310,44 +307,7 @@ Types of content in the second category are typically shared resources (JavaScri
 )
 }}
 
-Figure 22.13 shows the difference in HTTP/2 and gQUIC adoption when a website is using a CDN. 70% of pages use HTTP/2 for all third-party requests when a CDN is used. Without a CDN, only 25% of pages use HTTP/2 for all third-party requests.
-
-{# TODO(authors): What do you hope readers get out of this figure? There's no discussion/interpretation of the results. #}
-Figure 22.14 shows the breakdown of HTTP/2 responses for third-party CDNs for mobile requests.
-
-<figure>
-  <table>
-    <thead>
-      <tr>
-        <th scope="colgroup" class="no-wrap">HTTP/2 and gQUIC (%)</th>
-        <th scope="colgroup">Third-party resource CDN</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>100%</td>
-        <td>Bison Grid, Hosting4CDN, MediaCloud, NYI FTW, PageCDN, Pressable CDN, QUIC.cloud, Roast.io, SwiftyCDN, Zycada Networks</td>
-      </tr>
-      <tr>
-        <td>90 - 99%</td>
-        <td>Advanced Hosters CDN, Azion, CDN77, Facebook, GoCache, ImageEngine, KeyCDN, Microsoft Azure, NetDNA, Netlify, Nexcess CDN, Reapleaf, Sirv CDN, Twitter, jsDelivr, section.io, Airee, BunnyCDN, Cloudflare, Erstream, Internap, LeaseWeb CDN, Medianova, Myra Security CDN, NGENIX, OnApp, SFR, StackPath, Sucuri Firewall, TRBCDN, VegaCDN, Yottaa</td>
-      </tr>
-      <tr>
-        <td>70 - 89%</td>
-        <td>Amazon CloudFront, BelugaCDN, CDN, CDN77, Erstream, Fastly, Highwinds, OVH CDN, Yottaa, Edgecast, Myra Security CDN, StackPath, XLabs Security</td>
-      </tr>
-      <tr>
-        <td>20 - 69%</td>
-        <td>Akamai, Aryaka, Google, Limelight, Rackspace, Incapsula, Level 3, Medianova, OnApp, Singular CDN, Vercel, Cachefly, Cedexis, Reflected Networks, Universal CDN, Yunjiasu, CDNetworks</td>
-      </tr>
-      <tr>
-        <td> < 20%</td>
-        <td>Rocket CDN, BO.LT, ChinaCache, KINX CDN, Zenedge, ChinaNetCenter </td>
-      </tr>
-    </tbody>
-  </table>
-<figcaption>{{ figure_link(caption="Percentage of HTTP/2 requests served by the third-party resouce CDNs over mobile", sheets_gid="781660433", sql_file="cdn_detail_by_cdn.sql") }}</figcaption>
-</figure>
+In Figure 22.13 we can see the stark differnce in HTTP/2 and gQUIC adoption when a website is using a CDN. 70% of pages use HTTP/2 for all third-party requests when a CDN is used. Without a CDN, only 25% of pages use HTTP/2 for all third-party requests.
 
 {# TODO(authors, editors): Sort of a nit. Headings inconsistently ask questions and give short titles to describe the contents. It would be more natural to have a unified naming convention for headers. #}
 ## How is HTTP/2 performing?
@@ -358,7 +318,6 @@ Measuring the impact of how a protocol is performing is difficult with the curre
 
 As discussed [earlier](#http10-to-http2), HTTP/1.1 only allows a single request at a time over a TCP connection. Most browsers get around this by allowing six parallel connections per host. The major improvement with HTTP/2 is that multiple requests can be multiplexed over a single TCP connection.  This should reduce the total number of connections—and the associated time and resources—required to load a page.
 
-{# TODO(analysts): Nit, but I think it'd make more sense to show 2020 to the right of 2016 as I think most readers will conceptualize time going from left to right. #}
 {{ figure_markup(
   image="http2-total-number-of-connections-per-page.png",
   caption="Distriution of total number of connections per page",
