@@ -1,8 +1,8 @@
 ---
 part_number: II
 chapter_number: 13
-title: Capabilities
-description: Capabilities chapter of the 2020 Web Almanac covering brand-new, powerful web platform APIs.
+title: 能力
+description: 2020年 Web Almanac网络年鉴中的能力篇，涵盖了全新的、强大的网络平台API。
 authors: [christianliebel]
 reviewers: [tomayac]
 analysts: [tomayac]
@@ -10,14 +10,14 @@ translators: [chengxicn]
 discuss: 2049
 results: https://docs.google.com/spreadsheets/d/1N6j1qKv7vc51p1W9z_RrbJX9Se3Pmb-Uersfz4gWqqs/
 queries: 13_Capabilities
-christianliebel_bio: Christian Liebel is a consultant at <a href="https://thinktecture.com">Thinktecture</a>, supporting clients from various business areas in implementing first-class web applications. He is a Mi初期试用crosoft MVP for Developer Technologies, Google GDE for Web/Capabilities and Angular, and participates in the W3C Web Applications Working Group.
-featured_quote: The state of web capabilities in 2020 is healthy, as new powerful APIs regularly ship with new releases of Chromium-based browsers. The first APIs have already made their way into other browsers as well.
+christianliebel_bio: Christian Liebel 是<a href="https://thinktecture.com">Thinktecture</a>, 的顾问，支持来自不同业务领域的客户实现一流的网络应用。他是微软开发者技术的MVP，也是 Web/能力 和 Angular的 Google GDE，并且参加了W3C Web应用工作组。
+featured_quote: 2020年的Web能力（Capability）状态是健康的，因为新的、强大的API定期与基于Chromium的浏览器的新版本一起发布。一些API已经进入了其他非Chromium的浏览器。
 featured_stat_1: 0.0006%
-featured_stat_label_1: (Chrome) Page loads using Async Clipboard API
+featured_stat_label_1: (Chrome) 使用异步剪贴板API加载页面
 featured_stat_2: 0.49%
-featured_stat_label_2: Sites using Storage Manager API
+featured_stat_label_2: 使用存储管理API的网站
 featured_stat_3: 363
-featured_stat_label_3: Sites allow installing related apps
+featured_stat_label_3: 网站允许安装相关应用程序
 ---
 
 ## 介绍
