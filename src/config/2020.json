@@ -137,7 +137,8 @@
           "part": "III",
           "chapter": "17",
           "title": "Jamstack",
-          "slug": "jamstack"
+          "slug": "jamstack",
+          "todo": true
         }
       ]
     },
