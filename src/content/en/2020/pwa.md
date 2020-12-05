@@ -274,7 +274,7 @@ Out of the five most common `display` values, `standalone` dominated the list wi
 
 ### Top manifest categories
 
-Note these numbers are different than 2019 version as we are looking into PWA pages (i.e. Manifests and SW) as it makes more sense to concentrate on the PWA stats and ignoring the non-PWA for this section.
+In [last year's section on manifests](../2019/pwa#web-app-manifests), we looked at all manifests in our datasets. This year we have decided to concentrate only on sites which have both a manifest and a service worker–in other words PWAs–and the data in this section therefore only details PWA manifests.
 
 Out of all the top `categories`, shopping stood at the top at with `13.16%` on the mobile traffic, which is pretty predictable as most of the PWAs are e-commerce applications and next in the position is news with `5.26%` on the mobile traffic.
 
