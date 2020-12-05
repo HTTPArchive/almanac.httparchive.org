@@ -100,24 +100,20 @@ We identified 2,863 different values for the `lang` attribute on the `html` star
 
 22.36% of all documents specify no `lang` attribute. The commonly accepted view is that [they should](https://www.w3.org/TR/i18n-html-tech-lang/#overall), but beside the idea that software could eventually [detect language automatically](https://meiert.com/en/blog/lang/), document language can also be specified [on the protocol level](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language). This is something we didn't check.
 
-Here are the 10 most popular (normalized) languages in our sample. At first we contemplated merging same-language values like `en-US` and `en-GB`, but the difference was pronounced, so we decided not to do so.
+Here are the 10 most popular (normalized) languages in our sample. It's important to note that the HTTP Archive crawls from US data centers with English language settings, so looking at the language pages are written in will be skewed towards English. Nevertheless we present the `lang` attributes seen to give some context to the sites analyzed.
 
-<figure markdown>
-| Language | Pages (%) |
-|---|---|
-| `en` | 18.08% |
-| `en-us` | 13.27% |
-| `ja` | 5.47% |
-| `es` | 4.09% |
-| `pt-br` | 2.84% |
-| `ru` | 2.53% |
-| `en-gb` | 2.19% |
-| `de` | 1.92% |
-| `de-de` | 1.60% |
-| `ru-ru` | 1.60% |
-
-<figcaption>{{ figure_link(caption="Top 10 <code>lang</code> attribute values.", sheets_gid="2047285366", sql_file="pages_almanac_by_device_and_html_lang.sql") }}</figcaption>
-</figure>
+{{ figure_markup(
+  image="html-lang.png",
+  alt="The top HTML lang attributes.",
+  caption="The top HTML `lang` attributes.",
+  description="Bar chart showing the top 10 `lang` attributes used in our crawl with 22.82% of desktop and 22.36% of mobile pages not setting this, `en` being used on 20.09% and 18.08% respectively, `ja` on 15.17% and 13.27%, `es` on 4.86% and 4.09% , `pt-br` on 2.65% and 2.84%, `ru` on 2.21% 2.53%, `en-gb` on 2.35% and 2.19%, `de` on 1.50% and 1.92%, and finally `fr` being used on 1.55% and 1.43% respectively.",
+  sheets_gid="2047285366",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=1873310240&format=interactive",
+  width=600,
+  height=371,
+  sql_file="pages_almanac_by_device_and_html_lang.sql"
+  )
+}}
 
 ### Comments
 
