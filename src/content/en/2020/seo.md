@@ -15,7 +15,7 @@ results: https://docs.google.com/spreadsheets/d/1ram47FshAjzvbQVJbAQPgxZN7PPOPCK
 queries: 07_SEO
 featured_quote: Despite the growing use of mobile devices and Google's move to a Mobile first index, non-trivial disparities were found across mobile vs. desktop pages, like the one between mobile and desktop links.
 featured_stat_1: 10.84%
-featured_stat_label_1: Mobile home pages are not including the viewport tag
+featured_stat_label_1: Mobile pages are not including the viewport tag
 featured_stat_2: 19.96%
 featured_stat_label_2: Mobile websites scored 'Good' Core Web Vitals
 featured_stat_3: 11.5%
@@ -185,7 +185,7 @@ Interestingly, rendering changed the meta robots tag in 0.16% of pages. While th
 - Although self-referencing canonical tags are sometimes used, these aren't a requirement.
 
 {# TODO(authors): The intro disclaims upfront that the dataset is limited to home pages. Consider generalizing to "mobile/desktop pages" throughout the rest of the chapter. #}
-[In last year's chapter](../2019/seo#canonicalization), it was identified that 48.34% of mobile home pages were using a canonical tag. This year the number of mobile home pages featuring a canonical tag has grown to 53.61%.
+[In last year's chapter](../2019/seo#canonicalization), it was identified that 48.34% of mobile pages were using a canonical tag. This year the number of mobile  pages featuring a canonical tag has grown to 53.61%.
 
 {# TODO(analysts): It's not clear that B and C add up to A in this chart. It took me a while to realize that they weren't each different types of tags. If the total of 53.61% is significant, I'd recommend a "big number" figure to call attention to it, and only include B and C in this chart. #}
 {{ figure_markup(
@@ -197,31 +197,31 @@ Interestingly, rendering changed the meta robots tag in 0.16% of pages. While th
   sql_file="pages_wpt_bodies_by_device.sql"
 ) }}
 
-When analyzing this year's mobile home pages canonical tag configuration, it was detected that 45.31% of them were self-referential and 8.45% were pointing to different URLs as the canonical ones.
+When analyzing this year's mobile pages canonical tag configuration, it was detected that 45.31% of them were self-referential and 8.45% were pointing to different URLs as the canonical ones.
 
 {# TODO(authors): Consider omitting desktop-specific interpretations unless they're particularly interesting to note beyond the mobile stats. #}
-On the other hand, 51.85% of the desktop home pages were found to be featuring a canonical tag this year, with 47.88% being self-referential and 4.10% pointing to a different URL.
+On the other hand, 51.85% of the desktop pages were found to be featuring a canonical tag this year, with 47.88% being self-referential and 4.10% pointing to a different URL.
 
-Not only do mobile home pages include more canonical tags than desktop ones (53.61% vs. 51.85%), there are relatively more mobile homes pages canonicalizing to other URLs than their desktop counterparts (8.45% vs. 4.10%). This could be explained by the usage of an independent (or separate) mobile web version by some sites that need to canonicalize to their desktop URLs alternates.
+Not only do mobile pages include more canonical tags than desktop ones (53.61% vs. 51.85%), there are relatively more mobile homes pages canonicalizing to other URLs than their desktop counterparts (8.45% vs. 4.10%). This could be explained by the usage of an independent (or separate) mobile web version by some sites that need to canonicalize to their desktop URLs alternates.
 
-Canonical URLs can be specified through different methods: by using the canonical link via the HTTP headers or the HTML `head` of a page, or by submitting them in XML sitemaps. When analyzing which is the most popular canonical link implementation method, it was found that only 1.03% of desktop home pages and 0.88% of mobile ones are relying on the HTTP headers for their implementation, meaning that canonical tags are prominently implemented via the HTML `head` of a page.
+Canonical URLs can be specified through different methods: by using the canonical link via the HTTP headers or the HTML `head` of a page, or by submitting them in XML sitemaps. When analyzing which is the most popular canonical link implementation method, it was found that only 1.03% of desktop pages and 0.88% of mobile ones are relying on the HTTP headers for their implementation, meaning that canonical tags are prominently implemented via the HTML `head` of a page.
 
 {# TODO(analysts): Should "HTTP Head" be "HTTP Header" to distinguish it from HTML head? #}
 {{ figure_markup(
   image="seo-canonical-implementation-method.png",
   caption="Usage of HTTP header and HTML <code>head</code> canonicalization methods.",
-  description="Bar chart showing the canonical tag implementation method. We observed that only 1.03% of desktop home pages and 0.88% of mobile ones are relying on the HTTP headers for their implementation, meaning that canonical tags are prominently implemented via the HTML head of a page.",
+  description="Bar chart showing the canonical tag implementation method. We observed that only 1.03% of desktop pages and 0.88% of mobile ones are relying on the HTTP headers for their implementation, meaning that canonical tags are prominently implemented via the HTML head of a page.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=542127514&format=interactive",
   sheets_gid="337739550",
   sql_file="pages_wpt_bodies_by_device.sql"
 ) }}
 
-When analyzing the canonical tag implemented in the raw HTML versus those relying on client-side JavaScript rendering, we identified that 0.68% of the mobile home pages and 0.54% of the desktop ones include a canonical tag in the rendered but not the raw HTML. This means that there's only a very small number of pages that are relying on JavaScript to implement canonical tags.
+When analyzing the canonical tag implemented in the raw HTML versus those relying on client-side JavaScript rendering, we identified that 0.68% of the mobile pages and 0.54% of the desktop ones include a canonical tag in the rendered but not the raw HTML. This means that there's only a very small number of pages that are relying on JavaScript to implement canonical tags.
 
 {# TODO(authors, editors): Consider rephrasing into two sentences. Also explain what the conflict is and what causes it. #}
-On the other hand, in 0.93% of the mobile home pages and 0.76% of the desktop ones, we saw canonical tags implemented via both the raw and the rendered HTML, and there's a conflict between the URL specified in the raw versus the rendered HTML of the same pages, which can generate issues.
+On the other hand, in 0.93% of the mobile pages and 0.76% of the desktop ones, we saw canonical tags implemented via both the raw and the rendered HTML, and there's a conflict between the URL specified in the raw versus the rendered HTML of the same pages, which can generate issues.
 
-A similar conflict can be found with the different implementation methods, with 0.15% of the mobile home pages and 0.17% of the desktop ones showing conflicts between the canonical tags implemented via their HTTP headers and HTML `head`.
+A similar conflict can be found with the different implementation methods, with 0.15% of the mobile pages and 0.17% of the desktop ones showing conflicts between the canonical tags implemented via their HTTP headers and HTML `head`.
 
 ### Content
 
@@ -263,7 +263,7 @@ The median mobile site also displays 11.5% more words when rendered than its raw
 
 Across our sample set, there are disparities across the combination of mobile/desktop and rendered/non-rendered. This suggests that although search engines are continually improving in this area, most sites across the web are missing out on opportunities to improve their organic search visibility through a stronger focus on ensuring their content is available and indexable. This is also a concern because the lion's share of available SEO tools do not crawl in the above combination of contexts and automatically identify this as an issue.
 
-This year, the median desktop home page was found to have 402 words and the mobile page had 348 words. While [last year](../2019/seo#word-count), the median desktop home page had 346 words, and the median mobile home page had a slightly lower word count at 306 words. This represents 16.2% and 13.7% growth respectively.
+This year, the median desktop page was found to have 402 words and the mobile page had 348 words. While [last year](../2019/seo#word-count), the median desktop page had 346 words, and the median mobile page had a slightly lower word count at 306 words. This represents 16.2% and 13.7% growth respectively.
 
 #### Headings
 
@@ -362,14 +362,14 @@ We examined these features to see how pages are quantitatively aligning with bes
 
 The page title is shown as the anchor text in search engine results and is generally considered one of the most valuable on-page elements that impacts a page's ability to rank.
 
-When analyzing the usage of the `title` tag, we found that 99% of desktop and mobile home pages have one. This represents a slight improvement since [last year](../2019/seo#page-titles), when 97% of mobile pages had a `title` tag.
+When analyzing the usage of the `title` tag, we found that 99% of desktop and mobile pages have one. This represents a slight improvement since [last year](../2019/seo#page-titles), when 97% of mobile pages had a `title` tag.
 
-The median home page features a page title that is six words long. There is no difference in the word count between the mobile and desktop contexts within our dataset. This suggests that the page title element is an element that is not modified between different page template types.
+The median page features a page title that is six words long. There is no difference in the word count between the mobile and desktop contexts within our dataset. This suggests that the page title element is an element that is not modified between different page template types.
 
 {{ figure_markup(
   image="seo-title-word-count.png",
   caption="Distribution of the number of words per page title.",
-  description="Bar chart showing the number of words in the title tag per percentile (10, 25, 50, 75, and 90). The median home page features a page title that is six words long. There is no difference in the word count between the mobile and desktop contexts within our dataset",
+  description="Bar chart showing the number of words in the title tag per percentile (10, 25, 50, 75, and 90). The median page features a page title that is six words long. There is no difference in the word count between the mobile and desktop contexts within our dataset",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=2028212539&format=interactive",
   sheets_gid="775602646",
   sql_file="pages_wpt_bodies_by_device_and_percentile.sql"
@@ -391,7 +391,7 @@ The median page title character count is 38 characters on both mobile and deskto
 
 The meta description acts as the advertising tagline for a web page. Although [a recent study](https://www.searchenginejournal.com/google-rewrites-meta-descriptions-over-70-of-the-time/382140/) suggests that this tag is ignored and rewritten by Google 70% of the time, it is an element that is prepared with the goal of enticing a user to click through.
 
-When analyzing the usage of meta descriptions, we found that 68.62% of desktop home pages and 68.22% of mobile home pages have one. Although this may be surprisingly low, it is a slight improvement from [last year](../2019/seo#meta-descriptions), when only 64.02% of mobile home pages had a meta description.
+When analyzing the usage of meta descriptions, we found that 68.62% of desktop pages and 68.22% of mobile pages have one. Although this may be surprisingly low, it is a slight improvement from [last year](../2019/seo#meta-descriptions), when only 64.02% of mobile pages had a meta description.
 
 {{ figure_markup(
   image="seo-meta-description-word-length.png",
@@ -456,7 +456,7 @@ We found that the median page contains `alt` attributes on only 51.22% of their 
   image="seo-percentage-of-img-alt-attributes-present.png",
   alt="Distribution of the percent of images having alt attributes per page",
   caption="Distribution of the percent of images having `alt` attributes per page.",
-  description="Bar chart showing the percentage of `alt` attributes present per percentile (10, 25, 50, 75, and 90). It was found that only 53.86% of desktop and 51.22% of mobile home pages featured image `alt` attributes.",
+  description="Bar chart showing the percentage of `alt` attributes present per percentile (10, 25, 50, 75, and 90). It was found that only 53.86% of desktop and 51.22% of mobile pages featured image `alt` attributes.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=827771545&format=interactive",
   sheets_gid="1317352222",
   sql_file="pages_markup_by_device_and_percentile.sql"
@@ -480,12 +480,12 @@ Modern search engines use hyperlinks between pages for the discovery of new cont
 
 #### Outgoing links
 
-The median desktop home page includes 76 outgoing links while the median mobile home page has 67. Historically, the direction from Google suggested that links be limited to 100 per page. While that recommendation is outdated on the modern web, the median page in our dataset adheres to it.
+The median desktop page includes 76 outgoing links while the median mobile page has 67. Historically, the direction from Google suggested that links be limited to 100 per page. While that recommendation is outdated on the modern web, the median page in our dataset adheres to it.
 
 {{ figure_markup(
   image="seo-outgoing-links.png",
   caption="Distribution of the number of outgoing links per page.",
-  description="Bar chart showing the number of outgoing links per percentile (10, 25, 50, 75, and 90). The median desktop home page features 76 outgoing links while the median mobile home page features 67.",
+  description="Bar chart showing the number of outgoing links per percentile (10, 25, 50, 75, and 90). The median desktop page features 76 outgoing links while the median mobile page features 67.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=284216213&format=interactive",
   sheets_gid="775602646",
   sql_file="pages_wpt_bodies_by_device_and_percentile.sql"
@@ -504,12 +504,12 @@ The median page has 61 outgoing internal links on desktop and 54 on mobile. This
 ) }}
 
 {# TODO(authors): Add your interpretation of these results. What do you hope readers will get out of it? If there's not much to say, would anyone miss it if it was dropped? Also, please clarify the redundancy of outgoing and external for a non-SEO like myself :) #}
-The median home page is linking to external sites 7 times on desktop and 6 times on mobile.
+The median page is linking to external sites 7 times on desktop and 6 times on mobile.
 
 {{ figure_markup(
   image="seo-outgoing-links-external.png",
   caption="Distribution of the number of outgoing expernal links per page.",
-  description="Bar chart showing the number of external outgoing links per percentile (10, 25, 50, 75, and 90). The median home page is linking to external sites 7 times on desktop and 6 times on mobile.",
+  description="Bar chart showing the number of external outgoing links per percentile (10, 25, 50, 75, and 90). The median page is linking to external sites 7 times on desktop and 6 times on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=391564643&format=interactive",
   sheets_gid="775602646",
   sql_file="pages_wpt_bodies_by_device_and_percentile.sql"
@@ -534,14 +534,14 @@ There is a disparity in the links between mobile and desktop that will negativel
 
 In September of 2019, [Google introduced attributes](https://webmasters.googleblog.com/2019/09/evolving-nofollow-new-ways-to-identify.html) that allow publishers to classify links as being sponsored or user generated content. These attributes are in addition to `rel=nofollow` which was previously [introduced in 2005](https://googleblog.blogspot.com/2005/01/preventing-comment-spam.html). The new attributes, `rel=ugc` and `rel=sponsored`, are meant to clarify or qualify the reason as to why these links are appearing on a given web page.
 
-Our review of pages indicates that 28.58% of home pages include `rel=nofollow` attributes on desktop and 30.74% on mobile. However, `rel=ugc` and `rel=sponsored` adoption is quite low with less than 0.3% of pages (about 20,000) having either. Since these attributes don't add any more value to a publisher than `rel=nofollow`, it is reasonable to expect that the rate of adoption will continue to be slow.
+Our review of pages indicates that 28.58% of pages include `rel=nofollow` attributes on desktop and 30.74% on mobile. However, `rel=ugc` and `rel=sponsored` adoption is quite low with less than 0.3% of pages (about 20,000) having either. Since these attributes don't add any more value to a publisher than `rel=nofollow`, it is reasonable to expect that the rate of adoption will continue to be slow.
 
 {# TODO(analysts): This chart is unusual in that desktop/mobile are the x-axis values. Can you swap it to be like the other charts where nofollow, sponsored, and ugc are on the x-axis and there are two bars for each? #}
 {{ figure_markup(
   image="seo-nofollow-ugc-sponsored-attributes.png",
   alt="Percent of pages having rel=nofollow, rel=ugc, and rel=sponsored attributes.",
   caption="Percent of pages having `rel=nofollow`, `rel=ugc`, and `rel=sponsored` attributes.",
-  description="Bar chart showing the usage (in percent) of `rel` attributes on desktop and mobile. Our review indicates that 28.58% of home pages feature `nofollow` attributes on their desktop versions and 30.74% on mobile. However, `ugc` and `sponsored` adoption is quite low with less than 0.3% pages featuring either. ",
+  description="Bar chart showing the usage (in percent) of `rel` attributes on desktop and mobile. Our review indicates that 28.58% of pages feature `nofollow` attributes on their desktop versions and 30.74% on mobile. However, `ugc` and `sponsored` adoption is quite low with less than 0.3% pages featuring either. ",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1177251312&format=interactive",
   sheets_gid="1271677392",
   sql_file="pages_robots_txt_by_device_and_status.sql"
@@ -582,7 +582,7 @@ A mobile-friendly website can be implemented through different configurations: b
 
 The browser's viewport is the visible area of a page content, which changes depending on the used device. The `<meta name="viewport">` tag (or viewport meta tag) allows you to specify to browsers the width and scaling of the viewport, so that it is correctly sized across different devices. Responsive websites use the viewport meta tag as well as CSS media queries to deliver a mobile friendly experience.
 
-42.98% of mobile home pages and 43.2% desktop ones are have a viewport meta tag with the `content=initial-scale=1,width=device-width` attribute. However, 10.84% of mobile home pages and 16.18% of desktop ones are not including the tag at all, suggesting that they are not yet mobile friendly.
+42.98% of mobile pages and 43.2% desktop ones are have a viewport meta tag with the `content=initial-scale=1,width=device-width` attribute. However, 10.84% of mobile pages and 16.18% of desktop ones are not including the tag at all, suggesting that they are not yet mobile friendly.
 
 <figure>
   <table>
@@ -634,7 +634,7 @@ The browser's viewport is the visible area of a page content, which changes depe
 
 Media queries are a CSS3 feature that play a fundamental role in responsive web design, as they allow you to specify conditions to apply styling only when the browser and device match certain rules. This allows you to create different layouts for the same HTML depending on the viewport size.
 
-We found that 80.29% of desktop home pages and 82.92% of the mobile ones are using either a `height`, `width`, or `aspect-ratio` CSS feature, meaning that a high percentage of pages have responsive features. The most popularly used features can be seen in the table below.
+We found that 80.29% of desktop pages and 82.92% of the mobile ones are using either a `height`, `width`, or `aspect-ratio` CSS feature, meaning that a high percentage of pages have responsive features. The most popularly used features can be seen in the table below.
 
 <figure>
   <table>
@@ -686,7 +686,7 @@ We found that 80.29% of desktop home pages and 82.92% of the mobile ones are usi
 
 When implementing a mobile friendly website with a dynamic serving configuration -in which you show different HTMLs of the same page based on the used device- it is recommended to add a Vary "User-Agent" HTTP header to help search engines discover the mobile content when crawling the website, as it informs that the response varies depending on the user agent.
 
-Only 13.48% of the mobile home pages and 12.6% of the desktop ones were found to specify a Vary "User-Agent" in their HTTP headers.
+Only 13.48% of the mobile pages and 12.6% of the desktop ones were found to specify a Vary "User-Agent" in their HTTP headers.
 
 ```html
 <link rel="alternate" media="only screen and (max-width: 640px)">
@@ -694,7 +694,7 @@ Only 13.48% of the mobile home pages and 12.6% of the desktop ones were found to
 
 Separate mobile websites are recommended to include the "rel="alternate" media="only screen and (max-width: 640px)"" tag in the head of the HTML of their desktop pages to refer to their mobile versions.
 
-Only 0.64% of the analyzed desktop home pages were found to be including the tag with the specified `media` attribute value.
+Only 0.64% of the analyzed desktop pages were found to be including the tag with the specified `media` attribute value.
 
 ### Web Performance
 
@@ -858,13 +858,13 @@ Values | Mobile | Desktop
 
 #### Content-Language Meta Tag and HTTP Headers
 
-When analyzing the `content-language` usage and values, whether by implementing it as a meta tag in the HTML head or in the HTTP headers it was found that only 8.5% of the mobile home pages and 9.05% of the desktop ones were specifying it in the HTTP headers. Even fewer websites are specifying their language or country with the `content-language` tag in the HTML head, with only 3.63% of mobile home pages and 3.59% of desktop ones featuring the tag.
+When analyzing the `content-language` usage and values, whether by implementing it as a meta tag in the HTML head or in the HTTP headers it was found that only 8.5% of the mobile pages and 9.05% of the desktop ones were specifying it in the HTTP headers. Even fewer websites are specifying their language or country with the `content-language` tag in the HTML head, with only 3.63% of mobile pages and 3.59% of desktop ones featuring the tag.
 
 From a language and country value perspective, it was found that the most popular ones are English (en) and English for the US (`en-us`) that are the ones being specified the most both in the content-language meta-tag and in the HTTP headers.
 
-In the case of English (`en`) it was identified that 4.34% of the desktop and 3.69% of the mobile home pages were specifying it in the HTTP headers and 0.55% of the desktop and 0.48% of the mobile home pages were doing it so via the "content-language" meta tag in the HTML head.
+In the case of English (`en`) it was identified that 4.34% of the desktop and 3.69% of the mobile pages were specifying it in the HTTP headers and 0.55% of the desktop and 0.48% of the mobile pages were doing it so via the "content-language" meta tag in the HTML head.
 
-For English for the US (`en-us`), the second most popular value, it was found that only 1.77% of mobile home pages and 1.7% of desktop ones were specifying it in the HTTP headers and 0.3% of the mobile home pages and 0.36% desktop ones were doing it so in the HTML.
+For English for the US (`en-us`), the second most popular value, it was found that only 1.77% of mobile pages and 1.7% of desktop ones were specifying it in the HTTP headers and 0.3% of the mobile pages and 0.36% desktop ones were doing it so in the HTML.
 
 The rest of the most popular language and country values can be seen in the tables below.
 
@@ -932,9 +932,9 @@ It is also important to note that while AMP usage is not a ranking factor for Go
 
 Additionally, AMP is at the moment a requirement to be featured in Google's Top Stories carousel in mobile search results–which is an important feature for news related publications. However, this will change in May next year, when non-AMP content will become eligible as long as it meets the [Google News content policies](https://support.google.com/news/publisher-center/answer/6204050) and provides a great [page experience](https://developers.google.com/search/docs/guides/page-experience) as [announced by Google in November this year](https://developers.google.com/search/blog/2020/11/timing-for-page-experience).
 
-When checking the usage of AMP as an alternate version of a non-AMP based page, it was found that 0.69% of mobile web home pages and 0.81% of desktop ones were including an "amphtml" tag pointing to an AMP version. Although the adoption is still very low, this is a slight improvement from [last year's AMP related Web Almanac data findings](../2019/seo#amp), in which only 0.62% of mobile home pages contained a link to an AMP version.
+When checking the usage of AMP as an alternate version of a non-AMP based page, it was found that 0.69% of mobile web pages and 0.81% of desktop ones were including an "amphtml" tag pointing to an AMP version. Although the adoption is still very low, this is a slight improvement from [last year's AMP related Web Almanac data findings](../2019/seo#amp), in which only 0.62% of mobile pages contained a link to an AMP version.
 
-On the other hand, when assessing the usage of AMP as a framework to develop websites, it was found that only 0.18% of Mobile home pages and 0.07% of Desktop ones were featuring an HTML AMP or emoji attribute, which are used to specify AMP based pages.
+On the other hand, when assessing the usage of AMP as a framework to develop websites, it was found that only 0.18% of mobile pages and 0.07% of desktop ones were featuring an HTML AMP or emoji attribute, which are used to specify AMP based pages.
 
 ### Single Page Applications (SPAs)
 
@@ -952,18 +952,18 @@ Similarly, Vue.js saw a drop to 3.45% from the previous year's 8.15%. Angular wa
 
 ## Conclusion
 
-Consistent with what was found and [concluded last year](../2019/seo#conclusion), most sites have crawlable and indexable desktop and mobile home pages, and are making use of the fundamental SEO related configurations.
+Consistent with what was found and [concluded last year](../2019/seo#conclusion), most sites have crawlable and indexable desktop and mobile pages, and are making use of the fundamental SEO related configurations.
 
 It is important to highlight how the link discoverability for major JS frameworks used for SPAs increased dramatically compared to 2019. By testing mobile navigation links for hashed URLs, we saw -53%  instances of uncrawlable links from sites using React, -58% fewer from Vue.js powered sites, and a -91% reduction from Angular SPAs.
 
 Additionally, it was also identified that there has been a slight improvement from last year's findings across many of the analyzed areas:
 
 - **Robots.txt**: Last year 72.16% of mobile sites had a valid `robots.txt` vs. 74.91%  this year.
-- **Canonical tag**: Last year it was identified that 48.34% of mobile home pages were using a canonical tag vs. 53.61% this year.
-- **Title element**: This year it was found that 98.75% of the desktop home pages are featuring one, while 98.7% of mobile home pages are also including it. Last year it was found that 97.1% of mobile pages were featuring a title tag.
-- **Meta Description**: This year, 68.62% of desktop home pages and 68.22% of mobile ones were found to be featuring a meta description, an improvement from last year when it was found that 64.02% of mobile home pages had one.
+- **Canonical tag**: Last year it was identified that 48.34% of mobile pages were using a canonical tag vs. 53.61% this year.
+- **Title element**: This year it was found that 98.75% of the desktop pages are featuring one, while 98.7% of mobile pages are also including it. Last year it was found that 97.1% of mobile pages were featuring a title tag.
+- **Meta Description**: This year, 68.62% of desktop pages and 68.22% of mobile ones were found to be featuring a meta description, an improvement from last year when it was found that 64.02% of mobile pages had one.
 - **Structured Data**: Despite the fact that reviews are not supposed to be associated with home pages the data indicates that `AggregateRating` is up 23.9% on mobile and 23.7% on desktop.
-- **Images' `alt` attribute**: This year, 53.86% of desktop and 51.22% of mobile home pages featured image `alt` attributes. Although this might seem low, it is an improvement from last year when it was found that 46.71% of mobile pages used `alt` attributes on all of their images.
+- **Images' `alt` attribute**: This year, 53.86% of desktop and 51.22% of mobile pages featured image `alt` attributes. Although this might seem low, it is an improvement from last year when it was found that 46.71% of mobile pages used `alt` attributes on all of their images.
 - **HTTPS usage**: 77.44% of desktop pages and 73.22% of mobile pages have adopted HTTPS. This is up 10.38% from last year.
 
 However, not everything has improved vs. last year configurations.
@@ -974,7 +974,7 @@ It is also important to note how there's still an important opportunity for impr
 
 Despite the growing use of mobile devices and Google's move to a Mobile first index:
 
- - 10.84% of mobile home pages and 16.18% of desktop ones are not including the viewport tag at all, suggesting that they are not yet mobile friendly.
+ - 10.84% of mobile pages and 16.18% of desktop ones are not including the viewport tag at all, suggesting that they are not yet mobile friendly.
  - Non-trivial disparities were found across mobile vs. desktop pages, like the one between mobile and desktop links, illustrated in the 62 links on mobile versus the 68 links on desktop for the median web page.
  - 33.13% of websites scored 'Good' Core Web Vitals for desktop while only 19.96% of their mobile counterparts passed the Core Web Vitals assessment, meaning that desktop continues to be the more performant platform for users.
 
