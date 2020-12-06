@@ -546,7 +546,8 @@ The median page has 61 outgoing internal links (those links going to other pages
 ) }}
 
 {# TODO(authors): Add your interpretation of these results. What do you hope readers will get out of it? If there's not much to say, would anyone miss it if it was dropped? Also, please clarify the redundancy of outgoing and external for a non-SEO like myself :) #}
-The median page is linking to external sites 7 times on desktop and 6 times on mobile.
+The median page is linking to external sites 7 times on desktop and 6 times on mobile. This is a decrease from last year, when it was found that the median number of external links per page were 10 in desktop and 8 on mobile. This decrease in outgoing external links could suggest that websites are now being more careful when linking to other sites, whether to avoid passing link popularity or referring users to them. 
+
 
 {{ figure_markup(
   image="seo-outgoing-links-external.png",
