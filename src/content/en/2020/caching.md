@@ -633,13 +633,13 @@ If we break this out by HTTP vs HTTPS, then this gets even more interesting. Eve
 <figure>
   <table>
     <tr>
-     <th> </th>   
+     <th> </th>
      <th>http</th>
      <th>https</th>
      <th>Total</th>   
     </tr>
     <tr>
-     <th scope="row">Sites using service worker</th>
+     <td>Sites using service worker</td>
      <td>1,469</td>
      <td>62,904</td>
      <td>64,373</td>      
