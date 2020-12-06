@@ -199,7 +199,6 @@ Interestingly, rendering changed the meta robots tag in 0.16% of pages. While th
 
 When analyzing this year's mobile pages canonical tag configuration, it was detected that 45.31% of them were self-referential and 8.45% were pointing to different URLs as the canonical ones.
 
-{# TODO(authors): Consider omitting desktop-specific interpretations unless they're particularly interesting to note beyond the mobile stats. #}
 On the other hand, 51.85% of the desktop pages were found to be featuring a canonical tag this year, with 47.88% being self-referential and 4.10% pointing to a different URL.
 
 Not only do mobile pages include more canonical tags than desktop ones (53.61% vs. 51.85%), there are relatively more mobile homes pages canonicalizing to other URLs than their desktop counterparts (8.45% vs. 4.10%). This could be explained by the usage of an independent (or separate) mobile web version by some sites that need to canonicalize to their desktop URLs alternates.
@@ -717,123 +716,73 @@ We found that 80.29% of desktop pages and 82.92% of the mobile ones are using ei
   </figcaption>
 </figure>
 
-#### Vary User-Agent in HTTP Header
+#### `Vary: User-Agent`
 
-When implementing a mobile friendly website with a dynamic serving configuration -in which you show different HTMLs of the same page based on the used device- it is recommended to add a Vary "User-Agent" HTTP header to help search engines discover the mobile content when crawling the website, as it informs that the response varies depending on the user agent.
+When implementing a mobile friendly website with a dynamic serving configuration—one in which you show different HTMLs of the same page based on the used device—it is recommended to add a `Vary: User-Agent` HTTP header to help search engines discover the mobile content when crawling the website, as it informs that the response varies depending on the user agent.
 
-Only 13.48% of the mobile pages and 12.6% of the desktop ones were found to specify a Vary "User-Agent" in their HTTP headers.
+Only 13.48% of the mobile pages and 12.6% of the desktop pages were found to specify a `Vary: User-Agent` header.
 
 ```html
 <link rel="alternate" media="only screen and (max-width: 640px)">
 ```
 
-Separate mobile websites are recommended to include the "rel="alternate" media="only screen and (max-width: 640px)"" tag in the head of the HTML of their desktop pages to refer to their mobile versions.
+Desktop websites that have separate mobile versions are recommended to link to them using this tag in the `head` of their HTML. Only 0.64% of the analyzed desktop pages were found to be including the tag with the specified `media` attribute value.
 
-Only 0.64% of the analyzed desktop pages were found to be including the tag with the specified `media` attribute value.
+### Web performance
 
-### Web Performance
+Having a fast-loading website is fundamental to provide a great user search experience. Because of its importance, it has been taken into consideration as a ranking factor by search engines for years. Google initially announced using site speed as a [ranking factor in 2010](https://webmasters.googleblog.com/2010/04/using-site-speed-in-web-search-ranking.html), and then [in 2018 did the same for mobile searches](https://webmasters.googleblog.com/2018/01/using-page-speed-in-mobile-search.html).
 
-Having a fast loading website is fundamental to provide a great user search experience. Because of its importance it has been taken into consideration as a ranking factor by search engines since many years ago. Google initially announced using site speed as a [ranking factor since 2010](https://webmasters.googleblog.com/2010/04/using-site-speed-in-web-search-ranking.html), and then [in 2018 did the same for mobile searches](https://webmasters.googleblog.com/2018/01/using-page-speed-in-mobile-search.html).
-
-As of November 2020, 3 performance metrics known as [Core Web Vital](https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html) are roadmapped to be a ranking factor as part of the "page experience" signals since May 2021. Sites should expect Googlebot to crawl using its [mobile user-agent](https://support.google.com/webmasters/answer/1061943) with the [Chromium](https://webmasters.googleblog.com/2019/10/updating-user-agent-of-googlebot.html) version details updating as the web Rendering Service updates with new Chromium releases.
-
-#### Lighthouse v6 and Web Core Vitals
-
-
-For SEOs, performance disambiguated from "speed" with changes to Lighthouse's core measurement methodology in update to version 6.  Lighthouse is the scoring tool that populates key SEO performance tools such as web.dev, Chrome DevTools, and PageSpeed Insights.
-Previously, performance scores and methods of measurement varied by tool.  Google announced a set of unified performance metrics called [Core Web Vitals](https://developers.google.com/search/blog/2020/05/evaluating-page-experience) in May 2020.
-
-Each of the metrics aligns to a phase in a user's experience.  The data source is the [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report/) (Crux).  This field data is aggregated from users who have opted-in to syncing their browsing history, have not set up a Sync passphrase, and have usage statistic reporting enabled.
-
-Core Web Vitals consist of:
-
+{# NOTE(authors): I've made some ruthless edits to this section to remove everything related to synthetic measurement of CWV, including the entire Lighthouse discussion, which is orthogonal to the real-user aspect of CWV. Please push back if you disagree with any of these edits. #}
+As announced in November 2020, three performance metrics known as [Core Web Vitals](https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html) are on track to be a ranking factor as part of the "page experience" signals in May 2021. Core Web Vitals consist of:
 
 **[Largest Contentful Paint](https://web.dev/lcp/) (LCP)**
-- Represents: Perceived loading experience
-- Measurement: the point in the page load timeline when the page's largest image or text block is visible within the viewport.
+- Represents: user-perceived loading experience
+- Measurement: the point in the page load timeline when the page's largest image or text block is visible within the viewport
 - Goal: <2.5 seconds
-- Lighthouse v6 Performance Score Weight: 25%
 
 **[First Input Delay](https://web.dev/fid/) (FID)**
-- Represents: Responsiveness to user input
-- Measurement: the time from when a user first interacts with a page to the time when the browser is actually able to begin processing event handlers in response to that interaction.
-- Noteworthy: [Total Blocking Time](https://web.dev/tbt/) (TBT) is the lab data counterpart for First Input Delay (FID)
+- Represents: responsiveness to user input
+- Measurement: the time from when a user first interacts with a page to the time when the browser is actually able to begin processing event handlers in response to that interaction
 - Goal: <300 milliseconds
-- Lighthouse v6 Performance Score Weight: 25% (as Total Blocking Time)
 
 **[Cumulative Layout Shift](https://web.dev/cls/) (CLS)**
-- Represents: Visual stability
-- Measurement: a calculation based on the number of frames in which element(s) visually moves and the total distance in pixels the element(s) moved.
-- Goal: >0.10
-- Lighthouse v6 Performance Score Weight: 5%
+- Represents: visual stability
+- Measurement: the sum of the number of _layout shift scores_ approximating the percent of the viewport that shifted
+- Goal: <0.10
 
-In light of COVID-19, Google clarified in their official post that no immediate action is required.  Search Console now includes a [Core Web Vitals report](https://search.google.com/search-console/not-verified?original_url=/search-console/core-web-vitals) to help sites improve performance.  The report includes URL specific data grouped together by status, metric type, and URL group (groups of similar web pages).  In order to anonymize user data, a  minimum data threshold is in place.  If a URL does not have enough data from the Crux report, it is omitted.
+#### Core Web Vitals experiences per device
 
-In the announcement of updates to core measurement, Lighthouse shared their analysis of performance scoring differences between versions 5 and 6. The [limited data set](https://docs.google.com/spreadsheets/d/1BZFh7AyyaLHCj5LGAbrn3m72ysu4yv8okyHG-f3MoXI/edit#gid=1984498811) saw ~18.67% of sites improve, 33.33% with no change, and 48.00% score lower.
+Desktop continues to be the more performant platform for users despite more users on mobile devices. 33.13% of websites scored _Good_ Core Web Vitals for desktop while only 19.96% of their mobile counterparts passed the Core Web Vitals assessment.
 
-Analysts for the Web Almanac saw marked different performance distribution scores between the versions.  Refer to the Performance Chapter of the Web Almanac for an in depth comparison between versions 5 and 6.
-
-In tests using v5 of Lighthouse, 15.44% of pages tested scored at or above the 'passing' 85% score. Tests using Version 6 saw only 8.39% of tests achieve a passing score.
-
-<figure markdown>
-  | Percentage of v5 Tests | Percentage of v6 Tests
--- | -- | --
-Good | 15.44% | 8.39%
-Average | 25.49% | 20.19%
-Poor | 59.06% | 71.42%
-
-<figcaption>{{ figure_link(caption="Good, Average and Poor ratios of Lighthouse v5 versus v6", sheets_gid="692150551", sql_file="TODO..sql") }}</figcaption>
-</figure>
-
-It is important to note that two of the three new metrics in v6 make up 50% of the weighted performance score. This change in focus sets new, more refined goals. Overall, most pages saw minimal impact with 83.32% of tests shifting ten points or less on the shift to v6.
-
-{{ figure_markup(
-  image="seo-lighthouse-v5-vs-v6.png",
-  caption="Lighthouse Performance score difference between versions 5 and 6",
-  description="Horizontal bar chart showing the score difference between Lighthouse V5 and V6. In tests using v5 of Lighthouse, 15.44% of pages tested scored at or above the 'passing' 85% score. Tests using Version 6 saw only 8.39% of tests achieve a passing score.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=976167005&format=interactive",
-  sheets_gid="1909295182",
-  sql_file="lighthouse.sql"
-  )
-}}
-
-Lighthouse v6 and with it the integration of Core Web Vitals rolled out across Google products with the release of Chrome 84 in July 2020. Chrome DevTools Audits panel was renamed to Lighthouse. Pagespeed insights and Google Search Console also reference these unified metrics.
-
-More information on the Lighthouse performance testing results and score details is available in the Performance section.
-
-#### Web vitals and other CrUX Metrics per Device
-
-Desktop continues to be the more performant platform for users despite more users on mobile devices. 33.13% of websites scored 'Good' Core Web Vitals for desktop while only 19.96% of their mobile counterparts passed the Core Web Vitals assessment.
-
+{# TODO(analysts): Please double check the following two sql_files, as these metrics are related to Lighthouse. #}
 {{ figure_markup(
   image="seo-good-core-web-vitals-score-per-device.png",
-  caption="Good Core Web Vitals score per device",
-  description="Bar chart showing the percent of websites with a good core web vitals score per device. 33.13% of websites scored 'Good' Core Web Vitals for desktop while only 19.96% of their mobile counterparts passed the Core Web Vitals assessment.",
+  caption="Percent of websites passing the Core Web Vitals assessment per device.",
+  description="Bar chart showing the percent of websites with a good core web vitals score per device. 33.13% of websites scored _Good_ Core Web Vitals for desktop while only 19.96% of their mobile counterparts passed the Core Web Vitals assessment.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1601210449&format=interactive",
   sheets_gid="996380787",
   sql_file="lighthouse.sql"
-  )
-}}
+) }}
 
-#### Web vitals and other CrUX Metrics per Country
+#### Core Web Vitals experiences per country
 
 A user's physical location impacts performance perception as their locally available telecom infrastructure, network bandwidth capacity, and the cost of data create unique loading conditions.
 
-Users located in the United States recorded the largest number of websites with 'Good' Core Web Vitals experiences but these 'Good' accounted for only 31.88% of all websites. At 56.63%, China recorded the highest percentage of 'Good' Core Web Vital experiences. The portion of websites each country represents in the Chrome User Experience Report data set is worth noting as 1,622,765 total origin records generated from users in the United States dwarfs the 21,270 origins requested from users in China.
+{# TODO(authors): China isn't included in this chart because it has a smaller number of websites. Is it worth discussing Korea instead so readers can see how it compares? #}
+Users located in the United States recorded the largest absolute number of websites with _Good_ Core Web Vitals experiences, but relatively, these accounted for only 31.88% of all websites. At 56.63%, China recorded the highest percentage of 'Good' Core Web Vital experiences. The portion of websites each country represents in the Chrome User Experience Report data set is worth noting as 1,622,765 total websites generated from users in the United States dwarfs the 21,270 websites requested from users in China.
 
 {{ figure_markup(
   image="seo-aggregate-cwv-performance-by-country.png",
-  caption="Aggregate CWV performance by country",
+  caption="Percent of websites passing the Core Web Vitals assessment per country.",
   description="Horizontal bar chart showing the aggregate core web vitals performance by country.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=2077593128&format=interactive",
   sheets_gid="220428774",
   sql_file="lighthouse.sql",
   width=645,
   height=792
-  )
-}}
+) }}
 
-Additional analysis on Core Web Vitals performance by dimensions such as connection type and metric-specific details are available in the [Performance chapter](./performance).
+Additional analyses of Core Web Vitals performance by dimensions by effective connection type and specific metrics are available in the [Performance chapter](./performance).
 
 ### Internationalization
 
