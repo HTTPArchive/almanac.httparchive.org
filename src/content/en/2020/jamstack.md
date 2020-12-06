@@ -12,7 +12,7 @@ ahmadawais_bio: Ahmad Awais is an award-winning open-source engineer, Google Dev
 discuss: 2053
 results: https://docs.google.com/spreadsheets/d/1BCC5Q4tePpTl8TiaGmSxBc9Lh2to7xBfVPMULFOBwvk/
 queries: 17_Jamstack
-featured_quote: Stats suggest almost twice as many Jamstack sites exist now than in 2019. Developers enjoy a better development experience but that doesn't always translate to a better user experience. Let’s work towards continued progress for improving the real-user experience of browsing Jamstack sites.
+featured_quote: Stats suggest almost twice as many Jamstack sites exist now than in 2019. Developers enjoy a better development experience by separating the frontend from the backend. But what about the real-user experience of browsing Jamstack sites?
 featured_stat_1: 154%
 featured_stat_label_1: more mobile websites built with Jamstack in 2020
 featured_stat_2: 1 gram
