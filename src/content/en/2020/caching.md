@@ -639,7 +639,7 @@ If we break this out by HTTP vs HTTPS, then this gets even more interesting. Eve
      <th>Total</th>   
     </tr>
     <tr>
-     <td><span style="font-weight:bold">Sites using service worker</span></td>
+     <th scope="row">Sites using service worker</th>
      <td>1,469</td>
      <td>62,904</td>
      <td>64,373</td>      
