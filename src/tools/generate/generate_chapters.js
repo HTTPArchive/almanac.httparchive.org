@@ -14,6 +14,7 @@ const { wrap_tables } = require('./wrap_tables');
 const { remove_unnecessary_markup } = require('./remove_unnecessary_markup');
 const { generate_ebooks } = require('./generate_ebooks');
 const { generate_js } = require('./generate_js');
+const { generate_syntax_highlighting } = require('./generate_syntax_highlighting');
 
 const converter = new showdown.Converter({ tables: true, metadata: true });
 converter.setFlavor('github');
@@ -31,9 +32,9 @@ const generate_chapters = async (chapter_match) => {
   let chapter_config = {};
   let featured_quotes = {};
   let re;
-  
+
   configs = await get_yearly_configs();
-  for (const year in configs) {  
+  for (const year in configs) {
     sitemap_languages[year] = configs[year].settings[0].supported_languages;
     for (const part in configs[year].outline) {
       for (const chapter in configs[year].outline[part].chapters) {
@@ -46,7 +47,7 @@ const generate_chapters = async (chapter_match) => {
       }
     }
   }
-  
+
   if (chapter_match) {
     // Remove any trailing .md and replace all paths with brackets to capture components
     // en/2019/javascript.md -> (en)/(2019)/(javascript).md
@@ -121,6 +122,7 @@ const parse_file = async (markdown,chapter) => {
   let body = html;
 
   const m = converter.getMetadata();
+  body = generate_syntax_highlighting(body);
   body = generate_header_links(body);
   body = generate_figure_ids(body);
   body = wrap_tables(body);

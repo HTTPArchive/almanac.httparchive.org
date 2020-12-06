@@ -130,6 +130,17 @@
 
 .index li li li a {
   padding-left: 48px;
+  padding-left: 3rem;
+}
+
+.index li li li li a {
+  padding-left: 64px;
+  padding-left: 4rem;
+}
+
+.index li li li li li a {
+  padding-left: 80px;
+  padding-left: 5rem;
 }
 
 .index li::before {
@@ -744,24 +755,4 @@ pre {
 
 .code-block code {
   width: 100%;
-}
-
-.code-comment {
-  color: #006400;
-}
-
-.code-keyword {
-  color: #4a3244;
-}
-
-.code-function {
-  color: #1a2b49;
-}
-
-.code-string {
-  color: #2c4a73;
-}
-
-.code-number {
-  color: #00f;
 }

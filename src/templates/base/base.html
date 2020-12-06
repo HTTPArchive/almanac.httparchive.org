@@ -770,7 +770,7 @@
 %}
 
 {# Add the chapter path to image and set the link #}
-{% if image and not image.startswith("/") and not image.startswith("http") %}{% set image="/static/images/%s/%s/%s" % (year, metadata.get('chapter'), image) %}{% endif %}
+{% if image and not image.startswith("/") and not image.startswith("https") %}{% set image="/static/images/%s/%s/%s" % (year, metadata.get('chapter'), image) %}{% endif %}
 {# Set the link as appropriate if not provided #}
 {% if not link and video %}{% set link=video %}{% elif not link %}{% set link=image %}{% endif %}
 

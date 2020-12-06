@@ -14,6 +14,7 @@ The Web Almanac is available in the original [English](https://almanac.httparchi
 - [Chinese (Simplified)](https://almanac.httparchive.org/zh-CN/)
 - [Chinese (Traditional)](https://almanac.httparchive.org/zh-TW/)
 - [French](https://almanac.httparchive.org/fr/)
+- [Hindi](https://almanac.httparchive.org/hi/)
 - [Japanese](https://almanac.httparchive.org/ja/)
 - [Portuguese](https://almanac.httparchive.org/pt/)
 - [Russian](https://almanac.httparchive.org/ru/)

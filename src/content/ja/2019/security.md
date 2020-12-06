@@ -102,7 +102,7 @@ Web Almanacのこの章では、Web上のセキュリティの現状を見てい
 
 ### 認証キーの種類
 
-HTTPSを使用するという重要な要件と並行して、適切な構成を使用するという要件もあります。非常に多くの設定オプションと選択肢があるため、これは慎重にバランスを取る必要があります。  
+HTTPSを使用するという重要な要件と並行して、適切な構成を使用するという要件もあります。非常に多くの設定オプションと選択肢があるため、これは慎重にバランスを取る必要があります。
 
 まず、認証に使用される鍵について見ていきましょう。従来、証明書はRSAアルゴリズムを使用した鍵に基づいて発行されてきましたが、より新しく優れたアルゴリズムであるECDSA(Elliptic Curve Digital Signature Algorithm — 楕円曲線DSA) を使用しており、RSAアルゴリズムよりも優れた性能を発揮する小さな鍵の使用を可能にしています。私たちのクロールの結果を見ると、ウェブの大部分がRSAを使用していることがわかります。
 
@@ -257,7 +257,7 @@ CSPの一般的なアプローチは、JavaScriptなどのコンテンツをペ�
 調査対象となったサイトのうち、ノンスソースを使用しているのはデスクトップページで0.09％、ハッシュソースを使用しているのはデスクトップページで0.02％にとどまっている。モバイルページではノンスソースを使用しているサイトは0.13%とやや多いが、ハッシュソースの使用率は0.01%とモバイルページの方が低い。
 
 #### `strict-dynamic`
-[CSP](https://www.w3.org/TR/CSP3/)の次のイテレーションにおける[`strict-dynamic`](https://www.w3.org/TR/CSP3/#strict-dynamic-usage)の提案は、ホワイトリスト化されたスクリプトがさらにスクリプトの依存性をロードできるようにすることで、CSPを使用するためのサイト運営者の負担をさらに軽減します。すでに[いくつかの最新ブラウザでサポート](https://caniuse.com/#feat=mdn-http_headers_csp_content-security-policy_strict-dynamic)されているこの機能の導入にもかかわらず、ポリシーにこの機能を含めるのは、デスクトップページの0.03％とモバイルページの0.1％にすぎません。 
+[CSP](https://www.w3.org/TR/CSP3/)の次のイテレーションにおける[`strict-dynamic`](https://www.w3.org/TR/CSP3/#strict-dynamic-usage)の提案は、ホワイトリスト化されたスクリプトがさらにスクリプトの依存性をロードできるようにすることで、CSPを使用するためのサイト運営者の負担をさらに軽減します。すでに[いくつかの最新ブラウザでサポート](https://caniuse.com/#feat=mdn-http_headers_csp_content-security-policy_strict-dynamic)されているこの機能の導入にもかかわらず、ポリシーにこの機能を含めるのは、デスクトップページの0.03％とモバイルページの0.1％にすぎません。
 
 #### `trusted-types`
 XSS攻撃には様々な形がありますが、[Trusted-Types](https://github.com/w3c/webappsec-trusted-types)はDOM-XSSに特化して作られました。効果的なメカニズムであるにもかかわらず、私たちのデータによると、モバイルとデスクトップの2つのページだけがTrusted-Typesディレクティブを使用しています。
@@ -301,7 +301,7 @@ Content-Security-Policy: upgrade-insecure-requests; default-src https:
 | `no-referrer`                     |     5.65%  |   5.38% |
 | `strict-origin`                   |     4.35%  |   4.14% |
 | `origin`                          |     3.63%  |   3.23% |
-   
+
 <figcaption>{{ figure_link(caption=" `Referrer-Policy` 設定オプションの使用法。") }}</figcaption>
 </figure>
 
@@ -487,7 +487,7 @@ NELは信じられないほど貴重な情報を提供しており、情報の�
 
 スクリプトやリンクタグに`integrity`属性を追加することで、ブラウザはサードパーティのリソースの整合性をチェックし、変更された場合は拒否できます。
 
-```
+```html
 <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="

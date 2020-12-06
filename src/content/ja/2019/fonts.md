@@ -210,7 +210,9 @@ Google Fontsのドキュメントでは、Google Fonts CSSの`<link>`はペー�
 
 実際、もしあなたがGoogle Fontsを使っているのであれば、`<head>`にこれを追加してください。
 
-```<link rel="preconnect" href="https://fonts.gstatic.com/">```
+```html
+<link rel="preconnect" href="https://fonts.gstatic.com/">
+```
 
 ### 最も人気のある書体
 

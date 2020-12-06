@@ -1,0 +1,476 @@
+{% extends "base/methodology.html" %}
+
+{% block title %}कार्यप्रणाली | HTTP Archive द्वारा Web Almanac{% endblock %}
+
+{% block description %}यह बताता है कि 2020 Web Almanac को कैसे एक साथ रखा गया था: किस तरह से डेटासेट्स और टूल्स का उपयोग किया गया और इस परियोजना को शुरु किया गया था।{% endblock %}
+
+{% block twitter_image_alt %}{{ year }} Web Almanac की कार्यप्रणाली{% endblock %}
+
+{% block index %}
+      <ul>
+        <li><a href="#overview">अवलोकन</a></li>
+        <li><a href="#dataset">डेटासेट के बारे में</a>
+          <ul>
+            <li><a href="#websites">वेबसाइटें</a></li>
+            <li><a href="#metrics">मेट्रिक्स</a></li>
+          </ul>
+        </li>
+        <li><a href="#tools">टूल्स</a>
+          <ul>
+            <li><a href="#webpagetest">WebPageTest</a></li>
+            <li><a href="#lighthouse">Lighthouse</a></li>
+            <li><a href="#wappalyzer">Wappalyzer</a></li>
+            <li><a href="#chrome-ux-report">Chrome UX रिपोर्ट</a></li>
+            <li><a href="#third-party-web">थर्ड पार्टी वेब</a></li>
+            <li><a href="#rework-css">Rework CSS</a>
+              <ul>
+                <li><a href="#rework-utils">Rework Utils</a></li>
+              </ul>
+            </li>
+            <li><a href="#parsel">Parsel</a></li>
+          </ul>
+        </li>
+        <li><a href="#process">विश्लेषणात्मक प्रक्रिया</a>
+          <ul>
+            <li><a href="#planning">योजना</a></li>
+            <li><a href="#analysis">विश्लेषण</a></li>
+            <li><a href="#interpretation">व्याख्या</a></li>
+          </ul>
+        </li>
+        <li><a href="#looking-ahead">अब आगे</a></li>
+      </ul>
+{% endblock %}
+
+{% block main_content %}
+    <section>
+      <!-- Show large image for large screens and high density screens and use webp when supported -->
+      <picture>
+          <source media="(min-width: 327px)" type="image/webp" srcset="/static/images/methodology-banner.webp" />
+          <source media="(min-width: 327px)" type="image/jpeg" srcset="/static/images/methodology-banner.png" />
+          <source type="image/webp" srcset="/static/images/methodology-banner.webp 2x" />
+          <source type="image/jpeg" srcset="/static/images/methodology-banner.png 2x" />
+          <source type="image/webp" srcset="/static/images/methodology-banner-sm.webp" />
+          <source type="image/jpeg" srcset="/static/images/methodology-banner-sm.png" />
+          <img src="/static/images/methodology-banner.png" class="content-banner" alt="" width="1200" height="984" loading="eager" />
+        </picture>
+        <h2 id="overview"><a href="#overview" class="anchor-link">अवलोकन</a></h2>
+
+        <p>
+          Web Almanac <a href="https://httparchive.org">HTTP Archive</a> द्वारा आयोजित एक परियोजना है। HTTP Archive 2010 में स्टीव सॉडर्स द्वारा वेब को कैसे बनाया जाता है, इसे ट्रैक करने के लिए मिशन के साथ शुरू किया गया था। यह मासिक आधार पर लाखों वेब पेजों की संरचना का मूल्यांकन करता है और <a href="https://httparchive.org/faq#how-do-i-use-bigquery-to-write-custom-queries-over-the-data">BigQuery</a> पर विश्लेषण के लिए टेराबाइट्स मेटाडेटा उपलब्ध कराता है।
+        </p>
+
+        <p>
+          Web Almanac का मिशन वेब की स्थिति के बारे में सार्वजनिक ज्ञान का एक वार्षिक भंडार बनना है। हमारा लक्ष्य HTTP Archive के डेटा वेयरहाउस को वेब समुदाय के लिए और अधिक सुलभ बनाना है, जिसमें हम विषय वस्तु विशेषज्ञ की प्रासंगिक जानकारी प्रदान करते हैं।
+        </p>
+
+        <p>
+          Web Almanac के 2020 संस्करण को चार भागों में विभाजित किया गया है: सामग्री, अनुभव, प्रकाशन और वितरण। प्रत्येक भाग के भीतर, कई अध्याय अलग-अलग पहलुओं से उनके अतिव्यापी विषय का पता लगाते हैं। उदाहरण के लिए, भाग II प्रदर्शन, सुरक्षा, और पहुंच अध्यायों में  यूजर एक्सपीरियंस के विभिन्न पहलुओं की दूसरों के बीच खोज करता है।
+        </p>
+    </section>
+
+    <section>
+        <h2 id="dataset"><a href="#dataset" class="anchor-link">डेटासेट के बारे में</a></h2>
+
+        <p>
+          HTTP Archive डेटासेट लगातार नए मासिक डेटा के साथ अपडेट हो रहे है। Web Almanac के 2020 संस्करण के लिए, जब तक कि अन्यथा अध्याय में उल्लेख नहीं किया गया, अगस्त 2020 से सभी मैट्रिक्स क्रॉल किए गए थे। ये परिणाम <code>2020_08_01</code> के साथ उपसर्ग किए गए तालिकाओं में BigQuery पर <a href="https://github.com/HTTPArchive/httparchive.org/blob/master/docs/gettingstarted_bigquery.md">सार्वजनिक रूप से क्वेरी करने योग्य</a> हैं।
+        </p>
+
+        <p>
+          Web Almanac में प्रस्तुत सभी मैट्रिक्स BigQuery पर डेटासेट का उपयोग कर सार्वजनिक रूप से प्रतिलिपि प्रस्तुत करने योग्य हैं। आप हमारी <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2020">GitHub रिपॉजिटरी</a> में सभी अध्यायों द्वारा उपयोग किए गए क्वेरी को देख सकते हैं।
+        </p>
+
+        <p class="note">
+          कृपया ध्यान दें कि इनमें से कुछ क्वेरी काफी विशाल हैं और आप के प्रयोग के लिए <a href="https://cloud.google.com/bigquery/pricing">महंगे</a> हो सकते हैं, क्योंकि BigQuery को टेराबाइट द्वारा बिल किया जाता है। अपने खर्च को नियंत्रित करने में सहायता के लिए, टिम कडलेक की पोस्ट <a href="https://timkadlec.com/remembers/2019-12-10-using-bigquery-without-breaking-the-bank/">Using BigQuery Without Breaking the Bank</a> देखें।
+        </p>
+
+        <p>
+          उदाहरण के लिए, डेस्कटॉप और मोबाइल पेज पर JavaScript बाइट्स की औसत संख्या को समझने के लिए, <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2019/01_JavaScript/01_01b.sql">01_01b.sql</a> देखें:
+        </p>
+
+        <div class="code-block floating-card">
+          {# To generate this markup temporarily add a ```sql code block to a chapter and generate that chapter and you'll get the HTML #}
+          <pre><code class="sql language-sql"><span class="comment">#standardSQL</span>
+<span class="comment"># 01_01b: Distribution of JS bytes by client</span>
+<span class="keyword">SELECT</span>
+  percentile,
+  _TABLE_SUFFIX <span class="keyword">AS</span> client,
+  <span class="function call">APPROX_QUANTILES</span>(<span class="function call">ROUND</span>(bytesJs / <span class="constant numeric">1024</span>, <span class="constant numeric">2</span>), <span class="constant numeric">1000</span>)[<span class="function call">OFFSET</span>(percentile <span class="keyword operator">*</span> <span class="constant numeric">10</span>)] <span class="keyword">AS</span> js_kbytes
+<span class="keyword">FROM</span>
+  <span class="string">`httparchive.summary_pages.2019_07_01_*`</span>,
+  <span class="function call">UNNEST</span>([<span class="constant numeric">10</span>, <span class="constant numeric">25</span>, <span class="constant numeric">50</span>, <span class="constant numeric">75</span>, <span class="constant numeric">90</span>]) <span class="keyword">AS</span> percentile
+<span class="keyword">GROUP</span> <span class="keyword">BY</span>
+  percentile,
+  client
+<span class="keyword">ORDER</span> <span class="keyword">BY</span>
+  percentile,
+  client</code></pre>
+        </div>
+
+        <p>
+          प्रत्येक मीट्रिक के लिए परिणाम अध्याय-विशेष स्प्रेडशीट में सार्वजनिक रूप से देखे जा सकते हैं, उदाहरण के लिए <a href="https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/edit?usp=sharing">JavaScript परिणाम</a> देखें। क्वेरी, परिणामों और पाठकों द्वारा टिप्पणियों के लिंक के लिए प्रत्येक अध्याय के नीचे स्क्रॉल करें।
+        </p>
+    </section>
+
+    <section>
+        <h3 id="websites"><a href="#websites" class="anchor-link">वेबसाइटें</a></h3>
+
+        <p>
+          हमारे डेटासेट में 7,546,709 वेबसाइट हैं। उनमें से, 6,347,919 मोबाइल वेबसाइट हैं और 5,593,642 डेस्कटॉप वेबसाइट हैं। अधिकांश वेबसाइटें मोबाइल और डेस्कटॉप दोनों सबसेट में शामिल हैं।
+        </p>
+
+        <p>
+          HTTP Archive, <a href="#chrome-ux-report">Chrome UX रिपोर्ट</a> से अपनी वेबसाइटों के URL का स्रोत लेता है। Chrome UX रिपोर्ट Google का एक सार्वजनिक डेटासेट है जो क्रोम उपयोगकर्ताओं द्वारा सक्रिय रूप से विज़िट की गई लाखों वेबसाइटों के यूजर एक्सपीरियंस को एकत्र करता है। यह हमें उन वेबसाइटों की सूची देता है जो अप-टू-डेट हैं और वास्तविक-विश्व वेब उपयोग का प्रतिबिंब हैं। Chrome UX रिपोर्ट डेटासेट में एक फार्म कारक आयाम शामिल है, जिसका उपयोग हम डेस्कटॉप या मोबाइल उपयोगकर्ताओं द्वारा एक्सेस की गई सभी वेबसाइटों को प्राप्त करने के लिए करते हैं।
+        </p>
+
+        <p>
+          अपनी वेबसाइट की सूची के लिए अगस्त 2020 HTTP Archive क्रॉल का उपयोग Web Almanac द्वारा हाल ही में उपलब्ध Chrome UX रिपोर्ट में रिलीज़ का उपयोग किया। 202006 डेटासेट 14 जुलाई, 2020 को जारी किया गया था और जून के महीने के दौरान Chrome उपयोगकर्ताओं द्वारा देखी गई वेबसाइटें इसमें सम्मलित हैं।
+        </p>
+
+        <p>
+          <a href="../2019/methodology#websites">2019 Web Almanac</a> की तुलना में विश्लेषण की गई वेबसाइटों की संख्या में 20-30% की वृद्धि थी। इस वृद्धि का विश्लेषण <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='paulcalvano') }}">पॉल कैल्वानो</a> ने <a href="https://paulcalvano.com/2020-09-29-growth-of-the-web-in-2020/">2020 के ग्रोथ ऑफ़ द वेब</a> पोस्ट में किया है।
+        </p>
+
+        <p>
+          संसाधन सीमाओं के कारण HTTP Archive, Chrome UX रिपोर्ट में प्रत्येक वेबसाइट से केवल एक पृष्ठ का परीक्षण कर सकता है। इसके समाधान के लिए, इसमें केवल मुख पृष्ठ शामिल हैं। ध्यान दें कि यह कुछ पूर्वाग्रह को परिणामों में पेश करता हैं, क्योंकि एक होम पेज आवश्यक रूप से पूरी वेबसाइट का प्रतिनिधि नहीं है।
+        </p>
+
+        <p>
+          HTTP Archive को एक लैब टेस्टिंग टूल भी माना जाता है, जिसका अर्थ है कि यह एक डाटा सेंटर से वेबसाइटों का परीक्षण करता है और वास्तविक दुनिया के उपयोगकर्ता अनुभवों से डेटा एकत्र नहीं करता है। सभी पेजों को लॉग आउट स्थिति में खाली कैश के साथ परीक्षण किया जाता है, जो यह दिखा नहीं कर सकता है कि वास्तविक उपयोगकर्ता उन्हें कैसे एक्सेस करेंगे।
+        </p>
+    </section>
+
+    <section>
+      <h3 id="metrics"><a href="#metrics" class="anchor-link">मेट्रिक्स</a></h3>
+
+      <p>
+        वेब कैसे बनाया जाता है, HTTP Archive इसके बारे में हजारों मेट्रिक्स एकत्र करता है। इसमें प्रति पृष्ठ बाइट्स की संख्या जैसे मूल मीट्रिक शामिल हैं, चाहे पृष्ठ को HTTPS से लोड किया गया था, और व्यक्तिगत अनुरोध और प्रतिक्रिया हेडर। इन मेट्रिक्स का अधिकांश हिस्सा <a href="#webpagetest">WebPageTest</a> द्वारा प्रदान किया जाता है, जो प्रत्येक वेबसाइट के लिए टेस्ट रनर के रूप में कार्य करता है।
+      </p>
+
+      <p>
+        अन्य परीक्षण टूल्स का उपयोग पृष्ठ के बारे में अधिक उन्नत मैट्रिक्स प्रदान करने के लिए किया जाता है। उदाहरण के लिए, <a href="#lighthouse">Lighthouse</a> का उपयोग पृष्ठ का ऑडिट करने के लिए किया जाता है ताकि अभिगम्यता और SEO जैसे क्षेत्रों में इसकी गुणवत्ता का विश्लेषण किया जा सके। नीचे दिए गए <a href="#tools">टूल्स</a> सेक्शन इन टूलों में से प्रत्येक का विस्तार से वर्णन करता हैं।
+      </p>
+
+      <p>
+        लैब डेटासेट की कुछ अंतर्निहित सीमाओं के आसपास काम करने के लिए Web Almanac यूजर एक्सपीरियंस पर मैट्रिक्स के लिए <a href="#chrome-ux-report">Chrome UX रिपोर्ट</a> का उपयोग भी करता है, विशेष रूप से वेब परफॉरमेंस के क्षेत्र में।
+      </p>
+
+      <p>
+        कुछ मैट्रिक्स पूरी तरह से हमारी पहुंच से बाहर हैं। उदाहरण के लिए, हमारे पास वेबसाइट बनाने के लिए उपयोग किए जाने वाले टूल्स का पता लगाना संभव नहीं है। यदि कोई वेबसाइट create-react-app का उपयोग करके बनाई गई है, तो हम बता सकते हैं कि यह React फ्रेमवर्क का उपयोग करता है, लेकिन जरूरी नहीं कि किसी विशेष बिल्ड टूल का उपयोग किया जाए। जब तक ये टूल्स वेबसाइट के कोड में पता लगाने योग्य निशान नहीं छोड़ते, तब तक हम उनके उपयोग को मापने में असमर्थ हैं।
+      </p>
+
+      <p>
+        अन्य मैट्रिक्स को मापने के लिए आवश्यक नहीं है लेकिन चुनौतीपूर्ण या अविश्वसनीय हैं। उदाहरण के लिए, वेब डिज़ाइन के पहलू स्वाभाविक रूप से देखने योग्य होते हैं और इन्हें परिमाणित करना मुश्किल हो सकता है, जैसे कि किसी पृष्ठ में एक बाहरी मोडल डायलॉग है।
+      </p>
+    </section>
+
+    <section>
+      <h2 id="tools"><a href="#tools" class="anchor-link">टूल्स</a></h2>
+
+      <p>
+        Web Almanac निम्नलिखित ओपन सोर्स टूल्स की मदद से संभव हो पाया है।
+      </p>
+    </section>
+
+    <section>
+      <h3 id="webpagetest"><a href="#webpagetest" class="anchor-link">WebPageTest</a></h3>
+
+      <p>
+        <a href="https://www.webpagetest.org/">WebPageTest</a> एक प्रमुख वेब परफॉरमेंस परीक्षण टूल और HTTP Archive की रीढ़ है। हम निजी परीक्षण एजेंटों के साथ WebPageTest के एक <a href="https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Private%20Instances/README.md">निजी उदाहरण</a> का उपयोग करते हैं, जो वास्तविक ब्राउज़र हैं और जो प्रत्येक वेब पेज का परीक्षण करता हैं। डेस्कटॉप और मोबाइल वेबसाइटों को विभिन्न विन्यासों के तहत जांचा जाता है:
+      </p>
+      <div class="table-wrap"><div class="table-wrap-container">
+      <table>
+        <thead>
+          <tr>
+              <th>Config</th>
+              <th>Desktop</th>
+              <th>Mobile</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Device</td>
+            <td>Linux VM</td>
+            <td>Emulated Moto G4</td>
+          </tr>
+
+          <tr>
+            <td>User Agent</td>
+            <td>
+              Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36 PTST/200805.230825
+            </td>
+            <td>
+              Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4) Build/MPJ24.139-64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.146 Mobile Safari/537.36 PTST/200815.130813
+            </td>
+          </tr>
+
+          <tr>
+            <td>Location</td>
+            <td>
+              Redwood City, California, USA<br>
+              The Dalles, Oregon, USA
+            </td>
+            <td>
+              Redwood City, California, USA<br>
+              The Dalles, Oregon, USA
+            </td>
+          </tr>
+
+          <tr>
+            <td>Connection</td>
+            <td>Cable (5/1 Mbps 28ms RTT)</td>
+            <td>3G (1.600/0.768 Mbps 300ms RTT)</td>
+          </tr>
+
+          <tr>
+            <td>Viewport</td>
+            <td>1024 x 768px</td>
+            <td>512 x 360px</td>
+          </tr>
+        </tbody>
+      </table>
+      </div></div>
+
+      <p>
+        डेस्कटॉप वेबसाइट Linux VM पर डेस्कटॉप Chrome वातावरण से चलाए जाते हैं। नेटवर्क की गति एक केबल कनेक्शन के बराबर है।
+      </p>
+
+      <p>
+        मोबाइल वेबसाइट 3 जी कनेक्शन के बराबर नेटवर्क स्पीड के साथ Moto G4 डिवाइस पर मोबाइल Chrome वातावरण में चलाए जाते हैं। ध्यान दें कि उत्सर्जित मोबाइल उपयोगकर्ता एजेंट Chrome 65 के रूप में स्वयं की पहचान करता है, लेकिन वास्तव में Chrome 84 प्रयोग होता है।
+      </p>
+
+      <p>
+        दो स्थान हैं जहां से परीक्षण चलाए जाते हैं: कैलिफोर्निया और ओरेगन यूएसए। HTTP Archive कैलिफ़ोर्निया में <a href="https://archive.org">Internet Archive</a> डेटासेंटर में स्थित अपने स्वयं के परीक्षण एजेंट हार्डवेयर को बनाए रखता है। अतिरिक्त परीक्षण एजेंट ओरेगन में <a href="https://cloud.google.com/compute/docs/regions-zones/#locations">Google Cloud प्लेटफ़ॉर्म</a> के us-west-1 से आवश्यकतानुसार जोड़े जाते हैं।
+      </p>
+
+      <p>
+        WebPageTest के HTTP Archive का निजी उदाहरण नवीनतम सार्वजनिक संस्करण के साथ सिंक में और <a href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">कस्टम मैट्रिक्स</a> के साथ संवर्धित रखा जाता है। ये JavaScript के स्निपेट हैं जिनका परीक्षण के अंत में प्रत्येक वेबसाइट पर मूल्यांकन किया जाता है। कई डेटा विश्लेषकों के <a href="https://github.com/HTTPArchive/legacy.httparchive.org/commits/master/custom_metrics">योगदान</a>के लिए धन्यवाद, विशेष रूप से <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='Tiggerito') }}">टोनी मैकक्रेथ</a> के <a href="https://github.com/HTTPArchive/legacy.httparchive.org/pulls?q=is%3Apr+author%3ATiggerito+sort%3Acreated-asc">कठिन प्रयासों</a> का जिन्होंने, Web Almanac के 2020 संस्करण में HTTP Archive के परीक्षण बुनियादी ढांचे की 3,000 से अधिक लाइनों के साथ क्षमताओं का बहुत विस्तार किया।
+      </p>
+
+      <p>
+        प्रत्येक परीक्षण के परिणाम एक <a href="https://en.wikipedia.org/wiki/HAR_(file_format)">HAR फ़ाइल</a> के रूप में उपलब्ध होते हैं, यह एक मेटाडाटा वाली JSON-स्वरूपित संग्रह फ़ाइल होती है, जिसमें वेब पेज होता है।
+      </p>
+    </section>
+
+    <section>
+      <h3 id="lighthouse"><a href="#lighthouse" class="anchor-link">Lighthouse</a></h3>
+
+      <p>
+        <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a> Google द्वारा निर्मित एक स्वचालित वेबसाइट गुणवत्ता आश्वासन टूल है। यह वेब पेजों का ऑडिट करके सुनिश्चित करता है कि वेबसाइट एंटी यूजर एक्सपीरियंस वाले पैटर्न जैसे कि अन ऑप्टिमाइज़ इमेजेज और अनभिगम्य सामग्री का प्रयोग नहीं करती हैं।
+      </p>
+
+      <p>
+        HTTP Archive अपने सभी मोबाइल वेब पेजों के लिए लाइटहाउस का नवीनतम संस्करण का प्रयोग करता है - डेस्कटॉप पेज सीमित संसाधनों के कारण शामिल नहीं किया जाता। अगस्त 2020 के क्रॉल के लिए, HTTP Archive ने Lighthouse के <a href="https://github.com/GoogleChrome/lighthouse/releases/tag/v6.2.0">6.2.0</a> संस्करण का उपयोग किया।
+      </p>
+
+      <p>
+        Lighthouse को <a href="#webpagetest">WebPageTest</a> के भीतर से अपने अलग परीक्षण के रूप में चलाया जाता है, लेकिन इसकी अपनी कॉन्फ़िगरेशन प्रोफ़ाइल होती है:
+      </p>
+      <div class="table-wrap"><div class="table-wrap-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Config</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CPU slowdown</td>
+            <td>1x/4x</td>
+          </tr>
+          <tr>
+            <td>Download throughput</td>
+            <td>1.6 Mbps</td>
+          </tr>
+          <tr>
+            <td>Upload throughput</td>
+            <td>0.768 Mbps</td>
+          </tr>
+          <tr>
+            <td>RTT</td>
+            <td>150 ms</td>
+          </tr>
+        </tbody>
+      </table>
+      </div></div>
+
+      <p>
+        Lighthouse और HTTP Archive में उपलब्ध ऑडिट के बारे में अधिक जानकारी के लिए, <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse डेवलपर प्रलेखन</a> देखें।
+      </p>
+    </section>
+
+    <section>
+      <h3 id="wappalyzer"><a href="#wappalyzer" class="anchor-link">Wappalyzer</a></h3>
+
+      <p>
+        <a href="https://www.wappalyzer.com/">Wappalyzer</a> वेब पेजो  द्वारा उपयोग की जाने वाली तकनीकों का पता लगाने के लिए एक टूल है। JavaScript फ्रेमवर्क से लेकर CMS प्लेटफॉर्म और यहां तक कि क्रिप्टोकरेंसी माइनर्स तक, <a href="https://www.wappalyzer.com/technologies">64 श्रेणियों</a>का परीक्षण किया गया है। इसमें 1,400 से अधिक समर्थित प्रौद्योगिकियां हैं।
+      </p>
+
+      <p>
+        HTTP Archive सभी वेब पेजों के लिए Wappalyzer के नवीनतम संस्करण प्रयोग करता है है। अगस्त 2020 तक Web Almanac ने Wappalyzer के <a href="https://github.com/AliasIO/Wappalyzer/releases/tag/v6.2.0">6.2.0 संस्करण</a> का उपयोग किया।
+      </p>
+
+      <p>
+        Wappalyzer कई अध्यायों को डेटा देता है जो कि WordPress, Bootstrap, और jQuery। उदाहरण के लिए, <a href="{{ url_for('chapter', year=year, lang=lang, chapter='ecommerce') }}">ईकॉमर्स</a> और <a href="{{ url_for('chapter', year=year, lang=lang, chapter='cms') }}">CMS</a> अध्याय संबंधित <a href="https://www.wappalyzer.com/categories/ecommerce">ईकॉमर्स</a> और <a href="https://www.wappalyzer.com/categories/cms">CMS</a> श्रेणियों पर बहुत अधिक निर्भर करते हैं, जो Wappalyzer द्वारा पता चला है।
+      </p>
+
+      <p>
+        Wappalyzer सहित सभी डिटेक्शन टूल्स की अपनी सीमाएँ हैं। उनके परिणामों की वैधता हमेशा इस बात पर निर्भर करेगी कि उनके पता लगाने के तंत्र कितने सही हैं। Web Almanac हर अध्याय में एक नोट जोड़ देगा जहां Wappalyzer का उपयोग किया जाता है लेकिन इसका विश्लेषण एक विशिष्ट कारण के कारण सटीक नहीं हो सकता है।
+      </p>
+    </section>
+
+    <section>
+      <h3 id="chrome-ux-report"><a href="#chrome-ux-report" class="anchor-link">Chrome UX रिपोर्ट</a></h3>
+
+      <p>
+        <a href="https://developers.google.com/web/tools/chrome-user-experience-report">Chrome UX रिपोर्ट</a> वास्तविक-विश्व यूजर एक्सपीरियंस का एक सार्वजनिक डेटासेट है। वेबसाइट्स के मूल द्वारा एक्सपीरियंस को वर्गीकृत किया जाता है, उदाहरण के लिए <code>https://www.example.com</code>। डेटासेट में पेंट, लोड, इंटरैक्शन और लेआउट स्थिरता जैसे UX मैट्रिक्स के वितरण शामिल हैं। महीने के अनुसार समूहीकरण के अलावा, एक्सपीरियंस को देश-स्तरीय भूगोल, फार्म कारक (डेस्कटॉप, फोन, टैबलेट) और प्रभावी कनेक्शन प्रकार (4 जी, 3 जी, आदि) जैसे आयामों से भी वर्गीकृत किया जाता है।
+      </p>
+
+      <p>
+        Chrome UX रिपोर्ट से वास्तविक दुनिया के यूजर एक्सपीरियंस का डेटा देने वाले Web Almanac के लिए, अगस्त 2020 डेटासेट (202008) का उपयोग किया जाता है।
+      </p>
+
+      <p>
+        आप <a href="https://web.dev/">web.dev</a> पर <a href="https://web.dev/chrome-ux-report-bigquery">BigQuery गाइड पर Chrome UX रिपोर्ट का उपयोग करके</a> डेटासेट के बारे में अधिक जान सकते हैं।
+      </p>
+    </section>
+
+    <section>
+      <h3 id="third-party-web"><a href="#third-party-web" class="anchor-link">थर्ड पार्टी वेब</a></h3>
+
+      <p>
+        <a href="https://www.thirdpartyweb.today/">Third Party Web</a> , <a href="{{ url_for('chapter', year=2019, lang=lang, chapter='third-parties') }}">2019 थर्ड पार्टीज़</a> अध्याय के लेखक <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='patrickhulce') }}">पैट्रिक हुल्से</a> की एक शोध परियोजना है, जो वेब पर थर्ड पार्टीज़ के संसाधनों के प्रभाव को पहचानने और उनका विश्लेषण करने के लिए  HTTP Archive और Lighthouse डेटा का उपयोग करता है।
+      </p>
+
+      <p>
+        डोमेन को तीसरे पक्ष का प्रदाता माना जाता है, यदि वे कम से कम 50 अद्वितीय पृष्ठों पर दिखाई देते हैं। यह परियोजना विज्ञापन, विश्लेषिकी और सामाजिक जैसी श्रेणियों में प्रदाताओं को उनकी संबंधित सेवाओं से भी जोड़ती है।
+      </p>
+
+      <p>
+        Web Almanac के कई अध्याय थर्ड पार्टीज़ के प्रभाव को समझने के लिए इस डेटासेट के डोमेन और श्रेणियों का उपयोग करते हैं।
+      </p>
+    </section>
+
+    <section>
+      <h3 id="rework-css"><a href="#rework-css" class="anchor-link">Rework CSS</a></h3>
+
+      <p>
+        <a href="https://github.com/reworkcss/css">Rework CSS</a> एक JavaScript-आधारित CSS पार्सर है। यह संपूर्ण स्टाइलशीट लेता है और प्रत्येक व्यक्तिगत स्टाइल रूल, सिलेक्टर, डायरेक्टिव और वैल्यू को भेद करने वाली JSON-एन्कोडेड ऑब्जेक्ट का उत्पादन करता है।
+      </p>
+
+      <p>
+        इस विशेष उद्देश्य टूल ने <a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a> अध्याय में कई मैट्रिक्स की सटीकता में काफी सुधार किया। सभी बाहरी स्टाइलशीट में CSS और प्रत्येक पृष्ठ के लिए इनलाइन स्टाइल के ब्लॉक को विश्लेषण संभव बनाने के लिए पार्स और क्वियर किया गया था। इस बारे में अधिक जानकारी के लिए यह <a href="https://discuss.httparchive.org/t/analyzing-stylesheets-with-a-js-based-parser/1683">थ्रेड देखें</a> कि यह BigQuery पर HTTP Archive डेटासेट के साथ कैसे एकीकृत किया गया था।
+      </p>
+    </section>
+
+    <section>
+      <h4 id="rework-utils"><a href="#rework-utils" class="anchor-link">Rework Utils</a></h4>
+
+      <p>
+        <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='LeaVerou') }}">ली वेरो</a> के नेतृत्व में इस साल के <a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a> अध्याय पर CSS की स्थिति को लेकर अधिक विस्तृत रूप से विचार किया, जो <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2020/01_CSS">100+ क्वेरी</a> से भी ज्यादा है। परिप्रेक्ष्य के लिए, 2019 की तुलना में 2.5x अधिक प्रश्न हैं। विश्लेषण के इस पैमाने को व्यवहार्य बनाने के लिए, ली ने <a href="https://github.com/LeaVerou/rework-utils">Rework Utils</a> को ओपन सोर्स कर दिया। ये utilities CSS अंतर्दृष्टि को अधिक आसानी से निकालने के लिए सहायक scripts प्रदान करके ये उपयोगिताओं JSON डेटा को Rework से अगले स्तर तक ले जाती हैं। CSS अध्याय में आप देखेंगे अधिकांश आँकड़े इन scripts द्वारा संचालित होते हैं।
+      </p>
+    </section>
+
+    <section>
+        <h4 id="parsel"><a href="#parsel" class="anchor-link">Parsel</a></h4>
+
+        <p>
+            <a href="https://projects.verou.me/parsel/">Parsel</a> एक CSS सिलेक्टर पार्सर और विशिष्टता कैलकुलेटर है, जो मूल रूप से <a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a> अध्याय लीड <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='LeaVerou') }}">ली वेरो</a> द्वारा लिखा गया है और एक अलग लाइब्रेरी के रूप मे ओपन सोर्स हैं। इसका उपयोग सभी CSS मैट्रिक्स में बड़े पैमाने पर किया जाता है जो सिलेक्टर और विशिष्टता से संबंधित हैं।
+        </p>
+    </section>
+
+    <section>
+      <h2 id="process"><a href="#process" class="anchor-link">विश्लेषणात्मक प्रक्रिया</a></h2>
+
+      <p>
+        Web Almanac को वेब समुदाय से सौ से अधिक <a href="{{ url_for('contributors', year=year, lang=lang) }}">योगदानकर्ताओं</a> के समन्वय के साथ योजना बनाने और निष्पादित करने में लगभग एक वर्ष लगा। इस खंड में बताया गया है कि हमने Web Almanac में आपके द्वारा देखे गए अध्यायों को क्यों चुना, उनके मेट्रिक्स कैसे थे, और उनकी व्याख्या कैसे की गई।
+      </p>
+    </section>
+
+    <section>
+      <h3 id="planning"><a href="#planning" class="anchor-link">योजना</a></h3>
+
+      <p>
+        COVID-19 से जुड़ी अशांति और सामाजिक न्याय के विरोध के कारण 2019 की समयसीमा के चलते <a href="https://twitter.com/rick_viscomi/status/1273135952848977920">जून 2020</a> में, 2020 Web Almanac को बंद कर दिया गया। ये और 2020 की अन्य घटनाएँ पूरी उत्पादन प्रक्रिया के दौरान एक अंतर्धारा थीं और इस तरह की तेज़-तर्रार परियोजना के तनावों से परे हमारे योगदानकर्ताओं पर कई अतिरिक्त दबाव डालती हैं।
+      </p>
+
+      <p>
+        जैसा कि हमने <a href="https://almanac.httparchive.org/en/2019/methodology#brainstorming">पिछले वर्ष की कार्यप्रणाली</a> में कहा था:
+      </p>
+
+      <blockquote>
+        Web Almanac के भविष्य के संस्करणों के लिए एक स्पष्ट लक्ष्य लेखकों और सहकर्मी समीक्षकों के रूप में प्रतिनिधि और विविध क्षेत्रों के लोगो का समावेश को प्रोत्साहित करना हैं।
+      </blockquote>
+
+      <p>
+        इस वर्ष तक, हमने इस तरह व्यवस्थित बदलाव किए हैं, जिसके तहत हम लेखकों की तलाश और उनका चयन करते हैं:
+      </p>
+
+      <ul>
+        <li>
+          पिछले लेखकों को विशेष रूप से अलग-अलग दृष्टिकोणों के लिए जगह बनाने के लिए फिर से लिखने से हतोत्साहित किया गया था।
+        </li>
+        <li>
+          2020 के लेखकों का समर्थन करने वाले सभी लोगों को विशेष रूप से सचेत रहने के लिए कहा गया था कि वे ऐसे लोगों को नामांकित न करें जो सभी को समान रूप से देखते हैं या सोचते हैं।
+        </li>
+        <li>
+          कई 2019 लेखक Google कर्मचारी थे और इस वर्ष हमने व्यापक वेब समुदाय से दृष्टिकोण का एक बड़ा संतुलन प्राप्त करने की कोशिश की। हमारा मानना है कि Web Almanac में लोग स्वयं समुदाय का प्रतिबिंब होने चाहिए, और किसी एक दृष्टिकोण की प्रतिध्वनि बनाने से बचने के लिए किसी विशिष्ट कंपनी की ओर झुकनी नहीं होनी चाहिए।
+        </li>
+        <li>
+          प्रोजेक्ट लीडर्स ने सभी लेखक नामांकन की समीक्षा की और उन लेखकों का चयन करने का प्रयास किया जो नए दृष्टिकोण लाएंगे और समुदाय में कम प्रतिनिधित्व वाले समूहों के मत को बढ़ाएंगे।
+        </li>
+      </ul>
+
+      <p>
+        हम भविष्य में इस प्रक्रिया पर पुनरावृत्ति की उम्मीद करते हैं ताकि यह सुनिश्चित हो सके कि Web Almanac सभी पृष्ठभूमि से योगदानकर्ताओं के साथ एक अधिक विविध और समावेशी परियोजना है।
+      </p>
+
+      <p>
+        अंत में, जुलाई 2020 में, मंथन और नामांकन के दौर के बाद, 22 अध्यायों को तैयार किया गया और हमने प्रत्येक अध्याय के लिए लेखन, समीक्षा और विश्लेषण के लिए सामग्री टीमों का गठन किया।
+      </p>
+    </section>
+
+    <section>
+      <h3 id="analysis"><a href="#analysis" class="anchor-link">विश्लेषण</a></h3>
+
+      <p>
+        जुलाई और अगस्त 2020 में, मैट्रिक्स और अध्यायों की स्थिर सूची के साथ, डेटा विश्लेषकों ने व्यवहार्यता के लिए मीट्रिक को कम कर दिया। कुछ मामलों में, <a href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">कस्टम मेट्रिक्स</a> को हमारी विश्लेषणात्मक क्षमताओं में अंतराल को भरने के लिए बनाने की आवश्यकता हुई।
+      </p>
+
+      <p>
+        अगस्त 2020 के दौरान, HTTP Archive डेटा पाइपलाइन ने कई मिलियन वेबसाइटों को क्रॉल किया, जो मेटाडेटा को Web Almanac में उपयोग करने के लिए एकत्रित करता है।
+      </p>
+
+      <p>
+        डेटा विश्लेषकों ने प्रत्येक मीट्रिक के परिणाम निकालने के लिए क्वेरी लिखना शुरू किया। कुल मिलाकर, सैकड़ों क्वेरी हाथ से लिखे गए थे! आप GitHub पर हमारे ओपन सोर्स <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2020">क्वेरी रिपॉजिटरी</a> में वर्ष और अध्याय द्वारा सभी क्वेरी को ब्राउज़ कर सकते हैं।
+      </p>
+    </section>
+
+    <section>
+      <h3 id="interpretation"><a href="#interpretation" class="anchor-link">व्याख्या</a></h3>
+
+      <p>
+        लेखकों ने परिणामों की सही व्याख्या करने और उचित निष्कर्ष निकालने के लिए विश्लेषकों के साथ काम किया। जैसा कि लेखकों ने अपने संबंधित अध्याय लिखे हैं, वे इन आंकड़ों से आकर्षित होते हैं ताकि वे वेब की स्थिति का समर्थन कर सकें। सहकर्मी समीक्षकों ने अपने विश्लेषण की तकनीकी शुद्धता सुनिश्चित करने के लिए लेखकों के साथ काम किया।
+      </p>
+
+      <p>
+        पाठकों को परिणामों को अधिक आसानी से समझने के लिए, वेब डेवलपर्स और विश्लेषकों ने अध्याय में एम्बेड करने के लिए डेटा विज़ुअलाइज़ेशन बनाया। कुछ विज़ुअलाइज़ेशन को अधिक स्पष्ट रूप से छोटा बनाने के लिए सरलीकृत किया जाता है। उदाहरण के लिए, एक वितरण का पूरा हिस्टोग्राम दिखाने के बजाय, केवल कुछ प्रतिशत दिखाए जाते हैं। जब तक अन्यथा उल्लेख नहीं किया जाता है, सभी वितरणों का प्रतिशत, विशेषकर माध्य (50 वां प्रतिशत) का उपयोग करके संक्षेपित किया जाता है, और औसत नहीं।
+      </p>
+
+      <p>
+        अंत में, संपादकों ने सरल व्याकरण संबंधी त्रुटियों को ठीक करने और पढ़ने के अनुभव में निरंतरता सुनिश्चित करने के लिए अध्यायों को संशोधित किया।
+      </p>
+    </section>
+
+    <section>
+      <h2 id="looking-ahead"><a href="#looking-ahead" class="anchor-link">अब आगे</a></h2>
+
+      <p>
+        2020 संस्करण Web Almanac का दूसरा संस्करण है जो हम आत्मनिरीक्षण के वेब समुदाय में एक वार्षिक परंपरा और सकारात्मक बदलाव के प्रति प्रतिबद्धता की उम्मीद करते हैं। इस मुकाम पर पहुंचने के लिये समर्पित सभी <a href="{{ url_for('contributors', year=year, lang=lang) }}">योगदानकर्ताओं</a> का धन्यवाद है और हम भविष्य के संस्करणों को और अधिक सुव्यवस्थित बनाने के लिए इस काम का अधिक से अधिक लाभ उठाने की उम्मीद करते हैं।
+      </p>
+
+      <p>
+        यदि आप वेब पंचांग के 2021 संस्करण में योगदान करने में रुचि रखते हैं, तो कृपया हमारा <a href="https://forms.gle/VRBFegGAP7d99Bhp7">रुचि फ़ॉर्म</a> भरें। आइये, वेब की स्थिति को ट्रैक करने के लिए एक साथ काम करते हैं!
+      </p>
+    </section>
+{% endblock main_content %}

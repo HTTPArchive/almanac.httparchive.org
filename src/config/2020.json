@@ -62,8 +62,7 @@
           "part": "II",
           "chapter": "7",
           "title": "SEO",
-          "slug": "seo",
-          "todo": true
+          "slug": "seo"
         },
         {
           "part": "II",
@@ -76,8 +75,7 @@
           "part": "II",
           "chapter": "9",
           "title": "Performance",
-          "slug": "performance",
-          "todo": true
+          "slug": "performance"
         },
         {
           "part": "II",
@@ -123,8 +121,7 @@
           "part": "III",
           "chapter": "15",
           "title": "CMS",
-          "slug": "cms",
-          "todo": true
+          "slug": "cms"
         },
         {
           "part": "III",
@@ -171,15 +168,13 @@
           "part": "IV",
           "chapter": "21",
           "title": "Resource Hints",
-          "slug": "resource-hints",
-          "todo": true
+          "slug": "resource-hints"
         },
         {
           "part": "IV",
           "chapter": "22",
           "title": "HTTP/2",
-          "slug": "http2",
-          "todo": true
+          "slug": "http2"
         }
       ]
     }
@@ -215,7 +210,8 @@
       "name": "Abby Tsai",
       "teams": [
         "analysts",
-        "translators"
+        "translators",
+        "developers"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/44442451?v=4&s=200",
       "github": "AbbyTsai"
@@ -262,13 +258,22 @@
       "twitter": "adityapandey98",
       "linkedin": "adityapandey98"
     },
+    "amedina": {
+      "name": "Alberto Medina",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars0.githubusercontent.com/u/506089?v=4&s=200",
+      "github": "amedina",
+      "twitter": "iAlbMedina"
+    },
     "alexdenning": {
       "name": "Alex Denning",
       "teams": [
         "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/3109255?v=4&s=200",
-      "website": "getellipsis.com",
+      "website": "https://getellipsis.com",
       "github": "alexdenning",
       "twitter": "AlexDenning"
     },
@@ -388,6 +393,15 @@
       "website": "http://benseymour.com",
       "github": "bseymour"
     },
+    "bharatagsrwal": {
+      "name": "Bharat Agarwal",
+      "teams": [
+        "developers"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/43988371?v=4&s=200",
+      "website": "https://iambharat.me",
+      "github": "bharatagsrwal"
+    },
     "borisschapira": {
       "name": "Boris Schapira",
       "teams": [
@@ -409,6 +423,16 @@
       "website": "https://bkardell.com",
       "github": "bkardell",
       "twitter": "briankardell"
+    },
+    "remotesynth": {
+      "name": "Brian Rinaldi",
+      "teams": [
+        "analysts"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/216712?v=4&s=200",
+      "website": "https://remotesynthesis.com/",
+      "github": "remotesynth",
+      "twitter": "remotesynth"
     },
     "cqueern": {
       "name": "Caleb Queern",
@@ -495,7 +519,7 @@
       "avatar_url": "https://avatars2.githubusercontent.com/u/11179452?v=4&s=200",
       "website": "https://tamethebots.com/",
       "github": "dwsmart",
-      "twitter": "dwsmart"
+      "twitter": "davewsmart"
     },
     "dsottimano": {
       "name": "Dave Sottimano",
@@ -695,7 +719,7 @@
       "twitter": "jaisanth"
     },
     "fellowhuman1101": {
-      "name": "Jammer",
+      "name": "Jamie Indigo",
       "teams": [
         "authors"
       ],
@@ -876,6 +900,16 @@
       "avatar_url": "https://avatars3.githubusercontent.com/u/866229?v=4&s=200",
       "github": "Super-Fly",
       "twitter": "angelovcode"
+    },
+    "MaedahBatool": {
+      "name": "Maedah Batool",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/12712988?v=4&s=200",
+      "website": "https://maedahbatool.com/",
+      "github": "MaedahBatool",
+      "twitter": "maedahbatool"
     },
     "mandymichael": {
       "name": "Mandy Michael",
@@ -1280,6 +1314,15 @@
       "website": "http://sergeychernyshev.com/",
       "github": "sergeychernyshev",
       "twitter": "sergeyche"
+    },
+    "exterkamp": {
+      "name": "Shane Exterkamp",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars2.githubusercontent.com/u/6392995?v=4&s=200",
+      "github": "exterkamp",
+      "twitter": "Shane_Exterkamp"
     },
     "spanicker": {
       "name": "Shubhie Panicker",
