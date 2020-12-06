@@ -84,17 +84,23 @@ Response Code | All Devices | Mobile | Desktop
 6XX | 0.00% | 0.00% | 0.00%
 7XX | 0.00% | 0.15% | 0.12%
 
-<figcaption>{{ figure_link(caption="Robots.txt response codes.", sheets_gid="769973954", sql_file="pages_robots_txt_by_device_and_status.sql") }}</figcaption>
+<figcaption>
+  {{ figure_link(
+    caption="<code>robots.txt</code> response codes.",
+    sheets_gid="769973954",
+    sql_file="pages_robots_txt_by_device_and_status.sql"
+  ) }}
+</figcaption>
 </figure>
 
-In addition to similar status code behavior, disallow statement use was consistent between mobile and desktop versions of `robots.txt` files.
+In addition to similar status code behavior, `Disallow` statement use was consistent between mobile and desktop versions of `robots.txt` files.
 
-The most prevalent use-agent declaration statement was the wildcard, User-agent: *, appearing on 74.40% of mobile and 73.16% of desktop `robots.txt` requests. The second most prevalent user-agent declaration was adsbot-google, appearing in 5.63% of mobile and 5.68% of desktop `robots.txt` requests. Google AdsBot disregards wildcard statements and must be specifically named as the bot checks web page and app ad quality across devices.
+The most prevalent `User-agent` declaration statement was the wildcard, `User-agent: *`, appearing on 74.40% of mobile and 73.16% of desktop `robots.txt` requests. The second most prevalent declaration was `adsbot-google`, appearing in 5.63% of mobile and 5.68% of desktop `robots.txt` requests. Google AdsBot disregards wildcard statements and must be specifically named as the bot checks web page and app ad quality across devices.
 
-The most frequently used directives focused on search engines and their paid marketing counterparts. SEO tools Ahref and Majestic were in the top five disallow statements for both devices.
+The most frequently used directives focused on search engines and their paid marketing counterparts. SEO tools Ahref and Majestic were in the top five `Disallow` statements for both devices.
 
 <figure markdown>
-User-agent | % of mobile `robots.txt` | % of desktop `robots.txt`
+`User-agent` | % of mobile `robots.txt` | % of desktop `robots.txt`
 -- | -- | --
 `*` | 74.40% | 73.16%
 adsbot-google | 5.63% | 5.68%
@@ -102,38 +108,43 @@ mediapartners-google | 5.55% | 3.83%
 mj12bot | 5.49% | 5.30%
 ahrefsbot | 4.80% | 4.66%
 
-<figcaption>{{ figure_link(caption="Robots.txt user-agent directives.", sheets_gid="243594173", sql_file="pages_robots_txt_by_device_and_useragent.sql") }}</figcaption>
+<figcaption>
+  {{ figure_link(
+    caption="<code>robots.txt User-agent</code> directives.",
+    sheets_gid="243594173",
+    sql_file="pages_robots_txt_by_device_and_useragent.sql"
+  ) }}
+</figcaption>
 </figure>
 
+When analyzing the usage of the `Disallow` statement in `robots.txt` by using Lighthouse-powered data of over 6 million sites, it was found that 97.84% of them were completely crawlable, with only 1.05% using a `Disallow` statement.
 
+An analysis of the `robots.txt` `Disallow` statement usage along the [meta robots](https://developers.google.com/search/reference/robots_meta_tag) _indexability_ directives was also done, finding 1.02% of the sites including a `Disallow` statement along indexable pages featuring a meta robots `index` directive, with only 0.03% of sites using the `Disallow` statement in `robots.txt` along _noindexed_ pages via the meta robots `noindex` directive.
 
-When analyzing the usage of the disallow statement in `robots.txt` by using Lighthouse-powered data of over 6 million sites, it was found that 97.84% of them were completely crawlable, with only 1.05% using a disallow statement.
+This is notable as [Google documentation](https://developers.google.com/search/docs/advanced/robots/intro) states that site owners should not use `robots.txt` as a means to hide web pages from Google Search, as internal linking with descriptive text could result in the page being indexed without a crawler visiting the page. Instead, site owners should use other methods, like a `noindex` directive via meta robots.
+{# TODO(authors): Tie this notable fact back to the data: is it notable because the disallow numbers are so low? What does that say about site owners following Google's guidance? #}
 
-An analysis of the `robots.txt` disallow statement usage along the meta robots indexability directives was also done, finding 1.02% of the sites including a disallow statement along indexable pages -featuring a meta robots index tag-, with only 0.03% of sites using the disallow statement in `robots.txt` along noindexed page via the meta robots noindex directive.
+#### Meta robots
 
-This is notable as [Google documentation](https://developers.google.com/search/docs/advanced/robots/intro) states sites should not use `robots.txt` as a means to hide web pages from Google Search as internal linking with descriptive text could result in the page being indexed without a crawler visiting the page, and use instead other methods, like a `noindex` directive via meta robots.
+The `robots` meta tag and `X-Robots-Tag` HTTP header are an extension of the proposed [Robots Exclusion Protocol](https://webmasters.googleblog.com/2019/07/rep-id.html) (REP), which allows directives to be configured at a more granular level. Directive support varies by search engine as REP is not yet an official internet standard.
 
-#### Meta Robots
+Meta tags were the dominant method of granular execution with 27.70% of desktop and 27.96% of mobile pages using the tag. `X-Robots-Tag` directives were found on 0.27% and 0.40% of desktop and mobile, respectively.
 
-Robots meta tag and X-Robots-Tag in HTTP headers are an extension of the proposed [Robots Exclusion Protocol](https://webmasters.googleblog.com/2019/07/rep-id.html) (REP) which allow directives to be allowed at a more granular level. Directive support varies by search engine as REP is not yet an official internet standard.
-
-Meta tags were the dominant method of granular execution with 27.70% of desktop and 27.96% of mobile pages using the tag. X-Robots-Tag directives were found on 0.27% and 0.40% of desktop and mobile respectively.
-
+{# TODO(analysts): Should "X-Robots" be "X-Robots-Tag" here? #}
 {{ figure_markup(
   image="seo-robots-directive-use.png",
-  caption="Robots directive usage",
-  description="Bar chart showing robots usage. Meta-Robots is 27.70% for desktop and 27.96% for mobile, X-Robots barely registers on the chart with a mere 0.27% of pages on desktop and 0.40% on mobile",
+  caption="Comparison of the usage of meta robots and <code>X-Robots-Tag</code> directives.",
+  description="Bar chart showing robots usage. Meta robots is 27.70% for desktop and 27.96% for mobile, X-Robots-Tag barely registers on the chart with a mere 0.27% of pages on desktop and 0.40% on mobile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=99993402&format=interactive",
   sheets_gid="337739550",
   sql_file="pages_wpt_bodies_by_device.sql"
-  )
-}}
+) }}
 
-When analyzing the usage of the meta robots tag in Lighthouse tests, 0.47% of crawlable pages were found to be noindexed. 0.44% of these pages used a noindex directive and did not disallow crawling of the page in the `robots.txt`.
+When analyzing the usage of the meta robots tag in Lighthouse tests, 0.47% of crawlable pages were found to be _noindexed_. 0.44% of these pages used a `noindex` directive and did not disallow crawling of the page in the `robots.txt`.
 
-The combination of disallow within `robots.txt` and noindex directive in meta robots were found on only 0.03% of pages. While this method offers 'belt and suspenders' redundancy, a page must not be blocked by a `robots.txt` file in order for an on-page noindex directive to be effective.
+The combination of `Disallow` within `robots.txt` and `noindex` directive in meta robots were found on only 0.03% of pages. While this method offers _belt and suspenders_ redundancy, a page must not be blocked by a `robots.txt` file in order for an on-page `noindex` directive to be effective.
 
-Interestingly, rendering changed the meta-robots tag in 0.16% of pages. While there is no inherent issue with using JavaScript to add a meta robots tag to a page or change its content, SEOs should be judicious in execution. If a page loads with a noindex in the robots meta tag before rendering, [search engines won't run the JavaScript](https://developers.google.com/search/docs/guides/javascript-seo-basics#use-meta-robots-tags-carefully) that changes the tag value or index the page.
+Interestingly, rendering changed the meta robots tag in 0.16% of pages. While there is no inherent issue with using JavaScript to add a meta robots tag to a page or change its content, SEOs should be judicious in execution. If a page loads with a `noindex` directive in the meta robots tag before rendering, [search engines won't run the JavaScript](https://developers.google.com/search/docs/guides/javascript-seo-basics#use-meta-robots-tags-carefully) that changes the tag value or index the page.
 
 #### Canonicalization
 
