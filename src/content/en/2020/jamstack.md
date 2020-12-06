@@ -246,7 +246,7 @@ There are frameworks like Eleventy which we weren't able to measure or analyze s
 
 Moreover, we have highlighted some areas which need attention from the Jamstack community. We hope there will be progress to share in the 2021 report. Different Jamstack frameworks can start to document how to improve real user experience by looking at Core Web Vitals.
 
-Vercel, one of the CDNs meant to host Jamstack sites, has built an analytics offering called [Real User Experience Score][12]. While other performance measuring tools like [Lighthouse][13] estimate your user's experience by running a simulation in a lab, Vercel's Real Experience Score is calculated using real data points collected from the devices of the actual users of your application.
+Vercel, one of the CDNs meant to host Jamstack sites, has built an analytics offering called [Real User Experience Score](https://vercel.com/docs/analytics#real-experience-score). While other performance measuring tools like [Lighthouse](https://web.dev/measure/) estimate your user's experience by running a simulation in a lab, Vercel's Real Experience Score is calculated using real data points collected from the devices of the actual users of your application.
 
 Probably worth noting here that Vercel created and maintains Next.js, particularly since Next.js had low LCP scores. This could mean we can hope to see a marked improvement next year. This can be extremely helpful information for developers.
 
