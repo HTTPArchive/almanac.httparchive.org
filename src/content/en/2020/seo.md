@@ -9,7 +9,7 @@ reviewers: [natedame, catalinred, dsottimano, dwsmart, en3r0, ibnesayeed, bazzad
 analysts: [Tiggerito, antoineeripret]
 translators: []
 aleyda_bio: SEO consultant, author, speaker and entrepreneur. Founder of <a href="https://www.orainti.com/">Orainti</a> (a boutique SEO consultancy working with some of the top Web properties and brands, from SaaS to marketplaces) and co-founder of <a href="https://remoters.net/">Remoters.net</a> (a free remote work hub, featuring remote jobs, tools, events, guides, and more to facilitate remote work). Aleyda enjoys sharing about SEO through her <a href="https://www.aleydasolis.com/en/blog/">blog</a>, the <a href="https://www.aleydasolis.com/en/seo-tips/">#SEOFOMO newsletter</a>, the <a href="https://www.aleydasolis.com/en/crawling-mondays-videos/">Crawling Mondays</a> video and podcast series and over <a href="https://twitter.com/aleyda">Twitter</a>.
-ipullrank_bio: An artist and a technologist, all rolled into one, Michael King is the founder of enterprise digital marketing agency, <A href="https://ipullrank.com">iPullRank</a> and founder of Natural Language Generation app <a href="https://www.copyscience.io">CopyScience</a>. Effortlessly leaning on his background as an independent hip-hop musician, Mr. King is a compelling content creator and an award-winning dynamic speaker who is called upon to contribute to technology and marketing conferences and blogs all over the world. You can find Mike talking trash on <a href="https://twitter.com/ipullrank">Twitter</a>
+ipullrank_bio: An artist and a technologist, all rolled into one, Michael King is the founder of enterprise digital marketing agency, <a href="https://ipullrank.com">iPullRank</a> and founder of Natural Language Generation app <a href="https://www.copyscience.io">CopyScience</a>. Effortlessly leaning on his background as an independent hip-hop musician, Mr. King is a compelling content creator and an award-winning dynamic speaker who is called upon to contribute to technology and marketing conferences and blogs all over the world. You can find Mike talking trash on <a href="https://twitter.com/ipullrank">Twitter</a>
 #fellowhuman1101_bio: TODO
 discuss: 2043
 results: https://docs.google.com/spreadsheets/d/1ram47FshAjzvbQVJbAQPgxZN7PPOPCKIK67VJZCo92c/
@@ -257,13 +257,13 @@ Learn more about the usage of Headings in the [Markup chapter](./markup#headings
 #### Structured Data
 
 
-Over the course of the past decade, search engines, particularly Google, have continued to push towards becoming the presentation layer of the web. These advancements are partially driven by their improved ability to extract information from unstructured content (e.g., [passage indexing](https://blog.google/products/search/search-on/)) and the adoption of semantic markup in the form of structured data. Content creators and developers have been encouraged to implement structured data to give more visibility to their content within components of search results. 
+Over the course of the past decade, search engines, particularly Google, have continued to push towards becoming the presentation layer of the web. These advancements are partially driven by their improved ability to extract information from unstructured content (e.g., [passage indexing](https://blog.google/products/search/search-on/)) and the adoption of semantic markup in the form of structured data. Content creators and developers have been encouraged to implement structured data to give more visibility to their content within components of search results.
 
-In a move from “strings to things” , search engines have agreed upon a broad vocabulary of objects in support of marking up a variety of people, places, and things within web content. However, only a subset of that vocabulary triggers inclusion within search results components. Google specifies those that they support and how they’re displayed in their [“Search Gallery”](https://developers.google.com/search/docs/guides/search-gallery), and provides [a tool](https://search.google.com/test/rich-results) to validate their support and implementation. 
+In a move from “strings to things” , search engines have agreed upon a broad vocabulary of objects in support of marking up a variety of people, places, and things within web content. However, only a subset of that vocabulary triggers inclusion within search results components. Google specifies those that they support and how they’re displayed in their [“Search Gallery”](https://developers.google.com/search/docs/guides/search-gallery), and provides [a tool](https://search.google.com/test/rich-results) to validate their support and implementation.
 
 As search engines evolve to reflect more of these elements in search results, the incidence rates of the different  vocabulary changes across the web.
 
-As part of our examination, we took a look at the incidence rates of different types of structured markup. The available formats include [RDFa](https://www.w3.org/TR/rdfa-primer/) and [Schema.org](https://schema.org/) which come in both the microformats and [JSON-LD](https://www.w3.org/TR/json-ld11/) flavors. Google has recently [dropped the support for data-vocabulary](https://developers.google.com/search/blog/2020/01/data-vocabulary), a vocabulary that was primarily used to implement breadcrumbs. 
+As part of our examination, we took a look at the incidence rates of different types of structured markup. The available formats include [RDFa](https://www.w3.org/TR/rdfa-primer/) and [Schema.org](https://schema.org/) which come in both the microformats and [JSON-LD](https://www.w3.org/TR/json-ld11/) flavors. Google has recently [dropped the support for data-vocabulary](https://developers.google.com/search/blog/2020/01/data-vocabulary), a vocabulary that was primarily used to implement breadcrumbs.
 
 JSON-LD is generally considered the more portable and easy to manage implementation and has become the preferred format. As a result, we see that JSON-LD appears on 29.78% of mobile pages and 30.60% of desktop pages.
 
@@ -271,37 +271,37 @@ We find that the disparity between mobile and desktop continues with this type o
 
 ##### Rendered vs Non-rendered Structured Data
 
-Additionally, we found that 38.61% of desktop pages and 39.26% of mobile pages feature JSON-LD or microformat structured data in the raw HTML, while 40.09% of desktop pages and 40.97% of mobile pages feature structured data in the rendered DOM. 
+Additionally, we found that 38.61% of desktop pages and 39.26% of mobile pages feature JSON-LD or microformat structured data in the raw HTML, while 40.09% of desktop pages and 40.97% of mobile pages feature structured data in the rendered DOM.
 
-When reviewing this in more detail, we found that 1.49% of desktop pages and 1.77% of mobile pages only featured this type of structured data in the rendered DOM due to JavaScript transformations. 
+When reviewing this in more detail, we found that 1.49% of desktop pages and 1.77% of mobile pages only featured this type of structured data in the rendered DOM due to JavaScript transformations.
 
 Finally, we found that 4.46% of desktop pages and 4.62% of mobile pages feature structured data that appears in the raw HTML and is subsequently changed by JavaScript transformations in the rendered DOM.
 
 ##### Most Active Structured Data Objects
 
-[As seen last year](https://almanac.httparchive.org/en/2019/seo#structured-data), the most prevalent structured data objects remain to be `WebSite`, `SearchAction`, `WebPage`, `Organization` and `ImageObject`, and their usage has grown further: 
+[As seen last year](https://almanac.httparchive.org/en/2019/seo#structured-data), the most prevalent structured data objects remain to be `WebSite`, `SearchAction`, `WebPage`, `Organization` and `ImageObject`, and their usage has grown further:
 
-* `Website` has grown 9.37% on desktop and 10.5% on mobile 
+* `Website` has grown 9.37% on desktop and 10.5% on mobile
 * `SearchAction` has grown 7.64% on both desktop and mobile
 * `WebPage` has grown on desktop 6.83% and 7.09% on mobile
-* `Organization` has grown on desktop 4.75% and 4.98% on  mobile 
-* `ImageObject` has grown 6.39% on desktop and 6.13% on mobile 
+* `Organization` has grown on desktop 4.75% and 4.98% on  mobile
+* `ImageObject` has grown 6.39% on desktop and 6.13% on mobile
 
 It should be noted that `WebSite`, `SearchAction` and `Organization` are all typically  associated with homepages, so this highlights the bias of the dataset and does not reflect the bulk of structured data implemented on the web.
 
-In contrast, despite the fact that reviews are not supposed to be associated with homepages the data indicates that `AggregateRating` is up 23.9% on mobile and 23.7% on desktop. 
+In contrast, despite the fact that reviews are not supposed to be associated with homepages the data indicates that `AggregateRating` is up 23.9% on mobile and 23.7% on desktop.
 
 It’s also interesting to see the growth of the [`VideoObject` to annotate videos](https://developers.google.com/search/docs/data-types/video). Although [YouTube videos dominate video search results in Google](https://moz.com/blog/youtube-dominates-google-video-results-in-2020), the usage of `VideoObject` grew 30.11% on desktop and 27.7% on mobile
 
-This growth is a general indication of increased adoption of structured data. 
+This growth is a general indication of increased adoption of structured data.
 
-There’s also an indication of what Google gives visibility within search features increases the incidence rates of lesser used objects. 
+There’s also an indication of what Google gives visibility within search features increases the incidence rates of lesser used objects.
 
-Google announced the [`FAQPage`](https://developers.google.com/search/docs/data-types/faqpage), [`HowTo`](https://developers.google.com/search/docs/data-types/how-to), and [`QAPage`](https://developers.google.com/search/docs/data-types/qapage) objects as visibility opportunities in 2019 and they sustained significant year over year growth: 
+Google announced the [`FAQPage`](https://developers.google.com/search/docs/data-types/faqpage), [`HowTo`](https://developers.google.com/search/docs/data-types/how-to), and [`QAPage`](https://developers.google.com/search/docs/data-types/qapage) objects as visibility opportunities in 2019 and they sustained significant year over year growth:
 
-* `FAQPage` markup grew 3,261% on desktop and 3,000% on mobile. 
-* `HowTo` markup grew 605% on desktop and 623% on mobile. 
-* `QAPage` markup grew 166.7% on desktop and 192.1% on mobile. 
+* `FAQPage` markup grew 3,261% on desktop and 3,000% on mobile.
+* `HowTo` markup grew 605% on desktop and 623% on mobile.
+* `QAPage` markup grew 166.7% on desktop and 192.1% on mobile.
 
 Note that this data might not be representative of their actual level of growth since these objects are usually placed on internal pages.
 
@@ -596,7 +596,7 @@ As of November 2020, 3 performance metrics known as [Core Web Vital](https://web
 
 
 For SEOs, performance disambiguated from "speed" with changes to Lighthouse's core measurement methodology in update to version 6.  Lighthouse is the scoring tool that populates key SEO performance tools such as web.dev, Chrome DevTools, and PageSpeed Insights.
-Previously, performance scores and methods of measurement varied by tool.  Google announced a set of unified performance metrics called [Core Web Vitals](https://developers.google.com/search/blog/2020/05/evaluating-page-experience) in May 2020.  
+Previously, performance scores and methods of measurement varied by tool.  Google announced a set of unified performance metrics called [Core Web Vitals](https://developers.google.com/search/blog/2020/05/evaluating-page-experience) in May 2020.
 
 Each of the metrics aligns to a phase in a user's experience.  The data source is the [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report/) (Crux).  This field data is aggregated from users who have opted-in to syncing their browsing history, have not set up a Sync passphrase, and have usage statistic reporting enabled.
 
@@ -624,9 +624,9 @@ Core Web Vitals consist of:
 
 In light of COVID-19, Google clarified in their official post that no immediate action is required.  Search Console now includes a [Core Web Vitals report](https://search.google.com/search-console/not-verified?original_url=/search-console/core-web-vitals) to help sites improve performance.  The report includes URL specific data grouped together by status, metric type, and URL group (groups of similar web pages).  In order to anonymize user data, a  minimum data threshold is in place.  If a URL does not have enough data from the Crux report, it is omitted.
 
-In the announcement of updates to core measurement, Lighthouse shared their analysis of performance scoring differences between versions 5 and 6. The [limited data set](https://docs.google.com/spreadsheets/d/1BZFh7AyyaLHCj5LGAbrn3m72ysu4yv8okyHG-f3MoXI/edit#gid=1984498811) saw ~18.67% of sites improve, 33.33% with no change, and 48.00% score lower.   
+In the announcement of updates to core measurement, Lighthouse shared their analysis of performance scoring differences between versions 5 and 6. The [limited data set](https://docs.google.com/spreadsheets/d/1BZFh7AyyaLHCj5LGAbrn3m72ysu4yv8okyHG-f3MoXI/edit#gid=1984498811) saw ~18.67% of sites improve, 33.33% with no change, and 48.00% score lower.
 
-Analysts for the Web Almanac saw marked different performance distribution scores between the versions.  Refer to the Performance Chapter of the Web Almanac for an in depth comparison between versions 5 and 6.   
+Analysts for the Web Almanac saw marked different performance distribution scores between the versions.  Refer to the Performance Chapter of the Web Almanac for an in depth comparison between versions 5 and 6.
 
 In tests using v5 of Lighthouse, 15.44% of pages tested scored at or above the 'passing' 85% score. Tests using Version 6 saw only 8.39% of tests achieve a passing score.
 
