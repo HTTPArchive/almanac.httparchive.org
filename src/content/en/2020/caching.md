@@ -585,7 +585,7 @@ For example, if a login cookie or a session cookie is present in a CDN’s cache
 {{ figure_markup(
   image="9_set_cookie2.png",
   caption="`Set-Cookie` in `private` and non private cacheable responses.",
-  description="A bar chart showing `Set-Cookie` usage in `private` and non private cacheable responses. Of the desktop responses containing a `Set-Cookie` header, 4.6% use the `private` directive. 95.4% responses can be cached by both private and public cache servers. Of the mobile responses containing a `Set-Cookie` header, 4.9% use the `private` directive. 95.1% responses can be cached by both private and public cache servers.,
+  description="A bar chart showing `Set-Cookie` usage in `private` and non private cacheable responses. Of the desktop responses containing a `Set-Cookie` header, 4.6% use the `private` directive. 95.4% responses can be cached by both private and public cache servers. Of the mobile responses containing a `Set-Cookie` header, 4.9% use the `private` directive. 95.1% responses can be cached by both private and public cache servers.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=97044455&format=interactive",
   sheets_gid="203111109",
   sql_file="set_cookie.sql"
