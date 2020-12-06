@@ -83,7 +83,7 @@ Since the data for the following charts was gathered before the switchover, Goog
 {{ figure_markup(
   image="fonts-web-hosting-performance-desktop.png",
   caption="Web font hosting performance, desktop.",
-  description="A bar chart showing the desktop median first content paint and last content paint (in milliseconds) for three different web font hosting strategies: local is 2,426 milliseconds for median FCP and 4,176 for median LCP,  external is 2,034 and 3,671 respectively, and both is 2,663 and 5,044 milliseconds respectively.",
+  description="A bar chart showing the desktop median first content paint and last content paint (in milliseconds) for three different web font hosting strategies: local is 2,426 milliseconds for median FCP and 4,176 for median LCP, external is 2,034 and 3,671 respectively, and both is 2,663 and 5,044 milliseconds respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=506816237&format=interactive",
   sheets_gid="838326315",
   sql_file="04_04.local_vs_host_with_fcp.sql"
@@ -93,7 +93,7 @@ Since the data for the following charts was gathered before the switchover, Goog
 {{ figure_markup(
   image="fonts-web-hosting-performance-mobile.png",
   caption="Web font hosting performance, mobile.",
-  description=A bar chart showing the mobile median first content paint and last content paint (in milliseconds) for three different web font hosting strategies: local is 5,326 milliseconds for median FCP and 8,521 for median LCP,  external is 5,056 and 8,229 respectively, and both is 5,847 and 9,900 milliseconds respectively..",
+  description="A bar chart showing the mobile median first content paint and last content paint (in milliseconds) for three different web font hosting strategies: local is 5,326 milliseconds for median FCP and 8,521 for median LCP,  external is 5,056 and 8,229 respectively, and both is 5,847 and 9,900 milliseconds respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1955186104&format=interactive",
   sheets_gid="838326315",
   sql_file="04_04.local_vs_host_with_fcp.sql"
