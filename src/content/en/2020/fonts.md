@@ -8,7 +8,7 @@ authors: [raphlinus, jpamental]
 reviewers: [davelab6, malchata, RoelN, notwaldorf, mandymichael, svgeesus, rsheeter]
 analysts: [AbbyTsai]
 translators: []
-#jpamental_bio: TODO
+jpamental_bio: Designer, tinkerer, typographer. Author of Responsive Typography, Invited Expert to the W3C, and 10yrs+ experience focused on better typogography on the web.
 raphlinus_bio: Raph Levien has been working with fonts for over 35 years, including a PhD from UC Berkeley in font design tools. He is rejoining Google Fonts as a font technology researcher, after having co-founded the team in 2010.
 discuss: 2040
 results: https://docs.google.com/spreadsheets/d/1jjvZqYay5KmTle4atzFWqtbkz9ohw25KFmNtCS-7n3s/
