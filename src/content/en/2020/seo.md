@@ -312,6 +312,48 @@ As part of our examination, we took a look at the incidence rates of different t
 {# TODO(analysts, authors): Consider adding a "big number" figure here for the mobile JSON-LD stat, or a bar chart containing each format. #}
 JSON-LD is generally considered to be the more portable and easier to manage implementation and so it has become the preferred format. As a result, we see that JSON-LD appears on 29.78% of mobile pages and 30.60% of desktop pages.
 
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Format</th>
+        <th>Mobile</th>
+        <th>Desktop</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>JSON-LD</td>
+        <td class="numeric">29.78%</td>
+        <td class="numeric">30.60%</td>
+      </tr>
+      <tr>
+        <td>Microdata</td>
+        <td class="numeric">19.55%</td>
+        <td class="numeric">17.94%</td>
+      </tr>
+      <tr>
+        <td>RDFa</td>
+        <td class="numeric">1.42%</td>
+        <td class="numeric">1.63%</td>
+      </tr>
+      <tr>
+        <td>Microformats2</td>
+        <td class="numeric">0.10%</td>
+        <td class="numeric">0.10%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="Structured Data Formats Usage.",
+      sheets_gid="TODO",
+      sql_file="TODO.sql"
+    ) }}
+  </figcaption>
+</figure>
+
+
 {# TODO(authors): Is this disparity really noteworthy? The difference seems quite small. #}
 We find that the disparity between mobile and desktop continues with this type of data. Microdata appeared on 19.55% of mobile pages and 17.94% of desktop pages. RDFa appeared on 1.42% of mobile pages and 1.63% of mobile pages.
 
