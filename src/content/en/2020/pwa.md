@@ -52,7 +52,7 @@ From the data we gathered it was derived that about **0.88%** desktop sites and 
   )
 }}
 
-## Insights from lighthouse scores
+## Lighthouse insights
 
 [Lighthouse](https://github.com/GoogleChrome/lighthouse) provides automated auditing, performance metrics, and best practices for the web and has been instrumental in shaping web’s performance. The score we gathered over 6811475 pages, has given us great insights on a few important touch points for the month of September 2020.
 
