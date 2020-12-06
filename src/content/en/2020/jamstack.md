@@ -65,6 +65,8 @@ The increase in desktop web pages powered by a Jamstack framework is 79% from la
 
 Our analysis counted 12 separate Jamstack frameworks. Only five frameworks had more than 1% share. Next.js, Gatsby, Hugo, Jekyll being the top contenders for the Jamstack market share.
 
+<p class="note">It should be noted that our analysis is limited by those Jamstacks that make themselves easily identified using [Wappalyzer](./methodology#wappalyzer). This means our data does not include some popular Jamstacks like [Eleventy](https://github.com/11ty/eleventy/) which [make a deliberate choice to not make themselves identifiable](https://twitter.com/eleven_ty/status/1334225624110608387?s=20). While we would ideally include all Jamstacks, we believe there is still plenty of value in analysing the significant data we do have.</p>
+
 <figure markdown>
 
 | Jamstack   | 2019   | 2020   | % change |
