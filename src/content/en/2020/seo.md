@@ -218,7 +218,6 @@ Canonical URLs can be specified through different methods: by using the canonica
 
 When analyzing the canonical tag implemented in the raw HTML versus those relying on client-side JavaScript rendering, we identified that 0.68% of the mobile pages and 0.54% of the desktop ones include a canonical tag in the rendered but not the raw HTML. This means that there's only a very small number of pages that are relying on JavaScript to implement canonical tags.
 
-{# TODO(authors, editors): Consider rephrasing into two sentences. Also explain what the conflict is and what causes it. #}
 On the other hand, in 0.93% of the mobile pages and 0.76% of the desktop ones, we saw canonical tags implemented via both the raw and the rendered HTML with a conflict happening between the URL specified in the raw versus the rendered HTML of the same pages. This can generate indexability issues as mixed information is sent to search engines about which is the canonical URL for the same page. 
 
 A similar conflict can be found with the different implementation methods, with 0.15% of the mobile pages and 0.17% of the desktop ones showing conflicts between the canonical tags implemented via their HTTP headers and HTML `head`.
@@ -306,8 +305,7 @@ In a move from ["strings to things"](https://blog.google/products/search/introdu
 
 As search engines evolve to reflect more of these elements in search results, the incidence rates of the different vocabularies change across the web.
 
-{# TODO(authors): Is schema.org itself a "format"? #}
-As part of our examination, we took a look at the incidence rates of different types of structured markup. The available vocabularies include [RDFa](https://www.w3.org/TR/rdfa-primer/) and [Schema.org](https://schema.org/), which come in both the microformats and [JSON-LD](https://www.w3.org/TR/json-ld11/) flavors. Google has recently [dropped the support for data-vocabulary](https://developers.google.com/search/blog/2020/01/data-vocabulary), which was primarily used to implement breadcrumbs. 
+As part of our examination, we took a look at the incidence rates of different types of structured markup. The available vocabularies include [RDFa](https://www.w3.org/TR/rdfa-primer/) and [schema.org](https://schema.org/), which come in both the microformats and [JSON-LD](https://www.w3.org/TR/json-ld11/) flavors. Google has recently [dropped the support for data-vocabulary](https://developers.google.com/search/blog/2020/01/data-vocabulary), which was primarily used to implement breadcrumbs. 
 
 {# TODO(analysts, authors): Consider adding a "big number" figure here for the mobile JSON-LD stat, or a bar chart containing each format. #}
 JSON-LD is generally considered to be the more portable and easier to manage implementation and so it has become the preferred format. As a result, we see that JSON-LD appears on 29.78% of mobile pages and 30.60% of desktop pages.
@@ -346,19 +344,17 @@ JSON-LD is generally considered to be the more portable and easier to manage imp
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Structured Data Formats Usage.",
+      caption="Usage of each structured data format.",
       sheets_gid="TODO",
       sql_file="TODO.sql"
     ) }}
   </figcaption>
 </figure>
 
-{# TODO(authors): Is this disparity really noteworthy? The difference seems quite small. #}
-We find that the disparity between mobile and desktop continues with this type of data. Microdata appeared on 19.55% of mobile pages and 17.94% of desktop pages. RDFa appeared on 1.42% of mobile pages and 1.63% of mobile pages.
+We find that the disparity between mobile and desktop continues with this type of data. Microdata appeared on 19.55% of mobile pages and 17.94% of desktop pages. RDFa appeared on 1.42% of mobile pages and 1.63% of desktop pages.
 
 ##### Rendered versus non-rendered structured data
 
-{# TODO(authors): This section introduces a few stats but doesn't go into your interpretations of the results. What do you hope readers take away from these stats? #}
 We found that 38.61% of desktop pages and 39.26% of mobile pages feature JSON-LD or microformat structured data in the raw HTML, while 40.09% of desktop pages and 40.97% of mobile pages feature structured data in the rendered DOM. 
 
 When reviewing this in more detail, we found that 1.49% of desktop pages and 1.77% of mobile pages only featured this type of structured data in the rendered DOM due to JavaScript transformations, relying in search engines JavaScript execution capabilities. 
@@ -532,7 +528,6 @@ The median desktop page includes 76 outgoing links while the median mobile page 
   sql_file="pages_wpt_bodies_by_device_and_percentile.sql"
 ) }}
 
-{# TODO(authors): Can you clarify how a link can be both outgoing and internal? #}
 The median page has 61 outgoing internal links (those links going to other pages of the same site) on desktop and 54 on mobile. This is down 12.8% and 10% respectively from [last year's analysis](../2019/seo#linking). This suggests that sites are not maximizing the ability to improve the crawlability and link equity flow through their pages in the way they did the year before.
 
 {{ figure_markup(
@@ -610,10 +605,8 @@ This section explores the opportunities for optimization related to web configur
 
 With the increasing popularity of mobile devices to browse and search across the web, search engines have been taking mobile friendliness into consideration as a [ranking factor for several years](https://developers.google.com/search/blog/2015/02/finding-more-mobile-friendly-search).
 
-{# TODO(authors): MFI has been discussed earlier, so the "in fact" doesn't pack as much punch this time. Consider rephrasing. #}
-Also, as mentioned before,[since 2016](https://developers.google.com/search/blog/2016/11/mobile-first-indexing) Google has been moving to a mobile-first index, meaning that the content that is crawled, indexed, and ranked is the one accessible to mobile users and the [Smartphone Googlebot](https://developers.google.com/search/docs/advanced/crawling/googlebot?hl=en).
+Also, as mentioned before, [since 2016](https://developers.google.com/search/blog/2016/11/mobile-first-indexing) Google has been moving to a mobile-first index, meaning that the content that is crawled, indexed, and ranked is the one accessible to mobile users and the [Smartphone Googlebot](https://developers.google.com/search/docs/advanced/crawling/googlebot?hl=en).
 
-{# TODO(authors): Can you clarify the timeline? You say "July last year" but the blog post is dated July 2020. Would "July this year" change how you structure this sentence chronologically? #}
 Additionally, [since July 2019](https://developers.google.com/search/blog/2019/05/mobile-first-indexing-by-default-for) Google is using the mobile-first index for all new websites and earlier in March, it announced that [70% of pages shown in their search results have already shifted over](https://webmasters.googleblog.com/2020/03/announcing-mobile-first-indexing-for.html_). It is now expected that Google [fully switches to a mobile-first index in March 2021](https://webmasters.googleblog.com/2020/07/prepare-for-mobile-first-indexing-with.html).
 
 Mobile friendliness should be fundamental for any website looking to provide a good search experience—and as a consequence, grow in search results.
