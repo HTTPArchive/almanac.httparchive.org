@@ -251,16 +251,3 @@ Vercel, one of the CDNs meant to host Jamstack sites, has built an analytics off
 Probably worth noting here that Vercel created and maintains Next.js, particularly since Next.js had low LCP scores. This could mean we can hope to see a marked improvement next year. This can be extremely helpful information for developers.
 
 Jamstack frameworks are improving the developer experience of building sites. Let’s work towards continued progress for improving the real-user experience of browsing Jamstack sites.
-
-[1]: https://httparchive.org/
-[2]: https://httparchive.org/reports/state-of-the-web#numUrls
-[3]: https://webpagetest.org/
-[4]: ./methodology
-[6]: https://www.nature.com/articles/d41586-018-06610-y
-[7]: https://gitlab.com/wholegrain/carbon-api-2-0/-/blob/master/includes/carbonapi.php#L342
-[8]: https://developers.google.com/speed/webp/
-[9]: https://developers.google.com/speed/webp/docs/webp_lossless_alpha_study#results
-[10]: https://developers.google.com/speed/webp/docs/webp_study
-[11]: https://web.dev/learn-web-vitals/
-[12]: https://vercel.com/docs/analytics#real-experience-score
-[13]: https://web.dev/measure/
