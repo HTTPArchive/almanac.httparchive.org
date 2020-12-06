@@ -29,7 +29,6 @@ The core principles of Jamstack are pre-rendering your site pages and decoupling
 
 The [HTTP Archive][1] crawls [millions of pages][2] every month and runs them through a private instance of [WebPageTest][3] to store key information on every page. (You can learn more about this in our [methodology][4]). In the context of Jamstack, HTTP Archive provides extensive information on the usage of the frameworks and CDNs for the entire web. This chapter consolidates and analyzes many of these trends.
 
-### Goals: Growth of Jamstack & Real User Perf
 
 The goals of this chapter are to estimate and analyze the growth of the Jamstack sites, the performance of popular Jamstack frameworks, as well as an analysis of real user experience using the Core Web Vitals metadata.
 
