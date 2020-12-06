@@ -134,7 +134,7 @@ Page weights are important here. The average desktop Jamstack web page loads 1.5
 
 ### Image formats
 
-Popular image formats are PNG, JPG, GIF, SVG, WebP, and ICO. Of these, [WebP is the most efficient in most situations][8], with WebP lossless images [26% smaller][9] than equivalent PNGs and [25-34% smaller][10] than comparable JPGs. We see, however, that WebP is the second least popular image format across all Jamstack pages, where PNG is the most popular both for mobile and desktop. Only slightly less popular is JPG whereas GIF is almost 20% of all the images used on Jamstack sites. An interesting discovery is SVG which is almost twice as popular on mobile sites as desktop sites.
+Popular image formats are PNG, JPG, GIF, SVG, WebP, and ICO. Of these, [WebP is the most efficient in most situations](https://developers.google.com/speed/webp/), with WebP lossless images [26% smaller](https://developers.google.com/speed/webp/docs/webp_lossless_alpha_study#results) than equivalent PNGs and [25-34% smaller](https://developers.google.com/speed/webp/docs/webp_study) than comparable JPGs. We see, however, that WebP is the second least popular image format across all Jamstack pages, where PNG is the most popular both for mobile and desktop. Only slightly less popular is JPG whereas GIF is almost 20% of all the images used on Jamstack sites. An interesting discovery is SVG which is almost twice as popular on mobile sites as desktop sites.
 
 {{ figure_markup(
   image="jamstack-popularity-of-image-formats.png",
