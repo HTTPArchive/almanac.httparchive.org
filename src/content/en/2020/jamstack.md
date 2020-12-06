@@ -14,11 +14,11 @@ results: https://docs.google.com/spreadsheets/d/1BCC5Q4tePpTl8TiaGmSxBc9Lh2to7xB
 queries: 17_Jamstack
 featured_quote: Stats suggest almost twice as many Jamstack sites exist now than in 2019. Developers enjoy a better development experience by separating the frontend from the backend. But what about the real-user experience of browsing Jamstack sites?
 featured_stat_1: 154%
-featured_stat_label_1: more mobile websites built with Jamstack in 2020
+featured_stat_label_1: Increase in Jamstack websites in 2020
 featured_stat_2: 1 gram
-featured_stat_label_2: CO2 is emitted by the median Jamstack page load
+featured_stat_label_2: CO2 emitted the median Jamstack on page load
 featured_stat_3: 38%
-featured_stat_label_3: Jamstack sites are built using Next.js (three times more than any other framework!)
+featured_stat_label_3: Jamstack sites built using Next.js
 ---
 
 ## Introduction
