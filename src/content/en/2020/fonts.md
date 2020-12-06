@@ -35,7 +35,7 @@ Web font usage has been growing steadily over time, with 82% of web pages for de
 {{ figure_markup(
   image="fonts-web-fonts-usage.png",
   caption="Web font usage over time.",
-  description="Scatter plot showing fraction of mobile and desktop web pages containing web fonts, as a function of time.",
+  description="Scatter plot showing fraction of mobile and desktop web pages containing web fonts, as a function of time. Usage increased roughly linearly from 0% around 2010 to 80% now. Desktop and mobile usage seems similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=666273773&format=interactive",
   sheets_gid="655527383",
   sql_file="04_01.web_fonts_usage.sql"
@@ -49,7 +49,7 @@ https://discuss.httparchive.org/t/how-does-web-font-usage-vary-by-country/1649
 {{ figure_markup(
   image="fonts-web-fonts-usage-by-country.png",
   caption="Web fonts usage by country (desktop).",
-  description="A map of the world showing the amount of web font usage for each country, measured as median kilobytes of web font data.",
+  description='A map of the world showing the amount of web font usage for each country, measured as median kilobytes of web font data. Noteable "hot spots" highlighted with low font usage include Africa, Turkmenistan, Taiwan, Japan and a number of other far eastern countries',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=961243485&format=interactive",
   sheets_gid="68624087",
   sql_file="04_02.web_fonts_usage_by_country.sql"
@@ -61,7 +61,7 @@ The single top country is South Korea, which is not all that surprising given th
 {{ figure_markup(
   image="fonts-web-fonts-usage-top-countries.png",
   caption="Web fonts usage, top countries (desktop).",
-  description="A chart showing the top countries by usage of web fonts, measured as median kilobytes of web font data.",
+  description="A chart showing the top countries by usage of web fonts, measured as median kilobytes of web font data. At the top is the Republic of Korea with 155 kilobytes followed by Turkey (117), Iran (115), Solvenia (114), Greece (111), Suadia Arabia (109), and then three countries (Australia, United States of America, and Poland) are at the bottom with 108 kilobytes each.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=705183861&format=interactive",
   sheets_gid="68624087",
   sql_file="04_02.web_fonts_usage_by_country.sql"
@@ -83,7 +83,7 @@ Since the data for the following charts was gathered before the switchover, Goog
 {{ figure_markup(
   image="fonts-web-hosting-performance-desktop.png",
   caption="Web font hosting performance, desktop.",
-  description="A bar chart showing the desktop median first content paint and last content paint (in milliseconds) for three different web font hosting strategies: local, external or both.",
+  description="A bar chart showing the desktop median first content paint and last content paint (in milliseconds) for three different web font hosting strategies: local is 2,426 milliseconds for median FCP and 4,176 for median LCP,  external is 2,034 and 3,671 respectively, and both is 2,663 and 5,044 milliseconds respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=506816237&format=interactive",
   sheets_gid="838326315",
   sql_file="04_04.local_vs_host_with_fcp.sql"
@@ -93,7 +93,7 @@ Since the data for the following charts was gathered before the switchover, Goog
 {{ figure_markup(
   image="fonts-web-hosting-performance-mobile.png",
   caption="Web font hosting performance, mobile.",
-  description="A bar chart showing the mobile median first content paint and last content paint (in milliseconds) for three different web font hosting strategies: local, external or both.",
+  description=A bar chart showing the mobile median first content paint and last content paint (in milliseconds) for three different web font hosting strategies: local is 5,326 milliseconds for median FCP and 8,521 for median LCP,  external is 5,056 and 8,229 respectively, and both is 5,847 and 9,900 milliseconds respectively..",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1955186104&format=interactive",
   sheets_gid="838326315",
   sql_file="04_04.local_vs_host_with_fcp.sql"
@@ -111,7 +111,7 @@ The [`font-display`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face
 {{ figure_markup(
   image="fonts-usage-of-font-display.png",
   caption="Usage of font-display.",
-  description="A bar chart showing the usage of the different font-display settings, on desktop and mobile.",
+  description="A bar chart showing the usage of the different font-display settings, on desktop and mobile: `swap` is used by 10.9% of desktop sites and 10.3% of mobile sites, `auto` is used by 5.2% and 5.6% respectively, `block` by 4.1% and 4.2% respectively, `fallback` by 0.9% for both, and finally `optional` is used by 0.3% of desktop sites and 0.1% of mobile sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=654093509&format=interactive",
   sheets_gid="1485693069",
   sql_file="04_06.font_display_with_fcp.sql"
@@ -123,7 +123,7 @@ We can analyze the effect of these settings on first content paint and last cont
 {{ figure_markup(
   image="fonts-font-display-performance-desktop.png",
   caption="font-display, performance, desktop.",
-  description="A bar chart showing the desktop median first content paint and last content paint (in milliseconds) for different font-display settings.",
+  description="A bar chart showing the desktop median first content paint (FCP) and last content paint (LCP) in milliseconds for different font-display settings: `none` has a median FCP of 2,286 ms and median LCP of 4,028 ms, `optional` has 1,766 ms and 3,055 ms respectively, `swap` has 2,223 ms and 4,176 ms, `fallback` has 2,397 ms and 4,106 ms, `block` has 2,454 ms and 4,669 ms, and `auto has 2,605 ms and 4,883 ms.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1618299142&format=interactive",
   sheets_gid="1485693069",
   sql_file="04_06.font_display_with_fcp.sql"
@@ -133,7 +133,7 @@ We can analyze the effect of these settings on first content paint and last cont
 {{ figure_markup(
   image="fonts-font-display-performance-mobile.png",
   caption="font-display, performance, mobile.",
-  description="A bar chart showing the mobile median first content paint and last content paint (in milliseconds) for different font-display settings.",
+  description="A bar chart showing the mobile median first content paint (FCP) and last content paint (LCP) in milliseconds for different font-display settings: `none` has a median FCP of 5,279 ms and median LCP of 8,381 ms, `optional` has 4,733 ms and 6,598 ms respectively, `swap` has 5,268 ms and 8,748 ms, `fallback` has 5,478 ms and 8,706 ms, `block` has 5,739 ms and 9,625 ms, and `auto has 6,181 ms and 10,103 ms.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=2135700957&format=interactive",
   sheets_gid="1485693069",
   sql_file="04_06.font_display_with_fcp.sql"
@@ -155,7 +155,7 @@ Adding a `resource-hint` element in the HTML starts that second connection earli
 {{ figure_markup(
   image="fonts-resource-hints-use.png",
   caption="resource-hints use on fonts.",
-  description="A bar chart showing the usage of different resource-hints setting for font data.",
+  description="A bar chart showing the usage of different resource-hints setting for font data: `dns-prefetch` is used by 32% of both desktop and mobile sites, `preload` by 17% of desktop and 16% of mobile, `preconnect` by 8% of both, `prefetch` by 3% of both, and `prerender` by 0% for both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1880156934&format=interactive",
   sheets_gid="2079638999",
   sql_file="04_07.font_resource_hints_with_fcp.sql"
@@ -165,7 +165,7 @@ Adding a `resource-hint` element in the HTML starts that second connection earli
 {{ figure_markup(
   image="fonts-resource-hints-performance-desktop.png",
   caption="resource-hints performance, desktop.",
-  description="A bar chart showing the desktop median first content paint and last content paint (in milliseconds) for different resource-hints settings.",
+  description="A bar chart showing the desktop median first content paint and last content paint (in milliseconds) for different resource-hints settings: `prerender` has a median FCP of 1,658 ms and median LCP of 2,904 ms, `preload` has 2,045 ms and 3,865 ms respectively, `prefetch` has 1,909 ms and 3,702 ms, `preconnect` has 2,069 ms and 4,213 ms, `none` has 2,489 ms and 4,816 ms, and `dns-prefetch` has 2,630 ms and 5,061 ms.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=355239876&format=interactive",
   sheets_gid="2079638999",
   sql_file="04_07.font_resource_hints_with_fcp.sql"
@@ -175,7 +175,7 @@ Adding a `resource-hint` element in the HTML starts that second connection earli
 {{ figure_markup(
   image="fonts-resource-hints-performance-mobile.png",
   caption="resource-hints performance, mobile.",
-  description="A bar chart showing the mobile median first content paint and last content paint (in milliseconds) for different resource-hints settings.",
+  description="A bar chart showing the mobile median first content paint and last content paint (in milliseconds) for different resource-hints settings: `prerender` has a median FCP of 3,387 ms and median LCP of 7,362 ms, `preload` has 4,900 ms and 8,222 ms respectively, `prefetch` has 4,942 ms and 8,191 ms, `preconnect` has 4,858 ms and 9,131 ms, `none` has 5,825 ms and 10,027 ms, and `dns-prefetch` has 5,908 ms and 9,962 ms.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=640692889&format=interactive",
   sheets_gid="2079638999",
   sql_file="04_07.font_resource_hints_with_fcp.sql"
@@ -203,7 +203,7 @@ The `unicode-range` feature is a newer approach to this problem. The font is sli
 {{ figure_markup(
   image="fonts-usage-of-unicode-range.png",
   caption="usage of unicode-range.",
-  description="A bar chart showing the fraction of unicode-range usage in mobile and desktop web pages that use web fonts.",
+  description="A bar chart showing the fraction of unicode-range usage in mobile and desktop web pages that use web fonts. On desktop 37.05% of pages use unicode-range while 62.95% do not. On mobile 38.27% of pages use unicode-range while 61.73% do not.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1739264728&format=interactive",
   sheets_gid="640499741",
   sql_file="04_08.font_unicode_range_with_fcp.sql"
@@ -219,7 +219,7 @@ WOFF2 is the best compression format, and is now [supported](https://caniuse.com
 {{ figure_markup(
   image="fonts-web-font-mime-types.png",
   caption="Popular web font MIME types.",
-  description="A bar chart showing the breakdown of percentage of different MIME types for serving web fonts.",
+  description="A bar chart showing the breakdown of percentage of different MIME types for serving web fonts: WOFF2 is used by 75.83% of pages using fonts on desktop and 74.32% on mobile, WOFF is used by 11.57% and 11.61% respectively, octet-stream by 6.33% and 6.09%, ttf by 2.54% and 4.42%, and plain by 1.41% and 1.32% respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=2028456617&format=interactive",
   sheets_gid="316058576",
   sql_file="04_10.font_formats.sql"
@@ -239,7 +239,7 @@ Icon fonts are fully half of the top 10 most popular web fonts, the rest being c
 {{ figure_markup(
   image="fonts-popular-typefaces.png",
   caption="Popular typefaces.",
-  description="A bar chart showing the 10 most popular web fonts.",
+  description="A bar chart showing the 10 most popular web fonts, starting with Font Awesome (35% of desktop and mobile), Open Sans (23% desktop and 25% of mobile)...etc.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=551344676&format=interactive",
   sheets_gid="179750099",
   sql_file="04_11a.popular_typeface.sql",
