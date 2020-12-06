@@ -270,8 +270,8 @@ Lots more information about color fonts, including examples, are available at [c
   image="fonts-font-variation-settings-usage.png",
   caption="Usage of font-variation-settings axes.",
   description="A bar chart showing the usage of the 6 most popular axes for font variation settings.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=173491049&format=interactive",
-  sheets_gid="655527383",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=635348995&format=interactive",
+  sheets_gid="309969915",
   sql_file="04_17.VF_axis_value.sql"
   )
 }}
