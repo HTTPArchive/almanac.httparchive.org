@@ -422,7 +422,7 @@ In the same way that the `Cache-Control` header has more power and flexibility t
 {{ figure_markup(
   image="3_last_modified_and_etag.png",
   caption="Adoption of validating freshness via `Last-Modified` and `ETag` headers.",
-  description="A bar chart showing 73.5% of desktop requests have a `Last-Modified`, 47.9% have an `ETag`, 42.8% have both, and 21.4% have neither. The stats for mobile are almost identical at 72.0% for `Last-Modified`, 46.2% for `ETag`, 41.0% for both, and 22.9% for neither.,
+  description="A bar chart showing 73.5% of desktop requests have a `Last-Modified`, 47.9% have an `ETag`, 42.8% have both, and 21.4% have neither. The stats for mobile are almost identical at 72.0% for `Last-Modified`, 46.2% for `ETag`, 41.0% for both, and 22.9% for neither.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1171778982&format=interactive",
   sheets_gid="203111103",
   sql_file="last_modified_and_etag.sql"
