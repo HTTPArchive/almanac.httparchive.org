@@ -56,7 +56,7 @@ https://discuss.httparchive.org/t/how-does-web-font-usage-vary-by-country/1649
   )
 }}
 
-The single top country is South Korea, which is not all that surprising given their consistently high internet speeds and low latency and the fact that Korean (Hangul) fonts are almost an order of magnitude larger than Latin. Web font usage in Japan and Chinese-speaking countries is considerably lower, likely because  Chinese and Japanese fonts are vastly larger (the median font size being over 100 times larger than the median Latin size). This means web font usage in Japan is very low, and usage in China is effectively zero. Although [recent developments](https://www.w3.org/TR/2020/NOTE-PFE-evaluation-20201015/) may make web fonts usable in both countries, within a couple of years.
+The single top country is South Korea, which is not all that surprising given their consistently high internet speeds and low latency and the fact that Korean (Hangul) fonts are almost an order of magnitude larger than Latin. Web font usage in Japan and Chinese-speaking countries is considerably lower, likely because Chinese and Japanese fonts are vastly larger (the median font size being over 100 times larger than the median Latin size). This means web font usage in Japan is very low, and usage in China is effectively zero. Although [recent developments](https://www.w3.org/TR/2020/NOTE-PFE-evaluation-20201015/) may make web fonts usable in both countries, within a couple of years.
 
 {{ figure_markup(
   image="fonts-web-fonts-usage-top-countries.png",
@@ -140,9 +140,9 @@ We can analyze the effect of these settings on first content paint and last cont
   )
 }}
 
-There are two other interesting inferences from this data. One might expect the `block` setting to have a significant impact on FCP, especially on mobile, but in practice the effect is not that large. That suggests that waiting for font assets is seldom the "long pole in the tent" for the webpage as a whole, though it would certainly be a major. The `auto` setting (which is also what you get if you don't specify it) looks a lot like `block`; though it's technically up to the browser, [the default seems to be blocking](https://nooshu.github.io/blog/2020/02/23/improving-perceived-performance-with-the-css-font-display-property/).
+There are two other interesting inferences from this data. One might expect the `block` setting to have a significant impact on FCP, especially on mobile, but in practice the effect is not that large. That suggests that waiting for font assets is seldom the limiting factor for the webpage performance as a whole, though it would certainly be a major. The `auto` setting (which is also what you get if you don't specify it) looks a lot like `block`; though it's technically up to the browser, [the default seems to be blocking](https://nooshu.github.io/blog/2020/02/23/improving-perceived-performance-with-the-css-font-display-property/).
 
-Finally, the data do not support the use of the `fallback` setting, as there is no actual empirical performance gain compared with `swap`. Fortunately, it only is used by about 1% of pages.
+Finally, one justification for using `fallback` is to improve Last Content Paint times compared to `swap` (which is more likely to respect the designer's visual intent), but the data do not support this case; this performance metric is no better. Perhaps this is why the setting is not popular, used by only about 1% of pages.
 
 Google Fonts now recommends `swap` in its suggested integration code. If you're not using it now, adding it might be a way to improve performance, especially for users on slow connections.
 
@@ -150,7 +150,7 @@ Google Fonts now recommends `swap` in its suggested integration code. If you're 
 
 While `font-display` can speed up the presentation of the page when the fonts are slow to load, resource hints can move the loading of web font assets to earlier in the cascade. Ordinarily, fetching web fonts is a two-stage process. The first stage is loading the CSS, which contains a reference (in `@font-face` sections) to the actual font binaries. Only then can the connection to that server begin, which further breaks down into the DNS query for the server, and actually initiating a connection (which, these days, usually involves an HTTPS cryptographic handshake).
 
-Adding a `resource-hint` element in the HTML starts that second connection earlier. The various `resource-hint` settings control how far that gets before having the URL for the actual font resource. The most common (at about 32% of web pages) is `dns-prefetch`, but
+Adding a [resource hint element](https://www.w3.org/TR/resource-hints/#resource-hints) in the HTML starts that second connection earlier. The various resource hint settings control how far that gets before having the URL for the actual font resource. The most common (at about 32% of web pages) is `dns-prefetch`, even though in most cases there are better choices.
 
 {{ figure_markup(
   image="fonts-resource-hints-use.png",
@@ -232,7 +232,7 @@ WOFF is an older, less efficient compression mechanism, but almost universally s
 
 Ancient versions of Internet Explorer (6-8), which still make about 1.5% of global browser share, require EOT. These don't show up in the top 5 MIME formats, but are necessary for maximum compatibility.
 
-Uncompressed fonts are 2-3x larger than compressed, but still make up almost 5% of all fonts served, disproportionally on mobile. If you're serving these, it should be a red flag that optimization is possible.
+Uncompressed fonts, like OTF and TTF files, are 2-3x larger than compressed, but still make up almost 5% of all fonts served, disproportionally on mobile. If you're serving these, it should be a red flag that optimization is possible.
 
 ## Popular fonts
 
@@ -254,7 +254,7 @@ A note of caution, in determining the most popular fonts you can get different r
 
 ## Color fonts
 
-Color fonts, in one form or other, are supported by most modern browsers, but usage is still close to nonexistent (a total of 755 pages total, the majority of which are in a format that is not widely supported in popular browsers). No doubt part of the problem is the diversity of formats, in fact 4 in widespread use. These come in bitmap and vector flavors. The two bitmap formats are technologically very similar, but SBIX (originally a proprietary Apple format) is not supported in Firefox, while CBDT/CBLC is not supported in Safari.
+Color fonts, in one form or other, are supported by most modern browsers, but usage is still close to nonexistent (a total of 755 pages total, the majority of which are in SVG format, which is not supported in Chrome). No doubt part of the problem is the diversity of formats, in fact 4 in widespread use. These come in bitmap and vector flavors. The two bitmap formats are technologically very similar, but SBIX (originally a proprietary Apple format) is not supported in Firefox, while CBDT/CBLC is not supported in Safari.
 
 The COLR vector format is supported on all major modern browsers, but only fairly recently. The fourth format is embedding SVG in OpenType (not to be confused with SVG fonts), but not supported in Chrome. One drawback of SVG in OpenType is lack of support for font variations, an increasingly important aspect of modern Web design. For this reason, the COLR format is likely to prevail, particularly as support for gradients and clipping is being developed for a future version of COLR is.
 
@@ -288,7 +288,7 @@ By far the most commonly used axis is `wght` (which controls weight), at 84.7% d
 
 It’s worth noting that the preferred method is to use `font-weight` and `font-stretch` rather than the lower-level `font-variation-settings` syntax for these two axes as they are completely supported by all browsers that support variable fonts. By setting weight via `font-width: [number]` and width via `font-stretch: [number]%`, authors provide more appropriate style hints to the browser, which in turn enables better rendering for the end user should the variable font fail to load. This also avoids altering the normal inheritance of styles via the cascade.
 
-The optical size (`opsz`) feature is used for approximately 2% of the variable font usage. This is one to watch, as tuning the appearance of a font to match its intended size of presentation improves the visual refinement in perhaps subtle but very real ways. Usage is also likely to increase once some current cross-browser and cross-platform uncertainties on how the optical sizes are defined are cleared up.
+The optical size (`opsz`) feature is used for approximately 2% of the variable font usage. This is one to watch, as tuning the appearance of a font to match its intended size of presentation improves the visual refinement in perhaps subtle but very real ways. Usage is also likely to increase once some current cross-browser and cross-platform uncertainties on how the optical sizes are defined are cleared up. One appealing aspect of the optical size feature is that with the `auto` setting, the variation happens automatically, so the developer gets the benefit of that refinement just by using a font with the `opsz` feature.
 
 There are many potential benefits to using variable fonts. While each included axis increases file size, the tipping point seems to be generally if more than two or three weights of a given typeface are in use, a variable version will likely be similar in total file size or smaller. This is supported by the dramatic increase in variable fonts being served by Google Fonts. Adopting and leveraging variable fonts for more varied design (by using more of the available range of weights and widths) is another. Using a width axis could improve line wrapping on smaller screens, especially with larger headings and longer languages. And with the rise in adoption of alternate light modes, making small adjustments to font-weight when switching modes can improve legibility (see [variablefonts.io](https://variablefonts.io) for more on usage and implementation).
 
