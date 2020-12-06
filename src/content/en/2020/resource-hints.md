@@ -109,7 +109,7 @@ Based on the HTTP Archive, let's jump into analyzing the 2020 trends, and compar
 More and more web pages are using the main resource hints, and in 2020 we are seeing the adoption remains consistent between desktop & mobile.
 
 {{ figure_markup(
-  image="TODO",
+  image="adoption-of-resource-hints.png",
   caption="Adoption of resource hints",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYAbLxN40s6mNR1jo0XDe_V4siN8TAsx2mryMp5IQmlJ-9O9eJxYROz7Rw6ozyFP6hlIZHxxh95GqX/pubchart?oid=1550112064&format=interactive",
@@ -117,19 +117,11 @@ More and more web pages are using the main resource hints, and in 2020 we are se
   sql_file="adoption.sql"
 ) }}
 
-This is a great representation of how year over year we continue to focus on improving not only for desktop but also for mobile experiences. One take we will probably analyze even further next year is how HighEnd vs LowEnd devices will diverge in hints usage.
+The relative popularity of `dns-prefetch` with 33% adoption compared with other resource hints is unsurprising as it first appeared in 2009, and has the widest support out of all major resource hints.
 
-{# TODO - clarify this sentence - Ref https://github.com/HTTPArchive/almanac.httparchive.org/pull/1587#discussion_r532320974 #}
+{# TODO - add table to compare 2019 vs 2020 #}
 
-{{ figure_markup(
-  caption="The percentage of desktop pages using DNS prefetching compared with other resource hints.",
-  content="33%",
-  classes="big-number",
-  sheets_gid="1805612941",
-  sql_file="adoption.sql"
-) }}
-
-The relative popularity of `dns-prefetch` is unsurprising as it first appeared in 2009, and has the widest support out of all major resource hints. It had a 4% increase in Desktop adoption, compared to [2019](https://almanac.httparchive.org/en/2019/resource-hints#resource-hints). We saw a similar increase for `preconnect` as well. One key reason this was the largest growth between all hints, is the clear and useful advice pthe Lighthouse audit is giving on this matter](https://web.dev/uses-rel-preconnect/). Starting from this year's report we also introduce how the latest dataset performs against Lighthouse recommendations.
+Compared to [2019](https://almanac.httparchive.org/en/2019/resource-hints#resource-hints) the `dns-prefetch` had a 4% increase in Desktop adoption. We saw a similar increase for `preconnect` as well. One key reason this was the largest growth between all hints, is the clear and useful advice pthe Lighthouse audit is giving on this matter](https://web.dev/uses-rel-preconnect/). Starting from this year's report we also introduce how the latest dataset performs against Lighthouse recommendations.
 
 `preload` usage has had a slower growth with only a 2% increase from 2019. This could be in part because it requires a bit more attention. While you only need the domain to use `dns-prefetch` and `preconnect`, you must specify the resource to use `preload`. While `dns-prefetch` and `preconnect` are reasonably low risk–though still can be abused– `preload` has a much greater potential to actually damage performance if used incorrectly.
 
@@ -140,8 +132,8 @@ The relative popularity of `dns-prefetch` is unsurprising as it first appeared i
 Across the board developers are learning how to better use resource hints, and compared to [2019](../2019/resource-hints#resource-hints) we've seen an improved use of `preload`, `prefetch` and `preconnect`. For expensive operations like preload and preconnect the median usage on desktop decreased from 2 to 1. We have seen the opposite for loading future resources with a lower priority with `prefetch`, with an increase from 1 to 2 in median per page.
 
 {{ figure_markup(
-  image="TODO",
-  caption="TODO",
+  image="median-number-of-hints-per-page.png",
+  caption="Median number of hints per page.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYAbLxN40s6mNR1jo0XDe_V4siN8TAsx2mryMp5IQmlJ-9O9eJxYROz7Rw6ozyFP6hlIZHxxh95GqX/pubchart?oid=320451644&format=interactive",
   sheets_gid="175042082",
@@ -179,8 +171,8 @@ With `preload` many different content-types can be preloaded and the[full list](
 This is likely related to a large group of sites built as Single Page Apps that need the main bundle as soon as possible to start downloading the rest of their JS dependencies. Subsequent usage comes from font at 8%, style at 5%, image at 1%, and fetch at 1%.
 
 {{ figure_markup(
-  image="TODO",
-  caption="TODO",
+  image="mobile-as-attribute-values-by-year.png",
+  caption="Mobile \"as\" attribute values by year.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYAbLxN40s6mNR1jo0XDe_V4siN8TAsx2mryMp5IQmlJ-9O9eJxYROz7Rw6ozyFP6hlIZHxxh95GqX/pubchart?oid=903180926&format=interactive",
   sheets_gid="1829901599",
@@ -323,8 +315,8 @@ One solution to this, is to use the [PRPL Pattern](https://addyosmani.com/blog/t
 For both `preload` and `prefetch` we've had an increase in adoption when the page is controlled by a [Service Worker](https://developers.google.com/web/fundamentals/primers/service-workers). This is because of the potential to both improve the resource prioritization by preloading when the Service Worker is not active yet and intelligently prefetching future resources while letting the Service Worker cache them before they're needed by the user.
 
 {{ figure_markup(
-  image="TODO",
-  caption="TODO",
+  image="resource-hint-adoption-onservice-worker-pages.png",
+  caption="Resource hint adoption on service worker pages.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYAbLxN40s6mNR1jo0XDe_V4siN8TAsx2mryMp5IQmlJ-9O9eJxYROz7Rw6ozyFP6hlIZHxxh95GqX/pubchart?oid=252958553&format=interactive",
   sheets_gid="691299508",
@@ -383,7 +375,7 @@ There are over 79% of resources with "high" priority, but something we should pa
 ### 103 Early Hints in HTTP/2
 Previously we mentioned that HTTP/2 Push could actually cause regression in cases where assets being pushed were already in the browser cache. The [103 Early Hints](https://tools.ietf.org/html/rfc8297) proposal aims to provide similar benefits promised by HTTP/2 push. With an architecture that is potentially 10x simpler, it addresses the long RTT’s or server processing without suffering from the known worst-case issue of unnecessary round trips with server push.
 
-As of right now you can follow the conversation on Chromium with issues [671310](https://bugs.chromium.org/p/chromium/issues/detail?id=671310), [1093693](https://bugs.chromium.org/p/chromium/issues/detail?id=1093693) and [1096414](https://bugs.chromium.org/p/chromium/issues/detail?id=1096414). 
+As of right now you can follow the conversation on Chromium with issues [671310](https://bugs.chromium.org/p/chromium/issues/detail?id=671310), [1093693](https://bugs.chromium.org/p/chromium/issues/detail?id=1093693) and [1096414](https://bugs.chromium.org/p/chromium/issues/detail?id=1096414).
 
 ## Conclusion
 
