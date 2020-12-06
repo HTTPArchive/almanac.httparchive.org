@@ -307,7 +307,7 @@ In a move from ["strings to things"](https://blog.google/products/search/introdu
 As search engines evolve to reflect more of these elements in search results, the incidence rates of the different vocabularies change across the web.
 
 {# TODO(authors): Is schema.org itself a "format"? #}
-As part of our examination, we took a look at the incidence rates of different types of structured markup. The available formats include [RDFa](https://www.w3.org/TR/rdfa-primer/) and [Schema.org](https://schema.org/), which come in both the microformats and [JSON-LD](https://www.w3.org/TR/json-ld11/) flavors. Google has recently [dropped the support for data-vocabulary](https://developers.google.com/search/blog/2020/01/data-vocabulary), which was primarily used to implement breadcrumbs. 
+As part of our examination, we took a look at the incidence rates of different types of structured markup. The available vocabularies include [RDFa](https://www.w3.org/TR/rdfa-primer/) and [Schema.org](https://schema.org/), which come in both the microformats and [JSON-LD](https://www.w3.org/TR/json-ld11/) flavors. Google has recently [dropped the support for data-vocabulary](https://developers.google.com/search/blog/2020/01/data-vocabulary), which was primarily used to implement breadcrumbs. 
 
 {# TODO(analysts, authors): Consider adding a "big number" figure here for the mobile JSON-LD stat, or a bar chart containing each format. #}
 JSON-LD is generally considered to be the more portable and easier to manage implementation and so it has become the preferred format. As a result, we see that JSON-LD appears on 29.78% of mobile pages and 30.60% of desktop pages.
