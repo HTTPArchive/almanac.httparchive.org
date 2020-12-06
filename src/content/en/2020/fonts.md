@@ -282,6 +282,6 @@ The optical size (`opsz`) feature is used for approximately 2% of the variable f
 
 ## Towards the future
 
-The performance landscape is changing somewhat, as the advent of cache partitioning reduces the performance benefit from sharing the cache of CDN font resources across multiple sites. The trend of hosting more font assets on the same domain as the site, rather than using a CDN, will probably continue. Even so, services such as Google Fonts are highly optimized, and best practices such as use of `swap` and `preconnect` mitigate much of the impact of the additional HTTP connection.
+The performance landscape is changing somewhat, as the advent of [cache partitioning](https://developers.google.com/web/updates/2020/10/http-cache-partitioning) reduces the performance benefit from sharing the cache of CDN font resources across multiple sites. The trend of hosting more font assets on the same domain as the site, rather than using a CDN, will probably continue. Even so, services such as Google Fonts are highly optimized, and best practices such as use of `swap` and `preconnect` mitigate much of the impact of the additional HTTP connection.
 
 The use of variable fonts is accelerating greatly, and that trend will no doubt continue, especially as browser and design tool support improve. It's also possible that 2021 will be the year of the color web font; even though the technology has been in place, that certainly hasn't happened yet.
