@@ -20,7 +20,6 @@ featured_stat_2: 30,073
 featured_stat_label_2: Number of non-standard <code>h7</code> elements
 featured_stat_3: 25.24 KB
 featured_stat_label_3: Weight of the median document
-unedited: true
 ---
 
 ## Introduction
