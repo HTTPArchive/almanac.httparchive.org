@@ -184,7 +184,6 @@ Interestingly, rendering changed the meta robots tag in 0.16% of pages. While th
 - The canonical tag configuration is used along with other signals to select the canonical URL of a page; it is not the only one.
 - Although self-referencing canonical tags are sometimes used, these aren't a requirement.
 
-{# TODO(authors): The intro disclaims upfront that the dataset is limited to home pages. Consider generalizing to "mobile/desktop pages" throughout the rest of the chapter. #}
 [In last year's chapter](../2019/seo#canonicalization), it was identified that 48.34% of mobile pages were using a canonical tag. This year the number of mobile  pages featuring a canonical tag has grown to 53.61%.
 
 {# TODO(analysts): It's not clear that B and C add up to A in this chart. It took me a while to realize that they weren't each different types of tags. If the total of 53.61% is significant, I'd recommend a "big number" figure to call attention to it, and only include B and C in this chart. #}
@@ -306,7 +305,6 @@ As search engines evolve to reflect more of these elements in search results, th
 
 As part of our examination, we took a look at the incidence rates of different types of structured markup. The available vocabularies include [RDFa](https://www.w3.org/TR/rdfa-primer/) and [schema.org](https://schema.org/), which come in both the microformats and [JSON-LD](https://www.w3.org/TR/json-ld11/) flavors. Google has recently [dropped the support for data-vocabulary](https://developers.google.com/search/blog/2020/01/data-vocabulary), which was primarily used to implement breadcrumbs. 
 
-{# TODO(analysts, authors): Consider adding a "big number" figure here for the mobile JSON-LD stat, or a bar chart containing each format. #}
 JSON-LD is generally considered to be the more portable and easier to manage implementation and so it has become the preferred format. As a result, we see that JSON-LD appears on 29.78% of mobile pages and 30.60% of desktop pages.
 
 <figure>
@@ -473,7 +471,6 @@ The median desktop page includes 21 `img` tags and the median mobile page has 19
 {# TODO(authors): Add your interpretation of these results. What do you hope readers get from it? Also consider linking to the Accessibility chapter here if that ties in. #}
 The median web page is missing 2.99% of `alt` attributes on desktop and 2.44% of `alt` attributes on mobile.
 
-{# TODO(analysts): Does this caption sound accurate? I wanted to clarify what it was a percent of. #}
 {{ figure_markup(
   image="seo-percentage-of-missing-img-alt-attribute.png",
   alt="Percent of missing image alt attributes",
