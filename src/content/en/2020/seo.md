@@ -344,8 +344,8 @@ JSON-LD is generally considered to be the more portable and easier to manage imp
   <figcaption>
     {{ figure_link(
       caption="Usage of each structured data format.",
-      sheets_gid="TODO",
-      sql_file="TODO.sql"
+      sheets_gid="361660017",
+      sql_file="pages_wpt_bodies_structured_data_by_device_and_format.sql"
     ) }}
   </figcaption>
 </figure>
