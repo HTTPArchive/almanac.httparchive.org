@@ -40,7 +40,7 @@ Service workers are at the very center of the progressive web apps and can be th
 
 ### Service worker usage
 
-From the data we gathered it was derived that about **0.88%** for desktop, **0.87%** for mobile for the month of August 2020 it's 49,305 (out of 5,593,642) for desktop and 55,019 (out of 6,347,919) for mobile. It is important that we realize that it translates into **16.6%** of the entire [traffic](https://www.chromestatus.com/metrics/feature/timeline/popularity/990).
+From the data we gathered it was derived that about **0.88%** desktop sites and **0.87%** mobile sites use a service worker. This was for the month of August 2020 and, to put that into perspective, that equates to 49,305 (out of 5,593,642) desktop sites and 55,019 (out of 6,347,919) mobile sites. While that usage may seem low, it is important that we realize that other measurements equate that to **16.6%** of the [web traffic](https://www.chromestatus.com/metrics/feature/timeline/popularity/990)–the difference being due to high traffic websites tending to use service workers more.
 
 {{ figure_markup(
   image="pwa-timeseries-of-service-worker-installations.png",
