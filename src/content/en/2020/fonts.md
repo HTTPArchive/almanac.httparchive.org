@@ -30,7 +30,7 @@ Web font technology has been fairly mature, with incremental improvements in com
 
 ## Where are web fonts being used?
 
-Web font usage has been growing steadily over time, with 82% of web pages for desktop using web fonts, and mobile at 80%.
+Web font usage has been growing steadily over time (it was zero percent as late as 2011), with 82% of web pages for desktop using web fonts, and mobile at 80%.
 
 {{ figure_markup(
   image="fonts-web-fonts-usage.png",
@@ -56,7 +56,7 @@ https://discuss.httparchive.org/t/how-does-web-font-usage-vary-by-country/1649
   )
 }}
 
-The single top country is South Korea, which is not all that surprising given their consistently high internet speeds and the fact that Korean (Hangul) fonts are almost an order of magnitude larger than Latin. As we'll see in the "popular typefaces" chapter, Korean fonts are two of the top 14 most popular, further evidence they really like web fonts. Web font usage in Japan and Chinese-speaking countries is considerably lower, likely because CJK fonts are even larger and connections are not as fast.
+The single top country is South Korea, which is not all that surprising given their consistently high internet speeds and low latency and the fact that Korean (Hangul) fonts are almost an order of magnitude larger than Latin. Web font usage in Japan and Chinese-speaking countries is considerably lower, likely because  Chinese and Japanese fonts are vastly larger (the median font size being over 100 times larger than the median Latin size). This means web font usage in Japan is very low, and usage in China is effectively zero. Although [recent developments](https://www.w3.org/TR/2020/NOTE-PFE-evaluation-20201015/) may make web fonts usable in both countries, within a couple of years.
 
 {{ figure_markup(
   image="fonts-web-fonts-usage-top-countries.png",
@@ -198,7 +198,9 @@ Fonts increasingly have support for lots and lots of languages. Other fonts can 
 
 One older approach is for the HTML author to explicitly indicate a font subset. However, that requires deeper knowledge of the content, and risks a "ransom note" effect when the content uses characters supported by the font but not by the chosen subset. See the excellent essay [When fonts fall](https://www.figma.com/blog/when-fonts-fall/) by Marcin Wichary for lots more detail about how fallback works.
 
-The `unicode-range` feature is a newer approach to this problem. The font is sliced into subsets, each with a separate `@font-face` rule that indicates the Unicode coverage for that slice with a `unicode-range` descriptor. The browser then analyzes the content as part of its rendering pipeline, and downloads *only* the slices needed to render that content.
+Static subsets, indicated by `unicode-range`, are a better approach to this problem. The font is sliced into subsets, each with a separate `@font-face` rule that indicates the Unicode coverage for that slice with a `unicode-range` descriptor. The browser then analyzes the content as part of its rendering pipeline, and downloads *only* the slices needed to render that content.
+
+For alphabetic languages, this typically works well although it can result in poor kerning between characters in different subsets. For languages which rely on glyph shaping, such as Arabic, Urdu and many Indic languages, static subsets frequently result in broken text rendering. And for CJK, static subsets based on contiguous Unicode ranges provide almost no benefit because the characters used on a particular page are scattered almost randomly across the various subsets. Because of these issues, correct and performant use of static subsets is tricky, and requires careful analysis and implementation.
 
 {{ figure_markup(
   image="fonts-usage-of-unicode-range.png",
@@ -252,11 +254,15 @@ A note of caution, in determining the most popular fonts you can get different r
 
 ## Color fonts
 
-Color fonts, in one form or other, are supported by most modern browsers, but usage is still close to nonexistent (a total of 755 pages total, the majority of which are in a deprecated format). No doubt part of the problem is the diversity of formats, in fact 4 in widespread use. These come in bitmap and vector flavors. The two bitmap formats are technologically very similar, but SBIX (originally a proprietary Apple format) is not supported in Firefox, while CBDT/CBLC is not supported in Safari.
+Color fonts, in one form or other, are supported by most modern browsers, but usage is still close to nonexistent (a total of 755 pages total, the majority of which are in a format that is not widely supported in popular browsers). No doubt part of the problem is the diversity of formats, in fact 4 in widespread use. These come in bitmap and vector flavors. The two bitmap formats are technologically very similar, but SBIX (originally a proprietary Apple format) is not supported in Firefox, while CBDT/CBLC is not supported in Safari.
 
-The COLR vector format is supported on all major modern browsers, but only fairly recently. The fourth format is embedding SVG in OpenType (not to be confused with SVG fonts), but not supported in Chrome or Firefox, largely because SVG is a heavyweight format and difficult to render efficiently.
+The COLR vector format is supported on all major modern browsers, but only fairly recently. The fourth format is embedding SVG in OpenType (not to be confused with SVG fonts), but not supported in Chrome. One drawback of SVG in OpenType is lack of support for font variations, an increasingly important aspect of modern Web design. For this reason, the COLR format is likely to prevail, particularly as support for gradients and clipping is being developed for a future version of COLR is.
 
-Generally the bitmap format has larger files and doesn’t scale as cleanly to larger sizes, but vectors only offer flat color shading (though work is ongoing to offer richer shading options in a future version).
+One reason for the poor support of color fonts on the web is that the colors have to be baked into the font files themselves. If you use the same typeface with three different color combinations, near-identical files have to be downloaded three times, and changng a color means reaching for a font editor.
+
+While there is a feature in CSS to [override or replace the color palettes in fonts](https://drafts.csswg.org/css-fonts-4/#font-palette-values), this has not yet been implemented in browsers which certainly holds back the ease of deploying color web fonts.
+
+Generally the bitmap format has larger files and doesn’t scale as cleanly to larger sizes, but COLR only offers flat color shading (though work is ongoing to offer richer shading options in a future version).
 
 Probably most usage of color fonts is for emoji, but the capability is general purpose and color fonts offer many design possibilities. While color web fonts haven’t taken off yet, the underlying technology is heavily used to deliver system emoji, where file format compatibility is much less of an issue.
 
@@ -282,7 +288,7 @@ By far the most commonly used axis is `wght` (which controls weight), at 84.7% d
 
 It’s worth noting that the preferred method is to use `font-weight` and `font-stretch` rather than the lower-level `font-variation-settings` syntax for these two axes as they are completely supported by all browsers that support variable fonts. By setting weight via `font-width: [number]` and width via `font-stretch: [number]%`, authors provide more appropriate style hints to the browser, which in turn enables better rendering for the end user should the variable font fail to load. This also avoids altering the normal inheritance of styles via the cascade.
 
-The optical size (`opsz`) feature is used for approximately 2% of the variable font usage. This is one to watch, as tuning the appearance of a font to match its intended size of presentation improves the visual refinement in perhaps subtle but very real ways.
+The optical size (`opsz`) feature is used for approximately 2% of the variable font usage. This is one to watch, as tuning the appearance of a font to match its intended size of presentation improves the visual refinement in perhaps subtle but very real ways. Usage is also likely to increase once some current cross-browser and cross-platform uncertainties on how the optical sizes are defined are cleared up.
 
 There are many potential benefits to using variable fonts. While each included axis increases file size, the tipping point seems to be generally if more than two or three weights of a given typeface are in use, a variable version will likely be similar in total file size or smaller. This is supported by the dramatic increase in variable fonts being served by Google Fonts. Adopting and leveraging variable fonts for more varied design (by using more of the available range of weights and widths) is another. Using a width axis could improve line wrapping on smaller screens, especially with larger headings and longer languages. And with the rise in adoption of alternate light modes, making small adjustments to font-weight when switching modes can improve legibility (see [variablefonts.io](https://variablefonts.io) for more on usage and implementation).
 
