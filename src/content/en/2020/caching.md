@@ -70,7 +70,7 @@ Below figure shows how a typical request/response flow works for an object (e.g.
 {{ figure_markup(
   image="0_request_response_flow_with_caching.png",
   link="https://almanac.httparchive.org/static/images/2020/caching/0_request_response_flow_with_caching.png",
-  caption="Request/response flow for an object.".  
+  caption="Request/response flow for an object.",
   description="Sequence diagram showing the usage of cache in a typical request/response flow for an object."
   )
 }}
@@ -539,7 +539,7 @@ The graph below details the popularity for the top 10 Vary header values. `Accep
 {{ figure_markup(
   image="7_vary_headers.png",
   caption="`Vary` header usage.",
-  description="Bar chart showing the distribution of `Vary` header. 91.8% of desktop responses use of `Accept-Encoding`, much smaller values for the rest with 10.7% for `User-Agent`, approximately 8.0% for `Origin`, and 0.5%-4.1% for `Accept`, `Access-Control-Request-Headers`,`Access-Control-Request-Method`, `Cookie`, `X-Forwarded-Proto`, `Accept-Language`, and `Range`. 91.3% of mobile responses use of `Accept-Encoding`, much smaller values for the rest with 11.0% for `User-Agent`, approximately 9.1% for `Origin`, and 0.6%-3.9% for `Accept`, `Access-Control-Request-Headers`, `Access-Control-Request-Method`, `Cookie`, `X-Forwarded-Proto`, `Accept-Language`, and `Range`., 
+  description="Bar chart showing the distribution of `Vary` header. 91.8% of desktop responses use of `Accept-Encoding`, much smaller values for the rest with 10.7% for `User-Agent`, approximately 8.0% for `Origin`, and 0.5%-4.1% for `Accept`, `Access-Control-Request-Headers`,`Access-Control-Request-Method`, `Cookie`, `X-Forwarded-Proto`, `Accept-Language`, and `Range`. 91.3% of mobile responses use of `Accept-Encoding`, much smaller values for the rest with 11.0% for `User-Agent`, approximately 9.1% for `Origin`, and 0.6%-3.9% for `Accept`, `Access-Control-Request-Headers`, `Access-Control-Request-Method`, `Cookie`, `X-Forwarded-Proto`, `Accept-Language`, and `Range`.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=317375276&format=interactive",
   sheets_gid="2031111057",
   sql_file="vary_headers.sql"
@@ -555,7 +555,7 @@ When a response is cached, its entire set of response headers are included with 
 {{ figure_markup(
   image="7a_chrome_dev_tools.png",
   link="https://almanac.httparchive.org/static/images/2020/caching/7a_chrome_dev_tools.png",
-  caption="Chrome Dev Tools for a cached resource.".  
+  caption="Chrome Dev Tools for a cached resource.",
   description="Chrome Dev Tools showing that When a response is cached, its entire set of response headers are included with the cached object as well."
   )
 }}
