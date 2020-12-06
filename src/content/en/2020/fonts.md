@@ -76,6 +76,10 @@ It likely comes as no surprise that Google Fonts remains by far the most popular
 
 Another surprise in the data is the rise in fonts being served by Shopify. Growing from roughly 1.1% in 2019 to about 4% in 2020, there has clearly been a significant uptick in usage of web fonts by sites hosted on that platform. It’s unclear if that is due to that service offering more fonts that they host on their CDN, if it’s growth in use of their platform, or both. However, the increase in usage of both Shopify and Bootstrap represent the largest amount of growth other than Google Fonts, making it a very noticeable data point.
 
+The use of local is [controversial](https://bramstein.com/writing/web-font-anti-patterns-local-fonts.html), as it can save bytes, but it can also yield bad results if the locally installed version of the font is outdated. As of [November 2020](https://twitter.com/googlefonts/status/1328761547041148929?s=19), Google Fonts has moved to using local only for Roboto on mobile platforms, otherwise the font is always fetched over the network.
+
+Since the data for the following charts was gathered before the switchover, Google Fonts is represented in the "both" category.
+
 {{ figure_markup(
   image="fonts-web-hosting-performance-desktop.png",
   caption="Web font hosting performance, desktop.",
@@ -95,6 +99,8 @@ Another surprise in the data is the rise in fonts being served by Shopify. Growi
   sql_file="04_04.local_vs_host_with_fcp.sql"
   )
 }}
+
+It wouldn't be sound to infer causality between hosting strategy from the above data, as there are other variables that may confound the relationship. But, putting that aside, we find that adding the local reference doesn't improve performance, which certainly supports the decision to remove it.
 
 ## Racing to first paint
 
@@ -206,6 +212,10 @@ The `unicode-range` feature is a newer approach to this problem. The font is sli
 
 Correctly applying `unicode-range` is tricky, as there's a lot of complexity to the way text layout maps Unicode into glyphs, but Google Fonts does this automatically and transparently. It's only likely to be a win for fonts with large glyph counts. In any case, current usage is 37% on desktop and 38% on mobile.
 
+## Formats and MIME types
+
+WOFF2 is the best compression format, and is now [supported](https://caniuse.com/woff2) by effectively all browsers except for versions 11 and earlier of Internet Explorer. It's *almost* possible to serve web fonts using an `@font-face` rule with a WOFF2 source only. This format makes up about 75% of all fonts served.
+
 {{ figure_markup(
   image="fonts-web-font-mime-types.png",
   caption="Popular web font MIME types.",
@@ -216,19 +226,27 @@ Correctly applying `unicode-range` is tricky, as there's a lot of complexity to 
   )
 }}
 
+WOFF is an older, less efficient compression mechanism, but almost universally supported, accounting for an additional 11.6% of fonts served. In almost all cases (Internet Explorer 9-11 being the main exception), serving a font as WOFF is leaving performance on the table, and shows a risk of self-hosting. Even if the format choices were optimal at the time of integration, it requires extra effort to update them as browsers improve. Using a hosted service guarantees that the best format is chosen, along with all relevant optimizations.
+
+Ancient versions of Internet Explorer (6-8), which still make about 1.5% of global browser share, require EOT. These don't show up in the top 5 MIME formats, but are necessary for maximum compatibility.
+
+Uncompressed fonts are 2-3x larger than compressed, but still make up almost 5% of all fonts served, disproportionally on mobile. If you're serving these, it should be a red flag that optimization is possible.
+
 ## Popular fonts
+
+Icon fonts are fully half of the top 10 most popular web fonts, the rest being clean, robust sans-serif typeface designs (Roboto Slab is at #19 and Playfair Display at #28 in this ranking, for debuts of other styles, though serif designs are well represented in the tail of the distribution).
 
 {{ figure_markup(
   image="fonts-popular-typefaces.png",
   caption="Popular typefaces.",
-  description="A bar chart showing the 14 most popular web fonts.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1129854167&format=interactive",
+  description="A bar chart showing the 10 most popular web fonts.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=551344676&format=interactive",
   sheets_gid="655527383",
   sql_file="04_11a.popular_typeface.sql"
   )
 }}
 
-(The above figure is in the process of being revised. I'm going to skip the section for now and get back to it)
+A note of caution, in determining the most popular fonts you can get different results depending on measurement methodology. The chart above is based on counting the number of pages that include an `@font-face` rule referencing the named font. That counts multiple styles only once, which arguably weights in favor of single-style fonts.
 
 ## Color fonts
 
@@ -261,3 +279,9 @@ Variable fonts are certainly one of the biggest stories this year. They’re see
 By far the most commonly used axis is `wght` (which controls weight), at 84.7% desktop and 90.4% mobile. However, `wdth` (width) accounts for approximately 5% of variable font usage. In 2020, Google Fonts began serving 2-axis fonts with both width and weight axes.
 
 The optical size (`opsz`) feature is used for approximately 2% of the variable font usage. This is one to watch, as tuning the appearance of a font to match its intended size of presentation improves the visual refinement in perhaps subtle but very real ways.
+
+## Towards the future
+
+The performance landscape is changing somewhat, as the advent of cache partitioning reduces the performance benefit from sharing the cache of CDN font resources across multiple sites. The trend of hosting more font assets on the same domain as the site, rather than using a CDN, will probably continue. Even so, services such as Google Fonts are highly optimized, and best practices such as use of `swap` and `preconnect` mitigate much of the impact of the additional HTTP connection.
+
+The use of variable fonts is accelerating greatly, and that trend will no doubt continue, especially as browser and design tool support improve. It's also possible that 2021 will be the year of the color web font; even though the technology has been in place, that certainly hasn't happened yet.
