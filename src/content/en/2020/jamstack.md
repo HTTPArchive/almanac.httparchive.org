@@ -116,7 +116,7 @@ Jamstack is often credited for being mindful of performance. In the next section
 
 ### Page Weight
 
-Our research looked at the average Jamstack page weight in KB and mapped this to CO2 emissions using logic from the [Carbon API][7]. This generated the following results, split by desktop and mobile:
+Our research looked at the average Jamstack page weight in KB and mapped this to CO2 emissions using logic from the [Carbon API](https://gitlab.com/wholegrain/carbon-api-2-0/-/blob/master/includes/carbonapi.php#L342). This generated the following results, split by desktop and mobile:
 
 {{ figure_markup(
   image="jamstack-carbon-emissions-per-jamstack-page-view.png",
