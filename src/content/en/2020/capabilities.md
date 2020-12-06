@@ -218,7 +218,7 @@ At the time of this writing, only Chromium-based browsers implement this API. On
   image="periodic_background_sync_api.png",
   alt="Number of pages using Periodic Background Sync API.",
   caption="Number of pages using Periodic Background Sync API.",
-  description="Chart of Periodic Background Sync API API usage, based on the number of pages monitored by HTTP Archive. It compares the usage on mobile and desktop devices. Since April 2020, the API is used by one to two desktop and mobile pages.",
+  description="Chart of Periodic Background Sync API usage, based on the number of pages monitored by HTTP Archive. It compares the usage on mobile and desktop devices. Since April 2020, the API is used by one to two desktop and mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1444904371&format=interactive",
   sheets_gid="386193538",
   sql_file="periodic_background_sync_usage.sql"
