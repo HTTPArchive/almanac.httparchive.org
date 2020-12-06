@@ -525,6 +525,8 @@ figcaption {
 .figure-dropdown-list a:hover,
 .figure-dropdown-list a:focus {
   text-decoration: underline;
+  background-color: #5c687d;
+  color: white;
 }
 
 .figure-dropdown svg {
