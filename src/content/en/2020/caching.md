@@ -573,7 +573,7 @@ For example, if a login cookie or a session cookie is present in a CDN’s cache
 {{ figure_markup(
   image="8_set_cookie.png",
   caption="`Set-Cookie` in cacheable responses.",
-  description="A bar chart showing `Set-Cookie` usage on cacheable responses. 41.4% of cacheable desktop responses and 40.4% of cacheable mobile responses contain a `Set-Cookie` header.,
+  description="A bar chart showing `Set-Cookie` usage on cacheable responses. 41.4% of cacheable desktop responses and 40.4% of cacheable mobile responses contain a `Set-Cookie` header.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1106475158&format=interactive",
   sheets_gid="203111108",
   sql_file="set_cookie.sql"
