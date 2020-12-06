@@ -279,7 +279,7 @@ Heading elements (`H1`-`H6`) act as a mechanism to visually indicate structure i
   sql_file="pages_wpt_bodies_by_device.sql"
 ) }}
 
-Over 60% of pages feature `H1` elements in both the mobile and desktop contexts.
+Over 60% of pages feature `H1` elements (including empty ones) in both the mobile and desktop contexts. 
 
 These numbers hover around 60%+ through `H2` and `H3`. The incidence rate of `H4` elements is lower than 4%, suggesting that the level of specificity is not required for most pages or the developers style other headings elements differently to support the visual structure of the content.
 
