@@ -9,7 +9,7 @@ analysts: [gregorywolf]
 translators: []
 dotjs_bio: Andrew works at <a href="https://www.cloudflare.com/">Cloudflare</a> helping to make the web faster and more secure. He spends his time deploying, measuring and improving new protocols and asset delivery to improve end-user website performance.
 rmarx_bio: Robin is a web protocol and performance researcher at <a href="https://www.uhasselt.be/edm">Hasselt University, Belgium</a>. He has been working on getting QUIC and HTTP/3 ready to use by creating tools like <a href="https://github.com/quiclog">qlog and qvis</a>.
-MikeBishop_bio: Editor of HTTP/3 with the [QUIC Working Group](https://quicwg.org/). Architect in [Akamai](https://www.akamai.com/)'s Foundry group.
+MikeBishop_bio: Editor of HTTP/3 with the <a href="https://quicwg.org/">QUIC Working Group</a>. Architect in <a href="https://www.akamai.com/">Akamai</a>'s Foundry group.
 discuss: 2058
 results: https://docs.google.com/spreadsheets/d/1M1tijxf04wSN3KU0ZUunjPYCrVsaJfxzuRCXUeRQ-YU/
 queries: 22_HTTP_2
@@ -164,7 +164,7 @@ The drive to increase [security](./security) and [privacy](./privacy) on the web
       </tr>
     </tbody>
   </table>
- 
+
   <figcaption>{{ figure_link(caption="HTTP version usage for HTTPS home pages.", sheets_gid="900140630", sql_file="tls_adoption_by_http_version.sql") }}</figcaption>
 </figure>
 
@@ -678,7 +678,7 @@ QUIC is dependent on TLS1.3, which is used for around 41% of requests, as shown 
 
 ### Is HTTP/3 ready yet?
 
-So, when can we start using HTTP/3 and QUIC for real? Not quite yet, but hopefully soon. There is a [large number of mature open source implementations](https://github.com/quicwg/base-drafts/wiki/Implementations) and the major browsers have experimental support. However, most of the typical servers have suffered some delays: nginx is a bit behind other stacks, Apache hasn't announced official support, and NodeJS relies on OpenSSL, which [won't add QUIC support anytime soon](https://github.com/openssl/openssl/pull/8797). Even so, we expect to see HTTP/3 and QUIC deployments rise throughout 2021. 
+So, when can we start using HTTP/3 and QUIC for real? Not quite yet, but hopefully soon. There is a [large number of mature open source implementations](https://github.com/quicwg/base-drafts/wiki/Implementations) and the major browsers have experimental support. However, most of the typical servers have suffered some delays: nginx is a bit behind other stacks, Apache hasn't announced official support, and NodeJS relies on OpenSSL, which [won't add QUIC support anytime soon](https://github.com/openssl/openssl/pull/8797). Even so, we expect to see HTTP/3 and QUIC deployments rise throughout 2021.
 
 HTTP/3 and QUIC are highly advanced protocols with powerful performance and security features, such as a new HTTP prioritization system, HOL blocking removal, and 0-RTT connection establishment. This sophistication also makes them difficult to deploy and use correctly, as has turned out to be the case for HTTP/2. We predict that early deployments will mainly be done via the early adoption of CDNs such as Cloudflare, Fastly, and Akamai. This will probably mean that a large part of HTTP/2 traffic can and will be upgraded to HTTP/3 automatically in 2021, giving the new protocol a large traffic share almost out of the box. When and if smaller deployments will follow suit is yet more difficult to answer. Most likely, we will continue to see a healthy mix of HTTP/3, HTTP/2, and even HTTP/1.1 on the web for years to come.
 
