@@ -639,7 +639,7 @@ If we break this out by HTTP vs HTTPS, then this gets even more interesting. Eve
      <th>Total</th>   
     </tr>
     <tr>
-     <td>Sites using service worker</td>
+     <th scope="row">Sites using service worker</th>
      <td>1,469</td>
      <td>62,904</td>
      <td>64,373</td>      
@@ -699,7 +699,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
      <th>90</th>
     </tr>
     <tr>
-     <td><span style="font-weight:bold">audio</span></td>
+     <th scope="row">audio</th>
      <td>6</td>
      <td>6</td>
      <td>240</td> 
@@ -707,7 +707,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
      <td>8,760</td>
     </tr>
     <tr>
-     <td><span style="font-weight:bold">css</span></td>
+     <th scope="row">css</th>
      <td>24</td>
      <td>24</td>
      <td>720</td> 
@@ -715,7 +715,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
      <td>8,760</td>
     </tr>
     <tr>
-     <td><span style="font-weight:bold">font</span></td>
+     <th scope="row">fontcss</th>
      <td>720</td>
      <td>8,760</td>
      <td>8,760</td> 
@@ -723,7 +723,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
      <td>8,760</td>
     </tr>
     <tr>
-     <td><span style="font-weight:bold">html</span></td>
+     <th scope="row">html</th>
      <td>0</td>
      <td>1</td>
      <td>336</td> 
@@ -731,7 +731,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
      <td>87,600</td>
     </tr>
     <tr>
-     <td><span style="font-weight:bold">image</span></td>
+     <th scope="row">image</th>
      <td>4</td>
      <td>168</td>
      <td>720</td> 
@@ -739,7 +739,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
      <td>8,766</td>
     </tr>
     <tr>
-     <td><span style="font-weight:bold">other</span></td>
+     <th scope="row">other</th>
      <td>0</td>
      <td>1</td>
      <td>30</td> 
@@ -747,7 +747,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
      <td>8,760</td>
     </tr>
     <tr>
-     <td><span style="font-weight:bold">script</span></td>
+     <th scope="row">script</th>
      <td>0</td>
      <td>2</td>
      <td>720</td> 
@@ -755,7 +755,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
      <td>8,760</td>
     </tr>
     <tr>
-     <td><span style="font-weight:bold">text</span></td>
+     <th scope="row">text</th>
      <td>0</td>
      <td>1</td>
      <td>6</td> 
@@ -763,7 +763,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
      <td>720</td>
     </tr>
     <tr>
-     <td><span style="font-weight:bold">video</span></td>
+     <th scope="row">video</th>
      <td>6</td>
      <td>12</td>
      <td>336</td> 
@@ -771,7 +771,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
      <td>8,760</td>
     </tr>
     <tr>
-     <td><span style="font-weight:bold">xml</span></td>
+     <th scope="row">xml</th>
      <td>0</td>
      <td>24</td>
      <td>24</td> 
@@ -861,13 +861,13 @@ When we break this out by first party vs third party in the following table, we 
      <th>Overall</th>   
     </tr>
     <tr>
-     <td><span style="font-weight:bold">desktop</span></td>
+     <th scope="row">desktop</th>      
      <td>61.6%</td>
      <td>59.3%</td>
      <td>60.7%</td>      
     </tr>
     <tr>
-     <td><span style="font-weight:bold">mobile</span></td>
+     <th scope="row">mobile</th>      
      <td>61.8%</td>
      <td>57.9%</td>
      <td>60.2%</td>      
