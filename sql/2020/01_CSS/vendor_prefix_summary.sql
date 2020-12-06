@@ -28,6 +28,10 @@ try {
 
       if (rule.declarations) {
         walkDeclarations(rule, ({property, value}) => {
+          if (value.length > 1000) {
+            return;
+          }
+
           // Prefixed properties
           if (/^-[a-z]+-.+/.test(property)) {
             incrementByKey(ret.properties, property);
