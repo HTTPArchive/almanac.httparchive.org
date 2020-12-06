@@ -36,7 +36,7 @@ Web font usage has been growing steadily over time, with 82% of web pages for de
   image="fonts-web-fonts-usage.png",
   caption="Web font usage over time.",
   description="Scatter plot showing fraction of mobile and desktop web pages containing web fonts, as a function of time.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1465601804&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=666273773&format=interactive",
   sheets_gid="655527383",
   sql_file="04_01.web_fonts_usage.sql"
   )
@@ -48,10 +48,10 @@ https://discuss.httparchive.org/t/how-does-web-font-usage-vary-by-country/1649
 
 {{ figure_markup(
   image="fonts-web-fonts-usage-by-country.png",
-  caption="Web fonts usage by country.",
+  caption="Web fonts usage by country (desktop).",
   description="A map of the world showing the amount of web font usage for each country, measured as median kilobytes of web font data.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1005874204&format=interactive",
-  sheets_gid="655527383",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=961243485&format=interactive",
+  sheets_gid="68624087",
   sql_file="04_02.web_fonts_usage_by_country.sql"
   )
 }}
@@ -60,10 +60,10 @@ The single top country is South Korea, which is not all that surprising given th
 
 {{ figure_markup(
   image="fonts-web-fonts-usage-top-countries.png",
-  caption="Web fonts usage, top countries.",
+  caption="Web fonts usage, top countries (desktop).",
   description="A chart showing the top countries by usage of web fonts, measured as median kilobytes of web font data.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1772704624&format=interactive",
-  sheets_gid="655527383",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=705183861&format=interactive",
+  sheets_gid="68624087",
   sql_file="04_02.web_fonts_usage_by_country.sql"
   )
 }}
@@ -84,8 +84,8 @@ Since the data for the following charts was gathered before the switchover, Goog
   image="fonts-web-hosting-performance-desktop.png",
   caption="Web font hosting performance, desktop.",
   description="A bar chart showing the desktop median first content paint and last content paint (in milliseconds) for three different web font hosting strategies: local, external or both.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=307595140&format=interactive",
-  sheets_gid="655527383",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=506816237&format=interactive",
+  sheets_gid="838326315",
   sql_file="04_04.local_vs_host_with_fcp.sql"
   )
 }}
@@ -94,8 +94,8 @@ Since the data for the following charts was gathered before the switchover, Goog
   image="fonts-web-hosting-performance-mobile.png",
   caption="Web font hosting performance, mobile.",
   description="A bar chart showing the mobile median first content paint and last content paint (in milliseconds) for three different web font hosting strategies: local, external or both.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=55793395&format=interactive",
-  sheets_gid="655527383",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1955186104&format=interactive",
+  sheets_gid="838326315",
   sql_file="04_04.local_vs_host_with_fcp.sql"
   )
 }}
@@ -112,8 +112,8 @@ The [`font-display`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face
   image="fonts-usage-of-font-display.png",
   caption="Usage of font-display.",
   description="A bar chart showing the usage of the different font-display settings, on desktop and mobile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1831117368&format=interactive",
-  sheets_gid="655527383",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=654093509&format=interactive",
+  sheets_gid="1485693069",
   sql_file="04_06.font_display_with_fcp.sql"
   )
 }}
@@ -124,8 +124,8 @@ We can analyze the effect of these settings on first content paint and last cont
   image="fonts-font-display-performance-desktop.png",
   caption="font-display, performance, desktop.",
   description="A bar chart showing the desktop median first content paint and last content paint (in milliseconds) for different font-display settings.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1351778595&format=interactive",
-  sheets_gid="655527383",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1618299142&format=interactive",
+  sheets_gid="1485693069",
   sql_file="04_06.font_display_with_fcp.sql"
   )
 }}
@@ -134,8 +134,8 @@ We can analyze the effect of these settings on first content paint and last cont
   image="fonts-font-display-performance-mobile.png",
   caption="font-display, performance, mobile.",
   description="A bar chart showing the mobile median first content paint and last content paint (in milliseconds) for different font-display settings.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=748174335&format=interactive",
-  sheets_gid="655527383",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=2135700957&format=interactive",
+  sheets_gid="1485693069",
   sql_file="04_06.font_display_with_fcp.sql"
   )
 }}
@@ -150,14 +150,14 @@ Google Fonts now recommends `swap` in its suggested integration code. If you're 
 
 While `font-display` can speed up the presentation of the page when the fonts are slow to load, resource hints can move the loading of web font assets to earlier in the cascade. Ordinarily, fetching web fonts is a two-stage process. The first stage is loading the CSS, which contains a reference (in `@font-face` sections) to the actual font binaries. Only then can the connection to that server begin, which further breaks down into the DNS query for the server, and actually initiating a connection (which, these days, usually involves an HTTPS cryptographic handshake).
 
-Adding a `resource-hint` element in the HTML starts that second connection earlier. The various `resource-hint` settings control how far that gets before having the URL for the actual font resource. The most common (at about 32% of web pages) is `dns-prefetch`, but 
+Adding a `resource-hint` element in the HTML starts that second connection earlier. The various `resource-hint` settings control how far that gets before having the URL for the actual font resource. The most common (at about 32% of web pages) is `dns-prefetch`, but
 
 {{ figure_markup(
   image="fonts-resource-hints-use.png",
   caption="resource-hints use on fonts.",
   description="A bar chart showing the usage of different resource-hints setting for font data.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=2115805374&format=interactive",
-  sheets_gid="655527383",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1880156934&format=interactive",
+  sheets_gid="2079638999",
   sql_file="04_07.font_resource_hints_with_fcp.sql"
   )
 }}
@@ -166,8 +166,8 @@ Adding a `resource-hint` element in the HTML starts that second connection earli
   image="fonts-resource-hints-performance-desktop.png",
   caption="resource-hints performance, desktop.",
   description="A bar chart showing the desktop median first content paint and last content paint (in milliseconds) for different resource-hints settings.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1518736765&format=interactive",
-  sheets_gid="655527383",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=355239876&format=interactive",
+  sheets_gid="2079638999",
   sql_file="04_07.font_resource_hints_with_fcp.sql"
   )
 }}
@@ -176,8 +176,8 @@ Adding a `resource-hint` element in the HTML starts that second connection earli
   image="fonts-resource-hints-performance-mobile.png",
   caption="resource-hints performance, mobile.",
   description="A bar chart showing the mobile median first content paint and last content paint (in milliseconds) for different resource-hints settings.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=448614843&format=interactive",
-  sheets_gid="655527383",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=640692889&format=interactive",
+  sheets_gid="2079638999",
   sql_file="04_07.font_resource_hints_with_fcp.sql"
   )
 }}
@@ -204,8 +204,8 @@ The `unicode-range` feature is a newer approach to this problem. The font is sli
   image="fonts-usage-of-unicode-range.png",
   caption="usage of unicode-range.",
   description="A bar chart showing the fraction of unicode-range usage in mobile and desktop web pages that use web fonts.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=2018216759&format=interactive",
-  sheets_gid="655527383",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1739264728&format=interactive",
+  sheets_gid="640499741",
   sql_file="04_08.font_unicode_range_with_fcp.sql"
   )
 }}
@@ -220,8 +220,8 @@ WOFF2 is the best compression format, and is now [supported](https://caniuse.com
   image="fonts-web-font-mime-types.png",
   caption="Popular web font MIME types.",
   description="A bar chart showing the breakdown of percentage of different MIME types for serving web fonts.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1771540678&format=interactive",
-  sheets_gid="655527383",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=2028456617&format=interactive",
+  sheets_gid="316058576",
   sql_file="04_10.font_formats.sql"
   )
 }}
@@ -241,8 +241,10 @@ Icon fonts are fully half of the top 10 most popular web fonts, the rest being c
   caption="Popular typefaces.",
   description="A bar chart showing the 10 most popular web fonts.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=551344676&format=interactive",
-  sheets_gid="655527383",
-  sql_file="04_11a.popular_typeface.sql"
+  sheets_gid="179750099",
+  sql_file="04_11a.popular_typeface.sql",
+  width="600",
+  height="520"
   )
 }}
 
