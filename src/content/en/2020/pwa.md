@@ -441,7 +441,7 @@ This indicated that strategies API played a very important role and one of the m
 
 ## Conclusion
 
-The stats in this chapter show that PWAs have come a long way in terms of adoption but with the advantages they give for [performance](https://almanac.httparchive.org/en/2019/performance) and greater control over [caching](https://almanac.httparchive.org/en/2019/caching) particularly for [mobile](https://almanac.httparchive.org/en/2019/mobile-web) should mean that usage we still have a lot of potential for growth and when compared to 2019 we have gotten better in both capabilities and adoptions, we would for sure have more progress in 2021!
+The stats in this chapter show that PWAs are still continuing to grow in adoption, due to the advantages they give for [performance](./performance) and greater control over [caching](./caching) particularly for [mobile](./mobile-web). With those advantages and ever increasing capabilities, means we still have a lot of potential for growth and when compared to 2019. We expect to see even more progress in 2021!
 
 More and more browsers and platforms are supporting the technologies powering PWAs. This year, we saw that Edge gained support for the Web App Manifest. Depending on your use case and target market, you may find that the majority of your users (close to 96%) have PWA support. That is a great improvement! In all cases, it’s important to approach technologies such as Service Worker, Web App Manifest should be treated as progressive enhancement. Where you can provide an exceptional user experience through these technologies whenever possible.
 With the above stats, we’re excited for another year of PWA growth!
