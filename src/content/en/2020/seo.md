@@ -42,7 +42,6 @@ The goal of the Web Almanac's SEO chapter is to identify and assess main element
 
 It is important to note that this chapter is based on analysis from [Lighthouse](https://developers.google.com/web/tools/lighthouse/), the [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report), as well as raw and rendered HTML elements from the [HTTP Archive](https://httparchive.org/) crawl. In the case of the HTTP Archive and Lighthouse, it is limited to the data identified from websites' home pages only, not site-wide crawls. We have taken this into consideration when doing assessments. Keeping this distinction in mind is important when drawing conclusions from our results. You can learn more about it on our [Methodology](./methodology) page.
 
-{# TODO(authors): Is "Organic Search" a proper noun? Or should it be lowercase? #}
 Let's go through this year's organic search optimization main findings.
 
 ## Fundamentals
@@ -262,7 +261,6 @@ We found that the median desktop site features 13.46% more words when rendered t
 
 The median mobile site also displays 11.5% more words when rendered than its raw HTML counterpart.
 
-{# TODO(authors): Same question about "Organic Search" capitalization. #}
 Across our sample set, there are disparities across the combination of mobile/desktop and rendered/non-rendered. This suggests that although search engines are continually improving in this area, most sites across the web are missing out on opportunities to improve their organic search visibility through a stronger focus on ensuring their content is available and indexable. This is also a concern because the lion's share of available SEO tools do not crawl in the above combination of contexts and automatically identify this as an issue.
 
 This year, the median desktop home page was found to have 402 words and the mobile page had 348 words. While [last year](../2019/seo#word-count), the median desktop home page had 346 words, and the median mobile home page had a slightly lower word count at 306 words. This represents 16.2% and 13.7% growth respectively.
