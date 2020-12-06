@@ -225,8 +225,6 @@ Ads, analytics, content delivery network (CDN) resources, and tag-managers are p
 Browser auto-update mechanisms are a driving factor for client-side adoption of new web standards. It's [estimated](https://caniuse.com/http2) that over 97% of global users support HTTP/2, up slightly from 95% measured last year.
 
 Unfortunately, the upgrade path for servers is more difficult, especially with the requirement to support TLS. For mobile and desktop, we can see from Figure 22.10, that he majority of HTTP/2 sites are served by nginx, Cloudflare, and Apache. Almost half of the HTTP/1.1 sites are served by Apache.
-
-{# TODO(analysts, authors): Why is this figure in terms of the number of websites, rather than percent? Should the server values also be capitalized accordingly? (eg Cloudflare rather than cloudflare) #}
 {{ figure_markup(
   image="http2-server-protocol-usage.png",
   caption="Server usage by HTTP protocol on mobile",
