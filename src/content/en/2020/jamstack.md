@@ -29,10 +29,9 @@ The core principles of Jamstack are pre-rendering your site pages and decoupling
 
 The [HTTP Archive](https://httparchive.org/) crawls [millions of pages](https://httparchive.org/reports/state-of-the-web#numUrls) every month and runs them through a private instance of [WebPageTest](https://webpagetest.org/) to store key information on every page. (You can learn more about this in our [methodology](./methodology)). In the context of Jamstack, HTTP Archive provides extensive information on the usage of the frameworks and CDNs for the entire web. This chapter consolidates and analyzes many of these trends.
 
-
 The goals of this chapter are to estimate and analyze the growth of the Jamstack sites, the performance of popular Jamstack frameworks, as well as an analysis of real user experience using the Core Web Vitals metadata.
 
-## Adoption of Jamstack adoption
+## Adoption of Jamstack
 
 Our analysis throughout this work looks at desktop and mobile websites. The vast majority of URLs we looked at are in both datasets, but some URLs are only accessed by desktop or mobile devices. This can cause small divergences in the data, and we thus look at desktop and mobile results separately.
 
@@ -61,7 +60,7 @@ More than 0.7% of web pages are powered by Jamstack, an increase of over 79% fro
 
 The increase in desktop web pages powered by a Jamstack framework is 79% from last year. On mobile, this increase is almost two folds, at 154%. This is a significant growth from 2019, especially for mobile pages.
 
-## Top Jamstacks
+## Jamstack YoY Growth
 
 Our analysis counted 12 separate Jamstack frameworks. Only five frameworks had more than 1% share. Next.js, Gatsby, Hugo, Jekyll being the top contenders for the Jamstack market share.
 
