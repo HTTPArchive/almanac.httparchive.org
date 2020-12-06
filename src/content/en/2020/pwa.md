@@ -141,7 +141,7 @@ From the data we gathered it was derived that about **0.88%** desktop sites and 
   <figcaption>{{ figure_link(caption="Lighthouse PWA audits.", sheets_gid="814184412", sql_file="lighthouse_pwa_audits.sql") }}</figcaption>
 </figure>
 
-<p class="note">Note the Lighthouse performance stats were incorrect for August so the load-fast-enough-for-pwa stat has been replaced with September results.</p>
+<p class="note">Note the Lighthouse performance stats were incorrect for our August crawl so the load-fast-enough-for-pwa stat has been replaced with September results.</p>
 
 A [fast](https://web.dev/load-fast-enough-for-pwa/) page load over a cellular network ensures a good mobile user experience.
 
