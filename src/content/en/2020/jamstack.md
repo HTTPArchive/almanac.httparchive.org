@@ -164,7 +164,7 @@ Jamstack sites often load third party resources, such as external images, videos
 
 We find that the median desktop Jamstack page has 28 third party requests with 506 KB of content, with the mobile equivalent generating 46 requests with 824 KB of content. Whereas 10% of the desktop sites have 132 requests with 3.1MB of content which is only superseded by 168 requests on mobile with 3.2MB of content.
 
-## Core Web Vitals: what is the user experience on Jamstack websites?
+## User experience
 
 Jamstack websites are often said to offer a good user experience. It's what the entire concept of separating the frontend from the backend and hosting it on the CDN edge is all about. We aim to shed light on real-world user experience when using Jamstack websites. It's what we call, the [Core Web Vitals](https://web.dev/learn-web-vitals/).
 
