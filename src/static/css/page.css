@@ -512,16 +512,20 @@ figcaption {
   border-radius: 29px;
   overflow: hidden;
 }
+
 .figure-dropdown-list li {
   display: flex;
 }
+
 .figure-dropdown-list a {
   text-decoration: none;
 }
+
 .figure-dropdown-list a:hover,
 .figure-dropdown-list a:focus {
   text-decoration: underline;
 }
+
 .figure-dropdown-list a {
   padding: 15px 20px;
 }
@@ -529,10 +533,12 @@ figcaption {
 .figure-dropdown .nav-dropdown-btn::after {
   display: none;
 }
+
 .figure-dropdown .nav-dropdown-btn.dropdown-open {
   background-color: transparent;
   border: none;
 }
+
 .figure-dropdown .nav-dropdown-list {
   background-color: white;
   border-color: #5c687d;
