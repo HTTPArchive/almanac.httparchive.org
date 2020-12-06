@@ -519,15 +519,12 @@ figcaption {
 
 .figure-dropdown-list a {
   text-decoration: none;
+  padding: 15px 20px;
 }
 
 .figure-dropdown-list a:hover,
 .figure-dropdown-list a:focus {
   text-decoration: underline;
-}
-
-.figure-dropdown-list a {
-  padding: 15px 20px;
 }
 
 .figure-dropdown .nav-dropdown-btn::after {
