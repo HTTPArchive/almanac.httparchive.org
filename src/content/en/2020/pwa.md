@@ -425,7 +425,7 @@ Around **30%** of the Desktop and **25%** of Mobile environments uses importScri
 
 Out of many libraries available, workbox was used the most with an adoption rate of **12.86%** and **15.29%** on mobile and desktop respectively, out of PWA sites.
 
-Out of many methods that workbox provides, we noticed that strategies were used by **29.53%** of Desktop and **25.71%** on Mobile, routing followed it with **18.91%** and **15.61%** adoption and finally precaching caught up with **16.54%** and **12.98%** on Desktop and mobile respectively.
+Out of many methods that Workbox provides, we noticed that `strategies` were used by **29.53%** of desktop and **25.71%** on mobile, `routing` followed it with **18.91%** and **15.61%** adoption and finally `precaching` were next most used with **16.54%** and **12.98%** on desktop and mobile respectively.
 
 This indicated that strategies API played a very important role and one of the most complicated requirements for the developers to decide natively and relayed on libraries like workbox and like.
 
