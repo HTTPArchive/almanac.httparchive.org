@@ -239,7 +239,7 @@ Icon fonts are fully half of the top 10 most popular web fonts, the rest being c
 {{ figure_markup(
   image="fonts-popular-typefaces.png",
   caption="Popular typefaces.",
-  description="A bar chart showing the 10 most popular web fonts, starting with Font Awesome (35% of desktop and mobile), Open Sans (23% desktop and 25% of mobile)...etc.",
+  description="A bar chart showing the 10 most popular web fonts, starting with Font Awesome (35% of desktop and mobile), Open Sans (23% desktop and 25% of mobile), Roboto (17% desktop and 23% mobile), Glyphicons Halflings (16% for both), Lato (11% for both), Montserrat (19% for both), Font Awesome 5 Brands (19% for both), Font Awesome 5 Free (9% desktop and 8% mobile), Raleway (6% for both), and dashicons (6% for both).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=551344676&format=interactive",
   sheets_gid="179750099",
   sql_file="04_11a.popular_typeface.sql",
@@ -269,7 +269,7 @@ Lots more information about color fonts, including examples, are available at [c
 {{ figure_markup(
   image="fonts-font-variation-settings-usage.png",
   caption="Usage of font-variation-settings axes.",
-  description="A bar chart showing the usage of the 6 most popular axes for font variation settings.",
+  description="A bar chart showing the usage of the 6 most popular axes for font variation settings, dominated by `wght` at 84.7% for desktop and 90.4% for mobile, with a massive drop off to the remaining ones with `wght` at 5.6% for desktop and 4.3% for mobile, `opsz` at 3.7% and 1.2% respectively, `slnt` at 1.8% and 1.4%, `fanu` at 0.5% and 0.6%, and `ital` at 0.5% for desktop and 0.4% for mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=635348995&format=interactive",
   sheets_gid="309969915",
   sql_file="04_17.VF_axis_value.sql"
@@ -280,7 +280,7 @@ Variable fonts are certainly one of the biggest stories this year. They’re see
 
 By far the most commonly used axis is `wght` (which controls weight), at 84.7% desktop and 90.4% mobile. However, `wdth` (width) accounts for approximately 5% of variable font usage. In 2020, Google Fonts began serving 2-axis fonts with both width and weight axes.
 
-It’s worth noting that the preferred method is to use `font-weight` and `font-stretch` rather than the lower-level `font-variation-settings` syntax for these two axes as they are completely supported by all browsers that support variable fonts. By setting weight via `font-width: [number]` and width via `font-stretch: [number]%`, authors provide more appropriate style hints to the browser, which in turn enables better rendering for the end user should the variable font fail to load. This also avoids altering the normal inheritance of styles via the cascade. 
+It’s worth noting that the preferred method is to use `font-weight` and `font-stretch` rather than the lower-level `font-variation-settings` syntax for these two axes as they are completely supported by all browsers that support variable fonts. By setting weight via `font-width: [number]` and width via `font-stretch: [number]%`, authors provide more appropriate style hints to the browser, which in turn enables better rendering for the end user should the variable font fail to load. This also avoids altering the normal inheritance of styles via the cascade.
 
 The optical size (`opsz`) feature is used for approximately 2% of the variable font usage. This is one to watch, as tuning the appearance of a font to match its intended size of presentation improves the visual refinement in perhaps subtle but very real ways.
 
