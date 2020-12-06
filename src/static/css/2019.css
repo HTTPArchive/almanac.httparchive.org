@@ -375,19 +375,20 @@ h2 {
 }
 
 h3 {
-  font-size: 1.2em;
+  font-size: 1.17em;
 }
 
 h4 {
-  font-size: 1.15em;
+  font-size: 1.0625em;
 }
 
 h5 {
-  font-size: 1.075em;
+  font-size: 1em;
 }
 
 h6 {
   font-size: 1em;
+  font-weight: normal;
 }
 
 b {
