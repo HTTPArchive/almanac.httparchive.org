@@ -492,7 +492,7 @@ The median desktop page includes 76 outgoing links while the median mobile page 
 ) }}
 
 {# TODO(authors): Can you clarify how a link can be both outgoing and internal? #}
-The median page has 61 outgoing internal links on desktop and 54 on mobile. This is down 12.8% and 10% respectively from [last year's analysis](../2019/seo#linking). This suggests that sites are not maximizing the ability to improve the crawlability and link equity flow through their pages in the way they did the year before.
+The median page has 61 outgoing internal links (those links going to other pages of the same site) on desktop and 54 on mobile. This is down 12.8% and 10% respectively from [last year's analysis](../2019/seo#linking). This suggests that sites are not maximizing the ability to improve the crawlability and link equity flow through their pages in the way they did the year before.
 
 {{ figure_markup(
   image="seo-outgoing-links-internal.png",
