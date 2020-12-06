@@ -62,8 +62,7 @@
           "part": "II",
           "chapter": "7",
           "title": "SEO",
-          "slug": "seo",
-          "todo": true
+          "slug": "seo"
         },
         {
           "part": "II",
@@ -76,8 +75,7 @@
           "part": "II",
           "chapter": "9",
           "title": "Performance",
-          "slug": "performance",
-          "todo": true
+          "slug": "performance"
         },
         {
           "part": "II",
@@ -123,8 +121,7 @@
           "part": "III",
           "chapter": "15",
           "title": "CMS",
-          "slug": "cms",
-          "todo": true
+          "slug": "cms"
         },
         {
           "part": "III",
@@ -171,15 +168,13 @@
           "part": "IV",
           "chapter": "21",
           "title": "Resource Hints",
-          "slug": "resource-hints",
-          "todo": true
+          "slug": "resource-hints"
         },
         {
           "part": "IV",
           "chapter": "22",
           "title": "HTTP/2",
-          "slug": "http2",
-          "todo": true
+          "slug": "http2"
         }
       ]
     }
