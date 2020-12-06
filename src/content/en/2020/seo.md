@@ -549,7 +549,7 @@ Our review of pages indicates that 28.58% of pages include `rel=nofollow` attrib
 
 #### Text versus image links
 
-The median web page contains an image in 9.80% of links on desktop and 9.82% on mobile. These links represent lost opportunities to implement keyword-relevant anchor text. This only becomes a significant issue at the 90th percentile of pages.
+The median web page uses an image as anchor text to link in 9.80% of desktop and 9.82% of mobile pages. These links represent lost opportunities to implement keyword-relevant anchor text. This only becomes a significant issue at the 90th percentile of pages.
 
 {{ figure_markup(
   image="seo-image-links.png",
