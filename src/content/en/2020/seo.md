@@ -353,7 +353,6 @@ JSON-LD is generally considered to be the more portable and easier to manage imp
   </figcaption>
 </figure>
 
-
 {# TODO(authors): Is this disparity really noteworthy? The difference seems quite small. #}
 We find that the disparity between mobile and desktop continues with this type of data. Microdata appeared on 19.55% of mobile pages and 17.94% of desktop pages. RDFa appeared on 1.42% of mobile pages and 1.63% of mobile pages.
 
@@ -384,9 +383,9 @@ It's also interesting to see the growth of the [`VideoObject`](https://developer
 
 The growth of these objects is a general indication of increased adoption of structured data. There's also an indication of what Google gives visibility within search features increases the incidence rates of lesser used objects. Google announced the [`FAQPage`](https://developers.google.com/search/docs/data-types/faqpage), [`HowTo`](https://developers.google.com/search/docs/data-types/how-to), and [`QAPage`](https://developers.google.com/search/docs/data-types/qapage) objects as visibility opportunities in 2019 and they sustained significant year-over-year growth: 
 
-* `FAQPage` markup grew 3,261% on desktop and 3,000% on mobile. 
-* `HowTo` markup grew 605% on desktop and 623% on mobile. 
-* `QAPage` markup grew 166.7% on desktop and 192.1% on mobile. 
+* `FAQPage` markup grew 3,261% on desktop and 3,000% on mobile.
+* `HowTo` markup grew 605% on desktop and 623% on mobile.
+* `QAPage` markup grew 166.7% on desktop and 192.1% on mobile.
 
 <p class="note">
   Again, it's important to note that this data might not be representative of their actual level of growth, since these objects are usually placed on internal pages.
@@ -749,7 +748,7 @@ As of November 2020, 3 performance metrics known as [Core Web Vital](https://web
 
 
 For SEOs, performance disambiguated from "speed" with changes to Lighthouse's core measurement methodology in update to version 6.  Lighthouse is the scoring tool that populates key SEO performance tools such as web.dev, Chrome DevTools, and PageSpeed Insights.
-Previously, performance scores and methods of measurement varied by tool.  Google announced a set of unified performance metrics called [Core Web Vitals](https://developers.google.com/search/blog/2020/05/evaluating-page-experience) in May 2020.  
+Previously, performance scores and methods of measurement varied by tool.  Google announced a set of unified performance metrics called [Core Web Vitals](https://developers.google.com/search/blog/2020/05/evaluating-page-experience) in May 2020.
 
 Each of the metrics aligns to a phase in a user's experience.  The data source is the [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report/) (Crux).  This field data is aggregated from users who have opted-in to syncing their browsing history, have not set up a Sync passphrase, and have usage statistic reporting enabled.
 
@@ -777,9 +776,9 @@ Core Web Vitals consist of:
 
 In light of COVID-19, Google clarified in their official post that no immediate action is required.  Search Console now includes a [Core Web Vitals report](https://search.google.com/search-console/not-verified?original_url=/search-console/core-web-vitals) to help sites improve performance.  The report includes URL specific data grouped together by status, metric type, and URL group (groups of similar web pages).  In order to anonymize user data, a  minimum data threshold is in place.  If a URL does not have enough data from the Crux report, it is omitted.
 
-In the announcement of updates to core measurement, Lighthouse shared their analysis of performance scoring differences between versions 5 and 6. The [limited data set](https://docs.google.com/spreadsheets/d/1BZFh7AyyaLHCj5LGAbrn3m72ysu4yv8okyHG-f3MoXI/edit#gid=1984498811) saw ~18.67% of sites improve, 33.33% with no change, and 48.00% score lower.   
+In the announcement of updates to core measurement, Lighthouse shared their analysis of performance scoring differences between versions 5 and 6. The [limited data set](https://docs.google.com/spreadsheets/d/1BZFh7AyyaLHCj5LGAbrn3m72ysu4yv8okyHG-f3MoXI/edit#gid=1984498811) saw ~18.67% of sites improve, 33.33% with no change, and 48.00% score lower.
 
-Analysts for the Web Almanac saw marked different performance distribution scores between the versions.  Refer to the Performance Chapter of the Web Almanac for an in depth comparison between versions 5 and 6.   
+Analysts for the Web Almanac saw marked different performance distribution scores between the versions.  Refer to the Performance Chapter of the Web Almanac for an in depth comparison between versions 5 and 6.
 
 In tests using v5 of Lighthouse, 15.44% of pages tested scored at or above the 'passing' 85% score. Tests using Version 6 saw only 8.39% of tests achieve a passing score.
 
