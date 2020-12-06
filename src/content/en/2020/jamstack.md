@@ -61,7 +61,7 @@ More than 0.7% of web pages are powered by Jamstack, an increase of over 79% fro
 
 The increase in desktop web pages powered by a Jamstack framework is 79% from last year. On mobile, this increase is almost two folds, at 154%. This is a significant growth from 2019, especially for mobile pages.
 
-## Top SSGs YoY: Which are the most common Jamstack frameworks across desktop and mobile sites?
+## Top Jamstacks
 
 Our analysis counted 12 separate Jamstack frameworks. Only five frameworks had more than 1% share. Next.js, Gatsby, Hugo, Jekyll being the top contenders for the Jamstack market share.
 
