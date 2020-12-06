@@ -666,7 +666,7 @@ The remaining 9.2% of responses are not permitted to be stored in browser caches
 {{ figure_markup(
   image="11_cacheable_and_non_cacheable.png",
   caption="Distribution of cacheable and non-cacheable responses.",
-  description="A bar chart showing proportion of cacheable responses. 9.2% of desktop and 9.6% of mobile responses are cacheable.,
+  description="A bar chart showing proportion of cacheable responses. 9.2% of desktop and 9.6% of mobile responses are cacheable.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=430652203&format=interactive",
   sheets_gid="203111111",
   sql_file="ttl.sql"
