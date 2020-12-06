@@ -32,7 +32,7 @@ The [HTTP Archive][1] crawls [millions of pages][2] every month and runs them th
 
 The goals of this chapter are to estimate and analyze the growth of the Jamstack sites, the performance of popular Jamstack frameworks, as well as an analysis of real user experience using the Core Web Vitals metadata.
 
-## Adoption: What is the overall level of Jamstack adoption amongst all websites, across desktop and mobile?
+## Adoption of Jamstack adoption
 
 Our analysis throughout this work looks at desktop and mobile websites. The vast majority of URLs we looked at are in both datasets, but some URLs are only accessed by desktop or mobile devices. This can cause small divergences in the data, and we thus look at desktop and mobile results separately.
 
