@@ -615,13 +615,11 @@ In the table below, you can see that out of a total of 6,225,774 websites, only 
 <figure>
   <table>
     <tr>
-     <th> </th>   
-     <th>Does not use Service Worker</th>
-     <th>Uses Service Worker</th>
+     <th>Sites not using Service Worker</th>
+     <th>Sites using Service Worker</th>
      <th>Total</th>   
     </tr>
     <tr>
-     <td><span style="font-weight:bold">Sites</span></td>
      <td>6,225,774</td>
      <td>64,373</td>
      <td>6,290,147</td>      
