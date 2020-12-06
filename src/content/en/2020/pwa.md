@@ -36,7 +36,7 @@ In this chapter of Web Almanac we will be looking into each of the components th
 
 ## Service workers
 
-Serviceworkers are at the very center of the progressive webapps and can be thought as a proxy servers between web applications, browser which helps the developers control the network rather than the network controlling the application.
+Service workers are at the very center of the progressive web apps and can be thought as a proxy servers between web applications running in browsers and the network. They help developers control the network requests rather than the network requests controlling the application.
 
 ### Service worker registrations and installability
 
