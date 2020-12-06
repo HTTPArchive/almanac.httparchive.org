@@ -280,7 +280,11 @@ Variable fonts are certainly one of the biggest stories this year. They’re see
 
 By far the most commonly used axis is `wght` (which controls weight), at 84.7% desktop and 90.4% mobile. However, `wdth` (width) accounts for approximately 5% of variable font usage. In 2020, Google Fonts began serving 2-axis fonts with both width and weight axes.
 
+It’s worth noting that the preferred method is to use `font-weight` and `font-stretch` rather than the lower-level `font-variation-settings` syntax for these two axes as they are completely supported by all browsers that support variable fonts. By setting weight via `font-width: [number]` and width via `font-stretch: [number]%`, authors provide more appropriate style hints to the browser, which in turn enables better rendering for the end user should the variable font fail to load. This also avoids altering the normal inheritance of styles via the cascade. 
+
 The optical size (`opsz`) feature is used for approximately 2% of the variable font usage. This is one to watch, as tuning the appearance of a font to match its intended size of presentation improves the visual refinement in perhaps subtle but very real ways.
+
+There are many potential benefits to using variable fonts. While each included axis increases file size, the tipping point seems to be generally if more than two or three weights of a given typeface are in use, a variable version will likely be similar in total file size or smaller. This is supported by the dramatic increase in variable fonts being served by Google Fonts. Adopting and leveraging variable fonts for more varied design (by using more of the available range of weights and widths) is another. Using a width axis could improve line wrapping on smaller screens, especially with larger headings and longer languages. And with the rise in adoption of alternate light modes, making small adjustments to font-weight when switching modes can improve legibility (see [variablefonts.io](https://variablefonts.io) for more on usage and implementation).
 
 ## Towards the future
 
