@@ -164,7 +164,7 @@ We find that the median desktop Jamstack page has 28 third party requests with 5
 
 ## Core Web Vitals: what is the user experience on Jamstack websites?
 
-Jamstack websites are often said to offer a good user experience. It's what the entire concept of separating the frontend from the backend and hosting it on the CDN edge is all about. We aim to shed light on real-world user experience when using Jamstack websites. It's what we call, the [Core Web Vitals][11].
+Jamstack websites are often said to offer a good user experience. It's what the entire concept of separating the frontend from the backend and hosting it on the CDN edge is all about. We aim to shed light on real-world user experience when using Jamstack websites. It's what we call, the [Core Web Vitals](https://web.dev/learn-web-vitals/).
 
 In this section, we take a look at three important factors which can shed light on our understanding of how users are experiencing Jamstack pages in the wild:
 
