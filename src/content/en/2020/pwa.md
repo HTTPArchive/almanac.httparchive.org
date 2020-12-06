@@ -145,7 +145,7 @@ From the data we gathered it was derived that about **0.88%** desktop sites and 
 
 A [fast](https://web.dev/load-fast-enough-for-pwa/) page load over a cellular network ensures a good mobile user experience.
 
-**27.56%** of pages loaded fast enough for a PWA. Given how geo distributed the web is, having a fast load time with lighter pages matter the most of the next billion users of the web, most of them were introduced to the internet via a mobile device.
+**27.56%** of pages loaded fast enough for a PWA. Given how geographically distributed the web is, having a fast load time with lighter pages matter the most of the next billion users of the web, most of whom will be introduced to the internet via a mobile device.
 
 If you're building a Progressive Web App, consider using a service worker so that your app can [work offline](https://web.dev/works-offline/) **0.92%** of pages were offline ready.
 
@@ -200,9 +200,9 @@ We have examined which of these events are being listened to by service workers 
 
 ## Web app manifests
 
-The web app manifest is a JSON-based file format that provides developers with a centralized place to put metadata associated with a web application, it dictates how the application should behave on desktop or mobile in terms of the icon, orientation, theme color and likes.
+The web app manifest is a JSON-based file that provides developers with a centralized place to put metadata associated with a web application, it dictates how the application should behave on desktop or mobile in terms of the icon, orientation, theme color and likes.
 
-It is not a mandate that the web app manifest can’t exist independently, but just its presence can’t make it a progressive web application, below are some stats we collected in terms of the web manifest usage and the month of September 2020, which has both servicewokers and manifest usage.
+Having a web app manifest does not necessarily indicate the site is a progressive web app, as they can exist independently of service worker usage. However, as we are interesting PWAs in this chapter, we have investigated only those manifests for sites where a service worker also exists. This is different than the approach taken in [last year's PWA chapter](../2019/pwa#web-app-manifests) which looked at overall manifest usage so you may notice some differences in results this year.
 
 {{ figure_markup(
   image="pwa-manifest-and-service-worker-usage.png",
@@ -216,36 +216,36 @@ It is not a mandate that the web app manifest can’t exist independently, but j
 
 ### Manifest Properties
 
-Web manifest dictates the applications meta properties, we looked at the different properties defined by the Web App Manifest specification, and also considered non-standard proprietary properties. According to the spec, the following properties are [allowed](https://w3c.github.io/manifest/#webappmanifest-dictionary):
+Web manifest dictates the applications meta properties. We looked at the different properties defined by the Web App Manifest specification, and also considered non-standard proprietary properties. According to [the spec, the following properties are valid properties](https://w3c.github.io/manifest/#webappmanifest-dictionary):
 
-1.  background_color
-2.  categories
-3.  description
-4.  dir
-5.  display
-6.  iarc_rating_id
-7.  icons
-8.  lang
-9.  name
-10. orientation
-11. prefer_related_applications
-12. related_applications
-13. scope
-14. screenshots
-15. short_name
-16. shortcuts
-17. start_url
-18. theme_color
+1.  `background_color`
+2.  `categories`
+3.  `description`
+4.  `dir`
+5.  `display`
+6.  `iarc_rating_id`
+7.  `icons`
+8.  `lang`
+9.  `name`
+10. `orientation`
+11. `prefer_related_applications`
+12. `related_applications`
+13. `scope`
+14. `screenshots`
+15. `short_name`
+16. `shortcuts`
+17. `start_url`
+18. `theme_color`
 
-Interestingly there were very little differences between mobile and desktop stats.
+There were very little differences between mobile and desktop stats.
 
-The proprietary properties we encountered frequently were gcm_sender_id Google Cloud Messaging (GCM) service we found other interesting attributes like: browser_action, DO_NOT_CHANGE_GCM_SENDER_ID [which was an attribute that substituted a comment as JSON doesn’t provide comments], scope, public path, cacheDigest.
+The proprietary properties we encountered frequently were `gcm_sender_id` used by Google Cloud Messaging (GCM) service. We also found other interesting attributes like: `browser_action`, `DO_NOT_CHANGE_GCM_SENDER_ID` (which was basically a comment, used as JSON doesn’t allow comments), `scope`, `public path`, `cacheDigest`.
 
 On both platforms, however, there's a long tail of properties that are not interpreted by browsers yet contain potentially useful metadata.
 
-We also found a non-trivial amount of mistyped properties; our favorite ones being variation of theme-color, Theme_color, theme-color, Theme_color and oriendation.
+We also found a non-trivial amount of mistyped properties; our favorite ones being variation of `theme-color`, `Theme_color`, `theme-color`, `Theme_color` and `oriendation`.
 
-In order for a PWA to be fruitful it needs to have a Manifest and a Service Worker. It is interesting to note that Manifests are used a lot more than SW. This is due, in large part, to the fact that CMS like wordpress, drupal and Joomla have Manifests by default.
+In order for a PWA to be fruitful it needs to have a manifest and a service worker. It is interesting to note that manifests are used a lot more than service workers. This is due, in large part, to the fact that CMS like WordPress, Drupal and Joomla have manifests by default.
 
 {{ figure_markup(
   image="pwa-manifest-properties-on-service-worker-pages.png",
@@ -314,22 +314,22 @@ Out of all the top `categories`, shopping stood at the top at with `13.16%` on t
   )
 }}
 
-Lighthouse requires at least an icon sized 192x192 pixels, but common favicon generation tools create a plethora of other sizes, too. It is always better to use the recommended icon size so that it looks as intended.
+Lighthouse requires at least an icon sized 192x192 pixels, but common favicon generation tools create a plethora of other sizes, too. It is always better to use the recommended icon sizes for each device so it is encouraging to see such a wide spread usage of different icon sizes.
 
 ### Top manifest orientations
 
 The valid values for the orientation property are defined in the Screen Orientation API [specification](https://www.w3.org/TR/screen-orientation/). Currently, they are:
 
-1. "any"
-2. "natural"
-3. "landscape"
-4. "portrait"
-5. "portrait-primary"
-6. "portrait-secondary"
-7. "landscape-primary"
-8. "landscape-secondary"
+1. `any`
+2. `natural`
+3. `landscape`
+4. `portrait`
+5. `portrait-primary`
+6. `portrait-secondary`
+7. `landscape-primary`
+8. `landscape-secondary`
 
-Out of which we noticed that portrait, any and portrait-primary properties took precedence.
+Out of which we noticed that `portrait`, `any` and `portrait-primary` properties took precedence.
 
 {{ figure_markup(
   image="pwa-top-manifest-orientations.png",
@@ -345,7 +345,7 @@ Out of which we noticed that portrait, any and portrait-primary properties took 
 
 There are many cases, where the serviceworkers would need many libraries as dependencies, may it be external dependencies or the application's internal dependencies that are fetched to the serviceworker via `importScripts` API, in this section we will look into stats on such libraries.
 
-### Popular scripts pulling into service workers using ImportScript
+### Popular import scripts
 
 The [importScripts() API](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts) of the [WorkerGlobalScope interface](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope) synchronously imports one or more scripts into the worker's scope, the same is used to import external dependencies to the service worker.
 
@@ -419,7 +419,7 @@ The [importScripts() API](https://developer.mozilla.org/en-US/docs/Web/API/Worke
 <figcaption>{{ figure_link(caption="PWA library usage.", sheets_gid="1399126426", sql_file="popular_pwa_libraries.sql") }}</figcaption>
 </figure>
 
-Around **30%** of the Desktop and **25%** of Mobile environments uses importScripts, which indicates that these use cases are requiring external libraries, out of which workbox, sw_toolbox and firebase take the first three positions respectively.
+Around **30%** of the desktop and **25%** of mobile sites uses `importScripts`, of which `workbox`, `sw_toolbox` and `firebase` take the first three positions respectively.
 
 ### Workbox usage
 
