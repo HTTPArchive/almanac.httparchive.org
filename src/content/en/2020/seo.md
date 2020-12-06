@@ -302,56 +302,57 @@ You can learn more about the usage of headings in the [Markup chapter](./markup#
 
 #### Structured data
 
-Over the course of the past decade, search engines, particularly Google, have continued to push towards becoming the presentation layer of the web. These advancements are partially driven by their improved ability to extract information from unstructured content (e.g., [passage indexing](https://blog.google/products/search/search-on/)) and the adoption of semantic markup in the form of structured data. Content creators and developers have been encouraged to implement structured data to give more visibility to their content within components of search results. 
+Over the course of the past decade, search engines, particularly Google, have continued to push towards becoming the presentation layer of the web. These advancements are partially driven by their improved ability to extract information from unstructured content (e.g., [passage indexing](https://blog.google/products/search/search-on/)) and the adoption of semantic markup in the form of _structured data_. Search engines have encouraged content creators and developers to implement structured data to give more visibility to their content within components of search results.
 
-In a move from "strings to things" , search engines have agreed upon a broad vocabulary of objects in support of marking up a variety of people, places, and things within web content. However, only a subset of that vocabulary triggers inclusion within search results components. Google specifies those that they support and how they're displayed in their ["Search Gallery"](https://developers.google.com/search/docs/guides/search-gallery), and provides [a tool](https://search.google.com/test/rich-results) to validate their support and implementation. 
+In a move from ["strings to things"](https://blog.google/products/search/introducing-knowledge-graph-things-not/), search engines have agreed upon a broad vocabulary of objects in support of marking up a variety of people, places, and things within web content. However, only a subset of that vocabulary triggers inclusion within search results components. Google specifies those that they support and how they're displayed in their [search gallery](https://developers.google.com/search/docs/guides/search-gallery), and provides [a tool](https://search.google.com/test/rich-results) to validate their support and implementation. 
 
-As search engines evolve to reflect more of these elements in search results, the incidence rates of the different  vocabulary changes across the web.
+As search engines evolve to reflect more of these elements in search results, the incidence rates of the different vocabularies change across the web.
 
-As part of our examination, we took a look at the incidence rates of different types of structured markup. The available formats include [RDFa](https://www.w3.org/TR/rdfa-primer/) and [Schema.org](https://schema.org/) which come in both the microformats and [JSON-LD](https://www.w3.org/TR/json-ld11/) flavors. Google has recently [dropped the support for data-vocabulary](https://developers.google.com/search/blog/2020/01/data-vocabulary), a vocabulary that was primarily used to implement breadcrumbs. 
+{# TODO(authors): Is schema.org itself a "format"? #}
+As part of our examination, we took a look at the incidence rates of different types of structured markup. The available formats include [RDFa](https://www.w3.org/TR/rdfa-primer/) and [Schema.org](https://schema.org/), which come in both the microformats and [JSON-LD](https://www.w3.org/TR/json-ld11/) flavors. Google has recently [dropped the support for data-vocabulary](https://developers.google.com/search/blog/2020/01/data-vocabulary), which was primarily used to implement breadcrumbs. 
 
-JSON-LD is generally considered the more portable and easy to manage implementation and has become the preferred format. As a result, we see that JSON-LD appears on 29.78% of mobile pages and 30.60% of desktop pages.
+{# TODO(analysts, authors): Consider adding a "big number" figure here for the mobile JSON-LD stat, or a bar chart containing each format. #}
+JSON-LD is generally considered to be the more portable and easier to manage implementation and so it has become the preferred format. As a result, we see that JSON-LD appears on 29.78% of mobile pages and 30.60% of desktop pages.
 
+{# TODO(authors): Is this disparity really noteworthy? The difference seems quite small. #}
 We find that the disparity between mobile and desktop continues with this type of data. Microdata appeared on 19.55% of mobile pages and 17.94% of desktop pages. RDFa appeared on 1.42% of mobile pages and 1.63% of mobile pages.
 
-##### Rendered vs Non-rendered Structured Data
+##### Rendered versus non-rendered structured data
 
-Additionally, we found that 38.61% of desktop pages and 39.26% of mobile pages feature JSON-LD or microformat structured data in the raw HTML, while 40.09% of desktop pages and 40.97% of mobile pages feature structured data in the rendered DOM. 
+{# TODO(authors): This section introduces a few stats but doesn't go into your interpretations of the results. What do you hope readers take away from these stats? #}
+We found that 38.61% of desktop pages and 39.26% of mobile pages feature JSON-LD or microformat structured data in the raw HTML, while 40.09% of desktop pages and 40.97% of mobile pages feature structured data in the rendered DOM. 
 
 When reviewing this in more detail, we found that 1.49% of desktop pages and 1.77% of mobile pages only featured this type of structured data in the rendered DOM due to JavaScript transformations. 
 
 Finally, we found that 4.46% of desktop pages and 4.62% of mobile pages feature structured data that appears in the raw HTML and is subsequently changed by JavaScript transformations in the rendered DOM.
 
-##### Most Active Structured Data Objects
+##### Most prevalent structured data objects
 
-[As seen last year](https://almanac.httparchive.org/en/2019/seo#structured-data), the most prevalent structured data objects remain to be `WebSite`, `SearchAction`, `WebPage`, `Organization` and `ImageObject`, and their usage has grown further: 
+[As seen last year](https://almanac.httparchive.org/en/2019/seo#structured-data), the most prevalent structured data objects remain to be `WebSite`, `SearchAction`, `WebPage`, `Organization`, and `ImageObject`, and their usage has continued to grow:
 
-* `Website` has grown 9.37% on desktop and 10.5% on mobile 
+* `WebSite` has grown 9.37% on desktop and 10.5% on mobile 
 * `SearchAction` has grown 7.64% on both desktop and mobile
 * `WebPage` has grown on desktop 6.83% and 7.09% on mobile
-* `Organization` has grown on desktop 4.75% and 4.98% on  mobile 
+* `Organization` has grown on desktop 4.75% and 4.98% on mobile 
 * `ImageObject` has grown 6.39% on desktop and 6.13% on mobile 
 
-It should be noted that `WebSite`, `SearchAction` and `Organization` are all typically  associated with home pages, so this highlights the bias of the dataset and does not reflect the bulk of structured data implemented on the web.
+It should be noted that `WebSite`, `SearchAction` and `Organization` are all typically associated with home pages, so this highlights the bias of the dataset and does not reflect the bulk of structured data implemented on the web.
 
-In contrast, despite the fact that reviews are not supposed to be associated with home pages the data indicates that `AggregateRating` is up 23.9% on mobile and 23.7% on desktop. 
+In contrast, despite the fact that reviews are not supposed to be associated with home pages, the data indicates that `AggregateRating` is used on 23.9% on mobile and 23.7% on desktop. 
 
-It's also interesting to see the growth of the [`VideoObject` to annotate videos](https://developers.google.com/search/docs/data-types/video). Although [YouTube videos dominate video search results in Google](https://moz.com/blog/youtube-dominates-google-video-results-in-2020), the usage of `VideoObject` grew 30.11% on desktop and 27.7% on mobile
+It's also interesting to see the growth of the [`VideoObject`](https://developers.google.com/search/docs/data-types/video) to annotate videos. Although [YouTube videos dominate video search results in Google](https://moz.com/blog/youtube-dominates-google-video-results-in-2020), the usage of `VideoObject` grew 30.11% on desktop and 27.7% on mobile.
 
-This growth is a general indication of increased adoption of structured data. 
-
-There's also an indication of what Google gives visibility within search features increases the incidence rates of lesser used objects. 
-
-Google announced the [`FAQPage`](https://developers.google.com/search/docs/data-types/faqpage), [`HowTo`](https://developers.google.com/search/docs/data-types/how-to), and [`QAPage`](https://developers.google.com/search/docs/data-types/qapage) objects as visibility opportunities in 2019 and they sustained significant year over year growth: 
+The growth of these objects is a general indication of increased adoption of structured data. There's also an indication of what Google gives visibility within search features increases the incidence rates of lesser used objects. Google announced the [`FAQPage`](https://developers.google.com/search/docs/data-types/faqpage), [`HowTo`](https://developers.google.com/search/docs/data-types/how-to), and [`QAPage`](https://developers.google.com/search/docs/data-types/qapage) objects as visibility opportunities in 2019 and they sustained significant year-over-year growth: 
 
 * `FAQPage` markup grew 3,261% on desktop and 3,000% on mobile. 
 * `HowTo` markup grew 605% on desktop and 623% on mobile. 
 * `QAPage` markup grew 166.7% on desktop and 192.1% on mobile. 
 
-Note that this data might not be representative of their actual level of growth since these objects are usually placed on internal pages.
+<p class="note">
+  Again, it's important to note that this data might not be representative of their actual level of growth, since these objects are usually placed on internal pages.
+</p>
 
-The adoption of structured data is a boon for the web as extracting data is valuable to a wealth of use cases. We expect this to continue to grow as search engines expand their usage and as it begins to power applications beyond search engines.
-
+The adoption of structured data is a boon for the web as extracting data is valuable to a wealth of use cases. We expect this to continue to grow as search engines expand their usage and as it begins to power applications beyond web search.
 
 #### Metadata
 
@@ -363,88 +364,86 @@ We examined these features to see how pages are quantitatively aligning with bes
 
 The page title is shown as the anchor text in search engine results and is generally considered one of the most valuable on-page elements that impacts a page's ability to rank.
 
-When analyzing the usage of the title tag, it was found that 98.75% of desktop home pages are featuring one, while 98.7% of mobile home pages are. This represents a slight improvement vs. [last year](../2019/seo#page-titles) when it was found that 97.1% of mobile pages were featuring a title tag.
+When analyzing the usage of the `title` tag, we found that 99% of desktop and mobile home pages have one. This represents a slight improvement since [last year](../2019/seo#page-titles), when 97% of mobile pages had a `title` tag.
 
 The median home page features a page title that is six words long. There is no difference in the word count between the mobile and desktop contexts within our dataset. This suggests that the page title element is an element that is not modified between different page template types.
 
 {{ figure_markup(
   image="seo-title-word-count.png",
-  caption="Title word count",
+  caption="Distribution of the number of words per page title.",
   description="Bar chart showing the number of words in the title tag per percentile (10, 25, 50, 75, and 90). The median home page features a page title that is six words long. There is no difference in the word count between the mobile and desktop contexts within our dataset",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=2028212539&format=interactive",
   sheets_gid="775602646",
   sql_file="pages_wpt_bodies_by_device_and_percentile.sql"
-  )
-}}
+) }}
 
-The median page title character count is 38 characters on both mobile and desktop. Interestingly, this is up from 20 characters on desktop and 21 characters on mobile from [last year's analysis](../2019/seo#page-titles). The disparity between the contexts has disappeared year-over-year except within the 90th percentile wherein there is a one character disparity.
+The median page title character count is 38 characters on both mobile and desktop. Interestingly, this is up from 20 characters on desktop and 21 characters on mobile from [last year's analysis](../2019/seo#page-titles). The disparity between the contexts has disappeared year-over-year except within the 90th percentile wherein there is a one character difference.
 
+{# TODO(analysts): The y-axis label should be "Number of characters". #}
 {{ figure_markup(
   image="seo-title-character-count.png",
-  caption="Title Character Count",
+  caption="Distribution of the number of characters per page title.",
   description="Bar chart showing the number of characters in the title tag per percentile (10, 25, 50, 75, and 90). The median page title character count is 38 characters on both mobile and desktop.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1040977563&format=interactive",
   sheets_gid="775602646",
   sql_file="pages_wpt_bodies_by_device_and_percentile.sql"
-  )
-}}
+) }}
 
-##### Meta Descriptions
+##### Meta descriptions
 
-The meta description acts as the advertising tagline for a webpage. Although [a recent study suggests that this tag is ignored and rewritten by Google 70% of the time](https://www.searchenginejournal.com/google-rewrites-meta-descriptions-over-70-of-the-time/382140/), it is an element that is prepared with the goal of enticing a user to click through.
+The meta description acts as the advertising tagline for a web page. Although [a recent study](https://www.searchenginejournal.com/google-rewrites-meta-descriptions-over-70-of-the-time/382140/) suggests that this tag is ignored and rewritten by Google 70% of the time, it is an element that is prepared with the goal of enticing a user to click through.
 
-When analyzing the usage of meta description, it was found that 68.62% of desktop home pages and 68.22% of mobile home pages feature a meta description. Although this may be surprisingly low, it is an improvement from [last year](../2019/seo#meta-descriptions) when it was found that only 64.02% of mobile home pages had a meta description.
-
+When analyzing the usage of meta descriptions, we found that 68.62% of desktop home pages and 68.22% of mobile home pages have one. Although this may be surprisingly low, it is a slight improvement from [last year](../2019/seo#meta-descriptions), when only 64.02% of mobile home pages had a meta description.
 
 {{ figure_markup(
   image="seo-meta-description-word-length.png",
-  caption="Meta Description Word Length",
+  caption="Distribution of the number of words per meta description.",
   description="Bar chart showing the number of words in the meta description tag per percentile (10, 25, 50, 75, and 90). The median length of the meta description in our dataset is 19 words.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=156955276&format=interactive",
   sheets_gid="775602646",
   sql_file="pages_wpt_bodies_by_device_and_percentile.sql"
-  )
-}}
+) }}
 
-The median length of the meta description in our dataset is 19 words. The only disparity in word count takes place in the 90th percentile where the desktop content features one more word than mobile.
+The median length of the meta description is 19 words. The only disparity in word count takes place in the 90th percentile where the desktop content has one more word than mobile.
 
 {{ figure_markup(
   image="seo-meta-description-character-length.png",
-  caption="Meta Description Character Length",
+  caption="Distribution of the number of characters per meta description.",
   description="Bar chart showing the number of characters in the meta description tag per percentile (10, 25, 50, 75, and 90). The median character count for the meta description is 138 characters on desktop pages and 136 characters on mobile pages",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1293879233&format=interactive",
   sheets_gid="775602646",
   sql_file="pages_wpt_bodies_by_device_and_percentile.sql"
-  )
-}}
+) }}
 
 The median character count for the meta description is 138 characters on desktop pages and 136 characters on mobile pages. Aside from the 75th percentile, there is a small disparity between mobile and desktop meta description lengths distributed across the dataset. SEO best practices suggest limiting the specified meta description to up to 160 characters, but Google, inconsistently, may display upwards of 300 characters in its snippets.
 
-With meta descriptions continuing to power other snippets such as social and news feed snippets and Google continually rewriting them, and not considering them a direct ranking factor, it is reasonable to expect that meta descriptions will continue to grow beyond the 160 character limitation.
+With meta descriptions continuing to power other snippets such as social and news feed snippets, and given that Google continually rewrites them and does not consider them a direct ranking factor, it is reasonable to expect that meta descriptions will continue to grow beyond the 160 character limitation.
 
-####  Images
+#### Images
 
-The usage of images, particularly using `<img>` elements, within a page often suggests a focus on visual presentation of content. Although search engine capabilities regarding computer vision have continued to improve, we have no indication that this technology is being used in the ranking of pages. `alt` attributes remain the primary way to explain an image in lieu of a search engine's inability to "see" it. `alt` attributes also support accessibility and clarify the elements on the page for users that are visually impaired.
+The usage of images, particularly using `img` tags, within a page often suggests a focus on visual presentation of content. Although search engine capabilities regarding computer vision have continued to improve, we have no indication that this technology is being used in the ranking of pages. `alt` attributes remain the primary way to explain an image in lieu of a search engine's ability to "see" it. `alt` attributes also support accessibility and clarify the elements on the page for users that are visually impaired.
 
-The median desktop page features 21 image tags and the median mobile page features 19 image tags. The web continues to trend toward image-heaviness with the growth of bandwidth and the ubiquity of smartphones. However, this comes at a cost of performance.
+{# TODO(authors): Why are the growth of bandwidth and ubiquity of smartphones contributors to image heaviness? #}
+The median desktop page includes 21 `img` tags and the median mobile page has 19 `img` tags. The web continues to trend toward image-heaviness with the growth of bandwidth and the ubiquity of smartphones. However, this comes at a cost of performance.
 
 {{ figure_markup(
   image="seo-img-elements-per-page.png",
   alt="img elements per page",
-  caption="`<img>` elements per page",
+  caption="Distribution of the number of `<img>` elements per page.",
   description="Bar chart showing the number of `<img>` elements per page per percentile (10, 25, 50, 75, and 90). The median desktop page features 21 `<img>` elements and the median mobile page features 19 `<<img>` tags..",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=923860709&format=interactive",
   sheets_gid="1317352222",
   sql_file="pages_markup_by_device_and_percentile.sql"
-  )
-}}
+) }}
 
-The median web page is missing 2.99% `alt` attributes on desktop and 2.44% of `alt` attributes on mobile.
+{# TODO(authors): Add your interpretation of these results. What do you hope readers get from it? Also consider linking to the Accessibility chapter here if that ties in. #}
+The median web page is missing 2.99% of `alt` attributes on desktop and 2.44% of `alt` attributes on mobile.
 
+{# TODO(analysts): Does this caption sound accurate? I wanted to clarify what it was a percent of. #}
 {{ figure_markup(
   image="seo-percentage-of-missing-img-alt-attribute.png",
   alt="Percent of missing image alt attributes",
-  caption="Percent of missing image `alt` attributes",
+  caption="Distribution of the percent of `<img>` elements missing image `alt` attributes per page.",
   description="Bar chart showing the percent of missing `alt` attributes per percentile (10, 25, 50, 75, and 90). The median web page is missing 2.99% `alt` attributes on desktop and 2.44% of `alt` attributes on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=862590664&format=interactive",
   sheets_gid="1317352222",
@@ -452,81 +451,80 @@ The median web page is missing 2.99% `alt` attributes on desktop and 2.44% of `a
   )
 }}
 
-It was also found that only 53.86% of desktop and 51.22% of mobile home pages featured image `alt` attributes. Although this might seem low, it is an improvement from [last year](../2019/seo#image-alt-tags) when it was found that only 46.71% of mobile pages used `alt` attributes on all of their images.
-`
+{# TODO(authors, analysts): I don't think the interpretation of these stats was correct, so I edited out anything that I didn't think was accurate. Please double check my edit and feel free to expand on it. Note that this is incompatible with last year's stat because that was a Lighthouse audit checking that all images have alt attributes, while this data was calculated directly from the markup. There's something off if 40+% of pages have perfect alt coverage, but this chart has less than perfect coverage at the 75th percentile. Either coverage got much _worse_ this year or they're measuring different things. For example Lighthouse may be more lenient about which images should have alt attributes. Do you have those audit results based on 2020 data here for better comparison? #}
+We found that the median page contains `alt` attributes on only 51.22% of their images.
+
 {{ figure_markup(
   image="seo-percentage-of-img-alt-attributes-present.png",
-  alt="Percent of image alt attributes present",
-  caption="Percent of image <code>alt</code> attributes present",
-  description="Bar chart showing the percentage of <code>alt</code> attributes present per percentile (10, 25, 50, 75, and 90). It was found that only 53.86% of desktop and 51.22% of mobile home pages featured image <code>alt</code> attributes.",
+  alt="Distribution of the percent of images having alt attributes per page",
+  caption="Distribution of the percent of images having `alt` attributes per page.",
+  description="Bar chart showing the percentage of `alt` attributes present per percentile (10, 25, 50, 75, and 90). It was found that only 53.86% of desktop and 51.22% of mobile home pages featured image `alt` attributes.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=827771545&format=interactive",
   sheets_gid="1317352222",
   sql_file="pages_markup_by_device_and_percentile.sql"
-  )
-}}
+) }}
 
-The median web page features 10% blank `alt` attributes on desktop and 11.11% blank `alt` attributes on mobile.
+The median web page has 10.00% of images with blank `alt` attributes on desktop and 11.11% on mobile.
 
 {{ figure_markup(
   image="seo-percentage-of-blank-img-alt-attributes.png",
-  alt="Percent of blank image alt attributes",
-  caption="Percent of blank image `alt` attributes",
+  alt="Distribution of the percent of images having blank alt attributes per page.",
+  caption="Distribution of the percent of images having blank `alt` attributes per page.",
   description="Bar chart showing the percent of featured `alt` blank attributes per percentile (10, 25, 50, 75, and 90). The median web page features 10% blank `alt` attributes on desktop and 11.11% blank `alt` attributes on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=378651979&format=interactive",
   sheets_gid="1317352222",
   sql_file="pages_markup_by_device_and_percentile.sql"
-  )
-}}
+) }}
 
 ### Links
 
-Modern search engines use hyperlinks between pages for the discovery of new content for indexing and as an indication of authority for ranking. The link graph is something that search engines actively police both algorithmically and through manual review. Web pages pass link equity through their sites and to other sites through these hyperlinks therefore it is important to ensure that there are a wealth of links throughout any given page.
+Modern search engines use hyperlinks between pages for the discovery of new content for indexing and as an indication of authority for ranking. The link graph is something that search engines actively police both algorithmically and through manual review. Web pages pass link equity through their sites and to other sites through these hyperlinks, therefore it is important to ensure that there is a wealth of links throughout any given page.
 
 #### Outgoing links
 
-The median desktop home page features 76 outgoing links while the median mobile home page features 67. Historically, the direction from Google suggested that links be limited to 100 per page. While that recommendation is outdated on the modern web, the median page in our dataset adheres to it.
+The median desktop home page includes 76 outgoing links while the median mobile home page has 67. Historically, the direction from Google suggested that links be limited to 100 per page. While that recommendation is outdated on the modern web, the median page in our dataset adheres to it.
 
 {{ figure_markup(
   image="seo-outgoing-links.png",
-  caption="Outgoing links",
+  caption="Distribution of the number of outgoing links per page.",
   description="Bar chart showing the number of outgoing links per percentile (10, 25, 50, 75, and 90). The median desktop home page features 76 outgoing links while the median mobile home page features 67.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=284216213&format=interactive",
   sheets_gid="775602646",
   sql_file="pages_wpt_bodies_by_device_and_percentile.sql"
-  )
-}}
+) }}
 
-The median desktop page features 61 outgoing internal links while the median mobile page features 54 outgoing internal links. This is down 12.8% and 10% respectively from [last year's analysis](../2019/seo#linking). This suggests that sites are not maximizing the ability to improve the crawlability and link equity flow through their pages in the way they did the year before.
+{# TODO(authors): Can you clarify how a link can be both outgoing and internal? #}
+The median page has 61 outgoing internal links on desktop and 54 on mobile. This is down 12.8% and 10% respectively from [last year's analysis](../2019/seo#linking). This suggests that sites are not maximizing the ability to improve the crawlability and link equity flow through their pages in the way they did the year before.
 
 {{ figure_markup(
   image="seo-outgoing-links-internal.png",
-  caption="Outgoing Links (Internal)",
+  caption="Distribution of the number of outgoing internal links per page.",
   description="Bar chart showing the number of internal outgoing links per percentile (10, 25, 50, 75, and 90). The median desktop page features 61 outgoing internal links while the median mobile page features 54 outgoing internal links.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=739265254&format=interactive",
   sheets_gid="775602646",
   sql_file="pages_wpt_bodies_by_device_and_percentile.sql"
-  )
-}}
+) }}
 
+{# TODO(authors): Add your interpretation of these results. What do you hope readers will get out of it? If there's not much to say, would anyone miss it if it was dropped? Also, please clarify the redundancy of outgoing and external for a non-SEO like myself :) #}
 The median home page is linking to external sites 7 times on desktop and 6 times on mobile.
 
 {{ figure_markup(
   image="seo-outgoing-links-external.png",
-  caption="Outgoing Links (External)",
+  caption="Distribution of the number of outgoing expernal links per page.",
   description="Bar chart showing the number of external outgoing links per percentile (10, 25, 50, 75, and 90). The median home page is linking to external sites 7 times on desktop and 6 times on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=391564643&format=interactive",
   sheets_gid="775602646",
   sql_file="pages_wpt_bodies_by_device_and_percentile.sql"
-  )
-}}
+) }}
 
-#### Mobile vs. Desktop Links
+#### Mobile versus desktop links
 
 There is a disparity in the links between mobile and desktop that will negatively impact sites as Google becomes more committed to mobile-only indexing rather than just mobile-first indexing. This is illustrated in the 62 links on mobile versus the 68 links on desktop for the median web page.
 
+{# TODO(authors): What is a text link and how is that different from all the other links we've been talking about? At least to a non-SEO these all seem non-descript. #}
 {{ figure_markup(
   image="seo-text-links.png",
-  caption="Text Links",
+  caption="Distribution of the number of text links per page.",
   description="Bar chart showing the number of text links per percentile (19, 25, 50, 75, and 90). There is a disparity in the links between mobile and desktop (62 links on mobile versus 68 links on desktop).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1588324966&format=interactive",
   sheets_gid="775602646",
@@ -534,87 +532,156 @@ There is a disparity in the links between mobile and desktop that will negativel
   )
 }}
 
+#### `rel=nofollow`, `ugc`, and `sponsored` attributes usage
 
-#### Rel Nofollow, UGC, Sponsored Attributes Usage
+In September of 2019, [Google introduced attributes](https://webmasters.googleblog.com/2019/09/evolving-nofollow-new-ways-to-identify.html) that allow publishers to classify links as being sponsored or user generated content. These attributes are in addition to `rel=nofollow` which was previously [introduced in 2005](https://googleblog.blogspot.com/2005/01/preventing-comment-spam.html). The new attributes, `rel=ugc` and `rel=sponsored`, are meant to clarify or qualify the reason as to why these links are appearing on a given web page.
 
-In September of 2019, [Google introduced attributes](https://webmasters.googleblog.com/2019/09/evolving-nofollow-new-ways-to-identify.html) that allow publishers to classify links as being sponsored or user generated content. These attributes are in addition to `nofollow` which was previously [introduced in 2005](https://googleblog.blogspot.com/2005/01/preventing-comment-spam.html). The new attributes, `rel-ugc` and `rel-sponsored`, are meant to clarify or qualify the reason as to why these links are appearing on a given web page.
+Our review of pages indicates that 28.58% of home pages include `rel=nofollow` attributes on desktop and 30.74% on mobile. However, `rel=ugc` and `rel=sponsored` adoption is quite low with less than 0.3% of pages (about 20,000) having either. Since these attributes don't add any more value to a publisher than `rel=nofollow`, it is reasonable to expect that the rate of adoption will continue to be slow.
 
-Our review of pages indicates that 28.58% of home pages feature `nofollow` attributes on their desktop versions and 30.74% on mobile. However, rel-ugc and rel-sponsored adoption is quite low with less than 0.3% pages featuring either. Since these attributes don't add any more value to a publisher than rel-nofollow, it is reasonable to expect that adoption will continue to be slow.
-
+{# TODO(analysts): This chart is unusual in that desktop/mobile are the x-axis values. Can you swap it to be like the other charts where nofollow, sponsored, and ugc are on the x-axis and there are two bars for each? #}
 {{ figure_markup(
   image="seo-nofollow-ugc-sponsored-attributes.png",
-  alt="Usage of nofollow, ugc, sponsored attributes",
-  caption="Usage of `nofollow`, `ugc`, `sponsored` Attributes",
+  alt="Percent of pages having rel=nofollow, rel=ugc, and rel=sponsored attributes.",
+  caption="Percent of pages having `rel=nofollow`, `rel=ugc`, and `rel=sponsored` attributes.",
   description="Bar chart showing the usage (in percent) of `rel` attributes on desktop and mobile. Our review indicates that 28.58% of home pages feature `nofollow` attributes on their desktop versions and 30.74% on mobile. However, `ugc` and `sponsored` adoption is quite low with less than 0.3% pages featuring either. ",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1177251312&format=interactive",
   sheets_gid="1271677392",
   sql_file="pages_robots_txt_by_device_and_status.sql"
-  )
-}}
+) }}
 
-#### Text vs. Images Links
+#### Text versus image links
 
-The median web page features 9.80% image links on desktop and 9.82% image links on mobile. These links represent lost opportunities to implement keyword-relevant anchor text. This only becomes a significant issue at the 90th percentile of pages.
+The median web page contains an image in 9.80% of links on desktop and 9.82% on mobile. These links represent lost opportunities to implement keyword-relevant anchor text. This only becomes a significant issue at the 90th percentile of pages.
 
 {{ figure_markup(
   image="seo-image-links.png",
-  caption="Image links",
+  caption="Distribution of the percent of links containing images per page.",
   description="Bar chart showing the percentage of image links per percentile (10, 25, 50, 75, and 90). The median web page features 9.80% image links on desktop and 9.82% image links on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1292929825&format=interactive",
   sheets_gid="775602646",
   sql_file="pages_wpt_bodies_by_device_and_percentile.sql"
-  )
-}}
+) }}
 
 ## Advanced
-The advanced section features the optimization related findings of those web configurations and elements that although don't directly affect a site's crawlability or indexability, have been confirmed by search engines to be used as ranking signals or whose configurations affect the capacity of websites to leverage search features.
 
-### Mobile Friendliness
+This section explores the opportunities for optimization related to web configurations and elements that may not directly affect a site's crawlability or indexability, but have either been confirmed by search engines to be used as ranking signals or will affect the capacity of websites to leverage search features.
 
-With the increasing popularity of mobile devices to browse and search across the web, search engines have been taking into consideration mobile friendliness as a ranking factor since a few years ago.
+### Mobile friendliness
 
-In fact, [since a few years ago](https://developers.google.com/search/blog/2016/11/mobile-first-indexing) Google has been moving to a Mobile first index, meaning that the content that is crawled, indexed and ranked, is the one accessible to mobile users and the Smartphone Googlebot.
+With the increasing popularity of mobile devices to browse and search across the web, search engines have been taking mobile friendliness into consideration as a ranking factor for several years.
 
-Additionally, [since July last year](https://developers.google.com/search/blog/2020/07/prepare-for-mobile-first-indexing-with) Google is using the Mobile first index for all new websites and in March earlier this year, it announced that [70% of pages shown in their search results have already shifted over](https://webmasters.googleblog.com/2020/03/announcing-mobile-first-indexing-for.html_). It is now expected that Google [fully switches to a Mobile first index in March 2021](https://webmasters.googleblog.com/2020/07/prepare-for-mobile-first-indexing-with.html).
+{# TODO(authors): MFI has been discussed earlier, so the "in fact" doesn't pack as much punch this time. Consider rephrasing. #}
+In fact, [since 2016](https://developers.google.com/search/blog/2016/11/mobile-first-indexing) Google has been moving to a mobile-first index, meaning that the content that is crawled, indexed, and ranked is the one accessible to mobile users and the [Smartphone Googlebot](https://developers.google.com/search/docs/advanced/crawling/googlebot?hl=en).
 
-Mobile friendliness should be then fundamental for any website looking to provide a good search experience -and as a consequence, grow in search results.
+{# TODO(authors): Can you clarify the timeline? You say "July last year" but the blog post is dated July 2020. Would "July this year" change how you structure this sentence chronologically? #}
+Additionally, [since July 2020](https://developers.google.com/search/blog/2020/07/prepare-for-mobile-first-indexing-with) Google is using the mobile-first index for all new websites and earlier in March, it announced that [70% of pages shown in their search results have already shifted over](https://webmasters.googleblog.com/2020/03/announcing-mobile-first-indexing-for.html_). It is now expected that Google [fully switches to a mobile-first index in March 2021](https://webmasters.googleblog.com/2020/07/prepare-for-mobile-first-indexing-with.html).
 
-A mobile friendly website can be implemented through different configurations: by using a responsive web design, with dynamic serving or via a separate mobile web version, although this last approach is not recommended anymore by Google who endorse responsive web design instead.
+Mobile friendliness should be fundamental for any website looking to provide a good search experience—and as a consequence, grow in search results.
 
-#### Viewport Meta Tag
+A mobile-friendly website can be implemented through different configurations: by using a responsive web design, with dynamic serving, or via a separate mobile web version. However, maintaining a separate mobile web version is not recommended anymore by Google, who endorse responsive web design instead.
 
-The browser's viewport is the visible area of a page content, that changes depending on the used device. The "viewport meta tag" allows you to specify to browsers the width and scaling of the viewport, so that it is correctly sized across different devices. Responsive websites use the viewport meta tag as well as CSS media queries to deliver a mobile friendly experience.
+#### Viewport meta tag
 
-When looking at the viewport tag inclusion, it was found that 42.98% of the analyzed mobile home pages and 43.2% desktop ones are featuring it with an `initial-scale=1,width=device-width` content attribute value; but that 10.84% of mobile home pages and 16.18% of desktop ones are not including the tag at all, suggesting that they are not yet mobile friendly.
+The browser's viewport is the visible area of a page content, which changes depending on the used device. The `<meta name="viewport">` tag (or viewport meta tag) allows you to specify to browsers the width and scaling of the viewport, so that it is correctly sized across different devices. Responsive websites use the viewport meta tag as well as CSS media queries to deliver a mobile friendly experience.
 
-<figure markdown>
-Viewport | Mobile | Desktop
--- | -- | --
-`initial-scale=1,width=device-width` | 42.98% | 43.20%
-*not-set*  | 10.84% | 16.18%
-`initial-scale=1,maximum-scale=1,width=device-width` | 5.88% | 5.72%
-`initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width` | 5.56% | 4.81%
-`initial-scale=1,maximum-scale=1,user-scalable=0,width=device-width` | 3.93% | 3.73%
+42.98% of mobile home pages and 43.2% desktop ones are have a viewport meta tag with the `content=initial-scale=1,width=device-width` attribute. However, 10.84% of mobile home pages and 16.18% of desktop ones are not including the tag at all, suggesting that they are not yet mobile friendly.
 
-<figcaption>{{ figure_link(caption="Viewport meta values.", sheets_gid="479500659", sql_file="../03_Markup/summary_pages_by_device_and_viewport.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Viewport</th>
+        <th>Mobile</th>
+        <th>Desktop</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>initial-scale=1,width=device-width</code></td>
+        <td class="numeric">42.98%</td>
+        <td class="numeric">43.20%</td>
+      </tr>
+      <tr>
+        <td><em>not-set</em></td>
+        <td class="numeric">10.84%</td>
+        <td class="numeric">16.18%</td>
+      </tr>
+      <tr>
+        <td><code>initial-scale=1,maximum-scale=1,width=device-width</code></td>
+        <td class="numeric">5.88%</td>
+        <td class="numeric">5.72%</td>
+      </tr>
+      <tr>
+        <td><code>initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width</code></td>
+        <td class="numeric">5.56%</td>
+        <td class="numeric">4.81%</td>
+      </tr>
+      <tr>
+        <td><code>initial-scale=1,maximum-scale=1,user-scalable=0,width=device-width</code></td>
+        <td class="numeric">3.93%</td>
+        <td class="numeric">3.73%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="Percent of pages having each viewport meta tag <code>content</code> attribute value.",
+      sheets_gid="479500659",
+      sql_file="../03_Markup/summary_pages_by_device_and_viewport.sql"
+    ) }}
+  </figcaption>
 </figure>
 
-#### CSS Media Queries
+#### CSS media queries
 
-Media queries are a CSS3 feature that play a fundamental role in responsive web design as they allow you to specify conditions to apply styling only when the browser and device match certain rules. This allows you to create different layouts for the same HTML depending on the viewport size.
+Media queries are a CSS3 feature that play a fundamental role in responsive web design, as they allow you to specify conditions to apply styling only when the browser and device match certain rules. This allows you to create different layouts for the same HTML depending on the viewport size.
 
-When analyzing their use it was found that 80.29% of desktop home pages and 82.92% of the mobile ones are using either a height, width or aspect-ratio CSS feature, meaning that a high percentage of pages have responsive features. The most popularly used features can be seen in the table below.
+We found that 80.29% of desktop home pages and 82.92% of the mobile ones are using either a `height`, `width`, or `aspect-ratio` CSS feature, meaning that a high percentage of pages have responsive features. The most popularly used features can be seen in the table below.
 
-<figure markdown>
-Feature | Mobile | Desktop
--- | -- | --
-`max-width` | 78.98% | 78.33%
-`min-width` | 75.04% | 73.75%
-`-webkit-min-device-pixel-ratio` | 44.63% | 38.78%
-`orientation` | 33.48% | 33.49%
-`max-device-width` | 26.23% | 28.15%
-
-<figcaption>{{ figure_link(caption="Media query usage.", sheets_gid="1141218471", sql_file="TODO..sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Mobile</th>
+        <th>Desktop</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>max-width</code></td>
+        <td>78.98%</td>
+        <td>78.33%</td>
+      </tr>
+      <tr>
+        <td><code>min-width</code></td>
+        <td>75.04%</td>
+        <td>73.75%</td>
+      </tr>
+      <tr>
+        <td><code>-webkit-min-device-pixel-ratio</code></td>
+        <td>44.63%</td>
+        <td>38.78%</td>
+      </tr>
+      <tr>
+        <td><code>orientation</code></td>
+        <td>33.48%</td>
+        <td>33.49%</td>
+      </tr>
+      <tr>
+        <td><code>max-device-width</code></td>
+        <td>26.23%</td>
+        <td>28.15%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="Percent of pages that include each media query feature.",
+      sheets_gid="1141218471",
+      sql_file="TODO..sql"
+    ) }}
+  </figcaption>
 </figure>
 
 #### Vary User-Agent in HTTP Header
