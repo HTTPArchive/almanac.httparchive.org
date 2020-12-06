@@ -421,7 +421,7 @@ The [importScripts() API](https://developer.mozilla.org/en-US/docs/Web/API/Worke
 
 Around **30%** of the Desktop and **25%** of Mobile environments uses importScripts, which indicates that these use cases are requiring external libraries, out of which workbox, sw_toolbox and firebase take the first three positions respectively.
 
-### Workbox Adoptions and package methods
+### Workbox usage
 
 Out of many libraries available, workbox was used the most with an adoption rate of **12.86%** and **15.29%** on mobile and desktop respectively, out of PWA sites.
 
