@@ -878,7 +878,7 @@ Google's [Lighthouse](https://developers.google.com/web/tools/lighthouse) tool e
 {{ figure_markup(
   image="16_lighthouse_caching_audit.png",
   link="https://almanac.httparchive.org/static/images/2020/caching/16_lighthouse_caching_audit.png",
-  caption="Lighthouse report highlighting potential cache policy improvements.".
+  caption="Lighthouse report highlighting potential cache policy improvements.",
   description="Extract of the Lighthouse report highlighting potential cache policy improvements. The first and third party URLs, their cache TTL, and size is shown."
   )
 }}
