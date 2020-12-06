@@ -35,10 +35,6 @@
   width: 45%;
 }
 
-.no-wrap {
-  white-space: nowrap;
-}
-
 .index {
   grid-area: index;
   -ms-grid-column: 1;
