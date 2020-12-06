@@ -527,6 +527,10 @@ figcaption {
   text-decoration: underline;
 }
 
+.figure-dropdown svg {
+  pointer-events: none;
+}
+
 .figure-dropdown .nav-dropdown-btn::after {
   display: none;
 }
