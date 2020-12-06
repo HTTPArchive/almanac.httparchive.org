@@ -38,7 +38,7 @@ In this chapter of Web Almanac we will be looking into each of the components th
 
 Service workers are at the very center of the progressive web apps and can be thought as a proxy servers between web applications running in browsers and the network. They help developers control the network requests rather than the network requests controlling the application.
 
-### Service worker registrations and installability
+### Service worker usage
 
 From the data we gathered it was derived that about **0.88%** for desktop, **0.87%** for mobile for the month of August 2020 it's 49,305 (out of 5,593,642) for desktop and 55,019 (out of 6,347,919) for mobile. It is important that we realize that it translates into **16.6%** of the entire [traffic](https://www.chromestatus.com/metrics/feature/timeline/popularity/990).
 
