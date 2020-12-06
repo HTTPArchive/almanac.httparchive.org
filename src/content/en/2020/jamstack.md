@@ -110,7 +110,7 @@ It's worth noting here the fact that Next.js websites include a mix of both Stat
   )
 }}
 
-## What’s the impact of Jamstack on the environment?
+## Environmental impact
 
 This year we have sought to better understand the impact of Jamstack sites on the environment. [The information and communications technology (ICT) industry accounts for 2% of global carbon emissions][6], and data centers specifically account for 0.3% of global carbon emissions. This puts the ICT industry’s carbon footprint equivalent to the aviation industry’s emissions from fuel.
 
