@@ -99,22 +99,54 @@ The most prevalent `User-agent` declaration statement was the wildcard, `User-ag
 
 The most frequently used directives focused on search engines and their paid marketing counterparts. SEO tools Ahref and Majestic were in the top five `Disallow` statements for both devices.
 
-<figure markdown>
-`User-agent` | % of mobile `robots.txt` | % of desktop `robots.txt`
--- | -- | --
-`*` | 74.40% | 73.16%
-adsbot-google | 5.63% | 5.68%
-mediapartners-google | 5.55% | 3.83%
-mj12bot | 5.49% | 5.30%
-ahrefsbot | 4.80% | 4.66%
-
-<figcaption>
-  {{ figure_link(
-    caption="<code>robots.txt User-agent</code> directives.",
-    sheets_gid="243594173",
-    sql_file="pages_robots_txt_by_device_and_useragent.sql"
-  ) }}
-</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+          <th></th>
+          <th colspan="2">% of <code>robots.txt</code></th>
+      </tr>
+      <tr>
+        <th><code>User-agent</code></th>
+        <th>Mobile</th>
+        <th>Desktop</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>*</code></td>
+        <td class="numeric">74.40%</td>
+        <td class="numeric">73.16%</td>
+      </tr>
+      <tr>
+        <td>adsbot-google</td>
+        <td class="numeric">5.63%</td>
+        <td class="numeric">5.68%</td>
+      </tr>
+      <tr>
+        <td>mediapartners-google</td>
+        <td class="numeric">5.55%</td>
+        <td class="numeric">3.83%</td>
+      </tr>
+      <tr>
+        <td>mj12bot</td>
+        <td class="numeric">5.49%</td>
+        <td class="numeric">5.30%</td>
+      </tr>
+      <tr>
+        <td>ahrefsbot</td>
+        <td class="numeric">4.80%</td>
+        <td class="numeric">4.66%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="<code>robots.txt User-agent</code> directives.",
+      sheets_gid="243594173",
+      sql_file="pages_robots_txt_by_device_and_useragent.sql"
+    ) }}
+  </figcaption>
 </figure>
 
 When analyzing the usage of the `Disallow` statement in `robots.txt` by using Lighthouse-powered data of over 6 million sites, it was found that 97.84% of them were completely crawlable, with only 1.05% using a `Disallow` statement.
@@ -133,7 +165,7 @@ Meta tags were the dominant method of granular execution with 27.70% of desktop 
 {# TODO(analysts): Should "X-Robots" be "X-Robots-Tag" here? #}
 {{ figure_markup(
   image="seo-robots-directive-use.png",
-  caption="Comparison of the usage of meta robots and <code>X-Robots-Tag</code> directives.",
+  caption="Usage of meta robots and <code>X-Robots-Tag</code> directives.",
   description="Bar chart showing robots usage. Meta robots is 27.70% for desktop and 27.96% for mobile, X-Robots-Tag barely registers on the chart with a mere 0.27% of pages on desktop and 0.40% on mobile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=99993402&format=interactive",
   sheets_gid="337739550",
@@ -148,126 +180,127 @@ Interestingly, rendering changed the meta robots tag in 0.16% of pages. While th
 
 #### Canonicalization
 
-Canonical tags -as described by [Google here](https://developers.google.com/search/docs/advanced/crawling/consolidate-duplicate-urls)- are used to specify to search engines which is the preferred canonical URL version to index and rank for a page -the one that is considered to be better representative of it- when there are many URLs featuring the same or very similar content. It is important to note that:
+[Canonical tags](https://developers.google.com/search/docs/advanced/crawling/consolidate-duplicate-urls), as described by Google, are used to specify to search engines which is the preferred canonical URL version to index and rank for a page—the one that is considered to be better representative of it—when there are many URLs featuring the same or very similar content. It is important to note that:
 
 - The canonical tag configuration is used along with other signals to select the canonical URL of a page; it is not the only one.
 - Although self-referencing canonical tags are sometimes used, these aren't a requirement.
 
-[Last year](../2019/seo#canonicalization), it was identified that 48.34% of mobile home pages were using a canonical tag. This year the number of mobile home pages featuring a canonical tag has grown to 53.61%.
+{# TODO(authors): The intro disclaims upfront that the dataset is limited to home pages. Consider generalizing to "mobile/desktop pages" throughout the rest of the chapter. #}
+[In last year's chapter](../2019/seo#canonicalization), it was identified that 48.34% of mobile home pages were using a canonical tag. This year the number of mobile home pages featuring a canonical tag has grown to 53.61%.
 
+{# TODO(analysts): It's not clear that B and C add up to A in this chart. It took me a while to realize that they weren't each different types of tags. If the total of 53.61% is significant, I'd recommend a "big number" figure to call attention to it, and only include B and C in this chart. #}
 {{ figure_markup(
   image="seo-presence-of-canonical-tag.png",
-  caption="Presence of Canonical Tag",
-  description="Bar chart showing presence of canonical tags. The majority of our analyzed web pages include a canonical tag, the main part being self-referential (47.88% for desktop and 45.31% for mobile). The percentage of canonicalized web pages is higher on mobile (8.45%) than on desktop (4.1%).",
+  caption="Usage of canonical tags.",
+  description="Bar chart showing presence of canonical tags. The majority of web pages include a canonical tag, the main part being self-referential (47.88% for desktop and 45.31% for mobile). The percentage of canonicalized web pages is higher on mobile (8.45%) than on desktop (4.1%).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1777344456&format=interactive",
   sheets_gid="337739550",
   sql_file="pages_wpt_bodies_by_device.sql"
- )
-}}
+) }}
 
 When analyzing this year's mobile home pages canonical tag configuration, it was detected that 45.31% of them were self-referential and 8.45% were pointing to different URLs as the canonical ones.
 
+{# TODO(authors): Consider omitting desktop-specific interpretations unless they're particularly interesting to note beyond the mobile stats. #}
 On the other hand, 51.85% of the desktop home pages were found to be featuring a canonical tag this year, with 47.88% being self-referential and 4.10% pointing to a different URL.
 
-Not only mobile home pages are featuring more canonical tags than desktop ones (53.61% vs. 51.85%) but there are more mobile homes pages canonicalizing to other URLs than their desktop counterparts (8.45% vs. 4.10%). This could be explained by the usage of an independent (or separate) mobile web version by some sites -that need to canonicalize to their desktop URLs alternates.
+Not only do mobile home pages include more canonical tags than desktop ones (53.61% vs. 51.85%), there are relatively more mobile homes pages canonicalizing to other URLs than their desktop counterparts (8.45% vs. 4.10%). This could be explained by the usage of an independent (or separate) mobile web version by some sites that need to canonicalize to their desktop URLs alternates.
 
-Canonical URLs can be specified through different methods, by using the canonical link via the HTTP headers or the HTML head of a page, or by submitting them in XML Sitemaps. When analyzing which is the most popular canonical link implementation method, it was found that only 1.03% of desktop homepages and 0.88% of mobile ones are relying on the HTTP headers for their implementation, meaning that canonical tags are prominently implemented via the HTML head of a page.
+Canonical URLs can be specified through different methods: by using the canonical link via the HTTP headers or the HTML `head` of a page, or by submitting them in XML sitemaps. When analyzing which is the most popular canonical link implementation method, it was found that only 1.03% of desktop home pages and 0.88% of mobile ones are relying on the HTTP headers for their implementation, meaning that canonical tags are prominently implemented via the HTML `head` of a page.
 
+{# TODO(analysts): Should "HTTP Head" be "HTTP Header" to distinguish it from HTML head? #}
 {{ figure_markup(
   image="seo-canonical-implementation-method.png",
-  caption="Canonical Implementation Method",
-  description="Bar chart showing the canonical tag implementation method. We observed that only 1.03% of desktop homepages and 0.88% of mobile ones are relying on the HTTP headers for their implementation, meaning that canonical tags are prominently implemented via the HTML head of a page.",
+  caption="Usage of HTTP header and HTML <code>head</code> canonicalization methods.",
+  description="Bar chart showing the canonical tag implementation method. We observed that only 1.03% of desktop home pages and 0.88% of mobile ones are relying on the HTTP headers for their implementation, meaning that canonical tags are prominently implemented via the HTML head of a page.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=542127514&format=interactive",
   sheets_gid="337739550",
   sql_file="pages_wpt_bodies_by_device.sql"
-  )
-}}
+) }}
 
-When analyzing the canonical tag implemented in the raw HTML vs. those relying on client side JavaScript rendering, it was identified that 0.68% of the mobile home pages and 0.54% of the desktop ones are detected to be featuring a canonical tag in the rendered but not the raw HTML. This means that there's only a very small number of pages that are relying on JavaScript to implement canonical tags.
+When analyzing the canonical tag implemented in the raw HTML versus those relying on client-side JavaScript rendering, we identified that 0.68% of the mobile home pages and 0.54% of the desktop ones include a canonical tag in the rendered but not the raw HTML. This means that there's only a very small number of pages that are relying on JavaScript to implement canonical tags.
 
-On the other hand, in 0.93% of the mobile home pages and 0.76% of the desktop ones it was seen that there are canonical tags implemented via both the raw and the rendered HTML and there's a conflict between the URL specified in the raw vs. the rendered HTML of the same pages, which can generate issues.
+{# TODO(authors, editors): Consider rephrasing into two sentences. Also explain what the conflict is and what causes it. #}
+On the other hand, in 0.93% of the mobile home pages and 0.76% of the desktop ones, we saw canonical tags implemented via both the raw and the rendered HTML, and there's a conflict between the URL specified in the raw versus the rendered HTML of the same pages, which can generate issues.
 
-A similar conflict can be found with the different implementation methods, with 0.15% of the mobile home pages and 0.17% of the desktop ones showing conflicts between the canonical tags implemented via their HTTP headers and HTML head.
+A similar conflict can be found with the different implementation methods, with 0.15% of the mobile home pages and 0.17% of the desktop ones showing conflicts between the canonical tags implemented via their HTTP headers and HTML `head`.
 
 ### Content
 
-The primary purpose that both search engines and Search Engine Optimization serve is to give visibility to content that users need. Search engines extract features from pages to determine what the content is about. In that way the two are symbiotic. The features extracted align with signals that indicate relevance and inform ranking.
+The primary purpose that both search engines and Search Engine Optimization serve is to give visibility to content that users need. Search engines extract features from pages to determine what the content is about. In that way, the two are symbiotic. The features extracted align with signals that indicate relevance and inform ranking.
 
-To understand what search engines are able to effectively extract, we have broken out the components of that content and examined the incidence rate of those features between the mobile and desktop contexts. We also reviewed the disparity between mobile and desktop content. The mobile vs desktop disparity is especially valuable because Google has moved to Mobile First Indexing (MFI) for all new sites and as of March of 2021 will move to a mobile-only index wherein content that does not appear within the mobile context will not be evaluated for ranking.
+To understand what search engines are able to effectively extract, we have broken out the components of that content and examined the incidence rate of those features between the mobile and desktop contexts. We also reviewed the disparity between mobile and desktop content. The mobile and desktop disparity is especially valuable because Google has moved to [_mobile-first indexing_](https://developers.google.com/search/blog/2020/03/announcing-mobile-first-indexing-for) (MFI) for all new sites and, as of March of 2021, will move to a _mobile-only index_ wherein content that does not appear within the mobile context will not be evaluated for ranking.
 
 
-#### Rendered vs Non-rendered Text Content
-The usage of Single Page Application (SPA) JavaScript technologies has exploded with the growth of the web. This design pattern introduces difficulties for search engine spiders because both the execution of JavaScript transformations at runtime and user interactions with the page after load can cause additional content to appear or be rendered.
+#### Rendered versus non-rendered text content
+{# TODO(editors): Update link to 2020 JS technologies section. #}
+The usage of Single Page Application (SPA) [JavaScript](../javascript) technologies has exploded with the growth of the web. This design pattern introduces difficulties for search engine spiders because both the execution of JavaScript transformations at runtime and user interactions with the page after load can cause additional content to appear or be rendered.
 
 Search engines encounter pages through its crawling activity, but may or may not choose to implement a second step of rendering a page. As a result, there may be disparities between the content that a user sees and the content that a search engine indexes and considers for rankings.
 
-We assessed word count in context of that disparity.
+We assessed word count as a heuristic of that disparity.
 
 {{ figure_markup(
   image="seo-visible-words-per-page-raw.png",
-  caption="Visible Words Per Page (raw)",
+  caption="Distribution of the number of raw words per page.",
   description="Bar chart showing the number of words per page (in raw response) per percentile (10, 25, 50, 75, and 90). The median mobile site displays 13.33% less text content than its desktop counterpart.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=831714745&format=interactive",
   sheets_gid="775602646",
   sql_file="pages_wpt_bodies_by_device_and_percentile.sql"
-  )
-}}
+) }}
 
+{# TODO(authors, analysts): These charts convey the absolute counts of words, but the written interpretations discuss the relative differences between raw/rendered and desktop/mobile. Is it worth having charts depict these relative differences directly? A reader might be thinking "where did these numbers come from". #}
 We found that the median desktop site features 13.46% more words when rendered than it does on an initial crawl of its raw HTML. We also found that the median mobile site displays 13.33% less text content than its desktop counterpart.
-
 
 {{ figure_markup(
   image="seo-visible-words-per-page-rendered.png",
-  caption="Visible Words Per Page (rendered)",
+  caption="Distribution of the number of rendered words per page.",
   description="Bar chart showing the number of visible words per page (in rendered response) per percentile (10, 25, 50, 75, and 90). The median mobile site displays 11.5% more words when rendered than its raw HTML counterpart.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=961460345&format=interactive",
   sheets_gid="775602646",
   sql_file="pages_wpt_bodies_by_device_and_percentile.sql"
-  )
-}}
+) }}
 
 The median mobile site also displays 11.5% more words when rendered than its raw HTML counterpart.
 
-Across our sample set, there are disparities across the combination of mobile/desktop and rendered/non-rendered. This suggests that although search engines are continually improving in this area, most sites across the web are missing out on opportunities to improve their Organic Search visibility through a stronger focus on ensuring their content is available and indexable. This is also an issue of concern because the lion's share of available SEO tools do not crawl in the above combination of contexts and automatically identify this as an issue.
+{# TODO(authors): Same question about "Organic Search" capitalization. #}
+Across our sample set, there are disparities across the combination of mobile/desktop and rendered/non-rendered. This suggests that although search engines are continually improving in this area, most sites across the web are missing out on opportunities to improve their Organic Search visibility through a stronger focus on ensuring their content is available and indexable. This is also a concern because the lion's share of available SEO tools do not crawl in the above combination of contexts and automatically identify this as an issue.
 
-This year, the median desktop home page was found to have 402 words and the mobile 348 words. While [last year](../2019/seo#word-count), the median desktop home page had 346 words, and the median mobile home page had a slightly lower word count at 306 words. This represents 16.2% and 13.7% growth respectively.
+This year, the median desktop home page was found to have 402 words and the mobile page had 348 words. While [last year](../2019/seo#word-count), the median desktop home page had 346 words, and the median mobile home page had a slightly lower word count at 306 words. This represents 16.2% and 13.7% growth respectively.
 
 #### Headings
 
-Heading elements (h1-h6) act as a mechanism to visually indicate structure in a page's content. Although these HTML elements don't carry the weight they used to in search rankings, they still act as a valuable way to structure pages and signal other elements in the SERPs like Featured Snippets or other extraction methods that align with [Google's new passage indexing](https://www.blog.google/products/search/search-on/).
+Heading elements (`H1`-`H6`) act as a mechanism to visually indicate structure in a page's content. Although these HTML elements don't carry the weight they used to in search rankings, they still act as a valuable way to structure pages and signal other elements in the search engine results pages (SERPs) like _featured snippets_ or other extraction methods that align with [Google's new passage indexing](https://www.blog.google/products/search/search-on/).
 
+{# TODO(analysts, authors): Nit: replace "This includes empty ones" with "Heading levels" and clarify including empty headings in the prose. #}
 {{ figure_markup(
   image="seo-presence-of-h-elements.png",
-  caption="Presence of H elements",
+  caption="Usage of heading levels 1 through 4, including empty headings.",
   description="Bar chart showing the percent of pages with a heading element (level 1,2,3 and 4). Over 60% of pages feature H1 elements in both the mobile and desktop contexts. These numbers hover around 60%+ through H2 and H3 and around 40% for H4.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=2103713054&format=interactive",
   sheets_gid="337739550",
   sql_file="pages_wpt_bodies_by_device.sql"
-  )
-}}
+) }}
 
-Over 60% of pages feature H1 elements in both the mobile and desktop contexts.
+Over 60% of pages feature `H1` elements in both the mobile and desktop contexts.
 
-These numbers hover around 60%+ through H2 and H3. The incidence rate of H4 elements is lower than 4% suggesting that the level of specificity is not required for most pages or the developers style other headings elements differently to support the visual structure of the content.
+These numbers hover around 60%+ through `H2` and `H3`. The incidence rate of `H4` elements is lower than 4%, suggesting that the level of specificity is not required for most pages or the developers style other headings elements differently to support the visual structure of the content.
 
-The prevalence of more H2 elements than H1s suggests that less pages are using multiple H1s.
+The prevalence of more `H2` elements than `H1`s suggests that fewer pages are using multiple `H1`s.
 
 {{ figure_markup(
   image="seo-presence-of-non-empty-h-elements.png",
-  caption="Presence of non-empty H elements",
+  caption="Usage of heading levels 1 through 4, excluding empty headings.",
   description="Bar chart showing the percent of pages with non empty heading elements (level 1,2,3 and 4). We observed that 7.55% of H1s, 1.4% of H2s, 1.5% of H3s, and 1.1% of H4 elements feature no text",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=833166653&format=interactive",
   sheets_gid="337739550",
   sql_file="pages_wpt_bodies_by_device.sql"
-  )
-}}
+) }}
 
-In reviewing the incidence rate of non-empty heading elements, we understand that 7.55% of H1s, 1.4% of H2s, 1.5% of H3s, and 1.1% of H4 elements feature no text. This suggests that those portions are used for styling the page or are the result of coding mistakes.
+In reviewing the adoption of non-empty heading elements, we found that 7.55% of `H1`, 1.4% of `H2`, 1.5% of `H3`, and 1.1% of `H4` elements feature no text. One possible explanation for these low results is that those portions are used for styling the page or are the result of coding mistakes.
 
-Learn more about the usage of Headings in the [Markup chapter](./markup#headings), including the misuse of h7 and h8 elements that have never been part of HTML.
+You can learn more about the usage of headings in the [Markup chapter](./markup#headings), including the misuse of non-standard `H7` and `H8` elements.
 
-#### Structured Data
-
+#### Structured data
 
 Over the course of the past decade, search engines, particularly Google, have continued to push towards becoming the presentation layer of the web. These advancements are partially driven by their improved ability to extract information from unstructured content (e.g., [passage indexing](https://blog.google/products/search/search-on/)) and the adoption of semantic markup in the form of structured data. Content creators and developers have been encouraged to implement structured data to give more visibility to their content within components of search results. 
 
@@ -299,9 +332,9 @@ Finally, we found that 4.46% of desktop pages and 4.62% of mobile pages feature 
 * `Organization` has grown on desktop 4.75% and 4.98% on  mobile 
 * `ImageObject` has grown 6.39% on desktop and 6.13% on mobile 
 
-It should be noted that `WebSite`, `SearchAction` and `Organization` are all typically  associated with homepages, so this highlights the bias of the dataset and does not reflect the bulk of structured data implemented on the web.
+It should be noted that `WebSite`, `SearchAction` and `Organization` are all typically  associated with home pages, so this highlights the bias of the dataset and does not reflect the bulk of structured data implemented on the web.
 
-In contrast, despite the fact that reviews are not supposed to be associated with homepages the data indicates that `AggregateRating` is up 23.9% on mobile and 23.7% on desktop. 
+In contrast, despite the fact that reviews are not supposed to be associated with home pages the data indicates that `AggregateRating` is up 23.9% on mobile and 23.7% on desktop. 
 
 It's also interesting to see the growth of the [`VideoObject` to annotate videos](https://developers.google.com/search/docs/data-types/video). Although [YouTube videos dominate video search results in Google](https://moz.com/blog/youtube-dominates-google-video-results-in-2020), the usage of `VideoObject` grew 30.11% on desktop and 27.7% on mobile
 
@@ -330,14 +363,14 @@ We examined these features to see how pages are quantitatively aligning with bes
 
 The page title is shown as the anchor text in search engine results and is generally considered one of the most valuable on-page elements that impacts a page's ability to rank.
 
-When analyzing the usage of the title tag, it was found that 98.75% of desktop homepages are featuring one, while 98.7% of mobile homepages are. This represents a slight improvement vs. [last year](../2019/seo#page-titles) when it was found that 97.1% of mobile pages were featuring a title tag.
+When analyzing the usage of the title tag, it was found that 98.75% of desktop home pages are featuring one, while 98.7% of mobile home pages are. This represents a slight improvement vs. [last year](../2019/seo#page-titles) when it was found that 97.1% of mobile pages were featuring a title tag.
 
-The median homepage features a page title that is six words long. There is no difference in the word count between the mobile and desktop contexts within our dataset. This suggests that the page title element is an element that is not modified between different page template types.
+The median home page features a page title that is six words long. There is no difference in the word count between the mobile and desktop contexts within our dataset. This suggests that the page title element is an element that is not modified between different page template types.
 
 {{ figure_markup(
   image="seo-title-word-count.png",
   caption="Title word count",
-  description="Bar chart showing the number of words in the title tag per percentile (10, 25, 50, 75, and 90). The median homepage features a page title that is six words long. There is no difference in the word count between the mobile and desktop contexts within our dataset",
+  description="Bar chart showing the number of words in the title tag per percentile (10, 25, 50, 75, and 90). The median home page features a page title that is six words long. There is no difference in the word count between the mobile and desktop contexts within our dataset",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=2028212539&format=interactive",
   sheets_gid="775602646",
   sql_file="pages_wpt_bodies_by_device_and_percentile.sql"
@@ -360,7 +393,7 @@ The median page title character count is 38 characters on both mobile and deskto
 
 The meta description acts as the advertising tagline for a webpage. Although [a recent study suggests that this tag is ignored and rewritten by Google 70% of the time](https://www.searchenginejournal.com/google-rewrites-meta-descriptions-over-70-of-the-time/382140/), it is an element that is prepared with the goal of enticing a user to click through.
 
-When analyzing the usage of meta description, it was found that 68.62% of desktop homepages and 68.22% of mobile homepages feature a meta description. Although this may be surprisingly low, it is an improvement from [last year](../2019/seo#meta-descriptions) when it was found that only 64.02% of mobile homepages had a meta description.
+When analyzing the usage of meta description, it was found that 68.62% of desktop home pages and 68.22% of mobile home pages feature a meta description. Although this may be surprisingly low, it is an improvement from [last year](../2019/seo#meta-descriptions) when it was found that only 64.02% of mobile home pages had a meta description.
 
 
 {{ figure_markup(
@@ -451,12 +484,12 @@ Modern search engines use hyperlinks between pages for the discovery of new cont
 
 #### Outgoing links
 
-The median desktop homepage features 76 outgoing links while the median mobile homepage features 67. Historically, the direction from Google suggested that links be limited to 100 per page. While that recommendation is outdated on the modern web, the median page in our dataset adheres to it.
+The median desktop home page features 76 outgoing links while the median mobile home page features 67. Historically, the direction from Google suggested that links be limited to 100 per page. While that recommendation is outdated on the modern web, the median page in our dataset adheres to it.
 
 {{ figure_markup(
   image="seo-outgoing-links.png",
   caption="Outgoing links",
-  description="Bar chart showing the number of outgoing links per percentile (10, 25, 50, 75, and 90). The median desktop homepage features 76 outgoing links while the median mobile homepage features 67.",
+  description="Bar chart showing the number of outgoing links per percentile (10, 25, 50, 75, and 90). The median desktop home page features 76 outgoing links while the median mobile home page features 67.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=284216213&format=interactive",
   sheets_gid="775602646",
   sql_file="pages_wpt_bodies_by_device_and_percentile.sql"
@@ -475,12 +508,12 @@ The median desktop page features 61 outgoing internal links while the median mob
   )
 }}
 
-The median homepage is linking to external sites 7 times on desktop and 6 times on mobile.
+The median home page is linking to external sites 7 times on desktop and 6 times on mobile.
 
 {{ figure_markup(
   image="seo-outgoing-links-external.png",
   caption="Outgoing Links (External)",
-  description="Bar chart showing the number of external outgoing links per percentile (10, 25, 50, 75, and 90). The median homepage is linking to external sites 7 times on desktop and 6 times on mobile.",
+  description="Bar chart showing the number of external outgoing links per percentile (10, 25, 50, 75, and 90). The median home page is linking to external sites 7 times on desktop and 6 times on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=391564643&format=interactive",
   sheets_gid="775602646",
   sql_file="pages_wpt_bodies_by_device_and_percentile.sql"
@@ -506,13 +539,13 @@ There is a disparity in the links between mobile and desktop that will negativel
 
 In September of 2019, [Google introduced attributes](https://webmasters.googleblog.com/2019/09/evolving-nofollow-new-ways-to-identify.html) that allow publishers to classify links as being sponsored or user generated content. These attributes are in addition to `nofollow` which was previously [introduced in 2005](https://googleblog.blogspot.com/2005/01/preventing-comment-spam.html). The new attributes, `rel-ugc` and `rel-sponsored`, are meant to clarify or qualify the reason as to why these links are appearing on a given web page.
 
-Our review of pages indicates that 28.58% of homepages feature `nofollow` attributes on their desktop versions and 30.74% on mobile. However, rel-ugc and rel-sponsored adoption is quite low with less than 0.3% pages featuring either. Since these attributes don't add any more value to a publisher than rel-nofollow, it is reasonable to expect that adoption will continue to be slow.
+Our review of pages indicates that 28.58% of home pages feature `nofollow` attributes on their desktop versions and 30.74% on mobile. However, rel-ugc and rel-sponsored adoption is quite low with less than 0.3% pages featuring either. Since these attributes don't add any more value to a publisher than rel-nofollow, it is reasonable to expect that adoption will continue to be slow.
 
 {{ figure_markup(
   image="seo-nofollow-ugc-sponsored-attributes.png",
   alt="Usage of nofollow, ugc, sponsored attributes",
   caption="Usage of `nofollow`, `ugc`, `sponsored` Attributes",
-  description="Bar chart showing the usage (in percent) of `rel` attributes on desktop and mobile. Our review indicates that 28.58% of homepages feature `nofollow` attributes on their desktop versions and 30.74% on mobile. However, `ugc` and `sponsored` adoption is quite low with less than 0.3% pages featuring either. ",
+  description="Bar chart showing the usage (in percent) of `rel` attributes on desktop and mobile. Our review indicates that 28.58% of home pages feature `nofollow` attributes on their desktop versions and 30.74% on mobile. However, `ugc` and `sponsored` adoption is quite low with less than 0.3% pages featuring either. ",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1177251312&format=interactive",
   sheets_gid="1271677392",
   sql_file="pages_robots_txt_by_device_and_status.sql"
@@ -570,7 +603,7 @@ Viewport | Mobile | Desktop
 
 Media queries are a CSS3 feature that play a fundamental role in responsive web design as they allow you to specify conditions to apply styling only when the browser and device match certain rules. This allows you to create different layouts for the same HTML depending on the viewport size.
 
-When analyzing their use it was found that 80.29% of desktop homepages and 82.92% of the mobile ones are using either a height, width or aspect-ratio CSS feature, meaning that a high percentage of pages have responsive features. The most popularly used features can be seen in the table below.
+When analyzing their use it was found that 80.29% of desktop home pages and 82.92% of the mobile ones are using either a height, width or aspect-ratio CSS feature, meaning that a high percentage of pages have responsive features. The most popularly used features can be seen in the table below.
 
 <figure markdown>
 Feature | Mobile | Desktop
@@ -861,10 +894,10 @@ It is important to highlight how the link discoverability for major JS framework
 Additionally, it was also identified that there has been a slight improvement from last year's findings across many of the analyzed areas:
 
 - **Robots.txt**: Last year 72.16% of mobile sites had a valid `robots.txt` vs. 74.91%  this year.
-- **Canonical tag**: Last year it was identified that 48.34% of mobile homepages were using a canonical tag vs. 53.61% this year.
-- **Title element**: This year it was found that 98.75% of the desktop homepages are featuring one, while 98.7% of mobile home pages are also including it. Last year it was found that 97.1% of mobile pages were featuring a title tag.
-- **Meta Description**: This year, 68.62% of desktop homepages and 68.22% of mobile ones were found to be featuring a meta description, an improvement from last year when it was found that 64.02% of mobile home pages had one.
-- **Structured Data**: Despite the fact that reviews are not supposed to be associated with homepages the data indicates that `AggregateRating` is up 23.9% on mobile and 23.7% on desktop.
+- **Canonical tag**: Last year it was identified that 48.34% of mobile home pages were using a canonical tag vs. 53.61% this year.
+- **Title element**: This year it was found that 98.75% of the desktop home pages are featuring one, while 98.7% of mobile home pages are also including it. Last year it was found that 97.1% of mobile pages were featuring a title tag.
+- **Meta Description**: This year, 68.62% of desktop home pages and 68.22% of mobile ones were found to be featuring a meta description, an improvement from last year when it was found that 64.02% of mobile home pages had one.
+- **Structured Data**: Despite the fact that reviews are not supposed to be associated with home pages the data indicates that `AggregateRating` is up 23.9% on mobile and 23.7% on desktop.
 - **Images' `alt` attribute**: This year, 53.86% of desktop and 51.22% of mobile home pages featured image `alt` attributes. Although this might seem low, it is an improvement from last year when it was found that 46.71% of mobile pages used `alt` attributes on all of their images.
 - **HTTPS usage**: 77.44% of desktop pages and 73.22% of mobile pages have adopted HTTPS. This is up 10.38% from last year.
 
