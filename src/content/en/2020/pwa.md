@@ -30,7 +30,7 @@ Simply put, a web application which give native-like application experience can 
 
 The crux of a progressive web app is the _service worker_, which can be thought of as a proxy sitting between the browser and user. A service worker gives the developer total control over the network, rather than the network controlling the application.
 
-It all started in December 2014 when Chrome 40 first implemented the meat of what is now known as Progressive Web Apps which was a collaborative effort for the web standards body and the terms was coined by [Frances Berriman and Alex Russell](https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/) in 2015.
+As [last year's chapter](../2019/pwa) stated, it started in December 2014 when Chrome 40 first implemented the meat of what is now known as Progressive Web Apps (PWA). This was a collaborative effort for the web standards body and the term PWA was coined by [Frances Berriman and Alex Russell](https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/) in 2015.
 
 In this chapter of Web Almanac we will be looking into each of the components that make PWA what it is, from a data-driven perspective.
 
