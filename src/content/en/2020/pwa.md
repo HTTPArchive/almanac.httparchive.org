@@ -26,7 +26,7 @@ unedited: true
 
 In 1990 we had the first ever browser called the “WorldWideWeb” and ever since the web and the browser have been evolving and for the web to progress itself into a native behaviour is a big win special in this era of mobile domination, URLs have provided an ubiquitous way to distribute information and nothing better than the browser to handle them and hence a technology which provides such capabilities to the browser becomes a game changer and Progressive Web Apps provide such advantages for the web to win yet again.
 
-Simply put, a web application which progresses into a native-like application can be considered as a PWA, built using common web technologies including HTML, CSS and JavaScript and can operate seamlessly across devices and environments on a standards-compliant browser.
+Simply put, a web application which give native-like application experience can be considered as a PWA,. It is built using common web technologies including HTML, CSS and JavaScript and can operate seamlessly across devices and environments on a standards-compliant browser.
 
 The crux of a progressive web app is the _service worker_, which can be thought of as a proxy sitting between the browser and user and gives the developer total control over the network, rather than the network controlling the application.
 
