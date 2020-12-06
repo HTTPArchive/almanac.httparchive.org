@@ -678,7 +678,7 @@ The remaining 9.2% of responses are not permitted to be stored in browser caches
 {{ figure_markup(
   image="12_ttl.png",
   caption="Distribution of TTL in cacheable responses.",
-  description="A bar chart showing distribution of TTL in cacheable responses. 4.2% of desktop responses have a TTL zero, 59.4% have a TTL greater than zero, and 28.2% use a heuristic TTL. 4.2% of mobile responses have a TTL zero, 58.8% have a TTL greater than zero, and 28.4% use a heuristic TTL.,
+  description="A bar chart showing distribution of TTL in cacheable responses. 4.2% of desktop responses have a TTL zero, 59.4% have a TTL greater than zero, and 28.2% use a heuristic TTL. 4.2% of mobile responses have a TTL zero, 58.8% have a TTL greater than zero, and 28.4% use a heuristic TTL.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1365998611&format=interactive",
   sheets_gid="203111112",
   sql_file="ttl.sql"
