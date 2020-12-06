@@ -54,7 +54,7 @@ From the data we gathered it was derived that about **0.88%** desktop sites and 
 
 ## Lighthouse insights
 
-[Lighthouse](https://github.com/GoogleChrome/lighthouse) provides automated auditing, performance metrics, and best practices for the web and has been instrumental in shaping web’s performance. The score we gathered over 6811475 pages, has given us great insights on a few important touch points for the month of September 2020.
+[Lighthouse](https://github.com/GoogleChrome/lighthouse) provides automated auditing, performance metrics, and best practices for the web and has been instrumental in shaping web’s performance. We looked at the PWA category audits gathered for over 6,811,475 pages and this has given us great insights on a few important touch points.
 
 <figure>
   <table>
