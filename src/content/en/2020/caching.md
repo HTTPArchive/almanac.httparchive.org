@@ -812,7 +812,8 @@ The graphs below illustrate the relative age of resources by content type. Some 
 * Some of the longest aged first party content on the web, with age eight weeks or more, are the traditionally cacheable objects like images (78.3%), scripts (68.6%), CSS (74.1%), web fonts (79.3%), audio (77.9%) and video (78.6%).
 * There is a significant gap in some first vs. third party resources having an age of more than a week. 93.5% of first party CSS are older than one week compared to 51.5% of 3rd party CSS, which are older than one week.
 
-**Placeholder for Figure 16: Resource age distribution by content type (first party). TODO**
+**Placeholder for Figure 16: Resource age distribution by content type (first party).**
+
 {{ figure_markup(
   image="14_resource_age_party_and_type_wise_groups_1st_party.png",
   caption="Resource age distribution by content type (1st party).",
@@ -823,7 +824,8 @@ The graphs below illustrate the relative age of resources by content type. Some 
   )
 }}
 
-**Placeholder for Figure 17: Resource age distribution by content type (third party). TODO**
+**Placeholder for Figure 17: Resource age distribution by content type (third party).**
+
 {{ figure_markup(
   image="15_resource_age_party_and_type_wise_groups_3rd_party.png",
   caption="Resource age distribution by content type (1st party).",
