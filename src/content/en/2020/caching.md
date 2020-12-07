@@ -601,7 +601,7 @@ In the table below, you can see that out of a total of 6,225,774 websites, only 
      <td>6,290,147</td>
     </tr>
   </table>
-  <figcaption>{{ figure_link(caption="Number of websites using service workers.") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Number of websites using service workers.", sheets_gid="2106765718", sql_file="appcache_and_serviceworkers.sql") }}</figcaption>
 </figure>
 
 If we break this out by HTTP vs HTTPS, then this gets even more interesting. Even though HTTPS is a requirement for using service workers, the following table shows that 1,469 of the sites using them are served over HTTP.
