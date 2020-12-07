@@ -217,6 +217,7 @@ self.addEventListener('periodicsync', (event) => {
 
 {{ figure_markup(
   image="periodic_background_sync_api.png",
+  alt="使用周期性后台同步 API的页面数量。",
   caption="使用周期性后台同步 API的页面数量。",
   description="基于HTTPArchive监控的页面数量的周期性后台同步 API使用情况图。它比较了移动和桌面设备上的使用情况。自2020年4月以来，该API被一到两个桌面和移动页面使用。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1444904371&format=interactive",
