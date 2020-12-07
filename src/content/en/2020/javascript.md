@@ -284,7 +284,7 @@ HTTP Archive uses Wappalyzer to detect technologies in use on a given page. Wapp
 
 The popular libraries in use are largely unchanged from last year, with jQuery continuing to dominate usage and only one of the top 21 libraries falling out (lazy.js, replaced by DataTables). In fact, even the percentages of the top libraries has barely changed from last year. 
 
-{{ table? showing rank, library, percentage and last years rank}}
+{# table? showing rank, library, percentage and last years rank #}
 
 Last year, Houssein posited a few reasons for why jQuery's dominance continues:
 
