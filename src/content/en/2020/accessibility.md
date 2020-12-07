@@ -46,3 +46,18 @@ We've split up our most interesting insights into five categories:
 3. Ease of page navigation, 
 4. Assistive technologies on the web, 
 5. Accessibility of form controls.
+
+## Ease of reading
+
+Making content as simple and clear to read as possible is an important aspect of web accessibility. Being unable to read the content of a page prevents a user from being able to complete tasks on websites. There are many aspects of a web page that make it easier or harder to read, including:
+
+### Color Contrast
+
+The higher the page contrast, the easier it is for people to view text-based content. People who may have difficulties viewing low context content include those with color vision deficiency, people with mild to moderate vision loss, and those with contextual difficulties viewing the content, such as glare on screens in bright light. Unfortunately, only 21.06% of sites were found to have sufficient color contrast. Which is a decrease from last year's already abysmal 22%.
+
+### Zooming and Scaling of Pages 
+
+The ability to set scale and zoom of desktop pages helps those with vision loss to more easily navigate sites, as well as allowing users of less precise navigation tools easier control of sites. 
+
+These were disabled on 24.39% of desktop sites checked, and 30.66% of mobile sites. Some operating systems no longer comply with disabled zoom and scale set in HTML, though for systems that do respect it, this can render the page effectively unusable for some. For more information about why to avoid disabling browser zoom see Adrian Roselli’s article, [Don’t Disable Zoom](https://adrianroselli.com/2015/10/dont-disable-zoom.html).
+
