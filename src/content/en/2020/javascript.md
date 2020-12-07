@@ -26,7 +26,12 @@ JavaScript has come a long way from its humble origins as the last of the three 
 
 Developers love us some JavaScript. The [`script` element is the 6th most popular HTML element in use](https://almanac.httparchive.org/en/2020/markup) (ahead of elements like `p`'s and `i`'s, among countless others). We spend around 14x as many bytes on it as we do on HTML, the building block of the web, and 6x as many bytes as CSS.
 
-{{ need to link to page weight results here, maybe put the chart here too?}}
+{{ figure_markup(
+  image="page-weight-per-content-type.png",
+  caption="Median page weight per content type.",
+  description="Bar chart showing the median page weight for desktop and mobile pages across images, JS, CSS, and HTML. The median amounts of bytes for each content type on mobile pages are: 916 KB of images, 411 KB of JS, 62 KB of CSS, and 25 KB of HTML. Desktop pages tend to have significantly heavier images (about 1000 KB) and slightly higher amounts of JS (about 450 KB).",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQlN4Clqeb8aPc63h0J58WfBxoJluSFT6kXn45JGPghw1LGU28hzabMYAATXNY5st9TtjKrr2HnbfGd/pubchart?oid=1147150650&format=interactive"
+) }}
 
 But nothing is free, and that's especially true for JavaScript—all that code has a cost. Let's dig in and take a closer look at how much script we use, how we use it, and what the fallout is.
 
@@ -35,32 +40,32 @@ We mentioned that the script tag is the 6th most used HTML element. Let's dig in
 
 The median site (the 50th percentile) sends 444kb of JavaScript when loaded on a desktop device, and slightly less (411kb) to a mobile device.
 
-{{ chart showing percentiles for JS use on mobile and desktop}}
+{# TODO: chart showing percentiles for JS use on mobile and desktop #}
 
 It's a bit disappointing that there isn't a bigger gap here. While it's dangerous to make too many assumptions about network or processing power based on whether the device in use is a phone or a desktop (or somewhere in between), it's worth noting that HTTP Archive mobile tests are done by emulating a Moto G4 and a 3G network. In other words, if there was any work being done adapt to less than ideal circumstances by passing down less code, these tests should be showing it.
 
 The trend also seems to be in favor of using more JavaScript, not less. Comparing to last year's results, at the median we see a 13.6% increase in JavaScript as tested on a desktop device, and a 14.5% increase in the amount of JavaScript sent to a mobile device.
 
-{{ chart showing historical trend }}
+{# TODO: chart showing historical trend #}
 
 At least some of this weight seems to be unnecessary. If we look at a breakdown of how much of that JavaScript is unused on any given page load, we see that the median page is shipping 152kb of unused JavaScript. That number jumps to 334kb at the 75th percentile and 567kb at the 90th percentile.
 
-{{ distribution of unused JS bytes}}
+{# TODO: distribution of unused JS bytes #}
 
 As raw numbers, those may or may not jump out at you depending on how much of a performance nut you are, but when you look at it as a percentage of the total JavaScript used on each page, it becomes a bit easier to see just how much waste we're sending.
 
-{{ Maybe a bar graph showing percentage saved at each percentile? Don't think we need another query here since we have the data }}
+{# TODO: Maybe a bar graph showing percentage saved at each percentile? Don't think we need another query here since we have the data #}
 
 That 152kb equates to ~37% of the total script size that we send down to mobile devices. There's definitely some room for improvement here.
 
 ### Request Count
 Another way of looking at how much JavaScript we use is to explore how many JavaScript requests are made on each page. While reducing the number of requests was paramount to maintaing good performance with HTTP 1.1, with HTTP/2 the opposite is the case: breaking JavaScript down into smaller, individual files is ideal for performance. 
 
-{{ Distribution of JavaScript requests by client }}
+{# TODO: Distribution of JavaScript requests by client #}
 
 At the median, pages make 20 JavaScript requests. That's only a minor increase over last year where the median page made 19.
 
-{{ Distribution of JavaScript requests by client, compared to 2019}}
+{# TODO: Distribution of JavaScript requests by client, compared to 2019 #}
 
 ## Where does it come from?
 One trend that likely contributes to the increase in JavaScript used on our pages is the seemingly ever-increasing amount of third-party scripts that get added to pages to help with everything from client-side A/B testing and analytics, to serving ads and handling personalization.
@@ -69,11 +74,11 @@ Let's drill into that a bit to see just how much third-party script we're servin
 
 Righ up until the median, sites serve roughly the same number of first-party scripts as they do third-party scripts—at the median, 9 scripts per page are first-party compared to 10 per page from third-parties. From there, the gap widens a bit—the more scripts a site serves in the total, the more likely it is that the majority of those scripts are from third-party sources.
 
-{{ distribution of JS requests by host for mobile and desktop}}
+{# TODO: distribution of JS requests by host for mobile and desktop #}
 
 While the amount of JavaScript requests are similar at the median, the actual size of those scripts is weighted (pun intended) a bit more heavily toward third-party sources. The median site sends 267kb of JavaScript from third-parties to desktop devices compared to 147kb from first-parties. The situation is very similar on mobile, where the median site ships 255kb of third-party scripts compared to 134kb of first-party scripts.
 
-{{ JS bytes by host distribution chart, based on 3P DB }}
+{# TODO: JS bytes by host distribution chart, based on 3P DB #}
 
 ## How do we load our JavaScript?
 The way we load JavaScript has a significant impact on the overall experience.
@@ -84,11 +89,11 @@ We can start to offset some of the cost of loading JavaScript by loading scripts
 
 On mobile, external scripts comprise 59.0% of all script elements found. _As an aside, when we talk about how much JavaScript is loaded on a page earlier, that total doesn't account for the size of these inline scripts—because they're part of the HTML document, they're counted against the markup size. This means we load even more script that the numbers show._
 
-{{ pie chart of extneral vs internal }}
+{# TODO: pie chart of extneral vs internal #}
 
 Of those external scripts, only 12.2% of them are loaded with the `async` attribute and 6.0% of them are loaded with the `defer` attribute.
 
-{{ pie chart showing async vs defer vs neither }}
+{# TODO: pie chart showing async vs defer vs neither #}
 
 Considering that `defer` provides us with the best loading performance (by ensuring downloading the script happens in parallel to other work, and execution waits until after the page can be displayed), we would hope to see that percentage a bit higher. In fact, as it is that 6.0% is a bit misleading.
 
@@ -101,7 +106,7 @@ As with any text-based resource on the web, we can save significant file savings
 
 One of the audits in Lighthouse checks for unminified JavaScript, and provides a score (0 being the worst, 100 being the best) based on the findings. 
 
-{{ distribution of unminified JS scores}}
+{# TODO: distribution of unminified JS scores #}
 
 The chart above shows that most pages tested (77%) get a score of 90 or above, meaning that few unminified scripts are found. 
 
@@ -109,18 +114,18 @@ Overall, only 4.5% of the JavaScript requests recorded are unminified.
 
 Interestingly, while we've picked on 3rd party requests a bit, this is one area where third-party scripts are doing better than first-party scripts. 82% of the average mobile page's unminified JavaScript bytes come from first-party code.
 
-{{[ pie chart of 3rd vs 1st unminified bytes ]}}
+{# TODO: Pie chart of 3rd vs 1st unminified bytes #}
 
 ### Compression
 Minification is a great way to help reduce file size, but compression is even more effective and, therefore, more important—it provides the bulk of network savings more often than not.
 
-{{ compression mtehods by request pie chart }}
+{# TODO: compression mtehods by request pie chart #}
 
 85% of all JavaScript requests have some level of network compression applied. GZip makes up the majority of that, with 65% of scripts having GZip compression applied compared to 20% for Brotli. While the percentage of Brotli (which is more effective than GZip) is low compared to its browser support, it's trending in the right direction, increasing by 5 percentage points in the last year.
 
 Once again, this appears to be an area where third-party scripts are actually doing better than first-party scripts. If we break the compression methods out by first and third-party, we see that 24% of third-party scripts have Brotli applied compared to only 15% of third-party scripts.
 
-{{ scritps by party by compression type }}
+{# TODO: scritps by party by compression type #}
 
 Third-party scripts are also less likely to be served without any compression at all: 12% of third-party scripts have neither GZip nor Brotli applied, compared to 19% of first-party scripts.
 
@@ -128,7 +133,8 @@ It's worth taking a closer look those scripts that _don't_ have compression appl
 
 Thankfully, that's exactly what we see, particularly in third-party scripts where 90% of uncompressed scripts are less than 5kb in size. On the other hand, 49% of uncompressed first-party scripts are less than 5kb and 37% of uncompressed first-party scripts are over 10kb. So while we do see a lot of small uncompressed first-party scripts, there are still quite a few that would benefit from some compression.
 
-## What do we use? {{WIP}}
+{# TODO: WIP #}
+## What do we use?
 
 ## What's the Impact?
 We have a pretty good picture now of how much JavaScript we use, where it comes from and what we use it for. But while that's interesting enough on its own, the real kicker is the "so what?" What impact does all this script actually have on the experience of our pages?
@@ -141,12 +147,12 @@ The biggest problem comes when all of that code gets served to a device low to m
 
 The median desktop site spends 891ms on the main thread of a browser working with all that JavaScript. The median mobile site, however, spends 1,897ms—over two timese the time spent on the desktop. It's even worse for the long tail of sites. At the 90th percentile, mobile sites spend a staggering 8,921ms of main thread time dealing with JavaScript, compared to 3,838ms for desktop sites.
 
-{{ percentiles of javascript main thread time }}
+{# TODO: percentiles of javascript main thread time #}
 
 ### Correlating JavaScript Use to Lighthouse Scoring
 One way of looking at how this translates into impacting the user experience is to try to correlate some of the JavaScript metrics we've identified earlier with Lighthouse scores for different metrics and categories.
 
-{{ correlations of JS on UX }}
+{# TODO: correlations of JS on UX #}
 
 The above chart uses the Pearson coefficient of correlation. There's a long, kinda complex definition of what that means precisely, but the gist is that we're looking for the strength of the correlation between two different numbers. If we find a coefficient of 1, we'd have a direct correlation. A correlation of 0 would show no connection between two numbers. Anything below zero shows a negative correlation—in other words, as one number goes up the other one decreases.
 
@@ -163,7 +169,7 @@ The connection between Total Blocking Time and JavaScript bytes is even more sig
 ### Security Vulnerabilities
 One other helpful audit that Lighthouse runs is to check for known security vulnerabilities in third-party libraries. It does this by detecting which libraries and frameworks are used on a given page, and what version is used of each. Then it checks Snyk's open-source vulnerability database to see what vulnerabilities have been discovered in the identified tools.
 
-{{ pie chart showing percentage with at least one known vuln }}
+{# TODO: pie chart showing percentage with at least one known vuln #}
 
 According to the audit, 83.5% of mobile pages use a JavaScript library or framework with at least one known security vulnerability.
 
@@ -171,15 +177,16 @@ This is what we call the jQuery effect. Remember how we saw that jQuery is used 
 
 Of the roughly 5 million or so mobile pages that are tested against, 81% of them contain a vulnerable version of jQuery—a sizeable lead over the second most commonly found vulnerable library—jQuery UI at 15.6%.
 
-{{ Top X most commonly found }}
+{# TODO: Top X most commonly found #}
 
 In other words, get folks to migrate away from those outdated, vulnerable versions of jQuery and we would see the number of sites with known vulnerabilities plummet (at least, until we start finding some in the newer frameworks).
 
 The bulk of the vulnerabilities found fall into the "medium" severity category. 
 
-{{ percentage of pages by vuln severity }}
+{# TODO: percentage of pages by vuln severity #}
 
-## Conclusion {{WIP}}
+{# WIP #}
+## Conclusion
 JavaScript is steadily rising in popularity, and there's a lot that's positive about that. It's incredible to consider what we're able to accomplish on today's web thanks to JavaScript that, even a few years ago, would have been unimagineable.
 
 But it's clear we've also got to tread carefully. The amount of JavaScript consistently rises each year (if the stock market were that predictable, we'd all be incredibly wealthy), and that comes with trade-offs. More JavaScript is connected to an increase in processing time which negatively impacts key metrics like Total Blocking Time. And, if we let those libraries languish without keeping them updated, they carry the risk of exposing users through known security vulnerabilities.
