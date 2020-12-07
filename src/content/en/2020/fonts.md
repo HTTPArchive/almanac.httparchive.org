@@ -76,6 +76,13 @@ It likely comes as no surprise that Google Fonts remains by far the most popular
 
 Another surprise in the data is the rise in fonts being served by Shopify. Growing from roughly 1.1% in 2019 to about 4% in 2020, there has clearly been a significant uptick in usage of web fonts by sites hosted on that platform. It’s unclear if that is due to that service offering more fonts that they host on their CDN, if it’s growth in use of their platform, or both. However, the increase in usage of both Shopify and Bootstrap represent the largest amount of growth other than Google Fonts, making it a very noticeable data point.
 
+#### Not all services have the same service
+It was interesting to note the differences in speed from the various free/open source and commercial services. When looking at FCP and LCP times, Google Fonts is roughly in the middle, but generally a bit slower than the median value. The fastest services in the dataset are Shopify and Wix (serving assets from parastorage.com), and it might be presumed they focus on a small number of highly optimized files. Google on the other hand is also serving web fonts globally of widely varying sizes (due to language), resulting in slightly slower median times.
+
+When viewing commercial services such as Adobe (use.typekit.net) or Monotype (fast.fonts.com) it’s interesting to note that on desktop they tend to be as fast or slightly faster than Google Fonts, but are noticeably slower on mobile. Conventional wisdom has generally held that the tracking scripts used by those services substantially slow them down, but that is apparently less an issue today than it has been in years past.
+
+#### Local isn’t always better
+
 The use of local is [controversial](https://bramstein.com/writing/web-font-anti-patterns-local-fonts.html), as it can save bytes, but it can also yield bad results if the locally installed version of the font is outdated. As of [November 2020](https://twitter.com/googlefonts/status/1328761547041148929?s=19), Google Fonts has moved to using local only for Roboto on mobile platforms, otherwise the font is always fetched over the network.
 
 Since the data for the following charts was gathered before the switchover, Google Fonts is represented in the “both” category.
@@ -297,3 +304,10 @@ There are many potential benefits to using variable fonts. While each included a
 The performance landscape is changing somewhat, as the advent of [cache partitioning](https://developers.google.com/web/updates/2020/10/http-cache-partitioning) reduces the performance benefit from sharing the cache of CDN font resources across multiple sites. The trend of hosting more font assets on the same domain as the site, rather than using a CDN, will probably continue. Even so, services such as Google Fonts are highly optimized, and best practices such as use of `swap` and `preconnect` mitigate much of the impact of the additional HTTP connection.
 
 The use of variable fonts is accelerating greatly, and that trend will no doubt continue, especially as browser and design tool support improve. It’s also possible that 2021 will be the year of the color web font; even though the technology has been in place, that certainly hasn’t happened yet.
+
+Finally, it’s worth mentioning a new concept in web font technology currently being researched by the W3C’s Web Font Working Group: Progressive Font Enrichment. PFE is designed as an answer to many of the challenges pointed out in this chapter: addressing performance and user experience when using large glyph count font files (like Arabic or CJK fonts), larger multi-axis or color fonts, or just slow network connectivity environments. 
+
+The concept in its simplest terms is that only a portion of a given font file would need to be downloaded in order to render the content on a given page. Subsequent page loads would then deliver a ‘patch’ to the font file that includes only the glyphs necessary to render each new page. Thus at no time would the user need to download the whole font file at once. 
+
+There are various details to work out, including details that would help ensure privacy and backwards compatibility—but initial research has been extremely promising and it's hoped this technology will reach the wider web sometime in the next couple years. You can learn more about it in [this introduction by Jason Pamental](https://rwt.io/typography-tips/progressive-font-enrichment-reinventing-web-font-performance), and read [the full Working Group Evaluation Report](https://www.w3.org/TR/2020/NOTE-PFE-evaluation-20201015/) on the W3C site.
+
