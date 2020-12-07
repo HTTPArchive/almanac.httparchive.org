@@ -61,3 +61,20 @@ The ability to set scale and zoom of desktop pages helps those with vision loss 
 
 These were disabled on 24.39% of desktop sites checked, and 30.66% of mobile sites. Some operating systems no longer comply with disabled zoom and scale set in HTML, though for systems that do respect it, this can render the page effectively unusable for some. For more information about why to avoid disabling browser zoom see Adrian Roselli’s article, [Don’t Disable Zoom](https://adrianroselli.com/2015/10/dont-disable-zoom.html).
 
+### Language Identification
+
+Setting an HTML `lang` attribute allows easy translation of a page and better screen reader support. The percentage of sites with a valid HTML lang attribute on desktop this year was 77.67%, with only 77.7% having a `lang` attribute at all. 
+
+## Media on the web 
+
+### Images and their text alternatives 
+
+Images are an essential part of the web experience. They can add an enriched context to the surrounding textual information, and not just for sighted users. In 1995, [HTML 2.0](https://www.w3.org/MarkUp/html-spec/html-spec_5.html#SEC5.10) introduced the alt attribute, enabling web authors to provide a text alternative for the visual information communicated in an image. A screen reader can convey its visual meaning aurally by announcing the image’s alternative text. Additionally if images are unable to load, the alternative text for a description will be displayed.  
+
+The 2020 Lighthouse audit data shows that only 54% of sites pass the [test for images with alt text](https://dequeuniversity.com/rules/axe/3.5/image-alt). This test looks for the presence of at least one of the alt, aria-label and aria-labelledby attributes on img elements. In most cases using the alt attribute is the best choice. Even though alt attributes have been around for 25 years, we also found that 21.24% of desktop images and 21.38% of mobile images are lacking alternative text.  This is one of the easiest automated checks to test for using your accessibility tool of choice, and should be low hanging fruit and a relatively straightforward problem to solve.
+
+Screen reader users listen to the [“aural UI” as described by Steve Faulker](https://developer.paciellogroup.com/blog/2015/10/thus-spoke-html/), an aural or sonic experience of the interface wherein the  structure, semantics and relationships of the content are announced. This means that screen reader users consume a lot of textual information. For this reason it is important to assess whether or not an image might not need to be described. This is a helpful [decision tree from the W3C](https://www.w3.org/WAI/tutorials/images/decision-tree/) for deciding how and whether to describe an image. If an image is truly decorative and adds nothing meaningful to the surrounding context, you can assign the alt attribute a null value, alt="". It is important to do this explicitly rather than omitting the alt attribute altogether, as omitting it could lead to assistive technology announcing the image path, which is a very confusing user experience. We found that 26.20% of desktop pages and 26.23% of mobile pages contain alt attributes with a null/empty value. We hope this indicates that over a quarter of websites are being developed with consideration for which images are truly meaningful and not as a means of side stepping automated checks.
+
+
+ 
+
