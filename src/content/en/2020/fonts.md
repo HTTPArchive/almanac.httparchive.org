@@ -238,7 +238,7 @@ WOFF2 is the best compression format, and is now [supported](https://caniuse.com
 
 WOFF is an older, less efficient compression mechanism, but almost universally supported, accounting for an additional 11.6% of fonts served. In almost all cases (Internet Explorer 9-11 being the main exception), serving a font as WOFF is leaving performance on the table, and shows a risk of self-hosting; even if the format choices were optimal at the time of integration, it requires extra effort to update them as browsers improve. Using a hosted service guarantees that the best format is chosen, along with all relevant optimizations.
 
-Ancient versions of Internet Explorer (6-8), which still make about 1.5% of global browser share, require EOT. These don't show up in the top 5 MIME formats, but are necessary for maximum compatibility.
+Ancient versions of Internet Explorer (6-8), which still make about 1.5% of global browser share, only support the EOT format. These don't show up in the top 5 MIME formats, but are necessary for maximum compatibility.
 
 Uncompressed fonts, like OTF and TTF files, are 2-3x larger than compressed, but still make up almost 5% of all fonts served, disproportionally on mobile. If you're serving these, it should be a red flag that optimization is possible.
 
@@ -309,4 +309,3 @@ Finally, it's worth mentioning a new concept in web font technology currently be
 The concept in its simplest terms is that only a portion of a given font file would need to be downloaded in order to render the content on a given page. Subsequent page loads would then deliver a ‘patch' to the font file that includes only the glyphs necessary to render each new page. Thus at no time would the user need to download the whole font file at once. 
 
 There are various details to work out, including details that would help ensure privacy and backwards compatibility—but initial research has been extremely promising and it's hoped this technology will reach the wider web sometime in the next couple years. You can learn more about it in [this introduction by Jason Pamental](https://rwt.io/typography-tips/progressive-font-enrichment-reinventing-web-font-performance), and read [the full Working Group Evaluation Report](https://www.w3.org/TR/2020/NOTE-PFE-evaluation-20201015/) on the W3C site.
-
