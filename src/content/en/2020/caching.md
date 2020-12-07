@@ -163,7 +163,7 @@ RFC 7234 says that if no caching headers are present in a response, then the bro
 {{ figure_markup(
   image="cache-control-and-max-age-and-expires.png",
   caption="Usage of `Cache-Control` and `Expires` headers.",
-  description="A bar chart showing the usage of `Cache-Control` and `Expires` headers. 73.6% of desktop and 73.5% of mobile responses are served with a `Cache-Control` header. 55.5% of desktop and 56.2% of mobile responses are served with an `Expires` header. 54.8% of desktop and 55.4% of mobile responses use both `Cache-Control` and `Expires` header. 25.6% of mobile and desktop responses did not include either header.",
+  description="A bar chart showing the usage of `Cache-Control` and `Expires` headers. In desktop, 73.6% of responses are served with a `Cache-Control` header. 55.5% are served with an `Expires` header, 54.8% use both `Cache-Control` and `Expires` header, and 25.6% did not include either header. In mobile, 73.5% of responses are served with a `Cache-Control` header, 56.2% are served with an `Expires` header, 55.4% use both `Cache-Control` and `Expires` header, and 25.6% did not include either header.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=188448640&format=interactive",
   sheets_gid="865734542",
   sql_file="cache_control_and_max_age_and_expires.sql"
@@ -173,7 +173,7 @@ RFC 7234 says that if no caching headers are present in a response, then the bro
 {{ figure_markup(
   image="cache-control-and-max-age-and-expires-2019.png",
   caption="Usage of `Cache-Control` and `Expires` headers in 2019.",
-  description="A bar chart showing the usage of `Cache-Control` and `Expires` headers. 72.3% of desktop and 71.7% of mobile responses are served with a `Cache-Control` header. 56.3% of desktop and 56.4% of mobile responses are served with an `Expires` header. 55.2% of desktop and 55.5% of mobile responses use both `Cache-Control` and `Expires` header. 26.7% of mobile and desktop responses did not include either header.",
+  description="A bar chart showing the usage of `Cache-Control` and `Expires` headers. In desktop, 72.3% of responses are served with a `Cache-Control` header. 56.3% are served with an `Expires` header, 55.2%	use both `Cache-Control` and `Expires` header, and 26.7% did not include either header. In mobile, 71.7% of responses are served with a `Cache-Control` header, 56.4% are served with an `Expires` header, 55.5% use both `Cache-Control` and `Expires` header, and 27.4% did not include either header.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=651240480&format=interactive",
   sheets_gid="664360335",
   sql_file="cache_control_and_max_age_and_expires_2019.sql"
@@ -631,7 +631,7 @@ If we break this out by HTTP vs HTTPS, then this gets even more interesting. Eve
      <td>64,373</td>
     </tr>
   </table>
-  <figcaption>{{ figure_link(caption="Number of websites using service workers by HTTP/HTTPS.", sheets_gid="2106765718", sql_file="appcache_and_serviceworkers.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Number of websites using service workers by HTTP/HTTPS.", sheets_gid="2106765718", sql_file="appcache_and_serviceworkers.sql) }}</figcaption>
 </figure>
 
 ## What type of content are we caching?
