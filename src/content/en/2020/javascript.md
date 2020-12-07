@@ -234,18 +234,39 @@ Overall, only 4.5% of the JavaScript requests recorded are unminified.
 
 Interestingly, while we've picked on 3rd party requests a bit, this is one area where third-party scripts are doing better than first-party scripts. 82% of the average mobile page's unminified JavaScript bytes come from first-party code.
 
-{# TODO: Pie chart of 3rd vs 1st unminified bytes #}
+{{ figure_markup(
+  image="lighthouse-unminified-js-by-3p.png",
+  caption="Average distribution of unminified JavaScript bytes by host.",
+  description="Pie chart showing that 17.7% of unminified JS bytes are third party scripts and 82.3% are first party scripts.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=2073491355&format=interactive",
+  sheets_gid="1169731612",
+  sql_file="lighthouse_unminified_js_by_3p.sql"
+) }}
 
 ### Compression
 Minification is a great way to help reduce file size, but compression is even more effective and, therefore, more important—it provides the bulk of network savings more often than not.
 
-{# TODO: compression mtehods by request pie chart #}
+{{ figure_markup(
+  image="compression-method-request.png",
+  caption="Distribution of the percent of JavaScript requests by compression method.",
+  description="Bar chart showing the distribution of the percent of JavaScript requests by compression method. Desktop and mobile values are very similar. 65% of JavaScript requests use gzip compression, 20% use br (brotli), 15% don't use any compression, and deflate, UTF-8, identity, and none appear as having 0%",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=263239275&format=interactive",
+  sheets_gid="1270710983",
+  sql_file="compression_method.sql"
+) }}
 
 85% of all JavaScript requests have some level of network compression applied. GZip makes up the majority of that, with 65% of scripts having GZip compression applied compared to 20% for Brotli. While the percentage of Brotli (which is more effective than GZip) is low compared to its browser support, it's trending in the right direction, increasing by 5 percentage points in the last year.
 
 Once again, this appears to be an area where third-party scripts are actually doing better than first-party scripts. If we break the compression methods out by first and third-party, we see that 24% of third-party scripts have Brotli applied compared to only 15% of third-party scripts.
 
-{# TODO: scritps by party by compression type #}
+{{ figure_markup(
+  image="compression-method-3p.png",
+  caption="Distribution of the percent of mobile JavaScript requests by compression method and host.",
+  description="Bar chart showing the distribution of the percent of mobile JavaScript requests by compression method and host. 66% and 64% of first and third party JavaScript requests use gzip. 15% of first party and 24% of third party scripts requests use brotli. And 19% of first party and 12% of third party scripts do not have a compression method set.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=1402692197&format=interactive",
+  sheets_gid="564760060",
+  sql_file="compression_method_by_3p.sql"
+) }}
 
 Third-party scripts are also less likely to be served without any compression at all: 12% of third-party scripts have neither GZip nor Brotli applied, compared to 19% of first-party scripts.
 
@@ -267,12 +288,26 @@ The biggest problem comes when all of that code gets served to a device low to m
 
 The median desktop site spends 891ms on the main thread of a browser working with all that JavaScript. The median mobile site, however, spends 1,897ms—over two timese the time spent on the desktop. It's even worse for the long tail of sites. At the 90th percentile, mobile sites spend a staggering 8,921ms of main thread time dealing with JavaScript, compared to 3,838ms for desktop sites.
 
-{# TODO: percentiles of javascript main thread time #}
+{{ figure_markup(
+  image="main-thread-time.png",
+  caption="Distribution of main thread time.",
+  description="Bar chart showing the distribution of main thread time for desktop and mobile. Mobile is 2-3 times higher throughout the distribution. The 10, 25, 50, 75, and 90th percentiles for desktop are: 137, 356, 891, 1,988, and 3,838 milliseconds.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=740020507&format=interactive",
+  sheets_gid="2039579122",
+  sql_file="main_thread_time.sql"
+) }}
 
 ### Correlating JavaScript Use to Lighthouse Scoring
 One way of looking at how this translates into impacting the user experience is to try to correlate some of the JavaScript metrics we've identified earlier with Lighthouse scores for different metrics and categories.
 
-{# TODO: correlations of JS on UX #}
+{{ figure_markup(
+  image="correlations.png",
+  caption="Correlations of JavaScript on various aspects of user experience.",
+  description="Bar chart showing the Pearson coefficient of correlation for various aspects of user experience. The correlation of bytes to the Lighthouse performance score has a coefficient of correlation of -0.47. Bytes and Lighthouse accessibility score: 0.08. Bytes and Total Blocking Time (TBT): 0.55. Third party bytes and Lighthouse performance score: -0.37. Third party bytes and the Lighthouse accessibility score: 0.00. Third party bytes and TBT: 0.48. The number of async scripts per page and Lighthouse performance score: -0.19. Async scripts and Lighthouse accessibility score: 0.08. Async scripts and TBT: 0.36.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=649523941&format=interactive",
+  sheets_gid="2035770638",
+  sql_file="correlations.sql"
+) }}
 
 The above chart uses the Pearson coefficient of correlation. There's a long, kinda complex definition of what that means precisely, but the gist is that we're looking for the strength of the correlation between two different numbers. If we find a coefficient of 1, we'd have a direct correlation. A correlation of 0 would show no connection between two numbers. Anything below zero shows a negative correlation—in other words, as one number goes up the other one decreases.
 
@@ -289,7 +324,13 @@ The connection between Total Blocking Time and JavaScript bytes is even more sig
 ### Security Vulnerabilities
 One other helpful audit that Lighthouse runs is to check for known security vulnerabilities in third-party libraries. It does this by detecting which libraries and frameworks are used on a given page, and what version is used of each. Then it checks Snyk's open-source vulnerability database to see what vulnerabilities have been discovered in the identified tools.
 
-{# TODO: pie chart showing percentage with at least one known vuln #}
+{{ figure_markup(
+  caption="Percent of mobile pages contain at least one vulnerable JavaScript library.",
+  content="83.50%",
+  classes="big-number",
+  sheets_gid="1326928130",
+  sql_file="lighthouse_vulnerabilities.sql"
+) }}
 
 According to the audit, 83.5% of mobile pages use a JavaScript library or framework with at least one known security vulnerability.
 
@@ -297,13 +338,79 @@ This is what we call the jQuery effect. Remember how we saw that jQuery is used 
 
 Of the roughly 5 million or so mobile pages that are tested against, 81% of them contain a vulnerable version of jQuery—a sizeable lead over the second most commonly found vulnerable library—jQuery UI at 15.6%.
 
-{# TODO: Top X most commonly found #}
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Library</th>
+        <th>Vulnerable pages</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>jQuery</td>
+        <td class="numeric">80.86%</td>
+      </tr>
+      <tr>
+        <td>jQuery UI</td>
+        <td class="numeric">15.61%</td>
+      </tr>
+      <tr>
+        <td>Bootstrap</td>
+        <td class="numeric">13.19%</td>
+      </tr>
+      <tr>
+        <td>Lo-Dash</td>
+        <td class="numeric">4.90%</td>
+      </tr>
+      <tr>
+        <td>Moment.js</td>
+        <td class="numeric">2.61%</td>
+      </tr>
+      <tr>
+        <td>Handlebars</td>
+        <td class="numeric">1.38%</td>
+      </tr>
+      <tr>
+        <td>AngularJS</td>
+        <td class="numeric">1.26%</td>
+      </tr>
+      <tr>
+        <td>Mustache</td>
+        <td class="numeric">0.77%</td>
+      </tr>
+      <tr>
+        <td>Dojo</td>
+        <td class="numeric">0.58%</td>
+      </tr>
+      <tr>
+        <td>jQuery Mobile</td>
+        <td class="numeric">0.53%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="Top 10 libraries contributing to the highest numbers of vulnerable mobile pages according to Lighthouse.",
+      sheets_gid="1803013938",
+      sql_file="lighthouse_vulnerable_libraries.sql"
+    ) }}
+  </figcaption>
+</figure>
+
 
 In other words, get folks to migrate away from those outdated, vulnerable versions of jQuery and we would see the number of sites with known vulnerabilities plummet (at least, until we start finding some in the newer frameworks).
 
 The bulk of the vulnerabilities found fall into the "medium" severity category. 
 
-{# TODO: percentage of pages by vuln severity #}
+{{ figure_markup(
+  image="vulnerabilities-by-severity.png",
+  caption="Distribution of the percent of mobile pages having JavaScript vulnerabilities by severity.",
+  description="Pie chart showing 13.7% of mobile pages having no JavaScript vulnerabilities, 0.7% having low severity vulnerabilities, 69.1% having medium severity, and 16.4% having high severity.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=1932740277&format=interactive",
+  sheets_gid="1409147642",
+  sql_file="lighthouse_vulnerabilities_by_severity.sql"
+) }}
 
 {# WIP #}
 ## Conclusion
