@@ -80,7 +80,7 @@ featured_stat_label_3: 関連アプリのインストールを許可している
   image="storage_manager_api_estimate.png",
   alt="StorageManager APIの推定方法を利用したページ数の推移",
   caption='<span lang="en">StorageManager API</span>の推定方法を利用したページ数の推移',
-  description="HTTPArchiveで監視しているページ数をもとに、StorageManager APIの推定方法の利用状況をグラフ化したものです。モバイル デバイスとデスクトップ デバイスでの使用状況を比較しています。デスクトップでは直線的な伸びを示していますが、モバイルではホッケーのような伸びを示しています。10月はモバイルサイトが約34,000件、デスクトップサイトが約27,000件利用しています。",
+  description="HTTP Archiveで監視しているページ数をもとに、StorageManager APIの推定方法の利用状況をグラフ化したものです。モバイル デバイスとデスクトップ デバイスでの使用状況を比較しています。デスクトップでは直線的な伸びを示していますが、モバイルではホッケーのような伸びを示しています。10月はモバイルサイトが約34,000件、デスクトップサイトが約27,000件利用しています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1853644024&format=interactive",
   sheets_gid="1811313356",
   sql_file="durable_storage_estimate_usage.sql"
@@ -97,7 +97,7 @@ Storage Manager APIは2016年からChrome、2017年からFirefox、そして新�
   image="storage_manager_api_persist.png",
   alt="StorageManager APIのpersistメソッドの使用ページ数。",
   caption='<span lang="en">StorageManager API</span>の<span lang="en">persist</span>メソッドの使用ページ数。',
-  description='HTTPArchiveで監視しているページ数をもとに、<span lang="en">StorageManager API</span>の<span lang="en">persist</span>メソッドの使用状況をグラフ化したものです。モバイルデバイスとデスクトップデバイスでの使用状況を比較しています。デスクトップページでは利用状況はほぼ安定していますが、モバイル端末では変動が大きくなっています。2020年10月には、デスクトップページで25ページ、モバイルページで176ページがAPIを利用しています。',
+  description='HTTP Archiveで監視しているページ数をもとに、<span lang="en">StorageManager API</span>の<span lang="en">persist</span>メソッドの使用状況をグラフ化したものです。モバイルデバイスとデスクトップデバイスでの使用状況を比較しています。デスクトップページでは利用状況はほぼ安定していますが、モバイル端末では変動が大きくなっています。2020年10月には、デスクトップページで25ページ、モバイルページで176ページがAPIを利用しています。',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=644836316&format=interactive",
   sheets_gid="1095648844",
   sql_file="durable_storage_persist_usage.sql"
@@ -218,7 +218,7 @@ self.addEventListener('periodicsync', (event) => {
   image="periodic_background_sync_api.png",
   alt="周期的バックグラウンド同期APIを使用しているページ数。",
   caption="周期的バックグラウンド同期APIを使用しているページ数。",
-  description="HTTPArchiveで監視しているページ数に基づいたアイドル検出APIの使用状況のグラフです。モバイル端末とデスクトップ端末での利用状況を比較しています。2020年4月以降、デスクトップとモバイルでは1～2ページでAPIが利用されています。",
+  description="HTTP Archiveで監視しているページ数に基づいた周期的バックグラウンド同期APIの使用状況のグラフです。モバイル端末とデスクトップ端末での利用状況を比較しています。2020年4月以降、デスクトップとモバイルでは1～2ページでAPIが利用されています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1444904371&format=interactive",
   sheets_gid="386193538",
   sql_file="periodic_background_sync_usage.sql"
@@ -243,7 +243,7 @@ relatedApps.forEach((app) => {
 {{ figure_markup(
   image="get_installed_related_apps.png",
   caption="getInstalledRelatedApps()を使用しているページ数",
-  description="HTTPArchiveで監視しているページ数に基づくgetInstalledRelatedApps()の使用状況のグラフです。モバイルデバイスとデスクトップデバイスでの使用状況を比較しています。モバイルデバイスでは着実な成長を示しており、2020年10月にはデスクトップの44ページに対して363ページとピークを迎えています。",
+  description="HTTP Archiveで監視しているページ数に基づくgetInstalledRelatedApps()の使用状況のグラフです。モバイルデバイスとデスクトップデバイスでの使用状況を比較しています。モバイルデバイスでは着実な成長を示しており、2020年10月にはデスクトップの44ページに対して363ページとピークを迎えています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1774881171&format=interactive",
   sheets_gid="860146688",
   sql_file="get_installed_related_apps_usage.sql"

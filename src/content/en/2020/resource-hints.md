@@ -1,5 +1,4 @@
 ---
-#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 part_number: IV
 chapter_number: 21
 title: Resource Hints
@@ -8,7 +7,7 @@ authors: [Zizzamia]
 reviewers: [jessnicolet, pmeenan, giopunt, mgechev, notwillk]
 analysts: [khempenius]
 translators: []
-zizzamia_bio: Staff Software Engineer, Retail Growth at <a href="https://www.coinbase.com/">Coinbase</a>
+zizzamia_bio: Leonardo is a Staff Software Engineer at <a href="https://www.coinbase.com/">Coinbase</a>, leading web performance and growth initiatives. He curates the <a href="https://ngrome.io">NGRome Conference</a>. Leo also maintains the <a href="https://github.com/Zizzamia/perfume.js">Perfume.js<a/> library, which helps companies prioritize roadmaps and make better business decisions through performance analytics.
 discuss: 2057
 results: https://docs.google.com/spreadsheets/d/1lXjd8ogB7kYfG09eUdGYXUlrMjs4mq1Z7nNldQnvkVA/
 queries: 21_Resource_Hints
@@ -28,15 +27,15 @@ Over the past decade [resource hints](https://www.w3.org/TR/resource-hints/) hav
 
 Preloading resources and having browsers apply some intelligent prioritization is something that was actually started way back in 2009 by IE8 with something called the [preloader](https://speedcurve.com/blog/load-scripts-async/). In addition to the HTML parser, IE8 had a lightweight look-ahead preloader that scanned for tags that could initiate network requests (`<script>`, `<link>`, and `<img>`).
 
-Over the following years, browser vendors did more and more of the heavy lifting, each adding their own special sauce for how to prioritize resources. But it’s important to understand that the browser alone has some limitations. As developers however, we can overcome these limits by making good use of Resource Hints and help decide how to prioritize resources, determining which should be fetched or preprocessed to further boost page performance.
+Over the following years, browser vendors did more and more of the heavy lifting, each adding their own special sauce for how to prioritize resources. But it’s important to understand that the browser alone has some limitations. As developers however, we can overcome these limits by making good use of resource hints and help decide how to prioritize resources, determining which should be fetched or preprocessed to further boost page performance.
 
-In particular we can mention a few of the victories Resource Hints achieved/made in the last year:
+In particular we can mention a few of the victories resource hints achieved/made in the last year:
 - [CSS-Tricks](https://www.zachleat.com/web/css-tricks-web-fonts/) web fonts showing up faster on a 3G first render
 - [wix.com](https://www.youtube.com/watch?v=4QqlGgF8Y2I&t=1469) using resource hints got 10% improvement for FCP
 - [Ironmongerydirect.co.uk](https://andydavies.me/blog/2019/03/22/improving-perceived-performance-with-a-link-rel-equals-preconnect-http-header/) by using preconnect improved product image loading by 400ms at the median and greater than 1s at 95th percentile
 - [Facebook.com](https://engineering.fb.com/2020/05/08/web/facebook-redesign/) used preload for faster navigation
 
-Let’s take a look at most predominant Resource Hints supported by most browsers today: `dns-prefetch`, `preconnect`, `preload`,  `prefetch` and native lazy loading. 
+Let’s take a look at most predominant resource hints supported by most browsers today: `dns-prefetch`, `preconnect`, `preload`,  `prefetch` and native lazy loading. 
 
 When used with each individual hint we advise to always measure the impact before and after in the field, by using libraries like [WebVitals](https://github.com/GoogleChrome/web-vitals), [Perfume.js](https://github.com/zizzamia/perfume.js) or any other utility that supports the Web Vitals metrics. 
 
@@ -44,7 +43,9 @@ When used with each individual hint we advise to always measure the impact befor
 
 [dns-prefetch](https://web.dev/preconnect-and-dns-prefetch/) helps resolve the IP address for a given domain ahead of time. As the [oldest](https://caniuse.com/link-rel-dns-prefetch) resource hint available, it uses minimal CPU and network resources compared to `preconnect`, and helps the browser to avoid experiencing the "worst-case" delay for DNS resolution, which can be [over 1 second](https://www.chromium.org/developers/design-documents/dns-prefetching).
 
-{# TODO - add code example #}
+```html
+<link rel="dns-prefetch" href="https://www.googletagmanager.com/">
+```
 
 Be mindful when using `dns-prefetch` as even if they are lightweight to do it's easy to exhaust browser limits for the number of concurrent in-flight DNS requests allowed (Chrome still has a [limit of 6](https://source.chromium.org/chromium/chromium/src/+/master:net/dns/host_resolver_manager.cc;l=353)).
 
@@ -52,7 +53,9 @@ Be mindful when using `dns-prefetch` as even if they are lightweight to do it's 
 
 [preconnect](https://web.dev/uses-rel-preconnect/) helps resolve the IP address and open a TCP/TLS connection for a given domain ahead of time. Similar to `dns-prefetch` it is used for any cross-origin domain and helps the browser to warm up any resources used during the initial page load.
 
-{# TODO - add code example #}
+```html
+<link rel="preconnect" href="https://www.googletagmanager.com/">
+```
 
 Be mindful when you use `preconnect`:
 
@@ -66,7 +69,10 @@ Lastly, `preconnect` is not available for [Internet Explorer or Firefox](https:/
 
 The [preload](https://web.dev/uses-rel-preload/) hint initiates an early request. This is useful for loading important resources that would otherwise be discovered late by the parser.
 
-{# TODO - add code example #}
+```html
+<link rel="preload" href="style.css" as="style">
+<link rel="preload" href="main.js" as="script">
+```
 
 Be mindful of what you are going to `preload`, because it can delay the download of other resources, so use it only for what is most critical to help you improve the Largest Contentful Paint ([LCP](https://web.dev/lcp/)). Also, when used on Chrome, it tends to over-prioritize `preload` resources and potentially dispatches preloads before other critical resources.
 
@@ -76,7 +82,9 @@ Lastly, if used in a HTTP response header, some CDN's will also automatically tu
 
 The [prefetch](https://web.dev/link-prefetch/) hint allows us to initiate low-priority requests we expect to be used on the next navigation. The Hint will download the resources and drop it into the HTTP cache for later usage. Important to notice, `prefetch` will not execute or otherwise process the resource, and to execute it the page will still need to call the resource by the `<script>` tag.
 
-{# TODO - add code example #}
+```html
+<link rel="prefetch" as="script" href="next-page.bundle.js">
+```
 
 There are a variety of ways to implement the resources predictions logic, could be based on signals like user mouse movement, common user flows/journeys or even based on a combination of both on top of Machine Learning.
 
@@ -86,11 +94,11 @@ Be mindful, depending on the [quality](https://github.com/andydavies/http2-prior
 
 The [native lazy loading](https://web.dev/browser-level-image-lazy-loading/) hint is a native browser API for deferring the load of offscreen images and iframes. By using it, assets that are not needed during the initial page load will not initiate a network request, this will reduce data consumption and improve page performance.
 
-{# TODO - add code example #}
+```html
+<img src="image.png" loading="lazy" alt="…" width="200" height="200">
+```
 
-Be mindful Chromium's implementation of lazy-loading thresholds logic historically has been quite [conservative](https://web.dev/browser-level-image-lazy-loading/#distance-from-viewport-thresholds), keeping the offscreen limit to 3000px. During the last year the limit has been actively tested and improved on to better align developer expectations, and ultimately moving the thresholds to 1250px.
-
-{# TODO - clarify that there is no standard across the browsers - Ref https://github.com/HTTPArchive/almanac.httparchive.org/pull/1587#discussion_r532286705 #}
+Be mindful Chromium's implementation of lazy-loading thresholds logic historically has been quite [conservative](https://web.dev/browser-level-image-lazy-loading/#distance-from-viewport-thresholds), keeping the offscreen limit to 3000px. During the last year the limit has been actively tested and improved on to better align developer expectations, and ultimately moving the thresholds to 1250px. Also, there is [no standard across the browsers](https://github.com/whatwg/html/issues/5408) and no ability for web developers to override the defaults thresholds provided by the browsers, yet.
 
 ## Resource Hints
 
@@ -98,30 +106,22 @@ Based on the HTTP Archive, let's jump into analyzing the 2020 trends, and compar
 
 ### Hints adoption
 
-More and more web pages are using the main Resource Hints, and in 2020 we are seeing the adoption remains consistent between desktop & mobile.
+More and more web pages are using the main resource hints, and in 2020 we are seeing the adoption remains consistent between desktop & mobile.
 
 {{ figure_markup(
-  image="TODO",
-  caption="TODO",
+  image="adoption-of-resource-hints.png",
+  caption="Adoption of resource hints",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYAbLxN40s6mNR1jo0XDe_V4siN8TAsx2mryMp5IQmlJ-9O9eJxYROz7Rw6ozyFP6hlIZHxxh95GqX/pubchart?oid=1550112064&format=interactive",
   sheets_gid="1805612941",
   sql_file="adoption.sql"
 ) }}
 
-This is a great representation of how year over year we continue to focus on improving not only for desktop but also for mobile experiences. One take we will probably analyze even further next year is how HighEnd vs LowEnd devices will diverge in hints usage.
+The relative popularity of `dns-prefetch` with 33% adoption compared with other resource hints is unsurprising as it first appeared in 2009, and has the widest support out of all major resource hints.
 
-{# TODO - clarify this sentence - Ref https://github.com/HTTPArchive/almanac.httparchive.org/pull/1587#discussion_r532320974 #}
+{# TODO - add table to compare 2019 vs 2020 #}
 
-{{ figure_markup(
-  caption="The percentage of desktop pages using DNS prefetching compared with other resource hints.",
-  content="33%",
-  classes="big-number",
-  sheets_gid="1805612941",
-  sql_file="adoption.sql"
-) }}
-
-The relative popularity of `dns-prefetch` is unsurprising as it first appeared in 2009, and has the widest support out of all major Resource Hints. It had a 4% increase in Desktop adoption, compared to [2019](https://almanac.httparchive.org/en/2019/resource-hints#resource-hints). We saw a similar increase for `preconnect` as well. One key reason this was the largest growth between all hints, is the clear and useful advice pthe Lighthouse audit is giving on this matter](https://web.dev/uses-rel-preconnect/). Starting from this year's report we also introduce how the latest dataset performs against Lighthouse recommendations.
+Compared to [2019](https://almanac.httparchive.org/en/2019/resource-hints#resource-hints) the `dns-prefetch` had a 4% increase in Desktop adoption. We saw a similar increase for `preconnect` as well. One key reason this was the largest growth between all hints, is the clear and useful advice pthe Lighthouse audit is giving on this matter](https://web.dev/uses-rel-preconnect/). Starting from this year's report we also introduce how the latest dataset performs against Lighthouse recommendations.
 
 `preload` usage has had a slower growth with only a 2% increase from 2019. This could be in part because it requires a bit more attention. While you only need the domain to use `dns-prefetch` and `preconnect`, you must specify the resource to use `preload`. While `dns-prefetch` and `preconnect` are reasonably low risk–though still can be abused– `preload` has a much greater potential to actually damage performance if used incorrectly.
 
@@ -129,11 +129,11 @@ The relative popularity of `dns-prefetch` is unsurprising as it first appeared i
 
 ### Hints per page
 
-Across the board developers are learning how to better use Resource Hints, and compared to [2019](../2019/resource-hints#resource-hints) we've seen an improved use of `preload`, `prefetch` and `preconnect`. For expensive operations like preload and preconnect the median usage on desktop decreased from 2 to 1. We have seen the opposite for loading future resources with a lower priority with `prefetch`, with an increase from 1 to 2 in median per page.
+Across the board developers are learning how to better use resource hints, and compared to [2019](../2019/resource-hints#resource-hints) we've seen an improved use of `preload`, `prefetch` and `preconnect`. For expensive operations like preload and preconnect the median usage on desktop decreased from 2 to 1. We have seen the opposite for loading future resources with a lower priority with `prefetch`, with an increase from 1 to 2 in median per page.
 
 {{ figure_markup(
-  image="TODO",
-  caption="TODO",
+  image="median-number-of-hints-per-page.png",
+  caption="Median number of hints per page.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYAbLxN40s6mNR1jo0XDe_V4siN8TAsx2mryMp5IQmlJ-9O9eJxYROz7Rw6ozyFP6hlIZHxxh95GqX/pubchart?oid=320451644&format=interactive",
   sheets_gid="175042082",
@@ -152,7 +152,7 @@ However, this hasn't stopped some misuse of the `preload` hint, since in one ins
   sql_file="hints_per_page.sql"
 ) }}
 
-As we create more and more automation with Resource Hints, be cautious when dynamically injecting preload hints - or any elements for that matter!
+As we create more and more automation with resource hints, be cautious when dynamically injecting preload hints - or any elements for that matter!
 
 ### The `as` attribute
 
@@ -171,8 +171,8 @@ With `preload` many different content-types can be preloaded and the[full list](
 This is likely related to a large group of sites built as Single Page Apps that need the main bundle as soon as possible to start downloading the rest of their JS dependencies. Subsequent usage comes from font at 8%, style at 5%, image at 1%, and fetch at 1%.
 
 {{ figure_markup(
-  image="TODO",
-  caption="TODO",
+  image="mobile-as-attribute-values-by-year.png",
+  caption="Mobile \"as\" attribute values by year.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYAbLxN40s6mNR1jo0XDe_V4siN8TAsx2mryMp5IQmlJ-9O9eJxYROz7Rw6ozyFP6hlIZHxxh95GqX/pubchart?oid=903180926&format=interactive",
   sheets_gid="1829901599",
@@ -208,7 +208,7 @@ Seeing over 2,100 different combinations of media queries in the 2020 dataset en
 
 ### Best practices
 
-Using Resource Hints can be confusing at times, so let's go over some quick best practices to follow based on Lighthouse's automated audit.
+Using resource hints can be confusing at times, so let's go over some quick best practices to follow based on Lighthouse's automated audit.
 
 To safely implement `dns-prefetch` and `preconnect` make sure to have them in separate links tags.
 
@@ -315,8 +315,8 @@ One solution to this, is to use the [PRPL Pattern](https://addyosmani.com/blog/t
 For both `preload` and `prefetch` we've had an increase in adoption when the page is controlled by a [Service Worker](https://developers.google.com/web/fundamentals/primers/service-workers). This is because of the potential to both improve the resource prioritization by preloading when the Service Worker is not active yet and intelligently prefetching future resources while letting the Service Worker cache them before they're needed by the user.
 
 {{ figure_markup(
-  image="TODO",
-  caption="TODO",
+  image="resource-hint-adoption-onservice-worker-pages.png",
+  caption="Resource hint adoption on service worker pages.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYAbLxN40s6mNR1jo0XDe_V4siN8TAsx2mryMp5IQmlJ-9O9eJxYROz7Rw6ozyFP6hlIZHxxh95GqX/pubchart?oid=252958553&format=interactive",
   sheets_gid="691299508",
@@ -325,7 +325,7 @@ For both `preload` and `prefetch` we've had an increase in adoption when the pag
 
 For `preload` on desktop we have an outstanding 47% rate of adoption and `prefetch` a 10% rate of adoption. In both cases the data is much higher compared to average adoption without a Service Worker.
 
-As mentioned earlier, the [PRPL Pattern](https://addyosmani.com/blog/the-prpl-pattern/) will play a significant role in the coming years in how we combine Resource Hints with the Service Worker caching strategy.
+As mentioned earlier, the [PRPL Pattern](https://addyosmani.com/blog/the-prpl-pattern/) will play a significant role in the coming years in how we combine resource hints with the Service Worker caching strategy.
 
 ## Future
 
@@ -375,11 +375,11 @@ There are over 79% of resources with "high" priority, but something we should pa
 ### 103 Early Hints in HTTP/2
 Previously we mentioned that HTTP/2 Push could actually cause regression in cases where assets being pushed were already in the browser cache. The [103 Early Hints](https://tools.ietf.org/html/rfc8297) proposal aims to provide similar benefits promised by HTTP/2 push. With an architecture that is potentially 10x simpler, it addresses the long RTT’s or server processing without suffering from the known worst-case issue of unnecessary round trips with server push.
 
-As of right now you can follow the conversation on Chromium with issues [671310](https://bugs.chromium.org/p/chromium/issues/detail?id=671310), [1093693](https://bugs.chromium.org/p/chromium/issues/detail?id=1093693) and [1096414](https://bugs.chromium.org/p/chromium/issues/detail?id=1096414). 
+As of right now you can follow the conversation on Chromium with issues [671310](https://bugs.chromium.org/p/chromium/issues/detail?id=671310), [1093693](https://bugs.chromium.org/p/chromium/issues/detail?id=1093693) and [1096414](https://bugs.chromium.org/p/chromium/issues/detail?id=1096414).
 
 ## Conclusion
 
-During the past year Resource Hints increased in adoption, and they have become essential APIs for developers to have more granular control over many aspects of resource prioritizations and ultimately, user experience. But let’s not forget that these are hints, not instructions and unfortunately the Browser and the network will always have the final say. 
+During the past year resource hints increased in adoption, and they have become essential APIs for developers to have more granular control over many aspects of resource prioritizations and ultimately, user experience. But let’s not forget that these are hints, not instructions and unfortunately the Browser and the network will always have the final say. 
 
 Sure, you can slap them on a bunch of elements, and the browser may do what you're asking it to. Or it may ignore some hints and decide the default priority is the best choice for the given situation. In any case, make sure to have a playbook for how to best use these hints:
 
