@@ -152,7 +152,7 @@ When analyzing the usage of the `Disallow` statement in `robots.txt` by using Li
 
 An analysis of the `robots.txt` `Disallow` statement usage along the [meta robots](https://developers.google.com/search/reference/robots_meta_tag) _indexability_ directives was also done, finding 1.02% of the sites including a `Disallow` statement along indexable pages featuring a meta robots `index` directive, with only 0.03% of sites using the `Disallow` statement in `robots.txt` along _noindexed_ pages via the meta robots `noindex` directive.
 
-This is notable as [Google documentation](https://developers.google.com/search/docs/advanced/robots/intro) states that site owners should not use `robots.txt` as a means to hide web pages from Google Search, as internal linking with descriptive text could result in the page being indexed without a crawler visiting the page. Instead, site owners should use other methods, like a `noindex` directive via meta robots.
+The higher usage of the disallow statement along indexable pages than noindexed ones is notable as [Google documentation](https://developers.google.com/search/docs/advanced/robots/intro) states that site owners should not use `robots.txt` as a means to hide web pages from Google Search, as internal linking with descriptive text could result in the page being indexed without a crawler visiting the page. Instead, site owners should use other methods, like a `noindex` directive via meta robots.
 {# TODO(authors): Tie this notable fact back to the data: is it notable because the disallow numbers are so low? What does that say about site owners following Google's guidance? #}
 
 #### Meta robots
@@ -509,34 +509,36 @@ The median web page has 10.00% of images with blank `alt` attributes on desktop 
 
 ### Links
 
-Modern search engines use hyperlinks between pages for the discovery of new content for indexing and as an indication of authority for ranking. The link graph is something that search engines actively police both algorithmically and through manual review. Web pages pass link equity through their sites and to other sites through these hyperlinks, therefore it is important to ensure that there is a wealth of links throughout any given page.
+Modern search engines use hyperlinks between pages for the discovery of new content for indexing and as an indication of authority for ranking. The link graph is something that search engines actively police both algorithmically and through manual review. Web pages pass link equity through their sites and to other sites through these hyperlinks, therefore it is important to ensure that there is a wealth of links throughout any given page, but also, as Google mentions in its [SEO Starter Guide](https://developers.google.com/search/docs/beginner/seo-starter-guide#use-links-wisely) to link wisely.
 
 #### Outgoing links
 
-The median desktop page includes 76 outgoing links while the median mobile page has 67. Historically, the direction from Google suggested that links be limited to 100 per page. While that recommendation is outdated on the modern web, the median page in our dataset adheres to it.
+As part of this analysis we are able to assess the outgoing links from each page, whether to internal pages from the same domain, as well as external ones, however, have not analyzed incoming links. 
+
+The median desktop page includes 76 links while the median mobile page has 67. Historically, the direction from Google suggested that links be limited to 100 per page. While that recommendation is outdated on the modern web and Google has since then mentioned that [there are no limits](https://www.seroundtable.com/google-link-unlimited-18468.html), the median page in our dataset adheres to it.
 
 {{ figure_markup(
   image="seo-outgoing-links.png",
-  caption="Distribution of the number of outgoing links per page.",
-  description="Bar chart showing the number of outgoing links per percentile (10, 25, 50, 75, and 90). The median desktop page features 76 outgoing links while the median mobile page features 67.",
+  caption="Distribution of the number of links per page.",
+  description="Bar chart showing the number of links per percentile (10, 25, 50, 75, and 90). The median desktop page features 76 links while the median mobile page features 67.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=284216213&format=interactive",
   sheets_gid="775602646",
   sql_file="pages_wpt_bodies_by_device_and_percentile.sql"
 ) }}
 
-The median page has 61 outgoing internal links (those links going to other pages of the same site) on desktop and 54 on mobile. This is down 12.8% and 10% respectively from [last year's analysis](../2019/seo#linking). This suggests that sites are not maximizing the ability to improve the crawlability and link equity flow through their pages in the way they did the year before.
+The median page has 61 internal links (going to pages within the same site) on desktop and 54 on mobile. This is down 12.8% and 10% respectively from [last year's analysis](../2019/seo#linking). This suggests that sites are not maximizing the ability to improve the crawlability and link equity flow through their pages in the way they did the year before.
 
 {{ figure_markup(
   image="seo-outgoing-links-internal.png",
-  caption="Distribution of the number of outgoing internal links per page.",
-  description="Bar chart showing the number of internal outgoing links per percentile (10, 25, 50, 75, and 90). The median desktop page features 61 outgoing internal links while the median mobile page features 54 outgoing internal links.",
+  caption="Distribution of the number of internal links per page.",
+  description="Bar chart showing the number of internal links per percentile (10, 25, 50, 75, and 90). The median desktop page features 61 internal links while the median mobile page features 54 internal links.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=739265254&format=interactive",
   sheets_gid="775602646",
   sql_file="pages_wpt_bodies_by_device_and_percentile.sql"
 ) }}
 
 {# TODO(authors): Add your interpretation of these results. What do you hope readers will get out of it? If there's not much to say, would anyone miss it if it was dropped? Also, please clarify the redundancy of outgoing and external for a non-SEO like myself :) #}
-The median page is linking to external sites 7 times on desktop and 6 times on mobile. This is a decrease from last year, when it was found that the median number of external links per page were 10 in desktop and 8 on mobile. This decrease in outgoing external links could suggest that websites are now being more careful when linking to other sites, whether to avoid passing link popularity or referring users to them. 
+The median page is linking to external sites 7 times on desktop and 6 times on mobile. This is a decrease from last year, when it was found that the median number of external links per page were 10 in desktop and 8 on mobile. This decrease in external links could suggest that websites are now being more careful when linking to other sites, whether to avoid passing link popularity or referring users to them. 
 
 
 {{ figure_markup(
@@ -547,6 +549,20 @@ The median page is linking to external sites 7 times on desktop and 6 times on m
   sheets_gid="775602646",
   sql_file="pages_wpt_bodies_by_device_and_percentile.sql"
 ) }}
+
+#### Text versus image links
+
+The median web page uses an image as anchor text to link in 9.80% of desktop and 9.82% of mobile pages. These links represent lost opportunities to implement keyword-relevant anchor text. This only becomes a significant issue at the 90th percentile of pages.
+
+{{ figure_markup(
+  image="seo-image-links.png",
+  caption="Distribution of the percent of links containing images per page.",
+  description="Bar chart showing the percentage of image links per percentile (10, 25, 50, 75, and 90). The median web page features 9.80% image links on desktop and 9.82% image links on mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1292929825&format=interactive",
+  sheets_gid="775602646",
+  sql_file="pages_wpt_bodies_by_device_and_percentile.sql"
+) }}
+
 
 #### Mobile versus desktop links
 
@@ -580,18 +596,6 @@ Our review of pages indicates that 28.58% of pages include `rel=nofollow` attrib
   sql_file="pages_robots_txt_by_device_and_status.sql"
 ) }}
 
-#### Text versus image links
-
-The median web page uses an image as anchor text to link in 9.80% of desktop and 9.82% of mobile pages. These links represent lost opportunities to implement keyword-relevant anchor text. This only becomes a significant issue at the 90th percentile of pages.
-
-{{ figure_markup(
-  image="seo-image-links.png",
-  caption="Distribution of the percent of links containing images per page.",
-  description="Bar chart showing the percentage of image links per percentile (10, 25, 50, 75, and 90). The median web page features 9.80% image links on desktop and 9.82% image links on mobile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1292929825&format=interactive",
-  sheets_gid="775602646",
-  sql_file="pages_wpt_bodies_by_device_and_percentile.sql"
-) }}
 
 ## Advanced
 
