@@ -39,7 +39,7 @@ Let’s take a look at most predominant resource hints supported by most browser
 
 When used with each individual hint we advise to always measure the impact before and after in the field, by using libraries like [WebVitals](https://github.com/GoogleChrome/web-vitals), [Perfume.js](https://github.com/zizzamia/perfume.js) or any other utility that supports the Web Vitals metrics. 
 
-### dns-prefetch
+### `dns-prefetch`
 
 [dns-prefetch](https://web.dev/preconnect-and-dns-prefetch/) helps resolve the IP address for a given domain ahead of time. As the [oldest](https://caniuse.com/link-rel-dns-prefetch) resource hint available, it uses minimal CPU and network resources compared to `preconnect`, and helps the browser to avoid experiencing the "worst-case" delay for DNS resolution, which can be [over 1 second](https://www.chromium.org/developers/design-documents/dns-prefetching).
 
@@ -65,7 +65,7 @@ Be mindful when you use `preconnect`:
 
 Lastly, `preconnect` is not available for [Internet Explorer or Firefox](https://caniuse.com/?search=preconnect), and [using `dns-prefetch` as a fallback](https://web.dev/preconnect-and-dns-prefetch/#resolve-domain-name-early-with-reldns-prefetch) is highly advised.
 
-### preload
+### `preload`
 
 The [preload](https://web.dev/uses-rel-preload/) hint initiates an early request. This is useful for loading important resources that would otherwise be discovered late by the parser.
 
@@ -78,7 +78,7 @@ Be mindful of what you are going to `preload`, because it can delay the download
 
 Lastly, if used in a HTTP response header, some CDN's will also automatically turn a preload into a HTTP/2 push which can over-push cached resources.
 
-### prefetch
+### `prefetch`
 
 The [prefetch](https://web.dev/link-prefetch/) hint allows us to initiate low-priority requests we expect to be used on the next navigation. The Hint will download the resources and drop it into the HTTP cache for later usage. Important to notice, `prefetch` will not execute or otherwise process the resource, and to execute it the page will still need to call the resource by the `<script>` tag.
 
@@ -121,7 +121,7 @@ The relative popularity of `dns-prefetch` with 33% adoption compared with other 
 
 {# TODO - add table to compare 2019 vs 2020 #}
 
-Compared to [2019](https://almanac.httparchive.org/en/2019/resource-hints#resource-hints) the `dns-prefetch` had a 4% increase in Desktop adoption. We saw a similar increase for `preconnect` as well. One key reason this was the largest growth between all hints, is the clear and useful advice pthe Lighthouse audit is giving on this matter](https://web.dev/uses-rel-preconnect/). Starting from this year's report we also introduce how the latest dataset performs against Lighthouse recommendations.
+Compared to [2019](https://almanac.httparchive.org/en/2019/resource-hints#resource-hints) the `dns-prefetch` had a 4% increase in Desktop adoption. We saw a similar increase for `preconnect` as well. One key reason this was the largest growth between all hints, is the clear and useful advice the [Lighthouse audit](https://web.dev/uses-rel-preconnect/) is giving on this matter. Starting from this year's report we also introduce how the latest dataset performs against Lighthouse recommendations.
 
 `preload` usage has had a slower growth with only a 2% increase from 2019. This could be in part because it requires a bit more attention. While you only need the domain to use `dns-prefetch` and `preconnect`, you must specify the resource to use `preload`. While `dns-prefetch` and `preconnect` are reasonably low risk–though still can be abused– `preload` has a much greater potential to actually damage performance if used incorrectly.
 
@@ -158,7 +158,7 @@ As we create more and more automation with resource hints, be cautious when dyna
 
 With `preload` and `prefetch`, it's crucial to use the `as` attribute to help the browser prioritize the resource more accurately. Doing so allows for proper storage in the cache for future requests, applying the correct Content Security Policy ([CSP](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)), and setting the correct `Accept` request headers.
 
-With `preload` many different content-types can be preloaded and the[full list](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#Attributes) follows the recommendations made in the Fetch [spec](https://fetch.spec.whatwg.org/#concept-request-destination). The most popular is the `script` type with 64% usage.
+With `preload` many different content-types can be preloaded and the [full list](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#Attributes) follows the recommendations made in the Fetch [spec](https://fetch.spec.whatwg.org/#concept-request-destination). The most popular is the `script` type with 64% usage.
 
 {{ figure_markup(
   caption="The percent of preload hints on mobile using the scripts type.",
@@ -306,7 +306,7 @@ HTTP/2 has a feature called server push that can potentially improve page perfor
 
 HTTP/2 Push is often initiated through the `preload` link header. In the 2020 dataset we have seen 1% of mobile pages using HTTP/2 Push, and of those 75% of preload header links use the `nopush` option in the page request. This means that even though a website is using the `preload` resource hint, the majority prefer to use just this and disable HTTP/2 pushing of that resource.
 
-It's important to mention that HTTP/2 Push can also damage performance if not used correctly which probably explains why is often disabled.
+It's important to mention that HTTP/2 Push can also damage performance if not used correctly which probably explains why it is often disabled.
 
 One solution to this, is to use the [PRPL Pattern](https://addyosmani.com/blog/the-prpl-pattern/) which stands for **Push** (or preload) the critical resources, **Render** the initial route as soon as possible, **Pre-cache** remaining assets, and **Lazy-load** other routes and non-critical assets. This is possible only if your website is a Progressive Web App and uses a Service Worker to improve the caching strategy. By doing this all subsequent requests never even go out to the network, and so there's no need to push all the time and we still get the best of both worlds.
 
