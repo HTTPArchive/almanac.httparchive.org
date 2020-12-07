@@ -170,7 +170,18 @@ RFC 7234 says that if no caching headers are present in a response, then the bro
   )
 }}
 
-These statistics are interesting, since, when compared with 2019, while we are seeing a noticeable increase in the use of the `Cache-Control` header, we are only seeing a very small decrease in the use of the older `Expires` header - effectively a higher percentage of servers are simply adding the `Cache-Control` header to their responses, without removing the `Expires` header.
+{{ figure_markup(
+  image="cache-control-and-max-age-and-expires-2019.png",
+  caption="Usage of `Cache-Control` and `Expires` headers in 2019.",
+  description="A bar chart showing the usage of `Cache-Control` and `Expires` headers. 72.3% of desktop and 71.7% of mobile responses are served with a `Cache-Control` header. 56.3% of desktop and 56.4% of mobile responses are served with an `Expires` header. 55.2% of desktop and 55.5% of mobile responses use both `Cache-Control` and `Expires` header. 26.7% of mobile and desktop responses did not include either header.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=651240480&format=interactive",
+  sheets_gid="664360335",
+  sql_file="cache_control_and_max_age_and_expires_2019.sql"
+  )
+}}
+
+These statistics are interesting since, compared with 2019, while we see an increase in the use of the `Cache-Control` header (1.3%), we also see a minimal decrease in the use of the older `Expires` header (0.7%). Effectively, a percentage of servers are merely adding the `Cache-Control` header to their responses without removing the `Expires` header.
+
 As we delve into the various directives allowed in the `Cache-Control` header, we will see how its flexibility and power make it a better fit in many cases.
 
 ## Cache-Control directives
@@ -580,7 +591,7 @@ Service workers are a feature of HTML5 that allow front-end developers to specif
   caption="Growth in service worker controlled pages from 2019.",
   description="A bar chart showing the growth in service worker controlled pages. The adoption has grown from 0.6% in 2019 to 1.0% in 2020",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=893877591&format=interactive",
-  sheets_gid="2082343974",
+  sheets_gid="2082343974", 
   sql_file="appcache_and_serviceworkers_2019.sql"
   )
 }}
@@ -785,8 +796,8 @@ The graphs below illustrate the relative age of resources by content type. Some 
   caption="Resource age by Content Type (1st Party).",
   description="A stack bar chart showing the age of content, split into weeks 0-52, > one year and > two years with null and negative figures shown too. The stats are split into first-party and third-party. The value 0 is used most particularly for first-party HTML, text and xml, and for up to 50% of third-party requests across all assets types. There is a mix using intermediary years and then considerable usage for one year and two year.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=2056330432&format=interactive",
-  sheets_gid="170870299",
-  sql_file="14_resource_age_party_and_type_wise_groups_1st_party.sql"
+  sheets_gid="1889235328", 
+  sql_file="14_resource_age_party_and_type_wise_groups.sql"
   )
 }}
 
@@ -795,8 +806,8 @@ The graphs below illustrate the relative age of resources by content type. Some 
   caption="Resource age by Content Type (3rd Party).",
   description="A stack bar chart showing the age of content, split into weeks 0-52, > one year and > two years with null and negative figures shown too. The stats are split into first-party and third-party. The value 0 is used most particularly for first-party HTML, text and xml, and for up to 50% of third-party requests across all assets types. There is a mix using intermediary years and then considerable usage for one year and two year.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=2056330432&format=interactive",
-  sheets_gid="170870299",
-  sql_file="15_resource_age_party_and_type_wise_groups_3rd_party.sql"
+  sheets_gid="1889235328",
+  sql_file="15_resource_age_party_and_type_wise_groups.sql"
   )
 }}
 
