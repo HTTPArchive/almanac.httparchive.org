@@ -576,7 +576,7 @@ Looking at the frequency of push by content type in Figure 22.20, we see 90% of 
 {{ figure_markup(
   image="http2-pushed-content-types.png",
   caption="Percentage of pages pushing specific content types",
-  description="A bar chart showing for pages that push resources on desktop 89.1% push scripts, 67.9% css, 6.1% images, 1.3% fonts, 0.7% other and 0.7% html. On mobile 90.29% push scripts, 56.8% css, 3.69% images, 0.97% fonts, 0.36% other and 0.39% html.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=1708672642&format=interactive",
+  description="A bar chart showing for pages that push resources on desktop; 89.1% push scripts, 67.9% css, 6.1% images, 1.3% fonts, 0.7% other and 0.7% html. On mobile 90.29% push scripts, 56.8% css, 3.69% images, 0.97% fonts, 0.36% other and 0.39% html.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=1708672642&format=interactive",
   sheets_gid="238923402",
   sql_file="number_of_h2_and_h3_pushed_resources_and_bytes_by_content_type.sql"
 )
