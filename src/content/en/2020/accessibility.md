@@ -75,6 +75,14 @@ The 2020 Lighthouse audit data shows that only 54% of sites pass the [test for i
 
 Screen reader users listen to the [“aural UI” as described by Steve Faulker](https://developer.paciellogroup.com/blog/2015/10/thus-spoke-html/), an aural or sonic experience of the interface wherein the  structure, semantics and relationships of the content are announced. This means that screen reader users consume a lot of textual information. For this reason it is important to assess whether or not an image might not need to be described. This is a helpful [decision tree from the W3C](https://www.w3.org/WAI/tutorials/images/decision-tree/) for deciding how and whether to describe an image. If an image is truly decorative and adds nothing meaningful to the surrounding context, you can assign the alt attribute a null value, alt="". It is important to do this explicitly rather than omitting the alt attribute altogether, as omitting it could lead to assistive technology announcing the image path, which is a very confusing user experience. We found that 26.20% of desktop pages and 26.23% of mobile pages contain alt attributes with a null/empty value. We hope this indicates that over a quarter of websites are being developed with consideration for which images are truly meaningful and not as a means of side stepping automated checks.
 
+When describing an image it is imperative to consider what information the user needs, and omit additional information to reduce verbosity. For example, a red arrow icon button that has the action of moving to a new step in the interface could be described as “continue to step 3 of 5” rather than “red arrow png”. The first description tells the user what to expect if they activate the control, whereas the second just describes its appearance and has an unnecessary file extension, both of which are irrelevant to the meaning of the image. 
+Automated checks for the presence of alternative text do not assess the quality of this text. As described in the previous section, the meaning of an image needs to be considered when writing this text. One common unhelpful pattern is describing the image with the file extension name. For the previous “red arrow png” example, a screen reader user likely does not get helpful information from the image format. We found that 6.8% of desktop sites (with at least one instance of the alt attribute) had a file extension in it’s value. The top 5 file extensions explicitly included in the alt text value (for sites with images that have non-empty alt values) are jpg, png, ico, gif and jpeg. This likely comes from a CMS or another auto-generated alternative text mechanism. It is imperative that these alt attribute values be meaningful, regardless of how they are implemented.
 
- 
 
+| File extension type | Desktop (sites with non-empty alt) | Mobile (sites with non-empty alt)
+----------------------------------------------------------------------------------------------
+| jpg | 3.73% | 3.50% |
+| png | 2.98% | 2.81% |
+| ico | 1.34% | 1.6% |
+| gif | 0.034% | 0.030% |
+| jpeg | 0.034% | 0.032% |
