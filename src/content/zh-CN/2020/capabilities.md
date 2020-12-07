@@ -24,7 +24,7 @@ featured_stat_label_3: 网站允许安装相关应用程序
 
 [渐进式Web应用](./pwa) (PWA)是一种基于网络技术的跨平台应用模型。在 Service Workers的帮助下，这些应用即使在用户离线时也可以运行。[Web应用程序清单](https://developer.mozilla.org/zh-CN/docs/Web/Manifest) 允许用户将PWA添加到主屏幕或程序列表中。当从那里打开时，PWA将作为原生应用Native App出现。然而，PWA只能使用通过Web平台API暴露的功能和能力，而无法调用任意的本地接口，这使得Native App和Web App之间留下了一个缺隙。
 
-[能力项目](https://www.chromium.org/teams/web-capabilities-fugu)，非正式的被称为Project Fugu，是谷歌、微软和英特尔通过跨公司的努力来弥补web和原生之间差距的工程项目。这对于保持web作为一个平台的相关性非常重要。为此，Chromium的贡献者们实现了新的API，将操作系统的能力（capability）暴露给网络，同时维护用户的安全、隐私和信任。这能力包括但不局限于:
+[能力项目](https://www.chromium.org/teams/web-capabilities-fugu)，非正式的被称为<span lang="en">Project Fugu</span>，是谷歌、微软和英特尔通过跨公司的努力来弥补web和原生之间差距的工程项目。这对于保持web作为一个平台的相关性非常重要。为此，Chromium的贡献者们实现了新的API，将操作系统的能力（capability）暴露给网络，同时维护用户的安全、隐私和信任。这能力包括但不局限于:
 
 - [文件系统访问 API](https://web.dev/file-system-access/) 用于访问本地文件系统的文件
 - [文件Handling API](https://web.dev/file-handling/) 为特定的文件扩展注册一个 handler
