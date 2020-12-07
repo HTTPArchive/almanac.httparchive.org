@@ -240,7 +240,7 @@ Below is a table showing the most common `Cache-Control` directives:
      <td>Indicates that the client is willing to accept a stale response if the check for a fresh one fails.</td>
     </tr>
   </table>
-  <figcaption>{{ figure_link(caption="<code>Cache-Control</code> directives.") }}</figcaption>
+  <figcaption>{{ figure_link(caption="<code>Cache-Control</code> directives.", sheets_gid="1950040019", sql_file="cache_control_directives.sql") }}</figcaption>
 </figure>
 
 The `max-age` directive is the most commonly-found, since it directly defines the TTL, in the same way that the `Expires` header does.
