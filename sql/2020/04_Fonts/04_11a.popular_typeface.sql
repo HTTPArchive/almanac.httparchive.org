@@ -43,6 +43,6 @@ JOIN (
 USING
   (client)
 WHERE
-  pages / total >= 0.01
+  pages / total >= 0.004
 ORDER BY
   pct DESC
