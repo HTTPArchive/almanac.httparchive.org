@@ -40,32 +40,98 @@ We mentioned that the script tag is the 6th most used HTML element. Let's dig in
 
 The median site (the 50th percentile) sends 444kb of JavaScript when loaded on a desktop device, and slightly less (411kb) to a mobile device.
 
-{# TODO: chart showing percentiles for JS use on mobile and desktop #}
+{{ figure_markup(
+  image="page-weight-per-content-type.png",
+  caption="Distribution of the amount of JavaScript bytes loaded per page.",
+  description="Bar chart showing the distribution of JavaScript bytes per page by about 10%. Desktop pages consistently load more JavaScript bytes than mobile pages. The 10th, 25th, 50th, 75th, and 90th percentiles for desktop are: 87 KB, 209 KB, 444 KB, 826 KB, and 1,322 KB.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=441749673&format=interactive",
+  sheets_gid="2139688512",
+  sql_file="bytes_2020.sql"
+) }}
 
 It's a bit disappointing that there isn't a bigger gap here. While it's dangerous to make too many assumptions about network or processing power based on whether the device in use is a phone or a desktop (or somewhere in between), it's worth noting that HTTP Archive mobile tests are done by emulating a Moto G4 and a 3G network. In other words, if there was any work being done adapt to less than ideal circumstances by passing down less code, these tests should be showing it.
 
 The trend also seems to be in favor of using more JavaScript, not less. Comparing to last year's results, at the median we see a 13.6% increase in JavaScript as tested on a desktop device, and a 14.5% increase in the amount of JavaScript sent to a mobile device.
 
-{# TODO: chart showing historical trend #}
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Client</th>
+        <th>2019</th>
+        <th>2020</th>
+        <th>Change</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Desktop</td>
+        <td class="numeric">391</td>
+        <td class="numeric">444</td>
+        <td class="numeric">13.4%</td>
+      </tr>
+      <tr>
+        <td>Mobile</td>
+        <td class="numeric">359</td>
+        <td class="numeric">411</td>
+        <td class="numeric">14.4%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="Year-over-year change in the median number of JavaScript bytes per page.",
+      sheets_gid="86213362",
+      sql_file="bytes_2020.sql"
+    ) }}
+  </figcaption>
+</figure>
 
 At least some of this weight seems to be unnecessary. If we look at a breakdown of how much of that JavaScript is unused on any given page load, we see that the median page is shipping 152kb of unused JavaScript. That number jumps to 334kb at the 75th percentile and 567kb at the 90th percentile.
 
-{# TODO: distribution of unused JS bytes #}
+{{ figure_markup(
+  image="unused-js-bytes-distribution.png",
+  caption="Distribution of the amount of wasted JavaScript bytes per mobile page.",
+  description="Bar chart showing the distribution of amount of wasted JavaScript bytes per page. From the 10, 25, 50, 75, and 90th percentiles, the distribution goes: 0, 57, 153, 335, and 568 KB.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=773002950&format=interactive",
+  sheets_gid="611267860",
+  sql_file="unused_js_bytes_distribution.sql"
+) }}
 
 As raw numbers, those may or may not jump out at you depending on how much of a performance nut you are, but when you look at it as a percentage of the total JavaScript used on each page, it becomes a bit easier to see just how much waste we're sending.
 
-{# TODO: Maybe a bar graph showing percentage saved at each percentile? Don't think we need another query here since we have the data #}
+{{ figure_markup(
+  caption="Percent of the median mobile page's JavaScript bytes that are unused.",
+  content="37.22%",
+  classes="big-number",
+  sheets_gid="611267860",
+  sql_file="unused_js_bytes_distribution.sql"
+) }}
 
-That 152kb equates to ~37% of the total script size that we send down to mobile devices. There's definitely some room for improvement here.
+That 153 KB equates to ~37% of the total script size that we send down to mobile devices. There's definitely some room for improvement here.
 
 ### Request Count
 Another way of looking at how much JavaScript we use is to explore how many JavaScript requests are made on each page. While reducing the number of requests was paramount to maintaing good performance with HTTP 1.1, with HTTP/2 the opposite is the case: breaking JavaScript down into smaller, individual files is ideal for performance. 
 
-{# TODO: Distribution of JavaScript requests by client #}
+{{ figure_markup(
+  image="requests-2020.png",
+  caption="Distribution of JavaScript requests per page.",
+  description="Bar chart showing the distribution of JavaScript requests per page in 2020. The 10, 25, 50, 75, and 90th percentiles for mobile pages are: 4, 10, 19, 34, and 55. Desktop pages only tend to have 0 or 1 more JavaScript request per page.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=153746548&format=interactive",
+  sheets_gid="1804671297",
+  sql_file="requests_2020.sql"
+) }}
 
 At the median, pages make 20 JavaScript requests. That's only a minor increase over last year where the median page made 19.
 
-{# TODO: Distribution of JavaScript requests by client, compared to 2019 #}
+{{ figure_markup(
+  image="requests-2019.png",
+  caption="Distribution of JavaScript requests per page in 2019.",
+  description="Bar chart showing the distribution of JavaScript requests per page in 2019. The 10, 25, 50, 75, and 90th percentiles for mobile pages are: 4, 9, 18, 32, and 52. Similar to the 2020 results, desktop pages only tend to have 0 or 1 more request per page. These results are slightly lower than the 2020 results.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=528431485&format=interactive",
+  sheets_gid="1983394384",
+  sql_file="requests_2019.sql"
+) }}
 
 ## Where does it come from?
 One trend that likely contributes to the increase in JavaScript used on our pages is the seemingly ever-increasing amount of third-party scripts that get added to pages to help with everything from client-side A/B testing and analytics, to serving ads and handling personalization.
@@ -74,7 +140,14 @@ Let's drill into that a bit to see just how much third-party script we're servin
 
 Righ up until the median, sites serve roughly the same number of first-party scripts as they do third-party scripts—at the median, 9 scripts per page are first-party compared to 10 per page from third-parties. From there, the gap widens a bit—the more scripts a site serves in the total, the more likely it is that the majority of those scripts are from third-party sources.
 
-{# TODO: distribution of JS requests by host for mobile and desktop #}
+{{ figure_markup(
+  image="requests-by-3p-desktop.png",
+  caption="Distribution of the number of JavaScript requests by host for desktop.",
+  description="Bar chart showing the distribution of JavaScript requests per host for desktop. The 10, 25, 50, 75, and 90th percentiles for first party requests are: 2, 4, 9, 17, and 30 requests per page. The number of third party requests per page is slightly higher in the upper percentiles by 1 to 6 requests.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=1566679225&format=interactive",
+  sheets_gid="978380311",
+  sql_file="requests_by_3p.sql"
+) }}
 
 While the amount of JavaScript requests are similar at the median, the actual size of those scripts is weighted (pun intended) a bit more heavily toward third-party sources. The median site sends 267kb of JavaScript from third-parties to desktop devices compared to 147kb from first-parties. The situation is very similar on mobile, where the median site ships 255kb of third-party scripts compared to 134kb of first-party scripts.
 
