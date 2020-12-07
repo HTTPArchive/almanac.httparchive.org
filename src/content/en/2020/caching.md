@@ -56,19 +56,17 @@ Web architectures typically involve multiple tiers of caching. There are four ma
 
 In this chapter, we will primarily be discussing caching within web browsers (1-2), as opposed to caching at the origin server or in a CDN. Nevertheless, many of the specific caching topics discussed in this chapter rely on the relationship between the browser and the server (or CDN, if one is used).
 
-The key to understanding how caching (and the web) works is to remember that it all consists of transactions between a requesting entity (e.g. a browser) and a responding entity (e.g. a server). Each transaction consists of two parts: 
+The key to understanding how caching (and the web) works is to remember that it all consists of transactions between a requesting entity (e.g. a browser) and a responding entity (e.g. a server). Each transaction consists of two parts:
 
-1. The request from the requesting entity ("*I want object X*"), and 
-1. The response from the responding entity ("*Here is object X*"). 
+1. The request from the requesting entity ("*I want object X*"), and
+1. The response from the responding entity ("*Here is object X*").
 
 When we talk about caching, it refers to the object (HTML page, image, etc.) cached by the requesting entity.
 
 Below figure shows how a typical request/response flow works for an object (e.g. a web page).  A CDN sits between the browser and the server. Note that at each point in the browser → CDN → server flow, each of the caching entities first checks whether it has the object in its cache.  It returns the cached object to the requester if found, before forwarding the request to the next caching entity in the chain:
 
-**Placeholder for Figure 1**
-
 {{ figure_markup(
-  image="0_request_response_flow_with_caching.png",
+  image="request-response-flow-with-caching.png",
   link="https://almanac.httparchive.org/static/images/2020/caching/0_request_response_flow_with_caching.png",
   caption="Request/response flow for an object.",
   description="Sequence diagram showing the usage of cache in a typical request/response flow for an object."
@@ -162,14 +160,12 @@ RFC 7234 says that if no caching headers are present in a response, then the bro
 * 54.8% of responses include both headers
 * 25.6% of responses did not include either header, and are therefore subject to heuristic caching
 
-**Placeholder for Figure 2: Usage of HTTP Cache-Control and Expires headers.**
-
 {{ figure_markup(
-  image="1_cache_control_and_max_age_and_expires.png",
+  image="cache-control-and-max-age-and-expires.png",
   caption="Usage of `Cache-Control` and `Expires` headers.",
   description="A bar chart showing the usage of `Cache-Control` and `Expires` headers. 73.6% of desktop and 73.5% of mobile responses are served with a `Cache-Control` header. 55.5% of desktop and 56.2% of mobile responses are served with an `Expires` header. 54.8% of desktop and 55.4% of mobile responses use both `Cache-Control` and `Expires` header. 25.6% of mobile and desktop responses did not include either header.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=188448640&format=interactive",
-  sheets_gid="203111101",
+  sheets_gid="865734542",
   sql_file="cache_control_and_max_age_and_expires.sql"
   )
 }}
@@ -180,7 +176,7 @@ As we delve into the various directives allowed in the `Cache-Control` header, w
 ## Cache-Control directives
 When you use the `Cache-Control` header, you specify one or more *directives* - predefined values that indicate specific caching functionality. Multiple directives are separated by commas and can be specified in any order, although some of them 'clash' with one another (e.g. `public` and `private`). Some directives take a value, such as `max-age`.
 
-Below is a table showing the most common `Cache-Control` directives: 
+Below is a table showing the most common `Cache-Control` directives:
 
 <figure>
   <table>
@@ -250,13 +246,12 @@ This indicates that the object can be cached for 86,400 seconds (1 day) and it c
 * 60.2% of responses include a `Cache-Control` header with the `max-age` directive.
 * 45.5% of responses include the `Cache-Control` header with the `max-age` directive and the `Expires` header, which means that 10% of responses are caching solely based on the older `Expires` header.
 
-**Placeholder for Figure 3: Distribution of Cache-Control directives.**
 {{ figure_markup(
-  image="2_cache_control_directives.png",
+  image="cache-control-directives.png",
   caption="Distribution of `Cache-Control` directives.",
   description="A bar chart showing the distribution of 11 `Cache-Control` directives. The usage for desktop ranges from 60.2% for `max-age`, 29.7% for `public`, 14.3% for `no-cache`, 12.1% for `must-revalidate`, 9.2% for `no-store`, 9.1% for `private`, 3.5% for `immutable`, 2.3% for `no-transform`, 2.1% for `stale-while-revalidate`, 1.5% for `s-maxage`, 1.0% for `proxy-revalidate`, and 0.2% for `stale-if-error`. For mobile, the range is, 59.7% for `max-age`, 29.7% for `public`, 15.1% for `no-cache`, 12.5% for `must-revalidate`, 9.6% for `no-store`, 9.7% for `private`, 3.5% for `immutable`, 2.2% for `no-transform`, 2.2% for `stale-while-revalidate`, 1.2% for `s-maxage`, 1.1% for `proxy-revalidate`, and 0.2% for `stale-if-error`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=388795105&format=interactive",
-  sheets_gid="203111102",
+  sheets_gid="1950040019",
   sql_file="cache_control_directives.sql"
   )
 }}
@@ -298,7 +293,7 @@ There are often cases where a browser has previously requested an object and alr
 
 In these cases, the browser can make a conditional request to the server - effectively saying "*I have object X in my cache - can I use it, or do you have a more recent version I should use instead?*". The server can respond in one of two ways:
 
-* "*Yes, the version of object X you have in cache is fine to use*" - in this case the server response consists of a `304 Not Modified` status code and response headers, but no response body 
+* "*Yes, the version of object X you have in cache is fine to use*" - in this case the server response consists of a `304 Not Modified` status code and response headers, but no response body
 * "*No, here is a more recent version of object X - use this instead*" - in this case the server response consists of a `200 OK` status code, response headers, and a new response body (the actual new version of object X)
 
 In either case, the server can optionally include updated caching response headers, possibly extending the TTL of the object so the browser can use the object for a further period of time without needing to make more conditional requests.
@@ -328,7 +323,7 @@ When the server receives the request for the file, it can include the date/time 
 < Date: Thu, 23 Jul 2020 03:04:17 GMT
 < <span class="keyword">Last-Modified: Mon, 20 Jul 2020 11:43:22 GMT</span>
 < Cache-Control: max-age=600
- 
+
 < <html>...lots of html here...</html></code></pre>
 
 The browser will cache this object for 600 seconds (as defined in the `Cache-Control` header), after which it will mark the object as stale. If the browser needs to use the file again, it requests the file from the server just as it did initially, but this time it includes an additional request header, called `If-Modified-Since`, which it sets to the value that was passed in the `Last-Modified` response header in the initial response:
@@ -400,7 +395,7 @@ However, if the values are different, then the version of the file on the server
 < Date: Thu, 23 Jul 2020 03:14:17 GMT
 < ETag: "v123.5.06"
 < Cache-Control: public, max-age=600
- 
+
 < <html>...lots of html here...<html></code></pre>
 
 Again, we see a pair of headers being used for this conditional request processing - the `ETag` response header and the `If-None-Match` request header.
@@ -417,26 +412,22 @@ In the same way that the `Cache-Control` header has more power and flexibility t
 * 42.8% of responses are served with both headers (as noted above, in this case, the `ETag` header takes precedence).
 * 21.4% of responses include neither a `Last-Modified` or `ETag` header.
 
-**Placeholder for Figure 4: Adoption of validating freshness via Last-Modified and ETag headers.**
-
 {{ figure_markup(
-  image="3_last_modified_and_etag.png",
+  image="last-modified-and-etag.png",
   caption="Adoption of validating freshness via `Last-Modified` and `ETag` headers.",
   description="A bar chart showing 73.5% of desktop requests have a `Last-Modified`, 47.9% have an `ETag`, 42.8% have both, and 21.4% have neither. The stats for mobile are almost identical at 72.0% for `Last-Modified`, 46.2% for `ETag`, 41.0% for both, and 22.9% for neither.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1171778982&format=interactive",
-  sheets_gid="203111103",
+  sheets_gid="1084825476",
   sql_file="last_modified_and_etag.sql"
   )
 }}
 
-**Placeholder for Figure 5: Adoption of validating freshness via Last-Modified and ETag headers in 2019.**
-
 {{ figure_markup(
-  image="4_last_modified_and_etag_2019.png",
+  image="last-modified-and-etag-2019.png",
   caption="Adoption of validating freshness via `Last-Modified` and `ETag` headers in 2019.",
   description="A bar chart showing 72.7% of desktop requests have a `Last-Modified`, 48.0% have an `ETag`, 43.1% have both, and 22.4% have neither. The stats for mobile are almost identical at 72.0% for `Last-Modified`, 47.1% for `ETag`, 42.1% for both, and 23.1% for neither.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1775409512&format=interactive",
-  sheets_gid="203111104",
+  sheets_gid="1084825476",
   sql_file="last_modified_and_etag_2019.sql"
   )
 }}
@@ -449,10 +440,8 @@ Correctly-implemented revalidation using conditional requests can significantly 
 * 20.5% of the responses had no ETag header and contained the same `Last-Modified` value, passed in the `If-Modified-Since` header of the corresponding request. Out of these, 86% had a `304 Not Modified` status.
 * 86.1% of the responses contained the same `ETag` value, passed in the `If-None-Match` header of the corresponding request. If the `If-Modified-Since` header is also present, `ETag` takes precedence. Out of these, 88.9% had a `304 Not Modified` status.
 
-**Placeholder for Figure 6: Distribution of 304 Not Modified status.**
-
 {{ figure_markup(
-  image="5_valid_if_none_match_returns_304.png",
+  image="valid-if-none-match-returns-304.png",
   caption="Distribution of `304 Not Modified` status.",
   description="Bar chart showing the distribution of `304 Not Modified` status. 20.5% of the desktop responses had no `ETag` header and contained the same `Last-Modified` value, passed in the `If-Modified-Since` header of the corresponding request. Out of these, 86% had a `304 Not Modified` status. 86.1% of the responses contained the same `ETag` value, passed in the `If-None-Match` header of the corresponding request. Out of these, 88.9% had a `304 Not Modified` status. 17.2% of the mobile responses had no `ETag` header and contained the same `Last-Modified` value, passed in the `If-Modified-Since` header of the corresponding request. Out of these, 78.3% had a `304 Not Modified` status. 89.9% of the responses contained the same `ETag` value, passed in the `If-None-Match` header of the corresponding request. Out of these, 90.2% had a `304 Not Modified` status.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1530788258&format=interactive",
@@ -484,14 +473,12 @@ Invalid date strings are ignored by most browsers, which can affect the cacheabi
 
 Because the `Date` HTTP response header is almost always generated automatically by the web server, invalid values are extremely rare. Similarly `Last-Modified` headers had a very low percentage (0.5%) of invalid values. What was very surprising to see though, was that a relatively high 2.9% of `Expires` headers used an invalid date format (2.5% in mobile).
 
-**Placeholder for Figure 7: Invalid date formats in response headers.**
-
 {{ figure_markup(
-  image="6_invalid_last_modified_and_expires_and_date.png",
+  image="invalid-last-modified-and-expires-and-date.png",
   caption="Invalid date formats in response headers.",
   description="Bar chart showing the distribution of invalid date. 0.1% of desktop responses have an invalid date in `Date`, 0.5% in `Last-Modified` and 2.5% in `Expires`. The stats for mobile are very similar with 0.1% of responses have an invalid date in `Date`, 0.7% in `Last-Modified` and 2.9% in `Expires`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=827586570&format=interactive",
-  sheets_gid="2031111056",
+  sheets_gid="1338572274",
   sql_file="invalid_last_modified_and_expires_and_date.sql"
   )
 }}
@@ -534,14 +521,12 @@ The `Vary` header is used on 43.4% of HTTP responses, and 84.2%  of these respon
 
 The graph below details the popularity for the top 10 Vary header values. `Accept-Encoding` accounts for almost 92% of `Vary`'s use, with `User-Agent` at 10.7%, `Origin` (used for CORS processing) at 8%, and Accept at 4.1% making up much of the rest.
 
-**Placeholder for Figure 8: Vary header usage.**
-
 {{ figure_markup(
-  image="7_vary_headers.png",
+  image="vary-headers.png",
   caption="`Vary` header usage.",
   description="Bar chart showing the distribution of `Vary` header. 91.8% of desktop responses use of `Accept-Encoding`, much smaller values for the rest with 10.7% for `User-Agent`, approximately 8.0% for `Origin`, and 0.5%-4.1% for `Accept`, `Access-Control-Request-Headers`,`Access-Control-Request-Method`, `Cookie`, `X-Forwarded-Proto`, `Accept-Language`, and `Range`. 91.3% of mobile responses use of `Accept-Encoding`, much smaller values for the rest with 11.0% for `User-Agent`, approximately 9.1% for `Origin`, and 0.6%-3.9% for `Accept`, `Access-Control-Request-Headers`, `Access-Control-Request-Method`, `Cookie`, `X-Forwarded-Proto`, `Accept-Language`, and `Range`.",
-    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=317375276&format=interactive",
-  sheets_gid="2031111057",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=317375276&format=interactive",
+  sheets_gid="1115686547",
   sql_file="vary_headers.sql"
   )
 }}
@@ -550,10 +535,8 @@ The graph below details the popularity for the top 10 Vary header values. `Accep
 
 When a response is cached, its entire set of response headers are included with the cached object as well. This is why you can see the response headers when inspecting a cached response in Chrome via DevTools:
 
-**Placeholder for Figure 9: Chrome Dev Tools for a cached resource.**
-
 {{ figure_markup(
-  image="7a_chrome_dev_tools.png",
+  image="chrome-dev-tools.png",
   link="https://almanac.httparchive.org/static/images/2020/caching/7a_chrome_dev_tools.png",
   caption="Chrome Dev Tools for a cached resource.",
   description="Chrome Dev Tools showing that When a response is cached, its entire set of response headers are included with the cached object as well."
@@ -568,26 +551,22 @@ For example, if a login cookie or a session cookie is present in a CDN’s cache
 
 41.4%% of cacheable responses contain a `Set-Cookie` header. Of those responses, only 4.6% use the `private` directive. The remaining 95.4% (189.2 million HTTP responses) contain at least one `Set-Cookie` response header and can be cached by both public cache servers, such as CDNs. This is concerning and may indicate a continued lack of understanding about how cacheability and cookies coexist.
 
-**Placeholder for Figure 10: `Set-Cookie` in cacheable responses.**
-
 {{ figure_markup(
-  image="8_set_cookie.png",
+  image="set-cookie-usage-on-cacheable-responses.png",
   caption="`Set-Cookie` in cacheable responses.",
   description="A bar chart showing `Set-Cookie` usage on cacheable responses. 41.4% of cacheable desktop responses and 40.4% of cacheable mobile responses contain a `Set-Cookie` header.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1106475158&format=interactive",
-  sheets_gid="203111108",
+  sheets_gid="1263250537",
   sql_file="set_cookie.sql"
   )
 }}
 
-**Placeholder for Figure 11: `Set-Cookie` in private and non private cacheable responses.**
-
 {{ figure_markup(
-  image="9_set_cookie2.png",
+  image="set-cookie-usage-on-private-and-non-private-cacheable-responses.png",
   caption="`Set-Cookie` in `private` and non private cacheable responses.",
   description="A bar chart showing `Set-Cookie` usage in `private` and non private cacheable responses. Of the desktop responses containing a `Set-Cookie` header, 4.6% use the `private` directive. 95.4% responses can be cached by both private and public cache servers. Of the mobile responses containing a `Set-Cookie` header, 4.9% use the `private` directive. 95.1% responses can be cached by both private and public cache servers.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=97044455&format=interactive",
-  sheets_gid="203111109",
+  sheets_gid="1263250537",
   sql_file="set_cookie.sql"
   )
 }}
@@ -596,14 +575,12 @@ For example, if a login cookie or a session cookie is present in a CDN’s cache
 
 Service Workers are a feature of HTML5 that allow front-end developers to specify scripts that should run outside the 'normal' request/response flow of web pages, communicating with the web page via messages. Common uses of service workers are for background synchronization and push notifications and, obviously, for caching - and browser support has been rapidly growing for them.
 
-**Placeholder for Figure 12: Growth in service worker controlled pages from 2019.**
-
 {{ figure_markup(
-  image="10_appcache_and_serviceworkers_2019",
+  image="service-workers-controlled-pages-2019-2020.png",
   caption="Growth in service worker controlled pages from 2019.",
   description="A bar chart showing the growth in service worker controlled pages. The adoption has grown from 0.6% in 2019 to 1.0% in 2020",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=893877591&format=interactive",
-  sheets_gid="203111110",
+  sheets_gid="2082343974",
   sql_file="appcache_and_serviceworkers_2019.sql"
   )
 }}
@@ -615,16 +592,16 @@ In the table below, you can see that out of a total of 6,225,774 websites, only 
 <figure>
   <table>
     <tr>
-     <th> </th>   
+     <th> </th>
      <th>Does not use Service Worker</th>
      <th>Uses Service Worker</th>
-     <th>Total</th>   
+     <th>Total</th>
     </tr>
     <tr>
      <td><span style="font-weight:bold">Sites</span></td>
      <td>6,225,774</td>
      <td>64,373</td>
-     <td>6,290,147</td>      
+     <td>6,290,147</td>
     </tr>
   </table>
   <figcaption>{{ figure_link(caption="Number of websites using service workers.") }}</figcaption>
@@ -635,21 +612,20 @@ If we break this out by HTTP vs HTTPS, then this gets even more interesting. Eve
 <figure>
   <table>
     <tr>
-     <th> </th>   
+     <th> </th>
      <th>http</th>
      <th>https</th>
-     <th>Total</th>   
+     <th>Total</th>
     </tr>
     <tr>
      <td><span style="font-weight:bold">Sites using service worker</span></td>
      <td>1,469</td>
      <td>62,904</td>
-     <td>64,373</td>      
+     <td>64,373</td>
     </tr>
   </table>
   <figcaption>{{ figure_link(caption="Number of websites using service workers by HTTP/HTTPS.") }}</figcaption>
 </figure>
-
 
 ## What type of content are we caching?
 
@@ -661,26 +637,22 @@ As we have seen, a cacheable resource is stored by the browser for a period of t
 
 The remaining 9.2% of responses are not permitted to be stored in browser caches - typically because of Cache-Control: no-store.
 
-**Placeholder for Figure 13: Distribution of cacheable and non-cacheable responses.**
-
 {{ figure_markup(
-  image="11_cacheable_and_non_cacheable.png",
+  image="cacheable-and-non-cacheable.png",
   caption="Distribution of cacheable and non-cacheable responses.",
   description="A bar chart showing proportion of cacheable responses. 9.2% of desktop and 9.6% of mobile responses are cacheable.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=430652203&format=interactive",
-  sheets_gid="203111111",
+  sheets_gid="391853872",
   sql_file="ttl.sql"
   )
 }}
 
-**Placeholder for Figure 14: Distribution of TTL in cacheable responses.**
-
 {{ figure_markup(
-  image="12_ttl.png",
+  image="ttl-cachable-responses.png",
   caption="Distribution of TTL in cacheable responses.",
   description="A bar chart showing distribution of TTL in cacheable responses. 4.2% of desktop responses have a TTL zero, 59.4% have a TTL greater than zero, and 28.2% use a heuristic TTL. 4.2% of mobile responses have a TTL zero, 58.8% have a TTL greater than zero, and 28.4% use a heuristic TTL.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1365998611&format=interactive",
-  sheets_gid="203111112",
+  sheets_gid="391853872",
   sql_file="ttl.sql"
   )
 }}
@@ -690,10 +662,10 @@ The table below details the cache TTL values for desktop requests by type. Most 
 <figure>
   <table>
     <tr>
-     <th colspan="6">Cache TTL percentiles (in hours)</th>    
+     <th colspan="6">Cache TTL percentiles (in hours)</th>
     </tr>
     <tr>
-     <th> </th>   
+     <th> </th>
      <th>10</th>
      <th>25</th>
      <th>50</th>
@@ -704,100 +676,98 @@ The table below details the cache TTL values for desktop requests by type. Most 
      <td><span style="font-weight:bold">audio</span></td>
      <td>6</td>
      <td>6</td>
-     <td>240</td> 
-     <td>720</td> 
+     <td>240</td>
+     <td>720</td>
      <td>8,760</td>
     </tr>
     <tr>
      <td><span style="font-weight:bold">css</span></td>
      <td>24</td>
      <td>24</td>
-     <td>720</td> 
-     <td>8,760</td> 
+     <td>720</td>
+     <td>8,760</td>
      <td>8,760</td>
     </tr>
     <tr>
      <td><span style="font-weight:bold">font</span></td>
      <td>720</td>
      <td>8,760</td>
-     <td>8,760</td> 
-     <td>8,760</td> 
+     <td>8,760</td>
+     <td>8,760</td>
      <td>8,760</td>
     </tr>
     <tr>
      <td><span style="font-weight:bold">html</span></td>
      <td>0</td>
      <td>1</td>
-     <td>336</td> 
-     <td>8,760</td> 
+     <td>336</td>
+     <td>8,760</td>
      <td>87,600</td>
     </tr>
     <tr>
      <td><span style="font-weight:bold">image</span></td>
      <td>4</td>
      <td>168</td>
-     <td>720</td> 
-     <td>8,760</td> 
+     <td>720</td>
+     <td>8,760</td>
      <td>8,766</td>
     </tr>
     <tr>
      <td><span style="font-weight:bold">other</span></td>
      <td>0</td>
      <td>1</td>
-     <td>30</td> 
-     <td>240</td> 
+     <td>30</td>
+     <td>240</td>
      <td>8,760</td>
     </tr>
     <tr>
      <td><span style="font-weight:bold">script</span></td>
      <td>0</td>
      <td>2</td>
-     <td>720</td> 
-     <td>8,760</td> 
+     <td>720</td>
+     <td>8,760</td>
      <td>8,760</td>
     </tr>
     <tr>
      <td><span style="font-weight:bold">text</span></td>
      <td>0</td>
      <td>1</td>
-     <td>6</td> 
-     <td>6</td> 
+     <td>6</td>
+     <td>6</td>
      <td>720</td>
     </tr>
     <tr>
      <td><span style="font-weight:bold">video</span></td>
      <td>6</td>
      <td>12</td>
-     <td>336</td> 
-     <td>336</td> 
+     <td>336</td>
+     <td>336</td>
      <td>8,760</td>
     </tr>
     <tr>
      <td><span style="font-weight:bold">xml</span></td>
      <td>0</td>
      <td>24</td>
-     <td>24</td> 
-     <td>24</td> 
+     <td>24</td>
+     <td>24</td>
      <td>8,760</td>
-    </tr>    
+    </tr>
   </table>
   <figcaption>{{ figure_link(caption="Desktop cache TTL percentiles by resource type.") }}</figcaption>
 </figure>
 
 While most of the median TTLs are high, the lower percentiles highlight some of the missed caching opportunities. For example, the median TTL for images is 720 hours (1 month); however the 25<sup>th</sup> percentile is just 168 hours (1 week) and the 10<sup>th</sup> percentile has dropped to just a few hours. Compare this with fonts, which have a very high TTL of 8760 hours (1 year) all the way down to the 25th percentile, with even the 10<sup>th</sup> percentile showing a TTL of 1 month.
 
-By exploring the cacheability by content type in more detail in figure below, we can see that while fonts, video and audio, and CSS files are browser cached at close to 100% (which makes sense, since these files are typically very static), approximately one third of all HTML responses are considered non-cacheable. 
+By exploring the cacheability by content type in more detail in figure below, we can see that while fonts, video and audio, and CSS files are browser cached at close to 100% (which makes sense, since these files are typically very static), approximately one third of all HTML responses are considered non-cacheable.
 
 Additionally, 13.6% of images and scripts are non-cacheable. There is likely some room for improvement here, since no doubt some of these objects are also static and could be cached at a higher rate - remember: *cache as much as you can for as long as you can!*
 
-**Placeholder for Figure 15: Distribution of cacheability by content type.**
-
 {{ figure_markup(
-  image="13_cacheable_by_resource_type.png",
+  image="cacheable-by-resource-type.png",
   caption="Distribution of cacheability by content type.",
   description="A bar chart showing distribution of cacheable resource types. In desktop responses, 99.3% of audio, 99.3% of CSS, 99.8% of font, 67.9% of HTML, 91.2% of images, 66.3% of other types, 95.2% of scripts, 78.6% of text, 99.6% of video, and 81.4% of xml is cacheable. In mobile responses, 99.0% of audio, 99.0% of CSS, 99.8% of font, 71.5% of HTML, 89.9.2% of images, 67.9% of other types, 95.1% of scripts, 78.4% of text, 99.7% of video, and 80.6% of xml is cacheable.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1283939423&format=interactive",
-  sheets_gid="203111113",
+  sheets_gid="220584548",
   sql_file="non_cacheable_by_resource_type.sql"
   )
 }}
@@ -814,16 +784,20 @@ The graphs below illustrate the relative age of resources by content type. Some 
 * Some of the longest aged first party content on the web, with age eight weeks or more, are the traditionally cacheable objects like images (78.3%), scripts (68.6%), CSS (74.1%), web fonts (79.3%), audio (77.9%) and video (78.6%).
 * There is a significant gap in some first vs. third party resources having an age of more than a week. 93.5% of first party CSS are older than one week compared to 51.5% of 3rd party CSS, which are older than one week.
 
-**Placeholder for Figure 16: Resource age distribution by content type (1st party). TODO**
-https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=2056330432&format=interactive
-resource_age_party_and_type_wise_groups.sql
-14_resource_age_party_and_type_wise_groups_1st_party.png
-203111114
-A stack bar chart showing the age of content, split into weeks 0-52, > one year and > two years with null and negative figures shown too. The stats are split into first-party and third-party. The value 0 is used most particularly for first-party HTML, text and xml, and for up to 50% of third-party requests across all assets types. There is a mix using intermediary years and then considerable usage for one year and two year.
+{# TODO Placeholder for Figure 16: Resource age distribution by content type (1st party). TODO #}
 
 
+{{ figure_markup(
+  image="resource-age-party-and-type-wise-groups-1st-party.png",
+  caption="Distribution of potential byte savings from the Lighthouse caching audit.",
+  description="A stack bar chart showing the age of content, split into weeks 0-52, > one year and > two years with null and negative figures shown too. The stats are split into first-party and third-party. The value 0 is used most particularly for first-party HTML, text and xml, and for up to 50% of third-party requests across all assets types. There is a mix using intermediary years and then considerable usage for one year and two year.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=2056330432&format=interactive",
+  sheets_gid="203111114",
+  sql_file="14_resource_age_party_and_type_wise_groups_1st_party.sql"
+  )
+}}
 
-**Placeholder for Figure 17: Resource age distribution by content type (3rd party). TODO**
+{# Placeholder for Figure 17: Resource age distribution by content type (3rd party). TODO #}
 https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1712948465&format=interactive
 resource_age_party_and_type_wise_groups.sql
 15_resource_age_party_and_type_wise_groups_3rd_party.png
@@ -848,22 +822,22 @@ When we break this out by first party vs third party in the following table, we 
 <figure>
   <table>
     <tr>
-     <th>Client</th>   
+     <th>Client</th>
      <th>1st party</th>
      <th>3rd party</th>
-     <th>Overall</th>   
+     <th>Overall</th>
     </tr>
     <tr>
      <td><span style="font-weight:bold">desktop</span></td>
      <td>61.6%</td>
      <td>59.3%</td>
-     <td>60.7%</td>      
+     <td>60.7%</td>
     </tr>
     <tr>
      <td><span style="font-weight:bold">mobile</span></td>
      <td>61.8%</td>
      <td>57.9%</td>
-     <td>60.2%</td>      
+     <td>60.2%</td>
     </tr>
   </table>
   <figcaption>{{ figure_link(caption="Percent of requests with short TTLs.") }}</figcaption>
@@ -873,26 +847,22 @@ When we break this out by first party vs third party in the following table, we 
 
 Google's [Lighthouse](https://developers.google.com/web/tools/lighthouse) tool enables users to run a series of audits against web pages, and the [cache policy audit](https://developers.google.com/web/tools/lighthouse/audits/cache-policy) evaluates whether a site can benefit from additional caching. It does this by comparing the content age (via the `Last-Modified` header) to the cache TTL and estimating the probability that the resource would be served from cache. Depending on the score, you may see a caching recommendation in the results, with a list of specific resources that could be cached.
 
-**Placeholder for Figure 18: Lighthouse report highlighting potential cache policy improvements.**
-
 {{ figure_markup(
-  image="16_lighthouse_caching_audit.png",
+  image="lighthouse-caching-audit.png",
   link="https://almanac.httparchive.org/static/images/2020/caching/16_lighthouse_caching_audit.png",
   caption="Lighthouse report highlighting potential cache policy improvements.",
   description="Extract of the Lighthouse report highlighting potential cache policy improvements. The first and third party URLs, their cache TTL, and size is shown."
   )
 }}
 
-
 Lighthouse computes a score for each audit, ranging from 0% to 100%, and those scores are then factored into the overall scores. The caching score is based on potential byte savings. When we examine the Lighthouse results, we can get a perspective of how many sites are doing well with their cache policies.
 
-**Placeholder for Figure 19: Distribution of Lighthouse audit scores for the `uses-long-cache-ttl` for mobile web pages.**
 {{ figure_markup(
-  image="17_cache_ttl_lighthouse_score.png",
+  image="cache-ttl-lighthouse-score.png",
   caption="Distribution of Lighthouse audit scores for the `uses-long-cache-ttl` for mobile web pages.",
   description="A bar chart showing the distribution of Lighthouse audit scores for the `uses-long-cache-ttl` for mobile web pages. 37.5% of the responses have a score less than 0.10, 28.8% have a score between 0.10-0.39, 17.7% have a score between 0.40-0.79, and 12.1% have a score between 0.80-0.99. 3.3% have a score of 1 and 0.6% have no score.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=637059966&format=interactive",
-  sheets_gid="203111117",
+  sheets_gid="1554485361",
   sql_file="cache_ttl_lighthouse_score.sql"
   )
 }}
@@ -901,13 +871,12 @@ Only 3.3% of sites scored a 100%, meaning that the vast majority of sites can be
 
 Lighthouse also indicates how many bytes could be saved on repeat views by enabling a longer cache policy. Of the sites that could benefit from additional caching, 78.6% of them can reduce their page weight by up to 2MB!
 
-**Placeholder for Figure 20: Distribution of potential byte savings from the Lighthouse caching audit.**
 {{ figure_markup(
-  image="18_cache_wastedbytes_lighthouse.png",
+  image="cache-wasted-bytes-lighthouse.png",
   caption="Distribution of potential byte savings from the Lighthouse caching audit.",
   description="A bar chart showing the distribution of potential byte savings from the Lighthouse caching audit for mobile web pages. 57.2% of the responses have a size saving less than 1 MB, 21.58% have a saving between 1-2 MB, 7.8% have a saving between 2-3 MB, and 4.3% have a saving between 3-4 MB. 9.2% have a saving of 4 MB or more.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=534991851&format=interactive",
-  sheets_gid="203111118",
+  sheets_gid="2140407198",
   sql_file="cache_wastedbytes_lighthouse.sql"
   )
 }}
