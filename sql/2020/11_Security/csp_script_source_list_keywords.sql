@@ -34,10 +34,10 @@ FROM (
     COUNT(0) AS total_pages,
     COUNTIF(csp_header IS NOT NULL) AS freq_csp,
     COUNTIF(REGEXP_CONTAINS(csp_header, '(?i)(default|script)-src')) AS freq_default_script_src,
-    COUNTIF(REGEXP_CONTAINS(csp_header, '(?i)strict-dynamic')) AS freq_strict_dynamic,
-    COUNTIF(REGEXP_CONTAINS(csp_header, '(?i)nonce-')) AS freq_nonce,
-    COUNTIF(REGEXP_CONTAINS(csp_header, '(?i)unsafe-inline')) AS freq_unsafe_inline,
-    COUNTIF(REGEXP_CONTAINS(csp_header, '(?i)unsafe-eval')) AS freq_unsafe_eval
+    COUNTIF(REGEXP_CONTAINS(csp_header, '(?i)(default|script)-src[^;]+strict-dynamic')) AS freq_strict_dynamic,
+    COUNTIF(REGEXP_CONTAINS(csp_header, '(?i)(default|script)-src[^;]+nonce-')) AS freq_nonce,
+    COUNTIF(REGEXP_CONTAINS(csp_header, '(?i)(default|script)-src[^;]+unsafe-inline')) AS freq_unsafe_inline,
+    COUNTIF(REGEXP_CONTAINS(csp_header, '(?i)(default|script)-src[^;]+unsafe-eval')) AS freq_unsafe_eval
   FROM (
     SELECT
       client,
