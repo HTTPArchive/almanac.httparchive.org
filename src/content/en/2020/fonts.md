@@ -5,11 +5,11 @@ chapter_number: 4
 title: Fonts
 description: Fonts chapter of the 2020 Web Almanac covering where fonts are loaded from, font formats, font loading performance, variable fonts and color fonts.
 authors: [raphlinus, jpamental]
-reviewers: [davelab6, malchata, RoelN, notwaldorf, mandymichael, svgeesus, rsheeter]
+reviewers: [RoelN, svgeesus, davelab6, rsheeter]
 analysts: [AbbyTsai]
 translators: []
 jpamental_bio: Designer, tinkerer, typographer. Author of Responsive Typography, Invited Expert to the W3C, and 10yrs+ experience focused on better typography on the web.
-raphlinus_bio: Raph Levien has been working with fonts for over 35 years, including a PhD from UC Berkeley in font design tools. He is rejoining Google Fonts as a font technology researcher, after having co-founded the team in 2010.
+raphlinus_bio: Raph Levien has been working with fonts for over 35 years, including a PhD from UC Berkeley in font design tools. He is rejoining <a href="https://fonts.google.com/">Google Fonts</a> as a font technology researcher, after having co-founded the team in 2010.
 discuss: 2040
 results: https://docs.google.com/spreadsheets/d/1jjvZqYay5KmTle4atzFWqtbkz9ohw25KFmNtCS-7n3s/
 queries: 04_Fonts
@@ -56,7 +56,7 @@ https://discuss.httparchive.org/t/how-does-web-font-usage-vary-by-country/1649
   )
 }}
 
-The single top country is South Korea, which is not all that surprising given their consistently high internet speeds and low latency and the fact that Korean (Hangul) fonts are almost an order of magnitude larger than Latin. Web font usage in Japan and Chinese-speaking countries is considerably lower, likely because Chinese and Japanese fonts are vastly larger (the median font size being over 100 times larger than the median Latin size). This means web font usage in Japan is very low, and usage in China is effectively zero. Although [recent developments](https://www.w3.org/TR/2020/NOTE-PFE-evaluation-20201015/) may make web fonts usable in both countries, within a couple of years.
+The single top country is South Korea, which is not all that surprising given their consistently high internet speeds and low latency and the fact that Korean (Hangul) fonts are almost an order of magnitude larger than Latin. Web font usage in Japan and Chinese-speaking countries is considerably lower, likely because Chinese and Japanese fonts are vastly larger (the median font size being over 100 times larger than the median Latin size). This means web font usage in Japan is very low, and usage in China is effectively zero. Although recent developments in [progressive font enhancement](https://www.w3.org/TR/2020/NOTE-PFE-evaluation-20201015/) (about which see more below) may make web fonts usable in both countries, within a couple of years. There have been reports that Google Fonts have not been reliably accessible in China, and that might also have been a factor holding back adoption.
 
 {{ figure_markup(
   image="fonts-web-fonts-usage-top-countries.png",
@@ -77,7 +77,8 @@ It likely comes as no surprise that Google Fonts remains by far the most popular
 Another surprise in the data is the rise in fonts being served by Shopify. Growing from roughly 1.1% in 2019 to about 4% in 2020, there has clearly been a significant uptick in usage of web fonts by sites hosted on that platform. It's unclear if that is due to that service offering more fonts that they host on their CDN, if it's growth in use of their platform, or both. However, the increase in usage of both Shopify and Bootstrap represent the largest amount of growth other than Google Fonts, making it a very noticeable data point.
 
 #### Not all services have the same service
-It was interesting to note the differences in speed from the various free/open source and commercial services. When looking at FCP and LCP times, Google Fonts is roughly in the middle, but generally a bit slower than the median value. The fastest services in the dataset are Shopify and Wix (serving assets from parastorage.com), and it might be presumed they focus on a small number of highly optimized files. Google on the other hand is also serving web fonts globally of widely varying sizes (due to language), resulting in slightly slower median times.
+
+It was interesting to note the differences in speed from the various free/open source and commercial services. When looking at First Content Paint (FCP) and Last Content Paint (LCP) times, Google Fonts is roughly in the middle, but generally a bit slower than the median value. The fastest services in the dataset are Shopify and Wix (serving assets from parastorage.com), and it might be presumed they focus on a small number of highly optimized files. Google on the other hand is also serving web fonts globally of widely varying sizes (due to language), resulting in slightly slower median times.
 
 When viewing commercial services such as Adobe (use.typekit.net) or Monotype (fast.fonts.com) it's interesting to note that on desktop they tend to be as fast or slightly faster than Google Fonts, but are noticeably slower on mobile. Conventional wisdom has generally held that the tracking scripts used by those services substantially slow them down, but that is apparently less an issue today than it has been in years past.
 
@@ -111,7 +112,7 @@ It wouldn't be sound to infer causality between hosting strategy from the above 
 
 ## Racing to first paint
 
-The biggest performance concern about integrating web fonts is that they may delay the time when the first readable text is displayed. Two optimization techniques can help mitigate those issues: `font-display` and `resource-hint`.
+The biggest performance concern about integrating web fonts is that they may delay the time when the first readable text is displayed. Two optimization techniques can help mitigate those issues: `font-display` and resource hints.
 
 The [`font-display`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display) setting controls what happens while waiting for the web font to load, and is generally a tradeoff between performance and visual richness. The most popular is `swap`, used on about 10% of web pages, which displays using the fallback font if the web font doesn't load quickly, then swaps in the web font when it does load. Other settings include `block`, which delays displaying text at all (minimizing the potential flashing effect), and `fallback`, which is like `swap` but gives up quickly and uses the fallback font if the font doesn't load in a moderate amount of time, and `optional`, which immediately gives up and uses the fallback font; this is used by only 1% of web pages, presumably those most concerned with performance.
 
@@ -147,7 +148,7 @@ We can analyze the effect of these settings on first content paint and last cont
   )
 }}
 
-There are two other interesting inferences from this data. One might expect the `block` setting to have a significant impact on FCP, especially on mobile, but in practice the effect is not that large. That suggests that waiting for font assets is seldom the limiting factor for the webpage performance as a whole, though it would certainly be a major. The `auto` setting (which is also what you get if you don't specify it) looks a lot like `block`; though it's technically up to the browser, [the default seems to be blocking](https://nooshu.github.io/blog/2020/02/23/improving-perceived-performance-with-the-css-font-display-property/).
+There are two other interesting inferences from this data. One might expect the `block` setting to have a significant impact on FCP, especially on mobile, but in practice the effect is not that large. That suggests that waiting for font assets is seldom the limiting factor for the webpage performance as a whole, though it would certainly be a major factor in pages without lots of resources such as images. The `auto` setting (which is also what you get if you don't specify it) looks a lot like `block`; though it's technically up to the browser, [the default is blocking in most cases](https://nooshu.github.io/blog/2020/02/23/improving-perceived-performance-with-the-css-font-display-property/).
 
 Finally, one justification for using `fallback` is to improve Last Content Paint times compared to `swap` (which is more likely to respect the designer's visual intent), but the data do not support this case; this performance metric is no better. Perhaps this is why the setting is not popular, used by only about 1% of pages.
 
@@ -189,7 +190,7 @@ Adding a [resource hint element](https://www.w3.org/TR/resource-hints/#resource-
   )
 }}
 
-Analysis of this data suggests that the `dns-prefetch` setting, while the most popular, doesn't improve performance much. Presumably, the DNS for popular web font servers are likely to be cached anyway. The other settings give a lot more bang for the buck, with `preconnect` being a sweet spot for ease of use, flexibility, and performance improvement. As of March 2020, Google Fonts recommends adding this line to the HTML source, immediately before the CSS link:
+Analysis of this data suggests that the `dns-prefetch` setting, while the most popular, doesn't improve performance much, if at all. Presumably, the DNS for popular web font servers are likely to be cached anyway. The other settings give a lot more bang for the buck, with `preconnect` being a sweet spot for ease of use, flexibility, and performance improvement. As of March 2020, Google Fonts recommends adding this line to the HTML source, immediately before the CSS link:
 
 ```html
 <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -235,7 +236,7 @@ WOFF2 is the best compression format, and is now [supported](https://caniuse.com
   )
 }}
 
-WOFF is an older, less efficient compression mechanism, but almost universally supported, accounting for an additional 11.6% of fonts served. In almost all cases (Internet Explorer 9-11 being the main exception), serving a font as WOFF is leaving performance on the table, and shows a risk of self-hosting. Even if the format choices were optimal at the time of integration, it requires extra effort to update them as browsers improve. Using a hosted service guarantees that the best format is chosen, along with all relevant optimizations.
+WOFF is an older, less efficient compression mechanism, but almost universally supported, accounting for an additional 11.6% of fonts served. In almost all cases (Internet Explorer 9-11 being the main exception), serving a font as WOFF is leaving performance on the table, and shows a risk of self-hosting; even if the format choices were optimal at the time of integration, it requires extra effort to update them as browsers improve. Using a hosted service guarantees that the best format is chosen, along with all relevant optimizations.
 
 Ancient versions of Internet Explorer (6-8), which still make about 1.5% of global browser share, require EOT. These don't show up in the top 5 MIME formats, but are necessary for maximum compatibility.
 
@@ -263,13 +264,11 @@ A note of caution, in determining the most popular fonts you can get different r
 
 Color fonts, in one form or other, are supported by most modern browsers, but usage is still close to nonexistent (a total of 755 pages total, the majority of which are in SVG format, which is not supported in Chrome). No doubt part of the problem is the diversity of formats, in fact 4 in widespread use. These come in bitmap and vector flavors. The two bitmap formats are technologically very similar, but SBIX (originally a proprietary Apple format) is not supported in Firefox, while CBDT/CBLC is not supported in Safari.
 
-The COLR vector format is supported on all major modern browsers, but only fairly recently. The fourth format is embedding SVG in OpenType (not to be confused with SVG fonts), but not supported in Chrome. One drawback of SVG in OpenType is lack of support for font variations, an increasingly important aspect of modern Web design. For this reason, the COLR format is likely to prevail, particularly as support for gradients and clipping is being developed for a future version of COLR is.
+The COLR vector format is supported on all major modern browsers, but only fairly recently. The fourth format is embedding SVG in OpenType (not to be confused with SVG fonts), but not supported in Chrome. One drawback of SVG in OpenType is lack of support for font variations, an increasingly important aspect of modern Web design. For this reason, the COLR format is likely to prevail, particularly as support for gradients and clipping is being developed for a future version of COLR. Vector formats are usually much smaller than images, and also scale cleanly to larger sizes, so when COLR arrives with a richer shading model, it could well become popular.
 
 One reason for the poor support of color fonts on the web is that the colors have to be baked into the font files themselves. If you use the same typeface with three different color combinations, near-identical files have to be downloaded three times, and changng a color means reaching for a font editor.
 
-While there is a feature in CSS to [override or replace the color palettes in fonts](https://drafts.csswg.org/css-fonts-4/#font-palette-values), this has not yet been implemented in browsers which certainly holds back the ease of deploying color web fonts.
-
-Generally the bitmap format has larger files and doesn't scale as cleanly to larger sizes, but COLR only offers flat color shading (though work is ongoing to offer richer shading options in a future version).
+While there is a feature in CSS to [override or replace the color palettes in fonts](https://drafts.csswg.org/css-fonts-4/#font-palette-values), this has not yet been implemented in browsers, which certainly holds back the ease of deploying color web fonts.
 
 Probably most usage of color fonts is for emoji, but the capability is general purpose and color fonts offer many design possibilities. While color web fonts haven't taken off yet, the underlying technology is heavily used to deliver system emoji, where file format compatibility is much less of an issue.
 
@@ -289,7 +288,7 @@ Lots more information about color fonts, including examples, are available at [c
   )
 }}
 
-Variable fonts are certainly one of the biggest stories this year. They're seen in 8.37% of desktop pages, and 13.84% of mobile. That's up from an average of 1.8% last year, a huge growth factor. It's not hard to see why their popularity is increasing - they offer more design flexibility, and also potentially smaller binary font sizes, especially if multiple styles of the same font are used on the same page.
+Variable fonts are certainly one of the biggest stories this year. They're seen in 8.37% of desktop pages, and 13.84% of mobile. That's up from an average of 1.8% last year, a huge growth factor. It's not hard to see why their popularity is increasing – they offer more design flexibility, and also potentially smaller binary font sizes, especially if multiple styles of the same font are used on the same page.
 
 By far the most commonly used axis is `wght` (which controls weight), at 84.7% desktop and 90.4% mobile. However, `wdth` (width) accounts for approximately 5% of variable font usage. In 2020, Google Fonts began serving 2-axis fonts with both width and weight axes.
 
