@@ -80,7 +80,7 @@ Automated checks for the presence of alternative text do not assess the quality 
 
 
 | File extension type | Desktop (sites with non-empty alt) | Mobile (sites with non-empty alt) |
-|----------------------------------------------------------------------------------------------|
+|---------------------|------------------------------------|-----------------------------------|
 | jpg | 3.73% | 3.50% |
 | png | 2.98% | 2.81% |
 | ico | 1.34% | 1.6% |
