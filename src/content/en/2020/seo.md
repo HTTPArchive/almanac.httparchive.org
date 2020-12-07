@@ -20,7 +20,6 @@ featured_stat_2: 19.96%
 featured_stat_label_2: Mobile websites scored 'Good' Core Web Vitals
 featured_stat_3: 11.5%
 featured_stat_label_3: More words are displayed in the rendered than the raw HTML of the median mobile site
-unedited: true
 ---
 
 ## Introduction
