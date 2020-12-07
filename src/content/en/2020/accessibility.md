@@ -8,7 +8,7 @@ authors: [oluoluoxenfree, alextait1]
 reviewers: [aardrian, ericwbailey, obto]
 analysts: [obto]
 translators: []
-#oluoluoxenfree_bio: TODO
+#oluoluoxenfree_bio: Olu Niyi-Awosusi is a software engineer at the FT who loves lists, learning new things, Bee and Puppycat, <a href="https://alistapart.com/article/building-the-woke-web/" target="_blank">social justice, accessibility</a> and trying harder every day.
 #alextait1_bio: TODO
 discuss: 2044
 results: https://docs.google.com/spreadsheets/d/1UjEBhq0TfYxUpdpq5IuxjeHB4yqhJq4NOKEd6Dwwrdk/
@@ -20,5 +20,6 @@ queries: 08_Accessibility
 #featured_stat_label_2: TODO
 #featured_stat_3: TODO
 #featured_stat_label_3: TODO
-unedited: true
 ---
+
+
