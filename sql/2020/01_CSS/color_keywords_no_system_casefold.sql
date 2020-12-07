@@ -89,6 +89,7 @@ try {
     }
 
     walkDeclarations(ast, ({property, value}) => {
+      if (value.length > 1000) return;
       // First remove url() references to avoid them mucking the results
       for (let f of extractFunctionCalls(value, {names: "url"})) {
         let [start, end] = f.pos;
@@ -174,9 +175,7 @@ FROM (
     `httparchive.almanac.parsed_css`,
     UNNEST(getColorKeywords(css)) AS keyword
   WHERE
-    date = '2020-08-01' AND
-    # Limit the size of the CSS to avoid OOM crashes.
-    LENGTH(css) < 0.1 * 1024 * 1024)
+    date = '2020-08-01')
 GROUP BY
   client,
   keyword
