@@ -631,7 +631,7 @@ If we break this out by HTTP vs HTTPS, then this gets even more interesting. Eve
      <td>64,373</td>
     </tr>
   </table>
-  <figcaption>{{ figure_link(caption="Number of websites using service workers by HTTP/HTTPS.", sheets_gid="2106765718", sql_file="appcache_and_serviceworkers.sql) }}</figcaption>
+  <figcaption>{{ figure_link(caption="Number of websites using service workers by HTTP/HTTPS.", sheets_gid="2106765718", sql_file="appcache_and_serviceworkers.sql") }}</figcaption>
 </figure>
 
 ## What type of content are we caching?
