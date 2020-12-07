@@ -79,8 +79,8 @@ When describing an image it is imperative to consider what information the user 
 Automated checks for the presence of alternative text do not assess the quality of this text. As described in the previous section, the meaning of an image needs to be considered when writing this text. One common unhelpful pattern is describing the image with the file extension name. For the previous “red arrow png” example, a screen reader user likely does not get helpful information from the image format. We found that 6.8% of desktop sites (with at least one instance of the alt attribute) had a file extension in it’s value. The top 5 file extensions explicitly included in the alt text value (for sites with images that have non-empty alt values) are jpg, png, ico, gif and jpeg. This likely comes from a CMS or another auto-generated alternative text mechanism. It is imperative that these alt attribute values be meaningful, regardless of how they are implemented.
 
 
-| File extension type | Desktop (sites with non-empty alt) | Mobile (sites with non-empty alt)
-----------------------------------------------------------------------------------------------
+| File extension type | Desktop (sites with non-empty alt) | Mobile (sites with non-empty alt) |
+|----------------------------------------------------------------------------------------------|
 | jpg | 3.73% | 3.50% |
 | png | 2.98% | 2.81% |
 | ico | 1.34% | 1.6% |
