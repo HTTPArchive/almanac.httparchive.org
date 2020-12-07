@@ -15,9 +15,12 @@
 </span>
 {% endblock %}
 
+{% block intro_title %}Web Almanac{% endblock %}
+{% block intro_sub_title %}HTTP Archive relatório annual do <br> <b>estado da web</b>{% endblock %}
+
 {% block mission %}
 <p>
-Nossa missão é combinar as estatísticas brutas e as tendências do HTTP Archive com a experiência da comunidade da web. O Web Almanac é um relatório abrangente sobre o estado da Web, apoiado por dados reais e especialistas confiáveis da Web. É composto por 20 capítulos que abrangem aspectos do conteúdo da página, experiência do usuário, publicação e distribuição.
+Nossa missão é combinar as estatísticas brutas e as tendências do HTTP Archive com a experiência da comunidade da web. O Web Almanac é um relatório abrangente sobre o estado da Web, apoiado por dados reais e especialistas confiáveis da Web. É composto por {{ supported_chapters | length }} capítulos que abrangem aspectos do conteúdo da página, experiência do usuário, publicação e distribuição.
 </p>
 {% endblock %}
 
