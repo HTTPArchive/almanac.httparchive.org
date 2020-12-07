@@ -16,12 +16,13 @@ discuss: 2055
 results: https://docs.google.com/spreadsheets/d/1NKbP4AqMkgCNCsVD3yLhO2d0aqIsgZ7AGLEtUDHl9yY/
 queries: 19_Compression
 featured_quote: Using HTTP compression makes a website load faster and therefore guarantees a better user experience.
-#featured_stat_1: 23%
-#featured_stat_label_1: Compressed requests which use brotli
-#featured_stat_2: 77%
-#featured_stat_label_2: Compressed requests which use gzip
-#featured_stat_3: 74%
-#featured_stat_label_3: Websites that pass the Lighthouse audit with maximum score on text compression
+featured_stat_1: 23%
+featured_stat_label_1: Compressed requests which use brotli
+featured_stat_2: 77%
+featured_stat_label_2: Compressed requests which use gzip
+featured_stat_3: 74%
+featured_stat_label_3: Websites that pass the Lighthouse audit with maximum score on text compression
+unedited: true
 ---
 
 ## Introduction
@@ -271,4 +272,3 @@ Because the [HTTP Archive runs Lighthouse audits](./methodology#lighthouse) for 
 Compared with [last year's almanac](../2019/compression), there is a clear trend towards using more text compression. The number of requests that don't use any text compression went down a little more than 2%, while at the same time the use of brotli has increased by almost 2%. The Lighthouse scores have improved significantly.
 
 Text compression is widely used for the relevant formats, although there is still a significant percentage of the http-requests that could benefit from additional compression. You can profit from taking a close look at the configuration of your server and set compression methods and levels to your need. A great impact for a more positive user experience could be made by carefully choosing defaults for the most popular http servers.
-
