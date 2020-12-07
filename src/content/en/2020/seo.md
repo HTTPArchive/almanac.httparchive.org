@@ -183,8 +183,7 @@ When analyzing the usage of the `Disallow` statement in `robots.txt` by using Li
 
 An analysis of the `robots.txt` `Disallow` statement usage along the [meta robots](https://developers.google.com/search/reference/robots_meta_tag) _indexability_ directives was also done, finding 1.02% of the sites including a `Disallow` statement along indexable pages featuring a meta robots `index` directive, with only 0.03% of sites using the `Disallow` statement in `robots.txt` along _noindexed_ pages via the meta robots `noindex` directive.
 
-The higher usage of the disallow statement along indexable pages than noindexed ones is notable as [Google documentation](https://developers.google.com/search/docs/advanced/robots/intro) states that site owners should not use `robots.txt` as a means to hide web pages from Google Search, as internal linking with descriptive text could result in the page being indexed without a crawler visiting the page. Instead, site owners should use other methods, like a `noindex` directive via meta robots.
-{# TODO(authors): Tie this notable fact back to the data: is it notable because the disallow numbers are so low? What does that say about site owners following Google's guidance? #}
+The higher usage of the `Disallow` statement on indexable pages than noindexed ones is notable as [Google documentation](https://developers.google.com/search/docs/advanced/robots/intro) states that site owners should not use `robots.txt` as a means to hide web pages from Google Search, as internal linking with descriptive text could result in the page being indexed without a crawler visiting the page. Instead, site owners should use other methods, like a `noindex` directive via meta robots.
 
 #### Meta robots
 
@@ -192,7 +191,6 @@ The `robots` meta tag and `X-Robots-Tag` HTTP header are an extension of the pro
 
 Meta tags were the dominant method of granular execution with 27.70% of desktop and 27.96% of mobile pages using the tag. `X-Robots-Tag` directives were found on 0.27% and 0.40% of desktop and mobile, respectively.
 
-{# TODO(analysts): Should "X-Robots" be "X-Robots-Tag" here? #}
 {{ figure_markup(
   image="seo-robots-directive-use.png",
   caption="Usage of meta robots and <code>X-Robots-Tag</code> directives.",
@@ -217,7 +215,6 @@ Interestingly, rendering changed the meta robots tag in 0.16% of pages. While th
 
 [In last year's chapter](../2019/seo#canonicalization), it was identified that 48.34% of mobile pages were using a canonical tag. This year the number of mobile  pages featuring a canonical tag has grown to 53.61%.
 
-{# TODO(analysts): It's not clear that B and C add up to A in this chart. It took me a while to realize that they weren't each different types of tags. If the total of 53.61% is significant, I'd recommend a "big number" figure to call attention to it, and only include B and C in this chart. #}
 {{ figure_markup(
   image="seo-presence-of-canonical-tag.png",
   caption="Usage of canonical tags.",
@@ -235,7 +232,6 @@ Not only do mobile pages include more canonical tags than desktop ones (53.61% v
 
 Canonical URLs can be specified through different methods: by using the canonical link via the HTTP headers or the HTML `head` of a page, or by submitting them in XML sitemaps. When analyzing which is the most popular canonical link implementation method, it was found that only 1.03% of desktop pages and 0.88% of mobile ones are relying on the HTTP headers for their implementation, meaning that canonical tags are prominently implemented via the HTML `head` of a page.
 
-{# TODO(analysts): Should "HTTP Head" be "HTTP Header" to distinguish it from HTML head? #}
 {{ figure_markup(
   image="seo-canonical-implementation-method.png",
   caption="Usage of HTTP header and HTML <code>head</code> canonicalization methods.",
@@ -259,45 +255,65 @@ To understand what search engines are able to effectively extract, we have broke
 
 
 #### Rendered versus non-rendered text content
-{# TODO(editors): Update link to 2020 JS technologies section. #}
+
 The usage of Single Page Application (SPA) [JavaScript](../javascript) technologies has exploded with the growth of the web. This design pattern introduces difficulties for search engine spiders because both the execution of JavaScript transformations at runtime and user interactions with the page after load can cause additional content to appear or be rendered.
 
 Search engines encounter pages through its crawling activity, but may or may not choose to implement a second step of rendering a page. As a result, there may be disparities between the content that a user sees and the content that a search engine indexes and considers for rankings.
 
 We assessed word count as a heuristic of that disparity.
 
-{{ figure_markup(
-  image="seo-visible-words-per-page-raw.png",
-  caption="Distribution of the number of raw words per page.",
-  description="Bar chart showing the number of words per page (in raw response) per percentile (10, 25, 50, 75, and 90). The median mobile site displays 13.33% less text content than its desktop counterpart.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=831714745&format=interactive",
-  sheets_gid="775602646",
-  sql_file="pages_wpt_bodies_by_device_and_percentile.sql"
-) }}
-
-{# TODO(authors, analysts): These charts convey the absolute counts of words, but the written interpretations discuss the relative differences between raw/rendered and desktop/mobile. Is it worth having charts depict these relative differences directly? A reader might be thinking "where did these numbers come from". #}
-We found that the median desktop site features 13.46% more words when rendered than it does on an initial crawl of its raw HTML. We also found that the median mobile site displays 13.33% less text content than its desktop counterpart.
-
-{{ figure_markup(
-  image="seo-visible-words-per-page-rendered.png",
-  caption="Distribution of the number of rendered words per page.",
-  description="Bar chart showing the number of visible words per page (in rendered response) per percentile (10, 25, 50, 75, and 90). The median mobile site displays 11.5% more words when rendered than its raw HTML counterpart.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=961460345&format=interactive",
-  sheets_gid="775602646",
-  sql_file="pages_wpt_bodies_by_device_and_percentile.sql"
-) }}
-
-The median mobile site also displays 11.5% more words when rendered than its raw HTML counterpart.
-
-Across our sample set, there are disparities across the combination of mobile/desktop and rendered/non-rendered. This suggests that although search engines are continually improving in this area, most sites across the web are missing out on opportunities to improve their organic search visibility through a stronger focus on ensuring their content is available and indexable. This is also a concern because the lion's share of available SEO tools do not crawl in the above combination of contexts and automatically identify this as an issue.
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Values</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+        <th>Difference</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Raw</td>
+        <td class="numeric">360</td>
+        <td class="numeric">312</td>
+        <td class="numeric">-13.33%</td>
+      </tr>
+      <tr>
+        <td>Rendered</td>
+        <td class="numeric">402</td>
+        <td class="numeric">348</td>
+        <td class="numeric">-13.43%</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th>Difference</th>
+        <td class="numeric">11.67%</td>
+        <td class="numeric">11.54%</td>
+        <td></td>
+      </tr>
+    </tfoot>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="Comparison of the median number of raw and rendered words per desktop and mobile page.",
+      sheets_gid="775602646",
+      sql_file="pages_wpt_bodies_by_device_and_percentile.sql"
+    ) }}
+  </figcaption>
+</figure>
 
 This year, the median desktop page was found to have 402 words and the mobile page had 348 words. While [last year](../2019/seo#word-count), the median desktop page had 346 words, and the median mobile page had a slightly lower word count at 306 words. This represents 16.2% and 13.7% growth respectively.
+
+We found that the median desktop site features 11.67% more words when rendered than it does on an initial crawl of its raw HTML. We also found that the median mobile site displays 13.33% less text content than its desktop counterpart. The median mobile site also displays 11.54% more words when rendered than its raw HTML counterpart.
+
+Across our sample set, there are disparities across the combination of mobile/desktop and rendered/non-rendered. This suggests that although search engines are continually improving in this area, most sites across the web are missing out on opportunities to improve their organic search visibility through a stronger focus on ensuring their content is available and indexable. This is also a concern because the lion's share of available SEO tools do not crawl in the above combination of contexts and automatically identify this as an issue.
 
 #### Headings
 
 Heading elements (`H1`-`H6`) act as a mechanism to visually indicate structure in a page's content. Although these HTML elements don't carry the weight they used to in search rankings, they still act as a valuable way to structure pages and signal other elements in the search engine results pages (SERPs) like _featured snippets_ or other extraction methods that align with [Google's new passage indexing](https://www.blog.google/products/search/search-on/).
 
-{# TODO(analysts, authors): Nit: replace "This includes empty ones" with "Heading levels" and clarify including empty headings in the prose. #}
 {{ figure_markup(
   image="seo-presence-of-h-elements.png",
   caption="Usage of heading levels 1 through 4, including empty headings.",
@@ -442,7 +458,6 @@ The median page features a page title that is six words long. There is no differ
 
 The median page title character count is 38 characters on both mobile and desktop. Interestingly, this is up from 20 characters on desktop and 21 characters on mobile from [last year's analysis](../2019/seo#page-titles). The disparity between the contexts has disappeared year-over-year except within the 90th percentile wherein there is a one character difference.
 
-{# TODO(analysts): The y-axis label should be "Number of characters". #}
 {{ figure_markup(
   image="seo-title-character-count.png",
   caption="Distribution of the number of characters per page title.",
@@ -499,8 +514,8 @@ The median desktop page includes 21 `img` tags and the median mobile page has 19
   sql_file="pages_markup_by_device_and_percentile.sql"
 ) }}
 
-{# TODO(authors): Add your interpretation of these results. What do you hope readers get from it? Also consider linking to the Accessibility chapter here if that ties in. #}
-The median web page is missing 2.99% of `alt` attributes on desktop and 2.44% of `alt` attributes on mobile.
+{# TODO(authors): Add your interpretation of these results. What do you hope readers get from it? #}
+The median web page is missing 2.99% of `alt` attributes on desktop and 2.44% of `alt` attributes on mobile. For more information on the importance of `alt` attributes, see the [Accessibility](./accessibility) chapter.
 
 {{ figure_markup(
   image="seo-percentage-of-missing-img-alt-attribute.png",
@@ -568,7 +583,6 @@ The median page has 61 internal links (going to pages within the same site) on d
   sql_file="pages_wpt_bodies_by_device_and_percentile.sql"
 ) }}
 
-{# TODO(authors): Add your interpretation of these results. What do you hope readers will get out of it? If there's not much to say, would anyone miss it if it was dropped? Also, please clarify the redundancy of outgoing and external for a non-SEO like myself :) #}
 The median page is linking to external sites 7 times on desktop and 6 times on mobile. This is a decrease from last year, when it was found that the median number of external links per page were 10 in desktop and 8 on mobile. This decrease in external links could suggest that websites are now being more careful when linking to other sites, whether to avoid passing link popularity or referring users to them. 
 
 
@@ -599,7 +613,6 @@ The median web page uses an image as anchor text to link in 9.80% of desktop and
 
 There is a disparity in the links between mobile and desktop that will negatively impact sites as Google becomes more committed to mobile-only indexing rather than just mobile-first indexing. This is illustrated in the 62 links on mobile versus the 68 links on desktop for the median web page.
 
-{# TODO(authors): What is a text link and how is that different from all the other links we've been talking about? At least to a non-SEO these all seem non-descript. #}
 {{ figure_markup(
   image="seo-text-links.png",
   caption="Distribution of the number of text links per page.",
@@ -616,7 +629,6 @@ In September of 2019, [Google introduced attributes](https://webmasters.googlebl
 
 Our review of pages indicates that 28.58% of pages include `rel=nofollow` attributes on desktop and 30.74% on mobile. However, `rel=ugc` and `rel=sponsored` adoption is quite low with less than 0.3% of pages (about 20,000) having either. Since these attributes don't add any more value to a publisher than `rel=nofollow`, it is reasonable to expect that the rate of adoption will continue to be slow.
 
-{# TODO(analysts): This chart is unusual in that desktop/mobile are the x-axis values. Can you swap it to be like the other charts where nofollow, sponsored, and ugc are on the x-axis and there are two bars for each? #}
 {{ figure_markup(
   image="seo-nofollow-ugc-sponsored-attributes.png",
   alt="Percent of pages having rel=nofollow, rel=ugc, and rel=sponsored attributes.",
@@ -743,7 +755,7 @@ We found that 80.29% of desktop pages and 82.92% of the mobile ones are using ei
     {{ figure_link(
       caption="Percent of pages that include each media query feature.",
       sheets_gid="1141218471",
-      sql_file="TODO..sql"
+      sql_file="../01_CSS/media_query_features.sql"
     ) }}
   </figcaption>
 </figure>
@@ -786,7 +798,6 @@ As announced in November 2020, three performance metrics known as [Core Web Vita
 
 Desktop continues to be the more performant platform for users despite more users on mobile devices. 33.13% of websites scored _Good_ Core Web Vitals for desktop while only 19.96% of their mobile counterparts passed the Core Web Vitals assessment.
 
-{# TODO(analysts): Please double check the following two sql_files, as these metrics are related to Lighthouse. #}
 {{ figure_markup(
   image="seo-good-core-web-vitals-score-per-device.png",
   caption="Percent of websites passing the Core Web Vitals assessment per device.",
@@ -800,8 +811,7 @@ Desktop continues to be the more performant platform for users despite more user
 
 A user's physical location impacts performance perception as their locally available telecom infrastructure, network bandwidth capacity, and the cost of data create unique loading conditions.
 
-{# TODO(authors): China isn't included in this chart because it has a smaller number of websites. Is it worth discussing Korea instead so readers can see how it compares? #}
-Users located in the United States recorded the largest absolute number of websites with _Good_ Core Web Vitals experiences, but relatively, these accounted for only 31.88% of all websites. At 56.63%, China recorded the highest percentage of 'Good' Core Web Vital experiences. The portion of websites each country represents in the Chrome User Experience Report data set is worth noting as 1,622,765 total websites generated from users in the United States dwarfs the 21,270 websites requested from users in China.
+Users located in the United States recorded the largest absolute number of websites with _Good_ Core Web Vitals experiences despite only 32% of sites earning the passing grade. Republic of Korea recorded the highest percentage of _Good_ Core Web Vital experiences at 52%. The relative portion of total websites requested by each country is worth noting. Users in United States generated 8X the total origin requests as generated by Republic of Korea users.
 
 {{ figure_markup(
   image="seo-aggregate-cwv-performance-by-country.png",
