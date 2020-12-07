@@ -80,7 +80,7 @@ The way we load JavaScript has a significant impact on the overall experience.
 
 JavaScript, by default, is parser blocking. In other words, when the browser discovers a script element, it must pause parsing of the HTML until the script has been downloaded, parsed and executed. It's a significant bottleneck and a common contributor to pages that are slow to render.
 
-We can start to offset some of the cost of loading JavaScript by loading scripts either asynchronously (which only halts the HTML parser during the parse and execution phase) or deferred (which doesn't halt the HTML parser at all). Both attributes are only available on external scripts—inline scripts cannot have them applied.
+We can start to offset some of the cost of loading JavaScript by loading scripts either asynchronously (which only halts the HTML parser during the parse and execution phases, but not during the download phase) or deferred (which doesn't halt the HTML parser at all). Both attributes are only available on external scripts—inline scripts cannot have them applied.
 
 On mobile, external scripts comprise 59.0% of all script elements found. _As an aside, when we talk about how much JavaScript is loaded on a page earlier, that total doesn't account for the size of these inline scripts—because they're part of the HTML document, they're counted against the markup size. This means we load even more script that the numbers show._
 
@@ -129,9 +129,31 @@ It's worth taking a closer look those scripts that _don't_ have compression appl
 Thankfully, that's exactly what we see, particularly in third-party scripts where 90% of uncompressed scripts are less than 5kb in size. On the other hand, 49% of uncompressed first-party scripts are less than 5kb and 37% of uncompressed first-party scripts are over 10kb. So while we do see a lot of small uncompressed first-party scripts, there are still quite a few that would benefit from some compression.
 
 ## What do we use? {{WIP}}
+As we've increasingly used more JavaScript to power our sites and applications, there has also been an increasing demand for open-source libraries and frameworks to help with improving developer productivity and overall code maintainability. Sites that _don't_ wield one of these tools are definitely the minority on today's web—jQuery alone is found on nearly 85% of the mobile pages tracked by HTTP Archive.
+
+It's important that we think critically about the tools we use to build the web and what the trade-offs are, so it makes sense to look closely at what we see in use today.
+
+### Libraries
+HTTP Archive uses Wappalyzer to detect technologies in use on a given page. Wappalazyer tracks both JavaScript Libraries (think of these as a collection of snippets or helper functions to ease development, like jQuery) and JavaScript Frameworks (these are more likely scaffolding and provide templating and structure, like React).
+
+The popular libraries in use are largely unchanged from last year, with jQuery continuing to dominate usage and only one of the top 21 libraries falling out (lazy.js, replaced by DataTables). In fact, even the percentages of the top libraries has barely changed from last year. 
+
+{{ table? showing rank, library, percentage and last years rank}}
+
+Last year, Houssein posited a few reasons for why jQuery's dominance continues:
+
+> WordPress, which is used in more than 30% of sites, includes jQuery by default.
+> Switching from jQuery to a newer client-side library can take time depending on how large an application is, and many sites may consist of jQuery in addition to newer client-side libraries.
+
+Both are very sound guesses, and it seems the situation hasn't changed much on either front.
+
+In fact, the dominance of jQuery is supported even further when you stop to consider that, of the top 10 libraries, 6 of them are either jQuery or require jQuery in order to be used (jQuery UI, jQuery Migrate, FancyBox, Lightbox and Slick).
+
+### Frameworks
+
 
 ## What's the Impact?
-We have a pretty good picture now of how much JavaScript we use, where it comes from and what we use it for. But while that's interesting enough on its own, the real kicker is the "so what?" What impact does all this script actually have on the experience of our pages?
+We have a pretty good picture now of how much JavaScript we use, where it comes from and what we use it for. While that's interesting enough on its own, the real kicker is the "so what?" What impact does all this script actually have on the experience of our pages?
 
 The first thing we should consider is what happens with all that JavaScript once its been downloaded. Downloading is only the first part of the JavaScript journey. The browser still has to parse all that script, compile it, and eventually execute it. While browsers are increasingly finding ways to offload 
 
@@ -150,7 +172,7 @@ One way of looking at how this translates into impacting the user experience is 
 
 The above chart uses the Pearson coefficient of correlation. There's a long, kinda complex definition of what that means precisely, but the gist is that we're looking for the strength of the correlation between two different numbers. If we find a coefficient of 1, we'd have a direct correlation. A correlation of 0 would show no connection between two numbers. Anything below zero shows a negative correlation—in other words, as one number goes up the other one decreases.
 
-First, there doesn't seem to be much measurable correlation between our JavaScript metrics and the Lighthouse Accessibility score here. That stands in stark opposition to what's been found elsewhere, notably through WebAim's annual research.
+First, there doesn't seem to be much measurable correlation between our JavaScript metrics and the Lighthouse Accessibility score here. That stands in stark opposition to what's been found elsewhere, notably through [WebAim's annual research](https://webaim.org/projects/million/#frameworks).
 
 The most likely explanation for this is that Lighthouse's accessibility tests aren't as comprehensive (yet!) as what is available through other tools, like WebAIM, that have accessibility as their primary focus.
 
@@ -161,7 +183,7 @@ The correlation between JavaScript bytes and Lighthouse performance scores is -.
 The connection between Total Blocking Time and JavaScript bytes is even more signficant (.55 for overall bytes, .48 for third-party bytes). That's not too surprising given what we know about all the work browsers have to do to get JavaScript to run in a page—more bytes means more time.
 
 ### Security Vulnerabilities
-One other helpful audit that Lighthouse runs is to check for known security vulnerabilities in third-party libraries. It does this by detecting which libraries and frameworks are used on a given page, and what version is used of each. Then it checks Snyk's open-source vulnerability database to see what vulnerabilities have been discovered in the identified tools.
+One other helpful audit that Lighthouse runs is to check for known security vulnerabilities in third-party libraries. It does this by detecting which libraries and frameworks are used on a given page, and what version is used of each. Then it checks [Snyk's open-source vulnerability database](https://snyk.io/vuln?type=npm) to see what vulnerabilities have been discovered in the identified tools.
 
 {{ pie chart showing percentage with at least one known vuln }}
 
