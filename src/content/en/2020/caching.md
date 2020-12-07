@@ -797,7 +797,8 @@ The graphs below illustrate the relative age of resources by content type. Some 
   description="A stack bar chart showing the age of content, split into weeks 0-52, > one year and > two years with null and negative figures shown too. The stats are split into first-party and third-party. The value 0 is used most particularly for first-party HTML, text and xml, and for up to 50% of third-party requests across all assets types. There is a mix using intermediary years and then considerable usage for one year and two year.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=2056330432&format=interactive",
   sheets_gid="1889235328", 
-  sql_file="14_resource_age_party_and_type_wise_groups.sql"
+  sql_file="14_resource_age_party_and_type_wise_groups.sql",
+  width=650
   )
 }}
 
@@ -807,7 +808,8 @@ The graphs below illustrate the relative age of resources by content type. Some 
   description="A stack bar chart showing the age of content, split into weeks 0-52, > one year and > two years with null and negative figures shown too. The stats are split into first-party and third-party. The value 0 is used most particularly for first-party HTML, text and xml, and for up to 50% of third-party requests across all assets types. There is a mix using intermediary years and then considerable usage for one year and two year.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=2056330432&format=interactive",
   sheets_gid="1889235328",
-  sql_file="15_resource_age_party_and_type_wise_groups.sql"
+  sql_file="15_resource_age_party_and_type_wise_groups.sql",
+  width=650
   )
 }}
 
