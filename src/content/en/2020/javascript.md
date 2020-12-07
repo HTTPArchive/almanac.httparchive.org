@@ -278,7 +278,7 @@ Thankfully, that's exactly what we see, particularly in third-party scripts wher
 ## What do we use?
 
 ## What's the Impact?
-We have a pretty good picture now of how much JavaScript we use, where it comes from and what we use it for. But while that's interesting enough on its own, the real kicker is the "so what?" What impact does all this script actually have on the experience of our pages?
+We have a pretty good picture now of how much JavaScript we use, where it comes from and what we use it for. While that's interesting enough on its own, the real kicker is the "so what?" What impact does all this script actually have on the experience of our pages?
 
 The first thing we should consider is what happens with all that JavaScript once its been downloaded. Downloading is only the first part of the JavaScript journey. The browser still has to parse all that script, compile it, and eventually execute it. While browsers are increasingly finding ways to offload 
 
