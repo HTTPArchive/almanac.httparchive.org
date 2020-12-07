@@ -1,5 +1,5 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION getGradientHints(css STRING) RETURNS INT64 LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getGradientHardStops(css STRING) RETURNS INT64 LANGUAGE js AS '''
 try {
   function compute(ast) {
     let ret = {
@@ -33,6 +33,7 @@ try {
     const keywordRegex = RegExp(`\\\\b(?<!\\-)(?:${keywords.join("|")})\\\\b`, "gi");
 
     walkDeclarations(ast, ({property, value}) => {
+      if (value.length > 1000) return;
       for (let gradient of extractFunctionCalls(value, {names: /-gradient$/})) {
 
         let {name, args} = gradient;
@@ -147,7 +148,7 @@ try {
 
   const ast = JSON.parse(css);
   let gradient = compute(ast);
-  return gradient.hints;
+  return gradient.hard_stops;
 } catch (e) {
   return 0;
 }
@@ -156,20 +157,18 @@ OPTIONS (library="gs://httparchive/lib/css-utils.js");
 
 SELECT
   client,
-  COUNTIF(hints > 0) AS pages,
+  COUNTIF(hard_stops > 0) AS pages,
   total,
-  COUNTIF(hints > 0) / total AS pct
+  COUNTIF(hard_stops > 0) / total AS pct
 FROM (
   SELECT
     client,
     page,
-    SUM(getGradientHints(css)) AS hints
+    SUM(getGradientHardStops(css)) AS hard_stops
   FROM
     `httparchive.almanac.parsed_css`
   WHERE
-    date = '2020-08-01' AND
-    # Limit the size of the CSS to avoid OOM crashes.
-    LENGTH(css) < 0.1 * 1024 * 1024
+    date = '2020-08-01'
   GROUP BY
     client,
     page)

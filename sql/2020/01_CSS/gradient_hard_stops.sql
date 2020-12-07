@@ -33,6 +33,7 @@ try {
     const keywordRegex = RegExp(`\\\\b(?<!\\-)(?:${keywords.join("|")})\\\\b`, "gi");
 
     walkDeclarations(ast, ({property, value}) => {
+      if (value.length > 1000) return;
       for (let gradient of extractFunctionCalls(value, {names: /-gradient$/})) {
 
         let {name, args} = gradient;
@@ -168,8 +169,6 @@ FROM (
     `httparchive.almanac.parsed_css`
   WHERE
     date = '2020-08-01' AND
-    # Limit the size of the CSS to avoid OOM crashes.
-    LENGTH(css) < 0.1 * 1024 * 1024
   GROUP BY
     client,
     page)
