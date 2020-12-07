@@ -66,7 +66,7 @@ featured_stat_label_3: 网站允许安装相关应用程序
 
 [原始剪贴板访问API](https://bugs.chromium.org/p/chromium/issues/detail?id=897289)是Fugu的另一个能力，它甚至可以通过允许从剪贴板复制或粘贴任意数据来进一步增强异步剪贴板API。
 
-## 存储管理(StorageManager)API
+## 存储管理(<lang="en">StorageManager</lang>)API {存储管理storagemanagerapi}
 
 Web浏览器允许用户以不同的方式在用户系统上存储数据，如Cookie、索引数据库(IndexedDB)、Service Worker的缓存存储或Web存储(本地存储、会话存储)。在现代的浏览器中，取决于浏览器，开发者可以轻松[存储数百兆甚至更多](https://web.dev/storage-for-the-web/)。当浏览器的空间耗尽时，可以清除数据，直到系统不再超过限制（可能导致数据丢失）。
 
