@@ -13,7 +13,7 @@ fellowhuman1101_bio: 100% human & totally not a robot, Jamie Indigo untangles te
 discuss: 2043
 results: https://docs.google.com/spreadsheets/d/1ram47FshAjzvbQVJbAQPgxZN7PPOPCKIK67VJZCo92c/
 queries: 07_SEO
-featured_quote: Despite the growing use of mobile devices and Google's move to a Mobile first index, non-trivial disparities were found across mobile vs. desktop pages, like the one between mobile and desktop links.
+featured_quote: Despite the growing use of mobile devices and Google's move to a Mobile first index, non-trivial disparities were found across mobile versus desktop pages, like the one between mobile and desktop links.
 featured_stat_1: 10.84%
 featured_stat_label_1: Mobile pages are not including the viewport tag
 featured_stat_2: 19.96%
@@ -200,7 +200,7 @@ When analyzing this year's mobile pages canonical tag configuration, it was dete
 
 On the other hand, 51.85% of the desktop pages were found to be featuring a canonical tag this year, with 47.88% being self-referential and 4.10% pointing to a different URL.
 
-Not only do mobile pages include more canonical tags than desktop ones (53.61% vs. 51.85%), there are relatively more mobile homes pages canonicalizing to other URLs than their desktop counterparts (8.45% vs. 4.10%). This could be explained by the usage of an independent (or separate) mobile web version by some sites that need to canonicalize to their desktop URLs alternates.
+Not only do mobile pages include more canonical tags than desktop ones (53.61% versus 51.85%), there are relatively more mobile homes pages canonicalizing to other URLs than their desktop counterparts (8.45% vs. 4.10%). This could be explained by the usage of an independent (or separate) mobile web version by some sites that need to canonicalize to their desktop URLs alternates.
 
 Canonical URLs can be specified through different methods: by using the canonical link via the HTTP headers or the HTML `head` of a page, or by submitting them in XML sitemaps. When analyzing which is the most popular canonical link implementation method, it was found that only 1.03% of desktop pages and 0.88% of mobile ones are relying on the HTTP headers for their implementation, meaning that canonical tags are prominently implemented via the HTML `head` of a page.
 
@@ -679,28 +679,28 @@ We found that 80.29% of desktop pages and 82.92% of the mobile ones are using ei
     <tbody>
       <tr>
         <td><code>max-width</code></td>
-        <td>78.98%</td>
-        <td>78.33%</td>
+        <td class="numeric">78.98%</td>
+        <td class="numeric">78.33%</td>
       </tr>
       <tr>
         <td><code>min-width</code></td>
-        <td>75.04%</td>
-        <td>73.75%</td>
+        <td class="numeric">75.04%</td>
+        <td class="numeric">73.75%</td>
       </tr>
       <tr>
         <td><code>-webkit-min-device-pixel-ratio</code></td>
-        <td>44.63%</td>
-        <td>38.78%</td>
+        <td class="numeric">44.63%</td>
+        <td class="numeric">38.78%</td>
       </tr>
       <tr>
         <td><code>orientation</code></td>
-        <td>33.48%</td>
-        <td>33.49%</td>
+        <td class="numeric">33.48%</td>
+        <td class="numeric">33.49%</td>
       </tr>
       <tr>
         <td><code>max-device-width</code></td>
-        <td>26.23%</td>
-        <td>28.15%</td>
+        <td class="numeric">26.23%</td>
+        <td class="numeric">28.15%</td>
       </tr>
     </tbody>
   </table>
@@ -783,188 +783,398 @@ Additional analyses of Core Web Vitals performance by dimensions by effective co
 
 ### Internationalization
 
-Internationalization covers the configurations that multilingual or multi-country websites can use to inform search engines about their different language and/or country versions, specifying which are the relevant pages to show users in each case, avoiding targeting issues.
+Internationalization covers the configurations that multilingual or multi-country websites can use to inform search engines about their different language and/or country versions, specify which are the relevant pages to show users in each case, and avoid targeting issues.
 
-The two international configurations that have been analyzed are the "content-language" meta tag and the `hreflang` attributes, that can be used to specify the language and the content of each page. Additionally, `hreflang` annotations allow you to specify the alternate language or country versions of each page, besides itself.
+The two international configurations that we analyzed are the `content-language` meta tag and the `hreflang` attributes, that can be used to specify the language and the content of each page. Additionally, `hreflang` annotations allow you to specify the alternate language or country versions of each page.
 
-Search engines like [Google](https://support.google.com/webmasters/answer/189077?hl=en) and [Yandex](https://yandex.com/support/webmaster/yandex-indexing/locale-pages.html) use `hreflang` attributes as a signal to determine the page's language and country target, and although Google doesn't use the HTML lang or the `content-language` meta tag, this last tag is used by Bing.
+Search engines like [Google](https://support.google.com/webmasters/answer/189077?hl=en) and [Yandex](https://yandex.com/support/webmaster/yandex-indexing/locale-pages.html) use `hreflang` attributes as a signal to determine the page's language and country target, and although Google doesn't use the HTML lang or the `content-language` meta tag, the latter last tag is used by Bing.
 
-#### Hreflang
+#### `hreflang`
 
-When looking into the `hreflang` attribute usage, it was identified that 8.1% of the analyzed desktop sites are featuring one vs. 7.48% of the mobile ones, which although it might seem a low percentage, it is natural as these are only used by multilingual or multi-country websites.
+8.1% of desktop pages and 7.48% of mobile pages use the `hreflang` attribute, which might seem low, but this is natural because these are only used by multilingual or multi-country websites.
 
-When analyzing the implementation methods, it was found that only 0.09% of the desktop websites and 0.07% of the mobile ones implement hreflang via their HTTP headers, and that most rely on the HTML head implementation.
+We found that only 0.09% of the desktop pages and 0.07% of the mobile pages implement `hreflang` via their HTTP headers, and that most rely on the HTML `head` implementation.
 
-On the other hand, it was also identified that although not many, there are some of the sites that are relying on JavaScript to render hreflang annotations: 0.12% desktop and mobile sites are showing hreflang in the rendered but not in the raw HTML.
+We also identified that there are some pages that rely on JavaScript to render hreflang annotations. 0.12% of desktop and mobile pages are showing `hreflang` in the rendered but not in the raw HTML.
 
-From a language and country value perspective, when analyzing the implementation via the HTML head, it was found that English (`en`) is the most popular used value, with 4.11% of the mobile and 4.64% of the desktop sites featuring it. After English, the second most popular value is `x-default` (used when defining a "default" or "fallback" version for users of non-targeted languages or countries), with 2.07% of mobile and 2.2% of the desktop sites including it.
+From a language and country value perspective, when analyzing the implementation via the HTML head, we found that English (`en`) is the most popular used value, with 4.11% of the mobile and 4.64% of the desktop pages including it. After English, the second most popular value is `x-default` (used when defining a _default_ or _fallback_ version for users of non-targeted languages or countries), with 2.07% of mobile and 2.2% of the desktop pages including it.
 
-The third, fourth and fifth most popular are German (`de`), French (`fr`) and Spanish (`es`), followed by Italian (`it`) and English for the US (`en-us`), as can be seen in the table below with the rest of the values implemented via the HTML head.
+The third, fourth and fifth most popular are German (`de`), French (`fr`) and Spanish (`es`), followed by Italian (`it`) and English for the US (`en-us`), as can be seen in the table below with the rest of the values implemented via the HTML `head`.
 
-<figure markdown>
-Values | Mobile | Desktop
--- | -- | --
-`en` | 4.11% | 4.64%
-`x-default` | 2.07% | 2.20%
-`de` | 1.76% | 1.88%
-`fr` | 1.74% | 1.87%
-`es` | 1.74% | 1.84%
-`it` | 1.27% | 1.33%
-`en-us` | 1.15% | 1.31%
-`ru` | 1.12% | 1.13%
-`en-gb` | 0.87% | 0.98%
-`pt` | 0.87% | 0.87%
-`nl` | 0.83% | 0.94%
-`ja` | 0.73% | 0.81%
-`pl` | 0.72% | 0.75%
-`de-de` | 0.69% | 0.78%
-`tr` | 0.69% | 0.66%
-
-<figcaption>{{ figure_link(caption="Top Hreflang Values in HTML Head.", sheets_gid="1272459525", sql_file="pages_wpt_bodies_hreflang_by_device_and_link_tag_value.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Value</th>
+        <th>Mobile</th>
+        <th>Desktop</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>en</code></td>
+        <td class="numeric">4.11%</td>
+        <td class="numeric">4.64%</td>
+      </tr>
+      <tr>
+        <td><code>x-default</code></td>
+        <td class="numeric">2.07%</td>
+        <td class="numeric">2.20%</td>
+      </tr>
+      <tr>
+        <td><code>de</code></td>
+        <td class="numeric">1.76%</td>
+        <td class="numeric">1.88%</td>
+      </tr>
+      <tr>
+        <td><code>fr</code></td>
+        <td class="numeric">1.74%</td>
+        <td class="numeric">1.87%</td>
+      </tr>
+      <tr>
+        <td><code>es</code></td>
+        <td class="numeric">1.74%</td>
+        <td class="numeric">1.84%</td>
+      </tr>
+      <tr>
+        <td><code>it</code></td>
+        <td class="numeric">1.27%</td>
+        <td class="numeric">1.33%</td>
+      </tr>
+      <tr>
+        <td><code>en-us</code></td>
+        <td class="numeric">1.15%</td>
+        <td class="numeric">1.31%</td>
+      </tr>
+      <tr>
+        <td><code>ru</code></td>
+        <td class="numeric">1.12%</td>
+        <td class="numeric">1.13%</td>
+      </tr>
+      <tr>
+        <td><code>en-gb</code></td>
+        <td class="numeric">0.87%</td>
+        <td class="numeric">0.98%</td>
+      </tr>
+      <tr>
+        <td><code>pt</code></td>
+        <td class="numeric">0.87%</td>
+        <td class="numeric">0.87%</td>
+      </tr>
+      <tr>
+        <td><code>nl</code></td>
+        <td class="numeric">0.83%</td>
+        <td class="numeric">0.94%</td>
+      </tr>
+      <tr>
+        <td><code>ja</code></td>
+        <td class="numeric">0.73%</td>
+        <td class="numeric">0.81%</td>
+      </tr>
+      <tr>
+        <td><code>pl</code></td>
+        <td class="numeric">0.72%</td>
+        <td class="numeric">0.75%</td>
+      </tr>
+      <tr>
+        <td><code>de-de</code></td>
+        <td class="numeric">0.69%</td>
+        <td class="numeric">0.78%</td>
+      </tr>
+      <tr>
+        <td><code>tr</code></td>
+        <td class="numeric">0.69%</td>
+        <td class="numeric">0.66%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="Percent of pages that include the top <code>hreflang</code> values in the HTML <code>head</code>.",
+      sheets_gid="1272459525",
+      sql_file="pages_wpt_bodies_hreflang_by_device_and_link_tag_value.sql"
+    ) }}
+  </figcaption>
 </figure>
 
-Something slightly different was found in top hreflang language and country values implemented via the HTTP headers, with English (`en`) being again the most popular one, although in this case followed by French (`fr`), German (`de`), Spanish (`es`) and Dutch (`nl`) as the top values.
+Something slightly different was found in top `hreflang` language and country values implemented via the HTTP headers, with English (`en`) being again the most popular one, although in this case followed by French (`fr`), German (`de`), Spanish (`es`) and Dutch (`nl`) as the top values.
 
-<figure markdown>
-Values | Mobile | Desktop
--- | -- | --
-`en` | 0.05% | 0.06%
-`fr` | 0.02% | 0.02%
-`de` | 0.01% | 0.02%
-`es` | 0.01% | 0.01%
-`nl` | 0.01% | 0.01%
-
-<figcaption>{{ figure_link(caption="Top Hreflang Values in HTTP Headers.", sheets_gid="1726610181", sql_file="pages_wpt_bodies_hreflang_by_device_and_http_header_value.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Values</th>
+        <th>Mobile</th>
+        <th>Desktop</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>en</code></td>
+        <td class="numeric">0.05%</td>
+        <td class="numeric">0.06%</td>
+      </tr>
+      <tr>
+        <td><code>fr</code></td>
+        <td class="numeric">0.02%</td>
+        <td class="numeric">0.02%</td>
+      </tr>
+      <tr>
+        <td><code>de</code></td>
+        <td class="numeric">0.01%</td>
+        <td class="numeric">0.02%</td>
+      </tr>
+      <tr>
+        <td><code>es</code></td>
+        <td class="numeric">0.01%</td>
+        <td class="numeric">0.01%</td>
+      </tr>
+      <tr>
+        <td><code>nl</code></td>
+        <td class="numeric">0.01%</td>
+        <td class="numeric">0.01%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="Percent of pages that include the top <code>hreflang</code> values in HTTP headers.",
+      sheets_gid="1726610181",
+      sql_file="pages_wpt_bodies_hreflang_by_device_and_http_header_value.sql"
+    ) }}
+</figcaption>
 </figure>
 
-#### Content-Language Meta Tag and HTTP Headers
+#### `Content-Language`
 
-When analyzing the `content-language` usage and values, whether by implementing it as a meta tag in the HTML head or in the HTTP headers it was found that only 8.5% of the mobile pages and 9.05% of the desktop ones were specifying it in the HTTP headers. Even fewer websites are specifying their language or country with the `content-language` tag in the HTML head, with only 3.63% of mobile pages and 3.59% of desktop ones featuring the tag.
+When analyzing the `content-language` usage and values, whether by implementing it as a meta tag in the HTML `head` or in the HTTP headers, we found that only 8.5% of mobile pages and 9.05% of desktop pages were specifying it in the HTTP headers. Even fewer websites were specifying their language or country with the `content-language` tag in the HTML `head`, with only 3.63% of mobile pages and 3.59% of desktop pages featuring the meta tag.
 
-From a language and country value perspective, it was found that the most popular ones are English (en) and English for the US (`en-us`) that are the ones being specified the most both in the content-language meta-tag and in the HTTP headers.
+From a language and country value perspective, we found that the most popular values specified in the `content-language` meta-tag and HTTP headers are English (`en`) and English for the US (`en-us`).
 
-In the case of English (`en`) it was identified that 4.34% of the desktop and 3.69% of the mobile pages were specifying it in the HTTP headers and 0.55% of the desktop and 0.48% of the mobile pages were doing it so via the "content-language" meta tag in the HTML head.
+In the case of English (`en`) we identified that 4.34% of desktop and 3.69% of mobile pages specified it in the HTTP headers and 0.55% of the desktop and 0.48% of the mobile pages were doing so via the `content-language` meta tag in the HTML `head`.
 
-For English for the US (`en-us`), the second most popular value, it was found that only 1.77% of mobile pages and 1.7% of desktop ones were specifying it in the HTTP headers and 0.3% of the mobile pages and 0.36% desktop ones were doing it so in the HTML.
+For English for the US (`en-us`), the second most popular value, it was found that only 1.77% of mobile pages and 1.7% of desktop ones were specifying it in the HTTP headers, and 0.3% of the mobile pages and 0.36% desktop ones were doing it so in the HTML.
 
 The rest of the most popular language and country values can be seen in the tables below.
 
-<figure markdown>
-Values | Mobile | Desktop
--- | -- | --
-`en` | 3.69% | 4.34%
-`en-us` | 1.77% | 1.70%
-`de` | 0.50% | 0.44%
-`es` | 0.34% | 0.33%
-`fr` | 0.31% | 0.34%
-`ru` | 0.18% | 0.16%
-`pt-br` | 0.15% | 0.16%
-`nl` | 0.13% | 0.15%
-`it` | 0.13% | 0.13%
-`ja` | 0.08% | 0.10%
-
-<figcaption>{{ figure_link(caption="Top content-language Values in HTTP Headers.", sheets_gid="962106511", sql_file="summary_requests_by_device_and_http_content_language.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Value</th>
+        <th>Mobile</th>
+        <th>Desktop</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>en</code></td>
+        <td class="numeric">3.69%</td>
+        <td class="numeric">4.34%</td>
+      </tr>
+      <tr>
+        <td><code>en-us</code></td>
+        <td class="numeric">1.77%</td>
+        <td class="numeric">1.70%</td>
+      </tr>
+      <tr>
+        <td><code>de</code></td>
+        <td class="numeric">0.50%</td>
+        <td class="numeric">0.44%</td>
+      </tr>
+      <tr>
+        <td><code>es</code></td>
+        <td class="numeric">0.34%</td>
+        <td class="numeric">0.33%</td>
+      </tr>
+      <tr>
+        <td><code>fr</code></td>
+        <td class="numeric">0.31%</td>
+        <td class="numeric">0.34%</td>
+      </tr>
+      <tr>
+        <td><code>ru</code></td>
+        <td class="numeric">0.18%</td>
+        <td class="numeric">0.16%</td>
+      </tr>
+      <tr>
+        <td><code>pt-br</code></td>
+        <td class="numeric">0.15%</td>
+        <td class="numeric">0.16%</td>
+      </tr>
+      <tr>
+        <td><code>nl</code></td>
+        <td class="numeric">0.13%</td>
+        <td class="numeric">0.15%</td>
+      </tr>
+      <tr>
+        <td><code>it</code></td>
+        <td class="numeric">0.13%</td>
+        <td class="numeric">0.13%</td>
+      </tr>
+      <tr>
+        <td><code>ja</code></td>
+        <td class="numeric">0.08%</td>
+        <td class="numeric">0.10%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="Percent of pages using the top <code>content-language</code> values in HTTP headers.",
+      sheets_gid="962106511",
+      sql_file="summary_requests_by_device_and_http_content_language.sql"
+    ) }}
+  </figcaption>
 </figure>
 
-<figure markdown>
-Values | Mobile | Desktop
--- | -- | --
-`en` | 0.48% | 0.55%
-`en-us` | 0.30% | 0.36%
-`pt-br` | 0.24% | 0.24%
-`ja` | 0.19% | 0.26%
-`fr` | 0.18% | 0.19%
-`tr` | 0.17% | 0.13%
-`es` | 0.16% | 0.15%
-`de` | 0.15% | 0.11%
-`cs` | 0.12% | 0.12%
-`pl` | 0.11% | 0.09%
-
-<figcaption>{{ figure_link(caption="Top content-language Values in HTML Meta Tag.", sheets_gid="1056888726", sql_file="pages_almanac_by_device_and_content_language.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Value</th>
+        <th>Mobile</th>
+        <th>Desktop</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>en</code></td>
+        <td class="numeric">0.48%</td>
+        <td class="numeric">0.55%</td>
+      </tr>
+      <tr>
+        <td><code>en-us</code></td>
+        <td class="numeric">0.30%</td>
+        <td class="numeric">0.36%</td>
+      </tr>
+      <tr>
+        <td><code>pt-br</code></td>
+        <td class="numeric">0.24%</td>
+        <td class="numeric">0.24%</td>
+      </tr>
+      <tr>
+        <td><code>ja</code></td>
+        <td class="numeric">0.19%</td>
+        <td class="numeric">0.26%</td>
+      </tr>
+      <tr>
+        <td><code>fr</code></td>
+        <td class="numeric">0.18%</td>
+        <td class="numeric">0.19%</td>
+      </tr>
+      <tr>
+        <td><code>tr</code></td>
+        <td class="numeric">0.17%</td>
+        <td class="numeric">0.13%</td>
+      </tr>
+      <tr>
+        <td><code>es</code></td>
+        <td class="numeric">0.16%</td>
+        <td class="numeric">0.15%</td>
+      </tr>
+      <tr>
+        <td><code>de</code></td>
+        <td class="numeric">0.15%</td>
+        <td class="numeric">0.11%</td>
+      </tr>
+      <tr>
+        <td><code>cs</code></td>
+        <td class="numeric">0.12%</td>
+        <td class="numeric">0.12%</td>
+      </tr>
+      <tr>
+        <td><code>pl</code></td>
+        <td class="numeric">0.11%</td>
+        <td class="numeric">0.09%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+      {{ figure_link(
+        caption="Percent of pages using the top <code>content-language</code> values in HTML meta tags.",
+        sheets_gid="1056888726",
+        sql_file="pages_almanac_by_device_and_content_language.sql"
+      ) }}
+    </figcaption>
 </figure>
 
 ### Security
 
-Google places a specific focus on security in all respects. The search engine maintains lists of sites that have shown suspicious activity or have been hacked. Search Console surfaces these issues and Chrome users are presented with warnings before visiting sites with these problems. Additionally, Google provides an [algorithmic boost](https://developers.google.com/search/blog/2014/08/https-as-ranking-signal) to pages that are served over the [HTTPS (Hypertext Transfer Protocol Secure)](https://developers.google.com/search/docs/advanced/security/https).
+Google places a specific focus on security in all respects. The search engine maintains lists of sites that have shown suspicious activity or have been hacked. Search Console surfaces these issues and Chrome users are presented with warnings before visiting sites with these problems. Additionally, Google provides an [algorithmic boost](https://developers.google.com/search/blog/2014/08/https-as-ranking-signal) to pages that are served over [HTTPS](https://developers.google.com/search/docs/advanced/security/https) (Hypertext Transfer Protocol Secure). For a more in-depth analysis on this topic, see the [Security](./security) chapter.
 
-#### HTTPS Usage
+#### HTTPS usage
 
-We found that 77.44% of desktop pages and 73.22% of mobile pages have adopted HTTPS. This is up 10.38% from last year. It is important to note that browsers have become more aggressive in pushing HTTPS by signaling that pages are insecure when you visit them without HTTPS. Also, HTTPS is currently a requirement to capitalize on higher performing protocols such as HTTP/2 and HTTP/3 (also known as HTTP over QUIC).
+We found that 77.44% of desktop pages and 73.22% of mobile pages have adopted HTTPS. This is up 10.38% from last year. It is important to note that browsers have become more aggressive in pushing HTTPS by signaling that pages are insecure when you visit them without HTTPS. Also, HTTPS is currently a requirement to capitalize on higher performing protocols such as HTTP/2 and HTTP/3 (also known as HTTP over QUIC). You can learn more about the state of these protocols in the [HTTP/2](./http2) chapter.
 
 All of these things have likely contributed to the higher adoption rate year over year.
 
 {{ figure_markup(
   image="seo-percentage-of-https.png",
-  caption="Percent of HTTPS",
+  caption="Percent of pages served with HTTPS.",
   description="Bar chart showing the percent of pages using HTTPS protocol by device. We found that 77.44% of desktop pages and 73.22% of mobile pages have adopted HTTPS.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=422955435&format=interactive",
   sheets_gid="337739550",
   sql_file="pages_wpt_bodies_by_device.sql"
-  )
-}}
+) }}
 
 ### AMP
 
-[AMP](https://amp.dev/) (previously called Accelerated Mobile Pages) is an open source HTML framework that was launched by Google in 2015 as a way to help pages to give a faster loading speed, especially on mobile devices. AMP can be implemented as an alternate version of existing web pages or can be used to develop your pages using the AMP framework from scratch.
+[AMP](https://amp.dev/) (previously called Accelerated Mobile Pages) is an open source HTML framework that was launched by Google in 2015 as a way to help pages load more quickly, especially on mobile devices. AMP can be implemented as an alternate version of existing web pages or developed from scratch using the AMP framework.
 
-When there's an AMP version available for a page, it will be shown by Google in Mobile search results, along the AMP logo.
+When there's an AMP version available for a page, it will be shown by Google in mobile search results, along with the AMP logo.
 
 It is also important to note that while AMP usage is not a ranking factor for Google (or any other search engine), web speed is a ranking factor.
 
-Additionally, AMP is at the moment a requirement to be featured in Google's Top Stories carousel in mobile search results–which is an important feature for news related publications. However, this will change in May next year, when non-AMP content will become eligible as long as it meets the [Google News content policies](https://support.google.com/news/publisher-center/answer/6204050) and provides a great [page experience](https://developers.google.com/search/docs/guides/page-experience) as [announced by Google in November this year](https://developers.google.com/search/blog/2020/11/timing-for-page-experience).
+Additionally, as of this writing, AMP is a requirement to be featured in Google's Top Stories carousel in mobile search results, which is an important feature for news-related publications. However, this will change in May 2021, when non-AMP content will become eligible as long as it meets the [Google News content policies](https://support.google.com/news/publisher-center/answer/6204050) and provides a great [page experience](https://developers.google.com/search/docs/guides/page-experience) as [announced by Google in November this year](https://developers.google.com/search/blog/2020/11/timing-for-page-experience).
 
-When checking the usage of AMP as an alternate version of a non-AMP based page, it was found that 0.69% of mobile web pages and 0.81% of desktop ones were including an "amphtml" tag pointing to an AMP version. Although the adoption is still very low, this is a slight improvement from [last year's AMP related Web Almanac data findings](../2019/seo#amp), in which only 0.62% of mobile pages contained a link to an AMP version.
+When checking the usage of AMP as an alternate version of a non-AMP based page, we found that 0.69% of mobile web pages and 0.81% of desktop ones were including an `amphtml` tag pointing to an AMP version. Although the adoption is still very low, this is a slight improvement from [last year's findings](../2019/seo#amp), in which only 0.62% of mobile pages contained a link to an AMP version.
 
-On the other hand, when assessing the usage of AMP as a framework to develop websites, it was found that only 0.18% of mobile pages and 0.07% of desktop ones were featuring an HTML AMP or emoji attribute, which are used to specify AMP based pages.
+On the other hand, when assessing the usage of AMP as a framework to develop websites, we found that only 0.18% of mobile pages and 0.07% of desktop ones were specifying the `<html amp>` or `<html ⚡>` emoji attribute, which are used to indicate AMP-based pages.
 
-### Single Page Applications (SPAs)
+### Single-page applications
 
-Single Page Applications (SPAs) enable browsers to retain and update  a single page load even as the on-page content updates to match a user request. Multiple technologies such as JavaScript frameworks, AJAX, Websockets are used to accomplish lightweight subsequent page loads.
+Single-page applications (SPAs) enable browsers to retain and update a single page load even as the on-page content updates to match a user request. Multiple technologies such as JavaScript frameworks, AJAX, and Websockets are used to accomplish lightweight subsequent page loads.
 
-These frameworks required special SEO considerations though Google has worked to mitigate the issues caused by Client Side Rendering with aggressive caching strategies. In a video from [Google Webmaster's 2019 conference](https://youtu.be/rq8sFkl0KnI), Software Engineer Erik Hendriks shared that Google no longer relies on cache-control headers and instead looks for ETag or Last-Modified headers to see if the content of the file has changed.
+These frameworks required special SEO considerations, although Google has worked to mitigate the issues caused by client-side rendering with aggressive caching strategies. In a video from [Google Webmaster's 2019 conference](https://youtu.be/rq8sFkl0KnI), Software Engineer Erik Hendriks shared that Google no longer relies on `Cache-Control` headers and instead looks for `ETag` or `Last-Modified` headers to see if the content of the file has changed.
 
-Single page applications should utilize the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) for granular control of caching. The API allows for the passing of Request objects with specific cache overrides set and can be used to set the necessary `if-modified` and `etag` headers.
+SPAs should utilize the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) for granular control of caching. The API allows for the passing of `Request` objects with specific cache overrides set and can be used to set the necessary `If-Modified` and `ETag` headers.
 
-Undiscoverable resources are still the primary concern of search engines as their web crawlers. Search crawlers look for the `href`  attributes in `<a>` tags  to find linked pages. Without these, the page is seen as isolated without internal linking. 5.59% of desktop pages studied contained no internal links as well as 6.04% of mobile-rendered pages. This is a marker that the page is part of a JavaScript framework SPA and missing the necessary `<a>` tag with valid `href` attributes required for their internal linking to be discovered.
+Undiscoverable resources are still the primary concern of search engines and their web crawlers. Search crawlers look for the `href`  attributes in `<a>` tags to find linked pages. Without these, the page is seen as isolated without internal linking. 5.59% of desktop pages studied contained no internal links as well as 6.04% of mobile-rendered pages. This is a marker that the page is part of a JavaScript framework SPA and missing the necessary `<a>` tag with valid `href` attributes required for their internal linking to be discovered.
 
-The discoverability of links in popular JS frameworks used for SPAs increased dramatically in 2020 over [the previous year](../2019/seo#spa-crawlability). In 2019, 13.08% of mobile navigation links on React sites used deprecated hash URLs. For 2020, only 6.12% of the tested React links were hashed.
+The discoverability of links in popular JavaScript frameworks used for SPAs increased dramatically in 2020 over [the previous year](../2019/seo#spa-crawlability). In 2019, 13.08% of mobile navigation links on React sites used deprecated hash URLs. For 2020, only 6.12% of the tested React links were hashed.
 
 Similarly, Vue.js saw a drop to 3.45% from the previous year's 8.15%. Angular was the least likely to use uncrawlable hashed mobile navigation links in 2019 with only 2.37% of mobile pages using them. For 2020, that number plummeted to 0.21%.
 
 ## Conclusion
 
-Consistent with what was found and [concluded last year](../2019/seo#conclusion), most sites have crawlable and indexable desktop and mobile pages, and are making use of the fundamental SEO related configurations.
+Consistent with what was found and [concluded last year](../2019/seo#conclusion), most sites have crawlable and indexable desktop and mobile pages, and are making use of the fundamental SEO-related configurations.
 
-It is important to highlight how the link discoverability for major JS frameworks used for SPAs increased dramatically compared to 2019. By testing mobile navigation links for hashed URLs, we saw -53%  instances of uncrawlable links from sites using React, -58% fewer from Vue.js powered sites, and a -91% reduction from Angular SPAs.
+It is important to highlight how the link discoverability for major JavaScript frameworks used for SPAs increased dramatically compared to 2019. By testing mobile navigation links for hashed URLs, we saw -53%  instances of uncrawlable links from sites using React, -58% fewer from Vue.js powered sites, and a -91% reduction from Angular SPAs.
 
-Additionally, it was also identified that there has been a slight improvement from last year's findings across many of the analyzed areas:
+Additionally, we also identified that there has been a slight improvement from last year's findings across many of the analyzed areas:
 
-- **Robots.txt**: Last year 72.16% of mobile sites had a valid `robots.txt` vs. 74.91%  this year.
-- **Canonical tag**: Last year it was identified that 48.34% of mobile pages were using a canonical tag vs. 53.61% this year.
-- **Title element**: This year it was found that 98.75% of the desktop pages are featuring one, while 98.7% of mobile pages are also including it. Last year it was found that 97.1% of mobile pages were featuring a title tag.
-- **Meta Description**: This year, 68.62% of desktop pages and 68.22% of mobile ones were found to be featuring a meta description, an improvement from last year when it was found that 64.02% of mobile pages had one.
-- **Structured Data**: Despite the fact that reviews are not supposed to be associated with home pages the data indicates that `AggregateRating` is up 23.9% on mobile and 23.7% on desktop.
-- **Images' `alt` attribute**: This year, 53.86% of desktop and 51.22% of mobile pages featured image `alt` attributes. Although this might seem low, it is an improvement from last year when it was found that 46.71% of mobile pages used `alt` attributes on all of their images.
+- **`robots.txt`**: Last year 72.16% of mobile sites had a valid `robots.txt` versus 74.91%  this year.
+- **canonical tag**: Last year we identified that 48.34% of mobile pages were using a canonical tag versus 53.61% this year.
+- **`title` tag**: This year we found that 98.75% of the desktop pages are featuring one, while 98.7% of mobile pages are also including it. Last year's chapter found that 97.1% of mobile pages were featuring a `title` tag.
+- **`meta` description**: This year, we found 68.62% of desktop pages and 68.22% of mobile ones had a `meta` description, an improvement from last year when 64.02% of mobile pages had one.
+- **structured data**: Despite the fact that reviews are not supposed to be associated with home pages, the data indicates that `AggregateRating` is up 23.9% on mobile and 23.7% on desktop.
 - **HTTPS usage**: 77.44% of desktop pages and 73.22% of mobile pages have adopted HTTPS. This is up 10.38% from last year.
 
-However, not everything has improved vs. last year configurations.
+However, not everything has improved over the last year. The median desktop page includes 61 internal links while the median mobile page has 54. This is down 12.8% and 10% respectively from [last year](../2019/seo#linking), suggesting that sites are not maximizing the ability to improve the crawlability and link equity flow through their pages.
 
-This year, the median desktop page features 61 outgoing internal links while the median mobile page features 54 outgoing internal links. This is down 12.8% and 10% respectively from [last year's analysis](../2019/seo#linking), suggesting that sites are not maximizing the ability to improve the crawlability and link equity flow through their pages.
+It is also important to note how there's still an important opportunity for improvement across many critical SEO related areas and configurations. Despite the growing use of mobile devices and Google's move to a mobile-first index:
 
-It is also important to note how there's still an important opportunity for improvement across many critical SEO related areas and configurations.
+ - 10.84% of mobile pages and 16.18% of desktop ones are not including the `viewport` tag at all, suggesting that they are not yet mobile friendly.
+ - Non-trivial disparities were found across mobile and desktop pages, like the one between mobile and desktop links, illustrated in the 62 links on mobile versus the 68 links on desktop for the median web page.
+ - 33.13% of websites scored _Good_ Core Web Vitals for desktop while only 19.96% of their mobile counterparts passed the Core Web Vitals assessment, suggesting that desktop continues to be the more performant platform for users.
 
-Despite the growing use of mobile devices and Google's move to a Mobile first index:
+These findings could negatively impact sites as Google completes its migration to a [mobile-first index in March 2021](https://webmasters.googleblog.com/2020/07/prepare-for-mobile-first-indexing-with.html). 
 
- - 10.84% of mobile pages and 16.18% of desktop ones are not including the viewport tag at all, suggesting that they are not yet mobile friendly.
- - Non-trivial disparities were found across mobile vs. desktop pages, like the one between mobile and desktop links, illustrated in the 62 links on mobile versus the 68 links on desktop for the median web page.
- - 33.13% of websites scored 'Good' Core Web Vitals for desktop while only 19.96% of their mobile counterparts passed the Core Web Vitals assessment, meaning that desktop continues to be the more performant platform for users.
+Disparities were also found across rendered and non-rendered HTML. For example, the median mobile page displays 11.5% more words when rendered than its raw HTML, indicating a reliance on client-side JavaScript to show content.
 
-This could negatively impact sites as Google completely migrates to a [mobile-first index in March 2021](https://webmasters.googleblog.com/2020/07/prepare-for-mobile-first-indexing-with.html).
+Search crawlers look for the `<a href>` tags to find linked pages. Without these, the page is seen as isolated without internal linking. 5.59% of desktop pages contained no internal links as well as 6.04% of mobile-rendered pages.
 
-Disparities were found across rendered vs non-rendered HTML. For example the median mobile site displays 11.5% more words when rendered than its raw HTML, showing a reliance on client side JavaScript to show web pages content.
-
-Search crawlers look for the `href`  attributes in `<a>` tags  to find linked pages. Without these, the page is seen as isolated without internal linking. 5.59% of desktop pages studied contained no internal links as well as 6.04% of mobile-rendered pages.
-
-These findings suggest that search engines are continually evolving in their capacity to effectively crawl, index and rank websites, and some of the most important SEO configurations are now also better taken into consideration.
+These findings suggest that search engines are continually evolving in their capacity to effectively crawl, index, and rank websites, and some of the most important SEO configurations are now also better taken into consideration.
 
 However, many sites across the web are still missing out on important search visibility and growth opportunities, which also shows the persisting need of SEO evangelization and best practices adoption across organizations.
