@@ -23,19 +23,24 @@ queries: 08_Accessibility
 ---
 
 
-##Introduction
+## Introduction
 
 In 2020, more than ever before, it’s become increasingly urgent for digital spaces to be inclusive and accessible to all. With the ongoing pandemic making it even more difficult for folks to access services in-person and entire industries moving online, disabled people are disproportionately impacted. Additionally, the number of disabled people is rising due to the effects of the pandemic.
 
 Web accessibility is about achieving feature and information parity and giving complete access to all aspects of an interface to disabled people. A digital product or website is simply not complete if it is not usable by everyone. If it excludes certain disabled populations, this is discrimination and potentially grounds for fines and/or lawsuits.
 
-The Web Content Accessibility Guidelines, or WCAG, is an internationally recognized set of standards that needs to be met in all websites and applications that utilize the Internet. They are not laws, but many laws point to WCAG as their basis. 
+The [Web Content Accessibility Guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/), or WCAG, is an internationally recognized set of standards that needs to be met in all websites and applications that utilize the Internet. They are not laws, but [many laws point to WCAG as their basis](https://www.w3.org/WAI/policies/). 
 
-These guidelines have had multiple releases over the years and the current standard is WCAG 2.1, with WCAG 2.2 currently being vetted as a working draft. Some regional laws point to WCAG 2.0 as the requirement, but as Adrian Roselli covers in his article WCAG 2.1 is the Current Standard, Not WCAG 2.0 - and WCAG 2.2 is Coming we need to be meeting WCAG 2.1 standards and considering the new criteria coming in WCAG 2.2 as well.
-A dangerous trend that has seen more exposure than ever in 2020 is the use of “accessibility overlays”. These widgets promise one step accessibility compliance and more often than not introduce new barriers and make the experience for a disabled user quite challenging. It is important that digital practitioners take ownership over designing and implementing usable interfaces and not try to subvert this process with a quick fix. For more information see Lainey Feingold’s article, Honor the ADA: Avoid Web Accessibility Quick Fix Overlays.
-Sadly, year over year, we and other teams conducting analysis such as the WebAIM Million are finding little and in some cases no  improvement in these metrics. The median overall site score for all lighthouse audit data rose from 73% in 2019 to 80% in 2020. We hope that this 7% increase represents a shift in the right direction. However, these are automated checks and could mean that developers are doing a better job of subverting the rule engine, so we are cautiously optimistic.
+These guidelines have had multiple releases over the years and the current standard is WCAG 2.1, with WCAG 2.2 currently being vetted as a [working draft](https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/). Some regional laws point to WCAG 2.0 as the requirement, but as Adrian Roselli covers in his article [WCAG 2.1 is the Current Standard, Not WCAG 2.0 - and WCAG 2.2 is Coming](https://adrianroselli.com/2020/09/wcag-2-1-is-the-current-standard-not-wcag-2-0-and-wcag-2-2-is-coming.html) we need to be meeting WCAG 2.1 standards and considering the new criteria coming in WCAG 2.2 as well.
+
+A dangerous trend that has seen more exposure than ever in 2020 is the use of “accessibility overlays”. These widgets promise one step accessibility compliance and more often than not introduce new barriers and make the experience for a disabled user quite challenging. It is important that digital practitioners take ownership over designing and implementing usable interfaces and not try to subvert this process with a quick fix. For more information see Lainey Feingold’s article, [Honor the ADA: Avoid Web Accessibility Quick Fix Overlays](https://www.lflegal.com/2020/08/quick-fix/).
+
+Sadly, year over year, we and other teams conducting analysis such as the [WebAIM Million](https://webaim.org/projects/million/https://webaim.org/projects/million/) are finding little and in some cases no  improvement in these metrics. The median overall site score for all lighthouse audit data rose from 73% in 2019 to 80% in 2020. We hope that this 7% increase represents a shift in the right direction. However, these are automated checks and could mean that developers are doing a better job of subverting the rule engine, so we are cautiously optimistic.
+
 Our analysis is based on automated metrics only. It is important to remember that automated testing captures only a fraction of the accessibility barriers that can be present in an interface. Qualitative analysis, including manual testing and usability testing with disabled people are needed in order to achieve an accessible site or application. 
+
 We've split up our most interesting insights into five categories: 
+
 1. Ease of reading, 
 2. Media on the web, 
 3. Ease of page navigation, 
