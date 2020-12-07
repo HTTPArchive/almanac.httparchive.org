@@ -229,7 +229,7 @@ Below is a table showing the most common `Cache-Control` directives:
      <td>Indicates that the client is willing to accept a stale response if the check for a fresh one fails.</td>
     </tr>
   </table>
-  <figcaption>{{ figure_link(caption="`Cache-Control` directives.") }}</figcaption>
+  <figcaption>{{ figure_link(caption="<code>Cache-Control</code> directives.") }}</figcaption>
 </figure>
 
 The `max-age` directive is the most commonly-found, since it directly defines the TTL, in the same way that the `Expires` header does.
@@ -592,13 +592,11 @@ In the table below, you can see that out of a total of 6,225,774 websites, only 
 <figure>
   <table>
     <tr>
-     <th> </th>
-     <th>Does not use Service Worker</th>
-     <th>Uses Service Worker</th>
-     <th>Total</th>
+     <th>Sites not using service workers</th>
+     <th>Sites using service workers</th>
+     <th>Total sites</th>
     </tr>
     <tr>
-     <td><span style="font-weight:bold">Sites</span></td>
      <td>6,225,774</td>
      <td>64,373</td>
      <td>6,290,147</td>
@@ -612,13 +610,11 @@ If we break this out by HTTP vs HTTPS, then this gets even more interesting. Eve
 <figure>
   <table>
     <tr>
-     <th> </th>
-     <th>http</th>
-     <th>https</th>
-     <th>Total</th>
+     <th>HTTP Sites</th>
+     <th>HTTPS Sites</th>
+     <th>Total Sites</th>
     </tr>
     <tr>
-     <td><span style="font-weight:bold">Sites using service worker</span></td>
      <td>1,469</td>
      <td>62,904</td>
      <td>64,373</td>
@@ -673,7 +669,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
      <th>90</th>
     </tr>
     <tr>
-     <td><span style="font-weight:bold">audio</span></td>
+     <td>audio</td>
      <td>6</td>
      <td>6</td>
      <td>240</td>
@@ -681,7 +677,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
      <td>8,760</td>
     </tr>
     <tr>
-     <td><span style="font-weight:bold">css</span></td>
+     <td>css</td>
      <td>24</td>
      <td>24</td>
      <td>720</td>
@@ -689,7 +685,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
      <td>8,760</td>
     </tr>
     <tr>
-     <td><span style="font-weight:bold">font</span></td>
+     <td>font</td>
      <td>720</td>
      <td>8,760</td>
      <td>8,760</td>
@@ -697,7 +693,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
      <td>8,760</td>
     </tr>
     <tr>
-     <td><span style="font-weight:bold">html</span></td>
+     <td>html</td>
      <td>0</td>
      <td>1</td>
      <td>336</td>
@@ -705,7 +701,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
      <td>87,600</td>
     </tr>
     <tr>
-     <td><span style="font-weight:bold">image</span></td>
+     <td>image</td>
      <td>4</td>
      <td>168</td>
      <td>720</td>
@@ -713,7 +709,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
      <td>8,766</td>
     </tr>
     <tr>
-     <td><span style="font-weight:bold">other</span></td>
+     <td>other</td>
      <td>0</td>
      <td>1</td>
      <td>30</td>
@@ -721,7 +717,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
      <td>8,760</td>
     </tr>
     <tr>
-     <td><span style="font-weight:bold">script</span></td>
+     <td>script</td>
      <td>0</td>
      <td>2</td>
      <td>720</td>
@@ -729,7 +725,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
      <td>8,760</td>
     </tr>
     <tr>
-     <td><span style="font-weight:bold">text</span></td>
+     <td>text</td>
      <td>0</td>
      <td>1</td>
      <td>6</td>
@@ -737,7 +733,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
      <td>720</td>
     </tr>
     <tr>
-     <td><span style="font-weight:bold">video</span></td>
+     <td>video</td>
      <td>6</td>
      <td>12</td>
      <td>336</td>
@@ -745,7 +741,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
      <td>8,760</td>
     </tr>
     <tr>
-     <td><span style="font-weight:bold">xml</span></td>
+     <td>xml</td>
      <td>0</td>
      <td>24</td>
      <td>24</td>
@@ -829,13 +825,13 @@ When we break this out by first party vs third party in the following table, we 
      <th>Overall</th>
     </tr>
     <tr>
-     <td><span style="font-weight:bold">desktop</span></td>
+     <td>desktop</td>
      <td>61.6%</td>
      <td>59.3%</td>
      <td>60.7%</td>
     </tr>
     <tr>
-     <td><span style="font-weight:bold">mobile</span></td>
+     <td>mobile</td>
      <td>61.8%</td>
      <td>57.9%</td>
      <td>60.2%</td>
