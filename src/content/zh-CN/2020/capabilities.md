@@ -157,6 +157,7 @@ registration.showNotification('Title', {
 
 {{ figure_markup(
   image="screen_wake_lock_api.png",
+  alt="使用屏幕唤醒锁定 API的页面数量。",
   caption="使用屏幕唤醒锁定 API的页面数量。",
   description="屏幕唤醒锁定API使用情况图，基于HTTP Archive监控的页面数量，对比桌面和移动页面。在2020年10月，该API被10个桌面页面和5个移动页面使用。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=718278185&format=interactive",
@@ -203,7 +204,7 @@ registration.periodicSync.register('articles', {
 
 对于间隔的每一个周期，如果设备在线，浏览器会触发服务工作程序的 "periodicsync "事件。然后，服务工作程序脚本可以执行必要的步骤来同步数据。
 
-```
+```js
 self.addEventListener('periodicsync', (event) => {
   if (event.tag === 'articles') {
     event.waitUntil(syncStuff());
@@ -296,6 +297,7 @@ WebSocketStream API透明地解决了背压问题，因为流读取器和写入�
 }}
 
 WebSocketStream API已经完成了第一次初期试用，现在又回到了实验阶段。这也解释了为什么目前这个API的使用率很低，几乎无法衡量。
+
 ### 启用QUIC
 
 [QUIC](https://www.chromium.org/quic) ([IETF Internet-Draft](https://www.ietf.org/archive/id/draft-ietf-quic-transport-31.txt))是一种基于UDP实现的多路复用、基于流的双向传输协议。它是在TCP之上实现的HTTP/WebSocket API的替代品。[QuicTransport API] (https://web.dev/quictransport/)是用于向QUIC服务器发送消息和接收消息的客户端API。开发者可以选择通过数据包不可靠地发送数据，或者通过使用其流API可靠地发送数据。
