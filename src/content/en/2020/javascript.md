@@ -317,7 +317,7 @@ The most likely explanation for this is that Lighthouse's accessibility tests ar
 
 Where we do see a strong correlation is between the amount of JavaScript bytes and both the overall Lighthouse performance score and Total Blocking Time.
 
-The correlation between JavaScript bytes and Lighthouse performance scores is -.47. In other words, as JS bytes increase, Lighthouse performance scores decrease. The overall bytes has a stronger correlation than the amount of third-party scripts, hinting that while they certainly play a role, we can't place all the blame on third-parties.
+The correlation between JavaScript bytes and Lighthouse performance scores is -0.47. In other words, as JS bytes increase, Lighthouse performance scores decrease. The overall bytes has a stronger correlation than the amount of third-party scripts, hinting that while they certainly play a role, we can't place all the blame on third-parties.
 
 The connection between Total Blocking Time and JavaScript bytes is even more signficant (.55 for overall bytes, .48 for third-party bytes). That's not too surprising given what we know about all the work browsers have to do to get JavaScript to run in a page—more bytes means more time.
 
