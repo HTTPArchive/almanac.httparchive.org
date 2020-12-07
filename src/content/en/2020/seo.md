@@ -550,6 +550,20 @@ The median page is linking to external sites 7 times on desktop and 6 times on m
   sql_file="pages_wpt_bodies_by_device_and_percentile.sql"
 ) }}
 
+#### Text versus image links
+
+The median web page uses an image as anchor text to link in 9.80% of desktop and 9.82% of mobile pages. These links represent lost opportunities to implement keyword-relevant anchor text. This only becomes a significant issue at the 90th percentile of pages.
+
+{{ figure_markup(
+  image="seo-image-links.png",
+  caption="Distribution of the percent of links containing images per page.",
+  description="Bar chart showing the percentage of image links per percentile (10, 25, 50, 75, and 90). The median web page features 9.80% image links on desktop and 9.82% image links on mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1292929825&format=interactive",
+  sheets_gid="775602646",
+  sql_file="pages_wpt_bodies_by_device_and_percentile.sql"
+) }}
+
+
 #### Mobile versus desktop links
 
 There is a disparity in the links between mobile and desktop that will negatively impact sites as Google becomes more committed to mobile-only indexing rather than just mobile-first indexing. This is illustrated in the 62 links on mobile versus the 68 links on desktop for the median web page.
@@ -582,18 +596,6 @@ Our review of pages indicates that 28.58% of pages include `rel=nofollow` attrib
   sql_file="pages_robots_txt_by_device_and_status.sql"
 ) }}
 
-#### Text versus image links
-
-The median web page uses an image as anchor text to link in 9.80% of desktop and 9.82% of mobile pages. These links represent lost opportunities to implement keyword-relevant anchor text. This only becomes a significant issue at the 90th percentile of pages.
-
-{{ figure_markup(
-  image="seo-image-links.png",
-  caption="Distribution of the percent of links containing images per page.",
-  description="Bar chart showing the percentage of image links per percentile (10, 25, 50, 75, and 90). The median web page features 9.80% image links on desktop and 9.82% image links on mobile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1292929825&format=interactive",
-  sheets_gid="775602646",
-  sql_file="pages_wpt_bodies_by_device_and_percentile.sql"
-) }}
 
 ## Advanced
 
