@@ -94,6 +94,7 @@ Web存储有两类。"尽力"和 "持久"，第一种是默认的。当设备的
 
 {{ figure_markup(
   image="storage_manager_api_persist.png",
+  alt="使用存储管理 API的持久方法的页面数。",
   caption="使用存储管理 API的持久方法的页面数。",
   description="根据HTTPArchive监控的页面数量，存储管理 API的持久化方法的使用情况图。它比较了移动设备和桌面设备上的使用情况。在桌面页面上，使用量几乎是稳定的，而在移动设备上则有更多的波动。在2020年10月，有25个桌面页面和176个移动页面利用该API。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=644836316&format=interactive",
