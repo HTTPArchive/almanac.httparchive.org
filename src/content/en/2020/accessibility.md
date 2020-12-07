@@ -71,7 +71,7 @@ Setting an HTML `lang` attribute allows easy translation of a page and better sc
 
 Images are an essential part of the web experience. They can add an enriched context to the surrounding textual information, and not just for sighted users. In 1995, [HTML 2.0](https://www.w3.org/MarkUp/html-spec/html-spec_5.html#SEC5.10) introduced the alt attribute, enabling web authors to provide a text alternative for the visual information communicated in an image. A screen reader can convey its visual meaning aurally by announcing the image’s alternative text. Additionally if images are unable to load, the alternative text for a description will be displayed.  
 
-The 2020 Lighthouse audit data shows that only 54% of sites pass the [test for images with alt text](https://dequeuniversity.com/rules/axe/3.5/image-alt). This test looks for the presence of at least one of the alt, aria-label and aria-labelledby attributes on img elements. In most cases using the alt attribute is the best choice. Even though alt attributes have been around for 25 years, we also found that 21.24% of desktop images and 21.38% of mobile images are lacking alternative text.  This is one of the easiest automated checks to test for using your accessibility tool of choice, and should be low hanging fruit and a relatively straightforward problem to solve.
+The 2020 Lighthouse audit data shows that only 54% of sites pass the [test for images with alt text](https://dequeuniversity.com/rules/axe/3.5/image-alt). This test looks for the presence of at least one of the alt, aria-label and aria-labelledby attributes on `img` elements. In most cases using the alt attribute is the best choice. Even though alt attributes have been around for 25 years, we also found that 21.24% of desktop images and 21.38% of mobile images are lacking alternative text.  This is one of the easiest automated checks to test for using your accessibility tool of choice, and should be low hanging fruit and a relatively straightforward problem to solve.
 
 Screen reader users listen to the [“aural UI” as described by Steve Faulker](https://developer.paciellogroup.com/blog/2015/10/thus-spoke-html/), an aural or sonic experience of the interface wherein the  structure, semantics and relationships of the content are announced. This means that screen reader users consume a lot of textual information. For this reason it is important to assess whether or not an image might not need to be described. This is a helpful [decision tree from the W3C](https://www.w3.org/WAI/tutorials/images/decision-tree/) for deciding how and whether to describe an image. If an image is truly decorative and adds nothing meaningful to the surrounding context, you can assign the alt attribute a null value, alt="". It is important to do this explicitly rather than omitting the alt attribute altogether, as omitting it could lead to assistive technology announcing the image path, which is a very confusing user experience. We found that 26.20% of desktop pages and 26.23% of mobile pages contain alt attributes with a null/empty value. We hope this indicates that over a quarter of websites are being developed with consideration for which images are truly meaningful and not as a means of side stepping automated checks.
 
@@ -103,3 +103,35 @@ Tooltips also introduce a host of other accessibility barriers such as informati
 ### Video on the Web
 
 Video and other multi-media content can enrich a Web experience, but often is not robustly supported for all users and can pose major accessibility barriers if it is not implemented with support. For more information see the [W3C’s Making Audio and Video Accessible](https://www.w3.org/WAI/media/av/).
+
+#### Captions
+
+Captions or transcripts are needed to communicate aural information for people who are deaf or hard of hearing, and are very also helpful for users who are hard of hearing or have cognitive disabilities such as audio processing difficulty. Transcripts also help low-vision and blind users by describing visuals.  Video content on the web is not accessible if it does not have accompanying captions. Similar to the importance of having meaningful alternative text for images, the quality of captions is also very important.
+
+> “Captions not only include dialogue, but identify who is speaking and include non-speech information conveyed through sound, including meaningful sound effects” 
+> -WCAG, Understanding Success Criterion 1.2.2: Captions
+
+Of sites using `<video>` elements, only 0.79% provide closed captions, which we assume based on the presence of the `<track>` element (and which are different from open / burned-in captions). Note that some websites have custom solutions for providing video and audio captions to users. We were unable to detect these custom solutions so the percentage of sites utilizing captions could be higher, but this figure is indicative of how under supported captions are on Web video content. We also cannot assess the quality of the captions detected and whether or not they accurately convey the full meaning of the video they describe.
+
+#### Autoplaying video
+
+It is arguably a disruptive and undesirable user experience to autoplay and loop video on a website for all users. Video can be a resource drain for device batteries
+as well as data, and in some cases video can contain content that is distressing for users, whether by showing disturbing imagery or being used as an attack vector against people prone to seizures. 
+
+For disabled users there are significant barriers caused by autoplaying and looping video. For screen reader users, a video that contains audio will likely disrupt the announcements and lead to confusion. For folks with cognitive disabilities such as ADHD video can be very distracting and interrupt the user’s ability to use and understand the interface. People with vestibular conditions can be dangerously triggered by video as well.
+
+The Web Content Accessibility Guidelines has a criteria [2.2.2 Pause, Stop, Hide](https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html) that requires that any moving, blinking or scrolling content (including video) that plays for longer than 5 seconds have a mechanism to pause, stop, or hide it.
+
+Of the pages with video present, we found that 56.98% of desktop pages and 53.64% of mobile pages have the autoplay attribute meaning that videos play by default. We also found that 58.42% of desktop pages and 52.86% of mobile pages have the loop attribute, which very likely means the video plays indefinitely. Though there could be mechanisms to pause, stop or hide these videos, opting into playing video rather than needing to stop autoplaying and/or looping the video should be the default. These metrics suggest that over half of websites with video could have significant accessibility barriers. 
+
+## Ease of page navigation
+
+Pages need to be easy to navigate so users are not left feeling lost, or unable to find the content they need to do what brought them to our sites in the first place. Screen reader technology also needs to be able to differentiate between different sections, so users of this software are not left with an indecipherable wall of text. 
+
+### Headings
+
+Headings make it easier for screen readers to properly navigate a page by supplying a hierarchy that can be jumped through like a table of contents.
+
+Our audits revealed that 58.72% of the sites checked pass the test for properly ordered headings that do not skip levels. These headings convey the semantic structure of the page. Many screen reader users navigate a page through its headings, so having them in the correct order - ascending with no jumps - means that assistive technology users will have the best experience. It is worth noting that we only check pages, where these rules are more likely to be followed; home pages are more likely than interior pages to follow this rule.
+
+
