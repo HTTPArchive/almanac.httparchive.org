@@ -149,9 +149,35 @@ Righ up until the median, sites serve roughly the same number of first-party scr
   sql_file="requests_by_3p.sql"
 ) }}
 
+{{ figure_markup(
+  image="requests-by-3p-mobile.png",
+  caption="Distribution of the number of JavaScript requests by host for mobile.",
+  description="Bar chart showing the distribution of JavaScript requests per host for mobile. The 10, 25, 50, 75, and 90th percentiles for first party requests are: 2, 4, 9, 17, and 30 requests per page. This is the same as for desktop. The number of third party requests per page is slightly higher in the upper percentiles by 1 to 5 requests, similar to dekstop.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=1465647946&format=interactive",
+  sheets_gid="978380311",
+  sql_file="requests_by_3p.sql"
+) }}
+
 While the amount of JavaScript requests are similar at the median, the actual size of those scripts is weighted (pun intended) a bit more heavily toward third-party sources. The median site sends 267kb of JavaScript from third-parties to desktop devices compared to 147kb from first-parties. The situation is very similar on mobile, where the median site ships 255kb of third-party scripts compared to 134kb of first-party scripts.
 
-{# TODO: JS bytes by host distribution chart, based on 3P DB #}
+
+{{ figure_markup(
+  image="bytes-by-3p-desktop.png",
+  caption="Distribution of the number of JavaScript bytes by host for desktop.",
+  description="Bar chart showing the distribution of JavaScript bytes per host for desktop. The 10, 25, 50, 75, and 90th percentiles for first party bytes are: 21, 67, 147, 296, and 599 KB per page. The number of third party requests per page grows much higher in the upper percentiles by up to 343 KB.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=1749995505&format=interactive",
+  sheets_gid="1145367011",
+  sql_file="bytes_by_3p.sql"
+) }}
+
+{{ figure_markup(
+  image="bytes-by-3p-mobile.png",
+  caption="Distribution of the number of JavaScript bytes by host for mobile.",
+  description="Bar chart showing the distribution of JavaScript bytes per host for mobile. The 10, 25, 50, 75, and 90th percentiles for first party bytes are: 18, 60, 134, 275, and 560 KB. These values are consistently smaller than the desktop values, but only by 10-30 KB. Similar to desktop, the third party bytes are higher than first party, on mobile this difference is not as wide, only up to 328 KB at the 90th percentile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=231883913&format=interactive",
+  sheets_gid="1145367011",
+  sql_file="bytes_by_3p.sql"
+) }}
 
 ## How do we load our JavaScript?
 The way we load JavaScript has a significant impact on the overall experience.
@@ -162,11 +188,25 @@ We can start to offset some of the cost of loading JavaScript by loading scripts
 
 On mobile, external scripts comprise 59.0% of all script elements found. _As an aside, when we talk about how much JavaScript is loaded on a page earlier, that total doesn't account for the size of these inline scripts—because they're part of the HTML document, they're counted against the markup size. This means we load even more script that the numbers show._
 
-{# TODO: pie chart of extneral vs internal #}
+{{ figure_markup(
+  image="external-inline-mobile.png",
+  caption="Distribution of the number of external and inline scripts per mobile page.",
+  description="Pie chart showing 41.0% of mobile scripts are inline and 59.0% are external.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=1326937127&format=interactive",
+  sheets_gid="1991661912",
+  sql_file="breakdown_of_scripts_using_async_defer_module_nomodule.sql"
+) }}
 
 Of those external scripts, only 12.2% of them are loaded with the `async` attribute and 6.0% of them are loaded with the `defer` attribute.
 
-{# TODO: pie chart showing async vs defer vs neither #}
+{{ figure_markup(
+  image="async-defer-mobile.png",
+  caption="Distribution of the number of `async` and `defer` scripts per mobile page.",
+  description="Pie chart showing 12.2% of external mobile scripts use async, 6.0% use defer, and 81.8% use neither.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=662584253&format=interactive",
+  sheets_gid="1991661912",
+  sql_file="breakdown_of_scripts_using_async_defer_module_nomodule.sql"
+) }}
 
 Considering that `defer` provides us with the best loading performance (by ensuring downloading the script happens in parallel to other work, and execution waits until after the page can be displayed), we would hope to see that percentage a bit higher. In fact, as it is that 6.0% is a bit misleading.
 
@@ -179,7 +219,14 @@ As with any text-based resource on the web, we can save significant file savings
 
 One of the audits in Lighthouse checks for unminified JavaScript, and provides a score (0 being the worst, 100 being the best) based on the findings. 
 
-{# TODO: distribution of unminified JS scores #}
+{{ figure_markup(
+  image="lighthouse-unminified-js.png",
+  caption="Distribution of unminified JavaScript Lighthouse adudit scores per mobile page.",
+  description="Bar chart showing 0% of mobile pages getting unminified JavaScript Lighthouse audit scores under 0.25, 4% of pages getting a score between 0.25 and 0.5, 10% of pages between 0.5 and 0.75, 8% of pages between 0.75 and 0.9, and 77% of pages between 0.9 and 1.0.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=158284816&format=interactive",
+  sheets_gid="362705605",
+  sql_file="lighthouse_unminified_js.sql"
+) }}
 
 The chart above shows that most pages tested (77%) get a score of 90 or above, meaning that few unminified scripts are found. 
 
