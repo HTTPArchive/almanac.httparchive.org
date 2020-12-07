@@ -65,7 +65,7 @@ When we talk about caching, it refers to the object (HTML page, image, etc.) cac
 
 Below figure shows how a typical request/response flow works for an object (e.g. a web page).  A CDN sits between the browser and the server. Note that at each point in the browser → CDN → server flow, each of the caching entities first checks whether it has the object in its cache.  It returns the cached object to the requester if found, before forwarding the request to the next caching entity in the chain:
 
-**Placeholder for Figure 1**
+{# Figure 1: Request/response flow for an object. #}
 
 {{ figure_markup(
   image="0_request_response_flow_with_caching.png",
@@ -162,7 +162,7 @@ RFC 7234 says that if no caching headers are present in a response, then the bro
 * 54.8% of responses include both headers
 * 25.6% of responses did not include either header, and are therefore subject to heuristic caching
 
-**Placeholder for Figure 2: Usage of HTTP Cache-Control and Expires headers.**
+{# Figure 2: Usage of HTTP Cache-Control and Expires headers.  #}
 
 {{ figure_markup(
   image="1_cache_control_and_max_age_and_expires.png",
@@ -174,7 +174,7 @@ RFC 7234 says that if no caching headers are present in a response, then the bro
   )
 }}
 
-**Placeholder for Figure 2a: Usage of HTTP Cache-Control and Expires headers in 2019.**
+{# Figure 2a: Usage of HTTP Cache-Control and Expires headers in 2019. #}
 
 {{ figure_markup(
   image="1_cache_control_and_max_age_and_expires_2019.png",
@@ -263,7 +263,8 @@ This indicates that the object can be cached for 86,400 seconds (1 day) and it c
 * 60.2% of responses include a `Cache-Control` header with the `max-age` directive.
 * 45.5% of responses include the `Cache-Control` header with the `max-age` directive and the `Expires` header, which means that 10% of responses are caching solely based on the older `Expires` header.
 
-**Placeholder for Figure 3: Distribution of Cache-Control directives.**
+{# Figure 3: Distribution of Cache-Control directives. #}
+
 {{ figure_markup(
   image="2_cache_control_directives.png",
   caption="Distribution of `Cache-Control` directives.",
@@ -430,7 +431,7 @@ In the same way that the `Cache-Control` header has more power and flexibility t
 * 42.8% of responses are served with both headers (as noted above, in this case, the `ETag` header takes precedence).
 * 21.4% of responses include neither a `Last-Modified` or `ETag` header.
 
-**Placeholder for Figure 4: Adoption of validating freshness via Last-Modified and ETag headers.**
+{# Figure 4: Adoption of validating freshness via Last-Modified and ETag headers. #}
 
 {{ figure_markup(
   image="3_last_modified_and_etag.png",
@@ -442,7 +443,7 @@ In the same way that the `Cache-Control` header has more power and flexibility t
   )
 }}
 
-**Placeholder for Figure 5: Adoption of validating freshness via Last-Modified and ETag headers in 2019.**
+{# Figure 5: Adoption of validating freshness via Last-Modified and ETag headers in 2019. #}
 
 {{ figure_markup(
   image="4_last_modified_and_etag_2019.png",
@@ -462,7 +463,7 @@ Correctly-implemented revalidation using conditional requests can significantly 
 * 20.5% of the responses had no ETag header and contained the same `Last-Modified` value, passed in the `If-Modified-Since` header of the corresponding request. Out of these, 86% had a `304 Not Modified` status.
 * 86.1% of the responses contained the same `ETag` value, passed in the `If-None-Match` header of the corresponding request. If the `If-Modified-Since` header is also present, `ETag` takes precedence. Out of these, 88.9% had a `304 Not Modified` status.
 
-**Placeholder for Figure 6: Distribution of 304 Not Modified status.**
+{# Figure 6: Distribution of 304 Not Modified status. #}
 
 {{ figure_markup(
   image="5_valid_if_none_match_returns_304.png",
@@ -497,7 +498,7 @@ Invalid date strings are ignored by most browsers, which can affect the cacheabi
 
 Because the `Date` HTTP response header is almost always generated automatically by the web server, invalid values are extremely rare. Similarly `Last-Modified` headers had a very low percentage (0.5%) of invalid values. What was very surprising to see though, was that a relatively high 2.9% of `Expires` headers used an invalid date format (2.5% in mobile).
 
-**Placeholder for Figure 7: Invalid date formats in response headers.**
+{# Figure 7: Invalid date formats in response headers. #}
 
 {{ figure_markup(
   image="6_invalid_last_modified_and_expires_and_date.png",
@@ -547,7 +548,7 @@ The `Vary` header is used on 43.4% of HTTP responses, and 84.2%  of these respon
 
 The graph below details the popularity for the top 10 Vary header values. `Accept-Encoding` accounts for almost 92% of `Vary`'s use, with `User-Agent` at 10.7%, `Origin` (used for CORS processing) at 8%, and Accept at 4.1% making up much of the rest.
 
-**Placeholder for Figure 8: Vary header usage.**
+{# Figure 8: Vary header usage. #}
 
 {{ figure_markup(
   image="7_vary_headers.png",
@@ -563,7 +564,7 @@ The graph below details the popularity for the top 10 Vary header values. `Accep
 
 When a response is cached, its entire set of response headers are included with the cached object as well. This is why you can see the response headers when inspecting a cached response in Chrome via DevTools:
 
-**Placeholder for Figure 9: Chrome Dev Tools for a cached resource.**
+{# Figure 9: Chrome Dev Tools for a cached resource. #}
 
 {{ figure_markup(
   image="7a_chrome_dev_tools.png",
@@ -581,7 +582,7 @@ For example, if a login cookie or a session cookie is present in a CDN’s cache
 
 41.4%% of cacheable responses contain a `Set-Cookie` header. Of those responses, only 4.6% use the `private` directive. The remaining 95.4% (189.2 million HTTP responses) contain at least one `Set-Cookie` response header and can be cached by both public cache servers, such as CDNs. This is concerning and may indicate a continued lack of understanding about how cacheability and cookies coexist.
 
-**Placeholder for Figure 10: `Set-Cookie` in cacheable responses.**
+{# Figure 10: `Set-Cookie` in cacheable responses. #}
 
 {{ figure_markup(
   image="8_set_cookie.png",
@@ -593,7 +594,7 @@ For example, if a login cookie or a session cookie is present in a CDN’s cache
   )
 }}
 
-**Placeholder for Figure 11: `Set-Cookie` in private and non private cacheable responses.**
+{# Figure 11: `Set-Cookie` in private and non private cacheable responses. #}
 
 {{ figure_markup(
   image="9_set_cookie2.png",
@@ -609,7 +610,7 @@ For example, if a login cookie or a session cookie is present in a CDN’s cache
 
 Service Workers are a feature of HTML5 that allow front-end developers to specify scripts that should run outside the 'normal' request/response flow of web pages, communicating with the web page via messages. Common uses of service workers are for background synchronization and push notifications and, obviously, for caching - and browser support has been rapidly growing for them.
 
-**Placeholder for Figure 12: Growth in service worker controlled pages from 2019.**
+{# Figure 12: Growth in service worker controlled pages from 2019. #}
 
 {{ figure_markup(
   image="10_appcache_and_serviceworkers_2019",
@@ -672,7 +673,7 @@ As we have seen, a cacheable resource is stored by the browser for a period of t
 
 The remaining 9.2% of responses are not permitted to be stored in browser caches - typically because of Cache-Control: no-store.
 
-**Placeholder for Figure 13: Distribution of cacheable and non-cacheable responses.**
+{# Figure 13: Distribution of cacheable and non-cacheable responses. #}
 
 {{ figure_markup(
   image="11_cacheable_and_non_cacheable.png",
@@ -684,7 +685,7 @@ The remaining 9.2% of responses are not permitted to be stored in browser caches
   )
 }}
 
-**Placeholder for Figure 14: Distribution of TTL in cacheable responses.**
+{# Figure 14: Distribution of TTL in cacheable responses. #}
 
 {{ figure_markup(
   image="12_ttl.png",
@@ -801,7 +802,7 @@ By exploring the cacheability by content type in more detail in figure below, we
 
 Additionally, 13.6% of images and scripts are non-cacheable. There is likely some room for improvement here, since no doubt some of these objects are also static and could be cached at a higher rate - remember: *cache as much as you can for as long as you can!*
 
-**Placeholder for Figure 15: Distribution of cacheability by content type.**
+{# Figure 15: Distribution of cacheability by content type. #}
 
 {{ figure_markup(
   image="13_cacheable_by_resource_type.png",
@@ -825,7 +826,7 @@ The graphs below illustrate the relative age of resources by content type. Some 
 * Some of the longest aged first party content on the web, with age eight weeks or more, are the traditionally cacheable objects like images (78.3%), scripts (68.6%), CSS (74.1%), web fonts (79.3%), audio (77.9%) and video (78.6%).
 * There is a significant gap in some first vs. third party resources having an age of more than a week. 93.5% of first party CSS are older than one week compared to 51.5% of 3rd party CSS, which are older than one week.
 
-**Placeholder for Figure 16: Resource age distribution by content type (first party).**
+{# Figure 16: Resource age distribution by content type (first party). #}
 
 {{ figure_markup(
   image="14_resource_age_party_and_type_wise_groups_1st_party.png",
@@ -837,7 +838,7 @@ The graphs below illustrate the relative age of resources by content type. Some 
   )
 }}
 
-**Placeholder for Figure 17: Resource age distribution by content type (third party).**
+{# Figure 17: Resource age distribution by content type (third party). #}
 
 {{ figure_markup(
   image="15_resource_age_party_and_type_wise_groups_3rd_party.png",
@@ -893,7 +894,7 @@ When we break this out by first party vs third party in the following table, we 
 
 Google's [Lighthouse](https://developers.google.com/web/tools/lighthouse) tool enables users to run a series of audits against web pages, and the [cache policy audit](https://developers.google.com/web/tools/lighthouse/audits/cache-policy) evaluates whether a site can benefit from additional caching. It does this by comparing the content age (via the `Last-Modified` header) to the cache TTL and estimating the probability that the resource would be served from cache. Depending on the score, you may see a caching recommendation in the results, with a list of specific resources that could be cached.
 
-**Placeholder for Figure 18: Lighthouse report highlighting potential cache policy improvements.**
+{# Figure 18: Lighthouse report highlighting potential cache policy improvements. #}
 
 {{ figure_markup(
   image="16_lighthouse_caching_audit.png",
@@ -906,7 +907,8 @@ Google's [Lighthouse](https://developers.google.com/web/tools/lighthouse) tool e
 
 Lighthouse computes a score for each audit, ranging from 0% to 100%, and those scores are then factored into the overall scores. The caching score is based on potential byte savings. When we examine the Lighthouse results, we can get a perspective of how many sites are doing well with their cache policies.
 
-**Placeholder for Figure 19: Distribution of Lighthouse audit scores for the `uses-long-cache-ttl` for mobile web pages.**
+{# Figure 19: Distribution of Lighthouse audit scores for the `uses-long-cache-ttl` for mobile web pages. #}
+
 {{ figure_markup(
   image="17_cache_ttl_lighthouse_score.png",
   caption="Distribution of Lighthouse audit scores for the `uses-long-cache-ttl` for mobile web pages.",
@@ -921,7 +923,8 @@ Only 3.3% of sites scored a 100%, meaning that the vast majority of sites can be
 
 Lighthouse also indicates how many bytes could be saved on repeat views by enabling a longer cache policy. Of the sites that could benefit from additional caching, 78.6% of them can reduce their page weight by up to 2MB!
 
-**Placeholder for Figure 20: Distribution of potential byte savings from the Lighthouse caching audit.**
+{# Figure 20: Distribution of potential byte savings from the Lighthouse caching audit. #}
+
 {{ figure_markup(
   image="18_cache_wastedbytes_lighthouse.png",
   caption="Distribution of potential byte savings from the Lighthouse caching audit.",
