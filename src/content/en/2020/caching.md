@@ -572,7 +572,7 @@ For example, if a login cookie or a session cookie is present in a CDN’s cache
 
 ## Service Workers
 
-Service Workers are a feature of HTML5 that allow front-end developers to specify scripts that should run outside the 'normal' request/response flow of web pages, communicating with the web page via messages. Common uses of service workers are for background synchronization and push notifications and, obviously, for caching - and browser support has been rapidly growing for them.
+Service workers are a feature of HTML5 that allow front-end developers to specify scripts that should run outside the 'normal' request/response flow of web pages, communicating with the web page via messages. Common uses of service workers are for background synchronization and push notifications and, obviously, for caching - and browser support has been rapidly growing for them.
 
 {{ figure_markup(
   image="service-workers-controlled-pages-2019-2020.png",
