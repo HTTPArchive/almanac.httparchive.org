@@ -748,7 +748,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
      <td>8,760</td>
     </tr>
   </table>
-  <figcaption>{{ figure_link(caption="Desktop cache TTL percentiles by resource type.") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Desktop cache TTL percentiles by resource type.", sheets_gid="676954337", sql_file="ttl_by_resource.sql") }}</figcaption>
 </figure>
 
 While most of the median TTLs are high, the lower percentiles highlight some of the missed caching opportunities. For example, the median TTL for images is 720 hours (1 month); however the 25<sup>th</sup> percentile is just 168 hours (1 week) and the 10<sup>th</sup> percentile has dropped to just a few hours. Compare this with fonts, which have a very high TTL of 8760 hours (1 year) all the way down to the 25th percentile, with even the 10<sup>th</sup> percentile showing a TTL of 1 month.
