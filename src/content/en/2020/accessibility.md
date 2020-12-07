@@ -134,4 +134,96 @@ Headings make it easier for screen readers to properly navigate a page by supply
 
 Our audits revealed that 58.72% of the sites checked pass the test for properly ordered headings that do not skip levels. These headings convey the semantic structure of the page. Many screen reader users navigate a page through its headings, so having them in the correct order - ascending with no jumps - means that assistive technology users will have the best experience. It is worth noting that we only check pages, where these rules are more likely to be followed; home pages are more likely than interior pages to follow this rule.
 
+### Skip links
 
+Skip links enable a user to skip through any interactive content such as a navigation system and go to another destination, typically the main content of the page. They are typically the first link on a page and can be persistent in the UI or visibly hidden until they have keyboard focus. This prevents keyboard users from needing to potentially tab through an extraneous number of elements to get to the content they are trying to access. 
+
+Skip links are considered a bypass block. The 2020 lighthouse audit data revealed that 93.90% of sites pass the [bypass block](https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html) test, meaning they have a `<header>`, skip link or landmark region to allow users to skip repetitive content.
+
+### Tables
+
+Tables are an efficient way to display data with two axes of relationships, making them useful for comparisons. Users of assistive technology rely on specific accessibility features designed to navigate properly structured tables in order to have the best experience navigating and interacting with them. Without valid semantic table markup present, these features cannot be used.
+
+#### Table captions
+
+Table captions act as a label for the table supplying context for the table data. Only 4.98% of desktop sites and 4.20% of mobile sites with a table used a table caption.
+
+#### Presentational tables
+
+We are fortunate in 2020 to have so many flexible CSS methodologies that allow for fluid responsive layouts. However, many years ago before the likes of flexbox and CSS Grid, developers often used tables for layout. Unfortunately due to some combination of legacy websites and legacy development techniques there are still sites out there where tables are used for layout. 
+
+If there is an absolute need to reach for this technique, the role of presentation should be applied to the table such that assistive technology will ignore the table semantics. We found that 0.063% of desktop and 0.049% of mobile pages had a table with a role of presentation. It’s hard to know if this is good or bad. It could indicate that there are not many tables used for presentational purposes, but it is very likely that tables used for layout are just lacking this needed role. 
+
+### Document titles
+
+Descriptive page titles are helpful for context when moving between pages, tabs and windows with assistive technology because the change in context will be announced. Our data shows 98.98% of sites have a title which is a hopeful statistic. However it stands to reason that home pages may have a higher rate of page titles than less important routes.
+
+### Tabindex
+
+Tabindex dictates the order in which focus moves throughout the page. Interactive content such buttons, links and form controls have a natural `tabindex` value of 0. Similarly custom elements and widgets that are intended to be interactive and in the keyboard focus order need an explicitly assigned `tabindex=”0”`. If a non-interactive element should be focusable but not in the keyboard tab order a `tabindex` value of -1 can be used allowing for focus to be programmatically set with JavaScript.
+
+The focus order of the page should always be determined by the document flow. Setting the tabindex to a positive integer value overrides the natural order of the page and is considered bad practice. Respecting the natural order of the page generally leads to a more accessible experience. We found that 5% of desktop sites and  4.34% of mobile sites used positive integers as tab index values. 
+
+## Assistive technologies on the Web 
+
+People with varying disabilities use different assistive technologies to help them experience the Web. This [Tools and Techniques](https://www.w3.org/WAI/people-use-web/tools-techniques/) article from the Web Accessibility Initiative or WAI of the W3C covers how users can perceive, understand and interact with the Web using different assistive technologies. 
+
+Some assistive technologies for the Web include:
+- Screen readers
+- Voice control
+- Screen magnifiers 
+- Input devices (such as pointers and switch devices)
+
+Screen readers present content audibly, usually by the computer speaking or announcing the content in the interface as the user navigates and interacts. This enables blind, low vision, and other disabled and non-disabled  users to consume the content without needing to rely on the visual cues displayed on the screen.
+
+### ARIA
+
+In 2014 the WAI published Accessible Rich Internet Applications, or ARIA. They [describe ARIA as](https://www.w3.org/WAI/standards-guidelines/aria/), “WAI-ARIA, the Accessible Rich Internet Applications Suite, defines a way to make Web content and Web applications more accessible to people with disabilities. It especially helps with dynamic content and advanced user interface controls developed with Ajax, HTML, JavaScript, and related technologies.”
+
+Most developers think of ARIA as attributes we can add to HTML to make it more usable for screen reader users, but it was never intended to make up for improper markup and native HTML solutions. ARIA has a lot of nuances which, when misunderstood, can introduce new accessibility barriers. Furthermore different screen readers have varying limitations with respect to ARIA support. 
+
+#### The Five Rules of ARIA
+
+There are 5 rules of ARIA that we need to understand before  making use of this powerful toolset. This is not an official specification with required conformance, but a guide for understanding and implementing ARIA correctly. 
+
+#####The 5 Rules of ARIA (from [W3C’s Using Aria](https://www.w3.org/TR/using-aria/)):
+
+1. If you can use a native HTML element [HTML 5.1] or attribute with the semantics and behavior you require already built in, instead of repurposing an element and adding an ARIA role, state or property to make it accessible, then do so.
+2. Do not change native semantics, unless you really have to.
+3. All interactive ARIA controls must be usable with the keyboard.
+4. Do not use `role="presentation"` or `aria-hidden="true"` on a focusable element.
+5. All interactive elements must have an accessible name.
+
+#### ARIA roles
+
+One of the most common ways that ARIA is used is by explicitly defining the role for an element, which communicates its purpose to assistive technology. 
+
+HTML 5 introduced many new native elements, all which have [implicit semantics](https://www.w3.org/TR/wai-aria-1.1/#implicit_semantics), including roles. For example the `<nav>` element has an implicit `role=”navigation”` and does not need to have this role added explicitly in order to convey its purpose information to assistive technology. Currently 64.54% of desktop pages have at least one instance of an ARIA role attribute. The median site has 2 instances of the role attribute.
+
+##### Just use a button!
+
+We found that 25.20% of desktop sites and 24.50% of mobile sites had homepages with at least one element with an explicitly assigned `role=”button”`. This suggests that about a quarter of websites are using the button role on elements in order to change their semantics, with the exception of buttons that have been explicitly assigned the button role, which is redundant but harmless.
+
+If non-interactive elements such as `<div>`s and `<span>`s have been given this role, there is a significant chance one or more of the 5 rules of ARIA have been broken. 
+
+It is fairly likely that a native `<button>` element would be a better choice, per the first rule of ARIA. It is also possible that the role has been added but the expected keyboard support has not been supplied, which would break the 3rd rule of ARIA and would violate [WCAG 2.1.1, Keyboard](https://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-keyboard-operable.html). We found that 8.27% of desktop pages and 8.28% of mobile pages had at least one occurrence of a `<div>` or a `<span>` element with `role=”button”` explicitly defined. This act of adding ARIA roles, or a “[role-up](https://adrianroselli.com/2020/02/role-up.html)”, is less ideal than using the correct native HTML element.
+
+We found that 15.50% of desktop pages and 14.62% of mobile pages contained at least one anchor element with `role=”button”`. If a role has been applied to an element that should have its implicit role respected, such as giving a `role=”button”` to a link (which has an implicit `role=”link”`), this would break the 2nd rule of ARIA and would violate [WCAG 2.1.1, Keyboard](https://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-keyboard-operable.html) if the correct keyboard behavior has not been implemented (links are not activated with the space key, where as buttons are). 
+
+In the vast majority of these cases, a better pattern than explicitly defining `role=”button”` on the element in question would be to leverage the native HTML <button> element.
+
+##### Navigation
+
+We found that 22.06% of desktop pages and 21.76% of mobile pages have at least one element with `role=”navigation”`, which is a landmark role. Per the 1st rule of ARIA, rather than adding this role to an element, developers should be leveraging the HTML 5 `<nav>` element which comes with the correct semantics implicitly. It is possible that this role has been added explicitly to the <nav> element, which would not be an accessibility issue, though it is redundant.  
+
+##### Dialog Modals
+
+There are many potential accessibility barriers associated with dialog modals. We recommend reading Scott O’Hara’s article [Having an Open Dialog](https://www.scottohara.me/blog/2019/03/05/open-dialog.html) for more context. 
+
+We are pleased to report that 19.01% of desktop pages and 18.21% of mobile pages have at least one occurrence of `role=”dialog”` which is up from about 8% in 2019. It is worth noting some of the increase is probably due to changes in how this metric was measured.This could also suggest that more developers are considering accessibility when building dialogs and potentially that frameworks and associated packages may be implementing more accessible dialog patterns as well. However, making a dialog modal accessible requires a lot more than using the dialog role. Focus management, proper keyboard support, and screen reader communication all need to be addressed. 
+
+##### Tabs
+
+Tabs are a common interface widget, but present a challenge for many developers to make accessible. A common pattern for accessible implementation comes from  the [WAI-ARIA Authoring Practices Design Patterns](https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel). Please note that the ARIA Authoring Practices document is not a specification, and is meant to show idealized ARIA constructs. They should not be used in production without testing with your users. 
+
+In this pattern, a parent container has a role=”tablist” with children elements that have a role=”tab”. These tabs are associated with elements that have a role=”tabpanel”, and contain the content for that tab. 
