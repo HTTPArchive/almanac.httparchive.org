@@ -213,6 +213,7 @@ self.addEventListener('periodicsync', (event) => {
 ```
 
 在撰写本文时，只有基于Chromium的浏览器实现了这个API。在这些浏览器上，必须先安装应用程序（即添加到主屏幕上），然后才能使用该API。网站的[网站参与度评分](https://www.chromium.org/developers/design-documents/site-engagement)定义了是否可以调用周期性同步事件以及调用的频率。在目前保守的实现中，网站每天可以同步一次内容。
+
 {{ figure_markup(
   image="periodic_background_sync_api.png",
   alt="使用周期性后台同步 API的页面数量。",
