@@ -793,7 +793,7 @@ Desktop continues to be the more performant platform for users despite more user
   description="Bar chart showing the percent of websites with a good core web vitals score per device. 33.13% of websites scored _Good_ Core Web Vitals for desktop while only 19.96% of their mobile counterparts passed the Core Web Vitals assessment.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1601210449&format=interactive",
   sheets_gid="996380787",
-  sql_file="lighthouse.sql"
+  sql_file="../09_Performance/web_vitals_by_device.sql"
 ) }}
 
 #### Core Web Vitals experiences per country
@@ -809,7 +809,7 @@ Users located in the United States recorded the largest absolute number of websi
   description="Horizontal bar chart showing the aggregate core web vitals performance by country.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=2077593128&format=interactive",
   sheets_gid="220428774",
-  sql_file="lighthouse.sql",
+  sql_file="../09_Performance/web_vitals_by_country.sql",
   width=645,
   height=792
 ) }}
