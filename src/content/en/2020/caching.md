@@ -167,14 +167,27 @@ RFC 7234 says that if no caching headers are present in a response, then the bro
 {{ figure_markup(
   image="1_cache_control_and_max_age_and_expires.png",
   caption="Usage of `Cache-Control` and `Expires` headers.",
-  description="A bar chart showing the usage of `Cache-Control` and `Expires` headers. 73.6% of desktop and 73.5% of mobile responses are served with a `Cache-Control` header. 55.5% of desktop and 56.2% of mobile responses are served with an `Expires` header. 54.8% of desktop and 55.4% of mobile responses use both `Cache-Control` and `Expires` header. 25.6% of mobile and desktop responses did not include either header.",
+  description="A bar chart showing the usage of `Cache-Control` and `Expires` headers. In desktop, 73.6% of responses are served with a `Cache-Control` header. 55.5% are served with an `Expires` header, 54.8% use both `Cache-Control` and `Expires` header, and 25.6% did not include either header. In mobile, 73.5% of responses are served with a `Cache-Control` header, 56.2% are served with an `Expires` header, 55.4% use both `Cache-Control` and `Expires` header, and 25.6% did not include either header.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=188448640&format=interactive",
   sheets_gid="203111101",
   sql_file="cache_control_and_max_age_and_expires.sql"
   )
 }}
 
-These statistics are interesting, since, when compared with 2019, while we are seeing a noticeable increase in the use of the `Cache-Control` header, we are only seeing a very small decrease in the use of the older `Expires` header - effectively a higher percentage of servers are simply adding the `Cache-Control` header to their responses, without removing the `Expires` header.
+**Placeholder for Figure 2a: Usage of HTTP Cache-Control and Expires headers in 2019.**
+
+{{ figure_markup(
+  image="1_cache_control_and_max_age_and_expires_2019.png",
+  caption="Usage of `Cache-Control` and `Expires` headers in 2019.",
+  description="A bar chart showing the usage of `Cache-Control` and `Expires` headers. In desktop, 72.3% of responses are served with a `Cache-Control` header. 56.3% are served with an `Expires` header, 55.2%	use both `Cache-Control` and `Expires` header, and 26.7% did not include either header. In mobile, 71.7% of responses are served with a `Cache-Control` header, 56.4% are served with an `Expires` header, 55.5% use both `Cache-Control` and `Expires` header, and 27.4% did not include either header.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=651240480&format=interactive",
+  sheets_gid="203111102",
+  sql_file="cache_control_and_max_age_and_expires_2019.sql"
+  )
+}}
+
+These statistics are interesting since, compared with 2019, while we see an increase in the use of the Cache-Control header (1.3%), we also see a minimal decrease in the use of the older Expires header (0.7%). Effectively, a percentage of servers are merely adding the Cache-Control header to their responses without removing the Expires header.
+
 As we delve into the various directives allowed in the `Cache-Control` header, we will see how its flexibility and power make it a better fit in many cases.
 
 ## Cache-Control directives
@@ -256,7 +269,7 @@ This indicates that the object can be cached for 86,400 seconds (1 day) and it c
   caption="Distribution of `Cache-Control` directives.",
   description="A bar chart showing the distribution of 11 `Cache-Control` directives. The usage for desktop ranges from 60.2% for `max-age`, 29.7% for `public`, 14.3% for `no-cache`, 12.1% for `must-revalidate`, 9.2% for `no-store`, 9.1% for `private`, 3.5% for `immutable`, 2.3% for `no-transform`, 2.1% for `stale-while-revalidate`, 1.5% for `s-maxage`, 1.0% for `proxy-revalidate`, and 0.2% for `stale-if-error`. For mobile, the range is, 59.7% for `max-age`, 29.7% for `public`, 15.1% for `no-cache`, 12.5% for `must-revalidate`, 9.6% for `no-store`, 9.7% for `private`, 3.5% for `immutable`, 2.2% for `no-transform`, 2.2% for `stale-while-revalidate`, 1.2% for `s-maxage`, 1.1% for `proxy-revalidate`, and 0.2% for `stale-if-error`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=388795105&format=interactive",
-  sheets_gid="203111102",
+  sheets_gid="203111103",
   sql_file="cache_control_directives.sql"
   )
 }}
@@ -424,7 +437,7 @@ In the same way that the `Cache-Control` header has more power and flexibility t
   caption="Adoption of validating freshness via `Last-Modified` and `ETag` headers.",
   description="A bar chart showing 73.5% of desktop requests have a `Last-Modified`, 47.9% have an `ETag`, 42.8% have both, and 21.4% have neither. The stats for mobile are almost identical at 72.0% for `Last-Modified`, 46.2% for `ETag`, 41.0% for both, and 22.9% for neither.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1171778982&format=interactive",
-  sheets_gid="203111103",
+  sheets_gid="203111104",
   sql_file="last_modified_and_etag.sql"
   )
 }}
@@ -436,7 +449,7 @@ In the same way that the `Cache-Control` header has more power and flexibility t
   caption="Adoption of validating freshness via `Last-Modified` and `ETag` headers in 2019.",
   description="A bar chart showing 72.7% of desktop requests have a `Last-Modified`, 48.0% have an `ETag`, 43.1% have both, and 22.4% have neither. The stats for mobile are almost identical at 72.0% for `Last-Modified`, 47.1% for `ETag`, 42.1% for both, and 23.1% for neither.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1775409512&format=interactive",
-  sheets_gid="203111104",
+  sheets_gid="203111105",
   sql_file="last_modified_and_etag_2019.sql"
   )
 }}
@@ -456,7 +469,7 @@ Correctly-implemented revalidation using conditional requests can significantly 
   caption="Distribution of `304 Not Modified` status.",
   description="Bar chart showing the distribution of `304 Not Modified` status. 20.5% of the desktop responses had no `ETag` header and contained the same `Last-Modified` value, passed in the `If-Modified-Since` header of the corresponding request. Out of these, 86% had a `304 Not Modified` status. 86.1% of the responses contained the same `ETag` value, passed in the `If-None-Match` header of the corresponding request. Out of these, 88.9% had a `304 Not Modified` status. 17.2% of the mobile responses had no `ETag` header and contained the same `Last-Modified` value, passed in the `If-Modified-Since` header of the corresponding request. Out of these, 78.3% had a `304 Not Modified` status. 89.9% of the responses contained the same `ETag` value, passed in the `If-None-Match` header of the corresponding request. Out of these, 90.2% had a `304 Not Modified` status.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1530788258&format=interactive",
-  sheets_gid="2031111055",
+  sheets_gid="203111106",
   sql_file="valid_if_none_match_returns_304.sql"
   )
 }}
@@ -491,7 +504,7 @@ Because the `Date` HTTP response header is almost always generated automatically
   caption="Invalid date formats in response headers.",
   description="Bar chart showing the distribution of invalid date. 0.1% of desktop responses have an invalid date in `Date`, 0.5% in `Last-Modified` and 2.5% in `Expires`. The stats for mobile are very similar with 0.1% of responses have an invalid date in `Date`, 0.7% in `Last-Modified` and 2.9% in `Expires`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=827586570&format=interactive",
-  sheets_gid="2031111056",
+  sheets_gid="203111107",
   sql_file="invalid_last_modified_and_expires_and_date.sql"
   )
 }}
@@ -541,7 +554,7 @@ The graph below details the popularity for the top 10 Vary header values. `Accep
   caption="`Vary` header usage.",
   description="Bar chart showing the distribution of `Vary` header. 91.8% of desktop responses use of `Accept-Encoding`, much smaller values for the rest with 10.7% for `User-Agent`, approximately 8.0% for `Origin`, and 0.5%-4.1% for `Accept`, `Access-Control-Request-Headers`,`Access-Control-Request-Method`, `Cookie`, `X-Forwarded-Proto`, `Accept-Language`, and `Range`. 91.3% of mobile responses use of `Accept-Encoding`, much smaller values for the rest with 11.0% for `User-Agent`, approximately 9.1% for `Origin`, and 0.6%-3.9% for `Accept`, `Access-Control-Request-Headers`, `Access-Control-Request-Method`, `Cookie`, `X-Forwarded-Proto`, `Accept-Language`, and `Range`.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=317375276&format=interactive",
-  sheets_gid="2031111057",
+  sheets_gid="203111108",
   sql_file="vary_headers.sql"
   )
 }}
@@ -575,7 +588,7 @@ For example, if a login cookie or a session cookie is present in a CDN’s cache
   caption="`Set-Cookie` in cacheable responses.",
   description="A bar chart showing `Set-Cookie` usage on cacheable responses. 41.4% of cacheable desktop responses and 40.4% of cacheable mobile responses contain a `Set-Cookie` header.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1106475158&format=interactive",
-  sheets_gid="203111108",
+  sheets_gid="203111109",
   sql_file="set_cookie.sql"
   )
 }}
@@ -587,7 +600,7 @@ For example, if a login cookie or a session cookie is present in a CDN’s cache
   caption="`Set-Cookie` in `private` and non private cacheable responses.",
   description="A bar chart showing `Set-Cookie` usage in `private` and non private cacheable responses. Of the desktop responses containing a `Set-Cookie` header, 4.6% use the `private` directive. 95.4% responses can be cached by both private and public cache servers. Of the mobile responses containing a `Set-Cookie` header, 4.9% use the `private` directive. 95.1% responses can be cached by both private and public cache servers.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=97044455&format=interactive",
-  sheets_gid="203111109",
+  sheets_gid="203111110",
   sql_file="set_cookie.sql"
   )
 }}
@@ -603,7 +616,7 @@ Service Workers are a feature of HTML5 that allow front-end developers to specif
   caption="Growth in service worker controlled pages from 2019.",
   description="A bar chart showing the growth in service worker controlled pages. The adoption has grown from 0.6% in 2019 to 1.0% in 2020",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=893877591&format=interactive",
-  sheets_gid="203111110",
+  sheets_gid="203111111",
   sql_file="appcache_and_serviceworkers_2019.sql"
   )
 }}
@@ -628,7 +641,7 @@ In the table below, you can see that out of a total of 6,225,774 websites, only 
   <figcaption>{{ figure_link(caption="Number of websites using service workers.") }}</figcaption>
 </figure>
 
-If we break this out by HTTP vs HTTPS, then this gets even more interesting. Even though HTTPS is a requirement for using service workers, the following table shows that 1,469 of the sites using them are served over HTTP.
+If we break this out by HTTP vs HTTPS, then this gets even more interesting. Even though HTTPS is a requirement for using service workers, the following table shows that 1,469 (2.3%) of the sites using them are served over HTTP.
 
 <figure>
   <table>
@@ -666,7 +679,7 @@ The remaining 9.2% of responses are not permitted to be stored in browser caches
   caption="Distribution of cacheable and non-cacheable responses.",
   description="A bar chart showing proportion of cacheable responses. 9.2% of desktop and 9.6% of mobile responses are cacheable.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=430652203&format=interactive",
-  sheets_gid="203111111",
+  sheets_gid="203111112",
   sql_file="ttl.sql"
   )
 }}
@@ -678,7 +691,7 @@ The remaining 9.2% of responses are not permitted to be stored in browser caches
   caption="Distribution of TTL in cacheable responses.",
   description="A bar chart showing distribution of TTL in cacheable responses. 4.2% of desktop responses have a TTL zero, 59.4% have a TTL greater than zero, and 28.2% use a heuristic TTL. 4.2% of mobile responses have a TTL zero, 58.8% have a TTL greater than zero, and 28.4% use a heuristic TTL.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1365998611&format=interactive",
-  sheets_gid="203111112",
+  sheets_gid="203111113",
   sql_file="ttl.sql"
   )
 }}
@@ -795,7 +808,7 @@ Additionally, 13.6% of images and scripts are non-cacheable. There is likely som
   caption="Distribution of cacheability by content type.",
   description="A bar chart showing distribution of cacheable resource types. In desktop responses, 99.3% of audio, 99.3% of CSS, 99.8% of font, 67.9% of HTML, 91.2% of images, 66.3% of other types, 95.2% of scripts, 78.6% of text, 99.6% of video, and 81.4% of xml is cacheable. In mobile responses, 99.0% of audio, 99.0% of CSS, 99.8% of font, 71.5% of HTML, 89.9.2% of images, 67.9% of other types, 95.1% of scripts, 78.4% of text, 99.7% of video, and 80.6% of xml is cacheable.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1283939423&format=interactive",
-  sheets_gid="203111113",
+  sheets_gid="203111114",
   sql_file="non_cacheable_by_resource_type.sql"
   )
 }}
@@ -819,7 +832,7 @@ The graphs below illustrate the relative age of resources by content type. Some 
   caption="Resource age distribution by content type (1st party).",
   description="A stack bar chart showing the age of various first party content types, split into week 0, weeks 1-7, 8-52, > one year, and > two years, with negative figures shown too.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=2056330432&format=interactive",
-  sheets_gid="203111114",
+  sheets_gid="203111115",
   sql_file="resource_age_party_and_type_wise_groups.sql"
   )
 }}
@@ -831,7 +844,7 @@ The graphs below illustrate the relative age of resources by content type. Some 
   caption="Resource age distribution by content type (1st party).",
   description="A stack bar chart showing the age of various third party content types, split into week 0, weeks 1-7, 8-52, > one year, and > two years, with negative figures shown too.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1712948465&format=interactive",
-  sheets_gid="203111115",
+  sheets_gid="203111116",
   sql_file="resource_age_party_and_type_wise_groups.sql"
   )
 }}
