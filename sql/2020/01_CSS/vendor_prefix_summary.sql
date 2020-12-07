@@ -101,8 +101,8 @@ FROM (
     prop,
     COUNT(DISTINCT page) AS pages,
     COUNT(0) AS freq,
-    SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-    COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
+    SUM(COUNT(IF(prop = 'total', NULL, 0))) OVER (PARTITION BY client) AS total,
+    COUNT(IF(prop = 'total', NULL, 0)) / SUM(COUNT(IF(prop = 'total', NULL, 0))) OVER (PARTITION BY client) AS pct
   FROM
     `httparchive.almanac.parsed_css`,
     UNNEST(getPrefixStats(css)) AS prop
