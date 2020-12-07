@@ -235,7 +235,7 @@ PWA是一种多功能的应用模式。然而，在某些情况下，提供一�
 
 为了检测用户在系统中是否已经有相关的原生应用或PWA，开发者可以在`navigator`对象上使用[getInstalledRelatedApps()方法](https://web.dev/get-installed-related-apps/)([WICG社区组报告草案](https://wicg.github.io/get-installed-related-apps/spec/))。该方法目前由基于Chromium的浏览器提供，适用于Android和通用Windows平台（UWP）应用。开发者需要调整本地应用捆绑以引用网站，并将本地应用的信息添加到PWA的Web应用清单中。调用`getInstalledRelatedApps()`方法将返回用户设备上安装的应用列表。
 
-```
+```js
 const relatedApps = await navigator.getInstalledRelatedApps();
 relatedApps.forEach((app) => {
   console.log(app.id, app.platform, app.url);
