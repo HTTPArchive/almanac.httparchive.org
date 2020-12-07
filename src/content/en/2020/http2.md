@@ -17,32 +17,32 @@ featured_quote: This chapter reviews the current state of HTTP/2 and gQUIC deplo
 featured_stat_1: 64%
 featured_stat_label_1: Requests served over HTTP/2
 featured_stat_2: 31.7%
-featured_stat_label_2: CDN Requests with incorrect HTTP/2 prioritiztion
+featured_stat_label_2: CDN Requests with incorrect HTTP/2 prioritization
 featured_stat_3: 80%
 featured_stat_label_3: Pages served over HTTP/2 if a CDN is used, 30% if CDN not used
 ---
 
 ## Introduction
 
-HTTP is an application layer protocol designed to transfer information between networked devices and runs on top of other layers of the network protocol stack. After HTTP/1 was released, it took over 20 years until the first major update, HTTP/2, was made a standard in 2015.
+HTTP is an application layer protocol designed to transfer information between networked devices and runs on top of other layers of the network protocol stack. After HTTP/1.x was released, it took over 20 years until the first major update, HTTP/2, was made a standard in 2015.
 
 It didn't stop there: over the last four years, HTTP/3 and QUIC (a new latency-reducing, reliable, and secure transport protocol) have been under standards development in the IETF QUIC working group. There are actually two protocols that share the same name: "Google QUIC" ("gQUIC" for short), the original protocol that was designed and used by Google, and the newer IETF standardized version (IETF QUIC/QUIC). IETF QUIC was based on gQUIC, but has grown to be quite different in design and implementation. On October 21, 2020, draft 32 of IETF QUIC reached a significant milestone when it moved to [Last Call](https://mailarchive.ietf.org/arch/msg/quic/ye1LeRl7oEz898RxjE6D3koWhn0/). This is the part of the standardization process when the working group believes they are almost finished and requests a final review from the wider IETF community.
 
-This chapter reviews the current state of HTTP/2 and gQUIC deployment, to establish how well some of the newer features of the protocol, such as prioritization and server push, have been adopted. We then look at the motivations for HTTP/3, describe the major differences between the protocol versions and discuss the potential challenges in upgrading to a UDP-based transport protocol with QUIC.
+This chapter reviews the current state of HTTP/2 and gQUIC deployment. It explores how well some of the newer features of the protocol, such as prioritization and server push, have been adopted. We then look at the motivations for HTTP/3, describe the major differences between the protocol versions, and discuss the potential challenges in upgrading to a UDP-based transport protocol with QUIC.
 
 ### HTTP/1.0 to HTTP/2
 
-As the HTTP protocol has evolved, the semantics of HTTP have stayed the same, with no changes to the HTTP methods (such as GET or POST), status codes (200, or the dreaded 404), URIs, or header fields. Where the HTTP protocol has changed, the differences have been the wire-encoding and the use of features of the underlying transport.
+As the HTTP protocol has evolved, the semantics of HTTP have stayed the same; there have been no changes to the HTTP methods (such as GET or POST), status codes (200, or the dreaded 404), URIs, or header fields. Where the HTTP protocol has changed, the differences have been the wire-encoding and the use of features of the underlying transport.
 
 HTTP/1.0, published in 1996, defined the text-based application protocol, allowing clients and servers to exchange messages in order to request resources. A new TCP connection was required for each request/response, which introduced overhead. TCP connections use a congestion control algorithm to maximise how much data can be in-flight. This process takes time for each new connection. This "slow-start" means that not all the available bandwidth is used immediately.
 
-In 1997, HTTP/1.1 was introduced to allow TCP connection reuse by adding "keep-alives", aimed at reducing the total cost of connection start-ups. Over time, increasing website performance expectations led to the need for concurrency of requests. HTTP/1.1 could only request another resource after the previous response had completed. Therefore additional TCP connections had to be established, reducing the impact of the keep-alive connections and further increasing overhead.
+In 1997, HTTP/1.1 was introduced to allow TCP connection reuse by adding "keep-alives", aimed at reducing the total cost of connection start-ups. Over time, increasing website performance expectations led to the need for concurrency of requests. HTTP/1.1 could only request another resource after the previous response had completed. Therefore, additional TCP connections had to be established, reducing the impact of the keep-alive connections and further increasing overhead.
 
 HTTP/2, published in 2015, is a binary-based protocol that introduced the concept of bidirectional streams between client and server. Using these streams, a browser can make optimal use of a single TCP connection to _multiplex_ multiple HTTP requests/responses concurrently. HTTP/2 also introduced a prioritization scheme to steer this multiplexing; clients can signal a request priority that allows more important resources to be sent ahead of others.
 
 ## HTTP/2 Adoption
 
-The data used in this chapter is sourced from the HTTP Archive and tests over seven million websites with a Chrome browser.  As with other chapters, the analysis is split by mobile and desktop websites. When the results between desktop and mobile are similar, statitics are presented from the mobile dataset. You can find more details on the [Methodology](./methodology) page. When reviewing this data, please bear in mind that each website will receive equal weight regardless of the number of requests. We suggest you think of this more as investigating the trends across a broad range of active websites.
+The data used in this chapter is sourced from the HTTP Archive and tests over seven million websites with a Chrome browser.  As with other chapters, the analysis is split by mobile and desktop websites. When the results between desktop and mobile are similar, statistics are presented from the mobile dataset. You can find more details on the [Methodology](./methodology) page. When reviewing this data, please bear in mind that each website will receive equal weight regardless of the number of requests. We suggest you think of this more as investigating the trends across a broad range of active websites.
 
 {{ figure_markup(
   image="http2-h2-usage.png",
@@ -66,7 +66,7 @@ Last year's analysis of HTTP Archive data showed that HTTP/2 was used for over 5
 )
 }}
 
-When comparing Figure 22.3 with last year's results, there has been a **10% increase in HTTP/2 requests** and a corresponding 10% decrease in HTTP/1 requests. This is the first year that gQUIC can be seen in the dataset.
+When comparing Figure 22.3 with last year's results, there has been a **10% increase in HTTP/2 requests** and a corresponding 10% decrease in HTTP/1.x requests. This is the first year that gQUIC can be seen in the dataset.
 
 <figure>
   <table>
@@ -105,7 +105,7 @@ When comparing Figure 22.3 with last year's results, there has been a **10% incr
 
 When reviewing the total number of website requests, there will be a bias towards common third-party domains. To get a better understanding of the HTTP/2 adoption by server install, we will look instead at the protocol used to serve the HTML from the home page of a site.
 
-Last year around 37% of home pages were served over HTTP/2 and 63% over HTTP/1. This year, combining mobile and desktop, it is an equal 50% split with slightly more desktop sites being served over HTTP/2 for the first time, as shown in Figure 22.4.
+Last year around 37% of home pages were served over HTTP/2 and 63% over HTTP/1. This year, combining mobile and desktop, it is a roughly equal split, with slightly more desktop sites being served over HTTP/2 for the first time, as shown in Figure 22.4.
 
 <figure>
   <table>
@@ -182,7 +182,7 @@ With over 60% of websites being served over HTTP/2 or gQUIC, let's look a little
 
 Figure 22.6 compares how much HTTP/2 or gQUIC is used on a website between this year and last year. The most noticeable change is that over half of sites now have 75% or more of their requests served over HTTP/2 or gQUIC compared to 46% last year. Less than 7% of sites make no HTTP/2 or gQUIC requests, while (only) 10% of sites are entirely HTTP/2 or gQUIC requests.
 
-What about the breakdown of the page itself? We typically talk about the difference between first-party and third-party content. Third-party is defined as content not within the direct control of the site owner; providing functionality such as advertising, marketing or analytics. The definition of known third parties is taken from the [third party web](https://github.com/patrickhulce/third-party-web/blob/8afa2d8cadddec8f0db39e7d715c07e85fb0f8ec/data/entities.json5) repository.
+What about the breakdown of the page itself? We typically talk about the difference between first-party and third-party content. Third-party is defined as content not within the direct control of the site owner, providing functionality such as advertising, marketing or analytics. The definition of known third parties is taken from the [third party web](https://github.com/patrickhulce/third-party-web/blob/8afa2d8cadddec8f0db39e7d715c07e85fb0f8ec/data/entities.json5) repository.
 
 Figure 22.7 orders every website by the fraction of HTTP/2 requests for known third parties or first party requests compared to other requests. There is a noticeable difference as over 40% of all sites have no first-party HTTP/2 or gQUIC requests at all. By contrast, even the lowest 5% of pages have 30% of third-party content served over HTTP/2. This indicates that a large part of HTTP/2's broad adoption is driven by the third parties.
 
@@ -196,7 +196,7 @@ Figure 22.7 orders every website by the fraction of HTTP/2 requests for known th
 )
 }}
 
-Is there any differnece in which content-types are served over HTTP/2 or gQUIC? Figure 22.8 shows, for example, that 90% of websites serve 100% of third party fonts and audio over HTTP/2 or gQUIC, only 5% over HTTP/1 and 5% are a mix. The majority of third-party assets are either scripts or images, and are solely served over HTTP/2 or gQUIC on 60% and 70% of websites respectively.
+Is there any difference in which content-types are served over HTTP/2 or gQUIC? Figure 22.8 shows, for example, that 90% of websites serve 100% of third party fonts and audio over HTTP/2 or gQUIC, only 5% over HTTP/1 and 5% are a mix. The majority of third-party assets are either scripts or images, and are solely served over HTTP/2 or gQUIC on 60% and 70% of websites respectively.
 
 {{ figure_markup(
   image="http2-third-party-http2-usage-by-content-type.png",
@@ -224,11 +224,11 @@ Ads, analytics, content delivery network (CDN) resources, and tag-managers are p
 
 Browser auto-update mechanisms are a driving factor for client-side adoption of new web standards. It's [estimated](https://caniuse.com/http2) that over 97% of global users support HTTP/2, up slightly from 95% measured last year.
 
-Unfortunately, the upgrade path for servers is more difficult, especially with the requirement to support TLS. For mobile and desktop, we can see from Figure 22.10, that he majority of HTTP/2 sites are served by nginx, Cloudflare, and Apache. Almost half of the HTTP/1.1 sites are served by Apache.
+Unfortunately, the upgrade path for servers is more difficult, especially with the requirement to support TLS. For mobile and desktop, we can see from Figure 22.10, that the majority of HTTP/2 sites are served by nginx, Cloudflare, and Apache. Almost half of the HTTP/1.1 sites are served by Apache.
 {{ figure_markup(
   image="http2-server-protocol-usage.png",
   caption="Server usage by HTTP protocol on mobile",
-  description="A bar chart showinging the number of websites served by either HTTP/1 or HTTP/2 for the most popular servers to mobile clients. Nginx serves 727,181 HTTP/1 and 727,181 HTTP/2 sites. Cloudflare 59,981 HTTP/1 and 679,616 HTTP/2. Apache 1,521,753 HTTP/1 and 585,096 HTTP/2. Litespeed 50,502 HTTP/1 and 166,721 HTTP/2. Microsoft-IIS 284,047 HTTP/1 and 81,490 HTTP/2.",
+  description="A bar chart showing the number of websites served by either HTTP/1 or HTTP/2 for the most popular servers to mobile clients. Nginx serves 727,181 HTTP/1 and 727,181 HTTP/2 sites. Cloudflare 59,981 HTTP/1 and 679,616 HTTP/2. Apache 1,521,753 HTTP/1 and 585,096 HTTP/2. Litespeed 50,502 HTTP/1 and 166,721 HTTP/2. Microsoft-IIS 284,047 HTTP/1 and 81,490 HTTP/2.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=718663369&format=interactive",
   sheets_gid="306338094",
   sql_file="count_of_h2_and_h3_sites_grouped_by_server.sql"
@@ -242,7 +242,7 @@ How has HTTP/2 adoption changed in the last year for each server? Figure 22.11 s
 {{ figure_markup(
   image="http2-h2-usage-by-server.png",
   caption="Percentage of pages served over HTTP/2 by sever",
-  description="A bar chart comparing the percentge of websites served over HTTP/2 between 2019 and 2020. Cloudflare increased to 93.08% from 85.40%. Litespeed increased to 81.91% from 70.80%. Openresty increased to 66.24% from 51.40%. Nginx increased to 60.84% from 49.20%. Apache increased to 27.19% from 18.10% and MIcorsoft-IIS increased to 22.82% from 14.10%.",
+  description="A bar chart comparing the percentage of websites served over HTTP/2 between 2019 and 2020. Cloudflare increased to 93.08% from 85.40%. Litespeed increased to 81.91% from 70.80%. Openresty increased to 66.24% from 51.40%. Nginx increased to 60.84% from 49.20%. Apache increased to 27.19% from 18.10% and MIcorsoft-IIS increased to 22.82% from 14.10%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=936321266&format=interactive",
   sheets_gid="306338094",
   sql_file="count_of_h2_and_h3_sites_grouped_by_server.sql"
@@ -296,19 +296,19 @@ Types of content in the second category are typically shared resources (JavaScri
 
 {{ figure_markup(
   image="http2-cdn-http2-usage.png",
-  caption="Comparsion of HTTP/2 and gQUIC usage for websites using a CDN.",
-  description="A line chart comparing the fraction of reqests served using HTTP/2 or gQUIC for websites that use a CDN compared to sites that do not. The x-axis show the percentiles of web page ordered by percentage of requests. 23% of websites that do not use a CDN have no HTTP/2 or gQUIC usage. In comparision the 60% of websites using a CDN have all HTTP/2 or gQUIC usage. 93% of websites that use a CDN and 47% of non-CDN sites have 50% or more HTTP/2 or gQUIC usage.",
+  caption="Comparison of HTTP/2 and gQUIC usage for websites using a CDN.",
+  description="A line chart comparing the fraction of requests served using HTTP/2 or gQUIC for websites that use a CDN compared to sites that do not. The x-axis show the percentiles of web page ordered by percentage of requests. 23% of websites that do not use a CDN have no HTTP/2 or gQUIC usage. In comparison the 60% of websites using a CDN have all HTTP/2 or gQUIC usage. 93% of websites that use a CDN and 47% of non-CDN sites have 50% or more HTTP/2 or gQUIC usage.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=1779365083&format=interactive",
   sheets_gid="1457263817",
   sql_file="cdn_summary.sql"
 )
 }}
 
-In Figure 22.13 we can see the stark differnce in HTTP/2 and gQUIC adoption when a website is using a CDN. 70% of pages use HTTP/2 for all third-party requests when a CDN is used. Without a CDN, only 25% of pages use HTTP/2 for all third-party requests.
+In Figure 22.13 we can see the stark difference in HTTP/2 and gQUIC adoption when a website is using a CDN. 70% of pages use HTTP/2 for all third-party requests when a CDN is used. Without a CDN, only 25% of pages use HTTP/2 for all third-party requests.
 
 ## HTTP/2 impact
 
-Measuring the impact of how a protocol is performing is difficult with the current HTTP Archive [approach](./methodology). It would be really fascinating to be able to quantify the impact of concurrent connections, the effect of packet loss, and differrent congestion control mechanisms. To really compare performance, each website would have to be crawled over each protocol over different network conditions. What we can do instead is to look into the impact on the number of connections a website uses.
+Measuring the impact of how a protocol is performing is difficult with the current HTTP Archive [approach](./methodology). It would be really fascinating to be able to quantify the impact of concurrent connections, the effect of packet loss, and different congestion control mechanisms. To really compare performance, each website would have to be crawled over each protocol over different network conditions. What we can do instead is to look into the impact on the number of connections a website uses.
 
 ### Reducing connections
 
@@ -316,7 +316,7 @@ As discussed [earlier](#http10-to-http2), HTTP/1.1 only allows a single request 
 
 {{ figure_markup(
   image="http2-total-number-of-connections-per-page.png",
-  caption="Distriution of total number of connections per page",
+  caption="Distribution of total number of connections per page",
   description="A percentile chart of total connections, comparing 2016 with 2020 on desktop. The median number of connections in 2016 is 23, in 2020 it is 13. At the 10th percentile, 6 connections in 2016, 5 in 2020. At the 25th percentile, 12 connections in 2016, 8 in 2020. At 75th percentile - 43 connections in 2016, 20 in 2020. At 90th percentile 76 connections in 2016 and 33 in 2020.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=17394219&format=interactive",
   sheets_gid="1432183252",
@@ -338,9 +338,9 @@ As HTTP/2 responses can be split into many individual frames, and as frames from
 
 HTTP/2 introduced the concept of prioritization to help the client communicate to the server how it thinks the multiplexing should be done. Every stream is assigned a weight (how much of the available bandwidth the stream should be allocated) and possibly a parent (another stream which should be delivered first). With the flexibility of HTTP/2's prioritization model, it is not altogether surprising that all of the current browser engines implemented [different prioritization strategies](https://calendar.perfplanet.com/2018/http2-prioritization/), none of which are [optimal](https://www.youtube.com/watch?v=nH4iRpFnf1c).
 
-There are also problems on the server side, leading to many servers either implementing prioritization poorly or not at all.  In the case of HTTP/1.x, tuning the server-side send buffers to be as big as possible has no downside other than the increase in memory use (trading off memory for CPU) and is an effective way to increase the throughput of a web server. This is not true for HTTP/2, as data in the TCP send buffer cannot be re-prioritized if a request for a new, more important resource comes in.  For an HTTP/2 server, the optimal send buffer size is thus the minimum amount of data required to fully utilize the available bandwidth. This allows the server to respond immediately if a higher-priority request is received.
+There are also problems on the server side, leading to many servers implementing prioritization either poorly or not at all.  In the case of HTTP/1.x, tuning the server-side send buffers to be as big as possible has no downside, other than the increase in memory use (trading off memory for CPU), and is an effective way to increase the throughput of a web server. This is not true for HTTP/2, as data in the TCP send buffer cannot be re-prioritized if a request for a new, more important resource comes in.  For an HTTP/2 server, the optimal send buffer size is thus the minimum amount of data required to fully utilize the available bandwidth. This allows the server to respond immediately if a higher-priority request is received.
 
-This problem of large buffers messing with (re-)prioritization also exists in the network where it goes by the name "bufferbloat".  Network equipment would rather buffer packets than drop them when there's a short burst.  However, if the server sends more data than the path to the client can consume, these buffers fill to capacity. These bytes already "stored" on the network limit the server's ability to send a higher-priority response earlier, just as a large send buffer does. To minimize the amount of data held in buffers, [a recent congestion control algorithm such as BBR should be used](https://blog.cloudflare.com/http-2-prioritization-with-nginx/).
+This problem of large buffers messing with (re-)prioritization also exists in the network, where it goes by the name "bufferbloat".  Network equipment would rather buffer packets than drop them when there's a short burst.  However, if the server sends more data than the path to the client can consume, these buffers fill to capacity. These bytes already "stored" on the network limit the server's ability to send a higher-priority response earlier, just as a large send buffer does. To minimize the amount of data held in buffers, [a recent congestion control algorithm such as BBR should be used](https://blog.cloudflare.com/http-2-prioritization-with-nginx/).
 
 This [test suite](https://github.com/andydavies/http2-prioritization-issues) maintained by Andy Davies measures and reports how various CDN and cloud hosting services perform. The bad news is that only 9 of the 36 services prioritize correctly. Figure 22.16 shows that for sites using a CDN, around 31.7% do not prioritize correctly. This is up from 26.82% last year, mainly due to the increase in Google CDN usage. Rather than relying on the browser-sent priorities, there are some servers that implement a [server side prioritization](https://blog.cloudflare.com/better-http-2-prioritization-for-a-faster-web/) scheme instead, improving upon the browser's hints with additional logic.
 
@@ -424,7 +424,7 @@ For non-CDN usage, we expect the number of servers that correctly apply HTTP/2 p
 
 ### Goodbye server push?
 
-Server push was one of the additional features of HTTP/2 that caused some confusion and  complexity to implement in practice. Push seeks to avoid waiting for a browser/client to download a HTML page, parse that page, and only then discover that it requires additional resources (such as a stylesheet), which in turn have to be fetched and parsed to discover even more dependencies (such as fonts). All that work and round trips takes time.  With server push, in theory, the server can just send multiple responses at once, avoiding the extra round trips.
+Server push was one of the additional features of HTTP/2 that caused some confusion and complexity to implement in practice. Push seeks to avoid waiting for a browser/client to download a HTML page, parse that page, and only then discover that it requires additional resources (such as a stylesheet), which in turn have to be fetched and parsed to discover even more dependencies (such as fonts). All that work and round trips takes time.  With server push, in theory, the server can just send multiple responses at once, avoiding the extra round trips.
 
 Unfortunately, with TCP congestion control in play, the data transfer starts off so slowly that [not all the assets can be pushed](https://calendar.perfplanet.com/2016/http2-push-the-details/) until multiple round trips have increased the transfer rate sufficiently. There are also [implementation differences](https://jakearchibald.com/2017/h2-push-tougher-than-i-thought/) between browsers as the client processing model had not been fully agreed. For example, each browser has a different implementation of a _push cache_.
 
@@ -514,7 +514,7 @@ Looking further at the distributions for pushed assets in Figures 22.18 and 22.1
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Distribtion of pushed assets on desktop.", sheets_gid="698874709", sql_file="number_of_h2_and_h3_pushed_resources_and_avg_bytes.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Distribution of pushed assets on desktop.", sheets_gid="698874709", sql_file="number_of_h2_and_h3_pushed_resources_and_avg_bytes.sql") }}</figcaption>
 </figure>
 
 <figure>
@@ -566,7 +566,7 @@ Looking further at the distributions for pushed assets in Figures 22.18 and 22.1
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Distribtion of pushed assets on mobile.", sheets_gid="698874709", sql_file="number_of_h2_and_h3_pushed_resources_and_avg_bytes.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Distribution of pushed assets on mobile.", sheets_gid="698874709", sql_file="number_of_h2_and_h3_pushed_resources_and_avg_bytes.sql") }}</figcaption>
 </figure>
 
 
@@ -576,19 +576,19 @@ Looking at the frequency of push by content type in Figure 22.20, we see 90% of 
 {{ figure_markup(
   image="http2-pushed-content-types.png",
   caption="Percentage of pages pushing specific content types",
-  description="A bar chart showing for pages that push resourcs on desktop 89.1% push scripts, 67.9% css, 6.1% images, 1.3% fonts, 0.7% other and 0.7% html. On mobile 90.29% push scripts, 56.8% css, 3.69% images, 0.97% fonts, 0.36% other and 0.39% html.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=1708672642&format=interactive",
+  description="A bar chart showing for pages that push resources on desktop 89.1% push scripts, 67.9% css, 6.1% images, 1.3% fonts, 0.7% other and 0.7% html. On mobile 90.29% push scripts, 56.8% css, 3.69% images, 0.97% fonts, 0.36% other and 0.39% html.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=1708672642&format=interactive",
   sheets_gid="238923402",
   sql_file="number_of_h2_and_h3_pushed_resources_and_bytes_by_content_type.sql"
 )
 }}
 
-Given the low adoption and after measuring how few of the pushed resources are actually useful (that is, they match a request that is not already cached), Google has announced the [intent to remove push support from Chrome]( https://groups.google.com/a/chromium.org/g/blink-dev/c/K3rYLvmQUBY/m/vOWBKZGoAQAJ) for both HTTP/2 and gQUIC. Chrome have also not implemented push for HTTP/3.
+Given the low adoption, and after measuring how few of the pushed resources are actually useful (that is, they match a request that is not already cached), Google has announced the [intent to remove push support from Chrome](https://groups.google.com/a/chromium.org/g/blink-dev/c/K3rYLvmQUBY/m/vOWBKZGoAQAJ) for both HTTP/2 and gQUIC. Chrome has also not implemented push for HTTP/3.
 
 Despite all these problems, there are circumstances where server push can provide an improvement. The ideal use case is to be able to send a push promise much earlier than the HTML response itself. A scenario where this can benefit is [when a CDN is in use](https://medium.com/@ananner/http-2-server-push-performance-a-further-akamai-case-study-7a17573a3317). The "dead time" between the CDN receiving the request and receiving a response from the origin can be used intelligently to warm up the TCP connection and push assets already cached at the CDN.
 
 There was however no standardized method for how to signal to a CDN edge server that an asset should be pushed. Implementations instead reused the preload HTTP link header to indicate this. This simple approach appears elegant, but it does not utilize the dead time before the HTML is generated unless the headers are sent before the actual content is ready. It triggers the edge to push resources as the HTML is received at the edge, which will contend with the delivery of the HTML.
 
-An alternative proposal being tested is [RFC 8297](https://tools.ietf.org/html/rfc8297), which defines an informative `HTTP 103 Early Hints` response. This permits headers to be sent immediately, without having to wait for the server to generate the full response headers. This can be used by an origin to suggest pushed resources to a CDN, or by a CDN to alert the client to resources that need to be fetched. However, at present, support for this from both a client and server perspective is very low, [but growing](https://www.fastly.com/blog/beyond-server-push-experimenting-with-the-103-early-hints-status-code).
+An alternative proposal being tested is [RFC 8297](https://tools.ietf.org/html/rfc8297), which defines an informative `103 (Early Hints)` response. This permits headers to be sent immediately, without having to wait for the server to generate the full response headers. This can be used by an origin to suggest pushed resources to a CDN, or by a CDN to alert the client to resources that need to be fetched. However, at present, support for this from both a client and server perspective is very low, [but growing](https://www.fastly.com/blog/beyond-server-push-experimenting-with-the-103-early-hints-status-code).
 
 ## Getting to a better protocol
 
@@ -600,7 +600,7 @@ This doesn't work if the protocols aren't on the same port, use a different tran
 
 The Upgrade header has been part of HTTP for a long time.  In HTTP/1.x, `Upgrade` allows a client to make a request using one protocol, but indicate its support for another protocol (like HTTP/2).  If the server also supports the offered protocol, it responds with a status 101 (`Switching Protocols`) and proceeds to answer the request in the new protocol.  If not, the server answers the request in HTTP/1.x.  Servers can advertise their support of a different protocol using an `Upgrade` header on a response.
 
-The most common application of `Upgrade` is [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API). HTTP/2 also defines an `Upgrade` path, for use with its unencrypted cleartext mode. There is no support for this capability in web browsers however. Therefore, it's not surprising that less than 3% of HTTP/1.1 requests in our dataset received an `Upgrade` header in the response. A very small number of requests using TLS (0.0011% of HTTP/2, 0.064% of HTTP/1.1) also received `Upgrade` headers in response; these are likely cleartext HTTP/1.1 servers behind intermediaries which speak HTTP/2 and/or terminate TLS, but don't properly remove `Upgrade` headers.
+The most common application of `Upgrade` is [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API). HTTP/2 also defines an `Upgrade` path, for use with its unencrypted cleartext mode. There is no support for this capability in web browsers, however. Therefore, it's not surprising that less than 3% of cleartext HTTP/1.1 requests in our dataset received an `Upgrade` header in the response. A very small number of requests using TLS (0.0011% of HTTP/2, 0.064% of HTTP/1.1) also received `Upgrade` headers in response; these are likely cleartext HTTP/1.1 servers behind intermediaries which speak HTTP/2 and/or terminate TLS, but don't properly remove `Upgrade` headers.
 
 ### Alternative Services
 
@@ -608,7 +608,7 @@ Alternative Services (`Alt-Svc`) enables an HTTP origin to indicate other endpoi
 
 When using `Alt-Svc`, a client makes requests to the origin as normal.  However, if the server includes a header or sends a frame containing a list of alternatives, the client can make a new connection to the other endpoint and use it for future requests to that origin.
 
-Unsurprisingly, `Alt-Svc` usage is found almost entirely from services using advanced HTTP versions:  12.0% of HTTP/2 requests and 60.1% of gQUIC requests received an `Alt-Svc` header in response, as compared to 0.055% of HTTP/1.x requests. Note that our methodology here only captures `Alt-Svc` headers, not `ALTSVC` frames, so reality might be slightly understated.
+Unsurprisingly, `Alt-Svc` usage is found almost entirely from services using advanced HTTP versions:  12.0% of HTTP/2 requests and 60.1% of gQUIC requests received an `Alt-Svc` header in response, as compared to 0.055% of HTTP/1.x requests. Note that our methodology here only captures `Alt-Svc` headers, not `ALTSVC` frames in HTTP/2, so reality might be slightly understated.
 
 While `Alt-Svc` can point to an entirely different host, support for this capability varies among browsers. Only 4.71% of `Alt-Svc` headers advertised an endpoint on a different hostname; these were almost universally (99.5%) advertising gQUIC and HTTP/3 support on Google Ads. Google Chrome ignores cross-host `Alt-Svc` advertisements for HTTP/2, so many of the other instances would have been ignored.
 
@@ -638,11 +638,11 @@ Now you might wonder: if not everyone is already using HTTP/2, why would we need
 {# TODO(authors): I honestly found this section really interesting, but it doesn't contain any real-world data. How can we add an element of data to this? #}
 ### QUIC and HTTP/3
 
-Past attempts to deploy new transport protocols on the internet have proven difficult, for example [Stream Control Transmission Protocol](https://en.wikipedia.org/wiki/Stream_Control_Transmission_Protocol) (SCTP). QUIC is a new transport protocol that runs on top of UDP. It provides similar features to TCP such as reliable in-order delivery and congestion control to prevent flooding the network.
+Past attempts to deploy new transport protocols on the internet have proven difficult, for example [Stream Control Transmission Protocol](https://en.wikipedia.org/wiki/Stream_Control_Transmission_Protocol) (SCTP). QUIC is a new transport protocol that runs on top of UDP. It provides similar features to TCP, such as reliable in-order delivery and congestion control to prevent flooding the network.
 
 As discussed in the [HTTP/1.0 to HTTP/2](#http10-to-http2) section, HTTP/2 _multiplexes_ multiple different streams on top of one connection. TCP itself is woefully unaware of this fact, leading to inefficiencies or performance impact when packet loss or delays occur. More details on this problem, known as _head-of-line blocking_ (HOL blocking), [can be found here](https://github.com/rmarx/holblocking-blogpost).
 
-QUIC solves the HOL blocking problem by bringing HTTP/2's streams down into the transport layer and performing per-stream loss detection and retransmission. So then we just put HTTP/2 over QUIC, right? Well, we've [already mentioned](#reducing-connections) some of the difficulties arising from having flow control in TCP and HTTP/2. Running two separate and competing streaming systems on top of eachother would be an additional problem. Furthermore, because the QUIC streams are independent, it would mess with the strict ordering requirements HTTP/2 requires for several of its systems.
+QUIC solves the HOL blocking problem by bringing HTTP/2's streams down into the transport layer and performing per-stream loss detection and retransmission. So then we just put HTTP/2 over QUIC, right? Well, we've [already mentioned](#reducing-connections) some of the difficulties arising from having flow control in TCP and HTTP/2. Running two separate and competing streaming systems on top of each other would be an additional problem. Furthermore, because the QUIC streams are independent, it would mess with the strict ordering requirements HTTP/2 requires for several of its systems.
 
 In the end, it was deemed easier to define a new HTTP version that uses QUIC directly and thus, HTTP/3 was born. Its high-level features are very similar to those we know from HTTP/2, but internal implementation mechanisms are quite different. HPACK header compression is replaced with [QPACK](https://tools.ietf.org/html/draft-ietf-quic-qpack-19), which allows [manual tuning](https://blog.litespeedtech.com/tag/quic-header-compression-design-team/) of the compression efficiency versus HOL blocking risk tradeoff, and the prioritization system is being [replaced by a simpler one](https://blog.cloudflare.com/adopting-a-new-approach-to-http-prioritization/). The latter could also be back-ported to HTTP/2, possibly helping resolve the prioritization issues discussed earlier in this article. HTTP/3 continues to provide a server push mechanism, but Chrome, for example, does not implement it.
 
@@ -658,9 +658,9 @@ On the surface, HTTP/3 is really not all that different from HTTP/2. It doesn't 
 
 Since QUIC and HTTP/3 run over UDP, things aren't as simple as with HTTP/1.1 or HTTP/2. Typically, an HTTP/3 client has to first discover that QUIC is available at the server. The recommended method for this is [HTTP Alternative Services](#alternative-services) . On its first visit to a website, a client connects to a server using TCP. It then discovers via `Alt-Svc` that HTTP/3 is available, and can set up a new QUIC connection. The `Alt-Svc` entry can be cached, allowing subsequent visits to avoid the TCP step, but the entry will eventually become stale and need revalidation. This likely will have to be done for each domain separately, which will probably lead to most page loads using a mix of HTTP/1, HTTP/2, and HTTP/3.
 
-However, even if it is known that a server supports QUIC and HTTP/3, the network in-between might block it. UDP traffic is commonly used in DDoS attacks and blocked by default in for example many company networks. While exceptions could be made for QUIC, its encryption makes it difficult for firewalls to assess the traffic. There are potential solutions to these issues, but in the meantime it is expected that QUIC is most likely to succeed on well-known ports like 443. And it is entirely possible that it is blocked QUIC altogether. In practice, clients will likely use sophisticated mechanisms to fall back to TCP if QUIC fails. One option there is to "race" both a TCP and QUIC connection and use the one that completes first.
+However, even if it is known that a server supports QUIC and HTTP/3, the network in between might block it. UDP traffic is commonly used in DDoS attacks and blocked by default in for example many company networks. While exceptions could be made for QUIC, its encryption makes it difficult for firewalls to assess the traffic. There are potential solutions to these issues, but in the meantime it is expected that QUIC is most likely to succeed on well-known ports like 443. And it is entirely possible that it is blocked QUIC altogether. In practice, clients will likely use sophisticated mechanisms to fall back to TCP if QUIC fails. One option is to "race" both a TCP and QUIC connection and use the one that completes first.
 
-There is ongoing work to define ways to discover HTTP/3 without needing the TCP step. This should be considered an optimization though, as the UDP blocking issues are likely to mean that TCP-based HTTP sticks around. The [HTTPS DNS record](https://tools.ietf.org/html/draft-ietf-dnsop-svcb-https), is similar to HTTP Alternative Services and some CDNs are already [experimenting with these records](https://blog.cloudflare.com/speeding-up-https-and-http-3-negotiation-with-dns/).  In the long run, when most servers offer HTTP/3, browsers might switch to attempting that by default. But that will take a long time.
+There is ongoing work to define ways to discover HTTP/3 without needing the TCP step. This should be considered an optimization, though, as the UDP blocking issues are likely to mean that TCP-based HTTP sticks around. The [HTTPS DNS record](https://tools.ietf.org/html/draft-ietf-dnsop-svcb-https) is similar to HTTP Alternative Services and some CDNs are already [experimenting with these records](https://blog.cloudflare.com/speeding-up-https-and-http-3-negotiation-with-dns/).  In the long run, when most servers offer HTTP/3, browsers might switch to attempting that by default; that will take a long time.
 
 <figure markdown>
 | TLS version | HTTP/1 <br /> desktop | HTTP/1 <br />mobile | HTTP/2 <br />desktop | HTTP/2 <br />mobile |
@@ -672,13 +672,13 @@ There is ongoing work to define ways to discover HTTP/3 without needing the TCP 
 <figcaption>{{ figure_link(caption="TLS adoption by HTTP version.", sheets_gid="900140630", sql_file="tls_adoption_by_http_version.sql") }}</figcaption>
 </figure>
 
-QUIC is dependent on TLS1.3, which is used for around 41% of requests, as shown in Figure 22.21 which leaves 60% of requests that will need to update their TLS stack to support HTTP/3.
+QUIC is dependent on TLS 1.3, which is used for around 41% of requests, as shown in Figure 22.21. That leaves 59% of requests that will need to update their TLS stack to support HTTP/3.
 
 ### Is HTTP/3 ready yet?
 
 So, when can we start using HTTP/3 and QUIC for real? Not quite yet, but hopefully soon. There is a [large number of mature open source implementations](https://github.com/quicwg/base-drafts/wiki/Implementations) and the major browsers have experimental support. However, most of the typical servers have suffered some delays: nginx is a bit behind other stacks, Apache hasn't announced official support, and NodeJS relies on OpenSSL, which [won't add QUIC support anytime soon](https://github.com/openssl/openssl/pull/8797). Even so, we expect to see HTTP/3 and QUIC deployments rise throughout 2021.
 
-HTTP/3 and QUIC are highly advanced protocols with powerful performance and security features, such as a new HTTP prioritization system, HOL blocking removal, and 0-RTT connection establishment. This sophistication also makes them difficult to deploy and use correctly, as has turned out to be the case for HTTP/2. We predict that early deployments will mainly be done via the early adoption of CDNs such as Cloudflare, Fastly, and Akamai. This will probably mean that a large part of HTTP/2 traffic can and will be upgraded to HTTP/3 automatically in 2021, giving the new protocol a large traffic share almost out of the box. When and if smaller deployments will follow suit is yet more difficult to answer. Most likely, we will continue to see a healthy mix of HTTP/3, HTTP/2, and even HTTP/1.1 on the web for years to come.
+HTTP/3 and QUIC are highly advanced protocols with powerful performance and security features, such as a new HTTP prioritization system, HOL blocking removal, and 0-RTT connection establishment. This sophistication also makes them difficult to deploy and use correctly, as has turned out to be the case for HTTP/2. We predict that early deployments will mainly be done via the early adoption of CDNs such as Cloudflare, Fastly, and Akamai. This will probably mean that a large part of HTTP/2 traffic can and will be upgraded to HTTP/3 automatically in 2021, giving the new protocol a large traffic share almost out of the box. When and if smaller deployments will follow suit is more difficult to answer. Most likely, we will continue to see a healthy mix of HTTP/3, HTTP/2, and even HTTP/1.1 on the web for years to come.
 
 ## Conclusion
 
