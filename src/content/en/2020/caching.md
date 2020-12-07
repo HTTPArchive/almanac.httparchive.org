@@ -836,7 +836,7 @@ When we break this out by first party vs third party in the following table, we 
      <td>60.2%</td>
     </tr>
   </table>
-  <figcaption>{{ figure_link(caption="Percent of requests with short TTLs.") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Percent of requests with short TTLs.", sheets_gid="1706274506", sql_file="content_age_older_than_ttl_by_party.sql") }}</figcaption>
 </figure>
 
 ## Identifying caching opportunities
