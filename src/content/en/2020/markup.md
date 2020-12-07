@@ -76,7 +76,7 @@ A page's document size refers to the amount of HTML bytes transferred over the n
 {# TODO(authors, analysts): Revisit the "largest document" stat and interpretation. #}
 * 1,110 documents are empty (0 bytes).
 * The average document size is 49.17 KB ([in most cases compressed](https://w3techs.com/technologies/details/ce-gzipcompression)).
-* The largest document by far weighs 62.65 _MB_, almost deserving its own analysis and chapter in the Web Almanac.
+* The largest document by far weighs 61.19 _MB_, almost deserving its own analysis and chapter in the Web Almanac.
 
 How is this situation in general, then? The median document weighs 24.65 KB, which comes [without surprises](https://httparchive.org/reports/page-weight):
 
