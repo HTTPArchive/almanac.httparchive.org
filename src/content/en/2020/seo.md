@@ -68,28 +68,59 @@ Google formally proposed making `robots.txt` an official internet standard in 20
 
 A `robots.txt` file must be plain text, encoded in UTF-8, and respond to requests with a 200 HTTP status code. A malformed `robots.txt`, a 4XX (client error) response, or more than five redirects are interpreted by search engine crawlers as a _full allow_, meaning all content may be crawled. A 5XX (server error) response is understood as a _full disallow_, meaning no content may be crawled. If the `robots.txt` is unreachable for more than 30 days, Google will use the last cached copy of it, as described in [their specifications](https://developers.google.com/search/reference/robots_txt#handling-http-result-codes).
 
-Overall, 80.05% of sites responded to `robots.txt` with a 2XX response. Of the 9,640,246 requests revolving with a 2XX response, 25.09% of these `robots.txt` files were not recognized as valid. This has slightly improved over 2019, when it was found that [72.16% of mobile sites had a valid `robots.txt`](../2019/seo#robotstxt).
+Overall, 80.46% of mobile pages responded to `robots.txt` with a 2XX response. Of these, 25.09% were not recognized as valid. This has slightly improved over 2019, when it was found that [27.84% of mobile sites had a valid `robots.txt`](../2019/seo#robotstxt).
 
-The data source for testing `robots.txt` validity, Lighthouse, introduced a [robots.txt audit](https://web.dev/robots-txt/) as part of the v6 update. This inclusion highlights that a successfully resolved request does not mean that the cornerstone file will be able to provide the necessary directives to web crawlers.
+Lighthouse, the data source for testing `robots.txt` validity, introduced a [`robots.txt` audit](https://web.dev/robots-txt/) as part of the v6 update. This inclusion highlights that a successfully resolved request does not mean that the cornerstone file will be able to provide the necessary directives to web crawlers.
 
-{# TODO(analysts, authors): Note that mobile and desktop can't be combined into "all devices" since they are overlapping datasets and most websites would be double-counted. When citing stats throughout the chapter, you need to specify which client you're referring to or include a disclaimer in the intro that stats are mobile unless specified otherwise. #}
-<figure markdown>
-Response Code | All Devices | Mobile | Desktop
--- | -- | -- | --
-2XX | 80.05% | 80.46% | 79.59%
-3XX | 0.01% | 0.01% | 0.01%
-4XX | 18.12% | 17.67% | 18.64%
-5XX | 0.14% | 0.15% | 0.12%
-6XX | 0.00% | 0.00% | 0.00%
-7XX | 0.00% | 0.15% | 0.12%
-
-<figcaption>
-  {{ figure_link(
-    caption="<code>robots.txt</code> response codes.",
-    sheets_gid="769973954",
-    sql_file="pages_robots_txt_by_device_and_status.sql"
-  ) }}
-</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Response Code</th>
+        <th>Mobile</th>
+        <th>Desktop</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>2XX</td>
+        <td class="numeric">80.46%</td>
+        <td class="numeric">79.59%</td>
+      </tr>
+      <tr>
+        <td>3XX</td>
+        <td class="numeric">0.01%</td>
+        <td class="numeric">0.01%</td>
+      </tr>
+      <tr>
+        <td>4XX</td>
+        <td class="numeric">17.67%</td>
+        <td class="numeric">18.64%</td>
+      </tr>
+      <tr>
+        <td>5XX</td>
+        <td class="numeric">0.15%</td>
+        <td class="numeric">0.12%</td>
+      </tr>
+      <tr>
+        <td>6XX</td>
+        <td class="numeric">0.00%</td>
+        <td class="numeric">0.00%</td>
+      </tr>
+      <tr>
+        <td>7XX</td>
+        <td class="numeric">0.15%</td>
+        <td class="numeric">0.12%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="<code>robots.txt</code> response codes.",
+      sheets_gid="769973954",
+      sql_file="pages_robots_txt_by_device_and_status.sql"
+    ) }}
+  </figcaption>
 </figure>
 
 In addition to similar status code behavior, `Disallow` statement use was consistent between mobile and desktop versions of `robots.txt` files.
