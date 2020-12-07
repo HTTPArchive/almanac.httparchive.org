@@ -27,7 +27,7 @@ Over the past decade [resource hints](https://www.w3.org/TR/resource-hints/) hav
 
 Preloading resources and having browsers apply some intelligent prioritization is something that was actually started way back in 2009 by IE8 with something called the [preloader](https://speedcurve.com/blog/load-scripts-async/). In addition to the HTML parser, IE8 had a lightweight look-ahead preloader that scanned for tags that could initiate network requests (`<script>`, `<link>`, and `<img>`).
 
-Over the following years, browser vendors did more and more of the heavy lifting, each adding their own special sauce for how to prioritize resources. But it’s important to understand that the browser alone has some limitations. As developers however, we can overcome these limits by making good use of resource hints and help decide how to prioritize resources, determining which should be fetched or preprocessed to further boost page performance.
+Over the following years, browser vendors did more and more of the heavy lifting, each adding their own special sauce for how to prioritize resources. But it's important to understand that the browser alone has some limitations. As developers however, we can overcome these limits by making good use of resource hints and help decide how to prioritize resources, determining which should be fetched or preprocessed to further boost page performance.
 
 In particular we can mention a few of the victories resource hints achieved/made in the last year:
 - [CSS-Tricks](https://www.zachleat.com/web/css-tricks-web-fonts/) web fonts showing up faster on a 3G first render
@@ -35,7 +35,7 @@ In particular we can mention a few of the victories resource hints achieved/made
 - [Ironmongerydirect.co.uk](https://andydavies.me/blog/2019/03/22/improving-perceived-performance-with-a-link-rel-equals-preconnect-http-header/) by using preconnect improved product image loading by 400ms at the median and greater than 1s at 95th percentile
 - [Facebook.com](https://engineering.fb.com/2020/05/08/web/facebook-redesign/) used preload for faster navigation
 
-Let’s take a look at most predominant resource hints supported by most browsers today: `dns-prefetch`, `preconnect`, `preload`,  `prefetch` and native lazy loading. 
+Let's take a look at most predominant resource hints supported by most browsers today: `dns-prefetch`, `preconnect`, `preload`,  `prefetch` and native lazy loading. 
 
 When used with each individual hint we advise to always measure the impact before and after in the field, by using libraries like [WebVitals](https://github.com/GoogleChrome/web-vitals), [Perfume.js](https://github.com/zizzamia/perfume.js) or any other utility that supports the Web Vitals metrics. 
 
@@ -200,8 +200,8 @@ Be mindful that fonts preloaded without the `crossorigin` attribute will be fetc
 When it's time to choose a resource for use with different screen sizes, reach for the `media` attribute with `preload` to optimize your media queries.
 
 ```html
-<link rel="preload" href="desktop.css" as="style" media=”only screen and (max-width: 768px)”>
-<link rel="preload" href="mobile.css" as="style" media=”~~~”>
+<link rel="preload" href="desktop.css" as="style" media="only screen and (max-width: 768px)">
+<link rel="preload" href="mobile.css" as="style" media="~~~">
 ```
 
 Seeing over 2,100 different combinations of media queries in the 2020 dataset encourages us to consider how wide the variance is between concept and implementation of responsive design from site to site. The ever popular `767px/768px` breakpoints (as popularised by Bootstrap amongst others) can be seen in the data.
@@ -238,7 +238,7 @@ Close to 2% of pages (~40k) reported the issue of both `preconnect` & `dns-prefe
   sql_file="lighthouse_preconnect.sql"
 ) }}
 
-We saw only 19.67% of pages passing Lighthouse’s "[Preconnect to required origins](https://web.dev/uses-rel-preconnect/)" audit, creating a large opportunity for thousands of websites to start using `preconnect` or `dns-prefetch` to establish early connections to important third-party origins.
+We saw only 19.67% of pages passing Lighthouse's "[Preconnect to required origins](https://web.dev/uses-rel-preconnect/)" audit, creating a large opportunity for thousands of websites to start using `preconnect` or `dns-prefetch` to establish early connections to important third-party origins.
 
 {{ figure_markup(
   caption="Pages that pass the preload Lighthouse audit",
@@ -248,18 +248,18 @@ We saw only 19.67% of pages passing Lighthouse’s "[Preconnect to required orig
   sql_file="lighthouse_preload.sql"
 ) }}
 
-Running Lighthouse’s "[Preload key requests](https://web.dev/uses-rel-preload/)" audit resulted in 84.6% of pages passing the test, which is an astonishing result. If you are looking to use `preload` for the first time, remember, fonts and critical scripts are a good place to start.
+Running Lighthouse's "[Preload key requests](https://web.dev/uses-rel-preload/)" audit resulted in 84.6% of pages passing the test, which is an astonishing result. If you are looking to use `preload` for the first time, remember, fonts and critical scripts are a good place to start.
 
 {# TODO - revisit this sentence - Ref https://github.com/HTTPArchive/almanac.httparchive.org/pull/1587#discussion_r532291496 #}
 
 ### Native Lazy Loading
 
-Now let’s celebrate the first year of the [Native Lazy Loading](https://addyosmani.com/blog/lazy-loading/) API, which at the time of publishing already has over [72%](https://caniuse.com/loading-lazy-attr) browser support. This new API can be used to defer the load of below-the-fold iframes and images on the page until the user scrolls near them. This can reduce data usage, memory usage, and helps speed up above-the-fold content. Opting-in to lazy load is as simple as adding `loading=lazy`  on `<iframe>` or `<img>` elements.
+Now let's celebrate the first year of the [Native Lazy Loading](https://addyosmani.com/blog/lazy-loading/) API, which at the time of publishing already has over [72%](https://caniuse.com/loading-lazy-attr) browser support. This new API can be used to defer the load of below-the-fold iframes and images on the page until the user scrolls near them. This can reduce data usage, memory usage, and helps speed up above-the-fold content. Opting-in to lazy load is as simple as adding `loading=lazy`  on `<iframe>` or `<img>` elements.
 
 {# TODO - revisit this sentence - Ref https://github.com/HTTPArchive/almanac.httparchive.org/pull/1587#discussion_r533106799 #}
 
 {{ figure_markup(
-  caption="Percentage of pages using native lazy loading set to “lazy”",
+  caption="Percentage of pages using native lazy loading set to `lazy`",
   content="3.87%",
   classes="big-number",
   sheets_gid="2039808014",
@@ -373,13 +373,13 @@ There are over 79% of resources with "high" priority, but something we should pa
 
 
 ### 103 Early Hints in HTTP/2
-Previously we mentioned that HTTP/2 Push could actually cause regression in cases where assets being pushed were already in the browser cache. The [103 Early Hints](https://tools.ietf.org/html/rfc8297) proposal aims to provide similar benefits promised by HTTP/2 push. With an architecture that is potentially 10x simpler, it addresses the long RTT’s or server processing without suffering from the known worst-case issue of unnecessary round trips with server push.
+Previously we mentioned that HTTP/2 Push could actually cause regression in cases where assets being pushed were already in the browser cache. The [103 Early Hints](https://tools.ietf.org/html/rfc8297) proposal aims to provide similar benefits promised by HTTP/2 push. With an architecture that is potentially 10x simpler, it addresses the long RTT's or server processing without suffering from the known worst-case issue of unnecessary round trips with server push.
 
 As of right now you can follow the conversation on Chromium with issues [671310](https://bugs.chromium.org/p/chromium/issues/detail?id=671310), [1093693](https://bugs.chromium.org/p/chromium/issues/detail?id=1093693) and [1096414](https://bugs.chromium.org/p/chromium/issues/detail?id=1096414).
 
 ## Conclusion
 
-During the past year resource hints increased in adoption, and they have become essential APIs for developers to have more granular control over many aspects of resource prioritizations and ultimately, user experience. But let’s not forget that these are hints, not instructions and unfortunately the Browser and the network will always have the final say. 
+During the past year resource hints increased in adoption, and they have become essential APIs for developers to have more granular control over many aspects of resource prioritizations and ultimately, user experience. But let's not forget that these are hints, not instructions and unfortunately the Browser and the network will always have the final say. 
 
 Sure, you can slap them on a bunch of elements, and the browser may do what you're asking it to. Or it may ignore some hints and decide the default priority is the best choice for the given situation. In any case, make sure to have a playbook for how to best use these hints:
 
@@ -388,6 +388,6 @@ Sure, you can slap them on a bunch of elements, and the browser may do what you'
 - Adopt the [PRPL Pattern](https://addyosmani.com/blog/the-prpl-pattern/) when possible.
 - Measure the performance experience before and after each implementation.
 
-As a final note, let’s remember that the web is for everyone. We must continue to protect it and stay focused on building experiences that are easy and frictionless. 
+As a final note, let's remember that the web is for everyone. We must continue to protect it and stay focused on building experiences that are easy and frictionless. 
 
-We are thrilled to see that year after year we get incrementally closer to offering all the APIs required to simplify building a great web experience for everyone, and we can’t wait to see what comes next.
+We are thrilled to see that year after year we get incrementally closer to offering all the APIs required to simplify building a great web experience for everyone, and we can't wait to see what comes next.
