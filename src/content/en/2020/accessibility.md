@@ -86,3 +86,20 @@ Automated checks for the presence of alternative text do not assess the quality 
 | ico | 1.34% | 1.6% |
 | gif | 0.034% | 0.030% |
 | jpeg | 0.034% | 0.032% |
+
+#### Images with title attributes
+
+The title attribute which generates a tooltip that displays text is often mistaken as another reliable way to describe images to assistive technology. However according the HTML Standard, 
+
+> “Relying on the `title` attribute is currently discouraged as many user agents do not expose the attribute in an accessible manner as required by this specification”
+
+Tooltips also introduce a host of other accessibility barriers such as information only being revealed on hover/mouseover, information not being properly communicated to assistive technology, lack of keyboard support, and general poor usability.  The history of tooltips and their barriers  are well described by Sarah Higley in her blog post, “[Tooltips in the time of WCAG 2.1](https://sarahmhigley.com/writing/tooltips-in-wcag-21/)”. We found that 16.95% of all alt attributes also contain a title attribute and of these instances 73.56% of the titles are the exact same as the alt attribute. Of these instances 73.56% of desktop sites and 72.80% of mobile sites had matching values for both the alt and title attributes.
+
+#### Other facts about alt text
+
+- The median length for both desktop and mobile alt text is 18 characters. With the average English word length being 4.7 characters, this means the median alt attribute value is 3-4 words long. Depending on the image, being terse can be beneficial. However it is hard to imagine 4 words being sufficient for an accurate description of an image with any complexity.
+- The longest alt text length found for desktop sites was 15357625 characters. That’s enough to fill 5 and a half "War and Peace" sized books (assuming war and peace has an average word length of 4.7 characters).
+
+### Video on the Web
+
+Video and other multi-media content can enrich a Web experience, but often is not robustly supported for all users and can pose major accessibility barriers if it is not implemented with support. For more information see the [W3C’s Making Audio and Video Accessible](https://www.w3.org/WAI/media/av/).
