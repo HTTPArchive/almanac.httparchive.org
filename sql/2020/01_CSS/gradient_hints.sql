@@ -1,5 +1,5 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION getGradientHardStops(css STRING) RETURNS INT64 LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getGradientHints(css STRING) RETURNS INT64 LANGUAGE js AS '''
 try {
   function compute(ast) {
     let ret = {
@@ -148,7 +148,7 @@ try {
 
   const ast = JSON.parse(css);
   let gradient = compute(ast);
-  return gradient.hard_stops;
+  return gradient.hints;
 } catch (e) {
   return 0;
 }
@@ -157,14 +157,14 @@ OPTIONS (library="gs://httparchive/lib/css-utils.js");
 
 SELECT
   client,
-  COUNTIF(hard_stops > 0) AS pages,
+  COUNTIF(hints > 0) AS pages,
   total,
-  COUNTIF(hard_stops > 0) / total AS pct
+  COUNTIF(hints > 0) / total AS pct
 FROM (
   SELECT
     client,
     page,
-    SUM(getGradientHardStops(css)) AS hard_stops
+    SUM(getGradientHints(css)) AS hints
   FROM
     `httparchive.almanac.parsed_css`
   WHERE
