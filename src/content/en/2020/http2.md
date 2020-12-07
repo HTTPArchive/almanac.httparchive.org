@@ -196,7 +196,7 @@ Figure 22.7 orders every website by the fraction of HTTP/2 requests for known th
 )
 }}
 
-Is there any difference in which content-types are served over HTTP/2 or gQUIC? Figure 22.8 shows, for example, that 90% of websites serve 100% of third party fonts and audio over HTTP/2 or gQUIC, only 5% over HTTP/1 and 5% are a mix. The majority of third-party assets are either scripts or images, and are solely served over HTTP/2 or gQUIC on 60% and 70% of websites respectively.
+Is there any difference in which content-types are served over HTTP/2 or gQUIC? Figure 22.8 shows, for example, that 90% of websites serve 100% of third party fonts and audio over HTTP/2 or gQUIC, only 5% over HTTP/1.1 and 5% are a mix. The majority of third-party assets are either scripts or images, and are solely served over HTTP/2 or gQUIC on 60% and 70% of websites respectively.
 
 {{ figure_markup(
   image="http2-third-party-http2-usage-by-content-type.png",
@@ -228,7 +228,7 @@ Unfortunately, the upgrade path for servers is more difficult, especially with t
 {{ figure_markup(
   image="http2-server-protocol-usage.png",
   caption="Server usage by HTTP protocol on mobile",
-  description="A bar chart showing the number of websites served by either HTTP/1 or HTTP/2 for the most popular servers to mobile clients. Nginx serves 727,181 HTTP/1 and 727,181 HTTP/2 sites. Cloudflare 59,981 HTTP/1 and 679,616 HTTP/2. Apache 1,521,753 HTTP/1 and 585,096 HTTP/2. Litespeed 50,502 HTTP/1 and 166,721 HTTP/2. Microsoft-IIS 284,047 HTTP/1 and 81,490 HTTP/2.",
+  description="A bar chart showing the number of websites served by either HTTP/1.x or HTTP/2 for the most popular servers to mobile clients. Nginx serves 727,181 HTTP/1.1 and 727,181 HTTP/2 sites. Cloudflare 59,981 HTTP/1.1 and 679,616 HTTP/2. Apache 1,521,753 HTTP/1.1 and 585,096 HTTP/2. Litespeed 50,502 HTTP/1.1 and 166,721 HTTP/2. Microsoft-IIS 284,047 HTTP/1.1 and 81,490 HTTP/2.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=718663369&format=interactive",
   sheets_gid="306338094",
   sql_file="count_of_h2_and_h3_sites_grouped_by_server.sql"
@@ -656,14 +656,14 @@ On the surface, HTTP/3 is really not all that different from HTTP/2. It doesn't 
 
 ### Deploying and discovering HTTP/3
 
-Since QUIC and HTTP/3 run over UDP, things aren't as simple as with HTTP/1.1 or HTTP/2. Typically, an HTTP/3 client has to first discover that QUIC is available at the server. The recommended method for this is [HTTP Alternative Services](#alternative-services) . On its first visit to a website, a client connects to a server using TCP. It then discovers via `Alt-Svc` that HTTP/3 is available, and can set up a new QUIC connection. The `Alt-Svc` entry can be cached, allowing subsequent visits to avoid the TCP step, but the entry will eventually become stale and need revalidation. This likely will have to be done for each domain separately, which will probably lead to most page loads using a mix of HTTP/1, HTTP/2, and HTTP/3.
+Since QUIC and HTTP/3 run over UDP, things aren't as simple as with HTTP/1.1 or HTTP/2. Typically, an HTTP/3 client has to first discover that QUIC is available at the server. The recommended method for this is [HTTP Alternative Services](#alternative-services) . On its first visit to a website, a client connects to a server using TCP. It then discovers via `Alt-Svc` that HTTP/3 is available, and can set up a new QUIC connection. The `Alt-Svc` entry can be cached, allowing subsequent visits to avoid the TCP step, but the entry will eventually become stale and need revalidation. This likely will have to be done for each domain separately, which will probably lead to most page loads using a mix of HTTP/1.1, HTTP/2, and HTTP/3.
 
 However, even if it is known that a server supports QUIC and HTTP/3, the network in between might block it. UDP traffic is commonly used in DDoS attacks and blocked by default in for example many company networks. While exceptions could be made for QUIC, its encryption makes it difficult for firewalls to assess the traffic. There are potential solutions to these issues, but in the meantime it is expected that QUIC is most likely to succeed on well-known ports like 443. And it is entirely possible that it is blocked QUIC altogether. In practice, clients will likely use sophisticated mechanisms to fall back to TCP if QUIC fails. One option is to "race" both a TCP and QUIC connection and use the one that completes first.
 
 There is ongoing work to define ways to discover HTTP/3 without needing the TCP step. This should be considered an optimization, though, as the UDP blocking issues are likely to mean that TCP-based HTTP sticks around. The [HTTPS DNS record](https://tools.ietf.org/html/draft-ietf-dnsop-svcb-https) is similar to HTTP Alternative Services and some CDNs are already [experimenting with these records](https://blog.cloudflare.com/speeding-up-https-and-http-3-negotiation-with-dns/).  In the long run, when most servers offer HTTP/3, browsers might switch to attempting that by default; that will take a long time.
 
 <figure markdown>
-| TLS version | HTTP/1 <br /> desktop | HTTP/1 <br />mobile | HTTP/2 <br />desktop | HTTP/2 <br />mobile |
+| TLS version | HTTP/1.x <br /> desktop | HTTP/1.x <br />mobile | HTTP/2 <br />desktop | HTTP/2 <br />mobile |
 | ------------ | ------ | ------ |  ---- | -----|
 | unknown   |  4.06%	 | 4.03%  | 5.05%	 | 7.28%  |
 | TLS 1.2	   | 26.56%  | 24.75% | 23.12%  | 23.14% |
@@ -682,7 +682,7 @@ HTTP/3 and QUIC are highly advanced protocols with powerful performance and secu
 
 ## Conclusion
 
-This year, HTTP/2 has become the dominant protocol, serving 64% of all requests, having grown by 10 percentage points during the year. Home pages have seen a 13% increase in HTTP/2 adoption, leading to an even split of pages served over HTTP/1 and HTTP/2. Using a CDN to serve your home page pushes HTTP/2 adoption up to 80%, compared with 30% for non-CDN usage. There remain some older servers, Apache and IIS, that are proving resistant to upgrading to HTTP/2 and TLS. A big success has been the decrease in website connection usage due to HTTP/2 connection multiplexing. The median number of connections in 2016 was 23 compared to 13 in 2020.
+This year, HTTP/2 has become the dominant protocol, serving 64% of all requests, having grown by 10 percentage points during the year. Home pages have seen a 13% increase in HTTP/2 adoption, leading to an even split of pages served over HTTP/1.1 and HTTP/2. Using a CDN to serve your home page pushes HTTP/2 adoption up to 80%, compared with 30% for non-CDN usage. There remain some older servers, Apache and IIS, that are proving resistant to upgrading to HTTP/2 and TLS. A big success has been the decrease in website connection usage due to HTTP/2 connection multiplexing. The median number of connections in 2016 was 23 compared to 13 in 2020.
 
 HTTP/2 prioritization and server push have turned out to be way more complex to deploy at large. Under certain implementations they show clear performance benefits. There is, however, a significant barrier to deploying and tuning existing servers to use these features effectively. There are still a large proportion of CDNs who do not support prioritization effectively. There have also been issues with consistent browser support.
 
