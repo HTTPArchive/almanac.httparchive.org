@@ -155,8 +155,6 @@ registration.showNotification('Title', {
 
 `navigator.wakeLock.request()`方法创建一个唤醒保持锁。这个方法需要一个`WakeLockType`参数。在未来，唤醒保持API可以提供其他的保持类型，比如关闭屏幕但保持CPU开启。目前，该API只支持屏幕唤醒的保持，所以只有一个可选的参数，默认值为`screen`。该方法返回一个承诺，该承诺解析为一个`WakeLockSentinel`对象。开发者需要存储这个引用，以便以后调用它的`release()`方法，释放屏幕唤醒保持锁。当标签页处于非活动状态，或者用户将窗口最小化时，浏览器会自动释放保持锁。另外，浏览器可能会拒绝请求，拒绝承诺，例如由于电池电量不足的时候。
 
-
-
 {{ figure_markup(
   image="screen_wake_lock_api.png",
   caption="使用屏幕唤醒锁定 API的页面数量。",
