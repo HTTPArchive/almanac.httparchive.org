@@ -89,6 +89,7 @@ try {
     }
 
     walkDeclarations(ast, ({property, value}) => {
+      if (value.length > 1000) return;
       usage.hex[3] += countMatches(value, /#[a-f0-9]{3}\b/gi);
       usage.hex[4] += countMatches(value, /#[a-f0-9]{4}\b/gi);
       usage.hex[6] += countMatches(value, /#[a-f0-9]{6}\b/gi);
@@ -166,8 +167,6 @@ FROM (
     UNNEST(getColorFunctions(css)) AS function
   WHERE
     date = '2020-08-01' AND
-    # Limit the size of the CSS to avoid OOM crashes.
-    LENGTH(css) < 0.1 * 1024 * 1024 AND
     function IS NOT NULL)
 JOIN (
   SELECT

@@ -1,5 +1,5 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION getLonghandFirstProperties(css STRING) RETURNS
+CREATE TEMPORARY FUNCTION getShorthandFirstProperties(css STRING) RETURNS
 ARRAY<STRUCT<property STRING, freq INT64>> LANGUAGE js AS '''
 try {
   function compute(ast) {
@@ -431,7 +431,7 @@ try {
   var ast = JSON.parse(css);
   var props = compute(ast);
 
-  return Object.entries(props.longhands_before_shorthands).filter(([property]) => {
+  return Object.entries(props.shorthands_before_longhands).filter(([property]) => {
     return property != 'total';
   }).map(([property, freq]) => {
     return {property, freq};
@@ -443,23 +443,23 @@ try {
 OPTIONS (library="gs://httparchive/lib/css-utils.js");
 
 SELECT
-  percentile,
   client,
-  APPROX_QUANTILES(freq_longhand_first, 1000)[OFFSET(percentile * 10)] AS longhand_first_per_page
+  COUNTIF(freq_shorthand_first > 0) AS pages,
+  COUNT(0) AS total,
+  COUNTIF(freq_shorthand_first > 0) / COUNT(0) AS pct
 FROM (
   SELECT
     client,
-    property.freq AS freq_longhand_first
+    page,
+    SUM(property.freq) AS freq_shorthand_first
   FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getLonghandFirstProperties(css)) AS property
+    `httparchive.almanac.parsed_css`
+  LEFT JOIN
+    UNNEST(getShorthandFirstProperties(css)) AS property
   WHERE
-    date = '2020-08-01' AND
-    property.freq > 0),
-  UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+    date = '2020-08-01'
+  GROUP BY
+    client,
+    page)
 GROUP BY
-  percentile,
-  client
-ORDER BY
-  percentile,
   client
