@@ -1,5 +1,5 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION getGradientFunctions(css STRING)
+CREATE TEMPORARY FUNCTION getGradientAdoption(css STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
   function compute(ast) {
@@ -40,7 +40,7 @@ try {
         let {name, args} = gradient;
         incrementByKey(ret.functions, name);
 
-        incrementByKey(ret.properties, property.indexOf("--") === 0? "--" : property);
+        incrementByKey(ret.properties, property.indexOf("--") === 0? "--*" : property);
 
         // Light color stop parsing
 
@@ -135,7 +135,7 @@ try {
 
   const ast = JSON.parse(css);
   let gradient = compute(ast);
-  return Object.keys(gradient.functions);
+  return Object.keys(gradient.properties);
 } catch (e) {
   return [];
 }
@@ -144,7 +144,6 @@ OPTIONS (library="gs://httparchive/lib/css-utils.js");
 
 SELECT
   client,
-  function,
   COUNT(DISTINCT page) AS pages,
   total,
   COUNT(DISTINCT page) / total AS pct
@@ -152,13 +151,13 @@ FROM (
   SELECT DISTINCT
     client,
     page,
-    function
+    property
   FROM
     `httparchive.almanac.parsed_css`,
-    UNNEST(getGradientFunctions(css)) AS function
+    UNNEST(getGradientAdoption(css)) AS property
   WHERE
     date = '2020-08-01' AND
-    function IS NOT NULL)
+    property IS NOT NULL)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -171,7 +170,6 @@ USING
   (client)
 GROUP BY
   client,
-  function,
   total
 ORDER BY
   pct DESC

@@ -616,6 +616,43 @@
   {% endblock %}
 {% endblock %}
 
+{% macro figure_dropdown(metadata, id, sheets_gid="", sql_file="", image="") %}
+  {% if sheets_gid != "" or  sql_file != "" or image != "" %}
+  <div class="figure-dropdown nav-dropdown">
+    <button class="nav-dropdown-btn js-enable hidden" disabled aria-expanded="false" title="Figure options&hellip;">
+      <span class="visually-hidden">{{ self.explore_the_results() }}</span>
+      <svg aria-hidden="true" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+      </svg>
+    </button>
+    <ul class="figure-dropdown-list nav-dropdown-list floating-card hidden">
+      {% if sheets_gid != "" %}
+      <li>
+        <a href="{{ metadata.get('results') }}#gid={{ sheets_gid }}">
+          {{ self.figure_data() }}
+        </a>
+      </li>
+      {% endif %}
+      {% if sql_file != "" %}
+      <li>
+        <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/{{ year }}/{{ metadata.get('queries')  }}/{{ sql_file }}">
+          {{ self.figure_sql() }}
+        </a>
+      </li>
+      {% endif %}
+      {% if image != "" %}
+      <li>
+        <a href="{{ image }}">
+          {{ self.figure_image() }}
+        </a>
+      </li>
+      {% endif %}
+    </ul>
+  </div>
+  {% endif %}
+{% endmacro %}
+
+
 {% macro language_switcher(switcher_name) %}
   {% if switcher_name == "mobile" or switcher_name == "mobile-footer" %}
     {{ native_lang_dropdown(switcher_name) }}
@@ -696,6 +733,7 @@
   caption,
   sheets_gid="",
   sql_file="",
+  image="",
   ebook=false
   )
 %}
@@ -703,6 +741,7 @@
 <a href="#fig-{{ metadata.chapter_number }}-{{ id }}" class="anchor-link">{{ figure_text(metadata, id) }}</a> {{ caption|safe }}
 {% else %}
 <a href="#fig-{{ id }}" class="anchor-link">{{ figure_text(metadata, id) }}</a> {{ caption|safe }}
+{{ figure_dropdown(metadata, id, sheets_gid, sql_file, image) }}
 {% endif %}
 {% endmacro %}
 
@@ -760,7 +799,7 @@
   {%- elif content != "" %}
   <div class="{{ classes }}">{{ content|safe }}</div>
   {%- endif %}
-  <figcaption id="{{ anchor }}-caption">{{ figure_link(metadata, id, caption, ebook=ebook) }}</figcaption>
+  <figcaption id="{{ anchor }}-caption">{{ figure_link(metadata, id, caption, ebook=ebook, sheets_gid=sheets_gid, sql_file=sql_file, image=image) }}</figcaption>
 </figure>
 {%- endmacro %}
 
