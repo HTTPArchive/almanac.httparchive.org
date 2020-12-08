@@ -274,7 +274,6 @@ It's worth taking a closer look those scripts that _don't_ have compression appl
 
 Thankfully, that's exactly what we see, particularly in third-party scripts where 90% of uncompressed scripts are less than 5kb in size. On the other hand, 49% of uncompressed first-party scripts are less than 5kb and 37% of uncompressed first-party scripts are over 10kb. So while we do see a lot of small uncompressed first-party scripts, there are still quite a few that would benefit from some compression.
 
-{# WIP #}
 ## What do we use?
 As we've increasingly used more JavaScript to power our sites and applications, there has also been an increasing demand for open-source libraries and frameworks to help with improving developer productivity and overall code maintainability. Sites that _don't_ wield one of these tools are definitely the minority on today's web—jQuery alone is found on nearly 85% of the mobile pages tracked by HTTP Archive.
 
@@ -287,7 +286,7 @@ The popular libraries in use are largely unchanged from last year, with jQuery c
 
 {# table? showing rank, library, percentage and last years rank #}
 
-Last year, Houssein posited a few reasons for why jQuery's dominance continues:
+Last year, [Houssein posited a few reasons for why jQuery's dominance continues](https://almanac.httparchive.org/en/2019/javascript#open-source-libraries-and-frameworks):
 
 > WordPress, which is used in more than 30% of sites, includes jQuery by default.
 > Switching from jQuery to a newer client-side library can take time depending on how large an application is, and many sites may consist of jQuery in addition to newer client-side libraries.
@@ -297,7 +296,52 @@ Both are very sound guesses, and it seems the situation hasn't changed much on e
 In fact, the dominance of jQuery is supported even further when you stop to consider that, of the top 10 libraries, 6 of them are either jQuery or require jQuery in order to be used (jQuery UI, jQuery Migrate, FancyBox, Lightbox and Slick).
 
 ### Frameworks
+When we look at the frameworks, we also don't see much of a dramatic change in terms of adoption in the main frameworks that were highlighted last year. Vue.js has seen a significant increase, and AMP grew a bit, but most of them are more less where they were a year ago. 
 
+{# Compare same frameworks from last year's chapter to this year in bar chart? #}
+
+It's worth noting that the detection issue that was noted last year still applies, and still impacts th results here. It's possible that there _has_ been a significant change in popularity for a few more of these tools, but we just don't see it with the way the data is currently collected.
+
+### What it all means?
+More interesting to me than the popularity of the tools themselves is the impact they have on the things we build.
+
+First, it's worth noting that while we may think of the usage of one tool versus another, in reality, we rarely only use a single library or framework in production. Only 21% of pages analyzed report only one library or framework. Two or three frameworks are pretty common, and the long-tail gets very long, very quickly.
+
+{# Distribution of number of JS frameworks or libraries on a page #}
+
+When we look at the common combinations that we see in production, most of them are to be expected. Knowing jQuery's dominance, it's unsurprising that most of the popular combinations include jQuery and any number of jQuery related plugins.
+
+{# Top 20? Combos with percentage #}
+
+We do also see a fair amount of more "modern" frameworks, like React, Vue and Angular—paired with jQuery, like as a result of either migration or third-parties including one or the other.
+
+{# React/Angular/Vue % with and without jQuery? #}
+
+More importantly, all these tools typically mean more code and more processing time.
+
+Looking specfically at the frameworks in use, we see that the median JavaScript bytes for pages using them varies dramatically depending on _what_ is being used.
+
+The graph below shows the median bytes for pages where any of the top 35 most commonly detected frameworks were found, broken down by client.
+
+{# Median bytes by JS framework #}
+
+On one of the spectrum are frameworks like React or Angular or Ember, which tend to ship a lot of code regardless of the client. On the other end, we see minimalist frameworks like Alpine.js and Svelte showing very promising results. Defaults are very important, and it seems that by starting with highly performant defaults, Svelte and Alpine are both succeeding (so far...the sample size is pretty small) in creating a lighter set of pages.
+
+We get a very similar picture when looking at main thread time for pages where these tools were detected.
+
+{# Median main thread by JS framework #}
+
+Ember's mobile main thread time jumps out and kind of distorts the graph with how long it takes. Pulling it out makes the picture a bit easier to understand. 
+
+{# Median main thread by JS framework, no Ember #}
+
+Tools like React, GASP and RequireJS tend to spend a lot of time on the main thread of the browser, regardless of whether it's a desktop or mobile page view. The same tools that tend to lead to less code overall—tools like Alpine and Svelte—also tend to lead to lower impact on the main thread.
+
+The gap between the experience a framework provides for desktop and mobile is also worth digging into. Mobile traffic is becoming increasingly dominant, and it's critical that our tools perfom as well as possible for mobile pageviews. The bigger the gap we see between desktop and mobile performance for a framework, the bigger the red flag.
+
+{# Table? Gap in absolute and relative terms #}
+
+As you would expect, there's a gap for all tools in use due to the lower processing power of the emulated Moto G4's. Ember and Polymer seem to jump out as particularly egregious examples, while tools like RxJS and Mustache vary only minorly from desktop to mobile.
 
 ## What's the Impact?
 We have a pretty good picture now of how much JavaScript we use, where it comes from and what we use it for. While that's interesting enough on its own, the real kicker is the "so what?" What impact does all this script actually have on the experience of our pages?
@@ -434,7 +478,6 @@ The bulk of the vulnerabilities found fall into the "medium" severity category.
   sql_file="lighthouse_vulnerabilities_by_severity.sql"
 ) }}
 
-{# WIP #}
 ## Conclusion
 JavaScript is steadily rising in popularity, and there's a lot that's positive about that. It's incredible to consider what we're able to accomplish on today's web thanks to JavaScript that, even a few years ago, would have been unimagineable.
 
