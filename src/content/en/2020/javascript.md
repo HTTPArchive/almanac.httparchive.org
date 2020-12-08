@@ -111,7 +111,7 @@ As raw numbers, those may or may not jump out at you depending on how much of a 
 That 153 KB equates to ~37% of the total script size that we send down to mobile devices. There's definitely some room for improvement here.
 
 ### Request Count
-Another way of looking at how much JavaScript we use is to explore how many JavaScript requests are made on each page. While reducing the number of requests was paramount to maintaing good performance with HTTP 1.1, with HTTP/2 the opposite is the case: breaking JavaScript down into smaller, individual files is ideal for performance. 
+Another way of looking at how much JavaScript we use is to explore how many JavaScript requests are made on each page. While reducing the number of requests was paramount to maintainingg good performance with HTTP/1.1, with HTTP/2 the opposite is the case: breaking JavaScript down into [smaller, individual files](https://web.dev/granular-chunking-nextjs/) is [typically better for performance](https://almanac.httparchive.org/en/2019/http2#impact-of-http2). 
 
 {{ figure_markup(
   image="requests-2020.png",
@@ -306,7 +306,7 @@ The first thing we should consider is what happens with all that JavaScript once
 
 If you recall, there was only a 30kb difference between what is shipped to a mobile device versus a desktop device. Depending on your point of view, you could be forgiven for not getting to upset about the small gap in the amount of code sent to a desktop browser versus a mobile one—after all, what's an extra 30kb or so at the median, right?
 
-The biggest problem comes when all of that code gets served to a device low to middle-end device, something a bit less like the kind of device most developers are likely to have, and a bit more like the kind of devices you'll see from the majority of people across the world. That relatively small gap between desktop and mobile is much more dramatic when we look at it in terms of processing time.
+The biggest problem comes when all of that code gets served to a low to middle-end device, something a bit less like the kind of devices most developers are likely to have, and a bit more like the kind of devices you'll see from the majority of people across the world. That relatively small gap between desktop and mobile is much more dramatic when we look at it in terms of processing time.
 
 The median desktop site spends 891ms on the main thread of a browser working with all that JavaScript. The median mobile site, however, spends 1,897ms—over two timese the time spent on the desktop. It's even worse for the long tail of sites. At the 90th percentile, mobile sites spend a staggering 8,921ms of main thread time dealing with JavaScript, compared to 3,838ms for desktop sites.
 
