@@ -3,7 +3,7 @@
 part_number: II
 chapter_number: 11
 title: Security
-description: Security chapter of the 2020 Web Almanac covering transport layer security, content security (CSP, feature policy, SRI, ...), web defense mechanisms (tackling XSS, XS-Leaks), and update practices of widely used technologies.
+description: Security chapter of the 2020 Web Almanac covering transport layer security, content security (CSP, feature policy, SRI), web defense mechanisms (tackling XSS, XS-Leaks), and update practices of widely used technologies.
 authors: [tomvangoethem, nrllh, bazzadp]
 reviewers: [cqueern, bazzadp, edmondwwchan]
 analysts: [tomvangoethem]
@@ -30,9 +30,103 @@ Many of the platforms and services that we use on a daily basis strongly rely on
 
 In this chapter, we explore the current state-of-practice for security on the Web. By analyzing the adoption of various security features in depth and at a large scale, we gather insights on the different ways that website owners apply these security mechanisms, driven by the incentive to protect their users. However, we not only look at the adoption of security mechanisms in individual websites. We analyze how different factors, such as the technology stack that is used to build the site, affect the prevalence of security headers, and thus improve overall security. Furthermore, because ensuring that a website is secure requires a holistic approach covering many different facets, we also evaluate other aspects, such as the patching practices for various widely used web technologies. Finally, we report on how security on the web has evolved in the last year and provide an outlook for what is yet to come.
 
-{# TODO do we want to keep the Methodology section? #}
+## Transport security
 
-{# TODO Barry promised to write the TLS section #}
+The last year has seen a continuation of the growth of HTTPS on websites. Securing the transport layer is a basic part of web security, without which all the other security features we will discuss in this chapter are basically rendered null and void. Moving our web traffic to HTTPS, and eventually [marking HTTP as non-secure](https://www.chromium.org/Home/chromium-security/marking-http-as-non-secure) is being driven by web browsers giving increasing warnings when unencrypted connections are used (the sitck), whiles at the same time resticting [powerful new features to the secure context](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts/features_restricted_to_secure_contexts). The effort is paying off hugely and we are now seeing 87.70% of requests on desktop and 86.90% of requests on mobile being served over HTTPS.
+
+{{ figure_markup(
+  caption="The percentage of requests that use HTTPS on mobile.",
+  content="86.90%",
+  classes="big-number",
+  sheets_gid="1558058913"
+)
+}}
+
+One slight concern as we reach the end of this goal, is a noticeable leveling off of the the impressive growth of the last few years–the long tail of the internet means older legacy sites are not maintained and may never be run over HTTPS, meaning they will eventually become inaccesible to most users.
+
+{{ figure_markup(
+  image="security-https-request-growth.png",
+  alt="Percentage of requests using HTTPS",
+  caption='Percentage of requests using HTTPS.<br>(Source: <a href="https://httparchive.org/reports/state-of-the-web#pctHttps">HTTP Archive</a>)',
+  description="Time series chart of HTTPS request from 1st January 2017 until the 1st August 2020. Mobile and desktop usage is almost identical and starts at 35.70% of requests for desktop and 35.20% for mobile and increases all the way up to 87.70% for desktop and 86.90% for mobile with a slight tailing off at the end.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=1353660053&format=interactive",
+  sheets_gid="1558058913"
+  )
+}}
+
+While the high volume of requests is encouraging, these can often be dominated by [third-party](./third-party) requests and services like Google Analytics, fonts or advertisements. Websites themselves can lag, but again we see encouraging use with between 73% and 77% of sites now being served over HTTPS.
+
+{{ figure_markup(
+  image="security-https-usage-by-site.png",
+  caption="HTTPS usage for sites",
+  description="Bar chart showing 77.44% of desktop sites are using HTTPS, with the remaining 22.56% using HTTP, while 73.22% of mobile sites are using HTTPS while the remaining 26.78% using HTTP.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=103775737&format=interactive",
+  sheets_gid="1558058913",
+  sql_file="TODO.sql"
+  )
+}}
+
+### Protocol versions
+
+As HTTPS is now well past being the norm, the challenge becomes in ensuring that secure versions of the underlying TLS (Tranport Layer Security) protocol are being used. TLS needs maintenance as versions become older and vulnerabilities are found.
+
+{{ figure_markup(
+  image="security-tls-version-by-site.png",
+  caption="TLS versions usage for sites",
+  description="Bar chart showing that on desktop 55.98% of sites use TLSv1.2, while 43.23% use TLSv1.3. On mobile the figures are 53.82% and 45.37% respectively. TLSv1.0, TLSv1.1 barely register though there is a very small amount of QUIC usage (0.62% on desktop and 0.67% on mobile).",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=840326541&format=interactive",
+  sheets_gid="1486844039",
+  sql_file="tls_versions_pages.sql"
+  )
+}}
+
+These look similar to [last year's protocol analysis](../2019/security#protocol-versions) though with an approximately 5% increase in TLSv1.3 usage, and the corresponding drop in TLSv1.2. That seems a small increase and it would seem like the high usage noted last year was likely with large CDNs supporting well, and those still using TLSv1.2 are likely managing this themselves or with a basic hosting provider that does not support this.
+
+### Cipher suites
+
+{{ figure_markup(
+  image="security-distribution-of-cipher-suites.png",
+  caption="Distribution of cipher suites",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=1464905386&format=interactive",
+  sheets_gid="1919501829",
+  sql_file="tls_cipher_suite.sql"
+  )
+}}
+
+#### Forward secrecy
+
+{# TODO finish this out #}
+
+{{ figure_markup(
+  caption="Mobile sites using forward secrecy.",
+  content="98.03%",
+  classes="big-number",
+  sheets_gid="1643542759",
+  sql_file="tls_forward_secrecy.sql"
+)
+}}
+
+
+### Perfect forward secrecy
+
+{# TODO finish this out #}
+
+## CAs
+
+{# TODO finish this out:
+
+Browser enforcement
+HTTP Strict-Transport-Security
+Secure attribute on cookies
+__Secure- prefix on cookies
+Flawed configurations
+Mixed content
+
+
+#}
+
+
 
 ## Cookies
 
@@ -506,7 +600,7 @@ The [Web Cryptography API](https://www.w3.org/TR/WebCryptoAPI/) offers great Jav
 <figcaption>{{ figure_link(caption="Top used cryptography APIs", sheets_gid="1256054098", sql_file="web_cryptography_api.sql") }}</figcaption>
 </figure>
 
-Our results show that the function `Crypto.getRandomValues` which lets generate random-number (in cryptographic meaning) is the most widely used one (desktop: 70%, mobile: 68%). As Google Analytics uses this function, we believe it has an important effect on the value. In general, we see that mobile websites perform fewer cryptographic operations, although mobile browsers [fully support](https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API#Browser_compatibility) this API. 
+Our results show that the function `Crypto.getRandomValues` which lets generate random-number (in cryptographic meaning) is the most widely used one (desktop: 70%, mobile: 68%). As Google Analytics uses this function, we believe it has an important effect on the value. In general, we see that mobile websites perform fewer cryptographic operations, although mobile browsers [fully support](https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API#Browser_compatibility) this API.
 Since we perform passive crawling, our results are in this section limited. We’re not able to identify cases where any interaction is required for functions to be executed.
 
 
@@ -609,11 +703,11 @@ For nginx, one of the most widely used web servers, we see a very static and div
 
 ## Malpractices on the web
 
-Nowadays, the performance of the technologies used  plays a particularly relevant role. To this end, technologies are constantly being further developed, optimized, and new technologies launched. One of these new technologies is WebAssembly, which becomes a [W3C recommendation](https://www.w3.org/2019/12/pressrelease-wasm-rec.html.en) by the end of 2019. WebAssembly achieves the development of powerful web applications and has made it possible to run almost native high-performance computing in web browsers. No rose without a thorn; attackers have taken advantage of this technology, and this is how the new attack vector cryptojacking was found. Attackers used this technology to mine cryptocurrencies on the web browser by using the computer’s power of visitors (malicious cryptomining). This is a very attractive technique for attackers – inject a few lines of JavaScript code in the webpage and let all visitors mine for you. Since the technique cryptomining on the web rarely used also by website operators, we can’t generalize that all websites with cryptomining have been crypto hijacked. But in most cases, the website operators don’t offer an opt-in alternative for visitors, and the visitors remain still uninformed as to whether their resources are being while surfing on the website. 
+Nowadays, the performance of the technologies used  plays a particularly relevant role. To this end, technologies are constantly being further developed, optimized, and new technologies launched. One of these new technologies is WebAssembly, which becomes a [W3C recommendation](https://www.w3.org/2019/12/pressrelease-wasm-rec.html.en) by the end of 2019. WebAssembly achieves the development of powerful web applications and has made it possible to run almost native high-performance computing in web browsers. No rose without a thorn; attackers have taken advantage of this technology, and this is how the new attack vector cryptojacking was found. Attackers used this technology to mine cryptocurrencies on the web browser by using the computer’s power of visitors (malicious cryptomining). This is a very attractive technique for attackers – inject a few lines of JavaScript code in the webpage and let all visitors mine for you. Since the technique cryptomining on the web rarely used also by website operators, we can’t generalize that all websites with cryptomining have been crypto hijacked. But in most cases, the website operators don’t offer an opt-in alternative for visitors, and the visitors remain still uninformed as to whether their resources are being while surfing on the website.
 
 {# TODO cryptominer usage image #}
 
-The figure above shows the number of websites utilizing cryptomining in the last two years. We see that from the beginning of 2019, interest in cryptomining is getting lower. In our last measurement, we had a total of 475 websites utilizing cryptominer. 
+The figure above shows the number of websites utilizing cryptomining in the last two years. We see that from the beginning of 2019, interest in cryptomining is getting lower. In our last measurement, we had a total of 475 websites utilizing cryptominer.
 
 {# TODO Nurullah: get avg use time. #}
 
