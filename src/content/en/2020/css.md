@@ -131,9 +131,188 @@ Percentile | Desktop | Mobile
   sql_file="top_selector_pseudo_classes.sql"
 ) }}
 
+{{ figure_markup(
+  image="popular-selector-pseudo-classes.png",
+  caption="The most popular pseudo-classes as a percent of pages.",
+  description="Bar chart showing the most popular pseudo-classes as a percent of pages for desktop and mobile. Desktop and mobile are mostly similar, with mobile tending to have slightly higher adoption. The most popular pseudo-class is hover, used on 84% of pages. The following pseudo-classes decrease in popularity from 71% to 12% almost linearly: before, after, focus, active, first-child, last-child, visited, not, root, nth-child, link, disabled, empty, nth-of-type.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1363774711&format=interactive",
+  sheets_gid="2029589646",
+  sql_file="top_selector_pseudo_classes.sql"
+) }}
+
+{{ figure_markup(
+  image="popular-selector-pseudo-elements.png",
+  caption="The most popular pseudo-elements as a percent of pages.",
+  description="Bar chart showing the most popular pseudo-elements as a percent of pages for desktop and mobile. Desktop and mobile are mostly similar, with mobile tending to have slightly higher adoption. The most popular pseudo-element is before, used on 33% of mobile pages. The after pseudo-element is used on 30% of mobile pages. -moz-focus-inner is unsed on 24% of pages. The popularity drops after those from 17% to 4% in decreasing order: -webkit-input-placeholder, -moz-placeholder, -webkit-search-decoration, -webkit-search-cancel-button, -webkit-inner-spin-button, -webkit-outer-spin-button, -webkit-scrollbar (7%), selection, -ms-clear, -moz-selection, -webkit-media-controls, and -webkit-scrollbar-thumb.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1417577353&format=interactive",
+  sheets_gid="1972610663",
+  sql_file="top_selector_pseudo_elements.sql",
+  width=600,
+  height=500
+) }}
+
 ## Values and units
 
 ### Lengths
+
+{{ figure_markup(
+  caption="Percentage of `<length>` values that use the `px` unit.",
+  content="72.58%",
+  classes="big-number",
+  sheets_gid="1221511608",
+  sql_file="units_frequency.sql"
+) }}
+
+{{ figure_markup(
+  image="length-units.png",
+  caption="The most popular `<length>` units as a percent of occurrences.",
+  description="Bar chart showing the most popular length units as a percent of occurrences (the frequency that the units appear in all stylesheets). The px unit is by far the most popular, used 73% of the time in mobile stylesheets. The next most popular unit is % (percent sign), at 17%, followed by em at 9%, and rem at 1%. The following units all have usage so low that they round to 0%: pt, vw, vh, ch, ex, cm, mm, in, vmin, pc, and vmax.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=2095127496&format=interactive",
+  sheets_gid="1221511608",
+  sql_file="units_frequency.sql"
+) }}
+
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th><code>px</code></th>
+        <th><code>&lt;number&gt;</code></th>
+        <th><code>em</code></th>
+        <th><code>%</code></th>
+        <th><code>rem</code></th>
+        <th><code>pt</code></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>font-size</td>
+        <td class="numeric">70%</td>
+        <td class="numeric">2%</td>
+        <td class="numeric">17%</td>
+        <td class="numeric">6%</td>
+        <td class="numeric">4%</td>
+        <td class="numeric">2%</td>
+      </tr>
+      <tr>
+        <td>line-height</td>
+        <td class="numeric">54%</td>
+        <td class="numeric">31%</td>
+        <td class="numeric">13%</td>
+        <td class="numeric">3%</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>border</td>
+        <td class="numeric">71%</td>
+        <td class="numeric">27%</td>
+        <td class="numeric">2%</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>border-radius</td>
+        <td class="numeric">65%</td>
+        <td class="numeric">21%</td>
+        <td class="numeric">3%</td>
+        <td class="numeric">10%</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>text-indent</td>
+        <td class="numeric">32%</td>
+        <td class="numeric">51%</td>
+        <td class="numeric">8%</td>
+        <td class="numeric">9%</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>vertical-align</td>
+        <td class="numeric">29%</td>
+        <td class="numeric">12%</td>
+        <td class="numeric">55%</td>
+        <td class="numeric">4%</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>mask-position</td>
+        <td></td>
+        <td></td>
+        <td class="numeric">50%</td>
+        <td class="numeric">50%</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>padding-inline-start</td>
+        <td class="numeric">33%</td>
+        <td class="numeric">5%</td>
+        <td class="numeric">62%</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>gap</td>
+        <td class="numeric">21%</td>
+        <td class="numeric">16%</td>
+        <td class="numeric">1%</td>
+        <td></td>
+        <td class="numeric">62%</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>margin-block-end</td>
+        <td class="numeric">4%</td>
+        <td class="numeric">31%</td>
+        <td class="numeric">65%</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>margin-inline-start</td>
+        <td class="numeric">38%</td>
+        <td class="numeric">46%</td>
+        <td class="numeric">14%</td>
+        <td></td>
+        <td class="numeric">1%</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="Unit usage by property.",
+      sheets_gid="1200981062",
+      sql_file="units_properties.sql"
+    ) }}
+  </figcaption>
+</figure>
+
+{{ figure_markup(
+  image="font-units.png",
+  caption="Relative popularity of font-based units other than `px` as a percent of occurrences.",
+  description="Bar chart showing the relative popularity of font-based units other than px. em is used overwhelmingly on 87.3% of instances, followed by rem at 12.2, ch at 0.4%, and ex at 0.2% of instances on mobile pages.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=166603845&format=interactive",
+  sheets_gid="1221511608",
+  sql_file="units_frequency.sql"
+) }}
+
+{{ figure_markup(
+  image="zero-lengths.png",
+  caption="Relative popularity of font-based units other than `px` as a percent of occurrences.",
+  description="Bar chart showing the relative popularity of font-based units other than px. em is used overwhelmingly on 87.3% of instances, followed by rem at 12.2, ch at 0.4%, and ex at 0.2% of instances on mobile pages.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1935151776&format=interactive",
+  sheets_gid="313150061",
+  sql_file="units_zero.sql"
+) }}
 
 ### Calculations
 
