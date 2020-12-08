@@ -228,8 +228,8 @@ Modern web applications include a large variety of third-party components, rangi
 
 One of the predominant mechanisms to indicate to the browser which origins are allowed to load content, is the [`Content-Security-Policy` (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) response header. Through numerous directives, a website administrator can have fine-grained control over how content can be included. For instance, the `img-src` directive indicates from which origins images can be loaded. Overall, we found that a CSP header was present on 7.23% of all pages, a notable increase of 53% from last last year, when CSP adoption was at 4.73% for mobile pages.
 
-<figure markdown>
-<table>
+<figure>
+  <table>
     <thead>
       <tr>
         <th>Directive</th>
@@ -291,8 +291,8 @@ The CSP directives that indicate from which sources content can be included (the
 
 Overall, the length of the `Content-Security-Policy` response header is quite limited: the median length for the value of the header is 75 bytes. This is mainly due to the short single-purpose CSP policies that are frequently used. For instance, 24.64% of the policies defined on desktop pages only have the `upgrade-insecure-requests` directive. The most common header value, making up for 29.44% of all policies defined on desktop pages, is `block-all-mixed-content; frame-ancestors 'none'; upgrade-insecure-requests;`. This policy will prevent the page from being framed, tries to upgrade requests to the secure protocol, and blocks the content if that fails. On the other side of the spectrum, the longest CSP policy that we observed was 22,333 bytes long.
 
-<figure markdown>
-<table>
+<figure>
+  <table>
     <thead>
       <tr>
         <th>Origin</th>
@@ -367,8 +367,8 @@ Many JavaScript libraries and stylesheets are included from CDNs. As a result, i
 
 On 7.79% of the desktop pages, at least one element contained the integrity attribute; for mobile pages this is 7.24%. The attribute is mainly used on `<script>` elements: of all the elements with the integrity attribute, 72.77% is on script elements. When looking more closely at the pages that have at least one script protected with SRI, we find that the majority of scripts on these pages do not have the integrity attribute. For the majority of these pages, less than 1 out of 20 scripts were protected with SRI.
 
-<figure markdown>
-<table>
+<figure>
+  <table>
     <thead>
       <tr>
         <th>Host</th>
@@ -413,8 +413,8 @@ Looking at the most popular hosts from which SRI-protected scripts are included,
 
 Browsers provide a myriad of APIs and functionalities, some of which might be detrimental to the user experience or privacy. Through the `Feature-Policy` response header, websites can indicate which features they want to use, or perhaps more importantly, which they do not want to use. Furthermore, by defining the allow attribute on `<iframe>` elements, it's also possible to determine which features the embedded frames are allowed to use. For instance, via the autoplay directive, websites can indicate that they do not want videos in frames to automatically start playing when the page is loaded.
 
-<figure markdown>
-<table>
+<figure>
+  <table>
     <thead>
       <tr>
         <th>Directive</th>
@@ -490,8 +490,8 @@ The `Feature-Policy` response header has a fairly low adoption rate, at 0.60% of
 By including an untrusted third-party in an iframe, this third-party can try to launch a number of attacks on the including page. For instance, it could navigate the top page to a phishing page, launch pop-ups with fake anti-virus advertisements, etc. The sandbox attribute on iframes can be used to restrict the capabilities, and therefore also the opportunities for launching attacks, of the embedded web page. As embedding third-party content, such as advertisements or videos, is common practice on the web, it is not surprising that many of these are restricted via the sandbox attribute: 30.29% of the iframes on desktop pages have a sandbox attribute; on mobile pages this is 33.16%.
 
 
-<figure markdown>
-<table>
+<figure>
+  <table>
     <thead>
       <tr>
         <th>Directive</th>
@@ -552,7 +552,7 @@ By including an untrusted third-party in an iframe, this third-party can try to 
       </tr>
     </tbody>
   </table>
-<figcaption>{{ figure_link(caption="Prevalence of sandbox directives on frames.", sheets_gid="402256187", sql_file="iframe_sandbox_directives.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Prevalence of sandbox directives on frames.", sheets_gid="402256187", sql_file="iframe_sandbox_directives.sql") }}</figcaption>
 </figure>
 
 When the sandbox attribute of an iframe has an empty value, this results in the most restrictive policy: the embedded page can not execute any JavaScript code, no forms can be submitted, no popups can be created, ... This default policy can be relaxed in a fine-grained manner by means of different directives. The most commonly used directive, allow-scripts, which is present in 99.97% of all sandbox policies on desktop pages, allows the embedded page to execute JavaScript code. The other directive that is present on virtually all sandbox policies, allow-same-origin, allows the embedded page to retain its origin, and e.g. access cookies that were set on that origin.
@@ -579,8 +579,8 @@ Overall, we can see that the adoption of security headers has increased in the l
 
 ### Preventing XSS attacks through CSP
 
-<figure markdown>
-<table>
+<figure>
+  <table>
     <thead>
       <tr>
         <th>Keyword</th>
@@ -636,8 +636,8 @@ Most of the cross-origin policies aim to disable or mitigate the potentially nef
 
 The [Web Cryptography API](https://www.w3.org/TR/WebCryptoAPI/) offers great JavaScript functions for developers with which one can run cryptographic operations on the client-side with little effort - without using external libraries. This JavaScript API provides more than basic cryptographic operations like generating cryptographically strong random values, hashing, signature generation and verification, encryption and decryption. With the help of this API, we can also implement algorithms for authenticating users, signing documents, protecting the confidentiality and integrity of communications securely. Consequently, this API enables more secure and data protection-compliant use-cases in the area of end-to-end encryption. This is how the Web Cryptography API makes its contribution to end-to-end encryption.
 
-<figure markdown>
-<table>
+<figure>
+  <table>
     <thead>
       <tr>
         <th>Cryptography API</th>
@@ -677,15 +677,15 @@ The [Web Cryptography API](https://www.w3.org/TR/WebCryptoAPI/) offers great Jav
 </figure>
 
 Our results show that the function `Crypto.getRandomValues` which lets generate random-number (in cryptographic meaning) is the most widely used one (desktop: 70%, mobile: 68%). As Google Analytics uses this function, we believe it has an important effect on the value. In general, we see that mobile websites perform fewer cryptographic operations, although mobile browsers [fully support](https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API#Browser_compatibility) this API.
-Since we perform passive crawling, our results are in this section limited. We’re not able to identify cases where any interaction is required for functions to be executed.
+Since we perform passive crawling, our results are in this section limited. We're not able to identify cases where any interaction is required for functions to be executed.
 
 
 ### Utilizing bot protection services
 
 According to [Imperva](http://www.imperva.com/blog/bad-bot-report-2020-bad-bots-strike-back), a serious proportion (37%) of the total web traffic belongs to automated programs (so-called bots), and most of them are malicious (24%).  Bots can be used for phishing, collecting information, exploiting vulnerabilities, DDoS, and many other purposes. Using bots is a very interesting technique for attackers and increases especially the success rate of massive attacks. That's why it's important to take countermeasures to protect the web resources against malicious bots. The following figure shows the use of third-party protection services against malicious bots.
 
-<figure markdown>
-<table>
+<figure>
+  <table>
     <thead>
       <tr>
         <th>Service provider</th>
@@ -779,7 +779,7 @@ For nginx, one of the most widely used web servers, we see a very static and div
 
 ## Malpractices on the web
 
-Nowadays, the performance of the technologies used  plays a particularly relevant role. To this end, technologies are constantly being further developed, optimized, and new technologies launched. One of these new technologies is WebAssembly, which becomes a [W3C recommendation](https://www.w3.org/2019/12/pressrelease-wasm-rec.html.en) by the end of 2019. WebAssembly achieves the development of powerful web applications and has made it possible to run almost native high-performance computing in web browsers. No rose without a thorn; attackers have taken advantage of this technology, and this is how the new attack vector cryptojacking was found. Attackers used this technology to mine cryptocurrencies on the web browser by using the computer’s power of visitors (malicious cryptomining). This is a very attractive technique for attackers – inject a few lines of JavaScript code in the webpage and let all visitors mine for you. Since the technique cryptomining on the web rarely used also by website operators, we can’t generalize that all websites with cryptomining have been crypto hijacked. But in most cases, the website operators don’t offer an opt-in alternative for visitors, and the visitors remain still uninformed as to whether their resources are being while surfing on the website.
+Nowadays, the performance of the technologies used  plays a particularly relevant role. To this end, technologies are constantly being further developed, optimized, and new technologies launched. One of these new technologies is WebAssembly, which becomes a [W3C recommendation](https://www.w3.org/2019/12/pressrelease-wasm-rec.html.en) by the end of 2019. WebAssembly achieves the development of powerful web applications and has made it possible to run almost native high-performance computing in web browsers. No rose without a thorn; attackers have taken advantage of this technology, and this is how the new attack vector cryptojacking was found. Attackers used this technology to mine cryptocurrencies on the web browser by using the computer's power of visitors (malicious cryptomining). This is a very attractive technique for attackers – inject a few lines of JavaScript code in the webpage and let all visitors mine for you. Since the technique cryptomining on the web rarely used also by website operators, we can't generalize that all websites with cryptomining have been crypto hijacked. But in most cases, the website operators don't offer an opt-in alternative for visitors, and the visitors remain still uninformed as to whether their resources are being while surfing on the website.
 
 {# TODO cryptominer usage image #}
 
