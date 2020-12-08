@@ -273,31 +273,28 @@ Tabs are a common interface widget, but present a challenge for many developers 
 
 In this pattern, a parent container has a `role=”tablist”` with children elements that have a `role=”tab”`. These tabs are associated with elements that have a `role=”tabpanel”`, and contain the content for that tab. 
 
-{# TODO: ([Source](https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html)) #}
 {{ figure_markup(
   image="role-tab-list.png",
   alt="TODO",
-  caption="Tab list (`role=\"tablist\"`) contains all of the tabs.",
+  caption='Tab list (`role="tablist"`) contains all of the tabs. ([Source](https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html))',
   description="TODO",
   width=TODO,
   height=TODO
 ) }}
 
-{# TODO: ([Source](https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html)) #}
 {{ figure_markup(
   image="role-tab.png",
   alt="TODO",
-  caption="“Nils Frahm” tab (`role=\"tab\"`).",
+  caption='“Nils Frahm” tab (`role="tab"`). ([Source](https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html))',
   description="TODO",
   width=TODO,
   height=TODO
 ) }}
 
-{# TODO: ([Source](https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html)) #}
 {{ figure_markup(
   image="role-tab-panel.png",
   alt="TODO",
-  caption="Tab panel (`role=\"tabpanel\"`) with content associated with the “Nils Frahm” tab.",
+  caption='Tab panel (`role="tabpanel"`) with content associated with the “Nils Frahm” tab. ([Source](https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html))',
   description="TODO",
   width=TODO,
   height=TODO
