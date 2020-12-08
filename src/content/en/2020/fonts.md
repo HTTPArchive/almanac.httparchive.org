@@ -244,7 +244,7 @@ Uncompressed fonts, like OTF and TTF files, are 2-3x larger than compressed, but
 
 ## Popular fonts
 
-Icon fonts are fully half of the top 10 most popular web fonts, the rest being clean, robust sans-serif typeface designs (Roboto Slab is at #19 and Playfair Display at #28 in this ranking, for debuts of other styles, though serif designs are well represented in the tail of the distribution).
+Icon fonts are fully half of the top 10 most popular web fonts, the rest being clean, robust sans-serif typeface designs (Roboto Slab is at #19 and Playfair Display at #26 in this ranking, for debuts of other styles, though serif designs are well represented in the tail of the distribution).
 
 {{ figure_markup(
   image="fonts-popular-typefaces.png",
