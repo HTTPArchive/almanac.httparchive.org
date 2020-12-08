@@ -3,9 +3,9 @@
 SELECT
   client,
   STARTS_WITH(page, 'https') AS https,
-  count(0) AS pages,
-  sum(count(0)) OVER (PARTITION BY client) as total,
-  count(0) / sum(count(0)) OVER (PARTITION BY client) as pct
+  COUNT(0) AS pages,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM
   `httparchive.almanac.requests`
 WHERE
