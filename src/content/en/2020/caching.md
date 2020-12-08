@@ -152,7 +152,6 @@ The simple example below shows a request and response for a JavaScript file (som
 
 RFC 7234 says that if no caching headers are present in a response, then the browser is allowed to *heuristically* cache the response - it suggests a cache duration of 10% of the time since the `Last-Modified header` (if passed). In such cases, most browsers implement a variation of this suggestion, but some may cache the response indefinitely and some may not cache it at all. Because of this variation between browsers, it is important to explicitly set specific caching rules to ensure that you are in control of the cacheability of your content.
 
-### Statistics
 * 73.6% of responses are served with a `Cache-Control` header
 * 55.5% of responses are served with an `Expires` header
 * 54.8% of responses include both headers
@@ -250,7 +249,6 @@ Here is an example of a valid Cache-Control header with multiple directives:
 
 This indicates that the object can be cached for 86,400 seconds (1 day) and it can be stored by all caches between the server and the browser, as well as in the browser itself. Once it has reached its TTL and is marked as stale, it can remain in cache, but must be conditionally revalidated before reuse.
 
-### Statistics
 * 60.2% of responses include a `Cache-Control` header with the `max-age` directive.
 * 45.5% of responses include the `Cache-Control` header with the `max-age` directive and the `Expires` header, which means that 10% of responses are caching solely based on the older `Expires` header.
 
@@ -286,8 +284,6 @@ We can see a few common errors that are made when attempting to configure a resp
 * Setting `Cache-Control: max-age=0` sets the TTL to 0 seconds, but again, that is not the same as being `non-cacheable`. When `max-age=0` is specified, the resource is cached, but is marked as stale, resulting in the browser having to immediately revalidate its freshness.
 
 Functionally, `no-cache` and `max-age=0` are similar, since they both require revalidation of a cached resource. The no-cache directive can also be used alongside a `max-age` directive that is greater than 0 - this results in the object being cached for the specified TTL, but being revalidated prior to every use.
-
-### Statistics
 
 When looking at the above three discussed directives, 2.3% of responses include the combination of all three `no-store`, `no-cache` and `max-age=0`	directives, 6.6% of responses include both `no-store` and `no-cache`, and a negligible number of responses (< 1%) include `no-store` alone.
 
@@ -414,8 +410,6 @@ In the same way that the `Cache-Control` header has more power and flexibility t
 
 1. The server can define its own format for the `ETag` header. The example above shows a version string, but it could be a hash, or a random string. By allowing this, versions of an object are not explicitly linked to dates, and this allows a server to create a new version of a file and yet give it the same ETag as the prior version - perhaps if the file change is unimportant
 1. `ETags` can be defined as either ‘strong’ or ‘weak’, which allows browsers to validate them differently. A full understanding and discussion of this functionality is beyond the scope of this chapter, but can be found in [RFC 7232](https://tools.ietf.org/html/rfc7232).
-
-### Statistics
 
 * 73.5% of responses are served with a `Last-Modified` header. Its usage has marginally increased (by < 1%) in comparison to 2019.
 * 47.9% of responses are served with an `ETag` header. Out of these responses, 36% are ‘strong’, 98.2% are ‘weak’, and the remaining 1.8% are invalid. In contrast with `Last-Modified`, the usage of `ETag` headers has marginally decreased (by <1%) in comparison to 2019.
