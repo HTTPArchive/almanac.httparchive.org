@@ -13,15 +13,15 @@ alextait1_bio: Alex Tait is a developer, consultant and educator whose passion l
 discuss: 2044
 results: https://docs.google.com/spreadsheets/d/1UjEBhq0TfYxUpdpq5IuxjeHB4yqhJq4NOKEd6Dwwrdk/
 queries: 08_Accessibility
-#featured_quote: As an industry it’s time that we acknowledge the story told by the numbers in this chapter; we are failing disabled people.
-#featured_stat_1: 15357625
-#featured_stat_label_1: longest alt text length in characters found for desktop sites. That’s enough to fill 5 and a half "War and Peace" sized books (assuming "War and Peace" has an average word length of 4.7 characters)
-#featured_stat_2: 3200
-#featured_stat_label_2: websites with the attribute aria-labeledby, which is a misspelling of the aria-labelledby attribute
-#featured_stat_3: 18
-#featured_stat_label_3: average alt text length in characters. The average English word is 4.7 characters, so this is pretty terse!
+featured_quote: As an industry it's time that we acknowledge the story told by the numbers in this chapter; we are failing disabled people.
+featured_stat_1: 15,357,625
+featured_stat_label_1: Longest known alt text length—enough to fill five and a half "War and Peace"-sized books
+featured_stat_2: 3,200
+featured_stat_label_2: Websites with the attribute `aria-labeledby`, which is a misspelling of the `aria-labelledby` attribute
+featured_stat_3: 18
+featured_stat_label_3: Average alt text length. The average English word is 4.7 characters, so this is pretty terse!
+unedited: true
 ---
-
 
 ## Introduction
 
@@ -78,14 +78,51 @@ Screen reader users listen to the [“aural UI” as described by Steve Faulker]
 When describing an image it is imperative to consider what information the user needs, and omit additional information to reduce verbosity. For example, a red arrow icon button that has the action of moving to a new step in the interface could be described as “continue to step 3 of 5” rather than “red arrow png”. The first description tells the user what to expect if they activate the control, whereas the second just describes its appearance and has an unnecessary file extension, both of which are irrelevant to the meaning of the image. 
 Automated checks for the presence of alternative text do not assess the quality of this text. As described in the previous section, the meaning of an image needs to be considered when writing this text. One common unhelpful pattern is describing the image with the file extension name. For the previous “red arrow png” example, a screen reader user likely does not get helpful information from the image format. We found that 6.8% of desktop sites (with at least one instance of the alt attribute) had a file extension in it’s value. The top 5 file extensions explicitly included in the alt text value (for sites with images that have non-empty alt values) are jpg, png, ico, gif and jpeg. This likely comes from a CMS or another auto-generated alternative text mechanism. It is imperative that these alt attribute values be meaningful, regardless of how they are implemented.
 
-
-| File extension type | Desktop (sites with non-empty alt) | Mobile (sites with non-empty alt) |
-| ------------------- | ---------------------------------- | --------------------------------- |
-| jpg                 | 3.73%                              | 3.50%                             |
-| png                 | 2.98%                              | 2.81%                             |
-| ico                 | 1.34%                              | 1.6%                              |
-| gif                 | 0.034%                             | 0.030%                            |
-| jpeg                | 0.034%                             | 0.032%                            |
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>File extension type</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>jpg</td>
+        <td class="numeric">3.730%</td>
+        <td class="numeric">3.500%</td>
+      </tr>
+      <tr>
+        <td>png</td>
+        <td class="numeric">2.980%</td>
+        <td class="numeric">2.810%</td>
+      </tr>
+      <tr>
+        <td>ico</td>
+        <td class="numeric">1.340%</td>
+        <td class="numeric">1.600%</td>
+      </tr>
+      <tr>
+        <td>gif</td>
+        <td class="numeric">0.034%</td>
+        <td class="numeric">0.030%</td>
+      </tr>
+      <tr>
+        <td>jpeg</td>
+        <td class="numeric">0.034%</td>
+        <td class="numeric">0.032%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="Percent of pages with non-empty alt attributes.",
+      sheets_gid="TODO",
+      sql_file="TODO.sql"
+    ) }}
+  </figcaption>
+</figure>
 
 #### Images with title attributes
 
@@ -186,7 +223,7 @@ Most developers think of ARIA as attributes we can add to HTML to make it more u
 
 There are 5 rules of ARIA that we need to understand before  making use of this powerful toolset. This is not an official specification with required conformance, but a guide for understanding and implementing ARIA correctly. 
 
-#####The 5 Rules of ARIA (from [W3C’s Using Aria](https://www.w3.org/TR/using-aria/)):
+##### The 5 Rules of ARIA (from [W3C’s Using Aria](https://www.w3.org/TR/using-aria/)):
 
 1. If you can use a native HTML element [HTML 5.1] or attribute with the semantics and behavior you require already built in, instead of repurposing an element and adding an ARIA role, state or property to make it accessible, then do so.
 2. Do not change native semantics, unless you really have to.
@@ -210,11 +247,11 @@ It is fairly likely that a native `<button>` element would be a better choice, p
 
 We found that 15.50% of desktop pages and 14.62% of mobile pages contained at least one anchor element with `role=”button”`. If a role has been applied to an element that should have its implicit role respected, such as giving a `role=”button”` to a link (which has an implicit `role=”link”`), this would break the 2nd rule of ARIA and would violate [WCAG 2.1.1, Keyboard](https://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-keyboard-operable.html) if the correct keyboard behavior has not been implemented (links are not activated with the space key, where as buttons are). 
 
-In the vast majority of these cases, a better pattern than explicitly defining `role=”button”` on the element in question would be to leverage the native HTML <button> element.
+In the vast majority of these cases, a better pattern than explicitly defining `role=”button”` on the element in question would be to leverage the native HTML `<button>` element.
 
 ##### Navigation
 
-We found that 22.06% of desktop pages and 21.76% of mobile pages have at least one element with `role=”navigation”`, which is a landmark role. Per the 1st rule of ARIA, rather than adding this role to an element, developers should be leveraging the HTML 5 `<nav>` element which comes with the correct semantics implicitly. It is possible that this role has been added explicitly to the <nav> element, which would not be an accessibility issue, though it is redundant.  
+We found that 22.06% of desktop pages and 21.76% of mobile pages have at least one element with `role=”navigation”`, which is a landmark role. Per the 1st rule of ARIA, rather than adding this role to an element, developers should be leveraging the HTML 5 `<nav>` element which comes with the correct semantics implicitly. It is possible that this role has been added explicitly to the `<nav>` element, which would not be an accessibility issue, though it is redundant.  
 
 ##### Dialog Modals
 
@@ -228,17 +265,35 @@ Tabs are a common interface widget, but present a challenge for many developers 
 
 In this pattern, a parent container has a `role=”tablist”` with children elements that have a `role=”tab”`. These tabs are associated with elements that have a `role=”tabpanel”`, and contain the content for that tab. 
 
-![](/src/static/images/2020/accessibility/role-tab-list.png)
+{# TODO: ([Source](https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html)) #}
+{{ figure_markup(
+  image="role-tab-list.png",
+  alt="TODO",
+  caption="Tab list (`role=\"tablist\"`) contains all of the tabs.",
+  description="TODO",
+  width=TODO,
+  height=TODO
+) }}
 
-Figcaption: tab list (role=”tablist”) contains all of the tabs (source: https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html)
+{# TODO: ([Source](https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html)) #}
+{{ figure_markup(
+  image="role-tab.png",
+  alt="TODO",
+  caption="“Nils Frahm” tab (`role=\"tab\"`).",
+  description="TODO",
+  width=TODO,
+  height=TODO
+) }}
 
-![](../../../static/images/2020/accessibility/role-tab.png)
-
-Figcaption: “Nils Frahm” tab (role=”tab”) (source: https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html)
-
-![](../../../static/images/2020/accessibility/role-tab-panel.png)
-
-Figcaption: tab panel (role=”tabpanel”) with content associated with the “Nils Frahm” tab (source: https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html)
+{# TODO: ([Source](https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html)) #}
+{{ figure_markup(
+  image="role-tab-panel.png",
+  alt="TODO",
+  caption="Tab panel (`role=\"tabpanel\"`) with content associated with the “Nils Frahm” tab.",
+  description="TODO",
+  width=TODO,
+  height=TODO
+) }}
 
 For desktop pages, 7.00% have at least one element with a `role=”tablist”` whereas there only 5.79% of pages have elements with a `role=”tab”` and 5.46% of pages have elements with a `role=”tabpanel”`. This suggests that the pattern may only be partially implemented. Even if there is dynamic rendering at play for some of the tab/tabpanel elements, the currently visible or first tab/tabpanel would theoretically be in the DOM on page load.
 
@@ -248,9 +303,7 @@ When an element has been given a `role=”presentation”` its semantics are str
 
 A common usage of this attribute is for `<table>` elements that have been used for layout rather than  for tabular data. We do not recommend using tables in this way. For layout, we have powerful CSS tools today such as flexbox and CSS grid. In general there are very few use cases where `role=”presentation”` is particularly helpful for assistive technology users, use this role sparingly and thoughtfully.
 
-[caption] Top 5 ARIA roles on the Web
-
-
+<figure markdown>
 | Role         | Desktop | Mobile |
 | ------------ | ------- | ------ |
 | button       | 25.20%  | 24.51% |
@@ -259,6 +312,14 @@ A common usage of this attribute is for `<table>` elements that have been used f
 | search       | 17.94%  | 17.59% |
 | presentation | 17.83%  | 16.31% |
 
+  <figcaption>
+    {{ figure_link(
+      caption="Top 5 ARIA roles on the web.",
+      sheets_gid="TODO",
+      sql_file="TODO.sql"
+    ) }}
+  </figcaption>
+</figure>
  
 #### ARIA Attributes
 
@@ -297,7 +358,7 @@ Hiding and showing content is a prevalent pattern in modern interfaces, and it c
 
 We found that 20.98% of desktop pages and 21.00% of mobile pages had at least one element with the `aria-expanded` attribute and 17.38% of desktop pages and 16.94% of mobile pages had at least one element with the `aria-controls` attribute. This suggests that around 1/5th of websites might be implementing at least partially accessible disclosure widgets. Note that the `aria-controls` attribute is considered a best practice for the disclosure pattern because screen reader support is not ideal.
 
-#####Screen reader only text
+##### Screen reader only text
 
 A common technique that developers often employ to supply additional information for screen reader users is to use CSS to visually hide a passage of text such that it will be announced by a screen reader, but not visually present in the interface. Since display:none and visibility:hidden both prevent content from being present in the accessibility tree, there is a common “hack” involving a chunk of CSS code that will accomplish this. The most common CSS class names for this code snippet (both by convention and throughout libraries like bootstrap) are `‘sr-only’` and `‘visually-hidden’`. We found that 13.31% of desktop pages and 12.37% of mobile pages had one or both of these CSS class names.
 
