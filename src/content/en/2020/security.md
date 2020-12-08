@@ -102,7 +102,7 @@ Within TLS there are a number of cipher suites that can be used with varying lev
 
 All sites should be using forward secrecy ciphers and it is pleasing to see 98.14% of desktop sites and 98.03% of mobile sites using ciphers with forward secrecy. In the past, newer versions of TLS added support for newer ciphers but rarely removed older versions. This is one of the reasons TLSv1.3 is more secure as it does a large clear down of older ciphers currently supporting only five secure ciphers all of which support forward secrecy. This prevents downgrade attacks where a less secure cipher is forced to be used.
 
-After this the main choice is between the level of encryption - higher key sizes will take longer to break, but at the cost of more compute intensive to encrypt and decrypt the connection–particularly for initial connection. For the [block cipher mode](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation) GMC should be used and [CBC is considered weak due to padding attacks](https://blog.qualys.com/product-tech/2019/04/22/zombie-poodle-and-goldendoodle-vulnerabilities).
+After this the main choice is between the level of encryption - higher key sizes will take longer to break, but at the cost of more compute intensive to encrypt and decrypt the connection–particularly for initial connection. For the [block cipher mode](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation) GCM should be used and [CBC is considered weak due to padding attacks](https://blog.qualys.com/product-tech/2019/04/22/zombie-poodle-and-goldendoodle-vulnerabilities).
 
 For key size 128-bit and 256-bit encryption are common for the widely supported Advanced Encryption Standard (AES), and while 256-bit is more secure, 128-bit is still sufficient for most sites, though 256-bit would be preferred.
 
@@ -199,6 +199,14 @@ To overcome these issues, browsers have provided web developers with a set of fe
 
 
 {# TODO add HSTS max-age image #}
+{{ figure_markup(
+  image="TODO",
+  caption="Percentiles of values in the max-age attribute, converted to days.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="236117763",
+  sql_file="hsts_max_age_percentiles.sql"
+) }}
 
 Looking at the different values for this attribute, we can clearly see that the majority of websites is confident that they will be running over HTTPS in the considerable future: more than half request the browser to use HTTPS for at least 1 year. One website might have been a bit too enthusiastic about how long their site will be available over HTTPS, and set a `max-age` attribute value that translates to 1,000,000,000,000,000 years. Ironically, browsers do not handle such a large value well, and actually disabled HSTS for that site.
 
@@ -245,14 +253,29 @@ We explore the different mechanisms to protect cookies from network attackers in
 
 From a security point of view, the (automatic) inclusion of cookies in cross-site requests can be seen as the main culprit of several classes of vulnerabilities. If a website does not have the adequate protections is place (e.g. requiring a unique token on state-changing requests), they may be susceptible to [Cross-Site Request Forgery](https://owasp.org/www-community/attacks/csrf) (CSRF) attacks, where an attacker issues a POST request to for instance change the password of an unwitting visitor. Several other types of attacks rely on the inclusion of cookies in third-party, such as [Cross-Site Script Inclusion](https://www.usenix.org/system/files/conference/usenixsecurity15/sec15-paper-lekies.pdf) (XSSI) and various techniques in the [XS-Leaks](https://xsleaks.dev/) vulnerability class. Furthermore, because the authentication of users is often only done through cookies, an attacker could impersonate a user by obtaining their cookies. This could be done in a man-in-the-middle (MitM) attack, tricking the user to make an authenticated over an insecure channel. Alternatively, by exploiting a cross-site scripting (XSS) vulnerability, the attacker could leak the cookies by accessing `document.cookie` through the DOM.
 
-To defend against the threats posed by cookies, website developers can make use of three attributes that can be set on cookies: `HttpOnly`, `Secure` and `SameSite`. The former prevents the cookie from being accessed from JavaScript, preventing an adversary from stealing them in an XSS attack. Cookies that have the `Secure` attribute set will only be sent over a secure channel, preventing them to be stolen in a MitM attack. Finally, the attribute that was introduced most recently, `SameSite`, can be used to restrict how cookies are sent in a cross-site context. The attribute has three possible values: `None`, `Lax`, and `Strict`. Cookies with `SameSite=None` will be sent in all cross-site requests, whereas cookies with the attribute set to `Lax` will only be sent in navigational requests, e.g. when the user clicks a link and navigates to a new page. Finally, cookies with the `SameSite=Strict` attribute will only be sent in a first-party context.
+To defend against the threats posed by cookies, website developers can make use of three attributes that can be set on [cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies): `HttpOnly`, `Secure` and [`SameSite`](https://web.dev/samesite-cookies-explained/). The former prevents the cookie from being accessed from JavaScript, preventing an adversary from stealing them in an XSS attack. Cookies that have the `Secure` attribute set will only be sent over a secure channel, preventing them to be stolen in a MitM attack. Finally, the attribute that was introduced most recently, `SameSite`, can be used to restrict how cookies are sent in a cross-site context. The attribute has three possible values: `None`, `Lax`, and `Strict`. Cookies with `SameSite=None` will be sent in all cross-site requests, whereas cookies with the attribute set to `Lax` will only be sent in navigational requests, e.g. when the user clicks a link and navigates to a new page. Finally, cookies with the `SameSite=Strict` attribute will only be sent in a first-party context.
 
 {# TODO Cookie attributes image #}
+{{ figure_markup(
+  image="TODO",
+  caption="Usage of the HttpOnly, Secure and SameSite attribute on cookies.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="253049761",
+  sql_file="cookie_attributes.sql"
+) }}
 
 Our results, which are based on 25M first-site cookies and 115M third-party cookies, shows that the usage of the cookie attributes strongly depends on the context in which they are set. We can observe a similar usage of the HttpOnly attribute on cookies for both first-party (30.5%) and third-party (26.3%) cookies. However, for the `Secure` and `SameSite` attributes we see a significant difference: this attribute is present on 22.2% of all cookies set in a first-party context, whereas 68.0% of all cookies set by third-party requests on mobile homepages have this cookie attribute. Interestingly, for desktop pages, only 35.2% of the third-party cookies had the attribute. For the SameSite attribute, we can see a significant increase in their usage, compared to [last year](https://almanac.httparchive.org/en/2019/security#samesite), when only 0.1% of the cookies had this attribute. As of August 2020, we observed that 13.7% of the first-party cookies and 53.2% of third-party cookies have the SameSite attribute set. Presumably, this significant change in adoption is related to the decision of Chrome to make SameSite=Lax the default option. This is confirmed by looking more closely at the values set in the SameSite attribute: the majority of third-party cookies (76.5%) have the attribute value set to `None`. For first-party cookies, the share is lower, at 48.0%, but still significant. It's important to note that because the crawler does not log in to websites, the cookies used to authenticate users may be different.
 
 
-{# TODO SameSite cookie attributes image #}
+{{ figure_markup(
+  image="TODO",
+  caption="Usage of the different values for the SameSite attribute on cookies.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="253049761",
+  sql_file="cookie_attributes.sql"
+) }}
 
 One additional mechanism that can be used to protect cookies is to prefix the name of the cookie with `__Secure-` or `__Host-`. Cookies with any of these two prefixes will only be stored in the browser if they have the `Secure` attribute set. The latter imposes an additional restriction, requiring the `Path` attribute to be set to `/` and preventing the use of the `Domain` attribute. This prevents attackers from overriding the cookie with other values, in an attempt to perform a session fixation attack. The usage of these prefixes is relatively small: in total we found 4,433 (0.02%) first-party cookies that were set with the `__Secure-` prefix and 1,502 (0.01%) with the `__Host-` prefix. For cookies set in a third-party context, the relative number of prefixed cookies is similar.
 
@@ -325,6 +348,14 @@ Interestingly, when we look at the most commonly used directives in CSP policies
 The CSP directives that indicate from which sources content can be included (the original CSP level 1 specification only included these directives), have a much lower adoption: only 18.51% of the CSP policies served on desktop pages (16.12% on mobile pages). The other `*-src` directives have an even lower adoption. One of the reasons for this, is that web developers are facing [many challenges in the adoption of CSP](https://wkr.io/publication/raid-2014-content_security_policy.pdf). Although a strict CSP policy can provide significant security benefits well beyond thwarting XSS attacks, an ill-defined one may prevent certain content from loading. To allow web developers to evaluate the correctness of their CSP policy, there also exists a non-enforcing alternative, which can be enabled by defining the policy in the `Content-Security-Policy-Report-Only` response header. The prevalence of this header is fairly small: 0.85% of desktop and mobile pages. It should be noted though that this percentage likely indicates the sites that intend to transition to using CSP, and only use the Report-Only header for a limited amount of time.
 
 {# TODO CSP header length image #}
+{{ figure_markup(
+  image="TODO",
+  caption="Percentiles of the length of the CSP header (in bytes).",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="150007358",
+  sql_file="csp_number_of_allowed_hosts.sql"
+) }}
 
 Overall, the length of the `Content-Security-Policy` response header is quite limited: the median length for the value of the header is 75 bytes. This is mainly due to the short single-purpose CSP policies that are frequently used. For instance, 24.64% of the policies defined on desktop pages only have the `upgrade-insecure-requests` directive. The most common header value, making up for 29.44% of all policies defined on desktop pages, is `block-all-mixed-content; frame-ancestors 'none'; upgrade-insecure-requests;`. This policy will prevent the page from being framed, tries to upgrade requests to the secure protocol, and blocks the content if that fails. On the other side of the spectrum, the longest CSP policy that we observed was 22,333 bytes long.
 
@@ -401,6 +432,14 @@ One site went above and beyond to ensure that all of their included content woul
 Many JavaScript libraries and stylesheets are included from CDNs. As a result, if the CDN would be compromised, or attackers would find another way to replace the often-included libraries, this could have disastrous consequences. To limit the consequences of a compromised CDN, web developers can use the subresource integrity (SRI) mechanism. On `<script>` and `<link>` elements, an `integrity` attribute is defined, which consists of the hash of the expected contents. The browser will compare the hash of the fetched script or stylesheet with the hash defined in the attribute, and only load its contents if there is a match. The hash can be computed with three different algorithms: SHA256, SHA384, and SHA512. The first two are most frequently used: 50.62% and 45.78% respectively for desktop pages (usage is similar on mobile pages). Note that currently, all three hashing algorithms are safe to use.
 
 {# TODO SRI coverage per page image #}
+{{ figure_markup(
+  image="TODO",
+  caption="Percentiles of how many percent of scripts on a page are protected with SRI.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="599225326",
+  sql_file="sri_coverage_per_page.sql"
+) }}
 
 On 7.79% of the desktop pages, at least one element contained the integrity attribute; for mobile pages this is 7.24%. The attribute is mainly used on `<script>` elements: of all the elements with the integrity attribute, 72.77% is on script elements. When looking more closely at the pages that have at least one script protected with SRI, we find that the majority of scripts on these pages do not have the integrity attribute. For the majority of these pages, less than 1 out of 20 scripts were protected with SRI.
 
@@ -603,6 +642,14 @@ Modern web applications are faced with a large variety of security threats. For 
 Fortunately, web browsers also provide a large set of security mechanisms that are highly effective against limiting the consequences of a potential attack, e.g. via the script-src directive of CSP an XSS vulnerability may become very difficult or impossible to exploit. Some other security mechanisms are even required to prevent certain types of attacks: to prevent clickjacking attacks, either the X-Frame-Options header should be present, or alternatively the frame-ancestors directive of CSP can be used to indicate trusted parties that can embed the current document.
 
 {# TODO Adoption of security headers image #}
+{{ figure_markup(
+  image="TODO",
+  caption="Prevalence of different security headers, for mobile pages in 2019 and 2020",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="1613840789",
+  sql_file="security_headers_prevalence.sql"
+) }}
 
 ### Security mechanism adoption
 
@@ -767,10 +814,27 @@ In the previous sections we explored the adoption rate of various browser securi
 There can be many different factors that affect security at the level of a country: government-motivated programs of cybersecurity may increase awareness of good security practices, a focus on security in higher education could lead to more well-informed developers, or even certain regulations might require companies and organizations to adhere to best security practices. To evaluate the differences per country, we analyze the different countries for which at least 100,000 homepages were available in our dataset, which is based on the Chrome User Experience Report (CrUX). These pages consist of those that were visited most frequently by the users in that country; as such, these also contain widely popular international websites.
 
 {# TODO adoption of HTTPS per country #}
+{{ figure_markup(
+  image="TODO",
+  caption="Percentage of sites with HTTPS enabled, for sites related to different countries.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="446153579",
+  sql_file="feature_adoption_by_country.sql"
+) }}
 
 Looking at the percentage of homepages that were visited over HTTPS, we can already see a significant difference between the top 5 best-performing countries, where 93-95% of the homepages were served over HTTPS. For the bottom 5, we see a much smaller adoption in HTTPS, ranging from 71% to 76%. When we look at other security mechanisms, we can see even more apparent differences between top-performing countries and countries with a low adoption rate. The top-5 countries according to the adoption rate for CSP score between 14% and 16%, whereas the bottom-5 score between 2.5% and 5%. Interestingly, the countries that perform well/poorly for one security mechanism, also do so for other mechanisms. For instance, New Zealand, Ireland and Australia consistently rank among the top-5, whereas Japan scores worse for almost every security mechanism.
 
 {# TODO adoption of CSP & XFO per country #}
+{{ figure_markup(
+  image="TODO",
+  caption="Adoption of CSP and XFO, for sites related to different countries.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="446153579",
+  sql_file="feature_adoption_by_country.sql"
+) }}
+
 
 ### Technology stack
 
@@ -783,6 +847,14 @@ With regard to security headers that secure content inclusion or that aim to thw
 ### Co-occurrence of other security headers
 
 {# TODO security header as driver of adoption of other headers image #}
+{{ figure_markup(
+  image="TODO",
+  caption="Relative adoption rate of security mechanism based on the presence of different security headers.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="1707889711",
+  sql_file="feature_adoption_by_other_features.sql"
+) }}
 
 The security "game" is highly unbalanced, and much more in the favor of attackers: an adversary only needs to find a single flaw to exploit, whereas the defender needs to prevent all possible vulnerabilities. As such, whereas adopting a single security mechanism can be very useful in defending against a particular attack, websites may need multiple security features in order to defend against all possible attacks. To determine whether security headers are adopted in a one-off manner, or rather in a rigorous way to provide in-depth defenses against as many attacks as possible, we look at the co-occurrence of security headers. More precisely, we look at how the adoption of one security header affects the adoption of other headers. Interestingly, this shows that websites that adopt a single security header, are much more likely to adopt other security headers as well. For instance, for mobile homepages that contain a CSP header, the adoption of the other headers (`Expect-CT`, `Referrer-Policy`, `Strict-Transport-Security`, `X-Content-Type-Options` and `X-Frame-Options`) is on average 368% higher compared to the overall adoption of these headers.
 
@@ -795,22 +867,54 @@ A very large part of the Web is built with third-party components, at different 
 ### WordPress
 
 {# TODO WordPress version evolution image #}
+{{ figure_markup(
+  image="TODO",
+  caption="Evolution of the versions of WordPress installations from 2019 until 2020.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="640505800",
+  sql_file="feature_adoption_by_technology.sql"
+) }}
 
 As one of the most popular content management systems, WordPress is an attractive target for attackers. As such, it is important for website administrators to keep their installation up-to-date. By default, updates are performed [automatically](https://wordpress.org/support/article/configuring-automatic-background-updates/), although it is possible to disable this feature. The evolution of the deployed WordPress versions are displayed in the above figure, showing the latest major versions that are still [actively maintained](https://wordpress.org/download/releases/) (5.5: purple, 5.4: blue, 5.3: red, 5.2: green, 4.9: orange). Versions that have a prevalence of less than 4% are grouped together under "Other". A first interesting observation that can be made is that as of October 2020, 77.19% of the WordPress installations on mobile homepages are running the latest version within their branch. It can also be seen that website owners are gradually upgrading to the new major versions. For instance, WordPress version 5.5, which was released on August 11th 2020, already comprised 10.22% of the WordPress installations that were observed in the crawl for August. In the following months, adoption of the latest version within the 5.5 branch grew to 29.70% in September and 39.11% in October.
 
 {# TODO WordPress 5.3 and 5.4 evolution image #}
+{{ figure_markup(
+  image="TODO",
+  caption="Evolution of WordPress versions 5.3.x and 5.4.x.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="155582197",
+  sql_file="feature_adoption_by_technology.sql"
+) }}
 
 Another interesting aspect that can be inferred from the graph is that within a month, the majority of WordPress sites that were previously up-to-date, will have updated to the new version. This appears especially true for WordPress installations on the latest branch. On April 29, 2020, 2 days before the start of the crawl, WordPress released updates for all their branches: 5.4 → 5.4.1, 5.3.2 → 5.3.3, etc. Based on the data, we can see that the share of WordPress installations that were running version 5.4, reduced from 23.08% in the April 2020 crawl, to 2.66% in May 2020, further down to 1.12% in June 2020, and dropping below 1% after that. The new 5.4.1 version was running on 35.70% of the WordPress installations as of May 2020, the result of many website operators (automatically) updating their WordPress install (from 5.4 and other branches). Although the majority of website operators update their WordPress either automatically, or very quickly after a new version is released, there still is a small fraction of sites that keep stuck with an older version: as of September 2020, still 2.93% of all WordPress installations run an outdated 5.3 or 5.4 version.
 
 ### jQuery
 
 {# TODO jQuery version evolution image #}
+{{ figure_markup(
+  image="TODO",
+  caption="Evolution of included jQuery versions from 2019 until 2020.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="1175693258",
+  sql_file="feature_adoption_by_technology.sql"
+) }}
 
 One of the most widely used JavaScript libraries is jQuery, which has three major versions: 1.x, 2.x and 3.x. As is clear from the evolution of jQuery versions that are used on mobile homepages, the overall distribution is very static over time. Surprisingly, a significant fraction of websites (27.71% as of October 2020) is still running an old 1.x version of jQuery. Fortunately, this fraction is consistently decreasing (from 33.39% in November 2019), in favor of version 1.12.4, which was [released](https://blog.jquery.com/2016/05/20/jquery-1-12-4-and-2-2-4-released/) in May 2016.
 
 ### nginx
 
 {# TODO nginx version evolution image #}
+{{ figure_markup(
+  image="TODO",
+  caption="Evolution of the versions of nginx servers from 2019 until 2020.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="1494766656",
+  sql_file="feature_adoption_by_technology.sql"
+) }}
 
 For nginx, one of the most widely used web servers, we see a very static and diverse landscape in terms of the adoption of different versions over time. The largest share that any nginx (minor) version had among all nginx servers over time was approximately 20%. Furthermore, we can see that the distribution of versions remains fairly static over time: it is relatively unlikely that web servers are updated. Presumably, this is related to the fact that [no "major" security vulnerability](http://nginx.org/en/security_advisories.html) has been found in nginx since 2014 (affecting versions up to 1.5.11). The last 3 vulnerabilities with a medium-ranked impact ([CVE-2019-9511](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9511), [CVE-2019-9513](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9513), [CVE-2019-9516](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9516)) date from March 2019 and can cause excessively high CPU usage in HTTP/2-enabled nginx servers up to version 1.17.2. According to the reported version numbers, more than half of the servers could be susceptible to this vulnerability (if they have HTTP/2 enabled). As the web server software is not frequently updated, this number is likely to stay fairly in the coming months.
 
@@ -819,6 +923,14 @@ For nginx, one of the most widely used web servers, we see a very static and div
 Nowadays, the performance of the technologies used  plays a particularly relevant role. To this end, technologies are constantly being further developed, optimized, and new technologies launched. One of these new technologies is WebAssembly, which becomes a [W3C recommendation](https://www.w3.org/2019/12/pressrelease-wasm-rec.html.en) by the end of 2019. WebAssembly achieves the development of powerful web applications and has made it possible to run almost native high-performance computing in web browsers. No rose without a thorn; attackers have taken advantage of this technology, and this is how the new attack vector cryptojacking was found. Attackers used this technology to mine cryptocurrencies on the web browser by using the computer's power of visitors (malicious cryptomining). This is a very attractive technique for attackers – inject a few lines of JavaScript code in the webpage and let all visitors mine for you. Since the technique cryptomining on the web rarely used also by website operators, we can't generalize that all websites with cryptomining have been crypto hijacked. But in most cases, the website operators don't offer an opt-in alternative for visitors, and the visitors remain still uninformed as to whether their resources are being while surfing on the website.
 
 {# TODO cryptominer usage image #}
+{{ figure_markup(
+  image="TODO",
+  caption="Evolution of the number of sites with cryptojacking scripts.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="340445160",
+  sql_file="cryptominer_usage.sql"
+) }}
 
 The figure above shows the number of websites utilizing cryptomining in the last two years. We see that from the beginning of 2019, interest in cryptomining is getting lower. In our last measurement, we had a total of 475 websites utilizing cryptominer.
 
@@ -826,7 +938,7 @@ The figure above shows the number of websites utilizing cryptomining in the last
 
 In the next figure, we show the market share of cryptominer on the web based on October's dataset. Coinimp is the most popular provider with a 45.2% market share. We found that all the most popular cryptominers are based on WebAssembly. Note that there are also JavaScript libraries to mine on the web, but they are not powerful like solutions based on WebAssembly. Our other result shows that half of the websites with cryptominer utilize a cryptomining component of discontinued service providers (such as [CoinHive](https://blog.avast.com/coinhive-shuts-down) and [JSEcoin](https://twitter.com/jsecoin/status/1247436272869814272)), which means that mining will be not happening in practice.
 
-{# TODO Cryptomining market share image #}
+{# TODO Cryptomining market share image - leave it out? one of the main operators has been shut down for a long time #}
 
 {# TODO Evolution section #}
 
