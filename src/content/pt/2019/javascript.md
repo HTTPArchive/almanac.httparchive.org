@@ -4,7 +4,7 @@ chapter_number: 1
 title: JavaScript
 description: Capítulo de JavaScript de 2019 Web Almanac que cobre quanto JavaScript usamos na web, compressão, bibliotecas e estruturas, carregamento e mapas de origem.
 authors: [housseindjirdeh]
-reviewers: [obto, paulcalvano, mathiasbynens]
+reviewers: [obto, paulcalvano, mathiasbynens, rviscomi]
 analysts: [rviscomi]
 translators: [HakaCode]
 discuss: 1756
@@ -313,12 +313,12 @@ Nos últimos anos, o ecossistema JavaScript tem visto um aumento em bibliotecas 
   )
 }}
 
-Apenas um subconjunto de estruturas populares é discutido aqui, mas é importante observar que todos eles seguem uma das duas abordagens:   
+Apenas um subconjunto de estruturas populares é discutido aqui, mas é importante observar que todos eles seguem uma das duas abordagens:
 
-- Arquitetura [modelo-visualização-controlador](https://developer.chrome.com/apps/app_frameworks) (ou model-view-viewmodel)   
-- Arquitetura baseada em componentes   
+- Arquitetura [modelo-visualização-controlador](https://developer.chrome.com/apps/app_frameworks) (ou model-view-viewmodel)
+- Arquitetura baseada em componentes
 
-Embora tenha havido uma mudança em direção a um modelo baseado em componentes, muitos frameworks mais antigos que seguem o paradigma MVC ([AngularJS](https://angularjs.org/), [Backbone.js](https://backbonejs.org/), [Ember](https://emberjs.com/)) ainda estão sendo usados em milhares de páginas. Contudo, [React](https://reactjs.org/), [Vue](https://vuejs.org/) e [Angular](https://angular.io/) são frameworks baseadas em componentes mais populares ([Zone.js](https://github.com/angular/zone.js) é um pacote que agora faz parte do núcleo Angular).   
+Embora tenha havido uma mudança em direção a um modelo baseado em componentes, muitos frameworks mais antigos que seguem o paradigma MVC ([AngularJS](https://angularjs.org/), [Backbone.js](https://backbonejs.org/), [Ember](https://emberjs.com/)) ainda estão sendo usados em milhares de páginas. Contudo, [React](https://reactjs.org/), [Vue](https://vuejs.org/) e [Angular](https://angular.io/) são frameworks baseadas em componentes mais populares ([Zone.js](https://github.com/angular/zone.js) é um pacote que agora faz parte do núcleo Angular).
 
 ## Carregamento diferencial
 
@@ -365,7 +365,7 @@ Da mesma forma, poucos sites (0,50% - 0,80%) usam o atributo `nomodule` para qua
 [Preload](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Preloading_content) e [prefetch](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ) são [dicas de recursos](./resource-hints) que permitem que você ajude o navegador a determinar quais recursos precisam ser baixados.
 
 - Pré-carregar um recurso com `<link rel="preload">` diz ao navegador para baixar este recurso o mais rápido possível. Isso é especialmente útil para recursos críticos que são descobertos no final do processo de carregamento da página (por exemplo, JavaScript localizado na parte inferior de seu HTML) e, caso contrário, são baixados por último.
-- Usar `<link rel="prefetch">` diz ao navegador para tirar vantagem de qualquer tempo ocioso que ele tenha para buscar esses recursos necessários para navegações futuras. 
+- Usar `<link rel="prefetch">` diz ao navegador para tirar vantagem de qualquer tempo ocioso que ele tenha para buscar esses recursos necessários para navegações futuras.
 
 Então, quantos sites usam diretivas de preload e prefetch?
 
