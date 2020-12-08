@@ -93,6 +93,14 @@ Another metric of size is the number of rules. The median page carries a total o
 
 ## Selectors and the cascade
 
+### Class names
+
+What do developers use class names for these days? To answer this question, we looked at the most popular class names. The list was dominated by FontAwesome classes, with 192 out of 198 being `fa` or `fa-*`! The only thing that initial exploration could tell us was that FontAwesome is exceedingly popular and is used by almost one third of websites!
+
+However, once we collapsed `fa-*` and then `wp-*` classes (which come from WordPress, another exceedingly popular piece of software), we got more meaningful results. Omitting these, state-related classes seem to be most popular, with `.active` occurring in nearly half of websites, and `.selected` and `.disabled` following soon after.
+
+Only a few of the top classes were presentational, with most of those being either alignment related (`pull-right` and `pull-left` from older Bootstrap, `alignright`, `alignleft` etc) or `clearfix`, which still occurs in 22% of websites, despite floats being superseded as a layout method by the more modern Grid and Flexbox modules.
+
 {{ figure_markup(
   image="popular-class-names.png",
   caption="The most popular class names by the percent of pages.",
@@ -101,6 +109,12 @@ Another metric of size is the number of rules. The median page carries a total o
   sheets_gid="863628849",
   sql_file="top_selector_classes_wp_fa_prefixes.sql"
 ) }}
+
+### IDs
+
+Despite IDs being discouraged these days in some circles due to their much higher specificity, most websites still use them, albeit sparingly. Fewer than half of pages used more than one ID in any of their selectors (had a max specificity of (1,x,y) or less) and nearly all had a median specificity that did not include IDs (0,x,y).
+
+But what are these IDs used for? It turns out that the most popular IDs are structural: `#content`, `#footer`, `#header`, `#main`, despite [corresponding HTML elements](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure#HTML_layout_elements_in_more_detail).
 
 {{ figure_markup(
   image="popular-ids.png",
@@ -111,6 +125,12 @@ Another metric of size is the number of rules. The median page carries a total o
   sql_file="top_selector_ids.sql"
 ) }}
 
+IDs can also be used to intentionally reduce or increase specificity. The specificity hack of writing an ID selector as an attribute selector (`[id="foo"]` instead of `#foo`) was surprisingly rare, with only 0.3% of pages using it at least once. Another ID-related specificity hack, using a negation + descendant selector like `:not(#nonexistent) .foo` instead of `.foo` to increase specificity, was also very rare, appearing in only 0.1% of pages.
+
+### !important
+
+Instead, the old, crude `!important` is still used a fair bit despite its [well-known drawbacks](https://www.impressivewebs.com/everything-you-need-to-know-about-the-important-css-declaration/#post-475:~:text=Drawbacks,-to). The median page uses `!important` in nearly 2% of its declarations, or 1 in 50. Some developers literally cannot get enough of it: we found 2304 desktop pages and 2138 mobile ones that use `!important` in **every single declaration!**.
+
 {{ figure_markup(
   image="important-properties.png",
   caption="Distribution of the percent of `!important` properties per page.",
@@ -120,6 +140,8 @@ Another metric of size is the number of rules. The median page carries a total o
   sql_file="meta_important_adoption.sql"
 ) }}
 
+What is it that developers are so keen to override? We looked at breakdown by property, and found that nearly 80% of pages use `!important` with the `display` property. It is a common strategy to apply `display: none !important` to hide content in helper classes to override existing CSS that uses `display` to define a layout mode. This is a side effect of what, in hindsight, was a flaw in CSS. It combined three orthogonal characteristics into one: internal layout mode, flow behavior, and visibility status are all controlled by the `display` property. There are efforts to separate out these values into separate `display` keywords so that they can be tweaked independently via custom properties, but [browser support is virtually nonexistent](https://caniuse.com/mdn-css_properties_display_multi-keyword_values) for the time being.
+
 {{ figure_markup(
   image="important-top-properties.png",
   caption="The top `!important` properties by the percent of pages.",
@@ -128,6 +150,11 @@ Another metric of size is the number of rules. The median page carries a total o
   sheets_gid="1222608982",
   sql_file="meta_important_properties.sql"
 ) }}
+
+### Specificity and classes
+
+Besides keeping ids and `!important`s few and far between, there is a trend to circumvent specificity altogether by cramming all the selection criteria of a selector in a single class name, thus forcing all rules to have the same specificity and turning the cascade into a simpler last-one-wins system. BEM is a popular methodology of that type, albeit not the only one. While it is difficult to assess how many websites use BEM-style methodologies exclusively, since following it in every rule is rare (even the [BEM website](http://getbem.com/) uses multiple classes in many selectors), about 10% of pages had a median specificity of (0,1,0), which may indicate mostly following a BEM-style methodology. On the opposite end of BEM, often developers use [duplicated classes](https://csswizardry.com/2014/07/hacks-for-dealing-with-specificity/#safely-increasing-specificity) to *increase* specificity and nudge a selector ahead of another one (e.g. `.foo.foo` instead of `.foo`). This kind of specificity hack is actually more popular than BEM, being present in 14% of mobile websites (9% of desktop)! This may indicate that most developers do not actually want to get rid of the cascade altogether, they just need more control over it.
+
 
 <figure markdown>
 Percentile | Desktop | Mobile
@@ -147,6 +174,10 @@ Percentile | Desktop | Mobile
   </figcaption>
 </figure>
 
+### Attribute selectors
+
+The most popular attribute selector, by far, is on the `type` attribute, used in 45% of pages, likely to style inputs of different types, e.g. to style textual inputs differently from radios, checkboxes, sliders, file upload controls etc.
+
 {{ figure_markup(
   image="attribute-selectors.png",
   caption="The most popular attribute selectors by the percent of pages.",
@@ -155,6 +186,10 @@ Percentile | Desktop | Mobile
   sheets_gid="1926527049",
   sql_file="top_selector_attributes.sql"
 ) }}
+
+### Pseudo-classes and pseudo-elements
+
+There is always a lot of inertia when we change something in the Web platform after it's long established. As an example, the Web has still largely not caught up with pseudo-elements having separate syntax compared to pseudo-classes, even though this was a change that happened over a decade ago. All pseudo-elements that are also available with a pseudo-class syntax for legacy reasons are **vastly** more widespread (2.5x to 5x!) with the pseudo-class syntax.
 
 {{ figure_markup(
   image="selector-pseudo-classes.png",
@@ -165,6 +200,10 @@ Percentile | Desktop | Mobile
   sql_file="top_selector_pseudo_classes.sql"
 ) }}
 
+By far the most popular pseudo-classes are user action ones, with `:hover`, `:focus`, and `:active` at the top of the list, all used in over two thirds of pages, indicating that developers like the convenience of specifying declarative UI interactions.
+
+`:root` seems far more popular than is justified by its function, used in one third of pages. In HTML content, it just selects the `<html>` element, so why didn't developers just use `html`? A possible answer may lie in a common practice related to defining custom properties, [which are also highly used](#custom properties), on the `:root` pseudo-class. Another answer may lie in specificity: `:root`, being a pseudo-class, has a higher specificity than `html`: (0, 1, 0) vs (0, 0, 1). It is a common hack to increase specificity of a selector by prepending it with `:root`, e.g. `:root .foo` has a specificity of (0, 2, 0) compared to just (0, 1, 0) for `.foo`. This is often all that is needed to nudge a selector slightly over another one in the cascade race and avoid the sledgehammer that is `!important`. To test this hypothesis, we also measured exactly that: how many pages use `:root` at the start of a descendant selector? The results verified our hypothesis: a remarkable 29% of pages use `:root` that way! Furthermore, 14% of desktop pages and 19% of mobile pages use `html` at the start of a descendant selector, possibly to give the selector an even smaller specificity boost. The popularity of these specificity hacks strongly indicates that developers need more fine grained control to tweak specificity than what is afforded to them via `!important`. Thankfully, this is coming soon with [`:where()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:where), which is already [implemented across the board](https://caniuse.com/mdn-css_selectors_where) (albeit behind a flag in Chrome for now).
+
 {{ figure_markup(
   image="popular-selector-pseudo-classes.png",
   caption="The most popular pseudo-classes as a percent of pages.",
@@ -173,6 +212,8 @@ Percentile | Desktop | Mobile
   sheets_gid="2029589646",
   sql_file="top_selector_pseudo_classes.sql"
 ) }}
+
+When it comes to pseudo-elements, after the usual suspects `::before` and `::after`, nearly all popular pseudo-elements were browser extensions for styling form controls and other built-in UI, strongly echoing the developer need for more fine-grained control over styling of built in UI. Styling of focus rings, placeholders, search inputs, spinners, selection, scrollbars, media controls was especially popular.
 
 {{ figure_markup(
   image="popular-selector-pseudo-elements.png",
