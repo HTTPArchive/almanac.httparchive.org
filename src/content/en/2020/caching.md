@@ -9,6 +9,7 @@ reviewers: [csswizardry, jzyang, jaisanth, Soham-S-Sarkar]
 analysts: [raghuramakrishnan71]
 translators: []
 roryhewitt_bio: Enterprise Architect at <a href="https://www.akamai.com/">Akamai</a>. Passionate about performance.
+#raghuramakrishnan71_bio: TODO
 discuss: 2056
 results: https://docs.google.com/spreadsheets/d/1fYmpSN3diOiFrscS75NsjfsrKXzxxhUMNcYSqXnQJQU/
 queries: 20_Caching
