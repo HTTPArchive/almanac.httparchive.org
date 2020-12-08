@@ -17,7 +17,7 @@ featured_stat_label_1: Websites that load at least one tracker.
 featured_stat_2: Nine out of ten
 featured_stat_label_2: Top cookie-setting domains owned by Google.
 featured_stat_3: 44.8%
-featured_stat_label_3: Sites have a privacy policy.
+featured_stat_label_3: Websites that have a privacy policy.
 ---
 
 ## Introduction
