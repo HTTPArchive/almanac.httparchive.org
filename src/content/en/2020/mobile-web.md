@@ -104,7 +104,7 @@ While one cannot generalize the expected traffic distribution from mobile vs. de
 
 If your website is substantially different from the industry average, it could be worth digging into the reason, for instance poor loading performance could be one reason.
 
-## The user journey
+## <a name="user-journey"></a>The user journey
 User journeys, including commercial journeys, on the mobile web are often difficult to complete.
 
 While mobile represents 79.6% of time spent amongst retail sites, it only accounts for 32.3% of eCommerce sales (source). This suggests that users frequently start their journey on mobile, but often finish on desktop. Why might that be? 
@@ -271,3 +271,29 @@ Auto-complete can be especially helpful in completing checkout flows that requir
 
 It’s also possible to eliminate some form fields altogether. The Credential Management and Payment Request APIs are standards-based browser APIs that provide a programmatic interface between sites and the browser for seamless sign-in and payments. Only .61% of eCommerce sites are using the Payment Request API and only 0.008% use the Credential Management API. It’s worth noting that adoption of the Payment Request API has increased compared to 2019, with a 6x increase in payment completion rate.
 
+### 4. Retention
+The last phase in the journey is user retention, this means re-engaging the user and making them a returning customer or a loyal visitor.
+
+#### Installability with PWA
+Returning users benefit from a native-app-like experience with a PWA. A key value proposition for user retention is the installability of a PWA.
+When a PWA is installed, it is available from the places that a mobile user expects to find an app: the homescreen and the app tray.
+When the user taps and launches the PWA, it loads in full screen and is available in the task switcher, just like a native app.
+
+Rakuten 24 is an online store provided by Rakuten, one of the largest e-commerce companies in Japan. A recent [case study with Rakuten 24](https://web.dev/rakuten-24/), showed that making their web app [installable](https://web.dev/define-install-strategy/), resulted in a whopping 450% jump in visitor retention rate, compared to the previous mobile web flow, over a 1-month timeframe.
+
+By implementing installability, Rakuten 24 also saw these improvements over a 1-month timeframe:
+
+* 310%  increase in visit frequency per user, compared to the rest of their web users
+* 150% increase in sales per customer by 150%
+* 200% increase in conversion rate
+
+#### A seamless experience across devices
+Finally, providing a seamless experience across devices can unlock deeper user engagement and retention, the signed-in experience powers this.
+
+At the start of [the User Journey](#user-journey) we mentioned that mobile represents 79.6% of time spent amongst retail sites, but it only accounts for 32.3% of eCommerce sales. This suggests that users often browse on mobile and start the user journey on mobile devices, but they often convert or complete transactions on desktop. 
+
+Hopefully by now we have gained a better understanding to reason about this, for instance reasons may include ease of finding and consuming content, the ease of typing, form filling etc.
+
+For larger sites, it’s often not a question of whether to invest in mobile web OR desktop, as they both often complement each other.
+
+It helps to consider all the four phases of the user journey to understand the full spectrum of opportunities for engaging the user, as well as the risks and challenges in each phase of the journey.
