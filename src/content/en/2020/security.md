@@ -32,7 +32,11 @@ In this chapter, we explore the current state-of-practice for security on the We
 
 ## Transport security
 
-The last year has seen a continuation of the growth of HTTPS on websites. Securing the transport layer is a basic part of web security, without which all the other security features we will discuss in this chapter are basically rendered null and void. Moving our web traffic to HTTPS, and eventually [marking HTTP as non-secure](https://www.chromium.org/Home/chromium-security/marking-http-as-non-secure) is being driven by web browsers giving increasing warnings when unencrypted connections are used (the sitck), whiles at the same time resticting [powerful new features to the secure context](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts/features_restricted_to_secure_contexts). The effort is paying off hugely and we are now seeing 87.70% of requests on desktop and 86.90% of requests on mobile being served over HTTPS.
+The last year has seen a continuation of the growth of HTTPS on websites. Securing the transport layer is a basic part of web security–unless you can be confident the resources downloads for this website have not been altered in transit, and that you are transporting data to and from the website you think you are, any certainties about the website security are basically rendered null and void.
+
+Moving our web traffic to HTTPS, and eventually [marking HTTP as non-secure](https://www.chromium.org/Home/chromium-security/marking-http-as-non-secure) is being driven by web browsers onyl allowing [powerful new features to the secure context](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts/features_restricted_to_secure_contexts) (the carrot)while also increasing warnings dhoen to users when unencrypted connections are used (the sitck), whiles at the same time.
+
+The effort is paying off hugely and we are now seeing 87.70% of requests on desktop and 86.90% of requests on mobile being served over HTTPS.
 
 {{ figure_markup(
   caption="The percentage of requests that use HTTPS on mobile.",
@@ -42,7 +46,7 @@ The last year has seen a continuation of the growth of HTTPS on websites. Securi
 )
 }}
 
-One slight concern as we reach the end of this goal, is a noticeable leveling off of the the impressive growth of the last few years–the long tail of the internet means older legacy sites are not maintained and may never be run over HTTPS, meaning they will eventually become inaccesible to most users.
+One slight concern as we reach the end of this goal, is a noticeable "leveling off" of the the impressive growth of the last few years. Unfortunately the long tail of the internet means older legacy sites are not maintained and may never be run over HTTPS, meaning they will eventually become inaccesible to most users.
 
 {{ figure_markup(
   image="security-https-request-growth.png",
@@ -54,7 +58,7 @@ One slight concern as we reach the end of this goal, is a noticeable leveling of
   )
 }}
 
-While the high volume of requests is encouraging, these can often be dominated by [third-party](./third-party) requests and services like Google Analytics, fonts or advertisements. Websites themselves can lag, but again we see encouraging use with between 73% and 77% of sites now being served over HTTPS.
+Whilst the high volume of requests is encouraging, these can often be dominated by [third-party](./third-party) requests and services like Google Analytics, fonts or advertisements. Websites themselves can lag, but again we see encouraging use with between 73% and 77% of sites now being served over HTTPS.
 
 {{ figure_markup(
   image="security-https-usage-by-site.png",
@@ -68,7 +72,7 @@ While the high volume of requests is encouraging, these can often be dominated b
 
 ### Protocol versions
 
-As HTTPS is now well past being the norm, the challenge becomes in ensuring that secure versions of the underlying TLS (Tranport Layer Security) protocol are being used. TLS needs maintenance as versions become older and vulnerabilities are found.
+As HTTPS is now well past being the norm, the challenge moves from having any HTTPS, to ensuring that secure versions of the underlying TLS (Tranport Layer Security) protocol are being used. TLS needs maintenance as versions become older and vulnerabilities are found.
 
 {{ figure_markup(
   image="security-tls-version-by-site.png",
@@ -80,7 +84,7 @@ As HTTPS is now well past being the norm, the challenge becomes in ensuring that
   )
 }}
 
-These look similar to [last year's protocol analysis](../2019/security#protocol-versions) though with an approximately 5% increase in TLSv1.3 usage, and the corresponding drop in TLSv1.2. That seems a small increase and it would seem like the high usage noted last year was likely with large CDNs supporting well, and those still using TLSv1.2 are likely managing this themselves or with a basic hosting provider that does not support this.
+It's still surprising to us, that TLSv1.0 usage is basically zero and pleasing that the world has embraced more secure protocols so definitely. These figures are a slight improvement on [last year's protocol analysis](../2019/security#protocol-versions)  with an approximately 5% increase in TLSv1.3 usage, and the corresponding drop in TLSv1.2. That seems a small increase and it would seem like the high usage noted last year was likely due to the initall support from large CDNs, and making a significant progress more progreess in TLSv1.3 adoption will likely take a long time as those still using TLSv1.2 are likely managing this themselves or with a basic hosting provider that does not yet support this.
 
 ### Cipher suites
 
