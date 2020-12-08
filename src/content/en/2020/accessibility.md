@@ -425,7 +425,7 @@ This list is not exhaustive and is intended to encourage thought about how all o
   - Annotating wireframes with accessibility information such as intended heading hierarchy, skip links, alternative text suggestions (which could also come from copywriters/content folks) and screen reader only text.
 - UI designers: 
   - Color contrast choices, font selections, spacing and line height considerations.
-  - Animation considerations (determining if they are necessary, supplying static assets for prefers-reduced-motion scenarios, designing pause/stop mechanisms).
+  - Animation considerations (determining if they are necessary, supplying static assets for `prefers-reduced-motion` scenarios, designing pause/stop mechanisms).
 - Product managers:
   - Prioritizing accessibility work in the roadmap, ensuring it does not become technical debt at the end of a backlog.
   - Creating processes for teams to validate their work such as including accessibility in the definition of done and acceptance criteria.
@@ -444,6 +444,5 @@ The tech industry needs to move towards inclusion driven development. Although t
 The largest investment should come in the form of education and process improvements. Once a UI designer understands the nuances of color contrast requirements, selecting an accessible color palette should be the same effort as an inaccessible palette. Once a developer deeply understands native HTML and ARIA and when to reach for certain techniques and tools, the amount of code they write should be comparable. 
 
 As an industry it’s time that we acknowledge the story told by the numbers in this chapter; we are failing disabled people. We need to do better, and this has to come from a combination of top-down leadership and investment and bottom-up effort to push our practices forward and advocate for the needs, safety and inclusion of disabled people using the Web. 
-
 
 
