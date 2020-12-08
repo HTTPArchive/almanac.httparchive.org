@@ -1044,7 +1044,7 @@ Percentile | Desktop | Mobile
     <thead>
       <tr>
         <th>Percentile</th>
-        <th>Unique/total</th>
+        <th>Unique / Total</th>
       </tr>
     </thead>
     <tbody>
@@ -1065,7 +1065,7 @@ Percentile | Desktop | Mobile
 
   <figcaption>
     {{ figure_link(
-      caption="Declaration repetition.",
+      caption="Distribution of repetition ratios on mobile pages.",
       sheets_gid="2124098640",
       sql_file="repetition.sql"
     ) }}
