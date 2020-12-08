@@ -10,6 +10,7 @@ analysts: [tomvangoethem]
 translators: []
 #nrllh_bio: TODO
 #tomvangoethem_bio: TODO
+bazzadp_bio: Barry Pollard is a software developer and author of the Manning book <a href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a>. He thinks the web is amazing but wants to make it even better. You can find him tweeting <a href="https://twitter.com/tunetheweb">@tunetheweb</a> and blogging at <a href="https://www.tunetheweb.com">www.tunetheweb.com</a>.
 discuss: 2047
 results: https://docs.google.com/spreadsheets/d/1T7sxPP5BV3uwv-sXhBEZraVk-obd0tDfFrLiD49nZC0/
 queries: 11_Security
