@@ -16,7 +16,7 @@ featured_quote: This topic has been increasing in popularity recently and has ra
 featured_stat_1: 93%
 featured_stat_label_1: Websites load at least one tracker
 featured_stat_2: Nine out of ten
-featured_stat_label_2: Largest domains that set cookies on the biggest percentage of websites are Google-owned.
+featured_stat_label_2: Top cookie setting domains owned by Google.
 featured_stat_3: 44.8%
 featured_stat_label_3: Sites have a privacy policy
 unedited: true
@@ -254,7 +254,7 @@ IAB Europe proposed a [Transparency Consent Framework](https://iabeurope.eu/tran
 {{ figure_markup(
   image="privacy-adoption-of-the-tcf-banner.png",
   caption="Adoption rate of TCF banner",
-  description="This figure shows the percentage of websites using IAB Europe's TCF banner.",
+  description="Bar chart showing that 1.5% of desktop sites and 1.4% of mobile sites have implemented IAB Europe's TCF banner.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQJMtHv0Y1JcQJkcVyrqBk9dsujZeDtOZEv7uvE0xM2VrQSuTUDFya41TeRlTZDDe2rWmHwDghW3Dev/pubchart?oid=341275612&format=interactive",
   sheets_gid="2077755325",
   sql_file="percent_of_websites_with_iab_tcf_banner.sql"
@@ -270,7 +270,7 @@ Privacy policies are widely used by websites to increase transparency towards us
 {{ figure_markup(
   image="privacy-websites-with-privacy-link.png",
   caption="Websites that have a privacy policy",
-  description="This figure shows the percentage of websites that indicate to have implemented a privacy policy text.",
+  description="Bar chart showing that 44.8% of desktop sites and 42.3% of mobile sites have a privacy link.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQJMtHv0Y1JcQJkcVyrqBk9dsujZeDtOZEv7uvE0xM2VrQSuTUDFya41TeRlTZDDe2rWmHwDghW3Dev/pubchart?oid=329249623&format=interactive",
   sheets_gid="495362514",
   sql_file="percent_of_websites_with_privacy_links.sql "
