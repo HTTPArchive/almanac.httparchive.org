@@ -166,3 +166,88 @@ TODO: Insert chart: Pages with improperly sized images
 
 4.1% of pages which have images, use the lazy loading attribute on their images, decent adoption for a relatively new primitive.
 
+### 2. Engagement
+The next phase of the user journey is engagement of users towards consuming content and fulfilling their intent.
+
+#### Shifting content
+Shifting content is detrimental to the experience of users engaging with content.  Specifically, content that shifts in position as resources load, impedes the user experience.  Since browsers download and display content as soon as they are able, it’s important to design your site to smooth over the user experience.
+This is especially important for mobile web, as shifting content is more noticeable on small screens.
+
+TODO: insert image gif of shifting content
+
+##### Cumulative Layout Shift
+[Cumulative Layout Shift](https://web.dev/cls/) (CLS) is a metric that quantifies how much content within the viewport shifts around, during the user visit. 
+
+The [most common causes of a poor CLS](https://web.dev/optimize-cls/) are:
+
+* Images without dimensions
+* Ads, embeds, and iframes without dimensions
+* Dynamically injected content
+* Web Fonts causing FOIT/FOUT
+* Actions waiting for a network response before updating DOM
+
+It’s not trivial to identify these causes locally or in a development environment, as it is heavily dependent on how real users experience the page.  Third-party content or personalized content often doesn't behave the same in development as it does in production.
+
+According to CrUX data, 60% of mobile sites and 54% of desktop sites, have a good CLS.
+
+TODO: Insert chart: Aggregate CLS performance by device
+
+#### Design elements
+To engage users, it’s important to help them quickly find what they’re looking for, and fulfil their intention.
+
+##### Landing pages
+Simple design tweaks go a long way, for instance a clear call-to-action, and making the value proposition evident to the user, with a few words.
+
+TODO: Insert image of Pixel landing page
+
+[Research has shown](https://www.nngroup.com/articles/auto-forwarding/) that auto-forwarding carousels are detrimental to the user experience. Auto-forwarding carousels on the homepage should be avoided or their frequency should be decreased.
+
+##### Color and contrast
+Consider the following examples from [5 lessons Eastpak learned from its mobile audience](https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/5-lessons-eastpak-learned-its-mobile-audience/):
+
+TODO: Insert image: Eastpak +12 CTR
+
+A simple color change on the check out button from black to orange, made it stand out more and increased their conversion rate by 12%.
+
+Mckinsey&Company [published a report](https://www.mckinsey.com/business-functions/mckinsey-design/our-insights/the-business-value-of-design#) that shows that companies that are strong at design and UX demonstrate better financial performance.  Design and UX focused companies demonstrated stronger revenue growth compared to their industry counterparts.
+
+Text with low contrast ratio is hard to read, for instance, light gray text on a white background. This can reduce reading comprehension and reading speed for users.
+
+Lighthouse now [checks for color contrast](https://web.dev/color-contrast/), we found that 78.94% -- a majority of web pages, were lacking sufficient color contrast.
+
+TODO: Insert chart: Sites with sufficient color contrast
+
+##### Tap targets
+Mobile user experience is susceptible to “fat fingering”, as users engage with sites using their fingers -- a rather imprecise tool compared to using a mouse on a desktop.
+
+Based on research, there are standards for minimum size of buttons and tap targets, as well as the minimum distance they should be spaced apart. 
+[Lighthouse recommends](https://web.dev/tap-targets/) that targets should be no smaller than 48 px by 48 px, and no closer than 8 px apart.
+We found that  63.69% -- a majority of web pages, had improperly sized tap targets. This is a slight improvement over last year, where 65.57% web pages had improperly sized tap targets.
+
+TODO: Insert chart: Sites with properly sized tap targets
+
+##### Search input
+Search input or a search bar is a crucial tool for engaging users, it enables them to quickly find the information they are looking for.  It is especially important for mobile devices, as they lack the screen real estate to easily consume large amounts of information.
+
+Search is heavily used in large e-commerce sites, content heavy sites, news sites and booking sites to help users find information easily.  While a small website that has a few pages, does not need a search input, it will be needed as the website grows.
+For sites with 100+ pages, it is recommended to feature a prominent search bar.
+
+A [case study with fashion website lyst.com](https://www.thinkwithgoogle.com/intl/en-cee/marketing-strategies/data-and-measurement/lyst-increases-overall-conversion-rate-25-making-usability-improvements/), showed that replacing the search icon with a search box enabled users to locate the search function more easily, increasing usage by 43% on desktop, and by 13% on mobile.
+
+TODO: Insert image: search input lyst.com
+
+Search input is used in 17% of all sites using any input. 
+At 60.10%, a majority of ecommerce landing pages are missing the presence of search input.
+
+TODO: Insert chart: Ecommerce sites using search input
+
+##### A/B testing
+A/B testing is a crucial tool for making data driven decisions on matters of design and UX. 
+A/B testing enables validating that the UX & design changes measurably improve intended metrics and don’t cause unexpected regressions.
+
+Here’s a sampling of design questions that can be A/B tested:
+would changing the color of a button increase the click through rate?
+would increasing the size of click targets increase the number of clicks?
+would replacing the search icon with a search box increase the number of searches completed?
+
+According to [thirdpartyweb.today](https://www.thirdpartyweb.today/), [Optimizely](https://www.optimizely.com) is the most popular third party product for A/B testing, it is used in over 20,000 pages.
