@@ -35,8 +35,7 @@
           "part": "I",
           "chapter": "4",
           "title": "Fonts",
-          "slug": "fonts",
-          "todo": true
+          "slug": "fonts"
         },
         {
           "part": "I",
@@ -81,8 +80,7 @@
           "part": "II",
           "chapter": "10",
           "title": "Privacy",
-          "slug": "privacy",
-          "todo": true
+          "slug": "privacy"
         },
         {
           "part": "II",
@@ -152,15 +150,13 @@
           "part": "IV",
           "chapter": "19",
           "title": "Compression",
-          "slug": "compression",
-          "todo": true
+          "slug": "compression"
         },
         {
           "part": "IV",
           "chapter": "20",
           "title": "Caching",
-          "slug": "caching",
-          "todo": true
+          "slug": "caching"
         },
         {
           "part": "IV",
