@@ -120,47 +120,16 @@ More and more web pages are using the main resource hints, and in 2020 we are se
 
 The relative popularity of `dns-prefetch` with 33% adoption compared with other resource hints is unsurprising as it first appeared in 2009, and has the widest support out of all major resource hints.
 
-<figure>
-  <table>
-    <tr>
-     <th>Resource Hint</th>
-     <th>Adoption 2019</th>
-     <th>Adoption 2020</th>
-    </tr>
-    <tr>
-     <td><code>dns-prefetch</code></td>
-     <td>29%</td>
-     <td>33%</td>
-    </tr>
-    <tr>
-     <td><code>preload</code>
-     </td>
-     <td>16%</td>
-     <td>18%</td>
-    </tr>
-    <tr>
-     <td><code>preconnect</code>
-     </td>
-     <td>4%</td>
-     <td>9%</td>
-    </tr>
-    <tr>
-     <td><code>prefetch</code>
-     </td>
-     <td>3%</td>
-     <td>3%</td>
-    </tr>
-    <tr>
-     <td><code>prerender</code> (deprecated)
-     </td>
-     <td>1</td>
-     <td>0%</td>
-    </tr>
-  </table>
-  <figcaption>{{ figure_link(caption="Adoption of resource hints 2019 vs 2020.") }}</figcaption>
-</figure>
-
 Compared to [2019](../2019/resource-hints#resource-hints) the `dns-prefetch` had a 4% increase in Desktop adoption. We saw a similar increase for `preconnect` as well. One key reason this was the largest growth between all hints, is the clear and useful advice the [Lighthouse audit](https://web.dev/uses-rel-preconnect/) is giving on this matter. Starting from this year's report we also introduce how the latest dataset performs against Lighthouse recommendations.
+
+{{ figure_markup(
+  image="resource-hint-adoption-2019-vs-2020.png",
+  caption="Adoption of resource hints 2019 vs 2020.",
+  description="Column chart showcasing the adoption of resource hints 2019 vs 2020.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYAbLxN40s6mNR1jo0XDe_V4siN8TAsx2mryMp5IQmlJ-9O9eJxYROz7Rw6ozyFP6hlIZHxxh95GqX/pubchart?oid=1494186122&format=interactive",
+  sheets_gid="1805612941",
+  sql_file="adoption.sql"
+) }}
 
 `preload` usage has had a slower growth with only a 2% increase from 2019. This could be in part because it requires a bit more specification. While you only need the domain to use `dns-prefetch` and `preconnect`, you must specify the resource to use `preload`. While `dns-prefetch` and `preconnect` are reasonably low risk, though still can be abused, `preload` has a much greater potential to actually damage performance if used incorrectly.
 
@@ -269,27 +238,17 @@ Lastly, running Lighthouse's "[Preload key requests](https://web.dev/uses-rel-pr
 
 Now let's celebrate the first year of the [Native Lazy Loading](https://addyosmani.com/blog/lazy-loading/) API, which at the time of publishing already has over [72%](https://caniuse.com/loading-lazy-attr) browser support. This new API can be used to defer the load of below-the-fold iframes and images on the page until the user scrolls near them. This can reduce data usage, memory usage, and helps speed up above-the-fold content. Opting-in to lazy load is as simple as adding `loading=lazy`  on `<iframe>` or `<img>` elements.
 
-{# TODO(authors) - revisit this sentence - Ref https://github.com/HTTPArchive/almanac.httparchive.org/pull/1587#discussion_r533106799 #}
-
 {{ figure_markup(
   caption="Percentage of pages using native lazy loading.",
-  content="3.87%",
+  content="4.02%",
   classes="big-number",
   sheets_gid="2039808014",
   sql_file="native_lazy_loading_attrs.sql"
 ) }}
 
-{# TODO(authors) - revisit this figure - Ref https://github.com/HTTPArchive/almanac.httparchive.org/pull/1587#discussion_r532292106 #}
+{# TODO(authors/reviewers) - revisit this figure - Ref https://github.com/HTTPArchive/almanac.httparchive.org/pull/1587#discussion_r532292106 #}
 
 Adoption is still in its early days, especially with the official thresholds earlier this year being too conservative, and only [recently](https://addyosmani.com/blog/better-image-lazy-loading-in-chrome/) aligning with developer expectations. With almost 72% of browsers supporting native image/source lazy loading, this is another area of opportunity especially for pages looking to improve data usage and performance on low-end devices. 
-
-{{ figure_markup(
-  caption="Percentage of pages passing the offscreen images Lighthouse audit.",
-  content="68.65%",
-  classes="big-number",
-  sheets_gid="1357389632",
-  sql_file="lighthouse_offscreen_images.sql"
-) }}
 
 Running Lighthouse's "[Defer offscreen images](https://web.dev/offscreen-images/)" audit resulted in 68.65% of pages passing the test. For those pages there is an opportunity to lazy-load images after all critical resources have finished loading.
 
@@ -327,11 +286,10 @@ One solution to this, is to use the [PRPL Pattern](https://addyosmani.com/blog/t
 
 For both `preload` and `prefetch` we've had an increase in adoption when the page is controlled by a [Service Worker](https://developers.google.com/web/fundamentals/primers/service-workers). This is because of the potential to both improve the resource prioritization by preloading when the Service Worker is not active yet and intelligently prefetching future resources while letting the Service Worker cache them before they're needed by the user.
 
-{# TODO(authors): Add or remove figure description. #}
 {{ figure_markup(
   image="resource-hint-adoption-onservice-worker-pages.png",
   caption="Resource hint adoption on Service Worker pages.",
-  description="TODO",
+  description="Column chart showcasing the resource hint adoption on Service Worker pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYAbLxN40s6mNR1jo0XDe_V4siN8TAsx2mryMp5IQmlJ-9O9eJxYROz7Rw6ozyFP6hlIZHxxh95GqX/pubchart?oid=252958553&format=interactive",
   sheets_gid="691299508",
   sql_file="adoption_service_workers.sql"
