@@ -1048,7 +1048,7 @@ Percentile | Desktop | Mobile
 
 ### Declaration repetition
 
-<figure markdown>
+<figure>
   <table>
     <thead>
       <tr>
@@ -1087,19 +1087,24 @@ Percentile | Desktop | Mobile
 
 {{ figure_markup(
   image="most-popular-longhand-after-shorthand.png",
-  caption="TO.",
-  description="TODO.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=176504610&amp;format=interactive",
-  sheets_gid="1155233487",
-  sql_file="supports_criteria.sql"
+  caption="Most popular longhand properties after shorthands.",
+  description="Bar chart showing `background-size` at 15% for desktop and 41% for mobile, `background-image` at 8% and 6% respectively, `margin-bottom` at 6% and 4%, `margin-top` at 6% and 4%, `border-bottom-color` at 5% and 3%, `font-size` at 4% and 3%, `border-top-color` at 4% and 3%, `background-color` at 4% and 2%, `padding-left` at 3% and 2%, and finally `margin-left` at 3% and 2%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=176504610&format=interactive",
+  sheets_gid="17890636",
+  sql_file="meta_shorthand_first_properties.sql",
+  width="600",
+  height="429"
 ) }}
 
 {{ figure_markup(
   image="background-shorthand-versus-longhand.png",
   caption="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  description="Bar chart showing `background` is 91% on desktop and 92% on mobile, `background-color` is 91% and 92% respectively, `background-image` is 85% and 87%, `background-position` is 84% and 85%, `background-repeat` is 82% and 84%, `background-size` is 77% and 79%, `background-clip` is 48% and 53%, `background-attachment` is 37% and 38%, `background-origin` is 5% on desktop and 12% on mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=2014923335&amp;format=interactive",
+  sheets_gid="1513860089",
+  sql_file="all_properties.sql",
+  width="600",
+  height="429"
 ) }}
 
 #### font
@@ -1110,20 +1115,22 @@ Percentile | Desktop | Mobile
 
 {{ figure_markup(
   image="margin-padding-shorthand-vs-longhand.png",
-  caption="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  caption="Usage of margin/padding shorthands vs longhands.",
+  description="Bar chart showing `padding` is 93% on desktop, 94% on mobile, `margin` is 93% and 93% respectively, `margin-left` is 91% and 92%, `margin-top` is 90% and 91%, `margin-right` is 90% and 91%, `margin-bottom`si 90% and 91%, `padding-left` is 90% and 90%, `padding-top` is 88% and 89%, `padding-bottom` is 88% and 89%, and `padding-right` is 87% and 88%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=804317202&format=interactive",
+  sheets_gid="1513860089",
+  sql_file="all_properties.sql"
 ) }}
 
 #### Flex
 
 {{ figure_markup(
   image="flex-shorthand-vs-longhand.png",
-  caption="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  caption="Usage of flex shorthands vs longhands.",
+  description="Bar chart showing `flex-direction` is 55% on desktop and 60% on mobile, `flex-wrap` is 55% and 58% respectively,`flex` is 52% and 56%, `flex-grow` is 44% and 52%,`flex-basis` is 40% and 44%,`flex-shrink` is 28% and 37%, `flex-flow` is 27% and 30%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=930720666&format=interactive",
+  sheets_gid="1513860089",
+  sql_file="all_properties.sql"
 ) }}
 
 #### Grid
@@ -1131,6 +1138,7 @@ Percentile | Desktop | Mobile
 {{ figure_markup(
   image="usage-of-grid-properties.png",
   caption="TODO.",
+  description="TODO",
   chart_url="TODO",
   sheets_gid="TODO",
   sql_file="TODO.sql"
@@ -1145,6 +1153,7 @@ Percentile | Desktop | Mobile
 {{ figure_markup(
   image="most-popupular-unknown-properties.png",
   caption="TODO.",
+  description="TODO",
   chart_url="TODO",
   sheets_gid="TODO",
   sql_file="TODO.sql"
@@ -1155,6 +1164,7 @@ Percentile | Desktop | Mobile
 {{ figure_markup(
   image="most-popupular-unknown-properties.png",
   caption="TODO.",
+  description="TODO",
   chart_url="TODO",
   sheets_gid="TODO",
   sql_file="TODO.sql"
@@ -1165,6 +1175,7 @@ Percentile | Desktop | Mobile
 {{ figure_markup(
   image="most-popupular-sass-function-calls.png",
   caption="TODO.",
+  description="TODO",
   chart_url="TODO",
   sheets_gid="TODO",
   sql_file="TODO.sql"
@@ -1173,6 +1184,7 @@ Percentile | Desktop | Mobile
 {{ figure_markup(
   image="usage-of-control-flow-statements-scss.png",
   caption="TODO.",
+  description="TODO",
   chart_url="TODO",
   sheets_gid="TODO",
   sql_file="TODO.sql"
@@ -1181,6 +1193,7 @@ Percentile | Desktop | Mobile
 {{ figure_markup(
   image="usage-of-explicit-nesting-in-scss.png",
   caption="TODO.",
+  description="TODO",
   chart_url="TODO",
   sheets_gid="TODO",
   sql_file="TODO.sql"
