@@ -120,7 +120,7 @@ We can see from the above chart that AES_128_GCM is the most common and is used 
 
 One important point to note is that our data is based on running Chrome to connect to a site, and it will use a single protocol cipher to connect. Our [methodology](./methodology) does not allow us to see the full range of protocols and cipher suites supported, and only the one actually used for that connection. For that we need to look at other sources like [SSL Pulse from SSL Labs](https://www.ssllabs.com/ssl-pulse/), but with most modern browsers now supporting similar TLS capabilities the above data is what we would expect the vast majority of users to use.
 
-## Certificate Authorities
+### Certificate Authorities
 
 Next we will look at the Certificate Authorities (CAs) issuing the TLS certificates used by the sites we have crawled. [Last year's chapter](../2019/security#certificate-authorities), looked at the requests, but that will be dominated by popullar [third-parties](./third-parties) like Google (who also dominate again this year from that metric), so this year we are going to look at the websites themselves.
 
@@ -191,17 +191,53 @@ Next we will look at the Certificate Authorities (CAs) issuing the TLS certifica
 
 It is no surprise to see Let's Encrypt well in the lead easily taking the top spot; its combination of free and automated certificates is proving a winner with both individual website owners and platforms. Cloudflare similarly offers free certificates for its customers taking the number two and number nine position. What is more interesting there is that it is the ECC Cloudflare issuer that is being used. ECC certificates are smaller and so more efficient than RSA certificates but can be complicated to deploy as support is not universal and managing both certificates often requires extra effort. This is the benefit of a CDN or hosted provider if they can manage this for you like Cloudflare does here. Browsers that support ECC (like the Chrome browser we use in our crawl) will use that, and older browsers will use RSA.
 
-{# TODO finish this out:
+### Browser enforcement
 
-Browser enforcement
-HTTP Strict-Transport-Security
-Secure attribute on cookies
-__Secure- prefix on cookies
-Flawed configurations
-Mixed content
+Although having a proper TLS configuration is paramount to defend against cryptographic attacks, additional protections are still needed to protect web users from adversaries on the network. For instance, as soon as the user would load any website over HTTP, the attacker can inject malicious content, and for instance also make requests to other sites. Even if these other sites would be using the strongest ciphers and latest protocols, the adversary can still pull off an SSL stripping attack, tricking the victim's browser into believing that the connection is over HTTP. Moreover, without the adequate protections in place, the user's cookies will be attached in the initial plaintext HTTP request, allowing the attacker to capture them on the network.
+
+To overcome these issues, browsers have provided web developers with a set of features that can be used. The first one is HTTP Strict Transport Security (HSTS), which can easily be enabled by setting a response header, consisting of several attributes. We find an adoption rate of 16.88% within the mobile homepages for this header. Of the sites that enable HSTS, 92.82% do so successfully. That is, the max-age attribute (which determines how many seconds the browser should *only* visit the website over HTTPS) has a value larger than 0.
 
 
-#}
+{# TODO add HSTS max-age image #}
+
+Looking at the different values for this attribute, we can clearly see that the majority of websites is confident that they will be running over HTTPS in the considerable future: more than half request the browser to use HTTPS for at least 1 year. One website might have been a bit too enthusiastic about how long their site will be available over HTTPS, and set a `max-age` attribute value that translates to 1,000,000,000,000,000 years. Ironically, browsers do not handle such a large value well, and actually disabled HSTS for that site.
+
+<figure markdown>
+<table>
+    <thead>
+      <tr>
+        <th>HSTS Directive</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Valid max-age</td>
+        <td class="numeric">92.21%</td>
+        <td class="numeric">92.82%</td>
+      </tr>
+      <tr>
+        <td>includeSubdomains</td>
+        <td class="numeric">32.97%</td>
+        <td class="numeric">32.14%</td>
+      </tr>
+      <tr>
+        <td>preload</td>
+        <td class="numeric">16.02%</td>
+        <td class="numeric">16.56%</td>
+      </tr>
+    </tbody>
+  </table>
+<figcaption>{{ figure_link(caption="Usage of HSTS directives.", sheets_gid="560555207", sql_file="hsts_attributes.sql") }}</figcaption>
+</figure>
+
+It is encouraging to see that the adoption of the other attributes is growing compared to [last year](../2019/security#http-strict-transport-security): `includeSubdomains` is now at 32.14% and `preload` at 16.56% of HSTS policies.
+We explore the different mechanisms to protect cookies from network attackers in the following section.
+
+
+
+{# TODO add mixed content? #}
 
 
 
