@@ -606,6 +606,13 @@ figure .fig-desktop {
   display: none;
 }
 
+.color-swatch {
+  display: block;
+  height: 1rem;
+  width: 1ex;
+  border: 1px solid #eee;
+}
+
 .bio {
   margin-top: 10px;
   margin-top: 0.625rem;

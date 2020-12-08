@@ -375,6 +375,348 @@ Percentile | Desktop | Mobile
   sql_file="color_formats.sql"
 ) }}
 
+{{ figure_markup(
+  image="color-formats-alpha.png",
+  caption="Relative popularity of color formats grouped by alpha support as a percent of occurrences on mobile pages (excluding `#rrggbb` and `#rgb`).",
+  description="Bar chart showing the relative popularity of color formats grouped by alpha support as a percent of occurrences on mobile pages, excluding #rrggbb and #rgb. Color formats that support alpha add up to about 23% of occurrences, while color formats that do not support alpha add up to only 2% of occurrences on mobile pages.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1861989753&format=interactive",
+  sheets_gid="366025718",
+  sql_file="color_formats.sql"
+) }}
+
+{# TODO(analysts, CSS experts): figure out why the swatches aren't working. #}
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Keyword</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="color-swatch" style="background-color: transparent"></span></td>
+        <td>transparent</td>
+        <td class="numeric">84.04%</td>
+        <td class="numeric">83.51%</td>
+      </tr>
+      <tr>
+        <td><span class="color-swatch" style="background-color: white"></span></td>
+        <td>white</td>
+        <td class="numeric">6.82%</td>
+        <td class="numeric">7.34%</td>
+      </tr>
+      <tr>
+        <td><span class="color-swatch" style="background-color: black"></span></td>
+        <td>black</td>
+        <td class="numeric">2.32%</td>
+        <td class="numeric">2.42%</td>
+      </tr>
+      <tr>
+        <td><span class="color-swatch" style="background-color: red"></span></td>
+        <td>red</td>
+        <td class="numeric">2.03%</td>
+        <td class="numeric">2.01%</td>
+      </tr>
+      <tr>
+        <td><span class="color-swatch" style="background-color: currentColor"></span></td>
+        <td>currentColor</td>
+        <td class="numeric">1.43%</td>
+        <td class="numeric">1.43%</td>
+      </tr>
+      <tr>
+        <td><span class="color-swatch" style="background-color: gray"></span></td>
+        <td>gray</td>
+        <td class="numeric">0.75%</td>
+        <td class="numeric">0.79%</td>
+      </tr>
+      <tr>
+        <td><span class="color-swatch" style="background-color: silver"></span></td>
+        <td>silver</td>
+        <td class="numeric">0.66%</td>
+        <td class="numeric">0.58%</td>
+      </tr>
+      <tr>
+        <td><span class="color-swatch" style="background-color: grey"></span></td>
+        <td>grey</td>
+        <td class="numeric">0.35%</td>
+        <td class="numeric">0.31%</td>
+      </tr>
+      <tr>
+        <td><span class="color-swatch" style="background-color: green"></span></td>
+        <td>green</td>
+        <td class="numeric">0.36%</td>
+        <td class="numeric">0.30%</td>
+      </tr>
+      <tr>
+        <td><span class="color-swatch" style="background-color: magenta"></span></td>
+        <td>magenta</td>
+        <td class="numeric">0.00%</td>
+        <td class="numeric">0.13%</td>
+      </tr>
+      <tr>
+        <td><span class="color-swatch" style="background-color: blue"></span></td>
+        <td>blue</td>
+        <td class="numeric">0.16%</td>
+        <td class="numeric">0.13%</td>
+      </tr>
+      <tr>
+        <td><span class="color-swatch" style="background-color: whitesmoke"></span></td>
+        <td>whitesmoke</td>
+        <td class="numeric">0.17%</td>
+        <td class="numeric">0.12%</td>
+      </tr>
+      <tr>
+        <td><span class="color-swatch" style="background-color: lightgray"></span></td>
+        <td>lightgray</td>
+        <td class="numeric">0.06%</td>
+        <td class="numeric">0.11%</td>
+      </tr>
+      <tr>
+        <td><span class="color-swatch" style="background-color: orange"></span></td>
+        <td>orange</td>
+        <td class="numeric">0.12%</td>
+        <td class="numeric">0.10%</td>
+      </tr>
+      <tr>
+        <td><span class="color-swatch" style="background-color: lightgrey"></span></td>
+        <td>lightgrey</td>
+        <td class="numeric">0.04%</td>
+        <td class="numeric">0.10%</td>
+      </tr>
+      <tr>
+        <td><span class="color-swatch" style="background-color: yellow"></span></td>
+        <td>yellow</td>
+        <td class="numeric">0.08%</td>
+        <td class="numeric">0.06%</td>
+      </tr>
+      <tr>
+        <td><span class="color-swatch" style="background-color: Highlight"></span></td>
+        <td>Highlight</td>
+        <td class="numeric">0.01%</td>
+        <td class="numeric">0.04%</td>
+      </tr>
+      <tr>
+        <td><span class="color-swatch" style="background-color: gold"></span></td>
+        <td>gold</td>
+        <td class="numeric">0.04%</td>
+        <td class="numeric">0.04%</td>
+      </tr>
+      <tr>
+        <td><span class="color-swatch" style="background-color: pink"></span></td>
+        <td>pink</td>
+        <td class="numeric">0.03%</td>
+        <td class="numeric">0.03%</td>
+      </tr>
+      <tr>
+        <td><span class="color-swatch" style="background-color: teal"></span></td>
+        <td>teal</td>
+        <td class="numeric">0.03%</td>
+        <td class="numeric">0.02%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="Relative popularity of color keywords as a percent of occurrences.",
+      sheets_gid="1429541094",
+      sql_file="color_keywords.sql"
+    ) }}
+  </figcaption>
+</figure>
+
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>sRGB</th>
+        <th></th>
+        <th><code>display-p3</code></th>
+        <th>ΔE2000</th>
+        <th>In gamut</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>rgba(0,0,0,1)</code></td>
+        <td style="background-color: rgba(0, 0, 0, 1)"></td>
+        <td><code>color(display-p3 0 0 0 / 1)</code></td>
+        <td>0.000</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td><code>rgba(255,255,255,1)</code></td>
+        <td style="background-color: rgba(255, 255, 255, 1)"></td>
+        <td><code>color(display-p3 1 1 1 / 1)</code></td>
+        <td>0.015</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td><code>rgba(200,200,200,1)</code></td>
+        <td style="background-color: rgba(200, 200, 200, 1)"></td>
+        <td><code>color(display-p3 0.78 0.78 0.78 / 1)</code></td>
+        <td>0.274</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td><code>rgba(121,127,132,1)</code></td>
+        <td style="background-color: rgba(121, 127, 132, 1)"></td>
+        <td><code>color(display-p3 0.48 0.50 0.52 / 1)</code></td>
+        <td>0.391</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td><code>rgba(255,205,63,1)</code></td>
+        <td style="background-color: rgba(255, 205, 63, 1)"></td>
+        <td><code>color(display-p3 1 0.80 0.25 / 1)</code></td>
+        <td>3.880</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td><code>rgba(241,174,50,1)</code></td>
+        <td style="background-color: rgba(241, 174, 50, 1)"></td>
+        <td><code>color(display-p3 0.95 0.68 0.17 / 1)</code></td>
+        <td>4.701</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td><code>rgba(245,181,40,1)</code></td>
+        <td style="background-color: rgba(245, 181, 40, 1)"></td>
+        <td><code>color(display-p3 0.96 0.71 0.16 / 1)</code></td>
+        <td>4.218</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td><code>rgb(147, 83, 255)</code></td>
+        <td style="background-color: rgb(147, 83, 255)"></td>
+        <td><code>color(display-p3 0.58 0.33 1 / 1)</code></td>
+        <td>2.143</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td><code>rgba(120,0,255,1)</code></td>
+        <td style="background-color: rgba(120, 0, 255, 1)"></td>
+        <td><code>color(display-p3 0.47 0 1 / 1)</code></td>
+        <td>1.933</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td><code>rgba(75,3,161,1)</code></td>
+        <td style="background-color: rgba(75, 3, 161, 1)"></td>
+        <td><code>color(display-p3 0.29 0.01 0.63 / 1)</code></td>
+        <td>1.321</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td><code>rgba(255,0,0,0.85)</code></td>
+        <td style="background-color: rgba(255, 0, 0, 0.85)"></td>
+        <td><code>color(display-p3 1 0 0 / 0.85)</code></td>
+        <td>7.115</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td><code>rgba(84,64,135,1)</code></td>
+        <td style="background-color: rgba(84, 64, 135, 1)"></td>
+        <td><code>color(display-p3 0.33 0.25 0.53 / 1)</code></td>
+        <td>1.326</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td><code>rgba(131,103,201,1)</code></td>
+        <td style="background-color: rgba(131, 103, 201, 1)"></td>
+        <td><code>color(display-p3 0.51 0.40 0.78 / 1)</code></td>
+        <td>1.348</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td><code>rgba(68,185,208,1)</code></td>
+        <td style="background-color: rgba(68, 185, 208, 1)"></td>
+        <td><code>color(display-p3 0.27 0.75 0.82 / 1)</code></td>
+        <td>5.591</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td><code>rgb(255,0,72)</code></td>
+        <td style="background-color: rgb(255, 0, 72)"></td>
+        <td><code>color(display-p3 1 0 0.2823 / 1)</code></td>
+        <td>3.529</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td><code>#fffc00</code></td>
+        <td style="background-color: #fffc00"></td>
+        <td><code>color(display-p3 1 0.9882 0)</code></td>
+        <td>5.012</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td><code>#6d3bff</code></td>
+        <td style="background-color: #6d3bff"></td>
+        <td><code>color(display-p3 .427 .231 1)</code></td>
+        <td>1.584</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td><code>#03d658</code></td>
+        <td style="background-color: #03d658"></td>
+        <td><code>color(display-p3 .012 .839 .345)</code></td>
+        <td>4.958</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td><code>#ff3900</code></td>
+        <td style="background-color: #ff3900"></td>
+        <td><code>color(display-p3 1 .224 0)</code></td>
+        <td>7.140</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td><code>#7cf8b3</code></td>
+        <td style="background-color: #7cf8b3"></td>
+        <td><code>color(display-p3 .486 .973 .702)</code></td>
+        <td>4.284</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td><code>#f8f8f8</code></td>
+        <td style="background-color: #f8f8f8"></td>
+        <td><code>color(display-p3 .973 .973 .973)</code></td>
+        <td>0.028</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td><code>#e3f5fd</code></td>
+        <td style="background-color: #e3f5fd"></td>
+        <td><code>color(display-p3 .875 .945 .976)</code></td>
+        <td>1.918</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td><code>#e74832</code></td>
+        <td style="background-color: #e74832"></td>
+        <td><code>color( display-p3 .905882353 .282352941 .196078431 / 1 )</code></td>
+        <td>3.681</td>
+        <td>true</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="The fallback sRGB colors and <code>display-p3</code> colors.<br>A color difference (ΔE2000) of 1 is barely visible, while 5 is clearly distinct."
+    ) }}
+  </figcaption>
+</figure>
+
+{{ figure_markup(
+  image="UCS-p3-pairs.svg",
+  caption="1976 u’v’ diagram of the chromaticity of colors.",
+  description="This 1976 u’v’ diagram shows the chromaticity of colors (flattened to 2D, so lightness is not shown). The outer curved shape represents the spectrum of pure single wavelengths; there are no visible colors outside this. The straight line is purple, a mixture of red and violet. The smaller, grey, triangle is the sRGB gamut while the larger, darker triangle is the display-p3 gamut. The 23 unique display-p3 colors actually in use on the web in 2020 are shown; for each pair of colors the larger circle is the sRGB fallback while the smaller circle is the display-p3 color. If it is inside the sRGB gamut, those circles show the correct color. Otherwise, a white circle with a red edge indicates out of sRGB-gamut colors.",
+  width=600,
+  height=600
+) }}
+
 ## Gradients
 
 ## Layout
