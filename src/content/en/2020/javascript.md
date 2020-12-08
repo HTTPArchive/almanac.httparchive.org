@@ -274,7 +274,8 @@ It's worth taking a closer look those scripts that _don't_ have compression appl
 
 Thankfully, that's exactly what we see, particularly in third-party scripts where 90% of uncompressed scripts are less than 5kb in size. On the other hand, 49% of uncompressed first-party scripts are less than 5kb and 37% of uncompressed first-party scripts are over 10kb. So while we do see a lot of small uncompressed first-party scripts, there are still quite a few that would benefit from some compression.
 
-## What do we use? {{WIP}}
+{# WIP #}
+## What do we use?
 As we've increasingly used more JavaScript to power our sites and applications, there has also been an increasing demand for open-source libraries and frameworks to help with improving developer productivity and overall code maintainability. Sites that _don't_ wield one of these tools are definitely the minority on today's web—jQuery alone is found on nearly 85% of the mobile pages tracked by HTTP Archive.
 
 It's important that we think critically about the tools we use to build the web and what the trade-offs are, so it makes sense to look closely at what we see in use today.
