@@ -100,7 +100,7 @@ Within TLS there are a number of cipher suites that can be used with varying lev
 )
 }}
 
-All sites should be using forward secrecy ciphers and it is pleasing to see 98.14% of desktop sites and 98.03% of mobile sites using ciphers with forward secrecy. In the past, newer versions of TLS added support for newer ciphers but rarely removed older versions. This is one of the reasons TLSv1.3 is more secure as it does a large clear down of older ciphers leaving only five secure ciphers all of which support forward secrecy. This prevents downgrade attacks where a less secure cipher is forced to be used.
+All sites should be using forward secrecy ciphers and it is pleasing to see 98.14% of desktop sites and 98.03% of mobile sites using ciphers with forward secrecy. In the past, newer versions of TLS added support for newer ciphers but rarely removed older versions. This is one of the reasons TLSv1.3 is more secure as it does a large clear down of older ciphers currently supporting only five secure ciphers all of which support forward secrecy. This prevents downgrade attacks where a less secure cipher is forced to be used.
 
 After this the main choice is between the level of encryption - higher key sizes will take longer to break, but at the cost of more compute intensive to encrypt and decrypt the connection–particularly for initial connection. For the [block cipher mode](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation) GMC should be used and [CBC is considered weak due to padding attacks](https://blog.qualys.com/product-tech/2019/04/22/zombie-poodle-and-goldendoodle-vulnerabilities).
 
