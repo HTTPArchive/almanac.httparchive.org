@@ -582,7 +582,7 @@ Service workers are a feature of HTML5 that allow front-end developers to specif
   caption="Growth in service worker controlled pages from 2019.",
   description="A bar chart showing the growth in service worker controlled pages. The adoption has grown from 0.6% in 2019 to 1.0% in 2020",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=893877591&format=interactive",
-  sheets_gid="2082343974", 
+  sheets_gid="2082343974",
   sql_file="appcache_and_serviceworkers_2019.sql"
   )
 }}
@@ -787,9 +787,8 @@ The graphs below illustrate the relative age of resources by content type. Some 
   caption="Resource age by Content Type (1st Party).",
   description="A stack bar chart showing the age of content, split into weeks 0-52, > one year and > two years with null and negative figures shown too. The stats are split into first-party and third-party. The value 0 is used most particularly for first-party HTML, text and xml, and for up to 50% of third-party requests across all assets types. There is a mix using intermediary years and then considerable usage for one year and two year.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=2056330432&format=interactive",
-  sheets_gid="1889235328", 
-  sql_file="14_resource_age_party_and_type_wise_groups.sql",
-  width=650
+  sheets_gid="1889235328",
+  sql_file="14_resource_age_party_and_type_wise_groups.sql"
   )
 }}
 
@@ -799,8 +798,7 @@ The graphs below illustrate the relative age of resources by content type. Some 
   description="A stack bar chart showing the age of content, split into weeks 0-52, > one year and > two years with null and negative figures shown too. The stats are split into first-party and third-party. The value 0 is used most particularly for first-party HTML, text and xml, and for up to 50% of third-party requests across all assets types. There is a mix using intermediary years and then considerable usage for one year and two year.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=2056330432&format=interactive",
   sheets_gid="1889235328",
-  sql_file="15_resource_age_party_and_type_wise_groups.sql",
-  width=650
+  sql_file="15_resource_age_party_and_type_wise_groups.sql"
   )
 }}
 
