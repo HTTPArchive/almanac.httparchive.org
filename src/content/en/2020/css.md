@@ -874,15 +874,62 @@ Percentile | Desktop | Mobile
 
 ### Naming
 
+{{ figure_markup(
+  image="custom-property-names.png",
+  caption="Relative popularity of custom property names per software entity as a perecent of occurrences on mobile pages.",
+  description="Pie chart of the relative popularity of custom property names per software entity responsible for creating those properties, as a percent of occurrences on mobile pages. 35% of occurrences of custom property names on mobile pages can be traced back to Avada, 31% to Bootstrap, 16% to Elementor, 13% to WordPress, and 3% to an old version of Multirange.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1627287194&format=interactive",
+  sheets_gid="1043074687",
+  sql_file="custom_property_names.sql"
+) }}
+
 ### Usage by type
 
+{{ figure_markup(
+  image="custom-property-properties.png",
+  caption="The most popular property names used with custom properties as a percent of pages.",
+  description="Bar chart of the most popular property names used with custom properties, as a percent of pages. Mobile adoption is much higher for each property than their desktop counterparts. Custom properties are used on background-color and color on 19% and 15% of mobile pages respectively. The remaining properties use custom properties from 9% to 6% in descending order: border, background, border-top, border-bottom, background-image, box-shadow, height, width, border-left, min-height, margin-top, border-right, and border-left-color. Desktop adoption is about 4 percentage points smaller.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=16420165&format=interactive",
+  sheets_gid="556945658",
+  sql_file="custom_property_properties.sql"
+) }}
+
+{{ figure_markup(
+  image="custom-property-functions.png",
+  caption="The most popular function names used with custom properties as a percent of pages.",
+  description="Bar chart of the most popular function names used with custom properties, as a percent of pages. Mobile adoption is much higher for the first six functions: calc (7%), linear-gradient, rgba (4%), radial-gradient, hsla, and drop-shadow. The following functions have 1% adoption on desktop and mobile pages: -o-linear-gradient, translate, and -webkit-linear-gradient. And finally these functions have approximately 0% adoption on desktop and mobile pages: scale, -webkit-gradient, max, to, from, and rotate.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1986770560&format=interactive",
+  width="600",
+  height="525",
+  sheets_gid="2076074923",
+  sql_file="custom_property_functions.sql"
+) }}
+
 ### Complexity
+
+{{ figure_markup(
+  image="custom-property-depth.png",
+  caption="Distribution of depths of custom properties as a percent of occurrences.",
+  description="Bar chart of the distribution of depths of custom properties as a percent of occurrences. Custom properties on desktop and mobile page have a depth of 0 for 67% and 60% of occurrences, respectively. For a depth of 1 it is 31% and 38%. At a depth of 2, just 2% each. Approximately 0% of occurrences have a depth of 3 or more.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=262191540&format=interactive",
+  sheets_gid="1368222498",
+  sql_file="custom_property_depth.sql"
+) }}
 
 ## CSS and JS
 
 ### Houdini
 
 ### CSS-in-JS
+
+{{ figure_markup(
+  image="css-in-js.png",
+  caption="Relative popularity of CSS-in-JS libraries as a percent of occurrences on mobile pages.",
+  description="Pie chart of the relative popularity of CSS-in-JS libraries as a percent of occurences on mobile pages. Styled Components makes up 42% of occurrences on mobile pages, followed by Emotion at 30%, Aphrodite at 9%, React JSS at 8%, Glamor at 7%, Styled Jsx at 2%, and the rest having less than 1% of occurences: Radium, React Native for Web, Goober, Merge Styles, Styletron, and Fela.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=969014374&format=interactive",
+  sheets_gid="1368222498",
+  sql_file="css_in_js.sql"
+) }}
 
 ## Internationalization
 
@@ -893,6 +940,72 @@ Percentile | Desktop | Mobile
 ## Browser support
 
 ### Vendor prefixes
+
+{{ figure_markup(
+  image="vendor-prefix-features.png",
+  caption="The most popular vendor-prefixed features by type as a percent of pages.",
+  description="Bar chart of the most popular vendor-prefixed features by type as a percent of pages. Desktop and mobile are very similar. 91% of mobile pages use vendor-prefixed properties, 77% use keywords and pseudo-elements, 65% use functions, 61% use pseudo-classes, and 52% use media.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1057411197&format=interactive",
+  sheets_gid="1944012653",
+  sql_file="vendor_prefix_summary.sql"
+) }}
+
+{{ figure_markup(
+  caption="Percent of mobile pages using any vendor prefixed feature.",
+  content="91.05%",
+  classes="big-number",
+  sheets_gid="1944012653",
+  sql_file="vendor_prefix_summary.sql"
+) }}
+
+{{ figure_markup(
+  image="vendor-prefix-properties.png",
+  caption="Relative popularity of properties that are most used with vendor prefixes, as a percent of occurrences.",
+  description="Bar chart of the relative popularity of properties that are most used with vendor prefixes, as a percent of occurrences. Desktop and mobile have similar results. The transform property makes up 19% of vendor prefix usage, followed by 12% transition, 9% border-radius, 8% box-shadow, 5% user-select and box-sizing, 4% animation, 3% filter, 2% each of font-smoothing, backface-visibility, appearance, and flex, and 1% usage for the remaining properties: transform-origin, osx-font-smoothing, animation-name, background-size, transition-property, and tap-highlight-color.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=859599479&format=interactive",
+  sheets_gid="67014375",
+  sql_file="vendor_prefix_properties.sql"
+) }}
+
+{{ figure_markup(
+  image="top-vendor-prefixes.png",
+  caption="Relative popularity of vendor prefixes, as a percent of occurrences.",
+  description="Bar chart of the relative popularity of vendor prefixes, as a percent of occurrences. -webkit makes up 49% of vendor prefix usage on mobile pages, -moz 23%, -ms 19%, -o 8%, -khtml 1%, and 0% for -pie, -js, and -ie. Desktop is similar.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=702800205&format=interactive",
+  sheets_gid="67014375",
+  sql_file="vendor_prefix_properties.sql"
+) }}
+
+{{ figure_markup(
+  image="vendor-prefix-pseudo-classes.png",
+  caption="The most popular vendor-prefixed pseudo-classes as a percent of pages.",
+  description="Bar chart of the most popular vendor-prefixed pseudo-classes as a percent of pages. :ms-input-placeholder is used on 10% of mobile pages, :-moz-placeholder 8%, :-mox-focusring 2%, and 1% or less for the following: :-webkit-full-screen, :-moz-full-screen, :-moz-any-link, :-webkit-autofill, :-o-prefocus, :-ms-fullscreen, :-ms-input-placeholde [sic], :-ms-lang, :-moz-ui-invalid, :-webkit-input-placeholder, :-moz-input-placeholder, and :-webkit-any-link.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1884876858&format=interactive",
+  sheets_gid="67014375",
+  width="600",
+  height="650",
+  sql_file="vendor_prefix_pseudo_classes.sql"
+) }}
+
+{{ figure_markup(
+  image="vendor-prefix-pseudo-elements.png",
+  caption="Relative popularity of vendor-prefixed pseudo-elements by purpose as a percent of occurrences.",
+  description="Bar chart of the relative popularity of vendor-prefixed pseudo-elements by their purpose as a percent of occurrences. placeholder is used in 29% of prefixed occurrences, focus ring 21%, scrollbar 11%, search input 10%, media controls 8%, spinner 7%, other, selection, slider, clear button all at 3%, progress bar 2%, file upload 1%, and the remainder all at approximately 0% relative popularity on mobile pages: date picker, validation, meter, details marker, and resizer.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=2013685965&format=interactive",
+  sheets_gid="1466863581",
+  width="600",
+  height="566",
+  sql_file="vendor_prefix_pseudo_elements.sql"
+) }}
+
+{{ figure_markup(
+  image="top-pseudo-element-prefixes.png",
+  caption="Relative popularity of pseudo-element vendor prefixes as a percent of occurrences on mobile pages.",
+  description="Pie chart of the relative popularity of pseudo-element vendor prefixes as a percent of occurrences on mobile pages. -webkit makes up 47% of pseudo-element vendor prefix usage, followed by, 26% -moz, 15% -ms, 7% -o, and 6% other.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=744523431&format=interactive",
+  sheets_gid="1466863581",
+  sql_file="vendor_prefix_pseudo_elements.sql"
+) }}
 
 ### Feature queries
 
