@@ -37,41 +37,38 @@ A third party resource is an entity outside the primary site-user relationship. 
 
 Third-party resources are:
 
-*   Hosted on a _shared_ and _public_ origin
-*   Widely used by a variety of sites
-*   Uninfluenced by an individual site owner
+* Hosted on a _shared_ and _public_ origin
+* Widely used by a variety of sites
+* Uninfluenced by an individual site owner
 
 To match these goals as closely as possible, the formal definition used throughout this chapter for third-party resources is: A resource that originates from a domain whose resources can be found on at least 50 unique pages in the HTTP Archive dataset.
 
 Note that using these definitions, third-party content served from a first-party domain is counted as a first-party content. For example: Self-hosting Google Fonts or bootstrap.css is counted as _first-party content_.  Similarly, first-party content served from a third-party domain is counted as third-party content. An associated example: First-party images served over a CDN on a third-party domain are considered _third-party content_.
 
-
 ### Provider categories
 
 This chapter divides third-party providers into different categories. A brief description is included with each of the categories.  The mapping of domain to category can be found in the [third-party-web repository](https://github.com/patrickhulce/third-party-web/blob/8afa2d8cadddec8f0db39e7d715c07e85fb0f8ec/data/entities.json5).
 
-
-
-*   Ad - display and measurement of advertisements
-*   Analytics - tracking site visitor behavior
-*   CDN - providers that host public shared utilities or private content of their users
-*   Content - providers that facilitate publishers and host syndicated content
-*   Customer Success - support and customer relationship management functionality
-*   Hosting - providers that host the arbitrary content of their users
-*   Marketing - sales, lead generation, and email marketing functionality
-*   Social - social networks and their affiliated integrations
-*   Tag Manager - provider whose sole role is to manage the inclusion of other third parties
-*   Utility - code that aids the development objectives of the site owner
-*   Video - providers that host the arbitrary video content of their users
-*   Other - uncategorized or non-conforming activity
+* Ad - display and measurement of advertisements
+* Analytics - tracking site visitor behavior
+* CDN - providers that host public shared utilities or private content of their users
+* Content - providers that facilitate publishers and host syndicated content
+* Customer Success - support and customer relationship management functionality
+* Hosting - providers that host the arbitrary content of their users
+* Marketing - sales, lead generation, and email marketing functionality
+* Social - social networks and their affiliated integrations
+* Tag Manager - provider whose sole role is to manage the inclusion of other third parties
+* Utility - code that aids the development objectives of the site owner
+* Video - providers that host the arbitrary video content of their users
+* Other - uncategorized or non-conforming activity
 
 _Note on CDNs: The CDN category here includes providers that provide resources on public CDN domains (e.g. bootstrapcdn.com, cdnjs.cloudflare.com, etc.) and does not include resources that are simply served over a CDN. i.e. putting Cloudflare in front of a page would not influence its first-party designation according to our criteria._
 
 ### Caveats
 
-*   All data presented here is based on a non-interactive, cold load. These values could start to look quite different after user interaction.
-*   The pages are tested with no cookies set, so third-parties requested after opt-in are not included. This will especially affect pages hosted and predominantly served to countries in scope for the [General Data Protection Regulation](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation).
-*   Roughly 84% of all third-party domains by request volume have been identified and categorized. The remaining 16% fall into the "Other" category.
+* All data presented here is based on a non-interactive, cold load. These values could start to look quite different after user interaction.
+* The pages are tested with no cookies set, so third-parties requested after opt-in are not included. This will especially affect pages hosted and predominantly served to countries in scope for the [General Data Protection Regulation](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation).
+* Roughly 84% of all third-party domains by request volume have been identified and categorized. The remaining 16% fall into the "Other" category.
 
 ## Prevalence
 
@@ -81,14 +78,23 @@ A good starting point for this analysis is to confirm the statement that third-p
   image="pages-with-thirdparties.png",
   caption="Third party content prevalence has grown slightly since 2019",
   description="In 2019 93.6% of mobile pages had third party content, in 2020 this was 94.1%. In 2019 93.6% of desktop pages had third party content, in 2020 this was 93.9%.",
-  width=1600,
-  height=844
+  width=800,
+  height=450
   )
 }}
 
-These prevalence numbers show a slight increase on [the 2019 results](https://almanac.httparchive.org/en/2019/third-parties): 93.87% of pages in the desktop crawl had at least one third-party request, the number was slightly higher at 94.10% of pages in the mobile crawl. A brief look into the small number of pages with no third-party content revealed that many were adult sites, some were government domains and some were basic landing / holding pages with little content. It is fair to say that the vast majority of pages have at least one third-party. The
+These prevalence numbers show a slight increase on [the 2019 results](https://almanac.httparchive.org/en/2019/third-parties): 93.87% of pages in the desktop crawl had at least one third-party request, the number was slightly higher at 94.10% of pages in the mobile crawl. A brief look into the small number of pages with no third-party content revealed that many were adult sites, some were government domains and some were basic landing / holding pages with little content. It is fair to say that the vast majority of pages have at least one third-party.
 
-TODO: third-party count distribution.
+The chart below shows the distribution of pages by third-party count. The 10th percentile page has two third-party requests while the median page has 24. Over 10% of pages have more than 100 third-party requests.
+
+{{ figure_markup(
+  image="distribution-of-request-count.png",
+  caption="The median website has 24 third-party requests",
+  description="Percentile chart of pages by third-party requests.",
+  width=800,
+  height=450
+  )
+}}
 
 ### Content-Types
 
@@ -98,8 +104,8 @@ We can break down third-party requests by their content type. This is the report
   image="thirdparty-by-content-types.png",
   caption="Images and JavaScript account for the majority (60%) of third party content",
   description="37.1% of third party content is images, 21.9% is JavaScript, 16.1% is unknown or other, 15.4% is HTML",
-  width=1600,
-  height=844
+  width=800,
+  height=450
   )
 }}
 
@@ -115,8 +121,8 @@ When we dig further into domains serving third-party content we see that Google 
   image="top-domains-by-prevalence.png",
   caption="The most prevalent domains are font foundries, advertising, social media and JavaScript CDNs",
   description="",
-  width=1600,
-  height=844
+  width=800,
+  height=450
   )
 }}
 
@@ -136,8 +142,8 @@ We can extract the largest third-parties by the median page weight impact, i.e. 
   image="page-size-by-host.png",
   caption="Media providers result in the largest contribution to page size",
   description="Chart of third-party hosts and impact on page size, ranging from trailercentral.com at 2.7MB to contenservice.mc.reyrey.net at 510kB",
-  width=1600,
-  height=844
+  width=800,
+  height=450
   )
 }}
 
@@ -153,8 +159,8 @@ On the other end of the spectrum, the categories CDN, Content and Hosting all re
   image="page-size-by-category.png",
   caption="Advertising third parties have little impact on page size, CDN and Hosting has a significant impact",
   description="Distribution of third party categories and page size showing relationships between presence of third-parties and likelihood for pages to be large. CDN & Hosting show a strong correlation, Analytics shows a weak correlation",
-  width=1600,
-  height=844
+  width=800,
+  height=450
   )
 }}
 
@@ -166,8 +172,8 @@ Some third-party responses should always be cached.  Media such as images and vi
   image="requests-cached-by-content-type.png",
   caption="Font assets are the most likely to be cached, with text and xml resources least likely.",
   description="Column chart showing percentage of cacheable requests by content type. Fonts are the highest at 96%, XML is the lowest at 18%",
-  width=1600,
-  height=844
+  width=800,
+  height=450
   )
 }}
 
@@ -181,8 +187,8 @@ Many third-parties result in redirect responses, i.e. HTTP status codes 3XX. The
   image="redirects-body-size.png",
   caption="Most redirects are under 420B, the 99th percentile is over 30kB!",
   description="Distribution of redirect body sizes showing 90% are under 420B, 1% are over 30kB and 0.1% are over 100kB",
-  width=1600,
-  height=844
+  width=800,
+  height=450
   )
 }}
 
@@ -198,8 +204,8 @@ The chart below shows the percentage of requests that load early, by device type
   image="requests-before-dom-by-category.png",
   caption="Public CDN resources are most likely to be downloaded before DOM Content Loaded, with Social, Advertising and Customer Success most likely to be loaded later.",
   description="Column chart showing percentage of requests loaded before DOM Content Loaded. Public CDN resources are most likely at 50% on desktop, whilst advertising resources are least likely at 7%",
-  width=1600,
-  height=844
+  width=800,
+  height=450
   )
 }}
 
@@ -213,8 +219,8 @@ We can correlate the presence of third-party categories with the total CPU time 
   image="cpu-time-by-category.png",
   caption="Pages with advertising third parties are more likely to have a high CPU load time.",
   description="Distribution of CPU load time by presence of third party categories. Most categories follow the same pattern, with advertising the outlier showing higher CPU load time, especially at lower percentiles.",
-  width=1600,
-  height=844
+  width=800,
+  height=450
   )
 }}
 
@@ -229,8 +235,8 @@ The [Resource Timing API] allows website owners to measure the performance of in
   image="requests-with-tao.png",
   caption="Less than 35% of third party responses are served with a timing-allow-origin header",
   description="Less than 35% of third party responses are served with a timing-allow-origin header",
-  width=1600,
-  height=844
+  width=800,
+  height=450
   )
 }}
 
