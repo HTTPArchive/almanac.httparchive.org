@@ -33,9 +33,9 @@ In this chapter, we explore the current state-of-practice for security on the We
 
 ## Transport security
 
-The last year has seen a continuation of the growth of HTTPS on websites. Securing the transport layer is a basic part of web security–unless you can be confident the resources downloads for this website have not been altered in transit, and that you are transporting data to and from the website you think you are, any certainties about the website security are basically rendered null and void.
+The last year has seen a continuation of the growth of HTTPS on websites. Securing the transport layer is a basic part of web security–unless you can be confident the resources downloaded for this website have not been altered in transit, and that you are transporting data to and from the website you think you are, any certainties about the website security are basically rendered null and void.
 
-Moving our web traffic to HTTPS, and eventually [marking HTTP as non-secure](https://www.chromium.org/Home/chromium-security/marking-http-as-non-secure) is being driven by web browsers only allowing [powerful new features to the secure context](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts/features_restricted_to_secure_contexts) (the carrot)while also increasing warnings dhoen to users when unencrypted connections are used (the stick), whiles at the same time.
+Moving our web traffic to HTTPS, and eventually [marking HTTP as non-secure](https://www.chromium.org/Home/chromium-security/marking-http-as-non-secure) is being driven by web browsers only allowing [powerful new features to the secure context](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts/features_restricted_to_secure_contexts) (the carrot)while also increasing warnings shown to users when unencrypted connections are used (the stick), whiles at the same time.
 
 The effort is paying off hugely and we are now seeing 87.70% of requests on desktop and 86.90% of requests on mobile being served over HTTPS.
 
@@ -122,7 +122,7 @@ One important point to note is that our data is based on running Chrome to conne
 
 ## Certificate Authorities
 
-Next we will look at the Certificate Authorities (CAs) issuing the TLS certificates used by the sites we have crawled.
+Next we will look at the Certificate Authorities (CAs) issuing the TLS certificates used by the sites we have crawled. [Last year's chapter](../2019/security#certificate-authorities), looked at the requests, but that will be dominated by popullar [third-parties](./third-parties) like Google (who also dominate again this year from that metric), so this year we are going to look at the websites themselves.
 
 <figure>
   <table>
@@ -189,7 +189,7 @@ Next we will look at the Certificate Authorities (CAs) issuing the TLS certifica
   <figcaption>{{ figure_link(caption="Top 10 certificate issuers for websites.", sheets_gid="1486167130", sql_file="tls_ca_issuers_pages.sql.sql") }}</figcaption>
 </figure>
 
-It is no surprise to see Let's Encrypt well in the lead easily taking the top spot improving on its [number two position last year](../2019/security#certificate-authorities). Its combination of free and automated certificates is proving a winner with both individual website owners and platforms. Cloudflare similarly offers free certificates for its customers taking the number two and number nine position. What is more interesting there is that it is the ECC Cloudflare issuer that is being used. ECC certificates are smaller and so more efficient than RSA certificates but can be complicated to deploy as support is universal and managing both certificates often requires extra effort. This is the benefit of a CDN or hosted provider if they can manage this for you like Cloudflare does here. Browsers that supporting ECC (like the Chrome browser we use in our crawl) will use that, and older browsers will use RSA.
+It is no surprise to see Let's Encrypt well in the lead easily taking the top spot; its combination of free and automated certificates is proving a winner with both individual website owners and platforms. Cloudflare similarly offers free certificates for its customers taking the number two and number nine position. What is more interesting there is that it is the ECC Cloudflare issuer that is being used. ECC certificates are smaller and so more efficient than RSA certificates but can be complicated to deploy as support is not universal and managing both certificates often requires extra effort. This is the benefit of a CDN or hosted provider if they can manage this for you like Cloudflare does here. Browsers that support ECC (like the Chrome browser we use in our crawl) will use that, and older browsers will use RSA.
 
 {# TODO finish this out:
 
