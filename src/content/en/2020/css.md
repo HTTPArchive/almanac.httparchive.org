@@ -316,9 +316,64 @@ Percentile | Desktop | Mobile
 
 ### Calculations
 
+{{ figure_markup(
+  image="calc-properties.png",
+  caption="Relative popularity of properties that use `calc()` as a percent of occurrences.",
+  description="Bar chart showing the relative popularity of properties that use the calc function as a percent of occurrences. Desktop and mobile have similar results. The calc function is used most often on the width property, 59% of calc occurrences on mobile pages. It's used on the left property 11% of the time, top 5%, max-width 4%, height 4%, and the remaining properties are decreasing at 2% and 1%: min-height, margin-left, flex-basis, margin-right, max-height (1%), right, padding-bottom, padding-left, font-size, and padding-right.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=722318406&format=interactive",
+  sheets_gid="1661677319",
+  sql_file="calc_properties.sql"
+) }}
+
+{{ figure_markup(
+  image="calc-units.png",
+  caption="Relative popularity of units that use `calc()` as a percent of occurrences.",
+  description="Bar chart showing the relative popularity of properties that use the calc function as a percent of occurrences. Desktop and mobile have similar results. The calc function is used most often on the width property, 59% of calc occurrences on mobile pages. It's used on the left property 11% of the time, top 5%, max-width 4%, height 4%, and the remaining properties are decreasing at 2% and 1%: min-height, margin-left, flex-basis, margin-right, max-height (1%), right, padding-bottom, padding-left, font-size, and padding-right.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=477094785&format=interactive",
+  sheets_gid="769910871",
+  sql_file="calc_units.sql"
+) }}
+
+{{ figure_markup(
+  image="calc-operators.png",
+  caption="Relative popularity of operators that use `calc()` as a percent of occurrences.",
+  description="Bar chart showing the relative popularity of operators that use the calc function as a percent of occurrences. Desktop and mobile have similar results. The calc function is used most often with the subtraction operator (minus sign), 64% of calc instances on mobile pages, followed by division (forward slash) 20%, addition (plus sign) 11%, and multiplication (asterisk) 5%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1909242522&format=interactive",
+  sheets_gid="2077258816",
+  sql_file="calc_operators.sql"
+) }}
+
+{# TODO(analysts): Figure out what happened to the 3+ label in this chart. #}
+{{ figure_markup(
+  image="calc-complexity-units.png",
+  caption="Distribution of the number of units per `calc()` occurrence.",
+  description="Bar chart showing the distribution of the number of units per calc function occurrence. Desktop and mobile have similar results. Calc is used with one unit 11% of the time on mobile pages, twice 89% of the time, and 3 or more times approximately 0% of the time.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=695698141&format=interactive",
+  sheets_gid="1493602565",
+  sql_file="calc_complexity_units.sql"
+) }}
+
 ### Global keywords and `all`
 
+{{ figure_markup(
+  image="keyword-totals.png",
+  caption="Adoption of global keywords as a percent of pages.",
+  description="Bar chart showing the adoption of global keywords as a percent of pages. Mobile pages tend to have a higher adoption rate. The inherit keyword is used on 85% of mobile pages, initial on 51%, unset on 43%, and revert on approximately 0%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1246886332&format=interactive",
+  sheets_gid="437371205",
+  sql_file="keyword_totals.sql"
+) }}
+
 ## Color
+
+{{ figure_markup(
+  image="popular-color-formats.png",
+  caption="Relative popularity of color formats as a percent of occurrences.",
+  description="Bar chart showing the relative popularity of color formats as a percent of occurrences. The #rrggbb color format is used in 50% of occurrences on mobile pages, with desktop slightly higher at 52%. The #rgb format is used in 25% of occurrences, followed by rgba() at 14%, transparent at 8%, a named color (like red) at 1%, and the remaining color formats all have approximately 0% relative popularity on mobile pages: #rrggbbaa, rbg(), hsla(), currentColor, #rgba, a system color, hsl(), and color().",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=65722098&format=interactive",
+  sheets_gid="366025718",
+  sql_file="color_formats.sql"
+) }}
 
 ## Gradients
 
