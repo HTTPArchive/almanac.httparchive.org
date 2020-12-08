@@ -8,7 +8,7 @@ authors: [ydimova]
 reviewers: [ldevernay]
 analysts: [ydimova, max-ostapenko]
 translators: []
-#ydimova_bio: TODO
+#ydimova_bio:  Yana Dimova is a PhD student at KU Leuven university in Belgium, working on privacy and web security.
 discuss: 2046
 results: https://docs.google.com/spreadsheets/d/16bE70rv4qbmKIqbZS1zUiTRpk5eOlgxBXEabL1qiduI/
 queries: 10_Privacy
