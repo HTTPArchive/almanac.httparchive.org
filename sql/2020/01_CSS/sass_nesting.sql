@@ -8,21 +8,24 @@ try {
     return [];
   }
 
-  return Object.entries(scss.scss.stats.nested).map(([nested, freq]) => {
+  let ret = scss.scss.stats.nested;
+  ret.total = sumObject(ret);
+  return Object.entries(ret).map(([nested, freq]) => {
     return {nested, freq};
   });
 } catch (e) {
   return [];
 }
-''';
+'''
+OPTIONS (library="gs://httparchive/lib/css-utils.js");
 
 SELECT
   client,
   nested,
   COUNT(DISTINCT IF(freq > 0, page, NULL)) AS pages,
   SUM(freq) AS freq,
-  SUM(SUM(freq)) OVER (PARTITION BY client) AS total,
-  SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client) AS pct
+  SUM(SUM(freq)) OVER (PARTITION BY client) / 2 AS total,
+  SUM(freq) / (SUM(SUM(freq)) OVER (PARTITION BY client) / 2) AS pct
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
