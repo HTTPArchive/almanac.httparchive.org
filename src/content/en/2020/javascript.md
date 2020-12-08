@@ -296,7 +296,7 @@ Both are very sound guesses, and it seems the situation hasn't changed much on e
 In fact, the dominance of jQuery is supported even further when you stop to consider that, of the top 10 libraries, 6 of them are either jQuery or require jQuery in order to be used (jQuery UI, jQuery Migrate, FancyBox, Lightbox and Slick).
 
 ### Frameworks
-When we look at the frameworks, we also don't see much of a dramatic change in terms of adoption in the main frameworks that were highlighted last year. Vue.js has seen a significant increase, and AMP grew a bit, but most of them are more less where they were a year ago. 
+When we look at the frameworks, we also don't see much of a dramatic change in terms of adoption in the main frameworks that were highlighted last year. Vue.js has seen a significant increase, and AMP grew a bit, but most of them are more or less where they were a year ago. 
 
 {# Compare same frameworks from last year's chapter to this year in bar chart? #}
 
