@@ -26,7 +26,7 @@ unedited: true
 ## Introduction
 We keep hearing that the Mobile Web has grown explosively in the last decade and is now the primary way many people experience the web. In this chapter we explore just how significant the mobile web is, and what kind of experiences visitors are expecting and being served.
 
-2020 has seen a big surge in internet usage, on both mobile and desktop, due to the global pandemic. There has been an uptick in visits to news sites, ecommerce and social media sites -- as people across the globe adjusted to a new lifestyle with stay-at-home orders and social distancing. 2020 has been a significant year in history, for the web and for mobile usage.
+2020 has seen a big surge in [internet usage](https://www.nytimes.com/interactive/2020/04/07/technology/coronavirus-internet-use.html), on both mobile and desktop, due to the global pandemic. There has been an uptick in visits to news sites, ecommerce and social media sites -- as people across the globe adjusted to a new lifestyle with stay-at-home orders and social distancing. 2020 has been a significant year in history, for the web and for mobile usage.
 
 ### <a name="datasources"></a> A note on our data sources
 We’ve used a few different data sources in this chapter: 
@@ -107,7 +107,7 @@ If your website is substantially different from the industry average, it could b
 ## <a name="user-journey"></a>The user journey
 User journeys, including commercial journeys, on the mobile web are often difficult to complete.
 
-While mobile represents 79.6% of time spent amongst retail sites, it only accounts for 32.3% of eCommerce sales (source). This suggests that users frequently start their journey on mobile, but often finish on desktop. Why might that be? 
+While mobile represents 79.6% of time spent amongst retail sites, it only accounts for 32.3% of eCommerce sales ([source](https://www.emarketer.com/content/frictionless-commerce-2020?li=undefined)). This suggests that users frequently start their journey on mobile, but often finish on desktop. Why might that be? 
 
 To reason about questions like this, we need to first understand the elements of the user journey.
 
