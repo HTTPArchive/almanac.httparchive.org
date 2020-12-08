@@ -280,9 +280,9 @@ We saw only 19.67% of pages passing Lighthouse's "[Preconnect to required origin
   sql_file="lighthouse_preload.sql"
 ) }}
 
-Running Lighthouse's "[Preload key requests](https://web.dev/uses-rel-preload/)" audit resulted in 84.6% of pages passing the test, which is an astonishing result. If you are looking to use `preload` for the first time, remember, fonts and critical scripts are a good place to start.
+Running Lighthouse's "[Preload key requests](https://web.dev/uses-rel-preload/)" audit resulted in 84.6% of pages passing the test. If you are looking to use `preload` for the first time, remember, fonts and critical scripts are a good place to start.
 
-{# TODO(authors) - revisit this sentence - Ref https://github.com/HTTPArchive/almanac.httparchive.org/pull/1587#discussion_r532291496 #}
+{# TODO(authors/reviewers) - revisit this sentence - Ref https://github.com/HTTPArchive/almanac.httparchive.org/pull/1587#discussion_r532291496 #}
 
 ### Native Lazy Loading
 
