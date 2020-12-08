@@ -111,7 +111,7 @@ As raw numbers, those may or may not jump out at you depending on how much of a 
 That 153 KB equates to ~37% of the total script size that we send down to mobile devices. There's definitely some room for improvement here.
 
 ### Request Count
-Another way of looking at how much JavaScript we use is to explore how many JavaScript requests are made on each page. While reducing the number of requests was paramount to maintainingg good performance with HTTP/1.1, with HTTP/2 the opposite is the case: breaking JavaScript down into [smaller, individual files](https://web.dev/granular-chunking-nextjs/) is [typically better for performance](https://almanac.httparchive.org/en/2019/http2#impact-of-http2). 
+Another way of looking at how much JavaScript we use is to explore how many JavaScript requests are made on each page. While reducing the number of requests was paramount to maintaining good performance with HTTP/1.1, with HTTP/2 the opposite is the case: breaking JavaScript down into [smaller, individual files](https://web.dev/granular-chunking-nextjs/) is [typically better for performance](https://almanac.httparchive.org/en/2019/http2#impact-of-http2). 
 
 {{ figure_markup(
   image="requests-2020.png",
