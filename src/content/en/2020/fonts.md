@@ -249,7 +249,7 @@ Icon fonts are fully half of the top 10 most popular web fonts, the rest being c
 {{ figure_markup(
   image="fonts-popular-typefaces.png",
   caption="Popular typefaces.",
-  description="A bar chart showing the 10 most popular web fonts, starting with Font Awesome (35% of desktop and mobile), Open Sans (23% desktop and 25% of mobile), Roboto (17% desktop and 23% mobile), Glyphicons Halflings (16% for both), Lato (11% for both), Montserrat (19% for both), Font Awesome 5 Brands (19% for both), Font Awesome 5 Free (9% desktop and 8% mobile), Raleway (6% for both), and dashicons (6% for both).",
+  description="A bar chart showing the 10 most popular web fonts, starting with Font Awesome (35% of desktop and mobile), Open Sans (23% desktop and 25% of mobile), Roboto (17% desktop and 23% mobile), Glyphicons Halflings (16% for both), Lato (11% for both), Montserrat (19% for both), Font Awesome 5 Brands (9% for both), Font Awesome 5 Free (9% desktop and 8% mobile), Raleway (6% for both), and dashicons (6% for both).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=551344676&format=interactive",
   sheets_gid="179750099",
   sql_file="04_11a.popular_typeface.sql",
