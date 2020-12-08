@@ -5,7 +5,7 @@ chapter_number: 12
 title: Mobile Web
 description: Mobile Web chapter of the 2020 Web Almanac covering page loading, textual content, zooming and scaling, buttons and links, and ease of filling out forms.
 authors: [spanicker, mdiblasio]
-reviewers: [malchata, obto, cheneytsai]
+reviewers: [obto]
 analysts: [obto]
 translators: []
 #spanicker_bio: TODO
@@ -63,7 +63,7 @@ We looked at traffic to origins by popularity -- how often are users visiting ce
 Rick Byers [tweeted](https://twitter.com/RickByers/status/1195342331588706306) this distribution a year ago, we looked at the latest data.
 The chart shows us the overall distribution across origins by their popularity, captured by their contribution to % page loads in Chrome.
 
-TODO: Insert chart: Page loads across origins ranked by popularity
+{# TODO: Insert chart: Page loads across origins ranked by popularity #}
 
 Some takeaways:
 
@@ -84,7 +84,7 @@ It’s hard to predict, because the distribution between mobile and desktop will
 
 We looked at the CrUX dataset to assess Chrome traffic to sites from mobile devices vs desktop.
 
-TODO: Insert chart: mobile traffic distribution
+{# TODO: Insert chart: mobile traffic distribution #}
 
 The distribution appears mobile heavy. A reason for that is that there are many (2 million+ in CrUX) sites which, while low in total traffic, only get traffic from mobile.  Mobile has a much longer “tail” as we saw in the previous section.
 
@@ -152,7 +152,7 @@ Largest Contentful Paint (LCP) is a timing-based metric that captures this -- th
 
 A good LCP score is 2.5s at p75. We found that the median LCP at p75 is 2.6s on mobile and 2.3s on desktop. Mobile web is especially susceptible to missing the mark on LCP.
 
-TODO: Insert chart: Median LCP score
+{# TODO: Insert chart: Median LCP score #}
 
 ##### Images
 While every type of asset, such as font, CSS, Javascript etc. plays an important role in loading performance, we take a closer look at images.
@@ -162,7 +162,7 @@ The web continues to move towards image-heavy pages, with the growth of bandwidt
 Improperly sized and unoptimized images are frequent sources for image performance problems.
 A staggering 41.20% of pages have improperly sized images.
 
-TODO: Insert chart: Pages with improperly sized images
+{# TODO: Insert chart: Pages with improperly sized images #}
 
 4.1% of pages which have images, use the lazy loading attribute on their images, decent adoption for a relatively new primitive.
 
@@ -173,7 +173,7 @@ The next phase of the user journey is engagement of users towards consuming cont
 Shifting content is detrimental to the experience of users engaging with content.  Specifically, content that shifts in position as resources load, impedes the user experience.  Since browsers download and display content as soon as they are able, it’s important to design your site to smooth over the user experience.
 This is especially important for mobile web, as shifting content is more noticeable on small screens.
 
-TODO: insert image gif of shifting content
+{# TODO: insert image gif of shifting content #}
 
 ##### Cumulative Layout Shift
 [Cumulative Layout Shift](https://web.dev/cls/) (CLS) is a metric that quantifies how much content within the viewport shifts around, during the user visit. 
@@ -190,7 +190,7 @@ It’s not trivial to identify these causes locally or in a development environm
 
 According to CrUX data, 60% of mobile sites and 54% of desktop sites, have a good CLS.
 
-TODO: Insert chart: Aggregate CLS performance by device
+{# TODO: Insert chart: Aggregate CLS performance by device #}
 
 #### Design elements
 To engage users, it’s important to help them quickly find what they’re looking for, and fulfil their intention.
@@ -198,14 +198,14 @@ To engage users, it’s important to help them quickly find what they’re looki
 ##### Landing pages
 Simple design tweaks go a long way, for instance a clear call-to-action, and making the value proposition evident to the user, with a few words.
 
-TODO: Insert image of Pixel landing page
+{# TODO: Insert image of Pixel landing page #}
 
 [Research has shown](https://www.nngroup.com/articles/auto-forwarding/) that auto-forwarding carousels are detrimental to the user experience. Auto-forwarding carousels on the homepage should be avoided or their frequency should be decreased.
 
 ##### Color and contrast
 Consider the following examples from [5 lessons Eastpak learned from its mobile audience](https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/5-lessons-eastpak-learned-its-mobile-audience/):
 
-TODO: Insert image: Eastpak +12 CTR
+{# TODO: Insert image: Eastpak +12 CTR #}
 
 A simple color change on the check out button from black to orange, made it stand out more and increased their conversion rate by 12%.
 
@@ -215,7 +215,7 @@ Text with low contrast ratio is hard to read, for instance, light gray text on a
 
 Lighthouse now [checks for color contrast](https://web.dev/color-contrast/), we found that 78.94% -- a majority of web pages, were lacking sufficient color contrast.
 
-TODO: Insert chart: Sites with sufficient color contrast
+{# TODO: Insert chart: Sites with sufficient color contrast #}
 
 ##### Tap targets
 Mobile user experience is susceptible to “fat fingering”, as users engage with sites using their fingers -- a rather imprecise tool compared to using a mouse on a desktop.
@@ -224,7 +224,7 @@ Based on research, there are standards for minimum size of buttons and tap targe
 [Lighthouse recommends](https://web.dev/tap-targets/) that targets should be no smaller than 48 px by 48 px, and no closer than 8 px apart.
 We found that  63.69% -- a majority of web pages, had improperly sized tap targets. This is a slight improvement over last year, where 65.57% web pages had improperly sized tap targets.
 
-TODO: Insert chart: Sites with properly sized tap targets
+{# TODO: Insert chart: Sites with properly sized tap targets #}
 
 ##### Search input
 Search input or a search bar is a crucial tool for engaging users, it enables them to quickly find the information they are looking for.  It is especially important for mobile devices, as they lack the screen real estate to easily consume large amounts of information.
@@ -234,12 +234,12 @@ For sites with 100+ pages, it is recommended to feature a prominent search bar.
 
 A [case study with fashion website lyst.com](https://www.thinkwithgoogle.com/intl/en-cee/marketing-strategies/data-and-measurement/lyst-increases-overall-conversion-rate-25-making-usability-improvements/), showed that replacing the search icon with a search box enabled users to locate the search function more easily, increasing usage by 43% on desktop, and by 13% on mobile.
 
-TODO: Insert image: search input lyst.com
+{# TODO: Insert image: search input lyst.com #}
 
 Search input is used in 17% of all sites using any input. 
 At 60.10%, a majority of ecommerce landing pages are missing the presence of search input.
 
-TODO: Insert chart: Ecommerce sites using search input
+{# TODO: Insert chart: Ecommerce sites using search input #}
 
 ##### A/B testing
 A/B testing is a crucial tool for making data driven decisions on matters of design and UX. 
@@ -262,7 +262,7 @@ Compared to desktop, transacting on mobile devices is error-prone and tedious, a
 #### Form Semantics
 Users can more easily enter required information on mobile devices when their keyboard is optimized for the appropriate input type. For example, a numeric keyboard is useful for entering phone numbers, while keyboards displaying the “@” symbol are useful for entering email addresses. Sites can provide browser hints to display the most appropriate keys using the `type` attribute on `input` tags. 
 
-TODO: Insert chart: Sites (with inputs) using input types
+{# TODO: Insert chart: Sites (with inputs) using input types #}
 
 #### Sign up, Sign in and Checkout
 Today, browsers can help populate the necessary user information to complete a transaction and help reduce potential input errors. The `autocomplete` attribute can provide browsers hints to populate input elements with the correct user information. Users who successfully use Chrome Autofill to enter their information go through checkout an average of 30% faster than those who don't ([source](https://developers.google.com/web/fundamentals/design-and-ux/input/forms#use_metadata_to_enable_auto-complete)).
