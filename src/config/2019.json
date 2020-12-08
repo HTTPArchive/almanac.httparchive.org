@@ -425,9 +425,8 @@
     "colinbendell": {
       "name": "Colin Bendell",
       "teams": [
-        "brainstormers",
         "authors",
-        "analysts"
+        "brainstormers"
       ],
       "avatar_url": "https://avatars0.githubusercontent.com/u/1622597?v=4&s=200",
       "github": "colinbendell",
@@ -722,14 +721,6 @@
       "github": "MSakamaki",
       "twitter": "msakamaki2"
     },
-    "hakimelek": {
-      "name": "Malek Hakim",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "https://avatars1.githubusercontent.com/u/1974993?v=4&s=200",
-      "github": "hakimelek"
-    },
     "mnot": {
       "name": "Mark Nottingham",
       "teams": [
@@ -807,12 +798,6 @@
       "website": "http://mor10.com/",
       "github": "mor10",
       "twitter": "mor10"
-    },
-    "natasha-kosoglov": {
-      "name": "Natasha Kosoglov",
-      "teams": [
-        "reviewers"
-      ]
     },
     "nektarios-paisios": {
       "name": "Nektarios Paisios",

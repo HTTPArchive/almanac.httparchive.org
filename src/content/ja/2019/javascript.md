@@ -4,7 +4,7 @@ chapter_number: 1
 title: JavaScript
 description: 2019年のWeb AlmanacのJavaScriptの章では、Web上でどれだけJavaScriptを使用しているか、圧縮、ライブラリとフレームワーク、読み込み、ソースマップを網羅しています。
 authors: [housseindjirdeh]
-reviewers: [obto, paulcalvano, mathiasbynens]
+reviewers: [obto, paulcalvano, mathiasbynens, rviscomi]
 analysts: [rviscomi]
 translators: [ksakae]
 discuss: 1756
@@ -315,8 +315,8 @@ JavaScriptのリソースを圧縮しているサイトはどれくらいある�
 
 ここでは人気のあるフレームワークのサブセットのみを分析していますが、これらのフレームワークはすべて、これら2つのアプローチのいずれかに従っていることに注意することが重要です。
 
-- [モデルビューコントローラ](https://developer.chrome.com/apps/app_frameworks)（またはモデルビュービューモデル）アーキテクチャー   
-- コンポーネントベースアーキテクチャ   
+- [モデルビューコントローラ](https://developer.chrome.com/apps/app_frameworks)（またはモデルビュービューモデル）アーキテクチャー
+- コンポーネントベースアーキテクチャ
 
 コンポーネントベースモデルへの移行が進んでいるとはいえ、MVCパラダイムを踏襲した古いフレームワーク（[AngularJS](https://angularjs.org/)、[Backbone.js](https://backbonejs.org/)、[Ember](https://emberjs.com/)）は、いまだに何千ページにもわたって使われています。しかし、[React](https://reactjs.org/)、[Vue](https://vuejs.org/)、[Angular](https://angular.io/)はコンポーネントベースのフレームワークが主流です（[Zone.js](https://github.com/angular/zone.js)は現在Angular coreの一部となっているパッケージです）。
 
