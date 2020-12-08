@@ -140,7 +140,6 @@ The `Expires` header can be thought of as a 'blunt instrument'.  If a relative c
 
 HTTP/1.1 introduced the `Cache-Control` header, which is supported by all modern browsers. The `Cache-Control` header provides much more extensibility and flexibility than `Expires` via *caching directives*, several of which can be specified together. Details on the various directives are below.
 
-### Example
 The simple example below shows a request and response for a JavaScript file (some headers have been removed for clarity). The `Date` header indicates the current date (specifically, the date that the content was served).  The `Expires` header indicates that it can be cached for 10 minutes (the difference between the `Expires` and `Date` headers). The `Cache-Control` header specifies the `max-age` directive, which indicates that the resource can be cached for 600 seconds (5 minutes). Since `Cache-Control` takes precedence over `Expires`, the browser will cache the response for 5 minutes, after which it will be marked as stale:
 
 <pre><code>> GET /static/js/main.js HTTP/2
@@ -245,8 +244,6 @@ Below is a table showing the most common `Cache-Control` directives:
 
 The `max-age` directive is the most commonly-found, since it directly defines the TTL, in the same way that the `Expires` header does.
 
-### Example
-
 Here is an example of a valid Cache-Control header with multiple directives:
 
 `Cache-Control: public, max-age=86400, must-revalidate`
@@ -326,7 +323,8 @@ If the server wants to allow the browser to make use of conditional requests (th
 
 If both headers are present, `ETag` takes precedence.
 
-### Example - Last-Modified
+### `Last-Modified`
+
 When the server receives the request for the file, it can include the date/time that the file was most recently changed as a response header, like this:
 
 <pre><code>
@@ -368,7 +366,8 @@ However, if the file on the server has changed since it was last requested by th
 
 As you can see, the `Last-Modified` response header and `If-Modified-Since` request header work as a pair.
 
-### Example - ETag
+### ETag
+
 The functionality here is almost exactly the same as the date-based `Last-Modified` / `If-Modified-Since` conditional request processing described above.
 
 However, in this case, the Server sends an `ETag` response header - rather than a date timestamp, an `ETag` is simply a string - often a hash of the file contents or a version number calculated by the server. The format of this string is entirely up to the server - the only important fact is that the server changes the `ETag` value whenever it changes the file.
@@ -443,8 +442,6 @@ In the same way that the `Cache-Control` header has more power and flexibility t
   )
 }}
 
-### Note
-
 Correctly-implemented revalidation using conditional requests can significantly reduce bandwidth (304 responses are typically much smaller than 200 responses), load on servers (only a small amount of processing is required to compare change dates or hashes) and improve perceived performance (servers respond more quickly with a 304). However, as we can see from the above statistics, more than a fifth of all requests are not using any form of conditional requests.
 
 * Only 0.1% of the responses had a `304 Not Modified` status.
@@ -511,7 +508,6 @@ To solve this problem, when a caching entity caches an object, it gives the obje
 
 The `Vary` response header instructs the browser to add the value of one or more request header values to the cache key. The most common example of this is `Vary: Accept-Encoding`, which will result in the browser caching the same object in different formats, based on the different Accept-Encoding request header values (i.e. `gzip, br, deflate`).
 
-### Example
 A caching entity sends a request for an HTML file, indicating that it will accept a gzipped response:
 
 <pre><code>> GET /index.html HTTP/2
