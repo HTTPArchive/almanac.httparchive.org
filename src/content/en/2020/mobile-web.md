@@ -103,3 +103,66 @@ However odds are that for site visits in Chrome, a given website has traffic pre
 While one cannot generalize the expected traffic distribution from mobile vs. desktop for individual websites, it is worth comparing your site’s distribution to that of the industry category ([some data is available here](https://www.perficient.com/insights/research-hub/mobile-vs-desktop-usage-study)).
 
 If your website is substantially different from the industry average, it could be worth digging into the reason, for instance poor loading performance could be one reason.
+
+# The user journey
+User journeys, including commercial journeys, on the mobile web are often difficult to complete.
+
+While mobile represents 79.6% of time spent amongst retail sites, it only accounts for 32.3% of eCommerce sales (source). This suggests that users frequently start their journey on mobile, but often finish on desktop. Why might that be? 
+
+To reason about questions like this, we need to first understand the elements of the user journey.
+
+We break down the user journey into 4 phases.
+
+## 1. Acquisition
+For a website, acquisition of visitors is a crucial entry phase.
+Acquisition involves getting visitors to the website, often through search engines, Ad clicks, links from other sites and from social media.
+
+### SEO
+SEO is crucial for the acquisition phase.  Search engines are an important source of visitors being sent to websites, embarking on their user journeys.
+The main goal of SEO is to ensure that a website is optimized for search engines, i.e. search engine bots that need to crawl and index its pages, as well as the users that will be navigating the website and consuming its content.
+
+A lot of users start their search on mobile. As noted earlier, on google.com, mobile Chrome on Android sees 2.3x more page loads compared to desktop Chrome on Windows.
+
+#### Responsive web design
+Due to the popularity of  mobile devices to browse and search the web, Google search moved to a [mobile-first Index](https://developers.google.com/search/blog/2016/11/mobile-first-indexing) a few years ago. This means that search ranking considers pages as seen by mobile users, and mobile friendliness is now a ranking factor. Google will [fully switch to a mobile-first index](https://developers.google.com/search/blog/2020/07/prepare-for-mobile-first-indexing-with), for all sites, in March 2021.
+
+Websites should ensure mobile friendliness for a good search experience and SEO, as this impacts traffic from search users. [Responsive web design](https://developers.google.com/search/mobile-sites/mobile-seo/responsive-design) is the recommended way to achieve this. 
+
+Responsive websites use the viewport meta tag as well as CSS media queries to provide a mobile friendly experience. To learn more about these mobile friendliness aspects, head over to the [SEO chapter]((../seo#mobile-friendliness)).
+
+Learn more about [responsive web design here](https://web.dev/responsive-web-design-basics/). 
+
+Beyond organic traffic from search engines, **Ad clicks** could be a key source of visitors being sent to websites. Similar to SEO, optimizing Ads can be important for websites who invest in and receive traffic from Ads.
+
+
+### Loading performance 
+First impressions matter. Delivering page content in a timely manner is critical for avoiding visitor abandonment and user frustration.
+Loading performance is a key aspect of the acquisition phase, poor loading performance results in users abandoning this journey.
+
+A recent study showed that 0.1s mSpeed improvement increased conversion rates by +8.4% for retail sites and +10.1% for travel sites ([source](https://web.dev/milliseconds-make-millions/)).
+
+Loading performance is a vast topic, so we picked a couple of aspects to cover here.
+
+#### Largest Contentful Paint
+A key aspect of the loading experience is how quickly the main content of a web page loads and is visible to users.
+This has been difficult to measure, in the past Google recommended performance metrics like [First Meaningful Paint](https://web.dev/first-meaningful-paint/) (FMP) to capture this, but it was hard to explain, and often unable to identify when the main content of the page was visible.
+
+Sometimes simpler is better. More recently it’s been found that a more accurate way to measure when the main content of a page is loaded is to simply look at when the largest element was rendered.
+Largest Contentful Paint (LCP) is a timing-based metric that captures this -- the time at which the largest above-the-fold element was rendered.
+
+A good LCP score is 2.5s at p75. We found that the median LCP at p75 is 2.6s on mobile and 2.3s on desktop. Mobile web is especially susceptible to missing the mark on LCP.
+
+TODO: Insert chart: Median LCP score
+
+#### Images
+While every type of asset, such as font, CSS, Javascript etc. plays an important role in loading performance, we take a closer look at images.
+
+The web continues to move towards image-heavy pages, with the growth of bandwidth and the ubiquity of smartphones. And images impose a cost on loading performance.
+
+Improperly sized and unoptimized images are frequent sources for image performance problems.
+A staggering 41.20% of pages have improperly sized images.
+
+TODO: Insert chart: Pages with improperly sized images
+
+4.1% of pages which have images, use the lazy loading attribute on their images, decent adoption for a relatively new primitive.
+
