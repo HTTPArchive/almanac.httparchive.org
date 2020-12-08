@@ -59,7 +59,7 @@ The higher the page contrast, the easier it is for people to view text-based con
 
 The ability to set scale and zoom of desktop pages helps those with vision loss to more easily navigate sites, as well as allowing users of less precise navigation tools easier control of sites. 
 
-These were disabled on 24.39% of desktop sites checked, and 30.66% of mobile sites. Some operating systems no longer comply with disabled zoom and scale set in HTML, though for systems that do respect it, this can render the page effectively unusable for some. For more information about why to avoid disabling browser zoom see Adrian Roselli’s article, [Don’t Disable Zoom](https://adrianroselli.com/2015/10/dont-disable-zoom.html).
+These were disabled on 24.39% of desktop sites checked, and 30.66% of mobile sites. Some operating systems no longer comply with disabled zoom and scale set in HTML. For systems that do respect it, this can render the page effectively unusable for some. For more information about why to avoid disabling browser zoom see Adrian Roselli’s article, [Don’t Disable Zoom](https://adrianroselli.com/2015/10/dont-disable-zoom.html).
 
 ### Language Identification
 
@@ -444,5 +444,4 @@ The tech industry needs to move towards inclusion driven development. Although t
 The largest investment should come in the form of education and process improvements. Once a UI designer understands the nuances of color contrast requirements, selecting an accessible color palette should be the same effort as an inaccessible palette. Once a developer deeply understands native HTML and ARIA and when to reach for certain techniques and tools, the amount of code they write should be comparable. 
 
 As an industry it’s time that we acknowledge the story told by the numbers in this chapter; we are failing disabled people. We need to do better, and this has to come from a combination of top-down leadership and investment and bottom-up effort to push our practices forward and advocate for the needs, safety and inclusion of disabled people using the Web. 
-
 
