@@ -128,9 +128,9 @@ const generate_chapters = async (chapter_match) => {
 
     const sitemap_path = await generate_sitemap(sitemap,sitemap_languages);
     await size_of(sitemap_path);
-  }
 
-  await get_contributors_difference(configs, contributors);
+    await get_contributors_difference(configs, contributors);
+  }
 
 };
 
