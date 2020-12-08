@@ -1008,15 +1008,6 @@ Percentile | Desktop | Mobile
 ) }}
 
 {{ figure_markup(
-  image="top-pseudo-element-prefixes.png",
-  caption="Relative popularity of pseudo-element vendor prefixes as a percent of occurrences on mobile pages.",
-  description="Pie chart of the relative popularity of pseudo-element vendor prefixes as a percent of occurrences on mobile pages. -webkit makes up 47% of pseudo-element vendor prefix usage, followed by, 26% -moz, 15% -ms, 7% -o, and 6% other.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=744523431&format=interactive",
-  sheets_gid="1466863581",
-  sql_file="vendor_prefix_pseudo_elements.sql"
-) }}
-
-{{ figure_markup(
   caption="Percent of occurrences of vendor-prefixed functions on mobile pages that specify gradients.",
   content="98.22%",
   classes="big-number",
