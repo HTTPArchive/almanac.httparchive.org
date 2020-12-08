@@ -113,7 +113,7 @@ More and more web pages are using the main resource hints, and in 2020 we are se
 {{ figure_markup(
   image="adoption-of-resource-hints.png",
   caption="Adoption of resource hints.",
-  description="TODO",
+  description="Column chart showcasing the adoption of resource hints in 2020.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYAbLxN40s6mNR1jo0XDe_V4siN8TAsx2mryMp5IQmlJ-9O9eJxYROz7Rw6ozyFP6hlIZHxxh95GqX/pubchart?oid=1550112064&format=interactive",
   sheets_gid="1805612941",
   sql_file="adoption.sql"
