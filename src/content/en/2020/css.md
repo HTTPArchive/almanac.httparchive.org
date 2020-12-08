@@ -5,7 +5,7 @@ chapter_number: 1
 title: CSS
 description: CSS chapter of the 2020 Web Almanac covering color, units, selectors, layout, typography and fonts, spacing, decoration, animation, and media queries.
 authors: [LeaVerou, svgeesus, rachelandrew]
-reviewers: [fantasai, mirisuzanne, j9t, estellevw, catalinred, hankchizljaw]
+reviewers: [fantasai, j9t, estellevw, mirisuzanne, catalinred, hankchizljaw]
 analysts: [rviscomi, LeaVerou, dooman87]
 translators: []
 #LeaVerou_bio: TODO
@@ -26,11 +26,35 @@ unedited: true
 
 ## Introduction
 
+Cascading Style Sheets (CSS) is a language used to lay out, format, and paint web pages and other media. It is one of the three main languages for building websites, the other two being HTML, used for structure, and JavaScript, used to specify behavior.
 
+In [last year’s inaugural Web Almanac](https://almanac.httparchive.org/en/2019/), we looked at [a variety of CSS metrics](https://almanac.httparchive.org/en/2019/css) measured through 41 SQL queries over the HTTPArchive corpus, to assess the state of the technology in 2019. This year, we went a lot deeper, to measure not only how many pages use a given CSS feature, but also *how* they use it.
+
+Overall, what we observed was a Web in two different gears when it comes to CSS adoption. In our blog posts and twitter bubbles, we tend to mostly discuss the newest and shiniest. However, there are still *millions* of sites using decade-old code. Things like [vendor prefixes from a bygone era](#vendor-prefixes), [proprietary IE filters](#filters), and [floats for layout](#layout), in all their [clearfix](#class-names) glory. But we also observed impressive adoption of many new features, even features that only got support across the board this very year, like [`min()` and `max()`](#feature-queries). However, there is generally an inverse correlation between how cool something is perceived to be and how much it's actually used, e.g. cutting-edge Houdini features were practically nonexistent.
+
+Similarly, in our conference talks, we often tend to focus on complicated, elaborate use cases that make heads explode and twitter feeds fill with "CSS can do *that*?!". However, as it turns out, most CSS usage in the wild is fairly simple. [CSS Variables are mostly used as constants](#complexity) and rarely refer to other variables, `calc()` is [mostly used with two terms](#calculations), gradients [mostly have two stops](#gradients) and so on.
+
+The Web is not a teenager any more. It is now 30 years old, and acts like it. It tends to favor stability over new bling, and readability over complexity, occasional guilty pleasures aside.
 
 ## Methodology
 
+The [HTTP Archive](https://httparchive.org/) crawls [millions of pages](https://httparchive.org/reports/state-of-the-web#numUrls) every month and runs them through a private instance of [WebPageTest](https://webpagetest.org/) to store key information of every page. (You can learn more about this in our [methodology](./methodology)).
+
+For this year, we decided to involve the community in which metrics to study. We started with an [app to propose metrics and vote on them](https://projects.verou.me/mavoice/?repo=leaverou/css-almanac&labels=proposed%20stat). In the end, there were so many interesting metrics that we ended up including nearly all of them. We only excluded Font metrics, since there is a whole separate [Fonts chapter](https://almanac.httparchive.org/en/2020/fonts) and there was significant overlap.
+
+The data in this chapter took 121 SQL queries to produce, totaling over 10K lines of SQL, which includes 3K lines of JS, making it the largest chapter in Web Almanac's history.
+
+A lot of engineering work went into making this scale of analysis feasible. Like last year, we put all CSS code through a [CSS parser](https://github.com/reworkcss/css), and stored the [Abstract Syntax Trees](https://en.wikipedia.org/wiki/Abstract_syntax_tree) (AST) for all stylesheets in the corpus, resulting in a whopping 10 TB of data. This year, we also developed a [library of helpers](https://github.com/leaverou/rework-utils) that operate on this AST, and a [selector parser](https://projects.verou.me/parsel), both of which were also released as separate open source projects. Most metrics involved [JS](https://github.com/LeaVerou/css-almanac/tree/master/js) to collect data from a single AST, and [SQL](https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2020/01_CSS) to aggregate this data over the entire corpus. Curious how your own CSS does against our metrics? We made an [online playground](https://projects.verou.me/css-almanac/playground) where you can try them out on your own sites.
+
+For certain metrics, looking at the CSS AST was not enough. We wanted to look at [SCSS](https://sass-lang.com/) wherever it was provided via sourcemaps as it shows us what developers *need* from CSS that is not yet possible, whereas studying CSS shows us what developers currently use that is. For that, we had to use a *custom metric*, i.e. JS code that runs in the crawler when it visits a given page. We could not use a proper SCSS parser as that could slow down the crawl too much, so we had to resort to [regular expressions](https://github.com/LeaVerou/css-almanac/blob/master/runtime/sass.js) (*oh, the horror!*). Despite the crude approach, we got [a plethora of insights](#sass)!
+
+Custom metrics were also used for part of the [Custom properties analysis](#custom-properties). While we can get a lot of information about custom property usage from the stylesheets alone, we cannot build a dependency graph without being able to look at the DOM tree for context, as custom properties are inherited. Looking at the computed style of the DOM nodes also gives us information like what kinds of elements each property is applied to, and which of them are [registered](https://developer.mozilla.org/en-US/docs/Web/API/CSS/RegisterProperty), information that we also cannot get from the stylesheets.
+
+*Unless otherwise noted, stats presented in this chapter refer to the set of mobile pages.*
+
 ## Usage
+
+While JavaScript far surpasses CSS in its share of page weight, CSS has certainly grown in size over the years, with the median desktop page loading 62 KB of CSS code, and 1 in 10 pages loading more than 240 KB of CSS code. Mobile pages do use slightly less CSS code across all percentiles, but only by 4 to 7 KB. While this is definitely greater than previous years, it doesn't come close to [Javascript’s whopping median of 444 KB and top 10% of 1.2 MB](../javascript/#how-much-javascript-do-we-use)
 
 {{ figure_markup(
   image="stylesheet-size.png",
@@ -41,6 +65,12 @@ unedited: true
   sql_file="stylesheet_kbytes.sql"
 ) }}
 
+It would be reasonable to assume that a lot of this CSS is generated via preprocessors or other build tools, however **only about 15%** included sourcemaps. It is unclear whether this says more about sourcemap adoption, or build tool usage. Of those, the overwhelming majority (45%) came from other CSS files, indicating usage of build processes that operate on CSS files, such as minification, [autoprefixer](https://autoprefixer.github.io/), and/or [PostCSS](https://postcss.org/). [Sass](https://sass-lang.com/) was far more popular than [Less](http://lesscss.org/) (34% of stylesheets with sourcemaps vs 21%), with SCSS being the more popular dialect (33% for .scss vs 1% for .sass).
+
+All these kilobytes of code are typically distributed across multiple files and `<style>` elements; only about 7% of pages concentrate all their CSS code in one remote stylesheet, as we are often taught to do. In fact, the median page contains 3 `<style>` elements and 6 (!) remote stylesheets, with 10% of them carrying over 14 `<style>` elements and over 20 remote CSS files! While this is suboptimal on desktop, it really kills performance on mobile, where round-trip latency is more important than raw download speed.
+
+Shockingly, the maximum number of stylesheets per page is an incredible 26,777 `<style>` elements and 1,379 remote ones! I'd definitely want to avoid loading *that* page!
+
 {{ figure_markup(
   image="stylesheet-count.png",
   caption="Distribution of the number of stylesheets per page.",
@@ -49,6 +79,8 @@ unedited: true
   sheets_gid="1111507751",
   sql_file="stylesheet_count.sql"
 ) }}
+
+Another metric of size is the number of rules. The median page carries a total of 448 rules and 5,454 declarations. Interestingly, 10% of pages contain a tiny amount of CSS: fewer than 13 rules! Despite mobile having slightly smaller stylesheets, it also has slightly more rules, indicating smaller rules overall (as it tends to happen with media queries).
 
 {{ figure_markup(
   image="rules.png",
