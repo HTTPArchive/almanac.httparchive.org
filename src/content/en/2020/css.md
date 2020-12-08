@@ -307,8 +307,8 @@ Percentile | Desktop | Mobile
 
 {{ figure_markup(
   image="zero-lengths.png",
-  caption="Relative popularity of font-based units other than `px` as a percent of occurrences.",
-  description="Bar chart showing the relative popularity of font-based units other than px. em is used overwhelmingly on 87.3% of instances, followed by rem at 12.2, ch at 0.4%, and ex at 0.2% of instances on mobile pages.",
+  caption="Relative popularity of 0 lengths by unit as a percent of occurrences on mobile pages.",
+  description="Pie chart showing 0 lengths with no unit (AKA unitless) used 88.7% of the time on mobile pages, the px unit at 10.7%, and other units on 0.5% of instances.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1935151776&format=interactive",
   sheets_gid="313150061",
   sql_file="units_zero.sql"
