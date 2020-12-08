@@ -37,8 +37,6 @@ A third party resource is an entity outside the primary site-user relationship. 
 
 Third-party resources are:
 
-
-
 *   Hosted on a _shared_ and _public_ origin
 *   Widely used by a variety of sites
 *   Uninfluenced by an individual site owner
@@ -79,22 +77,29 @@ _Note on CDNs: The CDN category here includes providers that provide resources o
 
 A good starting point for this analysis is to back up the statement that third-party content is a critical component of most websites today. How many websites use third-party tags, and how many tags do they use?
 
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image2.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+{{ figure_markup(
+  image="pages-with-thirdparties.png",
+  caption="Third party content prevalence has grown slightly since 2019",
+  description="In 2019 93.6% of mobile pages had third party content, in 2020 this was 94.1%. In 2019 93.6% of desktop pages had third party content, in 2020 this was 93.9%.",
+  width=1600,
+  height=844
+  )
+}}
 
-
-![alt_text](images/image2.png "image_tooltip")
-
-
-The numbers show a slight increase on [2019’s results](https://almanac.httparchive.org/en/2019/third-parties): 93.87% of pages in the desktop crawl had at least one third-party request, the number was slightly higher at 94.10% of pages in the mobile crawl. A brief look into the small number of pages with no third-party content revealed that many were adult sites, some government domains and some basic landing / holding pages.
-
+The numbers show a slight increase on [the 2019 results](https://almanac.httparchive.org/en/2019/third-parties): 93.87% of pages in the desktop crawl had at least one third-party request, the number was slightly higher at 94.10% of pages in the mobile crawl. A brief look into the small number of pages with no third-party content revealed that many were adult sites, some government domains and some basic landing / holding pages.
 
 ### Content-Types
 
 For the pages with third-party content, we can break down the requests by their content type. This is the reported [content-type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type) of the resources delivered from third-party domains.
 
-<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image3.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-![alt_text](images/image3.png "image_tooltip")
+{{ figure_markup(
+  image="thirdparty-by-content-types.png",
+  caption="Images and JavaScript account for the majority (60%) of third party content",
+  description="37.1% of third party content is images, 21.9% is JavaScript, 16.1% is unknown or other, 15.4% is HTML",
+  width=1600,
+  height=844
+  )
+}}
 
 The results show that the major contributors of third-party content are images (38%) and JavaScript (22%), with the next largest contributor being unknown (16%).  Unknown is a subset of non-categorized groups such as text/plain as well as responses without a content-type header.
 
@@ -108,9 +113,14 @@ The next four most common domains are all advertising providers, they may not be
 
 The sixth most common domain is digicert.com.  Calls to digicert.com are generally OCSP revocation checks due to TLS certificates not having OCSP stapling enabled, or the use of Extended Validation (EV) certificates which prevent pinning of intermediate certificates. This number is exaggerated in HTTP Archive due to all page loads being effectively first-time visitors - OCSP responses are generally valid for seven days. See [here](https://simonhearne.com/2020/drop-ev-certs/) to read more on this issue.
 
-<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image4.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-![alt_text](images/image4.png "image_tooltip")
+{{ figure_markup(
+  image="top-domains-by-prevalence.png",
+  caption="The most prevalent domains are font foundries, advertising, social media and JavaScript CDNs",
+  description="",
+  width=1600,
+  height=844
+  )
+}}
 
 Further down the list at 2.43% is ajax.googleapis.com, Google's [Hosted Libraries project](https://developers.google.com/speed/libraries). Whilst loading a library such as jQuery from a hosted service is easy, the additional cost of a connection to a third-party domain may have a negative impact on performance. It is best to host all critical JavaScript and CSS on the root domain, if possible. There is also no cache benefit to using a shared CDN resource, all major browsers now [partition caches by page](https://developers.google.com/web/updates/2020/10/http-cache-partitioning).
 
@@ -120,9 +130,14 @@ Further down the list at 2.43% is ajax.googleapis.com, Google's [Hosted Librarie
 
 We can extract the largest third-parties by the median page weight impact, i.e. how many bytes they bring to the pages they are on. The results are interesting as this does not take into account how popular the third-parties are, just their impact in bytes.
 
-<p id="gdcalert5" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image5.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert6">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-![alt_text](images/image5.png "image_tooltip")
+{{ figure_markup(
+  image="page-size-by-host.png",
+  caption="Media providers result in the largest contribution to page size",
+  description="Chart of third-party hosts and impact on page size, ranging from trailercentral.com at 2.7MB to contenservice.mc.reyrey.net at 510kB",
+  width=1600,
+  height=844
+  )
+}}
 
 The top contributors of page weight are generally media content providers, such as image and video hosting. Vidazoo, for example, results in a median page weight impact of about 2.5MB. The inventory.vidazoo.com domain provides video hosting, so a median page with this third-party has an _extra_ 2.5MB of media content!
 
@@ -132,31 +147,43 @@ We can take this analysis further to produce a distribution of total page size (
 
 On the other end of the spectrum, the categories CDN, Content and Hosting all represent strong relationship with total page weight. This indicates that sites using hosted services are generally larger in page weight.
 
-<p id="gdcalert6" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image6.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert7">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-![alt_text](images/image6.png "image_tooltip")
+{{ figure_markup(
+  image="page-size-by-category.png",
+  caption="Advertising third parties have little impact on page size, CDN and Hosting has a significant impact",
+  description="Distribution of third party categories and page size showing relationships between presence of third-parties and likelihood for pages to be large. CDN & Hosting show a strong correlation, Analytics shows a weak correlation",
+  width=1600,
+  height=844
+  )
+}}
 
 ### Cacheability
 
 Some third-party responses should always be cached.  Media such as images and videos served by a third-party, or JavaScript libraries are good candidates. The results show that overall two-thirds of third-party requests are served with a valid caching header such as `cache-control`.
 
-<p id="gdcalert7" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image7.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert8">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-![alt_text](images/image7.png "image_tooltip")
+{{ figure_markup(
+  image="requests-cached-by-content-type.png",
+  caption="Font assets are the most likely to be cached, with text and xml resources least likely.",
+  description="Column chart showing percentage of cacheable requests by content type. Fonts are the highest at 96%, XML is the lowest at 18%",
+  width=1600,
+  height=844
+  )
+}}
 
 Breaking down by response type highlights some common offenders: xml and text responses are less likely to be cacheable. Surprisingly, less than two-thirds of images served by third-parties are cacheable. On further inspection, this is due to the use of tracking 'pixels' which are returned as non-cacheable zero-size image responses. 
-
-<p id="gdcalert8" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image8.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert9">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-![alt_text](images/image8.png "image_tooltip")
 
 ### Large redirects (i.e. 301 / 302 with >0 body size)?
 
 Many third-parties result in redirect responses (i.e. HTTP status codes 3XX). These occur because of the use of vanity domains or to share information across domains through request headers. This is especially true for advertising networks. Large redirect responses are an indication of a misconfiguration, as the response should be around 340B for a valid `Location` response header plus overheads. The chart below shows the distribution of body size 
 
-<p id="gdcalert9" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image9.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert10">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
-![alt_text](images/image9.png "image_tooltip")
+{{ figure_markup(
+  image="redirects-body-size.png",
+  caption="Most redirects are under 420B, the 99th percentile is over 30kB!",
+  description="Distribution of redirect body sizes showing 90% are under 420B, 1% are over 30kB and 0.1% are over 100kB",
+  width=1600,
+  height=844
+  )
+}}
 
 The results show that the majority of 3XX responses are small: the 90th percentile is 420B (i.e. 90% of 3XX responses are 420 bytes or smaller). The 95th percentile is 6.5kB and the 99th is 36kB! Whilst redirects may seem innocuous, 36kB is a reasonable amount of bytes over the wire for a response that simply leads to another response!
 
@@ -166,9 +193,15 @@ Scripts that load late in the page will have an impact on total page load durati
 
 The chart below shows the percentage of requests that load early, by device type and third-party type. The three stand-out categories are CDN, Hosting and Tag Managers, all of which tend to deliver JavaScript that is requested in the head of a document. 
 
-<p id="gdcalert10" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image10.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert11">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
-![alt_text](images/image10.png "image_tooltip")
+{{ figure_markup(
+  image="requests-before-dom-by-category.png",
+  caption="Public CDN resources are most likely to be downloaded before DOM Content Loaded, with Social, Advertising and Customer Success most likely to be loaded later.",
+  description="Column chart showing percentage of requests loaded before DOM Content Loaded. Public CDN resources are most likely at 50% on desktop, whilst advertising resources are least likely at 7%",
+  width=1600,
+  height=844
+  )
+}}
 
 ## CPU Impact
 
@@ -178,11 +211,16 @@ We have a few measures to capture this impact and with the [TaskAttributionTimin
 
 Long tasks are defined as single main-thread tasks which take longer than 50ms to complete, indicating that the user experience will be degraded while they are executing.
 
-<p id="gdcalert11" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image11.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert12">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+{{ figure_markup(
+  image="cpu-time-by-category.png",
+  caption="Pages with advertising third parties are more likely to have a high CPU load time.",
+  description="Distribution of CPU load time by presence of third party categories. Most categories follow the same pattern, with advertising the outlier showing higher CPU load time, especially at lower percentiles.",
+  width=1600,
+  height=844
+  )
+}}
 
-![alt_text](images/image11.png "image_tooltip")
-
-This chart shows the probability density function of third-party categories and the CPU time on the page on which the third-party was loaded. The median page is at 50 on the percentile axis. The data shows that all third-party categories follow a similar pattern, with the median page between 400-1,000 ms CPU time. The outlier here is advertising (in black): if a page has advertising tags it is much more likely to have high CPU usage during page load. The median page with advertising tags has a CPU load time of 1,500ms, compared to 500ms for pages without advertising.
+This chart shows the probability density function of third-party categories and the CPU time on the page on which the third-party was loaded. The median page is at 50 on the percentile axis. The data shows that all third-party categories follow a similar pattern, with the median page between 400-1,000 ms CPU time. The outlier here is advertising (in black): if a page has advertising tags it is much more likely to have high CPU usage during page load. The median page with advertising tags has a CPU load time of 1,500ms, compared to 500ms for pages without advertising. The high CPU load time at the lower percentiles indicates that even the fastest sites are impacted significantly by the presence of advertising third parties.
 
 ## Other
 
@@ -195,9 +233,14 @@ Third-party origins can opt-in to providing improved performance and security vi
 
 Size and timing information is extremely limited without a timing-allow-origin response header. There are legitimate reasons for not providing this timing information, such as responses that vary by authentication state: e.g. a website owner may be able to determine if a visitor is logged into a Facebook by measuring the response size of a widget request. For most third-party content, though, setting the timing-allow-origin header is an act of transparency to allow the hosting website to track performance and size of their third-party content.
 
-<p id="gdcalert12" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image12.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert13">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-![alt_text](images/image12.png "image_tooltip")
+{{ figure_markup(
+  image="requests-with-tao.png",
+  caption="Less than 35% of third party responses are served with a timing-allow-origin header",
+  description="Less than 35% of third party responses are served with a timing-allow-origin header",
+  width=1600,
+  height=844
+  )
+}}
 
 The results in HTTP Archive show that only one third of third-party responses expose detailed size and timing information to the hosting website.
 
