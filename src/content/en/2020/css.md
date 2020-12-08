@@ -30,6 +30,16 @@ unedited: true
 
 ## Usage
 
+{{ figure_markup(
+  image="stylesheet-size.png",
+  caption="Distribution of the stylesheet transfer size per page.",
+  description="Bar chart showing the distribution of stylesheet transfer size per page, which includes compression when enabled. Desktop tends to have slightly more stylesheet bytes per page by about 10 KB. The 10, 25, 50, 75, and 90th percentiles for mobile are: 5, 22, 56, 122, and 234 KB.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=762340058&format=interactive",
+  sheets_gid="314594173",
+  sql_file="stylesheet_kbytes.sql"
+  )
+}}
+
 ## Selectors and the cascade
 
 ## Values and units
