@@ -7,7 +7,7 @@ authors: [Zizzamia]
 reviewers: [jessnicolet, pmeenan, giopunt, mgechev, notwillk]
 analysts: [khempenius]
 translators: []
-Zizzamia_bio: Leonardo is a Staff Software Engineer at <a href="https://www.coinbase.com/">Coinbase</a>, leading web performance and growth initiatives. He curates the <a href="https://ngrome.io">NGRome Conference</a>. Leo also maintains the <a href="https://github.com/Zizzamia/perfume.js">Perfume.js<a/> library, which helps companies prioritize roadmaps and make better business decisions through performance analytics.
+Zizzamia_bio: Leonardo is a Staff Software Engineer at <a href="https://www.coinbase.com/">Coinbase</a>, leading web performance and growth initiatives. He curates the <a href="https://ngrome.io">NGRome Conference</a>. Leo also maintains the <a href="https://github.com/Zizzamia/perfume.js">Perfume.js</a> library, which helps companies prioritize roadmaps and make better business decisions through performance analytics.
 discuss: 2057
 results: https://docs.google.com/spreadsheets/d/1lXjd8ogB7kYfG09eUdGYXUlrMjs4mq1Z7nNldQnvkVA/
 queries: 21_Resource_Hints
