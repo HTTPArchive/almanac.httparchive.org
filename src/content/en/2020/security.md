@@ -34,7 +34,7 @@ In this chapter, we explore the current state-of-practice for security on the We
 
 The last year has seen a continuation of the growth of HTTPS on websites. Securing the transport layer is a basic part of web security–unless you can be confident the resources downloads for this website have not been altered in transit, and that you are transporting data to and from the website you think you are, any certainties about the website security are basically rendered null and void.
 
-Moving our web traffic to HTTPS, and eventually [marking HTTP as non-secure](https://www.chromium.org/Home/chromium-security/marking-http-as-non-secure) is being driven by web browsers onyl allowing [powerful new features to the secure context](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts/features_restricted_to_secure_contexts) (the carrot)while also increasing warnings dhoen to users when unencrypted connections are used (the sitck), whiles at the same time.
+Moving our web traffic to HTTPS, and eventually [marking HTTP as non-secure](https://www.chromium.org/Home/chromium-security/marking-http-as-non-secure) is being driven by web browsers only allowing [powerful new features to the secure context](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts/features_restricted_to_secure_contexts) (the carrot)while also increasing warnings dhoen to users when unencrypted connections are used (the stick), whiles at the same time.
 
 The effort is paying off hugely and we are now seeing 87.70% of requests on desktop and 86.90% of requests on mobile being served over HTTPS.
 
@@ -46,7 +46,7 @@ The effort is paying off hugely and we are now seeing 87.70% of requests on desk
 )
 }}
 
-One slight concern as we reach the end of this goal, is a noticeable "leveling off" of the the impressive growth of the last few years. Unfortunately the long tail of the internet means older legacy sites are not maintained and may never be run over HTTPS, meaning they will eventually become inaccesible to most users.
+One slight concern as we reach the end of this goal, is a noticeable "leveling off" of the the impressive growth of the last few years. Unfortunately the long tail of the internet means older legacy sites are not maintained and may never be run over HTTPS, meaning they will eventually become inaccessible to most users.
 
 {{ figure_markup(
   image="security-https-request-growth.png",
@@ -72,7 +72,7 @@ Whilst the high volume of requests is encouraging, these can often be dominated 
 
 ### Protocol versions
 
-As HTTPS is now well past being the norm, the challenge moves from having any HTTPS, to ensuring that secure versions of the underlying TLS (Tranport Layer Security) protocol are being used. TLS needs maintenance as versions become older and vulnerabilities are found.
+As HTTPS is now well past being the norm, the challenge moves from having any HTTPS, to ensuring that secure versions of the underlying TLS (Transport Layer Security) protocol are being used. TLS needs maintenance as versions become older and vulnerabilities are found.
 
 {{ figure_markup(
   image="security-tls-version-by-site.png",
