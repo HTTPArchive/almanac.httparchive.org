@@ -1100,7 +1100,7 @@ Percentile | Desktop | Mobile
   image="background-shorthand-versus-longhand.png",
   caption="TODO.",
   description="Bar chart showing `background` is 91% on desktop and 92% on mobile, `background-color` is 91% and 92% respectively, `background-image` is 85% and 87%, `background-position` is 84% and 85%, `background-repeat` is 82% and 84%, `background-size` is 77% and 79%, `background-clip` is 48% and 53%, `background-attachment` is 37% and 38%, `background-origin` is 5% on desktop and 12% on mobile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=2014923335&amp;format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=2014923335&format=interactive",
   sheets_gid="1513860089",
   sql_file="all_properties.sql",
   width="600",
@@ -1137,11 +1137,13 @@ Percentile | Desktop | Mobile
 
 {{ figure_markup(
   image="usage-of-grid-properties.png",
-  caption="TODO.",
-  description="TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  caption="Usage of grid, grid-* properties.",
+  description="Bar chart showing `grid-template-columns` is 27% on desktop and 26% on mobile, `grid-template-rows` is 24% and 24% respectively, `grid-column` is 20% and 20%, `grid-row` is 20% and 19%, `grid-area` is 6% and 6%, `grid-template-areas` is 6% and 6%, `grid-gap` is 4% and 5%, `grid-column-gap` is 4% and 3%, `grid-row-gap` is 3% and 3%, `grid-column-end` is 3% and 2%, `grid-column-start` is 3% and 2%, `grid-row-start` is 3% and 2%, `grid-row-end` is 2% and 2%, `grid-auto-columns` is 2% and 2%, `grid-auto-rows` is 1% and 1%, `grid-auto-flow` is 1% and 1%, `grid-template` is 0% and 0%, `grid` is 0% and 0%, `grid-column-span` is 0% and 0%, `grid-columns` is 0% and 0%, and `grid-rows` is 0% and 0%."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=290183398&format=interactive",
+  sheets_gid="1513860089",
+  sql_file="all_properties.sql",
+  width="600",
+  height="575"
 ) }}
 
 ### CSS mistakes
@@ -1152,51 +1154,53 @@ Percentile | Desktop | Mobile
 
 {{ figure_markup(
   image="most-popupular-unknown-properties.png",
-  caption="TODO.",
-  description="TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  caption="Most popular unknown properties.",
+  description="Bar chart showing `webkit-transition` is 15% on desktop and 14% on mobile, `font-smoothing` is 13% and 12% respectively, `user-drag` is 12% on mobile, `white-wpace` is 10% on mobile, `tap-highlight-color` is 10% and 10%, `webkit-box-shadow` is 4% and 4%, `ms-transform` is 2% and 2%, `-transition` is 1% and 1%, `font-rendering` is 0% and 0%, `webkit-border-radius` is 2% on desktop, and `moz-border-radius` is 2% on desktop.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1166982997&format=interactive",
+  sheets_gid="84286607",
+  sql_file="meta_unknown_properties.sql",
+  width="600",
+  height="401"
 ) }}
 
 #### Longhands before shorthands
 
 {{ figure_markup(
-  image="most-popupular-unknown-properties.png",
-  caption="TODO.",
-  description="TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  image="most-popupular-shorthands-after-longhands.png",
+  caption="Most popular shorthands after longhands.",
+  description="Bar chart showing `background` is 56.46% of desktop and 55.17% of mobile, `margin` is 12.51% and 12.18% respectively, `font` is 10.15% and 10.31%, `padding` is 8.36% and 7.87%, `border-radius` is 1.08% and 3.14%, `animation` is 3.18% and 3.05%, `list-style` is 2.09% and 2.00%, and `transition` is 1.09% and 0.98%."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1389278729&format=interactive",
+  sheets_gid="1143644053",
+  sql_file="meta_longhand_first_properties.sql"
 ) }}
 
 ## Sass
 
 {{ figure_markup(
   image="most-popupular-sass-function-calls.png",
-  caption="TODO.",
-  description="TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  caption="Most popular Sass function calls.",
+  description="Bar chart showing `(other)` is used on 23% on desktop and 23% on mobile, `darken` is 17% and 18% respectively, `if` is 14% and 14%, `map-keys` is 8% and 9%, `percentage` is 8% and 8%, `map-get` is 8% and 7%, `lighten` is 5% and 6%, `nth` is 5% and 5%, `mix` is 4% and 4%, `length` is 3% and 3%, `type-of` is 2% and 2%, and `(alpha adjustment)` 2% on desktop and 2% on mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=774248494&format=interactive",
+  sheets_gid="170555219",
+  sql_file="sass_function_calls.sql"
 ) }}
 
 {{ figure_markup(
   image="usage-of-control-flow-statements-scss.png",
-  caption="TODO.",
-  description="TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  caption="Usage of control flow statements in SCSS.",
+  description="Bar chart showing `@if` is used on 63% of desktop and 63% of mobile, `@for` is 55% and 55% respectively, `@each` is 54% and 55%, and `@while` is 2% and 2%."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=157473209&format=interactive",
+  sheets_gid="498478750",
+  sql_file="sass_control_flow_statements.sql"
 ) }}
 
 {{ figure_markup(
   image="usage-of-explicit-nesting-in-scss.png",
-  caption="TODO.",
-  description="TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  caption="usage-of-explicit-nesting-in-scss.",
+  description="Bar chart showing `Total` is used by 85% on desktop and 85% on mobile, `&:pseudo-class` is 83% and 83% respectively, `&.class` is 80% and 80%, `&::pseudo-element` is 66% and 66%, `& (by itself)` is 62% and 62%, `&[attr]` is 57% and 57%, `& >`	24% and 23%, `& +`	21% and 20%, `& descendant` is 16% and 15%, and `&#id` is 6% on desktop and 6% on mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=370242263&format=interactive",
+  sheets_gid="1872903377",
+  sql_file="sass_nesting.sql"
 ) }}
 
 ## Conclusion
