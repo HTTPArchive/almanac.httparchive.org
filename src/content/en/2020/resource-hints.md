@@ -11,13 +11,13 @@ Zizzamia_bio: Leonardo is a Staff Software Engineer at <a href="https://www.coin
 discuss: 2057
 results: https://docs.google.com/spreadsheets/d/1lXjd8ogB7kYfG09eUdGYXUlrMjs4mq1Z7nNldQnvkVA/
 queries: 21_Resource_Hints
-#featured_quote: TODO @zizzamia
-#featured_stat_1: TODO @zizzamia
-#featured_stat_label_1: TODO @zizzamia
-#featured_stat_2: TODO @zizzamia
-#featured_stat_label_2: TODO @zizzamia
-#featured_stat_3: TODO @zizzamia
-#featured_stat_label_3: TODO @zizzamia
+featured_quote: Resource hints provide <em>hints</em> to the browser about what resources will be needed soon. The action that the browser takes as a result of receiving this hint will vary depending on the type of resource hint; different resource hints kick off different actions. When used correctly, they can improve page performance by giving a head start to important anticipated actions.
+featured_stat_1: 33%
+featured_stat_label_1: Sites using <code>dns-prefetch</code>
+featured_stat_2: 9%
+featured_stat_label_2: Sites using <code>preload</code>
+featured_stat_3: 88%
+featured_stat_label_3: Resource hints using the <code>as</code> attribute
 unedited: true
 ---
 
@@ -131,7 +131,7 @@ The relative popularity of `dns-prefetch` with 33% adoption compared with other 
     <tr>
      <td><code>dns-prefetch</code></td>
      <td>29%</td>
-     <td>8</td>
+     <td>33%</td>
     </tr>
     <tr>
      <td><code>preload</code>
@@ -216,7 +216,7 @@ This is likely related to a large group of sites built as Single Page Apps that 
 {{ figure_markup(
   image="mobile-as-attribute-values-by-year.png",
   caption="Mobile `as` attribute values by year.",
-  description="TODO",
+  description="Column chart showcasing the mobile `as` attribute values by year.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYAbLxN40s6mNR1jo0XDe_V4siN8TAsx2mryMp5IQmlJ-9O9eJxYROz7Rw6ozyFP6hlIZHxxh95GqX/pubchart?oid=903180926&format=interactive",
   sheets_gid="1829901599",
   sql_file="as_attribute_by_year.sql"
