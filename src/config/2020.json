@@ -474,13 +474,13 @@
     "davelab6": {
       "name": "Dave Crossland",
       "teams": [
-        "authors"
+        "reviewers"
       ],
       "avatar_url": "https://avatars0.githubusercontent.com/u/261579?v=4&s=200",
       "website": "http://fonts.google.com",
       "github": "davelab6",
       "twitter": "davelab6"
-    },
+     },
     "dwsmart": {
       "name": "Dave Smart",
       "teams": [
@@ -747,7 +747,7 @@
     "jyrkialakuijala": {
       "name": "Jyrki Alakuijala",
       "teams": [
-        "reviewers"
+        "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/9086028?v=4&s=200",
       "github": "jyrkialakuijala"
@@ -813,7 +813,7 @@
     "veluca93": {
       "name": "Luca Versari",
       "teams": [
-        "reviewers"
+        "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/1896483?v=4&s=200",
       "github": "veluca93"
@@ -938,16 +938,6 @@
       "website": "http://miriamsuzanne.com/",
       "github": "mirisuzanne",
       "twitter": "MiriSuzanne"
-    },
-    "notwaldorf": {
-      "name": "Monica Dinculescu",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "https://avatars1.githubusercontent.com/u/1369170?v=4&s=200",
-      "website": "https://meowni.ca/",
-      "github": "notwaldorf",
-      "twitter": "notwaldorf"
     },
     "mo271": {
       "name": "Moritz Firsching",
@@ -1096,6 +1086,7 @@
     "raghuramakrishnan71": {
       "name": "Raghu Ramakrishnan",
       "teams": [
+        "authors",
         "analysts"
       ],
       "avatar_url": "https://avatars2.githubusercontent.com/u/24447527?v=4&s=200",
@@ -1171,6 +1162,13 @@
       "avatar_url": "https://avatars1.githubusercontent.com/u/11558891?v=4&s=200",
       "github": "roryhewitt"
     },
+    "rsheeter": {
+      "name": "rsheeter",
+      "teams": [
+        "reviewers"
+      ],
+      "github": "rsheeter"
+    },
     "ksakae": {
       "name": "Sakae Kotaro",
       "teams": [
@@ -1184,7 +1182,7 @@
     "sboukortt": {
       "name": "Sami Boukortt",
       "teams": [
-        "reviewers"
+        "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/16757512?v=4&s=200",
       "github": "sboukortt"
@@ -1247,6 +1245,14 @@
       "avatar_url": "https://avatars2.githubusercontent.com/u/244772?v=4&s=200",
       "github": "zcorpan",
       "twitter": "zcorpan"
+    },
+    "Soham-S-Sarkar": {
+      "name": "Soham-S-Sarkar",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars0.githubusercontent.com/u/68942138?v=4&s=200",
+      "github": "Soham-S-Sarkar"
     },
     "sudheendrachari": {
       "name": "Sudheendra chari",
