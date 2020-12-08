@@ -221,11 +221,11 @@ Another widely-used tracking technique is fingerprinting, which consists of coll
   )
 }}
 
-Although the library is present on less than 1% of websites, the main issue with fingerprinting is its persistent nature. Furthermore, FingerprintJS is not the only attempt at fingerprinting. Other libraries, tools and native code can also serve this purpose.
+Although the library is present on a small percentage of websites, the main issue with fingerprinting is its persistent nature.  Furthermore, FingerprintJS is not the only attempt at fingerprinting.  Other libraries, tools and native code can also serve this purpose.
 
 ## Consent Management Platforms
 
-Cookie consent banners are being used by websites for years now, to allow users to specify their third-party cookie choices as well as increase transparency towards them. While a lot of websites opt for using their own implementation of cookie banners, third-party solutions called ‘Consent Management Platforms’ have recently emerged. The platforms provide an easy way for websites to collect user’s consent for different types of cookies. We see that 4.4% of websites use some consent management platform to provide cookie choices on desktop clients, and 4% on mobile clients.
+Cookie consent banners have become common now, increase transparency towards cookies and often allowing users to specify their cookie choices. While a lot of websites opt for using their own implementation of cookie banners, third-party solutions called ‘Consent Management Platforms’ have recently emerged. The platforms provide an easy way for websites to collect user’s consent for different types of cookies. We see that 4.4% of websites use some consent management platform to provide cookie choices on desktop clients, and 4.0% on mobile clients. 
 
 {{ figure_markup(
   image="privacy-websites-with-consent-management-platform.png",
@@ -265,7 +265,7 @@ While our results show that the TCF banner is not yet the ‘industry standard�
 
 ## Privacy Policies
 
-Privacy policies are widely used by websites to increase transparency towards users about data collection practices. In our crawl, we searched for keywords indicating the presence of a privacy policy text on each visited website.
+Privacy policies are widely used by websites to meet legal obligations and increase transparency towards users about data collection practices. In our crawl, we searched for keywords indicating the presence of a privacy policy text on each visited website. 
 
 {{ figure_markup(
   image="privacy-websites-with-privacy-link.png",
@@ -281,4 +281,4 @@ The results show that almost half of the websites in the dataset have included a
 
 ## Conclusion
 
-This chapter gives an overview of the current state of privacy on the web. Third-party tracking remains prominent on both desktop and mobile clients, with Google tracking the largest percentage of websites. Consent management platforms are used on a small percentage of websites, however a lot of websites implement their own cookie consent banners. Lastly, roughly half of the websites include a privacy policy, which benefits greatly transparency towards users about data processing practices. This is undoubtedly a step forward but there is a lot to be done. Most of the time, privacy policies are hard to read and understand and cookie consent banners manipulate users into consent. For the web to truly respect users, privacy has to be a part of conception, not an afterthought. Regulations are a good thing and it is reassuring to see them appearing worldwide but, more than that and financial sanctions, Privacy by Design should be the norm, rather than deploying texts and tools in order to avoid fines.
+This chapter gives an overview of the current state of privacy on the web. Third-party tracking remains prominent on both desktop and mobile clients, with Google tracking the largest percentage of websites. Consent Management Platforms are used on a small percentage of websites, however a lot of websites implement their own cookie consent banners. Lastly, roughly half of the websites include a privacy policy, which benefits greatly transparency towards users about data processing practices. This is undoubtedly a step forward but there is a lot to be done. Often, privacy policies are hard to read and understand and cookie consent banners manipulate users into consent. For the web to truly respect users, privacy has to be a part of conception, not an afterthought. Regulation is a good thing and it is reassuring to see an increase in privacy regulation worldwide but, more than that and financial sanctions, [privacy by design](https://en.wikipedia.org/wiki/Privacy_by_design) should be the norm, rather than deploying policies and tools in order to avoid fines.
