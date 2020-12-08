@@ -805,6 +805,24 @@ Percentile | Desktop | Mobile
   sql_file="transition_properties.sql"
 ) }}
 
+{{ figure_markup(
+  image="transition-durations.png",
+  caption="Distribution of transition durations.",
+  description="Bar chart showing the distribution of transition durations in milliseconds for desktop and mobile pages. Desktop and mobile are equivalent at the 10, 25, and 90th percentiles with 100, 150, and 500ms durations respectively. However at the median and 75th percentiles, desktop has higher durations by 50ms: 300 and 400ms respectively.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1587838983&format=interactive",
+  sheets_gid="286912288",
+  sql_file="transition_durations.sql"
+) }}
+
+{{ figure_markup(
+  image="transition-timing-functions.png",
+  caption="Relative popularity of timing functions as a percent of occurrences on mobile pages.",
+  description="Pie chart showing the relative popularity of timing functions as a percent of occurrences on mobile pages. The most popular timing function is ease at 31% of occurrences, followed by linear at 19%, ease-in-out at 19%, cubic-bezier at 13%, ease-out at 9%, steps at 5%, and ease-in at 4%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=63879013&format=interactive",
+  sheets_gid="1514240349",
+  sql_file="transition_timing_functions.sql"
+) }}
+
 ## Visual effects
 
 ### Blend modes
@@ -813,6 +831,17 @@ Percentile | Desktop | Mobile
 
 ### Masks
 
+{{ figure_markup(
+  image="mask-properties.png",
+  caption="Relative popularity of animation name categories as a percent of occurrences.",
+  description="Relative popularity of animation name categories as a percent of occurrences. -webkit-mask-image is used on 22% of mobile pages, up from 19% on desktop. The following properties are mask-size and mask-image at 19%, mask-repeat, mask-postion, mask-mode, and -webkit-mask-size at 18%, -webkit-mask-repeat and -webkit-mask-position at 16%, and -webkit-mask and mask properties at 2% of mobile pages.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=615866471&format=interactive",
+  width="600",
+  height="575",
+  sheets_gid="1513860089",
+  sql_file="all_properties.sql"
+) }}
+
 ### Clipping paths
 
 ## Responsive design
@@ -820,6 +849,24 @@ Percentile | Desktop | Mobile
 ### Which media features are people using?
 
 ### Common breakpoints
+
+{{ figure_markup(
+  image="breakpoints.png",
+  caption="The most popular breakpoints by `min-width` and `max-width` as a percent of mobile pages.",
+  description="The most popular breakpoints by `min-width` and `max-width` as a percent of mobile pages. 480px is used as a min-width on 21% of mobile pages and as a max-width on 35%. 600px on 27% and 37% for min and max widths respectively, 767px on 8% and 50%, 768px on 54% and 35%, 800px on 8% and 24%, 991px on 3% and 30%, 992px on 37% and 11%, 1024px on 13% and 23%, 1199px on just 31% as a max-width, and 1200px on 40% and 19%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=502128948&format=interactive",
+  sheets_gid="1070028321",
+  sql_file="media_query_values.sql"
+) }}
+
+{{ figure_markup(
+  image="media-query-properties.png",
+  caption="The most popular properties used in media queries as a percent of pages.",
+  description="Bar chart of the most popular properties used in media queries as a percent of pages. Desktop and mobile are very similar. The percent of mobile pages ranges from 79% to 71% for display, width, margin-left, padding, font-size, height, margin, margin-right, margin-top, and position, in that order.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1199544976&format=interactive",
+  sheets_gid="190367365",
+  sql_file="media_query_properties.sql"
+) }}
 
 ### Properties used inside media queries
 
