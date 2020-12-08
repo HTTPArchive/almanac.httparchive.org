@@ -30,7 +30,7 @@ Web font technology has been fairly mature, with incremental improvements in com
 
 ## Where are web fonts being used?
 
-Web font usage has been growing steadily over time (it was zero percent as late as 2011), with 82% of web pages for desktop using web fonts, and mobile at 80%.
+Web font usage has been growing steadily over time (it was near zero as late as 2011), with 82% of web pages for desktop using web fonts, and mobile at 80%.
 
 {{ figure_markup(
   image="fonts-web-fonts-usage.png",
@@ -244,7 +244,7 @@ Uncompressed fonts, like OTF and TTF files, are 2-3x larger than compressed, but
 
 ## Popular fonts
 
-Icon fonts are fully half of the top 10 most popular web fonts, the rest being clean, robust sans-serif typeface designs (Roboto Slab is at #19 and Playfair Display at #26 in this ranking, for debuts of other styles, though serif designs are well represented in the tail of the distribution).
+Icon fonts are half of the top 10 most popular web fonts, the rest being clean, robust sans-serif typeface designs (Roboto Slab is at #19 and Playfair Display at #26 in this ranking, for debuts of other styles, though serif designs are well represented in the tail of the distribution).
 
 {{ figure_markup(
   image="fonts-popular-typefaces.png",
