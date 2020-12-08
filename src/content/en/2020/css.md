@@ -719,6 +719,33 @@ Percentile | Desktop | Mobile
 
 ## Gradients
 
+{{ figure_markup(
+  image="gradient-functions.png",
+  caption="The most popular gradient functions as a percent of pages.",
+  description="Bar chart showing the most popular gradient functions as a percent of desktop and mobile pages. Gradient functions tend to be more popular on mobile pages. The most popular gradient function is linear-gradient, used on 73% of mobile pages. Followed by -webkit-linear-gradient on 57%, -webkit-gradient and -linear-gradient on 50%, -moz-linear-gradient on 49%, -ms-linear-gradient on 33%, radial-gradient on 15%, -webkit-radial-gradient on 9%, and repeating-linear-gradient and -moz-radial-gradient used on 3% of mobile pages.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1552177796&format=interactive",
+  sheets_gid="397884589",
+  sql_file="gradient_functions.sql"
+) }}
+
+{{ figure_markup(
+  image="gradient-functions-unprefixed.png",
+  caption="The most popular gradient functions as a percent of pages, omitting vendor prefixes.",
+  description="Bar chart showing the most popular gradient functions as a percent of desktop and mobile pages, omitting vendor prefixes. Desktop adoption is slightly behind mobile. Variations of linear-gradient are used on 72.57% of mobile pages, radial-gradient on 15.13%, repeating-linear-gradient on 2.99%, repeating-radial-gradient on 0.07%, conic-gradient on 0.01%, and repeating-conic-gradient on approximately 0.00% of mobile pages.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1676879657&format=interactive",
+  sheets_gid="397884589",
+  sql_file="gradient_functions.sql"
+) }}
+
+{{ figure_markup(
+  image="gradient-most-stops.png",
+  caption="The gradient with the most color stops, 646.",
+  description="A screenshot of the gradient with the most color stops, which is a series of intricate multicolor stripes of varying hues.",
+  alt="A screenshot of the gradient with the most color stops, which is a series of intricate multicolor stripes of varying hues.",
+  width=600,
+  height=100
+) }}
+
 ## Layout
 
 ### Flexbox and Grid adoption
