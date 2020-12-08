@@ -750,13 +750,60 @@ Percentile | Desktop | Mobile
 
 ### Flexbox and Grid adoption
 
+{{ figure_markup(
+  image="flexbox-grid-mobile.png",
+  caption="Adoption of flexbox and grid by year as a percent of mobile pages.",
+  description="Bar chart showing the adoption of flexbox and grid by year as a percent of mobile pages. Flexbox adoption grew from 2019 to 2020 from 41% to 63% of mobile pages. Grid adoption grew from 2% to 4% over the same time period.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1879364309&format=interactive",
+  sheets_gid="1330536609",
+  sql_file="flexbox_grid.sql"
+) }}
+
+{{ figure_markup(
+  image="flexbox-grid-desktop.png",
+  caption="Adoption of flexbox and grid by year as a percent of dekstop pages.",
+  description="Bar chart showing the adoption of flexbox and grid by year as a percent of desktop pages. Flexbox adoption grew from 2019 to 2020 from 41% to 65% of mobile pages. Grid adoption grew from 2% to 5% over the same time period.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1140202160&format=interactive",
+  sheets_gid="1330536609",
+  sql_file="flexbox_grid.sql"
+) }}
+
+{{ figure_markup(
+  image="layout-methods.png",
+  caption="Adoption of layout methods as a percent of pages.",
+  description="Bar chart showing the adoption of layout methods as a percent of desktop and mobile pages. Desktop and mobile results are similar unless otherwise noted. The top four layout methods are block, absolute, floats, and inline-block at 92%, 92%, 91%, and 90% adoption respectively. Following those, inline, fixed, and css tables have 81%, 80%, and 80% adoption respectively. Flex has 68% adoption, followed by box at 46% and distinctly larger than desktop adoption at 38%, inline-flex at 33%, grid at 30%, list-item at 26%, inline-table at 26%, inline-box at 20%, and sticky at 13% of mobile pages.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=2013998073&format=interactive",
+  width="600",
+  height="588",
+  sheets_gid="1330536609",
+  sql_file="layout_properties.sql"
+) }}
+
 ### Usage of different Grid layout techniques
 
 ### Multiple-column layout
 
 ### Box sizing
 
+{{ figure_markup(
+  image="box-sizing.png",
+  caption="Distribution of the number of `border-box` declarations per page.",
+  description="Bar chart showing the distribution of the number of box-sizing declarations per page for desktop and mobile. The mobile distribution leads desktop by 0 to 11 declarations per page, growing in the higher percentiles. The mobile distribution's 10, 25, 50, 75, and 90th percentiles are: 0, 4, 17, 46, and 96 border-box declarations per page.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1626960751&format=interactive",
+  sheets_gid="1982524793",
+  sql_file="box_sizing.sql"
+) }}
+
 ## Transitions and animations
+
+{{ figure_markup(
+  image="transition-properties.png",
+  caption="Adoption of transition properties as a percent of pages.",
+  description="Bar chart showing the adoption of the most popular transition properties. Desktop and mobile pages are very similar except filter doesn't appear to be used significantly at all on desktop. The most popular transition property on mobile pages is all, used on 41% of pages, followed by opacity at 37%, transform at 26%, color at 17%, none at 15%, height at 13%, background-color at 12%, background at 10%, filter at 7%, and the remaining properties used on 6% of mobile pages: width, left, top, -webkit-transform, box-shadow, and border-color.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1677028861&format=interactive",
+  sheets_gid="134272305",
+  sql_file="transition_properties.sql"
+) }}
 
 ## Visual effects
 
