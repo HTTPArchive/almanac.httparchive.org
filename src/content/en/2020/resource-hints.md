@@ -112,7 +112,7 @@ More and more web pages are using the main resource hints, and in 2020 we are se
 {# TODO(authors): Add or remove figure description. #}
 {{ figure_markup(
   image="adoption-of-resource-hints.png",
-  caption="Adoption of resource hints",
+  caption="Adoption of resource hints.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYAbLxN40s6mNR1jo0XDe_V4siN8TAsx2mryMp5IQmlJ-9O9eJxYROz7Rw6ozyFP6hlIZHxxh95GqX/pubchart?oid=1550112064&format=interactive",
   sheets_gid="1805612941",
@@ -147,8 +147,9 @@ Resource hints are most effective when they're used selectively ("when everythin
 
 However, this hasn't stopped some misuse of the `preload` hint, since in one instance we discovered a page dynamically adding the hint and causing an infinite loop that created over 20k new preloads.
 
+{# TODO(editors): Are emojis okay? And should there be punctuation? #}
 {{ figure_markup(
-  caption="The most preload hints per page 🤯",
+  caption="The most preload hints on a single page 🤯",
   content="20,931",
   classes="big-number",
   sheets_gid="175042082",
@@ -176,7 +177,7 @@ This is likely related to a large group of sites built as Single Page Apps that 
 {# TODO(authors): Add or remove figure description. #}
 {{ figure_markup(
   image="mobile-as-attribute-values-by-year.png",
-  caption="Mobile \"as\" attribute values by year.",
+  caption="Mobile `as` attribute values by year.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYAbLxN40s6mNR1jo0XDe_V4siN8TAsx2mryMp5IQmlJ-9O9eJxYROz7Rw6ozyFP6hlIZHxxh95GqX/pubchart?oid=903180926&format=interactive",
   sheets_gid="1829901599",
@@ -225,9 +226,9 @@ To safely implement `dns-prefetch` and `preconnect` make sure to have them in se
 
 Implementing a `dns-prefetch` fallback in the same `<link>` tag causes a [bug](https://bugs.webkit.org/show_bug.cgi?id=197010) in Safari that cancels the `preconnect` request.
 
-
+{# TODO(authors/reviewers): The caption here doesn't make sense to me, and directly contradictes the text below it. #}
 {{ figure_markup(
-  caption="Resource hints on desktop that use either preconnect or dns-prefetch use both in the same hint.",
+  caption="Resource hints on desktop that use either `preconnect` or `dns-prefetch` use both in the same hint.",
   content="1.93%",
   classes="big-number",
   sheets_gid="281984550",
@@ -237,7 +238,7 @@ Implementing a `dns-prefetch` fallback in the same `<link>` tag causes a [bug](h
 Close to 2% of pages (~40k) reported the issue of both `preconnect` & `dns-prefetch` in a single resource.
 
 {{ figure_markup(
-  caption="Pages that pass the preconnect Lighthouse audit",
+  caption="Pages that pass the `preconnect` Lighthouse audit.",
   content="19.67%",
   classes="big-number",
   sheets_gid="152449420",
@@ -247,7 +248,7 @@ Close to 2% of pages (~40k) reported the issue of both `preconnect` & `dns-prefe
 We saw only 19.67% of pages passing Lighthouse's "[Preconnect to required origins](https://web.dev/uses-rel-preconnect/)" audit, creating a large opportunity for thousands of websites to start using `preconnect` or `dns-prefetch` to establish early connections to important third-party origins.
 
 {{ figure_markup(
-  caption="Pages that pass the preload Lighthouse audit",
+  caption="Pages that pass the `preload` Lighthouse audit.",
   content="84.6%",
   classes="big-number",
   sheets_gid="1047875076",
@@ -265,7 +266,7 @@ Now let's celebrate the first year of the [Native Lazy Loading](https://addyosma
 {# TODO(authors) - revisit this sentence - Ref https://github.com/HTTPArchive/almanac.httparchive.org/pull/1587#discussion_r533106799 #}
 
 {{ figure_markup(
-  caption="Percentage of pages using native lazy loading set to `lazy`",
+  caption="Percentage of pages using native lazy loading.",
   content="3.87%",
   classes="big-number",
   sheets_gid="2039808014",
@@ -277,7 +278,7 @@ Now let's celebrate the first year of the [Native Lazy Loading](https://addyosma
 Adoption is still in its early days, especially with the official thresholds earlier this year being too conservative, and only [recently](https://addyosmani.com/blog/better-image-lazy-loading-in-chrome/) aligning with developer expectations. With almost 72% of browsers supporting native image/source lazy loading, this is another area of opportunity especially for pages looking to improve data usage and performance on low-end devices. 
 
 {{ figure_markup(
-  caption="Percentage of pages passing the offscreen images Lighthouse audit",
+  caption="Percentage of pages passing the offscreen images Lighthouse audit.",
   content="68.65%",
   classes="big-number",
   sheets_gid="1357389632",
@@ -303,7 +304,7 @@ Overall, predictive prefetching is still uncharted territory, but combined with 
 HTTP/2 has a feature called "server push" that can potentially improve page performance when your product experiences long Round Trip Times([RTTs](https://developer.mozilla.org/en-US/docs/Glossary/Round_Trip_Time_(RTT))) or server processing. In brief, rather than waiting for the client to send a request, the server preemptively pushes a resource that it predicts the client will request soon afterwards.
 
 {{ figure_markup(
-  caption="Percentage of HTTP/2 Push pages using preload/nopush",
+  caption="Percentage of HTTP/2 Push pages using `preload`/`nopush`.",
   content="75.36%",
   classes="big-number",
   sheets_gid="308166349",
@@ -323,7 +324,7 @@ For both `preload` and `prefetch` we've had an increase in adoption when the pag
 {# TODO(authors): Add or remove figure description. #}
 {{ figure_markup(
   image="resource-hint-adoption-onservice-worker-pages.png",
-  caption="Resource hint adoption on service worker pages.",
+  caption="Resource hint adoption on Service Worker pages.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYAbLxN40s6mNR1jo0XDe_V4siN8TAsx2mryMp5IQmlJ-9O9eJxYROz7Rw6ozyFP6hlIZHxxh95GqX/pubchart?oid=252958553&format=interactive",
   sheets_gid="691299508",
@@ -349,7 +350,7 @@ With `preload` and `prefetch`, the priority is set by the browser depending on t
 {# TODO(authors) - simplify all these figures #}
 
 {{ figure_markup(
-  caption="The rate of priority hint adoption on mobile",
+  caption="The rate of priority hint adoption on mobile.",
   content="0.77%",
   classes="big-number",
   sheets_gid="1596669035",
@@ -359,7 +360,7 @@ With `preload` and `prefetch`, the priority is set by the browser depending on t
 So far only 0.77% websites adopted this new hint as Chrome is still [actively](https://www.chromestatus.com/features/5273474901737472) experimenting, and at the time of this article's release the feature is on-hold.
 
 {{ figure_markup(
-  caption="Priority hints on mobile are on script elements",
+  caption="The rate of priority hints on mobile on script elements.",
   content="80%",
   classes="big-number",
   sheets_gid="800402946",
@@ -369,7 +370,7 @@ So far only 0.77% websites adopted this new hint as Chrome is still [actively](h
 The largest use is with script elements, which is unsurprising as the number of JS primary and third-party files continues to grow.
 
 {{ figure_markup(
-  caption="Priority hints on mobile have \"low\" importance",
+  caption="The rate of priority hints on mobile that have \"low\" importance.",
   content="16.11%",
   classes="big-number",
   sheets_gid="1098063134",
