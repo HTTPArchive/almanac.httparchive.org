@@ -43,7 +43,7 @@
     "node-fetch": "2.6.1",
     "xml-js": "1.6.11",
     "run-script-os": "1.1.3",
-    "node-watch": "0.7.0",
+    "node-watch": "0.7.1",
     "rainbow-code": "2.1.7"
   }
 }

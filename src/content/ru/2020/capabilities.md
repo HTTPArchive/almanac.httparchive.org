@@ -80,7 +80,7 @@ featured_stat_label_3: Сайты, позволяющие устанавлива
   image="storage_manager_api_estimate.png",
   alt="Количество страниц, использующих estimate-метод из StorageManager API.",
   caption='Количество страниц, использующих estimate-метод из <span lang="en">StorageManager API</span>.',
-  description='График использования estimate-метода в <span lang="en">StorageManager API</span> от количества страниц, отслеживаемых HTTPArchive. Сравнение как по мобильным, так и обычным веб-страницам. Наблюдается линейный рост у обычных веб-страниц, и резкий рост у мобильных. В октябре 2020 года этот API вызывался примерно на 34,000 мобильных и 27,000 обычных сайтах.',
+  description='График использования estimate-метода в <span lang="en">StorageManager API</span> от количества страниц, отслеживаемых HTTP Archive. Сравнение как по мобильным, так и обычным веб-страницам. Наблюдается линейный рост у обычных веб-страниц, и резкий рост у мобильных. В октябре 2020 года этот API вызывался примерно на 34,000 мобильных и 27,000 обычных сайтах.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1853644024&format=interactive",
   sheets_gid="1811313356",
   sql_file="durable_storage_estimate_usage.sql"
@@ -97,7 +97,7 @@ featured_stat_label_3: Сайты, позволяющие устанавлива
   image="storage_manager_api_persist.png",
   alt="Количество страниц в Chrome, использующих persist-метод из StorageManager API.",
   caption='Количество страниц в Chrome, использующих persist-метод из <span lang="en">StorageManager API</span>.',
-  description='График использования persist-метода в <span lang="en">StorageManager API</span> от количества страниц, отслеживаемых HTTPArchive. Сравнение как по мобильным, так и обычным веб-страницам. На обычных страницах использование почти неизменно, в то время как на мобильных наблюдается небольшие изменения. В октябре 2020 года этот API вызывался на 25 обычных веб-страниц и 176 мобильных страницах.',
+  description='График использования persist-метода в <span lang="en">StorageManager API</span> от количества страниц, отслеживаемых HTTP Archive. Сравнение как по мобильным, так и обычным веб-страницам. На обычных страницах использование почти неизменно, в то время как на мобильных наблюдается небольшие изменения. В октябре 2020 года этот API вызывался на 25 обычных веб-страниц и 176 мобильных страницах.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=644836316&format=interactive",
   sheets_gid="1095648844",
   sql_file="durable_storage_persist_usage.sql"
@@ -216,9 +216,9 @@ self.addEventListener('periodicsync', (event) => {
 
 {{ figure_markup(
   image="periodic_background_sync_api.png",
-  alt="Процент загрузок страниц в Chrome, использующих Idle Detection API.",
-  caption='Процент загрузок страниц в Chrome, использующих <span lang="en">Idle Detection API</span>.',
-  description='График использования <span lang="en">Idle Detection API</span> в процентном соотношении от количества отслеживаемых страниц в HTTPArchive. Сравнение по как мобильным, так и обычным веб-страницам. С апреля 2020 года использование API колеблется от одной до двух страниц (для десктопа и мобильных устройств).',
+  alt="Процент загрузок страниц в Chrome, использующих Periodic Background Sync API.",
+  caption='Процент загрузок страниц в Chrome, использующих <span lang="en">Periodic Background Sync API</span>.',
+  description='График использования <span lang="en">Periodic Background Sync API</span> в процентном соотношении от количества отслеживаемых страниц в HTTP Archive. Сравнение по как мобильным, так и обычным веб-страницам. С апреля 2020 года использование API колеблется от одной до двух страниц (для десктопа и мобильных устройств).',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1444904371&format=interactive",
   sheets_gid="386193538",
   sql_file="periodic_background_sync_usage.sql"
@@ -243,7 +243,7 @@ relatedApps.forEach((app) => {
 {{ figure_markup(
   image="get_installed_related_apps.png",
   caption="Процент загрузок страниц в Chrome, использующих getInstalledRelatedApps().",
-  description="График использования getInstalledRelatedApps() в процентном соотношении от количества отслеживаемых страниц в HTTPArchive. Сравнение по как мобильным, так и обычным веб-страницам. Наблюдается устойчивый рост использования на мобильных устройствах с пиком в 363 страниц в октябре 2020 года, по сравнению с 44 обычными веб-страницами.",
+  description="График использования getInstalledRelatedApps() в процентном соотношении от количества отслеживаемых страниц в HTTP Archive. Сравнение по как мобильным, так и обычным веб-страницам. Наблюдается устойчивый рост использования на мобильных устройствах с пиком в 363 страниц в октябре 2020 года, по сравнению с 44 обычными веб-страницами.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1774881171&format=interactive",
   sheets_gid="860146688",
   sql_file="get_installed_related_apps_usage.sql"
