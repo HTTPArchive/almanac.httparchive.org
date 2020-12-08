@@ -1035,6 +1035,15 @@ Percentile | Desktop | Mobile
 
 ### Feature queries
 
+{{ figure_markup(
+  image="supports-criteria.png",
+  caption="Relative popularity of `@supports` features queried as a percent of occurrences.",
+  description="Bar chart of the relative popularity of @supports features queried as a percent of occurrences. The most popular feature queried is sticky at 49% of occurrences on mobile pages, followed by ime-align at 24%, mask-image at 12%, overflow-scrolling at 5%, grid at 2%, custom properties, transform-style, max(), and object-fit all at 1%, and appearance at approximately 0%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1901533222&format=interactive",
+  sheets_gid="1155233487",
+  sql_file="supports_criteria.sql"
+) }}
+
 ## Meta
 
 ### Declaration repetition
