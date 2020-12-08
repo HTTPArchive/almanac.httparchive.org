@@ -15,8 +15,8 @@ featured_quote: Stats suggest almost twice as many Jamstack sites exist now than
 featured_stat_1: 154%
 featured_stat_label_1: Increase in Jamstack websites in 2020
 featured_stat_2: 1 gram
-featured_stat_label_2: CO2 emitted the median Jamstack on page load
-featured_stat_3: 38%
+featured_stat_label_2: CO2 emitted for median Jamstack on page load
+featured_stat_3: 72.5%
 featured_stat_label_3: Jamstack sites built using Next.js
 ---
 
