@@ -1213,7 +1213,8 @@
     "exterkamp": {
       "name": "Shane Exterkamp",
       "teams": [
-        "editors"
+        "editors",
+        "reviewers"
       ],
       "avatar_url": "https://avatars2.githubusercontent.com/u/6392995?v=4&s=200",
       "github": "exterkamp",
