@@ -232,8 +232,8 @@ Be mindful that fonts preloaded without the `crossorigin` attribute will be fetc
 When it's time to choose a resource for use with different screen sizes, reach for the `media` attribute with `preload` to optimize your media queries.
 
 ```html
-<link rel="preload" href="desktop.css" as="style" media="only screen and (max-width: 768px)">
-<link rel="preload" href="mobile.css" as="style" media="~~~">
+<link rel="preload" href="desktop.css" as="style" media="only screen and (min-width: 768px)">
+<link rel="preload" href="mobile.css" as="style" media="screen and (max-width: 430px)">
 ```
 
 Seeing over 2,100 different combinations of media queries in the 2020 dataset encourages us to consider how wide the variance is between concept and implementation of responsive design from site to site. The ever popular `767px/768px` breakpoints (as popularised by Bootstrap amongst others) can be seen in the data.
