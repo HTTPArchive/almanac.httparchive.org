@@ -7,7 +7,7 @@ authors: [Zizzamia]
 reviewers: [jessnicolet, pmeenan, giopunt, mgechev, notwillk]
 analysts: [khempenius]
 translators: []
-zizzamia_bio: Leonardo is a Staff Software Engineer at <a href="https://www.coinbase.com/">Coinbase</a>, leading web performance and growth initiatives. He curates the <a href="https://ngrome.io">NGRome Conference</a>. Leo also maintains the <a href="https://github.com/Zizzamia/perfume.js">Perfume.js<a/> library, which helps companies prioritize roadmaps and make better business decisions through performance analytics.
+zizzamia_bio: Leonardo is a Staff Software Engineer at <a href="https://www.coinbase.com/">Coinbase</a>, leading web performance and growth initiatives. He curates the <a href="https://ngrome.io">NG Rome Conference</a>. Leo also maintains the <a href="https://github.com/Zizzamia/perfume.js">Perfume.js<a/> library, which helps companies prioritize roadmaps and make better business decisions through performance analytics.
 discuss: 2057
 results: https://docs.google.com/spreadsheets/d/1lXjd8ogB7kYfG09eUdGYXUlrMjs4mq1Z7nNldQnvkVA/
 queries: 21_Resource_Hints
@@ -98,7 +98,7 @@ The [native lazy loading](https://web.dev/browser-level-image-lazy-loading/) hin
 <img src="image.png" loading="lazy" alt="…" width="200" height="200">
 ```
 
-Be mindful Chromium's implementation of lazy-loading thresholds logic historically has been quite [conservative](https://web.dev/browser-level-image-lazy-loading/#distance-from-viewport-thresholds), keeping the offscreen limit to 3000px. During the last year the limit has been actively tested and improved on to better align developer expectations, and ultimately moving the thresholds to 1250px. Also, there is [no standard across the browsers](https://github.com/whatwg/html/issues/5408) and no ability for web developers to override the defaults thresholds provided by the browsers, yet.
+Be mindful Chromium's implementation of lazy-loading thresholds logic historically has been quite [conservative](https://web.dev/browser-level-image-lazy-loading/#distance-from-viewport-thresholds), keeping the offscreen limit to 3000px. During the last year the limit has been actively tested and improved on to better align developer expectations, and ultimately moving the thresholds to 1250px. However, there is [no standard across the browsers at present](https://github.com/whatwg/html/issues/5408) and no ability for web developers to override the defaults thresholds provided by the browsers, yet.
 
 ## Resource Hints
 
@@ -111,7 +111,7 @@ More and more web pages are using the main resource hints, and in 2020 we are se
 {{ figure_markup(
   image="adoption-of-resource-hints.png",
   caption="Adoption of resource hints",
-  description="TODO",
+  description="Column chart showcasing the adoption of resource hints in 2020.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYAbLxN40s6mNR1jo0XDe_V4siN8TAsx2mryMp5IQmlJ-9O9eJxYROz7Rw6ozyFP6hlIZHxxh95GqX/pubchart?oid=1550112064&format=interactive",
   sheets_gid="1805612941",
   sql_file="adoption.sql"
