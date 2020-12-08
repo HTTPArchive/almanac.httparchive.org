@@ -109,7 +109,6 @@ Based on the HTTP Archive, let's jump into analyzing the 2020 trends, and compar
 
 More and more web pages are using the main resource hints, and in 2020 we are seeing the adoption remains consistent between desktop & mobile.
 
-{# TODO(authors): Add or remove figure description. #}
 {{ figure_markup(
   image="adoption-of-resource-hints.png",
   caption="Adoption of resource hints.",
@@ -171,7 +170,6 @@ Compared to [2019](../2019/resource-hints#resource-hints) the `dns-prefetch` had
 
 Across the board developers are learning how to better use resource hints, and compared to [2019](../2019/resource-hints#resource-hints) we've seen an improved use of `preload`, `prefetch`, and `preconnect`. For expensive operations like preload and preconnect the median usage on desktop decreased from 2 to 1. We have seen the opposite for loading future resources with a lower priority with `prefetch`, with an increase from 1 to 2 in median per page.
 
-{# TODO(authors): Add or remove figure description. #}
 {{ figure_markup(
   image="median-number-of-hints-per-page.png",
   caption="Median number of hints per page.",
@@ -200,19 +198,8 @@ As we create more and more automation with resource hints, be cautious when dyna
 
 With `preload` and `prefetch`, it's crucial to use the `as` attribute to help the browser prioritize the resource more accurately. Doing so allows for proper storage in the cache for future requests, applying the correct Content Security Policy ([CSP](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)), and setting the correct `Accept` request headers.
 
-With `preload` many different content-types can be preloaded and the [full list](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#Attributes) follows the recommendations made in the Fetch [spec](https://fetch.spec.whatwg.org/#concept-request-destination). The most popular is the `script` type with 64% usage.
+With `preload` many different content-types can be preloaded and the [full list](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#Attributes) follows the recommendations made in the Fetch [spec](https://fetch.spec.whatwg.org/#concept-request-destination). The most popular is the `script` type with 64% usage. This is likely related to a large group of sites built as Single Page Apps that need the main bundle as soon as possible to start downloading the rest of their JS dependencies. Subsequent usage comes from font at 8%, style at 5%, image at 1%, and fetch at 1%.
 
-{{ figure_markup(
-  caption="The percent of preload hints on mobile using the scripts type.",
-  content="64%",
-  classes="big-number",
-  sheets_gid="1829901599",
-  sql_file="as_attribute_by_year.sql"
-) }}
-
-This is likely related to a large group of sites built as Single Page Apps that need the main bundle as soon as possible to start downloading the rest of their JS dependencies. Subsequent usage comes from font at 8%, style at 5%, image at 1%, and fetch at 1%.
-
-{# TODO(authors): Add or remove figure description. #}
 {{ figure_markup(
   image="mobile-as-attribute-values-by-year.png",
   caption="Mobile `as` attribute values by year.",
