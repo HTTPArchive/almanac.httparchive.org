@@ -449,19 +449,14 @@ SELECT
 FROM (
   SELECT
     client,
-    page,
-    SUM(property.freq) AS freq_longhand_first
+    property.freq AS freq_longhand_first
   FROM
     `httparchive.almanac.parsed_css`,
     UNNEST(getLonghandFirstProperties(css)) AS property
   WHERE
-    date = '2020-08-01'
-  GROUP BY
-    client,
-    page),
+    date = '2020-08-01' AND
+    property.freq > 0),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
-WHERE
-  freq_longhand_first > 0
 GROUP BY
   percentile,
   client
