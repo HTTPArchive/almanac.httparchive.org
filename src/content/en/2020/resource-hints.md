@@ -119,7 +119,45 @@ More and more web pages are using the main resource hints, and in 2020 we are se
 
 The relative popularity of `dns-prefetch` with 33% adoption compared with other resource hints is unsurprising as it first appeared in 2009, and has the widest support out of all major resource hints.
 
-{# TODO - add table to compare 2019 vs 2020 #}
+<figure>
+  <table>
+    <tr>
+     <th>Resource Hint</th>
+     <th>Adoption 2019</th>
+     <th>Adoption 2020</th>
+    </tr>
+    <tr>
+     <td><code>dns-prefetch</code></td>
+     <td>29%</td>
+     <td>8</td>
+    </tr>
+    <tr>
+     <td><code>preload</code>
+     </td>
+     <td>16%</td>
+     <td>18%</td>
+    </tr>
+    <tr>
+     <td><code>preconnect</code>
+     </td>
+     <td>4%</td>
+     <td>9%</td>
+    </tr>
+    <tr>
+     <td><code>prefetch</code>
+     </td>
+     <td>3%</td>
+     <td>3%</td>
+    </tr>
+    <tr>
+     <td><code>prerender</code> (deprecated)
+     </td>
+     <td>1</td>
+     <td>0%</td>
+    </tr>
+  </table>
+  <figcaption>{{ figure_link(caption="Adoption of resource hints 2019 vs 2020.") }}</figcaption>
+</figure>
 
 Compared to [2019](https://almanac.httparchive.org/en/2019/resource-hints#resource-hints) the `dns-prefetch` had a 4% increase in Desktop adoption. We saw a similar increase for `preconnect` as well. One key reason this was the largest growth between all hints, is the clear and useful advice pthe Lighthouse audit is giving on this matter](https://web.dev/uses-rel-preconnect/). Starting from this year's report we also introduce how the latest dataset performs against Lighthouse recommendations.
 
@@ -134,7 +172,7 @@ Across the board developers are learning how to better use resource hints, and c
 {{ figure_markup(
   image="median-number-of-hints-per-page.png",
   caption="Median number of hints per page.",
-  description="TODO",
+  description="Column chart showcasing the median number of hints per page.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYAbLxN40s6mNR1jo0XDe_V4siN8TAsx2mryMp5IQmlJ-9O9eJxYROz7Rw6ozyFP6hlIZHxxh95GqX/pubchart?oid=320451644&format=interactive",
   sheets_gid="175042082",
   sql_file="hints_per_page.sql"
