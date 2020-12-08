@@ -1048,9 +1048,59 @@ Percentile | Desktop | Mobile
 
 ### Declaration repetition
 
+<figure markdown>
+  <table>
+    <thead>
+      <tr>
+        <th>Percentile</th>
+        <th>Unique/total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>10</td>
+        <td class="numeric">30.97%</td>
+      </tr>
+      <tr>
+        <td>50</td>
+        <td class="numeric">45.43%</td>
+      </tr>
+      <tr>
+        <td>90</td>
+        <td class="numeric">63.67%</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <figcaption>
+    {{ figure_link(
+      caption="Declaration repetition.",
+      sheets_gid="2124098640",
+      sql_file="repetition.sql"
+    ) }}
+  </figcaption>
+</figure>
+
 ### Shorthands and longhands
 
 #### Shorthands before longhands
+
+{{ figure_markup(
+  image="most-popular-longhand-after-shorthand.png",
+  caption="TO.",
+  description="TODO.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=176504610&amp;format=interactive",
+  sheets_gid="1155233487",
+  sql_file="supports_criteria.sql"
+) }}
+
+{{ figure_markup(
+  image="background-shorthand-versus-longhand.png",
+  caption="TODO.",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql"
+) }}
 
 #### font
 
@@ -1058,9 +1108,33 @@ Percentile | Desktop | Mobile
 
 #### Margins and paddings
 
+{{ figure_markup(
+  image="margin-padding-shorthand-vs-longhand.png",
+  caption="TODO.",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql"
+) }}
+
 #### Flex
 
+{{ figure_markup(
+  image="flex-shorthand-vs-longhand.png",
+  caption="TODO.",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql"
+) }}
+
 #### Grid
+
+{{ figure_markup(
+  image="usage-of-grid-properties.png",
+  caption="TODO.",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql"
+) }}
 
 ### CSS mistakes
 
@@ -1068,8 +1142,48 @@ Percentile | Desktop | Mobile
 
 #### Nonexistent properties
 
+{{ figure_markup(
+  image="most-popupular-unknown-properties.png",
+  caption="TODO.",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql"
+) }}
+
 #### Longhands before shorthands
 
+{{ figure_markup(
+  image="most-popupular-unknown-properties.png",
+  caption="TODO.",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql"
+) }}
+
 ## Sass
+
+{{ figure_markup(
+  image="most-popupular-sass-function-calls.png",
+  caption="TODO.",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql"
+) }}
+
+{{ figure_markup(
+  image="usage-of-control-flow-statements-scss.png",
+  caption="TODO.",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql"
+) }}
+
+{{ figure_markup(
+  image="usage-of-explicit-nesting-in-scss.png",
+  caption="TODO.",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql"
+) }}
 
 ## Conclusion
