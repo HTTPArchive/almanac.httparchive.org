@@ -243,6 +243,15 @@ Percentile | Desktop | Mobile
         <td></td>
       </tr>
       <tr>
+        <td>grid-gap</td>
+        <td class="numeric">63%</td>
+        <td class="numeric">11%</td>
+        <td class="numeric">9%</td>
+        <td class="numeric">1%</td>
+        <td class="numeric">16%</td>
+        <td></td>
+      </tr>
+      <tr>
         <td>mask-position</td>
         <td></td>
         <td></td>
