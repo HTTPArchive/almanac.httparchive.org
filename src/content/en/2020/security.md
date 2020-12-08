@@ -88,7 +88,7 @@ It's still surprising to us, that TLSv1.0 usage is basically zero and pleasing t
 
 ### Cipher suites
 
-Within TLS there are a number of cipher suites that can be used with varying levels of security. The best ciphers support (forward secrecy](https://en.wikipedia.org/wiki/Forward_secrecy) key exchange, meaning even if the servers keys are compromised, old traffic that used those keys cannot decrypted.
+Within TLS there are a number of cipher suites that can be used with varying levels of security. The best ciphers support [forward secrecy](https://en.wikipedia.org/wiki/Forward_secrecy) key exchange, meaning even if the servers keys are compromised, old traffic that used those keys cannot be decrypted.
 
 {{ figure_markup(
   caption="Mobile sites using forward secrecy.",
@@ -99,11 +99,11 @@ Within TLS there are a number of cipher suites that can be used with varying lev
 )
 }}
 
-All sites should be using forward secrecy ciphers and it is pleasing to see 98.14% of desktop sites and 98.03% of mobile sites using ciphers with forward secrecy. In the past, newer versions of TLS added support for newer ciphers but rarely removed older version. This is one of the reasons TLSv1.3 is more secure as it does a large clear down of older ciphers leaving only five secure ciphers all of which support forward secrecy. This prevents downgrade attacks where a less secure cipher is forced to be used.
+All sites should be using forward secrecy ciphers and it is pleasing to see 98.14% of desktop sites and 98.03% of mobile sites using ciphers with forward secrecy. In the past, newer versions of TLS added support for newer ciphers but rarely removed older versions. This is one of the reasons TLSv1.3 is more secure as it does a large clear down of older ciphers leaving only five secure ciphers all of which support forward secrecy. This prevents downgrade attacks where a less secure cipher is forced to be used.
 
-After this the main choice is between the level of encryption - higher key sizes will take longer to break, but at the cost of more intensive compute to encrypt and decrypt the connection–particularly for initial connection. For the [block cipher mode](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation) GMC should be used and [CBC is considered weak due to padding attacks](https://blog.qualys.com/product-tech/2019/04/22/zombie-poodle-and-goldendoodle-vulnerabilities).
+After this the main choice is between the level of encryption - higher key sizes will take longer to break, but at the cost of more compute intensive to encrypt and decrypt the connection–particularly for initial connection. For the [block cipher mode](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation) GMC should be used and [CBC is considered weak due to padding attacks](https://blog.qualys.com/product-tech/2019/04/22/zombie-poodle-and-goldendoodle-vulnerabilities).
 
-For key size 128-bit and 256-bit encryption are common for the widely support Advanced Encryption Standard (AES), and while 256-bit is more secure, 128-bit is still sufficient for most sites, though 256-bit would be preferred.
+For key size 128-bit and 256-bit encryption are common for the widely supported Advanced Encryption Standard (AES), and while 256-bit is more secure, 128-bit is still sufficient for most sites, though 256-bit would be preferred.
 
 {{ figure_markup(
   image="security-distribution-of-cipher-suites.png",
@@ -115,7 +115,7 @@ For key size 128-bit and 256-bit encryption are common for the widely support Ad
   )
 }}
 
-We can see from above chart that AES_128_GCM is the most common and is used by 78.4% of desktop and mobile sites. AES_256_GCM is used by 19.1% of desktop and 18.5% of mobile sites with the other sites likely being the ones on older protocols and cipher suites.
+We can see from the above chart that AES_128_GCM is the most common and is used by 78.4% of desktop and mobile sites. AES_256_GCM is used by 19.1% of desktop and 18.5% of mobile sites with the other sites likely being the ones on older protocols and cipher suites.
 
 One important point to note is that our data is based on running Chrome to connect to a site, and it will use a single protocol cipher to connect. Our [methodology](./methodology) does not allow us to see the full range of protocols and cipher suites supported, and only the one actually used for that connection. For that we need to look at other sources like [SSL Pulse from SSL Labs](https://www.ssllabs.com/ssl-pulse/), but with most modern browsers now supporting similar TLS capabilities the above data is what we would expect the vast majority of users to use.
 
@@ -188,7 +188,7 @@ Next we will look at the Certificate Authorities (CAs) issuing the TLS certifica
   <figcaption>{{ figure_link(caption="Top 10 certificate issuers for websites.", sheets_gid="1486167130", sql_file="tls_ca_issuers_pages.sql.sql") }}</figcaption>
 </figure>
 
-It is no surprise to see Let's Encrypt well in the lead easily taking the top spot improving on its [number two position last year](../2019/security#certificate-authorities). Its combination of free and automated certificates is proving a winner with both individual website owners and platforms. Cloudflare similarly offers free certificates on to its customers taking the number two and number nine position. What is more interesting there is that it is the ECC Cloudflare issuer that being used. ECC certificates are smaller and so mer efficient than RSA certificates but can be complicated to deploy as support is universal and managing bpoth certificates often requires extra effort. This is the benefit of a CDN or hosted provider if they can manage this for you like Cloudflare does here. Browsers that supportn ECC (like the Chrome browser we use in our crawl) will use that, and older browsers will use RSA.
+It is no surprise to see Let's Encrypt well in the lead easily taking the top spot improving on its [number two position last year](../2019/security#certificate-authorities). Its combination of free and automated certificates is proving a winner with both individual website owners and platforms. Cloudflare similarly offers free certificates for its customers taking the number two and number nine position. What is more interesting there is that it is the ECC Cloudflare issuer that is being used. ECC certificates are smaller and so more efficient than RSA certificates but can be complicated to deploy as support is universal and managing both certificates often requires extra effort. This is the benefit of a CDN or hosted provider if they can manage this for you like Cloudflare does here. Browsers that supporting ECC (like the Chrome browser we use in our crawl) will use that, and older browsers will use RSA.
 
 {# TODO finish this out:
 
