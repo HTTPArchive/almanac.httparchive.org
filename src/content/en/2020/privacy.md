@@ -250,7 +250,7 @@ When looking at the popularity of the different consent management solutions, we
 
 ### IAB Europe’s Transparency Consent Framework
 
-IAB Europe proposed a [Transparency Consent Framework](https://iabeurope.eu/transparency-consent-framework/) (TCF) as a GDPR-compliant solution to obtain users' consent about their digital advertising preferences. The implementation provides an industry standard for communication between publishers and advertisers about consumer consent.
+IAB Europe, the European association for digital marketing and advertising, proposed a [Transparency Consent Framework](https://iabeurope.eu/transparency-consent-framework/) (TCF) as a GDPR-compliant solution to obtain users' consent about their digital advertising preferences. The implementation provides an industry standard for communication between publishers and advertisers about consumer consent.
 {{ figure_markup(
   image="privacy-adoption-of-the-tcf-banner.png",
   caption="Adoption rate of TCF banner",
