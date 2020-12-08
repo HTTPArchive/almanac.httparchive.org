@@ -940,6 +940,10 @@ In the next figure, we show the market share of cryptominer on the web based on 
 
 {# TODO Cryptomining market share image - leave it out? one of the main operators has been shut down for a long time #}
 
-{# TODO Evolution section #}
+## Evolution & conclusion
 
-{# TODO Conclusion section #}
+One of the most prominent developments in terms of web security over the last year has been the increased adoption of security headers on (the long tail of) the Web. Not only does this mean that overall, users are generally better protected, more importantly, it shows that the security incentive of website administrators has generally increased. This increase in usage can be seen for all the different security headers, even for the ones that are non-trivial to implement, such as CSP. Another interesting observation that can be made, is that we saw that websites that adopt one security header, are also more likely to adopt security mechanisms. This shows that web security is not just considered as an afterthought, but rather a holistic approach where developers aim to defend against all possible threats.
+
+On a global scale, there is still a long way to go. For instance, less than a third of all sites have adequate protection for clickjacking attacks, and many sites are opting out of the protection (enabled by default in certain browsers) against various cross-site attacks, by setting the `SameSite` attribute on cookies to `None`. Nevertheless, we have also seen a more positive evolution: various software on the technology stack are enabling various security features by default. Developers that build a website using this software will start off with an already-secure environment, and would have to forcefully disable protections if they so desire. This is very different from what we see in legacy applications, where enhancing security might be more difficult as it could break functionality.
+
+Looking ahead, one prediction that we know will come true is that the security landscape will not come to a standstill. New attack techniques will surface, possibly prompting the need for additional security mechanisms to defend against them. As we have seen with other security features that have only recently been adopted, this will take some time, but gradually and step by step we are converging to a more secure web.
