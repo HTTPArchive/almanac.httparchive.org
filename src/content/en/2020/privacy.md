@@ -1,5 +1,4 @@
 ---
-#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 part_number: II
 chapter_number: 10
 title: Privacy
@@ -8,11 +7,11 @@ authors: [ydimova]
 reviewers: [ldevernay]
 analysts: [ydimova, max-ostapenko]
 translators: []
-#ydimova_bio:  Yana Dimova is a PhD student at KU Leuven university in Belgium, working on privacy and web security.
+ydimova_bio:  Yana Dimova is a PhD student at KU Leuven university in Belgium, working on privacy and web security.
 discuss: 2046
 results: https://docs.google.com/spreadsheets/d/16bE70rv4qbmKIqbZS1zUiTRpk5eOlgxBXEabL1qiduI/
 queries: 10_Privacy
-featured_quote: This topic has been increasing in popularity recently and has raised awareness on the users’ side. The need for guidelines has been met with various regulations (such as GDPR in Europe, LGPD in Brazil, CCPA in California…). These aim to increase the accountability of data processors and their transparency towards users. In this chapter, we discuss the prevalence of online tracking with different techniques and the adoption rate of cookie consent banners and privacy policies by websites.
+featured_quote: This topic has been increasing in popularity recently and has raised awareness on the users' side. The need for guidelines has been met with various regulations (such as GDPR in Europe, LGPD in Brazil, CCPA in California…). These aim to increase the accountability of data processors and their transparency towards users. In this chapter, we discuss the prevalence of online tracking with different techniques and the adoption rate of cookie consent banners and privacy policies by websites.
 featured_stat_1: 93%
 featured_stat_label_1: Websites load at least one tracker
 featured_stat_2: Nine out of ten
@@ -24,16 +23,16 @@ unedited: true
 
 ## Introduction
 
-This chapter of the Web Almanac gives an overview of the current state of privacy on the web. This topic has been increasing in popularity recently and has raised awareness on the users’ side. The need for guidelines has been met with various regulations (such as [GDPR](https://gdpr-info.eu/) in Europe, [LGPD](https://lgpd-brazil.info/) in Brazil, [CCPA](https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?division=3.&part=4.&lawCode=CIV&title=1.81.5) in California…). These aim to increase the accountability of data processors and their transparency towards users. In this chapter, we discuss the prevalence of online tracking with different techniques and the adoption rate of cookie consent banners and privacy policies by websites.
+This chapter of the Web Almanac gives an overview of the current state of privacy on the web. This topic has been increasing in popularity recently and has raised awareness on the users' side. The need for guidelines has been met with various regulations (such as [GDPR](https://gdpr-info.eu/) in Europe, [LGPD](https://lgpd-brazil.info/) in Brazil, [CCPA](https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?division=3.&part=4.&lawCode=CIV&title=1.81.5) in California…). These aim to increase the accountability of data processors and their transparency towards users. In this chapter, we discuss the prevalence of online tracking with different techniques and the adoption rate of cookie consent banners and privacy policies by websites.
 
 ## Online Tracking
 
-Third-party trackers collect user data to build up profiles of the user’s behavior to be monetized for advertising purposes. This raises privacy concerns with users on the web, which resulted in the emergence of various tracking protections. However, as we will see in this section, online tracking is still widely used. Not only does it have a negative impact on privacy, online tracking has a [huge impact on the environment](https://gerrymcgovern.com/calculating-the-pollution-cost-of-website-analytics-part-1/) and avoiding it can lead to [better performance](https://twitter.com/fr3ino/status/1000166112615714816).
+Third-party trackers collect user data to build up profiles of the user's behavior to be monetized for advertising purposes. This raises privacy concerns with users on the web, which resulted in the emergence of various tracking protections. However, as we will see in this section, online tracking is still widely used. Not only does it have a negative impact on privacy, online tracking has a [huge impact on the environment](https://gerrymcgovern.com/calculating-the-pollution-cost-of-website-analytics-part-1/) and avoiding it can lead to [better performance](https://twitter.com/fr3ino/status/1000166112615714816).
 We examine the prominence of the most common types of third-party tracking, namely by means of third-party cookies and the use of fingerprinting. Online tracking is not limited to just these two techniques, new ones keep arising to circumvent existing countermeasures.
 
 ### Third-party trackers
 
-We use [WhoTracksMe](https://whotracks.me/)’s tracker list to determine the percentage of websites that issue a request to a tracker. As in the following figure, we find that on roughly 93% of websites, at least one tracker is present.
+We use [WhoTracksMe](https://whotracks.me/)'s tracker list to determine the percentage of websites that issue a request to a tracker. As in the following figure, we find that on roughly 93% of websites, at least one tracker is present.
 
 {{ figure_markup(
   image="privacy-websites-that-load-trackers.png",
@@ -58,7 +57,7 @@ We examine the largest (most widely used) trackers and plot the prevalence of th
 
 The largest player on the online tracking market is definitely Google, with eight of its tracking domains present in the top 10 trackers and prevalent on at least 70% of websites. Following are Facebook and Cloudflare.
 
-WhoTracksMe’s tracker list also defines categories that the trackers belong to. The following figure shows the distribution of the different categories for the 100 largest trackers.
+WhoTracksMe's tracker list also defines categories that the trackers belong to. The following figure shows the distribution of the different categories for the 100 largest trackers.
 
 {{ figure_markup(
   image="privacy-tracker-categories.png",
@@ -205,11 +204,11 @@ We looked into the most popular cookies being set on websites in HTTP's response
   <figcaption>{{ figure_link(caption="Top cookies on mobile sites", sheets_gid="732942035", sql_file="top100_cookies_set_from_header.sql") }}</figcaption>
 </figure>
 
-As found previously, Google’s tracking domain ‘doubleclick.net’ sets cookies on roughly one fourth of websites on a mobile client and one third of all websites on a desktop client. Again, nine out of the ten most popular cookies on desktop client and 7 on mobile are set by a Google domain. This is a lower bound for the amount of websites the cookie is set on, since we are only counting cookies set via an HTTP header, a large amount of tracking cookies is set by using third-party scripts.
+As found previously, Google's tracking domain 'doubleclick.net' sets cookies on roughly one fourth of websites on a mobile client and one third of all websites on a desktop client. Again, nine out of the ten most popular cookies on desktop client and 7 on mobile are set by a Google domain. This is a lower bound for the amount of websites the cookie is set on, since we are only counting cookies set via an HTTP header, a large amount of tracking cookies is set by using third-party scripts.
 
 ### Fingerprinting
 
-Another widely-used tracking technique is fingerprinting, which consists of collecting different kinds of information about the user with the goal of building a unique “fingerprint” for them. Different types of fingerprinting are used on the web by trackers. Browser fingerprinting uses characteristics specific to the browser of the user, relying on the fact that the chance of another user having the exact same browser information is fairly small. In our crawl, we examined the presence of the [FingerprintJS](https://fingerprintjs.com/) library, which provides browser fingerprinting as a service.
+Another widely-used tracking technique is fingerprinting, which consists of collecting different kinds of information about the user with the goal of building a unique "fingerprint" for them. Different types of fingerprinting are used on the web by trackers. Browser fingerprinting uses characteristics specific to the browser of the user, relying on the fact that the chance of another user having the exact same browser information is fairly small. In our crawl, we examined the presence of the [FingerprintJS](https://fingerprintjs.com/) library, which provides browser fingerprinting as a service.
 
 {{ figure_markup(
   image="privacy-websites-with-fingerprintjs-library.png",
@@ -225,7 +224,7 @@ Although the library is present on a small percentage of websites, the main issu
 
 ## Consent Management Platforms
 
-Cookie consent banners have become common now, increase transparency towards cookies and often allowing users to specify their cookie choices. While a lot of websites opt for using their own implementation of cookie banners, third-party solutions called ‘Consent Management Platforms’ have recently emerged. The platforms provide an easy way for websites to collect user’s consent for different types of cookies. We see that 4.4% of websites use some consent management platform to provide cookie choices on desktop clients, and 4.0% on mobile clients. 
+Cookie consent banners have become common now, increase transparency towards cookies and often allowing users to specify their cookie choices. While a lot of websites opt for using their own implementation of cookie banners, third-party solutions called 'Consent Management Platforms' have recently emerged. The platforms provide an easy way for websites to collect user's consent for different types of cookies. We see that 4.4% of websites use some consent management platform to provide cookie choices on desktop clients, and 4.0% on mobile clients.
 
 {{ figure_markup(
   image="privacy-websites-with-consent-management-platform.png",
@@ -248,7 +247,7 @@ Cookie consent banners have become common now, increase transparency towards coo
 
 When looking at the popularity of the different consent management solutions, we can see that Osano and Quantcast choice are the leading platforms.
 
-### IAB Europe’s Transparency Consent Framework
+### IAB Europe's Transparency Consent Framework
 
 IAB Europe, the European association for digital marketing and advertising, proposed a [Transparency Consent Framework](https://iabeurope.eu/transparency-consent-framework/) (TCF) as a GDPR-compliant solution to obtain users' consent about their digital advertising preferences. The implementation provides an industry standard for communication between publishers and advertisers about consumer consent.
 {{ figure_markup(
@@ -261,11 +260,11 @@ IAB Europe, the European association for digital marketing and advertising, prop
   )
 }}
 
-While our results show that the TCF banner is not yet the ‘industry standard’, it is a step in the right direction. Considering the main target group of IAB Europe is in fact European publishers, having an adoption rate on 1.5% of websites on desktop client and 1.4% on mobile is not too bad.
+While our results show that the TCF banner is not yet the 'industry standard', it is a step in the right direction. Considering the main target group of IAB Europe is in fact European publishers, having an adoption rate on 1.5% of websites on desktop client and 1.4% on mobile is not too bad.
 
 ## Privacy Policies
 
-Privacy policies are widely used by websites to meet legal obligations and increase transparency towards users about data collection practices. In our crawl, we searched for keywords indicating the presence of a privacy policy text on each visited website. 
+Privacy policies are widely used by websites to meet legal obligations and increase transparency towards users about data collection practices. In our crawl, we searched for keywords indicating the presence of a privacy policy text on each visited website.
 
 {{ figure_markup(
   image="privacy-websites-with-privacy-link.png",
