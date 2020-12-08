@@ -514,6 +514,16 @@
       "github": "obto",
       "twitter": "theobto"
     },
+    "dougsillars": {
+      "name": "Doug Sillars",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1514288?v=4&s=200",
+      "website": "https://dougsillars.com",
+      "github": "dougsillars",
+      "twitter": "dougsillars"
+    },
     "drewzboto": {
       "name": "Drewz",
       "teams": [
@@ -532,15 +542,6 @@
       "github": "dsadhanala",
       "twitter": "dsadhanala"
     },
-    "edmondwwchan": {
-      "name": "Edmond W. W. Chan",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/68361682?s=200&v=4",
-      "website": "https://edmondwwchan.github.io/",
-      "github": "edmondwwchan"
-    },
     "en3r0": {
       "name": "Dustin Montgomery",
       "teams": [
@@ -551,6 +552,15 @@
       "github": "en3r0",
       "twitter": "DustinMontSEO"
     },
+    "edmondwwchan": {
+      "name": "Edmond W. W. Chan",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/68361682?s=200&v=4",
+      "website": "https://edmondwwchan.github.io/",
+      "github": "edmondwwchan"
+    },
     "ericwbailey": {
       "name": "Eric Bailey",
       "teams": [
@@ -560,16 +570,6 @@
       "website": "https://ericwbailey.design/",
       "github": "ericwbailey",
       "twitter": "ericwbailey"
-    },
-    "estelle": {
-      "name": "Estelle Weyl",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "https://avatars1.githubusercontent.com/u/69888?v=4&s=200",
-      "website": "http://standardista.com/",
-      "github": "estelle",
-      "twitter": "estellevw"
     },
     "fantasai": {
       "name": "Fantasai",
