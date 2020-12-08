@@ -75,31 +75,134 @@ Nearly 60% of the most popular trackers are advertising-related. This could be d
 
 We looked into the most popular cookies being set on websites in HTTP's response header, according to their name and domain.
 
-<figure markdown>
-| Client | Domain | Cookie Name | Websites present on   |
-| -------- | ------- | ------ | ------ |
-| desktop |	doubleclick.net|	test_cookie|	24%|
-|desktop|	facebook.com|	fr|		10%|
-|desktop|	youtube.com|	VISITOR_INFO1_LIVE|	10%
-|desktop|	youtube.com|	YSC|10%
-|desktop|	doubleclick.net|	IDE|9%
-|desktop|	doubleclick.net|unknown|	9%
-|desktop|	youtube.com	|GPS|9%
-|desktop|	doubleclick.net|	unknown|	8%
-|desktop|	google.com|	NID|	6%
-|desktop|	doubleclick.net|	unknown|6%
-|mobile|	doubleclick.net|	test_cookie|32%
-|mobile|	doubleclick.net	|IDE|	21%
-|mobile|	facebook.com|	fr|	10%
-|mobile|	youtube.com|	VISITOR_INFO1_LIVE|10%
-|mobile	|youtube.com|	YSC|10%
-|mobile|	google.com|	NID|10%
-|mobile|	youtube.com	|GPS|	8%
-|mobile|	doubleclick.net	|DSID|	7%
-|mobile|	yandex.ru|	yandexuid|	6%
-|mobile|	yandex.ru|	i|	6%
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Domain</th>
+        <th>Cookie Name</th>
+        <th>Websites present on</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>doubleclick.net</td>
+        <td>test_cookie</td>
+        <td class="numeric">24%</td>
+      </tr>
+      <tr>
+        <td>facebook.com</td>
+        <td>fr</td>
+        <td class="numeric">10%</td>
+      </tr>
+      <tr>
+        <td>youtube.com</td>
+        <td>VISITOR_INFO1_LIVE</td>
+        <td class="numeric">10%</td>
+      </tr>
+      <tr>
+        <td>youtube.com</td>
+        <td>YSC</td>
+        <td class="numeric">10%</td>
+      </tr>
+      <tr>
+        <td>doubleclick.net</td>
+        <td>IDE</td>
+        <td class="numeric">9%</td>
+      </tr>
+      <tr>
+        <td>doubleclick.net</td>
+        <td>unknown</td>
+        <td class="numeric">9%</td>
+      </tr>
+      <tr>
+        <td>youtube.com</td>
+        <td>GPS</td>
+        <td class="numeric">9%</td>
+      </tr>
+      <tr>
+        <td>doubleclick.net</td>
+        <td>unknown</td>
+        <td class="numeric">8%</td>
+      </tr>
+      <tr>
+        <td>google.com</td>
+        <td>NID</td>
+        <td class="numeric">6%</td>
+      </tr>
+      <tr>
+        <td>doubleclick.net</td>
+        <td>unknown</td>
+        <td class="numeric">6%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Top cookies on desktop sites", sheets_gid="732942035", sql_file="top100_cookies_set_from_header.sql") }}</figcaption>
+</figure>
 
-<figcaption>{{ figure_link(caption="Top cookies", sheets_gid="732942035", sql_file="top100_cookies_set_from_header.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Domain</th>
+        <th>Cookie Name</th>
+        <th>Websites present on</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>doubleclick.net</td>
+        <td>test_cookie</td>
+        <td class="numeric">32%</td>
+      </tr>
+      <tr>
+        <td>doubleclick.net</td>
+        <td>IDE</td>
+        <td class="numeric">21%</td>
+      </tr>
+      <tr>
+        <td>facebook.com</td>
+        <td>fr</td>
+        <td class="numeric">10%</td>
+      </tr>
+      <tr>
+        <td>youtube.com</td>
+        <td>VISITOR_INFO1_LIVE</td>
+        <td class="numeric">10%</td>
+      </tr>
+      <tr>
+        <td>youtube.com</td>
+        <td>YSC</td>
+        <td class="numeric">10%</td>
+      </tr>
+      <tr>
+        <td>google.com</td>
+        <td>NID</td>
+        <td class="numeric">10%</td>
+      </tr>
+      <tr>
+        <td>youtube.com</td>
+        <td>GPS</td>
+        <td class="numeric">8%</td>
+      </tr>
+      <tr>
+        <td>doubleclick.net</td>
+        <td>DSID</td>
+        <td class="numeric">7%</td>
+      </tr>
+      <tr>
+        <td>yandex.ru</td>
+        <td>yandexuid</td>
+        <td class="numeric">6%</td>
+      </tr>
+      <tr>
+        <td>yandex.ru</td>
+        <td>i</td>
+        <td class="numeric">6%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Top cookies on mobile sites", sheets_gid="732942035", sql_file="top100_cookies_set_from_header.sql") }}</figcaption>
 </figure>
 
 As found previously, Google’s tracking domain ‘doubleclick.net’ sets cookies on roughly one fourth of websites on a mobile client and one third of all websites on a desktop client. Again, nine out of the ten most popular cookies on desktop client and 7 on mobile are set by a Google domain. This is a lower bound for the amount of websites the cookie is set on, since we are only counting cookies set via an HTTP header, a large amount of tracking cookies is set by using third-party scripts.
