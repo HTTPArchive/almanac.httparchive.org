@@ -13,13 +13,13 @@ alextait1_bio: Alex Tait is a developer, consultant and educator whose passion l
 discuss: 2044
 results: https://docs.google.com/spreadsheets/d/1UjEBhq0TfYxUpdpq5IuxjeHB4yqhJq4NOKEd6Dwwrdk/
 queries: 08_Accessibility
-#featured_quote: TODO
-#featured_stat_1: TODO
-#featured_stat_label_1: TODO
-#featured_stat_2: TODO
-#featured_stat_label_2: TODO
-#featured_stat_3: TODO
-#featured_stat_label_3: TODO
+#featured_quote: As an industry it’s time that we acknowledge the story told by the numbers in this chapter; we are failing disabled people.
+#featured_stat_1: 15357625
+#featured_stat_label_1: longest alt text length in characters found for desktop sites. That’s enough to fill 5 and a half "War and Peace" sized books (assuming "War and Peace" has an average word length of 4.7 characters)
+#featured_stat_2: 3200
+#featured_stat_label_2: websites with the attribute aria-labeledby, which is a misspelling of the aria-labelledby attribute
+#featured_stat_3: 18
+#featured_stat_label_3: average alt text length in characters. The average English word is 4.7 characters, so this is pretty terse!
 ---
 
 
@@ -98,7 +98,7 @@ Tooltips also introduce a host of other accessibility barriers such as informati
 #### Other facts about alt text
 
 - The median length for both desktop and mobile alt text is 18 characters. With the average English word length being 4.7 characters, this means the median alt attribute value is 3-4 words long. Depending on the image, being terse can be beneficial. However it is hard to imagine 4 words being sufficient for an accurate description of an image with any complexity.
-- The longest alt text length found for desktop sites was 15357625 characters. That’s enough to fill 5 and a half "War and Peace" sized books (assuming war and peace has an average word length of 4.7 characters).
+- The longest alt text length found for desktop sites was 15357625 characters. That’s enough to fill 5 and a half "War and Peace" sized books (assuming "War and Peace" has an average word length of 4.7 characters).
 
 ### Video on the Web
 
