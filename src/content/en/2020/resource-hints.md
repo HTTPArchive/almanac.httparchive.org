@@ -125,13 +125,13 @@ The relative popularity of `dns-prefetch` with 33% adoption compared with other 
 
 Compared to [2019](../2019/resource-hints#resource-hints) the `dns-prefetch` had a 4% increase in Desktop adoption. We saw a similar increase for `preconnect` as well. One key reason this was the largest growth between all hints, is the clear and useful advice the [Lighthouse audit](https://web.dev/uses-rel-preconnect/) is giving on this matter. Starting from this year's report we also introduce how the latest dataset performs against Lighthouse recommendations.
 
-`preload` usage has had a slower growth with only a 2% increase from 2019. This could be in part because it requires a bit more specification. While you only need the domain to use `dns-prefetch` and `preconnect`, you must specify the resource to use `preload`. While `dns-prefetch` and `preconnect` are reasonably low risk–though still can be abused– `preload` has a much greater potential to actually damage performance if used incorrectly.
+`preload` usage has had a slower growth with only a 2% increase from 2019. This could be in part because it requires a bit more specification. While you only need the domain to use `dns-prefetch` and `preconnect`, you must specify the resource to use `preload`. While `dns-prefetch` and `preconnect` are reasonably low risk, though still can be abused, `preload` has a much greater potential to actually damage performance if used incorrectly.
 
 `prefetch` is used by 3% of sites on Desktop, making it the least widely used resource hint. This low usage may be explained by the fact that `prefetch` is useful for improving subsequent, rather than current, page loads. Thus, it will be overlooked if a site is only focused on improving its landing page, or the performance of the first page viewed. In the coming years with a more clear definition on what to measure for improving subsequent page experience, it could help teams prioritize `prefetch` adoption with clear performance quality goals to reach.
 
 ### Hints per page
 
-Across the board developers are learning how to better use resource hints, and compared to [2019](../2019/resource-hints#resource-hints) we've seen an improved use of `preload`, `prefetch` and `preconnect`. For expensive operations like preload and preconnect the median usage on desktop decreased from 2 to 1. We have seen the opposite for loading future resources with a lower priority with `prefetch`, with an increase from 1 to 2 in median per page.
+Across the board developers are learning how to better use resource hints, and compared to [2019](../2019/resource-hints#resource-hints) we've seen an improved use of `preload`, `prefetch`, and `preconnect`. For expensive operations like preload and preconnect the median usage on desktop decreased from 2 to 1. We have seen the opposite for loading future resources with a lower priority with `prefetch`, with an increase from 1 to 2 in median per page.
 
 {# TODO(authors): Add or remove figure description. #}
 {{ figure_markup(
