@@ -77,7 +77,7 @@ Below figure shows how a typical request/response flow works for an object (e.g.
 
 Many of the responses used in this chapter are from web servers which use commonly-available server packages.  While we may indicate ‘best practices’, the practices may not be possible if the software package used has a limited number of cache options.</p>
 
-## Caching Guiding Principles
+## Caching guiding principles
 There are three guiding principles to caching web content:
 
 * Cache as much as you can
@@ -130,7 +130,7 @@ The two HTTP response headers typically used for specifying freshness are `Cache
 
 Often, both these headers are specified; in that case `Cache-Control` takes precedence. These headers are discussed in more detail below.
 
-## Cache-Control vs Expires
+## `Cache-Control` vs `Expires`
 
 In the early HTTP/1.0 days of the web, the `Expires` header was the only cache-related response header. As stated above, it is used to indicate the exact date/time after which the response is considered stale. Its value is a date and time, such as:
 
@@ -183,7 +183,8 @@ These statistics are interesting since, compared with 2019, while we see an incr
 
 As we delve into the various directives allowed in the `Cache-Control` header, we will see how its flexibility and power make it a better fit in many cases.
 
-## Cache-Control directives
+## `Cache-Control` directives
+
 When you use the `Cache-Control` header, you specify one or more *directives* - predefined values that indicate specific caching functionality. Multiple directives are separated by commas and can be specified in any order, although some of them 'clash' with one another (e.g. `public` and `private`). Some directives take a value, such as `max-age`.
 
 Below is a table showing the most common `Cache-Control` directives:
@@ -278,7 +279,7 @@ As we head out to the long tail, there are a small percentage of 'invalid' direc
 
 The most interesting standout in the list of invalid directives is the use of `no-cache="set-cookie"` (even at only 0.2% of all `Cache-Control` header values, it still makes up more than all the other invalid directives combined). In some early discussions on the `Cache-Control` header, this syntax was raised as a possible way to ensure that any `Set-Cookie` response headers (which might be user-specific) would not be cached with the object itself by any intermediate proxies such as CDNs. However, this syntax was not included in the final RFC; nearly equivalent functionality can be implemented using the `private` directive, and the `no-cache` directive does not allow a value.
 
-## Cache-Control: no-store, no-cache and max-age=0
+## `Cache-Control`: `no-store`, `no-cache` and `max-age=0`
 
 When a response absolutely must not be cached, the `Cache-Control no-store` directive should be used; if this directive is not specified, then the response *is considered cacheable and may be cached*. Note that if `no-store` is specified, it takes precedence over other directive - this makes sense, since serious privacy and security issues could occur if a resource is cached which should not be.
 
@@ -297,7 +298,7 @@ As noted above, where `no-store` is specified with either/both of `no-cache` and
 
 The `max-age=0` directive is present on less than 2% of responses where `no-store` is not specified. In such cases, the resource will be cached in the browser but will require revalidation as it is immediately marked as stale.
 
-## Conditional requests and Revalidation
+## Conditional requests and revalidation
 
 There are often cases where a browser has previously requested an object and already has it in its cache but the cache entry has already exceeded its TTL (and is therefore marked as stale) or where the object is defined as one that must be revalidated prior to use.
 
@@ -461,6 +462,7 @@ Correctly-implemented revalidation using conditional requests can significantly 
 }}
 
 ## Validity of date strings
+
 Throughout this document, we have discussed several caching-related HTTP headers used to convey timestamps:
 
 * The `Date` response header indicates when the resource was served to a client.
@@ -501,7 +503,7 @@ Examples of some of the invalid uses of the `Expires` header are:
 
 One large source of invalid `Expires` headers is from assets served from a popular third party, in which a date/time uses the EST time zone, for example `Expires: Tue, 27 Apr 1971 19:44:06 EST`. Note that some browsers may understand and accept this date format, on the principle of robustness, but it should not be assumed that this will be the case.
 
-## The Vary header
+## The `Vary` header
 
 We have discussed how a caching entity can determine whether a response object is cacheable, and for how long it can be cached. However, one of the most important steps the caching entity must take is determining if the resource being requested is already in its cache. While this may seem simple, many times the URL alone is not enough to determine this. For example, requests with the same URL could vary in what compression they used (gzip, brotli, etc.) or could be returned in different encodings (XML, JSON etc.).
 
@@ -581,7 +583,7 @@ For example, if a login cookie or a session cookie is present in a CDN’s cache
   )
 }}
 
-## Service Workers
+## Service workers
 
 Service workers are a feature of HTML5 that allow front-end developers to specify scripts that should run outside the 'normal' request/response flow of web pages, communicating with the web page via messages. Common uses of service workers are for background synchronization and push notifications and, obviously, for caching - and browser support has been rapidly growing for them.
 
