@@ -249,18 +249,9 @@ To safely implement `dns-prefetch` and `preconnect` make sure to have them in se
 <link rel="dns-prefetch" href="http://example.com">
 ```
 
-Implementing a `dns-prefetch` fallback in the same `<link>` tag causes a [bug](https://bugs.webkit.org/show_bug.cgi?id=197010) in Safari that cancels the `preconnect` request.
+Implementing a `dns-prefetch` fallback in the same `<link>` tag causes a [bug](https://bugs.webkit.org/show_bug.cgi?id=197010) in Safari that cancels the `preconnect` request. Close to 2% of pages (~40k) reported the issue of both `preconnect` & `dns-prefetch` in a single resource.
 
-{# TODO(authors/reviewers): The caption here doesn't make sense to me, and directly contradictes the text below it. #}
-{{ figure_markup(
-  caption="Resource hints on desktop that use either `preconnect` or `dns-prefetch` use both in the same hint.",
-  content="1.93%",
-  classes="big-number",
-  sheets_gid="281984550",
-  sql_file="preconnect_and_dnsprefetch_relative.sql"
-) }}
-
-Close to 2% of pages (~40k) reported the issue of both `preconnect` & `dns-prefetch` in a single resource.
+In the case of "[Preconnect to required origins](https://web.dev/uses-rel-preconnect/)" audit, we saw only 19.67% of pages passing the teast, creating a large opportunity for thousands of websites to start using `preconnect` or `dns-prefetch` to establish early connections to important third-party origins.
 
 {{ figure_markup(
   caption="Pages that pass the `preconnect` Lighthouse audit.",
@@ -270,17 +261,7 @@ Close to 2% of pages (~40k) reported the issue of both `preconnect` & `dns-prefe
   sql_file="lighthouse_preconnect.sql"
 ) }}
 
-We saw only 19.67% of pages passing Lighthouse's "[Preconnect to required origins](https://web.dev/uses-rel-preconnect/)" audit, creating a large opportunity for thousands of websites to start using `preconnect` or `dns-prefetch` to establish early connections to important third-party origins.
-
-{{ figure_markup(
-  caption="Pages that pass the `preload` Lighthouse audit.",
-  content="84.6%",
-  classes="big-number",
-  sheets_gid="1047875076",
-  sql_file="lighthouse_preload.sql"
-) }}
-
-Running Lighthouse's "[Preload key requests](https://web.dev/uses-rel-preload/)" audit resulted in 84.6% of pages passing the test. If you are looking to use `preload` for the first time, remember, fonts and critical scripts are a good place to start.
+Lastly, running Lighthouse's "[Preload key requests](https://web.dev/uses-rel-preload/)" audit resulted in 84.6% of pages passing the test. If you are looking to use `preload` for the first time, remember, fonts and critical scripts are a good place to start.
 
 {# TODO(authors/reviewers) - revisit this sentence - Ref https://github.com/HTTPArchive/almanac.httparchive.org/pull/1587#discussion_r532291496 #}
 
