@@ -251,3 +251,23 @@ would increasing the size of click targets increase the number of clicks?
 would replacing the search icon with a search box increase the number of searches completed?
 
 According to [thirdpartyweb.today](https://www.thirdpartyweb.today/), [Optimizely](https://www.optimizely.com) is the most popular third party product for A/B testing, it is used in over 20,000 pages.
+
+### 3. Conversion
+While “conversion” may sound like a concept pertaining to e-commerce sites, a conversion can refer to a successful user transaction, such as signing up for a music streaming service, booking a rental home, writing a review on a travel site, etc.
+
+According to Comscore Media Matrix, traffic from mobile devices account for 79.6% of time spent on US retail sites, but only 32.3% of US eCommerce sales. 
+
+Compared to desktop, transacting on mobile devices is error-prone and tedious, as users must input personal information using small keyboards and screen sizes. Checkout flows should be simple and short to avoid user frustration, or worse, abandonment. 27% of users abandon checkout because of a “too long / complicated checkout process” ([source](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/) - 2018). 35% of users will abandon the checkout if a retailer does not offer guest checkout ([source](https://baymard.com/blog/ecommerce-checkout-usability-report-and-benchmark)). 
+
+#### Form Semantics
+Users can more easily enter required information on mobile devices when their keyboard is optimized for the appropriate input type. For example, a numeric keyboard is useful for entering phone numbers, while keyboards displaying the “@” symbol are useful for entering email addresses. Sites can provide browser hints to display the most appropriate keys using the `type` attribute on `input` tags. 
+
+TODO: Insert chart: Sites (with inputs) using input types
+
+#### Sign up, Sign in and Checkout
+Today, browsers can help populate the necessary user information to complete a transaction and help reduce potential input errors. The `autocomplete` attribute can provide browsers hints to populate input elements with the correct user information. Users who successfully use Chrome Autofill to enter their information go through checkout an average of 30% faster than those who don't ([source](https://developers.google.com/web/fundamentals/design-and-ux/input/forms#use_metadata_to_enable_auto-complete)).
+
+Auto-complete can be especially helpful in completing checkout flows that require a user to login and hence remember their password. According to a [study by HYPR](https://www.hypr.com/hypr-password-study-findings/_) in 2019, 78% of users forgot and had to reset a password in the past 90 days. 
+
+It’s also possible to eliminate some form fields altogether. The Credential Management and Payment Request APIs are standards-based browser APIs that provide a programmatic interface between sites and the browser for seamless sign-in and payments. Only .61% of eCommerce sites are using the Payment Request API and only 0.008% use the Credential Management API. It’s worth noting that adoption of the Payment Request API has increased compared to 2019, with a 6x increase in payment completion rate.
+
