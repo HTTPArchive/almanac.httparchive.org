@@ -11,13 +11,13 @@ Zizzamia_bio: Leonardo is a Staff Software Engineer at <a href="https://www.coin
 discuss: 2057
 results: https://docs.google.com/spreadsheets/d/1lXjd8ogB7kYfG09eUdGYXUlrMjs4mq1Z7nNldQnvkVA/
 queries: 21_Resource_Hints
-featured_quote: Resource hints provide <em>hints</em> to the browser about what resources will be needed soon. The action that the browser takes as a result of receiving this hint will vary depending on the type of resource hint; different resource hints kick off different actions. When used correctly, they can improve page performance by giving a head start to important anticipated actions.
+featured_quote: During the past year resource hints increased in adoption, and they have become essential APIs for developers to have more granular control over many aspects of resource prioritizations and ultimately, user experience.
 featured_stat_1: 33%
 featured_stat_label_1: Sites using <code>dns-prefetch</code>
 featured_stat_2: 9%
 featured_stat_label_2: Sites using <code>preload</code>
-featured_stat_3: 88%
-featured_stat_label_3: Resource hints using the <code>as</code> attribute
+featured_stat_3: 4.02%
+featured_stat_label_3: Sites using native lazy loading
 unedited: true
 ---
 
@@ -309,9 +309,15 @@ Let's dive into a couple of experimental hints. Very close to release we have Pr
 
 This new hint can be used either as an HTML tag or by changing the priority of fetch requests via the `importance` option, which takes the same values as the HTML attribute.
 
-With `preload` and `prefetch`, the priority is set by the browser depending on the type of resource. By using Priority Hints we can force the browser to change the default option.
+```html
+<!-- We want to initiate an early fetch for a resource, but also deprioritize it -->
+<link rel="preload" href="/js/script.js" as="script" importance="low">
 
-{# TODO(authors) - simplify all these figures #}
+<!-- An image the browser assigns "High" priority, but we don't actually want that. -->
+<img src="/images/in_viewport_but_not_important.svg" importance="low" alt="I'm an unimportant image!">
+```
+
+With `preload` and `prefetch`, the priority is set by the browser depending on the type of resource. By using Priority Hints we can force the browser to change the default option.
 
 {{ figure_markup(
   caption="The rate of priority hint adoption on mobile.",
@@ -321,25 +327,9 @@ With `preload` and `prefetch`, the priority is set by the browser depending on t
   sql_file="priority_hints.sql"
 ) }}
 
-So far only 0.77% websites adopted this new hint as Chrome is still [actively](https://www.chromestatus.com/features/5273474901737472) experimenting, and at the time of this article's release the feature is on-hold.
-
-{{ figure_markup(
-  caption="The rate of priority hints on mobile on script elements.",
-  content="80%",
-  classes="big-number",
-  sheets_gid="800402946",
-  sql_file="priority_hints_by_element.sql"
-) }}
+So far only 0.77% websites adopted this new hint as Chrome is still [actively](https://www.chromestatus.com/features/5273474901737472) experimenting, and at the time of this article's release the feature is on-hold. 
 
 The largest use is with script elements, which is unsurprising as the number of JS primary and third-party files continues to grow.
-
-{{ figure_markup(
-  caption="The rate of priority hints on mobile that have \"low\" importance.",
-  content="16.11%",
-  classes="big-number",
-  sheets_gid="1098063134",
-  sql_file="priority_hints_by_element_and_importance.sql"
-) }}
 
 {# TODO(editors): Could the use of defense/offence be unclear here? #}
 There are over 79% of resources with "high" priority, but something we should pay even more attention to is the 16% of resources with "low" priority. Priority Hints have a clear advantage as a defense mechanism rather than an offense, by helping the browser decide what to de-prioritize and giving back significant CPU and Bandwidth to complete critical requests first.
