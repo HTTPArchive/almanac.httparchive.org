@@ -80,12 +80,12 @@ Automated checks for the presence of alternative text do not assess the quality 
 
 
 | File extension type | Desktop (sites with non-empty alt) | Mobile (sites with non-empty alt) |
-|---------------------|------------------------------------|-----------------------------------|
-| jpg | 3.73% | 3.50% |
-| png | 2.98% | 2.81% |
-| ico | 1.34% | 1.6% |
-| gif | 0.034% | 0.030% |
-| jpeg | 0.034% | 0.032% |
+| ------------------- | ---------------------------------- | --------------------------------- |
+| jpg                 | 3.73%                              | 3.50%                             |
+| png                 | 2.98%                              | 2.81%                             |
+| ico                 | 1.34%                              | 1.6%                              |
+| gif                 | 0.034%                             | 0.030%                            |
+| jpeg                | 0.034%                             | 0.032%                            |
 
 #### Images with title attributes
 
@@ -226,4 +226,155 @@ We are pleased to report that 19.01% of desktop pages and 18.21% of mobile pages
 
 Tabs are a common interface widget, but present a challenge for many developers to make accessible. A common pattern for accessible implementation comes from  the [WAI-ARIA Authoring Practices Design Patterns](https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel). Please note that the ARIA Authoring Practices document is not a specification, and is meant to show idealized ARIA constructs. They should not be used in production without testing with your users. 
 
-In this pattern, a parent container has a role=”tablist” with children elements that have a role=”tab”. These tabs are associated with elements that have a role=”tabpanel”, and contain the content for that tab. 
+In this pattern, a parent container has a `role=”tablist”` with children elements that have a `role=”tab”`. These tabs are associated with elements that have a `role=”tabpanel”`, and contain the content for that tab. 
+
+![](/src/static/images/2020/accessibility/role-tab-list.png)
+
+Figcaption: tab list (role=”tablist”) contains all of the tabs (source: https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html)
+
+![](../../../static/images/2020/accessibility/role-tab.png)
+
+Figcaption: “Nils Frahm” tab (role=”tab”) (source: https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html)
+
+![](../../../static/images/2020/accessibility/role-tab-panel.png)
+
+Figcaption: tab panel (role=”tabpanel”) with content associated with the “Nils Frahm” tab (source: https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html)
+
+For desktop pages, 7.00% have at least one element with a `role=”tablist”` whereas there only 5.79% of pages have elements with a `role=”tab”` and 5.46% of pages have elements with a `role=”tabpanel”`. This suggests that the pattern may only be partially implemented. Even if there is dynamic rendering at play for some of the tab/tabpanel elements, the currently visible or first tab/tabpanel would theoretically be in the DOM on page load.
+
+##### Presentation
+
+When an element has been given a `role=”presentation”` its semantics are stripped away, for both the element it is assigned to and its required children. For example, tables and lists both have required children, so if the parent has a `role=”presentation”` this essentially cascades to the child elements, which will also have their semantics stripped. Removing an element’s semantics means that it essentially is no longer that element in any capacity except for its visual appearance. For example a list with a `role=”presentation”` will no longer communicate any information to a screen reader about the list structure.
+
+A common usage of this attribute is for `<table>` elements that have been used for layout rather than  for tabular data. We do not recommend using tables in this way. For layout, we have powerful CSS tools today such as flexbox and CSS grid. In general there are very few use cases where `role=”presentation”` is particularly helpful for assistive technology users, use this role sparingly and thoughtfully.
+
+[caption] Top 5 ARIA roles on the Web
+
+
+| Role         | Desktop | Mobile |
+| ------------ | ------- | ------ |
+| button       | 25.20%  | 24.51% |
+| navigation   | 22.97%  | 21.76% |
+| dialog       | 19.01%  | 18.22% |
+| search       | 17.94%  | 17.59% |
+| presentation | 17.83%  | 16.31% |
+
+ 
+#### ARIA Attributes
+
+ARIA attributes can be assigned to HTML elements to enhance the accessibility of the interface. Respecting the first rule of ARIA, they should not be used to achieve something that can be done with native HTML.
+
+##### Labeling and describing elements with ARIA
+
+The browser’s accessibility tree has a computation system that assigns the accessible name (if there is one) to a control, widget, group, or landmark such that it can be announced by assistive technology. There is a specificity ranking that happens to determine which value is assigned to the accessible name. 
+
+The accessible name can be derived from an element’s content (such as button text), an attribute (such as an image alt text value), or an associated element (such as a programmatically associated label for a form control. For more information about accessible names see Léonie Watson’s article, [What is an accessible name?](https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/)
+
+We can also use ARIA to provide accessible names for elements. There are 2 ARIA attributes that accomplish this, [aria-label](https://www.w3.org/WAI/GL/wiki/Using_aria-label_to_provide_labels_for_objects), [aria-labelledby](https://www.w3.org/WAI/GL/wiki/Using_aria-labelledby_to_provide_a_name_for_user_interface_controls) . Either of these attributes will “win” the accessible name computation and override the natively derived accessible name, so use them with caution and be sure to test with a screen reader or look at the accessibility tree to confirm that the accessible name is what was expected. When using ARIA to name an element, it is important to ensure that the [WCAG 2.5.3, Label in Name](https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html) criterion has not been violated, which expects visible labels to be at least a part of its accessible name. 
+
+
+The `aria-label` element allows a developer to provide a string value and this will be used for the accessible name for the element. We found that 40.44% of desktop pages and 38.72% of mobile home pages had at least one element with the aria-label attribute, making it the most popular ARIA attribute for providing accessible names. 
+
+The `aria-labelledby` attribute accepts an id reference as its value which associates it with another element in the interface to provide it’s accessible name. The element becomes “labelled by” this other element which supplies its accessible name. We found that 17.73% of desktop pages and 16.21% of mobile pages had at least one element with the `aria-labelledby` attribute. 
+
+Again the first rule of ARIA should be respected. If the element can derive it’s accessible name without needing ARIA, this is preferable. For example a `<button>` which is not a graphical element should get its accessible name from it’s text content rather than an ARIA attribute. Form elements should derive their accessible names from properly associated `<label>` elements whenever possible. 
+
+The [aria-describedby](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-describedby_attribute) attribute can be used in cases where a more robust description is needed for an element. It also accepts an id reference as its value to connect with descriptive text that exists elsewhere in the interface. It does not supply the accessible name, it should be used in conjunction with an accessible name as a supplement, not a replacement. We found that 11.31% of desktop pages and 10.56% of mobile pages had at least one element with the `aria-describedby` attribute.
+
+Fun fact!
+
+We found 3200 websites with the attribute **aria-labeledby**, which is a misspelling of the `aria-labelledby` attribute! Be sure to run those automated checks to pick up these easily avoidable errors.
+
+##### Expanded content
+
+##### Hiding content 
+
+There are several ways to ensure that assistive technology will not discover content. We can leverage CSS `display:none`; or `visibility:hidden;` to omit the elements from the accessibility tree. If an author wishes to hide content from screen readers  specifically they can use `aria-hidden="true"`. We found that 48.09% of desktop pages and 48.23% of mobile pages had at least one instance of an element with the `aria-hidden` attribute.
+
+These techniques are particularly helpful when something in the visual interface is redundant or unhelpful to assistive technology users. It should be used thoughtfully as it is essential to deliver feature parity for all users. Avoid using it to skip over content that is challenging to make accessible.
+
+Hiding and showing content is a prevalent pattern in modern interfaces, and it can be helpful to declutter the UI for everyone. There are two ARIA attributes that are helpful additions to this disclosure pattern. The `aria-expanded` attribute should have a true/false value that toggles depending on whether the disclosed content is shown or not. Additionally the `aria-controls` attribute can be associated with an id on the disclosed content creating  a programmatic relationship between the triggering control (which should be a button) and the content that gets displayed. 
+
+We found that 20.98% of desktop pages and 21.00% of mobile pages had at least one element with the `aria-expanded` attribute and 17.38% of desktop pages and 16.94% of mobile pages had at least one element with the `aria-controls` attribute. This suggests that around 1/5th of websites might be implementing at least partially accessible disclosure widgets. Note that the `aria-controls` attribute is considered a best practice for the disclosure pattern because screen reader support is not ideal.
+
+#####Screen reader only text
+
+A common technique that developers often employ to supply additional information for screen reader users is to use CSS to visually hide a passage of text such that it will be announced by a screen reader, but not visually present in the interface. Since display:none and visibility:hidden both prevent content from being present in the accessibility tree, there is a common “hack” involving a chunk of CSS code that will accomplish this. The most common CSS class names for this code snippet (both by convention and throughout libraries like bootstrap) are `‘sr-only’` and `‘visually-hidden’`. We found that 13.31% of desktop pages and 12.37% of mobile pages had one or both of these CSS class names.
+
+##### Announcing Dynamically Rendered Content
+
+One of the biggest accessibility challenges in modern web development is handling dynamically rendered content which is everywhere in interfaces. The presence of new or updated things in the DOM often needs to be communicated to screen readers. Some thought needs to be put into which updates need to be conveyed. For example, form validation errors need to be conveyed where as a lazy loaded image may not. There also needs to be done in a way that is not disruptive to a task in progress.
+
+One tool we have to help with this is aria-live regions. Live regions allow us to listen for changes in the DOM, such that the updated content can be announced by a screen reader. Typically the `aria-live` attribute is placed on its own container element that is already present in the DOM rather than an element that is dynamically rendered. It is important to determine a dedicated node in the DOM that has no chance of being dynamically manipulated by other factors for the live region, ensuring that the announcements are reliable. When elements within this container dynamically render or update (for example, status updates or notification that a form was not successfully submitted) the changes will be announced. 
+
+We found that 16.84% of desktop pages and 15.67% of mobile pages have live regions. This attribute has three potential values; “polite”, “assertive” and “off”. Typically the “polite” value is used, partly because it is the default value, but also because the announcement of the dynamic content will only happen once the user stops interacting with the page which in many cases is the desired user experience rather than interrupting their input. If a status update is critical enough, use “assertive” and it  will disrupt the screen reader’s current speech queue. If it is set to “off” the announcement will not happen. It is important that the natural screen reader experience and flow be respected and that the “assertive” announcements be reserved for extreme cases, and not used for things like marketing announcements.  
+
+#### Disabling browser zoom
+
+It is essential that we allow users to zoom the page or content. There are techniques that can be used to try to disable the ability to scale or zoom the browser. Some operating systems subvert this harmful pattern, but many do not and it is an anti-pattern that needs to be avoided. 
+
+Zooming is particularly useful for users with low vision. According to the [World Health Organization](https://www.who.int/news-room/fact-sheets/detail/blindness-and-visual-impairment), “Globally, 1 billion people have a vision impairment”. We found that 29.34% of desktop pages and 30.66% of mobile pages attempt to disable scaling by setting either `maximum-scale`  to a value less than 1, or `user-scalable` 0 or none. 
+
+## Accessibility of Form Controls
+
+Forms are one of the most important things to get right in terms of accessibility. Successful submission of form input means users can perform core operations of websites and applications. For example if a registration flow is inaccessible, a disabled user might never be able to access the site at all. It is important to remember that digital accessibility is a civil right and that all people have an equal right to access information and perform the same functions on the Web. If a disabled user is prevented from executing core Web tasks or accessing information, especially for tasks like submitting forms for government services and other essential activities, there is a clear-cut case for discrimination in both private and public sectors. 
+
+### Form validation
+
+It is very important that any form error handling be communicated to assistive technology.  There are a variety of techniques for handling this depending on the validation implementation. Web AIM’s [Usable and Accessible Form Validation and Error Recovery](https://webaim.org/techniques/formvalidation/) article is a great resource for learning more about various accessible form validation strategies.  If a form element is required this also needs to be communicated to assistive technology. For native HTML form elements the [required] attribute(https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required) can be used and for customized elements the [aria-required](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-required_attribute) attribute may be needed. If there is an issue with a form submission, this needs to be conveyed to assistive technology.
+
+### Form labels 
+
+Form labels should be visible and persistent in the UI and descriptive of the input they are asking for. It's a good idea to put unique requirements such as formatting or special characters in the visible label so that errors can be prevented whenever possible. 
+
+
+It is important to ensure that form labels have a programmatic association with their respective inputs. It is not sufficient to just display the label visually. We found that only 26.51% of sites have all of their labels properly associated with their respective inputs (achieved with a for/id relationship or inputs nested inside labels).
+
+Groups of form controls such as a set of radio inputs or checkboxes should be nested as the first child within a `<fieldset>` element and given a group label via the `<legend>` element within the `<fieldset>`. The individual controls still need to be programmatically associated with their respective visible labels as well.
+
+### Placeholder text
+
+Do not rely on placeholder text to act as the label for an input. While some screen readers now have the capability of determining the accessible name from placeholder text, users with cognitive disabilities can be negatively impacted by a reliance on placeholder text because as soon as a user begins to type in the input the placeholder disappears and the context is gone. Voice control users need more than a placeholder value in order to reliably target an element in the DOM. Additionally placeholder text often fails colour contrast requirements, which negatively impacts users with low vision.
+
+Of the sites that have form controls with placeholder text, 73.89% of them have at least one instance where there is no label element programmatically associated with the control for desktop and 74.52% for mobile.
+
+## Conclusion
+
+This chapter is fittingly included in the User Experience section of this Almanac. As accessibility advocate [Billy Gregory once said](https://twitter.com/thebillygregory/status/552466012713783297?s=20), “when UX doesn’t consider ALL users, shouldn’t it be known as SOME User Experience, or SUX”. Too often accessibility work is seen as an addition, an edge case, or even comparable to technical debt and not core to the success of a website or product as it should be.
+
+Accessibility is not the sole responsibility of developers to implement. The entire product team and organization have to have it as part of their accountabilities in order to succeed. Accessibility work needs to shift left in the product cycle, meaning it needs to be baked into the research, ideation and design stages before it is developed. 
+
+### Potential accessibility responsibilities by role 
+
+This list is not exhaustive and is intended to encourage thought about how all of the roles can work together to achieve accessible websites and applications, like a relay race of accountability.
+
+- Human Resources/People Ops: 
+  - Recruiting and hiring people with accessibility skills including disabled practitioners.
+  - Creating an inclusive work environment where people’s disabilities are accommodated.
+- UX /Product designers: 
+  - Considering and talking to people with a  range of disabilities in the research and ideation stages.
+  - Annotating wireframes with accessibility information such as intended heading hierarchy, skip links, alternative text suggestions (which could also come from copywriters/content folks) and screen reader only text.
+- UI designers: 
+  - Color contrast choices, font selections, spacing and line height considerations.
+  - Animation considerations (determining if they are necessary, supplying static assets for prefers-reduced-motion scenarios, designing pause/stop mechanisms).
+- Product managers:
+  - Prioritizing accessibility work in the roadmap, ensuring it does not become technical debt at the end of a backlog.
+  - Creating processes for teams to validate their work such as including accessibility in the definition of done and acceptance criteria.
+- Developers:
+  - Preferring native HTML solutions whenever possible, understanding ARIA and when to use it.
+  - Validating all work with automated and manual testing, evaluating colleagues’ pull requests with the same criteria.
+- Quality Assurance
+  - Including accessibility testing in their workflow.
+  - Advocating for accessibility considerations when contributing to the team’s quality strategy and acceptance criteria.
+- Leadership/C-Suite
+  - Giving employees bandwidth to learn and grow their accessibility skillset and hiring practitioners with expertise and lived experiences.
+  - Considering accessibility core to the product outcomes and viewing accessibility excellence as promotable work.
+
+The tech industry needs to move towards inclusion driven development. Although this requires some up-front investment, it is much easier and likely less expensive over time to build accessibility into the entire cycle such that it can be baked into the product rather than trying to retrofit sites and apps that were constructed without it in mind.
+
+The largest investment should come in the form of education and process improvements. Once a UI designer understands the nuances of color contrast requirements, selecting an accessible color palette should be the same effort as an inaccessible palette. Once a developer deeply understands native HTML and ARIA and when to reach for certain techniques and tools, the amount of code they write should be comparable. 
+
+As an industry it’s time that we acknowledge the story told by the numbers in this chapter; we are failing disabled people. We need to do better, and this has to come from a combination of top-down leadership and investment and bottom-up effort to push our practices forward and advocate for the needs, safety and inclusion of disabled people using the Web. 
+
+
+
