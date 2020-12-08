@@ -111,7 +111,7 @@ When we dig further into domains serving third-party content  we see that Google
 
 The next four most common domains are all advertising providers, they may not be requested directly by your page but through a complex chain of redirects initiated by another advertising network.
 
-The sixth most common domain is digicert.com.  Calls to digicert.com are generally OCSP revocation checks due to TLS certificates not having OCSP stapling enabled, or the use of Extended Validation (EV) certificates which prevent pinning of intermediate certificates. This number is exaggerated in HTTP Archive due to all page loads being effectively first-time visitors - OCSP responses are generally valid for seven days. See [here](https://simonhearne.com/2020/drop-ev-certs/) to read more on this issue.
+The sixth most common domain is digicert.com.  Calls to digicert.com are generally OCSP revocation checks due to TLS certificates not having OCSP stapling enabled, or the use of Extended Validation (EV) certificates which prevent pinning of intermediate certificates. This number is exaggerated in HTTP Archive due to all page loads being effectively first-time visitors - OCSP responses are generally valid for seven days. See [this blog post](https://simonhearne.com/2020/drop-ev-certs/) to read more on this issue.
 
 {{ figure_markup(
   image="top-domains-by-prevalence.png",
