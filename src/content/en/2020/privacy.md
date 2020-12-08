@@ -220,6 +220,7 @@ Another widely-used tracking technique is fingerprinting, which consists of coll
   sql_file="percent_of_websites_with_fingerprinting.sql "
   )
 }}
+
 Although the library is present on less than 1% of websites, the main issue with fingerprinting is its persistent nature. Furthermore, FingerprintJS is not the only attempt at fingerprinting. Other libraries, tools and native code can also serve this purpose.
 
 ## Consent Management Platforms
@@ -247,7 +248,7 @@ Cookie consent banners are being used by websites for years now, to allow users 
 
 When looking at the popularity of the different consent management solutions, we can see that Osano and Quantcast choice are the leading platforms.
 
-#### IAB Europe’s Transparency Consent Framework
+### IAB Europe’s Transparency Consent Framework
 
 IAB Europe proposed a [Transparency Consent Framework](https://iabeurope.eu/transparency-consent-framework/) (TCF) as a GDPR-compliant solution to obtain users' consent about their digital advertising preferences. The implementation provides an industry standard for communication between publishers and advertisers about consumer consent.
 {{ figure_markup(
@@ -259,6 +260,7 @@ IAB Europe proposed a [Transparency Consent Framework](https://iabeurope.eu/tran
   sql_file="percent_of_websites_with_iab_tcf_banner.sql"
   )
 }}
+
 While our results show that the TCF banner is not yet the ‘industry standard’, it is a step in the right direction. Considering the main target group of IAB Europe is in fact European publishers, having an adoption rate on 1.5% of websites on desktop client and 1.4% on mobile is not too bad.
 
 ## Privacy Policies
@@ -274,6 +276,7 @@ Privacy policies are widely used by websites to increase transparency towards us
   sql_file="percent_of_websites_with_privacy_links.sql "
   )
 }}
+
 The results show that almost half of the websites in the dataset have included a privacy policy, which is positive. However, studies have shown that the majority of internet users do not bother reading privacy policies and when they do, they lack understanding due to the length and complexity of most privacy policy texts.
 
 ## Conclusion
