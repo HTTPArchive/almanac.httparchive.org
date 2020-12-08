@@ -327,7 +327,7 @@ A score of 0.1 or below is good, over 0.25 is poor, and anything in between need
   )
 }}
 
-The top-five Jamstack frameworks do OK here. About 65% of web pages loaded by top-five Jamstack frameworks have a "good" CLS experience, with this figure rising to 82% on mobile. Across all the average desktop and mobile score is 65%. Next.js is barely reaching 50% which is the lowest of all and has work to do here. Educating developers and documenting how to avoid bad CLS scores can go a long way.
+The top-five Jamstack frameworks do OK here. About 65% of web pages loaded by top-five Jamstack frameworks have a "good" CLS experience, with this figure rising to 82% on mobile. Across all the average desktop and mobile score is 65%. Next.js is barely reaching 50% which is the lowest of all and has work to do here. Educating developers and documenting how to avoid bad CLS scores can go a long way.
 
 ## Conclusion
 
@@ -339,6 +339,8 @@ There are frameworks like Eleventy which we weren't able to measure or analyze s
 
 Moreover, we have highlighted some areas which need attention from the Jamstack community. We hope there will be progress to share in the 2021 report. Different Jamstack frameworks can start to document how to improve real user experience by looking at Core Web Vitals.
 
-Vercel, one of the CDNs meant to host Jamstack sites, has built an analytics offering called [Real User Experience Score](https://vercel.com/docs/analytics#real-experience-score). While other performance measuring tools like [Lighthouse](https://web.dev/measure/) estimate your user's experience by running a simulation in a lab, Vercel's Real Experience Score is calculated using real data points collected from the devices of the actual users of your application. It is probably worth noting here that Vercel created and maintains Next.js, since Next.js had low LCP scores. This new offering could mean we can hope to see a marked improvement in those scores next year. This would be extremely helpful information for users and developers alike.
+Vercel, one of the CDNs meant to host Jamstack sites, has built an analytics offering called [Real User Experience Score](https://vercel.com/docs/analytics#real-experience-score). While other performance measuring tools like [Lighthouse](https://web.dev/measure/) estimate your user's experience by running a simulation in a lab, Vercel's Real Experience Score is calculated using real data points collected from the devices of the actual users of your application.
+
+It is probably worth noting here that Vercel created and maintains Next.js, since Next.js had low LCP scores. This new offering could mean we can hope to see a marked improvement in those scores next year. This would be extremely helpful information for users and developers alike.
 
 Jamstack frameworks are improving the developer experience of building sites. Let's work towards continued progress for improving the real-user experience of browsing Jamstack sites.
