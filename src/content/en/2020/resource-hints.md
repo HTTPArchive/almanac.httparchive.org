@@ -346,7 +346,6 @@ The largest use is with script elements, which is unsurprising as the number of 
   sql_file="priority_hints_by_importance.sql"
 ) }}
 
-{# TODO(authors): Review this revised section. #}
 {# TODO(authors): 79 or 83? 79% is from gid=1663326536 for mobile + script + high, while 83% is from gid=1098063134 and corresponds to the 16% "low" we use in the figure. #} 
 The data shows us that 83% of resources using Priority Hints use a "high" priority on mobile, but something we should pay even more attention to is the 16% of resources with "low" priority.
 
