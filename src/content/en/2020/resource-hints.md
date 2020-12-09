@@ -31,7 +31,7 @@ Over the following years, browser vendors did more and more of the heavy lifting
 
 In particular we can mention a few of the victories resource hints achieved/made in the last year:
 - [CSS-Tricks](https://www.zachleat.com/web/css-tricks-web-fonts/) web fonts showing up faster on a 3G first render.
-- [wix.com](https://www.youtube.com/watch?v=4QqlGgF8Y2I&t=1469) using resource hints got 10% improvement for FCP.
+- [Wix.com](https://www.youtube.com/watch?v=4QqlGgF8Y2I&t=1469) using resource hints got 10% improvement for FCP.
 {# TODO(authors/reviewers): Should this URL be capitalized? (If yes, then why not wix?) #}
 - [Ironmongerydirect.co.uk](https://andydavies.me/blog/2019/03/22/improving-perceived-performance-with-a-link-rel-equals-preconnect-http-header/) used preconnect to improve product image loading by 400ms at the median and greater than 1s at the 95th percentile.
 - [Facebook.com](https://engineering.fb.com/2020/05/08/web/facebook-redesign/) used preload for faster navigation.
@@ -152,9 +152,8 @@ Resource hints are most effective when they're used selectively ("when everythin
 
 However, this hasn't stopped some misuse of the `preload` hint, since in one instance we discovered a page dynamically adding the hint and causing an infinite loop that created over 20k new preloads.
 
-{# TODO(editors): Are emojis okay? And should there be punctuation? #}
 {{ figure_markup(
-  caption="The most preload hints on a single page 🤯",
+  caption="The most preload hints on a single page.",
   content="20,931",
   classes="big-number",
   sheets_gid="175042082",
@@ -186,10 +185,17 @@ Be mindful that omitting the `as` attribute, or having an invalid value will mak
 
 With `preload` and `preconnect` resources that have CORS enabled, such as fonts, it's important to include the `crossorigin` attribute, in order for the resource to be properly used. If the `crossorigin` attribute is absent, the request will follow the single-origin policy thereby making the use of preload useless.
 
-{# TODO(authors): What is the effect of this? Does this mean that 66% of requests fail? Or that 34% are good, but the 66% isn't notable? The implications of this percentage/callout are unclear. #}
-The latest trend indicates that by using `preload` with the `crossorigin` attribute we have 34% anonymous (or equivalent) cases, and 0.43% use-credentials cases. This has evolved in conjunction with the increase in font-preloading mentioned earlier.
+{# TODO(authors): Verify 34% is correct, and has support in the sheets results, and that the gid is correct. #}
+{{ figure_markup(
+  caption="The rate of elements with `preload` that use `crossorigin`.",
+  content="34%",
+  classes="big-number",
+  sheets_gid="1185042785",
+  sql_file="attribute_usage.sql"
+) }}
 
-{# TODO(authors/reviewers): Would this request be crossorigin? The href contains no origin, so would be implicitly same-origin, no? #}
+The latest trends show that 34% of elements that `preload` also set `crossorigin` and load in anonymous (or equivalent) modes, and only 0.43% utilize the `use-credentials` case. This rate has increased in conjunction with the increase in font-preloading, as mentioned earlier.
+
 ```html
 <link rel="preload" href="ComicSans.woff2" as="font" type="font/woff2" crossorigin>
 ```
@@ -200,9 +206,10 @@ Be mindful that fonts preloaded without the `crossorigin` attribute will be fetc
 
 When it's time to choose a resource for use with different screen sizes, reach for the `media` attribute with `preload` to optimize your media queries.
 
+{# TODO(editors): Should we keep this shorter to prevent small amounts of scrolling? #}
 ```html
-<link rel="preload" href="desktop.css" as="style" media="only screen and (min-width: 768px)">
-<link rel="preload" href="mobile.css" as="style" media="screen and (max-width: 430px)">
+<link rel="preload" href="a.css" as="style" media="only screen and (min-width: 768px)">
+<link rel="preload" href="b.css" as="style" media="screen and (max-width: 430px)">
 ```
 
 Seeing over 2,100 different combinations of media queries in the 2020 dataset encourages us to consider how wide the variance is between concept and implementation of responsive design from site to site. The ever popular `767px/768px` breakpoints (as popularised by Bootstrap amongst others) can be seen in the data.
@@ -309,12 +316,13 @@ Let's dive into a couple of experimental hints. Very close to release we have Pr
 
 This new hint can be used either as an HTML tag or by changing the priority of fetch requests via the `importance` option, which takes the same values as the HTML attribute.
 
+{# TODO(editors): Should we keep this shorter to prevent small amounts of scrolling? #}
 ```html
 <!-- We want to initiate an early fetch for a resource, but also deprioritize it -->
 <link rel="preload" href="/js/script.js" as="script" importance="low">
 
 <!-- An image the browser assigns "High" priority, but we don't actually want that. -->
-<img src="/images/in_viewport_but_not_important.svg" importance="low" alt="I'm an unimportant image!">
+<img src="/img/in_view_but_not_important.svg" importance="low" alt="I'm not important!">
 ```
 
 With `preload` and `prefetch`, the priority is set by the browser depending on the type of resource. By using Priority Hints we can force the browser to change the default option.
@@ -331,9 +339,19 @@ So far only 0.77% websites adopted this new hint as Chrome is still [actively](h
 
 The largest use is with script elements, which is unsurprising as the number of JS primary and third-party files continues to grow.
 
-{# TODO(editors): Could the use of defense/offence be unclear here? #}
-There are over 79% of resources with "high" priority, but something we should pay even more attention to is the 16% of resources with "low" priority. Priority Hints have a clear advantage as a defense mechanism rather than an offense, by helping the browser decide what to de-prioritize and giving back significant CPU and Bandwidth to complete critical requests first.
+{# TODO(authors): Make sure the query link is correct, and that the gid is correct. #}
+{{ figure_markup(
+  caption="The rate of mobile resources with a hint that use the \"low\" priority.",
+  content="16%",
+  classes="big-number",
+  sheets_gid="1098063134",
+  sql_file="priority_hints_by_importance.sql"
+) }}
 
+{# TODO(authors): Review this revised section. #}
+There are over 79%{# TODO(authors): 79 or 83? #} of resources with "high" priority, but something we should pay even more attention to is the 16% of resources with "low" priority.
+
+Priority hints have a clear advantage as a tool to prevent wasteful loading via the "low" priority by helping the browser decide what to de-prioritize and giving back significant CPU and bandwidth to complete critical requests first, rather than as a tactic to try to get resources loaded more quickly with the "high" priority.
 
 ### 103 Early Hints in HTTP/2
 Previously we mentioned that HTTP/2 Push could actually cause regression in cases where assets being pushed were already in the browser cache. The [103 Early Hints](https://tools.ietf.org/html/rfc8297) proposal aims to provide similar benefits promised by HTTP/2 push. With an architecture that is potentially 10x simpler, it addresses the long RTT's or server processing without suffering from the known worst-case issue of unnecessary round trips with server push.
