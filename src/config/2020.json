@@ -216,8 +216,7 @@
     "ahmadawais": {
       "name": "Ahmad Awais",
       "teams": [
-        "authors",
-        "reviewers"
+        "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/960133?v=4&s=200",
       "website": "https://AhmadAwais.com",
@@ -511,7 +510,6 @@
         "developers"
       ],
       "avatar_url": "https://avatars3.githubusercontent.com/u/5795823?s=200&v=4",
-      "website": "https://web-ui.dev",
       "github": "dsadhanala",
       "twitter": "dsadhanala"
     },
@@ -746,8 +744,7 @@
     "khempenius": {
       "name": "Katie Hempenius",
       "teams": [
-        "analysts",
-        "reviewers"
+        "analysts"
       ],
       "avatar_url": "https://avatars3.githubusercontent.com/u/6076184?v=4&s=200",
       "github": "khempenius",
@@ -766,6 +763,7 @@
     "LeaVerou": {
       "name": "Lea Verou",
       "teams": [
+        "analysts",
         "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/175836?v=4&s=200",
@@ -971,6 +969,7 @@
     "nrllh": {
       "name": "Nurullah Demir",
       "teams": [
+        "analysts",
         "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/13475745?v=4&s=200",
@@ -1257,16 +1256,6 @@
       "website": "https://www.fullstacktraining.com",
       "github": "tpiros",
       "twitter": "tpiros"
-    },
-    "tammyeverts": {
-      "name": "Tammy Everts",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "https://avatars0.githubusercontent.com/u/15661032?v=4&s=200",
-      "website": "https://speedcurve.com/",
-      "github": "tammyeverts",
-      "twitter": "tameverts"
     },
     "tomayac": {
       "name": "Thomas Steiner",

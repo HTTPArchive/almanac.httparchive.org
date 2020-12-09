@@ -15,7 +15,7 @@ obto_bio: David Fox is the lead usability researcher and founder of LookZook, a 
 kleinab_bio: Abigail Klein is a Google software engineer. She worked on Google Docs, Sheets, and Slides web accessibility where she added <a href="https://www.blog.google/outreach-initiatives/accessibility/whats-you-say-present-captions-google-slides/">automatic captions to Google Slides</a>, as well as improving screen reader, braille, screen magnifier, and high contrast support. She currently works on Google Chrome and ChromeOS accessibility. She has a bachelor's and master's degree in computer science from MIT, where she co-founded an assistive technology hackathon and was a lab assistant and guest lecturer of the assistive technology class.
 featured_quote: Accessibility on the web is essential for an inclusive and equitable society. As more of our social and work lives move to the online world, it becomes even more important for people with disabilities to be able to participate in all online interactions without barriers. Just as building architects can create or omit accessibility features such as wheelchair ramps, web developers can help or hinder the assistive technology users rely on.
 featured_stat_1: 22%
-featured_stat_label_1: Sites using sufficient colour contrast
+featured_stat_label_1: Sites using sufficient color contrast
 featured_stat_2: 50%
 featured_stat_label_2: Sites with missing image alt attributes
 featured_stat_3: 14%

@@ -22,7 +22,7 @@ featured_stat_label_3: Sites using native lazy loading
 
 ## Introduction
 
-Over the past decade [resource hints](https://www.w3.org/TR/resource-hints/) have become essential primitives that allow developers to improve page performance and therefore the user experience. 
+Over the past decade [resource hints](https://www.w3.org/TR/resource-hints/) have become essential primitives that allow developers to improve page performance and therefore the user experience.
 
 Preloading resources and having browsers apply some intelligent prioritization is something that was actually started way back in 2009 by IE8 with something called the [preloader](https://speedcurve.com/blog/load-scripts-async/). In addition to the HTML parser, IE8 had a lightweight look-ahead preloader that scanned for tags that could initiate network requests (`<script>`, `<link>`, and `<img>`).
 
@@ -34,9 +34,9 @@ In particular we can mention a few of the victories resource hints achieved/made
 - [Ironmongerydirect.co.uk](https://andydavies.me/blog/2019/03/22/improving-perceived-performance-with-a-link-rel-equals-preconnect-http-header/) used preconnect to improve product image loading by 400ms at the median and greater than 1s at the 95th percentile.
 - [Facebook.com](https://engineering.fb.com/2020/05/08/web/facebook-redesign/) used preload for faster navigation.
 
-Let's take a look at most predominant resource hints supported by most browsers today: `dns-prefetch`, `preconnect`, `preload`,  `prefetch`, and native lazy loading. 
+Let's take a look at most predominant resource hints supported by most browsers today: `dns-prefetch`, `preconnect`, `preload`,  `prefetch`, and native lazy loading.
 
-When working with each individual hint we advise to always measure the impact before and after in the field, by using libraries like [WebVitals](https://github.com/GoogleChrome/web-vitals), [Perfume.js](https://github.com/zizzamia/perfume.js), or any other utility that supports the Web Vitals metrics. 
+When working with each individual hint we advise to always measure the impact before and after in the field, by using libraries like [WebVitals](https://github.com/GoogleChrome/web-vitals), [Perfume.js](https://github.com/zizzamia/perfume.js), or any other utility that supports the Web Vitals metrics.
 
 ### `dns-prefetch`
 
@@ -208,7 +208,7 @@ When it's time to choose a resource for use with different screen sizes, reach f
 <link rel="preload" href="b.css" as="style" media="screen and (max-width: 430px)">
 ```
 
-Seeing over 2,100 different combinations of media queries in the 2020 dataset encourages us to consider how wide the variance is between concept and implementation of responsive design from site to site. The ever popular `767px/768px` breakpoints (as popularised by Bootstrap amongst others) can be seen in the data.
+Seeing over 2,100 different combinations of media queries in the 2020 dataset encourages us to consider how wide the variance is between concept and implementation of responsive design from site to site. The ever popular `767px/768px` breakpoints (as popularized by Bootstrap amongst others) can be seen in the data.
 
 ### Best practices
 
@@ -251,7 +251,7 @@ Now let's celebrate the first year of the [Native Lazy Loading](https://addyosma
 
 {# TODO(authors/reviewers) - revisit this figure - Ref https://github.com/HTTPArchive/almanac.httparchive.org/pull/1587#discussion_r532292106 #}
 
-Adoption is still in its early days, especially with the official thresholds earlier this year being too conservative, and only [recently](https://addyosmani.com/blog/better-image-lazy-loading-in-chrome/) aligning with developer expectations. With almost 72% of browsers supporting native image/source lazy loading, this is another area of opportunity especially for pages looking to improve data usage and performance on low-end devices. 
+Adoption is still in its early days, especially with the official thresholds earlier this year being too conservative, and only [recently](https://addyosmani.com/blog/better-image-lazy-loading-in-chrome/) aligning with developer expectations. With almost 72% of browsers supporting native image/source lazy loading, this is another area of opportunity especially for pages looking to improve data usage and performance on low-end devices.
 
 Running Lighthouse's "[Defer offscreen images](https://web.dev/offscreen-images/)" audit resulted in 68.65% of pages passing the test. For those pages there is an opportunity to lazy-load images after all critical resources have finished loading.
 
@@ -330,7 +330,7 @@ With `preload` and `prefetch`, the priority is set by the browser depending on t
   sql_file="priority_hints.sql"
 ) }}
 
-So far only 0.77% websites adopted this new hint as Chrome is still [actively](https://www.chromestatus.com/features/5273474901737472) experimenting, and at the time of this article's release the feature is on-hold. 
+So far only 0.77% websites adopted this new hint as Chrome is still [actively](https://www.chromestatus.com/features/5273474901737472) experimenting, and at the time of this article's release the feature is on-hold.
 
 The largest use is with script elements, which is unsurprising as the number of JS primary and third-party files continues to grow.
 
@@ -353,7 +353,7 @@ As of right now you can follow the conversation on Chromium with issues [671310]
 
 ## Conclusion
 
-During the past year resource hints increased in adoption, and they have become essential APIs for developers to have more granular control over many aspects of resource prioritizations and ultimately, user experience. But let's not forget that these are hints, not instructions and unfortunately the Browser and the network will always have the final say. 
+During the past year resource hints increased in adoption, and they have become essential APIs for developers to have more granular control over many aspects of resource prioritizations and ultimately, user experience. But let's not forget that these are hints, not instructions and unfortunately the Browser and the network will always have the final say.
 
 Sure, you can slap them on a bunch of elements, and the browser may do what you're asking it to. Or it may ignore some hints and decide the default priority is the best choice for the given situation. In any case, make sure to have a playbook for how to best use these hints:
 
@@ -362,6 +362,6 @@ Sure, you can slap them on a bunch of elements, and the browser may do what you'
 - Adopt the [PRPL Pattern](https://addyosmani.com/blog/the-prpl-pattern/) when possible.
 - Measure the performance experience before and after each implementation.
 
-As a final note, let's remember that the web is for everyone. We must continue to protect it and stay focused on building experiences that are easy and frictionless. 
+As a final note, let's remember that the web is for everyone. We must continue to protect it and stay focused on building experiences that are easy and frictionless.
 
 We are thrilled to see that year after year we get incrementally closer to offering all the APIs required to simplify building a great web experience for everyone, and we can't wait to see what comes next.

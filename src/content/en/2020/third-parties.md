@@ -5,20 +5,20 @@ chapter_number: 6
 title: Third Parties
 description: Third Parties chapter of the 2020 Web Almanac covering data of what third parties are used, what they are used for, performance impacts and privacy impacts.
 authors: [simonhearne]
-reviewers: [tammyeverts, jzyang]
+reviewers: [jzyang]
 analysts: [max-ostapenko]
 translators: []
 simonhearne_bio: Simon is a web performance architect, he is passionate about helping deliver a faster and more accessible web. You can find him tweeting <a href="https://twitter.com/simonhearne">@SimonHearne</a> and blogging at <a href="https://simonhearne.com">simonhearne.com</a>.
 discuss: 2042
 results: https://docs.google.com/spreadsheets/d/1uW4SMkC45b4EbC4JV1xKAUhwGN2K8j0qFy_jSIYnHhI/
 queries: 06_Third_Parties
-featured_quote: Third-party content is critical to most websites, from analytics and advertizing to video and image content. In this chapter we review how prevalent third-party content is on the web and what impact is has on key performance indicators.
+featured_quote: Third-party content is more prevalent than ever, 94% of pages have at least one third-party resource and the median page has 24. In this chapter we review the prevalence of third-party content, the impact on page weight and browser CPU, then suggest methods to reduce the impact of third-party content on page performance.
 featured_stat_1: 94.1%
 featured_stat_label_1: Pages with third-party content
 featured_stat_2: 21.5%
 featured_stat_label_2: Third-party content delivered as JavaScript
-featured_stat_3: 38.5%
-featured_stat_label_3: Third-party content delivered as Images
+featured_stat_3: 24
+featured_stat_label_3: Third-party requests on the median page
 unedited: true
 ---
 ## Introduction
@@ -67,7 +67,7 @@ _Note on CDNs: The CDN category here includes providers that provide resources o
 ### Caveats
 
 * All data presented here is based on a non-interactive, cold load. These values could start to look quite different after user interaction.
-* The pages are tested with no cookies set, so third-parties requested after opt-in are not included. This will especially affect pages hosted and predominantly served to countries in scope for the [General Data Protection Regulation](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation).
+* The pages are tested from servers in the US with no cookies set, so third-parties requested after opt-in are not included. This will especially affect pages hosted and predominantly served to countries in scope for the [General Data Protection Regulation](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation).
 * Roughly 84% of all third-party domains by request volume have been identified and categorized. The remaining 16% fall into the "Other" category.
 
 ## Prevalence
@@ -134,7 +134,7 @@ The next four most common domains are all advertising providers, they may not be
 
 The sixth most common domain is digicert.com.  Calls to digicert.com are generally OCSP revocation checks due to TLS certificates not having OCSP stapling enabled, or the use of Extended Validation (EV) certificates which prevent pinning of intermediate certificates. This number is exaggerated in HTTP Archive due to all page loads being effectively first-time visitors - OCSP responses are generally valid for seven days in real-world browsing. See [this blog post](https://simonhearne.com/2020/drop-ev-certs/) to read more on this issue.
 
-Further down the list at 2.43% is ajax.googleapis.com, Google's [Hosted Libraries project](https://developers.google.com/speed/libraries). Whilst loading a library such as jQuery from a hosted service is easy, the additional cost of a connection to a third-party domain may have a negative impact on performance. It is best to host all critical JavaScript and CSS on the root domain, if possible. There is also now no cache benefit to using a shared CDN resource, as all major browsers [partition caches by page](https://developers.google.com/web/updates/2020/10/http-cache-partitioning).
+Further down the list at 2.43% is ajax.googleapis.com, Google's [Hosted Libraries project](https://developers.google.com/speed/libraries). Whilst loading a library such as jQuery from a hosted service is easy, the additional cost of a connection to a third-party domain may have a negative impact on performance. It is best to host all critical JavaScript and CSS on the root domain, if possible. There is also now no cache benefit to using a shared CDN resource, as all major browsers [partition caches by page](https://developers.google.com/web/updates/2020/10/http-cache-partitioning). Harry Roberts has written a detailed blog post on [how to host your own static assets](https://csswizardry.com/2019/05/self-host-your-static-assets/).
 
 ## Page Weight Impact
 
@@ -199,7 +199,7 @@ Many third-parties result in redirect responses, i.e. HTTP status codes 3XX. The
   )
 }}
 
-The results show that the majority of 3XX responses are small: the 90th percentile is 420B, i.e. 90% of 3XX responses are 420 bytes or smaller. The 95th percentile is 6.5kB, the 99th is 36kB and the 99.9th is over 100kB! Whilst redirects may seem innocuous, 100kB is a reasonable amount of bytes over the wire for a response that simply leads to another response.
+The results show that the majority of 3XX responses are small: the 90th percentile is 420B, i.e. 90% of 3XX responses are 420 bytes or smaller. The 95th percentile is 6.5kB, the 99th is 36kB and the 99.9th is over 100kB! Whilst redirects may seem innocuous, 100kB is an unreasonable amount of bytes over the wire for a response that simply leads to another response.
 
 ## Early-loaders
 
@@ -253,7 +253,7 @@ The results in HTTP Archive show that only one third of third-party responses ex
 
 ## Repercussions
 
-We know that adding arbitrary JavaScript to our sites introduces risks to both site speed and security. Site owners must be diligent to balance the value of the third-party scripts they include with the speed penalty they may bring, and use modern features such as [subresource integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) and [content security policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) to maintain a strong security posture.
+We know that adding arbitrary JavaScript to our sites introduces risks to both site speed and security. Site owners must be diligent to balance the value of the third-party scripts they include with the speed penalty they may bring, and use modern features such as [subresource integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) and [content security policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) to maintain a strong security posture. See [the security chapter](https://almanac.httparchive.org/en/2020/security) for more detail on these and other browser security features.
 
 ## Conclusion
 
