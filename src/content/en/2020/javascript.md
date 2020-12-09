@@ -330,7 +330,7 @@ First, it's worth noting that while we may think of the usage of one tool versus
   description="Bar chart showing the adoption of the top frameworks and libraries as a percent of pages (not page views or npm downloads). jQuery is the overwhelming leader, found on 83% of mobile pages. It's followed by jQuery migrate on 30%, jQuery UI on 21%, Modernizr on 15%, FancyBox on 7%, Slick and Lightbox on 6%, and the remaining frameworks and libraries on 4% or 3%: Moment.js, Underscore.js, Lodash, React, GSAP, Select2, RequireJS, and prettyPhoto.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=419887153&format=interactive",
   sheets_gid="1654577118",
-  sql_file="framewords_libraries.sql"
+  sql_file="frameworks_libraries.sql"
 ) }}
 
 When we look at the common combinations that we see in production, most of them are to be expected. Knowing jQuery's dominance, it's unsurprising that most of the popular combinations include jQuery and any number of jQuery related plugins.
