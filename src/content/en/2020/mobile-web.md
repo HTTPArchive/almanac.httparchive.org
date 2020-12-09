@@ -240,14 +240,14 @@ According to CrUX data, 60% of mobile sites and 54% of desktop sites, have a goo
 }}
 
 #### Design elements
-To engage users, it’s important to help them quickly find what they’re looking for, and fulfil their intention.
+To engage users, it’s important to help them quickly find what they’re looking for, and fulfill their intention.
 
 ##### Landing pages
 Simple design tweaks go a long way, for instance a clear call-to-action, and making the value proposition evident to the user, with a few words.
 
 {{ figure_markup(
   image="landing-page-cta.png",
-  caption='Four key parts of the Pixel phone landing page.<br>(Source: <a href="https://winonmobile.withgoogle.com">https://winonmobile.withgoogle.com</a>)',
+  caption='Four key parts of the Pixel phone landing page.<br>(Source: <a href="https://winonmobile.withgoogle.com">Google</a>)',
   description="An image breaking down the four parts of the Pixel phone landing page: Value proposition, Call-to-action, No distraction, Main services.",
   width=1200,
   height=642
@@ -261,7 +261,7 @@ Consider the following examples from [5 lessons Eastpak learned from its mobile 
 
 {{ figure_markup(
   image="eastpak-20-ctr.png",
-  caption='Eastpak improving the color contrast of their main call to action lead to a 20% increase in click through rate.<br>(Source: <a href="https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/5-lessons-eastpak-learned-its-mobile-audience/">https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/5-lessons-eastpak-learned-its-mobile-audience/</a>)',
+  caption='Eastpak improving the color contrast of their main call to action lead to a 20% increase in click through rate.<br>(Source: <a href="https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/5-lessons-eastpak-learned-its-mobile-audience/">Google</a>)',
   description="An image showing how Eastpak increased their click through rate by 20% by improving the color contrast of their main call to action button",
   width=1094,
   height=1122
@@ -272,7 +272,7 @@ Here, a simple change from a button that’s hard to see, to a button with contr
 
 {{ figure_markup(
   image="eastpak-12-ctr.png",
-  caption='Eastpak improving the color contrast of their checkout button lead to a 12% increase in conversion rate.<br>(Source: <a href="https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/5-lessons-eastpak-learned-its-mobile-audience/">https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/5-lessons-eastpak-learned-its-mobile-audience/</a>)',
+  caption='Eastpak improving the color contrast of their checkout button lead to a 12% increase in conversion rate.<br>(Source: <a href="https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/5-lessons-eastpak-learned-its-mobile-audience/">Google</a>)',
   description="An image showing how Eastpak increased their conversion rate by 12% by improving the color contrast of their checkout button",
   width=1166,
   height=1102
@@ -326,7 +326,7 @@ A [case study with fashion website lyst.com](https://www.thinkwithgoogle.com/int
 {# TODO: Insert image: search input lyst.com #}
 {{ figure_markup(
   image="search-input-lyst.png",
-  caption='Replacing the search icon with a search box on lyst.com improved conversion rate by 13% on mobile and 43% on desktop.<br>(Source: <a href="https://www.thinkwithgoogle.com/intl/en-cee/marketing-strategies/data-and-measurement/lyst-increases-overall-conversion-rate-25-making-usability-improvements/">https://www.thinkwithgoogle.com/intl/en-cee/marketing-strategies/data-and-measurement/lyst-increases-overall-conversion-rate-25-making-usability-improvements/</a>)',
+  caption='Replacing the search icon with a search box on lyst.com improved conversion rate by 13% on mobile and 43% on desktop.<br>(Source: <a href="https://www.thinkwithgoogle.com/intl/en-cee/marketing-strategies/data-and-measurement/lyst-increases-overall-conversion-rate-25-making-usability-improvements/">Google</a>)',
   description="A graphic showing how lyst.com replaced the search icon on their website with a search box, and as a result saw their conversion rate increase by 13% on mobile and 43% on desktop",
   width=1194,
   height=1170
