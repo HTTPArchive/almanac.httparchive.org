@@ -203,7 +203,7 @@ Although having a proper TLS configuration is paramount to defend against crypto
 To overcome these issues, browsers have provided web developers with a set of features that can be used. The first one is HTTP Strict Transport Security (HSTS), which can easily be enabled by setting a response header, consisting of several attributes. We find an adoption rate of 16.88% within the mobile homepages for this header. Of the sites that enable HSTS, 92.82% do so successfully. That is, the max-age attribute (which determines how many seconds the browser should *only* visit the website over HTTPS) has a value larger than 0.
 
 {{ figure_markup(
-  image="security-hsts-max-age-values-in-days",
+  image="security-hsts-max-age-values-in-days.png",
   alt="HSTS max-age values (in days).",
   caption="HSTS `max-age` values (in days).",
   description="Bar chart of percentiles of values in the `max-age` attribute, converted to days. In the 10th percentile desktop is 30 days and mobile is 91, in the 25th pcerntile both are 182 days, in the 50th percentile both are 365 days, the 75th percentile is the same at 365 days for both and the 90th percentile has 730 days for both.",
@@ -351,7 +351,7 @@ Interestingly, when we look at the most commonly used directives in CSP policies
 The CSP directives that indicate from which sources content can be included (the original CSP level 1 specification only included these directives), have a much lower adoption: only 18.51% of the CSP policies served on desktop pages (16.12% on mobile pages). The other `*-src` directives have an even lower adoption. One of the reasons for this, is that web developers are facing [many challenges in the adoption of CSP](https://wkr.io/publication/raid-2014-content_security_policy.pdf). Although a strict CSP policy can provide significant security benefits well beyond thwarting XSS attacks, an ill-defined one may prevent certain content from loading. To allow web developers to evaluate the correctness of their CSP policy, there also exists a non-enforcing alternative, which can be enabled by defining the policy in the `Content-Security-Policy-Report-Only` response header. The prevalence of this header is fairly small: 0.85% of desktop and mobile pages. It should be noted though that this percentage likely indicates the sites that intend to transition to using CSP, and only use the Report-Only header for a limited amount of time.
 
 {{ figure_markup(
-  image="security-csp-header-length",
+  image="security-csp-header-length.png",
   caption="CSP header length.",
   description="Bar chart showing Percentiles of the length of the CSP header in bytes. At 10th percentils desktop is 23 bytes and mobile is 24 bytes, at 25th percentile both are 25 bytes, at 50th percentile both are 75 bytes, at 75th percentile desktop is 78 bytes and mobile is 81 bytes and at 90th percentile desktop is 365 bytes and mobile is 316 bytes.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=1825551550&format=interactive",
@@ -434,7 +434,7 @@ One site went above and beyond to ensure that all of their included content woul
 Many JavaScript libraries and stylesheets are included from CDNs. As a result, if the CDN would be compromised, or attackers would find another way to replace the often-included libraries, this could have disastrous consequences. To limit the consequences of a compromised CDN, web developers can use the subresource integrity (SRI) mechanism. On `<script>` and `<link>` elements, an `integrity` attribute is defined, which consists of the hash of the expected contents. The browser will compare the hash of the fetched script or stylesheet with the hash defined in the attribute, and only load its contents if there is a match. The hash can be computed with three different algorithms: SHA256, SHA384, and SHA512. The first two are most frequently used: 50.62% and 45.78% respectively for desktop pages (usage is similar on mobile pages). Note that currently, all three hashing algorithms are safe to use.
 
 {{ figure_markup(
-  image="security-subresource-integrity-coverage-per-page",
+  image="security-subresource-integrity-coverage-per-page.png",
   caption="Subresource integrity: coverage per page.",
   description="Bar chart should percentiles of what percentage of scripts on a page are protected with SRI. At 10th percentile it's 2.0% for both desktop and mobile, at the 25th percentile it's 2.9% for both, at the 50th percentile it's 4.2% for both, at the 75th percentile it's 7.1% for desktop and 6.9% for mobile, and at the 90th percentile it's 15.8% for both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=1581504207&format=interactive",
@@ -814,7 +814,7 @@ In the previous sections we explored the adoption rate of various browser securi
 There can be many different factors that affect security at the level of a country: government-motivated programs of cybersecurity may increase awareness of good security practices, a focus on security in higher education could lead to more well-informed developers, or even certain regulations might require companies and organizations to adhere to best security practices. To evaluate the differences per country, we analyze the different countries for which at least 100,000 homepages were available in our dataset, which is based on the Chrome User Experience Report (CrUX). These pages consist of those that were visited most frequently by the users in that country; as such, these also contain widely popular international websites.
 
 {{ figure_markup(
-  image="security-adoption-of-https-per-country",
+  image="security-adoption-of-https-per-country.png",
   caption="Adoption of HTTPS per country",
   description="Bar chart showing percentage of sites with HTTPS enabled, for sites related to different countries.
 Switzerland, New Zealand, Ireland, Nigeria and Australia are the top five in order at 95% to 94%. At the other end Thailand, Iran, South Korea, Taiwan, Japan are at 76% to 72%.",
@@ -826,7 +826,7 @@ Switzerland, New Zealand, Ireland, Nigeria and Australia are the top five in ord
 Looking at the percentage of homepages that were visited over HTTPS, we can already see a significant difference between the top 5 best-performing countries, where 93-95% of the homepages were served over HTTPS. For the bottom 5, we see a much smaller adoption in HTTPS, ranging from 71% to 76%. When we look at other security mechanisms, we can see even more apparent differences between top-performing countries and countries with a low adoption rate. The top-5 countries according to the adoption rate for CSP score between 14% and 16%, whereas the bottom-5 score between 2.5% and 5%. Interestingly, the countries that perform well/poorly for one security mechanism, also do so for other mechanisms. For instance, New Zealand, Ireland and Australia consistently rank among the top-5, whereas Japan scores worse for almost every security mechanism.
 
 {{ figure_markup(
-  image="security-adoption-of-csp-and-xfo-per-country",
+  image="security-adoption-of-csp-and-xfo-per-country.png",
   caption="Adoption of CSP and XFO per country.",
   description="Bar chart showing New Zealand has 16% of sites using CSP and 37% using XFO,
 Australia has 16% for CSP and 35% for XFO, Ireland has 15% for CSP and 38% for XFO,
@@ -867,7 +867,7 @@ A very large part of the Web is built with third-party components, at different 
 ### WordPress
 
 {{ figure_markup(
-  image="security-wordpress-version-evolution-2019-2020",
+  image="security-wordpress-version-evolution-2019-2020.png",
   caption="WordPress version evolution (2019-2020).",
   description="Stacked bar chart showing the evolution of the versions of WordPress installations from November 2019 until October 2020 for the actively maintained branches of wordpress (4.9, 5.1, 5.2, 5.3, 5.4 and 5.5). In general the chart shows that most installations (approximately 75%) keep updating throughout the year and are now on the latest versions",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=2139119698&format=interactive",
@@ -923,21 +923,31 @@ For nginx, one of the most widely used web servers, we see a very static and div
 Nowadays, the performance of the technologies used  plays a particularly relevant role. To this end, technologies are constantly being further developed, optimized, and new technologies launched. One of these new technologies is WebAssembly, which becomes a [W3C recommendation](https://www.w3.org/2019/12/pressrelease-wasm-rec.html.en) by the end of 2019. WebAssembly achieves the development of powerful web applications and has made it possible to run almost native high-performance computing in web browsers. No rose without a thorn; attackers have taken advantage of this technology, and this is how the new attack vector cryptojacking was found. Attackers used this technology to mine cryptocurrencies on the web browser by using the computer's power of visitors (malicious cryptomining). This is a very attractive technique for attackers – inject a few lines of JavaScript code in the webpage and let all visitors mine for you. Since the technique cryptomining on the web rarely used also by website operators, we can't generalize that all websites with cryptomining have been crypto hijacked. But in most cases, the website operators don't offer an opt-in alternative for visitors, and the visitors remain still uninformed as to whether their resources are being while surfing on the website.
 
 {{ figure_markup(
-  image="TODO",
+  image="security-cryptominer-usage.png",
   caption="Cryptominer usage.",
-  description="Evolution of the number of sites with cryptojacking scripts.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=1943173405&format=interactive",
+  description="Time series chart showing the evolution of the number of sites with cryptojacking scripts from January 2019 until August 2020. There is a downward trend from 1094 desktop sites and 1221 mobile sites at the beginning to 475 sites on desktop and 659 sites on mobile at the end.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=1746732299&format=interactive",
   sheets_gid="340445160",
   sql_file="cryptominer_usage.sql"
 ) }}
 
-The figure above shows the number of websites utilizing cryptomining in the last two years. We see that from the beginning of 2019, interest in cryptomining is getting lower. In our last measurement, we had a total of 475 websites utilizing cryptominer.
+The figure above shows the number of websites utilizing cryptomining in the last two years. We see that from the beginning of 2019, interest in cryptomining is getting lower. In our last measurement, we had a total of 348 websites utilizing cryptominer.
 
 {# TODO Nurullah: get avg use time. #}
 
 In the next figure, we show the market share of cryptominer on the web based on October's dataset. Coinimp is the most popular provider with a 45.2% market share. We found that all the most popular cryptominers are based on WebAssembly. Note that there are also JavaScript libraries to mine on the web, but they are not powerful like solutions based on WebAssembly. Our other result shows that half of the websites with cryptominer utilize a cryptomining component of discontinued service providers (such as [CoinHive](https://blog.avast.com/coinhive-shuts-down) and [JSEcoin](https://twitter.com/jsecoin/status/1247436272869814272)), which means that mining will be not happening in practice.
 
 {# TODO Cryptomining market share image - leave it out? one of the main operators has been shut down for a long time #}
+
+{{ figure_markup(
+  image="security-cryptominer-market-share.png",
+  caption="Cryptominer market share.",
+  description="Pie chart showing Coinimp has 45.2% of market share, CoinHive has 43.0%, JSEcoin has 6.9%, Minero.cc has 3.0% and others have 2.0.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=691707301&amp;format=interactive",
+  sheets_gid="445442267",
+  sql_file="cryptominer_share.sql"
+) }}
+
 
 ## Evolution & conclusion
 
