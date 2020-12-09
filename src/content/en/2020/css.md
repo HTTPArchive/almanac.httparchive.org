@@ -1548,6 +1548,12 @@ This kind of confusion seems to happen way more with the `background` shorthand 
 
 ## Sass
 
+While analyzing CSS code tells us what CSS devs *are* doing, looking at preprocessor code can tell us a bit about what CSS devs *want* to be doing, but *can't*, which in some ways is more interesting. We used CSS files with sourcemaps to extract and analyze SCSS stylesheets in the wild. We chose to look at SCSS because it's the most popular preprocessing syntax, based on our analysis of sourcemaps.
+
+We've known for a while that developers need color modification functions, and are working on them in [CSS Color 5](https://drafts.csswg.org/css-color-5/). However, analyzing SCSS function calls gives us hard data to prove just how necessary color modification functions are, and also tells us *which* types of color modifications are most commonly needed.
+
+Overall, over one third of all Sass function calls are to modify colors or extract color components. Virtually all color modifications we found were rather simple. **Half** were to make colors darker. In fact, `darken()` was the most popular Sass function call overall, used even more than the generic `if()`! It appears that a common strategy is to define bright core colors, and use `darken()` to create darker variations. The opposite, making them lighter, is less common, with only 5% of function calls being `lighten()`, though that was still the 6th most popular function overall.  Functions that change the alpha channel were about 4% of overall function calls and mixing colors makes up 3.5% of all function calls. Other types of color modifications such as adjusting hue, saturation, red/green/blue channels, or the more complex `adjust-color()` were used very sparingly.
+
 {{ figure_markup(
   image="most-popupular-sass-function-calls.png",
   caption="Most popular Sass function calls.",
@@ -1557,6 +1563,10 @@ This kind of confusion seems to happen way more with the `background` shorthand 
   sql_file="sass_function_calls.sql"
 ) }}
 
+Defining custom functions is something that has been [discussed for years in Houdini](https://github.com/w3c/css-houdini-drafts/issues/857), but studying Sass stylesheets gives us data on how common the need is. Quite common, it turns out. At least **half** of SCSS stylesheets studied contain custom functions, since the median SCSS sheet contains not one, but two custom functions.
+
+There are also [recent](https://github.com/w3c/csswg-drafts/issues/5009) [discussions](https://github.com/w3c/csswg-drafts/issues/5624) in the CSS WG about introducing a limited form of conditionals, and Sass gives us some data on how commonly this is needed. Almost two thirds of SCSS sheets contain at least one `@if` block, making up almost two thirds of all control flow statements. There is also an `if()` function for conditionals within values, which is the second most common function used overall (14%).
+
 {{ figure_markup(
   image="usage-of-control-flow-statements-scss.png",
   caption="Usage of control flow statements in SCSS.",
@@ -1565,6 +1575,8 @@ This kind of confusion seems to happen way more with the `background` shorthand 
   sheets_gid="498478750",
   sql_file="sass_control_flow_statements.sql"
 ) }}
+
+Another future spec that is currently worked on is [CSS Nesting](https://drafts.csswg.org/css-nesting/), which will afford us the ability to nest rules within other rules similarly to what we can do in Sass and other preprocessors by using `&`. How commonly is nesting used in SCSS sheets? **Very**, it turns out. The vast majority of SCSS sheets use at least one explicitly nested selector, with pseudo-classes (e.g. `&:hover`) and classes (e.g. `&.active`) making up three quarters of it. And this does not account for implicit nesting, where a descendant is assumed and the `&` character is not required.
 
 {{ figure_markup(
   image="usage-of-explicit-nesting-in-scss.png",
@@ -1576,3 +1588,13 @@ This kind of confusion seems to happen way more with the `background` shorthand 
 ) }}
 
 ## Conclusion
+
+**Whew!** That was a lot of data! We hope you have found it as interesting as we did, and perhaps even formed your own insights about some of them.
+
+One of our takeaways was that popular libraries such as WordPress, Bootstrap, and FontAwesome are primary drivers behind adoption of new features, while individual developers tend to be more conservative.
+
+Another observation is that there is more old code on the Web than new code. The Web in practice spans a huge range, from code that could have been written 20 years ago to bleeding edge tech that only works in the latest browsers. What this study showed us, though, is that there are powerful features that are often misunderstood and underused, despite good interoperability.
+
+It also showed us some of the ways that developers want to use CSS but can't, and gave us some insight on what they find confusing. Some of this data will be brought back to the CSS WG to help drive CSS's evolution, because data-driven decisions are the best kind of decisions.
+
+We are excited about the ways that this analysis could have further impact in the way we develop websites, and looking forward to seeing how these metrics develop over time!
