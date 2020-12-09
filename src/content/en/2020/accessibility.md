@@ -405,7 +405,7 @@ Groups of form controls such as a set of radio inputs or checkboxes should be ne
 
 ### Placeholder text
 
-Do not rely on placeholder text to act as the label for an input. While some screen readers now have the capability of determining the accessible name from placeholder text, users with cognitive disabilities can be negatively impacted by a reliance on placeholder text because as soon as a user begins to type in the input the placeholder disappears and the context is gone. Voice control users need more than a placeholder value in order to reliably target an element in the DOM. Additionally placeholder text often fails colour contrast requirements, which negatively impacts users with low vision.
+Do not rely on placeholder text to act as the label for an input. While some screen readers now have the capability of determining the accessible name from placeholder text, users with cognitive disabilities can be negatively impacted by a reliance on placeholder text because as soon as a user begins to type in the input the placeholder disappears and the context is gone. Voice control users need more than a placeholder value in order to reliably target an element in the DOM. Additionally placeholder text often fails color contrast requirements, which negatively impacts users with low vision.
 
 Of the sites that have form controls with placeholder text, 73.89% of them have at least one instance where there is no `<label>` element programmatically associated with the control for desktop and 74.52% for mobile.
 
