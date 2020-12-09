@@ -991,9 +991,19 @@ A major driver of animation adoption seems to be FontAwesome, as evidenced by th
 
 ### Blend modes
 
+Last year, 8% of pages were using blend modes. This year, adoption has increased significantly, with 13% of pages using blend modes on elements (`mix-blend-mode`), and 2% in backgrounds (`background-blend-mode`).
+
 ### Filters
 
+Adoption of filters has remained high, with the `filter` property making an appearance in 79.43% of pages. While at first this was quite exciting, a lot of it is likely to be old [IE DX filters](https://developer.mozilla.org/en-US/docs/Archive/Web/CSS/-ms-filter), which shared the same property name. When we only took into account valid CSS filters that Blink recognizes, usage drops to 22% for mobile and 20% for desktop, with `blur()` being the most popular filter type, appearing in 4% of pages.
+
+Another filter property, `backdrop-filter`, allows us to apply filters to only the area *behind* an element, which is incredibly useful for improving contrast on translucent backgrounds, and creating the elegant ["frosted glass" effect](https://css-tricks.com/backdrop-filter-effect-with-css/) we've come to know from many native UIs. While not nearly as popular as `filter`, we found `backdrop-filter` in 6% of pages.
+
+The `filter()` function allows us to apply a filter only on a particular image, which can be extremely useful for backgrounds. Sadly, it is [currently only supported by Safari](https://caniuse.com/css-filter-function). We did not find any usage of `filter()`.
+
 ### Masks
+
+A decade ago, we got masks in Safari with `-webkit-mask-image` and it was exciting. Everyone and their dog were using them. We eventually got [a spec](https://www.w3.org/TR/css-masking-1/) and a set of unprefixed properties closely modeled after the WebKit prototype, and it seemed a matter of time until masking became standard, with a consistent syntax across all browsers. Fast forward 10 years later, and the unprefixed syntax is [still not supported in Chrome or Safari, meaning its available on less than 5% of users' browsers worldwide](https://caniuse.com/css-masks). It is therefore no surprise that `-webkit-mask-image` is still more popular than its standard counterpart, being found in 22% of pages. However, despite its very poor support, `mask-image` is found on 19% of pages. We see a similar pattern across most other masking properties with the unprefixed versions appearing in almost as many pages as the `-webkit-` ones. Overall, despite them falling out of hype, masks are still found in nearly a quarter of the Web, indicating that the use cases are still there, despite lack of implementer interest (hint, hint!).
 
 {{ figure_markup(
   image="mask-properties.png",
@@ -1007,6 +1017,8 @@ A major driver of animation adoption seems to be FontAwesome, as evidenced by th
 ) }}
 
 ### Clipping paths
+
+Around the same time masks got popular, another similar but simpler property (originally from SVG) started making the rounds: `clip-path`. However, unlike masks, it had a brighter fate. It got standardized fairly quickly, and got support across the board relatively fast, with the last holdout being Safari which dropped the prefix in 2016. Today, it is found on 19% of pages unprefixed and 13% with the `-webkit-` prefix.
 
 ## Responsive design
 
