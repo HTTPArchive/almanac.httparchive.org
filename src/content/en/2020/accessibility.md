@@ -274,7 +274,7 @@ We are pleased to report that 19.01% of desktop pages and 18.21% of mobile pages
 
 Tabs are a common interface widget, but present a challenge for many developers to make accessible. A common pattern for accessible implementation comes from  the [WAI-ARIA Authoring Practices Design Patterns](https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel). Please note that the ARIA Authoring Practices document is not a specification, and is meant to show idealized ARIA constructs. They should not be used in production without testing with your users. 
 
-In this pattern, a parent container has a `role=”tablist”` with children elements that have a `role=”tab”`. These tabs are associated with elements that have a `role=”tabpanel”`, and contain the content for that tab. 
+In this pattern, a parent container has a `role="tablist"` with children elements that have a `role="tab"`. These tabs are associated with elements that have a `role="tabpanel"`, and contain the content for that tab. 
 
 {{ figure_markup(
   image="role-tab-list.png",
