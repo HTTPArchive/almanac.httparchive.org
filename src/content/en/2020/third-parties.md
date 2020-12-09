@@ -5,8 +5,8 @@ chapter_number: 6
 title: Third Parties
 description: Third Parties chapter of the 2020 Web Almanac covering data of what third parties are used, what they are used for, performance impacts and privacy impacts.
 authors: [simonhearne]
-reviewers: [jzyang]
-analysts: [max-ostapenko]
+reviewers: [jzyang, exterkamp]
+analysts: [max-ostapenko, paulcalvano]
 translators: []
 simonhearne_bio: Simon is a web performance architect, he is passionate about helping deliver a faster and more accessible web. You can find him tweeting <a href="https://twitter.com/simonhearne">@SimonHearne</a> and blogging at <a href="https://simonhearne.com">simonhearne.com</a>.
 discuss: 2042
