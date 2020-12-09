@@ -148,7 +148,7 @@ We can analyze the effect of these settings on first content paint and last cont
   )
 }}
 
-There are two other interesting inferences from this data. One might expect the `block` setting to have a significant impact on FCP, especially on mobile, but in practice the effect is not that large. That suggests that waiting for font assets is seldom the limiting factor for the webpage performance as a whole, though it would certainly be a major factor in pages without lots of resources such as images. The `auto` setting (which is also what you get if you don't specify it) looks a lot like `block`; though it's technically up to the browser, [the default is blocking in most cases](https://nooshu.github.io/blog/2020/02/23/improving-perceived-performance-with-the-css-font-display-property/).
+There are two other interesting inferences from this data. One might expect the `block` setting to have a significant impact on FCP, especially on mobile, but in practice the effect is not that large. That suggests that waiting for font assets is seldom the limiting factor for the web page performance as a whole, though it would certainly be a major factor in pages without lots of resources such as images. The `auto` setting (which is also what you get if you don't specify it) looks a lot like `block`; though it's technically up to the browser, [the default is blocking in most cases](https://nooshu.github.io/blog/2020/02/23/improving-perceived-performance-with-the-css-font-display-property/).
 
 Finally, one justification for using `fallback` is to improve Last Content Paint times compared to `swap` (which is more likely to respect the designer's visual intent), but the data do not support this case; this performance metric is no better. Perhaps this is why the setting is not popular, used by only about 1% of pages.
 
@@ -240,7 +240,7 @@ WOFF is an older, less efficient compression mechanism, but almost universally s
 
 Ancient versions of Internet Explorer (6-8), which still make about 1.5% of global browser share, only support the EOT format. These don't show up in the top 5 MIME formats, but are necessary for maximum compatibility.
 
-Uncompressed fonts, like OTF and TTF files, are 2-3x larger than compressed, but still make up almost 5% of all fonts served, disproportionally on mobile. If you're serving these, it should be a red flag that optimization is possible.
+Uncompressed fonts, like OTF and TTF files, are 2-3x larger than compressed, but still make up almost 5% of all fonts served, disproportionately on mobile. If you're serving these, it should be a red flag that optimization is possible.
 
 ## Popular fonts
 
@@ -266,7 +266,7 @@ Color fonts, in one form or other, are supported by most modern browsers, but us
 
 The COLR vector format is supported on all major modern browsers, but only fairly recently. The fourth format is embedding SVG in OpenType (not to be confused with SVG fonts), but not supported in Chrome. One drawback of SVG in OpenType is lack of support for font variations, an increasingly important aspect of modern Web design. For this reason, the COLR format is likely to prevail, particularly as support for gradients and clipping is being developed for a future version of COLR. Vector formats are usually much smaller than images, and also scale cleanly to larger sizes, so when COLR arrives with a richer shading model, it could well become popular.
 
-One reason for the poor support of color fonts on the web is that the colors have to be baked into the font files themselves. If you use the same typeface with three different color combinations, near-identical files have to be downloaded three times, and changng a color means reaching for a font editor.
+One reason for the poor support of color fonts on the web is that the colors have to be baked into the font files themselves. If you use the same typeface with three different color combinations, near-identical files have to be downloaded three times, and changing a color means reaching for a font editor.
 
 While there is a feature in CSS to [override or replace the color palettes in fonts](https://drafts.csswg.org/css-fonts-4/#font-palette-values), this has not yet been implemented in browsers, which certainly holds back the ease of deploying color web fonts.
 

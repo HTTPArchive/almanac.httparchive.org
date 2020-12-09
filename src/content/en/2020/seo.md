@@ -587,7 +587,7 @@ The median page is linking to external sites 7 times on desktop and 6 times on m
 
 {{ figure_markup(
   image="seo-outgoing-links-external.png",
-  caption="Distribution of the number of outgoing expernal links per page.",
+  caption="Distribution of the number of outgoing external links per page.",
   description="Bar chart showing the number of external outgoing links per percentile (10, 25, 50, 75, and 90). The median page is linking to external sites 7 times on desktop and 6 times on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=391564643&format=interactive",
   sheets_gid="775602646",

@@ -23,7 +23,7 @@ unedited: true
 
 ## Introduction
 
-Page weight is one of the simpler metrics available. Much like stepping on a human scale to get a sense of your personal weight (well, mass really, but you get it), loading a page will provide a sense of the amount of resources collected and requested. But as the web and webpages have matured and grown, so have associated metrics — such as page weight. It can affect a page's performance much like personal weight (mass) can do the same. This chapter will take a deeper dive and peel back the layers of web pages, and see what it is that constitutes a page's weight at the possible detriment of the end user: you, I, us.
+Page weight is one of the simpler metrics available. Much like stepping on a human scale to get a sense of your personal weight (well, mass really, but you get it), loading a page will provide a sense of the amount of resources collected and requested. But as the web and web pages have matured and grown, so have associated metrics — such as page weight. It can affect a page's performance much like personal weight (mass) can do the same. This chapter will take a deeper dive and peel back the layers of web pages, and see what it is that constitutes a page's weight at the possible detriment of the end user: you, I, us.
 
 ## #PageWeightStillMatters
 
@@ -42,9 +42,9 @@ physics damn'it!
 
 In 25 years of modern browsing, the assets and resources have mostly not changed, other than the amount. The HTTP archive modus operandi is “how the web was built”, and that was mostly done with HTML, CSS, JavaScript and finally images.
 
-Prior to 1995, the web's page weight was mostly predictable and manageable. But with RFC 1866, which introduced HTML 2.0, responsible for the introduction of inline images via the IMG tag, page weight would make a dramatic increase, all for the good of web development (adding images was seen as a positive experiment). 
+Prior to 1995, the web's page weight was mostly predictable and manageable. But with RFC 1866, which introduced HTML 2.0, responsible for the introduction of inline images via the IMG tag, page weight would make a dramatic increase, all for the good of web development (adding images was seen as a positive experiment).
 
-For the most part, the rule of thumb has been that images would make up the majority of page weight. It was certainly the case and a concern when in-line images were added to the web then, and remains the case today. In a separate scenario, as image data will be the greatest source of page weight, it will also be the greatest source of page weight savings (more on that later). This will be achieved from ensuring that the images are sized properly, but also making sure that the images are at the optimization sweet spot - finding the best balance of quality and file size. 
+For the most part, the rule of thumb has been that images would make up the majority of page weight. It was certainly the case and a concern when in-line images were added to the web then, and remains the case today. In a separate scenario, as image data will be the greatest source of page weight, it will also be the greatest source of page weight savings (more on that later). This will be achieved from ensuring that the images are sized properly, but also making sure that the images are at the optimization sweet spot - finding the best balance of quality and file size.
 
 Although Javascript is on average the 2nd most abundant resource on a page, we tend to have more opportunities in working with that file type: from bundling, compression and minification to name a few.
 
@@ -52,7 +52,7 @@ Although Javascript is on average the 2nd most abundant resource on a page, we t
 
 The web's  journey from the plain, near pedagogical platform, to the innovative, intricate and highly interactive apps it has become, the rudimentary page weight metric hid a bigger story: a ratatouille of resources, each affecting  modern metrics, in turn affecting user experience.
 
-Whenever we talk about interactivity, we are talking almost exclusively about JavaScript. Now, though we are not here to discuss interactivity in any depth, we know there are metrics which are focused and dependent on JavaScript content and execution.  So weightier the JavaScript, likely to have a greater impact on interactivity metrics (time to interactive, total blocking time). We have a javascript chapter that dives a pinch more. 
+Whenever we talk about interactivity, we are talking almost exclusively about JavaScript. Now, though we are not here to discuss interactivity in any depth, we know there are metrics which are focused and dependent on JavaScript content and execution.  So weightier the JavaScript, likely to have a greater impact on interactivity metrics (time to interactive, total blocking time). We have a javascript chapter that dives a pinch more.
 
 ## Analysis
 
@@ -60,7 +60,7 @@ As we post and parse the statistical results, just a reminder that the data is b
 
 ### Page weight
 
-Let's look at the classic page weight, on both desktop and mobile. The deltas are mostly due to a few less resources transferred on mobile, a likely pinch of media management, but you can see below that at the median, the differences are not that significant between the two clients. We are highlighting the mobile results. 
+Let's look at the classic page weight, on both desktop and mobile. The deltas are mostly due to a few less resources transferred on mobile, a likely pinch of media management, but you can see below that at the median, the differences are not that significant between the two clients. We are highlighting the mobile results.
 
 We can however surmise from this the following: we are closing in on 7 MB of page weight on mobile and 7.5 MB on desktop at the 90th percentile. The data is following an age old trend:  growth in page weight is on the upward trajectory yet again, from the previous year. Popping the hood, we can see how things look at the median and average for each resource. One thing again remains: images are the dominant resource and JavaScript is the second most abundant, though a far second.
 
@@ -138,8 +138,8 @@ If we have been married to the Internet, Covid has forced us to renew our vows. 
 
 We have watched for 25 years page weight grow steadily. It might have been one of the greatest stock investments — had it been one. But this is the web. And, we are trying to manage data, requests, file size and ultimately page weight. We have just combed over data, seeing how images are the greatest source of weight. This means, it will also be our greatest source of savings. 2020 was a pivotal year, a possible inflection point for HTTP Archive tracking of web data. 2020 marked the year the modern format webp was finally adopted by Safari, making this format finally supported by all browsers across the board. This means that the format could comfortably be used with little to no fall back. The most important point? The potential for significant page weight savings is unavoidable — at a possible 30%. Even more interesting is the idea of a more modern format: avif. This format has burst onto the scene with enough support today for approximately 70% browser market share, creating a scenario for small image file sizes - even smaller than webp. And lastly, and possibly most distant: media queries level 5, ‘prefers-reduced-data ‘. Though in very early draft, this media feature will be used to detect if a user may have a preference for variant resources in data sensitive situations
 
-Looking at the crystal ball, the third instalment of the Almanac and the page weight chapter could have a much different look in 2021. The big technological and engineering investments into images, might finally provide the diminishing returns we have been looking for. 
+Looking at the crystal ball, the third instalment of the Almanac and the page weight chapter could have a much different look in 2021. The big technological and engineering investments into images, might finally provide the diminishing returns we have been looking for.
 
 ## Conclusion
 
-It's of no surprise that web pages have generally kept growing. We have been feeding more resources down the wire to create richer experiences, more engaging interactivity, more stunning visuals through more powerful imagery. We have created these applications at the cost of data overages and user experiences. But as we move forward and keep pushing the web to places we had never anticipated, we are also making additional advances in engineering, as mentioned earlier. We may begin to see a drop in page weight as early as next year, as modern raster image formats see more adoption, we start to manage javascript more efficiently, and deliver the data down the wire with the discipline that users demand. 
+It's of no surprise that web pages have generally kept growing. We have been feeding more resources down the wire to create richer experiences, more engaging interactivity, more stunning visuals through more powerful imagery. We have created these applications at the cost of data overages and user experiences. But as we move forward and keep pushing the web to places we had never anticipated, we are also making additional advances in engineering, as mentioned earlier. We may begin to see a drop in page weight as early as next year, as modern raster image formats see more adoption, we start to manage javascript more efficiently, and deliver the data down the wire with the discipline that users demand.
