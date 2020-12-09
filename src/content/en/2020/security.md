@@ -867,8 +867,8 @@ A very large part of the Web is built with third-party components, at different 
 ### WordPress
 
 {{ figure_markup(
-  image="security-wordpress-version-evolution-2019-2020.png",
-  caption="WordPress version evolution (2019-2020).",
+  image="security-wordpress-version-evolution.png",
+  caption="WordPress version evolution.",
   description="Stacked bar chart showing the evolution of the versions of WordPress installations from November 2019 until August 2020 for the actively maintained branches of wordpress (4.9, 5.1, 5.2, 5.3, 5.4 and 5.5). In general the chart shows that most installations (approximately 75%) keep updating throughout the year and are now on the latest versions",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=2139119698&format=interactive",
   sheets_gid="640505800",
@@ -937,15 +937,15 @@ The figure above shows the number of websites utilizing cryptomining in the last
 
 {# TODO Nurullah: get avg use time. #}
 
-In the next figure, we show the market share of cryptominer on the web based on October's dataset. Coinimp is the most popular provider with a 45.2% market share. We found that all the most popular cryptominers are based on WebAssembly. Note that there are also JavaScript libraries to mine on the web, but they are not powerful like solutions based on WebAssembly. Our other result shows that half of the websites with cryptominer utilize a cryptomining component of discontinued service providers (such as [CoinHive](https://blog.avast.com/coinhive-shuts-down) and [JSEcoin](https://twitter.com/jsecoin/status/1247436272869814272)), which means that mining will be not happening in practice.
+In the next figure, we show the market share of cryptominer on the web based on August's dataset. Coinimp is the most popular provider with a 45.2% market share. We found that all the most popular cryptominers are based on WebAssembly. Note that there are also JavaScript libraries to mine on the web, but they are not powerful like solutions based on WebAssembly. Our other result shows that half of the websites with cryptominer utilize a cryptomining component of discontinued service providers (such as [CoinHive](https://blog.avast.com/coinhive-shuts-down) and [JSEcoin](https://twitter.com/jsecoin/status/1247436272869814272)), which means that mining will be not happening in practice.
 
 {# TODO Cryptomining market share image - leave it out? one of the main operators has been shut down for a long time #}
 
 {{ figure_markup(
   image="security-cryptominer-market-share.png",
-  caption="Cryptominer market share.",
-  description="Pie chart showing Coinimp has 45.2% of market share, CoinHive has 43.0%, JSEcoin has 6.9%, Minero.cc has 3.0% and others have 2.0.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=691707301&amp;format=interactive",
+  caption="Cryptominer market share (mobile).",
+  description="Pie chart showing Coinimp has 45.2.3% of market share, CoinHive has 41.4%, JSEcoin has 6.9%, Minero.cc has 3.0% and others have 3.55%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=691707301&format=interactive",
   sheets_gid="445442267",
   sql_file="cryptominer_share.sql"
 ) }}
