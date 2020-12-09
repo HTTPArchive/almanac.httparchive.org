@@ -307,7 +307,14 @@ More interesting to me than the popularity of the tools themselves is the impact
 
 First, it's worth noting that while we may think of the usage of one tool versus another, in reality, we rarely only use a single library or framework in production. Only 21% of pages analyzed report only one library or framework. Two or three frameworks are pretty common, and the long-tail gets very long, very quickly.
 
-{# Distribution of number of JS frameworks or libraries on a page #}
+{{ figure_markup(
+  image="frameworks-libraries.png",
+  caption="Adoption of the top JavaScript frameworks and libraries as a percent of pages.",
+  description="Bar chart showing the adoption of the top frameworks and libraries as a percent of pages (not page views or npm downloads). jQuery is the overwhelming leader, found on 83% of mobile pages. It's followed by jQuery migrate on 30%, jQuery UI on 21%, Modernizr on 15%, FancyBox on 7%, Slick and Lightbox on 6%, and the remaining frameworks and libraries on 4% or 3%: Moment.js, Underscore.js, Lodash, React, GSAP, Select2, RequireJS, and prettyPhoto.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=419887153&format=interactive",
+  sheets_gid="1654577118",
+  sql_file="framewords_libraries.sql"
+) }}
 
 When we look at the common combinations that we see in production, most of them are to be expected. Knowing jQuery's dominance, it's unsurprising that most of the popular combinations include jQuery and any number of jQuery related plugins.
 
@@ -335,7 +342,7 @@ Ember's mobile main thread time jumps out and kind of distorts the graph with ho
 
 {# Median main thread by JS framework, no Ember #}
 
-Tools like React, GASP, and RequireJS tend to spend a lot of time on the main thread of the browser, regardless of whether it's a desktop or mobile page view. The same tools that tend to lead to less code overall—tools like Alpine and Svelte—also tend to lead to lower impact on the main thread.
+Tools like React, GSAP, and RequireJS tend to spend a lot of time on the main thread of the browser, regardless of whether it's a desktop or mobile page view. The same tools that tend to lead to less code overall—tools like Alpine and Svelte—also tend to lead to lower impact on the main thread.
 
 The gap between the experience a framework provides for desktop and mobile is also worth digging into. Mobile traffic is becoming increasingly dominant, and it's critical that our tools perfom as well as possible for mobile pageviews. The bigger the gap we see between desktop and mobile performance for a framework, the bigger the red flag.
 
