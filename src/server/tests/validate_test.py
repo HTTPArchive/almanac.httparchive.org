@@ -2,7 +2,7 @@ from server.config import DEFAULT_YEAR, SUPPORTED_YEARS
 from server.language import Language, DEFAULT_LANGUAGE
 from server.validate import parse_accept_language, validate_lang_and_year, validate_chapter
 import pytest
-import werkzeug
+from werkzeug.exceptions import NotFound
 
 
 SUPPORTED_LANGUAGES = (Language.EN.lang_code, Language.JA.lang_code)
@@ -13,6 +13,7 @@ ENGLISH_LANGUAGE_CODE = Language.EN.lang_code
 
 def assert_validate_chapter(chapter, year, expected_chapter):
     assert expected_chapter == validate_chapter(chapter, year)
+
 
 def assert_validate_lang(lang, year, expected_lang, expected_year):
     assert (expected_lang, expected_year) == validate_lang_and_year(lang, year)
@@ -108,7 +109,7 @@ def test_valid_chapter():
 
 
 def test_invalid_chapter():
-    with pytest.raises(werkzeug.exceptions.NotFound):
+    with pytest.raises(NotFound):
         assert_validate_chapter('random', '2019', 'javascript')
 
 
@@ -129,5 +130,5 @@ def test_2020_chapter():
 
 
 def test_2020_chapter_not_in_2019():
-    with pytest.raises(werkzeug.exceptions.NotFound):
+    with pytest.raises(NotFound):
         assert_validate_chapter('capabilities', '2019', 'capabilities')

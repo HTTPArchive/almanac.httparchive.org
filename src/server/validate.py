@@ -10,12 +10,14 @@ from .config import SUPPORTED_YEARS, DEFAULT_YEAR, SUPPORTED_CHAPTERS, SUPPORTED
 
 TYPO_CHAPTERS = {
     'http-2': 'http2',
+    'http3': 'http3',
     'mobileweb': 'mobile-web',
     'pageweight': 'page-weight',
     'resourcehints': 'resource-hints',
     'thirdparties': 'third-parties',
     'third-party': 'third-parties',
     'sécurité': 'security'
+    'js': 'javascript'
 }
 
 
