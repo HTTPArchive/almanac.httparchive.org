@@ -514,7 +514,15 @@ What about named colors? The keyword `transparent`, which is just another way to
 
 And if you are going for fanciful color names, why not define your own with CSS [Custom properties](#custom-properties)? `--intensePurple` and `--corporateBlue` mean whatever you need them to mean. This probably explains why [50% of Custom Properties](#usage-by-type) are used for colors.
 
-{# TODO mention color keyword app #}
+{{ figure_markup(
+  link="https://codepen.io/leaverou/pen/GRjjJwJ",
+  image="color-keywords-app.png",
+  caption="Interactively explore the color keyword usage data with this app!",
+  description="TODO",
+  width=600,
+  height=1065
+  )
+}}
 
 {# TODO(analysts, CSS experts): figure out why the swatches aren't working. #}
 <figure>
