@@ -144,7 +144,7 @@ Due to the popularity of  mobile devices to browse and search the web, Google se
 
 Websites should ensure mobile friendliness for a good search experience and SEO, as this impacts traffic from search users. [Responsive web design](https://developers.google.com/search/mobile-sites/mobile-seo/responsive-design) is the recommended way to achieve this.
 
-Responsive websites use the viewport meta tag as well as CSS media queries to provide a mobile friendly experience. To learn more about these mobile friendliness aspects, head over to the [SEO chapter]((../seo#mobile-friendliness)).
+Responsive websites use the viewport meta tag as well as CSS media queries to provide a mobile friendly experience. To learn more about these mobile friendliness aspects, head over to the [SEO chapter](./seo#mobile-friendliness).
 
 Learn more about [responsive web design here](https://web.dev/responsive-web-design-basics/).
 
@@ -380,7 +380,7 @@ Users can more easily enter required information on mobile devices when their ke
 #### Sign up, Sign in and Checkout
 Today, browsers can help populate the necessary user information to complete a transaction and help reduce potential input errors. The `autocomplete` attribute can provide browsers hints to populate input elements with the correct user information. Users who successfully use Chrome Autofill to enter their information go through checkout an average of 30% faster than those who don't ([source](https://developers.google.com/web/fundamentals/design-and-ux/input/forms#use_metadata_to_enable_auto-complete)).
 
-Auto-complete can be especially helpful in completing checkout flows that require a user to login and hence remember their password. According to a [study by HYPR](https://www.hypr.com/hypr-password-study-findings/_) in 2019, 78% of users forgot and had to reset a password in the past 90 days.
+Auto-complete can be especially helpful in completing checkout flows that require a user to login and hence remember their password. According to a [study by HYPR](https://www.hypr.com/hypr-password-study-findings/) in 2019, 78% of users forgot and had to reset a password in the past 90 days.
 
 It’s also possible to eliminate some form fields altogether. The Credential Management and Payment Request APIs are standards-based browser APIs that provide a programmatic interface between sites and the browser for seamless sign-in and payments. Only .61% of eCommerce sites are using the Payment Request API and only 0.008% use the Credential Management API. It’s worth noting that adoption of the Payment Request API has increased compared to 2019, with a 6x increase in payment completion rate.
 
