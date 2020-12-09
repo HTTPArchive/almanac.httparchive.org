@@ -8,10 +8,9 @@ authors: [mo271, veluca93, sboukortt, jyrkialakuijala]
 reviewers: [paulcalvano]
 analysts: [AbbyTsai]
 translators: []
-jyrkialakuijala_bio: Jyrki Alakuijala is an active member of the open source software community, and a data compression researcher. Jyrki works at Google as a Technical Lead/Manager, and his recent published work has been with Zopfli, Butteraugli, Guetzli, Gipfeli, WebP lossless, Brotli and JPEG XL compression formats and algorithms, and two hashing algorithms, CityHash and HighwayHash. Before his Google employment he developed software for neurosurgery and radiation therapy treatment planning.
+jyrkialakuijala_bio: Jyrki Alakuijala is an active member of the open source software community, and a data compression researcher. Jyrki works at Google as a Technical Lead/Manager, and his recent published work has been with Zopfli, Butteraugli, Guetzli, Gipfeli, WebP lossless, Brotli, and JPEG XL compression formats and algorithms, and two hashing algorithms, CityHash, and HighwayHash. Before his Google employment he developed software for neurosurgery and radiation therapy treatment planning.
 sboukortt_bio: Sami joined Google after completing his studies in engineering mathematics. After a few years of remote interest in compression, he eventually made it his full-time subject of work in 2018.
-mo271_bio: Moritz Firsching is software engineer at Google Switzerland, where he works on progressive image formats and font compression.
-Before that Moritz did research as a mathematician studying polytopes.
+mo271_bio: Moritz Firsching is software engineer at Google Switzerland, where he works on progressive image formats and font compression. Before that Moritz did research as a mathematician studying polytopes.
 veluca93_bio: Luca Versari is a software engineer at Google, working on <a href="https://gitlab.com/wg1/jpeg-xl">JPEG XL</a>. He's finishing a PhD on graph compression and has a background in mathematics.
 discuss: 2055
 results: https://docs.google.com/spreadsheets/d/1NKbP4AqMkgCNCsVD3yLhO2d0aqIsgZ7AGLEtUDHl9yY/
