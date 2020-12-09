@@ -871,6 +871,10 @@ The gradient with the most color stops is [this one](https://dabblet.com/gist/4d
 
 ### Flexbox and Grid adoption
 
+In the [2019 edition](https://almanac.httparchive.org/en/2019/css#flexbox), 41% of pages across mobile and desktop were reported as containing [Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox) properties. In 2020, this number has grown to 63% for mobile and 65% for desktop. With the number of legacy sites developed before Flexbox was a viable tool still in existence, we can safely say there is wide adoption of this layout method.
+
+If we look at [Grid layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout), the percentage of sites using Grid layout has grown to 4% for mobile and 5% for desktop. Usage has doubled since last year, but still lags behind flex layout.
+
 {{ figure_markup(
   image="flexbox-grid-mobile.png",
   caption="Adoption of flexbox and grid by year as a percent of mobile pages.",
@@ -889,9 +893,11 @@ The gradient with the most color stops is [this one](https://dabblet.com/gist/4d
   sql_file="flexbox_grid.sql"
 ) }}
 
+Note that unlike most other metrics in this chapter this is actual measured Grid usage, and not just grid-related properties and values that are specified in a stylesheet and potentially not used. While at first glance this may seem more accurate, one thing to keep in mind is that HTTPArchive crawls homepages, so this data may be skewed lower due to grids often appearing more in internal pages. So, let's look at another metric as well: how many pages specify `display: grid` and `display: flex` in their stylesheets? That metric puts Grid layout at significantly higher adoption, with 30% of pages using `display: grid` at least once. It does not however affect the number for Flexbox as significantly, with 68% of pages specifying `display: flex`. While this sounds like impressively high adoption for Flexbox, it's worth noting that CSS tables are still far more popular with 80% of pages using table display modes! Some of this usage may be due to [certain types of clearfix](https://css-tricks.com/snippets/css/clear-fix/) which use `display: table`, and not for actual layout.
+
 {{ figure_markup(
   image="layout-methods.png",
-  caption="Adoption of layout methods as a percent of pages.",
+  caption="Layout modes and percentage of pages they appear on. This data is a combination of certain values from the `display`, `position`, and `float` properties.",
   description="Bar chart showing the adoption of layout methods as a percent of desktop and mobile pages. Desktop and mobile results are similar unless otherwise noted. The top four layout methods are block, absolute, floats, and inline-block at 92%, 92%, 91%, and 90% adoption respectively. Following those, inline, fixed, and css tables have 81%, 80%, and 80% adoption respectively. Flex has 68% adoption, followed by box at 46% and distinctly larger than desktop adoption at 38%, inline-flex at 33%, grid at 30%, list-item at 26%, inline-table at 26%, inline-box at 20%, and sticky at 13% of mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=2013998073&format=interactive",
   width="600",
@@ -900,11 +906,36 @@ The gradient with the most color stops is [this one](https://dabblet.com/gist/4d
   sql_file="layout_properties.sql"
 ) }}
 
+Given that Flexbox was usable in browsers earlier than Grid layout, it is likely that some of the Flexbox usage is for setting up  a grid system. In order to use Flexbox as a grid, authors need to disable some of the inherent flexibility of Flexbox. To do this you set the `flex-grow` property to `0`, then size flex items using percentages. Using this information we were able to report that 19% of sites both on desktop and mobile were using Flexbox in this grid-like way.
+
+The reasons for choosing Flexbox over grid are frequently cited as browser support, given that Grid layout was [not supported in Internet Explorer](https://caniuse.com/css-grid). In addition, some authors may well not have learned Grid layout yet or are using a framework with a Flexbox-based grid system. The [Bootstrap](https://getbootstrap.com/docs/4.5/layout/grid/) framework currently uses a Flexbox-based grid, in common with several other popular framework choices.
+
 ### Usage of different Grid layout techniques
+
+The Grid layout specification gives a number of ways to describe and define layout in CSS. The most basic usage involves laying items out [from one grid line to another](https://www.smashingmagazine.com/2020/01/understanding-css-grid-lines/). What about [naming lines](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Layout_using_Named_Grid_Lines), or use of grid-template-areas?
+
+For named lines, we checked for the presence of square brackets in a track listing. The name or names being placed inside square brackets.
+
+```css
+.wrapper {
+  display: grid;
+  grid-template-columns: [main-start] 1fr [content-start] 1fr [content-end] 1fr [main-end];
+}
+```
+
+The result of this showed that 0.23% of grid-using pages on mobile had named lines, and 0.27% on desktop.
+
+The [grid-template-areas](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Grid_Template_Areas) feature, allowing authors to name grid items then place them on the grid as the value of the grid-template-areas property, fared a little better. Of grid-using sites, 19% on mobile and 20% on desktop were using this method.
+
+These results show that not only is Grid layout usage still relatively low on production websites, the usage of it is relatively straightforward. Authors are choosing to use the simple line-based placement over methods which would allow them to name lines and areas. While there is nothing wrong in choosing to do so, I wonder if slow adoption of Grid layout is partly due to the fact that authors haven’t yet realised the power of these features. If Grid layout is seen as essentially Flexbox with poor browser support, this would certainly make it a less compelling choice.
 
 ### Multiple-column layout
 
+The [multiple-column layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Columns/Basic_Concepts_of_Multicol) specification enables laying out of content in columns, much as in a newspaper. While popular in CSS as used for print, it is less useful on the web due to the risk of creating a situation where a reader needs to scroll up and down to read the content. Based on the data, however, there are significantly more pages using multicol than Grid layout with 15.33% on the desktop and 14.95% on mobile. While basic multicol properties are well supported, more complex usage and controlling column breaks with [fragmentation](https://www.smashingmagazine.com/2019/02/css-fragmentation/) has [patchy support](https://caniuse.com/multicolumn). Considering this, it was quite surprising to see how much usage there is.
+
 ### Box sizing
+
+It is useful to know how big the boxes on your page are going to be, but with the [standard CSS box model](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model#What_is_the_CSS_box_model) adding padding and border onto the size of the content-box, the size you gave your box is smaller than the box rendered on your page. While we can’t change history, the box-sizing property allows authors to switch to applying the specified size to the border-box, so the size you set is the size you see rendered. How many sites are using the box-sizing property? Most of them! The box-sizing property appears in 83.79% of desktop CSS and 86.39% on mobile.
 
 {{ figure_markup(
   image="box-sizing.png",
@@ -914,6 +945,8 @@ The gradient with the most color stops is [this one](https://dabblet.com/gist/4d
   sheets_gid="1982524793",
   sql_file="box_sizing.sql"
 ) }}
+
+The median desktop page has 14 box-sizing declarations. Mobile has 17. Perhaps due to component systems inserting the declaration per component, rather than globally as a rule for all elements in the stylesheet.
 
 ## Transitions and animations
 
