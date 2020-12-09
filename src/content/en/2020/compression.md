@@ -17,9 +17,9 @@ results: https://docs.google.com/spreadsheets/d/1NKbP4AqMkgCNCsVD3yLhO2d0aqIsgZ7
 queries: 19_Compression
 featured_quote: Using HTTP compression makes a website load faster and therefore guarantees a better user experience.
 featured_stat_1: 23%
-featured_stat_label_1: Compressed requests which use brotli
+featured_stat_label_1: Compressed requests which use Brotli
 featured_stat_2: 77%
-featured_stat_label_2: Compressed requests which use gzip
+featured_stat_label_2: Compressed requests which use Gzip
 featured_stat_3: 74%
 featured_stat_label_3: Websites that pass the Lighthouse audit with maximum score on text compression
 unedited: true
@@ -45,10 +45,10 @@ For most text-based assets, such as [HTML](./markup), [CSS](./css), [JavaScript]
   )
 }}
 
-The figure shows the percent of requests of a certain content type using either brotli, gzip or no text compression.
+The figure shows the percent of requests of a certain content type using either Brotli, Gzip or no text compression.
 It is surprising that while all those content types would profit from compression, the range of percentages varies widely over the different content types:  only 44% use compression for `text/html` against 93% for `application/x-javascript`.
 
-For image-based assets text-based compression is less useful and not widely employed. The data shows that the percent of image requests that employ either brotli, or gzip is very low, less than 4%. For more info on non text-based assets, check out the [Media](./media) chapter.
+For image-based assets text-based compression is less useful and not widely employed. The data shows that the percent of image requests that employ either Brotli, or Gzip is very low, less than 4%. For more info on non text-based assets, check out the [Media](./media) chapter.
 
 {{ figure_markup(
   image="http-compression-methods-for-image-types.png",
@@ -76,15 +76,15 @@ Since precompression is done beforehand, we can spend more time compressing the 
     <thead>
       <tr>
         <td></td>
-        <th scope="col">brotli</th>
-        <th scope="col">gzip</th>
+        <th scope="col">Brotli</th>
+        <th scope="col">Gzip</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>precompressed</td>
         <td>11</td>
-        <td>9 or zopfli</td>
+        <td>9 or Zopfli</td>
       </tr>
       <tr>
         <td>dynamically compressed</td>
@@ -96,11 +96,11 @@ Since precompression is done beforehand, we can spend more time compressing the 
   <figcaption>{{ figure_link(caption="Recommended compression levels to use.") }}</figcaption>
 </figure>
 
-Currently, practically all text compression is done by one of two HTTP content encodings: [gzip](https://tools.ietf.org/html/rfc1952) and [brotli](https://github.com/google/brotli). Both are widely supported by browsers: [can I use brotli](https://caniuse.com/?search=brotli)/[can I use gzip](https://caniuse.com/?search=gzip)
+Currently, practically all text compression is done by one of two HTTP content encodings: [Gzip](https://tools.ietf.org/html/rfc1952) and [Brotli](https://github.com/google/brotli). Both are widely supported by browsers: [can I use Brotli](https://caniuse.com/?search=brotli)/[can I use Gzip](https://caniuse.com/?search=gzip)
 
-When you want to use gzip, consider using [Zopfli](https://en.wikipedia.org/wiki/Zopfli), which generates smaller gzip compatible files. This should be done especially for precompressed resources, since here the greatest [gains are expected](https://cran.r-project.org/web/packages/brotli/vignettes/brotli-2015-09-22.pdf). See this [comparison between gzip and zopfli](https://blog.codinghorror.com/zopfli-optimization-literally-free-bandwidth/) that takes into account different compression levels for gzip.
+When you want to use Gzip, consider using [Zopfli](https://en.wikipedia.org/wiki/Zopfli), which generates smaller Gzip compatible files. This should be done especially for precompressed resources, since here the greatest [gains are expected](https://cran.r-project.org/web/packages/brotli/vignettes/brotli-2015-09-22.pdf). See this [comparison between Gzip and Zopfli](https://blog.codinghorror.com/zopfli-optimization-literally-free-bandwidth/) that takes into account different compression levels for Gzip.
 
-Many [popular servers](https://en.wikipedia.org/wiki/HTTP_compression#Servers_that_support_HTTP_compression) support dynamically and/or pre-compressed HTTP and many of them support [brotli](https://en.wikipedia.org/wiki/Brotli).
+Many [popular servers](https://en.wikipedia.org/wiki/HTTP_compression#Servers_that_support_HTTP_compression) support dynamically and/or pre-compressed HTTP and many of them support [Brotli](https://en.wikipedia.org/wiki/Brotli).
 
 ## Current state of HTTP compression
 
@@ -124,7 +124,7 @@ Approximately 60% of HTTP responses are delivered with no text-based compression
         <td class="numeric">59.67%</td>
       </tr>
       <tr>
-        <td>gzip</td>
+        <td>Gzip</td>
         <td class="numeric">30.82%</td>
         <td class="numeric">31.56%</td>
         <td class="numeric">31.21%</td>
@@ -147,19 +147,19 @@ Approximately 60% of HTTP responses are delivered with no text-based compression
   <figcaption>{{ figure_link(caption="Adoption of compression algorithms.", sheets_gid="1365871671", sql_file="19_01.type_of_content_encoding.sql") }}</figcaption>
 </figure>
 
-Of the resources that are served compressed, the majority are using either gzip (77%) or brotli (23%). The other compression algorithms are used infrequently.
+Of the resources that are served compressed, the majority are using either Gzip (77%) or Brotli (23%). The other compression algorithms are used infrequently.
 
 {{ figure_markup(
   image="compression-algorithms-for-http-requests.png",
   caption="Compression algorithm usage rates.",
-  description="A bar chart showing the usage rates of different compression algorithms for HTTP requests. 77.39% of HTTP requests that use compression employ the gzip algorithm, 22.59% use brotli, and 0.03% use some other method.",
+  description="A bar chart showing the usage rates of different compression algorithms for HTTP requests. 77.39% of HTTP requests that use compression employ the Gzip algorithm, 22.59% use Brotli, and 0.03% use some other method.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxUj8-0vKTqPAblIXqekSbiRh1D1lEuA3gVD9w23qwGPtJRE8FbgrURfPAgfFZX2l0t84Wy5ZAGqzR/pubchart?oid=1523202090&format=interactive",
   sheets_gid="1365871671",
   sql_file="19_01.type_of_content_encoding.sql"
   )
 }}
 
-In the graph below, the top 11 content types are displayed with box sizes representing the relative number of requests. The color of each box represents how many of these resources were served compressed, orange indicates a low percentage of compression while blue indicates a high percentage of compression. Most of the media content is shaded orange, which is expected since gzip and brotli would have little to no benefit for them.  Most of the text content is shaded blue to indicate that they are being compressed. However, the light blue shading for some content types indicate that they are not compressed as consistently as the others.
+In the graph below, the top 11 content types are displayed with box sizes representing the relative number of requests. The color of each box represents how many of these resources were served compressed, orange indicates a low percentage of compression while blue indicates a high percentage of compression. Most of the media content is shaded orange, which is expected since Gzip and Brotli would have little to no benefit for them.  Most of the text content is shaded blue to indicate that they are being compressed. However, the light blue shading for some content types indicate that they are not compressed as consistently as the others.
 
 {{ figure_markup(
   image="compression-algorithms-by-content-type-desktop.png",
@@ -202,7 +202,7 @@ In the [Third Parties](./third-parties) chapter, we learn about third parties an
         <td class="numeric">58.11%</td>
       </tr>
       <tr>
-        <td>gzip</td>
+        <td>Gzip</td>
         <td class="numeric">30.95%</td>
         <td class="numeric">30.66%</td>
         <td class="numeric">32.36%</td>
@@ -234,9 +234,9 @@ In the [Third Parties](./third-parties) chapter, we learn about third parties an
   <figcaption>{{ figure_link(caption="First-party versus third-party compression by device type.", sheets_gid="862864630", sql_file="19_03.party_of_content_encoding.sql") }}</figcaption>
 </figure>
 
-When we compare compression techniques between first and third parties, we can see that third-party content tends to be compressed more than first-party content. Additionally, the percentage of brotli compression is higher for third-party content. This is likely due to the number of resources served from the larger third parties that typically support brotli, such as Google and Facebook.
+When we compare compression techniques between first and third parties, we can see that third-party content tends to be compressed more than first-party content. Additionally, the percentage of Brotli compression is higher for third-party content. This is likely due to the number of resources served from the larger third parties that typically support Brotli, such as Google and Facebook.
 
-Compared with [last year's results](../2019/compression#first-party-vs-third-party-compression), we can see that there was a significant increase in the use of compression, notably brotli for first parties, almost to the point that the use of compression is around 40% for both first and third party, and for desktop and mobile. However within the requests that do use compression, for first parties, the ratio of brotli compression is only 18%, while the ratio for third parties is 27%.
+Compared with [last year's results](../2019/compression#first-party-vs-third-party-compression), we can see that there was a significant increase in the use of compression, notably Brotli for first parties, almost to the point that the use of compression is around 40% for both first and third party, and for desktop and mobile. However within the requests that do use compression, for first parties, the ratio of Brotli compression is only 18%, while the ratio for third parties is 27%.
 
 
 ## How to analyze compression on your sites
@@ -271,6 +271,6 @@ Because the [HTTP Archive runs Lighthouse audits](./methodology#lighthouse) for 
 
 ## Conclusion
 
-Compared with [last year's Almanac](../2019/compression), there is a clear trend towards using more text compression. The number of requests that don't use any text compression went down a little more than 2%, while at the same time the use of brotli has increased by almost 2%. The Lighthouse scores have improved significantly.
+Compared with [last year's Almanac](../2019/compression), there is a clear trend towards using more text compression. The number of requests that don't use any text compression went down a little more than 2%, while at the same time the use of Brotli has increased by almost 2%. The Lighthouse scores have improved significantly.
 
 Text compression is widely used for the relevant formats, although there is still a significant percentage of HTTP requests that could benefit from additional compression. You can profit from taking a close look at the configuration of your server and set compression methods and levels to your need. A great impact for a more positive user experience could be made by carefully choosing defaults for the most popular http servers.
