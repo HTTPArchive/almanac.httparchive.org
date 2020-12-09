@@ -404,7 +404,7 @@ The top 5 CMSs could improve here. Only 50% of web pages loaded by a top 5 CMS h
 
 #### SEO
 
-Search Engine Optimization (or SEO) is the practice of optimizing websites to make your website content more easily found in search engines. This is covered in more in depth in our [SEO](../seo) chapter, but one part involves ensuring the site is coded in such a way to serve as much information to search engine crawlers to make it as easy as possible for them to show your site appropriately in search engine results. Compared to a custom created website, you would expect an CMS to provide good SEO capabilities, and the Lighthouse scores in this category show high marks:
+Search Engine Optimization (or SEO) is the practice of optimizing websites to make your website content more easily found in search engines. This is covered in more in depth in our [SEO](./seo) chapter, but one part involves ensuring the site is coded in such a way to serve as much information to search engine crawlers to make it as easy as possible for them to show your site appropriately in search engine results. Compared to a custom created website, you would expect an CMS to provide good SEO capabilities, and the Lighthouse scores in this category show high marks:
 
 {{ figure_markup(
   image="cms-seo-lighthouse-score.png",
