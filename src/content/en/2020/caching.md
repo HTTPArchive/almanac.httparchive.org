@@ -24,6 +24,7 @@ queries: 20_Caching
 unedited: true
 ---
 
+
 ## Introduction
 Caching is a technique that enables the reuse of previously downloaded content. It involves something (a server which builds web pages, a proxy such as a CDN or the browser itself) storing 'content' (web pages, CSS, JS, images, fonts, etc.) and tagging it appropriately, so it can be reused.
 
