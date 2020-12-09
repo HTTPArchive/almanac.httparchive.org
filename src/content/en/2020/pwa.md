@@ -3,12 +3,12 @@
 part_number: II
 chapter_number: 14
 title: PWA
-description: PWA chapter of the 2020 Web Almanac covering service workers (registations, installability, events and filesizes), Web App Manifests properties, and Workbox.
+description: PWA chapter of the 2020 Web Almanac covering service workers (registrations, installability, events and filesizes), Web App Manifests properties, and Workbox.
 authors: [hemanth]
 reviewers: [thepassle, jadjoubran, pearlbea, gokulkrishh]
 analysts: [bazzadp]
 translators: []
-hemanth_bio: <a href="https://h3manth.com">Hemanth HN</a> is a FOSS Computer polyglot, FOSS philospher, GDE for web and payments domain, DuckDuckGo community member, TC39 delegate and Google Launchpad Accelerator mentor. Loves The WEB && CLI. Hosts <a href="https://TC39er.us">TC39er.us</a> podcast.
+hemanth_bio: <a href="https://h3manth.com">Hemanth HN</a> is a FOSS Computer polyglot, FOSS philosopher, GDE for web and payments domain, DuckDuckGo community member, TC39 delegate and Google Launchpad Accelerator mentor. Loves The WEB && CLI. Hosts <a href="https://TC39er.us">TC39er.us</a> podcast.
 discuss: 2050
 results: https://docs.google.com/spreadsheets/d/1AOqCkb5EggnE8BngpxvxGj_fCfssT9sZ0ElCQKp4pOw/
 queries: 14_PWA
@@ -24,7 +24,7 @@ unedited: true
 
 ## Introduction
 
-In 1990 we had the first ever browser called the “WorldWideWeb” and ever since the web and the browser have been evolving and for the web to progress itself into a native behaviour is a big win especially in this era of mobile domination. URLs and web browsers have provided a ubiquitous way to distribute information and so a technology which provides native app capabilities to the browser is a game changer. Progressive Web Apps provide such advantages for the web to compete with other applications.
+In 1990 we had the first ever browser called the “WorldWideWeb” and ever since the web and the browser have been evolving and for the web to progress itself into a native behavior is a big win especially in this era of mobile domination. URLs and web browsers have provided a ubiquitous way to distribute information and so a technology which provides native app capabilities to the browser is a game changer. Progressive Web Apps provide such advantages for the web to compete with other applications.
 
 Simply put, a web application which give native-like application experience can be considered as a PWA,. It is built using common web technologies including HTML, CSS and JavaScript and can operate seamlessly across devices and environments on a standards-compliant browser.
 
@@ -155,7 +155,7 @@ All sites should be protected with HTTPS, even ones that don't handle sensitive 
 
 If you've already set up HTTPS, make sure that you [redirect all HTTP traffic to HTTPS](https://web.dev/redirects-http/) in order to enable secure connection the users without changing the URL **69.92%** of the sites redirects HTTP. Redirecting all the HTTP to HTTPS on your application should be simple steps towards robustness, though the HTTP redirection to HTTPS has a decent number, it can do better.
 
-By adding `<meta name="viewport">` tag to optimize your app for mobile screens. **88.43%** of the sites have the [viewport]((https://web.dev/viewport/) meta tag. It is not surprising that the usage of viewport meta tag is on the higher side as most of the applications are aware and getting there in terms of viewport optimization.
+By adding `<meta name="viewport">` tag to optimize your app for mobile screens. **88.43%** of the sites have the [viewport](https://web.dev/viewport/) meta tag. It is not surprising that the usage of viewport meta tag is on the higher side as most of the applications are aware and getting there in terms of viewport optimization.
 
 For ideal appearance on iOS, your progressive web app should define an `apple-touch-icon` meta tag. It must point to a non-transparent 192px (or 180px) square PNG. **32.34%** of the sites use the [apple touch icon](https://web.dev/apple-touch-icon/).
 
@@ -243,7 +243,7 @@ The proprietary properties we encountered frequently were `gcm_sender_id` used b
 
 On both platforms, however, there's a long tail of properties that are not interpreted by browsers yet contain potentially useful metadata.
 
-We also found a non-trivial amount of mistyped properties; our favorite ones being variation of `theme-color`, `Theme_color`, `theme-color`, `Theme_color` and `oriendation`.
+We also found a non-trivial amount of mistyped properties; our favorite ones being variation of `theme-color`, `Theme_color`, `theme-color`, `Theme_color` and `orientation`.
 
 In order for a PWA to be fruitful it needs to have a manifest and a service worker. It is interesting to note that manifests are used a lot more than service workers. This is due, in large part, to the fact that CMS like WordPress, Drupal and Joomla have manifests by default.
 
@@ -259,7 +259,7 @@ In order for a PWA to be fruitful it needs to have a manifest and a service work
 
 ### Top Manifest display values
 
-Out of the five most common `display` values, `standalone` dominated the list with `86.73%` of desktop and `89.28%` of mobile pages using this. This isn't suprising at all as this mode provides the native app-like feel. Next in the list was `minimal-ui` with `6.30%` of desktop and `5.00%` of mobile sites opting for them. This is similar to `standalone` except for the fact that some browser UI is retained.
+Out of the five most common `display` values, `standalone` dominated the list with `86.73%` of desktop and `89.28%` of mobile pages using this. This isn't surprising at all as this mode provides the native app-like feel. Next in the list was `minimal-ui` with `6.30%` of desktop and `5.00%` of mobile sites opting for them. This is similar to `standalone` except for the fact that some browser UI is retained.
 
 {{ figure_markup(
   image="pwa-most-used-display-values-for-service-worker-pages.png",
@@ -293,7 +293,7 @@ Out of all the top `categories`, shopping stood at the top at with `13.16%` on t
 {{ figure_markup(
   image="pwa-manifest-preferring-native.png",
   caption="Manifest preferring native.",
-  description="Horiztonal stacked bar chart showing that on desktop 98.24% of destop sites prefer native, and 98.52% of mobile sites prefer native.",
+  description="Horizontal stacked bar chart showing that on desktop 98.24% of desktop sites prefer native, and 98.52% of mobile sites prefer native.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRRpTSA4fsHwUap-ByQ08j95uo7Zm1kY6lTSvA-DZT54g2QZ0guV7db3QyQwQgMPzsKsJ43gbzqfJst/pubchart?oid=1370804413&format=interactive",
   sheets_gid="153006256",
   sql_file="manifests_preferring_native_apps_sw.sql"
@@ -341,7 +341,7 @@ Out of which we noticed that `portrait`, `any` and `portrait-primary` properties
 
 ## Service worker libraries
 
-There are many cases, where the service workers use libraries as dependencies, be it external dependencies or the application's internal dependencies. These are usually fetched to the service worker via `importScripts` API, in this section we will look into stats on such libraries.
+There are many cases, where the service workers use libraries as dependencies, be it external dependencies or the application's internal dependencies. These are usually fetched to the service worker via `importScripts()` API, in this section we will look into stats on such libraries.
 
 ### Popular import scripts
 
@@ -358,7 +358,7 @@ The [importScripts() API](https://developer.mozilla.org/en-US/docs/Web/API/Worke
   </thead>
   <tbody>
     <tr>
-      <td>Uses Importscript</td>
+      <td>Uses <code>importScripts()</code></td>
       <td class="numeric">29.60%</td>
       <td class="numeric">23.76%</td>
     </tr>
@@ -417,7 +417,7 @@ The [importScripts() API](https://developer.mozilla.org/en-US/docs/Web/API/Worke
 <figcaption>{{ figure_link(caption="PWA library usage.", sheets_gid="1399126426", sql_file="popular_pwa_libraries.sql") }}</figcaption>
 </figure>
 
-Around **30%** of the desktop and **25%** of mobile sites uses `importScripts`, of which `workbox`, `sw_toolbox` and `firebase` take the first three positions respectively.
+Around **30%** of the desktop and **25%** of mobile sites uses `importScripts()`, of which `workbox`, `sw_toolbox` and `firebase` take the first three positions respectively.
 
 ### Workbox usage
 

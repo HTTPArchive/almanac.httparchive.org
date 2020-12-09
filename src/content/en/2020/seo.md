@@ -587,7 +587,7 @@ The median page is linking to external sites 7 times on desktop and 6 times on m
 
 {{ figure_markup(
   image="seo-outgoing-links-external.png",
-  caption="Distribution of the number of outgoing expernal links per page.",
+  caption="Distribution of the number of outgoing external links per page.",
   description="Bar chart showing the number of external outgoing links per percentile (10, 25, 50, 75, and 90). The median page is linking to external sites 7 times on desktop and 6 times on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=391564643&format=interactive",
   sheets_gid="775602646",
@@ -649,7 +649,7 @@ With the increasing popularity of mobile devices to browse and search across the
 
 Also, as mentioned before, [since 2016](https://developers.google.com/search/blog/2016/11/mobile-first-indexing) Google has been moving to a mobile-first index, meaning that the content that is crawled, indexed, and ranked is the one accessible to mobile users and the [Smartphone Googlebot](https://developers.google.com/search/docs/advanced/crawling/googlebot?hl=en).
 
-Additionally, [since July 2019](https://developers.google.com/search/blog/2019/05/mobile-first-indexing-by-default-for) Google is using the mobile-first index for all new websites and earlier in March, it announced that [70% of pages shown in their search results have already shifted over](https://webmasters.googleblog.com/2020/03/announcing-mobile-first-indexing-for.html_). It is now expected that Google [fully switches to a mobile-first index in March 2021](https://webmasters.googleblog.com/2020/07/prepare-for-mobile-first-indexing-with.html).
+Additionally, [since July 2019](https://developers.google.com/search/blog/2019/05/mobile-first-indexing-by-default-for) Google is using the mobile-first index for all new websites and earlier in March, it announced that [70% of pages shown in their search results have already shifted over](https://webmasters.googleblog.com/2020/03/announcing-mobile-first-indexing-for.html). It is now expected that Google [fully switches to a mobile-first index in March 2021](https://webmasters.googleblog.com/2020/07/prepare-for-mobile-first-indexing-with.html).
 
 Mobile friendliness should be fundamental for any website looking to provide a good search experience—and as a consequence, grow in search results.
 

@@ -152,7 +152,7 @@ Right up until the median, sites serve roughly the same number of first-party sc
 {{ figure_markup(
   image="requests-by-3p-mobile.png",
   caption="Distribution of the number of JavaScript requests by host for mobile.",
-  description="Bar chart showing the distribution of JavaScript requests per host for mobile. The 10, 25, 50, 75, and 90th percentiles for first party requests are: 2, 4, 9, 17, and 30 requests per page. This is the same as for desktop. The number of third party requests per page is slightly higher in the upper percentiles by 1 to 5 requests, similar to dekstop.",
+  description="Bar chart showing the distribution of JavaScript requests per host for mobile. The 10, 25, 50, 75, and 90th percentiles for first party requests are: 2, 4, 9, 17, and 30 requests per page. This is the same as for desktop. The number of third party requests per page is slightly higher in the upper percentiles by 1 to 5 requests, similar to desktop.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=1465647946&format=interactive",
   sheets_gid="978380311",
   sql_file="requests_by_3p.sql"
@@ -238,7 +238,7 @@ One of the audits in Lighthouse checks for unminified JavaScript, and provides a
 
 {{ figure_markup(
   image="lighthouse-unminified-js.png",
-  caption="Distribution of unminified JavaScript Lighthouse adudit scores per mobile page.",
+  caption="Distribution of unminified JavaScript Lighthouse audit scores per mobile page.",
   description="Bar chart showing 0% of mobile pages getting unminified JavaScript Lighthouse audit scores under 0.25, 4% of pages getting a score between 0.25 and 0.5, 10% of pages between 0.5 and 0.75, 8% of pages between 0.75 and 0.9, and 77% of pages between 0.9 and 1.0.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=158284816&format=interactive",
   sheets_gid="362705605",
@@ -330,7 +330,7 @@ First, it's worth noting that while we may think of the usage of one tool versus
   description="Bar chart showing the adoption of the top frameworks and libraries as a percent of pages (not page views or npm downloads). jQuery is the overwhelming leader, found on 83% of mobile pages. It's followed by jQuery migrate on 30%, jQuery UI on 21%, Modernizr on 15%, FancyBox on 7%, Slick and Lightbox on 6%, and the remaining frameworks and libraries on 4% or 3%: Moment.js, Underscore.js, Lodash, React, GSAP, Select2, RequireJS, and prettyPhoto.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=419887153&format=interactive",
   sheets_gid="1654577118",
-  sql_file="framewords_libraries.sql"
+  sql_file="frameworks_libraries.sql"
 ) }}
 
 When we look at the common combinations that we see in production, most of them are to be expected. Knowing jQuery's dominance, it's unsurprising that most of the popular combinations include jQuery and any number of jQuery related plugins.
@@ -529,7 +529,7 @@ We do also see a fair amount of more "modern" frameworks, like React, Vue and An
 
 More importantly, all these tools typically mean more code and more processing time.
 
-Looking specfically at the frameworks in use, we see that the median JavaScript bytes for pages using them varies dramatically depending on _what_ is being used.
+Looking specifically at the frameworks in use, we see that the median JavaScript bytes for pages using them varies dramatically depending on _what_ is being used.
 
 The graph below shows the median bytes for pages where any of the top 35 most commonly detected frameworks were found, broken down by client.
 
@@ -547,7 +547,7 @@ Ember's mobile main thread time jumps out and kind of distorts the graph with ho
 
 Tools like React, GSAP, and RequireJS tend to spend a lot of time on the main thread of the browser, regardless of whether it's a desktop or mobile page view. The same tools that tend to lead to less code overall—tools like Alpine and Svelte—also tend to lead to lower impact on the main thread.
 
-The gap between the experience a framework provides for desktop and mobile is also worth digging into. Mobile traffic is becoming increasingly dominant, and it's critical that our tools perfom as well as possible for mobile pageviews. The bigger the gap we see between desktop and mobile performance for a framework, the bigger the red flag.
+The gap between the experience a framework provides for desktop and mobile is also worth digging into. Mobile traffic is becoming increasingly dominant, and it's critical that our tools perform as well as possible for mobile pageviews. The bigger the gap we see between desktop and mobile performance for a framework, the bigger the red flag.
 
 {# Table? Gap in absolute and relative terms #}
 
@@ -689,7 +689,7 @@ The bulk of the vulnerabilities found fall into the "medium" severity category.
 ) }}
 
 ## Conclusion
-JavaScript is steadily rising in popularity, and there's a lot that's positive about that. It's incredible to consider what we're able to accomplish on today's web thanks to JavaScript that, even a few years ago, would have been unimagineable.
+JavaScript is steadily rising in popularity, and there's a lot that's positive about that. It's incredible to consider what we're able to accomplish on today's web thanks to JavaScript that, even a few years ago, would have been unimaginable.
 
 But it's clear we've also got to tread carefully. The amount of JavaScript consistently rises each year (if the stock market were that predictable, we'd all be incredibly wealthy), and that comes with trade-offs. More JavaScript is connected to an increase in processing time which negatively impacts key metrics like Total Blocking Time. And, if we let those libraries languish without keeping them updated, they carry the risk of exposing users through known security vulnerabilities.
 

@@ -144,7 +144,7 @@ Due to the popularity of  mobile devices to browse and search the web, Google se
 
 Websites should ensure mobile friendliness for a good search experience and SEO, as this impacts traffic from search users. [Responsive web design](https://developers.google.com/search/mobile-sites/mobile-seo/responsive-design) is the recommended way to achieve this.
 
-Responsive websites use the viewport meta tag as well as CSS media queries to provide a mobile friendly experience. To learn more about these mobile friendliness aspects, head over to the [SEO chapter]((../seo#mobile-friendliness)).
+Responsive websites use the viewport meta tag as well as CSS media queries to provide a mobile friendly experience. To learn more about these mobile friendliness aspects, head over to the [SEO chapter](./seo#mobile-friendliness).
 
 Learn more about [responsive web design here](https://web.dev/responsive-web-design-basics/).
 
@@ -179,7 +179,7 @@ A good LCP score is 2.5s at p75. We found that the median LCP at p75 is 2.6s on 
 }}
 
 ##### Images
-While every type of asset, such as font, CSS, Javascript etc. plays an important role in loading performance, we take a closer look at images.
+While every type of asset, such as font, CSS, JavaScript etc. plays an important role in loading performance, we take a closer look at images.
 
 The web continues to move towards image-heavy pages, with the growth of bandwidth and the ubiquity of smartphones. And images impose a cost on loading performance.
 
@@ -240,14 +240,14 @@ According to CrUX data, 60% of mobile sites and 54% of desktop sites, have a goo
 }}
 
 #### Design elements
-To engage users, it’s important to help them quickly find what they’re looking for, and fulfil their intention.
+To engage users, it’s important to help them quickly find what they’re looking for, and fulfill their intention.
 
 ##### Landing pages
 Simple design tweaks go a long way, for instance a clear call-to-action, and making the value proposition evident to the user, with a few words.
 
 {{ figure_markup(
   image="landing-page-cta.png",
-  caption='Four key parts of the Pixel phone landing page.<br>(Source: <a href="https://winonmobile.withgoogle.com">https://winonmobile.withgoogle.com</a>)',
+  caption='Four key parts of the Pixel phone landing page.<br>(Source: <a href="https://winonmobile.withgoogle.com">Google</a>)',
   description="An image breaking down the four parts of the Pixel phone landing page: Value proposition, Call-to-action, No distraction, Main services.",
   width=1200,
   height=642
@@ -261,7 +261,7 @@ Consider the following examples from [5 lessons Eastpak learned from its mobile 
 
 {{ figure_markup(
   image="eastpak-20-ctr.png",
-  caption='Eastpak improving the color contrast of their main call to action lead to a 20% increase in click through rate.<br>(Source: <a href="https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/5-lessons-eastpak-learned-its-mobile-audience/">https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/5-lessons-eastpak-learned-its-mobile-audience/</a>)',
+  caption='Eastpak improving the color contrast of their main call to action lead to a 20% increase in click through rate.<br>(Source: <a href="https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/5-lessons-eastpak-learned-its-mobile-audience/">Google</a>)',
   description="An image showing how Eastpak increased their click through rate by 20% by improving the color contrast of their main call to action button",
   width=1094,
   height=1122
@@ -272,7 +272,7 @@ Here, a simple change from a button that’s hard to see, to a button with contr
 
 {{ figure_markup(
   image="eastpak-12-ctr.png",
-  caption='Eastpak improving the color contrast of their checkout button lead to a 12% increase in conversion rate.<br>(Source: <a href="https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/5-lessons-eastpak-learned-its-mobile-audience/">https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/5-lessons-eastpak-learned-its-mobile-audience/</a>)',
+  caption='Eastpak improving the color contrast of their checkout button lead to a 12% increase in conversion rate.<br>(Source: <a href="https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/5-lessons-eastpak-learned-its-mobile-audience/">Google</a>)',
   description="An image showing how Eastpak increased their conversion rate by 12% by improving the color contrast of their checkout button",
   width=1166,
   height=1102
@@ -326,7 +326,7 @@ A [case study with fashion website lyst.com](https://www.thinkwithgoogle.com/int
 {# TODO: Insert image: search input lyst.com #}
 {{ figure_markup(
   image="search-input-lyst.png",
-  caption='Replacing the search icon with a search box on lyst.com improved conversion rate by 13% on mobile and 43% on desktop.<br>(Source: <a href="https://www.thinkwithgoogle.com/intl/en-cee/marketing-strategies/data-and-measurement/lyst-increases-overall-conversion-rate-25-making-usability-improvements/">https://www.thinkwithgoogle.com/intl/en-cee/marketing-strategies/data-and-measurement/lyst-increases-overall-conversion-rate-25-making-usability-improvements/</a>)',
+  caption='Replacing the search icon with a search box on lyst.com improved conversion rate by 13% on mobile and 43% on desktop.<br>(Source: <a href="https://www.thinkwithgoogle.com/intl/en-cee/marketing-strategies/data-and-measurement/lyst-increases-overall-conversion-rate-25-making-usability-improvements/">Google</a>)',
   description="A graphic showing how lyst.com replaced the search icon on their website with a search box, and as a result saw their conversion rate increase by 13% on mobile and 43% on desktop",
   width=1194,
   height=1170
@@ -380,7 +380,7 @@ Users can more easily enter required information on mobile devices when their ke
 #### Sign up, Sign in and Checkout
 Today, browsers can help populate the necessary user information to complete a transaction and help reduce potential input errors. The `autocomplete` attribute can provide browsers hints to populate input elements with the correct user information. Users who successfully use Chrome Autofill to enter their information go through checkout an average of 30% faster than those who don't ([source](https://developers.google.com/web/fundamentals/design-and-ux/input/forms#use_metadata_to_enable_auto-complete)).
 
-Auto-complete can be especially helpful in completing checkout flows that require a user to login and hence remember their password. According to a [study by HYPR](https://www.hypr.com/hypr-password-study-findings/_) in 2019, 78% of users forgot and had to reset a password in the past 90 days.
+Auto-complete can be especially helpful in completing checkout flows that require a user to login and hence remember their password. According to a [study by HYPR](https://www.hypr.com/hypr-password-study-findings/) in 2019, 78% of users forgot and had to reset a password in the past 90 days.
 
 It’s also possible to eliminate some form fields altogether. The Credential Management and Payment Request APIs are standards-based browser APIs that provide a programmatic interface between sites and the browser for seamless sign-in and payments. Only .61% of eCommerce sites are using the Payment Request API and only 0.008% use the Credential Management API. It’s worth noting that adoption of the Payment Request API has increased compared to 2019, with a 6x increase in payment completion rate.
 

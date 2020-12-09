@@ -109,7 +109,7 @@ The one CMS with a share over 2% is WordPress, which has a 31% usage share. This
 {{ figure_markup(
   image="cms-adoption-share-for-top-5-cmss.png",
   caption="CMS adoption share for top 5 CMSs.",
-  description="Bar chart showing WordPress dominating with 28.91% share in 2019, growing to 31.04% in 2020. This is followed by 4 other CMSs with less than 2.5% share each: Joomla (2.24% for 2019 and 2.05% for 2020), Drupal (2.21% and 1.98% respectively), Wix (0.91% and 1.28%) and Squarespace (0.76% and 0.97%). Dupal and Joomla have dropped in usage in 2020 while the rest have increased.",
+  description="Bar chart showing WordPress dominating with 28.91% share in 2019, growing to 31.04% in 2020. This is followed by 4 other CMSs with less than 2.5% share each: Joomla (2.24% for 2019 and 2.05% for 2020), Drupal (2.21% and 1.98% respectively), Wix (0.91% and 1.28%) and Squarespace (0.76% and 0.97%). Drupal and Joomla have dropped in usage in 2020 while the rest have increased.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkUxfuK-FCn3_IYDJiEsKDmdmyKb0TSEhG8dFc0XBIXej1NO2uUOmd-9NCbWuh-MZ3xzMhK_kNT-4u/pubchart?oid=1429803707&format=interactive",
   sheets_gid="1594044364",
   sql_file="top_cms_platforms_compared_to_2019.sql"
@@ -289,7 +289,7 @@ When we look at CMS adoption share relative to other CMSs (thus excluding websit
 {{ figure_markup(
   image="cms-adoption-share-2020.png",
   caption="CMS adoption share 2020.",
-  description="Pie chart showing the adoption of CMSs dominated by WordPress taking nearly three quarters of the share (74.92%), and other CMSs making up less than 5% each: Joomla at 4.9%, Drupal at 4.7%, Wix at 3.1%, Squarespace at 2.3%, 1 C-Bitrix at 1.5% and TYPO3 CMS at 1.2%.",
+  description="Pie chart showing the adoption of CMSs dominated by WordPress taking nearly three quarters of the share (74.92%), and other CMSs making up less than 5% each: Joomla at 4.9%, Drupal at 4.7%, Wix at 3.1%, Squarespace at 2.3%, 1C-Bitrix at 1.5% and TYPO3 CMS at 1.2%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkUxfuK-FCn3_IYDJiEsKDmdmyKb0TSEhG8dFc0XBIXej1NO2uUOmd-9NCbWuh-MZ3xzMhK_kNT-4u/pubchart?oid=701401011&format=interactive",
   sheets_gid="1594044364",
   sql_file="top_cmss_yoy_all_clients.sql"
@@ -338,7 +338,7 @@ In this section we take a look at three important factors provided by the [Chrom
 - First Input Delay (FID)
 - Cumulative Layout Shift (CLS)
 
-These metrics aim to cover the core elements which are indicative of a great web user experience. The [./performance] chapter will cover these in more detail, but here we are interested in looking at these metrics specifically in terms of CMSs. Let's review each of these in turn.
+These metrics aim to cover the core elements which are indicative of a great web user experience. The [Performance](./performance) chapter will cover these in more detail, but here we are interested in looking at these metrics specifically in terms of CMSs. Let's review each of these in turn.
 
 #### Largest Contentful Paint
 
@@ -404,7 +404,7 @@ The top 5 CMSs could improve here. Only 50% of web pages loaded by a top 5 CMS h
 
 #### SEO
 
-Search Engine Optimization (or SEO) is the practice of optimizing websites to make your website content more easily found in search engines. This is covered in more in depth in our [SEO](../seo) chapter, but one part involves ensuring the site is coded in such a way to serve as much information to search engine crawlers to make it as easy as possible for them to show your site appropriately in search engine results. Compared to a custom created website, you would expect an CMS to provide good SEO capabilities, and the Lighthouse scores in this category show high marks:
+Search Engine Optimization (or SEO) is the practice of optimizing websites to make your website content more easily found in search engines. This is covered in more in depth in our [SEO](./seo) chapter, but one part involves ensuring the site is coded in such a way to serve as much information to search engine crawlers to make it as easy as possible for them to show your site appropriately in search engine results. Compared to a custom created website, you would expect an CMS to provide good SEO capabilities, and the Lighthouse scores in this category show high marks:
 
 {{ figure_markup(
   image="cms-seo-lighthouse-score.png",
