@@ -214,6 +214,23 @@ Back when supporting IE8 and IE9 was more common, it was relatively common to us
 
 Nowadays, the pattern is unnecessary for the vast majority of sites and any script loaded with the pattern in place will interrupt the HTML parser when it needs to be executed, instead of deferring until the page has loaded. The pattern is still used surprisingly often, with 11.4% of mobile pages serving at least one script with that pattern in place.
 
+### Resource Hints
+Another tool we have at our disposal for offsetting some of the network costs of loading JavaScript are resource hints, specifically, `prefetch` and `preload`.
+
+The `prefetch` hint lets developers tell the browser that a resource will be used on the next page navigation, and therefore, that it should try to download it when it during idle time.
+
+The `preload` hint tells the browser a resource will be used on the current page and that the browser should download it right away and give it a higher priority.
+
+Overall, we see 16.7% of mobile pages using at least one of the two resource hints to load JavaScript more proactively.
+
+Of that, nearly all of the usage is coming from `preload`. While 16.6% of mobile pages use at least one `preload` hint to load JavaScript, only .36% of mobile pages use at least one `prefetch` hint.
+
+There's a risk, particularly with `preload`, of using too many hints and reducing their effectiveness, so it's worth looking at the pages that do use these hints to see how many hints they're using. 
+
+{# distribution of preload and prefetch charts #}
+
+At the median, pages that use a `prefetch` hint to load JavaScript use three, while pages that use a `preload` hint only use one. The long tail gets a bit more interesting, with 12 `prefetch` hints used at the 90th percentile and 7 `preload` hints used on the 90th as well. (For more detail on resource hints, check out this year's chapter on the topic).
+
 ## How do we serve JavaScript?
 As with any text-based resource on the web, we can save significant file savings through minimization and compression. Neither of these are new optimizations—they've been around for quite awhile—so we should expect to see them applied in more cases than not.
 
