@@ -442,7 +442,73 @@ When we look at the common combinations that we see in production, most of them 
 
 We do also see a fair amount of more "modern" frameworks, like React, Vue and Angular—paired with jQuery, like as a result of either migration or third-parties including one or the other.
 
-{# React/Angular/Vue % with and without jQuery? #}
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Combination</th>
+        <th>Without jQuery</th>
+        <th>With jQuery</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>GSAP, Lodash, React, RequireJS, Zepto</td>
+        <td class="numeric">1.0%</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>React, jQuery</td>
+        <td>&nbsp;</td>
+        <td class="numeric">0.6%</td>
+      </tr>
+      <tr>
+        <td>React</td>
+        <td class="numeric">0.4%</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>React, jQuery, jQuery Migrate</td>
+        <td>&nbsp;</td>
+        <td class="numeric">0.4%</td>
+      </tr>
+      <tr>
+        <td>Vue.js, jQuery</td>
+        <td>&nbsp;</td>
+        <td class="numeric">0.3%</td>
+      </tr>
+      <tr>
+        <td>Vue.js</td>
+        <td class="numeric">0.2%</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>AngularJS, jQuery</td>
+        <td>&nbsp;</td>
+        <td class="numeric">0.2%</td>
+      </tr>
+      <tr>
+        <td>GSAP, Hammer.js, Lodash, React, RequireJS, Zepto</td>
+        <td class="numeric">0.2%</td>
+        <td>&nbsp;</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th>Grand Total</th>
+        <th class="numeric">1.7%</th>
+        <th class="numeric">1.4%</th>
+      </tr>
+    </tfoot>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="The most popular combinations of React, Angular, and Vue with and without jQuery.",
+      sheets_gid="795160444",
+      sql_file="frameworks_libraries_combos.sql"
+    ) }}
+  </figcaption>
+</figure>
 
 More importantly, all these tools typically mean more code and more processing time.
 
