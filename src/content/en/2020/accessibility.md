@@ -185,7 +185,7 @@ Our audits revealed that 58.72% of the sites checked pass the test for properly 
 
 Skip links enable a user to skip through any interactive content such as a navigation system and go to another destination, typically the main content of the page. They are typically the first link on a page and can be persistent in the UI or visibly hidden until they have keyboard focus. This prevents keyboard users from needing to potentially tab through an extraneous number of elements to get to the content they are trying to access. 
 
-Skip links are considered a bypass block. The 2020 Lighthouse audit data revealed that 93.90% of sites pass the [bypass block](https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html) test, meaning they have a `<header>`, skip link or landmark region to allow users to skip repetitive content.
+Skip links are considered a bypass for a block. The 2020 Lighthouse audit data revealed that 93.90% of sites pass the [bypass block](https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html) test, meaning they have a `<header>`, skip link or landmark region to allow users to skip repetitive content.
 
 ### Tables
 
