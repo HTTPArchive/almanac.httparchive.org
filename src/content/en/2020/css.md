@@ -987,6 +987,15 @@ The specification authors got it right! `Ease` is the most popular timing functi
 
 A major driver of animation adoption seems to be FontAwesome, as evidenced by the animation name `fa-spin` appearing in 1 out of 4 pages and thus topping the list of most popular animation names. While there are a wide variety of animation names, it appears that most of them fall into only a few basic categories, with 1 in 5 animations being some kind of spin. That may also explain the high percentage of linearly progressing transitions & animations: if we want a smooth perpetual rotation, `linear` is the way to go.
 
+{{ figure_markup(
+  image="transition-animation-names.png",
+  caption="Relative popularity of the categories of animation names used as a percent of occurrences.",
+  description="Bar chart showing the relative popularity of animation name categories as a percent of occurrences. The most popular category is rotate, which makes up 21% of occurrences on mobile pages, followed by unknown/other at 13%, fade at 9%, bounce at 7%, scale at 6%, wobble and slide at 5%, pulse at 2%, and the rest at 1%: visibility, flip, and move.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=709747830&format=interactive",
+  sheets_gid="1998209374",
+  sql_file="transition_animation_names.sql"
+) }}
+
 ## Visual effects
 
 ### Blend modes
