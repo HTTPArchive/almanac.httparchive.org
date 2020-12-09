@@ -6,7 +6,23 @@
 Unless otherwise noted, the metrics in all of the 22 chapters of the Web Almanac are sourced from the HTTP Archive dataset. HTTP Archive is a community-run project that has been tracking how the web is built since 2010. Using WebPageTest and Lighthouse under the hood, metadata about over 7.5 million websites are tested monthly and included in a public BigQuery database for analysis. The August 2020 dataset was used as the basis for the Web Almanac's metrics. For more information, see the Methodology page.
 {% endblock %}
 
+
 {% block foreword %}
-{# TODO - Write this! #}
-{{ self.coming_soon() }}
+  <p>
+    2020 has been a year many of us would like to forget. It's rare for a community as globalized as ours to be affected by events as far-reaching as the COVID-19 pandemic and protests against racial injustice. These events almost discouraged us from restarting the project this year—with so many people physically and emotionally drained, how could we expect anyone to <em>want</em> to contribute, let alone have the time and energy for it? We proceeded with caution, hoping there was still community interest.
+  </p>
+
+  <p>
+    The purpose of this edition of the Web Almanac is not to forget about 2020, but to memorialize it. For better or worse, this is a chapter in our history. Despite all of the external pressures of this year, <em>over a hundred <a href="./contributors">contributors</a></em> from the web community signed up and volunteered countless hours of their time for a project dedicated to remembering 2020 and the state of the web. Amazingly, we actually managed to <em>expand</em> the scope of this year's edition by adding three new chapters and only losing one.
+  </p>
+
+  <p>
+    When I ask contributors what they enjoy most about the project, the answer is almost always about the people. We work together as teams, we support each other, and in only five months' time we're able to build the equivalent of a 500+ page book! It's an enormous challenge, and while we haven't solved the world's problems, we've shown what's possible when people choose to work together.
+  </p>
+
+  <p>
+    Please enjoy the 2020 Web Almanac, the culmination of our labor of love for the web. And be sure to <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/CONTRIBUTING.md">reach out</a> if you'd like to join the team.
+  </p>
+
+  <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>, Web Almanac Editor-in-Chief</em></p>
 {% endblock %}
