@@ -145,7 +145,7 @@ Approximately 60% of HTTP responses are delivered with no text-based compression
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Adoption of compression algorithms.") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Adoption of compression algorithms.", sheets_gid="1365871671", sql_file="19_01.type_of_content_encoding.sql") }}</figcaption>
 </figure>
 
 Of the resources that are served compressed, the majority are using either gzip (77%) or brotli (23%). The other compression algorithms are used infrequently.
@@ -232,7 +232,7 @@ In the [Third Parties](./third-parties) chapter, we learn about third parties an
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="First-party versus third-party compression by device type.", sheets_gid="862864630", sql_file="19_03.party_of_content_encoding.sql.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="First-party versus third-party compression by device type.", sheets_gid="862864630", sql_file="19_03.party_of_content_encoding.sql") }}</figcaption>
 </figure>
 
 When we compare compression techniques between first and third parties, we can see that third-party content tends to be compressed more than first-party content. Additionally, the percentage of brotli compression is higher for third-party content. This is likely due to the number of resources served from the larger third parties that typically support brotli, such as Google and Facebook.
