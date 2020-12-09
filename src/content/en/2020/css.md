@@ -1234,7 +1234,7 @@ Next, we looked at how complex custom property usage is. One way to assess code 
   sql_file="custom_property_depth.sql"
 ) }}
 
-Examining the selectors on which custom properties are declared further confirms that most custom property usage in the wild is fairly basic. 2 out of 3 custom property declarations are on the root element, indicating that they are used essentially as global constants. It is important to note that many popular polyfills have required them to be global in this vein, so developers using said polyfills may not have had a choice.
+Examining the selectors on which custom properties are declared further confirms that most custom property usage in the wild is fairly basic. Two out of three custom property declarations are on the root element, indicating that they are used essentially as global constants. It is important to note that many popular polyfills have required them to be global in this vein, so developers using said polyfills may not have had a choice.
 
 ## CSS and JS
 
