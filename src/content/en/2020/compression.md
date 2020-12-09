@@ -63,10 +63,10 @@ There are two ways of doing the compression on the server side:
   - Dynamically Compressed (compress assets on-the-fly after a request is made)
 
 Since precompression is done beforehand, we can spend more time compressing the assets. For dynamically compressed resources we need to choose the compression levels such that compression takes less time than time difference between sending an uncompressed versus a compressed file. Currently practically all text compression is done by one of two HTTP content encodings: [Gzip](https://tools.ietf.org/html/rfc1952) and [brotli](https://github.com/google/brotli). Both are widely supported by browsers: [can I use brotli](https://caniuse.com/?search=brotli)/[can I use gzip](https://caniuse.com/?search=gzip)
-When you want to use gzip, consider using [Zopfli](https://en.wikipedia.org/wiki/Zopfli), which generates smaller gzip compatible files. This should be done especially for precompressed resourses, since here the greatest [gains are expected](https://cran.r-project.org/web/packages/brotli/vignettes/brotli-2015-09-22.pdf) . See this [comparison between gzip and zopfli](https://blog.codinghorror.com/zopfli-optimization-literally-free-bandwidth/) that takes into account different compression levels for gzip.
+When you want to use gzip, consider using [Zopfli](https://en.wikipedia.org/wiki/Zopfli), which generates smaller gzip compatible files. This should be done especially for precompressed resources, since here the greatest [gains are expected](https://cran.r-project.org/web/packages/brotli/vignettes/brotli-2015-09-22.pdf) . See this [comparison between Gzip and Zopfli](https://blog.codinghorror.com/zopfli-optimization-literally-free-bandwidth/) that takes into account different compression levels for gzip.
 
 
-Many popular servers support dynamically and/or pre-compressed HTTP  (https://en.wikipedia.org/wiki/HTTP_compression#Servers_that_support_HTTP_compression) and many of them support Brotli: https://en.wikipedia.org/wiki/Brotli
+Many [popular servers support dynamically and/or pre-compressed HTTP](https://en.wikipedia.org/wiki/HTTP_compression#Servers_that_support_HTTP_compression) and many of them support [Brotli](https://en.wikipedia.org/wiki/Brotli)
 
 
 Here are some general recommendations on what compression levels to use:
@@ -84,7 +84,7 @@ Here are some general recommendations on what compression levels to use:
       <tr>
         <td>precompressed</td>
         <td>11</td>
-        <td>9 or zopfli</td>
+        <td>9 or Zopfli</td>
       </tr>
       <tr>
         <td>dynamically compressed</td>

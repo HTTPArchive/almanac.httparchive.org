@@ -333,7 +333,7 @@ On desktop, 76% of websites have a "not good" TTFB, while on mobile, that percen
 {{ figure_markup(
   image="performance-ttfb-by-geo.png",
   caption="Aggregate TTFB performance split by country.",
-  description="Bar chart showcasing that TTFB performance is consistently sub-par, with only 4 out of 28 countries having more than 30% websites with good TTFB. There is a significant number of websites categorised as needs improvement (always above 40%) with the fraction of poor experiences rising as the ranking position is lower.",
+  description="Bar chart showcasing that TTFB performance is consistently sub-par, with only 4 out of 28 countries having more than 30% websites with good TTFB. There is a significant number of websites categorized as needs improvement (always above 40%) with the fraction of poor experiences rising as the ranking position is lower.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1135415956&format=interactive",
   width="645",
   height="792",
