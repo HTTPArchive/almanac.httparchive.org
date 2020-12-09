@@ -14,11 +14,11 @@ rachelandrew_bio: I’m a web developer, writer, public speaker. Co-founder of <
 discuss: 2037
 results: https://docs.google.com/spreadsheets/d/1sMWXWjMujqfAREYxNbG_t1fOJKYCA6ASLwtz4pBQVTw/
 queries: 01_CSS
-featured_quote: The Web is not a teenager any more. It is now 30 years old, and acts like it. It tends to favor stability over new bling, and readability over complexity, occasional guilty pleasures aside..
-featured_stat_1: 72.58%.
-featured_stat_label_1: Percentage of `<length>` values that use the `px` unit.".
-featured_stat_2: 91.05%.
-featured_stat_label_2: Percent of mobile pages using any vendor prefixed feature..
+featured_quote: The Web is not a teenager any more. It is now 30 years old, and acts like it. It tends to favor stability over new bling, and readability over complexity, occasional guilty pleasures aside.
+featured_stat_1: 72.58%
+featured_stat_label_1: Percentage of `<length>` values that use the `px` unit.
+featured_stat_2: 91.05%
+featured_stat_label_2: Percent of mobile pages using any vendor prefixed feature
 featured_stat_3: `darken()`
 featured_stat_label_3: Most popular SCSS function
 unedited: true
