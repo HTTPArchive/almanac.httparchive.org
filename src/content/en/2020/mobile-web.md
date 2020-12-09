@@ -260,9 +260,20 @@ Simple design tweaks go a long way, for instance a clear call-to-action, and mak
 Consider the following examples from [5 lessons Eastpak learned from its mobile audience](https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/5-lessons-eastpak-learned-its-mobile-audience/):
 
 {{ figure_markup(
+  image="eastpak-20-ctr.png",
+  caption='Eastpak improving the color contrast of their main call to action lead to a 20% increase in click through rate.<br>(Source: <a href="https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/5-lessons-eastpak-learned-its-mobile-audience/">https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/5-lessons-eastpak-learned-its-mobile-audience/</a>)',
+  description="An image showing how Eastpak increased their click through rate by 20% by improving the color contrast of their main call to action button",
+  width=1094,
+  height=1122
+  )
+}}
+
+Here, a simple change from a button that’s hard to see, to a button with contrasting colors, improved click through rate on the main call to action by 20%.
+
+{{ figure_markup(
   image="eastpak-12-ctr.png",
-  caption='Eastpak improving their color contrast lead to an increase of 12% in their conversion rate.<br>(Source: <a href="https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/5-lessons-eastpak-learned-its-mobile-audience/">https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/5-lessons-eastpak-learned-its-mobile-audience/</a>)',
-  description="An image showing how Eastpak increased their conversion rate by 12% by improving the color contrast of their call to action buttons",
+  caption='Eastpak improving the color contrast of their checkout button lead to a 12% increase in conversion rate.<br>(Source: <a href="https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/5-lessons-eastpak-learned-its-mobile-audience/">https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/5-lessons-eastpak-learned-its-mobile-audience/</a>)',
+  description="An image showing how Eastpak increased their conversion rate by 12% by improving the color contrast of their checkout button",
   width=1166,
   height=1102
   )
