@@ -216,8 +216,7 @@
     "ahmadawais": {
       "name": "Ahmad Awais",
       "teams": [
-        "authors",
-        "reviewers"
+        "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/960133?v=4&s=200",
       "website": "https://AhmadAwais.com",
@@ -746,8 +745,7 @@
     "khempenius": {
       "name": "Katie Hempenius",
       "teams": [
-        "analysts",
-        "reviewers"
+        "analysts"
       ],
       "avatar_url": "https://avatars3.githubusercontent.com/u/6076184?v=4&s=200",
       "github": "khempenius",
@@ -766,6 +764,7 @@
     "LeaVerou": {
       "name": "Lea Verou",
       "teams": [
+        "analysts",
         "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/175836?v=4&s=200",
