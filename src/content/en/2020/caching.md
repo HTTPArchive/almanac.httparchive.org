@@ -8,7 +8,7 @@ authors: [roryhewitt, raghuramakrishnan71]
 reviewers: [csswizardry, jzyang, jaisanth, Soham-S-Sarkar]
 analysts: [raghuramakrishnan71]
 translators: []
-roryhewitt_bio: Enterprise Architect at <a href="https://www.akamai.com/">Akamai. Passionate about performance. Competition-level snowboarder. Multiple black belts. Motorcyclist. Boxer. Troublemaker. 
+roryhewitt_bio: Enterprise Architect at <a href="https://www.akamai.com/">Akamai</a>. Passionate about performance. Competition-level snowboarder. Multiple black belts. Motorcyclist. Boxer. Troublemaker. 
 
 #raghuramakrishnan71_bio: TODO
 discuss: 2056
