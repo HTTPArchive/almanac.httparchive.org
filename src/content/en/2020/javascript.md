@@ -152,7 +152,7 @@ Right up until the median, sites serve roughly the same number of first-party sc
 {{ figure_markup(
   image="requests-by-3p-mobile.png",
   caption="Distribution of the number of JavaScript requests by host for mobile.",
-  description="Bar chart showing the distribution of JavaScript requests per host for mobile. The 10, 25, 50, 75, and 90th percentiles for first party requests are: 2, 4, 9, 17, and 30 requests per page. This is the same as for desktop. The number of third party requests per page is slightly higher in the upper percentiles by 1 to 5 requests, similar to dekstop.",
+  description="Bar chart showing the distribution of JavaScript requests per host for mobile. The 10, 25, 50, 75, and 90th percentiles for first party requests are: 2, 4, 9, 17, and 30 requests per page. This is the same as for desktop. The number of third party requests per page is slightly higher in the upper percentiles by 1 to 5 requests, similar to desktop.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=1465647946&format=interactive",
   sheets_gid="978380311",
   sql_file="requests_by_3p.sql"

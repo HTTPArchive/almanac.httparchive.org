@@ -218,7 +218,7 @@ When it comes to pseudo-elements, after the usual suspects `::before` and `::aft
 {{ figure_markup(
   image="popular-selector-pseudo-elements.png",
   caption="The most popular pseudo-elements as a percent of pages.",
-  description="Bar chart showing the most popular pseudo-elements as a percent of pages for desktop and mobile. Desktop and mobile are mostly similar, with mobile tending to have slightly higher adoption. The most popular pseudo-element is before, used on 33% of mobile pages. The after pseudo-element is used on 30% of mobile pages. -moz-focus-inner is unsed on 24% of pages. The popularity drops after those from 17% to 4% in decreasing order: -webkit-input-placeholder, -moz-placeholder, -webkit-search-decoration, -webkit-search-cancel-button, -webkit-inner-spin-button, -webkit-outer-spin-button, -webkit-scrollbar (7%), selection, -ms-clear, -moz-selection, -webkit-media-controls, and -webkit-scrollbar-thumb.",
+  description="Bar chart showing the most popular pseudo-elements as a percent of pages for desktop and mobile. Desktop and mobile are mostly similar, with mobile tending to have slightly higher adoption. The most popular pseudo-element is before, used on 33% of mobile pages. The after pseudo-element is used on 30% of mobile pages. -moz-focus-inner is used on 24% of pages. The popularity drops after those from 17% to 4% in decreasing order: -webkit-input-placeholder, -moz-placeholder, -webkit-search-decoration, -webkit-search-cancel-button, -webkit-inner-spin-button, -webkit-outer-spin-button, -webkit-scrollbar (7%), selection, -ms-clear, -moz-selection, -webkit-media-controls, and -webkit-scrollbar-thumb.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1417577353&format=interactive",
   sheets_gid="1972610663",
   sql_file="top_selector_pseudo_elements.sql",
@@ -968,7 +968,7 @@ If we look at [Grid layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS
 
 {{ figure_markup(
   image="flexbox-grid-desktop.png",
-  caption="Adoption of flexbox and grid by year as a percent of dekstop pages.",
+  caption="Adoption of flexbox and grid by year as a percent of desktop pages.",
   description="Bar chart showing the adoption of flexbox and grid by year as a percent of desktop pages. Flexbox adoption grew from 2019 to 2020 from 41% to 65% of mobile pages. Grid adoption grew from 2% to 5% over the same time period.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1140202160&format=interactive",
   sheets_gid="1330536609",
@@ -1009,7 +1009,7 @@ The result of this showed that 0.23% of grid-using pages on mobile had named lin
 
 The [grid-template-areas](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Grid_Template_Areas) feature, allowing authors to name grid items then place them on the grid as the value of the grid-template-areas property, fared a little better. Of grid-using sites, 19% on mobile and 20% on desktop were using this method.
 
-These results show that not only is Grid layout usage still relatively low on production websites, the usage of it is relatively straightforward. Authors are choosing to use the simple line-based placement over methods which would allow them to name lines and areas. While there is nothing wrong in choosing to do so, I wonder if slow adoption of Grid layout is partly due to the fact that authors haven’t yet realised the power of these features. If Grid layout is seen as essentially Flexbox with poor browser support, this would certainly make it a less compelling choice.
+These results show that not only is Grid layout usage still relatively low on production websites, the usage of it is relatively straightforward. Authors are choosing to use the simple line-based placement over methods which would allow them to name lines and areas. While there is nothing wrong in choosing to do so, I wonder if slow adoption of Grid layout is partly due to the fact that authors haven’t yet realized the power of these features. If Grid layout is seen as essentially Flexbox with poor browser support, this would certainly make it a less compelling choice.
 
 ### Multiple-column layout
 
@@ -1175,7 +1175,7 @@ While at first glance this is impressive adoption, it appears that a major drive
 
 {{ figure_markup(
   image="custom-property-names.png",
-  caption="Relative popularity of custom property names per software entity as a perecent of occurrences on mobile pages.",
+  caption="Relative popularity of custom property names per software entity as a percent of occurrences on mobile pages.",
   description="Pie chart of the relative popularity of custom property names per software entity responsible for creating those properties, as a percent of occurrences on mobile pages. 35% of occurrences of custom property names on mobile pages can be traced back to Avada, 31% to Bootstrap, 16% to Elementor, 13% to WordPress, and 3% to an old version of Multirange.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1627287194&format=interactive",
   sheets_gid="1043074687",
@@ -1257,7 +1257,7 @@ There is so much discussion (or argument) about CSS-in-JS that one could assume 
 {{ figure_markup(
   image="css-in-js.png",
   caption="Relative popularity of CSS-in-JS libraries as a percent of occurrences on mobile pages.",
-  description="Pie chart of the relative popularity of CSS-in-JS libraries as a percent of occurences on mobile pages. Styled Components makes up 42% of occurrences on mobile pages, followed by Emotion at 30%, Aphrodite at 9%, React JSS at 8%, Glamor at 7%, Styled Jsx at 2%, and the rest having less than 1% of occurences: Radium, React Native for Web, Goober, Merge Styles, Styletron, and Fela.",
+  description="Pie chart of the relative popularity of CSS-in-JS libraries as a percent of occurrences on mobile pages. Styled Components makes up 42% of occurrences on mobile pages, followed by Emotion at 30%, Aphrodite at 9%, React JSS at 8%, Glamor at 7%, Styled Jsx at 2%, and the rest having less than 1% of occurrences: Radium, React Native for Web, Goober, Merge Styles, Styletron, and Fela.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=969014374&format=interactive",
   sheets_gid="1368222498",
   sql_file="css_in_js.sql"
@@ -1630,7 +1630,7 @@ This kind of confusion seems to happen way more with the `background` shorthand 
 
 ## Sass
 
-While analyzing CSS code tells us what CSS devs *are* doing, looking at preprocessor code can tell us a bit about what CSS devs *want* to be doing, but *can't*, which in some ways is more interesting. We used CSS files with sourcemaps to extract and analyze SCSS stylesheets in the wild. We chose to look at SCSS because it's the most popular preprocessing syntax, based on our analysis of sourcemaps.
+While analyzing CSS code tells us what CSS developers *are* doing, looking at preprocessor code can tell us a bit about what CSS developers *want* to be doing, but *can't*, which in some ways is more interesting. We used CSS files with sourcemaps to extract and analyze SCSS stylesheets in the wild. We chose to look at SCSS because it's the most popular preprocessing syntax, based on our analysis of sourcemaps.
 
 We've known for a while that developers need color modification functions, and are working on them in [CSS Color 5](https://drafts.csswg.org/css-color-5/). However, analyzing SCSS function calls gives us hard data to prove just how necessary color modification functions are, and also tells us *which* types of color modifications are most commonly needed.
 
