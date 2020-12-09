@@ -499,3 +499,5 @@ The bulk of the vulnerabilities found fall into the "medium" severity category.
 JavaScript is steadily rising in popularity, and there's a lot that's positive about that. It's incredible to consider what we're able to accomplish on today's web thanks to JavaScript that, even a few years ago, would have been unimagineable.
 
 But it's clear we've also got to tread carefully. The amount of JavaScript consistently rises each year (if the stock market were that predictable, we'd all be incredibly wealthy), and that comes with trade-offs. More JavaScript is connected to an increase in processing time which negatively impacts key metrics like Total Blocking Time. And, if we let those libraries languish without keeping them updated, they carry the risk of exposing users through known security vulnerabilities.
+
+Carefully weighing the cost of the scripts we add to our pages and being willing to place a critical eye on our tools and ask more of them are our best bets for ensuring that we build a web that is accessible, performant and safe.
