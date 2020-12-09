@@ -318,7 +318,127 @@ First, it's worth noting that while we may think of the usage of one tool versus
 
 When we look at the common combinations that we see in production, most of them are to be expected. Knowing jQuery's dominance, it's unsurprising that most of the popular combinations include jQuery and any number of jQuery related plugins.
 
-{# Top 20? Combos with percentage #}
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Combinations</th>
+        <th>Pages</th>
+        <th>(%)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>jQuery</td>
+        <td class="numeric">1,312,601</td>
+        <td class="numeric">20.7%</td>
+      </tr>
+      <tr>
+        <td>jQuery, jQuery Migrate</td>
+        <td class="numeric">658,628</td>
+        <td class="numeric">10.4%</td>
+      </tr>
+      <tr>
+        <td>jQuery, jQuery UI</td>
+        <td class="numeric">289,074</td>
+        <td class="numeric">4.6%</td>
+      </tr>
+      <tr>
+        <td>Modernizr, jQuery</td>
+        <td class="numeric">155,082</td>
+        <td class="numeric">2.4%</td>
+      </tr>
+      <tr>
+        <td>jQuery, jQuery Migrate, jQuery UI</td>
+        <td class="numeric">140,466</td>
+        <td class="numeric">2.2%</td>
+      </tr>
+      <tr>
+        <td>Modernizr, jQuery, jQuery Migrate</td>
+        <td class="numeric">85,296</td>
+        <td class="numeric">1.3%</td>
+      </tr>
+      <tr>
+        <td>FancyBox, jQuery</td>
+        <td class="numeric">84,392</td>
+        <td class="numeric">1.3%</td>
+      </tr>
+      <tr>
+        <td>Slick, jQuery</td>
+        <td class="numeric">72,591</td>
+        <td class="numeric">1.1%</td>
+      </tr>
+      <tr>
+        <td>GSAP, Lodash, React, RequireJS, Zepto</td>
+        <td class="numeric">61,935</td>
+        <td class="numeric">1.0%</td>
+      </tr>
+      <tr>
+        <td>Modernizr, jQuery, jQuery UI</td>
+        <td class="numeric">61,152</td>
+        <td class="numeric">1.0%</td>
+      </tr>
+      <tr>
+        <td>Lightbox, jQuery</td>
+        <td class="numeric">60,395</td>
+        <td class="numeric">1.0%</td>
+      </tr>
+      <tr>
+        <td>Modernizr, jQuery, jQuery Migrate, jQuery UI</td>
+        <td class="numeric">53,924</td>
+        <td class="numeric">0.8%</td>
+      </tr>
+      <tr>
+        <td>Slick, jQuery, jQuery Migrate</td>
+        <td class="numeric">51,686</td>
+        <td class="numeric">0.8%</td>
+      </tr>
+      <tr>
+        <td>Lightbox, jQuery, jQuery Migrate</td>
+        <td class="numeric">50,557</td>
+        <td class="numeric">0.8%</td>
+      </tr>
+      <tr>
+        <td>FancyBox, jQuery, jQuery UI</td>
+        <td class="numeric">44,193</td>
+        <td class="numeric">0.7%</td>
+      </tr>
+      <tr>
+        <td>Modernizr, YUI</td>
+        <td class="numeric">42,489</td>
+        <td class="numeric">0.7%</td>
+      </tr>
+      <tr>
+        <td>React, jQuery</td>
+        <td class="numeric">37,753</td>
+        <td class="numeric">0.6%</td>
+      </tr>
+      <tr>
+        <td>Moment.js, jQuery</td>
+        <td class="numeric">32,793</td>
+        <td class="numeric">0.5%</td>
+      </tr>
+      <tr>
+        <td>FancyBox, jQuery, jQuery Migrate</td>
+        <td class="numeric">31,259</td>
+        <td class="numeric">0.5%</td>
+      </tr>
+      <tr>
+        <td>MooTools, jQuery, jQuery Migrate</td>
+        <td class="numeric">28,795</td>
+        <td class="numeric">0.5%</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <figcaption>
+    {{ figure_link(
+      caption="The most popular combinations of libraries and frameworks on mobile pages.",
+      sheets_gid="795160444",
+      sql_file="frameworks_libraries_combos.sql"
+    ) }}
+  </figcaption>
+</figure>
 
 We do also see a fair amount of more "modern" frameworks, like React, Vue and Angular—paired with jQuery, like as a result of either migration or third-parties including one or the other.
 
