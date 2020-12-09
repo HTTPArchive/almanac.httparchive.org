@@ -106,7 +106,6 @@ Many [popular servers](https://en.wikipedia.org/wiki/HTTP_compression#Servers_th
 
 ## Current state of HTTP compression
 
-{# TODO(authors): The below graph would imply that this should be "no" compression, reversing the meaning. Is that accurate? #}
 Approximately 60% of HTTP responses are delivered with no text-based compression. This may seem like a surprising statistic, but keep in mind that it is based on all HTTP requests in the dataset. Some content, such as images, will not benefit from these compression algorithms and is therefore not often used, as shown in figure 19.2.
 
 <figure>
@@ -174,8 +173,7 @@ In the graph below, the top 11 content types are displayed with box sizes repres
   )
 }}
 
-{# TODO(authors): (Minor) Ambiguous use of "they". Is this referring to the data in the two graphs 19.1/19.6, or the rates of compression across the two form factors in the latter graph. #}
-Figure 19.1 above breaks down the percentage of compression used per content type, in figure 19.6 this percentage is indicated as color. They are almost identical for desktop and mobile.
+Figure 19.1 above breaks down the percentage of compression used per content type, in figure 19.6 this percentage is indicated as color. The two figures tell similar stories, non-text based assets are rarely compressed, while text-based assets are often compressed. The rates of compression are also similar for both mobile and desktop.
 
 ## First-party vs third-party compression
 
@@ -273,8 +271,6 @@ Because the [HTTP Archive runs Lighthouse audits](./methodology#lighthouse) for 
   sql_file="19_04.distribution_of_text_compression_lighthouse.sql"
   )
 }}
-
-{# TODO(authors/analysts): 2019 contained a chart on potential byte savings that is elided here https://almanac.httparchive.org/en/2019/compression#fig-12 #}
 
 ## Conclusion
 
