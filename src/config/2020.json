@@ -970,6 +970,7 @@
     "nrllh": {
       "name": "Nurullah Demir",
       "teams": [
+        "analysts",
         "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/13475745?v=4&s=200",
@@ -1256,16 +1257,6 @@
       "website": "https://www.fullstacktraining.com",
       "github": "tpiros",
       "twitter": "tpiros"
-    },
-    "tammyeverts": {
-      "name": "Tammy Everts",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "https://avatars0.githubusercontent.com/u/15661032?v=4&s=200",
-      "website": "https://speedcurve.com/",
-      "github": "tammyeverts",
-      "twitter": "tameverts"
     },
     "tomayac": {
       "name": "Thomas Steiner",
