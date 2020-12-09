@@ -9,8 +9,8 @@ reviewers: [csswizardry, jzyang, jaisanth, Soham-S-Sarkar]
 analysts: [raghuramakrishnan71]
 translators: []
 roryhewitt_bio: Enterprise Architect at <a href="https://www.akamai.com/">Akamai</a>. Passionate about performance. Competition-level snowboarder. Multiple black belts. Motorcyclist. Boxer. Troublemaker. 
+raghuramakrishnan71_bio: Enterprise architect at <a href="https://www.tcs.com/">Tata Consultancy Services</a>, working on large digital transformation programs in the public sector. A technology enthusiast with a special interest in performance engineering. An avid traveler, intrigued by astronomy, history, biology, and advancements in medicine. A strong follower of the 47th verse, Chapter 2 of Bhagavad Gita "karmaṇy-evādhikāras te mā phaleṣhu kadāchana" meaning "You have a right to perform your prescribed duty, but you are not entitled to the fruits of action."
 
-#raghuramakrishnan71_bio: TODO
 discuss: 2056
 results: https://docs.google.com/spreadsheets/d/1fYmpSN3diOiFrscS75NsjfsrKXzxxhUMNcYSqXnQJQU/
 queries: 20_Caching
