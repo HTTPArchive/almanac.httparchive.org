@@ -5,20 +5,20 @@ chapter_number: 2
 title: JavaScript
 description: JavaScript chapter of the 2020 Web Almanac covering how much JavaScript we use on the web, compression, libraries and frameworks, loading, and source maps.
 authors: [tkadlec]
-reviewers: [ibnesayeed, jadjoubran, ahmadawais, denar90]
+reviewers: [ibnesayeed, denar90]
 analysts: [rviscomi, paulcalvano]
 translators: []
-#tkadlec_bio: TODO
+tkadlec_bio: Tim is a web performance consultant and trainer focused on building a web everyone can use. He is the author of High Performance Images (O'Reilly, 2016) and Implementing Responsive Design (New Riders, 2012). He writes about all things web at <a href="https://timkadlec.com/">timkadlec.com</a>. You can find him sharing his thoughts in a briefer format on Twitter at <a href="https://twitter.com/tkadlec">@tkadlec</a>.
 discuss: 2038
 results: https://docs.google.com/spreadsheets/d/1cgXJrFH02SHPKDGD0AelaXAdB3UI7PIb5dlS0dxVtfY/
 queries: 02_JavaScript
 #featured_quote: TODO
-#featured_stat_1: TODO
-#featured_stat_label_1: TODO
-#featured_stat_2: TODO
-#featured_stat_label_2: TODO
-#featured_stat_3: TODO
-#featured_stat_label_3: TODO
+featured_stat_1: 1,897ms
+featured_stat_label_1: Median JS main thread time on mobile
+featured_stat_2: 37.22%
+featured_stat_label_2: Percentage of unused JS on mobile
+featured_stat_3: 12.2%
+featured_stat_label_3: Percentage of scripts loaded asynchronously
 unedited: true
 ---
 ## Introduction
@@ -138,7 +138,7 @@ One trend that likely contributes to the increase in JavaScript used on our page
 
 Let's drill into that a bit to see just how much third-party script we're serving up.
 
-Righ up until the median, sites serve roughly the same number of first-party scripts as they do third-party scripts—at the median, 9 scripts per page are first-party compared to 10 per page from third-parties. From there, the gap widens a bit—the more scripts a site serves in the total, the more likely it is that the majority of those scripts are from third-party sources.
+Right up until the median, sites serve roughly the same number of first-party scripts as they do third-party scripts—at the median, 9 scripts per page are first-party compared to 10 per page from third-parties. From there, the gap widens a bit—the more scripts a site serves in the total, the more likely it is that the majority of those scripts are from third-party sources.
 
 {{ figure_markup(
   image="requests-by-3p-desktop.png",
@@ -562,7 +562,7 @@ If you recall, there was only a 30kb difference between what is shipped to a mob
 
 The biggest problem comes when all of that code gets served to a low to middle-end device, something a bit less like the kind of devices most developers are likely to have, and a bit more like the kind of devices you'll see from the majority of people across the world. That relatively small gap between desktop and mobile is much more dramatic when we look at it in terms of processing time.
 
-The median desktop site spends 891ms on the main thread of a browser working with all that JavaScript. The median mobile site, however, spends 1,897ms—over two timese the time spent on the desktop. It's even worse for the long tail of sites. At the 90th percentile, mobile sites spend a staggering 8,921ms of main thread time dealing with JavaScript, compared to 3,838ms for desktop sites.
+The median desktop site spends 891ms on the main thread of a browser working with all that JavaScript. The median mobile site, however, spends 1,897ms—over two times the time spent on the desktop. It's even worse for the long tail of sites. At the 90th percentile, mobile sites spend a staggering 8,921ms of main thread time dealing with JavaScript, compared to 3,838ms for desktop sites.
 
 {{ figure_markup(
   image="main-thread-time.png",
