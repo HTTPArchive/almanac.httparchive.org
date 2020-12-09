@@ -49,9 +49,11 @@ bendell
 benseymour
 bgsound
 bidirectionality
+bkardell
 bling
 bootcamps
 bootstrapcdn
+briankardell
 brotli
 bseymour
 bufferbloat
@@ -215,6 +217,7 @@ jsdelivr
 json
 judgement
 jyrkialakuijala
+katiehempenius
 khempenius
 kbytes
 keyframe
@@ -313,6 +316,7 @@ periodicsync
 permalink
 phishing
 plaintext
+playbook
 plugin
 plugins
 plusone
@@ -523,5 +527,6 @@ ymaps
 ymschaap
 youtube
 yvoschaap
+zachleat
 zizzamia
 zopfli
