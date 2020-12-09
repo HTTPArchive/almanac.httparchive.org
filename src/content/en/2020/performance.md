@@ -4,7 +4,7 @@ chapter_number: 9
 title: Performance
 description: Performance chapter of the 2020 Web Almanac covering Core Web Vitals, Lighthouse Performance Score, First Contentful Paint (FCP) and Time to First Byte (TTFB).
 authors: [thefoxis]
-reviewers: [borisschapira, rviscomi, obto, noamr, Zizzamia]
+reviewers: [borisschapira, rviscomi, obto, noamr, Zizzamia, exterkamp]
 analysts: [max-ostapenko, dooman87]
 translators: []
 thefoxis_bio: Karolina is a Product Design Lead at <a href="https://calibreapp.com/">Calibre</a>, working on creating the most comprehensive speed monitoring platform. She curates <a href="https://perf.email/">Performance Newsletter</a>, your source of performance news and resources. Karolina also <a href="https://calibreapp.com/blog/category/web-platform">frequently writes</a> about how performance affects user experience.

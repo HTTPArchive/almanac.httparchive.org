@@ -51,6 +51,10 @@ const generate_ebooks = async (ebook_chapters,configs) => {
         };
 
         for (let chapter_config of part_config.chapters) {
+
+          //Skip any TODO chapters as won't be found
+          if (chapter_config.todo === true) continue;
+
           let chapter = ebook_chapters.find(
             (c) => c.year === year && c.language === language
                    && c.metadata.chapter_number == chapter_config.chapter

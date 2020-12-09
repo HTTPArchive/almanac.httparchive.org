@@ -52,17 +52,17 @@ const get_contributors_difference = async (configs, chapter_contributors) => {
     const year_chapter_reviewers = year_chapter_contributors.reviewers;
     const year_chapter_analysts = year_chapter_contributors.analysts;
     year_chapter_authors.forEach(author => {
-      if (!config_contributors[author]) {
+      if (!config_contributors[author] || !config_contributors[author].teams.includes("authors")) {
         contributed_but_not_in_file[year].authors.add(author);
       }
     });
     year_chapter_reviewers.forEach(reviewer => {
-      if (!config_contributors[reviewer]) {
+      if (!config_contributors[reviewer] || !config_contributors[reviewer].teams.includes("reviewers")) {
         contributed_but_not_in_file[year].reviewers.add(reviewer);
       }
     });
     year_chapter_analysts.forEach(analyst => {
-      if (!config_contributors[analyst]) {
+      if (!config_contributors[analyst] || !config_contributors[analyst].teams.includes("analysts")) {
         contributed_but_not_in_file[year].analysts.add(analyst);
       }
     });

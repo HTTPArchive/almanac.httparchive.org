@@ -78,6 +78,12 @@
     "hash": "8988d8f9dce33bb8c6614a955cc98d49",
     "size": 17
   },
+  "/static/pdfs/web_almanac_2020_en.pdf": {
+    "date_published": "2020-12-08T00:00:00.000Z",
+    "date_modified": "2020-12-08T00:00:00.000Z",
+    "hash": "a7ad935e32f62b0f6d25892188b9b23f",
+    "size": 17
+  },
   "en/2019/accessibility_statement.html": {
     "date_published": "2020-02-03T00:00:00.000Z",
     "date_modified": "2020-11-21T00:00:00.000Z",

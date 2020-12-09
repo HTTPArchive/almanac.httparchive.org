@@ -8,12 +8,13 @@ authors: [roryhewitt, raghuramakrishnan71]
 reviewers: [csswizardry, jzyang, jaisanth, Soham-S-Sarkar]
 analysts: [raghuramakrishnan71]
 translators: []
-roryhewitt_bio: Enterprise Architect at <a href="https://www.akamai.com/">Akamai</a>. Passionate about performance.
+roryhewitt_bio: Enterprise Architect at <a href="https://www.akamai.com/">Akamai</a>. Passionate about performance. Competition-level snowboarder. Multiple black belts. Motorcyclist. Boxer. Troublemaker.
+
 #raghuramakrishnan71_bio: TODO
 discuss: 2056
 results: https://docs.google.com/spreadsheets/d/1fYmpSN3diOiFrscS75NsjfsrKXzxxhUMNcYSqXnQJQU/
 queries: 20_Caching
-#featured_quote: TODO
+#featured_quote: Caching benefits both the end users (they get their web pages quickly) and the companies serving the web pages (reducing the load on their servers). Caching really is a win-win!
 #featured_stat_1: TODO
 #featured_stat_label_1: TODO
 #featured_stat_2: TODO
@@ -264,7 +265,7 @@ This indicates that the object can be cached for 86,400 seconds (1 day) and it c
 }}
 
 The above figure illustrates the 11 `Cache-Control` directives in use on mobile and desktop websites. There are a few interesting observations about the popularity of these cache directives:
-* `max-age` is used by about 60.2% of `Cache-Control` headers, and `no-store` is used by about 9.2% (see below for some discussion on the meaning and use of the no-store directive).
+* `max-age` is used by about 60.2% of `Cache-Control` headers, and `no-store` is used by about 9.2% (see below for some discussion on the meaning and use of the `no-store` directive).
 * Explicitly specifying `public` isn't ever really necessary since cached entries are assumed `public` unless `private` is specified. Nevertheless, almost one third of responses include `public` - a waste of a few header bytes on every response :)
 * The `immutable` directive is relatively new, introduced in 2017 and is only supported on Firefox and Safari - its usage is still only at about 3.5%, but it is widely seen in responses from Facebook, Google, Wix, Shopify and others. It has the potential to greatly improve cacheability for certain types of requests.
 
@@ -331,8 +332,6 @@ When the server receives the request for the file, it can include the date/time 
 < Cache-Control: max-age=600
 
 < <html>...lots of html here...</html></code></pre>
-
-The browser will cache this object for 600 seconds (as defined in the `Cache-Control` header), after which it will mark the object as stale. If the browser needs to use the file again, it requests the file from the server just as it did initially, but this time it includes an additional request header, called `If-Modified-Since`, which it sets to the value that was passed in the `Last-Modified` response header in the initial response:
 
 The browser will cache this object for 600 seconds (as defined in the `Cache-Control` header), after which it will mark the object as stale. If the browser needs to use the file again, it requests the file from the server just as it did initially, but this time it includes an additional request header, called `If-Modified-Since`, which it sets to the value that was passed in the `Last-Modified` response header in the initial response:
 
@@ -660,97 +659,101 @@ The table below details the cache TTL values for desktop requests by type. Most 
 
 <figure>
   <table>
-    <tr>
-     <th colspan="6">Cache TTL percentiles (in hours)</th>
-    </tr>
-    <tr>
-     <th> </th>
-     <th>10</th>
-     <th>25</th>
-     <th>50</th>
-     <th>75</th>
-     <th>90</th>
-    </tr>
-    <tr>
-     <td>audio</td>
-     <td>6</td>
-     <td>6</td>
-     <td>240</td>
-     <td>720</td>
-     <td>8,760</td>
-    </tr>
-    <tr>
-     <td>css</td>
-     <td>24</td>
-     <td>24</td>
-     <td>720</td>
-     <td>8,760</td>
-     <td>8,760</td>
-    </tr>
-    <tr>
-     <td>font</td>
-     <td>720</td>
-     <td>8,760</td>
-     <td>8,760</td>
-     <td>8,760</td>
-     <td>8,760</td>
-    </tr>
-    <tr>
-     <td>html</td>
-     <td>0</td>
-     <td>1</td>
-     <td>336</td>
-     <td>8,760</td>
-     <td>87,600</td>
-    </tr>
-    <tr>
-     <td>image</td>
-     <td>4</td>
-     <td>168</td>
-     <td>720</td>
-     <td>8,760</td>
-     <td>8,766</td>
-    </tr>
-    <tr>
-     <td>other</td>
-     <td>0</td>
-     <td>1</td>
-     <td>30</td>
-     <td>240</td>
-     <td>8,760</td>
-    </tr>
-    <tr>
-     <td>script</td>
-     <td>0</td>
-     <td>2</td>
-     <td>720</td>
-     <td>8,760</td>
-     <td>8,760</td>
-    </tr>
-    <tr>
-     <td>text</td>
-     <td>0</td>
-     <td>1</td>
-     <td>6</td>
-     <td>6</td>
-     <td>720</td>
-    </tr>
-    <tr>
-     <td>video</td>
-     <td>6</td>
-     <td>12</td>
-     <td>336</td>
-     <td>336</td>
-     <td>8,760</td>
-    </tr>
-    <tr>
-     <td>xml</td>
-     <td>0</td>
-     <td>24</td>
-     <td>24</td>
-     <td>24</td>
-     <td>8,760</td>
-    </tr>
+    <thead>
+      <tr>
+        <th colspan="6" scope="col">Cache TTL percentiles (in hours)</th>
+      </tr>
+      <tr>
+        <th scope="col">Type</th>
+        <th scope="col">10</th>
+        <th scope="col">25</th>
+        <th scope="col">50</th>
+        <th scope="col">75</th>
+        <th scope="col">90</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>audio</td>
+        <td>6</td>
+        <td>6</td>
+        <td>240</td>
+        <td>720</td>
+        <td>8,760</td>
+      </tr>
+      <tr>
+        <td>css</td>
+        <td>24</td>
+        <td>24</td>
+        <td>720</td>
+        <td>8,760</td>
+        <td>8,760</td>
+      </tr>
+      <tr>
+        <td>font</td>
+        <td>720</td>
+        <td>8,760</td>
+        <td>8,760</td>
+        <td>8,760</td>
+        <td>8,760</td>
+      </tr>
+      <tr>
+        <td>html</td>
+        <td>0</td>
+        <td>1</td>
+        <td>336</td>
+        <td>8,760</td>
+        <td>87,600</td>
+      </tr>
+      <tr>
+        <td>image</td>
+        <td>4</td>
+        <td>168</td>
+        <td>720</td>
+        <td>8,760</td>
+        <td>8,766</td>
+      </tr>
+      <tr>
+        <td>other</td>
+        <td>0</td>
+        <td>1</td>
+        <td>30</td>
+        <td>240</td>
+        <td>8,760</td>
+      </tr>
+      <tr>
+        <td>script</td>
+        <td>0</td>
+        <td>2</td>
+        <td>720</td>
+        <td>8,760</td>
+        <td>8,760</td>
+      </tr>
+      <tr>
+        <td>text</td>
+        <td>0</td>
+        <td>1</td>
+        <td>6</td>
+        <td>6</td>
+        <td>720</td>
+      </tr>
+      <tr>
+        <td>video</td>
+        <td>6</td>
+        <td>12</td>
+        <td>336</td>
+        <td>336</td>
+        <td>8,760</td>
+      </tr>
+      <tr>
+        <td>xml</td>
+        <td>0</td>
+        <td>24</td>
+        <td>24</td>
+        <td>24</td>
+        <td>8,760</td>
+      </tr>
+    </tbody>
   </table>
   <figcaption>{{ figure_link(caption="Desktop cache TTL percentiles by resource type.", sheets_gid="676954337", sql_file="ttl_by_resource.sql") }}</figcaption>
 </figure>

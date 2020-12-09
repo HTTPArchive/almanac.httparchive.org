@@ -189,7 +189,7 @@ Figure 22.7 orders every website by the fraction of HTTP/2 requests for known th
 {{ figure_markup(
   image="http2-first-and-third-party-http2-usage.png",
   caption="The distribution of the fraction of third-party and first-party HTTP/2 requests per page.",
-  description="A line chart comparing the fraction of first-party HTTP/2 requests with third-party HTTP/2 or gQUIC requests. The chart orders he websites by fraction of HTTP/2 requests. 45% of websites have no HTTP/2 first-party requests. Over half of websites serve third-party requests only over HTTP/2 or gQUIC. 80% of websites have 76% or more third-party HTTP/2 or gQUIC requests.",
+  description="A line chart comparing the fraction of first-party HTTP/2 requests with third-party HTTP/2 or gQUIC requests. The chart orders the websites by fraction of HTTP/2 requests. 45% of websites have no HTTP/2 first-party requests. Over half of websites serve third-party requests only over HTTP/2 or gQUIC. 80% of websites have 76% or more third-party HTTP/2 or gQUIC requests.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=1409316276&format=interactive",
   sql_file="http2_%_1st_party_vs_3rd_party.sql",
   sheets_gid="733872185"
