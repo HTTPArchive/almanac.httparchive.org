@@ -348,7 +348,8 @@ The largest use is with script elements, which is unsurprising as the number of 
 ) }}
 
 {# TODO(authors): Review this revised section. #}
-The data shows us that 79%{# TODO(authors): 79 or 83? #} of resources using Priority Hints use a "high" priority, but something we should pay even more attention to is the 16% of resources with "low" priority.
+{# TODO(authors): 79 or 83? 79% is from gid=1663326536 for mobile + script + high, while 83% is from gid=1098063134 and corresponds to the 16% "low" we use in the figure. #} 
+The data shows us that 83% of resources using Priority Hints use a "high" priority on mobile, but something we should pay even more attention to is the 16% of resources with "low" priority.
 
 Priority hints have a clear advantage as a tool to prevent wasteful loading via the "low" priority by helping the browser decide what to de-prioritize and giving back significant CPU and bandwidth to complete critical requests first, rather than as a tactic to try to get resources loaded more quickly with the "high" priority.
 
