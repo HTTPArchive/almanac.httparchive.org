@@ -3,7 +3,7 @@
 part_number: II
 chapter_number: 14
 title: PWA
-description: PWA chapter of the 2020 Web Almanac covering service workers (registations, installability, events and filesizes), Web App Manifests properties, and Workbox.
+description: PWA chapter of the 2020 Web Almanac covering service workers (registrations, installability, events and filesizes), Web App Manifests properties, and Workbox.
 authors: [hemanth]
 reviewers: [thepassle, jadjoubran, pearlbea, gokulkrishh]
 analysts: [bazzadp]
@@ -243,7 +243,7 @@ The proprietary properties we encountered frequently were `gcm_sender_id` used b
 
 On both platforms, however, there's a long tail of properties that are not interpreted by browsers yet contain potentially useful metadata.
 
-We also found a non-trivial amount of mistyped properties; our favorite ones being variation of `theme-color`, `Theme_color`, `theme-color`, `Theme_color` and `oriendation`.
+We also found a non-trivial amount of mistyped properties; our favorite ones being variation of `theme-color`, `Theme_color`, `theme-color`, `Theme_color` and `orientation`.
 
 In order for a PWA to be fruitful it needs to have a manifest and a service worker. It is interesting to note that manifests are used a lot more than service workers. This is due, in large part, to the fact that CMS like WordPress, Drupal and Joomla have manifests by default.
 
@@ -293,7 +293,7 @@ Out of all the top `categories`, shopping stood at the top at with `13.16%` on t
 {{ figure_markup(
   image="pwa-manifest-preferring-native.png",
   caption="Manifest preferring native.",
-  description="Horiztonal stacked bar chart showing that on desktop 98.24% of desktop sites prefer native, and 98.52% of mobile sites prefer native.",
+  description="Horizontal stacked bar chart showing that on desktop 98.24% of desktop sites prefer native, and 98.52% of mobile sites prefer native.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRRpTSA4fsHwUap-ByQ08j95uo7Zm1kY6lTSvA-DZT54g2QZ0guV7db3QyQwQgMPzsKsJ43gbzqfJst/pubchart?oid=1370804413&format=interactive",
   sheets_gid="153006256",
   sql_file="manifests_preferring_native_apps_sw.sql"
@@ -341,7 +341,7 @@ Out of which we noticed that `portrait`, `any` and `portrait-primary` properties
 
 ## Service worker libraries
 
-There are many cases, where the service workers use libraries as dependencies, be it external dependencies or the application's internal dependencies. These are usually fetched to the service worker via `importScripts` API, in this section we will look into stats on such libraries.
+There are many cases, where the service workers use libraries as dependencies, be it external dependencies or the application's internal dependencies. These are usually fetched to the service worker via `importScripts()` API, in this section we will look into stats on such libraries.
 
 ### Popular import scripts
 
@@ -358,7 +358,7 @@ The [importScripts() API](https://developer.mozilla.org/en-US/docs/Web/API/Worke
   </thead>
   <tbody>
     <tr>
-      <td>Uses Importscript</td>
+      <td>Uses <code>importScripts()</code></td>
       <td class="numeric">29.60%</td>
       <td class="numeric">23.76%</td>
     </tr>
@@ -417,7 +417,7 @@ The [importScripts() API](https://developer.mozilla.org/en-US/docs/Web/API/Worke
 <figcaption>{{ figure_link(caption="PWA library usage.", sheets_gid="1399126426", sql_file="popular_pwa_libraries.sql") }}</figcaption>
 </figure>
 
-Around **30%** of the desktop and **25%** of mobile sites uses `importScripts`, of which `workbox`, `sw_toolbox` and `firebase` take the first three positions respectively.
+Around **30%** of the desktop and **25%** of mobile sites uses `importScripts()`, of which `workbox`, `sw_toolbox` and `firebase` take the first three positions respectively.
 
 ### Workbox usage
 

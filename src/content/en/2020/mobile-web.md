@@ -179,7 +179,7 @@ A good LCP score is 2.5s at p75. We found that the median LCP at p75 is 2.6s on 
 }}
 
 ##### Images
-While every type of asset, such as font, CSS, Javascript etc. plays an important role in loading performance, we take a closer look at images.
+While every type of asset, such as font, CSS, JavaScript etc. plays an important role in loading performance, we take a closer look at images.
 
 The web continues to move towards image-heavy pages, with the growth of bandwidth and the ubiquity of smartphones. And images impose a cost on loading performance.
 
