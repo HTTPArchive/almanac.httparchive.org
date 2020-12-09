@@ -98,6 +98,7 @@ crsb
 crypto
 cryptocurrency
 cryptocurrencies
+cryptojacking
 cryptominer
 cryptominers
 cryptomining
@@ -245,6 +246,7 @@ manth
 maskable
 maxage
 maxcdn
+mdiblasio
 mediaelementwrapper
 meetup
 meetups
@@ -403,6 +405,7 @@ shoesbycolin
 shopify
 shopifycdn
 shubhie
+similarweb
 simonhearne
 simpl
 sitelinks
@@ -449,6 +452,7 @@ terabyte
 terabytes
 textarea
 textbox
+textfield
 thefoxis
 theobto
 thirdpartyweb
@@ -484,6 +488,7 @@ unsecurely
 uptick
 upush
 userland
+username
 utdstc
 variablefonts
 veluca
