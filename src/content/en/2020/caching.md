@@ -8,7 +8,7 @@ authors: [roryhewitt, raghuramakrishnan71]
 reviewers: [csswizardry, jzyang, jaisanth, Soham-S-Sarkar]
 analysts: [raghuramakrishnan71]
 translators: []
-roryhewitt_bio: Enterprise Architect at <a href="https://www.akamai.com/">Akamai</a>. Passionate about performance. Competition-level snowboarder. Multiple black belts. Motorcyclist. Boxer. Troublemaker. 
+roryhewitt_bio: Enterprise Architect at <a href="https://www.akamai.com/">Akamai</a>. Passionate about performance. Competition-level snowboarder. Multiple black belts. Motorcyclist. Boxer. Troublemaker.
 
 #raghuramakrishnan71_bio: TODO
 discuss: 2056
@@ -659,97 +659,98 @@ The table below details the cache TTL values for desktop requests by type. Most 
 
 <figure>
   <table>
-    <tr>
-     <th colspan="6">Cache TTL percentiles (in hours)</th>
-    </tr>
-    <tr>
-     <th> </th>
-     <th>10</th>
-     <th>25</th>
-     <th>50</th>
-     <th>75</th>
-     <th>90</th>
-    </tr>
-    <tr>
-     <td>audio</td>
-     <td>6</td>
-     <td>6</td>
-     <td>240</td>
-     <td>720</td>
-     <td>8,760</td>
-    </tr>
-    <tr>
-     <td>css</td>
-     <td>24</td>
-     <td>24</td>
-     <td>720</td>
-     <td>8,760</td>
-     <td>8,760</td>
-    </tr>
-    <tr>
-     <td>font</td>
-     <td>720</td>
-     <td>8,760</td>
-     <td>8,760</td>
-     <td>8,760</td>
-     <td>8,760</td>
-    </tr>
-    <tr>
-     <td>html</td>
-     <td>0</td>
-     <td>1</td>
-     <td>336</td>
-     <td>8,760</td>
-     <td>87,600</td>
-    </tr>
-    <tr>
-     <td>image</td>
-     <td>4</td>
-     <td>168</td>
-     <td>720</td>
-     <td>8,760</td>
-     <td>8,766</td>
-    </tr>
-    <tr>
-     <td>other</td>
-     <td>0</td>
-     <td>1</td>
-     <td>30</td>
-     <td>240</td>
-     <td>8,760</td>
-    </tr>
-    <tr>
-     <td>script</td>
-     <td>0</td>
-     <td>2</td>
-     <td>720</td>
-     <td>8,760</td>
-     <td>8,760</td>
-    </tr>
-    <tr>
-     <td>text</td>
-     <td>0</td>
-     <td>1</td>
-     <td>6</td>
-     <td>6</td>
-     <td>720</td>
-    </tr>
-    <tr>
-     <td>video</td>
-     <td>6</td>
-     <td>12</td>
-     <td>336</td>
-     <td>336</td>
-     <td>8,760</td>
-    </tr>
-    <tr>
-     <td>xml</td>
-     <td>0</td>
-     <td>24</td>
-     <td>24</td>
-     <td>24</td>
-     <td>8,760</td>
-    </tr>
+    <thead>
+      <tr>
+        <th role="col">Type</th>
+        <th role="col">10</th>
+        <th role="col">25</th>
+        <th role="col">50</th>
+        <th role="col">75</th>
+        <th role="col">90</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>audio</td>
+        <td>6</td>
+        <td>6</td>
+        <td>240</td>
+        <td>720</td>
+        <td>8,760</td>
+      </tr>
+      <tr>
+        <td>css</td>
+        <td>24</td>
+        <td>24</td>
+        <td>720</td>
+        <td>8,760</td>
+        <td>8,760</td>
+      </tr>
+      <tr>
+        <td>font</td>
+        <td>720</td>
+        <td>8,760</td>
+        <td>8,760</td>
+        <td>8,760</td>
+        <td>8,760</td>
+      </tr>
+      <tr>
+        <td>html</td>
+        <td>0</td>
+        <td>1</td>
+        <td>336</td>
+        <td>8,760</td>
+        <td>87,600</td>
+      </tr>
+      <tr>
+        <td>image</td>
+        <td>4</td>
+        <td>168</td>
+        <td>720</td>
+        <td>8,760</td>
+        <td>8,766</td>
+      </tr>
+      <tr>
+        <td>other</td>
+        <td>0</td>
+        <td>1</td>
+        <td>30</td>
+        <td>240</td>
+        <td>8,760</td>
+      </tr>
+      <tr>
+        <td>script</td>
+        <td>0</td>
+        <td>2</td>
+        <td>720</td>
+        <td>8,760</td>
+        <td>8,760</td>
+      </tr>
+      <tr>
+        <td>text</td>
+        <td>0</td>
+        <td>1</td>
+        <td>6</td>
+        <td>6</td>
+        <td>720</td>
+      </tr>
+      <tr>
+        <td>video</td>
+        <td>6</td>
+        <td>12</td>
+        <td>336</td>
+        <td>336</td>
+        <td>8,760</td>
+      </tr>
+      <tr>
+        <td>xml</td>
+        <td>0</td>
+        <td>24</td>
+        <td>24</td>
+        <td>24</td>
+        <td>8,760</td>
+      </tr>
+    </tbody>
   </table>
   <figcaption>{{ figure_link(caption="Desktop cache TTL percentiles by resource type.", sheets_gid="676954337", sql_file="ttl_by_resource.sql") }}</figcaption>
 </figure>
