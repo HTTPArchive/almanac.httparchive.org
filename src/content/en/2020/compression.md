@@ -71,13 +71,29 @@ Many popular servers support dynamically and/or pre-compressed HTTP  (https://en
 
 Here are some general recommendations on what compression levels to use:
 
-<figure markdown>
-|                         | brotli  | gzip            |
-| ----------------------- | ------- | --------------- |
-| precompressed           |  11     |   9 or zopfli   |
-| dynamically compressed  |   5     |   6             |
-
-<figcaption>{{ figure_link(caption="Recommended compression levels to use.") }}<figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <td></td>
+        <th scope="col">brotli</th>
+        <th scope="col">gzip</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>precompressed</td>
+        <td>11</td>
+        <td>9 or zopfli</td>
+      </tr>
+      <tr>
+        <td>dynamically compressed</td>
+        <td>5</td>
+        <td>6</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Recommended compression levels to use.") }}</figcaption>
 </figure>
 
 Currently, when compression is used, the split between brotli and gzip is about 23% / 77%.
@@ -87,10 +103,6 @@ Approximately 60% of HTTP responses are delivered with text-based compression. T
 <figure>
   <table>
     <thead>
-      <tr>
-        <td></td>
-        <th scope="colgroup" colspan="3" >Percent of Requests</th>
-      </tr>
       <tr>
         <th scope="col">Content Encoding</th>
         <th scope="col">Desktop</th>

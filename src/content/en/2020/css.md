@@ -16,7 +16,7 @@ results: https://docs.google.com/spreadsheets/d/1sMWXWjMujqfAREYxNbG_t1fOJKYCA6A
 queries: 01_CSS
 featured_quote: The Web is not a teenager any more. It is now 30 years old, and acts like it. It tends to favor stability over new bling, and readability over complexity, occasional guilty pleasures aside.
 featured_stat_1: 72.58%
-featured_stat_label_1: Percentage of `<length>` values that use the `px` unit.
+featured_stat_label_1: Percentage of <code>&lt;length&gt;</code> values that use the <code>px</code> unit.
 featured_stat_2: 91.05%
 featured_stat_label_2: Percent of mobile pages using any vendor prefixed feature
 featured_stat_3: `darken()`
@@ -449,7 +449,8 @@ It appears that most of this usage is to subtract pixels from percentages, as ev
 
 Most calculations are very simple, with 99.5% of calculations involving up to 2 different units, 88.5% of calculations involving up to 2 operators and 99.4% of calculations involving one set of parentheses or fewer (3 out of 4 calculations include no parentheses at all).
 
-{# TODO(analysts): Figure out what happened to the 3+ label in this chart. #}
+{# TODO (analysts): Figure out what happened to the 3+ label in this chart. #}
+
 {{ figure_markup(
   image="calc-complexity-units.png",
   caption="Distribution of the number of units per `calc()` occurrence.",
@@ -457,7 +458,8 @@ Most calculations are very simple, with 99.5% of calculations involving up to 2 
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=695698141&format=interactive",
   sheets_gid="1493602565",
   sql_file="calc_complexity_units.sql"
-) }}
+)
+}}
 
 ### Global keywords and `all`
 
@@ -528,10 +530,10 @@ And if you are going for fanciful color names, why not define your own with CSS 
   <table>
     <thead>
       <tr>
-        <th></th>
-        <th>Keyword</th>
-        <th>Desktop</th>
-        <th>Mobile</th>
+        <td></td>
+        <th scope="col">Keyword</th>
+        <th scope="col">Desktop</th>
+        <th scope="col">Mobile</th>
       </tr>
     </thead>
     <tbody>
@@ -680,11 +682,10 @@ Compatibility, right? You don’t want things to break? No. In the stylesheets w
   <table>
     <thead>
       <tr>
-        <th>sRGB</th>
-        <th></th>
-        <th><code>display-p3</code></th>
-        <th>ΔE2000</th>
-        <th>In gamut</th>
+        <th scope="col" colspan="2">sRGB</th>
+        <th scope="col"><code>display-p3</code></th>
+        <th scope="col">ΔE2000</th>
+        <th scope="col">In gamut</th>
       </tr>
     </thead>
     <tbody>
@@ -881,7 +882,7 @@ Compatibility, right? You don’t want things to break? No. In the stylesheets w
   </table>
   <figcaption>
     {{ figure_link(
-      caption="this table shows the fallback sRGB colors (plus a color swatch), then the display-p3 colors. A color difference (ΔE2000) of 1 is barely visible, while 5 is clearly distinct."
+      caption="This table shows the fallback sRGB colors (plus a color swatch), then the display-p3 colors. A color difference (ΔE2000) of 1 is barely visible, while 5 is clearly distinct."
     ) }}
   </figcaption>
 </figure>
@@ -1268,7 +1269,7 @@ There is so much discussion (or argument) about CSS-in-JS that one could assume 
 
 When text is presented in horizontal lines, most writing systems display characters from left to right. Urdu, Arabic and Hebrew display characters from right to left, except for  numbers, which are written from left to right; they are bidirectional. Some characters  — such as brackets, quote marks, punctuation — could be used in either a left to right or a right to left context, and are said to be directionally neutral. Things get more complex when text strings of different languages are nested in one another - English text containing a short quote in Hebrew which contains some English words, for example. The Unicode bidirectional algorithm defines how to lay out paragraphs of mixed-direction text, but it needs to know the base direction of the paragraph.
 
-To support bidirectionality,  explicit support for indicating direction is available in both HTML via ([the dir attribute](https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute) and the [<bdo> element](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdo-element)), and CSS (the [direction](https://www.w3.org/TR/css-writing-modes-3/#direction) and [unicode-bidi](https://www.w3.org/TR/css-writing-modes-3/#unicode-bidi) properties. We looked at usage of both HTML and CSS methods.
+To support bidirectionality,  explicit support for indicating direction is available in both HTML via ([the `dir` attribute](https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute) and the [`<bdo>` element](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdo-element)), and CSS (the [direction](https://www.w3.org/TR/css-writing-modes-3/#direction) and [`unicode-bidi`](https://www.w3.org/TR/css-writing-modes-3/#unicode-bidi) properties. We looked at usage of both HTML and CSS methods.
 Only 12.14% of pages on mobile (and a similar 10.76% on desktop) set the `dir` attribute on the `<html>` element. Which is fine: most writing systems in the world are **ltr**, and the default `dir` value is **ltr**. Of the pages which *did* set `dir` on `<html>`, 91% set it to `ltr` while 8.5% set it to `rtl` and 0.32% to `auto` (the explicit direction is unknown value, mainly useful for templates which will be filled with unknown content). An even smaller number, 2.63%, set `dir` on `<body>`. Which is good, because setting it on `<html>` also covers you for content in the `<head>`, like `<title>`.
 
 Why set direction using HTML attributes rather than CSS styling? One reason is separation of concerns: direction has to do with content which is the purview of HTML. It is also the [recommended practice](https://www.w3.org/International/tutorials/bidi-xhtml/index.en): *“Avoid using CSS or Unicode control codes for managing direction where you can use markup”*. After all, the stylesheet might not load and the text still needs to be readable.
