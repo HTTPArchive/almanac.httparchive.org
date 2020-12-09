@@ -258,7 +258,7 @@ It is fairly likely that a native `<button>` element would be a better choice, p
 
 We found that 15.50% of desktop pages and 14.62% of mobile pages contained at least one anchor element with `role=”button”`. If a role has been applied to an element that should have its implicit role respected, such as giving a `role=”button”` to a link (which has an implicit `role=”link”`), this would break the 2nd rule of ARIA and would violate [WCAG 2.1.1, Keyboard](https://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-keyboard-operable.html) if the correct keyboard behavior has not been implemented (links are not activated with the space key, where as buttons are). 
 
-In the vast majority of these cases, a better pattern than explicitly defining `role=”button”` on the element in question would be to leverage the native HTML `<button>` element.
+In the vast majority of these cases, a better pattern than explicitly defining `role="button"` on the element in question would be to leverage the native HTML `<button>` element.
 
 ##### Navigation
 
