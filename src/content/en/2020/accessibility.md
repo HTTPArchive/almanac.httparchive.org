@@ -154,7 +154,7 @@ Video and other multi-media content can enrich a Web experience, but often is no
 
 #### Captions
 
-Captions or transcripts are needed to communicate aural information for people who are deaf or hard of hearing, and are very also helpful for users who are hard of hearing or have cognitive disabilities such as audio processing difficulty. Transcripts also help low-vision and blind users by describing visuals.  Video content on the web is not accessible if it does not have accompanying captions. Similar to the importance of having meaningful alternative text for images, the quality of captions is also very important.
+Captions or transcripts are needed to communicate aural information for people who are deaf or hard of hearing, and are very also helpful for users who have cognitive disabilities such as audio processing difficulty. Transcripts also help low-vision and blind users by describing visuals.  Video content on the web is not accessible if it does not have accompanying captions. Similar to the importance of having meaningful alternative text for images, the quality of captions is also very important.
 
 > “Captions not only include dialogue, but identify who is speaking and include non-speech information conveyed through sound, including meaningful sound effects” 
 > -WCAG, Understanding Success Criterion 1.2.2: Captions
