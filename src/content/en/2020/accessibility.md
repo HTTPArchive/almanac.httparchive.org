@@ -307,7 +307,7 @@ For desktop pages, 7.00% have at least one element with a `role="tablist"` where
 
 ##### Presentation
 
-When an element has been given a `role=”presentation”` its semantics are stripped away, for both the element it is assigned to and its required children. For example, tables and lists both have required children, so if the parent has a `role=”presentation”` this essentially cascades to the child elements, which will also have their semantics stripped. Removing an element’s semantics means that it is no longer that element in any capacity except for its visual appearance. For example, a list with a `role=”presentation”` will no longer communicate any information to a screen reader about the list structure.
+When an element has been given a `role="presentation"` its semantics are stripped away, for both the element it is assigned to and its required children. For example, tables and lists both have required children, so if the parent has a `role="presentation"` this essentially cascades to the child elements, which will also have their semantics stripped. Removing an element’s semantics means that it is no longer that element in any capacity except for its visual appearance. For example, a list with a `role="presentation"` will no longer communicate any information to a screen reader about the list structure.
 
 A common usage of this attribute is for `<table>` elements that have been used for layout rather than  for tabular data. We do not recommend using tables in this way. For layout, we have powerful CSS tools today such as flexbox and CSS grid. In general there are very few use cases where `role=”presentation”` is particularly helpful for assistive technology users, use this role sparingly and thoughtfully.
 
