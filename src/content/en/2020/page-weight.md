@@ -29,7 +29,7 @@ Page weight is one of the simpler metrics available. Much like stepping on a hum
 
 #PageWeightStillMatters would almost imply that it didn't or ever mattered. It might not have mattered when text based Craigslist launched. But 25 years ago when it was founded, Mosaic 1.0 also launched the same year, and Waterfalls by TLC was a top hit. The web matured as did resources. It was just a few years back when the twitterverse was tied up discussing how the average size of web pages now equaled the size of the [original doom](https://www.wired.com/2016/04/average-webpage-now-size-original-doom/). Many of us mused about what the size the page could become in time, including [our very own Tammy Everts](https://speedcurve.com/blog/web-performance-page-bloat/), but the reality is startling. A page sits @  ~4 MB and 3.7 MB, desktop/mobile respectively, at the 75th percentile, and a shocking 7.4 MB and 6.7 MB at the 90th percentile. There are multitudes of implications in having such heavy pages, like the likelihood of poor user experience due to unreliable networks. Today, despite lessons [learned a decade ago](https://blog.chriszacharias.com/page-weight-matters), we are experiencing variations of the same challenges: despite having slightly better networks, we are working with much larger resources.
 
-## Bandwidth
+### Bandwidth
 
 In 2016, when asked to explain why I asked an Australian tourist who is delighted with UK Internet, Google's Ilya Grigorik [had two words](https://youtu.be/x4S38hpgxuM?t=89): physics damn'it! (whoops, that's three).
 The point was simple: though you might benefit from increased bandwidth, the laws of physics still prevail. An Australian is unable to escape laws of latency.  In the best case scenario, at home in Sydney, this Australian was experiencing enough latency that his Internet was at times perceived as unresponsive.
@@ -38,7 +38,7 @@ Now, imagine that the same Australian, knowing that at the 75th percentile, his 
 
 physics damn'it!
 
-## Assets
+### Assets
 
 In 25 years of modern browsing, the assets and resources have mostly not changed, other than the amount. The HTTP archive modus operandi is “how the web was built”, and that was mostly done with HTML, CSS, JavaScript and finally images.
 
@@ -48,44 +48,85 @@ For the most part, the rule of thumb has been that images would make up the majo
 
 Although Javascript is on average the 2nd most abundant resource on a page, we tend to have more opportunities in working with that file type: from bundling, compression and minification to name a few.
 
-## Intricate and interactive
+### Intricate and interactive
 
 The web's  journey from the plain, near pedagogical platform, to the innovative, intricate and highly interactive apps it has become, the rudimentary page weight metric hid a bigger story: a ratatouille of resources, each affecting  modern metrics, in turn affecting user experience.
 
 Whenever we talk about interactivity, we are talking almost exclusively about JavaScript. Now, though we are not here to discuss interactivity in any depth, we know there are metrics which are focused and dependent on JavaScript content and execution.  So weightier the JavaScript, likely to have a greater impact on interactivity metrics (time to interactive, total blocking time). We have a javascript chapter that dives a pinch more. 
 
-
 ## Analysis
 
 As we post and parse the statistical results, just a reminder that the data is based on transfer sizes. Added, we are employing decompressed sizes in this analysis when possible.
 
-## Page weight
+### Page weight
 
 Let's look at the classic page weight, on both desktop and mobile. The deltas are mostly due to a few less resources transferred on mobile, a likely pinch of media management, but you can see below that at the median, the differences are not that significant between the two clients. We are highlighting the mobile results. 
 
 We can however surmise from this the following: we are closing in on 7 MB of page weight on mobile and 7.5 MB on desktop at the 90th percentile. The data is following an age old trend:  growth in page weight is on the upward trajectory yet again, from the previous year. Popping the hood, we can see how things look at the median and average for each resource. One thing again remains: images are the dominant resource and JavaScript is the second most abundant, though a far second.
 
-{# Insert page weight distribution #}
+{{ figure_markup(
+  image="bytes-distribution.png",
+  caption="Distribution of total bytes per page.",
+  description="Bar chart showing the distribution of the total bytes per page. Desktop pages tend to have more bytes throughout the distribution. The 10, 25, 50, 75, and 90th percentiles for mobile pages are: 369, 900, 1,915, 3,710, and 6,772 KB per page.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQlN4Clqeb8aPc63h0J58WfBxoJluSFT6kXn45JGPghw1LGU28hzabMYAATXNY5st9TtjKrr2HnbfGd/pubchart?oid=248363224&format=interactive",
+  sheets_gid="378779486",
+  sql_file="bytes_per_type_2020.sql"
+) }}
 
-{# Insert median page weight by content type #}
+{{ figure_markup(
+  image="bytes-distribution-content-type.png",
+  caption="Median bytes per page by content type.",
+  description="Bar chart showing the median number of bytes per page for images, javascript, CSS, and HTML. The median desktop page tends to have more bytes. The median mobile page has 916 KB of images, 411 KB of JS, 62 KB of CSS, and 25 KB of HTML.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQlN4Clqeb8aPc63h0J58WfBxoJluSFT6kXn45JGPghw1LGU28hzabMYAATXNY5st9TtjKrr2HnbfGd/pubchart?oid=1147150650&format=interactive",
+  sheets_gid="378779486",
+  sql_file="bytes_per_type_2020.sql"
+) }}
 
-## Requests
+### Requests
 
 We have an old adage: the quickest request is the one never made. Dare we then say: the smallest resource is one never requested.
 
-at the request level, much is the same. The weightiest resources are making the most requests. The request distribution will show that the difference between desktop and mobile is not so significant, with desktop leading the way. Something worth noting: the median request on desktop at this time is the same as last year later (74), yet the page weight has ticked up (+122kb). A simple observation, but one which confirms the trajectory we've seen over the years. 
+at the request level, much is the same. The weightiest resources are making the most requests. The request distribution will show that the difference between desktop and mobile is not so significant, with desktop leading the way. Something worth noting: the median request on desktop at this time is the same as last year later (74), yet the page weight has ticked up (+122kb). A simple observation, but one which confirms the trajectory we've seen over the years.
 
-{# Insert distribution of requests #}
+{{ figure_markup(
+  image="requests-distribution.png",
+  caption="Distribution of requests per page.",
+  description="Bar chart showing the distribution of requests per page. Desktop pages tend to load more requests. The 10, 25, 50, 75, and 90th percentiles for mobile pages are: 23, 42, 70, 114, and 174 requests per page.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQlN4Clqeb8aPc63h0J58WfBxoJluSFT6kXn45JGPghw1LGU28hzabMYAATXNY5st9TtjKrr2HnbfGd/pubchart?oid=971564375&format=interactive",
+  sheets_gid="457486298",
+  sql_file="requests_type_distribution_2020.sql"
+) }}
 
-{# Insert pie chart #}
+{{ figure_markup(
+  image="requests-content-type.png",
+  caption="Median number of requests per mobile page by content type.",
+  description="Bar chart showing the median number of requests per mobile page by content type. The median number of image requests per page is 27, 19 for JS, 7 for CSS, and 3 for HTML. Desktop and mobile tend to be equal except desktop pages load more image and JS requests.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQlN4Clqeb8aPc63h0J58WfBxoJluSFT6kXn45JGPghw1LGU28hzabMYAATXNY5st9TtjKrr2HnbfGd/pubchart?oid=101271976&format=interactive",
+  sheets_gid="457486298",
+  sql_file="requests_type_distribution_2020.sql"
+) }}
 
-## File formats
+### File formats
 
-We know that images are a great source of page weight. This graphic below shows us the top sources of image weight and the weight distribution. Top 3: JPG, PNG and webp. So not only is the JPG the most popular image format, it also tends to be the largest by size as well - even larger than a lossless format like the PNG. But as we noticed last year, that has to do w/ the predominant use case for the PNG - which seems to be icons and logos.
+We know that images are a great source of page weight. This graphic below shows us the top sources of image weight and the weight distribution. Top 3: JPG, PNG and WebP. So not only is the JPG the most popular image format, it also tends to be the largest by size as well - even larger than a lossless format like the PNG. But as we noticed last year, that has to do with the predominant use case for the PNG, which seems to be icons and logos.
 
-{# Distribution of images sizes by format #}
+{{ figure_markup(
+  image="response-distribution-format.png",
+  caption="Distribution of image sizes by format.",
+  description="Box plot of the distribution of image sizes by format: gif, ico, jpg, png, svg, and webp. Jpg sticks out as having the highest distribution with a 90th percentile exceeding 150 KB per image. Png is second highest at about 100 KB at the 90th percentile. While WebP has a smaller 90th percentile than png, its 75th percentile is higher. gif, ico, and svg all have relatively small distributions near 0 KB.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQlN4Clqeb8aPc63h0J58WfBxoJluSFT6kXn45JGPghw1LGU28hzabMYAATXNY5st9TtjKrr2HnbfGd/pubchart?oid=211653520&format=interactive",
+  sheets_gid="142855724",
+  sql_file="requests_format_distribution_2020.sql"
+) }}
 
-{# Total image bytes by page #}
+{{ figure_markup(
+  image="response-distribution-images.png",
+  caption="Distribution of image response sizes per page.",
+  description="Bar chart showing the distribution of image bytes per page. Desktop pages tend to load more image bytes per page throughout the distribution. The 10, 25, 50, 75, and 90th percentiles for mobile pages are: 67, 284, 928, 2,365, and 4,975 KB of images per page.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQlN4Clqeb8aPc63h0J58WfBxoJluSFT6kXn45JGPghw1LGU28hzabMYAATXNY5st9TtjKrr2HnbfGd/pubchart?oid=2019686506&format=interactive",
+  sheets_gid="730277265",
+  sql_file="request_type_distribution_2020.sql"
+) }}
 
 ## COVID-19
 
