@@ -16,7 +16,7 @@ TYPO_CHAPTERS = {
     'resourcehints': 'resource-hints',
     'thirdparties': 'third-parties',
     'third-party': 'third-parties',
-    'sécurité': 'security'
+    'sécurité': 'security',
     'js': 'javascript'
 }
 
