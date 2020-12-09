@@ -117,7 +117,7 @@ For the widely used Advanced Encryption Standard (AES) key sizes of 128-bit and 
 {{ figure_markup(
   image="security-distribution-of-cipher-suites.png",
   caption="Distribution of cipher suites",
-  description="Bar chart showing the cipher suites used by device, with AES_128_GCM is the most common and is used by 78.4% of desktop and mobile sites, AES_256_GCM is used by 19.1% of desktop and 18.5% of mobile sites, AES_256_CBC used by 1.44% of desktop sites nd 1.86% of mobile sites, CHACHA20_POLY1305 is used by 0.66% and 0.72% of siters respectively, AES_128_CBC is used by 0.43% and 0.44% respectively, and 3DES_EDE_CBC is used by 0.01% of desktop and approximately 0.0% of mobile.",
+  description="Bar chart showing the cipher suites used by device, with AES_128_GCM is the most common and is used by 78.4% of desktop and mobile sites, AES_256_GCM is used by 19.1% of desktop and 18.5% of mobile sites, AES_256_CBC used by 1.44% of desktop sites and 1.86% of mobile sites, CHACHA20_POLY1305 is used by 0.66% and 0.72% of sites respectively, AES_128_CBC is used by 0.43% and 0.44% respectively, and 3DES_EDE_CBC is used by 0.01% of desktop and approximately 0.0% of mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=1464905386&format=interactive",
   sheets_gid="1919501829",
   sql_file="tls_cipher_suite.sql"
@@ -215,7 +215,7 @@ The first one is HTTP Strict Transport Security (HSTS), which can easily be enab
   image="security-hsts-max-age-values-in-days.png",
   alt="HSTS max-age values (in days).",
   caption="HSTS `max-age` values (in days).",
-  description="Bar chart of percentiles of values in the `max-age` attribute, converted to days. In the 10th percentile desktop is 30 days and mobile is 91, in the 25th pcerntile both are 182 days, in the 50th percentile both are 365 days, the 75th percentile is the same at 365 days for both and the 90th percentile has 730 days for both.",
+  description="Bar chart of percentiles of values in the `max-age` attribute, converted to days. In the 10th percentile desktop is 30 days and mobile is 91, in the 25th percentile both are 182 days, in the 50th percentile both are 365 days, the 75th percentile is the same at 365 days for both and the 90th percentile has 730 days for both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=1208109634&format=interactive",
   sheets_gid="236117763",
   sql_file="hsts_max_age_percentiles.sql"
@@ -271,7 +271,7 @@ It is encouraging to see that the adoption of the other attributes is growing co
 
 ## Cookies
 
-From a security point of view, the automatic inclusion of cookies in cross-site requests can be seen as the main culprit of several classes of vulnerabilities. If a website does not have the adequate protections is place (e.g. requiring a unique token on state-changing requests), they may be susceptible to [Cross-Site Request Forgery](https://owasp.org/www-community/attacks/csrf) (CSRF) attacks. As an example, an attacker may issue a POST request in the backgroud, without the user being aware to, for instance, change the password of an unwitting visitor. If the user is logged in, the browser would normally automatically include the cookies in such a request.
+From a security point of view, the automatic inclusion of cookies in cross-site requests can be seen as the main culprit of several classes of vulnerabilities. If a website does not have the adequate protections is place (e.g. requiring a unique token on state-changing requests), they may be susceptible to [Cross-Site Request Forgery](https://owasp.org/www-community/attacks/csrf) (CSRF) attacks. As an example, an attacker may issue a POST request in the background, without the user being aware to, for instance, change the password of an unwitting visitor. If the user is logged in, the browser would normally automatically include the cookies in such a request.
 
 Several other types of attacks rely on the inclusion of cookies in third-party, such as [Cross-Site Script Inclusion](https://www.usenix.org/system/files/conference/usenixsecurity15/sec15-paper-lekies.pdf) (XSSI) and various techniques in the [XS-Leaks](https://xsleaks.dev/) vulnerability class. Furthermore, because the authentication of users is often only done through cookies, an attacker could impersonate a user by obtaining their cookies. This could be done in a man-in-the-middle (MitM) attack, tricking the user to make an authenticated over an insecure channel. Alternatively, by exploiting a cross-site scripting (XSS) vulnerability, the attacker could leak the cookies by accessing `document.cookie` through the DOM.
 
@@ -386,7 +386,7 @@ To allow web developers to evaluate the correctness of their CSP policy, there a
 {{ figure_markup(
   image="security-csp-header-length.png",
   caption="CSP header length.",
-  description="Bar chart showing Percentiles of the length of the CSP header in bytes. At 10th percentils desktop is 23 bytes and mobile is 24 bytes, at 25th percentile both are 25 bytes, at 50th percentile both are 75 bytes, at 75th percentile desktop is 78 bytes and mobile is 81 bytes and at 90th percentile desktop is 365 bytes and mobile is 316 bytes.",
+  description="Bar chart showing Percentiles of the length of the CSP header in bytes. At 10th percentile desktop is 23 bytes and mobile is 24 bytes, at 25th percentile both are 25 bytes, at 50th percentile both are 75 bytes, at 75th percentile desktop is 78 bytes and mobile is 81 bytes and at 90th percentile desktop is 365 bytes and mobile is 316 bytes.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=1825551550&format=interactive",
   sheets_gid="150007358",
   sql_file="csp_number_of_allowed_hosts.sql"
@@ -837,7 +837,7 @@ The [Web Cryptography API](https://www.w3.org/TR/WebCryptoAPI/) offers great Jav
   <figcaption>{{ figure_link(caption="Top used cryptography APIs", sheets_gid="1256054098", sql_file="web_cryptography_api.sql") }}</figcaption>
 </figure>
 
-Our results show that the function `Crypto.getRandomValues` which allows for generatring a random number (in a secure, cryptographic manner) is by far the most widely used one (desktop: 70% and mobile: 68%). We believe Google Analytic's use of this function has a major effect on the usage. In general, we see that mobile websites perform slightly fewer cryptographic operations, although mobile browsers [fully support](https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API#Browser_compatibility) this API.
+Our results show that the function `Crypto.getRandomValues` which allows for generating a random number (in a secure, cryptographic manner) is by far the most widely used one (desktop: 70% and mobile: 68%). We believe Google Analytic's use of this function has a major effect on the usage. In general, we see that mobile websites perform slightly fewer cryptographic operations, although mobile browsers [fully support](https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API#Browser_compatibility) this API.
 
 <p class="note">It should be noted that, since we perform passive crawling, our results in this section will be limited by this. We're not able to identify cases where any interaction is required before the functions are executed.</p>
 
@@ -925,7 +925,7 @@ With regard to security headers that secure content inclusion or that aim to thw
 ### Co-occurrence of other security headers
 
 {{ figure_markup(
-  image="security-headers-as-drivers-of-adotpions-of-other-headers.png",
+  image="security-headers-as-drivers-of-adoption-of-other-headers.png",
   caption="Security header as driver of adoption of other headers",
   description="Bar chart showing relative adoption rate of security mechanism based on the presence of different security headers. `Content-Security-Policy` has 357% for desktop and 368% for mobile, `Expect-CT` has 224% and 235% respectively, `Referrer-Policy` has 265% and 265%, `Strict-Transport-Security` has 275% and 284%, `X-Content-Type-Options` has 309% and 305%, and `X-Frame-Options` has 286% for desktop and 299% for mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=1444988925&format=interactive",
@@ -946,7 +946,7 @@ A very large part of the Web is built with third-party components, at different 
 {{ figure_markup(
   image="security-wordpress-version-evolution.png",
   caption="WordPress version evolution.",
-  description="Stacked bar chart showing the evolution of the versions of WordPress installations from November 2019 until August 2020 for the actively maintained branches of wordpress (4.9, 5.1, 5.2, 5.3, 5.4 and 5.5). In general the chart shows that most installations (approximately 75%) keep updating throughout the year and are now on the latest versions",
+  description="Stacked bar chart showing the evolution of the versions of WordPress installations from November 2019 until August 2020 for the actively maintained branches of WordPress (4.9, 5.1, 5.2, 5.3, 5.4 and 5.5). In general the chart shows that most installations (approximately 75%) keep updating throughout the year and are now on the latest versions",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=2139119698&format=interactive",
   sheets_gid="640505800",
   sql_file="feature_adoption_by_technology.sql",
@@ -959,7 +959,7 @@ As one of the most popular content management systems, WordPress is an attractiv
 {{ figure_markup(
   image="security-evolution-of-wordpress-5-3and5-4-after-update.png",
   caption="Evolution of WordPress 5.3 and 5.4 after update",
-  description="Stacked bar chart showing the evolution of WordPress versions 5.3.2, 5.3.3, 5.4 and 5.4.1. We can see over time starting in March 2020 that 5.3.2 is the only one of those version veing used and has 50.08% adoption, in April 5.4 comes in and takes up third thirds of the adoption of these versions which increases to 54.23% in total, in May 5.4.1 comes out and there is mixed usage of all three versions with a total of 58.78%, in June it has reduced by almost half to 32.76% and most of the remaining usage is 5.4.1, in July these versions are used on just 4.55% of sites, and reducing to 3.59% in August",
+  description="Stacked bar chart showing the evolution of WordPress versions 5.3.2, 5.3.3, 5.4 and 5.4.1. We can see over time starting in March 2020 that 5.3.2 is the only one of those version being used and has 50.08% adoption, in April 5.4 comes in and takes up third thirds of the adoption of these versions which increases to 54.23% in total, in May 5.4.1 comes out and there is mixed usage of all three versions with a total of 58.78%, in June it has reduced by almost half to 32.76% and most of the remaining usage is 5.4.1, in July these versions are used on just 4.55% of sites, and reducing to 3.59% in August",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=503316556&format=interactive",
   sheets_gid="155582197",
   width="600",
@@ -999,7 +999,7 @@ For nginx, one of the most widely used web servers, we see a very static and div
 
 ## Malpractices on the web
 
-Nowadays, the performance of the used technologies plays a particularly relevant role. To this end, technologies are constantly being further developed, optimized, and new technologies launched. One of these new technologies is WebAssembly, which has become a [W3C recommendation](https://www.w3.org/2019/12/pressrelease-wasm-rec.html.en) as of the end of 2019. WebAssembly can be used to develop powerful web applications and has made it possible to run almost native high-performance computing in web browsers. No rose without a thorn; attackers have taken advantage of this technology, and this is how the new attack vector [cryptojacking](https://www.malwarebytes.com/cryptojacking/) came into existence. Attackers used this technology to mine cryptocurrencies on the web browser by using the computer's power of visitors (malicious cryptomining). This is a very attractive technique for attackers – inject a few lines of JavaScript code in the webpage and let all visitors mine for you. Because some websites may also offer bonafide cryptomining on the web, we can't generalize that all websites with cryptomining are in fact cryptojacking. But in most cases, website operators don't offer an opt-in alternative for visitors, and the visitors remain still uninformed as to whether their resources are being used while browsing the website.
+Nowadays, the performance of the used technologies plays a particularly relevant role. To this end, technologies are constantly being further developed, optimized, and new technologies launched. One of these new technologies is WebAssembly, which has become a [W3C recommendation](https://www.w3.org/2019/12/pressrelease-wasm-rec.html.en) as of the end of 2019. WebAssembly can be used to develop powerful web applications and has made it possible to run almost native high-performance computing in web browsers. No rose without a thorn; attackers have taken advantage of this technology, and this is how the new attack vector [cryptojacking](https://www.malwarebytes.com/cryptojacking/) came into existence. Attackers used this technology to mine cryptocurrencies on the web browser by using the computer's power of visitors (malicious cryptomining). This is a very attractive technique for attackers – inject a few lines of JavaScript code in the web page and let all visitors mine for you. Because some websites may also offer bona fide cryptomining on the web, we can't generalize that all websites with cryptomining are in fact cryptojacking. But in most cases, website operators don't offer an opt-in alternative for visitors, and the visitors remain still uninformed as to whether their resources are being used while browsing the website.
 
 {{ figure_markup(
   image="security-cryptominer-usage.png",
