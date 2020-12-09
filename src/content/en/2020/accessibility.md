@@ -303,7 +303,7 @@ In this pattern, a parent container has a `role=”tablist”` with children ele
   height=TODO
 ) }}
 
-For desktop pages, 7.00% have at least one element with a `role=”tablist”` whereas there only 5.79% of pages have elements with a `role=”tab”` and 5.46% of pages have elements with a `role=”tabpanel”`. This suggests that the pattern may only be partially implemented. Even if there is dynamic rendering at play for some of the tab/tabpanel elements, the currently visible or first tab/tabpanel would theoretically be in the DOM on page load.
+For desktop pages, 7.00% have at least one element with a `role="tablist"` whereas there only 5.79% of pages have elements with a `role="tab"` and 5.46% of pages have elements with a `role="tabpanel"`. This suggests that the pattern may only be partially implemented. Even if there is dynamic rendering at play for some of the tab/tabpanel elements, the currently visible or first tab/tabpanel would theoretically be in the DOM on page load.
 
 ##### Presentation
 
