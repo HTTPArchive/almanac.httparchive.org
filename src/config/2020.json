@@ -15,8 +15,7 @@
           "part": "I",
           "chapter": "1",
           "title": "CSS",
-          "slug": "css",
-          "todo": true
+          "slug": "css"
         },
         {
           "part": "I",
@@ -91,8 +90,7 @@
           "part": "II",
           "chapter": "12",
           "title": "Mobile Web",
-          "slug": "mobile-web",
-          "todo": true
+          "slug": "mobile-web"
         },
         {
           "part": "II",
@@ -141,8 +139,7 @@
           "part": "IV",
           "chapter": "18",
           "title": "Page Weight",
-          "slug": "page-weight",
-          "todo": true
+          "slug": "page-weight"
         },
         {
           "part": "IV",
