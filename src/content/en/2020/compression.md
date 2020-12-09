@@ -63,8 +63,7 @@ For image-based assets text-based compression is less useful and not widely empl
 
 ## How to use HTTP compression?
 
-To reduce the size of the files that we plan to serve one could first use some minimizers, e.g. [HTMLMinifier](https://github.com/kangax/html-minifier), [CSSNano](https://github.com/ben-eb/cssnano),
- or [UglifyJS](https://github.com/mishoo/UglifyJS2). However bigger gains are expected from using compression.
+To reduce the size of the files that we plan to serve one could first use some minimizers, e.g. [HTMLMinifier](https://github.com/kangax/html-minifier), [CSSNano](https://github.com/ben-eb/cssnano), or [UglifyJS](https://github.com/mishoo/UglifyJS2). However bigger gains are expected from using compression.
 
 There are two ways of doing the compression on the server side:
 
@@ -238,8 +237,7 @@ In the [Third Parties](./third-parties) chapter, we learn about third parties an
 
 When we compare compression techniques between first and third parties, we can see that third-party content tends to be compressed more than first-party content. Additionally, the percentage of brotli compression is higher for third-party content. This is likely due to the number of resources served from the larger third parties that typically support brotli, such as Google and Facebook.
 
-{# TODO(authors/analysts): Would be nice to have a year-over-year comparison chart here. #}
-Compared with [last year's results](https://almanac.httparchive.org/en/2019/compression#first-party-vs-third-party-compression), we can see that there was a significant increase in the use of compression, notably brotli for first parties, almost to the point that the use of compression is around 40% for both first and third party, and for desktop and mobile. However within the requests that do use compression, for first parties, the ratio of brotli compression is only 18%, while the ratio for third parties is 27%.
+Compared with [last year's results](../2019/compression#first-party-vs-third-party-compression), we can see that there was a significant increase in the use of compression, notably brotli for first parties, almost to the point that the use of compression is around 40% for both first and third party, and for desktop and mobile. However within the requests that do use compression, for first parties, the ratio of brotli compression is only 18%, while the ratio for third parties is 27%.
 
 
 ## How to analyze compression on your sites
