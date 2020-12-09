@@ -69,7 +69,7 @@ Setting an HTML `lang` attribute allows easy translation of a page and better sc
 
 ### Images and their text alternatives
 
-Images are an essential part of the web experience. They can add an enriched context to the surrounding textual information, and not just for sighted users. In 1995, [HTML 2.0](https://www.w3.org/MarkUp/html-spec/html-spec_5.html#SEC5.10) introduced the `alt` attribute, enabling web authors to provide a text alternative for the visual information communicated in an image. A screen reader can convey its visual meaning aurally by announcing the image’s alternative text. Additionally if images are unable to load, the alternative text for a description will be displayed.
+Images are an essential part of the web experience. They can add an enriched context to the surrounding textual information, and not just for sighted users. In 1995, [HTML2.0](https://www.w3.org/MarkUp/html-spec/html-spec_5.html#SEC5.10) introduced the `alt` attribute, enabling web authors to provide a text alternative for the visual information communicated in an image. A screen reader can convey its visual meaning aurally by announcing the image’s alternative text. Additionally if images are unable to load, the alternative text for a description will be displayed.
 
 The 2020 Lighthouse audit data shows that only 54% of sites pass the [test for images with `alt` text](https://dequeuniversity.com/rules/axe/3.5/image-alt). This test looks for the presence of at least one of the `alt`, `aria-label` and `aria-labelledby` attributes on `img` elements. In most cases using the alt attribute is the best choice. Even though `alt` attributes have been around for 25 years, we also found that 21.24% of desktop images and 21.38% of mobile images are lacking alternative text. This is one of the easiest automated checks to test for using your accessibility tool of choice, and should be low hanging fruit and a relatively straightforward problem to solve.
 
@@ -236,7 +236,7 @@ There are 5 rules of ARIA that we need to understand before  making use of this 
 
 ##### The 5 Rules of ARIA (from [W3C’s Using Aria](https://www.w3.org/TR/using-aria/)):
 
-1. If you can use a native HTML element [HTML 5.1] or attribute with the semantics and behavior you require already built in, instead of repurposing an element and adding an ARIA role, state or property to make it accessible, then do so.
+1. If you can use a native HTML element [HTML5.1] or attribute with the semantics and behavior you require already built in, instead of repurposing an element and adding an ARIA role, state or property to make it accessible, then do so.
 2. Do not change native semantics, unless you really have to.
 3. All interactive ARIA controls must be usable with the keyboard.
 4. Do not use `role="presentation"` or `aria-hidden="true"` on a focusable element.
@@ -246,7 +246,7 @@ There are 5 rules of ARIA that we need to understand before  making use of this 
 
 One of the most common ways that ARIA is used is by explicitly defining the role for an element, which communicates its purpose to assistive technology.
 
-HTML 5 introduced many new native elements, all which have [implicit semantics](https://www.w3.org/TR/wai-aria-1.1/#implicit_semantics), including roles. For example the `<nav>` element has an implicit `role="navigation"` and does not need to have this role added explicitly in order to convey its purpose information to assistive technology. Currently 64.54% of desktop pages have at least one instance of an ARIA role attribute. The median site has 2 instances of the `role` attribute.
+HTML5 introduced many new native elements, all which have [implicit semantics](https://www.w3.org/TR/wai-aria-1.1/#implicit_semantics), including roles. For example the `<nav>` element has an implicit `role="navigation"` and does not need to have this role added explicitly in order to convey its purpose information to assistive technology. Currently 64.54% of desktop pages have at least one instance of an ARIA role attribute. The median site has 2 instances of the `role` attribute.
 
 ##### Just use a button!
 
@@ -262,7 +262,7 @@ In the vast majority of these cases, a better pattern than explicitly defining `
 
 ##### Navigation
 
-We found that 22.06% of desktop pages and 21.76% of mobile pages have at least one element with `role="navigation"`, which is a landmark role. Per the 1st rule of ARIA, rather than adding this role to an element, developers should be leveraging the HTML 5 `<nav>` element which comes with the correct semantics implicitly. It is possible that this role has been added explicitly to the `<nav>` element, which would not be an accessibility issue, though it is redundant.
+We found that 22.06% of desktop pages and 21.76% of mobile pages have at least one element with `role="navigation"`, which is a landmark role. Per the 1st rule of ARIA, rather than adding this role to an element, developers should be leveraging the HTML5 `<nav>` element which comes with the correct semantics implicitly. It is possible that this role has been added explicitly to the `<nav>` element, which would not be an accessibility issue, though it is redundant.
 
 ##### Dialog Modals
 
@@ -313,7 +313,7 @@ For desktop pages, 7.00% have at least one element with a `role="tablist"` where
 
 When an element has been given a `role="presentation"` its semantics are stripped away, for both the element it is assigned to and its required children. For example, tables and lists both have required children, so if the parent has a `role="presentation"` this essentially cascades to the child elements, which will also have their semantics stripped. Removing an element’s semantics means that it is no longer that element in any capacity except for its visual appearance. For example, a list with a `role="presentation"` will no longer communicate any information to a screen reader about the list structure.
 
-A common usage of this attribute is for `<table>` elements that have been used for layout rather than  for tabular data. We do not recommend using tables in this way. For layout, we have powerful CSS tools today such as flexbox and CSS grid. In general there are very few use cases where `role="presentation"` is particularly helpful for assistive technology users, use this role sparingly and thoughtfully.
+A common usage of this attribute is for `<table>` elements that have been used for layout rather than  for tabular data. We do not recommend using tables in this way. For layout, we have powerful CSS tools today such as Flexbox and CSS Grid. In general there are very few use cases where `role="presentation"` is particularly helpful for assistive technology users, use this role sparingly and thoughtfully.
 
 <figure markdown>
 | Role         | Desktop | Mobile |
@@ -392,7 +392,7 @@ Forms are one of the most important things to get right in terms of accessibilit
 
 ### Form validation
 
-It is very important that any form error handling be communicated to assistive technology.  There are a variety of techniques for handling this depending on the validation implementation. Web AIM’s [Usable and Accessible Form Validation and Error Recovery](https://webaim.org/techniques/formvalidation/) article is a great resource for learning more about various accessible form validation strategies.  If a form element is required this also needs to be communicated to assistive technology. For native HTML form elements the [required] attribute(https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required) can be used and for customized elements the [aria-required](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-required_attribute) attribute may be needed. If there is an issue with a form submission, this needs to be conveyed to assistive technology.
+It is very important that any form error handling be communicated to assistive technology.  There are a variety of techniques for handling this depending on the validation implementation. Web AIM’s [Usable and Accessible Form Validation and Error Recovery](https://webaim.org/techniques/formvalidation/) article is a great resource for learning more about various accessible form validation strategies.  If a form element is required this also needs to be communicated to assistive technology. For native HTML form elements the [required attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required) can be used and for customized elements the [aria-required](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-required_attribute) attribute may be needed. If there is an issue with a form submission, this needs to be conveyed to assistive technology.
 
 ### Form labels
 
