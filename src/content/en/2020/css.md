@@ -5,7 +5,7 @@ chapter_number: 1
 title: CSS
 description: CSS chapter of the 2020 Web Almanac covering color, units, selectors, layout, typography and fonts, spacing, decoration, animation, and media queries.
 authors: [LeaVerou, svgeesus, rachelandrew]
-reviewers: [fantasai, j9t, estelle, mirisuzanne, catalinred, hankchizljaw]
+reviewers: [estelle, fantasai, j9t, mirisuzanne, catalinred, hankchizljaw]
 analysts: [rviscomi, LeaVerou, dooman87]
 translators: []
 #LeaVerou_bio: TODO
@@ -1498,7 +1498,16 @@ Did you know that `grid-template-columns`, `grid-template-rows`, and `grid-templ
 
 #### Syntax errors
 
+For most of the metrics in this chapter, we used [Rework](https://github.com/reworkcss/css), a CSS parser. While this helps dramatically improve accuracy, it also means we could be less forgiving of syntax errors compared to a browser. Even if one declaration in the entire stylesheet has a syntax error, parsing would fail and that stylesheet would be left out of the analysis. But how many stylesheets *do* contain such syntax errors? Quite substantially more on desktop than mobile it turns out! More specifically, nearly 10% of stylesheets found on desktop pages included at least one unrecoverable syntax error, whereas only 2% of mobile. Do note that these are essentially lower bounds for syntax errors, since not all syntax errors actually cause parsing to fail. For example, a missing semicolon would just result in the next declaration being parsed as part of the value (e.g. `{property: "color", value: "red background: yellow"}`), it would not cause the parser to fail.
+
 #### Nonexistent properties
+
+We also looked at most common nonexistent properties, by using a list of known properties. We excluded prefixed properties from this part of the analysis, and manually excluded unprefixed proprietary properties (e.g. IE’s `behavior`, which oddly still appears on 200K websites). Out of the remaining nonexistent properties:
+
+- 37% of them were a mangled form of a prefixed property (e.g. `webkit-transition` or `-transition`)
+- 43% were an unprefixed form of a property that only exists only prefixed (e.g. `font-smoothing`, which appeared on 384K websites), probably included for compatibility under the incorrect assumption that it's standard, or due to wishful thinking that it will become standard.
+- A typo that has found its way to a popular library. Through this analysis, we found that the property `white-wpace` was present in 234,027 websites. This is way too many websites for the same typo to have occurred organically, so we decided to look into it. And lo and behold, it [turns out](https://twitter.com/rick_viscomi/status/1326739379533000704) it was the Facebook widget! The fix is already in.
+- And another oddity: The property `font-rendering` appears on 2,575 pages. However, we cannot find evidence of such a property existing, with or without a prefix. There is the nonstandard [`-webkit-font-smoothing`](https://medium.com/better-programming/improving-font-rendering-with-css-3383fc358cbc) which is wildly popular, appearing in 3 million websites, or about 49% of pages, but `font-rendering` is not sufficiently close to be a misspelling. There is [`text-rendering`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-rendering) which is used in about 100K of websites, so it is conceivable that 2.5K developers all misremembered and coined a portmanteau of `font-smoothing` and `text-rendering`.
 
 {{ figure_markup(
   image="most-popupular-unknown-properties.png",
@@ -1512,6 +1521,21 @@ Did you know that `grid-template-columns`, `grid-template-rows`, and `grid-templ
 ) }}
 
 #### Longhands before shorthands
+
+Using longhands *after* shorthands is a nice way to use the defaults and override a few properties. It is especially useful with list-valued properties, where using a longhand helps us avoid repeating the same value multiple times. The **opposite** on the other hand — using longhands *before* shorthands — is always a mistake, since the shorthand will overwrite the longhand. For example, take a look at this:
+
+```css
+background-color: rebeccapurple; /* longhand */
+background: linear-gradient(white, transparent); /* shorthand */
+```
+
+This will not produce a gradient from `white` to `rebeccapurple`, but from `white` to `transparent`. The `rebeccapurple` background color will be overwritten by the `background` shorthand that comes after it that resets all its longhands to their initial values.
+
+There are two main reasons that developers make this kind of mistake: either a misunderstanding about how shorthands work and which longhand is reset by which shorthand, or simply leftover cruft from moving declarations around.
+
+So how common is this mistake? Surely, it cannot be *that* common in the top 6 million websites, right? *Wrong.* It turns out, it is **exceedingly common**, occurring at least once in 54% of websites!
+
+This kind of confusion seems to happen way more with the `background` shorthand than any other shorthand: over half (55%) of these mistakes involve putting `background-*` longhands before `background`. In this case, this may actually not be a mistake at all, but good progressive enhancement: Browsers that don’t support a feature -- such as linear gradients -- will render the previously defined longhand values, in this case, a background color. Browsers that do understand the shorthand override the longhand value, either implicitly or explicitly.
 
 {{ figure_markup(
   image="most-popupular-shorthands-after-longhands.png",
