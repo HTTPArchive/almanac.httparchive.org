@@ -186,7 +186,7 @@ With `preload` and `preconnect` resources that have CORS enabled, such as fonts,
 
 {# TODO(authors): Verify 34% is correct, and has support in the sheets results, and that the gid is correct. #}
 {{ figure_markup(
-  caption="The rate of elements with `preload` that use `crossorigin`.",
+  caption="The percent of elements with `preload` that use `crossorigin`.",
   content="34%",
   classes="big-number",
   sheets_gid="1185042785",
@@ -229,7 +229,7 @@ Implementing a `dns-prefetch` fallback in the same `<link>` tag causes a [bug](h
 In the case of "[Preconnect to required origins](https://web.dev/uses-rel-preconnect/)" audit, we saw only 19.67% of pages passing the teast, creating a large opportunity for thousands of websites to start using `preconnect` or `dns-prefetch` to establish early connections to important third-party origins.
 
 {{ figure_markup(
-  caption="Pages that pass the `preconnect` Lighthouse audit.",
+  caption="The percent of pages that pass the `preconnect` Lighthouse audit.",
   content="19.67%",
   classes="big-number",
   sheets_gid="152449420",
@@ -245,7 +245,7 @@ Lastly, running Lighthouse's "[Preload key requests](https://web.dev/uses-rel-pr
 Now let's celebrate the first year of the [Native Lazy Loading](https://addyosmani.com/blog/lazy-loading/) API, which at the time of publishing already has over [72%](https://caniuse.com/loading-lazy-attr) browser support. This new API can be used to defer the load of below-the-fold iframes and images on the page until the user scrolls near them. This can reduce data usage, memory usage, and helps speed up above-the-fold content. Opting-in to lazy load is as simple as adding `loading=lazy`  on `<iframe>` or `<img>` elements.
 
 {{ figure_markup(
-  caption="Percentage of pages using native lazy loading.",
+  caption="The percent of pages using native lazy loading.",
   content="4.02%",
   classes="big-number",
   sheets_gid="2039808014",
@@ -275,7 +275,7 @@ Overall, predictive prefetching is still uncharted territory, but combined with 
 [HTTP/2](./http2) has a feature called "server push" that can potentially improve page performance when your product experiences long Round Trip Times([RTTs](https://developer.mozilla.org/en-US/docs/Glossary/Round_Trip_Time_(RTT))) or server processing. In brief, rather than waiting for the client to send a request, the server preemptively pushes a resource that it predicts the client will request soon afterwards.
 
 {{ figure_markup(
-  caption="Percentage of HTTP/2 Push pages using `preload`/`nopush`.",
+  caption="The percent of HTTP/2 Push pages using `preload`/`nopush`.",
   content="75.36%",
   classes="big-number",
   sheets_gid="308166349",
@@ -327,7 +327,7 @@ This new hint can be used either as an HTML tag or by changing the priority of f
 With `preload` and `prefetch`, the priority is set by the browser depending on the type of resource. By using Priority Hints we can force the browser to change the default option.
 
 {{ figure_markup(
-  caption="The rate of Priority Hint adoption on mobile.",
+  caption="The percent of Priority Hint adoption on mobile.",
   content="0.77%",
   classes="big-number",
   sheets_gid="1596669035",
@@ -340,7 +340,7 @@ The largest use is with script elements, which is unsurprising as the number of 
 
 {# TODO(authors): Make sure the query link is correct, and that the gid is correct. #}
 {{ figure_markup(
-  caption="The rate of mobile resources with a hint that use the \"low\" priority.",
+  caption="The percent of mobile resources with a hint that use the \"low\" priority.",
   content="16%",
   classes="big-number",
   sheets_gid="1098063134",
