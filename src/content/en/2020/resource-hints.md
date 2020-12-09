@@ -18,7 +18,6 @@ featured_stat_2: 9%
 featured_stat_label_2: Sites using <code>preload</code>
 featured_stat_3: 4.02%
 featured_stat_label_3: Sites using native lazy loading
-unedited: true
 ---
 
 ## Introduction
