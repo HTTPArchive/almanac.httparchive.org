@@ -54,7 +54,7 @@ It is surprising that while all those content types would profit from compressio
 
 ## How to use HTTP compression?
 
-To reduce the file sizes of the files that we plan to serve you could first use a some minimizers, e.g. [HTMLMinifier](https://github.com/kangax/html-minifier), [CSSNano](https://github.com/ben-eb/cssnano)
+To reduce the file sizes of the files that we plan to serve you could first use some minimizers, e.g. [HTMLMinifier](https://github.com/kangax/html-minifier), [CSSNano](https://github.com/ben-eb/cssnano)
  or [UglifyJS](https://github.com/mishoo/UglifyJS2). However bigger gains are expected from using compression.
 
 There are two ways of doing the compression on the server side:
@@ -63,7 +63,7 @@ There are two ways of doing the compression on the server side:
   - Dynamically Compressed (compress assets on-the-fly after a request is made)
 
 Since precompression is done beforehand, we can spend more time compressing the assets. For dynamically compressed resources we need to choose the compression levels such that compression takes less time than time difference between sending an uncompressed versus a compressed file. Currently practically all text compression is done by one of two HTTP content encodings: [Gzip](https://tools.ietf.org/html/rfc1952) and [brotli](https://github.com/google/brotli). Both are widely supported by browsers: [can I use brotli](https://caniuse.com/?search=brotli)/[can I use gzip](https://caniuse.com/?search=gzip)
-When you want to use gzip, consider using [Zopfli](https://en.wikipedia.org/wiki/Zopfli), which generates smaller gzip compatible files. This should be done especially for precompressed resourses, since here the greatest [gains are expected](https://cran.r-project.org/web/packages/brotli/vignettes/brotli-2015-09-22.pdf) . See this [comparison between gzip and zopfli](https://blog.codinghorror.com/zopfli-optimization-literally-free-bandwidth/) that takes into account different compression levels for gzip.
+When you want to use gzip, consider using [Zopfli](https://en.wikipedia.org/wiki/Zopfli), which generates smaller gzip compatible files. This should be done especially for pre compressed resources, since here the greatest [gains are expected](https://cran.r-project.org/web/packages/brotli/vignettes/brotli-2015-09-22.pdf) . See this [comparison between gzip and zopfli](https://blog.codinghorror.com/zopfli-optimization-literally-free-bandwidth/) that takes into account different compression levels for gzip.
 
 
 Many popular servers support dynamically and/or pre-compressed HTTP  (https://en.wikipedia.org/wiki/HTTP_compression#Servers_that_support_HTTP_compression) and many of them support Brotli: https://en.wikipedia.org/wiki/Brotli
@@ -235,12 +235,12 @@ Additionally, the percentage of brotli compression is higher for third-party con
   <figcaption>{{ figure_link(caption="First-party versus third-party compression by device type.", sheets_gid="862864630", sql_file="19_03.party_of_content_encoding.sql.sql") }}</figcaption>
 </figure>
 
-Comparing with [last year's results](https://almanac.httparchive.org/en/2019/compression#first-party-vs-third-party-compression), we can see that there was a significant increase in the use of compression, notably brotli for first parties, almost to the point that the use of compression is around 40% for both first and third party and for desktop and mobile. However within the requests that do use compression, for first party the ratio of brotli compression is only 18%, while the ratio for third party is 27%.
+Compared with [last year's results](https://almanac.httparchive.org/en/2019/compression#first-party-vs-third-party-compression), we can see that there was a significant increase in the use of compression, notably brotli for first parties, almost to the point that the use of compression is around 40% for both first and third party and for desktop and mobile. However within the requests that do use compression, for first parties the ratio of brotli compression is only 18%, while the ratio for third parties is 27%.
 
 
 ## How to Analyze compression on your sites
 
-You can you [Firefox Developer Tools](https://developer.mozilla.org/en-US/docs/Tools) or [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) to quickly figure out for what content a website already uses some kind of compression.
+You can use [Firefox Developer Tools](https://developer.mozilla.org/en-US/docs/Tools) or [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) to quickly figure out for what content a website already uses some kind of compression.
 For this go to Network tab, right click and activate "Content Encoding" under Response Headers. Hovering over the size of individual files you will see "transferred over network" and "resource size". Aggregated for the entire site one can see size/transferred size for Firefox and  "transferred" and "resources" for Chrome on the bottom left hand side of the Network tab.
 
 {{ figure_markup(
