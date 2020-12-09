@@ -12,13 +12,13 @@ simonhearne_bio: Simon is a web performance architect, he is passionate about he
 discuss: 2042
 results: https://docs.google.com/spreadsheets/d/1uW4SMkC45b4EbC4JV1xKAUhwGN2K8j0qFy_jSIYnHhI/
 queries: 06_Third_Parties
-featured_quote: Third-party content is critical to most websites, from analytics and advertizing to video and image content. In this chapter we review how prevalent third-party content is on the web and what impact is has on key performance indicators.
+featured_quote: Third-party content is more prevalent than ever, 94% of pages have at least one third-party resource and the median page has 24. In this chapter we review the prevalence of third-party content, the impact on page weight and browser CPU, then suggest methods to reduce the impact of third-party content on page performance.
 featured_stat_1: 94.1%
 featured_stat_label_1: Pages with third-party content
 featured_stat_2: 21.5%
 featured_stat_label_2: Third-party content delivered as JavaScript
-featured_stat_3: 38.5%
-featured_stat_label_3: Third-party content delivered as Images
+featured_stat_3: 24
+featured_stat_label_3: Third-party requests on the median page
 unedited: true
 ---
 ## Introduction
