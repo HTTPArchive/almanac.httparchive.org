@@ -111,7 +111,7 @@ As raw numbers, those may or may not jump out at you depending on how much of a 
 That 153 KB equates to ~37% of the total script size that we send down to mobile devices. There's definitely some room for improvement here.
 
 ### Request Count
-Another way of looking at how much JavaScript we use is to explore how many JavaScript requests are made on each page. While reducing the number of requests was paramount to maintaining good performance with HTTP/1.1, with HTTP/2 the opposite is the case: breaking JavaScript down into [smaller, individual files](https://web.dev/granular-chunking-nextjs/) is [typically better for performance](https://almanac.httparchive.org/en/2019/http2#impact-of-http2). 
+Another way of looking at how much JavaScript we use is to explore how many JavaScript requests are made on each page. While reducing the number of requests was paramount to maintaining good performance with HTTP/1.1, with HTTP/2 the opposite is the case: breaking JavaScript down into [smaller, individual files](https://web.dev/granular-chunking-nextjs/) is [typically better for performance](https://almanac.httparchive.org/en/2019/http2#impact-of-http2).
 
 {{ figure_markup(
   image="requests-2020.png",
@@ -225,7 +225,7 @@ Overall, we see 16.7% of mobile pages using at least one of the two resource hin
 
 Of that, nearly all of the usage is coming from `preload`. While 16.6% of mobile pages use at least one `preload` hint to load JavaScript, only .36% of mobile pages use at least one `prefetch` hint.
 
-There's a risk, particularly with `preload`, of using too many hints and reducing their effectiveness, so it's worth looking at the pages that do use these hints to see how many hints they're using. 
+There's a risk, particularly with `preload`, of using too many hints and reducing their effectiveness, so it's worth looking at the pages that do use these hints to see how many hints they're using.
 
 {# distribution of preload and prefetch charts #}
 
@@ -234,7 +234,7 @@ At the median, pages that use a `prefetch` hint to load JavaScript use three, wh
 ## How do we serve JavaScript?
 As with any text-based resource on the web, we can save significant file savings through minimization and compression. Neither of these are new optimizations—they've been around for quite awhile—so we should expect to see them applied in more cases than not.
 
-One of the audits in Lighthouse checks for unminified JavaScript, and provides a score (0 being the worst, 100 being the best) based on the findings. 
+One of the audits in Lighthouse checks for unminified JavaScript, and provides a score (0 being the worst, 100 being the best) based on the findings.
 
 {{ figure_markup(
   image="lighthouse-unminified-js.png",
@@ -245,9 +245,9 @@ One of the audits in Lighthouse checks for unminified JavaScript, and provides a
   sql_file="lighthouse_unminified_js.sql"
 ) }}
 
-The chart above shows that most pages tested (77%) get a score of 90 or above, meaning that few unminified scripts are found. 
+The chart above shows that most pages tested (77%) get a score of 90 or above, meaning that few unminified scripts are found.
 
-Overall, only 4.5% of the JavaScript requests recorded are unminified. 
+Overall, only 4.5% of the JavaScript requests recorded are unminified.
 
 Interestingly, while we've picked on 3rd party requests a bit, this is one area where third-party scripts are doing better than first-party scripts. 82% of the average mobile page's unminified JavaScript bytes come from first-party code.
 
@@ -299,7 +299,7 @@ It's important that we think critically about the tools we use to build the web 
 ### Libraries
 HTTP Archive uses Wappalyzer to detect technologies in use on a given page. Wappalazyer tracks both JavaScript Libraries (think of these as a collection of snippets or helper functions to ease development, like jQuery) and JavaScript Frameworks (these are more likely scaffolding and provide templating and structure, like React).
 
-The popular libraries in use are largely unchanged from last year, with jQuery continuing to dominate usage and only one of the top 21 libraries falling out (lazy.js, replaced by DataTables). In fact, even the percentages of the top libraries has barely changed from last year. 
+The popular libraries in use are largely unchanged from last year, with jQuery continuing to dominate usage and only one of the top 21 libraries falling out (lazy.js, replaced by DataTables). In fact, even the percentages of the top libraries has barely changed from last year.
 
 {# table? showing rank, library, percentage and last years rank #}
 
@@ -313,7 +313,7 @@ Both are very sound guesses, and it seems the situation hasn't changed much on e
 In fact, the dominance of jQuery is supported even further when you stop to consider that, of the top 10 libraries, 6 of them are either jQuery or require jQuery in order to be used (jQuery UI, jQuery Migrate, FancyBox, Lightbox and Slick).
 
 ### Frameworks
-When we look at the frameworks, we also don't see much of a dramatic change in terms of adoption in the main frameworks that were highlighted last year. Vue.js has seen a significant increase, and AMP grew a bit, but most of them are more or less where they were a year ago. 
+When we look at the frameworks, we also don't see much of a dramatic change in terms of adoption in the main frameworks that were highlighted last year. Vue.js has seen a significant increase, and AMP grew a bit, but most of them are more or less where they were a year ago.
 
 {# Compare same frameworks from last year's chapter to this year in bar chart? #}
 
@@ -463,9 +463,9 @@ We do also see a fair amount of more "modern" frameworks, like React, Vue and An
   <table>
     <thead>
       <tr>
-        <th>Combination</th>
-        <th>Without jQuery</th>
-        <th>With jQuery</th>
+        <th scope="col">Combination</th>
+        <th scope="col">Without jQuery</th>
+        <th scope="col">With jQuery</th>
       </tr>
     </thead>
     <tbody>
@@ -512,9 +512,9 @@ We do also see a fair amount of more "modern" frameworks, like React, Vue and An
     </tbody>
     <tfoot>
       <tr>
-        <th>Grand Total</th>
-        <th class="numeric">1.7%</th>
-        <th class="numeric">1.4%</th>
+        <th scope="col">Grand Total</th>
+        <th scope="col" class="numeric">1.7%</th>
+        <th scope="col" class="numeric">1.4%</th>
       </tr>
     </tfoot>
   </table>
@@ -541,7 +541,7 @@ We get a very similar picture when looking at main thread time for pages where t
 
 {# Median main thread by JS framework #}
 
-Ember's mobile main thread time jumps out and kind of distorts the graph with how long it takes. Pulling it out makes the picture a bit easier to understand. 
+Ember's mobile main thread time jumps out and kind of distorts the graph with how long it takes. Pulling it out makes the picture a bit easier to understand.
 
 {# Median main thread by JS framework, no Ember #}
 
@@ -556,7 +556,7 @@ As you would expect, there's a gap for all tools in use due to the lower process
 ## What's the Impact?
 We have a pretty good picture now of how much JavaScript we use, where it comes from and what we use it for. While that's interesting enough on its own, the real kicker is the "so what?" What impact does all this script actually have on the experience of our pages?
 
-The first thing we should consider is what happens with all that JavaScript once its been downloaded. Downloading is only the first part of the JavaScript journey. The browser still has to parse all that script, compile it, and eventually execute it. While browsers are increasingly finding ways to offload 
+The first thing we should consider is what happens with all that JavaScript once its been downloaded. Downloading is only the first part of the JavaScript journey. The browser still has to parse all that script, compile it, and eventually execute it. While browsers are increasingly finding ways to offload
 
 If you recall, there was only a 30kb difference between what is shipped to a mobile device versus a desktop device. Depending on your point of view, you could be forgiven for not getting to upset about the small gap in the amount of code sent to a desktop browser versus a mobile one—after all, what's an extra 30kb or so at the median, right?
 
@@ -677,7 +677,7 @@ Of the roughly 5 million or so mobile pages that are tested against, 81% of them
 
 In other words, get folks to migrate away from those outdated, vulnerable versions of jQuery and we would see the number of sites with known vulnerabilities plummet (at least, until we start finding some in the newer frameworks).
 
-The bulk of the vulnerabilities found fall into the "medium" severity category. 
+The bulk of the vulnerabilities found fall into the "medium" severity category.
 
 {{ figure_markup(
   image="vulnerabilities-by-severity.png",
