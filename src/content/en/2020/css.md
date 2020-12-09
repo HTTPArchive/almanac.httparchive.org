@@ -950,6 +950,10 @@ The median desktop page has 14 box-sizing declarations. Mobile has 17. Perhaps d
 
 ## Transitions and animations
 
+Transitions and animations have overall become very popular with the `transition` property being used on 81% of all pages and `animation` on 73% of mobile pages and 70% of desktop pages. It is somewhat surprising that usage is not lower on mobile, where one would expect that [conserving battery power](https://css-tricks.com/how-web-content-can-affect-power-usage/) would be a priority. On the other hand, CSS animations are *far* more battery efficient than JS animation, especially the majority of them that just animate transforms and opacity (see next section).
+
+The single most common transition property specified is `all`, used in 41% of pages. This is a little baffling because `all` is the initial value, so it does not actually need to be explicitly specified. After that, fade in/out transitions appear to be the most common type, used in over one third of crawled pages, followed by transitions on the `transform` property (most likely spin, scale, movement transitions). Surprisingly, transitioning `height` is much more popular than transitioning `max-height`, even though the latter is a commonly taught workaround when the start or end height is unknown (auto). It was also surprising to see significant usage for the `scale` property (2%), despite its lack of support beyond Firefox. Intentional usage of cutting edge CSS, a typo, or a misunderstanding of how to animate transforms?
+
 {{ figure_markup(
   image="transition-properties.png",
   caption="Adoption of transition properties as a percent of pages.",
@@ -958,6 +962,8 @@ The median desktop page has 14 box-sizing declarations. Mobile has 17. Perhaps d
   sheets_gid="134272305",
   sql_file="transition_properties.sql"
 ) }}
+
+We were glad to discover that most of these transitions are fairly short, with the median transition duration being only 300ms, and 90% of websites having median durations of less than half a second. This is generally good practice, as longer transitions can make a UI feel sluggish, while a short transition communicates a change without getting in the way.
 
 {{ figure_markup(
   image="transition-durations.png",
@@ -968,6 +974,8 @@ The median desktop page has 14 box-sizing declarations. Mobile has 17. Perhaps d
   sql_file="transition_durations.sql"
 ) }}
 
+The specification authors got it right! `Ease` is the most popular timing function specified, even though it's the default so it can actually be omitted. Perhaps people explicitly specify the defaults because they prefer the self documenting verbosity, or — perhaps more likely — because they don't know that they are defaults. Despite the drawbacks of linearly progressing animation (it tends to look dull and unnatural), `linear` is the second most highly used timing function with 19.1%. It is also interesting that the built-in easing functions accommodate over 87% of all transitions: only 12.7% chose to specify a custom easing via `cubic-bezier()`.
+
 {{ figure_markup(
   image="transition-timing-functions.png",
   caption="Relative popularity of timing functions as a percent of occurrences on mobile pages.",
@@ -976,6 +984,8 @@ The median desktop page has 14 box-sizing declarations. Mobile has 17. Perhaps d
   sheets_gid="1514240349",
   sql_file="transition_timing_functions.sql"
 ) }}
+
+A major driver of animation adoption seems to be FontAwesome, as evidenced by the animation name `fa-spin` appearing in 1 out of 4 pages and thus topping the list of most popular animation names. While there are a wide variety of animation names, it appears that most of them fall into only a few basic categories, with 1 in 5 animations being some kind of spin. That may also explain the high percentage of linearly progressing transitions & animations: if we want a smooth perpetual rotation, `linear` is the way to go.
 
 ## Visual effects
 
