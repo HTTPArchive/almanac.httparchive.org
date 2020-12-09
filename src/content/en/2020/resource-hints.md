@@ -2,7 +2,7 @@
 part_number: IV
 chapter_number: 21
 title: Resource Hints
-description: Resource Hints chapter of the 2020 Web Almanac covering usage of dns-prefetch, preconnect, preload, prefetch, priority hints, and native lazy loading.
+description: Resource Hints chapter of the 2020 Web Almanac covering usage of dns-prefetch, preconnect, preload, prefetch, Priority Hints, and native lazy loading.
 authors: [Zizzamia]
 reviewers: [jessnicolet, pmeenan, giopunt, mgechev, notwillk]
 analysts: [khempenius]
@@ -77,7 +77,7 @@ The [`preload`](https://web.dev/uses-rel-preload/) hint initiates an early reque
 
 Be mindful of what you are going to `preload`, because it can delay the download of other resources, so use it only for what is most critical to help you improve the Largest Contentful Paint ([LCP](https://web.dev/lcp/)). Also, when used on Chrome, it tends to over-prioritize `preload` resources and potentially dispatches preloads before other critical resources.
 
-Lastly, if used in a HTTP response header, some CDN's will also automatically turn a preload into a HTTP/2 push which can over-push cached resources.
+Lastly, if used in a HTTP response header, some CDN's will also automatically turn a `preload` into a [HTTP/2 push](#http2-push) which can over-push cached resources.
 
 ### `prefetch`
 
@@ -87,7 +87,7 @@ The [`prefetch`](https://web.dev/link-prefetch/) hint allows us to initiate low-
 <link rel="prefetch" as="script" href="next-page.bundle.js">
 ```
 
-There are a variety of ways to implement a resource's predictions logic, it could be based on signals like user mouse movement, common user flows/journeys, or even based on a combination of both on top of machine learning.
+There are a variety of ways to implement a resource's prediction logic, it could be based on signals like user mouse movement, common user flows/journeys, or even based on a combination of both on top of machine learning.
 
 Be mindful, depending on the [quality](https://github.com/andydavies/http2-prioritization-issues#current-status) of HTTP/2 prioritization of the CDN used, `prefetch` prioritization could either improve performance or make it slower, by over prioritizing `prefetch` requests and taking away important bandwidth for the initial load. Make sure to double check the CDN you are using and adapt to take into consideration some of the best practices shared in [Andy Davies's](https://andydavies.me/blog/2020/07/08/rel-equals-prefetch-and-the-importance-of-effective-http-slash-2-prioritisation/) article.
 
@@ -177,7 +177,7 @@ With `preload` many different content-types can be preloaded and the [full list]
   sql_file="as_attribute_by_year.sql"
 ) }}
 
-Compared to the trend in 2019, we've seen rapid growth in font and style usage with the `as` attribute. This is likely related to developers increasing the priority of critical CSS and also combining `preload` fonts with `display:optional` to [improve](https://web.dev/optimize-cls/#web-fonts-causing-foutfoit) Cumulative Layout Shift ([CLS](https://web.dev/cls/)).
+Compared to the trend in [2019](../2019/resource-hints#the-as-attribute), we've seen rapid growth in font and style usage with the `as` attribute. This is likely related to developers increasing the priority of critical CSS and also combining `preload` fonts with `display:optional` to [improve](https://web.dev/optimize-cls/#web-fonts-causing-foutfoit) Cumulative Layout Shift ([CLS](https://web.dev/cls/)).
 
 Be mindful that omitting the `as` attribute, or having an invalid value will make it harder for the browser to determine the correct priority and in some cases, such as scripts, can even cause the resource to be fetched twice.
 
@@ -273,7 +273,7 @@ Overall, predictive prefetching is still uncharted territory, but combined with 
 
 ## HTTP/2 Push
 
-HTTP/2 has a feature called "server push" that can potentially improve page performance when your product experiences long Round Trip Times([RTTs](https://developer.mozilla.org/en-US/docs/Glossary/Round_Trip_Time_(RTT))) or server processing. In brief, rather than waiting for the client to send a request, the server preemptively pushes a resource that it predicts the client will request soon afterwards.
+[HTTP/2](./http2) has a feature called "server push" that can potentially improve page performance when your product experiences long Round Trip Times([RTTs](https://developer.mozilla.org/en-US/docs/Glossary/Round_Trip_Time_(RTT))) or server processing. In brief, rather than waiting for the client to send a request, the server preemptively pushes a resource that it predicts the client will request soon afterwards.
 
 {{ figure_markup(
   caption="Percentage of HTTP/2 Push pages using `preload`/`nopush`.",
@@ -328,7 +328,7 @@ This new hint can be used either as an HTML tag or by changing the priority of f
 With `preload` and `prefetch`, the priority is set by the browser depending on the type of resource. By using Priority Hints we can force the browser to change the default option.
 
 {{ figure_markup(
-  caption="The rate of priority hint adoption on mobile.",
+  caption="The rate of Priority Hint adoption on mobile.",
   content="0.77%",
   classes="big-number",
   sheets_gid="1596669035",
@@ -349,7 +349,7 @@ The largest use is with script elements, which is unsurprising as the number of 
 ) }}
 
 {# TODO(authors): Review this revised section. #}
-There are over 79%{# TODO(authors): 79 or 83? #} of resources with "high" priority, but something we should pay even more attention to is the 16% of resources with "low" priority.
+The data shows us that 79%{# TODO(authors): 79 or 83? #} of resources using Priority Hints use a "high" priority, but something we should pay even more attention to is the 16% of resources with "low" priority.
 
 Priority hints have a clear advantage as a tool to prevent wasteful loading via the "low" priority by helping the browser decide what to de-prioritize and giving back significant CPU and bandwidth to complete critical requests first, rather than as a tactic to try to get resources loaded more quickly with the "high" priority.
 
