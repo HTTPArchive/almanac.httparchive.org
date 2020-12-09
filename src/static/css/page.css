@@ -581,6 +581,13 @@ figure .big-number {
   color: #62718b;
 }
 
+figure .medium-number {
+  text-align: center;
+  font: bold 64px/1em Poppins, sans-serif;
+  font: bold 4rem/1em Poppins, sans-serif;
+  color: #62718b;
+}
+
 figure .really-big-number {
   text-align: center;
   font: bold 24px/1em Poppins, sans-serif;
