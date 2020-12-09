@@ -567,8 +567,18 @@
       "github": "ericwbailey",
       "twitter": "ericwbailey"
     },
+    "estelle": {
+      "name": "Estelle Weyl",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/69888?v=4&s=200",
+      "website": "http://standardista.com/",
+      "github": "estelle",
+      "twitter": "estellevw"
+    },
     "fantasai": {
-      "name": "Fantasai",
+      "name": "Elika Etemad aka fantasai",
       "teams": [
         "reviewers"
       ],
