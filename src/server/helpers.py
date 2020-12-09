@@ -1,6 +1,6 @@
 from flask import request, redirect, url_for, render_template as flask_render_template
 from .config import TEMPLATES_DIR, get_config, get_timestamps_config, \
-                    DEFAULT_YEAR, SUPPORTED_LANGUAGES, SUPPORTED_YEARS
+                    DEFAULT_YEAR, SUPPORTED_LANGUAGES, SUPPORTED_YEARS, SUPPORTED_CHAPTERS
 from .language import get_language, DEFAULT_LANGUAGE
 from werkzeug.routing import BaseConverter
 import os.path
@@ -49,11 +49,12 @@ def render_template(template, *args, **kwargs):
     date_published = get_file_date_info(template, "date_published")
     date_modified = get_file_date_info(template, "date_modified")
     ebook_size_in_mb = get_ebook_size_in_mb(lang, year)
+    supported_chapters = SUPPORTED_CHAPTERS.get(year)
 
     kwargs.update(year=year, lang=lang, language=language, supported_languages=template_supported_languages,
                   supported_years=template_supported_years, all_supported_years=SUPPORTED_YEARS,
-                  date_published=date_published, date_modified=date_modified, ebook_size_in_mb=ebook_size_in_mb,
-                  get_file_date_info=get_file_date_info, config=config)
+                  supported_chapters=supported_chapters, date_published=date_published, date_modified=date_modified,
+                  ebook_size_in_mb=ebook_size_in_mb, get_file_date_info=get_file_date_info, config=config)
     return flask_render_template(template, *args, **kwargs)
 
 
@@ -101,12 +102,15 @@ def get_chapter_nextprev(config, chapter_slug):
             if found and 'todo' not in chapter:
                 next_chapter = chapter
                 break
-            elif chapter.get('slug') == chapter_slug and 'todo' not in chapter:
+            elif chapter.get('slug') == chapter_slug not in chapter:
                 found = True
             elif 'todo' not in chapter:
                 prev_chapter = chapter
         if found and next_chapter:
             break
+
+    if not found:
+        return (None, None)
 
     return prev_chapter, next_chapter
 
@@ -135,9 +139,13 @@ def convert_old_image_path(folder):
 # anyway, so I think this is the cleanest.
 def get_ebook_methodology(lang, year):
     methodology_template = render_template('%s/%s/methodology.html' % (lang, year))
+    if not isinstance(methodology_template, str):
+        return False
     methodology_maincontent = re.search('<article id="maincontent" class="content">(.+?)</article>',
                                         methodology_template, re.DOTALL | re.MULTILINE)
-    if not methodology_maincontent:
+
+    # Can't test this as should never end up here unless bad template to 'pragma no cover' it is
+    if not methodology_maincontent:  # pragma no cover
         return False
 
     methodology_maincontent = methodology_maincontent.group(1)

@@ -130,6 +130,17 @@
 
 .index li li li a {
   padding-left: 48px;
+  padding-left: 3rem;
+}
+
+.index li li li li a {
+  padding-left: 64px;
+  padding-left: 4rem;
+}
+
+.index li li li li li a {
+  padding-left: 80px;
+  padding-left: 5rem;
 }
 
 .index li::before {
@@ -431,6 +442,7 @@ figure .anchor-link {
 }
 
 figure {
+  position: relative;
   display: flex;
   flex-direction: column;
   margin: 15px -8px;
@@ -438,7 +450,6 @@ figure {
   padding: 8px;
   padding: 0.5rem;
   font-style: italic;
-  overflow-x: auto;
 }
 
 figure > p {
@@ -472,6 +483,71 @@ figcaption {
   text-align: center;
 }
 
+.figure-dropdown {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.figure-dropdown button {
+  opacity: 0.5;
+  border: none;
+  padding: 1em;
+  color: #0b1423;
+}
+
+.figure-dropdown button:focus,
+.figure-dropdown button:hover {
+  opacity: 1;
+  color: inherit;
+}
+
+.figure-dropdown-list.nav-dropdown-list {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  border-radius: 16px;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.figure-dropdown-list li {
+  display: flex;
+}
+
+.figure-dropdown-list a {
+  text-decoration: none;
+  padding: 15px 20px;
+}
+
+.figure-dropdown-list a:hover,
+.figure-dropdown-list a:focus {
+  text-decoration: underline;
+  background-color: #5c687d;
+  color: white;
+}
+
+.figure-dropdown svg {
+  pointer-events: none;
+}
+
+.figure-dropdown .nav-dropdown-btn::after {
+  display: none;
+}
+
+.figure-dropdown .nav-dropdown-btn.dropdown-open {
+  background-color: transparent;
+  border: none;
+}
+
+.figure-dropdown .nav-dropdown-list {
+  background-color: white;
+  border-color: #5c687d;
+}
+
 table {
   margin: 0 auto;
   max-width: 100%;
@@ -502,6 +578,13 @@ figure .big-number {
   text-align: center;
   font: bold 128px/1em Poppins, sans-serif;
   font: bold 8rem/1em Poppins, sans-serif;
+  color: #62718b;
+}
+
+figure .medium-number {
+  text-align: center;
+  font: bold 64px/1em Poppins, sans-serif;
+  font: bold 4rem/1em Poppins, sans-serif;
   color: #62718b;
 }
 
@@ -689,24 +772,4 @@ pre {
 
 .code-block code {
   width: 100%;
-}
-
-.code-comment {
-  color: #006400;
-}
-
-.code-keyword {
-  color: #4a3244;
-}
-
-.code-function {
-  color: #1a2b49;
-}
-
-.code-string {
-  color: #2c4a73;
-}
-
-.code-number {
-  color: #00f;
 }

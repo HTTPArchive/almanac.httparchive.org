@@ -78,8 +78,9 @@ Developers can estimate the available storage by calling `navigator.storage.esti
 
 {{ figure_markup(
   image="storage_manager_api_estimate.png",
+  alt="Number of pages using the estimate method of the StorageManager API.",
   caption="Number of pages using the estimate method of the StorageManager API.",
-  description="Chart of the usage of StorageManager API's estimate method, based on the number of pages monitored by HTTPArchive. It compares the usage on mobile and desktop devices. It shows a linear growth on the desktop, while it shows a hockey stick growth for mobile devices. In October, approximately 34,000 mobile sites and 27,000 desktop sites make use of it.",
+  description="Chart of the usage of StorageManager API's estimate method, based on the number of pages monitored by HTTP Archive. It compares the usage on mobile and desktop devices. It shows a linear growth on the desktop, while it shows a hockey stick growth for mobile devices. In October, approximately 34,000 mobile sites and 27,000 desktop sites make use of it.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1853644024&format=interactive",
   sheets_gid="1811313356",
   sql_file="durable_storage_estimate_usage.sql"
@@ -94,8 +95,9 @@ There are two categories of web storage: "Best Effort" and "Persistent", with th
 
 {{ figure_markup(
   image="storage_manager_api_persist.png",
+  alt="Number of pages using the persist method of the StorageManager API.",
   caption="Number of pages using the persist method of the StorageManager API.",
-  description="Chart of the usage of StorageManager API's persist method, based on the number of pages monitored by HTTPArchive. It compares the usage on mobile and desktop devices. On desktop pages, the usage is almost steady, while there's more fluctuation on mobile devices. In October 2020, 25 desktop pages and 176 mobile pages make use of the API.",
+  description="Chart of the usage of StorageManager API's persist method, based on the number of pages monitored by HTTP Archive. It compares the usage on mobile and desktop devices. On desktop pages, the usage is almost steady, while there's more fluctuation on mobile devices. In October 2020, 25 desktop pages and 176 mobile pages make use of the API.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=644836316&format=interactive",
   sheets_gid="1095648844",
   sql_file="durable_storage_persist_usage.sql"
@@ -155,6 +157,7 @@ The `navigator.wakeLock.request()` method creates a wake lock. This method takes
 
 {{ figure_markup(
   image="screen_wake_lock_api.png",
+  alt="Numbers of pages using Screen Wake Lock API.",
   caption="Numbers of pages using Screen Wake Lock API.",
   description="Chart of Screen Wake Lock API usage, based on the number of pages monitored by the HTTP Archive, comparing desktop and mobile pages. In October 2020, the API is used by 10 desktop and 5 mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=718278185&format=interactive",
@@ -163,7 +166,7 @@ The `navigator.wakeLock.request()` method creates a wake lock. This method takes
   )
 }}
 
-BettyCrocker.com, a popular cooking website in the US, offers their users an option to prevent the screen from going dark while cooking with the help of the Screen Wake Lock API. In a [case study](https://web.dev/betty-crocker/), they published that the average session duration was 3.1 times longer than normal, the bounce rate reduced by 50%, and purchase intent indicators increased by about 300%. The interface therefore has a directly measurable effect on the success of the website or application, repectively. The Screen Wake Lock API shipped with Google Chrome 84 in July 2020. The HTTP Archive only has data for April, May, August, September and October. After the release of Chrome 84, usage rose quickly. In October 2020, the API was adopted on 10 desktop and 5 mobile pages.
+BettyCrocker.com, a popular cooking website in the US, offers their users an option to prevent the screen from going dark while cooking with the help of the Screen Wake Lock API. In a [case study](https://web.dev/betty-crocker/), they published that the average session duration was 3.1 times longer than normal, the bounce rate reduced by 50%, and purchase intent indicators increased by about 300%. The interface therefore has a directly measurable effect on the success of the website or application, respectively. The Screen Wake Lock API shipped with Google Chrome 84 in July 2020. The HTTP Archive only has data for April, May, August, September and October. After the release of Chrome 84, usage rose quickly. In October 2020, the API was adopted on 10 desktop and 5 mobile pages.
 
 ## Idle Detection API
 
@@ -201,7 +204,7 @@ registration.periodicSync.register('articles', {
 
 For each tick of the interval, and if the device is online, the browser triggers the Service Worker's `periodicsync` event. Then, the Service Worker script can perform the necessary steps to synchronize the data:
 
-```
+```js
 self.addEventListener('periodicsync', (event) => {
   if (event.tag === 'articles') {
     event.waitUntil(syncStuff());
@@ -213,15 +216,16 @@ At the time of this writing, only Chromium-based browsers implement this API. On
 
 {{ figure_markup(
   image="periodic_background_sync_api.png",
+  alt="Number of pages using Periodic Background Sync API.",
   caption="Number of pages using Periodic Background Sync API.",
-  description="Chart of Idle Detection API usage, based on the number of pages monitored by HTTPArchive. It compares the usage on mobile and desktop devices. Since April 2020, the API is used by one to two desktop and mobile pages.",
+  description="Chart of Periodic Background Sync API usage, based on the number of pages monitored by HTTP Archive. It compares the usage on mobile and desktop devices. Since April 2020, the API is used by one to two desktop and mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1444904371&format=interactive",
   sheets_gid="386193538",
   sql_file="periodic_background_sync_usage.sql"
   )
 }}
 
-The use of the interface is currently very low. Over 2020, only one or two pages monitored by HTTP Archive made use of this API. 
+The use of the interface is currently very low. Over 2020, only one or two pages monitored by HTTP Archive made use of this API.
 
 ## Integration with native app stores
 
@@ -229,7 +233,7 @@ PWAs are a versatile application model. However, in some cases, it may still mak
 
 To detect if the user already has a related native application or PWA on the system, developers can use the [getInstalledRelatedApps() method](https://web.dev/get-installed-related-apps/) ([WICG Draft Community Group Report](https://wicg.github.io/get-installed-related-apps/spec/)) on the `navigator` object. This method is currently provided by Chromium-based browsers and works for both Android and Universal Windows Platform (UWP) apps. Developers need to adjust the native app bundles to refer to the website and add information about the native app(s) to the Web App Manifest of the PWA. Calling the `getInstalledRelatedApps()` method will then return the list of apps installed on the user's device:
 
-```
+```js
 const relatedApps = await navigator.getInstalledRelatedApps();
 relatedApps.forEach((app) => {
   console.log(app.id, app.platform, app.url);
@@ -239,7 +243,7 @@ relatedApps.forEach((app) => {
 {{ figure_markup(
   image="get_installed_related_apps.png",
   caption="Number of pages using getInstalledRelatedApps().",
-  description="Chart of getInstalledRelatedApps() usage, based on the number of pages monitored by HTTPArchive. It compares the usage on mobile and desktop devices. It shows a steady growth for mobile devices, peaking at 363 pages in October 2020 compared to 44 desktop pages.",
+  description="Chart of getInstalledRelatedApps() usage, based on the number of pages monitored by HTTP Archive. It compares the usage on mobile and desktop devices. It shows a steady growth for mobile devices, peaking at 363 pages in October 2020 compared to 44 desktop pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1774881171&format=interactive",
   sheets_gid="860146688",
   sql_file="get_installed_related_apps_usage.sql"
@@ -287,7 +291,7 @@ The WebSocketStream API transparently solves backpressure, as the stream readers
   image="websocketstreams.png",
   alt="Percentage of page loads in Chrome using WebSocketStreams",
   caption='Percentage of page loads in Chrome using WebSocketStreams.<br>(Source: <a href="https://chromestatus.com/metrics/feature/timeline/popularity/3018">WebSocketStream</a>)',
-  description="Chart of WebSocketStreams usage, based on the percentage of page loads in Chrome using this feature. It shows a peak in June and July 2020, where the API was used during approximately 0.0008% pf page loads.",
+  description="Chart of WebSocketStreams usage, based on the percentage of page loads in Chrome using this feature. It shows a peak in June and July 2020, where the API was used during approximately 0.0008% of page loads.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1714443590&format=interactive",
   sheets_gid="691106754"
   )

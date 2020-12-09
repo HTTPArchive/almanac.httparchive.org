@@ -13,7 +13,7 @@
 <meta name="subject" content="{{ self.description() }}">
 <meta name="date" content="{{ date_modified[:-5] }}">
 <meta name="author" content="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang) }}">
-<meta name="keywords" content="Web Almanac 2019 HTTPArchive {{ ' '.join(localizedChapterTitles.values()) }}">
+<meta name="keywords" content="Web Almanac {{ year }} HTTPArchive {{ ' '.join(localizedChapterTitles.values()) }}">
 {% endblock %}
 
 {% block styles %}
@@ -54,7 +54,7 @@
     {% else %}
     {% set insideMargin = "19.5mm" %}
     {% endif %}
-    
+
     @footnote {
       float: bottom;
       border-top: .25pt solid #666;
@@ -237,7 +237,7 @@
   {% if request.args.get('printer') == None %}
 
   <section id="title" class="no-header-or-footer">
-    
+
     <h1 class="title title-center">{{ self.intro_title() }}</h1>
     <h2 class="title title-center">{{ self.intro_sub_title() }}</h2>
 
@@ -254,7 +254,7 @@
   </section>
 
   <section id="title" class="no-color no-header-or-footer">
-    
+
     <h1 class="title title-center">{{ self.intro_title() }}</h1>
     <h2 class="title title-center">{{ self.intro_sub_title() }}</h2>
 
@@ -325,7 +325,7 @@
 
   <section class="chapter" id="contributors">
     <div class="subtitle">{{ self.appendix() }} B</div>
-  
+
     <h1 class="title title-lg">
       {{ self.contributors_title() }}
     </h1>
@@ -411,11 +411,11 @@
   <section id="cover" class="no-color no-header-or-footer">
 
     <div id="front-cover">
-      
+
       <h1 class="title title-center">{{ self.intro_title() }}</h1>
       <h2 class="title title-center">{{ self.intro_sub_title() }}</h2>
 
-      <div class="intro-image-wrapper"> 
+      <div class="intro-image-wrapper">
         <img class="intro-image" src="/static/images/home-hero.png" alt="" width="820" height="562" />
       </div>
 
@@ -425,7 +425,7 @@
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha"></use>
         </svg>
       </div>
-    
+
     </div>
 
     <div id="spine">
@@ -435,8 +435,8 @@
           <text x="8" y="15">Viscomi</text>
         </svg>
       </h3>
-  
-      <div class="intro-image-wrapper"> 
+
+      <div class="intro-image-wrapper">
         <img class="intro-image" src="/static/images/home-hero.png" alt="" width="820" height="562" />
       </div>
 
@@ -501,5 +501,5 @@
   </section>
 
 </div>
-{% endif %} 
-{% endblock %} 
+{% endif %}
+{% endblock %}

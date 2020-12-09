@@ -15,9 +15,12 @@
   </span>
 {% endblock %}
 
+{% block intro_title %}Web Almanac{% endblock %}
+{% block intro_sub_title %}HTTP Archive के वार्षिक<br> <b>वेब की स्थिति</b> की रिपोर्ट{% endblock %}
+
 {% block mission %}
 <p>
-हमारा उद्देश्य वेब समुदाय की विशेषज्ञता के साथ HTTP Archive के कच्चे आँकड़ों और रुझानों को जोड़ना है। Web Almanac वेब की स्थिति पर एक व्यापक रिपोर्ट है, जो वास्तविक डेटा और विश्वसनीय वेब विशेषज्ञों द्वारा समर्थित है। यह पृष्ठ सामग्री, यूजर एक्सपीरियंस, प्रकाशन, और वितरण के पहलुओं को फैलाने वाले 20 अध्यायों से युक्त है।
+हमारा उद्देश्य वेब समुदाय की विशेषज्ञता के साथ HTTP Archive के कच्चे आँकड़ों और रुझानों को जोड़ना है। Web Almanac वेब की स्थिति पर एक व्यापक रिपोर्ट है, जो वास्तविक डेटा और विश्वसनीय वेब विशेषज्ञों द्वारा समर्थित है। यह पृष्ठ सामग्री, यूजर एक्सपीरियंस, प्रकाशन, और वितरण के पहलुओं को फैलाने वाले {{ supported_chapters | length }} अध्यायों से युक्त है।
 </p>
 {% endblock %}
 
@@ -70,6 +73,8 @@
 {% block reviewed_by_after %}{% endblock %}
 {% block translated_by_after %}{% endblock %}
 {% block analysis_by_after %}{% endblock %}
+
+{% block unedited %}[अप्रकाशित]{% endblock %}
 
 {% block author %}लेखक{% endblock %}
 {% block authors %}लेखकों{% endblock %}

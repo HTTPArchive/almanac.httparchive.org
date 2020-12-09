@@ -6,17 +6,18 @@
 
 {% block twitter_image_alt %}Изображение для главы {{ metadata.get('title') }} в Web Almanac за {{ year }} год{% endblock %}
 
-{% block unedited %}[Неотредактированная версия]{% endblock %}
-
 {% block prev_next_title %}Навигация по предыдущей и следующей главах{% endblock %}
 
-{% block explore_the_results %}Обзор результатов{% endblock %}
+{% block explore_the_results %}Результаты{% endblock %}
 {% block discuss_this_chapter %}Обсудить эту главу{% endblock %}
 {% block comment %}комментария{% endblock %}
 {% block comments %}комментариев{% endblock %}
 {% block comments_fallback %}Комментарии{% endblock %}
 {% block queries %}Посмотреть запросы{% endblock %}
 {% block results %}Посмотреть результаты{% endblock %}
+{% block figure_sql %}Посмотреть запрос{% endblock %}
+{% block figure_data %}Посмотреть данных{% endblock %}
+{% block figure_image %}Посмотреть изображения{% endblock %}
 
 {% block previous %}Предыдущая глава (нажмите 'p' или ','){% endblock %}
 {% block next %}Следующая глава (нажмите 'n' или '.'){% endblock %}

@@ -252,7 +252,8 @@
     "ghedo": {
       "name": "Alessandro Ghedini",
       "teams": [
-        "brainstormers"
+        "brainstormers",
+        "reviewers"
       ],
       "avatar_url": "https://avatars3.githubusercontent.com/u/117643?v=4&s=200",
       "website": "https://ghedini.me/",
@@ -316,7 +317,8 @@
     "andydavies": {
       "name": "Andy Davies",
       "teams": [
-        "authors"
+        "authors",
+        "reviewers"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/427052?v=4&s=200",
       "website": "http://andydavies.me/",
@@ -374,7 +376,8 @@
       "name": "Brian Kardell",
       "teams": [
         "brainstormers",
-        "authors"
+        "authors",
+        "reviewers"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/870501?v=4&s=200",
       "website": "https://bkardell.com",
@@ -425,9 +428,8 @@
     "colinbendell": {
       "name": "Colin Bendell",
       "teams": [
-        "brainstormers",
         "authors",
-        "analysts"
+        "brainstormers"
       ],
       "avatar_url": "https://avatars0.githubusercontent.com/u/1622597?v=4&s=200",
       "github": "colinbendell",
@@ -529,7 +531,8 @@
     "enygren": {
       "name": "Erik Nygren",
       "teams": [
-        "brainstormers"
+        "brainstormers",
+        "reviewers"
       ],
       "avatar_url": "https://avatars2.githubusercontent.com/u/6840678?v=4&s=200",
       "website": "https://erik.nygren.org/",
@@ -722,14 +725,6 @@
       "github": "MSakamaki",
       "twitter": "msakamaki2"
     },
-    "hakimelek": {
-      "name": "Malek Hakim",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "https://avatars1.githubusercontent.com/u/1974993?v=4&s=200",
-      "github": "hakimelek"
-    },
     "mnot": {
       "name": "Mark Nottingham",
       "teams": [
@@ -808,12 +803,6 @@
       "github": "mor10",
       "twitter": "mor10"
     },
-    "natasha-kosoglov": {
-      "name": "Natasha Kosoglov",
-      "teams": [
-        "reviewers"
-      ]
-    },
     "nektarios-paisios": {
       "name": "Nektarios Paisios",
       "teams": [
@@ -869,6 +858,7 @@
         "brainstormers",
         "authors",
         "analysts",
+        "reviewers",
         "developers"
       ],
       "avatar_url": "https://avatars3.githubusercontent.com/u/7459458?v=4&s=200",

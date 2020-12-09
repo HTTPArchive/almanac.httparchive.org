@@ -7,41 +7,52 @@ SELECT
   info,
   month,
   client,
+  freq,
   pct
 FROM (
   SELECT
     info,
-    tech.category AS category,
-    tech.app AS app,
-    LEFT(_TABLE_SUFFIX, 10) AS month,
-    IF(ENDS_WITH(_TABLE_SUFFIX, '_desktop'), 'desktop', 'mobile') AS client,
-    COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX, tech.category, tech.app) AS pct
-  FROM
-    `httparchive.technologies.*` AS tech
+    tech.category_lower AS category,
+    tech.app_lower AS app,
+    month,
+    client,
+    COUNT(0) AS freq,
+    COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client, month, tech.category_lower, tech.app_lower) AS pct
+  FROM (
+    SELECT
+      info,
+      TRIM(LOWER(category)) AS category_lower,
+      TRIM(LOWER(app)) AS app_lower,
+      LEFT(_TABLE_SUFFIX, 10) AS month,
+      IF(ENDS_WITH(_TABLE_SUFFIX, '_desktop'), 'desktop', 'mobile') AS client,
+    FROM
+      `httparchive.technologies.*`
+    WHERE
+      REGEXP_CONTAINS(info, r'\d+\.\d+')
+      AND REGEXP_CONTAINS(_TABLE_SUFFIX, r'^20(20|19).*')
+  ) AS tech
   INNER JOIN (
     SELECT
-      category,
-      app,
+      TRIM(LOWER(category)) AS category_lower,
+      TRIM(LOWER(app)) AS app_lower,
       COUNT(0) AS num
     FROM
       `httparchive.technologies.*`
     WHERE
       REGEXP_CONTAINS(_TABLE_SUFFIX, r'^20(20|19).*')
     GROUP BY
-      category,
-      app
+      category_lower,
+      app_lower
     ORDER BY
       num DESC
     LIMIT 20
-  ) AS top ON (tech.category = top.category AND tech.app = top.app)
-  WHERE
-    REGEXP_CONTAINS(info, r'\d+\.\d+')
-    AND REGEXP_CONTAINS(_TABLE_SUFFIX, r'^20(20|19).*')
+  ) AS top ON (tech.category_lower = top.category_lower AND tech.app_lower = top.app_lower)
   GROUP BY
-    tech.category,
-    tech.app,
+    tech.category_lower,
+    tech.app_lower,
+    month,
     info,
-    _TABLE_SUFFIX)
+    client)
 WHERE
   pct > 0.01
 ORDER BY

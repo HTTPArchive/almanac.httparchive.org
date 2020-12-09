@@ -20,7 +20,6 @@ featured_stat_2: 30,073
 featured_stat_label_2: Number of non-standard <code>h7</code> elements
 featured_stat_3: 25.24 KB
 featured_stat_label_3: Weight of the median document
-unedited: true
 ---
 
 ## Introduction
@@ -76,17 +75,15 @@ A page's document size refers to the amount of HTML bytes transferred over the n
 
 {# TODO(authors, analysts): Revisit the "largest document" stat and interpretation. #}
 * 1,110 documents are empty (0 bytes).
-* The average document size is 50.35 KB ([in most cases compressed](https://w3techs.com/technologies/details/ce-gzipcompression)).
-* The largest document by far weighs 64.16 _MB_, almost deserving its own analysis and chapter in the Web Almanac.
+* The average document size is 49.17 KB ([in most cases compressed](https://w3techs.com/technologies/details/ce-gzipcompression)).
+* The largest document by far weighs 61.19 _MB_, almost deserving its own analysis and chapter in the Web Almanac.
 
-{# TODO(analysts): Should 25,237 bytes be divided by 1000 or 1024 to convert to KB? 1000 seems to be used here but most chapters use 1024. Are the stats above also off? #}
-{# TODO(authors): What's the implication and your interpretation of this value? Is this a surprisingly big number? Or does it align with your expectations? #}
-How is this situation in general, then? The median document weighs 25.24 KB:
+How is this situation in general, then? The median document weighs 24.65 KB, which comes [without surprises](https://httparchive.org/reports/page-weight):
 
 {{ figure_markup(
   image="document-size.png",
   caption="The amount of HTML bytes transferred over the network, including compression if enabled.",
-  description="Document size in bytes per percentile, with the median document weighing 26.62 KB on desktop.",
+  description="Document size in bytes per percentile, with the median document weighing 25.99 KB on desktop.",
   sheets_gid="2066175354",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=386686971&format=interactive",
   width=600,
@@ -102,26 +99,20 @@ We identified 2,863 different values for the `lang` attribute on the `html` star
 
 22.36% of all documents specify no `lang` attribute. The commonly accepted view is that [they should](https://www.w3.org/TR/i18n-html-tech-lang/#overall), but beside the idea that software could eventually [detect language automatically](https://meiert.com/en/blog/lang/), document language can also be specified [on the protocol level](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language). This is something we didn't check.
 
-Here are the 10 most popular (normalized) languages in our sample. At first we contemplated merging same-language values like `en-US` and `en-GB`, but the difference was pronounced, so we decided not to do so.
+Here are the 10 most popular (normalized) languages in our sample. It's important to note that the HTTP Archive crawls from US data centers with English language settings, so looking at the language pages are written in will be skewed towards English. Nevertheless we present the `lang` attributes seen to give some context to the sites analyzed.
 
-<figure markdown>
-| Language | Pages (%) |
-|---|---|
-| `en` | 18.08% |
-| `en-us` | 13.27% |
-| `ja` | 5.47% |
-| `es` | 4.09% |
-| `pt-br` | 2.84% |
-| `ru` | 2.53% |
-| `en-gb` | 2.19% |
-| `de` | 1.92% |
-| `de-de` | 1.60% |
-| `ru-ru` | 1.60% |
-
-<figcaption>{{ figure_link(caption="Top 10 <code>lang</code> attribute values.", sheets_gid="2047285366", sql_file="pages_almanac_by_device_and_html_lang.sql") }}</figcaption>
-</figure>
-
-{# TODO(authors): Add an interpretation of the lang results. #}
+{{ figure_markup(
+  image="document-language.png",
+  alt="The top HTML lang attributes.",
+  caption="The top HTML `lang` attributes.",
+  description="Bar chart showing the top 10 `lang` attributes used in our crawl with 22.82% of desktop and 22.36% of mobile pages not setting this, `en` being used on 20.09% and 18.08% respectively, `ja` on 15.17% and 13.27%, `es` on 4.86% and 4.09% , `pt-br` on 2.65% and 2.84%, `ru` on 2.21% 2.53%, `en-gb` on 2.35% and 2.19%, `de` on 1.50% and 1.92%, and finally `fr` being used on 1.55% and 1.43% respectively.",
+  sheets_gid="2047285366",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=1873310240&format=interactive",
+  width=600,
+  height=371,
+  sql_file="pages_almanac_by_device_and_html_lang.sql"
+  )
+}}
 
 ### Comments
 
@@ -131,9 +122,7 @@ Adding comments to code is generally a good practice and HTML comments are there
 <!-- This is a comment in HTML -->
 ```
 
-Although many pages will have been stripped of comments for production, we found that index pages in the 90th percentile are using about 73 comments on mobile, respectively 79 comments on desktop, while in the 10th percentile the number of the comments is about 2.
-
-{# TODO(authors): How about the median number for a typical website? #}
+Although many pages will have been stripped of comments for production, we found that index pages in the 90th percentile are using about 73 comments on mobile, respectively 79 comments on desktop, while in the 10th percentile the number of the comments is about 2. The median page uses 16 (mobile) or 17 comments (desktop).
 
 Around 89% of pages contain at least one HTML comment, while about 46% of them contain a conditional comment.
 
@@ -151,7 +140,7 @@ Still, on the above percentile extremes, we found that web pages are using about
 
 For production, HTML comments are usually stripped by build tools. Considering all the above counts and percentages, and referring to the use of comments in general, we suppose that lots of pages are served without involving an HTML minifier.
 
-### Script use 
+### Script use
 
 As shown in the [Top elements](#top-elements) section below, the `script` element is the 6th most frequently used HTML element. For the purposes of this chapter, we were interested in the ways the `script` element is used across these millions of pages from the data set.
 
@@ -159,11 +148,10 @@ Overall, around 2% of pages contain no scripting at all, not even structured dat
 
 At the opposite end of the spectrum, the numbers show that about 97% of pages contain at least one script, either inline or external.
 
-{# TODO(editors): Wrap "script" in the caption in code tags so that it doesn't trigger code editor syntax highlighting confusion. #}
 {# TODO(analysts): We still have a problem here with the x-axis label (“Containing”). Can someone help out and look at this? #}
 {{ figure_markup(
   image="script-use.png",
-  caption="Usage of the script element.",
+  caption="Usage of the <code>script</code> element.",
   description="Percentages of pages (not) containing scripts, and scripts are present in almost every form on almost every page.",
   sheets_gid="150962402",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=1895084382&format=interactive",
@@ -173,7 +161,7 @@ At the opposite end of the spectrum, the numbers show that about 97% of pages co
   )
 }}
 
-When scripting is unsupported or turned off in the browser, the `noscript` element helps to add an HTML section within a page. Considering the above script numbers, we were curious about the `noscript` element as well. 
+When scripting is unsupported or turned off in the browser, the `noscript` element helps to add an HTML section within a page. Considering the above script numbers, we were curious about the `noscript` element as well.
 
 Following the analysis, we found that about 49% of pages are using a `noscript` element. At the same time, about 16% of `noscript` elements were containing an `iframe` with a `src` value referring to "googletagmanager.com".
 
@@ -183,13 +171,11 @@ This seems to confirm the theory that the total number of `noscript` elements in
 
 What `type` attribute values are used with `script` elements?
 
-{# TODO(authors, analysts): Should this be a figure? #}
-{# TODO(authors): Explain the significance of the "!" in text. #}
 - `text/javascript`: 60.03%
 - `application/ld+json`: 1.68%
 - `application/json`: 0.41%
 - `text/template`: 0.41%
-- `text/html` (!) 0.27%
+- `text/html` 0.27%
 
 When it comes to loading [JavaScript module scripts](https://jakearchibald.com/2017/es-modules-in-browsers/) using `type="module"`, we found that 0.13% of `script` elements currently specify this attribute-value combination. `nomodule` is used by 0.95% of all tested pages. (Note that one metric relates to elements, the other to pages.)
 
@@ -352,13 +338,13 @@ Standard elements are those that are or were part of the HTML specification. Whi
 <figcaption>{{ figure_link(caption="Low probabilities of finding a given element in pages of the sample.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
 </figure>
 
-{# TODO(authors): Interpet results. #}
+We're including these elements to give an idea what elements may have gone out of favor. But while `dir` and `basefont` were last specified in XHTML 1.0 (2000), the rare use of `rp`, which has been mentioned [as early as 1998](https://www.w3.org/TR/1998/WD-ruby-19981221/#a2-4) but which is also [still part of HTML](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element), may just suggest that Ruby markup is not very popular.
 
 ### Custom elements
 
 The 2019 edition of the Web Almanac handled [custom elements](../2019/markup#custom-elements) by discussing several non-standard elements. This year, we found it valuable to have a closer look at custom elements. How did we determine these? Roughly by looking at [their definition](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-core-concepts), notably their use of a hyphen. Let's focus on the top elements, in this case elements used on ≥1% of all URLs in the sample:
 
-{# TODO(authors, analysts): Clarify occurrences and percentages _of what_. Pages? Elements? And for desktop or mobile? #}
+{# TODO(authors, analysts): Clarify occurrences and percentages _of what_. Pages? Elements? #}
 
 <figure markdown>
 | Element | Occurrences | Percentage |
@@ -697,7 +683,7 @@ Using `target="_blank"` has been known to be a [security vulnerability](https://
 <figcaption>{{ figure_link(caption="Blank relationships.", sheets_gid="1876528165", sql_file="pages_wpt_bodies_by_device.sql") }}</figcaption>
 </figure>
 
-As a rule of thumb and for [usability reasons](https://www.nngroup.com/articles/new-browser-windows-and-tabs/), prefer not to use `target="_blank"` in the first place. 
+As a rule of thumb and for [usability reasons](https://www.nngroup.com/articles/new-browser-windows-and-tabs/), prefer not to use `target="_blank"` in the first place.
 
 <p class="note">Within the latest Safari and Firefox versions, setting <code>target="_blank"</code> on <code>a</code> elements implicitly provides the same <code>rel</code> behavior as setting <code>rel="noopener"</code>. This is already <a href="https://chromium-review.googlesource.com/c/chromium/src/+/1630010">implemented in Chromium</a> as well and will land in Chrome 88.</p>
 
@@ -713,7 +699,6 @@ We've touched on some observations throughout the chapter, but as a reflection o
   sql_file="summary_pages_by_device_and_doctype.sql"
 ) }}
 
-{# TODO(authors): Changed Simon's quote to a paraphrase, since it's not clear which part is verbatim. If there's a quote, let's wrap it in quotes.  #}
 Fewer pages land in quirks mode. In 2016, that number was at [around 7.4%](https://discuss.httparchive.org/t/how-many-and-which-pages-are-in-quirks-mode/777). At the end of 2019, we observed [4.85%](https://twitter.com/zcorpan/status/1205242913908838400). And now, we're at about 3.97%. This trend, to paraphrase [Simon Pieters](./contributors#zcorpan) in his review of this chapter, seems clear and encouraging.
 
 Although we lack historic data to draw the full development picture, "meaningless" `div`, `span`, and `i` markup has pretty much [replaced](#top-elements) the `table` markup we've observed in the 1990s and early 2000s. While one may question whether `div` and `span` elements are always used without there being a semantically more appropriate alternative, these elements are still preferable to `table` markup, though, as during the heyday of the old web, these were seemingly used for everything but tabular data.
