@@ -5,7 +5,7 @@ chapter_number: 1
 title: CSS
 description: CSS chapter of the 2020 Web Almanac covering color, units, selectors, layout, typography and fonts, spacing, decoration, animation, and media queries.
 authors: [LeaVerou, svgeesus, rachelandrew]
-reviewers: [fantasai, j9t, estellevw, mirisuzanne, catalinred, hankchizljaw]
+reviewers: [fantasai, j9t, estelle, mirisuzanne, catalinred, hankchizljaw]
 analysts: [rviscomi, LeaVerou, dooman87]
 translators: []
 #LeaVerou_bio: TODO
