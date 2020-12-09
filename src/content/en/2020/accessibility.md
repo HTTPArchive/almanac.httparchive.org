@@ -278,7 +278,7 @@ In this pattern, a parent container has a `role=”tablist”` with children ele
 
 {{ figure_markup(
   image="role-tab-list.png",
-  alt="TODO",
+  alt="element with the tablist role",
   caption='Tab list (`role="tablist"`) contains all of the tabs. ([Source](https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html))',
   description="TODO",
   width=TODO,
@@ -287,7 +287,7 @@ In this pattern, a parent container has a `role=”tablist”` with children ele
 
 {{ figure_markup(
   image="role-tab.png",
-  alt="TODO",
+  alt="element with the tab role",
   caption='“Nils Frahm” tab (`role="tab"`). ([Source](https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html))',
   description="TODO",
   width=TODO,
@@ -296,7 +296,7 @@ In this pattern, a parent container has a `role=”tablist”` with children ele
 
 {{ figure_markup(
   image="role-tab-panel.png",
-  alt="TODO",
+  alt="element with the tabpanel role",
   caption='Tab panel (`role="tabpanel"`) with content associated with the “Nils Frahm” tab. ([Source](https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html))',
   description="TODO",
   width=TODO,
