@@ -194,7 +194,7 @@ There is always a lot of inertia when we change something in the Web platform af
 {{ figure_markup(
   image="selector-pseudo-classes.png",
   caption="Usage of legacy `:pseudo-class` syntax for `::pseudo-elements` as a percent of mobile pages.",
-  description="Bar chart showing the percent of pages that use pseudo-class syntax (prefixed by one colon) versus pseudo-element syntax (two colons) for pseudo-elements. The before pseudo-element is used with pseudo-class syntx on 71% of mobile pages and pseudo-element syntax on 33% of mobile pages. The after pseudo-element is used with class and element syntax on 68% and 30% of mobile pages, first-letter on 7% and 1% of mobile pages, and first-line on 1% and 0% of mobile pages.",
+  description="Bar chart showing the percent of pages that use pseudo-class syntax (prefixed by one colon) versus pseudo-element syntax (two colons) for pseudo-elements. The before pseudo-element is used with pseudo-class syntax on 71% of mobile pages and pseudo-element syntax on 33% of mobile pages. The after pseudo-element is used with class and element syntax on 68% and 30% of mobile pages, first-letter on 7% and 1% of mobile pages, and first-line on 1% and 0% of mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=227968207&format=interactive",
   sheets_gid="2029589646",
   sql_file="top_selector_pseudo_classes.sql"
