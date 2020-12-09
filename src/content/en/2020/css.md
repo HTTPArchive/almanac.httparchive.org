@@ -8,19 +8,19 @@ authors: [LeaVerou, svgeesus, rachelandrew]
 reviewers: [estelle, fantasai, j9t, mirisuzanne, catalinred, hankchizljaw]
 analysts: [rviscomi, LeaVerou, dooman87]
 translators: []
-#LeaVerou_bio: TODO
-#svgeesus_bio: TODO
-#rachelandrew_bio: TODO
+#LeaVerou_bio: TODO.
+#svgeesus_bio: TODO.
+#rachelandrew_bio: TODO.
 discuss: 2037
 results: https://docs.google.com/spreadsheets/d/1sMWXWjMujqfAREYxNbG_t1fOJKYCA6ASLwtz4pBQVTw/
 queries: 01_CSS
-#featured_quote: TODO
-#featured_stat_1: TODO
-#featured_stat_label_1: TODO
-#featured_stat_2: TODO
-#featured_stat_label_2: TODO
-#featured_stat_3: TODO
-#featured_stat_label_3: TODO
+#featured_quote: TODO.
+#featured_stat_1: TODO.
+#featured_stat_label_1: TODO.
+#featured_stat_2: TODO.
+#featured_stat_label_2: TODO.
+#featured_stat_3: TODO.
+#featured_stat_label_3: TODO.
 unedited: true
 ---
 
