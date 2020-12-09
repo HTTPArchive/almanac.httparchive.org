@@ -184,16 +184,15 @@ Be mindful that omitting the `as` attribute, or having an invalid value will mak
 
 With `preload` and `preconnect` resources that have CORS enabled, such as fonts, it's important to include the `crossorigin` attribute, in order for the resource to be properly used. If the `crossorigin` attribute is absent, the request will follow the single-origin policy thereby making the use of preload useless.
 
-{# TODO(authors): Verify 34% is correct, and has support in the sheets results, and that the gid is correct. #}
 {{ figure_markup(
   caption="The percent of elements with `preload` that use `crossorigin`.",
-  content="34%",
+  content="16.96%",
   classes="big-number",
   sheets_gid="1185042785",
   sql_file="attribute_usage.sql"
 ) }}
 
-The latest trends show that 34% of elements that `preload` also set `crossorigin` and load in anonymous (or equivalent) modes, and only 0.43% utilize the `use-credentials` case. This rate has increased in conjunction with the increase in font-preloading, as mentioned earlier.
+The latest trends show that 16.96% of elements that `preload` also set `crossorigin` and load in anonymous (or equivalent) modes, and only 0.02% utilize the `use-credentials` case. This rate has increased in conjunction with the increase in font-preloading, as mentioned earlier.
 
 ```html
 <link rel="preload" href="ComicSans.woff2" as="font" type="font/woff2" crossorigin>
