@@ -661,12 +661,15 @@ The table below details the cache TTL values for desktop requests by type. Most 
   <table>
     <thead>
       <tr>
-        <th role="col">Type</th>
-        <th role="col">10</th>
-        <th role="col">25</th>
-        <th role="col">50</th>
-        <th role="col">75</th>
-        <th role="col">90</th>
+        <th colspan="6" scope="col">Cache TTL percentiles (in hours)</th>
+      </tr>
+      <tr>
+        <th scope="col">Type</th>
+        <th scope="col">10</th>
+        <th scope="col">25</th>
+        <th scope="col">50</th>
+        <th scope="col">75</th>
+        <th scope="col">90</th>
       </tr>
     </thead>
     <tbody>
