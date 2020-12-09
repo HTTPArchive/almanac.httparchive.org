@@ -51,7 +51,7 @@ A [report published](https://www.perficient.com/insights/research-hub/mobile-vs-
 While the majority of visits -- **58%** of site visits -- were from mobile devices, mobile devices made up only 42% of total time spent online. Moreover, the average time spent per visit is roughly twice as much on desktop compared to mobile (11.52 minutes on desktop vs. 5.95 minutes on mobile).
 
 ### Page loads in Chrome (Chrome data source)
-Note that this section references stats that have been made available specifically for this chapter from non-public Chrome data source, [see details here](#datasources).
+Note that this section references stats that have been made available specifically for this chapter from non-public Chrome data source, [see details here](#data-sources).
 We use this data to assess page loads on Android and Windows -- as a proxy for mobile and desktop respectively.
 
 NOTE: we may refer to the data in this section as mobile for Android and desktop for Windows.
@@ -120,7 +120,7 @@ While one cannot generalize the expected traffic distribution from mobile vs. de
 
 If your website is substantially different from the industry average, it could be worth digging into the reason, for instance poor loading performance could be one reason.
 
-## The user journey
+## The User Journey
 User journeys, including commercial journeys, on the mobile web are often difficult to complete.
 
 While mobile represents 79.6% of time spent amongst retail sites, it only accounts for 32.3% of eCommerce sales ([source](https://www.emarketer.com/content/frictionless-commerce-2020?li=undefined)). This suggests that users frequently start their journey on mobile, but often finish on desktop. Why might that be?
@@ -403,7 +403,7 @@ By implementing installability, Rakuten 24 also saw these improvements over a 1-
 #### A seamless experience across devices
 Finally, providing a seamless experience across devices can unlock deeper user engagement and retention, the signed-in experience powers this.
 
-At the start of [the User Journey](#user-journey) we mentioned that mobile represents 79.6% of time spent amongst retail sites, but it only accounts for 32.3% of eCommerce sales. This suggests that users often browse on mobile and start the user journey on mobile devices, but they often convert or complete transactions on desktop.
+At the start of [the User Journey](#the-user-journey) we mentioned that mobile represents 79.6% of time spent amongst retail sites, but it only accounts for 32.3% of eCommerce sales. This suggests that users often browse on mobile and start the user journey on mobile devices, but they often convert or complete transactions on desktop.
 
 Hopefully by now we have gained a better understanding to reason about this, for instance reasons may include ease of finding and consuming content, the ease of typing, form filling etc.
 
