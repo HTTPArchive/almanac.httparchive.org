@@ -397,7 +397,7 @@ Form labels should be visible and persistent in the UI and descriptive of the in
 
 It is important to ensure that form labels have a programmatic association with their respective inputs. It is not sufficient to just display the label visually. We found that only 26.51% of sites have all of their labels properly associated with their respective inputs (achieved with a `for`/`id` relationship or inputs nested inside labels).
 
-Groups of form controls such as a set of radio inputs or checkboxes should be nested as the first child within a `<fieldset>` element and given a group label via the `<legend>` element within the `<fieldset>`. The individual controls still need to be programmatically associated with their respective visible labels as well.
+Groups of form controls such as a set of radio inputs or checkboxes should be nested within a `<fieldset>` element and given a group label via the `<legend>` element within the `<fieldset>`. The individual controls still need to be programmatically associated with their respective visible labels as well.
 
 ### Placeholder text
 
