@@ -250,7 +250,7 @@ HTML 5 introduced many new native elements, all which have [implicit semantics](
 
 ##### Just use a button!
 
-We found that 25.20% of desktop sites and 24.50% of mobile sites had homepages with at least one element with an explicitly assigned `role=”button”`. This suggests that about a quarter of websites are using the button role on elements in order to change their semantics, with the exception of buttons that have been explicitly assigned the button role, which is redundant but harmless.
+We found that 25.20% of desktop sites and 24.50% of mobile sites had homepages with at least one element with an explicitly assigned `role=”button”`. This suggests that about a quarter of websites are using the `button` role on elements in order to change their semantics, with the exception of buttons that have been explicitly assigned the button role, which is redundant but harmless.
 
 If non-interactive elements such as `<div>`s and `<span>`s have been given this role, there is a significant chance one or more of the 5 rules of ARIA have been broken. 
 
