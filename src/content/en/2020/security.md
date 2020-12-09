@@ -13,13 +13,13 @@ bazzadp_bio: Barry Pollard is a software developer and author of the Manning boo
 discuss: 2047
 results: https://docs.google.com/spreadsheets/d/1T7sxPP5BV3uwv-sXhBEZraVk-obd0tDfFrLiD49nZC0/
 queries: 11_Security
-featured_quote: TODO
-featured_stat_1: 86.90
-featured_stat_label_1: Requests that use HTTPS on mobile
+featured_quote: In this chapter, we explore the current state-of-practice for security on the Web. By analyzing the adoption of various security features in depth and at a large scale we gather insights on the different ways that website owners apply these security mechanisms, driven by the incentive to protect their users.
+featured_stat_1: 86.90%
+featured_stat_label_1: Requests that use HTTPS on mobile.
 featured_stat_2: 22,333
 featured_stat_label_2: Bytes in the longest CSP observed.
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+featured_stat_3: 9.03%
+featured_stat_label_3: Usage of reCAPTCHA
 unedited: true
 ---
 
@@ -377,7 +377,7 @@ Interestingly, when we look at the most commonly used directives in CSP policies
 
 For instance, the image that would be fetched over an insecure connection in `<img src="http://example.com/foo.png">` will instead be fetched over HTTPS when the [`upgrade-insecure-requests`](https://www.w3.org/TR/upgrade-insecure-requests/) directive is present.
 
-This is particularly helpful as browsers block mixed content: for pages that are loaded over HTTPS, content that is included from HTTP would be blocked without the `upgrade-insecure-requests` directive. The adoption of this directive is likely much higher relatice to the others as it is a good starting point for a content security policy as it is unlikely to break content and is easy to implement.
+This is particularly helpful as browsers block mixed content: for pages that are loaded over HTTPS, content that is included from HTTP would be blocked without the `upgrade-insecure-requests` directive. The adoption of this directive is likely much higher relative to the others as it is a good starting point for a content security policy as it is unlikely to break content and is easy to implement.
 
 The CSP directives that indicate from which sources content can be included (the `*-src` directives), have a much lower adoption: only 18.51% of the CSP policies served on desktop pages and 16.12% on mobile pages. One of the reasons for this, is that web developers are facing [many challenges in the adoption of CSP](https://wkr.io/publication/raid-2014-content_security_policy.pdf). Although a strict CSP policy can provide significant security benefits well beyond thwarting XSS attacks, an ill-defined one may prevent certain content from loading.
 
