@@ -29,18 +29,18 @@ Mobile Web has grown explosively in the last decade and is now the primary way m
 2020 has seen a big surge in [internet usage](https://www.nytimes.com/interactive/2020/04/07/technology/coronavirus-internet-use.html), on both mobile and desktop, due to the global pandemic. There has been an uptick in visits to news sites, ecommerce and social media sites -- as people across the globe adjusted to a new lifestyle with stay-at-home orders and social distancing. 2020 has been a significant year in history, for the web and for mobile usage.
 
 ### Data sources
-We’ve used a few different data sources in this chapter: 
+We’ve used a few different data sources in this chapter:
 
 * [CrUX](https://almanac.httparchive.org/en/2020/methodology#chrome-ux-report)
 * [HTTP archive](https://almanac.httparchive.org/en/2020/methodology#dataset)
 * [Lighthouse](https://almanac.httparchive.org/en/2020/methodology#lighthouse)
 
 Please visit the links above to learn more about the methodology and caveats with each data source.
-It is worth noting that HTTP Archive and Lighthouse data is limited to the data identified from websites’ home pages only, and not site-wide. 
+It is worth noting that HTTP Archive and Lighthouse data is limited to the data identified from websites’ home pages only, and not site-wide.
 
 In addition to the above, we also used a non-public Chrome data source in the section on Page loads in Chrome. For more information on this, read about [Chrome’s data collection API](https://chromium.googlesource.com/chromium/src/+/master/services/metrics/ukm_api.md).
 
-While this data is only collected from a subset of (opted in) Chrome users, it does not suffer from being limited to homepages. It is pseudonymous and consists of histograms and events. 
+While this data is only collected from a subset of (opted in) Chrome users, it does not suffer from being limited to homepages. It is pseudonymous and consists of histograms and events.
 
 NOTE: Reporting is enabled if the user has enabled a feature that syncs browser windows, unless they have disabled the "Make searches and browsing better / Sends URLs of pages you visit to Google" setting.
 
@@ -48,11 +48,11 @@ NOTE: Reporting is enabled if the user has enabled a feature that syncs browser 
 How much are users visiting websites on mobile web and desktop? Are there any patterns in the traffic that websites receive from mobile vs. desktop?  In order to examine these questions and what it means for websites, we looked at data from a couple of lenses.
 
 A [report published](https://www.perficient.com/insights/research-hub/mobile-vs-desktop-usage-study) on perficient.com shows mobile vs. desktop traffic trends over several years, using [similarweb](https://www.similarweb.com/) as a data source.
-While the majority of visits -- **58%** of site visits -- were from mobile devices, mobile devices made up only 42% of total time spent online. Moreover, the average time spent per visit is roughly twice as much on desktop compared to mobile (11.52 minutes on desktop vs. 5.95 minutes on mobile). 
+While the majority of visits -- **58%** of site visits -- were from mobile devices, mobile devices made up only 42% of total time spent online. Moreover, the average time spent per visit is roughly twice as much on desktop compared to mobile (11.52 minutes on desktop vs. 5.95 minutes on mobile).
 
 ### Page loads in Chrome (Chrome data source)
 Note that this section references stats that have been made available specifically for this chapter from non-public Chrome data source, [see details here](#data-sources).
-We use this data to assess page loads on Android and Windows -- as a proxy for mobile and desktop respectively. 
+We use this data to assess page loads on Android and Windows -- as a proxy for mobile and desktop respectively.
 
 NOTE: we may refer to the data in this section as mobile for Android and desktop for Windows.
 
@@ -63,7 +63,15 @@ We looked at traffic to origins by popularity -- how often are users visiting ce
 Rick Byers [tweeted](https://twitter.com/RickByers/status/1195342331588706306) this distribution a year ago, we looked at the latest data.
 The chart shows us the overall distribution across origins by their popularity, captured by their contribution to % page loads in Chrome.
 
-{# TODO: Insert chart: Page loads across origins ranked by popularity #}
+{{ figure_markup(
+  image="page-loads-across-origins-ranked-by-popularity.png",
+  alt="Page loads across origins ranked by popularity (in Chrome)",
+  caption='Page loads across origins ranked by popularity (in Chrome)',
+  description="Chart showing that a small number of origins constitute a large fraction of traffic, for both mobile and desktop. The top 30 origins constitute 25% of aggregate traffic on mobile. The top 200 origins constitute 33% of aggregate traffic on mobile",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=949521302&format=interactive",
+  sheets_gid="1301196247"
+  )
+}}
 
 Some takeaways:
 
@@ -79,16 +87,24 @@ Some takeaways:
  * The tail is about twice as long on Android as Windows. This is most likely attributable to the larger number of mobile devices and users, compared to desktop.
 
 #### Traffic to a site from mobile vs. desktop (CrUX)
-*Could a website reason about their expected mobile vs. desktop traffic distribution?* 
+*Could a website reason about their expected mobile vs. desktop traffic distribution?*
 It’s hard to predict, because the distribution between mobile and desktop will vary greatly based on the site Furthermore, it heavily depends on the industry category (eg. entertainment, shopping) and whether the site has native apps, and how aggressively native apps are promoted etc.
 
 We looked at the CrUX dataset to assess Chrome traffic to sites from mobile devices vs desktop.
 
-{# TODO: Insert chart: mobile traffic distribution #}
+{{ figure_markup(
+  image="mobile-traffic-distribution.png",
+  alt="Mobile traffic distribution",
+  caption='Distribution of mobile vs other traffic',
+  description="Chart showing how mobile is the majority of traffic for most websites. 50% of websites analyzed receive 77.61% or more of their traffic from mobile (a slight decrease from 79.93% in 2019).",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=1290224874&format=interactive",
+  sheets_gid="2049480794"
+  )
+}}
 
 The distribution appears mobile heavy. A reason for that is that there are many (2 million+ in CrUX) sites which, while low in total traffic, only get traffic from mobile.  Mobile has a much longer “tail” as we saw in the previous section.
 
-If we put all the websites with CrUX data, in a bucket and randomly choose one, 50% of the time the website you chose would be receiving 77.61% or more of their traffic from mobile (a slight decrease from 79.93% in 2019). 
+If we put all the websites with CrUX data, in a bucket and randomly choose one, 50% of the time the website you chose would be receiving 77.61% or more of their traffic from mobile (a slight decrease from 79.93% in 2019).
 
 Note that while this is an interesting observation, it’s hard to draw conclusions from CrUX about broad trends for mobile vs. desktop because:
 * CrUX is Chrome only data, and missing other browsers, including Safari - a major mobile browser.
@@ -107,7 +123,7 @@ If your website is substantially different from the industry average, it could b
 ## The User Journey
 User journeys, including commercial journeys, on the mobile web are often difficult to complete.
 
-While mobile represents 79.6% of time spent amongst retail sites, it only accounts for 32.3% of eCommerce sales ([source](https://www.emarketer.com/content/frictionless-commerce-2020?li=undefined)). This suggests that users frequently start their journey on mobile, but often finish on desktop. Why might that be? 
+While mobile represents 79.6% of time spent amongst retail sites, it only accounts for 32.3% of eCommerce sales ([source](https://www.emarketer.com/content/frictionless-commerce-2020?li=undefined)). This suggests that users frequently start their journey on mobile, but often finish on desktop. Why might that be?
 
 To reason about questions like this, we need to first understand the elements of the user journey.
 
@@ -126,16 +142,16 @@ A lot of users now start their search on mobile.
 ##### Responsive web design
 Due to the popularity of  mobile devices to browse and search the web, Google search moved to a [mobile-first Index](https://developers.google.com/search/blog/2016/11/mobile-first-indexing) a few years ago. This means that search ranking considers pages as seen by mobile users, and mobile friendliness is now a ranking factor. Google will [fully switch to a mobile-first index](https://developers.google.com/search/blog/2020/07/prepare-for-mobile-first-indexing-with), for all sites, in March 2021.
 
-Websites should ensure mobile friendliness for a good search experience and SEO, as this impacts traffic from search users. [Responsive web design](https://developers.google.com/search/mobile-sites/mobile-seo/responsive-design) is the recommended way to achieve this. 
+Websites should ensure mobile friendliness for a good search experience and SEO, as this impacts traffic from search users. [Responsive web design](https://developers.google.com/search/mobile-sites/mobile-seo/responsive-design) is the recommended way to achieve this.
 
 Responsive websites use the viewport meta tag as well as CSS media queries to provide a mobile friendly experience. To learn more about these mobile friendliness aspects, head over to the [SEO chapter]((../seo#mobile-friendliness)).
 
-Learn more about [responsive web design here](https://web.dev/responsive-web-design-basics/). 
+Learn more about [responsive web design here](https://web.dev/responsive-web-design-basics/).
 
 Beyond organic traffic from search engines, **Ad clicks** could be a key source of visitors being sent to websites. Similar to SEO, optimizing Ads can be important for websites who invest in and receive traffic from Ads.
 
 
-#### Loading performance 
+#### Loading performance
 First impressions matter. Delivering page content in a timely manner is critical for avoiding visitor abandonment and user frustration.
 Loading performance is a key aspect of the acquisition phase, poor loading performance results in users abandoning this journey.
 
@@ -152,7 +168,15 @@ Largest Contentful Paint (LCP) is a timing-based metric that captures this -- th
 
 A good LCP score is 2.5s at p75. We found that the median LCP at p75 is 2.6s on mobile and 2.3s on desktop. Mobile web is especially susceptible to missing the mark on LCP.
 
-{# TODO: Insert chart: Median LCP score #}
+{{ figure_markup(
+  image="median-p75-lcp-score.png",
+  alt="Median p75 LCP score",
+  caption='Median p75 LCP score',
+  description="A chart showing that the median LCP at p75 is 2.6s on mobile and 2.3s on desktop",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=964425991&format=interactive",
+  sheets_gid="872081120"
+  )
+}}
 
 ##### Images
 While every type of asset, such as font, CSS, Javascript etc. plays an important role in loading performance, we take a closer look at images.
@@ -162,7 +186,15 @@ The web continues to move towards image-heavy pages, with the growth of bandwidt
 Improperly sized and unoptimized images are frequent sources for image performance problems.
 A staggering 41.20% of pages have improperly sized images.
 
-{# TODO: Insert chart: Pages with improperly sized images #}
+{{ figure_markup(
+  image="pages-with-properly-sized-images.png",
+  alt="Pages with properly sized images",
+  caption='Pages with properly sized images',
+  description="A chart showing that 41.20% of mobile pages have improperly sized images.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=1030767824&format=interactive",
+  sheets_gid="699494809"
+  )
+}}
 
 4.1% of pages which have images, use the lazy loading attribute on their images, decent adoption for a relatively new primitive.
 
@@ -173,10 +205,17 @@ The next phase of the user journey is engagement of users towards consuming cont
 Shifting content is detrimental to the experience of users engaging with content.  Specifically, content that shifts in position as resources load, impedes the user experience.  Since browsers download and display content as soon as they are able, it’s important to design your site to smooth over the user experience.
 This is especially important for mobile web, as shifting content is more noticeable on small screens.
 
-{# TODO: insert image gif of shifting content #}
+{{ figure_markup(
+  image="example-of-a-site-shifting-content-while-it-loads-lookzook.gif",
+  caption="Example of shifting content distracting a reader. CLS total of 42.59%. Image courtesy of LookZook",
+  description="A video showing a website progressively load. The text is displayed quickly, but as images continue to load the text gets shifted further and further down the page each time—making it very frustrating to read. The calculated CLS of this example is 42.59%. Image courtesy of LookZook",
+  width=360,
+  height=640
+  )
+}}
 
 ##### Cumulative Layout Shift
-[Cumulative Layout Shift](https://web.dev/cls/) (CLS) is a metric that quantifies how much content within the viewport shifts around, during the user visit. 
+[Cumulative Layout Shift](https://web.dev/cls/) (CLS) is a metric that quantifies how much content within the viewport shifts around, during the user visit.
 
 The [most common causes of a poor CLS](https://web.dev/optimize-cls/) are:
 
@@ -190,7 +229,15 @@ It’s not trivial to identify these causes locally or in a development environm
 
 According to CrUX data, 60% of mobile sites and 54% of desktop sites, have a good CLS.
 
-{# TODO: Insert chart: Aggregate CLS performance by device #}
+{{ figure_markup(
+  image="aggregate-lcp-performance-by-device.png",
+  alt="Aggregate LCP performance by device",
+  caption='Aggregate LCP performance by device',
+  description="A chart showing that 60% of mobile sites and 54% of desktop sites, have a good CLS.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=277999653&format=interactive",
+  sheets_gid="1730986965"
+  )
+}}
 
 #### Design elements
 To engage users, it’s important to help them quickly find what they’re looking for, and fulfil their intention.
@@ -198,14 +245,39 @@ To engage users, it’s important to help them quickly find what they’re looki
 ##### Landing pages
 Simple design tweaks go a long way, for instance a clear call-to-action, and making the value proposition evident to the user, with a few words.
 
-{# TODO: Insert image of Pixel landing page #}
+{{ figure_markup(
+  image="landing-page-cta.png",
+  caption='Four key parts of the Pixel phone landing page.<br>(Source: <a href="https://winonmobile.withgoogle.com">https://winonmobile.withgoogle.com</a>)',
+  description="An image breaking down the four parts of the Pixel phone landing page: Value proposition, Call-to-action, No distraction, Main services.",
+  width=1200,
+  height=642
+  )
+}}
 
 [Research has shown](https://www.nngroup.com/articles/auto-forwarding/) that auto-forwarding carousels are detrimental to the user experience. Auto-forwarding carousels on the homepage should be avoided or their frequency should be decreased.
 
 ##### Color and contrast
 Consider the following examples from [5 lessons Eastpak learned from its mobile audience](https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/5-lessons-eastpak-learned-its-mobile-audience/):
 
-{# TODO: Insert image: Eastpak +12 CTR #}
+{{ figure_markup(
+  image="eastpak-20-ctr.png",
+  caption='Eastpak improving the color contrast of their main call to action lead to a 20% increase in click through rate.<br>(Source: <a href="https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/5-lessons-eastpak-learned-its-mobile-audience/">https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/5-lessons-eastpak-learned-its-mobile-audience/</a>)',
+  description="An image showing how Eastpak increased their click through rate by 20% by improving the color contrast of their main call to action button",
+  width=1094,
+  height=1122
+  )
+}}
+
+Here, a simple change from a button that’s hard to see, to a button with contrasting colors, improved click through rate on the main call to action by 20%.
+
+{{ figure_markup(
+  image="eastpak-12-ctr.png",
+  caption='Eastpak improving the color contrast of their checkout button lead to a 12% increase in conversion rate.<br>(Source: <a href="https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/5-lessons-eastpak-learned-its-mobile-audience/">https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/5-lessons-eastpak-learned-its-mobile-audience/</a>)',
+  description="An image showing how Eastpak increased their conversion rate by 12% by improving the color contrast of their checkout button",
+  width=1166,
+  height=1102
+  )
+}}
 
 A simple color change on the check out button from black to orange, made it stand out more and increased their conversion rate by 12%.
 
@@ -215,16 +287,33 @@ Text with low contrast ratio is hard to read, for instance, light gray text on a
 
 Lighthouse now [checks for color contrast](https://web.dev/color-contrast/), we found that 78.94% -- a majority of web pages, were lacking sufficient color contrast.
 
-{# TODO: Insert chart: Sites with sufficient color contrast #}
+{{ figure_markup(
+  image="sites-with-sufficient-color-contrast.png",
+  alt="Sites with sufficient color contrast",
+  caption='Sites with sufficient color contrast',
+  description="A chart showing that 78.94%, a majority of web pages, were lacking sufficient color contrast.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=524145395&format=interactive",
+  sheets_gid="1180749800"
+  )
+}}
 
 ##### Tap targets
 Mobile user experience is susceptible to “fat fingering”, as users engage with sites using their fingers -- a rather imprecise tool compared to using a mouse on a desktop.
 
-Based on research, there are standards for minimum size of buttons and tap targets, as well as the minimum distance they should be spaced apart. 
+Based on research, there are standards for minimum size of buttons and tap targets, as well as the minimum distance they should be spaced apart.
 [Lighthouse recommends](https://web.dev/tap-targets/) that targets should be no smaller than 48 px by 48 px, and no closer than 8 px apart.
 We found that  63.69% -- a majority of web pages, had improperly sized tap targets. This is a slight improvement over last year, where 65.57% web pages had improperly sized tap targets.
 
-{# TODO: Insert chart: Sites with properly sized tap targets #}
+{{ figure_markup(
+  image="sites-with-properly-sized-tap-targets.png",
+  alt="Sites with properly sized tap targets",
+  caption='Sites with properly sized tap targets',
+  description="A chart showing that 63.69%, a majority of web pages, had improperly sized tap targets. This is a slight improvement over last year, where 65.57% web pages had improperly sized tap targets.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=1829334180&format=interactive",
+  sheets_gid="38974332"
+  )
+}}
+
 
 ##### Search input
 Search input or a search bar is a crucial tool for engaging users, it enables them to quickly find the information they are looking for.  It is especially important for mobile devices, as they lack the screen real estate to easily consume large amounts of information.
@@ -235,14 +324,30 @@ For sites with 100+ pages, it is recommended to feature a prominent search bar.
 A [case study with fashion website lyst.com](https://www.thinkwithgoogle.com/intl/en-cee/marketing-strategies/data-and-measurement/lyst-increases-overall-conversion-rate-25-making-usability-improvements/), showed that replacing the search icon with a search box enabled users to locate the search function more easily, increasing usage by 43% on desktop, and by 13% on mobile.
 
 {# TODO: Insert image: search input lyst.com #}
+{{ figure_markup(
+  image="search-input-lyst.png",
+  caption='Replacing the search icon with a search box on lyst.com improved conversion rate by 13% on mobile and 43% on desktop.<br>(Source: <a href="https://www.thinkwithgoogle.com/intl/en-cee/marketing-strategies/data-and-measurement/lyst-increases-overall-conversion-rate-25-making-usability-improvements/">https://www.thinkwithgoogle.com/intl/en-cee/marketing-strategies/data-and-measurement/lyst-increases-overall-conversion-rate-25-making-usability-improvements/</a>)',
+  description="A graphic showing how lyst.com replaced the search icon on their website with a search box, and as a result saw their conversion rate increase by 13% on mobile and 43% on desktop",
+  width=1194,
+  height=1170
+  )
+}}
 
-Search input is used in 17% of all sites using any input. 
+Search input is used in 17% of all sites using any input.
 At 60.10%, a majority of ecommerce landing pages are missing the presence of search input.
 
-{# TODO: Insert chart: Ecommerce sites using search input #}
+{{ figure_markup(
+  image="ecommerce-sites-using-a-search-input.png",
+  alt="Ecommerce sites using a search input",
+  caption='Ecommerce sites using a search input',
+  description="A chart showing that 60.10%, a majority of ecommerce landing pages, are missing the presence of search input.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=992212527&format=interactive",
+  sheets_gid="91645550"
+  )
+}}
 
 ##### A/B testing
-A/B testing is a crucial tool for making data driven decisions on matters of design and UX. 
+A/B testing is a crucial tool for making data driven decisions on matters of design and UX.
 A/B testing enables validating that the UX & design changes measurably improve intended metrics and don’t cause unexpected regressions.
 
 Here’s a sampling of design questions that can be A/B tested:
@@ -255,19 +360,27 @@ According to [thirdpartyweb.today](https://www.thirdpartyweb.today/), [Optimizel
 ### 3. Conversion
 While “conversion” may sound like a concept pertaining to e-commerce sites, a conversion can refer to a successful user transaction, such as signing up for a music streaming service, booking a rental home, writing a review on a travel site, etc.
 
-According to Comscore Media Matrix, traffic from mobile devices account for 79.6% of time spent on US retail sites, but only 32.3% of US eCommerce sales. 
+According to Comscore Media Matrix, traffic from mobile devices account for 79.6% of time spent on US retail sites, but only 32.3% of US eCommerce sales.
 
-Compared to desktop, transacting on mobile devices is error-prone and tedious, as users must input personal information using small keyboards and screen sizes. Checkout flows should be simple and short to avoid user frustration, or worse, abandonment. 27% of users abandon checkout because of a “too long / complicated checkout process” ([source](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/) - 2018). 35% of users will abandon the checkout if a retailer does not offer guest checkout ([source](https://baymard.com/blog/ecommerce-checkout-usability-report-and-benchmark)). 
+Compared to desktop, transacting on mobile devices is error-prone and tedious, as users must input personal information using small keyboards and screen sizes. Checkout flows should be simple and short to avoid user frustration, or worse, abandonment. 27% of users abandon checkout because of a “too long / complicated checkout process” ([source](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/) - 2018). 35% of users will abandon the checkout if a retailer does not offer guest checkout ([source](https://baymard.com/blog/ecommerce-checkout-usability-report-and-benchmark)).
 
 #### Form Semantics
-Users can more easily enter required information on mobile devices when their keyboard is optimized for the appropriate input type. For example, a numeric keyboard is useful for entering phone numbers, while keyboards displaying the “@” symbol are useful for entering email addresses. Sites can provide browser hints to display the most appropriate keys using the `type` attribute on `input` tags. 
+Users can more easily enter required information on mobile devices when their keyboard is optimized for the appropriate input type. For example, a numeric keyboard is useful for entering phone numbers, while keyboards displaying the “@” symbol are useful for entering email addresses. Sites can provide browser hints to display the most appropriate keys using the `type` attribute on `input` tags.
 
-{# TODO: Insert chart: Sites (with inputs) using input types #}
+{{ figure_markup(
+  image="sites-with-inputs-using-the-following-input-types.png",
+  alt="Sites (with inputs) using the following input types",
+  caption='Sites (with inputs) using the following input types',
+  description="A chart showing the most commonly used input types on mobile. text: 54.025%; hidden: 37.319%; submit: 29.611%; search: 17.100%; email: 15.164%; checkbox: 14.305%; password: 10.204%; button: 3.442%; radio: 3.391%; image: 2.585%; tel: 2.458%; number: 0.892%; file: 0.668%; range: 0.270%; reset: 0.132%; date: 0.122%; url: 0.104%; input: 0.063%; phone: 0.061%; name: 0.049%; No input type: 0.029%; mail: 0.017%; textbox: 0.016%; username: 0.014%; select: 0.013%; textfield: 0.013%; time: 0.010%; textarea: 0.005%",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=1866868829&format=interactive",
+  sheets_gid="1443384706"
+  )
+}}
 
 #### Sign up, Sign in and Checkout
 Today, browsers can help populate the necessary user information to complete a transaction and help reduce potential input errors. The `autocomplete` attribute can provide browsers hints to populate input elements with the correct user information. Users who successfully use Chrome Autofill to enter their information go through checkout an average of 30% faster than those who don't ([source](https://developers.google.com/web/fundamentals/design-and-ux/input/forms#use_metadata_to_enable_auto-complete)).
 
-Auto-complete can be especially helpful in completing checkout flows that require a user to login and hence remember their password. According to a [study by HYPR](https://www.hypr.com/hypr-password-study-findings/_) in 2019, 78% of users forgot and had to reset a password in the past 90 days. 
+Auto-complete can be especially helpful in completing checkout flows that require a user to login and hence remember their password. According to a [study by HYPR](https://www.hypr.com/hypr-password-study-findings/_) in 2019, 78% of users forgot and had to reset a password in the past 90 days.
 
 It’s also possible to eliminate some form fields altogether. The Credential Management and Payment Request APIs are standards-based browser APIs that provide a programmatic interface between sites and the browser for seamless sign-in and payments. Only .61% of eCommerce sites are using the Payment Request API and only 0.008% use the Credential Management API. It’s worth noting that adoption of the Payment Request API has increased compared to 2019, with a 6x increase in payment completion rate.
 
@@ -290,7 +403,7 @@ By implementing installability, Rakuten 24 also saw these improvements over a 1-
 #### A seamless experience across devices
 Finally, providing a seamless experience across devices can unlock deeper user engagement and retention, the signed-in experience powers this.
 
-At the start of [the User Journey](#the-user-journey) we mentioned that mobile represents 79.6% of time spent amongst retail sites, but it only accounts for 32.3% of eCommerce sales. This suggests that users often browse on mobile and start the user journey on mobile devices, but they often convert or complete transactions on desktop. 
+At the start of [the User Journey](#the-user-journey) we mentioned that mobile represents 79.6% of time spent amongst retail sites, but it only accounts for 32.3% of eCommerce sales. This suggests that users often browse on mobile and start the user journey on mobile devices, but they often convert or complete transactions on desktop.
 
 Hopefully by now we have gained a better understanding to reason about this, for instance reasons may include ease of finding and consuming content, the ease of typing, form filling etc.
 

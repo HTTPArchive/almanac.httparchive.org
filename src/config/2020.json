@@ -3,7 +3,7 @@
     {
       "is_live": true,
       "supported_languages": ["en","es","fr","hi","ja","pt","ru","zh-CN","zh-TW"],
-      "ebook_languages": []
+      "ebook_languages": ["en"]
     }
   ],
   "outline": [
@@ -15,15 +15,13 @@
           "part": "I",
           "chapter": "1",
           "title": "CSS",
-          "slug": "css",
-          "todo": true
+          "slug": "css"
         },
         {
           "part": "I",
           "chapter": "2",
           "title": "JavaScript",
-          "slug": "javascript",
-          "todo": true
+          "slug": "javascript"
         },
         {
           "part": "I",
@@ -48,8 +46,7 @@
           "part": "I",
           "chapter": "6",
           "title": "Third Parties",
-          "slug": "third-parties",
-          "todo": true
+          "slug": "third-parties"
         }
       ]
     },
@@ -67,8 +64,7 @@
           "part": "II",
           "chapter": "8",
           "title": "Accessibility",
-          "slug": "accessibility",
-          "todo": true
+          "slug": "accessibility"
         },
         {
           "part": "II",
@@ -92,8 +88,7 @@
           "part": "II",
           "chapter": "12",
           "title": "Mobile Web",
-          "slug": "mobile-web",
-          "todo": true
+          "slug": "mobile-web"
         },
         {
           "part": "II",
@@ -142,8 +137,7 @@
           "part": "IV",
           "chapter": "18",
           "title": "Page Weight",
-          "slug": "page-weight",
-          "todo": true
+          "slug": "page-weight"
         },
         {
           "part": "IV",
@@ -230,16 +224,6 @@
       "github": "ahmadawais",
       "twitter": "MrAhmadAwais"
     },
-    "AAgar": {
-      "name": "Akshar Agarwal",
-      "teams": [
-        "analysts"
-      ],
-      "avatar_url": "https://avatars1.githubusercontent.com/u/12477271?v=4&s=200",
-      "website": "https://aagar.github.io/",
-      "github": "AAgar",
-      "twitter": "AAgar"
-    },
     "adityapandey1998": {
       "name": "Aditya Pandey",
       "teams": [
@@ -294,7 +278,7 @@
         "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/469304?v=4&s=200",
-      "website": "http://www.aleydasolis.com/en/",
+      "website": "https://www.aleydasolis.com/en/",
       "github": "aleyda",
       "twitter": "aleyda"
     },
@@ -328,6 +312,7 @@
     "denar90": {
       "name": "Artem Denysov",
       "teams": [
+        "reviewers",
         "analysts"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/6231516?v=4&s=200",
@@ -356,7 +341,7 @@
         "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/6849494?v=4&s=200",
-      "website": "http://benseymour.com",
+      "website": "https://benseymour.com",
       "github": "bseymour"
     },
     "bharatagsrwal": {
@@ -421,14 +406,6 @@
       "github": "catalinred",
       "twitter": "catalinred"
     },
-    "cheneytsai": {
-      "name": "Cheney Tsai",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "https://avatars1.githubusercontent.com/u/672494?v=4&s=200",
-      "github": "cheneytsai"
-    },
     "svgeesus": {
       "name": "Chris Lilley",
       "teams": [
@@ -436,7 +413,7 @@
         "reviewers"
       ],
       "avatar_url": "https://avatars3.githubusercontent.com/u/2506926?v=4&s=200",
-      "website": "http://svgees.us/",
+      "website": "https://svgees.us/",
       "github": "svgeesus",
       "twitter": "svgeesus"
     },
@@ -473,7 +450,7 @@
         "reviewers"
       ],
       "avatar_url": "https://avatars0.githubusercontent.com/u/261579?v=4&s=200",
-      "website": "http://fonts.google.com",
+      "website": "https://fonts.google.com",
       "github": "davelab6",
       "twitter": "davelab6"
      },
@@ -567,13 +544,23 @@
       "github": "ericwbailey",
       "twitter": "ericwbailey"
     },
+    "estelle": {
+      "name": "Estelle Weyl",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/69888?v=4&s=200",
+      "website": "http://standardista.com/",
+      "github": "estelle",
+      "twitter": "estellevw"
+    },
     "fantasai": {
-      "name": "Fantasai",
+      "name": "Elika Etemad aka fantasai",
       "teams": [
         "reviewers"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/725717?v=4&s=200",
-      "website": "http://fantasai.inkedblade.net/",
+      "website": "https://fantasai.inkedblade.net/",
       "github": "fantasai",
       "twitter": "fantasai"
     },
@@ -628,7 +615,7 @@
         "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/18315?v=4&s=200",
-      "website": "http://h3manth.com",
+      "website": "https://h3manth.com",
       "github": "hemanth",
       "twitter": "gnumanth"
     },
@@ -684,7 +671,8 @@
     "jrharalson": {
       "name": "Jason Haralson",
       "teams": [
-        "reviewers"
+        "reviewers",
+        "analysts"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/7421844?v=4&s=200",
       "github": "jrharalson"
@@ -695,7 +683,7 @@
         "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/537413?v=4&s=200",
-      "website": "http://rwt.io",
+      "website": "https://rwt.io",
       "github": "jpamental",
       "twitter": "jpamental"
     },
@@ -709,16 +697,6 @@
       "website": "https://meiert.com/en/",
       "github": "j9t",
       "twitter": "j9t"
-    },
-    "malchata": {
-      "name": "Jeremy Wagner",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "https://avatars1.githubusercontent.com/u/1635238?v=4&s=200",
-      "website": "https://jeremy.codes/",
-      "github": "malchata",
-      "twitter": "malchata"
     },
     "jessnicolet": {
       "name": "Jessica Nicolet",
@@ -791,7 +769,7 @@
         "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/175836?v=4&s=200",
-      "website": "http://lea.verou.me/",
+      "website": "https://lea.verou.me/",
       "github": "LeaVerou",
       "twitter": "leaverou"
     },
@@ -931,7 +909,7 @@
         "reviewers"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/104161?v=4&s=200",
-      "website": "http://miriamsuzanne.com/",
+      "website": "https://miriamsuzanne.com/",
       "github": "mirisuzanne",
       "twitter": "MiriSuzanne"
     },
@@ -1006,7 +984,7 @@
         "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/3077443?v=4&s=200",
-      "website": "http://www.opentagclosetag.com/",
+      "website": "https://www.opentagclosetag.com/",
       "github": "oluoluoxenfree"
     },
     "thepassle": {
@@ -1146,7 +1124,7 @@
         "reviewers"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/4570664?v=4&s=200",
-      "website": "http://pixelambacht.nl/",
+      "website": "https://pixelambacht.nl/",
       "github": "RoelN",
       "twitter": "PixelAmbacht"
     },

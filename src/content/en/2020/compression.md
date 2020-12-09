@@ -73,29 +73,29 @@ There are two ways of doing the compression on the server side:
 
 Since precompression is done beforehand, we can spend more time compressing the assets. For dynamically compressed resources, we need to choose the compression levels such that compression takes less time than the time difference between sending an uncompressed versus a compressed file. This difference is borne out when looking at compression level recommendations for both methods.
 
-<figure markdown>
+<figure>
   <table>
     <thead>
       <tr>
-        <th></th>
-        <th>brotli</th>
-        <th>gzip</th>
+        <td></td>
+        <th scope="col">brotli</th>
+        <th scope="col">gzip</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>precompressed</td>
-        <td class="numeric">11</td>
-        <td class="numeric">9 or zopfli</td>
+        <td>11</td>
+        <td>9 or zopfli</td>
       </tr>
       <tr>
         <td>dynamically compressed</td>
-        <td class="numeric">5</td>
-        <td class="numeric">6</td>
+        <td>5</td>
+        <td>6</td>
       </tr>
     </tbody>
   </table>
-<figcaption>{{ figure_link(caption="Recommended compression levels to use.") }}<figcaption>
+  <figcaption>{{ figure_link(caption="Recommended compression levels to use.") }}</figcaption>
 </figure>
 
 Currently, practically all text compression is done by one of two HTTP content encodings: [gzip](https://tools.ietf.org/html/rfc1952) and [brotli](https://github.com/google/brotli). Both are widely supported by browsers: [can I use brotli](https://caniuse.com/?search=brotli)/[can I use gzip](https://caniuse.com/?search=gzip)
@@ -112,10 +112,6 @@ Approximately 60% of HTTP responses are delivered with no text-based compression
 <figure>
   <table>
     <thead>
-      <tr>
-        <td></td>
-        <th scope="colgroup" colspan="3" >Percent of Requests</th>
-      </tr>
       <tr>
         <th scope="col">Content Encoding</th>
         <th scope="col">Desktop</th>
