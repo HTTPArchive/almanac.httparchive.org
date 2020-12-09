@@ -1,6 +1,8 @@
 from server.config import DEFAULT_YEAR, SUPPORTED_YEARS
 from server.language import Language, DEFAULT_LANGUAGE
-from server.validate import parse_accept_language, validate_lang_and_year
+from server.validate import parse_accept_language, validate_lang_and_year, validate_chapter
+import pytest
+import werkzeug
 
 
 SUPPORTED_LANGUAGES = (Language.EN.lang_code, Language.JA.lang_code)
@@ -8,6 +10,9 @@ DEFAULT_LANGUAGE_CODE = DEFAULT_LANGUAGE.lang_code
 JAPANESE_LANGUAGE_CODE = Language.JA.lang_code
 ENGLISH_LANGUAGE_CODE = Language.EN.lang_code
 
+
+def assert_validate_chapter(chapter, year, expected_chapter):
+    assert expected_chapter == validate_chapter(chapter, year)
 
 def assert_validate_lang(lang, year, expected_lang, expected_year):
     assert (expected_lang, expected_year) == validate_lang_and_year(lang, year)
@@ -96,3 +101,33 @@ def test_returns_preferred_chinese():
 
 def test_returns_default_year():
     assert_validate_lang('en', None, 'en', DEFAULT_YEAR)
+
+
+def test_valid_chapter():
+    assert_validate_chapter('javascript', '2019', 'javascript')
+
+
+def test_invalid_chapter():
+    with pytest.raises(werkzeug.exceptions.NotFound):
+        assert_validate_chapter('random', '2019', 'javascript')
+
+
+def test_typo_chapter():
+    assert_validate_chapter('http-2', '2019', 'http2')
+
+
+def test_uppercase_chapter():
+    assert_validate_chapter('Javascript', '2019', 'javascript')
+
+
+def test_miduppercase_chapter():
+    assert_validate_chapter('JavaScript', '2019', 'javascript')
+
+
+def test_2020_chapter():
+    assert_validate_chapter('capabilities', '2020', 'capabilities')
+
+
+def test_2020_chapter_not_in_2019():
+    with pytest.raises(werkzeug.exceptions.NotFound):
+        assert_validate_chapter('capabilities', '2019', 'capabilities')

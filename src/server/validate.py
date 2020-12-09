@@ -33,11 +33,6 @@ def validate(func):
         if 'lang' in accepted_args:
             kwargs.update({'lang': lang})
             if lang != lang_arg and lang_arg is not None:
-                # Normally we return a 302 for a language not yet supported
-                # but for zh-CHT migration we want a 301 to get Google to reindex
-                # TODO - Remove in future?
-                if lang_arg == 'zh-CHT':
-                    return redirect('%s' % request.full_path.replace(lang_arg, lang, 1), code=301)
                 return redirect('%s' % request.full_path.replace(lang_arg, lang, 1), code=302)
 
         if 'year' in accepted_args:
@@ -61,6 +56,9 @@ def validate_chapter(chapter, year):
         if chapter[-1] == "/":
             # Automatically remove any trailing slashes
             return chapter[:-1]
+        elif chapter.lower() in chapters_for_year:
+            # Automatically redirect to lowercase
+            return chapter.lower()
         elif chapter in TYPO_CHAPTERS:
             # Automatically redirect for configured typos
             logging.debug('Typo chapter requested: %s, redirecting to %s' % (chapter, TYPO_CHAPTERS.get(chapter)))
