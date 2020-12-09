@@ -354,8 +354,6 @@ Fun fact!
 
 We found 3200 websites with the attribute **aria-labeledby**, which is a misspelling of the `aria-labelledby` attribute! Be sure to run those automated checks to pick up these easily avoidable errors.
 
-##### Expanded content
-
 ##### Hiding content 
 
 There are several ways to ensure that assistive technology will not discover content. We can leverage CSS `display:none`; or `visibility:hidden;` to omit the elements from the accessibility tree. If an author wishes to hide content from screen readers specifically they can use `aria-hidden="true"`. We found that 48.09% of desktop pages and 48.23% of mobile pages had at least one instance of an element with the `aria-hidden` attribute.
