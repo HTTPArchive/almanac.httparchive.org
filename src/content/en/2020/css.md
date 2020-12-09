@@ -824,6 +824,14 @@ Because *wide color gamut* (WCG) is only the beginning. The TV and movie industr
 
 ## Gradients
 
+Despite minimalism and flat design being all the rage, CSS gradients are used in 75% of pages. As expected, nearly all gradients are used in backgrounds. 74.45% of pages specify gradients in backgrounds, but only 7% in **any** other property.
+
+Linear gradients are 5 times more popular than radial ones, appearing in almost 73% of pages, compared to 15% for radial gradients. The difference in popularity is so staggering, that even `-ms-linear-gradient()`, which **was never needed** (IE10 supported gradients both with and without the `-ms-` prefix), is more popular than `radial-gradient()`! The [newly supported](https://caniuse.com/css-conic-gradients) `conic-gradient()` is even more underutilized, appearing in only 652 desktop pages (0.01%) and 848 mobile pages (0.01%), which is expected, since Firefox has only just shipped its implementation to the stable channel.
+
+Repeating gradients of all types are fairly underused too, with `repeating-linear-gradient()` appearing in only 3% of pages and the others trailing behind even more (`repeating-conic-gradient()` is only used in 21 pages!).
+
+Prefixed gradients are also still very common, even though prefixes haven't been needed in gradients since 2013.  It is notable that -webkit-gradient() is still used in half of all websites, even though it [hasn't been needed since 2011](https://caniuse.com/css-gradients). And  `-webkit-linear-gradient()` is still the second most used gradient function of all, appearing in 57% of websites, with the other prefixed forms also being used in a third to half of pages.
+
 {{ figure_markup(
   image="gradient-functions.png",
   caption="The most popular gradient functions as a percent of pages.",
@@ -841,6 +849,14 @@ Because *wide color gamut* (WCG) is only the beginning. The TV and movie industr
   sheets_gid="397884589",
   sql_file="gradient_functions.sql"
 ) }}
+
+Using color stops with different colors in the same position (hard stops) to create stripes and other patterns is a technique [first popularized in 2010](https://lea.verou.me/2010/12/checkered-stripes-other-background-patterns-with-css3-gradients/) (by Lea Verou), which by now has many interesting variations, including [some really cool ones with blend modes](https://bennettfeely.com/gradients/). While it may seem like a hack, hard stops are found in 50% of pages, indicating a strong developer need for lightweight graphics from within CSS without resorting to image editors or external SVG.
+
+ Interpolation hints (or as Adobe, who popularized the technique, calls them: “midpoints”) are found on 22% of pages, despite [near universal browser support since 2015](https://caniuse.com/mdn-css_types_image_gradient_linear-gradient_interpolation_hints). Which is a shame, because without them, the color stops are connected by straight-lines in the colorspace, rather than smooth curves. This low usage probably reflects a misunderstanding of what they do, or how to use them; contrast this with CSS transitions and animations, where easing functions (which do much the same thing, i.e. connect the keyframes with curves rather than jerky straight lines) are much more commonly used ([80% of transitions](TODO: link to transitions section, or timing function section if possible)). “Midpoints” is not a very understandable description, and “interpolation hint” sounds like you are helping the browser to do simple arithmetic.
+
+Most gradient usage is rather simple, with over 75% of gradients found across the entire dataset only using 2 color stops. In fact, fewer than half of pages contain even a single gradient with more than 3 color stops!
+
+The gradient with the most color stops is [this one](https://dabblet.com/gist/4d1637d78c71ef2d8d37952fc6e90ff5) with 646 stops! So pretty! This is almost certainly generated, and the resulting CSS code is 8KB, so a 1px tall PNG would likely have done the job as well, with a smaller footprint.
 
 {{ figure_markup(
   image="gradient-most-stops.png",
