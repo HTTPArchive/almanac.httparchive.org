@@ -52,7 +52,7 @@ Although JavaScript is on average the 2nd most abundant resource on a page, we t
 
 The web's  journey from the plain, near pedagogical platform, to the innovative, intricate and highly interactive apps it has become, the rudimentary page weight metric hid a bigger story: a ratatouille of resources, each affecting  modern metrics, in turn affecting user experience.
 
-Whenever we talk about interactivity, we are talking almost exclusively about JavaScript. Now, though we are not here to discuss interactivity in any depth, we know there are metrics which are focused and dependent on JavaScript content and execution.  So weightier the JavaScript, likely to have a greater impact on interactivity metrics (time to interactive, total blocking time). We have a [JavaScript chapter](./javascript) that dives a pinch more.
+Whenever we talk about interactivity, we are talking almost exclusively about JavaScript. Now, though we are not here to discuss interactivity in any depth, we know there are metrics which are focused and dependent on JavaScript content and execution.  So weightier the JavaScript, likely to have a greater impact on interactivity metrics (time to interactive, total blocking time). We have the [JavaScript chapter](./javascript) that dives a pinch more.
 
 ## Analysis
 

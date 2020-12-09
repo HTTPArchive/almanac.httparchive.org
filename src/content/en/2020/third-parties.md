@@ -43,7 +43,7 @@ Third-party resources are:
 
 To match these goals as closely as possible, the formal definition used throughout this chapter for third-party resources is: a resource that originates from a domain whose resources can be found on at least 50 unique pages in the HTTP Archive dataset.
 
-Note that using these definitions, third-party content served from a first-party domain is counted as a first-party content. For example: self-hosting Google Fonts or Bootstrap.CSS is counted as _first-party content_.  Similarly, first-party content served from a third-party domain is counted as third-party content. An associated example: First-party images served over a CDN on a third-party domain are considered _third-party content_.
+Note that using these definitions, third-party content served from a first-party domain is counted as a first-party content. For example: self-hosting Google Fonts or bootstrap.css is counted as _first-party content_.  Similarly, first-party content served from a third-party domain is counted as third-party content. An associated example: First-party images served over a CDN on a third-party domain are considered _third-party content_.
 
 ### Provider categories
 
