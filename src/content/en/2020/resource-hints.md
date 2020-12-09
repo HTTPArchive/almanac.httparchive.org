@@ -111,7 +111,7 @@ More and more web pages are using the main resource hints, and in 2020 we are se
 {{ figure_markup(
   image="adoption-of-resource-hints.png",
   caption="Adoption of resource hints.",
-  description="Column chart showcasing the adoption of resource hints in 2020.",
+  description="A bar chart of the rate of resource hint adoption broken down by hint type and form factor. For desktop, 33% of pages use the `dns-prefetch` resource hint, 18% use `preload`, 8% use `preconnect`, 3% use `prefetch`, and less than 1% use `prerender`. Mobile is similar, except that `dns-prefetch` has 34% usage (1% higher), and `preconnect` has 9% (1% higher).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYAbLxN40s6mNR1jo0XDe_V4siN8TAsx2mryMp5IQmlJ-9O9eJxYROz7Rw6ozyFP6hlIZHxxh95GqX/pubchart?oid=1550112064&format=interactive",
   sheets_gid="1805612941",
   sql_file="adoption.sql"
@@ -124,7 +124,7 @@ Compared to [2019](../2019/resource-hints#resource-hints) the `dns-prefetch` had
 {{ figure_markup(
   image="resource-hint-adoption-2019-vs-2020.png",
   caption="Adoption of resource hints 2019 vs 2020.",
-  description="Column chart showcasing the adoption of resource hints 2019 vs 2020.",
+  description="A bar chart comparing the rate of resource hint adoption in mobile between 2019 and 2020, broken down by hint type. It shows an increase in usage in almost every resource hint type. `dns-prefetch` increased 5%, from 29% to 34%. `preload` increased 2%, from 16% to 18%. `preconnect` increased 5%, from 4% to 9%. `prefetch` remained flat at 3% usage. `prerender` also remained flat at less than 1% usage.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYAbLxN40s6mNR1jo0XDe_V4siN8TAsx2mryMp5IQmlJ-9O9eJxYROz7Rw6ozyFP6hlIZHxxh95GqX/pubchart?oid=1494186122&format=interactive",
   sheets_gid="1805612941",
   sql_file="adoption.sql"
@@ -141,7 +141,7 @@ Across the board developers are learning how to better use resource hints, and c
 {{ figure_markup(
   image="median-number-of-hints-per-page.png",
   caption="Median number of hints per page.",
-  description="Column chart showcasing the median number of hints per page.",
+  description="A bar chart showing the median number of resource hints present per page broken down by resource hint type and form factor. `preload` and `prerender` both have (median) one hint per page on both mobile and desktop. `prefetch` and `dns-prefetch` both have (median) two hints per page on both mobile and desktop. `preconnect` has (median) one hint per page on desktop, and (median) two hints per page on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYAbLxN40s6mNR1jo0XDe_V4siN8TAsx2mryMp5IQmlJ-9O9eJxYROz7Rw6ozyFP6hlIZHxxh95GqX/pubchart?oid=320451644&format=interactive",
   sheets_gid="175042082",
   sql_file="hints_per_page.sql"
@@ -170,7 +170,7 @@ With `preload` many different content-types can be preloaded and the [full list]
 {{ figure_markup(
   image="mobile-as-attribute-values-by-year.png",
   caption="Mobile `as` attribute values by year.",
-  description="Column chart showcasing the mobile `as` attribute values by year.",
+  description="A bar chart comparing the rate of `as` attribute values on mobile pages from 2019 and 2020, broken down by `as` attribute value. The majority of `as` values are \"script\" with 81% usage in 2019 and 64% usage in 2020. \"script\" usage fell 17% year over year, while all other values increased in usage. \"not set\" increased 8%, \"font\" increased 5%, \"style\" increased 2%, the rest of the notable values are 1% or less for both years.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYAbLxN40s6mNR1jo0XDe_V4siN8TAsx2mryMp5IQmlJ-9O9eJxYROz7Rw6ozyFP6hlIZHxxh95GqX/pubchart?oid=903180926&format=interactive",
   sheets_gid="1829901599",
   sql_file="as_attribute_by_year.sql"
@@ -295,7 +295,7 @@ For both `preload` and `prefetch` we've had an increase in adoption when the pag
 {{ figure_markup(
   image="resource-hint-adoption-onservice-worker-pages.png",
   caption="Resource hint adoption on Service Worker pages.",
-  description="Column chart showcasing the resource hint adoption on Service Worker pages.",
+  description="A bar chart of the rate of resource hint adoption on Service Worker pages broken down by hint type and form factor. For desktop, 29% of pages use the `dns-prefetch` resource hint, 47% use `preload`, 34% use `preconnect`, 10% use `prefetch`, and less than 1% use `prerender`. Mobile is similar, except that `dns-prefetch` has 30% usage (1% higher), and `preconnect` has 34% (13% lower).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYAbLxN40s6mNR1jo0XDe_V4siN8TAsx2mryMp5IQmlJ-9O9eJxYROz7Rw6ozyFP6hlIZHxxh95GqX/pubchart?oid=252958553&format=interactive",
   sheets_gid="691299508",
   sql_file="adoption_service_workers.sql"
