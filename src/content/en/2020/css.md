@@ -1031,9 +1031,21 @@ Around the same time masks got popular, another similar but simpler property (or
 
 ## Responsive design
 
+Making sites that cope with the many different screen sizes and devices that browse the web has become somewhat easier with the built-in flexible and responsive new layout methods such as Flexbox and Grid. These layout methods are usually further enhanced with the use of media queries. The data shows that 80% of desktop sites and 83% of mobile sites use media queries that are associated with responsive design, such as `min-width`. 
+
 ### Which media features are people using?
 
+As you might expect, the most common media features in use are the viewport size features which have been in use since the early days of responsive web design. The percentage of sites checking for `max-width` is 78% for both desktop and mobile. A check for `min-width` features on 75% of mobile and 73% of desktop sites.
+
+The `orientation` media feature, which allows authors to differentiate their layout based on whether the screen is portrait or landscape, can be found on 33% of all sites.
+
+We are seeing some newer media features come up in the statistics. The [`prefers-reduced-motion`](https://web.dev/prefers-reduced-motion/) media feature provides a way to check if the user has requested reduced motion, so that websites can adjust the amount of animation they use. This can be turned on either explicitly, through a user-controlled operating system setting, or implicitly, for example due to decreasing battery level. 24% of sites are checking for this feature.
+
+In other good news, newer features from the [Media Queries Level 4](https://www.w3.org/TR/mediaqueries-4/) specification are starting to appear. On mobile 5% of sites are checking for the type of pointer the user has. A `coarse` pointer indicates they are using a touchscreen, whereas a `fine` pointer indicates a pointing device. Understanding the way a user is interacting with your site is often just as helpful, if not more helpful, than looking at screen size. A person might be using a small screen device with a keyboard and mouse, or a high resolution large screen device with a touchscreen and benefit from larger hit areas.
+
 ### Common breakpoints
+
+The most common breakpoint in use across desktop and mobile devices is a `min-width` of 768px. 54% of sites use this breakpoint, closely followed by a `max-width` of 767px at 50%. [The Bootstrap framework](https://getbootstrap.com/docs/4.1/layout/overview/) uses a `min-width` of 768px as its “Medium” size, so this may be the source of much of the usage. The other two high-ranking `min-width` values of 1200px (40%) and 992px (37%) are also found in Bootstrap.
 
 {{ figure_markup(
   image="breakpoints.png",
@@ -1044,6 +1056,13 @@ Around the same time masks got popular, another similar but simpler property (or
   sql_file="media_query_values.sql"
 ) }}
 
+Pixels are very much the unit that is used for breakpoints. There are a few instances of ems a long way down the list, however setting breakpoints in pixels appears to be the popular choice. There are probably many reasons for this. Legacy. All of the early articles on responsive design use pixels, and many people still think about targeting particular devices when creating responsive designs. Sizing [using ems](https://www.google.com/url?q=https://zellwk.com/blog/media-query-units/&sa=D&ust=1607450749403000&usg=AOvVaw0h06KUQUWfqoFyP5BVsss4) involves considering the size of the content rather than the device, and this is a newer way of thinking about web design, perhaps one yet to fully be taken advantage of along with intrinsic sizing methods for layout.
+
+### Properties used inside media queries
+
+On mobile devices 79% and on desktop 77% of media queries are used to change the `display` property. Perhaps indicating that people are testing before switching to a flex or grid formatting context. Again, I think this may be linked frameworks, for example the [Bootstrap responsive utilities](https://getbootstrap.com/docs/4.1/utilities/display/).
+78% of authors change the `width` property inside media queries, `margin`, `padding` and `font-size` all rank highly for changed properties.
+
 {{ figure_markup(
   image="media-query-properties.png",
   caption="The most popular properties used in media queries as a percent of pages.",
@@ -1053,9 +1072,11 @@ Around the same time masks got popular, another similar but simpler property (or
   sql_file="media_query_properties.sql"
 ) }}
 
-### Properties used inside media queries
-
 ## Custom properties
+
+Last year, only 5% of websites were using custom properties. This year, adoption has skyrocketed. Using last year's query (which only counted declarations that *set* custom properties), usage has quadrupled on mobile (19.29%) and tripled on desktop (14.47%). However, when we look at *values that reference custom properties* via `var()`, we get an even better picture: 27% of mobile pages and 22% of desktop pages were using the `var()` function at least once, which indicates there is a sizeable number of pages only using `var()` to offer customization hooks, without ever setting a custom property.
+
+While at first glance this is impressive adoption, it appears that a major driver is WordPress, as evidenced by the most popular custom property names, the top 4 of which ship with WordPress. 
 
 ### Naming
 
@@ -1068,7 +1089,11 @@ Around the same time masks got popular, another similar but simpler property (or
   sql_file="custom_property_names.sql"
 ) }}
 
+Out of the 1,000 top property names, fewer than 13 are ‘custom’, as in made up by individual web developers.The vast majority are associated with popular software, such as WordPress, Elementor, and Avada. To determine this, we took into account not only which custom properties appear in what software (by searching on Github), but also which properties appear in groups with similar frequencies. This does not necessarily mean that the main way a custom property ends up on a website is through usage of that software (people do still copy and paste!), but it does indicate there aren't many organic commonalities between the custom properties that developers define. The only custom property names that seem to have organically made the list of top 1000 are `--height`, `--primary-color`, and `--caption-color`.
+
 ### Usage by type
+
+The biggest usage of custom properties appears to be naming colors and keeping colors consistent throughout. Approximately 1 in 5 desktop pages and 1 in 6 mobile pages uses custom properties in `background-color`, and the top 11 properties that contain `var()` references are either color properties or shorthands that contain colors. Lengths is the second biggest usage, with `width` and `height` being used with `var()` in 7% of mobile pages (interestingly, only around 3% of desktop pages). This is also confirmed by the types of most popular values, with color values accounting for 52% of all custom property declarations. Dimensions (= a number + a unit, e.g. lengths, angles, times etc) were the second more popular type, higher than unitless numbers (12%), despite guidance to prefer the latter, since numbers can be converted to dimensions via `calc()` and multiplication, but dimensions cannot be converted to numbers as dividing with dimensions is not supported yet.
 
 {{ figure_markup(
   image="custom-property-properties.png",
@@ -1078,6 +1103,8 @@ Around the same time masks got popular, another similar but simpler property (or
   sheets_gid="556945658",
   sql_file="custom_property_properties.sql"
 ) }}
+
+In preprocessors, color variables are often manipulated to generate color variations. However, in CSS color modification functions are merely an unimplemented draft. Right now, the only way to generate new colors from variables is to use variables for individual components and plug them into color functions, such as `rgba()` and `hsla()`. However, fewer than 4% of mobile pages and 0.6% of desktop pages do that, indicating that the high usage of color variables is primarily to hold entire colors, with variations thereof being separate variables instead of dynamically generated.
 
 {{ figure_markup(
   image="custom-property-functions.png",
@@ -1092,6 +1119,8 @@ Around the same time masks got popular, another similar but simpler property (or
 
 ### Complexity
 
+Next, we looked at how complex custom property usage is. One way to assess code complexity in software engineering is the shape of the dependency graph. We first looked at the depth of each custom property. A custom property set to a literal value like e.g. `#fff` has a depth of 0, whereas a property referencing that via var() would have a depth of 1 and so on. 2 out of 3 custom properties examined (67%) had a depth of 0, and 30% had a depth of 1 (slightly less on mobile). Less than 1.8% had a depth of 2, and virtually none (0.7%) had a depth of 3+, which indicates rather basic usage. The upside of such basic usage is that it's harder to make mistakes: fewer than 0.5% of pages included cycles.
+
 {{ figure_markup(
   image="custom-property-depth.png",
   caption="Distribution of depths of custom properties as a percent of occurrences.",
@@ -1101,11 +1130,25 @@ Around the same time masks got popular, another similar but simpler property (or
   sql_file="custom_property_depth.sql"
 ) }}
 
+Examining the selectors on which custom properties are declared further confirms that most custom property usage in the wild is fairly basic. Two2 out of 3 custom property declarations are on the root element, indicating that they are used essentially as global constants. It is important to note that many popular polyfills have required them to be global in this vein, so developers using said polyfills may not have had a choice.
+
 ## CSS and JS
 
 ### Houdini
 
+You've definitely heard of Houdini by now. Since [several Houdini specs have shipped in browsers](https://ishoudinireadyyet.com/), we figured it's time to see if they are actually used in the wild yet. Short answer: no. And now for the longer answer…
+
+First, we looked at the [Properties & Values API](https://developer.mozilla.org/en-US/docs/Web/API/CSS/RegisterProperty), which allows developers to register a custom property and give it a type, an initial value, and prevent it from being inherited. One of the primary use cases is being able to animate custom properties, so we also looked at how frequently custom properties are being animated.
+
+As is common with bleeding edge tech, adoption in the wild has been extremely low. Only 32 desktop and 20 mobile pages were found to have any registered custom properties, though this excludes custom properties that were registered but not applied at the time of the crawl. Only 325 mobile pages and 330 desktop ones (0.00%) use custom properties in animations, and most (74%) of that seems to be driven by a Vue component. Virtually none of those appear to have registered them, though this is likely because the animation wasn't active at the time of the crawl, so there was no computed style to be picked up.
+
+Then we looked at another broadly implemented Houdini spec, the Paint API, which allows developers to create custom CSS functions that return `<image>` values, e.g. to implement custom gradients or patterns. Only 12 pages were found to be using paint(). All worklet names (`hexagon`, `ruler`, `lozenge`, `image-cross`, `grid`, `dashed-line`, `ripple`) only appeared on one page each, so it appears that they are likely demos.
+
+[Typed OM](https://github.com/w3c/css-houdini-drafts/blob/master/css-typed-om/README.md), another Houdini specification, allows access to structured values instead of the strings of the classic CSS OM. It appears to have considerably higher adoption compared to other Houdini specs, though still low overall. It is used in 9,864 desktop pages (0.18%) and 6,391 mobile ones (0.1%). While this may seem low, to put it in perspective, these are similar numbers to the adoption of `<input type="date">`! Note that unlike most stats in this chapter, these numbers reflect actual usage, and not just inclusion in a website’s assets.
+
 ### CSS-in-JS
+
+We keep hearing about CSS-in-JS and we tend to assume everyone and their dog is using it. However, when we looked at usage of various CSS-in-JS libraries, it turned out that only about 2% of websites use *any* CSS-in-JS method, with Styled Components accounting for almost half of that.
 
 {{ figure_markup(
   image="css-in-js.png",
@@ -1120,11 +1163,26 @@ Around the same time masks got popular, another similar but simpler property (or
 
 ### Direction
 
+When text is presented in horizontal lines, most writing systems display characters from left to right. Urdu, Arabic and Hebrew display characters from right to left, except that numbers are written from left to right; they are said to be _bidirectional_. Some characters  – such as brackets, quote marks, punctuation – could be used in either a left to right or a right to left context, and are said to be _directionally neutral_. Things get more complex when text strings are nested in one another - English text containing a short quote in Hebrew which contains some English words, for example. The Unicode bidirectional algorithm defines how to lay out paragraphs of mixed-direction text, but it needs to know the base direction of the paragraph.
+
+So explicit support for indicating direction is available in both HTML ([the dir attribute](https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute) and [`<bdo>` element](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdo-element)) and CSS (the direction and unicode-bidi properties). We looked at usage of both HTML and CSS methods.
+The first thing we noticed is that only 12.14% of pages on mobile (and a similar 10.76% on desktop) set the dir attribute on the `<html>` element. Which is fine: most writing systems in the world are ltr, and the default dir value is ltr. Of the pages which _did_ set dir on `<html>`, 91% set it to ltr while 8.5% set it to rtl and 0.32% to auto (the explicit _direction is unknown_ value, mainly useful for templates which will be filled with unknown content). An even smaller number, 2.63%, set dir on `<body>`. Which is good, because setting it on `<html>` also covers you for content in the `<head>`, like `<title>`.
+
+Why set direction using HTML attributes rather than CSS styling? Because that is the [recommended practice](https://www.w3.org/International/tutorials/bidi-xhtml/index.en): _Avoid using CSS or Unicode control codes for managing direction where you can use markup_. After all, the stylesheet might not load and the text still needs to be readable.
+
 ### Logical vs physical properties
+
+Many of the first properties we are taught when we learn CSS, things like `width`, `height`, `margin-left`, `padding-bottom`, `right` and so on are grounded on a specific physical direction. However, when content needs to be presented in multiple languages with different directionality characteristics, these physical directions are often language dependent, e.g. `margin-left` often needs to become `margin-right` in a right-to-left language such as Arabic. Directionality is a 2D characteristic. For example, `height` may need to become `width` when we are presenting content in vertical writing (such as traditional Chinese).
+
+In the past, the only solution to these problems was a separate stylesheet with overrides for different writing systems. However, more recently CSS has acquired [*logical* properties and values](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties) that work just like their *physical* counterparts but are sensitive to the directionality of their context . For example, instead of `width` we could write `inline-size`, and instead of `left` we could use the [`inset-inline`](https://developer.mozilla.org/en-US/docs/Web/CSS/inset-inline) property. In addition to logical *properties*, there are also logical *keywords*, such as `float: inline-start` instead of `float: left`.
+
+While these properties are fairly [well supported](https://caniuse.com/css-logical-props) (with some exceptions), they are not used very much outside of user agent stylesheets. None of the logical properties were used on more than 0.6% of pages. Most usage was to specify margins and paddings. Logical keywords for `text-align` were used on 2.25% of pages, but apart from that, none of the other keywords were even encountered at all. This is by large driven by browser support: `text-align: start` and `end` have [fairly good browser support](https://caniuse.com/mdn-css_properties_text-align_flow_relative_values_start_and_end) whereas logical keywords for `clear` and `float` are only supported in Firefox.
 
 ## Browser support
 
 ### Vendor prefixes
+
+Even though prefixing is now recognized as a failed way to introduce experimental features to developers, and browsers have largely stopped using it, opting for flags instead, a whopping 91% of pages still use at least one prefixed feature.
 
 {{ figure_markup(
   image="vendor-prefix-features.png",
@@ -1143,6 +1201,8 @@ Around the same time masks got popular, another similar but simpler property (or
   sql_file="vendor_prefix_summary.sql"
 ) }}
 
+Prefixed properties take up the lion’s share of that, since 84% of all prefixed features used were properties. This is most likely a remnant of the prefix-happy CSS3 era circa 2009-2014. This is also evident from the most popular prefixed ones, none of which have actually needed prefixes since 2014:
+
 {{ figure_markup(
   image="vendor-prefix-properties.png",
   caption="Relative popularity of properties that are most used with vendor prefixes, as a percent of occurrences.",
@@ -1152,6 +1212,10 @@ Around the same time masks got popular, another similar but simpler property (or
   sql_file="vendor_prefix_properties.sql"
 ) }}
 
+Interestingly, even some prefixed properties that **never existed**, are still moderately popular, with roughly 9% of all pages including `-o-border-radius`!
+
+It may come as no surprise that `-webkit-` is by far the most popular prefix, with half of prefixed properties using it:
+
 {{ figure_markup(
   image="top-vendor-prefixes.png",
   caption="Relative popularity of vendor prefixes, as a percent of occurrences.",
@@ -1160,6 +1224,8 @@ Around the same time masks got popular, another similar but simpler property (or
   sheets_gid="67014375",
   sql_file="vendor_prefix_properties.sql"
 ) }}
+
+Prefixed pseudo-classes are not nearly as common as properties, with none of them being used in more than 10% of pages. Nearly two thirds of all prefixed pseudo-classes **overall** are for styling placeholders. In contrast, the standard `:placeholder-shown` pseudo-class is not popular at all yet, used in less than 0.34% of pages.
 
 {{ figure_markup(
   image="vendor-prefix-pseudo-classes.png",
@@ -1172,6 +1238,10 @@ Around the same time masks got popular, another similar but simpler property (or
   sql_file="vendor_prefix_pseudo_classes.sql"
 ) }}
 
+The most common prefixed pseudo-element is `::-moz-focus-inner`, used to disable Firefox's inner focus ring. It makes up almost a quarter of prefixed pseudo-elements and for which there is no standard alternative. Another quarter of prefixed pseudo-elements is yet again for styling placeholders, while the standard version, `::placeholder`, trails far behind, used in only 4% of pages. 
+
+The remaining half of prefixed pseudo-elements is primarily devoted to styling scrollbars and Shadow DOM of native elements (search inputs, video & audio controls, spinner buttons, sliders, meters, progress bars). This indicates a strong developer need for customization of built-in UI controls, for which standards-compliant CSS still falls short, although there are [multiple ongoing](https://github.com/w3c/csswg-drafts/issues/4410) CSS WG [discussions](https://github.com/w3c/csswg-drafts/issues/5187) to ameliorate that.
+
 {{ figure_markup(
   image="vendor-prefix-pseudo-elements.png",
   caption="Relative popularity of vendor-prefixed pseudo-elements by purpose as a percent of occurrences.",
@@ -1183,6 +1253,8 @@ Around the same time masks got popular, another similar but simpler property (or
   sql_file="vendor_prefix_pseudo_elements.sql"
 ) }}
 
+It is no secret that Chrome and Safari have been way more prefix-happy, but it is especially true with pseudo-elements: nearly half of all prefixed pseudo-elements we found had a -webkit-prefix.
+
 {{ figure_markup(
   image="top-pseudo-element-prefixes.png",
   caption="Relative popularity of pseudo-element vendor prefixes as a percent of occurrences on mobile pages.",
@@ -1192,6 +1264,8 @@ Around the same time masks got popular, another similar but simpler property (or
   sql_file="vendor_prefix_pseudo_elements.sql"
 ) }}
 
+Nearly all usage of prefixed functions (98%) is to specify gradients, even though [this has not been necessary since 2014](https://caniuse.com/css-gradients). The most popular of these is `-webkit-linear-gradient()` used in over a quarter of pages examined. The remaining <2% is primarily for calc, [for which a prefix has not been necessary since 2013](https://caniuse.com/calc).
+
 {{ figure_markup(
   caption="Percent of occurrences of vendor-prefixed functions on mobile pages that specify gradients.",
   content="98.22%",
@@ -1199,6 +1273,10 @@ Around the same time masks got popular, another similar but simpler property (or
   sheets_gid="1586213539",
   sql_file="vendor_prefix_functions.sql"
 ) }}
+
+Usage of prefixed media features is lower overall, with the most popular one, `-webkit-min-pixel-ratio` used in 13% of pages to detect "Retina" displays. The corresponding standard media feature, [`resolution`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/resolution) has finally surpassed it in popularity and is used in 1,373,813 mobile pages (22%) and 811,411 desktop pages (15%).
+
+Overall, `-*-min-pixel-ratio` comprises three quarters of prefixed media features on desktop and about half on mobile. The reason for the difference is not reduced mobile usage, but that another prefixed media feature, `-*-high-contrast`, is far more popular on mobile making up almost the entire other half of prefixed media features, but only 18% on desktop. The corresponding standard media feature, [forced-colors](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/forced-colors) is still experimental and behind a flag in Chrome and Firefox, and thus, did not appear at all in our analysis. 
 
 {{ figure_markup(
   image="vendor-prefixed-media.png",
@@ -1210,6 +1288,17 @@ Around the same time masks got popular, another similar but simpler property (or
 ) }}
 
 ### Feature queries
+
+Feature queries ([@supports](https://developer.mozilla.org/en-US/docs/Web/CSS/@supports)) have been steadily gaining traction for the past few years, and were used in 39% of pages, a notable increase from last year's 30%.
+
+But what are they used for? We looked at the most popular queries. The results may come as a big surprise — it was to us! We expected grid-related queries to top the list, but instead, the most popular feature queries **by far** are for `position: sticky`! They comprise **half** of all feature queries and are used in about a quarter of pages. In contrast, grid-related queries account for only 2% of all queries, indicating that developers feel comfortable enough with Grid's browser support that they don’t need to use it only as progressive enhancement. 
+
+What is even more mysterious is that `position: sticky` itself is not used as much as the feature queries about it, appearing in 10% of desktop pages and 13% of mobile pages. So there are over half a million pages that detect `position: sticky` without ever using it! Why?!
+
+Lastly, it was encouraging to see `max()` already in the top 10 most detected features, appearing in 0.6% of desktop pages and 0.7% of mobile pages. Given that `max()` (and `min()`, and `clamp()`) was [only supported across the board this year](https://caniuse.com/mdn-css_types_max), it is quite impressive adoption and highlights how desperately developers needed this.
+
+A small but notable number of pages (around 3000 or 0.05%) were oddly using `@supports` with CSS 2 syntax, such as `display: block` or `padding: 0px`, syntax that existed well before `@supports` was implemented. It is unclear what this was meant to achieve. Perhaps it was used to shield CSS rules from old browsers that don't implement `@supports`?
+
 
 {{ figure_markup(
   image="supports-criteria.png",
