@@ -224,7 +224,7 @@ To safely implement `dns-prefetch` and `preconnect` make sure to have them in se
 
 Implementing a `dns-prefetch` fallback in the same `<link>` tag causes a [bug](https://bugs.webkit.org/show_bug.cgi?id=197010) in Safari that cancels the `preconnect` request. Close to 2% of pages (~40k) reported the issue of both `preconnect` & `dns-prefetch` in a single resource.
 
-In the case of "[Preconnect to required origins](https://web.dev/uses-rel-preconnect/)" audit, we saw only 19.67% of pages passing the teast, creating a large opportunity for thousands of websites to start using `preconnect` or `dns-prefetch` to establish early connections to important third-party origins.
+In the case of "[Preconnect to required origins](https://web.dev/uses-rel-preconnect/)" audit, we saw only 19.67% of pages passing the test, creating a large opportunity for thousands of websites to start using `preconnect` or `dns-prefetch` to establish early connections to important third-party origins.
 
 {{ figure_markup(
   caption="The percent of pages that pass the `preconnect` Lighthouse audit.",
