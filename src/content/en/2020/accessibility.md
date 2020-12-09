@@ -262,7 +262,7 @@ In the vast majority of these cases, a better pattern than explicitly defining `
 
 ##### Navigation
 
-We found that 22.06% of desktop pages and 21.76% of mobile pages have at least one element with `role=”navigation”`, which is a landmark role. Per the 1st rule of ARIA, rather than adding this role to an element, developers should be leveraging the HTML 5 `<nav>` element which comes with the correct semantics implicitly. It is possible that this role has been added explicitly to the `<nav>` element, which would not be an accessibility issue, though it is redundant.  
+We found that 22.06% of desktop pages and 21.76% of mobile pages have at least one element with `role="navigation"`, which is a landmark role. Per the 1st rule of ARIA, rather than adding this role to an element, developers should be leveraging the HTML 5 `<nav>` element which comes with the correct semantics implicitly. It is possible that this role has been added explicitly to the `<nav>` element, which would not be an accessibility issue, though it is redundant.  
 
 ##### Dialog Modals
 
