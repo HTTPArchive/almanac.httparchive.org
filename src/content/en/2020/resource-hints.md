@@ -32,7 +32,6 @@ Over the following years, browser vendors did more and more of the heavy lifting
 In particular we can mention a few of the victories resource hints achieved/made in the last year:
 - [CSS-Tricks](https://www.zachleat.com/web/css-tricks-web-fonts/) web fonts showing up faster on a 3G first render.
 - [Wix.com](https://www.youtube.com/watch?v=4QqlGgF8Y2I&t=1469) using resource hints got 10% improvement for FCP.
-{# TODO(authors/reviewers): Should this URL be capitalized? (If yes, then why not wix?) #}
 - [Ironmongerydirect.co.uk](https://andydavies.me/blog/2019/03/22/improving-perceived-performance-with-a-link-rel-equals-preconnect-http-header/) used preconnect to improve product image loading by 400ms at the median and greater than 1s at the 95th percentile.
 - [Facebook.com](https://engineering.fb.com/2020/05/08/web/facebook-redesign/) used preload for faster navigation.
 
