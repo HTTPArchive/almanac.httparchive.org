@@ -230,6 +230,8 @@ When it comes to pseudo-elements, after the usual suspects `::before` and `::aft
 
 ### Lengths
 
+The humble `px` unit has gotten a lot of negative press over the years. At first, because it didn't play nicely with old IE's zoom functionality, and, more recently, because there are better units for most tasks that scale based on another design factor, such as viewport size, element font size, or root font size, reducing maintenance effort by making implicit design relationships explicit. The main selling point of `px` — its correspondence to one device pixel giving designers full control — is also gone now, as a pixel is not a device pixel anymore with the modern high pixel density screens. Despite all this, CSS pixels still nearly ubiquitously drive the Web's designs.
+
 {{ figure_markup(
   caption="Percentage of `<length>` values that use the `px` unit.",
   content="72.58%",
@@ -237,6 +239,8 @@ When it comes to pseudo-elements, after the usual suspects `::before` and `::aft
   sheets_gid="1221511608",
   sql_file="units_frequency.sql"
 ) }}
+
+The `px` unit is still going strong as the most popular length unit overall, with a whopping **72.58% of all length values across all stylesheets using `px`**! And if we exclude percentages (since they are not really a unit) the share of `px` increases even more, to 84.14%.
 
 {{ figure_markup(
   image="length-units.png",
@@ -246,6 +250,10 @@ When it comes to pseudo-elements, after the usual suspects `::before` and `::aft
   sheets_gid="1221511608",
   sql_file="units_frequency.sql"
 ) }}
+
+How are these `px` distributed across properties? Is there any difference depending on the property? Most definitely. For example, as one might expect, `px` is far more popular in borders (80-90%) compared to font-related metrics such as `font-size`, `line-height` or `text-indent`. However, even for those, `px` usage vastly outnumbers any other unit. In fact, the **only** properties for which another unit (*any* other unit) is more used than `px` are `vertical-align` (55% `em`), `mask-position` (50% `em`), `padding-inline-start` (62% `em`), `margin-block-start` and `margin-block-end` (65% `em`), and the brand new `gap` with 62% `rem`.
+
+One could easily argue that a lot of this content is just old, written before authors were more enlightened about using relative units to make their designs more adaptable and save themselves time down the line. However, this is easily debunked by looking at more recent properties such as `grid-gap` (62% `px`).
 
 <figure>
   <table>
@@ -380,14 +388,18 @@ When it comes to pseudo-elements, after the usual suspects `::before` and `::aft
   </figcaption>
 </figure>
 
+Similarly, despite the much touted advantages of `rem` vs `em` for many use cases, and its universal browser support [for years](https://caniuse.com/rem), the Web has still largely not caught up with it: the trusty `em` accounts for 87% of all font-relative units usage and `rem` trails far behind with 12%. We did see some usage of `ch` (width of the '0' glyph) and `ex` (x-height of the font in use) in the wild, but very small (only 0.37% and 0.19% of all font-relative units).
+
 {{ figure_markup(
   image="font-units.png",
-  caption="Relative popularity of font-based units other than `px` as a percent of occurrences.",
-  description="Bar chart showing the relative popularity of font-based units other than px. em is used overwhelmingly on 87.3% of instances, followed by rem at 12.2, ch at 0.4%, and ex at 0.2% of instances on mobile pages.",
+  caption="Relative share of font-relative units",
+  description="Bar chart showing the relative popularity of different font-based units. em is used overwhelmingly on 87.3% of instances, followed by rem at 12.2, ch at 0.4%, and ex at 0.2% of instances on mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=166603845&format=interactive",
   sheets_gid="1221511608",
   sql_file="units_frequency.sql"
 ) }}
+
+Lengths are the only types of CSS values for which we can omit the unit when the value is zero, i.e. we can write `0` instead of `0px` or `0em` etc. Developers (or CSS minifiers?) are taking advantage of this extensively: Out of all `0` values, 89% were unitless.
 
 {{ figure_markup(
   image="zero-lengths.png",
@@ -400,6 +412,12 @@ When it comes to pseudo-elements, after the usual suspects `::before` and `::aft
 
 ### Calculations
 
+When the [`calc()`](https://developer.mozilla.org/en-US/docs/Web/CSS/calc()) function was introduced for performing calculations between different units in CSS, it was a revolution. Previously, only preprocessors were able to accommodate such calculations, but the results were limited to static values and unreliable, since they were missing the dynamic context that is often necessary.
+
+Today, `calc()` has been [supported by every browser](https://caniuse.com/calc) for nine years already, so it comes as no surprise that it has been widely adopted with 60% of pages using it at least once. If anything, we expected even higher adoption than this.
+
+`calc()` is primarily used for lengths, with 96% of its usage being concentrated in properties that accept `<length>` values, and 60% of that (58% of total usage) on the `width` property!
+
 {{ figure_markup(
   image="calc-properties.png",
   caption="Relative popularity of properties that use `calc()` as a percent of occurrences.",
@@ -408,6 +426,8 @@ When it comes to pseudo-elements, after the usual suspects `::before` and `::aft
   sheets_gid="1661677319",
   sql_file="calc_properties.sql"
 ) }}
+
+It appears that most of this usage is to subtract pixels from percentages, as evidenced by the fact that the most common units in `calc()` are `px` (51% of `calc()` usage) and `%` (42% of `calc()` usage), and that 64% of `calc()` usage involves subtraction. Interestingly, the most popular length units with `calc()` are different than the most popular length units overall (e.g. `rem` is more popular than `em`, followed by viewport units), most likely due to the fact that code using `calc()` is newer.
 
 {{ figure_markup(
   image="calc-units.png",
@@ -427,6 +447,8 @@ When it comes to pseudo-elements, after the usual suspects `::before` and `::aft
   sql_file="calc_operators.sql"
 ) }}
 
+Most calculations are very simple, with 99.5% of calculations involving up to 2 different units, 88.5% of calculations involving up to 2 operators and 99.4% of calculations involving one set of parentheses or fewer (3 out of 4 calculations include no parentheses at all).
+
 {# TODO(analysts): Figure out what happened to the 3+ label in this chart. #}
 {{ figure_markup(
   image="calc-complexity-units.png",
@@ -439,6 +461,16 @@ When it comes to pseudo-elements, after the usual suspects `::before` and `::aft
 
 ### Global keywords and `all`
 
+For a long time, CSS only supported one global keyword: [`inherit`](https://developer.mozilla.org/en-US/docs/Web/CSS/inherit), which enables the resetting of an inheritable property to its inherited value or reusing the parent’s value for a given non-inheritable property. It turns out the former is far more common than the latter, with 81.37% of `inherit` usage being found on inheritable properties. The rest is mostly to inherit backgrounds, borders, or dimensions. The latter likely indicates layout struggles, as with the proper layout mode one rarely needs to force `width` and `height` to inherit.
+
+The `inherit` keyword has been particularly useful for resetting the gory default link colors to the parent’s text color, when we intend to use something other than color as an affordance for links. It is therefore no surprise that `color` is the most common property that `inherit` is used on. Nearly one third of all `inherit` usage is found on the `color` property. 75% of pages use `color: inherit` at least once.
+
+While a property’s *initial value* is a concept that [has existed since CSS 1](https://www.w3.org/TR/CSS1/#cascading-order), it only got its own dedicated keyword, `initial`, to explicitly refer to it [17 years later](https://www.w3.org/TR/2013/WD-css3-cascade-20130103/#initial-keyword), and it took another two years for said keyword to gain [universal browser support](https://caniuse.com/css-initial-value) in 2015. It is therefore no surprise that it is used far less than `inherit`. While the ol’ inherit is found on 85% of pages, `initial` appears in 51% of them. Furthermore, there is a lot of confusion about what `initial` actually does, since `display` tops the list of properties most commonly used with `initial`, with `display: initial` appearing in 10% of pages. Presumably, the developers thought that this resets `display` to its value from the [user agent stylesheet](https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade#User-agent_stylesheets) value and were using it to toggle `display: none` on and off. However, [the initial value of `display` is `inline`](https://drafts.csswg.org/css-display/#the-display-properties), so `display: initial` is just another way to write `display: inline` and has no context-dependent magical properties.
+
+Instead, `display: revert` would have actually done what these developers likely expected and would have reset `display` to the UA value for the given element. However, `revert` is much newer: it was defined [in 2015](https://www.w3.org/TR/2015/WD-css-cascade-4-20150908/#valdef-all-revert) and  [only gained universal browser support this year](https://caniuse.com/css-revert-value), which explains its underuse: it only appears in 0.14% of pages and half of its usage is `line-height: revert;`, found in [recent versions of Wordpress’ TwentyTwenty theme](https://github.com/WordPress/WordPress/commit/303180b392c530b8e2c8b3c27532d591b915caeb).
+
+The last global keyword, `unset` is essentially a hybrid of `initial` and `inherit`. On inherited properties it becomes `inherit` and on the rest it becomes `initial`, essentially resetting the property across all cascade origins. Similarly, to `initial`, it was [defined in 2013](https://www.w3.org/TR/2013/WD-css-cascade-3-20130730/#inherit-initial) and gained [full browser support in 2015](https://caniuse.com/css-unset-value). Despite `unset`’s higher utility, it is used in only 43% of pages, whereas `initial` is used in 51% of pages. Furthermore, besides `max-width` and `min-width`, in every other property `initial` usage outweighs `unset` usage.
+
 {{ figure_markup(
   image="keyword-totals.png",
   caption="Adoption of global keywords as a percent of pages.",
@@ -447,6 +479,8 @@ When it comes to pseudo-elements, after the usual suspects `::before` and `::aft
   sheets_gid="437371205",
   sql_file="keyword_totals.sql"
 ) }}
+
+The `all` property was [introduced in 2013](https://www.w3.org/TR/2013/WD-css3-cascade-20130103/#all-shorthand) and gained [near-universal support in 2016 (except Edge) and universal support earlier this year](https://caniuse.com/css-all). It is a shorthand of nearly every property in CSS (except custom properties, `direction`, and `unicode-bidi`), and only accepts the four global keywords as values. It was envisioned as a one liner CSS reset, either as `all: unset` or `all: revert`, depending on what kind of reset we wanted. However, adoption is still very low: we only found `all` on 477 pages (0.01% of all pages), and only used with the `revert` keyword.
 
 ## Color
 
