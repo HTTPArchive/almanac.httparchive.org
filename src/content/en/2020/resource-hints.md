@@ -203,7 +203,6 @@ Be mindful that fonts preloaded without the `crossorigin` attribute will be fetc
 
 When it's time to choose a resource for use with different screen sizes, reach for the `media` attribute with `preload` to optimize your media queries.
 
-{# TODO(editors): Should we keep this shorter to prevent small amounts of scrolling? #}
 ```html
 <link rel="preload" href="a.css" as="style" media="only screen and (min-width: 768px)">
 <link rel="preload" href="b.css" as="style" media="screen and (max-width: 430px)">
@@ -313,7 +312,6 @@ Let's dive into a couple of experimental hints. Very close to release we have Pr
 
 This new hint can be used either as an HTML tag or by changing the priority of fetch requests via the `importance` option, which takes the same values as the HTML attribute.
 
-{# TODO(editors): Should we keep this shorter to prevent small amounts of scrolling? #}
 ```html
 <!-- We want to initiate an early fetch for a resource, but also deprioritize it -->
 <link rel="preload" href="/js/script.js" as="script" importance="low">
@@ -336,7 +334,6 @@ So far only 0.77% websites adopted this new hint as Chrome is still [actively](h
 
 The largest use is with script elements, which is unsurprising as the number of JS primary and third-party files continues to grow.
 
-{# TODO(authors): Make sure the query link is correct, and that the gid is correct. #}
 {{ figure_markup(
   caption="The percent of mobile resources with a hint that use the \"low\" priority.",
   content="16%",
