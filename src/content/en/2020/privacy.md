@@ -210,7 +210,7 @@ As you can see, Google's tracking domain "doubleclick.net" sets cookies on rough
 
 ### Fingerprinting
 
-Another widely-used tracking technique is fingerprinting. This consists of collecting different kinds of information about the user with the goal of building a unique "fingerprint" for them. Different types of fingerprinting are used on the web by trackers. Browser fingerprinting use characteristics specific to the browser of the user, relying on the fact that the chance of another user having the exact same browser set-up is fairly small if there are a large enougth number of variables to track. In our crawl, we examined the presence of the [FingerprintJS](https://fingerprintjs.com/) library, which provides browser fingerprinting as a service.
+Another widely-used tracking technique is fingerprinting. This consists of collecting different kinds of information about the user with the goal of building a unique "fingerprint" for them. Different types of fingerprinting are used on the web by trackers. Browser fingerprinting use characteristics specific to the browser of the user, relying on the fact that the chance of another user having the exact same browser set-up is fairly small if there are a large enough number of variables to track. In our crawl, we examined the presence of the [FingerprintJS](https://fingerprintjs.com/) library, which provides browser fingerprinting as a service.
 
 {{ figure_markup(
   image="privacy-websites-with-fingerprintjs-library.png",

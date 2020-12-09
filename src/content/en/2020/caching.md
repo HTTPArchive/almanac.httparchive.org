@@ -9,8 +9,8 @@ reviewers: [csswizardry, jzyang, jaisanth, Soham-S-Sarkar]
 analysts: [raghuramakrishnan71]
 translators: []
 roryhewitt_bio: Enterprise Architect at <a href="https://www.akamai.com/">Akamai</a>. Passionate about performance. Competition-level snowboarder. Multiple black belts. Motorcyclist. Boxer. Troublemaker. 
+raghuramakrishnan71_bio: Enterprise architect at <a href="https://www.tcs.com/">Tata Consultancy Services</a>, working on large digital transformation programs in the public sector. A technology enthusiast with a special interest in performance engineering. An avid traveler, intrigued by astronomy, history, biology, and advancements in medicine. A strong follower of the 47th verse, Chapter 2 of Bhagavad Gita "karmaṇy-evādhikāras te mā phaleṣhu kadāchana" meaning "You have a right to perform your prescribed duty, but you are not entitled to the fruits of action."
 
-#raghuramakrishnan71_bio: TODO
 discuss: 2056
 results: https://docs.google.com/spreadsheets/d/1fYmpSN3diOiFrscS75NsjfsrKXzxxhUMNcYSqXnQJQU/
 queries: 20_Caching
@@ -23,6 +23,7 @@ queries: 20_Caching
 #featured_stat_label_3: TODO
 unedited: true
 ---
+
 
 ## Introduction
 Caching is a technique that enables the reuse of previously downloaded content. It involves something (a server which builds web pages, a proxy such as a CDN or the browser itself) storing 'content' (web pages, CSS, JS, images, fonts, etc.) and tagging it appropriately, so it can be reused.
@@ -659,97 +660,101 @@ The table below details the cache TTL values for desktop requests by type. Most 
 
 <figure>
   <table>
-    <tr>
-     <th colspan="6">Cache TTL percentiles (in hours)</th>
-    </tr>
-    <tr>
-     <th> </th>
-     <th>10</th>
-     <th>25</th>
-     <th>50</th>
-     <th>75</th>
-     <th>90</th>
-    </tr>
-    <tr>
-     <td>audio</td>
-     <td>6</td>
-     <td>6</td>
-     <td>240</td>
-     <td>720</td>
-     <td>8,760</td>
-    </tr>
-    <tr>
-     <td>css</td>
-     <td>24</td>
-     <td>24</td>
-     <td>720</td>
-     <td>8,760</td>
-     <td>8,760</td>
-    </tr>
-    <tr>
-     <td>font</td>
-     <td>720</td>
-     <td>8,760</td>
-     <td>8,760</td>
-     <td>8,760</td>
-     <td>8,760</td>
-    </tr>
-    <tr>
-     <td>html</td>
-     <td>0</td>
-     <td>1</td>
-     <td>336</td>
-     <td>8,760</td>
-     <td>87,600</td>
-    </tr>
-    <tr>
-     <td>image</td>
-     <td>4</td>
-     <td>168</td>
-     <td>720</td>
-     <td>8,760</td>
-     <td>8,766</td>
-    </tr>
-    <tr>
-     <td>other</td>
-     <td>0</td>
-     <td>1</td>
-     <td>30</td>
-     <td>240</td>
-     <td>8,760</td>
-    </tr>
-    <tr>
-     <td>script</td>
-     <td>0</td>
-     <td>2</td>
-     <td>720</td>
-     <td>8,760</td>
-     <td>8,760</td>
-    </tr>
-    <tr>
-     <td>text</td>
-     <td>0</td>
-     <td>1</td>
-     <td>6</td>
-     <td>6</td>
-     <td>720</td>
-    </tr>
-    <tr>
-     <td>video</td>
-     <td>6</td>
-     <td>12</td>
-     <td>336</td>
-     <td>336</td>
-     <td>8,760</td>
-    </tr>
-    <tr>
-     <td>xml</td>
-     <td>0</td>
-     <td>24</td>
-     <td>24</td>
-     <td>24</td>
-     <td>8,760</td>
-    </tr>
+    <thead>
+      <tr>
+        <th colspan="6" scope="col">Cache TTL percentiles (in hours)</th>
+      </tr>
+      <tr>
+        <th scope="col">Type</th>
+        <th scope="col">10</th>
+        <th scope="col">25</th>
+        <th scope="col">50</th>
+        <th scope="col">75</th>
+        <th scope="col">90</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>audio</td>
+        <td>6</td>
+        <td>6</td>
+        <td>240</td>
+        <td>720</td>
+        <td>8,760</td>
+      </tr>
+      <tr>
+        <td>css</td>
+        <td>24</td>
+        <td>24</td>
+        <td>720</td>
+        <td>8,760</td>
+        <td>8,760</td>
+      </tr>
+      <tr>
+        <td>font</td>
+        <td>720</td>
+        <td>8,760</td>
+        <td>8,760</td>
+        <td>8,760</td>
+        <td>8,760</td>
+      </tr>
+      <tr>
+        <td>html</td>
+        <td>0</td>
+        <td>1</td>
+        <td>336</td>
+        <td>8,760</td>
+        <td>87,600</td>
+      </tr>
+      <tr>
+        <td>image</td>
+        <td>4</td>
+        <td>168</td>
+        <td>720</td>
+        <td>8,760</td>
+        <td>8,766</td>
+      </tr>
+      <tr>
+        <td>other</td>
+        <td>0</td>
+        <td>1</td>
+        <td>30</td>
+        <td>240</td>
+        <td>8,760</td>
+      </tr>
+      <tr>
+        <td>script</td>
+        <td>0</td>
+        <td>2</td>
+        <td>720</td>
+        <td>8,760</td>
+        <td>8,760</td>
+      </tr>
+      <tr>
+        <td>text</td>
+        <td>0</td>
+        <td>1</td>
+        <td>6</td>
+        <td>6</td>
+        <td>720</td>
+      </tr>
+      <tr>
+        <td>video</td>
+        <td>6</td>
+        <td>12</td>
+        <td>336</td>
+        <td>336</td>
+        <td>8,760</td>
+      </tr>
+      <tr>
+        <td>xml</td>
+        <td>0</td>
+        <td>24</td>
+        <td>24</td>
+        <td>24</td>
+        <td>8,760</td>
+      </tr>
+    </tbody>
   </table>
   <figcaption>{{ figure_link(caption="Desktop cache TTL percentiles by resource type.", sheets_gid="676954337", sql_file="ttl_by_resource.sql") }}</figcaption>
 </figure>

@@ -883,3 +883,10 @@
   });
 </script>
 {% endblock %}
+
+{% macro swatch(color) %}
+<svg width="10" height="15" version="1.1" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" >
+  <title>{{ color }}</title>
+  <rect x="0" y="0" width="10" height="15" stroke="black" fill="{{ color }}" stroke-width="1" />
+</svg>
+{% endmacro %}

@@ -132,13 +132,13 @@ The most frequently used directives focused on search engines and their paid mar
   <table>
     <thead>
       <tr>
-          <th></th>
-          <th colspan="2">% of <code>robots.txt</code></th>
+          <td></td>
+          <th colspan="2" scope="colgroup">% of <code>robots.txt</code></th>
       </tr>
       <tr>
-        <th><code>User-agent</code></th>
-        <th>Mobile</th>
-        <th>Desktop</th>
+        <th scope="col"><code>User-agent</code></th>
+        <th scope="col">Mobile</th>
+        <th scope="col">Desktop</th>
       </tr>
     </thead>
     <tbody>
@@ -242,7 +242,7 @@ Canonical URLs can be specified through different methods: by using the canonica
 
 When analyzing the canonical tag implemented in the raw HTML versus those relying on client-side JavaScript rendering, we identified that 0.68% of the mobile pages and 0.54% of the desktop ones include a canonical tag in the rendered but not the raw HTML. This means that there's only a very small number of pages that are relying on JavaScript to implement canonical tags.
 
-On the other hand, in 0.93% of the mobile pages and 0.76% of the desktop ones, we saw canonical tags implemented via both the raw and the rendered HTML with a conflict happening between the URL specified in the raw versus the rendered HTML of the same pages. This can generate indexability issues as mixed information is sent to search engines about which is the canonical URL for the same page. 
+On the other hand, in 0.93% of the mobile pages and 0.76% of the desktop ones, we saw canonical tags implemented via both the raw and the rendered HTML with a conflict happening between the URL specified in the raw versus the rendered HTML of the same pages. This can generate indexability issues as mixed information is sent to search engines about which is the canonical URL for the same page.
 
 A similar conflict can be found with the different implementation methods, with 0.15% of the mobile pages and 0.17% of the desktop ones showing conflicts between the canonical tags implemented via their HTTP headers and HTML `head`.
 
@@ -265,10 +265,10 @@ We assessed word count as a heuristic of that disparity.
   <table>
     <thead>
       <tr>
-        <th>Values</th>
-        <th>Desktop</th>
-        <th>Mobile</th>
-        <th>Difference</th>
+        <th scope="col">Values</th>
+        <th scope="col">Desktop</th>
+        <th scope="col">Mobile</th>
+        <th scope="col">Difference</th>
       </tr>
     </thead>
     <tbody>
@@ -287,9 +287,9 @@ We assessed word count as a heuristic of that disparity.
     </tbody>
     <tfoot>
       <tr>
-        <th>Difference</th>
-        <td class="numeric">11.67%</td>
-        <td class="numeric">11.54%</td>
+        <th scope="col">Difference</th>
+        <th scope="col" class="numeric">11.67%</th>
+        <th scope="col" class="numeric">11.54%</th>
         <td></td>
       </tr>
     </tfoot>
@@ -322,7 +322,7 @@ Heading elements (`H1`-`H6`) act as a mechanism to visually indicate structure i
   sql_file="pages_wpt_bodies_by_device.sql"
 ) }}
 
-Over 60% of pages feature `H1` elements (including empty ones) in both the mobile and desktop contexts. 
+Over 60% of pages feature `H1` elements (including empty ones) in both the mobile and desktop contexts.
 
 These numbers hover around 60%+ through `H2` and `H3`. The incidence rate of `H4` elements is lower than 4%, suggesting that the level of specificity is not required for most pages or the developers style other headings elements differently to support the visual structure of the content.
 
@@ -345,11 +345,11 @@ You can learn more about the usage of headings in the [Markup chapter](./markup#
 
 Over the course of the past decade, search engines, particularly Google, have continued to push towards becoming the presentation layer of the web. These advancements are partially driven by their improved ability to extract information from unstructured content (e.g., [passage indexing](https://blog.google/products/search/search-on/)) and the adoption of semantic markup in the form of _structured data_. Search engines have encouraged content creators and developers to implement structured data to give more visibility to their content within components of search results.
 
-In a move from ["strings to things"](https://blog.google/products/search/introducing-knowledge-graph-things-not/), search engines have agreed upon a broad vocabulary of objects in support of marking up a variety of people, places, and things within web content. However, only a subset of that vocabulary triggers inclusion within search results components. Google specifies those that they support and how they're displayed in their [search gallery](https://developers.google.com/search/docs/guides/search-gallery), and provides [a tool](https://search.google.com/test/rich-results) to validate their support and implementation. 
+In a move from ["strings to things"](https://blog.google/products/search/introducing-knowledge-graph-things-not/), search engines have agreed upon a broad vocabulary of objects in support of marking up a variety of people, places, and things within web content. However, only a subset of that vocabulary triggers inclusion within search results components. Google specifies those that they support and how they're displayed in their [search gallery](https://developers.google.com/search/docs/guides/search-gallery), and provides [a tool](https://search.google.com/test/rich-results) to validate their support and implementation.
 
 As search engines evolve to reflect more of these elements in search results, the incidence rates of the different vocabularies change across the web.
 
-As part of our examination, we took a look at the incidence rates of different types of structured markup. The available vocabularies include [RDFa](https://www.w3.org/TR/rdfa-primer/) and [schema.org](https://schema.org/), which come in both the microformats and [JSON-LD](https://www.w3.org/TR/json-ld11/) flavors. Google has recently [dropped the support for data-vocabulary](https://developers.google.com/search/blog/2020/01/data-vocabulary), which was primarily used to implement breadcrumbs. 
+As part of our examination, we took a look at the incidence rates of different types of structured markup. The available vocabularies include [RDFa](https://www.w3.org/TR/rdfa-primer/) and [schema.org](https://schema.org/), which come in both the microformats and [JSON-LD](https://www.w3.org/TR/json-ld11/) flavors. Google has recently [dropped the support for data-vocabulary](https://developers.google.com/search/blog/2020/01/data-vocabulary), which was primarily used to implement breadcrumbs.
 
 JSON-LD is generally considered to be the more portable and easier to manage implementation and so it has become the preferred format. As a result, we see that JSON-LD appears on 29.78% of mobile pages and 30.60% of desktop pages.
 
@@ -398,9 +398,9 @@ We find that the disparity between mobile and desktop continues with this type o
 
 ##### Rendered versus non-rendered structured data
 
-We found that 38.61% of desktop pages and 39.26% of mobile pages feature JSON-LD or microformat structured data in the raw HTML, while 40.09% of desktop pages and 40.97% of mobile pages feature structured data in the rendered DOM. 
+We found that 38.61% of desktop pages and 39.26% of mobile pages feature JSON-LD or microformat structured data in the raw HTML, while 40.09% of desktop pages and 40.97% of mobile pages feature structured data in the rendered DOM.
 
-When reviewing this in more detail, we found that 1.49% of desktop pages and 1.77% of mobile pages only featured this type of structured data in the rendered DOM due to JavaScript transformations, relying in search engines JavaScript execution capabilities. 
+When reviewing this in more detail, we found that 1.49% of desktop pages and 1.77% of mobile pages only featured this type of structured data in the rendered DOM due to JavaScript transformations, relying in search engines JavaScript execution capabilities.
 
 Finally, we found that 4.46% of desktop pages and 4.62% of mobile pages feature structured data that appears in the raw HTML and is subsequently changed by JavaScript transformations in the rendered DOM. Depending on the type of changes applied to the structured data configuration, this could generate mixed signals for search engines when rendering them.
 
@@ -408,19 +408,19 @@ Finally, we found that 4.46% of desktop pages and 4.62% of mobile pages feature 
 
 [As seen last year](https://almanac.httparchive.org/en/2019/seo#structured-data), the most prevalent structured data objects remain to be `WebSite`, `SearchAction`, `WebPage`, `Organization`, and `ImageObject`, and their usage has continued to grow:
 
-* `WebSite` has grown 9.37% on desktop and 10.5% on mobile 
+* `WebSite` has grown 9.37% on desktop and 10.5% on mobile
 * `SearchAction` has grown 7.64% on both desktop and mobile
 * `WebPage` has grown on desktop 6.83% and 7.09% on mobile
-* `Organization` has grown on desktop 4.75% and 4.98% on mobile 
-* `ImageObject` has grown 6.39% on desktop and 6.13% on mobile 
+* `Organization` has grown on desktop 4.75% and 4.98% on mobile
+* `ImageObject` has grown 6.39% on desktop and 6.13% on mobile
 
 It should be noted that `WebSite`, `SearchAction` and `Organization` are all typically associated with home pages, so this highlights the bias of the dataset and does not reflect the bulk of structured data implemented on the web.
 
-In contrast, despite the fact that reviews are not supposed to be associated with home pages, the data indicates that `AggregateRating` is used on 23.9% on mobile and 23.7% on desktop. 
+In contrast, despite the fact that reviews are not supposed to be associated with home pages, the data indicates that `AggregateRating` is used on 23.9% on mobile and 23.7% on desktop.
 
 It's also interesting to see the growth of the [`VideoObject`](https://developers.google.com/search/docs/data-types/video) to annotate videos. Although [YouTube videos dominate video search results in Google](https://moz.com/blog/youtube-dominates-google-video-results-in-2020), the usage of `VideoObject` grew 30.11% on desktop and 27.7% on mobile.
 
-The growth of these objects is a general indication of increased adoption of structured data. There's also an indication of what Google gives visibility within search features increases the incidence rates of lesser used objects. Google announced the [`FAQPage`](https://developers.google.com/search/docs/data-types/faqpage), [`HowTo`](https://developers.google.com/search/docs/data-types/how-to), and [`QAPage`](https://developers.google.com/search/docs/data-types/qapage) objects as visibility opportunities in 2019 and they sustained significant year-over-year growth: 
+The growth of these objects is a general indication of increased adoption of structured data. There's also an indication of what Google gives visibility within search features increases the incidence rates of lesser used objects. Google announced the [`FAQPage`](https://developers.google.com/search/docs/data-types/faqpage), [`HowTo`](https://developers.google.com/search/docs/data-types/how-to), and [`QAPage`](https://developers.google.com/search/docs/data-types/qapage) objects as visibility opportunities in 2019 and they sustained significant year-over-year growth:
 
 * `FAQPage` markup grew 3,261% on desktop and 3,000% on mobile.
 * `HowTo` markup grew 605% on desktop and 623% on mobile.
@@ -558,7 +558,7 @@ Modern search engines use hyperlinks between pages for the discovery of new cont
 
 #### Outgoing links
 
-As part of this analysis we are able to assess the outgoing links from each page, whether to internal pages from the same domain, as well as external ones, however, have not analyzed incoming links. 
+As part of this analysis we are able to assess the outgoing links from each page, whether to internal pages from the same domain, as well as external ones, however, have not analyzed incoming links.
 
 The median desktop page includes 76 links while the median mobile page has 67. Historically, the direction from Google suggested that links be limited to 100 per page. While that recommendation is outdated on the modern web and Google has since then mentioned that [there are no limits](https://www.seroundtable.com/google-link-unlimited-18468.html), the median page in our dataset adheres to it.
 
@@ -582,12 +582,12 @@ The median page has 61 internal links (going to pages within the same site) on d
   sql_file="pages_wpt_bodies_by_device_and_percentile.sql"
 ) }}
 
-The median page is linking to external sites 7 times on desktop and 6 times on mobile. This is a decrease from last year, when it was found that the median number of external links per page were 10 in desktop and 8 on mobile. This decrease in external links could suggest that websites are now being more careful when linking to other sites, whether to avoid passing link popularity or referring users to them. 
+The median page is linking to external sites 7 times on desktop and 6 times on mobile. This is a decrease from last year, when it was found that the median number of external links per page were 10 in desktop and 8 on mobile. This decrease in external links could suggest that websites are now being more careful when linking to other sites, whether to avoid passing link popularity or referring users to them.
 
 
 {{ figure_markup(
   image="seo-outgoing-links-external.png",
-  caption="Distribution of the number of outgoing expernal links per page.",
+  caption="Distribution of the number of outgoing external links per page.",
   description="Bar chart showing the number of external outgoing links per percentile (10, 25, 50, 75, and 90). The median page is linking to external sites 7 times on desktop and 6 times on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=391564643&format=interactive",
   sheets_gid="775602646",
@@ -1213,7 +1213,7 @@ It is also important to note how there's still an important opportunity for impr
  - Non-trivial disparities were found across mobile and desktop pages, like the one between mobile and desktop links, illustrated in the 62 links on mobile versus the 68 links on desktop for the median web page.
  - 33.13% of websites scored _Good_ Core Web Vitals for desktop while only 19.96% of their mobile counterparts passed the Core Web Vitals assessment, suggesting that desktop continues to be the more performant platform for users.
 
-These findings could negatively impact sites as Google completes its migration to a [mobile-first index in March 2021](https://webmasters.googleblog.com/2020/07/prepare-for-mobile-first-indexing-with.html). 
+These findings could negatively impact sites as Google completes its migration to a [mobile-first index in March 2021](https://webmasters.googleblog.com/2020/07/prepare-for-mobile-first-indexing-with.html).
 
 Disparities were also found across rendered and non-rendered HTML. For example, the median mobile page displays 11.5% more words when rendered than its raw HTML, indicating a reliance on client-side JavaScript to show content.
 
