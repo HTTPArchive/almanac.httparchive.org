@@ -7,7 +7,7 @@ authors: [henrihelvetica]
 reviewers: [paulcalvano]
 analysts: [paulcalvano]
 translators: []
-henrihelvetica_bio: Henri is a freelance developer who has turned his interests to a potpourri of performance engineering with pinches of user experience. When not reading the deluge of daily research docs and case studies, or indiscriminately auditing sites in devtools, Henri can be found contributing back to the community, co-programming meetups including theToronto Web Performance Group or volunteering his time for lunch and learns at various bootcamps. Otherwise, he’s tooling with music production software or with near certainty training and focusing on running the fastest 5k possible.
+henrihelvetica_bio: Henri is a freelance developer who has turned his interests to a potpourri of performance engineering with pinches of user experience. When not reading the deluge of daily research docs and case studies, or indiscriminately auditing sites in devtools, Henri can be found contributing back to the community, co-programming meetups including the Toronto Web Performance Group or volunteering his time for lunch and learns at various bootcamps. Otherwise, he’s tooling with music production software or with near certainty training and focusing on running the fastest 5k possible.
 discuss: 2054
 results: https://docs.google.com/spreadsheets/d/1wG4u0LV5PT9aN-XB1hixSFtI8KIDARTOCX0sp7ZT3h0/
 queries: 18_Page_Weight
@@ -52,7 +52,7 @@ Although JavaScript is on average the 2nd most abundant resource on a page, we t
 
 The web's  journey from the plain, near pedagogical platform, to the innovative, intricate and highly interactive apps it has become, the rudimentary page weight metric hid a bigger story: a ratatouille of resources, each affecting  modern metrics, in turn affecting user experience.
 
-Whenever we talk about interactivity, we are talking almost exclusively about JavaScript. Now, though we are not here to discuss interactivity in any depth, we know there are metrics which are focused and dependent on JavaScript content and execution.  So weightier the JavaScript, likely to have a greater impact on interactivity metrics (time to interactive, total blocking time). We have a javascript chapter that dives a pinch more.
+Whenever we talk about interactivity, we are talking almost exclusively about JavaScript. Now, though we are not here to discuss interactivity in any depth, we know there are metrics which are focused and dependent on JavaScript content and execution.  So weightier the JavaScript, likely to have a greater impact on interactivity metrics (time to interactive, total blocking time). We have a [JavaScript chapter](./javascript) that dives a pinch more.
 
 ## Analysis
 
@@ -76,7 +76,7 @@ We can however surmise from this the following: we are closing in on 7 MB of pag
 {{ figure_markup(
   image="bytes-distribution-content-type.png",
   caption="Median bytes per page by content type.",
-  description="Bar chart showing the median number of bytes per page for images, javascript, CSS, and HTML. The median desktop page tends to have more bytes. The median mobile page has 916 KB of images, 411 KB of JS, 62 KB of CSS, and 25 KB of HTML.",
+  description="Bar chart showing the median number of bytes per page for images, JavaScript, CSS, and HTML. The median desktop page tends to have more bytes. The median mobile page has 916 KB of images, 411 KB of JS, 62 KB of CSS, and 25 KB of HTML.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQlN4Clqeb8aPc63h0J58WfBxoJluSFT6kXn45JGPghw1LGU28hzabMYAATXNY5st9TtjKrr2HnbfGd/pubchart?oid=1147150650&format=interactive",
   sheets_gid="378779486",
   sql_file="bytes_per_type_2020.sql"
@@ -142,4 +142,4 @@ Looking at the crystal ball, the third installment of the Almanac and the page w
 
 ## Conclusion
 
-It's of no surprise that web pages have generally kept growing. We have been feeding more resources down the wire to create richer experiences, more engaging interactivity, more stunning visuals through more powerful imagery. We have created these applications at the cost of data overages and user experiences. But as we move forward and keep pushing the web to places we had never anticipated, we are also making additional advances in engineering, as mentioned earlier. We may begin to see a drop in page weight as early as next year, as modern raster image formats see more adoption, we start to manage javascript more efficiently, and deliver the data down the wire with the discipline that users demand.
+It's of no surprise that web pages have generally kept growing. We have been feeding more resources down the wire to create richer experiences, more engaging interactivity, more stunning visuals through more powerful imagery. We have created these applications at the cost of data overages and user experiences. But as we move forward and keep pushing the web to places we had never anticipated, we are also making additional advances in engineering, as mentioned earlier. We may begin to see a drop in page weight as early as next year, as modern raster image formats see more adoption, we start to manage JavaScript more efficiently, and deliver the data down the wire with the discipline that users demand.

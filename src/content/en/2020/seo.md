@@ -1178,7 +1178,7 @@ On the other hand, when assessing the usage of AMP as a framework to develop web
 
 ### Single-page applications
 
-Single-page applications (SPAs) enable browsers to retain and update a single page load even as the on-page content updates to match a user request. Multiple technologies such as JavaScript frameworks, AJAX, and Websockets are used to accomplish lightweight subsequent page loads.
+Single-page applications (SPAs) enable browsers to retain and update a single page load even as the on-page content updates to match a user request. Multiple technologies such as JavaScript frameworks, AJAX, and WebSockets are used to accomplish lightweight subsequent page loads.
 
 These frameworks required special SEO considerations, although Google has worked to mitigate the issues caused by client-side rendering with aggressive caching strategies. In a video from [Google Webmaster's 2019 conference](https://youtu.be/rq8sFkl0KnI), Software Engineer Erik Hendriks shared that Google no longer relies on `Cache-Control` headers and instead looks for `ETag` or `Last-Modified` headers to see if the content of the file has changed.
 

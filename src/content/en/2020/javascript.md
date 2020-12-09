@@ -24,7 +24,7 @@ unedited: true
 ## Introduction
 JavaScript has come a long way from its humble origins as the last of the three web cornerstones—alongside CSS and HTML. Today, JavaScript has started to infiltrate a broad spectrum of the technical stack. JavaScript is no longer confined to the client-side—it's an increasingly popular choice for build tools and server-side scripting, and is creeping its way into the CDN layer as well thanks to edge computing solutions.
 
-Developers love us some JavaScript. The [`script` element is the 6th most popular HTML element in use](https://almanac.httparchive.org/en/2020/markup) (ahead of elements like `p`'s and `i`'s, among countless others). We spend around 14x as many bytes on it as we do on HTML, the building block of the web, and 6x as many bytes as CSS.
+Developers love us some JavaScript. The [`script` element is the 6th most popular HTML element in use](../2020/markup) (ahead of elements like `p`'s and `i`'s, among countless others). We spend around 14x as many bytes on it as we do on HTML, the building block of the web, and 6x as many bytes as CSS.
 
 {{ figure_markup(
   image="page-weight-per-content-type.png",
@@ -303,7 +303,7 @@ The popular libraries in use are largely unchanged from last year, with jQuery c
 
 {# table? showing rank, library, percentage and last years rank #}
 
-Last year, [Houssein posited a few reasons for why jQuery's dominance continues](https://almanac.httparchive.org/en/2019/javascript#open-source-libraries-and-frameworks):
+Last year, [Houssein posited a few reasons for why jQuery's dominance continues](../2019/javascript/#open-source-libraries-and-frameworks):
 
 > WordPress, which is used in more than 30% of sites, includes jQuery by default.
 > Switching from jQuery to a newer client-side library can take time depending on how large an application is, and many sites may consist of jQuery in addition to newer client-side libraries.
@@ -636,7 +636,7 @@ Of the roughly 5 million or so mobile pages that are tested against, 81% of them
         <td class="numeric">13.19%</td>
       </tr>
       <tr>
-        <td>Lo-Dash</td>
+        <td>Lodash</td>
         <td class="numeric">4.90%</td>
       </tr>
       <tr>

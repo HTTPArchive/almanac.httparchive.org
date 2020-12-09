@@ -41,9 +41,9 @@ Third-party resources are:
 * Widely used by a variety of sites
 * Uninfluenced by an individual site owner
 
-To match these goals as closely as possible, the formal definition used throughout this chapter for third-party resources is: A resource that originates from a domain whose resources can be found on at least 50 unique pages in the HTTP Archive dataset.
+To match these goals as closely as possible, the formal definition used throughout this chapter for third-party resources is: a resource that originates from a domain whose resources can be found on at least 50 unique pages in the HTTP Archive dataset.
 
-Note that using these definitions, third-party content served from a first-party domain is counted as a first-party content. For example: Self-hosting Google Fonts or bootstrap.css is counted as _first-party content_.  Similarly, first-party content served from a third-party domain is counted as third-party content. An associated example: First-party images served over a CDN on a third-party domain are considered _third-party content_.
+Note that using these definitions, third-party content served from a first-party domain is counted as a first-party content. For example: self-hosting Google Fonts or Bootstrap.CSS is counted as _first-party content_.  Similarly, first-party content served from a third-party domain is counted as third-party content. An associated example: First-party images served over a CDN on a third-party domain are considered _third-party content_.
 
 ### Provider categories
 
@@ -184,7 +184,7 @@ Some third-party responses should always be cached.  Media such as images and vi
   )
 }}
 
-Breaking down by response type highlights some common offenders: xml and text responses are less likely to be cacheable. Surprisingly, less than two-thirds of images served by third-parties are cacheable. On further inspection, this is due to the use of tracking 'pixels' which are returned as non-cacheable zero-size image responses. 
+Breaking down by response type highlights some common offenders: xml and text responses are less likely to be cacheable. Surprisingly, less than two-thirds of images served by third-parties are cacheable. On further inspection, this is due to the use of tracking 'pixels' which are returned as non-cacheable zero-size image responses.
 
 ### Large redirects
 
@@ -237,7 +237,7 @@ This chart shows the probability density function of total page CPU time by the 
 ## Other
 ### Timing-Allow-Origin prevalence
 
-The [Resource Timing API] allows website owners to measure the performance of individual resources via JavaScript. This data is, by default, extremely limited for cross-origin resources like third-party content. There are legitimate reasons for not providing this timing information such as responses that vary by authentication state: e.g. a website owner may be able to determine if a visitor is logged into a Facebook by measuring the response size of a widget request. For most third-party content, though, setting the timing-allow-origin header is an act of transparency to allow the hosting website to track performance and size of their third-party content.
+The Resource Timing API allows website owners to measure the performance of individual resources via JavaScript. This data is, by default, extremely limited for cross-origin resources like third-party content. There are legitimate reasons for not providing this timing information such as responses that vary by authentication state: e.g. a website owner may be able to determine if a visitor is logged into a Facebook by measuring the response size of a widget request. For most third-party content, though, setting the timing-allow-origin header is an act of transparency to allow the hosting website to track performance and size of their third-party content.
 
 {{ figure_markup(
   image="requests-with-tao.png",
@@ -253,7 +253,7 @@ The results in HTTP Archive show that only one third of third-party responses ex
 
 ## Repercussions
 
-We know that adding arbitrary JavaScript to our sites introduces risks to both site speed and security. Site owners must be diligent to balance the value of the third-party scripts they include with the speed penalty they may bring, and use modern features such as [subresource integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) and [content security policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) to maintain a strong security posture. See [the security chapter](https://almanac.httparchive.org/en/2020/security) for more detail on these and other browser security features.
+We know that adding arbitrary JavaScript to our sites introduces risks to both site speed and security. Site owners must be diligent to balance the value of the third-party scripts they include with the speed penalty they may bring, and use modern features such as [subresource integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) and [content security policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) to maintain a strong security posture. See the [Security chapter](./security) for more detail on these and other browser security features.
 
 ## Conclusion
 

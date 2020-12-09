@@ -247,7 +247,7 @@ Additionally, the percentage of brotli compression is higher for third-party con
   <figcaption>{{ figure_link(caption="First-party versus third-party compression by device type.", sheets_gid="862864630", sql_file="19_03.party_of_content_encoding.sql.sql") }}</figcaption>
 </figure>
 
-Comparing with [last year's results](https://almanac.httparchive.org/en/2019/compression#first-party-vs-third-party-compression), we can see that there was a significant increase in the use of compression, notably brotli for first parties, almost to the point that the use of compression is around 40% for both first and third party and for desktop and mobile. However within the requests that do use compression, for first party the ratio of brotli compression is only 18%, while the ratio for third party is 27%.
+Comparing with [last year's results](../2019/compression#first-party-vs-third-party-compression), we can see that there was a significant increase in the use of compression, notably brotli for first parties, almost to the point that the use of compression is around 40% for both first and third party and for desktop and mobile. However within the requests that do use compression, for first party the ratio of brotli compression is only 18%, while the ratio for third party is 27%.
 
 
 ## How to Analyze compression on your sites
@@ -268,7 +268,7 @@ For this go to Network tab, right click and activate "Content Encoding" under Re
 Another tool to better understand compression on your site is Google's [Lighthouse](https://developers.google.com/web/tools/lighthouse) tool enables users to run a series of audits against web pages. The [text compression audit](https://developers.google.com/web/tools/lighthouse/audits/text-compression) evaluates whether a site can benefit from additional text-based compression. It does this by attempting to compress resources and evaluate whether an object's size can be reduced by at least 10% and 1,400 bytes. Depending on the score, you may see a compression recommendation in the results, with a list of specific resources that could be compressed.
 
 
-Because the [HTTP Archive runs Lighthouse audits](./methodology#lighthouse) for each mobile page, we can aggregate the scores across all sites to learn how much opportunity there is to compress more content. Overall, 74% of websites are passing this audit and almost 13% of websites have scored below a 40. Compared to [last year's](https://almanac.httparchive.org/en/2019/compression#identifying-compression-opportunities) 62.5%, this year already 74% of the observed pages have the best text compression Lighthouse audio score.
+Because the [HTTP Archive runs Lighthouse audits](./methodology#lighthouse) for each mobile page, we can aggregate the scores across all sites to learn how much opportunity there is to compress more content. Overall, 74% of websites are passing this audit and almost 13% of websites have scored below a 40. Compared to [last year's](../2019/compression#identifying-compression-opportunities) 62.5%, this year already 74% of the observed pages have the best text compression Lighthouse audio score.
 
 {{ figure_markup(
   image="text-compression-lighthouse-scores.png",
@@ -284,4 +284,4 @@ Because the [HTTP Archive runs Lighthouse audits](./methodology#lighthouse) for 
 
 Compared with [last year's almanac](../2019/compression), there is a clear trend towards using more text compression. The number of requests that don't use any text compression went down a little more than 2%, while at the same time the use of brotli has increased by almost 2%. The Lighthouse scores have improved significantly.
 
-Text compression is widely used for the relevant formats, although there is still a significant percentage of the http-requests that could benefit from additional compression. You can profit from taking a close look at the configuration of your server and set compression methods and levels to your need. A great impact for a more positive user experience could be made by carefully choosing defaults for the most popular http servers.
+Text compression is widely used for the relevant formats, although there is still a significant percentage of the HTTP requests that could benefit from additional compression. You can profit from taking a close look at the configuration of your server and set compression methods and levels to your need. A great impact for a more positive user experience could be made by carefully choosing defaults for the most popular HTTP servers.
