@@ -1493,6 +1493,7 @@ pre code {
 
 code {
   font-size: 1rem;
+  background-color: #ebedf0;
 }
 
 pre .comment {
