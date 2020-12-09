@@ -313,7 +313,7 @@ For desktop pages, 7.00% have at least one element with a `role="tablist"` where
 
 When an element has been given a `role="presentation"` its semantics are stripped away, for both the element it is assigned to and its required children. For example, tables and lists both have required children, so if the parent has a `role="presentation"` this essentially cascades to the child elements, which will also have their semantics stripped. Removing an element’s semantics means that it is no longer that element in any capacity except for its visual appearance. For example, a list with a `role="presentation"` will no longer communicate any information to a screen reader about the list structure.
 
-A common usage of this attribute is for `<table>` elements that have been used for layout rather than  for tabular data. We do not recommend using tables in this way. For layout, we have powerful CSS tools today such as flexbox and CSS grid. In general there are very few use cases where `role="presentation"` is particularly helpful for assistive technology users, use this role sparingly and thoughtfully.
+A common usage of this attribute is for `<table>` elements that have been used for layout rather than  for tabular data. We do not recommend using tables in this way. For layout, we have powerful CSS tools today such as Flexbox and CSS Grid. In general there are very few use cases where `role="presentation"` is particularly helpful for assistive technology users, use this role sparingly and thoughtfully.
 
 <figure markdown>
 | Role         | Desktop | Mobile |
@@ -392,7 +392,7 @@ Forms are one of the most important things to get right in terms of accessibilit
 
 ### Form validation
 
-It is very important that any form error handling be communicated to assistive technology.  There are a variety of techniques for handling this depending on the validation implementation. Web AIM’s [Usable and Accessible Form Validation and Error Recovery](https://webaim.org/techniques/formvalidation/) article is a great resource for learning more about various accessible form validation strategies.  If a form element is required this also needs to be communicated to assistive technology. For native HTML form elements the [required] attribute(https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required) can be used and for customized elements the [aria-required](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-required_attribute) attribute may be needed. If there is an issue with a form submission, this needs to be conveyed to assistive technology.
+It is very important that any form error handling be communicated to assistive technology.  There are a variety of techniques for handling this depending on the validation implementation. Web AIM’s [Usable and Accessible Form Validation and Error Recovery](https://webaim.org/techniques/formvalidation/) article is a great resource for learning more about various accessible form validation strategies.  If a form element is required this also needs to be communicated to assistive technology. For native HTML form elements the [required attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required) can be used and for customized elements the [aria-required](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-required_attribute) attribute may be needed. If there is an issue with a form submission, this needs to be conveyed to assistive technology.
 
 ### Form labels
 
