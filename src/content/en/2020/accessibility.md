@@ -179,7 +179,7 @@ Pages need to be easy to navigate so users are not left feeling lost, or unable 
 
 Headings make it easier for screen readers to properly navigate a page by supplying a hierarchy that can be jumped through like a table of contents.
 
-Our audits revealed that 58.72% of the sites checked pass the test for properly ordered headings that do not skip levels. These headings convey the semantic structure of the page. Many screen reader users navigate a page through its headings, so having them in the correct order - ascending with no jumps - means that assistive technology users will have the best experience. It is worth noting that we only check pages, where these rules are more likely to be followed; home pages are more likely than interior pages to follow this rule.
+Our audits revealed that 58.72% of the sites checked pass the test for properly ordered headings that do not skip levels. These headings convey the semantic structure of the page. Many screen reader users navigate a page through its headings, so having them in the correct order - ascending with no jumps - means that assistive technology users will have the best experience. It is worth noting that we only check pages where these rules are more likely to be followed; home pages are more likely than interior pages to follow this rule.
 
 ### Skip links
 
