@@ -524,7 +524,6 @@ And if you are going for fanciful color names, why not define your own with CSS 
   )
 }}
 
-{# TODO(analysts, CSS experts): figure out why the swatches aren't working. #}
 <figure>
   <table>
     <thead>
@@ -690,120 +689,804 @@ Compatibility, right? You don’t want things to break? No. In the stylesheets w
       </tr>
     </thead>
     <tbody>
-        <tr><td>rgba(255,205,63,1) <td style="background-color:rgba(255,205,63,1) "><td>color(display-p3 1 0.80 0.25 / 1)<td>3.88<td>false</tr>
-        <tr><td>rgba(120,0,255,1)<td style="background-color:rgba(120,0,255,1)"><td>color(display-p3 0.47 0 1 / 1)<td>1.933<td>false</tr>
-        <tr><td>rgba(121,127,132,1)<td style="background-color:rgba(121,127,132,1)"><td>color(display-p3 0.48 0.50 0.52 / 1)<td>0.391<td>true</tr>
-        <tr><td>rgba(200,200,200,1)<td style="background-color:rgba(200,200,200,1)"><td>color(display-p3 0.78 0.78 0.78 / 1)<td>0.274<td>true</tr>
-        <tr><td>rgba(97,97,99,1)<td style="background-color:rgba(97,97,99,1)"><td>color(display-p3 0.39 0.39 0.39 / 1)<td>1.474<td>true</tr>
-        <tr><td>rgba(0,0,0,1)<td style="background-color:rgba(0,0,0,1)"><td>color(display-p3 0 0 0 / 1)<td>0<td>true</tr>
-        <tr><td>rgba(255,255,255,1)<td style="background-color:rgba(255,255,255,1)"><td>color(display-p3 1 1 1 / 1)<td>0.015<td>false</tr>
-        <tr><td>rgba(84,64,135,1)<td style="background-color:rgba(84,64,135,1)"><td>color(display-p3 0.33 0.25 0.53 / 1)<td>1.326<td>true</tr>
-        <tr><td>rgba(131,103,201,1)<td style="background-color:rgba(131,103,201,1)"><td>color(display-p3 0.51 0.40 0.78 / 1)<td>1.348<td>true</tr>
-        <tr><td>rgba(68,185,208,1)<td style="background-color:rgba(68,185,208,1)"><td>color(display-p3 0.27 0.75 0.82 / 1)<td>5.591<td>false</tr>
-        <tr><td>rgb(255,0,72)<td style="background-color:rgb(255,0,72)"><td>color(display-p3 1 0 0.2823 / 1)<td>3.529<td>false</tr>
-        <tr><td>rgba(255,205,63,1)<td style="background-color:rgba(255,205,63,1)"><td>color(display-p3 1 0.80 0.25 / 1)<td>3.88<td>false</tr>
-        <tr><td>rgba(241,174,50,1)<td style="background-color:rgba(241,174,50,1)"><td>color(display-p3 0.95 0.68 0.17 / 1)<td>4.701<td>false</tr>
-        <tr><td>rgba(245,181,40,1)<td style="background-color:rgba(245,181,40,1)"><td>color(display-p3 0.96 0.71 0.16 / 1)<td>4.218<td>false</tr>
-        <tr><td>rgb(147, 83, 255)<td style="background-color:rgb(147, 83, 255)"><td>color(display-p3 0.58 0.33 1 / 1)<td>2.143<td>false</tr>
-        <tr><td>rgba(75,3,161,1)<td style="background-color:rgba(75,3,161,1)"><td>color(display-p3 0.29 0.01 0.63 / 1)<td>1.321<td>false</tr>
-        <tr><td>rgba(255,0,0,0.85)<td style="background-color:rgba(255,0,0,0.85)"><td>color(display-p3 1 0 0 / 0.85)<td>7.115<td>false</tr>
-        <tr><td>rgba(84,64,135,1)<td style="background-color:rgba(84,64,135,1)"><td>color(display-p3 0.33 0.25 0.53 / 1)<td>1.326<td>true</tr>
-        <tr><td>rgba(131,103,201,1)<td style="background-color:rgba(131,103,201,1)"><td>color(display-p3 0.51 0.40 0.78 / 1)<td>1.348<td>true</tr>
-        <tr><td>rgba(68,185,208,1)<td style="background-color:rgba(68,185,208,1)"><td>color(display-p3 0.27 0.75 0.82 / 1)<td>5.591<td>false</tr>
-        <tr><td>#6d3bff<td style="background-color:#6d3bff"><td>color(display-p3 .427 .231 1)<td>1.584<td>false</tr>
-        <tr><td>#03d658<td style="background-color:#03d658"><td>color(display-p3 .012 .839 .345)<td>4.958<td>false</tr>
-        <tr><td>#ff3900<td style="background-color:#ff3900"><td>color(display-p3 1 .224 0)<td>7.14<td>false</tr>
-        <tr><td>#7cf8b3<td style="background-color:#7cf8b3"><td>color(display-p3 .486 .973 .702)<td>4.284<td>true</tr>
-        <tr><td>#f8f8f8<td style="background-color:#f8f8f8"><td>color(display-p3 .973 .973 .973)<td>0.028<td>true</tr>
-        <tr><td>#e3f5fd<td style="background-color:#e3f5fd"><td>color(display-p3 .875 .945 .976)<td>1.918<td>true</tr>
-        <tr><td>#e74832<td style="background-color:#e74832"><td>color( display-p3 .905882353 .282352941 .196078431 / 1 )<td>3.681<td>true</tr>
-        <tr><td>#303e6a<td style="background-color:#303e6a"><td>color( display-p3 0.188 0.243 0.416 / 1 )<td>1.413<td>true</tr>
-        <tr><td>#08257c<td style="background-color:#08257c"><td>color( display-p3 0.031 0.145 0.486 / 1 )<td>1.055<td>false</tr>
-        <tr><td>#706f6f<td style="background-color:#706f6f"><td>color(display-p3 .439 .435 .435/1)<td>0.174<td>true</tr>
-        <tr><td>#005992<td style="background-color:#005992"><td>color(display-p3 0 .349 .573/1)<td>3.211<td>false</tr>
-        <tr><td>#1a1b1f<td style="background-color:#1a1b1f"><td>color(display-p3 .102 .106 .122/1)<td>0.317<td>true</tr>
-        <tr><td>#e0ebf2<td style="background-color:#e0ebf2"><td>color(display-p3 .878 .922 .949/1)<td>1.321<td>true</tr>
-        <tr><td>#e9607e<td style="background-color:#e9607e"><td>color( display-p3 0.914 0.376 0.494 / 1 )<td>3.146<td>true</tr>
-        <tr><td>#222222<td style="background-color:#222222"><td>color( display-p3 0.133 0.133 0.133 / 1 )<td>0.027<td>true</tr>
-        <tr><td>#fef8e7<td style="background-color:#fef8e7"><td>color( display-p3 0.996 0.973 0.906 / 1 )<td>0.805<td>false</tr>
-        <tr><td>#e15718<td style="background-color:#e15718"><td>color( display-p3 0.882 0.341 0.094 / 1 )<td>4.789<td>false</tr>
-        <tr><td>#082e54<td style="background-color:#082e54"><td>color( display-p3 0.031 0.18 0.329 / 1 )<td>2.297<td>false</tr>
-        <tr><td>#dae0e6<td style="background-color:#dae0e6"><td>color( display-p3 0.855 0.878 0.902 / 1 )<td>0.666<td>true</tr>
-        <tr><td>#fff6f8<td style="background-color:#fff6f8"><td>color( display-p3 1 0.965 0.973 / 1 )<td>1.003<td>false</tr>
-        <tr><td>#2a93ca<td style="background-color:#2a93ca"><td>color(display-p3 .165 .576 .792 / 1)<td>3.556<td>false</tr>
-        <tr><td>#009183<td style="background-color:#009183"><td>color( display-p3 0 0.569 0.514 / 1 )<td>4.376<td>false</tr>
-        <tr><td>#ff6e47<td style="background-color:#ff6e47"><td>color( display-p3 1 0.431 0.278 / 1 )<td>3.49<td>false</tr>
-        <tr><td>#1b1b1d<td style="background-color:#1b1b1d"><td>color( display-p3 0.106 0.106 0.114 / 1 )<td>0.167<td>true</tr>
-        <tr><td>#4f6483<td style="background-color:#4f6483"><td>color( display-p3 0.31 0.392 0.514 / 1 )<td>1.882<td>true</tr>
-        <tr><td>#a50832<td style="background-color:#a50832"><td>color( display-p3 0.647 0.031 0.196 / 1 )<td>2.967<td>false</tr>
-        <tr><td>#dae0e6<td style="background-color:#dae0e6"><td>color( display-p3 0.855 0.878 0.902 / 1 )<td>0.666<td>true</tr>
-        <tr><td>#fafafa<td style="background-color:#fafafa"><td>color( display-p3 0.98 0.98 0.98 / 1 )<td>0.025<td>true</tr>
-        <tr><td>#cc0066<td style="background-color:#cc0066"><td>color( display-p3 0.8 0 0.4 / 1 )<td>3.113<td>false</tr>
-        <tr><td>#e74832<td style="background-color:#e74832"><td>color( display-p3 .905882353 .282352941 .196078431 / 1 )<td>3.681<td>true</tr>
-        <tr><td>#48FF7E<td style="background-color:#48FF7E"><td>color(display-p3 0.462 1 0.5/1)<td>2.338<td>false</tr>
-        <tr><td>#FFA500<td style="background-color:#FFA500"><td>color(display-p3 .9961 .6667 0)<td>5.777<td>false</tr>
-        <tr><td>#FFCE00<td style="background-color:#FFCE00"><td>color(display-p3 1 .8157 .0667)<td>4.606<td>false</tr>
-        <tr><td>#00c<td style="background-color:#00c"><td>color(display-p3 0 0 .8 / 1)<td>1.052<td>false</tr>
-        <tr><td>#2db0fe<td style="background-color:#2db0fe"><td>color(display-p3 .176 .69 .996 / 1)<td>3.872<td>false</tr>
-        <tr><td>#d1eeff<td style="background-color:#d1eeff"><td>color(display-p3 .82 .933 1 / 1)<td>2.196<td>false</tr>
-        <tr><td>#1da0ef<td style="background-color:#1da0ef"><td>color(display-p3 0.122 0.62 0.937)<td>3.385<td>false</tr>
-        <tr><td>#F95974<td style="background-color:#F95974"><td>color( display-p3 .97 0.349 0.454 / 1 )<td>2.978<td>false</tr>
-        <tr><td>#1BA388<td style="background-color:#1BA388"><td>color( display-p3 0.105 0.639 0.533 / 1 )<td>4.485<td>false</tr>
-        <tr><td>#6d3bff<td style="background-color:#6d3bff"><td>color(display-p3 .427 .231 1)<td>1.584<td>false</tr>
-        <tr><td>#e3f5fd<td style="background-color:#e3f5fd"><td>color(display-p3 .875 .945 .976)<td>1.918<td>true</tr>
-        <tr><td>#ff3900<td style="background-color:#ff3900"><td>color(display-p3 1 .224 0)<td>7.14<td>false</tr>
-        <tr><td>#7cf8b3<td style="background-color:#7cf8b3"><td>color(display-p3 .486 .973 .702)<td>4.284<td>true</tr>
-        <tr><td>#f8f8f8<td style="background-color:#f8f8f8"><td>color(display-p3 .973 .973 .973)<td>0.028<td>true</tr>
-        <tr><td>#6d3bff<td style="background-color:#6d3bff"><td>color(display-p3 0 .478 1)<td>25.945<td>false</tr>
-        <tr><td>#dc7100<td style="background-color:#dc7100"><td>color(display-p3 .862745098 .443137255 0 / 1)<td>5.734<td>false</tr>
-        <tr><td>#fff7f1<td style="background-color:#fff7f1"><td>color(display-p3 1 .968627451 .945098039 / 1)<td>0.929<td>false</tr>
-        <tr><td>#6464dc<td style="background-color:#6464dc"><td>color(display-p3 .392156863 .392156863 .862745098 / 1)<td>0.957<td>true</tr>
-        <tr><td>#509b82<td style="background-color:#509b82"><td>color(display-p3 .31372549 .607843137 .509803922 / 1)<td>3.664<td>true</tr>
-        <tr><td>#aa5082<td style="background-color:#aa5082"><td>color(display-p3 .666666667 .31372549 .509803922 / 1)<td>2.758<td>true</tr>
-        <tr><td>#dc7100<td style="background-color:#dc7100"><td>color(display-p3 .862745098 .443137255 0 / 1)<td>5.734<td>false</tr>
-        <tr><td>#509b82<td style="background-color:#509b82"><td>color(display-p3 .31372549 .607843137 .509803922 / 1)<td>3.664<td>true</tr>
-        <tr><td>#fff2f7<td style="background-color:#fff2f7"><td>color(display-p3 1 .949019608 .968627451 / 1)<td>1.374<td>false</tr>
-        <tr><td>#DC7100<td style="background-color:#DC7100"><td>color(display-p3 .862745098 .443137255 0 / 1)<td>5.734<td>false</tr>
-        <tr><td>#509B82<td style="background-color:#509B82"><td>color(display-p3 .31372549 .607843137 .509803922 / 1)<td>3.664<td>true</tr>
-        <tr><td>#AA5082<td style="background-color:#AA5082"><td>color(display-p3 .666666667 .31372549 .509803922 / 1)<td>2.758<td>true</tr>
-        <tr><td>#1e1f20<td style="background-color:#1e1f20"><td>color(display-p3 .117647059 .121568627 .125490196 / 1)<td>0.193<td>true</tr>
-        <tr><td>#082e54<td style="background-color:#082e54"><td>color( display-p3 0.031 0.18 0.329 / 1 )<td>2.297<td>false</tr>
-        <tr><td>#dd3333<td style="background-color:#dd3333"><td>color( display-p3 0.867 0.2 0.2 / 1 )<td>3.59<td>true</tr>
-        <tr><td>#4f6483<td style="background-color:#4f6483"><td>color( display-p3 0.31 0.392 0.514 / 1 )<td>1.882<td>true</tr>
-        <tr><td>#dae0e6<td style="background-color:#dae0e6"><td>color( display-p3 0.855 0.878 0.902 / 1 )<td>0.666<td>true</tr>
-        <tr><td>#fff6f8<td style="background-color:#fff6f8"><td>color( display-p3 1 0.965 0.973 / 1 )<td>1.003<td>false</tr>
-        <tr><td>#FFA500<td style="background-color:#FFA500"><td>color(display-p3 .9961 .6667 0)<td>5.777<td>false</tr>
-        <tr><td>#FFCE00<td style="background-color:#FFCE00"><td>color(display-p3 1 .8157 .0667)<td>4.606<td>false</tr>
-        <tr><td>#212121<td style="background-color:#212121"><td>color(display-p3 .129 .129 .129/1)<td>0.033<td>true</tr>
-        <tr><td>#bebebe<td style="background-color:#bebebe"><td>color(display-p3 .745 .745 .745/1)<td>0.014<td>true</tr>
-        <tr><td>#ee2<td style="background-color:#ee2"><td>color(display-p3 .933 .933 .133/1)<td>4.456<td>false</tr>
-        <tr><td>#edede1<td style="background-color:#edede1"><td>color(display-p3 .929 .929 .882/1)<td>0.481<td>true</tr>
-        <tr><td>#fffc00<td style="background-color:#fffc00"><td>color(display-p3 1 0.9882 0)<td>5.012<td>false</tr>
-        <tr><td>#333<td style="background-color:#333"><td>color( display-p3 0.2 0.2 0.2 / 1 )<td>0.005<td>true</tr>
-        <tr><td>#681160<td style="background-color:#681160"><td>color(display-p3 .408 .067 .376/1)<td>2.236<td>true</tr>
-        <tr><td>#e91e63<td style="background-color:#e91e63"><td>color(display-p3 .914 .118 .388/1)<td>3.311<td>false</tr>
-        <tr><td>#e0dede<td style="background-color:#e0dede"><td>color(display-p3 .878 .871 .871/1)<td>0.134<td>true</tr>
-        <tr><td>#00a1f3<td style="background-color:#00a1f3"><td>color(display-p3 .114 .627 .937)<td>3.423<td>false</tr>
-        <tr><td>#5b23cb<td style="background-color:#5b23cb"><td>color(display-p3 .357 .137 .796)<td>1.528<td>true</tr>
-        <tr><td>#03d658<td style="background-color:#03d658"><td>color(display-p3 .012 .839 .345)<td>4.958<td>false</tr>
-        <tr><td>#e3f5fd<td style="background-color:#e3f5fd"><td>color(display-p3 .875 .945 .976)<td>1.918<td>true</tr>
-        <tr><td>#ff3900<td style="background-color:#ff3900"><td>color(display-p3 1 .224 0)<td>7.14<td>false</tr>
-        <tr><td>#f8f8f8<td style="background-color:#f8f8f8"><td>color(display-p3 .973 .973 .973)<td>0.028<td>true</tr>
-        <tr><td>#f29832<td style="background-color:#f29832"><td>color(display-p3 .949 .596 .196/1)<td>3.921<td>false</tr>
-        <tr><td>#26ad79<td style="background-color:#26ad79"><td>color(display-p3 .149 .678 .475/1)<td>4.604<td>false</tr>
-        <tr><td>rgb(255, 255, 255)<td style="background-color:rgb(255, 255, 255)"><td>color(display-p3 1 1 1)<td>0.015<td>false</tr>
-        <tr><td>rgb(242, 242, 247)<td style="background-color:rgb(242, 242, 247)"><td>color(display-p3 0.949 0.949 0.9686)<td>0.234<td>true</tr>
-        <tr><td>rgb(54, 54, 56)<td style="background-color:rgb(54, 54, 56)"><td>color(display-p3 0.2117 0.2117 0.2196)<td>0.137<td>true</tr>
-        <tr><td>rgb(142, 142, 147)<td style="background-color:rgb(142, 142, 147)"><td>color(display-p3 0.5568 0.5568 0.5764)<td>0.25<td>true</tr>
-        <tr><td>rgb(0, 122, 255)<td style="background-color:rgb(0, 122, 255)"><td>color(display-p3 0 0.4784 1)<td>2.847<td>false</tr>
-        <tr><td>rgb(229, 229, 234)<td style="background-color:rgb(229, 229, 234)"><td>color(display-p3 0.898 0.898 0.9176)<td>0.236<td>true</tr>
-        <tr><td>rgb(255, 59, 48)<td style="background-color:rgb(255, 59, 48)"><td>color(display-p3 1 0.2313 0.1882)<td>3.996<td>false</tr>
-        <tr><td>rgb(0, 113, 164)<td style="background-color:rgb(0, 113, 164)"><td>color(display-p3 0 0.4431 0.6431)<td>3.488<td>false</tr>
-        <tr><td>rgb(36, 138, 61)<td style="background-color:rgb(36, 138, 61)"><td>color(display-p3 0.1411 0.5411 0.2392)<td>4.257<td>false</tr>
-        <tr><td>rgb(88, 86, 214)<td style="background-color:rgb(88, 86, 214)"><td>color(display-p3 0.345 0.3372 0.8392)<td>0.949<td>true</tr>
-        <tr><td>rgb(175, 82, 222)<td style="background-color:rgb(175, 82, 222)"><td>color(display-p3 0.6862 0.3215 0.8705)<td>2.5<td>true</tr>
-        <tr><td>rgb(255, 149, 0)<td style="background-color:rgb(255, 149, 0)"><td>color(display-p3 1 0.5843 0)<td>5.57<td>false</tr>
-        <tr><td>rgb(72, 72, 74)<td style="background-color:rgb(72, 72, 74)"><td>color(display-p3 0.2823 0.2823 0.2901)<td>0.115<td>true</tr>
+      <tr>
+        <td>rgba(255,205,63,1)</td>
+        <td>{{ swatch('rgba(255, 205, 63, 1)') }}</td>
+        <td>color(display-p3 1 0.80 0.25 / 1)</td>
+        <td class="numeric">3.880</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>rgba(120,0,255,1)</td>
+        <td>{{ swatch('rgba(120, 0, 255, 1)') }}</td>
+        <td>color(display-p3 0.47 0 1 / 1)</td>
+        <td class="numeric">1.933</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>rgba(121,127,132,1)</td>
+        <td>{{ swatch('rgba(121, 127, 132, 1)') }}</td>
+        <td>color(display-p3 0.48 0.50 0.52 / 1)</td>
+        <td class="numeric">0.391</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>rgba(200,200,200,1)</td>
+        <td>{{ swatch('rgba(200, 200, 200, 1)') }}</td>
+        <td>color(display-p3 0.78 0.78 0.78 / 1)</td>
+        <td class="numeric">0.274</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>rgba(97,97,99,1)</td>
+        <td>{{ swatch('rgba(97, 97, 99, 1)') }}</td>
+        <td>color(display-p3 0.39 0.39 0.39 / 1)</td>
+        <td class="numeric">1.474</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>rgba(0,0,0,1)</td>
+        <td>{{ swatch('rgba(0, 0, 0, 1)') }}</td>
+        <td>color(display-p3 0 0 0 / 1)</td>
+        <td class="numeric">0.000</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>rgba(255,255,255,1)</td>
+        <td>{{ swatch('rgba(255, 255, 255, 1)') }}</td>
+        <td>color(display-p3 1 1 1 / 1)</td>
+        <td class="numeric">0.015</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>rgba(84,64,135,1)</td>
+        <td>{{ swatch('rgba(84, 64, 135, 1)') }}</td>
+        <td>color(display-p3 0.33 0.25 0.53 / 1)</td>
+        <td class="numeric">1.326</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>rgba(131,103,201,1)</td>
+        <td>{{ swatch('rgba(131, 103, 201, 1)') }}</td>
+        <td>color(display-p3 0.51 0.40 0.78 / 1)</td>
+        <td class="numeric">1.348</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>rgba(68,185,208,1)</td>
+        <td>{{ swatch('rgba(68, 185, 208, 1)') }}</td>
+        <td>color(display-p3 0.27 0.75 0.82 / 1)</td>
+        <td class="numeric">5.591</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>rgb(255,0,72)</td>
+        <td>{{ swatch('rgb(255, 0, 72)') }}</td>
+        <td>color(display-p3 1 0 0.2823 / 1)</td>
+        <td class="numeric">3.529</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>rgba(255,205,63,1)</td>
+        <td>{{ swatch('rgba(255, 205, 63, 1)') }}</td>
+        <td>color(display-p3 1 0.80 0.25 / 1)</td>
+        <td class="numeric">3.880</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>rgba(241,174,50,1)</td>
+        <td>{{ swatch('rgba(241, 174, 50, 1)') }}</td>
+        <td>color(display-p3 0.95 0.68 0.17 / 1)</td>
+        <td class="numeric">4.701</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>rgba(245,181,40,1)</td>
+        <td>{{ swatch('rgba(245, 181, 40, 1)') }}</td>
+        <td>color(display-p3 0.96 0.71 0.16 / 1)</td>
+        <td class="numeric">4.218</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>rgb(147, 83, 255)</td>
+        <td>{{ swatch('rgb(147, 83, 255)') }}</td>
+        <td>color(display-p3 0.58 0.33 1 / 1)</td>
+        <td class="numeric">2.143</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>rgba(75,3,161,1)</td>
+        <td>{{ swatch('rgba(75, 3, 161, 1)') }}</td>
+        <td>color(display-p3 0.29 0.01 0.63 / 1)</td>
+        <td class="numeric">1.321</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>rgba(255,0,0,0.85)</td>
+        <td>{{ swatch('rgba(255, 0, 0, 0.85)') }}</td>
+        <td>color(display-p3 1 0 0 / 0.85)</td>
+        <td class="numeric">7.115</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>rgba(84,64,135,1)</td>
+        <td>{{ swatch('rgba(84, 64, 135, 1)') }}</td>
+        <td>color(display-p3 0.33 0.25 0.53 / 1)</td>
+        <td class="numeric">1.326</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>rgba(131,103,201,1)</td>
+        <td>{{ swatch('rgba(131, 103, 201, 1)') }}</td>
+        <td>color(display-p3 0.51 0.40 0.78 / 1)</td>
+        <td class="numeric">1.348</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>rgba(68,185,208,1)</td>
+        <td>{{ swatch('rgba(68, 185, 208, 1)') }}</td>
+        <td>color(display-p3 0.27 0.75 0.82 / 1)</td>
+        <td class="numeric">5.591</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#6d3bff</td>
+        <td>{{ swatch('#6d3bff') }}</td>
+        <td>color(display-p3 .427 .231 1)</td>
+        <td class="numeric">1.584</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#03d658</td>
+        <td>{{ swatch('#03d658') }}</td>
+        <td>color(display-p3 .012 .839 .345)</td>
+        <td class="numeric">4.958</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#ff3900</td>
+        <td>{{ swatch('#ff3900') }}</td>
+        <td>color(display-p3 1 .224 0)</td>
+        <td class="numeric">7.140</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#7cf8b3</td>
+        <td>{{ swatch('#7cf8b3') }}</td>
+        <td>color(display-p3 .486 .973 .702)</td>
+        <td class="numeric">4.284</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#f8f8f8</td>
+        <td>{{ swatch('#f8f8f8') }}</td>
+        <td>color(display-p3 .973 .973 .973)</td>
+        <td class="numeric">0.028</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#e3f5fd</td>
+        <td>{{ swatch('#e3f5fd') }}</td>
+        <td>color(display-p3 .875 .945 .976)</td>
+        <td class="numeric">1.918</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#e74832</td>
+        <td>{{ swatch('#e74832') }}</td>
+        <td>color( display-p3 .905882353 .282352941 .196078431 / 1 )</td>
+        <td class="numeric">3.681</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#303e6a</td>
+        <td>{{ swatch('#303e6a') }}</td>
+        <td>color( display-p3 0.188 0.243 0.416 / 1 )</td>
+        <td class="numeric">1.413</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#08257c</td>
+        <td>{{ swatch('#08257c') }}</td>
+        <td>color( display-p3 0.031 0.145 0.486 / 1 )</td>
+        <td class="numeric">1.055</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#706f6f</td>
+        <td>{{ swatch('#706f6f') }}</td>
+        <td>color(display-p3 .439 .435 .435/1)</td>
+        <td class="numeric">0.174</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#005992</td>
+        <td>{{ swatch('#005992') }}</td>
+        <td>color(display-p3 0 .349 .573/1)</td>
+        <td class="numeric">3.211</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#1a1b1f</td>
+        <td>{{ swatch('#1a1b1f') }}</td>
+        <td>color(display-p3 .102 .106 .122/1)</td>
+        <td class="numeric">0.317</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#e0ebf2</td>
+        <td>{{ swatch('#e0ebf2') }}</td>
+        <td>color(display-p3 .878 .922 .949/1)</td>
+        <td class="numeric">1.321</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#e9607e</td>
+        <td>{{ swatch('#e9607e') }}</td>
+        <td>color( display-p3 0.914 0.376 0.494 / 1 )</td>
+        <td class="numeric">3.146</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#222222</td>
+        <td>{{ swatch('#222222') }}</td>
+        <td>color( display-p3 0.133 0.133 0.133 / 1 )</td>
+        <td class="numeric">0.027</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#fef8e7</td>
+        <td>{{ swatch('#fef8e7') }}</td>
+        <td>color( display-p3 0.996 0.973 0.906 / 1 )</td>
+        <td class="numeric">0.805</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#e15718</td>
+        <td>{{ swatch('#e15718') }}</td>
+        <td>color( display-p3 0.882 0.341 0.094 / 1 )</td>
+        <td class="numeric">4.789</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#082e54</td>
+        <td>{{ swatch('#082e54') }}</td>
+        <td>color( display-p3 0.031 0.18 0.329 / 1 )</td>
+        <td class="numeric">2.297</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#dae0e6</td>
+        <td>{{ swatch('#dae0e6') }}</td>
+        <td>color( display-p3 0.855 0.878 0.902 / 1 )</td>
+        <td class="numeric">0.666</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#fff6f8</td>
+        <td>{{ swatch('#fff6f8') }}</td>
+        <td>color( display-p3 1 0.965 0.973 / 1 )</td>
+        <td class="numeric">1.003</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#2a93ca</td>
+        <td>{{ swatch('#2a93ca') }}</td>
+        <td>color(display-p3 .165 .576 .792 / 1)</td>
+        <td class="numeric">3.556</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#009183</td>
+        <td>{{ swatch('#009183') }}</td>
+        <td>color( display-p3 0 0.569 0.514 / 1 )</td>
+        <td class="numeric">4.376</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#ff6e47</td>
+        <td>{{ swatch('#ff6e47') }}</td>
+        <td>color( display-p3 1 0.431 0.278 / 1 )</td>
+        <td class="numeric">3.490</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#1b1b1d</td>
+        <td>{{ swatch('#1b1b1d') }}</td>
+        <td>color( display-p3 0.106 0.106 0.114 / 1 )</td>
+        <td class="numeric">0.167</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#4f6483</td>
+        <td>{{ swatch('#4f6483') }}</td>
+        <td>color( display-p3 0.31 0.392 0.514 / 1 )</td>
+        <td class="numeric">1.882</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#a50832</td>
+        <td>{{ swatch('#a50832') }}</td>
+        <td>color( display-p3 0.647 0.031 0.196 / 1 )</td>
+        <td class="numeric">2.967</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#dae0e6</td>
+        <td>{{ swatch('#dae0e6') }}</td>
+        <td>color( display-p3 0.855 0.878 0.902 / 1 )</td>
+        <td class="numeric">0.666</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#fafafa</td>
+        <td>{{ swatch('#fafafa') }}</td>
+        <td>color( display-p3 0.98 0.98 0.98 / 1 )</td>
+        <td class="numeric">0.025</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#cc0066</td>
+        <td>{{ swatch('#cc0066') }}</td>
+        <td>color( display-p3 0.8 0 0.4 / 1 )</td>
+        <td class="numeric">3.113</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#e74832</td>
+        <td>{{ swatch('#e74832') }}</td>
+        <td>color( display-p3 .905882353 .282352941 .196078431 / 1 )</td>
+        <td class="numeric">3.681</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#48FF7E</td>
+        <td>{{ swatch('#48ff7e') }}</td>
+        <td>color(display-p3 0.462 1 0.5/1)</td>
+        <td class="numeric">2.338</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#FFA500</td>
+        <td>{{ swatch('#ffa500') }}</td>
+        <td>color(display-p3 .9961 .6667 0)</td>
+        <td class="numeric">5.777</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#FFCE00</td>
+        <td>{{ swatch('#ffce00') }}</td>
+        <td>color(display-p3 1 .8157 .0667)</td>
+        <td class="numeric">4.606</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#00c</td>
+        <td>{{ swatch('#00c') }}</td>
+        <td>color(display-p3 0 0 .8 / 1)</td>
+        <td class="numeric">1.052</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#2db0fe</td>
+        <td>{{ swatch('#2db0fe') }}</td>
+        <td>color(display-p3 .176 .69 .996 / 1)</td>
+        <td class="numeric">3.872</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#d1eeff</td>
+        <td>{{ swatch('#d1eeff') }}</td>
+        <td>color(display-p3 .82 .933 1 / 1)</td>
+        <td class="numeric">2.196</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#1da0ef</td>
+        <td>{{ swatch('#1da0ef') }}</td>
+        <td>color(display-p3 0.122 0.62 0.937)</td>
+        <td class="numeric">3.385</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#F95974</td>
+        <td>{{ swatch('#f95974') }}</td>
+        <td>color( display-p3 .97 0.349 0.454 / 1 )</td>
+        <td class="numeric">2.978</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#1BA388</td>
+        <td>{{ swatch('#1ba388') }}</td>
+        <td>color( display-p3 0.105 0.639 0.533 / 1 )</td>
+        <td class="numeric">4.485</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#6d3bff</td>
+        <td>{{ swatch('#6d3bff') }}</td>
+        <td>color(display-p3 .427 .231 1)</td>
+        <td class="numeric">1.584</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#e3f5fd</td>
+        <td>{{ swatch('#e3f5fd') }}</td>
+        <td>color(display-p3 .875 .945 .976)</td>
+        <td class="numeric">1.918</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#ff3900</td>
+        <td>{{ swatch('#ff3900') }}</td>
+        <td>color(display-p3 1 .224 0)</td>
+        <td class="numeric">7.140</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#7cf8b3</td>
+        <td>{{ swatch('#7cf8b3') }}</td>
+        <td>color(display-p3 .486 .973 .702)</td>
+        <td class="numeric">4.284</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#f8f8f8</td>
+        <td>{{ swatch('#f8f8f8') }}</td>
+        <td>color(display-p3 .973 .973 .973)</td>
+        <td class="numeric">0.028</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#6d3bff</td>
+        <td>{{ swatch('#6d3bff') }}</td>
+        <td>color(display-p3 0 .478 1)</td>
+        <td class="numeric">25.945</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#dc7100</td>
+        <td>{{ swatch('#dc7100') }}</td>
+        <td>color(display-p3 .862745098 .443137255 0 / 1)</td>
+        <td class="numeric">5.734</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#fff7f1</td>
+        <td>{{ swatch('#fff7f1') }}</td>
+        <td>color(display-p3 1 .968627451 .945098039 / 1)</td>
+        <td class="numeric">0.929</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#6464dc</td>
+        <td>{{ swatch('#6464dc') }}</td>
+        <td>color(display-p3 .392156863 .392156863 .862745098 / 1)</td>
+        <td class="numeric">0.957</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#509b82</td>
+        <td>{{ swatch('#509b82') }}</td>
+        <td>color(display-p3 .31372549 .607843137 .509803922 / 1)</td>
+        <td class="numeric">3.664</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#aa5082</td>
+        <td>{{ swatch('#aa5082') }}</td>
+        <td>color(display-p3 .666666667 .31372549 .509803922 / 1)</td>
+        <td class="numeric">2.758</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#dc7100</td>
+        <td>{{ swatch('#dc7100') }}</td>
+        <td>color(display-p3 .862745098 .443137255 0 / 1)</td>
+        <td class="numeric">5.734</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#509b82</td>
+        <td>{{ swatch('#509b82') }}</td>
+        <td>color(display-p3 .31372549 .607843137 .509803922 / 1)</td>
+        <td class="numeric">3.664</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#fff2f7</td>
+        <td>{{ swatch('#fff2f7') }}</td>
+        <td>color(display-p3 1 .949019608 .968627451 / 1)</td>
+        <td class="numeric">1.374</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#DC7100</td>
+        <td>{{ swatch('#dc7100') }}</td>
+        <td>color(display-p3 .862745098 .443137255 0 / 1)</td>
+        <td class="numeric">5.734</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#509B82</td>
+        <td>{{ swatch('#509b82') }}</td>
+        <td>color(display-p3 .31372549 .607843137 .509803922 / 1)</td>
+        <td class="numeric">3.664</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#AA5082</td>
+        <td>{{ swatch('#aa5082') }}</td>
+        <td>color(display-p3 .666666667 .31372549 .509803922 / 1)</td>
+        <td class="numeric">2.758</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#1e1f20</td>
+        <td>{{ swatch('#1e1f20') }}</td>
+        <td>color(display-p3 .117647059 .121568627 .125490196 / 1)</td>
+        <td class="numeric">0.193</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#082e54</td>
+        <td>{{ swatch('#082e54') }}</td>
+        <td>color( display-p3 0.031 0.18 0.329 / 1 )</td>
+        <td class="numeric">2.297</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#dd3333</td>
+        <td>{{ swatch('#dd3333') }}</td>
+        <td>color( display-p3 0.867 0.2 0.2 / 1 )</td>
+        <td class="numeric">3.590</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#4f6483</td>
+        <td>{{ swatch('#4f6483') }}</td>
+        <td>color( display-p3 0.31 0.392 0.514 / 1 )</td>
+        <td class="numeric">1.882</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#dae0e6</td>
+        <td>{{ swatch('#dae0e6') }}</td>
+        <td>color( display-p3 0.855 0.878 0.902 / 1 )</td>
+        <td class="numeric">0.666</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#fff6f8</td>
+        <td>{{ swatch('#fff6f8') }}</td>
+        <td>color( display-p3 1 0.965 0.973 / 1 )</td>
+        <td class="numeric">1.003</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#FFA500</td>
+        <td>{{ swatch('#ffa500') }}</td>
+        <td>color(display-p3 .9961 .6667 0)</td>
+        <td class="numeric">5.777</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#FFCE00</td>
+        <td>{{ swatch('#ffce00') }}</td>
+        <td>color(display-p3 1 .8157 .0667)</td>
+        <td class="numeric">4.606</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#212121</td>
+        <td>{{ swatch('#212121') }}</td>
+        <td>color(display-p3 .129 .129 .129/1)</td>
+        <td class="numeric">0.033</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#bebebe</td>
+        <td>{{ swatch('#bebebe') }}</td>
+        <td>color(display-p3 .745 .745 .745/1)</td>
+        <td class="numeric">0.014</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#ee2</td>
+        <td>{{ swatch('#ee2') }}</td>
+        <td>color(display-p3 .933 .933 .133/1)</td>
+        <td class="numeric">4.456</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#edede1</td>
+        <td>{{ swatch('#edede1') }}</td>
+        <td>color(display-p3 .929 .929 .882/1)</td>
+        <td class="numeric">0.481</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#fffc00</td>
+        <td>{{ swatch('#fffc00') }}</td>
+        <td>color(display-p3 1 0.9882 0)</td>
+        <td class="numeric">5.012</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#333</td>
+        <td>{{ swatch('#333') }}</td>
+        <td>color( display-p3 0.2 0.2 0.2 / 1 )</td>
+        <td class="numeric">0.005</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#681160</td>
+        <td>{{ swatch('#681160') }}</td>
+        <td>color(display-p3 .408 .067 .376/1)</td>
+        <td class="numeric">2.236</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#e91e63</td>
+        <td>{{ swatch('#e91e63') }}</td>
+        <td>color(display-p3 .914 .118 .388/1)</td>
+        <td class="numeric">3.311</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#e0dede</td>
+        <td>{{ swatch('#e0dede') }}</td>
+        <td>color(display-p3 .878 .871 .871/1)</td>
+        <td class="numeric">0.134</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#00a1f3</td>
+        <td>{{ swatch('#00a1f3') }}</td>
+        <td>color(display-p3 .114 .627 .937)</td>
+        <td class="numeric">3.423</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#5b23cb</td>
+        <td>{{ swatch('#5b23cb') }}</td>
+        <td>color(display-p3 .357 .137 .796)</td>
+        <td class="numeric">1.528</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#03d658</td>
+        <td>{{ swatch('#03d658') }}</td>
+        <td>color(display-p3 .012 .839 .345)</td>
+        <td class="numeric">4.958</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#e3f5fd</td>
+        <td>{{ swatch('#e3f5fd') }}</td>
+        <td>color(display-p3 .875 .945 .976)</td>
+        <td class="numeric">1.918</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#ff3900</td>
+        <td>{{ swatch('#ff3900') }}</td>
+        <td>color(display-p3 1 .224 0)</td>
+        <td class="numeric">7.140</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#f8f8f8</td>
+        <td>{{ swatch('#f8f8f8') }}</td>
+        <td>color(display-p3 .973 .973 .973)</td>
+        <td class="numeric">0.028</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>#f29832</td>
+        <td>{{ swatch('#f29832') }}</td>
+        <td>color(display-p3 .949 .596 .196/1)</td>
+        <td class="numeric">3.921</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>#26ad79</td>
+        <td>{{ swatch('#26ad79') }}</td>
+        <td>color(display-p3 .149 .678 .475/1)</td>
+        <td class="numeric">4.604</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>rgb(255, 255, 255)</td>
+        <td>{{ swatch('rgb(255, 255, 255)') }}</td>
+        <td>color(display-p3 1 1 1)</td>
+        <td class="numeric">0.015</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>rgb(242, 242, 247)</td>
+        <td>{{ swatch('rgb(242, 242, 247)') }}</td>
+        <td>color(display-p3 0.949 0.949 0.9686)</td>
+        <td class="numeric">0.234</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>rgb(54, 54, 56)</td>
+        <td>{{ swatch('rgb(54, 54, 56)') }}</td>
+        <td>color(display-p3 0.2117 0.2117 0.2196)</td>
+        <td class="numeric">0.137</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>rgb(142, 142, 147)</td>
+        <td>{{ swatch('rgb(142, 142, 147)') }}</td>
+        <td>color(display-p3 0.5568 0.5568 0.5764)</td>
+        <td class="numeric">0.250</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>rgb(0, 122, 255)</td>
+        <td>{{ swatch('rgb(0, 122, 255)') }}</td>
+        <td>color(display-p3 0 0.4784 1)</td>
+        <td class="numeric">2.847</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>rgb(229, 229, 234)</td>
+        <td>{{ swatch('rgb(229, 229, 234)') }}</td>
+        <td>color(display-p3 0.898 0.898 0.9176)</td>
+        <td class="numeric">0.236</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>rgb(255, 59, 48)</td>
+        <td>{{ swatch('rgb(255, 59, 48)') }}</td>
+        <td>color(display-p3 1 0.2313 0.1882)</td>
+        <td class="numeric">3.996</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>rgb(0, 113, 164)</td>
+        <td>{{ swatch('rgb(0, 113, 164)') }}</td>
+        <td>color(display-p3 0 0.4431 0.6431)</td>
+        <td class="numeric">3.488</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>rgb(36, 138, 61)</td>
+        <td>{{ swatch('rgb(36, 138, 61)') }}</td>
+        <td>color(display-p3 0.1411 0.5411 0.2392)</td>
+        <td class="numeric">4.257</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>rgb(88, 86, 214)</td>
+        <td>{{ swatch('rgb(88, 86, 214)') }}</td>
+        <td>color(display-p3 0.345 0.3372 0.8392)</td>
+        <td class="numeric">0.949</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>rgb(175, 82, 222)</td>
+        <td>{{ swatch('rgb(175, 82, 222)') }}</td>
+        <td>color(display-p3 0.6862 0.3215 0.8705)</td>
+        <td class="numeric">2.500</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>rgb(255, 149, 0)</td>
+        <td>{{ swatch('rgb(255, 149, 0)') }}</td>
+        <td>color(display-p3 1 0.5843 0)</td>
+        <td class="numeric">5.570</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>rgb(72, 72, 74)</td>
+        <td>{{ swatch('rgb(72, 72, 74)') }}</td>
+        <td>color(display-p3 0.2823 0.2823 0.2901)</td>
+        <td class="numeric">0.115</td>
+        <td>true</td>
+      </tr>
     </tbody>
   </table>
   <figcaption>
