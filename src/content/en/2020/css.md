@@ -514,7 +514,7 @@ What about named colors? The keyword `transparent`, which is just another way to
 
 And if you are going for fanciful color names, why not define your own with CSS [Custom properties](#custom-properties)? `--intensePurple` and `--corporateBlue` mean whatever you need them to mean. This probably explains why [50% of Custom Properties](#usage-by-type) are used for colors.
 
-{#TODO mention color keyword app}
+{# TODO mention color keyword app #}
 
 {# TODO(analysts, CSS experts): figure out why the swatches aren't working. #}
 <figure>
@@ -669,7 +669,7 @@ And we are still missing out. Despite being [implemented in Safari in 2016](http
 
 Compatibility, right? You don’t want things to break? No. In the stylesheets we examined, we found solid use of fallback: with document order, the cascade, `@supports`, the `color-gamut` media query, all that good stuff. So in a style sheet we would see the color the designer wanted, expressed in display-p3, and also a fallback sRGB color. We computed the visible difference (a calculation called [ΔE2000](http://zschuessler.github.io/DeltaE/learn/)) between the desired and fallback color and this was typically quite modest. A small tweak. A careful exploration. In fact, 37.6% of the time, the color specified in display-p3 actually fell inside the range of colors (the gamut) that sRGB can manage.
 
-{# TODO What to do with this huge table?}
+{# TODO What to do with this huge table? #}
 <figure>
   <table>
     <thead>
@@ -805,7 +805,7 @@ Compatibility, right? You don’t want things to break? No. In the stylesheets w
   </figcaption>
 </figure>
 
-{# TODO the figure below needs an actual object tag, otherwise tooltips are not shown}
+{# TODO the figure below needs an actual object tag, otherwise tooltips are not shown #}
 
 {{ figure_markup(
   image="UCS-p3-pairs.svg",
