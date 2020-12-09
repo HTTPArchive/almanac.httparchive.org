@@ -230,16 +230,6 @@
       "github": "ahmadawais",
       "twitter": "MrAhmadAwais"
     },
-    "AAgar": {
-      "name": "Akshar Agarwal",
-      "teams": [
-        "analysts"
-      ],
-      "avatar_url": "https://avatars1.githubusercontent.com/u/12477271?v=4&s=200",
-      "website": "https://aagar.github.io/",
-      "github": "AAgar",
-      "twitter": "AAgar"
-    },
     "adityapandey1998": {
       "name": "Aditya Pandey",
       "teams": [
@@ -328,6 +318,7 @@
     "denar90": {
       "name": "Artem Denysov",
       "teams": [
+        "reviewers",
         "analysts"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/6231516?v=4&s=200",
@@ -420,14 +411,6 @@
       "website": "https://catalin.red/",
       "github": "catalinred",
       "twitter": "catalinred"
-    },
-    "cheneytsai": {
-      "name": "Cheney Tsai",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "https://avatars1.githubusercontent.com/u/672494?v=4&s=200",
-      "github": "cheneytsai"
     },
     "svgeesus": {
       "name": "Chris Lilley",
@@ -694,7 +677,8 @@
     "jrharalson": {
       "name": "Jason Haralson",
       "teams": [
-        "reviewers"
+        "reviewers",
+        "analysts"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/7421844?v=4&s=200",
       "github": "jrharalson"
@@ -719,16 +703,6 @@
       "website": "https://meiert.com/en/",
       "github": "j9t",
       "twitter": "j9t"
-    },
-    "malchata": {
-      "name": "Jeremy Wagner",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "https://avatars1.githubusercontent.com/u/1635238?v=4&s=200",
-      "website": "https://jeremy.codes/",
-      "github": "malchata",
-      "twitter": "malchata"
     },
     "jessnicolet": {
       "name": "Jessica Nicolet",
