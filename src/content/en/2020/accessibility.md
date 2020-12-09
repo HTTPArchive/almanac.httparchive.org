@@ -8,7 +8,7 @@ authors: [oluoluoxenfree, alextait1]
 reviewers: [aardrian, ericwbailey, obto]
 analysts: [obto]
 translators: []
-oluoluoxenfree_bio: Olu Niyi-Awosusi is a software engineer at the FT who loves lists, learning new things, Bee and Puppycat, <a href="https://alistapart.com/article/building-the-woke-web/" target="_blank">social justice, accessibility</a> and trying harder every day.
+oluoluoxenfree_bio: Olu Niyi-Awosusi is a software engineer at the FT who loves lists, learning new things, Bee and Puppycat, <a href="https://alistapart.com/article/building-the-woke-web/">social justice, accessibility</a> and trying harder every day.
 alextait1_bio: Alex Tait is a developer, consultant and educator whose passion lies in the intersection of accessibility and modern JavaScript within interface architecture and design systems. As a developer, she believes that inclusion driven development practices with accessibility at the forefront lead to better products for everyone. As a consultant and strategist, she believes that less is more and that new feature scope creep cannot be prioritized over core feature parity for disabled users. As an educator, she believes in removing barriers to information so that tech can become a more diverse, equitable and inclusive industry.
 discuss: 2044
 results: https://docs.google.com/spreadsheets/d/1UjEBhq0TfYxUpdpq5IuxjeHB4yqhJq4NOKEd6Dwwrdk/
@@ -276,31 +276,35 @@ Tabs are a common interface widget, but present a challenge for many developers 
 
 In this pattern, a parent container has a `role="tablist"` with children elements that have a `role="tab"`. These tabs are associated with elements that have a `role="tabpanel"`, and contain the content for that tab.
 
+{# TODO better description #}
+
 {{ figure_markup(
   image="role-tab-list.png",
   alt="element with the tablist role",
-  caption='Tab list (`role="tablist"`) contains all of the tabs. ([Source](https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html))',
-  description="TODO",
-  width=TODO,
-  height=TODO
+  caption='Tab list (`role="tablist"`) contains all of the tabs. ([Source: W3C](https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html))',
+  description="Screenshot showing an example tablist",
+  width=348,
+  height=337
 ) }}
+
+{# TODO better description #}
 
 {{ figure_markup(
   image="role-tab.png",
   alt="element with the tab role",
-  caption='“Nils Frahm” tab (`role="tab"`). ([Source](https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html))',
-  description="TODO",
-  width=TODO,
-  height=TODO
+  caption='“Nils Frahm” tab (`role="tab"`). ([Source: W3C](https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html))',
+  description="Screenshot showing an example tab",
+  width=346,
+  height=335
 ) }}
 
 {{ figure_markup(
   image="role-tab-panel.png",
   alt="element with the tabpanel role",
-  caption='Tab panel (`role="tabpanel"`) with content associated with the “Nils Frahm” tab. ([Source](https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html))',
-  description="TODO",
-  width=TODO,
-  height=TODO
+  caption='Tab panel (`role="tabpanel"`) with content associated with the “Nils Frahm” tab. ([Source: W3C](https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html))',
+  description="Screenshot showing an example tabpanel",
+  width=346,
+  height=335
 ) }}
 
 For desktop pages, 7.00% have at least one element with a `role="tablist"` whereas there only 5.79% of pages have elements with a `role="tab"` and 5.46% of pages have elements with a `role="tabpanel"`. This suggests that the pattern may only be partially implemented. Even if there is dynamic rendering at play for some of the tab/tabpanel elements, the currently visible or first tab/tabpanel would theoretically be in the DOM on page load.
@@ -401,7 +405,7 @@ Groups of form controls such as a set of radio inputs or checkboxes should be ne
 
 ### Placeholder text
 
-Do not rely on placeholder text to act as the label for an input. While some screen readers now have the capability of determining the accessible name from placeholder text, users with cognitive disabilities can be negatively impacted by a reliance on placeholder text because as soon as a user begins to type in the input the placeholder disappears and the context is gone. Voice control users need more than a placeholder value in order to reliably target an element in the DOM. Additionally placeholder text often fails color contrast requirements, which negatively impacts users with low vision.
+Do not rely on placeholder text to act as the label for an input. While some screen readers now have the capability of determining the accessible name from placeholder text, users with cognitive disabilities can be negatively impacted by a reliance on placeholder text because as soon as a user begins to type in the input the placeholder disappears and the context is gone. Voice control users need more than a placeholder value in order to reliably target an element in the DOM. Additionally placeholder text often fails colour contrast requirements, which negatively impacts users with low vision.
 
 Of the sites that have form controls with placeholder text, 73.89% of them have at least one instance where there is no `<label>` element programmatically associated with the control for desktop and 74.52% for mobile.
 
