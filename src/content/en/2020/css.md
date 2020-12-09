@@ -3,24 +3,29 @@
 part_number: I
 chapter_number: 1
 title: CSS
-description: CSS chapter of the 2020 Web Almanac covering color, units, selectors, layout, typography and fonts, spacing, decoration, animation, and media queries.
+description: CSS chapter of the 2020 Web Almanac covering color, units, selectors, layout, animation, media queries, Sass usage.
 authors: [LeaVerou, svgeesus, rachelandrew]
 reviewers: [estelle, fantasai, j9t, mirisuzanne, catalinred, hankchizljaw]
 analysts: [rviscomi, LeaVerou, dooman87]
 translators: []
-#LeaVerou_bio: TODO.
-#svgeesus_bio: TODO.
-#rachelandrew_bio: TODO.
+LeaVerou_bio: Lea <a href="https://designftw.mit.edu">teaches HCI &amp; web programming</a> and <a href="https://mavo.io">researches how to make web programming easier</a> at <a href="http://mit.edu">MIT</a>. She is a bestselling technical <a href="http://www.amazon.com/CSS-Secrets-Lea-Verou/dp/1449372635?tag=leaverou-20">author</a> and experienced <a href="https://lea.verou.me/speaking">speaker</a>. She is passionate about open web standards, and is a longtime <a href="http://www.w3.org/Style/CSS/members.en.php3">CSS Working Group</a> member. Lea has started <a href="http://github.com/leaverou">several popular open source projects and web applications</a>, such as <a href="http://prismjs.com">Prism</a>, and <a href="https://github.com/leaverou/awesomplete">Awesomplete</a>. She tweets <a href="https://twitter.com/leaverou">@leaverou</a> and blogs at <a href="http://lea.verou.me">lea.verou.me</a>.</p>
+svgeesus_bio: Chris Lilley is a Technical Director at the World Wide Web Consortium
+(W3C). Considered “the father of SVG”, he also co-authored PNG, was
+co-editor of CSS2, chaired the group that developed @font-face, and
+co-developed WOFF. Ex Technical Architecture Group. Chris is still
+trying to get Color Management on the Web, sigh. Currently working on
+CSS levels 3/4/5 (no, really), Web Audio, and WOFF2.</p>.
+rachelandrew_bio: I’m a web developer, writer, public speaker. Co-founder of <a href="https://grabaperch.com">Perch <span class="caps">CMS</span></a> and <a href="https://noti.st">Notist</a>. Member of the <a href="https://www.w3.org/wiki/CSSWG"><span class="caps">CSS</span> Working Group</a>. Editor in Chief of <a href="https://www.smashingmagazine.com/">Smashing Magazine</a>.
 discuss: 2037
 results: https://docs.google.com/spreadsheets/d/1sMWXWjMujqfAREYxNbG_t1fOJKYCA6ASLwtz4pBQVTw/
 queries: 01_CSS
-#featured_quote: TODO.
-#featured_stat_1: TODO.
-#featured_stat_label_1: TODO.
-#featured_stat_2: TODO.
-#featured_stat_label_2: TODO.
-#featured_stat_3: TODO.
-#featured_stat_label_3: TODO.
+featured_quote: The Web is not a teenager any more. It is now 30 years old, and acts like it. It tends to favor stability over new bling, and readability over complexity, occasional guilty pleasures aside..
+featured_stat_1: 72.58%.
+featured_stat_label_1: Percentage of `<length>` values that use the `px` unit.".
+featured_stat_2: 91.05%.
+featured_stat_label_2: Percent of mobile pages using any vendor prefixed feature..
+featured_stat_3: `darken()`
+featured_stat_label_3: Most popular SCSS function
 unedited: true
 ---
 
@@ -44,7 +49,7 @@ For this year, we decided to involve the community in which metrics to study. We
 
 The data in this chapter took 121 SQL queries to produce, totaling over 10K lines of SQL, which includes 3K lines of JS, making it the largest chapter in Web Almanac's history.
 
-A lot of engineering work went into making this scale of analysis feasible. Like last year, we put all CSS code through a [CSS parser](https://github.com/reworkcss/css), and stored the [Abstract Syntax Trees](https://en.wikipedia.org/wiki/Abstract_syntax_tree) (AST) for all stylesheets in the corpus, resulting in a whopping 10 TB of data. This year, we also developed a [library of helpers](https://github.com/leaverou/rework-utils) that operate on this AST, and a [selector parser](https://projects.verou.me/parsel), both of which were also released as separate open source projects. Most metrics involved [JS](https://github.com/LeaVerou/css-almanac/tree/master/js) to collect data from a single AST, and [SQL](https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2020/01_CSS) to aggregate this data over the entire corpus. Curious how your own CSS does against our metrics? We made an [online playground](https://projects.verou.me/css-almanac/playground) where you can try them out on your own sites.
+A lot of engineering work went into making this scale of analysis feasible. Like last year, we put all CSS code through a [CSS parser](https://github.com/reworkcss/css), and stored the [Abstract Syntax Trees](https://en.wikipedia.org/wiki/Abstract_syntax_tree) (AST) for all stylesheets in the corpus, resulting in a whopping 10 TB of data. This year, we also developed a [library of helpers](https://github.com/leaverou/rework-utils) that operate on this AST, and a [selector parser](https://projects.verou.me/parsel), both of which were also released as separate open source projects. Most metrics involved [JS](https://github.com/LeaVerou/css-almanac/tree/master/js) to collect data from a single AST, and [SQL](https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2020/01_CSS) to aggregate this data over the entire corpus. Curious how your own CSS does against our metrics? We made an [online playground](https://projects.verou.me/rework-utils) where you can try them out on your own sites.
 
 For certain metrics, looking at the CSS AST was not enough. We wanted to look at [SCSS](https://sass-lang.com/) wherever it was provided via sourcemaps as it shows us what developers *need* from CSS that is not yet possible, whereas studying CSS shows us what developers currently use that is. For that, we had to use a *custom metric*, i.e. JS code that runs in the crawler when it visits a given page. We could not use a proper SCSS parser as that could slow down the crawl too much, so we had to resort to [regular expressions](https://github.com/LeaVerou/css-almanac/blob/master/runtime/sass.js) (*oh, the horror!*). Despite the crude approach, we got [a plethora of insights](#sass)!
 
@@ -1289,7 +1294,7 @@ It is no secret that Chrome and Safari have been way more prefix-happy, but it i
 Nearly all usage of prefixed functions (98%) is to specify gradients, even though [this has not been necessary since 2014](https://caniuse.com/css-gradients). The most popular of these is `-webkit-linear-gradient()` used in over a quarter of pages examined. The remaining <2% is primarily for calc, [for which a prefix has not been necessary since 2013](https://caniuse.com/calc).
 
 {{ figure_markup(
-  caption="Percent of occurrences of vendor-prefixed functions on mobile pages that specify gradients.",
+  caption="Percent of gradient functions across all occurrences of vendor-prefixed functions in mobile pages",
   content="98.22%",
   classes="big-number",
   sheets_gid="1586213539",
