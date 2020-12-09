@@ -53,7 +53,7 @@ Making content as simple and clear to read as possible is an important aspect of
 
 ### Color Contrast
 
-The higher the page contrast, the easier it is for people to view text-based content. People who may have difficulties viewing low context content include those with color vision deficiency, people with mild to moderate vision loss, and those with contextual difficulties viewing the content, such as glare on screens in bright light. Unfortunately, only 21.06% of sites were found to have sufficient color contrast. Which is a decrease from last year's already abysmal 22%.
+The higher the page contrast, the easier it is for people to view text-based content. People who may have difficulties viewing low contrast content include those with color vision deficiency, people with mild to moderate vision loss, and those with contextual difficulties viewing the content, such as glare on screens in bright light. Unfortunately, only 21.06% of sites were found to have sufficient color contrast. Which is a decrease from last year's already abysmal 22%.
 
 ### Zooming and Scaling of Pages 
 
