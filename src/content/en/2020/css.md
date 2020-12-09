@@ -1425,11 +1425,18 @@ So how frequently does this occur? *Very*, as it turns out. 88% of pages use thi
   height="429"
 ) }}
 
-
-
 #### font
 
 The `font` shorthand is fairly popular (used 49 million times on 80% of pages) but used far less than most of its longhands (except `font-variant` and `font-stretch`). This indicates that most developers are comfortable using it (since it appears on so many websites). Developers often need to override specific typographic aspects on descendant rules, which likely explains why the longhands are used so much more.
+
+{{ figure_markup(
+  image="font-shorthands.png",
+  caption="Adoption of `font` shorthand and longhand properties.",
+  description="Bar chart showing the adoption of font shorthand and longhand properties. The most used properties are longhands ranging from 95% to 92% of mobile pages in descending order: font-weight, font-family, font-size, line-height, and font-style. The font shorthand is used on 80% of mobile pages. Lesser used font longhands are font-variant at 43% and font-stretch at 8%. Adoption is similar across desktop and mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1455030576&format=interactive",
+  sheets_gid="1513860089",
+  sql_file="all_properties.sql"
+) }}
 
 #### background
 
