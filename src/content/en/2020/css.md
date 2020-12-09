@@ -1043,6 +1043,17 @@ We are seeing some newer media features come up in the statistics. The [`prefers
 
 In other good news, newer features from the [Media Queries Level 4](https://www.w3.org/TR/mediaqueries-4/) specification are starting to appear. On mobile 5% of sites are checking for the type of pointer the user has. A `coarse` pointer indicates they are using a touchscreen, whereas a `fine` pointer indicates a pointing device. Understanding the way a user is interacting with your site is often just as helpful, if not more helpful, than looking at screen size. A person might be using a small screen device with a keyboard and mouse, or a high resolution large screen device with a touchscreen and benefit from larger hit areas.
 
+{{ figure_markup(
+  image="media-query-features.png",
+  caption="The most popular media query features as a percent of pages.",
+  description="Bar chart of the most popular media query features as a percent of pages. Desktop and mobile are generally similar unless otherwise noted. The most popular media query feature on mobile pages is max-width at 79%, followed by min-width at 75%, -webkit-min-device-pixel-ratio at 45% (up from desktop at 39%), orientation at 33%, max-device-width at 28%, -ms-high-contrast at 24% (up from desktop at 15%), prefers-reduced-motion at 24%, max-height and min-resolution at 22%, -webkit-transform-3d, transform-3d, and min-device-pixel-ratio all at 15%, min-height used on 14% of mobile pages but only 3% of desktop pages, -o-min-device-pixel-ratio at 8%, pointer at 5%, and finally device-width at 2%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1998463556&format=interactive",
+  sheets_gid="1374950017",
+  width="600",
+  height="600",
+  sql_file="media_query_features.sql"
+) }}
+
 ### Common breakpoints
 
 The most common breakpoint in use across desktop and mobile devices is a `min-width` of 768px. 54% of sites use this breakpoint, closely followed by a `max-width` of 767px at 50%. [The Bootstrap framework](https://getbootstrap.com/docs/4.1/layout/overview/) uses a `min-width` of 768px as its “Medium” size, so this may be the source of much of the usage. The other two high-ranking `min-width` values of 1200px (40%) and 992px (37%) are also found in Bootstrap.
