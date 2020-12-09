@@ -15,9 +15,12 @@
   </span>
 {% endblock %}
 
+{% block intro_title %}Web Almanac{% endblock %}
+{% block intro_sub_title %}Ежегодный отчёт<br>HTTP Archive<br>о <b>состоянии веба</b>{% endblock %}
+
 {% block mission %}
 <p>
-Наша миссия заключается в том, чтобы объединить необработанные статистические данные и тренды HTTP Archive, опираясь на опыт веб-сообщества. Web Almanac — это всеобъемлющий отчёт о состоянии веба, подкрепленный реальными данными и подтверждённый доверенными экспертами в области веба. Он состоит из 20 глав, охватывающих аспекты содержания страниц, особенности пользовательского взаимодействия, публикации и распространения.
+Наша миссия заключается в том, чтобы объединить необработанные статистические данные и тренды HTTP Archive, опираясь на опыт веб-сообщества. Web Almanac — это всеобъемлющий отчёт о состоянии веба, подкрепленный реальными данными и подтверждённый доверенными экспертами в области веба. Он состоит из {{ supported_chapters | length }} глав, охватывающих аспекты содержания страниц, особенности пользовательского взаимодействия, публикации и распространения.
 </p>
 {% endblock %}
 
@@ -58,9 +61,9 @@
 {% block open %}Открыть{% endblock %}
 {% block close %}Закрыть{% endblock %}
 
-{% macro figure_text(metadata, id) %}Фигура {{ figure_id(metadata, id) }}.{% endmacro %}
-{% macro show_description(metadata, id) %}Показать описание фигуры {{ figure_id(metadata, id) }}{% endmacro %}
-{% macro hide_description(metadata, id) %}Скрыть описание фигуры {{ figure_id(metadata, id) }}{% endmacro %}
+{% macro figure_text(metadata, id) %}График {{ figure_id(metadata, id) }}.{% endmacro %}
+{% macro show_description(metadata, id) %}Показать описание графика {{ figure_id(metadata, id) }}{% endmacro %}
+{% macro hide_description(metadata, id) %}Скрыть описание графика {{ figure_id(metadata, id) }}{% endmacro %}
 
 {% block written_by_before %}Авторы:{% endblock %}
 {% block reviewed_by_before %}Редакторы:{% endblock %}
@@ -70,6 +73,8 @@
 {% block reviewed_by_after %}{% endblock %}
 {% block translated_by_after %}{% endblock %}
 {% block analysis_by_after %}{% endblock %}
+
+{% block unedited %}[Неотредактированная версия]{% endblock %}
 
 {% block author %}Автор{% endblock %}
 {% block authors %}Авторы{% endblock %}

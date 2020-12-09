@@ -15,9 +15,12 @@
 
 {% endblock %}
 
+{% block intro_title %}Web Almanac{% endblock %}
+{% block intro_sub_title %}HTTP Archiveの年次報告書<br> <b>ウェブの状態</b>レポート{% endblock %}
+
 {% block mission %}
 <p>
-私たちの使命は、HTTP Archiveの生の統計やトレンドを、ウェブコミュニティの専門知識と組み合わせることです。Web Almanacは、実際のデータと信頼できるウェブの専門家に裏付けられた、ウェブの状態に関する包括的なレポートです。ページコンテンツ、ユーザー体験、パブリッシング、配布などの側面を網羅した20の章で構成されています。
+私たちの使命は、HTTP Archiveの生の統計やトレンドを、ウェブコミュニティの専門知識と組み合わせることです。Web Almanacは、実際のデータと信頼できるウェブの専門家に裏付けられた、ウェブの状態に関する包括的なレポートです。ページコンテンツ、ユーザー体験、パブリッシング、配布などの側面を網羅した{{ supported_chapters | length }}の章で構成されています。
 </p>
 {% endblock %}
 
@@ -58,6 +61,10 @@
 {% block open %}開く{% endblock %}
 {% block close %}閉じる{% endblock %}
 
+{% macro figure_text(metadata, id) %}図{{ figure_id(metadata, id) }}.{% endmacro %}
+{% macro show_description(metadata, id) %}図{{ figure_id(metadata, id) }}の説明を表示{% endmacro %}
+{% macro hide_description(metadata, id) %}図{{ figure_id(metadata, id) }}の説明を非表示{% endmacro %}
+
 {% block written_by_before %}{% endblock %}
 {% block reviewed_by_before %}{% endblock %}
 {% block translated_by_before %}{% endblock %}
@@ -67,13 +74,10 @@
 {% block translated_by_after %}によって翻訳された。{% endblock %}
 {% block analysis_by_after %}による分析。{% endblock %}
 
+{% block unedited %}[未編集]{% endblock %}
+
 {% block author %}著者{% endblock %}
 {% block authors %}著者{% endblock %}
-
-{% macro figure_text(metadata, id) %}図{{ figure_id(metadata, id) }}.{% endmacro %}
-{% macro show_description(metadata, id) %}図{{ figure_id(metadata, id) }}の説明を表示{% endmacro %}
-{% macro hide_description(metadata, id) %}図{{ figure_id(metadata, id) }}の説明を非表示{% endmacro %}
-
 {% macro onTwitter(twitterHandle) %}Twitterの@{{twitterHandle}}{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}GitHubの{{gitHubHandle}}{% endmacro %}
 {% macro onLinkedIn(authorName) %}LinkedInの{{authorName}}{% endmacro %}

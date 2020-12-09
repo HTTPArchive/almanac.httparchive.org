@@ -46,7 +46,7 @@
           <li>このアクセシビリティ・ステートメントを公開し、最新の状態に保つ。</li>
         </ul>
       </section>
-      
+
       <section>
         <h2 id="conformance-status"><a href="#conformance-status" class="anchor-link">適合状況</a></h2>
 
@@ -63,7 +63,7 @@
         </p>
 
         <p>
-          また、一部のインタラクティブな視覚化にはGoogleシートを使用していますが、これもWCAGアクセシビリティ基準に準拠していない可能性があります。これらは<code>iframes</code>を介して読み込まれ、すべての図形に画像を提供していて、クライアントソフトウェアがこれをサポートしている場合のみ、インタラクティブな視覚化を表示します。ブラウザーを使用していて、インタラクティブな視覚化を表示したくない場合、章のいずれかに<code>?print</code>クエリパラメータを追加することで、<a href="./2019/accessibility?print">アクセシビリティの印刷モードで表示</a>できます。必要に応じて、この機能をより簡単に有効化できるようにすることもできますが、すべての視覚化には詳細なテキスト記述があるので、これは必要ないと考えています。<a href="https://github.com/HTTPArchive/almanac.httparchive.org/issues">間違っていたらお知らせください</a>。
+          また、一部のインタラクティブな視覚化にはGoogleシートを使用していますが、これもWCAGアクセシビリティ基準に準拠していない可能性があります。これらは<code>iframes</code>を介して読み込まれ、すべての図形に画像を提供していて、クライアントソフトウェアがこれをサポートしている場合のみ、インタラクティブな視覚化を表示します。ブラウザーを使用していて、インタラクティブな視覚化を表示したくない場合、章のいずれかに<code>?print</code>クエリパラメータを追加することで、<a href="../accessibility?print">アクセシビリティの印刷モードで表示</a>できます。必要に応じて、この機能をより簡単に有効化できるようにすることもできますが、すべての視覚化には詳細なテキスト記述があるので、これは必要ないと考えています。<a href="https://github.com/HTTPArchive/almanac.httparchive.org/issues">間違っていたらお知らせください</a>。
         </p>
 
         <p>
@@ -73,27 +73,27 @@
         <p>
           <a href="/static/pdfs/web_almanac_{{ year }}_{{ lang }}.pdf">Web AlmanacのPDF版</a>はPDFアクセシビリティのベストプラクティスに準拠し、<a href="https://en.wikipedia.org/wiki/PDF/UA">PDF/UA-1</a>規格に準拠しています。
         </p>
-      
+
         <h2 id="external-content"><a href="#external-content" class="anchor-link">外部コンテンツ</a></h2>
 
         <p>
           多くの章では、私たちの管理下になく、私たちが達成した高いレベルの適合性を満たしていない他のコンテンツ（動画、PDF、記事）にリンクしています。可能であれば、閲覧されているページと同じ言語で記事へのリンクを提供しますが、常に可能とは限りません。
         </p>
-      
+
         <h2 id="compatibility"><a href="#compatibility" class="anchor-link">ブラウザや支援技術との互換性</a></h2>
 
         <p>
           Web Almanacは、可能な限り多くのブラウザや支援技術と互換性があるように設計されています。このウェブサイトは進歩的な方法で構築されており、私たちが使用しているすべての最新のブラウザ機能をサポートしていなくても十分な機能を備えていますが、Chrome、Safari、Firefox、Edgeなどの最新バージョンのブラウザを使用していない場合、ビジュアルの劣化や一部の機能（インタラクティブなビジュアル、コメント数など）の不足に気づくことがあります。
         </p>
-        
+
         <p>
           現時点では、支援技術のハードウェアやソフトウェアのテストは完了していませんが、上述のようなツールを使用して、これらのデバイスの問題に対処しようとしています。
         </p>
       </section>
-      
+
       <section>
         <h2 id="technical-specifications"><a href="#technical-specifications" class="anchor-link">技術仕様</a></h2>
-        
+
         <p>
           このウェブサイトは、<a href="https://www.w3.org/WAI/standards-guidelines/aria/">WAI-ARIA</a>を含む、よく構造化されたセマンティックなHTMLに基づいて構築されており、スタイリングにはCSSを使用し、一部のインタラクティブなコンポーネントには限定的なJavaScriptを使用しています。このウェブサイトは、IE 11などの古いブラウザではサポートされていないCSS Grid、Fetch、WOFF2フォントなどの最新の開発手法を利用しています。ウェブサイトはこれらのブラウザではまだ完全に機能していますが、視覚的に魅力的ではないかもしれません。ウェブサイトを表示するために余分なプラグインやライブラリは必要ありません。
         </p>
@@ -101,15 +101,15 @@
           Web Almanac PDFは、Webサイトと同じアクセシビリティ基準に準拠しており、さらにアクセシビリティを支援するために構造的にタグ付けされています。
         </p>
       </section>
-      
+
       <section>
         <h2 id="assessment-approach"><a href="#assessment-approach" class="anchor-link">評価アプローチ</a></h2>
-        
+
         <p>
           自己評価：コンテンツの評価は、Web Almanacチームが独自の専門知識と、<a href="https://wave.webaim.org/">WAVEアクセシビリティツール</a>、<a href="https://hacks.mozilla.org/2019/10/auditing-for-accessibility-problems-with-firefox-developer-tools/">Firefoxアクセシビリティインスペクター</a>、<a href="https://chrome.google.com/webstore/detail/axe-web-accessibility-tes/lhdoppojpmngadmnindnejefpokejbdd" rel="nofollow">AXE Chromeプラグイン</a>などの多くのツールを使用して行いました。Web Almanac PDFは、Acrobat Reader Pro DCのアクセシビリティ・スキャンでテストされました。
         </p>
       </section>
-      
+
       <section>
         <h2 id="feedback"><a href="#feedback" class="anchor-link">フィードバック</a></h2>
 
