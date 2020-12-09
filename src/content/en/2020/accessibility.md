@@ -268,7 +268,7 @@ We found that 22.06% of desktop pages and 21.76% of mobile pages have at least o
 
 There are many potential accessibility barriers associated with dialog modals. We recommend reading Scott O’Hara’s article [Having an Open Dialog](https://www.scottohara.me/blog/2019/03/05/open-dialog.html) for more context. 
 
-We are pleased to report that 19.01% of desktop pages and 18.21% of mobile pages have at least one occurrence of `role=”dialog”` which is up from about 8% in 2019. It is worth noting some of the increase is probably due to changes in how this metric was measured.This could also suggest that more developers are considering accessibility when building dialogs and potentially that frameworks and associated packages may be implementing more accessible dialog patterns as well. However, making a dialog modal accessible requires a lot more than using the `dialog` role. Focus management, proper keyboard support, and screen reader communication all need to be addressed. 
+We are pleased to report that 19.01% of desktop pages and 18.21% of mobile pages have at least one occurrence of `role="dialog"` which is up from about 8% in 2019. It is worth noting some of the increase is probably due to changes in how this metric was measured. This could also suggest that more developers are considering accessibility when building dialogs and potentially that frameworks and associated packages may be implementing more accessible dialog patterns as well. However, making a dialog modal accessible requires a lot more than using the `dialog` role. Focus management, proper keyboard support, and screen reader exposure all need to be addressed. 
 
 ##### Tabs
 
