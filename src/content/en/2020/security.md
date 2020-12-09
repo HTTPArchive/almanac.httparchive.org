@@ -869,7 +869,7 @@ A very large part of the Web is built with third-party components, at different 
 {{ figure_markup(
   image="security-wordpress-version-evolution-2019-2020.png",
   caption="WordPress version evolution (2019-2020).",
-  description="Stacked bar chart showing the evolution of the versions of WordPress installations from November 2019 until October 2020 for the actively maintained branches of wordpress (4.9, 5.1, 5.2, 5.3, 5.4 and 5.5). In general the chart shows that most installations (approximately 75%) keep updating throughout the year and are now on the latest versions",
+  description="Stacked bar chart showing the evolution of the versions of WordPress installations from November 2019 until August 2020 for the actively maintained branches of wordpress (4.9, 5.1, 5.2, 5.3, 5.4 and 5.5). In general the chart shows that most installations (approximately 75%) keep updating throughout the year and are now on the latest versions",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=2139119698&format=interactive",
   sheets_gid="640505800",
   sql_file="feature_adoption_by_technology.sql",
@@ -877,25 +877,27 @@ A very large part of the Web is built with third-party components, at different 
   height="575"
 ) }}
 
-As one of the most popular content management systems, WordPress is an attractive target for attackers. As such, it is important for website administrators to keep their installation up-to-date. By default, updates are performed [automatically](https://wordpress.org/support/article/configuring-automatic-background-updates/), although it is possible to disable this feature. The evolution of the deployed WordPress versions are displayed in the above figure, showing the latest major versions that are still [actively maintained](https://wordpress.org/download/releases/) (5.5: purple, 5.4: blue, 5.3: red, 5.2: green, 4.9: orange). Versions that have a prevalence of less than 4% are grouped together under "Other". A first interesting observation that can be made is that as of October 2020, 77.19% of the WordPress installations on mobile homepages are running the latest version within their branch. It can also be seen that website owners are gradually upgrading to the new major versions. For instance, WordPress version 5.5, which was released on August 11th 2020, already comprised 10.22% of the WordPress installations that were observed in the crawl for August. In the following months, adoption of the latest version within the 5.5 branch grew to 29.70% in September and 39.11% in October.
+As one of the most popular content management systems, WordPress is an attractive target for attackers. As such, it is important for website administrators to keep their installation up-to-date. By default, updates are performed [automatically](https://wordpress.org/support/article/configuring-automatic-background-updates/), although it is possible to disable this feature. The evolution of the deployed WordPress versions are displayed in the above figure, showing the latest major versions that are still [actively maintained](https://wordpress.org/download/releases/) (5.5: purple, 5.4: blue, 5.3: red, 5.2: green, 4.9: orange). Versions that have a prevalence of less than 4% are grouped together under "Other". A first interesting observation that can be made is that as of August 2020, 74.89% of the WordPress installations on mobile homepages are running the latest version within their branch. It can also be seen that website owners are gradually upgrading to the new major versions. For instance, WordPress version 5.5, which was released on August 11th 2020, already comprised 10.22% of the WordPress installations that were observed in the crawl for August.
 
 {{ figure_markup(
   image="security-evolution-of-wordpress-5-3and5-4-after-update.png",
   caption="Evolution of WordPress 5.3 and 5.4 after update",
-  description="Stacked bar chart showing the evolution of WordPress versions 5.3.2, 5.3.3, 5.4 and 5.4.1. We can see over time starting in March 2020 that 5.3.2 is the only one of those version veing used and has 50.08% adoption, in April 5.4 comes in and takes up third thirds of the adoption of these versions which increases to 54.23% in total, in May 5.4.1 comes out and there is mixed usage of all three versions with a total of 58.78%, in June it has reduced by almost half to 32.76% and most of the remaining usage is 5.4.1, in July these versions are used on just 4.55% of sites, reducing to 3.59% in August and 2.93% in September",
+  description="Stacked bar chart showing the evolution of WordPress versions 5.3.2, 5.3.3, 5.4 and 5.4.1. We can see over time starting in March 2020 that 5.3.2 is the only one of those version veing used and has 50.08% adoption, in April 5.4 comes in and takes up third thirds of the adoption of these versions which increases to 54.23% in total, in May 5.4.1 comes out and there is mixed usage of all three versions with a total of 58.78%, in June it has reduced by almost half to 32.76% and most of the remaining usage is 5.4.1, in July these versions are used on just 4.55% of sites, and reducing to 3.59% in August",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=503316556&format=interactive",
   sheets_gid="155582197",
+  width="600",
+  height="450",
   sql_file="feature_adoption_by_technology.sql"
 ) }}
 
-Another interesting aspect that can be inferred from the graph is that within a month, the majority of WordPress sites that were previously up-to-date, will have updated to the new version. This appears especially true for WordPress installations on the latest branch. On April 29, 2020, 2 days before the start of the crawl, WordPress released updates for all their branches: 5.4 → 5.4.1, 5.3.2 → 5.3.3, etc. Based on the data, we can see that the share of WordPress installations that were running version 5.4, reduced from 23.08% in the April 2020 crawl, to 2.66% in May 2020, further down to 1.12% in June 2020, and dropping below 1% after that. The new 5.4.1 version was running on 35.70% of the WordPress installations as of May 2020, the result of many website operators (automatically) updating their WordPress install (from 5.4 and other branches). Although the majority of website operators update their WordPress either automatically, or very quickly after a new version is released, there still is a small fraction of sites that keep stuck with an older version: as of September 2020, still 2.93% of all WordPress installations run an outdated 5.3 or 5.4 version.
+Another interesting aspect that can be inferred from the graph is that within a month, the majority of WordPress sites that were previously up-to-date, will have updated to the new version. This appears especially true for WordPress installations on the latest branch. On April 29, 2020, 2 days before the start of the crawl, WordPress released updates for all their branches: 5.4 → 5.4.1, 5.3.2 → 5.3.3, etc. Based on the data, we can see that the share of WordPress installations that were running version 5.4, reduced from 23.08% in the April 2020 crawl, to 2.66% in May 2020, further down to 1.12% in June 2020, and dropping below 1% after that. The new 5.4.1 version was running on 35.70% of the WordPress installations as of May 2020, the result of many website operators (automatically) updating their WordPress install (from 5.4 and other branches). Although the majority of website operators update their WordPress either automatically, or very quickly after a new version is released, there still is a small fraction of sites that keep stuck with an older version: as of August 2020, 3.59% of all WordPress installations were running an outdated 5.3 or 5.4 version.
 
 ### jQuery
 
 {{ figure_markup(
   image="security-jquery-version-evolution.png",
   caption="jQuery version evolution.",
-  description="Stacked bar chart showing the evolution of included jQuery versions from Novemeber 2019 until October 2020. Unlike the previous WordPress version of this chart we can see the usage is very static with Other fluctuating between 26.58% and 32.70%, 1.10.2 averaging 3.96%, 1.11.0 averaging 3.46%, 1.11.1 averaging 4.51%, 1.11.3 averaging 4.07%, 1.12.4 averaging 35.60%, 1.7.2 averaging 3.12%, 1.8.3 averaging 3.24%, 1.9.1 averaging 3.16%, 2.2.4 averaging 3.23%, 3.2.1 averaging 3.43%, 3.3.1 averaging 4.62%, and 3.4.1 averaging 3.93%.",
+  description="Stacked bar chart showing the evolution of included jQuery versions from November 2019 until August 2020. Unlike the previous WordPress version of this chart we can see the usage is very static with Other fluctuating between 26.58% and 31.04%, 1.10.2 averaging 4.01%, 1.11.0 averaging 3.52%, 1.11.1 averaging 4.58%, 1.11.3 averaging 4.12%, 1.12.4 averaging 35.19%, 1.7.2 averaging 3.12%, 1.8.3 averaging 3.24%, 1.9.1 averaging 3.16%, 2.2.4 averaging 3.23%, 3.2.1 averaging 3.47%, 3.3.1 averaging 4.62%, and 3.4.1 averaging 3.96%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=598537336&format=interactive",
   sheets_gid="1175693258",
   width="600",
@@ -903,14 +905,14 @@ Another interesting aspect that can be inferred from the graph is that within a 
   sql_file="feature_adoption_by_technology.sql"
 ) }}
 
-One of the most widely used JavaScript libraries is jQuery, which has three major versions: 1.x, 2.x and 3.x. As is clear from the evolution of jQuery versions that are used on mobile homepages, the overall distribution is very static over time. Surprisingly, a significant fraction of websites (27.71% as of October 2020) is still running an old 1.x version of jQuery. Fortunately, this fraction is consistently decreasing (from 33.39% in November 2019), in favor of version 1.12.4, which was [released](https://blog.jquery.com/2016/05/20/jquery-1-12-4-and-2-2-4-released/) in May 2016.
+One of the most widely used JavaScript libraries is jQuery, which has three major versions: 1.x, 2.x and 3.x. As is clear from the evolution of jQuery versions that are used on mobile homepages, the overall distribution is very static over time. Surprisingly, a significant fraction of websites (18.21% as of August 2020) are still running an old 1.x version of jQuery. Fortunately, this fraction is consistently decreasing (from 33.39% in November 2019), in favor of version 1.12.4, which was [released](https://blog.jquery.com/2016/05/20/jquery-1-12-4-and-2-2-4-released/) in May 2016.
 
 ### nginx
 
 {{ figure_markup(
   image="security-nginx-version-evolution.png",
   caption="nginx version evolution.",
-  description="Evolution of the versions of nginx servers from 2019 until 2020.",
+  description="Evolution of the versions of nginx servers from November 2019 until August 2020 showing reasonably static usage throughout that time.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=700290827&format=interactive",
   sheets_gid="1494766656",
   sql_file="feature_adoption_by_technology.sql"
@@ -947,7 +949,6 @@ In the next figure, we show the market share of cryptominer on the web based on 
   sheets_gid="445442267",
   sql_file="cryptominer_share.sql"
 ) }}
-
 
 ## Evolution & conclusion
 
