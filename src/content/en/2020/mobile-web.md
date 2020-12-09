@@ -13,7 +13,7 @@ mdiblasio_bio: Michael DiBlasio is Web Ecosystems Consultant at Google. He focus
 discuss: 2048
 results: https://docs.google.com/spreadsheets/d/1DGLY7UEWOlDL5_2dtS_j2eqMjiV-Rw5Fe2y6K6-ULvM/
 queries: 12_Mobile_Web
-#featured_quote: TODO
+featured_quote: Mobile Web has grown explosively in the last decade and is now the primary way many people experience the web. In spite of this, engagement and online sales still lag behind desktop. In this chapter, we take a look at recents trends on the mobile web and analyze why user journeys are often difficult to complete.
 #featured_stat_1: TODO
 #featured_stat_label_1: TODO
 #featured_stat_2: TODO
@@ -24,7 +24,7 @@ unedited: true
 ---
 
 ## Introduction
-We keep hearing that the Mobile Web has grown explosively in the last decade and is now the primary way many people experience the web. In this chapter we explore just how significant the mobile web is, and what kind of experiences visitors are expecting and being served.
+Mobile Web has grown explosively in the last decade and is now the primary way many people experience the web. In spite of this, engagement and online sales still lag behind desktop. In this chapter, we take a look at recents trends on the mobile web and analyze why user journeys are often difficult to complete.
 
 2020 has seen a big surge in [internet usage](https://www.nytimes.com/interactive/2020/04/07/technology/coronavirus-internet-use.html), on both mobile and desktop, due to the global pandemic. There has been an uptick in visits to news sites, ecommerce and social media sites -- as people across the globe adjusted to a new lifestyle with stay-at-home orders and social distancing. 2020 has been a significant year in history, for the web and for mobile usage.
 
@@ -121,7 +121,7 @@ Acquisition involves getting visitors to the website, often through search engin
 SEO is crucial for the acquisition phase.  Search engines are an important source of visitors being sent to websites, embarking on their user journeys.
 The main goal of SEO is to ensure that a website is optimized for search engines, i.e. search engine bots that need to crawl and index its pages, as well as the users that will be navigating the website and consuming its content.
 
-A lot of users start their search on mobile. As noted earlier, on google.com, mobile Chrome on Android sees 2.3x more page loads compared to desktop Chrome on Windows.
+A lot of users now start their search on mobile.
 
 ##### Responsive web design
 Due to the popularity of  mobile devices to browse and search the web, Google search moved to a [mobile-first Index](https://developers.google.com/search/blog/2016/11/mobile-first-indexing) a few years ago. This means that search ranking considers pages as seen by mobile users, and mobile friendliness is now a ranking factor. Google will [fully switch to a mobile-first index](https://developers.google.com/search/blog/2020/07/prepare-for-mobile-first-indexing-with), for all sites, in March 2021.
