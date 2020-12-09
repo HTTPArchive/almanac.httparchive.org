@@ -8,7 +8,7 @@ authors: [hemanth]
 reviewers: [thepassle, jadjoubran, pearlbea, gokulkrishh]
 analysts: [bazzadp]
 translators: []
-hemanth_bio: <a href="https://h3manth.com">Hemanth HN</a> is a FOSS Computer polyglot, FOSS philospher, GDE for web and payments domain, DuckDuckGo community member, TC39 delegate and Google Launchpad Accelerator mentor. Loves The WEB && CLI. Hosts <a href="https://TC39er.us">TC39er.us</a> podcast.
+hemanth_bio: <a href="https://h3manth.com">Hemanth HN</a> is a FOSS Computer polyglot, FOSS philosopher, GDE for web and payments domain, DuckDuckGo community member, TC39 delegate and Google Launchpad Accelerator mentor. Loves The WEB && CLI. Hosts <a href="https://TC39er.us">TC39er.us</a> podcast.
 discuss: 2050
 results: https://docs.google.com/spreadsheets/d/1AOqCkb5EggnE8BngpxvxGj_fCfssT9sZ0ElCQKp4pOw/
 queries: 14_PWA
@@ -24,7 +24,7 @@ unedited: true
 
 ## Introduction
 
-In 1990 we had the first ever browser called the “WorldWideWeb” and ever since the web and the browser have been evolving and for the web to progress itself into a native behaviour is a big win especially in this era of mobile domination. URLs and web browsers have provided a ubiquitous way to distribute information and so a technology which provides native app capabilities to the browser is a game changer. Progressive Web Apps provide such advantages for the web to compete with other applications.
+In 1990 we had the first ever browser called the “WorldWideWeb” and ever since the web and the browser have been evolving and for the web to progress itself into a native behavior is a big win especially in this era of mobile domination. URLs and web browsers have provided a ubiquitous way to distribute information and so a technology which provides native app capabilities to the browser is a game changer. Progressive Web Apps provide such advantages for the web to compete with other applications.
 
 Simply put, a web application which give native-like application experience can be considered as a PWA,. It is built using common web technologies including HTML, CSS and JavaScript and can operate seamlessly across devices and environments on a standards-compliant browser.
 
@@ -259,7 +259,7 @@ In order for a PWA to be fruitful it needs to have a manifest and a service work
 
 ### Top Manifest display values
 
-Out of the five most common `display` values, `standalone` dominated the list with `86.73%` of desktop and `89.28%` of mobile pages using this. This isn't suprising at all as this mode provides the native app-like feel. Next in the list was `minimal-ui` with `6.30%` of desktop and `5.00%` of mobile sites opting for them. This is similar to `standalone` except for the fact that some browser UI is retained.
+Out of the five most common `display` values, `standalone` dominated the list with `86.73%` of desktop and `89.28%` of mobile pages using this. This isn't surprising at all as this mode provides the native app-like feel. Next in the list was `minimal-ui` with `6.30%` of desktop and `5.00%` of mobile sites opting for them. This is similar to `standalone` except for the fact that some browser UI is retained.
 
 {{ figure_markup(
   image="pwa-most-used-display-values-for-service-worker-pages.png",
@@ -293,7 +293,7 @@ Out of all the top `categories`, shopping stood at the top at with `13.16%` on t
 {{ figure_markup(
   image="pwa-manifest-preferring-native.png",
   caption="Manifest preferring native.",
-  description="Horiztonal stacked bar chart showing that on desktop 98.24% of destop sites prefer native, and 98.52% of mobile sites prefer native.",
+  description="Horiztonal stacked bar chart showing that on desktop 98.24% of desktop sites prefer native, and 98.52% of mobile sites prefer native.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRRpTSA4fsHwUap-ByQ08j95uo7Zm1kY6lTSvA-DZT54g2QZ0guV7db3QyQwQgMPzsKsJ43gbzqfJst/pubchart?oid=1370804413&format=interactive",
   sheets_gid="153006256",
   sql_file="manifests_preferring_native_apps_sw.sql"
