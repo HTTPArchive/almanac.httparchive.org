@@ -484,6 +484,8 @@ The `all` property was [introduced in 2013](https://www.w3.org/TR/2013/WD-css3-c
 
 ## Color
 
+They say the old jokes are the best, and that goes for colors too. The original, cryptic, `#rrggbb` hex syntax remains the most popular way to specify a color in CSS in 2020: Half of all colors are written that way. The next most popular format is the somewhat shorter `#rgb` three-digit hex format at 26%. While it is shorter, it is also able to express *way* fewer colors; only 4096, out of the 16.7 million sRGB values.
+
 {{ figure_markup(
   image="popular-color-formats.png",
   caption="Relative popularity of color formats as a percent of occurrences.",
@@ -493,6 +495,12 @@ The `all` property was [introduced in 2013](https://www.w3.org/TR/2013/WD-css3-c
   sql_file="color_formats.sql"
 ) }}
 
+Similarly, 99.89% of functionally specified sRGB colors are using the since-forever legacy format with commas `rgb(127, 255, 84)` rather than the new comma-less form `rgb(127 255 84)`. Because, despite all modern browsers accepting the new syntax, changing offers zero advantage to developers.
+
+So why do people stray from these tried and true formats? To express alpha transparency. This is clear when you look at `rgba()`, which is used 40 times more than `rgb()` (13.82% vs 0.34% of all colors) and `hsla()`, which is used 30 times more than `hsl()` (0.25% vs 0.01% of all colors).
+
+And yes, these numbers also show that despite the much-vaunted (but [largely incorrect](https://drafts.csswg.org/css-color-4/#the-hsl-notation)) *easily-understood* or *easily-modified advantages* of HSL, in practice it is used *far less* than RGB.
+
 {{ figure_markup(
   image="color-formats-alpha.png",
   caption="Relative popularity of color formats grouped by alpha support as a percent of occurrences on mobile pages (excluding `#rrggbb` and `#rgb`).",
@@ -501,6 +509,12 @@ The `all` property was [introduced in 2013](https://www.w3.org/TR/2013/WD-css3-c
   sheets_gid="366025718",
   sql_file="color_formats.sql"
 ) }}
+
+What about named colors? The keyword `transparent`, which is just another way to say `rgb(0 0 0 / 0)`, is most popular, at 8.25% of all sRGB values (66% of all named-color usage); followed by  all the named (X11) colors – I’m looking at you, `papayawhip` – at 1.48%. The most popular of these were the easily understood names like `white`, `black`, `red`, `gray`, `blue`. `Whitesmoke` was the most common  of the non-ordinary names (sure, we can visualize whitesmoke, right) while the likes of `gainsboro`, `lightCoral` and `burlywood` were used way less. We can understand why, you need to look them up to see what they actually mean.
+
+And if you are going for fanciful color names, why not define your own with CSS [Custom properties](#custom-properties)? `--intensePurple` and `--corporateBlue` mean whatever you need them to mean. This probably explains why [50% of Custom Properties](#usage-by-type) are used for colors.
+
+{#TODO mention color keyword app}
 
 {# TODO(analysts, CSS experts): figure out why the swatches aren't working. #}
 <figure>
@@ -645,6 +659,17 @@ The `all` property was [introduced in 2013](https://www.w3.org/TR/2013/WD-css3-c
   </figcaption>
 </figure>
 
+And, lastly, the once-deprecated, now partially un-deprecated system colors like `Canvas` and `ThreeDDarkShadow`: These were a terrible idea, introduced to emulate the typical user interface of things like Java or Windows 95, and already unable to keep up with Windows 98, they soon fell by the wayside. Some sites use these system colors to try and fingerprint you, a loophole that [we are trying to close as we speak](https://github.com/w3c/csswg-drafts/issues/5710). There are *few good reasons* to use them, and most websites (99.99%) don’t, so we are all good.
+
+The rather useful value `currentColor`, surprisingly, trailed at 0.14% of all sRGB colors (1.62% of all named colors).
+
+All the colors we discussed so far have one thing in common: sRGB, the standard color space for the Web (and for High Definition TV, which is where it came from). Why is that so bad? Because it can only display a limited range of colors: your phone, your TV, and probably your laptop are able to display much more vivid colors due to advances in display technology. Displays with wide color gamut, which used to be reserved for well-paid professional photographers and graphic designers, are now available to everyone. Native apps use this capability, as do digital movies and streaming TV services, but until recently the Web was missing out.
+
+And we are still missing out. Despite being [implemented in Safari in 2016](https://webkit.org/blog/6682/improving-color-on-the-web/), the use of display-p3 color in Web pages is vanishingly small. Our crawl of the Web found only 29 mobile and 36 desktop pages (!) using it. (And more than half of those were syntax errors, mistakes, or attempts to use the never-implemented `color-mod()` function). We were curious why.
+
+Compatibility, right? You don’t want things to break? No. In the stylesheets we examined, we found solid use of fallback: with document order, the cascade, `@supports`, the `color-gamut` media query, all that good stuff. So in a style sheet we would see the color the designer wanted, expressed in display-p3, and also a fallback sRGB color. We computed the visible difference (a calculation called [ΔE2000](http://zschuessler.github.io/DeltaE/learn/)) between the desired and fallback color and this was typically quite modest. A small tweak. A careful exploration. In fact, 37.6% of the time, the color specified in display-p3 actually fell inside the range of colors (the gamut) that sRGB can manage.
+
+{# TODO What to do with this huge table?}
 <figure>
   <table>
     <thead>
@@ -657,183 +682,145 @@ The `all` property was [introduced in 2013](https://www.w3.org/TR/2013/WD-css3-c
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td><code>rgba(0,0,0,1)</code></td>
-        <td>{{ swatch('rgba(0, 0, 0, 1)') }}</td>
-        <td><code>color(display-p3 0 0 0 / 1)</code></td>
-        <td>0.000</td>
-        <td>true</td>
-      </tr>
-      <tr>
-        <td><code>rgba(255,255,255,1)</code></td>
-        <td>{{ swatch('rgba(255, 255, 255, 1)') }}</td>
-        <td><code>color(display-p3 1 1 1 / 1)</code></td>
-        <td>0.015</td>
-        <td>false</td>
-      </tr>
-      <tr>
-        <td><code>rgba(200,200,200,1)</code></td>
-        <td>{{ swatch('rgba(200, 200, 200, 1)') }}</td>
-        <td><code>color(display-p3 0.78 0.78 0.78 / 1)</code></td>
-        <td>0.274</td>
-        <td>true</td>
-      </tr>
-      <tr>
-        <td><code>rgba(121,127,132,1)</code></td>
-        <td>{{ swatch('rgba(121, 127, 132, 1)') }}</td>
-        <td><code>color(display-p3 0.48 0.50 0.52 / 1)</code></td>
-        <td>0.391</td>
-        <td>true</td>
-      </tr>
-      <tr>
-        <td><code>rgba(255,205,63,1)</code></td>
-        <td>{{ swatch('rgba(255, 205, 63, 1)') }}</td>
-        <td><code>color(display-p3 1 0.80 0.25 / 1)</code></td>
-        <td>3.880</td>
-        <td>false</td>
-      </tr>
-      <tr>
-        <td><code>rgba(241,174,50,1)</code></td>
-        <td>{{ swatch('rgba(241, 174, 50, 1)') }}</td>
-        <td><code>color(display-p3 0.95 0.68 0.17 / 1)</code></td>
-        <td>4.701</td>
-        <td>false</td>
-      </tr>
-      <tr>
-        <td><code>rgba(245,181,40,1)</code></td>
-        <td>{{ swatch('rgba(245, 181, 40, 1)') }}</td>
-        <td><code>color(display-p3 0.96 0.71 0.16 / 1)</code></td>
-        <td>4.218</td>
-        <td>false</td>
-      </tr>
-      <tr>
-        <td><code>rgb(147, 83, 255)</code></td>
-        <td>{{ swatch('rgb(147, 83, 255)') }}</td>
-        <td><code>color(display-p3 0.58 0.33 1 / 1)</code></td>
-        <td>2.143</td>
-        <td>false</td>
-      </tr>
-      <tr>
-        <td><code>rgba(120,0,255,1)</code></td>
-        <td>{{ swatch('rgba(120, 0, 255, 1)') }}</td>
-        <td><code>color(display-p3 0.47 0 1 / 1)</code></td>
-        <td>1.933</td>
-        <td>false</td>
-      </tr>
-      <tr>
-        <td><code>rgba(75,3,161,1)</code></td>
-        <td>{{ swatch('rgba(75, 3, 161, 1)') }}</td>
-        <td><code>color(display-p3 0.29 0.01 0.63 / 1)</code></td>
-        <td>1.321</td>
-        <td>false</td>
-      </tr>
-      <tr>
-        <td><code>rgba(255,0,0,0.85)</code></td>
-        <td>{{ swatch('rgba(255, 0, 0, 0.85)') }}</td>
-        <td><code>color(display-p3 1 0 0 / 0.85)</code></td>
-        <td>7.115</td>
-        <td>false</td>
-      </tr>
-      <tr>
-        <td><code>rgba(84,64,135,1)</code></td>
-        <td>{{ swatch('rgba(84, 64, 135, 1)') }}</td>
-        <td><code>color(display-p3 0.33 0.25 0.53 / 1)</code></td>
-        <td>1.326</td>
-        <td>true</td>
-      </tr>
-      <tr>
-        <td><code>rgba(131,103,201,1)</code></td>
-        <td>{{ swatch('rgba(131, 103, 201, 1)') }}</td>
-        <td><code>color(display-p3 0.51 0.40 0.78 / 1)</code></td>
-        <td>1.348</td>
-        <td>true</td>
-      </tr>
-      <tr>
-        <td><code>rgba(68,185,208,1)</code></td>
-        <td>{{ swatch('rgba(68, 185, 208, 1)') }}</td>
-        <td><code>color(display-p3 0.27 0.75 0.82 / 1)</code></td>
-        <td>5.591</td>
-        <td>false</td>
-      </tr>
-      <tr>
-        <td><code>rgb(255,0,72)</code></td>
-        <td>{{ swatch('rgb(255, 0, 72)') }}</td>
-        <td><code>color(display-p3 1 0 0.2823 / 1)</code></td>
-        <td>3.529</td>
-        <td>false</td>
-      </tr>
-      <tr>
-        <td><code>#fffc00</code></td>
-        <td>{{ swatch('#fffc00') }}</td>
-        <td><code>color(display-p3 1 0.9882 0)</code></td>
-        <td>5.012</td>
-        <td>false</td>
-      </tr>
-      <tr>
-        <td><code>#6d3bff</code></td>
-        <td>{{ swatch('#6d3bff') }}</td>
-        <td><code>color(display-p3 .427 .231 1)</code></td>
-        <td>1.584</td>
-        <td>false</td>
-      </tr>
-      <tr>
-        <td><code>#03d658</code></td>
-        <td>{{ swatch('#03d658') }}</td>
-        <td><code>color(display-p3 .012 .839 .345)</code></td>
-        <td>4.958</td>
-        <td>false</td>
-      </tr>
-      <tr>
-        <td><code>#ff3900</code></td>
-        <td>{{ swatch('#ff3900') }}</td>
-        <td><code>color(display-p3 1 .224 0)</code></td>
-        <td>7.140</td>
-        <td>false</td>
-      </tr>
-      <tr>
-        <td><code>#7cf8b3</code></td>
-        <td>{{ swatch('#7cf8b3') }}</td>
-        <td><code>color(display-p3 .486 .973 .702)</code></td>
-        <td>4.284</td>
-        <td>true</td>
-      </tr>
-      <tr>
-        <td><code>#f8f8f8</code></td>
-        <td>{{ swatch('#f8f8f8') }}</td>
-        <td><code>color(display-p3 .973 .973 .973)</code></td>
-        <td>0.028</td>
-        <td>true</td>
-      </tr>
-      <tr>
-        <td><code>#e3f5fd</code></td>
-        <td>{{ swatch('#e3f5fd') }}</td>
-        <td><code>color(display-p3 .875 .945 .976)</code></td>
-        <td>1.918</td>
-        <td>true</td>
-      </tr>
-      <tr>
-        <td><code>#e74832</code></td>
-        <td>{{ swatch('#e74832') }}</td>
-        <td><code>color( display-p3 .905882353 .282352941 .196078431 / 1 )</code></td>
-        <td>3.681</td>
-        <td>true</td>
-      </tr>
+        <tr><td>rgba(255,205,63,1) <td style="background-color:rgba(255,205,63,1) "><td>color(display-p3 1 0.80 0.25 / 1)<td>3.88<td>false</tr>
+        <tr><td>rgba(120,0,255,1)<td style="background-color:rgba(120,0,255,1)"><td>color(display-p3 0.47 0 1 / 1)<td>1.933<td>false</tr>
+        <tr><td>rgba(121,127,132,1)<td style="background-color:rgba(121,127,132,1)"><td>color(display-p3 0.48 0.50 0.52 / 1)<td>0.391<td>true</tr>
+        <tr><td>rgba(200,200,200,1)<td style="background-color:rgba(200,200,200,1)"><td>color(display-p3 0.78 0.78 0.78 / 1)<td>0.274<td>true</tr>
+        <tr><td>rgba(97,97,99,1)<td style="background-color:rgba(97,97,99,1)"><td>color(display-p3 0.39 0.39 0.39 / 1)<td>1.474<td>true</tr>
+        <tr><td>rgba(0,0,0,1)<td style="background-color:rgba(0,0,0,1)"><td>color(display-p3 0 0 0 / 1)<td>0<td>true</tr>
+        <tr><td>rgba(255,255,255,1)<td style="background-color:rgba(255,255,255,1)"><td>color(display-p3 1 1 1 / 1)<td>0.015<td>false</tr>
+        <tr><td>rgba(84,64,135,1)<td style="background-color:rgba(84,64,135,1)"><td>color(display-p3 0.33 0.25 0.53 / 1)<td>1.326<td>true</tr>
+        <tr><td>rgba(131,103,201,1)<td style="background-color:rgba(131,103,201,1)"><td>color(display-p3 0.51 0.40 0.78 / 1)<td>1.348<td>true</tr>
+        <tr><td>rgba(68,185,208,1)<td style="background-color:rgba(68,185,208,1)"><td>color(display-p3 0.27 0.75 0.82 / 1)<td>5.591<td>false</tr>
+        <tr><td>rgb(255,0,72)<td style="background-color:rgb(255,0,72)"><td>color(display-p3 1 0 0.2823 / 1)<td>3.529<td>false</tr>
+        <tr><td>rgba(255,205,63,1)<td style="background-color:rgba(255,205,63,1)"><td>color(display-p3 1 0.80 0.25 / 1)<td>3.88<td>false</tr>
+        <tr><td>rgba(241,174,50,1)<td style="background-color:rgba(241,174,50,1)"><td>color(display-p3 0.95 0.68 0.17 / 1)<td>4.701<td>false</tr>
+        <tr><td>rgba(245,181,40,1)<td style="background-color:rgba(245,181,40,1)"><td>color(display-p3 0.96 0.71 0.16 / 1)<td>4.218<td>false</tr>
+        <tr><td>rgb(147, 83, 255)<td style="background-color:rgb(147, 83, 255)"><td>color(display-p3 0.58 0.33 1 / 1)<td>2.143<td>false</tr>
+        <tr><td>rgba(75,3,161,1)<td style="background-color:rgba(75,3,161,1)"><td>color(display-p3 0.29 0.01 0.63 / 1)<td>1.321<td>false</tr>
+        <tr><td>rgba(255,0,0,0.85)<td style="background-color:rgba(255,0,0,0.85)"><td>color(display-p3 1 0 0 / 0.85)<td>7.115<td>false</tr>
+        <tr><td>rgba(84,64,135,1)<td style="background-color:rgba(84,64,135,1)"><td>color(display-p3 0.33 0.25 0.53 / 1)<td>1.326<td>true</tr>
+        <tr><td>rgba(131,103,201,1)<td style="background-color:rgba(131,103,201,1)"><td>color(display-p3 0.51 0.40 0.78 / 1)<td>1.348<td>true</tr>
+        <tr><td>rgba(68,185,208,1)<td style="background-color:rgba(68,185,208,1)"><td>color(display-p3 0.27 0.75 0.82 / 1)<td>5.591<td>false</tr>
+        <tr><td>#6d3bff<td style="background-color:#6d3bff"><td>color(display-p3 .427 .231 1)<td>1.584<td>false</tr>
+        <tr><td>#03d658<td style="background-color:#03d658"><td>color(display-p3 .012 .839 .345)<td>4.958<td>false</tr>
+        <tr><td>#ff3900<td style="background-color:#ff3900"><td>color(display-p3 1 .224 0)<td>7.14<td>false</tr>
+        <tr><td>#7cf8b3<td style="background-color:#7cf8b3"><td>color(display-p3 .486 .973 .702)<td>4.284<td>true</tr>
+        <tr><td>#f8f8f8<td style="background-color:#f8f8f8"><td>color(display-p3 .973 .973 .973)<td>0.028<td>true</tr>
+        <tr><td>#e3f5fd<td style="background-color:#e3f5fd"><td>color(display-p3 .875 .945 .976)<td>1.918<td>true</tr>
+        <tr><td>#e74832<td style="background-color:#e74832"><td>color( display-p3 .905882353 .282352941 .196078431 / 1 )<td>3.681<td>true</tr>
+        <tr><td>#303e6a<td style="background-color:#303e6a"><td>color( display-p3 0.188 0.243 0.416 / 1 )<td>1.413<td>true</tr>
+        <tr><td>#08257c<td style="background-color:#08257c"><td>color( display-p3 0.031 0.145 0.486 / 1 )<td>1.055<td>false</tr>
+        <tr><td>#706f6f<td style="background-color:#706f6f"><td>color(display-p3 .439 .435 .435/1)<td>0.174<td>true</tr>
+        <tr><td>#005992<td style="background-color:#005992"><td>color(display-p3 0 .349 .573/1)<td>3.211<td>false</tr>
+        <tr><td>#1a1b1f<td style="background-color:#1a1b1f"><td>color(display-p3 .102 .106 .122/1)<td>0.317<td>true</tr>
+        <tr><td>#e0ebf2<td style="background-color:#e0ebf2"><td>color(display-p3 .878 .922 .949/1)<td>1.321<td>true</tr>
+        <tr><td>#e9607e<td style="background-color:#e9607e"><td>color( display-p3 0.914 0.376 0.494 / 1 )<td>3.146<td>true</tr>
+        <tr><td>#222222<td style="background-color:#222222"><td>color( display-p3 0.133 0.133 0.133 / 1 )<td>0.027<td>true</tr>
+        <tr><td>#fef8e7<td style="background-color:#fef8e7"><td>color( display-p3 0.996 0.973 0.906 / 1 )<td>0.805<td>false</tr>
+        <tr><td>#e15718<td style="background-color:#e15718"><td>color( display-p3 0.882 0.341 0.094 / 1 )<td>4.789<td>false</tr>
+        <tr><td>#082e54<td style="background-color:#082e54"><td>color( display-p3 0.031 0.18 0.329 / 1 )<td>2.297<td>false</tr>
+        <tr><td>#dae0e6<td style="background-color:#dae0e6"><td>color( display-p3 0.855 0.878 0.902 / 1 )<td>0.666<td>true</tr>
+        <tr><td>#fff6f8<td style="background-color:#fff6f8"><td>color( display-p3 1 0.965 0.973 / 1 )<td>1.003<td>false</tr>
+        <tr><td>#2a93ca<td style="background-color:#2a93ca"><td>color(display-p3 .165 .576 .792 / 1)<td>3.556<td>false</tr>
+        <tr><td>#009183<td style="background-color:#009183"><td>color( display-p3 0 0.569 0.514 / 1 )<td>4.376<td>false</tr>
+        <tr><td>#ff6e47<td style="background-color:#ff6e47"><td>color( display-p3 1 0.431 0.278 / 1 )<td>3.49<td>false</tr>
+        <tr><td>#1b1b1d<td style="background-color:#1b1b1d"><td>color( display-p3 0.106 0.106 0.114 / 1 )<td>0.167<td>true</tr>
+        <tr><td>#4f6483<td style="background-color:#4f6483"><td>color( display-p3 0.31 0.392 0.514 / 1 )<td>1.882<td>true</tr>
+        <tr><td>#a50832<td style="background-color:#a50832"><td>color( display-p3 0.647 0.031 0.196 / 1 )<td>2.967<td>false</tr>
+        <tr><td>#dae0e6<td style="background-color:#dae0e6"><td>color( display-p3 0.855 0.878 0.902 / 1 )<td>0.666<td>true</tr>
+        <tr><td>#fafafa<td style="background-color:#fafafa"><td>color( display-p3 0.98 0.98 0.98 / 1 )<td>0.025<td>true</tr>
+        <tr><td>#cc0066<td style="background-color:#cc0066"><td>color( display-p3 0.8 0 0.4 / 1 )<td>3.113<td>false</tr>
+        <tr><td>#e74832<td style="background-color:#e74832"><td>color( display-p3 .905882353 .282352941 .196078431 / 1 )<td>3.681<td>true</tr>
+        <tr><td>#48FF7E<td style="background-color:#48FF7E"><td>color(display-p3 0.462 1 0.5/1)<td>2.338<td>false</tr>
+        <tr><td>#FFA500<td style="background-color:#FFA500"><td>color(display-p3 .9961 .6667 0)<td>5.777<td>false</tr>
+        <tr><td>#FFCE00<td style="background-color:#FFCE00"><td>color(display-p3 1 .8157 .0667)<td>4.606<td>false</tr>
+        <tr><td>#00c<td style="background-color:#00c"><td>color(display-p3 0 0 .8 / 1)<td>1.052<td>false</tr>
+        <tr><td>#2db0fe<td style="background-color:#2db0fe"><td>color(display-p3 .176 .69 .996 / 1)<td>3.872<td>false</tr>
+        <tr><td>#d1eeff<td style="background-color:#d1eeff"><td>color(display-p3 .82 .933 1 / 1)<td>2.196<td>false</tr>
+        <tr><td>#1da0ef<td style="background-color:#1da0ef"><td>color(display-p3 0.122 0.62 0.937)<td>3.385<td>false</tr>
+        <tr><td>#F95974<td style="background-color:#F95974"><td>color( display-p3 .97 0.349 0.454 / 1 )<td>2.978<td>false</tr>
+        <tr><td>#1BA388<td style="background-color:#1BA388"><td>color( display-p3 0.105 0.639 0.533 / 1 )<td>4.485<td>false</tr>
+        <tr><td>#6d3bff<td style="background-color:#6d3bff"><td>color(display-p3 .427 .231 1)<td>1.584<td>false</tr>
+        <tr><td>#e3f5fd<td style="background-color:#e3f5fd"><td>color(display-p3 .875 .945 .976)<td>1.918<td>true</tr>
+        <tr><td>#ff3900<td style="background-color:#ff3900"><td>color(display-p3 1 .224 0)<td>7.14<td>false</tr>
+        <tr><td>#7cf8b3<td style="background-color:#7cf8b3"><td>color(display-p3 .486 .973 .702)<td>4.284<td>true</tr>
+        <tr><td>#f8f8f8<td style="background-color:#f8f8f8"><td>color(display-p3 .973 .973 .973)<td>0.028<td>true</tr>
+        <tr><td>#6d3bff<td style="background-color:#6d3bff"><td>color(display-p3 0 .478 1)<td>25.945<td>false</tr>
+        <tr><td>#dc7100<td style="background-color:#dc7100"><td>color(display-p3 .862745098 .443137255 0 / 1)<td>5.734<td>false</tr>
+        <tr><td>#fff7f1<td style="background-color:#fff7f1"><td>color(display-p3 1 .968627451 .945098039 / 1)<td>0.929<td>false</tr>
+        <tr><td>#6464dc<td style="background-color:#6464dc"><td>color(display-p3 .392156863 .392156863 .862745098 / 1)<td>0.957<td>true</tr>
+        <tr><td>#509b82<td style="background-color:#509b82"><td>color(display-p3 .31372549 .607843137 .509803922 / 1)<td>3.664<td>true</tr>
+        <tr><td>#aa5082<td style="background-color:#aa5082"><td>color(display-p3 .666666667 .31372549 .509803922 / 1)<td>2.758<td>true</tr>
+        <tr><td>#dc7100<td style="background-color:#dc7100"><td>color(display-p3 .862745098 .443137255 0 / 1)<td>5.734<td>false</tr>
+        <tr><td>#509b82<td style="background-color:#509b82"><td>color(display-p3 .31372549 .607843137 .509803922 / 1)<td>3.664<td>true</tr>
+        <tr><td>#fff2f7<td style="background-color:#fff2f7"><td>color(display-p3 1 .949019608 .968627451 / 1)<td>1.374<td>false</tr>
+        <tr><td>#DC7100<td style="background-color:#DC7100"><td>color(display-p3 .862745098 .443137255 0 / 1)<td>5.734<td>false</tr>
+        <tr><td>#509B82<td style="background-color:#509B82"><td>color(display-p3 .31372549 .607843137 .509803922 / 1)<td>3.664<td>true</tr>
+        <tr><td>#AA5082<td style="background-color:#AA5082"><td>color(display-p3 .666666667 .31372549 .509803922 / 1)<td>2.758<td>true</tr>
+        <tr><td>#1e1f20<td style="background-color:#1e1f20"><td>color(display-p3 .117647059 .121568627 .125490196 / 1)<td>0.193<td>true</tr>
+        <tr><td>#082e54<td style="background-color:#082e54"><td>color( display-p3 0.031 0.18 0.329 / 1 )<td>2.297<td>false</tr>
+        <tr><td>#dd3333<td style="background-color:#dd3333"><td>color( display-p3 0.867 0.2 0.2 / 1 )<td>3.59<td>true</tr>
+        <tr><td>#4f6483<td style="background-color:#4f6483"><td>color( display-p3 0.31 0.392 0.514 / 1 )<td>1.882<td>true</tr>
+        <tr><td>#dae0e6<td style="background-color:#dae0e6"><td>color( display-p3 0.855 0.878 0.902 / 1 )<td>0.666<td>true</tr>
+        <tr><td>#fff6f8<td style="background-color:#fff6f8"><td>color( display-p3 1 0.965 0.973 / 1 )<td>1.003<td>false</tr>
+        <tr><td>#FFA500<td style="background-color:#FFA500"><td>color(display-p3 .9961 .6667 0)<td>5.777<td>false</tr>
+        <tr><td>#FFCE00<td style="background-color:#FFCE00"><td>color(display-p3 1 .8157 .0667)<td>4.606<td>false</tr>
+        <tr><td>#212121<td style="background-color:#212121"><td>color(display-p3 .129 .129 .129/1)<td>0.033<td>true</tr>
+        <tr><td>#bebebe<td style="background-color:#bebebe"><td>color(display-p3 .745 .745 .745/1)<td>0.014<td>true</tr>
+        <tr><td>#ee2<td style="background-color:#ee2"><td>color(display-p3 .933 .933 .133/1)<td>4.456<td>false</tr>
+        <tr><td>#edede1<td style="background-color:#edede1"><td>color(display-p3 .929 .929 .882/1)<td>0.481<td>true</tr>
+        <tr><td>#fffc00<td style="background-color:#fffc00"><td>color(display-p3 1 0.9882 0)<td>5.012<td>false</tr>
+        <tr><td>#333<td style="background-color:#333"><td>color( display-p3 0.2 0.2 0.2 / 1 )<td>0.005<td>true</tr>
+        <tr><td>#681160<td style="background-color:#681160"><td>color(display-p3 .408 .067 .376/1)<td>2.236<td>true</tr>
+        <tr><td>#e91e63<td style="background-color:#e91e63"><td>color(display-p3 .914 .118 .388/1)<td>3.311<td>false</tr>
+        <tr><td>#e0dede<td style="background-color:#e0dede"><td>color(display-p3 .878 .871 .871/1)<td>0.134<td>true</tr>
+        <tr><td>#00a1f3<td style="background-color:#00a1f3"><td>color(display-p3 .114 .627 .937)<td>3.423<td>false</tr>
+        <tr><td>#5b23cb<td style="background-color:#5b23cb"><td>color(display-p3 .357 .137 .796)<td>1.528<td>true</tr>
+        <tr><td>#03d658<td style="background-color:#03d658"><td>color(display-p3 .012 .839 .345)<td>4.958<td>false</tr>
+        <tr><td>#e3f5fd<td style="background-color:#e3f5fd"><td>color(display-p3 .875 .945 .976)<td>1.918<td>true</tr>
+        <tr><td>#ff3900<td style="background-color:#ff3900"><td>color(display-p3 1 .224 0)<td>7.14<td>false</tr>
+        <tr><td>#f8f8f8<td style="background-color:#f8f8f8"><td>color(display-p3 .973 .973 .973)<td>0.028<td>true</tr>
+        <tr><td>#f29832<td style="background-color:#f29832"><td>color(display-p3 .949 .596 .196/1)<td>3.921<td>false</tr>
+        <tr><td>#26ad79<td style="background-color:#26ad79"><td>color(display-p3 .149 .678 .475/1)<td>4.604<td>false</tr>
+        <tr><td>rgb(255, 255, 255)<td style="background-color:rgb(255, 255, 255)"><td>color(display-p3 1 1 1)<td>0.015<td>false</tr>
+        <tr><td>rgb(242, 242, 247)<td style="background-color:rgb(242, 242, 247)"><td>color(display-p3 0.949 0.949 0.9686)<td>0.234<td>true</tr>
+        <tr><td>rgb(54, 54, 56)<td style="background-color:rgb(54, 54, 56)"><td>color(display-p3 0.2117 0.2117 0.2196)<td>0.137<td>true</tr>
+        <tr><td>rgb(142, 142, 147)<td style="background-color:rgb(142, 142, 147)"><td>color(display-p3 0.5568 0.5568 0.5764)<td>0.25<td>true</tr>
+        <tr><td>rgb(0, 122, 255)<td style="background-color:rgb(0, 122, 255)"><td>color(display-p3 0 0.4784 1)<td>2.847<td>false</tr>
+        <tr><td>rgb(229, 229, 234)<td style="background-color:rgb(229, 229, 234)"><td>color(display-p3 0.898 0.898 0.9176)<td>0.236<td>true</tr>
+        <tr><td>rgb(255, 59, 48)<td style="background-color:rgb(255, 59, 48)"><td>color(display-p3 1 0.2313 0.1882)<td>3.996<td>false</tr>
+        <tr><td>rgb(0, 113, 164)<td style="background-color:rgb(0, 113, 164)"><td>color(display-p3 0 0.4431 0.6431)<td>3.488<td>false</tr>
+        <tr><td>rgb(36, 138, 61)<td style="background-color:rgb(36, 138, 61)"><td>color(display-p3 0.1411 0.5411 0.2392)<td>4.257<td>false</tr>
+        <tr><td>rgb(88, 86, 214)<td style="background-color:rgb(88, 86, 214)"><td>color(display-p3 0.345 0.3372 0.8392)<td>0.949<td>true</tr>
+        <tr><td>rgb(175, 82, 222)<td style="background-color:rgb(175, 82, 222)"><td>color(display-p3 0.6862 0.3215 0.8705)<td>2.5<td>true</tr>
+        <tr><td>rgb(255, 149, 0)<td style="background-color:rgb(255, 149, 0)"><td>color(display-p3 1 0.5843 0)<td>5.57<td>false</tr>
+        <tr><td>rgb(72, 72, 74)<td style="background-color:rgb(72, 72, 74)"><td>color(display-p3 0.2823 0.2823 0.2901)<td>0.115<td>true</tr>
     </tbody>
   </table>
   <figcaption>
     {{ figure_link(
-      caption="The fallback sRGB colors and <code>display-p3</code> colors.<br>A color difference (ΔE2000) of 1 is barely visible, while 5 is clearly distinct."
+      caption="this table shows the fallback sRGB colors (plus a color swatch), then the display-p3 colors. A color difference (ΔE2000) of 1 is barely visible, while 5 is clearly distinct."
     ) }}
   </figcaption>
 </figure>
 
+{# TODO the figure below needs an actual object tag, otherwise tooltips are not shown}
+
 {{ figure_markup(
   image="UCS-p3-pairs.svg",
-  caption="1976 u’v’ diagram of the chromaticity of colors.",
-  description="This 1976 u’v’ diagram shows the chromaticity of colors (flattened to 2D, so lightness is not shown). The outer curved shape represents the spectrum of pure single wavelengths; there are no visible colors outside this. The straight line is purple, a mixture of red and violet. The smaller, grey, triangle is the sRGB gamut while the larger, darker triangle is the display-p3 gamut. The 23 unique display-p3 colors actually in use on the web in 2020 are shown; for each pair of colors the larger circle is the sRGB fallback while the smaller circle is the display-p3 color. If it is inside the sRGB gamut, those circles show the correct color. Otherwise, a white circle with a red edge indicates out of sRGB-gamut colors.",
+  caption="This 1976 u’v’ diagram shows the chromaticity of colors (flattened to 2D, so lightness is not shown). The outer curved shape represents the spectrum of pure single wavelengths; there are no visible colors outside this. The straight line is purple, a mixture of red and violet. The smaller, grey, triangle is the sRGB gamut while the larger, darker triangle is the display-p3 gamut. The 23 unique display-p3 colors actually in use on the web in 2020 are shown; for each pair of colors the larger circle is the sRGB fallback while the smaller circle is the display-p3 color. If it is inside the sRGB gamut, those circles show the correct color. Otherwise, a white circle with a red edge indicates out of sRGB-gamut colors.",
   width=600,
   height=600
 ) }}
+
+The purplish colors are similar in sRGB and display-p3, perhaps because both those color spaces have the same blue primary. Various reds, orange-yellows, and greens are near the sRGB gamut boundary (nearly as saturated as possible) and map to analogous points near the display-p3 gamut boundary.
+
+There seem to be two reasons why the Web is still trapped in sRGB land. The first is lack of tools, lack of good color pickers, lack of understanding of what more vivid colors are available. But the major reason, we think, is that to date Safari is the only browser to implement it. This is changing, rapidly - Chrome and Firefox are both implementing right now - but until that support ships, probably using display-p3  is too much effort for too little gain because [only 17% of viewers](https://gs.statcounter.com/browser-market-share) will see those colors. Most people will see the fallback. So current usage is a subtle shift in color vibrancy, rather than a big difference.
+
+It will be interesting to see how the use of display-p3 color (other options exist, but this is the only one we found in the wild) changes over the next year or two.
+
+Because *wide color gamut* (WCG) is only the beginning. The TV and movie industry has already moved past P3 to an even wider gamut, rec2020; and also a wider range of lightness, from blinding reflections to deepest shadows. *High Dynamic Range* (HDR) has already arrived in the home, especially on games, streaming TV and movies. The Web has a bunch of catching up to do.
 
 ## Gradients
 
