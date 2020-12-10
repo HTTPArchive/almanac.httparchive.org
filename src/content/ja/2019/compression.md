@@ -15,7 +15,7 @@ featured_quote: HTTP圧縮とは、元の表現よりも少ないビット数で
 featured_stat_1: 38%
 featured_stat_label_1: テキストベースの圧縮を使用したHTTPレスポンス
 featured_stat_2: 80%
-featured_stat_label_2: gzip圧縮の使用
+featured_stat_label_2: Gzip圧縮の使用
 featured_stat_3: 56%
 featured_stat_label_3: 圧縮を使用していないHTMLレスポンス
 ---
@@ -36,7 +36,7 @@ HTTP圧縮は、元の表現よりも少ないビットを使用して情報を�
 
 クライアントがHTTPリクエストを作成する場合、多くの場合、デコード可能な圧縮アルゴリズムを示す[`Accept-Encoding`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Encoding)ヘッダーが含まれます。サーバーは、示されたエンコードのいずれかを選択してサポートし、圧縮されたレスポンスを提供できます。圧縮されたレスポンスには[`Content-Encoding`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding)ヘッダーが含まれるため、クライアントはどの圧縮が使用されたかを認識できます。また、提供されるリソースの[MIME](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)タイプを示すために、[`Content-Type`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type)ヘッダーがよく使用されます。
 
-以下の例では、クライアントはgzip、brotli、およびdeflate圧縮のサポートを示してます。サーバーは、`text/html`ドキュメントを含むgzip圧縮された応答を返すことにしました。
+以下の例では、クライアントはGzip、Brotli、およびDeflate圧縮のサポートを示してます。サーバーは、`text/html`ドキュメントを含むGzip圧縮された応答を返すことにしました。
 
 
 ```
@@ -44,7 +44,7 @@ HTTP圧縮は、元の表現よりも少ないビットを使用して情報を�
     > Host: httparchive.org
     > Accept-Encoding: gzip, deflate, br
 
-    < HTTP/1.1 200  
+    < HTTP/1.1 200
     < Content-type: text/html; charset=utf-8
     < Content-encoding: gzip
 ```
@@ -55,11 +55,11 @@ HTTP Archiveには、530万のWebサイトの測定値が含まれており、�
 
 ## 圧縮アルゴリズム
 
-IANAは、`Accept-Encoding`および`Content-Encoding`ヘッダーで使用できる有効な[HTTPコンテンツエンコーディングのリスト](https://www.iana.org/assignments/http-parameters/http-parameters.xml#content-coding)を保持しています。これらには、gzip、deflate、br（brotli）などが含まれます。これらのアルゴリズムの簡単な説明を以下に示します。
+IANAは、`Accept-Encoding`および`Content-Encoding`ヘッダーで使用できる有効な[HTTPコンテンツエンコーディングのリスト](https://www.iana.org/assignments/http-parameters/http-parameters.xml#content-coding)を保持しています。これらには、`gzip`、`deflate`、`br`（Brotli）などが含まれます。これらのアルゴリズムの簡単な説明を以下に示します。
 
-* [Gzip](https://tools.ietf.org/html/rfc1952)は、[LZ77](https://ja.wikipedia.org/wiki/LZ77)および[ハフマンコーディング](https://ja.wikipedia.org/wiki/%E3%83%8F%E3%83%95%E3%83%9E%E3%83%B3%E7%AC%A6%E5%8F%B7)圧縮技術を使用しており、Web自体よりも古い。もともと1992年にUNIX gzipプログラム用として開発されました。HTTP/ 1.1以降、Web配信の実装が存在し、ほとんどのブラウザーとクライアントがそれをサポートしています。
-* [Deflate](https://tools.ietf.org/html/rfc1951)はgzipと同じアルゴリズムを使用しますが、コンテナは異なります。一部のサーバーおよびブラウザとの互換性の問題のため、Webでの使用は広く採用されていません。
-* [Brotli](https://tools.ietf.org/html/rfc7932)は、[Googleが発明](https://github.com/google/brotli)した新しい圧縮アルゴリズムです。 LZ77アルゴリズムの最新のバリアント、ハフマンコーディング、および2次コンテキストモデリングの組み合わせを使用します。 Brotliを介した圧縮はgzipと比較して計算コストが高くなりますが、アルゴリズムはgzip圧縮よりもファイルを[15〜25％](https://cran.r-project.org/web/packages/brotli/vignettes/brotli-2015-09-22.pdf)削減できます。 Brotliは2015年にWebコンテンツの圧縮に初めて使用され、[すべての最新のWebブラウザーでサポートされています](https://caniuse.com/#feat=brotli)。
+* [Gzip](https://tools.ietf.org/html/rfc1952)は、[LZ77](https://ja.wikipedia.org/wiki/LZ77)および[ハフマンコーディング](https://ja.wikipedia.org/wiki/%E3%83%8F%E3%83%95%E3%83%9E%E3%83%B3%E7%AC%A6%E5%8F%B7)圧縮技術を使用しており、Web自体よりも古い。もともと1992年にUNIX `gzip`プログラム用として開発されました。HTTP/ 1.1以降、Web配信の実装が存在し、ほとんどのブラウザーとクライアントがそれをサポートしています。
+* [Deflate](https://tools.ietf.org/html/rfc1951)はGzipと同じアルゴリズムを使用しますが、コンテナは異なります。一部のサーバーおよびブラウザとの互換性の問題のため、Webでの使用は広く採用されていません。
+* [Brotli](https://tools.ietf.org/html/rfc7932)は、[Googleが発明](https://github.com/google/brotli)した新しい圧縮アルゴリズムです。 LZ77アルゴリズムの最新のバリアント、ハフマンコーディング、および2次コンテキストモデリングの組み合わせを使用します。 Brotliを介した圧縮はGzipと比較して計算コストが高くなりますが、アルゴリズムはGzip圧縮よりもファイルを[15〜25％](https://cran.r-project.org/web/packages/brotli/vignettes/brotli-2015-09-22.pdf)削減できます。 Brotliは2015年にWebコンテンツの圧縮に初めて使用され、[すべての最新のWebブラウザーでサポートされています](https://caniuse.com/#feat=brotli)。
 
 HTTPレスポンスの約38％はテキストベースの圧縮で配信されます。これは驚くべき統計のように思えるかもしれませんが、データセット内のすべてのHTTP要求に基づいていることに留意してください。画像などの一部のコンテンツは、これらの圧縮アルゴリズムの恩恵を受けません。次の表は、各コンテンツエンコーディングで処理されるリクエストの割合をまとめたものです。
 
@@ -88,21 +88,21 @@ HTTPレスポンスの約38％はテキストベースの圧縮で配信され�
         <td class="numeric">285,158,644</td>
       </tr>
       <tr>
-      <td>gzip</td>
+      <td><code>gzip</code></td>
         <td class="numeric">29.66%</td>
         <td class="numeric">30.95%</td>
         <td class="numeric">122,789,094</td>
         <td class="numeric">143,549,122</td>
       </tr>
       <tr>
-        <td>br</td>
+        <td><code>br</code></td>
         <td class="numeric">7.43%</td>
         <td class="numeric">7.55%</td>
         <td class="numeric">30,750,681</td>
         <td class="numeric">35,012,368</td>
       </tr>
       <tr>
-        <td>deflate</td>
+        <td><code>deflate</code></td>
         <td class="numeric">0.02%</td>
         <td class="numeric">0.02%</td>
         <td class="numeric">68,802</td>
@@ -116,28 +116,28 @@ HTTPレスポンスの約38％はテキストベースの圧縮で配信され�
         <td class="numeric">68,352</td>
       </tr>
       <tr>
-        <td>identity</td>
+        <td><code>identity</code></td>
         <td class="numeric">0.000709%</td>
         <td class="numeric">0.000563%</td>
         <td class="numeric">2,935</td>
         <td class="numeric">2,611</td>
       </tr>
       <tr>
-        <td>x-gzip</td>
+        <td><code>x-gzip</code></td>
         <td class="numeric">0.000193%</td>
         <td class="numeric">0.000179%</td>
         <td class="numeric">800</td>
         <td class="numeric">829</td>
       </tr>
       <tr>
-        <td>compress</td>
+        <td><code>compress</code></td>
         <td class="numeric">0.000008%</td>
         <td class="numeric">0.000007%</td>
         <td class="numeric">33</td>
         <td class="numeric">32</td>
       </tr>
       <tr>
-        <td>x-compress</td>
+        <td><code>x-compress</code></td>
         <td class="numeric">0.000002%</td>
         <td class="numeric">0.000006%</td>
         <td class="numeric">8</td>
@@ -148,7 +148,7 @@ HTTPレスポンスの約38％はテキストベースの圧縮で配信され�
   <figcaption>{{ figure_link(caption="圧縮アルゴリズムの採用。") }}</figcaption>
 </figure>
 
-圧縮されて提供されるリソースの大半は、gzip（80％）またはbrotli（20％）のいずれかを使用しています。他の圧縮アルゴリズムはあまり使用されません。
+圧縮されて提供されるリソースの大半は、Gzip（80％）またはBrotli（20％）のいずれかを使用しています。他の圧縮アルゴリズムはあまり使用されません。
 
 {{ figure_markup(
   image="fig2.png",
@@ -162,16 +162,16 @@ HTTPレスポンスの約38％はテキストベースの圧縮で配信され�
 
 HTTP Archiveによって収集された診断から圧縮レベルを判断することはできませんが、コンテンツを圧縮するためのベストプラクティスは次のとおりです。
 
-* 少なくとも、テキストベースのアセットに対してgzip圧縮レベル6を有効にします。これは、計算コストと圧縮率の間の公平なトレードオフを提供し、[多くのWebサーバーのデフォルト](https://paulcalvano.com/index.php/2018/07/25/brotli-compression-how-much-will-it-reduce-your-content/)にもかかわらず、[Nginxは依然として低すぎることが多いレベル1のままです](http://nginx.org/en/docs/http/ngx_http_gzip_module.html#gzip_comp_level)。
-* brotliおよびprecompressリソースをサポートできる場合は、brotliレベル11に圧縮します。これはgzipよりも計算コストが高くなります。したがって、遅延を避けるためには、事前圧縮が絶対に必要です。
-* brotliをサポートでき、事前圧縮できない場合は、brotliレベル5に圧縮します。このレベルでは、gzipと比較してペイロードが小さくなり、同様の計算オーバーヘッドが発生します。
+* 少なくとも、テキストベースのアセットに対してGzip圧縮レベル6を有効にします。これは、計算コストと圧縮率の間の公平なトレードオフを提供し、[多くのWebサーバーのデフォルト](https://paulcalvano.com/index.php/2018/07/25/brotli-compression-how-much-will-it-reduce-your-content/)にもかかわらず、[Nginxは依然として低すぎることが多いレベル1のままです](http://nginx.org/en/docs/http/ngx_http_gzip_module.html#gzip_comp_level)。
+* Brotliおよびprecompressリソースをサポートできる場合は、Brotliレベル11に圧縮します。これはGzipよりも計算コストが高くなります。したがって、遅延を避けるためには、事前圧縮が絶対に必要です。
+* Brotliをサポートでき、事前圧縮できない場合は、Brotliレベル5に圧縮します。このレベルでは、Gzipと比較してペイロードが小さくなり、同様の計算オーバーヘッドが発生します。
 
 
 ## どの種類のコンテンツを圧縮していますか？
 
-ほとんどのテキストベースのリソース（HTML、CSS、JavaScriptなど）は、gzipまたはbrotli圧縮の恩恵を受けることができます。ただし、多くの場合、これらの圧縮技術をバイナリリソースで使用する必要はありません。画像、ビデオ、一部のWebフォントなどが既に圧縮されているため。
+ほとんどのテキストベースのリソース（HTML、CSS、JavaScriptなど）は、GzipまたはBrotli圧縮の恩恵を受けることができます。ただし、多くの場合、これらの圧縮技術をバイナリリソースで使用する必要はありません。画像、ビデオ、一部のWebフォントなどが既に圧縮されているため。
 
-次のグラフでは、上位25のコンテンツタイプが、リクエストの相対数を表すボックスサイズで表示されています。各ボックスの色は、これらのリソースのうちどれだけ圧縮されて提供されたかを表します。ほとんどのメディアコンテンツはオレンジ色で網掛けされていますが、これはgzipとbrotliにはほとんどまたはまったく利点がないためです。テキストコンテンツのほとんどは、それらが圧縮されていることを示すために青色で網掛けされています。ただし、一部のコンテンツタイプの水色の網掛けは、他のコンテンツタイプほど一貫して圧縮されていないことを示しています。
+次のグラフでは、上位25のコンテンツタイプが、リクエストの相対数を表すボックスサイズで表示されています。各ボックスの色は、これらのリソースのうちどれだけ圧縮されて提供されたかを表します。ほとんどのメディアコンテンツはオレンジ色で網掛けされていますが、これはGzipとBrotliにはほとんどまたはまったく利点がないためです。テキストコンテンツのほとんどは、それらが圧縮されていることを示すために青色で網掛けされています。ただし、一部のコンテンツタイプの水色の網掛けは、他のコンテンツタイプほど一貫して圧縮されていないことを示しています。
 
 {{ figure_markup(
   image="fig3.png",
@@ -255,13 +255,13 @@ HTTP Archiveによって収集された診断から圧縮レベルを判断す�
   )
 }}
 
-すべてのコンテンツタイプで、gzipは最も一般的な圧縮アルゴリズムです。新しいbrotli圧縮はあまり頻繁に使用されず、最も多く表示されるコンテンツタイプは`application/javascript`、`text/css`、`application/x-javascript`です。これは、CDNが通過するトラフィックにbrotli圧縮を自動的に適用することの原因である可能性があります。
+すべてのコンテンツタイプで、Gzipは最も一般的な圧縮アルゴリズムです。新しいBrotli圧縮はあまり頻繁に使用されず、最も多く表示されるコンテンツタイプは`application/javascript`、`text/css`、`application/x-javascript`です。これは、CDNが通過するトラフィックにBrotli圧縮を自動的に適用することの原因である可能性があります。
 
 ## ファーストパーティとサードパーティの圧縮
 
 [サードパーティ](./third-parties)の章では、サードパーティとパフォーマンスへの影響について学びました。ファーストパーティとサードパーティの圧縮技術を比較すると、サードパーティのコンテンツはファーストパーティのコンテンツよりも圧縮される傾向であることがわかります。
 
-さらに、サードパーティのコンテンツの場合、brotli圧縮の割合が高くなります。これは、GoogleやFacebookなど、通常brotliをサポートする大規模なサードパーティから提供されるリソースの数が原因である可能性と考えられます。
+さらに、サードパーティのコンテンツの場合、Brotli圧縮の割合が高くなります。これは、GoogleやFacebookなど、通常Brotliをサポートする大規模なサードパーティから提供されるリソースの数が原因である可能性と考えられます。
 
 <figure>
   <table>
@@ -288,21 +288,21 @@ HTTP Archiveによって収集された診断から圧縮レベルを判断す�
         <td class="numeric">58.26%</td>
       </tr>
       <tr>
-        <td>gzip</td>
+        <td><code>gzip</code></td>
         <td class="numeric">29.33%</td>
         <td class="numeric">30.20%</td>
         <td class="numeric">30.87%</td>
         <td class="numeric">31.22%</td>
       </tr>
       <tr>
-        <td>br</td>
+        <td><code>br</code></td>
         <td class="numeric">4.41%</td>
         <td class="numeric">10.49%</td>
         <td class="numeric">4.56%</td>
         <td class="numeric">10.49%</td>
       </tr>
       <tr>
-        <td>deflate</td>
+        <td><code>deflate</code></td>
         <td class="numeric">0.02%</td>
         <td class="numeric">0.01%</td>
         <td class="numeric">0.02%</td>
@@ -363,8 +363,8 @@ Lighthouseは、テキストベースの圧縮を有効にすることで、保�
 
 ## 結論
 
-HTTP圧縮は、Webコンテンツのサイズを削減するために広く使用されている非常に貴重な機能です。 gzipとbrotliの両方の圧縮が使用される主要なアルゴリズムであり、圧縮されたコンテンツの量はコンテンツの種類によって異なります。 Lighthouseなどのツールは、コンテンツを圧縮する機会を発見するのに役立ちます。
+HTTP圧縮は、Webコンテンツのサイズを削減するために広く使用されている非常に貴重な機能です。 GzipとBrotliの両方の圧縮が使用される主要なアルゴリズムであり、圧縮されたコンテンツの量はコンテンツの種類によって異なります。 Lighthouseなどのツールは、コンテンツを圧縮する機会を発見するのに役立ちます。
 
 多くのサイトがHTTP圧縮をうまく利用していますが、特にWebが構築されている`text/html`形式については、まだ改善の余地があります！　同様に、`font/ttf`、`application/json`、`text/xml`、`text/plain`、`image/svg+xml`、`image/x-icon`のようなあまり理解されていないテキスト形式は、多くのWebサイトで見落とされる余分な構成を取る場合があります。
 
-Webサイトは広くサポートされており、簡単に実装で処理のオーバーヘッドが低いため、少なくともすべてのテキストベースのリソースにgzip圧縮を使用する必要があります。 brotli圧縮を使用するとさらに節約できますが、リソースを事前に圧縮できるかどうかに基づいて圧縮レベルを慎重に選択する必要があります。
+Webサイトは広くサポートされており、簡単に実装で処理のオーバーヘッドが低いため、少なくともすべてのテキストベースのリソースにGzip圧縮を使用する必要があります。 Brotli圧縮を使用するとさらに節約できますが、リソースを事前に圧縮できるかどうかに基づいて圧縮レベルを慎重に選択する必要があります。
