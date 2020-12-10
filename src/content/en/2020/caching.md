@@ -96,7 +96,6 @@ When considering what to cache, it is important to understand whether the respon
 
 {{ figure_markup(
   image="luna-cat.png",
-  link="https://almanac.httparchive.org/static/images/2020/caching/luna-cat.png",
   caption="Yes, we have a picture of a cat.",
   description="A picture of a cat called Luna."
   )
