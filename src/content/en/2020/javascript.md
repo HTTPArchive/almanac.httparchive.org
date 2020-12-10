@@ -329,37 +329,18 @@ It's worth taking a closer look those scripts that _don't_ have compression appl
 Thankfully, that's exactly what we see, particularly in third-party scripts where 90% of uncompressed scripts are less than 5 KB in size. On the other hand, 49% of uncompressed first-party scripts are less than 5 KB and 37% of uncompressed first-party scripts are over 10 KB. So while we do see a lot of small uncompressed first-party scripts, there are still quite a few that would benefit from some compression.
 
 ## What do we use?
+
 As we've increasingly used more JavaScript to power our sites and applications, there has also been an increasing demand for open-source libraries and frameworks to help with improving developer productivity and overall code maintainability. Sites that _don't_ wield one of these tools are definitely the minority on today's web—jQuery alone is found on nearly 85% of the mobile pages tracked by HTTP Archive.
 
 It's important that we think critically about the tools we use to build the web and what the trade-offs are, so it makes sense to look closely at what we see in use today.
 
 ### Libraries
-HTTP Archive uses Wappalyzer to detect technologies in use on a given page. Wappalazyer tracks both JavaScript Libraries (think of these as a collection of snippets or helper functions to ease development, like jQuery) and JavaScript Frameworks (these are more likely scaffolding and provide templating and structure, like React).
+
+HTTP Archive uses [Wappalyzer](./methodology#wappalyzer) to detect technologies in use on a given page. Wappalazyer tracks both JavaScript libraries (think of these as a collection of snippets or helper functions to ease development, like jQuery) and JavaScript frameworks (these are more likely scaffolding and provide templating and structure, like React).
 
 The popular libraries in use are largely unchanged from last year, with jQuery continuing to dominate usage and only one of the top 21 libraries falling out (lazy.js, replaced by DataTables). In fact, even the percentages of the top libraries has barely changed from last year.
 
-{# table? showing rank, library, percentage and last years rank #}
-
-Last year, [Houssein posited a few reasons for why jQuery's dominance continues](../2019/javascript#open-source-libraries-and-frameworks):
-
-> WordPress, which is used in more than 30% of sites, includes jQuery by default.
-> Switching from jQuery to a newer client-side library can take time depending on how large an application is, and many sites may consist of jQuery in addition to newer client-side libraries.
-
-Both are very sound guesses, and it seems the situation hasn't changed much on either front.
-
-In fact, the dominance of jQuery is supported even further when you stop to consider that, of the top 10 libraries, 6 of them are either jQuery or require jQuery in order to be used (jQuery UI, jQuery Migrate, FancyBox, Lightbox and Slick).
-
-### Frameworks
-When we look at the frameworks, we also don't see much of a dramatic change in terms of adoption in the main frameworks that were highlighted last year. Vue.js has seen a significant increase, and AMP grew a bit, but most of them are more or less where they were a year ago.
-
-{# Compare same frameworks from last year's chapter to this year in bar chart? #}
-
-It's worth noting that the detection issue that was noted last year still applies, and still impacts th results here. It's possible that there _has_ been a significant change in popularity for a few more of these tools, but we just don't see it with the way the data is currently collected.
-
-### What it all means?
-More interesting to me than the popularity of the tools themselves is the impact they have on the things we build.
-
-First, it's worth noting that while we may think of the usage of one tool versus another, in reality, we rarely only use a single library or framework in production. Only 21% of pages analyzed report only one library or framework. Two or three frameworks are pretty common, and the long-tail gets very long, very quickly.
+{# TODO(analysts): table? showing rank, library, percentage and last years rank #}
 
 {{ figure_markup(
   image="frameworks-libraries.png",
@@ -370,7 +351,31 @@ First, it's worth noting that while we may think of the usage of one tool versus
   sql_file="frameworks_libraries.sql"
 ) }}
 
-When we look at the common combinations that we see in production, most of them are to be expected. Knowing jQuery's dominance, it's unsurprising that most of the popular combinations include jQuery and any number of jQuery related plugins.
+Last year, [Houssein posited a few reasons for why jQuery's dominance continues](../2019/javascript#open-source-libraries-and-frameworks):
+
+> WordPress, which is used in more than 30% of sites, includes jQuery by default.
+> Switching from jQuery to a newer client-side library can take time depending on how large an application is, and many sites may consist of jQuery in addition to newer client-side libraries.
+
+Both are very sound guesses, and it seems the situation hasn't changed much on either front.
+
+In fact, the dominance of jQuery is supported even further when you stop to consider that, of the top 10 libraries, 6 of them are either jQuery or require jQuery in order to be used: jQuery UI, jQuery Migrate, FancyBox, Lightbox and Slick.
+
+### Frameworks
+
+When we look at the frameworks, we also don't see much of a dramatic change in terms of adoption in the main frameworks that were highlighted last year. Vue.js has seen a significant increase, and AMP grew a bit, but most of them are more or less where they were a year ago.
+
+{# TODO(analysts): Compare same frameworks from last year's chapter to this year in bar chart? #}
+
+{# TODO(authors): Elaborate on what the detection issue was. #}
+It's worth noting that the detection issue that was noted last year still applies, and still impacts the results here. It's possible that there _has_ been a significant change in popularity for a few more of these tools, but we just don't see it with the way the data is currently collected.
+
+### What it all means
+
+More interesting to us than the popularity of the tools themselves is the impact they have on the things we build.
+
+First, it's worth noting that while we may think of the usage of one tool versus another, in reality, we rarely only use a single library or framework in production. Only 21% of pages analyzed report only one library or framework. Two or three frameworks are pretty common, and the long-tail gets very long, very quickly.
+
+When we look at the common combinations that we see in production, most of them are to be expected. Knowing jQuery's dominance, it's unsurprising that most of the popular combinations include jQuery and any number of jQuery-related plugins.
 
 <figure>
   <table>
@@ -494,7 +499,7 @@ When we look at the common combinations that we see in production, most of them 
   </figcaption>
 </figure>
 
-We do also see a fair amount of more "modern" frameworks, like React, Vue and Angular—paired with jQuery, like as a result of either migration or third-parties including one or the other.
+We do also see a fair amount of more "modern" frameworks like React, Vue, and Angular paired with jQuery, for example as a result of migration or inclusion by third-parties.
 
 <figure>
   <table>
@@ -570,27 +575,58 @@ Looking specifically at the frameworks in use, we see that the median JavaScript
 
 The graph below shows the median bytes for pages where any of the top 35 most commonly detected frameworks were found, broken down by client.
 
-{# Median bytes by JS framework #}
+{{ figure_markup(
+  image="frameworks-bytes.png",
+  caption="The median number of JavaScript kilobytes per page by JavaScript framework.",
+  description="Bar chart showing the median number of JavaScript kilobytes per page broken down and sorted by JavaScript framework popularity. The most popular framework, React, has a median amount of JS at 1,328 on mobile pages. Other frameworks like RequireJS and Angular have high numbers of median JS bytes per page. Pages with MooTools, Prototype, AMP, RightJS, Alpine.js, and Svelte have medians under 500 KB per mobile page. Ember.js has an outlier of about 1,800 KB of median JS per mobile page.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=955720480&format=interactive",
+  sheets_gid="1206934500",
+  width="600",
+  height="835",
+  sql_file="frameworks-bytes-by-framework.sql"
+) }}
 
-On one of the spectrum are frameworks like React or Angular or Ember, which tend to ship a lot of code regardless of the client. On the other end, we see minimalist frameworks like Alpine.js and Svelte showing very promising results. Defaults are very important, and it seems that by starting with highly performant defaults, Svelte and Alpine are both succeeding (so far...the sample size is pretty small) in creating a lighter set of pages.
+On one of the spectrum are frameworks like React or Angular or Ember, which tend to ship a lot of code regardless of the client. On the other end, we see minimalist frameworks like Alpine.js and Svelte showing very promising results. Defaults are very important, and it seems that by starting with highly performant defaults, Svelte and Alpine are both succeeding (so far&hellip; the sample size is pretty small) in creating a lighter set of pages.
 
 We get a very similar picture when looking at main thread time for pages where these tools were detected.
 
-{# Median main thread by JS framework #}
+{{ figure_markup(
+  image="frameworks-main-thread.png",
+  caption="The median main thread time per page by JavaScript framework.",
+  description="Bar chart showing the median main thread time by framework. It's hard to notice anything other than Ember.js, whose median mobile main thread time is over 20,000 milliseconds (20 seconds). The rest of the frameworks are tiny by comparison.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=691531699&format=interactive",
+  sheets_gid="160832134",
+  sql_file="main_thread_time_frameworks.sql"
+) }}
 
 Ember's mobile main thread time jumps out and kind of distorts the graph with how long it takes. Pulling it out makes the picture a bit easier to understand.
 
-{# Median main thread by JS framework, no Ember #}
+{{ figure_markup(
+  image="frameworks-main-thread-no-ember.png",
+  caption="The median main thread time per page by JavaScript framework, excluding Ember.js.",
+  description="Bar chart showing the median main thread time by framework, excluding Ember.js. Mobile main thread times are all higher due to the testing methodology of using slower CPU speeds for mobile. The most popular frameworks like React, GSAP, and RequireJS have high main thread times around 2-3 seconds for desktop and 5-7 seconds for mobile. Polymer also sticks out further down the popularity list. MooToos, Prototype, Alpine.js, and Svelte tend to have lower main thread times, under 2 seconds.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=77448759&format=interactive",
+  sheets_gid="160832134",
+  sql_file="main_thread_time_frameworks.sql"
+) }}
 
 Tools like React, GSAP, and RequireJS tend to spend a lot of time on the main thread of the browser, regardless of whether it's a desktop or mobile page view. The same tools that tend to lead to less code overall—tools like Alpine and Svelte—also tend to lead to lower impact on the main thread.
 
 The gap between the experience a framework provides for desktop and mobile is also worth digging into. Mobile traffic is becoming increasingly dominant, and it's critical that our tools perform as well as possible for mobile pageviews. The bigger the gap we see between desktop and mobile performance for a framework, the bigger the red flag.
 
-{# Table? Gap in absolute and relative terms #}
+{{ figure_markup(
+  image="frameworks-main-thread-no-ember-diff.png",
+  caption="Difference between desktop and mobile median main thread time per page by JavaScript framework, excluding Ember.js.",
+  description="Bar chart showing the absolute and relative differences between desktop and mobile's median main thread time per page by JavaScript framework, excluding Ember.js. Polymer jumps out later in the popularity list as having a high difference: about 5 seconds and 250% slower median main thread time on mobile pages than desktop pages. Other frameworks that stand out are GSAP and RequireJS has having a 4 second or 150% difference. Frameworks with the lowest difference are Mustache and RxJS, which are only about 20-30% slower on mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=1758266664&format=interactive",
+  sheets_gid="160832134",
+  sql_file="main_thread_time_frameworks.sql"
+) }}
 
-As you would expect, there's a gap for all tools in use due to the lower processing power of the emulated Moto G4's. Ember and Polymer seem to jump out as particularly egregious examples, while tools like RxJS and Mustache vary only minorly from desktop to mobile.
+As you would expect, there's a gap for all tools in use due to the lower processing power of the [emulated Moto G4](methodology#webpagetest). Ember and Polymer seem to jump out as particularly egregious examples, while tools like RxJS and Mustache vary only minorly from desktop to mobile.
 
-## What's the Impact?
+## What's the impact?
+
 We have a pretty good picture now of how much JavaScript we use, where it comes from and what we use it for. While that's interesting enough on its own, the real kicker is the "so what?" What impact does all this script actually have on the experience of our pages?
 
 The first thing we should consider is what happens with all that JavaScript once its been downloaded. Downloading is only the first part of the JavaScript journey. The browser still has to parse all that script, compile it, and eventually execute it. While browsers are increasingly finding ways to offload
