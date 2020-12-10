@@ -12,7 +12,7 @@ const output_dir = `static/html`;
 
 let failures = 0;
 let passes = 0;
-  
+
 let configs = {};
 let languages = {};
 let ebooks = {};
@@ -116,7 +116,7 @@ const test_status_codes = async () => {
   await test_status_code('/zz', 308, `/zz/`);
   await test_status_code('/zh/', 302, `/zh-CN/`);
   await test_status_code('/zh-HANT/', 302, `/zh-TW/`);
-  await test_status_code('/zh-CHT/', 301, `/zh-TW/`);
+  await test_status_code('/zh-CHT/', 302, `/zh-TW/`);
   await test_status_code('/zh-hans/', 302, `/zh-CN/`);
   await test_status_code('/en-GB/', 302, `/en/`);
   await test_status_code('/EN/', 302, `/en/`);
@@ -130,10 +130,10 @@ const test_status_codes = async () => {
   await test_status_code('/base/methodology', 308, `/base/methodology/`);
   await test_status_code('/base/methodology/', 404);
   await test_status_code('/base/2019/methodology/', 404);
-  
+
   console.log('Passes:', passes, "Failures:", failures);
   process.exitCode = failures;
-  
+
 }
 
 module.exports = {
