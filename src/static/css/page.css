@@ -481,12 +481,13 @@ figcaption {
   margin: 8px auto 0;
   margin: 0.5rem auto 0;
   text-align: center;
+  position: relative;
 }
 
 .figure-dropdown {
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 0;
+  right: -50px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -495,7 +496,7 @@ figcaption {
 .figure-dropdown button {
   opacity: 0.5;
   border: none;
-  padding: 1em;
+  padding: 0 1em;
   color: #0b1423;
 }
 
