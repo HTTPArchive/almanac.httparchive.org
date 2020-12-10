@@ -1,26 +1,26 @@
----
+﻿---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 part_number: IV
 chapter_number: 20
 title: Caching
 description: Caching chapter of the 2020 Web Almanac covering cache-control, expires, TTLs, validitaty, vary, set-cookies, AppCache, Service Workers and opportunities.
 authors: [roryhewitt, raghuramakrishnan71]
-reviewers: [csswizardry, jzyang, jaisanth, Soham-S-Sarkar]
+reviewers: [jzyang]
 analysts: [raghuramakrishnan71]
 translators: []
-roryhewitt_bio: Enterprise Architect at <a href="https://www.akamai.com/">Akamai</a>. Passionate about performance. Competition-level snowboarder. Multiple black belts. Motorcyclist. Boxer. Troublemaker. 
+roryhewitt_bio: Enterprise Architect at <a href="https://www.akamai.com/">Akamai</a>, who is passionate about performance. A British ex-patriate, he has lived in San Francisco for more than twenty years. In his spare time, he's a long-distance adventure motorcyclist, snowboarder and boxer/karateka. He likes being known as a troublemaker. Most importantly, he's a father and husband and the owner of Luna the cat. Find him at <a href="https://www.linkedin.com/in/roryhewitt/">LinkedIn</a>.
 raghuramakrishnan71_bio: Enterprise architect at <a href="https://www.tcs.com/">Tata Consultancy Services</a>, working on large digital transformation programs in the public sector. A technology enthusiast with a special interest in performance engineering. An avid traveler, intrigued by astronomy, history, biology, and advancements in medicine. A strong follower of the 47th verse, Chapter 2 of Bhagavad Gita "karmaṇy-evādhikāras te mā phaleṣhu kadāchana" meaning "You have a right to perform your prescribed duty, but you are not entitled to the fruits of action."
 
 discuss: 2056
 results: https://docs.google.com/spreadsheets/d/1fYmpSN3diOiFrscS75NsjfsrKXzxxhUMNcYSqXnQJQU/
 queries: 20_Caching
-#featured_quote: Caching benefits both the end users (they get their web pages quickly) and the companies serving the web pages (reducing the load on their servers). Caching really is a win-win!
-#featured_stat_1: TODO
-#featured_stat_label_1: TODO
-#featured_stat_2: TODO
-#featured_stat_label_2: TODO
-#featured_stat_3: TODO
-#featured_stat_label_3: TODO
+featured_quote: Caching provides a significant performance benefit by avoiding costly network requests - it helps both end users (they get their web pages quickly) and the companies serving web pages (reducing the load on their servers). Caching really is a win-win!
+featured_stat_1: 25.6%
+featured_stat_label_1: HTTP responses with no caching information
+featured_stat_2: 21.4%
+featured_stat_label_2: Responses that cannot be revalidated
+featured_stat_3: 21.3%
+featured_stat_label_3: Sites that could save over 2MB on repeat visits with better caching
 unedited: true
 ---
 
@@ -93,6 +93,13 @@ When considering what to cache, it is important to understand whether the respon
 
 * An example of static content is an image.  For instance, a picture of a cat is the same regardless of who's requesting it or where the requester is located.
 * An example of dynamic content is a list of events which are specific to a geographic location. The list will be different based on the requester's location.
+
+{{ figure_markup(
+  image="luna-cat.png",
+  caption="Yes, we have a picture of a cat.",
+  description="A picture of a cat called Luna."
+  )
+}}
 
 Static content is typically cacheable and often for long periods of time.  It has a one-to-many relationship between the content (one) and the requests (many).
 
@@ -332,7 +339,7 @@ When the server receives the request for the file, it can include the date/time 
 < <span class="keyword">Last-Modified: Mon, 20 Jul 2020 11:43:22 GMT</span>
 < Cache-Control: max-age=600
 
-< <html>...lots of html here...</html></code></pre>
+...lots of html here...</code></pre>
 
 The browser will cache this object for 600 seconds (as defined in the `Cache-Control` header), after which it will mark the object as stale. If the browser needs to use the file again, it requests the file from the server just as it did initially, but this time it includes an additional request header, called `If-Modified-Since`, which it sets to the value that was passed in the `Last-Modified` response header in the initial response:
 
@@ -359,7 +366,7 @@ However, if the file on the server has changed since it was last requested by th
 < Last-Modified: Thu, 23 Jul 2020 03:12:42 GMT
 < Cache-Control: max-age=600
 
-< <html>...lots of html here...</html></code></pre>
+...lots of html here...</code></pre>
 
 As you can see, the `Last-Modified` response header and `If-Modified-Since` request header work as a pair.
 
@@ -377,7 +384,7 @@ In this example, when the server receives the initial request for the file, it c
 < ETag: "v123.4.01"
 < Cache-Control: max-age=600
 
-< <html>...lots of html here...</html></code></pre>
+...lots of html here...</code></pre>
 
 As with the `If-Modified-Since` example above, the browser will cache this object for 600 seconds, as defined in the `Cache-Control` header. When it needs to request the object from the server again, it includes an additional request header, called `If-None-Match`, which has the value passed in the `ETag` response header in the initial response:
 
@@ -403,7 +410,7 @@ However, if the values are different, then the version of the file on the server
 < ETag: "v123.5.06"
 < Cache-Control: public, max-age=600
 
-< <html>...lots of html here...<html></code></pre>
+...lots of html here...</code></pre>
 
 Again, we see a pair of headers being used for this conditional request processing - the `ETag` response header and the `If-None-Match` request header.
 
@@ -552,7 +559,7 @@ Since we have primarily been talking about browser caching, you may think this i
 
 For example, if a login cookie or a session cookie is present in a CDN's cached object, then that cookie could potentially be reused by another client. The primary way to avoid this is for the server to send the `Cache-Control: private` directive, which tells the CDN not to cache the response, because it may only be cached by the client browser.
 
-41.4%% of cacheable responses contain a `Set-Cookie` header. Of those responses, only 4.6% use the `private` directive. The remaining 95.4% (189.2 million HTTP responses) contain at least one `Set-Cookie` response header and can be cached by both public cache servers, such as CDNs. This is concerning and may indicate a continued lack of understanding about how cacheability and cookies coexist.
+41.4% of cacheable responses contain a `Set-Cookie` header. Of those responses, only 4.6% use the `private` directive. The remaining 95.4% (189.2 million HTTP responses) contain at least one `Set-Cookie` response header and can be cached by both public cache servers, such as CDNs. This is concerning and may indicate a continued lack of understanding about how cacheability and cookies coexist.
 
 {{ figure_markup(
   image="set-cookie-usage-on-cacheable-responses.png",
@@ -821,7 +828,7 @@ For example, the resource served below on 18 Oct 2020 was last modified on 30 Au
 
 Overall, 60.7% of resources served on the web have a cache TTL that could be considered too short compared to its content age. Furthermore, the median delta between the TTL and age is 25 days - again, an indication of significant under-caching.
 
-When we break this out by first party vs third party in the following table, we can see that more than two-thirds (61.6%) of first-party resources can benefit from a longer TTL. This clearly highlights a need to spend extra attention focusing on what is cacheable, and then ensuring that caching is configured correctly.
+When we break this out by first party vs third party in the following table, we can see that almost two-thirds (61.6%) of first-party resources can benefit from a longer TTL. This clearly highlights a need to spend extra attention focusing on what is cacheable, and then ensuring that caching is configured correctly.
 
 <figure>
   <table>
@@ -873,7 +880,7 @@ Lighthouse computes a score for each audit, ranging from 0% to 100%, and those s
 
 Only 3.3% of sites scored a 100%, meaning that the vast majority of sites can benefit from some cache optimizations. Approximately two-thirds of sites score below 40%, with almost one-third of sites scoring less than 10%. Based on this, there is a significant amount of under-caching, resulting in excess requests and bytes being served across the network.
 
-Lighthouse also indicates how many bytes could be saved on repeat views by enabling a longer cache policy. Of the sites that could benefit from additional caching, 78.6% of them can reduce their page weight by up to 2MB!
+Lighthouse also indicates how many bytes could be saved on repeat views by enabling a longer cache policy. Of the sites that could benefit from additional caching, more than one-fifth can reduce their page weight by over 2MB!
 
 {{ figure_markup(
   image="cache-wasted-bytes-lighthouse.png",
@@ -889,12 +896,12 @@ Lighthouse also indicates how many bytes could be saved on repeat views by enabl
 
 Caching is an incredibly powerful feature that allows browsers, proxies and other intermediaries (such as CDNs) to store web content and serve it to end users. The performance benefits of this are significant, since it reduces round trip times and minimizes costly network requests.
 
-Caching is also a very complex topic, and one that is often left until late in the development cycle (due to requirements to see the very latest version of a site while it is still being designed), then being added in at the last minute. Additionally, caching rules are often defined once and then never changed, even as the underlying content on a site changes. Frequently a default value is chosen without careful consideration.
+Caching is also a very complex topic, and one that is often left until late in the development cycle (due to requirements by site developers to see the very latest version of a site while it is still being designed), then being added in at the last minute. Additionally, caching rules are often defined once and then never changed, even as the underlying content on a site changes. Frequently a default value is chosen without careful consideration.
 
 To correctly cache objects, there are numerous HTTP response headers that can convey freshness as well as validate cached entries, and `Cache-Control` directives provide a tremendous amount of flexibility and control.
 
-Many object types and content that are typically considered to be uncacheable can actually be cached (remember: *cache as much as you can!*) and many objects are cached for too short a period of time, requiring repeated requests and revalidation (remember: cache for as long as you can!).However, website developers should be cautious about the additional opportunities for mistakes that come with over-caching content.
+Many object types and content that are typically considered to be uncacheable can actually be cached (remember: *cache as much as you can!*) and many objects are cached for too short a period of time, requiring repeated requests and revalidation (remember: *cache for as long as you can!*). However, website developers should be cautious about the additional opportunities for mistakes that come with over-caching content.
 
-If the site is intended to be served through a CDN, additional opportunities for caching at the CDN to reduce server load and provide faster response to end-users should be considered, along with the related risks of accidentally caching private information.
+If the site is intended to be served through a CDN, additional opportunities for caching at the CDN to reduce server load and provide faster response to end-users should be considered, along with the related risks of accidentally caching private information, such as cookies.
 
-However, 'powerful' and 'complex' do not imply 'difficult' - like most everything else, caching is controlled by rules which can be defined fairly easily to provide the best mix of cacheability and privacy. Regularly auditing your site to ensure that cacheable resources are cached appropriately is recommended, and tools like [Lighthouse](https://developers.google.com/web/tools/lighthouse) and [REDbot](https://redbot.org/) do an excellent job of helping to simplify such an analysis.
+However, 'powerful' and 'complex' do not imply 'difficult' - like most everything else, caching is controlled by rules which can be defined fairly easily to provide the best mix of cacheability and privacy. Regularly auditing your site to ensure that cacheable resources are cached appropriately is recommended, and tools like [Lighthouse](https://developers.google.com/web/tools/lighthouse) do an excellent job of helping to simplify such an analysis.
