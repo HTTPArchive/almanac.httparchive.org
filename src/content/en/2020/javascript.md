@@ -183,13 +183,18 @@ While the amount of JavaScript requests are similar at the median, the actual si
 ) }}
 
 ## How do we load our JavaScript?
+
 The way we load JavaScript has a significant impact on the overall experience.
 
-JavaScript, by default, is _parser-blocking_. In other words, when the browser discovers a script element, it must pause parsing of the HTML until the script has been downloaded, parsed and executed. It's a significant bottleneck and a common contributor to pages that are slow to render.
+By default, JavaScript is _parser-blocking_. In other words, when the browser discovers a `script` element, it must pause parsing of the HTML until the script has been downloaded, parsed, and executed. It's a significant bottleneck and a common contributor to pages that are slow to render.
 
-We can start to offset some of the cost of loading JavaScript by loading scripts either asynchronously (which only halts the HTML parser during the parse and execution phases, but not during the download phase) or deferred (which doesn't halt the HTML parser at all). Both attributes are only available on external scripts—inline scripts cannot have them applied.
+We can start to offset some of the cost of loading JavaScript by loading scripts either asynchronously, which only halts the HTML parser during the parse and execution phases and not during the download phase, or deferred, which doesn't halt the HTML parser at all. Both attributes are only available on external scripts—inline scripts cannot have them applied.
 
-On mobile, external scripts comprise 59.0% of all script elements found. _As an aside, when we talk about how much JavaScript is loaded on a page earlier, that total doesn't account for the size of these inline scripts—because they're part of the HTML document, they're counted against the markup size. This means we load even more script that the numbers show._
+On mobile, external scripts comprise 59.0% of all script elements found.
+
+<p class="note">
+  As an aside, when we talk about how much JavaScript is loaded on a page earlier, that total doesn't account for the size of these inline scripts—because they're part of the HTML document, they're counted against the markup size. This means we load even more script that the numbers show.
+</p>
 
 {{ figure_markup(
   image="external-inline-mobile.png",
@@ -211,30 +216,50 @@ Of those external scripts, only 12.2% of them are loaded with the `async` attrib
   sql_file="breakdown_of_scripts_using_async_defer_module_nomodule.sql"
 ) }}
 
+{# TODO(authors): Why is it misleading? #}
 Considering that `defer` provides us with the best loading performance (by ensuring downloading the script happens in parallel to other work, and execution waits until after the page can be displayed), we would hope to see that percentage a bit higher. In fact, as it is that 6.0% is a bit misleading.
 
 Back when supporting IE8 and IE9 was more common, it was relatively common to use _both_ the `async` and `defer` attributes. With both attributes in place, any browser supporting both will use `async`. IE8 and IE9, which don't support `async` will fall back to defer.
 
+{# TODO(authors): In the Twitter thread that discussed this, it actually spurred the Jetpack folks to push a fix! Might be worth mentioning :) #}
 Nowadays, the pattern is unnecessary for the vast majority of sites and any script loaded with the pattern in place will interrupt the HTML parser when it needs to be executed, instead of deferring until the page has loaded. The pattern is still used surprisingly often, with 11.4% of mobile pages serving at least one script with that pattern in place.
 
-### Resource Hints
-Another tool we have at our disposal for offsetting some of the network costs of loading JavaScript are resource hints, specifically, `prefetch` and `preload`.
+### Resource hints
 
-The `prefetch` hint lets developers tell the browser that a resource will be used on the next page navigation, and therefore, that it should try to download it when it during idle time.
+Another tool we have at our disposal for offsetting some of the network costs of loading JavaScript are [resource hints](./resource-hints), specifically, `prefetch` and `preload`.
 
-The `preload` hint tells the browser a resource will be used on the current page and that the browser should download it right away and give it a higher priority.
+The `prefetch` hint lets developers signify that a resource will be used on the next page navigation, therefore the browser should try to download it when the browser is idle.
+
+The `preload` hint signifies that a resource will be used on the current page and that the browser should download it right away at a higher priority.
 
 Overall, we see 16.7% of mobile pages using at least one of the two resource hints to load JavaScript more proactively.
 
-Of that, nearly all of the usage is coming from `preload`. While 16.6% of mobile pages use at least one `preload` hint to load JavaScript, only .36% of mobile pages use at least one `prefetch` hint.
+Of those, nearly all of the usage is coming from `preload`. While 16.6% of mobile pages use at least one `preload` hint to load JavaScript, only 0.4% of mobile pages use at least one `prefetch` hint.
 
-There's a risk, particularly with `preload`, of using too many hints and reducing their effectiveness, so it's worth looking at the pages that do use these hints to see how many hints they're using.
+There's a risk, particularly with `preload`, of using too many hints and reducing their effectiveness, so it's worth looking at the pages that do use these hints to see how many they're using.
 
-{# distribution of preload and prefetch charts #}
+{{ figure_markup(
+  image="prefetch-distribution.png",
+  caption="Distribution of the number `prefetch` hints per page with any `prefetch` hints.",
+  description="Bar chart showing the distribution of prefetch hints per page with any prefetch hints. The 10, 25 and 50th percentiles for desktop and mobile pages is 1, 2, and 3 prefetch hints per page. At the 75th percentile for desktop pages it's 6 and 4 for mobile. At the 90th percentile, desktop pages use 14 prefetch hints per page and 12 for mobile pages.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=1874381460&format=interactive",
+  sheets_gid="1910228743",
+  sql_file="resource-hints-preload-prefetch-distribution.sql"
+) }}
 
-At the median, pages that use a `prefetch` hint to load JavaScript use three, while pages that use a `preload` hint only use one. The long tail gets a bit more interesting, with 12 `prefetch` hints used at the 90th percentile and 7 `preload` hints used on the 90th as well. (For more detail on resource hints, check out this year's chapter on the topic).
+{{ figure_markup(
+  image="preload-distribution.png",
+  caption="Distribution of the number `preload` hints per page with any `preload` hints.",
+  description="Bar chart showing the distribution of preload hints per page with any preload hints. 75% of desktop and mobile pages that use preload hints use it exactly once. The 90th percentile is 5 preload hints per page for desktop and 7 for mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=320533828&format=interactive",
+  sheets_gid="1910228743",
+  sql_file="resource-hints-preload-prefetch-distribution.sql"
+) }}
+
+At the median, pages that use a `prefetch` hint to load JavaScript use three, while pages that use a `preload` hint only use one. The long tail gets a bit more interesting, with 12 `prefetch` hints used at the 90th percentile and 7 `preload` hints used on the 90th as well. For more detail on resource hints, check out this year's [Resource Hints](./resource-hints) chapter.
 
 ## How do we serve JavaScript?
+
 As with any text-based resource on the web, we can save significant file savings through minimization and compression. Neither of these are new optimizations—they've been around for quite awhile—so we should expect to see them applied in more cases than not.
 
 One of the audits in Lighthouse checks for unminified JavaScript, and provides a score (0 being the worst, 100 being the best) based on the findings.
