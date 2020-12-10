@@ -15,7 +15,7 @@ discuss: 2056
 results: https://docs.google.com/spreadsheets/d/1fYmpSN3diOiFrscS75NsjfsrKXzxxhUMNcYSqXnQJQU/
 queries: 20_Caching
 featured_quote: Caching provides a significant performance benefit by avoiding costly network requests - it helps both end users (they get their web pages quickly) and the companies serving web pages (reducing the load on their servers). Caching really is a win-win!
-featured_stat_1: 25.6
+featured_stat_1: 25.6%
 featured_stat_label_1: Percentage of HTTP responses don't include any caching information, which means they're probably being cached wrongly
 featured_stat_2: 21.4%
 featured_stat_label_2: Percentage of responses that aren't using revalidation, resulting in wasted bandwidth and increased latency
