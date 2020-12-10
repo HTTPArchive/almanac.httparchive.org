@@ -122,7 +122,7 @@ The top 5 file extensions explicitly included in the `alt` text value (for sites
     {{ figure_link(
       caption="Percent of pages with non-empty alt attributes.",
       sheets_gid="TODO",
-      <!-- sql_file="TODO.sql" -->
+      ## sql_file="TODO.sql"
     ) }}
   </figcaption>
 </figure>
@@ -327,8 +327,8 @@ A common usage of this attribute is for `<table>` elements that have been used f
   <figcaption>
     {{ figure_link(
       caption="Top 5 ARIA roles on the web.",
-      <!-- sheets_gid="TODO", -->
-      <!-- sql_file="TODO.sql" -->
+      ## sheets_gid="TODO",
+      ## sql_file="TODO.sql"
     ) }}
   </figcaption>
 </figure>
