@@ -1,4 +1,4 @@
----
+﻿---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 part_number: IV
 chapter_number: 20
@@ -15,11 +15,11 @@ discuss: 2056
 results: https://docs.google.com/spreadsheets/d/1fYmpSN3diOiFrscS75NsjfsrKXzxxhUMNcYSqXnQJQU/
 queries: 20_Caching
 #featured_quote: Caching benefits both the end users (they get their web pages quickly) and the companies serving the web pages (reducing the load on their servers). Caching really is a win-win!
-#featured_stat_1: TODO
+#featured_stat_1: **One quarter** of all HTTP responses don't include any caching information, which means they're probably being cached wrongly
 #featured_stat_label_1: TODO
-#featured_stat_2: TODO
+#featured_stat_2: More than **one fifth** of all responses aren't using revalidation, resulting in wasted bandwidth and increased latency
 #featured_stat_label_2: TODO
-#featured_stat_3: TODO
+#featured_stat_3: Our chapter has a cat picture!
 #featured_stat_label_3: TODO
 unedited: true
 ---
@@ -93,6 +93,14 @@ When considering what to cache, it is important to understand whether the respon
 
 * An example of static content is an image.  For instance, a picture of a cat is the same regardless of who's requesting it or where the requester is located.
 * An example of dynamic content is a list of events which are specific to a geographic location. The list will be different based on the requester's location.
+
+{{ figure_markup(
+  image="luna-cat.png",
+  link="https://almanac.httparchive.org/static/images/2020/caching/luna-cat.png.png",
+  caption="Yes, we have a picture of a cat.",
+  description="A picture of a cat called Luna."
+  )
+}}
 
 Static content is typically cacheable and often for long periods of time.  It has a one-to-many relationship between the content (one) and the requests (many).
 
