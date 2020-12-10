@@ -406,7 +406,7 @@ Finally, we found that 4.46% of desktop pages and 4.62% of mobile pages feature 
 
 ##### Most prevalent structured data objects
 
-[As seen last year](https://almanac.httparchive.org/en/2019/seo#structured-data), the most prevalent structured data objects remain to be `WebSite`, `SearchAction`, `WebPage`, `Organization`, and `ImageObject`, and their usage has continued to grow:
+[As seen last year](../2019/seo#structured-data), the most prevalent structured data objects remain to be `WebSite`, `SearchAction`, `WebPage`, `Organization`, and `ImageObject`, and their usage has continued to grow:
 
 * `WebSite` has grown 9.37% on desktop and 10.5% on mobile
 * `SearchAction` has grown 7.64% on both desktop and mobile

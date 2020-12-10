@@ -23,7 +23,7 @@ unedited: true
 ---
 ## Introduction
 
-Third-party content is a critical component of most websites today.  It powers everything: Analytics, live chat, advertising, video sharing and more.  Third-party content provides value by taking the heavy lifting off of site owners and allows them to focus on their core competencies.
+Third-party content is a critical component of most websites today.  It powers everything: analytics, live chat, advertising, video sharing and more.  Third-party content provides value by taking the heavy lifting off of site owners and allows them to focus on their core competencies.
 
 Many think of third-party content as being JavaScript-based, but the data shows that this is only true for 22% of requests. Third-party content comes in all forms, from images (37%) to audio (0.1%).
 
@@ -84,7 +84,7 @@ A good starting point for this analysis is to confirm the statement that third-p
   )
 }}
 
-These prevalence numbers show a slight increase on [the 2019 results](https://almanac.httparchive.org/en/2019/third-parties): 93.87% of pages in the desktop crawl had at least one third-party request, the number was slightly higher at 94.10% of pages in the mobile crawl. A brief look into the small number of pages with no third-party content revealed that many were adult sites, some were government domains and some were basic landing / holding pages with little content. It is fair to say that the vast majority of pages have at least one third-party.
+These prevalence numbers show a slight increase on [the 2019 results](../2019/third-parties): 93.87% of pages in the desktop crawl had at least one third-party request, the number was slightly higher at 94.10% of pages in the mobile crawl. A brief look into the small number of pages with no third-party content revealed that many were adult sites, some were government domains and some were basic landing / holding pages with little content. It is fair to say that the vast majority of pages have at least one third-party.
 
 The chart below shows the distribution of pages by third-party count. The 10th percentile page has two third-party requests while the median page has 24. Over 10% of pages have more than 100 third-party requests.
 
@@ -132,7 +132,7 @@ When we dig further into domains serving third-party content we see that Google 
 
 The next four most common domains are all advertising providers, they may not be requested directly by your page but through a complex chain of redirects initiated by another advertising network.
 
-The sixth most common domain is digicert.com.  Calls to digicert.com are generally OCSP revocation checks due to TLS certificates not having OCSP stapling enabled, or the use of Extended Validation (EV) certificates which prevent pinning of intermediate certificates. This number is exaggerated in HTTP Archive due to all page loads being effectively first-time visitors - OCSP responses are generally valid for seven days in real-world browsing. See [this blog post](https://simonhearne.com/2020/drop-ev-certs/) to read more on this issue.
+The sixth most common domain is digicert.com. Calls to digicert.com are generally OCSP revocation checks due to TLS certificates not having OCSP stapling enabled, or the use of Extended Validation (EV) certificates which prevent pinning of intermediate certificates. This number is exaggerated in HTTP Archive due to all page loads being effectively first-time visitors - OCSP responses are generally valid for seven days in real-world browsing. See [this blog post](https://simonhearne.com/2020/drop-ev-certs/) to read more on this issue.
 
 Further down the list at 2.43% is ajax.googleapis.com, Google's [Hosted Libraries project](https://developers.google.com/speed/libraries). Whilst loading a library such as jQuery from a hosted service is easy, the additional cost of a connection to a third-party domain may have a negative impact on performance. It is best to host all critical JavaScript and CSS on the root domain, if possible. There is also now no cache benefit to using a shared CDN resource, as all major browsers [partition caches by page](https://developers.google.com/web/updates/2020/10/http-cache-partitioning). Harry Roberts has written a detailed blog post on [how to host your own static assets](https://csswizardry.com/2019/05/self-host-your-static-assets/).
 

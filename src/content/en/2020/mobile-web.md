@@ -31,9 +31,9 @@ Mobile Web has grown explosively in the last decade and is now the primary way m
 ### Data sources
 We’ve used a few different data sources in this chapter:
 
-* [CrUX](https://almanac.httparchive.org/en/2020/methodology#chrome-ux-report)
-* [HTTP archive](https://almanac.httparchive.org/en/2020/methodology#dataset)
-* [Lighthouse](https://almanac.httparchive.org/en/2020/methodology#lighthouse)
+* [CrUX](./methodology#chrome-ux-report)
+* [HTTP archive](./methodology#dataset)
+* [Lighthouse](./methodology#lighthouse)
 
 Please visit the links above to learn more about the methodology and caveats with each data source.
 It is worth noting that HTTP Archive and Lighthouse data is limited to the data identified from websites’ home pages only, and not site-wide.
