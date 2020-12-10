@@ -146,8 +146,8 @@ In the context of browser-server interactions, resource compression refers to co
 
 There are multiple text-compression algorithms, but only two are mostly used for the compression (and decompression) of HTTP network requests:
 
-- [Gzip](https://www.gzip.org/) (gzip): The most widely used compression format for server and client interactions
-- [Brotli](https://github.com/google/brotli) (br): A newer compression algorithm aiming to further improve compression ratios. [90% of browsers](https://caniuse.com/#feat=brotli) support Brotli encoding.
+- [Gzip](https://www.gzip.org/) (`gzip`): The most widely used compression format for server and client interactions
+- [Brotli](https://github.com/google/brotli) (`br`): A newer compression algorithm aiming to further improve compression ratios. [90% of browsers](https://caniuse.com/#feat=brotli) support Brotli encoding.
 
 Compressed scripts will always need to be uncompressed by the browser once transferred. This means its content remains the same and execution times are not optimized whatsoever. Resource compression, however, will always improve download times which also is one of the most expensive stages of JavaScript processing. Ensuring JavaScript files are compressed correctly can be one of the most significant factors in improving site performance.
 
@@ -155,8 +155,8 @@ How many sites are compressing their JavaScript resources?
 
 {{ figure_markup(
   image="fig10.png",
-  caption="Percentage of sites compressing JavaScript resources with gzip or brotli.",
-  description="Bar chart showing 67%/65% of JavaScript resources are compressed with gzip on desktop and mobile respectively, and 15%/14% are compressed using Brotli.",
+  caption="Percentage of sites compressing JavaScript resources with Gzip or Brotli.",
+  description="Bar chart showing 67%/65% of JavaScript resources are compressed with Gzip on desktop and mobile respectively, and 15%/14% are compressed using Brotli.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=241928028&format=interactive"
   )
 }}
