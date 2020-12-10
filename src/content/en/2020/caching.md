@@ -20,7 +20,7 @@ featured_stat_label_1: HTTP responses with no caching information
 featured_stat_2: 21.4%
 featured_stat_label_2: Responses that cannot be revalidated
 featured_stat_3: 21.3%
-featured_stat_label_3: Sites that could save over 2MB on repeat visits with better caching
+featured_stat_label_3: Sites that could save over 2 MB on repeat visits with better caching
 unedited: true
 ---
 
