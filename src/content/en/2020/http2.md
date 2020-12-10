@@ -460,7 +460,7 @@ As can be seen from the Figure 20.17 below, a very small percentage of sites use
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Pages using HTTP/2 or gQUIC server push.", sheets_gid="698874709", sql_file="number_of_h2_and_h3_pushed_resources_and_avg_bytes.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Pages using HTTP/2 or gQUIC server push.", sheets_gid="698874709", sql_file="number_of_h2_and_h3_pushed_resources_and_bytes_transferred.sql") }}</figcaption>
 </figure>
 
 Looking further at the distributions for pushed assets in Figures 22.18 and 22.19, half of the sites push 4 or fewer resources with a total size of 140 KB on desktop and 3 or fewer resources with a size of 184 KB on mobile. For gQUIC, desktop is 7 or fewer and mobile 2. The worst offending page pushes _41 assets_ over gQUIC on desktop.
@@ -514,7 +514,7 @@ Looking further at the distributions for pushed assets in Figures 22.18 and 22.1
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Distribution of pushed assets on desktop.", sheets_gid="698874709", sql_file="number_of_h2_and_h3_pushed_resources_and_avg_bytes.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Distribution of pushed assets on desktop.", sheets_gid="698874709", sql_file="number_of_h2_and_h3_pushed_resources_and_bytes_transferred.sql") }}</figcaption>
 </figure>
 
 <figure>
@@ -566,7 +566,7 @@ Looking further at the distributions for pushed assets in Figures 22.18 and 22.1
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Distribution of pushed assets on mobile.", sheets_gid="698874709", sql_file="number_of_h2_and_h3_pushed_resources_and_avg_bytes.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Distribution of pushed assets on mobile.", sheets_gid="698874709", sql_file="number_of_h2_and_h3_pushed_resources_and_bytes_transferred.sql") }}</figcaption>
 </figure>
 
 
