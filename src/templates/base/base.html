@@ -786,11 +786,7 @@
   {%- if video != "" %}
   <iframe class="fig-mobile fig-desktop video-embed" src="{{ video }}" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen width="{{ video_width }}" height="{{ video_height }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description"></iframe>
   {%- endif %}
-  {%- if not ebook and object != "" %}
-  <object type="image/svg+xml" data="{{ image }}">
-    {{ image }}
-  </object>
-  {%- elif image != "" %}
+  {%- if image != "" %}
   {% if video %}{% set anchor_class="video-fallback-image"%}{% endif %}
   <a href="{{ link }}"  class="{{ anchor_class }}">
     {%- if chart_url != "" %}
