@@ -364,7 +364,7 @@ What's surprising is the relatively the same number of good TTFB results between
 
 ## Performance Observer usage
 
-There are dozens of different user-centric metrics that can be used to assess websites and applications. However, sometimes the predefined metrics don't quite fit our specific scenarios and needs. The [PerformanceObserver API](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver) allows us to obtain custom metric data obtained with [User Timing API](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API), [Long Task API](https://developer.mozilla.org/en-US/docs/Web/API/Long_Tasks_API), Event Timing API and [a handful of other low-level APIs](https://web.dev/custom-metrics/). For example, with their help, we could record the timing transitions between pages or quantify server-side-rendered (SSR) application hydration.
+There are dozens of different user-centric metrics that can be used to assess websites and applications. However, sometimes the predefined metrics don't quite fit our specific scenarios and needs. The [PerformanceObserver API](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver) allows us to obtain custom metric data obtained with [User Timing API](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API), [Long Task API](https://developer.mozilla.org/en-US/docs/Web/API/Long_Tasks_API), [Event Timing API](https://web.dev/custom-metrics/#event-timing-api) and [a handful of other low-level APIs](https://web.dev/custom-metrics/). For example, with their help, we could record the timing transitions between pages or quantify server-side-rendered (SSR) application hydration.
 
 {{ figure_markup(
   image="performance-performance-observer-usage.png",
