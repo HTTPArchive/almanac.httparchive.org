@@ -19,7 +19,7 @@ featured_stat_label_1: HTTP responses with no caching information
 featured_stat_2: 21.4%
 featured_stat_label_2: Responses that cannot be revalidated
 featured_stat_3: 21.3%
-featured_stat_label_3: Sites that could save over 2MB on repeat visits with better caching
+featured_stat_label_3: Sites that could save over 2 MB on repeat visits with better caching
 unedited: true
 ---
 
@@ -69,7 +69,7 @@ Below figure shows how a typical request/response flow works for an object (e.g.
 
 {{ figure_markup(
   image="request-response-flow-with-caching.png",
-  link="https://almanac.httparchive.org/static/images/2020/caching/0_request_response_flow_with_caching.png",
+  link="https://almanac.httparchive.org/static/images/2020/caching/request-response-flow-with-caching.png",
   caption="Request/response flow for an object.",
   description="Sequence diagram showing the usage of cache in a typical request/response flow for an object."
   )
@@ -546,7 +546,7 @@ When a response is cached, its entire set of response headers are included with 
 
 {{ figure_markup(
   image="chrome-dev-tools.png",
-  link="https://almanac.httparchive.org/static/images/2020/caching/7a_chrome_dev_tools.png",
+  link="https://almanac.httparchive.org/static/images/2020/caching/chrome-dev-tools.png",
   caption="Chrome Dev Tools for a cached resource.",
   description="Chrome Dev Tools showing that When a response is cached, its entire set of response headers are included with the cached object as well."
   )
@@ -799,7 +799,7 @@ The graphs below illustrate the relative age of resources by content type. Some 
   description="A stack bar chart showing the age of content, split into weeks 0-52, > one year and > two years with null and negative figures shown too. The stats are split into first-party and third-party. The value 0 is used most particularly for first-party HTML, text and xml, and for up to 50% of third-party requests across all assets types. There is a mix using intermediary years and then considerable usage for one year and two year.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=2056330432&format=interactive",
   sheets_gid="1889235328",
-  sql_file="14_resource_age_party_and_type_wise_groups.sql"
+  sql_file="resource_age_party_and_type_wise_groups.sql"
   )
 }}
 
@@ -809,7 +809,7 @@ The graphs below illustrate the relative age of resources by content type. Some 
   description="A stack bar chart showing the age of content, split into weeks 0-52, > one year and > two years with null and negative figures shown too. The stats are split into first-party and third-party. The value 0 is used most particularly for first-party HTML, text and xml, and for up to 50% of third-party requests across all assets types. There is a mix using intermediary years and then considerable usage for one year and two year.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=2056330432&format=interactive",
   sheets_gid="1889235328",
-  sql_file="15_resource_age_party_and_type_wise_groups.sql"
+  sql_file="resource_age_party_and_type_wise_groups.sql"
   )
 }}
 
@@ -859,7 +859,7 @@ Google's [Lighthouse](https://developers.google.com/web/tools/lighthouse) tool e
 
 {{ figure_markup(
   image="lighthouse-caching-audit.png",
-  link="https://almanac.httparchive.org/static/images/2020/caching/16_lighthouse_caching_audit.png",
+  link="https://almanac.httparchive.org/static/images/2020/caching/lighthouse-caching-audit.png",
   caption="Lighthouse report highlighting potential cache policy improvements.",
   description="Extract of the Lighthouse report highlighting potential cache policy improvements. The first and third party URLs, their cache TTL, and size is shown."
   )
