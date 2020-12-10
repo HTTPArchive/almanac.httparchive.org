@@ -18,14 +18,13 @@ featured_stat_2: 37.22%
 featured_stat_label_2: Percentage of unused JS on mobile
 featured_stat_3: 12.2%
 featured_stat_label_3: Percentage of scripts loaded asynchronously
-unedited: true
 ---
 
 ## Introduction
 
 JavaScript has come a long way from its humble origins as the last of the three web cornerstones, alongside CSS and HTML. Today, JavaScript has started to infiltrate a broad spectrum of the technical stack. JavaScript is no longer confined to the client-side—it's an increasingly popular choice for build tools and server-side scripting, and is creeping its way into the CDN layer as well thanks to edge computing solutions.
 
-Developers love us some JavaScript. According to the Markup chapter, the `script` element is the [6th most popular HTML element](./markup) in use (ahead of elements like `p`'s and `i`'s, among countless others). We spend around 14x as many bytes on it as we do on HTML, the building block of the web, and 6x as many bytes as CSS.
+Developers love us some JavaScript. According to the Markup chapter, the `script` element is the [6th most popular HTML element](./markup) in use (ahead of elements like `p` and `i`, among countless others). We spend around 14 times as many bytes on it as we do on HTML, the building block of the web, and 6 times as many bytes as CSS.
 
 {{ figure_markup(
   image="page-weight-per-content-type.png",
@@ -36,23 +35,24 @@ Developers love us some JavaScript. According to the Markup chapter, the `script
 
 But nothing is free, and that's especially true for JavaScript—all that code has a cost. Let's dig in and take a closer look at how much script we use, how we use it, and what the fallout is.
 
-## How much JavaScript Do We Use?
-We mentioned that the script tag is the 6th most used HTML element. Let's dig in a bit deeper to see just how much JavaScript that actually amounts to.
+## How much JavaScript do we use?
 
-The median site (the 50th percentile) sends 444kb of JavaScript when loaded on a desktop device, and slightly less (411kb) to a mobile device.
+We mentioned that the `script` tag is the 6th most used HTML element. Let's dig in a bit deeper to see just how much JavaScript that actually amounts to.
+
+The median site (the 50th percentile) sends 444 KB of JavaScript when loaded on a desktop device, and slightly fewer (411 KB) to a mobile device.
 
 {{ figure_markup(
   image="page-weight-per-content-type.png",
-  caption="Distribution of the amount of JavaScript bytes loaded per page.",
+  caption="Distribution of the amount of JavaScript kilobytes loaded per page.",
   description="Bar chart showing the distribution of JavaScript bytes per page by about 10%. Desktop pages consistently load more JavaScript bytes than mobile pages. The 10th, 25th, 50th, 75th, and 90th percentiles for desktop are: 87 KB, 209 KB, 444 KB, 826 KB, and 1,322 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=441749673&format=interactive",
   sheets_gid="2139688512",
   sql_file="bytes_2020.sql"
 ) }}
 
-It's a bit disappointing that there isn't a bigger gap here. While it's dangerous to make too many assumptions about network or processing power based on whether the device in use is a phone or a desktop (or somewhere in between), it's worth noting that HTTP Archive mobile tests are done by emulating a Moto G4 and a 3G network. In other words, if there was any work being done adapt to less than ideal circumstances by passing down less code, these tests should be showing it.
+It's a bit disappointing that there isn't a bigger gap here. While it's dangerous to make too many assumptions about network or processing power based on whether the device in use is a phone or a desktop (or somewhere in between), it's worth noting that [HTTP Archive mobile tests](./methodology#webpagetest) are done by emulating a Moto G4 and a 3G network. In other words, if there was any work being done to adapt to less-than-ideal circumstances by passing down less code, these tests should be showing it.
 
-The trend also seems to be in favor of using more JavaScript, not less. Comparing to last year's results, at the median we see a 13.6% increase in JavaScript as tested on a desktop device, and a 14.5% increase in the amount of JavaScript sent to a mobile device.
+The trend also seems to be in favor of using more JavaScript, not less. Comparing to [last year's results](../2019/javascript#how-much-javascript-do-we-use), at the median we see a 13.4% increase in JavaScript as tested on a desktop device, and a 14.4% increase in the amount of JavaScript sent to a mobile device.
 
 <figure>
   <table>
@@ -81,14 +81,14 @@ The trend also seems to be in favor of using more JavaScript, not less. Comparin
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Year-over-year change in the median number of JavaScript bytes per page.",
+      caption="Year-over-year change in the median number of JavaScript kilobytes per page.",
       sheets_gid="86213362",
       sql_file="bytes_2020.sql"
     ) }}
   </figcaption>
 </figure>
 
-At least some of this weight seems to be unnecessary. If we look at a breakdown of how much of that JavaScript is unused on any given page load, we see that the median page is shipping 152kb of unused JavaScript. That number jumps to 334kb at the 75th percentile and 567kb at the 90th percentile.
+At least some of this weight seems to be unnecessary. If we look at a breakdown of how much of that JavaScript is unused on any given page load, we see that the median page is shipping 152 KB of unused JavaScript. That number jumps to 334 KB at the 75th percentile and 567 KB at the 90th percentile.
 
 {{ figure_markup(
   image="unused-js-bytes-distribution.png",
@@ -111,7 +111,8 @@ As raw numbers, those may or may not jump out at you depending on how much of a 
 
 That 153 KB equates to ~37% of the total script size that we send down to mobile devices. There's definitely some room for improvement here.
 
-### Request Count
+### Request count
+
 Another way of looking at how much JavaScript we use is to explore how many JavaScript requests are made on each page. While reducing the number of requests was paramount to maintaining good performance with HTTP/1.1, with HTTP/2 the opposite is the case: breaking JavaScript down into [smaller, individual files](https://web.dev/granular-chunking-nextjs/) is [typically better for performance](../2019/http2#impact-of-http2).
 
 {{ figure_markup(
@@ -123,7 +124,7 @@ Another way of looking at how much JavaScript we use is to explore how many Java
   sql_file="requests_2020.sql"
 ) }}
 
-At the median, pages make 20 JavaScript requests. That's only a minor increase over last year where the median page made 19.
+At the median, pages make 20 JavaScript requests. That's only a minor increase over last year, when the median page made 19 JavaScript requests.
 
 {{ figure_markup(
   image="requests-2019.png",
@@ -135,11 +136,12 @@ At the median, pages make 20 JavaScript requests. That's only a minor increase o
 ) }}
 
 ## Where does it come from?
+
 One trend that likely contributes to the increase in JavaScript used on our pages is the seemingly ever-increasing amount of third-party scripts that get added to pages to help with everything from client-side A/B testing and analytics, to serving ads and handling personalization.
 
 Let's drill into that a bit to see just how much third-party script we're serving up.
 
-Right up until the median, sites serve roughly the same number of first-party scripts as they do third-party scripts—at the median, 9 scripts per page are first-party compared to 10 per page from third-parties. From there, the gap widens a bit—the more scripts a site serves in the total, the more likely it is that the majority of those scripts are from third-party sources.
+Right up until the median, sites serve roughly the same number of first-party scripts as they do third-party scripts. At the median, 9 scripts per page are first-party, compared to 10 per page from third-parties. From there, the gap widens a bit: the more scripts a site serves in the total, the more likely it is that the majority of those scripts are from third-party sources.
 
 {{ figure_markup(
   image="requests-by-3p-desktop.png",
@@ -159,7 +161,7 @@ Right up until the median, sites serve roughly the same number of first-party sc
   sql_file="requests_by_3p.sql"
 ) }}
 
-While the amount of JavaScript requests are similar at the median, the actual size of those scripts is weighted (pun intended) a bit more heavily toward third-party sources. The median site sends 267kb of JavaScript from third-parties to desktop devices compared to 147kb from first-parties. The situation is very similar on mobile, where the median site ships 255kb of third-party scripts compared to 134kb of first-party scripts.
+While the amount of JavaScript requests are similar at the median, the actual size of those scripts is weighted (pun intended) a bit more heavily toward third-party sources. The median site sends 267 KB of JavaScript from third-parties to desktop devices ,compared to 147 KB from first-parties. The situation is very similar on mobile, where the median site ships 255 KB of third-party scripts compared to 134 KB of first-party scripts.
 
 
 {{ figure_markup(
@@ -183,7 +185,7 @@ While the amount of JavaScript requests are similar at the median, the actual si
 ## How do we load our JavaScript?
 The way we load JavaScript has a significant impact on the overall experience.
 
-JavaScript, by default, is parser blocking. In other words, when the browser discovers a script element, it must pause parsing of the HTML until the script has been downloaded, parsed and executed. It's a significant bottleneck and a common contributor to pages that are slow to render.
+JavaScript, by default, is _parser-blocking_. In other words, when the browser discovers a script element, it must pause parsing of the HTML until the script has been downloaded, parsed and executed. It's a significant bottleneck and a common contributor to pages that are slow to render.
 
 We can start to offset some of the cost of loading JavaScript by loading scripts either asynchronously (which only halts the HTML parser during the parse and execution phases, but not during the download phase) or deferred (which doesn't halt the HTML parser at all). Both attributes are only available on external scripts—inline scripts cannot have them applied.
 
