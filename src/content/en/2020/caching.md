@@ -340,7 +340,7 @@ When the server receives the request for the file, it can include the date/time 
 < <span class="keyword">Last-Modified: Mon, 20 Jul 2020 11:43:22 GMT</span>
 < Cache-Control: max-age=600
 
-< <html>...lots of html here...</html></code></pre>
+...lots of html here...</code></pre>
 
 The browser will cache this object for 600 seconds (as defined in the `Cache-Control` header), after which it will mark the object as stale. If the browser needs to use the file again, it requests the file from the server just as it did initially, but this time it includes an additional request header, called `If-Modified-Since`, which it sets to the value that was passed in the `Last-Modified` response header in the initial response:
 
@@ -367,7 +367,7 @@ However, if the file on the server has changed since it was last requested by th
 < Last-Modified: Thu, 23 Jul 2020 03:12:42 GMT
 < Cache-Control: max-age=600
 
-< <html>...lots of html here...</html></code></pre>
+...lots of html here...</code></pre>
 
 As you can see, the `Last-Modified` response header and `If-Modified-Since` request header work as a pair.
 
@@ -385,7 +385,7 @@ In this example, when the server receives the initial request for the file, it c
 < ETag: "v123.4.01"
 < Cache-Control: max-age=600
 
-< <html>...lots of html here...</html></code></pre>
+...lots of html here...</code></pre>
 
 As with the `If-Modified-Since` example above, the browser will cache this object for 600 seconds, as defined in the `Cache-Control` header. When it needs to request the object from the server again, it includes an additional request header, called `If-None-Match`, which has the value passed in the `ETag` response header in the initial response:
 
@@ -411,7 +411,7 @@ However, if the values are different, then the version of the file on the server
 < ETag: "v123.5.06"
 < Cache-Control: public, max-age=600
 
-< <html>...lots of html here...<html></code></pre>
+...lots of html here...</code></pre>
 
 Again, we see a pair of headers being used for this conditional request processing - the `ETag` response header and the `If-None-Match` request header.
 
@@ -560,7 +560,7 @@ Since we have primarily been talking about browser caching, you may think this i
 
 For example, if a login cookie or a session cookie is present in a CDN's cached object, then that cookie could potentially be reused by another client. The primary way to avoid this is for the server to send the `Cache-Control: private` directive, which tells the CDN not to cache the response, because it may only be cached by the client browser.
 
-41.4%% of cacheable responses contain a `Set-Cookie` header. Of those responses, only 4.6% use the `private` directive. The remaining 95.4% (189.2 million HTTP responses) contain at least one `Set-Cookie` response header and can be cached by both public cache servers, such as CDNs. This is concerning and may indicate a continued lack of understanding about how cacheability and cookies coexist.
+41.4% of cacheable responses contain a `Set-Cookie` header. Of those responses, only 4.6% use the `private` directive. The remaining 95.4% (189.2 million HTTP responses) contain at least one `Set-Cookie` response header and can be cached by both public cache servers, such as CDNs. This is concerning and may indicate a continued lack of understanding about how cacheability and cookies coexist.
 
 {{ figure_markup(
   image="set-cookie-usage-on-cacheable-responses.png",
@@ -897,12 +897,12 @@ Lighthouse also indicates how many bytes could be saved on repeat views by enabl
 
 Caching is an incredibly powerful feature that allows browsers, proxies and other intermediaries (such as CDNs) to store web content and serve it to end users. The performance benefits of this are significant, since it reduces round trip times and minimizes costly network requests.
 
-Caching is also a very complex topic, and one that is often left until late in the development cycle (due to requirements to see the very latest version of a site while it is still being designed), then being added in at the last minute. Additionally, caching rules are often defined once and then never changed, even as the underlying content on a site changes. Frequently a default value is chosen without careful consideration.
+Caching is also a very complex topic, and one that is often left until late in the development cycle (due to requirements by site developers to see the very latest version of a site while it is still being designed), then being added in at the last minute. Additionally, caching rules are often defined once and then never changed, even as the underlying content on a site changes. Frequently a default value is chosen without careful consideration.
 
 To correctly cache objects, there are numerous HTTP response headers that can convey freshness as well as validate cached entries, and `Cache-Control` directives provide a tremendous amount of flexibility and control.
 
-Many object types and content that are typically considered to be uncacheable can actually be cached (remember: *cache as much as you can!*) and many objects are cached for too short a period of time, requiring repeated requests and revalidation (remember: cache for as long as you can!).However, website developers should be cautious about the additional opportunities for mistakes that come with over-caching content.
+Many object types and content that are typically considered to be uncacheable can actually be cached (remember: *cache as much as you can!*) and many objects are cached for too short a period of time, requiring repeated requests and revalidation (remember: *cache for as long as you can!*). However, website developers should be cautious about the additional opportunities for mistakes that come with over-caching content.
 
-If the site is intended to be served through a CDN, additional opportunities for caching at the CDN to reduce server load and provide faster response to end-users should be considered, along with the related risks of accidentally caching private information.
+If the site is intended to be served through a CDN, additional opportunities for caching at the CDN to reduce server load and provide faster response to end-users should be considered, along with the related risks of accidentally caching private information, such as cookies.
 
-However, 'powerful' and 'complex' do not imply 'difficult' - like most everything else, caching is controlled by rules which can be defined fairly easily to provide the best mix of cacheability and privacy. Regularly auditing your site to ensure that cacheable resources are cached appropriately is recommended, and tools like [Lighthouse](https://developers.google.com/web/tools/lighthouse) and [REDbot](https://redbot.org/) do an excellent job of helping to simplify such an analysis.
+However, 'powerful' and 'complex' do not imply 'difficult' - like most everything else, caching is controlled by rules which can be defined fairly easily to provide the best mix of cacheability and privacy. Regularly auditing your site to ensure that cacheable resources are cached appropriately is recommended, and tools like [Lighthouse](https://developers.google.com/web/tools/lighthouse) do an excellent job of helping to simplify such an analysis.
