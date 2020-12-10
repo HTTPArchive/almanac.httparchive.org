@@ -140,9 +140,9 @@ Tooltips also introduce a host of other accessibility barriers such as informati
 {{ figure_markup(
   caption="The longest known alt text length.",
   content="15,357,625",
-  classes="big-number",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  classes="medium-number",
+  sheets_gid="1881074528",
+  sql_file="alt_text_length.sql"
 ) }}
 
 - The median length for both desktop and mobile `alt` text is 18 characters. With the average English word length being 4.7 characters, this means the median alt attribute value is 3-4 words long. Depending on the image, being terse can be beneficial. However it is hard to imagine 4 words being sufficient for an accurate description of an image with any complexity.
