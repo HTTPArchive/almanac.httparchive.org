@@ -1484,7 +1484,9 @@ pre {
   margin-bottom: 20px;
 }
 
-pre code {
+pre code,
+td code,
+th code  {
   border: 0;
   padding: 0;
   margin: 0;
