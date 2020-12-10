@@ -1,5 +1,4 @@
 ---
-#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 part_number: I
 chapter_number: 2
 title: JavaScript
@@ -12,7 +11,7 @@ tkadlec_bio: Tim is a web performance consultant and trainer focused on building
 discuss: 2038
 results: https://docs.google.com/spreadsheets/d/1cgXJrFH02SHPKDGD0AelaXAdB3UI7PIb5dlS0dxVtfY/
 queries: 02_JavaScript
-#featured_quote: TODO
+featured_quote: JavaScript has come a long way from its humble origins as the last of the three web cornerstones—alongside CSS and HTML. Today, JavaScript has started to infiltrate a broad spectrum of the technical stack. JavaScript is no longer confined to the client-side—it's an increasingly popular choice for build tools and server-side scripting, and is creeping its way into the CDN layer as well thanks to edge computing solutions.
 featured_stat_1: 1,897ms
 featured_stat_label_1: Median JS main thread time on mobile
 featured_stat_2: 37.22%
@@ -21,10 +20,12 @@ featured_stat_3: 12.2%
 featured_stat_label_3: Percentage of scripts loaded asynchronously
 unedited: true
 ---
-## Introduction
-JavaScript has come a long way from its humble origins as the last of the three web cornerstones—alongside CSS and HTML. Today, JavaScript has started to infiltrate a broad spectrum of the technical stack. JavaScript is no longer confined to the client-side—it's an increasingly popular choice for build tools and server-side scripting, and is creeping its way into the CDN layer as well thanks to edge computing solutions.
 
-Developers love us some JavaScript. The [`script` element is the 6th most popular HTML element in use](https://almanac.httparchive.org/en/2020/markup) (ahead of elements like `p`'s and `i`'s, among countless others). We spend around 14x as many bytes on it as we do on HTML, the building block of the web, and 6x as many bytes as CSS.
+## Introduction
+
+JavaScript has come a long way from its humble origins as the last of the three web cornerstones, alongside CSS and HTML. Today, JavaScript has started to infiltrate a broad spectrum of the technical stack. JavaScript is no longer confined to the client-side—it's an increasingly popular choice for build tools and server-side scripting, and is creeping its way into the CDN layer as well thanks to edge computing solutions.
+
+Developers love us some JavaScript. According to the Markup chapter, the `script` element is the [6th most popular HTML element](https://almanac.httparchive.org/en/2020/markup) in use (ahead of elements like `p`'s and `i`'s, among countless others). We spend around 14x as many bytes on it as we do on HTML, the building block of the web, and 6x as many bytes as CSS.
 
 {{ figure_markup(
   image="page-weight-per-content-type.png",
