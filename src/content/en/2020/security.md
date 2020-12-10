@@ -227,7 +227,7 @@ Looking at the different values for this attribute, we can clearly see that the 
 {{ figure_markup(
   caption="The largest known HSTS max-age.",
   content="1,000,000,000,000,000 years",
-  classes="medium-number",
+  classes="really-big-number",
   sheets_gid="560555207",
   sql_file="hsts_attributes.sql"
 )
