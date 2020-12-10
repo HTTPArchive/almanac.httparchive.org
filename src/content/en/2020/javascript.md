@@ -266,26 +266,26 @@ Minification is a great way to help reduce file size, but compression is even mo
 {{ figure_markup(
   image="compression-method-request.png",
   caption="Distribution of the percent of JavaScript requests by compression method.",
-  description="Bar chart showing the distribution of the percent of JavaScript requests by compression method. Desktop and mobile values are very similar. 65% of JavaScript requests use gzip compression, 20% use br (brotli), 15% don't use any compression, and deflate, UTF-8, identity, and none appear as having 0%",
+  description="Bar chart showing the distribution of the percent of JavaScript requests by compression method. Desktop and mobile values are very similar. 65% of JavaScript requests use Gzip compression, 20% use br (Brotli), 15% don't use any compression, and deflate, UTF-8, identity, and none appear as having 0%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=263239275&format=interactive",
   sheets_gid="1270710983",
   sql_file="compression_method.sql"
 ) }}
 
-85% of all JavaScript requests have some level of network compression applied. GZip makes up the majority of that, with 65% of scripts having GZip compression applied compared to 20% for Brotli. While the percentage of Brotli (which is more effective than GZip) is low compared to its browser support, it's trending in the right direction, increasing by 5 percentage points in the last year.
+85% of all JavaScript requests have some level of network compression applied. Gzip makes up the majority of that, with 65% of scripts having Gzip compression applied compared to 20% for Brotli. While the percentage of Brotli (which is more effective than Gzip) is low compared to its browser support, it's trending in the right direction, increasing by 5 percentage points in the last year.
 
 Once again, this appears to be an area where third-party scripts are actually doing better than first-party scripts. If we break the compression methods out by first and third-party, we see that 24% of third-party scripts have Brotli applied compared to only 15% of third-party scripts.
 
 {{ figure_markup(
   image="compression-method-3p.png",
   caption="Distribution of the percent of mobile JavaScript requests by compression method and host.",
-  description="Bar chart showing the distribution of the percent of mobile JavaScript requests by compression method and host. 66% and 64% of first and third party JavaScript requests use gzip. 15% of first party and 24% of third party scripts requests use brotli. And 19% of first party and 12% of third party scripts do not have a compression method set.",
+  description="Bar chart showing the distribution of the percent of mobile JavaScript requests by compression method and host. 66% and 64% of first and third party JavaScript requests use Gzip. 15% of first party and 24% of third party scripts requests use Brotli. And 19% of first party and 12% of third party scripts do not have a compression method set.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=1402692197&format=interactive",
   sheets_gid="564760060",
   sql_file="compression_method_by_3p.sql"
 ) }}
 
-Third-party scripts are also less likely to be served without any compression at all: 12% of third-party scripts have neither GZip nor Brotli applied, compared to 19% of first-party scripts.
+Third-party scripts are also less likely to be served without any compression at all: 12% of third-party scripts have neither Gzip nor Brotli applied, compared to 19% of first-party scripts.
 
 It's worth taking a closer look those scripts that _don't_ have compression applied. Compression becomes more efficient in terms of savings the more content it has to work with. In other words, if the file is tiny, sometimes the cost of compressing the file doesn't outweight the miniscule reduction in file size.
 
