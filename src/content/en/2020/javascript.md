@@ -303,7 +303,7 @@ The popular libraries in use are largely unchanged from last year, with jQuery c
 
 {# table? showing rank, library, percentage and last years rank #}
 
-Last year, [Houssein posited a few reasons for why jQuery's dominance continues](../2019/javascript/#open-source-libraries-and-frameworks):
+Last year, [Houssein posited a few reasons for why jQuery's dominance continues](../2019/javascript#open-source-libraries-and-frameworks):
 
 > WordPress, which is used in more than 30% of sites, includes jQuery by default.
 > Switching from jQuery to a newer client-side library can take time depending on how large an application is, and many sites may consist of jQuery in addition to newer client-side libraries.
