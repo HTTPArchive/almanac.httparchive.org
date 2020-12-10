@@ -3,7 +3,7 @@
 part_number: IV
 chapter_number: 20
 title: Caching
-description: Caching chapter of the 2020 Web Almanac covering cache-control, expires, TTLs, validitaty, vary, set-cookies, AppCache, Service Workers and opportunities.
+description: Caching chapter of the 2020 Web Almanac covering cache-control, expires, TTLs, validity, vary, set-cookies, AppCache, Service Workers and opportunities.
 authors: [roryhewitt, raghuramakrishnan71]
 reviewers: [jzyang]
 analysts: [raghuramakrishnan71]
