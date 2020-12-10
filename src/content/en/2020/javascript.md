@@ -260,9 +260,9 @@ At the median, pages that use a `prefetch` hint to load JavaScript use three, wh
 
 ## How do we serve JavaScript?
 
-As with any text-based resource on the web, we can save significant file savings through minimization and compression. Neither of these are new optimizations—they've been around for quite awhile—so we should expect to see them applied in more cases than not.
+As with any text-based resource on the web, we can save a significant number of bytes through minimization and compression. Neither of these are new optimizations—they've been around for quite awhile—so we should expect to see them applied in more cases than not.
 
-One of the audits in Lighthouse checks for unminified JavaScript, and provides a score (0 being the worst, 100 being the best) based on the findings.
+One of the audits in [Lighthouse](./methodology#lighthouse) checks for unminified JavaScript, and provides a score (0.00 being the worst, 1.00 being the best) based on the findings.
 
 {{ figure_markup(
   image="lighthouse-unminified-js.png",
@@ -273,11 +273,11 @@ One of the audits in Lighthouse checks for unminified JavaScript, and provides a
   sql_file="lighthouse_unminified_js.sql"
 ) }}
 
-The chart above shows that most pages tested (77%) get a score of 90 or above, meaning that few unminified scripts are found.
+The chart above shows that most pages tested (77%) get a score of 0.90 or above, meaning that few unminified scripts are found.
 
 Overall, only 4.5% of the JavaScript requests recorded are unminified.
 
-Interestingly, while we've picked on 3rd party requests a bit, this is one area where third-party scripts are doing better than first-party scripts. 82% of the average mobile page's unminified JavaScript bytes come from first-party code.
+Interestingly, while we've picked on third-party requests a bit, this is one area where third-party scripts are doing better than first-party scripts. 82% of the average mobile page's unminified JavaScript bytes come from first-party code.
 
 {{ figure_markup(
   image="lighthouse-unminified-js-by-3p.png",
@@ -289,6 +289,7 @@ Interestingly, while we've picked on 3rd party requests a bit, this is one area 
 ) }}
 
 ### Compression
+
 Minification is a great way to help reduce file size, but compression is even more effective and, therefore, more important—it provides the bulk of network savings more often than not.
 
 {{ figure_markup(
@@ -300,9 +301,9 @@ Minification is a great way to help reduce file size, but compression is even mo
   sql_file="compression_method.sql"
 ) }}
 
-85% of all JavaScript requests have some level of network compression applied. Gzip makes up the majority of that, with 65% of scripts having Gzip compression applied compared to 20% for Brotli. While the percentage of Brotli (which is more effective than Gzip) is low compared to its browser support, it's trending in the right direction, increasing by 5 percentage points in the last year.
+85% of all JavaScript requests have some level of network compression applied. Gzip makes up the majority of that, with 65% of scripts having gzip compression applied compared to 20% for Brotli (br). While the percentage of Brotli (which is more effective than gzip) is low compared to its browser support, it's trending in the right direction, increasing by 5 percentage points in the last year.
 
-Once again, this appears to be an area where third-party scripts are actually doing better than first-party scripts. If we break the compression methods out by first and third-party, we see that 24% of third-party scripts have Brotli applied compared to only 15% of third-party scripts.
+Once again, this appears to be an area where third-party scripts are actually doing better than first-party scripts. If we break the compression methods out by first- and third-party, we see that 24% of third-party scripts have Brotli applied, compared to only 15% of third-party scripts.
 
 {{ figure_markup(
   image="compression-method-3p.png",
@@ -313,11 +314,19 @@ Once again, this appears to be an area where third-party scripts are actually do
   sql_file="compression_method_by_3p.sql"
 ) }}
 
-Third-party scripts are also less likely to be served without any compression at all: 12% of third-party scripts have neither Gzip nor Brotli applied, compared to 19% of first-party scripts.
+Third-party scripts are also least likely to be served without any compression at all: 12% of third-party scripts have neither gzip nor Brotli applied, compared to 19% of first-party scripts.
 
 It's worth taking a closer look those scripts that _don't_ have compression applied. Compression becomes more efficient in terms of savings the more content it has to work with. In other words, if the file is tiny, sometimes the cost of compressing the file doesn't outweight the miniscule reduction in file size.
 
-Thankfully, that's exactly what we see, particularly in third-party scripts where 90% of uncompressed scripts are less than 5kb in size. On the other hand, 49% of uncompressed first-party scripts are less than 5kb and 37% of uncompressed first-party scripts are over 10kb. So while we do see a lot of small uncompressed first-party scripts, there are still quite a few that would benefit from some compression.
+{{ figure_markup(
+  caption="Percent of uncompressed third-party JavaScript requests under 5 KB.",
+  content="90.25%",
+  classes="big-number",
+  sheets_gid="347926930",
+  sql_file="compression_none_by_bytes.sql"
+) }}
+
+Thankfully, that's exactly what we see, particularly in third-party scripts where 90% of uncompressed scripts are less than 5 KB in size. On the other hand, 49% of uncompressed first-party scripts are less than 5 KB and 37% of uncompressed first-party scripts are over 10 KB. So while we do see a lot of small uncompressed first-party scripts, there are still quite a few that would benefit from some compression.
 
 ## What do we use?
 As we've increasingly used more JavaScript to power our sites and applications, there has also been an increasing demand for open-source libraries and frameworks to help with improving developer productivity and overall code maintainability. Sites that _don't_ wield one of these tools are definitely the minority on today's web—jQuery alone is found on nearly 85% of the mobile pages tracked by HTTP Archive.
