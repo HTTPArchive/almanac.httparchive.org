@@ -197,7 +197,7 @@ Table captions act as a label for the table supplying context for the table data
 
 #### Presentational tables
 
-We are fortunate in 2020 to have so many flexible CSS methodologies that allow for fluid responsive layouts. However, many years ago before the likes of flexbox and CSS Grid, developers often used tables for layout. Unfortunately due to some combination of legacy websites and legacy development techniques there are still sites out there where tables are used for layout.
+We are fortunate in 2020 to have so many flexible CSS methodologies that allow for fluid responsive layouts. However, many years ago before the likes of Flexbox and CSS Grid, developers often used tables for layout. Unfortunately due to some combination of legacy websites and legacy development techniques there are still sites out there where tables are used for layout.
 
 If there is an absolute need to reach for this technique, the role of presentation should be applied to the table such that assistive technology will ignore the table semantics. We found that 0.063% of desktop and 0.049% of mobile pages had a table with a role of presentation. It’s hard to know if this is good or bad. It could indicate that there are not many tables used for presentational purposes, but it is very likely that tables used for layout are just lacking this needed role.
 
