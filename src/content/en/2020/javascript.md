@@ -23,9 +23,13 @@ unedited: true
 
 ## Introduction
 
+<<<<<<< HEAD
 JavaScript has come a long way from its humble origins as the last of the three web cornerstones, alongside CSS and HTML. Today, JavaScript has started to infiltrate a broad spectrum of the technical stack. JavaScript is no longer confined to the client-side—it's an increasingly popular choice for build tools and server-side scripting, and is creeping its way into the CDN layer as well thanks to edge computing solutions.
 
 Developers love us some JavaScript. According to the Markup chapter, the `script` element is the [6th most popular HTML element](https://almanac.httparchive.org/en/2020/markup) in use (ahead of elements like `p`'s and `i`'s, among countless others). We spend around 14x as many bytes on it as we do on HTML, the building block of the web, and 6x as many bytes as CSS.
+=======
+Developers love us some JavaScript. The [`script` element is the 6th most popular HTML element in use](./markup) (ahead of elements like `p`'s and `i`'s, among countless others). We spend around 14x as many bytes on it as we do on HTML, the building block of the web, and 6x as many bytes as CSS.
+>>>>>>> main
 
 {{ figure_markup(
   image="page-weight-per-content-type.png",
@@ -112,7 +116,7 @@ As raw numbers, those may or may not jump out at you depending on how much of a 
 That 153 KB equates to ~37% of the total script size that we send down to mobile devices. There's definitely some room for improvement here.
 
 ### Request Count
-Another way of looking at how much JavaScript we use is to explore how many JavaScript requests are made on each page. While reducing the number of requests was paramount to maintaining good performance with HTTP/1.1, with HTTP/2 the opposite is the case: breaking JavaScript down into [smaller, individual files](https://web.dev/granular-chunking-nextjs/) is [typically better for performance](https://almanac.httparchive.org/en/2019/http2#impact-of-http2).
+Another way of looking at how much JavaScript we use is to explore how many JavaScript requests are made on each page. While reducing the number of requests was paramount to maintaining good performance with HTTP/1.1, with HTTP/2 the opposite is the case: breaking JavaScript down into [smaller, individual files](https://web.dev/granular-chunking-nextjs/) is [typically better for performance](../2019/http2#impact-of-http2).
 
 {{ figure_markup(
   image="requests-2020.png",
@@ -267,26 +271,26 @@ Minification is a great way to help reduce file size, but compression is even mo
 {{ figure_markup(
   image="compression-method-request.png",
   caption="Distribution of the percent of JavaScript requests by compression method.",
-  description="Bar chart showing the distribution of the percent of JavaScript requests by compression method. Desktop and mobile values are very similar. 65% of JavaScript requests use gzip compression, 20% use br (brotli), 15% don't use any compression, and deflate, UTF-8, identity, and none appear as having 0%",
+  description="Bar chart showing the distribution of the percent of JavaScript requests by compression method. Desktop and mobile values are very similar. 65% of JavaScript requests use Gzip compression, 20% use br (Brotli), 15% don't use any compression, and deflate, UTF-8, identity, and none appear as having 0%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=263239275&format=interactive",
   sheets_gid="1270710983",
   sql_file="compression_method.sql"
 ) }}
 
-85% of all JavaScript requests have some level of network compression applied. GZip makes up the majority of that, with 65% of scripts having GZip compression applied compared to 20% for Brotli. While the percentage of Brotli (which is more effective than GZip) is low compared to its browser support, it's trending in the right direction, increasing by 5 percentage points in the last year.
+85% of all JavaScript requests have some level of network compression applied. Gzip makes up the majority of that, with 65% of scripts having Gzip compression applied compared to 20% for Brotli. While the percentage of Brotli (which is more effective than Gzip) is low compared to its browser support, it's trending in the right direction, increasing by 5 percentage points in the last year.
 
 Once again, this appears to be an area where third-party scripts are actually doing better than first-party scripts. If we break the compression methods out by first and third-party, we see that 24% of third-party scripts have Brotli applied compared to only 15% of third-party scripts.
 
 {{ figure_markup(
   image="compression-method-3p.png",
   caption="Distribution of the percent of mobile JavaScript requests by compression method and host.",
-  description="Bar chart showing the distribution of the percent of mobile JavaScript requests by compression method and host. 66% and 64% of first and third party JavaScript requests use gzip. 15% of first party and 24% of third party scripts requests use brotli. And 19% of first party and 12% of third party scripts do not have a compression method set.",
+  description="Bar chart showing the distribution of the percent of mobile JavaScript requests by compression method and host. 66% and 64% of first and third party JavaScript requests use Gzip. 15% of first party and 24% of third party scripts requests use Brotli. And 19% of first party and 12% of third party scripts do not have a compression method set.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=1402692197&format=interactive",
   sheets_gid="564760060",
   sql_file="compression_method_by_3p.sql"
 ) }}
 
-Third-party scripts are also less likely to be served without any compression at all: 12% of third-party scripts have neither GZip nor Brotli applied, compared to 19% of first-party scripts.
+Third-party scripts are also less likely to be served without any compression at all: 12% of third-party scripts have neither Gzip nor Brotli applied, compared to 19% of first-party scripts.
 
 It's worth taking a closer look those scripts that _don't_ have compression applied. Compression becomes more efficient in terms of savings the more content it has to work with. In other words, if the file is tiny, sometimes the cost of compressing the file doesn't outweight the miniscule reduction in file size.
 
@@ -304,7 +308,7 @@ The popular libraries in use are largely unchanged from last year, with jQuery c
 
 {# table? showing rank, library, percentage and last years rank #}
 
-Last year, [Houssein posited a few reasons for why jQuery's dominance continues](https://almanac.httparchive.org/en/2019/javascript#open-source-libraries-and-frameworks):
+Last year, [Houssein posited a few reasons for why jQuery's dominance continues](../2019/javascript#open-source-libraries-and-frameworks):
 
 > WordPress, which is used in more than 30% of sites, includes jQuery by default.
 > Switching from jQuery to a newer client-side library can take time depending on how large an application is, and many sites may consist of jQuery in addition to newer client-side libraries.
@@ -637,7 +641,7 @@ Of the roughly 5 million or so mobile pages that are tested against, 81% of them
         <td class="numeric">13.19%</td>
       </tr>
       <tr>
-        <td>Lo-Dash</td>
+        <td>Lodash</td>
         <td class="numeric">4.90%</td>
       </tr>
       <tr>

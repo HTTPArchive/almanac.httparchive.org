@@ -265,7 +265,8 @@
     "lex111": {
       "name": "Alexey Pyltsyn",
       "teams": [
-        "translators"
+        "translators",
+        "editors"
       ],
       "avatar_url": "https://avatars3.githubusercontent.com/u/4408379?v=4&s=200",
       "website": "https://lex111.ru/",
@@ -295,7 +296,7 @@
       "teams": [
         "reviewers"
       ],
-      "avatar_url": "https://avatars1.githubusercontent.com/u/2914966?v=4&s=200",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/8672583?v=4&s=200",
       "website": "https://hankchizljaw.com/",
       "github": "hankchizljaw",
       "twitter": "hankchizljaw"
@@ -569,7 +570,7 @@
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/1746646?v=4&s=200",
       "github": "giopunt",
-      "twitter": "giopunt"
+      "twitter": "giovannipuntil"
     },
     "gokulkrishh": {
       "name": "Gokulakrishnan Kalaikovan",

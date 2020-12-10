@@ -13,7 +13,7 @@ mdiblasio_bio: Michael DiBlasio is Web Ecosystems Consultant at Google. He focus
 discuss: 2048
 results: https://docs.google.com/spreadsheets/d/1DGLY7UEWOlDL5_2dtS_j2eqMjiV-Rw5Fe2y6K6-ULvM/
 queries: 12_Mobile_Web
-featured_quote: Mobile Web has grown explosively in the last decade and is now the primary way many people experience the web. In spite of this, engagement and online sales still lag behind desktop. In this chapter, we take a look at recents trends on the mobile web and analyze why user journeys are often difficult to complete.
+featured_quote: Mobile Web has grown explosively in the last decade and is now the primary way many people experience the web. In spite of this, engagement and online sales still lag behind desktop. In this chapter, we take a look at recent trends on the mobile web and analyze why user journeys are often difficult to complete.
 featured_stat_1: 41.20%
 featured_stat_label_1: % pages with improperly sized images
 featured_stat_2: 60.1%
@@ -24,16 +24,16 @@ unedited: true
 ---
 
 ## Introduction
-Mobile Web has grown explosively in the last decade and is now the primary way many people experience the web. In spite of this, engagement and online sales still lag behind desktop. In this chapter, we take a look at recents trends on the mobile web and analyze why user journeys are often difficult to complete.
+Mobile Web has grown explosively in the last decade and is now the primary way many people experience the web. In spite of this, engagement and online sales still lag behind desktop. In this chapter, we take a look at recent trends on the mobile web and analyze why user journeys are often difficult to complete.
 
 2020 has seen a big surge in [internet usage](https://www.nytimes.com/interactive/2020/04/07/technology/coronavirus-internet-use.html), on both mobile and desktop, due to the global pandemic. There has been an uptick in visits to news sites, ecommerce and social media sites -- as people across the globe adjusted to a new lifestyle with stay-at-home orders and social distancing. 2020 has been a significant year in history, for the web and for mobile usage.
 
 ### Data sources
 We’ve used a few different data sources in this chapter:
 
-* [CrUX](https://almanac.httparchive.org/en/2020/methodology#chrome-ux-report)
-* [HTTP archive](https://almanac.httparchive.org/en/2020/methodology#dataset)
-* [Lighthouse](https://almanac.httparchive.org/en/2020/methodology#lighthouse)
+* [CrUX](./methodology#chrome-ux-report)
+* [HTTP archive](./methodology#dataset)
+* [Lighthouse](./methodology#lighthouse)
 
 Please visit the links above to learn more about the methodology and caveats with each data source.
 It is worth noting that HTTP Archive and Lighthouse data is limited to the data identified from websites’ home pages only, and not site-wide.

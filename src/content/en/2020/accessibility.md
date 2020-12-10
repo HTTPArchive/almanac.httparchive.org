@@ -140,9 +140,9 @@ Tooltips also introduce a host of other accessibility barriers such as informati
 {{ figure_markup(
   caption="The longest known alt text length.",
   content="15,357,625",
-  classes="big-number",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  classes="medium-number",
+  sheets_gid="1881074528",
+  sql_file="alt_text_length.sql"
 ) }}
 
 - The median length for both desktop and mobile `alt` text is 18 characters. With the average English word length being 4.7 characters, this means the median alt attribute value is 3-4 words long. Depending on the image, being terse can be beneficial. However it is hard to imagine 4 words being sufficient for an accurate description of an image with any complexity.
@@ -197,7 +197,7 @@ Table captions act as a label for the table supplying context for the table data
 
 #### Presentational tables
 
-We are fortunate in 2020 to have so many flexible CSS methodologies that allow for fluid responsive layouts. However, many years ago before the likes of flexbox and CSS Grid, developers often used tables for layout. Unfortunately due to some combination of legacy websites and legacy development techniques there are still sites out there where tables are used for layout.
+We are fortunate in 2020 to have so many flexible CSS methodologies that allow for fluid responsive layouts. However, many years ago before the likes of Flexbox and CSS Grid, developers often used tables for layout. Unfortunately due to some combination of legacy websites and legacy development techniques there are still sites out there where tables are used for layout.
 
 If there is an absolute need to reach for this technique, the role of presentation should be applied to the table such that assistive technology will ignore the table semantics. We found that 0.063% of desktop and 0.049% of mobile pages had a table with a role of presentation. It’s hard to know if this is good or bad. It could indicate that there are not many tables used for presentational purposes, but it is very likely that tables used for layout are just lacking this needed role.
 
