@@ -88,7 +88,7 @@ Environ 38&nbsp;% des réponses HTTP sont fournies avec de la compression de tex
         <td class="numeric">285,158,644</td>
       </tr>
       <tr>
-        <td><code><gzip</code></td>
+        <td><code>gzip</code></td>
         <td class="numeric">29,66&nbsp;%</td>
         <td class="numeric">30,95&nbsp;%</td>
         <td class="numeric">122,789,094</td>
