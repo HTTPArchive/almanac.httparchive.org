@@ -14,7 +14,7 @@ raghuramakrishnan71_bio: Enterprise architect at <a href="https://www.tcs.com/">
 discuss: 2056
 results: https://docs.google.com/spreadsheets/d/1fYmpSN3diOiFrscS75NsjfsrKXzxxhUMNcYSqXnQJQU/
 queries: 20_Caching
-#featured_quote: Caching benefits both the end users (they get their web pages quickly) and the companies serving the web pages (reducing the load on their servers). Caching really is a win-win!
+#featured_quote: Caching benefits both end users (they get their web pages quickly) and the companies serving web pages (reducing the load on their servers). Caching really is a win-win!
 #featured_stat_1: 25.6
 #featured_stat_label_1: Number of HTTP responses don't include any caching information, which means they're probably being cached wrongly
 #featured_stat_2: 21.4%
