@@ -627,15 +627,16 @@ As you would expect, there's a gap for all tools in use due to the lower process
 
 ## What's the impact?
 
-We have a pretty good picture now of how much JavaScript we use, where it comes from and what we use it for. While that's interesting enough on its own, the real kicker is the "so what?" What impact does all this script actually have on the experience of our pages?
+We have a pretty good picture now of how much JavaScript we use, where it comes from, and what we use it for. While that's interesting enough on its own, the real kicker is the "so what?" What impact does all this script actually have on the experience of our pages?
 
-The first thing we should consider is what happens with all that JavaScript once its been downloaded. Downloading is only the first part of the JavaScript journey. The browser still has to parse all that script, compile it, and eventually execute it. While browsers are increasingly finding ways to offload
+{# TODO(authors): Was there something you wanted to add at the end of this paragraph? "While browsers are increasingly finding ways to offload"... #}
+The first thing we should consider is what happens with all that JavaScript once its been downloaded. Downloading is only the first part of the JavaScript journey. The browser still has to parse all that script, compile it, and eventually execute it.
 
-If you recall, there was only a 30kb difference between what is shipped to a mobile device versus a desktop device. Depending on your point of view, you could be forgiven for not getting to upset about the small gap in the amount of code sent to a desktop browser versus a mobile one—after all, what's an extra 30kb or so at the median, right?
+If you recall, there was only a 30 KB difference between what is shipped to a mobile device versus a desktop device. Depending on your point of view, you could be forgiven for not getting too upset about the small gap in the amount of code sent to a desktop browser versus a mobile one—after all, what's an extra 30 KB or so at the median, right?
 
-The biggest problem comes when all of that code gets served to a low to middle-end device, something a bit less like the kind of devices most developers are likely to have, and a bit more like the kind of devices you'll see from the majority of people across the world. That relatively small gap between desktop and mobile is much more dramatic when we look at it in terms of processing time.
+The biggest problem comes when all of that code gets served to a low-to-middle-end device, something a bit less like the kind of devices most developers are likely to have, and a bit more like the kind of devices you'll see from the majority of people across the world. That relatively small gap between desktop and mobile is much more dramatic when we look at it in terms of processing time.
 
-The median desktop site spends 891ms on the main thread of a browser working with all that JavaScript. The median mobile site, however, spends 1,897ms—over two times the time spent on the desktop. It's even worse for the long tail of sites. At the 90th percentile, mobile sites spend a staggering 8,921ms of main thread time dealing with JavaScript, compared to 3,838ms for desktop sites.
+The median desktop site spends 891 ms on the main thread of a browser working with all that JavaScript. The median mobile site, however, spends 1,897 ms—over two times the time spent on the desktop. It's even worse for the long tail of sites. At the 90th percentile, mobile sites spend a staggering 8,921 ms of main thread time dealing with JavaScript, compared to 3,838 ms for desktop sites.
 
 {{ figure_markup(
   image="main-thread-time.png",
@@ -646,7 +647,8 @@ The median desktop site spends 891ms on the main thread of a browser working wit
   sql_file="main_thread_time.sql"
 ) }}
 
-### Correlating JavaScript Use to Lighthouse Scoring
+### Correlating JavaScript use to Lighthouse scoring
+
 One way of looking at how this translates into impacting the user experience is to try to correlate some of the JavaScript metrics we've identified earlier with Lighthouse scores for different metrics and categories.
 
 {{ figure_markup(
@@ -658,7 +660,7 @@ One way of looking at how this translates into impacting the user experience is 
   sql_file="correlations.sql"
 ) }}
 
-The above chart uses the Pearson coefficient of correlation. There's a long, kinda complex definition of what that means precisely, but the gist is that we're looking for the strength of the correlation between two different numbers. If we find a coefficient of 1, we'd have a direct correlation. A correlation of 0 would show no connection between two numbers. Anything below zero shows a negative correlation—in other words, as one number goes up the other one decreases.
+The above chart uses the [Pearson coefficient of correlation](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient). There's a long, kinda complex definition of what that means precisely, but the gist is that we're looking for the strength of the correlation between two different numbers. If we find a coefficient of 1, we'd have a direct correlation. A correlation of 0 would show no connection between two numbers. Anything below zero shows a negative correlation—in other words, as one number goes up the other one decreases.
 
 First, there doesn't seem to be much measurable correlation between our JavaScript metrics and the Lighthouse Accessibility score here. That stands in stark opposition to what's been found elsewhere, notably through [WebAim's annual research](https://webaim.org/projects/million/#frameworks).
 
