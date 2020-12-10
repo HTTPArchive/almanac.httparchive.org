@@ -8,7 +8,7 @@ authors: [roryhewitt, raghuramakrishnan71]
 reviewers: [jzyang]
 analysts: [raghuramakrishnan71]
 translators: []
-roryhewitt_bio: Enterprise Architect at <a href="https://www.akamai.com/">Akamai</a>, who is passionate about performance. A British ex-patriate, he has lived in San Francisco for more than twenty years. In his spare time, he's a long-distance adventure motorcyclist, competition-level snowboarder and boxer with multiple black belts in various styles of karate. He likes being known as a troublemaker. Most importantly, he's a father and husband and the owner of Luna the cat. Find him at <a href="https://www.linkedin.com/in/roryhewitt/">LinkedIn</a>.
+roryhewitt_bio: Enterprise Architect at <a href="https://www.akamai.com/">Akamai</a>, who is passionate about performance. A British ex-patriate, he has lived in San Francisco for more than twenty years. In his spare time, he's a long-distance adventure motorcyclist, snowboarder and boxer/karateka. He likes being known as a troublemaker. Most importantly, he's a father and husband and the owner of Luna the cat. Find him at <a href="https://www.linkedin.com/in/roryhewitt/">LinkedIn</a>.
 raghuramakrishnan71_bio: Enterprise architect at <a href="https://www.tcs.com/">Tata Consultancy Services</a>, working on large digital transformation programs in the public sector. A technology enthusiast with a special interest in performance engineering. An avid traveler, intrigued by astronomy, history, biology, and advancements in medicine. A strong follower of the 47th verse, Chapter 2 of Bhagavad Gita "karmaṇy-evādhikāras te mā phaleṣhu kadāchana" meaning "You have a right to perform your prescribed duty, but you are not entitled to the fruits of action."
 
 discuss: 2056
@@ -16,11 +16,11 @@ results: https://docs.google.com/spreadsheets/d/1fYmpSN3diOiFrscS75NsjfsrKXzxxhU
 queries: 20_Caching
 featured_quote: Caching provides a significant performance benefit by avoiding costly network requests - it helps both end users (they get their web pages quickly) and the companies serving web pages (reducing the load on their servers). Caching really is a win-win!
 featured_stat_1: 25.6%
-featured_stat_label_1: Percentage of HTTP responses don't include any caching information, which means they're probably being cached wrongly
+featured_stat_label_1: HTTP responses with no caching information
 featured_stat_2: 21.4%
-featured_stat_label_2: Percentage of responses that aren't using revalidation, resulting in wasted bandwidth and increased latency
-featured_stat_3: 78.6%
-featured_stat_label_3: Percentage of sites could save up to 2MB of bandwidth by improving their caching policy
+featured_stat_label_2: Responses that cannot be revalidated
+featured_stat_3: 21.3%
+featured_stat_label_3: Sites that could save over 2MB on repeat visits with better caching
 unedited: true
 ---
 
@@ -880,7 +880,7 @@ Lighthouse computes a score for each audit, ranging from 0% to 100%, and those s
 
 Only 3.3% of sites scored a 100%, meaning that the vast majority of sites can benefit from some cache optimizations. Approximately two-thirds of sites score below 40%, with almost one-third of sites scoring less than 10%. Based on this, there is a significant amount of under-caching, resulting in excess requests and bytes being served across the network.
 
-Lighthouse also indicates how many bytes could be saved on repeat views by enabling a longer cache policy. Of the sites that could benefit from additional caching, 78.6% of them can reduce their page weight by up to 2MB!
+Lighthouse also indicates how many bytes could be saved on repeat views by enabling a longer cache policy. Of the sites that could benefit from additional caching, more than one-fifth can reduce their page weight by over 2MB!
 
 {{ figure_markup(
   image="cache-wasted-bytes-lighthouse.png",
