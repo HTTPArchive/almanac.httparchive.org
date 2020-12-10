@@ -119,14 +119,12 @@ The top 5 file extensions explicitly included in the `alt` text value (for sites
     </tbody>
   </table>
   <figcaption>
+    {# TODO add sheets and sql file
+      sheets_gid="TODO",
+      sql_file="TODO.sql"
+    #}
     {{ figure_link(
       caption="Percent of pages with non-empty alt attributes.",
-
-      {# TODO add sheets and sql file
-        sheets_gid="TODO",
-        sql_file="TODO.sql"
-      #}
-
     ) }}
   </figcaption>
 </figure>
@@ -329,14 +327,12 @@ A common usage of this attribute is for `<table>` elements that have been used f
 | presentation | 17.83%  | 16.31% |
 
   <figcaption>
+    {# TODO add sheets and sql file
+      sheets_gid="TODO",
+      sql_file="TODO.sql"
+    #}
     {{ figure_link(
       caption="Top 5 ARIA roles on the web.",
-
-      {# TODO add sheets and sql file
-        sheets_gid="TODO",
-        sql_file="TODO.sql"
-      #}
-
     ) }}
   </figcaption>
 </figure>
