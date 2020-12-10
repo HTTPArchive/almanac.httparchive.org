@@ -660,19 +660,20 @@ One way of looking at how this translates into impacting the user experience is 
   sql_file="correlations.sql"
 ) }}
 
-The above chart uses the [Pearson coefficient of correlation](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient). There's a long, kinda complex definition of what that means precisely, but the gist is that we're looking for the strength of the correlation between two different numbers. If we find a coefficient of 1, we'd have a direct correlation. A correlation of 0 would show no connection between two numbers. Anything below zero shows a negative correlation—in other words, as one number goes up the other one decreases.
+The above chart uses the [Pearson coefficient of correlation](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient). There's a long, kinda complex definition of what that means precisely, but the gist is that we're looking for the strength of the correlation between two different numbers. If we find a coefficient of 1.00, we'd have a direct positive correlation. A correlation of 0.00 would show no connection between two numbers. Anything below 0.00 indicates a negative correlation—in other words, as one number goes up the other one decreases.
 
-First, there doesn't seem to be much measurable correlation between our JavaScript metrics and the Lighthouse Accessibility score here. That stands in stark opposition to what's been found elsewhere, notably through [WebAim's annual research](https://webaim.org/projects/million/#frameworks).
+First, there doesn't seem to be much of a measurable correlation between our JavaScript metrics and the Lighthouse accessibility ("LH A11y" in the chart) score here. That stands in stark opposition to what's been found elsewhere, notably through [WebAim's annual research](https://webaim.org/projects/million/#frameworks).
 
 The most likely explanation for this is that Lighthouse's accessibility tests aren't as comprehensive (yet!) as what is available through other tools, like WebAIM, that have accessibility as their primary focus.
 
-Where we do see a strong correlation is between the amount of JavaScript bytes and both the overall Lighthouse performance score and Total Blocking Time.
+Where we do see a strong correlation is between the amount of JavaScript bytes ("Bytes") and both the overall Lighthouse performance ("LH Perf") score and Total Blocking Time ("TBT").
 
-The correlation between JavaScript bytes and Lighthouse performance scores is -0.47. In other words, as JS bytes increase, Lighthouse performance scores decrease. The overall bytes has a stronger correlation than the amount of third-party scripts, hinting that while they certainly play a role, we can't place all the blame on third-parties.
+The correlation between JavaScript bytes and Lighthouse performance scores is -0.47. In other words, as JS bytes increase, Lighthouse performance scores decrease. The overall bytes has a stronger correlation than the amount of third-party bytes ("3P bytes"), hinting that while they certainly play a role, we can't place all the blame on third-parties.
 
 The connection between Total Blocking Time and JavaScript bytes is even more significant (0.55 for overall bytes, 0.48 for third-party bytes). That's not too surprising given what we know about all the work browsers have to do to get JavaScript to run in a page—more bytes means more time.
 
-### Security Vulnerabilities
+### Security vulnerabilities
+
 One other helpful audit that Lighthouse runs is to check for known security vulnerabilities in third-party libraries. It does this by detecting which libraries and frameworks are used on a given page, and what version is used of each. Then it checks [Snyk's open-source vulnerability database](https://snyk.io/vuln?type=npm) to see what vulnerabilities have been discovered in the identified tools.
 
 {{ figure_markup(
@@ -685,7 +686,7 @@ One other helpful audit that Lighthouse runs is to check for known security vuln
 
 According to the audit, 83.5% of mobile pages use a JavaScript library or framework with at least one known security vulnerability.
 
-This is what we call the jQuery effect. Remember how we saw that jQuery is used on a whopping 83% of all pages tested by HTTP Archive? Several older versions of jQuery contain known vulnerabilities, which comprises the vast majority of the vulnerabilities this audit checks.
+This is what we call the jQuery effect. Remember how we saw that jQuery is used on a whopping 83% of pages? Several older versions of jQuery contain known vulnerabilities, which comprises the vast majority of the vulnerabilities this audit checks.
 
 Of the roughly 5 million or so mobile pages that are tested against, 81% of them contain a vulnerable version of jQuery—a sizeable lead over the second most commonly found vulnerable library—jQuery UI at 15.6%.
 
@@ -750,7 +751,7 @@ Of the roughly 5 million or so mobile pages that are tested against, 81% of them
 </figure>
 
 
-In other words, get folks to migrate away from those outdated, vulnerable versions of jQuery and we would see the number of sites with known vulnerabilities plummet (at least, until we start finding some in the newer frameworks).
+In other words, if we can get folks to migrate away from those outdated, vulnerable versions of jQuery, we would see the number of sites with known vulnerabilities plummet (at least, until we start finding some in the newer frameworks).
 
 The bulk of the vulnerabilities found fall into the "medium" severity category.
 
@@ -764,8 +765,9 @@ The bulk of the vulnerabilities found fall into the "medium" severity category.
 ) }}
 
 ## Conclusion
+
 JavaScript is steadily rising in popularity, and there's a lot that's positive about that. It's incredible to consider what we're able to accomplish on today's web thanks to JavaScript that, even a few years ago, would have been unimaginable.
 
 But it's clear we've also got to tread carefully. The amount of JavaScript consistently rises each year (if the stock market were that predictable, we'd all be incredibly wealthy), and that comes with trade-offs. More JavaScript is connected to an increase in processing time which negatively impacts key metrics like Total Blocking Time. And, if we let those libraries languish without keeping them updated, they carry the risk of exposing users through known security vulnerabilities.
 
-Carefully weighing the cost of the scripts we add to our pages and being willing to place a critical eye on our tools and ask more of them are our best bets for ensuring that we build a web that is accessible, performant and safe.
+Carefully weighing the cost of the scripts we add to our pages and being willing to place a critical eye on our tools and ask more of them are our best bets for ensuring that we build a web that is accessible, performant, and safe.
