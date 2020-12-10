@@ -5,7 +5,7 @@ chapter_number: 20
 title: Caching
 description: Caching chapter of the 2020 Web Almanac covering cache-control, expires, TTLs, validitaty, vary, set-cookies, AppCache, Service Workers and opportunities.
 authors: [roryhewitt, raghuramakrishnan71]
-reviewers: [csswizardry, jzyang, jaisanth, Soham-S-Sarkar]
+reviewers: [jzyang]
 analysts: [raghuramakrishnan71]
 translators: []
 roryhewitt_bio: Enterprise Architect at <a href="https://www.akamai.com/">Akamai</a>, who is passionate about performance. A British ex-patriate, he has lived in San Francisco for more than twenty years. In his spare time, he's a long-distance adventure motorcyclist, competition-level snowboarder and boxer with multiple black belts in various styles of karate. He likes being known as a troublemaker. Most importantly, he's a father and husband and the owner of Luna the cat. Find him at <a href="https://www.linkedin.com/in/roryhewitt/">LinkedIn</a>.
