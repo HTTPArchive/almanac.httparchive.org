@@ -585,11 +585,10 @@ figure .big-number {
 
 figure .medium-number {
   text-align: center;
-  font: bold 64px/1em Poppins, sans-serif;
-  font: bold 4rem/1em Poppins, sans-serif;
+  font: bold 48px/1em Poppins, sans-serif;
+  font: bold 3rem/1em Poppins, sans-serif;
   color: #62718b;
   overflow-wrap: break-word;
-  word-break: break-all;
 }
 
 figure .really-big-number {
@@ -598,7 +597,6 @@ figure .really-big-number {
   font: bold 1.5rem/1em Poppins, sans-serif;
   color: #62718b;
   overflow-wrap: break-word;
-  word-break: break-all;
 }
 
 figure .fig-mobile {
