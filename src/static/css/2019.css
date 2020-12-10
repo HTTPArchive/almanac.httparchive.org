@@ -689,7 +689,7 @@ header .cta {
 .year-switcher select {
   border: 1px solid currentColor;
   border-radius: 50px;
-  padding: 20px;
+  padding: 20px 38px 20px 20px;
   background: none;
   color: inherit;
   cursor: pointer;
