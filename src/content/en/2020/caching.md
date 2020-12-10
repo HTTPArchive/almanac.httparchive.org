@@ -8,7 +8,7 @@ authors: [roryhewitt, raghuramakrishnan71]
 reviewers: [csswizardry, jzyang, jaisanth, Soham-S-Sarkar]
 analysts: [raghuramakrishnan71]
 translators: []
-roryhewitt_bio: Enterprise Architect at <a href="https://www.akamai.com/">Akamai</a>. Passionate about performance. Competition-level snowboarder. Multiple black belts. Motorcyclist. Boxer. Troublemaker. 
+roryhewitt_bio: Enterprise Architect at <a href="https://www.akamai.com/">Akamai</a>. Passionate about performance. Competition-level snowboarder. Multiple black belts. Motorcyclist. Boxer. Troublemaker.
 raghuramakrishnan71_bio: Enterprise architect at <a href="https://www.tcs.com/">Tata Consultancy Services</a>, working on large digital transformation programs in the public sector. A technology enthusiast with a special interest in performance engineering. An avid traveler, intrigued by astronomy, history, biology, and advancements in medicine. A strong follower of the 47th verse, Chapter 2 of Bhagavad Gita "karmaṇy-evādhikāras te mā phaleṣhu kadāchana" meaning "You have a right to perform your prescribed duty, but you are not entitled to the fruits of action."
 
 discuss: 2056
@@ -70,7 +70,7 @@ Below figure shows how a typical request/response flow works for an object (e.g.
 
 {{ figure_markup(
   image="request-response-flow-with-caching.png",
-  link="https://almanac.httparchive.org/static/images/2020/caching/0_request_response_flow_with_caching.png",
+  link="https://almanac.httparchive.org/static/images/2020/caching/request-response-flow-with-caching.png",
   caption="Request/response flow for an object.",
   description="Sequence diagram showing the usage of cache in a typical request/response flow for an object."
   )
@@ -449,7 +449,7 @@ Correctly-implemented revalidation using conditional requests can significantly 
   description="Bar chart showing the distribution of `304 Not Modified` status. 20.5% of the desktop responses had no `ETag` header and contained the same `Last-Modified` value, passed in the `If-Modified-Since` header of the corresponding request. Out of these, 86% had a `304 Not Modified` status. 86.1% of the responses contained the same `ETag` value, passed in the `If-None-Match` header of the corresponding request. Out of these, 88.9% had a `304 Not Modified` status. 17.2% of the mobile responses had no `ETag` header and contained the same `Last-Modified` value, passed in the `If-Modified-Since` header of the corresponding request. Out of these, 78.3% had a `304 Not Modified` status. 89.9% of the responses contained the same `ETag` value, passed in the `If-None-Match` header of the corresponding request. Out of these, 90.2% had a `304 Not Modified` status.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1530788258&format=interactive",
   sheets_gid="2031111055",
-  sql_file="valid_if_none_match_returns_304.sql"
+  sql_file="valid_if_non_match_returns_304.sql"
   )
 }}
 
@@ -540,7 +540,7 @@ When a response is cached, its entire set of response headers are included with 
 
 {{ figure_markup(
   image="chrome-dev-tools.png",
-  link="https://almanac.httparchive.org/static/images/2020/caching/7a_chrome_dev_tools.png",
+  link="https://almanac.httparchive.org/static/images/2020/caching/chrome-dev-tools.png",
   caption="Chrome Dev Tools for a cached resource.",
   description="Chrome Dev Tools showing that When a response is cached, its entire set of response headers are included with the cached object as well."
   )
@@ -793,7 +793,7 @@ The graphs below illustrate the relative age of resources by content type. Some 
   description="A stack bar chart showing the age of content, split into weeks 0-52, > one year and > two years with null and negative figures shown too. The stats are split into first-party and third-party. The value 0 is used most particularly for first-party HTML, text and xml, and for up to 50% of third-party requests across all assets types. There is a mix using intermediary years and then considerable usage for one year and two year.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=2056330432&format=interactive",
   sheets_gid="1889235328",
-  sql_file="14_resource_age_party_and_type_wise_groups.sql"
+  sql_file="resource_age_party_and_type_wise_groups.sql"
   )
 }}
 
@@ -803,7 +803,7 @@ The graphs below illustrate the relative age of resources by content type. Some 
   description="A stack bar chart showing the age of content, split into weeks 0-52, > one year and > two years with null and negative figures shown too. The stats are split into first-party and third-party. The value 0 is used most particularly for first-party HTML, text and xml, and for up to 50% of third-party requests across all assets types. There is a mix using intermediary years and then considerable usage for one year and two year.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=2056330432&format=interactive",
   sheets_gid="1889235328",
-  sql_file="15_resource_age_party_and_type_wise_groups.sql"
+  sql_file="resource_age_party_and_type_wise_groups.sql"
   )
 }}
 
@@ -853,7 +853,7 @@ Google's [Lighthouse](https://developers.google.com/web/tools/lighthouse) tool e
 
 {{ figure_markup(
   image="lighthouse-caching-audit.png",
-  link="https://almanac.httparchive.org/static/images/2020/caching/16_lighthouse_caching_audit.png",
+  link="https://almanac.httparchive.org/static/images/2020/caching/lighthouse-caching-audit.png",
   caption="Lighthouse report highlighting potential cache policy improvements.",
   description="Extract of the Lighthouse report highlighting potential cache policy improvements. The first and third party URLs, their cache TTL, and size is shown."
   )

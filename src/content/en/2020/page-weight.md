@@ -92,7 +92,7 @@ at the request level, much is the same. The weightiest resources are making the 
   description="Bar chart showing the distribution of requests per page. Desktop pages tend to load more requests. The 10, 25, 50, 75, and 90th percentiles for mobile pages are: 23, 42, 70, 114, and 174 requests per page.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQlN4Clqeb8aPc63h0J58WfBxoJluSFT6kXn45JGPghw1LGU28hzabMYAATXNY5st9TtjKrr2HnbfGd/pubchart?oid=971564375&format=interactive",
   sheets_gid="457486298",
-  sql_file="requests_type_distribution_2020.sql"
+  sql_file="request_type_distribution_2020.sql"
 ) }}
 
 {{ figure_markup(
@@ -101,7 +101,7 @@ at the request level, much is the same. The weightiest resources are making the 
   description="Bar chart showing the median number of requests per mobile page by content type. The median number of image requests per page is 27, 19 for JS, 7 for CSS, and 3 for HTML. Desktop and mobile tend to be equal except desktop pages load more image and JS requests.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQlN4Clqeb8aPc63h0J58WfBxoJluSFT6kXn45JGPghw1LGU28hzabMYAATXNY5st9TtjKrr2HnbfGd/pubchart?oid=101271976&format=interactive",
   sheets_gid="457486298",
-  sql_file="requests_type_distribution_2020.sql"
+  sql_file="request_type_distribution_2020.sql"
 ) }}
 
 ### File formats
@@ -114,7 +114,7 @@ We know that images are a great source of page weight. This graphic below shows 
   description="Box plot of the distribution of image sizes by format: gif, ico, jpg, png, svg, and webp. Jpg sticks out as having the highest distribution with a 90th percentile exceeding 150 KB per image. Png is second highest at about 100 KB at the 90th percentile. While WebP has a smaller 90th percentile than png, its 75th percentile is higher. gif, ico, and svg all have relatively small distributions near 0 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQlN4Clqeb8aPc63h0J58WfBxoJluSFT6kXn45JGPghw1LGU28hzabMYAATXNY5st9TtjKrr2HnbfGd/pubchart?oid=211653520&format=interactive",
   sheets_gid="142855724",
-  sql_file="requests_format_distribution_2020.sql"
+  sql_file="requests_format_distribution.sql"
 ) }}
 
 {{ figure_markup(

@@ -191,7 +191,7 @@ Figure 22.7 orders every website by the fraction of HTTP/2 requests for known th
   caption="The distribution of the fraction of third-party and first-party HTTP/2 requests per page.",
   description="A line chart comparing the fraction of first-party HTTP/2 requests with third-party HTTP/2 or gQUIC requests. The chart orders the websites by fraction of HTTP/2 requests. 45% of websites have no HTTP/2 first-party requests. Over half of websites serve third-party requests only over HTTP/2 or gQUIC. 80% of websites have 76% or more third-party HTTP/2 or gQUIC requests.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=1409316276&format=interactive",
-  sql_file="http2_%_1st_party_vs_3rd_party.sql",
+  sql_file="http2_%25_1st_party_vs_3rd_party.sql",
   sheets_gid="733872185"
 )
 }}
@@ -204,7 +204,7 @@ Is there any difference in which content-types are served over HTTP/2 or gQUIC? 
   description="A bar chart comparing the fraction of third-party HTTP/2 requests by content-type. All third-party requests are served over HTTP/2 or gQUIC for 90% of audio and fonts, 80% of css and video, 70% of html, image and text and 60% of scripts.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=1264128523&format=interactive",
   sheets_gid="419557288",
-  sql_file="http2_%_1st_party_vs_3rd_party_by_type.sql"
+  sql_file="http2_%25_1st_party_vs_3rd_party_by_type.sql"
 )
 }}
 
