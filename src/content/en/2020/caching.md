@@ -15,12 +15,12 @@ discuss: 2056
 results: https://docs.google.com/spreadsheets/d/1fYmpSN3diOiFrscS75NsjfsrKXzxxhUMNcYSqXnQJQU/
 queries: 20_Caching
 #featured_quote: Caching benefits both the end users (they get their web pages quickly) and the companies serving the web pages (reducing the load on their servers). Caching really is a win-win!
-#featured_stat_1: **One quarter** of all HTTP responses don't include any caching information, which means they're probably being cached wrongly
-#featured_stat_label_1: TODO
-#featured_stat_2: More than **one fifth** of all responses aren't using revalidation, resulting in wasted bandwidth and increased latency
-#featured_stat_label_2: TODO
-#featured_stat_3: More than *three quarters* of sites could save more than 1MB of bandwidth by improving their caching policy
-#featured_stat_label_3: TODO
+#featured_stat_1: 25.6
+#featured_stat_label_1: Number of HTTP responses don't include any caching information, which means they're probably being cached wrongly
+#featured_stat_2: 21.4%
+#featured_stat_label_2: Number of responses that aren't using revalidation, resulting in wasted bandwidth and increased latency
+#featured_stat_3: 78.6%
+#featured_stat_label_3: Number of sites could save up to 2MB of bandwidth by improving their caching policy
 unedited: true
 ---
 
