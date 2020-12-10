@@ -1494,7 +1494,9 @@ pre code {
 
 code {
   font-size: 1rem;
-  background-color: #ebedf0;
+  background: #f7f7f7;
+  border: 1px solid #dadce0;
+  padding: 1px 2px;
 }
 
 pre .comment {
