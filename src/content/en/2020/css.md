@@ -520,7 +520,7 @@ And if you are going for fanciful color names, why not define your own with CSS 
   link="https://codepen.io/leaverou/pen/GRjjJwJ",
   image="color-keywords-app.png",
   caption="Interactively explore the color keyword usage data with this app!",
-  description="TODO",
+  description="Screenhot of an interactive app which allows you to select colours and see their relative usage in a pie chart. The data for the colours is shown in the next table.",
   width=600,
   height=1065
   )
@@ -679,7 +679,7 @@ And we are still missing out. Despite being [implemented in Safari in 2016](http
 Compatibility, right? You don’t want things to break? No. In the stylesheets we examined, we found solid use of fallback: with document order, the cascade, `@supports`, the `color-gamut` media query, all that good stuff. So in a style sheet we would see the color the designer wanted, expressed in display-p3, and also a fallback sRGB color. We computed the visible difference (a calculation called [ΔE2000](https://zschuessler.github.io/DeltaE/learn/)) between the desired and fallback color and this was typically quite modest. A small tweak. A careful exploration. In fact, 37.6% of the time, the color specified in display-p3 actually fell inside the range of colors (the gamut) that sRGB can manage.
 
 <figure>
-  <table class="large-table">
+  <table>
     <thead>
       <tr>
         <th scope="col" colspan="2">sRGB</th>
@@ -934,7 +934,7 @@ Prefixed gradients are also still very common, even though prefixes haven't been
 
 Using color stops with different colors in the same position (hard stops) to create stripes and other patterns is a technique [first popularized in 2010](https://lea.verou.me/2010/12/checkered-stripes-other-background-patterns-with-css3-gradients/) (by Lea Verou), which by now has many interesting variations, including [some really cool ones with blend modes](https://bennettfeely.com/gradients/). While it may seem like a hack, hard stops are found in 50% of pages, indicating a strong developer need for lightweight graphics from within CSS without resorting to image editors or external SVG.
 
- Interpolation hints (or as Adobe, who popularized the technique, calls them: “midpoints”) are found on 22% of pages, despite [near universal browser support since 2015](https://caniuse.com/mdn-css_types_image_gradient_linear-gradient_interpolation_hints). Which is a shame, because without them, the color stops are connected by straight-lines in the colorspace, rather than smooth curves. This low usage probably reflects a misunderstanding of what they do, or how to use them; contrast this with CSS transitions and animations, where easing functions (which do much the same thing, i.e. connect the keyframes with curves rather than jerky straight lines) are much more commonly used ([80% of transitions](TODO: link to transitions section, or timing function section if possible)). “Midpoints” is not a very understandable description, and “interpolation hint” sounds like you are helping the browser to do simple arithmetic.
+ Interpolation hints (or as Adobe, who popularized the technique, calls them: “midpoints”) are found on 22% of pages, despite [near universal browser support since 2015](https://caniuse.com/mdn-css_types_image_gradient_linear-gradient_interpolation_hints). Which is a shame, because without them, the color stops are connected by straight-lines in the colorspace, rather than smooth curves. This low usage probably reflects a misunderstanding of what they do, or how to use them; contrast this with CSS transitions and animations, where easing functions (which do much the same thing, i.e. connect the keyframes with curves rather than jerky straight lines) are much more commonly used ([80% of transitions](#transitions-and-animations)). “Midpoints” is not a very understandable description, and “interpolation hint” sounds like you are helping the browser to do simple arithmetic.
 
 Most gradient usage is rather simple, with over 75% of gradients found across the entire dataset only using 2 color stops. In fact, fewer than half of pages contain even a single gradient with more than 3 color stops!
 

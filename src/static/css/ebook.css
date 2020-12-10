@@ -75,6 +75,7 @@
 
 .large-table td {
   padding: 0.2rem;
+  line-height: 1.5em;
 }
 
 th {

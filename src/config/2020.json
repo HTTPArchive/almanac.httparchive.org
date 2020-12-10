@@ -266,7 +266,8 @@
       "name": "Alexey Pyltsyn",
       "teams": [
         "translators",
-        "editors"
+        "editors",
+        "developers"
       ],
       "avatar_url": "https://avatars3.githubusercontent.com/u/4408379?v=4&s=200",
       "website": "https://lex111.ru/",
@@ -392,7 +393,7 @@
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/1588185?v=4&s=200",
       "github": "cqueern",
-      "twitter": "cqueern"
+      "twitter": "httpsecheaders"
     },
     "catalinred": {
       "name": "Catalin Rosu",
@@ -570,7 +571,7 @@
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/1746646?v=4&s=200",
       "github": "giopunt",
-      "twitter": "giopunt"
+      "twitter": "giovannipuntil"
     },
     "gokulkrishh": {
       "name": "Gokulakrishnan Kalaikovan",
@@ -597,16 +598,6 @@
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/8494683?v=4&s=200",
       "github": "gregorywolf"
-    },
-    "csswizardry": {
-      "name": "Harry Roberts",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "https://avatars1.githubusercontent.com/u/751944?v=4&s=200",
-      "website": "https://csswizardry.com/",
-      "github": "csswizardry",
-      "twitter": "csswizardry"
     },
     "hemanth": {
       "name": "hemanth.hm",
@@ -646,16 +637,6 @@
       "website": "https://learnjavascript.online/",
       "github": "jadjoubran",
       "twitter": "JoubranJad"
-    },
-    "jaisanth": {
-      "name": "Jai Santhosh",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "https://avatars1.githubusercontent.com/u/679907?v=4&s=200",
-      "website": "https://jaisanth.com/",
-      "github": "jaisanth",
-      "twitter": "jaisanth"
     },
     "fellowhuman1101": {
       "name": "Jamie Indigo",
@@ -1134,7 +1115,10 @@
         "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/11558891?v=4&s=200",
-      "github": "roryhewitt"
+      "website": "https://romche.com/",
+      "github": "roryhewitt",
+      "twitter": "roryhewitt3",
+      "linkedin": "roryhewitt"
     },
     "rsheeter": {
       "name": "rsheeter",
@@ -1219,14 +1203,6 @@
       "avatar_url": "https://avatars2.githubusercontent.com/u/244772?v=4&s=200",
       "github": "zcorpan",
       "twitter": "zcorpan"
-    },
-    "Soham-S-Sarkar": {
-      "name": "Soham-S-Sarkar",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "https://avatars0.githubusercontent.com/u/68942138?v=4&s=200",
-      "github": "Soham-S-Sarkar"
     },
     "sudheendrachari": {
       "name": "Sudheendra chari",
