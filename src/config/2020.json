@@ -597,16 +597,6 @@
       "avatar_url": "https://avatars1.githubusercontent.com/u/8494683?v=4&s=200",
       "github": "gregorywolf"
     },
-    "csswizardry": {
-      "name": "Harry Roberts",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "https://avatars1.githubusercontent.com/u/751944?v=4&s=200",
-      "website": "https://csswizardry.com/",
-      "github": "csswizardry",
-      "twitter": "csswizardry"
-    },
     "hemanth": {
       "name": "hemanth.hm",
       "teams": [
@@ -645,16 +635,6 @@
       "website": "https://learnjavascript.online/",
       "github": "jadjoubran",
       "twitter": "JoubranJad"
-    },
-    "jaisanth": {
-      "name": "Jai Santhosh",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "https://avatars1.githubusercontent.com/u/679907?v=4&s=200",
-      "website": "https://jaisanth.com/",
-      "github": "jaisanth",
-      "twitter": "jaisanth"
     },
     "fellowhuman1101": {
       "name": "Jamie Indigo",
@@ -1221,14 +1201,6 @@
       "avatar_url": "https://avatars2.githubusercontent.com/u/244772?v=4&s=200",
       "github": "zcorpan",
       "twitter": "zcorpan"
-    },
-    "Soham-S-Sarkar": {
-      "name": "Soham-S-Sarkar",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "https://avatars0.githubusercontent.com/u/68942138?v=4&s=200",
-      "github": "Soham-S-Sarkar"
     },
     "sudheendrachari": {
       "name": "Sudheendra chari",
