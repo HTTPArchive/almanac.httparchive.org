@@ -792,7 +792,7 @@
     {%- if chart_url != "" %}
     <img src="{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description" width="{{ width }}" height="{{ height }}" data-width="{{ data_width }}" data-height="{{ data_height }}" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="{{ chart_url|safe }}" loading="lazy" />
     {%- elif not ebook and object != "" %}
-    <object type="image/svg+xml" data="{{ image }}">
+    <object type="image/svg+xml" width="{{ width }}" height="{{ height }}" data="{{ image }}">
       {{ caption }}
     </object>
     {% else %}
