@@ -8,7 +8,7 @@ authors: [LeaVerou, svgeesus, rachelandrew]
 reviewers: [estelle, fantasai, j9t, mirisuzanne, catalinred, hankchizljaw]
 analysts: [rviscomi, LeaVerou, dooman87]
 translators: []
-LeaVerou_bio: Lea <a href="https://designftw.mit.edu">teaches HCI & web programming</a> and <a href="https://mavo.io">researches how to make web programming easier</a> at <a href="http://mit.edu">MIT</a>. She is a bestselling technical <a href="http://www.amazon.com/CSS-Secrets-Lea-Verou/dp/1449372635?tag=leaverou-20">author</a> and experienced <a href="https://lea.verou.me/speaking">speaker</a>. She is passionate about open web standards, and is a longtime <a href="http://www.w3.org/Style/CSS/members.en.php3">CSS Working Group</a> member. Lea has started <a href="http://github.com/leaverou">several popular open source projects and web applications</a>, such as <a href="http://prismjs.com">Prism</a>, and <a href="https://github.com/leaverou/awesomplete">Awesomplete</a>. She tweets <a href="https://twitter.com/leaverou">@leaverou</a> and blogs at <a href="http://lea.verou.me">lea.verou.me</a>.
+LeaVerou_bio: Lea <a href="https://designftw.mit.edu">teaches HCI & web programming</a> and <a href="https://mavo.io">researches how to make web programming easier</a> at <a href="https://mit.edu">MIT</a>. She is a bestselling technical <a href="https://www.amazon.com/CSS-Secrets-Lea-Verou/dp/1449372635?tag=leaverou-20">author</a> and experienced <a href="https://lea.verou.me/speaking">speaker</a>. She is passionate about open web standards, and is a longtime <a href="https://www.w3.org/Style/CSS/members.en.php3">CSS Working Group</a> member. Lea has started <a href="https://github.com/leaverou">several popular open source projects and web applications</a>, such as <a href="https://prismjs.com">Prism</a>, and <a href="https://github.com/leaverou/awesomplete">Awesomplete</a>. She tweets <a href="https://twitter.com/leaverou">@leaverou</a> and blogs at <a href="https://lea.verou.me">lea.verou.me</a>.
 svgeesus_bio: Chris Lilley is a Technical Director at the World Wide Web Consortium (W3C). Considered “the father of SVG”, he also co-authored PNG, was co-editor of CSS2, chaired the group that developed <code>@font-face</code>, and co-developed WOFF. Ex Technical Architecture Group. Chris is still trying to get Color Management on the Web, sigh. Currently working on CSS levels 3/4/5 (no, really), Web Audio, and WOFF2..
 rachelandrew_bio: I’m a web developer, writer, public speaker. Co-founder of <a href="https://grabaperch.com">Perch CMS</a> and <a href="https://noti.st">Notist</a>. Member of the <a href="https://www.w3.org/wiki/CSSWG">CSS Working Group</a>. Editor in Chief of <a href="https://www.smashingmagazine.com/">Smashing Magazine</a>.
 discuss: 2037
@@ -28,7 +28,7 @@ unedited: true
 
 Cascading Style Sheets (CSS) is a language used to lay out, format, and paint web pages and other media. It is one of the three main languages for building websites, the other two being HTML, used for structure, and JavaScript, used to specify behavior.
 
-In [last year’s inaugural Web Almanac](https://almanac.httparchive.org/en/2019/), we looked at [a variety of CSS metrics](https://almanac.httparchive.org/en/2019/css) measured through 41 SQL queries over the HTTPArchive corpus, to assess the state of the technology in 2019. This year, we went a lot deeper, to measure not only how many pages use a given CSS feature, but also *how* they use it.
+In [last year’s inaugural Web Almanac](../2019/), we looked at [a variety of CSS metrics](../en/2019/css) measured through 41 SQL queries over the HTTP Archive corpus, to assess the state of the technology in 2019. This year, we went a lot deeper, to measure not only how many pages use a given CSS feature, but also *how* they use it.
 
 Overall, what we observed was a Web in two different gears when it comes to CSS adoption. In our blog posts and twitter bubbles, we tend to mostly discuss the newest and shiniest. However, there are still *millions* of sites using decade-old code. Things like [vendor prefixes from a bygone era](#vendor-prefixes), [proprietary IE filters](#filters), and [floats for layout](#layout), in all their [clearfix](#class-names) glory. But we also observed impressive adoption of many new features, even features that only got support across the board this very year, like [`min()` and `max()`](#feature-queries). However, there is generally an inverse correlation between how cool something is perceived to be and how much it's actually used, e.g. cutting-edge Houdini features were practically nonexistent.
 
@@ -40,11 +40,11 @@ The Web is not a teenager any more. It is now 30 years old, and acts like it. It
 
 The [HTTP Archive](https://httparchive.org/) crawls [millions of pages](https://httparchive.org/reports/state-of-the-web#numUrls) every month and runs them through a private instance of [WebPageTest](https://webpagetest.org/) to store key information of every page. (You can learn more about this in our [methodology](./methodology)).
 
-For this year, we decided to involve the community in which metrics to study. We started with an [app to propose metrics and vote on them](https://projects.verou.me/mavoice/?repo=leaverou/css-almanac&labels=proposed%20stat). In the end, there were so many interesting metrics that we ended up including nearly all of them. We only excluded Font metrics, since there is a whole separate [Fonts chapter](https://almanac.httparchive.org/en/2020/fonts) and there was significant overlap.
+For this year, we decided to involve the community in which metrics to study. We started with an [app to propose metrics and vote on them](https://projects.verou.me/mavoice/?repo=leaverou/css-almanac&labels=proposed%20stat). In the end, there were so many interesting metrics that we ended up including nearly all of them. We only excluded Font metrics, since there is a whole separate [Fonts chapter](./fonts) and there was significant overlap.
 
 The data in this chapter took 121 SQL queries to produce, totaling over 10K lines of SQL, which includes 3K lines of JS, making it the largest chapter in Web Almanac's history.
 
-A lot of engineering work went into making this scale of analysis feasible. Like last year, we put all CSS code through a [CSS parser](https://github.com/reworkcss/css), and stored the [Abstract Syntax Trees](https://en.wikipedia.org/wiki/Abstract_syntax_tree) (AST) for all stylesheets in the corpus, resulting in a whopping 10 TB of data. This year, we also developed a [library of helpers](https://github.com/leaverou/rework-utils) that operate on this AST, and a [selector parser](https://projects.verou.me/parsel), both of which were also released as separate open source projects. Most metrics involved [JS](https://github.com/LeaVerou/css-almanac/tree/master/js) to collect data from a single AST, and [SQL](https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2020/01_CSS) to aggregate this data over the entire corpus. Curious how your own CSS does against our metrics? We made an [online playground](https://projects.verou.me/rework-utils) where you can try them out on your own sites.
+A lot of engineering work went into making this scale of analysis feasible. Like last year, we put all CSS code through a [CSS parser](https://github.com/reworkcss/css), and stored the [Abstract Syntax Trees](https://en.wikipedia.org/wiki/Abstract_syntax_tree) (AST) for all stylesheets in the corpus, resulting in a whopping 10 TB of data. This year, we also developed a [library of helpers](https://github.com/leaverou/rework-utils) that operate on this AST, and a [selector parser](https://projects.verou.me/parsel), both of which were also released as separate open source projects. Most metrics involved [JS](https://github.com/LeaVerou/css-almanac/tree/master/js) to collect data from a single AST, and [SQL](https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2020/01_CSS) to aggregate this data over the entire corpus. Curious how your own CSS does against our metrics? We made an [online playground](https://projects.verou.me/css-almanac/playground) where you can try them out on your own sites.
 
 For certain metrics, looking at the CSS AST was not enough. We wanted to look at [SCSS](https://sass-lang.com/) wherever it was provided via sourcemaps as it shows us what developers *need* from CSS that is not yet possible, whereas studying CSS shows us what developers currently use that is. For that, we had to use a *custom metric*, i.e. JS code that runs in the crawler when it visits a given page. We could not use a proper SCSS parser as that could slow down the crawl too much, so we had to resort to [regular expressions](https://github.com/LeaVerou/css-almanac/blob/master/runtime/sass.js) (*oh, the horror!*). Despite the crude approach, we got [a plethora of insights](#sass)!
 
@@ -54,7 +54,7 @@ Custom metrics were also used for part of the [Custom properties analysis](#cust
 
 ## Usage
 
-While JavaScript far surpasses CSS in its share of page weight, CSS has certainly grown in size over the years, with the median desktop page loading 62 KB of CSS code, and 1 in 10 pages loading more than 240 KB of CSS code. Mobile pages do use slightly less CSS code across all percentiles, but only by 4 to 7 KB. While this is definitely greater than previous years, it doesn't come close to [Javascript’s whopping median of 444 KB and top 10% of 1.2 MB](../javascript/#how-much-javascript-do-we-use)
+While JavaScript far surpasses CSS in its share of page weight, CSS has certainly grown in size over the years, with the median desktop page loading 62 KB of CSS code, and 1 in 10 pages loading more than 240 KB of CSS code. Mobile pages do use slightly less CSS code across all percentiles, but only by 4 to 7 KB. While this is definitely greater than previous years, it doesn't come close to [JavaScript’s whopping median of 444 KB and top 10% of 1.2 MB](./javascript/#how-much-javascript-do-we-use)
 
 {{ figure_markup(
   image="stylesheet-size.png",
@@ -65,7 +65,7 @@ While JavaScript far surpasses CSS in its share of page weight, CSS has certainl
   sql_file="stylesheet_kbytes.sql"
 ) }}
 
-It would be reasonable to assume that a lot of this CSS is generated via preprocessors or other build tools, however **only about 15%** included sourcemaps. It is unclear whether this says more about sourcemap adoption, or build tool usage. Of those, the overwhelming majority (45%) came from other CSS files, indicating usage of build processes that operate on CSS files, such as minification, [autoprefixer](https://autoprefixer.github.io/), and/or [PostCSS](https://postcss.org/). [Sass](https://sass-lang.com/) was far more popular than [Less](http://lesscss.org/) (34% of stylesheets with sourcemaps vs 21%), with SCSS being the more popular dialect (33% for .scss vs 1% for .sass).
+It would be reasonable to assume that a lot of this CSS is generated via preprocessors or other build tools, however **only about 15%** included sourcemaps. It is unclear whether this says more about sourcemap adoption, or build tool usage. Of those, the overwhelming majority (45%) came from other CSS files, indicating usage of build processes that operate on CSS files, such as minification, [autoprefixer](https://autoprefixer.github.io/), and/or [PostCSS](https://postcss.org/). [Sass](https://sass-lang.com/) was far more popular than [Less](https://lesscss.org/) (34% of stylesheets with sourcemaps vs 21%), with SCSS being the more popular dialect (33% for .scss vs 1% for .sass).
 
 All these kilobytes of code are typically distributed across multiple files and `<style>` elements; only about 7% of pages concentrate all their CSS code in one remote stylesheet, as we are often taught to do. In fact, the median page contains 3 `<style>` elements and 6 (!) remote stylesheets, with 10% of them carrying over 14 `<style>` elements and over 20 remote CSS files! While this is suboptimal on desktop, it really kills performance on mobile, where round-trip latency is more important than raw download speed.
 
@@ -95,7 +95,7 @@ Another metric of size is the number of rules. The median page carries a total o
 
 ### Class names
 
-What do developers use class names for these days? To answer this question, we looked at the most popular class names. The list was dominated by FontAwesome classes, with 192 out of 198 being `fa` or `fa-*`! The only thing that initial exploration could tell us was that FontAwesome is exceedingly popular and is used by almost one third of websites!
+What do developers use class names for these days? To answer this question, we looked at the most popular class names. The list was dominated by Font Awesome classes, with 192 out of 198 being `fa` or `fa-*`! The only thing that initial exploration could tell us was that Font Awesome is exceedingly popular and is used by almost one third of websites!
 
 However, once we collapsed `fa-*` and then `wp-*` classes (which come from WordPress, another exceedingly popular piece of software), we got more meaningful results. Omitting these, state-related classes seem to be most popular, with `.active` occurring in nearly half of websites, and `.selected` and `.disabled` following soon after.
 
@@ -153,7 +153,7 @@ What is it that developers are so keen to override? We looked at breakdown by pr
 
 ### Specificity and classes
 
-Besides keeping ids and `!important`s few and far between, there is a trend to circumvent specificity altogether by cramming all the selection criteria of a selector in a single class name, thus forcing all rules to have the same specificity and turning the cascade into a simpler last-one-wins system. BEM is a popular methodology of that type, albeit not the only one. While it is difficult to assess how many websites use BEM-style methodologies exclusively, since following it in every rule is rare (even the [BEM website](http://getbem.com/) uses multiple classes in many selectors), about 10% of pages had a median specificity of (0,1,0), which may indicate mostly following a BEM-style methodology. On the opposite end of BEM, often developers use [duplicated classes](https://csswizardry.com/2014/07/hacks-for-dealing-with-specificity/#safely-increasing-specificity) to *increase* specificity and nudge a selector ahead of another one (e.g. `.foo.foo` instead of `.foo`). This kind of specificity hack is actually more popular than BEM, being present in 14% of mobile websites (9% of desktop)! This may indicate that most developers do not actually want to get rid of the cascade altogether, they just need more control over it.
+Besides keeping ids and `!important`s few and far between, there is a trend to circumvent specificity altogether by cramming all the selection criteria of a selector in a single class name, thus forcing all rules to have the same specificity and turning the cascade into a simpler last-one-wins system. BEM is a popular methodology of that type, albeit not the only one. While it is difficult to assess how many websites use BEM-style methodologies exclusively, since following it in every rule is rare (even the [BEM website](https://en.bem.info/) uses multiple classes in many selectors), about 10% of pages had a median specificity of (0,1,0), which may indicate mostly following a BEM-style methodology. On the opposite end of BEM, often developers use [duplicated classes](https://csswizardry.com/2014/07/hacks-for-dealing-with-specificity/#safely-increasing-specificity) to *increase* specificity and nudge a selector ahead of another one (e.g. `.foo.foo` instead of `.foo`). This kind of specificity hack is actually more popular than BEM, being present in 14% of mobile websites (9% of desktop)! This may indicate that most developers do not actually want to get rid of the cascade altogether, they just need more control over it.
 
 
 <figure markdown>
@@ -202,7 +202,7 @@ There is always a lot of inertia when we change something in the Web platform af
 
 By far the most popular pseudo-classes are user action ones, with `:hover`, `:focus`, and `:active` at the top of the list, all used in over two thirds of pages, indicating that developers like the convenience of specifying declarative UI interactions.
 
-`:root` seems far more popular than is justified by its function, used in one third of pages. In HTML content, it just selects the `<html>` element, so why didn't developers just use `html`? A possible answer may lie in a common practice related to defining custom properties, [which are also highly used](#custom properties), on the `:root` pseudo-class. Another answer may lie in specificity: `:root`, being a pseudo-class, has a higher specificity than `html`: (0, 1, 0) vs (0, 0, 1). It is a common hack to increase specificity of a selector by prepending it with `:root`, e.g. `:root .foo` has a specificity of (0, 2, 0) compared to just (0, 1, 0) for `.foo`. This is often all that is needed to nudge a selector slightly over another one in the cascade race and avoid the sledgehammer that is `!important`. To test this hypothesis, we also measured exactly that: how many pages use `:root` at the start of a descendant selector? The results verified our hypothesis: a remarkable 29% of pages use `:root` that way! Furthermore, 14% of desktop pages and 19% of mobile pages use `html` at the start of a descendant selector, possibly to give the selector an even smaller specificity boost. The popularity of these specificity hacks strongly indicates that developers need more fine grained control to tweak specificity than what is afforded to them via `!important`. Thankfully, this is coming soon with [`:where()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:where), which is already [implemented across the board](https://caniuse.com/mdn-css_selectors_where) (albeit behind a flag in Chrome for now).
+`:root` seems far more popular than is justified by its function, used in one third of pages. In HTML content, it just selects the `<html>` element, so why didn't developers just use `html`? A possible answer may lie in a common practice related to defining custom properties, [which are also highly used](#custom-properties), on the `:root` pseudo-class. Another answer may lie in specificity: `:root`, being a pseudo-class, has a higher specificity than `html`: (0, 1, 0) vs (0, 0, 1). It is a common hack to increase specificity of a selector by prepending it with `:root`, e.g. `:root .foo` has a specificity of (0, 2, 0) compared to just (0, 1, 0) for `.foo`. This is often all that is needed to nudge a selector slightly over another one in the cascade race and avoid the sledgehammer that is `!important`. To test this hypothesis, we also measured exactly that: how many pages use `:root` at the start of a descendant selector? The results verified our hypothesis: a remarkable 29% of pages use `:root` that way! Furthermore, 14% of desktop pages and 19% of mobile pages use `html` at the start of a descendant selector, possibly to give the selector an even smaller specificity boost. The popularity of these specificity hacks strongly indicates that developers need more fine grained control to tweak specificity than what is afforded to them via `!important`. Thankfully, this is coming soon with [`:where()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:where), which is already [implemented across the board](https://caniuse.com/mdn-css_selectors_where) (albeit behind a flag in Chrome for now).
 
 {{ figure_markup(
   image="popular-selector-pseudo-classes.png",
@@ -676,10 +676,10 @@ All the colors we discussed so far have one thing in common: sRGB, the standard 
 
 And we are still missing out. Despite being [implemented in Safari in 2016](https://webkit.org/blog/6682/improving-color-on-the-web/), the use of display-p3 color in Web pages is vanishingly small. Our crawl of the Web found only 29 mobile and 36 desktop pages (!) using it. (And more than half of those were syntax errors, mistakes, or attempts to use the never-implemented `color-mod()` function). We were curious why.
 
-Compatibility, right? You don’t want things to break? No. In the stylesheets we examined, we found solid use of fallback: with document order, the cascade, `@supports`, the `color-gamut` media query, all that good stuff. So in a style sheet we would see the color the designer wanted, expressed in display-p3, and also a fallback sRGB color. We computed the visible difference (a calculation called [ΔE2000](http://zschuessler.github.io/DeltaE/learn/)) between the desired and fallback color and this was typically quite modest. A small tweak. A careful exploration. In fact, 37.6% of the time, the color specified in display-p3 actually fell inside the range of colors (the gamut) that sRGB can manage.
+Compatibility, right? You don’t want things to break? No. In the stylesheets we examined, we found solid use of fallback: with document order, the cascade, `@supports`, the `color-gamut` media query, all that good stuff. So in a style sheet we would see the color the designer wanted, expressed in display-p3, and also a fallback sRGB color. We computed the visible difference (a calculation called [ΔE2000](https://zschuessler.github.io/DeltaE/learn/)) between the desired and fallback color and this was typically quite modest. A small tweak. A careful exploration. In fact, 37.6% of the time, the color specified in display-p3 actually fell inside the range of colors (the gamut) that sRGB can manage.
 
 <figure>
-  <table>
+  <table class="large-table">
     <thead>
       <tr>
         <th scope="col" colspan="2">sRGB</th>
@@ -953,14 +953,14 @@ The gradient with the most color stops is [this one](https://dabblet.com/gist/4d
 
 ### Flexbox and Grid adoption
 
-In the [2019 edition](https://almanac.httparchive.org/en/2019/css#flexbox), 41% of pages across mobile and desktop were reported as containing [Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox) properties. In 2020, this number has grown to 63% for mobile and 65% for desktop. With the number of legacy sites developed before Flexbox was a viable tool still in existence, we can safely say there is wide adoption of this layout method.
+In the [2019 edition](../2019/css#flexbox), 41% of pages across mobile and desktop were reported as containing [Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox) properties. In 2020, this number has grown to 63% for mobile and 65% for desktop. With the number of legacy sites developed before Flexbox was a viable tool still in existence, we can safely say there is wide adoption of this layout method.
 
 If we look at [Grid layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout), the percentage of sites using Grid layout has grown to 4% for mobile and 5% for desktop. Usage has doubled since last year, but still lags behind flex layout.
 
 {{ figure_markup(
   image="flexbox-grid-mobile.png",
-  caption="Adoption of flexbox and grid by year as a percent of mobile pages.",
-  description="Bar chart showing the adoption of flexbox and grid by year as a percent of mobile pages. Flexbox adoption grew from 2019 to 2020 from 41% to 63% of mobile pages. Grid adoption grew from 2% to 4% over the same time period.",
+  caption="Adoption of Flexbox and grid by year as a percent of mobile pages.",
+  description="Bar chart showing the adoption of Flexbox and Grid by year as a percent of mobile pages. Flexbox adoption grew from 2019 to 2020 from 41% to 63% of mobile pages. Grid adoption grew from 2% to 4% over the same time period.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1879364309&format=interactive",
   sheets_gid="1330536609",
   sql_file="flexbox_grid.sql"
@@ -975,7 +975,7 @@ If we look at [Grid layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS
   sql_file="flexbox_grid.sql"
 ) }}
 
-Note that unlike most other metrics in this chapter this is actual measured Grid usage, and not just grid-related properties and values that are specified in a stylesheet and potentially not used. While at first glance this may seem more accurate, one thing to keep in mind is that HTTPArchive crawls homepages, so this data may be skewed lower due to grids often appearing more in internal pages. So, let's look at another metric as well: how many pages specify `display: grid` and `display: flex` in their stylesheets? That metric puts Grid layout at significantly higher adoption, with 30% of pages using `display: grid` at least once. It does not however affect the number for Flexbox as significantly, with 68% of pages specifying `display: flex`. While this sounds like impressively high adoption for Flexbox, it's worth noting that CSS tables are still far more popular with 80% of pages using table display modes! Some of this usage may be due to [certain types of clearfix](https://css-tricks.com/snippets/css/clear-fix/) which use `display: table`, and not for actual layout.
+Note that unlike most other metrics in this chapter this is actual measured Grid usage, and not just grid-related properties and values that are specified in a stylesheet and potentially not used. While at first glance this may seem more accurate, one thing to keep in mind is that HTTP Archive crawls homepages, so this data may be skewed lower due to grids often appearing more in internal pages. So, let's look at another metric as well: how many pages specify `display: grid` and `display: flex` in their stylesheets? That metric puts Grid layout at significantly higher adoption, with 30% of pages using `display: grid` at least once. It does not however affect the number for Flexbox as significantly, with 68% of pages specifying `display: flex`. While this sounds like impressively high adoption for Flexbox, it's worth noting that CSS tables are still far more popular with 80% of pages using table display modes! Some of this usage may be due to [certain types of clearfix](https://css-tricks.com/snippets/css/clear-fix/) which use `display: table`, and not for actual layout.
 
 {{ figure_markup(
   image="layout-methods.png",
@@ -1067,7 +1067,7 @@ The specification authors got it right! `Ease` is the most popular timing functi
   sql_file="transition_timing_functions.sql"
 ) }}
 
-A major driver of animation adoption seems to be FontAwesome, as evidenced by the animation name `fa-spin` appearing in 1 out of 4 pages and thus topping the list of most popular animation names. While there are a wide variety of animation names, it appears that most of them fall into only a few basic categories, with 1 in 5 animations being some kind of spin. That may also explain the high percentage of linearly progressing transitions & animations: if we want a smooth perpetual rotation, `linear` is the way to go.
+A major driver of animation adoption seems to be Font Awesome, as evidenced by the animation name `fa-spin` appearing in 1 out of 4 pages and thus topping the list of most popular animation names. While there are a wide variety of animation names, it appears that most of them fall into only a few basic categories, with 1 in 5 animations being some kind of spin. That may also explain the high percentage of linearly progressing transitions & animations: if we want a smooth perpetual rotation, `linear` is the way to go.
 
 {{ figure_markup(
   image="transition-animation-names.png",
@@ -1099,7 +1099,7 @@ A decade ago, we got masks in Safari with `-webkit-mask-image` and it was exciti
 {{ figure_markup(
   image="mask-properties.png",
   caption="Relative popularity of animation name categories as a percent of occurrences.",
-  description="Relative popularity of animation name categories as a percent of occurrences. -webkit-mask-image is used on 22% of mobile pages, up from 19% on desktop. The following properties are mask-size and mask-image at 19%, mask-repeat, mask-postion, mask-mode, and -webkit-mask-size at 18%, -webkit-mask-repeat and -webkit-mask-position at 16%, and -webkit-mask and mask properties at 2% of mobile pages.",
+  description="Relative popularity of animation name categories as a percent of occurrences. -webkit-mask-image is used on 22% of mobile pages, up from 19% on desktop. The following properties are mask-size and mask-image at 19%, mask-repeat, mask-position, mask-mode, and -webkit-mask-size at 18%, -webkit-mask-repeat and -webkit-mask-position at 16%, and -webkit-mask and mask properties at 2% of mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=615866471&format=interactive",
   width="600",
   height="575",
@@ -1182,7 +1182,7 @@ While at first glance this is impressive adoption, it appears that a major drive
   sql_file="custom_property_names.sql"
 ) }}
 
-Out of the 1,000 top property names, fewer than 13 are ‘custom’, as in made up by individual web developers.The vast majority are associated with popular software, such as WordPress, Elementor, and Avada. To determine this, we took into account not only which custom properties appear in what software (by searching on Github), but also which properties appear in groups with similar frequencies. This does not necessarily mean that the main way a custom property ends up on a website is through usage of that software (people do still copy and paste!), but it does indicate there aren't many organic commonalities between the custom properties that developers define. The only custom property names that seem to have organically made the list of top 1000 are `--height`, `--primary-color`, and `--caption-color`.
+Out of the 1,000 top property names, fewer than 13 are ‘custom’, as in made up by individual web developers.The vast majority are associated with popular software, such as WordPress, Elementor, and Avada. To determine this, we took into account not only which custom properties appear in what software (by searching on GitHub), but also which properties appear in groups with similar frequencies. This does not necessarily mean that the main way a custom property ends up on a website is through usage of that software (people do still copy and paste!), but it does indicate there aren't many organic commonalities between the custom properties that developers define. The only custom property names that seem to have organically made the list of top 1000 are `--height`, `--primary-color`, and `--caption-color`.
 
 ### Usage by type
 
@@ -1216,9 +1216,9 @@ Next, we looked at how complex custom property usage is. One way to assess code 
 
 ```css
 :root {
-	--base-hue: 335; /* depth = 0 */
-	--base-color: hsl(var(--base-hue) 90% 50%); /* depth = 1 */
-	--background: linear-gradient(var(--base-color), black); /* depth = 2 */
+  --base-hue: 335; /* depth = 0 */
+  --base-color: hsl(var(--base-hue) 90% 50%); /* depth = 1 */
+  --background: linear-gradient(var(--base-color), black); /* depth = 2 */
 }
 ```
 
@@ -1234,7 +1234,7 @@ Next, we looked at how complex custom property usage is. One way to assess code 
   sql_file="custom_property_depth.sql"
 ) }}
 
-Examining the selectors on which custom properties are declared further confirms that most custom property usage in the wild is fairly basic. Two2 out of 3 custom property declarations are on the root element, indicating that they are used essentially as global constants. It is important to note that many popular polyfills have required them to be global in this vein, so developers using said polyfills may not have had a choice.
+Examining the selectors on which custom properties are declared further confirms that most custom property usage in the wild is fairly basic. Two out of three custom property declarations are on the root element, indicating that they are used essentially as global constants. It is important to note that many popular polyfills have required them to be global in this vein, so developers using said polyfills may not have had a choice.
 
 ## CSS and JS
 
@@ -1334,7 +1334,7 @@ Prefixed pseudo-classes are not nearly as common as properties, with none of the
 {{ figure_markup(
   image="vendor-prefix-pseudo-classes.png",
   caption="The most popular vendor-prefixed pseudo-classes as a percent of pages.",
-  description="Bar chart of the most popular vendor-prefixed pseudo-classes as a percent of pages. :ms-input-placeholder is used on 10% of mobile pages, :-moz-placeholder 8%, :-mox-focusring 2%, and 1% or less for the following: :-webkit-full-screen, :-moz-full-screen, :-moz-any-link, :-webkit-autofill, :-o-prefocus, :-ms-fullscreen, :-ms-input-placeholde [sic], :-ms-lang, :-moz-ui-invalid, :-webkit-input-placeholder, :-moz-input-placeholder, and :-webkit-any-link.",
+  description="Bar chart of the most popular vendor-prefixed pseudo-classes as a percent of pages. :ms-input-placeholder is used on 10% of mobile pages, :-moz-placeholder 8%, :-mox-focusring 2%, and 1% or less for the following: :-webkit-full-screen, :-moz-full-screen, :-moz-any-link, :-webkit-autofill, :-o-prefocus, :-ms-fullscreen, :-ms-input-placeholder [sic], :-ms-lang, :-moz-ui-invalid, :-webkit-input-placeholder, :-moz-input-placeholder, and :-webkit-any-link.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1884876858&format=interactive",
   sheets_gid="67014375",
   width="600",
@@ -1673,7 +1673,7 @@ Another future spec that is currently worked on is [CSS Nesting](https://drafts.
 
 **Whew!** That was a lot of data! We hope you have found it as interesting as we did, and perhaps even formed your own insights about some of them.
 
-One of our takeaways was that popular libraries such as WordPress, Bootstrap, and FontAwesome are primary drivers behind adoption of new features, while individual developers tend to be more conservative.
+One of our takeaways was that popular libraries such as WordPress, Bootstrap, and Font Awesome are primary drivers behind adoption of new features, while individual developers tend to be more conservative.
 
 Another observation is that there is more old code on the Web than new code. The Web in practice spans a huge range, from code that could have been written 20 years ago to bleeding edge tech that only works in the latest browsers. What this study showed us, though, is that there are powerful features that are often misunderstood and underused, despite good interoperability.
 

@@ -24,7 +24,7 @@ unedited: true
 ## Introduction
 JavaScript has come a long way from its humble origins as the last of the three web cornerstones—alongside CSS and HTML. Today, JavaScript has started to infiltrate a broad spectrum of the technical stack. JavaScript is no longer confined to the client-side—it's an increasingly popular choice for build tools and server-side scripting, and is creeping its way into the CDN layer as well thanks to edge computing solutions.
 
-Developers love us some JavaScript. The [`script` element is the 6th most popular HTML element in use](https://almanac.httparchive.org/en/2020/markup) (ahead of elements like `p`'s and `i`'s, among countless others). We spend around 14x as many bytes on it as we do on HTML, the building block of the web, and 6x as many bytes as CSS.
+Developers love us some JavaScript. The [`script` element is the 6th most popular HTML element in use](./markup) (ahead of elements like `p`'s and `i`'s, among countless others). We spend around 14x as many bytes on it as we do on HTML, the building block of the web, and 6x as many bytes as CSS.
 
 {{ figure_markup(
   image="page-weight-per-content-type.png",
@@ -111,7 +111,7 @@ As raw numbers, those may or may not jump out at you depending on how much of a 
 That 153 KB equates to ~37% of the total script size that we send down to mobile devices. There's definitely some room for improvement here.
 
 ### Request Count
-Another way of looking at how much JavaScript we use is to explore how many JavaScript requests are made on each page. While reducing the number of requests was paramount to maintaining good performance with HTTP/1.1, with HTTP/2 the opposite is the case: breaking JavaScript down into [smaller, individual files](https://web.dev/granular-chunking-nextjs/) is [typically better for performance](https://almanac.httparchive.org/en/2019/http2#impact-of-http2).
+Another way of looking at how much JavaScript we use is to explore how many JavaScript requests are made on each page. While reducing the number of requests was paramount to maintaining good performance with HTTP/1.1, with HTTP/2 the opposite is the case: breaking JavaScript down into [smaller, individual files](https://web.dev/granular-chunking-nextjs/) is [typically better for performance](../2019/http2#impact-of-http2).
 
 {{ figure_markup(
   image="requests-2020.png",
@@ -238,7 +238,7 @@ One of the audits in Lighthouse checks for unminified JavaScript, and provides a
 
 {{ figure_markup(
   image="lighthouse-unminified-js.png",
-  caption="Distribution of unminified JavaScript Lighthouse adudit scores per mobile page.",
+  caption="Distribution of unminified JavaScript Lighthouse audit scores per mobile page.",
   description="Bar chart showing 0% of mobile pages getting unminified JavaScript Lighthouse audit scores under 0.25, 4% of pages getting a score between 0.25 and 0.5, 10% of pages between 0.5 and 0.75, 8% of pages between 0.75 and 0.9, and 77% of pages between 0.9 and 1.0.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=158284816&format=interactive",
   sheets_gid="362705605",
@@ -266,26 +266,26 @@ Minification is a great way to help reduce file size, but compression is even mo
 {{ figure_markup(
   image="compression-method-request.png",
   caption="Distribution of the percent of JavaScript requests by compression method.",
-  description="Bar chart showing the distribution of the percent of JavaScript requests by compression method. Desktop and mobile values are very similar. 65% of JavaScript requests use gzip compression, 20% use br (brotli), 15% don't use any compression, and deflate, UTF-8, identity, and none appear as having 0%",
+  description="Bar chart showing the distribution of the percent of JavaScript requests by compression method. Desktop and mobile values are very similar. 65% of JavaScript requests use Gzip compression, 20% use br (Brotli), 15% don't use any compression, and deflate, UTF-8, identity, and none appear as having 0%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=263239275&format=interactive",
   sheets_gid="1270710983",
   sql_file="compression_method.sql"
 ) }}
 
-85% of all JavaScript requests have some level of network compression applied. GZip makes up the majority of that, with 65% of scripts having GZip compression applied compared to 20% for Brotli. While the percentage of Brotli (which is more effective than GZip) is low compared to its browser support, it's trending in the right direction, increasing by 5 percentage points in the last year.
+85% of all JavaScript requests have some level of network compression applied. Gzip makes up the majority of that, with 65% of scripts having Gzip compression applied compared to 20% for Brotli. While the percentage of Brotli (which is more effective than Gzip) is low compared to its browser support, it's trending in the right direction, increasing by 5 percentage points in the last year.
 
 Once again, this appears to be an area where third-party scripts are actually doing better than first-party scripts. If we break the compression methods out by first and third-party, we see that 24% of third-party scripts have Brotli applied compared to only 15% of third-party scripts.
 
 {{ figure_markup(
   image="compression-method-3p.png",
   caption="Distribution of the percent of mobile JavaScript requests by compression method and host.",
-  description="Bar chart showing the distribution of the percent of mobile JavaScript requests by compression method and host. 66% and 64% of first and third party JavaScript requests use gzip. 15% of first party and 24% of third party scripts requests use brotli. And 19% of first party and 12% of third party scripts do not have a compression method set.",
+  description="Bar chart showing the distribution of the percent of mobile JavaScript requests by compression method and host. 66% and 64% of first and third party JavaScript requests use Gzip. 15% of first party and 24% of third party scripts requests use Brotli. And 19% of first party and 12% of third party scripts do not have a compression method set.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=1402692197&format=interactive",
   sheets_gid="564760060",
   sql_file="compression_method_by_3p.sql"
 ) }}
 
-Third-party scripts are also less likely to be served without any compression at all: 12% of third-party scripts have neither GZip nor Brotli applied, compared to 19% of first-party scripts.
+Third-party scripts are also less likely to be served without any compression at all: 12% of third-party scripts have neither Gzip nor Brotli applied, compared to 19% of first-party scripts.
 
 It's worth taking a closer look those scripts that _don't_ have compression applied. Compression becomes more efficient in terms of savings the more content it has to work with. In other words, if the file is tiny, sometimes the cost of compressing the file doesn't outweight the miniscule reduction in file size.
 
@@ -303,7 +303,7 @@ The popular libraries in use are largely unchanged from last year, with jQuery c
 
 {# table? showing rank, library, percentage and last years rank #}
 
-Last year, [Houssein posited a few reasons for why jQuery's dominance continues](https://almanac.httparchive.org/en/2019/javascript#open-source-libraries-and-frameworks):
+Last year, [Houssein posited a few reasons for why jQuery's dominance continues](../2019/javascript#open-source-libraries-and-frameworks):
 
 > WordPress, which is used in more than 30% of sites, includes jQuery by default.
 > Switching from jQuery to a newer client-side library can take time depending on how large an application is, and many sites may consist of jQuery in addition to newer client-side libraries.
@@ -330,7 +330,7 @@ First, it's worth noting that while we may think of the usage of one tool versus
   description="Bar chart showing the adoption of the top frameworks and libraries as a percent of pages (not page views or npm downloads). jQuery is the overwhelming leader, found on 83% of mobile pages. It's followed by jQuery migrate on 30%, jQuery UI on 21%, Modernizr on 15%, FancyBox on 7%, Slick and Lightbox on 6%, and the remaining frameworks and libraries on 4% or 3%: Moment.js, Underscore.js, Lodash, React, GSAP, Select2, RequireJS, and prettyPhoto.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=419887153&format=interactive",
   sheets_gid="1654577118",
-  sql_file="framewords_libraries.sql"
+  sql_file="frameworks_libraries.sql"
 ) }}
 
 When we look at the common combinations that we see in production, most of them are to be expected. Knowing jQuery's dominance, it's unsurprising that most of the popular combinations include jQuery and any number of jQuery related plugins.
@@ -529,7 +529,7 @@ We do also see a fair amount of more "modern" frameworks, like React, Vue and An
 
 More importantly, all these tools typically mean more code and more processing time.
 
-Looking specfically at the frameworks in use, we see that the median JavaScript bytes for pages using them varies dramatically depending on _what_ is being used.
+Looking specifically at the frameworks in use, we see that the median JavaScript bytes for pages using them varies dramatically depending on _what_ is being used.
 
 The graph below shows the median bytes for pages where any of the top 35 most commonly detected frameworks were found, broken down by client.
 
@@ -547,7 +547,7 @@ Ember's mobile main thread time jumps out and kind of distorts the graph with ho
 
 Tools like React, GSAP, and RequireJS tend to spend a lot of time on the main thread of the browser, regardless of whether it's a desktop or mobile page view. The same tools that tend to lead to less code overall—tools like Alpine and Svelte—also tend to lead to lower impact on the main thread.
 
-The gap between the experience a framework provides for desktop and mobile is also worth digging into. Mobile traffic is becoming increasingly dominant, and it's critical that our tools perfom as well as possible for mobile pageviews. The bigger the gap we see between desktop and mobile performance for a framework, the bigger the red flag.
+The gap between the experience a framework provides for desktop and mobile is also worth digging into. Mobile traffic is becoming increasingly dominant, and it's critical that our tools perform as well as possible for mobile pageviews. The bigger the gap we see between desktop and mobile performance for a framework, the bigger the red flag.
 
 {# Table? Gap in absolute and relative terms #}
 
@@ -636,7 +636,7 @@ Of the roughly 5 million or so mobile pages that are tested against, 81% of them
         <td class="numeric">13.19%</td>
       </tr>
       <tr>
-        <td>Lo-Dash</td>
+        <td>Lodash</td>
         <td class="numeric">4.90%</td>
       </tr>
       <tr>
@@ -689,7 +689,7 @@ The bulk of the vulnerabilities found fall into the "medium" severity category.
 ) }}
 
 ## Conclusion
-JavaScript is steadily rising in popularity, and there's a lot that's positive about that. It's incredible to consider what we're able to accomplish on today's web thanks to JavaScript that, even a few years ago, would have been unimagineable.
+JavaScript is steadily rising in popularity, and there's a lot that's positive about that. It's incredible to consider what we're able to accomplish on today's web thanks to JavaScript that, even a few years ago, would have been unimaginable.
 
 But it's clear we've also got to tread carefully. The amount of JavaScript consistently rises each year (if the stock market were that predictable, we'd all be incredibly wealthy), and that comes with trade-offs. More JavaScript is connected to an increase in processing time which negatively impacts key metrics like Total Blocking Time. And, if we let those libraries languish without keeping them updated, they carry the risk of exposing users through known security vulnerabilities.
 

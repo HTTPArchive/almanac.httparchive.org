@@ -406,7 +406,7 @@ Finally, we found that 4.46% of desktop pages and 4.62% of mobile pages feature 
 
 ##### Most prevalent structured data objects
 
-[As seen last year](https://almanac.httparchive.org/en/2019/seo#structured-data), the most prevalent structured data objects remain to be `WebSite`, `SearchAction`, `WebPage`, `Organization`, and `ImageObject`, and their usage has continued to grow:
+[As seen last year](../2019/seo#structured-data), the most prevalent structured data objects remain to be `WebSite`, `SearchAction`, `WebPage`, `Organization`, and `ImageObject`, and their usage has continued to grow:
 
 * `WebSite` has grown 9.37% on desktop and 10.5% on mobile
 * `SearchAction` has grown 7.64% on both desktop and mobile
@@ -649,7 +649,7 @@ With the increasing popularity of mobile devices to browse and search across the
 
 Also, as mentioned before, [since 2016](https://developers.google.com/search/blog/2016/11/mobile-first-indexing) Google has been moving to a mobile-first index, meaning that the content that is crawled, indexed, and ranked is the one accessible to mobile users and the [Smartphone Googlebot](https://developers.google.com/search/docs/advanced/crawling/googlebot?hl=en).
 
-Additionally, [since July 2019](https://developers.google.com/search/blog/2019/05/mobile-first-indexing-by-default-for) Google is using the mobile-first index for all new websites and earlier in March, it announced that [70% of pages shown in their search results have already shifted over](https://webmasters.googleblog.com/2020/03/announcing-mobile-first-indexing-for.html_). It is now expected that Google [fully switches to a mobile-first index in March 2021](https://webmasters.googleblog.com/2020/07/prepare-for-mobile-first-indexing-with.html).
+Additionally, [since July 2019](https://developers.google.com/search/blog/2019/05/mobile-first-indexing-by-default-for) Google is using the mobile-first index for all new websites and earlier in March, it announced that [70% of pages shown in their search results have already shifted over](https://webmasters.googleblog.com/2020/03/announcing-mobile-first-indexing-for.html). It is now expected that Google [fully switches to a mobile-first index in March 2021](https://webmasters.googleblog.com/2020/07/prepare-for-mobile-first-indexing-with.html).
 
 Mobile friendliness should be fundamental for any website looking to provide a good search experience—and as a consequence, grow in search results.
 
@@ -1178,7 +1178,7 @@ On the other hand, when assessing the usage of AMP as a framework to develop web
 
 ### Single-page applications
 
-Single-page applications (SPAs) enable browsers to retain and update a single page load even as the on-page content updates to match a user request. Multiple technologies such as JavaScript frameworks, AJAX, and Websockets are used to accomplish lightweight subsequent page loads.
+Single-page applications (SPAs) enable browsers to retain and update a single page load even as the on-page content updates to match a user request. Multiple technologies such as JavaScript frameworks, AJAX, and WebSockets are used to accomplish lightweight subsequent page loads.
 
 These frameworks required special SEO considerations, although Google has worked to mitigate the issues caused by client-side rendering with aggressive caching strategies. In a video from [Google Webmaster's 2019 conference](https://youtu.be/rq8sFkl0KnI), Software Engineer Erik Hendriks shared that Google no longer relies on `Cache-Control` headers and instead looks for `ETag` or `Last-Modified` headers to see if the content of the file has changed.
 

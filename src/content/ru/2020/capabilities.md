@@ -11,13 +11,13 @@ discuss: 2049
 results: https://docs.google.com/spreadsheets/d/1N6j1qKv7vc51p1W9z_RrbJX9Se3Pmb-Uersfz4gWqqs/
 queries: 13_Capabilities
 christianliebel_bio: Кристиан Либел работает консультантом в компании Thinktecture, помогая клиентам из различных сфер бизнеса создавать качественные веб-приложения. Он обладатель награды Microsoft MVP в области технологий для разработчиков, Google GDE для веба/возможностей и Angular, а также участвует в рабочей группе W3C по веб-приложениям.
-featured_quote: Состояние веб-возможностей в 2020 году хорошее, поскольку новые и мощные API регулярно появляются в новых версия Chromium-браузеров. Некоторые API уже доступны и в других браузерах.
+featured_quote: Состояние веб-возможностей в 2020 году хорошее, поскольку новые и мощные API регулярно появляются в последних версиях Chromium-браузеров. Некоторые из этих API уже работают в других браузерах.
 featured_stat_1: 0.0006%
-featured_stat_label_1: (Chrome) Страница загружается с помощью Async Clipboard API
+featured_stat_label_1: (Chrome) Загрузок страниц с помощью Async Clipboard API
 featured_stat_2: 0.49%
-featured_stat_label_2: Сайты, использующие Storage Manager API
+featured_stat_label_2: Сайтов, использующих Storage Manager API
 featured_stat_3: 363
-featured_stat_label_3: Сайты, позволяющие устанавливать связанные с ним приложения
+featured_stat_label_3: Сайта, поддерживающих устанавливать нативные приложения
 ---
 
 ## Введение

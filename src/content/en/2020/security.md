@@ -194,7 +194,7 @@ Next we will look at the Certificate Authorities (CAs) issuing the TLS certifica
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Top 10 certificate issuers for websites.", sheets_gid="1486167130", sql_file="tls_ca_issuers_pages.sql.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Top 10 certificate issuers for websites.", sheets_gid="1486167130", sql_file="tls_ca_issuers_pages.sql") }}</figcaption>
 </figure>
 
 It is no surprise to see Let's Encrypt well in the lead easily taking the top spot; its combination of free and automated certificates is proving a winner with both individual website owners and platforms. Cloudflare similarly offers free certificates for its customers taking the number two and number nine position. What is more interesting there is that it is the ECC Cloudflare issuer that is being used. ECC certificates are smaller and so more efficient than RSA certificates but can be complicated to deploy as support is not universal and managing both certificates often requires extra effort. This is the benefit of a CDN or hosted provider if they can manage this for you like Cloudflare does here. Browsers that support ECC (like the Chrome browser we use in our crawl) will use that, and older browsers will use RSA.

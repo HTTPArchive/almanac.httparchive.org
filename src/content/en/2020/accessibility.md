@@ -35,7 +35,7 @@ These guidelines have had multiple releases over the years and the current stand
 
 A dangerous trend that has seen more exposure than ever in 2020 is the use of “accessibility overlays”. These widgets promise one step accessibility compliance and more often than not introduce new barriers and make the experience for a disabled user quite challenging. It is important that digital practitioners take ownership over designing and implementing usable interfaces and not try to subvert this process with a quick fix. For more information see Lainey Feingold’s article, [Honor the ADA: Avoid Web Accessibility Quick Fix Overlays](https://www.lflegal.com/2020/08/quick-fix/).
 
-Sadly, year over year, we and other teams conducting analysis such as the [WebAIM Million](https://webaim.org/projects/million/https://webaim.org/projects/million/) are finding little and in some cases no improvement in these metrics. The median overall site score for all lighthouse audit data rose from 73% in 2019 to 80% in 2020. We hope that this 7% increase represents a shift in the right direction. However, these are automated checks and could mean that developers are doing a better job of subverting the rule engine, so we are cautiously optimistic.
+Sadly, year over year, we and other teams conducting analysis such as the [WebAIM Million](https://webaim.org/projects/million/) are finding little and in some cases no improvement in these metrics. The median overall site score for all lighthouse audit data rose from 73% in 2019 to 80% in 2020. We hope that this 7% increase represents a shift in the right direction. However, these are automated checks and could mean that developers are doing a better job of subverting the rule engine, so we are cautiously optimistic.
 
 Our analysis is based on automated metrics only. It is important to remember that automated testing captures only a fraction of the accessibility barriers that can be present in an interface. Qualitative analysis, including manual testing and usability testing with disabled people are needed in order to achieve an accessible site or application.
 
@@ -140,9 +140,9 @@ Tooltips also introduce a host of other accessibility barriers such as informati
 {{ figure_markup(
   caption="The longest known alt text length.",
   content="15,357,625",
-  classes="big-number",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  classes="medium-number",
+  sheets_gid="1881074528",
+  sql_file="alt_text_length.sql"
 ) }}
 
 - The median length for both desktop and mobile `alt` text is 18 characters. With the average English word length being 4.7 characters, this means the median alt attribute value is 3-4 words long. Depending on the image, being terse can be beneficial. However it is hard to imagine 4 words being sufficient for an accurate description of an image with any complexity.
@@ -197,7 +197,7 @@ Table captions act as a label for the table supplying context for the table data
 
 #### Presentational tables
 
-We are fortunate in 2020 to have so many flexible CSS methodologies that allow for fluid responsive layouts. However, many years ago before the likes of flexbox and CSS Grid, developers often used tables for layout. Unfortunately due to some combination of legacy websites and legacy development techniques there are still sites out there where tables are used for layout.
+We are fortunate in 2020 to have so many flexible CSS methodologies that allow for fluid responsive layouts. However, many years ago before the likes of Flexbox and CSS Grid, developers often used tables for layout. Unfortunately due to some combination of legacy websites and legacy development techniques there are still sites out there where tables are used for layout.
 
 If there is an absolute need to reach for this technique, the role of presentation should be applied to the table such that assistive technology will ignore the table semantics. We found that 0.063% of desktop and 0.049% of mobile pages had a table with a role of presentation. It’s hard to know if this is good or bad. It could indicate that there are not many tables used for presentational purposes, but it is very likely that tables used for layout are just lacking this needed role.
 
@@ -313,7 +313,7 @@ For desktop pages, 7.00% have at least one element with a `role="tablist"` where
 
 When an element has been given a `role="presentation"` its semantics are stripped away, for both the element it is assigned to and its required children. For example, tables and lists both have required children, so if the parent has a `role="presentation"` this essentially cascades to the child elements, which will also have their semantics stripped. Removing an element’s semantics means that it is no longer that element in any capacity except for its visual appearance. For example, a list with a `role="presentation"` will no longer communicate any information to a screen reader about the list structure.
 
-A common usage of this attribute is for `<table>` elements that have been used for layout rather than  for tabular data. We do not recommend using tables in this way. For layout, we have powerful CSS tools today such as flexbox and CSS grid. In general there are very few use cases where `role="presentation"` is particularly helpful for assistive technology users, use this role sparingly and thoughtfully.
+A common usage of this attribute is for `<table>` elements that have been used for layout rather than  for tabular data. We do not recommend using tables in this way. For layout, we have powerful CSS tools today such as Flexbox and CSS Grid. In general there are very few use cases where `role="presentation"` is particularly helpful for assistive technology users, use this role sparingly and thoughtfully.
 
 <figure markdown>
 | Role         | Desktop | Mobile |
@@ -392,7 +392,7 @@ Forms are one of the most important things to get right in terms of accessibilit
 
 ### Form validation
 
-It is very important that any form error handling be communicated to assistive technology.  There are a variety of techniques for handling this depending on the validation implementation. Web AIM’s [Usable and Accessible Form Validation and Error Recovery](https://webaim.org/techniques/formvalidation/) article is a great resource for learning more about various accessible form validation strategies.  If a form element is required this also needs to be communicated to assistive technology. For native HTML form elements the [required] attribute(https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required) can be used and for customized elements the [aria-required](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-required_attribute) attribute may be needed. If there is an issue with a form submission, this needs to be conveyed to assistive technology.
+It is very important that any form error handling be communicated to assistive technology.  There are a variety of techniques for handling this depending on the validation implementation. Web AIM’s [Usable and Accessible Form Validation and Error Recovery](https://webaim.org/techniques/formvalidation/) article is a great resource for learning more about various accessible form validation strategies.  If a form element is required this also needs to be communicated to assistive technology. For native HTML form elements the [required attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required) can be used and for customized elements the [aria-required](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-required_attribute) attribute may be needed. If there is an issue with a form submission, this needs to be conveyed to assistive technology.
 
 ### Form labels
 

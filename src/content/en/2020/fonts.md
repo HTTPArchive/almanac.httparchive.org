@@ -44,8 +44,6 @@ Web font usage has been growing steadily over time (it was near zero as late as 
 
 Usage of web fonts is fairly consistent around the world, with a few outliers. The charts below are based on the median number of kilobytes of web fonts per web page, which can be an indicator of lots of fonts, large fonts, or both.
 
-https://discuss.httparchive.org/t/how-does-web-font-usage-vary-by-country/1649
-
 {{ figure_markup(
   image="fonts-web-fonts-usage-by-country.png",
   caption="Web fonts usage by country (desktop).",
@@ -68,11 +66,11 @@ The single top country is South Korea, which is not all that surprising given th
   )
 }}
 
-There's a great thread on [web font usage by country](https://discuss.httparchive.org/t/how-does-web-font-usage-vary-by-country/1649) on the httparchive discussion forum.
+There's a great thread on [web font usage by country](https://discuss.httparchive.org/t/how-does-web-font-usage-vary-by-country/1649) on the HTTP Archive discussion forum.
 
 ### Serving with a service
 
-It likely comes as no surprise that Google Fonts remains by far the most popular platform, but the percentage use has actually dropped almost 5% from 2019 to about 70%. Adobe Fonts (formerly Typekit) has dropped about 3% as well, but Bootstrap usage has grown from about 3% to over 6% (in aggregate from several providers). It's worth noting that the largest provider for Bootstrap (BootstrapCDN) also provides icon fonts from FontAwesome, so it may be that it's not Bootstrap itself but rather older versions also referencing icon font files that is behind the rise in that source data.
+It likely comes as no surprise that Google Fonts remains by far the most popular platform, but the percentage use has actually dropped almost 5% from 2019 to about 70%. Adobe Fonts (formerly Typekit) has dropped about 3% as well, but Bootstrap usage has grown from about 3% to over 6% (in aggregate from several providers). It's worth noting that the largest provider for Bootstrap (BootstrapCDN) also provides icon fonts from Font Awesome, so it may be that it's not Bootstrap itself but rather older versions also referencing icon font files that is behind the rise in that source data.
 
 Another surprise in the data is the rise in fonts being served by Shopify. Growing from roughly 1.1% in 2019 to about 4% in 2020, there has clearly been a significant uptick in usage of web fonts by sites hosted on that platform. It's unclear if that is due to that service offering more fonts that they host on their CDN, if it's growth in use of their platform, or both. However, the increase in usage of both Shopify and Bootstrap represent the largest amount of growth other than Google Fonts, making it a very noticeable data point.
 

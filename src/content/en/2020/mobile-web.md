@@ -13,7 +13,7 @@ mdiblasio_bio: Michael DiBlasio is Web Ecosystems Consultant at Google. He focus
 discuss: 2048
 results: https://docs.google.com/spreadsheets/d/1DGLY7UEWOlDL5_2dtS_j2eqMjiV-Rw5Fe2y6K6-ULvM/
 queries: 12_Mobile_Web
-featured_quote: Mobile Web has grown explosively in the last decade and is now the primary way many people experience the web. In spite of this, engagement and online sales still lag behind desktop. In this chapter, we take a look at recents trends on the mobile web and analyze why user journeys are often difficult to complete.
+featured_quote: Mobile Web has grown explosively in the last decade and is now the primary way many people experience the web. In spite of this, engagement and online sales still lag behind desktop. In this chapter, we take a look at recent trends on the mobile web and analyze why user journeys are often difficult to complete.
 featured_stat_1: 41.20%
 featured_stat_label_1: % pages with improperly sized images
 featured_stat_2: 60.1%
@@ -24,16 +24,16 @@ unedited: true
 ---
 
 ## Introduction
-Mobile Web has grown explosively in the last decade and is now the primary way many people experience the web. In spite of this, engagement and online sales still lag behind desktop. In this chapter, we take a look at recents trends on the mobile web and analyze why user journeys are often difficult to complete.
+Mobile Web has grown explosively in the last decade and is now the primary way many people experience the web. In spite of this, engagement and online sales still lag behind desktop. In this chapter, we take a look at recent trends on the mobile web and analyze why user journeys are often difficult to complete.
 
 2020 has seen a big surge in [internet usage](https://www.nytimes.com/interactive/2020/04/07/technology/coronavirus-internet-use.html), on both mobile and desktop, due to the global pandemic. There has been an uptick in visits to news sites, ecommerce and social media sites -- as people across the globe adjusted to a new lifestyle with stay-at-home orders and social distancing. 2020 has been a significant year in history, for the web and for mobile usage.
 
 ### Data sources
 We’ve used a few different data sources in this chapter:
 
-* [CrUX](https://almanac.httparchive.org/en/2020/methodology#chrome-ux-report)
-* [HTTP archive](https://almanac.httparchive.org/en/2020/methodology#dataset)
-* [Lighthouse](https://almanac.httparchive.org/en/2020/methodology#lighthouse)
+* [CrUX](./methodology#chrome-ux-report)
+* [HTTP archive](./methodology#dataset)
+* [Lighthouse](./methodology#lighthouse)
 
 Please visit the links above to learn more about the methodology and caveats with each data source.
 It is worth noting that HTTP Archive and Lighthouse data is limited to the data identified from websites’ home pages only, and not site-wide.
@@ -144,7 +144,7 @@ Due to the popularity of  mobile devices to browse and search the web, Google se
 
 Websites should ensure mobile friendliness for a good search experience and SEO, as this impacts traffic from search users. [Responsive web design](https://developers.google.com/search/mobile-sites/mobile-seo/responsive-design) is the recommended way to achieve this.
 
-Responsive websites use the viewport meta tag as well as CSS media queries to provide a mobile friendly experience. To learn more about these mobile friendliness aspects, head over to the [SEO chapter]((../seo#mobile-friendliness)).
+Responsive websites use the viewport meta tag as well as CSS media queries to provide a mobile friendly experience. To learn more about these mobile friendliness aspects, head over to the [SEO chapter](./seo#mobile-friendliness).
 
 Learn more about [responsive web design here](https://web.dev/responsive-web-design-basics/).
 
@@ -179,7 +179,7 @@ A good LCP score is 2.5s at p75. We found that the median LCP at p75 is 2.6s on 
 }}
 
 ##### Images
-While every type of asset, such as font, CSS, Javascript etc. plays an important role in loading performance, we take a closer look at images.
+While every type of asset, such as font, CSS, JavaScript etc. plays an important role in loading performance, we take a closer look at images.
 
 The web continues to move towards image-heavy pages, with the growth of bandwidth and the ubiquity of smartphones. And images impose a cost on loading performance.
 
@@ -380,7 +380,7 @@ Users can more easily enter required information on mobile devices when their ke
 #### Sign up, Sign in and Checkout
 Today, browsers can help populate the necessary user information to complete a transaction and help reduce potential input errors. The `autocomplete` attribute can provide browsers hints to populate input elements with the correct user information. Users who successfully use Chrome Autofill to enter their information go through checkout an average of 30% faster than those who don't ([source](https://developers.google.com/web/fundamentals/design-and-ux/input/forms#use_metadata_to_enable_auto-complete)).
 
-Auto-complete can be especially helpful in completing checkout flows that require a user to login and hence remember their password. According to a [study by HYPR](https://www.hypr.com/hypr-password-study-findings/_) in 2019, 78% of users forgot and had to reset a password in the past 90 days.
+Auto-complete can be especially helpful in completing checkout flows that require a user to login and hence remember their password. According to a [study by HYPR](https://www.hypr.com/hypr-password-study-findings/) in 2019, 78% of users forgot and had to reset a password in the past 90 days.
 
 It’s also possible to eliminate some form fields altogether. The Credential Management and Payment Request APIs are standards-based browser APIs that provide a programmatic interface between sites and the browser for seamless sign-in and payments. Only .61% of eCommerce sites are using the Payment Request API and only 0.008% use the Credential Management API. It’s worth noting that adoption of the Payment Request API has increased compared to 2019, with a 6x increase in payment completion rate.
 

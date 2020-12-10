@@ -73,6 +73,11 @@
   padding: 0;
 }
 
+.large-table td {
+  padding: 0.2rem;
+  line-height: 1.5em;
+}
+
 th {
   padding: 0.75rem;
   text-align: center;
@@ -197,7 +202,7 @@ tbody tr:nth-child(even) {
   page-break-inside: avoid;
 }
 
-.code-block pre {
+pre {
   overflow: visible;
   white-space: pre-wrap;
 }
