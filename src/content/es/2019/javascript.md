@@ -146,8 +146,8 @@ En el contexto de las interacciones navegador-servidor, la compresión de recurs
 
 Existen varios algoritmos de compresión de texto, pero solo dos se utilizan principalmente para la compresión (y descompresión) de solicitudes de red HTTP:
 
-- [Gzip](https://www.gzip.org/) (gzip): El formato de compresión más utilizado para las interacciones de servidor y cliente.
-- [Brotli](https://github.com/google/brotli) (br): Un algoritmo de compresión más nuevo que apunta a mejorar aún más las relaciones de compresión. [90% de los navegadores](https://caniuse.com/#feat=brotli) soportan la codificación Brotli.
+- [Gzip](https://www.gzip.org/) (`gzip`): El formato de compresión más utilizado para las interacciones de servidor y cliente.
+- [Brotli](https://github.com/google/brotli) (`br`): Un algoritmo de compresión más nuevo que apunta a mejorar aún más las relaciones de compresión. [90% de los navegadores](https://caniuse.com/#feat=brotli) soportan la codificación Brotli.
 
 Los scripts comprimidos siempre deberán ser descomprimidos por el navegador una vez transferidos. Esto significa que su contenido sigue siendo el mismo y los tiempos de ejecución no están optimizados en absoluto. Sin embargo, la compresión de recursos siempre mejorará los tiempos de descarga, que también es una de las etapas más caras del procesamiento de JavaScript. Asegurarse de que los archivos JavaScript se comprimen correctamente puede ser uno de los factores más importantes para mejorar el rendimiento del sitio.
 
@@ -155,8 +155,8 @@ Los scripts comprimidos siempre deberán ser descomprimidos por el navegador una
 
 {{ figure_markup(
   image="fig10.png",
-  caption="Porcentaje de sitios que comprimen recursos de JavaScript con gzip o brotli.",
-  description="Gráfico de barras que muestra el 67% / 65% de los recursos de JavaScript se comprime con gzip en computadoras de escritorio y dispositivos móviles respectivamente, y el 15% / 14% se comprime con Brotli.",
+  caption="Porcentaje de sitios que comprimen recursos de JavaScript con Gzip o Brotli.",
+  description="Gráfico de barras que muestra el 67% / 65% de los recursos de JavaScript se comprime con Gzip en computadoras de escritorio y dispositivos móviles respectivamente, y el 15% / 14% se comprime con Brotli.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=241928028&format=interactive"
   )
 }}
