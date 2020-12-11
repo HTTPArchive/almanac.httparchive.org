@@ -54,7 +54,7 @@ We've split up our most interesting insights into five categories:
 
 Making content as simple and clear to read as possible is an important aspect of web accessibility. Being unable to read the content of a page prevents a user from being able to complete tasks on websites. There are many aspects of a web page that make it easier or harder to read, including color contrast, zooming and scaling of pages, and language identification.
 
-### Color Contrast
+### Color contrast
 
 The higher the page contrast, the easier it is for people to view text-based content. People who may have difficulties viewing low contrast content include those with color vision deficiency, people with mild to moderate vision loss, and those with contextual difficulties viewing the content, such as glare on screens in bright light.
 
@@ -70,7 +70,7 @@ The higher the page contrast, the easier it is for people to view text-based con
 
 Unfortunately, only 21.06% of sites were found to have sufficient color contrast. Which is a decrease from last year's already abysmal 22%.
 
-### Zooming and Scaling of Pages
+### Zooming and scaling
 
 It is essential that we allow users to zoom the page or content. There are techniques that can be used to try to disable the ability to scale or zoom the browser. Some operating systems subvert this harmful pattern, but many do not, and it is an anti-pattern that needs to be avoided.
 
@@ -88,7 +88,7 @@ Zooming is particularly useful for users with low vision. According to the [Worl
 
 We found that 29.34% of desktop pages and 30.66% of mobile pages attempt to disable scaling by setting either `maximum-scale` to a value less than 1, or `user-scalable` `0` or `none`. Some operating systems no longer comply with disabled zoom and scale set in HTML. For systems that do respect it, this can render the page effectively unusable for some. For more information about why to avoid disabling browser zoom see Adrian Roselli's article, [Don't Disable Zoom](https://adrianroselli.com/2015/10/dont-disable-zoom.html).
 
-### Language Identification
+### Language identification
 
 {{ figure_markup(
   caption="Desktop sites have a valid `lang` attribute.",
@@ -410,7 +410,7 @@ In the vast majority of these cases, a better pattern than explicitly defining `
 
 We found that 22.06% of desktop pages and 21.76% of mobile pages have at least one element with `role="navigation"`, which is a landmark role. Per the first rule of ARIA, rather than adding this role to an element, developers should be leveraging the HTML5 `<nav>` element which comes with the correct semantics implicitly. It is possible that this role has been added explicitly to the `<nav>` element, which would not be an accessibility issue, though it is redundant.
 
-#### Dialog Modals
+#### Dialog modals
 
 There are many potential accessibility barriers associated with dialog modals. We recommend reading <[Scott O'Hara](https://twitter.com/scottohara)'s article [Having an Open Dialog](https://www.scottohara.me/blog/2019/03/05/open-dialog.html) for more context.
 
@@ -457,7 +457,7 @@ When an element has been given a `role="presentation"` its semantics are strippe
 
 A common usage of this attribute is for `<table>` elements that have been used for layout rather than  for tabular data. We do not recommend using tables in this way. For layout, we have powerful CSS tools today such as Flexbox and CSS Grid. In general there are very few use cases where `role="presentation"` is particularly helpful for assistive technology users, use this role sparingly and thoughtfully.
 
-### ARIA Attributes
+### ARIA attributes
 
 ARIA attributes can be assigned to HTML elements to enhance the accessibility of the interface. Respecting the first rule of ARIA, they should not be used to achieve something that can be done with native HTML.
 
@@ -505,7 +505,7 @@ We found that 20.98% of desktop pages and 21.00% of mobile pages had at least on
 
 A common technique that developers often employ to supply additional information for screen reader users is to use CSS to visually hide a passage of text such that it will be announced by a screen reader, but not visually present in the interface. Since `display:none` and `visibility:hidden` both prevent content from being present in the accessibility tree, there is a common "hack" involving a chunk of CSS code that will accomplish this. The most common CSS class names for this code snippet (both by convention and throughout libraries like bootstrap) are `sr-only` and `visually-hidden`. We found that 13.31% of desktop pages and 12.37% of mobile pages had one or both of these CSS class names.
 
-#### Announcing Dynamically Rendered Content
+#### Announcing dynamically rendered content
 
 One of the biggest accessibility challenges in modern web development is handling dynamically rendered content which is everywhere in interfaces. The presence of new or updated things in the DOM often needs to be communicated to screen readers. Some thought needs to be put into which updates need to be conveyed. For example, form validation errors need to be conveyed whereas a lazy-loaded image may not. There also needs to be done in a way that is not disruptive to a task in progress.
 
