@@ -194,20 +194,23 @@ The `title` attribute which generates a tooltip that displays text is often mist
 
 > "Relying on the `title` attribute is currently discouraged as many user agents do not expose the attribute in an accessible manner as required by this specification"
 
-Tooltips also introduce a host of other accessibility barriers such as information only being revealed on hover/mouseover, information not being properly communicated to assistive technology, lack of keyboard support, and general poor usability. The history of tooltips and their barriers  are well described by Sarah Higley in her blog post [Tooltips in the time of WCAG 2.1](https://sarahmhigley.com/writing/tooltips-in-wcag-21/). We found that 16.95% of all alt attributes also contain a title attribute and of these instances 73.56% of the titles are the exact same as the alt attribute. Of these instances 73.56% of desktop sites and 72.80% of mobile sites had matching values for both the alt and title attributes.
+Tooltips also introduce a host of other accessibility barriers such as information only being revealed on hover/mouseover, information not being properly communicated to assistive technology, lack of keyboard support, and general poor usability. The history of tooltips and their barriers  are well described by [Sarah Higley](https://twitter.com/codingchaos) in her blog post [Tooltips in the time of WCAG 2.1](https://sarahmhigley.com/writing/tooltips-in-wcag-21/).
 
-#### Other facts about alt text
+We found that 16.95% of all `alt` attributes also contain a `title` attribute. Of these instances 73.56% of desktop sites and 72.80% of mobile sites had matching values for both the `alt` and `title` attributes.
+
+#### Other facts about `alt` text
 
 {{ figure_markup(
-  caption="The longest known alt text length.",
+  caption="The longest known `alt` text length.",
   content="15,357,625",
   classes="big-number",
   sheets_gid="1881074528",
   sql_file="alt_text_length.sql"
 ) }}
 
-- The median length for both desktop and mobile `alt` text is 18 characters. With the average English word length being 4.7 characters, this means the median alt attribute value is 3-4 words long. Depending on the image, being terse can be beneficial. However it is hard to imagine 4 words being sufficient for an accurate description of an image with any complexity.
-- The longest `alt` text length found for desktop sites was 15,357,625 characters. That's enough to fill 5 and a half "War and Peace" sized books (assuming "War and Peace" has an average word length of 4.7 characters).
+The median length for both desktop and mobile `alt` text is 18 characters. With the average English word length being 4.7 characters, this means the median alt attribute value is 3-4 words long. Depending on the image, being terse can be beneficial. However it is hard to imagine 4 words being sufficient for an accurate description of an image with any complexity.
+
+The longest `alt` text length found for desktop sites was 15,357,625 characters. That's enough to fill 5 and a half "War and Peace" sized books (assuming "War and Peace" has an average word length of 4.7 characters).
 
 ### Video on the web
 
@@ -327,14 +330,6 @@ Descriptive page titles are helpful for context when moving between pages, tabs 
 ### Tabindex
 
 Tabindex dictates the order in which focus moves throughout the page. Interactive content such buttons, links and form controls have a natural `tabindex` value of `0`. Similarly, custom elements and widgets that are intended to be interactive and in the keyboard focus order need an explicitly assigned `tabindex="0"`. If a non-interactive element should be focusable but not in the keyboard tab order a `tabindex` value of `-1` can be used allowing for focus to be programmatically set with JavaScript.
-
-{{ figure_markup(
-  caption="Mobiles sites using positive tab index values.",
-  content="4.34%",
-  classes="big-number",
-  sheets_gid="449296451",
-  sql_file="positive_tabindex.sql"
-) }}
 
 The focus order of the page should always be determined by the document flow. Setting the `tabindex` to a positive integer value overrides the natural order of the page and is considered bad practice. Respecting the natural order of the page generally leads to a more accessible experience. We found that 5% of desktop sites and  4.34% of mobile sites used positive integers as tab index values.
 
