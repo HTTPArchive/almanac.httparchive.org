@@ -191,7 +191,7 @@ Figure 22.7 orders every website by the fraction of HTTP/2 requests for known th
   caption="The distribution of the fraction of third-party and first-party HTTP/2 requests per page.",
   description="A line chart comparing the fraction of first-party HTTP/2 requests with third-party HTTP/2 or gQUIC requests. The chart orders the websites by fraction of HTTP/2 requests. 45% of websites have no HTTP/2 first-party requests. Over half of websites serve third-party requests only over HTTP/2 or gQUIC. 80% of websites have 76% or more third-party HTTP/2 or gQUIC requests.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=1409316276&format=interactive",
-  sql_file="http2_%_1st_party_vs_3rd_party.sql",
+  sql_file="http2_1st_party_vs_3rd_party.sql",
   sheets_gid="733872185"
 )
 }}
@@ -204,7 +204,7 @@ Is there any difference in which content-types are served over HTTP/2 or gQUIC? 
   description="A bar chart comparing the fraction of third-party HTTP/2 requests by content-type. All third-party requests are served over HTTP/2 or gQUIC for 90% of audio and fonts, 80% of css and video, 70% of html, image and text and 60% of scripts.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=1264128523&format=interactive",
   sheets_gid="419557288",
-  sql_file="http2_%_1st_party_vs_3rd_party_by_type.sql"
+  sql_file="http2_1st_party_vs_3rd_party_by_type.sql"
 )
 }}
 
@@ -460,7 +460,7 @@ As can be seen from the Figure 20.17 below, a very small percentage of sites use
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Pages using HTTP/2 or gQUIC server push.", sheets_gid="698874709", sql_file="number_of_h2_and_h3_pushed_resources_and_avg_bytes.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Pages using HTTP/2 or gQUIC server push.", sheets_gid="698874709", sql_file="number_of_h2_and_h3_pushed_resources_and_bytes_transferred.sql") }}</figcaption>
 </figure>
 
 Looking further at the distributions for pushed assets in Figures 22.18 and 22.19, half of the sites push 4 or fewer resources with a total size of 140 KB on desktop and 3 or fewer resources with a size of 184 KB on mobile. For gQUIC, desktop is 7 or fewer and mobile 2. The worst offending page pushes _41 assets_ over gQUIC on desktop.
@@ -514,7 +514,7 @@ Looking further at the distributions for pushed assets in Figures 22.18 and 22.1
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Distribution of pushed assets on desktop.", sheets_gid="698874709", sql_file="number_of_h2_and_h3_pushed_resources_and_avg_bytes.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Distribution of pushed assets on desktop.", sheets_gid="698874709", sql_file="number_of_h2_and_h3_pushed_resources_and_bytes_transferred.sql") }}</figcaption>
 </figure>
 
 <figure>
@@ -566,7 +566,7 @@ Looking further at the distributions for pushed assets in Figures 22.18 and 22.1
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Distribution of pushed assets on mobile.", sheets_gid="698874709", sql_file="number_of_h2_and_h3_pushed_resources_and_avg_bytes.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Distribution of pushed assets on mobile.", sheets_gid="698874709", sql_file="number_of_h2_and_h3_pushed_resources_and_bytes_transferred.sql") }}</figcaption>
 </figure>
 
 

@@ -146,8 +146,8 @@ Webページで使用されているJavaScriptの量を分析しようとする�
 
 テキスト圧縮アルゴリズムは複数ありますが、HTTPネットワークリクエストの圧縮（および解凍）に使われることが多いのはこの2つだけです。
 
-- [Gzip](https://www.gzip.org/) (gzip): サーバーとクライアントの相互作用のために最も広く使われている圧縮フォーマット。
-- [Brotli](https://github.com/google/brotli) (br): 圧縮率のさらなる向上を目指した新しい圧縮アルゴリズム。[90%のブラウザ](https://caniuse.com/#feat=brotli)がBrotliエンコーディングをサポートしています。
+- [Gzip](https://www.gzip.org/) (`gzip`): サーバーとクライアントの相互作用のために最も広く使われている圧縮フォーマット。
+- [Brotli](https://github.com/google/brotli) (`br`): 圧縮率のさらなる向上を目指した新しい圧縮アルゴリズム。[90%のブラウザ](https://caniuse.com/#feat=brotli)がBrotliエンコーディングをサポートしています。
 
 圧縮されたスクリプトは、一度転送されるとブラウザによって常に解凍される必要があります。これは、コンテンツの内容が変わらないことを意味し、実行時間が最適化されないことを意味します。しかし、リソース圧縮は常にダウンロード時間を改善しますが、これはJavaScriptの処理で最もコストのかかる段階の1つでもあります。JavaScriptファイルが正しく圧縮されていることを確認することは、サイトのパフォーマンスを向上させるための最も重要な要因の1つとなります。
 
@@ -155,8 +155,8 @@ JavaScriptのリソースを圧縮しているサイトはどれくらいある�
 
 {{ figure_markup(
   image="fig10.png",
-  caption="JavaScript リソースをgzipまたはbrotliで圧縮しているサイトの割合。",
-  description="バーチャートを見ると、デスクトップとモバイルでそれぞれJavaScriptリソースの67%/65%がgzipで圧縮されており、15%/14%がBrotliで圧縮されていることがわかります。",
+  caption="JavaScript リソースをGzipまたはBrotliで圧縮しているサイトの割合。",
+  description="バーチャートを見ると、デスクトップとモバイルでそれぞれJavaScriptリソースの67%/65%がGzipで圧縮されており、15%/14%がBrotliで圧縮されていることがわかります。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=241928028&format=interactive"
   )
 }}

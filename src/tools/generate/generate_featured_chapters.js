@@ -8,12 +8,16 @@ const generate_chapter_featured_quote = (metadata) => {
 
   let featured_quote_obj = {};
   let featured_stats = [];
-  if (featured_quote) {
-    // Showdown replaces & with &amp; so convert those back to avoid escape issues
-    featured_quote = featured_quote.replace(/&amp;/g ,'&');
-    featured_quote_obj.quote = featured_quote;
+
+  // If we don't have a quote - you don't get in the featured quote section
+  if (!featured_quote) {
+    return {};
   }
-  
+
+  // Showdown replaces & with &amp; so convert those back to avoid escape issues
+  featured_quote = featured_quote.replace(/&amp;/g ,'&');
+  featured_quote_obj.quote = featured_quote;
+
   for (let i = 1; i < 4; i++) {
 
     let featured_stat = metadata["featured_stat_" + i];
@@ -46,7 +50,7 @@ const generate_featured_chapters = async (featured_quotes) => {
       Object.keys(unsorted_quotes).sort().forEach(function(key) {
         sorted_quotes[key] = unsorted_quotes[key];
       });
-      
+
       await write_template(language, year, sorted_quotes);
 
     }

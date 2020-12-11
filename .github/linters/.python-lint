@@ -250,6 +250,7 @@ ignored-modules=flask,
                 mistune,
                 pandas,
                 scour,
+                werkzeug.exceptions,
                 werkzeug.routing,
                 werkzeug.http,
                 pytest
