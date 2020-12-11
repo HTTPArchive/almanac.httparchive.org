@@ -777,6 +777,7 @@
 {# Ebook needs a unique fig id. 2019 is already out there so reluctant to change that, so "if" statemnt it is! #}
 {% if ebook %}
 {% set anchor="fig-%s-%s" % (metadata.chapter_number, id) %}
+{% if link.startswith("/") %}{% set link="https://almanac.httparchive.org%s" % link %}{% endif %}
 {% else %}
 {% set anchor="fig-%s" % (id) %}
 {% endif %}

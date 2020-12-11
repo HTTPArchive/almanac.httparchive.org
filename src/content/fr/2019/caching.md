@@ -542,7 +542,7 @@ La plus grande source d'en-têtes `Expires` invalides provient de ressources ser
 
 ## En-tête `Vary`
 
-L'une des étapes les plus importantes de la mise en cache est de déterminer si la ressource demandée est mise en cache ou non. Bien que cela puisse paraître simple, il arrive souvent que l'URL seule ne suffise pas à le déterminer. Par exemple, les requêtes ayant la même URL peuvent varier en fonction de la [compression](./compression) utilisée (gzip, brotli, etc.) ou être modifiées et adaptées aux visiteurs mobiles.
+L'une des étapes les plus importantes de la mise en cache est de déterminer si la ressource demandée est mise en cache ou non. Bien que cela puisse paraître simple, il arrive souvent que l'URL seule ne suffise pas à le déterminer. Par exemple, les requêtes ayant la même URL peuvent varier en fonction de la [compression](./compression) utilisée (Gzip, Brotli, etc.) ou être modifiées et adaptées aux visiteurs mobiles.
 
 Pour résoudre ce problème, les clients donnent à chaque ressource mise en cache un identifiant unique (une clé de cache). Par défaut, cette clé de cache est simplement l'URL de la ressource, mais les développeurs et développeuses peuvent ajouter d'autres éléments (comme la méthode de compression) en utilisant l'en-tête `Vary`.
 
