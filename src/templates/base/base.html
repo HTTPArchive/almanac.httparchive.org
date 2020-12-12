@@ -490,8 +490,8 @@
             //Reset the selector back in case user uses Back button
             var selectedValue = e.target.value;
 
-            if (selectedValue.startsWith('/static/pdfs')) {
-              gtag('event', 'ebook-click', { 'event_category': 'clicks', 'event_label': 'mobile menu ' + document.location.pathname, 'transport_type': 'beacon', 'value': 1 })
+            if (e.target.dataset.event) {
+              gtag('event', e.target.dataset.event, { 'event_category': 'clicks', 'event_label': 'mobile menu ' + document.location.pathname, 'transport_type': 'beacon', 'value': 1 })
             }
             if (selectedValue && selectedValue !== window.location.pathname) {
               e.target.value = window.location.pathname;
