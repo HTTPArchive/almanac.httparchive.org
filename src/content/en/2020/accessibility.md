@@ -404,7 +404,7 @@ We found that 8.27% of desktop pages and 8.28% of mobile pages had at least one 
 
 We found that 15.50% of desktop pages and 14.62% of mobile pages contained at least one anchor element with `role="button"`. If a role has been applied to an element that should have its implicit role respected, such as giving a `role="button"` to a link (which has an implicit `role="link"`), this would break the second rule of ARIA. It would also violate [WCAG 2.1.1, Keyboard](https://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-keyboard-operable.html) if the correct keyboard behavior has not been implemented (links are not activated with the space key, whereas buttons are).
 
-In the vast majority of these cases, a better pattern than explicitly defining `role="button"` on the element in question would be to leverage the native HTML `<button>` element.
+Again, in the vast majority of these cases, a better pattern than explicitly defining `role="button"` on the element in question would be to leverage the native HTML `<button>` element as it comes with the expected semantics and behavior.
 
 {# TODO (Authors) Repetition of above "It is fairly likely that a native `<button>` element would be a better choice, per the first rule of ARIA.". Should we remove one instance or happy to keep both? #}
 
