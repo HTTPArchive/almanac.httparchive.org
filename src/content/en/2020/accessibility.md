@@ -48,6 +48,8 @@ We've split up our most interesting insights into five categories:
 4. Assistive technologies on the web,
 5. Accessibility of form controls.
 
+We hope that this chapter full of sobering metrics and demonstrable accessibility negligence on the Web will inspire readers to prioritize this work and change their practices, shifting towards a more inclusive and fair Internet.
+
 {# TODO (Authors) - Could we have another concluding sentence here to avoid ending this section on a list? #}
 
 ## Ease of reading
