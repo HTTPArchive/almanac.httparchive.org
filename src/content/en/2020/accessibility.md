@@ -24,7 +24,7 @@ featured_stat_label_3: Videos providing closed captions
 
 ## Introduction
 
-In 2020, more than ever before, it is becoming increasingly urgent for digital spaces to be inclusive and accessible to all. With the ongoing pandemic making it even more difficult for folks to access services in-person and entire industries moving online, disabled people are disproportionately impacted. Additionally, the number of disabled people is rising due to the effects of the pandemic.
+In 2020, more than ever before, it is becoming increasingly urgent for digital spaces to be inclusive and accessible to all. With the ongoing pandemic making it even more difficult for folks to access services in-person and entire industries moving online, disabled people are disproportionately impacted. Additionally, the number of disabled people is rising due to the [long-term effects](https://www.cdc.gov/coronavirus/2019-ncov/long-term-effects.html#:~:text=The%20most%20commonly%20reported%20long,Cough) of the pandemic.
 
 {# TODO (Authors) - Do we have a reference for "the number of disabled people is rising due to the effects of the pandemic."? #}
 
