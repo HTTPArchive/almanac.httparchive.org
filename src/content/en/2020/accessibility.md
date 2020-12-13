@@ -24,9 +24,7 @@ featured_stat_label_3: Videos providing closed captions
 
 ## Introduction
 
-In 2020, more than ever before, it is becoming increasingly urgent for digital spaces to be inclusive and accessible to all. With the ongoing pandemic making it even more difficult for folks to access services in-person and entire industries moving online, disabled people are disproportionately impacted. Additionally, the number of disabled people is rising due to the [long-term effects](https://www.cdc.gov/coronavirus/2019-ncov/long-term-effects.html#:~:text=The%20most%20commonly%20reported%20long,Cough) of the pandemic.
-
-{# TODO (Authors) - Do we have a reference for "the number of disabled people is rising due to the effects of the pandemic."? #}
+In 2020, more than ever before, it is becoming increasingly urgent for digital spaces to be inclusive and accessible to all. With the ongoing pandemic making it even more difficult for folks to access services in-person and entire industries moving online, disabled people are disproportionately impacted. Additionally, the number of disabled people is rising due to the [long-term effects](https://www.cdc.gov/coronavirus/2019-ncov/long-term-effects.html) of the pandemic.
 
 Web accessibility is about achieving feature and information parity and giving complete access to all aspects of an interface to disabled people. A digital product or website is simply not complete if it is not usable by everyone. If it excludes certain disabled populations, this is discrimination and potentially grounds for fines and/or lawsuits.
 
@@ -49,8 +47,6 @@ We've split up our most interesting insights into five categories:
 5. Accessibility of form controls.
 
 We hope that this chapter full of sobering metrics and demonstrable accessibility negligence on the Web will inspire readers to prioritize this work and change their practices, shifting towards a more inclusive and fair Internet.
-
-{# TODO (Authors) - Could we have another concluding sentence here to avoid ending this section on a list? #}
 
 ## Ease of reading
 
@@ -350,8 +346,6 @@ Screen readers present content audibly, usually by the computer speaking or anno
 
 ### Introduction to ARIA
 
-{# TODO (Authors) Aria was the only heading under "Assistive technologies on the web" (last year ARIA and Forms were two segments under that heading). So I changed "ARIA" to "Introduction to ARIA" and moved all the headings under it up a level to avoid this. Alternatiovely we could merge "Assistive technologies on the web" and "Introduction to Aria" into one section?  #}
-
 In 2014 the WAI published Accessible Rich Internet Applications, or ARIA. They [describe ARIA as](https://www.w3.org/WAI/standards-guidelines/aria/):
 
 > "WAI-ARIA, the Accessible Rich Internet Applications Suite, defines a way to make web content and web applications more accessible to people with disabilities. It especially helps with dynamic content and advanced user interface controls developed with Ajax, HTML, JavaScript, and related technologies."
@@ -405,8 +399,6 @@ We found that 8.27% of desktop pages and 8.28% of mobile pages had at least one 
 We found that 15.50% of desktop pages and 14.62% of mobile pages contained at least one anchor element with `role="button"`. If a role has been applied to an element that should have its implicit role respected, such as giving a `role="button"` to a link (which has an implicit `role="link"`), this would break the second rule of ARIA. It would also violate [WCAG 2.1.1, Keyboard](https://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-keyboard-operable.html) if the correct keyboard behavior has not been implemented (links are not activated with the space key, whereas buttons are).
 
 Again, in the vast majority of these cases, a better pattern than explicitly defining `role="button"` on the element in question would be to leverage the native HTML `<button>` element as it comes with the expected semantics and behavior.
-
-{# TODO (Authors) Repetition of above "It is fairly likely that a native `<button>` element would be a better choice, per the first rule of ARIA.". Should we remove one instance or happy to keep both? #}
 
 #### Navigation
 
@@ -499,9 +491,7 @@ These techniques are particularly helpful when something in the visual interface
 
 Hiding and showing content is a prevalent pattern in modern interfaces, and it can be helpful to declutter the UI for everyone. There are two ARIA attributes that are helpful additions to this disclosure pattern. The `aria-expanded` attribute should have a `true`/`false` value that toggles depending on whether the disclosed content is shown or not. Additionally the `aria-controls` attribute can be associated with an `id` on the disclosed content creating a programmatic relationship between the triggering control (which should be a button) and the content that gets displayed.
 
-We found that 20.98% of desktop pages and 21.00% of mobile pages had at least one element with the `aria-expanded` attribute and 17.38% of desktop pages and 16.94% of mobile pages had at least one element with the `aria-controls` attribute. This suggests that around one fifth of websites might be implementing at least partially accessible disclosure widgets. Note that the `aria-controls` attribute is considered a best practice rather than essential for the disclosure pattern because screen reader support is not ideal yet.
-
-{# TODO (Authors) - I don't understand this last sentence. Why is it a best practice because support is not ideal? Are we missing a "not"? Or do you mean it's a best practice "despite" support not being ideal? #}
+We found that 20.98% of desktop pages and 21.00% of mobile pages had at least one element with the `aria-expanded` attribute and 17.38% of desktop pages and 16.94% of mobile pages had at least one element with the `aria-controls` attribute. This suggests that around one fifth of websites might be implementing at least partially accessible disclosure widgets. Note that the `aria-controls` attribute is considered a best practice, rather than essential, for the disclosure pattern because screen reader support is not yet ideal.
 
 #### Screen reader only text
 
