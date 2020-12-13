@@ -487,7 +487,7 @@
         for (var i = 0; i < languageYearSwitchers.length; i++) {
           languageYearSwitchers[i].addEventListener('change', function(e) {
 
-            let selectedOption = this.options[this.selectedIndex];
+            var selectedOption = this.options[this.selectedIndex];
 
             if (e.target.dataset.label && selectedOption.dataset.event) {
               gtag('event', selectedOption.dataset.event, {
