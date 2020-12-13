@@ -281,7 +281,7 @@ Here, a simple change from a button that’s hard to see, to a button with contr
 
 A simple color change on the check out button from black to orange, made it stand out more and increased their conversion rate by 12%.
 
-Mckinsey&Company [published a report](https://www.mckinsey.com/business-functions/mckinsey-design/our-insights/the-business-value-of-design#) that shows that companies that are strong at design and UX demonstrate better financial performance.  Design and UX focused companies demonstrated stronger revenue growth compared to their industry counterparts.
+Mckinsey & Company [published a report](https://www.mckinsey.com/business-functions/mckinsey-design/our-insights/the-business-value-of-design#) that shows that companies that are strong at design and UX demonstrate better financial performance.  Design and UX focused companies demonstrated stronger revenue growth compared to their industry counterparts.
 
 Text with low contrast ratio is hard to read, for instance, light gray text on a white background. This can reduce reading comprehension and reading speed for users.
 
