@@ -487,8 +487,10 @@
         for (var i = 0; i < languageYearSwitchers.length; i++) {
           languageYearSwitchers[i].addEventListener('change', function(e) {
 
-            if (e.target.dataset.label) {
-              gtag('event', this.options[this.selectedIndex].dataset.event, {
+            let selectedOption = this.options[this.selectedIndex];
+
+            if (e.target.dataset.label && selectedOption.dataset.event) {
+              gtag('event', selectedOption.dataset.event, {
                 'event_category': 'clicks',
                 'event_label': e.target.dataset.label,
                 'transport_type': 'beacon',
