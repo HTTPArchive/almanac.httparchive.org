@@ -118,7 +118,7 @@
   <label for="table-of-contents-switcher-{{switcher_name}}" class="visually-hidden">
     {{ self.table_of_contents_switcher() }}
   </label>
-  <select id="table-of-contents-switcher-{{switcher_name}}">
+  <select id="table-of-contents-switcher-{{switcher_name}}" data-label="toc-menu-mobile">
     {% if request.path.endswith("table-of-contents") %}
       <option selected disabled value="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</option>
       <option disabled value="{{ url_for('table_of_contents', year=year, lang=lang) }}#foreword">{{ self.foreword_title() }}</option>
@@ -179,7 +179,7 @@
     {% endif %}
 
     {% if ebook_size_in_mb and ebook_size_in_mb > 0 %}
-    <option value="/static/pdfs/web_almanac_{{ year }}_{{ lang }}.pdf">
+    <option value="/static/pdfs/web_almanac_{{ year }}_{{ lang }}.pdf" data-event="ebook-click">
       {{ self.ebook_download_short() }}
     </option>
     {% endif %}
@@ -275,7 +275,7 @@
       <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}#ebook">{{ self.ebook_title() }}</a>
     </li>
     <li class="nav-dropdown-list-chapter ebook">
-      <a class="ebook-menu-download" href="/static/pdfs/web_almanac_{{ year }}_{{ lang }}.pdf" data-event="ebook-click">{{ self.ebook_download_short() }}</a>
+      <a class="ebook-menu-download" href="/static/pdfs/web_almanac_{{ year }}_{{ lang }}.pdf" data-event="ebook-click" data-label="toc-menu">{{ self.ebook_download_short() }}</a>
     </li>
     {% endif %}
   </ul>
@@ -487,12 +487,16 @@
         for (var i = 0; i < languageYearSwitchers.length; i++) {
           languageYearSwitchers[i].addEventListener('change', function(e) {
 
+            if (e.target.dataset.label) {
+              gtag('event', this.options[this.selectedIndex].dataset.event, {
+                'event_category': 'clicks',
+                'event_label': e.target.dataset.label,
+                'transport_type': 'beacon',
+                'value': 1 })
+            }
+
             //Reset the selector back in case user uses Back button
             var selectedValue = e.target.value;
-
-            if (e.target.dataset.event) {
-              gtag('event', e.target.dataset.event, { 'event_category': 'clicks', 'event_label': 'mobile menu ' + document.location.pathname, 'transport_type': 'beacon', 'value': 1 })
-            }
             if (selectedValue && selectedValue !== window.location.pathname) {
               e.target.value = window.location.pathname;
               window.location = selectedValue;
@@ -617,15 +621,16 @@
           }
         });
 
-        var ebookLink = document.querySelector('#ebook-toc-download');
-        ebookLink && ebookLink.addEventListener("click", function (event) {
-          gtag('event', 'ebook-click', { 'event_category': 'clicks', 'event_label': 'toc-page', 'transport_type': 'beacon', 'value': 1 })
+        document.querySelectorAll('[data-event]').forEach(trackableElement => {
+          trackableElement.addEventListener("click", function (event) {
+            gtag('event', event.target.dataset.event, {
+              'event_category': 'clicks',
+              'event_label': event.target.dataset.label,
+              'transport_type': 'beacon',
+              'value': 1 })
+          });
         });
 
-        var ebookLink = document.querySelector('.ebook-menu-download');
-        ebookLink && ebookLink.addEventListener("click", function (event) {
-          gtag('event', 'ebook-click', { 'event_category': 'clicks', 'event_label': 'menu ' + document.location.pathname, 'transport_type': 'beacon', 'value': 1 })
-        });
       })();
     </script>
   {% endblock %}
