@@ -62,8 +62,6 @@ Above, we observe that 4% of websites recorded no Performance Score change, but 
   )
 }}
 
-{# TOOD - chart_url is wrong #}
-
 In the comparison of Lighthouse 5 and Lighthouse 6, we can directly observe how the distribution of score has changed. With the Lighthouse 6 algorithm, we observe a rise in the percentage of pages receiving scores between 0 to 25 and a decline between 50 and a 100. While in Lighthouse 5, we saw 3% of pages receiving 100 scores, on Lighthouse 6, that number fell to only 1%.
 
 These overall changes are not unexpected considering a multitude of amendments to the algorithm itself.
@@ -369,7 +367,7 @@ There are dozens of different user-centric metrics that can be used to assess we
 {{ figure_markup(
   image="performance-performance-observer-usage.png",
   caption="Performance Observer usage by device type.",
-  description="Bar chart showing that the adoption of PErformance Observer API is low, at 6.6% on desktop and 7% on mobile.",
+  description="Bar chart showing that the adoption of Performance Observer API is low, at 6.6% on desktop and 7% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=632678090&format=interactive",
   sheets_gid="934401790",
   sql_file="performance_observer.sql"
