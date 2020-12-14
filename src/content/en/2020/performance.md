@@ -369,7 +369,7 @@ There are dozens of different user-centric metrics that can be used to assess we
 {{ figure_markup(
   image="performance-performance-observer-usage.png",
   caption="Performance Observer usage by device type.",
-  description="Bar chart showing that the adoption of PErformance Observer API is low, at 6.6% on desktop and 7% on mobile.",
+  description="Bar chart showing that the adoption of Performance Observer API is low, at 6.6% on desktop and 7% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=632678090&format=interactive",
   sheets_gid="934401790",
   sql_file="performance_observer.sql"
