@@ -62,8 +62,6 @@ Above, we observe that 4% of websites recorded no Performance Score change, but 
   )
 }}
 
-{# TOOD - chart_url is wrong #}
-
 In the comparison of Lighthouse 5 and Lighthouse 6, we can directly observe how the distribution of score has changed. With the Lighthouse 6 algorithm, we observe a rise in the percentage of pages receiving scores between 0 to 25 and a decline between 50 and a 100. While in Lighthouse 5, we saw 3% of pages receiving 100 scores, on Lighthouse 6, that number fell to only 1%.
 
 These overall changes are not unexpected considering a multitude of amendments to the algorithm itself.
