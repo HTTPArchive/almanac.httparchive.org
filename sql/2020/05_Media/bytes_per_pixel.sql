@@ -85,4 +85,5 @@ GROUP BY
   client,
   imageType
 ORDER BY
-  client desc;
+  client DESC
+  imageType DESC;
