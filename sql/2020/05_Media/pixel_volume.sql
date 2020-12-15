@@ -57,7 +57,6 @@ FROM
     CAST(json_extract_scalar(json_extract_scalar(payload, '$._Resolution'), '$.absolute.width') AS Float64) as viewportWidth
   FROM
     `httparchive.pages.2020_08_01_*`
---  LIMIT 1000
 )
 WHERE
   # it appears the _Images array is populated only from <img> tag requests and not CSS or favicon
