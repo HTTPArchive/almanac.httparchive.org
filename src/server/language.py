@@ -48,7 +48,7 @@ class Language(object):
     FR = _Language('Français', 'fr')
     HI = _Language('हिन्दी', 'hi')
     JA = _Language('日本語', 'ja')
-    NL = _Language('Dutch', 'nl')
+    NL = _Language('Nederlands', 'nl')
     PT = _Language('Português', 'pt')
     RU = _Language('Русский', 'ru')
     ZH_CN = _Language('简体中文', 'zh-CN')
