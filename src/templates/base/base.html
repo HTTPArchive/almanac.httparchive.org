@@ -275,7 +275,7 @@
       <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}#ebook">{{ self.ebook_title() }}</a>
     </li>
     <li class="nav-dropdown-list-chapter ebook">
-      <a class="ebook-menu-download" href="/static/pdfs/web_almanac_{{ year }}_{{ lang }}.pdf" data-event="ebook-click" data-label="toc-menu">{{ self.ebook_download_short() }}</a>
+      <a href="/static/pdfs/web_almanac_{{ year }}_{{ lang }}.pdf" data-event="ebook-click" data-label="toc-menu">{{ self.ebook_download_short() }}</a>
     </li>
     {% endif %}
   </ul>
@@ -624,7 +624,7 @@
         });
 
         document.querySelectorAll('[data-event]').forEach(trackableElement => {
-          trackableElement.addEventListener("click", function (event) {
+          trackableElement.addEventListener('click', function (event) {
             gtag('event', event.target.dataset.event, {
               'event_category': 'clicks',
               'event_label': event.target.dataset.label,
