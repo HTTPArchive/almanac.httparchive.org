@@ -46,15 +46,15 @@ FROM
 (
   SELECT
     _TABLE_SUFFIX AS client,
-    url as page,
-    getCssPixels(json_extract_scalar(payload, '$._Images')) as cssPixels,
-    getNaturalPixels(json_extract_scalar(payload, '$._Images')) as naturalPixels,
-    CAST(json_extract_scalar(payload, '$._smallImageCount') AS Int64) as smallImageCount,
-    CAST(json_extract_scalar(payload, '$._bigImageCount') AS Int64) as bigImageCount,
-    CAST(json_extract_scalar(payload, '$._image_total') AS Int64) as imageBytes,
-    CAST(json_extract_scalar(json_extract_scalar(payload, '$._Dpi'), '$.dppx') AS Float64) as dpr,
-    CAST(json_extract_scalar(json_extract_scalar(payload, '$._Resolution'), '$.absolute.height') AS Float64) as viewportHeight,
-    CAST(json_extract_scalar(json_extract_scalar(payload, '$._Resolution'), '$.absolute.width') AS Float64) as viewportWidth
+    url AS page,
+    getCssPixels(JSON_EXTRACT_SCALAR(payload, '$._Images')) AS cssPixels,
+    getNaturalPixels(JSON_EXTRACT_SCALAR(payload, '$._Images')) AS naturalPixels,
+    CAST(JSON_EXTRACT_SCALAR(payload, '$._smallImageCount') AS Int64) AS smallImageCount,
+    CAST(JSON_EXTRACT_SCALAR(payload, '$._bigImageCount') AS Int64) AS bigImageCount,
+    CAST(JSON_EXTRACT_SCALAR(payload, '$._image_total') AS Int64) AS imageBytes,
+    CAST(JSON_EXTRACT_SCALAR(json_extract_scalar(payload, '$._Dpi'), '$.dppx') AS Float64) AS dpr,
+    CAST(JSON_EXTRACT_SCALAR(json_extract_scalar(payload, '$._Resolution'), '$.absolute.height') AS Float64) AS viewportHeight,
+    CAST(JSON_EXTRACT_SCALAR(json_extract_scalar(payload, '$._Resolution'), '$.absolute.width') AS Float64) AS viewportWidth
   FROM
     `httparchive.pages.2020_08_01_*`
 )
