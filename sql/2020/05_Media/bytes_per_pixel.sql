@@ -78,9 +78,9 @@ LEFT JOIN
 ON (b.client = a.client AND a.page = b.page AND a.url = b.url)
 
 WHERE
-  naturalPixels > 0
-  AND bytes > 0
-  AND imageType in ('jpg', 'png', 'webp', 'gif', 'svg')
+  naturalPixels > 0 AND
+  bytes > 0 AND
+  imageType in ('jpg', 'png', 'webp', 'gif', 'svg')
 GROUP BY
   client,
   imageType
