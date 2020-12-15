@@ -74,7 +74,6 @@ LEFT JOIN
 
       # strip video mimetypes and other favicons
       NOT REGEXP_CONTAINS(mimetype, r'video|ico')
--- limit 1000
 ) b
 ON (b.client = a.client AND a.page = b.page AND a.url = b.url)
 
