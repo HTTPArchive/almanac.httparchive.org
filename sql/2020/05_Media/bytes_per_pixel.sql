@@ -47,7 +47,6 @@ FROM
   WHERE
     image.naturalHeight > 0 AND
     image.naturalWidth > 0
---  LIMIT 1000
 ) a
 LEFT JOIN
 (
