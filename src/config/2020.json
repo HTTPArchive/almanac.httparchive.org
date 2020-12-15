@@ -2,7 +2,7 @@
   "settings": [
     {
       "is_live": true,
-      "supported_languages": ["en","es","fr","hi","ja","pt","ru","zh-CN","zh-TW"],
+      "supported_languages": ["en","es","fr","hi","ja","nl","pt","ru","zh-CN","zh-TW"],
       "ebook_languages": ["en"]
     }
   ],
@@ -930,6 +930,15 @@
       "website": "https://phacks.dev/",
       "github": "phacks",
       "twitter": "Phacks"
+    },
+    "noah-vdv": {
+      "name": "Noah van der Veer",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/46689362?v=4&s=200",
+      "github": "noah-vdv",
+      "twitter": "noah_aaron_vdv"
     },
     "noamr": {
       "name": "Noam Rosenthal",

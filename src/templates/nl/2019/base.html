@@ -1,0 +1,27 @@
+{% extends "%s/base.html" % lang %}
+
+{% block methodology_stat_1 %}5.8M{% endblock %}
+{% block methodology_stat_2 %}20.9 TB{% endblock %}
+{% block methodology_description %}
+Tenzij anders vermeld, zijn de statistieken in alle 20 hoofdstukken van de Web Almanac afkomstig uit de HTTP Archive-dataset. HTTP Archive is een door de gemeenschap gerund project dat sinds 2010 bijhoudt hoe het web is opgebouwd. Met behulp van WebPageTest en Lighthouse onder de motorkap worden maandelijks metagegevens over bijna 6 miljoen websites getest en voor analyse opgenomen in een openbare BigQuery-database. De dataset van juli 2019 werd gebruikt als basis voor de statistieken van de Web Almanac. Zie de Methodologie-pagina voor meer informatie.
+{% endblock %}
+
+{% block foreword %}
+  <p>
+    Het open web is een verbazingwekkend complex, evoluerend netwerk van technologieën. Hele bedrijfstakken en carrières worden op internet gebouwd en zijn voor succes afhankelijk van het levendige ecosysteem. Hoe cruciaal internet ook is, het is verrassend moeilijk te begrijpen hoe het ervoor staat. Sinds 2010 is de missie van het HTTP Archive-project geweest om bij te houden hoe het web is opgebouwd, en het heeft er fantastisch werk van gemaakt. Er is echter één gat dat vooral moeilijk te dichten was: betekenis geven aan de gegevens die het HTTP Archive-project heeft verzameld en de gemeenschap in staat stellen gemakkelijk te begrijpen hoe het internet presteert. Dat is waar de Web Almanak om de hoek komt kijken.
+  </p>
+
+  <p>
+    De missie van de Web Almanac is om de schat aan inzichten die anders alleen toegankelijk zouden zijn voor onverschrokken datamijnwerkers, te verzamelen op een manier die gemakkelijk te begrijpen is. Dit wordt mogelijk gemaakt met de hulp van experts uit de industrie die de gegevens kunnen begrijpen en ons kunnen vertellen wat het betekent. Elk van de 20 hoofdstukken in de Web Almanac concentreert zich op een specifiek aspect van het web, en elk is geschreven en door vakgenoten beoordeeld door experts in hun vakgebied. De kracht van de Web Almanac vloeit rechtstreeks voort uit de expertise van de mensen die het schrijven.
+  </p>
+
+  <p>
+    Veel van de bevindingen in de Web Almanac zijn het waard om gevierd te worden, maar het is ook een belangrijke herinnering aan het werk dat nog nodig is om gebruikerservaringen van hoge kwaliteit te leveren. De datagestuurde analyses in elk hoofdstuk zijn een vorm van verantwoordelijkheid die we allemaal delen voor het ontwikkelen van een beter web. Het gaat er niet om degenen die het bij het verkeerde eind hebben te schande te maken, maar om een leidend licht te schijnen op het pad van best practices, zodat er een duidelijke, juiste manier is om dingen te doen. Met de voortdurende hulp van de webcommunity hopen we hier een jaarlijkse traditie van te maken, zodat we elk jaar onze voortgang kunnen volgen en waar nodig koerscorrecties kunnen aanbrengen.
+  </p>
+
+  <p>
+    Er valt zoveel te leren in dit rapport, dus begin met het verkennen en deel uw indrukken met de gemeenschap, zodat we gezamenlijk ons begrip van de staat van het internet kunnen vergroten.
+  </p>
+
+  <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>, Hoofdredacteur van de Web Almanac</em></p>
+{% endblock %}
