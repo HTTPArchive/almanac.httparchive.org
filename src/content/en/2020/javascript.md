@@ -18,7 +18,7 @@ featured_stat_2: 37.22%
 featured_stat_label_2: Percentage of unused JS on mobile
 featured_stat_3: 12.2%
 featured_stat_label_3: Percentage of scripts loaded asynchronously
-edited: false
+unedited: true
 ---
 
 ## Introduction
