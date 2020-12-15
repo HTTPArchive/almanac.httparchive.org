@@ -1,0 +1,23 @@
+{% extends "base/base_chapter.html" %}
+
+{% block title %}{{ metadata.get('title') }} | {{ year }} | De Web Almanac door HTTP Archive{% endblock %}
+
+{% block description %}{{ metadata.get('description',metadata.get('title') + ' hoofdstuk van de ' + year + ' Web Almanac waarin het gebruik van ' + metadata.get('description',metadata.get('title')) + ' op internet.') }}{% endblock %}
+
+{% block twitter_image_alt %}Hoofdstuk beeld voor het {{ metadata.get('title') }} hoofdstuk van de {{ year }} Web Almanac{% endblock %}
+
+{% block prev_next_title %}Navigatie naar vorige en volgende hoofdstuk{% endblock %}
+
+{% block explore_the_results %}Bekijk de resultaten{% endblock %}
+{% block discuss_this_chapter %}Bespreek dit hoofdstuk{% endblock %}
+{% block comment %}comment{% endblock %}
+{% block comments %}comments{% endblock %}
+{% block comments_fallback %}Comments{% endblock %}
+{% block queries %}Bekijk vragen{% endblock %}
+{% block results %}Bekijk resultaten{% endblock %}
+{% block figure_sql %}Bekijk vraag{% endblock %}
+{% block figure_data %}Bekijk gegevens{% endblock %}
+{% block figure_image %}Bekijk beeld{% endblock %}
+
+{% block previous %}Vorig Hoofdstuk (druk op 'p' of ','){% endblock %}
+{% block next %}Volgend Hoofdstuk (druk op 'n' of '.'){% endblock %}

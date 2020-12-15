@@ -1,0 +1,174 @@
+{% extends "base/base.html" %}
+
+{% block description %}De Web Almanac is een jaarlijks staat van het webrapport waarin de expertise van de webcommunity wordt gecombineerd met de gegevens en trends van het HTTP Archive.{% endblock %}
+
+{% block twitter_image_alt %}{{ year }} Web Almanac{% endblock %}
+
+{% block skip_navigation %}Navigatie overslaan{% endblock %}
+
+{% block organization %}Web Almanac door HTTP Archive{% endblock %}
+{% block web_almanac_logo %}
+  <span class="wa">Web Almanac</span>
+  <span class="line-group">
+    <span class="pre">Door</span>
+    <span class="ha">HTTP Archive</span>
+  </span>
+{% endblock %}
+
+{% block intro_title %}Web Almanac{% endblock %}
+{% block intro_sub_title %}HTTP Archive's jaarlijkse<br> <b>staat van het web</b> rapport{% endblock %}
+
+{% block mission %}
+<p>
+  Onze missie is om de onbewerkte statistieken en trends van het HTTP-archief te combineren met de expertise van de webgemeenschap. De Web Almanac is een uitgebreid rapport over de staat van het internet, ondersteund door echte gegevens en vertrouwde webexperts. Het bestaat uit {{ supported_chapters | length }} hoofdstukken over aspecten van pagina-inhoud, gebruikerservaring, publicatie en distributie.
+</p>
+{% endblock %}
+
+{% block read_last_years_almanac %}Lees de {{ year | int - 1 }} Web Almanac{% endblock %}
+
+{% block http_archive_link %}HTTP Archive home{% endblock %}
+
+{% block page_navigation %}Paginanavigatie{% endblock %}
+
+{% block help_translate %}Helpen Vertalen{% endblock %}
+{% block translation_not_available %}English - niet beschikbaar in het engels{% endblock %}
+{% block language_switcher %}Taalwisselaar{% endblock %}
+{% block year_switcher %}Jaarwisselaar{% endblock %}
+{% block table_of_contents_switcher %}Inhoudsopgavewisselaar{% endblock %}
+
+{% block home %}Home{% endblock %}
+{% block table_of_contents_title %}Inhoudsopgave{% endblock %}
+{% block contributors_title %}Bijdragers{% endblock %}
+{% block methodology_title %}Methodologie{% endblock %}
+
+{% block part %}Deel{% endblock %}
+{% block chapter %}Hoofdstuk{% endblock %}
+
+{% block start_exploring %}Begin met verkennen{% endblock %}
+
+{% block menu_title %}Paginamenu{% endblock %}
+{% block open_the_menu %}Open het menu{% endblock %}
+{% block close_the_menu %}Sluit het menu{% endblock %}
+
+{% block index_nav_title %}Hoofdstuk Inhoudsopgave{% endblock %}
+{% block index_title %}Index{% endblock %}
+{% block open_the_index %}Open de Inhoudsopgave{% endblock %}
+{% block close_the_index %}Sluit de Inhoudsopgave{% endblock %}
+
+{% block and %}en{% endblock %}
+{% block comma %}, {% endblock %}
+
+{% block open %}Open{% endblock %}
+{% block close %}Sluit{% endblock %}
+
+{% macro figure_text(metadata, id) %}Figuur {{ figure_id(metadata, id) }}.{% endmacro %}
+{% macro show_description(metadata, id) %}Toon beschrijving van Figuur {{ figure_id(metadata, id) }}{% endmacro %}
+{% macro hide_description(metadata, id) %}Verberg beschrijving van Figuur {{ figure_id(metadata, id) }}{% endmacro %}
+
+{% block written_by_before %}Geschreven door{% endblock %}
+{% block reviewed_by_before %}Beoordeeld door{% endblock %}
+{% block translated_by_before %}Vertaald door{% endblock %}
+{% block analysis_by_before %}Geanalyseerd door{% endblock %}
+{% block written_by_after %}{% endblock %}
+{% block reviewed_by_after %}{% endblock %}
+{% block translated_by_after %}{% endblock %}
+{% block analysis_by_after %}{% endblock %}
+
+{% block unedited %}[Unedited]{% endblock %}
+
+{% block author %}Auteur{% endblock %}
+{% block authors %}Auteurs{% endblock %}
+
+{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} op Twitter{% endmacro %}
+{% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} op GitHub{% endmacro %}
+{% macro onLinkedIn(authorName) %}{{authorName}} op LinkedIn{% endmacro %}
+{% macro website(authorName) %}{{authorName}} website{% endmacro %}
+
+{% macro edition(year) %}{{ year }} Editie{% endmacro %}
+
+{% block footer_title %}Voettekst navigatie{% endblock %}
+{% block copyright %}© Web Almanac. Gelicentieerd onder <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
+{% block accessibility_statement %}Toegankelijkheidsverklaring{% endblock %}
+
+{% block featured_chapter %}Uitgelicht Hoofdstuk{% endblock %}
+{% block featured_chapter_last_year %}Uitgelicht Hoofdstuk<br/>van de {{ year|int -1 }} Web Almanac{% endblock %}
+
+{# Check if read_chapter already defined in child template as macros can't be overridden #}
+{% if not read_chapter %}
+{% macro read_chapter(chapter) %}Lees het <span class="featured-chapter-name">{{ chapter }}</span> Hoofdstuk{% endmacro %}
+{% endif %}
+{% if not read_last_years_chapter %}
+{% macro read_last_years_chapter(chapter) %}Lees het {{ year|int-1 }} <span class="featured-chapter-name">{{ chapter }}</span> Hoofdstuk{% endmacro %}
+{% endif %}
+
+{% block contributors_description %}
+De Web Almanac is mogelijk gemaakt door het harde werk van de webgemeenschap. {{ self.contributors() }} mensen hebben talloze uren vrijwilligerswerk gestoken in de fasen van planning, onderzoek, schrijven en productie.
+{% endblock %}
+{% block contributors_link %}Zie de bijdragers{% endblock %}
+
+{% block methodology_stat_1_title %}Websites Getest{% endblock %}
+{% block methodology_stat_2_title %}Verwerkte Gegevens{% endblock %}
+{% block methodology_link %}Lees meer over onze Methodologie{% endblock %}
+
+{% block introduction %}Introductie{% endblock %}
+
+{% block foreword_title %}Voorwoord{% endblock %}
+
+{% block coming_soon %}Komt binnenkort!{% endblock %}
+
+{% block appendix %}Bijlage{% endblock %}
+{% block appendices %}Bijlagen{% endblock %}
+
+{% block ebook_title %}Ebook{% endblock %}
+{% block ebook_download_short %}Ebook PDF ({{ ebook_size_in_mb }}MB){% endblock %}
+{% block ebook_download %}Download de volledige {{ year }} Web Almanac in PDF-formaat ({{ ebook_size_in_mb }}MB){% endblock %}
+{% block ebook_download_note %}(gegenereerd met <a href="https://www.princexml.com/">www.princexml.com</a>){% endblock %}
+
+{%
+  set localizedPartTitles = {
+    "I. Page Content": "I. Pagina Inhoud",
+    "II. User Experience": "II. Gebruikerservaring",
+    "III. Content Publishing": "III. Content Publiceren",
+    "IV. Content Distribution": "IV. Contentdistributie"
+  }
+%}
+{%
+  set localizedChapterTitles = {
+    "javascript": "JavaScript",
+    "css": "CSS",
+    "markup": "Opmaak",
+    "media": "Media",
+    "third-parties": "Derden",
+    "fonts": "Lettertypen",
+    "performance": "Prestatie",
+    "security: "Veiligheid",
+    "accessibility: "Toegankelijkheid",
+    "seo": "SEO",
+    "pwa": "PWA",
+    "mobile-web": "Mobiel Web",
+    "ecommerce": "E-commerce",
+    "cms": "CMS",
+    "compression": "Compressie",
+    "caching": "Caching",
+    "cdn": "CDN",
+    "page-weight": "Paginagewicht",
+    "resource-hints": "Resource Hints",
+    "http2": "HTTP/2",
+    "privacy": "Privacy",
+    "capabilities": "Mogelijkheden",
+    "jamstack": "Jamstack"
+  }
+%}
+
+{% set localizedTeamNames = {
+  "analysts": "Analisten",
+  "authors": "Auteurs",
+  "brainstormers": "Brainstormers",
+  "designers": "Ontwerpers",
+  "developers": "Ontwikkelaars",
+  "editors": "Editors",
+  "leads": "Projectleiders",
+  "reviewers: "Recensenten",
+  "translators: "Vertalers",
+  }
+%}
