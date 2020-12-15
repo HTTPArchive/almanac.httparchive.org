@@ -317,7 +317,7 @@ When we look at the frameworks, we also don't see much of a dramatic change in t
 
 {# Compare same frameworks from last year's chapter to this year in bar chart? #}
 
-It's worth noting that the detection issue that was noted last year still applies, and still impacts th results here. It's possible that there _has_ been a significant change in popularity for a few more of these tools, but we just don't see it with the way the data is currently collected.
+It's worth noting that the detection issue that was noted last year still applies, and still impacts the results here. It's possible that there _has_ been a significant change in popularity for a few more of these tools, but we just don't see it with the way the data is currently collected.
 
 ### What it all means?
 More interesting to me than the popularity of the tools themselves is the impact they have on the things we build.
