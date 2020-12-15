@@ -20,4 +20,3 @@ HAVING
 ORDER BY
   client,
   ext_count_covid DESC;
-
