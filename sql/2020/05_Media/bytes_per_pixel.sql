@@ -13,7 +13,7 @@ return null;
 SELECT
   a.client,
   imageType,
-  count(0) as count,
+  count(0) AS count,
   APPROX_QUANTILES(if(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 1000)[OFFSET(100)] AS pixels_p10,
   APPROX_QUANTILES(if(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 1000)[OFFSET(250)] AS pixels_p25,
   APPROX_QUANTILES(if(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 1000)[OFFSET(500)] AS pixels_p50,
