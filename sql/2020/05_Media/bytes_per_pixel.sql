@@ -60,20 +60,20 @@ LEFT JOIN
 
     WHERE
       # many 404s and redirects show up as image/gif
-      status = 200
+      status = 200 AND
 
       # we are trying to catch images. WPO populates the format for media but it uses a file extension guess.
       #So we exclude mimetypes that aren't image or where the format couldn't be guessed by WPO
-      and (format <> '' OR mimetype like 'image%')
+     (format <> '' OR mimetype LIKE 'image%') AND
 
       # many image/gifs are really beacons with 1x1 pixel, but svgs can get caught in the mix
-      and (respSize > 1500 OR regexp_contains(mimetype, r'svg'))
+     (respSize > 1500 OR REGEXP_CONTAINS(mimetype, r'svg')) AND
 
       # strip favicon requests
-      and format <> 'ico'
+     format <> 'ico' AND
 
       # strip video mimetypes and other favicons
-      and not regexp_contains(mimetype, r'video|ico')
+      NOT REGEXP_CONTAINS(mimetype, r'video|ico')
 -- limit 1000
 ) b
 ON (b.client = a.client AND a.page = b.page AND a.url = b.url)
