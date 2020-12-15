@@ -22,11 +22,11 @@ return null;
 
 SELECT
   client,
-  count(0) as count,
-  any_value(viewportHeight) viewportHeight,
-  any_value(viewportWidth) viewportWidth,
-  any_value(dpr) dpr,
-  any_value(viewportHeight) * any_value(viewportWidth) displaypx,
+  count(0) AS count,
+  any_value(viewportHeight) AS viewportHeight,
+  any_value(viewportWidth) AS viewportWidth,
+  any_value(dpr) AS dpr,
+  any_value(viewportHeight) * any_value(viewportWidth) AS displaypx,
   APPROX_QUANTILES(cssPixels, 1000)[OFFSET(100)] AS cssPixels_p10,
   APPROX_QUANTILES(cssPixels, 1000)[OFFSET(250)] AS cssPixels_p25,
   APPROX_QUANTILES(cssPixels, 1000)[OFFSET(500)] AS cssPixels_p50,
