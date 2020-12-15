@@ -2,7 +2,7 @@
 
 {% block title %}Methodologie | De Web Almanac door HTTP Archive{% endblock %}
 
-{% block description %}Beschrijft hoe de Web Almanac van 2019 is samengesteld: de gebruikte datasets en tools en hoe het project is uitgevoerd.{% endblock %}
+{% block description %}Beschrijft hoe de Web Almanac van 2019 is samengesteld: de gebruikte datasets en hulpmiddelen en hoe het project is uitgevoerd.{% endblock %}
 
 {% block twitter_image_alt %}{{ year }} Web Almanac methodologie{% endblock %}
 
@@ -15,14 +15,14 @@
             <li><a href="#metrics">Metrische gegevens</a></li>
           </ul>
         </li>
-        <li><a href="#tools">Tools</a>
+        <li><a href="#tools">Hulpmiddelen</a>
           <ul>
-            <li><a href="#webpagetest">WebPageTest</a></li>
-            <li><a href="#lighthouse">Lighthouse</a></li>
-            <li><a href="#wappalyzer">Wappalyzer</a></li>
-            <li><a href="#chrome-ux-report">Chrome UX Report</a></li>
-            <li><a href="#third-party-web">Third Party Web</a></li>
-            <li><a href="#rework-css">Rework CSS</a></li>
+            <li><a href="#webpagetest" lang="en">WebPageTest</a></li>
+            <li><a href="#lighthouse" lang="en">Lighthouse</a></li>
+            <li><a href="#wappalyzer" lang="en">Wappalyzer</a></li>
+            <li><a href="#chrome-ux-report" lang="en">Chrome UX Report</a></li>
+            <li><a href="#third-party-web" lang="en">Third Party Web</a></li>
+            <li><a href="#rework-css" lang="en">Rework CSS</a></li>
           </ul>
         </li>
         <li><a href="#process">Analytisch proces</a>
@@ -71,7 +71,7 @@
         </p>
 
         <p>
-          Alle statistieken die in de webalmanak worden gepresenteerd, zijn openbaar reproduceerbaar met behulp van de dataset op BigQuery. U kunt bladeren door de zoekopdrachten die door alle hoofdstukken worden gebruikt in onze <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2019">GitHub-repository</a>.
+          Alle statistieken die in de Web Almanac worden gepresenteerd, zijn openbaar reproduceerbaar met behulp van de dataset op BigQuery. U kunt bladeren door de zoekopdrachten die door alle hoofdstukken worden gebruikt in onze <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2019">GitHub-repository</a>.
         </p>
 
         <p class="note">
@@ -114,11 +114,11 @@
         </p>
 
         <p>
-          HTTP Archive haalt de URL's voor zijn websites uit het <a href="#chrome-ux-report">Chrome UX-rapport</a>. Het Chrome UX-rapport is een openbare dataset van Google die gebruikerservaringen verzamelt op miljoenen websites die actief worden bezocht door Chrome-gebruikers. Dit geeft ons een lijst met websites die up-to-date zijn en een weerspiegeling van het echte webgebruik. De dataset van het Chrome UX-rapport bevat een vormfactordimensie, die we gebruiken om alle websites toegankelijk te maken voor desktop- of mobiele gebruikers.
+          HTTP Archive haalt de URL's voor zijn websites uit het <a href="#chrome-ux-report">Chrome UX-rapport</a>. Het Chrome UX-rapport is een openbare dataset van Google die gebruikerservaringen verzamelt op miljoenen websites die actief worden bezocht door Chrome-gebruikers. Dit geeft ons een lijst met websites die actueel zijn en een weerspiegeling van het echte webgebruik. De dataset van het Chrome UX-rapport bevat een vormfactordimensie, die we gebruiken om alle websites toegankelijk te maken voor desktop- of mobiele gebruikers.
         </p>
 
         <p>
-          De HTTP Archive crawl van juli 2019 die door de Web Almanac werd gebruikt, gebruikte de meest recent beschikbare Chrome UX Report-release, mei 2019 (201905), voor de lijst met websites. Deze dataset is vrijgegeven op 11 juni 2019 en legt websites vast die in de maand mei door Chrome-gebruikers zijn bezocht.
+          De HTTP Archive crawl van juli 2019 die door de Web Almanac werd gebruikt, gebruikte de meest recent beschikbare Chrome UX-Rapport-release, mei 2019 (201905), voor de lijst met websites. Deze dataset is vrijgegeven op 11 juni 2019 en legt websites vast die in de maand mei door Chrome-gebruikers zijn bezocht.
         </p>
 
         <p>
@@ -126,7 +126,7 @@
         </p>
 
         <p>
-          HTTP Archive wordt ook beschouwd als een testtool voor laboratoria, wat betekent dat het websites test vanuit een datacenter en geen gegevens verzamelt van echte gebruikerservaringen. Daarom worden alle homepagina's van websites getest met een lege cache in een uitgelogde staat.
+          HTTP Archive wordt ook beschouwd als een testhulpmiddel voor laboratoria, wat betekent dat het websites test vanuit een datacenter en geen gegevens verzamelt van echte gebruikerservaringen. Daarom worden alle homepagina's van websites getest met een lege cache in een uitgelogde staat.
         </p>
     </section>
 
@@ -134,11 +134,11 @@
       <h3 id="metrics"><a href="#metrics" class="anchor-link">Metrische gegevens</a></h3>
 
       <p>
-        HTTP Archive verzamelt statistieken over hoe het web is opgebouwd. Het bevat basisstatistieken zoals het aantal bytes per pagina, of de pagina is geladen via HTTPS en individuele verzoek- en antwoordheaders. De meeste van deze statistieken worden geleverd door <a href="#webpagetest">WebPageTest</a>, die fungeert als testrunner voor elke website.
+        HTTP Archive verzamelt statistieken over hoe het web is opgebouwd. Het bevat basisstatistieken zoals het aantal bytes per pagina, of de pagina is geladen via HTTPS en individuele verzoek- en antwoordheaders. De meeste van deze statistieken worden geleverd door <a href="#webpagetest" lang="en">WebPageTest</a>, die fungeert als testrunner voor elke website.
       </p>
 
       <p>
-        Andere testtools worden gebruikt om meer geavanceerde statistieken over de pagina te bieden. <a href="#lighthouse">Lighthouse</a> wordt bijvoorbeeld gebruikt om audits uit te voeren op de pagina om de kwaliteit ervan te analyseren op gebieden als toegankelijkheid en SEO. De sectie <a href="#tools">Tools</a> hieronder gaat dieper in op elk van deze tools.
+        Andere testhulpmiddelen worden gebruikt om meer geavanceerde statistieken over de pagina te bieden. <a href="#lighthouse" lang="en">Lighthouse</a> wordt bijvoorbeeld gebruikt om audits uit te voeren op de pagina om de kwaliteit ervan te analyseren op gebieden als toegankelijkheid en SEO. De sectie <a href="#tools">Hulpmiddelen</a> hieronder gaat dieper in op elk van deze tools.
       </p>
 
       <p>
@@ -146,7 +146,7 @@
       </p>
 
       <p>
-        Sommige statistieken zijn volledig buiten bereik. We hebben bijvoorbeeld niet per se de mogelijkheid om de tools te detecteren die worden gebruikt om een website te bouwen. Als een website is gebouwd met de create-react-app, kunnen we zien dat deze het React-framework gebruikt, maar niet noodzakelijkerwijs dat een bepaalde build-tool wordt gebruikt. Tenzij deze tools detecteerbare vingerafdrukken achterlaten in de code van de website, kunnen we het gebruik ervan niet meten.
+        Sommige statistieken zijn volledig buiten bereik. We hebben bijvoorbeeld niet per se de mogelijkheid om de hulpmiddelen te detecteren die worden gebruikt om een website te bouwen. Als een website is gebouwd met de create-react-app, kunnen we zien dat deze het React-framework gebruikt, maar niet noodzakelijkerwijs dat een bepaalde bouw-hulpmiddel wordt gebruikt. Tenzij deze tools detecteerbare vingerafdrukken achterlaten in de code van de website, kunnen we het gebruik ervan niet meten.
       </p>
 
       <p>
@@ -155,18 +155,18 @@
     </section>
 
     <section>
-      <h2 id="tools"><a href="#tools" class="anchor-link">Tools</a></h2>
+      <h2 id="tools"><a href="#tools" class="anchor-link">Hulpmiddelen</a></h2>
 
       <p>
-        De Web Almanac wordt mogelijk gemaakt met behulp van de volgende open source tools.
+        De Web Almanac wordt mogelijk gemaakt met behulp van de volgende open source hulpmiddelen
       </p>
     </section>
 
     <section>
-      <h3 id="webpagetest"><a href="#webpagetest" class="anchor-link">WebPageTest</a></h3>
+      <h3 id="webpagetest"><a href="#webpagetest" class="anchor-link" lang="en">WebPageTest</a></h3>
 
       <p>
-        <a href="https://www.webpagetest.org/">WebPageTest</a> is een prominente tool voor het testen van webprestaties en de ruggengraat van HTTP Archive. We gebruiken een <a href="https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Private%20Instances/README.md">privé-instantie</a> van WebPageTest met privétest agents, de daadwerkelijke browsers die elke webpagina testen. Desktop- en mobiele websites worden getest onder verschillende configuraties:
+        <a href="https://www.webpagetest.org/" lang="en">WebPageTest</a> is een prominente hulpmiddel voor het testen van webprestaties en de ruggengraat van HTTP Archive. We gebruiken een <a href="https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Private%20Instances/README.md">privé-instantie</a> van WebPageTest met privétest agenten, de daadwerkelijke browsers die elke webpagina testen. Desktop- en mobiele websites worden getest onder verschillende configuraties:
       </p>
       <div class="table-wrap"><div class="table-wrap-container">
       <table>
@@ -243,10 +243,10 @@
     </section>
 
     <section>
-      <h3 id="lighthouse"><a href="#lighthouse" class="anchor-link">Lighthouse</a></h3>
+      <h3 id="lighthouse"><a href="#lighthouse" class="anchor-link" lang="en">Lighthouse</a></h3>
 
       <p>
-        <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a> is een geautomatiseerde tool voor websitekwaliteitsborging, ontwikkeld door Google. Het controleert webpagina's om ervoor te zorgen dat ze geen antipatronen van gebruikerservaringen bevatten, zoals niet-geoptimaliseerde afbeeldingen en ontoegankelijke inhoud.
+        <a href="https://developers.google.com/web/tools/lighthouse/" lang="en">Lighthouse</a> is een geautomatiseerde hulpmiddel voor websitekwaliteitsborging, ontwikkeld door Google. Het controleert webpagina's om ervoor te zorgen dat ze geen antipatronen van gebruikerservaringen bevatten, zoals niet-geoptimaliseerde afbeeldingen en ontoegankelijke inhoud.
       </p>
 
       <p>
@@ -254,7 +254,7 @@
       </p>
 
       <p>
-        Lighthouse wordt uitgevoerd als zijn eigen afzonderlijke test vanuit <a href="#webpagetest">WebPageTest</a>, maar het heeft zijn eigen configuratieprofiel:
+        Lighthouse wordt uitgevoerd als zijn eigen afzonderlijke test vanuit <a href="#webpagetest" lang="en">WebPageTest</a>, maar het heeft zijn eigen configuratieprofiel:
       </p>
       <div class="table-wrap"><div class="table-wrap-container">
       <table>
@@ -295,10 +295,10 @@
     </section>
 
     <section>
-      <h3 id="wappalyzer"><a href="#wappalyzer" class="anchor-link">Wappalyzer</a></h3>
+      <h3 id="wappalyzer"><a href="#wappalyzer" class="anchor-link" lang="en">Wappalyzer</a></h3>
 
       <p>
-        <a href="https://www.wappalyzer.com/">Wappalyzer</a> is een tool voor het detecteren van technologieën die door webpagina's worden gebruikt. Er zijn <a href="https://www.wappalyzer.com/technologies">65 categorieën</a> geteste technologieën, variërend van JavaScript-frameworks tot CMS-platforms en zelfs cryptocurrency-mijnwerkers. Er zijn meer dan 1.200 ondersteunde technologieën.
+        <a href="https://www.wappalyzer.com/"lang="en">Wappalyzer</a> is een hulpmiddel voor het detecteren van technologieën die door webpagina's worden gebruikt. Er zijn <a href="https://www.wappalyzer.com/technologies">65 categorieën</a> geteste technologieën, variërend van JavaScript-frameworks tot CMS-platforms en zelfs cryptocurrency-mijnwerkers. Er zijn meer dan 1.200 ondersteunde technologieën.
       </p>
 
       <p>
@@ -306,7 +306,7 @@
       </p>
 
       <p>
-        Wappalyzer ondersteunt vele hoofdstukken die de populariteit van ontwikkelaarstools zoals WordPress, Bootstrap en jQuery analyseren. Bijvoorbeeld de <a href="{{ url_for('chapter', year=year, lang=lang, chapter='ecommerce') }}">e-commerce</a> en <a href = "{{ url_for( 'chapter', year=year, lang=lang, chapter='cms') }}">CMS</a> -hoofdstukken zijn sterk afhankelijk van de respectievelijke <a href =" https://www.wappalyzer.com/categories/ecommerce">E-commerce</a> en <a href="https://www.wappalyzer.com/categories/cms">CMS</a> technologieën die zijn gedetecteerd door Wappalyzer.
+        Wappalyzer ondersteunt vele hoofdstukken die de populariteit van ontwikkelaarstools zoals WordPress, Bootstrap en jQuery analyseren. Bijvoorbeeld de <a href="{{ url_for('chapter', year=year, lang=lang, chapter='ecommerce') }}">e-commerce</a> en <a href = "{{ url_for( 'chapter', year=year, lang=lang, chapter='cms') }}">CMS</a> -hoofdstukken zijn sterk afhankelijk van de respectievelijke <a href="https://www.wappalyzer.com/categories/ecommerce">E-commerce</a> en <a href="https://www.wappalyzer.com/categories/cms">CMS</a> technologieën die zijn gedetecteerd door Wappalyzer.
       </p>
 
       <p>
@@ -322,7 +322,7 @@
       </p>
 
       <p>
-        Voor Web Almanak statistieken die verwijzen naar gegevens over de echte gebruikerservaring uit het Chrome UX-rapport, wordt de gegevensset (201907) van juli 2019 gebruikt.
+        Voor Web Almanac statistieken die verwijzen naar gegevens over de echte gebruikerservaring uit het Chrome UX-rapport, wordt de gegevensset (201907) van juli 2019 gebruikt.
       </p>
 
       <p>
@@ -331,7 +331,7 @@
     </section>
 
     <section>
-      <h3 id="third-party-web"><a href="#third-party-web">Third Party Web</a></h3>
+      <h3 id="third-party-web"><a href="#third-party-web" lang="en">Third Party Web</a></h3>
 
       <p>
         <a href="https://www.thirdpartyweb.today/">Web van Derden</a> is een onderzoeksproject van <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='patrickhulce') }}">Patrick Hulce</a>, auteur van het <a href=" {{ url_for('chapter', year=year, lang=lang, chapter='third-parties') }}">Hoofdstuk Third parties</a>, dat HTTP Archive en Lighthouse-gegevens gebruikt om de impact te identificeren en analyseren van bronnen van derden op internet.
@@ -347,14 +347,14 @@
     </section>
 
     <section>
-      <h3 id="rework-css"><a href="#rework-css" class="anchor-link">Rework CSS</a></h3>
+      <h3 id="rework-css"><a href="#rework-css" class="anchor-link" lang="en">Rework CSS</a></h3>
 
       <p>
-        <a href="https://github.com/reworkcss/css">Rework CSS</a> is een op JavaScript gebaseerde CSS-parser. Het neemt volledige stylesheets en produceert een JSON-gecodeerd object dat elke individuele stijlregel, selector, richtlijn en waarde onderscheidt.
+        <a href="https://github.com/reworkcss/css" lang="en">Rework CSS</a> is een op JavaScript gebaseerde CSS-parser. Het neemt volledige stylesheets en produceert een JSON-gecodeerd object dat elke individuele stijlregel, selector, richtlijn en waarde onderscheidt.
       </p>
 
       <p>
-        Deze speciale tool heeft de nauwkeurigheid van veel van de statistieken in de <a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a> hoofdstuk aanzienlijk verbeterd. CSS in alle externe stylesheets en inline stijlblokken voor elke pagina werden geparseerd en opgevraagd om de analyse mogelijk te maken. Zie <a href="https://discuss.httparchive.org/t/analyzing-stylesheets-with-a-js-based-parser/1683">deze thread</a> voor meer informatie over hoe deze is geïntegreerd met de HTTP Archive-dataset op BigQuery.
+        Deze speciale hulpmiddel heeft de nauwkeurigheid van veel van de statistieken in de <a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a> hoofdstuk aanzienlijk verbeterd. CSS in alle externe stylesheets en inline stijlblokken voor elke pagina werden geparseerd en opgevraagd om de analyse mogelijk te maken. Zie <a href="https://discuss.httparchive.org/t/analyzing-stylesheets-with-a-js-based-parser/1683">deze thread</a> voor meer informatie over hoe deze is geïntegreerd met de HTTP Archive-dataset op BigQuery.
       </p>
     </section>
 
@@ -362,7 +362,7 @@
       <h2 id="process"><a href="#process" class="anchor-link">Analytisch proces</a></h2>
 
       <p>
-        De Web Almanak duurde ongeveer een jaar om te plannen en uit te voeren, met de coördinatie van tientallen bijdragers uit de webgemeenschap. In dit gedeelte wordt beschreven waarom we de statistieken hebben gekozen die u in de Web Almanak ziet, hoe ze werden opgevraagd en geïnterpreteerd.
+        De Web Almanac duurde ongeveer een jaar om te plannen en uit te voeren, met de coördinatie van tientallen bijdragers uit de webgemeenschap. In dit gedeelte wordt beschreven waarom we de statistieken hebben gekozen die u in de Web Almanac ziet, hoe ze werden opgevraagd en geïnterpreteerd.
       </p>
     </section>
 
@@ -374,7 +374,7 @@
       </p>
 
       <p>
-        Als resultaat van de brainstorm werden 20 hoofdstukken gestold en begonnen we <a href="https://github.com/HTTPArchive/almanac.httparchive.org/issues/2">vakdeskundigen en peerreviewers aan elk hoofdstuk toe te wijzen</a>. Dit proces had een zekere vooringenomenheid vanwege de uitdaging om vrijwilligers ertoe te brengen zich in te zetten voor een project van deze omvang. Veel van de bijdragers zijn dus lid van dezelfde professionele kringen. Een expliciet doel voor toekomstige edities van de Web Almanac is om nog meer ondervertegenwoordigde en heterogene stemmen als auteurs en peerreviewers aan te moedigen.
+        Als resultaat van de brainstorm werden 20 hoofdstukken gestold en begonnen we <a href="https://github.com/HTTPArchive/almanac.httparchive.org/issues/2">vakdeskundigen en collega-recensenten aan elk hoofdstuk toe te wijzen</a>. Dit proces had een zekere vooringenomenheid vanwege de uitdaging om vrijwilligers ertoe te brengen zich in te zetten voor een project van deze omvang. Veel van de bijdragers zijn dus lid van dezelfde professionele kringen. Een expliciet doel voor toekomstige edities van de Web Almanac is om nog meer ondervertegenwoordigde en heterogene stemmen als auteurs en collega-recensenten aan te moedigen.
       </p>
 
       <p>
@@ -390,7 +390,7 @@
       </p>
 
       <p>
-        Gedurende juli 2019 heeft de HTTP Archive-datapijplijn miljoenen websites gecrawld en de metadata verzameld voor gebruik in de Web Almanak.
+        Gedurende juli 2019 heeft de HTTP Archive-datapijplijn miljoenen websites gecrawld en de metadata verzameld voor gebruik in de Web Almanac.
       </p>
 
       <p>
@@ -402,7 +402,7 @@
       <h3 id="interpretation"><a href="#interpretation" class="anchor-link">Interpretatie</a></h3>
 
       <p>
-        Auteurs werkten met analisten om de resultaten correct te interpreteren en passende conclusies te trekken. Terwijl auteurs hun respectievelijke hoofdstukken schreven, putten ze uit deze statistieken om hun framing van de staat van het web te ondersteunen. Peer reviewers werkten met auteurs om de technische correctheid van hun analyse te waarborgen.
+        Auteurs werkten met analisten om de resultaten correct te interpreteren en passende conclusies te trekken. Terwijl auteurs hun respectievelijke hoofdstukken schreven, putten ze uit deze statistieken om hun framing van de staat van het web te ondersteunen. Collega-recensenten werkten met auteurs om de technische correctheid van hun analyse te waarborgen.
       </p>
 
       <p>
