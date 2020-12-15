@@ -35,12 +35,12 @@ FROM
     _TABLE_SUFFIX AS client,
     p.url AS page,
     image.url AS url,
-    image.width width,
-    image.height height,
-    image.naturalWidth naturalWidth,
-    image.naturalHeight naturalHeight,
-    ifnull(image.width, 0) * ifnull(image.height, 0) pixels,
-    ifnull(image.naturalWidth, 0) * ifnull(image.naturalHeight, 0) naturalPixels
+    image.width AS width,
+    image.height AS height,
+    image.naturalWidth AS naturalWidth,
+    image.naturalHeight AS naturalHeight,
+    IFNULL(image.width, 0) * IFNULL(image.height, 0) AS pixels,
+    IFNULL(image.naturalWidth, 0) * IFNULL(image.naturalHeight, 0) AS naturalPixels
   FROM
     `httparchive.pages.2020_08_01_*` p
     CROSS JOIN UNNEST(getImages(payload)) AS image
