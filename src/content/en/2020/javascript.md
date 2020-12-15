@@ -18,6 +18,7 @@ featured_stat_2: 37.22%
 featured_stat_label_2: Percentage of unused JS on mobile
 featured_stat_3: 12.2%
 featured_stat_label_3: Percentage of scripts loaded asynchronously
+edited: false
 ---
 
 ## Introduction
@@ -629,7 +630,8 @@ As you would expect, there's a gap for all tools in use due to the lower process
 
 We have a pretty good picture now of how much JavaScript we use, where it comes from, and what we use it for. While that's interesting enough on its own, the real kicker is the "so what?" What impact does all this script actually have on the experience of our pages?
 
-The first thing we should consider is what happens with all that JavaScript once its been downloaded. Downloading is only the first part of the JavaScript journey. The browser still has to parse all that script, compile it, and eventually execute it. While browsers are constantly on the lookout for ways to offload some of that cost to other threads, much of that work still happens on the main thread, blocking the browser from being able to do layout or paint related work, as well as from being able to respond to user interaction.
+{# TODO(authors): Was there something you wanted to add at the end of this paragraph? "While browsers are increasingly finding ways to offload"... #}
+The first thing we should consider is what happens with all that JavaScript once its been downloaded. Downloading is only the first part of the JavaScript journey. The browser still has to parse all that script, compile it, and eventually execute it.
 
 If you recall, there was only a 30 KB difference between what is shipped to a mobile device versus a desktop device. Depending on your point of view, you could be forgiven for not getting too upset about the small gap in the amount of code sent to a desktop browser versus a mobile one—after all, what's an extra 30 KB or so at the median, right?
 
