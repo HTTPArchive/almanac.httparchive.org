@@ -64,8 +64,9 @@ WHERE
   # likewise the bigImageCount and smallImageCount only track images > 100,000 and < 10,000 respectively.
   # Meaning images between 10KB and 100KB won't show up in the count
   # https://github.com/WPO-Foundation/webpagetest/blob/master/www/breakdown.inc#L95
-  cssPixels > 0 AND naturalPixels > 0
-  AND (smallImageCount > 0 OR bigImageCount > 0)
+  cssPixels > 0 AND
+  naturalPixels > 0 AND
+  (smallImageCount > 0 OR bigImageCount > 0)
 GROUP BY
   client
 ORDER BY
