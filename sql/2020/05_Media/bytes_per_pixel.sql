@@ -45,8 +45,8 @@ FROM
     `httparchive.pages.2020_08_01_*` p
     CROSS JOIN UNNEST(getImages(payload)) AS image
   WHERE
-    image.naturalHeight > 0
-    AND image.naturalWidth > 0
+    image.naturalHeight > 0 AND
+    image.naturalWidth > 0
 --  LIMIT 1000
 ) a
 LEFT JOIN
