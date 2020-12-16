@@ -69,4 +69,4 @@ WHERE
 GROUP BY
   client
 ORDER BY
-  client desc
+  client DESC
