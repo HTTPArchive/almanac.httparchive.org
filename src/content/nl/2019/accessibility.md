@@ -292,7 +292,7 @@ Formulieren invullen is een taak die velen van ons elke dag doen. Of we nu winke
 
 Als we een veld tegenkomen met een grote rode asterisk ernaast, weten we dat dit een verplicht veld is. Of als we op verzenden klikken en te horen krijgen dat er ongeldige invoer was, moet alles wat in een andere kleur is gemarkeerd, worden gecorrigeerd en vervolgens opnieuw worden ingediend. Mensen met een laag of geen zicht kunnen echter niet vertrouwen op deze visuele aanwijzingen, daarom zijn de HTML-invoerattributen `required`, `aria-required` en `aria-invalid` zo belangrijk. Ze bieden schermlezers het equivalent van rode asterisken en rood gemarkeerde velden. Als een leuke bonus, wanneer u browsers informeert welke velden vereist zijn, zullen ze [delen van uw formulieren valideren](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation) voor u. Geen Javascript nodig.
 
-Van de pagina's die formulieren gebruiken, gebruikt 21,73% `vereist` of `aria-vereist` bij het markeren van verplichte velden. Slechts één op de vijf sites maakt hiervan gebruik. Dit is een eenvoudige stap om uw site toegankelijk te maken en biedt alle gebruikers handige browserfuncties.
+Van de pagina's die formulieren gebruiken, gebruikt 21,73% `required` of `aria-required` bij het markeren van verplichte velden. Slechts één op de vijf sites maakt hiervan gebruik. Dit is een eenvoudige stap om uw site toegankelijk te maken en biedt alle gebruikers handige browserfuncties.
 
 We ontdekten ook dat 3,52% van de sites met formulieren gebruik maken van `aria-invalid`. Aangezien veel formulieren dit veld echter pas gebruiken als er onjuiste informatie is ingediend, konden we niet het werkelijke percentage sites vaststellen dat deze opmaak gebruikt.
 
