@@ -6,10 +6,11 @@ on:
   push:
     branches: [main]
   pull_request:
-      paths:
-        - '**.js'
-        - '**.py'
-        - '**.html'
+    branches: [main]
+    paths:
+      - '**.js'
+      - '**.py'
+      - '**.html'
   schedule:
     #        ┌───────────── minute (0 - 59)
     #        │ ┌───────────── hour (0 - 23)
