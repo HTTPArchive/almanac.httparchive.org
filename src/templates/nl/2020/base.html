@@ -1,0 +1,28 @@
+{% extends "%s/base.html" % lang %}
+
+{% block methodology_stat_1 %}7.5M{% endblock %}
+{% block methodology_stat_2 %}31.3 TB{% endblock %}
+{% block methodology_description %}
+Tenzij anders vermeld, zijn de statistieken in alle 22 hoofdstukken van de Web Almanac afkomstig uit de HTTP Archive-dataset. HTTP Archive is een door de gemeenschap gerund project dat sinds 2010 bijhoudt hoe het web is opgebouwd. Met WebPageTest en Lighthouse onder de motorkap worden maandelijks metagegevens over meer dan 7,5 miljoen websites getest en voor analyse opgenomen in een openbare BigQuery-database. De gegevensset van augustus 2020 werd gebruikt als basis voor de statistieken van de Web Almanac. Zie de Methodologie-pagina voor meer informatie.
+{% endblock %}
+
+
+{% block foreword %}
+  <p>
+    2020 is een jaar geweest dat velen van ons zouden willen vergeten. Het komt zelden voor dat een zo geglobaliseerde gemeenschap als de onze wordt getroffen door gebeurtenissen die zo ingrijpend zijn als de COVID-19-pandemie en protesten tegen raciaal onrecht. Deze gebeurtenissen ontmoedigden ons bijna om het project dit jaar opnieuw op te starten - met zo veel mensen fysiek en emotioneel uitgeput, hoe hadden we kunnen verwachten dat iemand een bijdrage zou <em>willen</em> leveren, laat staan dat hij of zij er tijd en energie voor zou hebben? We gingen voorzichtig te werk in de hoop dat er nog steeds gemeenschapsbelang was.
+  </p>
+
+  <p>
+    Het doel van deze editie van de Web Almanak is niet om 2020 te vergeten, maar om het te herdenken. Voor beter of slechter, dit is een hoofdstuk in onze geschiedenis. Ondanks alle externe druk van dit jaar, hebben <em>meer dan honderd <a href="./contributors">bijdragers</a></em> van de webgemeenschap zich aangemeld en talloze uren van hun tijd vrijgemaakt voor een project gewijd aan het herdenken van 2020 en de toestand van het web. Verbazingwekkend genoeg zijn we erin geslaagd om de reikwijdte van de editie van dit jaar <em>uit te breiden</em> door drie nieuwe hoofdstukken toe te voegen en er slechts één te verliezen.
+  </p>
+
+  <p>
+    Als ik de bijdragers vraag wat ze het leukst vinden aan het project, gaat het antwoord bijna altijd over de mensen. We werken samen als teams, we ondersteunen elkaar en in slechts vijf maanden zijn we in staat om het equivalent van een boek van meer dan 500 pagina's te bouwen! Het is een enorme uitdaging, en hoewel we de problemen van de wereld niet hebben opgelost, hebben we laten zien wat er mogelijk is als mensen ervoor kiezen om samen te werken.
+  </p>
+
+  <p>
+    Veel plezier met de 2020 Web Almanac, het hoogtepunt van onze liefde voor het web. En vergeet niet om <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/CONTRIBUTING.md"> contact op te nemen </a> als je lid wilt worden van het team.
+  </p>
+
+  <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>, Hoofdredacteur van de Web Almanac</em></p>
+{% endblock %}

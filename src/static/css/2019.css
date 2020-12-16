@@ -1418,11 +1418,11 @@ p.copyright a {
   padding: 0;
 }
 
-.header-list li:last-child:not(.ebook) {
+.header-list li:last-child {
   padding-bottom: 16px;
 }
 
-.footer-list li:last-child:not(.ebook) {
+.footer-list li:last-child {
   padding-top: 16px;
 }
 
@@ -1439,7 +1439,6 @@ p.copyright a {
 .nav-dropdown-list-chapter.ebook {
   display: flex;
   flex-direction: column;
-  padding: 0 0 24px 24px;
 }
 
 .nav-dropdown-list-todo,
@@ -1455,6 +1454,10 @@ p.copyright a {
 .footer .nav-dropdown-list .help-translate {
   border-bottom: 1px dashed #bdbdbd;
   border-top: none;
+}
+
+.footer .nav-dropdown-list-part {
+  padding: 8px 8px 16px 16px;
 }
 
 @media (prefers-reduced-motion: reduce) {

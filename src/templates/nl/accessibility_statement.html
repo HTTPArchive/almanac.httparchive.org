@@ -1,0 +1,120 @@
+{% extends "base/accessibility_statement.html" %}
+
+{% block title %}Toegankelijkheidsverklaring | De Web Almanac door HTTP Archive{% endblock %}
+
+{% block description %}Beschrijft de toegankelijkheidsdoelen van de Web Almanac{% endblock %}
+
+{% block twitter_image_alt %}Web Almanac Toegankelijkheidsverklaring{% endblock %}
+
+{% block index %}
+<ul>
+  <li><a href="#overview">Overzicht</a></li>
+  <li><a href="#measures">Maatregelen ter ondersteuning van toegankelijkheid</a></li>
+  <li><a href="#conformance-status">Conformiteitsstatus</a></li>
+  <li><a href="#external-content">Externe inhoud</a></li>
+  <li><a href="#compatibility">Compatibiliteit met browsers en ondersteunende technologie</a></li>
+  <li><a href="#technical-specifications">Technische Specificaties</a></li>
+  <li><a href="#assessment-approach">Beoordelingsaanpak</a></li>
+  <li><a href="#feedback">Feedback</a></li>
+</ul>
+{% endblock %}
+
+{% block main_content %}
+<h1 class="title title-lg">Toegankelijkheidsverklaring</h1>
+<section>
+  <h2 id="overview"><a href="#overview" class="anchor-link">Overzicht</a></h2>
+
+  <p>
+    De Web Almanac zet zich in om digitale toegankelijkheid voor alle mensen te waarborgen. We verbeteren continu de gebruikerservaring voor iedereen en passen de relevante toegankelijkheidsnormen toe.
+  </p>
+  <p>
+    Deze verklaring is <time datetime="2020-06-02">2 juni 2020</time> voor het laatst herzien.
+  </p>
+</section>
+
+<section>
+  <h2 id="measures"><a href="#measures" class="anchor-link">Maatregelen ter ondersteuning van toegankelijkheid</a></h2>
+
+  <p>
+    De Web Almanac neemt de volgende maatregelen om de toegankelijkheid van deze website te waarborgen:
+  </p>
+  <ul>
+    <li>Toegankelijkheid betrekken als onderdeel van de ontwikkeling van deze website.</li>
+    <li>De toegankelijkheid bekijken met behulp van de beschikbare hulpmiddelen.</li>
+    <li>Transparant zijn over toegankelijkheidsproblemen <a href="https://github.com/HTTPArchive/almanac.httparchive.org/issues?utf8=%E2%9C%93&q=label%3AAccessibility+">op onze GitHub-pagina's</a>.</li>
+    <li>Toegankelijkheidsproblemen die binnenkomen tijdig aanpakken.</li>
+    <li>Deze toegankelijkheidsverklaring publiceren en actueel houden.</li>
+  </ul>
+</section>
+
+<section>
+  <h2 id="conformance-status"><a href="#conformance-status" class="anchor-link">Conformiteitsstatus</a></h2>
+
+  <p>
+    De <a href="https://www.w3.org/WAI/standards-guidelines/wcag/">Richtlijnen voor Toegankelijkheid van Webinhoud (WCAG)</a> definieert vereisten voor ontwerpers en ontwikkelaars om de toegankelijkheid voor mensen met een handicap te verbeteren. Het definieert drie conformiteitsniveaus: niveau A, niveau AA en niveau AAA. De Web Almanac is gedeeltelijk in overeenstemming met <a href="https://www.w3.org/TR/WCAG21/">WCAG 2.1</a> niveau AAA. Gedeeltelijk conform betekent dat sommige delen van de inhoud niet volledig voldoen aan de toegankelijkheidsnorm.
+  </p>
+
+  <p>
+    We beschouwen onszelf als gedeeltelijk conform omdat we geen volledige, extern geverifieerde audit van de website hebben voltooid en de website ook niet is beoordeeld door gebruikers van schermlezers, dus we kunnen niet zeker zijn van onze huidige status. We hebben alle pagina's op de website gecontroleerd met behulp van een aantal hulpmiddelen, waaronder de <a href="https://wave.webaim.org/">WAVE Toegankelijkheidstool</a>, de <a href="https://hacks.mozilla.org/2019/10/auditing-for-accessibility-problems-with-firefox-developer-tools/">Firefox Toegankelijkheidsinspector</a> en de <a href="https://chrome.google.com/webstore/detail/axe-web-accessibility-tes/lhdoppojpmngadmnindnejefpokejbdd" rel="nofollow">AXE Chrome-plug-in</a>.
+  </p>
+
+  <p>
+    Het doel van de Web Almanac is om gedetailleerde informatie te geven over de status van het web. Hoewel we proberen ervoor te zorgen dat alle inhoud gemakkelijk te lezen is, zelfs door niet-experts, kan de aard van het materiaal betekenen dat er een niveau van expertise en technologisch inzicht nodig is om sommige hoofdstukken en sommige statistieken te begrijpen, die mogelijk niet voldoen aan de <a href="https://www.w3.org/WAI/WCAG21/quickref/#reading-level">WCAG 2.1 niveau AAA leesniveau richtlijnen</a>.
+  </p>
+
+  <p>
+    We gebruiken Google Spreadsheets ook voor sommige interactieve visualisaties, die mogelijk ook niet voldoen aan WCAG-toegankelijkheidsnormen. Deze worden geladen via <code>iframes</code> en we leveren afbeeldingen voor al onze figuren, en tonen alleen interactieve visualisaties als de cliënt software dit ondersteunt. Als u een webbrowser gebruikt en u de interactieve visualisaties niet wilt zien, dan kunnen de afbeeldingen worden afgedwongen door een <code>?Print</code> queryparameter toe te voegen aan een van de hoofdstukken, <a href="../accessibility?print">bekijk het hoofdstuk over toegankelijkheid in printmodus</a> voor zo'n voorbeeld. We kunnen proberen om deze functionaliteit indien nodig gemakkelijker te activeren, maar alle visualisaties hebben gedetailleerde tekstbeschrijvingen, dus we denken dat dit niet nodig is. <a href="https://github.com/HTTPArchive/almanac.httparchive.org/issues">Laat het ons weten</a> als we hierin onjuist zijn.
+  </p>
+
+  <p>
+    In sommige hoofdstukken nemen we ook andere inhoud op de site op die niet door onszelf is gemaakt, waaronder YouTube-video's, pdf-links of links naar andere artikelen, die niet voldoen aan de strikte criteria van WCAG 2.1 niveau AAA. Zie onderstaande opmerking over externe inhoud.
+  </p>
+
+  <p>
+    De <a href="/static/pdfs/web_almanac_{{ year }}_{{ lang }}.pdf">pdf-versie van de Web Almanac</a> volgt beste praktijken voor pdf-toegankelijkheid en voldoet aan de <a href=" https://en.wikipedia.org/wiki/PDF/UA">PDF/UA-1</a> standaard.
+  </p>
+
+  <h2 id="external-content"><a href="#external-content" class="anchor-link">Externe inhoud</a></h2>
+
+  <p>
+    Veel hoofdstukken linken naar andere inhoud (video's, pdf's, artikelen) die niet onder onze controle staan en die mogelijk niet voldoen aan de hoge mate van conformiteit die we hebben bereikt. Waar mogelijk zullen we links plaatsen naar artikelen in dezelfde taal als de pagina die wordt bekeken, maar dit is niet altijd mogelijk.
+  </p>
+
+  <h2 id="compatibility"><a href="#compatibility" class="anchor-link">Compatibiliteit met browsers en ondersteunende technologie</a></h2>
+
+  <p>
+    De Web Almanac is ontworpen om compatibel te zijn met zoveel mogelijk browsers en ondersteunende technologieën. De website is op een progressieve manier gebouwd en is volledig functioneel, zelfs zonder ondersteuning van alle moderne browserfuncties die we gebruiken, maar u kunt een verslechtering van de beelden opmerken en een gebrek aan functionaliteit (interactieve beelden, het aantal opmerkingen enz.) Als u niet een moderne browser zoals een recente versie van Chrome, Safari, Firefox of Edge gebruikt.
+  </p>
+
+  <p>
+    Op dit moment hebben we het testen van ondersteunende technologiehardware of -software niet voltooid, maar hebben we hulpmiddelen gebruikt, zoals hierboven vermeld, om te proberen eventuele problemen met deze apparaten op te lossen.
+  </p>
+</section>
+
+<section>
+  <h2 id="technical-specifications"><a href="#technical-specifications" class="anchor-link">Technische Specificaties</a></h2>
+
+  <p>
+    De website is gebouwd op goed gestructureerde, semantische HTML (inclusief <a href="https://www.w3.org/WAI/standards-guidelines/aria/">WAI-ARIA</a> waar van toepassing), aangevuld met CSS voor styling en beperkt JavaScript voor sommige interactieve componenten. De website maakt gebruik van moderne ontwikkelingspraktijken zoals CSS Grid, Fetch en WOFF2 Lettertypen, die niet worden ondersteund in oudere browsers zoals IE 11. De website is nog steeds volledig functioneel in die browsers, maar is misschien niet zo visueel aantrekkelijk. Er zijn geen extra plug-ins of bibliotheken nodig om de website te bekijken.
+  </p>
+  <p>
+    De Web Almanac PDF volgt dezelfde toegankelijkheidsnormen als de website en is bovendien structureel getagd om de toegankelijkheid te bevorderen.
+  </p>
+</section>
+
+<section>
+  <h2 id="assessment-approach"><a href="#assessment-approach" class="anchor-link">Beoordelingsaanpak</a></h2>
+
+  <p>
+    Zelfevaluatie: de inhoud werd geëvalueerd door het Web Almanac-team met behulp van hun eigen expertise en een aantal hulpmiddelen, waaronder de <a href="https://wave.webaim.org/">WAVE Toegankelijkheidstool</a>, de <a href="https://hacks.mozilla.org/2019/10/auditing-for-accessibility-problems-with-firefox-developer-tools/">Firefox Toegankelijkheidsinspector</a> en de <a href="https://chrome.google.com/webstore/detail/axe-web-accessibility-tes/lhdoppojpmngadmnindnejefpokejbdd" rel="nofollow"> AXE Chrome-plug-in</a>. De Web Almanac PDF is getest met een toegankelijkheidsscan in Acrobat Reader Pro DC.
+  </p>
+</section>
+
+<section>
+  <h2 id="feedback"><a href="#feedback" class="anchor-link">Feedback</a></h2>
+
+  <p>
+    We verwelkomen feedback over de toegankelijkheid van deze website. De beste manier om ons te bereiken is door <a href="https://github.com/HTTPArchive/almanac.httparchive.org/issues">een probleem op GitHub te melden</a> of ons een e-mail te sturen op <a href="mailto:team@httparchive.org">team@httparchive.org</a>. We verwelkomen ook <span lang="en">pull requests</span> voor degenen die rechtstreeks willen bijdragen. De Web Almanac is een gemeenschapsproject, beheerd door vrijwilligers, en daarom kunnen we geen tijdsbestek garanderen voor het reageren op feedback, maar zullen we zo snel mogelijk reageren.
+  </p>
+</section>
+{% endblock %}
