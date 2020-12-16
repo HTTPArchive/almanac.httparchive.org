@@ -231,7 +231,7 @@ Nowadays, the pattern is unnecessary for the vast majority of sites and any scri
 
 There is an encouraging story here, though.
 
-Harry Roberts [tweeted about the antipattern on Twitter](https://twitter.com/csswizardry/status/1331721659498319873), which is what prompted us to check to see how frequently this was occurring in the wild. [Rick Viscomi checked to see who the top culprits were](https://twitter.com/rick_viscomi/status/1331735748060524551), and it turns out "stats.wp.com" was the source of the most common offenders. Someone from Automatic replied and the pattern will now be [removed going forward](https://twitter.com/Kraft/status/1336772912414601224). 
+Harry Roberts [tweeted about the antipattern on Twitter](https://twitter.com/csswizardry/status/1331721659498319873), which is what prompted us to check to see how frequently this was occurring in the wild. [Rick Viscomi checked to see who the top culprits were](https://twitter.com/rick_viscomi/status/1331735748060524551), and it turns out "stats.wp.com" was the source of the most common offenders. @Kraft from Automattic replied, and the pattern will now be [removed going forward](https://twitter.com/Kraft/status/1336772912414601224). 
 
 One of the great things about the openness of the web is how one observation can lead to meaningful change and that's exactly what happened here.
 
