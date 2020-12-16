@@ -520,7 +520,7 @@ And if you are going for fanciful color names, why not define your own with CSS 
   link="https://codepen.io/leaverou/pen/GRjjJwJ",
   image="color-keywords-app.png",
   caption="Interactively explore the color keyword usage data with this app!",
-  description="TODO",
+  description="Screenhot of an interactive app which allows you to select colours and see their relative usage in a pie chart. The data for the colours is shown in the next table.",
   width=600,
   height=1065
   )
@@ -890,8 +890,10 @@ Compatibility, right? You don’t want things to break? No. In the stylesheets w
 {# TODO the figure below needs an actual object tag, otherwise tooltips are not shown #}
 
 {{ figure_markup(
-  image="UCS-p3-pairs.svg",
-  caption="This 1976 u’v’ diagram shows the chromaticity of colors (flattened to 2D, so lightness is not shown). The outer curved shape represents the spectrum of pure single wavelengths; there are no visible colors outside this. The straight line is purple, a mixture of red and violet. The smaller, grey, triangle is the sRGB gamut while the larger, darker triangle is the display-p3 gamut. The 23 unique display-p3 colors actually in use on the web in 2020 are shown; for each pair of colors the larger circle is the sRGB fallback while the smaller circle is the display-p3 color. If it is inside the sRGB gamut, those circles show the correct color. Otherwise, a white circle with a red edge indicates out of sRGB-gamut colors.",
+  image="p3-chromaticity-big.svg",
+  object="p3-chromaticity-big.svg",
+  caption="uv chromaticity of specified display-p3 colors and their fallbacks.",
+  description="This 1976 u’v’ diagram shows the chromaticity of colors (flattened to 2D, so lightness is not shown). The outer curved shape represents the spectrum of pure single wavelengths; there are no visible colors outside this. The straight line is purple, a mixture of red and violet. The smaller, grey, triangle is the sRGB gamut while the larger, darker triangle is the display-p3 gamut. The 23 unique display-p3 colors actually in use on the web in 2020 are shown; for each pair of colors the larger circle is the sRGB fallback while the smaller circle is the display-p3 color. If it is inside the sRGB gamut, those circles show the correct color. Otherwise, a white circle with a red edge indicates out of sRGB-gamut colors.",
   width=600,
   height=600
 ) }}
@@ -934,7 +936,7 @@ Prefixed gradients are also still very common, even though prefixes haven't been
 
 Using color stops with different colors in the same position (hard stops) to create stripes and other patterns is a technique [first popularized in 2010](https://lea.verou.me/2010/12/checkered-stripes-other-background-patterns-with-css3-gradients/) (by Lea Verou), which by now has many interesting variations, including [some really cool ones with blend modes](https://bennettfeely.com/gradients/). While it may seem like a hack, hard stops are found in 50% of pages, indicating a strong developer need for lightweight graphics from within CSS without resorting to image editors or external SVG.
 
- Interpolation hints (or as Adobe, who popularized the technique, calls them: “midpoints”) are found on 22% of pages, despite [near universal browser support since 2015](https://caniuse.com/mdn-css_types_image_gradient_linear-gradient_interpolation_hints). Which is a shame, because without them, the color stops are connected by straight-lines in the colorspace, rather than smooth curves. This low usage probably reflects a misunderstanding of what they do, or how to use them; contrast this with CSS transitions and animations, where easing functions (which do much the same thing, i.e. connect the keyframes with curves rather than jerky straight lines) are much more commonly used ([80% of transitions](TODO: link to transitions section, or timing function section if possible)). “Midpoints” is not a very understandable description, and “interpolation hint” sounds like you are helping the browser to do simple arithmetic.
+ Interpolation hints (or as Adobe, who popularized the technique, calls them: “midpoints”) are found on 22% of pages, despite [near universal browser support since 2015](https://caniuse.com/mdn-css_types_image_gradient_linear-gradient_interpolation_hints). Which is a shame, because without them, the color stops are connected by straight-lines in the colorspace, rather than smooth curves. This low usage probably reflects a misunderstanding of what they do, or how to use them; contrast this with CSS transitions and animations, where easing functions (which do much the same thing, i.e. connect the keyframes with curves rather than jerky straight lines) are much more commonly used ([80% of transitions](#transitions-and-animations)). “Midpoints” is not a very understandable description, and “interpolation hint” sounds like you are helping the browser to do simple arithmetic.
 
 Most gradient usage is rather simple, with over 75% of gradients found across the entire dataset only using 2 color stops. In fact, fewer than half of pages contain even a single gradient with more than 3 color stops!
 
