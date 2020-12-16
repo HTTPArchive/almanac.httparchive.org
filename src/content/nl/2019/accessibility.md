@@ -6,7 +6,7 @@ description: Toegankelijkheidshoofdstuk van de Web Almanac 2019 over leesgemak, 
 authors: [nektarios-paisios, obto, kleinab]
 reviewers: [ljme]
 analysts: [dougsillars, rviscomi, obto]
-translators: []
+translators: [noah-vdv]
 discuss: 1764
 results: https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/
 queries: 09_Accessibility
