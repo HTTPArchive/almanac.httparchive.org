@@ -62,7 +62,7 @@ jobs:
       id: cpr
       uses: peter-evans/create-pull-request@v3.5.1
       with:
-        title: Regenerate Ebooks
+        title: Pre-deploy Updates
         branch-suffix: timestamp
         commit-message: Update Timestamps and Generate Ebooks
         body: |

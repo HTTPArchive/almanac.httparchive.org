@@ -4,15 +4,7 @@ name: "Static Code Analysis"
 
 on:
   push:
-    paths:
-      - '**.js'
-      - '**.py'
-      - '**.html'
   pull_request:
-    paths:
-      - '**.js'
-      - '**.py'
-      - '**.html'
   schedule:
     #        ┌───────────── minute (0 - 59)
     #        │ ┌───────────── hour (0 - 23)
@@ -42,17 +34,12 @@ jobs:
           # Only include this option if you are running this workflow on pull requests.
           fetch-depth: 2
 
-      # If this run was triggered by a pull request event then checkout
-      # the head of the pull request instead of the merge commit.
-      # Only include this step if you are running this workflow on pull requests.
-      - run: git checkout HEAD^2
-        if: ${{ github.event_name == 'pull_request' }}
-
       # Initializes the CodeQL tools for scanning.
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v1
         with:
           queries: +security-and-quality
+          language: javascript, python
         # Override language selection by uncommenting this and choosing your languages
         # with:
         #   languages: go, javascript, csharp, python, cpp, java
