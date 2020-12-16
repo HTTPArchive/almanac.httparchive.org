@@ -679,7 +679,7 @@ And we are still missing out. Despite being [implemented in Safari in 2016](http
 Compatibility, right? You don’t want things to break? No. In the stylesheets we examined, we found solid use of fallback: with document order, the cascade, `@supports`, the `color-gamut` media query, all that good stuff. So in a style sheet we would see the color the designer wanted, expressed in display-p3, and also a fallback sRGB color. We computed the visible difference (a calculation called [ΔE2000](https://zschuessler.github.io/DeltaE/learn/)) between the desired and fallback color and this was typically quite modest. A small tweak. A careful exploration. In fact, 37.6% of the time, the color specified in display-p3 actually fell inside the range of colors (the gamut) that sRGB can manage.
 
 <figure>
-  <table>
+  <table class="large-table">
     <thead>
       <tr>
         <th scope="col" colspan="2">sRGB</th>
@@ -890,7 +890,8 @@ Compatibility, right? You don’t want things to break? No. In the stylesheets w
 {# TODO the figure below needs an actual object tag, otherwise tooltips are not shown #}
 
 {{ figure_markup(
-  image="UCS-p3-pairs.svg",
+  image="p3-chromaticity-big.svg",
+  object="p3-chromaticity-big.svg",
   caption="uv chromaticity of specified display-p3 colors and their fallbacks.",
   description="This 1976 u’v’ diagram shows the chromaticity of colors (flattened to 2D, so lightness is not shown). The outer curved shape represents the spectrum of pure single wavelengths; there are no visible colors outside this. The straight line is purple, a mixture of red and violet. The smaller, grey, triangle is the sRGB gamut while the larger, darker triangle is the display-p3 gamut. The 23 unique display-p3 colors actually in use on the web in 2020 are shown; for each pair of colors the larger circle is the sRGB fallback while the smaller circle is the display-p3 color. If it is inside the sRGB gamut, those circles show the correct color. Otherwise, a white circle with a red edge indicates out of sRGB-gamut colors.",
   width=600,
