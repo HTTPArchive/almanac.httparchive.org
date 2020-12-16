@@ -114,7 +114,7 @@ That 153 KB equates to ~37% of the total script size that we send down to mobile
 ### `module` and `nomodule`
 One mechanism we have to potentially reduce the amount of code we send down is to take advantage of the [`module`/`nomodule` pattern](https://web.dev/serve-modern-code-to-modern-browsers/). With this pattern, we create two sets of bundles: one bundle intended for modern browsers and one intended for legacy browsers. The bundle intended for modern browsers gets a `type=module` and the bundle intended for legacy browsers gets a `type=nomodule`.
 
-This approach lets us create smaller bundles with optimized modern syntax for the browsers that support it, while providing conditionally loaded polyfills and different syntax to the browsers that don't.
+This approach lets us create smaller bundles with modern syntax optimized for the browsers that support it, while providing conditionally loaded polyfills and different syntax to the browsers that don't.
 
 Support for `module` and `nomodule` is broadening, but still relatively new. As a result, adoption is still a bit low. Only 3.6% of mobile pages use at least one script with `type=module` and only 0.7% of mobile pages use at least one script with `type=nomodule` to support legacy browsers.
 
