@@ -638,8 +638,8 @@
   {% endblock %}
 {% endblock %}
 
-{% macro figure_dropdown(metadata, id, sheets_gid="", sql_file="", image="") %}
-  {% if sheets_gid != "" or  sql_file != "" or image != "" %}
+{% macro figure_dropdown(metadata, id, sheets_gid="", sql_file="", image="", ebook=false) %}
+  {% if not ebook and (sheets_gid != "" or  sql_file != "" or image != "") %}
   <div class="figure-dropdown nav-dropdown">
     <button class="nav-dropdown-btn js-enable hidden" disabled aria-expanded="false" title="Figure options&hellip;">
       <span class="visually-hidden">{{ self.explore_the_results() }}</span>
@@ -822,14 +822,14 @@
       <img src="{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description" width="{{ width }}" height="{{ height }}" loading="lazy" />
       {%- endif %}
     </a>
-    {{ figure_dropdown(metadata, id, sheets_gid, sql_file, image) }}
+    {{ figure_dropdown(metadata, id, sheets_gid, sql_file, image, ebook) }}}
   </div>
   <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="{{ anchor }}-description" data-show-text="{{ show_description(metadata,id) }}" data-hide-text="{{ hide_description(metadata,id) }}">{{ show_description(metadata,id) }}</button>
   <div id="{{ anchor }}-description" class="visually-hidden">{{ description|safe }}</div>
   {%- elif content != "" %}
   <div class="figure-wrapper content-figure-wrapper">
     <span class="{{ classes }}">{{ content|safe }}</span>
-    {{ figure_dropdown(metadata, id, sheets_gid, sql_file, image) }}
+    {{ figure_dropdown(metadata, id, sheets_gid, sql_file, image, ebook) }}
   </div>
   {%- endif %}
   <figcaption id="{{ anchor }}-caption">{{ figure_link(metadata, id, caption, ebook=ebook, sheets_gid=sheets_gid, sql_file=sql_file, image=image) }}</figcaption>

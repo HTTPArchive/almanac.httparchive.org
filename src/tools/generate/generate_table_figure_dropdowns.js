@@ -10,10 +10,11 @@ const table_dropdowns = (html) => {
       const figcaption = figure.querySelector('figcaption');
       if (figcaption) {
         let figure_dropdown = figcaption.innerHTML.replace(/figure_link/, 'figure_dropdown');
-        figure_dropdown = figure_dropdown.replace(/caption=".*?"(,\s)+/, ' ');
+        figure_dropdown = figure_dropdown.replace(/caption=".*?"[,\s]*/, '');
+        figure_dropdown = figure_dropdown.replace(/caption='.*?'[,\s]*/, '');
         figure_dropdown_node = dom.window.document.createTextNode(figure_dropdown);
         const table_wrap = figure.querySelector('.table-wrap');
-        if (table_wrap) {
+        if (figure_dropdown && table_wrap) {
           table_wrap.appendChild(figure_dropdown_node);
         }
       }
