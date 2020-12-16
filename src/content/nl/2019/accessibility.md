@@ -236,7 +236,7 @@ Desondanks bevat slechts 4,32% van de pagina's met tabellen bijschriften.
 
 ### Het gebruik van ARIA
 
-Een van de meest populaire en meest gebruikte specificaties voor toegankelijkheid op internet is de [Accessible Rich Internet Applications](https://www.w3.org/WAI/standards-guidelines/aria/) (ARIA) -standaard. Deze standaard biedt een groot aantal aanvullende HTML-attributen om het doel achter visuele elementen (d.w.z. hun semantische betekenis) over te brengen en tot wat voor soort acties ze in staat zijn.
+Een van de meest populaire en meest gebruikte specificaties voor toegankelijkheid op internet is de <a href="https://www.w3.org/WAI/standards-guidelines/aria/" lang="en">Accessible Rich Internet Applications</a> (ARIA) -standaard. Deze standaard biedt een groot aantal aanvullende HTML-attributen om het doel achter visuele elementen (d.w.z. hun semantische betekenis) over te brengen en tot wat voor soort acties ze in staat zijn.
 
 Het correct en gepast gebruiken van ARIA kan een uitdaging zijn. Van pagina's die gebruik maken van ARIA-attributen, hebben we bijvoorbeeld vastgesteld dat 12,31% ongeldige waarden heeft toegewezen aan hun attributen. Dit is problematisch omdat elke fout bij het gebruik van een ARIA-attribuut geen visueel effect heeft op de pagina. Sommige van deze fouten kunnen worden opgespoord met behulp van een geautomatiseerde validatietool, maar over het algemeen vereisen ze hands-on gebruik van echte ondersteunende software (zoals een schermlezer). In dit gedeelte wordt onderzocht hoe ARIA op internet wordt gebruikt en welke delen van de standaard het meest voorkomen.
 
