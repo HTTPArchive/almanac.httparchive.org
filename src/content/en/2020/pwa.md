@@ -8,7 +8,7 @@ authors: [hemanth]
 reviewers: [thepassle, jadjoubran, pearlbea, gokulkrishh]
 analysts: [bazzadp]
 translators: []
-hemanth_bio: <a href="https://h3manth.com">Hemanth HN</a> is a FOSS Computer polyglot, FOSS philosopher, GDE for web and payments domain, DuckDuckGo community member, TC39 delegate and Google Launchpad Accelerator mentor. Loves The WEB && CLI. Hosts <a href="https://TC39er.us">TC39er.us</a> podcast.
+hemanth_bio: <a href="https://h3manth.com">Hemanth HM</a> is a Computer polyglot, FOSS philosopher, GDE for web and payments domain, DuckDuckGo community member, TC39 delegate and Google Launchpad Accelerator mentor. Loves The WEB && CLI. Hosts <a href="https://TC39er.us">TC39er.us</a> podcast.
 discuss: 2050
 results: https://docs.google.com/spreadsheets/d/1AOqCkb5EggnE8BngpxvxGj_fCfssT9sZ0ElCQKp4pOw/
 queries: 14_PWA
