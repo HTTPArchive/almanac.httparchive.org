@@ -37,7 +37,7 @@ jobs:
         uses: github/codeql-action/init@v1
         with:
           queries: +security-and-quality
-          language: javascript, python
+          languages: javascript, python
         # Override language selection by uncommenting this and choosing your languages
         # with:
         #   languages: go, javascript, csharp, python, cpp, java
