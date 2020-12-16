@@ -216,13 +216,15 @@ Of those external scripts, only 12.2% of them are loaded with the `async` attrib
   sql_file="breakdown_of_scripts_using_async_defer_module_nomodule.sql"
 ) }}
 
-{# TODO(authors): Why is it misleading? #}
-Considering that `defer` provides us with the best loading performance (by ensuring downloading the script happens in parallel to other work, and execution waits until after the page can be displayed), we would hope to see that percentage a bit higher. In fact, as it is that 6.0% is a bit misleading.
+Considering that `defer` provides us with the best loading performance (by ensuring downloading the script happens in parallel to other work, and execution waits until after the page can be displayed), we would hope to see that percentage a bit higher. In fact, as it is that 6.0% is slightly inflated.
 
 Back when supporting IE8 and IE9 was more common, it was relatively common to use _both_ the `async` and `defer` attributes. With both attributes in place, any browser supporting both will use `async`. IE8 and IE9, which don't support `async` will fall back to defer.
 
-{# TODO(authors): In the Twitter thread that discussed this, it actually spurred the Jetpack folks to push a fix! Might be worth mentioning :) #}
-Nowadays, the pattern is unnecessary for the vast majority of sites and any script loaded with the pattern in place will interrupt the HTML parser when it needs to be executed, instead of deferring until the page has loaded. The pattern is still used surprisingly often, with 11.4% of mobile pages serving at least one script with that pattern in place.
+Nowadays, the pattern is unnecessary for the vast majority of sites and any script loaded with the pattern in place will interrupt the HTML parser when it needs to be executed, instead of deferring until the page has loaded. The pattern is still used surprisingly often, with 11.4% of mobile pages serving at least one script with that pattern in place. In other words, at least some of the 6% of scripts that use `defer` aren't getting the full benefits of the `defer` attribute.
+
+There is an encouraging story here, though.
+
+Harry Roberts [tweeted about the antipattern on Twitter](https://twitter.com/csswizardry/status/1331721659498319873), which is what prompted us to check to see how frequently this was occurring in the wild. [Rick Viscomi checked to see who the top culprits were](https://twitter.com/rick_viscomi/status/1331735748060524551), and it turns out "stats.wp.com" was the source of the most common offenders. Someone from Automatic replied and the pattern will now be [removed going forward](https://twitter.com/Kraft/status/1336772912414601224). One of the great things about the openness of the web is how one observation can lead to meaningful change and that's exactly what happened here. 
 
 ### Resource hints
 
