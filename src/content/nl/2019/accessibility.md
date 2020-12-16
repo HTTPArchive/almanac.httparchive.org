@@ -148,7 +148,7 @@ We ontdekten dat slechts één op de vier pagina's (26,03%) een belangrijk Hoofd
 {{ figure_markup(
   image="fig4.png",
   caption="Percentage pagina's op basis van hun aantal `main` elementen.",
-  description="Verticaal staafdiagram met percentagegegevens, variërend van 0 tot 80 in stappen van 20, versus balken die het aantal "Hoofd" inhoudsgebied per pagina van 0 tot 4 weergeven. Bron: HTTP Archive (juli 2019). Nul: 73,97%; Een: 17,97%; Twee: 7,41%; Drie: 0,15%; 4: 0,06%.",
+  description="Verticaal staafdiagram met percentagegegevens, variërend van 0 tot 80 in stappen van 20, versus balken die het aantal `main` inhoudsgebied per pagina van 0 tot 4 weergeven. Bron: HTTP Archive (juli 2019). Nul: 73,97%; Een: 17,97%; Twee: 7,41%; Drie: 0,15%; 4: 0,06%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1420590464&format=interactive"
   )
 }}
