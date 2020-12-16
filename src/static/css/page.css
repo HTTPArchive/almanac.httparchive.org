@@ -22,6 +22,7 @@
   padding: 1rem;
   max-width: 100%;
   justify-content: center;
+  position: relative;
 }
 
 .table-wrap-container {
@@ -483,13 +484,28 @@ figcaption {
   text-align: center;
 }
 
+.figure-wrapper {
+  position: relative;
+  margin: 0 auto;
+}
+
 .figure-dropdown {
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 10px;
+  right: -5px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+}
+
+.media-figure-wrapper .figure-dropdown {
+  top: -5px;
+  top: -10px;
+}
+
+.content-figure-wrapper .figure-dropdown {
+  top: -10px;
+  right: -10px;
 }
 
 .figure-dropdown button {
@@ -565,6 +581,10 @@ td {
   padding: 0.625rem;
 }
 
+thead tr th:last-child {
+  padding: 0 40px;
+}
+
 th.numeric,
 td.numeric {
   text-align: right;
@@ -581,6 +601,7 @@ figure .big-number {
   color: #62718b;
   overflow-wrap: break-word;
   word-break: break-all;
+  padding: 20px;
 }
 
 figure .medium-number {
@@ -589,6 +610,7 @@ figure .medium-number {
   font: bold 3rem/1em Poppins, sans-serif;
   color: #62718b;
   overflow-wrap: break-word;
+  padding: 20px;
 }
 
 figure .really-big-number {
@@ -597,6 +619,7 @@ figure .really-big-number {
   font: bold 1.5rem/1em Poppins, sans-serif;
   color: #62718b;
   overflow-wrap: break-word;
+  padding: 20px;
 }
 
 figure .fig-mobile {
