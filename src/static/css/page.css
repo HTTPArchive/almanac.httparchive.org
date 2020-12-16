@@ -491,21 +491,15 @@ figcaption {
 
 .figure-dropdown {
   position: absolute;
-  top: 10px;
-  right: -5px;
+  top: -10px;
+  right: -50px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
-.media-figure-wrapper .figure-dropdown {
-  top: -5px;
-  top: -10px;
-}
-
-.content-figure-wrapper .figure-dropdown {
-  top: -10px;
-  right: -10px;
+.table-wrap .figure-dropdown {
+  top: 0;
 }
 
 .figure-dropdown button {
@@ -579,10 +573,6 @@ th,
 td {
   padding: 10px;
   padding: 0.625rem;
-}
-
-thead tr th:last-child {
-  padding: 0 40px;
 }
 
 th.numeric,

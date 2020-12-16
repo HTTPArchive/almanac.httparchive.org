@@ -809,7 +809,7 @@
   <iframe class="fig-mobile fig-desktop video-embed" src="{{ video }}" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen width="{{ video_width }}" height="{{ video_height }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description"></iframe>
   {%- endif %}
   {%- if image != "" %}
-  <div class="figure-wrapper media-figure-wrapper">
+  <div class="figure-wrapper">
     {% if video %}{% set anchor_class="video-fallback-image"%}{% endif %}
     <a href="{{ link }}"  class="{{ anchor_class }}">
       {%- if chart_url != "" %}
@@ -822,12 +822,12 @@
       <img src="{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description" width="{{ width }}" height="{{ height }}" loading="lazy" />
       {%- endif %}
     </a>
-    {{ figure_dropdown(metadata, id, sheets_gid, sql_file, image, ebook) }}}
+    {{ figure_dropdown(metadata, id, sheets_gid, sql_file, image, ebook) }}
   </div>
   <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="{{ anchor }}-description" data-show-text="{{ show_description(metadata,id) }}" data-hide-text="{{ hide_description(metadata,id) }}">{{ show_description(metadata,id) }}</button>
   <div id="{{ anchor }}-description" class="visually-hidden">{{ description|safe }}</div>
   {%- elif content != "" %}
-  <div class="figure-wrapper content-figure-wrapper">
+  <div class="figure-wrapper">
     <span class="{{ classes }}">{{ content|safe }}</span>
     {{ figure_dropdown(metadata, id, sheets_gid, sql_file, image, ebook) }}
   </div>
