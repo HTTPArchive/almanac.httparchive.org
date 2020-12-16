@@ -11,7 +11,7 @@ tkadlec_bio: Tim is a web performance consultant and trainer focused on building
 discuss: 2038
 results: https://docs.google.com/spreadsheets/d/1cgXJrFH02SHPKDGD0AelaXAdB3UI7PIb5dlS0dxVtfY/
 queries: 02_JavaScript
-featured_quote: JavaScript has come a long way from its humble origins as the last of the three web cornerstones—alongside CSS and HTML. Today, JavaScript has started to infiltrate a broad spectrum of the technical stack. JavaScript is no longer confined to the client-side—it's an increasingly popular choice for build tools and server-side scripting, and is creeping its way into the CDN layer as well thanks to edge computing solutions.
+featured_quote: JavaScript has come a long way from its humble origins as the last of the three web cornerstones—alongside CSS and HTML. Today, JavaScript has started to infiltrate a broad spectrum of the technical stack. It is no longer confined to the client-side and it's an increasingly popular choice for build tools and server-side scripting. JavaScript is also creeping its way into the CDN layer as well thanks to edge computing solutions.
 featured_stat_1: 1,897ms
 featured_stat_label_1: Median JS main thread time on mobile
 featured_stat_2: 37.22%
@@ -22,7 +22,7 @@ featured_stat_label_3: Percentage of scripts loaded asynchronously
 
 ## Introduction
 
-JavaScript has come a long way from its humble origins as the last of the three web cornerstones, alongside CSS and HTML. Today, JavaScript has started to infiltrate a broad spectrum of the technical stack. JavaScript is no longer confined to the client-side—it's an increasingly popular choice for build tools and server-side scripting, and is creeping its way into the CDN layer as well thanks to edge computing solutions.
+JavaScript has come a long way from its humble origins as the last of the three web cornerstones—alongside CSS and HTML. Today, JavaScript has started to infiltrate a broad spectrum of the technical stack. It is no longer confined to the client-side and it's an increasingly popular choice for build tools and server-side scripting. JavaScript is also creeping its way into the CDN layer as well thanks to edge computing solutions.
 
 Developers love us some JavaScript. According to the Markup chapter, the `script` element is the [6th most popular HTML element](./markup) in use (ahead of elements like `p` and `i`, among countless others). We spend around 14 times as many bytes on it as we do on HTML, the building block of the web, and 6 times as many bytes as CSS.
 
@@ -111,6 +111,13 @@ As raw numbers, those may or may not jump out at you depending on how much of a 
 
 That 153 KB equates to ~37% of the total script size that we send down to mobile devices. There's definitely some room for improvement here.
 
+### Module/NoModule
+One mechanism we have to potentially reduce the amount of code we send down is to take advantage of the [module/nomodule pattern](https://web.dev/serve-modern-code-to-modern-browsers/). With this pattern, we create two sets of bundles: one bundle intended for modern browsers and one intended for legacy browsers. The bundle intended for modern browsers gets a `type=mobdule` and the bundle intended for legacy browsers gets a `type=nomodule`.
+
+This approach lets us create smaller bundles with optimized modern syntax for the browsers that support it, while providing conditionally loaded polyfills and different syntax to the browsers that don't.
+
+Support for `module` and `nomodule` is broadening, but still relatively new. As a result, adoption is still a bit low. Only 3.6% of mobile pages use at least one script with `type=module` and only .7% of mobile pages use at least one script with `type=nomodule` to support legacy browsers.
+
 ### Request count
 
 Another way of looking at how much JavaScript we use is to explore how many JavaScript requests are made on each page. While reducing the number of requests was paramount to maintaining good performance with HTTP/1.1, with HTTP/2 the opposite is the case: breaking JavaScript down into [smaller, individual files](https://web.dev/granular-chunking-nextjs/) is [typically better for performance](../2019/http2#impact-of-http2).
@@ -188,12 +195,12 @@ The way we load JavaScript has a significant impact on the overall experience.
 
 By default, JavaScript is _parser-blocking_. In other words, when the browser discovers a `script` element, it must pause parsing of the HTML until the script has been downloaded, parsed, and executed. It's a significant bottleneck and a common contributor to pages that are slow to render.
 
-We can start to offset some of the cost of loading JavaScript by loading scripts either asynchronously, which only halts the HTML parser during the parse and execution phases and not during the download phase, or deferred, which doesn't halt the HTML parser at all. Both attributes are only available on external scripts—inline scripts cannot have them applied.
+We can start to offset some of the cost of loading JavaScript by loading scripts either asynchronously (with the `async` attribute), which only halts the HTML parser during the parse and execution phases and not during the download phase, or deferred (with the `defer` attribute), which doesn't halt the HTML parser at all. Both attributes are only available on external scripts—inline scripts cannot have them applied.
 
 On mobile, external scripts comprise 59.0% of all script elements found.
 
 <p class="note">
-  As an aside, when we talk about how much JavaScript is loaded on a page earlier, that total doesn't account for the size of these inline scripts—because they're part of the HTML document, they're counted against the markup size. This means we load even more script that the numbers show.
+  As an aside, when we talked about how much JavaScript is loaded on a page earlier, that total didn't account for the size of these inline scripts—because they're part of the HTML document, they're counted against the markup size. This means we load even more script that the numbers show.
 </p>
 
 {{ figure_markup(
@@ -370,8 +377,7 @@ When we look at the frameworks, we also don't see much of a dramatic change in t
 
 {# TODO(analysts): Compare same frameworks from last year's chapter to this year in bar chart? #}
 
-{# TODO(authors): Elaborate on what the detection issue was. #}
-It's worth noting that the detection issue that was noted last year still applies, and still impacts the results here. It's possible that there _has_ been a significant change in popularity for a few more of these tools, but we just don't see it with the way the data is currently collected.
+It's worth noting that the [detection issue that was noted last year still applies](https://github.com/AliasIO/wappalyzer/issues/2450), and still impacts the results here. It's possible that there _has_ been a significant change in popularity for a few more of these tools, but we just don't see it with the way the data is currently collected.
 
 ### What it all means
 
