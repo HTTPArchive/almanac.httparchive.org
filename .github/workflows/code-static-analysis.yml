@@ -29,7 +29,8 @@ jobs:
     # CodeQL runs on ubuntu-latest, windows-latest, and macos-latest
     runs-on: ubuntu-latest
     strategy:
-      matrix: ['javascript', 'python']
+      matrix:
+        language: ['javascript', 'python']
 
     steps:
       - name: Checkout repository
