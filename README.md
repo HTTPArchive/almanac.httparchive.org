@@ -33,7 +33,7 @@ See [our contributing guide](CONTRIBUTING.md). To run the Web Almanac locally pl
 - September 2020: Analyzing data
 - October 2020: Writing, editing, and translating content
 - December 2020: Publishing the 2020 edition
-- December 2020 onwards: Translating the Web Almanac to as many languages as possible
+- December 2020 onwards: [Translating the Web Almanac to as many languages as possible](https://github.com/HTTPArchive/almanac.httparchive.org/issues/923).
 
 ## Where to find us
 
