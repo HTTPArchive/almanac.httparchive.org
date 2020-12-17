@@ -1309,6 +1309,15 @@
       "avatar_url": "https://avatars1.githubusercontent.com/u/17976139?v=4&s=460",
       "github": "Zuckjet",
       "twitter": "Zuckjet"
+    },
+    "cybai": {
+      "name": "cybai",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6782666?s=460",
+      "github": "CYBAI",
+      "twitter": "_cybai"
     }
   }
 }
