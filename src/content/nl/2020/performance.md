@@ -172,7 +172,7 @@ Er is een redelijk gelijkmatige verdeling van CLS-scores over de meeste verbindi
 
 Het is een uitdaging om definitieve conclusies te trekken over 4G, maar we kunnen speculeren dat misschien 4G + -verbindingen worden gebruikt als een methode voor internettoegang op desktopapparaten. Als die aanname klopte, zouden weblettertypen en afbeeldingen zwaar in de cache kunnen worden opgeslagen, wat een positief effect heeft op CLS-metingen.
 
-## Core Web Vitals: First Input Delay
+## <span lang="en">Core Web Vitals: First Input Delay</span> {core-web-vitals-first-input-delay}
 
 First Input Delay (FID) meet de tijd tussen de eerste gebruikersinteractie en wanneer de browser in staat is om op die interactie te reageren. FID is een goede indicator van hoe interactief uw websites zijn.
 
