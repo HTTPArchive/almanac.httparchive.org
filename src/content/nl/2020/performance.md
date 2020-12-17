@@ -120,7 +120,7 @@ Er is een duidelijke correlatie tussen netwerksnelheid en betere LCP-prestaties,
 
 ## <span lang="en">Core Web Vitals: Cumulative Layout Shift</span> {core-web-vitals-cumulative-layout-shift}
 
-Cumulative Layout Shift (CLS) kwantificeert hoeveel elementen in de viewport tijdens het paginabezoek bewegen. Het helpt bij het vaststellen van de mate waarin onverwachte bewegingen plaatsvinden op uw websites om de gebruikerservaring te beoordelen, in plaats van te proberen een specifiek deel van de interactie te meten met behulp van een eenheid zoals seconden of milliseconden.
+<span lang="en">Cumulative Layout Shift</span> (CLS) kwantificeert hoeveel elementen in de viewport tijdens het paginabezoek bewegen. Het helpt bij het vaststellen van de mate waarin onverwachte bewegingen plaatsvinden op uw websites om de gebruikerservaring te beoordelen, in plaats van te proberen een specifiek deel van de interactie te meten met behulp van een eenheid zoals seconden of milliseconden.
 
 Op die manier is CLS een ander, nieuw type van een Gebruikerervaring-holistische metriek in vergelijking met andere die in dit hoofdstuk worden genoemd.
 
