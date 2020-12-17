@@ -310,7 +310,7 @@ Als we naar de "offline" statistieken kijken, kunnen we afleiden dat een aanzien
 
 ## Time to First Byte
 
-Time to First Byte (TTFB) is de tijd die nodig is vanaf het initiële HTML-verzoek totdat de eerste byte terugkomt in de browser. Problemen met het snel verwerken van verzoeken kunnen snel overlopen in andere prestatiestatistieken, omdat ze niet alleen verven maar ook het ophalen van bronnen vertragen.
+<span lang="en">Time to First Byte</span> (TTFB) is de tijd die nodig is vanaf het initiële HTML-verzoek totdat de eerste byte terugkomt in de browser. Problemen met het snel verwerken van verzoeken kunnen snel overlopen in andere prestatiestatistieken, omdat ze niet alleen verven maar ook het ophalen van bronnen vertragen.
 
 ### TTFB per apparaat
 
