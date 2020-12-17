@@ -2,7 +2,7 @@
 part_number: II
 chapter_number: 9
 title: Prestatie
-description: Prestatiehoofdstuk van de Web Almanac 2020 met betrekking tot <i lang="en">Core Web Vitals, Lighthouse Performance Score, First Contentful Paint (FCP)</i> en <i lang="en">Time to First Byte</i> (TTFB).
+description: Prestatiehoofdstuk van de Web Almanac 2020 met betrekking tot <i lang="en">Core Web Vitals, Lighthouse Performance Score, First Contentful Paint</i> (FCP) en <i lang="en">Time to First Byte</i> (TTFB).
 authors: [thefoxis]
 reviewers: [borisschapira, rviscomi, obto, noamr, Zizzamia, exterkamp]
 analysts: [max-ostapenko, dooman87]
@@ -280,7 +280,7 @@ Talrijke factoren kunnen verven vertragen, zoals serverlatentie (gemeten aan de 
   )
 }}
 
-Voordat we ingaan op de analyse, is het opmerkelijk om te vermelden dat in het hoofdstuk Prestaties 2019 de drempels voor de classificatie 'goed' en 'slecht' verschilden van 2020. In 2019 werden sites met een FCP onder 1s als goed beschouwd, terwijl die met FCP boven 3s als slecht werden gecategoriseerd. In 2020 zijn die bereiken verschoven naar 1,5s voor goed en 2,5s voor slecht.
+Voordat we ingaan op de analyse, is het opmerkelijk om te vermelden dat in het hoofdstuk Prestaties 2019 de drempels voor de classificatie 'goed' en 'slecht' verschilden van 2020. In 2019 werden sites met een FCP onder 1 s als goed beschouwd, terwijl die met FCP boven 3 s als slecht werden gecategoriseerd. In 2020 zijn die bereiken verschoven naar 1,5 s voor goed en 2,5 s voor slecht.
 
 Deze wijziging betekent dat de distributie zou verschuiven naar meer ‘goed’ en ‘slecht’ beoordeelde websites. We kunnen die trend waarnemen in vergelijking met [resultaten van vorig jaar](../2019/performance#fcp-by-geography), aangezien het percentage goede en slechte websites stijgt. De top tien van regio's met het hoogste percentage snelle websites blijven relatief ongewijzigd ten opzichte van 2019, met de toevoeging van Tsjechië en België en de val van de Verenigde Staten en het Verenigd Koninkrijk. De Republiek Korea leidt met 62% van de websites die een snelle FCP rapporteren, bijna een verdubbeling sinds vorig jaar (wat waarschijnlijk opnieuw te wijten is aan hercategorisering van de resultaten). Andere landen die bovenaan de ranglijst staan, verdubbelen ook het aantal goede ervaringen.
 
@@ -300,38 +300,38 @@ Nogmaals, er zijn verschillende redenen die FCP negatief beïnvloeden, zoals sle
   )
 }}
 
-Similarly to other metrics, FCP is affected by connection speeds. On 3G, only 2% of experiences rate good, while on 4G, 31%. It is not an ideal state of FCP performance, but it [has improved since 2019](../2019/performance#fcp-by-effective-connection-type) in some areas, which again might be driven by the change in categorization of good and poor categorization. We see the same rise in the percentage of good websites and poor websites, narrowing the number of moderate ("needs improvement") site experiences.
+Net als bij andere statistieken wordt FCP beïnvloed door verbindingssnelheden. Op 3G scoort slechts 2% van de ervaringen goed, terwijl op 4G 31%. Het is geen ideale staat van FCP-prestaties, maar het [is verbeterd sinds 2019](../2019/performance#fcp-by-effectieve-verbindingstype) op sommige gebieden, wat opnieuw kan worden veroorzaakt door de verandering in categorisering van goede en slechte categorisering. We zien dezelfde stijging in het percentage goede websites en slechte websites, waardoor het aantal matige ("moet worden verbeterd") site-ervaringen worden verkleind.
 
-This trend illustrates the furthering digital divide, where experiences on slower networks and potentially less capable devices are consistently worse. Improving FCP on slow connections directly correlates to enhancing TTFB, which we observe in [Aggregate TTFB performance by connection type chart](#ttfb-by-connection-type)—poor TTFB = poor FCP.
+Deze trend illustreert de groeiende digitale kloof, waarbij ervaringen op langzamere netwerken en mogelijk minder capabele apparaten consequent slechter zijn. Het verbeteren van FCP op langzame verbindingen hangt direct samen met het verbeteren van TTFB, wat we zien in [Geaggregeerde TTFB-prestaties per diagram met verbindingstypes](#ttfb-by-connection-type) - slecht TTFB = slecht FCP.
 
-The choice of [hosting provider](https://ismyhostfastyet.com/) or [CDN](https://www.cdnperf.com/) will have a cascading effect on speed. Making these decisions based on the fastest possible delivery will help in improving FCP and TTFB, especially on slower networks. FCP is also significantly affected by font load time, so [ensuring text is visible while web fonts are downloaded](https://web.dev/font-display/) is also a worthwhile strategy (especially where on slower connections these resources will be costly to fetch).
+De keuze van [hostingprovider](https://ismyhostfastyet.com/) of [CDN](https://www.cdnperf.com/) zal een trapsgewijs effect hebben op de snelheid. Het nemen van deze beslissingen op basis van de snelst mogelijke levering zal helpen bij het verbeteren van FCP en TTFB, vooral op langzamere netwerken. FCP wordt ook aanzienlijk beïnvloed door de laadtijd van lettertypen, dus [ervoor zorgen dat tekst zichtbaar is terwijl weblettertypen worden gedownload](https://web.dev/font-display/) is ook een waardevolle strategie (vooral waar bij langzamere verbindingen deze bronnen kostbaar zijn om te halen).
 
-Looking at the "offline" statistics, we can deduce that a substantial number of FCP issues are also _not_ correlated to the network type. We don't observe significant gains in this category, which we would if that statement was true. It appears would seem rendering is not so much delayed by fetching JavaScript, but it is affected by parsing and execution.
+Als we naar de "offline" statistieken kijken, kunnen we afleiden dat een aanzienlijk aantal FCP-problemen ook _niet_ gecorreleerd zijn met het netwerktype. We zien geen significante winsten in deze categorie, wat we wel zouden als die bewering waar was. Het lijkt erop dat de weergave niet zozeer wordt vertraagd door het ophalen van JavaScript, maar wordt beïnvloed door het parseren en uitvoeren.
 
 ## Time to First Byte
 
-Time to First Byte (TTFB) is the time taken from the initial HTML request being made until the first byte arrives back to the browser. Issues with swiftly processing requests can quickly cascade into affecting other performance metrics as they will delay not only paints but also any resource fetching.
+Time to First Byte (TTFB) is de tijd die nodig is vanaf het initiële HTML-verzoek totdat de eerste byte terugkomt in de browser. Problemen met het snel verwerken van verzoeken kunnen snel overlopen in andere prestatiestatistieken, omdat ze niet alleen verven maar ook het ophalen van bronnen vertragen.
 
-### TTFB by device
+### TTFB per apparaat
 
 {{ figure_markup(
   image="performance-ttfb-by-device.png",
-  caption="Aggregate TTFB performance split by device type.",
-  description="Bar chart showcasing that 76% websites have poor TTFB on desktop and 83% on mobile. The number of websites with good TTFB doesn't exceed 24%.",
+  caption="Geaggregeerde TTFB-prestaties opgesplitst per apparaattype.",
+  description="Staafdiagram waaruit blijkt dat 76% van de websites een slechte TTFB heeft op desktop en 83% op mobiel. Het aantal websites met een goede TTFB is niet hoger dan 24%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1981576071&format=interactive",
   sheets_gid="1270303192",
   sql_file="web_vitals_by_device.sql"
   )
 }}
 
-On desktop, 76% of websites have a "not good" TTFB, while on mobile, that percentage rises to 83%. We might assume that the data portrays how TTFB is often an overlooked metric when it is assumed that most performance measurements and work is concentrated within front-end and visual rendering, not asset delivery and server-side work. High TTFB will have a direct, negative impact on a plethora of other performance signals, which is an area that still needs addressing.
+Op desktop heeft 76% van de websites een "niet goede" TTFB, terwijl dat percentage op mobiel stijgt tot 83%. We zouden kunnen aannemen dat de gegevens laten zien hoe TTFB vaak een over het hoofd gezien gegeven statistiek is wanneer wordt aangenomen dat de meeste prestatiemetingen en werk geconcentreerd zijn in front-end en visuele weergave, niet in levering van activa en server-side werk. Een hoge TTFB zal een directe, negatieve impact hebben op een overvloed aan andere prestatiesignalen, een gebied dat nog moet worden aangepakt.
 
-### TTFB by geographic location
+### TTFB op geografische locatie
 
 {{ figure_markup(
   image="performance-ttfb-by-geo.png",
-  caption="Aggregate TTFB performance split by country.",
-  description="Bar chart showcasing that TTFB performance is consistently sub-par, with only 4 out of 28 countries having more than 30% websites with good TTFB. There is a significant number of websites categorized as needs improvement (always above 40%) with the fraction of poor experiences rising as the ranking position is lower.",
+  caption="Geaggregeerde TTFB-prestaties uitgesplitst per land.",
+  description="Staafdiagram dat aantoont dat de TTFB-prestaties consistent ondermaats zijn, met slechts 4 van de 28 landen met meer dan 30% websites met goede TTFB. Er is een aanzienlijk aantal websites dat gecategoriseerd moet worden als verbetering behoeft (altijd meer dan 40%), waarbij het aantal slechte ervaringen stijgt naarmate de ranking lager is.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1135415956&format=interactive",
   width="645",
   height="792",
@@ -340,48 +340,48 @@ On desktop, 76% of websites have a "not good" TTFB, while on mobile, that percen
   )
 }}
 
-Likening this years' TTFB geo readings to [2019 results](../2019/performance#ttfb-by-geo) again points to more fast websites, but similarly to FCP, the thresholds have changed. Previously, we considered TTFB below 200ms fast, and above 1000ms slow. In 2020, TTFB below 500ms is good and above 1500ms poor. Such generous changes in categorization can explain that we observe significant changes, such as a 36% rise in good website experiences in The Republic of Korea or 22% rise in Taiwan. Overall, we still observe similar regions, such as Asia-Pacific and selected European locales leading.
+De TTFB-geo-uitlezingen van dit jaar vergelijken met [resultaten 2019] (../2019/performance#ttfb-by-geo) wijst opnieuw op snellere websites, maar net als bij FCP zijn de drempels veranderd.Eerder beschouwden we TTFB onder 200 ms snel en boven 1000 ms langzaam. In 2020 is TTFB onder 500 ms goed en boven 1500 ms slecht. Dergelijke genereuze veranderingen in categorisering kunnen verklaren dat we significante veranderingen waarnemen, zoals een stijging van 36% in goede website-ervaringen in de Republiek Korea of 22% stijging in Taiwan. Over het algemeen zien we nog steeds vergelijkbare regio's, zoals Azië-Pacific en geselecteerde Europese landen die toonaangevend zijn.
 
-### TTFB by connection type
+### TTFB per verbindingstype
 
 {{ figure_markup(
   image="performance-ttfb-by-connection-type.png",
-  caption="Aggregate TTFB performance split by connection type.",
-  description="Bar chart showing that TTFB is heavily affected by connection type with only 21% and 22% of good experiences on 4G and offline, respectively. Other connection types provide nearly none (with the exception of 1% on 3G) good TTFB readings.",
+  caption="Geaggregeerde TTFB-prestaties opgesplitst per verbindingstype.",
+  description="Staafdiagram dat laat zien dat TTFB sterk wordt beïnvloed door het verbindingstype met respectievelijk slechts 21% en 22% goede ervaringen op 4G en offline. Andere verbindingstypen bieden bijna geen (met uitzondering van 1% op 3G) goede TTFB-waarden.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=810992122&format=interactive",
   sheets_gid="306222260",
   sql_file="web_vitals_by_ect.sql"
   )
 }}
 
-TTFB is affected by network latency and connection type. The higher the latency and the slower the connection, the worse TTFB measurements, as we can observe above. Even on mobile connections considered as fast (4G), only 21% of websites have a fast TTFB. There are nearly no sites categorized as quick below 4G speeds.
+TTFB wordt beïnvloed door netwerklatentie en verbindingstype. Hoe hoger de latentie en hoe langzamer de verbinding, hoe slechter de TTFB-metingen, zoals we hierboven kunnen zien. Zelfs op mobiele verbindingen die als snel worden beschouwd (4G), heeft slechts 21% van de websites een snelle TTFB. Er zijn bijna geen sites die zijn gecategoriseerd als snel onder de 4G-snelheden.
 
-Looking at the [mobile speeds worldwide for December 2018-November 2019](https://www.speedtest.net/insights/blog/content/images/2020/02/Ookla_Mobile-Speeds-Poster_2020.png), we can see that globally, mobile connections aren't high-speed. Those network speeds and technology standards for cellular networks (such as 5G) are not evenly distributed and affect TTFB. As an example, [see this map of networks in Nigeria](https://www.mobilecoveragemaps.com/map_ng#7/8.744/7.670)—most of the country area has 2G and 3G coverage, with little 4G range.
+Kijkend naar de [mobiele snelheden wereldwijd voor december 2018-november 2019](https://www.speedtest.net/insights/blog/content/images/2020/02/Ookla_Mobile-Speeds-Poster_2020.png), kunnen we zien dat wereldwijd mobiele verbindingen niet supersnel zijn. Die netwerksnelheden en technologiestandaarden voor mobiele netwerken (zoals 5G) zijn niet gelijkmatig verdeeld en beïnvloeden TTFB. Zie als voorbeeld [deze kaart met netwerken in Nigeria](https://www.mobilecoveragemaps.com/map_ng#7/8.744/7.670) - het grootste deel van het land heeft 2G- en 3G-dekking, met weinig 4G-bereik.
 
-What's surprising is the relatively the same number of good TTFB results between offline and 4G origins. With service workers, we could expect some of the TTFB issues to be mitigated, but that trend is not reflected in the chart above.
+Wat verrassend is, is het relatief evenveel goede TTFB-resultaat tussen offline en 4G-bronnen. Met Service Workers konden we verwachten dat sommige van de TTFB-problemen zouden worden beperkt, maar die trend wordt niet weerspiegeld in de bovenstaande grafiek.
 
-## Performance Observer usage
+## Performance Observer gebruik
 
-There are dozens of different user-centric metrics that can be used to assess websites and applications. However, sometimes the predefined metrics don't quite fit our specific scenarios and needs. The [PerformanceObserver API](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver) allows us to obtain custom metric data obtained with [User Timing API](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API), [Long Task API](https://developer.mozilla.org/en-US/docs/Web/API/Long_Tasks_API), [Event Timing API](https://web.dev/custom-metrics/#event-timing-api) and [a handful of other low-level APIs](https://web.dev/custom-metrics/). For example, with their help, we could record the timing transitions between pages or quantify server-side-rendered (SSR) application hydration.
+Er zijn tientallen verschillende gebruikersgerichte statistieken die kunnen worden gebruikt om websites en applicaties te beoordelen. Soms passen de vooraf gedefinieerde statistieken echter niet helemaal bij onze specifieke scenario's en behoeften. Met de [PerformanceObserver API](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver) kunnen we aangepaste metrische gegevens verkrijgen die zijn verkregen met [User Timing API](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API), [Long Task API](https://developer.mozilla.org/en-US/docs/Web/API/Long_Tasks_API), [Event Timing API](https://web.dev/custom-metrics/#event-timing-api) en [een handvol andere low-level API's](https://web.dev/custom-metrics/). Met hun hulp kunnen we bijvoorbeeld de timingovergangen tussen pagina's vastleggen of de hydratatie van de server-side-rendered (SSR) -toepassing kwantificeren.
 
 {{ figure_markup(
   image="performance-performance-observer-usage.png",
-  caption="Performance Observer usage by device type.",
-  description="Bar chart showing that the adoption of Performance Observer API is low, at 6.6% on desktop and 7% on mobile.",
+  caption="Performance Observer-gebruik per apparaattype.",
+  description="Staafdiagram dat laat zien dat de acceptatie van Performance Observer API laag is, met 6,6% op desktop en 7% op mobiel.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=632678090&format=interactive",
   sheets_gid="934401790",
   sql_file="performance_observer.sql"
   )
 }}
 
-The chart above showcases that Performance Observer is used by 6-7% of tracked sites, depending on device type. Those websites will be leveraging the low-level APIs to create custom metrics, and the PerformanceObserver API to collate them, and then potentially use it with other performance reporting tooling. Such adoption rates might indicate the tendency to lean on predefined metrics (for example, coming from Lighthouse), but also are impressive for a relatively niche API.
+De bovenstaande grafiek laat zien dat Performance Observer wordt gebruikt door 6-7% van de gevolgde sites, afhankelijk van het apparaattype. Die websites zullen de low-level API's gebruiken om aangepaste metrische gegevens te maken, en de Performance Observer API om ze te verzamelen, en deze vervolgens mogelijk gebruiken met andere prestatierapportagetools. Dergelijke acceptatiegraden kunnen wijzen op de neiging om te leunen op vooraf gedefinieerde statistieken (bijvoorbeeld afkomstig van Lighthouse), maar zijn ook indrukwekkend voor een relatief niche-API.
 
-## Conclusion
+## Conclusie
 
-User experience is not only a spectrum but also depends on a wide variety of factors. To attempt understanding the state of performance without excluding the sub-par, underprivileged experiences, we must approach it intersectionally. Each website visit tells a story. Our personal and country-level socioeconomic status dictates the type of device and internet provider we can afford. The geopositioning of where we live affects latency (we Australians feel this pain regularly), and the economy dictates available cellular network coverage. What websites do we visit? What do we visit them for? Context is critical to not only analyzing data but also developing necessary empathy and care in building accessible, fast experiences for all.
+Gebruikerservaring is niet alleen een spectrum, maar hangt ook af van een groot aantal factoren. Om te proberen de staat van prestaties te begrijpen zonder de ondermaatse, kansarme ervaringen uit te sluiten, moeten we deze intersectie benaderen. Elk websitebezoek vertelt een verhaal. Onze sociaaleconomische status op persoonlijk en landelijk niveau bepaalt het type apparaat en internetprovider dat we ons kunnen veroorloven. De plaats van waar we wonen beïnvloedt de latentie (wij Australiërs voelen deze pijn regelmatig), en de economie dicteert de beschikbare dekking van het mobiele netwerk. Welke websites bezoeken we? Waar bezoeken we ze voor? Context is van cruciaal belang om niet alleen gegevens te analyseren, maar ook om de nodige empathie en zorg te ontwikkelen bij het bouwen van toegankelijke, snelle ervaringen voor iedereen.
 
-On the surface, we have seen optimistic signals about the new Core Web Vitals performance metrics. At least half of the experiences are good across both desktop and mobile devices, _if_ we don't narrow down to consistently poor experiences on slower networks for Largest Contentful Paint. While the newer metrics might suggest that there's an ongoing uptake in addressing performance issues, the lack of significant improvements in First Contentful Paint and Time to First Byte is sobering. Here the same network types are most disadvantaged as with Largest Contentful Paint, as well as fast connections and desktop devices. The Performance Score also portrays a decline in speed (or perhaps, a more accurate portrayal than what we measured in the past).
+Oppervlakkig gezien hebben we optimistische signalen gezien over de nieuwe prestatiestatistieken van Core Web Vitals. Minstens de helft van de ervaringen is goed voor zowel desktop- als mobiele apparaten, _als_ we niet beperken tot consistent slechte ervaringen op langzamere netwerken voor Largest Contentful Paint. Hoewel de nieuwere statistieken kunnen suggereren dat er een voortdurende toename is van het aanpakken van prestatieproblemen, is het gebrek aan significante verbeteringen in First Contentful Paint en Time to First Byte ontnuchterend. Hier zijn dezelfde netwerktypen het meest benadeeld als bij Largest Contentful Paint, evenals snelle verbindingen en desktopapparaten. De prestatiescore geeft ook een afname in snelheid weer (of misschien een nauwkeuriger weergave dan wat we in het verleden hebben gemeten).
 
-What the data shows us, is that we must keep investing in improving performance for scenarios (such as slower connectivity) that we often don't experience due to multiple aspects of our privilege (middle to high-income countries, high pay and new, capable devices). It also highlights that there's still plenty of work to be done in the areas of speeding up initial paints (LCP and FCP) and asset delivery (TTFB). Often, performance feels like an inherently front-end issue, while numerous significant improvements can be achieved on the back-end and through appropriate infrastructure choices. Again, user experience is a spectrum that depends on a variety of factors, and we need to treat it holistically.
+Wat de gegevens ons laten zien, is dat we moeten blijven investeren in het verbeteren van de prestaties voor scenario's (zoals langzamere connectiviteit) die we vaak niet ervaren vanwege meerdere aspecten van ons voorrecht (landen met middelhoge tot hoge inkomens, hoge lonen en nieuwe, geschikte apparaten). Het benadrukt ook dat er nog veel werk aan de winkel is op het gebied van het versnellen van de eerste verf (LCP en FCP) en levering van activa (TTFB). Prestaties voelen vaak aan als een inherent front-end-probleem, terwijl tal van significante verbeteringen kunnen worden bereikt aan de achterkant en door de juiste infrastructuurkeuzes. Nogmaals, gebruikerservaring is een spectrum dat afhangt van een verscheidenheid aan factoren, en we moeten het holistisch behandelen.
 
-New metrics bring new lenses to analyze user experience through, but we must not forget existing signals. Let's focus on moving the needle in the areas that need the most improvement and will result in positive shifts in experience for most underserved. Fast and accessible internet is a human right.
+Nieuwe statistieken brengen nieuwe lenzen om de gebruikerservaring te analyseren, maar we mogen bestaande signalen niet vergeten. Laten we ons concentreren op het verplaatsen van de naald in de gebieden die de meeste verbetering behoeven, wat zal resulteren in positieve verschuivingen in ervaring voor de meest onderbedienden. Snel en toegankelijk internet is een mensenrecht.
