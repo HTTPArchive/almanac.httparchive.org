@@ -226,7 +226,7 @@ We kunnen een directe correlatie waarnemen tussen netwerksnelheid en snelle FID,
 
 ## First Contentful Paint
 
-First Contentful Paint (FCP) meet de eerste keer dat de browser tekst, afbeeldingen, niet-wit canvas of SVG-inhoud weergeeft. FCP is een goede indicator van de waargenomen snelheid omdat het laat zien hoe lang mensen wachten om de eerste tekenen van het laden van een site te zien.
+<span lang="en">First Contentful Paint</span> (FCP) meet de eerste keer dat de browser tekst, afbeeldingen, niet-wit canvas of SVG-inhoud weergeeft. FCP is een goede indicator van de waargenomen snelheid omdat het laat zien hoe lang mensen wachten om de eerste tekenen van het laden van een site te zien.
 
 ### FCP per apparaat
 
