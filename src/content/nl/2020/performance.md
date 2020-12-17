@@ -118,7 +118,7 @@ Aangezien LCP een timing is die laat zien wanneer het grootste boven-de-vouw-ele
 
 Er is een duidelijke correlatie tussen netwerksnelheid en betere LCP-prestaties, maar zelfs op 4G wordt slechts 48% van de resultaten als goed gecategoriseerd, waardoor de helft van de metingen moet worden verbeterd. Het automatiseren van media-optimalisatie, het bedienen van de juiste afmetingen en formaten, en het optimaliseren voor Low Data Mode, zou kunnen helpen om de naald te verplaatsen. Lees meer over [LCP optimaliseren in deze gids](https://web.dev/optimize-lcp/).
 
-## Core Web Vitals: Cumulative Layout Shift
+## <span lang="en">Core Web Vitals: Cumulative Layout Shift</span> {core-web-vitals-cumulative-layout-shift}
 
 Cumulative Layout Shift (CLS) kwantificeert hoeveel elementen in de viewport tijdens het paginabezoek bewegen. Het helpt bij het vaststellen van de mate waarin onverwachte bewegingen plaatsvinden op uw websites om de gebruikerservaring te beoordelen, in plaats van te proberen een specifiek deel van de interactie te meten met behulp van een eenheid zoals seconden of milliseconden.
 
