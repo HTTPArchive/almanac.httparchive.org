@@ -360,7 +360,7 @@ Kijkend naar de [mobiele snelheden wereldwijd voor december 2018-november 2019](
 
 Wat verrassend is, is het relatief evenveel goede TTFB-resultaat tussen offline en 4G-bronnen. Met Service Workers konden we verwachten dat sommige van de TTFB-problemen zouden worden beperkt, maar die trend wordt niet weerspiegeld in de bovenstaande grafiek.
 
-## Performance Observer gebruik
+## <span lang="en">Performance Observer</span> gebruik {performance-observer-gebruik}
 
 Er zijn tientallen verschillende gebruikersgerichte statistieken die kunnen worden gebruikt om websites en applicaties te beoordelen. Soms passen de vooraf gedefinieerde statistieken echter niet helemaal bij onze specifieke scenario's en behoeften. Met de [PerformanceObserver API](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver) kunnen we aangepaste metrische gegevens verkrijgen die zijn verkregen met [User Timing API](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API), [Long Task API](https://developer.mozilla.org/en-US/docs/Web/API/Long_Tasks_API), [Event Timing API](https://web.dev/custom-metrics/#event-timing-api) en [een handvol andere low-level API's](https://web.dev/custom-metrics/). Met hun hulp kunnen we bijvoorbeeld de timingovergangen tussen pagina's vastleggen of de hydratatie van de server-side-rendered (SSR) -toepassing kwantificeren.
 
