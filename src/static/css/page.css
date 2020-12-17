@@ -780,3 +780,12 @@ pre {
 .code-block code {
   width: 100%;
 }
+
+/*
+ * Automaticaly adds language after an anchor, depending on its URL
+ * or the content of its `hreflang` attribute (should only be used when different lang) */
+[hreflang]::after {
+  content: '(' attr(hreflang) ')';
+  vertical-align: super;
+  font-size: 0.6em;
+}
