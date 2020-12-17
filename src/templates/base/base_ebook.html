@@ -2,9 +2,10 @@
 
 {% set metadata = {"authors":["rviscomi"]} %}
 
-{% block image_url %}https://almanac.httparchive.org/static/images/home-hero-bg.png{% endblock %}
-{% block image_height %}562{% endblock %}
-{% block image_width %}715{% endblock %}
+{% block page_url %}https://almanac.httparchive.org{{ url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}{% endblock %}
+{% block image_url %}https://almanac.httparchive.org/static/images/methodology-banner.png{% endblock %}
+{% block image_height %}984{% endblock %}
+{% block image_width %}1200{% endblock %}
 
 {% block head %}
 {{ super() }}
