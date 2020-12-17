@@ -1,95 +1,95 @@
 ---
 part_number: II
 chapter_number: 9
-title: Performance
-description: Performance chapter of the 2020 Web Almanac covering Core Web Vitals, Lighthouse Performance Score, First Contentful Paint (FCP) and Time to First Byte (TTFB).
+title: 效能
+description: 2020 Web Almanac 的效能章節涵蓋了 Core WebVitals、Lighthouse Performance Score、First Contentful Paint (FCP) 以及 Time to First Byte (TTFB)。
 authors: [thefoxis]
 reviewers: [borisschapira, rviscomi, obto, noamr, Zizzamia, exterkamp]
 analysts: [max-ostapenko, dooman87]
-translators: []
-thefoxis_bio: Karolina is a Product Design Lead at <a href="https://calibreapp.com/">Calibre</a>, working on creating the most comprehensive speed monitoring platform. She curates <a href="https://perf.email/">Performance Newsletter</a>, your source of performance news and resources. Karolina also <a href="https://calibreapp.com/blog/category/web-platform">frequently writes</a> about how performance affects user experience.
+translators: [cybai]
+thefoxis_bio: Karolina 是 <a href="https://calibreapp.com/">Calibre</a> 的產品設計主管。她主要負責打造最全面的速度監測平台。她同時也是為您蒐集效能相關訊息與資訊的 <a lang="en" href="https://perf.email/">Performance Newsletter</a> 發起人之一。Karolina 也<a href="https://calibreapp.com/blog/category/web-platform">時常寫有關於效能如何影響使用者體驗的文章</a>。
 discuss: 2045
 results: https://docs.google.com/spreadsheets/d/164FVuCQ7gPhTWUXJl1av5_hBxjncNi0TK8RnNseNPJQ/
 queries: 09_Performance
-featured_quote: Poor performance doesn't only cause frustration or negatively affects conversion—it creates real-life barriers to entry. This year's global pandemic made those existing barriers even more apparent.
+featured_quote: 糟糕的效能並不只是讓使用者挫折或是對業務目標造成負面影響，他還築起了現實生活中人們與網路世界的屏障；今年的全球性疫情更凸顯了那些已經存在的屏障。
 featured_stat_1: 25%
-featured_stat_label_1: Sites with good FCP on mobile
+featured_stat_label_1: 擁有 Good 的 FCP 的手機版網頁
 featured_stat_2: 18%
-featured_stat_label_2: Sites with good TTFB on mobile
+featured_stat_label_2: 擁有 Good 的 TTFB 的手機版網頁
 featured_stat_3: 4%
-featured_stat_label_3: Sites with unchanged Performance Score in LH6
+featured_stat_label_3: 在 Lighthouse 6 時效能分數（Performance Score）未改變的網站
 ---
 
-## Introduction
+## 簡介
 
-There is an unquestionable, detrimental effect that slow speed has on overall user experience, and consequently, conversions. But poor performance doesn't just cause frustration or negatively affects business goals—it creates real-life barriers to entry. This year's global pandemic [made those existing barriers even more apparent](https://www.weforum.org/agenda/2020/04/coronavirus-covid-19-pandemic-digital-divide-internet-data-broadband-mobbile/). With the shift to remote learning, work and socializing, suddenly our entire lives were moved online. Poor connectivity and lack of access to capable devices made this change painful at best, if not impossible, to many. It has been a real test, highlighting connectivity, device and speed inequalities worldwide.
+緩慢的速度無庸置疑地對使用者體驗造成了負面的影響，因此對於轉換率也是。但糟糕的效能並不只是讓使用者挫折或是對業務目標造成負面影響，他還築起了現實生活中人們與網路世界的屏障。今年的全球性疫情[更凸顯了那些已經存在的屏障](https://www.weforum.org/agenda/2020/04/coronavirus-covid-19-pandemic-digital-divide-internet-data-broadband-mobbile/)。隨著遠端學習、遠端工作還有遠端社交興起，人們的生活重心突然就被移到網路世界。微弱的訊號以及缺乏資源取得可用設備將這個轉變顯得更痛苦，即使不是非常嚴重，也已經對很多人造成影響。針對訊號強度、設備以及網路速度的不平等性儼然成為全球性現實生活的測試。
 
-Performance tooling continues to evolve to portray those diverse aspects of user experience and make it easier to find underlying issues. Since [last year's Performance chapter](../2019/performance), there have been numerous significant developments in the space that have already transformed how we approach speed monitoring.
+效能調校工具在近幾年持續成長來描繪出各式各樣的使用者體驗，並使工程師更容易找到問題的根本原因。從[去年的效能章節](../2019/performance)開始，在這個領域中，已經有許多重要的開發貢獻改變了我們如何監控速度的方式。
 
-With a significant release of the popular quality auditing tool, Lighthouse 6, [the algorithm behind the famous Performance Score has changed significantly](https://calibreapp.com/blog/how-performance-score-works), and so did the scores. [Core Web Vitals](https://calibreapp.com/blog/core-web-vitals), a set of new metrics portraying different aspects of user experience, has been released. It will be one of the factors for search ranking in the future, shifting the eyes of the development community onto the new speed signals.
+隨著很受歡迎的品質檢測工具 <span lang="en">Lighthouse</span> 釋出 <span lang="en">Lighthouse</span> 6 後，[眾所皆知的效能分數（<span lang="en">Performance Score</span>）背後的演算法已經有了重大的改動](https://calibreapp.com/blog/how-performance-score-works)，因此分數也隨之變動。新釋出的[<span lang="en">Core WebVitals</span>](https://calibreapp.com/blog/core-web-vitals)提供一套新的衡量標準來描述不同面向的使用者體驗。未來他將成為搜尋排行的要素之一，也將促使開發社群聚焦於新的速度準則。
 
-In this chapter, we will be looking at real-world performance data provided by the [Chrome User Experience Report (CrUX)](https://developers.google.com/web/tools/chrome-user-experience-report) through the lens of those new developments as well as analyzing a handful of other relevant metrics. It is important to note that due to the limitations of iOS, CrUX mobile results don't include devices running Apple's mobile operating system. This fact will undeniably affect our analysis, especially when examining metric performance on a per-country basis.
+在此章節，我們將透過這些新工具來透視[<span lang="en">Chrome User Experience Report</span> (CrUX)](https://developers.google.com/web/tools/chrome-user-experience-report)提供的真實效能資料並分析相關的準則。在這邊必須特別註記，由於 iOS 的限制，CrUX 手機版的結果並不包含 Apple 手機作業系統的裝置。這個事實無可否認地影響了我們的分析，特別是當我們以國家為單位在檢視效能衡量標準時。
 
-Let's dive in.
+讓我們一起一探究竟吧。
 
-## Lighthouse Performance Score
+## <span lang="en">Lighthouse</span> 效能分數（<span lang="en">Performance Score</span>）{Lighthouse 效能分數}
 
-In May 2020, [Lighthouse 6 was released](https://github.com/GoogleChrome/lighthouse/releases/tag/v6.0.0). The new major version of the popular performance auditing suite introduced notable changes to its Performance Score algorithm. The Performance Score is a high-level portrayal of site speed. In Lighthouse 6, the score is measured with six—not five—metrics: First Meaningful Paint and First CPU Idle were removed and replaced with Largest Contentful Paint (LCP), Total Blocking Time (TBT, the lab equivalent of First Input Delay) and Cumulative Layout Shift (CLS).
+在 2020 年五月時，[<span lang="en">Lighthouse</span> 6 被釋出](https://github.com/GoogleChrome/lighthouse/releases/tag/v6.0.0)。在此主版號更新中，受歡迎的效能檢測組針對效能分數（<span lang="en">Performance Score</span>）演算法做了顯著的改變。效能分數（<span lang="en">Performance Score</span>）可以說是檢測網站速度的最佳寫照 (<span lang="en">high-level portrayal</span>)。在 <span lang="en">Lighthouse</span> 6 之中，以六項（不是五項）衡量標準來評估分數：<span lang="en">First Meaningful Paint</span>、<span lang="en">First CPU Idle</span> 被移除並以 <span lang="en">Largest Contentful Paint</span> (LCP) 取代之、<span lang="en">Total Blocking Time</span>（TBT, the lab equivalent of <span lang="en">First Input Delay</span>）以及 <span lang="en">Cumulative Layout Shift</span> (CLS)。
 
-The new scoring algorithm is prioritizing the new generation of performance metrics: Core Web Vitals and deprioritizing First Contentful Paint (FCP), Time to Interactive (TTI) and Speed Index, as their score weight decreases. The algorithm also now distinctly emphasizes three aspects of user experience: *interactivity* (Total Blocking Time and Time to Interactive), *visual stability* (Cumulative Layout Shift) and *perceived loading* (First Contentful Paint, Speed Index, Largest Contentful Paint).
+新的分數演算法調整了新一代的效能衡量標準的優先度：<span lang="en">Core WebVitals</span>，以及降低 <span lang="en">First Contentful Paint</span> (FCP)、<span lang="en">Time to Interactive</span> (TTI) 以及 Speed Index 的優先度並減少他們的分數權重。此演算法現在也會將三個層面的使用者體驗個別強調： **互動性**（<span lang="en">Total Blocking Time</span> 及 <span lang="en">Time to Interactive</span>）、**視覺穩定性**（<span lang="en">Cumulative Layout Shift</span>）以及**體感載入速度**（<span lang="en">First Contentful Paint</span>, Speed Index, <span lang="en">Largest Contentful Paint</span>）。
 
-Additionally, the score is now calculated using different reference points for desktop and mobile. What this means in practice is that it will be less forgiving on desktop (expecting fast websites) and more relaxed on mobile (since benchmark performance on mobile is less quick than desktop). You can compare your Lighthouse 5 and 6 score difference in [the Lighthouse Score calculator](https://googlechrome.github.io/lighthouse/scorecalc/). So, how did the scores really change?
+此外，該分數會根據桌機和手機的不同來使用不一樣的參考標準做計算。 實際上來說，這代表對桌機的標準較嚴格（預期較快的網頁）而在手機上標準較寬鬆（因為手機效能比桌機較慢）。你可以透過 [<span lang="en">Lighthouse</span> 分數計算機](https://googlechrome.github.io/lighthouse/scorecalc/)來比較 <span lang="en">Lighthouse</span> 5 及 6 之間的差異。所以，分數上到底如何改變了呢？
 
 {{ figure_markup(
   image="performance-change-in-lighthouse-score.png",
-  caption="Difference in Lighthouse Performance Score between versions 5 and 6.",
-  description="Column chart showcasing the change in Performance Score between versions 5 and 6. The highest percentage of websites (4%) observed no changes to the score, and the number of sites with score decreases outweighs score improvements.",
+  caption="Lighthouse 版本 5 跟版本 6 之間的效能分數（Performance Score）差異",
+  description="此柱狀圖顯示出版本 5 與版本 6 之間的效能分數（Performance Score）差異。最高有 4% 的網頁在分數上沒有任何改變，除此之外，分數下降的網站比分數改善的網站還多。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=786955541&format=interactive",
   sheets_gid="518150031",
   sql_file="lh6_vs_lh5_performance_score_02.sql"
   )
 }}
 
-Above, we observe that 4% of websites recorded no Performance Score change, but the number of sites with negative changes outweighs the ones with score improvements. The Performance Score grades have gotten worse (with the most prominent decrease curve in the 10-25 points area), which is portrayed even more directly below:
+由上表得知，有 4% 的網頁在效能分數（<span lang="en">Performance Score</span>）上沒有任何改變，但是分數變差的網頁比分數改善的網頁多。由下圖可以更直接的看到，效能分數（<span lang="en">Performance Score</span>）級距變得更差了（尤其是從百分比 10 至 25 的區間呈現下滑的曲線）：
 
 {{ figure_markup(
   image="performance-lighthouse-score-distributions-yoy.png",
-  caption="Lighthouse Performance Score distribution for Lighthouse 5 and 6.",
-  description="Scatter chart showcasing the percent of sites receiving 0-100 Performance Score in Lighthouse 5 and 6. With Lighthouse 6 algorithm, the percentage of sites with scores between 0-25 rises, and the number of sites with scores between 50 and 100 decreases.",
+  caption="Lighthouse 5 及 6 的 Lighthouse 效能分數（Performance Score）分佈圖",
+  description="在 Lighthouse 5 及 6 得到 0-100 效能分數（Performance Score）網站的散佈圖。隨著在 Lighthouse 6 的演算法改變，在百分比 0-25 的網站比率提高了，而 50-100 的比率減少了。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=926035471&format=interactive",
   sheets_gid="1303574513",
   sql_file="lh6_vs_lh5_performance_score_distribution.sql"
   )
 }}
 
-In the comparison of Lighthouse 5 and Lighthouse 6, we can directly observe how the distribution of score has changed. With the Lighthouse 6 algorithm, we observe a rise in the percentage of pages receiving scores between 0 to 25 and a decline between 50 and a 100. While in Lighthouse 5, we saw 3% of pages receiving 100 scores, on Lighthouse 6, that number fell to only 1%.
+比較 <span lang="en">Lighthouse</span> 5 及 <span lang="en">Lighthouse</span> 6 之後，我們可以發現分數的分佈已經改變了。在 <span lang="en">Lighthouse</span> 6 演算法之下，我們可以觀察到在百分比 0 至 25 之間的頁面比率是上升的，而百分比 50 至 100 之間則在下降。而在 <span lang="en">Lighthouse</span> 5 時，可以看到有 3% 的頁面是得到 100 分的，在 <span lang="en">Lighthouse</span> 6 上，這個比率降低到只有 1%。
 
-These overall changes are not unexpected considering a multitude of amendments to the algorithm itself.
+在針對演算法做了大量修改後，這樣子的變化是可預期的。
 
-## Core Web Vitals: Largest Contentful Paint
+## <span lang="en">Core WebVitals</span>: <span lang="en">Largest Contentful Paint</span> {core-web-vitals-largest-contentful-paint}
 
-Largest Contentful Paint (LCP) is a landmark timing-based metric that reports the time at which the largest [above-the-fold element](https://web.dev/lcp/#what-elements-are-considered) was rendered.
+<span lang="en">Largest Contentful Paint</span> (LCP) 是指標性的時間基準衡量標準，此項會回報最大的 [<span lang="en">above-the-fold element</span>](https://web.dev/lcp/#what-elements-are-considered) 被 <span lang="en">render</span> 所需時間。（註：<span lang="en">above-the-fold element</span> 的意思是，一進到網頁時，不滑動所看到的畫面。<span lang="en">above-the-fold</span> 原意來自於一份未打開的報紙所看到的封面。）
 
-### LCP by device
+### 根據不同裝置來分析 LCP
 
 {{ figure_markup(
   image="performance-lcp-by-device.png",
-  caption="Aggregate LCP performance split by device type.",
-  description="Bar chart showing that 53% of desktop and 43% of mobile website experiences are categorized as good.",
+  caption="根據不同裝置來分析的 LCP 效能綜合分析表",
+  description="此柱狀圖顯示出有 53% 的桌機版網頁以及 43% 的手機版網頁被分類為 Good 體驗的網頁",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=696629857&format=interactive",
   sheets_gid="1270303192",
   sql_file="web_vitals_by_device.sql"
   )
 }}
 
-In the chart above, we can observe that between 43% and 53% of websites have good LCP performance (below 2.5s): the majority of websites manage to prioritize and load their critical, above-the-fold media fast. For a relatively new metric, this is an optimistic signal. The slight variance between desktop and mobile is likely to be caused by varying network speeds, device capabilities and image sizing (large, desktop-specific images will take longer to be downloaded and rendered).
+在上表中，我們可以觀察到有 43% 至 53% 的網頁有好的 LCP 效能（低於 2.5 秒）：大多數網頁都會將重要資源根據優先度排序後，使得重要的多媒體能夠被快速的載入。對一個相對新的衡量標準來說，這是一個樂觀的訊號。在桌機及手機間些微的差距有可能是因為網路速度的不同、裝置性能以及圖片尺寸（尺寸較大或是針對桌機尺寸的圖片均須花較長時間下載並 render）所引起。
 
-### LCP by geographic location
+### 根據地理位置來分析 LCP
 
 {{ figure_markup(
   image="performance-lcp-by-geo.png",
-  caption="Aggregate LCP performance split by country.",
-  description="Bar chart showing that the highest percentages of good LCP performance are distributed between European and Asian countries. The Republic of Korea leads with 76% good readings, while India is last with 16% of good readings.",
+  caption="根據地理位置來分析的 LCP 效能分析表",
+  description="此柱狀圖顯示出最高的 Good 百分比的 LCP 效能分佈在歐洲及亞洲國家之間。韓國以 76% 的 Good 數據位居第一，而印度以 16% 的數據排名最後。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1936626175&format=interactive",
   width="645",
   height="792",
@@ -98,52 +98,52 @@ In the chart above, we can observe that between 43% and 53% of websites have goo
   )
 }}
 
-The highest percentage of good LCP readings is mostly distributed amongst European and Asian countries with the Republic of Korea (South Korea) leading at 76% of good metric readings. South Korea is a consistent leader in mobile speeds, with an impressive 145 Mbps download [reported by Speedtest Global Index](https://www.speedtest.net/global-index) for October. Japan, Czechia, Taiwan, Germany and Belgium are also a handful of countries with reliably high mobile speeds. Australia, while leading in mobile network speeds, is let down by slow desktop connections and latency which places it at the bottom section of the ranking above.
+<span lang="en">Good</span> LCP 數值高於其他等級（<span lang="en">Needs Improvement</span> 及 <span lang="en">Poor</span>）的網站大多分布在歐洲及亞洲國家之間，其中由韓國（南韓）以 76% 的 <span lang="en">Good</span> 位居第一。南韓在手機速度這方面一直都是領導者，在今年十月 [Speedtest Global Index](https://www.speedtest.net/global-index) 的報告中更有著令人印象深刻的 145Mbps 下載速度的數據。日本、捷克、台灣、德國以及比利時也都是有著相當高速且穩定的手機網路速度的國家。澳洲雖然在手機網路速度保持領先順位，但整體來說卻受到桌機版緩慢的連線時間及網路延遲時間（latency）影響而排名下滑。
 
-India remains the last one in our set of data, with only 16% of good experiences. While the population of people connecting to the internet for the first time is continually growing, the mobile and desktop network speeds are [still an issue](https://www.opensignal.com/reports/2020/04/india/mobile-network-experience), with average downloads of 10Mbps for 4G, 3Mbps for 3G and below 50Mbps for desktop.
+在我們的資料中，印度以僅有 16% 的好體驗持續呈現在最後一名。儘管在印度第一次接觸網際網路的人口數持續在成長，但手機及桌機網路速度[仍然是個問題](https://www.opensignal.com/reports/2020/04/india/mobile-network-experience)；4G 的平均下載速度是 10Mbps、3G 的平均下載速度是 3Mbps 而桌機則低於 50Mbps。
 
-### LCP by connection type
+### 根據連線方式來分析的 LCP
 
 {{ figure_markup(
   image="performance-lcp-by-connection-type.png",
-  caption="Aggregate LCP performance split by connection type.",
-  description="Bar chart showing that 48% of websites have good LCP on 4G. The number of good-rated website decreases to 8% on 3G, 1% on 2G, 0% on slow 2G and 18% on offline connections.",
+  caption="以連線方式為單位的 LCP 效能分析表",
+  description="此柱狀圖顯示出在 4G 有 48% 的網站呈現 Good 的 LCP。在 3G 時，被評為 Good 的網站比例驟減至 8%；2G 時剩下 1%，而慢速 2G 則是 0%。另外在離線狀態時為 18%。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=97874305&format=interactive",
   sheets_gid="306222260",
   sql_file="web_vitals_by_ect.sql"
   )
 }}
 
-Since LCP is a timing showcasing when the largest above-the-fold element has been rendered (including imagery, videos or block-level elements containing text), it is not surprising that the slower the network, the more significant portion of measurements are poor.
+LCP 能夠顯現出計時方面的效能優點，當最大的 <span lang="en">above-the-fold element</span> 被 <span lang="en">render</span> 時（包括圖像、影片或 block 層級包含文字的元素），一點也不意外越慢的網路造成網路連線不佳的比例越高。
 
-There's a clear correlation of network speed and better LCP performance, but even on 4G, only 48% of results are categorized as good, leaving half of the readings in need of an improvement. Automating media optimization, serving the right dimensions and formats, as well as optimizing for Low Data Mode, could help move the needle. Learn more about [optimizing LCP in this guide](https://web.dev/optimize-lcp/).
+可以發現網路速度及好的 LCP 效能有明確的關聯，但即使是 4G 也只有 48% 的結果被歸類為 <span lang="en">Good</span>，其餘的一半仍有改進空間。自動化多媒體最佳化、提供正確的尺寸及格式還有為 Low Data Mode 做最佳化都能夠改善效能。詳情請看[LCP 改善指南](https://web.dev/optimize-lcp/)。
 
-## Core Web Vitals: Cumulative Layout Shift
+## <span lang="en">Core WebVitals</span>: <span lang="en">Cumulative Layout Shift</span> {core-web-vitals-cumulative-layout-shift}
 
-Cumulative Layout Shift (CLS) quantifies how much elements within the viewport move around during the page visit. It helps pinpoint the degree to which unexpected movement occurs on your websites to grade the user experience, rather than attempting to measure a specific part of interaction with the help of a unit like seconds or milliseconds.
+<span lang="en">Cumulative Layout Shift</span> (CLS) 量化了在訪問網頁時，可視區域（viewport）中有多少元素移動了。並非透過時間性單位（秒或毫秒）來計算特定區快的互動性，CLS 協助我們找出訪問網頁時不如預期的頁面移動並以此來評分使用者體驗。
 
-In that way, CLS is a different, new type of a UX holistic metric in comparison to others mentioned in this chapter.
+因此，相較於其他此章節提到的衡量標準，CLS 是一個不一樣且更完整的新型態 UX 衡量標準。
 
-### CLS by device
+### 根據不同裝置來分析 CLS
 
 {{ figure_markup(
   image="performance-cls-by-device.png",
-  caption="Aggregate CLS performance split by device type.",
-  description="Bar chart showcasing that more than half of websites have good CLS with 54% on desktop and 60% on mobile. In both scenarios, only 21% websites are graded as having poor CLS.",
+  caption="根據不同裝置來分析的 CLS 效能分析表",
+  description="此柱狀圖顯示出有超過半數的網站擁有 Good 的 CLS 數值，在桌機有 54%，而在手機則有 60%。在兩種情境下都只有 21% 的網站被評為 Poor 的 CLS。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1672696367&format=interactive",
   sheets_gid="1270303192",
   sql_file="web_vitals_by_device.sql"
   )
 }}
 
-According to CrUX data, both in cases of desktop and mobile devices, more than half of the websites have a good CLS score. There's a slight difference (6 percentage points) between the number of good-rated websites between desktop and mobile, favoring the latter. We could speculate that phones lead in good CLS ratings due to mobile-optimized experiences that tend to be less feature and visuals-rich.
+根據 CrUX 資料顯示，在桌機及手機裝置中有半數以上的網站得到 <span lang="en">Good</span> CLS 分數。被評為優質的桌機版網頁及手機版網頁之間有些微的差距（大約 6 個百分比），後者（手機版）較優。我們可以推測手機版佔有 <span lang="en">Good</span> CLS 比率，是因為有些手機版網站會透過較少功能及較少視覺化效果來做最佳化。
 
-### CLS by geographic location
+### 根據地理位置來分析 CLS
 
 {{ figure_markup(
   image="performance-cls-by-geo.png",
-  caption="Aggregate CLS performance split by country.",
-  description="Bar chart showcasing that the top 28 countries have at least 50% of websites reporting good CLS. Moderate (needs improvement) readings are steady at 11-15% across the board.",
+  caption="根據地理位置來分析的 CLS 效能分析表",
+  description="此柱狀圖顯示出前 28 名的國家至少有 50% 的網站呈現出 Good 的 CLS。而中階（Needs Improvement）數值的網站則在各國之間穩定地呈現 11-15%。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1861585123&format=interactive",
   width="645",
   height="792",
@@ -152,52 +152,52 @@ According to CrUX data, both in cases of desktop and mobile devices, more than h
   )
 }}
 
-The CLS performance in different geographical regions is primarily good, with at least 56% of sites with a good rating. This is excellent news for perceived visual stability. We can observe similar countries leading as we've seen in the LCP geo-distribution—Republic of Korea, Japan, Czechia, Germany, Poland.
+在不同地區的 CLS 效能原則上都表現的不錯，且至少有 56% 的網站得到 <span lang="en">Good</span> 的評比。對感知視覺穩定性來說，這是一個很棒的消息。此外，我們可以同樣觀察到排名較前面的國家與 LCP 排名較前面的國家相似，其中包括韓國、日本、捷克、德國以及波蘭。
 
-Visual stability is less affected by geography and latency to other metrics, like LCP. The difference in the percentage of good scores between the top and the bottom country is 61% for LCP and only 13% for CLS. The percentage of moderate-rating websites is relatively low across the board, giving way to 19%-29% of poor experiences across the board. There are numerous factors that can contribute to poor CLS—learn how to address them in the [Optimize Cumulative Layout Shift guide](https://web.dev/optimize-cls/).
+相較其他的衡量標準（例如 LCP），視覺穩定性較少受到地理位置或是網路延遲時間的影響。排名最佳與最差的國家之間，<span lang="en">Good</span> 百分比的差距在 LCP 有 61% 之差，但在 CLS 僅有 13%。根據以上數據，評分中段的網頁相對地少，反倒是 <span lang="en">Poor</span> 的使用者佔了 19% 至 29%。造成 CLS 分數下降的因素有很多種，詳情請見 [<span lang="en">Cumulative Layout Shift</span> 最佳化指南](https://web.dev/optimize-cls/)。
 
-### CLS by connection type
+### 根據連線方式來分析的 CLS
 
 {{ figure_markup(
   image="performance-cls-by-connection-type.png",
-  caption="Aggregate CLS performance split by connection type.",
-  description="Bar chart showing an even distribution of good, needs improvement and poor CLS measurements. Offline and 4G lead with 70% and 64% of good experiences, respectively.",
+  caption="以連線方式為單位的 CLS 效能分析表",
+  description="此柱狀圖顯示出 Good、Need Improvement 及 Poor 呈現平均分佈的 CLS 測量結果。離線及 4G 則各以 70% 和 64% 的 Good 體驗領先其他連線方式。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=151288279&format=interactive",
   sheets_gid="306222260",
   sql_file="web_vitals_by_ect.sql"
   )
 }}
 
-There's a reasonably even distribution of CLS scoring across most connection types except for offline and 4G. In the offline scenario, we can speculate that Service Workers serve websites. Consequently, there's no delay in download caused by connection type, resulting in the most significant portion of good grades.
+除了離線及 4G 之外，其餘連線方式都有著合理地平均分佈的 CLS 分數。在離線的情境下，我們可以推測網站是由 <span lang="en">Service Worker</span> 來提供服務。因此，在離線方式下並不會有任何的下載延遲，也就得到了較高的 <span lang="en">Good</span> 分數。
 
-It is challenging to draw definite conclusions about 4G, but we can speculate that perhaps 4G+ connections are used as a method of internet access on desktop devices. If that assumption was valid, web fonts and imagery could be heavily cached, which positively affects CLS measurements.
+針對 4G 比較難下明確的結論，但我們可以推測大概是因為 4G+ 的連線方式都是由桌機裝置所連線。如果此假設為真，web fonts 及圖像皆可以被 <span lang="en">cache</span>，因此也正面地影響了 CLS 的測量結果。
 
-## Core Web Vitals: First Input Delay
+## <span lang="en">Core WebVitals</span>: <span lang="en">First Input Delay</span> {core-web-vitals-first-input-delay}
 
-First Input Delay (FID) measures the time between first user interaction and when the browser is able to respond to that interaction. FID is a good indicator of how interactive your websites are.
+<span lang="en">First Input Delay</span> (FID) 用於測量首次使用者互動到瀏覽器可以反應該互動的時間差。FID 是能夠顯示你的網頁互動性有多高的好指標。
 
-### FID by device
+### 根據不同裝置來分析 FID
 
 {{ figure_markup(
   image="performance-fid-by-device.png",
-  caption="Aggregate FID performance split by device type.",
-  description="Bar chart showcasing high percentages of good FID performance on desktop (100%) and mobile (80%).",
+  caption="根據不同裝置來分析的 FID 效能分析表",
+  description="此柱狀圖顯示出在兩種裝置上均有高比例的 Good 的 FID 效能；在桌機上有 100%，在手機上則是 80%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=2090682651&format=interactive",
   sheets_gid="1270303192",
   sql_file="web_vitals_by_device.sql"
   )
 }}
 
-It is relatively uncommon to see good scores distributed across such a high percentage of websites. On desktop, based on the 75th percentile of sites' distributions, 100% of sites report fast timings for FID, meaning the number of people experiencing interaction delays is very low.
+相較其他評比，手機及桌機均以高百分比分佈在 <span lang="en">Good</span> 比較不常見。在桌機中，基於 75% 網頁分佈來說，有 100% 的網站得到相當快的 FID 時間差，這也意味著體驗到互動延遲的使用者極少。
 
-On mobile, 80% of sites are graded as good. A likely explanation is the reduced CPU capabilities in comparison to desktop, network latency on mobile (causing a delay in script download and execution) as well as battery efficiency and temperature limitations, capping the CPU potential of mobile devices. All of which directly affect interactivity metrics like FID.
+在手機中，有 80% 的網站被評比為 <span lang="en">Good</span>。較合理的解釋可能是，相較於桌機，手機的 CPU 性能較低，而網路延遲（導致 <span lang="en">script</span> 下載及執行的延遲）、電池功率以及溫度限制都是消耗 CPU 的潛在因素。以上所述因素皆有可能影響 FID 類型的互動性衡量標準。
 
-### FID by geographic location
+### 根據地理位置來分析 FID
 
 {{ figure_markup(
   image="performance-fid-by-geo.png",
-  caption="Aggregate FID performance split by country.",
-  description="Bar chart showcasing excellent FID performance on per-country basis. The top 28 countries report between 79% to 97% good FID experiences with nearly to none poor experiences.",
+  caption="根據地理位置來分析的 FID 效能分析表",
+  description="此柱狀圖顯示出每個國家皆有完美的 FID 效能。前 28 名的國家呈現出 79% 至 97% 如此近乎無 Poor 體驗的完美 Good FID 體驗數值。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1107653062&format=interactive",
   width="645",
   height="792",
@@ -206,34 +206,34 @@ On mobile, 80% of sites are graded as good. A likely explanation is the reduced 
   )
 }}
 
-The geographic distribution of FID scoring confirms the findings in the aggregate device chart shared earlier on. At worst, 79% of websites have good FID, with an impressive 97% on the top position with the Republic of Korea leading again. Interestingly, some top contenders from the CLS and LCP ranking, such as Czechia, Poland, Ukraine and Russian Federation here fall to the bottom of the hierarchy.
+FID 分數的地理分佈結果證實了上一段綜合裝置圖表的結果。最差還有 79% 網站得到 <span lang="en">Good</span> FID，而韓國則再次以驚人的 97% 在此項評比位居第一。有趣的是，在 CLS 及 LCP 的前幾名競爭者（如：捷克、波蘭、烏克蘭及俄羅斯）反倒在這裡跌至倒數的名次。
 
-Again, we can speculate why that might be, but would need further analysis to really be sure. Assuming FID correlates to JavaScript execution capabilities, countries where more capable devices are more expensive and treated as luxury items, might report lower FID ranking. Poland is a good example—with one of the [highest iPhone prices](https://qz.com/1106603/where-the-iphone-x-is-cheapest-and-most-expensive-in-dollars-pounds-and-yuan/) compared to the US market, combined with [relatively lower wages](https://en.wikipedia.org/wiki/List_of_European_countries_by_average_wage#Net_average_monthly_salary), a single salary isn't sufficient to purchase Apple's flagship product. To contrast, Australians with [average salaries](https://www.news.com.au/finance/average-australian-salary-how-much-you-have-to-earn-to-be-better-off-than-most/news-story/6fcdde092e87872b9957d2ab8eda1cbd) would be able to buy an iPhone with a weeks' worth of pay. Luckily, the percentage of websites with a low rating is mostly at 0, with a few exceptions of 1-2% readings, pointing towards a relatively speedy response to the interaction.
+再次強調，我們可以推測出為何如此，但我們會需要更多的分析來佐證我們的推測是正確的。如果假設 FID 與 JavaScript 執行性能有關係，在手機性能越好則越貴或甚至被當成奢侈品的國家，反而會得到較低的 FID 排名。波蘭身為 [iPhone 價格最貴](https://qz.com/1106603/where-the-iphone-x-is-cheapest-and-most-expensive-in-dollars-pounds-and-yuan/)國家之一就是個好例子；再加上[平均薪資較低](https://en.wikipedia.org/wiki/List_of_European_countries_by_average_wage#Net_average_monthly_salary)，一份薪水可能還不夠買一隻 Apple 旗艦機。相反地，澳洲的[平均薪資](https://www.news.com.au/finance/average-australian-salary-how-much-you-have-to-earn-to-be-better-off-than-most/news-story/6fcdde092e87872b9957d2ab8eda1cbd)足以讓澳洲人以一週的薪水就能夠買一隻 iPhone。幸運地是，除了有較 1-2% 慢能夠互動的網頁之外，低評分的網頁百分比大多為 0。
 
-### FID by connection type
+### 根據連線方式來分析的 FID
 
 {{ figure_markup(
   image="performance-fid-by-connection-type.png",
-  caption="Aggregate FID performance split by connection type.",
-  description="Bar chart showcasing a consistently high distribution of good FID performance across different types of networks. Offline, 3G and 4G lead with above 80% of good-rated website experiences.",
+  caption="以連線方式為單位的 FID 效能分析表",
+  description="此柱狀圖顯示出 Good FID 以高比例分佈在各個連線方式下。離線、3G 及 4G 則以高於 80% 的 Good 網站體驗領先其餘連線方式。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=808962538&format=interactive",
   sheets_gid="306222260",
   sql_file="web_vitals_by_ect.sql"
   )
 }}
 
-We can observe a direct correlation between network speed and fast FID, ranging from 73% on 2G to 87% on 4G networks. Faster networks will aid in speedier script download, which consequently speeds up the beginning of the parsing and fewer tasks blocking the main thread. It is optimistic to see such results, especially when the ratio of poorly rated site experiences doesn't exceed 5%.
+從 2G 的 73% 到 4G 的 87%，我們可以觀察到網路速度與快速的 FID 有直接關係。較快的網路可以幫助較迅速的 <span lang="en">script</span> 下載，固然也就加快了 <span lang="en">parsing</span> 的開始以及使得較少的 <span lang="en">task block</span> 在 <span lang="en">main thread</span> 上。這是一份很樂觀的結果報告，特別是評比不佳的網站比例不超過 5%。
 
-## First Contentful Paint
+## <span lang="en">First Contentful Paint</span> {first-contentful-paint}
 
-First Contentful Paint (FCP) measures the first time at which the browser rendered any text, image, non-white canvas or SVG content. FCP is a good indicator of perceived speed as it portrays how long people wait to see the first signs of a site loading.
+<span lang="en">First Contentful Paint</span> (FCP) 用於測量瀏覽器第一次 <span lang="en">render</span> 任何文字、圖片、非白色 <span lang="en">canvas</span> 或是 SVG 內容。FCP 能夠描繪出「在網站載入時，使用者需要等待多久時間才能看到第一個內容被呈現」，因此這是一項測量使用者體感速度的好指標。
 
-### FCP by device
+### 根據不同裝置來分析 FCP
 
 {{ figure_markup(
   image="performance-fcp-desktop-distribution.png",
-  caption="Distribution of websites labeled as having fast, average and slow FCP performance on desktop.",
-  description="Distribution of websites labeled as having fast, average and slow FCP performance on desktop. The distribution of fast websites appears linear with a bulge in the middle. There are more fast and slow FCP experiences compared to 2019, while the number of average experiences shrinks due to changes in FCP categorization.",
+  caption="以 Fast、Average 以及 Slow 分類的 FCP 效能的桌機版分佈圖",
+  description="以 Fast、Average 以及 Slow 分類的 FCP 效能的桌機版分佈圖。Fast 以線性分佈，但中間稍微突起。相較於 2019 年，由於 FCP 分類方式的改變，今年更多 Fast 與 Slow 的 FCP 體驗。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1953305743&format=interactive",
   sheets_gid="2122167666",
   sql_file="web_vitals_distribution_by_device.sql"
@@ -242,36 +242,36 @@ First Contentful Paint (FCP) measures the first time at which the browser render
 
 {{ figure_markup(
   image="performance-fcp-mobile-distribution.png",
-  caption="Distribution of websites labeled as having fast, average and slow FCP performance on mobile.",
-  description="Distribution of websites labeled as having fast, average and slow FCP performance on desktop. The distribution of fast websites appears linear with less of a bulge observed on the desktop chart. There are more fast and slow FCP experiences compared to 2019, while the number of average experiences shrinks due to changes in FCP categorization.",
+  caption="以 Fast、Average 以及 Slow 分類的 FCP 效能的手機版分佈圖",
+  description="以 Fast、Average 以及 Slow 分類的 FCP 效能的手機版分佈圖。Fast 仍然以線性分佈，但不像桌機版中間有個突起。相較於 2019 年，由於 FCP 分類方式的改變，今年更多 Fast 與 Slow 的 FCP 體驗。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=38297781&format=interactive",
   sheets_gid="2122167666",
   sql_file="web_vitals_distribution_by_device.sql"
   )
 }}
 
-In the charts above, the FCP distributions are broken down by desktop and mobile. [Comparing to last year](../2019/performance#fcp-by-device), there are noticeably less average FCP readings, while the percentage of fast and slow user experiences has risen no matter the device type. We can still observe the same trend, where mobile users will experience slower FCP more frequently than desktop users. Overall, users are more likely to have a good or poor experience, rather than a mediocre experience.
+在上表中，FCP 分佈被拆成桌機及手機。[相較去年結果](../2019/performance#fcp-by-device)，可以發現到較少 FCP 指數呈現為 <span lang="en">Average</span>，反而可以觀察到無論是哪種裝置，<span lang="en">Fast</span> 及 <span lang="en">Slow</span> 的比率都升高了。此外，也可以發現手機使用者相較桌機使用者更頻繁的體驗較慢的 FCP 的情況仍然存在。整體來說，使用者們較可能體驗好的或差的體驗，而不是普通的體驗。
 
 {{ figure_markup(
   image="performance-fcp-mobile-year-on-year.png",
-  caption="A comparison of distribution of websites labeled as having good, needs improvement and poor FCP mobile performance between 2019 and 2020.",
-  description="Bar chart showing how the distribution of good, needs improvement and poor mobile FCP has changed between 2019 and 2020. In 2020, 75% of websites have a sub-par FCP.",
+  caption="2019 與 2020 年手機版網站 FCP 被標為 Good、Needs Improvement 以及 Poor 分佈相比",
+  description="此柱狀圖顯示手機版網站 FCP 被標為 Good、Needs Improvement 以及 Poor 在 2019 至 2020 間已經改變了。在 2020 年，有 75% 的網站是低於標準的 FCP。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=2037503700&format=interactive",
   sheets_gid="1270303192",
   sql_file="web_vitals_by_device.sql"
   )
 }}
 
-Comparing FCP on mobile devices on a year-over-year basis, we observe fewer good experiences and more moderate and poor experiences. 75% of websites have sub-par FCP. We can speculate this high percentage of less than ideal FCP readings is a source of frustration and degraded user experience.
+對比前年同期手機裝置的 FCP 數值的話，我們可以觀察到好的體驗變少了，且中等及不佳的體驗增加了。75% 的網站的 FCP 值低於平均。我們可以推測如此高比例的 FCP 數值低於理想值，必定是造成使用者感到挫折或是使用者體驗下降的原因之一。
 
-Numerous factors can delay paints, such as server latency (measured by a handful of metrics, such as [Time to First Byte (TTFB)](#time-to-first-byte-ttfb) and RTT), blocking JavaScript requests, or inappropriate handling of custom fonts to name a few.
+還有很多種因素可能造成繪製延遲，例如：<span lang="en">server</span> 延遲時間（以一些衡量標準來評估，例如：[<span lang="en">Time to First Byte</span> (TTFB)](#time-to-first-byte-ttfb) 以及 RTT），阻擋 <span lang="en">JavaScript requests</span> 或是沒被適當處理的客製化字體等等。
 
-### FCP by geographic location
+### 根據地理位置來分析 FCP
 
 {{ figure_markup(
   image="performance-fcp-by-geo.png",
-  caption="Aggregate FCP performance split by country.",
-  description="Bar chart showing that only 7 out of 28 countries have more than 40% websites with good FCP performance. The number of good and poor results rises in comparison to 2019 due to changes in value ranges for FCP.",
+  caption="根據地理位置來分析的 FCP 效能分析表",
+  description="此柱狀圖顯示出在 28 個國家之中只有 7 個國家擁有超過 40% 的網站被評為 Good 的 FCP 效能。相較於 2019，由於 FCP 評分標準的改變，Good 以及 Poor 的比例都增加了。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=78259488&format=interactive",
   sheets_gid="1708427314",
   width="645",
@@ -280,58 +280,58 @@ Numerous factors can delay paints, such as server latency (measured by a handful
   )
 }}
 
-Before we dig into the analysis, it is noteworthy to mention that in the 2019 Performance chapter, the thresholds for "good" and "poor" classification were different from 2020. In 2019, sites with FCP below 1s were considered good, while those with FCP above 3s were categorized as poor. In 2020, those ranges shifted to 1.5s for good and 2.5s for poor.
+在我們開始分析前，值得一提的是，2019 年效能章節的 <span lang="en">Good</span> 及 <span lang="en">Poor</span> 評估標準和 2020 年不同。在 2019 年的標準中，FCP 低於 1 秒的網站被分類為 <span lang="en">Good</span>，高於 3 秒的才會被分類為 <span lang="en">Poor</span>。而在 2020 年的標準中，評分標準變成低於 1.5 秒為 <span lang="en">Good</span>、高於 2.5 秒為 <span lang="en">Poor</span>。
 
-This change means that the distribution would shift towards more "good" and "poor" rated websites. We can observe that trend compared to [last year's results](../2019/performance#fcp-by-geography), as the percentage of good and poor websites rise. The top ten geographies with the highest rate of fast websites remain relatively unchanged from 2019, with the addition of Czechia and Belgium and the fall of the United States and the United Kingdom. The Republic of Korea leads with 62% of websites reporting fast FCP, nearly doubling since last year (which, again, is likely due to re-categorization of results). Other countries in the top of the ranking also double the number of good experiences.
+這個改變也代表著此數值分佈圖中被評為 <span lang="en">Good</span> 及 <span lang="en">Poor</span> 的網站都會變得更多。相較於[去年的結果](../2019/performance#fcp-by-geography)，我們可以觀察到此現象。以地理位置分佈來說，前十名最快的網站的國家與 2019 相同，但捷克與比利時的排名變前面且美國與英國的名次下降了。韓國以幾近於去年兩倍的 62% 的超快 FCP 數值領先在第一名（可以猜測受惠於評估標準的改變）。前幾名的國家也幾乎都是去年的 <span lang="en">Good</span> 的兩倍。
 
-While the mediocre ("needs improvement") percentage becomes smaller, the number of poorly performing FCP sites rises, which is especially pronounced at the bottom of the ranking with Latin American and South Asian regions.
+當中等階段（<span lang="en">Needs Improvement</span>）的百分比變少，FCP 數值不佳的網頁也隨之增加，尤其是倒數幾名的拉丁美洲及南亞地區國家。
 
-Again, there are several reasons negatively affecting FCP, such as poor TTFB readings, but it is difficult to prove them without the necessary context. For example, if we were to analyze specific country performance, such as Australia, we surprisingly find it at the lower end. Australia has one of the highest global smartphone penetration levels, one of the fastest mobile networks and relatively high average income levels. We'd easily assume it should be higher up. However, taking into account slow fixed connections, latency and lack of iOS representation in CrUX, its positioning starts making more sense. With an example like this (touched only on the surface), we can see how difficult understanding context for each of the countries would be.
+再次強調，有可能有多種因素造成 FCP 降低，例如不佳的 TTFB 數值，但我們很難在不確定前因後果的情況下來證明為什麼 FCP 降低。舉例來說，假設我們想要分析特定國家的效能，比方說澳洲，我們會意外地發現他的名次很後面。澳洲的智慧型手機普及率是世界排名最高之一，並且他們擁有最快的手機網路以及相對高的平均所得。我們可能會因此輕易地認為澳洲的排名應該要更前面。但是，當我們考慮到較慢的定點連線、網路延遲時間以及在 CrUX 中缺少 iOS 的數據等，就可以慢慢理解為什麼澳洲的名次可能會在如此後面。以這樣的例子來說（只談論到表面的問題），我們就可以了解要完整了解每個國家的情況來分析此數據有多困難了。
 
-### FCP by connection type
+### 根據連線方式來分析的 FCP
 
 {{ figure_markup(
   image="performance-fcp-by-connection-type.png",
-  caption="Aggregate FCP performance split by connection type.",
-  description="Bar chart showcasing that only 31% of websites report good FCP on 4G. Offline that number decreases to 10%, while remaining connection types nearly exclusively provide poor FCP experiences.",
+  caption="以連線方式為單位的 FCP 效能分析表",
+  description="此柱狀圖顯示出在 4G 時僅有 31% 的網站呈現 Good 的 FCP。離線時此數值減少至 10%；其餘的連線方式則幾近於只有 Poor 的 FCP 體驗。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1949864731&format=interactive",
   sheets_gid="306222260",
   sql_file="web_vitals_by_ect.sql"
   )
 }}
 
-Similarly to other metrics, FCP is affected by connection speeds. On 3G, only 2% of experiences rate good, while on 4G, 31%. It is not an ideal state of FCP performance, but it [has improved since 2019](../2019/performance#fcp-by-effective-connection-type) in some areas, which again might be driven by the change in categorization of good and poor categorization. We see the same rise in the percentage of good websites and poor websites, narrowing the number of moderate ("needs improvement") site experiences.
+與其他衡量標準相同，FCP 同樣也受到連線速度影響。在 3G 網路下，只有 2% 的人感受到 <span lang="en">Good</span> 體驗，而在 4G 則有 31%。雖然這並不是最理想的 FCP 效能，但相較於去年有些地區[已經改善了](../2019/performance#fcp-by-effective-connection-type)，但需要再次強調的是這可能也是受到了 <span lang="en">Good</span> 及 <span lang="en">Poor</span> 的重新分類。我們同樣可以看到 <span lang="en">Good</span> 及 <span lang="en">Poor</span> 增加、中階（<span lang="en">Needs Improvement</span>）網頁減少的趨勢。
 
-This trend illustrates the furthering digital divide, where experiences on slower networks and potentially less capable devices are consistently worse. Improving FCP on slow connections directly correlates to enhancing TTFB, which we observe in [Aggregate TTFB performance by connection type chart](#ttfb-by-connection-type)—poor TTFB = poor FCP.
+這個趨勢更進一步描繪出了數位差距，網路越慢且可能性能越差的裝置條件下的效能體驗越差。 改善慢速連線下的 FCP 與增強 TTFB 有直接關係，我們可以在 [Aggregate TTFB 根據連線方式來分析的 performance chart](#ttfb-by-connection-type) 觀察到 <span lang="en">Poor</span> TTFB = <span lang="en">Poor</span> FCP。
 
-The choice of [hosting provider](https://ismyhostfastyet.com/) or [CDN](https://www.cdnperf.com/) will have a cascading effect on speed. Making these decisions based on the fastest possible delivery will help in improving FCP and TTFB, especially on slower networks. FCP is also significantly affected by font load time, so [ensuring text is visible while web fonts are downloaded](https://web.dev/font-display/) is also a worthwhile strategy (especially where on slower connections these resources will be costly to fetch).
+對 [hosting provider](https://ismyhostfastyet.com/) 或是 [CDN](https://www.cdnperf.com/) 的選擇對於速度也許會有加乘效果。基於速度最快的可能選擇服務會幫助改善 FCP 及 TTFB，尤其是在網速較慢的情況。字體載入時間也深深影響了 FCP，所以[確保 Web Fonts 下載後是看得到的](https://web.dev/font-display/)也是值得一試的策略（特別是在較慢的網路通訊之下，下載這些資源都相當耗時）。
 
-Looking at the "offline" statistics, we can deduce that a substantial number of FCP issues are also _not_ correlated to the network type. We don't observe significant gains in this category, which we would if that statement was true. It appears would seem rendering is not so much delayed by fetching JavaScript, but it is affected by parsing and execution.
+仔細觀察離線的數據後，我們可以歸類出 FCP 數值的問題與網路型態**無關**。我們並沒有在此圖表中觀察到數值隨著網路型態變化而有重大的增加；當然，如果我們假設此問題與網路型態有關，那我們必定會觀察到此數值隨之增加。可以發現 <span lang="en">rendering</span> 並沒有隨著下載 JavaScript 而延遲，反倒是受到 <span lang="en">parsing</span> 及 <span lang="en">execution</span> 的影響。
 
-## Time to First Byte
+## <span lang="en">Time to First Byte</span> {time-to-first-byte}
 
-Time to First Byte (TTFB) is the time taken from the initial HTML request being made until the first byte arrives back to the browser. Issues with swiftly processing requests can quickly cascade into affecting other performance metrics as they will delay not only paints but also any resource fetching.
+<span lang="en">Time to First Byte</span> (TTFB) 是計算初始 HTML request 發出到第一個 <span lang="en">byte</span> 被返回到瀏覽器之間的時間。 迅速地處理 <span lang="en">requests</span> 很快的會影響到其他效能衡量標準，因為他們不只會延遲畫面繪製，還會延遲下載資源。
 
-### TTFB by device
+### 根據不同裝置來分析 TTFB
 
 {{ figure_markup(
   image="performance-ttfb-by-device.png",
-  caption="Aggregate TTFB performance split by device type.",
-  description="Bar chart showcasing that 76% websites have poor TTFB on desktop and 83% on mobile. The number of websites with good TTFB doesn't exceed 24%.",
+  caption="根據不同裝置來分析的 TTFB 效能分析表",
+  description="此柱狀圖顯示出在桌機版中有 76% 的網站被評為 Poor 的 TTFB 而在手機版則是 83%。Good 的 TTFB 網站比例不超過 24%。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1981576071&format=interactive",
   sheets_gid="1270303192",
   sql_file="web_vitals_by_device.sql"
   )
 }}
 
-On desktop, 76% of websites have a "not good" TTFB, while on mobile, that percentage rises to 83%. We might assume that the data portrays how TTFB is often an overlooked metric when it is assumed that most performance measurements and work is concentrated within front-end and visual rendering, not asset delivery and server-side work. High TTFB will have a direct, negative impact on a plethora of other performance signals, which is an area that still needs addressing.
+在桌機中，有 76% 的網站**沒**被評為 <span lang="en">Good</span> 的 TTFB；在手機上，這個百分比甚至上升到 83%。當這項指標假設大多效能評估與工作都專注於前端及視覺上的 <span lang="en">rendering</span> 而非資源傳輸或是 server-side 的工作，我們也許可以假設此數據描繪出 TTFB 往往是個被過度分析的衡量標準。高 TTFB 會直接對其他過多的效能有負面的影響，這仍然是個需要被改善的領域。
 
-### TTFB by geographic location
+### 根據地理位置來分析 TTFB
 
 {{ figure_markup(
   image="performance-ttfb-by-geo.png",
-  caption="Aggregate TTFB performance split by country.",
-  description="Bar chart showcasing that TTFB performance is consistently sub-par, with only 4 out of 28 countries having more than 30% websites with good TTFB. There is a significant number of websites categorized as needs improvement (always above 40%) with the fraction of poor experiences rising as the ranking position is lower.",
+  caption="根據地理位置來分析的 TTFB 效能分析表",
+  description="此柱狀圖顯示出 TTFB 的效能持續呈現低於標準的狀態，在 28 個國家之中僅有 4 個有超過 30% 的網站擁有 Good 的 TTFB 數值。當排名越低時，越可以發現被評為 Needs Improvement 的中階網站持續佔有超過 40%，而 Poor 體驗網站的比例也隨著名次下降而提升。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1135415956&format=interactive",
   width="645",
   height="792",
@@ -340,48 +340,48 @@ On desktop, 76% of websites have a "not good" TTFB, while on mobile, that percen
   )
 }}
 
-Likening this years' TTFB geo readings to [2019 results](../2019/performance#ttfb-by-geo) again points to more fast websites, but similarly to FCP, the thresholds have changed. Previously, we considered TTFB below 200ms fast, and above 1000ms slow. In 2020, TTFB below 500ms is good and above 1500ms poor. Such generous changes in categorization can explain that we observe significant changes, such as a 36% rise in good website experiences in The Republic of Korea or 22% rise in Taiwan. Overall, we still observe similar regions, such as Asia-Pacific and selected European locales leading.
+將今年的 TTFB 地理位置數據與 [2019 結果](../2019/performance#ttfb-by-geo)相比，可以注意到有更多較快的網頁了；但與 FCP 情況相似的是，TTFB 的衡量標準已經改變了。在去年，我們視 TTFB 低於 200ms 為快的，而高於 1000ms 為慢的；在 2020 年的衡量標準則變成低於 550ms 為 <span lang="en">Good</span> 而高於 1500ms 為 <span lang="en">Poor</span>。在如此重大改變之下，我們可以發現到圖表也跟著有了重大的改變；例如，在韓國 <span lang="en">Good</span> 網頁上升了 36% 或是台灣上升了 22%。總體來說，我們仍然可以觀察到相似的區域（例如亞太地區及特定歐洲地區）在這項數據保持領先。
 
-### TTFB by connection type
+### 根據連線方式來分析的 TTFB
 
 {{ figure_markup(
   image="performance-ttfb-by-connection-type.png",
-  caption="Aggregate TTFB performance split by connection type.",
-  description="Bar chart showing that TTFB is heavily affected by connection type with only 21% and 22% of good experiences on 4G and offline, respectively. Other connection types provide nearly none (with the exception of 1% on 3G) good TTFB readings.",
+  caption="以連線方式為單位的 TTFB 效能分析表",
+  description="此柱狀圖顯示出 TTFB 深受連線方式影響，在 4G 及離線狀態各擁有 21% 及 22% 的 Good 的體驗的網站。其餘連線方式（除了僅有 1% 的 3G）幾乎是沒有 Good 的 TTFB 數值。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=810992122&format=interactive",
   sheets_gid="306222260",
   sql_file="web_vitals_by_ect.sql"
   )
 }}
 
-TTFB is affected by network latency and connection type. The higher the latency and the slower the connection, the worse TTFB measurements, as we can observe above. Even on mobile connections considered as fast (4G), only 21% of websites have a fast TTFB. There are nearly no sites categorized as quick below 4G speeds.
+TTFB 會受到網路延遲時間及網路連線方式的影響。網路延遲時間越高且網路連線越慢就會得到越糟的 TTFB 測量結果，就如上圖所示。即使是在手機使用快速的 4G 網路，也只有 21% 的網頁得到快速的 TTFB。當網路連線低於 4G 時，可以說是幾近於沒有網站被歸類為快的。
 
-Looking at the [mobile speeds worldwide for December 2018-November 2019](https://www.speedtest.net/insights/blog/content/images/2020/02/Ookla_Mobile-Speeds-Poster_2020.png), we can see that globally, mobile connections aren't high-speed. Those network speeds and technology standards for cellular networks (such as 5G) are not evenly distributed and affect TTFB. As an example, [see this map of networks in Nigeria](https://www.mobilecoveragemaps.com/map_ng#7/8.744/7.670)—most of the country area has 2G and 3G coverage, with little 4G range.
+看看[2018 年 12 月至 2019 年 11 月的全球手機網路速度](https://www.speedtest.net/insights/blog/content/images/2020/02/Ookla_Mobile-Speeds-Poster_2020.png)，我們可以發現全球的手機網路速度並不快。行動網路（例如 5G）的網路速度及科技標準沒有平均分佈，因此影響了 TTFB 的數據。舉例來說，[看看此奈及利亞的網路地圖](https://www.mobilecoveragemaps.com/map_ng#7/8.744/7.670) - 在奈及利亞大部分區域是被 2G 及 3G 所涵蓋，只有小部分範圍是 4G。
 
-What's surprising is the relatively the same number of good TTFB results between offline and 4G origins. With service workers, we could expect some of the TTFB issues to be mitigated, but that trend is not reflected in the chart above.
+驚人的是離線與 4G 之間的 <span lang="en">Good</span> TTFB 結果相似度。在有 <span lang="en">service worker</span> 的情況下，我們可以預期他可以舒緩一些 TTFB 的問題，但此趨勢並沒有被反映在上表中。
 
-## Performance Observer usage
+## <span lang="en">Performance Observer</span> 的用途 {performance-observer-的用途}
 
-There are dozens of different user-centric metrics that can be used to assess websites and applications. However, sometimes the predefined metrics don't quite fit our specific scenarios and needs. The [PerformanceObserver API](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver) allows us to obtain custom metric data obtained with [User Timing API](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API), [Long Task API](https://developer.mozilla.org/en-US/docs/Web/API/Long_Tasks_API), [Event Timing API](https://web.dev/custom-metrics/#event-timing-api) and [a handful of other low-level APIs](https://web.dev/custom-metrics/). For example, with their help, we could record the timing transitions between pages or quantify server-side-rendered (SSR) application hydration.
+能夠估算網站及應用程式的使用者體驗效能的衡量標準有百百種。但是，有時候那些既有的衡量標準並不一定符合我們的需求或是情境。[PerformanceObserver API](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver) 能夠讓我們取得透過 [User Timing API](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API)、[Long Task API](https://developer.mozilla.org/en-US/docs/Web/API/Long_Tasks_API)、[Event Timing API](https://wicg.github.io/event-timing/) 或[其他的低階 APIs](https://web.dev/custom-metrics/) 所客製的衡量標準資料。舉例來說，有了這些 API 的幫助，我們可以紀錄頁面之間轉換的時間或是量化 <span lang="en">server-side-rendered (SSR) hydration</span> 時間。
 
 {{ figure_markup(
   image="performance-performance-observer-usage.png",
-  caption="Performance Observer usage by device type.",
-  description="Bar chart showing that the adoption of Performance Observer API is low, at 6.6% on desktop and 7% on mobile.",
+  caption="根據不同裝置來分析的 Performance Observer 使用率",
+  description="此柱狀圖顯示出採用 Performance Observer API 的比例很低，在桌機僅有 6.6% 而手機則有 7%。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=632678090&format=interactive",
   sheets_gid="934401790",
   sql_file="performance_observer.sql"
   )
 }}
 
-The chart above showcases that Performance Observer is used by 6-7% of tracked sites, depending on device type. Those websites will be leveraging the low-level APIs to create custom metrics, and the PerformanceObserver API to collate them, and then potentially use it with other performance reporting tooling. Such adoption rates might indicate the tendency to lean on predefined metrics (for example, coming from Lighthouse), but also are impressive for a relatively niche API.
+上表指出，在我們調查的網站中，根據不同的裝置，大約有 6-7% 的網站使用 <span lang="en">Performance Observer</span>。這些網站可以透過上述的低階 API 來製作客製化的衡量標準，並利用 PerformanceObserver API 來整理搜集後，可以與其他的效能報告工具一起使用。這樣的採用率或許也道出多數使用者傾向使用既有的衡量標準（例如 <span lang="en">Lighthouse</span>）但對於如此方便的 API 也深感興趣。
 
-## Conclusion
+## 總結
 
-User experience is not only a spectrum but also depends on a wide variety of factors. To attempt understanding the state of performance without excluding the sub-par, underprivileged experiences, we must approach it intersectionally. Each website visit tells a story. Our personal and country-level socioeconomic status dictates the type of device and internet provider we can afford. The geopositioning of where we live affects latency (we Australians feel this pain regularly), and the economy dictates available cellular network coverage. What websites do we visit? What do we visit them for? Context is critical to not only analyzing data but also developing necessary empathy and care in building accessible, fast experiences for all.
+使用者體驗不單單只是個光譜，他更是一個基於重重因素所產生的光譜。為了不能忽視低於效能衡量標準或是無法體驗適當效能的人們，我們一定要設法了解並分析各個面向的數據。每個網頁訪問都述說著各自的故事。我們個人的以及國家層級的經濟狀況也敘述著我們能夠負擔的裝置型態以及網路提供者（<span lang="en">internet provider</span>）。我們生活的地方也深深影響著我們的網路延遲時間（澳洲人時常感受到這個痛苦），而且該國家的經濟也反應了當地行動網路覆蓋率。我們會訪問怎麼樣的網頁呢？我們為什麼想訪問那些網頁呢？了解 context 非常的重要，這不僅僅是為了要分析資料，也是為了能夠開發有足夠同理心、在乎是否容易被訪問且提供了快速的使用者體驗的網頁給所有的使用者。
 
-On the surface, we have seen optimistic signals about the new Core Web Vitals performance metrics. At least half of the experiences are good across both desktop and mobile devices, _if_ we don't narrow down to consistently poor experiences on slower networks for Largest Contentful Paint. While the newer metrics might suggest that there's an ongoing uptake in addressing performance issues, the lack of significant improvements in First Contentful Paint and Time to First Byte is sobering. Here the same network types are most disadvantaged as with Largest Contentful Paint, as well as fast connections and desktop devices. The Performance Score also portrays a decline in speed (or perhaps, a more accurate portrayal than what we measured in the past).
+以粗淺的分析來說，我們可以看到新 <span lang="en">Core WebVitals</span> 效能衡量標準有著樂觀的結果。**如果**我們不將 <span lang="en">Largest Contentful Paint</span> 的數據限縮到 <span lang="en">Poor</span> 體驗以及較慢的網路的話，至少在桌機及手機上，有一半的使用者體驗同時是好的。儘管新的衡量標準現在正有計劃在改善效能問題，但缺少對 FCP (<span lang="en">First Contentful Paint</span>) 以及 TTFB (<span lang="en">Time to First Byte</span>) 的改善方案仍然是個必須面對的嚴重問題。在這裡與 <span lang="en">Largest Contentful Paint</span> 相同網路型態 、快速網路連結以及桌機裝置的最不利。效能分數（<span lang="en">Performance Score</span>）也在速度方面呈現了下降的曲線（抑或是說，這比過去我們所測量過的數據更為準確）。
 
-What the data shows us, is that we must keep investing in improving performance for scenarios (such as slower connectivity) that we often don't experience due to multiple aspects of our privilege (middle to high-income countries, high pay and new, capable devices). It also highlights that there's still plenty of work to be done in the areas of speeding up initial paints (LCP and FCP) and asset delivery (TTFB). Often, performance feels like an inherently front-end issue, while numerous significant improvements can be achieved on the back-end and through appropriate infrastructure choices. Again, user experience is a spectrum that depends on a variety of factors, and we need to treat it holistically.
+根據這些數據所知，可能因為我們養尊處優（中至高收入的國家、高薪水且持有新又性能好的裝置）無法時常體會各式各樣的情境（例如較慢的網路連接速度），我們更應該要花心力來為這各式各樣的情境去改善效能。這同時也替我們強調了，我們在加速初始瀏覽器繪製（LCP 及 FCP）和資源傳送（TTFB）都還有許多未完成的事情。這些效能問題時常聽起來像前端的問題，但其實許多重要的改善是可以透過適當的 <span lang="en">infrastructure</span> 選擇或是在後端做出適當的修改所達成。再次強調，使用者體驗是由各式各樣因素所組成的光譜，所以我們必須一視同仁。
 
-New metrics bring new lenses to analyze user experience through, but we must not forget existing signals. Let's focus on moving the needle in the areas that need the most improvement and will result in positive shifts in experience for most underserved. Fast and accessible internet is a human right.
+新的衡量標準為我們帶來了不一樣的視野來分析使用者體驗，但我們也莫忘既有的問題與數據。讓我們繼續在改善需要被加強的領域，還有為了將那些在低標準體驗的使用者們邁向好的使用者體驗繼續努力。快速且容易存取的網路是基本人權。
