@@ -27,7 +27,7 @@ jobs:
     - name: Checkout branch
       uses: actions/checkout@v2.3.3
     - name: Setup Node.js for use with actions
-      uses: actions/setup-node@v1.4.4
+      uses: actions/setup-node@v2.1.4
       with:
         version:  12.x
     - name: Set up Python 3.8
@@ -62,7 +62,7 @@ jobs:
       id: cpr
       uses: peter-evans/create-pull-request@v3.5.2
       with:
-        title: Regenerate Ebooks
+        title: Pre-deploy Updates
         branch-suffix: timestamp
         commit-message: Update Timestamps and Generate Ebooks
         body: |
