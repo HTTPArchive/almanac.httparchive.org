@@ -224,7 +224,7 @@ Nogmaals, we kunnen speculeren waarom dat zo is, maar we hebben verdere analyse 
 
 We kunnen een directe correlatie waarnemen tussen netwerksnelheid en snelle FID, variërend van 73% op 2G tot 87% op 4G-netwerken. Snellere netwerken zullen helpen bij het sneller downloaden van scripts, waardoor het begin van het parseren wordt versneld en minder taken de hoofdthread blokkeren. Het is optimistisch om dergelijke resultaten te zien, vooral wanneer het percentage slecht beoordeelde site-ervaringen niet hoger is dan 5%.
 
-## First Contentful Paint
+## <span lang="en">First Contentful Paint</span> {first-contentful-paint}
 
 <span lang="en">First Contentful Paint</span> (FCP) meet de eerste keer dat de browser tekst, afbeeldingen, niet-wit canvas of SVG-inhoud weergeeft. FCP is een goede indicator van de waargenomen snelheid omdat het laat zien hoe lang mensen wachten om de eerste tekenen van het laden van een site te zien.
 
