@@ -66,7 +66,7 @@ In de vergelijking van Lighthouse 5 en Lighthouse 6 kunnen we direct zien hoe de
 
 Deze algemene veranderingen zijn niet onverwacht, gezien een groot aantal wijzigingen in het algoritme zelf.
 
-## Core Web Vitals: Largest Contentful Paint
+## <span lang="en"> Core Web Vitals: Largest Contentful Paint</span> {core-web-vitals-largest-contentful-paint}
 
 <span lang="en">Largest Contentful Paint</span> (LCP) is een op timing gebaseerde statistiek van een mijlpaal die de tijd rapporteert waarop het grootste [boven-de-vouw-element](https://web.dev/lcp/#what-elements-are-considered) was weergegeven.
 
