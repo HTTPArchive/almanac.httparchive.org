@@ -308,7 +308,7 @@ De keuze van [hostingprovider](https://ismyhostfastyet.com/) of [CDN](https://ww
 
 Als we naar de "offline" statistieken kijken, kunnen we afleiden dat een aanzienlijk aantal FCP-problemen ook _niet_ gecorreleerd zijn met het netwerktype. We zien geen significante winsten in deze categorie, wat we wel zouden als die bewering waar was. Het lijkt erop dat de weergave niet zozeer wordt vertraagd door het ophalen van JavaScript, maar wordt beïnvloed door het parseren en uitvoeren.
 
-## Time to First Byte
+## <span lang="en">Time to First Byte</span> {time-to-first-byte}
 
 <span lang="en">Time to First Byte</span> (TTFB) is de tijd die nodig is vanaf het initiële HTML-verzoek totdat de eerste byte terugkomt in de browser. Problemen met het snel verwerken van verzoeken kunnen snel overlopen in andere prestatiestatistieken, omdat ze niet alleen verven maar ook het ophalen van bronnen vertragen.
 
