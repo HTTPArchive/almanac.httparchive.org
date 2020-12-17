@@ -264,7 +264,7 @@ In de bovenstaande grafieken zijn de FCP-distributies uitgesplitst naar desktop 
 
 Als we FCP op mobiele apparaten op jaarbasis vergelijken, zien we minder goede ervaringen en meer gematigde en slechte ervaringen. 75% van de websites heeft een ondermaatse FCP. We kunnen speculeren dat dit hoge percentage van minder dan ideale FCP-metingen een bron van frustratie en verminderde gebruikerservaring is.
 
-Talrijke factoren kunnen verven vertragen, zoals serverlatentie (gemeten aan de hand van een handvol metrische gegevens, zoals [Time to First Byte (TTFB)](#time-to-first-byte-ttfb) en RTT), het blokkeren van JavaScript-verzoeken of ongepaste behandeling van aangepaste lettertypen om er maar een paar te noemen.
+Talrijke factoren kunnen verven vertragen, zoals serverlatentie (gemeten aan de hand van een handvol metrische gegevens, zoals [<span Lang="en">Time to First Byte</span> (TTFB)](#time-to-first-byte-ttfb) en RTT), het blokkeren van JavaScript-verzoeken of ongepaste behandeling van aangepaste lettertypen om er maar een paar te noemen.
 
 ### FCP op geografische locatie
 
