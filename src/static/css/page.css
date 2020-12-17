@@ -783,9 +783,25 @@ pre {
 
 /*
  * Automaticaly adds language after an anchor, depending on its URL
- * or the content of its `hreflang` attribute (should only be used when different lang) */
+ * or the content of its `hreflang` attribute (should only be
+ * used when different lang).
+ *
+
+ */
 [hreflang]::after {
   content: '(' attr(hreflang) ')';
+  vertical-align: super;
+  font-size: 0.6em;
+}
+
+/*
+ * Fallback for the links that are obviously in English
+ * but that haven’t implemented `hreflang`.
+*/
+html:not([lang="en"]) [href*="/en-US/"]::after,
+html:not([lang="en"]) [href*="/en/"]::after,
+html:not([lang="en"]) [href^="https://en."]::after {
+  content: '(en)';
   vertical-align: super;
   font-size: 0.6em;
 }
