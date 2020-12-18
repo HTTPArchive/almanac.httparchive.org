@@ -1601,4 +1601,3 @@ html:not([lang="en"]) [href^="https://en."]::after {
 html[lang="en"] [hreflang="en"]::after {
   content: '';
 }
-
