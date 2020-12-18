@@ -780,33 +780,3 @@ pre {
 .code-block code {
   width: 100%;
 }
-
-/*
- * Automatically adds language after an anchor if not same language
- *
- * Add for links that are obviously in English
-*/
-html:not([lang="en"]) [href*="/en-US/"]::after,
-html:not([lang="en"]) [href*="/en/"]::after,
-html:not([lang="en"]) [href^="https://en."]::after {
-  content: '(en)';
-  vertical-align: super;
-  font-size: 0.6em;
-}
-
-/*
- * Add links if an explicit `hreflang` attribute exists
- */
-[hreflang]::after {
-  content: '(' attr(hreflang) ')';
-  vertical-align: super;
-  font-size: 0.6em;
-}
-
-/*
- * Remove it for English in English pages
- * (allows us to add this to base content to make it easier for translators)
- */
-html[lang="en"] [hreflang="en"]::after {
-  content: '';
-}
