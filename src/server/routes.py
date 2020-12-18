@@ -3,6 +3,7 @@ from . import app, talisman
 from .helpers import render_template, convert_old_image_path, get_chapter_nextprev
 from .validate import validate
 from .config import get_config, DEFAULT_YEAR
+from . import stories_csp
 import random
 
 
@@ -80,6 +81,19 @@ def sitemap():
     resp = app.make_response(xml)
     resp.mimetype = "text/xml"
     return resp
+
+
+# Assume anything else with at least 3 directories is a chapter
+# so we can give lany and year specific error messages
+@app.route('/<lang>/<year>/stories/<story>')
+@validate
+@talisman(
+    content_security_policy=stories_csp.csp,
+    content_security_policy_nonce_in=['script-src']
+)
+def stories(lang, year, story):
+    delattr(request, 'csp_nonce')
+    return render_template('%s/%s/stories/%s/index.html' % (lang, year, story))
 
 
 # Assume anything else with at least 3 directories is a chapter
