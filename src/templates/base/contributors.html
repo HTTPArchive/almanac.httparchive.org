@@ -139,6 +139,8 @@
   margin-top: 5px;
   text-align: center;
   color: #757575;
+  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .contributor-team {
@@ -343,7 +345,7 @@
 
         <div class="contributor-teams">
           {% for id in contributor.teams | sort() %}
-          <span class="contributor-team">{% if loop.last and loop.length > 1 %} {{ self.and() }} {% endif %}</span><span class="contributor-team team-{{ id }}">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</span>{{ self.comma() if not loop.last and loop.length > 2 }}
+          {% if loop.last and loop.length > 1 %} {{ self.and() }} {% endif %}<span class="contributor-team team-{{ id }}">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</span>{{ self.comma() if not loop.last and loop.length > 2 }}
           {% endfor %}
         </div>
       </li>

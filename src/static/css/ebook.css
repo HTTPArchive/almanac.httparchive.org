@@ -167,15 +167,17 @@ tbody tr:nth-child(even) {
 .contributor-teams {
   line-height: 1;
   color: #757575;
+  font-size: 8px;
+  font-size: 0.8rem;
 }
 
 .contributor-team,
 .contributor-social,
 .contributor-social a,
 .contributor-social a:visited {
+  color: #757575;
   font-size: 8px;
   font-size: 0.8rem;
-  color: #757575;
 }
 
 .authors .social,
