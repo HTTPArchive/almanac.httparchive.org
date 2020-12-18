@@ -8,7 +8,7 @@ authors: [spanicker, mdiblasio]
 reviewers: [obto]
 analysts: [obto]
 translators: []
-spanicker_bio: Shubhie Panicker is the engineering lead for Chrome’s engagement in the web framework ecosystem, where she collaborates with open source tools, frameworks and communities. As a member of Chrome’s Web Platform team she has worked on web standards and chromium’s implementation for several web performance APIs. Prior to Chrome, she worked on infrastructure and web frameworks for Google products like Search, Google Photos etc.
+spanicker_bio: Shubhie Panicker is the engineering lead for Chrome's engagement in the web framework ecosystem, where she collaborates with open source tools, frameworks and communities. As a member of Chrome's Web Platform team she has worked on web standards and chromium's implementation for several web performance APIs. Prior to Chrome, she worked on infrastructure and web frameworks for Google products like Search, Google Photos etc.
 mdiblasio_bio: Michael DiBlasio is Web Ecosystems Consultant at Google. He focuses on helping to improve the health of the web ecosystem and to ensure the web is commercially viable for creators and partners. He works closely with strategic retailers to adopt new modern web technologies and improve the quality of existing web experiences. Prior to Google, Michael was a consultant at IBM.
 discuss: 2048
 results: https://docs.google.com/spreadsheets/d/1DGLY7UEWOlDL5_2dtS_j2eqMjiV-Rw5Fe2y6K6-ULvM/
@@ -29,16 +29,16 @@ Mobile Web has grown explosively in the last decade and is now the primary way m
 2020 has seen a big surge in [internet usage](https://www.nytimes.com/interactive/2020/04/07/technology/coronavirus-internet-use.html), on both mobile and desktop, due to the global pandemic. There has been an uptick in visits to news sites, ecommerce and social media sites -- as people across the globe adjusted to a new lifestyle with stay-at-home orders and social distancing. 2020 has been a significant year in history, for the web and for mobile usage.
 
 ### Data sources
-We’ve used a few different data sources in this chapter:
+We've used a few different data sources in this chapter:
 
 * [CrUX](./methodology#chrome-ux-report)
 * [HTTP archive](./methodology#dataset)
 * [Lighthouse](./methodology#lighthouse)
 
 Please visit the links above to learn more about the methodology and caveats with each data source.
-It is worth noting that HTTP Archive and Lighthouse data is limited to the data identified from websites’ home pages only, and not site-wide.
+It is worth noting that HTTP Archive and Lighthouse data is limited to the data identified from websites' home pages only, and not site-wide.
 
-In addition to the above, we also used a non-public Chrome data source in the section on Page loads in Chrome. For more information on this, read about [Chrome’s data collection API](https://chromium.googlesource.com/chromium/src/+/master/services/metrics/ukm_api.md).
+In addition to the above, we also used a non-public Chrome data source in the section on Page loads in Chrome. For more information on this, read about [Chrome's data collection API](https://chromium.googlesource.com/chromium/src/+/master/services/metrics/ukm_api.md).
 
 While this data is only collected from a subset of (opted in) Chrome users, it does not suffer from being limited to homepages. It is pseudonymous and consists of histograms and events.
 
@@ -88,7 +88,7 @@ Some takeaways:
 
 #### Traffic to a site from mobile vs. desktop (CrUX)
 *Could a website reason about their expected mobile vs. desktop traffic distribution?*
-It’s hard to predict, because the distribution between mobile and desktop will vary greatly based on the site Furthermore, it heavily depends on the industry category (eg. entertainment, shopping) and whether the site has native apps, and how aggressively native apps are promoted etc.
+It's hard to predict, because the distribution between mobile and desktop will vary greatly based on the site Furthermore, it heavily depends on the industry category (eg. entertainment, shopping) and whether the site has native apps, and how aggressively native apps are promoted etc.
 
 We looked at the CrUX dataset to assess Chrome traffic to sites from mobile devices vs desktop.
 
@@ -102,11 +102,11 @@ We looked at the CrUX dataset to assess Chrome traffic to sites from mobile devi
   )
 }}
 
-The distribution appears mobile heavy. A reason for that is that there are many (2 million+ in CrUX) sites which, while low in total traffic, only get traffic from mobile.  Mobile has a much longer “tail” as we saw in the previous section.
+The distribution appears mobile heavy. A reason for that is that there are many (2 million+ in CrUX) sites which, while low in total traffic, only get traffic from mobile.  Mobile has a much longer "tail" as we saw in the previous section.
 
 If we put all the websites with CrUX data, in a bucket and randomly choose one, 50% of the time the website you chose would be receiving 77.61% or more of their traffic from mobile (a slight decrease from 79.93% in 2019).
 
-Note that while this is an interesting observation, it’s hard to draw conclusions from CrUX about broad trends for mobile vs. desktop because:
+Note that while this is an interesting observation, it's hard to draw conclusions from CrUX about broad trends for mobile vs. desktop because:
 * CrUX is Chrome only data, and missing other browsers, including Safari - a major mobile browser.
 * even for Chrome, this is a subset from opted-in users, and impacted by opt-in rates and variance across platforms.
 
@@ -116,7 +116,7 @@ So what did we learn in terms of reasoning about mobile vs. desktop traffic to a
 Traffic distribution from mobile vs desktop is highly specific to a site and dependent on the industry category, and other factors such as presence of native apps.
 However odds are that for site visits in Chrome, a given website has traffic predominantly from mobile web, in spite of users spending more time on desktop. This is due to a much longer tail for mobile Chrome.
 
-While one cannot generalize the expected traffic distribution from mobile vs. desktop for individual websites, it is worth comparing your site’s distribution to that of the industry category ([some data is available here](https://www.perficient.com/insights/research-hub/mobile-vs-desktop-usage-study)).
+While one cannot generalize the expected traffic distribution from mobile vs. desktop for individual websites, it is worth comparing your site's distribution to that of the industry category ([some data is available here](https://www.perficient.com/insights/research-hub/mobile-vs-desktop-usage-study)).
 
 If your website is substantially different from the industry average, it could be worth digging into the reason, for instance poor loading performance could be one reason.
 
@@ -163,7 +163,7 @@ Loading performance is a vast topic, so we picked a couple of aspects to cover h
 A key aspect of the loading experience is how quickly the main content of a web page loads and is visible to users.
 This has been difficult to measure, in the past Google recommended performance metrics like [First Meaningful Paint](https://web.dev/first-meaningful-paint/) (FMP) to capture this, but it was hard to explain, and often unable to identify when the main content of the page was visible.
 
-Sometimes simpler is better. More recently it’s been found that a more accurate way to measure when the main content of a page is loaded is to simply look at when the largest element was rendered.
+Sometimes simpler is better. More recently it's been found that a more accurate way to measure when the main content of a page is loaded is to simply look at when the largest element was rendered.
 Largest Contentful Paint (LCP) is a timing-based metric that captures this -- the time at which the largest above-the-fold element was rendered.
 
 A good LCP score is 2.5s at p75. We found that the median LCP at p75 is 2.6s on mobile and 2.3s on desktop. Mobile web is especially susceptible to missing the mark on LCP.
@@ -202,7 +202,7 @@ A staggering 41.20% of pages have improperly sized images.
 The next phase of the user journey is engagement of users towards consuming content and fulfilling their intent.
 
 #### Shifting content
-Shifting content is detrimental to the experience of users engaging with content.  Specifically, content that shifts in position as resources load, impedes the user experience.  Since browsers download and display content as soon as they are able, it’s important to design your site to smooth over the user experience.
+Shifting content is detrimental to the experience of users engaging with content.  Specifically, content that shifts in position as resources load, impedes the user experience.  Since browsers download and display content as soon as they are able, it's important to design your site to smooth over the user experience.
 This is especially important for mobile web, as shifting content is more noticeable on small screens.
 
 {{ figure_markup(
@@ -225,7 +225,7 @@ The [most common causes of a poor CLS](https://web.dev/optimize-cls/) are:
 * Web Fonts causing FOIT/FOUT
 * Actions waiting for a network response before updating DOM
 
-It’s not trivial to identify these causes locally or in a development environment, as it is heavily dependent on how real users experience the page.  Third-party content or personalized content often doesn't behave the same in development as it does in production.
+It's not trivial to identify these causes locally or in a development environment, as it is heavily dependent on how real users experience the page.  Third-party content or personalized content often doesn't behave the same in development as it does in production.
 
 According to CrUX data, 60% of mobile sites and 54% of desktop sites, have a good CLS.
 
@@ -240,7 +240,7 @@ According to CrUX data, 60% of mobile sites and 54% of desktop sites, have a goo
 }}
 
 #### Design elements
-To engage users, it’s important to help them quickly find what they’re looking for, and fulfill their intention.
+To engage users, it's important to help them quickly find what they're looking for, and fulfill their intention.
 
 ##### Landing pages
 Simple design tweaks go a long way, for instance a clear call-to-action, and making the value proposition evident to the user, with a few words.
@@ -268,7 +268,7 @@ Consider the following examples from [5 lessons Eastpak learned from its mobile 
   )
 }}
 
-Here, a simple change from a button that’s hard to see, to a button with contrasting colors, improved click through rate on the main call to action by 20%.
+Here, a simple change from a button that's hard to see, to a button with contrasting colors, improved click through rate on the main call to action by 20%.
 
 {{ figure_markup(
   image="eastpak-12-ctr.png",
@@ -298,7 +298,7 @@ Lighthouse now [checks for color contrast](https://web.dev/color-contrast/), we 
 }}
 
 ##### Tap targets
-Mobile user experience is susceptible to “fat fingering”, as users engage with sites using their fingers -- a rather imprecise tool compared to using a mouse on a desktop.
+Mobile user experience is susceptible to "fat fingering", as users engage with sites using their fingers -- a rather imprecise tool compared to using a mouse on a desktop.
 
 Based on research, there are standards for minimum size of buttons and tap targets, as well as the minimum distance they should be spaced apart.
 [Lighthouse recommends](https://web.dev/tap-targets/) that targets should be no smaller than 48 px by 48 px, and no closer than 8 px apart.
@@ -348,9 +348,9 @@ At 60.10%, a majority of ecommerce landing pages are missing the presence of sea
 
 ##### A/B testing
 A/B testing is a crucial tool for making data driven decisions on matters of design and UX.
-A/B testing enables validating that the UX & design changes measurably improve intended metrics and don’t cause unexpected regressions.
+A/B testing enables validating that the UX & design changes measurably improve intended metrics and don't cause unexpected regressions.
 
-Here’s a sampling of design questions that can be A/B tested:
+Here's a sampling of design questions that can be A/B tested:
 would changing the color of a button increase the click through rate?
 would increasing the size of click targets increase the number of clicks?
 would replacing the search icon with a search box increase the number of searches completed?
@@ -358,14 +358,14 @@ would replacing the search icon with a search box increase the number of searche
 According to [thirdpartyweb.today](https://www.thirdpartyweb.today/), [Optimizely](https://www.optimizely.com) is the most popular third party product for A/B testing, it is used in over 20,000 pages.
 
 ### 3. Conversion
-While “conversion” may sound like a concept pertaining to e-commerce sites, a conversion can refer to a successful user transaction, such as signing up for a music streaming service, booking a rental home, writing a review on a travel site, etc.
+While "conversion" may sound like a concept pertaining to e-commerce sites, a conversion can refer to a successful user transaction, such as signing up for a music streaming service, booking a rental home, writing a review on a travel site, etc.
 
 According to Comscore Media Matrix, traffic from mobile devices account for 79.6% of time spent on US retail sites, but only 32.3% of US eCommerce sales.
 
-Compared to desktop, transacting on mobile devices is error-prone and tedious, as users must input personal information using small keyboards and screen sizes. Checkout flows should be simple and short to avoid user frustration, or worse, abandonment. 27% of users abandon checkout because of a “too long / complicated checkout process” ([source](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/) - 2018). 35% of users will abandon the checkout if a retailer does not offer guest checkout ([source](https://baymard.com/blog/ecommerce-checkout-usability-report-and-benchmark)).
+Compared to desktop, transacting on mobile devices is error-prone and tedious, as users must input personal information using small keyboards and screen sizes. Checkout flows should be simple and short to avoid user frustration, or worse, abandonment. 27% of users abandon checkout because of a "too long / complicated checkout process" ([source](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/) - 2018). 35% of users will abandon the checkout if a retailer does not offer guest checkout ([source](https://baymard.com/blog/ecommerce-checkout-usability-report-and-benchmark)).
 
 #### Form Semantics
-Users can more easily enter required information on mobile devices when their keyboard is optimized for the appropriate input type. For example, a numeric keyboard is useful for entering phone numbers, while keyboards displaying the “@” symbol are useful for entering email addresses. Sites can provide browser hints to display the most appropriate keys using the `type` attribute on `input` tags.
+Users can more easily enter required information on mobile devices when their keyboard is optimized for the appropriate input type. For example, a numeric keyboard is useful for entering phone numbers, while keyboards displaying the "@" symbol are useful for entering email addresses. Sites can provide browser hints to display the most appropriate keys using the `type` attribute on `input` tags.
 
 {{ figure_markup(
   image="sites-with-inputs-using-the-following-input-types.png",
@@ -382,7 +382,7 @@ Today, browsers can help populate the necessary user information to complete a t
 
 Auto-complete can be especially helpful in completing checkout flows that require a user to login and hence remember their password. According to a [study by HYPR](https://www.hypr.com/hypr-password-study-findings/) in 2019, 78% of users forgot and had to reset a password in the past 90 days.
 
-It’s also possible to eliminate some form fields altogether. The Credential Management and Payment Request APIs are standards-based browser APIs that provide a programmatic interface between sites and the browser for seamless sign-in and payments. Only .61% of eCommerce sites are using the Payment Request API and only 0.008% use the Credential Management API. It’s worth noting that adoption of the Payment Request API has increased compared to 2019, with a 6x increase in payment completion rate.
+It's also possible to eliminate some form fields altogether. The Credential Management and Payment Request APIs are standards-based browser APIs that provide a programmatic interface between sites and the browser for seamless sign-in and payments. Only .61% of eCommerce sites are using the Payment Request API and only 0.008% use the Credential Management API. It's worth noting that adoption of the Payment Request API has increased compared to 2019, with a 6x increase in payment completion rate.
 
 ### 4. Retention
 The last phase in the journey is user retention, this means re-engaging the user and making them a returning customer or a loyal visitor.
@@ -407,6 +407,6 @@ At the start of [the User Journey](#the-user-journey) we mentioned that mobile r
 
 Hopefully by now we have gained a better understanding to reason about this, for instance reasons may include ease of finding and consuming content, the ease of typing, form filling etc.
 
-For larger sites, it’s often not a question of whether to invest in mobile web OR desktop, as they both often complement each other.
+For larger sites, it's often not a question of whether to invest in mobile web OR desktop, as they both often complement each other.
 
 It helps to consider all the four phases of the user journey to understand the full spectrum of opportunities for engaging the user, as well as the risks and challenges in each phase of the journey.
