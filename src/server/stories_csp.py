@@ -19,7 +19,8 @@ csp = {
         '\'self\'',
         'discuss.httparchive.org',
         'www.google-analytics.com',
-        'www.googletagmanager.com'
+        'www.googletagmanager.com',
+        'cdn.ampproject.org'
     ],
     'img-src': [
         '\'self\'',

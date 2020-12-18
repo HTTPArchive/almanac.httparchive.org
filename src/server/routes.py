@@ -83,8 +83,7 @@ def sitemap():
     return resp
 
 
-# Assume anything else with at least 3 directories is a chapter
-# so we can give lany and year specific error messages
+# Stories requires it's own CSP
 @app.route('/<lang>/<year>/stories/<story>')
 @validate
 @talisman(
