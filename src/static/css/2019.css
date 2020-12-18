@@ -1571,3 +1571,33 @@ pre .support.value {
 pre .regexp {
   color: #009926;
 }
+
+/*
+ * Automatically adds language after an anchor if not same language
+ *
+ * Add for links that are obviously in English
+*/
+html:not([lang="en"]) main a[href*="/en-US/"]::after,
+html:not([lang="en"]) main a[href*="/en/"]::after,
+html:not([lang="en"]) main a[href^="https://en."]::after {
+  content: '(en)';
+  vertical-align: super;
+  font-size: 0.6em;
+}
+
+/*
+ * Add links if an explicit `hreflang` attribute exists
+ */
+main a[hreflang]::after {
+  content: '(' attr(hreflang) ')';
+  vertical-align: super;
+  font-size: 0.6em;
+}
+
+/*
+ * Remove it for English in English pages
+ * (allows us to add this to base content to make it easier for translators)
+ */
+html[lang="en"] main a[hreflang="en"]::after {
+  content: '';
+}

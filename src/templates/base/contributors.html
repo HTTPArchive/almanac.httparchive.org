@@ -139,6 +139,8 @@
   margin-top: 5px;
   text-align: center;
   color: #757575;
+  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .contributor-team {
@@ -343,7 +345,7 @@
 
         <div class="contributor-teams">
           {% for id in contributor.teams | sort() %}
-            <span class="contributor-team team-{{ id }}">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</span>{{ self.comma() if not loop.last }}
+          {% if loop.last and loop.length > 1 %} {{ self.and() }} {% endif %}<span class="contributor-team team-{{ id }}">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</span>{{ self.comma() if not loop.last and loop.length > 2 }}
           {% endfor %}
         </div>
       </li>
@@ -356,10 +358,10 @@
 {% block scripts %}
   {{ super() }}
   <script nonce="{{ csp_nonce() }}">
-  
+
   // Randomise the contributors on reload as server-side random will be cached at CDN.
   // Only run this if the page is reloaded for performance reasons.
-  
+
   // Support both newer PerformanceNavigationTiming API for newer browsers
   // and older Navigation Timing API for older browsers
   if ((performance.getEntriesByType("navigation")[0] && performance.getEntriesByType("navigation")[0].type === "reload")
@@ -465,7 +467,7 @@
               button.setAttribute('aria-pressed',false);
             }
         }
-        
+
         var filteredCount = getFilteredContributorCount();
         counter.innerText = filteredCount;
         if ( counter.innerText ===  totalContributors.innerText ) {
@@ -479,7 +481,7 @@
   }
 
   try {
-    loaded() 
+    loaded()
   } catch(e) {
     gtag('event', 'exception', {
       'description': e,
@@ -489,7 +491,7 @@
 
   var contributorsGrid = document.querySelector('.contributor-grid');
   contributorsGrid.setAttribute('data-rendered', true);
-    
+
   </script>
   <!-- add chapter.js to handle print mode and avoid duplicating code -->
   <script src="{{ get_versioned_filename('/static/js/chapter.js') }}" defer></script>
