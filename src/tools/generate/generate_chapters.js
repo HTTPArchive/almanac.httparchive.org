@@ -11,6 +11,7 @@ const { generate_featured_chapters, generate_chapter_featured_quote } = require(
 const { generate_sitemap } = require('./generate_sitemap');
 const { lazy_load_content } = require('./lazy_load_content');
 const { wrap_tables } = require('./wrap_tables');
+const { generate_table_figure_dropdowns } = require('./generate_table_figure_dropdowns');
 const { remove_unnecessary_markup } = require('./remove_unnecessary_markup');
 const { generate_ebooks } = require('./generate_ebooks');
 const { generate_js } = require('./generate_js');
@@ -143,6 +144,7 @@ const parse_file = async (markdown,chapter) => {
   body = generate_header_links(body);
   body = generate_figure_ids(body);
   body = wrap_tables(body);
+  body = generate_table_figure_dropdowns(body);
   body = lazy_load_content(body);
   body = remove_unnecessary_markup(body);
   const toc = generate_table_of_contents(body);
