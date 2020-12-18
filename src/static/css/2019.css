@@ -1577,9 +1577,9 @@ pre .regexp {
  *
  * Add for links that are obviously in English
 */
-html:not([lang="en"]) [href*="/en-US/"]::after,
-html:not([lang="en"]) [href*="/en/"]::after,
-html:not([lang="en"]) [href^="https://en."]::after {
+html:not([lang="en"]) main a[href*="/en-US/"]::after,
+html:not([lang="en"]) main a[href*="/en/"]::after,
+html:not([lang="en"]) main a[href^="https://en."]::after {
   content: '(en)';
   vertical-align: super;
   font-size: 0.6em;
@@ -1588,7 +1588,7 @@ html:not([lang="en"]) [href^="https://en."]::after {
 /*
  * Add links if an explicit `hreflang` attribute exists
  */
-[hreflang]::after {
+main a[hreflang]::after {
   content: '(' attr(hreflang) ')';
   vertical-align: super;
   font-size: 0.6em;
@@ -1598,6 +1598,6 @@ html:not([lang="en"]) [href^="https://en."]::after {
  * Remove it for English in English pages
  * (allows us to add this to base content to make it easier for translators)
  */
-html[lang="en"] [hreflang="en"]::after {
+html[lang="en"] main a[hreflang="en"]::after {
   content: '';
 }
