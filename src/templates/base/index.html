@@ -1,6 +1,6 @@
 {% extends "%s/%s/base.html" % (lang, year) %}
 
-{% block image_url %}https://almanac.httparchive.org{{ get_versioned_filename('/static/images/home-hero-' + year + '.png') }}{% endblock %}
+{% block image_url %}https://almanac.httparchive.org/static/images/home-hero-{{ year }}.png{% endblock %}
 {% block image_height %}600{% endblock %}
 {% block image_width %}1200{% endblock %}
 
