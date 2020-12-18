@@ -12,6 +12,8 @@ const update_links = (chapter) => {
   body = body.replace(/figure_markup\(/g,'figure_markup(\nebook=true,');
   // Add ebook=true to figure_link templates
   body = body.replace(/figure_link\(/g,'figure_link(\nebook=true,');
+  // Remove figure_dropdowns as not needed
+  body = body.replace(/{{\s*figure_dropdown.*?}}/gsm,'');
   // Replace current chapter header ids to full id (e.g. <h2 id="introduction"> -> <h2 id="javascript-introduction">)
   body = body.replace(/<h([0-6]) id="/g,'<h$1 id="' + chapter.metadata.chapter + '-');
   // Replace other chapter references with hash to anchor link (e.g. ./javascript#fig-1 -> #javascript-fig-1)
