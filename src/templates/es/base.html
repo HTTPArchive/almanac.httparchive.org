@@ -1,6 +1,6 @@
 {% extends "base/base.html" %}
 
-{% block description %}Web Almanac 2019 por HTTP Archive es un estado anual de la web que combina las estadísticas y tendencias sin procesar del HTTP Archive con la experiencia de la comunidad web{% endblock %}
+{% block description %}Web Almanac es un informe anual sobre el estado de la web que combina las estadísticas y tendencias sin procesar del HTTP Archive con la experiencia de la comunidad web.{% endblock %}
 
 {% block twitter_image_alt %}{{ year }} Web Almanac{% endblock %}
 
@@ -20,24 +20,24 @@
 
 {% block mission %}
 <p>
-Nuestra misión es combinar las estadísticas y tendencias sin procesar del HTTP Archive con la experiencia de la comunidad web. Web Almanac es un informe exhaustivo sobre el estado de la web, respaldado por datos reales y expertos web de confianza. Se compone de {{ supported_chapters | length }} capítulos que abarcan aspectos del contenido de la página, la experiencia del usuario, la publicación y la distribución.
+  Nuestra misión es combinar las estadísticas y tendencias sin procesar del HTTP Archive con la experiencia de la comunidad web. Web Almanac es un informe exhaustivo sobre el estado de la web, respaldado por datos reales y expertos web de confianza. Se compone de {{ supported_chapters | length }} capítulos que abarcan aspectos del contenido de la página, la experiencia del usuario, la publicación y la distribución.
 </p>
 {% endblock %}
 
 {% block read_last_years_almanac %}Lea el Web Almanac {{ year | int - 1 }}{% endblock %}
 
-{% block http_archive_link %}Página de Inicio HTTP Archive{% endblock %}
+{% block http_archive_link %}Página de inicio HTTP Archive{% endblock %}
 
 {% block page_navigation %}Navegación de página{% endblock %}
 
 {% block help_translate %}Ayuda a traducir{% endblock %}
-{% block translation_not_available %}en inglés - no disponible en español{% endblock %}
+{% block translation_not_available %}En inglés - no disponible en español{% endblock %}
 {% block language_switcher %}Selector de idioma{% endblock %}
 {% block year_switcher %}Selector de año{% endblock %}
-{% block table_of_contents_switcher %}Selector de Tabla de Contenidos{% endblock %}
+{% block table_of_contents_switcher %}Selector de tabla de contenidos{% endblock %}
 
 {% block home %}Página de inicio{% endblock %}
-{% block table_of_contents_title %}Tabla de Contenidos{% endblock %}
+{% block table_of_contents_title %}Tabla de contenidos{% endblock %}
 {% block contributors_title %}Contribuidores{% endblock %}
 {% block methodology_title %}Metodología{% endblock %}
 
@@ -47,8 +47,8 @@ Nuestra misión es combinar las estadísticas y tendencias sin procesar del HTTP
 {% block start_exploring %}Empieza a Explorar{% endblock %}
 
 {% block menu_title %}Menú de página{% endblock %}
-{% block open_the_menu %}Abre el menu{% endblock %}
-{% block close_the_menu %}Cierra el menú{% endblock %}
+{% block open_the_menu %}Abrir el menú{% endblock %}
+{% block close_the_menu %}Cerrar el menú{% endblock %}
 
 {% block index_nav_title %}Tabla de contenido del capítulo{% endblock %}
 {% block index_title %}Índice{% endblock %}
@@ -58,8 +58,8 @@ Nuestra misión es combinar las estadísticas y tendencias sin procesar del HTTP
 {% block and %}y{% endblock %}
 {% block comma %}, {% endblock %}
 
-{% block open %}Abre{% endblock %}
-{% block close %}Cierra{% endblock %}
+{% block open %}Abrir{% endblock %}
+{% block close %}Cerrar{% endblock %}
 
 {% macro figure_text(metadata, id) %}Figura {{ figure_id(metadata, id) }}.{% endmacro %}
 {% macro show_description(metadata, id) %}Mostrar descripción de la Figura {{ figure_id(metadata, id) }}{% endmacro %}
@@ -90,8 +90,8 @@ Nuestra misión es combinar las estadísticas y tendencias sin procesar del HTTP
 {% block copyright %}© Web Almanac. Con licencia <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
 {% block accessibility_statement %}Declaración de accesibilidad{% endblock %}
 
-{% block featured_chapter %}Capítulo Destacado{% endblock %}
-{% block featured_chapter_last_year %}Capítulo Destacado<br/>del Web Almanac {{ year|int -1 }}{% endblock %}
+{% block featured_chapter %}Capítulo destacado{% endblock %}
+{% block featured_chapter_last_year %}Capítulo destacado<br/>del Web Almanac {{ year|int -1 }}{% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
@@ -106,8 +106,8 @@ Web Almanac ha sido posible gracias al arduo trabajo de la comunidad web. {{ sel
 {% endblock %}
 {% block contributors_link %}Ver los contribuidores{% endblock %}
 
-{% block methodology_stat_1_title %}Sitios Web Analizados{% endblock %}
-{% block methodology_stat_2_title %}Información Procesada{% endblock %}
+{% block methodology_stat_1_title %}Sitios web analizados{% endblock %}
+{% block methodology_stat_2_title %}Información procesada{% endblock %}
 {% block methodology_link %}Conozca nuestra Metodología{% endblock %}
 
 {% block introduction %}Introducción{% endblock %}
@@ -119,17 +119,17 @@ Web Almanac ha sido posible gracias al arduo trabajo de la comunidad web. {{ sel
 {% block appendix %}Apéndice{% endblock %}
 {% block appendices %}Apéndices{% endblock %}
 
-{% block ebook_title %}Libro electronico{% endblock %}
-{% block ebook_download_short %}Libro electronico PDF ({{ ebook_size_in_mb }}MB){% endblock %}
-{% block ebook_download %}Download the entire {{ year }} Web Almanac in PDF format ({{ ebook_size_in_mb }}MB){% endblock %}
-{% block ebook_download_note %}(generated with <a href="https://www.princexml.com/">www.princexml.com</a>){% endblock %}
+{% block ebook_title %}Libro electrónico{% endblock %}
+{% block ebook_download_short %}Libro electrónico PDF ({{ ebook_size_in_mb }}MB){% endblock %}
+{% block ebook_download %}Descargue el Web Almanac {{ year }} completo en formato PDF ({{ ebook_size_in_mb }}MB){% endblock %}
+{% block ebook_download_note %}(Generado con <a href="https://www.princexml.com/">www.princexml.com</a>){% endblock %}
 
 {%
     set localizedPartTitles = {
-      "I. Page Content": "I. Contenido de las Páginas",
-      "II. User Experience": "II. Experiencia de Usuario",
-      "III. Content Publishing": "III. Publicación de Contenido",
-      "IV. Content Distribution": "IV. Distribución de Contenido"
+      "I. Page Content": "I. Contenido de las páginas",
+      "II. User Experience": "II. Experiencia de usuario",
+      "III. Content Publishing": "III. Publicación de contenido",
+      "IV. Content Distribution": "IV. Distribución de contenido"
     }
   %}
   {%
@@ -146,7 +146,7 @@ Web Almanac ha sido posible gracias al arduo trabajo de la comunidad web. {{ sel
       "seo": "SEO",
       "pwa": "PWA",
       "mobile-web": "Web Móvil",
-      "ecommerce": "E-commerce",
+      "ecommerce": "Comercio electrónico",
       "cms": "CMS",
       "compression": "Compresión",
       "caching": "Almacenamiento en Caché",
@@ -154,7 +154,7 @@ Web Almanac ha sido posible gracias al arduo trabajo de la comunidad web. {{ sel
       "page-weight": "Peso de las Páginas",
       "resource-hints": "Sugerencias de Recursos",
       "http2": "HTTP/2",
-      "privacy": "Intimidad",
+      "privacy": "Privacidad",
       "capabilities": "Capacidades",
       "jamstack": "Jamstack"
     }
@@ -167,7 +167,7 @@ Web Almanac ha sido posible gracias al arduo trabajo de la comunidad web. {{ sel
     "designers": "Diseñadores",
     "developers": "Desarrolladores",
     "editors": "Editores",
-    "leads": "Lider",
+    "leads": "Lideres",
     "reviewers": "Revisores",
     "translators": "Traductores",
     }
