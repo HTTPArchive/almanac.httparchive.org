@@ -669,7 +669,7 @@ Een manier om te zien hoe dit zich vertaalt in het beïnvloeden van de gebruiker
   sql_file="correlations.sql"
 ) }}
 
-De bovenstaande grafiek gebruikt de [Pearson correlatiecoëfficiënt](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient). Er is een lange, nogal complexe definitie van wat dat precies betekent, maar de kern is dat we zoeken naar de sterkte van de correlatie tussen twee verschillende getallen. Als we een coëfficiënt van 1,00 vinden, hebben we een directe positieve correlatie. Een correlatie van 0,00 zou geen verband tussen twee getallen aantonen. Alles onder de 0,00 duidt op een negatieve correlatie - met andere woorden, als het ene getal stijgt, neemt het andere af.
+De bovenstaande grafiek gebruikt de [Pearson correlatiecoëfficiënt](https://nl.wikipedia.org/wiki/Correlatieco%C3%ABffici%C3%ABnt). Er is een lange, nogal complexe definitie van wat dat precies betekent, maar de kern is dat we zoeken naar de sterkte van de correlatie tussen twee verschillende getallen. Als we een coëfficiënt van 1,00 vinden, hebben we een directe positieve correlatie. Een correlatie van 0,00 zou geen verband tussen twee getallen aantonen. Alles onder de 0,00 duidt op een negatieve correlatie - met andere woorden, als het ene getal stijgt, neemt het andere af.
 
 Ten eerste lijkt er niet echt een meetbare correlatie te bestaan tussen onze JavaScript-statistieken en de Lighthouse-score voor toegankelijkheid ("LH A11y" in de grafiek) hier. Dat staat in schril contrast met wat elders is gevonden, met name via [het jaarlijkse onderzoek van WebAim](https://webaim.org/projects/million/#frameworks).
 
