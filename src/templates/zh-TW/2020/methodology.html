@@ -1,0 +1,476 @@
+{% extends "base/methodology.html" %}
+
+{% block title %}統計方法 | Web Almanac精粹至HTTP Archive{% endblock %}
+
+{% block description %}敘述2020年Web Almanac網路年鑑如何融合：資料集和工具與專案如何運作。{% endblock %}
+
+{% block twitter_image_alt %}{{ year }}Web Almanac統計方法{% endblock %}
+
+{% block index %}
+      <ul>
+        <li><a href="#overview">總覽</a></li>
+        <li><a href="#dataset">關於資料集</a>
+          <ul>
+            <li><a href="#websites">網站</a></li>
+            <li><a href="#metrics">指標</a></li>
+          </ul>
+        </li>
+        <li><a href="#tools">工具</a>
+          <ul>
+            <li><a href="#webpagetest">WebPageTest</a></li>
+            <li><a href="#lighthouse">Lighthouse</a></li>
+            <li><a href="#wappalyzer">Wappalyzer</a></li>
+            <li><a href="#chrome-ux-report">Chrome UX Report</a></li>
+            <li><a href="#third-party-web">Third Party Web</a></li>
+            <li><a href="#rework-css">Rework CSS</a>
+              <ul>
+                <li><a href="#rework-utils">Rework Utils</a></li>
+              </ul>
+            </li>
+            <li><a href="#parsel">Parsel</a></li>
+          </ul>
+        </li>
+        <li><a href="#process">分析流程</a>
+          <ul>
+            <li><a href="#planning">規劃</a></li>
+            <li><a href="#analysis">分析</a></li>
+            <li><a href="#interpretation">說明</a></li>
+          </ul>
+        </li>
+        <li><a href="#looking-ahead">展望未來</a></li>
+      </ul>
+{% endblock %}
+
+{% block main_content %}
+    <section>
+      <!-- Show large image for large screens and high density screens and use webp when supported -->
+      <picture>
+          <source media="(min-width: 327px)" type="image/webp" srcset="/static/images/methodology-banner.webp" />
+          <source media="(min-width: 327px)" type="image/jpeg" srcset="/static/images/methodology-banner.png" />
+          <source type="image/webp" srcset="/static/images/methodology-banner.webp 2x" />
+          <source type="image/jpeg" srcset="/static/images/methodology-banner.png 2x" />
+          <source type="image/webp" srcset="/static/images/methodology-banner-sm.webp" />
+          <source type="image/jpeg" srcset="/static/images/methodology-banner-sm.png" />
+          <img src="/static/images/methodology-banner.png" class="content-banner" alt="" width="1200" height="984" loading="eager" />
+        </picture>
+        <h2 id="overview"><a href="#overview" class="anchor-link">Overview</a></h2>
+
+        <p>
+          Web Almanac網路年鑑是由<a href="https://httparchive.org">HTTP Archive</a>組織的專案。HTTP Archive在2010年由Steve Souders創辦，任務目標為追蹤網路如何建構。它按月評估數以百萬的網頁並將TB位元數據置<a href="https://httparchive.org/faq#how-do-i-use-bigquery-to-write-custom-queries-over-the-data">BigQuery</a>供大眾分析。
+        </p>
+
+        <p>
+          Web Almanac網路年鑑的任務是將網路狀態成為公開的年度知識庫。我們的目標是透過主題專家的洞察語意讓網路社群無障礙的進入HTTP Archive資料庫。
+        </p> 
+
+        <p>
+          Web Almanac網路年鑑2020年版共有四個部分：內文、體驗、發佈和傳遞。在這當中，每個章節都透過不同角度探索相關主題，例如第二部分探索使用者經驗在效能、隱私、無障礙網頁的各種角度。
+        </p>
+    </section>
+
+    <section>
+        <h2 id="dataset"><a href="#dataset" class="anchor-link">關於資料集</a></h2>
+
+        <p>
+          HTTP Archive資料集每月持續更新數據，除各章節另有說明外，2020年版所有指標都來自2020年8月。這些結果<a href="https://github.com/HTTPArchive/httparchive.org/blob/master/docs/gettingstarted_bigquery.md">可以透過設置</a>BigQuery公共資料集的相關日期探索查詢，例如<code>2020_08_01</code>。
+        </p>
+
+        <p>
+          Web Almanac網路年鑑列示的指標可以透過執行BigQuery公共資料集後重現。你可以瀏覽所有章節使用的查詢在<a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2020">GitHub程式庫</a>。
+        </p>
+
+        <p class="note">
+          備註，這些查詢需要相當大的資源，這可能比較<a href="https://cloud.google.com/bigquery/pricing">昂貴</a>，如果你自行查詢，BigQuery的帳單是以TB計價。這篇文章可以幫助你控管花費，請閱讀Tim Kadlec說明<a href="https://timkadlec.com/remembers/2019-12-10-using-bigquery-without-breaking-the-bank/">，如何不破產的使用BigQuery</a>。
+        </p>
+
+        <p>
+          例如，你可以瞭解JavaScript在桌機版與手機版網頁運行的中位數，請查閱<a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2019/01_JavaScript/01_01b.sql">01_01b.sql</a>：
+        </p>
+
+        <div class="code-block floating-card">
+          {# To generate this markup temporarily add a ```sql code block to a chapter and generate that chapter and you'll get the HTML #}
+          <pre><code class="sql language-sql"><span class="comment">#standardSQL</span>
+<span class="comment"># 01_01b: Distribution of JS bytes by client</span>
+<span class="keyword">SELECT</span>
+  percentile,
+  _TABLE_SUFFIX <span class="keyword">AS</span> client,
+  <span class="function call">APPROX_QUANTILES</span>(<span class="function call">ROUND</span>(bytesJs / <span class="constant numeric">1024</span>, <span class="constant numeric">2</span>), <span class="constant numeric">1000</span>)[<span class="function call">OFFSET</span>(percentile <span class="keyword operator">*</span> <span class="constant numeric">10</span>)] <span class="keyword">AS</span> js_kbytes
+<span class="keyword">FROM</span>
+  <span class="string">`httparchive.summary_pages.2019_07_01_*`</span>,
+  <span class="function call">UNNEST</span>([<span class="constant numeric">10</span>, <span class="constant numeric">25</span>, <span class="constant numeric">50</span>, <span class="constant numeric">75</span>, <span class="constant numeric">90</span>]) <span class="keyword">AS</span> percentile
+<span class="keyword">GROUP</span> <span class="keyword">BY</span>
+  percentile,
+  client
+<span class="keyword">ORDER</span> <span class="keyword">BY</span>
+  percentile,
+  client</code></pre>
+        </div>
+
+        <p>
+          每個指標的結果可以在各個章節對應的電子表格中公開查詢，例如<a href="https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/edit?usp=sharing">JavaScript結果</a>。滑動到各個章節的底部，你可以看到查詢、結果、和讀者評論的連結按鈕。
+        </p>
+    </section>
+
+    <section>
+        <h3 id="websites"><a href="#websites" class="anchor-link">網站</a></h3>
+
+        <p>
+          資料集共有7,546,709個網站，其中6,347,919個是手機版網站與5,593,642個是桌機版網站。大多數的網站都同時是桌機版和手機版的子集合。
+        </p>
+
+        <p>
+          HTTP Archive從<a href="#chrome-ux-report">Chrome UX Report</a>獲取網站的URLs。Chrome UX Report是Google的公共資料集，集合Chrome活躍使用者訪問數以百萬網站的使用者經驗，這些網站列表反映著最新的真實網站使用狀況。Chrome UX Report資料集透過一個因子維數，取得所有桌機版與手機版使用者訪問的網站。
+        </p>
+
+        <p>
+          Web Almanac網路年鑑爬取2020年8月HTTP Archive的資料集，網站列表則是透過最近期202006的Chrome UX Report，在2020年7月14日發布，擷取6月分Chrome使用者瀏覽的網站。
+        </p>
+
+        <p>
+          2020年被分析的網站有20-30%的增長，相較於<a href="../2019/methodology#websites">2019年Web Almanac網路年鑑</a>。你可閱讀這篇文章，<a href="{{ url_for('contributors', year=year, lang=lang, _anchor='paulcalvano') }}">Paul Calvano</a>的分析：<a href="https://paulcalvano.com/2020-09-29-growth-of-the-web-in-2020/">2020年網路使用的增長</a>。
+        </p>
+
+        <p>
+          礙於資源的限制，HTTP Archive只能測試Chrome UX report每個網站的單一網頁，協調平衡這點後我們只包括網站的主頁。這結果將導致些許偏差，因為一個主頁不能絕對地代表一整個網站。
+        </p>
+
+        <p>
+          HTTP Archive也被考慮成一個測試工具，它是透過數據中心測試網站，並不是從真實世界蒐集使用者經驗。所有的測試都基於一個處於登出狀態的空白快取主頁，這可能不能真實反映使用者是如何訪問它們。
+        </p>
+    </section>
+
+    <section>
+      <h3 id="metrics"><a href="#metrics" class="anchor-link">指標</a></h3>
+
+      <p>
+        HTTP Archive蒐集數千個指標用來衡量網路是如何被建構。它包括基本的指標，像是網頁使用的位元數，網頁加載是否透過HTTPS，個別的請求，標頭反應。這些主要的指標都是由<a href="#webpagetest">WebPageTest</a>提供，它為每個網站提供測試路徑。
+      </p>
+
+      <p>
+        其他的測試工具被用來測試更深入網頁的指標，例如，<a href="#lighthouse">Lighthouse</a>被用來檢查網頁並針對質量分析，像是無障礙性訪問和SEO評估。下面的<a href="#tools">工具</a>章節會有更多詳細的說明。
+      </p>
+
+      <p>
+        為填補實驗資料集的固有限制，Web Almanac網路年鑑在使用者經驗的指標評估，也確定使用<a href="#chrome-ux-report">Chrome UX Report</a>，特別是網頁性能的方面。
+      </p>
+
+      <p>
+        某些指標可能是無法完全衡量的，例如，我們可能沒有辦法絕對地偵測建構網站的工具，如果網站使用create-react-app建構，我可以說這是使用Reaat框架，但無法絕對地說是哪種特定工具被使用，除非這些工具在網站程式碼中留下可被偵測的軌跡，否則我們不能衡量它們絕對地使用情形。
+      </p>
+
+      <p>
+        其他的指標是可以被絕對地衡量，但是可能具挑戰性或低可靠性，例如，網路的各種設計可以被視覺化表達，但卻難以量化，像是網頁是否具有崁入情感式的對話框。
+      </p>
+    </section>
+
+    <section>
+      <h2 id="tools"><a href="#tools" class="anchor-link">工具</a></h2>
+
+      <p>
+        Web Almanac網路年鑑透過下列開源工具的幫助而創刊。
+      </p>
+    </section>
+
+    <section>
+      <h3 id="webpagetest"><a href="#webpagetest" class="anchor-link">WebPageTest</a></h3>
+
+      <p>
+        <a href="https://www.webpagetest.org/">WebPageTest</a>是傑出的網路性能測試的工具，且是HTTP Archive的骨架。我們在私人測試代理下，使用<a href="https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Private%20Instances/README.md">私有實例</a>透過真實的瀏覽器測試每個網頁。桌機版和手機版網站在不同的配置下進行測試：
+      </p>
+      <div class="table-wrap"><div class="table-wrap-container">
+      <table>
+        <thead>
+          <tr>
+              <th>配置</th>
+              <th>桌機</th>
+              <th>手機</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>設備</td>
+            <td>Linux VM</td>
+            <td>模擬Moto G4</td>
+          </tr>
+
+          <tr>
+            <td>使用者代理</td>
+            <td>
+              Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36 PTST/200805.230825
+            </td>
+            <td>
+              Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4) Build/MPJ24.139-64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.146 Mobile Safari/537.36 PTST/200815.130813
+            </td>
+          </tr>
+
+          <tr>
+            <td>位置</td>
+            <td>
+              Redwood City, California, USA<br>
+              The Dalles, Oregon, USA
+            </td>
+            <td>
+              Redwood City, California, USA<br>
+              The Dalles, Oregon, USA
+            </td>
+          </tr>
+
+          <tr>
+            <td>連接</td>
+            <td>Cable (5/1 Mbps 28ms RTT)</td>
+            <td>3G (1.600/0.768 Mbps 300ms RTT)</td>
+          </tr>
+
+          <tr>
+            <td>Viewport</td>
+            <td>1024 x 768px</td>
+            <td>512 x 360px</td>
+          </tr>
+        </tbody>
+      </table>
+      </div></div>
+
+      <p>
+        桌機版網站是在Linux虛擬機的Chrome環境中運行，網路速度相當於有線連接。
+      </p>
+
+      <p>
+        手機版網站在模擬的Moto G4設備上運行，網路速度相當於3G連結。備註，模擬的手機版的使用者代理標示為Chrome 65，但實際的瀏覽器是Chrome 84。
+      </p>
+
+      <p>
+        測試運行的位置有二個站點：California 和 Oregon USA。HTTP Archive維護它自己的測試代理硬體，位置在California的<a href="https://archive.org">Internet Archive</a>數據中心。另外一個測試代理是依據需要擴增，在<a href="https://cloud.google.com/compute/docs/regions-zones/#locations">Google Cloud Platform</a>位於Oregon的us-west-1。
+      </p>
+
+      <p>
+        HTTP Archive在WebPageTest的私有實例保持與最新的公共版本同步，且增加使用<a href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">自訂指標</a>。在測試的尾聲透過片段的JavaScript評估每個網站。感謝許多數據分析的<a href="https://github.com/HTTPArchive/legacy.httparchive.org/commits/master/custom_metrics">貢獻者</a>，特別是<a href="https://github.com/HTTPArchive/legacy.httparchive.org/pulls?q=is%3Apr+author%3ATiggerito+sort%3Acreated-asc">熱血拋顱</a>的<a href="{{ url_for('contributors', year=year, lang=lang, _anchor='Tiggerito') }}">Tony McCreath</a>。Web Almanac網路年鑑2020年版致力拓展HTTP Archive的基礎測試架構功能，揮灑超過三千行的新程式碼。
+      </p>
+
+      <p>
+        每個測試的結果都保存為<a href="https://en.wikipedia.org/wiki/HAR_(file_format)">HAR檔案</a>，這是JSON格式儲存的檔案，包括網頁的位元數據。
+      </p>
+    </section>
+
+    <section>
+      <h3 id="lighthouse"><a href="#lighthouse" class="anchor-link">Lighthouse</a></h3>
+
+      <p>
+        <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a>是針對網站品質評估的自動化工具，由Google創建。它檢查網頁是否阻礙使用者訪問資源的路徑，像是網頁是否有未優化的圖像和不可進入的內文。
+      </p>
+
+      <p>
+        HTTP Archive在所有手機版的網頁上運行最新的版本—但桌機版的網頁不被包括在內，因為資源的限制。在2020年8月的爬取，HTTP Archive使用<a href="https://github.com/GoogleChrome/lighthouse/releases/tag/v6.2.0">6.2.0</a>版本的Lighthouse。
+      </p>
+
+      <p>
+        Lighthouse在<a href="#webpagetest">WebPageTest</a>運行自己獨特的測試，但它擁有自己的配置概要：
+      </p>
+      <div class="table-wrap"><div class="table-wrap-container">
+      <table>
+        <thead>
+          <tr>
+            <th>配置</th>
+            <th>數值</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CPU降速</td>
+            <td>1x/4x</td>
+          </tr>
+          <tr>
+            <td>下載速率</td>
+            <td>1.6 Mbps</td>
+          </tr>
+          <tr>
+            <td>上傳速率</td>
+            <td>0.768 Mbps</td>
+          </tr>
+          <tr>
+            <td>RTT往返時間</td>
+            <td>150 ms</td>
+          </tr>
+        </tbody>
+      </table>
+      </div></div>
+
+      <p>
+        你可以瞭解更多關於Lighthouse和在HTTP Archive的檢測評估，請參考<a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse開發者的文件</a>。
+      </p>
+    </section>
+
+    <section>
+      <h3 id="wappalyzer"><a href="#wappalyzer" class="anchor-link">Wappalyzer</a></h3>
+
+      <p>
+        <a href="https://www.wappalyzer.com/">Wappalyzer</a>是偵測網頁所使用的技術工具。它有<a href="https://www.wappalyzer.com/technologies">64個類別</a>可以被用來偵測各種技術種類。從JavaScript框架到CMS平台，甚至是加密貨幣挖礦，被支持的科技超過一千四百多種。
+      </p>
+
+      <p>
+        HTTP Archive在所有網頁運行最新版的Wappalyzer。在2020年8月Web Almanac網路年鑑使用<a href="https://github.com/AliasIO/Wappalyzer/releases/tag/v6.2.0">6.2.0版本</a>的Wappalyzer。
+      </p>
+
+      <p>
+        Wappalyzer帶給許多章節動力，它分析開發者工具的受歡迎程度，像是WordPress、Bootstrap、和jQuery，例如，<a href="{{ url_for('chapter', year=year, lang=lang, chapter='ecommerce') }}">電商</a>和<a href="{{ url_for('chapter', year=year, lang=lang, chapter='cms') }}">CMS</a>章節，它們非常仰賴Wappalyzer在偵測<a href="https://www.wappalyzer.com/categories/ecommerce">電商</a>和<a href="https://www.wappalyzer.com/categories/cms">CMS</a>技術的類別。
+      </p>
+
+      <p>
+        所有的偵測工具，包括Wappalyzer都不可避免有其侷限。它們結果的有效性總是攸關於其偵測機制的準確度。Web Almanac網路年鑑會在使用Wappalyzer的各個章節註釋，但基於特定的原因，分析可能沒有絕對地精準。
+      </p>
+    </section>
+
+    <section>
+      <h3 id="chrome-ux-report"><a href="#chrome-ux-report" class="anchor-link">Chrome UX Report</a></h3>
+
+      <p>
+        <a href="https://developers.google.com/web/tools/chrome-user-experience-report">Chrome UX Report</a>是真實Chrome使用者經驗的公共數據集，根據網站的來源進行分類，例如<code>https://www.example.com</code>。資料集包括使用者經驗指標的分佈情形，像是繪製、下載、交互和布局穩定性。除了按月分組外，還會按維度劃分，像是國家地理位置、形式類型(桌機、手機、平板電腦)和有效連結類型(4G、3G等)。
+      </p>
+
+      <p>
+        Web Almanac網路年鑑指標參考Chrome UX Report中真實使用者經驗的數據，使用2020年8月資料集。
+      </p>
+
+      <p>
+        你可以學習更多關於資料集的細節，在<a href="https://web.dev/chrome-ux-report-bigquery">BigQuery使用Chrome UX Report</a>的<a href="https://web.dev/">web.dev</a>寶典。
+      </p>
+    </section>
+
+    <section>
+      <h3 id="third-party-web"><a href="#third-party-web" class="anchor-link">Third Party Web</a></h3>
+
+      <p>
+        <a href="https://www.thirdpartyweb.today/">Third Party Web</a>是一個研究專案，由<a href="{{ url_for('contributors', year=year, lang=lang, _anchor='patrickhulce') }}">Patrick Hulce</a>創建，<a href="{{ url_for('chapter', year=2019, lang=lang, chapter='third-parties') }}">2019年Third Parties</a>章節的作者，使用HTTP Archive和Lighthouse數據辨識和分析第三方資源對網路的影響。
+      </p>
+
+      <p>
+        如果網域名稱出現至少50個獨特的頁面，則會被考慮是由第三方提供者。這個專案還將供應商按服務類型區分，像是廣告、分析和社交的類型。
+      </p>
+
+      <p>
+        Web Almanac網路年鑑的部分章節使用這個資料集的網域名稱和類型來瞭解第三方的影響力。
+      </p>
+    </section>
+
+    <section>
+      <h3 id="rework-css"><a href="#rework-css" class="anchor-link">Rework CSS</a></h3>
+
+      <p
+        <a href="https://github.com/reworkcss/css">Rework CSS</a>是基於JavaScript的CSS解析器。它使用整個樣式表生成JSON解碼的物件，用來區別各個樣式規則、選擇器、程式碼和數值。
+      </p>
+
+      <p>
+        這個特殊用途的工具顯著提高許多指標的準確性，在<a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a>章節，這讓分析工作順暢進行，透過解析和查詢CSS在每個頁面的外部樣式表和行內樣式區塊。相關細節請閱讀<a href="https://discuss.httparchive.org/t/analyzing-stylesheets-with-a-js-based-parser/1683">這篇</a>，說明HTTP Archive如何透過BigQuery整合資料集的更多資訊。
+      </p>
+    </section>
+
+    <section>
+      <h4 id="rework-utils"><a href="#rework-utils" class="anchor-link">Rework Utils</a></h4>
+
+      <p>
+        今年<a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a>章節更詳細研究CSS的狀態，由<a href="{{ url_for('contributors', year=year, lang=lang, _anchor='LeaVerou') }}">Lea Verou</a>主導，透過<a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2020/01_CSS">100+個查詢</a>運行。這個觀點的查詢數量是2019年的2.5倍。為了讓這個規模的分析可行，Lea開源<a href="https://github.com/LeaVerou/rework-utils">Rework Utils</a>。CSS大部分的章節都來自這些程式碼腳本，這帶領JSON資料從Rework更進階，讓CSS更容易被分析洞察。
+      </p>
+    </section>
+
+    <section>
+        <h4 id="parsel"><a href="#parsel" class="anchor-link">Parsel</a></h4>
+
+        <p>
+            <a href="https://projects.verou.me/parsel/">Parsel</a>是CSS解析的選擇器和特定的計算器，由<a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a>章節的主導者<a href="{{ url_for('contributors', year=year, lang=lang, _anchor='LeaVerou') }}">Lea Verou</a>撰寫，並開源為獨立的資料庫，且廣泛應用於所有CSS相關的指標。
+        </p>
+    </section>
+
+    <section>
+      <h2 id="process"><a href="#process" class="anchor-link">分析程序</a></h2>
+
+      <p>
+        Web Almanac網路年鑑攜手超過一百位網路社群的<a href="{{ url_for('contributors', year=year, lang=lang) }}">貢獻者</a>，共同籌備壹年的時間在策劃和執行。這個章節描述為何Web Almanac選擇這些章節，這些指標如何查詢，且如何詮釋它們。
+      </p>
+    </section>
+
+    <section>
+      <h3 id="planning"><a href="#planning" class="anchor-link">規劃</a></h3>
+
+      <p>
+        2020年Web Almanac網路年鑑在<a href="https://twitter.com/rick_viscomi/status/1273135952848977920">2020年6月</a>啟動，因為COVID-19和抗議集會的動盪，讓它晚於2019年預定的時程表。2020年的這些動盪事件衝擊整個流程，且也重壓著貢獻者，讓我們緊咬著超載的扁擔快節拍地前進。
+      </p>
+
+      <p>
+        正如我們在<a href="https://almanac.httparchive.org/en/2019/methodology#brainstorming">去年統計方法</a>的陳述：
+      </p>
+
+      <blockquote>
+        Web Almanac網路年鑑訂定一個明確目標計畫，期望鼓勵並包容更多異質聲浪和少數代表者擔任作者和同伴審稿者的腳色。
+      </blockquote>
+
+      <p>
+        為此，今年我們在評選作者的方式有著系統性的改變：
+      </p>
+
+      <ul>
+        <li>
+          致力傾聽不同聲浪，我們並不特別地鼓勵前作者再度撰寫原章節。
+        </li>
+        <li>
+          所有2020年作者的擁護者都被特別要求，避免提名那些看法和想法同質的人選。
+        </li>
+        <li>
+          2019年的作者大部分都是Google的員工，今年我們試著從廣泛的網路社群中獲得平衡的觀點。Web Almanac網路年鑑中的聲音是反映著社群本身的音浪，並不會偏頗任何特定對象。
+        </li>
+        <li>
+          專案主導者負責審查所有作者的提名，並致力挑選能夠帶來新觀點和擴大社群中微量聲音的作者。
+        </li>
+      </ul>
+
+      <p>
+        我們期望能夠在未來重複這些流程，並確保Web Almanac網路年鑑是具多樣化且包容性的專案，且貢獻者來自各種不同的背景。
+      </p>
+
+      <p>
+        最後，在2020年7月，經過數次的腦力激盪與提名後，22個章節拍板定案。我們為每個章節召集內容團隊，包括作者、審閱者和分析者。
+      </p>
+    </section>
+
+    <section>
+      <h3 id="analysis"><a href="#analysis" class="anchor-link">分析</a></h3>
+
+      <p>
+        2020年7月和8月，在指標和章節的列表拍板後，數據分析師對指標的可行性進行篩選。在某些情況，<a href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">自訂指標</a>已經產生，且用來填補分析的能力。
+      </p>
+
+      <p>
+        2020年8月，HTTP Archive的資料管道爬取數百萬個網站，蒐集Web Almanac網路年鑑需要使用的數據。
+      </p>
+
+      <p>
+        資料分析師開始撰寫查詢並執行每個指標的結果。整體來說，這數百個查詢都是由人工親手撰寫累積！你可以在我們GitHub開源的資料庫<a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2020">query repository</a>目錄下瀏覽所有的程式碼。
+      </p>
+    </section>
+
+    <section>
+      <h3 id=interpretation"interpretation"><a href="#interpretation" class="anchor-link">說明</a></h3>
+
+      <p>
+        作者與分析者共同解釋正確地結果並得出適當的結論，並透過統計數據繪染支持網路狀態的架構來撰稿。審稿者與作者並肩合作，確保分析在技術的正確性。
+      </p>
+
+      <p>
+        網路開發者和分析者聯手將資料視覺化地崁入章節，目的是讓讀者能更容易理解結果，並簡化某些視覺化的表達，讓結果更單純清晰，例如，僅顯示重點式的百分比，進而取代整個完整的散佈圖。除另有說明，所有分佈都是用百分位數彙總，特別是中位數(第50個百分位數)，並非平均值。
+      </p>
+
+      <p>
+        最後，編輯者會微調文法錯誤並確保閱讀體驗的一致性。
+      </p>
+    </section>
+
+    <section>
+      <h2 id="looking-ahead"><a href="#looking-ahead" class="anchor-link">展望未來</a></h2>
+
+      <p>
+        2020年Web Almanac網路年鑑是第二版本，我們希望繼續成為網路社群的年度傳統，並承諾檢討改善。感謝眾多位<a href="{{ url_for('contributors', year=year, lang=lang) }}">貢獻者</a>熱血拋顱的挹注養分，期望這讓更多的工作能發揮加乘效果，讓未來版本更簡化。
+      </p>
+
+      <p>
+        如果你對貢獻Web Almanac網路年鑑2021年版有興趣，歡迎填寫<a href="https://forms.gle/VRBFegGAP7d99Bhp7">興趣表格</a>。讓我們一起並肩攜手，追蹤網路的點點滴滴吧！
+      </p>
+    </section>
+{% endblock main_content %}
