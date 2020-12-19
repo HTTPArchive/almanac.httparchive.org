@@ -277,7 +277,7 @@ Een van de audits in [Lighthouse](./methodology#lighthouse) controleert op niet-
 
 {{ figure_markup(
   image="lighthouse-unminified-js.png",
-  alt="Verdeling van niet-verkleinde JavaScript Lighthouse-auditscores per mobiele pagina.", caption='Verdeling van niet-verkleinde JavaScript Lighthouse-auditscores per mobiele pagina.',
+  caption="Verdeling van niet-verkleinde JavaScript Lighthouse-auditscores per mobiele pagina.",
   description="Staafdiagram toont 0% van de mobiele pagina's die niet-verkleinde JavaScript krijgen <span lang=\"en\">Lighthouse</span>-auditscores onder de 0,25, 4% van de pagina's met een score tussen 0,25 en 0,5, 10% van de pagina's tussen 0,5 en 0,75, 8% van de pagina's tussen 0,75 en 0,9 en 77% van de pagina's tussen 0.9 en 1.0.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=158284816&format=interactive",
   sheets_gid="362705605",
@@ -502,7 +502,7 @@ Als we kijken naar de veel voorkomende combinaties die we in de productie zien, 
 
   <figcaption>
     {{ figure_link(
-      caption='De meest populaire combinaties van bibliotheken en frameworks op mobiele pagina\'s.',
+      caption="De meest populaire combinaties van bibliotheken en frameworks op mobiele pagina's.",
       sheets_gid="795160444",
       sql_file="frameworks_libraries_combos.sql"
     ) }}
