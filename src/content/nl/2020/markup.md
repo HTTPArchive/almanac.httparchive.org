@@ -1,89 +1,89 @@
 ---
 part_number: I
 chapter_number: 3
-title: Markup
-description: Markup chapter of the 2020 Web Almanac covering general observations, the use of elements and attributes, as well as trivia and trends.
+title: Opmaak
+description: Opmaakhoofdstuk van de Web Almanac 2020 met algemene observaties, het gebruik van elementen en attributen, maar ook trivia en trends.
 authors: [j9t, catalinred, iandevlin]
-j9t_bio: Jens Oliver Meiert is a web developer and author (<a href="https://leanpub.com/css-optimization-basics"><cite>CSS Optimization Basics</cite></a>, <a href="https://leanpub.com/web-development-glossary"><cite>The Web Development Glossary</cite></a>), who works as an engineering manager at <a href="https://www.jimdo.com/">Jimdo</a>. He's an expert on web development where he specializes in HTML and CSS optimization. Jens contributes to technical standards and regularly writes about his work and research, particularly on his website, <a href="https://meiert.com/en/">meiert.com</a>.
-catalinred_bio: Catalin Rosu is a front-end developer at <a href="https://www.caphyon.com/">Caphyon</a> and currently works on <a href="https://www.wattspeed.com/">Wattspeed</a>. He has a passion for web standards and a keen eye for great UX & UI, things he <a href="https://twitter.com/catalinred">tweets</a> and writes about on <a href="https://catalin.red/">his website</a>.
-iandevlin_bio: Ian Devlin is a web developer who advocates for good, semantic HTML, as well as accessibility. He once wrote a book about <a href="https://www.peachpit.com/store/html5-multimedia-develop-and-design-9780321793935">HTML5 Multimedia</a>, and sporadically writes on <a href="https://iandevlin.com/">his website</a> about the Web and other things. He currently works as a Senior Frontend Engineer at <a href="https://www.real-digital.de/">real.digital</a> in Germany.
+j9t_bio: Jens Oliver Meiert is een webontwikkelaar en auteur (<a href="https://leanpub.com/css-optimization-basics"><cite>CSS Optimization Basics</cite></a>, <a href="https://leanpub.com/web-development-glossary"><cite>The Web Development Glossary</cite></a>), die werkt als ingenieur manager bij <a href="https://www.jimdo.com/">Jimdo</a>. Hij is een expert op het gebied van webontwikkeling, waar hij gespecialiseerd is in HTML- en CSS-optimalisatie. Jens draagt bij aan technische standaarden en schrijft regelmatig over zijn werk en onderzoek, met name op zijn website, <a href="https://meiert.com/en/">meiert.com</a>.
+catalinred_bio: Catalin Rosu is een front-end ontwikkelaar bij <a href="https://www.caphyon.com/">Caphyon</a> en werkt momenteel aan <a href="https://www.wattspeed.com/">Wattspeed</a>. Hij heeft een passie voor webstandaarden en een scherp oog voor geweldige Gebruikerservaring en gebruikersinterface (UX & UI), dingen die hij <a href="https://twitter.com/catalinred">tweet</a> en waarover hij schrijft op <a href="https://catalin.red/">zijn website</a>.
+iandevlin_bio: Ian Devlin is een webontwikkelaar die pleit voor goede, semantische HTML en toegankelijkheid. Hij schreef ooit een boek over <a href="https://www.peachpit.com/store/html5-multimedia-develop-and-design-9780321793935">HTML5 Multimedia</a>, en schrijft sporadisch op <a href="https://iandevlin.com/">zijn website</a> over het web en andere dingen. Momenteel werkt hij als Senior Frontend Engineer bij <a href="https://www.real-digital.de/">real.digital</a> in Duitsland.
 reviewers: [zcorpan, matuzo, bkardell]
 analysts: [Tiggerito]
-translators: []
+translators: [noah-vdv]
 discuss: 2039
 results: https://docs.google.com/spreadsheets/d/1Ta7amoUeaL4pILhWzH-SCzMX9PsZeb1x_mwrX2C4eY8/
 queries: 03_Markup
-featured_quote: We approach near-complete adoption of living HTML, are quick to prune our pages of fads, and we're fast in adopting and shunning frameworks. And still, there are no signs we exhausted the options HTML gives us.
-featured_stat_1: 85.73%
-featured_stat_label_1: Percentage of pages that use the "living" HTML doctype
-featured_stat_2: 30,073
-featured_stat_label_2: Number of non-standard <code>h7</code> elements
-featured_stat_3: 25.24 KB
-featured_stat_label_3: Weight of the median document
+featured_quote: We benaderen een bijna volledige acceptatie van levende HTML, snoeien snel onze pagina's van rages, en we zijn snel in het adopteren en mijden van frameworks. En toch zijn er geen tekenen dat we de opties die HTML ons biedt hebben uitgeput.
+featured_stat_1: 85,73%
+featured_stat_label_1: Percentage pagina's dat het "levende" HTML-doctype gebruikt
+featured_stat_2: 30.073
+featured_stat_label_2: Aantal niet-standaard <code>h7</code>-elementen
+featured_stat_3: 25,24 KB
+featured_stat_label_3: Gewicht van het mediaan document
 ---
 
-## Introduction
+## Introductie
 
-The web is built on HTML. Without HTML there are no web pages, no web sites, no web apps. Nothing. There may be plain-text documents, perhaps, or XML trees, in some parallel universe that enjoyed that particular kind of challenge. In this universe, HTML is the foundation of the user-facing web. There are many standards that the web is resting on, but HTML is certainly one of the most important ones.
+Het web is gebouwd op HTML. Zonder HTML zijn er geen webpagina's, geen websites, geen webapps. Niets. Er kunnen misschien platte-tekstdocumenten of XML-bomen in een parallel universum zijn die die specifieke uitdaging aangingen. In dit universum vormt HTML de basis van het gebruikersgerichte web. Er zijn veel standaarden waarop het web steunt, maar HTML is zeker een van de belangrijkste.
 
-How do we use HTML, then, how great of a foundation do we have? In the introductory section of the [2019 Markup chapter](../2019/markup#introduction), author [Brian Kardell](../2019/contributors#bkardell) suggested that for a long time, we haven't really known. There were some smaller samples. For example, there was [Ian Hickson's research](https://web.archive.org/web/20060203035414/http://code.google.com/webstats/index.html) (one of modern HTML's parents) among a few others, but until last year we lacked major insight into how we as developers, as authors, make use of HTML. In 2019 we had both [Catalin Rosu's work](https://www.advancedwebranking.com/html/) (one of this chapter's co-authors) as well as the 2019 edition of the Web Almanac to give us a better view again of HTML in practice.
+Hoe gebruiken we HTML dan, hoe groot is onze basis? In het inleidende gedeelte van het [2019 Opmaak-hoofdstuk](../2019/markup#introduction) suggereerde auteur [Brian Kardell](../2019/contributors#bkardell) dat we het lange tijd niet echt hebben geweten. Er waren enkele kleinere monsters. Er was bijvoorbeeld [het onderzoek van Ian Hickson](https://web.archive.org/web/20060203035414/http://code.google.com/webstats/index.html) (een van de moderne HTML-ouders) onder een paar anderen, maar tot vorig jaar misten we veel inzicht in hoe wij als ontwikkelaars, als auteurs, HTML gebruiken. In 2019 hadden we zowel [het werk van Catalin Rosu](https://www.advancedwebranking.com/html/) (een van de co-auteurs van dit hoofdstuk) als de 2019-editie van de Web Almanac om ons weer een beter beeld te geven van HTML in de praktijk.
 
-Last year's analysis was based on 5.8 million pages, of which 4.4 million were tested on desktop and 5.3 million on mobile. This year we analyzed 7.5 million pages, of which 5.6 million were tested on desktop and 6.3 million on mobile, using the [latest data](./methodology#websites) on the websites users are visiting in 2020. We do make some comparisons to last year, but just as we've tried to analyze additional metrics for new insights, we've also tried to impart our own personalities and perspectives throughout the chapter.
+De analyse van vorig jaar was gebaseerd op 5,8 miljoen pagina's, waarvan 4,4 miljoen op desktop en 5,3 miljoen op mobiel. Dit jaar hebben we 7,5 miljoen pagina's geanalyseerd, waarvan 5,6 miljoen op desktopcomputers en 6,3 miljoen op mobiele apparaten, met behulp van de [laatste gegevens](./methodology#websites) op de websites die gebruikers in 2020 bezoeken. We maken enkele vergelijkingen met vorig jaar, maar net zoals we hebben geprobeerd om aanvullende statistieken te analyseren voor nieuwe inzichten, hebben we ook geprobeerd onze eigen persoonlijkheden en perspectieven door te geven in het hoofdstuk.
 
 <p class="note">
-  In this Markup chapter, we're focusing almost exclusively on HTML, rather than SVG or MathML, which are also considered markup languages. Unless otherwise noted, stats presented in this chapter refer to the set of mobile pages. Additionally, the data for all Web Almanac chapters is open and available. Take a look at <a href="https://docs.google.com/spreadsheets/d/1Ta7amoUeaL4pILhWzH-SCzMX9PsZeb1x_mwrX2C4eY8/">the results</a> and <a href="https://discuss.httparchive.org/t/2039">share your observations</a> with the community!
+  In dit Opmaak-hoofdstuk concentreren we ons bijna uitsluitend op HTML, in plaats van SVG of MathML, die ook als opmaaktalen worden beschouwd. Tenzij anders vermeld, verwijzen de statistieken in dit hoofdstuk naar de set mobiele pagina's. Bovendien zijn de gegevens voor alle Web Almanac-hoofdstukken open en beschikbaar. Bekijk <a href="https://docs.google.com/spreadsheets/d/1Ta7amoUeaL4pILhWzH-SCzMX9PsZeb1x_mwrX2C4eY8/">de resultaten</a> en <a href="https://discuss.httparchive.org/t/2039">deel uw observaties</a> met de community!
 </p>
 
-## General
+## Algemeen
 
-In this section, we're covering the higher-level aspects of HTML like document types, the size of documents, as well as the use of comments and scripts. "Living HTML" is very much alive!
+In dit gedeelte behandelen we de aspecten van een hoger niveau van HTML, zoals documenttypen, de grootte van documenten en het gebruik van opmerkingen en scripts. "Living HTML" is springlevend!
 
 ### Doctypes
 
 {{ figure_markup(
-  caption="Percent of pages with a doctype.",
-  content="96.82%",
+  caption="Percentage pagina's met een doctype.",
+  content="96,82%",
   classes="big-number",
   sheets_gid="1981441894",
   sql_file="summary_pages_by_device_and_doctype.sql"
 ) }}
 
-96.82% of pages declare a [_doctype_](https://developer.mozilla.org/en-US/docs/Glossary/Doctype). HTML documents declaring a doctype is useful for historical reasons, "to avoid triggering quirks mode in browsers" as [Ian Hickson wrote in 2009](https://lists.w3.org/Archives/Public/public-html-comments/2009Jul/0020.html). What are the most popular values?
+96,82% van de pagina's geeft een [_doctype_](https://developer.mozilla.org/en-US/docs/Glossary/Doctype) aan. HTML-documenten waarin wordt verklaard dat een doctype om historische redenen nuttig is, "om te voorkomen dat de modus voor eigenaardigheden in browsers wordt geactiveerd", zoals [Ian Hickson schreef in 2009](https://lists.w3.org/Archives/Public/public-html-comments/2009Jul/0020.html). Wat zijn de meest populaire waarden?
 
 <figure markdown>
-| Doctype | Pages | Percentage |
+| Doctype | Pagina's | Percentage |
 |---|---|---|
-| HTML ("HTML5") | 5,441,815 | 85.73% |
-| XHTML 1.0 Transitional | 382,322 | 6.02% |
-| XHTML 1.0 Strict | 107,351 | 1.69% |
-| HTML 4.01 Transitional | 54,379 | 0.86% |
-| HTML 4.01 Transitional ([quirky](https://hsivonen.fi/doctype/#xml)) | 38,504 | 0.61% |
+| HTML ("HTML5") | 5.441.815 | 85,73% |
+| XHTML 1.0 Transitioneel | 382.322 | 6,02% |
+| XHTML 1.0 Strikt | 107.351 | 1,69% |
+| HTML 4.01 Transitioneel | 54.379 | 0,86% |
+| HTML 4.01 Transitioneel ([eigenzinnig](https://hsivonen.fi/doctype/#xml)) | 38.504 | 0,61% |
 
-<figcaption>{{ figure_link(caption="The 5 most popular doctypes.", sheets_gid="1981441894", sql_file="summary_pages_by_device_and_doctype.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="De 5 meest populaire doctypes.", sheets_gid="1981441894", sql_file="summary_pages_by_device_and_doctype.sql") }}</figcaption>
 </figure>
 
-You can already tell how the numbers decrease quite a bit after XHTML 1.0, before entering the long tail with a few standard, some esoteric, and also bogus doctypes.
+Je kunt al zien hoe de aantallen behoorlijk afnemen na XHTML 1.0, voordat je de lange staart ingaat met een paar standaard, sommige esoterische en ook nep-doctypes.
 
-Two things stand out from these results:
+Twee dingen onderscheiden zich van deze resultaten:
 
-1. Almost 10 years after [the announcement of living HTML](https://blog.whatwg.org/html-is-the-new-html5) (aka "HTML5"), living HTML has clearly become the norm.
-2. The web before living HTML can still be seen in the next most popular doctypes, like XHTML 1.0. XHTML. Although their documents are likely delivered as HTML with a MIME type of `text/html`, these older doctypes are not dead yet.
+1. Bijna 10 jaar na [de aankondiging van levende HTML](https://blog.whatwg.org/html-is-the-new-html5) (ook bekend als "HTML5"), is levende HTML duidelijk de norm geworden.
+2. Het web vóór levende HTML is nog steeds te zien in de volgende meest populaire doctypes, zoals XHTML 1.0. XHTML. Hoewel hun documenten waarschijnlijk worden afgeleverd als HTML met een MIME-type `text/html`, zijn deze oudere doctypes nog niet dood.
 
-### Document size
+### Document grootte
 
-A page's document size refers to the amount of HTML bytes transferred over the network, including compression if enabled. At the extremes of the set of 6.3 million documents:
+De documentgrootte van een pagina verwijst naar het aantal HTML-bytes dat via het netwerk wordt overgedragen, inclusief compressie indien ingeschakeld. Aan het einde van de reeks van 6,3 miljoen documenten:
 
 {# TODO(authors, analysts): Revisit the "largest document" stat and interpretation. #}
-* 1,110 documents are empty (0 bytes).
-* The average document size is 49.17 KB ([in most cases compressed](https://w3techs.com/technologies/details/ce-gzipcompression)).
-* The largest document by far weighs 61.19 _MB_, almost deserving its own analysis and chapter in the Web Almanac.
+* 1.110 documenten zijn leeg (0 bytes).
+* De gemiddelde documentgrootte is 49,17 KB ([in de meeste gevallen gecomprimeerd](https://w3techs.com/technologies/details/ce-gzipcompression)).
+* Het grootste document weegt verreweg 61,19 _MB_ en verdient bijna zijn eigen analyse en hoofdstuk in de Web Almanac.
 
-How is this situation in general, then? The median document weighs 24.65 KB, which comes [without surprises](https://httparchive.org/reports/page-weight):
+Hoe is deze situatie in het algemeen dan? Het mediaan document weegt 24,65 KB, en komt [zonder verrassingen](https://httparchive.org/reports/page-weight):
 
 {{ figure_markup(
   image="document-size.png",
-  caption="The amount of HTML bytes transferred over the network, including compression if enabled.",
-  description="Document size in bytes per percentile, with the median document weighing 25.99 KB on desktop.",
+  caption="Het aantal HTML-bytes dat via het netwerk wordt overgedragen, inclusief compressie indien ingeschakeld.",
+  description="Documentgrootte in bytes per percentiel, met een mediaan document van 25,99 KB op desktop.",
   sheets_gid="2066175354",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=386686971&format=interactive",
   width=600,
@@ -92,20 +92,20 @@ How is this situation in general, then? The median document weighs 24.65 KB, whi
   )
 }}
 
-### Document language
+### Document taal
 
 {# TODO(editors): Link directly to the relevant Accessibility section. #}
-We identified 2,863 different values for the `lang` attribute on the `html` start tag (compare that to the [7,117 spoken languages](https://www.ethnologue.com/guides/how-many-languages) as per Ethnologue). Almost all of them seem valid, according to the [Accessibility](./accessibility) chapter.
+We hebben 2.863 verschillende waarden geïdentificeerd voor het `lang`-attribuut op de `html`-starttag (vergelijk dat met de [7.117 gesproken talen](https://www.ethnologue.com/guides/how-many-languages) volgens Ethnologue). Ze lijken bijna allemaal geldig, volgens het hoofdstuk [Toegankelijkheid](./accessibility).
 
-22.36% of all documents specify no `lang` attribute. The commonly accepted view is that [they should](https://www.w3.org/TR/i18n-html-tech-lang/#overall), but beside the idea that software could eventually [detect language automatically](https://meiert.com/en/blog/lang/), document language can also be specified [on the protocol level](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language). This is something we didn't check.
+22,36% van alle documenten specificeren geen `lang`-attribuut. De algemeen aanvaarde opvatting is dat [ze zouden moeten](https://www.w3.org/TR/i18n-html-tech-lang/#overall), maar naast het idee dat software uiteindelijk [taal automatisch kan detecteren](https://meiert.com/en/blog/lang/), kan de documenttaal ook worden gespecificeerd [op protocolniveau](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language). Dit hebben we niet gecontroleerd.
 
-Here are the 10 most popular (normalized) languages in our sample. It's important to note that the HTTP Archive crawls from US data centers with English language settings, so looking at the language pages are written in will be skewed towards English. Nevertheless we present the `lang` attributes seen to give some context to the sites analyzed.
+Hier zijn de 10 meest populaire (genormaliseerde) talen in ons voorbeeld. Het is belangrijk op te merken dat het HTTP Archive crawlt vanuit Amerikaanse datacentra met Engelse taalinstellingen, dus het bekijken van de taalpagina's waarin is geschreven, zal scheef naar het Engels gaan. Desalniettemin presenteren we de `lang`-attributen die gezien worden om enige context te geven aan de geanalyseerde sites.
 
 {{ figure_markup(
   image="document-language.png",
-  alt="The top HTML lang attributes.",
-  caption="The top HTML `lang` attributes.",
-  description="Bar chart showing the top 10 `lang` attributes used in our crawl with 22.82% of desktop and 22.36% of mobile pages not setting this, `en` being used on 20.09% and 18.08% respectively, `ja` on 15.17% and 13.27%, `es` on 4.86% and 4.09% , `pt-br` on 2.65% and 2.84%, `ru` on 2.21% 2.53%, `en-gb` on 2.35% and 2.19%, `de` on 1.50% and 1.92%, and finally `fr` being used on 1.55% and 1.43% respectively.",
+  alt="De belangrijkste HTML-`lang` attributen.",
+  caption="De top HTML `lang` attributen.",
+  description="Staafdiagram met de top 10 `lang` attributen die in onze crawl worden gebruikt, waarbij 22,82% van de desktoppagina's en 22,36% van de mobiele pagina's dit niet instellen, `en` wordt gebruikt op respectievelijk 20,09% en 18,08%, `ja` op 15,17% en 13,27 %, `es` op 4,86% en 4,09%, `pt-br` op 2,65% en 2,84%, `ru` op 2,21% 2,53%, `en-gb` op 2,35% en 2,19%, `de` op 1,50 % en 1,92%, en tenslotte wordt `fr` gebruikt op respectievelijk 1,55% en 1,43%.",
   sheets_gid="2047285366",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=1873310240&format=interactive",
   width=600,
@@ -114,45 +114,45 @@ Here are the 10 most popular (normalized) languages in our sample. It's importan
   )
 }}
 
-### Comments
+### Opmerkingen
 
-Adding comments to code is generally a good practice and HTML comments are there to add notes to HTML documents, without having them rendered by user agents.
+Opmerkingen toevoegen aan code is over het algemeen een goede gewoonte en HTML-opmerkingen zijn er om notities aan HTML-documenten toe te voegen, zonder dat ze door user agents worden weergegeven.
 
 ```html
-<!-- This is a comment in HTML -->
+<!-- Dit is een commentaar in HTML -->
 ```
 
-Although many pages will have been stripped of comments for production, we found that index pages in the 90th percentile are using about 73 comments on mobile, respectively 79 comments on desktop, while in the 10th percentile the number of the comments is about 2. The median page uses 16 (mobile) or 17 comments (desktop).
+Hoewel veel pagina's voor productie zijn ontdaan van opmerkingen, ontdekten we dat indexpagina's in het 90e percentiel ongeveer 73 reacties op mobiele apparaten gebruiken, respectievelijk 79 reacties op desktops, terwijl in het 10e percentiel het aantal reacties ongeveer 2 is. Mediaanpagina gebruikt 16 (mobiel) of 17 reacties (desktop).
 
-Around 89% of pages contain at least one HTML comment, while about 46% of them contain a conditional comment.
+Ongeveer 89% van de pagina's bevat minstens één HTML-opmerking, terwijl ongeveer 46% een voorwaardelijke opmerking bevat.
 
-#### Conditional comments
+#### Voorwaardelijke opmerkingen
 
 ```html
 <!--[if IE 8]>
-  <p>This renders in Internet Explorer 8 only.</p>
+  <p>Dit wordt alleen in Internet Explorer 8 weergegeven.</p>
 <![endif]-->
 ```
 
-The above is a non-standard HTML conditional comment. While those have proven to be helpful in the past in order to tackle browser differences, they are history for some time as Microsoft [dropped conditional comments](https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/hh801214(v=vs.85)) in Internet Explorer 10.
+Het bovenstaande is een niet-standaard voorwaardelijke HTML-opmerking. Hoewel deze in het verleden nuttig zijn gebleken om browserverschillen aan te pakken, zijn ze al enige tijd verleden tijd omdat Microsoft [voorwaardelijke opmerkingen heeft laten vallen](https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/hh801214(v=vs.85)) in Internet Explorer 10.
 
-Still, on the above percentile extremes, we found that web pages are using about 6 conditional comments in the 90th percentile, and 1 comment while in the 10th percentile.  Most of the pages include them for helpers such as html5shiv, selectivizr, and respond.js. While being decentish and still active pages, our conclusion is that many of them were using obsolete CMS themes.
+Toch ontdekten we bij de bovenstaande percentielextremen dat webpagina's ongeveer 6 voorwaardelijke opmerkingen in het 90e percentiel gebruiken en 1 opmerking in het 10e percentiel. De meeste pagina's bevatten ze voor helpers zoals html5shiv, selectivizr en respond.js. Hoewel het fatsoenlijke en nog steeds actieve pagina's zijn, is onze conclusie dat veel van hen verouderde CMS-thema's gebruikten.
 
-For production, HTML comments are usually stripped by build tools. Considering all the above counts and percentages, and referring to the use of comments in general, we suppose that lots of pages are served without involving an HTML minifier.
+Voor productie worden HTML-opmerkingen meestal verwijderd door build-tools. Gezien alle bovenstaande tellingen en percentages, en verwijzend naar het gebruik van opmerkingen in het algemeen, veronderstellen we dat veel pagina's worden weergegeven zonder tussenkomst van een HTML-minifier.
 
-### Script use
+### Script gebruik
 
-As shown in the [Top elements](#top-elements) section below, the `script` element is the 6th most frequently used HTML element. For the purposes of this chapter, we were interested in the ways the `script` element is used across these millions of pages from the data set.
+Zoals getoond in de [Top-elementen](#top-elements) sectie hieronder, is het `script` -element het 6e meest gebruikte HTML-element. Voor de doeleinden van dit hoofdstuk waren we geïnteresseerd in de manieren waarop het `script`-element wordt gebruikt op deze miljoenen pagina's uit de dataset.
 
-Overall, around 2% of pages contain no scripting at all, not even structured data scripts with the `type="application/ld+json"` attribute. Considering that nowadays it's pretty common for a page to include at least one script for an analytics solution, this seems noteworthy.
+In totaal bevat ongeveer 2% van de pagina's helemaal geen scripts, zelfs niet met gestructureerde gegevensscripts met het `type="application/ld+json"` attribuut. Gezien het feit dat het tegenwoordig vrij gebruikelijk is dat een pagina ten minste één script voor een analyseoplossing bevat, lijkt dit opmerkelijk.
 
-At the opposite end of the spectrum, the numbers show that about 97% of pages contain at least one script, either inline or external.
+Aan de andere kant van het spectrum laten de cijfers zien dat ongeveer 97% van de pagina's ten minste één script bevat, inline of extern.
 
 {# TODO(analysts): We still have a problem here with the x-axis label (“Containing”). Can someone help out and look at this? #}
 {{ figure_markup(
   image="script-use.png",
-  caption="Usage of the <code>script</code> element.",
-  description="Percentages of pages (not) containing scripts, and scripts are present in almost every form on almost every page.",
+  caption="Gebruik van het <code>script</code> -element.",
+  description="Percentages pagina's die (geen) scripts bevatten, en scripts zijn in bijna elke vorm op bijna elke pagina aanwezig.",
   sheets_gid="150962402",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=1895084382&format=interactive",
   width=600,
@@ -161,40 +161,40 @@ At the opposite end of the spectrum, the numbers show that about 97% of pages co
   )
 }}
 
-When scripting is unsupported or turned off in the browser, the `noscript` element helps to add an HTML section within a page. Considering the above script numbers, we were curious about the `noscript` element as well.
+Wanneer scripting niet wordt ondersteund of is uitgeschakeld in de browser, helpt het `noscript`-element om een HTML-sectie binnen een pagina toe te voegen. Gezien de bovenstaande scriptnummers waren we ook benieuwd naar het `noscript`-element.
 
-Following the analysis, we found that about 49% of pages are using a `noscript` element. At the same time, about 16% of `noscript` elements were containing an `iframe` with a `src` value referring to "googletagmanager.com".
+Na de analyse ontdekten we dat ongeveer 49% van de pagina's een `noscript`-element gebruikt. Tegelijkertijd bevatte ongeveer 16% van de `noscript`-elementen een `iframe` met een `src`-waarde die verwijst naar "googletagmanager.com".
 
-This seems to confirm the theory that the total number of `noscript` elements in the wild may be affected by common scripts like Google Tag Manager which enforce users to add a `noscript` snippet after the `body` start tag on a page.
+Dit lijkt de theorie te bevestigen dat het totale aantal `noscript`-elementen in het wild kan worden beïnvloed door veelgebruikte scripts zoals Google Tag Manager die gebruikers dwingen om een `noscript`-fragment toe te voegen na de `body`-starttag op een pagina.
 
-#### Script types
+#### Scripttypen
 
-What `type` attribute values are used with `script` elements?
+Welke `type`-attribuutwaarden worden gebruikt met `script`-elementen?
 
-- `text/javascript`: 60.03%
-- `application/ld+json`: 1.68%
-- `application/json`: 0.41%
-- `text/template`: 0.41%
-- `text/html` 0.27%
+- `text/javascript`: 60,03%
+- `application/ld+json`: 1,68%
+- `application/json`: 0,41%
+- `text/template`: 0,41%
+- `text/html` 0,27%
 
-When it comes to loading [JavaScript module scripts](https://jakearchibald.com/2017/es-modules-in-browsers/) using `type="module"`, we found that 0.13% of `script` elements currently specify this attribute-value combination. `nomodule` is used by 0.95% of all tested pages. (Note that one metric relates to elements, the other to pages.)
+Als het gaat om het laden van [JavaScript-modulescripts](https://jakearchibald.com/2017/es-modules-in-browsers/) met behulp van `type="module"`, ontdekten we dat 0,13% van de `script`-elementen momenteel deze attribuut-waarde-combinatie specificeert. `nomodule` wordt gebruikt door 0,95% van alle geteste pagina's. (Merk op dat de ene statistiek betrekking heeft op elementen, de andere op pagina's.)
 
-36.38% of all scripts have no values set whatsoever.
+36,38% van alle scripts hebben helemaal geen waarden.
 
-## Elements
+## Elementen
 
-In this section, the focus is on elements: what elements are used, how frequently, which elements are likely to appear on a given page, and how the situation is with respect to custom, obsolete, and proprietary elements. Is [_divitis_](https://en.wiktionary.org/wiki/divitis) still a thing? Yes.
+In deze sectie ligt de focus op elementen: welke elementen worden gebruikt, hoe vaak, welke elementen zullen waarschijnlijk op een bepaalde pagina verschijnen en hoe de situatie is met betrekking tot aangepaste, verouderde en eigendomsrechtelijke elementen. Is [_divitis_](https://en.wiktionary.org/wiki/divitis) nog steeds een ding? Ja.
 
-### Element diversity
+### Element diversiteit
 
-Let's have a look at how diverse use of HTML actually is: Do authors use many different elements, or are we looking at a landscape that makes use of relatively few elements?
+Laten we eens kijken hoe divers het gebruik van HTML eigenlijk is: gebruiken auteurs veel verschillende elementen, of kijken we naar een landschap dat relatief weinig elementen gebruikt?
 
-The median web page, it turns out, uses 30 different elements, 587 times:
+De mediaanwebpagina, zo blijkt, gebruikt 30 verschillende elementen, 587 keer:
 
 {{ figure_markup(
   image="element-diversity-element-types.png",
-  caption="Distribution of the number of element types per page.",
-  description="Element types per percentile, with 90% of pages using at least 20 different elements.",
+  caption="Verdeling van het aantal elementtypes per pagina.",
+  description="Elementtypen per percentiel, waarbij 90% van de pagina's ten minste 20 verschillende elementen gebruikt.",
   sheets_gid="46490104",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=924238918&format=interactive",
   width=600,
@@ -207,8 +207,8 @@ The median web page, it turns out, uses 30 different elements, 587 times:
 
 {{ figure_markup(
   image="element-diversity.png",
-  caption="Distribution of the total number elements per page.",
-  description="Elements per percentile, showing how 10% of all pages employ more than 1,665 elements.",
+  caption="Verdeling van het totale aantal elementen per pagina.",
+  description="Elementen per percentiel, die laten zien hoe 10% van alle pagina's meer dan 1.665 elementen gebruikt.",
   sheets_gid="46490104",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=680594018&format=interactive",
   width=600,
@@ -217,14 +217,14 @@ The median web page, it turns out, uses 30 different elements, 587 times:
   )
 }}
 
-Given that [living HTML](https://html.spec.whatwg.org/multipage/) currently has 112 elements, the 90th percentile not using more than 41 elements may suggest that HTML is not nearly being exhausted by most documents. Yet it's hard to interpret what this really means for HTML and our use of it, as the semantic wealth that HTML offers doesn't mean that every document would need all of it: HTML elements should be used per purpose (semantics), not per availability.
+Gezien het feit dat [levende HTML](https://html.spec.whatwg.org/multipage/) momenteel 112 elementen bevat, kan het 90e percentiel dat niet meer dan 41 elementen gebruikt, erop wijzen dat HTML nog lang niet uitgeput raakt door de meeste documenten. Toch is het moeilijk te interpreteren wat dit werkelijk betekent voor HTML en ons gebruik ervan, aangezien de semantische rijkdom die HTML biedt niet betekent dat elk document alles nodig zou hebben: HTML-elementen zouden per doel (semantiek) moeten worden gebruikt, niet per beschikbaarheid.
 
-How are these elements distributed?
+Hoe worden deze elementen verdeeld?
 
 {{ figure_markup(
   image="distribution-of-elements-per-page.png",
-  caption="Distribution of the total number of elements per page.",
-  description="Element distribution in a scatter plot, and even for a trained observer it's hard to parse it; interesting is a large group of about 7,500 pages each using roughly 250 elements, after which fewer and fewer pages get back to more and more elements.",
+  caption="Verdeling van het totale aantal elementen per pagina.",
+  description="Elementverdeling in een scatterplot, en zelfs voor een getrainde waarnemer is het moeilijk om het te analyseren; interessant is een grote groep van ongeveer 7.500 pagina's met elk ongeveer 250 elementen, waarna steeds minder pagina's op steeds meer elementen terugkomen.",
   sheets_gid="1361520223",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=1468756779&format=interactive",
   width=600,
@@ -233,11 +233,11 @@ How are these elements distributed?
   )
 }}
 
-Not that much changed [compared to 2019](../2019/markup#fig-3)!
+Niet zo veel is veranderd [vergeleken met 2019](../2019/markup#fig-3)!
 
-### Top elements
+### Topelementen
 
-In 2019, the Markup chapter of the Web Almanac featured the most frequently used elements in reference to [Ian Hickson's work in 2005](https://web.archive.org/web/20060203031713/http://code.google.com/webstats/2005-12/elements.html). We found this useful and had a look at that data again:
+In 2019 bevatte het hoofdstuk Opmaak van de Web Almanac de meest gebruikte elementen met betrekking tot [het werk van Ian Hickson in 2005](https://web.archive.org/web/20060203031713/http://code.google.com/webstats/2005-12/elements.html). We vonden dit nuttig en hebben die gegevens nog eens bekeken:
 
 <figure markdown>
 | 2005 | 2019 | 2020 |
@@ -253,92 +253,92 @@ In 2019, the Markup chapter of the Web Almanac featured the most frequently used
 | | | `i` |
 | | | `option`|
 
-<figcaption>{{ figure_link(caption="The most popular elements in 2005, 2019, and 2020.", sheets_gid="781932961", sql_file="pages_element_count_by_device_and_element_type_frequency.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="De meest populaire elementen in 2005, 2019 en 2020.", sheets_gid="781932961", sql_file="pages_element_count_by_device_and_element_type_frequency.sql") }}</figcaption>
 </figure>
 
-Nothing changed in the Top 7, but the `option` element went a little out of favor and dropped from 8 to 10, letting both the `link` and the `i` element pass in popularity. These elements have risen in use, possibly due to an increase in use of [resource hints](./resource-hints) (as with prerendering and prefetching), as well icon solutions like [Font Awesome](https://fontawesome.com/), which _de facto_ misuses `i` elements for the purpose of displaying icons.
+Er veranderde niets in de Top 7, maar het `optie`-element raakte een beetje uit de gratie en zakte van 8 naar 10, waardoor zowel het `link`- als het `i`-element populairder werden. Deze elementen zijn in gebruik toegenomen, mogelijk als gevolg van een toenemend gebruik van [Hints voor bronnen](./resource-hints) (zoals bij prerendering en prefetching), evenals pictogramoplossingen zoals [Font Awesome](https://fontawesome.com/), die de facto misbruik maakt van `i`-elementen om pictogrammen weer te geven.
 
-#### `details` and `summary`
+#### `details` en `summary`
 
-Another thing we were curious about was the use of the [`details` and `summary` elements](https://html.spec.whatwg.org/multipage/rendering.html#the-details-and-summary-elements), especially since 2020 brought [broad support](https://caniuse.com/details). Are they being used? Are they attractive for—even popular—among authors? As it turns out, only 0.39% of all tested pages are using them, although it's hard to gauge whether they were all used the correct way in exactly the situations when you need them, "popular" is the wrong word.
+Iets anders waar we nieuwsgierig naar waren, was het gebruik van de [`details` en `summary` elementen](https://html.spec.whatwg.org/multipage/rendering.html#the-details-and-summary-elements) , vooral sinds 2020 [brede ondersteuning](https://caniuse.com/details) bracht. Worden ze gebruikt? Zijn ze aantrekkelijk voor - zelfs populair - onder auteurs? Het blijkt dat slechts 0,39% van alle geteste pagina's ze gebruikt, hoewel het moeilijk is in te schatten of ze allemaal op de juiste manier werden gebruikt in precies de situaties waarin je ze nodig hebt, "populair" is het verkeerde woord.
 
-Here's a simple example showing the use of a `summary` in a `details` element:
+Hier is een eenvoudig voorbeeld dat het gebruik van een `summary` in een `details`-element laat zien:
 
 ```html
 <details>
-  <summary>Status: Operational</summary>
-  <p>Velocity: 12m/s</p>
-  <p>Direction: North</p>
+  <summary>Status: operationeel</summary>
+  <p>Snelheid: 12m/s</p>
+  <p>Richting: Noord</p>
 </details>
 ```
 
-A while ago, Steve Faulkner [pointed out](https://twitter.com/stevefaulkner/status/806474286592561152) how these two elements were used inadequately in the wild. As you can tell from the example above, for each `details` element you'd need a `summary` element that may only be used as the [first child](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary#Usage_notes) of `details`.
+Een tijdje geleden wees Steve Faulkner [erop](https://twitter.com/stevefaulkner/status/806474286592561152) hoe deze twee elementen in het wild onvoldoende werden gebruikt. Zoals je aan het bovenstaande voorbeeld kunt zien, heb je voor elk `details`-element een `summary`-element nodig dat alleen mag worden gebruikt als het [eerste kind](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary#Usage_notes) van `details`.
 
-Accordingly, we looked at the number of `details` and `summary` elements and it seems that they do continue to be misused. The count of `summary` elements is higher on both mobile and desktop, with a ratio of 1.11 `summary` elements for every `details` element on mobile, and 1.19 on desktop, respectively:
+Dienovereenkomstig hebben we gekeken naar het aantal `details` en `summary` elementen en het lijkt erop dat ze nog steeds worden misbruikt. Het aantal `summary`-elementen is hoger op zowel mobiel als desktop, met een verhouding van respectievelijk 1,11 `samenvatting`-elementen voor elk `details`-element op mobiel en 1,19 op desktop:
 
 <figure>
   <table>
     <thead>
       <tr>
         <td></td>
-        <th scope="colgroup" colspan="2" >Occurrences</th>
+        <th scope="colgroup" colspan="2" >Voorvallen</th>
       </tr>
       <tr>
         <th scope="col">Element</th>
-        <th scope="col">Mobile (0.39%)</th>
-        <th scope="col">Desktop (0.22%)</th>
+        <th scope="col">Mobiel (0,9%)</th>
+        <th scope="col">Desktop (0,22%)</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td><code>summary</code></td>
-        <td>62,992</td>
-        <td>43,936</td>
+        <td>62.992</td>
+        <td>43.936</td>
       </tr>
       <tr>
         <td><code>details</code></td>
-        <td>56,60</td>
-        <td>36,743</td>
+        <td>56.60</td>
+        <td>36.743</td>
       </tr>
     </tbody>
   </table>
-<figcaption>{{ figure_link(caption="Adoption of the <code>details</code> and <code>summary</code> elements.", sheets_gid="1406534257", sql_file="pages_element_count_by_device.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Overname van de <code>details</code>- en <code>summary</code>-elementen.", sheets_gid="1406534257", sql_file="pages_element_count_by_device.sql") }}</figcaption>
 </figure>
 
-### Probability of element use
+### Waarschijnlijkheid van elementgebruik
 
-Taking another look at element popularity, how likely is it to find a certain element in the DOM of a page? Surely, `html`, `head`, `body` are present on every page (even though [their tags are all optional](https://meiert.com/en/blog/optional-html/)), making them common elements, but what other elements are to be found?
+Als we nog eens kijken naar de populariteit van elementen, hoe waarschijnlijk is het dat een bepaald element in de DOM van een pagina wordt gevonden? Zeker, `html`, `head`, `body` zijn op elke pagina aanwezig (ook al zijn [hun tags allemaal optioneel](https://meiert.com/en/blog/optional-html/)), waardoor ze gemeenschappelijke elementen worden, maar welke andere elementen zijn er te vinden?
 
 <figure markdown>
-| Element | Probability |
+| Element | Waarschijnlijkheid |
 |---|---|
-| `title` | 99.34% |
-| `meta` | 99.00% |
-| `div` | 98.42% |
-| `a` | 98.32% |
-| `link` | 97.79% |
-| `script` | 97.73% |
-| `img` | 95.83% |
-| `span` | 93.98% |
-| `p` | 88.71% |
-| `ul` | 87.68% |
+| `title` | 99,34% |
+| `meta` | 99,00% |
+| `div` | 98,42% |
+| `a` | 98,32% |
+| `link` | 97,79% |
+| `script` | 97,73% |
+| `img` | 95,83% |
+| `span` | 93,98% |
+| `p` | 88,71% |
+| `ul` | 87,68% |
 
-<figcaption>{{ figure_link(caption="High probabilities of finding a given element in pages of the Web Almanac 2020 sample.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Grote kans om een bepaald element te vinden op pagina's van het Web Almanac 2020-voorbeeld.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
 </figure>
 
-Standard elements are those that are or were part of the HTML specification. Which ones are you really rarely to find? In our sample, that would bring up the following:
+Standaardelementen zijn elementen die deel uitmaken van de HTML-specificatie. Welke vind je echt zelden? In onze steekproef zou dat het volgende naar voren brengen:
 
 <figure markdown>
-| Element | Probability |
+| Element | Waarschijnlijkheid |
 |---|---|
-| `dir` | 0.0082% |
-| `rp` | 0.0087% |
-| `basefont` | 0.0092% |
+| `dir` | 0,0082% |
+| `rp` | 0,0087% |
+| `basefont` | 0,0092% |
 
-<figcaption>{{ figure_link(caption="Low probabilities of finding a given element in pages of the sample.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Lage kansen om een bepaald element op pagina's van de steekproef te vinden.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
 </figure>
 
-We're including these elements to give an idea what elements may have gone out of favor. But while `dir` and `basefont` were last specified in XHTML 1.0 (2000), the rare use of `rp`, which has been mentioned [as early as 1998](https://www.w3.org/TR/1998/WD-ruby-19981221/#a2-4) but which is also [still part of HTML](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element), may just suggest that Ruby markup is not very popular.
+We nemen deze elementen op om een idee te geven welke elementen mogelijk uit de gratie zijn geraakt. Maar hoewel `dir` en` basefont` voor het laatst werden gespecificeerd in XHTML 1.0 (2000), het zeldzame gebruik van `rp`, [dat al in 1998 werd genoemd](https://www.w3.org/TR/1998/WD-rubya2-4) maar dat ook [nog steeds deel uitmaakt van HTML](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element), suggereert misschien dat Ruby-opmaak niet erg populair is.
 
 ### Custom elements
 
