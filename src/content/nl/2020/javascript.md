@@ -278,7 +278,7 @@ Een van de audits in [Lighthouse](./methodology#lighthouse) controleert op niet-
 {{ figure_markup(
   image="lighthouse-unminified-js.png",
   caption="Verdeling van niet-verkleinde JavaScript Lighthouse-auditscores per mobiele pagina.",
-  description="Staafdiagram toont 0% van de mobiele pagina's die niet-verkleinde JavaScript krijgen <span lang=\"en\">Lighthouse</span>-auditscores onder de 0,25, 4% van de pagina's met een score tussen 0,25 en 0,5, 10% van de pagina's tussen 0,5 en 0,75, 8% van de pagina's tussen 0,75 en 0,9 en 77% van de pagina's tussen 0.9 en 1.0.",
+  description="Staafdiagram toont 0% van de mobiele pagina's die niet-verkleinde JavaScript krijgen Lighthouse-auditscores onder de 0,25, 4% van de pagina's met een score tussen 0,25 en 0,5, 10% van de pagina's tussen 0,5 en 0,75, 8% van de pagina's tussen 0,75 en 0,9 en 77% van de pagina's tussen 0.9 en 1.0.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=158284816&format=interactive",
   sheets_gid="362705605",
   sql_file="lighthouse_unminified_js.sql"
@@ -355,8 +355,8 @@ De populaire bibliotheken die in gebruik zijn, zijn grotendeels ongewijzigd ten 
 
 {{ figure_markup(
   image="frameworks-libraries.png",
-  alt="Overname van de beste JavaScript-frameworks en -bibliotheken als percentage van de pagina's.", caption="Overname van de beste JavaScript-<span lang=\"en\">frameworks</span> en -bibliotheken als percentage van de pagina's.",
-  description="Staafdiagram dat de acceptatie van de belangrijkste <span lang=\"en\">frameworks</span> en bibliotheken weergeeft als percentage van de pagina's (niet paginaweergaven of npm-downloads). jQuery is de overweldigende leider, te vinden op 83% van de mobiele pagina\'s. Het wordt gevolgd door jQuery migrate op 30%, jQuery UI op 21%, Modernizr op 15%, FancyBox op 7%, Slick en Lightbox op 6%, en de resterende frameworks en bibliotheken op 4% of 3%: Moment.js, Underscore.js, Lodash, React, GSAP, Select2, RequireJS en prettyPhoto.",
+  caption="Overname van de beste JavaScript-frameworks en -bibliotheken als percentage van de pagina's.",
+  description="Staafdiagram dat de acceptatie van de belangrijkste frameworks en bibliotheken weergeeft als percentage van de pagina's (niet paginaweergaven of npm-downloads). jQuery is de overweldigende leider, te vinden op 83% van de mobiele pagina\'s. Het wordt gevolgd door jQuery migrate op 30%, jQuery UI op 21%, Modernizr op 15%, FancyBox op 7%, Slick en Lightbox op 6%, en de resterende frameworks en bibliotheken op 4% of 3%: Moment.js, Underscore.js, Lodash, React, GSAP, Select2, RequireJS en prettyPhoto.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=419887153&format=interactive",
   sheets_gid="1654577118",
   sql_file="frameworks_libraries.sql"
@@ -663,7 +663,7 @@ Een manier om te zien hoe dit zich vertaalt in het beïnvloeden van de gebruiker
 {{ figure_markup(
   image="correlations.png",
   caption="Correlaties van JavaScript op verschillende aspecten van gebruikerservaring.",
-  description="Staafdiagram met de Pearson-correlatiecoëfficiënt voor verschillende aspecten van gebruikerservaring. De correlatie van bytes met de prestatiescore van Lighthouse heeft een correlatiecoëfficiënt van -0,47. Bytes en Lighthouse toegankelijkheidsscore: 0,08. Bytes en <span lang=\"en\">Total Blocking Time</span> (TBT): 0,55. Bytes van derden en prestatiescore van Lighthouse: -0,37. Bytes van derden en de toegankelijkheidsscore van Lighthouse: 0,00. Bytes van derden en TBT: 0,48. Het aantal asynchrone scripts per pagina en de prestatiescore van Lighthouse: -0,19. Asynchrone scripts en Lighthouse toegankelijkheidsscore: 0,08. Asynchrone scripts en TBT: 0,36.",
+  description='Staafdiagram met de Pearson-correlatiecoëfficiënt voor verschillende aspecten van gebruikerservaring. De correlatie van bytes met de prestatiescore van Lighthouse heeft een correlatiecoëfficiënt van -0,47. Bytes en Lighthouse toegankelijkheidsscore: 0,08. Bytes en <span lang="en">Total Blocking Time</span> (TBT): 0,55. Bytes van derden en prestatiescore van Lighthouse: -0,37. Bytes van derden en de toegankelijkheidsscore van Lighthouse: 0,00. Bytes van derden en TBT: 0,48. Het aantal asynchrone scripts per pagina en de prestatiescore van Lighthouse: -0,19. Asynchrone scripts en Lighthouse toegankelijkheidsscore: 0,08. Asynchrone scripts en TBT: 0,36.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=649523941&format=interactive",
   sheets_gid="2035770638",
   sql_file="correlations.sql"
