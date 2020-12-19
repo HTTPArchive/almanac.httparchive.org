@@ -116,7 +116,7 @@ So what did we learn in terms of reasoning about mobile vs. desktop traffic to a
 
 Traffic distribution from mobile vs desktop is highly specific to a site and dependent on the industry category, and other factors such as presence of native apps. However odds are that for site visits in Chrome, a given website has traffic predominantly from mobile web, in spite of users spending more time on desktop. This is due to a much longer tail for mobile Chrome.
 
-While one cannot generalize the expected traffic distribution from mobile vs. desktop for individual websites, it is worth comparing your site's distribution to that of the industry category ([some data is available here](https://www.perficient.com/insights/research-hub/mobile-vs-desktop-usage-study)).
+While one cannot generalize the expected traffic distribution from mobile vs. desktop for individual websites, it is worth comparing your site's distribution to [that of the industry category](https://www.perficient.com/insights/research-hub/mobile-vs-desktop-usage-study).
 
 If your website is substantially different from the industry average, it could be worth digging into the reason, for instance poor loading performance could be one reason.
 
@@ -124,7 +124,7 @@ If your website is substantially different from the industry average, it could b
 
 User journeys, including commercial journeys, on the mobile web are often difficult to complete.
 
-While mobile represents 79.6% of time spent amongst retail sites, it only accounts for 32.3% of eCommerce sales ([source](https://www.emarketer.com/content/frictionless-commerce-2020?li=undefined)). This suggests that users frequently start their journey on mobile, but often finish on desktop. Why might that be?
+While mobile represents 79.6% of time spent amongst retail sites, it only accounts for 32.3% of [eCommerce sales](https://www.emarketer.com/content/frictionless-commerce-2020). This suggests that users frequently start their journey on mobile, but often finish on desktop. Why might that be?
 
 To reason about questions like this, we need to first understand the elements of the user journey.
 
@@ -156,7 +156,7 @@ Beyond organic traffic from search engines, **Ad clicks** could be a key source 
 
 First impressions matter. Delivering page content in a timely manner is critical for avoiding visitor abandonment and user frustration. Loading performance is a key aspect of the acquisition phase, poor loading performance results in users abandoning this journey.
 
-A recent study showed that 0.1s mSpeed improvement increased conversion rates by +8.4% for retail sites and +10.1% for travel sites ([source](https://web.dev/milliseconds-make-millions/)).
+A [recent study](https://web.dev/milliseconds-make-millions/) showed that 0.1s mSpeed improvement increased conversion rates by +8.4% for retail sites and +10.1% for travel sites.
 
 Loading performance is a vast topic, so we picked a couple of aspects to cover here.
 
@@ -366,7 +366,7 @@ While "conversion" may sound like a concept pertaining to e-commerce sites, a co
 
 According to Comscore Media Matrix, traffic from mobile devices account for 79.6% of time spent on US retail sites, but only 32.3% of US eCommerce sales.
 
-Compared to desktop, transacting on mobile devices is error-prone and tedious, as users must input personal information using small keyboards and screen sizes. Checkout flows should be simple and short to avoid user frustration, or worse, abandonment. 27% of users abandon checkout because of a "too long / complicated checkout process" ([source](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/) - 2018). 35% of users will abandon the checkout if a retailer does not offer guest checkout ([source](https://baymard.com/blog/ecommerce-checkout-usability-report-and-benchmark)).
+Compared to desktop, transacting on mobile devices is error-prone and tedious, as users must input personal information using small keyboards and screen sizes. Checkout flows should be simple and short to avoid user frustration, or worse, abandonment. 27% of users abandon checkout because of a ["too long / complicated checkout process"](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/). 35% of users will abandon the checkout if a retailer [does not offer guest checkout](https://baymard.com/blog/ecommerce-checkout-usability-report-and-benchmark).
 
 #### Form semantics
 
@@ -384,7 +384,7 @@ Users can more easily enter required information on mobile devices when their ke
 
 #### Sign up, sign in and checkout
 
-Today, browsers can help populate the necessary user information to complete a transaction and help reduce potential input errors. The `autocomplete` attribute can provide browsers hints to populate input elements with the correct user information. Users who successfully use Chrome Autofill to enter their information go through checkout an average of 30% faster than those who don't ([source](https://developers.google.com/web/fundamentals/design-and-ux/input/forms#use_metadata_to_enable_auto-complete)).
+Today, browsers can help populate the necessary user information to complete a transaction and help reduce potential input errors. The `autocomplete` attribute can provide browsers hints to populate input elements with the correct user information. Users who successfully use Chrome Autofill to enter their information go through checkout an average of 30% faster [than those who don't](https://developers.google.com/web/fundamentals/design-and-ux/input/forms#use_metadata_to_enable_auto-complete).
 
 Auto-complete can be especially helpful in completing checkout flows that require a user to login and hence remember their password. According to a [study by HYPR](https://www.hypr.com/hypr-password-study-findings/) in 2019, 78% of users forgot and had to reset a password in the past 90 days.
 
