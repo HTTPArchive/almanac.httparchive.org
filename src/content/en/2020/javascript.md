@@ -11,19 +11,18 @@ tkadlec_bio: Tim is a web performance consultant and trainer focused on building
 discuss: 2038
 results: https://docs.google.com/spreadsheets/d/1cgXJrFH02SHPKDGD0AelaXAdB3UI7PIb5dlS0dxVtfY/
 queries: 02_JavaScript
-featured_quote: JavaScript has come a long way from its humble origins as the last of the three web cornerstones—alongside CSS and HTML. Today, JavaScript has started to infiltrate a broad spectrum of the technical stack. JavaScript is no longer confined to the client-side—it's an increasingly popular choice for build tools and server-side scripting, and is creeping its way into the CDN layer as well thanks to edge computing solutions.
+featured_quote: JavaScript has come a long way from its humble origins as the last of the three web cornerstones—alongside CSS and HTML. Today, JavaScript has started to infiltrate a broad spectrum of the technical stack. It is no longer confined to the client-side and it's an increasingly popular choice for build tools and server-side scripting. JavaScript is also creeping its way into the CDN layer as well thanks to edge computing solutions.
 featured_stat_1: 1,897ms
 featured_stat_label_1: Median JS main thread time on mobile
 featured_stat_2: 37.22%
 featured_stat_label_2: Percentage of unused JS on mobile
 featured_stat_3: 12.2%
 featured_stat_label_3: Percentage of scripts loaded asynchronously
-unedited: true
 ---
 
 ## Introduction
 
-JavaScript has come a long way from its humble origins as the last of the three web cornerstones, alongside CSS and HTML. Today, JavaScript has started to infiltrate a broad spectrum of the technical stack. JavaScript is no longer confined to the client-side—it's an increasingly popular choice for build tools and server-side scripting, and is creeping its way into the CDN layer as well thanks to edge computing solutions.
+JavaScript has come a long way from its humble origins as the last of the three web cornerstones—alongside CSS and HTML. Today, JavaScript has started to infiltrate a broad spectrum of the technical stack. It is no longer confined to the client-side and it's an increasingly popular choice for build tools and server-side scripting. JavaScript is also creeping its way into the CDN layer as well thanks to edge computing solutions.
 
 Developers love us some JavaScript. According to the Markup chapter, the `script` element is the [6th most popular HTML element](./markup) in use (ahead of elements like `p` and `i`, among countless others). We spend around 14 times as many bytes on it as we do on HTML, the building block of the web, and 6 times as many bytes as CSS.
 
@@ -112,6 +111,13 @@ As raw numbers, those may or may not jump out at you depending on how much of a 
 
 That 153 KB equates to ~37% of the total script size that we send down to mobile devices. There's definitely some room for improvement here.
 
+### `module` and `nomodule`
+One mechanism we have to potentially reduce the amount of code we send down is to take advantage of the [`module`/`nomodule` pattern](https://web.dev/serve-modern-code-to-modern-browsers/). With this pattern, we create two sets of bundles: one bundle intended for modern browsers and one intended for legacy browsers. The bundle intended for modern browsers gets a `type=module` and the bundle intended for legacy browsers gets a `type=nomodule`.
+
+This approach lets us create smaller bundles with modern syntax optimized for the browsers that support it, while providing conditionally loaded polyfills and different syntax to the browsers that don't.
+
+Support for `module` and `nomodule` is broadening, but still relatively new. As a result, adoption is still a bit low. Only 3.6% of mobile pages use at least one script with `type=module` and only 0.7% of mobile pages use at least one script with `type=nomodule` to support legacy browsers.
+
 ### Request count
 
 Another way of looking at how much JavaScript we use is to explore how many JavaScript requests are made on each page. While reducing the number of requests was paramount to maintaining good performance with HTTP/1.1, with HTTP/2 the opposite is the case: breaking JavaScript down into [smaller, individual files](https://web.dev/granular-chunking-nextjs/) is [typically better for performance](../2019/http2#impact-of-http2).
@@ -189,12 +195,12 @@ The way we load JavaScript has a significant impact on the overall experience.
 
 By default, JavaScript is _parser-blocking_. In other words, when the browser discovers a `script` element, it must pause parsing of the HTML until the script has been downloaded, parsed, and executed. It's a significant bottleneck and a common contributor to pages that are slow to render.
 
-We can start to offset some of the cost of loading JavaScript by loading scripts either asynchronously, which only halts the HTML parser during the parse and execution phases and not during the download phase, or deferred, which doesn't halt the HTML parser at all. Both attributes are only available on external scripts—inline scripts cannot have them applied.
+We can start to offset some of the cost of loading JavaScript by loading scripts either asynchronously (with the `async` attribute), which only halts the HTML parser during the parse and execution phases and not during the download phase, or deferred (with the `defer` attribute), which doesn't halt the HTML parser at all. Both attributes are only available on external scripts—inline scripts cannot have them applied.
 
 On mobile, external scripts comprise 59.0% of all script elements found.
 
 <p class="note">
-  As an aside, when we talk about how much JavaScript is loaded on a page earlier, that total doesn't account for the size of these inline scripts—because they're part of the HTML document, they're counted against the markup size. This means we load even more script that the numbers show.
+  As an aside, when we talked about how much JavaScript is loaded on a page earlier, that total didn't account for the size of these inline scripts—because they're part of the HTML document, they're counted against the markup size. This means we load even more script that the numbers show.
 </p>
 
 {{ figure_markup(
@@ -217,13 +223,17 @@ Of those external scripts, only 12.2% of them are loaded with the `async` attrib
   sql_file="breakdown_of_scripts_using_async_defer_module_nomodule.sql"
 ) }}
 
-{# TODO(authors): Why is it misleading? #}
-Considering that `defer` provides us with the best loading performance (by ensuring downloading the script happens in parallel to other work, and execution waits until after the page can be displayed), we would hope to see that percentage a bit higher. In fact, as it is that 6.0% is a bit misleading.
+Considering that `defer` provides us with the best loading performance (by ensuring downloading the script happens in parallel to other work, and execution waits until after the page can be displayed), we would hope to see that percentage a bit higher. In fact, as it is that 6.0% is slightly inflated.
 
 Back when supporting IE8 and IE9 was more common, it was relatively common to use _both_ the `async` and `defer` attributes. With both attributes in place, any browser supporting both will use `async`. IE8 and IE9, which don't support `async` will fall back to defer.
 
-{# TODO(authors): In the Twitter thread that discussed this, it actually spurred the Jetpack folks to push a fix! Might be worth mentioning :) #}
-Nowadays, the pattern is unnecessary for the vast majority of sites and any script loaded with the pattern in place will interrupt the HTML parser when it needs to be executed, instead of deferring until the page has loaded. The pattern is still used surprisingly often, with 11.4% of mobile pages serving at least one script with that pattern in place.
+Nowadays, the pattern is unnecessary for the vast majority of sites and any script loaded with the pattern in place will interrupt the HTML parser when it needs to be executed, instead of deferring until the page has loaded. The pattern is still used surprisingly often, with 11.4% of mobile pages serving at least one script with that pattern in place. In other words, at least some of the 6% of scripts that use `defer` aren't getting the full benefits of the `defer` attribute.
+
+There is an encouraging story here, though.
+
+Harry Roberts [tweeted about the antipattern on Twitter](https://twitter.com/csswizardry/status/1331721659498319873), which is what prompted us to check to see how frequently this was occurring in the wild. [Rick Viscomi checked to see who the top culprits were](https://twitter.com/rick_viscomi/status/1331735748060524551), and it turns out "stats.wp.com" was the source of the most common offenders. @Kraft from Automattic replied, and the pattern will now be [removed going forward](https://twitter.com/Kraft/status/1336772912414601224). 
+
+One of the great things about the openness of the web is how one observation can lead to meaningful change and that's exactly what happened here.
 
 ### Resource hints
 
@@ -367,8 +377,7 @@ When we look at the frameworks, we also don't see much of a dramatic change in t
 
 {# TODO(analysts): Compare same frameworks from last year's chapter to this year in bar chart? #}
 
-{# TODO(authors): Elaborate on what the detection issue was. #}
-It's worth noting that the detection issue that was noted last year still applies, and still impacts the results here. It's possible that there _has_ been a significant change in popularity for a few more of these tools, but we just don't see it with the way the data is currently collected.
+It's worth noting that the [detection issue that was noted last year still applies](https://github.com/AliasIO/wappalyzer/issues/2450), and still impacts the results here. It's possible that there _has_ been a significant change in popularity for a few more of these tools, but we just don't see it with the way the data is currently collected.
 
 ### What it all means
 
@@ -630,8 +639,7 @@ As you would expect, there's a gap for all tools in use due to the lower process
 
 We have a pretty good picture now of how much JavaScript we use, where it comes from, and what we use it for. While that's interesting enough on its own, the real kicker is the "so what?" What impact does all this script actually have on the experience of our pages?
 
-{# TODO(authors): Was there something you wanted to add at the end of this paragraph? "While browsers are increasingly finding ways to offload"... #}
-The first thing we should consider is what happens with all that JavaScript once its been downloaded. Downloading is only the first part of the JavaScript journey. The browser still has to parse all that script, compile it, and eventually execute it.
+The first thing we should consider is what happens with all that JavaScript once its been downloaded. Downloading is only the first part of the JavaScript journey. The browser still has to parse all that script, compile it, and eventually execute it. While browsers are constantly on the lookout for ways to offload some of that cost to other threads, much of that work still happens on the main thread, blocking the browser from being able to do layout or paint-related work, as well as from being able to respond to user interaction.
 
 If you recall, there was only a 30 KB difference between what is shipped to a mobile device versus a desktop device. Depending on your point of view, you could be forgiven for not getting too upset about the small gap in the amount of code sent to a desktop browser versus a mobile one—after all, what's an extra 30 KB or so at the median, right?
 

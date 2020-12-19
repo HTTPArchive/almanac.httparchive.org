@@ -638,7 +638,7 @@
   {% endblock %}
 {% endblock %}
 
-{% macro figure_dropdown(metadata, id, sheets_gid="", sql_file="", image="") %}
+{% macro figure_dropdown(metadata, id, sheets_gid="", sql_file="", image="", caption="") %}
   {% if sheets_gid != "" or  sql_file != "" or image != "" %}
   <div class="figure-dropdown nav-dropdown">
     <button class="nav-dropdown-btn js-enable hidden" disabled aria-expanded="false" title="Figure options&hellip;">
@@ -763,7 +763,6 @@
 <a href="#fig-{{ metadata.chapter_number }}-{{ id }}" class="anchor-link">{{ figure_text(metadata, id) }}</a> {{ caption|safe }}
 {% else %}
 <a href="#fig-{{ id }}" class="anchor-link">{{ figure_text(metadata, id) }}</a> {{ caption|safe }}
-{{ figure_dropdown(metadata, id, sheets_gid, sql_file, image) }}
 {% endif %}
 {% endmacro %}
 
@@ -810,22 +809,28 @@
   <iframe class="fig-mobile fig-desktop video-embed" src="{{ video }}" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen width="{{ video_width }}" height="{{ video_height }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description"></iframe>
   {%- endif %}
   {%- if image != "" %}
-  {% if video %}{% set anchor_class="video-fallback-image"%}{% endif %}
-  <a href="{{ link }}"  class="{{ anchor_class }}">
-    {%- if chart_url != "" %}
-    <img src="{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description" width="{{ width }}" height="{{ height }}" data-width="{{ data_width }}" data-height="{{ data_height }}" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="{{ chart_url|safe }}" loading="lazy" />
-    {%- elif not ebook and object != "" %}
-    <object type="image/svg+xml" width="{{ width }}" height="{{ height }}" data="{{ image }}">
-      {{ caption }}
-    </object>
-    {% else %}
-    <img src="{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description" width="{{ width }}" height="{{ height }}" loading="lazy" />
-    {%- endif %}
-  </a>
+  <div class="figure-wrapper">
+    {% if video %}{% set anchor_class="video-fallback-image"%}{% endif %}
+    <a href="{{ link }}"  class="{{ anchor_class }}">
+      {%- if chart_url != "" %}
+      <img src="{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description" width="{{ width }}" height="{{ height }}" data-width="{{ data_width }}" data-height="{{ data_height }}" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="{{ chart_url|safe }}" loading="lazy" />
+      {%- elif not ebook and object != "" %}
+      <object type="image/svg+xml" width="{{ width }}" height="{{ height }}" data="{{ image }}">
+        {{ caption }}
+      </object>
+      {% else %}
+      <img src="{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description" width="{{ width }}" height="{{ height }}" loading="lazy" />
+      {%- endif %}
+    </a>
+    {% if not ebook %}{{ figure_dropdown(metadata, id, sheets_gid, sql_file, image) }}{% endif %}
+  </div>
   <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="{{ anchor }}-description" data-show-text="{{ show_description(metadata,id) }}" data-hide-text="{{ hide_description(metadata,id) }}">{{ show_description(metadata,id) }}</button>
   <div id="{{ anchor }}-description" class="visually-hidden">{{ description|safe }}</div>
   {%- elif content != "" %}
-  <div class="{{ classes }}">{{ content|safe }}</div>
+  <div class="figure-wrapper">
+    <span class="{{ classes }}">{{ content|safe }}</span>
+    {% if not ebook %}{{ figure_dropdown(metadata, id, sheets_gid, sql_file, image, ebook) }}{% endif %}
+  </div>
   {%- endif %}
   <figcaption id="{{ anchor }}-caption">{{ figure_link(metadata, id, caption, ebook=ebook, sheets_gid=sheets_gid, sql_file=sql_file, image=image) }}</figcaption>
 </figure>
