@@ -277,8 +277,8 @@ Een van de audits in [Lighthouse](./methodology#lighthouse) controleert op niet-
 
 {{ figure_markup(
   image="lighthouse-unminified-js.png",
-  caption="Verdeling van niet-verkleinde JavaScript <span lang="en">Lighthouse</span>-auditscores per mobiele pagina.",
-  description="Staafdiagram toont 0% van de mobiele pagina's die niet-verkleinde JavaScript krijgen <span lang="en">Lighthouse</span>-auditscores onder de 0,25, 4% van de pagina's met een score tussen 0,25 en 0,5, 10% van de pagina's tussen 0,5 en 0,75, 8% van de pagina's tussen 0,75 en 0,9 en 77% van de pagina's tussen 0.9 en 1.0.",
+  alt="Verdeling van niet-verkleinde JavaScript Lighthouse-auditscores per mobiele pagina.", caption='Verdeling van niet-verkleinde JavaScript Lighthouse-auditscores per mobiele pagina.',
+  description="Staafdiagram toont 0% van de mobiele pagina's die niet-verkleinde JavaScript krijgen <span lang=\"en\">Lighthouse</span>-auditscores onder de 0,25, 4% van de pagina's met een score tussen 0,25 en 0,5, 10% van de pagina's tussen 0,5 en 0,75, 8% van de pagina's tussen 0,75 en 0,9 en 77% van de pagina's tussen 0.9 en 1.0.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=158284816&format=interactive",
   sheets_gid="362705605",
   sql_file="lighthouse_unminified_js.sql"
@@ -341,13 +341,13 @@ Gelukkig is dat precies wat we zien, vooral in scripts van derden, waar 90% van 
 
 ## Wat gebruiken we?
 
-Omdat we steeds meer JavaScript hebben gebruikt om onze sites en applicaties van stroom te voorzien, is er ook een toenemende vraag naar open-source bibliotheken en <span lang="en">frameworks</span> om de productiviteit van ontwikkelaars en de algehele onderhoudbaarheid van de code te verbeteren. Sites die _niet_ een van deze hulpmiddelen gebruiken, zijn beslist de minderheid op het internet van vandaag - jQuery alleen is te vinden op bijna 85% van de mobiele pagina's die worden bijgehouden door HTTP Archive.
+Omdat we steeds meer JavaScript hebben gebruikt om onze sites en applicaties van stroom te voorzien, is er ook een toenemende vraag naar open-source bibliotheken en frameworks om de productiviteit van ontwikkelaars en de algehele onderhoudbaarheid van de code te verbeteren. Sites die _niet_ een van deze hulpmiddelen gebruiken, zijn beslist de minderheid op het internet van vandaag - jQuery alleen is te vinden op bijna 85% van de mobiele pagina's die worden bijgehouden door HTTP Archive.
 
 Het is belangrijk dat we kritisch nadenken over de hulpmidellen die we gebruiken om het web te bouwen en wat de afwegingen zijn, dus het is logisch om goed te kijken naar wat we vandaag in gebruik zien.
 
 ### Bibliotheken
 
-HTTP Archive gebruikt [Wappalyzer](./methodology#wappalyzer) om technologieën te detecteren die op een bepaalde pagina worden gebruikt. Wappalazyer houdt zowel JavaScript-bibliotheken bij (zie deze als een verzameling fragmenten of helperfuncties om de ontwikkeling te vergemakkelijken, zoals jQuery) en JavaScript-<span lang="en">frameworks</span> (dit zijn waarschijnlijker steigers en bieden sjablonen en structuur, zoals React).
+HTTP Archive gebruikt [Wappalyzer](./methodology#wappalyzer) om technologieën te detecteren die op een bepaalde pagina worden gebruikt. Wappalazyer houdt zowel JavaScript-bibliotheken bij (zie deze als een verzameling fragmenten of helperfuncties om de ontwikkeling te vergemakkelijken, zoals jQuery) en JavaScript-frameworks (dit zijn waarschijnlijker steigers en bieden sjablonen en structuur, zoals React).
 
 De populaire bibliotheken die in gebruik zijn, zijn grotendeels ongewijzigd ten opzichte van vorig jaar, waarbij jQuery het gebruik blijft domineren en slechts één van de 21 beste bibliotheken valt uit (lazy.js, vervangen door <span lang="en">DataTables</span>). Zelfs de percentages van de topbibliotheken zijn nauwelijks veranderd ten opzichte van vorig jaar.
 
@@ -355,8 +355,8 @@ De populaire bibliotheken die in gebruik zijn, zijn grotendeels ongewijzigd ten 
 
 {{ figure_markup(
   image="frameworks-libraries.png",
-  caption="Overname van de beste JavaScript-<span lang="en">frameworks</span> en -bibliotheken als percentage van de pagina's.",
-  description="Staafdiagram dat de acceptatie van de belangrijkste <span lang="en">frameworks</span> en bibliotheken weergeeft als percentage van de pagina's (niet paginaweergaven of npm-downloads). jQuery is de overweldigende leider, te vinden op 83% van de mobiele pagina's. Het wordt gevolgd door jQuery <span lang="en">migrate</span> op 30%, jQuery UI op 21%, Modernizr op 15%, <span lang="en">FancyBox</span> op 7%, Slick en <span lang="en">Lightbox</span> op 6%, en de resterende frameworks en bibliotheken op 4% of 3%: Moment.js, Underscore.js, Lodash, React, GSAP, Select2, <span lang="en">RequireJS</span> en <span lang="en">prettyPhoto</span>.",
+  alt="Overname van de beste JavaScript-frameworks en -bibliotheken als percentage van de pagina's.", caption="Overname van de beste JavaScript-<span lang=\"en\">frameworks</span> en -bibliotheken als percentage van de pagina's.",
+  description="Staafdiagram dat de acceptatie van de belangrijkste <span lang=\"en\">frameworks</span> en bibliotheken weergeeft als percentage van de pagina's (niet paginaweergaven of npm-downloads). jQuery is de overweldigende leider, te vinden op 83% van de mobiele pagina\'s. Het wordt gevolgd door jQuery migrate op 30%, jQuery UI op 21%, Modernizr op 15%, FancyBox op 7%, Slick en Lightbox op 6%, en de resterende frameworks en bibliotheken op 4% of 3%: Moment.js, Underscore.js, Lodash, React, GSAP, Select2, RequireJS en prettyPhoto.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=419887153&format=interactive",
   sheets_gid="1654577118",
   sql_file="frameworks_libraries.sql"
@@ -371,9 +371,9 @@ Beide zijn zeer goede gissingen, en het lijkt erop dat de situatie op geen van b
 
 In feite wordt de dominantie van jQuery nog verder ondersteund als je bedenkt dat van de top 10 bibliotheken er 6 jQuery zijn of jQuery nodig hebben om te kunnen worden gebruikt: jQuery UI, jQuery <span lang="en">Migrate</span>, <span lang="en">FancyBox, Lightbox</span> en Slick .
 
-### <span lang="en">Frameworks</span> {frameworks}
+### Frameworks
 
-Als we naar de <span lang="en">frameworks</span> kijken, zien we ook niet veel van een dramatische verandering in termen van adoptie in de belangrijkste <span lang="en">frameworks</span> die vorig jaar naar voren kwamen. Vue.js heeft een aanzienlijke toename gezien en AMP is een beetje gegroeid, maar de meeste zijn min of meer waar ze een jaar geleden waren.
+Als we naar de frameworks kijken, zien we ook niet veel van een dramatische verandering in termen van adoptie in de belangrijkste frameworks die vorig jaar naar voren kwamen. Vue.js heeft een aanzienlijke toename gezien en AMP is een beetje gegroeid, maar de meeste zijn min of meer waar ze een jaar geleden waren.
 
 {# TODO(analysts): Compare same frameworks from last year's chapter to this year in bar chart? #}
 
@@ -383,7 +383,7 @@ Het is vermeldenswaard dat het [detectieprobleem dat vorig jaar werd opgemerkt n
 
 Interessanter voor ons dan de populariteit van de hulpmiddelen zelf is de impact die ze hebben op de dingen die we bouwen.
 
-Ten eerste is het vermeldenswaard dat hoewel we misschien denken aan het gebruik van de ene hulpmiddel in plaats van de andere, we in werkelijkheid zelden slechts één enkele bibliotheek of <span lang="en">framework</span> gebruiken bij de productie. Slechts 21% van de geanalyseerde pagina's rapporteert slechts één bibliotheek of <span lang="en">framework</span>. Twee of drie <span lang="en">frameworks</span> komen vrij vaak voor, en de lange staart wordt erg lang, erg snel.
+Ten eerste is het vermeldenswaard dat hoewel we misschien denken aan het gebruik van de ene hulpmiddel in plaats van de andere, we in werkelijkheid zelden slechts één enkele bibliotheek of framework gebruiken bij de productie. Slechts 21% van de geanalyseerde pagina's rapporteert slechts één bibliotheek of framework. Twee of drie frameworks komen vrij vaak voor, en de lange staart wordt erg lang, erg snel.
 
 Als we kijken naar de veel voorkomende combinaties die we in de productie zien, zijn de meeste te verwachten. Gezien de dominantie van jQuery, is het niet verwonderlijk dat de meeste populaire combinaties jQuery en een willekeurig aantal jQuery-gerelateerde plug-ins bevatten.
 
@@ -502,14 +502,14 @@ Als we kijken naar de veel voorkomende combinaties die we in de productie zien, 
 
   <figcaption>
     {{ figure_link(
-      caption="De meest populaire combinaties van bibliotheken en <span lang="en">frameworks</span> op mobiele pagina's.",
+      caption='De meest populaire combinaties van bibliotheken en frameworks op mobiele pagina\'s.',
       sheets_gid="795160444",
       sql_file="frameworks_libraries_combos.sql"
     ) }}
   </figcaption>
 </figure>
 
-We zien ook een behoorlijk aantal meer "moderne" <span lang="en">frameworks</span> zoals React, Vue en Angular in combinatie met jQuery, bijvoorbeeld als gevolg van migratie of opname door derden.
+We zien ook een behoorlijk aantal meer "moderne" frameworks zoals React, Vue en Angular in combinatie met jQuery, bijvoorbeeld als gevolg van migratie of opname door derden.
 
 <figure>
   <table>
@@ -581,14 +581,14 @@ We zien ook een behoorlijk aantal meer "moderne" <span lang="en">frameworks</spa
 
 Wat nog belangrijker is, al deze hulpmiddelen betekenen doorgaans meer code en meer verwerkingstijd.
 
-Als we specifiek naar de gebruikte <span lang="en">frameworks</span> kijken, zien we dat de mediaan JavaScript-bytes voor pagina's die deze gebruiken, enorm variëren, afhankelijk van _wat_ wordt gebruikt.
+Als we specifiek naar de gebruikte frameworks kijken, zien we dat de mediaan JavaScript-bytes voor pagina's die deze gebruiken, enorm variëren, afhankelijk van _wat_ wordt gebruikt.
 
-De onderstaande grafiek toont de mediaan bytes voor pagina's waar een van de top 35 meest gedetecteerde <span lang="en">frameworks</span> is gevonden, uitgesplitst naar client.
+De onderstaande grafiek toont de mediaan bytes voor pagina's waar een van de top 35 meest gedetecteerde frameworks is gevonden, uitgesplitst naar client.
 
 {{ figure_markup(
   image="frameworks-bytes.png",
-  caption="Het gemiddelde aantal JavaScript-kilobytes per pagina door JavaScript-<span lang="en">framework</span>.",
-  description="Staafdiagram met het gemiddelde aantal JavaScript-kilobytes per pagina, uitgesplitst en gesorteerd op populariteit van het JavaScript-<span lang="en">framework</span>. Het meest populaire <span lang="en">framework</span>, React, heeft een mediaan van 1.328 JS op mobiele pagina's. Andere <span lang="en">frameworks</span> zoals <span lang="en">RequireJS</span> en Angular hebben een hoog aantal mediane JS-bytes per pagina. Pagina's met <span lang="en">MooTools</span>, Prototype, AMP, <span lang="en">RightJS</span>, Alpine.js en Svelte hebben medianen van minder dan 500 KB per mobiele pagina. Ember.js heeft een uitbijter van ongeveer 1.800 KB mediane JS per mobiele pagina.",
+  caption="Het gemiddelde aantal JavaScript-kilobytes per pagina door JavaScript-framework.",
+  description="Staafdiagram met het gemiddelde aantal JavaScript-kilobytes per pagina, uitgesplitst en gesorteerd op populariteit van het JavaScript-framework. Het meest populaire framework, React, heeft een mediaan van 1.328 JS op mobiele pagina's. Andere frameworks zoals RequireJS en Angular hebben een hoog aantal mediane JS-bytes per pagina. Pagina's met MooTools, Prototype, AMP, RightJS, Alpine.js en Svelte hebben medianen van minder dan 500 KB per mobiele pagina. Ember.js heeft een uitbijter van ongeveer 1.800 KB mediane JS per mobiele pagina.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=955720480&format=interactive",
   sheets_gid="1206934500",
   width="600",
@@ -596,14 +596,14 @@ De onderstaande grafiek toont de mediaan bytes voor pagina's waar een van de top
   sql_file="frameworks-bytes-by-framework.sql"
 ) }}
 
-Op één van de spectrums staan <span lang="en">frameworks</span> zoals React of Angular of Ember, die de neiging hebben om veel code te verzenden, ongeacht de klant. Aan de andere kant zien we minimalistische <span lang="en">frameworks</span> zoals Alpine.js en Svelte veelbelovende resultaten laten zien. Standaarden zijn erg belangrijk, en het lijkt erop dat Svelte en Alpine er allebei in slagen (tot dusver&hellip; is de steekproefomvang vrij klein) om een lichtere set pagina's te creëren door te beginnen met zeer performante standaarden.
+Op één van de spectrums staan frameworks zoals React of Angular of Ember, die de neiging hebben om veel code te verzenden, ongeacht de klant. Aan de andere kant zien we minimalistische frameworks zoals Alpine.js en Svelte veelbelovende resultaten laten zien. Standaarden zijn erg belangrijk, en het lijkt erop dat Svelte en Alpine er allebei in slagen (tot dusver&hellip; is de steekproefomvang vrij klein) om een lichtere set pagina's te creëren door te beginnen met zeer performante standaarden.
 
 We krijgen een vergelijkbaar beeld als we kijken naar de hoofdthread-tijd voor pagina's waarop deze hulpmiddelen zijn gedetecteerd.
 
 {{ figure_markup(
   image="frameworks-main-thread.png",
-  caption="De mediane hoofdthread-tijd per pagina door JavaScript-<span lang="en">framework</span>.",
-  description="Staafdiagram met de mediane hoofdthread-tijd per <span lang="en">framework</span>. Het is moeilijk om iets anders op te merken dan Ember.js, waarvan de mediane mobiele hoofdthread-tijd meer dan 20.000 milliseconden (20 seconden) is. De rest van de <span lang="en">frameworks</span> zijn in vergelijking klein.",
+  caption="De mediane hoofdthread-tijd per pagina door JavaScript-framework.",
+  description="Staafdiagram met de mediane hoofdthread-tijd per framework. Het is moeilijk om iets anders op te merken dan Ember.js, waarvan de mediane mobiele hoofdthread-tijd meer dan 20.000 milliseconden (20 seconden) is. De rest van de frameworks zijn in vergelijking klein.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=691531699&format=interactive",
   sheets_gid="160832134",
   sql_file="main_thread_time_frameworks.sql"
@@ -613,21 +613,21 @@ Ember's mobiele hoofdthread-tijd springt eruit en vervormt de grafiek enigszins 
 
 {{ figure_markup(
   image="frameworks-main-thread-no-ember.png",
-  caption="De mediane hoofdthread-tijd per pagina door JavaScript-<span lang="en">framework</span>, met uitzondering van Ember.js.",
-  description="Staafdiagram met de mediane hoofdthread-tijd per <span lang="en">framework</span>, exclusief Ember.js. De mobiele hoofdthread-tijden zijn allemaal hoger vanwege de testmethodologie van het gebruik van langzamere CPU-snelheden voor mobiel. De meest populaire <span lang="en">frameworks</span> zoals React, GSAP en <span lang="en">RequireJS</span> hebben hoge threads van ongeveer 2-3 seconden voor desktop en 5-7 seconden voor mobiel. Polymer valt ook verderop op de populariteitslijst op. MooToos, Prototype, Alpine.js en Svelte hebben meestal lagere hoofdthread-tijden, minder dan 2 seconden.",
+  caption="De mediane hoofdthread-tijd per pagina door JavaScript-framework, met uitzondering van Ember.js.",
+  description="Staafdiagram met de mediane hoofdthread-tijd per framework, exclusief Ember.js. De mobiele hoofdthread-tijden zijn allemaal hoger vanwege de testmethodologie van het gebruik van langzamere CPU-snelheden voor mobiel. De meest populaire frameworks zoals React, GSAP en RequireJS hebben hoge threads van ongeveer 2-3 seconden voor desktop en 5-7 seconden voor mobiel. Polymer valt ook verderop op de populariteitslijst op. MooToos, Prototype, Alpine.js en Svelte hebben meestal lagere hoofdthread-tijden, minder dan 2 seconden.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=77448759&format=interactive",
   sheets_gid="160832134",
   sql_file="main_thread_time_frameworks.sql"
 ) }}
 
-Hulpmiddelen zoals React, GSAP en <span lang="en">RequireJS</span> besteden vaak veel tijd aan de hoofdthread van de browser, ongeacht of het een desktop- of mobiele paginaweergave is. Dezelfde hulpmiddelen die in het algemeen tot minder code leiden - hulpmiddelen zoals Alpine en Svelte - hebben ook de neiging om de impact op de hoofdthread te verkleinen.
+Hulpmiddelen zoals React, GSAP en RequireJS besteden vaak veel tijd aan de hoofdthread van de browser, ongeacht of het een desktop- of mobiele paginaweergave is. Dezelfde hulpmiddelen die in het algemeen tot minder code leiden - hulpmiddelen zoals Alpine en Svelte - hebben ook de neiging om de impact op de hoofdthread te verkleinen.
 
-De kloof tussen de ervaring die een <span lang="en">framework</span> biedt voor desktop en mobiel, is ook de moeite waard om in te graven. Mobiel verkeer wordt steeds dominanter en het is van cruciaal belang dat onze hulpmiddelen zo goed mogelijk presteren voor mobiele paginaweergaven. Hoe groter de kloof die we zien tussen desktop- en mobiele prestaties voor een <span lang="en">framework</span>, hoe groter de rode vlag.
+De kloof tussen de ervaring die een framework biedt voor desktop en mobiel, is ook de moeite waard om in te graven. Mobiel verkeer wordt steeds dominanter en het is van cruciaal belang dat onze hulpmiddelen zo goed mogelijk presteren voor mobiele paginaweergaven. Hoe groter de kloof die we zien tussen desktop- en mobiele prestaties voor een framework, hoe groter de rode vlag.
 
 {{ figure_markup(
   image="frameworks-main-thread-no-ember-diff.png",
-  caption="Verschil tussen de mediaan van de hoofdthread-tijd voor desktop en mobiel per pagina volgens JavaScript-<span lang="en">framework</span>, met uitzondering van Ember.js.",
-  description="Staafdiagram met de absolute en relatieve verschillen tussen de mediaan van de hoofdthread-tijd op desktop en mobiel per pagina volgens JavaScript-<span lang="en">framework</span>, met uitzondering van Ember.js. Polymer springt later in de populariteitslijst naar voren met een groot verschil: ongeveer 5 seconden en 250% langzamere mediane hoofdthread-tijd op mobiele pagina's dan op desktoppagina's. Andere <span lang="en">frameworks</span> die opvallen zijn GSAP en RequireJS heeft een verschil van 4 seconden of 150%. <span lang="en">Frameworks</span> met het laagste verschil zijn Mustache en RxJS, die slechts ongeveer 20-30% langzamer zijn op mobiel.",
+  caption="Verschil tussen de mediaan van de hoofdthread-tijd voor desktop en mobiel per pagina volgens JavaScript-framework, met uitzondering van Ember.js.",
+  description="Staafdiagram met de absolute en relatieve verschillen tussen de mediaan van de hoofdthread-tijd op desktop en mobiel per pagina volgens JavaScript-framework, met uitzondering van Ember.js. Polymer springt later in de populariteitslijst naar voren met een groot verschil: ongeveer 5 seconden en 250% langzamere mediane hoofdthread-tijd op mobiele pagina's dan op desktoppagina's. Andere frameworks die opvallen zijn GSAP en RequireJS heeft een verschil van 4 seconden of 150%. frameworks met het laagste verschil zijn Mustache en RxJS, die slechts ongeveer 20-30% langzamer zijn op mobiel.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=1758266664&format=interactive",
   sheets_gid="160832134",
   sql_file="main_thread_time_frameworks.sql"
@@ -656,14 +656,14 @@ De gemiddelde desktopsite besteedt 891 ms aan de hoofdthread van een browser die
   sql_file="main_thread_time.sql"
 ) }}
 
-### Het correleren van JavaScript-gebruik met <span lang="en">Lighthouse</span>-scores {het-correleren-van-javascript-gebruik-met-lighthouse-scores}
+### Het correleren van JavaScript-gebruik met Lighthouse-scores
 
-Een manier om te zien hoe dit zich vertaalt in het beïnvloeden van de gebruikerservaring, is door te proberen een aantal JavaScript-statistieken die we eerder hebben geïdentificeerd te correleren met <span lang="en">Lighthouse</span>-scores voor verschillende statistieken en categorieën.
+Een manier om te zien hoe dit zich vertaalt in het beïnvloeden van de gebruikerservaring, is door te proberen een aantal JavaScript-statistieken die we eerder hebben geïdentificeerd te correleren met Lighthouse-scores voor verschillende statistieken en categorieën.
 
 {{ figure_markup(
   image="correlations.png",
   caption="Correlaties van JavaScript op verschillende aspecten van gebruikerservaring.",
-  description="Staafdiagram met de Pearson-correlatiecoëfficiënt voor verschillende aspecten van gebruikerservaring. De correlatie van bytes met de prestatiescore van <span lang="en">Lighthouse</span> heeft een correlatiecoëfficiënt van -0,47. Bytes en <span lang="en">Lighthouse</span> toegankelijkheidsscore: 0,08. Bytes en <span lang="en">Total Blocking Time</span> (TBT): 0,55. Bytes van derden en prestatiescore van <span lang="en">ighthouse</span>: -0,37. Bytes van derden en de toegankelijkheidsscore van <span lang="en">Lighthouse</span>: 0,00. Bytes van derden en TBT: 0,48. Het aantal asynchrone scripts per pagina en de prestatiescore van <span lang="en">Lighthouse</span>: -0,19. Asynchrone scripts en <span lang="en">Lighthouse</span> toegankelijkheidsscore: 0,08. Asynchrone scripts en TBT: 0,36.",
+  description="Staafdiagram met de Pearson-correlatiecoëfficiënt voor verschillende aspecten van gebruikerservaring. De correlatie van bytes met de prestatiescore van Lighthouse heeft een correlatiecoëfficiënt van -0,47. Bytes en Lighthouse toegankelijkheidsscore: 0,08. Bytes en <span lang=\"en\">Total Blocking Time</span> (TBT): 0,55. Bytes van derden en prestatiescore van Lighthouse: -0,37. Bytes van derden en de toegankelijkheidsscore van Lighthouse: 0,00. Bytes van derden en TBT: 0,48. Het aantal asynchrone scripts per pagina en de prestatiescore van Lighthouse: -0,19. Asynchrone scripts en Lighthouse toegankelijkheidsscore: 0,08. Asynchrone scripts en TBT: 0,36.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=649523941&format=interactive",
   sheets_gid="2035770638",
   sql_file="correlations.sql"
@@ -671,19 +671,19 @@ Een manier om te zien hoe dit zich vertaalt in het beïnvloeden van de gebruiker
 
 De bovenstaande grafiek gebruikt de [Pearson correlatiecoëfficiënt](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient). Er is een lange, nogal complexe definitie van wat dat precies betekent, maar de kern is dat we zoeken naar de sterkte van de correlatie tussen twee verschillende getallen. Als we een coëfficiënt van 1,00 vinden, hebben we een directe positieve correlatie. Een correlatie van 0,00 zou geen verband tussen twee getallen aantonen. Alles onder de 0,00 duidt op een negatieve correlatie - met andere woorden, als het ene getal stijgt, neemt het andere af.
 
-Ten eerste lijkt er niet echt een meetbare correlatie te bestaan tussen onze JavaScript-statistieken en de <span lang="en">Lighthouse</span>-score voor toegankelijkheid ("LH A11y" in de grafiek) hier. Dat staat in schril contrast met wat elders is gevonden, met name via [het jaarlijkse onderzoek van WebAim](https://webaim.org/projects/million/#frameworks).
+Ten eerste lijkt er niet echt een meetbare correlatie te bestaan tussen onze JavaScript-statistieken en de Lighthouse-score voor toegankelijkheid ("LH A11y" in de grafiek) hier. Dat staat in schril contrast met wat elders is gevonden, met name via [het jaarlijkse onderzoek van WebAim](https://webaim.org/projects/million/#frameworks).
 
-De meest waarschijnlijke verklaring hiervoor is dat de toegankelijkheidstests van <span lang="en">Lighthouse</span> (nog!) Niet zo uitgebreid zijn als wat beschikbaar is via andere hulpmiddelen, zoals WebAIM, die toegankelijkheid als hun primaire focus hebben.
+De meest waarschijnlijke verklaring hiervoor is dat de toegankelijkheidstests van Lighthouse (nog!) Niet zo uitgebreid zijn als wat beschikbaar is via andere hulpmiddelen, zoals WebAIM, die toegankelijkheid als hun primaire focus hebben.
 
-Waar we wel een sterke correlatie zien, is tussen het aantal JavaScript-bytes ("Bytes") en zowel de algehele prestatie van <span lang="en">Lighthouse</span> ("LH Perf") score als de <span lang="en">Total Blocking Time</span> ("TBT").
+Waar we wel een sterke correlatie zien, is tussen het aantal JavaScript-bytes ("Bytes") en zowel de algehele prestatie van Lighthouse ("LH Perf") score als de <span lang="en">Total Blocking Time</span> ("TBT").
 
-De correlatie tussen JavaScript-bytes en de prestatiescores van <span lang="en">Lighthouse</span> is -0,47. Met andere woorden, naarmate JS-bytes toenemen, nemen de prestatiescores van <span lang="en">Lighthouse</span> af. De totale bytes hebben een sterkere correlatie dan het aantal bytes van derden ("3P bytes"), wat erop duidt dat hoewel ze zeker een rol spelen, we niet alle schuld bij derden kunnen leggen.
+De correlatie tussen JavaScript-bytes en de prestatiescores van Lighthouse is -0,47. Met andere woorden, naarmate JS-bytes toenemen, nemen de prestatiescores van Lighthouse af. De totale bytes hebben een sterkere correlatie dan het aantal bytes van derden ("3P bytes"), wat erop duidt dat hoewel ze zeker een rol spelen, we niet alle schuld bij derden kunnen leggen.
 
 Het verband tussen de totale blokkeringstijd en JavaScript-bytes is zelfs nog belangrijker (0,55 voor totale bytes, 0,48 voor bytes van derden). Dat is niet zo verwonderlijk, gezien wat we weten over al het werk dat browsers moeten doen om JavaScript op een pagina te laten werken - meer bytes betekent meer tijd.
 
 ### Beveiligingskwetsbaarheden
 
-Een andere nuttige audit die <span lang="en">Lighthouse</span> uitvoert, is om te controleren op bekende beveiligingsproblemen in bibliotheken van derden. Het doet dit door te detecteren welke bibliotheken en <span lang="en">frameworks</span> op een bepaalde pagina worden gebruikt en welke versie van elk wordt gebruikt. Vervolgens controleert het [Snyk's open-source kwetsbaarheidsdatabase](https://snyk.io/vuln?type=npm) om te zien welke kwetsbaarheden zijn ontdekt in de geïdentificeerde hulpmiddelen.
+Een andere nuttige audit die Lighthouse uitvoert, is om te controleren op bekende beveiligingsproblemen in bibliotheken van derden. Het doet dit door te detecteren welke bibliotheken en frameworks op een bepaalde pagina worden gebruikt en welke versie van elk wordt gebruikt. Vervolgens controleert het [Snyk's open-source kwetsbaarheidsdatabase](https://snyk.io/vuln?type=npm) om te zien welke kwetsbaarheden zijn ontdekt in de geïdentificeerde hulpmiddelen.
 
 {{ figure_markup(
   caption="Het percentage mobiele pagina's bevat ten minste één kwetsbare JavaScript-bibliotheek.",
@@ -693,7 +693,7 @@ Een andere nuttige audit die <span lang="en">Lighthouse</span> uitvoert, is om t
   sql_file="lighthouse_vulnerabilities.sql"
 ) }}
 
-Volgens de audit gebruikt 83,5% van de mobiele pagina's een JavaScript-bibliotheek of -<span lang="en">framework</span> met minstens één bekende beveiligingslek.
+Volgens de audit gebruikt 83,5% van de mobiele pagina's een JavaScript-bibliotheek of -framework met minstens één bekende beveiligingslek.
 
 Dit is wat we het jQuery-effect noemen. Weet je nog hoe we zagen dat jQuery op maar liefst 83% van de pagina's wordt gebruikt? Verschillende oudere versies van jQuery bevatten bekende kwetsbaarheden, die de overgrote meerderheid van de kwetsbaarheden omvatten die deze audit controleert.
 
@@ -752,7 +752,7 @@ Van de ongeveer 5 miljoen mobiele pagina's waartegen wordt getest, bevat 81% een
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Top 10 bibliotheken die volgens <span lang="en">Lighthouse</span> bijdragen aan het hoogste aantal kwetsbare mobiele pagina's.",
+      caption="Top 10 bibliotheken die volgens Lighthouse bijdragen aan het hoogste aantal kwetsbare mobiele pagina's.",
       sheets_gid="1803013938",
       sql_file="lighthouse_vulnerable_libraries.sql"
     ) }}
@@ -760,7 +760,7 @@ Van de ongeveer 5 miljoen mobiele pagina's waartegen wordt getest, bevat 81% een
 </figure>
 
 
-Met andere woorden, als we mensen zover kunnen krijgen om weg te migreren van die verouderde, kwetsbare versies van jQuery, zouden we het aantal sites met bekende kwetsbaarheden zien dalen (tenminste, totdat we er enkele in de nieuwere <span lang="en">frameworks</span> beginnen te vinden).
+Met andere woorden, als we mensen zover kunnen krijgen om weg te migreren van die verouderde, kwetsbare versies van jQuery, zouden we het aantal sites met bekende kwetsbaarheden zien dalen (tenminste, totdat we er enkele in de nieuwere frameworks beginnen te vinden).
 
 Het merendeel van de gevonden kwetsbaarheden valt in de categorie "gemiddeld".
 
