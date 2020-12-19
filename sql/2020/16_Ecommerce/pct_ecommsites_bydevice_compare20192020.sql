@@ -29,17 +29,17 @@ UNION ALL
 SELECT
   _TABLE_SUFFIX AS client,
    2019 AS year,
-  COUNT(0) AS freq,
+  COUNT(DISTINCT url) AS freq,
   total,
-  COUNT(0) / total AS pct
+  COUNT(DISTINCT url) / total AS pct
 FROM
-  `httparchive.technologies.2019_08_01_*`
+  `httparchive.technologies.2019_07_01_*`
 JOIN (
   SELECT
     _TABLE_SUFFIX,
     COUNT(DISTINCT url) AS total
   FROM
-    `httparchive.summary_pages.2019_08_01_*`
+    `httparchive.summary_pages.2019_07_01_*`
   GROUP BY
     _TABLE_SUFFIX)
 USING
