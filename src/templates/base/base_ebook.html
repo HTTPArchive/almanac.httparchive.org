@@ -2,9 +2,9 @@
 
 {% set metadata = {"authors":["rviscomi"]} %}
 
-{% block image_url %}https://almanac.httparchive.org/static/images/home-hero-bg.png{% endblock %}
-{% block image_height %}562{% endblock %}
-{% block image_width %}715{% endblock %}
+{% block image_url %}https://almanac.httparchive.org/static/images/home-hero-{{ year }}.png{% endblock %}
+{% block image_height %}600{% endblock %}
+{% block image_width %}1200{% endblock %}
 
 {% block head %}
 {{ super() }}
@@ -390,7 +390,7 @@
           {% endif %}
           <div class="contributor-teams">
             {% for id in contributor.teams | sort() %}
-              <span class="contributor-team team-{{ id }}">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</span>{{ self.comma() if not loop.last  and loop.length > 2 }}
+              {% if loop.last and loop.length > 1 %} {{ self.and() }} {% endif %}<span class="contributor-team team-{{ id }}">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</span>{{ self.comma() if not loop.last and loop.length > 2 }}
             {% endfor %}
           </div>
         </div>

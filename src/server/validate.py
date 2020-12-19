@@ -28,7 +28,7 @@ def validate(func):
         year = kwargs.get('year')
         chapter = kwargs.get('chapter')
 
-        accepted_args = inspect.getargspec(func).args
+        accepted_args = inspect.getfullargspec(func).args
 
         lang, year = validate_lang_and_year(lang_arg, year)
 
