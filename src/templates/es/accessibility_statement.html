@@ -1,0 +1,120 @@
+{% extends "base/accessibility_statement.html" %}
+
+{% block title %}Declaración de accesibilidad | Web Almanac por HTTP Archive{% endblock %}
+
+{% block description %}Describe los objetivos de accesibilidad del Web Almanac{% endblock %}
+
+{% block twitter_image_alt %}Declaración de accesibilidad de Web Almanac{% endblock %}
+
+{% block index %}
+      <ul>
+        <li><a href="#overview">Visión general</a></li>
+        <li><a href="#measures">Medidas para apoyar la accesibilidad</a></li>
+        <li><a href="#conformance-status">Estado de conformidad</a></li>
+        <li><a href="#external-content">Contenido externo</a></li>
+        <li><a href="#compatibility">Compatibilidad con navegadores y tecnología de asistencia</a></li>
+        <li><a href="#technical-specifications">Especificaciones técnicas</a></li>
+        <li><a href="#assessment-approach">Enfoque de evaluación</a></li>
+        <li><a href="#feedback">Retroalimentación</a></li>
+      </ul>
+{% endblock %}
+
+{% block main_content %}
+      <h1 class="title title-lg">Accessibility Statement</h1>
+      <section>
+        <h2 id="overview"><a href="#overview" class="anchor-link">Visión general</a></h2>
+
+        <p>
+          Web Almanac se compromete a garantizar la accesibilidad digital para todas las personas. Mejoramos continuamente la experiencia del usuario para todos y aplicamos relevantes estándares de accesibilidad.
+        </p>
+        <p>
+          Esta declaración fue revisada por última vez el <time datetime="2020-06-02">2 de junio de 2020</time>.
+        </p>
+      </section>
+
+      <section>
+        <h2 id="measures"><a href="#measures" class="anchor-link">Medidas para apoyar la accesibilidad</a></h2>
+
+        <p>
+          Web Almanac toma las siguientes medidas para garantizar la accesibilidad de este sitio web:
+        </p>
+        <ul>
+          <li>Incluir la accesibilidad como parte del desarrollo de este sitio web.</li>
+          <li>Revisar la accesibilidad utilizando las herramientas disponibles.</li>
+          <li>Ser transparentes sobre los problemas de accesibilidad <a href="https://github.com/HTTPArchive/almanac.httparchive.org/issues?utf8=%E2%9C%93&q=label%3AAccessibility+" hreflang="en">en nuestra página de GitHub</a>.</li>
+          <li>Abordar los problemas de accesibilidad que se planteen de manera oportuna.</li>
+          <li>Publicar y mantener actualizada esta declaración de accesibilidad.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 id="conformance-status"><a href="#conformance-status" class="anchor-link">Estado de conformidad</a></h2>
+
+        <p>
+          Las <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" hreflang="eng">Web Content Accessibility Guidelines (WCAG)</a> definen los lineamientos para que diseñadores y desarrolladores apliquen y mejoren la accesibilidad, especialmente a personas con discapacidades. Define tres niveles de conformidad: Nivel A, Nivel AA y Nivel AAA. El Web Almanac cumple parcialmente con <a href="https://www.w3.org/TR/WCAG21/" hreflang="en">WCAG 2.1</a> Nivel AAA. Parcialmente significa que algunas partes del contenido no se ajustan completamente al estándar de accesibilidad.
+        </p>
+
+        <p>
+          Nos consideramos parcialmente conformes porque no hemos completado una auditoría completa, verificada externamente, del sitio web, ni los usuarios de lectores de pantalla lo han revisado, por lo que no podemos estar seguros de nuestro estado actual. Hemos auditado todas las páginas del sitio web utilizando varias herramientas., incluyendo el <a href="https://wave.webaim.org/" hreflang="en">WAVE Accessibility Tool</a>, el <a href="https://hacks.mozilla.org/2019/10/auditing-for-accessibility-problems-with-firefox-developer-tools/" hreflang="en">Firefox Accessibility Inspector</a> y el <a href="https://chrome.google.com/webstore/detail/axe-web-accessibility-tes/lhdoppojpmngadmnindnejefpokejbdd" hreflang="en" rel="nofollow">AXE Chrome plugin</a>.
+        </p>
+
+        <p>
+          El propósito de Web Almanac es proporcionar información detallada sobre el estado de la web. Si bien nuestro objetivo es garantizar que todo el contenido sea leído fácilmente, incluso por no expertos, la naturaleza del material puede significar que puede haber un nivel de experiencia y comprensión de la tecnología necesarios para comprender algunos capítulos y algunas métricas, que puede no cumplir con las <a href="https://www.w3.org/WAI/WCAG21/quickref/#reading-level" hreflang="en">pautas WCAG 2.1 Nivel AAA de nivel de lectura</a>.
+        </p>
+
+        <p>
+          También usamos Google Sheets para algunas visualizaciones interactivas, que también puede no cumplir con los estándares de accesibilidad WCAG. Estos son cargados vía <code>iframes</code> y proporcionamos imágenes para todas nuestras figuras, y solo mostramos visualizaciones interactivas cuando el software cliente lo soporta. Si utiliza un navegador web y no desea ver las visualizaciones interactivas, entonces las imágenes se pueden hacer ver agregando un <code>?print</code> como parámetro de consulta a cualquiera de los capítulos, <a href="../accessibility?print">vea el capítulo de Accesibilidad en modo de impresión</a> para ver un ejemplo. Podemos buscar que esta funcionalidad sea más fácil de activar si es necesario, pero todas las visualizaciones tienen descripciones de texto detalladas, por lo que no creemos que sea necesario. Por favor <a href="https://github.com/HTTPArchive/almanac.httparchive.org/issues" hreflang="en">haznos saber</a> si estamos en lo cierto o no acerca de esto.
+        </p>
+
+        <p>
+          En algunos capítulos, también incluimos otro contenido en el sitio, no creado por nosotros, incluidos videos de YouTube, enlaces PDF o enlaces a otros artículos, que pueden no cumplir con los estrictos criterios requeridos por WCAG 2.1 nivel AAA. Consulte la nota a continuación sobre contenido externo.
+        </p>
+
+        <p>
+          La <a href="/static/pdfs/web_almanac_{{ year }}_{{ lang }}.pdf">versión PDF del Web Almanac</a> sigue las mejores prácticas de accesibilidad de PDF y cumple con el estándar <a href="https://en.wikipedia.org/wiki/PDF/UA" hreflang="en">PDF/UA-1</a>.
+        </p>
+
+        <h2 id="external-content"><a href="#external-content" class="anchor-link">Contenido externo</a></h2>
+
+        <p>
+          Algunos capítulos enlazan a otro contenido (videos, PDFs, artículos) los cuales no están bajo nuestro control y que pueden no alcanzar los altos niveles de conformidad que hemos logrado. Donde sea posible, proporcionaremos enlaces a artículos en el mismo idioma de la página que se está viendo, pero esto no siempre es posible.
+        </p>
+
+        <h2 id="compatibility"><a href="#compatibility" class="anchor-link">Compatibilidad con navegadores y tecnología de asistencia</a></h2>
+
+        <p>
+          Web Almanac está diseñado para ser compatible con tantos navegadores y tecnologías de asistencia como sea posible. El sitio web se ha creado de manera progresiva y es completamente funcional incluso sin admitir todas las características modernas que usemos, pero puede notar un deterioro en las imágenes y ausencia de algunas funciones (imágenes interactivas, recuento de comentarios etc.) cuando no se usa un navegador moderno o una versión reciente de Chrome, Safari, Firefox o Edge.
+        </p>
+
+        <p>
+          En este momento, no hemos completado las pruebas en hardware o software de tecnología de asistencia, pero hemos utilizado herramientas, como se mencionó anteriormente, para intentar abordar cualquier problema en estos dispositivos.
+        </p>
+      </section>
+
+      <section>
+        <h2 id="technical-specifications"><a href="#technical-specifications" class="anchor-link">Especificaciones técnicas</a></h2>
+
+        <p>
+          El sitio web está construido sobre, HTML semántico (incluyendo  <a href="https://www.w3.org/WAI/standards-guidelines/aria/" hreflang="en">WAI-ARIA</a> donde corresponda), mejorando con CSS para los estilos y JavaScript limitado para algunos componentes interactivos. El sitio web hace uso de prácticas de desarrollo modernas como CSS Grid, Fetch, y fuentes (tipografía) WOFF2, que no son compatibles con antiguos navegadores como IE 11. El sitio web sigue siendo completamente funcional en estos navegadores, pero puede que no sea tan atractivo visualmente. No se deben requerir complementos o bibliotecas adicionales para ver el sitio web.
+        </p>
+        <p>
+          El PDF de Web Almanac sigue los mismos estándares de accesibilidad que el sitio web y, además, está etiquetado estructuralmente para facilitar la accesibilidad.
+        </p>
+      </section>
+
+      <section>
+        <h2 id="assessment-approach"><a href="#assessment-approach" class="anchor-link">Enfoque de evaluación</a></h2>
+
+        <p>
+          Autoevaluación: el equipo de Web Almanac evaluó el contenido utilizando su propia experiencia y una serie de herramientas, incluida la <a href="https://wave.webaim.org/" hreflang="en">WAVE Accessibility Tool</a>, el <a href="https://hacks.mozilla.org/2019/10/auditing-for-accessibility-problems-with-firefox-developer-tools/" hreflang="en">Firefox Accessibility Inspector</a> y el <a href="https://chrome.google.com/webstore/detail/axe-web-accessibility-tes/lhdoppojpmngadmnindnejefpokejbdd" hreflang="en" rel="nofollow">AXE Chrome plugin</a>. El PDF de Web Almanac se probó con un escaneo de accesibilidad en Acrobat Reader Pro DC.
+        </p>
+      </section>
+
+      <section>
+        <h2 id="feedback"><a href="#feedback" class="anchor-link">Retroalimentación</a></h2>
+
+        <p>
+          Agradecemos sus comentarios sobre la accesibilidad de este sitio web. Las mejores maneras de llegar a nosotros sería <a href="https://github.com/HTTPArchive/almanac.httparchive.org/issues" hreflang="en">plantear un problema en GitHub</a> o envíenos un correo electrónico a <a href="mailto:team@httparchive.org">team@httparchive.org</a>. También agradeceríamos Pull Request para aquellos que deseen contribuir directamente. Web Almanac es un proyecto basado en la comunidad, administrado por voluntarios, por lo que no podemos garantizar un plazo de tiempo para responder a los comentarios, pero responderemos lo antes posible.
+        </p>
+      </section>
+{% endblock %}
