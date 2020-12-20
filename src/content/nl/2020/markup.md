@@ -142,7 +142,7 @@ Voor productie worden HTML-opmerkingen meestal verwijderd door build-tools. Gezi
 
 ### Script gebruik
 
-Zoals getoond in de [Top-elementen](#top-elements) sectie hieronder, is het `script` -element het 6e meest gebruikte HTML-element. Voor de doeleinden van dit hoofdstuk waren we geïnteresseerd in de manieren waarop het `script`-element wordt gebruikt op deze miljoenen pagina's uit de dataset.
+Zoals getoond in de [Topelementen](#topelementen) sectie hieronder, is het `script` -element het 6e meest gebruikte HTML-element. Voor de doeleinden van dit hoofdstuk waren we geïnteresseerd in de manieren waarop het `script`-element wordt gebruikt op deze miljoenen pagina's uit de dataset.
 
 In totaal bevat ongeveer 2% van de pagina's helemaal geen scripts, zelfs niet met gestructureerde gegevensscripts met het `type="application/ld+json"` attribuut. Gezien het feit dat het tegenwoordig vrij gebruikelijk is dat een pagina ten minste één script voor een analyseoplossing bevat, lijkt dit opmerkelijk.
 
