@@ -11,7 +11,7 @@ thefoxis_bio: Karolina 是 <a href="https://calibreapp.com/">Calibre</a> 的產�
 discuss: 2045
 results: https://docs.google.com/spreadsheets/d/164FVuCQ7gPhTWUXJl1av5_hBxjncNi0TK8RnNseNPJQ/
 queries: 09_Performance
-featured_quote: 糟糕的效能並不只是讓使用者挫折或是對業務目標造成負面影響，他還築起了現實生活中人們與網路世界的屏障；今年的全球性疫情更凸顯了那些已經存在的屏障。
+featured_quote: 糟糕的效能並不只是讓使用者挫折或是對業務目標造成負面影響，它還築起了現實生活中人們與網路世界的屏障；今年的全球性疫情更凸顯了那些已經存在的屏障。
 featured_stat_1: 25%
 featured_stat_label_1: 擁有 Good 的 FCP 的手機版網頁
 featured_stat_2: 18%
@@ -22,13 +22,13 @@ featured_stat_label_3: 在 Lighthouse 6 時效能分數（Performance Score）�
 
 ## 簡介
 
-緩慢的速度無庸置疑地對使用者體驗造成了負面的影響，因此對於轉換率也是。但糟糕的效能並不只是讓使用者挫折或是對業務目標造成負面影響，他還築起了現實生活中人們與網路世界的屏障。今年的全球性疫情[更凸顯了那些已經存在的屏障](https://www.weforum.org/agenda/2020/04/coronavirus-covid-19-pandemic-digital-divide-internet-data-broadband-mobbile/)。隨著遠端學習、遠端工作還有遠端社交興起，人們的生活重心突然就被移到網路世界。微弱的訊號以及缺乏資源取得可用設備將這個轉變顯得更痛苦，即使不是非常嚴重，也已經對很多人造成影響。針對訊號強度、設備以及網路速度的不平等性儼然成為全球性現實生活的測試。
+緩慢的速度無庸置疑地對使用者體驗造成了負面的影響，進而影響了轉換率。但糟糕的效能並不只是讓使用者挫折或是對業務目標造成負面影響，它還築起了現實生活中人們與網路世界的屏障。今年的全球性疫情[更凸顯了那些已經存在的屏障](https://www.weforum.org/agenda/2020/04/coronavirus-covid-19-pandemic-digital-divide-internet-data-broadband-mobbile/)。隨著遠端學習、遠端工作還有遠端社交興起，人們的生活重心突然就被移到網路世界。微弱的訊號以及缺乏資源取得可用設備將這個轉變顯得更痛苦，即使不是非常嚴重，也已經對很多人造成影響。這樣的考驗凸顯了全球在訊號強度、設備以及網路速度上的不平等。
 
-效能調校工具在近幾年持續成長來描繪出各式各樣的使用者體驗，並使工程師更容易找到問題的根本原因。從[去年的效能章節](../2019/performance)開始，在這個領域中，已經有許多重要的開發貢獻改變了我們如何監控速度的方式。
+效能調校工具在近幾年持續演進，幫助工程師從不同面向去檢視使用者體驗，也使問題的成因更容易被找到。從[去年的效能章節](../2019/performance)開始，在這個領域中，已經有許多重要的開發貢獻改變了我們監控速度的方式。
 
-隨著很受歡迎的品質檢測工具 <span lang="en">Lighthouse</span> 釋出 <span lang="en">Lighthouse</span> 6 後，[眾所皆知的效能分數（<span lang="en">Performance Score</span>）背後的演算法已經有了重大的改動](https://calibreapp.com/blog/how-performance-score-works)，因此分數也隨之變動。新釋出的[<span lang="en">Core WebVitals</span>](https://calibreapp.com/blog/core-web-vitals)提供一套新的衡量標準來描述不同面向的使用者體驗。未來他將成為搜尋排行的要素之一，也將促使開發社群聚焦於新的速度準則。
+隨著很受歡迎的品質檢測工具 <span lang="en">Lighthouse</span> 釋出 <span lang="en">Lighthouse</span> 6 後，[眾所皆知的效能分數（<span lang="en">Performance Score</span>）背後的演算法已經有了重大的改動](https://calibreapp.com/blog/how-performance-score-works)，因此分數也隨之變動。新釋出的[<span lang="en">Core WebVitals</span>](https://calibreapp.com/blog/core-web-vitals)提供一套新的衡量標準來描述不同面向的使用者體驗。未來它將會影響搜尋引擎的排行，進而促使相關開發者社群聚焦於新的速度準則。
 
-在此章節，我們將透過這些新工具來透視[<span lang="en">Chrome User Experience Report</span> (CrUX)](https://developers.google.com/web/tools/chrome-user-experience-report)提供的真實效能資料並分析相關的準則。在這邊必須特別註記，由於 iOS 的限制，CrUX 手機版的結果並不包含 Apple 手機作業系統的裝置。這個事實無可否認地影響了我們的分析，特別是當我們以國家為單位在檢視效能衡量標準時。
+在此章節，我們將透過這些新工具來透視[<span lang="en">Chrome User Experience Report</span> (CrUX)](https://developers.google.com/web/tools/chrome-user-experience-report)提供的真實效能資料並分析相關的準則。在這邊必須特別註記，由於 iOS 的限制，CrUX 手機版的結果並不包含 Apple 手機作業系統的裝置。這個限制確實影響了我們的分析，尤其是在檢視各個國家的效能衡量標準的時候更能顯現出分析結果的差異。
 
 讓我們一起一探究竟吧。
 
@@ -36,9 +36,9 @@ featured_stat_label_3: 在 Lighthouse 6 時效能分數（Performance Score）�
 
 在 2020 年五月時，[<span lang="en">Lighthouse</span> 6 被釋出](https://github.com/GoogleChrome/lighthouse/releases/tag/v6.0.0)。在此主版號更新中，受歡迎的效能檢測組針對效能分數（<span lang="en">Performance Score</span>）演算法做了顯著的改變。效能分數（<span lang="en">Performance Score</span>）可以說是檢測網站速度的最佳寫照 (<span lang="en">high-level portrayal</span>)。在 <span lang="en">Lighthouse</span> 6 之中，以六項（不是五項）衡量標準來評估分數：<span lang="en">First Meaningful Paint</span>、<span lang="en">First CPU Idle</span> 被移除並以 <span lang="en">Largest Contentful Paint</span> (LCP) 取代之、<span lang="en">Total Blocking Time</span>（TBT, the lab equivalent of <span lang="en">First Input Delay</span>）以及 <span lang="en">Cumulative Layout Shift</span> (CLS)。
 
-新的分數演算法調整了新一代的效能衡量標準的優先度：<span lang="en">Core WebVitals</span>，以及降低 <span lang="en">First Contentful Paint</span> (FCP)、<span lang="en">Time to Interactive</span> (TTI) 以及 Speed Index 的優先度並減少他們的分數權重。此演算法現在也會將三個層面的使用者體驗個別強調： **互動性**（<span lang="en">Total Blocking Time</span> 及 <span lang="en">Time to Interactive</span>）、**視覺穩定性**（<span lang="en">Cumulative Layout Shift</span>）以及**體感載入速度**（<span lang="en">First Contentful Paint</span>, Speed Index, <span lang="en">Largest Contentful Paint</span>）。
+新的分數演算法調整了新一代的效能衡量標準的優先度：<span lang="en">Core WebVitals</span>，以及降低 <span lang="en">First Contentful Paint</span> (FCP)、<span lang="en">Time to Interactive</span> (TTI) 以及 Speed Index 的優先度並減少他們的分數權重。此演算法現在也會個別強調三個層面的使用者體驗： **互動性**（<span lang="en">Total Blocking Time</span> 及 <span lang="en">Time to Interactive</span>）、**視覺穩定性**（<span lang="en">Cumulative Layout Shift</span>）以及**體感載入速度**（<span lang="en">First Contentful Paint</span>, Speed Index, <span lang="en">Largest Contentful Paint</span>）。
 
-此外，該分數會根據桌機和手機的不同來使用不一樣的參考標準做計算。 實際上來說，這代表對桌機的標準較嚴格（預期較快的網頁）而在手機上標準較寬鬆（因為手機效能比桌機較慢）。你可以透過 [<span lang="en">Lighthouse</span> 分數計算機](https://googlechrome.github.io/lighthouse/scorecalc/)來比較 <span lang="en">Lighthouse</span> 5 及 6 之間的差異。所以，分數上到底如何改變了呢？
+此外，該分數會根據桌機和手機的不同來使用不一樣的參考標準做計算。 實際上來說，這代表對桌機的標準較嚴格（預期較快的網頁）而在手機上標準較寬鬆（因為手機效能比桌機較慢）。你可以透過 [<span lang="en">Lighthouse</span> 分數計算機](https://googlechrome.github.io/lighthouse/scorecalc/)來比較 <span lang="en">Lighthouse</span> 5 及 6 之間的差異。所以，在評分上到底做了什麼變動呢？
 
 {{ figure_markup(
   image="performance-change-in-lighthouse-score.png",
@@ -114,13 +114,13 @@ featured_stat_label_3: 在 Lighthouse 6 時效能分數（Performance Score）�
   )
 }}
 
-LCP 能夠顯現出計時方面的效能優點，當最大的 <span lang="en">above-the-fold element</span> 被 <span lang="en">render</span> 時（包括圖像、影片或 block 層級包含文字的元素），一點也不意外越慢的網路造成網路連線不佳的比例越高。
+因為 LCP 是用來計算最大的 <span lang="en">above-the-fold element</span> 被 <span lang="en">render</span> 時（包括圖像、影片或 <span lang="en">block</span> 層級包含文字的元素）的所需時間，因此無庸置疑地，網路速度越慢，LCP 的表現也越糟。
 
 可以發現網路速度及好的 LCP 效能有明確的關聯，但即使是 4G 也只有 48% 的結果被歸類為 <span lang="en">Good</span>，其餘的一半仍有改進空間。自動化多媒體最佳化、提供正確的尺寸及格式還有為 Low Data Mode 做最佳化都能夠改善效能。詳情請看[LCP 改善指南](https://web.dev/optimize-lcp/)。
 
 ## <span lang="en">Core WebVitals</span>: <span lang="en">Cumulative Layout Shift</span> {core-web-vitals-cumulative-layout-shift}
 
-<span lang="en">Cumulative Layout Shift</span> (CLS) 量化了在訪問網頁時，可視區域（viewport）中有多少元素移動了。並非透過時間性單位（秒或毫秒）來計算特定區快的互動性，CLS 協助我們找出訪問網頁時不如預期的頁面移動並以此來評分使用者體驗。
+<span lang="en">Cumulative Layout Shift</span> (CLS) 跟其他用秒或毫秒來衡量網頁可互動性的指標不同。它量化了在訪問網頁時，可視區域（<span lang="en">viewport</span>）中有多少元素移動了，藉此協助我們找出訪問網頁時未預期的元素移動並以此來衡量使用者體驗的好壞。
 
 因此，相較於其他此章節提到的衡量標準，CLS 是一個不一樣且更完整的新型態 UX 衡量標準。
 
@@ -174,7 +174,7 @@ LCP 能夠顯現出計時方面的效能優點，當最大的 <span lang="en">ab
 
 ## <span lang="en">Core WebVitals</span>: <span lang="en">First Input Delay</span> {core-web-vitals-first-input-delay}
 
-<span lang="en">First Input Delay</span> (FID) 用於測量首次使用者互動到瀏覽器可以反應該互動的時間差。FID 是能夠顯示你的網頁互動性有多高的好指標。
+<span lang="en">First Input Delay</span> (FID) 用於測量首次使用者互動到瀏覽器可以反應該互動的時間差，因此 FID 是適合顯示網頁互動性有多高的指標。
 
 ### 根據不同裝置來分析 FID
 
@@ -190,7 +190,7 @@ LCP 能夠顯現出計時方面的效能優點，當最大的 <span lang="en">ab
 
 相較其他評比，手機及桌機均以高百分比分佈在 <span lang="en">Good</span> 比較不常見。在桌機中，基於 75% 網頁分佈來說，有 100% 的網站得到相當快的 FID 時間差，這也意味著體驗到互動延遲的使用者極少。
 
-在手機中，有 80% 的網站被評比為 <span lang="en">Good</span>。較合理的解釋可能是，相較於桌機，手機的 CPU 性能較低，而網路延遲（導致 <span lang="en">script</span> 下載及執行的延遲）、電池功率以及溫度限制都是消耗 CPU 的潛在因素。以上所述因素皆有可能影響 FID 類型的互動性衡量標準。
+在手機中，有 80% 的網站被評比為 <span lang="en">Good</span>。較合理的解釋可能是，相較於桌機，手機的 CPU 性能較低，而網路延遲（導致 <span lang="en">script</span> 下載及執行的延遲）、電池功率以及溫度限制都是消耗 CPU 的潛在因素。以上所述因素皆有可能影響像是 FID 這種類型的互動性衡量標準。
 
 ### 根據地理位置來分析 FID
 
@@ -208,7 +208,7 @@ LCP 能夠顯現出計時方面的效能優點，當最大的 <span lang="en">ab
 
 FID 分數的地理分佈結果證實了上一段綜合裝置圖表的結果。最差還有 79% 網站得到 <span lang="en">Good</span> FID，而韓國則再次以驚人的 97% 在此項評比位居第一。有趣的是，在 CLS 及 LCP 的前幾名競爭者（如：捷克、波蘭、烏克蘭及俄羅斯）反倒在這裡跌至倒數的名次。
 
-再次強調，我們可以推測出為何如此，但我們會需要更多的分析來佐證我們的推測是正確的。如果假設 FID 與 JavaScript 執行性能有關係，在手機性能越好則越貴或甚至被當成奢侈品的國家，反而會得到較低的 FID 排名。波蘭身為 [iPhone 價格最貴](https://qz.com/1106603/where-the-iphone-x-is-cheapest-and-most-expensive-in-dollars-pounds-and-yuan/)國家之一就是個好例子；再加上[平均薪資較低](https://en.wikipedia.org/wiki/List_of_European_countries_by_average_wage#Net_average_monthly_salary)，一份薪水可能還不夠買一隻 Apple 旗艦機。相反地，澳洲的[平均薪資](https://www.news.com.au/finance/average-australian-salary-how-much-you-have-to-earn-to-be-better-off-than-most/news-story/6fcdde092e87872b9957d2ab8eda1cbd)足以讓澳洲人以一週的薪水就能夠買一隻 iPhone。幸運地是，除了有較 1-2% 慢能夠互動的網頁之外，低評分的網頁百分比大多為 0。
+再次強調，我們可以推測出為何如此，但我們會需要更多的分析來佐證我們的推測是正確的。如果假設 FID 與 JavaScript 執行性能有關係，在手機性能越好則越貴或甚至被當成奢侈品的國家，反而會得到較低的 FID 排名。波蘭身為 [iPhone 價格最貴](https://qz.com/1106603/where-the-iphone-x-is-cheapest-and-most-expensive-in-dollars-pounds-and-yuan/)國家之一就是個好例子；再加上[平均薪資較低](https://en.wikipedia.org/wiki/List_of_European_countries_by_average_wage#Net_average_monthly_salary)，一份薪水可能還不夠買一隻 Apple 旗艦機。相反地，澳洲的[平均薪資](https://www.news.com.au/finance/average-australian-salary-how-much-you-have-to-earn-to-be-better-off-than-most/news-story/6fcdde092e87872b9957d2ab8eda1cbd)足以讓澳洲人以一週的薪水就能夠買一隻 iPhone。幸運地是，除少數 1-2% 的例外，低評分的網頁大部份趨近於 0，這也表示我們邁向相對快的互動網頁體驗。
 
 ### 根據連線方式來分析的 FID
 
@@ -222,11 +222,11 @@ FID 分數的地理分佈結果證實了上一段綜合裝置圖表的結果。�
   )
 }}
 
-從 2G 的 73% 到 4G 的 87%，我們可以觀察到網路速度與快速的 FID 有直接關係。較快的網路可以幫助較迅速的 <span lang="en">script</span> 下載，固然也就加快了 <span lang="en">parsing</span> 的開始以及使得較少的 <span lang="en">task block</span> 在 <span lang="en">main thread</span> 上。這是一份很樂觀的結果報告，特別是評比不佳的網站比例不超過 5%。
+從 2G 的 73% 到 4G 的 87%，我們可以觀察到網路速度與 FID 有直接關係。較快的網路可以較快地下載 <span lang="en">script</span>，也因此提早了開始 <span lang="en">parsing</span> 的時間以及減少了阻塞 <span lang="en">main thread</span> 的 <span lang="en">task</span>。這是一份很樂觀的結果報告，特別是評比不佳的網站比例不超過 5%。
 
 ## <span lang="en">First Contentful Paint</span> {first-contentful-paint}
 
-<span lang="en">First Contentful Paint</span> (FCP) 用於測量瀏覽器第一次 <span lang="en">render</span> 任何文字、圖片、非白色 <span lang="en">canvas</span> 或是 SVG 內容。FCP 能夠描繪出「在網站載入時，使用者需要等待多久時間才能看到第一個內容被呈現」，因此這是一項測量使用者體感速度的好指標。
+<span lang="en">First Contentful Paint</span> (FCP) 用於測量瀏覽器第一次 <span lang="en">render</span> 任何文字、圖片、非白色 <span lang="en">canvas</span> 或是 SVG 內容。FCP 能夠顯現出「在網站載入時，使用者需要等待多久時間才能看到第一個內容被呈現」，因此是個適合測量使用者體感速度的指標。
 
 ### 根據不同裝置來分析 FCP
 
@@ -250,7 +250,7 @@ FID 分數的地理分佈結果證實了上一段綜合裝置圖表的結果。�
   )
 }}
 
-在上表中，FCP 分佈被拆成桌機及手機。[相較去年結果](../2019/performance#fcp-by-device)，可以發現到較少 FCP 指數呈現為 <span lang="en">Average</span>，反而可以觀察到無論是哪種裝置，<span lang="en">Fast</span> 及 <span lang="en">Slow</span> 的比率都升高了。此外，也可以發現手機使用者相較桌機使用者更頻繁的體驗較慢的 FCP 的情況仍然存在。整體來說，使用者們較可能體驗好的或差的體驗，而不是普通的體驗。
+在上表中，FCP 分佈被拆成桌機及手機。[相較去年結果](../2019/performance#fcp-by-device)，可以發現到較少 FCP 指數呈現為 <span lang="en">Average</span>，反而可以觀察到無論是哪種裝置，<span lang="en">Fast</span> 及 <span lang="en">Slow</span> 的比率都升高了。此外，也可以發現手機使用者相較桌機使用者更頻繁的體驗較慢的 FCP 的情況仍然存在。整體來說，使用者們的體驗較為兩極，不是好就是差，很少有一般的體驗。
 
 {{ figure_markup(
   image="performance-fcp-mobile-year-on-year.png",
@@ -282,7 +282,7 @@ FID 分數的地理分佈結果證實了上一段綜合裝置圖表的結果。�
 
 在我們開始分析前，值得一提的是，2019 年效能章節的 <span lang="en">Good</span> 及 <span lang="en">Poor</span> 評估標準和 2020 年不同。在 2019 年的標準中，FCP 低於 1 秒的網站被分類為 <span lang="en">Good</span>，高於 3 秒的才會被分類為 <span lang="en">Poor</span>。而在 2020 年的標準中，評分標準變成低於 1.5 秒為 <span lang="en">Good</span>、高於 2.5 秒為 <span lang="en">Poor</span>。
 
-這個改變也代表著此數值分佈圖中被評為 <span lang="en">Good</span> 及 <span lang="en">Poor</span> 的網站都會變得更多。相較於[去年的結果](../2019/performance#fcp-by-geography)，我們可以觀察到此現象。以地理位置分佈來說，前十名最快的網站的國家與 2019 相同，但捷克與比利時的排名變前面且美國與英國的名次下降了。韓國以幾近於去年兩倍的 62% 的超快 FCP 數值領先在第一名（可以猜測受惠於評估標準的改變）。前幾名的國家也幾乎都是去年的 <span lang="en">Good</span> 的兩倍。
+相較於[去年的結果](../2019/performance#fcp-by-geography)，評估標準的變動帶來的影響是有更多的網站都被評為 <span lang="en">Good</span> 及 <span lang="en">Poor</span>。以地理位置分佈來說，前十名最快的網站的國家與 2019 相同，但捷克與比利時的排名變前面且美國與英國的名次下降了。韓國以幾近於去年兩倍的 62% 的超快 FCP 數值領先在第一名（可以猜測受惠於評估標準的改變）。前幾名的國家也幾乎都是去年的 <span lang="en">Good</span> 的兩倍。
 
 當中等階段（<span lang="en">Needs Improvement</span>）的百分比變少，FCP 數值不佳的網頁也隨之增加，尤其是倒數幾名的拉丁美洲及南亞地區國家。
 
@@ -304,7 +304,7 @@ FID 分數的地理分佈結果證實了上一段綜合裝置圖表的結果。�
 
 這個趨勢更進一步描繪出了數位差距，網路越慢且可能性能越差的裝置條件下的效能體驗越差。 改善慢速連線下的 FCP 與增強 TTFB 有直接關係，我們可以在 [Aggregate TTFB 根據連線方式來分析的 performance chart](#ttfb-by-connection-type) 觀察到 <span lang="en">Poor</span> TTFB = <span lang="en">Poor</span> FCP。
 
-對 [hosting provider](https://ismyhostfastyet.com/) 或是 [CDN](https://www.cdnperf.com/) 的選擇對於速度也許會有加乘效果。基於速度最快的可能選擇服務會幫助改善 FCP 及 TTFB，尤其是在網速較慢的情況。字體載入時間也深深影響了 FCP，所以[確保 Web Fonts 下載後是看得到的](https://web.dev/font-display/)也是值得一試的策略（特別是在較慢的網路通訊之下，下載這些資源都相當耗時）。
+對 [hosting provider](https://ismyhostfastyet.com/) 或是 [CDN](https://www.cdnperf.com/) 的選擇對於速度也許會有加乘效果。選擇速度可能最快的服務會幫助改善 FCP 及 TTFB，在網路較慢的情況下更是如此。字體載入時間也深深影響了 FCP，所以[確保 Web Fonts 下載後是看得到的](https://web.dev/font-display/)也是值得一試的策略（特別是在較慢的網路通訊之下，下載這些資源都相當耗時）。
 
 仔細觀察離線的數據後，我們可以歸類出 FCP 數值的問題與網路型態**無關**。我們並沒有在此圖表中觀察到數值隨著網路型態變化而有重大的增加；當然，如果我們假設此問題與網路型態有關，那我們必定會觀察到此數值隨之增加。可以發現 <span lang="en">rendering</span> 並沒有隨著下載 JavaScript 而延遲，反倒是受到 <span lang="en">parsing</span> 及 <span lang="en">execution</span> 的影響。
 
@@ -378,10 +378,10 @@ TTFB 會受到網路延遲時間及網路連線方式的影響。網路延遲時
 
 ## 總結
 
-使用者體驗不單單只是個光譜，他更是一個基於重重因素所產生的光譜。為了不能忽視低於效能衡量標準或是無法體驗適當效能的人們，我們一定要設法了解並分析各個面向的數據。每個網頁訪問都述說著各自的故事。我們個人的以及國家層級的經濟狀況也敘述著我們能夠負擔的裝置型態以及網路提供者（<span lang="en">internet provider</span>）。我們生活的地方也深深影響著我們的網路延遲時間（澳洲人時常感受到這個痛苦），而且該國家的經濟也反應了當地行動網路覆蓋率。我們會訪問怎麼樣的網頁呢？我們為什麼想訪問那些網頁呢？了解 context 非常的重要，這不僅僅是為了要分析資料，也是為了能夠開發有足夠同理心、在乎是否容易被訪問且提供了快速的使用者體驗的網頁給所有的使用者。
+使用者體驗是一個基於**種種因素**所產生的光譜。為了不能忽視低於效能衡量標準或是無法體驗適當效能的人們，我們一定要設法了解並分析各個面向的數據。每個網頁訪問都述說著各自的故事。我們個人的以及國家層級的經濟狀況也敘述著我們能夠負擔的裝置型態以及網路提供者（<span lang="en">internet provider</span>）。我們生活的地方也深深影響著我們的網路延遲時間（澳洲人時常感受到這個痛苦），而且該國家的經濟也反應了當地行動網路覆蓋率。我們會訪問怎麼樣的網頁呢？我們為什麼想訪問那些網頁呢？了解 context 非常的重要，這不僅僅是為了要分析資料，也是為了能夠開發有足夠同理心、在乎是否容易被訪問且提供了快速的使用者體驗的網頁給所有的使用者。
 
 以粗淺的分析來說，我們可以看到新 <span lang="en">Core WebVitals</span> 效能衡量標準有著樂觀的結果。**如果**我們不將 <span lang="en">Largest Contentful Paint</span> 的數據限縮到 <span lang="en">Poor</span> 體驗以及較慢的網路的話，至少在桌機及手機上，有一半的使用者體驗同時是好的。儘管新的衡量標準現在正有計劃在改善效能問題，但缺少對 FCP (<span lang="en">First Contentful Paint</span>) 以及 TTFB (<span lang="en">Time to First Byte</span>) 的改善方案仍然是個必須面對的嚴重問題。在這裡與 <span lang="en">Largest Contentful Paint</span> 相同網路型態 、快速網路連結以及桌機裝置的最不利。效能分數（<span lang="en">Performance Score</span>）也在速度方面呈現了下降的曲線（抑或是說，這比過去我們所測量過的數據更為準確）。
 
 根據這些數據所知，可能因為我們養尊處優（中至高收入的國家、高薪水且持有新又性能好的裝置）無法時常體會各式各樣的情境（例如較慢的網路連接速度），我們更應該要花心力來為這各式各樣的情境去改善效能。這同時也替我們強調了，我們在加速初始瀏覽器繪製（LCP 及 FCP）和資源傳送（TTFB）都還有許多未完成的事情。這些效能問題時常聽起來像前端的問題，但其實許多重要的改善是可以透過適當的 <span lang="en">infrastructure</span> 選擇或是在後端做出適當的修改所達成。再次強調，使用者體驗是由各式各樣因素所組成的光譜，所以我們必須一視同仁。
 
-新的衡量標準為我們帶來了不一樣的視野來分析使用者體驗，但我們也莫忘既有的問題與數據。讓我們繼續在改善需要被加強的領域，還有為了將那些在低標準體驗的使用者們邁向好的使用者體驗繼續努力。快速且容易存取的網路是基本人權。
+新的衡量標準為我們帶來了不一樣的視野來分析使用者體驗，但我們也莫忘既有的問題與數據。為了那些體驗不良的使用者們，讓我們繼續努力，持續改進需要被加強的領域。快速且無障礙的網路是基本人權。
