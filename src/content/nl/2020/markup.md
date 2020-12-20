@@ -36,7 +36,7 @@ De analyse van vorig jaar was gebaseerd op 5,8 miljoen pagina's, waarvan 4,4 mil
 
 ## Algemeen
 
-In dit gedeelte behandelen we de aspecten van een hoger niveau van HTML, zoals documenttypen, de grootte van documenten en het gebruik van opmerkingen en scripts. "Living HTML" is springlevend!
+In dit gedeelte behandelen we de aspecten van een hoger niveau van HTML, zoals documenttypen, de grootte van documenten en het gebruik van opmerkingen en scripts. "Levende HTML" is springlevend!
 
 ### Doctypes
 
