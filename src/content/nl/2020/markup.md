@@ -340,268 +340,268 @@ Standaardelementen zijn elementen die deel uitmaken van de HTML-specificatie. We
 
 We nemen deze elementen op om een idee te geven welke elementen mogelijk uit de gratie zijn geraakt. Maar hoewel `dir` en` basefont` voor het laatst werden gespecificeerd in XHTML 1.0 (2000), het zeldzame gebruik van `rp`, [dat al in 1998 werd genoemd](https://www.w3.org/TR/1998/WD-rubya2-4) maar dat ook [nog steeds deel uitmaakt van HTML](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element), suggereert misschien dat Ruby-opmaak niet erg populair is.
 
-### Custom elements
+### Aangepaste elementen
 
-The 2019 edition of the Web Almanac handled [custom elements](../2019/markup#custom-elements) by discussing several non-standard elements. This year, we found it valuable to have a closer look at custom elements. How did we determine these? Roughly by looking at [their definition](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-core-concepts), notably their use of a hyphen. Let's focus on the top elements, in this case elements used on ≥1% of all URLs in the sample:
+De 2019-editie van de Web Almanac behandelde [aangepaste elementen](../2019/markup#custom-elements) door verschillende niet-standaard elementen te bespreken. Dit jaar vonden we het waardevol om aangepaste elementen van naderbij te bekijken. Hoe hebben we deze bepaald? Door te kijken naar [hun definitie](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-core-concepts), met name hun gebruik van een koppelteken. Laten we ons concentreren op de topelementen, in dit geval elementen die worden gebruikt op ≥1% van alle URL's in het voorbeeld:
 
 {# TODO(authors, analysts): Clarify occurrences and percentages _of what_. Pages? Elements? #}
 
 <figure markdown>
-| Element | Occurrences | Percentage |
+| Element | Voorvallen | Percentage |
 |---|---|---|
-| `ym-measure` | 141,156 | 2.22% |
-| `wix-image` | 76,969 | 1.21% |
-| `rs-module-wrap` | 71,272 | 1.12% |
-| `rs-module` | 71,271 | 1.12% |
-| `rs-slide` | 70,970 | 1.12% |
-| `rs-slides` | 70,993 | 1.12% |
-| `rs-sbg-px` | 70,414 | 1.11% |
-| `rs-sbg-wrap` | 70,414 | 1.11% |
-| `rs-sbg` | 70,413 | 1.11% |
-| `rs-progress` | 70,651 | 1.11% |
-| `rs-mask-wrap` | 63,871 | 1.01% |
-| `rs-loop-wrap` | 63,870 | 1.01% |
-| `rs-layer-wrap` | 63,849 | 1.01% |
-| `wix-iframe` | 63,590 | 1% |
+| `ym-measure` | 141.156 | 2,22% |
+| `wix-image` | 76.969 | 1,21% |
+| `rs-module-wrap` | 71.272 | 1,12% |
+| `rs-module` | 71.271 | 1,12% |
+| `rs-slide` | 70.970 | 1,12% |
+| `rs-slides` | 70.993 | 1,12% |
+| `rs-sbg-px` | 70.414 | 1,11% |
+| `rs-sbg-wrap` | 70.414 | 1,11% |
+| `rs-sbg` | 70.413 | 1,11% |
+| `rs-progress` | 70.651 | 1,11% |
+| `rs-mask-wrap` | 63.871 | 1,01% |
+| `rs-loop-wrap` | 63.870 | 1,01% |
+| `rs-layer-wrap` | 63.849 | 1,01% |
+| `wix-iframe` | 63.590 | 1% |
 
-<figcaption>{{ figure_link(caption="The 14 most popular custom elements.", sheets_gid="770933671", sql_file="pages_element_count_by_device_and_custom_dash_elements.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="De 14 meest populaire aangepaste elementen.", sheets_gid="770933671", sql_file="pages_element_count_by_device_and_custom_dash_elements.sql") }}</figcaption>
 </figure>
 
-These elements come from three sources: [Yandex Metrica](https://metrica.yandex.com/about) (`ym-`), an analytics solution we've also seen last year; [Slider Revolution](https://www.sliderrevolution.com/) (`rs-`), a WordPress slider, for which there are more elements to be found near the top of the sample; and [Wix](https://www.wix.com/) (`wix-`), a website builder.
+Deze elementen zijn afkomstig uit drie bronnen: [Yandex Metrica](https://metrica.yandex.com/about) (`ym-`), een analyseoplossing die we vorig jaar ook hebben gezien; [Slider Revolution](https://www.sliderrevolution.com/) (`rs-`), een WordPress-slider, waarvoor er meer elementen te vinden zijn bovenaan de sample; en [Wix](https://www.wix.com/) (`wix-`), een websitebouwer.
 
 {# TODO(authors, analysts): What do "cases" mean here: pages/elements? And for desktop or mobile? #}
 
-Other groups that stand out include [AMP markup](https://amp.dev/) with `amp-` elements like `amp-img` (11,700 cases), `amp-analytics` (10,256) and `amp-auto-ads` (7,621), as well as [Angular](https://angular.io/) `app-` elements like `app-root` (16,314), `app-footer` (6,745), and `app-header` (5,274).
+Andere groepen die opvallen zijn onder meer [AMP markup](https://amp.dev/) met `amp-` -elementen zoals `amp-img` (11.700 gevallen), `amp-analytics` (10.256) en `amp-auto-ads` (7.621), evenals [Angular](https://angular.io/) `app`-elementen zoals `app-root` (16.314), `app-footer` (6.745) en `app-header` (5.274).
 
-### Obsolete elements
+### Verouderde elementen
 
-There are more questions to ask about the use of HTML, and one may relate to obsolete elements, which are elements like `applet`, `bgsound`, `blink`, `center`, `font`, `frame`, `isindex`, `marquee`, or `spacer`.
+Er zijn meer vragen te stellen over het gebruik van HTML, en een daarvan kan betrekking hebben op verouderde elementen, zoals `applet`, `bgsound`, `blink`, `center`, `font`, `frame`, `isindex`, `marquee`, of `spacer`.
 
-In our mobile dataset of 6.3 million pages, around 0.9 million pages (14.01%) contain one or more of these elements. Here are the top 9, which are used more than 10,000 times:
+In onze mobiele dataset van 6,3 miljoen pagina's bevatten ongeveer 0,9 miljoen pagina's (14,01%) een of meer van deze elementen. Hier is de top 9, die meer dan 10.000 keer wordt gebruikt:
 
 <figure markdown>
-| Element | Occurrences | Pages (%) |
+| Element | Voorvallen | Pagina's (%) |
 |---|---|---|
-| `center` | 458,402 | 7.22% |
-| `font` | 430,987 | 6.79% |
-| `marquee` | 67,781 | 1.07% |
-| `nobr` | 31,138 | 0.49% |
-| `big` | 27,578 | 0.43% |
-| `frame` | 19,363 | 0.31% |
-| `frameset` | 19,163 | 0.30% |
-| `strike` | 17,438 | 0.27% |
-| `noframes` | 15,016 | 0.24% |
+| `center` | 458.402 | 7,22% |
+| `font` | 430.987 | 6,79% |
+| `marquee` | 67.781 | 1,07% |
+| `nobr` | 31.138 | 0,49% |
+| `big` | 27.578 | 0,43% |
+| `frame` | 19.363 | 0,31% |
+| `frameset` | 19.163 | 0,30% |
+| `strike` | 17.438 | 0,27% |
+| `noframes` | 15.016 | 0,24% |
 
-<figcaption>{{ figure_link(caption="Obsolete elements with more than 10,000 uses.", sheets_gid="1972617631", sql_file="pages_element_count_by_device_and_obsolete_elements.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Verouderde elementen met meer dan 10.000 toepassingen.", sheets_gid="1972617631", sql_file="pages_element_count_by_device_and_obsolete_elements.sql") }}</figcaption>
 </figure>
 
-Even `spacer` is still being used 1,584 times, and present on every 5,000th page. We know that Google has been using a `center` element on [their homepage](https://www.google.com/) [for 22 years](https://web.archive.org/web/19981202230410/https://www.google.com/) now, but why are there so many imitators?
+Zelfs `spacer` wordt nog 1.584 keer gebruikt en staat op elke 5.000ste pagina. We weten dat Google al [22 jaar](https://web.archive.org/web/19981202230410/https://www.google.com/) een `center`-element op [hun homepagina](https://www.google.com/) gebruikt, maar waarom zijn er zoveel navolgers?
 
 #### `isindex`
 
-If you were wondering: The total number of [`isindex`](https://www.w3.org/TR/html401/interact/forms.html#edef-ISINDEX) elements in this dataset is: one. Exactly one page used an `isindex` element. It was part of the specs until [HTML 4.01 and XHTML 1.0](https://meiert.com/en/indices/html-elements/), yet only properly [specified](https://lists.w3.org/Archives/Public/public-whatwg-archive/2006Feb/0111.html) in 2006 (aligning with how it was implemented in browsers), and then [removed](https://github.com/whatwg/html/pull/1095) in 2016.
+Als u zich afvroeg: het totale aantal [`isindex`](https://www.w3.org/TR/html401/interact/forms.html#edef-ISINDEX) elementen in deze dataset is: één. Precies één pagina gebruikte een `isindex`-element. Het maakte deel uit van de specificaties tot [HTML 4.01 en XHTML 1.0](https://meiert.com/en/indices/html-elements/), maar alleen correct [gespecificeerd](https://lists.w3.org/Archives/Public/public-whatwg-archive/2006Feb/0111.html) in 2006 (in lijn met hoe het werd geïmplementeerd in browsers), en vervolgens [verwijderd](https://github.com/whatwg/html/pull/1095) in 2016.
 
-### Proprietary and made-up elements
+### Eigen en verzonnen elementen
 
-In our set of elements we found some that were neither standard HTML (nor SVG nor MathML) elements, nor custom ones, nor obsolete ones, but somewhat proprietary ones. The top 10 that we identified are the following:
+In onze verzameling elementen vonden we enkele die noch standaard HTML (noch SVG, noch MathML) -elementen waren, noch aangepaste, noch verouderde, maar enigszins gepatenteerde elementen. De top 10 die we hebben geïdentificeerd, zijn de volgende:
 
 <figure markdown>
-| Element | Pages (%) |
+| Element | Pagina's (%) |
 |---|---|
-| `noindex` | 0.89% |
-| `jdiv` | 0.85% |
-| `mediaelementwrapper` | 0.49% |
-| `ymaps` | 0.26% |
-| `yatag` | 0.20% |
-| `ss` | 0.11% |
-| `include` | 0.08% |
-| `olark` | 0.07% |
-| `h7` | 0.06% |
-| `limespot` | 0.05% |
+| `noindex` | 0,89% |
+| `jdiv` | 0,85% |
+| `mediaelementwrapper` | 0,49% |
+| `ymaps` | 0,26% |
+| `yatag` | 0,20% |
+| `ss` | 0,11% |
+| `include` | 0,08% |
+| `olark` | 0,07% |
+| `h7` | 0,06% |
+| `limespot` | 0,05% |
 
-<figcaption>{{ figure_link(caption="Elements of questionable heritage.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Elementen van twijfelachtig erfgoed.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
 </figure>
 
-The source of these elements appears to be mixed, as in some are unknown while others can be traced. The most popular one, `noindex`, is probably due to [Yandex's recommendation](https://yandex.com/support/webmaster/adding-site/indexing-prohibition.html) of it to prohibit page indexing. `jdiv` was noted in [last year's Web Almanac](../2019/markup#products-and-libraries-and-their-custom-markup) and is from JivoChat. `mediaelementwrapper` comes from the MediaElement media player. Both `ymaps` and `yatag` are also from Yandex. The `ss` element could be from ProStores, a former ecommerce product from eBay, and `olark` may be from the Olark chat software. `h7` appears to be a mistake. `limespot` is probably related to the Limespot personalization program for ecommerce. None of these elements are part of a web standard.
+De bron van deze elementen lijkt te zijn gemengd, aangezien sommige onbekend zijn, terwijl andere kunnen worden getraceerd. De meest populaire, `noindex`, is waarschijnlijk te wijten aan [Yandex's aanbeveling](https://yandex.com/support/webmaster/adding-site/indexing-prohibition.html) ervan om pagina-indexering te verbieden. `jdiv` werd genoteerd in [de Web Almanac van vorig jaar](../2019/markup#products-and-libraries-and-their-custom-markup) en is van JivoChat. `mediaelementwrapper` komt van de MediaElement mediaspeler. Zowel `ymaps` als `yatag` zijn ook van Yandex. Het 'ss'-element kan afkomstig zijn van ProStores, een voormalig e-commerceproduct van eBay, en `olark` kan afkomstig zijn van de Olark-chatsoftware. `h7` lijkt een vergissing te zijn. `limespot` is waarschijnlijk gerelateerd aan het Limespot-personalisatieprogramma voor e-commerce. Geen van deze elementen maakt deel uit van een webstandaard.
 
-### Headings
+### Koppen
 
-[Headings](https://html.spec.whatwg.org/multipage/dom.html#heading-content) make for a special category of elements that play an important role in [sectioning](https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2) and for [accessibility](https://www.w3.org/WAI/tutorials/page-structure/headings/).
+[Koppen](https://html.spec.whatwg.org/multipage/dom.html#heading-content) vormen een speciale categorie elementen die een belangrijke rol spelen bij het [indelen](https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2) en voor [toegankelijkheid](https://www.w3.org/WAI/tutorials/page-structure/headings/).
 
 <figure markdown>
-| Heading | Occurrences | Average per page |
+| Kop | Voorvallen | Gemiddeld per pagina |
 |---|---|---|
-| `h1` | 10,524,810 | 1.66 |
-| `h2` | 37,312,338 | 5.88 |
-| `h3` | 44,135,313 | 6.96 |
-| `h4` | 20,473,598 | 3.23 |
-| `h5` | 8,594,500 | 1.36 |
-| `h6` | 3,527,470 | 0.56 |
+| `h1` | 10.524.810 | 1,66 |
+| `h2` | 37.312.338 | 5,88 |
+| `h3` | 44.135.313 | 6,96 |
+| `h4` | 20.473.598 | 3,23 |
+| `h5` | 8.594.500 | 1,36 |
+| `h6` | 3.527.470 | 0,56 |
 
-<figcaption>{{ figure_link(caption="Frequency and average use of standard heading elements.", sheets_gid="277662548", sql_file="pages_wpt_bodies_by_device_and_percentile_and_heading_level.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Frequentie en gemiddeld gebruik van standaard kopelementen.", sheets_gid="277662548", sql_file="pages_wpt_bodies_by_device_and_percentile_and_heading_level.sql") }}</figcaption>
 </figure>
 
-You might have expected to only see the standard `<h1>` to `<h6>` elements, but some sites actually use more levels:
+Je had misschien verwacht dat je alleen de standaard `<h1>` tot `<h6>` elementen zou zien, maar sommige sites gebruiken eigenlijk meer niveaus:
 
 <figure markdown>
-| Heading | Occurrences | Average per page |
+| Kop | Voorvallen | Gemiddeld per pagina|
 |---|---|---|
-| `h7` | 30,073 | 0.005 |
-| `h8` | 9,266 | 0.0015 |
+| `h7` | 30.073 | 0,005 |
+| `h8` | 9.266 | 0,0015 |
 
-<figcaption>{{ figure_link(caption="Frequency and average use of non-standard heading elements.", sheets_gid="277662548", sql_file="pages_wpt_bodies_by_device_and_percentile_and_heading_level.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Frequentie en gemiddeld gebruik van niet-standaard kopelementen.", sheets_gid="277662548", sql_file="pages_wpt_bodies_by_device_and_percentile_and_heading_level.sql") }}</figcaption>
 </figure>
 
-The last two have never been part of HTML, of course, and should not be used.
+De laatste twee hebben natuurlijk nooit deel uitgemaakt van HTML en mogen niet worden gebruikt.
 
-## Attributes
+## Attributen
 
-This section focuses on how attributes are used in documents and explores patterns in `data-*` usage. Our findings show that `class` is the queen of all attributes.
+Deze sectie gaat over hoe attributen worden gebruikt in documenten en onderzoekt patronen in `data-*` gebruik. Onze bevindingen laten zien dat `class` de koningin van alle attributen is.
 
-### Top attributes
+### Topattributen
 
-Similar to the section on the most [popular elements](#top-elements), this section delves into the most popular attributes on the web. Given how important the `href` attribute is for the web itself, or the `alt` attribute in order to make information [accessible](./accessibility), would these be most popular attributes?
+Vergelijkbaar met de sectie over de meest [populaire elementen](#top-elements), gaat deze sectie in op de meest populaire attributen op internet. Gezien hoe belangrijk het `href`-attribuut is voor het web zelf, of het `alt`-attribuut om informatie [toegankelijk](./accessibility) te maken, zouden dit dan de meest populaire attributen zijn?
 
 <figure markdown>
-| Attribute | Occurrences | Percentage |
+| Attribuut | Voorvallen | Percentage |
 |---|---|---|
-| `class` | 2,998,695,114 | 34.23% |
-| `href` | 928,704,735 | 10.60% |
-| `style` | 523,148,251 | 5.97% |
-| `id` | 452,110,137 | 5.16% |
-| `src` | 341,604,471 | 3.90% |
-| `type` | 282,298,754 | 3.22% |
-| `title` | 231,960,356 | 2.65% |
-| `alt` | 172,668,703 | 1.97% |
-| `rel` | 171,802,460 | 1.96% |
-| `value` | 140,666,779 | 1.61% |
+| `class` | 2.998.695.114 | 34,23% |
+| `href` | 928.704.735 | 10,60% |
+| `style` | 523.148.251 | 5,97% |
+| `id` | 452.110.137 | 5,16% |
+| `src` | 341.604.471 | 3,90% |
+| `type` | 282.298.754 | 3,22% |
+| `title` | 231.960.356 | 2,65% |
+| `alt` | 172.668.703 | 1,97% |
+| `rel` | 171.802.460 | 1,96% |
+| `value` | 140.666.779 | 1,61% |
 
-<figcaption>{{ figure_link(caption="Top 10 attributes by frequency of use.", sheets_gid="1348855449", sql_file="pages_almanac_by_device_and_attribute_name_frequency.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Top 10 attributen naar gebruiksfrequentie.", sheets_gid="1348855449", sql_file="pages_almanac_by_device_and_attribute_name_frequency.sql") }}</figcaption>
 </figure>
 
-The most popular attribute is `class`, with nearly 3 billion occurrences in our dataset and constituting 34% of all attributes in use. `class` is by far the most prevalent attribute.
+Het meest populaire attribute is `class`, met bijna 3 miljard exemplaren in onze dataset en 34% van alle gebruikte attributen. `class` is verreweg het meest voorkomende attribute.
 
-The `value` attribute, which specifies the value of an `input` element, surprisingly completes the top 10. It's surprising to us because, subjectively, we didn't get the impression `value` attributes were used that frequently.
+Het `value`-attribuut, dat de waarde van een `input`-element specificeert, maakt verrassend genoeg de top 10 compleet. Het is verrassend voor ons omdat we subjectief gezien niet de indruk kregen dat`value`-attributen zo vaak werden gebruikt.
 
-### Attributes on pages
+### Attributen op pagina's
 
-Are there attributes that we find in every document? Not quite, but almost:
+Zijn er attributen die we in elk document vinden? Niet helemaal, maar bijna:
 
 <figure markdown>
-Element | Pages (%)
+Element | Pagina's (%)
 -- | --
-href | 99.21%
-src | 99.18%
-content | 98.88%
-name | 98.61%
-type | 98.55%
-class | 98.24%
-rel | 97.98%
-id | 97.46%
-style | 95.95%
-alt | 90.75%
+href | 99,21%
+src | 99,18%
+content | 98,88%
+name | 98,61%
+type | 98,55%
+class | 98,24%
+rel | 97,98%
+id | 97,46%
+style | 95,95%
+alt | 90,75%
 
 <figcaption>{{ figure_link(
-  caption="Top 10 attributes by page.",
+  caption="Top 10 attributen per pagina.",
   sheets_gid="1185369559",
   sql_file="pages_almanac_by_device_and_attribute_name_present.sql"
 )}}</figcaption>
 </figure>
 
-These results raise some questions that we cannot answer. For example, `type` is used on other elements too, but why this tremendous popularity? Especially given that it's usually not needed to specify for style sheets or scripts, with CSS and JavaScript being assumed default. Or, how do we really fare with `alt`? Do those 9.25% of pages not contain any images or are they just inaccessible?
+Deze resultaten roepen enkele vragen op die we niet kunnen beantwoorden. `type` wordt bijvoorbeeld ook op andere elementen gebruikt, maar waarom deze enorme populariteit? Zeker gezien het feit dat het meestal niet nodig is om opmaakmodellen of scripts op te geven, waarbij CSS en JavaScript als standaard worden aangenomen. Of, hoe vergaat het ons echt met `alt`? Bevatten die 9,25% van de pagina's geen afbeeldingen of zijn ze gewoon ontoegankelijk?
 
-### `data-*` attributes
+### `data-*` attributen
 
-Per the HTML spec, [`data-*` attributes](https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes) "are intended to store custom data, state, annotations, and similar, private to the page or application, for which there are no more appropriate attributes or elements." How are they used? What are the popular ones? Is there anything interesting here?
+Volgens de HTML-specificatie, [`data-*` attributen](https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributen) "zijn bedoeld om aangepaste gegevens, staat, annotaties en dergelijke op te slaan, privé voor de pagina of app, waarvoor er geen meer geschikte attributen of elementen zijn." Hoe worden ze gebruikt? Wat zijn de meest populaire? Is er hier iets interessants?
 
-The two most popular ones stand out because they are almost twice as popular than each of the attributes that followed (with >1% use):
+De twee meest populaire vallen op omdat ze bijna twee keer zo populair zijn dan elk van de volgende attributen (met > 1% gebruik):
 
 <figure markdown>
-| Attribute | Occurrences | Percentage |
+| Attribuut | Voorvallen | Percentage |
 |---|---|---|
-| `data-src` | 26,734,560 | 3.30% |
-| `data-id` | 26,596,769 | 3.28% |
-| `data-toggle` | 12,198,883 | 1.50% |
-| `data-slick-index` | 11,775,250 | 1.45% |
-| `data-element_type` | 11,263,176 | 1.39% |
-| `data-type` | 11,130,662 | 1.37% |
-| `data-requiremodule` | 8,303,675 | 1.02% |
-| `data-requirecontext` | 8,302,335 | 1.02% |
+| `data-src` | 26.734.560 | 3,30% |
+| `data-id` | 26.596.769 | 3,28% |
+| `data-toggle` | 12.198.883 | 1,50% |
+| `data-slick-index` | 11.775.250 | 1,45% |
+| `data-element_type` | 11.263.176 | 1,39% |
+| `data-type` | 11.130.662 | 1,37% |
+| `data-requiremodule` | 8.303.675 | 1,02% |
+| `data-requirecontext` | 8.302.335 | 1,02% |
 
-<figcaption>{{ figure_link(caption="The most popular <code>data-*</code> attributes.", sheets_gid="764700773", sql_file="pages_almanac_by_device_and_data_attribute_name_frequency.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="De meest populaire <code>data-*</code> attributen.", sheets_gid="764700773", sql_file="pages_almanac_by_device_and_data_attribute_name_frequency.sql") }}</figcaption>
 </figure>
 
-Attributes like `data-type`, `data-id`, and `data-src` can have multiple generic uses although `data-src` is used a lot with lazy image loading via JavaScript (e.g., Bootstrap 4). [Bootstrap](https://getbootstrap.com/) again explains the presence of `data-toggle`, where it's used as a state styling hook on toggle buttons. The [Slick carousel plugin](https://kenwheeler.github.io/slick/) is the source of `data-slick-index`, whereas `data-element_type` is part of [Elementor's WordPress website builder](https://elementor.com/). Both `data-requiremodule` and `data-requirecontext`, then, are part of [RequireJS](https://requirejs.org/).
+Attributen zoals `data-type`, `data-id` en `data-src` kunnen meerdere generieke toepassingen hebben, hoewel `data-src` veel wordt gebruikt bij het lui laden van afbeeldingen via JavaScript (bijvoorbeeld Bootstrap 4). [Bootstrap](https://getbootstrap.com/) legt opnieuw de aanwezigheid uit van `data-toggle`, waar het wordt gebruikt als een staat styling haak op schakelknoppen. De [Slick carousel plugin](https://kenwheeler.github.io/slick/) is de bron van `data-slick-index`, terwijl `data-element_type` deel uitmaakt van [Elementor's WordPress-websitebouwer](https://elementor.com/). Zowel `data-requiremodule` als `data-requirecontext` maken dus deel uit van [RequireJS](https://requirejs.org/).
 
 {# TODO(authors): Update this interpretation given that the lazy loading stat is in terms of pages, not img elements. #}
 Interestingly, the use of native lazy loading on images is similar to that of `data-src`. 3.86% of pages use the `<img loading="lazy">` attribute. This appears to be growing very fast, as back in February, this number was about [0.8%](https://twitter.com/zcorpan/status/1237016679667970050). It's possible that these are being used together for a [cross-browser solution](https://addyosmani.com/blog/lazy-loading/).
 
-## Miscellaneous
+## Diversen
 
-We've covered the use of HTML in general as well as the adoption of top elements and attributes. In this section, we're reviewing some of the special cases of viewports, favicons, buttons, inputs, and links. One thing we note here is that too many links still point to "http" URLs.
+We hebben het gebruik van HTML in het algemeen behandeld, evenals de acceptatie van topelementen en attributen. In deze sectie bespreken we enkele van de speciale gevallen van viewports, favicons, knoppen, invoer en links. Een ding dat we hier opmerken, is dat te veel links nog steeds naar "http" URL's verwijzen.
 
-### `viewport` specifications
+### `viewport` specificaties
 
-The [viewport](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag) meta element is used to control layout on mobile browsers. While years ago, the motto was kind of "don't forget the viewport meta element" when building a web page, eventually this became a common practice and the motto changed to "make sure zooming and scaling are not disabled."
+Het meta-element [viewport](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag) wordt gebruikt om de lay-out op mobiele browsers te beheren. Terwijl het motto jaren geleden een beetje was "vergeet het viewport-meta-element niet" bij het bouwen van een webpagina, werd dit uiteindelijk een gangbare praktijk en veranderde het motto in "zorg ervoor dat zoomen en schalen niet worden uitgeschakeld."
 
-Users should be able to zoom and scale the text [up to 500%](https://dequeuniversity.com/rules/axe/4.0/meta-viewport-large). That's why audits in popular tools like [Lighthouse](https://developers.google.com/web/tools/lighthouse) or [axe](https://www.deque.com/axe/) fail when `user-scalable="no"` is used within the `meta name="viewport"` element, and when the `maximum-scale` attribute value is less than `5`.
+Gebruikers moeten de tekst kunnen zoomen en schalen [tot 500%](https://dequeuniversity.com/rules/axe/4.0/meta-viewport-large). Daarom mislukken audits in populaire hulpmiddelen zoals [Lighthouse](https://developers.google.com/web/tools/lighthouse) of [axe](https://www.deque.com/axe/) wanneer `user-scalable="no"` wordt gebruikt binnen het `meta name="viewport"` element, en wanneer de `maximum-scale` attribuutwaarde kleiner is dan `5`.
 
-We had a look at the data and in order to better understand the results, we normalized it by removing spaces, converting everything to lowercase, and sorting by comma values of the `content` attribute.
+We hebben de gegevens bekeken en om de resultaten beter te begrijpen, hebben we deze genormaliseerd door spaties te verwijderen, alles naar kleine letters te converteren en te sorteren op kommawaarden van het `content`-attribuut.
 
 <figure markdown>
-| Content attribute value | Occurrences | Pages (%) |
+| Inhoudsattribuutwaarde | Voorvallen | Pagina's (%) |
 |---|---|---|
-| `initial-scale=1,width=device-width` | 2,728,491 | 42.98% |
-| blank | 688,293 | 10,84% |
-| `initial-scale=1,maximum-scale=1,width=device-width` | 373,136 | 5.88% |
-| `initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width` | 352,972 | 5.56% |
-| `initial-scale=1,maximum-scale=1,user-scalable=0,width=device-width` | 249,662 | 3.93% |
-| `width=device-width` | 231,668 | 3.65% |
+| `initial-scale=1,width=device-width` | 2.728.491 | 42,98% |
+| blank | 688.293 | 10,84% |
+| `initial-scale=1,maximum-scale=1,width=device-width` | 373.136 | 5,88% |
+| `initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width` | 352.972 | 5,56% |
+| `initial-scale=1,maximum-scale=1,user-scalable=0,width=device-width` | 249.662 | 3,93% |
+| `width=device-width` | 231.668 | 3,65% |
 
-<figcaption>{{ figure_link(caption="<code>viewport</code> specifications, and lack thereof.", sheets_gid="1414206386", sql_file="summary_pages_by_device_and_viewport.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="<code>viewport</code>-specificaties, en het ontbreken daarvan.", sheets_gid="1414206386", sql_file="summary_pages_by_device_and_viewport.sql") }}</figcaption>
 </figure>
 
-The results show that almost half of the pages we analyzed are using the typical viewport `content` value. Still, around 10% of mobile pages are entirely missing a proper `content` value for the viewport meta element, with the rest of them using an improper combination of `maximum-scale`, `minimum-scale`, `user-scalable=no`, or `user-scalable=0`.
+De resultaten laten zien dat bijna de helft van de pagina's die we hebben geanalyseerd de typische viewport-`content`-waarde gebruikt. Toch mist ongeveer 10% van de mobiele pagina's volledig een juiste `content`-waarde voor het viewport-meta-element, terwijl de rest een onjuiste combinatie gebruikt van `maximum-scale`, `minimum-scale`, `user-scalable=no`, of `user-scalable=0`.
 
 <p class="note">
-  For a while now, the Edge mobile browser allows users to zoom into a web page to <a href="https://blogs.windows.com/windows-insider/2017/01/12/announcing-windows-10-insider-preview-build-15007-pc-mobile/">at least 500%</a>, regardless of the zoom settings defined by a web page employing the viewport meta element.
+  Met de mobiele Edge-browser kunnen gebruikers al een tijdje inzoomen op een webpagina naar <a href="https://blogs.windows.com/windows-insider/2017/01/12/announcing-windows-10-insider-preview-build-15007-pc-mobile/">ten minste 500%</a>, ongeacht de zoominstellingen die zijn gedefinieerd door een webpagina die het viewport-meta-element gebruikt.
 </p>
 
 ### Favicons
 
-The situation around favicons is fascinating. Favicons work with or without markup—some browsers would fall back to [looking at the domain root](https://realfavicongenerator.net/faq#why_icons_in_root)—, accept several image formats, and then also promote several dozen sizes (some tools are reported to generate 45 of them; [realfavicongenerator.net](https://realfavicongenerator.net/) would return _37_ if requested to handle every case). As of this time of writing, there is an [open issue](https://github.com/whatwg/html/issues/4758) for the HTML spec to help improve the situation.
+De situatie rond favicons is fascinerend. Favicons werken met of zonder opmaak - sommige browsers vallen terug op [kijken naar de domeinhoofdmap](https://realfavicongenerator.net/faq#why_icons_in_root)—, accepteren verschillende afbeeldingsindelingen en promoten vervolgens ook enkele tientallen formaten (van sommige hulpmiddelen wordt gemeld dat ze er 45 genereren; [realfavicongenerator.net](https://realfavicongenerator.net/) zou _37_ retourneren als daarom wordt gevraagd om elk geval te behandelen). Op het moment van schrijven is er een [open `issue`](https://github.com/whatwg/html/issues/4758) voor de HTML-specificatie om de situatie te helpen verbeteren.
 
-When we built our tests we didn't check for the presence of images, but only looked at the markup. That means, when you review the following, note that it's more about _how_ favicons are referenced rather than whether or how often they are used.
+Bij het bouwen van onze tests hebben we niet gekeken naar de aanwezigheid van afbeeldingen, maar alleen naar de opmaak. Dat betekent dat wanneer u het volgende bekijkt, u er rekening mee houdt dat het meer gaat om _hoe_ er naar favicons wordt verwezen dan of en hoe vaak ze worden gebruikt.
 
 <figure markdown>
-| Favicon format | Occurrences | Pages (%) |
+| Favicon formaat | Voorvallen | Pagina's (%) |
 |---|---|---|
-| ICO | 2,245,646 | 35.38% |
-| PNG | 1,966,530 | 30.98% |
-| No favicon defined | 1,643,136 | 25.88% |
-| JPG | 319,935 | 5.04% |
-| No extension specified (no format identifiable) | 37,011 | 0.58% |
-| GIF | 34,559 | 0.54% |
-| WebP | 10,605 | 0.17% |
+| ICO | 2.245.646 | 35,38% |
+| PNG | 1.966.530 | 30,98% |
+| No favicon defined | 1.643.136 | 25,88% |
+| JPG | 319.935 | 5,04% |
+| No extension specified (no format identifiable) | 37.011 | 0,58% |
+| GIF | 34.559 | 0,54% |
+| WebP | 10.605 | 0,17% |
 | … | | |
-| SVG | 5,328 | 0.08% |
+| SVG | 5.328 | 0,08% |
 
-<figcaption>{{ figure_link(caption="Common favicon formats.", sheets_gid="1930085905", sql_file="pages_almanac_by_device_and_favicon_image_type.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Veel voorkomende favicon-indelingen.", sheets_gid="1930085905", sql_file="pages_almanac_by_device_and_favicon_image_type.sql") }}</figcaption>
 </figure>
 
-There are a couple of surprises in here:
+Er zijn hier een paar verrassingen:
 
-* Support for other formats is there but ICO is still the go-to format for favicons on the web.
-* JPG is a relatively popular favicon format even though it may not yield the best results (or a comparatively large weight) for many favicon sizes.
-* WebP is twice as popular as SVG! This might change, however, with [SVG favicon support](https://caniuse.com/link-icon-svg) improving.
+* Ondersteuning voor andere formaten is er, maar ICO is nog steeds het go-to-formaat voor favicons op internet.
+* JPG is een relatief populair faviconformaat, ook al levert het voor veel faviconformaten misschien niet de beste resultaten (of een relatief groot gewicht) op.
+* WebP is twee keer zo populair als SVG! Dit kan echter veranderen naarmate [SVG favicon support](https://caniuse.com/link-icon-svg) verbetert.
 
-### Button and input types
+### Knop- en invoertypen
 
-There has been a lot of [discussion](https://adrianroselli.com/2016/01/links-buttons-submits-and-divs-oh-hell.html) on buttons lately and how often they are misused. We looked into this to present findings on some of the native HTML buttons.
+Er is de laatste tijd veel [discussie](https://adrianroselli.com/2016/01/links-buttons-submits-and-divs-oh-hell.html) over knoppen en hoe vaak ze worden misbruikt. We hebben dit onderzocht om bevindingen over enkele van de native HTML-knoppen te presenteren.
 
 {{ figure_markup(
-  caption="Percent of pages with button elements.",
-  content="60.56%",
+  caption="Percentage pagina's met knopelementen.",
+  content="60,56%",
   classes="big-number",
   sheets_gid="410549982",
   sql_file="pages_markup_by_device.sql"
@@ -609,23 +609,23 @@ There has been a lot of [discussion](https://adrianroselli.com/2016/01/links-but
 
 {# TODO(analysts): Where do these "occurrences" come from? Ideally we have a single sheet to link to with the results used by this table. #}
 <figure markdown>
-| Button types | Occurrences | Percentage |
+| Knoptypes | Voorvallen | Percentage |
 |---|---|---|
-| `<button type="button">` | 15,926,061 | 36.41% |
-| `<button>` without type | 11,838,110 | 32.43% |
-| `<button type="submit">` | 4,842,946 | 28.55% |
-| `<input type="submit" value="…">` | 4,000,844 | 31.82% |
-| `<input type="button" value="…">` | 1,087,182 | 4.07% |
-| `<input type="image" src="…">` | 322,855 | 2.69% |
-| `<button type="reset">` | 41,735 | 0.49% |
+| `<button type="button">` | 15.926.061 | 36,41% |
+| `<button>` zonder type | 11.838.110 | 32,43% |
+| `<button type="submit">` | 4.842.946 | 28,55% |
+| `<input type="submit" value="…">` | 4.000.844 | 31,82% |
+| `<input type="button" value="…">` | 1.087.182 | 4,07% |
+| `<input type="image" src="…">` | 322.855 | 2,69% |
+| `<button type="reset">` | 41.735 | 0,49% |
 
-<figcaption>{{ figure_link(caption="Adoption of button types.", sheets_gid="410549982", sql_file="pages_markup_by_device.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Overname van knoptypes.", sheets_gid="410549982", sql_file="pages_markup_by_device.sql") }}</figcaption>
 </figure>
 
-Our analysis shows that about 60% of pages contain a button element and more than half of the pages (32.43%) have at least one button that fails to specify a `type` attribute. Note that the button element has a [default type](https://dev.w3.org/html5/spec-LC/the-button-element.html) of `submit`, so the default behavior of buttons on these 32% of pages is to submit the current form data. To avoid possibly unexpected behavior like this, a best practice is to specify the `type` attribute.
+Uit onze analyse blijkt dat ongeveer 60% van de pagina's een knopelement bevat en meer dan de helft van de pagina's (32,43%) ten minste één knop heeft die geen `type`-attribuut specificeert. Merk op dat het knopelement een [standaardtype](https://dev.w3.org/html5/spec-LC/the-button-element.html) heeft van `submit`, dus het standaardgedrag van knoppen op deze 32% van de pagina's is om de huidige formuliergegevens in te dienen. Om mogelijk onverwacht gedrag als dit te voorkomen, is het het beste om het kenmerk `type` op te geven.
 
 <figure markdown>
-| Percentile | Buttons per page |
+| Percentiel | Knoppen per pagina |
 |---|---|
 | 10 | 0 |
 | 25 | 0 |
@@ -633,86 +633,86 @@ Our analysis shows that about 60% of pages contain a button element and more tha
 | 75 | 5 |
 | 90 | 13 |
 
-<figcaption>{{ figure_link(caption="Distribution of the number of buttons per page.", sheets_gid="309769153", sql_file="pages_markup_by_device_and_percentile.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Verdeling van het aantal knoppen per pagina.", sheets_gid="309769153", sql_file="pages_markup_by_device_and_percentile.sql") }}</figcaption>
 </figure>
 
-Pages in the 10th and 25th percentiles contain no buttons at all, while a page in the 90th percentile contains 13 native `button` elements. In other words, 10% of pages contain 13 or more buttons.
+Pagina's in het 10e en 25e percentiel bevatten helemaal geen knoppen, terwijl een pagina in het 90e percentiel 13 native `button`-elementen bevat. Met andere woorden, 10% van de pagina's bevat 13 of meer knoppen.
 
-### Link targets
+### Link doelen
 
-The [anchor element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a), or `a` element, links web resources together. In this section, we analyze the adoption of the protocols included in these link targets.
+Het [`anchor`-element](https://developer.mozilla.org/nl/docs/Web/HTML/Element/a), of `a` element, verbindt webbronnen met elkaar. In deze sectie analyseren we de acceptatie van de protocollen die in deze linkdoelen zijn opgenomen.
 
 <figure markdown>
-| Protocol | Occurrences | Pages (%) |
+| Protocol | Voorvallen | Pagina's (%) |
 |---|---|---|
-| https | 5,756,444 | 90.69% |
-| http | 4,089,769 | 64.43% |
-| mailto | 1,691,220 | 26.64% |
-| javascript | 1,583,814 | 24.95% |
-| tel | 1,335,919 | 21.05% |
-| whatsapp | 34,643 | 0.55% |
-| viber | 25,951 | 0.41% |
-| skype | 22,378 | 0.35% |
-| sms | 17,304 | 0.27% |
-| intent | 12,807 | 0.20% |
+| https | 5.756.444 | 90,69% |
+| http | 4.089.769 | 64,43% |
+| mailto | 1.691.220 | 26,64% |
+| javascript | 1.583.814 | 24,95% |
+| tel | 1.335.919 | 21,05% |
+| whatsapp | 34.643 | 0,55% |
+| viber | 25.951 | 0,41% |
+| skype | 22.378 | 0,35% |
+| sms | 17.304 | 0,27% |
+| intent | 12.807 | 0,20% |
 
-<figcaption>{{ figure_link(caption="Adoption of link target protocols.", sheets_gid="1963376224", sql_file="pages_wpt_bodies_by_device_and_protocol.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Adoptie van link doelen-protocollen.", sheets_gid="1963376224", sql_file="pages_wpt_bodies_by_device_and_protocol.sql") }}</figcaption>
 </figure>
 
-We can see how `https` and `http` are most dominant, followed by "benign" links to make writing email, making phone calls, and sending messages easier. `javascript` stands out as a link target that's still very popular even though JavaScript offers native and gracefully degrading options to work with.
+We kunnen zien hoe `https` en `http` het meest dominant zijn, gevolgd door 'goedaardige' links om het schrijven van e-mail, het voeren van telefoongesprekken en het verzenden van berichten gemakkelijker te maken. `javascript` onderscheidt zich als een linkdoel dat nog steeds erg populair is, ook al biedt JavaScript native en gracieus vernederende opties om mee te werken.
 
-### Links in new windows
+### Links in nieuwe vensters
 
 {{ figure_markup(
-  caption="Percent of pages having neither `noopener` nor `noreferrer` attributes on `target=\"_blank\"` links.",
-  content="71.35%",
+  caption="Percentage pagina's met noch `noopener` noch `noreferrer` attributen op `target=\"_blank\"` links.",
+  content="71,35%",
   classes="big-number",
   sheets_gid="1876528165",
   sql_file="pages_wpt_bodies_by_device.sql"
 ) }}
 
-Using `target="_blank"` has been known to be a [security vulnerability](https://mathiasbynens.github.io/rel-noopener/) for some time now. Yet 71.35% of pages contain links with `target="_blank"`, without `noopener` or `noreferrer`.
+Het gebruik van `target="_blank"` staat al enige tijd bekend als een [beveiligingsprobleem](https://mathiasbynens.github.io/rel-noopener/). Toch bevat 71,35% van de pagina's links met `target="_blank"`, zonder `noopener` of `noreferrer`.
 
 <figure markdown>
-| Elements | Pages |
+| Elementen | Pagina's |
 |---|---|
-| `<a target="_blank" rel="noopener noreferrer">` | 13.63% |
-| `<a target="_blank" rel="noopener">` | 14.14% |
-| `<a target="_blank" rel="noreferrer">` | 0.56% |
+| `<a target="_blank" rel="noopener noreferrer">` | 13,63% |
+| `<a target="_blank" rel="noopener">` | 14,14% |
+| `<a target="_blank" rel="noreferrer">` | 0,56% |
 
-<figcaption>{{ figure_link(caption="Blank relationships.", sheets_gid="1876528165", sql_file="pages_wpt_bodies_by_device.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Lege relaties.", sheets_gid="1876528165", sql_file="pages_wpt_bodies_by_device.sql") }}</figcaption>
 </figure>
 
-As a rule of thumb and for [usability reasons](https://www.nngroup.com/articles/new-browser-windows-and-tabs/), prefer not to use `target="_blank"` in the first place.
+Als vuistregel en om [gebruiksredenen](https://www.nngroup.com/articles/new-browser-windows-and-tabs/), geeft u er de voorkeur aan om `target="_blank"` niet te gebruiken in de eerste plaats.
 
-<p class="note">Within the latest Safari and Firefox versions, setting <code>target="_blank"</code> on <code>a</code> elements implicitly provides the same <code>rel</code> behavior as setting <code>rel="noopener"</code>. This is already <a href="https://chromium-review.googlesource.com/c/chromium/src/+/1630010">implemented in Chromium</a> as well and will land in Chrome 88.</p>
+<p class="note">In de nieuwste Safari- en Firefox-versies biedt het instellen van <code>target="_blank"</code> op <code>a</code>-elementen impliciet hetzelfde <code>rel</code>-gedrag als het instellen van <code>rel="noopener"</code>. Dit is ook al <a href="https://chromium-review.googlesource.com/c/chromium/src/+/1630010">geïmplementeerd in Chromium</a> en komt ook in Chrome 88 terecht.</p>
 
-## Conclusion
+## Conclusie
 
-We've touched on some observations throughout the chapter, but as a reflection on the state of markup in 2020, here are some things that stood out for us:
+We hebben in het hele hoofdstuk enkele observaties aangeroerd, maar als reflectie op de staat van opmaak in 2020, zijn hier enkele dingen die ons opvielen:
 
 {{ figure_markup(
-  caption="Percent of pages with a quirky doctype.",
-  content="3.97%",
+  caption="Percentage pagina's met een eigenzinnig doctype.",
+  content="3,97%",
   classes="big-number",
   sheets_gid="1981441894",
   sql_file="summary_pages_by_device_and_doctype.sql"
 ) }}
 
-Fewer pages land in quirks mode. In 2016, that number was at [around 7.4%](https://discuss.httparchive.org/t/how-many-and-which-pages-are-in-quirks-mode/777). At the end of 2019, we observed [4.85%](https://twitter.com/zcorpan/status/1205242913908838400). And now, we're at about 3.97%. This trend, to paraphrase [Simon Pieters](./contributors#zcorpan) in his review of this chapter, seems clear and encouraging.
+Minder pagina's komen terecht in de eigenaardighedenmodus. In 2016 bedroeg dat aantal [ongeveer 7,4%](https://discuss.httparchive.org/t/how-many-and-which-pages-are-in-quirks-mode/777). Eind 2019 hebben we [4.85%](https://twitter.com/zcorpan/status/1205242913908838400) waargenomen. En nu zitten we op ongeveer 3,97%. Deze trend, om [Simon Pieters](./contributors#zcorpan) te parafraseren in zijn bespreking van dit hoofdstuk, lijkt duidelijk en bemoedigend.
 
-Although we lack historic data to draw the full development picture, "meaningless" `div`, `span`, and `i` markup has pretty much [replaced](#top-elements) the `table` markup we've observed in the 1990s and early 2000s. While one may question whether `div` and `span` elements are always used without there being a semantically more appropriate alternative, these elements are still preferable to `table` markup, though, as during the heyday of the old web, these were seemingly used for everything but tabular data.
+Hoewel we geen historische gegevens hebben om het volledige ontwikkelingsbeeld te schetsen, heeft "betekenisloze" `div`, `span` en `i` opmaak vrijwel de `table` opmaak die we hebben waargenomen in de jaren 1990 en vroege jaren 2000 [vervangen](#top-elements). Hoewel men zich kan afvragen of `div`- en `span`-elementen altijd worden gebruikt zonder dat er een semantisch geschikter alternatief is, verdienen deze elementen nog steeds de voorkeur boven `table`-markup, aangezien deze tijdens de hoogtijdagen van het oude web schijnbaar voor alles behalve tabelgegevens werden gebruikt.
 
-Elements per page and element types per page stayed roughly the same, showing [no significant change](#element-diversity) in our HTML writing practice when compared to 2019. Such changes may require more time to manifest.
+Elementen per pagina en elementtypes per pagina bleven ongeveer hetzelfde en toonden [geen significante verandering](#element-diversity) in onze HTML-schrijfpraktijk in vergelijking met 2019. Dergelijke veranderingen kunnen meer tijd vergen om zich te manifesteren.
 
-Proprietary product-specific elements like `g:plusone` (used on 17,607 pages in the mobile sample) and `fb:like` (11,335) have almost disappeared after still being [among the most popular ones](../2019/markup#products-and-libraries-and-their-custom-markup) last year. However, we observe more [custom elements](#custom-elements) for things like Slider Revolution, AMP, and Angular. Elements like `ym-measure`, `jdiv`, and `ymaps` are also still prevalent. What we imagine we're seeing here is that, under the sea of slowly changing practices, HTML is very much being developed and maintained, as authors toss deprecated markup and embrace new solutions.
+Gepatenteerde productspecifieke elementen zoals `g:plusone` (gebruikt op 17.607 pagina's in het mobiele voorbeeld) en `fb:like` (11.335) zijn bijna verdwenen nadat ze nog steeds [een van de meest populaire](../2019/markup#products-and-libraries-and-their-custom-markup) waren vorig jaar. We zien echter meer [aangepaste elementen](#custom-elements) voor zaken als Slider Revolution, AMP en Angular. Elementen als `ym-maatregel`, `jdiv` en `ymaps` komen ook nog steeds voor. Wat we ons voorstellen dat we hier zien, is dat, onder de zee van langzaam veranderende praktijken, HTML erg wordt ontwikkeld en onderhouden, terwijl auteurs verouderde markeringen weggooien en nieuwe oplossingen omarmen.
 
-Now, the [2019 Web Almanac Markup chapter](../2019/markup) had 14 years of catch up to do since the last major study on the topic, so you'd think we wouldn't have much to cover in the year since. Yet what we observe with this year's data is that there's a lot of movement at the bottom and near the shore of said sea of HTML. We approach near-complete adoption of living HTML. We are quick to prune our pages of fads like Google and Facebook widgets. We're also fast in adopting and shunning frameworks, as both Angular and AMP (though a "component framework") seem to have significantly lost in popularity, likely for solutions like React and Vue.
+Nu had het [hoofdstuk Web Almanac Opmaak 2019](../2019/markup) 14 jaar inhaalslag te maken sinds de laatste grote studie over het onderwerp, dus je zou denken dat we niet veel te behandelen hebben in de jaar sinds. Maar wat we met de gegevens van dit jaar zien, is dat er veel beweging is op de bodem en nabij de kust van de genoemde zee van HTML. We benaderen een bijna volledige acceptatie van levende HTML. We snoeien onze pagina's snel van rages zoals Google- en Facebook-widgets. We zijn ook snel in het adopteren en mijden van frameworks, aangezien zowel Angular als AMP (hoewel een "component framework") aanzienlijk aan populariteit lijken te hebben verloren, waarschijnlijk voor oplossingen als React en Vue.
 
-And still, there are no signs we exhausted the options HTML gives us. The median of 30 different elements used on a given page, which is roughly a quarter of the elements HTML provides us with, suggests a rather one-sided use of HTML. That is supported by the immense popularity of elements like `div` and `span`, and no custom elements to potentially meet the demands that these two elements may represent. Unfortunately, we couldn't validate each document in the sample; however, anecdotally and to be taken with caution, we learned that [79%](https://github.com/HTTPArchive/almanac.httparchive.org/issues/899#issuecomment-717856201) of W3C-tested documents have validation errors. After everything we've seen, it looks like we're still far from mastering the craft of HTML.
+En toch zijn er geen tekenen dat we de opties die HTML ons biedt hebben uitgeput. De mediaan van 30 verschillende elementen die op een bepaalde pagina worden gebruikt, wat ongeveer een kwart is van de elementen die HTML ons biedt, suggereert een nogal eenzijdig gebruik van HTML. Dat wordt ondersteund door de immense populariteit van elementen als `div` en `span`, en er zijn geen aangepaste elementen om mogelijk te voldoen aan de eisen die deze twee elementen kunnen vertegenwoordigen. Helaas konden we niet elk document in het voorbeeld valideren; anekdotisch en om voorzichtig te zijn, hebben we echter geleerd dat [79%](https://github.com/HTTPArchive/almanac.httparchive.org/issues/899#issuecomment-717856201) van W3C-geteste documenten validatiefouten bevatten. Na alles wat we hebben gezien, lijkt het erop dat we het ambacht van HTML nog lang niet beheersen.
 
-That compels us to close with an appeal: Pay attention to HTML. Focus on HTML. It's important and worthwhile to invest in HTML. HTML is a document language that may not have the charm of a programming language, and yet the web is built on it. Use less HTML and learn what's really needed. Use more appropriate HTML—learn what's available and what it's there for. And [validate](https://validator.w3.org/docs/why.html) your HTML. Anyone can write invalid HTML (just invite the next person you meet to write an HTML document and validate the output) but a professional developer can be expected to produce valid HTML. Writing correct and valid HTML is a craft to take pride in.
+Dat dwingt ons om af te sluiten met een oproep: let op HTML. Focus op HTML. Het is belangrijk en de moeite waard om in HTML te investeren. HTML is een documenttaal die misschien niet de charme heeft van een programmeertaal, en toch is het web erop gebouwd. Gebruik minder HTML en leer wat echt nodig is. Gebruik meer geschikte HTML - ontdek wat er beschikbaar is en waarvoor het is bedoeld. En [valideer](https://validator.w3.org/docs/why.html) uw HTML. Iedereen kan ongeldige HTML schrijven (nodig gewoon de volgende persoon die u ontmoet uit om een HTML-document te schrijven en de uitvoer te valideren), maar van een professionele ontwikkelaar mag worden verwacht dat hij geldige HTML produceert. Het schrijven van correcte en geldige HTML is een vak om trots op te zijn.
 
-For the next edition of the Web Almanac's chapter, let's prepare to look closer at the craft of writing HTML and, hopefully, how we've been improving on it.
+Laten we ons voor de volgende editie van het hoofdstuk over de Web Almanac voorbereiden om nader te kijken naar het vak van het schrijven van HTML en, hopelijk, hoe we het hebben verbeterd.
 
-We're leaving this open to you. What are your observations? What has caught your eye? What do you think has taken a turn for the worse, and what has improved? [Leave a comment](https://discuss.httparchive.org/t/2039) to share your thoughts!
+We laten dit voor je open. Wat zijn uw opmerkingen? Wat viel u op? Wat is er volgens u verslechterd, en wat is er verbeterd? [Laat een reactie achter](https://discuss.httparchive.org/t/2039) om uw mening te delen!
