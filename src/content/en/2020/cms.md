@@ -51,7 +51,7 @@ More than 42% of web pages are powered by a CMS platform, an increase of over 5%
 {{ figure_markup(
   image="cms-adoption.png",
   caption="CMS adoption trend.",
-  description="Bar chart showing the increase in the level of CMS adoption in 2019 and 2020. Mobile has increased from 29.61% to 42.47%. Desktop has increased from 40.01% to 42.18.",
+  description="Bar chart showing the increase in the level of CMS adoption in 2019 and 2020. Mobile has increased from 39.61% to 42.47%. Desktop has increased from 40.01% to 42.18.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkUxfuK-FCn3_IYDJiEsKDmdmyKb0TSEhG8dFc0XBIXej1NO2uUOmd-9NCbWuh-MZ3xzMhK_kNT-4u/pubchart?oid=2061880890&format=interactive",
   sheets_gid="1638210080",
   sql_file="cms_adoption_compared_to_2019.sql"
