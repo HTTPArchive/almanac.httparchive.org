@@ -12,22 +12,17 @@ raphlinus_bio: Raph Levien has been working with fonts for over 35 years, includ
 discuss: 2040
 results: https://docs.google.com/spreadsheets/d/1jjvZqYay5KmTle4atzFWqtbkz9ohw25KFmNtCS-7n3s/
 queries: 04_Fonts
-#featured_quote: TODO
-#featured_stat_1: TODO
-#featured_stat_label_1: TODO
-#featured_stat_2: TODO
-#featured_stat_label_2: TODO
-#featured_stat_3: TODO
-#featured_stat_label_3: TODO
-unedited: true
+featured_quote: Web font technology is fairly mature, with incremental improvements in compression and other technical improvements, but new features are arriving. Browser support for variable fonts has become quite good, and this is the feature that's seen the most growth in the previous year.
+featured_stat_1: 70.3%
+featured_stat_label_1: Popularity of Google Fonts amongst font-hosting services
+featured_stat_2: 10.3%
+featured_stat_label_2: Usage of <code>font-display</code> swap
+featured_stat_3: 11.0%
+featured_stat_label_3: Usage of Variable Fonts on mobile sites
 ---
 ## Introduction
 
 Text is at the heart of most web sites, and typography is the art of presenting that text in a way that's visually appealing and effective. Creating good typography requires choosing the appropriate fonts and designers have a tremendous range of web fonts to choose from. As with all resources, there are performance and compatibility concerns but, done right, the benefit is well worth it. In this chapter, we'll dive into data to show how web fonts are being used, and in particular how they're optimized.
-
-Web font technology is fairly mature, with incremental improvements in compression and other technical improvements, but new features are arriving. Browser support for variable fonts has become quite good, and this is the feature that's seen the most growth in the previous year.
-
-{# TODO (authors) - what do you think about moving this sentence to the conclusion? #}
 
 ## Where are web fonts being used?
 
@@ -73,6 +68,14 @@ There's a great thread on [web font usage by country](https://discuss.httparchiv
 
 ### Serving with a service
 
+{{ figure_markup(
+  caption="Popularity of Google Fonts amongst font-hosting services.",
+  content="70.3%",
+  classes="big-number",
+  sheets_gid="1925210751",
+  sql_file="04_05.web_font_usage_breakdown_with_fcp.sql"
+) }}
+
 It likely comes as no surprise that [Google Fonts](https://fonts.google.com/) remains by far the most popular platform, but the percentage use has actually dropped almost 5% from 2019 to about 70%. [Adobe Fonts](https://fonts.adobe.com/) (formerly Typekit) has dropped about 3% as well, but [Bootstrap usage](https://getbootstrap.com/) has grown from about 3% to over 6% (in aggregate from several providers). It is worth noting that the largest provider for Bootstrap ([BootstrapCDN](https://www.bootstrapcdn.com/)) also provides icon fonts from [Font Awesome](https://fontawesome.com/), so it may be that it is not Bootstrap itself but rather older versions also referencing icon font files that is behind the rise in that source data.
 
 Another surprise in the data is the rise in fonts being served by [Shopify](https://www.shopify.com/). Growing from roughly 1.1% in 2019 to about 4% in 2020, there has clearly been a significant uptick in usage of web fonts by sites hosted on that platform. It is unclear if that is due to that service offering more fonts that they host on their CDN, if it is growth in use of their platform, or both. However, the increase in usage of both Shopify and Bootstrap represent the largest amount of growth other than Google Fonts, making it a very noticeable data point.
@@ -106,14 +109,14 @@ When viewing commercial services such as Adobe (`use.typekit.net`) or Monotype (
 
 #### Self-hosting isn't always better
 
-Self-hosting fonts on the same domain as the website can be faster, as [we dsicovered for this very website](https://www.tunetheweb.com/blog/should-you-self-host-google-fonts/), however this is not always the case as the data shows.
+Self-hosting fonts on the same domain as the website can be faster, as [we discovered for this very website](https://www.tunetheweb.com/blog/should-you-self-host-google-fonts/), however this is not always the case as the data shows.
 
 {# TODO Authors - Suggested different wording here, and moved `local` down to below. Let me knwo your thoughts. Particularly as I inserted a reference to my own site here which is a bit presumptious of me :-) but it is about the Web Almanac so think it fits. #}
 
 {{ figure_markup(
   image="fonts-web-hosting-performance-desktop.png",
   caption="Web font hosting performance, desktop.",
-  description="A bar chart showing the desktop median first content paint and last content paint (in milliseconds) for three different web font hosting strategies: local is 2,426 milliseconds for median FCP and 4,176 for median LCP, external is 2,034 and 3,671 respectively, and both is 2,663 and 5,044 milliseconds respectively.",
+  description="A bar chart showing the desktop median First Contentful Paint and Last Contentful Paint (in milliseconds) for three different web font hosting strategies: local is 2,426 milliseconds for median FCP and 4,176 for median LCP, external is 2,034 and 3,671 respectively, and both is 2,663 and 5,044 milliseconds respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=506816237&format=interactive",
   sheets_gid="838326315",
   sql_file="04_04.self_hosted_vs_hosted_with_fcp.sql"
@@ -123,7 +126,7 @@ Self-hosting fonts on the same domain as the website can be faster, as [we dsico
 {{ figure_markup(
   image="fonts-web-hosting-performance-mobile.png",
   caption="Web font hosting performance, mobile.",
-  description="A bar chart showing the mobile median first content paint and last content paint (in milliseconds) for three different web font hosting strategies: local is 5,326 milliseconds for median FCP and 8,521 for median LCP,  external is 5,056 and 8,229 respectively, and both is 5,847 and 9,900 milliseconds respectively.",
+  description="A bar chart showing the mobile median First Contentful Paint and Last Contentful Paint (in milliseconds) for three different web font hosting strategies: local is 5,326 milliseconds for median FCP and 8,521 for median LCP,  external is 5,056 and 8,229 respectively, and both is 5,847 and 9,900 milliseconds respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1955186104&format=interactive",
   sheets_gid="838326315",
   sql_file="04_04.self_hosted_vs_hosted_with_fcp.sql"
@@ -154,7 +157,7 @@ The [`font-display`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face
   )
 }}
 
-We can analyze the effect of these settings on first contentful paint and largest contentful paint. Not surprisingly, the `optional` setting has a major effect on largest contentful paint. There is also an effect on first contentful paint, but that might be more correlation than causation, as all of the modes except for `block` display *some* text after an "extremely small block period."#}
+We can analyze the effect of these settings on First Contentful Paint and Largest Contentful Paint. Not surprisingly, the `optional` setting has a major effect on Largest Contentful Paint. There is also an effect on First Contentful Paint, but that might be more correlation than causation, as all of the modes except for `block` display *some* text after an "extremely small block period."#}
 
 {{ figure_markup(
   image="fonts-font-display-performance-desktop.png",
@@ -192,8 +195,6 @@ Ordinarily, fetching web fonts is a two-stage process. The first stage is loadin
 
 This is especially relevant for hosted font solutions. Only after discovering the font is needed, can the connection to that server begin, which further breaks down into the DNS query for the server, and actually initiating a connection (which, these days, usually involves an HTTPS cryptographic handshake).
 
-Adding a [resource hint element](https://www.w3.org/TR/resource-hints/#resource-hints) in the HTML starts that second connection earlier. The various resource hint settings control how far that gets before having the URL for the actual font resource. The most common (at about 32% of web pages) is `dns-prefetch`, even though in most cases there are better choices.
-
 {{ figure_markup(
   image="fonts-resource-hints-use.png",
   caption="resource-hints use on fonts.",
@@ -203,6 +204,10 @@ Adding a [resource hint element](https://www.w3.org/TR/resource-hints/#resource-
   sql_file="04_07.font_resource_hints_with_fcp.sql"
   )
 }}
+
+Adding a [resource hint element](https://www.w3.org/TR/resource-hints/#resource-hints) in the HTML starts that second connection earlier. The various resource hint settings control how far that gets before having the URL for the actual font resource. The most common (at about 32% of web pages) is `dns-prefetch`, even though in most cases there are better choices.
+
+Next we will look at whether these resource hints have an impact on page performance.
 
 {{ figure_markup(
   image="fonts-resource-hints-performance-desktop.png",
@@ -312,7 +317,17 @@ Lots more information about color fonts, including examples, are available at [c
 
 ## Variable fonts
 
-Variable fonts are certainly one of the biggest stories this year. They're seen in 8.37% of desktop pages, and 13.84% of mobile. That's up from an average of 1.8% last year, a huge growth factor. It is not hard to see why their popularity is increasing – they offer more design flexibility, and also potentially smaller binary font sizes, especially if multiple styles of the same font are used on the same page.
+{{ figure_markup(
+  caption="Usage of variable fonts on mobile.",
+  content="11.00%",
+  classes="big-number",
+  sheets_gid="91894176",
+  sql_file="04_14a.variable_font_comparison_fcp.sql"
+) }}
+
+Variable fonts are certainly one of the biggest stories this year. They're seen in 10.54% of desktop pages, and 11.00% of mobile. That's up from an average of 1.8% last year, a huge growth factor. It is not hard to see why their popularity is increasing – they offer more design flexibility, and also potentially smaller binary font sizes, especially if multiple styles of the same font are used on the same page.
+
+{# That's huge usage! Any ideas what's driven it? It would appear no variable font has any where near that usage so how come total usage is so high? Has any particular service or platform turned this on by default? #}
 
 {# TODO - authors Should we add a paragraph or bullet list explaing the common font axis and what they mean before launching into their usage? What is difference between wght and wdth? And between slnt and ital? Web Almanac readers may come here from pother chapters and not be familiar with these terms. Plus I am a little familair and don't know these answers! #}
 
@@ -336,7 +351,9 @@ There are many potential benefits to using variable fonts. While each included a
 
 Adopting and leveraging variable fonts for more varied design (by using more of the available range of weights and widths) is another. Using a width axis could improve line wrapping on smaller screens, especially with larger headings and longer languages. With the rise in adoption of alternate light modes, making small adjustments to font-weight when switching modes can improve legibility (see [variablefonts.io](https://variablefonts.io) for more on usage and implementation).
 
-## Towards the future
+## Conclusion
+
+Web font technology is fairly mature, with incremental improvements in compression and other technical improvements, but new features are arriving. Browser support for variable fonts has become quite good, and this is the feature that's seen the most growth in the previous year.
 
 The performance landscape is changing somewhat, as the advent of [cache partitioning](https://developers.google.com/web/updates/2020/10/http-cache-partitioning) reduces the performance benefit from sharing the cache of CDN font resources across multiple sites. The trend of hosting more font assets on the same domain as the site, rather than using a CDN, will probably continue. Even so, services such as Google Fonts are highly optimized, and best practices such as use of `swap` and `preconnect` mitigate much of the impact of the additional HTTP connection.
 
