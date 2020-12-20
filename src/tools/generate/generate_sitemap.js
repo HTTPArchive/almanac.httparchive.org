@@ -57,7 +57,9 @@ const get_static_pages = async (sitemap_languages) => {
     .reduce((x, y) => [...x, ...y], []);
 
   // Get the sitemap entries for those pages
-  let urls = [];
+  let urls = [
+    {url: 'en/2020/stories/page-content.html', lastmod: '2020-12-19'},
+  ];
 
   for (const loc of await files) {
     if (fs.existsSync(`templates/${loc}`)) {
