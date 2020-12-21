@@ -9,7 +9,8 @@ const static_pages = [
   'table_of_contents.html',
   'methodology.html',
   'contributors.html',
-  'accessibility_statement.html'
+  'accessibility_statement.html',
+  'stories/page_content.html'
 ];
 const ebook_path = "static/pdfs/web_almanac_";
 
@@ -57,9 +58,7 @@ const get_static_pages = async (sitemap_languages) => {
     .reduce((x, y) => [...x, ...y], []);
 
   // Get the sitemap entries for those pages
-  let urls = [
-    {url: 'en/2020/stories/page-content.html', lastmod: '2020-12-19'},
-  ];
+  let urls = [];
 
   for (const loc of await files) {
     if (fs.existsSync(`templates/${loc}`)) {
