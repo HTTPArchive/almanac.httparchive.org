@@ -369,7 +369,7 @@ FID is erg snel voor de gemiddelde CMS-website op desktop - alleen Wix scoort la
 {{ figure_markup(
   image="cms-real-user-first-input-delay-experiences.png",
   caption="First Input Delay-ervaringen door echte gebruikers.",
-  description='Staafdiagram met de top 5 CMS'en en of ze een "goede" ervaring met de eerste invoervertraging hebben. Ze hebben allemaal een ervaringsscore van 100% op desktop, behalve Wix met 87%. Voor mobiel heeft WordPress 88%, Drupal 76%, Joomla 71%, Squarespace 91% en Wix 46%.',
+  description="Staafdiagram met de top 5 CMS'en en of ze een \"goede\" ervaring met de eerste invoervertraging hebben. Ze hebben allemaal een ervaringsscore van 100% op desktop, behalve Wix met 87%. Voor mobiel heeft WordPress 88%, Drupal 76%, Joomla 71%, Squarespace 91% en Wix 46%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkUxfuK-FCn3_IYDJiEsKDmdmyKb0TSEhG8dFc0XBIXej1NO2uUOmd-9NCbWuh-MZ3xzMhK_kNT-4u/pubchart?oid=893606466&format=interactive",
   sheets_gid="465267881",
   sql_file="core_web_vitals_distribution.sql"
