@@ -7,7 +7,7 @@ authors: [alexdenning]
 reviewers: [sirjonathan, ernee, amedina]
 analysts: [GregBrimble, rviscomi]
 translators: [noah-vdv]
-alexdenning_bio: Alex Denning is de oprichter van <a href="https://getellipsis.com/">Ellipsis Marketing</a>, een marketingbureau voor WordPress-bedrijven. Alex is een WordPress Core-bijdrager en heeft geholpen bij het organiseren van <a href="https://london.wordcamp.org/">WordCamp London</a>.
+alexdenning_bio: Alex Denning is de oprichter van <a hreflang="en" href="https://getellipsis.com/">Ellipsis Marketing</a>, een marketingbureau voor WordPress-bedrijven. Alex is een WordPress Core-bijdrager en heeft geholpen bij het organiseren van <a hreflang="en" href="https://london.wordcamp.org/">WordCamp London</a>.
 discuss: 2051
 results: https://docs.google.com/spreadsheets/d/1vTf459CcCbBuYeGvgo-RSidppR62SfM-VTkW-dfS3K4/
 queries: 15_CMS
@@ -28,7 +28,7 @@ Elk CMS implementeert een deelverzameling van een breed scala aan inhoudbeheermo
 
 Er is een grote variatie in het type en de omvang van de ondersteunende CMS'en voor bouwterreinen; sommige bieden kant-en-klare sjablonen die worden aangevuld met gebruikersinhoud, en andere vereisen veel meer gebruikersbetrokkenheid voor het ontwerpen en bouwen van de sitestructuur.
 
-Als we aan CMS'en denken, moeten we rekening houden met alle componenten die een rol spelen bij de levensvatbaarheid van een dergelijk systeem om een platform te bieden voor het publiceren van inhoud op internet. Al deze componenten vormen een ecosysteem rond het CMS-platform en omvatten hostingproviders, extensieontwikkelaars, ontwikkelingsbureaus, sitebouwers, enz. Dus als we het hebben over een CMS, verwijzen we meestal naar zowel het platform zelf als het omliggende ecosysteem. .
+Als we aan CMS'en denken, moeten we rekening houden met alle componenten die een rol spelen bij de levensvatbaarheid van een dergelijk systeem om een platform te bieden voor het publiceren van inhoud op internet. Al deze componenten vormen een ecosysteem rond het CMS-platform en omvatten hostingproviders, extensieontwikkelaars, ontwikkelingsbureaus, sitebouwers, enz. Dus als we het hebben over een CMS, verwijzen we meestal naar zowel het platform zelf als het omliggende ecosysteem.
 
 Er zijn veel interessante en belangrijke aspecten die moeten worden geanalyseerd en vragen die moeten worden beantwoord in onze zoektocht naar de CMS-ruimte en zijn rol in het heden en de toekomst van het web. We erkennen de uitgestrektheid en complexiteit van de CMS-platformruimte en brengen onze nieuwsgierigheid en diepgaande expertise naar enkele van de belangrijkste spelers in de ruimte.
 
@@ -90,7 +90,7 @@ Meer dan 42% van de webpagina's wordt aangedreven door een CMS-platform, een sti
 
 De toename van desktopwebpagina's aangedreven door een CMS-platform is 5,43% ten opzichte van vorig jaar. Op mobiel is deze stijging ongeveer een kwart hoger, namelijk 6,71%.
 
-Net als bij [vorig jaar](../2019/cms#cms-adoption), zien we andere resultaten van andere datasets voor het bijhouden van marktaandeel van CMS-platforms, zoals [W3Techs](https://w3techs.com/technologies/history_overview/content_management). W3Techs meldt op het moment van schrijven dat 60,6% van de webpagina's wordt gemaakt door CMS'en, tegen 56,4% een jaar geleden. Dit is een stijging van 6,4%, wat in grote lijnen overeenkomt met onze bevindingen.
+Net als bij [vorig jaar](../2019/cms#cms-adoption), zien we andere resultaten van andere datasets voor het bijhouden van marktaandeel van CMS-platforms, zoals <a hreflang="en" href="https://w3techs.com/technologies/history_overview/content_management">W3Techs</a>. W3Techs meldt op het moment van schrijven dat 60,6% van de webpagina's wordt gemaakt door CMS'en, tegen 56,4% een jaar geleden. Dit is een stijging van 6,4%, wat in grote lijnen overeenkomt met onze bevindingen.
 
 De afwijking tussen onze analyse en de analyse van W3Techs kan worden verklaard door een verschil in onderzoeksmethodologieën. U kunt meer over de onze lezen op de pagina [Methodologie](./methodology).
 
@@ -300,7 +300,7 @@ Als we kijken naar het aandeel van CMS-adoptie ten opzichte van andere CMS'en (d
 
 WordPress domineert deze ruimte en verdient daarom verdere discussie.
 
-[WordPress is een open source project](https://wordpress.org/about/) met als missie "publiceren democratiseren". Het CMS is gratis. Hoewel dit waarschijnlijk een belangrijke factor is in het adoptiegedeelte, zijn de twee op één na populairste CMS'en - Joomla en Drupal - ook gratis. De WordPress-gemeenschap, bijdragers en het zakelijke ecosysteem zijn waarschijnlijk de belangrijkste onderscheidende factoren.
+[WordPress is een open source project](https://nl.wordpress.org/about/) met als missie "publiceren democratiseren". Het CMS is gratis. Hoewel dit waarschijnlijk een belangrijke factor is in het adoptiegedeelte, zijn de twee op één na populairste CMS'en - Joomla en Drupal - ook gratis. De WordPress-gemeenschap, bijdragers en het zakelijke ecosysteem zijn waarschijnlijk de belangrijkste onderscheidende factoren.
 
 Een "kern" WordPress-gemeenschap handhaaft de CMS- en servicevereisten voor aanvullende functionaliteit door middel van aangepaste services en producten (thema's en plug-ins). Deze gemeenschap heeft een grote impact, met een relatief klein aantal mensen die zowel het CMS zelf onderhouden als de extra functionaliteit bieden die WordPress krachtig en flexibel genoeg maakt om de meeste soorten websites te kunnen bedienen. Deze flexibiliteit is belangrijk bij het uitleggen van het marktaandeel.
 
@@ -330,7 +330,7 @@ CMS'en moeten een goede gebruikerservaring bieden. Omdat een groot deel van het 
 
 Om dit te bereiken, richten we onze analyse op een aantal door de gebruiker waargenomen prestatiestatistieken, die zijn vastgelegd in de drie Core Web Vitals-statistieken, evenals de Lighthouse-scores in de categorieën SEO en Toegankelijkheid.
 
-### Chrome-gebruikerservaringrapport
+### Chrome User Experience Report
 
 In dit gedeelte bekijken we drie belangrijke factoren die worden geboden door het [Chrome User Experience Report](./methodology#chrome-ux-report), dat licht kan werpen op ons begrip van hoe gebruikers CMS-aangedreven webpagina's ervaren in het wild:
 
@@ -420,9 +420,9 @@ Alle top 5 CMS'en scoren hier hoog met mediane scores van 0,83 of hoger, sommige
 
 #### Toegankelijkheid
 
-Een toegankelijke website is een site die zo is ontworpen en ontwikkeld dat mensen met een handicap deze kunnen gebruiken. Webtoegankelijkheid komt ook ten goede aan mensen zonder handicap, zoals mensen met langzame internetverbindingen. [Een volledige discussie is hier te zien](https://www.w3.org/WAI/fundamentals/accessibility-intro/#what), en in ons hoofdstuk [Toegankelijkheid](./accessibility).
+Een toegankelijke website is een site die zo is ontworpen en ontwikkeld dat mensen met een handicap deze kunnen gebruiken. Webtoegankelijkheid komt ook ten goede aan mensen zonder handicap, zoals mensen met langzame internetverbindingen. <a hreflang="en" href="https://www.w3.org/WAI/fundamentals/accessibility-intro/#what">Een volledige discussie is hier te zien</a>, en in ons hoofdstuk [Toegankelijkheid](./accessibility).
 
-Lighthouse biedt een reeks toegankelijkheidscontroles en retourneert een gewogen gemiddelde van alle audits (zie [Scoring Details](https://web.dev/accessibility-scoring/) voor een volledige lijst van hoe elke audit wordt gewogen).
+Lighthouse biedt een reeks toegankelijkheidscontroles en retourneert een gewogen gemiddelde van alle audits (zie <a hreflang="en" lang="en" https://web.dev/accessibility-scoring/">Scoring Details</a> voor een volledige lijst van hoe elke audit wordt gewogen).
 
 Elke toegankelijkheidscontrole is ofwel geslaagd of mislukt, maar in tegenstelling tot andere Lighthouse-audits krijgt een pagina geen punten voor het gedeeltelijk slagen voor een toegankelijkheidscontrole. Als sommige elementen bijvoorbeeld schermlezersvriendelijke namen hebben, maar andere niet, krijgt die pagina een 0 voor de controle van schermlezersvriendelijke namen.
 
@@ -442,9 +442,9 @@ De lat zou hier echter hoger moeten zijn. Een gemiddelde score van 0,78 voor all
 
 ## Milieu-impact
 
-Dit jaar hebben we geprobeerd de impact van CMS'en op het milieu beter te begrijpen. [De informatie- en communicatietechnologie (ICT) -industrie is verantwoordelijk voor 2% van de wereldwijde koolstofemissies](https://www.nature.com/articles/d41586-018-06610-y), en datacentra zijn specifiek verantwoordelijk voor 0,3% van wereldwijde koolstofemissies. Hiermee komt de CO2-voetafdruk van de ICT-industrie overeen met de uitstoot van brandstof door de luchtvaartindustrie. We hebben hier geen gegevens over de rol van CMS'en, maar uit ons onderzoek blijkt dat 42% van de websites een CMS gebruikt, het is duidelijk dat CMS'en een belangrijke rol spelen bij de efficiëntie van websites en hun impact op het milieu.
+Dit jaar hebben we geprobeerd de impact van CMS'en op het milieu beter te begrijpen. <a hreflang="en" href="https://www.nature.com/articles/d41586-018-06610-y">De informatie- en communicatietechnologie (ICT) -industrie is verantwoordelijk voor 2% van de wereldwijde koolstofemissies</a>, en datacentra zijn specifiek verantwoordelijk voor 0,3% van wereldwijde koolstofemissies. Hiermee komt de CO2-voetafdruk van de ICT-industrie overeen met de uitstoot van brandstof door de luchtvaartindustrie. We hebben hier geen gegevens over de rol van CMS'en, maar uit ons onderzoek blijkt dat 42% van de websites een CMS gebruikt, het is duidelijk dat CMS'en een belangrijke rol spelen bij de efficiëntie van websites en hun impact op het milieu.
 
-In ons onderzoek is gekeken naar het gemiddelde CMS-paginagewicht in KB en dit in kaart gebracht op de CO2-uitstoot met behulp van logica van [carbonapi](https://gitlab.com/wholegrain/carbon-api-2-0/-/blob/master/include/carbonapi.php#L342). Dit leverde de volgende resultaten op, uitgesplitst naar desktop en mobiel:
+In ons onderzoek is gekeken naar het gemiddelde CMS-paginagewicht in KB en dit in kaart gebracht op de CO2-uitstoot met behulp van logica van <a hreflang="en" href="https://gitlab.com/wholegrain/carbon-api-2-0/-/blob/master/include/carbonapi.php#L342">carbonapi</a>. Dit leverde de volgende resultaten op, uitgesplitst naar desktop en mobiel:
 
 {{ figure_markup(
   image="cms-carbon-emissions-per-cms-page-view.png",
@@ -498,7 +498,7 @@ Een van de belangrijkste manieren waarop een CMS de grootte van de pagina kan be
   )
 }}
 
-Video draagt hier een groter percentage per brontype bij. Het efficiënter maken van video of andere mechanismen, zoals de impact van het stoppen van automatisch afspelen, zijn interessante gebieden voor toekomstig onderzoek. Hier ligt onze focus op afbeeldingen. Populaire afbeeldingsindelingen zijn JPEG, PNG, GIF, SVG, WebP en ICO. Hiervan is [WebP is het meest efficiënt in de meeste situaties](https://developers.google.com/speed/webp/), met WebP lossless afbeeldingen [26% kleiner] (https://developers.google.com/speed/webp/docs/webp_lossless_alpha_study#resultaten) dan vergelijkbare PNG's en [25-34% kleiner](https://developers.google.com/speed/webp/docs/webp_study) dan vergelijkbare JPG's. We zien echter dat WebP het op één na minst populaire afbeeldingsformaat is op alle CMS-pagina's:
+Video draagt hier een groter percentage per brontype bij. Het efficiënter maken van video of andere mechanismen, zoals de impact van het stoppen van automatisch afspelen, zijn interessante gebieden voor toekomstig onderzoek. Hier ligt onze focus op afbeeldingen. Populaire afbeeldingsindelingen zijn JPEG, PNG, GIF, SVG, WebP en ICO. Hiervan is <a hreflang="en" href="https://developers.google.com/speed/webp/">WebP is het meest efficiënt in de meeste situaties</a>, met WebP lossless afbeeldingen <a hreflang="en" href="https://developers.google.com/speed/webp/docs/webp_lossless_alpha_study#results">26% kleiner</a> dan vergelijkbare PNG's en <a hreflang="en" href="https://developers.google.com/speed/webp/docs/webp_study">25-34% kleiner</a> dan vergelijkbare JPG's. We zien echter dat WebP het op één na minst populaire afbeeldingsformaat is op alle CMS-pagina's:
 
 {{ figure_markup(
   image="cms-popularity-of-image-formats.png",
