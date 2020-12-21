@@ -351,7 +351,7 @@ Een "goed" LCP wordt beschouwd als minder dan 2,5 seconden. De gemiddelde websit
 {{ figure_markup(
   image="cms-real-user-largest-contentful-paint-experiences.png",
   caption="Largest Contentful Paint-ervaringen door echte gebruikers.",
-  description='Staafdiagram met de top 5 CMS'en en of ze een "goede" Largest Contentful Paint-ervaring hebben. WordPress is middelmatig met 33% op desktop en 25% op mobiel, Drupal is de beste met 61% op desktop en 47% op mobiel, Joomla is de tweede beste met 48% op desktop en 28% op mobiel, Squarespace heeft 37% op desktop maar slechts 12% op mobiel en Wix is het laagste met 9% op desktop en 9% op mobiel.',
+  description="Staafdiagram met de top 5 CMS'en en of ze een \"goede\" Largest Contentful Paint-ervaring hebben. WordPress is middelmatig met 33% op desktop en 25% op mobiel, Drupal is de beste met 61% op desktop en 47% op mobiel, Joomla is de tweede beste met 48% op desktop en 28% op mobiel, Squarespace heeft 37% op desktop maar slechts 12% op mobiel en Wix is het laagste met 9% op desktop en 9% op mobiel.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkUxfuK-FCn3_IYDJiEsKDmdmyKb0TSEhG8dFc0XBIXej1NO2uUOmd-9NCbWuh-MZ3xzMhK_kNT-4u/pubchart?oid=188727692&format=interactive",
   sheets_gid="465267881",
   sql_file="core_web_vitals_distribution.sql"
