@@ -79,7 +79,7 @@ Meer dan 42% van de webpagina's wordt aangedreven door een CMS-platform, een sti
         <td class="numeric">42,18%</td>
       </tr>
       <tr>
-        <td>% Change</td>
+        <td>% Verandering</td>
         <td class="numeric">6,71%</td>
         <td class="numeric">5,43%</td>
       </tr>
@@ -420,7 +420,7 @@ Alle top 5 CMS'en scoren hier hoog met mediane scores van 0,83 of hoger, sommige
 
 #### Toegankelijkheid
 
-Een toegankelijke website is een site die zo is ontworpen en ontwikkeld dat mensen met een handicap deze kunnen gebruiken. Webtoegankelijkheid komt ook ten goede aan mensen zonder handicap, zoals mensen met langzame internetverbindingen. [Een volledige discussie is hier te zien](https://www.w3.org/WAI/fundamentals/accessibility-intro/#what), en in ons hoofdstuk [Toegankelijkheid](./toegankelijkheid).
+Een toegankelijke website is een site die zo is ontworpen en ontwikkeld dat mensen met een handicap deze kunnen gebruiken. Webtoegankelijkheid komt ook ten goede aan mensen zonder handicap, zoals mensen met langzame internetverbindingen. [Een volledige discussie is hier te zien](https://www.w3.org/WAI/fundamentals/accessibility-intro/#what), en in ons hoofdstuk [Toegankelijkheid](./accessibility).
 
 Lighthouse biedt een reeks toegankelijkheidscontroles en retourneert een gewogen gemiddelde van alle audits (zie [Scoring Details](https://web.dev/accessibility-scoring/) voor een volledige lijst van hoe elke audit wordt gewogen).
 
