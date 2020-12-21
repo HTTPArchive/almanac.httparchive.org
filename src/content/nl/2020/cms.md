@@ -389,7 +389,7 @@ Een score van 0,1 of lager wordt gemeten als "goed", meer dan 0,25 is "slecht" e
 {{ figure_markup(
   image="cms-real-user-cumulative-layout-shift-experiences.png",
   caption="Cumulatieve Layout Shift-ervaringen door echte gebruikers.",
-  description='Staafdiagram met de top 5 CMS'en en of ze een "goede" ervaring hebben met Cumulative Layout Shift. WordPress heeft 47% van de desktopsites met een "goede ervaring" en 57% van de mobiele sites. Drupal heeft 58% voor desktop en 70% voor mobiel, Joomla heeft 51% voor desktop en 63% voor mobiel, Squarespace heeft 35% voor desktop en 44% voor mobiel, en Wix heeft 58% voor desktop en 59% voor mobiel.',
+  description="Staafdiagram met de top 5 CMS'en en of ze een \"goede\" ervaring hebben met Cumulative Layout Shift. WordPress heeft 47% van de desktopsites met een \"goede ervaring\" en 57% van de mobiele sites. Drupal heeft 58% voor desktop en 70% voor mobiel, Joomla heeft 51% voor desktop en 63% voor mobiel, Squarespace heeft 35% voor desktop en 44% voor mobiel, en Wix heeft 58% voor desktop en 59% voor mobiel.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkUxfuK-FCn3_IYDJiEsKDmdmyKb0TSEhG8dFc0XBIXej1NO2uUOmd-9NCbWuh-MZ3xzMhK_kNT-4u/pubchart?oid=1265001868&format=interactive",
   sheets_gid="465267881",
   sql_file="core_web_vitals_distribution.sql"
