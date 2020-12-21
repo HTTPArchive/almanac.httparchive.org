@@ -422,7 +422,7 @@ Alle top 5 CMS'en scoren hier hoog met mediane scores van 0,83 of hoger, sommige
 
 Een toegankelijke website is een site die zo is ontworpen en ontwikkeld dat mensen met een handicap deze kunnen gebruiken. Webtoegankelijkheid komt ook ten goede aan mensen zonder handicap, zoals mensen met langzame internetverbindingen. <a hreflang="en" href="https://www.w3.org/WAI/fundamentals/accessibility-intro/#what">Een volledige discussie is hier te zien</a>, en in ons hoofdstuk [Toegankelijkheid](./accessibility).
 
-Lighthouse biedt een reeks toegankelijkheidscontroles en retourneert een gewogen gemiddelde van alle audits (zie <a hreflang="en" lang="en" https://web.dev/accessibility-scoring/">Scoring Details</a> voor een volledige lijst van hoe elke audit wordt gewogen).
+Lighthouse biedt een reeks toegankelijkheidscontroles en retourneert een gewogen gemiddelde van alle audits (zie <a hreflang="en" lang="en" href="https://web.dev/accessibility-scoring/">Scoring Details</a> voor een volledige lijst van hoe elke audit wordt gewogen).
 
 Elke toegankelijkheidscontrole is ofwel geslaagd of mislukt, maar in tegenstelling tot andere Lighthouse-audits krijgt een pagina geen punten voor het gedeeltelijk slagen voor een toegankelijkheidscontrole. Als sommige elementen bijvoorbeeld schermlezersvriendelijke namen hebben, maar andere niet, krijgt die pagina een 0 voor de controle van schermlezersvriendelijke namen.
 
