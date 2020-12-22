@@ -714,7 +714,6 @@ figure .fig-desktop {
 }
 
 @media (max-width: 600px) {
-
   figure {
     margin: 0 15px;
   }
