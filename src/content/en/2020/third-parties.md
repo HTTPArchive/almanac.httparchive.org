@@ -7,6 +7,7 @@ description: Third Parties chapter of the 2020 Web Almanac covering data of what
 authors: [simonhearne]
 reviewers: [jzyang, exterkamp]
 analysts: [max-ostapenko, paulcalvano]
+editors: []
 translators: []
 simonhearne_bio: Simon is a web performance architect, he is passionate about helping deliver a faster and more accessible web. You can find him tweeting <a href="https://twitter.com/simonhearne">@SimonHearne</a> and blogging at <a href="https://simonhearne.com">simonhearne.com</a>.
 discuss: 2042

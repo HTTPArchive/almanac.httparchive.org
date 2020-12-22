@@ -6,6 +6,7 @@ description: CMS-hoofdstuk van de Web Almanac van 2020 over CMS-acceptatie, hoe 
 authors: [alexdenning]
 reviewers: [sirjonathan, ernee, amedina]
 analysts: [GregBrimble, rviscomi]
+editors: [bazzadp]
 translators: [noah-vdv]
 alexdenning_bio: Alex Denning is de oprichter van <a hreflang="en" href="https://getellipsis.com/">Ellipsis Marketing</a>, een marketingbureau voor WordPress-bedrijven. Alex is een WordPress Core-bijdrager en heeft geholpen bij het organiseren van <a hreflang="en" href="https://london.wordcamp.org/">WordCamp London</a>.
 discuss: 2051

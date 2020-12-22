@@ -6,6 +6,7 @@ description: JavaScript chapter of the 2019 Web Almanac covering how much JavaSc
 authors: [housseindjirdeh]
 reviewers: [obto, paulcalvano, mathiasbynens, rviscomi]
 analysts: [rviscomi]
+editors: [obto]
 translators: [c-torres]
 discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/

@@ -6,6 +6,7 @@ description: Accessibility chapter of the 2019 Web Almanac covering ease of read
 authors: [nektarios-paisios, obto, kleinab]
 reviewers: [ljme]
 analysts: [dougsillars, rviscomi, obto]
+editors: [obto]
 translators: []
 discuss: 1764
 results: https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/
