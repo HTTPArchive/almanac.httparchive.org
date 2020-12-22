@@ -6,6 +6,7 @@ description: 2020 Web Almanac 的效能章節涵蓋了 Core WebVitals、Lighthou
 authors: [thefoxis]
 reviewers: [borisschapira, rviscomi, obto, noamr, Zizzamia, exterkamp]
 analysts: [max-ostapenko, dooman87]
+editors: [bazzadp]
 translators: [cybai]
 thefoxis_bio: Karolina 是 <a hreflang="en" href="https://calibreapp.com/">Calibre</a> 的產品設計主管。她主要負責打造最全面的速度監測平台。她同時也是為您蒐集效能相關訊息與資訊的 <a hreflang="en" lang="en" href="https://perf.email/">Performance Newsletter</a> 發起人之一。Karolina 也<a hreflang="en" href="https://calibreapp.com/blog/category/web-platform">時常寫有關於效能如何影響使用者體驗的文章</a>。
 discuss: 2045

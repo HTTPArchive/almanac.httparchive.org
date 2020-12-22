@@ -6,6 +6,7 @@ description: Chapitre CSS du Web Almanac 2019, couvrant les couleurs, unités, s
 authors: [una, argyleink]
 reviewers: [meyerweb, huijing]
 analysts: [rviscomi]
+editors: [rachelcostello]
 translators: [nico3333fr]
 discuss: 1757
 results: https://docs.google.com/spreadsheets/d/1uFlkuSRetjBNEhGKWpkrXo4eEIsgYelxY-qR9Pd7QpM/
@@ -156,7 +157,7 @@ CSS a des sélecteurs de comparaison très puissants. Ce sont des sélecteurs co
 {{ figure_markup(
   image="fig9.png",
   caption="Popularité des opérateurs par sélecteur d’attribut ID.",
-  description="Diagramme à barres montrant la popularité des opérateurs utilisés par les sélecteurs d’attributs d’ID. Environ 4&nbsp;% des pages de bureau et mobiles utilisent `*=` et `^=`. 1&nbsp;% des pages utilisent `=` et `$=`. 0&nbsp;% utilise `~=`.", 
+  description="Diagramme à barres montrant la popularité des opérateurs utilisés par les sélecteurs d’attributs d’ID. Environ 4&nbsp;% des pages de bureau et mobiles utilisent `*=` et `^=`. 1&nbsp;% des pages utilisent `=` et `$=`. 0&nbsp;% utilise `~=`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=695879874&format=interactive"
   )
 }}

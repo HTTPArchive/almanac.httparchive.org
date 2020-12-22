@@ -6,6 +6,7 @@ description: Chapitre sur les indices de ressources du Web Almanac 2019, couvran
 authors: [khempenius]
 reviewers: [andydavies, bazzadp, yoavweiss]
 analysts: [rviscomi]
+editors: [rviscomi]
 translators: [borisschapira]
 discuss: 1774
 results: https://docs.google.com/spreadsheets/d/14QBP8XGkMRfWRBbWsoHm6oDVPkYhAIIpfxRn4iOkbUU/

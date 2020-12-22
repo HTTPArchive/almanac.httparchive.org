@@ -9,6 +9,7 @@ catalinred_bio: Catalin Rosu is a front-end developer at <a href="https://www.ca
 iandevlin_bio: Ian Devlin is a web developer who advocates for good, semantic HTML, as well as accessibility. He once wrote a book about <a href="https://www.peachpit.com/store/html5-multimedia-develop-and-design-9780321793935">HTML5 Multimedia</a>, and sporadically writes on <a href="https://iandevlin.com/">his website</a> about the Web and other things. He currently works as a Senior Frontend Engineer at <a href="https://www.real-digital.de/">real.digital</a> in Germany.
 reviewers: [zcorpan, matuzo, bkardell]
 analysts: [Tiggerito]
+editors: [rviscomi]
 translators: []
 discuss: 2039
 results: https://docs.google.com/spreadsheets/d/1Ta7amoUeaL4pILhWzH-SCzMX9PsZeb1x_mwrX2C4eY8/

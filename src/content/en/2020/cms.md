@@ -6,6 +6,7 @@ description: CMS chapter of the 2020 Web Almanac covering CMS adoption, how CMS 
 authors: [alexdenning]
 reviewers: [sirjonathan, ernee, amedina]
 analysts: [GregBrimble, rviscomi]
+editors: [bazzadp]
 translators: []
 alexdenning_bio: Alex Denning is the Founder of <a href="https://getellipsis.com/">Ellipsis Marketing</a>, a marketing agency for WordPress businesses. Alex is a WordPress Core Contributor and has helped organize <a href="https://london.wordcamp.org/">WordCamp London</a>.
 discuss: 2051

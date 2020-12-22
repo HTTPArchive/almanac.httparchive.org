@@ -6,6 +6,7 @@ description: Prestatiehoofdstuk van de Web Almanac 2020 met betrekking tot Core 
 authors: [thefoxis]
 reviewers: [borisschapira, rviscomi, obto, noamr, Zizzamia, exterkamp]
 analysts: [max-ostapenko, dooman87]
+editors: [bazzadp]
 translators: [noah-vdv]
 thefoxis_bio: Karolina is Product Design Lead bij <a href="https://calibreapp.com/">Calibre</a> en werkt aan het creëren van het meest uitgebreide platform voor snelheidscontrole. Ze beheert de <a href="https://perf.email/" lang="en">Performance Newsletter</a>, uw bron van nieuws over prestaties en bronnen. Karolina <a href="https://calibreapp.com/blog/category/web-platform">schrijft ook regelmatig</a> over hoe prestaties de gebruikerservaring beïnvloeden.
 discuss: 2045
