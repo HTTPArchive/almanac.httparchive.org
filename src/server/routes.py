@@ -92,7 +92,7 @@ def sitemap():
 )
 def stories(lang, year, story):
     delattr(request, 'csp_nonce')
-    return render_template('%s/%s/stories/%s.html' % (lang, year, story.replace('-','_')))
+    return render_template('%s/%s/stories/%s.html' % (lang, year, story.replace('-', '_')))
 
 
 # Assume anything else with at least 3 directories is a chapter
