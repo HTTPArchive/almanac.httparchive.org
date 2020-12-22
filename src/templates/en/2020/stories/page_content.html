@@ -575,8 +575,8 @@
     <meta property="og:url" content="https://almanac.httparchive.org/en/2020/stories/page-content">
     <meta property="og:site_name" content="The 2020 Web Almanac">
     <meta property="og:description" content="The Web Almanac is a comprehensive report on the state of the web, backed by real data and trusted web experts. Part one is all about page content.">
-    <meta property="article:published_time" content="2020-12-14T02:54:05-08:00">
-    <meta property="article:modified_time" content="2020-12-18T05:23:06-08:00">
+    <meta property="article:published_time" content="{{ date_published }}">
+    <meta property="article:modified_time" content="{{ date_modified }}">
     <meta property="og:image" content="/static/stories/web-almanac-2020-page-content/WA_Cover-Image_Part-I.jpg">
     <meta property="og:image:width" content="640">
     <meta property="og:image:height" content="853">
@@ -610,11 +610,16 @@
         "@type": "Article",
         "mainEntityOfPage": "https://almanac.httparchive.org/en/2020/stories/page-content",
         "headline": "Web Almanac Part I: Page Content",
-        "datePublished": "2020-12-14T10:54:05-08:00",
-        "dateModified": "2020-12-18T13:23:06-08:00",
+        "datePublished": "{{ date_published }}",
+        "dateModified": "{{ date_modified }}",
         "author": {
             "@type": "Person",
-            "name": "marten"
+            "sameas": [
+              "https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}",
+              "https://twitter.com/rick_viscomi",
+              "https://github.com/rviscomi"
+              ],
+            "name": "Rick Viscomi"
         },
         "image": "/static/stories/web-almanac-2020-page-content/WA_Cover-Image_Part-I-640x853.jpg"
       }
