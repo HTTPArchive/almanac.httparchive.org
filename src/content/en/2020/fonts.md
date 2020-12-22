@@ -20,6 +20,7 @@ featured_stat_2: 10.3%
 featured_stat_label_2: Usage of <code>font-display</code> swap
 featured_stat_3: 11.0%
 featured_stat_label_3: Usage of Variable Fonts on mobile sites
+unedited: true
 ---
 ## Introduction
 
