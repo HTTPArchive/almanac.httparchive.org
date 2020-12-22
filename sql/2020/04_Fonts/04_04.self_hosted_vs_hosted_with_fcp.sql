@@ -1,10 +1,10 @@
 #standardSQL
-#local_vs_host_with_fcp
+#self_hosted_vs_hosted_with_fcp
 SELECT
   client,
   CASE
-    WHEN pct_locally_hosted = 1 THEN 'local'
-    WHEN pct_locally_hosted = 0 THEN 'external'
+    WHEN pct_self_hosted_hosted = 1 THEN 'self-hosted'
+    WHEN pct_self_hosted_hosted = 0 THEN 'external'
     ELSE 'both' END
   AS font_host,
   COUNT(DISTINCT page) AS pages,
@@ -16,7 +16,7 @@ FROM (
   SELECT
     client,
     page,
-    COUNTIF(NET.HOST(page) = NET.HOST(url)) / COUNT(0) AS pct_locally_hosted
+    COUNTIF(NET.HOST(page) = NET.HOST(url)) / COUNT(0) AS pct_self_hosted_hosted
   FROM
     `httparchive.almanac.requests`
   WHERE

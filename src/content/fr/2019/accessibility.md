@@ -6,6 +6,7 @@ description: Chapitre Accessibilité du web Almanac 2019, couvrant la facilité 
 authors: [nektarios-paisios, obto, kleinab]
 reviewers: [ljme]
 analysts: [dougsillars, rviscomi, obto]
+editors: [obto]
 translators: [nico3333fr]
 discuss: 1764
 results: https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/

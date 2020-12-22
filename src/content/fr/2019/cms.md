@@ -6,6 +6,7 @@ description: Chapitre CMS de l'Almanach Web 2019 couvrant l'adoption des CMS, la
 authors: [ernee, amedina]
 reviewers: [sirjonathan]
 analysts: [rviscomi]
+editors: [rviscomi]
 translators: [JustinyAhin]
 discuss: 1769
 results: https://docs.google.com/spreadsheets/d/1FDYe6QdoY3UtXodE2estTdwMsTG-hHNrOe9wEYLlwAw/
@@ -80,7 +81,7 @@ En gros, cela signifie qu'il existe de nombreuses plateformes CMS disponibles su
 
 Certains d'entre eux sont open source (par exemple WordPress, Drupal, et autres) et d'autres sont propriétaires ( comme AEM, et autres). Certaines plates-formes CMS peuvent être utilisées sur des formules "gratuites" hébergées ou auto-hébergées, et il existe également des options avancées pour utiliser ces plates-formes sur des formules de niveau supérieur, y compris au sein des entreprises. Dans son ensemble, le secteur des CMS est un univers complexe et fédéré d' *écosystèmes CMS*, tous séparés et en même temps entrelacés dans le vaste tissu du web.
 
-Cela signifie également qu'il y a des centaines de millions de sites web propulsés par des plateformes CMS, et un ordre de grandeur plus élevé d'utilisateurs accédant au web et consommant du contenu à travers ces plateformes. Ainsi, ces plateformes jouent un rôle clé pour nous permettre de réussir dans notre quête collective d'un web toujours vert, sain et dynamique. 
+Cela signifie également qu'il y a des centaines de millions de sites web propulsés par des plateformes CMS, et un ordre de grandeur plus élevé d'utilisateurs accédant au web et consommant du contenu à travers ces plateformes. Ainsi, ces plateformes jouent un rôle clé pour nous permettre de réussir dans notre quête collective d'un web toujours vert, sain et dynamique.
 
 ### Le paysage des CMS
 
@@ -118,18 +119,18 @@ Les jeux de données CrUX et HTTP Archive contiennent des pages web propulsées 
   data_height=600
   )
 }}
- 
-Les principales plates-formes CMS présentes dans les jeux de données sont indiquées ci-dessus à la figure 14.5. WordPress est utilisé par 74,19 % des sites web utilisant un CMS pour les téléphones mobiles et 73,47 % des sites web utilisant un CMS pour les ordinateurs de bureau. Sa domination dans le milieu des CMS peut être attribuée à un certain nombre de facteurs dont nous parlerons plus loin, mais c'est un acteur _major_. Les plateformes open source comme Drupal et Joomla, et les solutions SaaS propriétaires comme Squarespace et Wix, complètent le top 5 des CMS. La diversité de ces plateformes reflète l'écosystème des CMS, composé de nombreuses plateformes où la démographie des utilisateurs et le parcours de création de sites web varient. Ce qui est également intéressant, c'est la longue liste des plateformes CMS de petites tailles qui se trouvent dans le top 20. Des offres d'entreprise aux applications propriétaires développées en interne pour une utilisation spécifique à un secteur, les systèmes de gestion de contenu fournissent une infrastructure personnalisable permettant aux groupes de gérer, de publier et de faire des affaires sur le web. 
+
+Les principales plates-formes CMS présentes dans les jeux de données sont indiquées ci-dessus à la figure 14.5. WordPress est utilisé par 74,19 % des sites web utilisant un CMS pour les téléphones mobiles et 73,47 % des sites web utilisant un CMS pour les ordinateurs de bureau. Sa domination dans le milieu des CMS peut être attribuée à un certain nombre de facteurs dont nous parlerons plus loin, mais c'est un acteur _major_. Les plateformes open source comme Drupal et Joomla, et les solutions SaaS propriétaires comme Squarespace et Wix, complètent le top 5 des CMS. La diversité de ces plateformes reflète l'écosystème des CMS, composé de nombreuses plateformes où la démographie des utilisateurs et le parcours de création de sites web varient. Ce qui est également intéressant, c'est la longue liste des plateformes CMS de petites tailles qui se trouvent dans le top 20. Des offres d'entreprise aux applications propriétaires développées en interne pour une utilisation spécifique à un secteur, les systèmes de gestion de contenu fournissent une infrastructure personnalisable permettant aux groupes de gérer, de publier et de faire des affaires sur le web.
 
 Le [projet WordPress](https://fr.wordpress.org/about/) définit sa mission en ces termes : "*démocratiser la publication*". Certains de ses principaux objectifs sont de faciliter l'utilisation et de rendre le logiciel libre et disponible à tous pour créer du contenu sur le web. Un autre élément important est la communauté inclusive que le projet promeut. Dans presque toutes les grandes villes du monde, on peut trouver un groupe de personnes qui se réunissent régulièrement pour se rencontrer, partager et coder dans un effort de compréhension et de construction sur la plate-forme WordPress. La participation aux rencontres locales et aux événements annuels, ainsi que la participation aux réseaux basés sur le web sont quelques unes des façons dont les contributeurs, les experts, les entreprises et les passionnés de WordPress participent à sa communauté globale.
 
-La faible barrière d'entrée et les ressources pour aider les utilisateurs (en ligne et en personne) à publier sur la plateforme et à développer des extensions (plugins) et des thèmes contribuent à sa popularité. La disponibilité et l'économie autour des extensions et des thèmes WordPress contribuent également à réduire la complexité dans la mise en œuvre de la conception et des fonctionnalités web recherchées. Non seulement ces aspects favorisent sa portée et son adoption par les nouveaux venus, mais ils permettent également de maintenir au fil du temps son utilisation régulière. 
+La faible barrière d'entrée et les ressources pour aider les utilisateurs (en ligne et en personne) à publier sur la plateforme et à développer des extensions (plugins) et des thèmes contribuent à sa popularité. La disponibilité et l'économie autour des extensions et des thèmes WordPress contribuent également à réduire la complexité dans la mise en œuvre de la conception et des fonctionnalités web recherchées. Non seulement ces aspects favorisent sa portée et son adoption par les nouveaux venus, mais ils permettent également de maintenir au fil du temps son utilisation régulière.
 
 La plateforme open source WordPress est propulsée et soutenue par des bénévoles, la WordPress Foundation, et des acteurs majeurs de l'écosystème web. En gardant ces facteurs à l'esprit, le fait que WordPress soit le principal système de gestion de contenu (CMS) est tout à fait logique.
 
 ## Comment sont construits les sites propulsés par un CMS
 
-Indépendamment des nuances spécifiques et des particularités des différentes plateformes CMS, leur objectif final est de produire des pages web qui seront mises à la disposition des utilisateurs par le biais de la vaste portée du web ouvert. La différence entre les pages web propulsées par un CMS et celles qui ne le sont pas est que dans le premier cas, la plate-forme CMS prend la plupart des décisions sur la façon dont le résultat final est construit, tandis que dans le second, il n'y a pas de telles couches d'abstraction et les décisions sont toutes prises par les développeurs, soit directement, soit via des configurations de bibliothèques. 
+Indépendamment des nuances spécifiques et des particularités des différentes plateformes CMS, leur objectif final est de produire des pages web qui seront mises à la disposition des utilisateurs par le biais de la vaste portée du web ouvert. La différence entre les pages web propulsées par un CMS et celles qui ne le sont pas est que dans le premier cas, la plate-forme CMS prend la plupart des décisions sur la façon dont le résultat final est construit, tandis que dans le second, il n'y a pas de telles couches d'abstraction et les décisions sont toutes prises par les développeurs, soit directement, soit via des configurations de bibliothèques.
 
 Dans cette section, nous examinons brièvement le statu quo de l'espace CMS en termes de caractéristiques de leur résultat (par exemple, les ressources totales utilisées, les statistiques sur les images, entre autres), et nous les comparons avec celles de l'écosystème web en général.
 
@@ -155,7 +156,7 @@ Les éléments de base de tout site web constituent également un site web gér�
 
 Dans les figures 6 et 7 ci-dessus, nous voyons que la page médiane sur un CMS sur un ordinateur de bureau charge 86 ressources et pèse 2,29 Mo. L'utilisation des ressources des pages mobiles n'est pas très loin derrière avec 83 ressources et 2,25 Mo.
 
-La médiane indique le point médian où toutes les pages du CMS se situent soit au-dessus, soit au-dessous. En bref, la moitié de toutes les pages web sur un CMS chargent moins de requêtes et sont moins lourdes, tandis que l'autre moitié charge plus de requêtes et est plus lourde. Au 10e percentile, les pages mobiles et sur bureau ont moins de 40 requêtes et pèsent moins de 1 Mo, mais au 90e percentile, nous avons des pages avec plus de 170 requêtes et pesant 7 Mo, soit presque trois fois plus que la médiane.  
+La médiane indique le point médian où toutes les pages du CMS se situent soit au-dessus, soit au-dessous. En bref, la moitié de toutes les pages web sur un CMS chargent moins de requêtes et sont moins lourdes, tandis que l'autre moitié charge plus de requêtes et est plus lourde. Au 10e percentile, les pages mobiles et sur bureau ont moins de 40 requêtes et pèsent moins de 1 Mo, mais au 90e percentile, nous avons des pages avec plus de 170 requêtes et pesant 7 Mo, soit presque trois fois plus que la médiane.
 
 Comment sont les pages CMS par rapport aux pages du web dans son ensemble ? Dans le chapitre [Poids de la page](. /page-weight), nous trouvons quelques données révélatrices sur l'utilisation des ressources. À la médiane, les pages de bureau chargent 74 requêtes et pèsent 1,9 Mo, et les pages mobiles sur le Web chargent 69 requêtes et pèsent 1,7 Mo. La page CMS moyenne dépasse ce chiffre. Les pages sur les CMS surpassent également les ressources sur le web au 90e percentile, mais avec une marge plus faible. En bref : les pages sur les CMS pourraient être classées parmi les plus lourdes.
 
@@ -287,9 +288,9 @@ La quantité médiane de requêtes tierces sur les pages CMS mobiles est de 15 e
   )
 }}
 
-Nous savons que la valeur médiane indique qu'au moins la moitié des pages Web des CMS sont envoyées avec plus de ressources tierces que ce que nous signalons ici. Au 90e percentile, les pages des CMS peuvent livrer jusqu'à 52 ressources à environ 940 Ko, ce qui représente une augmentation considérable. 
+Nous savons que la valeur médiane indique qu'au moins la moitié des pages Web des CMS sont envoyées avec plus de ressources tierces que ce que nous signalons ici. Au 90e percentile, les pages des CMS peuvent livrer jusqu'à 52 ressources à environ 940 Ko, ce qui représente une augmentation considérable.
 
-Étant donné que les ressources tierces proviennent de domaines et de serveurs distants, le site de destination a peu de contrôle sur la qualité et l'impact de ces ressources sur sa performance. Cette imprévisibilité pourrait entraîner des fluctuations de vitesse et affecter l'expérience de l'utilisateur, ce que nous allons bientôt explorer. 
+Étant donné que les ressources tierces proviennent de domaines et de serveurs distants, le site de destination a peu de contrôle sur la qualité et l'impact de ces ressources sur sa performance. Cette imprévisibilité pourrait entraîner des fluctuations de vitesse et affecter l'expérience de l'utilisateur, ce que nous allons bientôt explorer.
 
 ### Statistiques sur les images
 
@@ -320,11 +321,11 @@ Quels sont les formats courants que l'on trouve sur les pages CMS sur ordinateur
   )
 }}
 
-Cette segmentation n'est peut-être pas surprenante étant donné les cas d'utilisation courants pour ces types d'images. Les SVG pour les logos et les icônes sont courants, tout comme les JPEG sont omniprésents. Le WebP est encore un format optimisé relativement nouveau avec [adoption croissante des navigateurs](https://caniuse.com/#search=webp). Il sera intéressant de voir comment cela aura un impact sur son utilisation dans les prochaines années dans le monde des CMS. 
+Cette segmentation n'est peut-être pas surprenante étant donné les cas d'utilisation courants pour ces types d'images. Les SVG pour les logos et les icônes sont courants, tout comme les JPEG sont omniprésents. Le WebP est encore un format optimisé relativement nouveau avec [adoption croissante des navigateurs](https://caniuse.com/#search=webp). Il sera intéressant de voir comment cela aura un impact sur son utilisation dans les prochaines années dans le monde des CMS.
 
 ## Expérience utilisateur sur les sites web propulsés par des CMS
 
-Le succès en tant que créateur de contenu web est lié à l'expérience utilisateur. Des facteurs tels que l'utilisation des ressources et d'autres statistiques concernant la composition des pages web sont des indicateurs importants de la qualité d'un site en termes de bonnes pratiques suivies lors de sa conception. Cependant, nous souhaitons en fin de compte faire la lumière sur la façon dont les utilisateurs vivent réellement le web lorsqu'ils consomment et s'engagent avec le contenu généré par ces plateformes. 
+Le succès en tant que créateur de contenu web est lié à l'expérience utilisateur. Des facteurs tels que l'utilisation des ressources et d'autres statistiques concernant la composition des pages web sont des indicateurs importants de la qualité d'un site en termes de bonnes pratiques suivies lors de sa conception. Cependant, nous souhaitons en fin de compte faire la lumière sur la façon dont les utilisateurs vivent réellement le web lorsqu'ils consomment et s'engagent avec le contenu généré par ces plateformes.
 
 Pour y parvenir, nous orientons notre analyse vers des [mesures de performance perçues par les utilisateurs](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics), qui sont enregistrées dans le jeu de données du CrUX. Ces mesures se rapportent d'une certaine manière à [la façon dont nous, en tant qu'humains, percevons le temps](https://paulbakaus.com/tutorials/performance/the-illusion-of-speed/).
 
@@ -354,7 +355,7 @@ Pour y parvenir, nous orientons notre analyse vers des [mesures de performance p
   <figcaption>{{ figure_link(caption="Comment les humains perçoivent les courtes durées de temps.") }}</figcaption>
 </figure>
 
-Si les événements se produisent dans un délai de 0,1 seconde (100 millisecondes), pour nous tous, ils se produisent pratiquement instantanément. Et lorsque les événements durent plus de quelques secondes, la probabilité que nous poursuivions notre chemin sans attendre plus longtemps est très élevée. C'est très important pour les créateurs de contenu qui cherchent un succès continu sur le Web, car cela nous indique à quelle vitesse nos sites doivent se charger si nous voulons acquérir, engager et conserver notre base d'utilisateurs. 
+Si les événements se produisent dans un délai de 0,1 seconde (100 millisecondes), pour nous tous, ils se produisent pratiquement instantanément. Et lorsque les événements durent plus de quelques secondes, la probabilité que nous poursuivions notre chemin sans attendre plus longtemps est très élevée. C'est très important pour les créateurs de contenu qui cherchent un succès continu sur le Web, car cela nous indique à quelle vitesse nos sites doivent se charger si nous voulons acquérir, engager et conserver notre base d'utilisateurs.
 
 Dans cette section, nous examinons trois dimensions importantes qui peuvent éclairer notre compréhension de la façon dont les utilisateurs font l'expérience des pages web propulsées par les CMS dans la nature :
 
@@ -512,7 +513,7 @@ Le terme **Progressive Web App** ([PWA](./pwa)) fait référence aux expérience
 
 #### Accessibilité
 
-Un site web accessible est un site conçu et développé pour que les personnes souffrant d'un handicap puissent les utiliser. Lighthouse fournit un ensemble de vérifications de l'accessibilité et retourne une moyenne pondérée de toutes ces vérifications (voir la section [Détails des scores](https://docs.google.com/spreadsheets/d/1Cxzhy5ecqJCucdf1M0iOzM8mIxNc7mmx107o5nj38Eo/edit#gid=1567011065) pour une liste complète de la pondération de chaque vérification). 
+Un site web accessible est un site conçu et développé pour que les personnes souffrant d'un handicap puissent les utiliser. Lighthouse fournit un ensemble de vérifications de l'accessibilité et retourne une moyenne pondérée de toutes ces vérifications (voir la section [Détails des scores](https://docs.google.com/spreadsheets/d/1Cxzhy5ecqJCucdf1M0iOzM8mIxNc7mmx107o5nj38Eo/edit#gid=1567011065) pour une liste complète de la pondération de chaque vérification).
 
 Chaque audit d'accessibilité est réussi ou échoué, mais contrairement aux autres audits de Lighthouse, une page ne reçoit pas de points pour avoir partiellement réussi un audit d'accessibilité. Par exemple, si certains éléments ont des noms compréhensibles par les lecteurs d'écran, mais pas d'autres, cette page obtient un 0 pour l'audit *des noms compréhensibles par les lecteurs d'écran*.
 
@@ -679,5 +680,5 @@ Bien que nous ayons pris un instantané du paysage actuel de l'écosystème des 
 Nous voyons également des fournisseurs et des agences d'hébergement offrant des plateformes d'expérience numérique (DXP) comme solutions holistiques utilisant des CMS et d'autres technologies intégrées comme boîte à outils pour les stratégies d'entreprise axées sur le client. Ces innovations témoignent d'un effort pour créer des solutions clés en main, basées sur des CMS, qui permettent aux utilisateurs (et leurs utilisateurs finaux) d'obtenir par défaut le meilleur UX lors de la création et de la consommation du contenu de ces plateformes. L'objectif: de bonnes performances par défaut, une richesse de fonctionnalités et d'excellents environnements d'hébergement.
 
 ## Conclusions
- 
+
 L'espace des CMS est d'une importance primordiale. La grande partie du web dont ces applications propulsent et la masse critique d'utilisateurs qui créent et consultent ses pages sur une variété de terminaux et de connexions ne doivent pas être banalisées. Nous espérons que ce chapitre et les autres qui se trouvent ici dans le Web Almanac inspireront plus de recherche et d'innovation pour aider à rendre cet espace meilleur. Des enquêtes approfondies nous fourniraient un meilleur contexte sur les forces, les faiblesses et les opportunités que ces plateformes offrent au web dans son ensemble. Les systèmes de gestion de contenu peuvent avoir un impact sur la préservation de l'intégrité du web ouvert. Continuons à les faire avancer !

@@ -10,7 +10,8 @@ const static_pages = [
   'methodology.html',
   'contributors.html',
   'accessibility_statement.html',
-  'ebook.html'
+  'ebook.html',
+  'stories/page_content.html'
 ];
 
 const path = "config/last_updated.json";
@@ -146,7 +147,7 @@ const generate_timestamps = async () => {
   }
 
   configs = await get_yearly_configs();
-  for (const year in configs) {  
+  for (const year in configs) {
     supported_languages[year] = configs[year].settings[0].supported_languages;
   }
 

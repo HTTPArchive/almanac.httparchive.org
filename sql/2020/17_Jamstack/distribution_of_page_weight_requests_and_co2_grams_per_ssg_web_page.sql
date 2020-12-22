@@ -39,8 +39,10 @@ FROM (
     FROM
       `httparchive.technologies.2020_08_01_*`
     WHERE
-		LOWER(category) = "static site generator" OR
-		app = "Next.js"
+      LOWER(category) = "static site generator" OR
+      app = "Next.js" OR
+      app = "Nuxt.js" OR
+      app = "Docusaurus"
 	)
   USING
     (_TABLE_SUFFIX, url)),
