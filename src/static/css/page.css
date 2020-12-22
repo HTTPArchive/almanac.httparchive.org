@@ -204,7 +204,8 @@
 
 .byline.reviewers,
 .byline.translators,
-.byline.analysts {
+.byline.analysts,
+.byline.editors {
   font-weight: normal;
 }
 
