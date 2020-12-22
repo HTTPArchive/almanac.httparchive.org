@@ -641,7 +641,7 @@
 {% macro figure_dropdown(metadata, id, sheets_gid="", sql_file="", image="", caption="") %}
   {% if sheets_gid != "" or  sql_file != "" or image != "" %}
   <div class="figure-dropdown nav-dropdown">
-    <button class="nav-dropdown-btn js-enable hidden" disabled aria-expanded="false" title="Figure options&hellip;">
+    <button class="nav-dropdown-btn js-enable hidden" disabled aria-expanded="false" title="{{ self.explore_the_results() }}">
       <span class="visually-hidden">{{ self.explore_the_results() }}</span>
       <svg aria-hidden="true" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
