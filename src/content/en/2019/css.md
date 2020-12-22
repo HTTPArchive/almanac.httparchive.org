@@ -6,6 +6,7 @@ description: CSS chapter of the 2019 Web Almanac covering color, units, selector
 authors: [una, argyleink]
 reviewers: [meyerweb, huijing]
 analysts: [rviscomi]
+editors: [rachellcostello]
 translators: []
 discuss: 1757
 results: https://docs.google.com/spreadsheets/d/1uFlkuSRetjBNEhGKWpkrXo4eEIsgYelxY-qR9Pd7QpM/
