@@ -6,6 +6,7 @@ description: 2020年 Web 年鉴性能篇，涵盖了网页核心指标、Lightho
 authors: [thefoxis]
 reviewers: [borisschapira, rviscomi, obto, noamr, Zizzamia, exterkamp]
 analysts: [max-ostapenko, dooman87]
+editors: [bazzadp]
 translators: [Zuckjet]
 thefoxis_bio: Karolina 是 <a href="https://calibreapp.com/">Calibre</a> 产品设计主管，致力打造最全面的速度监测平台。她创办了性能期刊，也就是你平时看到的性能简讯的来源。Karolina <a href="https://calibreapp.com/blog/category/web-platform">也经常发表</a>关于性能如何影响用户体验的文章。
 discuss: 2045
@@ -42,7 +43,7 @@ featured_stat_label_3: Lighthouse v6 评分不变的站点
 
 {{ figure_markup(
   image="performance-change-in-lighthouse-score.png",
-  caption="Lighthouse 5和6的性能得分差异。", 
+  caption="Lighthouse 5和6的性能得分差异。",
   description="柱形图显示了 Lighthouse 5和6之间性能得分的变化。最高比例的网站（4%）没有观察到分数的变化，分数下降的网站数量超过了分数提高的网站。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=786955541&format=interactive",
   sheets_gid="518150031",
@@ -128,7 +129,7 @@ featured_stat_label_3: Lighthouse v6 评分不变的站点
 
 {{ figure_markup(
   image="performance-cls-by-device.png",
-  caption="按设备类型分类的 CLS 总性能。", 
+  caption="按设备类型分类的 CLS 总性能。",
   description="条形图显示，超过一半的网站具有良好的 CLS，其中桌面端为54％，移动端为60％。在这两种情况下，只有21％的网站的 CLS 被评为差。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1672696367&format=interactive",
   sheets_gid="1270303192",
@@ -232,7 +233,7 @@ FID 评分的地理分布图证实了前面设备汇总图的发现。在最差�
 
 {{ figure_markup(
   image="performance-fcp-desktop-distribution.png",
-  caption="标注在桌面端 FCP 性能快、一般、慢的网站分布", 
+  caption="标注在桌面端 FCP 性能快、一般、慢的网站分布",
   description="标注在桌面端 FCP 性能快、一般、慢的网站分布。评级为快速的网站的分布呈线性，中间呈凸起状。与2019年相比，更快的 FCP 体验和 更慢的 FCP 体验均有所增长。而由于 FCP 评级的变化，中等体验数量有所减少。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1953305743&format=interactive",
   sheets_gid="2122167666",
@@ -292,7 +293,7 @@ FID 评分的地理分布图证实了前面设备汇总图的发现。在最差�
 
 {{ figure_markup(
   image="performance-fcp-by-connection-type.png",
-  caption="按国家分类的 FCP 总性能", 
+  caption="按国家分类的 FCP 总性能",
   description="条形图显示，在4G网络中只有31％的网站 FCP 是良好。在离线状态下，该数量减少到10％，而其余的连接类型几乎只能提供较差的 FCP 体验。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=1949864731&format=interactive",
   sheets_gid="306222260",
@@ -346,7 +347,7 @@ FID 评分的地理分布图证实了前面设备汇总图的发现。在最差�
 
 {{ figure_markup(
   image="performance-ttfb-by-connection-type.png",
-  caption="按连接类型分类的 TTFB 总性能", 
+  caption="按连接类型分类的 TTFB 总性能",
   description="条形图显示，TTFB 受到连接类型的严重影响，在4G和离线的场景下，分别只有21％和22％的体验良好。其他连接类型几乎没有良好的 TTFB 体验（3G上为1％除外）。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=810992122&format=interactive",
   sheets_gid="306222260",

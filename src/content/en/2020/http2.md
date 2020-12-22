@@ -6,6 +6,7 @@ description: HTTP/2 chapter of the 2020 Web Almanac covering adoption and impact
 authors: [dotjs, rmarx, MikeBishop]
 reviewers: [LPardue, bazzadp, ibnesayeed]
 analysts: [gregorywolf]
+editors: [rviscomi]
 translators: []
 dotjs_bio: Andrew works at <a href="https://www.cloudflare.com/">Cloudflare</a> helping to make the web faster and more secure. He spends his time deploying, measuring and improving new protocols and asset delivery to improve end-user website performance.
 rmarx_bio: Robin is a web protocol and performance researcher at <a href="https://www.uhasselt.be/edm">Hasselt University, Belgium</a>. He has been working on getting QUIC and HTTP/3 ready to use by creating tools like <a href="https://github.com/quiclog">qlog and qvis</a>.
