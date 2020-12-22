@@ -6,7 +6,7 @@ description: Markup chapter of the 2019 Web Almanac covering elements used, cust
 authors: [bkardell]
 reviewers: [zcorpan, tomhodgins, matthewp]
 analysts: [rviscomi]
-translators: []
+translators: [rviscomi]
 discuss: 1758
 results: https://docs.google.com/spreadsheets/d/1WnDKLar_0Btlt9UgT53Giy2229bpV4IM2D_v6OM_WzA/
 queries: 03_Markup
@@ -24,17 +24,17 @@ featured_stat_label_3: Variants of carousels found
 
 In 2005, Ian "Hixie" Hickson posted [some analysis of markup data](https://web.archive.org/web/20060203035414/http://code.google.com/webstats/index.html)  building upon various previous work. Much of this work aimed to investigate class names to see if there were common informal semantics that were being adopted by developers which it might make sense to standardize upon.  Some of this research helped inform new elements in HTML5.
 
-14 years later, it's time to take a fresh look.  Since then, we've also had the introduction of [Custom Elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) and the [Extensible Web Manifesto](https://extensiblewebmanifesto.org/) encouraging that we find better ways to pave the cowpaths by allowing developers to explore the space of elements themselves and allow standards bodies to [act more like dictionary editors](https://bkardell.com/blog/Dropping-The-F-Bomb-On-Standards.html).  Unlike CSS class names, which might be used for anything, we can be far more certain that authors who used a non-standard *element* really intended this to be an element.  
+14 years later, it's time to take a fresh look.  Since then, we've also had the introduction of [Custom Elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) and the [Extensible Web Manifesto](https://extensiblewebmanifesto.org/) encouraging that we find better ways to pave the cowpaths by allowing developers to explore the space of elements themselves and allow standards bodies to [act more like dictionary editors](https://bkardell.com/blog/Dropping-The-F-Bomb-On-Standards.html).  Unlike CSS class names, which might be used for anything, we can be far more certain that authors who used a non-standard *element* really intended this to be an element.
 
 As of July 2019, the HTTP Archive has begun collecting all used *element* names in the DOM for about 4.4 million desktop home pages, and about 5.3 million mobile home pages which we can now begin to research and dissect. _(Learn more about our [Methodology](./methodology).)_
 
-This crawl encountered *over 5,000 distinct non-standard element names* in these pages, so we capped the total distinct number of elements that we count to the 'top' (explained below) 5,048. 
+This crawl encountered *over 5,000 distinct non-standard element names* in these pages, so we capped the total distinct number of elements that we count to the 'top' (explained below) 5,048.
 
 ## Methodology
 
 Names of elements on each page were collected from the DOM itself, after the initial run of JavaScript.
 
-Looking at a raw frequency count isn't especially helpful, even for standard elements:  About 25% of all elements encountered are `<div>`.  About 17% are `<a>`, about 11% are `<span>` -- and those are the only elements that account for more than 10% of occurrences.  Languages are [generally like this](https://www.youtube.com/watch?v=fCn8zs912OE); a small number of terms are astoundingly used by comparison.  Further, when we start looking at non-standard elements for uptake, this would be very misleading as one site could use a certain element a thousand times and thus make it look artificially very popular.  
+Looking at a raw frequency count isn't especially helpful, even for standard elements:  About 25% of all elements encountered are `<div>`.  About 17% are `<a>`, about 11% are `<span>` -- and those are the only elements that account for more than 10% of occurrences.  Languages are [generally like this](https://www.youtube.com/watch?v=fCn8zs912OE); a small number of terms are astoundingly used by comparison.  Further, when we start looking at non-standard elements for uptake, this would be very misleading as one site could use a certain element a thousand times and thus make it look artificially very popular.
 
 Instead, as in Hixie's original study,  what we will look at is how many sites include each  element at least once in their homepage.
 
@@ -207,7 +207,7 @@ Figure 3.8 shows the rank of each element and which category they fall into.  I'
 
 You can observe two things here. First, the set of elements that have more than 1% use are not exclusively HTML.  In fact, *27 of the most popular 100 elements aren't even HTML* - they are SVG! And there are *non-standard tags at or very near that cutoff too*!  Second, note that a whole lot of HTML elements are used by less than 1% of pages.
 
-So, are all of those elements used by less than 1% of pages "useless"?  Definitely not.  This is why establishing perspective matters.  There are around [two billion web sites on the web](https://www.websitehostingrating.com/internet-statistics-facts/). If something appears on 0.1% of all websites in our dataset, we can extrapolate that this represents perhaps *two million web sites* in the whole web. Even 0.01% extrapolates to _two hundred thousand sites_.  This is also why removing support for elements, even very old ones which we think aren't great ideas, is a very rare occurrence.  Breaking hundreds of thousands or millions of sites just isn't a thing that browser vendors can do lightly.  
+So, are all of those elements used by less than 1% of pages "useless"?  Definitely not.  This is why establishing perspective matters.  There are around [two billion web sites on the web](https://www.websitehostingrating.com/internet-statistics-facts/). If something appears on 0.1% of all websites in our dataset, we can extrapolate that this represents perhaps *two million web sites* in the whole web. Even 0.01% extrapolates to _two hundred thousand sites_.  This is also why removing support for elements, even very old ones which we think aren't great ideas, is a very rare occurrence.  Breaking hundreds of thousands or millions of sites just isn't a thing that browser vendors can do lightly.
 
 Many elements, even the native ones, appear on fewer than 1% of pages and are still very important and successful.  `<code>`, for example, is an element that I both use and encounter a lot.  It's definitely useful and important, and yet it is used on only 0.57% of these pages.  Part of this is skewed based on what we are measuring; home pages are generally *less likely* to include certain kinds of things (like `<code>` for example). Home pages serve a less general purpose than, for example, headings, paragraphs, links and lists. However, the data is generally useful.
 
@@ -301,7 +301,7 @@ If we notice popular things pop up (like `<jdiv>`, solving chat) we can take kno
 
 ## Conclusion
 
-So, there's lots of data here, but to summarize: 
+So, there's lots of data here, but to summarize:
 
 * Pages have more elements than they did 14 years ago, both on average and max.
 * The lifetime of things on home pages is *very* long.  Deprecating or discontinuing things doesn't make them go away, and it might never.

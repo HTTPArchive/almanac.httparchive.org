@@ -6,6 +6,7 @@ description: 2019年のWeb AlmanacのJavaScriptの章では、Web上でどれだ
 authors: [housseindjirdeh]
 reviewers: [obto, paulcalvano, mathiasbynens, rviscomi]
 analysts: [rviscomi]
+editors: [obto]
 translators: [ksakae]
 discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/

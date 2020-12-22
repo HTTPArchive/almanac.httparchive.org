@@ -7,6 +7,7 @@ description: Fonts chapter of the 2020 Web Almanac covering where fonts are load
 authors: [raphlinus, jpamental]
 reviewers: [RoelN, svgeesus, davelab6, rsheeter, mandymichael]
 analysts: [AbbyTsai]
+editors: []
 translators: []
 jpamental_bio: Designer, tinkerer, typographer. Author of Responsive Typography, Invited Expert to the W3C, and 10yrs+ experience focused on better typography on the web.
 raphlinus_bio: Raph Levien has been working with fonts for over 35 years, including a PhD from UC Berkeley in font design tools. He is rejoining <a href="https://fonts.google.com/">Google Fonts</a> as a font technology researcher, after having co-founded the team in 2010.

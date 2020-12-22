@@ -6,6 +6,7 @@ description: フォントがどこから読み込まれるか、フォントの�
 authors: [zachleat]
 reviewers: [hyperpress, AymenLoukil]
 analysts: [tjmonsi, rviscomi]
+editors: [bazzadp]
 translators: [ksakae]
 discuss: 1761
 results: https://docs.google.com/spreadsheets/d/108g6LXdC3YVsxmX1CCwrmpZ3-DmbB8G_wwgQHX5pn6Q/

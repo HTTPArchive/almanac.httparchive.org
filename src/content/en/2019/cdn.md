@@ -6,6 +6,7 @@ description: CDN chapter of the 2019 Web Almanac covering CDN adoption and usage
 authors: [andydavies, colinbendell]
 reviewers: [yoavweiss, paulcalvano, pmeenan, enygren]
 analysts: [raghuramakrishnan71, rviscomi]
+editors: [rviscomi]
 translators: []
 discuss: 1772
 results: https://docs.google.com/spreadsheets/d/1Y7kAxjxUl8puuTToe6rL3kqJLX1ftOb0nCcD8m3lZBw/

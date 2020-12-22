@@ -41,7 +41,8 @@ const generate_chapters = async (chapter_match) => {
     contributors[year] = {
       "authors": new Set(),
       "reviewers": new Set(),
-      "analysts": new Set()
+      "analysts": new Set(),
+      "editors": new Set()
     };
     sitemap_languages[year] = configs[year].settings[0].supported_languages;
     for (const part in configs[year].outline) {
@@ -106,13 +107,15 @@ const generate_chapters = async (chapter_match) => {
         ebook_chapters.push({ language, year, chapter, metadata, body, toc });
       }
 
-      const {authors, reviewers, analysts } = metadata;
+      const {authors, reviewers, analysts, editors} = metadata;
       if(authors && authors.length >0)
         authors.forEach(author=>contributors[year]["authors"].add(author));
       if(reviewers && reviewers.length > 0)
         reviewers.forEach(reviewer=>contributors[year]["reviewers"].add(reviewer));
       if(analysts && analysts.length > 0)
         analysts.forEach(analyst=>contributors[year]["analysts"].add(analyst));
+      if(editors && editors.length > 0)
+        editors.forEach(editor=>contributors[year]["editors"].add(editor));
 
       await write_template(language, year, chapter, metadata, body, toc);
     } catch (error) {
@@ -160,6 +163,10 @@ const parse_file = async (markdown,chapter) => {
   if (m.analysts) {
     analysts = parse_array(m.analysts);
   }
+  let editors;
+  if (m.editors) {
+    editors = parse_array(m.editors);
+  }
 
   const metadata = {
     ...m,
@@ -168,7 +175,8 @@ const parse_file = async (markdown,chapter) => {
     authors,
     reviewers,
     translators,
-    analysts
+    analysts,
+    editors
   };
 
   return { metadata, body, toc };
