@@ -6,6 +6,7 @@ description: 2019 Web Almanac网络年鉴的性能章节，包括 首次有内�
 authors: [rviscomi]
 reviewers: [JMPerez,obto,sergeychernyshev,zeman]
 analysts: [rviscomi, raghuramakrishnan71]
+editors: [rachellcostello]
 translators: [chengxicn]
 discuss: 1762
 results: https://docs.google.com/spreadsheets/d/1zWzFSQ_ygb-gGr1H1BsJCfB7Z89zSIf7GX0UayVEte4/
@@ -137,7 +138,7 @@ featured_stat_label_3: 有快速FID的站点
   )
 }}
 
-最后，我们可以按用户的地理位置对FCP进行切片。上面的图表显示了拥有最多独立网站数量的前23个地理位置，这是开放网络总体流行程度的指标。美国的网络用户访问的独立网站最多，数量为1,211,002。地理位置按具有足够快速的FCP体验的网站百分比排序。排在首位的是三个[Asia-Pacific](https://en.wikipedia.org/wiki/Asia-Pacific) (APAC) 地理位置：韩国，台湾和日本。这可以通过在这些地区具有极高的[快速网络连接速度](https://en.wikipedia.org/wiki/List_of_countries_by_Internet_connection_speeds)。韩国有36％的网站符合快速FCP标准，只有7％被评为慢速FCP。回想一下，快速/中速/慢速网站的全球分布约为13/66/20，这使韩国区域成为一个明显积极的异常值。 
+最后，我们可以按用户的地理位置对FCP进行切片。上面的图表显示了拥有最多独立网站数量的前23个地理位置，这是开放网络总体流行程度的指标。美国的网络用户访问的独立网站最多，数量为1,211,002。地理位置按具有足够快速的FCP体验的网站百分比排序。排在首位的是三个[Asia-Pacific](https://en.wikipedia.org/wiki/Asia-Pacific) (APAC) 地理位置：韩国，台湾和日本。这可以通过在这些地区具有极高的[快速网络连接速度](https://en.wikipedia.org/wiki/List_of_countries_by_Internet_connection_speeds)。韩国有36％的网站符合快速FCP标准，只有7％被评为慢速FCP。回想一下，快速/中速/慢速网站的全球分布约为13/66/20，这使韩国区域成为一个明显积极的异常值。
 
 其他亚太地区区域则讲述了一个不同的故事。泰国，越南，印度尼西亚和印度都拥有不到10％的快速网站。这些地理位置的慢速网站比例也比韩国高出三倍以上。
 
@@ -178,7 +179,7 @@ featured_stat_label_3: 有快速FID的站点
   )
 }}
 
-42%的网站TTFB体验缓慢。这很值得注意，因为TTFB阻止了后续所有其他的性能指标。 _按照定义，如果TTFB花费的时间超过1秒，则用户可能无法体验快速的FCP。_ 
+42%的网站TTFB体验缓慢。这很值得注意，因为TTFB阻止了后续所有其他的性能指标。 _按照定义，如果TTFB花费的时间超过1秒，则用户可能无法体验快速的FCP。_
 
 #### 按地理位置看TTFB
 
@@ -198,7 +199,7 @@ featured_stat_label_3: 有快速FID的站点
 
 ### 首次输入延迟
 
-我们将要查看的最后一个字段指标是[首次输入延迟](https://developers.google.com/web/updates/2018/05/first-input-delay) (FID)。此度量标准表示从用户第一次与页面UI交互到浏览器主线程准备处理事件的时间。请注意，这不包括应用程序实际花费在处理输入上的时间。最差的情况时，缓慢的FID会导致页面显示无响应，并给用户带来令人沮丧的体验。 
+我们将要查看的最后一个字段指标是[首次输入延迟](https://developers.google.com/web/updates/2018/05/first-input-delay) (FID)。此度量标准表示从用户第一次与页面UI交互到浏览器主线程准备处理事件的时间。请注意，这不包括应用程序实际花费在处理输入上的时间。最差的情况时，缓慢的FID会导致页面显示无响应，并给用户带来令人沮丧的体验。
 
 让我们从定义一些阈值开始。根据新的PSI方法，**快速**FID是在100毫秒内发生的。这为应用程序提供了足够的时间来处理输入事件，并在瞬时的感觉时间内向用户提供反馈。一个**慢速**FID在300毫秒或更长时间内发生的。 介于两者之间的一切成为**中速**。
 

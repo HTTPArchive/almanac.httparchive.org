@@ -6,6 +6,7 @@ description: 色、単位、セレクター、レイアウト、タイポグラ�
 authors: [una, argyleink]
 reviewers: [meyerweb, huijing]
 analysts: [rviscomi]
+editors: [rachellcostello]
 translators: [ksakae]
 discuss: 1757
 results: https://docs.google.com/spreadsheets/d/1uFlkuSRetjBNEhGKWpkrXo4eEIsgYelxY-qR9Pd7QpM/

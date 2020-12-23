@@ -6,6 +6,7 @@ description: Capítulo Fuentes del Almanaque Web de 2019 que cubre desde dónde 
 authors: [zachleat]
 reviewers: [hyperpress, AymenLoukil]
 analysts: [tjmonsi, rviscomi]
+editors: [bazzadp]
 translators: [c-torres]
 discuss: 1761
 results: https://docs.google.com/spreadsheets/d/108g6LXdC3YVsxmX1CCwrmpZ3-DmbB8G_wwgQHX5pn6Q/

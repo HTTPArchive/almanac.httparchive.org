@@ -6,6 +6,7 @@ description: Capabilities chapter of the 2020 Web Almanac covering brand-new, po
 authors: [christianliebel]
 reviewers: [tomayac]
 analysts: [tomayac]
+editors: [rviscomi]
 translators: []
 discuss: 2049
 results: https://docs.google.com/spreadsheets/d/1N6j1qKv7vc51p1W9z_RrbJX9Se3Pmb-Uersfz4gWqqs/
