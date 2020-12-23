@@ -21,16 +21,16 @@
     
   FROM
     `chrome-ux-report.materialized.metrics_summary`
-   JOIN (
-     SELECT
-       DISTINCT RTRIM(url, "/") AS origin
-     FROM
-       `httparchive.technologies.2020_08_01_*`
-        WHERE category = 'Ecommerce')
-   USING
-     (origin)
-   WHERE date IN ('2020-09-01')
-   and notification_permission_accept is not null
-   group by 
-   date
-   
+  JOIN (
+    SELECT
+      DISTINCT RTRIM(url, "/") AS origin
+    FROM
+      `httparchive.technologies.2020_08_01_*`
+    WHERE category = 'Ecommerce')
+  USING
+    (origin)
+  WHERE date IN ('2020-09-01') AND
+    notification_permission_accept IS NOT NULL
+  GROUP BY
+  date
+

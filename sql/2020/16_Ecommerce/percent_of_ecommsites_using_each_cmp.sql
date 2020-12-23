@@ -1,5 +1,5 @@
 #standardSQL
-# 13_18b: % A11Y overlay solutions on mobile eCommerce origins
+# 13_17b: % CMP solutions share on eCommerce origins broken down by device
 SELECT
   _TABLE_SUFFIX AS client,
   app,
@@ -8,6 +8,17 @@ SELECT
   COUNT(DISTINCT url) / total AS pct
 FROM
   `httparchive.technologies.2020_08_01_*`
+JOIN (
+  SELECT
+    _TABLE_SUFFIX,
+    url
+  FROM
+    `httparchive.technologies.2020_08_01_*`
+  WHERE
+     category = 'Ecommerce'
+    )
+USING
+  (_TABLE_SUFFIX, url)
 JOIN (
   SELECT
     _TABLE_SUFFIX,
@@ -22,11 +33,12 @@ JOIN (
 USING
   (_TABLE_SUFFIX)
 WHERE
-  category = 'Accessibility'
-  and _TABLE_SUFFIX = 'mobile'
+  category = 'Cookie compliance'
 GROUP BY
   client,
   app,
   total
 order by
+  client,
   pct desc
+
