@@ -11,6 +11,17 @@ FROM
 JOIN (
   SELECT
     _TABLE_SUFFIX,
+    url
+  FROM
+    `httparchive.technologies.2020_08_01_*`
+  WHERE
+     category = 'Ecommerce'
+    )
+USING
+  (_TABLE_SUFFIX, url)
+JOIN (
+  SELECT
+    _TABLE_SUFFIX,
     COUNT(DISTINCT url) AS total
   FROM
     `httparchive.technologies.2020_08_01_*`
