@@ -1,7 +1,8 @@
 #standardSQL
-# 13_14: % of AMP enabled eCommerce Sites by device
+# 13_18b: % A11Y solutions share on eCommerce origins broken down by device
 SELECT
   _TABLE_SUFFIX AS client,
+  app,
   COUNT(DISTINCT url) AS freq,
   total,
   COUNT(DISTINCT url) / total AS pct
@@ -32,9 +33,11 @@ JOIN (
 USING
   (_TABLE_SUFFIX)
 WHERE
-  app = 'AMP'
+  category = 'Accessibility'
 GROUP BY
   client,
+  app,
   total
 ORDER BY
-  client
+  client,
+  pct DESC
