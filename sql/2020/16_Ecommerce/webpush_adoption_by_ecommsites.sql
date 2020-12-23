@@ -4,7 +4,7 @@
  SELECT
     COUNT(DISTINCT origin) as totalECommOrigins,
     COUNTIF(notification_permission_accept IS NOT NULL) AS eCommOriginsWithWebPush,
-    COUNTIF(notification_permission_accept IS NOT NULL) / COUNT(DISTINCT origin) As pct
+    COUNTIF(notification_permission_accept IS NOT NULL) / COUNT(DISTINCT origin) AS pct
     
   FROM
     `chrome-ux-report.materialized.metrics_summary`
@@ -17,4 +17,3 @@
   USING
     (origin)
   WHERE date IN ('2020-08-01') 
-

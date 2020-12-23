@@ -38,7 +38,6 @@ GROUP BY
   client,
   app,
   total
-order by
+ORDER BY
   client,
-  pct desc
-
+  pct DESC

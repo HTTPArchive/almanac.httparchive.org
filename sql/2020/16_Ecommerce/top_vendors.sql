@@ -19,8 +19,7 @@ JOIN
       _TABLE_SUFFIX)
 USING (_TABLE_SUFFIX)
 WHERE
-  category = 'Ecommerce'
-  and 
+  category = 'Ecommerce' AND 
   (app != 'Cart Functionality' AND 
    app != 'Google Analytics Enhanced eCommerce')
 GROUP BY
@@ -28,6 +27,6 @@ GROUP BY
   app,
   total
 ORDER BY
-  client desc,
+  client DESC,
   pct DESC
 LIMIT 1000
