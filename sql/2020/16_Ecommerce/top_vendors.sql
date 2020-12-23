@@ -3,6 +3,7 @@
 # Excluding apps which are not eCommerce platforms/vendors themselves but are used to identify eCommerce sites. These are signals added in Wappalyzer in 2020 to get better idea on % of eCommerce sites but these are not relevant for vendor % market share analysis
 SELECT
   _TABLE_SUFFIX AS client,
+  app,
   COUNT(DISTINCT url) AS freq,
   total,
   COUNT(DISTINCT url) / total AS pct
@@ -24,6 +25,7 @@ WHERE
    app != 'Google Analytics Enhanced eCommerce')
 GROUP BY
   client,
+  app,
   total
 ORDER BY
   client desc,

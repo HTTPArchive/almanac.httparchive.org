@@ -1,5 +1,5 @@
 #standardSQL
-# 13_16a: Web Push Notification CRUX stats (min / max / median) for eCommerce origins
+# 13_16b: Web Push Notification CRUX stats (min / max / median) for eCommerce origins
 
  SELECT
     date,
@@ -29,7 +29,7 @@
     WHERE category = 'Ecommerce')
   USING
     (origin)
-  WHERE date IN ('2020-09-01') AND
+  WHERE date IN ('2020-08-01') AND
     notification_permission_accept IS NOT NULL
   GROUP BY
   date
