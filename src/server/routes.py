@@ -83,7 +83,7 @@ def sitemap():
     return resp
 
 
-# Stories requires it's own CSP and to allow framing
+# Stories require their own CSP and to allow framing
 @app.route('/<lang>/<year>/stories/<story>')
 @validate
 @talisman(
