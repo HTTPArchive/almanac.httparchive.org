@@ -590,8 +590,8 @@ figure .big-number {
   font: bold 128px/1em Poppins, sans-serif;
   font: bold 8rem/1em Poppins, sans-serif;
   color: #62718b;
+  word-break: break-word;
   overflow-wrap: break-word;
-  word-break: break-all;
 }
 
 figure .medium-number {
@@ -599,8 +599,8 @@ figure .medium-number {
   font: bold 48px/1em Poppins, sans-serif;
   font: bold 3rem/1em Poppins, sans-serif;
   color: #62718b;
+  word-break: break-word;
   overflow-wrap: break-word;
-  word-break: break-all;
 }
 
 figure .really-big-number {
@@ -608,8 +608,8 @@ figure .really-big-number {
   font: bold 24px/1em Poppins, sans-serif;
   font: bold 1.5rem/1em Poppins, sans-serif;
   color: #62718b;
+  word-break: break-word;
   overflow-wrap: break-word;
-  word-break: break-all;
 }
 
 figure .fig-mobile {
