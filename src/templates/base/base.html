@@ -828,7 +828,7 @@
   <div id="{{ anchor }}-description" class="visually-hidden">{{ description|safe }}</div>
   {%- elif content != "" %}
   <div class="figure-wrapper">
-    <span class="{{ classes }}">{{ content|safe }}</span>
+    <div class="{{ classes }}">{{ content|safe }}</div>
     {% if not ebook %}{{ figure_dropdown(metadata, id, sheets_gid, sql_file, image, ebook) }}{% endif %}
   </div>
   {%- endif %}
