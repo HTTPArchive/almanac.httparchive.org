@@ -1,5 +1,5 @@
 #standardSQL
-# 13_14: % of AMP enabled eCommerce Sites by device
+# 13_18a: % of eCommerce Sites using Accessiblity solutions
 SELECT
   _TABLE_SUFFIX AS client,
   COUNT(DISTINCT url) AS freq,
@@ -32,9 +32,7 @@ JOIN (
 USING
   (_TABLE_SUFFIX)
 WHERE
-  app = 'AMP'
+  category = 'Accessibility'
 GROUP BY
   client,
   total
-ORDER BY
-  client

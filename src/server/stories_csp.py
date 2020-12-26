@@ -35,5 +35,8 @@ csp = {
         '\'self\'',
         'docs.google.com',
         'www.youtube.com'
+    ],
+    'frame-ancestors': [
+        '*'
     ]
 }
