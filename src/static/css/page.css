@@ -600,6 +600,7 @@ figure .medium-number {
   font: bold 3rem/1em Poppins, sans-serif;
   color: #62718b;
   overflow-wrap: break-word;
+  word-break: break-all;
 }
 
 figure .really-big-number {
@@ -608,6 +609,7 @@ figure .really-big-number {
   font: bold 1.5rem/1em Poppins, sans-serif;
   color: #62718b;
   overflow-wrap: break-word;
+  word-break: break-all;
 }
 
 figure .fig-mobile {
