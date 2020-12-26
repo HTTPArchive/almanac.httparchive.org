@@ -5,8 +5,9 @@ title: HTTP/2
 description: Capítulo de HTTP/2 de 2019 do Web Almanac que cobre a adoção e o impacto do HTTP/2, HTTP/2 Push, Problemas do HTTP/2 e HTTP/3.
 authors: [bazzadp]
 reviewers: [bagder, rmarx, dotjs]
-translators: [elaynelemos]
 analysts: [paulcalvano]
+editors: [rachellcostello]
+translators: [elaynelemos]
 discuss: 1775
 results: https://docs.google.com/spreadsheets/d/1z1gdS3YVpe8J9K3g2UdrtdSPhRywVQRBz5kgBeqCnbw/
 queries: 20_HTTP_2
@@ -34,7 +35,7 @@ O protocolo parecia simples, mas também apresentava limitações. Como o HTTP e
 
 Isso por si só já trás seus próprios problemas considerando que as conexões TCP demandam tempo e recursos para serem estabelecidas e obter eficiência total, especialmente ao usar HTTPS, que requer etapas adicionais para configurar a criptografia. O HTTP/1.1 melhorou isso em alguma medida, permitindo a reutilização de conexões TCP para requisições subsequentes, mas ainda não resolveu a dificuldade em paralelização.
 
-Apesar do HTTP ser baseado em texto, a realidade é que ele raramente era usado para transportar texto, ao menos em seu formato puro. Embora fosse verdade que os cabeçalhos ainda eram texto, os payloads em si frequentemente não eram. Arquivos de texto como [HTML](./markup), [JS](./javascript) e [CSS](./css) costumam ser [compactados](./compression) para transporte em formato binário usando gzip, brotli ou similar. Arquivos não textuais como [imagens e vídeos](./media) são distribuidos em seus próprio formatos. A mensagem HTTP completa é então costumeiramente encapsulada em HTTPS para criptografar as mensagens por razões de [segurança](./security).
+Apesar do HTTP ser baseado em texto, a realidade é que ele raramente era usado para transportar texto, ao menos em seu formato puro. Embora fosse verdade que os cabeçalhos ainda eram texto, os payloads em si frequentemente não eram. Arquivos de texto como [HTML](./markup), [JS](./javascript) e [CSS](./css) costumam ser [compactados](./compression) para transporte em formato binário usando Gzip, Brotli ou similar. Arquivos não textuais como [imagens e vídeos](./media) são distribuidos em seus próprio formatos. A mensagem HTTP completa é então costumeiramente encapsulada em HTTPS para criptografar as mensagens por razões de [segurança](./security).
 
 Portanto, a web tinha basicamente movido de um transporte baseado em texto há muito tempo, mas o HTTP não. Uma razão para essa estagnação foi porque era muito difícil introduzir qualquer alteração significativa em um protocolo tão onipresente como o HTTP (esforços anteriores haviam tentado e falhado). Muitos roteadores, firewalls e outros dispositivos de rede entendiam o HTTP e reagiriam mal a grandes mudanças maiores. Atualizar todos eles para suportar uma nova versão simplesmente não era impossível.
 

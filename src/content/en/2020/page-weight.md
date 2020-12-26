@@ -6,8 +6,9 @@ description: Page Weight chapter of the 2020 Web Almanac covering why page weigh
 authors: [henrihelvetica]
 reviewers: [paulcalvano]
 analysts: [paulcalvano]
+editors: []
 translators: []
-henrihelvetica_bio: Henri is a freelance developer who has turned his interests to a potpourri of performance engineering with pinches of user experience. When not reading the deluge of daily research docs and case studies, or indiscriminately auditing sites in devtools, Henri can be found contributing back to the community, co-programming meetups including theToronto Web Performance Group or volunteering his time for lunch and learns at various bootcamps. Otherwise, he’s tooling with music production software or with near certainty training and focusing on running the fastest 5k possible.
+henrihelvetica_bio: Henri is a freelance developer who has turned his interests to a potpourri of performance engineering with pinches of user experience. When not reading the deluge of daily research docs and case studies, or indiscriminately auditing sites in devtools, Henri can be found contributing back to the community, co-programming meetups including the Toronto Web Performance Group or volunteering his time for lunch and learns at various bootcamps. Otherwise, he’s tooling with music production software or with near certainty training and focusing on running the fastest 5k possible.
 discuss: 2054
 results: https://docs.google.com/spreadsheets/d/1wG4u0LV5PT9aN-XB1hixSFtI8KIDARTOCX0sp7ZT3h0/
 queries: 18_Page_Weight
@@ -36,8 +37,6 @@ The point was simple: though you might benefit from increased bandwidth, the law
 
 Now, imagine that the same Australian, knowing that at the 75th percentile, his page is making about 108 requests (more on that later), and we still have no idea of the network protocol, the resources being requested, the level of compression or optimization. You can pursue the H/2 and compression chapters for more information on the life of a modern request.
 
-physics damn'it!
-
 ### Assets
 
 In 25 years of modern browsing, the assets and resources have mostly not changed, other than the amount. The HTTP archive modus operandi is “how the web was built”, and that was mostly done with HTML, CSS, JavaScript and finally images.
@@ -52,7 +51,7 @@ Although JavaScript is on average the 2nd most abundant resource on a page, we t
 
 The web's  journey from the plain, near pedagogical platform, to the innovative, intricate and highly interactive apps it has become, the rudimentary page weight metric hid a bigger story: a ratatouille of resources, each affecting  modern metrics, in turn affecting user experience.
 
-Whenever we talk about interactivity, we are talking almost exclusively about JavaScript. Now, though we are not here to discuss interactivity in any depth, we know there are metrics which are focused and dependent on JavaScript content and execution.  So weightier the JavaScript, likely to have a greater impact on interactivity metrics (time to interactive, total blocking time). We have a javascript chapter that dives a pinch more.
+Whenever we talk about interactivity, we are talking almost exclusively about JavaScript. Now, though we are not here to discuss interactivity in any depth, we know there are metrics which are focused and dependent on JavaScript content and execution.  So weightier the JavaScript, likely to have a greater impact on interactivity metrics (time to interactive, total blocking time). We have the [JavaScript chapter](./javascript) that dives a pinch more.
 
 ## Analysis
 
@@ -76,7 +75,7 @@ We can however surmise from this the following: we are closing in on 7 MB of pag
 {{ figure_markup(
   image="bytes-distribution-content-type.png",
   caption="Median bytes per page by content type.",
-  description="Bar chart showing the median number of bytes per page for images, javascript, CSS, and HTML. The median desktop page tends to have more bytes. The median mobile page has 916 KB of images, 411 KB of JS, 62 KB of CSS, and 25 KB of HTML.",
+  description="Bar chart showing the median number of bytes per page for images, JavaScript, CSS, and HTML. The median desktop page tends to have more bytes. The median mobile page has 916 KB of images, 411 KB of JS, 62 KB of CSS, and 25 KB of HTML.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQlN4Clqeb8aPc63h0J58WfBxoJluSFT6kXn45JGPghw1LGU28hzabMYAATXNY5st9TtjKrr2HnbfGd/pubchart?oid=1147150650&format=interactive",
   sheets_gid="378779486",
   sql_file="bytes_per_type_2020.sql"
@@ -94,7 +93,7 @@ at the request level, much is the same. The weightiest resources are making the 
   description="Bar chart showing the distribution of requests per page. Desktop pages tend to load more requests. The 10, 25, 50, 75, and 90th percentiles for mobile pages are: 23, 42, 70, 114, and 174 requests per page.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQlN4Clqeb8aPc63h0J58WfBxoJluSFT6kXn45JGPghw1LGU28hzabMYAATXNY5st9TtjKrr2HnbfGd/pubchart?oid=971564375&format=interactive",
   sheets_gid="457486298",
-  sql_file="requests_type_distribution_2020.sql"
+  sql_file="request_type_distribution_2020.sql"
 ) }}
 
 {{ figure_markup(
@@ -103,7 +102,7 @@ at the request level, much is the same. The weightiest resources are making the 
   description="Bar chart showing the median number of requests per mobile page by content type. The median number of image requests per page is 27, 19 for JS, 7 for CSS, and 3 for HTML. Desktop and mobile tend to be equal except desktop pages load more image and JS requests.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQlN4Clqeb8aPc63h0J58WfBxoJluSFT6kXn45JGPghw1LGU28hzabMYAATXNY5st9TtjKrr2HnbfGd/pubchart?oid=101271976&format=interactive",
   sheets_gid="457486298",
-  sql_file="requests_type_distribution_2020.sql"
+  sql_file="request_type_distribution_2020.sql"
 ) }}
 
 ### File formats
@@ -116,7 +115,7 @@ We know that images are a great source of page weight. This graphic below shows 
   description="Box plot of the distribution of image sizes by format: gif, ico, jpg, png, svg, and webp. Jpg sticks out as having the highest distribution with a 90th percentile exceeding 150 KB per image. Png is second highest at about 100 KB at the 90th percentile. While WebP has a smaller 90th percentile than png, its 75th percentile is higher. gif, ico, and svg all have relatively small distributions near 0 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQlN4Clqeb8aPc63h0J58WfBxoJluSFT6kXn45JGPghw1LGU28hzabMYAATXNY5st9TtjKrr2HnbfGd/pubchart?oid=211653520&format=interactive",
   sheets_gid="142855724",
-  sql_file="requests_format_distribution_2020.sql"
+  sql_file="requests_format_distribution.sql"
 ) }}
 
 {{ figure_markup(
@@ -130,16 +129,16 @@ We know that images are a great source of page weight. This graphic below shows 
 
 ## COVID-19
 
-2020 has been the most demanding of any year in Internet history. This is based on self reporting by [telecom companies](https://www2.telegeography.com/network-impact) all over the globe. YouTube, Netflix, gaming console manufacturers and many more were asked to [throttle their networks](https://www.bloomberg.com/news/articles/2020-03-19/netflix-to-cut-streaming-traffic-in-europe-to-relieve-networks) due to anticipated bandwidth demands of Covid and the stay at home orders. There are now new suspects creating demands on the networks: we are now working from home, teleconferencing from home, and now schooling from home as well. In the midst of this crisis some government organizations have moved forward to optimize all aspects of the site and redesign and or updates. Two such examples of being [ca.gov](http://Ca.gov) ([link](https://news.alpha.ca.gov/prioritizing-users-in-a-crisis-building-covid19-ca-gov/)) and [gov.uk](http://gov.uk) . In these times, Covid has certified the Internet as an essential service, and being able to access crucial and life-saving information, Must be as friction free as possible, which includes a manageable page weight via discipline delivery of data.
+2020 has been the most demanding of any year in Internet history. This is based on self reporting by [telecom companies](https://www2.telegeography.com/network-impact) all over the globe. YouTube, Netflix, gaming console manufacturers and many more were asked to [throttle their networks](https://www.bloomberg.com/news/articles/2020-03-19/netflix-to-cut-streaming-traffic-in-europe-to-relieve-networks) due to anticipated bandwidth demands of COVID-19 and the stay at home orders. There are now new suspects creating demands on the networks: we are now working from home, teleconferencing from home, and now schooling from home as well. In the midst of this crisis some government organizations have moved forward to optimize all aspects of the site and redesign and or updates. Two such examples of being [ca.gov](https://ca.gov) ([link](https://news.alpha.ca.gov/prioritizing-users-in-a-crisis-building-covid19-ca-gov/)) and [gov.uk](https://gov.uk). In these times, COVID-19 has certified the Internet as an essential service, and being able to access crucial and life-saving information, Must be as friction free as possible, which includes a manageable page weight via discipline delivery of data.
 
-If we have been married to the Internet, Covid has forced us to renew our vows. Assuring that content is delivered as efficiently as possible over the Internet, page weight must be kept at the forefront at all times.
+If we have been married to the Internet, COVID-19 has forced us to renew our vows. Assuring that content is delivered as efficiently as possible over the Internet, page weight must be kept at the forefront at all times.
 
 ## A not so distant future
 
 We have watched for 25 years page weight grow steadily. It might have been one of the greatest stock investments — had it been one. But this is the web. And, we are trying to manage data, requests, file size and ultimately page weight. We have just combed over data, seeing how images are the greatest source of weight. This means, it will also be our greatest source of savings. 2020 was a pivotal year, a possible inflection point for HTTP Archive tracking of web data. 2020 marked the year the modern format webp was finally adopted by Safari, making this format finally supported by all browsers across the board. This means that the format could comfortably be used with little to no fall back. The most important point? The potential for significant page weight savings is unavoidable — at a possible 30%. Even more interesting is the idea of a more modern format: avif. This format has burst onto the scene with enough support today for approximately 70% browser market share, creating a scenario for small image file sizes - even smaller than webp. And lastly, and possibly most distant: media queries level 5, ‘prefers-reduced-data ‘. Though in very early draft, this media feature will be used to detect if a user may have a preference for variant resources in data sensitive situations
 
-Looking at the crystal ball, the third installment of the Almanac and the page weight chapter could have a much different look in 2021. The big technological and engineering investments into images, might finally provide the diminishing returns we have been looking for.
+Looking at the crystal ball, the third installment of the Web Almanac and the page weight chapter could have a much different look in 2021. The big technological and engineering investments into images, might finally provide the diminishing returns we have been looking for.
 
 ## Conclusion
 
-It's of no surprise that web pages have generally kept growing. We have been feeding more resources down the wire to create richer experiences, more engaging interactivity, more stunning visuals through more powerful imagery. We have created these applications at the cost of data overages and user experiences. But as we move forward and keep pushing the web to places we had never anticipated, we are also making additional advances in engineering, as mentioned earlier. We may begin to see a drop in page weight as early as next year, as modern raster image formats see more adoption, we start to manage javascript more efficiently, and deliver the data down the wire with the discipline that users demand.
+It's of no surprise that web pages have generally kept growing. We have been feeding more resources down the wire to create richer experiences, more engaging interactivity, more stunning visuals through more powerful imagery. We have created these applications at the cost of data overages and user experiences. But as we move forward and keep pushing the web to places we had never anticipated, we are also making additional advances in engineering, as mentioned earlier. We may begin to see a drop in page weight as early as next year, as modern raster image formats see more adoption, we start to manage JavaScript more efficiently, and deliver the data down the wire with the discipline that users demand.

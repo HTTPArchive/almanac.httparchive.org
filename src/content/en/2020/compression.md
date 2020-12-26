@@ -7,20 +7,20 @@ description: Compression chapter of the 2020 Web Almanac covering HTTP compressi
 authors: [mo271, veluca93, sboukortt, jyrkialakuijala]
 reviewers: [paulcalvano]
 analysts: [AbbyTsai]
+editors: [exterkamp]
 translators: []
-jyrkialakuijala_bio: Jyrki Alakuijala is an active member of the open source software community, and a data compression researcher. Jyrki works at Google as a Technical Lead/Manager, and his recent published work has been with Zopfli, Butteraugli, Guetzli, Gipfeli, WebP lossless, and Brotli compression formats and algorithms, and two hashing algorithms, CityHash and HighwayHash. Before his Google employment he developed software for neurosurgery and radiation therapy treatment planning.
+jyrkialakuijala_bio: Jyrki Alakuijala is an active member of the open source software community, and a data compression researcher. Jyrki works at Google as a Technical Lead/Manager, and his recent published work has been with Zopfli, Butteraugli, Guetzli, Gipfeli, WebP lossless, Brotli, and JPEG XL compression formats and algorithms, and two hashing algorithms, CityHash, and HighwayHash. Before his Google employment he developed software for neurosurgery and radiation therapy treatment planning.
 sboukortt_bio: Sami joined Google after completing his studies in engineering mathematics. After a few years of remote interest in compression, he eventually made it his full-time subject of work in 2018.
-mo271_bio: Moritz Firsching is software engineer at Google Switzerland, where he works on progressive image formats and font compression.
-Before that Moritz did research as a mathematician studying polytopes.
+mo271_bio: Moritz Firsching is software engineer at Google Switzerland, where he works on progressive image formats and font compression. Before that Moritz did research as a mathematician studying polytopes.
 veluca93_bio: Luca Versari is a software engineer at Google, working on <a href="https://gitlab.com/wg1/jpeg-xl">JPEG XL</a>. He's finishing a PhD on graph compression and has a background in mathematics.
 discuss: 2055
 results: https://docs.google.com/spreadsheets/d/1NKbP4AqMkgCNCsVD3yLhO2d0aqIsgZ7AGLEtUDHl9yY/
 queries: 19_Compression
 featured_quote: Using HTTP compression makes a website load faster and therefore guarantees a better user experience.
 featured_stat_1: 23%
-featured_stat_label_1: Compressed requests which use brotli
+featured_stat_label_1: Compressed requests which use Brotli
 featured_stat_2: 77%
-featured_stat_label_2: Compressed requests which use gzip
+featured_stat_label_2: Compressed requests which use Gzip
 featured_stat_3: 74%
 featured_stat_label_3: Websites that pass the Lighthouse audit with maximum score on text compression
 unedited: true
@@ -28,56 +28,57 @@ unedited: true
 
 ## Introduction
 
-
-Using HTTP compression makes a website load faster and therefore guarantees a better user experience. Running no compression on HTTP makes for a worse user experience, may affect the growth rate of the related web service and affects search rankings. Using compression likely produces a web experience that performs better on metrics such as faster Largest Contentful Paint. Using compression reduces [page weight](./page-weight), improves [web performance](./performance), and therefore is an important part of [search engine optimization](./seo).
-
+Using HTTP compression makes a website load faster and therefore guarantees a better user experience. Running no compression on HTTP makes for a worse user experience, may affect the growth rate of the related web service, and affects search rankings.  Effective use of compression can reduce [page weight](./page-weight), improves [web performance](./performance), and therefore is an important part of [search engine optimization](./seo).
 
 While lossy compression is often acceptable for images and other [media](./media) types, for text we want to use lossless compression, i.e. recover the exact text after decompression.
 
 ## What type of content should we compress?
 
-For most text-based assets, such as [HTML](./markup), [CSS](./css), [JavaScript](./javascript), [JSON](https://www.json.org) or SVG, as well as certain non-text formats such as woff, ttf, ico, using compression is recommended.
-Here is an overview over what compression methods are currently used for different content types:
+For most text-based assets, such as [HTML](./markup), [CSS](./css), [JavaScript](./javascript), JSON, or SVG, as well as certain non-text formats such as woff, ttf, ico, using compression is recommended.
 
 {{ figure_markup(
   image="compession-methods-by-content-type.png",
   caption="Compression Methods for Different Content Types",
-  description="This breaks down what compression methods, if any, are used for all the content types which are not images.",
+  description="A stacked bar chart showing the usage rate of different compression algorithms broken down by the content type. The stacked bars divide up the use of Brotli, Gzip, and no compression. `text/html` is the only content type that is compressed less than 50% of the time. `application/json` and `image/svg+xml` are each approximately 64% compressed. `text/css` and `application/javascript` are each approximately 85% compressed. `application/x-javascript` and `text/javascript` are greater than 90% compressed.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxUj8-0vKTqPAblIXqekSbiRh1D1lEuA3gVD9w23qwGPtJRE8FbgrURfPAgfFZX2l0t84Wy5ZAGqzR/pubchart?oid=1658254159&format=interactive",
   sheets_gid="107138856",
   sql_file="19_01.type_of_content_encoding.sql"
   )
 }}
-The figure shows the percentages of the request of a certain content type using either brotli, gzip or no text compression.
-It is surprising that while all those content types would profit from compression, the range of percentages varies widely over the different content types:  only 44% use compression for `text/html` against  93% `application/x-javascript`.
 
+The figure shows the percent of requests of a certain content type using either Brotli, Gzip or no text compression.
+It is surprising that while all those content types would profit from compression, the range of percentages varies widely over the different content types:  only 44% use compression for `text/html` against 93% for `application/x-javascript`.
+
+For image-based assets text-based compression is less useful and not widely employed. The data shows that the percent of image requests that employ either Brotli, or Gzip is very low, less than 4%. For more info on non text-based assets, check out the [Media](./media) chapter.
+
+{{ figure_markup(
+  image="http-compression-methods-for-image-types.png",
+  description="This breaks down what compression methods, if any, are used for all the content types which are images. For all three image types, i.e. jpeg, png and gif, around 96.5% use no compression is used.",
+  caption="Compression by content type as a percent for desktop.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxUj8-0vKTqPAblIXqekSbiRh1D1lEuA3gVD9w23qwGPtJRE8FbgrURfPAgfFZX2l0t84Wy5ZAGqzR/pubchart?oid=1287110333&format=interactive",
+  sheets_gid="449339162",
+  sql_file="19_01.type_of_content_encoding.sql"
+  )
+}}
 
 ## How to use HTTP compression?
 
-To reduce the file sizes of the files that we plan to serve you could first use a some minimizers, e.g. [HTMLMinifier](https://github.com/kangax/html-minifier), [CSSNano](https://github.com/ben-eb/cssnano)
- or [UglifyJS](https://github.com/mishoo/UglifyJS2). However bigger gains are expected from using compression.
+To reduce the size of the files that we plan to serve one could first use some minimizers, e.g. [HTMLMinifier](https://github.com/kangax/html-minifier), [CSSNano](https://github.com/ben-eb/cssnano), or [UglifyJS](https://github.com/mishoo/UglifyJS2). However bigger gains are expected from using compression.
 
 There are two ways of doing the compression on the server side:
 
   - Precompressed (compress and save assets ahead of time)
   - Dynamically Compressed (compress assets on-the-fly after a request is made)
 
-Since precompression is done beforehand, we can spend more time compressing the assets. For dynamically compressed resources we need to choose the compression levels such that compression takes less time than time difference between sending an uncompressed versus a compressed file. Currently practically all text compression is done by one of two HTTP content encodings: [Gzip](https://tools.ietf.org/html/rfc1952) and [brotli](https://github.com/google/brotli). Both are widely supported by browsers: [can I use brotli](https://caniuse.com/?search=brotli)/[can I use gzip](https://caniuse.com/?search=gzip)
-When you want to use gzip, consider using [Zopfli](https://en.wikipedia.org/wiki/Zopfli), which generates smaller gzip compatible files. This should be done especially for precompressed resources, since here the greatest [gains are expected](https://cran.r-project.org/web/packages/brotli/vignettes/brotli-2015-09-22.pdf) . See this [comparison between Gzip and Zopfli](https://blog.codinghorror.com/zopfli-optimization-literally-free-bandwidth/) that takes into account different compression levels for gzip.
-
-
-Many [popular servers support dynamically and/or pre-compressed HTTP](https://en.wikipedia.org/wiki/HTTP_compression#Servers_that_support_HTTP_compression) and many of them support [Brotli](https://en.wikipedia.org/wiki/Brotli)
-
-
-Here are some general recommendations on what compression levels to use:
+Since precompression is done beforehand, we can spend more time compressing the assets. For dynamically compressed resources, we need to choose the compression levels such that compression takes less time than the time difference between sending an uncompressed versus a compressed file. This difference is borne out when looking at compression level recommendations for both methods.
 
 <figure>
   <table>
     <thead>
       <tr>
         <td></td>
-        <th scope="col">brotli</th>
-        <th scope="col">gzip</th>
+        <th scope="col">Brotli</th>
+        <th scope="col">Gzip</th>
       </tr>
     </thead>
     <tbody>
@@ -96,9 +97,15 @@ Here are some general recommendations on what compression levels to use:
   <figcaption>{{ figure_link(caption="Recommended compression levels to use.") }}</figcaption>
 </figure>
 
-Currently, when compression is used, the split between brotli and gzip is about 23% / 77%.
+Currently, practically all text compression is done by one of two HTTP content encodings: [Gzip](https://tools.ietf.org/html/rfc1952) and [Brotli](https://github.com/google/brotli). Both are widely supported by browsers: [can I use Brotli](https://caniuse.com/?search=brotli)/[can I use Gzip](https://caniuse.com/?search=gzip)
 
-Approximately 60% of HTTP responses are delivered with text-based compression. This may seem like a surprising statistic, but keep in mind that it is based on all HTTP requests in the dataset. Some content, such as images, will not benefit from these compression algorithms. The table below summarizes the percentage of requests served with each content encoding.
+When you want to use Gzip, consider using [Zopfli](https://en.wikipedia.org/wiki/Zopfli), which generates smaller Gzip compatible files. This should be done especially for precompressed resources, since here the greatest [gains are expected](https://cran.r-project.org/web/packages/brotli/vignettes/brotli-2015-09-22.pdf). See this [comparison between Gzip and Zopfli](https://blog.codinghorror.com/zopfli-optimization-literally-free-bandwidth/) that takes into account different compression levels for Gzip.
+
+Many [popular servers](https://en.wikipedia.org/wiki/HTTP_compression#Servers_that_support_HTTP_compression) support dynamically and/or pre-compressed HTTP and many of them support [Brotli](https://en.wikipedia.org/wiki/Brotli).
+
+## Current state of HTTP compression
+
+Approximately 60% of HTTP responses are delivered with no text-based compression. This may seem like a surprising statistic, but keep in mind that it is based on all HTTP requests in the dataset. Some content, such as images, will not benefit from these compression algorithms and is therefore not often used, as shown in figure 19.2.
 
 <figure>
   <table>
@@ -118,7 +125,7 @@ Approximately 60% of HTTP responses are delivered with text-based compression. T
         <td class="numeric">59.67%</td>
       </tr>
       <tr>
-        <td>gzip</td>
+        <td>Gzip</td>
         <td class="numeric">30.82%</td>
         <td class="numeric">31.56%</td>
         <td class="numeric">31.21%</td>
@@ -138,29 +145,26 @@ Approximately 60% of HTTP responses are delivered with text-based compression. T
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Adoption of compression algorithms.") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Adoption of compression algorithms.", sheets_gid="1365871671", sql_file="19_01.type_of_content_encoding.sql") }}</figcaption>
 </figure>
 
-Of the resources that are served compressed, the majority are using either gzip (77%) or brotli (23%). The other compression algorithms are used infrequently.
+Of the resources that are served compressed, the majority are using either Gzip (77%) or Brotli (23%). The other compression algorithms are used infrequently.
 
 {{ figure_markup(
   image="compression-algorithms-for-http-requests.png",
-  caption="Compression algorithms .",
-  description="Bar chart showing around 77% requests use gzip, the remaining 23% use brotli.",
+  caption="Compression algorithm usage rates.",
+  description="A bar chart showing the usage rates of different compression algorithms for HTTP requests. 77.39% of HTTP requests that use compression employ the Gzip algorithm, 22.59% use Brotli, and 0.03% use some other method.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxUj8-0vKTqPAblIXqekSbiRh1D1lEuA3gVD9w23qwGPtJRE8FbgrURfPAgfFZX2l0t84Wy5ZAGqzR/pubchart?oid=1523202090&format=interactive",
   sheets_gid="1365871671",
   sql_file="19_01.type_of_content_encoding.sql"
   )
 }}
 
-
-## Current state of HTTP compression
-
-In the graph below, the top 11 content types are displayed with box sizes representing the relative number of requests. The color of each box represents how many of these resources were served compressed. Most of the media content is shaded orange, which is expected since gzip and brotli would have little to no benefit for them.  Most of the text content is shaded blue to indicate that they are being compressed. However, the light blue shading for some content types indicate that they are not compressed as consistently as the others.
+In the graph below, the top 11 content types are displayed with box sizes representing the relative number of requests. The color of each box represents how many of these resources were served compressed, orange indicates a low percentage of compression while blue indicates a high percentage of compression. Most of the media content is shaded orange, which is expected since Gzip and Brotli would have little to no benefit for them.  Most of the text content is shaded blue to indicate that they are being compressed. However, the light blue shading for some content types indicate that they are not compressed as consistently as the others.
 
 {{ figure_markup(
   image="compression-algorithms-by-content-type-desktop.png",
-  caption="Top compressed content types.",
+  caption="Top compressed content types on desktop.",
   description="Treemap chart showing image/jpeg (91,926,198 requests - 3.27% compressed), application/javascript (80,360,676 requests - 84.88% compressed), image/png (66,351,767 requests - 3.7% compressed), text/css (54,104,482 requests - 84.0% compressed), text/html (48,670,006 requests - 44.25% compressed), image/gif (39,390,408 requests - 3.42% compressed), text/javascript (35,491,375 requests - 90.74% compressed), application/x-javascript (22,714,896 requests - 93.14% compressed), application/json (13,453,942 requests - 63.02% compressed), text/plain (4,629,644 requests - 32.89% compressed).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxUj8-0vKTqPAblIXqekSbiRh1D1lEuA3gVD9w23qwGPtJRE8FbgrURfPAgfFZX2l0t84Wy5ZAGqzR/pubchart?oid=777357707&format=interactive",
   sheets_gid="449339162",
@@ -168,27 +172,11 @@ In the graph below, the top 11 content types are displayed with box sizes repres
   )
 }}
 
-
-Figure 19.1 above breaks down the percentages indicated as shadings in Figure 19.4 for the data types that should use compression.
-They are almost identical for desktop and mobile.
-Here's the analogous figure for those data types that ordinarily don't profit from further compression:
-
-
-{{ figure_markup(
-  image="http-compression-methods-for-image-types.png",
-  description="This breaks down what compression methods, if any, are used for all the content types which are images. For all three image types, i.e. jpeg, png and gif, around 96.5% use no compression is used.",
-  caption="Compression by content type as a percent for desktop.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxUj8-0vKTqPAblIXqekSbiRh1D1lEuA3gVD9w23qwGPtJRE8FbgrURfPAgfFZX2l0t84Wy5ZAGqzR/pubchart?oid=1287110333&format=interactive",
-  sheets_gid="449339162",
-  sql_file="19_01.type_of_content_encoding.sql"
-  )
-}}
+Figure 19.1 above breaks down the percentage of compression used per content type, in figure 19.6 this percentage is indicated as color. The two figures tell similar stories, non-text based assets are rarely compressed, while text-based assets are often compressed. The rates of compression are also similar for both mobile and desktop.
 
 ## First-party vs third-party compression
 
-In the [Third Parties](./third-parties) chapter, we learn about third parties and their impact on performance. When we compare compression techniques between first and third parties, we can see that third-party content tends to be compressed more than first-party content.
-
-Additionally, the percentage of brotli compression is higher for third-party content. This is likely due to the number of resources served from the larger third parties that typically support brotli, such as Google and Facebook.
+In the [Third Parties](./third-parties) chapter, we learn about third parties and their impact on performance. This is also true for third-party request compression.
 
 <figure>
   <table>
@@ -215,7 +203,7 @@ Additionally, the percentage of brotli compression is higher for third-party con
         <td class="numeric">58.11%</td>
       </tr>
       <tr>
-        <td>gzip</td>
+        <td>Gzip</td>
         <td class="numeric">30.95%</td>
         <td class="numeric">30.66%</td>
         <td class="numeric">32.36%</td>
@@ -244,16 +232,17 @@ Additionally, the percentage of brotli compression is higher for third-party con
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="First-party versus third-party compression by device type.", sheets_gid="862864630", sql_file="19_03.party_of_content_encoding.sql.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="First-party versus third-party compression by device type.", sheets_gid="862864630", sql_file="19_03.party_of_content_encoding.sql") }}</figcaption>
 </figure>
 
-Comparing with [last year's results](https://almanac.httparchive.org/en/2019/compression#first-party-vs-third-party-compression), we can see that there was a significant increase in the use of compression, notably brotli for first parties, almost to the point that the use of compression is around 40% for both first and third party and for desktop and mobile. However within the requests that do use compression, for first party the ratio of brotli compression is only 18%, while the ratio for third party is 27%.
+When we compare compression techniques between first and third parties, we can see that third-party content tends to be compressed more than first-party content. Additionally, the percentage of Brotli compression is higher for third-party content. This is likely due to the number of resources served from the larger third parties that typically support Brotli, such as Google and Facebook.
+
+Compared with [last year's results](../2019/compression#first-party-vs-third-party-compression), we can see that there was a significant increase in the use of compression, notably Brotli for first parties, almost to the point that the use of compression is around 40% for both first and third party, and for desktop and mobile. However within the requests that do use compression, for first parties, the ratio of Brotli compression is only 18%, while the ratio for third parties is 27%.
 
 
-## How to Analyze compression on your sites
+## How to analyze compression on your sites
 
-You can you [Firefox Developer Tools](https://developer.mozilla.org/en-US/docs/Tools) or [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) to quickly figure out for what content a website already uses some kind of compression.
-For this go to Network tab, right click and activate "Content Encoding" under Response Headers. Hovering over the size of individual files you will see "transferred over network" and "resource size". Aggregated for the entire site one can see size/transferred size for Firefox and  "transferred" and "resources" for Chrome on the bottom left hand side of the Network tab.
+You can use [Firefox Developer Tools](https://developer.mozilla.org/en-US/docs/Tools) or [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) to quickly figure out what content a website already compresses. To do this, go to the Network tab, right click and activate "Content Encoding" under Response Headers. Hovering over the size of individual files you will see "transferred over network" and "resource size". Aggregated for the entire site one can see size/transferred size for Firefox and  "transferred" and "resources" for Chrome on the bottom left hand side of the Network tab.
 
 {{ figure_markup(
   image="content-encoding.png",
@@ -265,15 +254,16 @@ For this go to Network tab, right click and activate "Content Encoding" under Re
   )
 }}
 
-Another tool to better understand compression on your site is Google's [Lighthouse](https://developers.google.com/web/tools/lighthouse) tool enables users to run a series of audits against web pages. The [text compression audit](https://developers.google.com/web/tools/lighthouse/audits/text-compression) evaluates whether a site can benefit from additional text-based compression. It does this by attempting to compress resources and evaluate whether an object's size can be reduced by at least 10% and 1,400 bytes. Depending on the score, you may see a compression recommendation in the results, with a list of specific resources that could be compressed.
+Another tool to better understand compression on your site is Google's [Lighthouse](https://developers.google.com/web/tools/lighthouse) tool, which enables you to run a series of audits against web pages. The [text compression audit](https://web.dev/uses-text-compression/) evaluates whether a site can benefit from additional text-based compression. It does this by attempting to compress resources and evaluate whether an object's size can be reduced by at least 10% and 1,400 bytes. Depending on the score, you may see a compression recommendation in the results, with a list of specific resources that could be compressed.
 
 
-Because the [HTTP Archive runs Lighthouse audits](./methodology#lighthouse) for each mobile page, we can aggregate the scores across all sites to learn how much opportunity there is to compress more content. Overall, 74% of websites are passing this audit and almost 13% of websites have scored below a 40. Compared to [last year's](https://almanac.httparchive.org/en/2019/compression#identifying-compression-opportunities) 62.5%, this year already 74% of the observed pages have the best text compression Lighthouse audio score.
+Because the [HTTP Archive runs Lighthouse audits](./methodology#lighthouse) for each mobile page, we can aggregate the scores across all sites to learn how much opportunity there is to compress more content. Overall, 74% of websites are passing this audit, while almost 13% of websites have scored below a 40. This is a 11.5% improvement when compared to [last year's](../2019/compression#identifying-compression-opportunities) 62.5% of passing scores.
 
+{# TODO(authors): Should this x-axis be labeled "Number of Requests"? Should it be more like "Percent of `enable-text-compression` scores"? #}
 {{ figure_markup(
   image="text-compression-lighthouse-scores.png",
   caption="Lighthouse \"enable text compression\" audit scores.",
-  description="Stacked bar chart showing 7% are costing less than 10%, 6% of sites are scoring between 10-39%, 10% of sites scoring between 40-79%, 3% of sites scoring between 80-99%, and 74% of sites have a pass with over 100% of text assets being compressed.",
+  description="Stacked bar chart breaking down the scores pages receive for the \"enable text compression\" Lighthouse audit. It shows that 7% of sites score less than 10%, 6% of sites are scoring between 10-39%, 10% of sites scoring between 40-79%, 3% of sites scoring between 80-99%, and 74% of sites have a pass with over 100% of text assets being compressed.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxUj8-0vKTqPAblIXqekSbiRh1D1lEuA3gVD9w23qwGPtJRE8FbgrURfPAgfFZX2l0t84Wy5ZAGqzR/pubchart?oid=1438276663&format=interactive",
   sheets_gid="1284073179",
   sql_file="19_04.distribution_of_text_compression_lighthouse.sql"
@@ -282,6 +272,6 @@ Because the [HTTP Archive runs Lighthouse audits](./methodology#lighthouse) for 
 
 ## Conclusion
 
-Compared with [last year's almanac](../2019/compression), there is a clear trend towards using more text compression. The number of requests that don't use any text compression went down a little more than 2%, while at the same time the use of brotli has increased by almost 2%. The Lighthouse scores have improved significantly.
+Compared with [last year's Almanac](../2019/compression), there is a clear trend towards using more text compression. The number of requests that don't use any text compression went down a little more than 2%, while at the same time the use of Brotli has increased by almost 2%. The Lighthouse scores have improved significantly.
 
-Text compression is widely used for the relevant formats, although there is still a significant percentage of the http-requests that could benefit from additional compression. You can profit from taking a close look at the configuration of your server and set compression methods and levels to your need. A great impact for a more positive user experience could be made by carefully choosing defaults for the most popular http servers.
+Text compression is widely used for the relevant formats, although there is still a significant percentage of HTTP requests that could benefit from additional compression. You can profit from taking a close look at the configuration of your server and set compression methods and levels to your need. A great impact for a more positive user experience could be made by carefully choosing defaults for the most popular HTTP servers.

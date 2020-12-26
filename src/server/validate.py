@@ -10,12 +10,14 @@ from .config import SUPPORTED_YEARS, DEFAULT_YEAR, SUPPORTED_CHAPTERS, SUPPORTED
 
 TYPO_CHAPTERS = {
     'http-2': 'http2',
+    'http3': 'http3',
     'mobileweb': 'mobile-web',
     'pageweight': 'page-weight',
     'resourcehints': 'resource-hints',
     'thirdparties': 'third-parties',
     'third-party': 'third-parties',
-    'sécurité': 'security'
+    'sécurité': 'security',
+    'js': 'javascript'
 }
 
 
@@ -26,18 +28,13 @@ def validate(func):
         year = kwargs.get('year')
         chapter = kwargs.get('chapter')
 
-        accepted_args = inspect.getargspec(func).args
+        accepted_args = inspect.getfullargspec(func).args
 
         lang, year = validate_lang_and_year(lang_arg, year)
 
         if 'lang' in accepted_args:
             kwargs.update({'lang': lang})
             if lang != lang_arg and lang_arg is not None:
-                # Normally we return a 302 for a language not yet supported
-                # but for zh-CHT migration we want a 301 to get Google to reindex
-                # TODO - Remove in future?
-                if lang_arg == 'zh-CHT':
-                    return redirect('%s' % request.full_path.replace(lang_arg, lang, 1), code=301)
                 return redirect('%s' % request.full_path.replace(lang_arg, lang, 1), code=302)
 
         if 'year' in accepted_args:
@@ -61,6 +58,9 @@ def validate_chapter(chapter, year):
         if chapter[-1] == "/":
             # Automatically remove any trailing slashes
             return chapter[:-1]
+        elif chapter.lower() in chapters_for_year:
+            # Automatically redirect to lowercase
+            return chapter.lower()
         elif chapter in TYPO_CHAPTERS:
             # Automatically redirect for configured typos
             logging.debug('Typo chapter requested: %s, redirecting to %s' % (chapter, TYPO_CHAPTERS.get(chapter)))

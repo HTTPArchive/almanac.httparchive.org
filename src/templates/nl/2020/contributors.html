@@ -1,0 +1,11 @@
+{% extends "base/contributors.html" %}
+
+{% block title %}{{ year }} Bijdragers | De Web Almanac door HTTP Archive{% endblock %}
+
+{% block description %}De {{ config.contributors.items() | length }} mensen die hebben bijgedragen aan de Web Almanac van {{ year }} als analisten, auteurs, ontwerpers, ontwikkelaars, redacteuren, leiders, recensenten en vertalers.{% endblock %}
+
+{% block filter_by_team %}Filter op team: <span id="filtered-contributors">{{ self.contributors() }}</span><span id="contributors-total-text" class="hidden"> van <span id="contributors-total">{{ config.contributors.items() | length }}</span></span> bijdragers.{% endblock %}
+{% block filter_by %}Filter op{% endblock %}
+
+{% block join_the_team_title%}Word lid van de Web Almanac team{% endblock %}
+{% block join_the_team_text%}Kom bij het team!{% endblock %}

@@ -6,6 +6,7 @@ description: Caching chapter of the 2019 Web Almanac covering cache-control, exp
 authors: [paulcalvano]
 reviewers: [obto, bkardell]
 analysts: [paulcalvano, obto]
+editors: [bazzadp]
 translators: []
 discuss: 1771
 results: https://docs.google.com/spreadsheets/d/1mnq03DqrRBwxfDV05uEFETK0_hPbYOynWxZkV3tFgNk/
@@ -36,7 +37,7 @@ Web architectures typically involve [multiple tiers of caching](https://blog.yoa
 
 * An end user's browser
 * A service worker cache in the user's browser
-* A shared gateway 
+* A shared gateway
 * CDNs, which offer the ability to cache at the edge, close to end users
 * A caching proxy in front of the application, to reduce the backend workload
 * The application and database layers
@@ -86,7 +87,7 @@ The example below contains an excerpt of a request/response header from HTTP Arc
 < ETag: "1566748830.0-3052-3932359948"
 ```
 
-The tool [RedBot.org](https://redbot.org/) allows you to input a URL and see a detailed explanation of how the response would be cached based on these headers. For example, [a test for the URL above](https://redbot.org/?uri=https%3A%2F%2Fhttparchive.org%2Fstatic%2Fjs%2Fmain.js) would output the following: 
+The tool [RedBot.org](https://redbot.org/) allows you to input a URL and see a detailed explanation of how the response would be cached based on these headers. For example, [a test for the URL above](https://redbot.org/?uri=https%3A%2F%2Fhttparchive.org%2Fstatic%2Fjs%2Fmain.js) would output the following:
 
 {{ figure_markup(
   image="ch16_fig1_redbot_example.jpg",
@@ -98,7 +99,7 @@ The tool [RedBot.org](https://redbot.org/) allows you to input a URL and see a d
   )
 }}
 
-If no caching headers are present in a response, then the [client is permitted to heuristically cache the response](https://paulcalvano.com/index.php/2018/03/14/http-heuristic-caching-missing-cache-control-and-expires-headers-explained/). Most clients implement a variation of the RFC's suggested heuristic, which is 10% of the time since `Last-Modified`. However, some may cache the response indefinitely. So, it is important to set specific caching rules to ensure that you are in control of the cacheability. 
+If no caching headers are present in a response, then the [client is permitted to heuristically cache the response](https://paulcalvano.com/index.php/2018/03/14/http-heuristic-caching-missing-cache-control-and-expires-headers-explained/). Most clients implement a variation of the RFC's suggested heuristic, which is 10% of the time since `Last-Modified`. However, some may cache the response indefinitely. So, it is important to set specific caching rules to ensure that you are in control of the cacheability.
 
 72% of responses are served with a `Cache-Control` header, and 56% of responses are served with an `Expires` header. However, 27% of responses did not use either header, and therefore are subject to heuristic caching. This is consistent across both desktop and mobile sites.
 
@@ -113,7 +114,7 @@ If no caching headers are present in a response, then the [client is permitted t
 
 ## What type of content are we caching?
 
-A cacheable resource is stored by the client for a period of time and available for reuse on a subsequent request. Across all HTTP requests, 80% of responses are considered cacheable, meaning that a cache is permitted to store them. Out of these, 
+A cacheable resource is stored by the client for a period of time and available for reuse on a subsequent request. Across all HTTP requests, 80% of responses are considered cacheable, meaning that a cache is permitted to store them. Out of these,
 
 * 6% of requests have a time to live (TTL) of 0 seconds, which immediately invalidates a cached entry.
 * 27% are cached heuristically because of a missing `Cache-Control` header.
@@ -235,7 +236,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
 
 While most of the median TTLs are high, the lower percentiles highlight some of the missed caching opportunities. For example, the median TTL for images is 28 hours, however the 25th percentile is just one-two hours and the 10th percentile indicates that 10% of cacheable image content is cached for less than one hour.
 
-By exploring the cacheability by content type in more detail in Figure 16.5 below, we can see that approximately half of all HTML responses are considered non-cacheable. Additionally, 16% of images and scripts are non-cacheable. 
+By exploring the cacheability by content type in more detail in Figure 16.5 below, we can see that approximately half of all HTML responses are considered non-cacheable. Additionally, 16% of images and scripts are non-cacheable.
 
 {{ figure_markup(
   image="fig5.png",
@@ -269,7 +270,7 @@ HTTP/1.1 introduced the `Cache-Control` header, and most modern clients support 
 * `must-revalidate` tells the client a cached entry must be validated with a conditional request prior to its use.
 * `private` indicates a response should only be cached by a browser, and not by an intermediary that would serve multiple clients.
 
-53% of HTTP responses include a `Cache-Control` header with the `max-age` directive, and 54% include the Expires header. However, only 41% of these responses use both headers, which means that 13% of responses are caching solely based on the older `Expires` header. 
+53% of HTTP responses include a `Cache-Control` header with the `max-age` directive, and 54% include the Expires header. However, only 41% of these responses use both headers, which means that 13% of responses are caching solely based on the older `Expires` header.
 
 {{ figure_markup(
   image="fig7.png",
@@ -342,7 +343,7 @@ The HTTP/1.1 [specification](https://tools.ietf.org/html/rfc7234#section-5.2.1) 
   <figcaption>{{ figure_link(caption="<code>Cache-Control</code> directives.") }}</figcaption>
 </figure>
 
-For example, `cache-control: public, max-age=43200` indicates that a cached entry should be stored for 43,200 seconds and it can be stored by all caches. 
+For example, `cache-control: public, max-age=43200` indicates that a cached entry should be stored for 43,200 seconds and it can be stored by all caches.
 
 {{ figure_markup(
   image="fig9.png",
@@ -359,13 +360,13 @@ For example, `cache-control: public, max-age=43200` indicates that a cached entr
 
 Figure 16.9 above illustrates the top 15 `Cache-Control` directives in use on mobile websites. The results for desktop and mobile are very similar. There are a few interesting observations about the popularity of these cache directives:
 
-* `max-age` is used by almost 75% of `Cache-Control` headers, and `no-store` is used by 18%. 
+* `max-age` is used by almost 75% of `Cache-Control` headers, and `no-store` is used by 18%.
 * `public` is rarely necessary since cached entries are assumed `public` unless `private` is specified. Approximately 38% of responses include `public`.
 * The `immutable` directive is relatively new, [introduced in 2017](https://code.facebook.com/posts/557147474482256/this-browser-tweak-saved-60-of-requests-to-facebook) and is [supported on Firefox and Safari](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#Browser_compatibility). Its usage has grown to 3.4%, and it is widely used in [Facebook and Google third-party responses](https://discuss.httparchive.org/t/cache-control-immutable-a-year-later/1195).
 
-Another interesting set of directives to show up in this list are `pre-check` and `post-check`, which are used in 2.2% of `Cache-Control` response headers (approximately 7.8 million responses). This pair of headers was [introduced in Internet Explorer 5 to provide a background validation](https://blogs.msdn.microsoft.com/ieinternals/2009/07/20/internet-explorers-cache-control-extensions/) and was rarely implemented correctly by websites. 99.2% of responses using these headers had used the combination of `pre-check=0` and `post-check=0`. When both of these directives are set to 0, then both directives are ignored. So, it seems these directives were never used correctly!  
+Another interesting set of directives to show up in this list are `pre-check` and `post-check`, which are used in 2.2% of `Cache-Control` response headers (approximately 7.8 million responses). This pair of headers was [introduced in Internet Explorer 5 to provide a background validation](https://blogs.msdn.microsoft.com/ieinternals/2009/07/20/internet-explorers-cache-control-extensions/) and was rarely implemented correctly by websites. 99.2% of responses using these headers had used the combination of `pre-check=0` and `post-check=0`. When both of these directives are set to 0, then both directives are ignored. So, it seems these directives were never used correctly!
 
-In the long tail, there are more than 1,500 erroneous directives in use across 0.28% of responses. These are ignored by clients, and include misspellings such as "nocache", "s-max-age", "smax-age", and "maxage". There are also numerous non-existent directives such as "max-stale", "proxy-public", "surrogate-control", etc. 
+In the long tail, there are more than 1,500 erroneous directives in use across 0.28% of responses. These are ignored by clients, and include misspellings such as "nocache", "s-max-age", "smax-age", and "maxage". There are also numerous non-existent directives such as "max-stale", "proxy-public", "surrogate-control", etc.
 
 ## `Cache-Control`: `no-store`, `no-cache` and `max-age=0`
 
@@ -380,13 +381,13 @@ Functionally, `no-cache` and `max-age=0` are similar, since they both require re
 
 Over 3 million responses include the combination of `no-store`, `no-cache`, and `max-age=0`. Of these directives `no-store` takes precedence and the other directives are merely redundant
 
-18% of responses include `no-store` and 16.6% of responses include both `no-store` and `no-cache`. Since `no-store` takes precedence, the resource is ultimately non-cacheable. 
+18% of responses include `no-store` and 16.6% of responses include both `no-store` and `no-cache`. Since `no-store` takes precedence, the resource is ultimately non-cacheable.
 
 The `max-age=0` directive is present on 1.1% of responses (more than four million responses) where `no-store` is not present. These resources will be cached in the browser but will require revalidation as they are immediately expired.
 
 ## How do cache TTLs compare to resource age?
 
-So far we've talked about how web servers tell a client what is cacheable, and how long it has been cached for. When designing cache rules, it is also important to understand how old the content you are serving is. 
+So far we've talked about how web servers tell a client what is cacheable, and how long it has been cached for. When designing cache rules, it is also important to understand how old the content you are serving is.
 
 When you are selecting a cache TTL, ask yourself: "how often are you updating these assets?" and "what is their content sensitivity?". For example, if a hero image is going to be modified infrequently, then cache it with a very long TTL. If you expect a JavaScript resource to change frequently, then version it and cache it with a long TTL or cache it with a shorter TTL.
 
@@ -413,7 +414,7 @@ By comparing a resources cacheability to its age, we can determine if the TTL is
 < Last-Modified: Sun, 25 Aug 2019 16:00:30 GMT
 < Cache-Control: public, max-age=43200
 < Expires: Mon, 14 Oct 2019 07:36:57 GMT
-< ETag: "1566748830.0-3052-3932359948" 
+< ETag: "1566748830.0-3052-3932359948"
 ```
 
 Overall, 59% of resources served on the web have a cache TTL that is too short compared to its content age. Furthermore, the median delta between the TTL and age is 25 days.
@@ -446,7 +447,7 @@ When we break this out by first vs third-party, we can also see that 70% of firs
 
 ## Validating freshness
 
-The HTTP response headers used for validating the responses stored within a cache are `Last-Modified` and `ETag`. The `Last-Modified` header does exactly what its name implies and provides the time that the object was last modified. The `ETag` header provides a unique identifier for the content. 
+The HTTP response headers used for validating the responses stored within a cache are `Last-Modified` and `ETag`. The `Last-Modified` header does exactly what its name implies and provides the time that the object was last modified. The `ETag` header provides a unique identifier for the content.
 
 For example, the response below was last modified on 25 Aug 2019 and it has an `ETag` value of `"1566748830.0-3052-3932359948"`
 
@@ -463,9 +464,9 @@ For example, the response below was last modified on 25 Aug 2019 and it has an `
 < ETag: "1566748830.0-3052-3932359948"
 ```
 
-A client could send a conditional request to validate a cached entry by using the `Last-Modified` value in a request header named `If-Modified-Since`. Similarly, it could also validate the resource with an `If-None-Match` request header, which validates against the `ETag` value the client has for the resource in its cache. 
+A client could send a conditional request to validate a cached entry by using the `Last-Modified` value in a request header named `If-Modified-Since`. Similarly, it could also validate the resource with an `If-None-Match` request header, which validates against the `ETag` value the client has for the resource in its cache.
 
-In the example below, the cache entry is still valid, and an `HTTP 304` was returned with no content. This saves the download of the resource itself. If the cache entry was no longer fresh, then the server would have responded with a `200` and the updated resource which would have to be downloaded again. 
+In the example below, the cache entry is still valid, and an `HTTP 304` was returned with no content. This saves the download of the resource itself. If the cache entry was no longer fresh, then the server would have responded with a `200` and the updated resource which would have to be downloaded again.
 
 ```
 > GET /static/js/main.js HTTP/1.1
@@ -496,7 +497,7 @@ Overall, 65% of responses are served with a `Last-Modified` header, 42% are serv
 
 ## Validity of date strings
 
-There are a few HTTP headers used to convey timestamps, and the format for these are very important. The `Date` response header indicates when the resource was served to a client. The `Last-Modified` response header indicates when a resource was last changed on the server. And the `Expires` header is used to indicate how long a resource is cacheable until (unless a `Cache-Control` header is present). 
+There are a few HTTP headers used to convey timestamps, and the format for these are very important. The `Date` response header indicates when the resource was served to a client. The `Last-Modified` response header indicates when a resource was last changed on the server. And the `Expires` header is used to indicate how long a resource is cacheable until (unless a `Cache-Control` header is present).
 
 All three of these HTTP headers use a date formatted string to represent timestamps.
 
@@ -542,11 +543,11 @@ The largest source of invalid `Expires` headers is from assets served from a pop
 
 ## `Vary` header
 
-One of the most important steps in caching is determining if the resource being requested is cached or not. While this may seem simple, many times the URL alone is not enough to determine this. For example, requests with the same URL could vary in what [compression](./compression) they used (gzip, brotli, etc.) or be modified and tailored for mobile visitors.
+One of the most important steps in caching is determining if the resource being requested is cached or not. While this may seem simple, many times the URL alone is not enough to determine this. For example, requests with the same URL could vary in what [compression](./compression) they used (Gzip, Brotli, etc.) or be modified and tailored for mobile visitors.
 
 To solve this problem, clients give each cached resource a unique identifier (a cache key). By default, this cache key is simply the URL of the resource, but developers can add other elements (like compression method) by using the Vary header.
 
-A Vary header instructs a client to add the value of one or more request header values to the cache key. The most common example of this is `Vary: Accept-Encoding`, which will result in different cached entries for `Accept-Encoding` request header values (i.e. `gzip`, `br`, `deflate`). 
+A Vary header instructs a client to add the value of one or more request header values to the cache key. The most common example of this is `Vary: Accept-Encoding`, which will result in different cached entries for `Accept-Encoding` request header values (i.e. `gzip`, `br`, `deflate`).
 
 Another common value is `Vary: Accept-Encoding, User-Agent`, which instructs the client to vary the cached entry by both the Accept-Encoding values and the `User-Agent` string. When dealing with shared proxies and CDNs, using values other than `Accept-Encoding` can be problematic as it dilutes the cache keys and can reduce the amount of traffic served from cache.
 
@@ -581,11 +582,11 @@ When a response is cached, its entire headers are swapped into the cache as well
   )
 }}
 
-But what happens if you have a `Set-Cookie` on a response? According to [RFC 7234 Section 8](https://tools.ietf.org/html/rfc7234#section-8), the presence of a `Set-Cookie` response header does not inhibit caching. This means that a cached entry might contain a `Set-Cookie` if it was cached with one. The RFC goes on to recommend that you should configure appropriate `Cache-Control` headers to control how responses are cached. 
+But what happens if you have a `Set-Cookie` on a response? According to [RFC 7234 Section 8](https://tools.ietf.org/html/rfc7234#section-8), the presence of a `Set-Cookie` response header does not inhibit caching. This means that a cached entry might contain a `Set-Cookie` if it was cached with one. The RFC goes on to recommend that you should configure appropriate `Cache-Control` headers to control how responses are cached.
 
 One of the risks of caching responses with `Set-Cookie` is that the cookie values can be stored and served to subsequent requests. Depending on the cookie's purpose, this could have worrying results. For example, if a login cookie or a session cookie is present in a shared cache, then that cookie might be reused by another client. One way to avoid this is to use the `Cache-Control` `private` directive, which only permits the response to be cached by the client browser.
 
-3% of cacheable responses contain a `Set-Cookie header`. Of those responses, only 18% use the `private` directive. The remaining 82% include 5.3 million HTTP responses that include a `Set-Cookie` which can be cached by public and private cache servers. 
+3% of cacheable responses contain a `Set-Cookie header`. Of those responses, only 18% use the `private` directive. The remaining 82% include 5.3 million HTTP responses that include a `Set-Cookie` which can be cached by public and private cache servers.
 
 {{ figure_markup(
   image="ch16_fig16_cacheable_responses_set_cookie.jpg",
@@ -714,7 +715,7 @@ Lighthouse computes a score for each audit, ranging from 0% to 100%, and those s
   )
 }}
 
-Only 3.4% of sites scored a 100%, meaning that most sites can benefit from some cache optimizations. A vast majority of sites sore below 40%, with 38% scoring less than 10%. Based on this, there is a significant amount of caching opportunities on the web. 
+Only 3.4% of sites scored a 100%, meaning that most sites can benefit from some cache optimizations. A vast majority of sites sore below 40%, with 38% scoring less than 10%. Based on this, there is a significant amount of caching opportunities on the web.
 
 Lighthouse also indicates how many bytes could be saved on repeat views by enabling a longer cache policy. Of the sites that could benefit from additional caching, 82% of them can reduce their page weight by up to a whole Mb!
 

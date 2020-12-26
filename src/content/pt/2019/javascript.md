@@ -6,6 +6,7 @@ description: Capítulo de JavaScript de 2019 Web Almanac que cobre quanto JavaSc
 authors: [housseindjirdeh]
 reviewers: [obto, paulcalvano, mathiasbynens, rviscomi]
 analysts: [rviscomi]
+editors: [obto]
 translators: [HakaCode]
 discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/
@@ -146,8 +147,8 @@ No contexto das interações navegador-servidor, a compactação de recursos se 
 
 Existem vários algoritmos de compactação de texto, mas apenas dois são usados ​​principalmente para compactação (e descompressão) de solicitações de rede HTTP:
 
-- [Gzip](https://www.gzip.org/) (gzip): O formato de compactação mais amplamente usado para interações de servidor e cliente.
-- [Brotli](https://github.com/google/brotli) (br): Um algoritmo de compressão mais recente que visa melhorar ainda mais as taxas de compressão. [90% dos navegadores](https://caniuse.com/#feat=brotli) eles suportam a codificação Brotli.
+- [Gzip](https://www.gzip.org/) (`gzip`): O formato de compactação mais amplamente usado para interações de servidor e cliente.
+- [Brotli](https://github.com/google/brotli) (`br`): Um algoritmo de compressão mais recente que visa melhorar ainda mais as taxas de compressão. [90% dos navegadores](https://caniuse.com/#feat=brotli) eles suportam a codificação Brotli.
 
 Scripts compactados devem sempre ser descompactados pelo navegador depois de transferidos. Isso significa que seu conteúdo permanece o mesmo e os tempos de execução não são otimizados de forma alguma. No entanto, a compactação de recursos sempre melhorará os tempos de download, que também é um dos estágios mais caros do processamento de JavaScript. Garantir que os arquivos JavaScript sejam compactados corretamente pode ser um dos fatores mais importantes para melhorar o desempenho do site.
 
@@ -155,8 +156,8 @@ Quantos sites estão compactando seus recursos JavaScript?
 
 {{ figure_markup(
   image="/static/images/2019/javascript/fig10.png",
-  caption="Porcentagem de sites que compactam recursos JavaScript com gzip ou brotli.",
-  description="Gráfico de barras mostrando 67% / 65% dos recursos JavaScript são compactados com gzip em desktops e dispositivos móveis, respectivamente, e 15% / 14% são compactados com Brotli.",
+  caption="Porcentagem de sites que compactam recursos JavaScript com Gzip ou Brotli.",
+  description="Gráfico de barras mostrando 67% / 65% dos recursos JavaScript são compactados com Gzip em desktops e dispositivos móveis, respectivamente, e 15% / 14% são compactados com Brotli.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=241928028&format=interactive"
   )
 }}

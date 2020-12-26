@@ -6,6 +6,7 @@ description: CDNの採用と使用法、RTTとTLSの管理、HTTP/2の採用、�
 authors: [andydavies, colinbendell]
 reviewers: [yoavweiss, paulcalvano, pmeenan, enygren]
 analysts: [raghuramakrishnan71, rviscomi]
+editors: [rviscomi]
 translators: [ksakae]
 discuss: 1772
 results: https://docs.google.com/spreadsheets/d/1Y7kAxjxUl8puuTToe6rL3kqJLX1ftOb0nCcD8m3lZBw/
@@ -1057,7 +1058,7 @@ TLSおよびRTTのパフォーマンスにCDNを使用することに加えて�
 
 一般にCDNの使用は、TLS1.0のような非常に古くて侵害されたTLSバージョンの使用率が高いoriginホストサービスと比較して、強力な暗号およびTLSバージョンの迅速な採用と高い相関があります。
 
-<p class="note">Web Almanacで使用されるChromeは、ホストが提供する最新のTLSバージョンと暗号にバイアスをかけることを強調することが重要です。また、これらのWebページは2019年7月にクロールされ、新しいバージョンを有効にしたWebサイトの採用を反映しています。</p> 
+<p class="note">Web Almanacで使用されるChromeは、ホストが提供する最新のTLSバージョンと暗号にバイアスをかけることを強調することが重要です。また、これらのWebページは2019年7月にクロールされ、新しいバージョンを有効にしたWebサイトの採用を反映しています。</p>
 
 {{ figure_markup(
   image="fig18.png",
@@ -1491,7 +1492,7 @@ CDNのHTTP/2の採用率は70％を超えていますが、originページはほ
 
 Webサイトは、さまざまなHTTPヘッダーを使用して、ブラウザーとCDNのキャッシュ動作を制御できます。 最も一般的なのは、最新のものであることを保証するためにoriginへ戻る前に何かをキャッシュできる期間を具体的に決定する `Cache-Control`ヘッダーです。
 
-別の便利なツールは、`Vary` HTTPヘッダーの使用です。このヘッダーは、キャッシュをフラグメント化する方法をCDNとブラウザーの両方に指示します。`Vary`ヘッダーにより、originはリソースの表現が複数あることを示すことができ、CDNは各バリエーションを個別にキャッシュする必要があります。最も一般的な例は[圧縮](./compression)です。リソースを`Vary：Accept-Encoding`を使用すると、CDNは同じコンテンツを、非圧縮、gzip、Brotliなどの異なる形式でキャッシュできます。一部のCDNでは、使用可能なコピーを1つだけ保持するために、この圧縮を急いで実行します。同様に、この`Vary`ヘッダーは、コンテンツをキャッシュする方法と新しいコンテンツを要求するタイミングをブラウザーに指示します。
+別の便利なツールは、`Vary` HTTPヘッダーの使用です。このヘッダーは、キャッシュをフラグメント化する方法をCDNとブラウザーの両方に指示します。`Vary`ヘッダーにより、originはリソースの表現が複数あることを示すことができ、CDNは各バリエーションを個別にキャッシュする必要があります。最も一般的な例は[圧縮](./compression)です。リソースを`Vary：Accept-Encoding`を使用すると、CDNは同じコンテンツを、非圧縮、Gzip、Brotliなどの異なる形式でキャッシュできます。一部のCDNでは、使用可能なコピーを1つだけ保持するために、この圧縮を急いで実行します。同様に、この`Vary`ヘッダーは、コンテンツをキャッシュする方法と新しいコンテンツを要求するタイミングをブラウザーに指示します。
 
 {{ figure_markup(
   image="use_of_vary_on_cdn.png",

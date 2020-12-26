@@ -27,11 +27,11 @@ jobs:
     - name: Checkout branch
       uses: actions/checkout@v2.3.3
     - name: Setup Node.js for use with actions
-      uses: actions/setup-node@v1.4.4
+      uses: actions/setup-node@v2.1.4
       with:
         version:  12.x
     - name: Set up Python 3.8
-      uses: actions/setup-python@v2.1.4
+      uses: actions/setup-python@v2.2.1
       with:
         python-version: '3.8'
     - name: Install Asian Fonts
@@ -50,19 +50,19 @@ jobs:
       run: sudo apt install pdftk
     - name: Run the website
       run: ./src/tools/scripts/run_and_test_website.sh
-    - name: Update timestamps
-      run: |
-        cd src
-        npm run timestamps
     - name: Generating Ebooks
       run: |
         cd src
         npm run ebooks
+    - name: Update timestamps
+      run: |
+        cd src
+        npm run timestamps
     - name: Create Pull Request
       id: cpr
-      uses: peter-evans/create-pull-request@v3.5.1
+      uses: peter-evans/create-pull-request@v3.6.0
       with:
-        title: Regenerate Ebooks
+        title: Pre-deploy Updates
         branch-suffix: timestamp
         commit-message: Update Timestamps and Generate Ebooks
         body: |

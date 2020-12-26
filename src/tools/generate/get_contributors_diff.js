@@ -2,7 +2,7 @@
  * Show the contributors should be added in `config/year.json` file and which should remove based on their contributions in a perticular team
  *
  * @param {object} configs all config file generate with get_yearly_configs().
- * @param {object}  chapter_contributors parsed contributors for each year (author, analyst, reviewer)[Must be a Set (finding is more efficient)]
+ * @param {object}  chapter_contributors parsed contributors for each year (author, analyst, reviewer, editor)[Must be a Set (finding is more efficient)]
  * @returns void does not return anything just output in console.
  */
 const get_contributors_difference = async (configs, chapter_contributors) => {
@@ -13,13 +13,15 @@ const get_contributors_difference = async (configs, chapter_contributors) => {
     not_contributed_but_in_file[year] = {
       "authors": new Set(),
       "reviewers": new Set(),
-      "analysts": new Set()
+      "analysts": new Set(),
+      "editors": new Set()
     };
 
     contributed_but_not_in_file[year] = {
       "authors": new Set(),
       "reviewers": new Set(),
-      "analysts": new Set()
+      "analysts": new Set(),
+      "editors": new Set()
     };
 
     const config_contributors = configs[year].contributors;
@@ -40,6 +42,12 @@ const get_contributors_difference = async (configs, chapter_contributors) => {
         }
       }
 
+      if (contributor_teams.includes("editors")) {
+        if (!year_chapter_contributors.editors.has(contributor)) {
+          not_contributed_but_in_file[year].editors.add(contributor);
+        }
+      }
+
       if (contributor_teams.includes("reviewers")) {
         if (!year_chapter_contributors.reviewers.has(contributor)) {
           not_contributed_but_in_file[year].reviewers.add(contributor);
@@ -51,6 +59,7 @@ const get_contributors_difference = async (configs, chapter_contributors) => {
     const year_chapter_authors = year_chapter_contributors.authors;
     const year_chapter_reviewers = year_chapter_contributors.reviewers;
     const year_chapter_analysts = year_chapter_contributors.analysts;
+    const year_chapter_editors = year_chapter_contributors.editors;
     year_chapter_authors.forEach(author => {
       if (!config_contributors[author] || !config_contributors[author].teams.includes("authors")) {
         contributed_but_not_in_file[year].authors.add(author);
@@ -66,17 +75,24 @@ const get_contributors_difference = async (configs, chapter_contributors) => {
         contributed_but_not_in_file[year].analysts.add(analyst);
       }
     });
+    year_chapter_editors.forEach(editor => {
+      if (!config_contributors[editor] || !config_contributors[editor].teams.includes("editors")) {
+        contributed_but_not_in_file[year].editors.add(editor);
+      }
+    });
 
 
     // Print the data in console
     const not_contributed_authors = not_contributed_but_in_file[year].authors;
     const not_contributed_analysts = not_contributed_but_in_file[year].analysts;
     const not_contributed_reviewers = not_contributed_but_in_file[year].reviewers;
+    const not_contributed_editors = not_contributed_but_in_file[year].editors;
     const contributed_authors = contributed_but_not_in_file[year].authors;
     const contributed_analysts = contributed_but_not_in_file[year].analysts;
     const contributed_reviewers = contributed_but_not_in_file[year].reviewers;
+    const contributed_editors = contributed_but_not_in_file[year].editors;
 
-    if (not_contributed_analysts.size > 0 || not_contributed_authors.size > 0 || not_contributed_reviewers.size > 0 || contributed_analysts.size > 0 || contributed_authors.size > 0 || contributed_reviewers.size > 0) {
+    if (not_contributed_analysts.size > 0 || not_contributed_authors.size > 0 || not_contributed_reviewers.size > 0 || contributed_analysts.size > 0 || contributed_authors.size > 0 || contributed_reviewers.size > 0 || contributed_editors.size > 0) {
       console.log("\n****************************************************");
       console.log(`Contributor Discrepancies in config/${year}.json`);
       if (not_contributed_authors.size > 0 || contributed_authors.size > 0) {
@@ -112,6 +128,15 @@ const get_contributors_difference = async (configs, chapter_contributors) => {
         if (contributed_reviewers.size > 0) {
           console.log("\t\tAdd(contributed, but are not listed)");
           contributed_reviewers.forEach(reviewer => console.log("\t\t\t### ", reviewer));
+        }
+      }
+
+      if (not_contributed_editors.size > 0 || contributed_editors.size > 0) {
+        console.log("\n\tEditors");
+        // Editors are not always listed against a chapter so only list editors not in config
+        if (contributed_editors.size > 0) {
+          console.log("\t\tAdd(contributed, but are not listed)");
+          contributed_editors.forEach(editor => console.log("\t\t\t### ", editor));
         }
       }
     }

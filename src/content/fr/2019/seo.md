@@ -5,6 +5,7 @@ title: SEO
 description: Chapitre SEO du web Almanac 2019. Découvrez des statistiques sur le contenu, les meta tags, l'indexation, les liens, la performance web...
 authors: [ymschaap, rachellcostello, AVGP]
 reviewers: [clarkeclark, andylimn, AymenLoukil, catalinred, mattludwig]
+editors: [rachellcostello]
 translators: [AymenLoukil]
 discuss: 1765
 results: https://docs.google.com/spreadsheets/d/1uARtBWwz9nJOKqKPFinAMbtoDgu5aBtOhsBNmsCoTaA/
@@ -135,8 +136,8 @@ Compte tenu de l'importance de l'attribut `Alt` pour le référencement et l'acc
 Pour afficher le contenu d'une page aux utilisateurs dans les SERP, les robots des moteurs de recherche doivent d'abord être autorisés à accéder à cette page et à l'indexer. Certains des facteurs qui influent sur la capacité d'un moteur de recherche à explorer et à indexer des pages sont les suivants:
 
 - Codes de réponse HTTP
-- Balise `noindex` 
-- Balise link canonical 
+- Balise `noindex`
+- Balise link canonical
 - Le fichier `robots.txt` (exploration)
 
 #### Codes de réponses HTTP

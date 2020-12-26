@@ -22,6 +22,7 @@
   padding: 1rem;
   max-width: 100%;
   justify-content: center;
+  position: relative;
 }
 
 .table-wrap-container {
@@ -203,7 +204,8 @@
 
 .byline.reviewers,
 .byline.translators,
-.byline.analysts {
+.byline.analysts,
+.byline.editors {
   font-weight: normal;
 }
 
@@ -483,13 +485,22 @@ figcaption {
   text-align: center;
 }
 
+.figure-wrapper {
+  position: relative;
+  margin: 0 auto;
+}
+
 .figure-dropdown {
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: -10px;
+  right: -50px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+}
+
+.table-wrap .figure-dropdown {
+  top: 0;
 }
 
 .figure-dropdown button {
@@ -579,13 +590,17 @@ figure .big-number {
   font: bold 128px/1em Poppins, sans-serif;
   font: bold 8rem/1em Poppins, sans-serif;
   color: #62718b;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 figure .medium-number {
   text-align: center;
-  font: bold 64px/1em Poppins, sans-serif;
-  font: bold 4rem/1em Poppins, sans-serif;
+  font: bold 48px/1em Poppins, sans-serif;
+  font: bold 3rem/1em Poppins, sans-serif;
   color: #62718b;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 figure .really-big-number {
@@ -593,12 +608,17 @@ figure .really-big-number {
   font: bold 24px/1em Poppins, sans-serif;
   font: bold 1.5rem/1em Poppins, sans-serif;
   color: #62718b;
+  word-break: break-word;
   overflow-wrap: break-word;
-  word-break: break-all;
 }
 
 figure .fig-mobile {
   display: none;
+}
+
+figure object {
+  max-width: 100%;
+  height: auto;
 }
 
 figure .fig-desktop {
@@ -696,6 +716,14 @@ figure .fig-desktop {
 }
 
 @media (max-width: 600px) {
+  figure {
+    margin: 0 15px;
+  }
+
+  .figure-dropdown {
+    right: -40px;
+  }
+
   figure .big-number {
     font-size: 80px;
     font-size: 5rem;

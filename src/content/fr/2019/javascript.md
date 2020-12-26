@@ -6,6 +6,7 @@ description: Chapitre JavaScript du Web Almanac 2019 couvrant la quantité de Ja
 authors: [housseindjirdeh]
 reviewers: [obto, paulcalvano, mathiasbynens, rviscomi]
 analysts: [rviscomi]
+editors: [obto]
 translators: [borisschapira]
 discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/
@@ -146,8 +147,8 @@ Dans le contexte des interactions entre navigateur et serveur, la compression de
 
 Il existe de nombreux algorithmes de compression de texte, mais seuls deux sont principalement utilisés pour la compression (et la décompression) des requêtes sur le réseau HTTP&nbsp;:
 
-- [Gzip](https://www.gzip.org/) (gzip)&nbsp;: le format de compression le plus utilisé pour les interactions entre serveurs et clients&nbsp;;
-- [Brotli](https://github.com/google/brotli) (br)&nbsp;: un algorithme de compression plus récent visant à améliorer encore les taux de compression. [90&nbsp;% des navigateurs](https://caniuse.com/#feat=brotli) supportent la compression Brotli.
+- [Gzip](https://www.gzip.org/) (`gzip`)&nbsp;: le format de compression le plus utilisé pour les interactions entre serveurs et clients&nbsp;;
+- [Brotli](https://github.com/google/brotli) (`br`)&nbsp;: un algorithme de compression plus récent visant à améliorer encore les taux de compression. [90&nbsp;% des navigateurs](https://caniuse.com/#feat=brotli) supportent la compression Brotli.
 
 Les scripts compressés devront toujours être décompressés par le navigateur une fois transférés. Cela signifie que son contenu reste le même et que les temps d’exécution ne sont pas du tout optimisés. Cependant, la compression des ressources améliorera toujours leur temps de téléchargement, qui est également l’une des étapes les plus coûteuses du traitement JavaScript. S’assurer que les fichiers JavaScript sont correctement compressés peut constituer un des principaux facteurs d’amélioration des performances pour un site web.
 
@@ -155,8 +156,8 @@ Combien de sites compressent leurs ressources JavaScript&nbsp;?
 
 {{ figure_markup(
   image="fig10.png",
-  caption="Pourcentage de sites compressant des ressources JavaScript avec gzip ou brotli.",
-  description="Diagramme à barres montrant que 67&nbsp;%&#8239;/&#8239;65&nbsp;% des ressources JavaScript sont compressées avec gzip sur les ordinateurs de bureau et les mobiles respectivement, et 15&nbsp;%&#8239;/&#8239;14&nbsp;% sont compressées en utilisant Brotli.",
+  caption="Pourcentage de sites compressant des ressources JavaScript avec Gzip ou Brotli.",
+  description="Diagramme à barres montrant que 67&nbsp;%&#8239;/&#8239;65&nbsp;% des ressources JavaScript sont compressées avec Gzip sur les ordinateurs de bureau et les mobiles respectivement, et 15&nbsp;%&#8239;/&#8239;14&nbsp;% sont compressées en utilisant Brotli.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=241928028&format=interactive"
   )
 }}

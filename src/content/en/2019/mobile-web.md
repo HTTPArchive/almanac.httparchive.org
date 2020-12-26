@@ -6,6 +6,7 @@ description: Mobile Web chapter of the 2019 Web Almanac covering page loading, t
 authors: [obto]
 reviewers: [AymenLoukil, hyperpress]
 analysts: [ymschaap, rviscomi]
+editors: [rviscomi]
 translators: []
 discuss: 1767
 results: https://docs.google.com/spreadsheets/d/1dPBDeHigqx9FVaqzfq7CYTz4KjllkMTkfq4DG4utE_g/
