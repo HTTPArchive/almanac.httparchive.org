@@ -9,8 +9,8 @@ analysts: [rviscomi, LeaVerou, dooman87]
 editors: [bazzadp]
 translators: []
 LeaVerou_bio: Lea <a href="https://designftw.mit.edu">teaches HCI & web programming</a> and <a href="https://mavo.io">researches how to make web programming easier</a> at <a href="https://mit.edu">MIT</a>. She is a bestselling technical <a href="https://www.amazon.com/CSS-Secrets-Lea-Verou/dp/1449372635?tag=leaverou-20">author</a> and experienced <a href="https://lea.verou.me/speaking">speaker</a>. She is passionate about open web standards and is a longtime <a href="https://www.w3.org/Style/CSS/members.en.php3">CSS Working Group</a> member. Lea has started <a href="https://github.com/leaverou">several popular open source projects and web applications</a>, such as <a href="https://prismjs.com">Prism</a>, and <a href="https://github.com/leaverou/awesomplete">Awesomplete</a>. She tweets <a href="https://twitter.com/leaverou">@leaverou</a> and blogs at <a href="https://lea.verou.me">lea.verou.me</a>.
-svgeesus_bio: Chris Lilley is a Technical Director at the World Wide Web Consortium (W3C). Considered “the father of SVG”, he also co-authored PNG, was co-editor of CSS2, chaired the group that developed <code>@font-face</code>, and co-developed WOFF. Ex Technical Architecture Group. Chris is still trying to get Color Management on the Web, sigh. Currently working on CSS levels 3/4/5 (no, really), Web Audio, and WOFF2..
-rachelandrew_bio: I’m a web developer, writer, public speaker. Co-founder of <a href="https://grabaperch.com">Perch CMS</a> and <a href="https://noti.st">Notist</a>. Member of the <a href="https://www.w3.org/wiki/CSSWG">CSS Working Group</a>. Editor in Chief of <a href="https://www.smashingmagazine.com/">Smashing Magazine</a>.
+svgeesus_bio: Chris Lilley is a Technical Director at the World Wide Web Consortium (W3C). Considered "the father of SVG", he also co-authored PNG, was co-editor of CSS2, chaired the group that developed <code>@font-face</code>, and co-developed WOFF. Ex Technical Architecture Group. Chris is still trying to get Color Management on the Web, sigh. Currently working on CSS levels 3/4/5 (no, really), Web Audio, and WOFF2..
+rachelandrew_bio: I'm a web developer, writer, public speaker. Co-founder of <a href="https://grabaperch.com">Perch CMS</a> and <a href="https://noti.st">Notist</a>. Member of the <a href="https://www.w3.org/wiki/CSSWG">CSS Working Group</a>. Editor in Chief of <a href="https://www.smashingmagazine.com/">Smashing Magazine</a>.
 discuss: 2037
 results: https://docs.google.com/spreadsheets/d/1sMWXWjMujqfAREYxNbG_t1fOJKYCA6ASLwtz4pBQVTw/
 queries: 01_CSS
@@ -28,9 +28,9 @@ unedited: true
 
 Cascading Style Sheets (CSS) is a language used to lay out, format, and paint web pages and other media. It is one of the three main languages for building websites, the other two being HTML, used for structure, and JavaScript, used to specify behavior.
 
-In [last year’s inaugural Web Almanac](../2019/), we looked at [a variety of CSS metrics](../en/2019/css) measured through 41 SQL queries over the HTTP Archive corpus, to assess the state of the technology in 2019. This year, we went a lot deeper, to measure not only how many pages use a given CSS feature, but also *how* they use it.
+In [last year's inaugural Web Almanac](../2019/), we looked at [a variety of CSS metrics](../en/2019/css) measured through 41 SQL queries over the HTTP Archive corpus, to assess the state of the technology in 2019. This year, we went a lot deeper, to measure not only how many pages use a given CSS feature, but also *how* they use it.
 
-Overall, what we observed was a Web in two different gears when it comes to CSS adoption. In our blog posts and twitter bubbles, we tend to mostly discuss the newest and shiniest. However, there are still *millions* of sites using decade-old code. Things like [vendor prefixes from a bygone era](#vendor-prefixes), [proprietary IE filters](#filters), and [floats for layout](#layout), in all their [clearfix](#class-names) glory. But we also observed impressive adoption of many new features, even features that only got support across the board this very year, like [`min()` and `max()`](#feature-queries). However, there is generally an inverse correlation between how cool something is perceived to be and how much it's actually used, e.g. cutting-edge Houdini features were practically nonexistent.
+Overall, what we observed was a Web in two different gears when it comes to CSS adoption. In our blog posts and twitter bubbles, we tend to mostly discuss the newest and shiniest. However, there are still *millions* of sites using decade-old code. Things like [vendor prefixes from a bygone era](#vendor-prefixes), [proprietary IE filters](#filters), and [floats for layout](#layout), in all their [clearfix](#class-names) glory. But we also observed impressive adoption of many new features, even features that only got support across the board this very year, like [`min()` and `max()`](#feature-queries). However, there is generally an inverse correlation between how cool something is perceived to be and how much it is actually used, e.g. cutting-edge Houdini features were practically nonexistent.
 
 Similarly, in our conference talks, we often tend to focus on complicated, elaborate use cases that make heads explode and twitter feeds fill with "CSS can do *that*?!". However, as it turns out, most CSS usage in the wild is fairly simple. [CSS Variables are mostly used as constants](#complexity) and rarely refer to other variables, `calc()` is [mostly used with two terms](#calculations), gradients [mostly have two stops](#gradients) and so on.
 
@@ -54,7 +54,7 @@ Custom metrics were also used for part of the [Custom properties analysis](#cust
 
 ## Usage
 
-While JavaScript far surpasses CSS in its share of page weight, CSS has certainly grown in size over the years, with the median desktop page loading 62 KB of CSS code, and 1 in 10 pages loading more than 240 KB of CSS code. Mobile pages do use slightly less CSS code across all percentiles, but only by 4 to 7 KB. While this is definitely greater than previous years, it doesn't come close to [JavaScript’s whopping median of 444 KB and top 10% of 1.2 MB](./javascript/#how-much-javascript-do-we-use)
+While JavaScript far surpasses CSS in its share of page weight, CSS has certainly grown in size over the years, with the median desktop page loading 62 KB of CSS code, and 1 in 10 pages loading more than 240 KB of CSS code. Mobile pages do use slightly less CSS code across all percentiles, but only by 4 to 7 KB. While this is definitely greater than previous years, it doesn't come close to [JavaScript's whopping median of 444 KB and top 10% of 1.2 MB](./javascript/#how-much-javascript-do-we-use)
 
 {{ figure_markup(
   image="stylesheet-size.png",
@@ -189,7 +189,7 @@ The most popular attribute selector, by far, is on the `type` attribute, used in
 
 ### Pseudo-classes and pseudo-elements
 
-There is always a lot of inertia when we change something in the Web platform after it's long established. As an example, the Web has still largely not caught up with pseudo-elements having separate syntax compared to pseudo-classes, even though this was a change that happened over a decade ago. All pseudo-elements that are also available with a pseudo-class syntax for legacy reasons are **vastly** more widespread (2.5x to 5x!) with the pseudo-class syntax.
+There is always a lot of inertia when we change something in the Web platform after it is long established. As an example, the Web has still largely not caught up with pseudo-elements having separate syntax compared to pseudo-classes, even though this was a change that happened over a decade ago. All pseudo-elements that are also available with a pseudo-class syntax for legacy reasons are **vastly** more widespread (2.5x to 5x!) with the pseudo-class syntax.
 
 {{ figure_markup(
   image="selector-pseudo-classes.png",
@@ -421,7 +421,7 @@ Today, `calc()` has been [supported by every browser](https://caniuse.com/calc) 
 {{ figure_markup(
   image="calc-properties.png",
   caption="Relative popularity of properties that use `calc()` as a percent of occurrences.",
-  description="Bar chart showing the relative popularity of properties that use the calc function as a percent of occurrences. Desktop and mobile have similar results. The calc function is used most often on the width property, 59% of calc occurrences on mobile pages. It's used on the left property 11% of the time, top 5%, max-width 4%, height 4%, and the remaining properties are decreasing at 2% and 1%: min-height, margin-left, flex-basis, margin-right, max-height (1%), right, padding-bottom, padding-left, font-size, and padding-right.",
+  description="Bar chart showing the relative popularity of properties that use the calc function as a percent of occurrences. Desktop and mobile have similar results. The calc function is used most often on the width property, 59% of calc occurrences on mobile pages. it is used on the left property 11% of the time, top 5%, max-width 4%, height 4%, and the remaining properties are decreasing at 2% and 1%: min-height, margin-left, flex-basis, margin-right, max-height (1%), right, padding-bottom, padding-left, font-size, and padding-right.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=722318406&format=interactive",
   sheets_gid="1661677319",
   sql_file="calc_properties.sql"
@@ -432,7 +432,7 @@ It appears that most of this usage is to subtract pixels from percentages, as ev
 {{ figure_markup(
   image="calc-units.png",
   caption="Relative popularity of units that use `calc()` as a percent of occurrences.",
-  description="Bar chart showing the relative popularity of properties that use the calc function as a percent of occurrences. Desktop and mobile have similar results. The calc function is used most often on the width property, 59% of calc occurrences on mobile pages. It's used on the left property 11% of the time, top 5%, max-width 4%, height 4%, and the remaining properties are decreasing at 2% and 1%: min-height, margin-left, flex-basis, margin-right, max-height (1%), right, padding-bottom, padding-left, font-size, and padding-right.",
+  description="Bar chart showing the relative popularity of properties that use the calc function as a percent of occurrences. Desktop and mobile have similar results. The calc function is used most often on the width property, 59% of calc occurrences on mobile pages. it is used on the left property 11% of the time, top 5%, max-width 4%, height 4%, and the remaining properties are decreasing at 2% and 1%: min-height, margin-left, flex-basis, margin-right, max-height (1%), right, padding-bottom, padding-left, font-size, and padding-right.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=477094785&format=interactive",
   sheets_gid="769910871",
   sql_file="calc_units.sql"
@@ -463,15 +463,15 @@ Most calculations are very simple, with 99.5% of calculations involving up to 2 
 
 ### Global keywords and `all`
 
-For a long time, CSS only supported one global keyword: [`inherit`](https://developer.mozilla.org/en-US/docs/Web/CSS/inherit), which enables the resetting of an inheritable property to its inherited value or reusing the parent’s value for a given non-inheritable property. It turns out the former is far more common than the latter, with 81.37% of `inherit` usage being found on inheritable properties. The rest is mostly to inherit backgrounds, borders, or dimensions. The latter likely indicates layout struggles, as with the proper layout mode one rarely needs to force `width` and `height` to inherit.
+For a long time, CSS only supported one global keyword: [`inherit`](https://developer.mozilla.org/en-US/docs/Web/CSS/inherit), which enables the resetting of an inheritable property to its inherited value or reusing the parent's value for a given non-inheritable property. It turns out the former is far more common than the latter, with 81.37% of `inherit` usage being found on inheritable properties. The rest is mostly to inherit backgrounds, borders, or dimensions. The latter likely indicates layout struggles, as with the proper layout mode one rarely needs to force `width` and `height` to inherit.
 
-The `inherit` keyword has been particularly useful for resetting the gory default link colors to the parent’s text color, when we intend to use something other than color as an affordance for links. It is therefore no surprise that `color` is the most common property that `inherit` is used on. Nearly one third of all `inherit` usage is found on the `color` property. 75% of pages use `color: inherit` at least once.
+The `inherit` keyword has been particularly useful for resetting the gory default link colors to the parent's text color, when we intend to use something other than color as an affordance for links. It is therefore no surprise that `color` is the most common property that `inherit` is used on. Nearly one third of all `inherit` usage is found on the `color` property. 75% of pages use `color: inherit` at least once.
 
-While a property’s *initial value* is a concept that [has existed since CSS 1](https://www.w3.org/TR/CSS1/#cascading-order), it only got its own dedicated keyword, `initial`, to explicitly refer to it [17 years later](https://www.w3.org/TR/2013/WD-css3-cascade-20130103/#initial-keyword), and it took another two years for said keyword to gain [universal browser support](https://caniuse.com/css-initial-value) in 2015. It is therefore no surprise that it is used far less than `inherit`. While the old inherit is found on 85% of pages, `initial` appears in 51% of them. Furthermore, there is a lot of confusion about what `initial` actually does, since `display` tops the list of properties most commonly used with `initial`, with `display: initial` appearing in 10% of pages. Presumably, the developers thought that this resets `display` to its value from the [user agent stylesheet](https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade#User-agent_stylesheets) value and were using it to toggle `display: none` on and off. However, [the initial value of `display` is `inline`](https://drafts.csswg.org/css-display/#the-display-properties), so `display: initial` is just another way to write `display: inline` and has no context-dependent magical properties.
+While a property's *initial value* is a concept that [has existed since CSS 1](https://www.w3.org/TR/CSS1/#cascading-order), it only got its own dedicated keyword, `initial`, to explicitly refer to it [17 years later](https://www.w3.org/TR/2013/WD-css3-cascade-20130103/#initial-keyword), and it took another two years for said keyword to gain [universal browser support](https://caniuse.com/css-initial-value) in 2015. It is therefore no surprise that it is used far less than `inherit`. While the old inherit is found on 85% of pages, `initial` appears in 51% of them. Furthermore, there is a lot of confusion about what `initial` actually does, since `display` tops the list of properties most commonly used with `initial`, with `display: initial` appearing in 10% of pages. Presumably, the developers thought that this resets `display` to its value from the [user agent stylesheet](https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade#User-agent_stylesheets) value and were using it to toggle `display: none` on and off. However, [the initial value of `display` is `inline`](https://drafts.csswg.org/css-display/#the-display-properties), so `display: initial` is just another way to write `display: inline` and has no context-dependent magical properties.
 
-Instead, `display: revert` would have actually done what these developers likely expected and would have reset `display` to the UA value for the given element. However, `revert` is much newer: it was defined [in 2015](https://www.w3.org/TR/2015/WD-css-cascade-4-20150908/#valdef-all-revert) and  [only gained universal browser support this year](https://caniuse.com/css-revert-value), which explains its underuse: it only appears in 0.14% of pages and half of its usage is `line-height: revert;`, found in [recent versions of WordPress’ TwentyTwenty theme](https://github.com/WordPress/WordPress/commit/303180b392c530b8e2c8b3c27532d591b915caeb).
+Instead, `display: revert` would have actually done what these developers likely expected and would have reset `display` to the UA value for the given element. However, `revert` is much newer: it was defined [in 2015](https://www.w3.org/TR/2015/WD-css-cascade-4-20150908/#valdef-all-revert) and  [only gained universal browser support this year](https://caniuse.com/css-revert-value), which explains its underuse: it only appears in 0.14% of pages and half of its usage is `line-height: revert;`, found in [recent versions of WordPress' TwentyTwenty theme](https://github.com/WordPress/WordPress/commit/303180b392c530b8e2c8b3c27532d591b915caeb).
 
-The last global keyword, `unset`, is essentially a hybrid of `initial` and `inherit`. On inherited properties it becomes `inherit` and on the rest it becomes `initial`, essentially resetting the property across all cascade origins. Similarly, to `initial`, it was [defined in 2013](https://www.w3.org/TR/2013/WD-css-cascade-3-20130730/#inherit-initial) and gained [full browser support in 2015](https://caniuse.com/css-unset-value). Despite `unset`’s higher utility, it is used in only 43% of pages, whereas `initial` is used in 51% of pages. Furthermore, besides `max-width` and `min-width`, in every other property `initial` usage outweighs `unset` usage.
+The last global keyword, `unset`, is essentially a hybrid of `initial` and `inherit`. On inherited properties it becomes `inherit` and on the rest it becomes `initial`, essentially resetting the property across all cascade origins. Similarly, to `initial`, it was [defined in 2013](https://www.w3.org/TR/2013/WD-css-cascade-3-20130730/#inherit-initial) and gained [full browser support in 2015](https://caniuse.com/css-unset-value). Despite `unset`'s higher utility, it is used in only 43% of pages, whereas `initial` is used in 51% of pages. Furthermore, besides `max-width` and `min-width`, in every other property `initial` usage outweighs `unset` usage.
 
 {{ figure_markup(
   image="keyword-totals.png",
@@ -512,7 +512,7 @@ And yes, these numbers also show that despite the much-vaunted (but [largely inc
   sql_file="color_formats.sql"
 ) }}
 
-What about named colors? The keyword `transparent`, which is just another way to say `rgb(0 0 0 / 0)`, is most popular, at 8.25% of all sRGB values (66% of all named-color usage); followed by  all the named (X11) colors – I’m looking at you, `papayawhip` – at 1.48%. The most popular of these were the easily understood names like `white`, `black`, `red`, `gray`, `blue`. `Whitesmoke` was the most common  of the non-ordinary names (sure, we can visualize whitesmoke, right) while the likes of `gainsboro`, `lightCoral` and `burlywood` were used way less. We can understand why, you need to look them up to see what they actually mean.
+What about named colors? The keyword `transparent`, which is just another way to say `rgb(0 0 0 / 0)`, is most popular, at 8.25% of all sRGB values (66% of all named-color usage); followed by  all the named (X11) colors – I'm looking at you, `papayawhip` – at 1.48%. The most popular of these were the easily understood names like `white`, `black`, `red`, `gray`, `blue`. `Whitesmoke` was the most common  of the non-ordinary names (sure, we can visualize whitesmoke, right) while the likes of `gainsboro`, `lightCoral` and `burlywood` were used way less. We can understand why, you need to look them up to see what they actually mean.
 
 And if you are going for fanciful color names, why not define your own with CSS [Custom properties](#custom-properties)? `--intensePurple` and `--corporateBlue` mean whatever you need them to mean. This probably explains why [50% of Custom Properties](#usage-by-type) are used for colors.
 
@@ -668,7 +668,7 @@ And if you are going for fanciful color names, why not define your own with CSS 
   </figcaption>
 </figure>
 
-And, lastly, the once-deprecated, now partially un-deprecated system colors like `Canvas` and `ThreeDDarkShadow`: These were a terrible idea, introduced to emulate the typical user interface of things like Java or Windows 95, and already unable to keep up with Windows 98, they soon fell by the wayside. Some sites use these system colors to try and fingerprint you, a loophole that [we are trying to close as we speak](https://github.com/w3c/csswg-drafts/issues/5710). There are *few good reasons* to use them, and most websites (99.99%) don’t, so we are all good.
+And, lastly, the once-deprecated, now partially un-deprecated system colors like `Canvas` and `ThreeDDarkShadow`: These were a terrible idea, introduced to emulate the typical user interface of things like Java or Windows 95, and already unable to keep up with Windows 98, they soon fell by the wayside. Some sites use these system colors to try and fingerprint you, a loophole that [we are trying to close as we speak](https://github.com/w3c/csswg-drafts/issues/5710). There are *few good reasons* to use them, and most websites (99.99%) don't, so we are all good.
 
 The rather useful value `currentColor`, surprisingly, trailed at 0.14% of all sRGB colors (1.62% of all named colors).
 
@@ -676,7 +676,7 @@ All the colors we discussed so far have one thing in common: sRGB, the standard 
 
 And we are still missing out. Despite being [implemented in Safari in 2016](https://webkit.org/blog/6682/improving-color-on-the-web/), the use of display-p3 color in Web pages is vanishingly small. Our crawl of the Web found only 29 mobile and 36 desktop pages (!) using it. (And more than half of those were syntax errors, mistakes, or attempts to use the never-implemented `color-mod()` function). We were curious why.
 
-Compatibility, right? You don’t want things to break? No. In the stylesheets we examined, we found solid use of fallback: with document order, the cascade, `@supports`, the `color-gamut` media query, all that good stuff. So in a style sheet we would see the color the designer wanted, expressed in display-p3, and also a fallback sRGB color. We computed the visible difference (a calculation called [ΔE2000](https://zschuessler.github.io/DeltaE/learn/)) between the desired and fallback color and this was typically quite modest. A small tweak. A careful exploration. In fact, 37.6% of the time, the color specified in display-p3 actually fell inside the range of colors (the gamut) that sRGB can manage.
+Compatibility, right? You don't want things to break? No. In the stylesheets we examined, we found solid use of fallback: with document order, the cascade, `@supports`, the `color-gamut` media query, all that good stuff. So in a style sheet we would see the color the designer wanted, expressed in display-p3, and also a fallback sRGB color. We computed the visible difference (a calculation called [ΔE2000](https://zschuessler.github.io/DeltaE/learn/)) between the desired and fallback color and this was typically quite modest. A small tweak. A careful exploration. In fact, 37.6% of the time, the color specified in display-p3 actually fell inside the range of colors (the gamut) that sRGB can manage.
 
 <figure>
   <table class="large-table">
@@ -893,7 +893,7 @@ Compatibility, right? You don’t want things to break? No. In the stylesheets w
   image="p3-chromaticity-big.svg",
   object="p3-chromaticity-big.svg",
   caption="uv chromaticity of specified display-p3 colors and their fallbacks.",
-  description="This 1976 u’v’ diagram shows the chromaticity of colors (flattened to 2D, so lightness is not shown). The outer curved shape represents the spectrum of pure single wavelengths; there are no visible colors outside this. The straight line is purple, a mixture of red and violet. The smaller, grey, triangle is the sRGB gamut while the larger, darker triangle is the display-p3 gamut. The 23 unique display-p3 colors actually in use on the web in 2020 are shown; for each pair of colors the larger circle is the sRGB fallback while the smaller circle is the display-p3 color. If it is inside the sRGB gamut, those circles show the correct color. Otherwise, a white circle with a red edge indicates out of sRGB-gamut colors.",
+  description="This 1976 u'v' diagram shows the chromaticity of colors (flattened to 2D, so lightness is not shown). The outer curved shape represents the spectrum of pure single wavelengths; there are no visible colors outside this. The straight line is purple, a mixture of red and violet. The smaller, grey, triangle is the sRGB gamut while the larger, darker triangle is the display-p3 gamut. The 23 unique display-p3 colors actually in use on the web in 2020 are shown; for each pair of colors the larger circle is the sRGB fallback while the smaller circle is the display-p3 color. If it is inside the sRGB gamut, those circles show the correct color. Otherwise, a white circle with a red edge indicates out of sRGB-gamut colors.",
   width=600,
   height=600
 ) }}
@@ -936,7 +936,7 @@ Prefixed gradients are also still very common, even though prefixes haven't been
 
 Using color stops with different colors in the same position (hard stops) to create stripes and other patterns is a technique [first popularized in 2010](https://lea.verou.me/2010/12/checkered-stripes-other-background-patterns-with-css3-gradients/) (by Lea Verou), which by now has many interesting variations, including [some really cool ones with blend modes](https://bennettfeely.com/gradients/). While it may seem like a hack, hard stops are found in 50% of pages, indicating a strong developer need for lightweight graphics from within CSS without resorting to image editors or external SVG.
 
- Interpolation hints (or as Adobe, who popularized the technique, calls them: “midpoints”) are found on 22% of pages, despite [near universal browser support since 2015](https://caniuse.com/mdn-css_types_image_gradient_linear-gradient_interpolation_hints). Which is a shame, because without them, the color stops are connected by straight-lines in the color space, rather than smooth curves. This low usage probably reflects a misunderstanding of what they do, or how to use them; contrast this with CSS transitions and animations, where easing functions (which do much the same thing, i.e. connect the keyframes with curves rather than jerky straight lines) are much more commonly used ([80% of transitions](#transitions-and-animations)). “Midpoints” is not a very understandable description, and “interpolation hint” sounds like you are helping the browser to do simple arithmetic.
+ Interpolation hints (or as Adobe, who popularized the technique, calls them: "midpoints") are found on 22% of pages, despite [near universal browser support since 2015](https://caniuse.com/mdn-css_types_image_gradient_linear-gradient_interpolation_hints). Which is a shame, because without them, the color stops are connected by straight-lines in the color space, rather than smooth curves. This low usage probably reflects a misunderstanding of what they do, or how to use them; contrast this with CSS transitions and animations, where easing functions (which do much the same thing, i.e. connect the keyframes with curves rather than jerky straight lines) are much more commonly used ([80% of transitions](#transitions-and-animations)). "Midpoints" is not a very understandable description, and "interpolation hint" sounds like you are helping the browser to do simple arithmetic.
 
 Most gradient usage is rather simple, with over 75% of gradients found across the entire dataset only using 2 color stops. In fact, fewer than half of pages contain even a single gradient with more than 3 color stops!
 
@@ -977,7 +977,7 @@ If we look at [Grid layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS
   sql_file="flexbox_grid.sql"
 ) }}
 
-Note that unlike most other metrics in this chapter this is actual measured Grid usage, and not just grid-related properties and values that are specified in a stylesheet and potentially not used. While at first glance this may seem more accurate, one thing to keep in mind is that HTTP Archive crawls homepages, so this data may be skewed lower due to grids often appearing more in internal pages. So, let's look at another metric as well: how many pages specify `display: grid` and `display: flex` in their stylesheets? That metric puts Grid layout at significantly higher adoption, with 30% of pages using `display: grid` at least once. It does not however affect the number for Flexbox as significantly, with 68% of pages specifying `display: flex`. While this sounds like impressively high adoption for Flexbox, it's worth noting that CSS tables are still far more popular with 80% of pages using table display modes! Some of this usage may be due to [certain types of clearfix](https://css-tricks.com/snippets/css/clear-fix/) which use `display: table`, and not for actual layout.
+Note that unlike most other metrics in this chapter this is actual measured Grid usage, and not just grid-related properties and values that are specified in a stylesheet and potentially not used. While at first glance this may seem more accurate, one thing to keep in mind is that HTTP Archive crawls homepages, so this data may be skewed lower due to grids often appearing more in internal pages. So, let's look at another metric as well: how many pages specify `display: grid` and `display: flex` in their stylesheets? That metric puts Grid layout at significantly higher adoption, with 30% of pages using `display: grid` at least once. It does not however affect the number for Flexbox as significantly, with 68% of pages specifying `display: flex`. While this sounds like impressively high adoption for Flexbox, it is worth noting that CSS tables are still far more popular with 80% of pages using table display modes! Some of this usage may be due to [certain types of clearfix](https://css-tricks.com/snippets/css/clear-fix/) which use `display: table`, and not for actual layout.
 
 {{ figure_markup(
   image="layout-methods.png",
@@ -1011,7 +1011,7 @@ The result of this showed that 0.23% of grid-using pages on mobile had named lin
 
 The [grid-template-areas](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Grid_Template_Areas) feature, allowing authors to name grid items then place them on the grid as the value of the grid-template-areas property, fared a little better. Of grid-using sites, 19% on mobile and 20% on desktop were using this method.
 
-These results show that not only is Grid layout usage still relatively low on production websites, but the usage of it is also relatively straightforward. Authors are choosing to use the simple line-based placement over methods which would allow them to name lines and areas. While there is nothing wrong in choosing to do so, I wonder if slow adoption of Grid layout is partly due to the fact that authors haven’t yet realized the power of these features. If Grid layout is seen as essentially Flexbox with poor browser support, this would certainly make it a less compelling choice.
+These results show that not only is Grid layout usage still relatively low on production websites, but the usage of it is also relatively straightforward. Authors are choosing to use the simple line-based placement over methods which would allow them to name lines and areas. While there is nothing wrong in choosing to do so, I wonder if slow adoption of Grid layout is partly due to the fact that authors haven't yet realized the power of these features. If Grid layout is seen as essentially Flexbox with poor browser support, this would certainly make it a less compelling choice.
 
 ### Multiple-column layout
 
@@ -1019,7 +1019,7 @@ The [multiple-column layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CS
 
 ### Box sizing
 
-It is useful to know how big the boxes on your page are going to be, but with the [standard CSS box model](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model#What_is_the_CSS_box_model) adding padding and border onto the size of the content-box, the size you gave your box is smaller than the box rendered on your page. While we can’t change history, the box-sizing property allows authors to switch to applying the specified size to the border-box, so the size you set is the size you see rendered. How many sites are using the box-sizing property? Most of them! The box-sizing property appears in 83.79% of desktop CSS and 86.39% on mobile.
+It is useful to know how big the boxes on your page are going to be, but with the [standard CSS box model](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model#What_is_the_CSS_box_model) adding padding and border onto the size of the content-box, the size you gave your box is smaller than the box rendered on your page. While we can't change history, the box-sizing property allows authors to switch to applying the specified size to the border-box, so the size you set is the size you see rendered. How many sites are using the box-sizing property? Most of them! The box-sizing property appears in 83.79% of desktop CSS and 86.39% on mobile.
 
 {{ figure_markup(
   image="box-sizing.png",
@@ -1058,7 +1058,7 @@ We were glad to discover that most of these transitions are fairly short, with t
   sql_file="transition_durations.sql"
 ) }}
 
-The specification authors got it right! `Ease` is the most popular timing function specified, even though it's the default so it can actually be omitted. Perhaps people explicitly specify the defaults because they prefer the self-documenting verbosity, or — perhaps more likely — because they don't know that they are defaults. Despite the drawbacks of linearly progressing animation (it tends to look dull and unnatural), `linear` is the second most highly used timing function with 19.1%. It is also interesting that the built-in easing functions accommodate over 87% of all transitions: only 12.7% chose to specify a custom easing via `cubic-bezier()`.
+The specification authors got it right! `Ease` is the most popular timing function specified, even though it is the default so it can actually be omitted. Perhaps people explicitly specify the defaults because they prefer the self-documenting verbosity, or — perhaps more likely — because they don't know that they are defaults. Despite the drawbacks of linearly progressing animation (it tends to look dull and unnatural), `linear` is the second most highly used timing function with 19.1%. It is also interesting that the built-in easing functions accommodate over 87% of all transitions: only 12.7% chose to specify a custom easing via `cubic-bezier()`.
 
 {{ figure_markup(
   image="transition-timing-functions.png",
@@ -1140,7 +1140,7 @@ In other good news, newer features from the [Media Queries Level 4](https://www.
 
 ### Common breakpoints
 
-The most common breakpoint in use across desktop and mobile devices is a `min-width` of 768px. 54% of sites use this breakpoint, closely followed by a `max-width` of 767px at 50%. [The Bootstrap framework](https://getbootstrap.com/docs/4.1/layout/overview/) uses a `min-width` of 768px as its “Medium” size, so this may be the source of much of the usage. The other two high-ranking `min-width` values of 1200px (40%) and 992px (37%) are also found in Bootstrap.
+The most common breakpoint in use across desktop and mobile devices is a `min-width` of 768px. 54% of sites use this breakpoint, closely followed by a `max-width` of 767px at 50%. [The Bootstrap framework](https://getbootstrap.com/docs/4.1/layout/overview/) uses a `min-width` of 768px as its "Medium" size, so this may be the source of much of the usage. The other two high-ranking `min-width` values of 1200px (40%) and 992px (37%) are also found in Bootstrap.
 
 {{ figure_markup(
   image="breakpoints.png",
@@ -1184,7 +1184,7 @@ While at first glance this is impressive adoption, it appears that a major drive
   sql_file="custom_property_names.sql"
 ) }}
 
-Out of the 1,000 top property names, fewer than 13 are ‘custom’, as in made up by individual web developers. The vast majority are associated with popular software, such as WordPress, Elementor, and Avada. To determine this, we took into account not only which custom properties appear in what software (by searching on GitHub), but also which properties appear in groups with similar frequencies. This does not necessarily mean that the main way a custom property ends up on a website is through usage of that software (people do still copy and paste!), but it does indicate there aren't many organic commonalities between the custom properties that developers define. The only custom property names that seem to have organically made the list of top 1000 are `--height`, `--primary-color`, and `--caption-color`.
+Out of the 1,000 top property names, fewer than 13 are 'custom', as in made up by individual web developers. The vast majority are associated with popular software, such as WordPress, Elementor, and Avada. To determine this, we took into account not only which custom properties appear in what software (by searching on GitHub), but also which properties appear in groups with similar frequencies. This does not necessarily mean that the main way a custom property ends up on a website is through usage of that software (people do still copy and paste!), but it does indicate there aren't many organic commonalities between the custom properties that developers define. The only custom property names that seem to have organically made the list of top 1000 are `--height`, `--primary-color`, and `--caption-color`.
 
 ### Usage by type
 
@@ -1224,7 +1224,7 @@ Next, we looked at how complex custom property usage is. One way to assess code 
 }
 ```
 
-2 out of 3 custom properties examined (67%) had a depth of 0, and 30% had a depth of 1 (slightly less on mobile). Less than 1.8% had a depth of 2, and virtually none (0.7%) had a depth of 3+, which indicates rather basic usage. The upside of such basic usage is that it's harder to make mistakes: fewer than 0.5% of pages included cycles.
+2 out of 3 custom properties examined (67%) had a depth of 0, and 30% had a depth of 1 (slightly less on mobile). Less than 1.8% had a depth of 2, and virtually none (0.7%) had a depth of 3+, which indicates rather basic usage. The upside of such basic usage is that it is harder to make mistakes: fewer than 0.5% of pages included cycles.
 
 
 {{ figure_markup(
@@ -1242,7 +1242,7 @@ Examining the selectors on which custom properties are declared further confirms
 
 ### Houdini
 
-You have likely heard of Houdini by now. Since [several Houdini specs have shipped in browsers](https://ishoudinireadyyet.com/), we figured it's time to see if they are actually used in the wild yet. Short answer: no. And now for the longer answer…
+You have likely heard of Houdini by now. Since [several Houdini specs have shipped in browsers](https://ishoudinireadyyet.com/), we figured it is time to see if they are actually used in the wild yet. Short answer: no. And now for the longer answer…
 
 First, we looked at the [Properties & Values API](https://developer.mozilla.org/en-US/docs/Web/API/CSS/RegisterProperty), which allows developers to register a custom property and give it a type, an initial value, and prevent it from being inherited. One of the primary use cases is being able to animate custom properties, so we also looked at how frequently custom properties are being animated.
 
@@ -1250,7 +1250,7 @@ As is common with bleeding edge tech, especially when not supported in all brows
 
 The [Paint API](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Painting_API) is a more broadly implemented Houdini spec which allows developers to create custom CSS functions that return `<image>` values, e.g. to implement custom gradients or patterns. Only 12 pages were found to be using `paint()`. Each worklet name (`hexagon`, `ruler`, `lozenge`, `image-cross`, `grid`, `dashed-line`, `ripple`) only appeared on one page each, so it appears the only in-the-wild use cases were likely demos.
 
-[Typed OM](https://github.com/w3c/css-houdini-drafts/blob/master/css-typed-om/README.md), another Houdini specification, allows access to structured values instead of the strings of the classic CSS OM. It appears to have considerably higher adoption compared to other Houdini specs, though still low overall. It is used in 9,864 desktop pages (0.18%) and 6,391 mobile ones (0.1%). While this may seem low, to put it in perspective, these are similar numbers to the adoption of `<input type="date">`! Note that unlike most stats in this chapter, these numbers reflect actual usage, and not just inclusion in a website’s assets.
+[Typed OM](https://github.com/w3c/css-houdini-drafts/blob/master/css-typed-om/README.md), another Houdini specification, allows access to structured values instead of the strings of the classic CSS OM. It appears to have considerably higher adoption compared to other Houdini specs, though still low overall. It is used in 9,864 desktop pages (0.18%) and 6,391 mobile ones (0.1%). While this may seem low, to put it in perspective, these are similar numbers to the adoption of `<input type="date">`! Note that unlike most stats in this chapter, these numbers reflect actual usage, and not just inclusion in a website's assets.
 
 ### CSS-in-JS
 
@@ -1274,7 +1274,7 @@ When text is presented in horizontal lines, most writing systems display charact
 To support bidirectionality,  explicit support for indicating direction is available in both HTML via ([the `dir` attribute](https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute) and the [`<bdo>` element](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdo-element)), and CSS (the [direction](https://www.w3.org/TR/css-writing-modes-3/#direction) and [`unicode-bidi`](https://www.w3.org/TR/css-writing-modes-3/#unicode-bidi) properties. We looked at usage of both HTML and CSS methods.
 Only 12.14% of pages on mobile (and a similar 10.76% on desktop) set the `dir` attribute on the `<html>` element. Which is fine: most writing systems in the world are `ltr`, and the default `dir` value is `ltr`. Of the pages which *did* set `dir` on `<html>`, 91% set it to `ltr` while 8.5% set it to `rtl` and 0.32% to `auto` (the explicit direction is unknown value, mainly useful for templates which will be filled with unknown content). An even smaller number, 2.63%, set `dir` on `<body>`. Which is good, because setting it on `<html>` also covers you for content in the `<head>`, like `<title>`.
 
-Why set direction using HTML attributes rather than CSS styling? One reason is separation of concerns: direction has to do with content which is the purview of HTML. It is also the [recommended practice](https://www.w3.org/International/tutorials/bidi-xhtml/index.en): *“Avoid using CSS or Unicode control codes for managing direction where you can use markup”*. After all, the stylesheet might not load, and the text still needs to be readable.
+Why set direction using HTML attributes rather than CSS styling? One reason is separation of concerns: direction has to do with content which is the purview of HTML. It is also the [recommended practice](https://www.w3.org/International/tutorials/bidi-xhtml/index.en): *"Avoid using CSS or Unicode control codes for managing direction where you can use markup"*. After all, the stylesheet might not load, and the text still needs to be readable.
 
 ### Logical vs physical properties
 
@@ -1307,7 +1307,7 @@ Even though prefixing is now recognized as a failed way to introduce experimenta
   sql_file="vendor_prefix_summary.sql"
 ) }}
 
-Prefixed properties take up the lion’s share of that, since **84% of all prefixed features used were properties**. This is most likely a remnant of the prefix-happy CSS3 era circa 2009-2014. This is also evident from the most popular prefixed ones, none of which have actually needed prefixes since 2014:
+Prefixed properties take up the lion's share of that, since **84% of all prefixed features used were properties**. This is most likely a remnant of the prefix-happy CSS3 era circa 2009-2014. This is also evident from the most popular prefixed ones, none of which have actually needed prefixes since 2014:
 
 {{ figure_markup(
   image="vendor-prefix-properties.png",
@@ -1318,7 +1318,7 @@ Prefixed properties take up the lion’s share of that, since **84% of all prefi
   sql_file="vendor_prefix_properties.sql"
 ) }}
 
-Some of these prefixes, like `-moz-border-radius`, haven’t been useful since 2011. Even more mind-boggling, other prefixed properties that never existed, are still moderately common, with roughly 9% of all pages including `-o-border-radius`!
+Some of these prefixes, like `-moz-border-radius`, haven't been useful since 2011. Even more mind-boggling, other prefixed properties that never existed, are still moderately common, with roughly 9% of all pages including `-o-border-radius`!
 
 It may come as no surprise that `-webkit-` is by far the most popular prefix, with half of prefixed properties using it:
 
@@ -1397,7 +1397,7 @@ Overall, `-*-min-pixel-ratio` comprises three quarters of prefixed media feature
 
 Feature queries ([@supports](https://developer.mozilla.org/en-US/docs/Web/CSS/@supports)) have been steadily gaining traction for the past few years, and were used in 39% of pages, a notable increase from last year's 30%.
 
-But what are they used for? We looked at the most popular queries. The results may come as a big surprise — it was to us! We expected grid-related queries to top the list, but instead, the most popular feature queries **by far** are for `position: sticky`! They comprise **half** of all feature queries and are used in about a quarter of pages. In contrast, grid-related queries account for only 2% of all queries, indicating that developers feel comfortable enough with Grid's browser support that they don’t need to use it only as progressive enhancement.
+But what are they used for? We looked at the most popular queries. The results may come as a big surprise — it was to us! We expected grid-related queries to top the list, but instead, the most popular feature queries **by far** are for `position: sticky`! They comprise **half** of all feature queries and are used in about a quarter of pages. In contrast, grid-related queries account for only 2% of all queries, indicating that developers feel comfortable enough with Grid's browser support that they don't need to use it only as progressive enhancement.
 
 What is even more mysterious is that `position: sticky` itself is not used as much as the feature queries about it, appearing in 10% of desktop pages and 13% of mobile pages. So there are over half a million pages that detect `position: sticky` without ever using it! Why?!
 
@@ -1419,7 +1419,7 @@ A small but notable number of pages (around 3000 or 0.05%) were oddly using `@su
 
 ### Declaration repetition
 
-To tell how efficient and maintainable a stylesheet is, one rough factor is declaration repetition, that is, the ratio between unique (different) and total number of declarations. The factor is a rough one because it’s not trivial to normalize declarations (`border: none`, `border: 0`, even `border-width: 0`—plus a few more—are all different but say the same thing), and also because there are levels for the repetition: media query (most useful but harder to measure), style sheet, or data set level as with the Almanac's overall metrics.
+To tell how efficient and maintainable a stylesheet is, one rough factor is declaration repetition, that is, the ratio between unique (different) and total number of declarations. The factor is a rough one because it is not trivial to normalize declarations (`border: none`, `border: 0`, even `border-width: 0`—plus a few more—are all different but say the same thing), and also because there are levels for the repetition: media query (most useful but harder to measure), style sheet, or data set level as with the Almanac's overall metrics.
 
 We did look at declaration repetition and found that the median web page, on mobile, uses a total of 5,454 declarations, of which 2,398 are unique. The median ratio (which is based on the data set, not these two values) comes out at 45.43%. What this means is that on the median page, each declaration is used roughly two times.
 
@@ -1468,9 +1468,9 @@ Some shorthands are more successful than others. Sometimes the shorthand is suff
 Shorthands before longhands
 Using a shorthand and overriding it with a few longhands in the same rule is a good strategy for a variety of reasons:
 
-First, it's good defensive coding. The shorthand resets all its longhands to their initial values if they have not been explicitly specified. This prevents rogue values coming in through the cascade.
+First, it is good defensive coding. The shorthand resets all its longhands to their initial values if they have not been explicitly specified. This prevents rogue values coming in through the cascade.
 
-Second, it's good for maintainability, to avoid repetition of values when the shorthand has smart defaults. For example, instead of `margin: 1em 1em 0 1em` we can write:
+Second, it is good for maintainability, to avoid repetition of values when the shorthand has smart defaults. For example, instead of `margin: 1em 1em 0 1em` we can write:
 
 ```css
 margin: 1em;
@@ -1483,7 +1483,7 @@ Similarly, for list-valued properties, longhands can help us reduce repetition w
 background: url("one.png"), url("two.png"), url("three.png");
 background-repeat: no-repeat;
 ```
-Third, for cases where parts of the shorthand’s syntax are too weird, longhands can help improve readability:
+Third, for cases where parts of the shorthand's syntax are too weird, longhands can help improve readability:
 
 ```css
 /* Instead of: */
@@ -1524,7 +1524,7 @@ The `font` shorthand is fairly popular (used 49 million times on 80% of pages) b
 
 #### background
 
-As one of the oldest shorthands, `background` is also highly used, appearing 1 billion times in 92% of pages. It's used more frequently than any of its longhands except `background-color`, which is used 1.5 billion times, in roughly the same number of pages. However, this doesn’t mean developers are fully comfortable with all of its syntax: nearly all (>90%) of `background` usage is very simple, with one or two values, most likely colors and images or images and positions. For anything further, the longhands are seen as more self-explanatory.
+As one of the oldest shorthands, `background` is also highly used, appearing 1 billion times in 92% of pages. it is used more frequently than any of its longhands except `background-color`, which is used 1.5 billion times, in roughly the same number of pages. However, this doesn't mean developers are fully comfortable with all of its syntax: nearly all (>90%) of `background` usage is very simple, with one or two values, most likely colors and images or images and positions. For anything further, the longhands are seen as more self-explanatory.
 
 {{ figure_markup(
   image="background-shorthand-versus-longhand.png",
@@ -1565,7 +1565,7 @@ Nearly all `flex`, `flex-*` properties are very highly used, appearing in 30-60%
 
 #### Grid
 
-Did you know that `grid-template-columns`, `grid-template-rows`, and `grid-template-areas` are actually shorthands of `grid-template`? Did you know that there’s a `grid` property and all of those are some of its longhands? No? Well, you’re in good company: neither do most developers. The `grid` property was only used in 5,279 websites (0.08%) and `grid-template` on 8,215 websites (0.13%). In comparison, `grid-template-columns` is used in 1.7 million websites, over 200 times more!
+Did you know that `grid-template-columns`, `grid-template-rows`, and `grid-template-areas` are actually shorthands of `grid-template`? Did you know that there's a `grid` property and all of those are some of its longhands? No? Well, you're in good company: neither do most developers. The `grid` property was only used in 5,279 websites (0.08%) and `grid-template` on 8,215 websites (0.13%). In comparison, `grid-template-columns` is used in 1.7 million websites, over 200 times more!
 
 {{ figure_markup(
   image="usage-of-grid-properties.png",
@@ -1586,10 +1586,10 @@ For most of the metrics in this chapter, we used [Rework](https://github.com/rew
 
 #### Nonexistent properties
 
-We also looked at most common nonexistent properties, by using a list of known properties. We excluded prefixed properties from this part of the analysis, and manually excluded unprefixed proprietary properties (e.g. IE’s `behavior`, which oddly still appears on 200K websites). Out of the remaining nonexistent properties:
+We also looked at most common nonexistent properties, by using a list of known properties. We excluded prefixed properties from this part of the analysis, and manually excluded unprefixed proprietary properties (e.g. IE's `behavior`, which oddly still appears on 200K websites). Out of the remaining nonexistent properties:
 
 - 37% of them were a mangled form of a prefixed property (e.g. `webkit-transition` or `-transition`)
-- 43% were an unprefixed form of a property that only exists only prefixed (e.g. `font-smoothing`, which appeared on 384K websites), probably included for compatibility under the incorrect assumption that it's standard, or due to wishful thinking that it will become standard.
+- 43% were an unprefixed form of a property that only exists only prefixed (e.g. `font-smoothing`, which appeared on 384K websites), probably included for compatibility under the incorrect assumption that it is standard, or due to wishful thinking that it will become standard.
 - A typo that has found its way to a popular library. Through this analysis, we found that the property `white-wpace` was present in 234,027 websites. This is way too many websites for the same typo to have occurred organically, so we decided to look into it. And lo and behold, it [turns out](https://twitter.com/rick_viscomi/status/1326739379533000704) it was the Facebook widget! The fix is already in.
 - And another oddity: The property `font-rendering` appears on 2,575 pages. However, we cannot find evidence of such a property existing, with or without a prefix. There is the nonstandard [`-webkit-font-smoothing`](https://medium.com/better-programming/improving-font-rendering-with-css-3383fc358cbc) which is wildly popular, appearing in 3 million websites, or about 49% of pages, but `font-rendering` is not sufficiently close to be a misspelling. There is [`text-rendering`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-rendering) which is used in about 100K of websites, so it is conceivable that 2.5K developers all misremembered and coined a portmanteau of `font-smoothing` and `text-rendering`.
 
@@ -1619,7 +1619,7 @@ There are two main reasons that developers make this kind of mistake: either a m
 
 So how common is this mistake? Surely, it cannot be *that* common in the top 6 million websites, right? *Wrong.* It turns out, it is **exceedingly common**, occurring at least once in 54% of websites!
 
-This kind of confusion seems to happen way more with the `background` shorthand than any other shorthand: over half (55%) of these mistakes involve putting `background-*` longhands before `background`. In this case, this may actually not be a mistake at all, but good progressive enhancement: Browsers that don’t support a feature -- such as linear gradients -- will render the previously defined longhand values, in this case, a background color. Browsers that do understand the shorthand override the longhand value, either implicitly or explicitly.
+This kind of confusion seems to happen way more with the `background` shorthand than any other shorthand: over half (55%) of these mistakes involve putting `background-*` longhands before `background`. In this case, this may actually not be a mistake at all, but good progressive enhancement: Browsers that don't support a feature -- such as linear gradients -- will render the previously defined longhand values, in this case, a background color. Browsers that do understand the shorthand override the longhand value, either implicitly or explicitly.
 
 {{ figure_markup(
   image="most-popupular-shorthands-after-longhands.png",
@@ -1632,7 +1632,7 @@ This kind of confusion seems to happen way more with the `background` shorthand 
 
 ## Sass
 
-While analyzing CSS code tells us what CSS developers *are* doing, looking at preprocessor code can tell us a bit about what CSS developers *want* to be doing, but *can't*, which in some ways is more interesting. We used CSS files with sourcemaps to extract and analyze SCSS stylesheets in the wild. We chose to look at SCSS because it's the most popular preprocessing syntax, based on our analysis of sourcemaps.
+While analyzing CSS code tells us what CSS developers *are* doing, looking at preprocessor code can tell us a bit about what CSS developers *want* to be doing, but *can't*, which in some ways is more interesting. We used CSS files with sourcemaps to extract and analyze SCSS stylesheets in the wild. We chose to look at SCSS because it is the most popular preprocessing syntax, based on our analysis of sourcemaps.
 
 We've known for a while that developers need color modification functions and are working on them in [CSS Color 5](https://drafts.csswg.org/css-color-5/). However, analyzing SCSS function calls gives us hard data to prove just how necessary color modification functions are, and also tells us *which* types of color modifications are most commonly needed.
 
