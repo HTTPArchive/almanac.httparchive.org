@@ -14,14 +14,13 @@ rachelandrew_bio: I'm a web developer, writer, public speaker. Co-founder of <a 
 discuss: 2037
 results: https://docs.google.com/spreadsheets/d/1sMWXWjMujqfAREYxNbG_t1fOJKYCA6ASLwtz4pBQVTw/
 queries: 01_CSS
-featured_quote: The web is not a teenager anymore. It is now 30 years old and acts like it. It tends to favor stability over new bling, and readability over complexity, occasional guilty pleasures aside.
+featured_quote: The web is not a teenager anymore—it is now 30 years old and acts like it. It tends to favor stability over new bling and readability over complexity, occasional guilty pleasures aside.
 featured_stat_1: 72.58%
 featured_stat_label_1: Percentage of <code>&lt;length&gt;</code> values that use the <code>px</code> unit.
 featured_stat_2: 91.05%
 featured_stat_label_2: Percent of mobile pages using any vendor prefixed feature
-featured_stat_3: `darken()`
+featured_stat_3: <code>darken()</code>
 featured_stat_label_3: Most popular SCSS function
-unedited: true
 ---
 
 ## Introduction
@@ -34,7 +33,7 @@ Overall, what we observed was a web in two different gears when it comes to CSS 
 
 Similarly, in our conference talks, we often tend to focus on complicated, elaborate use cases that make heads explode and Twitter feeds fill with "CSS can do *that*?!". However, it turns out most CSS usage in the wild is fairly simple. [CSS Variables are mostly used as constants](#complexity) and rarely refer to other variables, `calc()` is [mostly used with two terms](#calculations), gradients [mostly have two stops](#gradients) and so on.
 
-The web is not a teenager anymore. It is now 30 years old and acts like it. It tends to favor stability over new bling, and readability over complexity, occasional guilty pleasures aside.
+The web is not a teenager anymore—it is now 30 years old and acts like it. It tends to favor stability over new bling and readability over complexity, occasional guilty pleasures aside.
 
 ## Methodology
 
