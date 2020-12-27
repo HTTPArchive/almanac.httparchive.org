@@ -989,7 +989,7 @@ Using color stops with different colors in the same position (hard stops) to cre
 
 Most gradient usage is rather simple, with over 75% of gradients found across the entire dataset only using 2 color stops. In fact, fewer than half of pages contain even a single gradient with more than 3 color stops!
 
-The gradient with the most color stops is [this one](https://dabblet.com/gist/4d1637d78c71ef2d8d37952fc6e90ff5) with 646 stops! So pretty! This is almost certainly generated, and the resulting CSS code is 8KB, so a 1px tall PNG would likely have done the job as well, with a smaller footprint (our image below is 1.3 KB).
+The gradient with the most color stops is [this one](https://dabblet.com/gist/4d1637d78c71ef2d8d37952fc6e90ff5) with 646 stops! So pretty! This is almost certainly generated, and the resulting CSS code is 8KB, so a 1px tall PNG would likely have done the job as well, with a smaller footprint (our image below is 1.1 KB).
 
 {{ figure_markup(
   image="gradient-most-stops.png",
