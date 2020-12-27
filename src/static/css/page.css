@@ -469,6 +469,11 @@ figure img {
   border: 1px solid #e5e5e5;
 }
 
+.height-16vw-122px {
+  max-height: 122px;
+  height: 16vw;
+}
+
 figure iframe {
   display: block;
   margin: 0 auto;

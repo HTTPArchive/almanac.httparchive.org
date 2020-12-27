@@ -819,7 +819,7 @@
         {{ caption }}
       </object>
       {% else %}
-      <img src="{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description" width="{{ width }}" height="{{ height }}" loading="lazy" />
+      <img src="{{ image }}" class="{{ classes }}" alt="{{ caption|striptags }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description" width="{{ width }}" height="{{ height }}" loading="lazy" />
       {%- endif %}
     </a>
     {% if not ebook %}{{ figure_dropdown(metadata, id, sheets_gid, sql_file, image) }}{% endif %}
