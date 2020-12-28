@@ -15,15 +15,13 @@ FROM (
   FROM
     `httparchive.almanac.summary_requests`
   JOIN (
-    SELECT 
+    SELECT DISTINCT
       _TABLE_SUFFIX AS client, 
       url AS page
     FROM `httparchive.technologies.2020_08_01_*`
     WHERE category = 'Ecommerce')
   USING
     (client, page)
-  WHERE
-    date = '2020-08-01' 
   GROUP BY
     client,
     type,
