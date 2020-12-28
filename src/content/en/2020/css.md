@@ -537,9 +537,7 @@ Similarly, 99.89% of functionally specified sRGB colors are using the since-fore
 
 So why do people stray from these tried and true formats? To express alpha transparency. This is clear when you look at `rgba()`, which is used 40 times more than `rgb()` (13.82% vs 0.34% of all colors) and `hsla()`, which is used 30 times more than `hsl()` (0.25% vs 0.01% of all colors).
 
-And yes, these numbers also show that despite the much-vaunted (but [largely incorrect](https://drafts.csswg.org/css-color-4/#the-hsl-notation)) easily-understood or easily-modified advantages of HSL, in practice it is used far less than RGB.
-
-{# TODO Authors—finding it quite difficult to understand that sentence. So it's much-vaulted as easily understood but it's not actually easily understood? #}
+HSL is supposed to be [easy to understand and easy to modify](https://drafts.csswg.org/css-color-4/#the-hsl-notation). But these numbers show that in practice, HSL is used in style sheets far less than RGB, likely because those advantages are [greatly over-stated](https://drafts.csswg.org/css-color-4/#ex-hsl-sucks).
 
 {{ figure_markup(
   image="color-formats-alpha.png",
