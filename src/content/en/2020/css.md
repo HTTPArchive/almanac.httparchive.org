@@ -124,9 +124,7 @@ Only a few of the top classes were presentational, with most of those being eith
 
 ### IDs
 
-Despite IDs being discouraged these days in some circles due to their much higher specificity, most websites still use them, albeit sparingly. Fewer than half of pages used more than one ID in any of their selectors (had a max specificity of (1,x,y) or less) and nearly all had a median specificity that did not include IDs (0,x,y).
-
-{# TODO Authors—Can you explain this (1,x,y)/(0,x,y) syntax more? #}
+Despite IDs being discouraged these days in some circles due to their much higher specificity, most websites still use them, albeit sparingly. Fewer than half of pages used more than one ID in any of their selectors (had a max specificity of (1,x,y) or less) and nearly all had a median specificity that did not include IDs (0,x,y). See the [selector's specification](https://www.w3.org/TR/selectors/#specificity-rules) for more details calculating specificity and this (a,b,c) notation.
 
 But what are these IDs used for? It turns out that the most popular IDs are structural: `#content`, `#footer`, `#header`, `#main`, despite [corresponding HTML elements](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure#HTML_layout_elements_in_more_detail) existing that could be used as selectors while also improving the semantic markup.
 
@@ -1333,7 +1331,7 @@ However, when we looked at usage of various CSS-in-JS libraries, it turned out t
 
 ## Internationalization
 
-{# TODO Authors: Intro sentence #}
+English, like many languages, is written in horizontal lines and the characters are laid out from left to right. But some languages (such as Arabic and Hebrew) are mostly written right to left and then there are languages which may be written in vertical lines, from top to bottom. Not to mention quotations from other languages. So things can get quite complicated. Both HTML and CSS have ways to handle this.
 
 ### Direction
 
