@@ -1,5 +1,5 @@
 #standardSQL
-# Core Web Vitals distribution by Ecommerce vendor
+# 13_08a: Core Web Vitals distribution by Ecommerce vendor
 #
 # Note that this is an unweighted average of all sites per Ecommerce vendor.
 # Performance of sites with millions of visitors as weighted the same as small sites.
@@ -22,14 +22,16 @@ SELECT
 FROM
   `chrome-ux-report.materialized.device_summary`
 JOIN (
-  SELECT
+  SELECT DISTINCT
     _TABLE_SUFFIX AS client,
     url,
     app AS ecomm
   FROM
     `httparchive.technologies.2020_08_01_*`
   WHERE
-    category = 'Ecommerce')
+  category = 'Ecommerce' AND 
+  (app != 'Cart Functionality' AND 
+   app != 'Google Analytics Enhanced eCommerce'))
 ON
   CONCAT(origin, '/') = url AND
   IF(device = 'desktop', 'desktop', 'mobile') = client

@@ -12,7 +12,9 @@ JOIN
 USING (_TABLE_SUFFIX, url),
 UNNEST([10, 25, 50, 75, 90]) AS percentile
 WHERE
-  category = 'Ecommerce'
+  category = 'Ecommerce' AND 
+  (app != 'Cart Functionality' AND 
+   app != 'Google Analytics Enhanced eCommerce')
 GROUP BY
   percentile,
   client

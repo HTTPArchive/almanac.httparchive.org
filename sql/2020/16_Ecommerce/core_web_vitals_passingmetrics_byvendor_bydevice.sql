@@ -1,5 +1,5 @@
 #standardSQL
-# CrUX Core Web Vitals performance of Ecommerce vendors by device
+# 13_08b: CrUX Core Web Vitals performance of Ecommerce vendors by device
 CREATE TEMP FUNCTION IS_GOOD (good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
   good / (good + needs_improvement + poor) >= 0.75
 );
@@ -48,12 +48,13 @@ JOIN (
   FROM
     `httparchive.technologies.2020_08_01_*`
   WHERE
-    category = 'Ecommerce')
+    category = 'Ecommerce' AND 
+    (app != 'Cart Functionality' AND 
+    app != 'Google Analytics Enhanced eCommerce'))
 ON
   CONCAT(origin, '/') = url AND
   IF(device = 'desktop', 'desktop', 'mobile') = client
 WHERE
-  # The CrUX 202008 dataset is not available until September 8.
   date = '2020-08-01'
 GROUP BY
   client,
