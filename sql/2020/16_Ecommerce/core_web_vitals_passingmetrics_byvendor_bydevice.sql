@@ -1,5 +1,5 @@
 #standardSQL
-# 13_08b: CrUX Core Web Vitals performance of Ecommerce vendors by device
+# CrUX Core Web Vitals performance of Ecommerce vendors by device
 CREATE TEMP FUNCTION IS_GOOD (good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
   good / (good + needs_improvement + poor) >= 0.75
 );

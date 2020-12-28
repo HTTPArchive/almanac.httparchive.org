@@ -20,4 +20,7 @@ GROUP BY
   client
 ORDER BY
   percentile,
+  order
+ORDER BY
+  percentile,
   client

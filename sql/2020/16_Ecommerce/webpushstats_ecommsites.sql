@@ -49,4 +49,7 @@ WHERE date IN ('2020-08-01') AND
 GROUP BY
   date,
   client
+ORDER BY
+  date,
+  client
   
