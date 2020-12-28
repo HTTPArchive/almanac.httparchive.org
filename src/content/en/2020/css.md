@@ -128,9 +128,7 @@ Despite IDs being discouraged these days in some circles due to their much highe
 
 {# TODO Authors—Can you explain this (1,x,y)/(0,x,y) syntax more? #}
 
-But what are these IDs used for? It turns out that the most popular IDs are structural: `#content`, `#footer`, `#header`, `#main`, despite [corresponding HTML elements](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure#HTML_layout_elements_in_more_detail).
-
-{# TODO Authors—This sentence just ends. Do you mean "despite corresponding HTML elements existing that could be used as selectors while also improving the semnatic markup"? #}
+But what are these IDs used for? It turns out that the most popular IDs are structural: `#content`, `#footer`, `#header`, `#main`, despite [corresponding HTML elements](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure#HTML_layout_elements_in_more_detail) existing that could be used as selectors while also improving the semantic markup.
 
 {{ figure_markup(
   image="popular-ids.png",
