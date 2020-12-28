@@ -7,28 +7,28 @@ import logging
 # Catch all route for everything not matched elsewhere
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
-def catch_all(path):
+def catch_all(path):  # pragma: no cover
     abort(404, "Not Found")
 
 
 @app.errorhandler(400)
-def bad_request(e):
+def bad_request(e):  # pragma: no cover
     logging.exception('An error occurred during a request due to bad request error: %s', request.path)
     return render_error_template(error=e, status_code=400)
 
 
 @app.errorhandler(404)
-def page_not_found(e):
+def page_not_found(e):  # pragma: no cover
     return render_error_template(error=e, status_code=404)
 
 
 @app.errorhandler(500)
-def handle_internal_server_error(e):
+def handle_internal_server_error(e):  # pragma: no cover
     logging.exception('An error occurred during a request due to internal server error: %s', request.path)
     return render_error_template(error=e, status_code=500)
 
 
 @app.errorhandler(502)
-def handle_bad_gateway(e):
+def handle_bad_gateway(e):  # pragma: no cover
     logging.exception('An error occurred during a request due to bad gateway: %s', request.path)
     return render_error_template(error=e, status_code=502)
