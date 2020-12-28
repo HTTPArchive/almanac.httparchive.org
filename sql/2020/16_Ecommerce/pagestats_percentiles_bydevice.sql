@@ -11,7 +11,7 @@ FROM (
     COUNT(0) AS requests,
     SUM(respSize) AS bytes
   FROM
-    `httparchive.almanac.summary_requests`
+    `httparchive.almanac.requests`
   JOIN (
     SELECT DISTINCT
       _TABLE_SUFFIX AS client,
