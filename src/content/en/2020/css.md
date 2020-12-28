@@ -732,7 +732,7 @@ Compatibility, right? You don't want things to break? No. In the style sheets we
         <th scope="col" colspan="2">sRGB</th>
         <th scope="col"><code>display-p3</code></th>
         <th scope="col">ΔE2000</th>
-        <th scope="col">In gamut</th>
+        <th scope="col" class="no-wrap">In gamut</th>
       </tr>
     </thead>
     <tbody>
@@ -929,7 +929,8 @@ Compatibility, right? You don't want things to break? No. In the style sheets we
   </table>
   <figcaption>
     {{ figure_link(
-      caption="This table shows the fallback sRGB colors (plus a color swatch), then the display-p3 colors. A color difference (ΔE2000) of 1 is barely visible, while 5 is clearly distinct."
+      caption='This table shows the fallback sRGB colors, then the display-p3 colors. A color difference (ΔE2000) of 1 is barely visible, while 5 is clearly distinct. This is a summary table (<a href="https://docs.google.com/spreadsheets/d/1sMWXWjMujqfAREYxNbG_t1fOJKYCA6ASLwtz4pBQVTw/#gid=264429000">see full table</a>).',
+      sheets_gid="1370141402"
     ) }}
   </figcaption>
 </figure>
