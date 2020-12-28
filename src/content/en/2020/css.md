@@ -444,9 +444,7 @@ Lengths are the only types of CSS values for which we can omit the unit when the
 
 ### Calculations
 
-When the [`calc()`](https://developer.mozilla.org/en-US/docs/Web/CSS/calc()) function was introduced for performing calculations between different units in CSS, it was a revelation. Previously, only preprocessors were able to accommodate such calculations, but the results were limited to static values and unreliable, since they were missing the dynamic context that is often necessary.
-
-{# TODO (authors)—revolution or revelation. I think revelation (aka "a great success") but not 100% sure (could be "A sudden, vast change in a situation, a discipline, or the way of thinking and behaving."): https://wikidiff.com/revolution/revelation #}
+When the [`calc()`](https://developer.mozilla.org/en-US/docs/Web/CSS/calc()) function was introduced for performing calculations between different units in CSS, it was a revolution. Previously, only preprocessors were able to accommodate such calculations, but the results were limited to static values and unreliable, since they were missing the dynamic context that is often necessary.
 
 Today, `calc()` has been [supported by every browser](https://caniuse.com/calc) for nine years already, so it comes as no surprise that it has been widely adopted with 60% of pages using it at least once. If anything, we expected even higher adoption than this.
 
