@@ -18,7 +18,7 @@ def bad_request(e):  # pragma: no cover
 
 
 @app.errorhandler(404)
-def page_not_found(e):  # pragma: no cover
+def page_not_found(e):
     return render_error_template(error=e, status_code=404)
 
 
