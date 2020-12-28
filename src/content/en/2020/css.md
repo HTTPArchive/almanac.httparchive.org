@@ -139,9 +139,7 @@ But what are these IDs used for? It turns out that the most popular IDs are stru
   sql_file="top_selector_ids.sql"
 ) }}
 
-IDs can also be used to intentionally reduce or increase specificity. The specificity hack of writing an ID selector as an attribute selector (`[id="foo"]` instead of `#foo`) was surprisingly rare, with only 0.3% of pages using it at least once. Another ID-related specificity hack, using a negation + descendant selector like `:not(#nonexistent) .foo` instead of `.foo` to increase specificity, was also very rare, appearing in only 0.1% of pages.
-
-{# TODO Authors: Oh clever! I'd never heard of this! Presumably that first one is to reduce specificty? Should we make that clearer? Or link to an article/articles about either or both of these hacks for uninitiated like me? #}
+IDs can also be used to intentionally reduce or increase specificity. The [specificity hack of writing an ID selector as an attribute selector](https://csswizardry.com/2014/07/hacks-for-dealing-with-specificity/) (`[id="foo"]` instead of `#foo` to reduce specificity) was surprisingly rare, with only 0.3% of pages using it at least once. Another ID-related specificity hack, using a negation + descendant selector like `:not(#nonexistent) .foo` instead of `.foo` to increase specificity, was also very rare, appearing in only 0.1% of pages.
 
 ### `!important` {important}
 
