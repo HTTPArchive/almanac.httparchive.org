@@ -516,10 +516,7 @@ The last global keyword, `unset`, is essentially a hybrid of `initial` and `inhe
   sql_file="keyword_totals.sql"
 ) }}
 
-The `all` property was [introduced in 2013](https://www.w3.org/TR/2013/WD-css3-cascade-20130103/#all-shorthand) and gained [near-universal support in 2016 (except Edge) and universal support earlier this year](https://caniuse.com/css-all). It is a shorthand of nearly every property in CSS (except custom properties, `direction`, and `unicode-bidi`), and only accepts the four global keywords as values. It was envisioned as a one liner CSS reset, either as `all: unset` or `all: revert`, depending on what kind of reset we wanted. However, adoption is still very low: we only found `all` on 477 pages (0.01% of all pages), and only used with the `revert` keyword.
-
-{# TODO authors—what are the four global keywords and should we link them here? The spec only lists `initial`, `inherit` and `unset` but then you talk about `revert` so is that the missing 4th one? Should we explain this discrepency? #}
-
+The `all` property was [introduced in 2013](https://www.w3.org/TR/2013/WD-css3-cascade-20130103/#all-shorthand) and gained [near-universal support in 2016 (except Edge) and universal support earlier this year](https://caniuse.com/css-all). It is a shorthand of nearly every property in CSS (except custom properties, `direction`, and `unicode-bidi`), and only accepts the [four global keywords](https://drafts.csswg.org/css-cascade-4/#defaulting-keywords) (`initial`, `inherit`, `unset`, and `revert`) as values. It was envisioned as a one liner CSS reset, either as `all: unset` or `all: revert`, depending on what kind of reset we wanted. However, adoption is still very low: we only found `all` on 477 pages (0.01% of all pages), and only used with the `revert` keyword.
 ## Color
 
 They say the old jokes are the best, and that goes for colors too. The original, cryptic, `#rrggbb` hex syntax remains the most popular way to specify a color in CSS in 2020: Half of all colors are written that way. The next most popular format is the somewhat shorter `#rgb` three-digit hex format at 26%. While it is shorter, it is also able to express way fewer colors; only 4096, out of the 16.7 million sRGB values.
