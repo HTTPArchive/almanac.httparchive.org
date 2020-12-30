@@ -459,7 +459,7 @@ Como se puede ver en la Figura 20.17 a continuación, un porcentaje muy pequeño
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Páginas que utilizan <i lang="en">server push</i> HTTP/2 o gQUIC.", sheets_gid="698874709", sql_file="number_of_h2_and_h3_pushed_resources_and_bytes_transferred.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption='Páginas que utilizan <i lang="en">server push</i> HTTP/2 o gQUIC.', sheets_gid="698874709", sql_file="number_of_h2_and_h3_pushed_resources_and_bytes_transferred.sql") }}</figcaption>
 </figure>
 
 Si analizamos más a fondo las distribuciones de los activos empujados en las Figuras 22.18 y 22.19, la mitad de los sitios empujan 4 recursos o menos con un tamaño total de 140 KB en computadoras de escritorio y 3 recursos o menos con un tamaño de 184 KB en dispositivos móviles. Para gQUIC, para dispositivos de escritorio es 7 o menos y para móvil es 2. La página más infractora empuja <i lang="en">41 recursos</i> sobre gQUIC en dispositivos de escritorio.
