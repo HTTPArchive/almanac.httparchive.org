@@ -199,8 +199,8 @@ La Figura 22.7 ordena cada sitio web por la fracción de solicitudes HTTP/2 para
 
 {{ figure_markup(
   image="http2-third-party-http2-usage-by-content-type.png",
-  caption="Fracción de solicitudes HTTP/2 o gQUIC de terceros conocidos por <i lang="en">content-type</i> por sitio web.",
-  description="Un gráfico de barras que compara la fracción de solicitudes HTTP/2 de terceros por <i lang="en">content-type</i>. Todas las solicitudes de terceros se envían a través de HTTP/2 o gQUIC para el 90% de audio y fuentes, 80% de css y video, 70% de html, imágenes y texto y 60% de scripts.",
+  caption='Fracción de solicitudes HTTP/2 o gQUIC de terceros conocidos por <i lang="en">content-type</i> por sitio web.',
+  description='Un gráfico de barras que compara la fracción de solicitudes HTTP/2 de terceros por <i lang="en">content-type</i>. Todas las solicitudes de terceros se envían a través de HTTP/2 o gQUIC para el 90% de audio y fuentes, 80% de css y video, 70% de html, imágenes y texto y 60% de scripts.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=1264128523&format=interactive",
   sheets_gid="419557288",
   sql_file="http2_1st_party_vs_3rd_party_by_type.sql"
