@@ -614,7 +614,7 @@ In our mobile dataset of 6.3 million pages, around 0.9 million pages (14.01%) co
   <figcaption>{{ figure_link(caption="Obsolete elements with more than 10,000 uses.", sheets_gid="1972617631", sql_file="pages_element_count_by_device_and_obsolete_elements.sql") }}</figcaption>
 </figure>
 
-Even `spacer` is still being used 1,584 times, and present on every 5,000th page. We know that Google has been using a `center` element on [their homepage](https://www.google.com/) [for 22 years](https://web.archive.org/web/19981202230410/https://www.google.com/) now, but why are there so many imitators?
+Even `spacer` is still being used 1,584 times, and present on every 5,000th page. We know that Google has been using a `center` element on [their homepage](https://www.google.com/) [for 22 years now](https://web.archive.org/web/19981202230410/https://www.google.com/), but why are there so many imitators?
 
 #### `isindex`
 
@@ -764,7 +764,7 @@ This section focuses on how attributes are used in documents and explores patter
 
 ### Top attributes
 
-Similar to the section on the most [popular elements](#top-elements), this section delves into the most popular attributes on the web. Given how important the `href` attribute is for the web itself, or the `alt` attribute in order to make information [accessible](./accessibility), would these be most popular attributes?
+Similar to the section on the most [popular elements](#top-elements), this section delves into the most popular attributes on the web. Given how important the `href` attribute is for the web itself, or the `alt` attribute in order to make information [accessible](./#images-and-their-text-alternatives), would these be most popular attributes?
 
 <figure>
   <table>
@@ -1161,7 +1161,7 @@ There has been a lot of [discussion](https://adrianroselli.com/2016/01/links-but
   <figcaption>{{ figure_link(caption="Adoption of button types.", sheets_gid="410549982", sql_file="pages_markup_by_device.sql") }}</figcaption>
 </figure>
 
-Our analysis shows that about 60% of pages contain a button element and more than half of the pages (32.43%) have at least one button that fails to specify a `type` attribute. Note that the button element has a [default type](https://dev.w3.org/html5/spec-LC/the-button-element.html) of `submit`, so the default behavior of buttons on these 32% of pages is to submit the current form data. To avoid possibly unexpected behavior like this, a best practice is to specify the `type` attribute.
+Our analysis shows that about 60% of pages contain a button element and more than half of those pages (32.43%) have at least one button that fails to specify a `type` attribute. Note that the button element has a [default type](https://dev.w3.org/html5/spec-LC/the-button-element.html) of `submit`, so the default behavior of buttons on these 32% of pages is to submit the current form data. To avoid possibly unexpected behavior like this, a best practice is to specify the `type` attribute.
 
 <figure>
   <table>
@@ -1308,7 +1308,7 @@ Using `target="_blank"` has been known to be a [security vulnerability](https://
   <figcaption>{{ figure_link(caption="Blank relationships.", sheets_gid="1876528165", sql_file="pages_wpt_bodies_by_device.sql") }}</figcaption>
 </figure>
 
-As a rule of thumb and for [usability reasons](https://www.nngroup.com/articles/new-browser-windows-and-tabs/), prefer not to use `target="_blank"` in the first place.
+As a rule of thumb and for [usability reasons](https://www.nngroup.com/articles/new-browser-windows-and-tabs/), it is recommended not to use `target="_blank"` in the first place.
 
 <p class="note">Within the latest Safari and Firefox versions, setting <code>target="_blank"</code> on <code>a</code> elements implicitly provides the same <code>rel</code> behavior as setting <code>rel="noopener"</code>. This is already <a href="https://chromium-review.googlesource.com/c/chromium/src/+/1630010">implemented in Chromium</a> as well and will land in Chrome 88.</p>
 
