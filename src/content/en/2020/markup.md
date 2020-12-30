@@ -51,16 +51,44 @@ In this section, we're covering the higher-level aspects of HTML like document t
 
 96.82% of pages declare a [_doctype_](https://developer.mozilla.org/en-US/docs/Glossary/Doctype). HTML documents declaring a doctype is useful for historical reasons, "to avoid triggering quirks mode in browsers" as [Ian Hickson wrote in 2009](https://lists.w3.org/Archives/Public/public-html-comments/2009Jul/0020.html). What are the most popular values?
 
-<figure markdown>
-| Doctype | Pages | Percentage |
-|---|---|---|
-| HTML ("HTML5") | 5,441,815 | 85.73% |
-| XHTML 1.0 Transitional | 382,322 | 6.02% |
-| XHTML 1.0 Strict | 107,351 | 1.69% |
-| HTML 4.01 Transitional | 54,379 | 0.86% |
-| HTML 4.01 Transitional ([quirky](https://hsivonen.fi/doctype/#xml)) | 38,504 | 0.61% |
-
-<figcaption>{{ figure_link(caption="The 5 most popular doctypes.", sheets_gid="1981441894", sql_file="summary_pages_by_device_and_doctype.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Doctype</th>
+        <th>Pages</th>
+        <th>Percentage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>HTML ("HTML5")</td>
+        <td class="numeric">5,441,815</td>
+        <td class="numeric">85.73%</td>
+      </tr>
+      <tr>
+        <td>XHTML 1.0 Transitional</td>
+        <td class="numeric">382,322</td>
+        <td class="numeric">6.02%</td>
+      </tr>
+      <tr>
+        <td>XHTML 1.0 Strict</td>
+        <td class="numeric">107,351</td>
+        <td class="numeric">1.69%</td>
+      </tr>
+      <tr>
+        <td>HTML 4.01 Transitional</td>
+        <td class="numeric">54,379</td>
+        <td class="numeric">0.86%</td>
+      </tr>
+      <tr>
+        <td>HTML 4.01 Transitional (<a href="https://hsivonen.fi/doctype/#xml">quirky</a>)</td>
+        <td class="numeric">38,504</td>
+        <td class="numeric">0.61%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="The 5 most popular doctypes.", sheets_gid="1981441894", sql_file="summary_pages_by_device_and_doctype.sql") }}</figcaption>
 </figure>
 
 You can already tell how the numbers decrease quite a bit after XHTML 1.0, before entering the long tail with a few standard, some esoteric, and also bogus doctypes.
@@ -150,6 +178,7 @@ Overall, around 2% of pages contain no scripting at all, not even structured dat
 At the opposite end of the spectrum, the numbers show that about 97% of pages contain at least one script, either inline or external.
 
 {# TODO(analysts): We still have a problem here with the x-axis label (“Containing”). Can someone help out and look at this? #}
+
 {{ figure_markup(
   image="script-use.png",
   caption="Usage of the <code>script</code> element.",
@@ -240,21 +269,69 @@ Not that much changed [compared to 2019](../2019/markup#fig-3)!
 
 In 2019, the Markup chapter of the Web Almanac featured the most frequently used elements in reference to [Ian Hickson's work in 2005](https://web.archive.org/web/20060203031713/http://code.google.com/webstats/2005-12/elements.html). We found this useful and had a look at that data again:
 
-<figure markdown>
-| 2005 | 2019 | 2020 |
-|---|---|---|
-| `title` | `div` | `div` |
-| `a` | `a` | `a` |
-| `img` | `span` | `span` |
-| `meta` | `li` | `li` |
-| `br` | `img` | `img` |
-| `table` | `script` | `script` |
-| `td` | `p` | `p` |
-| `tr` | `option` | `link` |
-| | | `i` |
-| | | `option`|
-
-<figcaption>{{ figure_link(caption="The most popular elements in 2005, 2019, and 2020.", sheets_gid="781932961", sql_file="pages_element_count_by_device_and_element_type_frequency.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>2005</th>
+        <th>2019</th>
+        <th>2020</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>title</code></td>
+        <td><code>div</code></td>
+        <td><code>div</code></td>
+      </tr>
+      <tr>
+        <td><code>a</code></td>
+        <td><code>a</code></td>
+        <td><code>a</code></td>
+      </tr>
+      <tr>
+        <td><code>img</code></td>
+        <td><code>span</code></td>
+        <td><code>span</code></td>
+      </tr>
+      <tr>
+        <td><code>meta</code></td>
+        <td><code>li</code></td>
+        <td><code>li</code></td>
+      </tr>
+      <tr>
+        <td><code>br</code></td>
+        <td><code>img</code></td>
+        <td><code>img</code></td>
+      </tr>
+      <tr>
+        <td><code>table</code></td>
+        <td><code>script</code></td>
+        <td><code>script</code></td>
+      </tr>
+      <tr>
+        <td><code>td</code></td>
+        <td><code>p</code></td>
+        <td><code>p</code></td>
+      </tr>
+      <tr>
+        <td><code>tr</code></td>
+        <td><code>option</code></td>
+        <td><code>link</code></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><code>i</code></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><code>option</code></td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="The most popular elements in 2005, 2019, and 2020.", sheets_gid="781932961", sql_file="pages_element_count_by_device_and_element_type_frequency.sql") }}</figcaption>
 </figure>
 
 Nothing changed in the Top 7, but the `option` element went a little out of favor and dropped from 8 to 10, letting both the `link` and the `i` element pass in popularity. These elements have risen in use, possibly due to an increase in use of [resource hints](./resource-hints) (as with prerendering and prefetching), as well icon solutions like [Font Awesome](https://fontawesome.com/), which _de facto_ misuses `i` elements for the purpose of displaying icons.
@@ -293,13 +370,13 @@ Accordingly, we looked at the number of `details` and `summary` elements and it 
     <tbody>
       <tr>
         <td><code>summary</code></td>
-        <td>62,992</td>
-        <td>43,936</td>
+        <td class="numeric">62,992</td>
+        <td class="numeric">43,936</td>
       </tr>
       <tr>
         <td><code>details</code></td>
-        <td>56,60</td>
-        <td>36,743</td>
+        <td class="numeric">56,60</td>
+        <td class="numeric">36,743</td>
       </tr>
     </tbody>
   </table>
@@ -310,33 +387,86 @@ Accordingly, we looked at the number of `details` and `summary` elements and it 
 
 Taking another look at element popularity, how likely is it to find a certain element in the DOM of a page? Surely, `html`, `head`, `body` are present on every page (even though [their tags are all optional](https://meiert.com/en/blog/optional-html/)), making them common elements, but what other elements are to be found?
 
-<figure markdown>
-| Element | Probability |
-|---|---|
-| `title` | 99.34% |
-| `meta` | 99.00% |
-| `div` | 98.42% |
-| `a` | 98.32% |
-| `link` | 97.79% |
-| `script` | 97.73% |
-| `img` | 95.83% |
-| `span` | 93.98% |
-| `p` | 88.71% |
-| `ul` | 87.68% |
-
-<figcaption>{{ figure_link(caption="High probabilities of finding a given element in pages of the Web Almanac 2020 sample.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Element</th>
+        <th>Probability</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>title</code></td>
+        <td class="numeric">99.34%</td>
+      </tr>
+      <tr>
+        <td><code>meta</code></td>
+        <td class="numeric">99.00%</td>
+      </tr>
+      <tr>
+        <td><code>div</code></td>
+        <td class="numeric">98.42%</td>
+      </tr>
+      <tr>
+        <td><code>a</code></td>
+        <td class="numeric">98.32%</td>
+      </tr>
+      <tr>
+        <td><code>link</code></td>
+        <td class="numeric">97.79%</td>
+      </tr>
+      <tr>
+        <td><code>script</code></td>
+        <td class="numeric">97.73%</td>
+      </tr>
+      <tr>
+        <td><code>img</code></td>
+        <td class="numeric">95.83%</td>
+      </tr>
+      <tr>
+        <td><code>span</code></td>
+        <td class="numeric">93.98%</td>
+      </tr>
+      <tr>
+        <td><code>p</code></td>
+        <td class="numeric">88.71%</td>
+      </tr>
+      <tr>
+        <td><code>ul</code></td>
+        <td class="numeric">87.68%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="High probabilities of finding a given element in pages of the Web Almanac 2020 sample.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
 </figure>
 
 Standard elements are those that are or were part of the HTML specification. Which ones are you really rarely to find? In our sample, that would bring up the following:
 
-<figure markdown>
-| Element | Probability |
-|---|---|
-| `dir` | 0.0082% |
-| `rp` | 0.0087% |
-| `basefont` | 0.0092% |
-
-<figcaption>{{ figure_link(caption="Low probabilities of finding a given element in pages of the sample.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Element</th>
+        <th>Probability</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>dir</code></td>
+        <td class="numeric">0.0082%</td>
+      </tr>
+      <tr>
+        <td><code>rp</code></td>
+        <td class="numeric">0.0087%</td>
+      </tr>
+      <tr>
+        <td><code>basefont</code></td>
+        <td class="numeric">0.0092%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Low probabilities of finding a given element in pages of the sample.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
 </figure>
 
 We're including these elements to give an idea what elements may have gone out of favor. But while `dir` and `basefont` were last specified in XHTML 1.0 (2000), the rare use of `rp`, which has been mentioned [as early as 1998](https://www.w3.org/TR/1998/WD-ruby-19981221/#a2-4) but which is also [still part of HTML](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element), may just suggest that Ruby markup is not very popular.
@@ -347,25 +477,89 @@ The 2019 edition of the Web Almanac handled [custom elements](../2019/markup#cus
 
 {# TODO(authors, analysts): Clarify occurrences and percentages _of what_. Pages? Elements? #}
 
-<figure markdown>
-| Element | Occurrences | Percentage |
-|---|---|---|
-| `ym-measure` | 141,156 | 2.22% |
-| `wix-image` | 76,969 | 1.21% |
-| `rs-module-wrap` | 71,272 | 1.12% |
-| `rs-module` | 71,271 | 1.12% |
-| `rs-slide` | 70,970 | 1.12% |
-| `rs-slides` | 70,993 | 1.12% |
-| `rs-sbg-px` | 70,414 | 1.11% |
-| `rs-sbg-wrap` | 70,414 | 1.11% |
-| `rs-sbg` | 70,413 | 1.11% |
-| `rs-progress` | 70,651 | 1.11% |
-| `rs-mask-wrap` | 63,871 | 1.01% |
-| `rs-loop-wrap` | 63,870 | 1.01% |
-| `rs-layer-wrap` | 63,849 | 1.01% |
-| `wix-iframe` | 63,590 | 1% |
-
-<figcaption>{{ figure_link(caption="The 14 most popular custom elements.", sheets_gid="770933671", sql_file="pages_element_count_by_device_and_custom_dash_elements.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Element</th>
+        <th>Occurrences</th>
+        <th>Percentage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>ym-measure</code></td>
+        <td class="numeric">141,156</td>
+        <td class="numeric">2.22%</td>
+      </tr>
+      <tr>
+        <td><code>wix-image</code></td>
+        <td class="numeric">76,969</td>
+        <td class="numeric">1.21%</td>
+      </tr>
+      <tr>
+        <td><code>rs-module-wrap</code></td>
+        <td class="numeric">71,272</td>
+        <td class="numeric">1.12%</td>
+      </tr>
+      <tr>
+        <td><code>rs-module</code></td>
+        <td class="numeric">71,271</td>
+        <td class="numeric">1.12%</td>
+      </tr>
+      <tr>
+        <td><code>rs-slide</code></td>
+        <td class="numeric">70,970</td>
+        <td class="numeric">1.12%</td>
+      </tr>
+      <tr>
+        <td><code>rs-slides</code></td>
+        <td class="numeric">70,993</td>
+        <td class="numeric">1.12%</td>
+      </tr>
+      <tr>
+        <td><code>rs-sbg-px</code></td>
+        <td class="numeric">70,414</td>
+        <td class="numeric">1.11%</td>
+      </tr>
+      <tr>
+        <td><code>rs-sbg-wrap</code></td>
+        <td class="numeric">70,414</td>
+        <td class="numeric">1.11%</td>
+      </tr>
+      <tr>
+        <td><code>rs-sbg</code></td>
+        <td class="numeric">70,413</td>
+        <td class="numeric">1.11%</td>
+      </tr>
+      <tr>
+        <td><code>rs-progress</code></td>
+        <td class="numeric">70,651</td>
+        <td class="numeric">1.11%</td>
+      </tr>
+      <tr>
+        <td><code>rs-mask-wrap</code></td>
+        <td class="numeric">63,871</td>
+        <td class="numeric">1.01%</td>
+      </tr>
+      <tr>
+        <td><code>rs-loop-wrap</code></td>
+        <td class="numeric">63,870</td>
+        <td class="numeric">1.01%</td>
+      </tr>
+      <tr>
+        <td><code>rs-layer-wrap</code></td>
+        <td class="numeric">63,849</td>
+        <td class="numeric">1.01%</td>
+      </tr>
+      <tr>
+        <td><code>wix-iframe</code></td>
+        <td class="numeric">63,590</td>
+        <td class="numeric">1%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="The 14 most popular custom elements.", sheets_gid="770933671", sql_file="pages_element_count_by_device_and_custom_dash_elements.sql") }}</figcaption>
 </figure>
 
 These elements come from three sources: [Yandex Metrica](https://metrica.yandex.com/about) (`ym-`), an analytics solution we've also seen last year; [Slider Revolution](https://www.sliderrevolution.com/) (`rs-`), a WordPress slider, for which there are more elements to be found near the top of the sample; and [Wix](https://www.wix.com/) (`wix-`), a website builder.
@@ -380,20 +574,64 @@ There are more questions to ask about the use of HTML, and one may relate to obs
 
 In our mobile dataset of 6.3 million pages, around 0.9 million pages (14.01%) contain one or more of these elements. Here are the top 9, which are used more than 10,000 times:
 
-<figure markdown>
-| Element | Occurrences | Pages (%) |
-|---|---|---|
-| `center` | 458,402 | 7.22% |
-| `font` | 430,987 | 6.79% |
-| `marquee` | 67,781 | 1.07% |
-| `nobr` | 31,138 | 0.49% |
-| `big` | 27,578 | 0.43% |
-| `frame` | 19,363 | 0.31% |
-| `frameset` | 19,163 | 0.30% |
-| `strike` | 17,438 | 0.27% |
-| `noframes` | 15,016 | 0.24% |
-
-<figcaption>{{ figure_link(caption="Obsolete elements with more than 10,000 uses.", sheets_gid="1972617631", sql_file="pages_element_count_by_device_and_obsolete_elements.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Element</th>
+        <th>Occurances</th>
+        <th>Pages (%)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>center</code></td>
+        <td class="numeric">458,402</td>
+        <td class="numeric">7.22%</td>
+      </tr>
+      <tr>
+        <td><code>font</code></td>
+        <td class="numeric">430,987</td>
+        <td class="numeric">6.79%</td>
+      </tr>
+      <tr>
+        <td><code>marquee</code></td>
+        <td class="numeric">67,781</td>
+        <td class="numeric">1.07%</td>
+      </tr>
+      <tr>
+        <td><code>nobr</code></td>
+        <td class="numeric">31,138</td>
+        <td class="numeric">0.49%</td>
+      </tr>
+      <tr>
+        <td><code>big</code></td>
+        <td class="numeric">27,578</td>
+        <td class="numeric">0.43%</td>
+      </tr>
+      <tr>
+        <td><code>frame</code></td>
+        <td class="numeric">19,363</td>
+        <td class="numeric">0.31%</td>
+      </tr>
+      <tr>
+        <td><code>frameset</code></td>
+        <td class="numeric">19,163</td>
+        <td class="numeric">0.30%</td>
+      </tr>
+      <tr>
+        <td><code>strike</code></td>
+        <td class="numeric">17,438</td>
+        <td class="numeric">0.27%</td>
+      </tr>
+      <tr>
+        <td><code>noframes</code></td>
+        <td class="numeric">15,016</td>
+        <td class="numeric">0.24%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Obsolete elements with more than 10,000 uses.", sheets_gid="1972617631", sql_file="pages_element_count_by_device_and_obsolete_elements.sql") }}</figcaption>
 </figure>
 
 Even `spacer` is still being used 1,584 times, and present on every 5,000th page. We know that Google has been using a `center` element on [their homepage](https://www.google.com/) [for 22 years](https://web.archive.org/web/19981202230410/https://www.google.com/) now, but why are there so many imitators?
@@ -406,21 +644,58 @@ If you were wondering: The total number of [`isindex`](https://www.w3.org/TR/htm
 
 In our set of elements we found some that were neither standard HTML (nor SVG nor MathML) elements, nor custom ones, nor obsolete ones, but somewhat proprietary ones. The top 10 that we identified are the following:
 
-<figure markdown>
-| Element | Pages (%) |
-|---|---|
-| `noindex` | 0.89% |
-| `jdiv` | 0.85% |
-| `mediaelementwrapper` | 0.49% |
-| `ymaps` | 0.26% |
-| `yatag` | 0.20% |
-| `ss` | 0.11% |
-| `include` | 0.08% |
-| `olark` | 0.07% |
-| `h7` | 0.06% |
-| `limespot` | 0.05% |
-
-<figcaption>{{ figure_link(caption="Elements of questionable heritage.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Element</th>
+        <th>Pages (%)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>noindex</code></td>
+        <td class="numeric">0.89%</td>
+      </tr>
+      <tr>
+        <td><code>jdiv</code></td>
+        <td class="numeric">0.85%</td>
+      </tr>
+      <tr>
+        <td><code>mediaelementwrapper</code></td>
+        <td class="numeric">0.49%</td>
+      </tr>
+      <tr>
+        <td><code>ymaps</code></td>
+        <td class="numeric">0.26%</td>
+      </tr>
+      <tr>
+        <td><code>yatag</code></td>
+        <td class="numeric">0.20%</td>
+      </tr>
+      <tr>
+        <td><code>ss</code></td>
+        <td class="numeric">0.11%</td>
+      </tr>
+      <tr>
+        <td><code>include</code></td>
+        <td class="numeric">0.08%</td>
+      </tr>
+      <tr>
+        <td><code>olark</code></td>
+        <td class="numeric">0.07%</td>
+      </tr>
+      <tr>
+        <td><code>h7</code></td>
+        <td class="numeric">0.06%</td>
+      </tr>
+      <tr>
+        <td><code>limespot</code></td>
+        <td class="numeric">0.05%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Elements of questionable heritage.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
 </figure>
 
 The source of these elements appears to be mixed, as in some are unknown while others can be traced. The most popular one, `noindex`, is probably due to [Yandex's recommendation](https://yandex.com/support/webmaster/adding-site/indexing-prohibition.html) of it to prohibit page indexing. `jdiv` was noted in [last year's Web Almanac](../2019/markup#products-and-libraries-and-their-custom-markup) and is from JivoChat. `mediaelementwrapper` comes from the MediaElement media player. Both `ymaps` and `yatag` are also from Yandex. The `ss` element could be from ProStores, a former ecommerce product from eBay, and `olark` may be from the Olark chat software. `h7` appears to be a mistake. `limespot` is probably related to the Limespot personalization program for ecommerce. None of these elements are part of a web standard.
@@ -429,28 +704,76 @@ The source of these elements appears to be mixed, as in some are unknown while o
 
 [Headings](https://html.spec.whatwg.org/multipage/dom.html#heading-content) make for a special category of elements that play an important role in [sectioning](https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2) and for [accessibility](https://www.w3.org/WAI/tutorials/page-structure/headings/).
 
-<figure markdown>
-| Heading | Occurrences | Average per page |
-|---|---|---|
-| `h1` | 10,524,810 | 1.66 |
-| `h2` | 37,312,338 | 5.88 |
-| `h3` | 44,135,313 | 6.96 |
-| `h4` | 20,473,598 | 3.23 |
-| `h5` | 8,594,500 | 1.36 |
-| `h6` | 3,527,470 | 0.56 |
-
-<figcaption>{{ figure_link(caption="Frequency and average use of standard heading elements.", sheets_gid="277662548", sql_file="pages_wpt_bodies_by_device_and_percentile_and_heading_level.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Heading</th>
+        <th>Occurrences</th>
+        <th>Average per page</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>h1</code></td>
+        <td class="numeric">10,524,810</td>
+        <td class="numeric">1.66</td>
+      </tr>
+      <tr>
+        <td><code>h2</code></td>
+        <td class="numeric">37,312,338</td>
+        <td class="numeric">5.88</td>
+      </tr>
+      <tr>
+        <td><code>h3</code></td>
+        <td class="numeric">44,135,313</td>
+        <td class="numeric">6.96</td>
+      </tr>
+      <tr>
+        <td><code>h4</code></td>
+        <td class="numeric">20,473,598</td>
+        <td class="numeric">3.23</td>
+      </tr>
+      <tr>
+        <td><code>h5</code></td>
+        <td class="numeric">8,594,500</td>
+        <td class="numeric">1.36</td>
+      </tr>
+      <tr>
+        <td><code>h6</code></td>
+        <td class="numeric">3,527,470</td>
+        <td class="numeric">0.56</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Frequency and average use of standard heading elements.", sheets_gid="277662548", sql_file="pages_wpt_bodies_by_device_and_percentile_and_heading_level.sql") }}</figcaption>
 </figure>
 
 You might have expected to only see the standard `<h1>` to `<h6>` elements, but some sites actually use more levels:
 
-<figure markdown>
-| Heading | Occurrences | Average per page |
-|---|---|---|
-| `h7` | 30,073 | 0.005 |
-| `h8` | 9,266 | 0.0015 |
-
-<figcaption>{{ figure_link(caption="Frequency and average use of non-standard heading elements.", sheets_gid="277662548", sql_file="pages_wpt_bodies_by_device_and_percentile_and_heading_level.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Heading</th>
+        <th>Occurrences</th>
+        <th>Average per page</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>h7</code></td>
+        <td class="numeric">30,073</td>
+        <td class="numeric">0.005</td>
+      </tr>
+      <tr>
+        <td><code>h8</code></td>
+        <td class="numeric">9,266</td>
+        <td class="numeric">0.0015</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Frequency and average use of non-standard heading elements.", sheets_gid="277662548", sql_file="pages_wpt_bodies_by_device_and_percentile_and_heading_level.sql") }}</figcaption>
 </figure>
 
 The last two have never been part of HTML, of course, and should not be used.
@@ -463,21 +786,69 @@ This section focuses on how attributes are used in documents and explores patter
 
 Similar to the section on the most [popular elements](#top-elements), this section delves into the most popular attributes on the web. Given how important the `href` attribute is for the web itself, or the `alt` attribute in order to make information [accessible](./accessibility), would these be most popular attributes?
 
-<figure markdown>
-| Attribute | Occurrences | Percentage |
-|---|---|---|
-| `class` | 2,998,695,114 | 34.23% |
-| `href` | 928,704,735 | 10.60% |
-| `style` | 523,148,251 | 5.97% |
-| `id` | 452,110,137 | 5.16% |
-| `src` | 341,604,471 | 3.90% |
-| `type` | 282,298,754 | 3.22% |
-| `title` | 231,960,356 | 2.65% |
-| `alt` | 172,668,703 | 1.97% |
-| `rel` | 171,802,460 | 1.96% |
-| `value` | 140,666,779 | 1.61% |
-
-<figcaption>{{ figure_link(caption="Top 10 attributes by frequency of use.", sheets_gid="1348855449", sql_file="pages_almanac_by_device_and_attribute_name_frequency.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Occurrences</th>
+        <th>Percentage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>class</code></td>
+        <td class="numeric">2,998,695,114</td>
+        <td class="numeric">34.23%</td>
+      </tr>
+      <tr>
+        <td><code>href</code></td>
+        <td class="numeric">928,704,735</td>
+        <td class="numeric">10.60%</td>
+      </tr>
+      <tr>
+        <td><code>style</code></td>
+        <td class="numeric">523,148,251</td>
+        <td class="numeric">5.97%</td>
+      </tr>
+      <tr>
+        <td><code>id</code></td>
+        <td class="numeric">452,110,137</td>
+        <td class="numeric">5.16%</td>
+      </tr>
+      <tr>
+        <td><code>src</code></td>
+        <td class="numeric">341,604,471</td>
+        <td class="numeric">3.90%</td>
+      </tr>
+      <tr>
+        <td><code>type</code></td>
+        <td class="numeric">282,298,754</td>
+        <td class="numeric">3.22%</td>
+      </tr>
+      <tr>
+        <td><code>title</code></td>
+        <td class="numeric">231,960,356</td>
+        <td class="numeric">2.65%</td>
+      </tr>
+      <tr>
+        <td><code>alt</code></td>
+        <td class="numeric">172,668,703</td>
+        <td class="numeric">1.97%</td>
+      </tr>
+      <tr>
+        <td><code>rel</code></td>
+        <td class="numeric">171,802,460</td>
+        <td class="numeric">1.96%</td>
+      </tr>
+      <tr>
+        <td><code>value</code></td>
+        <td class="numeric">140,666,779</td>
+        <td class="numeric">1.61%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Top 10 attributes by frequency of use.", sheets_gid="1348855449", sql_file="pages_almanac_by_device_and_attribute_name_frequency.sql") }}</figcaption>
 </figure>
 
 The most popular attribute is `class`, with nearly 3 billion occurrences in our dataset and constituting 34% of all attributes in use. `class` is by far the most prevalent attribute.
@@ -488,21 +859,58 @@ The `value` attribute, which specifies the value of an `input` element, surprisi
 
 Are there attributes that we find in every document? Not quite, but almost:
 
-<figure markdown>
-Element | Pages (%)
--- | --
-href | 99.21%
-src | 99.18%
-content | 98.88%
-name | 98.61%
-type | 98.55%
-class | 98.24%
-rel | 97.98%
-id | 97.46%
-style | 95.95%
-alt | 90.75%
-
-<figcaption>{{ figure_link(
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Element</th>
+        <th>Pages (%)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>href</td>
+        <td class="numeric">99.21%</td>
+      </tr>
+      <tr>
+        <td>src</td>
+        <td class="numeric">99.18%</td>
+      </tr>
+      <tr>
+        <td>content</td>
+        <td class="numeric">98.88%</td>
+      </tr>
+      <tr>
+        <td>name</td>
+        <td class="numeric">98.61%</td>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td class="numeric">98.55%</td>
+      </tr>
+      <tr>
+        <td>class</td>
+        <td class="numeric">98.24%</td>
+      </tr>
+      <tr>
+        <td>rel</td>
+        <td class="numeric">97.98%</td>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td class="numeric">97.46%</td>
+      </tr>
+      <tr>
+        <td>style</td>
+        <td class="numeric">95.95%</td>
+      </tr>
+      <tr>
+        <td>alt</td>
+        <td class="numeric">90.75%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(
   caption="Top 10 attributes by page.",
   sheets_gid="1185369559",
   sql_file="pages_almanac_by_device_and_attribute_name_present.sql"
@@ -517,19 +925,59 @@ Per the HTML spec, [`data-*` attributes](https://html.spec.whatwg.org/multipage/
 
 The two most popular ones stand out because they are almost twice as popular than each of the attributes that followed (with >1% use):
 
-<figure markdown>
-| Attribute | Occurrences | Percentage |
-|---|---|---|
-| `data-src` | 26,734,560 | 3.30% |
-| `data-id` | 26,596,769 | 3.28% |
-| `data-toggle` | 12,198,883 | 1.50% |
-| `data-slick-index` | 11,775,250 | 1.45% |
-| `data-element_type` | 11,263,176 | 1.39% |
-| `data-type` | 11,130,662 | 1.37% |
-| `data-requiremodule` | 8,303,675 | 1.02% |
-| `data-requirecontext` | 8,302,335 | 1.02% |
-
-<figcaption>{{ figure_link(caption="The most popular <code>data-*</code> attributes.", sheets_gid="764700773", sql_file="pages_almanac_by_device_and_data_attribute_name_frequency.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Occurrences</th>
+        <th>Percentage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>data-src</code></td>
+        <td class="numeric">26,734,560</td>
+        <td class="numeric">3.30%</td>
+      </tr>
+      <tr>
+        <td><code>data-id</code></td>
+        <td class="numeric">26,596,769</td>
+        <td class="numeric">3.28%</td>
+      </tr>
+      <tr>
+        <td><code>data-toggle</code></td>
+        <td class="numeric">12,198,883</td>
+        <td class="numeric">1.50%</td>
+      </tr>
+      <tr>
+        <td><code>data-slick-index</code></td>
+        <td>11,775,250</td>
+        <td>1.45%</td>
+      </tr>
+      <tr>
+        <td><code>data-element_type</code></td>
+        <td class="numeric">11,263,176</td>
+        <td class="numeric">1.39%</td>
+      </tr>
+      <tr>
+        <td><code>data-type</code></td>
+        <td class="numeric">11,130,662</td>
+        <td class="numeric">1.37%</td>
+      </tr>
+      <tr>
+        <td><code>data-requiremodule</code></td>
+        <td class="numeric">8,303,675</td>
+        <td class="numeric">1.02%</td>
+      </tr>
+      <tr>
+        <td><code>data-requirecontext</code></td>
+        <td class="numeric">8,302,335</td>
+        <td class="numeric">1.02%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="The most popular <code>data-*</code> attributes.", sheets_gid="764700773", sql_file="pages_almanac_by_device_and_data_attribute_name_frequency.sql") }}</figcaption>
 </figure>
 
 Attributes like `data-type`, `data-id`, and `data-src` can have multiple generic uses although `data-src` is used a lot with lazy image loading via JavaScript (e.g., Bootstrap 4). [Bootstrap](https://getbootstrap.com/) again explains the presence of `data-toggle`, where it's used as a state styling hook on toggle buttons. The [Slick carousel plugin](https://kenwheeler.github.io/slick/) is the source of `data-slick-index`, whereas `data-element_type` is part of [Elementor's WordPress website builder](https://elementor.com/). Both `data-requiremodule` and `data-requirecontext`, then, are part of [RequireJS](https://requirejs.org/).
@@ -549,17 +997,49 @@ Users should be able to zoom and scale the text [up to 500%](https://dequeuniver
 
 We had a look at the data and in order to better understand the results, we normalized it by removing spaces, converting everything to lowercase, and sorting by comma values of the `content` attribute.
 
-<figure markdown>
-| Content attribute value | Occurrences | Pages (%) |
-|---|---|---|
-| `initial-scale=1,width=device-width` | 2,728,491 | 42.98% |
-| blank | 688,293 | 10,84% |
-| `initial-scale=1,maximum-scale=1,width=device-width` | 373,136 | 5.88% |
-| `initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width` | 352,972 | 5.56% |
-| `initial-scale=1,maximum-scale=1,user-scalable=0,width=device-width` | 249,662 | 3.93% |
-| `width=device-width` | 231,668 | 3.65% |
-
-<figcaption>{{ figure_link(caption="<code>viewport</code> specifications, and lack thereof.", sheets_gid="1414206386", sql_file="summary_pages_by_device_and_viewport.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Content attribute value</th>
+        <th>Occurrences</th>
+        <th>Pages (%)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>initial-scale=1,width=device-width</code></td>
+        <td class="numeric">2,728,491</td>
+        <td class="numeric">42.98%</td>
+      </tr>
+      <tr>
+        <td>blank</td>
+        <td class="numeric">688,293</td>
+        <td class="numeric">10,84%</td>
+      </tr>
+      <tr>
+        <td><code>initial-scale=1,maximum-scale=1,width=device-width</code></td>
+        <td class="numeric">373,136</td>
+        <td class="numeric">5.88%</td>
+      </tr>
+      <tr>
+        <td><code>initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width</code></td>
+        <td class="numeric">352,972</td>
+        <td class="numeric">5.56%</td>
+      </tr>
+      <tr>
+        <td><code>initial-scale=1,maximum-scale=1,user-scalable=0,width=device-width</code></td>
+        <td class="numeric">249,662</td>
+        <td class="numeric">3.93%</td>
+      </tr>
+      <tr>
+        <td><code>width=device-width</code></td>
+        <td class="numeric">231,668</td>
+        <td class="numeric">3.65%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="<code>viewport</code> specifications, and lack thereof.", sheets_gid="1414206386", sql_file="summary_pages_by_device_and_viewport.sql") }}</figcaption>
 </figure>
 
 The results show that almost half of the pages we analyzed are using the typical viewport `content` value. Still, around 10% of mobile pages are entirely missing a proper `content` value for the viewport meta element, with the rest of them using an improper combination of `maximum-scale`, `minimum-scale`, `user-scalable=no`, or `user-scalable=0`.
@@ -574,20 +1054,64 @@ The situation around favicons is fascinating. Favicons work with or without mark
 
 When we built our tests we didn't check for the presence of images, but only looked at the markup. That means, when you review the following, note that it's more about _how_ favicons are referenced rather than whether or how often they are used.
 
-<figure markdown>
-| Favicon format | Occurrences | Pages (%) |
-|---|---|---|
-| ICO | 2,245,646 | 35.38% |
-| PNG | 1,966,530 | 30.98% |
-| No favicon defined | 1,643,136 | 25.88% |
-| JPG | 319,935 | 5.04% |
-| No extension specified (no format identifiable) | 37,011 | 0.58% |
-| GIF | 34,559 | 0.54% |
-| WebP | 10,605 | 0.17% |
-| … | | |
-| SVG | 5,328 | 0.08% |
-
-<figcaption>{{ figure_link(caption="Common favicon formats.", sheets_gid="1930085905", sql_file="pages_almanac_by_device_and_favicon_image_type.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Favicon format</th>
+        <th>Occurrences</th>
+        <th>Pages (%)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ICO</td>
+        <td class="numeric">2,245,646</td>
+        <td class="numeric">35.38%</td>
+      </tr>
+      <tr>
+        <td>PNG</td>
+        <td class="numeric">1,966,530</td>
+        <td class="numeric">30.98%</td>
+      </tr>
+      <tr>
+        <td>No favicon defined</td>
+        <td class="numeric">1,643,136</td>
+        <td class="numeric">25.88%</td>
+      </tr>
+      <tr>
+        <td>JPG</td>
+        <td class="numeric">319,935</td>
+        <td class="numeric">5.04%</td>
+      </tr>
+      <tr>
+        <td>No extension specified (no format identifiable)</td>
+        <td class="numeric">37,011</td>
+        <td class="numeric">0.58%</td>
+      </tr>
+      <tr>
+        <td>GIF</td>
+        <td class="numeric">34,559</td>
+        <td class="numeric">0.54%</td>
+      </tr>
+      <tr>
+        <td>WebP</td>
+        <td class="numeric">10,605</td>
+        <td class="numeric">0.17%</td>
+      </tr>
+      <tr>
+        <td>…</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>SVG</td>
+        <td class="numeric">5,328</td>
+        <td class="numeric">0.08%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Common favicon formats.", sheets_gid="1930085905", sql_file="pages_almanac_by_device_and_favicon_image_type.sql") }}</figcaption>
 </figure>
 
 There are a couple of surprises in here:
@@ -609,32 +1133,90 @@ There has been a lot of [discussion](https://adrianroselli.com/2016/01/links-but
 ) }}
 
 {# TODO(analysts): Where do these "occurrences" come from? Ideally we have a single sheet to link to with the results used by this table. #}
-<figure markdown>
-| Button types | Occurrences | Percentage |
-|---|---|---|
-| `<button type="button">` | 15,926,061 | 36.41% |
-| `<button>` without type | 11,838,110 | 32.43% |
-| `<button type="submit">` | 4,842,946 | 28.55% |
-| `<input type="submit" value="…">` | 4,000,844 | 31.82% |
-| `<input type="button" value="…">` | 1,087,182 | 4.07% |
-| `<input type="image" src="…">` | 322,855 | 2.69% |
-| `<button type="reset">` | 41,735 | 0.49% |
-
-<figcaption>{{ figure_link(caption="Adoption of button types.", sheets_gid="410549982", sql_file="pages_markup_by_device.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Button types</th>
+        <th>Occurences</th>
+        <th>Percentage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>&lt;button type="button"&gt;</code></td>
+        <td class="numeric">15,926,061</td>
+        <td class="numeric">36.41%</td>
+      </tr>
+      <tr>
+        <td><code>&lt;button&gt;</code> without type</td>
+        <td class="numeric">11,838,110</td>
+        <td class="numeric">32.43%</td>
+      </tr>
+      <tr>
+        <td><code>&lt;button type="submit"&gt;</code></td>
+        <td class="numeric">4,842,946</td>
+        <td class="numeric">28.55%</td>
+      </tr>
+      <tr>
+        <td><code>&lt;input type="submit" value="…"&gt;</code></td>
+        <td class="numeric">4,000,844</td>
+        <td class="numeric">31.82%</td>
+      </tr>
+      <tr>
+        <td><code>&lt;input type="button" value="…"&gt;</code></td>
+        <td class="numeric">1,087,182</td>
+        <td class="numeric">4.07%</td>
+      </tr>
+      <tr>
+        <td><code>&lt;input type="image" src="…"&gt;</code></td>
+        <td class="numeric">322,855</td>
+        <td class="numeric">2.69%</td>
+      </tr>
+      <tr>
+        <td><code>&lt;button type="reset"&gt;</code></td>
+        <td class="numeric">41,735</td>
+        <td class="numeric">0.49%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Adoption of button types.", sheets_gid="410549982", sql_file="pages_markup_by_device.sql") }}</figcaption>
 </figure>
 
 Our analysis shows that about 60% of pages contain a button element and more than half of the pages (32.43%) have at least one button that fails to specify a `type` attribute. Note that the button element has a [default type](https://dev.w3.org/html5/spec-LC/the-button-element.html) of `submit`, so the default behavior of buttons on these 32% of pages is to submit the current form data. To avoid possibly unexpected behavior like this, a best practice is to specify the `type` attribute.
 
-<figure markdown>
-| Percentile | Buttons per page |
-|---|---|
-| 10 | 0 |
-| 25 | 0 |
-| 50 | 1 |
-| 75 | 5 |
-| 90 | 13 |
-
-<figcaption>{{ figure_link(caption="Distribution of the number of buttons per page.", sheets_gid="309769153", sql_file="pages_markup_by_device_and_percentile.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Percentile</th>
+        <th>Buttons per page</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>10</td>
+        <td class="numeric">0</td>
+      </tr>
+      <tr>
+        <td>25</td>
+        <td class="numeric">0</td>
+      </tr>
+      <tr>
+        <td>50</td>
+        <td class="numeric">1</td>
+      </tr>
+      <tr>
+        <td>75</td>
+        <td class="numeric">5</td>
+      </tr>
+      <tr>
+        <td>90</td>
+        <td class="numeric">13</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Distribution of the number of buttons per page.", sheets_gid="309769153", sql_file="pages_markup_by_device_and_percentile.sql") }}</figcaption>
 </figure>
 
 Pages in the 10th and 25th percentiles contain no buttons at all, while a page in the 90th percentile contains 13 native `button` elements. In other words, 10% of pages contain 13 or more buttons.
@@ -643,21 +1225,69 @@ Pages in the 10th and 25th percentiles contain no buttons at all, while a page i
 
 The [anchor element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a), or `a` element, links web resources together. In this section, we analyze the adoption of the protocols included in these link targets.
 
-<figure markdown>
-| Protocol | Occurrences | Pages (%) |
-|---|---|---|
-| https | 5,756,444 | 90.69% |
-| http | 4,089,769 | 64.43% |
-| mailto | 1,691,220 | 26.64% |
-| javascript | 1,583,814 | 24.95% |
-| tel | 1,335,919 | 21.05% |
-| whatsapp | 34,643 | 0.55% |
-| viber | 25,951 | 0.41% |
-| skype | 22,378 | 0.35% |
-| sms | 17,304 | 0.27% |
-| intent | 12,807 | 0.20% |
-
-<figcaption>{{ figure_link(caption="Adoption of link target protocols.", sheets_gid="1963376224", sql_file="pages_wpt_bodies_by_device_and_protocol.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Protocol</th>
+        <th>Occurrences</th>
+        <th>Pages (%)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>https</code></td>
+        <td class="numeric">5,756,444</td>
+        <td class="numeric">90.69%</td>
+      </tr>
+      <tr>
+        <td><code>http</code></td>
+        <td class="numeric">4,089,769</td>
+        <td class="numeric">64.43%</td>
+      </tr>
+      <tr>
+        <td><code>mailto</code></td>
+        <td class="numeric">1,691,220</td>
+        <td class="numeric">26.64%</td>
+      </tr>
+      <tr>
+        <td><code>javascript</code></td>
+        <td class="numeric">1,583,814</td>
+        <td class="numeric">24.95%</td>
+      </tr>
+      <tr>
+        <td><code>tel</code></td>
+        <td class="numeric">1,335,919</td>
+        <td class="numeric">21.05%</td>
+      </tr>
+      <tr>
+        <td><code>whatsapp</code></td>
+        <td class="numeric">34,643</td>
+        <td class="numeric">0.55%</td>
+      </tr>
+      <tr>
+        <td><code>viber</code></td>
+        <td class="numeric">25,951</td>
+        <td class="numeric">0.41%</td>
+      </tr>
+      <tr>
+        <td><code>skype</code></td>
+        <td class="numeric">22,378</td>
+        <td class="numeric">0.35%</td>
+      </tr>
+      <tr>
+        <td><code>sms</code></td>
+        <td class="numeric">17,304</td>
+        <td class="numeric">0.27%</td>
+      </tr>
+      <tr>
+        <td><code>intent</code></td>
+        <td class="numeric">12,807</td>
+        <td class="numeric">0.20%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Adoption of link target protocols.", sheets_gid="1963376224", sql_file="pages_wpt_bodies_by_device_and_protocol.sql") }}</figcaption>
 </figure>
 
 We can see how `https` and `http` are most dominant, followed by "benign" links to make writing email, making phone calls, and sending messages easier. `javascript` stands out as a link target that's still very popular even though JavaScript offers native and gracefully degrading options to work with.
@@ -674,14 +1304,30 @@ We can see how `https` and `http` are most dominant, followed by "benign" links 
 
 Using `target="_blank"` has been known to be a [security vulnerability](https://mathiasbynens.github.io/rel-noopener/) for some time now. Yet 71.35% of pages contain links with `target="_blank"`, without `noopener` or `noreferrer`.
 
-<figure markdown>
-| Elements | Pages |
-|---|---|
-| `<a target="_blank" rel="noopener noreferrer">` | 13.63% |
-| `<a target="_blank" rel="noopener">` | 14.14% |
-| `<a target="_blank" rel="noreferrer">` | 0.56% |
-
-<figcaption>{{ figure_link(caption="Blank relationships.", sheets_gid="1876528165", sql_file="pages_wpt_bodies_by_device.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Elements</th>
+        <th>Pages</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>&lt;a target="_blank" rel="noopener noreferrer"&gt;</code></td>
+        <td class="numeric">13.63%</td>
+      </tr>
+      <tr>
+        <td><code>&lt;a target="_blank" rel="noopener"&gt;</code></td>
+        <td class="numeric">14.14%</td>
+      </tr>
+      <tr>
+        <td><code>&lt;a target="_blank" rel="noreferrer"&gt;</code></td>
+        <td class="numeric">0.56%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Blank relationships.", sheets_gid="1876528165", sql_file="pages_wpt_bodies_by_device.sql") }}</figcaption>
 </figure>
 
 As a rule of thumb and for [usability reasons](https://www.nngroup.com/articles/new-browser-windows-and-tabs/), prefer not to use `target="_blank"` in the first place.
