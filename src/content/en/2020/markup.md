@@ -752,7 +752,7 @@ The source of these elements appears to be mixed, as in some are unknown while o
 You might have expected to only see the standard `<h1>` to `<h6>` elements, but some sites actually use more levels:
 
 <figure>
-<table>
+  <table>
     <thead>
       <tr>
         <th>Heading</th>
@@ -1135,51 +1135,51 @@ There has been a lot of [discussion](https://adrianroselli.com/2016/01/links-but
 {# TODO(analysts): Where do these "occurrences" come from? Ideally we have a single sheet to link to with the results used by this table. #}
 <figure>
   <table>
-        <thead>
-          <tr>
-            <th>Button types</th>
-            <th>Occurences</th>
-            <th>Percentage</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>&lt;button type="button"&gt;</code></td>
-            <td class="numeric">15,926,061</td>
-            <td class="numeric">36.41%</td>
-          </tr>
-          <tr>
-            <td><code>&lt;button&gt;</code> without type</td>
-            <td class="numeric">11,838,110</td>
-            <td class="numeric">32.43%</td>
-          </tr>
-          <tr>
-            <td><code>&lt;button type="submit"&gt;</code></td>
-            <td class="numeric">4,842,946</td>
-            <td class="numeric">28.55%</td>
-          </tr>
-          <tr>
-            <td><code>&lt;input type="submit" value="…"&gt;</code></td>
-            <td class="numeric">4,000,844</td>
-            <td class="numeric">31.82%</td>
-          </tr>
-          <tr>
-            <td><code>&lt;input type="button" value="…"&gt;</code></td>
-            <td class="numeric">1,087,182</td>
-            <td class="numeric">4.07%</td>
-          </tr>
-          <tr>
-            <td><code>&lt;input type="image" src="…"&gt;</code></td>
-            <td class="numeric">322,855</td>
-            <td class="numeric">2.69%</td>
-          </tr>
-          <tr>
-            <td><code>&lt;button type="reset"&gt;</code></td>
-            <td class="numeric">41,735</td>
-            <td class="numeric">0.49%</td>
-          </tr>
-        </tbody>
-      </table>
+    <thead>
+      <tr>
+        <th>Button types</th>
+        <th>Occurences</th>
+        <th>Percentage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>&lt;button type="button"&gt;</code></td>
+        <td class="numeric">15,926,061</td>
+        <td class="numeric">36.41%</td>
+      </tr>
+      <tr>
+        <td><code>&lt;button&gt;</code> without type</td>
+        <td class="numeric">11,838,110</td>
+        <td class="numeric">32.43%</td>
+      </tr>
+      <tr>
+        <td><code>&lt;button type="submit"&gt;</code></td>
+        <td class="numeric">4,842,946</td>
+        <td class="numeric">28.55%</td>
+      </tr>
+      <tr>
+        <td><code>&lt;input type="submit" value="…"&gt;</code></td>
+        <td class="numeric">4,000,844</td>
+        <td class="numeric">31.82%</td>
+      </tr>
+      <tr>
+        <td><code>&lt;input type="button" value="…"&gt;</code></td>
+        <td class="numeric">1,087,182</td>
+        <td class="numeric">4.07%</td>
+      </tr>
+      <tr>
+        <td><code>&lt;input type="image" src="…"&gt;</code></td>
+        <td class="numeric">322,855</td>
+        <td class="numeric">2.69%</td>
+      </tr>
+      <tr>
+        <td><code>&lt;button type="reset"&gt;</code></td>
+        <td class="numeric">41,735</td>
+        <td class="numeric">0.49%</td>
+      </tr>
+    </tbody>
+  </table>
   <figcaption>{{ figure_link(caption="Adoption of button types.", sheets_gid="410549982", sql_file="pages_markup_by_device.sql") }}</figcaption>
 </figure>
 
