@@ -709,7 +709,7 @@ And if you are going for fanciful color names, why not define your own with CSS 
 
 And, lastly, the once-deprecated—now partially un-deprecated—system colors like `Canvas` and `ThreeDDarkShadow`: these were a terrible idea, introduced to emulate the typical user interface of things like Java or Windows 95, and already unable to keep up with Windows 98, they soon fell by the wayside. Some sites use these system colors to try and fingerprint you, a loophole that [we are trying to close as we speak](https://github.com/w3c/csswg-drafts/issues/5710). There are few good reasons to use them, and most websites (99.99%) don't, so we are all good.
 
-The rather useful value `currentColor`, surprisingly, trailed at 0.14% of all sRGB colors (1.62% of all named colors).
+The [rather useful value `currentColor`](https://css-tricks.com/currentcolor/), surprisingly, trailed at 0.14% of all sRGB colors (1.62% of all named colors).
 
 {# TODO authors—Is it worth explaining why it's useful or is that obvious? #}
 
