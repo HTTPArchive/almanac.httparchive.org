@@ -634,8 +634,6 @@ Es importante tener en cuenta que esta baja adopción solo refleja el uso de gQU
 
 Ahora podría preguntarse: si no todo el mundo está usando HTTP/2, ¿por qué necesitaríamos HTTP/3 tan pronto? ¿Qué beneficios podemos esperar en la práctica? Echemos un vistazo más de cerca a sus mecanismos internos.
 
-{# TODO(authors): I honestly found this section really interesting, but it doesn't contain any real-world data. How can we add an element of data to this? #}
-
 ### QUIC y HTTP/3
 
 Los intentos anteriores de implementar nuevos protocolos de transporte en Internet han resultado difíciles, por ejemplo, el <a href="https://es.wikipedia.org/wiki/Stream_Control_Transmission_Protocol">Stream Control Transmission Protocol</a> (SCTP). QUIC es un nuevo protocolo de transporte que se ejecuta sobre UDP. Proporciona características similares a TCP, como entrega en orden confiable  y control de congestión para evitar inundaciones en la red.
