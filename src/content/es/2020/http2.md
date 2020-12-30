@@ -653,8 +653,6 @@ Finalmente, TLS ya se utiliza para proteger HTTP/1.1 y HTTP/2. Sin embargo, QUIC
 **Entonces, ¿HTTP/3 ayudará?**
 
 En la superficie, HTTP/3 no es realmente tan diferente de HTTP/2. No agrega ninguna característica importante, pero principalmente cambia la forma en que funcionan las características debajo de la superficie. Las mejoras reales provienen de QUIC, que ofrece configuraciones de conexión más rápidas, mayor solidez y resistencia a la pérdida de paquetes. Como tal, se espera que HTTP/3 funcione mejor que HTTP/2 en redes no tan buenas, mientras que ofrece un rendimiento muy similar en sistemas más rápidos. Sin embargo, eso es si la comunidad web puede hacer que HTTP/3 funcione, lo que puede ser un desafío en la práctica.
-
-
 ### Implementando y descubriendo HTTP/3
 
 Dado que QUIC y HTTP/3 se ejecutan sobre UDP, las cosas no son tan simples como con HTTP/1.1 o HTTP/2. Normalmente, un cliente HTTP/3 tiene que descubrir primero que QUIC está disponible en el servidor. El método recomendado para esto es <i lang="en">[Alternative Services de HTTP](#alternative-services)</i>. En su primera visita a un sitio web, un cliente se conecta a un servidor mediante TCP. Luego descubre a través de `Alt-Svc` que HTTP/3 está disponible y puede configurar una nueva conexión QUIC. La entrada `Alt-Svc` se puede almacenar en caché, lo que permite que las visitas posteriores eviten el paso de TCP, pero la entrada eventualmente se volverá obsoleta y necesitará una revalidación. Es probable que esto deba hacerse para cada dominio por separado, lo que probablemente conducirá a que la mayoría de las cargas de página utilicen una combinación de HTTP/1.1, HTTP/2 y HTTP/3.
