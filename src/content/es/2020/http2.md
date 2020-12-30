@@ -572,7 +572,6 @@ Si analizamos más a fondo las distribuciones de los activos empujados en las Fi
 
 Al observar la frecuencia de empuje por tipo de contenido en la Figura 22.20, vemos que el 90% de las páginas empujan scripts y el 56% empujan CSS. Esto tiene sentido, ya que pueden ser archivos pequeños que normalmente se encuentran en la ruta crítica para representar una página.
 
-{# TODO(analysts): Should this chart differentiate desktop and mobile? #}
 {{ figure_markup(
   image="http2-pushed-content-types.png",
   caption="Porcentaje de páginas que empujan tipos de contenido específicos",
