@@ -432,7 +432,6 @@ Otro problema es que el servidor no conoce los recursos que el navegador ya ha a
 
 Como se puede ver en la Figura 20.17 a continuación, un porcentaje muy pequeño de sitios utilizan <i lang="en">server push</i>.
 
-
 <figure>
   <table>
     <thead>
