@@ -196,6 +196,7 @@ La Figura 22.7 ordena cada sitio web por la fracción de solicitudes HTTP/2 para
   sheets_gid="733872185"
 )
 }}
+
 ¿Hay alguna diferencia ente cuáles tipos de contenido se sirven a través de HTTP/2 o gQUIC? La Figura 22.8 muestra, por ejemplo, que el 90% de los sitios web sirven el 100% de fuentes y audio de terceros a través de HTTP/2 o gQUIC, solo el 5% a través de HTTP/1.1 y un 5% son una combinación. La mayoría de los activos de terceros son scripts o imágenes, y se sirven únicamente a través de HTTP/2 o gQUIC en el 60% y el 70% de los sitios web, respectivamente.
 
 {{ figure_markup(
