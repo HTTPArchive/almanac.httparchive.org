@@ -516,10 +516,7 @@ The last global keyword, `unset`, is essentially a hybrid of `initial` and `inhe
   sql_file="keyword_totals.sql"
 ) }}
 
-The `all` property was [introduced in 2013](https://www.w3.org/TR/2013/WD-css3-cascade-20130103/#all-shorthand) and gained [near-universal support in 2016 (except Edge) and universal support earlier this year](https://caniuse.com/css-all). It is a shorthand of nearly every property in CSS (except custom properties, `direction`, and `unicode-bidi`), and only accepts the four global keywords as values. It was envisioned as a one liner CSS reset, either as `all: unset` or `all: revert`, depending on what kind of reset we wanted. However, adoption is still very low: we only found `all` on 477 pages (0.01% of all pages), and only used with the `revert` keyword.
-
-{# TODO authors—what are the four global keywords and should we link them here? The spec only lists `initial`, `inherit` and `unset` but then you talk about `revert` so is that the missing 4th one? Should we explain this discrepency? #}
-
+The `all` property was [introduced in 2013](https://www.w3.org/TR/2013/WD-css3-cascade-20130103/#all-shorthand) and gained [near-universal support in 2016 (except Edge) and universal support earlier this year](https://caniuse.com/css-all). It is a shorthand of nearly every property in CSS (except custom properties, `direction`, and `unicode-bidi`), and only accepts the [four global keywords](https://drafts.csswg.org/css-cascade-4/#defaulting-keywords) (`initial`, `inherit`, `unset`, and `revert`) as values. It was envisioned as a one liner CSS reset, either as `all: unset` or `all: revert`, depending on what kind of reset we wanted. However, adoption is still very low: we only found `all` on 477 pages (0.01% of all pages), and only used with the `revert` keyword.
 ## Color
 
 They say the old jokes are the best, and that goes for colors too. The original, cryptic, `#rrggbb` hex syntax remains the most popular way to specify a color in CSS in 2020: Half of all colors are written that way. The next most popular format is the somewhat shorter `#rgb` three-digit hex format at 26%. While it is shorter, it is also able to express way fewer colors; only 4096, out of the 16.7 million sRGB values.
@@ -537,9 +534,7 @@ Similarly, 99.89% of functionally specified sRGB colors are using the since-fore
 
 So why do people stray from these tried and true formats? To express alpha transparency. This is clear when you look at `rgba()`, which is used 40 times more than `rgb()` (13.82% vs 0.34% of all colors) and `hsla()`, which is used 30 times more than `hsl()` (0.25% vs 0.01% of all colors).
 
-And yes, these numbers also show that despite the much-vaunted (but [largely incorrect](https://drafts.csswg.org/css-color-4/#the-hsl-notation)) easily-understood or easily-modified advantages of HSL, in practice it is used far less than RGB.
-
-{# TODO Authors—finding it quite difficult to understand that sentence. So it's much-vaulted as easily understood but it's not actually easily understood? #}
+HSL is supposed to be [easy to understand and easy to modify](https://drafts.csswg.org/css-color-4/#the-hsl-notation). But these numbers show that in practice, HSL is used in style sheets far less than RGB, likely because those advantages are [greatly over-stated](https://drafts.csswg.org/css-color-4/#ex-hsl-sucks).
 
 {{ figure_markup(
   image="color-formats-alpha.png",
@@ -717,9 +712,7 @@ All the colors we discussed so far have one thing in common: sRGB, the standard 
 
 And we are still missing out. Despite being [implemented in Safari in 2016](https://webkit.org/blog/6682/improving-color-on-the-web/), the use of display-p3 color in web pages is vanishingly small. Our crawl of the web found only 29 mobile and 36 desktop pages using it! (And more than half of those were syntax errors, mistakes, or attempts to use the never-implemented `color-mod()` function). We were curious why.
 
-Compatibility, right? You don't want things to break? No. In the style sheets we examined, we found solid use of fallback: with document order, the cascade, `@supports`, the `color-gamut` media query, all that good stuff. So in a style sheet we would see the color the designer wanted, expressed in display-p3, and also a fallback sRGB color. We computed the visible difference (a calculation called [ΔE2000](https://zschuessler.github.io/DeltaE/learn/)) between the desired and fallback color and this was typically quite modest. A small tweak. A careful exploration. In fact, 37.6% of the time, the color specified in display-p3 actually fell inside the range of colors (the gamut) that sRGB can manage.
-
-{# TODO Authors—you're completely losing me with this :-) Not sure if there's a way to simplify it more or if this is just the nature of this topic and it's just more advanced, which is fine — the rest of the chapter so far is is more than readable for those less-advance amongst us! But still not sure what your point is here? They shouldn't have used display-p3 because sRGB was good enough? Or is it more than people are just cautiously experimenting at the moment so no real gains yet, but more to come (as covered by your next bit of writing after this table? #}
+Compatibility, right? You don't want things to break? No. In the style sheets we examined, we found solid use of fallback: with document order, the cascade, `@supports`, the `color-gamut` media query, all that good stuff. So in a style sheet we would see the color the designer wanted, expressed in display-p3, and also a fallback sRGB color. We computed the visible difference (a calculation called [ΔE2000](https://zschuessler.github.io/DeltaE/learn/)) between the desired and fallback color and this was typically quite modest. A small tweak. A careful exploration. In fact, 37.6% of the time, the color specified in display-p3 actually fell inside the range of colors (the gamut) that sRGB can manage. It seems people are just cautiously experimenting with this at the moment rather than to get real gains, but more is surely to come in this space, so one to watch.
 
 <figure>
   <table class="large-table">
