@@ -353,13 +353,13 @@ Accordingly, we looked at the number of `details` and `summary` elements and it 
     <tbody>
       <tr>
         <td><code>summary</code></td>
-        <td>62,992</td>
-        <td>43,936</td>
+        <td class="numeric">62,992</td>
+        <td class="numeric">43,936</td>
       </tr>
       <tr>
         <td><code>details</code></td>
-        <td>56,60</td>
-        <td>36,743</td>
+        <td class="numeric">56,60</td>
+        <td class="numeric">36,743</td>
       </tr>
     </tbody>
   </table>
@@ -465,7 +465,7 @@ The 2019 edition of the Web Almanac handled [custom elements](../2019/markup#cus
       <tr>
         <th>Element</th>
         <th>Pages</th>
-        <th>Percentage</th>
+        <th>Pages (%)</th>
       </tr>
     </thead>
     <tbody>
@@ -544,7 +544,7 @@ The 2019 edition of the Web Almanac handled [custom elements](../2019/markup#cus
   <figcaption>{{ figure_link(caption="The 14 most popular custom elements.", sheets_gid="770933671", sql_file="pages_element_count_by_device_and_custom_dash_elements.sql") }}</figcaption>
 </figure>
 
-These elements come from three sources: [Yandex Metrica](https://metrica.yandex.com/about) (`ym-`), an analytics solution we've also seen last year; [Slider Revolution](https://www.sliderrevolution.com/) (`rs-`), a WordPress slider, for which there are more elements to be found near the top of the sample; and [Wix](https://www.wix.com/) (`wix-`), a website builder.
+These elements come from three sources: [Yandex Metrica](https://metrica.yandex.com/about) (`ym-`), an analytics solution we also saw last year; [Slider Revolution](https://www.sliderrevolution.com/) (`rs-`), a WordPress slider, for which there are more elements to be found near the top of the sample; and [Wix](https://www.wix.com/) (`wix-`), a website builder.
 
 Other groups that stand out include [AMP markup](https://amp.dev/) with `amp-` elements like `amp-img` (11,700 pages), `amp-analytics` (10,256) and `amp-auto-ads` (7,621), as well as [Angular](https://angular.io/) `app-` elements like `app-root` (16,314), `app-footer` (6,745), and `app-header` (5,274).
 
@@ -560,7 +560,7 @@ In our mobile dataset of 6.3 million pages, around 0.9 million pages (14.01%) co
       <tr>
         <th>Element</th>
         <th>Pages</th>
-        <th>Percentage</th>
+        <th>Pages (%)</th>
       </tr>
     </thead>
     <tbody>

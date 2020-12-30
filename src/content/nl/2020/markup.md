@@ -51,16 +51,44 @@ In dit gedeelte behandelen we de aspecten van een hoger niveau van HTML, zoals d
 
 96,82% van de pagina's geeft een [_doctype_](https://developer.mozilla.org/en-US/docs/Glossary/Doctype) aan. HTML-documenten waarin wordt verklaard dat een doctype om historische redenen nuttig is, "om te voorkomen dat de modus voor eigenaardigheden in browsers wordt geactiveerd", zoals [Ian Hickson schreef in 2009](https://lists.w3.org/Archives/Public/public-html-comments/2009Jul/0020.html). Wat zijn de meest populaire waarden?
 
-<figure markdown>
-| Doctype | Pagina's | Percentage |
-|---|---|---|
-| HTML ("HTML5") | 5.441.815 | 85,73% |
-| XHTML 1.0 Transitioneel | 382.322 | 6,02% |
-| XHTML 1.0 Strikt | 107.351 | 1,69% |
-| HTML 4.01 Transitioneel | 54.379 | 0,86% |
-| HTML 4.01 Transitioneel ([eigenzinnig](https://hsivonen.fi/doctype/#xml)) | 38.504 | 0,61% |
-
-<figcaption>{{ figure_link(caption="De 5 meest populaire doctypes.", sheets_gid="1981441894", sql_file="summary_pages_by_device_and_doctype.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Doctype</th>
+        <th>Pagina's</th>
+        <th>Percentage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>HTML ("HTML5")</td>
+        <td class="numeric">5,441,815</td>
+        <td class="numeric">85.73%</td>
+      </tr>
+      <tr>
+        <td>XHTML 1.0 Transitional</td>
+        <td class="numeric">382,322</td>
+        <td class="numeric">6.02%</td>
+      </tr>
+      <tr>
+        <td>XHTML 1.0 Strict</td>
+        <td class="numeric">107,351</td>
+        <td class="numeric">1.69%</td>
+      </tr>
+      <tr>
+        <td>HTML 4.01 Transitional</td>
+        <td class="numeric">54,379</td>
+        <td class="numeric">0.86%</td>
+      </tr>
+      <tr>
+        <td>HTML 4.01 Transitional (<a href="https://hsivonen.fi/doctype/#xml">quirky</a>)</td>
+        <td class="numeric">38,504</td>
+        <td class="numeric">0.61%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="De 5 meest populaire doctypes.", sheets_gid="1981441894", sql_file="summary_pages_by_device_and_doctype.sql") }}</figcaption>
 </figure>
 
 Je kunt al zien hoe de aantallen behoorlijk afnemen na XHTML 1.0, voordat je de lange staart ingaat met een paar standaard, sommige esoterische en ook nep-doctypes.
@@ -150,6 +178,7 @@ In totaal bevat ongeveer 2% van de pagina's helemaal geen scripts, zelfs niet me
 Aan de andere kant van het spectrum laten de cijfers zien dat ongeveer 97% van de pagina's ten minste één script bevat, inline of extern.
 
 {# TODO(analysts): We still have a problem here with the x-axis label (“Containing”). Can someone help out and look at this? #}
+
 {{ figure_markup(
   image="script-use.png",
   caption="Gebruik van het <code>script</code> -element.",
@@ -240,21 +269,69 @@ Niet zo veel is veranderd [vergeleken met 2019](../2019/markup#fig-3)!
 
 In 2019 bevatte het hoofdstuk Opmaak van de Web Almanac de meest gebruikte elementen met betrekking tot [het werk van Ian Hickson in 2005](https://web.archive.org/web/20060203031713/http://code.google.com/webstats/2005-12/elements.html). We vonden dit nuttig en hebben die gegevens nog eens bekeken:
 
-<figure markdown>
-| 2005 | 2019 | 2020 |
-|---|---|---|
-| `title` | `div` | `div` |
-| `a` | `a` | `a` |
-| `img` | `span` | `span` |
-| `meta` | `li` | `li` |
-| `br` | `img` | `img` |
-| `table` | `script` | `script` |
-| `td` | `p` | `p` |
-| `tr` | `option` | `link` |
-| | | `i` |
-| | | `option`|
-
-<figcaption>{{ figure_link(caption="De meest populaire elementen in 2005, 2019 en 2020.", sheets_gid="781932961", sql_file="pages_element_count_by_device_and_element_type_frequency.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>2005</th>
+        <th>2019</th>
+        <th>2020</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>title</code></td>
+        <td><code>div</code></td>
+        <td><code>div</code></td>
+      </tr>
+      <tr>
+        <td><code>a</code></td>
+        <td><code>a</code></td>
+        <td><code>a</code></td>
+      </tr>
+      <tr>
+        <td><code>img</code></td>
+        <td><code>span</code></td>
+        <td><code>span</code></td>
+      </tr>
+      <tr>
+        <td><code>meta</code></td>
+        <td><code>li</code></td>
+        <td><code>li</code></td>
+      </tr>
+      <tr>
+        <td><code>br</code></td>
+        <td><code>img</code></td>
+        <td><code>img</code></td>
+      </tr>
+      <tr>
+        <td><code>table</code></td>
+        <td><code>script</code></td>
+        <td><code>script</code></td>
+      </tr>
+      <tr>
+        <td><code>td</code></td>
+        <td><code>p</code></td>
+        <td><code>p</code></td>
+      </tr>
+      <tr>
+        <td><code>tr</code></td>
+        <td><code>option</code></td>
+        <td><code>link</code></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><code>i</code></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><code>option</code></td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="De meest populaire elementen in 2005, 2019 en 2020.", sheets_gid="781932961", sql_file="pages_element_count_by_device_and_element_type_frequency.sql") }}</figcaption>
 </figure>
 
 Er veranderde niets in de Top 7, maar het `optie`-element raakte een beetje uit de gratie en zakte van 8 naar 10, waardoor zowel het `link`- als het `i`-element populairder werden. Deze elementen zijn in gebruik toegenomen, mogelijk als gevolg van een toenemend gebruik van [Hints voor bronnen](./resource-hints) (zoals bij prerendering en prefetching), evenals pictogramoplossingen zoals [Font Awesome](https://fontawesome.com/), die de facto misbruik maakt van `i`-elementen om pictogrammen weer te geven.
@@ -293,13 +370,13 @@ Dienovereenkomstig hebben we gekeken naar het aantal `details` en `summary` elem
     <tbody>
       <tr>
         <td><code>summary</code></td>
-        <td>62.992</td>
-        <td>43.936</td>
+        <td class="numeric">62.992</td>
+        <td class="numeric">43.936</td>
       </tr>
       <tr>
         <td><code>details</code></td>
-        <td>56.60</td>
-        <td>36.743</td>
+        <td class="numeric">56.60</td>
+        <td class="numeric">36.743</td>
       </tr>
     </tbody>
   </table>
@@ -310,33 +387,86 @@ Dienovereenkomstig hebben we gekeken naar het aantal `details` en `summary` elem
 
 Als we nog eens kijken naar de populariteit van elementen, hoe waarschijnlijk is het dat een bepaald element in de DOM van een pagina wordt gevonden? Zeker, `html`, `head`, `body` zijn op elke pagina aanwezig (ook al zijn [hun tags allemaal optioneel](https://meiert.com/en/blog/optional-html/)), waardoor ze gemeenschappelijke elementen worden, maar welke andere elementen zijn er te vinden?
 
-<figure markdown>
-| Element | Waarschijnlijkheid |
-|---|---|
-| `title` | 99,34% |
-| `meta` | 99,00% |
-| `div` | 98,42% |
-| `a` | 98,32% |
-| `link` | 97,79% |
-| `script` | 97,73% |
-| `img` | 95,83% |
-| `span` | 93,98% |
-| `p` | 88,71% |
-| `ul` | 87,68% |
-
-<figcaption>{{ figure_link(caption="Grote kans om een bepaald element te vinden op pagina's van het Web Almanac 2020-voorbeeld.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Element</th>
+        <th>Waarschijnlijkheid</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>title</code></td>
+        <td class="numeric">99.34%</td>
+      </tr>
+      <tr>
+        <td><code>meta</code></td>
+        <td class="numeric">99.00%</td>
+      </tr>
+      <tr>
+        <td><code>div</code></td>
+        <td class="numeric">98.42%</td>
+      </tr>
+      <tr>
+        <td><code>a</code></td>
+        <td class="numeric">98.32%</td>
+      </tr>
+      <tr>
+        <td><code>link</code></td>
+        <td class="numeric">97.79%</td>
+      </tr>
+      <tr>
+        <td><code>script</code></td>
+        <td class="numeric">97.73%</td>
+      </tr>
+      <tr>
+        <td><code>img</code></td>
+        <td class="numeric">95.83%</td>
+      </tr>
+      <tr>
+        <td><code>span</code></td>
+        <td class="numeric">93.98%</td>
+      </tr>
+      <tr>
+        <td><code>p</code></td>
+        <td class="numeric">88.71%</td>
+      </tr>
+      <tr>
+        <td><code>ul</code></td>
+        <td class="numeric">87.68%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Grote kans om een bepaald element te vinden op pagina's van het Web Almanac 2020-voorbeeld.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
 </figure>
 
 Standaardelementen zijn elementen die deel uitmaken van de HTML-specificatie. Welke vind je echt zelden? In onze steekproef zou dat het volgende naar voren brengen:
 
-<figure markdown>
-| Element | Waarschijnlijkheid |
-|---|---|
-| `dir` | 0,0082% |
-| `rp` | 0,0087% |
-| `basefont` | 0,0092% |
-
-<figcaption>{{ figure_link(caption="Lage kansen om een bepaald element op pagina's van de steekproef te vinden.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Element</th>
+        <th>Waarschijnlijkheid</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>dir</code></td>
+        <td class="numeric">0.0082%</td>
+      </tr>
+      <tr>
+        <td><code>rp</code></td>
+        <td class="numeric">0.0087%</td>
+      </tr>
+      <tr>
+        <td><code>basefont</code></td>
+        <td class="numeric">0.0092%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Lage kansen om een bepaald element op pagina's van de steekproef te vinden.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
 </figure>
 
 We nemen deze elementen op om een idee te geven welke elementen mogelijk uit de gratie zijn geraakt. Maar hoewel `dir` en` basefont` voor het laatst werden gespecificeerd in XHTML 1.0 (2000), het zeldzame gebruik van `rp`, [dat al in 1998 werd genoemd](https://www.w3.org/TR/1998/WD-rubya2-4) maar dat ook [nog steeds deel uitmaakt van HTML](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element), suggereert misschien dat Ruby-opmaak niet erg populair is.
@@ -347,25 +477,89 @@ De 2019-editie van de Web Almanac behandelde [aangepaste elementen](../2019/mark
 
 {# TODO(authors, analysts): Clarify occurrences and percentages _of what_. Pages? Elements? #}
 
-<figure markdown>
-| Element | Voorvallen | Percentage |
-|---|---|---|
-| `ym-measure` | 141.156 | 2,22% |
-| `wix-image` | 76.969 | 1,21% |
-| `rs-module-wrap` | 71.272 | 1,12% |
-| `rs-module` | 71.271 | 1,12% |
-| `rs-slide` | 70.970 | 1,12% |
-| `rs-slides` | 70.993 | 1,12% |
-| `rs-sbg-px` | 70.414 | 1,11% |
-| `rs-sbg-wrap` | 70.414 | 1,11% |
-| `rs-sbg` | 70.413 | 1,11% |
-| `rs-progress` | 70.651 | 1,11% |
-| `rs-mask-wrap` | 63.871 | 1,01% |
-| `rs-loop-wrap` | 63.870 | 1,01% |
-| `rs-layer-wrap` | 63.849 | 1,01% |
-| `wix-iframe` | 63.590 | 1% |
-
-<figcaption>{{ figure_link(caption="De 14 meest populaire aangepaste elementen.", sheets_gid="770933671", sql_file="pages_element_count_by_device_and_custom_dash_elements.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Element</th>
+        <th>Voorvallen</th>
+        <th>Percentage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>ym-measure</code></td>
+        <td class="numeric">141,156</td>
+        <td class="numeric">2.22%</td>
+      </tr>
+      <tr>
+        <td><code>wix-image</code></td>
+        <td class="numeric">76,969</td>
+        <td class="numeric">1.21%</td>
+      </tr>
+      <tr>
+        <td><code>rs-module-wrap</code></td>
+        <td class="numeric">71,272</td>
+        <td class="numeric">1.12%</td>
+      </tr>
+      <tr>
+        <td><code>rs-module</code></td>
+        <td class="numeric">71,271</td>
+        <td class="numeric">1.12%</td>
+      </tr>
+      <tr>
+        <td><code>rs-slide</code></td>
+        <td class="numeric">70,970</td>
+        <td class="numeric">1.12%</td>
+      </tr>
+      <tr>
+        <td><code>rs-slides</code></td>
+        <td class="numeric">70,993</td>
+        <td class="numeric">1.12%</td>
+      </tr>
+      <tr>
+        <td><code>rs-sbg-px</code></td>
+        <td class="numeric">70,414</td>
+        <td class="numeric">1.11%</td>
+      </tr>
+      <tr>
+        <td><code>rs-sbg-wrap</code></td>
+        <td class="numeric">70,414</td>
+        <td class="numeric">1.11%</td>
+      </tr>
+      <tr>
+        <td><code>rs-sbg</code></td>
+        <td class="numeric">70,413</td>
+        <td class="numeric">1.11%</td>
+      </tr>
+      <tr>
+        <td><code>rs-progress</code></td>
+        <td class="numeric">70,651</td>
+        <td class="numeric">1.11%</td>
+      </tr>
+      <tr>
+        <td><code>rs-mask-wrap</code></td>
+        <td class="numeric">63,871</td>
+        <td class="numeric">1.01%</td>
+      </tr>
+      <tr>
+        <td><code>rs-loop-wrap</code></td>
+        <td class="numeric">63,870</td>
+        <td class="numeric">1.01%</td>
+      </tr>
+      <tr>
+        <td><code>rs-layer-wrap</code></td>
+        <td class="numeric">63,849</td>
+        <td class="numeric">1.01%</td>
+      </tr>
+      <tr>
+        <td><code>wix-iframe</code></td>
+        <td class="numeric">63,590</td>
+        <td class="numeric">1%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="De 14 meest populaire aangepaste elementen.", sheets_gid="770933671", sql_file="pages_element_count_by_device_and_custom_dash_elements.sql") }}</figcaption>
 </figure>
 
 Deze elementen zijn afkomstig uit drie bronnen: [Yandex Metrica](https://metrica.yandex.com/about) (`ym-`), een analyseoplossing die we vorig jaar ook hebben gezien; [Slider Revolution](https://www.sliderrevolution.com/) (`rs-`), een WordPress-slider, waarvoor er meer elementen te vinden zijn bovenaan de sample; en [Wix](https://www.wix.com/) (`wix-`), een websitebouwer.
@@ -380,20 +574,64 @@ Er zijn meer vragen te stellen over het gebruik van HTML, en een daarvan kan bet
 
 In onze mobiele dataset van 6,3 miljoen pagina's bevatten ongeveer 0,9 miljoen pagina's (14,01%) een of meer van deze elementen. Hier is de top 9, die meer dan 10.000 keer wordt gebruikt:
 
-<figure markdown>
-| Element | Voorvallen | Pagina's (%) |
-|---|---|---|
-| `center` | 458.402 | 7,22% |
-| `font` | 430.987 | 6,79% |
-| `marquee` | 67.781 | 1,07% |
-| `nobr` | 31.138 | 0,49% |
-| `big` | 27.578 | 0,43% |
-| `frame` | 19.363 | 0,31% |
-| `frameset` | 19.163 | 0,30% |
-| `strike` | 17.438 | 0,27% |
-| `noframes` | 15.016 | 0,24% |
-
-<figcaption>{{ figure_link(caption="Verouderde elementen met meer dan 10.000 toepassingen.", sheets_gid="1972617631", sql_file="pages_element_count_by_device_and_obsolete_elements.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Element</th>
+        <th>Voorvallen</th>
+        <th>Pagina's (%)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>center</code></td>
+        <td class="numeric">458,402</td>
+        <td class="numeric">7.22%</td>
+      </tr>
+      <tr>
+        <td><code>font</code></td>
+        <td class="numeric">430,987</td>
+        <td class="numeric">6.79%</td>
+      </tr>
+      <tr>
+        <td><code>marquee</code></td>
+        <td class="numeric">67,781</td>
+        <td class="numeric">1.07%</td>
+      </tr>
+      <tr>
+        <td><code>nobr</code></td>
+        <td class="numeric">31,138</td>
+        <td class="numeric">0.49%</td>
+      </tr>
+      <tr>
+        <td><code>big</code></td>
+        <td class="numeric">27,578</td>
+        <td class="numeric">0.43%</td>
+      </tr>
+      <tr>
+        <td><code>frame</code></td>
+        <td class="numeric">19,363</td>
+        <td class="numeric">0.31%</td>
+      </tr>
+      <tr>
+        <td><code>frameset</code></td>
+        <td class="numeric">19,163</td>
+        <td class="numeric">0.30%</td>
+      </tr>
+      <tr>
+        <td><code>strike</code></td>
+        <td class="numeric">17,438</td>
+        <td class="numeric">0.27%</td>
+      </tr>
+      <tr>
+        <td><code>noframes</code></td>
+        <td class="numeric">15,016</td>
+        <td class="numeric">0.24%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Verouderde elementen met meer dan 10.000 toepassingen.", sheets_gid="1972617631", sql_file="pages_element_count_by_device_and_obsolete_elements.sql") }}</figcaption>
 </figure>
 
 Zelfs `spacer` wordt nog 1.584 keer gebruikt en staat op elke 5.000ste pagina. We weten dat Google al [22 jaar](https://web.archive.org/web/19981202230410/https://www.google.com/) een `center`-element op [hun homepagina](https://www.google.com/) gebruikt, maar waarom zijn er zoveel navolgers?
@@ -406,21 +644,58 @@ Als u zich afvroeg: het totale aantal [`isindex`](https://www.w3.org/TR/html401/
 
 In onze verzameling elementen vonden we enkele die noch standaard HTML (noch SVG, noch MathML) -elementen waren, noch aangepaste, noch verouderde, maar enigszins gepatenteerde elementen. De top 10 die we hebben geïdentificeerd, zijn de volgende:
 
-<figure markdown>
-| Element | Pagina's (%) |
-|---|---|
-| `noindex` | 0,89% |
-| `jdiv` | 0,85% |
-| `mediaelementwrapper` | 0,49% |
-| `ymaps` | 0,26% |
-| `yatag` | 0,20% |
-| `ss` | 0,11% |
-| `include` | 0,08% |
-| `olark` | 0,07% |
-| `h7` | 0,06% |
-| `limespot` | 0,05% |
-
-<figcaption>{{ figure_link(caption="Elementen van twijfelachtig erfgoed.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Element</th>
+        <th>Pagina's (%)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>noindex</code></td>
+        <td class="numeric">0.89%</td>
+      </tr>
+      <tr>
+        <td><code>jdiv</code></td>
+        <td class="numeric">0.85%</td>
+      </tr>
+      <tr>
+        <td><code>mediaelementwrapper</code></td>
+        <td class="numeric">0.49%</td>
+      </tr>
+      <tr>
+        <td><code>ymaps</code></td>
+        <td class="numeric">0.26%</td>
+      </tr>
+      <tr>
+        <td><code>yatag</code></td>
+        <td class="numeric">0.20%</td>
+      </tr>
+      <tr>
+        <td><code>ss</code></td>
+        <td class="numeric">0.11%</td>
+      </tr>
+      <tr>
+        <td><code>include</code></td>
+        <td class="numeric">0.08%</td>
+      </tr>
+      <tr>
+        <td><code>olark</code></td>
+        <td class="numeric">0.07%</td>
+      </tr>
+      <tr>
+        <td><code>h7</code></td>
+        <td class="numeric">0.06%</td>
+      </tr>
+      <tr>
+        <td><code>limespot</code></td>
+        <td class="numeric">0.05%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Elementen van twijfelachtig erfgoed.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
 </figure>
 
 De bron van deze elementen lijkt te zijn gemengd, aangezien sommige onbekend zijn, terwijl andere kunnen worden getraceerd. De meest populaire, `noindex`, is waarschijnlijk te wijten aan [Yandex's aanbeveling](https://yandex.com/support/webmaster/adding-site/indexing-prohibition.html) ervan om pagina-indexering te verbieden. `jdiv` werd genoteerd in [de Web Almanac van vorig jaar](../2019/markup#products-and-libraries-and-their-custom-markup) en is van JivoChat. `mediaelementwrapper` komt van de MediaElement mediaspeler. Zowel `ymaps` als `yatag` zijn ook van Yandex. Het 'ss'-element kan afkomstig zijn van ProStores, een voormalig e-commerceproduct van eBay, en `olark` kan afkomstig zijn van de Olark-chatsoftware. `h7` lijkt een vergissing te zijn. `limespot` is waarschijnlijk gerelateerd aan het Limespot-personalisatieprogramma voor e-commerce. Geen van deze elementen maakt deel uit van een webstandaard.
@@ -429,28 +704,76 @@ De bron van deze elementen lijkt te zijn gemengd, aangezien sommige onbekend zij
 
 [Koppen](https://html.spec.whatwg.org/multipage/dom.html#heading-content) vormen een speciale categorie elementen die een belangrijke rol spelen bij het [indelen](https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2) en voor [toegankelijkheid](https://www.w3.org/WAI/tutorials/page-structure/headings/).
 
-<figure markdown>
-| Kop | Voorvallen | Gemiddeld per pagina |
-|---|---|---|
-| `h1` | 10.524.810 | 1,66 |
-| `h2` | 37.312.338 | 5,88 |
-| `h3` | 44.135.313 | 6,96 |
-| `h4` | 20.473.598 | 3,23 |
-| `h5` | 8.594.500 | 1,36 |
-| `h6` | 3.527.470 | 0,56 |
-
-<figcaption>{{ figure_link(caption="Frequentie en gemiddeld gebruik van standaard kopelementen.", sheets_gid="277662548", sql_file="pages_wpt_bodies_by_device_and_percentile_and_heading_level.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Kop</th>
+        <th>Voorvallen</th>
+        <th>Gemiddeld per pagina</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>h1</code></td>
+        <td class="numeric">10,524,810</td>
+        <td class="numeric">1.66</td>
+      </tr>
+      <tr>
+        <td><code>h2</code></td>
+        <td class="numeric">37,312,338</td>
+        <td class="numeric">5.88</td>
+      </tr>
+      <tr>
+        <td><code>h3</code></td>
+        <td class="numeric">44,135,313</td>
+        <td class="numeric">6.96</td>
+      </tr>
+      <tr>
+        <td><code>h4</code></td>
+        <td class="numeric">20,473,598</td>
+        <td class="numeric">3.23</td>
+      </tr>
+      <tr>
+        <td><code>h5</code></td>
+        <td class="numeric">8,594,500</td>
+        <td class="numeric">1.36</td>
+      </tr>
+      <tr>
+        <td><code>h6</code></td>
+        <td class="numeric">3,527,470</td>
+        <td class="numeric">0.56</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Frequentie en gemiddeld gebruik van standaard kopelementen.", sheets_gid="277662548", sql_file="pages_wpt_bodies_by_device_and_percentile_and_heading_level.sql") }}</figcaption>
 </figure>
 
 Je had misschien verwacht dat je alleen de standaard `<h1>` tot `<h6>` elementen zou zien, maar sommige sites gebruiken eigenlijk meer niveaus:
 
-<figure markdown>
-| Kop | Voorvallen | Gemiddeld per pagina|
-|---|---|---|
-| `h7` | 30.073 | 0,005 |
-| `h8` | 9.266 | 0,0015 |
-
-<figcaption>{{ figure_link(caption="Frequentie en gemiddeld gebruik van niet-standaard kopelementen.", sheets_gid="277662548", sql_file="pages_wpt_bodies_by_device_and_percentile_and_heading_level.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Kop</th>
+        <th>Voorvallen</th>
+        <th>Gemiddeld per pagina</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>h7</code></td>
+        <td class="numeric">30,073</td>
+        <td class="numeric">0.005</td>
+      </tr>
+      <tr>
+        <td><code>h8</code></td>
+        <td class="numeric">9,266</td>
+        <td class="numeric">0.0015</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Frequentie en gemiddeld gebruik van niet-standaard kopelementen.", sheets_gid="277662548", sql_file="pages_wpt_bodies_by_device_and_percentile_and_heading_level.sql") }}</figcaption>
 </figure>
 
 De laatste twee hebben natuurlijk nooit deel uitgemaakt van HTML en mogen niet worden gebruikt.
@@ -463,21 +786,69 @@ Deze sectie gaat over hoe attributen worden gebruikt in documenten en onderzoekt
 
 Vergelijkbaar met de sectie over de meest [populaire elementen](#topelementen), gaat deze sectie in op de meest populaire attributen op internet. Gezien hoe belangrijk het `href`-attribuut is voor het web zelf, of het `alt`-attribuut om informatie [toegankelijk](./accessibility) te maken, zouden dit dan de meest populaire attributen zijn?
 
-<figure markdown>
-| Attribuut | Voorvallen | Percentage |
-|---|---|---|
-| `class` | 2.998.695.114 | 34,23% |
-| `href` | 928.704.735 | 10,60% |
-| `style` | 523.148.251 | 5,97% |
-| `id` | 452.110.137 | 5,16% |
-| `src` | 341.604.471 | 3,90% |
-| `type` | 282.298.754 | 3,22% |
-| `title` | 231.960.356 | 2,65% |
-| `alt` | 172.668.703 | 1,97% |
-| `rel` | 171.802.460 | 1,96% |
-| `value` | 140.666.779 | 1,61% |
-
-<figcaption>{{ figure_link(caption="Top 10 attributen naar gebruiksfrequentie.", sheets_gid="1348855449", sql_file="pages_almanac_by_device_and_attribute_name_frequency.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribuut</th>
+        <th>Voorvallen</th>
+        <th>Percentage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>class</code></td>
+        <td class="numeric">2,998,695,114</td>
+        <td class="numeric">34.23%</td>
+      </tr>
+      <tr>
+        <td><code>href</code></td>
+        <td class="numeric">928,704,735</td>
+        <td class="numeric">10.60%</td>
+      </tr>
+      <tr>
+        <td><code>style</code></td>
+        <td class="numeric">523,148,251</td>
+        <td class="numeric">5.97%</td>
+      </tr>
+      <tr>
+        <td><code>id</code></td>
+        <td class="numeric">452,110,137</td>
+        <td class="numeric">5.16%</td>
+      </tr>
+      <tr>
+        <td><code>src</code></td>
+        <td class="numeric">341,604,471</td>
+        <td class="numeric">3.90%</td>
+      </tr>
+      <tr>
+        <td><code>type</code></td>
+        <td class="numeric">282,298,754</td>
+        <td class="numeric">3.22%</td>
+      </tr>
+      <tr>
+        <td><code>title</code></td>
+        <td class="numeric">231,960,356</td>
+        <td class="numeric">2.65%</td>
+      </tr>
+      <tr>
+        <td><code>alt</code></td>
+        <td class="numeric">172,668,703</td>
+        <td class="numeric">1.97%</td>
+      </tr>
+      <tr>
+        <td><code>rel</code></td>
+        <td class="numeric">171,802,460</td>
+        <td class="numeric">1.96%</td>
+      </tr>
+      <tr>
+        <td><code>value</code></td>
+        <td class="numeric">140,666,779</td>
+        <td class="numeric">1.61%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Top 10 attributen naar gebruiksfrequentie.", sheets_gid="1348855449", sql_file="pages_almanac_by_device_and_attribute_name_frequency.sql") }}</figcaption>
 </figure>
 
 Het meest populaire attribute is `class`, met bijna 3 miljard exemplaren in onze dataset en 34% van alle gebruikte attributen. `class` is verreweg het meest voorkomende attribute.
@@ -488,21 +859,58 @@ Het `value`-attribuut, dat de waarde van een `input`-element specificeert, maakt
 
 Zijn er attributen die we in elk document vinden? Niet helemaal, maar bijna:
 
-<figure markdown>
-Element | Pagina's (%)
--- | --
-href | 99,21%
-src | 99,18%
-content | 98,88%
-name | 98,61%
-type | 98,55%
-class | 98,24%
-rel | 97,98%
-id | 97,46%
-style | 95,95%
-alt | 90,75%
-
-<figcaption>{{ figure_link(
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Element</th>
+        <th>Pagina's (%)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>href</td>
+        <td class="numeric">99.21%</td>
+      </tr>
+      <tr>
+        <td>src</td>
+        <td class="numeric">99.18%</td>
+      </tr>
+      <tr>
+        <td>content</td>
+        <td class="numeric">98.88%</td>
+      </tr>
+      <tr>
+        <td>name</td>
+        <td class="numeric">98.61%</td>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td class="numeric">98.55%</td>
+      </tr>
+      <tr>
+        <td>class</td>
+        <td class="numeric">98.24%</td>
+      </tr>
+      <tr>
+        <td>rel</td>
+        <td class="numeric">97.98%</td>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td class="numeric">97.46%</td>
+      </tr>
+      <tr>
+        <td>style</td>
+        <td class="numeric">95.95%</td>
+      </tr>
+      <tr>
+        <td>alt</td>
+        <td class="numeric">90.75%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(
   caption="Top 10 attributen per pagina.",
   sheets_gid="1185369559",
   sql_file="pages_almanac_by_device_and_attribute_name_present.sql"
@@ -517,19 +925,59 @@ Volgens de HTML-specificatie, [`data-*` attributen](https://html.spec.whatwg.org
 
 De twee meest populaire vallen op omdat ze bijna twee keer zo populair zijn dan elk van de volgende attributen (met > 1% gebruik):
 
-<figure markdown>
-| Attribuut | Voorvallen | Percentage |
-|---|---|---|
-| `data-src` | 26.734.560 | 3,30% |
-| `data-id` | 26.596.769 | 3,28% |
-| `data-toggle` | 12.198.883 | 1,50% |
-| `data-slick-index` | 11.775.250 | 1,45% |
-| `data-element_type` | 11.263.176 | 1,39% |
-| `data-type` | 11.130.662 | 1,37% |
-| `data-requiremodule` | 8.303.675 | 1,02% |
-| `data-requirecontext` | 8.302.335 | 1,02% |
-
-<figcaption>{{ figure_link(caption="De meest populaire <code>data-*</code> attributen.", sheets_gid="764700773", sql_file="pages_almanac_by_device_and_data_attribute_name_frequency.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribuut</th>
+        <th>Voorvallen</th>
+        <th>Percentage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>data-src</code></td>
+        <td class="numeric">26,734,560</td>
+        <td class="numeric">3.30%</td>
+      </tr>
+      <tr>
+        <td><code>data-id</code></td>
+        <td class="numeric">26,596,769</td>
+        <td class="numeric">3.28%</td>
+      </tr>
+      <tr>
+        <td><code>data-toggle</code></td>
+        <td class="numeric">12,198,883</td>
+        <td class="numeric">1.50%</td>
+      </tr>
+      <tr>
+        <td><code>data-slick-index</code></td>
+        <td>11,775,250</td>
+        <td>1.45%</td>
+      </tr>
+      <tr>
+        <td><code>data-element_type</code></td>
+        <td class="numeric">11,263,176</td>
+        <td class="numeric">1.39%</td>
+      </tr>
+      <tr>
+        <td><code>data-type</code></td>
+        <td class="numeric">11,130,662</td>
+        <td class="numeric">1.37%</td>
+      </tr>
+      <tr>
+        <td><code>data-requiremodule</code></td>
+        <td class="numeric">8,303,675</td>
+        <td class="numeric">1.02%</td>
+      </tr>
+      <tr>
+        <td><code>data-requirecontext</code></td>
+        <td class="numeric">8,302,335</td>
+        <td class="numeric">1.02%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="De meest populaire <code>data-*</code> attributen.", sheets_gid="764700773", sql_file="pages_almanac_by_device_and_data_attribute_name_frequency.sql") }}</figcaption>
 </figure>
 
 Attributen zoals `data-type`, `data-id` en `data-src` kunnen meerdere generieke toepassingen hebben, hoewel `data-src` veel wordt gebruikt bij het lui laden van afbeeldingen via JavaScript (bijvoorbeeld Bootstrap 4). [Bootstrap](https://getbootstrap.com/) legt opnieuw de aanwezigheid uit van `data-toggle`, waar het wordt gebruikt als een staat styling haak op schakelknoppen. De [Slick carousel plugin](https://kenwheeler.github.io/slick/) is de bron van `data-slick-index`, terwijl `data-element_type` deel uitmaakt van [Elementor's WordPress-websitebouwer](https://elementor.com/). Zowel `data-requiremodule` als `data-requirecontext` maken dus deel uit van [RequireJS](https://requirejs.org/).
@@ -549,17 +997,49 @@ Gebruikers moeten de tekst kunnen zoomen en schalen [tot 500%](https://dequeuniv
 
 We hebben de gegevens bekeken en om de resultaten beter te begrijpen, hebben we deze genormaliseerd door spaties te verwijderen, alles naar kleine letters te converteren en te sorteren op kommawaarden van het `content`-attribuut.
 
-<figure markdown>
-| Inhoudsattribuutwaarde | Voorvallen | Pagina's (%) |
-|---|---|---|
-| `initial-scale=1,width=device-width` | 2.728.491 | 42,98% |
-| blank | 688.293 | 10,84% |
-| `initial-scale=1,maximum-scale=1,width=device-width` | 373.136 | 5,88% |
-| `initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width` | 352.972 | 5,56% |
-| `initial-scale=1,maximum-scale=1,user-scalable=0,width=device-width` | 249.662 | 3,93% |
-| `width=device-width` | 231.668 | 3,65% |
-
-<figcaption>{{ figure_link(caption="<code>viewport</code>-specificaties, en het ontbreken daarvan.", sheets_gid="1414206386", sql_file="summary_pages_by_device_and_viewport.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Inhoudsattribuutwaarde</th>
+        <th>Voorvallen</th>
+        <th>Pagina's (%)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>initial-scale=1,width=device-width</code></td>
+        <td class="numeric">2,728,491</td>
+        <td class="numeric">42.98%</td>
+      </tr>
+      <tr>
+        <td>blank</td>
+        <td class="numeric">688,293</td>
+        <td class="numeric">10,84%</td>
+      </tr>
+      <tr>
+        <td><code>initial-scale=1,maximum-scale=1,width=device-width</code></td>
+        <td class="numeric">373,136</td>
+        <td class="numeric">5.88%</td>
+      </tr>
+      <tr>
+        <td><code>initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width</code></td>
+        <td class="numeric">352,972</td>
+        <td class="numeric">5.56%</td>
+      </tr>
+      <tr>
+        <td><code>initial-scale=1,maximum-scale=1,user-scalable=0,width=device-width</code></td>
+        <td class="numeric">249,662</td>
+        <td class="numeric">3.93%</td>
+      </tr>
+      <tr>
+        <td><code>width=device-width</code></td>
+        <td class="numeric">231,668</td>
+        <td class="numeric">3.65%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="<code>viewport</code>-specificaties, en het ontbreken daarvan.", sheets_gid="1414206386", sql_file="summary_pages_by_device_and_viewport.sql") }}</figcaption>
 </figure>
 
 De resultaten laten zien dat bijna de helft van de pagina's die we hebben geanalyseerd de typische viewport-`content`-waarde gebruikt. Toch mist ongeveer 10% van de mobiele pagina's volledig een juiste `content`-waarde voor het viewport-meta-element, terwijl de rest een onjuiste combinatie gebruikt van `maximum-scale`, `minimum-scale`, `user-scalable=no`, of `user-scalable=0`.
@@ -574,20 +1054,64 @@ De situatie rond favicons is fascinerend. Favicons werken met of zonder opmaak -
 
 Bij het bouwen van onze tests hebben we niet gekeken naar de aanwezigheid van afbeeldingen, maar alleen naar de opmaak. Dat betekent dat wanneer u het volgende bekijkt, u er rekening mee houdt dat het meer gaat om _hoe_ er naar favicons wordt verwezen dan of en hoe vaak ze worden gebruikt.
 
-<figure markdown>
-| Favicon formaat | Voorvallen | Pagina's (%) |
-|---|---|---|
-| ICO | 2.245.646 | 35,38% |
-| PNG | 1.966.530 | 30,98% |
-| No favicon defined | 1.643.136 | 25,88% |
-| JPG | 319.935 | 5,04% |
-| No extension specified (no format identifiable) | 37.011 | 0,58% |
-| GIF | 34.559 | 0,54% |
-| WebP | 10.605 | 0,17% |
-| … | | |
-| SVG | 5.328 | 0,08% |
-
-<figcaption>{{ figure_link(caption="Veel voorkomende favicon-indelingen.", sheets_gid="1930085905", sql_file="pages_almanac_by_device_and_favicon_image_type.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Favicon formaat</th>
+        <th>Voorvallen</th>
+        <th>Pagina's (%)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ICO</td>
+        <td class="numeric">2,245,646</td>
+        <td class="numeric">35.38%</td>
+      </tr>
+      <tr>
+        <td>PNG</td>
+        <td class="numeric">1,966,530</td>
+        <td class="numeric">30.98%</td>
+      </tr>
+      <tr>
+        <td>No favicon defined</td>
+        <td class="numeric">1,643,136</td>
+        <td class="numeric">25.88%</td>
+      </tr>
+      <tr>
+        <td>JPG</td>
+        <td class="numeric">319,935</td>
+        <td class="numeric">5.04%</td>
+      </tr>
+      <tr>
+        <td>No extension specified (no format identifiable)</td>
+        <td class="numeric">37,011</td>
+        <td class="numeric">0.58%</td>
+      </tr>
+      <tr>
+        <td>GIF</td>
+        <td class="numeric">34,559</td>
+        <td class="numeric">0.54%</td>
+      </tr>
+      <tr>
+        <td>WebP</td>
+        <td class="numeric">10,605</td>
+        <td class="numeric">0.17%</td>
+      </tr>
+      <tr>
+        <td>…</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>SVG</td>
+        <td class="numeric">5,328</td>
+        <td class="numeric">0.08%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Veel voorkomende favicon-indelingen.", sheets_gid="1930085905", sql_file="pages_almanac_by_device_and_favicon_image_type.sql") }}</figcaption>
 </figure>
 
 Er zijn hier een paar verrassingen:
@@ -609,32 +1133,90 @@ Er is de laatste tijd veel [discussie](https://adrianroselli.com/2016/01/links-b
 ) }}
 
 {# TODO(analysts): Where do these "occurrences" come from? Ideally we have a single sheet to link to with the results used by this table. #}
-<figure markdown>
-| Knoptypes | Voorvallen | Percentage |
-|---|---|---|
-| `<button type="button">` | 15.926.061 | 36,41% |
-| `<button>` zonder type | 11.838.110 | 32,43% |
-| `<button type="submit">` | 4.842.946 | 28,55% |
-| `<input type="submit" value="…">` | 4.000.844 | 31,82% |
-| `<input type="button" value="…">` | 1.087.182 | 4,07% |
-| `<input type="image" src="…">` | 322.855 | 2,69% |
-| `<button type="reset">` | 41.735 | 0,49% |
-
-<figcaption>{{ figure_link(caption="Overname van knoptypes.", sheets_gid="410549982", sql_file="pages_markup_by_device.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Knoptypes</th>
+        <th>Voorvallen</th>
+        <th>Percentage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>&lt;button type="button"&gt;</code></td>
+        <td class="numeric">15,926,061</td>
+        <td class="numeric">36.41%</td>
+      </tr>
+      <tr>
+        <td><code>&lt;button&gt;</code> zonder type</td>
+        <td class="numeric">11,838,110</td>
+        <td class="numeric">32.43%</td>
+      </tr>
+      <tr>
+        <td><code>&lt;button type="submit"&gt;</code></td>
+        <td class="numeric">4,842,946</td>
+        <td class="numeric">28.55%</td>
+      </tr>
+      <tr>
+        <td><code>&lt;input type="submit" value="…"&gt;</code></td>
+        <td class="numeric">4,000,844</td>
+        <td class="numeric">31.82%</td>
+      </tr>
+      <tr>
+        <td><code>&lt;input type="button" value="…"&gt;</code></td>
+        <td class="numeric">1,087,182</td>
+        <td class="numeric">4.07%</td>
+      </tr>
+      <tr>
+        <td><code>&lt;input type="image" src="…"&gt;</code></td>
+        <td class="numeric">322,855</td>
+        <td class="numeric">2.69%</td>
+      </tr>
+      <tr>
+        <td><code>&lt;button type="reset"&gt;</code></td>
+        <td class="numeric">41,735</td>
+        <td class="numeric">0.49%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Overname van knoptypes.", sheets_gid="410549982", sql_file="pages_markup_by_device.sql") }}</figcaption>
 </figure>
 
 Uit onze analyse blijkt dat ongeveer 60% van de pagina's een knopelement bevat en meer dan de helft van de pagina's (32,43%) ten minste één knop heeft die geen `type`-attribuut specificeert. Merk op dat het knopelement een [standaardtype](https://dev.w3.org/html5/spec-LC/the-button-element.html) heeft van `submit`, dus het standaardgedrag van knoppen op deze 32% van de pagina's is om de huidige formuliergegevens in te dienen. Om mogelijk onverwacht gedrag als dit te voorkomen, is het het beste om het kenmerk `type` op te geven.
 
-<figure markdown>
-| Percentiel | Knoppen per pagina |
-|---|---|
-| 10 | 0 |
-| 25 | 0 |
-| 50 | 1 |
-| 75 | 5 |
-| 90 | 13 |
-
-<figcaption>{{ figure_link(caption="Verdeling van het aantal knoppen per pagina.", sheets_gid="309769153", sql_file="pages_markup_by_device_and_percentile.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Percentiel</th>
+        <th>Knoppen per pagina</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>10</td>
+        <td class="numeric">0</td>
+      </tr>
+      <tr>
+        <td>25</td>
+        <td class="numeric">0</td>
+      </tr>
+      <tr>
+        <td>50</td>
+        <td class="numeric">1</td>
+      </tr>
+      <tr>
+        <td>75</td>
+        <td class="numeric">5</td>
+      </tr>
+      <tr>
+        <td>90</td>
+        <td class="numeric">13</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Verdeling van het aantal knoppen per pagina.", sheets_gid="309769153", sql_file="pages_markup_by_device_and_percentile.sql") }}</figcaption>
 </figure>
 
 Pagina's in het 10e en 25e percentiel bevatten helemaal geen knoppen, terwijl een pagina in het 90e percentiel 13 native `button`-elementen bevat. Met andere woorden, 10% van de pagina's bevat 13 of meer knoppen.
@@ -643,21 +1225,69 @@ Pagina's in het 10e en 25e percentiel bevatten helemaal geen knoppen, terwijl ee
 
 Het [`anchor`-element](https://developer.mozilla.org/nl/docs/Web/HTML/Element/a), of `a` element, verbindt webbronnen met elkaar. In deze sectie analyseren we de acceptatie van de protocollen die in deze linkdoelen zijn opgenomen.
 
-<figure markdown>
-| Protocol | Voorvallen | Pagina's (%) |
-|---|---|---|
-| https | 5.756.444 | 90,69% |
-| http | 4.089.769 | 64,43% |
-| mailto | 1.691.220 | 26,64% |
-| javascript | 1.583.814 | 24,95% |
-| tel | 1.335.919 | 21,05% |
-| whatsapp | 34.643 | 0,55% |
-| viber | 25.951 | 0,41% |
-| skype | 22.378 | 0,35% |
-| sms | 17.304 | 0,27% |
-| intent | 12.807 | 0,20% |
-
-<figcaption>{{ figure_link(caption="Adoptie van link doelen-protocollen.", sheets_gid="1963376224", sql_file="pages_wpt_bodies_by_device_and_protocol.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Protocol</th>
+        <th>Voorvallen</th>
+        <th>Pagina's (%)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>https</code></td>
+        <td class="numeric">5,756,444</td>
+        <td class="numeric">90.69%</td>
+      </tr>
+      <tr>
+        <td><code>http</code></td>
+        <td class="numeric">4,089,769</td>
+        <td class="numeric">64.43%</td>
+      </tr>
+      <tr>
+        <td><code>mailto</code></td>
+        <td class="numeric">1,691,220</td>
+        <td class="numeric">26.64%</td>
+      </tr>
+      <tr>
+        <td><code>javascript</code></td>
+        <td class="numeric">1,583,814</td>
+        <td class="numeric">24.95%</td>
+      </tr>
+      <tr>
+        <td><code>tel</code></td>
+        <td class="numeric">1,335,919</td>
+        <td class="numeric">21.05%</td>
+      </tr>
+      <tr>
+        <td><code>whatsapp</code></td>
+        <td class="numeric">34,643</td>
+        <td class="numeric">0.55%</td>
+      </tr>
+      <tr>
+        <td><code>viber</code></td>
+        <td class="numeric">25,951</td>
+        <td class="numeric">0.41%</td>
+      </tr>
+      <tr>
+        <td><code>skype</code></td>
+        <td class="numeric">22,378</td>
+        <td class="numeric">0.35%</td>
+      </tr>
+      <tr>
+        <td><code>sms</code></td>
+        <td class="numeric">17,304</td>
+        <td class="numeric">0.27%</td>
+      </tr>
+      <tr>
+        <td><code>intent</code></td>
+        <td class="numeric">12,807</td>
+        <td class="numeric">0.20%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Adoptie van link doelen-protocollen.", sheets_gid="1963376224", sql_file="pages_wpt_bodies_by_device_and_protocol.sql") }}</figcaption>
 </figure>
 
 We kunnen zien hoe `https` en `http` het meest dominant zijn, gevolgd door 'goedaardige' links om het schrijven van e-mail, het voeren van telefoongesprekken en het verzenden van berichten gemakkelijker te maken. `javascript` onderscheidt zich als een linkdoel dat nog steeds erg populair is, ook al biedt JavaScript native en gracieus vernederende opties om mee te werken.
@@ -674,14 +1304,30 @@ We kunnen zien hoe `https` en `http` het meest dominant zijn, gevolgd door 'goed
 
 Het gebruik van `target="_blank"` staat al enige tijd bekend als een [beveiligingsprobleem](https://mathiasbynens.github.io/rel-noopener/). Toch bevat 71,35% van de pagina's links met `target="_blank"`, zonder `noopener` of `noreferrer`.
 
-<figure markdown>
-| Elementen | Pagina's |
-|---|---|
-| `<a target="_blank" rel="noopener noreferrer">` | 13,63% |
-| `<a target="_blank" rel="noopener">` | 14,14% |
-| `<a target="_blank" rel="noreferrer">` | 0,56% |
-
-<figcaption>{{ figure_link(caption="Lege relaties.", sheets_gid="1876528165", sql_file="pages_wpt_bodies_by_device.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Elementen</th>
+        <th>Pagina's</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>&lt;a target="_blank" rel="noopener noreferrer"&gt;</code></td>
+        <td class="numeric">13.63%</td>
+      </tr>
+      <tr>
+        <td><code>&lt;a target="_blank" rel="noopener"&gt;</code></td>
+        <td class="numeric">14.14%</td>
+      </tr>
+      <tr>
+        <td><code>&lt;a target="_blank" rel="noreferrer"&gt;</code></td>
+        <td class="numeric">0.56%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Lege relaties.", sheets_gid="1876528165", sql_file="pages_wpt_bodies_by_device.sql") }}</figcaption>
 </figure>
 
 Als vuistregel en om [gebruiksredenen](https://www.nngroup.com/articles/new-browser-windows-and-tabs/), geeft u er de voorkeur aan om `target="_blank"` niet te gebruiken in de eerste plaats.
