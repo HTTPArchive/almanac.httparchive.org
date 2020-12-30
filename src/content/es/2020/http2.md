@@ -480,37 +480,37 @@ Si analizamos más a fondo las distribuciones de los activos empujados en las Fi
       <tr>
         <td class="numeric">10</td>
         <td class="numeric">1</td>
-        <td class="numeric">15.48</td>
+        <td class="numeric">3.95</td>
         <td class="numeric">1</td>
-        <td class="numeric">0.06</td>
+        <td class="numeric">15.83</td>
       </tr>
       <tr>
         <td class="numeric">25</td>
-        <td class="numeric">1</td>
-        <td class="numeric">36.34</td>
-        <td class="numeric">1</td>
-        <td class="numeric">0.06</td>
+        <td class="numeric">2</td>
+        <td class="numeric">36.32</td>
+        <td class="numeric">3</td>
+        <td class="numeric">35.93</td>
       </tr>
       <tr>
         <td class="numeric">50</td>
-        <td class="numeric">3</td>
-        <td class="numeric">183.83</td>
-        <td class="numeric">2</td>
-        <td class="numeric">24.06</td>
+        <td class="numeric">4</td>
+        <td class="numeric">139.58</td>
+        <td class="numeric">7</td>
+        <td class="numeric">111.96</td>
       </tr>
       <tr>
         <td class="numeric">75</td>
-        <td class="numeric">10</td>
-        <td class="numeric">225.41</td>
-        <td class="numeric">5</td>
-        <td class="numeric">204.65</td>
+        <td class="numeric">8</td>
+        <td class="numeric">346.70</td>
+        <td class="numeric">21</td>
+        <td class="numeric">203.59</td>
       </tr>
       <tr>
         <td class="numeric">90</td>
-        <td class="numeric">12</td>
-        <td class="numeric">351.05</td>
-        <td class="numeric">18</td>
-        <td class="numeric">453.57</td>
+        <td class="numeric">17</td>
+        <td class="numeric">440.08</td>
+        <td class="numeric">41</td>
+        <td class="numeric">390.91</td>
       </tr>
     </tbody>
   </table>
