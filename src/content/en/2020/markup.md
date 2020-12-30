@@ -368,7 +368,7 @@ Accordingly, we looked at the number of `details` and `summary` elements and it 
 
 ### Probability of element use
 
-Taking another look at element popularity, how likely is it to find a certain element in the DOM of a page? Surely, `html`, `head`, `body` are present on every page (even though [their tags are all optional](https://meiert.com/en/blog/optional-html/)), making them common elements, but what other elements are to be found?
+Taking another look at element popularity, how likely is it to find a certain element in the DOM of a page? Sure, `html`, `head`, `body` are present on every HTML page (even though [these tags are all optional](https://meiert.com/en/blog/optional-html/), browsers will automatically add them), making them common elements, but what other elements are to be commonly found?
 
 <figure>
   <table>
@@ -424,7 +424,7 @@ Taking another look at element popularity, how likely is it to find a certain el
   <figcaption>{{ figure_link(caption="High probabilities of finding a given element in pages of the Web Almanac 2020 sample.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
 </figure>
 
-Standard elements are those that are or were part of the HTML specification. Which ones are rare to find? In our sample, that would bring up the following:
+Standard elements are those that are or were part of the HTML specification, but which ones are rare to find? In our sample, that would bring up the following:
 
 <figure>
   <table>
@@ -452,7 +452,8 @@ Standard elements are those that are or were part of the HTML specification. Whi
   <figcaption>{{ figure_link(caption="Low probabilities of finding a given element in pages of the sample.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
 </figure>
 
-We're including these elements to give an idea what elements may have gone out of favor. But while `dir` and `basefont` were last specified in XHTML 1.0 (2000), the rare use of `rp`, which has been mentioned [as early as 1998](https://www.w3.org/TR/1998/WD-ruby-19981221/#a2-4) but which is also [still part of HTML](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element), may just suggest that Ruby markup is not very popular.
+We're including these elements to give an idea what elements may have gone out of favor. But while `dir` and `basefont` were last specified in XHTML 1.0 (2000) and are no longer part of HTML, the rare use of `rp` (which was mentioned [as early as 1998](https://www.w3.org/TR/1998/WD-ruby-19981221/#a2-4) and is [still part of HTML](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element)), may just suggest that Ruby markup is not very popular.
+
 
 ### Custom elements
 
@@ -549,7 +550,7 @@ Other groups that stand out include [AMP markup](https://amp.dev/) with `amp-` e
 
 ### Obsolete elements
 
-There are more questions to ask about the use of HTML, and one may relate to obsolete elements, which are elements like `applet`, `bgsound`, `blink`, `center`, `font`, `frame`, `isindex`, `marquee`, or `spacer`.
+There are more questions to ask about the use of HTML including the use of obsolete elements, which are elements like `applet`, `bgsound`, `blink`, `center`, `font`, `frame`, `isindex`, `marquee`, or `spacer`.
 
 In our mobile dataset of 6.3 million pages, around 0.9 million pages (14.01%) contain one or more of these elements. Here are the top 9, which are used more than 10,000 times:
 
