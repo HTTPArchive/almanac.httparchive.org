@@ -212,7 +212,7 @@ Los <i lang="en">ads</i>, los servicios de <i lang="en">analytics</i>, los recur
 {{ figure_markup(
   image="http2-third-party-http2-usage-by-category.png",
   caption="Fracción de solicitudes HTTP/2 o gQUIC de terceros conocidos por categoría por sitio web.",
-  description="Un gráfico de barras que compara la fracción de solicitudes HTTP/2 o gQUIC de terceros por categoría. Todas las solicitudes de terceros para todos los sitios web se atienden a través de HTTP/2 o gQUIC para el 95% de administradores de etiquetas, el 90% de servicios de <i lang="en">analytics</i> y de CDN, el 80% de <i lang="en">ads</i>, redes sociales, alojamiento y utilidades, el 40% de márketing y el 30% de <i lang="en">customer-success</i>.",
+  description='Un gráfico de barras que compara la fracción de solicitudes HTTP/2 o gQUIC de terceros por categoría. Todas las solicitudes de terceros para todos los sitios web se atienden a través de HTTP/2 o gQUIC para el 95% de administradores de etiquetas, el 90% de servicios de <i lang="en">analytics</i> y de CDN, el 80% de <i lang="en">ads</i>, redes sociales, alojamiento y utilidades, el 40% de márketing y el 30% de <i lang="en">customer-success</i>.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=1419102835&format=interactive",
   sheets_gid="1059610651",
   sql_file="http2_3rd_party_by_types.sql"
