@@ -6,6 +6,7 @@ description: Capítulo sobre HTTP/2 del Web Alamanc de 2020 que cubre la adopci�
 authors: [dotjs, rmarx, MikeBishop]
 reviewers: [LPardue, bazzadp, ibnesayeed]
 analysts: [gregorywolf]
+editors: [rviscomi]
 translators: [moniloria]
 dotjs_bio: Andrew trabaja en <a href="https://www.cloudflare.com/es-la/">Cloudflare</a> ayudando a hacer la web más rápida y más segura. Dedica su tiempo a implementar, medir y mejorar nuevos protocolos y la entrega de recursos, para mejorar el rendimiento del sitio web para el usuario final.
 rmarx_bio: Robin es investigador de protocolos web y rendimiento en la <a href="https://www.uhasselt.be/edm" hreflang="en">Universidad de Hasselt, Bélgica</a>. Ha estado trabajando para que QUIC y HTTP/3 estén listos para ser utilizados, mediante la creación de herramientas como <a href="https://github.com/quiclog" hreflang="en">qlog y qvis</a>.
