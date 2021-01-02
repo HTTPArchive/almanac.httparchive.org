@@ -550,7 +550,7 @@ Other groups that stand out include [AMP markup](https://amp.dev/) with `amp-` e
 
 ### Obsolete elements
 
-There are more questions to ask about the use of HTML including the use of obsolete elements, which are elements like `applet`, `bgsound`, `blink`, `center`, `font`, `frame`, `isindex`, `marquee`, or `spacer`.
+There are more questions to ask about the use of HTML, including the use of obsolete elements (which are elements like `applet`, `bgsound`, `blink`, `center`, `font`, `frame`, `isindex`, `marquee`, or `spacer`).
 
 In our mobile dataset of 6.3 million pages, around 0.9 million pages (14.01%) contain one or more of these elements. Here are the top 9, which are used more than 10,000 times:
 
