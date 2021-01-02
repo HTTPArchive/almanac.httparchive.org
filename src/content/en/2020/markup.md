@@ -764,7 +764,7 @@ This section focuses on how attributes are used in documents and explores patter
 
 ### Top attributes
 
-Similar to the section on the most [popular elements](#top-elements), this section delves into the most popular attributes on the web. Given how important the `href` attribute is for the web itself, or the `alt` attribute in order to make information [accessible](./#images-and-their-text-alternatives), would these be most popular attributes?
+Similar to the section on the most [popular elements](#top-elements), this section delves into the most popular attributes on the web. Given how important the `href` attribute is for the web itself, or the `alt` attribute in order to make information [accessible](./accessibility#images-and-their-text-alternatives), would these be most popular attributes?
 
 <figure>
   <table>
