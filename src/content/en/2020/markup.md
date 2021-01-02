@@ -1116,7 +1116,7 @@ There has been a lot of [discussion](https://adrianroselli.com/2016/01/links-but
     <thead>
       <tr>
         <th>Button types</th>
-        <th>Pages</th>
+        <th>Occurrences</th>
         <th>Pages (%)</th>
       </tr>
     </thead>
