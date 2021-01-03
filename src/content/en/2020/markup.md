@@ -321,7 +321,7 @@ Nothing changed in the Top 7, but the `option` element went a little out of favo
 
 #### `details` and `summary`
 
-Another thing we were curious about was the use of the [`details` and `summary` elements](https://html.spec.whatwg.org/multipage/rendering.html#the-details-and-summary-elements), especially since 2020 brought [broad support](https://caniuse.com/details). Are they being used? Are they attractive for—even popular—among authors? As it turns out, only 0.39% of all tested pages are using them—although it's hard to gauge whether they were all used the correct way in exactly the situations when you need them.
+Another thing we were curious about was the use of the [`details` and `summary` elements](https://html.spec.whatwg.org/multipage/rendering.html#the-details-and-summary-elements), especially since 2020 brought [broad support](https://caniuse.com/details). Are they being used? Are they attractive for—even popular—among authors? As it turns out, only 0.39% of all tested pages are using them—although it's hard to gauge whether they were all used the correct way in exactly the situations when you need them—"popular" is the wrong word.
 
 Here's a simple example showing the use of a `summary` in a `details` element:
 
