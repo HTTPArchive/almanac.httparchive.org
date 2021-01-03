@@ -368,7 +368,7 @@ Accordingly, we looked at the number of `details` and `summary` elements and it 
 
 ### Probability of element use
 
-Taking another look at element popularity, how likely is it to find a certain element in the DOM of a page? Sure, `html`, `head`, `body` are present on every HTML page (even though [these tags are all optional](https://meiert.com/en/blog/optional-html/), browsers will automatically add them), making them common elements, but what other elements are to be commonly found?
+Taking another look at element popularity, how likely is it to find a certain element in the DOM of a page? Sure, `html`, `head`, `body` are present on every HTML page (even though [these tags are all optional](https://meiert.com/en/blog/optional-html/)), making them common elements, but what other elements are to be commonly found?
 
 <figure>
   <table>
