@@ -335,7 +335,7 @@ To achieve this, we turn our analysis towards some user-perceived performance me
 
 In this section we take a look at three important factors provided by the [Chrome User Experience Report](./methodology#chrome-ux-report), which can shed light on our understanding of how users are experiencing CMS-powered web pages in the wild:
 
-- First Contentful Paint (FCP)
+- Largest Contentful Paint (LCP)
 - First Input Delay (FID)
 - Cumulative Layout Shift (CLS)
 
