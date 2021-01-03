@@ -157,7 +157,7 @@ Around 89% of pages contain at least one HTML comment, while about 46% of them c
 <![endif]-->
 ```
 
-The above is a non-standard HTML conditional comment. While those have proven to be helpful in the past in order to tackle browser differences, they are historical for some time as Microsoft [dropped conditional comments](https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/hh801214(v=vs.85)) in Internet Explorer 10.
+The above is a non-standard HTML conditional comment. While those have proven to be helpful in the past in order to tackle browser differences, they have been consigned to history for some time as Microsoft [dropped conditional comments](https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/hh801214(v=vs.85)) in Internet Explorer 10.
 
 Still, on the above percentile extremes, we found that web pages are using about 6 conditional comments in the 90th percentile, and 1 conditional comment while in the 10th percentile.  Most of the pages include them for helpers such as [html5shiv](https://github.com/aFarkas/html5shiv), [selectivizr](http://selectivizr.com/), and [respond.js](https://github.com/scottjehl/Respond). While being decentish and still active pages, our conclusion is that many of them were using obsolete CMS themes.
 
