@@ -424,7 +424,7 @@ Taking another look at element popularity, how likely is it to find a certain el
   <figcaption>{{ figure_link(caption="High probabilities of finding a given element in pages of the Web Almanac 2020 sample.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
 </figure>
 
-Standard elements are those that are or were part of the HTML specification, but which ones are rare to find? In our sample, that would bring up the following:
+Standard elements are those that are or were part of the HTML specification. Which ones are rare to find? In our sample, that would bring up the following:
 
 <figure>
   <table>
