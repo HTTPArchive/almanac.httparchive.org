@@ -1481,7 +1481,6 @@ p.copyright a {
 /* Syntax Highlighting */
 pre {
   margin: 0;
-  word-wrap: break-word;
   padding: 6px 10px;
   line-height: 19px;
   margin-bottom: 20px;
