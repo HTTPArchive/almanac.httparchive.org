@@ -49,7 +49,7 @@ In this section, we're covering the higher-level aspects of HTML like document t
   sql_file="summary_pages_by_device_and_doctype.sql"
 ) }}
 
-96.82% of pages declare a [_doctype_](https://developer.mozilla.org/en-US/docs/Glossary/Doctype). HTML documents declaring a doctype is useful for historical reasons, "to avoid triggering quirks mode in browsers" as [Ian Hickson wrote in 2009](https://lists.w3.org/Archives/Public/public-html-comments/2009Jul/0020.html). What are the most popular values?
+96.82% of pages declare a [_doctype_](https://developer.mozilla.org/en-US/docs/Glossary/Doctype). HTML documents declaring a doctype is useful for historical reasons, "to avoid triggering quirks mode in browsers" as [Ian Hickson explained in 2009](https://lists.w3.org/Archives/Public/public-html-comments/2009Jul/0020.html). What are the most popular values?
 
 <figure>
   <table>
@@ -196,11 +196,11 @@ What `type` attribute values are used with `script` elements?
 - `application/ld+json`: 1.68%
 - `application/json`: 0.41%
 - `text/template`: 0.41%
-- `text/html` 0.27%
+- `text/html`: 0.27%
 
 When it comes to loading [JavaScript module scripts](https://jakearchibald.com/2017/es-modules-in-browsers/) using `type="module"`, we found that 0.13% of `script` elements currently specify this attribute-value combination. `nomodule` is used by 0.95% of all tested pages. (Note that one metric relates to elements, the other to pages.)
 
-36.38% of all scripts have no values set whatsoever.
+36.38% of all scripts have no `type` values set whatsoever.
 
 ## Elements
 
@@ -546,7 +546,7 @@ The 2019 edition of the Web Almanac handled [custom elements](../2019/markup#cus
 
 These elements come from three sources: [Yandex Metrica](https://metrica.yandex.com/about) (`ym-`), an analytics solution we also saw last year; [Slider Revolution](https://www.sliderrevolution.com/) (`rs-`), a WordPress slider, for which there are more elements to be found near the top of the sample; and [Wix](https://www.wix.com/) (`wix-`), a website builder.
 
-Other groups that stand out include [AMP markup](https://amp.dev/) with `amp-` elements like `amp-img` (11,700 pages), `amp-analytics` (10,256) and `amp-auto-ads` (7,621), as well as [Angular](https://angular.io/) `app-` elements like `app-root` (16,314), `app-footer` (6,745), and `app-header` (5,274).
+Other groups that stand out include [AMP markup](https://amp.dev/) with `amp-` elements like `amp-img` (11,700 pages), `amp-analytics` (10,256), and `amp-auto-ads` (7,621), as well as [Angular](https://angular.io/) `app-` elements like `app-root` (16,314), `app-footer` (6,745), and `app-header` (5,274).
 
 ### Obsolete elements
 
@@ -618,7 +618,7 @@ Even `spacer` is still being used 1,584 times, and present on every 5,000th page
 
 #### `isindex`
 
-If you were wondering: The total number of [`isindex`](https://www.w3.org/TR/html401/interact/forms.html#edef-ISINDEX) elements in this dataset is: one. Exactly one page used an `isindex` element. It was part of the specs until [HTML 4.01 and XHTML 1.0](https://meiert.com/en/indices/html-elements/), yet only properly [specified](https://lists.w3.org/Archives/Public/public-whatwg-archive/2006Feb/0111.html) in 2006 (aligning with how it was implemented in browsers), and then [removed](https://github.com/whatwg/html/pull/1095) in 2016.
+If you were wondering: The total number of [`isindex`](https://www.w3.org/TR/html401/interact/forms.html#edef-ISINDEX) elements in this dataset is: one. Exactly one page used an `isindex` element. `isindex` was part of the specs until [HTML 4.01 and XHTML 1.0](https://meiert.com/en/indices/html-elements/), yet only properly [specified](https://lists.w3.org/Archives/Public/public-whatwg-archive/2006Feb/0111.html) in 2006 (aligning with how it was implemented in browsers), and then [removed](https://github.com/whatwg/html/pull/1095) in 2016.
 
 ### Proprietary and made-up elements
 
@@ -831,7 +831,7 @@ Similar to the section on the most [popular elements](#top-elements), this sect
   <figcaption>{{ figure_link(caption="Top 10 attributes by frequency of use.", sheets_gid="1348855449", sql_file="pages_almanac_by_device_and_attribute_name_frequency.sql") }}</figcaption>
 </figure>
 
-The most popular attribute is `class`, with nearly 3 billion occurrences in our dataset and constituting 34% of all attributes in use. `class` is by far the most prevalent attribute.
+The most popular attribute is `class`, with nearly 3 billion occurrences in our dataset and constituting 34% of all attributes in use.
 
 The `value` attribute, which specifies the value of an `input` element, surprisingly completes the top 10. It's surprising to us because, subjectively, we didn't get the impression `value` attributes were used that frequently.
 
@@ -897,7 +897,7 @@ Are there attributes that we find in every document? Not quite, but almost:
 )}}</figcaption>
 </figure>
 
-These results raise some questions that we cannot answer. For example, `type` is used on other elements too, but why this tremendous popularity? Especially given that it's usually not needed to specify for style sheets or scripts, with CSS and JavaScript being assumed default. Or, how do we really fare with `alt`? Do those 9.25% of pages not contain any images or are they just inaccessible?
+These results raise questions that we cannot answer. For example, `type` is used on other elements, too, but why this tremendous popularity? Especially given that it's usually not needed to specify for style sheets or scripts, with CSS and JavaScript being assumed default. Or, how do we really fare with `alt`? Do those 9.25% of pages not contain any images or are they just inaccessible?
 
 ### `data-*` attributes
 
@@ -962,7 +962,7 @@ The two most popular ones stand out because they are almost twice as popular tha
 
 Attributes like `data-type`, `data-id`, and `data-src` can have multiple generic uses although `data-src` is used a lot with lazy image loading via JavaScript (e.g., Bootstrap 4). [Bootstrap](https://getbootstrap.com/) again explains the presence of `data-toggle`, where it's used as a state styling hook on toggle buttons. The [Slick carousel plugin](https://kenwheeler.github.io/slick/) is the source of `data-slick-index`, whereas `data-element_type` is part of [Elementor's WordPress website builder](https://elementor.com/). Both `data-requiremodule` and `data-requirecontext`, then, are part of [RequireJS](https://requirejs.org/).
 
-Interestingly, the use of native lazy loading on images is similar to that of `data-src`. [3.86% of pages](https://docs.google.com/spreadsheets/d/1ram47FshAjzvbQVJbAQPgxZN7PPOPCKIK67VJZCo92c/edit#gid=2109061092) use the `<img loading="lazy">` attribute. This appears to be growing very fast, as back in February, this number was about [0.8%](https://twitter.com/zcorpan/status/1237016679667970050). It's possible that these are being used together for a [cross-browser solution](https://addyosmani.com/blog/lazy-loading/).
+Interestingly, the use of native lazy loading on images is similar to that of `data-src`. [3.86% of pages](https://docs.google.com/spreadsheets/d/1ram47FshAjzvbQVJbAQPgxZN7PPOPCKIK67VJZCo92c/edit#gid=2109061092) use `loading="lazy"` on `<img>` elements. This appears to be growing very fast, as back in February, this number was about [0.8%](https://twitter.com/zcorpan/status/1237016679667970050). It's possible that these are being used together for a [cross-browser solution](https://addyosmani.com/blog/lazy-loading/).
 
 ## Miscellaneous
 
@@ -1161,7 +1161,7 @@ There has been a lot of [discussion](https://adrianroselli.com/2016/01/links-but
   <figcaption>{{ figure_link(caption="Adoption of button types.", sheets_gid="410549982", sql_file="pages_markup_by_device.sql") }}</figcaption>
 </figure>
 
-Our analysis shows that about 60% of pages contain a button element and more than half of those pages (32.43%) have at least one button that fails to specify a `type` attribute. Note that the button element has a [default type](https://dev.w3.org/html5/spec-LC/the-button-element.html) of `submit`, so the default behavior of buttons on these 32% of pages is to submit the current form data. To avoid possibly unexpected behavior like this, a best practice is to specify the `type` attribute.
+Our analysis shows that about 60% of pages contain a button element and more than half of those pages (32.43%) have at least one button that fails to specify a `type` attribute. Note that the `button` element has a [default type](https://dev.w3.org/html5/spec-LC/the-button-element.html) of `submit`, so the default behavior of buttons on these 32% of pages is to submit the current form data. To avoid possibly unexpected behavior like this, a best practice is to specify the `type` attribute.
 
 <figure>
   <table>
@@ -1201,7 +1201,7 @@ Pages in the 10th and 25th percentiles contain no buttons at all, while a page i
 
 ### Link targets
 
-The [anchor element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a), or `a` element, links web resources together. In this section, we analyze the adoption of the protocols included in these link targets.
+The [anchor element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a), or `a` element, links web resources together. In this section, we analyze the adoption of the protocols included in the respective link targets.
 
 <figure>
   <table>
@@ -1340,4 +1340,6 @@ That compels us to close with an appeal: Pay attention to HTML. Focus on HTML. I
 
 For the next edition of the Web Almanac's chapter, let's prepare to look closer at the craft of writing HTML and, hopefully, how we've been improving on it.
 
-We're leaving this open to you. What are your observations? What has caught your eye? What do you think has taken a turn for the worse, and what has improved? [Leave a comment](https://discuss.httparchive.org/t/2039) to share your thoughts!
+<p class="note">
+  We're leaving the rest open to you. What are your observations? What has caught your eye? What do you think has taken a turn for the worse, and what has improved? [Leave a comment](https://discuss.httparchive.org/t/2039) to share your thoughts!
+</p>
