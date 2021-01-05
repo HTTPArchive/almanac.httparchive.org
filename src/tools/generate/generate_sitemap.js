@@ -10,7 +10,8 @@ const static_pages = [
   'methodology.html',
   'contributors.html',
   'accessibility_statement.html',
-  'stories/page_content.html'
+  'stories/page_content.html',
+  'stories/web_almanac_part_ii_user_experience.html'
 ];
 const ebook_path = "static/pdfs/web_almanac_";
 
