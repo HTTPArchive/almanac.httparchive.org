@@ -7,6 +7,7 @@ description: Mobile Web chapter of the 2020 Web Almanac covering page loading, t
 authors: [spanicker, mdiblasio]
 reviewers: [obto]
 analysts: [obto]
+editors: [exterkamp]
 translators: []
 spanicker_bio: Shubhie Panicker is the engineering lead for Chrome's engagement in the web framework ecosystem, where she collaborates with open source tools, frameworks and communities. As a member of Chrome's Web Platform team she has worked on web standards and chromium's implementation for several web performance APIs. Prior to Chrome, she worked on infrastructure and web frameworks for Google products like Search, Google Photos etc.
 mdiblasio_bio: Michael DiBlasio is Web Ecosystems Consultant at Google. He focuses on helping to improve the health of the web ecosystem and to ensure the web is commercially viable for creators and partners. He works closely with strategic retailers to adopt new modern web technologies and improve the quality of existing web experiences. Prior to Google, Michael was a consultant at IBM.
