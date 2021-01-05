@@ -110,6 +110,15 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
   </div>
   {% endif %}
 
+  {% if metadata.get('editors') and metadata.get('editors') | length >= 1 %}
+  <div class="byline editors">{{ self.edited_by_before() }}
+  {% for editor in metadata.get('editors') %}
+    <a class="editor" href="{{ url_for('contributors', year=year, lang=lang, _anchor=analyst) }}">{{ config.contributors[editor].name if editor in config.contributors else editor }}</a>{{ self.comma() if not loop.last and loop.length > 2 }}
+    {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %}
+  {% endfor %}{{ self.edited_by_after() }}
+  </div>
+  {% endif %}
+
   {% if metadata.get('translators') | length >= 1 %}
   <div class="byline translators">{{ self.translated_by_before() }}
   {% for translator in metadata.get('translators') %}

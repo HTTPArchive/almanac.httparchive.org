@@ -1,8 +1,8 @@
 {% extends "%s/%s/base.html" % (lang, year) %}
 
-{% block image_url %}https://almanac.httparchive.org/static/images/home-hero-bg.png{% endblock %}
-{% block image_height %}562{% endblock %}
-{% block image_width %}715{% endblock %}
+{% block image_url %}https://almanac.httparchive.org/static/images/home-hero-{{ year }}.png{% endblock %}
+{% block image_height %}600{% endblock %}
+{% block image_width %}1200{% endblock %}
 
 {% set year_with_chapters = featured_chapters_exists(lang, year) or featured_chapters_exists('en', year) %}
 
@@ -69,52 +69,49 @@
       <h3>{{ localizedChapterTitles[featured_chapter] }}</h3>
       {% if quote_language != lang %}
       <blockquote lang="{{ quote_language }}">
-        {{ featured_chapter_quote|safe }}
+        {{ featured_chapter_quote | replace('&quot;','"') | safe }}
       </blockquote>
-      {% else %}
-      <blockquote>
-        {{ featured_chapter_quote|safe }}
-      </blockquote>
-      {% endif %}
-      {% if quote_language != lang %}
       <div lang="{{ quote_language }}" class="featured-chapter-content-data">
         {% if featured_chapter_stats.get('stat1') %}
         <div class="featured-chapter-content-data-item">
-          <div class="no-wrap">{{ featured_chapter_stats.get('stat1')|safe }}</div>
+          <div class="no-wrap">{{ featured_chapter_stats.get('stat1') | replace('&quot;','"') | safe }}</div>
           <div>{{ featured_chapter_stats.get('label1')|safe }}</div>
         </div>
         {% endif %}
         {% if featured_chapter_stats.get('stat2') %}
         <div class="featured-chapter-content-data-item">
-          <div class="no-wrap">{{ featured_chapter_stats.get('stat2')|safe }}</div>
-          <div>{{ featured_chapter_stats.get('label2')|safe }}</div>
+          <div class="no-wrap">{{ featured_chapter_stats.get('stat2') | replace('&quot;','"') | safe }}</div>
+          <div>{{ featured_chapter_stats.get('label2') | replace('&quot;','"') | safe }}</div>
         </div>
         {% endif %}
         {% if featured_chapter_stats.get('stat3') %}
         <div class="featured-chapter-content-data-item">
-          <div class="no-wrap">{{ featured_chapter_stats.get('stat3')|safe }}</div>
-          <div>{{ featured_chapter_stats.get('label3')|safe }}</div>
+          <div class="no-wrap">{{ featured_chapter_stats.get('stat3') | replace('&quot;','"') | safe }}</div>
+          <div>{{ featured_chapter_stats.get('label3') | replace('&quot;','"') | safe }}</div>
         </div>
         {% endif %}
       </div>
       {% else %}
+      <blockquote>
+        {{ featured_chapter_quote | replace('&quot;','"') | safe }}
+      </blockquote>
       <div class="featured-chapter-content-data">
         {% if featured_chapter_stats.get('stat1') %}
         <div class="featured-chapter-content-data-item">
-          <div class="no-wrap">{{ featured_chapter_stats.get('stat1')|safe }}</div>
-          <div>{{ featured_chapter_stats.get('label1')|safe }}</div>
+          <div class="no-wrap">{{ featured_chapter_stats.get('stat1') | replace('&quot;','"') | safe }}</div>
+          <div>{{ featured_chapter_stats.get('label1') | replace('&quot;','"') | safe }}</div>
         </div>
         {% endif %}
         {% if featured_chapter_stats.get('stat2') %}
         <div class="featured-chapter-content-data-item">
-          <div class="no-wrap">{{ featured_chapter_stats.get('stat2')|safe }}</div>
-          <div>{{ featured_chapter_stats.get('label2')|safe }}</div>
+          <div class="no-wrap">{{ featured_chapter_stats.get('stat2') | replace('&quot;','"') | safe }}</div>
+          <div>{{ featured_chapter_stats.get('label2') | replace('&quot;','"') | safe }}</div>
         </div>
         {% endif %}
         {% if featured_chapter_stats.get('stat3') %}
         <div class="featured-chapter-content-data-item">
-          <div class="no-wrap">{{ featured_chapter_stats.get('stat3')|safe }}</div>
-          <div>{{ featured_chapter_stats.get('label3')|safe }}</div>
+          <div class="no-wrap">{{ featured_chapter_stats.get('stat3') | replace('&quot;','"') | safe }}</div>
+          <div>{{ featured_chapter_stats.get('label3') | replace('&quot;','"') | safe }}</div>
         </div>
         {% endif %}
       </div>

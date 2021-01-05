@@ -6,6 +6,7 @@ description: コンテンツの初回ペイント（FCP）、最初のバイト�
 authors: [rviscomi]
 reviewers: [JMPerez,obto,sergeychernyshev,zeman]
 analysts: [rviscomi, raghuramakrishnan71]
+editors: [rachellcostello]
 translators: [MSakamaki]
 discuss: 1762
 results: https://docs.google.com/spreadsheets/d/1zWzFSQ_ygb-gGr1H1BsJCfB7Z89zSIf7GX0UayVEte4/

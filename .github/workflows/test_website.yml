@@ -21,11 +21,11 @@ jobs:
         # Full git history is needed to get a proper list of changed files within `super-linter`
         fetch-depth: 0
     - name: Setup Node.js for use with actions
-      uses: actions/setup-node@v1.4.4
+      uses: actions/setup-node@v2.1.4
       with:
         node-version: 12.x
     - name: Set up Python 3.8
-      uses: actions/setup-python@v2.1.4
+      uses: actions/setup-python@v2.2.1
       with:
         python-version: '3.8'
     - name: Run the website
@@ -33,7 +33,7 @@ jobs:
     - name: Remove node modules to avoid linting errors
       run: rm -rf src/node_modules
     - name: Lint Generated HTML
-      uses: docker://github/super-linter:v3.13.1
+      uses: docker://github/super-linter:v3.14.0
       env:
         DEFAULT_BRANCH: main
         FILTER_REGEX_INCLUDE: src/static/html/.*

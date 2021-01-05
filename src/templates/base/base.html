@@ -118,7 +118,7 @@
   <label for="table-of-contents-switcher-{{switcher_name}}" class="visually-hidden">
     {{ self.table_of_contents_switcher() }}
   </label>
-  <select id="table-of-contents-switcher-{{switcher_name}}">
+  <select id="table-of-contents-switcher-{{switcher_name}}" data-label="toc-menu-mobile">
     {% if request.path.endswith("table-of-contents") %}
       <option selected disabled value="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</option>
       <option disabled value="{{ url_for('table_of_contents', year=year, lang=lang) }}#foreword">{{ self.foreword_title() }}</option>
@@ -179,7 +179,7 @@
     {% endif %}
 
     {% if ebook_size_in_mb and ebook_size_in_mb > 0 %}
-    <option value="/static/pdfs/web_almanac_{{ year }}_{{ lang }}.pdf">
+    <option value="/static/pdfs/web_almanac_{{ year }}_{{ lang }}.pdf" data-event="ebook-click">
       {{ self.ebook_download_short() }}
     </option>
     {% endif %}
@@ -275,7 +275,7 @@
       <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}#ebook">{{ self.ebook_title() }}</a>
     </li>
     <li class="nav-dropdown-list-chapter ebook">
-      <a href="/static/pdfs/web_almanac_{{ year }}_{{ lang }}.pdf">{{ self.ebook_download_short() }}</a>
+      <a href="/static/pdfs/web_almanac_{{ year }}_{{ lang }}.pdf" data-event="ebook-click" data-label="toc-menu">{{ self.ebook_download_short() }}</a>
     </li>
     {% endif %}
   </ul>
@@ -482,10 +482,21 @@
           element.hidden = false;
         });
 
-        // Language and Year switching
+        // Language, Year and ToC switching
         var languageYearSwitchers = document.querySelectorAll('.language-switcher select, .year-switcher select, .table-of-contents-switcher select');
         for (var i = 0; i < languageYearSwitchers.length; i++) {
           languageYearSwitchers[i].addEventListener('change', function(e) {
+
+            var selectedOption = this.options[this.selectedIndex];
+
+            if (e.target.dataset.label && selectedOption.dataset.event) {
+              gtag('event', selectedOption.dataset.event, {
+                'event_category': 'clicks',
+                'event_label': e.target.dataset.label,
+                'transport_type': 'beacon',
+                'value': 1 })
+            }
+
             //Reset the selector back in case user uses Back button
             var selectedValue = e.target.value;
             if (selectedValue && selectedValue !== window.location.pathname) {
@@ -611,15 +622,26 @@
             }
           }
         });
+
+        document.querySelectorAll('[data-event]').forEach(trackableElement => {
+          trackableElement.addEventListener('click', function (event) {
+            gtag('event', event.target.dataset.event, {
+              'event_category': 'clicks',
+              'event_label': event.target.dataset.label,
+              'transport_type': 'beacon',
+              'value': 1 })
+          });
+        });
+
       })();
     </script>
   {% endblock %}
 {% endblock %}
 
-{% macro figure_dropdown(metadata, id, sheets_gid="", sql_file="", image="") %}
+{% macro figure_dropdown(metadata, id, sheets_gid="", sql_file="", image="", caption="") %}
   {% if sheets_gid != "" or  sql_file != "" or image != "" %}
   <div class="figure-dropdown nav-dropdown">
-    <button class="nav-dropdown-btn js-enable hidden" disabled aria-expanded="false" title="Figure options&hellip;">
+    <button class="nav-dropdown-btn js-enable hidden" disabled aria-expanded="false" title="{{ self.explore_the_results() }}">
       <span class="visually-hidden">{{ self.explore_the_results() }}</span>
       <svg aria-hidden="true" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
@@ -741,7 +763,6 @@
 <a href="#fig-{{ metadata.chapter_number }}-{{ id }}" class="anchor-link">{{ figure_text(metadata, id) }}</a> {{ caption|safe }}
 {% else %}
 <a href="#fig-{{ id }}" class="anchor-link">{{ figure_text(metadata, id) }}</a> {{ caption|safe }}
-{{ figure_dropdown(metadata, id, sheets_gid, sql_file, image) }}
 {% endif %}
 {% endmacro %}
 
@@ -788,22 +809,28 @@
   <iframe class="fig-mobile fig-desktop video-embed" src="{{ video }}" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen width="{{ video_width }}" height="{{ video_height }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description"></iframe>
   {%- endif %}
   {%- if image != "" %}
-  {% if video %}{% set anchor_class="video-fallback-image"%}{% endif %}
-  <a href="{{ link }}"  class="{{ anchor_class }}">
-    {%- if chart_url != "" %}
-    <img src="{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description" width="{{ width }}" height="{{ height }}" data-width="{{ data_width }}" data-height="{{ data_height }}" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="{{ chart_url|safe }}" loading="lazy" />
-    {%- elif not ebook and object != "" %}
-    <object type="image/svg+xml" width="{{ width }}" height="{{ height }}" data="{{ image }}">
-      {{ caption }}
-    </object>
-    {% else %}
-    <img src="{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description" width="{{ width }}" height="{{ height }}" loading="lazy" />
-    {%- endif %}
-  </a>
+  <div class="figure-wrapper">
+    {% if video %}{% set anchor_class="video-fallback-image"%}{% endif %}
+    <a href="{{ link }}"  class="{{ anchor_class }}">
+      {%- if chart_url != "" %}
+      <img src="{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description" width="{{ width }}" height="{{ height }}" data-width="{{ data_width }}" data-height="{{ data_height }}" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="{{ chart_url|safe }}" loading="lazy" />
+      {%- elif not ebook and object != "" %}
+      <object type="image/svg+xml" width="{{ width }}" height="{{ height }}" data="{{ image }}">
+        {{ caption }}
+      </object>
+      {% else %}
+      <img src="{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description" width="{{ width }}" height="{{ height }}" loading="lazy" />
+      {%- endif %}
+    </a>
+    {% if not ebook %}{{ figure_dropdown(metadata, id, sheets_gid, sql_file, image) }}{% endif %}
+  </div>
   <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="{{ anchor }}-description" data-show-text="{{ show_description(metadata,id) }}" data-hide-text="{{ hide_description(metadata,id) }}">{{ show_description(metadata,id) }}</button>
   <div id="{{ anchor }}-description" class="visually-hidden">{{ description|safe }}</div>
   {%- elif content != "" %}
-  <div class="{{ classes }}">{{ content|safe }}</div>
+  <div class="figure-wrapper">
+    <div class="{{ classes }}">{{ content|safe }}</div>
+    {% if not ebook %}{{ figure_dropdown(metadata, id, sheets_gid, sql_file, image, ebook) }}{% endif %}
+  </div>
   {%- endif %}
   <figcaption id="{{ anchor }}-caption">{{ figure_link(metadata, id, caption, ebook=ebook, sheets_gid=sheets_gid, sql_file=sql_file, image=image) }}</figcaption>
 </figure>

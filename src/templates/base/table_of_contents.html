@@ -146,8 +146,8 @@
     <section class="part">
       <h2 id="ebook" class="part-name"><a href="#ebook" class="anchor-link">{{ self.ebook_title() }}</a></h2>
       <div class="chapters">
-        <div id="ebook-download" class="chapter">
-          <a href="/static/pdfs/web_almanac_{{ year }}_{{ lang }}.pdf">{{ self.ebook_download() }}</a><br>
+        <div class="chapter">
+          <a href="/static/pdfs/web_almanac_{{ year }}_{{ lang }}.pdf" data-event="ebook-click" data-label="toc-page">{{ self.ebook_download() }}</a><br>
           <small>{{ self.ebook_download_note() }}</small>
         </div>
       </div>
@@ -162,16 +162,4 @@
     </div>
   </div>
 </main>
-{% endblock %}
-
-
-{% block scripts %}
-{{ super() }}
-<script nonce="{{ csp_nonce() }}">
-  var ebookLink = document.querySelector('#ebook-download');
-
-  ebookLink && ebookLink.addEventListener("click", function (event) {
-    gtag('event', 'ebook-click', { 'event_category': 'clicks', 'event_label': 'toc-page', 'value': 1 })
-  });
-</script>
 {% endblock %}

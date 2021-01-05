@@ -6,6 +6,7 @@ description: Le chapitre sur les ressources tierces du Web Almanac 2019, qui abo
 authors: [patrickhulce]
 reviewers: [zcorpan, obto, jasti]
 analysts: [patrickhulce]
+editors: [bazzadp]
 translators: [borisschapira]
 discuss: 1760
 results: https://docs.google.com/spreadsheets/d/1iC4WkdadDdkqkrTY32g7hHKhXs9iHrr3Bva8CuPjVrQ/
@@ -175,28 +176,28 @@ Bien qu’ils servent 57 % des scripts, les tiers représentent 64 % des octet
   )
 }}
 
-< !--
+<!--
 
 ```<insert graphic of metric 05_12>```
 -->
 
 En ce qui concerne les fournisseurs tiers spécifiques, on trouve les mêmes poids-lourds en tête du classement du nombre de requêtes, qu’en tête du classement des poids en octets. Les seuls à ne pas respecter cette tendance sont les fournisseurs très médiatiques que sont YouTube, Shopify et Twitter, qui se hissent en tête des tableaux d’impact en poids.
 
-< !--```<insert table of metric 05_07>```-->
+<!--```<insert table of metric 05_07>```-->
 
 ### Exécution de scripts
 
 57 % du temps d’exécution des scripts provient de scripts tiers, et les 100 premiers domaines représentent déjà 48 % de la durée totale d’exécution des scripts sur le web. Cela souligne l’impact considérable que quelques entités bien définies ont réellement sur les performances du web. Ce sujet est étudié plus en profondeur dans la section [Répercussions > Performance](#performance).
 
-< !--```<insert graphic of metric 05_05>```-->
+<!--```<insert graphic of metric 05_05>```-->
 
-< !--```<insert graphic of metric 05_13>```-->
+<!--```<insert graphic of metric 05_13>```-->
 
 La répartition par catégorie de l’exécution des scripts suit largement celle du nombre de requêtes. Ici aussi, la publicité est la plus imposante. Les scripts publicitaires représentent 25 % du temps d’exécution de scripts tiers, les fournisseurs de services d’hébergement et les fournisseurs liés aux réseaux sociaux arrivant en deuxième position, à 12 %.
 
-< !--```<insert table of metric 05_08>```-->
+<!--```<insert table of metric 05_08>```-->
 
-< !--```<insert table of metric 05_10>```-->
+<!--```<insert table of metric 05_10>```-->
 
 Bien que l’on puisse dire beaucoup de choses sur la popularité et l’impact sur le rendement de chaque fournisseur, cette analyse plus subjective est laissée à la discrétion du lecteur et d’autres outils conçus à cette fin, comme le [third-party-web](https://thirdpartyweb.today).
 

@@ -6,6 +6,7 @@ description: Ecommerce chapter of the 2019 Web Almanac covering ecommerce platfo
 authors: [samdutton, alankent]
 reviewers: [voltek62]
 analysts: [rviscomi]
+editors: [bazzadp]
 translators: []
 discuss: 1768
 results: https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/
@@ -205,7 +206,7 @@ The [page weight](./page-weight) of an ecommerce platform includes all HTML, CSS
 
 The median desktop ecommerce platform page loads 108 requests and 2.7 MB. The median weight for _all_ desktop pages is 74 requests and [1.9 MB](./page-weight#page-weight). In other words, ecommerce pages make nearly 50% more requests than other web pages, with payloads around 35% larger. By comparison, the [amazon.com](https://amazon.com) home page makes around 300 requests on first load, for a page weight of around 5 MB, and [ebay.com](https://ebay.com) makes around 150 requests for a page weight of approximately 3 MB. The page weight and number of requests for home pages on ecommerce platforms is slightly smaller on mobile at every percentile, but around 10% of all ecommerce home pages load more than 7 MB and make over 200 requests.
 
-This data accounts for home page payload and requests without scrolling. Clearly there are a significant proportion of sites that appear to be retrieving more files (the median is over 100), with a larger total payload, than should be necessary for first load. See also: [Third-party requests and bytes](#third-party-requests-and-bytes) below. 
+This data accounts for home page payload and requests without scrolling. Clearly there are a significant proportion of sites that appear to be retrieving more files (the median is over 100), with a larger total payload, than should be necessary for first load. See also: [Third-party requests and bytes](#third-party-requests-and-bytes) below.
 
 We need to do further research to better understand why so many home pages on ecommerce platforms make so many requests and have such large payloads. The authors regularly see home pages on ecommerce platforms that make hundreds of requests on first load, with multi-megabyte payloads. If the number of requests and payload are a problem for performance, then how can they be reduced?
 

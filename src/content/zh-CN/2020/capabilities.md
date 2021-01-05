@@ -6,6 +6,7 @@ description: 2020年 Web Almanac网络年鉴中的能力篇，涵盖了全新的
 authors: [christianliebel]
 reviewers: [tomayac]
 analysts: [tomayac]
+editors: [rviscomi]
 translators: [chengxicn]
 discuss: 2049
 results: https://docs.google.com/spreadsheets/d/1N6j1qKv7vc51p1W9z_RrbJX9Se3Pmb-Uersfz4gWqqs/

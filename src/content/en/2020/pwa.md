@@ -7,8 +7,9 @@ description: PWA chapter of the 2020 Web Almanac covering service workers (regis
 authors: [hemanth]
 reviewers: [thepassle, jadjoubran, pearlbea, gokulkrishh]
 analysts: [bazzadp]
+editors: []
 translators: []
-hemanth_bio: <a href="https://h3manth.com">Hemanth HN</a> is a FOSS Computer polyglot, FOSS philosopher, GDE for web and payments domain, DuckDuckGo community member, TC39 delegate and Google Launchpad Accelerator mentor. Loves The WEB && CLI. Hosts <a href="https://TC39er.us">TC39er.us</a> podcast.
+hemanth_bio: <a href="https://h3manth.com">Hemanth HM</a> is a Computer polyglot, FOSS philosopher, GDE for web and payments domain, DuckDuckGo community member, TC39 delegate and Google Launchpad Accelerator mentor. Loves The WEB && CLI. Hosts <a href="https://TC39er.us">TC39er.us</a> podcast.
 discuss: 2050
 results: https://docs.google.com/spreadsheets/d/1AOqCkb5EggnE8BngpxvxGj_fCfssT9sZ0ElCQKp4pOw/
 queries: 14_PWA
@@ -202,7 +203,7 @@ We have examined which of these events are being listened to by service workers 
 
 The web app manifest is a JSON-based file that provides developers with a centralized place to put metadata associated with a web application, it dictates how the application should behave on desktop or mobile in terms of the icon, orientation, theme color and likes.
 
-Having a web app manifest does not necessarily indicate the site is a progressive web app, as they can exist independently of service worker usage. However, as we are interesting PWAs in this chapter, we have investigated only those manifests for sites where a service worker also exists. This is different than the approach taken in [last year's PWA chapter](../2019/pwa#web-app-manifests) which looked at overall manifest usage so you may notice some differences in results this year.
+In order for a PWA to be fruitful it needs to have a manifest and a service worker. It is interesting to note that manifests are used a lot more than service workers. This is due, in large part, to the fact that CMS like WordPress, Drupal and Joomla have manifests by default.
 
 {{ figure_markup(
   image="pwa-manifest-and-service-worker-usage.png",
@@ -214,28 +215,30 @@ Having a web app manifest does not necessarily indicate the site is a progressiv
   )
 }}
 
+Having a web app manifest does not necessarily indicate the site is a progressive web app, as they can exist independently of service worker usage. However, as we are interesting PWAs in this chapter, we have investigated only those manifests for sites where a service worker also exists. This is different than the approach taken in [last year's PWA chapter](../2019/pwa#web-app-manifests) which looked at overall manifest usage so you may notice some differences in results this year.
+
 ### Manifest Properties
 
 Web manifest dictates the applications meta properties. We looked at the different properties defined by the Web App Manifest specification, and also considered non-standard proprietary properties. According to [the spec, the following properties are valid properties](https://w3c.github.io/manifest/#webappmanifest-dictionary):
 
-1.  `background_color`
-2.  `categories`
-3.  `description`
-4.  `dir`
-5.  `display`
-6.  `iarc_rating_id`
-7.  `icons`
-8.  `lang`
-9.  `name`
-10. `orientation`
-11. `prefer_related_applications`
-12. `related_applications`
-13. `scope`
-14. `screenshots`
-15. `short_name`
-16. `shortcuts`
-17. `start_url`
-18. `theme_color`
+- `background_color`
+- `categories`
+- `description`
+- `dir`
+- `display`
+- `iarc_rating_id`
+- `icons`
+- `lang`
+- `name`
+- `orientation`
+- `prefer_related_applications`
+- `related_applications`
+- `scope`
+- `screenshots`
+- `short_name`
+- `shortcuts`
+- `start_url`
+- `theme_color`
 
 There were very little differences between mobile and desktop stats.
 
@@ -245,13 +248,11 @@ On both platforms, however, there's a long tail of properties that are not inter
 
 We also found a non-trivial amount of mistyped properties; our favorite ones being variation of `theme-color`, `Theme_color`, `theme-color`, `Theme_color` and `orientation`.
 
-In order for a PWA to be fruitful it needs to have a manifest and a service worker. It is interesting to note that manifests are used a lot more than service workers. This is due, in large part, to the fact that CMS like WordPress, Drupal and Joomla have manifests by default.
-
 {{ figure_markup(
   image="pwa-manifest-properties-on-service-worker-pages.png",
   caption="Manifest properties on service worker pages.",
   description="Bar chart showing the percentage of various manifest properties used on service worker pages by desktop and mobile. The first seven properties (`name`, `display`, `icons`, `short_name`, `start_url`, `theme_color`, and `background_color`) are used by 93 to 98% of both desktop and mobile. After this there is a sharp drop off for the remaining properties with `gcm_sender_id` used by 21.66% of desktop sites and 28.98% of mobile sites, `scope` used by 29.32% of desktop and 28.77% of mobile, `description` used by 23.32% of desktop and 18.84% mobile, `orientation` by 19.45% of desktop and 17.65% of mobile, and finally `lang` used by 12.31% of desktop and 11.01% of mobile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRRpTSA4fsHwUap-ByQ08j95uo7Zm1kY6lTSvA-DZT54g2QZ0guV7db3QyQwQgMPzsKsJ43gbzqfJst/pubchart?oid=257125618&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRRpTSA4fsHwUap-ByQ08j95uo7Zm1kY6lTSvA-DZT54g2QZ0guV7db3QyQwQgMPzsKsJ43gbzqfJst/pubchart?oid=427650634&format=interactive",
   sheets_gid="887021927",
   sql_file="top_manifest_properties_sw.sql"
   )
@@ -318,14 +319,14 @@ Lighthouse requires at least an icon sized 192x192 pixels, but common favicon ge
 
 The valid values for the orientation property are defined in the Screen Orientation API [specification](https://www.w3.org/TR/screen-orientation/). Currently, they are:
 
-1. `any`
-2. `natural`
-3. `landscape`
-4. `portrait`
-5. `portrait-primary`
-6. `portrait-secondary`
-7. `landscape-primary`
-8. `landscape-secondary`
+- `any`
+- `natural`
+- `landscape`
+- `portrait`
+- `portrait-primary`
+- `portrait-secondary`
+- `landscape-primary`
+- `landscape-secondary`
 
 Out of which we noticed that `portrait`, `any` and `portrait-primary` properties took precedence.
 
@@ -374,8 +375,8 @@ The [importScripts() API](https://developer.mozilla.org/en-US/docs/Web/API/Worke
     </tr>
     <tr>
       <td><code>firebase<code></td>
-      <td>3.40%</td>
-      <td>3.09%</td>
+      <td class="numeric">3.40%</td>
+      <td class="numeric">3.09%</td>
     </tr>
     <tr>
       <td><code>OneSignalSDK<code></td>
@@ -425,7 +426,7 @@ Out of many libraries available, Workbox was the most heavily used with an adopt
 
 Out of many methods that Workbox provides, we noticed that `strategies` were used by **29.53%** of desktop and **25.71%** on mobile, `routing` followed it with **18.91%** and **15.61%** adoption and finally `precaching` were next most used with **16.54%** and **12.98%** on desktop and mobile respectively.
 
-This indicated that the strategies API, as one of the most complicated requirements for the developers, played a very important role when they decided to code themselves or relay on libraries like Workbox.
+This indicated that the strategies API, as one of the most complicated requirements for the developers, played a very important role when they decided to code themselves or rely on libraries like Workbox.
 
 {{ figure_markup(
   image="pwa-most-used-workbox-packages.png",
