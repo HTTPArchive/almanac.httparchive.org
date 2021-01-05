@@ -16,11 +16,11 @@ results: https://docs.google.com/spreadsheets/d/1DGLY7UEWOlDL5_2dtS_j2eqMjiV-Rw5
 queries: 12_Mobile_Web
 featured_quote: Mobile Web has grown explosively in the last decade and is now the primary way many people experience the web. In spite of this, engagement and online sales still lag behind desktop. In this chapter, we take a look at recent trends on the mobile web and analyze why user journeys are often difficult to complete.
 featured_stat_1: 41.20%
-featured_stat_label_1: % pages with improperly sized images
+featured_stat_label_1: Percent of pages with improperly sized images
 featured_stat_2: 60.1%
-featured_stat_label_2: % eCommerce landing pages that are missing presence of search input
+featured_stat_label_2: Percent of eCommerce landing pages that are missing presence of search input
 featured_stat_3: 2.6s
-featured_stat_label_3: p75 LCP for mobile
+featured_stat_label_3: 75th percentile LCP for mobile
 unedited: true
 ---
 
