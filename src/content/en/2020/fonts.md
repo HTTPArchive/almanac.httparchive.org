@@ -66,7 +66,7 @@ The country that uses the most font bytes is South Korea, which is not all that 
 
 There's a great thread on [web font usage by country](https://discuss.httparchive.org/t/how-does-web-font-usage-vary-by-country/1649) on the HTTP Archive discussion forum.
 
-{# TODO (authors) - this sentence is a bit hanging our there. What's great about this thread compared to what we are covering here? Is it that you're wanting to credit that thread as the basis for the queries used by this chapter (if so say so), or you believe they have more insights than you have here (again in which case say so, but reading through the thread doesn't seem that much more, and even if there was could it not be summarised more here?), or is it you're wanting to direct people to there for further discussions? #}
+{# TODO (authors) - this sentence is a bit hanging out there. What's great about this thread compared to what we are covering here? Is it that you're wanting to credit that thread as the basis for the queries used by this chapter (if so say so), or you believe they have more insights than you have here (again in which case say so, but reading through the thread doesn't seem that much more, and even if there was could it not be summarised more here?), or is it you're wanting to direct people to there for further discussions? #}
 
 ### Serving with a service
 
@@ -107,13 +107,11 @@ It was interesting to note the differences in speed for sites using the various 
 
 When viewing commercial services such as Adobe (`use.typekit.net`) or Monotype (`fast.fonts.com`) it is interesting to note that on desktop they tend to be as fast or slightly faster than Google Fonts, but are noticeably slower on mobile. Conventional wisdom has generally held that the tracking scripts used by those services substantially slow them down, but that is apparently less an issue today than it has been in years past.
 
-{# TODO authors - Do we want to add a note to say that we are measuring site performance and not necessarily font hoster performance? It could be that Adobe sites are all just pooor on mobile and it's nothing to do with their hosting platform #}
+{# TODO authors - Do we want to add a note to say that we are measuring site performance and not necessarily font hoster performance? It could be that Adobe sites are all just pooor on mobile and it's nothing to do with their hosting platform. #}
 
 #### Self-hosting isn't always better
 
 Self-hosting fonts on the same domain as the website can be faster, as [we discovered for this very website](https://www.tunetheweb.com/blog/should-you-self-host-google-fonts/), however this is not always the case as the data shows.
-
-{# TODO Authors - Suggested different wording here, and moved `local` down to below. Let me knwo your thoughts. Particularly as I inserted a reference to my own site here which is a bit presumptious of me :-) but it is about the Web Almanac so think it fits. #}
 
 {{ figure_markup(
   image="fonts-web-hosting-performance-desktop.png",
@@ -136,8 +134,6 @@ Self-hosting fonts on the same domain as the website can be faster, as [we disco
 }}
 
 It wouldn't be sound to infer causality between hosting strategy from the above data, as there are other variables that may confound the relationship. But, putting that aside, we find that adding the self-hosting fonts doesn't always lead to better performance. Hosted font solutions often perform a number of optimizations that may not always be replicated when self-hosting.
-
-{# TODO Authors - Review above alterations #}
 
 #### Local isn't always better
 
@@ -329,9 +325,9 @@ Lots more information about color fonts, including examples, are available at [c
 
 Variable fonts are certainly one of the biggest stories this year. They're seen in 10.54% of desktop pages, and 11.00% of mobile. That's up from an average of 1.8% last year, a huge growth factor. It is not hard to see why their popularity is increasing – they offer more design flexibility, and also potentially smaller binary font sizes, especially if multiple styles of the same font are used on the same page.
 
-{# That's huge usage! Any ideas what's driven it? It would appear no variable font has any where near that usage so how come total usage is so high? Has any particular service or platform turned this on by default? #}
+{# TODO - authors That's huge usage! Any ideas what's driven it? It would appear no variable font has any where near that usage so how come total usage is so high? Has any particular service or platform turned this on by default? Discussed at https://github.com/HTTPArchive/almanac.httparchive.org/pull/1816#discussion_r547265540 and @jpamental thinks it's Google Fonts #}
 
-{# TODO - authors Should we add a paragraph or bullet list explaing the common font axis and what they mean before launching into their usage? What is difference between wght and wdth? And between slnt and ital? Web Almanac readers may come here from pother chapters and not be familiar with these terms. Plus I am a little familair and don't know these answers! #}
+{# TODO - authors Should we add a paragraph or bullet list explaing the common font axis and what they mean before launching into their usage? What is difference between wght and wdth? And between slnt and ital? Web Almanac readers may come here from pother chapters and not be familiar with these terms. Plus I am a little familair and don't know these answers! Discussed in https://github.com/HTTPArchive/almanac.httparchive.org/pull/1816#discussion_r547266330 and suggestion to add a pargraph with a link to https://variablefonts.io/about-variable-fonts/ #}
 
 {{ figure_markup(
   image="fonts-font-variation-settings-usage.png",
