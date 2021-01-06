@@ -268,7 +268,6 @@ The humble `px` unit has gotten a lot of negative press over the years. At first
   sql_file="units_frequency.sql"
 ) }}
 
-{# TODO Authors—What do you think about dropping the `<` and `>` signs and code formatting here and using length instead fo `<length>`? I know that's the official syntax of CSS data types (https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Types#Syntax), but IMHO rarely used outside of CSS experts and wonder if the average reader would get confused with HTML elements? I know I did until I looked it up. Or would you prefer to keep them in here since they are actually the correct way of specifying this? #}
 
 The `px` unit is still going strong as the most popular length unit overall, with a whopping 72.58% of all length values across all style sheets using `px`! And if we exclude percentages (since they are not really a unit) the share of `px` increases even more, to 84.14%.
 
