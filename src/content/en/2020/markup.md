@@ -49,7 +49,7 @@ In this section, we're covering the higher-level aspects of HTML like document t
   sql_file="summary_pages_by_device_and_doctype.sql"
 ) }}
 
-96.82% of pages declare a [_doctype_](https://developer.mozilla.org/en-US/docs/Glossary/Doctype). HTML documents declaring a doctype is useful for historical reasons, "to avoid triggering quirks mode in browsers" as [Ian Hickson wrote in 2009](https://lists.w3.org/Archives/Public/public-html-comments/2009Jul/0020.html). What are the most popular values?
+96.82% of pages declare a [_doctype_](https://developer.mozilla.org/en-US/docs/Glossary/Doctype). HTML documents declaring a doctype is useful for historical reasons, "to avoid triggering quirks mode in browsers" as [Ian Hickson explained in 2009](https://lists.w3.org/Archives/Public/public-html-comments/2009Jul/0020.html). What are the most popular values?
 
 <figure>
   <table>
@@ -57,7 +57,7 @@ In this section, we're covering the higher-level aspects of HTML like document t
       <tr>
         <th>Doctype</th>
         <th>Pages</th>
-        <th>Percentage</th>
+        <th>Pages (%)</th>
       </tr>
     </thead>
     <tbody>
@@ -102,7 +102,6 @@ Two things stand out from these results:
 
 A page's document size refers to the amount of HTML bytes transferred over the network, including compression if enabled. At the extremes of the set of 6.3 million documents:
 
-{# TODO(authors, analysts): Revisit the "largest document" stat and interpretation. #}
 * 1,110 documents are empty (0 bytes).
 * The average document size is 49.17 KB ([in most cases compressed](https://w3techs.com/technologies/details/ce-gzipcompression)).
 * The largest document by far weighs 61.19 _MB_, almost deserving its own analysis and chapter in the Web Almanac.
@@ -115,20 +114,17 @@ How is this situation in general, then? The median document weighs 24.65 KB, whi
   description="Document size in bytes per percentile, with the median document weighing 25.99 KB on desktop.",
   sheets_gid="2066175354",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=386686971&format=interactive",
-  width=600,
-  height=371,
   sql_file="summary_pages_by_device_and_percentile.sql"
   )
 }}
 
 ### Document language
 
-{# TODO(editors): Link directly to the relevant Accessibility section. #}
-We identified 2,863 different values for the `lang` attribute on the `html` start tag (compare that to the [7,117 spoken languages](https://www.ethnologue.com/guides/how-many-languages) as per Ethnologue). Almost all of them seem valid, according to the [Accessibility](./accessibility) chapter.
+We identified 2,863 different values for the `lang` attribute on the `html` start tag (compare that to the [7,117 spoken languages](https://www.ethnologue.com/guides/how-many-languages) as per Ethnologue). Almost all of them seem valid, according to the [Accessibility](./accessibility#language-identification) chapter.
 
-22.36% of all documents specify no `lang` attribute. The commonly accepted view is that [they should](https://www.w3.org/TR/i18n-html-tech-lang/#overall), but beside the idea that software could eventually [detect language automatically](https://meiert.com/en/blog/lang/), document language can also be specified [on the protocol level](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language). This is something we didn't check.
+22.36% of all documents specify no `lang` attribute. The commonly accepted view is that [they should](https://www.w3.org/TR/i18n-html-tech-lang/#overall), but ignoring the fact that software could eventually [detect language automatically](https://meiert.com/en/blog/lang/), document language can also be specified [on the protocol level](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language), which is something we didn't check.
 
-Here are the 10 most popular (normalized) languages in our sample. It's important to note that the HTTP Archive crawls from US data centers with English language settings, so looking at the language pages are written in will be skewed towards English. Nevertheless we present the `lang` attributes seen to give some context to the sites analyzed.
+Here are the 10 most popular (normalized) languages in our sample. It's important to note that the HTTP Archive crawls from US data centers with English language settings, so looking at the language pages are written in, will be skewed towards English. Nevertheless we present the `lang` attributes seen to give some context to the sites analyzed.
 
 {{ figure_markup(
   image="document-language.png",
@@ -137,8 +133,6 @@ Here are the 10 most popular (normalized) languages in our sample. It's importan
   description="Bar chart showing the top 10 `lang` attributes used in our crawl with 22.82% of desktop and 22.36% of mobile pages not setting this, `en` being used on 20.09% and 18.08% respectively, `ja` on 15.17% and 13.27%, `es` on 4.86% and 4.09% , `pt-br` on 2.65% and 2.84%, `ru` on 2.21% 2.53%, `en-gb` on 2.35% and 2.19%, `de` on 1.50% and 1.92%, and finally `fr` being used on 1.55% and 1.43% respectively.",
   sheets_gid="2047285366",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=1873310240&format=interactive",
-  width=600,
-  height=371,
   sql_file="pages_almanac_by_device_and_html_lang.sql"
   )
 }}
@@ -151,7 +145,7 @@ Adding comments to code is generally a good practice and HTML comments are there
 <!-- This is a comment in HTML -->
 ```
 
-Although many pages will have been stripped of comments for production, we found that index pages in the 90th percentile are using about 73 comments on mobile, respectively 79 comments on desktop, while in the 10th percentile the number of the comments is about 2. The median page uses 16 (mobile) or 17 comments (desktop).
+Although many pages will have been stripped of comments for production, we found that home pages in the 90th percentile are using about 73 comments on mobile, respectively 79 comments on desktop, while in the 10th percentile the number of the comments is about 2. The median page uses 16 (mobile) or 17 comments (desktop).
 
 Around 89% of pages contain at least one HTML comment, while about 46% of them contain a conditional comment.
 
@@ -163,9 +157,9 @@ Around 89% of pages contain at least one HTML comment, while about 46% of them c
 <![endif]-->
 ```
 
-The above is a non-standard HTML conditional comment. While those have proven to be helpful in the past in order to tackle browser differences, they are history for some time as Microsoft [dropped conditional comments](https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/hh801214(v=vs.85)) in Internet Explorer 10.
+The above is a non-standard HTML conditional comment. While those have proven to be helpful in the past in order to tackle browser differences, they have been consigned to history for some time as Microsoft [dropped conditional comments](https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/hh801214(v=vs.85)) in Internet Explorer 10.
 
-Still, on the above percentile extremes, we found that web pages are using about 6 conditional comments in the 90th percentile, and 1 comment while in the 10th percentile.  Most of the pages include them for helpers such as html5shiv, selectivizr, and respond.js. While being decentish and still active pages, our conclusion is that many of them were using obsolete CMS themes.
+Still, on the above percentile extremes, we found that web pages are using about 6 conditional comments in the 90th percentile, and 1 conditional comment while in the 10th percentile.  Most of the pages include them for helpers such as [html5shiv](https://github.com/aFarkas/html5shiv), [selectivizr](http://selectivizr.com/), and [respond.js](https://github.com/scottjehl/Respond). While being decentish and still active pages, our conclusion is that many of them were using obsolete CMS themes.
 
 For production, HTML comments are usually stripped by build tools. Considering all the above counts and percentages, and referring to the use of comments in general, we suppose that lots of pages are served without involving an HTML minifier.
 
@@ -177,23 +171,20 @@ Overall, around 2% of pages contain no scripting at all, not even structured dat
 
 At the opposite end of the spectrum, the numbers show that about 97% of pages contain at least one script, either inline or external.
 
-{# TODO(analysts): We still have a problem here with the x-axis label (“Containing”). Can someone help out and look at this? #}
-
 {{ figure_markup(
   image="script-use.png",
+  alt="Usage of the script element.",
   caption="Usage of the <code>script</code> element.",
   description="Percentages of pages (not) containing scripts, and scripts are present in almost every form on almost every page.",
   sheets_gid="150962402",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=1895084382&format=interactive",
-  width=600,
-  height=371,
   sql_file="pages_almanac_by_device.sql"
   )
 }}
 
 When scripting is unsupported or turned off in the browser, the `noscript` element helps to add an HTML section within a page. Considering the above script numbers, we were curious about the `noscript` element as well.
 
-Following the analysis, we found that about 49% of pages are using a `noscript` element. At the same time, about 16% of `noscript` elements were containing an `iframe` with a `src` value referring to "googletagmanager.com".
+Following the analysis, we found that about 49% of pages are using a `noscript` element. At the same time, about 16% of `noscript` elements contain an `iframe` with a `src` value referring to "googletagmanager.com".
 
 This seems to confirm the theory that the total number of `noscript` elements in the wild may be affected by common scripts like Google Tag Manager which enforce users to add a `noscript` snippet after the `body` start tag on a page.
 
@@ -205,11 +196,11 @@ What `type` attribute values are used with `script` elements?
 - `application/ld+json`: 1.68%
 - `application/json`: 0.41%
 - `text/template`: 0.41%
-- `text/html` 0.27%
+- `text/html`: 0.27%
 
 When it comes to loading [JavaScript module scripts](https://jakearchibald.com/2017/es-modules-in-browsers/) using `type="module"`, we found that 0.13% of `script` elements currently specify this attribute-value combination. `nomodule` is used by 0.95% of all tested pages. (Note that one metric relates to elements, the other to pages.)
 
-36.38% of all scripts have no values set whatsoever.
+36.38% of all scripts have no `type` values set whatsoever.
 
 ## Elements
 
@@ -227,22 +218,16 @@ The median web page, it turns out, uses 30 different elements, 587 times:
   description="Element types per percentile, with 90% of pages using at least 20 different elements.",
   sheets_gid="46490104",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=924238918&format=interactive",
-  width=600,
-  height=371,
   sql_file="pages_element_count_by_device_and_percentile.sql"
   )
 }}
 
-{# Editors note: The caption for the two figures below is intentionally identical. #}
-
 {{ figure_markup(
   image="element-diversity.png",
-  caption="Distribution of the total number elements per page.",
+  caption="Distribution of the total number elements per page by percentile.",
   description="Elements per percentile, showing how 10% of all pages employ more than 1,665 elements.",
   sheets_gid="46490104",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=680594018&format=interactive",
-  width=600,
-  height=371,
   sql_file="pages_element_count_by_device_and_percentile.sql"
   )
 }}
@@ -257,8 +242,6 @@ How are these elements distributed?
   description="Element distribution in a scatter plot, and even for a trained observer it's hard to parse it; interesting is a large group of about 7,500 pages each using roughly 250 elements, after which fewer and fewer pages get back to more and more elements.",
   sheets_gid="1361520223",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=1468756779&format=interactive",
-  width=600,
-  height=371,
   sql_file="pages_element_count_by_device_and_element_count.sql"
   )
 }}
@@ -338,7 +321,7 @@ Nothing changed in the Top 7, but the `option` element went a little out of favo
 
 #### `details` and `summary`
 
-Another thing we were curious about was the use of the [`details` and `summary` elements](https://html.spec.whatwg.org/multipage/rendering.html#the-details-and-summary-elements), especially since 2020 brought [broad support](https://caniuse.com/details). Are they being used? Are they attractive for—even popular—among authors? As it turns out, only 0.39% of all tested pages are using them, although it's hard to gauge whether they were all used the correct way in exactly the situations when you need them, "popular" is the wrong word.
+Another thing we were curious about was the use of the [`details` and `summary` elements](https://html.spec.whatwg.org/multipage/rendering.html#the-details-and-summary-elements), especially since 2020 brought [broad support](https://caniuse.com/details). Are they being used? Are they attractive for—even popular—among authors? As it turns out, only 0.39% of all tested pages are using them—although it's hard to gauge whether they were all used the correct way in exactly the situations when you need them—"popular" is the wrong word.
 
 Here's a simple example showing the use of a `summary` in a `details` element:
 
@@ -380,12 +363,12 @@ Accordingly, we looked at the number of `details` and `summary` elements and it 
       </tr>
     </tbody>
   </table>
-<figcaption>{{ figure_link(caption="Adoption of the <code>details</code> and <code>summary</code> elements.", sheets_gid="1406534257", sql_file="pages_element_count_by_device.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Adoption of the <code>details</code> and <code>summary</code> elements.", sheets_gid="1406534257", sql_file="pages_element_count_by_device.sql") }}</figcaption>
 </figure>
 
 ### Probability of element use
 
-Taking another look at element popularity, how likely is it to find a certain element in the DOM of a page? Surely, `html`, `head`, `body` are present on every page (even though [their tags are all optional](https://meiert.com/en/blog/optional-html/)), making them common elements, but what other elements are to be found?
+Taking another look at element popularity, how likely is it to find a certain element in the DOM of a page? Sure, `html`, `head`, `body` are present on every HTML page (even though [these tags are all optional](https://meiert.com/en/blog/optional-html/)), making them common elements, but what other elements are to be commonly found?
 
 <figure>
   <table>
@@ -441,7 +424,7 @@ Taking another look at element popularity, how likely is it to find a certain el
   <figcaption>{{ figure_link(caption="High probabilities of finding a given element in pages of the Web Almanac 2020 sample.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
 </figure>
 
-Standard elements are those that are or were part of the HTML specification. Which ones are you really rarely to find? In our sample, that would bring up the following:
+Standard elements are those that are or were part of the HTML specification. Which ones are rare to find? In our sample, that would bring up the following:
 
 <figure>
   <table>
@@ -469,21 +452,20 @@ Standard elements are those that are or were part of the HTML specification. Whi
   <figcaption>{{ figure_link(caption="Low probabilities of finding a given element in pages of the sample.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
 </figure>
 
-We're including these elements to give an idea what elements may have gone out of favor. But while `dir` and `basefont` were last specified in XHTML 1.0 (2000), the rare use of `rp`, which has been mentioned [as early as 1998](https://www.w3.org/TR/1998/WD-ruby-19981221/#a2-4) but which is also [still part of HTML](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element), may just suggest that Ruby markup is not very popular.
+We're including these elements to give an idea what elements may have gone out of favor. But while `dir` and `basefont` were last specified in XHTML 1.0 (2000) and are no longer part of HTML, the rare use of `rp` (which was mentioned [as early as 1998](https://www.w3.org/TR/1998/WD-ruby-19981221/#a2-4) and is [still part of HTML](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element)), may just suggest that Ruby markup is not very popular.
+
 
 ### Custom elements
 
 The 2019 edition of the Web Almanac handled [custom elements](../2019/markup#custom-elements) by discussing several non-standard elements. This year, we found it valuable to have a closer look at custom elements. How did we determine these? Roughly by looking at [their definition](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-core-concepts), notably their use of a hyphen. Let's focus on the top elements, in this case elements used on ≥1% of all URLs in the sample:
-
-{# TODO(authors, analysts): Clarify occurrences and percentages _of what_. Pages? Elements? #}
 
 <figure>
   <table>
     <thead>
       <tr>
         <th>Element</th>
-        <th>Occurrences</th>
-        <th>Percentage</th>
+        <th>Pages</th>
+        <th>Pages (%)</th>
       </tr>
     </thead>
     <tbody>
@@ -562,15 +544,13 @@ The 2019 edition of the Web Almanac handled [custom elements](../2019/markup#cus
   <figcaption>{{ figure_link(caption="The 14 most popular custom elements.", sheets_gid="770933671", sql_file="pages_element_count_by_device_and_custom_dash_elements.sql") }}</figcaption>
 </figure>
 
-These elements come from three sources: [Yandex Metrica](https://metrica.yandex.com/about) (`ym-`), an analytics solution we've also seen last year; [Slider Revolution](https://www.sliderrevolution.com/) (`rs-`), a WordPress slider, for which there are more elements to be found near the top of the sample; and [Wix](https://www.wix.com/) (`wix-`), a website builder.
+These elements come from three sources: [Yandex Metrica](https://metrica.yandex.com/about) (`ym-`), an analytics solution we also saw last year; [Slider Revolution](https://www.sliderrevolution.com/) (`rs-`), a WordPress slider, for which there are more elements to be found near the top of the sample; and [Wix](https://www.wix.com/) (`wix-`), a website builder.
 
-{# TODO(authors, analysts): What do "cases" mean here: pages/elements? And for desktop or mobile? #}
-
-Other groups that stand out include [AMP markup](https://amp.dev/) with `amp-` elements like `amp-img` (11,700 cases), `amp-analytics` (10,256) and `amp-auto-ads` (7,621), as well as [Angular](https://angular.io/) `app-` elements like `app-root` (16,314), `app-footer` (6,745), and `app-header` (5,274).
+Other groups that stand out include [AMP markup](https://amp.dev/) with `amp-` elements like `amp-img` (11,700 pages), `amp-analytics` (10,256), and `amp-auto-ads` (7,621), as well as [Angular](https://angular.io/) `app-` elements like `app-root` (16,314), `app-footer` (6,745), and `app-header` (5,274).
 
 ### Obsolete elements
 
-There are more questions to ask about the use of HTML, and one may relate to obsolete elements, which are elements like `applet`, `bgsound`, `blink`, `center`, `font`, `frame`, `isindex`, `marquee`, or `spacer`.
+There are more questions to ask about the use of HTML, including the use of obsolete elements (which are elements like `applet`, `bgsound`, `blink`, `center`, `font`, `frame`, `isindex`, `marquee`, or `spacer`).
 
 In our mobile dataset of 6.3 million pages, around 0.9 million pages (14.01%) contain one or more of these elements. Here are the top 9, which are used more than 10,000 times:
 
@@ -579,7 +559,7 @@ In our mobile dataset of 6.3 million pages, around 0.9 million pages (14.01%) co
     <thead>
       <tr>
         <th>Element</th>
-        <th>Occurances</th>
+        <th>Pages</th>
         <th>Pages (%)</th>
       </tr>
     </thead>
@@ -634,11 +614,11 @@ In our mobile dataset of 6.3 million pages, around 0.9 million pages (14.01%) co
   <figcaption>{{ figure_link(caption="Obsolete elements with more than 10,000 uses.", sheets_gid="1972617631", sql_file="pages_element_count_by_device_and_obsolete_elements.sql") }}</figcaption>
 </figure>
 
-Even `spacer` is still being used 1,584 times, and present on every 5,000th page. We know that Google has been using a `center` element on [their homepage](https://www.google.com/) [for 22 years](https://web.archive.org/web/19981202230410/https://www.google.com/) now, but why are there so many imitators?
+Even `spacer` is still being used 1,584 times, and present on every 5,000th page. We know that Google has been using a `center` element on [their homepage](https://www.google.com/) [for 22 years now](https://web.archive.org/web/19981202230410/https://www.google.com/), but why are there so many imitators?
 
 #### `isindex`
 
-If you were wondering: The total number of [`isindex`](https://www.w3.org/TR/html401/interact/forms.html#edef-ISINDEX) elements in this dataset is: one. Exactly one page used an `isindex` element. It was part of the specs until [HTML 4.01 and XHTML 1.0](https://meiert.com/en/indices/html-elements/), yet only properly [specified](https://lists.w3.org/Archives/Public/public-whatwg-archive/2006Feb/0111.html) in 2006 (aligning with how it was implemented in browsers), and then [removed](https://github.com/whatwg/html/pull/1095) in 2016.
+If you were wondering: The total number of [`isindex`](https://www.w3.org/TR/html401/interact/forms.html#edef-ISINDEX) elements in this dataset is: one. Exactly one page used an `isindex` element. `isindex` was part of the specs until [HTML 4.01 and XHTML 1.0](https://meiert.com/en/indices/html-elements/), yet only properly [specified](https://lists.w3.org/Archives/Public/public-whatwg-archive/2006Feb/0111.html) in 2006 (aligning with how it was implemented in browsers), and then [removed](https://github.com/whatwg/html/pull/1095) in 2016.
 
 ### Proprietary and made-up elements
 
@@ -784,7 +764,7 @@ This section focuses on how attributes are used in documents and explores patter
 
 ### Top attributes
 
-Similar to the section on the most [popular elements](#top-elements), this section delves into the most popular attributes on the web. Given how important the `href` attribute is for the web itself, or the `alt` attribute in order to make information [accessible](./accessibility), would these be most popular attributes?
+Similar to the section on the most [popular elements](#top-elements), this section delves into the most popular attributes on the web. Given how important the `href` attribute is for the web itself, or the `alt` attribute in order to make information [accessible](./accessibility#images-and-their-text-alternatives), would these be most popular attributes?
 
 <figure>
   <table>
@@ -851,7 +831,7 @@ Similar to the section on the most [popular elements](#top-elements), this sect
   <figcaption>{{ figure_link(caption="Top 10 attributes by frequency of use.", sheets_gid="1348855449", sql_file="pages_almanac_by_device_and_attribute_name_frequency.sql") }}</figcaption>
 </figure>
 
-The most popular attribute is `class`, with nearly 3 billion occurrences in our dataset and constituting 34% of all attributes in use. `class` is by far the most prevalent attribute.
+The most popular attribute is `class`, with nearly 3 billion occurrences in our dataset and constituting 34% of all attributes in use.
 
 The `value` attribute, which specifies the value of an `input` element, surprisingly completes the top 10. It's surprising to us because, subjectively, we didn't get the impression `value` attributes were used that frequently.
 
@@ -917,7 +897,7 @@ Are there attributes that we find in every document? Not quite, but almost:
 )}}</figcaption>
 </figure>
 
-These results raise some questions that we cannot answer. For example, `type` is used on other elements too, but why this tremendous popularity? Especially given that it's usually not needed to specify for style sheets or scripts, with CSS and JavaScript being assumed default. Or, how do we really fare with `alt`? Do those 9.25% of pages not contain any images or are they just inaccessible?
+These results raise questions that we cannot answer. For example, `type` is used on other elements, too, but why this tremendous popularity? Especially given that it's usually not needed to specify for style sheets or scripts, with CSS and JavaScript being assumed default. Or, how do we really fare with `alt`? Do those 9.25% of pages not contain any images or are they just inaccessible?
 
 ### `data-*` attributes
 
@@ -982,8 +962,7 @@ The two most popular ones stand out because they are almost twice as popular tha
 
 Attributes like `data-type`, `data-id`, and `data-src` can have multiple generic uses although `data-src` is used a lot with lazy image loading via JavaScript (e.g., Bootstrap 4). [Bootstrap](https://getbootstrap.com/) again explains the presence of `data-toggle`, where it's used as a state styling hook on toggle buttons. The [Slick carousel plugin](https://kenwheeler.github.io/slick/) is the source of `data-slick-index`, whereas `data-element_type` is part of [Elementor's WordPress website builder](https://elementor.com/). Both `data-requiremodule` and `data-requirecontext`, then, are part of [RequireJS](https://requirejs.org/).
 
-{# TODO(authors): Update this interpretation given that the lazy loading stat is in terms of pages, not img elements. #}
-Interestingly, the use of native lazy loading on images is similar to that of `data-src`. 3.86% of pages use the `<img loading="lazy">` attribute. This appears to be growing very fast, as back in February, this number was about [0.8%](https://twitter.com/zcorpan/status/1237016679667970050). It's possible that these are being used together for a [cross-browser solution](https://addyosmani.com/blog/lazy-loading/).
+Interestingly, the use of native lazy loading on images is similar to that of `data-src`. [3.86% of pages](https://docs.google.com/spreadsheets/d/1ram47FshAjzvbQVJbAQPgxZN7PPOPCKIK67VJZCo92c/edit#gid=2109061092) use `loading="lazy"` on `<img>` elements. This appears to be growing very fast, as back in February, this number was about [0.8%](https://twitter.com/zcorpan/status/1237016679667970050). It's possible that these are being used together for a [cross-browser solution](https://addyosmani.com/blog/lazy-loading/).
 
 ## Miscellaneous
 
@@ -1002,7 +981,7 @@ We had a look at the data and in order to better understand the results, we norm
     <thead>
       <tr>
         <th>Content attribute value</th>
-        <th>Occurrences</th>
+        <th>Pages</th>
         <th>Pages (%)</th>
       </tr>
     </thead>
@@ -1059,7 +1038,7 @@ When we built our tests we didn't check for the presence of images, but only loo
     <thead>
       <tr>
         <th>Favicon format</th>
-        <th>Occurrences</th>
+        <th>Pages</th>
         <th>Pages (%)</th>
       </tr>
     </thead>
@@ -1132,14 +1111,13 @@ There has been a lot of [discussion](https://adrianroselli.com/2016/01/links-but
   sql_file="pages_markup_by_device.sql"
 ) }}
 
-{# TODO(analysts): Where do these "occurrences" come from? Ideally we have a single sheet to link to with the results used by this table. #}
 <figure>
   <table>
     <thead>
       <tr>
         <th>Button types</th>
-        <th>Occurences</th>
-        <th>Percentage</th>
+        <th>Occurrences</th>
+        <th>Pages (%)</th>
       </tr>
     </thead>
     <tbody>
@@ -1183,7 +1161,7 @@ There has been a lot of [discussion](https://adrianroselli.com/2016/01/links-but
   <figcaption>{{ figure_link(caption="Adoption of button types.", sheets_gid="410549982", sql_file="pages_markup_by_device.sql") }}</figcaption>
 </figure>
 
-Our analysis shows that about 60% of pages contain a button element and more than half of the pages (32.43%) have at least one button that fails to specify a `type` attribute. Note that the button element has a [default type](https://dev.w3.org/html5/spec-LC/the-button-element.html) of `submit`, so the default behavior of buttons on these 32% of pages is to submit the current form data. To avoid possibly unexpected behavior like this, a best practice is to specify the `type` attribute.
+Our analysis shows that about 60% of pages contain a button element and more than half of those pages (32.43%) have at least one button that fails to specify a `type` attribute. Note that the `button` element has a [default type](https://dev.w3.org/html5/spec-LC/the-button-element.html) of `submit`, so the default behavior of buttons on these 32% of pages is to submit the current form data. To avoid possibly unexpected behavior like this, a best practice is to specify the `type` attribute.
 
 <figure>
   <table>
@@ -1223,7 +1201,7 @@ Pages in the 10th and 25th percentiles contain no buttons at all, while a page i
 
 ### Link targets
 
-The [anchor element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a), or `a` element, links web resources together. In this section, we analyze the adoption of the protocols included in these link targets.
+The [anchor element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a), or `a` element, links web resources together. In this section, we analyze the adoption of the protocols included in the respective link targets.
 
 <figure>
   <table>
@@ -1330,7 +1308,7 @@ Using `target="_blank"` has been known to be a [security vulnerability](https://
   <figcaption>{{ figure_link(caption="Blank relationships.", sheets_gid="1876528165", sql_file="pages_wpt_bodies_by_device.sql") }}</figcaption>
 </figure>
 
-As a rule of thumb and for [usability reasons](https://www.nngroup.com/articles/new-browser-windows-and-tabs/), prefer not to use `target="_blank"` in the first place.
+As a rule of thumb and for [usability reasons](https://www.nngroup.com/articles/new-browser-windows-and-tabs/), it is recommended not to use `target="_blank"` in the first place.
 
 <p class="note">Within the latest Safari and Firefox versions, setting <code>target="_blank"</code> on <code>a</code> elements implicitly provides the same <code>rel</code> behavior as setting <code>rel="noopener"</code>. This is already <a href="https://chromium-review.googlesource.com/c/chromium/src/+/1630010">implemented in Chromium</a> as well and will land in Chrome 88.</p>
 
@@ -1362,4 +1340,6 @@ That compels us to close with an appeal: Pay attention to HTML. Focus on HTML. I
 
 For the next edition of the Web Almanac's chapter, let's prepare to look closer at the craft of writing HTML and, hopefully, how we've been improving on it.
 
-We're leaving this open to you. What are your observations? What has caught your eye? What do you think has taken a turn for the worse, and what has improved? [Leave a comment](https://discuss.httparchive.org/t/2039) to share your thoughts!
+<p class="note">
+  We're leaving the rest open to you. What are your observations? What has caught your eye? What do you think has taken a turn for the worse, and what has improved? [Leave a comment](https://discuss.httparchive.org/t/2039) to share your thoughts!
+</p>

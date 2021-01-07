@@ -139,7 +139,7 @@
                         {% endif %}
                         {% if metadata.get(author + '_bio') %}
                             <div class="bio">
-                                {{ add_footnote_links(metadata.get(author + '_bio') | replace('&quot;','"')) | safe }}
+                                {{ add_footnote_links(metadata.get(author + '_bio') | replace('&quot;','"')) | replace('&amp;','&') | safe }}
                             </div>
                         {% endif %}
                     </div>

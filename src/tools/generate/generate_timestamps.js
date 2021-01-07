@@ -11,7 +11,10 @@ const static_pages = [
   'contributors.html',
   'accessibility_statement.html',
   'ebook.html',
-  'stories/page_content.html'
+  'stories/page_content.html',
+  'stories/user_experience.html',
+  'stories/content_publishing.html',
+  'stories/content_distribution.html'
 ];
 
 const path = "config/last_updated.json";
