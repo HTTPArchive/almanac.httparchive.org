@@ -1,0 +1,23 @@
+{% extends "base/base_chapter.html" %}
+
+{% block title %}{{ metadata.get('title') }} | {{ year }} | Il Web Almanac di HTTP Archive{% endblock %}
+
+{% block description %}{{ metadata.get('description','Capitolo' + metadata.get('title') + ' del Web Almanac ' + year + ' esamina l'uso di ' + metadata.get('description',metadata.get('title')) + ' sul web.') }}{% endblock %}
+
+{% block twitter_image_alt %}Immagine del capitolo per il {{ metadata.get('title') }} capitolo del {{ year }} Web Almanac{% endblock %}
+
+{% block prev_next_title %}Navigazione nel capitolo precedente e successivo{% endblock %}
+
+{% block explore_the_results %}Esplora i risultati{% endblock %}
+{% block discuss_this_chapter %}Discuti questo capitolo{% endblock %}
+{% block comment %}commenta{% endblock %}
+{% block comments %}commenti{% endblock %}
+{% block comments_fallback %}Commenti{% endblock %}
+{% block queries %}Visualizza le query{% endblock %}
+{% block results %}Vedi i risultati{% endblock %}
+{% block figure_sql %}Visualizza query{% endblock %}
+{% block figure_data %}Visualizza i dati{% endblock %}
+{% block figure_image %}Guarda l'immagine{% endblock %}
+
+{% block previous %}Capitolo precedente (premi 'p' or ','){% endblock %}
+{% block next %}Prossimo capitolo (premi 'n' or '.'){% endblock %}
