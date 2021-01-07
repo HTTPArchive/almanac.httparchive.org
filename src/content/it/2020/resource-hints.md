@@ -110,7 +110,7 @@ Sempre più pagine web utilizzano le principali resource hints, e nel 2020 stiam
 {{ figure_markup(
   image="adoption-of-resource-hints.png",
   caption="Adozione delle resource hints.",
-  description="Un grafico a barre del tasso di adozione delle resource hint suddiviso per tipo di hint e fattore di form. Per desktop, il 33% delle pagine usa la resource hint `dns-prefetch`, il 18% usa `preload`, l'8% usa `preconnect`, il 3% usa `prefetch` e meno dell'1% usa `prerender`. Mobile è simile, tranne per il fatto che "dns-prefetch" ha un utilizzo del 34% (1% in più) e "preconnect" ha il 9% (1% in più).",
+  description="Un grafico a barre del tasso di adozione delle resource hint suddiviso per tipo di hint e fattore di form. Per desktop, il 33% delle pagine usa la resource hint `dns-prefetch`, il 18% usa `preload`, l'8% usa `preconnect`, il 3% usa `prefetch` e meno dell'1% usa `prerender`. Mobile è simile, tranne per il fatto che `dns-prefetch` ha un utilizzo del 34% (1% in più) e `preconnect` ha il 9% (1% in più).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYAbLxN40s6mNR1jo0XDe_V4siN8TAsx2mryMp5IQmlJ-9O9eJxYROz7Rw6ozyFP6hlIZHxxh95GqX/pubchart?oid=1550112064&format=interactive",
   sheets_gid="1805612941",
   sql_file="adoption.sql"
@@ -168,7 +168,7 @@ Con `preload` possono essere precaricati molti diversi tipi di contenuto e la [l
 
 {{ figure_markup(
   image="mobile-as-attribute-values-by-year.png",
-  caption="Un grafico a barre che confronta il tasso di valori dell'attributo `as` sulle pagine mobile del 2019 e del 2020, suddiviso per valore dell'attributo `as`. La maggior parte dei valori `as` sono \ "script \" con l'81% di utilizzo nel 2019 e il 64% nel 2020. L'utilizzo di \ "script \" è diminuito del 17% anno su anno, mentre tutti gli altri valori sono aumentati. \ "non impostato \" aumentato dell'8%, \ "font \" aumentato del 5%, \ "stile \" aumentato del 2%, il resto dei valori notevoli sono dell'1% o meno per entrambi gli anni.",
+  caption="Un grafico a barre che confronta il tasso di valori dell'attributo `as` sulle pagine mobile del 2019 e del 2020, suddiviso per valore dell'attributo `as`. La maggior parte dei valori `as` sono \"script\" con l'81% di utilizzo nel 2019 e il 64% nel 2020. L'utilizzo di \"script\" è diminuito del 17% anno su anno, mentre tutti gli altri valori sono aumentati. \"non impostato\" aumentato dell'8%, \"font\" aumentato del 5%, \"style\" aumentato del 2%, il resto dei valori notevoli sono dell'1% o meno per entrambi gli anni.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYAbLxN40s6mNR1jo0XDe_V4siN8TAsx2mryMp5IQmlJ-9O9eJxYROz7Rw6ozyFP6hlIZHxxh95GqX/pubchart?oid=903180926&format=interactive",
   sheets_gid="1829901599",
   sql_file="as_attribute_by_year.sql"

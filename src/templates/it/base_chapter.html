@@ -2,7 +2,7 @@
 
 {% block title %}{{ metadata.get('title') }} | {{ year }} | Il Web Almanac di HTTP Archive{% endblock %}
 
-{% block description %}{{ metadata.get('description','Capitolo' + metadata.get('title') + ' del Web Almanac ' + year + ' esamina l'uso di ' + metadata.get('description',metadata.get('title')) + ' sul web.') }}{% endblock %}
+{% block description %}{{ metadata.get('description','Capitolo' + metadata.get('title') + ' del Web Almanac ' + year + ' esamina l\'uso di ' + metadata.get('description',metadata.get('title')) + ' sul web.') }}{% endblock %}
 
 {% block twitter_image_alt %}Immagine del capitolo per il {{ metadata.get('title') }} capitolo del {{ year }} Web Almanac{% endblock %}
 
