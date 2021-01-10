@@ -86,7 +86,7 @@ A good starting point for this analysis is to confirm the statement that third-p
 
 {{ figure_markup(
   image="pages-with-thirdparties.png",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=539950044&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=1149547895&format=interactive",
   caption="Pages with third-party content",
   description="Third party content prevalence has grown slightly since 2019. In 2019 93.6% of mobile pages had third-party content, in 2020 this was 94.1%. In 2019 93.6% of desktop pages had third-party content, in 2020 this was 93.9%.",
   width=600,
@@ -107,8 +107,8 @@ The chart below shows the distribution of pages by third-party count. The 10th p
 {{ figure_markup(
   image="distribution-of-request-count.png",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=1394563639&format=interactive",
-  caption="The median website has 24 third-party requests",
-  description="Percentile chart of pages by third-party requests.",
+  caption="Distribution of third-party requests.",
+  description="Percentile chart of pages by third-party requests. The median mobile website has 24 third-party requests (23 on desktop) and it increases exponentially from 2 requests for both at the 10th percentile to 104 requests on mobile and 106 requests on desktop at the 90th percentile.",
   width=600,
   height=371,
   sheets_gid="181718921",
@@ -122,7 +122,7 @@ We can break down third-party requests by their content type. This is the report
 
 {{ figure_markup(
   image="thirdparty-by-content-types.png",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=480850479&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=258155228&format=interactive",
   caption="Third-party content by type",
   description="Images and JavaScript account for the majority (60%) of third-party content: 37.1% of third-party content is images, 21.9% is JavaScript, 16.1% is unknown or other, 15.4% is HTML",
   width=600,
@@ -143,8 +143,8 @@ When we dig further into domains serving third-party content we see that Google 
 {{ figure_markup(
   image="top-domains-by-prevalence.png",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=2082639138&format=interactive",
-  caption="The most prevalent domains are font foundries, advertising, social media and JavaScript CDNs",
-  description="",
+  caption="Top domains by prevalence.",
+  description="Bar chart showing the top domains by prevalencThe most prevalent domains are font foundries, advertising, social media and JavaScript CDNs",
   width=600,
   height=371,
   sheets_gid="583962013",
@@ -169,8 +169,8 @@ We can extract the largest third-parties by the median page weight impact, i.e. 
 {{ figure_markup(
   image="page-size-by-host.png",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=429818290&format=interactive",
-  caption="Media providers result in the largest contribution to page size",
-  description="Chart of third-party hosts and impact on page size, ranging from trailercentral.com at 2.7MB to contenservice.mc.reyrey.net at 510kB",
+  caption="Third-party size contribution by host.",
+  description="Chart of third-party hosts and impact on page size, ranging from trailercentral.com at 2.7 MB to contenservice.mc.reyrey.net at 510 KB. Media providers result in the largest contribution to page size. ",
   width=600,
   height=371,
   sheets_gid="1423970958",
@@ -189,8 +189,8 @@ On the other end of the spectrum, the categories CDN, Content and Hosting all re
 {{ figure_markup(
   image="page-size-by-category.png",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=1508418357&format=interactive",
-  caption="Advertising third parties have little impact on page size, CDN and Hosting has a significant impact",
-  description="Distribution of third-party categories and page size showing relationships between presence of third-parties and likelihood for pages to be large. CDN & Hosting show a strong correlation, Analytics shows a weak correlation",
+  caption="Page size distributions by third-party category.",
+  description="Distribution of third-party categories and page size showing relationships between presence of third-parties and likelihood for pages to be large. CDN & Hosting show a strong correlation, Analytics shows a weak correlation.",
   width=600,
   height=371,
   sheets_gid="727028027",
@@ -205,7 +205,7 @@ Some third-party responses should always be cached.  Media such as images and vi
 {{ figure_markup(
   image="requests-cached-by-content-type.png",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=299325299&format=interactive",
-  caption="Font assets are the most likely to be cached, with text and xml resources least likely.",
+  caption="Third-party requests cached by content type.",
   description="Column chart showing percentage of cacheable requests by content type. Fonts are the highest at 96%, XML is the lowest at 18%",
   width=600,
   height=371,
@@ -222,8 +222,8 @@ Many third-parties result in redirect responses, i.e. HTTP status codes 3XX. The
 
 {{ figure_markup(
   image="redirects-body-size.png",
-  caption="Most redirects are under 420 B, the 99th percentile is over 30 KB!",
-  description="Distribution of redirect body sizes showing 90% are under 420 B, 1% are over 30 KB and 0.1% are over 100 KB",
+  caption="Distribution of third-party 3XX body size",
+  description="Distribution of redirect body sizes showing 90% are under 420 B, 1% are over 30 KB and 0.1% are over 100 KB.",
   width=600,
   height=371,
   sheets_gid="1056232541",
@@ -241,7 +241,7 @@ The chart below shows the percentage of requests that load early, by device type
 
 {{ figure_markup(
   image="requests-before-dom-by-category.png",
-  caption="Public CDN resources are most likely to be downloaded before DOM Content Loaded, with Social, Advertising and Customer Success most likely to be loaded later.",
+  caption="Early third-party requests by category.",
   description="Column chart showing percentage of requests loaded before DOM Content Loaded. Public CDN resources are most likely at 50% on desktop, whilst advertising resources are least likely at 7%",
   width=600,
   height=371,
@@ -259,7 +259,7 @@ We can correlate the presence of third-party categories with the total CPU time 
 {{ figure_markup(
   image="cpu-time-by-category.png",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=225817673&format=interactive",
-  caption="Pages with advertising third parties are more likely to have a high CPU load time.",
+  caption="Distribution of CPU time by categories.",
   description="Distribution of CPU load time by presence of third-party categories. Most categories follow the same pattern, with advertising the outlier showing higher CPU load time, especially at lower percentiles.",
   width=600,
   height=371,
@@ -282,7 +282,7 @@ The Resource Timing API allows website owners to measure the performance of indi
 {{ figure_markup(
   image="requests-with-tao.png",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=1886505312&format=interactive",
-  caption="Less than 35% of third-party responses are served with a timing-allow-origin header",
+  caption="Requests with Timing-Allow-Origin header.",
   description="Less than 35% of third-party responses are served with a timing-allow-origin header",
   width=600,
   height=371,
