@@ -24,7 +24,7 @@ featured_stat_label_3: Third-party requests on the median page
 
 ## Introduction
 
-Third-party content is a critical component of most websites today.  It powers everything: analytics, live chat, advertising, video sharing and more.  Third-party content provides value by taking the heavy lifting off of site owners and allows them to focus on their core competencies.
+Third-party content is a critical component of most websites today. It powers everything: analytics, live chat, advertising, video sharing and more. Third-party content provides value by taking the heavy lifting off of site owners and allows them to focus on their core competencies.
 
 Many think of third-party content as being JavaScript-based, but the data shows that this is only true for 22% of requests. Third-party content comes in all forms, from images (37%) to audio (0.1%).
 
@@ -36,7 +36,7 @@ In this chapter we will review the prevalence of third-party content and how thi
 
 ### "Third Party"
 
-A third-party resource is an entity outside the primary site-user relationship.  It involves the aspects of the site not directly within the control of the site owner but present, with their approval.  For example, the Google Analytics script is a common third-party resource.
+A third-party resource is an entity outside the primary site-user relationship. It involves the aspects of the site not directly within the control of the site owner but present, with their approval. For example, the Google Analytics script is a common third-party resource.
 
 We consider third-party resources as those:
 
@@ -52,7 +52,7 @@ Similarly, first-party content served from a third-party domain is counted as th
 
 ### Provider categories
 
-This chapter divides third-party providers into different categories. A brief description is included with each of the categories.  The mapping of domain to category can be found in the [third-party-web repository](https://github.com/patrickhulce/third-party-web/blob/8afa2d8cadddec8f0db39e7d715c07e85fb0f8ec/data/entities.json5).
+This chapter divides third-party providers into different categories. A brief description is included with each of the categories. The mapping of domain to category can be found in the [third-party-web repository](https://github.com/patrickhulce/third-party-web/blob/8afa2d8cadddec8f0db39e7d715c07e85fb0f8ec/data/entities.json5).
 
 * Ad - display and measurement of advertisements
 * Analytics - tracking site visitor behavior
@@ -96,11 +96,11 @@ A good starting point for this analysis is to confirm the statement that third-p
   )
 }}
 
-{# TOD (authors and analysts) - I don't see 2019 data in the SQL query. Did you get that from last year's chapter or did you run a different SQL query (in whcih case we should update it) #}
+{# TOD (authors and analysts) - I don't see 2019 data in the SQL query. Did you get that from last year's chapter (in which case we should mark it as such in the Spreadsheet) or did you run a different SQL query (in whcih case we should update it) #}
 
 These prevalence numbers show a slight increase on [the 2019 results](../2019/third-parties): 93.87% of pages in the desktop crawl had at least one third-party request, the number was slightly higher at 94.10% of pages in the mobile crawl. A brief look into the small number of pages with no third-party content revealed that many were adult sites, some were government domains and some were basic landing / holding pages with little content. It is fair to say that the vast majority of pages have at least one third-party.
 
-{# TODO authors - that's interesting that it's still increasing. I would have those that potentially the prevalance of cookie banners might show a slight decrease. Though I guess that's only few countries like Europe, and mostly concerned with Advertising/Tracking third-party content. Still interesting none-the-less. Is it worth noting this? Maybe with link to privacy chapter. #}
+{# TODO authors - that's interesting that it's still increasing. I would have thought that potentially the prevalance of cookie banners preventing some third-party content loading by default might cause a slight decrease this year. Though I guess that's only few countries like Europe, and mostly concerned with Advertising/Tracking third-party content. Also cookie trackers themsleves are often implemented as third-party CMP. Still interesting none-the-less. Is it worth noting this? Maybe with link to privacy chapter. #}
 
 The chart below shows the distribution of pages by third-party count. The 10th percentile page has two third-party requests while the median page has 24. Over 10% of pages have more than 100 third-party requests.
 
@@ -132,13 +132,13 @@ We can break down third-party requests by their content type. This is the report
   )
 }}
 
-The results show that the major contributors of third-party content are images (38%) and JavaScript (22%), with the next largest contributor being unknown (16%).  Unknown is a subset of non-categorized groups such as text/plain as well as responses without a content-type header.
+The results show that the major contributors of third-party content are images (38%) and JavaScript (22%), with the next largest contributor being unknown (16%). Unknown is a subset of non-categorized groups such as text/plain as well as responses without a content-type header.
 
 This shows a shift when [compared to 2019](https://almanac.httparchive.org/en/2019/third-parties#resource-types): relative image content has increased from 33% to 38%, whilst JavaScript content has decreased significantly from 32% to 22%. This reduction is likely due to increased adherence to cookie and data protection regulations, reducing third-party execution until after explicit user opt-in which is out of scope for HTTP Archive test runs.
 
 ### Third-party domains
 
-When we dig further into domains serving third-party content we see that Google Fonts is by far the most common.  It is present on more than 7.5% of mobile pages tested.  While fonts only account for around 3% of third-party content, almost all of these are delivered by the Google Fonts service. If your page uses Google Fonts, make sure to follow [best practices](https://csswizardry.com/2020/05/the-fastest-google-fonts/) to ensure the best possible user experience.
+When we dig further into domains serving third-party content we see that Google Fonts is by far the most common. It is present on more than 7.5% of mobile pages tested. While fonts only account for around 3% of third-party content, almost all of these are delivered by the Google Fonts service. If your page uses Google Fonts, make sure to follow [best practices](https://csswizardry.com/2020/05/the-fastest-google-fonts/) to ensure the best possible user experience.
 
 {{ figure_markup(
   image="top-domains-by-prevalence.png",
@@ -152,15 +152,15 @@ When we dig further into domains serving third-party content we see that Google 
   )
 }}
 
-The next four most common domains are all advertising providers, they may not be requested directly by your page but through a complex chain of redirects initiated by another advertising network.
+The next four most common domains are all advertising providers. They may not be requested directly by the page but through a complex chain of redirects initiated by another advertising network.
 
-The sixth most common domain is digicert.com. Calls to digicert.com are generally OCSP revocation checks due to TLS certificates not having OCSP stapling enabled, or the use of Extended Validation (EV) certificates which prevent pinning of intermediate certificates. This number is exaggerated in HTTP Archive due to all page loads being effectively first-time visitors - OCSP responses are generally valid for seven days in real-world browsing. See [this blog post](https://simonhearne.com/2020/drop-ev-certs/) to read more on this issue.
+The sixth most common domain is `digicert.com`. Calls to `digicert.com` are generally OCSP revocation checks due to TLS certificates not having OCSP stapling enabled, or the use of Extended Validation (EV) certificates which prevent pinning of intermediate certificates. This number is exaggerated in HTTP Archive due to all page loads being effectively first-time visitors - OCSP responses are generally cached and valid for seven days in real-world browsing. See [this blog post](https://simonhearne.com/2020/drop-ev-certs/) to read more on this issue.
 
-Further down the list at 2.43% is ajax.googleapis.com, Google's [Hosted Libraries project](https://developers.google.com/speed/libraries). Whilst loading a library such as jQuery from a hosted service is easy, the additional cost of a connection to a third-party domain may have a negative impact on performance. It is best to host all critical JavaScript and CSS on the root domain, if possible. There is also now no cache benefit to using a shared CDN resource, as all major browsers [partition caches by page](https://developers.google.com/web/updates/2020/10/http-cache-partitioning). Harry Roberts has written a detailed blog post on [how to host your own static assets](https://csswizardry.com/2019/05/self-host-your-static-assets/).
+Further down the list at 2.43% is `ajax.googleapis.com`, Google's [Hosted Libraries project](https://developers.google.com/speed/libraries). Whilst loading a library such as jQuery from a hosted service is easy, the additional cost of a connection to a third-party domain may have a negative impact on performance. It is best to host all critical JavaScript and CSS on the root domain, if possible. There is also now no cache benefit to using a shared CDN resource, as all major browsers [partition caches by page](https://developers.google.com/web/updates/2020/10/http-cache-partitioning). Harry Roberts has written a detailed blog post on [how to host your own static assets](https://csswizardry.com/2019/05/self-host-your-static-assets/).
 
 ## Page weight impact
 
-{# TODO (authors) - again can we have an intro sentence or two to avoid an empty heading? #}
+{# TODO (authors) - again can we have an intro sentence or two to avoid an empty heading? Maybe with a link to the Page Weight chapter? #}
 
 ### Heaviest third-parties
 
@@ -200,7 +200,7 @@ On the other end of the spectrum, the categories CDN, Content and Hosting all re
 
 ### Cacheability
 
-Some third-party responses should always be cached.  Media such as images and videos served by a third-party, or JavaScript libraries are good candidates. The results show that overall two-thirds of third-party requests are served with a valid caching header such as `cache-control`.
+Some third-party responses should always be cached. Media such as images and videos served by a third-party, or JavaScript libraries are good candidates. The results show that overall two-thirds of third-party requests are served with a valid caching header such as `cache-control`.
 
 {{ figure_markup(
   image="requests-cached-by-content-type.png",
@@ -216,6 +216,8 @@ Some third-party responses should always be cached.  Media such as images and vi
 
 Breaking down by response type highlights some common offenders: xml and text responses are less likely to be cacheable. Surprisingly, less than two-thirds of images served by third-parties are cacheable. On further inspection, this is due to the use of tracking 'pixels' which are returned as non-cacheable zero-size image responses.
 
+{# TODO authors - I believe this could be explained more. Either here or in the paragraph above the chart. Tracking pixels are one of the few third-party requests that should be non-cacheable but this is neither mentioned above, nor really explained here as working as intended. #}
+
 ### Large redirects
 
 Many third-parties result in redirect responses, i.e. HTTP status codes 3XX. These occur due to the use of vanity domains or to share information across domains through request headers. This is especially true for advertising networks. Large redirect responses are an indication of a misconfiguration, as the response should be around 340B for a valid `Location` response header plus overheads. The chart below shows the distribution of body size for all third-party redirects in the HTTP Archive.
@@ -223,7 +225,8 @@ Many third-parties result in redirect responses, i.e. HTTP status codes 3XX. The
 {{ figure_markup(
   image="redirects-body-size.png",
   caption="Distribution of third-party 3XX body size",
-  description="Distribution of redirect body sizes showing 90% are under 420 B, 1% are over 30 KB and 0.1% are over 100 KB.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=1145900631&format=interactive",
+  description="Distribution of redirect body sizes showing 90% are under 420 B, 1% are over 30 kB and 0.1% are over 100 kB.",
   width=600,
   height=371,
   sheets_gid="1056232541",
@@ -231,13 +234,15 @@ Many third-parties result in redirect responses, i.e. HTTP status codes 3XX. The
   )
 }}
 
-The results show that the majority of 3XX responses are small: the 90th percentile is 420B, i.e. 90% of 3XX responses are 420 bytes or smaller. The 95th percentile is 6.5kB, the 99th is 36kB and the 99.9th is over 100kB! Whilst redirects may seem innocuous, 100kB is an unreasonable amount of bytes over the wire for a response that simply leads to another response.
+The results show that the majority of 3XX responses are small: the 90th percentile is 420 bytes, i.e. 90% of 3XX responses are 420 bytes or smaller. The 95th percentile is 6.5 kB, the 99th is 36 kB and the 99.9th is over 100 kB! Whilst redirects may seem innocuous, 100kB is an unreasonable amount of bytes over the wire for a response that simply leads to another response.
+
+{# TODO Authors/Analysts - is it weird to use kB (1000) instead of KB (1024)? #}
 
 ## Early-loaders
 
-Scripts that load late in the page will have an impact on total page load duration and page weight but might have no impact on the user experience. Scripts that load early in the page, however, will potentially cannibalize bandwidth for critical first-party resources and are more likely to interfere with the page load.  This can have a detrimental impact on performance metrics and user experience.
+Scripts that load late in the page will have an impact on total page load duration and page weight but might have no impact on the user experience. Scripts that load early in the page, however, will potentially cannibalize bandwidth for critical first-party resources and are more likely to interfere with the page load. This can have a detrimental impact on performance metrics and user experience.
 
-The chart below shows the percentage of requests that load early, by device type and third-party category. The three stand-out categories are CDN, Hosting and Tag Managers: all of which tend to deliver JavaScript that is requested in the head of a document. Advertising resources are least likely to load early in the page, this is due to advertisement network requests generally being asynchronous scripts run after page load.
+The chart below shows the percentage of requests that load early, by device type and third-party category. The three stand-out categories are CDN, Hosting and Tag Managers: all of which tend to deliver JavaScript that is requested in the head of a document. Advertising resources are least likely to load early in the page, due to advertisement network requests generally being asynchronous scripts run after page load.
 
 {{ figure_markup(
   image="requests-before-dom-by-category.png",
@@ -252,7 +257,7 @@ The chart below shows the percentage of requests that load early, by device type
 
 ## CPU impact
 
-Not all bytes on the web are equal: a 500kB image may be far easier for a browser to process than a 500kB compressed JavaScript bundle, which inflates to 1.8MB of client-side code! The impact of third-party scripts on CPU time can be far more critical than the additional bytes or time spent on the network.
+Not all bytes on the web are equal: a 500 KB image may be far easier for a browser to process than a 500 KB compressed JavaScript bundle, which inflates to 1.8MB of client-side code! The impact of third-party scripts on CPU time can be far more critical than the additional bytes or time spent on the network.
 
 We can correlate the presence of third-party categories with the total CPU time on the page, this allows us to estimate the impact of each third-party category on CPU time.
 
@@ -268,16 +273,15 @@ We can correlate the presence of third-party categories with the total CPU time 
   )
 }}
 
-This chart shows the probability density function of total page CPU time by the third-party categories present on each page. The median page is at 50 on the percentile axis. The data shows that all third-party categories follow a similar pattern, with the median page between 400 - 1,000ms CPU time. The outlier here is advertising (in black): if a page has advertising tags it is much more likely to have high CPU usage during page load. The median page with advertising tags has a CPU load time of 1,500ms, compared to 500ms for pages without advertising. The high CPU load time at the lower percentiles indicates that even the fastest sites are impacted significantly by the presence of third-parties categorized as advertising.
+This chart shows the probability density function of total page CPU time by the third-party categories present on each page. The median page is at 50 on the percentile axis. The data shows that all third-party categories follow a similar pattern, with the median page between 400 - 1,000 ms CPU time. The outlier here is advertising (in black): if a page has advertising tags it is much more likely to have high CPU usage during page load. The median page with advertising tags has a CPU load time of 1,500 ms, compared to 500 ms for pages without advertising. The high CPU load time at the lower percentiles indicates that even the fastest sites are impacted significantly by the presence of third-parties categorized as advertising.
 
 ## Other
 
-{# TODO Authors - again an intro sentenc or two to avoid empty heading #}
-
+{# TODO Authors - again an intro sentence or two to avoid empty heading #}
 
 ### Timing-Allow-Origin prevalence
 
-The Resource Timing API allows website owners to measure the performance of individual resources via JavaScript. This data is, by default, extremely limited for cross-origin resources like third-party content. There are legitimate reasons for not providing this timing information such as responses that vary by authentication state: e.g. a website owner may be able to determine if a visitor is logged into a Facebook by measuring the response size of a widget request. For most third-party content, though, setting the timing-allow-origin header is an act of transparency to allow the hosting website to track performance and size of their third-party content.
+The [Resource Timing API](https://developer.mozilla.org/en-US/docs/Web/API/Resource_Timing_API/Using_the_Resource_Timing_API) allows website owners to measure the performance of individual resources via JavaScript. This data is, by default, extremely limited for cross-origin resources like third-party content. There are legitimate reasons for not providing this timing information such as responses that vary by authentication state: e.g. a website owner may be able to determine if a visitor is logged into a Facebook by measuring the response size of a widget request. For most third-party content, though, setting the `timing-allow-origin` header is an act of transparency to allow the hosting website to track performance and size of their third-party content.
 
 {{ figure_markup(
   image="requests-with-tao.png",
@@ -299,12 +303,14 @@ We know that adding arbitrary JavaScript to our sites introduces risks to both s
 
 ## Conclusion
 
-One of the surprises in the data from 2020 is the drop in relative JavaScript requests: from 32% of the total to just 22%. It is unlikely that the actual amount of JavaScript on the web has decreased this significantly, it is more likely that websites are implementing consent management - so that most dynamic third-party content is only loaded on user opt-in. This opt-in process could be managed by a consent management platform (CMP) in some cases. The third-party database does not yet have a category for CMPs, but this would be a good analysis for the 2021 Web Almanac.
+One of the surprises in the data from 2020 is the drop in relative JavaScript requests: from 32% of the total to just 22%. It is unlikely that the actual amount of JavaScript on the web has decreased this significantly, it is more likely that websites are implementing consent management - so that most dynamic third-party content is only loaded on user opt-in. This opt-in process could be managed by a Consent Management Platform (CMP) in some cases. The third-party database does not yet have a category for CMPs, but this would be a good analysis for the 2021 Web Almanac and is covered through a different methodology in [the Privacy chapter](](privacy#consent-management-platforms).
 
-Advertising requests appear to have an increased impact on CPU time, the median page with advertising scripts consume three times as much CPU as those without. Interestingly though, advertising scripts are not correlated with increased page weight. This makes it even more important to evaluate the total impact of third-party scripts on the browser, not just request count and size.
+Advertising requests appear to have an increased impact on CPU time. The median page with advertising scripts consume three times as much CPU as those without. Interestingly though, advertising scripts are not correlated with increased page weight. This makes it even more important to evaluate the total impact of third-party scripts on the browser, not just request count and size.
 
 While third-party content is critical to many websites, auditing the impact of each provider is critical to ensure that they do not significantly impact user experience, page weight or CPU utilization. There are often self-hosting options for the top contributors to third-party weight, this is especially worth considering as there is now no caching benefit to using shared assets:
 
 * Google Fonts allows [self-hosting](https://www.tunetheweb.com/blog/should-you-self-host-google-fonts/) the assets
 * JavaScript CDNs can be replaced with self-hosted assets
 * Experimentation scripts can be self-hosted, e.g. [Optimizely](https://help.optimizely.com/Set_Up_Optimizely/Optimizely_self-hosting_for_Akamai_users)
+
+{# TODO Authors. This kind of just ends. Should we have something else here to finish off the chapter? #}
