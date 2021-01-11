@@ -265,7 +265,7 @@ Dans les graphiques ci-dessus, les distributions de FCP sont réparties entre le
 
 En comparant le FCP sur les appareils mobiles sur une base annuelle, nous observons moins de bonnes expériences et plus d’expériences modérées et mauvaises. 75 % des sites web ont un FCP inférieur à la moyenne. Nous pouvons supposer que ce pourcentage élevé de mesures de FCP inférieures à l’idéal est une source de frustration et de dégradation de l’expérience d’utilisation.
 
-De nombreux facteurs peuvent retarder le rendu, comme la latence du serveur (mesurée par une poignée d’indicateurs, tels que [<span lang="en">Time to First Byte</span> (TTFB)](#time-to-first-byte-ttfb) et RTT), le blocage des requêtes JavaScript, ou la manipulation inappropriée des polices personnalisées, pour n’en citer que quelques-uns.
+De nombreux facteurs peuvent retarder le rendu, comme la latence du serveur (mesurée par une poignée d’indicateurs, tels que [<span lang="en">Time to First Byte</span> (TTFB)](#time-to-first-byte) et RTT), le blocage des requêtes JavaScript, ou la manipulation inappropriée des polices personnalisées, pour n’en citer que quelques-uns.
 
 ### FCP par répartition géographique
 
