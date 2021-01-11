@@ -67,7 +67,7 @@ En comparant <span lang="en">Lighthouse</span> 5 et 6, nous pouvons directement 
 
 Ces changements globaux ne sont pas inattendus compte tenu d’une multitude de modifications apportées à l’algorithme lui-même.
 
-## <span lang="en">Core Web Vitals</span> : le <span lang="en">Largest Contentful Paint</span> {core-web-vitals-largest-contentful-paint}
+## <span lang="en">Core Web Vitals</span> : le <span lang="en">Largest Contentful Paint</span> {core-web-vitals-le-largest-contentful-paint}
 
 Le <span lang="en">Largest Contentful Paint</span> (LCP) est une mesure temporelle de référence qui indique le moment où le plus grand élément <a href="https://web.dev/lcp/#what-elements-are-considered" hreflang="en">au-dessus du pli</a> ([traduction française](https://www.fasterize.com/fr/blog/core-web-vitals-google-quest-ce-que-le-largest-contentful-paint-lcp/)) a été affiché.
 
