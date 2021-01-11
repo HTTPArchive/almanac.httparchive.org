@@ -225,7 +225,7 @@ Encore une fois, il n’est pas facile de déterminer les raisons de cette situa
 
 Nous pouvons observer une corrélation directe entre la vitesse du réseau et la rapidité du FID, allant de 73 % sur les réseaux 2G à 87 % sur les réseaux 4G. Des réseaux plus rapides permettent un téléchargement plus rapide des scripts, ce qui accélère le début de l’analyse et réduit le nombre de tâches bloquant le fil conducteur. De tels résultats sont encourageants, surtout lorsque le taux d’expériences de sites mal notés ne dépasse pas 5 %.
 
-## <span lang="en">First Contentful Paint</span>
+## <span lang="en">First Contentful Paint</span> {first-contentful-paint}
 
 <span lang="en">First Contentful Paint</span> (FCP) mesure la première fois que le navigateur a affiché un texte, une image, un canvas non blanc ou un contenu SVG. Le FCP est un bon indicateur de la vitesse perçue, car il indique le temps d’attente avant de voir les premiers signes de chargement d’un site.
 
