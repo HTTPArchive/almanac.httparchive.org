@@ -13,12 +13,12 @@
 {% macro expandedTitle(errorTitle) %}Errore: {{ errorTitle }}{% endmacro %}
 {%
   set localizedErrorMessage = {
-    "Unsupported year requested": "Anno non supportato richiesto",
-    "Unsupported chapter requested": "Richiesto capitolo non supportato",
+    "Unsupported year requested": "Anno richiesto non supportato",
+    "Unsupported chapter requested": "Capitolo richiesto non supportato",
     "Unsupported language requested": "Lingua richiesta non supportata",
     "Not Found": "L'URL richiesto non è stato trovato sul server. Se hai inserito manualmente l'URL, controlla l'ortografia e riprova."
   }
 %}
 {% macro expandedErrorMessage(errorCode, errorDescription, errorMessage) %}
-{{ errorCode }} <i lang="en">{{ errorDescription }}</i>: {{ errorMessage }}
+{{ errorCode }} <i lang="it">{{ errorDescription }}</i>: {{ errorMessage }}
 {% endmacro %}
