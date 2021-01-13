@@ -12,7 +12,7 @@ thefoxis_bio: Karolina est <em lang="en">Product Design Lead</em> chez <a hrefla
 discuss: 2045
 results: https://docs.google.com/spreadsheets/d/164FVuCQ7gPhTWUXJl1av5_hBxjncNi0TK8RnNseNPJQ/
 queries: 09_Performance
-featured_quote: De mauvaises performances ne se traduisent pas seulement par de la frustration ou des effets négatifs sur les objectifs commerciaux, elles créent des véritables barrières à l’entrée. La pandémie mondiale de cette année a rendu ces obstacles encore plus évidents.
+featured_quote: De mauvaises performances ne se traduisent pas seulement par de la frustration ou des effets négatifs sur les objectifs commerciaux, elles créent de véritable barrières à l’entrée. La pandémie mondiale de cette année a rendu ces obstacles encore plus évidents.
 featured_stat_1: 25 %
 featured_stat_label_1: de sites avec un bon FCP sur mobile
 featured_stat_2: 18 %
@@ -23,7 +23,7 @@ featured_stat_label_3: de sites avec un score de performance inchangé dans LH6
 
 ## Introduction
 
-Il est incontestable que la lenteur a un effet néfaste sur l’expérience d’utilisation en général et, par conséquent, sur les conversions. Mais de mauvaises performances ne se traduisent pas seulement par de la frustration ou des effets négatifs sur les objectifs commerciaux, elles créent des véritables barrières à l’entrée. La pandémie mondiale de cette année <a href="https://www.weforum.org/agenda/2020/04/coronavirus-covid-19-pandemic-digital-divide-internet-data-broadband-mobbile/" hreflang="en">a rendu ces obstacles encore plus évidents</a>. Avec le développement de l’apprentissage à distance, du télétravail et de la socialisation en ligne, c’est toute notre vie qui s’est soudainement retrouvée sur Internet. La mauvaise connectivité et le manque d’accès à des appareils performants ont rendu ce changement douloureux, voire impossible, pour beaucoup. Ce fut un véritable test, mettant en évidence les inégalités de connectivité, d’appareils et de vitesse dans le monde entier.
+Il est incontestable que la lenteur a un effet néfaste sur l’expérience d’utilisation en général et, par conséquent, sur les conversions. Mais de mauvaises performances ne se traduisent pas seulement par de la frustration ou des effets négatifs sur les objectifs commerciaux, elles créent de véritable barrières à l’entrée. La pandémie mondiale de cette année <a href="https://www.weforum.org/agenda/2020/04/coronavirus-covid-19-pandemic-digital-divide-internet-data-broadband-mobbile/" hreflang="en">a rendu ces obstacles encore plus évidents</a>. Avec le développement de l’apprentissage à distance, du télétravail et de la socialisation en ligne, c’est toute notre vie qui s’est soudainement retrouvée sur Internet. La mauvaise connectivité et le manque d’accès à des appareils performants ont rendu ce changement douloureux, voire impossible, pour beaucoup. Ce fut un véritable test, mettant en évidence les inégalités de connectivité, d’appareils et de vitesse dans le monde entier.
 
 Les outils de performance continuent d’évoluer pour décrire ces divers aspects de l’expérience d’utilisation et faciliter la recherche des problèmes sous-jacents. Depuis [le chapitre Performance de l’année dernière](../2019/performance), de nombreux développements importants ont eu lieu dans le domaine qui ont déjà transformé notre approche de la surveillance de la vitesse.
 
