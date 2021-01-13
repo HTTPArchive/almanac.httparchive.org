@@ -32,7 +32,7 @@ In this chapter we will review the prevalence of third-party content and how thi
 
 ## Definitions
 
-{# TODO (authors) We try to avoid having empty headers. Could we have an intro sentence or two here? #}
+Before jumping into the data we should define the terminology used in this chapter.
 
 ### "Third Party"
 
@@ -80,9 +80,7 @@ Learn more about our [methodology](./methodology).
 
 ## Prevalence
 
-A good starting point for this analysis is to confirm the statement that third-party content is a critical component of most websites today. How many websites use third-party tags, and how many tags do they use?
-
-{# TODO Authors - is "tags" the right wording here? Should we just use "content"? #}
+A good starting point for this analysis is to confirm the statement that third-party content is a critical component of most websites today. How many websites use third-party content, and how many third-parties do they use?
 
 {{ figure_markup(
   image="pages-with-thirdparties.png",
@@ -96,11 +94,7 @@ A good starting point for this analysis is to confirm the statement that third-p
   )
 }}
 
-{# TOD (authors and analysts) - I don't see 2019 data in the SQL query. Did you get that from last year's chapter (in which case we should mark it as such in the Spreadsheet) or did you run a different SQL query (in whcih case we should update it) #}
-
 These prevalence numbers show a slight increase on [the 2019 results](../2019/third-parties): 93.87% of pages in the desktop crawl had at least one third-party request, the number was slightly higher at 94.10% of pages in the mobile crawl. A brief look into the small number of pages with no third-party content revealed that many were adult sites, some were government domains and some were basic landing / holding pages with little content. It is fair to say that the vast majority of pages have at least one third-party.
-
-{# TODO authors - that's interesting that it's still increasing. I would have thought that potentially the prevalance of cookie banners preventing some third-party content loading by default might cause a slight decrease this year. Though I guess that's only few countries like Europe, and mostly concerned with Advertising/Tracking third-party content. Also cookie trackers themsleves are often implemented as third-party CMP. Still interesting none-the-less. Is it worth noting this? Maybe with link to privacy chapter. #}
 
 The chart below shows the distribution of pages by third-party count. The 10th percentile page has two third-party requests while the median page has 24. Over 10% of pages have more than 100 third-party requests.
 
@@ -160,8 +154,7 @@ Further down the list at 2.43% is `ajax.googleapis.com`, Google's [Hosted Librar
 
 ## Page weight impact
 
-{# TODO (authors) - again can we have an intro sentence or two to avoid an empty heading? Maybe with a link to the Page Weight chapter? #}
-
+Third-parties can have a significant impact on the weight of a page, measured as the number of bytes downloaded by the browser. The [page weight chapter](./page-weight) explores this in more detail, here we focus on the third-parties that have the greatest impact on page weight.
 ### Heaviest third-parties
 
 We can extract the largest third-parties by the median page weight impact, i.e. how many bytes they bring to the pages they are on. The results are interesting as this does not take into account how popular the third-parties are, just their impact in bytes.
@@ -200,7 +193,7 @@ On the other end of the spectrum, the categories CDN, Content and Hosting all re
 
 ### Cacheability
 
-Some third-party responses should always be cached. Media such as images and videos served by a third-party, or JavaScript libraries are good candidates. The results show that overall two-thirds of third-party requests are served with a valid caching header such as `cache-control`.
+Some third-party responses should always be cached. Media such as images and videos served by a third-party, or JavaScript libraries are good candidates. On the other hand, tracking pixels and analytics beacons should never be cached. The results show that overall two-thirds of third-party requests are served with a valid caching header such as `cache-control`.
 
 {{ figure_markup(
   image="requests-cached-by-content-type.png",
@@ -214,9 +207,7 @@ Some third-party responses should always be cached. Media such as images and vid
   )
 }}
 
-Breaking down by response type highlights some common offenders: xml and text responses are less likely to be cacheable. Surprisingly, less than two-thirds of images served by third-parties are cacheable. On further inspection, this is due to the use of tracking 'pixels' which are returned as non-cacheable zero-size image responses.
-
-{# TODO authors - I believe this could be explained more. Either here or in the paragraph above the chart. Tracking pixels are one of the few third-party requests that should be non-cacheable but this is neither mentioned above, nor really explained here as working as intended. #}
+Breaking down by response type confirms our assumptions: xml and text responses (as commonly delivered by tracking pixels / analytics beacons) are less likely to be cacheable. Surprisingly, less than two-thirds of images served by third-parties are cacheable. On further inspection, this is due to the use of tracking 'pixels' which are returned as non-cacheable zero-size gif image responses.
 
 ### Large redirects
 
@@ -235,8 +226,6 @@ Many third-parties result in redirect responses, i.e. HTTP status codes 3XX. The
 }}
 
 The results show that the majority of 3XX responses are small: the 90th percentile is 420 bytes, i.e. 90% of 3XX responses are 420 bytes or smaller. The 95th percentile is 6.5 kB, the 99th is 36 kB and the 99.9th is over 100 kB! Whilst redirects may seem innocuous, 100kB is an unreasonable amount of bytes over the wire for a response that simply leads to another response.
-
-{# TODO Authors/Analysts - is it weird to use kB (1000) instead of KB (1024)? #}
 
 ## Early-loaders
 
@@ -275,11 +264,7 @@ We can correlate the presence of third-party categories with the total CPU time 
 
 This chart shows the probability density function of total page CPU time by the third-party categories present on each page. The median page is at 50 on the percentile axis. The data shows that all third-party categories follow a similar pattern, with the median page between 400 - 1,000 ms CPU time. The outlier here is advertising (in black): if a page has advertising tags it is much more likely to have high CPU usage during page load. The median page with advertising tags has a CPU load time of 1,500 ms, compared to 500 ms for pages without advertising. The high CPU load time at the lower percentiles indicates that even the fastest sites are impacted significantly by the presence of third-parties categorized as advertising.
 
-## Other
-
-{# TODO Authors - again an intro sentence or two to avoid empty heading #}
-
-### Timing-Allow-Origin prevalence
+## Timing-Allow-Origin prevalence
 
 The [Resource Timing API](https://developer.mozilla.org/en-US/docs/Web/API/Resource_Timing_API/Using_the_Resource_Timing_API) allows website owners to measure the performance of individual resources via JavaScript. This data is, by default, extremely limited for cross-origin resources like third-party content. There are legitimate reasons for not providing this timing information such as responses that vary by authentication state: e.g. a website owner may be able to determine if a visitor is logged into a Facebook by measuring the response size of a widget request. For most third-party content, though, setting the `timing-allow-origin` header is an act of transparency to allow the hosting website to track performance and size of their third-party content.
 
@@ -303,7 +288,7 @@ We know that adding arbitrary JavaScript to our sites introduces risks to both s
 
 ## Conclusion
 
-One of the surprises in the data from 2020 is the drop in relative JavaScript requests: from 32% of the total to just 22%. It is unlikely that the actual amount of JavaScript on the web has decreased this significantly, it is more likely that websites are implementing consent management - so that most dynamic third-party content is only loaded on user opt-in. This opt-in process could be managed by a Consent Management Platform (CMP) in some cases. The third-party database does not yet have a category for CMPs, but this would be a good analysis for the 2021 Web Almanac and is covered through a different methodology in [the Privacy chapter](](privacy#consent-management-platforms).
+One of the surprises in the data from 2020 is the drop in relative JavaScript requests: from 32% of the total to just 22%. It is unlikely that the actual amount of JavaScript on the web has decreased this significantly, it is more likely that websites are implementing consent management - so that most dynamic third-party content is only loaded on user opt-in. This opt-in process could be managed by a Consent Management Platform (CMP) in some cases. The third-party database does not yet have a category for CMPs, but this would be a good analysis for the 2021 Web Almanac and is covered through a different methodology in [the Privacy chapter](./privacy#consent-management-platforms).
 
 Advertising requests appear to have an increased impact on CPU time. The median page with advertising scripts consume three times as much CPU as those without. Interestingly though, advertising scripts are not correlated with increased page weight. This makes it even more important to evaluate the total impact of third-party scripts on the browser, not just request count and size.
 
@@ -313,4 +298,4 @@ While third-party content is critical to many websites, auditing the impact of e
 * JavaScript CDNs can be replaced with self-hosted assets
 * Experimentation scripts can be self-hosted, e.g. [Optimizely](https://help.optimizely.com/Set_Up_Optimizely/Optimizely_self-hosting_for_Akamai_users)
 
-{# TODO Authors. This kind of just ends. Should we have something else here to finish off the chapter? #}
+In this chapter we have discussed the benefits and costs of third-party content on the web. We have seen that third-parties are integral to almost all websites, and that the impact varies by third-party provider. Before adding a new third-party to your pages, consider the impact that they will have!
