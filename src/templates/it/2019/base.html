@@ -1,0 +1,28 @@
+{% extends "%s/base.html" % lang %}
+
+{% block methodology_stat_1 %}5.8M{% endblock %}
+{% block methodology_stat_2 %}20.9 TB{% endblock %}
+{% block methodology_description %}
+Se non diversamente specificato, le metriche in tutti i 20 capitoli del Web Almanac provengono dal dataset dell'archivio HTTP. HTTP Archive è un progetto gestito dalla comunità che tiene traccia del modo in cui è costruito il Web dal 2010. Utilizzando WebPageTest e Lighthouse "under the hood", i metadati di quasi 6 milioni di siti Web vengono testati mensilmente e inclusi in un database BigQuery pubblico per l'analisi. Il set di dati di luglio 2020 è stato utilizzato come base per le metriche del Web Almanac. Per ulteriori informazioni, vedere la pagina Methodology.
+{% endblock %}
+
+
+{% block foreword %}
+  <p>
+    Il web aperto è una rete di tecnologie incredibilmente complessa e in continua evoluzione. Intere industrie e carriere sono costruite sul Web e per avere successo dipendono dal suo vivace ecosistema. Per quanto il Web sia fondamentale, capire come sta andando è stato sorprendentemente sfuggente. Dal 2010, la missione del progetto HTTP Archive è stata quella di monitorare come è costruito il Web e sta facendo un lavoro straordinario. Tuttavia, c'è stata una lacuna che è stata particolarmente difficile da colmare: dare un significato ai dati che il progetto HTTP Archive ha raccolto e consentire alla comunità di comprendere facilmente le prestazioni del web. È qui che entra in gioco il Web Almanac.
+  </p>
+
+  <p>
+    La missione del Web Almanac è ​​quella di raccogliere il tesoro di intuizioni che altrimenti sarebbero accessibili solo a intrepidi data miner e impacchettarlo in un modo facile da capire. Ciò è reso possibile con l'aiuto di esperti del settore che possono dare un senso ai dati e dirci cosa significano. Ciascuno dei 20 capitoli del Web Almanac si concentra su un aspetto specifico del Web e ciascuno è stato creato e sottoposto a revisione tra pari da esperti nel proprio campo. La forza del Web Almanac deriva direttamente dall'esperienza delle persone che lo scrivono.
+  </p>
+
+  <p>
+    Molti dei risultati nel Web Almanac sono degni di essere celebrati, ma è anche un importante promemoria del lavoro ancora necessario per fornire esperienze utente di alta qualità. Le analisi basate sui dati in ogni capitolo sono una forma di responsabilità che tutti condividiamo per lo sviluppo di un Web migliore. Non si tratta di svergognare coloro che stanno sbagliando, ma di far brillare una luce guida sul percorso delle migliori pratiche in modo che ci sia un modo chiaro e giusto di fare le cose. Con il continuo aiuto della comunità web, speriamo di renderlo una tradizione annuale, così ogni anno possiamo monitorare i nostri progressi e apportare correzioni al corso secondo necessità.
+  </p>
+
+  <p>
+    C'è così tanto da imparare in questo rapporto, quindi inizia a esplorare e condividere i tuoi suggerimenti con la comunità in modo che possiamo far progredire collettivamente la nostra comprensione dello stato del Web.
+  </p>
+
+  <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>, Web Almanac Editor-in-Chief</em></p>
+{% endblock %}
