@@ -312,8 +312,10 @@ Immergiamoci in un paio di hints sperimentali. Molto vicino al rilascio abbiamo 
 Questo nuovo hint può essere utilizzato come tag HTML o modificando la priorità delle richieste di fetch tramite l'opzione `importance`, che assume gli stessi valori dell'attributo HTML.
 
 ```html
+<!-- Vogliamo avviare un recupero anticipato di una risorsa, ma anche ridimensionarla -->
 <link rel="preload" href="/js/script.js" as="script" importance="low">
 
+<!-- Un'immagine che il browser assegna priorità "Alta", ma in realtà non la vogliamo. -->
 <img src="/img/in_view_but_not_important.svg" importance="low" alt="I'm not important!">
 ```
 
