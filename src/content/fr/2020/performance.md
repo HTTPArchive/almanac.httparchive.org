@@ -175,7 +175,7 @@ Il est difficile de tirer des conclusions définitives sur la 4G, mais on peut s
 
 ## <span lang="en">Core Web Vitals</span> : le <span lang="en">First Input Delay</span> {core-web-vitals-le-first-input-delay}
 
-Le <span lang="en">First Input Delay</span> (FID) mesure le temps entre la première interaction d’un l’utilisateur ou d’une utilisatrice et le moment où le navigateur est capable de répondre à cette interaction. Le FID est un bon indicateur du degré d’interactivité de vos sites web.
+Le <span lang="en">First Input Delay</span> (FID) mesure le temps entre la première interaction d’un utilisateur ou d’une utilisatrice et le moment où le navigateur est capable de répondre à cette interaction. Le FID est un bon indicateur du degré d’interactivité de vos sites web.
 
 ### FID par matériel
 
