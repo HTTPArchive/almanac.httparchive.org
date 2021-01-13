@@ -2,7 +2,7 @@
   "settings": [
     {
       "is_live": true,
-      "supported_languages": ["en","es","fr","hi","ja","nl","pt","ru","zh-CN","zh-TW"],
+      "supported_languages": ["en","es","fr","it","hi","ja","nl","pt","ru","zh-CN","zh-TW"],
       "ebook_languages": ["en"]
     }
   ],
@@ -584,7 +584,8 @@
     "giopunt": {
       "name": "Giovanni Puntil",
       "teams": [
-        "reviewers"
+        "reviewers",
+        "translators"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/1746646?v=4&s=200",
       "github": "giopunt",
@@ -785,6 +786,16 @@
       "website": "https://lea.verou.me/",
       "github": "LeaVerou",
       "twitter": "leaverou"
+    },
+    "chefleo": {
+      "name": "Leonardo Digiorgio",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/26022943?s=460&u=64b286deddd79f94a2dc8dee0e7610e0dd2a7b34&v=4",
+      "website": "https://chefleo.dev/",
+      "github": "chefleo",
+      "twitter": "simdigiorgio"
     },
     "Zizzamia": {
       "name": "Leonardo Zizzamia",
