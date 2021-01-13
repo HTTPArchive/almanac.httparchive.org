@@ -250,8 +250,6 @@ Now let's celebrate the first year of the [Native Lazy Loading](https://addyosma
   sql_file="native_lazy_loading_attrs.sql"
 ) }}
 
-{# TODO(authors/reviewers) - revisit this figure - Ref https://github.com/HTTPArchive/almanac.httparchive.org/pull/1587#discussion_r532292106 #}
-
 Adoption is still in its early days, especially with the official thresholds earlier this year being too conservative, and only [recently](https://addyosmani.com/blog/better-image-lazy-loading-in-chrome/) aligning with developer expectations. With almost 72% of browsers supporting native image/source lazy loading, this is another area of opportunity especially for pages looking to improve data usage and performance on low-end devices.
 
 Running Lighthouse's "[Defer offscreen images](https://web.dev/offscreen-images/)" audit resulted in 68.65% of pages passing the test. For those pages there is an opportunity to lazy-load images after all critical resources have finished loading.

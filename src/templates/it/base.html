@@ -1,8 +1,11 @@
 {% extends "base/base.html" %}
+
 {% block description %}Web Almanac è un report annuale sullo stato del Web che combina l'esperienza della comunità Web con i dati e le tendenze dell'archivio HTTP.{% endblock %}
 
 {% block twitter_image_alt %}{{ year }} Web Almanac{% endblock %}
+
 {% block skip_navigation %}Salta la navigazione{% endblock %}
+
 {% block organization %}Web Almanac di HTTP Archive{% endblock %}
 {% block web_almanac_logo %}
   <span class="wa">Web Almanac</span>
@@ -20,6 +23,7 @@
 La nostra missione è combinare le statistiche grezze e le tendenze del HTTP Archive con l'esperienza della comunità web. Il Web Almanac è un rapporto completo sullo stato del web, supportato da dati reali e da esperti web di fiducia. È composto da {{supported_chapters | length}} capitoli che abbracciano aspetti del page content, user experience, publishing e distribution.
 </p>
 {% endblock %}
+
 {% block read_last_years_almanac %}Leggi il Web Almanac del {{ year | int - 1 }}{% endblock %}
 
 {% block http_archive_link %}Pagina iniziale HTTP Archive{% endblock %}
