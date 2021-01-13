@@ -35,7 +35,7 @@ In particolare possiamo citare alcune vittorie raggiunte/ottenute nell'ultimo an
 - [Ironmongerydirect.co.uk](https://andydavies.me/blog/2019/03/22/improving-perceived-performance-with-a-link-rel-equals-preconnect-http-header/) ha utilizzato la preconnect per migliorare il caricamento dell'immagine del prodotto di 400 ms alla mediana e di oltre 1s al 95° percentile.
 - [Facebook.com](https://engineering.fb.com/2020/05/08/web/facebook-redesign/) preload utilizzato per una navigazione più veloce.
 
-Diamo un'occhiata alle resource hints più predominanti supportati ultimamente dalla maggior parte dei browser: `dns-prefetch`, `preconnect`, `preload`, `prefetch`, e native lazy loading.
+Diamo un'occhiata alle resource hints più predominanti supportati ultimamente dalla maggior parte dei browser: `dns-prefetch`, `preconnect`, `preload`, `prefetch`, e <i lang="en">native lazy loading</i>.
 
 Quando si lavora con ogni singolo hint, consigliamo di misurare sempre l'impatto prima e dopo sul campo, utilizzando librerie come <a hreflang="en" href="https://github.com/GoogleChrome/web-vitals">WebVitals</a>, <a hreflang="en" href="https://github.com/zizzamia/perfume.js">Perfume.js</a> o qualsiasi altra utility che supporti le metriche di Web Vitals.
 
