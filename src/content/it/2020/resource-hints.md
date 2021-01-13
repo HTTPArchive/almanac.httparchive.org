@@ -250,8 +250,6 @@ La percentuale di pagine che utilizzano il Native Lazy Loading.
   sql_file="native_lazy_loading_attrs.sql"
 ) }}
 
-{# TODO(authors/reviewers) - revisit this figure - Ref https://github.com/HTTPArchive/almanac.httparchive.org/pull/1587#discussion_r532292106 #}
-
 L'adozione è ancora agli inizi, soprattutto con le soglie ufficiali all'inizio di quest'anno troppo conservative e solo di <a href="https://addyosmani.com/blog/better-image-lazy-loading-in-chrome/">recente</a> si allineano con le aspettative degli sviluppatori. Con quasi il 72% dei browser che supportano il lazy loading di image/source, questa è un'altra area di opportunità, specialmente per le pagine che cercano di migliorare l'utilizzo dei dati e le prestazioni sui dispositivi di fascia bassa.
 
 L'esecuzione dell'audit "<a hreflang="en" href="https://web.dev/offscreen-images/">Defer offscreen images</a>" di Lighthouse ha portato il 68,65% delle pagine a superare il test. Per queste pagine c'è la possibilità di caricare le immagini dopo che tutte le risorse critiche hanno terminato il caricamento.
