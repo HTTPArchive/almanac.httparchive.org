@@ -1,0 +1,172 @@
+{% extends "base/base.html" %}
+{% block description %}Web Almanac è un report annuale sullo stato del Web che combina l'esperienza della comunità Web con i dati e le tendenze dell'archivio HTTP.{% endblock %}
+
+{% block twitter_image_alt %}{{ year }} Web Almanac{% endblock %}
+{% block skip_navigation %}Salta la navigazione{% endblock %}
+{% block organization %}Web Almanac di HTTP Archive{% endblock %}
+{% block web_almanac_logo %}
+  <span class="wa">Web Almanac</span>
+  <span class="line-group">
+    <span class="pre">di</span>
+    <span class="ha">HTTP Archive</span>
+  </span>
+{% endblock %}
+
+{% block intro_title %}Web Almanac{% endblock %}
+{% block intro_sub_title %}Rapporto annuale<br> <b>sullo stato del web</b> di HTTP Archive{% endblock %}
+
+{% block mission %}
+<p>
+La nostra missione è combinare le statistiche grezze e le tendenze del HTTP Archive con l'esperienza della comunità web. Il Web Almanac è un rapporto completo sullo stato del web, supportato da dati reali e da esperti web di fiducia. È composto da {{supported_chapters | length}} capitoli che abbracciano aspetti del page content, user experience, publishing e distribution.
+</p>
+{% endblock %}
+{% block read_last_years_almanac %}Leggi il Web Almanac del {{ year | int - 1 }}{% endblock %}
+
+{% block http_archive_link %}Pagina iniziale HTTP Archive{% endblock %}
+
+{% block page_navigation %}Navigazione tra le pagine{% endblock %}
+
+{% block help_translate %}Help Translate{% endblock %}
+{% block translation_not_available %}Inglese - non disponibile in inglese{% endblock %}
+{% block language_switcher %}Seleziona la lingua{% endblock %}
+{% block year_switcher %}Seleziona l'anno{% endblock %}
+{% block table_of_contents_switcher %}Seleziona sommario{% endblock %}
+
+{% block home %}Pagina iniziale{% endblock %}
+{% block table_of_contents_title %}Sommario{% endblock %}
+{% block contributors_title %} Collaboratori{% endblock %}
+{% block methodology_title %}Metodologia{% endblock %}
+
+{% block part %}Parte{% endblock %}
+{% block chapter %}Capitolo{% endblock %}
+
+{% block start_exploring %}Inizia a esplorare{% endblock %}
+
+{% block menu_title %}Menu della pagina{% endblock %}
+{% block open_the_menu %}Apri il menu{% endblock %}
+{% block close_the_menu %}Chiudi il menu{% endblock %}
+
+{% block index_nav_title %}Sommario del capitolo{% endblock %}
+{% block index_title %}Indice{% endblock %}
+{% block open_the_index %}Apri sommario{% endblock %}
+{% block close_the_index %}Chiudi sommario{% endblock %}
+
+{% block and %}e{% endblock %}
+{% block comma %}, {% endblock %}
+
+{% block open %}Apri{% endblock %}
+{% block close %}Chiudi{% endblock %}
+
+{% macro figure_text(metadata, id) %}Figura {{ figure_id(metadata, id) }}.{% endmacro %}
+{% macro show_description(metadata, id) %}Mostra la descrizione della Figura {{ figure_id(metadata, id) }}{% endmacro %}
+{% macro hide_description(metadata, id) %}Nascondi la descrizione della Figura {{ figure_id(metadata, id) }}{% endmacro %}
+
+{% block written_by_before %}Scritta da{% endblock %}
+{% block reviewed_by_before %}Revisionata da{% endblock %}
+{% block translated_by_before %}Tradotta da{% endblock %}
+{% block analysis_by_before %}Analizzata da{% endblock %}
+{% block edited_by_before %}Modificato da{% endblock %}
+{% block written_by_after %}{% endblock %}
+{% block reviewed_by_after %}{% endblock %}
+{% block translated_by_after %}{% endblock %}
+{% block analysis_by_after %}{% endblock %}
+{% block edited_by_after %}{% endblock %}
+
+{% block unedited %}[Inedito]{% endblock %}
+
+{% block author %}Autore{% endblock %}
+{% block authors %}Autori{% endblock %}
+
+{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} su Twitter{% endmacro %}
+{% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} su GitHub{% endmacro %}
+{% macro onLinkedIn(authorName) %}{{authorName}} su LinkedIn{% endmacro %}
+{% macro website(authorName) %}{{authorName}} sito web{% endmacro %}
+
+{% macro edition(year) %}Edizione {{ year }}{% endmacro %}
+
+{% block footer_title %}Navigazione nel footer di pagina{% endblock %}
+{% block copyright %}© Web Almanac. Concesso in licenza da <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
+{% block accessibility_statement %}Dichiarazione di accessibilità{% endblock %}
+
+{% block featured_chapter %}Capitolo in primo piano{% endblock %}
+{% block featured_chapter_last_year %}Capitolo in primo piano<br/>dal Web Almanac {{ year|int -1 }}{% endblock %}
+
+{# Check if read_chapter already defined in child template as macros can't be overridden #}
+{% if not read_chapter %}
+{% macro read_chapter(chapter) %}Leggi il capitolo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
+{% endif %}
+{% if not read_last_years_chapter %}
+{% macro read_last_years_chapter(chapter) %}Leggi il capitolo {{ year|int-1 }} <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
+{% endif %}
+
+{% block contributors_description %}
+Il Web Almanac è stato reso possibile grazie al duro lavoro della web community. {{self.contributors() }} persone si sono offerte volontarie per innumerevoli ore nelle fasi di pianificazione, ricerca, scrittura e produzione.
+{% endblock %}
+{% block contributors_link %}Vedi i contributori{% endblock %}
+
+{% block methodology_stat_1_title %}Siti web testati{% endblock %}
+{% block methodology_stat_2_title %}Dati trattati{% endblock %}
+{% block methodology_link %}Scopri la nostra metodologia{% endblock %}
+
+{% block introduction %}Introduzione{% endblock %}
+
+{% block foreword_title %}Prefazione{% endblock %}
+
+{% block coming_soon %}Prossimamente{% endblock %}
+
+{% block appendix %}Appendice{% endblock %}
+{% block appendices %}Appendici{% endblock %}
+
+{% block ebook_title %}Ebook{% endblock %}
+{% block ebook_download_short %}Ebook PDF ({{ ebook_size_in_mb }}MB){% endblock %}
+{% block ebook_download %}Download l'intera Web Almanac del {{ year }} in formato PDF ({{ ebook_size_in_mb }}MB){% endblock %}
+{% block ebook_download_note %}(Generato con <a href="https://www.princexml.com/">www.princexml.com</a>){% endblock %}
+
+{%
+  set localizedPartTitles = {
+    "I. Page Content": "I. Contenuto della Pagina",
+    "II. User Experience": "II. L'Esperienza Utente",
+    "III. Content Publishing": "III. Pubblicazione di Contenuti",
+    "IV. Content Distribution": "IV. Distribuzione dei Contenuti"
+  }
+%}
+{%
+  set localizedChapterTitles = {
+    "javascript": "JavaScript",
+    "css": "CSS",
+    "markup": "Markup",
+    "media": "Media",
+    "third-parties": "Terze parti",
+    "fonts": "Fonts",
+    "performance": "Performance",
+    "security": "Security",
+    "accessibility": "Accessibilità",
+    "seo": "SEO",
+    "pwa": "PWA",
+    "mobile-web": "Mobile Web",
+    "ecommerce": "Ecommerce",
+    "cms": "CMS",
+    "compression": "Compressione",
+    "caching": "Caching",
+    "cdn": "CDN",
+    "page-weight": "Peso della pagina",
+    "resource-hints": "Resource Hints",
+    "http2": "HTTP/2",
+    "privacy": "Privacy",
+    "capabilities": "Capacità",
+    "jamstack": "Jamstack"
+  }
+%}
+
+{% set localizedTeamNames = {
+  "analysts": "Analisti",
+  "authors": "Autori",
+  "brainstormers": "Brainstormers",
+  "designers": "Designer",
+  "developers": "Sviluppatori",
+  "editors": "Editori",
+  "leads": "Responsabili del progetto",
+  "reviewers": "Revisori",
+  "translators": "Traduttori",
+  }
+%}
