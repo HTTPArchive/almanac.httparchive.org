@@ -154,7 +154,7 @@ Further down the list at 2.43% is `ajax.googleapis.com`, Google's [Hosted Librar
 
 ## Page weight impact
 
-Third-parties can have a significant impact on the weight of a page, measured as the number of bytes downloaded by the browser. The [page weight chapter](./page-weight) explores this in more detail, here we focus on the third-parties that have the greatest impact on page weight.
+Third-parties can have a significant impact on the weight of a page, measured as the number of bytes downloaded by the browser. The [Page Weight chapter](./page-weight) explores this in more detail, here we focus on the third-parties that have the greatest impact on page weight.
 ### Heaviest third-parties
 
 We can extract the largest third-parties by the median page weight impact, i.e. how many bytes they bring to the pages they are on. The results are interesting as this does not take into account how popular the third-parties are, just their impact in bytes.
