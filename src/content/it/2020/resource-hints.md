@@ -236,8 +236,6 @@ Nel caso dell'audit "<a hreflang="en" href="https://web.dev/uses-rel-preconnect/
 
 Infine, l'esecuzione dell'audit "<a hreflang="en" href="https://web.dev/uses-rel-preload/">Preload key requests</a>" di Lighthouse ha portato l'84,6% delle pagine a superare il test. Se stai cercando di usare `preload` per la prima volta, ricorda che i fonts e gli script critici sono un buon punto di partenza.
 
-{# TODO(authors/reviewers) - revisit this sentence - Ref https://github.com/HTTPArchive/almanac.httparchive.org/pull/1587#discussion_r532291496 #}
-
 ### Native Lazy Loading
 
 Ora festeggiamo il primo anno dell'API <a hreflang="en" href="https://addyosmani.com/blog/lazy-loading/">Native Lazy Loading</a>, che al momento della pubblicazione ha già superato il <a hreflang="en" href="https://caniuse.com/loading-lazy-attr">72%</a> supporto browser. Questa nuova API può essere utilizzata per posticipare il caricamento di iframe e immagini sulla pagina finché l'utente non scorre accanto a essi. Ciò può ridurre l'utilizzo dei dati, l'utilizzo della memoria e velocizzare i contenuti. Attivare il lazy load è semplice come aggiungere `loading = lazy` sugli elementi `<iframe>` o `<img>`.
