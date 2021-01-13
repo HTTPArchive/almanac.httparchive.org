@@ -367,8 +367,8 @@ Il existe des dizaines de mesures différentes, orientées utilisation, qui peuv
 
 {{ figure_markup(
   image="performance-performance-observer-usage.png",
-  caption="Usage des PerformanceObserver par type de matériel.",
-  description="Graphique en barres montrant que l’adoption de l’API PerformanceObserver est faible, à 6,6 % sur les ordinateurs de bureau et 7 % sur les téléphones portables.",
+  caption="Usage des Performance Observer par type de matériel.",
+  description="Graphique en barres montrant que l’adoption de l’API Performance Observer est faible, à 6,6 % sur les ordinateurs de bureau et 7 % sur les téléphones portables.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ukFCTxx__dTBLwDQ3K_hCtXdLRGOGUYdR_TO043n_aCTdcwkxPUku9Qfoal6BESiV5RMtd0nEbqT/pubchart?oid=632678090&format=interactive",
   sheets_gid="934401790",
   sql_file="performance_observer.sql"
