@@ -584,7 +584,8 @@
     "giopunt": {
       "name": "Giovanni Puntil",
       "teams": [
-        "reviewers"
+        "reviewers",
+        "translators"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/1746646?v=4&s=200",
       "github": "giopunt",
