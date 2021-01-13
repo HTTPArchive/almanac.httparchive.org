@@ -265,7 +265,7 @@ In the charts above, the FCP distributions are broken down by desktop and mobile
 
 Comparing FCP on mobile devices on a year-over-year basis, we observe fewer good experiences and more moderate and poor experiences. 75% of websites have sub-par FCP. We can speculate this high percentage of less than ideal FCP readings is a source of frustration and degraded user experience.
 
-Numerous factors can delay paints, such as server latency (measured by a handful of metrics, such as [Time to First Byte (TTFB)](#time-to-first-byte-ttfb) and RTT), blocking JavaScript requests, or inappropriate handling of custom fonts to name a few.
+Numerous factors can delay paints, such as server latency (measured by a handful of metrics, such as [Time to First Byte (TTFB)](#time-to-first-byte) and RTT), blocking JavaScript requests, or inappropriate handling of custom fonts to name a few.
 
 ### FCP by geographic location
 
