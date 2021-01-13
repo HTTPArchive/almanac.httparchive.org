@@ -13,11 +13,11 @@ discuss: 2045
 results: https://docs.google.com/spreadsheets/d/164FVuCQ7gPhTWUXJl1av5_hBxjncNi0TK8RnNseNPJQ/
 queries: 09_Performance
 featured_quote: De mauvaises performances ne se traduisent pas seulement par de la frustration ou des effets négatifs sur les objectifs commerciaux, elles créent des véritables barrières à l’entrée. La pandémie mondiale de cette année a rendu ces obstacles encore plus évidents.
-featured_stat_1: 25&nbsp;%
+featured_stat_1: 25 %
 featured_stat_label_1: de sites avec un bon FCP sur mobile
-featured_stat_2: 18&nbsp;%
+featured_stat_2: 18 %
 featured_stat_label_2: de sites avec un bon TTFB sur mobile
-featured_stat_3: 4&nbsp;%
+featured_stat_3: 4 %
 featured_stat_label_3: de sites avec un score de performance inchangé dans LH6
 ---
 
