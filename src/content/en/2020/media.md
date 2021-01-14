@@ -5,7 +5,7 @@ chapter_number: 5
 title: Media
 description: Media chapter of the 2020 Web Almanac covering image file sizes and formats, responsive images, client hints, lazy loading, accessibility and video.
 authors: [tpiros, bseymour, eeeps]
-reviewers: [nhoizey, colinbendell, dougsillars, navaneethkrishna]
+reviewers: [nhoizey, colinbendell, dougsillars, Navaneeth-akam]
 analysts: [smatei]
 editors: [bazzadp]
 translators: []
@@ -34,11 +34,11 @@ Today, we live in the world of the visual web, where media provides the soul for
 
 ### Responsive HTML markup for images
 
-While there are myriad approaches to embedding media using javascript, we were interested in the ongoing uptake of varying forms of HTML markup being employed directly. Several ‘Responsive Images’ approaches including picture element, and srcset (within img or source element) have had growing support since first introduced in 2015.
+While there are myriad approaches to embedding media using javascript, we were interested in the ongoing uptake of varying forms of HTML markup being employed directly. Several 'Responsive Images' approaches including picture element, and srcset (within img or source element) have had growing support since first introduced in 2015.
 
 #### Srcset
 
-Srcset enables the User Agent to attempt to determine the most appropriate media asset to load from a candidate list’
+Srcset enables the User Agent to attempt to determine the most appropriate media asset to load from a candidate list'
 
 For example:
 
@@ -53,7 +53,7 @@ The number of images presented to the User Agents to choose from has direct impl
 1. Image breakpoints for performance budget
 2. Caching efficiencies
 
-The fewer the number of image candidates, the greater the likelihood of the asset being cached, and if a CDN is being used, the greater the likelihood of it being available on a client’s nearest edge. However the greater the difference in media dimensions, the more likely we are to end up serving media which is less suited to the device and context in question.
+The fewer the number of image candidates, the greater the likelihood of the asset being cached, and if a CDN is being used, the greater the likelihood of it being available on a client's nearest edge. However the greater the difference in media dimensions, the more likely we are to end up serving media which is less suited to the device and context in question.
 
 ##### Srcset: quantity of image candidates
 
@@ -109,7 +109,7 @@ Tools like the [Responsive Image Breakpoints Generator](https://www.responsivebr
 
 #### Sizes
 
-Without ’sizes’ the user agent will make its calculations on the basis that the image takes the full width of the viewport.
+Without 'sizes' the user agent will make its calculations on the basis that the image takes the full width of the viewport.
 
 For example:
 
@@ -204,7 +204,7 @@ Here is an example of the markup syntax that could be used to offer multiple for
 
 The User Agent will effectively select the first one that it has a positive match on, and hence the ordering logic here is important.
 
-Of those pages using picture for format switching, 83% offer WebP as one of the format variants, which in part relates to it’s growing browser support.
+Of those pages using picture for format switching, 83% offer WebP as one of the format variants, which in part relates to it's growing browser support.
 
 The formats being supported by different browser is a movable feast: WebP has now got much broader support across the browsers:
 - WebP: [90% coverage](https://caniuse.com/webp) (Edge, Firefox, Chrome, Opera, Android)
@@ -327,11 +327,11 @@ Likewise, on the video front, the vast majority of resources are sent in the low
 
 #### `rel=preconnect`
 
-In some cases, resources displayed on a page would come from another origin. In this case the ‘rel=preconnect’ attribute can be used on a link element to advice browsers about this fact. Note that useful it may seem to add this option to your site, since it’s a relatively cheap operation, there could be situations when additional CPU time is going to be utilised by establishing such connections. Interesting enough both on desktop and mobile we have seen a tiny amount of pages utilising this technique on desktop and mobile: 0.000054%, 0.000016% respectively.
+In some cases, resources displayed on a page would come from another origin. In this case the 'rel=preconnect' attribute can be used on a link element to advice browsers about this fact. Note that useful it may seem to add this option to your site, since it's a relatively cheap operation, there could be situations when additional CPU time is going to be utilised by establishing such connections. Interesting enough both on desktop and mobile we have seen a tiny amount of pages utilising this technique on desktop and mobile: 0.000054%, 0.000016% respectively.
 
 ### Usage of `data-url` vs `src` attribute
 
-Using data URLs (formerly known as data URIs) is a technique that allows developers to embed a base64 encoded image to a webpage. There are several benefits to using this solution (fast load times being one) but has several drawbacks as well (size). The usage of these doesn’t seem to be that widespread, 0.9% of the pages utilise data URLs for displaying images.
+Using data URLs (formerly known as data URIs) is a technique that allows developers to embed a base64 encoded image to a webpage. There are several benefits to using this solution (fast load times being one) but has several drawbacks as well (size). The usage of these doesn't seem to be that widespread, 0.9% of the pages utilise data URLs for displaying images.
 
 ### SEO & Accessibility
 
@@ -339,7 +339,7 @@ Using data URLs (formerly known as data URIs) is a technique that allows develop
 
 #### Usage of `alt` text
 
-The ‘alt’ attribute for images is used to provide a description of the image. Albeit being an optional attribute, it is immensely useful for accessibility since screen-readers would read the alt text. Furthermore it’s useful for situations when the image doesn’t load - in that case the text is shown.
+The 'alt' attribute for images is used to provide a description of the image. Albeit being an optional attribute, it is immensely useful for accessibility since screen-readers would read the alt text. Furthermore it's useful for situations when the image doesn't load - in that case the text is shown.
 
 {{ figure_markup(
   image="image-alt-usage-by-page.png",
@@ -355,7 +355,7 @@ Around 96% of all the pages processed had an img element - 21% of these images h
 
 #### Figure & Figcaption
 
-With HTML5, amongst other things, semantic elements were added to the language. These semantic elements give semantic meaning to content found within an HTML page. One element is the figure element which can, optionally use a fig caption element as its child. The main, and key difference between using a “simple” image tag (img) with a paragraph to describe the image versus using figure using a fig caption for description is that the former will semantically group the content about the figure together.
+With HTML5, amongst other things, semantic elements were added to the language. These semantic elements give semantic meaning to content found within an HTML page. One element is the figure element which can, optionally use a fig caption element as its child. The main, and key difference between using a "simple" image tag (img) with a paragraph to describe the image versus using figure using a fig caption for description is that the former will semantically group the content about the figure together.
 
 {{ figure_markup(
   image="figure-and-figcaption-usage-by-page.png",
@@ -393,7 +393,7 @@ There are two ways to use a `<video>`. You can either stick a single resource UR
 
 Twice as many `<video>`s have `<source>` children, vs a `src` attribute, indicating that authors want the ability to send different resources to different end users, depending on their context, rather than sending a single lowest-common-denominator resource to everyone (or, alternately, giving some portion of their audience a worse, or broken, experience).
 
-Also interestingly, we can see that, across all pages, only a percent or two contain `<video>` elements at all. It’s far less common than `<img>`!
+Also interestingly, we can see that, across all pages, only a percent or two contain `<video>` elements at all. It's far less common than `<img>`!
 
 ### Javascript players
 

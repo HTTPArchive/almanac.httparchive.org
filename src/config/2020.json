@@ -39,8 +39,7 @@
           "part": "I",
           "chapter": "5",
           "title": "Media",
-          "slug": "media",
-          "todo": true
+          "slug": "media"
         },
         {
           "part": "I",
@@ -964,7 +963,7 @@
       "github": "natedame",
       "twitter": "seonate"
     },
-    "navaneethkrishna": {
+    "Navaneeth-akam": {
       "name": "Navaneeth Krishna M P",
       "teams": [
         "reviewers"
