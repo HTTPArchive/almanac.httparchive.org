@@ -386,11 +386,10 @@ There are two ways to use a `<video>`. You can either stick a single resource UR
   caption="Video usage of Src versus Source.",
   description="Bar chart showing ",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=2100955508&format=interactive",
-  sheets_gid="689453572"
+  sheets_gid="689453572",
+  sql_file="big_non_custom_metrics.sql"
   )
 }}
-
-{# TODO (analyst) - what's the SQL file for this? #}
 
 Twice as many `<video>`s have `<source>` children, vs a `src` attribute, indicating that authors want the ability to send different resources to different end users, depending on their context, rather than sending a single lowest-common-denominator resource to everyone (or, alternately, giving some portion of their audience a worse, or broken, experience).
 
