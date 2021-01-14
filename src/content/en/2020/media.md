@@ -5,7 +5,7 @@ chapter_number: 5
 title: Media
 description: Media chapter of the 2020 Web Almanac covering image file sizes and formats, responsive images, client hints, lazy loading, accessibility and video.
 authors: [tpiros, bseymour, eeeps]
-reviewers: [nhoizey, colinbendell, dougsillars]
+reviewers: [nhoizey, colinbendell, dougsillars, navaneethkrishna]
 analysts: [smatei]
 editors: [bazzadp]
 translators: []
