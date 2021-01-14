@@ -30,7 +30,9 @@ Today, we live in the world of the visual web, where media provides the soul for
 
 ## Images
 
-{# TODO (authors) we don't like empty headings so can we have an intro sentence or two here? #}
+Images offer us the potential for a most powerful pairing: instant communication, capable of triggering an innate emotional response. 
+However, they require considered implementation techniques to avoid also being a burden to our web pages. Let's explore how well modern browser's capabilities are being leveraged.
+
 
 ### Responsive HTML markup for images
 
