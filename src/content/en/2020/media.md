@@ -362,11 +362,10 @@ With HTML5, amongst other things, semantic elements were added to the language. 
   caption="Figure and Figcaption usage by page.",
   description="Bar chart showing ",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=605432940&format=interactive",
-  sheets_gid="2037389060"
+  sheets_gid="2037389060",
+  sql_file="big_non_custom_metrics.sql"
   )
 }}
-
-{# TODO (analyst) - what's the SQL file for this? #}
 
 We can see that roughly 12% of the pages on both desktop and mobile use the figure element, however only roughly 1% use figcaption to add a description.
 
