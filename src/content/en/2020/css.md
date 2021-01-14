@@ -1273,7 +1273,7 @@ Examining the selectors on which custom properties are declared further confirms
 
 ## CSS and JS
 
-the last few years has seen a greater interaction between CSS and JavaScript, beyond the simple setting of CSS classes and styles or off.
+The last few years has seen a greater interaction between CSS and JavaScript, beyond the simple setting of CSS classes and styles or off. So how much are we using technologies like Houdini and techniques like CSS-in-JS?
 
 ### Houdini
 
@@ -1335,7 +1335,7 @@ While these properties are fairly [well supported](https://caniuse.com/css-logic
 
 ## Browser support
 
-A perenial problem with the web platform is how to introduce new features and extend the platform. CSS has seen us moving from vendor prefixes to feature queries as a better way of introducing change so we wanted to look at how those two techniques were being used.
+A perennial problem with the web platform is how to introduce new features and extend the platform. CSS has seen us moving from vendor prefixes to feature queries as a better way of introducing change so we wanted to look at how those two techniques were being used.
 
 ### Vendor prefixes
 
