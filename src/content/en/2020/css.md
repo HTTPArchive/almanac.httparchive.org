@@ -980,7 +980,7 @@ The gradient with the most color stops is [this one](https://dabblet.com/gist/4d
 
 ## Layout
 
-CSS now has a number of layout options - a far cry from the tables when tables had to be used for layouts. Flexbox, Grid and Multiple-column layouts are now well supported in most browsers so let's look at how these are being used.
+CSS now has a number of layout options—a far cry from the tables when tables had to be used for layouts. Flexbox, Grid and Multiple-column layouts are now well supported in most browsers so let's look at how these are being used.
 
 ### Flexbox and Grid adoption
 
