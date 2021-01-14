@@ -9,7 +9,7 @@ reviewers: [nhoizey, colinbendell, dougsillars]
 analysts: [smatei]
 editors: [bazzadp]
 translators: []
-tpiros_bio: Tamas Piros is a Developer Evangelist, Google Developer Expert and Technical Trainer.
+tpiros_bio: Tamas Piros is a Developer Experience Engineer at <a href="https://cloudinary.com/">Cloudinary</a>, Google Developer Expert and Technical Instructor.
 bseymour_bio: Ben Seymour is a Dynamic Media & Content Specialist at <a href="https://cloudinary.com/">Cloudinary</a>.
 eeeps_bio: Eric Portis is a Web Platform advocate at <a href="https://cloudinary.com/">Cloudinary</a>.
 discuss: 2041
@@ -26,7 +26,7 @@ unedited: true
 ---
 
 ## Introduction
-Today, we live in the world of the visual web, where media provides the soul for websites. Websites use both images and videos, in different shapes and formats to engage with audiences. However, online media not only serves a purpose to engage an audience but it also exists to tell a visual story, to convenience or to entertain.
+Today, we live in the world of the visual web, where media provides the soul for websites. Websites use both images and videos, in different shapes and formats to engage with audiences. However, online media not only serves a purpose to engage an audience but it also exists to tell a visual story, to convenience or to entertain. This chapter analyses images and videos on the web, how we use (or in cases, misuse) them.
 
 ## Images
 
@@ -457,4 +457,4 @@ Looking at additional information about videos, we can see that 57.22% of the vi
 
 ## Conclusion
 
-The web is an amazing place to tell a visual story. During our research we could see that the web is truly utilising a lot of elements of media. This diversity is also shown in the number of ways media is represented on the web today. The most basic features of displaying these elements are being actively used, however using modern browsers we could do a lot more. Some of the advanced media features are being used today (sometimes, incorrectly tough), and we’d like to encourage everyone to go a level deeper. Use all the features and capabilities of the modern web to bring more amazing visual experiences to the end user.
+The web is an amazing place to tell a visual story. During our research we could see that the web is truly utilising a lot of elements of media. This diversity is also shown in the number of ways media is represented on the web today. The most basic features of displaying these elements are being actively used, however using modern browsers we could do a lot more. Some of the advanced media features that are used today are amazing, however sometimes they are used incorrectly or in the wrong context. We would like to encourage everyone to go a level deeper: use all the features and capabilities of the modern web to bring more amazing visual experiences to users.
