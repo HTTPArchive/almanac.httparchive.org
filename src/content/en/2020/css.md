@@ -266,7 +266,7 @@ The humble `px` unit has gotten a lot of negative press over the years. At first
   sql_file="units_frequency.sql"
 ) }}
 
-The `px` unit is still going strong as the most popular length unit overall, with a whopping 72.58% of all length values across all stylesheets using `px`! And if we exclude percentages (since they are not really a unit) the share of `px` increases even more, to 84.14%.
+The `px` unit is still going strong as the most popular length unit overall, with a whopping 72.58% of all length values across all style sheets using `px`! And if we exclude percentages (since they are not really a unit) the share of `px` increases even more, to 84.14%.
 
 {{ figure_markup(
   image="length-units.png",
