@@ -10,7 +10,7 @@ analysts: [smatei]
 editors: [bazzadp]
 translators: []
 tpiros_bio: Tamas Piros is a Developer Experience Engineer at <a href="https://cloudinary.com/">Cloudinary</a>, Google Developer Expert and Technical Instructor.
-bseymour_bio: Ben Seymour is a Dynamic Media & Content Specialist at <a href="https://cloudinary.com/">Cloudinary</a>.
+bseymour_bio: Ben Seymour is a Dynamic Media & Content Specialist at <a href="https://cloudinary.com/">Cloudinary</a>, author of "Practical Responsive Images".
 eeeps_bio: Eric Portis is a Web Platform advocate at <a href="https://cloudinary.com/">Cloudinary</a>.
 discuss: 2041
 results: https://docs.google.com/spreadsheets/d/1SZGpCsTT0u1MFBrxed7HA9FLAloL1dS8ZIng986LvS8/
