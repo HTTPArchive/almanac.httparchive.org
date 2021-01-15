@@ -353,8 +353,6 @@ The `alt` attribute for images is used to provide a description of the image. Al
   )
 }}
 
-Around 96% of all the pages processed had an img element - 21% of these images had the alt attribute missing. 52% of the images had the alt attribute available, however 26% of these were left blank.
-
 {{ figure_markup(
   image="image-alt-usage-by-image.png",
   caption="Image alt usage by image.",
@@ -365,6 +363,9 @@ Around 96% of all the pages processed had an img element - 21% of these images h
   )
 }}
 
+Around 96% of all the pages processed had an img element - 21% of these images had the alt attribute missing. 52% of the images had the alt attribute available, however 26% of these were left blank.
+
+
 #### Figure & Figcaption
 
 With HTML5, amongst other things, semantic elements were added to the language. These semantic elements give semantic meaning to content found within an HTML page. One element is the figure element which can, optionally use a fig caption element as its child. The main, and key difference between using a "simple" image tag (img) with a paragraph to describe the image versus using figure using a fig caption for description is that the former will semantically group the content about the figure together.
@@ -372,7 +373,7 @@ With HTML5, amongst other things, semantic elements were added to the language. 
 {{ figure_markup(
   image="figure-and-figcaption-usage-by-page.png",
   caption="Figure and Figcaption usage by page.",
-  description="Bar chart showing ",
+  description="Bar chart showing 12.34% of desktop pages and 12.16% of mobile pages use Figure, but only 1.06% of desktop pages and 1.13% of mobile pages used Figcaption.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=605432940&format=interactive",
   sheets_gid="2037389060",
   sql_file="big_non_custom_metrics.sql"
@@ -396,7 +397,7 @@ There are two ways to use a `<video>`. You can either stick a single resource UR
 {{ figure_markup(
   image="video-usage-of-src-versus-source.png",
   caption="Video usage of Src versus Source.",
-  description="Bar chart showing ",
+  description="Bar chart showing 0.59% of desktop pages and 0.49% of mobile pages use Src for video, versus 1.14% of desktop pages and 0.99% of mobile pages use Source.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=2100955508&format=interactive",
   sheets_gid="689453572",
   sql_file="big_non_custom_metrics.sql"
@@ -414,7 +415,7 @@ We looked for the presence of a few common players (hls.js, video.js, Shaka Play
 {{ figure_markup(
   image="video-element-versus-javascript-player.png",
   caption="Video element versus JavaScript player.",
-  description="Bar chart showing ",
+  description="Bar chart showing 77.88% of desktop pages and 74.77% of mobile pages with video use Video Element, 28.06% of desktop pages and 30.57% of mobile pages with image use JavaScript Video Player, and 5.94% of desktop pages and 5.34% of mobile pages with image use both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=202644434&format=interactive",
   sheets_gid="1489710615",
   sql_file="video_tag_and_js_player.sql"
@@ -428,7 +429,7 @@ The analysis is complicated a bit by the fact that many players – such as vide
 {{ figure_markup(
   image="video-source-types.png",
   caption="Video source types.",
-  description="Bar chart showing ",
+  description="Bar chart showing the following usage of video foirmats on mobile: 64.08% for video/mp4, 19.68% for video/mp4, 10.08% for video/webm, 4.74% for video/ogg, 0.51% for video/vimeo, 0.37% for video/ogv, 0.12% for video/mpeg, 0.09% for video/mov. Desktop is very similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=203419864&format=interactive",
   sheets_gid="1459916814",
   sql_file="video_source_types.sql"
@@ -444,7 +445,7 @@ As for the legitimate MIME types; they capture *container* formats; MP4 and WebM
 {{ figure_markup(
   image="video-preload-values.png",
   caption="Video preload values.",
-  description="Bar chart showing ",
+  description="Bar chart showing 33% of desktop and mobile pages with video have preload of `none`, 36% of desktop and 27% of mobile pages with video have `auto`, 24% and 33% respectively have `metadata`, and 4% and 5% respectivdly do not have this set.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=989934821&format=interactive",
   sheets_gid="1099175973",
   sql_file="video_preload_values.sql"
@@ -458,7 +459,7 @@ The preload attribute is indicating for the browser whether a video should be do
 {{ figure_markup(
   image="video-autoplay-and-muted-usage.png",
   caption="Video autoplay and muted usage.",
-  description="Bar chart showing ",
+  description="Bar chart showing 57.22% of desktop pages with video and 53.86% of mobile have Videos Autoplaying, 56.36% and 53.41% have muted, and 48.74% of desktop and 45.99% of mobile pages with video have both set.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=1010709511&format=interactive",
   sheets_gid="1366238292",
   sql_file="video_autoplay_muted.sql"
