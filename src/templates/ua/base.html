@@ -31,7 +31,7 @@
 {% block page_navigation %}Навігація сторінки{% endblock %}
 
 {% block help_translate %}Допомогти з перекладом{% endblock %}
-{% block translation_not_available %}Англійською - недоступно Українською{% endblock %}
+{% block translation_not_available %}англійською - переклад недоступний{% endblock %}
 {% block language_switcher %}Змінити мову{% endblock %}
 {% block year_switcher %}Змінити рік{% endblock %}
 {% block table_of_contents_switcher %}Переключити зміст{% endblock %}
@@ -51,12 +51,13 @@
 {% block close_the_menu %}Закрити меню{% endblock %}
 
 {% block index_nav_title %}Розділ змісту{% endblock %}
-{% block index_title %}Перелік{% endblock %}
+{% block index_title %}Показчик{% endblock %}
 {% block open_the_index %}Відкрити зміст{% endblock %}
 {% block close_the_index %}Закрити зміст{% endblock %}
 
 {% block and %}і{% endblock %}
 {% block comma %}, {% endblock %}
+{% block oxford_comma %}{% endblock %}
 
 {% block open %}Відкрити{% endblock %}
 {% block close %}Закрити{% endblock %}
@@ -65,11 +66,11 @@
 {% macro show_description(metadata, id) %}Показати пояснення до рис. {{ figure_id(metadata, id) }}{% endmacro %}
 {% macro hide_description(metadata, id) %}Сховати пояснення до рис. {{ figure_id(metadata, id) }}{% endmacro %}
 
-{% block written_by_before %}Текст: {% endblock %}
-{% block reviewed_by_before %}Редагування: {% endblock %}
-{% block translated_by_before %}Переклад: {% endblock %}
-{% block analysis_by_before %}Аналіз: {% endblock %}
-{% block edited_by_before %}Корегування: {% endblock %}
+{% block written_by_before %}Автори: {% endblock %}
+{% block reviewed_by_before %}Редактори: {% endblock %}
+{% block translated_by_before %}Перекладачі: {% endblock %}
+{% block analysis_by_before %}Аналітики: {% endblock %}
+{% block edited_by_before %}Коректори: {% endblock %}
 {% block written_by_after %}{% endblock %}
 {% block reviewed_by_after %}{% endblock %}
 {% block translated_by_after %}{% endblock %}
@@ -116,7 +117,7 @@
 
 {% block foreword_title %}Передмова{% endblock %}
 
-{% block coming_soon %}Вже скоро!{% endblock %}
+{% block coming_soon %}Незабаром!{% endblock %}
 
 {% block appendix %}Додаток{% endblock %}
 {% block appendices %}Додатки{% endblock %}
