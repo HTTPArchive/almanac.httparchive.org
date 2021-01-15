@@ -20,7 +20,6 @@ featured_stat_2: 10.3%
 featured_stat_label_2: Usage of <code>font-display</code> swap
 featured_stat_3: 11.0%
 featured_stat_label_3: Usage of Variable Fonts on mobile sites
-unedited: true
 ---
 ## Introduction
 
@@ -129,7 +128,7 @@ Self-hosting fonts on the same domain as the website can be faster, as [we disco
   )
 }}
 
-It wouldn't be sound to infer causality between hosting strategy from the above data, as there are other variables that may confound the relationship. But, putting that aside, we find that adding the self-hosting fonts doesn't always lead to better performance. Hosted font solutions often perform a number of optimizations (like subsetting, removing OpenType features, and ensuring the smallest possible font format) that may not always be replicated when self-hosting. 
+It wouldn't be sound to infer causality between hosting strategy from the above data, as there are other variables that may confound the relationship. But, putting that aside, we find that adding the self-hosting fonts doesn't always lead to better performance. Hosted font solutions often perform a number of optimizations (like subsetting, removing OpenType features, and ensuring the smallest possible font format) that may not always be replicated when self-hosting.
 
 #### Local isn't always better
 
@@ -323,7 +322,7 @@ Variable fonts are certainly one of the biggest stories this year. They're seen 
 
 Likely the greatest driver of this increase is due to Google Fonts now serving a number of their more popular offerings as variable fonts when there are enough weights in use on a page and the browser supports them. The ability to 'swap in' variable fonts where a performance gain can be achieved without altering any of the CSS in use or any intervention required of the web author is a remarkable testament to the viability of the technology.
 
-The simplest description of the variable font format is a single font file that acts as many: rather than individual font files for every weight and width or even italics, they can all be contained in a single, highly efficient file. That resulting file can render the font at a given combination of axis values via CSS (or other applications that support them). There are a number of standardized, or 'registered', axes plus the ability for font designers to define their own axes and expose them to the user. 
+The simplest description of the variable font format is a single font file that acts as many: rather than individual font files for every weight and width or even italics, they can all be contained in a single, highly efficient file. That resulting file can render the font at a given combination of axis values via CSS (or other applications that support them). There are a number of standardized, or 'registered', axes plus the ability for font designers to define their own axes and expose them to the user.
 
 Weight (`wght`) corresponds to the traditional notion of regular or bold or light; width (`wdth`) maps to styles like condensed or extended; slant (`slnt`) refers to an oblique angle of the font; italic (`ital`) usually slants the font and replaces certain glyphs with alternate styles; and optical size (`opsz`) refers to something relatively new to the web, but is actually a revival of a technique common in metal type creation going back hundreds of years. Historically, optical sizing refers to the practice of reducing stroke contrast (thick and thin lines) and open up letter spacing when a font is made at a physically smaller size in order to increase legibility, and conversely to increase that contrast and tighten spacing when a font is displayed at much larger sizes. Enabling this in digital type can allow a single font to look and behave substantially differently when used at very small or large sizes. You can learn more about them and see lots of examples at [variablefonts.io](https://variablefonts.io).
 
