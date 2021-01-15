@@ -345,7 +345,7 @@ The `alt` attribute for images is used to provide a description of the image. Al
 {{ figure_markup(
   image="image-alt-usage-by-page.png",
   caption="Image alt usage by page.",
-  description="Bar chart showing 52.5% of desktop pages and 51.0% of mobile pages are missing alt attribute, 60.4% of desktop and 60.6% of mobile pages have blank alt attributes, and 83.6% of desktop and 82.1% of mobile pages have an alt present.",
+  description="Bar chart showing 96.26% of dresktop pages and 96.04% of mobile pages have images present. 52.5% of desktop pages and 51.0% of mobile pages are missing alt attribute, 60.4% of desktop and 60.6% of mobile pages have blank alt attributes, and 83.6% of desktop and 82.1% of mobile pages have an alt present.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=2144814052&format=interactive",
   sheets_gid="885941461",
   sql_file="image_alt.sql"
