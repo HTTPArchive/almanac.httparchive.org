@@ -6,6 +6,7 @@ description: Het hoofdstuk Mogelijkheden van de Web Almanac 2020 met betrekking 
 authors: [christianliebel]
 reviewers: [tomayac]
 analysts: [tomayac]
+editors: [rviscomi]
 translators: [noah-vdv]
 discuss: 2049
 results: https://docs.google.com/spreadsheets/d/1N6j1qKv7vc51p1W9z_RrbJX9Se3Pmb-Uersfz4gWqqs/
@@ -106,7 +107,7 @@ Er zijn twee categorieën webopslag: "Beste Inspanning" en "Permanent", waarbij 
 
 De `persist()` API wordt minder vaak aangeroepen dan de `estimate()` methode. Slechts 176 mobiele pagina's maken gebruik van deze API, vergeleken met 25 desktopwebsites. Hoewel het gebruik op de desktop op dit lage niveau lijkt te blijven, is er geen duidelijke trend op mobiele apparaten.
 
-## New Notification APIs
+## Nieuwe Notificatie APIs
 
 Met behulp van de Push- en Notifications-API's kunnen webapplicaties al lang pushberichten ontvangen en meldingsbanners weergeven. Er ontbraken echter enkele onderdelen. Tot nu toe moesten push-berichten via de server worden verzonden; ze konden niet offline worden gepland. Ook konden webtoepassingen die op het systeem waren geïnstalleerd, geen badges op hun pictogram weergeven. De API's voor badging en Notification Triggers maken beide scenario's mogelijk.
 
@@ -270,7 +271,7 @@ De Content Indexing API breidt de Service Worker API uit met een nieuwe `Content
 
 De Content Indexing API is gelanceerd met Chrome 84 in juli 2020. Direct na verzending werd de API gebruikt tijdens ongeveer 0,0002% van de paginaladingen in Chrome. In oktober 2020 is deze waarde bijna vertienvoudigd.
 
-## New Transport APIs
+## Nieuwe transport-API's
 
 Ten slotte zijn er twee nieuwe transportmethoden die momenteel worden getest op oorsprong. De eerste stelt ontwikkelaars in staat om hoogfrequente berichten te ontvangen met WebSockets, terwijl de tweede een geheel nieuw bidirectioneel communicatieprotocol introduceert, afgezien van HTTP en WebSockets.
 
