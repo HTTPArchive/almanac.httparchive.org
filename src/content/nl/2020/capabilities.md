@@ -140,7 +140,7 @@ registration.showNotification('Title', {
 {{ figure_markup(
   image="notification_triggers_api.png",
   alt="Percentage pagina's dat wordt geladen in Chrome met behulp van de Notification Triggers API",
-  caption='Percentage pagina's dat wordt geladen in Chrome met behulp van de Notification Triggers API.<br>(Bron: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">Notification Triggers</a>)',
+  caption='Percentage pagina\'s dat wordt geladen in Chrome met behulp van de Notification Triggers API.<br>(Bron: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">Notification Triggers</a>)',
   description="Diagram met Notification Triggers API-gebruik, gebaseerd op het percentage pagina's dat in Chrome wordt geladen met deze functie. Het vertoont een piek in maart 2020 met ongeveer 0,00003% van de paginaladingen, en daalt tot nul in oktober 2020.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1388597384&format=interactive",
   sheets_gid="1740370570"
@@ -168,31 +168,31 @@ De `navigator.wakeLock.request()` methode creëert een "wake lock". Deze methode
 
 BettyCrocker.com, een populaire kookwebsite in de VS, biedt hun gebruikers een optie om te voorkomen dat het scherm donker wordt tijdens het koken met behulp van de Screen Wake Lock API. In een <a hreflang="en" href="https://web.dev/betty-crocker/">casestudy</a> publiceerden ze dat de gemiddelde sessieduur 3,1 keer langer was dan normaal, het bouncepercentage met 50% afnam en de koopintentie-indicatoren met ongeveer 300%. De interface heeft dus een direct meetbaar effect op het succes van de website of applicatie. De Screen Wake Lock API werd in juli 2020 geleverd met Google Chrome 84. Het HTTP Archive bevat alleen gegevens voor april, mei, augustus, september en oktober. Na de release van Chrome 84 steeg het gebruik snel. In oktober 2020 werd de API aangenomen op 10 desktop- en 5 mobiele pagina's.
 
-## Idle Detection API
+## <span lang="en">Idle Detection API</span> {idle-detection-api}
 
-Some applications need to determine if the user is actively using a device or if they are idle. For instance, chat applications may display that the user is absent. There are various factors that can be taken into account, such as a lack of interaction with the screen, mouse, or keyboard. The [Idle Detection API](https://web.dev/idle-detection/) ([WICG Draft Community Group Report](https://wicg.github.io/idle-detection/)) provides an abstract API that allows developers to check if either the user is idle or the screen locked, given a certain threshold.
+Sommige applicaties moeten bepalen of de gebruiker een apparaat actief gebruikt of niet actief is. Chat-applicaties kunnen bijvoorbeeld aangeven dat de gebruiker afwezig is. Er zijn verschillende factoren waarmee rekening kan worden gehouden, zoals een gebrek aan interactie met het scherm, de muis of het toetsenbord. De <a hreflang="en" href="https://web.dev/idle-detection/">Idle Detection API</a> (<a hreflang="en" href="https://wicg.github.io/idle-detection/">WICG Draft Community Group Report</a>) biedt een abstracte API die stelt ontwikkelaars in staat om te controleren of de gebruiker inactief is of dat het scherm is vergrendeld, gegeven een bepaalde drempel.
 
-To do so, the API provides a new `IdleDetector` interface on the global `window` object. Before developers can use this functionality, they have to request permission by calling `IdleDetector.requestPermission()` first. If the user grants the permission, developers can create a new instance of `IdleDetector`. This object provides two properties: `userState` and `screenState`, containing the respective states. It will raise a `change` event when either the user's or the screen's state change. Finally, the idle detector needs to be started by calling its `start()` method. The method takes a configuration object with two parameters: a `threshold` defining the time in milliseconds that the user has to be idle (the minimum is a minute), and developers can optionally pass an `AbortSignal` to the `abort` property, which serves to abort idle detection later on.
+Om dit te doen, biedt de API een nieuwe `IdleDetector` interface op het globale `window` object. Voordat ontwikkelaars deze functionaliteit kunnen gebruiken, moeten ze toestemming vragen door eerst `IdleDetector.requestPermission()` aan te roepen. Als de gebruiker de toestemming verleent, kunnen ontwikkelaars een nieuwe instantie van `IdleDetector` maken. Dit object biedt twee eigenschappen: `userState` en `screenState`, die de respectievelijke statussen bevatten. Het zal een `change` -gebeurtenis oproepen wanneer de status van de gebruiker of het scherm verandert. Ten slotte moet de inactieve detector worden gestart door de `start()` - methode aan te roepen. De methode heeft een configuratie-object met twee parameters: een `threshold` die de tijd in milliseconden definieert dat de gebruiker inactief moet zijn (het minimum is een minuut), en ontwikkelaars kunnen optioneel een `AbortSignal` doorgeven aan de `abort`-eigenschap, die dient om de inactieve detectie later af te breken.
 
 {{ figure_markup(
   image="idle_detection_api.png",
-  alt="Percentage of page loads in Chrome using Idle Detection API",
-  caption='Percentage of page loads in Chrome using Idle Detection API.<br>(Source: <a href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">Idle Detection</a>)',
-  description="Chart of Idle Detection API usage, based on the percentage of page loads in Chrome using this feature. There's only data available for July and October 2020, showing a very low adoption of the API.",
+  alt="Percentage pagina's dat wordt geladen in Chrome met behulp van Idle Detection API",
+  caption='Percentage pagina\'s dat wordt geladen in Chrome met behulp van Idle Detection API.<br>(Bron: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">Idle Detection</a>)',
+  description="Grafiek van API-gebruik voor inactieve detectie, gebaseerd op het percentage pagina's dat met deze functie in Chrome wordt geladen. Er zijn alleen gegevens beschikbaar voor juli en oktober 2020, wat een zeer lage acceptatie van de API aantoont.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=963792757&format=interactive",
   sheets_gid="1324588405"
   )
 }}
 
-At the time of this writing, the Idle Detection API is in an origin trial, so its API shape may change in the future. For the same reason, its usage is very low and hardly measurable.
+Op het moment van schrijven bevindt de Idle Detection API zich in een oorspronkelijke proef, dus de API-vorm kan in de toekomst veranderen. Om dezelfde reden is het gebruik ervan erg laag en nauwelijks meetbaar.
 
-## Periodic Background Sync API
+## <span hreflang="en">Periodic Background Sync API</span> {periodic-background-sync-api}
 
-When the user closes a web application, it cannot communicate with its backend service anymore. In some cases, developers might still want to synchronize data on a more or less regular basis, just as native applications can. For instance, news applications might want to download the latest headlines before the user wakes up. The [Periodic Background Sync API](https://web.dev/periodic-background-sync/) ([WICG Draft Community Group Report](https://wicg.github.io/periodic-background-sync/)) strives to bridge this gap between web and native.
+Wanneer de gebruiker een web-app sluit, kan deze niet meer communiceren met de backend-service. In sommige gevallen willen ontwikkelaars mogelijk nog steeds gegevens min of meer regelmatig synchroniseren, net zoals native applicaties dat kunnen. Nieuwsapplicaties willen bijvoorbeeld de laatste krantenkoppen downloaden voordat de gebruiker wakker wordt. De <a hreflang="en" href="https://web.dev/periodic-background-sync/">Periodic Background Sync API</a> (<a hreflang="en" href="https://wicg.github.io/periodic-background-sync/">WICG Draft Community Group Report</a>) streeft ernaar deze kloof tussen web en native te overbruggen.
 
-### Register for periodic sync
+### Registreer voor periodieke synchronisatie
 
-The Periodic Background Sync API relies on Service Workers that can run even when the app is closed. As with other capabilities, this API requires users' permission first. The API implements a new interface called `PeriodicSyncManager`. If present, developers can access an instance of this interface on the Service Worker's registration. To synchronize data in the background, the application has to register first, by calling `periodicSync.register()` on the registration. This method takes two parameters: a `tag`, which is an arbitrary string to recognize the registration again later on, and a configuration object that takes a `minInterval` property. This property defines the desired minimum interval in milliseconds by the developer. However, the browser ultimately decides how often it will actually invoke background synchronization:
+De API voor periodieke achtergrondsynchronisatie is afhankelijk van Service Workers die kunnen worden uitgevoerd, zelfs als de app is gesloten. Net als bij andere mogelijkheden, vereist deze API eerst de toestemming van de gebruiker. De API implementeert een nieuwe interface genaamd `PeriodicSyncManager`. Indien aanwezig, hebben ontwikkelaars toegang tot een exemplaar van deze interface op de registratie van de Service Worker. Om gegevens op de achtergrond te synchroniseren, moet de toepassing zich eerst registreren door de registratie `periodicSync.register()` aan te roepen. Deze methode heeft twee parameters nodig: een `tag`, wat een willekeurige tekenreeks is om de registratie later opnieuw te herkennen, en een configuratieobject waaraan de eigenschap `minInterval` moet voldoen. Deze eigenschap definieert het gewenste minimuminterval in milliseconden door de ontwikkelaar. De browser beslist uiteindelijk echter hoe vaak hij de achtergrondsynchronisatie daadwerkelijk zal aanroepen:
 
 ```js
 registration.periodicSync.register('articles', {
@@ -200,9 +200,9 @@ registration.periodicSync.register('articles', {
 });
 ```
 
-### Respond to a periodic sync interval
+### Reageer op een periodiek synchronisatie-interval
 
-For each tick of the interval, and if the device is online, the browser triggers the Service Worker's `periodicsync` event. Then, the Service Worker script can perform the necessary steps to synchronize the data:
+Voor elke tick van het interval, en als het apparaat online is, activeert de browser de gebeurtenis `periodicsync` van de Service Worker. Vervolgens kan het Service Worker-script de nodige stappen uitvoeren om de gegevens te synchroniseren:
 
 ```js
 self.addEventListener('periodicsync', (event) => {
@@ -212,26 +212,26 @@ self.addEventListener('periodicsync', (event) => {
 });
 ```
 
-At the time of this writing, only Chromium-based browsers implement this API. On these browsers, the application has to be installed first (i.e., added to the homescreen) before the API can be used. The [site engagement score](https://www.chromium.org/developers/design-documents/site-engagement) of the website defines if and how often periodic sync events can be invoked. In the current conservative implementation, websites can sync content once a day.
+Op het moment van schrijven implementeren alleen op Chromium gebaseerde browsers deze API. Op deze browsers moet de applicatie eerst worden geïnstalleerd (d.w.z. toegevoegd aan het home scherm) voordat de API kan worden gebruikt. De <a hreflang="en" href="https://www.chromium.org/developers/design-documents/site-engagement">site engagement score</a> van de website bepaalt of en hoe vaak periodieke synchronisatiegebeurtenissen kunnen worden aangeroepen. In de huidige conservatieve implementatie kunnen websites inhoud één keer per dag synchroniseren.
 
 {{ figure_markup(
   image="periodic_background_sync_api.png",
-  alt="Number of pages using Periodic Background Sync API.",
-  caption="Number of pages using Periodic Background Sync API.",
-  description="Chart of Periodic Background Sync API usage, based on the number of pages monitored by HTTP Archive. It compares the usage on mobile and desktop devices. Since April 2020, the API is used by one to two desktop and mobile pages.",
+  alt="Aantal pagina's dat API voor periodieke achtergrondsynchronisatie gebruikt.",
+  caption="Aantal pagina's dat API voor periodieke achtergrondsynchronisatie gebruikt.",
+  description="Grafiek van API-gebruik voor periodieke achtergrondsynchronisatie, gebaseerd op het aantal pagina's dat wordt gecontroleerd door HTTP Archive. Het vergelijkt het gebruik op mobiele en desktop-apparaten. Sinds april 2020 wordt de API gebruikt door één tot twee desktop- en mobiele pagina's.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1444904371&format=interactive",
   sheets_gid="386193538",
   sql_file="periodic_background_sync_usage.sql"
   )
 }}
 
-The use of the interface is currently very low. Over 2020, only one or two pages monitored by HTTP Archive made use of this API.
+Het gebruik van de interface is momenteel erg laag. In de loop van 2020 maakten slechts één of twee pagina's die door HTTP Archive werden gecontroleerd, gebruik van deze API.
 
-## Integration with native app stores
+## Integratie met native app-winkels
 
-PWAs are a versatile application model. However, in some cases, it may still make sense to offer a separate native application: for example, if the app needs to use features that are not available on the web, or based on the programming experience of the app developer team. When the user already has a native app installed, apps might not want to send notifications twice or promote the installation of a corresponding PWA.
+PWA's zijn een veelzijdig appmodel. In sommige gevallen kan het echter nog steeds zinvol zijn om een aparte native applicatie aan te bieden: bijvoorbeeld als de app functies moet gebruiken die niet beschikbaar zijn op internet, of op basis van de programmeerervaring van het app-ontwikkelteam. Als de gebruiker al een native app heeft geïnstalleerd, willen apps mogelijk geen twee keer meldingen verzenden of de installatie van een bijbehorende PWA promoten.
 
-To detect if the user already has a related native application or PWA on the system, developers can use the [getInstalledRelatedApps() method](https://web.dev/get-installed-related-apps/) ([WICG Draft Community Group Report](https://wicg.github.io/get-installed-related-apps/spec/)) on the `navigator` object. This method is currently provided by Chromium-based browsers and works for both Android and Universal Windows Platform (UWP) apps. Developers need to adjust the native app bundles to refer to the website and add information about the native app(s) to the Web App Manifest of the PWA. Calling the `getInstalledRelatedApps()` method will then return the list of apps installed on the user's device:
+Om te detecteren of de gebruiker al een gerelateerde native applicatie of PWA op het systeem heeft, kunnen ontwikkelaars de <a hreflang="en" href="https://web.dev/get-installed-related-apps/">`getInstalledRelatedApps()` methode</a> (<a hreflang="en" href="https://wicg.github.io/get-installed-related-apps/spec/">WICG Draft Community Group Report</a>) gebruiken op het `navigator` -object. Deze methode wordt momenteel geleverd door op Chromium gebaseerde browsers en werkt voor zowel Android- als UWP-apps (Universal Windows Platform). Ontwikkelaars moeten de native app-bundels aanpassen om naar de website te verwijzen en informatie over de native app(s) toe te voegen aan het Web App Manifest van de PWA. Door de `getInstalledRelatedApps()` - methode aan te roepen, wordt de lijst met apps geretourneerd die op het apparaat van de gebruiker zijn geïnstalleerd:
 
 ```js
 const relatedApps = await navigator.getInstalledRelatedApps();
@@ -242,41 +242,41 @@ relatedApps.forEach((app) => {
 
 {{ figure_markup(
   image="get_installed_related_apps.png",
-  caption="Number of pages using getInstalledRelatedApps().",
-  description="Chart of getInstalledRelatedApps() usage, based on the number of pages monitored by HTTP Archive. It compares the usage on mobile and desktop devices. It shows a steady growth for mobile devices, peaking at 363 pages in October 2020 compared to 44 desktop pages.",
+  caption="Aantal pagina's dat `getInstalledRelatedApps()` gebruikt.",
+  description="Grafiek van het gebruik van `getInstalledRelatedApps()`, op basis van het aantal pagina's dat wordt gecontroleerd door HTTP Archive. Het vergelijkt het gebruik op mobiele en desktop-apparaten. Het laat een gestage groei zien voor mobiele apparaten, met een piek van 363 pagina's in oktober 2020 vergeleken met 44 desktoppagina's.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1774881171&format=interactive",
   sheets_gid="860146688",
   sql_file="get_installed_related_apps_usage.sql"
   )
 }}
 
-Over the course of 2020, the `getInstalledRelatedApps()` API shows a steady growth on mobile websites. In October, 363 mobile pages tracked by the HTTP Archive made use of this API. On desktop pages, the API does not grow quite as fast. This could also be due to Android stores currently providing significantly more apps than the Microsoft Store does for Windows.
+In de loop van 2020 vertoont de `getInstalledRelatedApps()` API een gestage groei op mobiele websites. In oktober maakten 363 mobiele pagina's die werden gevolgd door het HTTP Archive gebruik van deze API. Op desktoppagina's groeit de API niet zo snel. Dit kan ook het gevolg zijn van het feit dat Android-winkels momenteel aanzienlijk meer apps aanbieden dan de Microsoft Store voor Windows.
 
 ## Content Indexing API
 
-Web apps can store content offline using various ways, such as Cache Storage, or IndexedDB. However, for users it's hard to discover which content is available offline. The [Content Indexing API](https://web.dev/content-indexing-api/) ([WICG Editor's Draft](https://wicg.github.io/content-index/spec/)) allows developers to expose content more prominently. Currently, Chrome on Android is the only browser to support this API. This browser shows a list of "Articles for you" in the Downloads menu. Content indexed via the Content Indexing API will appear there.
+Webapps kunnen inhoud offline opslaan op verschillende manieren, zoals Cache Storage of IndexedDB. Voor gebruikers is het echter moeilijk om te ontdekken welke inhoud offline beschikbaar is. Met de <a hreflang="en" href="https://web.dev/content-indexing-api/">Content Indexing API</a> (<a hreflang="en" href="https://wicg.github.io/content-index/spec/">WICG Editor's Draft</a>) kunnen ontwikkelaars inhoud prominenter weergeven. Momenteel is Chrome op Android de enige browser die deze API ondersteunt. Deze browser toont een lijst met "Artikelen voor jou" in het menu Downloads. Inhoud die is geïndexeerd via de Content Indexing API, wordt daar weergegeven.
 
-The Content Indexing API extends the Service Worker API by providing a new `ContentIndex` interface. This interface is available via the `index` property of the Service Worker's registration. The `add()` method allows developers to add content to the index: Each piece of content must have an ID, a URL, a launch URL, title, description, and a set of icons. Optionally, the content can be grouped into different categories such as articles, homepages, or videos. The `delete()` method allows for removing content from the index again, and the `getAll()` method returns a list of all indexed entries.
+De Content Indexing API breidt de Service Worker API uit met een nieuwe `ContentIndex` interface. Deze interface is beschikbaar via de eigenschap `index` van de registratie van de Service Worker. Met de `add()` methode kunnen ontwikkelaars inhoud aan de index toevoegen: elk stukje inhoud moet een ID, een URL, een start-URL, titel, beschrijving en een reeks pictogrammen hebben. Optioneel kan de inhoud worden gegroepeerd in verschillende categorieën, zoals artikelen, homepagina's of video's. De `delete()` methode maakt het mogelijk om weer inhoud uit de index te verwijderen, en de `getAll()` methode geeft een lijst met alle geïndexeerde items terug.
 
 {{ figure_markup(
   image="content_indexing_api.png",
-  alt="Percentage of page loads in Chrome using Content Indexing API",
-  caption='Percentage of page loads in Chrome using Content Indexing API.<br>(Source: <a href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">Content Indexing</a>)',
-  description="Chart of Content Indexing API usage, based on the percentage of page loads in Chrome using this feature. It shows a relatively low usage at first, until it suddenly grows tenfold in October 2020, being used during 0.0021% of page loads in Chrome.",
+  alt="Percentage pagina's dat wordt geladen in Chrome met behulp van Content Indexing API",
+  caption='Percentage pagina's dat wordt geladen in Chrome met behulp van Content Indexing API.<br>(Bron: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">Content Indexing</a>)',
+  description="Grafiek van het gebruik van Content Indexing API, gebaseerd op het percentage pagina's dat met deze functie in Chrome wordt geladen. Het vertoont in eerste instantie een relatief laag gebruik, totdat het in oktober 2020 plotseling vertienvoudigt, en wordt gebruikt tijdens 0,0021% van de paginaladingen in Chrome.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=258329620&format=interactive",
   sheets_gid="626752011"
   )
 }}
 
-The Content Indexing API launched with Chrome 84 in July 2020. Directly after shipping, the API was used during approximately 0.0002% of page loads in Chrome. In October 2020, this value has increased almost tenfold.
+De Content Indexing API is gelanceerd met Chrome 84 in juli 2020. Direct na verzending werd de API gebruikt tijdens ongeveer 0,0002% van de paginaladingen in Chrome. In oktober 2020 is deze waarde bijna vertienvoudigd.
 
 ## New Transport APIs
 
-Finally, there are two new transport methods that are currently in origin trial. The first one allows developers to receive high-frequency messages with WebSockets, while the second one introduces an entirely new bidirectional communication protocol apart from HTTP and WebSockets.
+Ten slotte zijn er twee nieuwe transportmethoden die momenteel worden getest op oorsprong. De eerste stelt ontwikkelaars in staat om hoogfrequente berichten te ontvangen met WebSockets, terwijl de tweede een geheel nieuw bidirectioneel communicatieprotocol introduceert, afgezien van HTTP en WebSockets.
 
-### Backpressure for WebSockets
+### Tegendruk voor WebSockets
 
-The WebSocket API is a great choice for bidirectional communication between websites and servers. However, the WebSocket API does not allow for backpressure, so applications dealing with high-frequency messages may freeze. The [WebSocketStream API](https://web.dev/websocketstream/) ([Explainer](https://github.com/ricea/websocketstream-explainer/blob/master/README.md), not on the standards track yet) wants to bring easy-to-use backpressure support to the WebSocket API by extending it with streams. Instead of using the usual `WebSocket` constructor, developers need to create a new instance of the `WebSocketStream` interface. The `connection` property of the stream returns a promise that resolves to a readable and writable stream that allow to obtain a stream reader or writer, respectively:
+De WebSocket API is een uitstekende keuze voor bidirectionele communicatie tussen websites en servers. De WebSocket API staat echter geen tegendruk toe, dus applicaties die omgaan met hoogfrequente berichten kunnen vastlopen. De <a hreflang="en" href="https://web.dev/websocketstream/">WebSocketStream API</a> (<a hreflang="en" href="https://github.com/ricea/websocketstream-explainer/blob/master/README.md">Uitleg</a>, nog niet op het standaarden-spoor) wil gebruiksvriendelijke tegendrukondersteuning bieden aan de WebSocket API door deze uit te breiden met streams. In plaats van de gebruikelijke `WebSocket` constructor te gebruiken, moeten ontwikkelaars een nieuwe instantie van de `WebSocketStream` interface aanmaken. De eigenschap `connection` van de stream retourneert een belofte die wordt omgezet in een leesbare en beschrijfbare stream waarmee respectievelijk een streamlezer of een schrijver kan worden verkregen:
 
 ```js
 const wss = new WebSocketStream(WSS_URL);
@@ -285,23 +285,23 @@ const reader = readable.getReader();
 const writer = writable.getWriter();
 ```
 
-The WebSocketStream API transparently solves backpressure, as the stream readers and writers will only proceed if it's safe to do so.
+De WebSocketStream API lost op transparante wijze tegendruk op, aangezien de streamlezers en -schrijvers alleen doorgaan als het veilig is om dit te doen.
 
 {{ figure_markup(
   image="websocketstreams.png",
-  alt="Percentage of page loads in Chrome using WebSocketStreams",
-  caption='Percentage of page loads in Chrome using WebSocketStreams.<br>(Source: <a href="https://chromestatus.com/metrics/feature/timeline/popularity/3018">WebSocketStream</a>)',
-  description="Chart of WebSocketStreams usage, based on the percentage of page loads in Chrome using this feature. It shows a peak in June and July 2020, where the API was used during approximately 0.0008% of page loads.",
+  alt="Percentage pagina's dat in Chrome wordt geladen met WebSocketStreams",
+  caption='Percentage pagina's dat in Chrome wordt geladen met WebSocketStreams.<br>(Bron: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3018">WebSocketStream</a>)',
+  description="Grafiek van het gebruik van WebSocketStreams, gebaseerd op het percentage pagina's dat met deze functie in Chrome wordt geladen. Het vertoont een piek in juni en juli 2020, waar de API werd gebruikt tijdens ongeveer 0,0008% van de paginaladingen.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1714443590&format=interactive",
   sheets_gid="691106754"
   )
 }}
 
-The WebSocketStream API has completed its first origin trial and is now back in the experimentation phase again. This also explains why the usage of this API currently is so low that it's hardly measurable.
+De WebSocketStream API heeft zijn eerste oorspronkelijke proef voltooid en bevindt zich nu weer in de experimenteerfase. Dit verklaart ook waarom het gebruik van deze API momenteel zo laag is dat het nauwelijks meetbaar is.
 
-### Make it QUIC
+### Maak het QUIC
 
-[QUIC](https://www.chromium.org/quic) ([IETF Internet-Draft](https://www.ietf.org/archive/id/draft-ietf-quic-transport-31.txt)) is a multiplexed, stream-based, bidirectional transport protocol implemented on UDP. It's an alternative to HTTP/WebSocket APIs that are implemented on top of TCP. The [QuicTransport API](https://web.dev/quictransport/) is the client-side API for sending messages to and receiving messages from a QUIC server. Developers can choose to send data unreliably via datagrams, or reliably by using its streams API:
+<a hreflang="en" href="https://www.chromium.org/quic">QUIC</a> (<a hreflang="en" href="https://www.ietf.org/archive/id/draft-ietf-quic-transport-31.txt">IETF Internet-Draft</a>) is een multiplex, stream-gebaseerd, bidirectioneel transportprotocol geïmplementeerd op UDP. Het is een alternatief voor HTTP / WebSocket-API's die bovenop TCP worden geïmplementeerd. De <a hreflang="en" href="https://web.dev/quictransport/">QuicTransport API</a> is de cliënt-kant API voor het verzenden van berichten naar en het ontvangen van berichten van een QUIC-server. Ontwikkelaars kunnen ervoor kiezen om gegevens onbetrouwbaar via datagrammen te verzenden, of betrouwbaar door de streams-API te gebruiken:
 
 ```js
 const transport = new QuicTransport(QUIC_URL);
@@ -311,22 +311,22 @@ const ws = transport.sendDatagrams();
 const stream = await transport.createSendStream();
 ```
 
-QuicTransport is a valid alternative to WebSockets, as it supports the use cases from the WebSocket API and adds support for scenarios where minimal latency is more important than reliability and message order. This makes it a good choice for games and applications dealing with high-frequency events.
+QuicTransport is een geldig alternatief voor WebSockets, omdat het de gebruiksscenario's van de WebSocket API ondersteunt en ondersteuning toevoegt voor scenario's waarin minimale latentie belangrijker is dan betrouwbaarheid en berichtvolgorde. Dit maakt het een goede keuze voor games en apps die te maken hebben met hoogfrequente gebeurtenissen.
 
 {{ figure_markup(
   image="quic_transport.png",
-  alt="Percentage of page loads in Chrome using QuicTransport",
-  caption='Percentage of page loads in Chrome using QuicTransport.<br>(Source: <a href="https://chromestatus.com/metrics/feature/timeline/popularity/3184">QuicTransport</a>)',
-  description="Chart of QuicTransport usage, based on the percentage of page loads in Chrome using this feature. It shows a peak in October 2020, where the API was used during approximately 0.00089% of page loads.",
+  alt="Percentage pagina's dat in Chrome wordt geladen met Quic Transport",
+  caption='Percentage pagina's dat in Chrome wordt geladen met Quic Transport.<br>(Bron: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3184">QuicTransport</a>)',
+  description="Grafiek van het gebruik van QuicTransport, gebaseerd op het percentage pagina's dat met deze functie in Chrome wordt geladen. Het vertoont een piek in oktober 2020, waar de API werd gebruikt tijdens ongeveer 0.00089% van de paginaladingen.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1571330893&format=interactive",
   sheets_gid="708893754"
   )
 }}
 
-The use of the interface is currently still so low that it's hardly measurable. In October 2020, it has increased strongly and is now used during 0.00089% of page loads in Chrome.
+Het gebruik van de interface is momenteel nog zo laag dat het nauwelijks meetbaar is. In oktober 2020 is het sterk toegenomen en wordt het nu gebruikt tijdens 0.00089% van de paginaladingen in Chrome.
 
-## Conclusion
+## Conclusie
 
-The state of web capabilities in 2020 is healthy, as new, powerful APIs regularly ship with new releases of Chromium-based browsers. Some interfaces like the Content Indexing API or Idle Detection API help to add finishing touches to certain web applications. Other APIs, such as the File System Access and Async Clipboard API, allow a whole new application category, namely productivity apps, to finally fully make the shift to the web. Some APIs such as Async Clipboard and Web Share API have already made their way into other, non-Chromium browsers. Safari even was the first mobile browser to implement the Web Share API.
+De staat van de webmogelijkheden in 2020 is gezond, aangezien nieuwe, krachtige API's regelmatig worden geleverd met nieuwe releases van op Chromium gebaseerde browsers. Sommige interfaces, zoals de Content Indexing API of Idle Detection API, helpen om de laatste hand te leggen aan bepaalde webapplicaties. Andere API's, zoals File System Access en Async Clipboard API, zorgen ervoor dat een geheel nieuwe applicatiecategorie, namelijk productiviteitsapps, eindelijk de overstap naar het web maakt. Sommige API's, zoals Async Clipboard en Web Share API, zijn al in andere, niet-Chromium-browsers terechtgekomen. Safari was zelfs de eerste mobiele browser die de Web Share API implementeerde.
 
-Through its [rigorous process](https://developers.google.com/web/updates/capabilities#process), the Fugu team ensures that access to these features takes place in a secure and privacy-friendly manner. Additionally, the Fugu team actively solicits the [feedback](mailto:fugu-dev@chromium.org) from other browser vendors and web developers. While the usage of most of these new APIs is comparatively low, some APIs presented in this chapter show an exponential or even hockey stick-like growth, such as the Badging or Content Indexing API. The state of web capabilities in 2021 will depend on the web developers themselves. The author encourages the community to build great web applications, make use of the powerful APIs in a backwards-compatible manner, and help make the web a more capable platform.
+Door middel van zijn <a hreflang="en" href="https://developers.google.com/web/updates/capabilities#process">rigoureuze proces</a>, zorgt het Fugu-team ervoor dat toegang tot deze functies op een veilige en privacyvriendelijke manier plaatsvindt. Bovendien vraagt het Fugu-team actief de [feedback](mailto:fugu-dev@chromium.org) van andere browserleveranciers en webontwikkelaars. Hoewel het gebruik van de meeste van deze nieuwe API's relatief laag is, vertonen sommige API's die in dit hoofdstuk worden gepresenteerd een exponentiële of zelfs hockeystickachtige groei, zoals de Badging of Content Indexing API. De staat van de webmogelijkheden in 2021 hangt af van de webontwikkelaars zelf. De auteur moedigt de gemeenschap aan om geweldige webapplicaties te bouwen, gebruik te maken van de krachtige API's op een achterwaarts compatibele manier en om het web een meer capabel platform te maken.
