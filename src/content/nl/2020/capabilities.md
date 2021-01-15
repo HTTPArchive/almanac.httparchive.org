@@ -67,7 +67,7 @@ Afgezien van leesbewerkingen biedt de Async Clipboard API ook twee methoden om i
 
 De <a hreflang="en" href="https://bugs.chromium.org/p/chromium/issues/detail?id=897289">Raw Clipboard Access API</a>, een andere Fugu-mogelijkheid, zou de Async Clipboard API nog verder kunnen verbeteren door het mogelijk te maken dat willekeurige gegevens worden gekopieerd van of geplakt op het klembord.
 
-## StorageManager API
+## <span lang="en">StorageManager API</span>
 
 Webbrowsers stellen gebruikers in staat om gegevens op verschillende manieren op het systeem van de gebruiker op te slaan, zoals cookies, de Indexed Database (IndexedDB), de Service Worker's Cache Storage, of Web Storage (Local Storage, Session Storage). In moderne browsers kunnen ontwikkelaars gemakkelijk <a hreflang="en" href="https://web.dev/storage-for-the-web/">honderden megabytes en zelfs meer opslaan</a>, afhankelijk van de browser. Wanneer browsers onvoldoende ruimte hebben, kunnen ze gegevens wissen totdat het systeem niet langer de limiet overschrijdt, wat kan leiden tot gegevensverlies.
 
@@ -111,7 +111,7 @@ De `persist()` API wordt minder vaak aangeroepen dan de `estimate()` methode. Sl
 
 Met behulp van de Push- en Notifications-API's kunnen webapplicaties al lang pushberichten ontvangen en meldingsbanners weergeven. Er ontbraken echter enkele onderdelen. Tot nu toe moesten push-berichten via de server worden verzonden; ze konden niet offline worden gepland. Ook konden webtoepassingen die op het systeem waren geïnstalleerd, geen badges op hun pictogram weergeven. De API's voor badging en Notification Triggers maken beide scenario's mogelijk.
 
-### Badging API
+### <span lang="en">Badging API</span>
 
 Op verschillende platforms is het gebruikelijk dat applicaties een badge presenteren op het pictogram van de applicatie die het aantal openstaande acties aangeeft. De badge kan bijvoorbeeld het aantal ongelezen e-mails, meldingen of taken weergeven dat moet worden voltooid. Met de <a hreflang="en" href="https://web.dev/badging-api/">Badging API</a> (<a hreflang="en" href="https://w3c.github.io/badging/">W3C Unofficial Draft</a>) kunnen geïnstalleerde webapplicaties een dergelijke badge weergeven op het icoon. Door `navigator.setAppBadge()` aan te roepen, kunnen ontwikkelaars de badge instellen. Voor deze methode is een nummer nodig om op de badge van de applicatie te worden weergegeven. De browser zorgt er vervolgens voor dat de weergave zo goed mogelijk wordt weergegeven op het apparaat van de gebruiker. Als er geen nummer is opgegeven, wordt een algemene badge weergegeven (bijvoorbeeld een witte stip op macOS). Door `navigator.clearAppBadge()` aan te roepen, wordt de badge weer verwijderd. De Badging-API is een uitstekende keuze voor e-mailklanten, apps voor sociale media of messengers. De Twitter PWA maakt gebruik van de Badging API om het aantal ongelezen meldingen op de badge van de applicatie weer te geven.
 
@@ -127,7 +127,7 @@ Op verschillende platforms is het gebruikelijk dat applicaties een badge present
 
 In april 2020 heeft Google Chrome 81 de nieuwe Badging API verzonden, gevolgd door Microsoft Edge 84 in juli. Nadat Chrome de API had verzonden, schoten de gebruikscijfers omhoog. In oktober 2020 wordt bij 0,025% van alle pagina's die in Google Chrome worden geladen, de `setAppBadge()` - methode aangeroepen. De `clearAppBadge()` - methode wordt minder vaak aangeroepen, wanneer ongeveer 0,016% van de pagina's wordt geladen.
 
-### Notification Triggers API
+### <span lang="en">Notification Triggers API</span>
 
 De Push API vereist dat de gebruiker online is om een melding te ontvangen. Sommige applicaties, zoals games, herinnerings- of taakapps, agenda's of wekkers, kunnen ook de streefdatum voor een melding lokaal bepalen en deze plannen. Om deze functie te ondersteunen, experimenteert het Chrome-team met een nieuwe API genaamd <a hreflang="en" href="https://web.dev/notification-triggers/">Notification Triggers</a> (<a hreflang="en" href="https://github.com/beverloo/notification-triggers/blob/master/README.md">Uitleg</a>, nog niet op een standaardspoor). Deze API voegt een nieuwe eigenschap toe genaamd `showTrigger` aan de `options` map die kan worden doorgegeven aan de `showNotification()` methode bij de registratie van de Service Worker. De API is ontworpen om in de toekomst verschillende soorten triggers mogelijk te maken, hoewel voorlopig alleen op tijd gebaseerde triggers worden geïmplementeerd. Voor het plannen van een melding op basis van een bepaalde datum en tijd, kunnen ontwikkelaars een nieuwe instantie van een `TimestampTrigger` maken en het beoogde tijdstempel hieraan doorgeven:
 
@@ -150,7 +150,7 @@ registration.showNotification('Title', {
 
 Het Fugu-team experimenteerde eerst met Notification Triggers in een oorspronkelijke proef van Chrome 80 tot 83, waarbij de ontwikkeling later werd onderbroken vanwege het gebrek aan feedback van ontwikkelaars. Beginnend met Chrome 86 uitgebracht in oktober 2020, is de API weer in de oorspronkelijke proeffase terechtgekomen. Dit verklaart ook de gebruiksgegevens van de Notification Triggers API die piekten toen ze werden aangeroepen op 0,000032% van de pagina's die in Chrome werden geladen tijdens de eerste oorspronkelijke proef rond maart 2020.
 
-## Screen Wake Lock API
+## <span lang="en">Screen Wake Lock API</span>
 
 Om energie te besparen, verdonkeren mobiele apparaten de achtergrondverlichting van het scherm en schakelen uiteindelijk het scherm van het apparaat uit, wat in de meeste gevallen logisch is. Er zijn echter scenario's waarin de gebruiker wil dat de app het display expliciet wakker houdt, bijvoorbeeld bij het lezen van een recept tijdens het koken of het bekijken van een presentatie. De [Screen Wake Lock API](https://developer.mozilla.org/en-US/docs/Web/API/Screen_Wake_Lock_API) (<a hreflang="en" href="https://www.w3.org/TR/screen-wake-lock/">W3C Working Draft</a>) lost dit probleem op door een mechanisme te bieden om het scherm ingeschakeld te houden.
 
@@ -253,7 +253,7 @@ relatedApps.forEach((app) => {
 
 In de loop van 2020 vertoont de `getInstalledRelatedApps()` API een gestage groei op mobiele websites. In oktober maakten 363 mobiele pagina's die werden gevolgd door het HTTP Archive gebruik van deze API. Op desktoppagina's groeit de API niet zo snel. Dit kan ook het gevolg zijn van het feit dat Android-winkels momenteel aanzienlijk meer apps aanbieden dan de Microsoft Store voor Windows.
 
-## Content Indexing API
+## <span lang="en">Content Indexing API</span>
 
 Webapps kunnen inhoud offline opslaan op verschillende manieren, zoals Cache Storage of IndexedDB. Voor gebruikers is het echter moeilijk om te ontdekken welke inhoud offline beschikbaar is. Met de <a hreflang="en" href="https://web.dev/content-indexing-api/">Content Indexing API</a> (<a hreflang="en" href="https://wicg.github.io/content-index/spec/">WICG Editor's Draft</a>) kunnen ontwikkelaars inhoud prominenter weergeven. Momenteel is Chrome op Android de enige browser die deze API ondersteunt. Deze browser toont een lijst met "Artikelen voor jou" in het menu Downloads. Inhoud die is geïndexeerd via de Content Indexing API, wordt daar weergegeven.
 
