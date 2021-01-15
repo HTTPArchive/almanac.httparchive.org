@@ -6,6 +6,7 @@ description: CMS chapter of the 2020 Web Almanac covering CMS adoption, how CMS 
 authors: [alexdenning]
 reviewers: [sirjonathan, ernee, amedina]
 analysts: [GregBrimble, rviscomi]
+editors: [bazzadp]
 translators: []
 alexdenning_bio: Alex Denning is the Founder of <a href="https://getellipsis.com/">Ellipsis Marketing</a>, a marketing agency for WordPress businesses. Alex is a WordPress Core Contributor and has helped organize <a href="https://london.wordcamp.org/">WordCamp London</a>.
 discuss: 2051
@@ -51,7 +52,7 @@ More than 42% of web pages are powered by a CMS platform, an increase of over 5%
 {{ figure_markup(
   image="cms-adoption.png",
   caption="CMS adoption trend.",
-  description="Bar chart showing the increase in the level of CMS adoption in 2019 and 2020. Mobile has increased from 29.61% to 42.47%. Desktop has increased from 40.01% to 42.18.",
+  description="Bar chart showing the increase in the level of CMS adoption in 2019 and 2020. Mobile has increased from 39.61% to 42.47%. Desktop has increased from 40.01% to 42.18.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkUxfuK-FCn3_IYDJiEsKDmdmyKb0TSEhG8dFc0XBIXej1NO2uUOmd-9NCbWuh-MZ3xzMhK_kNT-4u/pubchart?oid=2061880890&format=interactive",
   sheets_gid="1638210080",
   sql_file="cms_adoption_compared_to_2019.sql"
@@ -334,7 +335,7 @@ To achieve this, we turn our analysis towards some user-perceived performance me
 
 In this section we take a look at three important factors provided by the [Chrome User Experience Report](./methodology#chrome-ux-report), which can shed light on our understanding of how users are experiencing CMS-powered web pages in the wild:
 
-- First Contentful Paint (FCP)
+- Largest Contentful Paint (LCP)
 - First Input Delay (FID)
 - Cumulative Layout Shift (CLS)
 

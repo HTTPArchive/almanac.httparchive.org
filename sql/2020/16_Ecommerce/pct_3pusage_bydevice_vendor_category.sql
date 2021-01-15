@@ -13,9 +13,9 @@ FROM (
     COUNT(0) AS requests,
     SUM(respSize) AS bytes
   FROM
-    `httparchive.almanac.summary_requests`
+    `httparchive.almanac.requests`
   JOIN (
-    SELECT 
+    SELECT DISTINCT
       _TABLE_SUFFIX AS client, 
       url AS page
     FROM `httparchive.technologies.2020_08_01_*`
@@ -28,7 +28,7 @@ FROM (
   ON
     NET.HOST(url) = domain  
 WHERE 
-  `httparchive.almanac.summary_requests`.date = '2020-08-01'
+  `httparchive.almanac.requests`.date = '2020-08-01'
 GROUP BY
     client,
     category,

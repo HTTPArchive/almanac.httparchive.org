@@ -6,6 +6,7 @@ description: 2019年Web AlmanacのEコマースの章では、Eコマースの�
 authors: [samdutton, alankent]
 reviewers: [voltek62]
 analysts: [rviscomi]
+editors: [bazzadp]
 translators: [ksakae]
 discuss: 1768
 results: https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/

@@ -6,6 +6,7 @@ description: Chapitre Média du Web Almanac 2019 couvrant les tailles et formats
 authors: [colinbendell, dougsillars]
 reviewers: [ahmadawais, eeeps]
 analysts: [dougsillars, rviscomi]
+editors: [bazzadp]
 translators: [borisschapira]
 discuss: 1759
 results: https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/
@@ -57,7 +58,7 @@ Il y a trois mesures à prendre en compte lorsqu’on regarde le volume des pixe
 * Les _pixels CSS_ se mesurent dans la mise en page CSS. Cette mesure se concentre sur les boîtes englobantes dans lesquelles une image ou une vidéo pourrait être étirée ou comprimée. Elle ne prend pas non plus en compte les pixels réels du fichier ni les pixels d’affichage à l’écran.
 * Les _pixels naturels_ se réfèrent aux pixels logiques représentés dans un fichier. Si vous chargiez cette image dans GIMP ou Photoshop, les dimensions du fichier de pixels seraient les pixels naturels.
 * Les _pixels de l’écran_ se réfèrent à l’électronique physique de l’écran. Avant les téléphones mobiles et les écrans modernes à haute résolution, il existait une relation 1:1 entre les pixels CSS et les points LED d’un écran. Cependant, comme les appareils mobiles sont tenus plus près de l'œil et que les écrans d’ordinateurs portables sont plus proches que les anciens terminaux <i lang="en">mainframe</i>, les écrans modernes ont un rapport plus élevé entre les pixels physiques et les pixels CSS traditionnels. Ce rapport est appelé &laquo;&nbsp;<span lang="en">Device-Pixel-Ratio</span>&nbsp;&raquo; ou, plus communément, &laquo;&nbsp;affichage Retina™&nbsp;&raquo;.
- 
+
 {{ figure_markup(
   image="fig3_image_pixel_per_page_mobile_css_v_actual.png",
   caption="Pixels d’image par page (mobile)&nbsp;: pixels CSS par rapport aux pixels naturels.",
@@ -86,7 +87,7 @@ Pour le terminal mobile utilisé pour le parcours des pages web, nous avons un a
 
 Si nous avions une image qui remplissait parfaitement tout l’écran, le taux de remplissage serait de 1x le taux de pixel. Bien sûr, il est rare qu’un site web remplisse toute la surface de la page avec une seule image. Le contenu des médias a tendance à se mélanger avec le design et d’autres contenus. Une valeur supérieure à 1x implique que la mise en page oblige l’utilisateur à faire défiler l’image pour voir le contenu supplémentaire.
 
-<p class="note">Remarque&nbsp;: ceci ne concerne que la mise en page CSS, à la fois pour le ratio de pixels et le volume du contenu de la mise en page. Il ne s’agit pas d’évaluer la pertinence des images adaptatives ou la pertinence de fournir des contenus à haute densité de pixels.</p> 
+<p class="note">Remarque&nbsp;: ceci ne concerne que la mise en page CSS, à la fois pour le ratio de pixels et le volume du contenu de la mise en page. Il ne s’agit pas d’évaluer la pertinence des images adaptatives ou la pertinence de fournir des contenus à haute densité de pixels.</p>
 
 {{ figure_markup(
   image="fig5_image_pixel_volume_v_css_pixels.png",
@@ -100,7 +101,7 @@ Au niveau de la page web médiane sur ordinateur de bureau, 46&nbsp;% de l’aff
 
 Les ressources médias sont essentielles pour l’expérience utilisateur.
 
-## Images 
+## Images
 
 Un grand nombre d’articles ont déjà été écrits sur la gestion et l’optimisation des images afin de réduire les octets et d’optimiser l’expérience utilisateur. C’est un sujet important et critique pour beaucoup, car ce sont les médias imaginatifs qui définissent l’expérience d’une marque. Par conséquent, l’optimisation des images et du contenu vidéo est un exercice d’équilibre entre la mise en œuvre des bonnes pratiques pouvant aider à réduire les octets transférés sur le réseau et la préservation de la fidélité de l’expérience recherchée.
 
@@ -156,7 +157,7 @@ Chaque format a ses propres mérites et a des utilisations idéales pour le web.
   </table>
    <figcaption>{{ figure_link(caption="Explication des principaux formats de fichiers.") }}</figcaption>
 </figure>
-  
+
 ### Formats d’images
 
 Dans l’ensemble, à travers l’ensemble des pages, nous voyons en effet la prédominance de ces formats. Le JPEG, l’un des plus anciens formats du web, est de loin le format d’image le plus utilisé avec 60&nbsp;% des requêtes d’image et 65&nbsp;% de tous les octets d’image. Il est intéressant de noter que le PNG est le deuxième format d’image le plus utilisé&nbsp;: 28&nbsp;% des requêtes d’images et des octets. La généralisation de son support ainsi que la précision des couleurs et la créativité de son contenu expliquent probablement sa large utilisation. En revanche, le SVG, le GIF et le WebP partagent presque la même utilisation avec 4&nbsp;%.
@@ -164,7 +165,7 @@ Dans l’ensemble, à travers l’ensemble des pages, nous voyons en effet la pr
 {{ figure_markup(
   image="fig7_image_format_usage.png",
   caption="Utilisation des formats d’image.",
-  description="Une carte arborescente montrant que le JPEG est utilisé 60,27&nbsp;% du temps, le PNG 28,2&nbsp;%, le WebP 4,2&nbsp;%, le GIF 3,67&nbsp;% et le SVG 3,63&nbsp;%.", 
+  description="Une carte arborescente montrant que le JPEG est utilisé 60,27&nbsp;% du temps, le PNG 28,2&nbsp;%, le WebP 4,2&nbsp;%, le GIF 3,67&nbsp;% et le SVG 3,63&nbsp;%.",
   width=600,
   height=376
   )
@@ -190,7 +191,7 @@ Bien que la page médiane comporte neuf JPEG et quatre PNG, et que les GIF n’a
   )
 }}
 
-Ceci explique pourquoi, même au 90e percentile des pages, la fréquence de WebP est toujours nulle&nbsp;; seules 9&nbsp;% des pages web contiennent ne serait-ce qu’une seule ressource. De nombreuses raisons peuvent expliquer que le WebP ne soit pas le bon choix pour une image, mais l’adoption des bonnes pratiques médias, comme l’adoption du WebP lui-même, n’en est encore qu’à ses débuts. 
+Ceci explique pourquoi, même au 90e percentile des pages, la fréquence de WebP est toujours nulle&nbsp;; seules 9&nbsp;% des pages web contiennent ne serait-ce qu’une seule ressource. De nombreuses raisons peuvent expliquer que le WebP ne soit pas le bon choix pour une image, mais l’adoption des bonnes pratiques médias, comme l’adoption du WebP lui-même, n’en est encore qu’à ses débuts.
 
 ### Taille des fichiers d’images
 
@@ -221,13 +222,13 @@ Là encore, il convient de souligner que cette comparaison de la densité des pi
 
 ### Optimisation du format d’image
 
-Choisir le meilleur format possible en fonction d’une expérience est un art qui consiste à équilibrer les capacités du format et à réduire le nombre total d’octets. Pour les pages web, l’un des objectifs est d’aider à améliorer les performances du web en optimisant les images. Cependant, dans chaque format, il existe des caractéristiques supplémentaires qui peuvent contribuer à réduire le nombre d’octets. 
+Choisir le meilleur format possible en fonction d’une expérience est un art qui consiste à équilibrer les capacités du format et à réduire le nombre total d’octets. Pour les pages web, l’un des objectifs est d’aider à améliorer les performances du web en optimisant les images. Cependant, dans chaque format, il existe des caractéristiques supplémentaires qui peuvent contribuer à réduire le nombre d’octets.
 
 Certaines de ces caractéristiques peuvent avoir un impact sur l’ensemble de l’expérience. Par exemple, les JPEG et les WebP peuvent utiliser la _quantification_ (communément appelée _niveaux de qualité_) et le _sous-échantillonnage chromatique_, qui peuvent réduire les bits stockés dans l’image sans avoir d’impact sur l’expérience visuelle. Comme les MP3 pour la musique, cette technique dépend d’un bug dans l'œil humain et permet d’obtenir la même expérience malgré la perte des données de couleur. Cependant, ces techniques ne sont pas adaptées à toutes les images, et peuvent créer des images grossières ou floues, déformer les couleurs ou rendre illisibles les superpositions de texte.
 
 D’autres particularités du format permettent de simplement organiser le contenu et nécessitent parfois une connaissance du contexte. Par exemple, en appliquant l’encodage progressif à un JPEG, on réorganise les pixels en couches de balayage, ce qui permet au navigateur de terminer la mise en page plus rapidement et, en même temps, de réduire le volume des pixels.
 
-Un des contrôles de [<span lang="en">Lighthouse</span>](./methodology#lighthouse) est un test A/B comparant la ligne de base avec un JPEG progressif. Cela donne une indication sur la possibilité d’optimiser davantage les images dans leur ensemble avec des techniques sans perte et éventuellement avec des techniques avec perte comme l’utilisation de différents niveaux de qualité. 
+Un des contrôles de [<span lang="en">Lighthouse</span>](./methodology#lighthouse) est un test A/B comparant la ligne de base avec un JPEG progressif. Cela donne une indication sur la possibilité d’optimiser davantage les images dans leur ensemble avec des techniques sans perte et éventuellement avec des techniques avec perte comme l’utilisation de différents niveaux de qualité.
 
 {{ figure_markup(
   image="fig12_percentage_optimized_images.png",
@@ -237,7 +238,7 @@ Un des contrôles de [<span lang="en">Lighthouse</span>](./methodology#lighthous
   )
 }}
 
-Les gains obtenus dans ce test A/B <span lang="en">Lighthouse</span> ne concernent pas seulement les réductions potentielles en termes d’octets, qui peuvent s’élever à plusieurs Mo au 95e percentile, ils démontrent également l’amélioration des performances des pages. 
+Les gains obtenus dans ce test A/B <span lang="en">Lighthouse</span> ne concernent pas seulement les réductions potentielles en termes d’octets, qui peuvent s’élever à plusieurs Mo au 95e percentile, ils démontrent également l’amélioration des performances des pages.
 
 {{ figure_markup(
   image="fig13_project_perf_improvements_image_optimization.png",
@@ -251,7 +252,7 @@ Les gains obtenus dans ce test A/B <span lang="en">Lighthouse</span> ne concerne
 
 Un autre axe d’amélioration des performances des pages consiste à utiliser des images adaptatives. Cette technique vise à réduire le nombre d’octets d’image en diminuant les pixels supplémentaires qui ne sont pas affichés à l’écran en raison du rétrécissement de l’image. Au début de ce chapitre, vous avez vu que la page web médiane sur ordinateur utilisait un MP d’espace réservé pour les images mais transférait 2,1&nbsp;MP de volume de pixels réels. Comme il s’agissait d’un test DPR 1x, 1,1&nbsp;MP de pixels ont été transférés sur le réseau, mais n’ont pas été affichés. Pour réduire cette surcharge, nous pouvons utiliser l’une des deux (éventuellement trois) techniques suivantes&nbsp;:
 
-* **Le balisage HTML** - utiliser une combinaison d’éléments `<picture>` et `<source>` avec les attributs `srcset` et `sizes` permet au navigateur de choisir la meilleure image à partir des dimensions du <span lang="en">viewport</span> et la densité de l’affichage. 
+* **Le balisage HTML** - utiliser une combinaison d’éléments `<picture>` et `<source>` avec les attributs `srcset` et `sizes` permet au navigateur de choisir la meilleure image à partir des dimensions du <span lang="en">viewport</span> et la densité de l’affichage.
 * **Indices Client** - permet de déléguer le choix des images éventuellement redimensionnées à la négociation de contenu HTTP.
 * **BONUS**&nbsp;: des bibliothèques JavaScript pour retarder le chargement des images jusqu’à ce que le JavaScript puisse s’exécuter, inspecter le DOM du navigateur et injecter l’image correcte en fonction du conteneur.
 
@@ -290,7 +291,7 @@ L’utilité de `srcset` dépend généralement de la précision de la requête 
   <figcaption>{{ figure_link(caption="Pourcentage de pages utilisant modèle de conception <code>sizes</code> le plus populaire.") }}</figcaption>
 </figure>
 
-* **`<img sizes="auto">`** - c’est l’utilisation la plus populaire, qui n’est en fait pas normalisée et qui est un artefact de l’utilisation de la bibliothèque JavaScript `lazy_sizes`. Celle-ci utilise du code côté client pour injecter un meilleur calcul des `sizes` pour le navigateur. L’inconvénient de cette méthode est qu’elle dépend du chargement du JavaScript et du DOM pour être totalement prête, ce qui retarde considérablement le chargement des images. 
+* **`<img sizes="auto">`** - c’est l’utilisation la plus populaire, qui n’est en fait pas normalisée et qui est un artefact de l’utilisation de la bibliothèque JavaScript `lazy_sizes`. Celle-ci utilise du code côté client pour injecter un meilleur calcul des `sizes` pour le navigateur. L’inconvénient de cette méthode est qu’elle dépend du chargement du JavaScript et du DOM pour être totalement prête, ce qui retarde considérablement le chargement des images.
 
 {{ figure_markup(
   image="fig16_top_patterns_of_img_sizes.png",
@@ -303,7 +304,7 @@ L’utilité de `srcset` dépend généralement de la précision de la requête 
 
 ### Indications Client
 
-Les Indications Client, ou [<span lang="en">Client Hints</span>](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints) permettent aux créateurs et créatrices de contenus de déplacer le redimensionnement des images vers la négociation de contenu HTTP. De cette manière, vous n’avez pas besoin de surcharger votre balisage HTML avec des `<img srcset>`, et vous reposer à la place sur la capacité du serveur ou du [CDN d’images à sélectionner l’image optimale](https://cloudinary.com/blog/client_hints_and_responsive_images_what_changed_in_chrome_67) suivant le contexte. Cela permet de simplifier le HTML et permet aux serveurs d’origine de s’adapter au fil du temps et de déconnecter les couches de contenu et de présentation. 
+Les Indications Client, ou [<span lang="en">Client Hints</span>](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints) permettent aux créateurs et créatrices de contenus de déplacer le redimensionnement des images vers la négociation de contenu HTTP. De cette manière, vous n’avez pas besoin de surcharger votre balisage HTML avec des `<img srcset>`, et vous reposer à la place sur la capacité du serveur ou du [CDN d’images à sélectionner l’image optimale](https://cloudinary.com/blog/client_hints_and_responsive_images_what_changed_in_chrome_67) suivant le contexte. Cela permet de simplifier le HTML et permet aux serveurs d’origine de s’adapter au fil du temps et de déconnecter les couches de contenu et de présentation.
 
 Pour activer les Indications Client, la page web doit envoyer un signal au navigateur en utilisant soit un en-tête HTTP supplémentaire `Accept-CH: DPR, Width, Viewport-Width` _ou_ en ajoutant dans le balisage HTML `<meta http-equiv="Accept-CH" content="DPR, Width, Viewport-Width">`. Le choix de l’une ou l’autre technique dépend de l’équipe qui la met en œuvre et les deux sont proposées pour des raisons de commodité.
 
@@ -318,7 +319,7 @@ Pour activer les Indications Client, la page web doit envoyer un signal au navig
 
 L’utilisation de la balise `<meta>` en HTML pour énoncer les Indications Client est beaucoup plus courante que l’en-tête HTTP. Cela reflète probablement la facilité avec laquelle on peut modifier les gabarits HTML par rapport à l’ajout d’en-têtes HTTP dans les outils intermédiaires. Cependant, si l’on considère l’utilisation de l’en-tête HTTP, plus de 50&nbsp;% de ces cas proviennent d’une seule plate-forme SaaS (Mercado).
 
-En observant la manière dont les Indications Client sont énoncées, on peut voir que la majorité des pages les utilisent pour les trois cas d’utilisation originaux&nbsp;: `DPR`, `ViewportWidth` et `Width`. Bien sûr, l’Indication Client `Width` nécessite l’utilisation de `<img sizes>` pour que le navigateur ait suffisamment de contexte sur la mise en page. 
+En observant la manière dont les Indications Client sont énoncées, on peut voir que la majorité des pages les utilisent pour les trois cas d’utilisation originaux&nbsp;: `DPR`, `ViewportWidth` et `Width`. Bien sûr, l’Indication Client `Width` nécessite l’utilisation de `<img sizes>` pour que le navigateur ait suffisamment de contexte sur la mise en page.
 
 {{ figure_markup(
   image="fig18_enabled_client_hints.png",
@@ -334,7 +335,7 @@ Les Indications Client liés au réseau, `downlink`, `rtt`, et `ect`, ne sont di
 
 L’amélioration des performances des pages web peut être partiellement caractérisée comme un jeu de miroirs&nbsp;: sans les supprimer, on décale les éléments les plus lents en dehors de la zone d’usage de l’utilisateur. Par exemple, le <span lang="en">lazy loading</span> d’images est une de ces illusions où les images et les contenus médias ne sont chargés que lorsque l’utilisateur fait défiler la page. Cela améliore les performances perçues, même sur des réseaux lents, et évite à l’utilisateur de télécharger des octets qui ne sont pas visualisés autrement.
 
-Plus tôt, dans la <a href="#fig-5">Figure 5</a>, nous avons montré que le volume de contenu d’image au 75e percentile est bien plus important que ce qui pourrait théoriquement être affiché sur un seul écran de bureau ou de téléphone portable. L’audit <span lang="en">Lighthouse</span> concernant les [images hors champs](https://developers.google.com/web/tools/lighthouse/audits/offscreen-images) confirme ce soupçon. La page web médiane contient 27&nbsp;% d’images situées nettement sous la partie visible de la page. Ce pourcentage passe à 84&nbsp;% au 90e percentile. 
+Plus tôt, dans la <a href="#fig-5">Figure 5</a>, nous avons montré que le volume de contenu d’image au 75e percentile est bien plus important que ce qui pourrait théoriquement être affiché sur un seul écran de bureau ou de téléphone portable. L’audit <span lang="en">Lighthouse</span> concernant les [images hors champs](https://developers.google.com/web/tools/lighthouse/audits/offscreen-images) confirme ce soupçon. La page web médiane contient 27&nbsp;% d’images situées nettement sous la partie visible de la page. Ce pourcentage passe à 84&nbsp;% au 90e percentile.
 
 {{ figure_markup(
   image="fig19_lighthouse_audit_offscreen.png",
@@ -345,9 +346,9 @@ Plus tôt, dans la <a href="#fig-5">Figure 5</a>, nous avons montré que le volu
   )
 }}
 
-L’audit <span lang="en">Lighthouse</span> nous indique qu’il y a un certain nombre de situations qui peuvent être difficiles à détecter, comme par exemple l’utilisation de substituts de qualité. 
+L’audit <span lang="en">Lighthouse</span> nous indique qu’il y a un certain nombre de situations qui peuvent être difficiles à détecter, comme par exemple l’utilisation de substituts de qualité.
 
-Le <i lang="en">Lazy Loading</i> [peut être implémenté](https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video) de différentes manières en incluant une combinaison de <i lang="en">Intersection Observers</i>, <i lang="en">Resize Observers</i>, ou en utilisant des bibliothèques JavaScript comme [lazySizes](https://github.com/aFarkas/lazysizes), [lozad](https://github.com/ApoorvSaxena/lozad.js), ou une poignée d’autres. 
+Le <i lang="en">Lazy Loading</i> [peut être implémenté](https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video) de différentes manières en incluant une combinaison de <i lang="en">Intersection Observers</i>, <i lang="en">Resize Observers</i>, ou en utilisant des bibliothèques JavaScript comme [lazySizes](https://github.com/aFarkas/lazysizes), [lozad](https://github.com/ApoorvSaxena/lozad.js), ou une poignée d’autres.
 
 En août 2019, Chrome 76 a été lancé avec le support du <i lang="en">lazy loading</i> basé sur des balises utilisant `<img loading="lazy">`. Alors que l’instantané des sites web utilisés pour le Web Almanac 2019 utilisait les données de juillet 2019, plus de 2&#8239;509 sites web utilisaient déjà cette fonctionnalité.
 
@@ -421,4 +422,4 @@ Le lecteur vidéo natif HTML5 ne fonctionne pas pour une lecture plus avancée (
 Le plus populaire (et de loin) est video.js, suivi de JWPLayer et HLS.js. Les auteurs admettent qu’il est possible qu’il existe d’autres fichiers portant le nom &laquo;&nbsp;video.js&nbsp;&raquo; qui ne soient pas de la même bibliothèque de lecture vidéo.
 
 ## Conclusion
-Presque toutes les pages web utilisent des images et des vidéos dans une certaine mesure pour améliorer l’expérience utilisateur et donner du sens. Ces fichiers médias utilisent une grande quantité de ressources et représentent un pourcentage important du poids des sites web (et ils ne vont pas disparaître&nbsp;!). L’utilisation de formats alternatifs, le <i lang="en">lazy loading</i>, les images adaptatives et l’optimisation des images peuvent contribuer grandement à réduire la taille des médias sur le web. 
+Presque toutes les pages web utilisent des images et des vidéos dans une certaine mesure pour améliorer l’expérience utilisateur et donner du sens. Ces fichiers médias utilisent une grande quantité de ressources et représentent un pourcentage important du poids des sites web (et ils ne vont pas disparaître&nbsp;!). L’utilisation de formats alternatifs, le <i lang="en">lazy loading</i>, les images adaptatives et l’optimisation des images peuvent contribuer grandement à réduire la taille des médias sur le web.

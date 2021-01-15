@@ -11,9 +11,9 @@ FROM (
     COUNT(0) AS requests,
     SUM(respSize) AS bytes
   FROM
-    `httparchive.almanac.summary_requests`
+    `httparchive.almanac.requests`
   JOIN (
-    SELECT _TABLE_SUFFIX AS client, url AS page
+    SELECT DISTINCT _TABLE_SUFFIX AS client, url AS page
     FROM `httparchive.technologies.2020_08_01_*`
     WHERE category = 'Ecommerce')
   USING

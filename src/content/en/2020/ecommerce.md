@@ -7,6 +7,7 @@ description: Ecommerce chapter of the 2020 Web Almanac covering ecommerce platfo
 authors: [rockeynebhwani]
 reviewers: [jrharalson, drewzboto]
 analysts: [jrharalson]
+editors: []
 translators: []
 #rockeynebhwani_bio: TODO
 discuss: 2052

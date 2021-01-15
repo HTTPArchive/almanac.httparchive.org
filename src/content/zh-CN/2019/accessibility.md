@@ -6,6 +6,7 @@ description: 2019 Web Almanac 网络年鉴的无障碍易访问性章节，涵�
 authors: [nektarios-paisios, obto, kleinab]
 reviewers: [ljme]
 analysts: [dougsillars, rviscomi, obto]
+editors: [obto]
 translators: [chengxicn]
 discuss: 1764
 results: https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/
@@ -198,7 +199,7 @@ featured_stat_label_3: 使用跳过链接的网站
   )
 }}
 
-实际上，您甚至不需要离开此站点，因为我们 [也在这里使用它们](https://github.com/HTTPArchive/almanac.httparchive.org/pull/645)! 
+实际上，您甚至不需要离开此站点，因为我们 [也在这里使用它们](https://github.com/HTTPArchive/almanac.httparchive.org/pull/645)!
 
 在分析网站时，很难准确认定什么是跳过链接。对于此分析，如果我们在页面的前3个链接中找到一个锚链接 (`href=#heading1`) ，我们将其定义为带有跳过链接的页面。因此，严格的上限是14.19％。
 
@@ -290,7 +291,7 @@ Tab顺序中几乎总是包含按钮和链接，因此具有极高的可见性�
 
 #### 必填字段和无效字段的指示符
 
-当我们遇到一个旁边有一个大红色星号的字段时，我们知道它是必填字段。或者，当我们点击“提交”并被告知存在无效的输入时，需要更正用不同颜色突出显示的所有内容，然后重新提交。但是，视力低下或没有视力的人不能依靠这些视觉提示， 这就是为什么HTML输入属性 `required`， `aria-required`，和`aria-invalid`如此重要的原因。它们为屏幕阅读器提供了相当于红色星号和红色突出显示字段的内容。额外的好处是，当您通知浏览器需要哪些字段时，它们会为您 [验证表单的某些部分](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Forms/Data_form_validation)。而无需JavaScript. 
+当我们遇到一个旁边有一个大红色星号的字段时，我们知道它是必填字段。或者，当我们点击“提交”并被告知存在无效的输入时，需要更正用不同颜色突出显示的所有内容，然后重新提交。但是，视力低下或没有视力的人不能依靠这些视觉提示， 这就是为什么HTML输入属性 `required`， `aria-required`，和`aria-invalid`如此重要的原因。它们为屏幕阅读器提供了相当于红色星号和红色突出显示字段的内容。额外的好处是，当您通知浏览器需要哪些字段时，它们会为您 [验证表单的某些部分](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Forms/Data_form_validation)。而无需JavaScript.
 
 在使用表单的网页中，有21.73% 在标记必填字段时使用 `required` 或者 `aria-required`。每五个站点中只有一个使用此功能。这是使您的网站无障碍并为所有用户解锁有帮助的浏览器功能的简单步骤。
 

@@ -9,7 +9,11 @@ const static_pages = [
   'table_of_contents.html',
   'methodology.html',
   'contributors.html',
-  'accessibility_statement.html'
+  'accessibility_statement.html',
+  'stories/page_content.html',
+  'stories/user_experience.html',
+  'stories/content_publishing.html',
+  'stories/content_distribution.html'
 ];
 const ebook_path = "static/pdfs/web_almanac_";
 

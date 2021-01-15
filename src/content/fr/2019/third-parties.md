@@ -6,6 +6,7 @@ description: Le chapitre sur les ressources tierces du Web Almanac 2019, qui abo
 authors: [patrickhulce]
 reviewers: [zcorpan, obto, jasti]
 analysts: [patrickhulce]
+editors: [bazzadp]
 translators: [borisschapira]
 discuss: 1760
 results: https://docs.google.com/spreadsheets/d/1iC4WkdadDdkqkrTY32g7hHKhXs9iHrr3Bva8CuPjVrQ/

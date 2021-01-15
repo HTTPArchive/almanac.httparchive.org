@@ -24,6 +24,7 @@ const generate_chapter_featured_quote = (metadata) => {
     let featured_stat_label = metadata["featured_stat_label_" + i];
     if (featured_stat && featured_stat_label) {
       // Showdown replaces & with &amp; so convert those back to avoid escape issues
+      featured_stat = featured_stat.replace(/&amp;/g,'&');
       featured_stat_label = featured_stat_label.replace(/&amp;/g,'&');
       featured_stats.push ([featured_stat, featured_stat_label]);
     }

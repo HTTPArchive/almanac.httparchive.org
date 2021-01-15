@@ -6,6 +6,7 @@ description: Chapitre JavaScript du Web Almanac 2019 couvrant la quantité de Ja
 authors: [housseindjirdeh]
 reviewers: [obto, paulcalvano, mathiasbynens, rviscomi]
 analysts: [rviscomi]
+editors: [obto]
 translators: [borisschapira]
 discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/

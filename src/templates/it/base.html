@@ -1,8 +1,11 @@
 {% extends "base/base.html" %}
+
 {% block description %}Web Almanac è un report annuale sullo stato del Web che combina l'esperienza della comunità Web con i dati e le tendenze dell'archivio HTTP.{% endblock %}
 
 {% block twitter_image_alt %}{{ year }} Web Almanac{% endblock %}
+
 {% block skip_navigation %}Salta la navigazione{% endblock %}
+
 {% block organization %}Web Almanac di HTTP Archive{% endblock %}
 {% block web_almanac_logo %}
   <span class="wa">Web Almanac</span>
@@ -20,6 +23,10 @@
 La nostra missione è combinare le statistiche grezze e le tendenze del HTTP Archive con l'esperienza della comunità web. Il Web Almanac è un rapporto completo sullo stato del web, supportato da dati reali e da esperti web di fiducia. È composto da {{supported_chapters | length}} capitoli che abbracciano aspetti del page content, user experience, publishing e distribution.
 </p>
 {% endblock %}
+<<<<<<< HEAD
+=======
+
+>>>>>>> upstream/main
 {% block read_last_years_almanac %}Leggi il Web Almanac del {{ year | int - 1 }}{% endblock %}
 
 {% block http_archive_link %}Pagina iniziale HTTP Archive{% endblock %}
@@ -53,6 +60,10 @@ La nostra missione è combinare le statistiche grezze e le tendenze del HTTP Arc
 
 {% block and %}e{% endblock %}
 {% block comma %}, {% endblock %}
+<<<<<<< HEAD
+=======
+{% block oxford_comma %}{% endblock %}
+>>>>>>> upstream/main
 
 {% block open %}Apri{% endblock %}
 {% block close %}Chiudi{% endblock %}
@@ -102,7 +113,11 @@ La nostra missione è combinare le statistiche grezze e le tendenze del HTTP Arc
 {% block contributors_description %}
 Il Web Almanac è stato reso possibile grazie al duro lavoro della web community. {{self.contributors() }} persone si sono offerte volontarie per innumerevoli ore nelle fasi di pianificazione, ricerca, scrittura e produzione.
 {% endblock %}
+<<<<<<< HEAD
 {% block contributors_link %}Vedi i contributori{% endblock %}
+=======
+{% block contributors_link %}Vedi i collaboratori{% endblock %}
+>>>>>>> upstream/main
 
 {% block methodology_stat_1_title %}Siti web testati{% endblock %}
 {% block methodology_stat_2_title %}Dati trattati{% endblock %}

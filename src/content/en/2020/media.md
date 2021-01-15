@@ -7,6 +7,7 @@ description: Media chapter of the 2020 Web Almanac covering image file sizes and
 authors: [tpiros, bseymour]
 reviewers: [nhoizey, zcorpan, colinbendell, dougsillars]
 analysts: [smatei]
+editors: []
 translators: []
 #tpiros_bio: TODO
 #bseymour_bio: TODO

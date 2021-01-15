@@ -6,6 +6,7 @@ description: Chapitre sur le balisage web du rapport Web Almanac 2019. Découvre
 authors: [bkardell]
 reviewers: [zcorpan, tomhodgins, matthewp]
 analysts: [rviscomi]
+editors: [rviscomi]
 translators: [borisschapira, SilentJMA]
 discuss: 1758
 results: https://docs.google.com/spreadsheets/d/1WnDKLar_0Btlt9UgT53Giy2229bpV4IM2D_v6OM_WzA/
@@ -301,7 +302,7 @@ Si nous remarquons que des choses populaires apparaissent (comme `<jdiv>`, pour 
 
 ## Conclusion
 
-Alors, il y a beaucoup de données ici, mais pour résumer : 
+Alors, il y a beaucoup de données ici, mais pour résumer :
 
 * Les pages ont plus d’éléments qu’il y a 14 ans, en moyenne et au maximum.
 * La durée de vie des éléments sur les pages d’accueil est *très* longue.  Le fait de déprécier ou d’abandonner des éléments ne les fait pas disparaître, et cela pourrait ne jamais arriver.

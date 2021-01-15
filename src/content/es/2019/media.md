@@ -6,6 +6,7 @@ description: Capítulo Multimedia del 2019 Web Almanac que cubre los tamaños y 
 authors: [colinbendell, dougsillars]
 reviewers: [ahmadawais, eeeps]
 analysts: [dougsillars, rviscomi]
+editors: [bazzadp]
 translators: [garcaplay]
 discuss: 1759
 results: https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/
@@ -24,7 +25,7 @@ featured_stat_label_3: Uso del elemento <code>&lt;picture&gt;</code>
 ## Introducción
 Las imágenes, animaciones y vídeos son una parte importante de la experiencia web. Son importantes por muchas razones: ayudan a contar historias, atraen a la audiencia y proporcionan expresión artística de una forma que a menudo no puede ser conseguida fácilmente a través de otras tecnologías web. La importancia de estos recursos multimedia puede ser demostrada de dos formas: por la gran cantidad de bytes que se requieren para descargar cada página, y también por la cantidad de píxeles que componen esos recursos.
 
-Desde una perspectiva puramente de bytes, el <i lang="en">HTTP Archive</i> ha [registrado históricamente](https://legacy.httparchive.org/interesting.php#bytesperpage) una media de dos tercios de bytes de recursos vinculados con recursos multimedia. Desde la perspectiva de la distribución, podemos ver que prácticamente toda página web depende de imágenes y vídeos. Incluso en el percentil 10, podemos ver que un 44% de los bytes son de recursos multimedia y puede llegar al 91% del total de bytes en las páginas del percentil 90. 
+Desde una perspectiva puramente de bytes, el <i lang="en">HTTP Archive</i> ha [registrado históricamente](https://legacy.httparchive.org/interesting.php#bytesperpage) una media de dos tercios de bytes de recursos vinculados con recursos multimedia. Desde la perspectiva de la distribución, podemos ver que prácticamente toda página web depende de imágenes y vídeos. Incluso en el percentil 10, podemos ver que un 44% de los bytes son de recursos multimedia y puede llegar al 91% del total de bytes en las páginas del percentil 90.
 
 {{ figure_markup(
   image="fig1_bytes_images_and_video_versus_other.png",
@@ -54,7 +55,7 @@ Analizar los bytes por página significa analizar el gasto por rendimiento de la
 
 Hay tres métricas a tener en cuenta cuando se analiza el tamaño de píxeles: píxeles CSS, píxeles lógicos y píxeles físicos:
 
-* El _tamaño de pixel CSS_ es desde el punto de vista del diseño. Esta medida se centra en la caja delimitadora a la que la imagen o el vídeo pueden adaptarse, expandiéndose o comprimiéndose. No tiene en cuenta ni los verdaderos píxeles del archivo ni los de la pantalla. 
+* El _tamaño de pixel CSS_ es desde el punto de vista del diseño. Esta medida se centra en la caja delimitadora a la que la imagen o el vídeo pueden adaptarse, expandiéndose o comprimiéndose. No tiene en cuenta ni los verdaderos píxeles del archivo ni los de la pantalla.
 * Los _píxeles lógicos_ se refieren a aquellos píxeles que conforman un archivo. Si tuvieras que cargar esa imagen en GIMP o en Photoshop, las dimensiones en píxeles de dicho archivo serían los píxeles lógicos (o píxeles naturales).
 * Los _píxeles físicos_ se refieren a las partes electrónicas de la pantalla. Antes del móvil y de las modernas pantallas de alta resolución, había una relación 1:1 entre los píxeles CSS y los puntos LED de una pantalla. Sin embargo, debido a que los dispositivos móviles son sostenidos muy próximos al ojo y que las pantallas de los ordenadores están más cerca que los monitores de los terminales antiguos, las pantallas actuales tienen un ratio mayor de píxeles físicos que los tradicionales píxeles CSS. Este ratio es el <i lang="en">Device-Pixel-Ratio</i>, coloquialmente llamado Retina™.
 
@@ -84,9 +85,9 @@ Los megapíxeles son una unidad de medida compleja porque es bastante abstracta.
 
 Para los dispositivos móviles usados en el rastreo (<i lang="en">crawl</i>) de páginas web, tenemos unas dimensiones de `512 x 360`, que suponen un 0,18 MP de contenido CSS (no confundir con las pantallas físicas para las cuales es `3x` o 3^2 píxeles más, 1,7 MP). Si se divide esta cantidad de píxeles del visor por el número de píxeles CSS correspondiente a las imágenes, obtenemos la cantidad de píxeles relativa.
 
-Si tuviéramos una imagen que ocupase perfectamente la totalidad de la pantalla, el ratio de relleno de píxeles sería de 1x. Por supuesto, rara vez una página web ocupa la pantalla completa con una única imagen. El contenido multimedia suele mezclarse con el diseño y otro tipo de contenido. Un valor superior a 1x significa que el diseño requiere que el usuario haga scroll para ver el resto de la imagen.   
+Si tuviéramos una imagen que ocupase perfectamente la totalidad de la pantalla, el ratio de relleno de píxeles sería de 1x. Por supuesto, rara vez una página web ocupa la pantalla completa con una única imagen. El contenido multimedia suele mezclarse con el diseño y otro tipo de contenido. Un valor superior a 1x significa que el diseño requiere que el usuario haga scroll para ver el resto de la imagen.
 
-<p class="note">Nota: esto es únicamente analizando el diseño CSS para tanto el <i lang="en">DPR</i> como para la cantidad de contenido del diseño. No está evaluándose la efectividad de las imágenes <i lang="en">responsive</i> o la efectividad de facilitar un contenido con alto DPR.</p> 
+<p class="note">Nota: esto es únicamente analizando el diseño CSS para tanto el <i lang="en">DPR</i> como para la cantidad de contenido del diseño. No está evaluándose la efectividad de las imágenes <i lang="en">responsive</i> o la efectividad de facilitar un contenido con alto DPR.</p>
 
 {{ figure_markup(
   image="fig5_image_pixel_volume_v_css_pixels.png",
@@ -100,13 +101,13 @@ Para la página web media en formato escritorio, solamente el 46% de la pantalla
 
 Los recursos multimedia son esenciales para la experiencia del usuario.
 
-## Imágenes 
+## Imágenes
 
 Ya se ha escrito mucho sobre la gestión y optimización de imágenes para ayudar a reducir los bytes y mejorar la experiencia de usuario. Este es un tema importante y esencial para muchos porque son los medios creativos los que definen la experiencia de marca. Por ello, optimizar el contenido de imagen y vídeo es un equilibrio entre aplicar las mejores prácticas que ayuden a reducir los bytes transferidos por la red y mantener la fidelidad de la experiencia prevista.
 
-Mientras que el enfoque utilizado para imágenes, vídeos y animaciones son, a grandes rasgos, similares, sus abordajes específicos pueden ser muy diferentes. En general, estas estrategias se reducen a: 
+Mientras que el enfoque utilizado para imágenes, vídeos y animaciones son, a grandes rasgos, similares, sus abordajes específicos pueden ser muy diferentes. En general, estas estrategias se reducen a:
 
-* **Formatos de archivo** - utilizando el formato de archivo óptimo. 
+* **Formatos de archivo** - utilizando el formato de archivo óptimo.
 * **Adaptable** - aplicando técnicas de imágenes <i lang="en">responsive</i> para transferir únicamente los píxeles que serán mostrados en pantalla.
 * **<i lang="en">Lazy loading</i>** - para trasladar solamente contenido que pueda ser visto por un humano.
 * **Accesibilidad** - asegurando una experiencia consistente para todos los seres humanos.
@@ -156,7 +157,7 @@ Cada formato tiene sus propias ventajas y usos para la web. Una forma muy simple
  </table>
  <figcaption>{{ figure_link(caption="Explicación de los formatos de archivo convencionales.") }}</figcaption>
 </figure>
-  
+
 ### Formatos de imagen
 
 Además, en toda la página, podemos ver la prevalencia de estos formatos. JPEG, uno de los formatos más antiguos de la web, es de lejos el que más comúnmente se utiliza como formato de imagen, con un 60% de peticiones de imagen y un 65% de todos los bytes de imagen. Curiosamente, el PNG es el segundo formato de imagen más común, con un 28% de peticiones de imágenes y bytes. La ubicuidad de la compatibilidad junto con la precisión del color y el contenido creativo son, probablemente, el porqué de su extendido uso. Por otro lado, SVG, GIF y WebP comparten un porcentaje de uso muy similar, el 4%.
@@ -190,7 +191,7 @@ Mientras que la página media tiene nueve JPEGS y cuatro PNGs, y solamente en el
   )
 }}
 
-Esto ayuda a explicar por qué, incluso en el percentil 90 de las páginas, la recurrencia del WebP es todavía nula; únicamente el 9% de las páginas web tienen al menos un recurso. Hay muchas razones por las que WebP podría no ser la mejor elección para una imagen, pero la adopción de las mejores prácticas multimedia, como la adopción del propio WebP, es todavía incipiente. 
+Esto ayuda a explicar por qué, incluso en el percentil 90 de las páginas, la recurrencia del WebP es todavía nula; únicamente el 9% de las páginas web tienen al menos un recurso. Hay muchas razones por las que WebP podría no ser la mejor elección para una imagen, pero la adopción de las mejores prácticas multimedia, como la adopción del propio WebP, es todavía incipiente.
 
 ### Tamaños de archivo de imagen
 
@@ -217,7 +218,7 @@ Aunque previamente se había visto que los archivos GIF son más pequeños que l
 
 Cabe señalar que el volumen de pixel usado para SVG es el tamaño del elemento del DOM en pantalla (en píxeles CSS). Pese a ser considerablemente menor en tamaño de archivo, esto nos da pie a pensar que normalmente los SVGs son usados en las partes del diseño más pequeñas. Esta es la razón por la que los bytes por pixel empeoran en comparación con el PNG.
 
-Nuevamente, cabe destacar que esta comparación de densidad de pixel no es equivalente a comparar las imágenes. Más bien muestra la experiencia de usuario típica. Como veremos más adelante, incluso en cada uno de estos formatos hay diferentes técnicas que pueden ser usadas para optimizar todavía más y reducir los bytes por pixel. 
+Nuevamente, cabe destacar que esta comparación de densidad de pixel no es equivalente a comparar las imágenes. Más bien muestra la experiencia de usuario típica. Como veremos más adelante, incluso en cada uno de estos formatos hay diferentes técnicas que pueden ser usadas para optimizar todavía más y reducir los bytes por pixel.
 
 ### Optimización del formato de imagen
 
@@ -252,7 +253,7 @@ La ventaja de este test AB <i lang="en">Lighthouse</i> no es solo la potencial r
 
 Otra forma de mejorar el rendimiento de la página es usar imágenes <i lang="en">responsive</i>. Esta técnica se basa en la reducción de bytes por imagen, mediante la reducción de aquellos pixeles de más que no estarán visibles debido al encogimiento de la imagen. Al comenzar este capítulo, viste cómo la página web media, en escritorio, usaba un MP de marcadores de imagen aunque transfiere 2,1 MP de volumen de pixel. Dado que esto era un test de 1x DPR, 1,1 MP de píxeles fueron transferidos por la red, pero no mostrados. Para reducir esta carga, podemos usar cualquiera de estas dos (posiblemente tres) técnicas:
 
-* **Marcado HTML** - a través de la combinación de los elementos `<picture>` y `<source>`, junto con los atributos `srcset` y `sizes`, se facilita que el navegador pueda seleccionar la mejor imagen, basándose en las dimensiones de la ventana y la densidad de pantalla. 
+* **Marcado HTML** - a través de la combinación de los elementos `<picture>` y `<source>`, junto con los atributos `srcset` y `sizes`, se facilita que el navegador pueda seleccionar la mejor imagen, basándose en las dimensiones de la ventana y la densidad de pantalla.
 * **<i lang="en">Client Hints</i>** - esto pasa la selección de posibles imágenes redimensionadas a negociación de contenido HTTP.
 * **BONUS**: Librerías de JavaScript para retrasar la carga de las imágenes hasta que el código JavaScript pueda ejecutar e inspeccionar el DOM del navegador e inyectar la mejor imagen para ese contenedor.
 
@@ -348,13 +349,13 @@ Anteriormente, en la [Figura 4.5](#fig-5), mostramos como el volumen del conteni
 
 La auditoría <i lang="en">Lighthouse</i> nos da solo una idea ya que hay un buen número de situaciones que pueden ser difíciles de detectar, como el uso de marcadores de calidad.
 
-El <i lang="en">lazy loading</i> [puede ser implementado](https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-vídeo) de muchas maneras, incluyendo el uso de una combinación de Observadores de intersección (<i lang="en">Intersection Observers</i>), Observadores de redimensión (<i lang="en">Resize Observers</i>), o el uso de librerías de JavaScript como [lazySizes](https://github.com/aFarkas/lazysizes), [lozad](https://github.com/ApoorvSaxena/lozad.js), y otras tantas. 
+El <i lang="en">lazy loading</i> [puede ser implementado](https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-vídeo) de muchas maneras, incluyendo el uso de una combinación de Observadores de intersección (<i lang="en">Intersection Observers</i>), Observadores de redimensión (<i lang="en">Resize Observers</i>), o el uso de librerías de JavaScript como [lazySizes](https://github.com/aFarkas/lazysizes), [lozad](https://github.com/ApoorvSaxena/lozad.js), y otras tantas.
 
 En agosto de 2019, Chrome 76 fue lanzado con la compatibilidad para un <i lang="en">lazy loading</i> basado en marcado usando `<img loading="lazy">`. Aunque la instantánea de los sitios web usada para el 2019 Web Almanac utilizaba datos de julio de 2019, más de 2.509 sitios web ya utilizaban esta función.
 
 ### Accesibilidad
 
-En el centro de la accesibilidad de imagen se encuentra la etiqueta `alt`. Cuando la etiqueta `alt` es añadida a una imagen, su texto puede ser usado para describir la imagen a un usuario que no puede ver dichas imágenes (bien debido a una discapacidad, o bien debido a una mala conexión a internet). 
+En el centro de la accesibilidad de imagen se encuentra la etiqueta `alt`. Cuando la etiqueta `alt` es añadida a una imagen, su texto puede ser usado para describir la imagen a un usuario que no puede ver dichas imágenes (bien debido a una discapacidad, o bien debido a una mala conexión a internet).
 
 Podemos encontrar todas las etiquetas de imagen en los archivos HTML del conjunto de datos. De las 13 millones de etiquetas de imagen que hay en versión escritorio y de las 15 millones que hay en versión móvil, un 91,6% tienen una etiqueta `alt` asociada. A primera vista, parece que la accesibilidad de imagen en la web está en muy buena forma. Pero, tras un análisis más profundo, el panorama no pinta tan bien. Si estudiamos la longitud de las etiquetas `alt` presentes en el conjunto de datos, podemos ver que su longitud media es de seis caracteres. Esto nos conduce a una etiqueta `alt` vacía (representada como `alt=""`). Solamente un 39% de las imágenes usa un texto `alt` con más de seis caracteres. El valor medio de texto `alt` "real" es de 31 caracteres, de los cuales 25 realmente se corresponden con la descripción de la imagen.
 

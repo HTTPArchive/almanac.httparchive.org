@@ -6,6 +6,7 @@ description: Security chapter of the 2020 Web Almanac covering transport layer s
 authors: [tomvangoethem, nrllh, bazzadp]
 reviewers: [cqueern, edmondwwchan]
 analysts: [tomvangoethem, nrllh]
+editors: []
 translators: []
 nrllh_bio: Nurullah Demir is a security researcher and PhD Student at <a href="https://www.internet-sicherheit.de/">Institute for Internet Security</a>. His research focuses on robust web security mechanisms and adversarial machine learning.
 tomvangoethem_bio: Tom Van Goethem is a researcher at the <a href="https://distrinet.cs.kuleuven.be/">DistriNet group</a> of the university of Leuven, Belgium. His research is focused on discovering new side-channel attacks on the web that lead to security or privacy issues, and figuring out how to patch the leaks that cause them.

@@ -3,6 +3,7 @@ from . import app, talisman
 from .helpers import render_template, convert_old_image_path, get_chapter_nextprev
 from .validate import validate
 from .config import get_config, DEFAULT_YEAR
+from . import stories_csp
 import random
 
 
@@ -80,6 +81,23 @@ def sitemap():
     resp = app.make_response(xml)
     resp.mimetype = "text/xml"
     return resp
+
+
+# Stories require their own CSP and to allow framing
+@app.route('/<lang>/<year>/stories/<story>')
+@validate
+@talisman(
+    content_security_policy=stories_csp.csp,
+    content_security_policy_nonce_in=['script-src'],
+    frame_options=None
+)
+def stories(lang, year, story):
+    # Flask-Talisman doesn't allow override of content_security_policy_nonce_in
+    # per route yet
+    # https://github.com/GoogleCloudPlatform/flask-talisman/issues/62
+    # So remove Nonce value from request object for now which has same effect
+    delattr(request, 'csp_nonce')
+    return render_template('%s/%s/stories/%s.html' % (lang, year, story.replace('-', '_')))
 
 
 # Assume anything else with at least 3 directories is a chapter

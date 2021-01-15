@@ -6,6 +6,7 @@ description: 2019 Web Almanacのキャッシュの章は、キャッシュコン
 authors: [paulcalvano]
 reviewers: [obto, bkardell]
 analysts: [paulcalvano, obto]
+editors: [bazzadp]
 translators: [ksakae]
 discuss: 1771
 results: https://docs.google.com/spreadsheets/d/1mnq03DqrRBwxfDV05uEFETK0_hPbYOynWxZkV3tFgNk/

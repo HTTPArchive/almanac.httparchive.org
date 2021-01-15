@@ -6,6 +6,7 @@ description: 使われている要素、カスタム要素、価値、製品、�
 authors: [bkardell]
 reviewers: [zcorpan, tomhodgins, matthewp]
 analysts: [rviscomi]
+editors: [rviscomi]
 translators: [MSakamaki]
 discuss: 1758
 results: https://docs.google.com/spreadsheets/d/1WnDKLar_0Btlt9UgT53Giy2229bpV4IM2D_v6OM_WzA/

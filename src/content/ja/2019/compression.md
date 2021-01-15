@@ -6,6 +6,7 @@ description: HTTP圧縮、アルゴリズム、コンテンツタイプ、ファ
 authors: [paulcalvano]
 reviewers: [obto, yoavweiss]
 analysts: [paulcalvano]
+editors: [bazzadp]
 translators: [ksakae]
 discuss: 1770
 results: https://docs.google.com/spreadsheets/d/1IK9kaScQr_sJUwZnWMiJcmHEYJV292C9DwCfXH6a50o/

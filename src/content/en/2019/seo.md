@@ -6,6 +6,7 @@ description: SEO chapter of the 2019 Web Almanac covering content, meta tags, in
 authors: [ymschaap, rachellcostello, AVGP]
 reviewers: [clarkeclark, andylimn, AymenLoukil, catalinred, mattludwig]
 analysts: [ymschaap]
+editors: [rachellcostello]
 translators: []
 discuss: 1765
 results: https://docs.google.com/spreadsheets/d/1uARtBWwz9nJOKqKPFinAMbtoDgu5aBtOhsBNmsCoTaA/

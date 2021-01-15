@@ -6,6 +6,7 @@ description: Capítulo sobre marcado del Web Almanac de 2019 que cubre elementos
 authors: [bkardell]
 reviewers: [zcorpan, tomhodgins, matthewp]
 analysts: [rviscomi]
+editors: [rviscomi]
 translators: [c-torres]
 discuss: 1758
 results: https://docs.google.com/spreadsheets/d/1WnDKLar_0Btlt9UgT53Giy2229bpV4IM2D_v6OM_WzA/
@@ -24,7 +25,7 @@ featured_stat_label_3: Variantes de carruseles encontradas
 
 En 2005, Ian "Hixie" Hickson publicó [algunos análisis de datos de marcado](https://web.archive.org/web/20060203035414/http://code.google.com/webstats/index.html) basándose en varios trabajos anteriores. Gran parte de este trabajo tenía como objetivo investigar los nombres de las clases para ver si había una semántica informal común que los desarrolladores estaban adoptando y que podría tener sentido estandarizar. Parte de esta investigación ayudó a darle forma a nuevos elementos en HTML5.
 
-14 años después, es hora de dar un nuevo vistazo. Desde entonces, hemos tenido la introducción de [Elementos Personalizados](https://developer.mozilla.org/docs/Web/Web_Components/Using_custom_elements) y del [Manifesto Web Extensible](https://extensiblewebmanifesto.org/) alentando a que encontremos mejores formas de pavimentar los caminos de acceso al permitir a los desarrolladores explorar el espacio de los elementos y permitir a los organismos de estándares [actuar más como editores de diccionario](https://bkardell.com/blog/Dropping-The-F-Bomb-On-Standards.html). A diferencia de los nombres de clase CSS, que podrían usarse para cualquier cosa, podemos estar mucho más seguros de que los autores que usaron un *elemento* no estándar realmente pretendían que fuera un elemento.  
+14 años después, es hora de dar un nuevo vistazo. Desde entonces, hemos tenido la introducción de [Elementos Personalizados](https://developer.mozilla.org/docs/Web/Web_Components/Using_custom_elements) y del [Manifesto Web Extensible](https://extensiblewebmanifesto.org/) alentando a que encontremos mejores formas de pavimentar los caminos de acceso al permitir a los desarrolladores explorar el espacio de los elementos y permitir a los organismos de estándares [actuar más como editores de diccionario](https://bkardell.com/blog/Dropping-The-F-Bomb-On-Standards.html). A diferencia de los nombres de clase CSS, que podrían usarse para cualquier cosa, podemos estar mucho más seguros de que los autores que usaron un *elemento* no estándar realmente pretendían que fuera un elemento.
 
 A partir de julio de 2019, el HTTP Archive ha comenzado a recopilar todos los nombres de elementos usados en el DOM para aproximadamente 4,4 millones de páginas de inicio de computadoras de escritorio y alrededor de 5,3 millones de páginas de inicio de dispositivos móviles que ahora podemos comenzar a investigar y diseccionar. _(Conozca más sobre nuestra [Metodología](./methodology).)_
 
@@ -34,7 +35,7 @@ Esta exploración encontró *más de 5.000 nombres distintos de elementos no est
 
 Los nombres de los elementos en cada página se recopilaron del DOM mismo, después de la ejecución inicial de JavaScript.
 
-Mirar un recuento de frecuencia sin procesar no es especialmente útil, incluso para elementos estándar: Alrededor del 25% de todos los elementos encontrados son `<div>`.  Alrededor del 17% son `<a>`, alrededor del 11% son `<span>` -- y esos son los únicos elementos que representan más del 10% de las ocurrencias. Los lenguajes [generalmente son así](https://www.youtube.com/watch?v=fCn8zs912OE); un pequeño número de términos se usan asombrosamente en comparación. Además, cuando comenzamos a buscar elementos no estándar para la captación, esto podría ser muy engañoso, ya que un sitio podría usar un cierto elemento miles de veces y, por lo tanto, parecer artificialmente muy popular.  
+Mirar un recuento de frecuencia sin procesar no es especialmente útil, incluso para elementos estándar: Alrededor del 25% de todos los elementos encontrados son `<div>`.  Alrededor del 17% son `<a>`, alrededor del 11% son `<span>` -- y esos son los únicos elementos que representan más del 10% de las ocurrencias. Los lenguajes [generalmente son así](https://www.youtube.com/watch?v=fCn8zs912OE); un pequeño número de términos se usan asombrosamente en comparación. Además, cuando comenzamos a buscar elementos no estándar para la captación, esto podría ser muy engañoso, ya que un sitio podría usar un cierto elemento miles de veces y, por lo tanto, parecer artificialmente muy popular.
 
 En lugar, como en el estudio original de Hixie, Lo que veremos es cuántos sitios incluyen cada elemento al menos una vez en su página de inicio.
 

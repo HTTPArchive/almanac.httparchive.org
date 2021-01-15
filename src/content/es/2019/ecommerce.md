@@ -6,6 +6,7 @@ description: Capítulo sobre comercio electrónico del Almanaque Web de 2019 que
 authors: [samdutton, alankent]
 reviewers: [voltek62]
 analysts: [rviscomi]
+editors: [bazzadp]
 translators: [JMPerez]
 discuss: 1768
 results: https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/
@@ -140,9 +141,9 @@ La Figura 13.3 anterior muestra que WooCommerce tiene la mayor adopción con alr
   data_height=414
   )
 }}
-  
+
 Hay 110 plataformas de comercio electrónico usadas por menos de un 0,1% de sitios web de escritorio o móvil. Alrededor de 60 de éstas tienen menos del 0,01% de sitios web móviles o de escritorio.
-  
+
 {{ figure_markup(
   image="fig5.png",
   caption="Adopción combinada de las 6 principales plataformas de comercio electrónico versus las otras 110 plataformas.",

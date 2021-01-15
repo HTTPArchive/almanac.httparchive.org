@@ -5,8 +5,9 @@ title: HTTP/2
 description: Capítulo de HTTP/2 de 2019 do Web Almanac que cobre a adoção e o impacto do HTTP/2, HTTP/2 Push, Problemas do HTTP/2 e HTTP/3.
 authors: [bazzadp]
 reviewers: [bagder, rmarx, dotjs]
-translators: [elaynelemos]
 analysts: [paulcalvano]
+editors: [rachellcostello]
+translators: [elaynelemos]
 discuss: 1775
 results: https://docs.google.com/spreadsheets/d/1z1gdS3YVpe8J9K3g2UdrtdSPhRywVQRBz5kgBeqCnbw/
 queries: 20_HTTP_2

@@ -6,6 +6,7 @@ description: Caching chapter of the 2019 Web Almanac covering cache-control, exp
 authors: [paulcalvano]
 reviewers: [obto, bkardell]
 analysts: [paulcalvano, obto]
+editors: [bazzadp]
 translators: []
 discuss: 1771
 results: https://docs.google.com/spreadsheets/d/1mnq03DqrRBwxfDV05uEFETK0_hPbYOynWxZkV3tFgNk/

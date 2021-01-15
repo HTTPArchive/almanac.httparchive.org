@@ -6,6 +6,7 @@ description: CDNの採用と使用法、RTTとTLSの管理、HTTP/2の採用、�
 authors: [andydavies, colinbendell]
 reviewers: [yoavweiss, paulcalvano, pmeenan, enygren]
 analysts: [raghuramakrishnan71, rviscomi]
+editors: [rviscomi]
 translators: [ksakae]
 discuss: 1772
 results: https://docs.google.com/spreadsheets/d/1Y7kAxjxUl8puuTToe6rL3kqJLX1ftOb0nCcD8m3lZBw/

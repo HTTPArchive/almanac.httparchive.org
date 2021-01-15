@@ -6,6 +6,7 @@ description: コンテンツ、メタタグ、インデクサビリティ、リ�
 authors: [ymschaap, rachellcostello, AVGP]
 reviewers: [clarkeclark, andylimn, AymenLoukil, catalinred, mattludwig]
 analysts: [ymschaap]
+editors: [rachellcostello]
 translators: [MSakamaki]
 discuss: 1765
 results: https://docs.google.com/spreadsheets/d/1uARtBWwz9nJOKqKPFinAMbtoDgu5aBtOhsBNmsCoTaA/

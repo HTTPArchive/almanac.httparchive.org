@@ -6,6 +6,7 @@ description: 2019年のWeb Almanacのリソースヒントの章では、dns-pre
 authors: [khempenius]
 reviewers: [andydavies, bazzadp, yoavweiss]
 analysts: [rviscomi]
+editors: [rviscomi]
 translators: [ksakae]
 discuss: 1774
 results: https://docs.google.com/spreadsheets/d/14QBP8XGkMRfWRBbWsoHm6oDVPkYhAIIpfxRn4iOkbUU/

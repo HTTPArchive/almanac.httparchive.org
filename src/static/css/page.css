@@ -204,7 +204,8 @@
 
 .byline.reviewers,
 .byline.translators,
-.byline.analysts {
+.byline.analysts,
+.byline.editors {
   font-weight: normal;
 }
 
@@ -468,6 +469,11 @@ figure img {
   border: 1px solid #e5e5e5;
 }
 
+.height-16vw-122px {
+  max-height: 122px;
+  height: 16vw;
+}
+
 figure iframe {
   display: block;
   margin: 0 auto;
@@ -589,8 +595,8 @@ figure .big-number {
   font: bold 128px/1em Poppins, sans-serif;
   font: bold 8rem/1em Poppins, sans-serif;
   color: #62718b;
+  word-break: break-word;
   overflow-wrap: break-word;
-  word-break: break-all;
 }
 
 figure .medium-number {
@@ -598,6 +604,7 @@ figure .medium-number {
   font: bold 48px/1em Poppins, sans-serif;
   font: bold 3rem/1em Poppins, sans-serif;
   color: #62718b;
+  word-break: break-word;
   overflow-wrap: break-word;
 }
 
@@ -606,6 +613,7 @@ figure .really-big-number {
   font: bold 24px/1em Poppins, sans-serif;
   font: bold 1.5rem/1em Poppins, sans-serif;
   color: #62718b;
+  word-break: break-word;
   overflow-wrap: break-word;
 }
 
@@ -713,6 +721,14 @@ figure .fig-desktop {
 }
 
 @media (max-width: 600px) {
+  figure {
+    margin: 0 15px;
+  }
+
+  .figure-dropdown {
+    right: -40px;
+  }
+
   figure .big-number {
     font-size: 80px;
     font-size: 5rem;

@@ -6,6 +6,7 @@ description: Capítulo CSS del 2019 Web Almanac que cubre el color, las unidades
 authors: [una, argyleink]
 reviewers: [meyerweb, huijing]
 analysts: [rviscomi]
+editors: [rachellcostello]
 translators: [c-torres]
 discuss: 1757
 results: https://docs.google.com/spreadsheets/d/1uFlkuSRetjBNEhGKWpkrXo4eEIsgYelxY-qR9Pd7QpM/

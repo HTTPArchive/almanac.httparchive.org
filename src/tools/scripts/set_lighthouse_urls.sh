@@ -46,9 +46,9 @@ END
 )
 
 if [ "${production}" == "1" ]; then
-    
-    # Get the production URLs from the production sitemap
-    LIGHTHOUSE_URLS=$(curl -s https://almanac.httparchive.org/sitemap.xml | grep "<loc" | grep -v "/static/" | sed 's/ *<loc>//g' | sed 's/<\/loc>//g')
+
+    # Get the production URLs from the production sitemap (except PDFs and Stories)
+    LIGHTHOUSE_URLS=$(curl -s https://almanac.httparchive.org/sitemap.xml | grep "<loc" | grep -v "/static/" | grep -v stories | sed 's/ *<loc>//g' | sed 's/<\/loc>//g')
 
     # Switch to the Production Config file
     LIGHTHOUSE_CONFIG_FILE="${LIGHTHOUSE_PROD_CONFIG_FILE}"
@@ -61,20 +61,20 @@ elif [ "${RUN_TYPE}" == "pull_request" ] && [ "${COMMIT_SHA}" != "" ]; then
     git pull --quiet
     git checkout main
     # Then get the changes
-    CHANGED_FILES=$(git diff --name-only "main...${COMMIT_SHA}" --diff-filter=d content templates | grep -v base.html | grep -v ejs | grep -v base_ | grep -v sitemap | grep -v error.html)
+    CHANGED_FILES=$(git diff --name-only "main...${COMMIT_SHA}" --diff-filter=d content templates | grep -v base.html | grep -v ejs | grep -v base_ | grep -v sitemap | grep -v error.html | grep -v stories)
     # Then back to the pull request changes
     git checkout --progress --force "${COMMIT_SHA}"
 
     # Transform the files to http://127.0.0.1:8080 URLs
     LIGHTHOUSE_URLS=$(echo "${CHANGED_FILES}" | sed 's/src\/content/http:\/\/127.0.0.1:8080/g' | sed 's/\.md//g' | sed 's/\/base\//\/en\/2019\//g' | sed 's/src\/templates/http:\/\/127.0.0.1:8080/g' | sed 's/index\.html//g' | sed 's/\.html//g' | sed 's/_/-/g' | sed 's/\/2019\/accessibility-statement/\/accessibility-statement/g' )
-    
+
     # Add base URLs and strip out newlines
     LIGHTHOUSE_URLS=$(echo -e "${LIGHTHOUSE_URLS}\n${BASE_URLS}" | sort -u | sed '/^$/d')
 
 else
 
-    # Else test every URL (except PDFs) in the sitemap
-    LIGHTHOUSE_URLS=$(grep loc templates/sitemap.xml | grep -v "/static/" | sed 's/ *<loc>//g' | sed 's/<\/loc>//g' | sed 's/https:\/\/almanac.httparchive.org/http:\/\/127.0.0.1:8080/g')
+    # Else test every URL (except PDFs and Stories) in the sitemap
+    LIGHTHOUSE_URLS=$(grep loc templates/sitemap.xml | grep -v "/static/" | grep -v stories | sed 's/ *<loc>//g' | sed 's/<\/loc>//g' | sed 's/https:\/\/almanac.httparchive.org/http:\/\/127.0.0.1:8080/g')
 
 fi
 

@@ -6,6 +6,7 @@ description: Le chapitre sur la mise en cache de Web Almanac couvre la gestion d
 authors: [paulcalvano]
 reviewers: [obto, bkardell]
 analysts: [paulcalvano, obto]
+editors: [bazzadp]
 translators: [allemas]
 discuss: 1771
 results: https://docs.google.com/spreadsheets/d/1mnq03DqrRBwxfDV05uEFETK0_hPbYOynWxZkV3tFgNk/

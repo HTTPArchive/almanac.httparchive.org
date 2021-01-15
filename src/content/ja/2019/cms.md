@@ -6,6 +6,7 @@ description: 2019年版Web AlmanacCMS章では、CMSの採用、CMS組み合わ�
 authors: [ernee, amedina]
 reviewers: [sirjonathan]
 analysts: [rviscomi]
+editors: [rviscomi]
 translators: [ksakae]
 discuss: 1769
 results: https://docs.google.com/spreadsheets/d/1FDYe6QdoY3UtXodE2estTdwMsTG-hHNrOe9wEYLlwAw/

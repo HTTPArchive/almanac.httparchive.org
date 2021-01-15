@@ -6,6 +6,7 @@ description: Chapitre sur les web mobile du Web Almanac 2019, couvrant le charge
 authors: [obto]
 reviewers: [AymenLoukil, hyperpress]
 analysts: [ymschaap, rviscomi]
+editors: [rviscomi]
 translators: [borisschapira]
 discuss: 1767
 results: https://docs.google.com/spreadsheets/d/1dPBDeHigqx9FVaqzfq7CYTz4KjllkMTkfq4DG4utE_g/

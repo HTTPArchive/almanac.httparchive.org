@@ -6,6 +6,7 @@ description: 2019年Web AlmanacのモバイルWebの章では、ページの読�
 authors: [obto]
 reviewers: [AymenLoukil, hyperpress]
 analysts: [ymschaap, rviscomi]
+editors: [rviscomi]
 translators: [ksakae]
 discuss: 1767
 results: https://docs.google.com/spreadsheets/d/1dPBDeHigqx9FVaqzfq7CYTz4KjllkMTkfq4DG4utE_g/

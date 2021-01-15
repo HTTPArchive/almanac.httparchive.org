@@ -6,6 +6,7 @@ description: HTTP/2、HTTP/2プッシュ、HTTP/2の問題、およびHTTP/3の�
 authors: [bazzadp]
 reviewers: [bagder, rmarx, dotjs]
 analysts: [paulcalvano]
+editors: [rachellcostello]
 translators: [ksakae]
 discuss: 1775
 results: https://docs.google.com/spreadsheets/d/1z1gdS3YVpe8J9K3g2UdrtdSPhRywVQRBz5kgBeqCnbw/

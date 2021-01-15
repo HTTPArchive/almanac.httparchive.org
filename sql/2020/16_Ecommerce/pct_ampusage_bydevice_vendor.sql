@@ -2,30 +2,39 @@
 # 13_14: % of AMP enabled eCommerce Sites by device
 SELECT
   _TABLE_SUFFIX AS client,
-  vendor,
-  COUNTIF(app = 'AMP') AS AMPFreq,
-  SUM(COUNT(0)) OVER (PARTITION BY vendor) AS total,
-  ROUND(COUNTIF(app = 'AMP') * 100 / SUM(COUNT(0)) OVER (PARTITION BY vendor), 2) AS pct
-  FROM
-    `httparchive.technologies.2020_08_01_*`
-JOIN 
-(
-  SELECT 
-    _TABLE_SUFFIX AS client,
-    url, 
-    app as vendor
+  COUNT(DISTINCT url) AS freq,
+  total,
+  COUNT(DISTINCT url) / total AS pct
+FROM
+  `httparchive.technologies.2020_08_01_*`
+JOIN (
+  SELECT
+    _TABLE_SUFFIX,
+    url
   FROM
     `httparchive.technologies.2020_08_01_*`
   WHERE
-    category = 'Ecommerce'
- )
-USING 
-  (url)
+     category = 'Ecommerce'
+    )
+USING
+  (_TABLE_SUFFIX, url)
+JOIN (
+  SELECT
+    _TABLE_SUFFIX,
+    COUNT(DISTINCT url) AS total
+  FROM
+    `httparchive.technologies.2020_08_01_*`
+  WHERE
+     category = 'Ecommerce'
+  GROUP BY
+    _TABLE_SUFFIX
+    )
+USING
+  (_TABLE_SUFFIX)
+WHERE
+  app = 'AMP'
 GROUP BY
-  client, 
-  vendor
+  client,
+  total
 ORDER BY
-  total desc,
-  AMPFreq desc,
-  Vendor
-  
+  client

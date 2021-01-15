@@ -6,6 +6,7 @@ description: 読みやすさ、メディア、操作性の容易さ、および�
 authors: [nektarios-paisios, obto, kleinab]
 reviewers: [ljme]
 analysts: [dougsillars, rviscomi, obto]
+editors: [obto]
 translators: [MSakamaki]
 discuss: 1764
 results: https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/

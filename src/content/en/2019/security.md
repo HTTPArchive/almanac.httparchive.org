@@ -6,6 +6,7 @@ description: Security chapter of the 2019 Web Almanac covering Transport Layer S
 authors: [ScottHelme, arturjanc]
 reviewers: [bazzadp, ghedo, paulcalvano]
 analysts: [dotjs, jrharalson]
+editors: [bazzadp]
 translators: []
 discuss: 1763
 results: https://docs.google.com/spreadsheets/d/1Zq2tQhPE06YZUcbzryRrBE6rdZgHHlqEp2XcgS37cm8/

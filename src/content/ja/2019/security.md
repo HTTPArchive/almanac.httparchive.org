@@ -6,6 +6,7 @@ description: トランスポート・レイヤー・セキュリティ(TLS()、�
 authors: [ScottHelme, arturjanc]
 reviewers: [bazzadp, ghedo, paulcalvano]
 analysts: [dotjs, jrharalson]
+editors: [bazzadp]
 translators: [ksakae]
 discuss: 1763
 results: https://docs.google.com/spreadsheets/d/1Zq2tQhPE06YZUcbzryRrBE6rdZgHHlqEp2XcgS37cm8/

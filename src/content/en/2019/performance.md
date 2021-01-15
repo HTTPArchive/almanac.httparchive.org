@@ -6,6 +6,7 @@ description: Performance chapter of the 2019 Web Almanac covering First Contentf
 authors: [rviscomi]
 reviewers: [JMPerez,obto,sergeychernyshev,zeman]
 analysts: [rviscomi, raghuramakrishnan71]
+editors: [rachellcostello]
 translators: []
 discuss: 1762
 results: https://docs.google.com/spreadsheets/d/1zWzFSQ_ygb-gGr1H1BsJCfB7Z89zSIf7GX0UayVEte4/

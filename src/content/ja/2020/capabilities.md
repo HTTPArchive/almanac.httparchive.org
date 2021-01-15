@@ -6,6 +6,7 @@ description: 2020年のWeb Almanac「機能」の章では、新しく強力なW
 authors: [christianliebel]
 reviewers: [tomayac]
 analysts: [tomayac]
+editors: [bazzadp]
 translators: [ksakae]
 discuss: 2049
 results: https://docs.google.com/spreadsheets/d/1N6j1qKv7vc51p1W9z_RrbJX9Se3Pmb-Uersfz4gWqqs/

@@ -69,52 +69,49 @@
       <h3>{{ localizedChapterTitles[featured_chapter] }}</h3>
       {% if quote_language != lang %}
       <blockquote lang="{{ quote_language }}">
-        {{ featured_chapter_quote|safe }}
+        {{ featured_chapter_quote | replace('&quot;','"') | safe }}
       </blockquote>
-      {% else %}
-      <blockquote>
-        {{ featured_chapter_quote|safe }}
-      </blockquote>
-      {% endif %}
-      {% if quote_language != lang %}
       <div lang="{{ quote_language }}" class="featured-chapter-content-data">
         {% if featured_chapter_stats.get('stat1') %}
         <div class="featured-chapter-content-data-item">
-          <div class="no-wrap">{{ featured_chapter_stats.get('stat1')|safe }}</div>
+          <div class="no-wrap">{{ featured_chapter_stats.get('stat1') | replace('&quot;','"') | safe }}</div>
           <div>{{ featured_chapter_stats.get('label1')|safe }}</div>
         </div>
         {% endif %}
         {% if featured_chapter_stats.get('stat2') %}
         <div class="featured-chapter-content-data-item">
-          <div class="no-wrap">{{ featured_chapter_stats.get('stat2')|safe }}</div>
-          <div>{{ featured_chapter_stats.get('label2')|safe }}</div>
+          <div class="no-wrap">{{ featured_chapter_stats.get('stat2') | replace('&quot;','"') | safe }}</div>
+          <div>{{ featured_chapter_stats.get('label2') | replace('&quot;','"') | safe }}</div>
         </div>
         {% endif %}
         {% if featured_chapter_stats.get('stat3') %}
         <div class="featured-chapter-content-data-item">
-          <div class="no-wrap">{{ featured_chapter_stats.get('stat3')|safe }}</div>
-          <div>{{ featured_chapter_stats.get('label3')|safe }}</div>
+          <div class="no-wrap">{{ featured_chapter_stats.get('stat3') | replace('&quot;','"') | safe }}</div>
+          <div>{{ featured_chapter_stats.get('label3') | replace('&quot;','"') | safe }}</div>
         </div>
         {% endif %}
       </div>
       {% else %}
+      <blockquote>
+        {{ featured_chapter_quote | replace('&quot;','"') | safe }}
+      </blockquote>
       <div class="featured-chapter-content-data">
         {% if featured_chapter_stats.get('stat1') %}
         <div class="featured-chapter-content-data-item">
-          <div class="no-wrap">{{ featured_chapter_stats.get('stat1')|safe }}</div>
-          <div>{{ featured_chapter_stats.get('label1')|safe }}</div>
+          <div class="no-wrap">{{ featured_chapter_stats.get('stat1') | replace('&quot;','"') | safe }}</div>
+          <div>{{ featured_chapter_stats.get('label1') | replace('&quot;','"') | safe }}</div>
         </div>
         {% endif %}
         {% if featured_chapter_stats.get('stat2') %}
         <div class="featured-chapter-content-data-item">
-          <div class="no-wrap">{{ featured_chapter_stats.get('stat2')|safe }}</div>
-          <div>{{ featured_chapter_stats.get('label2')|safe }}</div>
+          <div class="no-wrap">{{ featured_chapter_stats.get('stat2') | replace('&quot;','"') | safe }}</div>
+          <div>{{ featured_chapter_stats.get('label2') | replace('&quot;','"') | safe }}</div>
         </div>
         {% endif %}
         {% if featured_chapter_stats.get('stat3') %}
         <div class="featured-chapter-content-data-item">
-          <div class="no-wrap">{{ featured_chapter_stats.get('stat3')|safe }}</div>
-          <div>{{ featured_chapter_stats.get('label3')|safe }}</div>
+          <div class="no-wrap">{{ featured_chapter_stats.get('stat3') | replace('&quot;','"') | safe }}</div>
+          <div>{{ featured_chapter_stats.get('label3') | replace('&quot;','"') | safe }}</div>
         </div>
         {% endif %}
       </div>
