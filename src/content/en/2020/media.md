@@ -325,7 +325,7 @@ Likewise, on the video front, the vast majority of resources are sent in the low
 
 ### Usage of CDNs vs Local Domain for storing & delivering media
 
-{# TODO (authors) - can we have a sentence here to avoid an empty heading? #}
+Media assets can be stored either locally, or on an Image CDN. The way assets are optmised, transformed and delivered to the end user highly depend on the appropriate technique used.
 
 #### `rel=preconnect`
 
@@ -337,7 +337,7 @@ Using data URLs (formerly known as data URIs) is a technique that allows develop
 
 ### SEO & Accessibility
 
-{# TODO (authors) - can we have a sentence here to avoid an empty heading? #}
+Using the `alt` text not only helps accessibility for those who can't view the images and utilise screen-readers, but it is also being used by various computer vision algorithms to understand the subject matter of an image. Alt text should be meaningful in the context of the page and relevant to the image it's describing.
 
 #### Usage of `alt` text
 
@@ -373,7 +373,7 @@ We can see that roughly 12% of the pages on both desktop and mobile use the figu
 
 ## Videos
 
-{# TODO (authors) - can we have a sentence here to avoid an empty heading? #}
+Video is one of the most powerful ways to engage with an audience today, however adding video to a site is no small undertaking. There are multiple video formats available with different codec support, as well as different aspect ratios and orientations, but the impact of video cannot be overstated. As Fred R. Barnard once stated "One look is worth a thousand words", today, we can state that "A minute of video is worth 1.8 million words".
 
 ### The `<video>` element
 
