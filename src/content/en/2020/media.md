@@ -22,7 +22,6 @@ featured_stat_2: 40.26%
 featured_stat_label_2: JPG images as a percentage of all images
 featured_stat_3: 57.22%
 featured_stat_label_3: Video elements on desktop with the autoplay attribute
-unedited: true
 ---
 
 ## Introduction
@@ -37,7 +36,7 @@ However, they require considered implementation techniques to avoid also being a
 
 ### Responsive HTML markup for images
 
-While there are myriad approaches to embedding media using javascript, we were interested in the ongoing uptake of varying forms of HTML markup being employed directly. Several 'Responsive Images' approaches including picture element, and srcset (within img or source element) have had growing support since first introduced in 2015.
+While there are myriad approaches to embedding media using JavaCcript, we were interested in the ongoing uptake of varying forms of HTML markup being employed directly. Several *Responsive Images* approaches including `<picture>` element, and `srcset` (within `<img>` or `<source>` element) have had growing support since first introduced in 2015.
 
 #### Srcset
 
@@ -70,15 +69,15 @@ The fewer the number of image candidates, the greater the likelihood of the asse
   )
 }}
 
-A greater number of dimensional variants of each image tends will typically have implications on the complexity of the media pipeline or service in use, and will secondarily have implications on the required media storage, as well as the caching efficiencies already mentioned.
+A greater number of dimensional variants of each image tends will typically have implications on the complexity of the media pipeline or service in use and will secondarily have implications on the required media storage, as well as the caching efficiencies already mentioned.
 
-In some platforms, such as Wordpress, there are approaches which once rolled out on the platform, can of course influence the approaches taken by a large number of sites.
+In some platforms, such as WordPress, there are approaches which once rolled out on the platform, can of course influence the approaches taken by a large number of sites.
 
 ##### Srcset: descriptors
 
 When providing the candidate list to the User Agent, we have 2 mechanisms with which we can inform the context for each provided image: x-descriptor and  w-descriptor.
 
-X-descriptor describes the device pixel ratio of the specific resource, ie 2x would indicate that the specific image resource is of twice the dimensional size in each axis , hence four times as many pixels, an x-descriptor of 3x means nine times the number of pixels, which of course can have considerable payload implications.
+X-descriptor describes the device pixel ratio of the specific resource, for example 2x would indicate that the specific image resource is of twice the dimensional size in each axis , hence four times as many pixels, an x-descriptor of 3x means nine times the number of pixels, which of course can have considerable payload implications.
 
 ```html
 <img srcset="images/example_3x.jpg 3x, images/example_2x.jpg 2x"
@@ -88,7 +87,7 @@ X-descriptor describes the device pixel ratio of the specific resource, ie 2x wo
 W-descriptor describes the pixel width of the specific resource.
 
 ```html
-<img srcset="images/example_small.jpg 600w, images/example_medium.jpg 1400w, images/example_large..jpg 2400w"
+<img srcset="images/example_small.jpg 600w, images/example_medium.jpg 1400w, images/example_large.jpg 2400w"
      src="images/example_fallback.jpg" alt="..." />
 ```
 
@@ -104,7 +103,7 @@ Both approaches enable the User Agent to mathematically factor in device pixel r
   )
 }}
 
-In the early days of responsive images, some browsers only supported x-descriptor, but clearly the w-descriptor is by far the most favoured.
+In the early days of responsive images, some browsers only supported x-descriptor, but clearly the w-descriptor is by far the most favored.
 
 While it can be common to choose image candidates which are spaced by dimension, for example widths of  720px,  1200px, 1800px there are also approaches to give more linear payload steps, for example say a series of images which are say 50kb in difference.
 
@@ -118,32 +117,32 @@ For example:
 
 ```html
 <img sizes="(min-width: 640px) 50vw, 100vw"
-     srcset="images/example_small.jpg 600w, images/example_medium.jpg 1400w, images/example_large..jpg 2400w,"
+     srcset="images/example_small.jpg 600w, images/example_medium.jpg 1400w, images/example_large.jpg 2400w,"
      src="images/example_fallback.jpg" alt="..." />
 ```
 
 {{ figure_markup(
   image="srcset-sizes-usage.png",
   caption="Use of sizes in srcset.",
-  description="Stacked bar chart showing 65.35% of srcset images uses sizes on desktop, with the remaining 34.65% not using it. On mobile it's 64.95% using and the remaing 35.05 not using.",
+  description="Stacked bar chart showing 65.35% of srcset images uses sizes on desktop, with the remaining 34.65% not using it. On mobile it is 64.95% using and the remaing 35.05 not using.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=496958447&format=interactive",
   sheets_gid="768487310",
   sql_file="image_srcset_sizes.sql"
   )
 }}
 
-For the 2020 data around 35% of sites using srcset did not also combine it with sizes, while this may well be appropriate, we regularly encounter instances where this oversight means that the maths to determine the most appropriate image candidate is flawed, often leading to images of unnecessarily large dimension being requested.
+For the 2020 data around 35% of sites using srcset did not also combine it with sizes, while this may well be appropriate, we regularly encounter instances where this oversight means that the mathematics to determine the most appropriate image candidate is flawed, often leading to images of unnecessarily large dimension being requested.
 
 
 Many people that we have discussed this with express that this aspect of the responsive images syntax is one area they cause concerns due to the need to ensure alignment between the layout as managed and determined by CSS and the relevant logic being in the markup for responsive images.
 
 #### Picture
 
-While srcset and sizes provides us with the tooling to help provide browsers with images which are dimensionally more suited for a given viewport, device and layout - the Picture element gives us further capabilities to provide more sophisticated media strategies including leveraging more effective image formats, and empowering us to explore Art Direction for our media too.
+While srcset and sizes provides us with the tooling to help provide browsers with images which are dimensionally more suited for a given viewport, device and layout - the Picture element gives us further capabilities to provide more sophisticated media strategies including leveraging more effective image formats and empowering us to explore Art Direction for our media too.
 
 ##### Picture: format switching
 
-While there are some services and image CDNs which can provide auto-format switching from a single image reference, we can also achieve similar behaviours using standard markup with the picture element.
+While there are some services and image CDNs which can provide auto-format switching from a single image reference, we can also achieve similar behaviors using standard markup with the picture element.
 
 ```html
 <picture>
@@ -158,7 +157,7 @@ Current uptake shows around 19% of pages being served using the picture element 
   image="use-of-picture.png",
   alt="Use of picture.",
   caption="Use of `<picture>`.",
-  description="Stacked bar chart showing 19.30% of pages use `<picture>` on desktop and 80.70% do not. On mobile it's similar with 18.54% using and 81.46% not using.",
+  description="Stacked bar chart showing 19.30% of pages use `<picture>` on desktop and 80.70% do not. On mobile it is similar with 18.54% using and 81.46% not using.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=416496535&format=interactive",
   sheets_gid="1719719920",
   sql_file="picture_format_distribution.sql"
@@ -190,9 +189,9 @@ Of pages using picture for format switching, around 68% are offering a single ty
   )
 }}
 
-We see that WebP is the dominante usage across `<picture>` elements, followed by PNG and JPG is only 4.83% of `<picture>` usage.
+We see that WebP is the dominant usage across `<picture>` elements, followed by PNG and JPG is only 4.83% of `<picture>` usage.
 
-<p class="note">Note our crawler crawls as Chrome which supports WebP, but if using anoither browser which does not support this then you will see different results.</p>
+<p class="note">Note our crawler crawls as Chrome which supports WebP, but if using another browser which does not support this then you will see different results.</p>
 
 Here is an example of the markup syntax that could be used to offer multiple format variants:
 
@@ -208,7 +207,7 @@ Here is an example of the markup syntax that could be used to offer multiple for
 
 The User Agent will effectively select the first one that it has a positive match on, and hence the ordering logic here is important.
 
-Of those pages using picture for format switching, 83% offer WebP as one of the format variants, which in part relates to it's growing browser support.
+Of those pages using picture for format switching, 83% offer WebP as one of the format variants, which in part relates to its growing browser support.
 
 The formats being supported by different browser is a movable feast: WebP has now got much broader support across the browsers:
 - WebP: [90% coverage](https://caniuse.com/webp) (Edge, Firefox, Chrome, Opera, Android)
@@ -218,14 +217,14 @@ AVIF: [25% coverage](https://caniuse.com/avif) (Chrome, Opera)
 
 There are also considerations around the capabilities available through the different formats, for example PNG supports transparency, making WebP a good alternative where supported, as it also supports transparency.
 
-Consider offering AnimatedGIFs as WebP for improved efficiency, or instead as a muted autoplaying video - though this will have implications for the markup approach, and media processing needs.
+Consider offering animated GIFs as WebP for improved efficiency, or instead as a muted autoplaying video - though this will have implications for the markup approach, and media processing needs.
 
-There are 3 aspects to be balanced to aligned this type of format switching approach:
-The browser development activities to support different media formats
-The necessary pipeline and processes to create the needed media in these formats
-Implementing the markup to then express the logic to support the formats.
+There are 3 aspects to be balanced to align this type of format switching approach:
+- The browser development activities to support different media formats
+- The necessary pipeline and processes to create the needed media in these formats
+- Implementing the markup to then express the logic to support the formats.
 
-Several of the Dynamic Media Services and ImageCDNs can help greatly simplify this by automating it, and endeavouring to track and keep in sync with the browser manufacturer updates.
+Several of the Dynamic Media Services and Image CDNs can help greatly simplify this by automating it and endeavoring to track and keep in sync with the browser manufacturer updates.
 
 <p class="note">Note: AVIF has been supported in Chrome since 85 (released late August 2020), hence the data for this Almanac is predominantly from prior to this time. However running an ad hoc query on more recent data from early November 2020 is already showing tens of thousands of AVIF requests.</p>
 
@@ -233,9 +232,9 @@ Several of the Dynamic Media Services and ImageCDNs can help greatly simplify th
 
 The media *art direction* capabilities offered by the picture element start to enable us to provide the kind of sophisticated viewport dependent media manipulation that we have been considering for text and typography for some time.
 
-Considering how poorly wide short media such as banners can work when squeezed into more narrow layouts, considering adapting the aspect ratio of the served media, or even the image visual payload itself, depending on the media queries expressed in picture source is, in our opinion, an underutilised capability.
+Considering how poorly wide short media such as banners can work when squeezed into more narrow layouts, considering adapting the aspect ratio of the served media, or even the image visual payload itself, depending on the media queries expressed in picture source is, in our opinion, an underutilized capability.
 
-In this example, we are changing out the aspect ratio of the served media, from square (1:1) to 4:3 and eventually 16:9 depending on the viewport width, endeavouring we make the best use of the available space for our media:
+In this example, we are changing out the aspect ratio of the served media, from square (1:1) to 4:3 and eventually 16:9 depending on the viewport width, endeavoring we make the best use of the available space for our media:
 
 ```html
 <picture>
@@ -279,11 +278,11 @@ Example syntax:
 
 ### Effective leveraging of image formats
 
-Using the appropiate image format and the capabilities that format offers is critical to make effective use of media on web pages.
+Using the appropriate image format and the capabilities that format offers is critical to make effective use of media on web pages.
 
 #### MIME types vs extensions
 
-This section is rather interesting, we can observe a high distribution of extensions and various spelling of the same extension (jpg vs JPG vs jpeg vs JPEG). In some cases the mime type is also specified incorrectly. For example - image/jpeg is the correct and recognised mime type for JPEG images. However we can see that 0.02% of all the pages that use JPEG have specified the incorrect mime type on both clients. Furthermore we can see that an extension of pnj was used 28,420 times (likely to be a typo) and its mime time was set to image/jpeg.
+This section is rather interesting, we can observe a high distribution of extensions and various spelling of the same extension (`jpg` vs `JPG` vs `jpeg` vs `JPEG`). In some cases the mime type is also specified incorrectly. For example - `image/jpeg` is the correct and recognized mime type for JPEG images. However we can see that 0.02% of all the pages that use JPEG have specified the incorrect mime type on both clients. Furthermore we can see that an extension of `pnj` was used 28,420 times (likely to be a typo) and its mime time was set to `image/jpeg`.
 
 {{ figure_markup(
   image="image-usage-by-extension.png",
@@ -295,11 +294,11 @@ This section is rather interesting, we can observe a high distribution of extens
   )
 }}
 
-We have seen further inconsistencies between extensions and mime types - for example jpeg delivered with a mime type of webp, however it is likely that some of these are natural artefacts caused by Image CDN delivery services with on-the-fly transformation and optimisation capabilities.
+We have seen further inconsistencies between extensions and mime types - for example jpeg delivered with a mime type of webp, however it is likely that some of these are natural artefacts caused by Image CDN delivery services with on-the-fly transformation and optimization capabilities.
 
 #### Progressive JPEGs
 
-We also looked at the usage of progressive JPEGs on the web. WebPageTest gives each page a "score," which adds up all of the JPEG bytes that were loaded from Progressive-ly encoded JPEGs, and divides it by the total number of JPEG bytes that *could* have been progressively encoded. The majority (57%) of pages served less than 25% of their JPEG-bytes, progressively. This represents a large opportunity for no-downsides compression savings, that's yet to be taken despite years of Progressive JPEGs being a best practice and modern encoders like MozJPEG encoding progressively by default.
+We also looked at the usage of progressive JPEGs on the web. WebPageTest gives each page a "score," which adds up all of the JPEG bytes that were loaded from Progressive-ly encoded JPEGs and divides it by the total number of JPEG bytes that *could* have been progressively encoded. The majority (57%) of pages served less than 25% of their JPEG-bytes, progressively. This represents a large opportunity for no-downsides compression savings, that's yet to be taken despite years of Progressive JPEGs being a best practice and modern encoders like MozJPEG encoding progressively by default.
 
 {{ figure_markup(
   image="progressive-jpeg-score.png",
@@ -327,21 +326,21 @@ Likewise, on the video front, the vast majority of resources are sent in the low
 
 ### Usage of CDNs for storing & delivering media
 
-Media assets can be stored either locally, or on an Image CDN. The way assets are optmised, transformed and delivered to the end user highly depend on the appropriate technique used.
+Media assets can be stored either locally, or on an Image CDN. The way assets are optimized, transformed and delivered to the end user highly depend on the appropriate technique used.
 
-In some cases, resources displayed on a page would come from another origin. In this case the 'rel=preconnect' attribute can be used on a link element to advice browsers about this fact. Note that useful it may seem to add this option to your site, since it's a relatively cheap operation, there could be situations when additional CPU time is going to be utilised by establishing such connections. Interesting enough both on desktop and mobile we have seen a tiny amount of pages utilising this technique on desktop and mobile: 0.000054%, 0.000016% respectively.
+In some cases, resources displayed on a page would come from another origin. In this case the 'rel=preconnect' attribute can be used on a link element to advice browsers about this fact. Note that useful it may seem to add this option to your site, since it is a relatively cheap operation, there could be situations when additional CPU time is going to be utilized by establishing such connections. Interesting enough both on desktop and mobile we have seen a tiny number of pages utilizing this technique on desktop and mobile: 0.000054%, 0.000016% respectively.
 
 ### Usage of `data-url` vs `src` attribute
 
-Using data URLs (formerly known as data URIs) is a technique that allows developers to embed a base64 encoded image to a webpage. There are several benefits to using this solution (fast load times being one) but has several drawbacks as well (size). The usage of these doesn't seem to be that widespread, 0.9% of the pages utilise data URLs for displaying images.
+Using data URLs (formerly known as data URIs) is a technique that allows developers to embed a base64 encoded image to a webpage. There are several benefits to using this solution (fast load times being one) but has several drawbacks as well (size). The usage of these doesn't seem to be that widespread, 0.9% of the pages utilize data URLs for displaying images.
 
 ### SEO & Accessibility
 
-Using the `alt` text not only helps accessibility for those who can't view the images and utilise screen-readers, but it is also being used by various computer vision algorithms to understand the subject matter of an image. Alt text should be meaningful in the context of the page and relevant to the image it's describing.
+Using the `alt` text not only helps accessibility for those who can't view the images and utilize screen-readers, but it is also being used by various computer vision algorithms to understand the subject matter of an image. Alt text should be meaningful in the context of the page and relevant to the image it is describing.
 
 #### Usage of `alt` text
 
-The `alt` attribute for images is used to provide a description of the image. Albeit being an optional attribute, it is immensely useful for accessibility since screen-readers would read the alt text. Furthermore it's useful for situations when the image doesn't load - in that case the text is shown.
+The `alt` attribute for images is used to provide a description of the image. Albeit being an optional attribute, it is immensely useful for accessibility since screen-readers would read the alt text. Furthermore it is useful for situations when the image doesn't load - in that case the text is shown.
 
 {{ figure_markup(
   image="image-alt-usage-by-page.png",
@@ -384,15 +383,15 @@ We can see that roughly 12% of the pages on both desktop and mobile use the figu
 
 ## Videos
 
-Video is one of the most powerful ways to engage with an audience today, however adding video to a site is no small undertaking. There are multiple video formats available with different codec support, as well as different aspect ratios and orientations, but the impact of video cannot be overstated. As Fred R. Barnard once stated "One look is worth a thousand words", today, we can state that "A minute of video is worth 1.8 million words".
+Video is one of the most powerful ways to engage with an audience today, however adding video to a site is no small undertaking. There are multiple video formats available with different codec support, as well as different aspect ratios and orientations, but the impact of video cannot be overstated. As Fred R. Barnard once stated, "One look is worth a thousand words", today, we can state that "A minute of video is worth 1.8 million words".
 
 ### The `<video>` element
 
-The `<video>` element forms the core of video delivery on the web, and is used either on its own or in conjunction with Javascript players which progressively enhance it to deliver video.
+The `<video>` element forms the core of video delivery on the web and is used either on its own or in conjunction with JavaScript players which progressively enhance it to deliver video.
 
 ### Sources (or not), and total usage
 
-There are two ways to use a `<video>`. You can either stick a single resource URL into the `src` attribute on the element itself, or give it any number of child `<source>` elements, which the browser peruses until it finds a source it thinks it can load. Our first query looks at how often we see each of these patterns across all sampled pages.
+There are two ways to use a `<video>`. You can either stick a single resource URL into the `src` attribute on the element itself or give it any number of child `<source>` elements, which the browser peruses until it finds a source it thinks it can load. Our first query looks at how often we see each of these patterns across all sampled pages.
 
 {{ figure_markup(
   image="video-usage-of-src-versus-source.png",
@@ -406,9 +405,9 @@ There are two ways to use a `<video>`. You can either stick a single resource UR
 
 Twice as many `<video>`s have `<source>` children, vs a `src` attribute, indicating that authors want the ability to send different resources to different end users, depending on their context, rather than sending a single lowest-common-denominator resource to everyone (or, alternately, giving some portion of their audience a worse, or broken, experience).
 
-Also interestingly, we can see that, across all pages, only a percent or two contain `<video>` elements at all. It's far less common than `<img>`!
+Also interestingly, we can see that, across all pages, only a percent or two contain `<video>` elements at all. It is far less common than `<img>`!
 
-### Javascript players
+### JavaScript players
 
 We looked for the presence of a few common players (hls.js, video.js, Shaka Player, JW Player, Brightcove Player, and Flowplayer); pages with these particular players are less than half as common as pages that use the native `<video>` element.
 
@@ -436,7 +435,7 @@ The analysis is complicated a bit by the fact that many players – such as vide
   )
 }}
 
-Unsurprisingly, by far the most common type value is `video/mp4`. But the second most common – making up 15% of all desktop `type`s, and 20% of all `type`s  sent to the mobile crawler, is `video/youtube` – which is not a registered MIME type at all. Rather it's a special value that several players (including WordPress') use when embedding YouTube videos. A few notches down the list, we see a similar pattern, for Vimeo embeds.
+Unsurprisingly, by far the most common type value is `video/mp4`. But the second most common – making up 15% of all desktop `type`s, and 20% of all `type`s  sent to the mobile crawler, is `video/youtube` – which is not a registered MIME type at all. Rather it is a special value that several players (including WordPress') use when embedding YouTube videos. A few notches down the list, we see a similar pattern, for Vimeo embeds.
 
 As for the legitimate MIME types; they capture *container* formats; MP4 and WebM are the only two in anything we might call common use. It would be interesting to know which *codecs* are being used within these containers, and how much traction next-gen codecs like VP8, HVEC, and AV1 have gotten. But such analysis is, unfortunately, outside the scope of this article.
 
@@ -466,7 +465,7 @@ The preload attribute is indicating for the browser whether a video should be do
   )
 }}
 
-Looking at additional information about videos, we can see that 57.22% of the video elements on desktop have the autoplay attribute, 56.36% of pages with a video element on desktop utilise the muted attribute and last but not least 48.74% of  pages use both autoplay and muted on desktop. The numbers are similar for mobile, where 53.86% have autoplay, 53.41% have muted and 45.99% have both autoplay and muted.
+Looking at additional information about videos, we can see that 57.22% of the video elements on desktop have the autoplay attribute, 56.36% of pages with a video element on desktop utilize the muted attribute and last but not least 48.74% of  pages use both autoplay and muted on desktop. The numbers are similar for mobile, where 53.86% have autoplay, 53.41% have muted and 45.99% have both autoplay and muted.
 
 ## Conclusion
 
