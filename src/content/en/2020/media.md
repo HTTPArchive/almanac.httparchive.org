@@ -125,7 +125,7 @@ For example:
 {{ figure_markup(
   image="srcset-sizes-usage.png",
   caption="Use of sizes in srcset.",
-  description="Stacked bar chart showinf 65.35% of srcset images uses sizes on desktop, with the remaining 34.65% not using it. On mobile it's 64.95% using and the remaing 35.05 not using.",
+  description="Stacked bar chart showing 65.35% of srcset images uses sizes on desktop, with the remaining 34.65% not using it. On mobile it's 64.95% using and the remaing 35.05 not using.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=496958447&format=interactive",
   sheets_gid="768487310",
   sql_file="image_srcset_sizes.sql"
@@ -256,7 +256,7 @@ While the data shows that only a little under 1% of pages using picture make use
   image="picture-usage-of-orientation.png",
   alt="Picture usage of orientation.",
   caption="`<picture>` usage of orientation.",
-  description="Bar chart showing ",
+  description="Bar chart showing 0.93% of desktop pages and 0.91% of mobile pages use `<picture>` with orientation. 0.59% of occurances of `<picture>` on desktop and 0.60% on mobile use orientation.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=56906843&format=interactive",
   sheets_gid="283790776",
   sql_file="picture_orientation.sql"
@@ -277,9 +277,9 @@ Example syntax:
 </picture>
 ```
 
-### Effective leveraging of more effective image formats
+### Effective leveraging of image formats
 
-{# TODO (authors) - can we have a sentence here to avoid an empty heading? Or should we just remove this heading and promot the other two under this? #}
+Using the appropiate image format and the capabilities that format offers is critical to make effective use of media on web pages.
 
 #### MIME types vs extensions
 
@@ -288,7 +288,7 @@ This section is rather interesting, we can observe a high distribution of extens
 {{ figure_markup(
   image="image-usage-by-extension.png",
   caption="Image usage by extension.",
-  description="Bar chart showing ",
+  description="Bar chart showing image usage by extension. `jpg` is the most used format at 40.26% of mobile, `png` is next with 26.90%, followed by no extension at 17.44%, `gif` at 6.59%, `svg` at 3.13%, `ico` at 1.83% and `jpeg` at 1.36%. Desktop is very simialr usage.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=1607248506&format=interactive",
   sheets_gid="402973893",
   sql_file="image_mimetype_ext.sql"
@@ -304,7 +304,7 @@ We also looked at the usage of progressive JPEGs on the web. WebPageTest gives e
 {{ figure_markup(
   image="progressive-jpeg-score.png",
   caption="Progressive JPEG score.",
-  description="Bar chart showing ",
+  description="Bar chart showing progressive JPEG score. Desktop and mobile usage is approximately the same. 13.72% of mobile pages have a score < 0, 57.77% have a score of 0-25, 7.53% have a score of 25-50, 5.79% have a score of 50-75, and 15.19% have a score of 75-100.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=1693689151&format=interactive",
   sheets_gid="1834242483",
   sql_file="score_progressive_jpeg.sql"
@@ -325,11 +325,9 @@ The Open Graph protocol only allows for *one* image or video URL to be included;
 
 Likewise, on the video front, the vast majority of resources are sent in the lowest-common-denominator format: MP4. We are  mystified as to why the second most popular format is the [now-depreciated](https://blog.adobe.com/en/publish/2017/07/25/adobe-flash-update.html#gs.my93m2) SWF, and curious whether these are playable in any microbrowser.
 
-### Usage of CDNs vs Local Domain for storing & delivering media
+### Usage of CDNs for storing & delivering media
 
 Media assets can be stored either locally, or on an Image CDN. The way assets are optmised, transformed and delivered to the end user highly depend on the appropriate technique used.
-
-#### `rel=preconnect`
 
 In some cases, resources displayed on a page would come from another origin. In this case the 'rel=preconnect' attribute can be used on a link element to advice browsers about this fact. Note that useful it may seem to add this option to your site, since it's a relatively cheap operation, there could be situations when additional CPU time is going to be utilised by establishing such connections. Interesting enough both on desktop and mobile we have seen a tiny amount of pages utilising this technique on desktop and mobile: 0.000054%, 0.000016% respectively.
 
@@ -343,12 +341,12 @@ Using the `alt` text not only helps accessibility for those who can't view the i
 
 #### Usage of `alt` text
 
-The 'alt' attribute for images is used to provide a description of the image. Albeit being an optional attribute, it is immensely useful for accessibility since screen-readers would read the alt text. Furthermore it's useful for situations when the image doesn't load - in that case the text is shown.
+The `alt` attribute for images is used to provide a description of the image. Albeit being an optional attribute, it is immensely useful for accessibility since screen-readers would read the alt text. Furthermore it's useful for situations when the image doesn't load - in that case the text is shown.
 
 {{ figure_markup(
   image="image-alt-usage-by-page.png",
   caption="Image alt usage by page.",
-  description="Bar chart showing ",
+  description="Bar chart showing 52.5% of desktop pages and 51.0% of mobile pages are missing alt attribute, 60.4% of desktop and 60.6% of mobile pages have blank alt attributes, and 83.6% of desktop and 82.1% of mobile pages have an alt present.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=2144814052&format=interactive",
   sheets_gid="885941461",
   sql_file="image_alt.sql"
@@ -356,6 +354,16 @@ The 'alt' attribute for images is used to provide a description of the image. Al
 }}
 
 Around 96% of all the pages processed had an img element - 21% of these images had the alt attribute missing. 52% of the images had the alt attribute available, however 26% of these were left blank.
+
+{{ figure_markup(
+  image="image-alt-usage-by-image.png",
+  caption="Image alt usage by image.",
+  description="Bar chart showing 21.3% of mobile and 21.5% of desktop images are missing alt attributes, 26.2% of mobile and desktop images have blank alt attributes, and 52.5% of mobile and 52.3% of have alt attributes.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=71848371&format=interactive",
+  sheets_gid="885941461",
+  sql_file="image_alt.sql"
+  )
+}}
 
 #### Figure & Figcaption
 
