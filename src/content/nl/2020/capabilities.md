@@ -261,7 +261,7 @@ De Content Indexing API breidt de Service Worker API uit met een nieuwe `Content
 {{ figure_markup(
   image="content_indexing_api.png",
   alt="Percentage pagina's dat wordt geladen in Chrome met behulp van Content Indexing API",
-  caption='Percentage pagina's dat wordt geladen in Chrome met behulp van Content Indexing API.<br>(Bron: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">Content Indexing</a>)',
+  caption='Percentage pagina\'s dat wordt geladen in Chrome met behulp van Content Indexing API.<br>(Bron: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">Content Indexing</a>)',
   description="Grafiek van het gebruik van Content Indexing API, gebaseerd op het percentage pagina's dat met deze functie in Chrome wordt geladen. Het vertoont in eerste instantie een relatief laag gebruik, totdat het in oktober 2020 plotseling vertienvoudigt, en wordt gebruikt tijdens 0,0021% van de paginaladingen in Chrome.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=258329620&format=interactive",
   sheets_gid="626752011"
@@ -290,7 +290,7 @@ De WebSocketStream API lost op transparante wijze tegendruk op, aangezien de str
 {{ figure_markup(
   image="websocketstreams.png",
   alt="Percentage pagina's dat in Chrome wordt geladen met WebSocketStreams",
-  caption='Percentage pagina's dat in Chrome wordt geladen met WebSocketStreams.<br>(Bron: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3018">WebSocketStream</a>)',
+  caption='Percentage pagina\'s dat in Chrome wordt geladen met WebSocketStreams.<br>(Bron: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3018">WebSocketStream</a>)',
   description="Grafiek van het gebruik van WebSocketStreams, gebaseerd op het percentage pagina's dat met deze functie in Chrome wordt geladen. Het vertoont een piek in juni en juli 2020, waar de API werd gebruikt tijdens ongeveer 0,0008% van de paginaladingen.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1714443590&format=interactive",
   sheets_gid="691106754"
@@ -316,7 +316,7 @@ QuicTransport is een geldig alternatief voor WebSockets, omdat het de gebruikssc
 {{ figure_markup(
   image="quic_transport.png",
   alt="Percentage pagina's dat in Chrome wordt geladen met Quic Transport",
-  caption='Percentage pagina's dat in Chrome wordt geladen met Quic Transport.<br>(Bron: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3184">QuicTransport</a>)',
+  caption='Percentage pagina\'s dat in Chrome wordt geladen met Quic Transport.<br>(Bron: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3184">QuicTransport</a>)',
   description="Grafiek van het gebruik van QuicTransport, gebaseerd op het percentage pagina's dat met deze functie in Chrome wordt geladen. Het vertoont een piek in oktober 2020, waar de API werd gebruikt tijdens ongeveer 0.00089% van de paginaladingen.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1571330893&format=interactive",
   sheets_gid="708893754"
