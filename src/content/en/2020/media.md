@@ -15,22 +15,23 @@ eeeps_bio: Eric Portis is a Web Platform advocate at <a href="https://cloudinary
 discuss: 2041
 results: https://docs.google.com/spreadsheets/d/1SZGpCsTT0u1MFBrxed7HA9FLAloL1dS8ZIng986LvS8/
 queries: 05_Media
-#featured_quote: TODO
-#featured_stat_1: TODO
-#featured_stat_label_1: TODO
-#featured_stat_2: TODO
-#featured_stat_label_2: TODO
-#featured_stat_3: TODO
-#featured_stat_label_3: TODO
+featured_quote: Images and videos offer us the potential for a most powerful pairing&colon; instant communication, capable of triggering an innate emotional response. However, they require considered implementation techniques to avoid also being a burden to our web pages.
+featured_stat_1: 84.64%
+featured_stat_label_1: Usage of WebP in mobile <code>&lt;Picture&gt;</code> element
+featured_stat_2: 40.26%
+featured_stat_label_2: JPG images as a percentage of all images
+featured_stat_3: 57.22%
+featured_stat_label_3: Video elements on desktop with the autoplay attribute
 unedited: true
 ---
 
 ## Introduction
+
 Today, we live in the world of the visual web, where media provides the soul for websites. Websites use both images and videos, in different shapes and formats to engage with audiences. However, online media not only serves a purpose to engage an audience but it also exists to tell a visual story, to convenience or to entertain. This chapter analyses images and videos on the web, how we use (or in cases, misuse) them.
 
 ## Images
 
-Images offer us the potential for a most powerful pairing: instant communication, capable of triggering an innate emotional response. 
+Images offer us the potential for a most powerful pairing: instant communication, capable of triggering an innate emotional response.
 However, they require considered implementation techniques to avoid also being a burden to our web pages. Let's explore how well modern browser's capabilities are being leveraged.
 
 
@@ -182,14 +183,16 @@ Of pages using picture for format switching, around 68% are offering a single ty
 {{ figure_markup(
   image="picture-format-usage-by-type.png",
   caption="Picture format usage by type.",
-  description="Bar chart showing picture format usage by image type. WebP is dominate usage used by 83.29% of picture elements on desktop (84.64% on mobile). Next is JPG used by 4.84% and 4.83% respectively, followed by PNG at 18.18% and 17.46%, Gif at 0.53% and 0.53% and AVIF doesn't register above 0 for either client.",
+  description="Bar chart showing picture format usage by image type. WebP is dominate usage used by 83.29% of picture elements on desktop (84.64% on mobile). Next is PNG at 18.18% and 17.46%, followed by JPG used by 4.84% and 4.83% respectively, and then Gif at 0.53% and 0.53% and AVIF doesn't register above 0 for either client.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=775091522&format=interactive",
   sheets_gid="1719719920",
   sql_file="picture_format_distribution.sql"
   )
 }}
 
-{# TODO Analysts this doesn't sound right? Is this the format chosen? That would make sense as we crawl as Chrome so it will prefer WebP over others, but if not then I'm very dubious about these stats. Can we double check? #}
+We see that WebP is the dominante usage across `<picture>` elements, followed by PNG and JPG is only 4.83% of `<picture>` usage.
+
+<p class="note">Note our crawler crawls as Chrome which supports WebP, but if using anoither browser which does not support this then you will see different results.</p>
 
 Here is an example of the markup syntax that could be used to offer multiple format variants:
 
@@ -202,7 +205,6 @@ Here is an example of the markup syntax that could be used to offer multiple for
   <img src="images/example.jpg" alt="Description" />
 </picture>
 ```
-
 
 The User Agent will effectively select the first one that it has a positive match on, and hence the ordering logic here is important.
 
