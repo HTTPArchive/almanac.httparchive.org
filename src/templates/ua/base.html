@@ -1,6 +1,6 @@
 {% extends "base/base.html" %}
 
-{% block description %}Web Almanac це щорічний звіт про стан вебу, який поєднує досвід веб-спільноти з даними і трендами від HTTP Archive.{% endblock %}
+{% block description %}Web Almanac - це щорічний звіт про стан вебу, який поєднує досвід веб-спільноти з даними і трендами від HTTP Archive.{% endblock %}
 
 {% block twitter_image_alt %}{{ year }} Web Almanac{% endblock %}
 
@@ -93,7 +93,7 @@
 {% block accessibility_statement %}Заява про доступність{% endblock %}
 
 {% block featured_chapter %}Рекомендований розділ{% endblock %}
-{% block featured_chapter_last_year %}Рекомендований розділ<br/>з Web Almanac {{ year|int -1 }} року{% endblock %}
+{% block featured_chapter_last_year %}Рекомендований розділ<br/>з Web Almanac {{ year|int -1 }}{% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
@@ -104,12 +104,12 @@
 {% endif %}
 
 {% block contributors_description %}
-Створення Web Almanac стало можливим завдяки важкій роботі веб-ком’юніті. {{ self.contributors() }} надзвичайних людей вклали безліч години у планування, дослідження, написання та продакшен.
+Створення Web Almanac стало можливим завдяки важкій роботі веб-спільноти. {{ self.contributors() }} надзвичайних людей вклали безліч години у планування, дослідження, написання та продакшен.
 {% endblock %}
 {% block contributors_link %}Переглянути список контриб'юторів{% endblock %}
 
-{% block methodology_stat_1_title %}Сайтів протестовано{% endblock %}
-{% block methodology_stat_2_title %}Даних оброблено{% endblock %}
+{% block methodology_stat_1_title %}Протестовано сайтів{% endblock %}
+{% block methodology_stat_2_title %}Оброблено даних{% endblock %}
 {% block methodology_link %}Дізнатися про нашу Методологію{% endblock %}
 
 {% block introduction %}Вступ{% endblock %}
@@ -123,7 +123,7 @@
 
 {% block ebook_title %}Електронна книга{% endblock %}
 {% block ebook_download_short %}Електронна книга у PDF ({{ ebook_size_in_mb }}МБ){% endblock %}
-{% block ebook_download %}Завантажити весь Web Almanac {{ year }} року у форматі PDF ({{ ebook_size_in_mb }}МБ){% endblock %}
+{% block ebook_download %}Завантажити весь Web Almanac {{ year }} у форматі PDF ({{ ebook_size_in_mb }}МБ){% endblock %}
 {% block ebook_download_note %}(згенеровано <a href="https://www.princexml.com/">www.princexml.com</a>){% endblock %}
 
 {%
@@ -131,7 +131,7 @@
     "I. Page Content": "I. Контент сторінки",
     "II. User Experience": "II. Досвід користування",
     "III. Content Publishing": "III. Публікація контенту",
-    "IV. Content Distribution": "IV. Розповсюждення контенту"
+    "IV. Content Distribution": "IV. Розповсюдження контенту"
   }
 %}
 {%
