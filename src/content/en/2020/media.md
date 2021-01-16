@@ -71,7 +71,7 @@ The fewer the number of image candidates, the greater the likelihood of the asse
   )
 }}
 
-In addition to the caching inefficencies already mentioned, a greater number of dimensional variants will typically increase both the complexity of the media pipeline or service in use, and the required media storage.
+In addition to the caching inefficiencies already mentioned, a greater number of dimensional variants will typically increase both the complexity of the media pipeline or service in use, and the required media storage.
 
 When looking at this data, note that a few platforms ([such as WordPress](https://make.wordpress.org/core/2015/11/10/responsive-images-in-wordpress-4-4/)) use automated approaches which impact a large number of sites.
 
@@ -79,7 +79,7 @@ When looking at this data, note that a few platforms ([such as WordPress](https:
 
 When providing the candidate list to the user agent, we have two mechanisms to annotate the candidate images: `x` descriptors and  `w` descriptors.
 
-`x` descriptors describe the device pixel ratio of the specific resource. For example a `2x` descriptor would indicate that the specific image resource is of twice the dimensional size in each axis (containing four times as many pixels), and is suitable for devices with a `window.devicePixelRatio` of `2`. Likewise, a `3x` descriptor signifies nine times the number of pixels, which of course can have considerable payload implications.
+`x` descriptors describe the device pixel ratio of the specific resource. For example a `2x` descriptor would indicate that the specific image resource is of twice the dimensional size in each axis (containing four times as many pixels) and is suitable for devices with a `window.devicePixelRatio` of `2`. Likewise, a `3x` descriptor signifies nine times the number of pixels, which of course can have considerable payload implications.
 
 ```html
 <img srcset="images/example_3x.jpg 3x, images/example_2x.jpg 2x"
@@ -113,7 +113,7 @@ Tools like the [Responsive Image Breakpoints Generator](https://www.responsivebr
 
 #### Sizes
 
-Without the `sizes` attribute, the user agent will make its calculations based on a worst-case-scenario assumption that the image occupies the full width of the viewport. With it, browsers have more information about the image's actual layout size, and can make better choices.
+Without the `sizes` attribute, the user agent will make its calculations based on a worst-case-scenario assumption that the image occupies the full width of the viewport. With it, browsers have more information about the image's actual layout size and can make better choices.
 
 For example:
 
@@ -229,7 +229,7 @@ There are three aspects to consider when implementing format-switching:
 - A site's media pipeline: the processes it uses to create the needed media in a variety of formats
 - Implementing the markup to tell browsers which formats are on offer, and when to select each
 
-Several Dynamic Media Services and Image CDNs can greatly simplify this by automating it, and endeavoring to track and keep in sync with the ever-changing browser format support landscape.
+Several Dynamic Media Services and Image CDNs can greatly simplify this by automating it and endeavoring to track and keep in sync with the ever-changing browser format support landscape.
 
 <p class="note">Note: though AVIF has been supported in Chrome since version 85 (released late August 2020), the data for this Almanac is predominantly from prior to this time. However running an ad hoc query on more recent data from early November 2020 shows tens of thousands of AVIF requests.</p>
 
@@ -372,7 +372,7 @@ Media assets can be stored either locally, or on an Image CDN. The way assets ar
 )
 }}
 
-Analysing the markup, on desktop we see 7.83% of pages using this, and on mobile it is 8.19%. The [Resource Hints](./resource-hints#hints-adoption) chapter used a slightly different methodology by analysing the DOM and got similar, but slightly larger numbers at 8.15% and 8.65% respectively.
+Analyzing the markup, on desktop we see 7.83% of pages using this, and on mobile it is 8.19%. The [Resource Hints](./resource-hints#hints-adoption) chapter used a slightly different methodology by analyzing the DOM and got similar, but slightly larger numbers at 8.15% and 8.65% respectively.
 
 ### Usage of `data-url` vs `src` attribute
 
@@ -395,7 +395,7 @@ Associating descriptive text with images not only helps accessibility for those 
 
 #### Usage of `alt` text
 
-The `alt` attribute for images is used to provide a description of the image. It is announced by screen-readers, and is also shown in visual browsers when the image doesn't load.
+The `alt` attribute for images is used to provide a description of the image. It is announced by screen-readers and is also shown in visual browsers when the image doesn't load.
 
 {{ figure_markup(
   image="image-alt-usage-by-page.png",
