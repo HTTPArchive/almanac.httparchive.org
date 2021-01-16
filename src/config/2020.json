@@ -2,7 +2,7 @@
   "settings": [
     {
       "is_live": true,
-      "supported_languages": ["en","es","fr","hi","it","ja","nl","pt","ru","zh-CN","zh-TW"],
+      "supported_languages": ["en","es","fr","hi","it","ja","nl","pt","ru","uk","zh-CN","zh-TW"],
       "ebook_languages": ["en"]
     }
   ],
@@ -756,6 +756,15 @@
       "avatar_url": "https://avatars1.githubusercontent.com/u/375731?v=4&s=200",
       "github": "thefoxis",
       "twitter": "fox"
+    },
+    "tymosh": {
+      "name": "Kate Tymoshkina",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars2.githubusercontent.com/u/25080897?v=4&s=200",
+      "github": "tymosh",
+      "linkedin": "tymosh"
     },
     "khempenius": {
       "name": "Katie Hempenius",

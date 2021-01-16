@@ -1,0 +1,177 @@
+{% extends "base/base.html" %}
+
+{% block description %}Web Almanac - це щорічний звіт про стан вебу, який поєднує досвід веб-спільноти з даними і трендами від HTTP Archive.{% endblock %}
+
+{% block twitter_image_alt %}{{ year }} Web Almanac{% endblock %}
+
+{% block skip_navigation %}Пропустити навігацію{% endblock %}
+
+{% block organization %}Web Almanac від HTTP Archive{% endblock %}
+{% block web_almanac_logo %}
+  <span class="wa">Web Almanac</span>
+  <span class="line-group">
+    <span class="pre">від</span>
+    <span class="ha">HTTP Archive</span>
+  </span>
+{% endblock %}
+
+{% block intro_title %}Web Almanac{% endblock %}
+{% block intro_sub_title %}Щорічний звіт HTTP&nbsp;Archive<br>про <b>стан вебу</b>{% endblock %}
+
+{% block mission %}
+<p>
+Наша місія - поєднати суху статистику і тренди від HTTP Archive з досвідом веб-спільноти. Web Almanac це всеосяжний звіт про стан вебу, підтриманий реальними даними та довіреними веб-експертами. Він складається з {{ supported_chapters | length }} розділів, які охоплюють аспекти контенту сторінки, досвіду користування, публікації та розповсюдження.
+</p>
+{% endblock %}
+
+{% block read_last_years_almanac %}Читати Web Almanac за {{ year | int - 1 }} рік{% endblock %}
+
+{% block http_archive_link %}HTTP Archive home{% endblock %}
+
+{% block page_navigation %}Навігація сторінки{% endblock %}
+
+{% block help_translate %}Допомогти з перекладом{% endblock %}
+{% block translation_not_available %}англійською - переклад недоступний{% endblock %}
+{% block language_switcher %}Змінити мову{% endblock %}
+{% block year_switcher %}Змінити рік{% endblock %}
+{% block table_of_contents_switcher %}Переключити зміст{% endblock %}
+
+{% block home %}Головна{% endblock %}
+{% block table_of_contents_title %}Зміст{% endblock %}
+{% block contributors_title %}Контриб'ютори{% endblock %}
+{% block methodology_title %}Методологія{% endblock %}
+
+{% block part %}Частина{% endblock %}
+{% block chapter %}Розділ{% endblock %}
+
+{% block start_exploring %}Ознайомитися{% endblock %}
+
+{% block menu_title %}Меню сторінки{% endblock %}
+{% block open_the_menu %}Відкрити меню{% endblock %}
+{% block close_the_menu %}Закрити меню{% endblock %}
+
+{% block index_nav_title %}Розділ змісту{% endblock %}
+{% block index_title %}Показчик{% endblock %}
+{% block open_the_index %}Відкрити зміст{% endblock %}
+{% block close_the_index %}Закрити зміст{% endblock %}
+
+{% block and %}і{% endblock %}
+{% block comma %}, {% endblock %}
+{% block oxford_comma %}{% endblock %}
+
+{% block open %}Відкрити{% endblock %}
+{% block close %}Закрити{% endblock %}
+
+{% macro figure_text(metadata, id) %}Рис. {{ figure_id(metadata, id) }}.{% endmacro %}
+{% macro show_description(metadata, id) %}Показати пояснення до рис. {{ figure_id(metadata, id) }}{% endmacro %}
+{% macro hide_description(metadata, id) %}Сховати пояснення до рис. {{ figure_id(metadata, id) }}{% endmacro %}
+
+{% block written_by_before %}Автори: {% endblock %}
+{% block reviewed_by_before %}Рецензенти: {% endblock %}
+{% block translated_by_before %}Перекладачі: {% endblock %}
+{% block analysis_by_before %}Аналітики: {% endblock %}
+{% block edited_by_before %}Редактори: {% endblock %}
+{% block written_by_after %}{% endblock %}
+{% block reviewed_by_after %}{% endblock %}
+{% block translated_by_after %}{% endblock %}
+{% block analysis_by_after %}{% endblock %}
+{% block edited_by_after %}{% endblock %}
+
+{% block unedited %}[Очікує корегування]{% endblock %}
+
+{% block author %}Автор{% endblock %}
+{% block authors %}Автори{% endblock %}
+
+{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} у Twitter{% endmacro %}
+{% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} на GitHub{% endmacro %}
+{% macro onLinkedIn(authorName) %}{{authorName}} у LinkedIn{% endmacro %}
+{% macro website(authorName) %}вебсайт {{authorName}}{% endmacro %}
+
+{% macro edition(year) %}Видання {{ year }} року{% endmacro %}
+
+{% block footer_title %}Підвальна навігація{% endblock %}
+{% block copyright %}© Web Almanac. Ліцензія <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
+{% block accessibility_statement %}Заява про доступність{% endblock %}
+
+{% block featured_chapter %}Рекомендований розділ{% endblock %}
+{% block featured_chapter_last_year %}Рекомендований розділ<br/>з Web Almanac {{ year|int -1 }}{% endblock %}
+
+{# Check if read_chapter already defined in child template as macros can't be overridden #}
+{% if not read_chapter %}
+{% macro read_chapter(chapter) %}Читати розділ <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
+{% endif %}
+{% if not read_last_years_chapter %}
+{% macro read_last_years_chapter(chapter) %}Читати розділ <span class="featured-chapter-name">{{ chapter }}</span> {{ year|int-1 }} року{% endmacro %}
+{% endif %}
+
+{% block contributors_description %}
+Створення Web Almanac стало можливим завдяки важкій роботі веб-спільноти. {{ self.contributors() }} надзвичайних людей вклали безліч години у планування, дослідження, написання та продакшен.
+{% endblock %}
+{% block contributors_link %}Переглянути список контриб'юторів{% endblock %}
+
+{% block methodology_stat_1_title %}Протестовано сайтів{% endblock %}
+{% block methodology_stat_2_title %}Оброблено даних{% endblock %}
+{% block methodology_link %}Дізнатися про нашу Методологію{% endblock %}
+
+{% block introduction %}Вступ{% endblock %}
+
+{% block foreword_title %}Передмова{% endblock %}
+
+{% block coming_soon %}Незабаром!{% endblock %}
+
+{% block appendix %}Додаток{% endblock %}
+{% block appendices %}Додатки{% endblock %}
+
+{% block ebook_title %}Електронна книга{% endblock %}
+{% block ebook_download_short %}Електронна книга у PDF ({{ ebook_size_in_mb }}МБ){% endblock %}
+{% block ebook_download %}Завантажити весь Web Almanac {{ year }} у форматі PDF ({{ ebook_size_in_mb }}МБ){% endblock %}
+{% block ebook_download_note %}(згенеровано <a href="https://www.princexml.com/">www.princexml.com</a>){% endblock %}
+
+{%
+  set localizedPartTitles = {
+    "I. Page Content": "I. Контент сторінки",
+    "II. User Experience": "II. Досвід користування",
+    "III. Content Publishing": "III. Публікація контенту",
+    "IV. Content Distribution": "IV. Розповсюдження контенту"
+  }
+%}
+{%
+  set localizedChapterTitles = {
+    "javascript": "JavaScript",
+    "css": "CSS",
+    "markup": "Розмітка",
+    "media": "Медіа",
+    "third-parties": "Сторонні ресурси",
+    "fonts": "Шрифти",
+    "performance": "Швидкодія",
+    "security": "Безпека",
+    "accessibility": "Доступність",
+    "seo": "SEO",
+    "pwa": "PWA",
+    "mobile-web": "Мобільний веб",
+    "ecommerce": "Електронна комерція",
+    "cms": "CMS",
+    "compression": "Компресія",
+    "caching": "Кешування",
+    "cdn": "CDN",
+    "page-weight": "Розмір сторінки",
+    "resource-hints": "Підказки для ресурсів",
+    "http2": "HTTP/2",
+    "privacy": "Приватність",
+    "capabilities": "Можливості",
+    "jamstack": "Jamstack"
+  }
+%}
+
+{% set localizedTeamNames = {
+  "analysts": "Аналітики",
+  "authors": "Автори",
+  "brainstormers": "Творча група",
+  "designers": "Дизайнери",
+  "developers": "Розробники",
+  "editors": "Редактори",
+  "leads": "Керівники проектів",
+  "reviewers": "Рецензенти",
+  "translators": "Перекладачі"
+  }
+%}
