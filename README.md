@@ -21,6 +21,7 @@ The Web Almanac is available in the original [English](https://almanac.httparchi
 - [Portuguese](https://almanac.httparchive.org/pt/)
 - [Russian](https://almanac.httparchive.org/ru/)
 - [Spanish](https://almanac.httparchive.org/es/)
+- [Ukrainian](https://almanac.httparchive.org/uk/)
 
 ## Contributing
 
