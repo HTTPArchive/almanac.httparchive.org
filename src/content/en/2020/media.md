@@ -54,7 +54,7 @@ Around 26.5% of all pages now include `srcset`
 
 The number of images presented to the user agents to choose from has direct implications for two main performance factors:
 
-1. [Image breakpoints](https://cloudf.com/thinks/responsive-images-101-part-9-image-breakpoints/) (to meet a performance budget)
+1. [Image breakpoints](https://cloudfour.com/thinks/responsive-images-101-part-9-image-breakpoints/) (to meet a performance budget)
 2. Caching efficiencies
 
 The fewer the number of image candidates, the greater the likelihood of the asset being cached, and if a CDN is being used, the greater the likelihood of it being available on a client's nearest edge node. However the greater the difference in media dimensions, the more likely we are to end up serving media which is less-suited to the device and context in question.
@@ -90,6 +90,7 @@ When providing the candidate list to the user agent, we have two mechanisms to a
 
 ```html
 <img srcset="images/example_small.jpg 600w, images/example_medium.jpg 1400w, images/example_large.jpg 2400w"
+     sizes="100vw"
      src="images/example_fallback.jpg" alt="..." />
 ```
 
@@ -105,11 +106,11 @@ Both approaches enable the user agent to mathematically factor in the current de
   )
 }}
 
+{# TODO y axis here should just say "Percent", I think as for the different bars it's percent of pages and percent of elements }
+
 In the early days of responsive images, some browsers only supported `x` descriptors, but clearly `w` descriptors are currently by far the most favored.
 
-While it can be common to choose image candidates which are spaced by dimension, for example widths of  720px,  1200px, 1800px there are also approaches to give more linear payload steps, for example say a series of images which are say 50kb in difference.
-
-Tools like the [Responsive Image Breakpoints Generator](https://www.responsivebreakpoints.com/) can be useful in facilitating this.
+While it can be common to choose image candidates which are spaced by dimension (rendering every image at a set of pre-chosen widths, e.g. 720px, 1200px, and 1800px) there are also approaches to give more linear payload steps (e.g. a series of resources which are 50kb in difference). Tools like the [Responsive Image Breakpoints Generator](https://www.responsivebreakpoints.com/) can be useful in facilitating this.
 
 #### Sizes
 
@@ -142,17 +143,6 @@ Many people that we have discussed this with express that `sizes` is particularl
 
 While `srcset` and `sizes` provide us with tooling to help provide browsers with images which are dimensionally more suited for a given viewport, device and layout - the `<picture>` element enables us to provide more sophisticated media strategies, including leveraging more effective image formats and empowering us to explore “art direction”.
 
-##### Picture: format switching
-
-While there are some services and image CDNs which can provide auto-format switching from a single image URL using logic on the backend, we can also achieve similar behaviors using markup alone, with the `<picture>` element.
-
-```html
-<picture>
-    <source type="image/webp" srcset="images/example.webp" />
-    <img src="images/example.jpg" alt="..." />
-</picture>
-```
-
 {{ figure_markup(
   image="use-of-picture.png",
   alt="Use of picture.",
@@ -164,7 +154,18 @@ While there are some services and image CDNs which can provide auto-format switc
   )
 }}
 
-Current uptake shows around 19% of pages being served using the picture element serving at least one image.
+Current uptake shows around 19% of pages being served using the `<picture>` element serving at least one image.
+
+##### Picture: format switching
+
+While there are some services and image CDNs which can provide auto-format switching from a single image URL using logic on the backend, we can also achieve similar behaviors using markup alone, with the `<picture>` element.
+
+```html
+<picture>
+    <source type="image/webp" srcset="images/example.webp" />
+    <img src="images/example.jpg" alt="..." />
+</picture>
+```
 
 Breaking this down into the number of formats offered:
 
@@ -179,6 +180,8 @@ Breaking this down into the number of formats offered:
   )
 }}
 
+{# TODO this y axis should say "Percent of picture elements" }
+
 Of pages using `<picture>` for format-switching, around 68% are offering a single type variation, in addition to the `<img src>` which acts as the default.
 
 {{ figure_markup(
@@ -191,7 +194,9 @@ Of pages using `<picture>` for format-switching, around 68% are offering a singl
   )
 }}
 
-We see that WebP is the dominant usage across `<picture>` elements, followed by PNG and JPG is only 4.83% of `<picture>` usage.
+{# TODO this y axis should say "Percent of source elements" }
+
+We see that WebP is the dominant usage across `<source>` elements, followed by PNG, and that and JPG is only 4.83% of `<picture>` usage.
 
 <p class="note">Note our crawler crawls as Chrome which supports WebP, but if using another browser which does not support this then you will see different results.</p>
 
@@ -244,17 +249,17 @@ In this example, we are changing out the aspect ratio of the served media, from 
 ```html
 <picture>
   <source media="(max-width: 780px)"
-          srcset="image/example_square.jpg, image/example_square_2x.jpg 2x" />
+          srcset="image/example_square.jpg 1x, image/example_square_2x.jpg 2x" />
   <source media="(max-width: 1400px)"
-          srcset="image/example_4_3_aspect.jpg, image/example_4_3_aspect.jpg 2x" />
-  <source srcset="image/example_16_9_aspect.jpg, image/example_16_9_aspect_2x.jpg 2x"/>
+          srcset="image/example_4_3_aspect.jpg 1x, image/example_4_3_aspect_2x.jpg 2x" />
+  <source srcset="image/example_16_9_aspect.jpg 1x, image/example_16_9_aspect_2x.jpg 2x"/>
   <img src="image/example_fallback.jpg" alt="..." />
 </picture>
 ```
 
 ##### Picture: orientation switching
 
-While the data shows that only a little under 1% of pages using picture make use of orientation, this feels like an area that warrants further exploration from website designers and developers.
+While the data shows that only a little under 1% of pages using `<picture>` make use of orientation, this feels like an area that warrants further exploration from website designers and developers.
 
 {{ figure_markup(
   image="picture-usage-of-orientation.png",
