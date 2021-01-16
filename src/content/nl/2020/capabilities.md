@@ -187,7 +187,7 @@ Om dit te doen, biedt de API een nieuwe `IdleDetector` interface op het globale 
 
 Op het moment van schrijven bevindt de Idle Detection API zich in een oorspronkelijke proef, dus de API-vorm kan in de toekomst veranderen. Om dezelfde reden is het gebruik ervan erg laag en nauwelijks meetbaar.
 
-## <span hreflang="en">Periodic Background Sync API</span> {periodic-background-sync-api}
+## <span lang="en">Periodic Background Sync API</span> {periodic-background-sync-api}
 
 Wanneer de gebruiker een web-app sluit, kan deze niet meer communiceren met de backend-service. In sommige gevallen willen ontwikkelaars mogelijk nog steeds gegevens min of meer regelmatig synchroniseren, net zoals native applicaties dat kunnen. Nieuwsapplicaties willen bijvoorbeeld de laatste krantenkoppen downloaden voordat de gebruiker wakker wordt. De <a hreflang="en" href="https://web.dev/periodic-background-sync/">Periodic Background Sync API</a> (<a hreflang="en" href="https://wicg.github.io/periodic-background-sync/">WICG Draft Community Group Report</a>) streeft ernaar deze kloof tussen web en native te overbruggen.
 
