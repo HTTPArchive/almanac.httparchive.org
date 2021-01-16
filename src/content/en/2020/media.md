@@ -321,7 +321,7 @@ How common are [progressive JPEGs](https://www.smashingmagazine.com/2018/02/prog
 
 Let us turn now to the topic of [microbrowsers](https://24ways.org/2019/microbrowsers-are-everywhere/). Also known as "link unfurlers" and "link expanders," these are the user agents that request webpages and grab bits and pieces from them to assemble rich previews when links are shared in messaging or on social media. The *lingua franca* of microbrowsers is Facebook's [Open Graph protocol](https://ogp.me), so we looked at what percentage of webpages are including images and video specifically targeted towards microbrowsers in Open Graph `<meta>` tags.
 
-{# TODO add microbrowser image and video chart(s) here }
+{# TODO add microbrowser image and video chart(s) here #}
 
 A third of web pages include images, in Open Graph tags, for microbrowsers. But only around 0.1 percent of pages include microbrowser-specific *videos*; just about every page that included a video, also included an image.
 
@@ -329,7 +329,7 @@ A third of sampled webpages seems very healthy; the power of relational, word-of
 
 Given that video content is expensive to produce and much less common on the web than images, we understand the comparatively low usage. But the fact that videos are often playable and even autoplay-able from within the link previews themselves, without requiring a trip to a full-on browser, means that this is a big opportunity for boosting engagement.
 
-{# TODO add microbrowser image and video formats chart(s) here }
+{# TODO add microbrowser image and video formats chart(s) here #}
 
 The Open Graph protocol only allows for *one* image or video URL to be included; there is none of the context-adaptive flexibility offered by `<picture>` and `srcset`. So, authors tend to be rather conservative when picking formats to send to microbrowsers. Fully half of all microbrowser-specific images are JPEGs; 45 percent are PNGs; a hair under 2 percent are GIFs. WebPs only account for 0.2% of images for microbrowsers.
 
@@ -345,13 +345,13 @@ Media assets can be stored either locally, or on an Image CDN. The way assets ar
 
 In some cases, resources displayed on a page come from another origin. In this case the 'rel=preconnect' attribute can be used on a `<link>` element to give browsers an opportunity to initiate DNS connections before they are needed. While this is a relatively cheap operation, there could be situations when the additional CPU time spent establishing such connections delays other work. Interestingly enough both on desktop and mobile we have seen a tiny number of pages utilizing this technique: 0.000054% and 0.000016% respectively.
 
-{# TODO chart about preconnect }
+{# TODO chart about preconnect #}
 
 ### Usage of `data-url` vs `src` attribute
 
 Using data URLs (formerly known as data URIs) is a technique that allows developers to embed a base64-encoded image directly in HTML. This ensures that an image will be fully loaded by the time that the HTML has been parsed into a DOM tree, and virtually guarantees that the image will be available for the first paint. However, because they don't compress over the wire as well as binaries, block other – possibly more important resources – from loading, and complicate caching, base-64'd images [are something of an antipattern](https://calendar.perfplanet.com/2020/the-dangers-of-data-uris/). The usage of these doesn't seem to be that widespread: 0.9% of pages utilize data URLs for displaying images.
 
-{# TODO chart about data urls }
+{# TODO chart about data urls #}
 
 ### SEO & Accessibility
 
@@ -380,8 +380,6 @@ The `alt` attribute for images is used to provide a description of the image. It
   sql_file="image_alt.sql"
   )
 }}
-
-{# TODO the y axis on this chart should be labeled "Percent of images" }
 
 Around 96% of all the pages processed had an `<img>` element - 21% of these images were missing an `alt` attribute. 52% of the images had an `alt` attribute, however 26% of these were left blank. Put simply: only around a quarter of images on the web have a non-blank `alt` attribute; presumably even less than that have `alt` text that's usefully descriptive.
 
