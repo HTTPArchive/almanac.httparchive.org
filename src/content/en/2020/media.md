@@ -153,10 +153,6 @@ While there are some services and image CDNs which can provide auto-format switc
 </picture>
 ```
 
-Current uptake shows around 19% of pages being served using the picture element are doing so at least in part in relation to format switching.
-
-{# TODO not sure about this claim. My read of the data was that 19% of all surveyed pages contained any picture elements at all -- saying nothing about format switching #}
-
 {{ figure_markup(
   image="use-of-picture.png",
   alt="Use of picture.",
@@ -167,6 +163,8 @@ Current uptake shows around 19% of pages being served using the picture element 
   sql_file="picture_format_distribution.sql"
   )
 }}
+
+Current uptake shows around 19% of pages being served using the picture element serving at least one image.
 
 Breaking this down into the number of formats offered:
 
@@ -321,7 +319,15 @@ How common are [progressive JPEGs](https://www.smashingmagazine.com/2018/02/prog
 
 Let us turn now to the topic of [microbrowsers](https://24ways.org/2019/microbrowsers-are-everywhere/). Also known as "link unfurlers" and "link expanders," these are the user agents that request webpages and grab bits and pieces from them to assemble rich previews when links are shared in messaging or on social media. The *lingua franca* of microbrowsers is Facebook's [Open Graph protocol](https://ogp.me), so we looked at what percentage of webpages are including images and video specifically targeted towards microbrowsers in Open Graph `<meta>` tags.
 
-{# TODO add microbrowser image and video chart(s) here #}
+{{ figure_markup(
+  image="open-graph-image-and-video-usage.png",
+  caption="Open Graph image and video usage.",
+  description="Bar chart showing 33.78% of desktop pages and 32.72% of mobile pages us Open Graph with images, 0.09% of desktop and 0.10% of mobile pages use Open Graph with images, and it's the exact same percentages for both.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=950603216&format=interactive",
+  sheets_gid="625517121",
+  sql_file="meta_open_graph.sql"
+  )
+}}
 
 A third of web pages include images, in Open Graph tags, for microbrowsers. But only around 0.1 percent of pages include microbrowser-specific *videos*; just about every page that included a video, also included an image.
 
@@ -329,29 +335,59 @@ A third of sampled webpages seems very healthy; the power of relational, word-of
 
 Given that video content is expensive to produce and much less common on the web than images, we understand the comparatively low usage. But the fact that videos are often playable and even autoplay-able from within the link previews themselves, without requiring a trip to a full-on browser, means that this is a big opportunity for boosting engagement.
 
-{# TODO add microbrowser image and video formats chart(s) here #}
+{{ figure_markup(
+  image="open-graph-image-type-usage.png",
+  caption="Open Graph image type usage.",
+  description="Bar chart showing the following percentage usage of various image formats on mobile: 50.51% for jpg, 43.82% for png,1.60% for gif, 1.78% for jpeg, 0.66% for svg, 0.31% for pnj, 0.36% for png:150, 0.28% for ico, and 0.23% for webp. Desktop has very simialr numbers.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=475337707&format=interactive",
+  sheets_gid="758253988",
+  sql_file="meta_open_image_types.sql"
+  )
+}}
+
+{{ figure_markup(
+  image="open-graph-video-type-usage.png",
+  caption="Open Graph video type usage.",
+  description="Bar chart showing 68.55% of desktop pages and 78.57% of mobile pages use mp4 video format, 19.75% of desktop pages and 10.86% of mobile pages use swf format, and 2.64% of desktop pages and 2.83% of mobile pages use webm format.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=110839067&format=interactive",
+  sheets_gid="353192921",
+  sql_file="meta_open_video_types.sql"
+  )
+}}
 
 The Open Graph protocol only allows for *one* image or video URL to be included; there is none of the context-adaptive flexibility offered by `<picture>` and `srcset`. So, authors tend to be rather conservative when picking formats to send to microbrowsers. Fully half of all microbrowser-specific images are JPEGs; 45 percent are PNGs; a hair under 2 percent are GIFs. WebPs only account for 0.2% of images for microbrowsers.
 
 Likewise, on the video front, the vast majority of resources are sent in the lowest-common-denominator format: MP4. We are  mystified as to why the second most popular format is the [now-depreciated](https://blog.adobe.com/en/publish/2017/07/25/adobe-flash-update.html#gs.my93m2) SWF, and curious whether these are playable in any microbrowser.
 
-### Usage of CDNs for storing & delivering media
+### Usage of `rel=preconnect`
 
-{# TODO do we have any stats on this? Do the sections below relate to this?}
+Media assets can be stored either locally, or on an Image CDN. The way assets are optimized, transformed and delivered to the end user highly depends on the appropriate technique used. When including images from another domain, the 'rel=preconnect' attribute can be used on a `<link>` element to give browsers an opportunity to initiate DNS connections before they are needed. While this is a relatively cheap operation, there could be situations when the additional CPU time spent establishing such connections delays other work.
 
-Media assets can be stored either locally, or on an Image CDN. The way assets are optimized, transformed and delivered to the end user highly depends on the appropriate technique used.
+{{ figure_markup(
+  caption="Mobile pages using preconnect.",
+  content="8.19%",
+  classes="big-number",
+  sheets_gid="121764369",
+  sql_file="big_non_custom_metrics.sql"
+)
+}}
 
-#### Usage of `rel=preconnect`
-
-In some cases, resources displayed on a page come from another origin. In this case the 'rel=preconnect' attribute can be used on a `<link>` element to give browsers an opportunity to initiate DNS connections before they are needed. While this is a relatively cheap operation, there could be situations when the additional CPU time spent establishing such connections delays other work. Interestingly enough both on desktop and mobile we have seen a tiny number of pages utilizing this technique: 0.000054% and 0.000016% respectively.
-
-{# TODO chart about preconnect #}
+Analysing the markup, on desktop we see 7.83% of pages using this, and on mobile it is 8.19%. The [Resource Hints](./resource-hints#hints-adoption) chapter used a slightly different methodology by analysing the DOM and got similar, but slightly larger numbers at 8.15% and 8.65% respectively.
 
 ### Usage of `data-url` vs `src` attribute
 
-Using data URLs (formerly known as data URIs) is a technique that allows developers to embed a base64-encoded image directly in HTML. This ensures that an image will be fully loaded by the time that the HTML has been parsed into a DOM tree, and virtually guarantees that the image will be available for the first paint. However, because they don't compress over the wire as well as binaries, block other – possibly more important resources – from loading, and complicate caching, base-64'd images [are something of an antipattern](https://calendar.perfplanet.com/2020/the-dangers-of-data-uris/). The usage of these doesn't seem to be that widespread: 0.9% of pages utilize data URLs for displaying images.
+Using data URLs (formerly known as data URIs) is a technique that allows developers to embed a base64-encoded image directly in HTML. This ensures that an image will be fully loaded by the time that the HTML has been parsed into a DOM tree, and virtually guarantees that the image will be available for the first paint. However, because they don't compress over the wire as well as binaries, block other – possibly more important resources – from loading, and complicate caching, base-64'd images [are something of an antipattern](https://calendar.perfplanet.com/2020/the-dangers-of-data-uris/).
 
-{# TODO chart about data urls #}
+{{ figure_markup(
+  caption="Mobile pages using data URIs.",
+  content="9.10%",
+  classes="big-number",
+  sheets_gid="206827357",
+  sql_file="big_non_custom_metrics.sql"
+)
+}}
+
+The usage of these doesn't seem to be that widespread: 9% of pages utilize data URLs for displaying images.
 
 ### SEO & Accessibility
 
