@@ -65,7 +65,7 @@ Our methodology has the following limitations:
 
 In total, 21.72% of mobile websites and 21.27% of desktop websites used an ecommerce platform. For 2019, the same number was 9.41% for mobile websites and 9.67% for desktop websites.
 
-<p class="note">Note: This increase is primarily due to improvements made to Wappalyzer to detect ecommerce websites and shouldn't be attributed to other factors like growth due to Covid-19. Also a minor correction was applied to 2019 stats retrospectively to account for an error and hence the 2019 percentages are slightly different than those given in the [2019 Ecommerce](../2019/ecommerce) chapter.</p>
+<p class="note">Note: This increase is primarily due to improvements made to Wappalyzer to detect ecommerce websites and shouldn't be attributed to other factors like growth due to Covid-19. Also a minor correction was applied to 2019 stats retrospectively to account for an error and hence the 2019 percentages are slightly different than those given in the <a href="../2019/ecommerce">2019 Ecommerce</a> chapter.</p>
 
 ### Top ecommerce platforms
 
@@ -254,7 +254,7 @@ Another point for readers who are interested in improve CRUX metrics with images
 
 ### Third-party requests and bytes
 
-Ecommerce platforms and sites often make use of [third-party](./third-party) content. We use the [Third Party Web project](https://almanac.httparchive.org/en/2020/methodology#third-party-web) to detect third-party usage.
+Ecommerce platforms and sites often make use of [third-party](./third-party) content. We use the [Third Party Web project](./methodology#third-party-web) to detect third-party usage.
 
 {{ figure_markup(
   image="distribution-of-third-party-requests.png",
@@ -436,7 +436,7 @@ Adoption of server-side tagging will depend on third parties to provide server s
   <figcaption>{{ figure_link(caption="Tag manager usage on ecommerce sites.", sheets_gid="2045910168", sql_file="percent_of_ecommsites_using_each_tag_managers.sql") }}</figcaption>
 </figure>
 
-<p class="note">Note: Above analysis is based on Wappalyzer detection which may differ from analysis done using [third-party-web](https://almanac.httparchive.org/en/2020/methodology#third-party-web) dataset which is used for [Third parties chapter](./third-parties)</p>
+<p class="note">Note: Above analysis is based on Wappalyzer detection which may differ from analysis done using <a href="./methodology#third-party-web">Third Party Web</a> dataset which is used for <a href="./third-parties">Third parties</a> chapter.</p>
 
 ### Consent Management Platforms
 
