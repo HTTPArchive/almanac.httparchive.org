@@ -134,3 +134,16 @@ def test_render_en_2019_ebook(client):
 
 def test_render_old_image_dir_redirect(client):
     assert_route(client, '/static/images/2019/20_HTTP2/random.png', 301, '/static/images/2019/http2/random.png')
+
+
+def test_render_en_2020_story(client):
+    response = client.get('/en/2020/stories/page-content')
+    assert response.status_code == 200 and \
+        response.headers.get('X-Frame-Options') is None and \
+        'frame-ancestors *' in response.headers.get('Content-Security-Policy')
+
+
+def test_render_efonts_cache_control(client):
+    response = client.get('/static/fonts/Poppins-Bold.woff2')
+    assert response.status_code == 200 and \
+        'max-age=3153600' in response.headers.get('Cache-Control')

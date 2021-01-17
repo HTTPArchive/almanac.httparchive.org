@@ -226,23 +226,22 @@ Ads, analytics, content delivery network (CDN) resources, and tag-managers are p
 Browser auto-update mechanisms are a driving factor for client-side adoption of new web standards. It's [estimated](https://caniuse.com/http2) that over 97% of global users support HTTP/2, up slightly from 95% measured last year.
 
 Unfortunately, the upgrade path for servers is more difficult, especially with the requirement to support TLS. For mobile and desktop, we can see from Figure 22.10, that the majority of HTTP/2 sites are served by nginx, Cloudflare, and Apache. Almost half of the HTTP/1.1 sites are served by Apache.
+
 {{ figure_markup(
   image="http2-server-protocol-usage.png",
   caption="Server usage by HTTP protocol on mobile",
-  description="A bar chart showing the number of websites served by either HTTP/1.x or HTTP/2 for the most popular servers to mobile clients. Nginx serves 727,181 HTTP/1.1 and 727,181 HTTP/2 sites. Cloudflare 59,981 HTTP/1.1 and 679,616 HTTP/2. Apache 1,521,753 HTTP/1.1 and 585,096 HTTP/2. Litespeed 50,502 HTTP/1.1 and 166,721 HTTP/2. Microsoft-IIS 284,047 HTTP/1.1 and 81,490 HTTP/2.",
+  description="A bar chart showing the number of websites served by either HTTP/1.x or HTTP/2 for the most popular servers to mobile clients. Nginx serves 727,181 HTTP/1.1 and 1,023,575 HTTP/2 sites. Cloudflare 59,981 HTTP/1.1 and 679,616 HTTP/2. Apache 1,521,753 HTTP/1.1 and 585,096 HTTP/2. Litespeed 50,502 HTTP/1.1 and 166,721 HTTP/2. Microsoft-IIS 284,047 HTTP/1.1 and 81,490 HTTP/2.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=718663369&format=interactive",
   sheets_gid="306338094",
   sql_file="count_of_h2_and_h3_sites_grouped_by_server.sql"
 )
 }}
 
-
-
 How has HTTP/2 adoption changed in the last year for each server? Figure 22.11 shows a general HTTP/2 adoption increase of around 10% across all servers since last year. Apache and IIS are still under 25% HTTP/2. This suggests that either new servers tend to be nginx or it is seen as too difficult or not worthwhile to upgrade Apache or IIS to HTTP/2 and/or TLS.
 
 {{ figure_markup(
   image="http2-h2-usage-by-server.png",
-  caption="Percentage of pages served over HTTP/2 by sever",
+  caption="Percentage of pages served over HTTP/2 by server",
   description="A bar chart comparing the percentage of websites served over HTTP/2 between 2019 and 2020. Cloudflare increased to 93.08% from 85.40%. Litespeed increased to 81.91% from 70.80%. Openresty increased to 66.24% from 51.40%. Nginx increased to 60.84% from 49.20%. Apache increased to 27.19% from 18.10% and MIcorsoft-IIS increased to 22.82% from 14.10%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=936321266&format=interactive",
   sheets_gid="306338094",
@@ -481,37 +480,37 @@ Looking further at the distributions for pushed assets in Figures 22.18 and 22.1
       <tr>
         <td class="numeric">10</td>
         <td class="numeric">1</td>
-        <td class="numeric">15.48</td>
+        <td class="numeric">3.95</td>
         <td class="numeric">1</td>
-        <td class="numeric">0.06</td>
+        <td class="numeric">15.83</td>
       </tr>
       <tr>
         <td class="numeric">25</td>
-        <td class="numeric">1</td>
-        <td class="numeric">36.34</td>
-        <td class="numeric">1</td>
-        <td class="numeric">0.06</td>
+        <td class="numeric">2</td>
+        <td class="numeric">36.32</td>
+        <td class="numeric">3</td>
+        <td class="numeric">35.93</td>
       </tr>
       <tr>
         <td class="numeric">50</td>
-        <td class="numeric">3</td>
-        <td class="numeric">183.83</td>
-        <td class="numeric">2</td>
-        <td class="numeric">24.06</td>
+        <td class="numeric">4</td>
+        <td class="numeric">139.58</td>
+        <td class="numeric">7</td>
+        <td class="numeric">111.96</td>
       </tr>
       <tr>
         <td class="numeric">75</td>
-        <td class="numeric">10</td>
-        <td class="numeric">225.41</td>
-        <td class="numeric">5</td>
-        <td class="numeric">204.65</td>
+        <td class="numeric">8</td>
+        <td class="numeric">346.70</td>
+        <td class="numeric">21</td>
+        <td class="numeric">203.59</td>
       </tr>
       <tr>
         <td class="numeric">90</td>
-        <td class="numeric">12</td>
-        <td class="numeric">351.05</td>
-        <td class="numeric">18</td>
-        <td class="numeric">453.57</td>
+        <td class="numeric">17</td>
+        <td class="numeric">440.08</td>
+        <td class="numeric">41</td>
+        <td class="numeric">390.91</td>
       </tr>
     </tbody>
   </table>
@@ -570,14 +569,12 @@ Looking further at the distributions for pushed assets in Figures 22.18 and 22.1
   <figcaption>{{ figure_link(caption="Distribution of pushed assets on mobile.", sheets_gid="698874709", sql_file="number_of_h2_and_h3_pushed_resources_and_bytes_transferred.sql") }}</figcaption>
 </figure>
 
-
 Looking at the frequency of push by content type in Figure 22.20, we see 90% of pages push scripts and 56% push CSS. This makes sense, as these can be small files typically on the critical path to render a page.
 
-{# TODO(analysts): Should this chart differentiate desktop and mobile? #}
 {{ figure_markup(
   image="http2-pushed-content-types.png",
   caption="Percentage of pages pushing specific content types",
-  description="A bar chart showing for pages that push resources on desktop; 89.1% push scripts, 67.9% css, 6.1% images, 1.3% fonts, 0.7% other and 0.7% html. On mobile 90.29% push scripts, 56.8% css, 3.69% images, 0.97% fonts, 0.36% other and 0.39% html.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=1708672642&format=interactive",
+  description="A bar chart showing for pages that push resources on desktop; 89.1% push scripts, 67.9% css, 6.1% images, 1.3% fonts, 0.7% other and 0.7% html. On mobile 90.29% push scripts, 56.08% css, 3.69% images, 0.97% fonts, 0.36% other and 0.39% html.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=1708672642&format=interactive",
   sheets_gid="238923402",
   sql_file="number_of_h2_and_h3_pushed_resources_and_bytes_by_content_type.sql"
 )
@@ -636,7 +633,6 @@ It's important to note that this low adoption only reflects gQUIC and HTTP/3 usa
 
 Now you might wonder: if not everyone is already using HTTP/2, why would we need HTTP/3 so soon? What benefits can we expect in practice? Let's take a closer look at its internal mechanisms.
 
-{# TODO(authors): I honestly found this section really interesting, but it doesn't contain any real-world data. How can we add an element of data to this? #}
 ### QUIC and HTTP/3
 
 Past attempts to deploy new transport protocols on the internet have proven difficult, for example [Stream Control Transmission Protocol](https://en.wikipedia.org/wiki/Stream_Control_Transmission_Protocol) (SCTP). QUIC is a new transport protocol that runs on top of UDP. It provides similar features to TCP, such as reliable in-order delivery and congestion control to prevent flooding the network.

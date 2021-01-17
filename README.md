@@ -16,10 +16,12 @@ The Web Almanac is available in the original [English](https://almanac.httparchi
 - [Dutch](https://almanac.httparchive.org/nl/)
 - [French](https://almanac.httparchive.org/fr/)
 - [Hindi](https://almanac.httparchive.org/hi/)
+- [Italian](https://almanac.httparchive.org/it/)
 - [Japanese](https://almanac.httparchive.org/ja/)
 - [Portuguese](https://almanac.httparchive.org/pt/)
 - [Russian](https://almanac.httparchive.org/ru/)
 - [Spanish](https://almanac.httparchive.org/es/)
+- [Ukrainian](https://almanac.httparchive.org/uk/)
 
 ## Contributing
 

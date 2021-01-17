@@ -47,10 +47,12 @@ class Language(object):
     ES = _Language('Español', 'es')
     FR = _Language('Français', 'fr')
     HI = _Language('हिन्दी', 'hi')
+    IT = _Language('Italiano', 'it')
     JA = _Language('日本語', 'ja')
     NL = _Language('Nederlands', 'nl')
     PT = _Language('Português', 'pt')
     RU = _Language('Русский', 'ru')
+    UK = _Language('Українська', 'uk')
     ZH_CN = _Language('简体中文', 'zh-CN')
     ZH_TW = _Language('繁體中文', 'zh-TW')
 

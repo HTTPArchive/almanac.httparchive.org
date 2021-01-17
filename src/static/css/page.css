@@ -447,8 +447,8 @@ figure {
   position: relative;
   display: flex;
   flex-direction: column;
-  margin: 15px -8px;
-  margin: 0.9375rem -0.5rem;
+  margin: 22.4px;
+  margin: 1.4rem;
   padding: 8px;
   padding: 0.5rem;
   font-style: italic;
@@ -467,6 +467,11 @@ figure img {
   border-radius: 8px;
   border-radius: 0.5rem;
   border: 1px solid #e5e5e5;
+}
+
+.height-16vw-122px {
+  max-height: 122px;
+  height: 16vw;
 }
 
 figure iframe {
@@ -718,6 +723,7 @@ figure .fig-desktop {
 @media (max-width: 600px) {
   figure {
     margin: 0 15px;
+    margin: 0 0.9375rem;
   }
 
   .figure-dropdown {

@@ -2,7 +2,7 @@
   "settings": [
     {
       "is_live": true,
-      "supported_languages": ["en","es","fr","hi","ja","nl","pt","ru","zh-CN","zh-TW"],
+      "supported_languages": ["en","es","fr","hi","it","ja","nl","pt","ru","uk","zh-CN","zh-TW"],
       "ebook_languages": ["en","ja"]
     }
   ],
@@ -695,6 +695,15 @@
       "github": "KJLarson",
       "twitter": "KaJLa47"
     },
+    "tymosh": {
+      "name": "Kate Tymoshkina",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars2.githubusercontent.com/u/25080897?v=4&s=200",
+      "github": "tymosh",
+      "linkedin": "tymosh"
+    },
     "khempenius": {
       "name": "Katie Hempenius",
       "teams": [
@@ -713,6 +722,16 @@
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/3392338?v=4&s=200",
       "github": "ljme"
+    },
+    "chefleo": {
+      "name": "Leonardo Digiorgio",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/26022943?s=460&u=64b286deddd79f94a2dc8dee0e7610e0dd2a7b34&v=4",
+      "website": "https://chefleo.dev/",
+      "github": "chefleo",
+      "twitter": "simdigiorgio"
     },
     "MSakamaki": {
       "name": "M.Sakamaki",

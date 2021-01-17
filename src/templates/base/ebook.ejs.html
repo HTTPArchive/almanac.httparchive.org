@@ -35,14 +35,14 @@
 
             <div class="byline">{{ self.written_by_before() }}
                 {% for author in metadata.get('authors') %}
-                <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{{ self.comma() if not loop.last and loop.length > 2 }}
+                <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{% if loop.length > 2 %}{{ self.comma() if loop.index < loop.length - 1 }}{{ self.oxford_comma() if loop.index == loop.length - 1 }}{% endif %}
                 {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %}
                 {% endfor %}{{ self.written_by_after() }}
             </div>
 
             <div class="byline reviewers">{{ self.reviewed_by_before() }}
                 {% for reviewer in metadata.get('reviewers') %}
-                <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{{ self.comma() if not loop.last and loop.length > 2 }}
+                <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{% if loop.length > 2 %}{{ self.comma() if loop.index < loop.length - 1 }}{{ self.oxford_comma() if loop.index == loop.length - 1 }}{% endif %}
                 {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %}
                 {% endfor %}{{ self.reviewed_by_after() }}
             </div>
@@ -50,7 +50,7 @@
             {% if metadata.get('analysts') and metadata.get('analysts') | length >= 1 %}
             <div class="byline analysts">{{ self.analysis_by_before() }}
                 {% for analyst in metadata.get('analysts') %}
-                <a class="analyst" href="#contributors-{{ analyst }}">{{ config.contributors[analyst].name if analyst in config.contributors else analyst }}</a>{{ self.comma() if not loop.last and loop.length > 2 }}
+                <a class="analyst" href="#contributors-{{ analyst }}">{{ config.contributors[analyst].name if analyst in config.contributors else analyst }}</a>{% if loop.length > 2 %}{{ self.comma() if loop.index < loop.length - 1 }}{{ self.oxford_comma() if loop.index == loop.length - 1 }}{% endif %}
                 {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %}
                 {% endfor %}{{ self.analysis_by_after() }}
             </div>
@@ -59,7 +59,7 @@
             {% if metadata.get('editors') and metadata.get('editors') | length >= 1 %}
             <div class="byline editors">{{ self.edited_by_before() }}
                 {% for editor in metadata.get('editors') %}
-                <a class="editor" href="#contributors-{{ editor }}">{{ config.contributors[editor].name if editor in config.contributors else editor }}</a>{{ self.comma() if not loop.last and loop.length > 2 }}
+                <a class="editor" href="#contributors-{{ editor }}">{{ config.contributors[editor].name if editor in config.contributors else editor }}</a>{% if loop.length > 2 %}{{ self.comma() if loop.index < loop.length - 1 }}{{ self.oxford_comma() if loop.index == loop.length - 1 }}{% endif %}
                 {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %}
                 {% endfor %}{{ self.edited_by_after() }}
             </div>
@@ -68,7 +68,7 @@
             {% if metadata.get('translators') | length >= 1 %}
             <div class="byline translators">{{ self.translated_by_before() }}
                 {% for translator in metadata.get('translators') %}
-                <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{{ self.comma() if not loop.last and loop.length > 2 }}
+                <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{% if loop.length > 2 %}{{ self.comma() if loop.index < loop.length - 1 }}{{ self.oxford_comma() if loop.index == loop.length - 1 }}{% endif %}
                 {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %}
                 {% endfor %}{{ self.translated_by_after() }}
             </div>
@@ -139,7 +139,7 @@
                         {% endif %}
                         {% if metadata.get(author + '_bio') %}
                             <div class="bio">
-                                {{ add_footnote_links(metadata.get(author + '_bio') | replace('&quot;','"')) | safe }}
+                                {{ add_footnote_links(metadata.get(author + '_bio') | replace('&quot;','"')) | replace('&amp;','&') | safe }}
                             </div>
                         {% endif %}
                     </div>
