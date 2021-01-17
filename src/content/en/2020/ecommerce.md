@@ -372,7 +372,9 @@ HotJar is another tool often used by ecommerce sites to analyze and improve usag
 
 ### Tag Managers
 
-Google Tag Manager remains the most used tag manager on ecommerce sites followed by Adobe Tag Manager. We don't expect this to change due to free nature of Google Tag Manager. In Aug-2020, Google also launched <a href="https://developers.google.com/tag-manager/serverside">server side tagging</a> in Google Tag Manager. Implementing server side tagging will incur a small cost for ecommerce sites but it can help sites eliminate third party overhead and thus improving metrics like Total Blocking Time (TBT), First Input Delay (FID) and Time to Interactive (TTI). Simon Ahava has lot of useful information on his <a href="https://www.simoahava.com/analytics/server-side-tagging-google-tag-manager/">blog</a> which we recommend to readers. Adoption of server side tagging will depend on third parties to provide server side templates to make the migration easier. These are early days for GTM server side tagging and at the time of writing this chapter, we didn't find any server side templates in publicly available <a href="https://tagmanager.google.com/gallery/#/?context=server&page=1">community gallery</a>. But if the adoption increases, it will be interesting to compare the performance scores of sites using client side vs server side tagging. Other vendors like Adobe, Signal also offer similar server side solutions which sites should consider adopting to help with performance.
+Google Tag Manager remains the most used tag manager on ecommerce sites followed by Adobe Tag Manager. We don't expect this to change due to free nature of Google Tag Manager. In Aug-2020, Google also launched <a href="https://developers.google.com/tag-manager/serverside">server side tagging</a> in Google Tag Manager. Implementing server side tagging will incur a small cost for ecommerce sites but it can help sites eliminate third party overhead and thus improving metrics like Total Blocking Time (TBT), First Input Delay (FID) and Time to Interactive (TTI). Simon Ahava has lot of useful information on his <a href="https://www.simoahava.com/analytics/server-side-tagging-google-tag-manager/">blog</a> which we recommend to readers. 
+
+Adoption of server side tagging will depend on third parties to provide server side templates to make the migration easier. These are early days for GTM server side tagging and at the time of writing this chapter, we didn't find any server side templates in publicly available <a href="https://tagmanager.google.com/gallery/#/?context=server&page=1">community gallery</a>. But if the adoption increases, it will be interesting to compare the performance scores of sites using client side vs server side tagging. Other vendors like Adobe, Signal also offer similar server side solutions which sites should consider adopting to help with performance.
 
 <figure>
   <table>
@@ -479,14 +481,6 @@ In our analysis, we found that only 0.68% of desktop ecommerce sites and 0.69% o
 
 In this <a href="https://www.youtube.com/watch?v=J_t8c9HOjBc">video</a>, PJ Mclachlan (Product Manager, Google) talks about aiming for at least 50% acceptance rates to be in safe territory to avoid falling into quieter notifications UI and aiming for 80% and above acceptance rate. The median notifications acceptance rates for an ecommerce website is 13.6% on mobile and 13.2% on desktop. At median level, these acceptance rates have a lot to be desired. Even at 90th percentile level, numbers don't look very good (36.9% for mobile and 36.8% for desktop). Ecommerce sites can refer at this <a href="https://youtu.be/riKmez3sHaM">talk</a> for recommended patterns to make sure push acceptance rates remain healthy and they are not getting caught off guard by upcoming abusive notifications changes.
 
-## Future analysis opportunities
-
-During this year's analysis, we looked at analyzing following for this chapter but it was not possible due to limitations of Wappalyzer detection or our crawl methodology but it will be good to hear from community if analyzing these areas will be beneficial or not so that we can consider these for future.
-
-This year's [SEO](./seo) chapter includes analysis of websites using `hreflang` and `lang` attributes, and `content-language` HTTP header. This combined with Wappalyzer detection of cross-border commerce solutions like Global-e, Flow, Borderfree can provide opportunity to just look at Cross border commerce aspects of the ecommerce websites. Currently Wappalyzer doesn't have a separate category for 'Cross-border commerce' and hence this type of analysis is not possible unless we build a repository of such solutions ourselves.
-
-It will also be interesting to look at adoption of native apps by ecommerce sites by tapping into native app association standards like '.well-known/assetlinks.json' on play store and `.well-known/apple-app-site-association` on app store. Google has made easy for PWAs to achieve this using Trusted Web Activity but currently there are no public stats available on how many sites may be using this technique to submit their PWAs in play store.
-
 {{ figure_markup(
   image="web-push-notification-acceptance-rates.png",
   caption="Web Push Notification acceptance rates",
@@ -495,6 +489,13 @@ It will also be interesting to look at adoption of native apps by ecommerce site
   sheets_gid="2129008669",
   sql_file="webpushstats_ecommsites.sql"
 ) }}
+
+## Future analysis opportunities
+
+During this year's analysis, we looked at analyzing following for this chapter but it was not possible due to limitations of Wappalyzer detection or our crawl methodology but it will be good to hear from community if analyzing these areas will be beneficial or not so that we can consider these for future.
+
+
+It will also be interesting to look at adoption of native apps by ecommerce sites by tapping into native app association standards like `.well-known/assetlinks.json` on play store and `.well-known/apple-app-site-association` on app store. Google has made easy for PWAs to achieve this using Trusted Web Activity but currently there are no public stats available on how many sites may be using this technique to submit their PWAs in play store.
 
 Wappalyzer also provides detection of payment solutions (Apple Pay / PayPal / ShopPay etc.) but based on the types of implementation and solution, it's not always possible to detect this just by looking at homepage but for solutions where detection can be done by just looking at homepage, such an analysis can be useful to look at year of year trends.
 
