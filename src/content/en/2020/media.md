@@ -99,14 +99,12 @@ Both approaches enable the user agent to mathematically factor in the current de
 {{ figure_markup(
   image="srcset-descriptor-usage.png",
   caption="Srcset descriptor usage.",
-  description="Bar chart showing srcset descriptor usage for pages and images for desktop and mobile. 4.90% of desktop images and 5.15% of mobile pages use descriptor x, compared with 21.37% of desktop and 21.33% of mobile for descriptor w. However when looking at all images we see 12.67% of desktop images and 12.80% of mobile images use descriptor x, compared with 21.37% of desktop and 21.33% of mobile for descriptor w.",
+  description="Bar chart showing srcset descriptor usage for pages and images for desktop and mobile. 4.90% of desktop pages and 5.15% of mobile pages use descriptor x, compared with 21.37% of desktop pages and 21.33% of mobile for descriptor w. However when looking at all images we see 12.67% of desktop images and 12.80% of mobile images use descriptor x, compared with 21.37% of desktop and 21.33% of mobile for descriptor w.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=1336533401&format=interactive",
   sheets_gid="1370415291",
   sql_file="image_srcset_descriptor.sql"
   )
 }}
-
-{# TODO y axis here should just say "Percent", I think as for the different bars it's percent of pages and percent of elements }
 
 In the early days of responsive images, some browsers only supported `x` descriptors, but clearly `w` descriptors are currently by far the most favored.
 
@@ -173,14 +171,12 @@ Breaking this down into the number of formats offered:
   image="picture-number-of-formats.png",
   alt="picture number of formats.",
   caption="`<picture>` number of formats.",
-  description="Bar chart showing number of formats in picture usage. 68.01% on desktop (68.03% on mobile) use 1 format. 2 formats is 23.78% and 23.78% respectively, 3 formats is 7.00% and 6.97% and 4+ formats is only used on 1.21% and 1.22% pages respectively.",
+  description="Bar chart showing number of formats in picture usage. 68.01% of pages on desktop (68.03% on mobile) use 1 format. 2 formats is 23.78% and 23.78% respectively, 3 formats is 7.00% and 6.97% and 4+ formats is only used on 1.21% and 1.22% pages respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=1963933588&format=interactive",
   sheets_gid="1719719920",
   sql_file="picture_format_distribution.sql"
   )
 }}
-
-{# TODO this y axis should say "Percent of picture elements" }
 
 Of pages using `<picture>` for format-switching, around 68% are offering a single type variation, in addition to the `<img src>` which acts as the default.
 
@@ -193,8 +189,6 @@ Of pages using `<picture>` for format-switching, around 68% are offering a singl
   sql_file="picture_format_distribution.sql"
   )
 }}
-
-{# TODO this y axis should say "Percent of source elements" }
 
 We see that WebP is the dominant usage across `<source>` elements, followed by PNG, and that and JPG is only 4.83% of `<picture>` usage.
 
@@ -396,7 +390,7 @@ The usage of these doesn't seem to be that widespread: 9% of pages utilize data 
 
 ### SEO & Accessibility
 
-Associating descriptive text with images not only helps accessibility for those who can't view the images and utilize screen-readers, but it is also being used by various computer vision algorithms to understand the subject matter of an image. Descriptive text should be meaningful in the context of the page and relevant to the image it is describing.
+Associating descriptive text with images not only helps accessibility for those who can't view the images and utilize screen-readers, but it is also being used by various computer vision algorithms to understand the subject matter of an image. Descriptive text should be meaningful in the context of the page and relevant to the image it is describing. More information on these topics can be found in the [SEO](./seo) and [Accessibility](./accessibility) chapters.
 
 #### Usage of `alt` text
 
