@@ -50,6 +50,8 @@ This change in methodology provides enhanced coverage for enterpise platforms an
 Our methodology has the following limitations:
 - Headless ecommerce platforms like [commercetools](https://commercetools.com/) may not get detected as ecommerce platform but if we are able to detect presence of cart on such sites, we will still include sites using such platforms in our overall coveage stats.
 - Technologies which are typically deployed outside homepages (e.g. WebAR on product detail pages) are not detected.
+- Due to our crawl originating from US, there may be some bias towards US specific platforms. For example, if a global business has ecommerce sites built on different platforms for different countries (using country specific domains/sub-domains), it may not correct correctly in our analysis.
+
 
 ## Ecommerce platforms
 
