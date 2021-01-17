@@ -232,6 +232,16 @@
       "website": "https://AhmadAwais.com",
       "github": "ahmadawais",
       "twitter": "MrAhmadAwais"
+    } ,
+    "alankent": {
+      "name": "Alan Kent",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars0.githubusercontent.com/u/5702163?v=4&s=200",
+      "website": "https://alankent.me",
+      "github": "alankent",
+      "twitter": "akent99"
     },
     "amedina": {
       "name": "Alberto Medina",
@@ -241,17 +251,6 @@
       "avatar_url": "https://avatars0.githubusercontent.com/u/506089?v=4&s=200",
       "github": "amedina",
       "twitter": "iAlbMedina"
-    },
-    "alankent": {
-      "name": "Alan Kent",
-      "teams": [
-        "brainstormers",
-        "authors"
-      ],
-      "avatar_url": "https://avatars0.githubusercontent.com/u/5702163?v=4&s=200",
-      "website": "https://alankent.me",
-      "github": "alankent",
-      "twitter": "akent99"
     },
     "alexdenning": {
       "name": "Alex Denning",
@@ -696,7 +695,7 @@
     "jrharalson": {
       "name": "Jason Haralson",
       "teams": [
-        "reviewers",
+        "authors",
         "analysts"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/7421844?v=4&s=200",
@@ -1166,7 +1165,8 @@
     "rockeynebhwani": {
       "name": "Rockey Nebhwani",
       "teams": [
-        "authors"
+        "authors",
+        "analysts"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/1718757?v=4&s=200",
       "github": "rockeynebhwani",
