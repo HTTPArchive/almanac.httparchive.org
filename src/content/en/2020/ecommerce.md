@@ -477,9 +477,20 @@ The median notifications acceptance rates for an ecommerce website is 13.6% on m
 
 ## Future analysis opportunities
 
+During this year's analysis, we looked at analyzing following for this chapter but it was not possible due to limitations of Wappalyzer detection or our crawl methodology but it will be good to hear from community if analyzing these areas will be beneficial or not so that we can consider these for future. 
+
 This year's [SEO](./seo) chapter includes analysis of websites using 'hreflang' and 'content-language' attributes. This combined with Wappalyzer detection of cross-border commerce solutions like Global-e, Flow, Borderfree can provide opportunity to just look at Cross border commerce aspects of the ecommerce websites. Currently Wappalyzer doesn't have a separate category for 'Cross-border commerce' and hence this type of analysis is not possible unless we build a repository of such solutions ourselves.
+
+It will also be interesting to look at adoption of native apps by ecommerce sites by tapping into native app association standards like '.well-known/assetlinks.json' on play store and '.well-known/apple-app-site-association' on app store. Google has made easy for PWAs to achieve this using Trusted Web Activity but currently there are no public stats available on how many sites may be using this technique to submit their PWAs in play store. 
+
+Wappalyzer also provides detection of payment solutions (Apple Pay / PayPal / ShopPay etc.) but based on the types of implementation and solution, it's not always possible to detect this just by looking at homepage but for solutions where detection can be done by just looking at homepage, such an analysis can be useful to look at year of year trends. 
+
 
 ## Conclusion
 
-{# TODO (authors) - write a conclusion #}
+Covid-19 massively accelerated the growth of ecommerce in 2020 and lot of smaller players had to establish online presence quickly and had to find ways to continue trading during lockdowns. Platforms like WooCommerce/Shopify/Wix/BigCommerce played very important role in bringing more and more small businesses online. Covid-19 also saw launch of D2C (direct to consumer) offerings by brand and this is expected to increase in future. Full impact of Covid-19 may not be visible in this year's web alamanc as these new businesses need to cross certain traffic threshold first in order to become part of CRUX dataset which we use for our analysis. Due to this reason, we may see continued growth in next year's analysis as well. 
+
+Improving core web vitals score will be a priority for ecommerce businesses due to changes announced by Google and marketing teams using web push notifications should keep an eye on their notifications stats using CRUX to not get caught by upcoming abusing notifiations changes. Tag managers still seem to cause lot of friction between marketing and engineering teams and solutions like Google Tag Manager server side tagging will make some inroads but we don't expect a lot to change in 2021 and this will be more like 3-5 years journey but community need to ask their respective third parties to provide compatible solutions to further evolve this ecosystem.  
+
+Considering limitations of we using only homepage data for this analysis, we would like to hear from community what else we should cover in next year's analysis. We have covered some possibilities of further analysis in section above and any feedback is greatly appreciated. 
 
