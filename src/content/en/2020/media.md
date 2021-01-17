@@ -373,7 +373,7 @@ Media assets can be stored either locally, or on an Image CDN. The way assets ar
 
 Analyzing the markup, on desktop we see 7.83% of pages using this, and on mobile it is 8.19%. The [Resource Hints](./resource-hints#hints-adoption) chapter used a slightly different methodology by analyzing the DOM and got similar, but slightly larger, numbers at 8.15% and 8.65% respectively.
 
-### Usage of `data:` urls
+### Usage of `data:` URLs
 
 Using data URLs (formerly known as data URIs) is a technique that allows developers to embed a base64-encoded image directly in HTML. This ensures that an image will be fully loaded by the time that the HTML has been parsed into a DOM tree, and virtually guarantees that the image will be available for the first paint. However, because they don't compress over the wire as well as binaries, block other—possibly more important resources—from loading, and complicate caching, so base-64'd images [are something of an antipattern](https://calendar.perfplanet.com/2020/the-dangers-of-data-uris/).
 
@@ -386,7 +386,7 @@ Using data URLs (formerly known as data URIs) is a technique that allows develop
 )
 }}
 
-The usage of these doesn't seem to be that widespread: 9% of pages utilize data URLs for displaying images. However, it should be noted that we only investigated HTML-embedded base64 encoded image `src`s and did not iunclude CSS-embedded base-64-encoded images for background-images or the like.
+The usage of these doesn't seem to be that widespread: 9% of pages utilize data URLs for displaying images. However, it should be noted that we only investigated HTML-embedded base64 encoded image `src`s and did not include CSS-embedded base-64-encoded images for background-images or the like.
 
 ### SEO & Accessibility
 
