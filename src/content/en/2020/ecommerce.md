@@ -25,6 +25,7 @@ unedited: true
 ---
 
 ## Introduction
+
 An "ecommerce platform" is a set of software or services that enables you to create and operate an online store. There are several types of ecommerce platforms, for example:
 
 - Paid-for services such as Shopify that host your store and help you get started. They provide website hosting, site and page templates, product-data management, shopping carts and payments.
@@ -55,7 +56,7 @@ Our methodology has the following limitations:
 {{ figure_markup(
   image="ecommerce-comparison-2019-to-2020.png",
   caption="Ecommerce comparison 2019 to 2020.",
-  description="A bar chart showing...",
+  description="A bar chart showing desktop detection of ecommerce websites has increased from 9.67% of sites, to 21.72%. Mobile has similarly increased from 9.41% to 21.27%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=1775630157&format=interactive",
   sheets_gid="856812465",
   sql_file="pct_ecommsites_bydevice_compare20192020.sql"
@@ -70,13 +71,13 @@ In total, 21.72% of mobile websites and 21.27% of desktop websites used an ecomm
 {{ figure_markup(
   image="top-ecommerce-platforms.png",
   caption="Top ecommerce platforms.",
-  description="A bar chart showing...",
+  description="A bar chart showing in descending order the usage of ecommerce platforms with WooCommerce at 5.12% on desktop and 5.19% on mobile, followed by Shopify (2.55% and 2.48% respectively), Wix (1.05% and 1.24%), Magneto (1.03% and 0.96%), Prestashop (0.91%, 0.94%), 1C-Bitrix (0.64% and 0.65%), Bigcommerce (0.24% and 0.21%), Cafe24 (0.21% and 0.12%), Shopware (0.14% for both), and Loja Integrade at 0.08% and 0.09% respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=795567278&format=interactive",
   sheets_gid="872326386",
   sql_file="top_vendors.sql"
 ) }}
 
-Our analysis counted 145 separate ecommerce platforms (compared to [116 in last year's analysis](../2019/ecommerce#ecommerce-platforms)). Out of these, only 9 platforms have market share of greater than 0.1%. WooCommerce is the most common ecommerce platform and has maintained its number one position. Wix appears in are analysis for the first time this year after Wappalyzer started identifying it as ecommerce platform from 30th Jun 2019.
+Our analysis counted 145 separate ecommerce platforms (compared to [116 in last year's analysis](../2019/ecommerce#ecommerce-platforms)). Out of these, only 9 platforms have market share of greater than 0.1%. WooCommerce is the most common ecommerce platform and has maintained its number one position. Wix appears in this analysis for the first time this year after Wappalyzer started identifying it as ecommerce platform from 30th Jun 2019.
 
 ### Top enterprise ecommerce platforms
 
@@ -84,8 +85,8 @@ While it is difficult to discern a platform's precise tier let us highlight four
 
 {{ figure_markup(
   image="enterprise-ecommerce-platforms.png",
-  caption="Enterprise ecommerce platforms.",
-  description="A bar chart showing...",
+  caption="Enterprise ecommerce platforms (desktop).",
+  description="A bar chart showing Salesforce Commerce Cloud by 2,653 and 3,347, HCL WebSphere Commerce is used by 2,268 desktop sites in 2019 and 2,604 in 2020, SAP Commerce Cloud by 1,979 and 2,371, and Oracle Commerce Cloud by 1,095 and 917.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=783560373&format=interactive",
   sheets_gid="1789086753",
   sql_file="top_vendors.sql"
@@ -101,8 +102,8 @@ Lastly, Oracle Commerce Cloud unfortunately lost a bit of traction between 2019 
 
 {{ figure_markup(
   image="enterprise-ecommerce-platforms-2019.png",
-  caption="Enterprise ecommerce platforms - 2019",
-  description="A pie chart showing...",
+  caption="Enterprise ecommerce platforms - 2019 desktop",
+  description="A pie chart showing Salesforce Commerce Cloud was used by 33.2% of the enterprise ecommerce market in 2019, HCL WebSphere Commerce by 28.4%, SAP Commerce Cloud by 24.8%, and Oracle Commerce Cloud by 13.7%. ",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=1864431795&format=interactive",
   sheets_gid="1789086753",
   sql_file="top_vendors.sql"
@@ -110,8 +111,8 @@ Lastly, Oracle Commerce Cloud unfortunately lost a bit of traction between 2019 
 
 {{ figure_markup(
   image="enterprise-ecommerce-platforms-2020.png",
-  caption="Enterprise ecommerce platforms - 2020",
-  description="A pie chart showing...",
+  caption="Enterprise ecommerce platforms - 2020 desktop",
+  description="A pie chart showing Salesforce Commerce Cloud was used by 36.8% of the enterprise ecommerce market in 2020, HCL WebSphere Commerce by 27.9%, SAP Commerce Cloud by 25.4%, and Oracle Commerce Cloud by 9.8%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=1013485197&format=interactive",
   sheets_gid="1789086753",
   sql_file="top_vendors.sql"
@@ -476,9 +477,9 @@ The median notifications acceptance rates for an ecommerce website is 13.6% on m
 
 ## Future analysis opportunities
 
-This year's [SEO](./seo) chapter includes analysis of websites using 'hreflang' and 'content-language' attributes. This combined with Wappalyzer detection of cross-border commerce solutions like Global-e, Flow, Borderfree can provide opportunity to just look at Cross border commerce aspects of the ecommerce websites. Currently Wappalyzer doesn't have a separate category for 'Cross-border commerce' and hence this type of analysis is not possible unless we build a repository of such solutions ourselves.
+This year's [SEO](./seo) chapter includes analysis of websites using `hreflang` and `lang` attributes, and `content-language` HTTP headers. This combined with Wappalyzer detection of cross-border commerce solutions like Global-e, Flow, Borderfree can provide opportunity to just look at Cross border commerce aspects of the ecommerce websites. Currently Wappalyzer doesn't have a separate category for 'Cross-border commerce' and hence this type of analysis is not possible unless we build a repository of such solutions ourselves.
 
 ## Conclusion
 
-{# TODO (authors) - write a conclusion #}
+We have taken a deep dive into the state of ecommerce on the web in 2020 and seen some
 
