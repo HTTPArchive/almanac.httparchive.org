@@ -9,7 +9,7 @@ reviewers: [drewzboto, alankent]
 analysts: [jrharalson, rockeynebhwani]
 editors: []
 translators: []
-#rockeynebhwani_bio: Rockey Nebhwani is an independent consultant who has worked in retail and ecommerce since 2001 and has extensive experience in the industry working with retailers like Amazon, Wal-Mart, Tesco, M&S, Safeway etc. across US and UK. Rockey is an occasioanl speaker at ecommerce events and also tweets at <a href="https://twitter.com/rnebhwani">@rnebhwani</a>.
+rockeynebhwani_bio: Rockey Nebhwani is an independent consultant who has worked in retail and ecommerce since 2001 and has extensive experience in the industry working with retailers like Amazon, Wal-Mart, Tesco, M&S, Safeway etc. across US and UK. Rockey is an occasioanl speaker at ecommerce events and also tweets at <a href="https://twitter.com/rnebhwani">@rnebhwani</a>.
 #jrharalson_bio: TODO
 discuss: 2052
 results: https://docs.google.com/spreadsheets/d/1Hvsh_ZBKg2vWhouJ8vIzLmp0nLIMzrT2mr6RQbIkxqY/
@@ -44,7 +44,7 @@ Compared to 2019, you will notice that in 2020, % of ecommerce websites have inc
 - Sites using Google Analytics Enhanced Ecommerce tagging is counted as an ecommerce site.
 - Secondary signal also includes looking for most commonly used patterns for identifying 'Cart' links.
 
-This change in methodology provides enhanced coverage for enterpise platforms and sites built using headless solutions. 
+This change in methodology provides enhanced coverage for enterpise platforms and sites built using headless solutions.
 
 ### Limitations
 
@@ -128,7 +128,7 @@ COVID-19 has had a huge impact on the world and necessitated an even bigger move
 {{ figure_markup(
   image="ecommerce-vendor-growth-covid-19-impact.png",
   caption="Ecommerce platform growth Covid-19 impact",
-  description="A line chart showing...",
+  description="A line chart showing the growth of five popular ecommerce platforms: WooCommerce, Shopify, Wix, Magneto, and Prestoshop. WooCommerce shows a steady growth with a noticable bump in Feburary 2020 and again in June and July. Shopify shows similar but for a smaller percentage and the other three show less of such an impact.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=1475961371&format=interactive",
   sheets_gid="535254570",
   sql_file="ecomm_vendors_covid_growth.sql"
@@ -141,7 +141,7 @@ The page weight of an ecommerce platform includes all HTML, CSS, JavaScript, JSO
 {{ figure_markup(
   image="page-requests-distribution.png",
   caption="Page requests distribution.",
-  description="A bar chart showing...",
+  description="A bar chart showing the number of requests, wiht the 10th percentile having 46 requests on desktop and 44 on mobile, the 25th percentile having 68 and 65 respectively, 50th having 103 and 98, 75th having 151 and 146, and 90th percentile having 217 on desktop and 208 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=1278986228&format=interactive",
   sheets_gid="1733352933",
   sql_file="pagestats_percentiles_bydevice.sql"
@@ -150,7 +150,7 @@ The page weight of an ecommerce platform includes all HTML, CSS, JavaScript, JSO
 {{ figure_markup(
   image="page-weight-distribution.png",
   caption="Page weight distribution.",
-  description="A bar chart showing...",
+  description="A bar chart showing the page weight in MB, with the 10th percentile having 0.94 MB on desktop and 0.85 on mobile, the 25th percentile having 1.55 and 1.45 respectively, 50th having 2.62 and 2.48, 75th having 4.52 and 4.26, and 90th percentile having 7.89 MB on desktop and 7.3 MB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=1078671906&format=interactive",
   sheets_gid="1733352933",
   sql_file="pagestats_percentiles_bydevice.sql"
@@ -167,7 +167,7 @@ Breaking this down by resource type, for median pages, we see that images and Ja
 {{ figure_markup(
   image="median-page-requests-by-type.png",
   caption="Median page requests by type.",
-  description="A bar chart showing...",
+  description="A bar chart showing a requests per page for file type in decreasing order for the median page. Images are 37 requests on desktop and 34 on mobile, scripts are 31 and 30 respectively, css 8 for both, fonts 5 for both, other 4 for both, html 4 for both, video 3 for both, and xml, text and audio all 1 for both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=1680167507&format=interactive",
   sheets_gid="1479463761",
   sql_file="pagestats_percentile_bydevice_format.sql"
@@ -176,7 +176,7 @@ Breaking this down by resource type, for median pages, we see that images and Ja
 {{ figure_markup(
   image="median-page-kilobytes-by-type.png",
   caption="Median page kilobytes by type.",
-  description="A bar chart showing...",
+  description="A bar chart showing a kilobyes per page for file type in decreasing order for the median page. Images are 1,754 KB on desktop and 2,176 KB on mobile, scripts are 1,271 and 1,208 respectively, css 643 and 611, fonts 143 and 123, html 35 and 34, audio 14 and 9, xml 1 and 1 and text and other 0 for both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=1077946836&format=interactive",
   sheets_gid="1479463761",
   sql_file="pagestats_percentile_bydevice_format.sql"
@@ -189,7 +189,7 @@ Video, despite accounting for a small number of requests, is by far largest reso
 {{ figure_markup(
   image="distribution-of-html-bytes-per-ecommerce-page.png",
   caption="Distribution of HTML bytes per ecommerce page",
-  description="A bar chart showing...",
+  description="A bar chart showing the number of HTML kilobytes, with the 10th percentile having 12 KB on desktop and 13 KB on mobile, the 25th percentile having 20 and 21 respectively, 50th having 35 and 36, 75th having 76 and 74, and 90th percentile having 133 KB on desktop and 134 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=1956748774&format=interactive",
   sheets_gid="1032303587",
   sql_file="pagestats_html_bydevice.sql"
@@ -206,7 +206,7 @@ Next, let's look at how images are used on ecommerce sites. Note that because ou
 {{ figure_markup(
   image="distribution-of-image-requests-for-ecommerce.png",
   caption="Distribution of image requests for ecommerce",
-  description="A bar chart showing...",
+  description="A bar chart showing the number of image requests, with the 10th percentile having 14 requests on desktop and 12 on mobile, the 25th percentile having 22 and 20 respectively, 50th having 37 and 34, 75th having 60 and 56, and 90th percentile having 101 requests on desktop and 91 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=286315936&format=interactive",
   sheets_gid="898563708",
   sql_file="pagestats_image_bydevice.sql"
@@ -215,7 +215,7 @@ Next, let's look at how images are used on ecommerce sites. Note that because ou
 {{ figure_markup(
   image="distribution-of-image-bytes-for-ecommerce.png",
   caption="Distribution of image bytes for ecommerce",
-  description="A bar chart showing...",
+  description="A bar chart showing the number of image kilobytes, with the 10th percentile having 242 KB on desktop and 189 KB on mobile, the 25th percentile having 546 and 486 respectively, 50th having 1,271 and 1,208, 75th having 2,835 and 2,737, and 90th percentile having 5,819 KB on desktop and 5,459 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=416820889&format=interactive",
   sheets_gid="898563708",
   sql_file="pagestats_image_bydevice.sql"
@@ -230,7 +230,7 @@ The figures above show that the median ecommerce page has 34 images and an image
 {{ figure_markup(
   image="popular-image-formats-on-ecommerce-sites.png",
   caption="Popular image formats on ecommerce sites",
-  description="A bar chart showing...",
+  description="A bar chart showing image formats in decending order of popularity with mobile numbers showing jpg at 50.19%, png on 26.54%, gif at 17.35%, svg at 2.61%, webp at 1.17% and no format at 0.07%. Desktop usage looks to be near identical.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=753462591&format=interactive",
   sheets_gid="943479146",
   sql_file="pagestats_image_bydevice_format.sql"
@@ -255,7 +255,7 @@ Ecommerce platforms and sites often make use of [third-party](./third-party) con
 {{ figure_markup(
   image="distribution-of-third-party-requests.png",
   caption="Distribution of third-party requests",
-  description="A bar chart showing...",
+  description="A bar chart showing the number of third-party requests for ecommerce sites, with the 10th percentile having 8 requests on desktop and 7 on mobile, the 25th percentile having 16 and 15 respectively, 50th having 32 and 30, 75th having 60 and 58, and 90th percentile having 103 third-party requests on desktop and 98 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=1577985571&format=interactive",
   sheets_gid="1199548164",
   sql_file="pct_3pusage_bydevice.sql"
@@ -264,7 +264,7 @@ Ecommerce platforms and sites often make use of [third-party](./third-party) con
 {{ figure_markup(
   image="distribution-of-third-party-bytes",
   caption="Distribution of third-party bytes",
-  description="A bar chart showing...",
+  description="A bar chart showing the number of third-party kilobytes for ecommerce sites, with the 10th percentile having 88 KB on desktop and 67 KB on mobile, the 25th percentile having 242 and 208 respectively, 50th having 547 and 489, 75th having 1,179 and 1,098, and 90th percentile having 2,367 KB on desktop and 2,155 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=1165664044&format=interactive",
   sheets_gid="1199548164",
   sql_file="pct_3pusage_bydevice.sql"
@@ -297,7 +297,7 @@ In the context of ecommerce, this metric provides very good indication of most u
 {{ figure_markup(
   image="ecommerce-real-user-largest-contentful-paint-experiences.png",
   caption="Real-user Largest Contentful Paint experiences",
-  description="A bar chart showing...",
+  description="A bar chart showing ",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=1881724605&format=interactive",
   sheets_gid="768760354",
   sql_file="core_web_vitals_passingmetrics_byvendor_bydevice.sql"
