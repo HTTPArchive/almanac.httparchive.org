@@ -1,5 +1,4 @@
 ---
-#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 part_number: II
 chapter_number: 12
 title: Mobile Web
@@ -21,44 +20,43 @@ featured_stat_2: 60.1%
 featured_stat_label_2: Percent of eCommerce landing pages that are missing presence of search input
 featured_stat_3: 2.6s
 featured_stat_label_3: 75th percentile LCP for mobile
-unedited: true
 ---
 
 ## Introduction
 Mobile Web has grown explosively in the last decade and is now the primary way many people experience the web. In spite of this, engagement and online sales still lag behind desktop. In this chapter, we take a look at recent trends on the mobile web and analyze why user journeys are often difficult to complete.
 
-2020 has seen a big surge in [internet usage](https://www.nytimes.com/interactive/2020/04/07/technology/coronavirus-internet-use.html), on both mobile and desktop, due to the global pandemic. There has been an uptick in visits to news sites, ecommerce and social media sites -- as people across the globe adjusted to a new lifestyle with stay-at-home orders and social distancing. 2020 has been a significant year in history, for the web and for mobile usage.
+2020 has seen a big surge in [internet usage](https://www.nytimes.com/interactive/2020/04/07/technology/coronavirus-internet-use.html), on both mobile and desktop, due to the global pandemic. There has been an uptick in visits to news sites, ecommerce and social media sites as people across the globe adjusted to a new lifestyle with stay-at-home orders and social distancing. 2020 has been a significant year in history, for the web and for mobile usage.
 
 ### Data sources
 We've used a few different data sources in this chapter:
 
 * [CrUX](./methodology#chrome-ux-report)
-* [HTTP archive](./methodology#dataset)
+* [HTTP Archive](./methodology#dataset)
 * [Lighthouse](./methodology#lighthouse)
 
-Please visit the links above to learn more about the methodology and caveats with each data source. It is worth noting that HTTP Archive and Lighthouse data is limited to the data identified from websites' home pages only, and not site-wide.
+Please visit the links above to learn more about the methodology and caveats with each data source. It is worth noting that the HTTP Archive and Lighthouse data is limited to the data identified from websites' home pages only, and not site-wide.
 
-In addition to the above, we also used a non-public Chrome data source in the section on Page loads in Chrome. For more information on this, read about [Chrome's data collection API](https://chromium.googlesource.com/chromium/src/+/master/services/metrics/ukm_api.md).
+In addition to the above, we also used a non-public Chrome data source in the section on page loads in Chrome. For more information on this, read about [Chrome's data collection API](https://chromium.googlesource.com/chromium/src/+/master/services/metrics/ukm_api.md).
 
 While this data is only collected from a subset of (opted in) Chrome users, it does not suffer from being limited to homepages. It is pseudonymous and consists of histograms and events.
 
-NOTE: Reporting is enabled if the user has enabled a feature that syncs browser windows, unless they have disabled the "Make searches and browsing better / Sends URLs of pages you visit to Google" setting.
+<p class="note">NOTE: Reporting is enabled if the user has enabled a feature that syncs browser windows, unless they have disabled the "Make searches and browsing better / Sends URLs of pages you visit to Google" setting.</p>
 
 ## Mobile web & desktop traffic trends
 
-How much are users visiting websites on mobile web and desktop? Are there any patterns in the traffic that websites receive from mobile vs. desktop?  In order to examine these questions and what it means for websites, we looked at data from a couple of lenses.
+How much are users visiting websites on mobile web and desktop? Are there any patterns in the traffic that websites receive from mobile  versus desktop? In order to examine these questions and what it means for websites, we looked at data from a couple of lenses.
 
-A [report published](https://www.perficient.com/insights/research-hub/mobile-vs-desktop-usage-study) on perficient.com shows mobile vs. desktop traffic trends over several years, using [similarweb](https://www.similarweb.com/) as a data source. While the majority of visits -- **58%** of site visits -- were from mobile devices, mobile devices made up only 42% of total time spent online. Moreover, the average time spent per visit is roughly twice as much on desktop compared to mobile (11.52 minutes on desktop vs. 5.95 minutes on mobile).
+A [report published](https://www.perficient.com/insights/research-hub/mobile-vs-desktop-usage-study) on perficient.com shows mobile versus desktop traffic trends over several years, using [similarweb](https://www.similarweb.com/) as a data source. While the majority of visits—**58%** of site visits—were from mobile devices, mobile devices made up only 42% of total time spent online. Moreover, the average time spent per visit is roughly twice as much on desktop compared to mobile (11.52 minutes on desktop versus 5.95 minutes on mobile).
 
 ### Page loads in Chrome (Chrome data source)
 
-Note that this section references stats that have been made available specifically for this chapter from non-public Chrome data source, [see details here](#data-sources). We use this data to assess page loads on Android and Windows -- as a proxy for mobile and desktop respectively.
+Note that this section references stats that have been made available specifically for this chapter from non-public Chrome data source, [see details here](#data-sources). We use this data to assess page loads on Android and Windows—as a proxy for mobile and desktop respectively.
 
-NOTE: we may refer to the data in this section as mobile for Android and desktop for Windows.
+<p class="note">NOTE: we may refer to the data in this section as mobile for Android and desktop for Windows.</p>
 
 #### Page loads across origins ranked by popularity
 
-We looked at traffic to origins by popularity -- how often are users visiting certain origins, and what does that tell us about the global distribution across the web.
+We looked at traffic to origins by popularity—how often are users visiting certain origins, and what does that tell us about the global distribution across the web.
 
 Rick Byers [tweeted](https://twitter.com/RickByers/status/1195342331588706306) this distribution a year ago, we looked at the latest data. The chart shows us the overall distribution across origins by their popularity, captured by their contribution to % page loads in Chrome.
 
@@ -82,12 +80,12 @@ Some takeaways:
 * The web has a **broad torso**.
  * The top 10k origins constitute roughly two-thirds of traffic: 64% of traffic on mobile.
 * The web has a **long tail**.
- * 3M origins in top 98% on Android vs. 1.8M on Windows.
+ * 3M origins in top 98% on Android versus 1.8M on Windows.
  * The tail is about twice as long on Android as Windows. This is most likely attributable to the larger number of mobile devices and users, compared to desktop.
 
-#### Traffic to a site from mobile vs. desktop (CrUX)
+#### Traffic to a site from mobile versus desktop (CrUX)
 
-*Could a website reason about their expected mobile vs. desktop traffic distribution?*
+*Could a website reason about their expected mobile versus desktop traffic distribution?*
 
 It's hard to predict, because the distribution between mobile and desktop will vary greatly based on the site. Furthermore, it heavily depends on the industry category (e.g. entertainment, shopping) and whether the site has native apps, and how aggressively native apps are promoted etc.
 
@@ -103,21 +101,21 @@ We looked at the CrUX dataset to assess Chrome traffic to sites from mobile devi
   )
 }}
 
-The distribution appears mobile heavy. A reason for that is that there are many (2 million+ in CrUX) sites which, while low in total traffic, only get traffic from mobile.  Mobile has a much longer "tail" as we saw in the previous section.
+The distribution appears mobile heavy. A reason for that is that there are many (2 million+ in CrUX) sites which, while low in total traffic, only get traffic from mobile. Mobile has a much longer "tail" as we saw in the previous section.
 
 If we put all the websites with CrUX data, in a bucket and randomly choose one, 50% of the time the website you chose would be receiving 77.61% or more of their traffic from mobile (a slight decrease from 79.93% in 2019).
 
-Note that while this is an interesting observation, it's hard to draw conclusions from CrUX about broad trends for mobile vs. desktop because:
+Note that while this is an interesting observation, it's hard to draw conclusions from CrUX about broad trends for mobile versus desktop because:
 * CrUX is Chrome only data, and missing other browsers, including Safari - a major mobile browser.
-* even for Chrome, this is a subset from opted-in users, and impacted by opt-in rates and variance across platforms.
+* Even for Chrome, this is a subset from opted-in users, and impacted by opt-in rates and variance across platforms.
 
-#### Conclusions
+#### Trend conclusions
 
-So what did we learn in terms of reasoning about mobile vs. desktop traffic to a website?
+So what did we learn in terms of reasoning about mobile versus desktop traffic to a website?
 
 Traffic distribution from mobile vs desktop is highly specific to a site and dependent on the industry category, and other factors such as presence of native apps. However odds are that for site visits in Chrome, a given website has traffic predominantly from mobile web, in spite of users spending more time on desktop. This is due to a much longer tail for mobile Chrome.
 
-While one cannot generalize the expected traffic distribution from mobile vs. desktop for individual websites, it is worth comparing your site's distribution to [that of the industry category](https://www.perficient.com/insights/research-hub/mobile-vs-desktop-usage-study).
+While one cannot generalize the expected traffic distribution from mobile versus desktop for individual websites, it is worth comparing your site's distribution to [that of the industry category](https://www.perficient.com/insights/research-hub/mobile-vs-desktop-usage-study).
 
 If your website is substantially different from the industry average, it could be worth digging into the reason, for instance poor loading performance could be one reason.
 
@@ -137,7 +135,7 @@ For a website, acquisition of visitors is a crucial entry phase. Acquisition inv
 
 #### SEO
 
-SEO is crucial for the acquisition phase.  Search engines are an important source of visitors being sent to websites, embarking on their user journeys. The main goal of SEO is to ensure that a website is optimized for search engines, i.e. search engine bots that need to crawl and index its pages, as well as the users that will be navigating the website and consuming its content.
+SEO is crucial for the acquisition phase. Search engines are an important source of visitors being sent to websites, embarking on their user journeys. The main goal of SEO is to ensure that a website is optimized for search engines, i.e. search engine bots that need to crawl and index its pages, as well as the users that will be navigating the website and consuming its content.
 
 A lot of users now start their search on mobile.
 
@@ -165,7 +163,7 @@ Loading performance is a vast topic, so we picked a couple of aspects to cover h
 
 A key aspect of the loading experience is how quickly the main content of a web page loads and is visible to users. This has been difficult to measure, in the past Google recommended performance metrics like [First Meaningful Paint](https://web.dev/first-meaningful-paint/) (FMP) to capture this, but it was hard to explain, and often unable to identify when the main content of the page was visible.
 
-Sometimes simpler is better. More recently it's been found that a more accurate way to measure when the main content of a page is loaded is to simply look at when the largest element was rendered. [Largest Contentful Paint](https://web.dev/largest-contentful-paint) (LCP) is a timing-based metric that captures this -- the time at which the largest above-the-fold element was rendered.
+Sometimes simpler is better. More recently it's been found that a more accurate way to measure when the main content of a page is loaded is to simply look at when the largest element was rendered. [Largest Contentful Paint](https://web.dev/largest-contentful-paint) (LCP) is a timing-based metric that captures this—the time at which the largest above-the-fold element was rendered.
 
 A good LCP score is 2.5s at p75. We found that the median LCP at p75 is 2.6s on mobile and 2.3s on desktop. Mobile web is especially susceptible to missing the mark on LCP.
 
@@ -205,7 +203,7 @@ The next phase of the user journey is engagement of users towards consuming cont
 
 #### Shifting content
 
-Shifting content is detrimental to the experience of users engaging with content.  Specifically, content that shifts in position as resources load, impedes the user experience.  Since browsers download and display content as soon as they are able, it's important to design your site to smooth over the user experience.
+Shifting content is detrimental to the experience of users engaging with content. Specifically, content that shifts in position as resources load, impedes the user experience. Since browsers download and display content as soon as they are able, it's important to design your site to smooth over the user experience.
 This is especially important for mobile web, as shifting content is more noticeable on small screens.
 
 {{ figure_markup(
@@ -288,11 +286,11 @@ Here, a simple change from a button that's hard to see, to a button with contras
 
 A simple color change on the check out button from black to orange, made it stand out more and increased their conversion rate by 12%.
 
-Mckinsey & Company [published a report](https://www.mckinsey.com/business-functions/mckinsey-design/our-insights/the-business-value-of-design#) that shows that companies that are strong at design and UX demonstrate better financial performance.  Design and UX focused companies demonstrated stronger revenue growth compared to their industry counterparts.
+Mckinsey & Company [published a report](https://www.mckinsey.com/business-functions/mckinsey-design/our-insights/the-business-value-of-design#) that shows that companies that are strong at design and UX demonstrate better financial performance. Design and UX focused companies demonstrated stronger revenue growth compared to their industry counterparts.
 
 Text with low contrast ratio is hard to read, for instance, light gray text on a white background. This can reduce reading comprehension and reading speed for users.
 
-Lighthouse now [checks for color contrast](https://web.dev/color-contrast/), we found that 78.94% -- a majority of web pages, were lacking sufficient color contrast.
+Lighthouse now [checks for color contrast](https://web.dev/color-contrast/), we found that 78.94%—a majority of web pages, were lacking sufficient color contrast.
 
 {{ figure_markup(
   image="sites-with-sufficient-color-contrast.png",
@@ -306,9 +304,9 @@ Lighthouse now [checks for color contrast](https://web.dev/color-contrast/), we 
 
 ##### Tap targets
 
-Mobile user experience is susceptible to "fat fingering", as users engage with sites using their fingers -- a rather imprecise tool compared to using a mouse on a desktop.
+Mobile user experience is susceptible to "fat fingering", as users engage with sites using their fingers—a rather imprecise tool compared to using a mouse on a desktop.
 
-Based on research, there are standards for minimum size of buttons and tap targets, as well as the minimum distance they should be spaced apart. [Lighthouse recommends](https://web.dev/tap-targets/) that targets should be no smaller than 48 px by 48 px, and no closer than 8 px apart. We found that  63.69% -- a majority of web pages, had improperly sized tap targets. This is a slight improvement over last year, where 65.57% web pages had improperly sized tap targets.
+Based on research, there are standards for minimum size of buttons and tap targets, as well as the minimum distance they should be spaced apart. [Lighthouse recommends](https://web.dev/tap-targets/) that targets should be no smaller than 48 px by 48 px, and no closer than 8 px apart. We found that  63.69%—a majority of web pages, had improperly sized tap targets. This is a slight improvement over last year, where 65.57% web pages had improperly sized tap targets.
 
 {{ figure_markup(
   image="sites-with-properly-sized-tap-targets.png",
@@ -322,13 +320,12 @@ Based on research, there are standards for minimum size of buttons and tap targe
 
 ##### Search input
 
-Search input or a search bar is a crucial tool for engaging users, it enables them to quickly find the information they are looking for.  It is especially important for mobile devices, as they lack the screen real estate to easily consume large amounts of information.
+Search input or a search bar is a crucial tool for engaging users, it enables them to quickly find the information they are looking for. It is especially important for mobile devices, as they lack the screen real estate to easily consume large amounts of information.
 
-Search is heavily used in large e-commerce sites, content heavy sites, news sites, and booking sites to help users find information easily.  While a small website that has a few pages, does not need a search input, it will be needed as the website grows. For sites with 100+ pages, it is recommended to feature a prominent search bar.
+Search is heavily used in large e-commerce sites, content heavy sites, news sites, and booking sites to help users find information easily. While a small website that has a few pages, does not need a search input, it will be needed as the website grows. For sites with 100+ pages, it is recommended to feature a prominent search bar.
 
 A [case study with fashion website lyst.com](https://www.thinkwithgoogle.com/intl/en-cee/marketing-strategies/data-and-measurement/lyst-increases-overall-conversion-rate-25-making-usability-improvements/), showed that replacing the search icon with a search box enabled users to locate the search function more easily, increasing usage by 43% on desktop, and by 13% on mobile.
 
-{# TODO(authors): Insert image: search input lyst.com #}
 {{ figure_markup(
   image="search-input-lyst.png",
   caption='Replacing the search icon with a search box on lyst.com improved conversion rate by 13% on mobile and 43% on desktop.<br>(Source: <a href="https://www.thinkwithgoogle.com/intl/en-cee/marketing-strategies/data-and-measurement/lyst-increases-overall-conversion-rate-25-making-usability-improvements/">Google</a>)',
@@ -413,8 +410,10 @@ At the start of [the User Journey](#the-user-journey) we mentioned that mobile r
 
 Hopefully by now we have gained a better understanding to reason about this, for instance reasons may include ease of finding and consuming content, the ease of typing, form filling etc.
 
-For larger sites, it's often not a question of whether to invest in mobile web OR desktop, as they both often complement each other.
+For larger sites, it's often not a question of whether to invest in mobile web *or* desktop, as they both often complement each other.
 
 It helps to consider all the four phases of the user journey to understand the full spectrum of opportunities for engaging the user, as well as the risks and challenges in each phase of the journey.
 
-{# TODO(authors): Overall conclusion. #}
+## Conclusion
+
+Mobile is now the predominant way of accessing the web, and access to the web has become all the more important in the last year. The needs of mobile are different from those of desktop. Image sizes can, and should, be smaller on mobile due to smaller screens and often limited network but seeing two fifths of improperly sized images show we still have some way to go. Similarly tap targets need to be bigger on mobile since we don;'t have the precision of a mouse but we have shown this is still a problem. In all there is much website owners can do to make the use of mobile web easier but it may often require a different mindset to desktop, but also not flipping the other way entirely and forgetting desktop users either.
