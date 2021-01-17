@@ -1,12 +1,27 @@
 {% extends "%s/base.html" % lang %}
 
 {% block methodology_stat_1 %}7,5&nbsp;M{% endblock %}
-{% block methodology_stat_2 %}31,3&nbsp;TB{% endblock %}
+{% block methodology_stat_2 %}31,3&nbsp;To{% endblock %}
 {% block methodology_description %}
 Sauf indication contraire, les statistiques des 22 chapitres du Web Almanac proviennent du jeu de données HTTP Archive, un projet communautaire qui suit l’évolution de la construction du web depuis 2010. Grâce à WebPageTest et Lighthouse, HTTP Archive collecte chaque mois les métadonnées de plus de 7.5 millions de sites Web et les insère dans une base de données publique BigQuery pour les analyser. Le jeu de données de août 2020 a servi de base aux mesures du Web Almanac. Pour plus d’informations, consultez la page Méthodologie.
 {% endblock %}
 
 {% block foreword %}
-{# TODO - Write this! #}
-{{ self.coming_soon() }}
+<p>
+  2020 a été une année que beaucoup d’entre nous aimeraient oublier. Il est rare qu’une communauté aussi mondialisée que la nôtre soit touchée par des événements aussi importants que la pandémie COVID-19 et les protestations contre l’injustice raciale. Ces événements nous ont presque découragés de relancer le projet cette année – avec autant de personnes physiquement et émotionnellement épuisées, comment pourrions-nous attendre d’une personne qu’elle <em>veuille</em> contribuer, et encore moins qu’elle ait le temps et l’énergie de le faire ? Nous avons avancé en douceur, en espérant qu’il y avait encore de l’intérêt pour la communauté.
+</p>
+
+<p>
+  L’objectif de cette édition du Web Almanac n’est pas d’oublier l’année 2020, mais de la commémorer. Pour le meilleur ou pour le pire, c’est un chapitre de notre histoire. Malgré toutes les pressions extérieures de cette année, <em>plus d’une centaine de <a href="./contributors">contributeurs et contributrices</a></em> de la communauté web se sont inscrits et ont donné d’innombrables heures de leur temps pour un projet consacré à la mémoire de 2020 et à l’état du web. Étonnamment, nous avons en fait réussi à <em> élargir</em> la portée de l’édition de cette année en ajoutant trois nouveaux chapitres et en n’en perdant qu’un.
+</p>
+
+<p>
+  Chaque fois que je demande aux personnes ayant contribué ce qu’elles apprécient le plus dans le projet, la réponse concerne presque toujours les gens. Nous travaillons en équipe, nous nous soutenons mutuellement et, en cinq mois seulement, nous sommes capables de construire l’équivalent d’un livre de plus de 500 pages ! C’est un énorme défi, et bien que nous n’ayons pas résolu les problèmes du monde, nous avons montré ce qui est possible lorsque les gens choisissent de travailler ensemble.
+</p>
+
+<p>
+  Je vous prie d’apprécier le Web Almanac 2020, le point culminant de notre travail d’amour pour le web. N’hésitez pas à <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/CONTRIBUTING.md">nous contacter</a> si vous souhaitez rejoindre l’équipe.
+</p>
+
+<p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>, Rédacteur en chef du Web Almanac</em></p>
 {% endblock %}
