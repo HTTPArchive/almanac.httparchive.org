@@ -125,7 +125,7 @@ For example:
 {{ figure_markup(
   image="srcset-sizes-usage.png",
   caption="Use of sizes in srcset.",
-  description="Stacked bar chart showing 65.35% of srcset images uses sizes on desktop, with the remaining 34.65% not using it. On mobile it is 64.95% using and the remaing 35.05 not using.",
+  description="Stacked bar chart showing 65.35% of srcset images uses sizes on desktop, with the remaining 34.65% not using it. On mobile it is 64.95% using and the remaining 35.05 not using.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=496958447&format=interactive",
   sheets_gid="768487310",
   sql_file="image_srcset_sizes.sql"
@@ -259,7 +259,7 @@ While the data shows that only a little under 1% of pages using `<picture>` make
   image="picture-usage-of-orientation.png",
   alt="Picture usage of orientation.",
   caption="`<picture>` usage of orientation.",
-  description="Bar chart showing 0.93% of desktop pages and 0.91% of mobile pages use `<picture>` with orientation. 0.59% of occurances of `<picture>` on desktop and 0.60% on mobile use orientation.",
+  description="Bar chart showing 0.93% of desktop pages and 0.91% of mobile pages use `<picture>` with orientation. 0.59% of occurences of `<picture>` on desktop and 0.60% on mobile use orientation.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=56906843&format=interactive",
   sheets_gid="283790776",
   sql_file="picture_orientation.sql"
@@ -337,7 +337,7 @@ Given that video content is expensive to produce and much less common on the web
 {{ figure_markup(
   image="open-graph-image-type-usage.png",
   caption="Open Graph image type usage.",
-  description="Bar chart showing the following percentage usage of various image formats on mobile: 50.51% for jpg, 43.82% for png,1.60% for gif, 1.78% for jpeg, 0.66% for svg, 0.31% for pnj, 0.36% for png:150, 0.28% for ico, and 0.23% for webp. Desktop has very simialr numbers.",
+  description="Bar chart showing the following percentage usage of various image formats on mobile: 50.51% for jpg, 43.82% for png,1.60% for gif, 1.78% for jpeg, 0.66% for svg, 0.31% for pnj, 0.36% for png:150, 0.28% for ico, and 0.23% for webp. Desktop has very similar numbers.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=475337707&format=interactive",
   sheets_gid="758253988",
   sql_file="meta_open_image_types.sql"
@@ -399,7 +399,7 @@ The `alt` attribute for images is used to provide a description of the image. It
 {{ figure_markup(
   image="image-alt-usage-by-page.png",
   caption="Image alt usage by page.",
-  description="Bar chart showing 96.26% of dresktop pages and 96.04% of mobile pages have images present. 52.5% of desktop pages and 51.0% of mobile pages are missing alt attribute, 60.4% of desktop and 60.6% of mobile pages have blank alt attributes, and 83.6% of desktop and 82.1% of mobile pages have an alt present.",
+  description="Bar chart showing 96.26% of desktop pages and 96.04% of mobile pages have images present. 52.5% of desktop pages and 51.0% of mobile pages are missing alt attribute, 60.4% of desktop and 60.6% of mobile pages have blank alt attributes, and 83.6% of desktop and 82.1% of mobile pages have an alt present.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=2144814052&format=interactive",
   sheets_gid="885941461",
   sql_file="image_alt.sql"
@@ -484,7 +484,7 @@ The analysis is complicated a bit by the fact that many players – such as vide
 {{ figure_markup(
   image="video-source-types.png",
   caption="Video source types.",
-  description="Bar chart showing the following usage of video foirmats on mobile: 64.08% for video/mp4, 19.68% for video/mp4, 10.08% for video/webm, 4.74% for video/ogg, 0.51% for video/vimeo, 0.37% for video/ogv, 0.12% for video/mpeg, 0.09% for video/mov. Desktop is very similar.",
+  description="Bar chart showing the following usage of video formats on mobile: 64.08% for video/mp4, 19.68% for video/mp4, 10.08% for video/webm, 4.74% for video/ogg, 0.51% for video/vimeo, 0.37% for video/ogv, 0.12% for video/mpeg, 0.09% for video/mov. Desktop is very similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=203419864&format=interactive",
   sheets_gid="1459916814",
   sql_file="video_source_types.sql"
