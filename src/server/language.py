@@ -52,6 +52,7 @@ class Language(object):
     NL = _Language('Nederlands', 'nl')
     PT = _Language('Português', 'pt')
     RU = _Language('Русский', 'ru')
+    UK = _Language('Українська', 'uk')
     ZH_CN = _Language('简体中文', 'zh-CN')
     ZH_TW = _Language('繁體中文', 'zh-TW')
 

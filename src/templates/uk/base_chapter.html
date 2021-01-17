@@ -1,0 +1,23 @@
+{% extends "base/base_chapter.html" %}
+
+{% block title %}{{ metadata.get('title') }} | {{ year }} | Web Almanac від HTTP Archive{% endblock %}
+
+{% block description %}'Розділ ' + metadata.get('description',metadata.get('title')) + ' у Web Almanac ' + year + ' досліджує, як використовується ' + metadata.get('description',metadata.get('title')) + ' у вебі.'{% endblock %}
+
+{% block twitter_image_alt %}Зображення до розділу {{ metadata.get('title') }} у Web Almanac {{ year }}{% endblock %}
+
+{% block prev_next_title %}Навігація до попереднього чи наступного розділу{% endblock %}
+
+{% block explore_the_results %}Переглянути результати{% endblock %}
+{% block discuss_this_chapter %}Обговорити розділ{% endblock %}
+{% block comment %}коментар{% endblock %}
+{% block comments %}коментарі{% endblock %}
+{% block comments_fallback %}Коментарі{% endblock %}
+{% block queries %}Запити{% endblock %}
+{% block results %}Результати{% endblock %}
+{% block figure_sql %}Переглянути запит{% endblock %}
+{% block figure_data %}Переглянути дані{% endblock %}
+{% block figure_image %}Переглянути зображення{% endblock %}
+
+{% block previous %}Попередній розділ (стрілка ліворуч){% endblock %}
+{% block next %}Наступний розділ (стрілка праворуч){% endblock %}
