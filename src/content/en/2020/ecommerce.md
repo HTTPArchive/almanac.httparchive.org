@@ -51,6 +51,8 @@ This change in methodology provides enhanced coverage for enterpise platforms an
 Our methodology has the following limitations:
 - Headless ecommerce platforms like [commercetools](https://commercetools.com/) may not get detected as ecommerce platform but if we are able to detect presence of cart on such sites, we will still include sites using such platforms in our overall coveage stats.
 - Technologies which are typically deployed outside homepages (e.g. WebAR on product detail pages) are not detected.
+- Due to our crawl originating from US, there may be some bias towards US specific platforms. For example, if a global business has ecommerce sites built on different platforms for different countries (using country specific domains/sub-domains), it may not correct correctly in our analysis.
+
 
 ## Ecommerce platforms
 
@@ -371,7 +373,7 @@ HotJar is another tool often used by ecommerce sites to analyze and improve usag
 
 ### Tag Managers
 
-Add details about GTM SS and Adobe Launch (Alloy.js)
+Google Tag Manager remains the most used tag manager on ecommerce sites followed by Adobe Tag Manager. We don't expect this to change due to free nature of Google Tag Manager. In Aug-2020, Google also launched <a href="https://developers.google.com/tag-manager/serverside">server side tagging</a> in Google Tag Manager. Implementing server side tagging will incur a small cost for ecommerce sites but it can help sites eliminate third party overhead and thus improving metrics like Total Blocking Time (TBT), First Input Delay (FID) and Time to Interactive (TTI). Simon Ahava has lot of useful information on his <a href="https://www.simoahava.com/analytics/server-side-tagging-google-tag-manager/">blog</a> which we recommend to readers. Adoption of server side tagging will depend on third parties to provide server side templates to make the migration easier. These are early days for GTM server side tagging and at the time of writing this chapter, we didn't find any server side templates in publicly available <a href="https://tagmanager.google.com/gallery/#/?context=server&page=1">community gallery</a>. But if the adoption increases, it will be intereseting to compare the performance scores of sites using client side vs server side tagging. Other vendors like Adobe, Signal also offer similar server side solutions which sites should consider adopting to help with performance.
 
 <figure>
   <table>
@@ -430,6 +432,9 @@ Add details about GTM SS and Adobe Launch (Alloy.js)
   <figcaption>{{ figure_link(caption="Tag manager usage on ecommerce sites.", sheets_gid="2045910168", sql_file="percent_of_ecommsites_using_each_tag_managers.sql") }}</figcaption>
 </figure>
 
+<p class="note">Note: Above analysis is based on Wappalyzer detection which may defer from analysis done using [third-party-web](https://almanac.httparchive.org/en/2020/methodology#third-party-web) dataset which is used for [Third parties chapter](./third-parties)</p>
+
+
 ### Consent Management Platforms
 
 This year's Privacy chapter covered the adoption of Consent Management Platforms across all types of websites. When we compare adoption on ecommerce sites Vs all sites, we see a slightly higher adoption both across mobile (4.2% on ecommerce sites Vs 4.0% on all sites)  and desktop (4.6% on ecommerce sites Vs 4.4% on all sites).
@@ -468,19 +473,31 @@ In the SEO chapter, we covered stats on AMP usage across all websites. In this c
 
 We also considered looking at CRUX performance of ecommerce websites with their AMP counterpart (where implemented on a different domain using `<link rel="amphtml"...>` tag). Such an analysis will help us identify if there was a significant difference in performance of AMP domain, but due to low adoption rates of AMP across ecommerce websites, such an analysis may not give any meaningful results and we deferred the analysis for future years (if adoption rates increase).
 
-### Push notifications
+### Web Push notifications
 
-In future, Chrome will automatically enroll sites with very low acceptance rates into quieter notifications UI (though exact threshold is not yet defined). Standard UI will be restored for the site when acceptance rates improve within the control group. https://developers.google.com/web/updates/2020/02/notification-permission-data-in-crux
+Marketeers love push notifications but as per author's experience that awareness among marketeers about web push notifications is still very low in spite of <a href="https://developers.google.com/web/updates/2015/03/push-notifications-on-the-open-web">Push API</a> being introduced in 2015 for the first time in Chrome. We tried to look at adoption of web push notifications (which are possible using technologies like service workers) on ecommerce sites. As part of CRUX notifications permission data, we have access to metrics like push acceptance rates, push prompts dismissal rates. Please refer this <a href="https://developers.google.com/web/updates/2020/02/notification-permission-data-in-crux">article</a> for more details on how this data is captured and what metics are available.
 
-In this talk, PJ Mclachlan (Product Manager, Google) talks about aiming for at least 50% acceptance rates to be in safe territory to avoid falling into quieter notifications UI and aiming for 80% and above acceptance rate.
+In our analysis, we found that only 0.68% of desktop ecommerce sites and 0.69% of mobile ecommerce sites use web push notifications. When it comes to push notifications, it's important that customers find push notifications useful. Key to this is to request permission at right time in customer jourey and not to bomboard users with irrelvant notifications. To address the customer fatigue with push notifications, Chrome will automatically enroll sites with very low acceptance rates into <a href="https://blog.chromium.org/2020/05/protecting-chrome-users-from-abusive.html">quieter notifications UI</a> (though exact threshold is not yet defined). Standard UI will be restored for the site when acceptance rates improve within the control group.
 
-The median notifications acceptance rates for an ecommerce website is 13.6% on mobile and 13.2% on desktop. At median level, these acceptance rates have a lot to be desired. Even at 90th percentile level, numbers are not very good (36.9% for mobile and 36.8% for desktop).
+In this <a href="https://www.youtube.com/watch?v=J_t8c9HOjBc">video</a>, PJ Mclachlan (Product Manager, Google) talks about aiming for at least 50% acceptance rates to be in safe territory to avoid falling into quieter notifications UI and aiming for 80% and above acceptance rate.The median notifications acceptance rates for an ecommerce website is 13.6% on mobile and 13.2% on desktop. At median level, these acceptance rates have a lot to be desired. Even at 90th percentile level, numbers don't look very good (36.9% for mobile and 36.8% for desktop). Ecommerce sites can refer at this <a href="https://youtu.be/riKmez3sHaM">talk</a> for recommeneded patterns to make sure push acceptance rates remain healthy and they are not getting caught off guard by upcoming abusive notifications changes.
+
 
 ## Future analysis opportunities
 
-This year's [SEO](./seo) chapter includes analysis of websites using `hreflang` and `lang` attributes, and `content-language` HTTP headers. This combined with Wappalyzer detection of cross-border commerce solutions like Global-e, Flow, Borderfree can provide opportunity to just look at Cross border commerce aspects of the ecommerce websites. Currently Wappalyzer doesn't have a separate category for 'Cross-border commerce' and hence this type of analysis is not possible unless we build a repository of such solutions ourselves.
+During this year's analysis, we looked at analyzing following for this chapter but it was not possible due to limitations of Wappalyzer detection or our crawl methodology but it will be good to hear from community if analyzing these areas will be beneficial or not so that we can consider these for future.
+
+This year's [SEO](./seo) chapter includes analysis of websites using `hreflang` and `lang` attributes, and `content-language` HTTP header. This combined with Wappalyzer detection of cross-border commerce solutions like Global-e, Flow, Borderfree can provide opportunity to just look at Cross border commerce aspects of the ecommerce websites. Currently Wappalyzer doesn't have a separate category for 'Cross-border commerce' and hence this type of analysis is not possible unless we build a repository of such solutions ourselves.
+
+It will also be interesting to look at adoption of native apps by ecommerce sites by tapping into native app association standards like '.well-known/assetlinks.json' on play store and '.well-known/apple-app-site-association' on app store. Google has made easy for PWAs to achieve this using Trusted Web Activity but currently there are no public stats available on how many sites may be using this technique to submit their PWAs in play store.
+
+Wappalyzer also provides detection of payment solutions (Apple Pay / PayPal / ShopPay etc.) but based on the types of implementation and solution, it's not always possible to detect this just by looking at homepage but for solutions where detection can be done by just looking at homepage, such an analysis can be useful to look at year of year trends.
+
 
 ## Conclusion
 
-We have taken a deep dive into the state of ecommerce on the web in 2020 and seen some
+Covid-19 massively accelerated the growth of ecommerce in 2020 and lot of smaller players had to establish online presence quickly and had to find ways to continue trading during lockdowns. Platforms like WooCommerce/Shopify/Wix/BigCommerce played very important role in bringing more and more small businesses online. Covid-19 also saw launch of D2C (direct to consumer) offerings by brand and this is expected to increase in future. Full impact of Covid-19 may not be visible in this year's web alamanc as these new businesses need to cross certain traffic threshold first in order to become part of CRUX dataset which we use for our analysis. Due to this reason, we may see continued growth in next year's analysis as well.
+
+Improving core web vitals score will be a priority for ecommerce businesses due to changes announced by Google and marketing teams using web push notifications should keep an eye on their notifications stats using CRUX to not get caught by upcoming abusing notifiations changes. Tag managers still seem to cause lot of friction between marketing and engineering teams and solutions like Google Tag Manager server side tagging will make some inroads but we don't expect a lot to change in 2021 and this will be more like 3-5 years journey but community need to ask their respective third parties to provide compatible solutions to further evolve this ecosystem.
+
+Considering limitations of we using only homepage data for this analysis, we would like to hear from community what else we should cover in next year's analysis. We have covered some possibilities of further analysis in section above and any feedback is greatly appreciated.
 
