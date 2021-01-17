@@ -28,10 +28,10 @@ unedited: true
 An "ecommerce platform" is a set of software or services that enables you to create and operate an online store. There are several types of ecommerce platforms, for example:
 
 - Paid-for services such as Shopify that host your store and help you get started. They provide website hosting, site and page templates, product-data management, shopping carts and payments.
-- Software platforms such as Magento Open Source which you set up, host and manage yourself. These platforms can be powerful and flexible, but may be more complex to set up and run than services such as Shopify.
+- Software platforms such as Magento Open Source which you set up, host and manage yourself. These platforms can be powerful and flexible but may be more complex to set up and run than services such as Shopify.
 - Hosted platforms such as Magento Commerce that offer the same features as their self-hosted counterparts, except that hosting is managed as a service by a third-party.
 
-Last year's analysis could only detect sites built on an ecommerce platform. This means that most large online stores and marketplaces—such as Amazon, JD, and eBay or any ecommerce sites built using in-house platforms (typically by bigger businesses) were not part of the analysis. For this year's analysis, this limitation was addressed by enhancing Wapalyzer's detection of ecommerce sites. See the [Platform detection](#platform-detection) section for more details.
+Last year's analysis could only detect sites built on an ecommerce platform. This means that most large online stores and marketplaces—such as Amazon, JD, and eBay or any ecommerce sites built using in-house platforms (typically by bigger businesses) were not part of the analysis. For this year's analysis, this limitation was addressed by enhancing Wappalyzer's detection of ecommerce sites. See the [Platform detection](#platform-detection) section for more details.
 
 Also note that the data here is for home pages only: not category, product or other pages. Learn more about our [methodology](./methodology).
 
@@ -76,11 +76,11 @@ In total, 21.72% of mobile websites and 21.27% of desktop websites used an ecomm
   sql_file="top_vendors.sql"
 ) }}
 
-Our analysis counted 145 separate ecommerce platforms (compared to [116 in last year's analysis](../2019/ecommerce#ecommerce-platforms)). Out of these, only 9 platforms have market share of greater than 0.1%. WooCommerce is the most common ecommerce platform and has maintained it's number one position. Wix appears in are analysis for the first time this year after Wappalyzer started identifying it as ecommerce platform from 30th Jun 2019.
+Our analysis counted 145 separate ecommerce platforms (compared to [116 in last year's analysis](../2019/ecommerce#ecommerce-platforms)). Out of these, only 9 platforms have market share of greater than 0.1%. WooCommerce is the most common ecommerce platform and has maintained its number one position. Wix appears in are analysis for the first time this year after Wappalyzer started identifying it as ecommerce platform from 30th Jun 2019.
 
 ### Top enterprise ecommerce platforms
 
-While it is difficult to discern a platform’s precise tier let us highlight four vendors who focus heavily on the Enterprise tier - SalesForce, HCL, SAP, and Oracle.
+While it is difficult to discern a platform's precise tier let us highlight four vendors who focus heavily on the Enterprise tier - SalesForce, HCL, SAP, and Oracle.
 
 {{ figure_markup(
   image="enterprise-ecommerce-platforms.png",
@@ -91,11 +91,11 @@ While it is difficult to discern a platform’s precise tier let us highlight fo
   sql_file="top_vendors.sql"
 ) }}
 
-Salesforce Commerce Cloud remains the leading platform from this group. The 3,437 desktop websites in 2020 represent a 29.5% increase from 2019’s 2,653 desktop websites. Salesforce’s websites account for 36.8% of the four enterprise ecommerce platforms.
+Salesforce Commerce Cloud remains the leading platform from this group. The 3,437 desktop websites in 2020 represent a 29.5% increase from 2019's 2,653 desktop websites. Salesforce's websites account for 36.8% of the four enterprise ecommerce platforms.
 
-HCL Technologies acquired WebSphere Commerce from IBM in July 2019. The transition had mixed results in 2020. While HCL’s WebSphere Commerce increased their desktop website count by a 14.8% increase this year up to 2,604 from 2019’s 2,268 desktop websites, there was a slip in popularity by 0.5% within this group down to 27.9%. Something to watch for in the future.
+HCL Technologies acquired WebSphere Commerce from IBM in July 2019. The transition had mixed results in 2020. While HCL's WebSphere Commerce increased their desktop website count by a 14.8% increase this year up to 2,604 from 2019's 2,268 desktop websites, there was a slip in popularity by 0.5% within this group down to 27.9%. Something to watch for in the future.
 
-SAP Commerce Cloud, formally known as Hybris, remains the third most popular enterprise ecommerce platform at 25.4% which is a slight increase from last year’s 24.8%. The 2,371 desktop websites is a 19.8% increase from the 1,979 desktop sites found in 2019 attributed to Hybris.
+SAP Commerce Cloud, formally known as Hybris, remains the third most popular enterprise ecommerce platform at 25.4% which is a slight increase from last year's 24.8%. The 2,371 desktop websites is a 19.8% increase from the 1,979 desktop sites found in 2019 attributed to Hybris.
 
 Lastly, Oracle Commerce Cloud unfortunately lost a bit of traction between 2019 and 2020. The desktop websites fell from 1,095 to 917, down 16%, and in turn their Enterprise ecommerce platform foothold fell from 13.7% to 9.8%.
 
@@ -117,11 +117,11 @@ Lastly, Oracle Commerce Cloud unfortunately lost a bit of traction between 2019 
   sql_file="top_vendors.sql"
 ) }}
 
-Shopify’s Shopify Plus, Adobe’s Magento Enterprise and Bigcommerce’s Enterprise offerings are available and gaining traction but the Platform Detection limitations hamper any ability to isolate the Enterprise websites from their Community or Commercial websites.
+Shopify's Shopify Plus, Adobe's Magento Enterprise and Bigcommerce's Enterprise offerings are available and gaining traction but the Platform Detection limitations hamper any ability to isolate the Enterprise websites from their Community or Commercial websites.
 
 ## COVID-19 impact on ecommerce
 
-COVID-19 has had a huge impact on the world and necessitated an even bigger move to online. Masuring the total increase in ecommerce platforms is influenced by the greatly increased detection undertaken in part for this chapter. So instead we look at some of the platforms that were already being detected and note an increase in their usage - particularly since March 2020 when COVID started impacting large parts of the world:
+COVID-19 has had a huge impact on the world and necessitated an even bigger move to online. Measuring the total increase in ecommerce platforms is influenced by the greatly increased detection undertaken in part for this chapter. So instead we look at some of the platforms that were already being detected and note an increase in their usage - particularly since March 2020 when COVID started impacting large parts of the world:
 
 {{ figure_markup(
   image="ecommerce-vendor-growth-covid-19-impact.png",
@@ -199,7 +199,7 @@ Mobile HTML payload sizes are not very different from desktop. In other words, i
 
 ### Image usage
 
-Nexrt, let's look at how images are used on ecommerce sites. Note that because our data collection methodology does not simulate user interactions on pages like clicking or scrolling, images that are lazy loaded would not be represented in these results.
+Next, let's look at how images are used on ecommerce sites. Note that because our data collection methodology does not simulate user interactions on pages like clicking or scrolling, images that are lazy loaded would not be represented in these results.
 
 {{ figure_markup(
   image="distribution-of-image-requests-for-ecommerce.png",
@@ -236,19 +236,19 @@ The figures above show that the median ecommerce page has 34 images and an image
 
 <p class="note">Note that some image services or CDNs will automatically deliver WebP (rather than JPEG or PNG) to platforms that support WebP, even for a URL with a `.jpg` or `.png` suffix. For example, `IMG_20190113_113201.jpg` returns a WebP image in Chrome. However, the way HTTP Archive detects image formats is to check for keywords in the MIME type first, then fall back to the file extension. This means that the format for images with URLs such as the above will be given as WebP, since WebP is supported by HTTP Archive as a user agent.</p>
 
-PNG usage remained roughly at the [same level as 2019](../2019/ecommerce#png) (at 27% for both desktop and mobile). We observed drop in jpg usage (4% for desktop and 6% for mobile). Out of this drop, most of it went towards increased GIF usage. GIFs are quite common on ecommerce homepages whereas GIFs may not be much used on product detail pages. Since our methodology only looks at homepages, this explains the significantly high usage of GIFs across ecommerce sites. LightHouse has an audit which recommends to use 'video formats for animated content'. This is a technique ecommerce sites can use to optimize for performance but still retain animation properties of GIFs. See [this article](https://web.dev/replace-gifs-with-videos/) for more details.
+PNG usage remained roughly at the [same level as 2019](../2019/ecommerce#png) (at 27% for both desktop and mobile). We observed drop in jpg usage (4% for desktop and 6% for mobile). Out of this drop, most of it went towards increased GIF usage. GIFs are quite common on ecommerce homepages whereas GIFs may not be much used on product detail pages. Since our methodology only looks at homepages, this explains the significantly high usage of GIFs across ecommerce sites. Lighthouse has an audit which recommends using "video formats for animated content". This is a technique ecommerce sites can use to optimize for performance but still retain animation properties of GIFs. See [this article](https://web.dev/replace-gifs-with-videos/) for more details.
 
-WebP usage across ecommerce sites still remains very low though usage increased by 100% and went from a total of 1% usage in 2019 to 2% usage in 2020. WebP format is now nearly 10 years old and even after allowing for progressive enhancement using the 'picture' tag, usage has remained low. In 2020, webP got a new lease of life when Safari introduced support in [Safari 14](https://caniuse.com/webp). However, web almanac for this year is based on Aug-2020 and Safari suppor came in Sep-2020 so any stats presented here doesn't reflect the impact of support added by Safari.
+WebP usage across ecommerce sites still remains very low though usage increased by 100% and went from a total of 1% usage in 2019 to 2% usage in 2020. WebP format is now nearly 10 years old and even after allowing for progressive enhancement using the 'picture' tag, usage has remained low. In 2020, WebP got a new lease of life when Safari introduced support in [Safari 14](https://caniuse.com/webp). However, web almanac for this year is based on Aug-2020 and Safari support came in Sep-2020 so any stats presented here doesn't reflect the impact of support added by Safari.
 
-This year, in Chrome 85 (released in Aug-2020), we also saw support for AVIF which is a [more efficient image format compared to WebP](https://www.ctrl.blog/entry/webp-avif-comparison.html). In next year's analysis, we hope to cover AVIF usage across ecommerce sites. Similar to webP, AVIF is also progressive enhancement and can be implemented using the 'picture' tag to address [cross-browser concerns](https://caniuse.com/avif).
+This year, in Chrome 85 (released in Aug-2020), we also saw support for AVIF which is a [more efficient image format compared to WebP](https://www.ctrl.blog/entry/webp-avif-comparison.html). In next year's analysis, we hope to cover AVIF usage across ecommerce sites. Similar to WebP, AVIF is also progressive enhancement and can be implemented using the 'picture' tag to address [cross-browser concerns](https://caniuse.com/avif).
 
-As per the author's experience, there is a lack of awareness in engineering teams about image optimization services offered by CDNs where CDNs can do most of the heavy lifting without touching any code. For example, Adobe Scene7 offers this under their [Smart Imaging solution](https://helpx.adobe.com/uk/experience-manager/6-3/assets/using/imaging-faq.html). Clients on Salesforce Commerce Cloud using the platform's embedded CDN capability (which uses Cloudflare) can enable this with a simple toggle. By increasing the awareness of such solutions, we can try to move the needle in favour of more efficient formats.
+As per the author's experience, there is a lack of awareness in engineering teams about image optimization services offered by CDNs where CDNs can do most of the heavy lifting without touching any code. For example, Adobe Scene7 offers this under their [Smart Imaging solution](https://helpx.adobe.com/uk/experience-manager/6-3/assets/using/imaging-faq.html). Clients on Salesforce Commerce Cloud using the platform's embedded CDN capability (which uses Cloudflare) can enable this with a simple toggle. By increasing the awareness of such solutions, we can try to move the needle in favor of more efficient formats.
 
-Another point for readers who are interested in images sizes/formats to improve CRUX metrics, currently progressive images provides no weightage towards Largest Contentful Paint despite being helpful for user perceived performance. There is a fascinating [discussion](https://github.com/WICG/largest-contentful-paint/issues/68) in the community on this topic and in future it's possible that progressive images contribute towards LCP. There may be renewed interest in the ecommerce community towards formats supporting progressive loading due to this and inclusion of Core Web Vitals in Page Experience signals from May 2021.
+Another point for readers who are interested in images sizes/formats to improve CRUX metrics, currently progressive images provides no weightage towards Largest Contentful Paint despite being helpful for user perceived performance. There is a fascinating [discussion](https://github.com/WICG/largest-contentful-paint/issues/68) in the community on this topic and in future it is possible that progressive images contribute towards LCP. There may be renewed interest in the ecommerce community towards formats supporting progressive loading due to this and inclusion of Core Web Vitals in Page Experience signals from May 2021.
 
 ### Third-party requests and bytes
 
-Ecommerce platforms and sites, often make use of [third-party](./third-party) content. We use the [Third Party Web project](https://almanac.httparchive.org/en/2020/methodology#third-party-web) to detect third-party usage.
+Ecommerce platforms and sites often make use of [third-party](./third-party) content. We use the [Third Party Web project](https://almanac.httparchive.org/en/2020/methodology#third-party-web) to detect third-party usage.
 
 {{ figure_markup(
   image="distribution-of-third-party-requests.png",
@@ -268,7 +268,7 @@ Ecommerce platforms and sites, often make use of [third-party](./third-party) co
   sql_file="pct_3pusage_bydevice.sql"
 ) }}
 
-We see a significant increase in the use of third-party requests and bytes [compared to last year's third-party data](../2019/ecommerce#third-party-requests-and-bytes), but have been unable to identify any particularly causes or any noteable change in detection. We'd love to hear [readers opinions](https://discuss.httparchive.org/t/2052) on this as third-party usage seems to have basically doubled in the last year!
+We see a significant increase in the use of third-party requests and bytes [compared to last year's third-party data](../2019/ecommerce#third-party-requests-and-bytes), but have been unable to identify any particularly causes or any notable change in detection. We'd love to hear [readers opinions](https://discuss.httparchive.org/t/2052) on this as third-party usage seems to have basically doubled in the last year!
 
 ## Ecommerce user experience
 
@@ -301,7 +301,7 @@ In the context of ecommerce, this metric provides very good indication of most u
   sql_file="core_web_vitals_passingmetrics_byvendor_bydevice.sql"
 ) }}
 
-We see large degress of variability across the major platforms with Wix, and Woocommerce in particular scoring very low. As two of the three most used ecommerce platforms, it seems they have some improvements to make!
+We see large degrees of variability across the major platforms with Wix, and WooCommerce in particular scoring very low. As two of the three most used ecommerce platforms, it seems they have some improvements to make!
 
 #### First Input Delay
 
@@ -316,7 +316,7 @@ First Input Delay (FID) attempts to measure interactivity, or more importantly a
   sql_file="core_web_vitals_passingmetrics_byvendor_bydevice.sql"
 ) }}
 
-In general FID scores are typically higher than the other Core Web Vitals, and it's promising that ecommerce sites, despite making use of a lot of Media and JavaScript as we've seen earlier, maintain high scores in this category.
+In general FID scores are typically higher than the other Core Web Vitals, and it is promising that ecommerce sites, despite making use of a lot of Media and JavaScript as we've seen earlier, maintain high scores in this category.
 
 #### Cumulative Layout Shift
 
@@ -350,7 +350,7 @@ This is very similar to the LCP chart earlier, perhaps somewhat unsurprisingly s
 
 ## Tools
 
-How are ecommerce sites using common tools like Analytics, Tag Managers, Consent Management Platforms and Accessibilty solutions?
+How are ecommerce sites using common tools like Analytics, Tag Managers, Consent Management Platforms and Accessibility solutions?
 
 ### Analytics
 
@@ -363,9 +363,9 @@ How are ecommerce sites using common tools like Analytics, Tag Managers, Consent
   sql_file="top_analytics_bydevice_vendor.sql"
 ) }}
 
-Google Analytics scores highly unsurprisingly at 77% of mobile ecommerce sites, but what is perhaps more surprising is that Google Analytics Enhanced Ecommerce is only used by 22% of ecommerce sites, reflecting either an opportunity for 55% of sites to get more out of their Google Analytics, or perhaps reflecting another limitation of our methodology which is limited to home pages as some sites may only load this on chec kout funnels.
+Google Analytics scores highly unsurprisingly at 77% of mobile ecommerce sites, but what is perhaps more surprising is that Google Analytics Enhanced Ecommerce is only used by 22% of ecommerce sites, reflecting either an opportunity for 55% of sites to get more out of their Google Analytics, or perhaps reflecting another limitation of our methodology which is limited to home pages as some sites may only load this on checkout funnels.
 
-HotJar is another tool often used by ecommerce sites to analyse and improve usage of the site, and so conversions but usage is very low at 6% of mobile sites.
+HotJar is another tool often used by ecommerce sites to analyze and improve usage of the site, and so conversions but usage is very low at 6% of mobile sites.
 
 ### Tag Managers
 
@@ -451,7 +451,7 @@ Though not recommended, we looked at usage of such solutions across ecommerce we
 
 In the current methodology adopted for this chapter, there is no easy way for us to look at if any top ecommerce websites have gone this quick fix route instead of trying to achieve accessibility by design. It will be possible to find out this in future by combining HTTP Archive data with publications like Top 500 UK sites by International retailing OR similar publications.
 
-### AMP Adoption
+### AMP adoption
 
 {{ figure_markup(
   caption="AMP usage on ecommerce sites (mobile).",
@@ -466,7 +466,7 @@ In the SEO chapter, we covered stats on AMP usage across all websites. In this c
 
 We also considered looking at CRUX performance of ecommerce websites with their AMP counterpart (where implemented on a different domain using `<link rel="amphtml"...>` tag). Such an analysis will help us identify if there was a significant difference in performance of AMP domain, but due to low adoption rates of AMP across ecommerce websites, such an analysis may not give any meaningful results and we deferred the analysis for future years (if adoption rates increase).
 
-### Push Notifications
+### Push notifications
 
 In future, Chrome will automatically enroll sites with very low acceptance rates into quieter notifications UI (though exact threshold is not yet defined). Standard UI will be restored for the site when acceptance rates improve within the control group. https://developers.google.com/web/updates/2020/02/notification-permission-data-in-crux
 
@@ -474,7 +474,7 @@ In this talk, PJ Mclachlan (Product Manager, Google) talks about aiming for at l
 
 The median notifications acceptance rates for an ecommerce website is 13.6% on mobile and 13.2% on desktop. At median level, these acceptance rates have a lot to be desired. Even at 90th percentile level, numbers are not very good (36.9% for mobile and 36.8% for desktop).
 
-## Future Analysis Opportunities
+## Future analysis opportunities
 
 This year's [SEO](./seo) chapter includes analysis of websites using 'hreflang' and 'content-language' attributes. This combined with Wappalyzer detection of cross-border commerce solutions like Global-e, Flow, Borderfree can provide opportunity to just look at Cross border commerce aspects of the ecommerce websites. Currently Wappalyzer doesn't have a separate category for 'Cross-border commerce' and hence this type of analysis is not possible unless we build a repository of such solutions ourselves.
 
