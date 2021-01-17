@@ -1,5 +1,4 @@
 ---
-#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 part_number: III
 chapter_number: 16
 title: Ecommerce
@@ -9,12 +8,12 @@ reviewers: [alankent]
 analysts: [jrharalson, rockeynebhwani]
 editors: [bazzadp]
 translators: []
-rockeynebhwani_bio: Rockey Nebhwani is an independent consultant who has worked in retail and ecommerce since 2001 and has extensive experience in the industry working with retailers like Amazon, Wal-Mart, Tesco, M&S, Safeway etc. across US and UK. Rockey is an occasioanl speaker at ecommerce events and also tweets at <a href="https://twitter.com/rnebhwani">@rnebhwani</a>.
+rockeynebhwani_bio: Rockey Nebhwani is an independent consultant who has worked in retail and ecommerce since 2001 and has extensive experience in the industry working with retailers like Amazon, Wal-Mart, Tesco, M&S, Safeway etc. across US and UK. Rockey is an occasional speaker at ecommerce events and also tweets at <a href="https://twitter.com/rnebhwani">@rnebhwani</a>.
 #jrharalson_bio: TODO
 discuss: 2052
 results: https://docs.google.com/spreadsheets/d/1Hvsh_ZBKg2vWhouJ8vIzLmp0nLIMzrT2mr6RQbIkxqY/
 queries: 16_Ecommerce
-featured_quote: Covid-19 massively accelerated the growth of ecommerce in 2020 and lot of smaller players had to establish online presence quickly and had to find ways to continue trading during lockdowns. Platforms like WooCommerce/Shopify/Wix/BigCommerce played very important role in bringing more and more small businesses online. Covid-19 also saw launch of D2C (direct to consumer) offerings by brand and this is expected to increase in future.
+featured_quote: Covid-19 massively accelerated the growth of ecommerce in 2020 and lot of smaller players had to establish online presence quickly and had to find ways to continue trading during lockdowns. Platforms like WooCommerce / Shopify / Wix / BigCommerce played very important role in bringing more and more small businesses online. Covid-19 also saw launch of D2C (direct to consumer) offerings by brand and this is expected to increase in future.
 featured_stat_1: 21.27%
 featured_stat_label_1: Mobile sizes identified as ecommerce sites
 featured_stat_2: 5.19%
@@ -134,7 +133,7 @@ COVID-19 has had a huge impact on the world and necessitated an even bigger move
   sql_file="ecomm_vendors_covid_growth.sql"
 ) }}
 
-There is definitely a measureable increase WooComerce and Shopify sites around the time COVID starting impacting the world.
+There is definitely a measurable increase WooCommerce and Shopify sites around the time COVID started really impacting the world.
 
 ## Page weight and requests
 
@@ -250,7 +249,7 @@ This year, in Chrome 85 (released in August 2020), we also saw support for AVIF 
 
 As per the author's experience, there is a lack of awareness in engineering teams about image optimization services offered by CDNs where CDNs can do most of the heavy lifting without touching any code. For example, Adobe Scene7 offers this under their [Smart Imaging solution](https://helpx.adobe.com/uk/experience-manager/6-3/assets/using/imaging-faq.html). Clients on Salesforce Commerce Cloud using the platform's embedded CDN capability (which uses Cloudflare) can enable this with a simple toggle. By increasing the awareness of such solutions, we can try to move the needle in favor of more efficient formats.
 
-Another point for readers who are interested in improve CRUX metrics with images sizes/formats, currently progressive images provides no weightage towards Largest Contentful Paint despite being helpful for user-perceived performance. There is a fascinating [discussion](https://github.com/WICG/largest-contentful-paint/issues/68) in the community on this topic and in future it is possible that progressive images will contribute towards LCP. There may be renewed interest in the ecommerce community towards formats supporting progressive loading due to this and inclusion of Core Web Vitals in Page Experience signals from May 2021.
+Another point for readers who are interested in improving CRUX metrics with images sizes/formats, currently progressive images provides no weightage towards Largest Contentful Paint despite being helpful for user-perceived performance. There is a fascinating [discussion](https://github.com/WICG/largest-contentful-paint/issues/68) in the community on this topic and in future it is possible that progressive images will contribute towards LCP. There may be renewed interest in the ecommerce community towards formats supporting progressive loading due to this and inclusion of Core Web Vitals in Page Experience signals from May 2021.
 
 ### Third-party requests and bytes
 
@@ -266,7 +265,7 @@ Ecommerce platforms and sites often make use of [third-party](./third-party) con
 ) }}
 
 {{ figure_markup(
-  image="distribution-of-third-party-bytes",
+  image="distribution-of-third-party-bytes.png",
   caption="Distribution of third-party bytes",
   description="A bar chart showing the number of third-party kilobytes for ecommerce sites, with the 10th percentile having 88 KB on desktop and 67 KB on mobile, the 25th percentile having 242 and 208 respectively, 50th having 547 and 489, 75th having 1,179 and 1,098, and 90th percentile having 2,367 KB on desktop and 2,155 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=1165664044&format=interactive",
@@ -383,9 +382,9 @@ Adoption of server-side tagging will depend on third parties to provide server s
   <table>
     <thead>
       <tr>
-        <th>Tag Manager</th>
-        <th>Desktop</th>
-        <th>Mobile</th>
+        <th scope="col">Tag Manager</th>
+        <th scope="col">Desktop</th>
+        <th scope="col">Mobile</th>
       </tr>
     </thead>
     <tbody>
@@ -427,9 +426,9 @@ Adoption of server-side tagging will depend on third parties to provide server s
     </tbody>
     <tfoot>
       <tr>
-        <th>Total</th>
-        <th class="numeric">49.14%</th>
-        <th class="numeric">47.20%</th>
+        <th scope="col">Total</th>
+        <th scope="col" class="numeric">49.14%</th>
+        <th scope="col" class="numeric">47.20%</th>
       </tr>
     </tfoot>
   </table>
@@ -507,4 +506,4 @@ Covid-19 massively accelerated the growth of ecommerce in 2020 and lot of smalle
 
 Improving core web vitals score will be a priority for ecommerce businesses due to changes announced by Google and marketing teams using Web Push Notifications should keep an eye on their notifications stats using CRUX to not get caught by upcoming abusing notifications changes. Tag Managers still seem to cause lot of friction between marketing and engineering teams and solutions like Google Tag Manager server side tagging will make some inroads but we don't expect a lot to change in 2021 and this will be more like 3-5 years journey but community need to ask their respective third parties to provide compatible solutions to further evolve this ecosystem.
 
-Considering limitations that we are looking only homepage data for this analysis, we would like to hear from community what else we should cover in next year's analysis. We have covered some possibilities of further analysis in section above and [any feedback is greatly appreciated](https://discuss.httparchive.org/t/2052).
+While remembering the limitation that we are looking only homepage data for this analysis, we would like to hear from community what else we should cover in next year's analysis. We have covered some possibilities of further analysis in section above and [any feedback is greatly appreciated](https://discuss.httparchive.org/t/2052).
