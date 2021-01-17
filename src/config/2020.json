@@ -118,8 +118,7 @@
           "part": "III",
           "chapter": "16",
           "title": "Ecommerce",
-          "slug": "ecommerce",
-          "todo": true
+          "slug": "ecommerce"
         },
         {
           "part": "III",
@@ -524,14 +523,6 @@
       "website": "https://dougsillars.com",
       "github": "dougsillars",
       "twitter": "dougsillars"
-    },
-    "drewzboto": {
-      "name": "Drewz",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "https://avatars2.githubusercontent.com/u/1111351?v=4&s=200",
-      "github": "drewzboto"
     },
     "dsadhanala": {
       "name": "Durga Prasad Sadhanala",
