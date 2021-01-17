@@ -86,7 +86,7 @@ When providing the candidate list to the user agent, we have two mechanisms to a
      src="images/example.jpg" alt="..." />
 ```
 
-`w` descriptors describe the candidate's pixel width.
+`w` descriptors describe the candidate's pixel width, along with a `sizes` attribute that is used to select the appropriate image.
 
 ```html
 <img srcset="images/example_small.jpg 600w, images/example_medium.jpg 1400w, images/example_large.jpg 2400w"
@@ -328,7 +328,7 @@ Let us turn now to the topic of [microbrowsers](https://24ways.org/2019/microbro
   )
 }}
 
-A third of web pages include images, in Open Graph tags, for microbrowsers. But only around 0.1 percent of pages include microbrowser-specific *videos*; just about every page that included a video, also included an image.
+A third of web pages include images, in Open Graph tags, for microbrowsers. But only around 0.1 percent of pages include microbrowser-specific videos; just about every page that included a video, also included an image.
 
 A third of sampled webpages seems very healthy; the power of relational, word-of-mouth marketing combined with microbrowser-tailored rich previews is clearly worth investing in.
 
@@ -360,7 +360,7 @@ Likewise, on the video front, the vast majority of resources are sent in the low
 
 ### Usage of `rel=preconnect`
 
-Media assets can be stored either locally, or on an Image CDN. The way assets are optimized, transformed and delivered to the end user highly depends on the appropriate technique used. When including images from another domain, the 'rel=preconnect' attribute can be used on a `<link>` element to give browsers an opportunity to initiate DNS connections before they are needed. While this is a relatively cheap operation, there could be situations when the additional CPU time spent establishing such connections delays other work.
+Media assets can be stored either locally, or on an Image CDN. The way assets are optimized, transformed and delivered to the end user highly depends on the appropriate technique used. When including images from another domain, the `rel=preconnect` attribute can be used on a `<link>` element to give browsers an opportunity to initiate DNS connections before they are needed. While this is a relatively cheap operation, there could be situations when the additional CPU time spent establishing such connections delays other work.
 
 {{ figure_markup(
   caption="Mobile pages using preconnect.",
@@ -371,11 +371,11 @@ Media assets can be stored either locally, or on an Image CDN. The way assets ar
 )
 }}
 
-Analyzing the markup, on desktop we see 7.83% of pages using this, and on mobile it is 8.19%. The [Resource Hints](./resource-hints#hints-adoption) chapter used a slightly different methodology by analyzing the DOM and got similar, but slightly larger numbers at 8.15% and 8.65% respectively.
+Analyzing the markup, on desktop we see 7.83% of pages using this, and on mobile it is 8.19%. The [Resource Hints](./resource-hints#hints-adoption) chapter used a slightly different methodology by analyzing the DOM and got similar, but slightly larger, numbers at 8.15% and 8.65% respectively.
 
-### Usage of `data-url` vs `src` attribute
+### Usage of `data:` urls
 
-Using data URLs (formerly known as data URIs) is a technique that allows developers to embed a base64-encoded image directly in HTML. This ensures that an image will be fully loaded by the time that the HTML has been parsed into a DOM tree, and virtually guarantees that the image will be available for the first paint. However, because they don't compress over the wire as well as binaries, block other – possibly more important resources – from loading, and complicate caching, base-64'd images [are something of an antipattern](https://calendar.perfplanet.com/2020/the-dangers-of-data-uris/).
+Using data URLs (formerly known as data URIs) is a technique that allows developers to embed a base64-encoded image directly in HTML. This ensures that an image will be fully loaded by the time that the HTML has been parsed into a DOM tree, and virtually guarantees that the image will be available for the first paint. However, because they don't compress over the wire as well as binaries, block other—possibly more important resources—from loading, and complicate caching, so base-64'd images [are something of an antipattern](https://calendar.perfplanet.com/2020/the-dangers-of-data-uris/).
 
 {{ figure_markup(
   caption="Mobile pages using data URIs.",
@@ -386,7 +386,7 @@ Using data URLs (formerly known as data URIs) is a technique that allows develop
 )
 }}
 
-The usage of these doesn't seem to be that widespread: 9% of pages utilize data URLs for displaying images.
+The usage of these doesn't seem to be that widespread: 9% of pages utilize data URLs for displaying images. However, it should be noted that we only investigated HTML-embedded base64 encoded image `src`s and did not iunclude CSS-embedded base-64-encoded images for background-images or the like.
 
 ### SEO & Accessibility
 
@@ -491,7 +491,7 @@ The analysis is complicated a bit by the fact that many players – such as vide
   )
 }}
 
-Unsurprisingly, by far the most common type value is `video/mp4`. But the second most common – making up 15% of all desktop `type`s, and 20% of all `type`s  sent to the mobile crawler, is `video/youtube` – which is not a registered MIME type at all. Rather it is a special value that several players (including WordPress') use when embedding YouTube videos. A few notches down the list, we see a similar pattern, for Vimeo embeds.
+Unsurprisingly, by far the most common type value is `video/mp4`. But the second most common – making up 15% of all desktop `type`s, and 20% of all `type`s  sent to the mobile crawler, is `video/youtube` – which is not a registered MIME type at all. Rather it is a special value that several players (including WordPress) use when embedding YouTube videos. A few notches down the list, we see a similar pattern, for Vimeo embeds.
 
 As for the legitimate MIME types; they capture *container* formats; MP4 and WebM are the only two in anything we might call common use. It would be interesting to know which *codecs* are being used within these containers, and how much traction next-gen codecs like VP8, HVEC, and AV1 have gotten. But such analysis is, unfortunately, outside the scope of this article.
 
