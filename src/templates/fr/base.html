@@ -94,14 +94,14 @@ Notre mission est de combiner les statistiques brutes et les tendances de HTTP A
 {% block accessibility_statement %}Déclaration d’accessibilité{% endblock %}
 
 {% block featured_chapter %}Focus sur le chapitre…{% endblock %}
-{% block featured_chapter_last_year %}Focus sur le chapitre<br />de le {{ year|int-1 }} Web Almanac{% endblock %}
+{% block featured_chapter_last_year %}Focus sur le chapitre<br />du Web Almanac {{ year|int-1 }}{% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
 {% macro read_chapter(chapter) %}Lire le chapitre&nbsp;: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
 {% endif %}
 {% if not read_last_years_chapter %}
-{% macro read_last_years_chapter(chapter) %}Lire le {{ year|int-1 }} chapitre&nbsp;: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
+{% macro read_last_years_chapter(chapter) %}Lire le chapitre {{ year|int-1 }}&nbsp;: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
 {% endif %}
 
 {% block contributors_description %}
@@ -123,9 +123,9 @@ Le Web Almanac a été rendu possible grâce au travail acharné de la communaut
 {% block appendices %}Annexes{% endblock %}
 
 {% block ebook_title %}Ebook{% endblock %}
-{% block ebook_download_short %}Ebook PDF ({{ ebook_size_in_mb }}MB){% endblock %}
-{% block ebook_download %}Download the entire {{ year }} Web Almanac in PDF format ({{ ebook_size_in_mb }}MB){% endblock %}
-{% block ebook_download_note %}(generated with <a href="https://www.princexml.com/">www.princexml.com</a>){% endblock %}
+{% block ebook_download_short %}Ebook PDF ({{ ebook_size_in_mb }}&nbsp;Mo){% endblock %}
+{% block ebook_download %}Télécharget tout le Web Almanac {{ year }} au format PDF ({{ ebook_size_in_mb }}&nbsp;Mo){% endblock %}
+{% block ebook_download_note %}(produit par <a href="https://www.princexml.com/">www.princexml.com</a>){% endblock %}
 
 {%
   set localizedPartTitles = {
