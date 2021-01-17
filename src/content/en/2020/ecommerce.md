@@ -372,7 +372,7 @@ HotJar is another tool often used by ecommerce sites to analyze and improve usag
 
 ### Tag Managers
 
-Add details about GTM SS and Adobe Launch (Alloy.js)
+Google Tag Manager remains the most used tag manager on ecommerce sites followed by Adobe Tag Manager. We don't expect this to change due to free nature of Google Tag Manager. In Aug-2020, Google also launched <a href="https://developers.google.com/tag-manager/serverside">server side tagging</a> in Google Tag Manager. Implementing server side tagging will incur a small cost for ecommerce sites but it can help sites eliminate third party overhead and thus improving metrics like Total Blocking Time (TBT), First Input Delay (FID) and Time to Interactive (TTI). Simon Ahava has lot of useful information on his <a href="https://www.simoahava.com/analytics/server-side-tagging-google-tag-manager/">blog</a> which we recommend to readers. Adoption of server side tagging will depend on third parties to provide server side templates to make the migration easier. These are early days for GTM server side tagging and at the time of writing this chapter, we didn't find any server side templates in publicly available <a href="https://tagmanager.google.com/gallery/#/?context=server&page=1">community gallery</a>. But if the adoption increases, it will be intereseting to compare the performance scores of sites using client side vs server side tagging. Other vendors like Adobe, Signal also offer similar server side solutions which sites should consider adopting to help with performance.
 
 <figure>
   <table>
@@ -430,6 +430,9 @@ Add details about GTM SS and Adobe Launch (Alloy.js)
   </table>
   <figcaption>{{ figure_link(caption="Tag manager usage on ecommerce sites.", sheets_gid="2045910168", sql_file="percent_of_ecommsites_using_each_tag_managers.sql") }}</figcaption>
 </figure>
+
+<p class="note">Note: Above analysis is based on Wappalyzer detection which may defer from analysis done using [third-party-web](https://almanac.httparchive.org/en/2020/methodology#third-party-web) dataset which is used for [Third parties chapter](./third-parties)</p>
+
 
 ### Consent Management Platforms
 
