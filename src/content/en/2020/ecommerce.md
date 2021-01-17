@@ -9,8 +9,8 @@ reviewers: [drewzboto, alankent]
 analysts: [jrharalson, rockeynebhwani]
 editors: []
 translators: []
-#rockeynebhwani_bio: TODO
-#jrharalson_bio:
+#rockeynebhwani_bio: Rockey Nebhwani is an independent consultant who has worked in retail and ecommerce since 2001 and has extensive experience in the industry working with retailers like Amazon, Wal-Mart, Tesco, M&S, Safeway etc. across US and UK. Rockey is an occasioanl speaker at ecommerce events and also tweets at <a href="https://twitter.com/rnebhwani">@rnebhwani</a>.
+#jrharalson_bio: TODO
 discuss: 2052
 results: https://docs.google.com/spreadsheets/d/1Hvsh_ZBKg2vWhouJ8vIzLmp0nLIMzrT2mr6RQbIkxqY/
 queries: 16_Ecommerce
@@ -41,13 +41,14 @@ How do we check if a page is on an ecommerce platform? Detection is done through
 
 Compared to 2019, you will notice that in 2020, % of ecommerce websites have increased significantly. This is primarily due to improved detection in Wappalyzer this year using secondary signals. These secondary signals include following:
 - Sites using Google Analytics Enhanced Ecommerce tagging is counted as an ecommerce site.
-- Sites using cross-border solutions like Global-e etc. are counted as an ecommerce site.
-- Secondary signal also includes looking for most commonly used patterns for identifying 'Cart' links
+- Secondary signal also includes looking for most commonly used patterns for identifying 'Cart' links.
+
+This change in methodology provides enhanced coverage for enterpise platforms and sites built using headless solutions. 
 
 ### Limitations
 
 Our methodology has the following limitations:
-- Headless ecommerce platforms like [commercetools](https://commercetools.com/)
+- Headless ecommerce platforms like [commercetools](https://commercetools.com/) may not get detected as ecommerce platform but if we are able to detect presence of cart on such sites, we will still include sites using such platforms in our overall coveage stats.
 - Technologies which are typically deployed outside homepages (e.g. WebAR on product detail pages) are not detected.
 
 ## Ecommerce platforms
