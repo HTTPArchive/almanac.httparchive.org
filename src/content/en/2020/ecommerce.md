@@ -161,7 +161,7 @@ Promisingly, mobile page weights have dropped across all percentiles [compared t
 
 Ecommerce sites are still larger in terms of requests and size compared to all sites, as shown in the [Page Weight](./page-weight) chapter.
 
-### Page wight by resource type
+### Page weight by resource type
 
 Breaking this down by resource type, for median pages, we see that images and JavaScript requests dominate ecommerce pages:
 
