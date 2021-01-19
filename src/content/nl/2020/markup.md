@@ -57,7 +57,7 @@ In dit gedeelte behandelen we de aspecten van een hoger niveau van HTML, zoals d
       <tr>
         <th>Doctype</th>
         <th>Pagina's</th>
-        <th>Percentage</th>
+        <th>Pagina's (%)</th>
       </tr>
     </thead>
     <tbody>
@@ -122,7 +122,7 @@ Hoe is deze situatie in het algemeen dan? Het mediaan document weegt 24,65 KB, e
 
 We hebben 2.863 verschillende waarden geïdentificeerd voor het `lang`-attribuut op de `html`-starttag (vergelijk dat met de [7.117 gesproken talen](https://www.ethnologue.com/guides/how-many-languages) volgens Ethnologue). Ze lijken bijna allemaal geldig, volgens het hoofdstuk [Toegankelijkheid](./accessibility#language-identification).
 
-22,36% van alle documenten specificeren geen `lang`-attribuut. De algemeen aanvaarde opvatting is dat [ze zouden moeten](https://www.w3.org/TR/i18n-html-tech-lang/#overall), maar naast het idee dat software uiteindelijk [taal automatisch kan detecteren](https://meiert.com/en/blog/lang/), kan de documenttaal ook worden gespecificeerd [op protocolniveau](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language). Dit hebben we niet gecontroleerd.
+22,36% van alle documenten specificeren geen `lang`-attribuut. De algemeen aanvaarde opvatting is dat [ze zouden moeten](https://www.w3.org/TR/i18n-html-tech-lang/#overall), maar naast het idee dat software uiteindelijk [taal automatisch kan detecteren](https://meiert.com/en/blog/lang/), kan de documenttaal ook worden gespecificeerd [op protocolniveau](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language), dat hebben we niet gecontroleerd.
 
 Hier zijn de 10 meest populaire (genormaliseerde) talen in ons voorbeeld. Het is belangrijk op te merken dat het HTTP Archive crawlt vanuit Amerikaanse datacentra met Engelse taalinstellingen, dus het bekijken van de taalpagina's waarin is geschreven, zal scheef naar het Engels gaan. Desalniettemin presenteren we de `lang`-attributen die gezien worden om enige context te geven aan de geanalyseerde sites.
 
@@ -145,7 +145,7 @@ Opmerkingen toevoegen aan code is over het algemeen een goede gewoonte en HTML-o
 <!-- Dit is een commentaar in HTML -->
 ```
 
-Hoewel veel pagina's voor productie zijn ontdaan van opmerkingen, ontdekten we dat indexpagina's in het 90e percentiel ongeveer 73 reacties op mobiele apparaten gebruiken, respectievelijk 79 reacties op desktops, terwijl in het 10e percentiel het aantal reacties ongeveer 2 is. Mediaanpagina gebruikt 16 (mobiel) of 17 reacties (desktop).
+Hoewel veel pagina's voor productie zijn ontdaan van opmerkingen, ontdekten we dat homepagina's in het 90e percentiel ongeveer 73 reacties op mobiele apparaten gebruiken, respectievelijk 79 reacties op desktops, terwijl in het 10e percentiel het aantal reacties ongeveer 2 is. Mediaanpagina gebruikt 16 (mobiel) of 17 reacties (desktop).
 
 Ongeveer 89% van de pagina's bevat minstens één HTML-opmerking, terwijl ongeveer 46% een voorwaardelijke opmerking bevat.
 
@@ -157,9 +157,9 @@ Ongeveer 89% van de pagina's bevat minstens één HTML-opmerking, terwijl ongeve
 <![endif]-->
 ```
 
-Het bovenstaande is een niet-standaard voorwaardelijke HTML-opmerking. Hoewel deze in het verleden nuttig zijn gebleken om browserverschillen aan te pakken, zijn ze al enige tijd verleden tijd omdat Microsoft [voorwaardelijke opmerkingen heeft laten vallen](https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/hh801214(v=vs.85)) in Internet Explorer 10.
+Het bovenstaande is een niet-standaard voorwaardelijke HTML-opmerking. Hoewel deze in het verleden nuttig zijn gebleken om browserverschillen aan te pakken, ze zijn al een tijdje aan de geschiedenis toevertrouwd omdat Microsoft [voorwaardelijke opmerkingen heeft laten vallen](https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/hh801214(v=vs.85)) in Internet Explorer 10.
 
-Toch ontdekten we bij de bovenstaande percentielextremen dat webpagina's ongeveer 6 voorwaardelijke opmerkingen in het 90e percentiel gebruiken en 1 opmerking in het 10e percentiel. De meeste pagina's bevatten ze voor helpers zoals html5shiv, selectivizr en respond.js. Hoewel het fatsoenlijke en nog steeds actieve pagina's zijn, is onze conclusie dat veel van hen verouderde CMS-thema's gebruikten.
+Toch ontdekten we bij de bovenstaande percentielextremen dat webpagina's ongeveer 6 voorwaardelijke opmerkingen in het 90e percentiel gebruiken en 1 opmerking in het 10e percentiel. De meeste pagina's bevatten ze voor helpers zoals [html5shiv](https://github.com/aFarkas/html5shiv), [selectivizr](http://selectivizr.com/), en [respond.js](https://github.com/scottjehl/Respond). Hoewel het fatsoenlijke en nog steeds actieve pagina's zijn, is onze conclusie dat veel van hen verouderde CMS-thema's gebruikten.
 
 Voor productie worden HTML-opmerkingen meestal verwijderd door build-tools. Gezien alle bovenstaande tellingen en percentages, en verwijzend naar het gebruik van opmerkingen in het algemeen, veronderstellen we dat veel pagina's worden weergegeven zonder tussenkomst van een HTML-minifier.
 
@@ -184,7 +184,7 @@ Aan de andere kant van het spectrum laten de cijfers zien dat ongeveer 97% van d
 
 Wanneer scripting niet wordt ondersteund of is uitgeschakeld in de browser, helpt het `noscript`-element om een HTML-sectie binnen een pagina toe te voegen. Gezien de bovenstaande scriptnummers waren we ook benieuwd naar het `noscript`-element.
 
-Na de analyse ontdekten we dat ongeveer 49% van de pagina's een `noscript`-element gebruikt. Tegelijkertijd bevatte ongeveer 16% van de `noscript`-elementen een `iframe` met een `src`-waarde die verwijst naar "googletagmanager.com".
+Na de analyse ontdekten we dat ongeveer 49% van de pagina's een `noscript`-element gebruikt. Tegelijkertijd bevat ongeveer 16% van de `noscript`-elementen een `iframe` met een `src`-waarde die verwijst naar "googletagmanager.com".
 
 Dit lijkt de theorie te bevestigen dat het totale aantal `noscript`-elementen in het wild kan worden beïnvloed door veelgebruikte scripts zoals Google Tag Manager die gebruikers dwingen om een `noscript`-fragment toe te voegen na de `body`-starttag op een pagina.
 
@@ -224,7 +224,7 @@ De mediaanwebpagina, zo blijkt, gebruikt 30 verschillende elementen, 587 keer:
 
 {{ figure_markup(
   image="element-diversity.png",
-  caption="Verdeling van het totale aantal elementen per pagina.",
+  caption="Verdeling van het totale aantal elementen per pagina per percentiel.",
   description="Elementen per percentiel, die laten zien hoe 10% van alle pagina's meer dan 1.665 elementen gebruikt.",
   sheets_gid="46490104",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=680594018&format=interactive",
@@ -363,12 +363,12 @@ Dienovereenkomstig hebben we gekeken naar het aantal `details` en `summary` elem
       </tr>
     </tbody>
   </table>
-<figcaption>{{ figure_link(caption="Overname van de <code>details</code>- en <code>summary</code>-elementen.", sheets_gid="1406534257", sql_file="pages_element_count_by_device.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Overname van de <code>details</code>- en <code>summary</code>-elementen.", sheets_gid="1406534257", sql_file="pages_element_count_by_device.sql") }}</figcaption>
 </figure>
 
 ### Waarschijnlijkheid van elementgebruik
 
-Als we nog eens kijken naar de populariteit van elementen, hoe waarschijnlijk is het dat een bepaald element in de DOM van een pagina wordt gevonden? Zeker, `html`, `head`, `body` zijn op elke pagina aanwezig (ook al zijn [hun tags allemaal optioneel](https://meiert.com/en/blog/optional-html/)), waardoor ze gemeenschappelijke elementen worden, maar welke andere elementen zijn er te vinden?
+Als we nog eens kijken naar de populariteit van elementen, hoe waarschijnlijk is het dat een bepaald element in de DOM van een pagina wordt gevonden? Zeker, `html`, `head`, `body` zijn op elke pagina aanwezig (ook al zijn [deze tags allemaal optioneel](https://meiert.com/en/blog/optional-html/)), waardoor ze gemeenschappelijke elementen worden, maar welke andere elementen zijn er in het algemeen te vinden?
 
 <figure>
   <table>
@@ -424,7 +424,7 @@ Als we nog eens kijken naar de populariteit van elementen, hoe waarschijnlijk is
   <figcaption>{{ figure_link(caption="Grote kans om een bepaald element te vinden op pagina's van het Web Almanac 2020-voorbeeld.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
 </figure>
 
-Standaardelementen zijn elementen die deel uitmaken van de HTML-specificatie. Welke vind je echt zelden? In onze steekproef zou dat het volgende naar voren brengen:
+Standaardelementen zijn elementen die deel uitmaken van de HTML-specificatie. Welke zijn zeldzaam om te vinden? In onze steekproef zou dat het volgende naar voren brengen:
 
 <figure>
   <table>
@@ -452,7 +452,7 @@ Standaardelementen zijn elementen die deel uitmaken van de HTML-specificatie. We
   <figcaption>{{ figure_link(caption="Lage kansen om een bepaald element op pagina's van de steekproef te vinden.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
 </figure>
 
-We nemen deze elementen op om een idee te geven welke elementen mogelijk uit de gratie zijn geraakt. Maar hoewel `dir` en` basefont` voor het laatst werden gespecificeerd in XHTML 1.0 (2000), het zeldzame gebruik van `rp`, [dat al in 1998 werd genoemd](https://www.w3.org/TR/1998/WD-rubya2-4) maar dat ook [nog steeds deel uitmaakt van HTML](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element), suggereert misschien dat Ruby-opmaak niet erg populair is.
+We nemen deze elementen op om een idee te geven welke elementen mogelijk uit de gratie zijn geraakt. Maar hoewel `dir` en` basefont` voor het laatst werden gespecificeerd in XHTML 1.0 (2000) en niet langer deel uitmaken van HTML, het zeldzame gebruik van `rp`, [dat al in 1998 werd genoemd](https://www.w3.org/TR/1998/WD-rubya2-4) en dat [nog steeds deel uitmaakt van HTML](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element), suggereert misschien dat Ruby-opmaak niet erg populair is.
 
 
 ### Aangepaste elementen
@@ -464,8 +464,8 @@ De 2019-editie van de Web Almanac behandelde [aangepaste elementen](../2019/mark
     <thead>
       <tr>
         <th>Element</th>
-        <th>Voorvallen</th>
-        <th>Percentage</th>
+        <th>Pagina's</th>
+        <th>Pagina's (%)</th>
       </tr>
     </thead>
     <tbody>
@@ -544,13 +544,13 @@ De 2019-editie van de Web Almanac behandelde [aangepaste elementen](../2019/mark
   <figcaption>{{ figure_link(caption="De 14 meest populaire aangepaste elementen.", sheets_gid="770933671", sql_file="pages_element_count_by_device_and_custom_dash_elements.sql") }}</figcaption>
 </figure>
 
-Deze elementen zijn afkomstig uit drie bronnen: [Yandex Metrica](https://metrica.yandex.com/about) (`ym-`), een analyseoplossing die we vorig jaar ook hebben gezien; [Slider Revolution](https://www.sliderrevolution.com/) (`rs-`), een WordPress-slider, waarvoor er meer elementen te vinden zijn bovenaan de sample; en [Wix](https://www.wix.com/) (`wix-`), een websitebouwer.
+Deze elementen zijn afkomstig uit drie bronnen: [Yandex Metrica](https://metrica.yandex.com/about) (`ym-`), een analyseoplossing die we vorig jaar ook zagen; [Slider Revolution](https://www.sliderrevolution.com/) (`rs-`), een WordPress-slider, waarvoor er meer elementen te vinden zijn bovenaan de sample; en [Wix](https://www.wix.com/) (`wix-`), een websitebouwer.
 
 Andere groepen die opvallen zijn onder meer [AMP markup](https://amp.dev/) met `amp-` -elementen zoals `amp-img` (11.700 gevallen), `amp-analytics` (10.256) en `amp-auto-ads` (7.621), evenals [Angular](https://angular.io/) `app`-elementen zoals `app-root` (16.314), `app-footer` (6.745) en `app-header` (5.274).
 
 ### Verouderde elementen
 
-Er zijn meer vragen te stellen over het gebruik van HTML, en een daarvan kan betrekking hebben op verouderde elementen, zoals `applet`, `bgsound`, `blink`, `center`, `font`, `frame`, `isindex`, `marquee`, of `spacer`.
+Er zijn meer vragen te stellen over het gebruik van HTML, inclusief het gebruik van verouderde elementen (zoals `applet`, `bgsound`, `blink`, `center`, `font`, `frame`, `isindex`, `marquee`, of `spacer`).
 
 In onze mobiele dataset van 6,3 miljoen pagina's bevatten ongeveer 0,9 miljoen pagina's (14,01%) een of meer van deze elementen. Hier is de top 9, die meer dan 10.000 keer wordt gebruikt:
 
@@ -559,7 +559,7 @@ In onze mobiele dataset van 6,3 miljoen pagina's bevatten ongeveer 0,9 miljoen p
     <thead>
       <tr>
         <th>Element</th>
-        <th>Voorvallen</th>
+        <th>Pagina's</th>
         <th>Pagina's (%)</th>
       </tr>
     </thead>
@@ -614,7 +614,7 @@ In onze mobiele dataset van 6,3 miljoen pagina's bevatten ongeveer 0,9 miljoen p
   <figcaption>{{ figure_link(caption="Verouderde elementen met meer dan 10.000 toepassingen.", sheets_gid="1972617631", sql_file="pages_element_count_by_device_and_obsolete_elements.sql") }}</figcaption>
 </figure>
 
-Zelfs `spacer` wordt nog 1.584 keer gebruikt en staat op elke 5.000ste pagina. We weten dat Google al [22 jaar](https://web.archive.org/web/19981202230410/https://www.google.com/) een `center`-element op [hun homepagina](https://www.google.com/) gebruikt, maar waarom zijn er zoveel navolgers?
+Zelfs `spacer` wordt nog 1.584 keer gebruikt en staat op elke 5.000ste pagina. We weten dat Google [al 22 jaar](https://web.archive.org/web/19981202230410/https://www.google.com/) een `center`-element op [hun homepagina](https://www.google.com/) gebruikt, maar waarom zijn er zoveel navolgers?
 
 #### `isindex`
 
@@ -764,7 +764,7 @@ Deze sectie gaat over hoe attributen worden gebruikt in documenten en onderzoekt
 
 ### Topattributen
 
-Vergelijkbaar met de sectie over de meest [populaire elementen](#topelementen), gaat deze sectie in op de meest populaire attributen op internet. Gezien hoe belangrijk het `href`-attribuut is voor het web zelf, of het `alt`-attribuut om informatie [toegankelijk](./accessibility) te maken, zouden dit dan de meest populaire attributen zijn?
+Vergelijkbaar met de sectie over de meest [populaire elementen](#topelementen), gaat deze sectie in op de meest populaire attributen op internet. Gezien hoe belangrijk het `href`-attribuut is voor het web zelf, of het `alt`-attribuut om informatie [toegankelijk](./accessibility#images-and-their-text-alternatives) te maken, zouden dit dan de meest populaire attributen zijn?
 
 <figure>
   <table>
@@ -981,7 +981,7 @@ We hebben de gegevens bekeken en om de resultaten beter te begrijpen, hebben we 
     <thead>
       <tr>
         <th>Inhoudsattribuutwaarde</th>
-        <th>Voorvallen</th>
+        <th>Pagina's</th>
         <th>Pagina's (%)</th>
       </tr>
     </thead>
@@ -1038,7 +1038,7 @@ Bij het bouwen van onze tests hebben we niet gekeken naar de aanwezigheid van af
     <thead>
       <tr>
         <th>Favicon formaat</th>
-        <th>Voorvallen</th>
+        <th>Pagina's</th>
         <th>Pagina's (%)</th>
       </tr>
     </thead>
@@ -1117,7 +1117,7 @@ Er is de laatste tijd veel [discussie](https://adrianroselli.com/2016/01/links-b
       <tr>
         <th>Knoptypes</th>
         <th>Voorvallen</th>
-        <th>Percentage</th>
+        <th>Pagina's (%)</th>
       </tr>
     </thead>
     <tbody>
@@ -1161,7 +1161,7 @@ Er is de laatste tijd veel [discussie](https://adrianroselli.com/2016/01/links-b
   <figcaption>{{ figure_link(caption="Overname van knoptypes.", sheets_gid="410549982", sql_file="pages_markup_by_device.sql") }}</figcaption>
 </figure>
 
-Uit onze analyse blijkt dat ongeveer 60% van de pagina's een knopelement bevat en meer dan de helft van de pagina's (32,43%) ten minste één knop heeft die geen `type`-attribuut specificeert. Merk op dat het `button` element een [standaardtype](https://dev.w3.org/html5/spec-LC/the-button-element.html) heeft van `submit`, dus het standaardgedrag van knoppen op deze 32% van de pagina's is om de huidige formuliergegevens in te dienen. Om mogelijk onverwacht gedrag als dit te voorkomen, is het het beste om het kenmerk `type` op te geven.
+Uit onze analyse blijkt dat ongeveer 60% van de pagina's een knopelement bevat en meer dan de helft van die pagina's (32,43%) ten minste één knop heeft die geen `type`-attribuut specificeert. Merk op dat het `button` element een [standaardtype](https://dev.w3.org/html5/spec-LC/the-button-element.html) heeft van `submit`, dus het standaardgedrag van knoppen op deze 32% van de pagina's is om de huidige formuliergegevens in te dienen. Om mogelijk onverwacht gedrag als dit te voorkomen, is het het beste om het kenmerk `type` op te geven.
 
 <figure>
   <table>
@@ -1308,7 +1308,7 @@ Het gebruik van `target="_blank"` staat al enige tijd bekend als een [beveiligin
   <figcaption>{{ figure_link(caption="Lege relaties.", sheets_gid="1876528165", sql_file="pages_wpt_bodies_by_device.sql") }}</figcaption>
 </figure>
 
-Als vuistregel en om [gebruiksredenen](https://www.nngroup.com/articles/new-browser-windows-and-tabs/), geeft u er de voorkeur aan om `target="_blank"` niet te gebruiken in de eerste plaats.
+Als vuistregel en om [gebruiksredenen](https://www.nngroup.com/articles/new-browser-windows-and-tabs/), wordt het aangeraden `target="_blank"` niet te gebruiken in de eerste plaats.
 
 <p class="note">In de nieuwste Safari- en Firefox-versies biedt het instellen van <code>target="_blank"</code> op <code>a</code>-elementen impliciet hetzelfde <code>rel</code>-gedrag als het instellen van <code>rel="noopener"</code>. Dit is ook al <a href="https://chromium-review.googlesource.com/c/chromium/src/+/1630010">geïmplementeerd in Chromium</a> en komt ook in Chrome 88 terecht.</p>
 
