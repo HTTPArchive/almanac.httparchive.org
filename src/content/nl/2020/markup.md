@@ -173,7 +173,7 @@ Aan de andere kant van het spectrum laten de cijfers zien dat ongeveer 97% van d
 
 {{ figure_markup(
   image="script-use.png",
-  alt="Gebruik van het script element
+  alt="Gebruik van het script element,
   caption="Gebruik van het <code>script</code> -element.",
   description="Percentages pagina's die (geen) scripts bevatten, en scripts zijn in bijna elke vorm op bijna elke pagina aanwezig.",
   sheets_gid="150962402",
