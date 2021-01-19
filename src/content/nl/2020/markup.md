@@ -102,7 +102,6 @@ Twee dingen onderscheiden zich van deze resultaten:
 
 De documentgrootte van een pagina verwijst naar het aantal HTML-bytes dat via het netwerk wordt overgedragen, inclusief compressie indien ingeschakeld. Aan het einde van de reeks van 6,3 miljoen documenten:
 
-{# TODO(authors, analysts): Revisit the "largest document" stat and interpretation. #}
 * 1.110 documenten zijn leeg (0 bytes).
 * De gemiddelde documentgrootte is 49,17 KB ([in de meeste gevallen gecomprimeerd](https://w3techs.com/technologies/details/ce-gzipcompression)).
 * Het grootste document weegt verreweg 61,19 _MB_ en verdient bijna zijn eigen analyse en hoofdstuk in de Web Almanac.
@@ -115,16 +114,13 @@ Hoe is deze situatie in het algemeen dan? Het mediaan document weegt 24,65 KB, e
   description="Documentgrootte in bytes per percentiel, met een mediaan document van 25,99 KB op desktop.",
   sheets_gid="2066175354",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=386686971&format=interactive",
-  width=600,
-  height=371,
   sql_file="summary_pages_by_device_and_percentile.sql"
   )
 }}
 
 ### Document taal
 
-{# TODO(editors): Link directly to the relevant Accessibility section. #}
-We hebben 2.863 verschillende waarden geïdentificeerd voor het `lang`-attribuut op de `html`-starttag (vergelijk dat met de [7.117 gesproken talen](https://www.ethnologue.com/guides/how-many-languages) volgens Ethnologue). Ze lijken bijna allemaal geldig, volgens het hoofdstuk [Toegankelijkheid](./accessibility).
+We hebben 2.863 verschillende waarden geïdentificeerd voor het `lang`-attribuut op de `html`-starttag (vergelijk dat met de [7.117 gesproken talen](https://www.ethnologue.com/guides/how-many-languages) volgens Ethnologue). Ze lijken bijna allemaal geldig, volgens het hoofdstuk [Toegankelijkheid](./accessibility#language-identification).
 
 22,36% van alle documenten specificeren geen `lang`-attribuut. De algemeen aanvaarde opvatting is dat [ze zouden moeten](https://www.w3.org/TR/i18n-html-tech-lang/#overall), maar naast het idee dat software uiteindelijk [taal automatisch kan detecteren](https://meiert.com/en/blog/lang/), kan de documenttaal ook worden gespecificeerd [op protocolniveau](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language). Dit hebben we niet gecontroleerd.
 
@@ -137,8 +133,6 @@ Hier zijn de 10 meest populaire (genormaliseerde) talen in ons voorbeeld. Het is
   description="Staafdiagram met de top 10 `lang` attributen die in onze crawl worden gebruikt, waarbij 22,82% van de desktoppagina's en 22,36% van de mobiele pagina's dit niet instellen, `en` wordt gebruikt op respectievelijk 20,09% en 18,08%, `ja` op 15,17% en 13,27 %, `es` op 4,86% en 4,09%, `pt-br` op 2,65% en 2,84%, `ru` op 2,21% 2,53%, `en-gb` op 2,35% en 2,19%, `de` op 1,50 % en 1,92%, en tenslotte wordt `fr` gebruikt op respectievelijk 1,55% en 1,43%.",
   sheets_gid="2047285366",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=1873310240&format=interactive",
-  width=600,
-  height=371,
   sql_file="pages_almanac_by_device_and_html_lang.sql"
   )
 }}
@@ -177,16 +171,13 @@ In totaal bevat ongeveer 2% van de pagina's helemaal geen scripts, zelfs niet me
 
 Aan de andere kant van het spectrum laten de cijfers zien dat ongeveer 97% van de pagina's ten minste één script bevat, inline of extern.
 
-{# TODO(analysts): We still have a problem here with the x-axis label (“Containing”). Can someone help out and look at this? #}
-
 {{ figure_markup(
   image="script-use.png",
+  alt="Gebruik van het script element
   caption="Gebruik van het <code>script</code> -element.",
   description="Percentages pagina's die (geen) scripts bevatten, en scripts zijn in bijna elke vorm op bijna elke pagina aanwezig.",
   sheets_gid="150962402",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=1895084382&format=interactive",
-  width=600,
-  height=371,
   sql_file="pages_almanac_by_device.sql"
   )
 }}
@@ -227,13 +218,9 @@ De mediaanwebpagina, zo blijkt, gebruikt 30 verschillende elementen, 587 keer:
   description="Elementtypen per percentiel, waarbij 90% van de pagina's ten minste 20 verschillende elementen gebruikt.",
   sheets_gid="46490104",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=924238918&format=interactive",
-  width=600,
-  height=371,
   sql_file="pages_element_count_by_device_and_percentile.sql"
   )
 }}
-
-{# Editors note: The caption for the two figures below is intentionally identical. #}
 
 {{ figure_markup(
   image="element-diversity.png",
@@ -241,8 +228,6 @@ De mediaanwebpagina, zo blijkt, gebruikt 30 verschillende elementen, 587 keer:
   description="Elementen per percentiel, die laten zien hoe 10% van alle pagina's meer dan 1.665 elementen gebruikt.",
   sheets_gid="46490104",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=680594018&format=interactive",
-  width=600,
-  height=371,
   sql_file="pages_element_count_by_device_and_percentile.sql"
   )
 }}
@@ -257,8 +242,6 @@ Hoe worden deze elementen verdeeld?
   description="Elementverdeling in een scatterplot, en zelfs voor een getrainde waarnemer is het moeilijk om het te analyseren; interessant is een grote groep van ongeveer 7.500 pagina's met elk ongeveer 250 elementen, waarna steeds minder pagina's op steeds meer elementen terugkomen.",
   sheets_gid="1361520223",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=1468756779&format=interactive",
-  width=600,
-  height=371,
   sql_file="pages_element_count_by_device_and_element_count.sql"
   )
 }}
@@ -471,11 +454,10 @@ Standaardelementen zijn elementen die deel uitmaken van de HTML-specificatie. We
 
 We nemen deze elementen op om een idee te geven welke elementen mogelijk uit de gratie zijn geraakt. Maar hoewel `dir` en` basefont` voor het laatst werden gespecificeerd in XHTML 1.0 (2000), het zeldzame gebruik van `rp`, [dat al in 1998 werd genoemd](https://www.w3.org/TR/1998/WD-rubya2-4) maar dat ook [nog steeds deel uitmaakt van HTML](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element), suggereert misschien dat Ruby-opmaak niet erg populair is.
 
+
 ### Aangepaste elementen
 
 De 2019-editie van de Web Almanac behandelde [aangepaste elementen](../2019/markup#custom-elements) door verschillende niet-standaard elementen te bespreken. Dit jaar vonden we het waardevol om aangepaste elementen van naderbij te bekijken. Hoe hebben we deze bepaald? Door te kijken naar [hun definitie](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-core-concepts), met name hun gebruik van een koppelteken. Laten we ons concentreren op de topelementen, in dit geval elementen die worden gebruikt op ≥1% van alle URL's in het voorbeeld:
-
-{# TODO(authors, analysts): Clarify occurrences and percentages _of what_. Pages? Elements? #}
 
 <figure>
   <table>
@@ -563,8 +545,6 @@ De 2019-editie van de Web Almanac behandelde [aangepaste elementen](../2019/mark
 </figure>
 
 Deze elementen zijn afkomstig uit drie bronnen: [Yandex Metrica](https://metrica.yandex.com/about) (`ym-`), een analyseoplossing die we vorig jaar ook hebben gezien; [Slider Revolution](https://www.sliderrevolution.com/) (`rs-`), een WordPress-slider, waarvoor er meer elementen te vinden zijn bovenaan de sample; en [Wix](https://www.wix.com/) (`wix-`), een websitebouwer.
-
-{# TODO(authors, analysts): What do "cases" mean here: pages/elements? And for desktop or mobile? #}
 
 Andere groepen die opvallen zijn onder meer [AMP markup](https://amp.dev/) met `amp-` -elementen zoals `amp-img` (11.700 gevallen), `amp-analytics` (10.256) en `amp-auto-ads` (7.621), evenals [Angular](https://angular.io/) `app`-elementen zoals `app-root` (16.314), `app-footer` (6.745) en `app-header` (5.274).
 
@@ -982,8 +962,7 @@ De twee meest populaire vallen op omdat ze bijna twee keer zo populair zijn dan 
 
 Attributen zoals `data-type`, `data-id` en `data-src` kunnen meerdere generieke toepassingen hebben, hoewel `data-src` veel wordt gebruikt bij het lui laden van afbeeldingen via JavaScript (bijvoorbeeld Bootstrap 4). [Bootstrap](https://getbootstrap.com/) legt opnieuw de aanwezigheid uit van `data-toggle`, waar het wordt gebruikt als een staat styling haak op schakelknoppen. De [Slick carousel plugin](https://kenwheeler.github.io/slick/) is de bron van `data-slick-index`, terwijl `data-element_type` deel uitmaakt van [Elementor's WordPress-websitebouwer](https://elementor.com/). Zowel `data-requiremodule` als `data-requirecontext` maken dus deel uit van [RequireJS](https://requirejs.org/).
 
-{# TODO(authors): Update this interpretation given that the lazy loading stat is in terms of pages, not img elements. #}
-Interestingly, the use of native lazy loading on images is similar to that of `data-src`. 3.86% of pages use the `<img loading="lazy">` attribute. This appears to be growing very fast, as back in February, this number was about [0.8%](https://twitter.com/zcorpan/status/1237016679667970050). It's possible that these are being used together for a [cross-browser solution](https://addyosmani.com/blog/lazy-loading/).
+Interessant is dat het gebruik van native lazy loading op afbeeldingen vergelijkbaar is met dat van `data-src`. [3.86% van de pagina's](https://docs.google.com/spreadsheets/d/1ram47FshAjzvbQVJbAQPgxZN7PPOPCKIK67VJZCo92c/edit#gid=2109061092) gebruiken `loading="lazy"` op `<img>` -elementen. Dit lijkt erg snel te groeien, aangezien dit aantal in februari ongeveer [0,8%](https://twitter.com/zcorpan/status/1237016679667970050) bedroeg. Het is mogelijk dat deze samen worden gebruikt voor een [cross-browser oplossing](https://addyosmani.com/blog/lazy-loading/).
 
 ## Diversen
 
@@ -1132,7 +1111,6 @@ Er is de laatste tijd veel [discussie](https://adrianroselli.com/2016/01/links-b
   sql_file="pages_markup_by_device.sql"
 ) }}
 
-{# TODO(analysts): Where do these "occurrences" come from? Ideally we have a single sheet to link to with the results used by this table. #}
 <figure>
   <table>
     <thead>
@@ -1183,7 +1161,7 @@ Er is de laatste tijd veel [discussie](https://adrianroselli.com/2016/01/links-b
   <figcaption>{{ figure_link(caption="Overname van knoptypes.", sheets_gid="410549982", sql_file="pages_markup_by_device.sql") }}</figcaption>
 </figure>
 
-Uit onze analyse blijkt dat ongeveer 60% van de pagina's een knopelement bevat en meer dan de helft van de pagina's (32,43%) ten minste één knop heeft die geen `type`-attribuut specificeert. Merk op dat het knopelement een [standaardtype](https://dev.w3.org/html5/spec-LC/the-button-element.html) heeft van `submit`, dus het standaardgedrag van knoppen op deze 32% van de pagina's is om de huidige formuliergegevens in te dienen. Om mogelijk onverwacht gedrag als dit te voorkomen, is het het beste om het kenmerk `type` op te geven.
+Uit onze analyse blijkt dat ongeveer 60% van de pagina's een knopelement bevat en meer dan de helft van de pagina's (32,43%) ten minste één knop heeft die geen `type`-attribuut specificeert. Merk op dat het `button` element een [standaardtype](https://dev.w3.org/html5/spec-LC/the-button-element.html) heeft van `submit`, dus het standaardgedrag van knoppen op deze 32% van de pagina's is om de huidige formuliergegevens in te dienen. Om mogelijk onverwacht gedrag als dit te voorkomen, is het het beste om het kenmerk `type` op te geven.
 
 <figure>
   <table>
@@ -1362,4 +1340,6 @@ Dat dwingt ons om af te sluiten met een oproep: let op HTML. Focus op HTML. Het 
 
 Laten we ons voor de volgende editie van het hoofdstuk over de Web Almanac voorbereiden om nader te kijken naar het vak van het schrijven van HTML en, hopelijk, hoe we het hebben verbeterd.
 
-We laten dit voor je open. Wat zijn uw opmerkingen? Wat viel u op? Wat is er volgens u verslechterd, en wat is er verbeterd? [Laat een reactie achter](https://discuss.httparchive.org/t/2039) om uw mening te delen!
+<p class="note">
+  We laten dit voor je open. Wat zijn uw opmerkingen? Wat viel u op? Wat is er volgens u verslechterd, en wat is er verbeterd? [Laat een reactie achter](https://discuss.httparchive.org/t/2039) om uw mening te delen!
+</p>
