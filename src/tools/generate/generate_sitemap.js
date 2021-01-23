@@ -9,11 +9,13 @@ const static_pages = [
   'table_of_contents.html',
   'methodology.html',
   'contributors.html',
-  'accessibility_statement.html',
   'stories/page_content.html',
   'stories/user_experience.html',
   'stories/content_publishing.html',
   'stories/content_distribution.html'
+];
+const static_pages_no_year = [
+  'accessibility_statement.html'
 ];
 const ebook_path = "static/pdfs/web_almanac_";
 
@@ -48,12 +50,17 @@ const generate_sitemap = async (sitemap_chapters,sitemap_languages) => {
 const get_static_pages = async (sitemap_languages) => {
 
   var languages_and_years = [];
+  var languages = [];
 
   for (const year in sitemap_languages) {
-    for (const languages in sitemap_languages[year]) {
-      languages_and_years.push(`${sitemap_languages[year][languages]}/${year}`);
+    for (const language in sitemap_languages[year]) {
+      languages_and_years.push(`${sitemap_languages[year][language]}/${year}`);
+      const lang_code = `${sitemap_languages[year][language]}`;
+      if (!languages.includes(`${lang_code}`)) languages.push(`${lang_code}`);
     }
   }
+
+  let urls = [];
 
   // Get all of the static pages for each combination
   const files = languages_and_years
@@ -61,9 +68,21 @@ const get_static_pages = async (sitemap_languages) => {
     .reduce((x, y) => [...x, ...y], []);
 
   // Get the sitemap entries for those pages
-  let urls = [];
-
   for (const loc of await files) {
+    if (fs.existsSync(`templates/${loc}`)) {
+      const lastmod = get_lastmod_date(loc);
+      const url = convert_file_name(loc);
+
+      urls.push({ url, lastmod });
+    }
+  }
+
+  // Get all of the static pages with no year for each combination
+  const files_no_year = languages
+    .map((x) => static_pages_no_year.map((p) => `${x}/${p}`))
+    .reduce((x, y) => [...x, ...y], []);
+
+  for (const loc of await files_no_year) {
     if (fs.existsSync(`templates/${loc}`)) {
       const lastmod = get_lastmod_date(loc);
       const url = convert_file_name(loc);
