@@ -39,8 +39,7 @@
           "part": "I",
           "chapter": "5",
           "title": "Media",
-          "slug": "media",
-          "todo": true
+          "slug": "media"
         },
         {
           "part": "I",
@@ -118,8 +117,7 @@
           "part": "III",
           "chapter": "16",
           "title": "Ecommerce",
-          "slug": "ecommerce",
-          "todo": true
+          "slug": "ecommerce"
         },
         {
           "part": "III",
@@ -232,6 +230,16 @@
       "website": "https://AhmadAwais.com",
       "github": "ahmadawais",
       "twitter": "MrAhmadAwais"
+    } ,
+    "alankent": {
+      "name": "Alan Kent",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars0.githubusercontent.com/u/5702163?v=4&s=200",
+      "website": "https://alankent.me",
+      "github": "alankent",
+      "twitter": "akent99"
     },
     "amedina": {
       "name": "Alberto Medina",
@@ -351,7 +359,9 @@
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/6849494?v=4&s=200",
       "website": "https://benseymour.com",
-      "github": "bseymour"
+      "github": "bseymour",
+      "twitter": "bseymour",
+      "linkedin": "benseymour"
     },
     "bharatagsrwal": {
       "name": "Bharat Agarwal",
@@ -515,14 +525,6 @@
       "github": "dougsillars",
       "twitter": "dougsillars"
     },
-    "drewzboto": {
-      "name": "Drewz",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "https://avatars2.githubusercontent.com/u/1111351?v=4&s=200",
-      "github": "drewzboto"
-    },
     "dsadhanala": {
       "name": "Durga Prasad Sadhanala",
       "teams": [
@@ -570,6 +572,16 @@
       "website": "https://ericwbailey.design/",
       "github": "ericwbailey",
       "twitter": "ericwbailey"
+    },
+    "eeeps": {
+      "name": "Eric Portis",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/3441390?v=4&s=200",
+      "website": "https://ericportis.com/",
+      "github": "eeeps",
+      "twitter": "etportis"
     },
     "estelle": {
       "name": "Estelle Weyl",
@@ -685,7 +697,7 @@
     "jrharalson": {
       "name": "Jason Haralson",
       "teams": [
-        "reviewers",
+        "authors",
         "analysts"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/7421844?v=4&s=200",
@@ -964,6 +976,16 @@
       "github": "natedame",
       "twitter": "seonate"
     },
+    "Navaneeth-akam": {
+      "name": "Navaneeth Krishna M P",
+      "teams": [
+        "reviewers"
+       ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/69532755?s=200&v=4",
+      "website": "http://www.nparthas.com/",
+      "github": "Navaneeth-akam",
+      "twitter": "Navanee55755217"
+    },
     "phacks": {
       "name": "Nicolas Goutay",
       "teams": [
@@ -1164,7 +1186,8 @@
     "rockeynebhwani": {
       "name": "Rockey Nebhwani",
       "teams": [
-        "authors"
+        "authors",
+        "analysts"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/1718757?v=4&s=200",
       "github": "rockeynebhwani",
@@ -1302,7 +1325,7 @@
         "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/2042718?v=4&s=200",
-      "website": "https://www.fullstacktraining.com",
+      "website": "https://tamas.io",
       "github": "tpiros",
       "twitter": "tpiros"
     },

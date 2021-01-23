@@ -71,8 +71,6 @@ WhoTracksMe's tracker list also defines categories that the trackers belong to. 
 
 Nearly 60% of the most popular trackers are advertising-related. This could be due to the profitability of the online advertising market.
 
-{# TODO - authors I'm not sure I agree this sentence. Do we track because online advertising is profitable? Or do we track to make online advertising more effective? #}
-
 ### Cookies
 
 We looked into the most popular cookies being set on websites in HTTP's response header, according to their name and domain.
