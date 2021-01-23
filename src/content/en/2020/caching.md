@@ -13,7 +13,7 @@ raghuramakrishnan71_bio: Enterprise architect at <a href="https://www.tcs.com/">
 discuss: 2056
 results: https://docs.google.com/spreadsheets/d/1fYmpSN3diOiFrscS75NsjfsrKXzxxhUMNcYSqXnQJQU/
 queries: 20_Caching
-featured_quote: Caching provides a significant performance benefit by avoiding costly network requests - it helps both end users (they get their web pages quickly) and the companies serving web pages (reducing the load on their servers). Caching really is a win-win!
+featured_quote: Caching provides a significant performance benefit by avoiding costly network requests—it helps both end users (they get their web pages quickly) and the companies serving web pages (reducing the load on their servers). Caching really is a win-win!
 featured_stat_1: 25.6%
 featured_stat_label_1: HTTP responses with no caching information
 featured_stat_2: 21.4%
@@ -23,31 +23,32 @@ featured_stat_label_3: Sites that could save over 2 MB on repeat visits with bet
 ---
 
 ## Introduction
+
 Caching is a technique that enables the reuse of previously downloaded content. It involves something (a server which builds web pages, a proxy such as a CDN or the browser itself) storing 'content' (web pages, CSS, JS, images, fonts, etc.) and tagging it appropriately, so it can be reused.
 
 Here's a very high-level example:
 
-  *Jane visits the home page of the www.example.com website. Jane lives in Los Angeles, CA, and the example.com server is located in Boston, MA.  Jane visiting www.example.com involves a network request which has to travel across the country.*
+  *Jane visits the home page of the www.example.com website. Jane lives in Los Angeles, CA, and the example.com server is located in Boston, MA. Jane visiting www.example.com involves a network request which has to travel across the country.*
 
-  *On the example.com server (a.k.a. Origin server), the home page is retrieved.  The server knows Jane is located in LA and adds dynamic content to the page - a list of upcoming events near her. Then the page is sent back across the country to Jane and displayed on her browser.*
+  *On the example.com server (a.k.a. Origin server), the home page is retrieved. The server knows Jane is located in LA and adds dynamic content to the page—a list of upcoming events near her. Then the page is sent back across the country to Jane and displayed on her browser.*
 
-  *If there is no caching, if Carlos in LA also visits www.example.com after Jane, his request must travel across the country to the example.com server.  The server has to build the same page, including the LA events list.  It will have to send the page back to Carlos.*
+  *If there is no caching, if Carlos in LA also visits www.example.com after Jane, his request must travel across the country to the example.com server. The server has to build the same page, including the LA events list. It will have to send the page back to Carlos.*
 
-  *Worse, if Jane revisits the example.com home page, her subsequent requests will act like the first - the request must go across the country and the example.com server must rebuild the home page to send it back to her.*
+  *Worse, if Jane revisits the example.com home page, her subsequent requests will act like the first—the request must go across the country and the example.com server must rebuild the home page to send it back to her.*
 
-  *So without any caching, the example.com server builds each request from scratch. That's bad for the server because it is more work. Additionally, any communication between either Jane or Carlos and the example.com server requires data to travel across the country.  All of this can add up to a slow experience that's bad for both of them.*
+  *So without any caching, the example.com server builds each request from scratch. That's bad for the server because it is more work. Additionally, any communication between either Jane or Carlos and the example.com server requires data to travel across the country. All of this can add up to a slow experience that's bad for both of them.*
 
-  *However, with server caching, when Jane makes her first request the server builds the LA variant of the home page.  It caches the data for reuse by all LA visitors. So when Carlos's request gets to the example.com server, the server checks if it has the LA variant of the home page in its cache. Since that page is in cache as a result of Jane's earlier request, the server saves time by returning the cached page.*
+  *However, with server caching, when Jane makes her first request the server builds the LA variant of the home page. It caches the data for reuse by all LA visitors. So when Carlos's request gets to the example.com server, the server checks if it has the LA variant of the home page in its cache. Since that page is in cache as a result of Jane's earlier request, the server saves time by returning the cached page.*
 
-  *More importantly, with browser caching, when Jane's browser receives the page from the server for the first request, it caches the page. All of her future requests for the example.com home page will be served instantly from her browser's cache, without a network request.  The example.com server also benefits by not having to process or deal with Jane's request.*
+  *More importantly, with browser caching, when Jane's browser receives the page from the server for the first request, it caches the page. All of her future requests for the example.com home page will be served from her browser's cache, without a network request. The example.com server also benefits by not having to process or deal with Jane's request.*
 
-  *Jane is happy. Carlos is happy. The example.com folks are happy.  Everyone is happy.*
+  *Jane is happy. Carlos is happy. The example.com folks are happy. Everyone is happy.*
 
-It should be clear then, that browser caching provides a significant performance benefit by avoiding costly network requests.  It also helps an application scale by reducing the traffic to a website's origin infrastructure. Server caching also significantly reduces the load on the underlying application.
+It should be clear then, that browser caching provides a significant performance benefit by avoiding costly network requests. It also helps an application scale by reducing the traffic to a website's origin infrastructure. Server caching also significantly reduces the load on the underlying application.
 
 Caching benefits both the end users (they get their web pages quickly) and the companies serving the web pages (reducing the load on their servers). Caching really is a win-win!
 
-Web architectures typically involve multiple tiers of caching. There are four main places ('caching entities') where caching can occur:
+Web architectures typically involve multiple tiers of caching. There are four main places (*caching entities*) where caching can occur:
 
 1. An end user's web browser.
 1. A service worker cache running in the end user's web browser.
@@ -63,7 +64,7 @@ The key to understanding how caching (and the web) works is to remember that it 
 
 When we talk about caching, it refers to the object (HTML page, image, etc.) cached by the requesting entity.
 
-Below figure shows how a typical request/response flow works for an object (e.g. a web page).  A CDN sits between the browser and the server. Note that at each point in the browser → CDN → server flow, each of the caching entities first checks whether it has the object in its cache.  It returns the cached object to the requester if found, before forwarding the request to the next caching entity in the chain:
+Below figure shows how a typical request/response flow works for an object (e.g. a web page). A CDN sits between the browser and the server. Note that at each point in the browser → CDN → server flow, each of the caching entities first checks whether it has the object in its cache. It returns the cached object to the requester if found, before forwarding the request to the next caching entity in the chain:
 
 {{ figure_markup(
   image="request-response-flow-with-caching.png",
@@ -73,11 +74,12 @@ Below figure shows how a typical request/response flow works for an object (e.g.
   )
 }}
 
-<p class="note">Unless specified otherwise, all statistics in this chapter are for desktop, on the understanding that mobile statistics are similar. Where mobile and desktop statistics differ significantly, that is called out.
+<p class="note">Note: Unless specified otherwise, all statistics in this chapter are for desktop, on the understanding that mobile statistics are similar. Where mobile and desktop statistics differ significantly, that is called out.
 
-Many of the responses used in this chapter are from web servers which use commonly-available server packages.  While we may indicate 'best practices', the practices may not be possible if the software package used has a limited number of cache options.</p>
+Many of the responses used in this chapter are from web servers which use commonly-available server packages. While we may indicate "best practices", the practices may not be possible if the software package used has a limited number of cache options.</p>
 
 ## Caching guiding principles
+
 There are three guiding principles to caching web content:
 
 * Cache as much as you can
@@ -88,38 +90,41 @@ There are three guiding principles to caching web content:
 
 When considering what to cache, it is important to understand whether the response content is *static* or *dynamic*.
 
-* An example of static content is an image.  For instance, a picture of a cat is the same regardless of who's requesting it or where the requester is located.
+* An example of static content is an image. For instance, a picture of a cat in cat.jpg is usually the same regardless of who's requesting it or where the requester is located.
 * An example of dynamic content is a list of events which are specific to a geographic location. The list will be different based on the requester's location.
 
 {{ figure_markup(
-  image="luna-cat.png",
+  image="luna-cat.jpg",
   caption="Yes, we have a picture of a cat.",
   description="A picture of a cat called Luna."
   )
 }}
 
-Static content is typically cacheable and often for long periods of time.  It has a one-to-many relationship between the content (one) and the requests (many).
+Static content is typically cacheable and often for long periods of time. It has a one-to-many relationship between the content (one) and the requests (many).
 
-Dynamically generated content can be more nuanced and requires careful consideration. Some dynamic content can be cached, but often for a shorter period of time. The example of a list of upcoming events will change, possibly from day to day. Different variants of the list may also need to be cached and what's cached in a user's browser may be a subset of what's cached on the server or CDN. Nevertheless, it is possible to cache some dynamic contents.  It is incorrect to assume that "dynamic" is another word for "uncacheable".
+Dynamically generated content can be more nuanced and requires careful consideration. Some dynamic content can be cached, but often for a shorter period of time. The example of a list of upcoming events will change, possibly from day to day. Different variants of the list may also need to be cached and what's cached in a user's browser may be a subset of what's cached on the server or CDN. Nevertheless, it is possible to cache some dynamic contents. It is incorrect to assume that "dynamic" is another word for "uncacheable".
 
 ### Cache for as long as you can
-The length of time you would cache a resource is highly dependent on the content's *volatility* (the likelihood and/or frequency of change). For example, an image or a versioned JavaScript file could be cached for a very long time.  An API response or a non-versioned JavaScript file may need a shorter cache duration to ensure users get the most up-to-date response. Some content might only be cached for a minute or less. And, of course, some content should not be cached at all. This is discussed in more detail in Identifying caching opportunities.
 
-Another point to bear in mind is that no matter how long you *tell* a browser to cache content for, the browser may evict that content from cache before that point in time.  It may do so to make room for other content that is accessed more frequently, etc.. However, a browser will never cache content for longer than it is told.
+The length of time you would cache a resource is highly dependent on the content's *volatility* (the likelihood and/or frequency of change). For example, an image or a versioned JavaScript file could be cached for a very long time. An API response or a non-versioned JavaScript file may need a shorter cache duration to ensure users get the most up-to-date response. Some content might only be cached for a minute or less. And, of course, some content should not be cached at all. This is discussed in more detail in Identifying caching opportunities.
+
+Another point to bear in mind is that no matter how long you *tell* a browser to cache content for, the browser may evict that content from cache before that point in time. It may do so to make room for other content that is accessed more frequently, etc.. However, a browser will never cache content for longer than it is told.
 
 ### Cache as close to end users as you can
 
 Caching content close to the end user reduces download times by removing latency. For example, if a resource is cached in a user's browser, then the request never goes out to the network and it is available instantaneously every time the user needs it. For visitors that don't have entries in their browser's cache, a CDN would be the next place a cached resource is returned from. In most cases, it will be faster to fetch a resource from a local cache or a CDN compared to an origin server.
 
 ## Some terminology
-* Caching entity - the hardware or software that is doing the caching. Due to the focus of this chapter, we use "browser" as a synonym for "caching entity" unless otherwise specified.
 
-* TTL - the Time-To-Live of a cached object defines how long it can be stored in a cache, typically measured in seconds. After a cached object reaches its TTL, it is marked as 'stale' by the cache. Depending on how it was added to the cache (see the details of the caching headers below), it may be evicted from cache immediately, or it may remain in the cache but marked as a 'stale' object, requiring revalidation before reuse.
+* Caching entity—the hardware or software that is doing the caching. Due to the focus of this chapter, we use "browser" as a synonym for "caching entity" unless otherwise specified.
 
-* Eviction - the automated process by which an object is actually removed from a cache when/after it reaches its TTL or possibly when the cache is full.
-* Revalidation - a cached object that is marked as stale may need to be 'revalidated' with the server before it can be displayed to the user.  The browser must first check with the server that the object the browser has in its cache is still up-to-date and valid.
+* TTL—the Time-To-Live of a cached object defines how long it can be stored in a cache, typically measured in seconds. After a cached object reaches its TTL, it is marked as 'stale' by the cache. Depending on how it was added to the cache (see the details of the caching headers below), it may be evicted from cache immediately, or it may remain in the cache but marked as a 'stale' object, requiring revalidation before reuse.
+
+* Eviction—the automated process by which an object is actually removed from a cache when/after it reaches its TTL or possibly when the cache is full.
+* Revalidation—a cached object that is marked as stale may need to be 'revalidated' with the server before it can be displayed to the user. The browser must first check with the server that the object the browser has in its cache is still up-to-date and valid.
 
 ## Overview of browser caching
+
 When a browser makes a request for a piece of content (e.g. a web page), it will receive a response which includes not just the content itself (the HTML markup), but also a number of response headers which describe the content, including information about its cacheability.
 
 The caching-related headers, or the absence of them, tell the browser three important pieces of information:
@@ -143,11 +148,11 @@ In the early HTTP/1.0 days of the web, the `Expires` header was the only cache-r
 
 `Expires: Thu, 01 Dec 1994 16:00:00 GMT`
 
-The `Expires` header can be thought of as a 'blunt instrument'.  If a relative cache TTL is required, then processing must be done on the server to generate an appropriate value based upon the current date/time.
+The `Expires` header can be thought of as a 'blunt instrument'. If a relative cache TTL is required, then processing must be done on the server to generate an appropriate value based upon the current date/time.
 
 HTTP/1.1 introduced the `Cache-Control` header, which is supported by all modern browsers. The `Cache-Control` header provides much more extensibility and flexibility than `Expires` via *caching directives*, several of which can be specified together. Details on the various directives are below.
 
-The simple example below shows a request and response for a JavaScript file (some headers have been removed for clarity). The `Date` header indicates the current date (specifically, the date that the content was served).  The `Expires` header indicates that it can be cached for 10 minutes (the difference between the `Expires` and `Date` headers). The `Cache-Control` header specifies the `max-age` directive, which indicates that the resource can be cached for 600 seconds (5 minutes). Since `Cache-Control` takes precedence over `Expires`, the browser will cache the response for 5 minutes, after which it will be marked as stale:
+The simple example below shows a request and response for a JavaScript file (some headers have been removed for clarity). The `Date` header indicates the current date (specifically, the date that the content was served). The `Expires` header indicates that it can be cached for 10 minutes (the difference between the `Expires` and `Date` headers). The `Cache-Control` header specifies the `max-age` directive, which indicates that the resource can be cached for 600 seconds (5 minutes). Since `Cache-Control` takes precedence over `Expires`, the browser will cache the response for 5 minutes, after which it will be marked as stale:
 
 <pre><code>> GET /static/js/main.js HTTP/2
 > Host: www.example.org
@@ -157,7 +162,7 @@ The simple example below shows a request and response for a JavaScript file (som
 < Expires: Thu, 23 Jul 2020 03:14:17 GMT
 < Cache-Control: public, max-age=600</code></pre>
 
-RFC 7234 says that if no caching headers are present in a response, then the browser is allowed to *heuristically* cache the response - it suggests a cache duration of 10% of the time since the `Last-Modified header` (if passed). In such cases, most browsers implement a variation of this suggestion, but some may cache the response indefinitely and some may not cache it at all. Because of this variation between browsers, it is important to explicitly set specific caching rules to ensure that you are in control of the cacheability of your content.
+RFC 7234 says that if no caching headers are present in a response, then the browser is allowed to *heuristically* cache the response—it suggests a cache duration of 10% of the time since the `Last-Modified header` (if passed). In such cases, most browsers implement a variation of this suggestion, but some may cache the response indefinitely and some may not cache it at all. Because of this variation between browsers, it is important to explicitly set specific caching rules to ensure that you are in control of the cacheability of your content.
 
 * 73.6% of responses are served with a `Cache-Control` header
 * 55.5% of responses are served with an `Expires` header
@@ -190,7 +195,7 @@ As we delve into the various directives allowed in the `Cache-Control` header, w
 
 ## `Cache-Control` directives
 
-When you use the `Cache-Control` header, you specify one or more *directives* - predefined values that indicate specific caching functionality. Multiple directives are separated by commas and can be specified in any order, although some of them 'clash' with one another (e.g. `public` and `private`). Some directives take a value, such as `max-age`.
+When you use the `Cache-Control` header, you specify one or more *directives*—predefined values that indicate specific caching functionality. Multiple directives are separated by commas and can be specified in any order, although some of them 'clash' with one another (e.g. `public` and `private`). Some directives take a value, such as `max-age`.
 
 Below is a table showing the most common `Cache-Control` directives:
 
@@ -271,8 +276,8 @@ This indicates that the object can be cached for 86,400 seconds (1 day) and it c
 
 The above figure illustrates the 11 `Cache-Control` directives in use on mobile and desktop websites. There are a few interesting observations about the popularity of these cache directives:
 * `max-age` is used by about 60.2% of `Cache-Control` headers, and `no-store` is used by about 9.2% (see below for some discussion on the meaning and use of the `no-store` directive).
-* Explicitly specifying `public` isn't ever really necessary since cached entries are assumed `public` unless `private` is specified. Nevertheless, almost one third of responses include `public` - a waste of a few header bytes on every response :)
-* The `immutable` directive is relatively new, introduced in 2017 and is only supported on Firefox and Safari - its usage is still only at about 3.5%, but it is widely seen in responses from Facebook, Google, Wix, Shopify and others. It has the potential to greatly improve cacheability for certain types of requests.
+* Explicitly specifying `public` isn't ever really necessary since cached entries are assumed `public` unless `private` is specified. Nevertheless, almost one third of responses include `public`—a waste of a few header bytes on every response :)
+* The `immutable` directive is relatively new, introduced in 2017 and is only supported on Firefox and Safari—its usage is still only at about 3.5%, but it is widely seen in responses from Facebook, Google, Wix, Shopify and others. It has the potential to greatly improve cacheability for certain types of requests.
 
 As we head out to the long tail, there are a small percentage of 'invalid' directives that can be found; these are ignored by browsers, and just end up wasting header bytes. Broadly they fall into two categories:
 
@@ -283,14 +288,14 @@ The most interesting standout in the list of invalid directives is the use of `n
 
 ## `Cache-Control`: `no-store`, `no-cache` and `max-age=0`
 
-When a response absolutely must not be cached, the `Cache-Control no-store` directive should be used; if this directive is not specified, then the response *is considered cacheable and may be cached*. Note that if `no-store` is specified, it takes precedence over other directive - this makes sense, since serious privacy and security issues could occur if a resource is cached which should not be.
+When a response absolutely must not be cached, the `Cache-Control no-store` directive should be used; if this directive is not specified, then the response *is considered cacheable and may be cached*. Note that if `no-store` is specified, it takes precedence over other directive—this makes sense, since serious privacy and security issues could occur if a resource is cached which should not be.
 
 We can see a few common errors that are made when attempting to configure a response to be non-cacheable:
 
-* Specifying `Cache-Control: no-cache` may sound like a directive to not cache the resource. However, as noted above, the `no-cache` directive does allow the resource to be cached - it simply informs the browser to revalidate the resource prior to use and is not the same as stopping the resource from being cached at all.
+* Specifying `Cache-Control: no-cache` may sound like a directive to not cache the resource. However, as noted above, the `no-cache` directive does allow the resource to be cached—it simply informs the browser to revalidate the resource prior to use and is not the same as stopping the resource from being cached at all.
 * Setting `Cache-Control: max-age=0` sets the TTL to 0 seconds, but again, that is not the same as being `non-cacheable`. When `max-age=0` is specified, the resource is cached, but is marked as stale, resulting in the browser having to immediately revalidate its freshness.
 
-Functionally, `no-cache` and `max-age=0` are similar, since they both require revalidation of a cached resource. The no-cache directive can also be used alongside a `max-age` directive that is greater than 0 - this results in the object being cached for the specified TTL but being revalidated prior to every use.
+Functionally, `no-cache` and `max-age=0` are similar, since they both require revalidation of a cached resource. The no-cache directive can also be used alongside a `max-age` directive that is greater than 0—this results in the object being cached for the specified TTL but being revalidated prior to every use.
 
 When looking at the above three discussed directives, 2.3% of responses include the combination of all three `no-store`, `no-cache` and `max-age=0`	directives, 6.6% of responses include both `no-store` and `no-cache`, and a negligible number of responses (< 1%) include `no-store` alone.
 
@@ -302,14 +307,14 @@ The `max-age=0` directive is present on less than 2% of responses where `no-stor
 
 There are often cases where a browser has previously requested an object and already has it in its cache but the cache entry has already exceeded its TTL (and is therefore marked as stale) or where the object is defined as one that must be revalidated prior to use.
 
-In these cases, the browser can make a conditional request to the server - effectively saying "*I have object X in my cache - can I use it, or do you have a more recent version I should use instead?*". The server can respond in one of two ways:
+In these cases, the browser can make a conditional request to the server—effectively saying "*I have object X in my cache—can I use it, or do you have a more recent version I should use instead?*". The server can respond in one of two ways:
 
-* "*Yes, the version of object X you have in cache is fine to use*" - in this case the server response consists of a `304 Not Modified` status code and response headers, but no response body
-* "*No, here is a more recent version of object X - use this instead*" - in this case the server response consists of a `200 OK` status code, response headers, and a new response body (the actual new version of object X)
+* "*Yes, the version of object X you have in cache is fine to use*"—in this case the server response consists of a `304 Not Modified` status code and response headers, but no response body
+* "*No, here is a more recent version of object X—use this instead*"—in this case the server response consists of a `200 OK` status code, response headers, and a new response body (the actual new version of object X)
 
 In either case, the server can optionally include updated caching response headers, possibly extending the TTL of the object so the browser can use the object for a further period of time without needing to make more conditional requests.
 
-The above is known as *revalidation* and if implemented correctly can significantly improve perceived performance - since a `304 Not Modified` response consists only of headers, it is much smaller than a `200 OK` response, resulting in reduced bandwidth and a quicker response.
+The above is known as *revalidation* and if implemented correctly can significantly improve perceived performance—since a `304 Not Modified` response consists only of headers, it is much smaller than a `200 OK` response, resulting in reduced bandwidth and a quicker response.
 
 So how does the server identify a conditional request from a regular request?
 
@@ -321,8 +326,8 @@ It actually all comes down to the initial request for the object. When a browser
 
 If the server wants to allow the browser to make use of conditional requests (this decision is entirely up to the server!), it can include one or both of two response headers which identify the object as being eligible for subsequent conditional requests. The two response headers are:
 
-* `Last-Modified` - this indicates when the object was last changed. Its value is a date timestamp.
-* `ETag` (Entity Tag) - this provides a unique identifier for the content as a quoted string. It can take any format that the server chooses; it is typically a hash of the file contents, but it could be a timestamp or a simple string.
+* `Last-Modified`—this indicates when the object was last changed. Its value is a date timestamp.
+* `ETag` (Entity Tag)—this provides a unique identifier for the content as a quoted string. It can take any format that the server chooses; it is typically a hash of the file contents, but it could be a timestamp or a simple string.
 
 If both headers are present, `ETag` takes precedence.
 
@@ -371,7 +376,7 @@ As you can see, the `Last-Modified` response header and `If-Modified-Since` requ
 
 The functionality here is almost exactly the same as the date-based `Last-Modified` / `If-Modified-Since` conditional request processing described above.
 
-However, in this case, the Server sends an `ETag` response header - rather than a date timestamp, an `ETag` is simply a string - often a hash of the file contents or a version number calculated by the server. The format of this string is entirely up to the server - the only important fact is that the server changes the `ETag` value whenever it changes the file.
+However, in this case, the Server sends an `ETag` response header—rather than a date timestamp, an `ETag` is simply a string—often a hash of the file contents or a version number calculated by the server. The format of this string is entirely up to the server—the only important fact is that the server changes the `ETag` value whenever it changes the file.
 
 In this example, when the server receives the initial request for the file, it can return the file's version in an `ETag` response header, like this:
 
@@ -409,11 +414,11 @@ However, if the values are different, then the version of the file on the server
 
 ...lots of html here...</code></pre>
 
-Again, we see a pair of headers being used for this conditional request processing - the `ETag` response header and the `If-None-Match` request header.
+Again, we see a pair of headers being used for this conditional request processing—the `ETag` response header and the `If-None-Match` request header.
 
 In the same way that the `Cache-Control` header has more power and flexibility than the `Expires` header, the `ETag` header is in many ways an improvement over the `Last-Modified` header. There are two reasons for this:
 
-1. The server can define its own format for the `ETag` header. The example above shows a version string, but it could be a hash, or a random string. By allowing this, versions of an object are not explicitly linked to dates, and this allows a server to create a new version of a file and yet give it the same ETag as the prior version - perhaps if the file change is unimportant
+1. The server can define its own format for the `ETag` header. The example above shows a version string, but it could be a hash, or a random string. By allowing this, versions of an object are not explicitly linked to dates, and this allows a server to create a new version of a file and yet give it the same ETag as the prior version—perhaps if the file change is unimportant
 1. `ETags` can be defined as either 'strong' or 'weak', which allows browsers to validate them differently. A full understanding and discussion of this functionality is beyond the scope of this chapter but can be found in [RFC 7232](https://tools.ietf.org/html/rfc7232).
 
 * 73.5% of responses are served with a `Last-Modified` header. Its usage has marginally increased (by < 1%) in comparison to 2019.
@@ -477,7 +482,7 @@ For example:
 < Cache-Control: max-age=600
 < Last-Modified: Mon, 20 Jul 2020 11:43:22 GMT</code></pre>
 
-Invalid date strings are ignored by most browsers, which can affect the cacheability of the response on which they are served - for example, an invalid `Last-Modified` header will result in the browser being unable to subsequently perform a conditional request for the object, since it is cached without that invalid timestamp.
+Invalid date strings are ignored by most browsers, which can affect the cacheability of the response on which they are served—for example, an invalid `Last-Modified` header will result in the browser being unable to subsequently perform a conditional request for the object, since it is cached without that invalid timestamp.
 
 Because the `Date` HTTP response header is almost always generated automatically by the web server, invalid values are extremely rare. Similarly `Last-Modified` headers had a very low percentage (0.5%) of invalid values. What was very surprising to see though, was that a relatively high 2.9% of `Expires` headers used an invalid date format (2.5% in mobile).
 
@@ -503,7 +508,7 @@ One large source of invalid `Expires` headers is from assets served from a popul
 
 We have discussed how a caching entity can determine whether a response object is cacheable, and for how long it can be cached. However, one of the most important steps the caching entity must take is determining if the resource being requested is already in its cache. While this may seem simple, many times the URL alone is not enough to determine this. For example, requests with the same URL could vary in what compression they used (Gzip, Brotli, etc.) or could be returned in different encodings (XML, JSON etc.).
 
-To solve this problem, when a caching entity caches an object, it gives the object a unique identifier (a cache key). When it needs to determine whether the object is in its cache, it checks for the existence of the object using the cache key as a lookup. By default, this cache key is simply the URL used to retrieve the object, but servers can tell the caching entity to include other 'attributes' of the response (such as compression method) in the cache key, by including the Vary response header, to ensure that the correct object is subsequently retrieved from cache - the `Vary` header identifies 'variants' of the object, based on factors other than the URL.
+To solve this problem, when a caching entity caches an object, it gives the object a unique identifier (a cache key). When it needs to determine whether the object is in its cache, it checks for the existence of the object using the cache key as a lookup. By default, this cache key is simply the URL used to retrieve the object, but servers can tell the caching entity to include other 'attributes' of the response (such as compression method) in the cache key, by including the Vary response header, to ensure that the correct object is subsequently retrieved from cache—the `Vary` header identifies 'variants' of the object, based on factors other than the URL.
 
 The `Vary` response header instructs the browser to add the value of one or more request header values to the cache key. The most common example of this is `Vary: Accept-Encoding`, which will result in the browser caching the same object in different formats, based on the different Accept-Encoding request header values (i.e. `gzip, br, deflate`).
 
@@ -521,7 +526,7 @@ The server responds with the object and indicates that the version it is sending
 
 In this simplified example, the caching entity would cache the object using a combination of the URL and the `Vary` header.
 
-Another common value is `Vary: Accept-Encoding, User-Agent`, which instructs the client to include both the `Accept-Encoding` and `User-Agent` values in the cache key. When used from a browser, this might not make much sense - each browser has its own User-Agent value, so a browser would not make a request using different `User-Agent` values anyway. However, when discussing shared proxies and CDNs, using values other than `Accept-Encoding` can be problematic as it dilutes ('fragments') the cache and can reduce the amount of traffic served from cache. For instance, if a CDN attempts to cache many different variants of an object, including not just the URL and the `Accept-Encoding` header but also the `User-Agent` string (of which there are several thousand different varieties), it may end up filling up the cache with many almost identical (or indeed, identical) cached objects. This is very inefficient and can lead to very sub-optimal caching within the CDN, resulting in fewer cache hits and greater latency.
+Another common value is `Vary: Accept-Encoding, User-Agent`, which instructs the client to include both the `Accept-Encoding` and `User-Agent` values in the cache key. When used from a browser, this might not make much sense—each browser has its own User-Agent value, so a browser would not make a request using different `User-Agent` values anyway. However, when discussing shared proxies and CDNs, using values other than `Accept-Encoding` can be problematic as it dilutes ('fragments') the cache and can reduce the amount of traffic served from cache. For instance, if a CDN attempts to cache many different variants of an object, including not just the URL and the `Accept-Encoding` header but also the `User-Agent` string (of which there are several thousand different varieties), it may end up filling up the cache with many almost identical (or indeed, identical) cached objects. This is very inefficient and can lead to very sub-optimal caching within the CDN, resulting in fewer cache hits and greater latency.
 In general, you should only vary the cache if you are serving alternate content to clients based on that header.
 
 The `Vary` header is used on 43.4% of HTTP responses, and 84.2%  of these responses include a `Cache-Control` header.
@@ -552,7 +557,7 @@ When a response is cached, its entire set of response headers are included with 
 
 But what happens if you have a `Set-Cookie` on a response? According to [RFC 7234 Section 8](https://tools.ietf.org/html/rfc7234#section-8), the presence of a `Set-Cookie` response header does not inhibit caching. This means that a cached entry might contain a `Set-Cookie` response header. The RFC goes on to recommend that you should configure appropriate `Cache-Control` headers to control how responses are cached.
 
-Since we have primarily been talking about browser caching, you may think this isn't a big issue - the `Set-Cookie` response headers that were sent by the server to me in responses to my requests clearly contain my cookies, so there's no problem if my browser caches them. However, if there is a CDN between myself and the server, the server must indicate to the CDN that the response should not be cached in the CDN itself, so that the response meant for me is not cached and then served (including my `Set-Cookie` headers!) to other users.
+Since we have primarily been talking about browser caching, you may think this isn't a big issue—the `Set-Cookie` response headers that were sent by the server to me in responses to my requests clearly contain my cookies, so there's no problem if my browser caches them. However, if there is a CDN between myself and the server, the server must indicate to the CDN that the response should not be cached in the CDN itself, so that the response meant for me is not cached and then served (including my `Set-Cookie` headers!) to other users.
 
 For example, if a login cookie or a session cookie is present in a CDN's cached object, then that cookie could potentially be reused by another client. The primary way to avoid this is for the server to send the `Cache-Control: private` directive, which tells the CDN not to cache the response, because it may only be cached by the client browser.
 
@@ -580,7 +585,7 @@ For example, if a login cookie or a session cookie is present in a CDN's cached 
 
 ## Service workers
 
-Service workers are a feature of HTML5 that allow front-end developers to specify scripts that should run outside the 'normal' request/response flow of web pages, communicating with the web page via messages. Common uses of service workers are for background synchronization and push notifications and, obviously, for caching - and browser support has been rapidly growing for them.
+Service workers are a feature of HTML5 that allow front-end developers to specify scripts that should run outside the 'normal' request/response flow of web pages, communicating with the web page via messages. Common uses of service workers are for background synchronization and push notifications and, obviously, for caching—and browser support has been rapidly growing for them.
 
 {{ figure_markup(
   image="service-workers-controlled-pages-2019-2020.png",
@@ -638,7 +643,7 @@ As we have seen, a cacheable resource is stored by the browser for a period of t
 * 28.2% are cached heuristically because of a lack of either a `Cache-Control` or `Expires` header.
 * 59.4% are cached for more than 0 seconds.
 
-The remaining 9.2% of responses are not permitted to be stored in browser caches - typically because of Cache-Control: no-store.
+The remaining 9.2% of responses are not permitted to be stored in browser caches—typically because of Cache-Control: no-store.
 
 {{ figure_markup(
   image="cacheable-and-non-cacheable.png",
@@ -767,7 +772,7 @@ While most of the median TTLs are high, the lower percentiles highlight some of 
 
 By exploring the cacheability by content type in more detail in figure below, we can see that while fonts, video and audio, and CSS files are browser cached at close to 100% (which makes sense, since these files are typically very static), approximately one third of all HTML responses are considered non-cacheable.
 
-Additionally, 13.6% of images and scripts are non-cacheable. There is likely some room for improvement here, since no doubt some of these objects are also static and could be cached at a higher rate - remember: *cache as much as you can for as long as you can!*
+Additionally, 13.6% of images and scripts are non-cacheable. There is likely some room for improvement here, since no doubt some of these objects are also static and could be cached at a higher rate—remember: *cache as much as you can for as long as you can!*
 
 {{ figure_markup(
   image="cacheable-by-resource-type.png",
@@ -813,7 +818,7 @@ The graphs below illustrate the relative age of resources by content type. Some 
 
 By comparing a resource's cacheability to its age, we can determine if the TTL is appropriate or too low.
 
-For example, the resource served below on 18 Oct 2020 was last modified on 30 Aug 2020, which means that it was well over a month old at the time of delivery - this indicates that it is an object which does not change frequently. However, the `Cache-Control` header says that the browser can cache it for only 86,400 seconds (one day). This is a case where a longer TTL might be appropriate, to avoid the browser needing to re-request it (even conditionally) - especially if the website is one that a user might visit multiple times over the course of several days.
+For example, the resource served below on 18 Oct 2020 was last modified on 30 Aug 2020, which means that it was well over a month old at the time of delivery—this indicates that it is an object which does not change frequently. However, the `Cache-Control` header says that the browser can cache it for only 86,400 seconds (one day). This is a case where a longer TTL might be appropriate, to avoid the browser needing to re-request it (even conditionally)—especially if the website is one that a user might visit multiple times over the course of several days.
 
 <pre><code>> HTTP/1.1 200
 > Date: Sun, 18 Oct 2020 19:36:57 GMT
@@ -823,7 +828,7 @@ For example, the resource served below on 18 Oct 2020 was last modified on 30 Au
 > Last-Modified: Sun, 30 Aug 2020 16:00:30 GMT
 > Cache-Control: public, max-age=86400</code></pre>
 
-Overall, 60.7% of resources served on the web have a cache TTL that could be considered too short compared to its content age. Furthermore, the median delta between the TTL and age is 25 days - again, an indication of significant under-caching.
+Overall, 60.7% of resources served on the web have a cache TTL that could be considered too short compared to its content age. Furthermore, the median delta between the TTL and age is 25 days—again, an indication of significant under-caching.
 
 When we break this out by first-party vs third-party in the following table, we can see that almost two-thirds (61.6%) of first-party resources can benefit from a longer TTL. This clearly highlights a need to spend extra attention focusing on what is cacheable, and then ensuring that caching is configured correctly.
 
@@ -901,4 +906,4 @@ Many object types and content that are typically considered to be uncacheable ca
 
 If the site is intended to be served through a CDN, additional opportunities for caching at the CDN to reduce server load and provide faster response to end-users should be considered, along with the related risks of accidentally caching private information, such as cookies.
 
-However, 'powerful' and 'complex' do not imply 'difficult' - like most everything else, caching is controlled by rules which can be defined fairly easily to provide the best mix of cacheability and privacy. Regularly auditing your site to ensure that cacheable resources are cached appropriately is recommended, and tools like [Lighthouse](https://developers.google.com/web/tools/lighthouse) do an excellent job of helping to simplify such an analysis.
+However, 'powerful' and 'complex' do not imply 'difficult'—like most everything else, caching is controlled by rules which can be defined fairly easily to provide the best mix of cacheability and privacy. Regularly auditing your site to ensure that cacheable resources are cached appropriately is recommended, and tools like [Lighthouse](https://developers.google.com/web/tools/lighthouse) do an excellent job of helping to simplify such an analysis.
