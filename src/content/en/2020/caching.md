@@ -188,7 +188,7 @@ RFC 7234 says that if no caching headers are present in a response, then the bro
 
 As we can see 73.5% of mobile responses are served with a `Cache-Control` header, and 56.2% of responses are served with an `Expires` header and nearly all of those (55.4%) will not be used as the responses include both headers. 25.6% of responses did not include either header and are therefore subject to heuristic caching.
 
-These statistics are interesting since, compared with 2019:
+These statistics are interesting when compared with last years data:
 
 {{ figure_markup(
   image="cache-control-and-max-age-and-expires-2019.png",
