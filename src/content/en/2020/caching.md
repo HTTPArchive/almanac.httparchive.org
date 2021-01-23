@@ -1,5 +1,4 @@
 ---
-#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 part_number: IV
 chapter_number: 20
 title: Caching
@@ -7,7 +6,7 @@ description: Caching chapter of the 2020 Web Almanac covering cache-control, exp
 authors: [roryhewitt, raghuramakrishnan71]
 reviewers: [jzyang]
 analysts: [raghuramakrishnan71]
-editors: []
+editors: [bazzadp]
 translators: []
 roryhewitt_bio: Enterprise Architect at <a href="https://www.akamai.com/">Akamai</a>, who is passionate about performance. A British ex-patriate, he has lived in San Francisco for more than twenty years. In his spare time, he's a long-distance adventure motorcyclist, snowboarder and boxer/karateka. He likes being known as a troublemaker. Most importantly, he's a father and husband and the owner of Luna the cat.
 raghuramakrishnan71_bio: Enterprise architect at <a href="https://www.tcs.com/">Tata Consultancy Services</a>, working on large digital transformation programs in the public sector. A technology enthusiast with a special interest in performance engineering. An avid traveler, intrigued by astronomy, history, biology, and advancements in medicine. A strong follower of the 47th verse, Chapter 2 of Bhagavad Gita "karmaṇy-evādhikāras te mā phaleṣhu kadāchana" meaning "You have a right to perform your prescribed duty, but you are not entitled to the fruits of action."
@@ -21,9 +20,7 @@ featured_stat_2: 21.4%
 featured_stat_label_2: Responses that cannot be revalidated
 featured_stat_3: 21.3%
 featured_stat_label_3: Sites that could save over 2 MB on repeat visits with better caching
-unedited: true
 ---
-
 
 ## Introduction
 Caching is a technique that enables the reuse of previously downloaded content. It involves something (a server which builds web pages, a proxy such as a CDN or the browser itself) storing 'content' (web pages, CSS, JS, images, fonts, etc.) and tagging it appropriately, so it can be reused.
@@ -38,7 +35,7 @@ Here's a very high-level example:
 
   *Worse, if Jane revisits the example.com home page, her subsequent requests will act like the first - the request must go across the country and the example.com server must rebuild the home page to send it back to her.*
 
-  *So without any caching, the example.com server builds each request from scratch. That's bad for the server because it's more work. Additionally, any communication between either Jane or Carlos and the example.com server requires data to travel across the country.  All of this can add up to a slow experience that's bad for both of them.*
+  *So without any caching, the example.com server builds each request from scratch. That's bad for the server because it is more work. Additionally, any communication between either Jane or Carlos and the example.com server requires data to travel across the country.  All of this can add up to a slow experience that's bad for both of them.*
 
   *However, with server caching, when Jane makes her first request the server builds the LA variant of the home page.  It caches the data for reuse by all LA visitors. So when Carlos's request gets to the example.com server, the server checks if it has the LA variant of the home page in its cache. Since that page is in cache as a result of Jane's earlier request, the server saves time by returning the cached page.*
 
@@ -165,7 +162,7 @@ RFC 7234 says that if no caching headers are present in a response, then the bro
 * 73.6% of responses are served with a `Cache-Control` header
 * 55.5% of responses are served with an `Expires` header
 * 54.8% of responses include both headers
-* 25.6% of responses did not include either header, and are therefore subject to heuristic caching
+* 25.6% of responses did not include either header and are therefore subject to heuristic caching
 
 {{ figure_markup(
   image="cache-control-and-max-age-and-expires.png",
@@ -293,11 +290,11 @@ We can see a few common errors that are made when attempting to configure a resp
 * Specifying `Cache-Control: no-cache` may sound like a directive to not cache the resource. However, as noted above, the `no-cache` directive does allow the resource to be cached - it simply informs the browser to revalidate the resource prior to use and is not the same as stopping the resource from being cached at all.
 * Setting `Cache-Control: max-age=0` sets the TTL to 0 seconds, but again, that is not the same as being `non-cacheable`. When `max-age=0` is specified, the resource is cached, but is marked as stale, resulting in the browser having to immediately revalidate its freshness.
 
-Functionally, `no-cache` and `max-age=0` are similar, since they both require revalidation of a cached resource. The no-cache directive can also be used alongside a `max-age` directive that is greater than 0 - this results in the object being cached for the specified TTL, but being revalidated prior to every use.
+Functionally, `no-cache` and `max-age=0` are similar, since they both require revalidation of a cached resource. The no-cache directive can also be used alongside a `max-age` directive that is greater than 0 - this results in the object being cached for the specified TTL but being revalidated prior to every use.
 
 When looking at the above three discussed directives, 2.3% of responses include the combination of all three `no-store`, `no-cache` and `max-age=0`	directives, 6.6% of responses include both `no-store` and `no-cache`, and a negligible number of responses (< 1%) include `no-store` alone.
 
-As noted above, where `no-store` is specified with either/both of `no-cache` and `max-age=0`, the no-store directive takes precedence, and the other directives are ignored. Therefore, if you don't want content to be cached anywhere, simply specifying `Cache-Control: no-store` is sufficient, and is both simple and uses the minimum number of header bytes.
+As noted above, where `no-store` is specified with either/both of `no-cache` and `max-age=0`, the no-store directive takes precedence, and the other directives are ignored. Therefore, if you don't want content to be cached anywhere, simply specifying `Cache-Control: no-store` is sufficient and is both simple and uses the minimum number of header bytes.
 
 The `max-age=0` directive is present on less than 2% of responses where `no-store` is not specified. In such cases, the resource will be cached in the browser but will require revalidation as it is immediately marked as stale.
 
@@ -417,7 +414,7 @@ Again, we see a pair of headers being used for this conditional request processi
 In the same way that the `Cache-Control` header has more power and flexibility than the `Expires` header, the `ETag` header is in many ways an improvement over the `Last-Modified` header. There are two reasons for this:
 
 1. The server can define its own format for the `ETag` header. The example above shows a version string, but it could be a hash, or a random string. By allowing this, versions of an object are not explicitly linked to dates, and this allows a server to create a new version of a file and yet give it the same ETag as the prior version - perhaps if the file change is unimportant
-1. `ETags` can be defined as either 'strong' or 'weak', which allows browsers to validate them differently. A full understanding and discussion of this functionality is beyond the scope of this chapter, but can be found in [RFC 7232](https://tools.ietf.org/html/rfc7232).
+1. `ETags` can be defined as either 'strong' or 'weak', which allows browsers to validate them differently. A full understanding and discussion of this functionality is beyond the scope of this chapter but can be found in [RFC 7232](https://tools.ietf.org/html/rfc7232).
 
 * 73.5% of responses are served with a `Last-Modified` header. Its usage has marginally increased (by < 1%) in comparison to 2019.
 * 47.9% of responses are served with an `ETag` header. Out of these responses, 36% are 'strong', 98.2% are 'weak', and the remaining 1.8% are invalid. In contrast with `Last-Modified`, the usage of `ETag` headers has marginally decreased (by <1%) in comparison to 2019.
@@ -516,7 +513,7 @@ A caching entity sends a request for an HTML file, indicating that it will accep
 > Host: www.example.org
 > Accept-Encoding: gzip</code></pre>
 
-The server responds with the object, and indicates that the version it is sending should include the value of the `Accept-Encoding` request header.
+The server responds with the object and indicates that the version it is sending should include the value of the `Accept-Encoding` request header.
 
 <pre><code>< HTTP/2 200 OK
 < Content-Type: text/html
@@ -524,7 +521,7 @@ The server responds with the object, and indicates that the version it is sendin
 
 In this simplified example, the caching entity would cache the object using a combination of the URL and the `Vary` header.
 
-Another common value is `Vary: Accept-Encoding, User-Agent`, which instructs the client to include both the `Accept-Encoding` and `User-Agent` values in the cache key. When used from a browser, this might not make much sense - each browser has its own User-Agent value, so a browser would not make a request using different `User-Agent` values anyway. However, when discussing shared proxies and CDNs, using values other than `Accept-Encoding` can be problematic as it dilutes ('fragments') the cache and can reduce the amount of traffic served from cache. For instance, if a CDN attempts to cache many different variants of an object, including not just the URL and the `Accept-Encoding` header but also the `User-Agent` string (of which there are several thousand different varieties), it may end up filling up the cache with many almost identical (or indeed, identical) cached objects. This is very inefficient, and can lead to very sub-optimal caching within the CDN, resulting in fewer cache hits and greater latency.
+Another common value is `Vary: Accept-Encoding, User-Agent`, which instructs the client to include both the `Accept-Encoding` and `User-Agent` values in the cache key. When used from a browser, this might not make much sense - each browser has its own User-Agent value, so a browser would not make a request using different `User-Agent` values anyway. However, when discussing shared proxies and CDNs, using values other than `Accept-Encoding` can be problematic as it dilutes ('fragments') the cache and can reduce the amount of traffic served from cache. For instance, if a CDN attempts to cache many different variants of an object, including not just the URL and the `Accept-Encoding` header but also the `User-Agent` string (of which there are several thousand different varieties), it may end up filling up the cache with many almost identical (or indeed, identical) cached objects. This is very inefficient and can lead to very sub-optimal caching within the CDN, resulting in fewer cache hits and greater latency.
 In general, you should only vary the cache if you are serving alternate content to clients based on that header.
 
 The `Vary` header is used on 43.4% of HTTP responses, and 84.2%  of these responses include a `Cache-Control` header.
@@ -573,8 +570,8 @@ For example, if a login cookie or a session cookie is present in a CDN's cached 
 
 {{ figure_markup(
   image="set-cookie-usage-on-private-and-non-private-cacheable-responses.png",
-  caption="`Set-Cookie` in `private` and non private cacheable responses.",
-  description="A bar chart showing `Set-Cookie` usage in `private` and non private cacheable responses. Of the desktop responses containing a `Set-Cookie` header, 4.6% use the `private` directive. 95.4% responses can be cached by both private and public cache servers. Of the mobile responses containing a `Set-Cookie` header, 4.9% use the `private` directive. 95.1% responses can be cached by both private and public cache servers.",
+  caption="`Set-Cookie` in `private` and non-private cacheable responses.",
+  description="A bar chart showing `Set-Cookie` usage in `private` and non-private cacheable responses. Of the desktop responses containing a `Set-Cookie` header, 4.6% use the `private` directive. 95.4% responses can be cached by both private and public cache servers. Of the mobile responses containing a `Set-Cookie` header, 4.9% use the `private` directive. 95.1% responses can be cached by both private and public cache servers.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=97044455&format=interactive",
   sheets_gid="1263250537",
   sql_file="set_cookie.sql"
@@ -663,7 +660,7 @@ The remaining 9.2% of responses are not permitted to be stored in browser caches
   )
 }}
 
-The table below details the cache TTL values for desktop requests by type. Most content types are being cached, however CSS resources are consistently cached with high TTLs.
+The table below details the cache TTL values for desktop requests by type. Most content types are being cached; however CSS resources are consistently cached with high TTLs.
 
 <figure>
   <table>
@@ -682,7 +679,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
     </thead>
     <tbody>
       <tr>
-        <td>audio</td>
+        <td>Audio</td>
         <td>6</td>
         <td>6</td>
         <td>240</td>
@@ -690,7 +687,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
         <td>8,760</td>
       </tr>
       <tr>
-        <td>css</td>
+        <td>CSS</td>
         <td>24</td>
         <td>24</td>
         <td>720</td>
@@ -698,7 +695,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
         <td>8,760</td>
       </tr>
       <tr>
-        <td>font</td>
+        <td>Font</td>
         <td>720</td>
         <td>8,760</td>
         <td>8,760</td>
@@ -706,7 +703,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
         <td>8,760</td>
       </tr>
       <tr>
-        <td>html</td>
+        <td>HTML</td>
         <td>0</td>
         <td>1</td>
         <td>336</td>
@@ -714,7 +711,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
         <td>87,600</td>
       </tr>
       <tr>
-        <td>image</td>
+        <td>Image</td>
         <td>4</td>
         <td>168</td>
         <td>720</td>
@@ -722,7 +719,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
         <td>8,766</td>
       </tr>
       <tr>
-        <td>other</td>
+        <td>Other</td>
         <td>0</td>
         <td>1</td>
         <td>30</td>
@@ -730,7 +727,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
         <td>8,760</td>
       </tr>
       <tr>
-        <td>script</td>
+        <td>Script</td>
         <td>0</td>
         <td>2</td>
         <td>720</td>
@@ -738,7 +735,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
         <td>8,760</td>
       </tr>
       <tr>
-        <td>text</td>
+        <td>Text</td>
         <td>0</td>
         <td>1</td>
         <td>6</td>
@@ -746,7 +743,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
         <td>720</td>
       </tr>
       <tr>
-        <td>video</td>
+        <td>Video</td>
         <td>6</td>
         <td>12</td>
         <td>336</td>
@@ -754,7 +751,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
         <td>8,760</td>
       </tr>
       <tr>
-        <td>xml</td>
+        <td>XML</td>
         <td>0</td>
         <td>24</td>
         <td>24</td>
@@ -790,9 +787,9 @@ When you (the server) are selecting a cache TTL to specify in response headers t
 
 The graphs below illustrate the relative age of resources by content type. Some of the interesting observations in this data are:
 
-* First party HTML is the content type with the shortest age, with 42.5% of the requests having an age less than a week. In most of the other content types, third party content has a smaller resource age than first party content.
+* First party HTML is the content type with the shortest age, with 42.5% of the requests having an age less than a week. In most of the other content types, third-party content has a smaller resource age than first party content.
 * Some of the longest aged first party content on the web, with age eight weeks or more, are the traditionally cacheable objects like images (78.3%), scripts (68.6%), CSS (74.1%), web fonts (79.3%), audio (77.9%) and video (78.6%).
-* There is a significant gap in some first vs. third party resources having an age of more than a week. 93.5% of first party CSS are older than one week compared to 51.5% of 3rd party CSS, which are older than one week.
+* There is a significant gap in some first vs. third-party resources having an age of more than a week. 93.5% of first party CSS are older than one week compared to 51.5% of 3rd party CSS, which are older than one week.
 
 {{ figure_markup(
   image="resource-age-party-and-type-wise-groups-1st-party.png",
@@ -828,7 +825,7 @@ For example, the resource served below on 18 Oct 2020 was last modified on 30 Au
 
 Overall, 60.7% of resources served on the web have a cache TTL that could be considered too short compared to its content age. Furthermore, the median delta between the TTL and age is 25 days - again, an indication of significant under-caching.
 
-When we break this out by first party vs third party in the following table, we can see that almost two-thirds (61.6%) of first-party resources can benefit from a longer TTL. This clearly highlights a need to spend extra attention focusing on what is cacheable, and then ensuring that caching is configured correctly.
+When we break this out by first-party vs third-party in the following table, we can see that almost two-thirds (61.6%) of first-party resources can benefit from a longer TTL. This clearly highlights a need to spend extra attention focusing on what is cacheable, and then ensuring that caching is configured correctly.
 
 <figure>
   <table>
