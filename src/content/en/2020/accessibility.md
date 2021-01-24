@@ -439,7 +439,7 @@ In this pattern, a parent container has a `role="tablist"` with children element
   image="role-tab-panel.png",
   alt="Element with the tabpanel role",
   caption='Element with the `tabpanel` role. ([Source: W3C](https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html))',
-  description='Screenshot showing an example tabpanel tab panel (`role="tabpanel"`) where the content of one one tab is highlighted.',
+  description='Screenshot showing an example tabpanel (`role="tabpanel"`) where the content of one tab is highlighted.',
   width=346,
   height=335
 ) }}
@@ -470,7 +470,7 @@ ARIA attributes can be assigned to HTML elements to enhance the accessibility of
 
 The browser's accessibility tree has a computation system that assigns the accessible name (if there is one) to a control, widget, group, or landmark such that it can be announced by assistive technology. There is a specificity ranking that happens to determine which value is assigned to the accessible name.
 
-The accessible name can be derived from an element's content (such as button text), an attribute (such as an image `alt` text value), or an associated element (such as a programmatically associated label for a form control. For more information about accessible names see Léonie Watson's article, [What is an accessible name?](https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/)
+The accessible name can be derived from an element's content (such as button text), an attribute (such as an image `alt` text value), or an associated element (such as a programmatically associated label for a form control). For more information about accessible names see Léonie Watson's article, [What is an accessible name?](https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/)
 
 We can also use ARIA to provide accessible names for elements. There are two ARIA attributes that accomplish this, [aria-label](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA14.html), [aria-labelledby](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA16.html). Either of these attributes will "win" the accessible name computation and override the natively derived accessible name, so use them with caution and be sure to test with a screen reader or look at the accessibility tree to confirm that the accessible name is what was expected. When using ARIA to name an element, it is important to ensure that the [WCAG 2.5.3, Label in Name](https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html) criterion has not been violated, which expects visible labels to be at least a part of its accessible name.
 
@@ -486,7 +486,7 @@ The [`aria-describedby`](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA1.htm
 
 #### Hiding content
 
-There are several ways to ensure that assistive technology will not discover content. We can leverage CSS `display:none`; or `visibility:hidden;` to omit the elements from the accessibility tree. If an author wishes to hide content from screen readers specifically they can use `aria-hidden="true"`. We found that 48.09% of desktop pages and 48.23% of mobile pages had at least one instance of an element with the `aria-hidden` attribute.
+There are several ways to ensure that assistive technology will not discover content. We can leverage CSS `display:none` or `visibility:hidden` to omit the elements from the accessibility tree. If an author wishes to hide content from screen readers specifically they can use `aria-hidden="true"`. We found that 48.09% of desktop pages and 48.23% of mobile pages had at least one instance of an element with the `aria-hidden` attribute.
 
 These techniques are particularly helpful when something in the visual interface is redundant or unhelpful to assistive technology users. It should be used thoughtfully as it is essential to deliver feature parity for all users. Avoid using it to skip over content that is challenging to make accessible.
 
