@@ -82,7 +82,7 @@ const get_asset_file_dates = async () => {
 
 const get_template_pages_dates = async (supported_languages) => {
 
-  // Get all of the static pages for each combination
+  // Get all of the static pages for each combination of language and year
   const files = get_static_lang_year_files(supported_languages);
 
   // Get the sitemap entries for those pages
