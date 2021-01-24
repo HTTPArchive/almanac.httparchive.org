@@ -44,8 +44,8 @@ From the data we gathered we can see that about 0.88% desktop sites and 0.87% mo
 
 {{ figure_markup(
   image="pwa-timeseries-of-service-worker-installations.png",
-  caption="Timeseries of Service Worker installation.",
-  description="Line graph of Service Worker installation starting at 0.03% for desktop, 0.04% for mobile in January 2017 and growing in a roughly linear fashion to 0.88% for desktop and 0.87% for mobile. In general desktop and mobile follow each other closely with mobile outpacing desktop for until mid 2018, what looks like an anomaly for the second half of 2018 and then desktop outpacing mobile from the start of 2019 until now.",
+  caption="Timeseries of service worker installation.",
+  description="Line graph of service worker installation starting at 0.03% for desktop, 0.04% for mobile in January 2017 and growing in a roughly linear fashion to 0.88% for desktop and 0.87% for mobile. In general desktop and mobile follow each other closely with mobile outpacing desktop for until mid 2018, what looks like an anomaly for the second half of 2018 and then desktop outpacing mobile from the start of 2019 until now.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRRpTSA4fsHwUap-ByQ08j95uo7Zm1kY6lTSvA-DZT54g2QZ0guV7db3QyQwQgMPzsKsJ43gbzqfJst/pubchart?oid=1883263914&format=interactive",
   sheets_gid="1626594877",
   sql_file="sw_adoption_over_time.sql"
