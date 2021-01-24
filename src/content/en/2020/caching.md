@@ -68,7 +68,6 @@ Below figure shows how a typical request/response flow works for an object (e.g.
 
 {{ figure_markup(
   image="request-response-flow-with-caching.png",
-  link="https://almanac.httparchive.org/static/images/2020/caching/request-response-flow-with-caching.png",
   caption="Request/response flow for an object.",
   description="Sequence diagram showing the usage of cache in a typical request/response flow for an object."
   )
@@ -582,7 +581,6 @@ When a response is cached, its entire set of response headers are included with 
 
 {{ figure_markup(
   image="chrome-dev-tools.png",
-  link="https://almanac.httparchive.org/static/images/2020/caching/chrome-dev-tools.png",
   caption="Chrome Dev Tools for a cached resource.",
   description="Chrome Dev Tools showing that When a response is cached, its entire set of response headers are included with the cached object as well."
   )
@@ -898,7 +896,6 @@ Google's [Lighthouse](https://developers.google.com/web/tools/lighthouse) tool e
 
 {{ figure_markup(
   image="lighthouse-caching-audit.png",
-  link="https://almanac.httparchive.org/static/images/2020/caching/lighthouse-caching-audit.png",
   caption="Lighthouse report highlighting potential cache policy improvements.",
   description="Extract of the Lighthouse report highlighting potential cache policy improvements. The first and third party URLs, their cache TTL, and size is shown."
   )
