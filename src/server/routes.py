@@ -1,6 +1,6 @@
 from flask import redirect, url_for, request, send_from_directory
 from . import app, talisman
-from .helpers import render_template, convert_old_image_path, get_chapter_nextprev
+from .helpers import render_template, convert_old_image_path, get_chapter_nextprev, get_chapter_config
 from .validate import validate
 from .config import get_config, DEFAULT_YEAR
 from . import stories_csp
@@ -106,9 +106,10 @@ def stories(lang, year, story):
 @validate
 def chapter(lang, year, chapter):
     config = get_config(year)
+    chapter_config = get_chapter_config(config, chapter)
     (prev_chapter, next_chapter) = get_chapter_nextprev(config, chapter)
     return render_template('%s/%s/chapters/%s.html' % (lang, year, chapter), config=config,
-                           prev_chapter=prev_chapter, next_chapter=next_chapter)
+                           prev_chapter=prev_chapter, next_chapter=next_chapter, chapter_config=chapter_config)
 
 
 @app.route('/robots.txt')
@@ -134,6 +135,12 @@ def ebook(lang, year):
 @app.route('/static/images/2019/<regex("[0-2][0-9]_.*"):folder>/<image>')
 def redirect_old_images(folder, image):
     return redirect("/static/images/2019/%s/%s" % (convert_old_image_path(folder), image)), 301
+
+
+# Redirect requests for the older image URLs to new URLs
+@app.route('/static/images/2019/<regex("(privacy|jamstack|capabilities)"):folder>/<image>')
+def redirect_old_hero_images(folder, image):
+    return redirect("/static/images/2020/%s/%s" % (folder, image)), 301
 
 
 # Redirect requests for the old css file to the renamed file
