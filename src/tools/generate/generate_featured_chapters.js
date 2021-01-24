@@ -39,7 +39,7 @@ const generate_chapter_featured_quote = (metadata) => {
 
 const generate_featured_chapters = async (featured_quotes) => {
 
-  console.log('Generating featured chapters')
+  console.log('\n Generating featured chapters')
 
   for (let language of Object.keys(featured_quotes)) {
 

@@ -95,7 +95,7 @@
     "hash": "820e1c55682b83e93a5003dbe3cfccc3",
     "size": 25
   },
-  "en/2019/accessibility_statement.html": {
+  "en/accessibility_statement.html": {
     "date_published": "2020-02-03T00:00:00.000Z",
     "date_modified": "2020-11-21T00:00:00.000Z",
     "hash": "7076971c35dd64e55dcb78964e1b3a59"
@@ -450,7 +450,7 @@
     "date_modified": "2020-11-26T00:00:00.000Z",
     "hash": "b46e32b0430ec8739f501d87adbaa287"
   },
-  "fr/2019/accessibility_statement.html": {
+  "fr/accessibility_statement.html": {
     "date_published": "2020-02-03T00:00:00.000Z",
     "date_modified": "2020-11-21T00:00:00.000Z",
     "hash": "fb9f8946090b4e1e1511f22c603773ad"
@@ -560,7 +560,7 @@
     "date_modified": "2020-11-26T00:00:00.000Z",
     "hash": "46b5effe870d63057c7ca457c0bbdedd"
   },
-  "hi/2019/accessibility_statement.html": {
+  "hi/accessibility_statement.html": {
     "date_published": "2020-11-18T00:00:00.000Z",
     "date_modified": "2020-11-21T00:00:00.000Z",
     "hash": "b388a95747301d06791a38b832ad5411"
@@ -640,7 +640,7 @@
     "date_modified": "2021-01-13T00:00:00.000Z",
     "hash": "e8f944dea01c584acc945222de0bbdf0"
   },
-  "ja/2019/accessibility_statement.html": {
+  "ja/accessibility_statement.html": {
     "date_published": "2020-02-03T00:00:00.000Z",
     "date_modified": "2020-11-21T00:00:00.000Z",
     "hash": "159aea896b67e21d8b8941f66ace4bf6"
@@ -985,7 +985,7 @@
     "date_modified": "2021-01-17T00:00:00.000Z",
     "hash": "6fc527f1f8edb74f3eefa68eec049804"
   },
-  "zh-CN/2019/accessibility_statement.html": {
+  "zh-CN/accessibility_statement.html": {
     "date_published": "2020-02-03T00:00:00.000Z",
     "date_modified": "2020-11-21T00:00:00.000Z",
     "hash": "d8680ced915210433a58a838f6b588ab"
