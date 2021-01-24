@@ -4,17 +4,19 @@ const { find_asset_files } = require('./shared');
 const { get_yearly_configs } = require('./shared');
 const crypto = require('crypto');
 
-const static_pages = [
+const static_pages_lang_year = [
   'index.html',
   'table_of_contents.html',
   'methodology.html',
   'contributors.html',
-  'accessibility_statement.html',
   'ebook.html',
   'stories/page_content.html',
   'stories/user_experience.html',
   'stories/content_publishing.html',
   'stories/content_distribution.html'
+];
+const static_pages_lang = [
+  'accessibility_statement.html'
 ];
 
 const path = "config/last_updated.json";
@@ -94,22 +96,39 @@ const get_asset_file_dates = async () => {
 const get_template_pages_dates = async (supported_languages) => {
 
   var languages_and_years = [];
+  var languages = [];
 
   for (const year in supported_languages) {
-    for (const languages in supported_languages[year]) {
-      languages_and_years.push(`${supported_languages[year][languages]}/${year}`);
+    for (const language in supported_languages[year]) {
+      languages_and_years.push(`${supported_languages[year][language]}/${year}`);
+      // Get a list of just languages as well
+      const lang_code = `${supported_languages[year][language]}`;
+      if (!languages.includes(`${lang_code}`)) languages.push(`${lang_code}`);
     }
   }
 
   // Get all of the static pages for each combination
   const files = languages_and_years
-    .map((x) => static_pages.map((p) => `${x}/${p}`))
+    .map((x) => static_pages_lang_year.map((p) => `${x}/${p}`))
     .reduce((x, y) => [...x, ...y], []);
 
   // Get the sitemap entries for those pages
   let static_pages_dates = [];
 
   for (const file of await files) {
+    if (fs.existsSync(`templates/${file}`)) {
+      let content = await fs.readFile(`templates/${file}`, 'utf-8');
+      let hash = crypto.createHash('md5').update(content).digest("hex");
+      check_and_update_date(file, hash, null);
+    }
+  }
+
+  // Get all of the static pages with no year for each language
+  const files_no_year = languages
+    .map((x) => static_pages_lang.map((p) => `${x}/${p}`))
+    .reduce((x, y) => [...x, ...y], []);
+
+  for (const file of await files_no_year) {
     if (fs.existsSync(`templates/${file}`)) {
       let content = await fs.readFile(`templates/${file}`, 'utf-8');
       let hash = crypto.createHash('md5').update(content).digest("hex");

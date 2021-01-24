@@ -4,7 +4,7 @@ const ejs = require('ejs');
 const min_publish_date = '2019-11-11';
 const sitemap_template = `templates/sitemap.ejs.xml`;
 const sitemap_path = `templates/sitemap.xml`;
-const static_pages = [
+const static_pages_lang_year = [
   'index.html',
   'table_of_contents.html',
   'methodology.html',
@@ -14,7 +14,7 @@ const static_pages = [
   'stories/content_publishing.html',
   'stories/content_distribution.html'
 ];
-const static_pages_no_year = [
+const static_pages_lang = [
   'accessibility_statement.html'
 ];
 const ebook_path = "static/pdfs/web_almanac_";
@@ -55,6 +55,7 @@ const get_static_pages = async (sitemap_languages) => {
   for (const year in sitemap_languages) {
     for (const language in sitemap_languages[year]) {
       languages_and_years.push(`${sitemap_languages[year][language]}/${year}`);
+      // Get a list of just languages as well
       const lang_code = `${sitemap_languages[year][language]}`;
       if (!languages.includes(`${lang_code}`)) languages.push(`${lang_code}`);
     }
@@ -62,9 +63,9 @@ const get_static_pages = async (sitemap_languages) => {
 
   let urls = [];
 
-  // Get all of the static pages for each combination
+  // Get all of the static pages for each combination of language and year
   const files = languages_and_years
-    .map((x) => static_pages.map((p) => `${x}/${p}`))
+    .map((x) => static_pages_lang_year.map((p) => `${x}/${p}`))
     .reduce((x, y) => [...x, ...y], []);
 
   // Get the sitemap entries for those pages
@@ -77,9 +78,9 @@ const get_static_pages = async (sitemap_languages) => {
     }
   }
 
-  // Get all of the static pages with no year for each combination
+  // Get all of the static pages with no year for each language
   const files_no_year = languages
-    .map((x) => static_pages_no_year.map((p) => `${x}/${p}`))
+    .map((x) => static_pages_lang.map((p) => `${x}/${p}`))
     .reduce((x, y) => [...x, ...y], []);
 
   for (const loc of await files_no_year) {
