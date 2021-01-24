@@ -301,8 +301,8 @@ def test_en_ebook_size_at_least_16_mb_info():
 
 
 def test_versioned_css_file_is_of_correct_format():
-    pattern = re.compile(r"^/static/css/2019.css\?v=[0-9a-f]{32}$")
-    versioned_filename = get_versioned_filename('/static/css/2019.css')
+    pattern = re.compile(r"^/static/css/almanac.css\?v=[0-9a-f]{32}$")
+    versioned_filename = get_versioned_filename('/static/css/almanac.css')
     assert pattern.match(versioned_filename)
 
 

@@ -13,6 +13,10 @@ handlers:
   script: auto
   secure: always
 
+- url: /static/css/2019.css.*$
+  script: auto
+  secure: always
+
 - url: /static
   static_dir: static
   secure: always
