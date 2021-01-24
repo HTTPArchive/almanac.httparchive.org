@@ -50,6 +50,7 @@ Our methodology has the following limitations:
 - Headless ecommerce platforms like [commercetools](https://commercetools.com/) may not get detected as ecommerce platform but if we are able to detect presence of cart on such sites, we will still include sites using such platforms in our overall coverage stats.
 - Technologies which are typically deployed outside homepages (e.g. WebAR on product detail pages) are not detected.
 - Due to our crawl originating from US, there may be some bias towards US specific platforms. For example, if a global business has ecommerce sites built on different platforms for different countries (using country specific domains/sub-domains), it may not show these regional differences in our analysis.
+- It's common for B2B sites to hide the cart functioality behind a login and due to that this study is not a correct represetation of B2B market.
 
 ## Ecommerce platforms
 
@@ -134,6 +135,8 @@ COVID-19 has had a huge impact on the world and necessitated an even bigger move
 ) }}
 
 There is definitely a measurable increase WooCommerce and Shopify sites around the time COVID started really impacting the world.
+
+<p class="note">Note: <a href="https://github.com/AliasIO/wappalyzer/pull/2731/commits/f44f20f03618f6a5fd868dd38ce9db5e2e2f1407">Wappalyzer detection for Wix</a> doesn't differentiate if a site is using Wix as CMS or ecommerce platform. Due to this, growth of Wix as ecommerce platform may not be represented correctly in above graph.</p>
 
 ## Page weight and requests
 
@@ -481,7 +484,7 @@ Marketeers love push notifications but as per author's experience that awareness
 
 In our analysis, we found that only 0.68% of desktop ecommerce sites and 0.69% of mobile ecommerce sites use web push notifications. When it comes to push notifications, it's important that customers find push notifications useful. Key to this is to request permission at right time in customer journey and not to bombard users with irrelevant notifications. To address the customer fatigue with push notifications, Chrome will automatically enroll sites with very low acceptance rates into [quieter notifications UI](https://blog.chromium.org/2020/05/protecting-chrome-users-from-abusive.html) (though exact threshold is not yet defined). Standard UI will be restored for the site when acceptance rates improve within the control group.
 
-PJ Mclachlan (Product Manager, Google) has talked about [aiming for at least 50% acceptance rates](https://www.youtube.com/watch?v=J_t8c9HOjBc) to be in safe territory to avoid falling into quieter notifications UI and aiming for 80% and above acceptance rate. The median notifications acceptance rates for an ecommerce website is 13.6% on mobile and 13.2% on desktop. At median level, these acceptance rates have a lot to be desired. Even at 90th percentile level, numbers don't look very good (36.9% for mobile and 36.8% for desktop). Ecommerce sites can refer at this [another talking by PJ](https://www.youtube.com/watch?v=riKmez3sHaM) for recommended patterns to make sure push acceptance rates remain healthy and they are not getting caught off guard by upcoming abusive notifications changes.
+PJ Mclachlan (Product Manager, Google) has talked about [aiming for at least 50% acceptance rates](https://www.youtube.com/watch?v=J_t8c9HOjBc) to be in safe territory to avoid falling into quieter notifications UI and aiming for 80% and above acceptance rate. The median notifications acceptance rates for an ecommerce website is 13.6% on mobile and 13.2% on desktop. At median level, these acceptance rates have a lot to be desired. Even at 90th percentile level, numbers don't look very good (36.9% for mobile and 36.8% for desktop). Ecommerce sites can refer at this [talk](https://www.youtube.com/watch?v=riKmez3sHaM) for recommended patterns to make sure push acceptance rates remain healthy and they are not getting caught off guard by upcoming abusive notifications changes.
 
 {{ figure_markup(
   image="web-push-notification-acceptance-rates.png",
