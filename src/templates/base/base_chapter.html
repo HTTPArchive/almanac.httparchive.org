@@ -1,6 +1,6 @@
 {% extends "%s/%s/base.html" % (lang, year) %}
 
-{% set chapter_hero_dir = "/static/images/%s/%s/" % (chapter_config.get('hero_dir') or "2019", metadata.chapter) %}
+{% set chapter_hero_dir = "/static/images/%s/%s/" % (chapter_config.hero_dir or "2019", metadata.chapter) %}
 
 {% block image_url %}https://almanac.httparchive.org{{ chapter_hero_dir }}hero_lg.jpg{% endblock %}
 {% block image_height %}433{% endblock %}
@@ -286,7 +286,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
     <div class="content">
         <article id="maincontent" class="body">
             <div class="subtitle">
-                {{ self.part() }} {{ chapter_config.get('part') }} {{ self.chapter() }} {{ chapter_config.get('chapter_number') }}
+                {{ self.part() }} {{ chapter_config.part }} {{ self.chapter() }} {{ chapter_config.chapter_number }}
             </div>
             <h1 class="title title-lg">
                 {{ metadata.get('title') }}
