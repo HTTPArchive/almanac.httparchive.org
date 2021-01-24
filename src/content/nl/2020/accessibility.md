@@ -407,7 +407,7 @@ We ontdekten dat 22,06% van de desktoppagina's en 21,76% van de mobiele pagina's
 
 #### Dialoogmodalen
 
-Er zijn veel potentiële toegankelijkheidsbelemmeringen verbonden aan dialoogmodalen. We raden aan om het artikel van <<a hreflang="en" href="https://twitter.com/scottohara">Scott O'Hara</a> <a hreflang="en" href="https://www.scottohara.me/blog/2019/03/05/open-dialog.html">Having an Open Dialog</a>te lezen voor meer context.
+Er zijn veel potentiële toegankelijkheidsbelemmeringen verbonden aan dialoogmodalen. We raden aan om het artikel van <a hreflang="en" href="https://twitter.com/scottohara">Scott O'Hara</a> <a hreflang="en" href="https://www.scottohara.me/blog/2019/03/05/open-dialog.html">Having an Open Dialog</a>te lezen voor meer context.
 
 We zijn verheugd te kunnen melden dat 19,01% van de desktoppagina's en 18,21% van de mobiele pagina's minstens één keer `role="dialog"` heeft, wat een stijging is van ongeveer 8% in 2019. Het is vermeldenswaard dat een deel van de toename waarschijnlijk te wijten is aan veranderingen in de manier waarop deze statistiek werd gemeten. Dit zou ook kunnen suggereren dat meer ontwikkelaars toegankelijkheid overwegen bij het bouwen van dialogen en mogelijk dat frameworks en bijbehorende pakketten mogelijk ook meer toegankelijke dialoogpatronen implementeren. Het toegankelijk maken van een dialoogmodaal vereist echter veel meer dan het gebruik van de `dialog` rol. Focusbeheer, goede toetsenbordondersteuning en belichting van de schermlezer moeten allemaal worden aangepakt.
 
