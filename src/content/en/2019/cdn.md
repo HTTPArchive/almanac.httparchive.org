@@ -45,7 +45,7 @@ Finally, CDNs also help sites to adopt new technologies without requiring change
 
 ### Caveats and disclaimers
 
-As with any observational study, there are limits to the scope and impact that can be measured. The statistics gathered on CDN usage for the the Web Almanac does not imply performance nor effectiveness of a specific CDN vendor.
+As with any observational study, there are limits to the scope and impact that can be measured. The statistics gathered on CDN usage for the Web Almanac does not imply performance nor effectiveness of a specific CDN vendor.
 
 There are many limits to the testing [methodology](./methodology) used for the Web Almanac. These include:
 
