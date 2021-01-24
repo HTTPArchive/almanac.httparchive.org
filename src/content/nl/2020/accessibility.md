@@ -8,108 +8,108 @@ reviewers: [aardrian, ericwbailey, obto]
 analysts: [obto]
 editors: [bazzadp]
 translators: [noah-vdv]
-oluoluoxenfree_bio: Olu Niyi-Awosusi is a software engineer at the FT who loves lists, learning new things, Bee and Puppycat, <a href="https://alistapart.com/article/building-the-woke-web/">social justice, accessibility</a> and trying harder every day.
-alextait1_bio: Alex Tait is a developer, consultant and educator whose passion lies in the intersection of accessibility and modern JavaScript within interface architecture and design systems. As a developer, she believes that inclusion driven development practices with accessibility at the forefront lead to better products for everyone. As a consultant and strategist, she believes that less is more, and that new feature scope creep cannot be prioritized over core feature parity for disabled users. As an educator, she believes in removing barriers to information so that tech can become a more diverse, equitable and inclusive industry.
+oluoluoxenfree_bio: Olu Niyi-Awosusi is een software engineer bij de FT die houdt van lijsten, nieuwe dingen leren, Bee en Puppycat, <a hreflang="en" href="https://alistapart.com/article/building-the-woke-web/">sociale rechtvaardigheid, toegankelijkheid</a> en elke dag harder proberen.
+alextait1_bio: Alex Tait is een ontwikkelaar, consultant en docent wiens passie ligt op het snijvlak van toegankelijkheid en modern JavaScript binnen interfacearchitectuur en ontwerpsystemen. Als ontwikkelaar is ze van mening dat op inclusie gebaseerde ontwikkelingspraktijken met toegankelijkheid voorop leiden tot betere producten voor iedereen. Als consultant en strateeg is ze van mening dat minder meer is, en dat nieuwe functieomvang niet kan worden geprioriteerd boven pariteit van kernfuncties voor gehandicapte gebruikers. Als onderwijzer gelooft ze in het wegnemen van belemmeringen voor informatie, zodat technologie een meer diverse, rechtvaardige en inclusieve industrie kan worden.
 discuss: 2044
 results: https://docs.google.com/spreadsheets/d/1UjEBhq0TfYxUpdpq5IuxjeHB4yqhJq4NOKEd6Dwwrdk/
 queries: 08_Accessibility
-featured_quote: As an industry it is time that we acknowledge the story told by the numbers in this chapter; we are failing disabled people.
+featured_quote: Als industrie wordt het tijd dat we het verhaal erkennen dat wordt verteld door de cijfers in dit hoofdstuk; we zijn gehandicapten in de steek aan het laten.
 featured_stat_1: 15,357,625
-featured_stat_label_1: Longest known <code>alt</code> text length
+featured_stat_label_1: Langst bekende <code>alt</code> tekstlengte
 featured_stat_2: 3,200
-featured_stat_label_2: Sites mispelling <code>aria-labelledby</code> as <code>aria-labeledby</code>
+featured_stat_label_2: Sites die <code>aria-labelledby</code> verkeerd spellen als <code>aria-labeledby</code>
 featured_stat_3: 0.79%
-featured_stat_label_3: Videos providing closed captions
+featured_stat_label_3: Video's met ondertiteling
 
 ---
 
-## Introduction
+## Introductie
 
-In 2020, more than ever before, it is becoming increasingly urgent for digital spaces to be inclusive and accessible to all. With the ongoing pandemic making it even more difficult for folks to access services in-person and entire industries moving online, disabled people are disproportionately impacted. Additionally, the number of disabled people is rising due to the [long-term effects](https://www.cdc.gov/coronavirus/2019-ncov/long-term-effects.html) of the pandemic.
+In 2020 wordt het, meer dan ooit tevoren, steeds urgenter dat digitale ruimtes inclusief en voor iedereen toegankelijk zijn. Nu de aanhoudende pandemie het voor mensen nog moeilijker maakt om persoonlijk toegang te krijgen tot diensten en voor hele industrieën die online gaan, worden gehandicapten onevenredig zwaar getroffen. Bovendien stijgt het aantal mensen met een handicap als gevolg van de <a hreflang="en" href="https://www.cdc.gov/coronavirus/2019-ncov/long-term-effects.html">langetermijneffecten</a> van de pandemie.
 
-Web accessibility is about achieving feature and information parity and giving complete access to all aspects of an interface to disabled people. A digital product or website is simply not complete if it is not usable by everyone. If it excludes certain disabled populations, this is discrimination and potentially grounds for fines and/or lawsuits.
+Bij webtoegankelijkheid gaat het om het bereiken van pariteit van functies en informatie en om mensen met een handicap volledige toegang te geven tot alle aspecten van een interface. Een digitaal product of website is simpelweg niet compleet als het niet voor iedereen bruikbaar is. Als het bepaalde gehandicapte bevolkingsgroepen uitsluit, is dit discriminatie en mogelijk reden voor boetes en/of rechtszaken.
 
-The [Web Content Accessibility Guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/), or WCAG, is an internationally recognized set of standards that needs to be met in all websites and applications that utilize the Internet. They are not laws, but [many laws point to WCAG as their basis](https://www.w3.org/WAI/policies/).
+De <a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/wcag/">Web Content Accessibility Guidelines</a>, of WCAG, is een internationaal erkende reeks standaarden waaraan moet worden voldaan in alle websites en applicaties die gebruikmaken van het internet. Het zijn geen wetten, maar <a hreflang="en" href="https://www.w3.org/WAI/policies/">veel wetten verwijzen naar WCAG als hun basis</a>.
 
-These guidelines have had multiple releases over the years and the current standard is WCAG 2.1, with WCAG 2.2 currently being vetted as a [working draft](https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/). Some regional laws point to WCAG 2.0 as the requirement, but as [Adrian Roselli](https://twitter.com/aardrian) covers in his article [WCAG 2.1 is the Current Standard, Not WCAG 2.0 - and WCAG 2.2 is Coming](https://adrianroselli.com/2020/09/wcag-2-1-is-the-current-standard-not-wcag-2-0-and-wcag-2-2-is-coming.html) we need to be meeting WCAG 2.1 standards and considering the new criteria coming in WCAG 2.2 as well.
+Deze richtlijnen hebben in de loop der jaren meerdere releases gehad en de huidige standaard is WCAG 2.1, waarbij WCAG 2.2 momenteel wordt doorgelicht als een <a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/">werkversie</a>. Sommige regionale wetten verwijzen naar WCAG 2.0 als vereiste, maar zoals <a hreflang="en" href="https://twitter.com/aardrian">Adrian Roselli</a> in zijn artikel beschrijft <a hreflang="en" href="https://adrianroselli.com/2020/09/wcag-2-1-is-the-current-standard-not-wcag-2-0-and-wcag-2-2-is-coming.html">WCAG 2.1 is de huidige standaard, niet WCAG 2.0 - en WCAG 2.2 komt eraan</a> we moeten voldoen aan de WCAG 2.1-normen en ook rekening houden met de nieuwe criteria die in WCAG 2.2 komen.
 
-A dangerous trend that has seen more exposure than ever in 2020 is the use of "accessibility overlays". These widgets promise one step accessibility compliance and more often than not introduce new barriers and make the experience for a disabled user quite challenging. It is important that digital practitioners take ownership over designing and implementing usable interfaces and not try to subvert this process with a quick fix. For more information see Lainey Feingold's article, [Honor the ADA: Avoid Web Accessibility Quick Fix Overlays](https://www.lflegal.com/2020/08/quick-fix/).
+Een gevaarlijke trend die in 2020 meer dan ooit is blootgesteld, is het gebruik van "toegankelijkheidsoverlays". Deze widgets beloven een stapsgewijze naleving van toegankelijkheid en introduceren vaker wel dan niet nieuwe barrières en maken de ervaring voor een gehandicapte gebruiker behoorlijk uitdagend. Het is belangrijk dat digitale beoefenaars de verantwoordelijkheid nemen over het ontwerpen en implementeren van bruikbare interfaces en niet proberen dit proces te ondermijnen met een snelle oplossing. Zie voor meer informatie het artikel van Lainey Feingold, <a hreflang="en" href="https://www.lflegal.com/2020/08/quick-fix/">Honor the ADA: Avoid Web Accessibility Quick Fix Overlays</a>.
 
-Sadly, year over year, we and other teams conducting analysis such as the [WebAIM Million](https://webaim.org/projects/million/) are finding little–and in some cases no–improvement in these metrics. The median overall site score for all [Lighthouse Accessibility](https://web.dev/lighthouse-accessibility/) audit data rose from 73% in 2019 to 80% in 2020. We hope that this 7% increase represents a shift in the right direction. However, these are automated checks and could mean that developers are doing a better job of subverting the rule engine, so we are cautiously optimistic.
+Helaas vinden wij en andere teams die analyses uitvoeren, zoals de <a hreflang="en" href="https://webaim.org/projects/million/">WebAIM Million</a> jaar na jaar, weinig en in sommige gevallen geen verbetering in deze statistieken. De mediane algemene sitescore voor alle auditgegevens van <a hreflang="en" href="https://web.dev/lighthouse-accessibility/">Lighthouse Accessibility</a> steeg van 73% in 2019 naar 80% in 2020. We hopen dat deze stijging van 7% een verschuiving in de goede richting. Dit zijn echter geautomatiseerde controles en kunnen betekenen dat ontwikkelaars de regel engine beter ondermijnen, dus we zijn voorzichtig optimistisch.
 
-Our analysis is based on automated metrics only. It is important to remember that automated testing captures only a fraction of the accessibility barriers that can be present in an interface. Qualitative analysis, including manual testing and usability testing with disabled people are needed in order to achieve an accessible site or application.
+Onze analyse is alleen gebaseerd op geautomatiseerde statistieken. Het is belangrijk om te onthouden dat geautomatiseerd testen slechts een fractie van de toegankelijkheidsbarrières vastlegt die in een interface aanwezig kunnen zijn. Kwalitatieve analyse, inclusief handmatige tests en bruikbaarheidstests met mensen met een handicap, zijn nodig om tot een toegankelijke site of applicatie te komen.
 
-We've split up our most interesting insights into five categories:
+We hebben onze meest interessante inzichten opgesplitst in vijf categorieën:
 
-1. Ease of reading,
-2. Media on the web,
-3. Ease of page navigation,
-4. Assistive technologies on the web,
-5. Accessibility of form controls.
+1. Leesgemak,
+2. Media op internet,
+3. Navigatiegemak,
+4. Ondersteunende technologieën op internet,
+5. Toegankelijkheid van formulierbesturingselementen.
 
-We hope that this chapter full of sobering metrics and demonstrable accessibility negligence on the Web will inspire readers to prioritize this work and change their practices, shifting towards a more inclusive and fair Internet.
+We hopen dat dit hoofdstuk vol ontnuchterende statistieken en aantoonbare nalatigheid op het gebied van toegankelijkheid op het web lezers zal inspireren om prioriteit te geven aan dit werk en hun praktijken te veranderen, en over te schakelen naar een meer inclusief en eerlijk internet.
 
-## Ease of reading
+## Leesgemak
 
-Making content as simple and clear to read as possible is an important aspect of web accessibility. Being unable to read the content of a page prevents a user from being able to complete tasks on websites. There are many aspects of a web page that make it easier or harder to read, including color contrast, zooming and scaling of pages, and language identification.
+Inhoud zo eenvoudig en duidelijk mogelijk leesbaar maken, is een belangrijk aspect van webtoegankelijkheid. Door de inhoud van een pagina niet te kunnen lezen, kan een gebruiker taken op websites niet uitvoeren. Er zijn veel aspecten van een webpagina die het lezen gemakkelijker of moeilijker maken, waaronder kleurcontrast, zoomen en schalen van pagina's en taalidentificatie.
 
-### Color contrast
+### Kleurcontrast
 
-The higher the page contrast, the easier it is for people to view text-based content. People who may have difficulties viewing low contrast content include those with color vision deficiency, people with mild to moderate vision loss, and those with contextual difficulties viewing the content, such as glare on screens in bright light.
+Hoe hoger het pagina-contrast, hoe gemakkelijker het voor mensen is om op tekst gebaseerde inhoud te bekijken. Mensen die mogelijk moeite hebben met het bekijken van inhoud met een laag contrast, zijn onder meer mensen met een verminderd gezichtsvermogen, mensen met licht tot matig verlies van het gezichtsvermogen en mensen met contextuele problemen met het bekijken van de inhoud, zoals verblinding op schermen bij fel licht.
 
 {{ figure_markup(
   image="sites-with-sufficient-color-contrast-2019-2020.png",
-  caption="Sites with sufficient color contrast.",
-  description="Bar chart showing percentage of sites with sufficient color contrast in 2019 and 2020. 22.04% of sites had sufficient color contrast in 2029 decreasing to 21.06% in 2020, meaning 77.96% had insufficient color contrast in 2019 increasing to 78.94% in 2020.",
+  caption="Sites met voldoende kleurcontrast.",
+  description="Staafdiagram met het percentage sites met voldoende kleurcontrast in 2019 en 2020. 22,04% van de sites had voldoende kleurcontrast in 2019, afnemend tot 21,06% in 2020, wat betekent dat 77,96% onvoldoende kleurcontrast had in 2019 oplopend tot 78,94% in 2020.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSjkB_XAYiwkYrMuoXp44mdqMGJVDUkTr_48ELozY72Mdv3OlxeWV9ysbDY9bs6hA7LnJTrHar9aZlM/pubchart?oid=1827221015&format=interactive",
   sheets_gid="1115686547",
   sql_file="color_contrast.sql"
   )
 }}
 
-Unfortunately, only 21.06% of sites were found to have sufficient color contrast. Which is a decrease from last year's already abysmal 22%.
+Helaas bleek slechts 21,06% van de sites voldoende kleurcontrast te hebben. Dat is een daling ten opzichte van de al hopeloze 22% van vorig jaar.
 
-### Zooming and scaling
+### Zoomen en schalen
 
-It is essential that we allow users to zoom the page or content. There are techniques that can be used to try to disable the ability to scale or zoom the browser. Some operating systems subvert this harmful pattern, but many do not, and it is an anti-pattern that needs to be avoided.
+Het is essentieel dat we gebruikers toestaan te zoomen op de pagina of inhoud. Er zijn technieken die kunnen worden gebruikt om te proberen de mogelijkheid om de browser te schalen of in te zoomen uit te schakelen. Sommige besturingssystemen ondermijnen dit schadelijke patroon, maar veel niet, en het is een antipatroon dat moet worden vermeden.
 
-Zooming is particularly useful for users with low vision. According to the [World Health Organization](https://www.who.int/news-room/fact-sheets/detail/blindness-and-visual-impairment), "Globally, 1 billion people have a vision impairment".
+Zoomen is vooral handig voor gebruikers met slechtziendheid. Volgens de <a hreflang="en" href="https://www.who.int/news-room/fact-sheets/detail/blindness-and-visual-impairment">Wereldgezondheidsorganisatie</a> "hebben wereldwijd 1 miljard mensen een visuele beperking".
 
 {{ figure_markup(
   image="sites-with-zooming-and-scaling-disabled.png",
-  caption="Sites with zooming and scaling disabled.",
-  description="Bar chart showing 16.0% of desktop sites and 19.7% of mobile sites disable scaling, 21.1% of desktop sites and 27.1% of mobile sites cap zooming at 1, and 24.4% of desktop sites and 30.7% of mobile sites have either of these set.",
+  caption="Sites waarop zoomen en schalen is uitgeschakeld.",
+  description="Staafdiagram die toont dat 16,0% van de desktopsites en 19,7% van de mobiele sites schalen uitzetten, 21,1% van desktopsites en 27,1% van de mobiele sites stoppen zoomen op 1, en 24,4% van desktopsites en 30,7% van de mobiele sites heeft een van beide ingesteld.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSjkB_XAYiwkYrMuoXp44mdqMGJVDUkTr_48ELozY72Mdv3OlxeWV9ysbDY9bs6hA7LnJTrHar9aZlM/pubchart?oid=1053957382&format=interactive",
   sheets_gid="1095274901",
   sql_file="viewport_zoom_scale.sql"
   )
 }}
 
-We found that 29.34% of desktop pages and 30.66% of mobile pages attempt to disable scaling by setting either `maximum-scale` to a value less than 1, or `user-scalable` `0` or `none`. Some operating systems no longer comply with disabled zoom and scale set in HTML. For systems that do respect it, this can render the page effectively unusable for some. For more information about why to avoid disabling browser zoom see Adrian Roselli's article, [Don't Disable Zoom](https://adrianroselli.com/2015/10/dont-disable-zoom.html).
+We ontdekten dat 29,34% van de desktoppagina's en 30,66% van de mobiele pagina's schalen probeert uit te schakelen door ofwel `maximum-scale` in te stellen op een waarde kleiner dan 1, of `user-scalable` `0` of `none`. Sommige besturingssystemen voldoen niet langer aan de uitgeschakelde zoom- en schaalinstelling in HTML. Voor systemen die het wel respecteren, kan dit de pagina voor sommigen effectief onbruikbaar maken. Zie het artikel van Adrian Roselli, <a hreflang="en" href="https://adrianroselli.com/2015/10/dont-disable-zoom.html"><span lang="en">Don't Disable Zoom</span></a> voor meer informatie over het vermijden van het uitschakelen van browserzoom.
 
-### Language identification
+### Taalidentificatie
 
 {{ figure_markup(
-  caption="Desktop sites have a valid `lang` attribute.",
-  content="77.67%.",
+  caption="Desktopsites hebben een geldig kenmerk `lang`.",
+  content="77,67%.",
   classes="big-number",
   sheets_gid="812908021",
   sql_file="02_05.sql"
 )
 }}
 
-Setting an HTML `lang` attribute allows easy translation of a page and better screen reader support. The percentage of sites with a valid HTML lang attribute on desktop this year was 77.67%, with only 77.7% having a `lang` attribute at all.
+Door een HTML-attribuut `lang` in te stellen, kan een pagina gemakkelijk worden vertaald en is er betere ondersteuning voor schermlezers. Het percentage sites met een geldig HTML lang-attribuut op desktop dit jaar was 77,67%, met slechts 77,7% überhaupt een `lang`-attribuut.
 
-## Media on the web
+## Media op internet
 
-Media is an essential part of the web experience. It can add an enriched context to the surrounding textual information, and not just for sighted users.
+Media is een essentieel onderdeel van de webervaring. Het kan een verrijkte context toevoegen aan de omringende tekstuele informatie, en niet alleen voor ziende gebruikers.
 
-### Images and their text alternatives
+### Afbeeldingen en hun tekstalternatieven
 
-In 1995, [HTML 2.0](https://www.w3.org/MarkUp/html-spec/html-spec_5.html#SEC5.10) introduced the `alt` attribute, enabling web authors to provide a text alternative for the visual information communicated in an image. A screen reader can convey its visual meaning aurally by announcing the image's alternative text. Additionally if images are unable to load, the alternative text for a description will be displayed.
+In 1995 introduceerde <a hreflang="en" href="https://www.w3.org/MarkUp/html-spec/html-spec_5.html#SEC5.10">HTML 2.0</a> het `alt`-attribuut, waardoor webauteurs een tekstalternatief konden bieden voor de visuele informatie die in een afbeelding wordt gecommuniceerd. Een schermlezer kan zijn visuele betekenis auditief overbrengen door de alternatieve tekst van de afbeelding aan te kondigen. Als afbeeldingen niet kunnen worden geladen, wordt de alternatieve tekst voor een beschrijving weergegeven.
 
 {{ figure_markup(
-  caption='Mobiles sites passing the "images with `alt` text" Lighthouse audit.',
+  caption='Mobiele sites passeren de "afbeeldingen met `alt` tekst" Lighthouse audit.',
   content="54%.",
   classes="big-number",
   sheets_gid="580400436",
@@ -117,469 +117,469 @@ In 1995, [HTML 2.0](https://www.w3.org/MarkUp/html-spec/html-spec_5.html#SEC5.10
 )
 }}
 
-The 2020 Lighthouse audit data shows that only 54% of sites pass the [test for images with `alt` text](https://dequeuniversity.com/rules/axe/3.5/image-alt). This test looks for the presence of at least one of the `alt`, `aria-label` and `aria-labelledby` attributes on `img` elements. In most cases using the `alt` attribute is the best choice.
+Uit de 2020-auditgegevens van Lighthouse blijkt dat slechts 54% van de sites de <a hreflang="en" href="https://dequeuniversity.com/rules/axe/3.5/image-alt">test voor afbeeldingen met `alt`-tekst</a> doorstaat. Deze test zoekt naar de aanwezigheid van ten minste één van de attributen `alt`, `aria-label` en `aria-labelledby` op `img` elementen. In de meeste gevallen is het gebruik van het `alt` -attribuut de beste keuze.
 
 {{ figure_markup(
   image="alt-attribute-lengths.png",
-  caption="Alt attribute lengths.",
-  description="Bar chart showing `alt` attribute lengths grouping by percentage of pages. 21.25% of desktop images and 21.38% off mobile images have no `alt` attribute, while 26.20% of desktop and 26.24% of mobile have zero length, 15.76% of desktop and 15.07% of mobile have a length of 10 or less, 13.56% of desktop and 13.49% of mobile have length of 20 or less, 22.23% of desktop and 22.81% of mobile have length of 100 or less, and 1.00% of desktop and 1.01% of mobile have a length of greater than 100.",
+  caption="Alt attribuut lengtes.",
+  description="Staafdiagram met `alt`-attribuutlengtes, gegroepeerd op percentage pagina's. 21,25% van de desktopafbeeldingen en 21,38% van de mobiele afbeeldingen hebben geen `alt`-attribuut, terwijl 26,20% van de desktop en 26,24% van de mobiele afbeeldingen een lengte nul hebben, 15,76% van de desktop en 15,07% van de mobiele afbeeldingen een lengte van 10 of minder, 13,56% van de desktop en 13,49% van de mobiele apparaten hebben een lengte van 20 of minder, 22,23% van de desktop en 22,81% van de mobiele apparaten hebben een lengte van 100 of minder, en 1,00% van de desktop en 1,01% van de mobiele apparaten hebben een lengte van meer dan 100.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSjkB_XAYiwkYrMuoXp44mdqMGJVDUkTr_48ELozY72Mdv3OlxeWV9ysbDY9bs6hA7LnJTrHar9aZlM/pubchart?oid=829889381&format=interactive",
   sheets_gid="152817998",
   sql_file="common_alt_text_length.sql"
   )
 }}
 
-Even though the `alt` attributes have been around for 25 years, we also found that 21.24% of desktop images and 21.38% of mobile images are lacking alternative text. This is one of the easiest automated checks to test for using your accessibility tool of choice and should be low hanging fruit and a relatively straightforward problem to solve.
+Hoewel de `alt`-attributen al 25 jaar bestaan, ontdekten we ook dat in 21,24% van de desktopafbeeldingen en 21,38% van de mobiele afbeeldingen geen alternatieve tekst is. Dit is een van de gemakkelijkste geautomatiseerde controles om te testen op het gebruik van uw favoriete toegankelijkheidstool en zou laaghangend fruit moeten zijn en een relatief eenvoudig probleem om op te lossen.
 
-Screen reader users listen to the ["aural UI" as described by Steve Faulker](https://developer.paciellogroup.com/blog/2015/10/thus-spoke-html/), an aural or sonic experience of the interface wherein the  structure, semantics and relationships of the content are announced. This means that screen reader users consume a lot of textual information. For this reason it is important to assess whether or not an image might not need to be described. This is a helpful [decision tree from the W3C](https://www.w3.org/WAI/tutorials/images/decision-tree/) for deciding how and whether to describe an image. If an image is truly decorative and adds nothing meaningful to the surrounding context, you can assign the `alt` attribute a null value, `alt=""`. It is important to do this explicitly rather than omitting the `alt` attribute altogether, as omitting it could lead to assistive technology announcing the image path, which is a very confusing user experience.
+Gebruikers van schermlezers luisteren naar de <a hreflang="en" href="https://developer.paciellogroup.com/blog/2015/10/thus-spoke-html/">"auditieve gebruikersinterface" zoals beschreven door Steve Faulker</a>, een auditieve of sonische ervaring van de interface waarin de structuur, semantiek en relaties van de inhoud worden aangekondigd. Dit betekent dat gebruikers van schermlezers veel tekstuele informatie consumeren. Om deze reden is het belangrijk om te beoordelen of een afbeelding niet hoeft te worden beschreven. Dit is een nuttige <a hreflang="en" href="https://www.w3.org/WAI/tutorials/images/decision-tree/">beslissingsboom van het W3C</a> om te beslissen hoe en of een afbeelding moet worden beschreven. Als een afbeelding echt decoratief is en niets zinvols toevoegt aan de omringende context, kunt u het kenmerk `alt` een null-waarde toekennen, `alt=""`. Het is belangrijk om dit expliciet te doen in plaats van het `alt`-attribuut helemaal weg te laten, omdat het weglaten ervan kan leiden tot ondersteunende technologie die het afbeeldingspad aankondigt, wat een zeer verwarrende gebruikerservaring is.
 
-We found that 26.20% of desktop pages and 26.23% of mobile pages contain `alt` attributes with a null/empty value. We hope this indicates that over a quarter of websites are being developed with consideration for which images are truly meaningful and not as a means of side-stepping automated checks.
+We ontdekten dat 26,20% van de desktoppagina's en 26,23% van de mobiele pagina's `alt`-attributen bevatten met een null/lege waarde. We hopen dat dit erop wijst dat meer dan een kwart van de websites wordt ontwikkeld met aandacht waarvoor afbeeldingen echt zinvol zijn en niet als een manier om geautomatiseerde controles te omzeilen.
 
-When describing an image it is imperative to consider what information the user needs and omit additional information to reduce verbosity. For example, a red arrow icon button that has the action of moving to a new step in the interface could be described as "continue to step 3 of 5" rather than "red arrow png". The first description tells the user what to expect if they activate the control, whereas the second just describes its appearance and has an unnecessary file extension, both of which are irrelevant to the meaning of the image.
+Bij het beschrijven van een afbeelding is het absoluut noodzakelijk om te overwegen welke informatie de gebruiker nodig heeft en om aanvullende informatie weg te laten om de breedsprakigheid te verminderen. Een pictogramknop met een rode pijl die de actie heeft om naar een nieuwe stap in de interface te gaan, kan bijvoorbeeld worden omschreven als "ga verder met stap 3 van 5" in plaats van "rode pijl png". De eerste beschrijving vertelt de gebruiker wat hij kan verwachten als hij het besturingselement activeert, terwijl de tweede alleen het uiterlijk beschrijft en een onnodige bestandsextensie heeft, die beide niet relevant zijn voor de betekenis van de afbeelding.
 
-Automated checks for the presence of alternative text do not assess the quality of this text. As described in the previous section, the meaning of an image needs to be considered when writing this text. One common unhelpful pattern is describing the image with the file extension name. For the previous "red arrow png" example, a screen reader user likely does not get helpful information from the image format. We found that 6.8% of desktop sites (with at least one instance of the `alt` attribute) had a file extension in its value.
+Geautomatiseerde controles op de aanwezigheid van alternatieve tekst beoordelen de kwaliteit van deze tekst niet. Zoals beschreven in het vorige gedeelte, moet bij het schrijven van deze tekst rekening worden gehouden met de betekenis van een afbeelding. Een veelvoorkomend onbehulpzaam patroon is het beschrijven van de afbeelding met de bestandsextensie. Voor het vorige voorbeeld met "rode pijl png" krijgt een gebruiker van een schermlezer waarschijnlijk geen nuttige informatie uit het afbeeldingsformaat. We ontdekten dat 6,8% van de desktopsites (met ten minste één instantie van het `alt`-attribuut) een bestandsextensie in zijn waarde had.
 
-The top 5 file extensions explicitly included in the `alt` text value (for sites with images that have non-empty alt values) are `jpg`, `png`, `ico`, `gif`, and `jpeg`. This likely comes from a CMS or another auto-generated alternative text mechanism. It is imperative that these alt attribute values be meaningful, regardless of how they are implemented.
+De top 5 bestandsextensies die expliciet zijn opgenomen in de `alt`-tekstwaarde (voor sites met afbeeldingen die niet-lege alt-waarden hebben) zijn `jpg`, `png`, `ico`, `gif`, en `jpeg`. Dit komt waarschijnlijk van een CMS of een ander automatisch gegenereerd alternatief tekstmechanisme. Het is absoluut noodzakelijk dat deze alt-attribuutwaarden zinvol zijn, ongeacht hoe ze zijn geïmplementeerd.
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th scope="col">File extension</th>
-        <th scope="col">Desktop</th>
-        <th scope="col">Mobile</th>
+        <th scope="col">Bestandsextensie</th>
+        <th scope="col">Bureaublad</th>
+        <th scope="col">Mobiel</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td><code>jpg</code></td>
-        <td class="numeric">4.08%</td>
-        <td class="numeric">3.83%</td>
+        <td class="numeric">4,08%</td>
+        <td class="numeric">3,83%</td>
       </tr>
       <tr>
         <td><code>png</code></td>
-        <td class="numeric">2.99%</td>
-        <td class="numeric">2.82%</td>
+        <td class="numeric">2,99%</td>
+        <td class="numeric">2,82%</td>
       </tr>
       <tr>
         <td><code>ico</code></td>
-        <td class="numeric">1.35%</td>
-        <td class="numeric">1.26%</td>
+        <td class="numeric">1,35%</td>
+        <td class="numeric">1,26%</td>
       </tr>
       <tr>
         <td><code>gif</code></td>
-        <td class="numeric">0.34%</td>
-        <td class="numeric">0.33%</td>
+        <td class="numeric">0,34%</td>
+        <td class="numeric">0,33%</td>
       </tr>
       <tr>
         <td><code>jpeg</code></td>
-        <td class="numeric">0.35%</td>
-        <td class="numeric">0.31%</td>
+        <td class="numeric">0,35%</td>
+        <td class="numeric">0,31%</td>
       </tr>
     </tbody>
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Alt attributes ending in a file extension.",
+      caption="Alt-attributen die eindigen op een bestandsextensie.",
       sheets_gid="704032354",
       sql_file="alt_ending_in_image_extension.sql"
     ) }}
   </figcaption>
 </figure>
 
-#### Images with title attributes
+#### Afbeeldingen met titelattributen
 
-The `title` attribute which generates a tooltip that displays text is often mistaken as another reliable way to describe images to assistive technology. However according the HTML Standard:
+Het kenmerk `titel` dat een tooltip genereert die tekst weergeeft, wordt vaak aangezien als een andere betrouwbare manier om afbeeldingen te beschrijven voor ondersteunende technologie. Maar volgens de HTML-standaard:
 
-> "Relying on the `title` attribute is currently discouraged as many user agents do not expose the attribute in an accessible manner as required by this specification"
+> "Het vertrouwen op het kenmerk ``titel` wordt momenteel afgeraden, aangezien veel user agents het kenmerk niet op een toegankelijke manier blootleggen, zoals vereist door deze specificatie"
 
-Tooltips also introduce a host of other accessibility barriers such as information only being revealed on hover/mouseover, information not being properly communicated to assistive technology, lack of keyboard support, and general poor usability. The history of tooltips and their barriers  are well described by [Sarah Higley](https://twitter.com/codingchaos) in her blog post [Tooltips in the time of WCAG 2.1](https://sarahmhigley.com/writing/tooltips-in-wcag-21/).
+Tooltips introduceren ook een groot aantal andere toegankelijkheidsbelemmeringen, zoals informatie die alleen wordt onthuld bij hover/mouse-over, informatie die niet correct wordt gecommuniceerd naar ondersteunende technologie, gebrek aan toetsenbordondersteuning en algemene slechte bruikbaarheid. De geschiedenis van tooltips en hun barrières wordt goed beschreven door <a hreflang="en" href="https://twitter.com/codingchaos">Sarah Higley</a> in haar blogpost <a hreflang="en" href="https://sarahmhigley.com/writing/tooltips-in-wcag-21/">Tooltips in de tijd van WCAG 2.1</a>.
 
-We found that 16.95% of all `alt` attributes also contain a `title` attribute. Of these instances 73.56% of desktop sites and 72.80% of mobile sites had matching values for both the `alt` and `title` attributes.
+We ontdekten dat 16,95% van alle `alt`-attributen ook een `title`-attribuut bevatten. Van deze gevallen had 73,56% van de desktopsites en 72,80% van de mobiele sites overeenkomende waarden voor zowel de `alt`- als de `title`-attributen.
 
-#### Other facts about `alt` text
+#### Andere feiten over `alt`-tekst
 
 {{ figure_markup(
-  caption="The longest known `alt` text length.",
-  content="15,357,625",
+  caption="De langst bekende `alt`-tekstlengte.",
+  content="15.357.625",
   classes="big-number",
   sheets_gid="1881074528",
   sql_file="alt_text_length.sql"
 ) }}
 
-The median length for both desktop and mobile `alt` text is 18 characters. With the average English word length being 4.7 characters, this means the median alt attribute value is 3-4 words long. Depending on the image, being terse can be beneficial. However it is hard to imagine 4 words being sufficient for an accurate description of an image with any complexity.
+De gemiddelde lengte voor zowel desktop- als mobiele `alt`-tekst is 18 tekens. Aangezien de gemiddelde Engelse woordlengte 4,7 tekens is, betekent dit dat de gemiddelde waarde van het alt-attribuut 3-4 woorden lang is. Afhankelijk van de afbeelding kan het nuttig zijn om kort te zijn. Het is echter moeilijk voor te stellen dat 4 woorden voldoende zijn voor een nauwkeurige beschrijving van een afbeelding met enige complexiteit.
 
-The longest `alt` text length found for desktop sites was 15,357,625 characters. That's enough to fill 5 and a half "War and Peace" sized books (assuming "War and Peace" has an average word length of 4.7 characters).
+De langste `alt`-tekstlengte gevonden voor desktopsites was 15.357.625 tekens. Dat is genoeg om 5 en een halve "War and Peace" -formaat boeken te vullen (ervan uitgaande dat "War and Peace" een gemiddelde woordlengte heeft van 4,7 karakters).
 
-### Video on the web
+### Video op internet
 
-Video and other multi-media content can enrich a Web experience, but often is not robustly supported for all users and can pose major accessibility barriers if it is not implemented with support. For more information see the [W3C's Making Audio and Video Accessible](https://www.w3.org/WAI/media/av/).
+Video en andere multimedia-inhoud kunnen een webervaring verrijken, maar worden vaak niet krachtig ondersteund voor alle gebruikers en kunnen grote toegankelijkheidsbelemmeringen opleveren als het niet met ondersteuning wordt geïmplementeerd. Zie voor meer informatie de <a hreflang="en" href="https://www.w3.org/WAI/media/av/">W3C's Making Audio and Video Accessible</a>.
 
-#### Captions
+#### Bijschriften
 
-Captions or transcripts are needed to communicate aural information for people who are deaf or hard of hearing and are very also helpful for users who have cognitive disabilities such as audio processing difficulty. Transcripts also help low-vision and blind users by describing visuals. Video content on the web is not accessible if it does not have accompanying captions. Similar to the importance of having meaningful alternative text for images, the quality of captions is also very important.
+Bijschriften of transcripties zijn nodig om auditieve informatie over te brengen aan mensen die doof of slechthorend zijn en zijn ook zeer nuttig voor gebruikers met cognitieve beperkingen, zoals problemen met het verwerken van audio. Transcripties helpen ook slechtziende en blinde gebruikers door beelden te beschrijven. Videocontent op internet is niet toegankelijk als deze geen begeleidende ondertiteling heeft. Net als het belang van zinvolle alternatieve tekst voor afbeeldingen, is de kwaliteit van bijschriften ook erg belangrijk.
 
-> "Captions not only include dialogue, but identify who is speaking and include non-speech information conveyed through sound, including meaningful sound effects"
-> -WCAG, Understanding Success Criterion 1.2.2: Captions
+> "Bijschriften bevatten niet alleen dialogen, maar identificeren ook wie er spreekt en bevatten niet-spraakinformatie die via geluid wordt overgebracht, inclusief betekenisvolle geluidseffecten"
+> -<span lang="en">WCAG, Understanding Success Criterion 1.2.2: Captions</span>
 
 {{ figure_markup(
-  caption="Videos providing closed captions.",
-  content="0.79%",
+  caption="Video's met ondertiteling.",
+  content="0,79%",
   classes="big-number",
   sheets_gid="1002881600",
   sql_file="video_track_usage.sql"
 ) }}
 
-Of sites using `<video>` elements, only 0.79% provide closed captions, which we assume based on the presence of the `<track>` element (and which are different from open / burned-in captions). Note that some websites have custom solutions for providing video and audio captions to users, and we were unable to detect these custom solutions, so the percentage of sites utilizing captions could be higher, but this figure is indicative of how under-supported captions are on web video content. We also cannot assess the quality of the captions detected and whether or not they accurately convey the full meaning of the video they describe.
+Van de sites die `<video>` -elementen gebruiken, biedt slechts 0,79% ondertitels, die we aannemen op basis van de aanwezigheid van het `<track>` -element (en die verschillen van open/ingebrande bijschriften). Houd er rekening mee dat sommige websites aangepaste oplossingen hebben voor het leveren van video- en audiobijschriften aan gebruikers, en we konden deze aangepaste oplossingen niet detecteren, dus het percentage sites dat ondertiteling gebruikt, kan hoger zijn, maar dit cijfer is een indicatie van hoe onderondersteunde ondertiteling is ingeschakeld in webvideo-inhoud. We kunnen ook de kwaliteit van de gedetecteerde ondertitels niet beoordelen en of ze de volledige betekenis van de video die ze beschrijven, al dan niet nauwkeurig weergeven.
 
-#### Autoplaying video
+#### Video automatisch afspelen
 
-It is arguably a disruptive and undesirable user experience to autoplay and loop video on a website for all users. Video can be a resource drain for device batteries as well as data. In some cases, video can contain content that is distressing for users, whether by showing disturbing imagery or being used as an attack vector against people prone to seizures.
+Het is aantoonbaar een ontwrichtende en ongewenste gebruikerservaring om video voor alle gebruikers automatisch af te spelen en te herhalen op een website. Video kan een bron van hulpbronnen zijn voor zowel apparaatbatterijen als gegevens. In sommige gevallen kan video inhoud bevatten die verontrustend is voor gebruikers, hetzij door storende beelden weer te geven, hetzij door te worden gebruikt als aanvalsvector tegen mensen die vatbaar zijn voor aanvallen.
 
-For disabled users there are significant barriers caused by autoplaying and looping video. For screen reader users, a video that contains audio will likely disrupt the announcements and lead to confusion. For folks with cognitive disabilities such as ADHD, video can be very distracting and interrupt the user's ability to use and understand the interface. People with vestibular conditions can be dangerously triggered by video as well.
+Voor gehandicapte gebruikers zijn er aanzienlijke belemmeringen die worden veroorzaakt door automatisch afspelen en herhalen van video. Voor gebruikers van schermlezers zal een video met audio waarschijnlijk de aankondigingen verstoren en tot verwarring leiden. Voor mensen met cognitieve handicaps zoals ADHD kan video erg afleidend zijn en het vermogen van de gebruiker om de interface te gebruiken en te begrijpen onderbreken. Mensen met vestibulaire aandoeningen kunnen ook gevaarlijk worden getriggerd door video.
 
-The Web Content Accessibility Guidelines has a criteria [2.2.2 Pause, Stop, Hide](https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html) that requires that any moving, blinking or scrolling content (including video) that plays for longer than 5 seconds have a mechanism to pause, stop, or hide it.
+De <span lang="en">Web Content Accessibility Guidelines</span> hebben een criterium <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html">2.2.2 Pauze, Stop, Verbergen</a> die vereisen dat elke bewegende, knipperende of scrollende inhoud (inclusief video) die langer dan 5 seconden wordt afgespeeld, een mechanisme heeft om deze te pauzeren, te stoppen of te verbergen.
 
 {{ figure_markup(
   image="common-video-attributes.png",
-  alt="Most common `<video>` attributes.",
-  caption="Most common `<video>` attributes.",
-  description="Bar chart showing the top 5 attributes on the `<video>` element on desktop with `loop` on 58.43% of videos, `autoplay` on 56.98%, `muted` on 56.13%, `class` on 51.79%, and `preload` on 45.21% of videos.",
+  alt="De meest voorkomende `<video>` -attributen.",
+  caption="De meest voorkomende `<video>` -attributen.",
+  description="Staafdiagram met de top 5 attributen op het `<video>` element op desktop met `loop` op 58,43% van de video's, `autoplay` op 56,98%, `muted` op 56,13%,` class` op 51,79% en `preload` op 45,21% van de video's.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSjkB_XAYiwkYrMuoXp44mdqMGJVDUkTr_48ELozY72Mdv3OlxeWV9ysbDY9bs6hA7LnJTrHar9aZlM/pubchart?oid=1226671706&format=interactive",
   sheets_gid="713294916",
   sql_file="common_video_attributes.sql"
   )
 }}
 
-Of the pages with video present, we found that 56.98% of desktop pages and 53.64% of mobile pages have the `autoplay` attribute, meaning that videos play by default. We also found that 58.42% of desktop pages and 52.86% of mobile pages have the `loop` attribute, which very likely means the video plays indefinitely. Though there could be mechanisms to pause, stop or hide these videos, opting into playing video rather than needing to stop autoplaying and/or looping the video should be the default. These metrics suggest that over half of websites with video could have significant accessibility barriers.
+Van de pagina's met video aanwezig, ontdekten we dat 56,98% van de desktoppagina's en 53,64% van de mobiele pagina's het kenmerk `autoplay` hebben, wat betekent dat video's standaard worden afgespeeld. We ontdekten ook dat 58,42% van de desktoppagina's en 52,86% van de mobiele pagina's het kenmerk `loop` hebben, wat zeer waarschijnlijk betekent dat de video voor onbepaalde tijd wordt afgespeeld. Hoewel er mechanismen kunnen zijn om deze video's te pauzeren, te stoppen of te verbergen, zou het standaard moeten zijn om ervoor te kiezen video af te spelen in plaats van het automatisch afspelen te stoppen en/of de video te herhalen. Deze statistieken suggereren dat meer dan de helft van de websites met video aanzienlijke toegankelijkheidsbelemmeringen zou kunnen hebben.
 
-## Ease of page navigation
+## Eenvoudige paginanavigatie
 
-Pages need to be easy to navigate so users are not left feeling lost, or unable to find the content they need to do what brought them to our sites in the first place. Screen reader technology also needs to be able to differentiate between different sections, so users of this software are not left with an indecipherable wall of text.
+Pagina's moeten gemakkelijk te navigeren zijn, zodat gebruikers zich niet verloren voelen, of niet in staat zijn de inhoud te vinden die ze nodig hebben om te doen wat hen in de eerste plaats naar onze sites heeft gebracht. Schermlezertechnologie moet ook onderscheid kunnen maken tussen verschillende secties, zodat gebruikers van deze software niet met een onleesbare muur van tekst blijven zitten.
 
-### Headings
+### Koppen
 
-Headings make it easier for screen readers to properly navigate a page by supplying a hierarchy that can be jumped through like a table of contents.
+Koppen maken het voor schermlezers gemakkelijker om op de juiste manier door een pagina te navigeren door een hiërarchie op te geven waar doorheen kan worden gesprongen als een inhoudsopgave.
 
 {{ figure_markup(
-  caption="Mobiles sites passing the Lighthouse audit for properly ordered headings.",
-  content="58.72%",
+  caption="Mobiele sites die de Lighthouse-audit doorstaan voor correct geordende koppen.",
+  content="58,72%",
   classes="big-number",
   sheets_gid="580400436",
   sql_file="lighthouse_a11y_audits.sql"
 ) }}
 
-Our audits revealed that 58.72% of the sites checked pass the [test for properly ordered headings](https://web.dev/heading-order/) that do not skip levels. These headings convey the semantic structure of the page. Many screen reader users navigate a page through its headings, so having them in the correct order–ascending with no jumps–means that assistive technology users will have the best experience. It is worth noting that we only check pages where these rules are more likely to be followed; home pages are more likely than interior pages to follow this rule.
+Uit onze audits bleek dat 58,72% van de gecontroleerde sites de <a hreflang="en" href="https://web.dev/heading-order/">test voor correct geordende koppen</a> doorstaat die geen niveaus overslaan. Deze koppen geven de semantische structuur van de pagina weer. Veel gebruikers van schermlezers navigeren op een pagina door de koppen, dus als ze in de juiste volgorde staan (oplopend zonder sprongen), zullen gebruikers van ondersteunende technologie de beste ervaring hebben. Het is vermeldenswaard dat we alleen pagina's controleren waar de kans groter is dat deze regels worden gevolgd; startpagina's volgen deze regel vaker dan interne pagina's.
 
-### Skip links
+### Skip-links
 
-Skip links enable a user to skip through any interactive content such as a navigation system and go to another destination, typically the main content of the page. They are typically the first link on a page and can be persistent in the UI or visibly hidden until they have keyboard focus. This prevents keyboard users from needing to potentially tab through an extraneous number of elements to get to the content they are trying to access.
+Met Skip-links kan een gebruiker door interactieve inhoud zoals een navigatiesysteem gaan en naar een andere bestemming gaan, meestal de hoofdinhoud van de pagina. Ze zijn doorgaans de eerste link op een pagina en kunnen persistent zijn in de gebruikersinterface of zichtbaar verborgen zijn totdat ze toetsenbordfocus hebben. Dit voorkomt dat toetsenbordgebruikers mogelijk door een vreemd aantal elementen moeten bladeren om bij de inhoud te komen die ze proberen te openen.
 
-Skip links are considered a bypass for a block. The 2020 Lighthouse audit data revealed that 93.90% of sites pass the [bypass block](https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html) test, meaning they have a `<header>`, skip link or landmark region to allow users to skip repetitive content.
+Skip-links worden beschouwd als een bypass voor een blok. Uit de 2020-auditgegevens van Lighthouse bleek dat 93,90% van de sites de test <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html">bypass block</a> doorstaat, wat betekent dat ze een `<header>`, skip-link of mijlpaalregio overslaan zodat gebruikers repetitieve inhoud kunnen overslaan.
 
-### Tables
+### Tabellen
 
-Tables are an efficient way to display data with two axes of relationships, making them useful for comparisons. Users of assistive technology rely on specific accessibility features designed to navigate properly structured tables in order to have the best experience navigating and interacting with them. Without valid semantic table markup present, these features cannot be used.
+Tabellen zijn een efficiënte manier om gegevens weer te geven met twee assen van relaties, waardoor ze bruikbaar zijn voor vergelijkingen. Gebruikers van ondersteunende technologie vertrouwen op specifieke toegankelijkheidsfuncties die zijn ontworpen om door correct gestructureerde tabellen te navigeren om de beste ervaring te hebben met navigeren en ermee omgaan. Zonder geldige semantische tabelopmaak kunnen deze functies niet worden gebruikt.
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th scope="col">Measurement</th>
-        <th scope="col">Desktop</th>
-        <th scope="col">Mobile</th>
+        <th scope="col">Meting</th>
+        <th scope="col">Bureaublad</th>
+        <th scope="col">Mobiel</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>Tables with captions</td>
-        <td class="numeric">4.98%</td>
-        <td class="numeric">4.20%</td>
+        <td>Tabellen met bijschriften</td>
+        <td class="numeric">4,98%</td>
+        <td class="numeric">4,20%</td>
       </tr>
       <tr>
-        <td>Presentational tables</td>
-        <td class="numeric">0.64%</td>
-        <td class="numeric">0.49%</td>
+        <td>Presentatietabellen</td>
+        <td class="numeric">0,64%</td>
+        <td class="numeric">0,49%</td>
       </tr>
     </tbody>
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Accessibility data for tables.",
+      caption="Toegankelijkheidsgegevens voor tabellen.",
       sheets_gid="378681963",
       sql_file="table_stats.sql"
     ) }}
   </figcaption>
 </figure>
 
-#### Table captions
+#### Tabelbijschriften
 
-Table captions act as a label for the table supplying context for the table data. Only 4.98% of desktop sites and 4.20% of mobile sites with a table used a table caption.
+Tabelbijschriften fungeren als een label voor de tabel die context levert voor de tabelgegevens. Slechts 4,98% van de desktopsites en 4,20% van de mobiele sites met een tabel gebruikte een tabelbijschrift.
 
-#### Presentational tables
+#### Presentatietabellen
 
-We are fortunate in 2020 to have so many flexible CSS methodologies that allow for fluid responsive layouts. However, many years ago before the likes of Flexbox and CSS Grid, developers often used tables for layout. Unfortunately due to some combination of legacy websites and legacy development techniques there are still sites out there where tables are used for layout.
+We hebben het geluk dat we in 2020 zoveel flexibele CSS-methodologieën hebben die vloeiende responsieve lay-outs mogelijk maken. Echter, vele jaren geleden, voor Flexbox en CSS Grid, gebruikten ontwikkelaars vaak tabellen voor lay-out. Helaas zijn er door een combinatie van legacy-websites en legacy-ontwikkelingstechnieken nog steeds sites waar tabellen worden gebruikt voor de lay-out.
 
-If there is an absolute need to reach for this technique, the role of presentation should be applied to the table such that assistive technology will ignore the table semantics. We found that 0.63% of desktop and 0.49% of mobile pages had a table with a role of presentation. It's hard to know if this is good or bad. It could indicate that there are not many tables used for presentational purposes, but it is very likely that tables used for layout are just lacking this needed role.
+Als er een absolute behoefte is om naar deze techniek te reiken, moet de rol van presentatie op de tabel worden toegepast, zodat ondersteunende technologie de tabelsemantiek negeert. We ontdekten dat 0,63% van de desktoppagina's en 0,49% van de mobiele pagina's een tabel had met een presentatierol. Het is moeilijk om te weten of dit goed of slecht is. Het zou erop kunnen wijzen dat er niet veel tabellen worden gebruikt voor presentatiedoeleinden, maar het is zeer waarschijnlijk dat tabellen die voor lay-out worden gebruikt, gewoon deze noodzakelijke rol missen.
 
-### Document titles
+### Documenttitels
 
-Descriptive page titles are helpful for context when moving between pages, tabs and windows with assistive technology because the change in context will be announced. Our data shows 98.98% of sites have a title which is a hopeful statistic. However it stands to reason that home pages may have a higher rate of page titles than less important routes.
+Beschrijvende paginatitels zijn handig voor de context wanneer u met ondersteunende technologie tussen pagina's, tabbladen en vensters wisselt, omdat de wijziging in de context zal worden aangekondigd. Uit onze gegevens blijkt dat 98,98% van de sites een titel heeft, wat een hoopvolle statistiek is. Het spreekt echter vanzelf dat homepagina's een hoger aantal paginatitels kunnen hebben dan minder belangrijke routes.
 
 ### Tabindex
 
-Tabindex dictates the order in which focus moves throughout the page. Interactive content such buttons, links and form controls have a natural `tabindex` value of `0`. Similarly, custom elements and widgets that are intended to be interactive and in the keyboard focus order need an explicitly assigned `tabindex="0"`. If a non-interactive element should be focusable but not in the keyboard tab order a `tabindex` value of `-1` can be used allowing for focus to be programmatically set with JavaScript.
+Tabindex bepaalt de volgorde waarin de focus over de pagina wordt verplaatst. Interactieve inhoud zoals knoppen, links en formulierelementen hebben een natuurlijke `tabindex`-waarde van `0`. Evenzo hebben aangepaste elementen en widgets die bedoeld zijn om interactief te zijn en in de toetsenbordfocusvolgorde een expliciet toegewezen `tabindex="0"` nodig hebben. Als een niet-interactief element focusbaar zou moeten zijn, maar niet in de tabvolgorde van het toetsenbord, kan een `tabindex` waarde van `-1` worden gebruikt, waardoor de focus programmatisch kan worden ingesteld met JavaScript.
 
-The focus order of the page should always be determined by the document flow. Setting the `tabindex` to a positive integer value overrides the natural order of the page and is considered bad practice. Respecting the natural order of the page generally leads to a more accessible experience. We found that 5% of desktop sites and  4.34% of mobile sites used positive integers as tab index values.
+De focusvolgorde van de pagina moet altijd worden bepaald door de documentstroom. Het instellen van de `tabindex` op een positief geheel getal overschrijft de natuurlijke volgorde van de pagina en wordt als een slechte gewoonte beschouwd. Het respecteren van de natuurlijke volgorde van de pagina leidt over het algemeen tot een meer toegankelijke ervaring. We ontdekten dat 5% van de desktopsites en 4,34% van de mobiele sites positieve gehele getallen gebruikte als indexwaarden voor tabbladen.
 
-## Assistive technologies on the web
+## Ondersteunende technologieën op internet
 
-People with varying disabilities use different assistive technologies to help them experience the web. The [Tools and Techniques](https://www.w3.org/WAI/people-use-web/tools-techniques/) article from the Web Accessibility Initiative (WAI) of the W3C covers how users can perceive, understand and interact with the web using different assistive technologies.
+Mensen met verschillende handicaps gebruiken verschillende ondersteunende technologieën om hen te helpen internet te ervaren. Het artikel <a hreflang="en" href="https://www.w3.org/WAI/people-use-web/tools-techniques/">Tools and Techniques</a> artikel van het Web Accessibility Initiative (WAI) van het W3C behandelt hoe gebruikers kunnen zien, begrijpen en interactie hebben met het web met behulp van verschillende ondersteunende technologieën.
 
-Some assistive technologies for the web include:
+Enkele ondersteunende technologieën voor internet zijn:
 
-- Screen readers
-- Voice control
-- Screen magnifiers
-- Input devices (such as pointers and switch devices)
+- Schermlezers
+- Spraakbesturing
+- Schermvergroters
+- Invoerapparaten (zoals aanwijzers en schakelapparaten)
 
-Screen readers present content audibly, usually by the computer speaking or announcing the content in the interface as the user navigates and interacts. This enables blind, low vision, and other disabled and non-disabled  users to consume the content without needing to rely on the visual cues displayed on the screen.
+Schermlezers presenteren inhoud hoorbaar, meestal doordat de computer de inhoud in de interface uitspreekt of aankondigt terwijl de gebruiker navigeert en interactie heeft. Hierdoor kunnen blinde, slechtziende en andere gehandicapte en niet-gehandicapte gebruikers de inhoud consumeren zonder afhankelijk te zijn van de visuele aanwijzingen die op het scherm worden weergegeven.
 
-### Introduction to ARIA
+### Inleiding tot ARIA
 
-In 2014 the WAI published Accessible Rich Internet Applications, or ARIA. They [describe ARIA as](https://www.w3.org/WAI/standards-guidelines/aria/):
+In 2014 publiceerde de WAI de <span lang="en">Accessible Rich Internet Applications</span>, of ARIA. Ze <a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/aria/">beschrijven ARIA als</a>:
 
-> "WAI-ARIA, the Accessible Rich Internet Applications Suite, defines a way to make web content and web applications more accessible to people with disabilities. It especially helps with dynamic content and advanced user interface controls developed with Ajax, HTML, JavaScript, and related technologies."
+> "WAI-ARIA, de <span lang="en">Accessible Rich Internet Applications Suite</span>, definieert een manier om webinhoud en webapps toegankelijker te maken voor mensen met een handicap. Het helpt vooral bij dynamische inhoud en geavanceerde bedieningselementen voor de gebruikersinterface die zijn ontwikkeld met Ajax, HTML, JavaScript en aanverwante technologieën."
 
-Most developers think of ARIA as attributes we can add to HTML to make it more usable for screen reader users, but it was never intended to make up for improper markup and native HTML solutions. ARIA has a lot of nuances which, when misunderstood, can introduce new accessibility barriers. Furthermore different screen readers have varying limitations with respect to ARIA support.
+De meeste ontwikkelaars beschouwen ARIA als attributen die we aan HTML kunnen toevoegen om het bruikbaarder te maken voor gebruikers van schermlezers, maar het was nooit bedoeld om onjuiste opmaak en native HTML-oplossingen goed te maken. ARIA heeft veel nuances die, wanneer ze verkeerd worden begrepen, nieuwe toegankelijkheidsbarrières kunnen introduceren. Bovendien hebben verschillende schermlezers verschillende beperkingen met betrekking tot ARIA-ondersteuning.
 
-### The five rules of ARIA
+### De vijf regels van ARIA
 
-There are [five rules of ARIA](https://www.w3.org/TR/using-aria/) that we need to understand before  making use of this powerful toolset. This is not an official specification with required conformance, but a guide for understanding and implementing ARIA correctly.
+Er zijn <a hreflang="en" href="https://www.w3.org/TR/using-aria/">vijf regels van ARIA</a> die we moeten begrijpen voordat we gebruik kunnen maken van deze krachtige hulpmiddelen-set. Dit is geen officiële specificatie met vereiste conformiteit, maar een gids voor het begrijpen en correct implementeren van ARIA.
 
-1. If you can use a native HTML element [HTML 5.1](https://www.w3.org/TR/html51/) or attribute with the semantics and behavior you require already built in, instead of repurposing an element and adding an ARIA role, state or property to make it accessible, then do so.
-2. Do not change native semantics, unless you really have to.
-3. All interactive ARIA controls must be usable with the keyboard.
-4. Do not use `role="presentation"` or `aria-hidden="true"` on a focusable element.
-5. All interactive elements must have an accessible name.
+1. Als u een native HTML-element <a hreflang="en" href="https://www.w3.org/TR/html51/">HTML 5.1</a> of attribuut kunt gebruiken met de semantiek en het gedrag dat u al heeft ingebouwd, in plaats van een element opnieuw te gebruiken en een ARIA toe te voegen rol, staat of eigendom om het toegankelijk te maken, doe dat dan.
+2. Verander de native semantiek niet, tenzij het echt moet.
+3. Alle interactieve ARIA-bedieningselementen moeten met het toetsenbord kunnen worden gebruikt.
+4. Gebruik `role="presentatie"` of `aria-hidden="true"`niet op een focusseerbaar element.
+5. Alle interactieve elementen moeten een toegankelijke naam hebben.
 
-### ARIA roles
+### ARIA-rollen
 
-One of the most common ways that ARIA is used is by explicitly defining the role for an element, which communicates its purpose to assistive technology.
+Een van de meest gebruikelijke manieren waarop ARIA wordt gebruikt, is door de rol van een element expliciet te definiëren, waardoor het doel ervan wordt doorgegeven aan ondersteunende technologie.
 
-HTML5 introduced many new native elements, all which have [implicit semantics](https://www.w3.org/TR/wai-aria-1.1/#implicit_semantics), including roles. For example the `<nav>` element has an implicit `role="navigation"` and does not need to have this role added explicitly in order to convey its purpose information to assistive technology. Currently 64.54% of desktop pages have at least one instance of an ARIA `role` attribute. The median site has 2 instances of the `role` attribute.
+HTML5 introduceerde veel nieuwe native elementen, die allemaal <a hreflang="en" href="https://www.w3.org/TR/wai-aria-1.1/#implicit_semantics">impliciete semantiek</a> hebben, inclusief rollen. Het element `<nav>` heeft bijvoorbeeld een impliciete `role="navigation"` en deze rol hoeft niet expliciet te worden toegevoegd om informatie over het doel over te brengen aan ondersteunende technologie. Momenteel heeft 64,54% van de desktoppagina's ten minste één instantie van een ARIA-`role` -attribuut. De mediaan-site heeft 2 instanties van het kenmerk `role`.
 
 {{ figure_markup(
   image="common-aria-roles.png",
-  caption="Top ten most common ARIA roles.",
-  description="Bar chart showing the top 10 most common ARIA roles on desktop and mobeil with `button` at 25.2% for desktop and 24.5% for mobile, `navigation` at 22.1% and 21.8 respectively, `dialog` at 19.0% and 18.2%, `search` at 17.9% and 17.6%, `presentation` at 17.8% and 16.3%, `main` at 16.0% for both, `banner` at 14.8% for both, `contentinfo` at 12.1% and 11.9%, `img` at 8.5% and 8.0%, and `tablist` at 7.0% and 6.6%.",
+  caption="Top tien meest voorkomende ARIA-rollen.",
+  description="Staafdiagram met de 10 meest voorkomende ARIA-rollen op desktop en mobiel met `button` op 25,2% voor desktop en 24,5% voor mobiel, `navigation` op respectievelijk 22,1% en 21,8, `dialog` op 19,0% en 18,2%, `search` op 17,9% en 17,6%, `presentation` op 17,8% en 16,3%, `main` op 16,0% voor beide, `banner` op 14,8% voor beide, `contentinfo` op 12,1% en 11,9%, `img` op 8,5% en 8,0%, en `tablist` op 7,0% en 6,6%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSjkB_XAYiwkYrMuoXp44mdqMGJVDUkTr_48ELozY72Mdv3OlxeWV9ysbDY9bs6hA7LnJTrHar9aZlM/pubchart?oid=2002759694&format=interactive",
   sheets_gid="39937976",
   sql_file="common_aria_role.sql"
   )
 }}
 
-#### Just use a button!
+#### Gebruik gewoon een knop!
 
-We found that 25.20% of desktop sites and 24.50% of mobile sites had homepages with at least one element with an explicitly assigned `role="button"`. This suggests that about a quarter of websites are using the `button` role on elements in order to change their semantics, with the exception of buttons that have been explicitly assigned the button role, which is redundant but harmless.
+We ontdekten dat 25,20% van de desktopsites en 24,50% van de mobiele sites homepagina's had met ten minste één element met een expliciet toegewezen `role="button"`. Dit suggereert dat ongeveer een kwart van de websites de functie `button` op elementen gebruikt om hun semantiek te wijzigen, met uitzondering van knoppen waaraan expliciet de `button`-rol is toegewezen, die overbodig maar ongevaarlijk is.
 
-If non-interactive elements such as `<div>`s and `<span>`s have been given this role, there is a significant chance one or more of the 5 rules of ARIA have been broken.
+Als niet-interactieve elementen zoals `<div>`s en `<span>`s deze rol hebben gekregen, is de kans groot dat een of meer van de 5 regels van ARIA zijn overtreden.
 
-It is fairly likely that a native `<button>` element would be a better choice, per the first rule of ARIA. It is also possible that the role has been added but the expected keyboard support has not been supplied, which would break the third rule of ARIA and would violate [WCAG 2.1.1, Keyboard](https://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-keyboard-operable.html).
+Het is vrij waarschijnlijk dat een native `<button>` -element een betere keuze zou zijn, volgens de eerste regel van ARIA. Het is ook mogelijk dat de rol is toegevoegd, maar de verwachte toetsenbordondersteuning is niet geleverd, wat de derde regel van ARIA zou overtreden en in strijd zou zijn met <a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-keyboard-operable.html">WCAG 2.1.1, Keyboard</a>.
 
 {{ figure_markup(
-  caption='Mobiles sites assigning `role="button"` to `<div>` or a `<span>`',
-  content="8.28%",
+  caption='Mobiele sites die `role="button"` toewijzen aan `<div>` of een `<span>`',
+  content="8,28%",
   classes="big-number",
   sheets_gid="1693851651",
   sql_file="div_span_with_button_or_link_role.sql"
 ) }}
 
-We found that 8.27% of desktop pages and 8.28% of mobile pages had at least one occurrence of a `<div>` or a `<span>` element with `role="button"` explicitly defined. This act of adding ARIA roles, or a "[role-up](https://adrianroselli.com/2020/02/role-up.html)", is less ideal than using the correct native HTML element.
+We ontdekten dat 8,27% van de desktoppagina's en 8,28% van de mobiele pagina's ten minste één keer een `<div>` of een `<span>` element met `role="button"` expliciet had gedefinieerd. Deze handeling van het toevoegen van ARIA-rollen, of een <a hreflang="en" href="https://adrianroselli.com/2020/02/role-up.html">role-up</a>", is minder ideaal dan het gebruik van het juiste native HTML-element.
 
-We found that 15.50% of desktop pages and 14.62% of mobile pages contained at least one anchor element with `role="button"`. If a role has been applied to an element that should have its implicit role respected, such as giving a `role="button"` to a link (which has an implicit `role="link"`), this would break the second rule of ARIA. It would also violate [WCAG 2.1.1, Keyboard](https://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-keyboard-operable.html) if the correct keyboard behavior has not been implemented (links are not activated with the space key, whereas buttons are).
+We ontdekten dat 15,50% van de desktoppagina's en 14,62% van de mobiele pagina's ten minste één ankerelement bevatten met `role="button"`. Als een rol is toegepast op een element waarvan de impliciete rol moet worden gerespecteerd, zoals het geven van een `role="button"` aan een link (die een impliciete `role="link"` heeft), zou dit de tweede regel van ARIA breken. Het zou ook in strijd zijn met <a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-keyboard-operable.html">WCAG 2.1.1, Keyboard</a> als het juiste toetsenbordgedrag niet is geïmplementeerd (links worden niet geactiveerd met de spatiebalk, terwijl knoppen dat wel zijn).
 
-Again, in the vast majority of these cases, a better pattern than explicitly defining `role="button"` on the element in question would be to leverage the native HTML `<button>` element as it comes with the expected semantics and behavior.
+Nogmaals, in de overgrote meerderheid van deze gevallen zou een beter patroon dan het expliciet definiëren van `role="button"` voor het element in kwestie zijn om gebruik te maken van het native HTML `<button>` -element, aangezien dit wordt geleverd met de verwachte semantiek en gedrag. .
 
-#### Navigation
+#### Navigatie
 
-We found that 22.06% of desktop pages and 21.76% of mobile pages have at least one element with `role="navigation"`, which is a landmark role. Per the first rule of ARIA, rather than adding this role to an element, developers should be leveraging the HTML5 `<nav>` element which comes with the correct semantics implicitly. It is possible that this role has been added explicitly to the `<nav>` element, which would not be an accessibility issue, though it is redundant.
+We ontdekten dat 22,06% van de desktoppagina's en 21,76% van de mobiele pagina's ten minste één element heeft met `role="navigation"`, wat een belangrijke rol is. Volgens de eerste regel van ARIA zouden ontwikkelaars, in plaats van deze rol aan een element toe te voegen, het HTML5 `<nav>` -element moeten gebruiken dat impliciet met de juiste semantiek wordt geleverd. Het is mogelijk dat deze rol expliciet is toegevoegd aan het `<nav>` -element, wat geen toegankelijkheidsprobleem zou zijn, hoewel het overtollig is.
 
-#### Dialog modals
+#### Dialoogmodalen
 
-There are many potential accessibility barriers associated with dialog modals. We recommend reading <[Scott O'Hara](https://twitter.com/scottohara)'s article [Having an Open Dialog](https://www.scottohara.me/blog/2019/03/05/open-dialog.html) for more context.
+Er zijn veel potentiële toegankelijkheidsbelemmeringen verbonden aan dialoogmodalen. We raden aan om het artikel van <<a hreflang="en" href="https://twitter.com/scottohara">Scott O'Hara</a> <a hreflang="en" href="https://www.scottohara.me/blog/2019/03/05/open-dialog.html">Having an Open Dialog</a>te lezen voor meer context.
 
-We are pleased to report that 19.01% of desktop pages and 18.21% of mobile pages have at least one occurrence of `role="dialog"` which is up from about 8% in 2019. It is worth noting some of the increase is probably due to changes in how this metric was measured. This could also suggest that more developers are considering accessibility when building dialogs and potentially that frameworks and associated packages may be implementing more accessible dialog patterns as well. However, making a dialog modal accessible requires a lot more than using the `dialog` role. Focus management, proper keyboard support, and screen reader exposure all need to be addressed.
+We zijn verheugd te kunnen melden dat 19,01% van de desktoppagina's en 18,21% van de mobiele pagina's minstens één keer `role="dialog"` heeft, wat een stijging is van ongeveer 8% in 2019. Het is vermeldenswaard dat een deel van de toename waarschijnlijk te wijten is aan veranderingen in de manier waarop deze statistiek werd gemeten. Dit zou ook kunnen suggereren dat meer ontwikkelaars toegankelijkheid overwegen bij het bouwen van dialogen en mogelijk dat frameworks en bijbehorende pakketten mogelijk ook meer toegankelijke dialoogpatronen implementeren. Het toegankelijk maken van een dialoogmodaal vereist echter veel meer dan het gebruik van de `dialog` rol. Focusbeheer, goede toetsenbordondersteuning en belichting van de schermlezer moeten allemaal worden aangepakt.
 
-#### Tabs
+#### Tabbladen
 
-Tabs are a common interface widget but present a challenge for many developers to make accessible. A common pattern for accessible implementation comes from  the [WAI-ARIA Authoring Practices Design Patterns](https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel). Please note that the ARIA Authoring Practices document is not a specification and is meant to show idealized ARIA constructs. They should not be used in production without testing with your users.
+Tabbladen zijn een veelgebruikte interface-widget, maar vormen voor veel ontwikkelaars een uitdaging om toegankelijk te maken. Een algemeen patroon voor toegankelijke implementatie komt van de <a hreflang="en" href="https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel"><span lang="en">WAI-ARIA Authoring Practices Design Patterns</span></a>. Houd er rekening mee dat het ARIA Authoring Practices-document geen specificatie is en bedoeld is om geïdealiseerde ARIA-constructies te tonen. Ze mogen niet in productie worden gebruikt zonder testen met uw gebruikers.
 
-In this pattern, a parent container has a `role="tablist"` with children elements that have a `role="tab"`. These tabs are associated with elements that have a `role="tabpanel"`, and contain the content for that tab.
+In dit patroon heeft een bovenliggende container een `role="tablist"` met onderliggende elementen die een `role="tab"` hebben. Deze tabbladen zijn gekoppeld aan elementen die een `role="tabpanel"` hebben, en bevatten de inhoud voor dat tabblad.
 
 {{ figure_markup(
   image="role-tab-list.png",
-  alt="Element with the tablist role",
-  caption='Element with the `tablist` role ([Source: W3C](https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html))',
-  description='Screenshot showing an example tablist (`role="tablist"`) which contains three tabs. All three tabs are highlighted.',
+  alt="Element met de rol `tablist`",
+  caption='Element met de rol `tablist` (<a hreflang="en" href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html">Bron: W3C</a>)',
+  description='Schermafbeelding met een voorbeeld van een tablijst (`role="tablist"`) die drie tabbladen bevat. Alle drie de tabbladen zijn gemarkeerd.',
   width=348,
   height=337
 ) }}
 
 {{ figure_markup(
   image="role-tab.png",
-  alt="Element with the tab role",
-  caption='Element with the `tab` role. ([Source: W3C](https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html))',
-  description='Screenshot showing an example tab (`role="tab"`) where only one tab is highlighted.',
+  alt="Element met de rol `tab`",
+  caption='Element met de rol `tab`. (<a hreflang="en" href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html">Bron: W3C</a>)',
+  description='Schermafbeelding met een voorbeeldtabblad (`role="tab"`) waar slechts één tabblad is gemarkeerd.',
   width=346,
   height=335
 ) }}
 
 {{ figure_markup(
   image="role-tab-panel.png",
-  alt="Element with the tabpanel role",
-  caption='Element with the `tabpanel` role. ([Source: W3C](https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html))',
-  description='Screenshot showing an example tabpanel tab panel (`role="tabpanel"`) where the content of one one tab is highlighted.',
+  alt="Element met de rol `tabpanel`",
+  caption='Element met de rol `tabpanel`. (<a hreflang="en" href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html">Bron: W3C</a>)',
+  description='Schermafbeelding met een voorbeeld van een tabpanel (`role=" tabpanel"`) waar de inhoud van één tabblad is gemarkeerd.',
   width=346,
   height=335
 ) }}
 
-For desktop pages, 7.00% have at least one element with a `role="tablist"` whereas there only 5.79% of pages have elements with a `role="tab"` and 5.46% of pages have elements with a `role="tabpanel"`. This suggests that the pattern may only be partially implemented. Even if there is dynamic rendering at play for some of the tab/tabpanel elements, the currently visible or first tab/tabpanel would theoretically be in the DOM on page load.
+Voor desktoppagina's heeft 7,00% ten minste één element met een `role="tablist"`, terwijl er slechts 5,79% van de pagina's elementen heeft met een `role="tab"` en 5,46% van de pagina's elementen met een `role="tabpanel"`. Dit suggereert dat het patroon mogelijk slechts gedeeltelijk wordt geïmplementeerd. Zelfs als er een dynamische weergave in het spel is voor sommige van de tab/tabpanel-elementen, zou het momenteel zichtbare of eerste tab/tabpanel theoretisch in de DOM staan bij het laden van de pagina.
 
-#### Presentation
+#### Presentatie
 
-When an element has been given a `role="presentation"` its semantics are stripped away, for both the element it is assigned to and its required children. For example, tables and lists both have required children, so if the parent has a `role="presentation"` this essentially cascades to the child elements, which will also have their semantics stripped. Removing an element's semantics means that it is no longer that element in any capacity except for its visual appearance. For example, a list with a `role="presentation"` will no longer communicate any information to a screen reader about the list structure.
+Wanneer een element een `role="presentation"` heeft gekregen, wordt de semantiek verwijderd, zowel voor het element waaraan het is toegewezen als voor de vereiste onderliggende elementen. Tabellen en lijsten hebben bijvoorbeeld beide vereiste kinderen, dus als de ouder een `role="presentation"` heeft, loopt dit in wezen over naar de onderliggende elementen, waarvan ook de semantiek wordt verwijderd. Het verwijderen van de semantiek van een element betekent dat het niet langer dat element is, in welke hoedanigheid dan ook, behalve zijn visuele uiterlijk. Een lijst met een `role="presentation"` zal bijvoorbeeld geen informatie meer verstrekken aan een schermlezer over de lijststructuur.
 
-A common usage of this attribute is for `<table>` elements that have been used for layout rather than  for tabular data. We do not recommend using tables in this way. For layout, we have powerful CSS tools today such as Flexbox and CSS Grid. In general there are very few use cases where `role="presentation"` is particularly helpful for assistive technology users, use this role sparingly and thoughtfully.
+Dit kenmerk wordt vaak gebruikt voor `<table>` -elementen die zijn gebruikt voor lay-out in plaats van voor tabelgegevens. We raden af om tabellen op deze manier te gebruiken. Voor de lay-out hebben we tegenwoordig krachtige CSS-hulpmiddelen, zoals Flexbox en CSS Grid. Over het algemeen zijn er maar weinig gevallen waarin `role="presentation"` met name nuttig is voor gebruikers van ondersteunende technologie, gebruik deze rol spaarzaam en bedachtzaam.
 
-### ARIA attributes
+### ARIA-attributen
 
-ARIA attributes can be assigned to HTML elements to enhance the accessibility of the interface. Respecting the first rule of ARIA, they should not be used to achieve something that can be done with native HTML.
+ARIA-attributen kunnen aan HTML-elementen worden toegewezen om de toegankelijkheid van de interface te verbeteren. Met respect voor de eerste regel van ARIA, mogen ze niet worden gebruikt om iets te bereiken dat kan worden gedaan met native HTML.
 
 {{ figure_markup(
   image="most-used-aria-attributes.png",
-  alt="Top 10 most used aria attributes.",
-  caption="Top 10 most used `aria` attributes.",
-  description="Bar chart showing the top 10 `aria` attributes use on desktop and mobile showing `aria-hidden` used by 48.1% desktop sites and 48.2% mobile sites, `aria-label` is used by 40.4% and 38.7% respectively, `aria-expanded` by 21.0% and 21.0%, `aria-controls` by 17.4% and 16.9%, `aria-labelledby` by 17.7% and 16.2%, `aria-live` by 16.8% and 15.7%, `aria-haspopup` by 15.9% and 14.0%, `aria-current` by 12.4% and 12.7%, and `aria-describedby` by 11.3% and 10.6%.",
+  alt="Top 10 meest gebruikte `aria` attributen.",
+  caption="Top 10 meest gebruikte `aria` attributen.",
+  description="Staafdiagram met de top 10 van `aria`-attributen die worden gebruikt op desktop en mobiel, me `aria-hidden` gebruikt door 48,1% desktopsites en 48,2% mobiele sites, `aria-label` wordt gebruikt door respectievelijk 40,4% en 38,7%, `aria-expanded` met 21,0% en 21,0%, `aria-controls` met 17,4% en 16,9%, `aria-labelledby` met 17,7% en 16,2%, `aria-live` met 16,8% en 15,7%, `aria-haspopup` met 15,9% en 14,0%, `aria-current` met 12,4% en 12,7%, en `aria-describedby` met 11,3% en 10,6%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSjkB_XAYiwkYrMuoXp44mdqMGJVDUkTr_48ELozY72Mdv3OlxeWV9ysbDY9bs6hA7LnJTrHar9aZlM/pubchart?oid=332801232&format=interactive",
   sql_file="common_element_attributes.sql"
   )
 }}
 
-#### Labeling and describing elements with ARIA
+#### Elementen labelen en beschrijven met ARIA
 
-The browser's accessibility tree has a computation system that assigns the accessible name (if there is one) to a control, widget, group, or landmark such that it can be announced by assistive technology. There is a specificity ranking that happens to determine which value is assigned to the accessible name.
+De toegankelijkheidsboom van de browser heeft een berekeningssysteem dat de toegankelijke naam (als die er is) toewijst aan een besturingselement, widget, groep of herkenningspunt, zodat deze kan worden aangekondigd door ondersteunende technologie. Er is een specificiteitsclassificatie die bepaalt welke waarde wordt toegewezen aan de toegankelijke naam.
 
-The accessible name can be derived from an element's content (such as button text), an attribute (such as an image `alt` text value), or an associated element (such as a programmatically associated label for a form control. For more information about accessible names see Léonie Watson's article, [What is an accessible name?](https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/)
+De toegankelijke naam kan worden afgeleid van de inhoud van een element (zoals knoptekst), een attribuut (zoals een afbeelding `alt`-tekstwaarde) of een bijbehorend element (zoals een programmatisch gekoppeld label voor een formulierbesturingselement). Voor meer informatie over toegankelijke namen, zie het artikel van Léonie Watson, <a hreflang="en" href="https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/">Wat is een toegankelijke naam?</a>
 
-We can also use ARIA to provide accessible names for elements. There are two ARIA attributes that accomplish this, [aria-label](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA14.html), [aria-labelledby](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA16.html). Either of these attributes will "win" the accessible name computation and override the natively derived accessible name, so use them with caution and be sure to test with a screen reader or look at the accessibility tree to confirm that the accessible name is what was expected. When using ARIA to name an element, it is important to ensure that the [WCAG 2.5.3, Label in Name](https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html) criterion has not been violated, which expects visible labels to be at least a part of its accessible name.
+We kunnen ARIA ook gebruiken om toegankelijke namen voor elementen op te geven. Er zijn twee ARIA-attributen die dit bewerkstelligen, <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA14.html">`aria-label`</a>, <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA16.html">`aria-labelledby`</a>. Elk van deze kenmerken zal de berekening van de toegankelijke naam "winnen" en de native afgeleide toegankelijke naam overschrijven, dus gebruik ze met de nodige voorzichtigheid en zorg ervoor dat u test met een schermlezer of bekijk de toegankelijkheidsboom om te bevestigen dat de toegankelijke naam is wat werd verwacht. Wanneer u ARIA gebruikt om een element een naam te geven, is het belangrijk om ervoor te zorgen dat de <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html">WCAG 2.5.3, <span lang="en">Label in Name</span></a> criterium niet geschonden is, dat verwacht dat zichtbare labels ten minste een deel van de toegankelijke naam zijn.
 
-The `aria-label` element allows a developer to provide a string value and this will be used for the accessible name for the element. We found that 40.44% of desktop pages and 38.72% of mobile home pages had at least one element with the `aria-label` attribute, making it the most popular ARIA attribute for providing accessible names.
+Met het `aria-label` -element kan een ontwikkelaar een tekenreekswaarde opgeven en deze wordt gebruikt voor de toegankelijke naam voor het element. We ontdekten dat 40,44% van de desktoppagina's en 38,72% van de mobiele homepagina's ten minste één element had met het kenmerk `aria-label`, waardoor dit het meest populaire ARIA-kenmerk is voor het verstrekken van toegankelijke namen.
 
-The `aria-labelledby` attribute accepts an `id` reference as its value, which associates it with another element in the interface to provide its accessible name. The element becomes "labelled by" this other element which supplies its accessible name. We found that 17.73% of desktop pages and 16.21% of mobile pages had at least one element with the `aria-labelledby` attribute.
+Het `aria-labelledby` attribuut accepteert een `id` referentie als zijn waarde, die het associeert met een ander element in de interface om zijn toegankelijke naam te geven. Het element wordt "gelabeld door" dit andere element dat zijn toegankelijke naam geeft. We ontdekten dat 17,73% van de desktoppagina's en 16,21% van de mobiele pagina's ten minste één element had met het kenmerk `aria-labelledby`.
 
-Again, the first rule of ARIA should be respected. If the element can derive its accessible name without needing ARIA, this is preferable. For example a `<button>`, which is not a graphical element, should get its accessible name from its text content rather than an ARIA attribute. Form elements should derive their accessible names from properly associated `<label>` elements whenever possible.
+Nogmaals, de eerste regel van ARIA moet worden gerespecteerd. Als het element zijn toegankelijke naam kan ontlenen zonder ARIA nodig te hebben, verdient dit de voorkeur. Een `<button>`, dat geen grafisch element is, zou bijvoorbeeld zijn toegankelijke naam uit zijn tekst inhoud moeten halen in plaats van een ARIA-attribuut. Formulierelementen moeten waar mogelijk hun toegankelijke namen ontlenen aan correct geassocieerde `<label>` -elementen.
 
-The [`aria-describedby`](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA1.html) attribute can be used in cases where a more robust description is needed for an element. It also accepts an `id` reference as its value to connect with descriptive text that exists elsewhere in the interface. It does not supply the accessible name, it should be used in conjunction with an accessible name as a supplement, not a replacement. We found that 11.31% of desktop pages and 10.56% of mobile pages had at least one element with the `aria-describedby` attribute.
+Het <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA1.html">`aria-describedby`</a> attribuut kan gebruikt worden in gevallen waar een meer robuuste beschrijving nodig is voor een element. Het accepteert ook een `id`-referentie als zijn waarde om verbinding te maken met beschrijvende tekst die elders in de interface voorkomt. Het bevat niet de toegankelijke naam, het moet worden gebruikt in combinatie met een toegankelijke naam als aanvulling, niet als vervanging. We ontdekten dat 11,31% van de desktoppagina's en 10,56% van de mobiele pagina's ten minste één element had met het kenmerk `aria-describedby`.
 
-**Fun fact!** We found 3,200 websites with the attribute **aria-labeledby**, which is a misspelling of the `aria-labelledby` attribute! Be sure to run those automated checks to pick up these easily avoidable errors.
+**Leuk feit!** We hebben 3.200 websites gevonden met het attribuut **aria-labeledby**, wat een verkeerde spelling is van het attribuut `aria-labelledby`! Zorg ervoor dat u die geautomatiseerde controles uitvoert om deze gemakkelijk te vermijden fouten op te sporen.
 
-#### Hiding content
+#### Inhoud verbergen
 
-There are several ways to ensure that assistive technology will not discover content. We can leverage CSS `display:none`; or `visibility:hidden;` to omit the elements from the accessibility tree. If an author wishes to hide content from screen readers specifically they can use `aria-hidden="true"`. We found that 48.09% of desktop pages and 48.23% of mobile pages had at least one instance of an element with the `aria-hidden` attribute.
+Er zijn verschillende manieren om ervoor te zorgen dat ondersteunende technologie geen inhoud ontdekt. We kunnen gebruik maken van CSS `display:none` of `visibility:hidden` om de elementen uit de toegankelijkheidsstructuur weg te laten. Als een auteur inhoud specifiek voor schermlezers wil verbergen, kunnen ze `aria-hidden="true"` gebruiken. We ontdekten dat 48,09% van de desktoppagina's en 48,23% van de mobiele pagina's ten minste één instantie van een element met het attribuut `aria-hidden` had.
 
-These techniques are particularly helpful when something in the visual interface is redundant or unhelpful to assistive technology users. It should be used thoughtfully as it is essential to deliver feature parity for all users. Avoid using it to skip over content that is challenging to make accessible.
+Deze technieken zijn vooral nuttig wanneer iets in de visuele interface overbodig of niet nuttig is voor gebruikers van ondersteunende technologie. Het moet zorgvuldig worden gebruikt, omdat het essentieel is om alle gebruikers pariteit te bieden. Gebruik het niet om inhoud over te slaan die moeilijk toegankelijk is.
 
-Hiding and showing content is a prevalent pattern in modern interfaces, and it can be helpful to declutter the UI for everyone. There are two ARIA attributes that are helpful additions to this disclosure pattern. The `aria-expanded` attribute should have a `true`/`false` value that toggles depending on whether the disclosed content is shown or not. Additionally the `aria-controls` attribute can be associated with an `id` on the disclosed content creating a programmatic relationship between the triggering control (which should be a button) and the content that gets displayed.
+Het verbergen en weergeven van inhoud is een veel voorkomend patroon in moderne interfaces en het kan nuttig zijn om de gebruikersinterface voor iedereen overzichtelijk te houden. Er zijn twee ARIA-attributen die nuttige toevoegingen zijn aan dit openbaarmakingspatroon. Het attribuut `aria-expanded` moet een `true`/`false` waarde hebben die wisselt afhankelijk van of de onthulde inhoud wordt weergegeven of niet. Bovendien kan het attribuut `aria-controls` worden geassocieerd met een `id` op de onthulde inhoud, waardoor een programmatische relatie ontstaat tussen de activerende controle (die een knop zou moeten zijn) en de inhoud die wordt weergegeven.
 
-We found that 20.98% of desktop pages and 21.00% of mobile pages had at least one element with the `aria-expanded` attribute and 17.38% of desktop pages and 16.94% of mobile pages had at least one element with the `aria-controls` attribute. This suggests that around one fifth of websites might be implementing at least partially accessible disclosure widgets. Note that the `aria-controls` attribute is considered a best practice, rather than essential, for the disclosure pattern because screen reader support is not yet ideal.
+We ontdekten dat 20,98% van de desktoppagina's en 21,00% van de mobiele pagina's ten minste één element had met het kenmerk `aria-expanded` en 17,38% van de desktoppagina's en 16,94% van de mobiele pagina's ten minste één element met de `aria-controls` attribuut. Dit suggereert dat ongeveer een vijfde van de websites mogelijk ten minste gedeeltelijk toegankelijke widgets voor openbaarmaking implementeert. Merk op dat het attribuut `aria-controls` eerder als beste praktijk dan als essentieel wordt beschouwd voor het openbaarmakingspatroon, omdat ondersteuning voor schermlezers nog niet ideaal is.
 
-#### Screen reader only text
+#### Alleen tekst voor schermlezer
 
-A common technique that developers often employ to supply additional information for screen reader users is to use CSS to visually hide a passage of text such that it will be announced by a screen reader, but not visually present in the interface. Since `display:none` and `visibility:hidden` both prevent content from being present in the accessibility tree, there is a common "hack" involving a chunk of CSS code that will accomplish this. The most common CSS class names for this code snippet (both by convention and throughout libraries like bootstrap) are `sr-only` and `visually-hidden`. We found that 13.31% of desktop pages and 12.37% of mobile pages had one or both of these CSS class names.
+Een veelgebruikte techniek die ontwikkelaars vaak gebruiken om aanvullende informatie voor gebruikers van schermlezers te leveren, is door CSS te gebruiken om een tekstpassage visueel te verbergen, zodat deze wordt aangekondigd door een schermlezer, maar niet visueel in de interface. Aangezien `display: none` en `visibility: hidden` beide voorkomen dat inhoud aanwezig is in de toegankelijkheidsboom, is er een algemene "hack" met een stuk CSS-code die dit zal bewerkstelligen. De meest voorkomende CSS-klassenamen voor dit codefragment (zowel volgens afspraak als in alle bibliotheken zoals bootstrap) zijn `sr-only` en `visually-hidden`. We ontdekten dat 13,31% van de desktoppagina's en 12,37% van de mobiele pagina's een of beide CSS-klassenamen had.
 
-#### Announcing dynamically rendered content
+#### Dynamisch weergegeven inhoud aankondigen
 
-One of the biggest accessibility challenges in modern web development is handling dynamically rendered content which is everywhere in interfaces. The presence of new or updated things in the DOM often needs to be communicated to screen readers. Some thought needs to be put into which updates need to be conveyed. For example, form validation errors need to be conveyed whereas a lazy-loaded image may not. There also needs to be done in a way that is not disruptive to a task in progress.
+Een van de grootste uitdagingen op het gebied van toegankelijkheid in moderne webontwikkeling is het omgaan met dynamisch weergegeven inhoud die overal in interfaces aanwezig is. De aanwezigheid van nieuwe of bijgewerkte zaken in de DOM moet vaak worden gecommuniceerd naar schermlezers. Er moet worden nagedacht over welke updates moeten worden overgebracht. Formuliervalidatiefouten moeten bijvoorbeeld worden overgebracht, terwijl een lui geladen afbeelding dat misschien niet is. Er moet ook iets worden gedaan op een manier die niet storend is voor een lopende taak.
 
-One tool we have to help with this is ARIA live regions. Live regions allow us to listen for changes in the DOM, such that the updated content can be announced by a screen reader. Typically the `aria-live` attribute is placed on its own container element that is already present in the DOM rather than an element that is dynamically rendered. It is important to determine a dedicated node in the DOM that has no chance of being dynamically manipulated by other factors for the live region, ensuring that the announcements are reliable. When elements within this container dynamically render or update (for example, status updates or notification that a form was not successfully submitted) the changes will be announced.
+Een hulpmidel die we hierbij moeten helpen, zijn ARIA live-regio's. Live-regio's stellen ons in staat te luisteren naar wijzigingen in de DOM, zodat de bijgewerkte inhoud kan worden aangekondigd door een schermlezer. Typisch wordt het attribuut `aria-live` op zijn eigen containerelement geplaatst dat al in de DOM aanwezig is, in plaats van een element dat dynamisch wordt weergegeven. Het is belangrijk om een speciaal knooppunt in de DOM te bepalen dat geen kans heeft om dynamisch te worden gemanipuleerd door andere factoren voor de live-regio, zodat de aankondigingen betrouwbaar zijn. Wanneer elementen in deze container dynamisch worden weergegeven of bijgewerkt (bijvoorbeeld statusupdates of melding dat een formulier niet succesvol is ingediend), worden de wijzigingen aangekondigd.
 
-We found that 16.84% of desktop pages and 15.67% of mobile pages have live regions. This attribute has three potential values: `polite`, `assertive`, and `off`. Typically the `polite` value is used, partly because it is the default value, but also because the announcement of the dynamic content will only happen once the user stops interacting with the page. In many cases this is the desired user experience, rather than interrupting their input. If a status update is critical enough, use `assertive` and it  will disrupt the screen reader's current speech queue. If it is set to `off` the announcement will not happen. It is important that the natural screen reader experience and flow be respected and that the `assertive` announcements be reserved for extreme cases, and not used for things like marketing announcements.
+We ontdekten dat 16,84% van de desktoppagina's en 15,67% van de mobiele pagina's live-regio's heeft. Dit attribuut heeft drie mogelijke waarden: `polite`, `assertive`, en `off`. Meestal wordt de `polite` waarde gebruikt, deels omdat dit de standaardwaarde is, maar ook omdat de aankondiging van de dynamische inhoud pas zal plaatsvinden als de gebruiker stopt met communiceren met de pagina. In veel gevallen is dit de gewenste gebruikerservaring, in plaats van hun invoer te onderbreken. Als een statusupdate kritisch genoeg is, gebruik dan `assertive` en het verstoort de huidige spraakwachtrij van de schermlezer. Als het is ingesteld op `off`, zal de aankondiging niet plaatsvinden. Het is belangrijk dat de natuurlijke ervaring en flow van de schermlezer worden gerespecteerd en dat de `assertive` aankondigingen worden gereserveerd voor extreme gevallen en niet worden gebruikt voor zaken als marketingaankondigingen.
 
-## Accessibility of form controls
+## Toegankelijkheid van formulierbesturingselementen
 
-Forms are one of the most important things to get right in terms of accessibility. Successful submission of form input means users can perform core operations of websites and applications. For example if a registration flow is inaccessible, a disabled user might never be able to access the site at all.
+Formulieren zijn een van de belangrijkste dingen om goed te doen in termen van toegankelijkheid. Succesvolle indiening van formulierinvoer betekent dat gebruikers de kernactiviteiten van websites en applicaties kunnen uitvoeren. Als een registratiestroom bijvoorbeeld niet toegankelijk is, kan een gehandicapte gebruiker helemaal nooit toegang krijgen tot de site.
 
-It is important to remember that digital accessibility is a civil right and that all people have an equal right to access information and perform the same functions on the web. If a disabled user is prevented from executing core web tasks or accessing information, especially for tasks like submitting forms for government services and other essential activities, there is a clear-cut case for discrimination in both private and public sectors.
+Het is belangrijk om te onthouden dat digitale toegankelijkheid een burgerrecht is en dat alle mensen hetzelfde recht hebben op toegang tot informatie en op dezelfde functies op internet. Als een gehandicapte gebruiker wordt belet kerntaken op het web uit te voeren of toegang te krijgen tot informatie, met name voor taken als het indienen van formulieren voor overheidsdiensten en andere essentiële activiteiten, is er een duidelijk argument voor discriminatie in zowel de private als de publieke sector.
 
-### Form validation
+### Formulier validatie
 
-It is very important that any form error handling be communicated to assistive technology. There are a variety of techniques for handling this depending on the validation implementation. Web AIM's [Usable and Accessible Form Validation and Error Recovery](https://webaim.org/techniques/formvalidation/) article is a great resource for learning more about various accessible form validation strategies.
+Het is erg belangrijk dat elke afhandeling van formulierfouten wordt doorgegeven aan ondersteunende technologie. Afhankelijk van de validatie-implementatie zijn er verschillende technieken om hiermee om te gaan. Het artikel van Web AIM <a hreflang="en" href="https://webaim.org/techniques/formvalidation/"><span lang="en">Usable and Accessible Form Validation and Error Recovery</span></a> is een geweldige bron voor meer informatie over verschillende strategieën voor toegankelijke formuliervalidatie.
 
-If a form element is required this also needs to be communicated to assistive technology. For native HTML form elements the [`required` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required) can be used and for customized elements the [`aria-required`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-required_attribute) attribute may be needed. If there is an issue with a form submission, this needs to be conveyed to assistive technology.
+Als een formulierelement vereist is, moet dit ook worden gecommuniceerd naar ondersteunende technologie. Voor native HTML-formulierelementen kan het [`required` attribuut](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required) worden gebruikt en voor aangepaste elementen kan het [`aria-required`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-required_attribute) attribuut nodig zijn. Als er een probleem is met het indienen van een formulier, moet dit worden doorgegeven aan ondersteunende technologie.
 
-### Form labels
+### Formulierlabels
 
-Form labels should be visible and persistent in the UI and descriptive of the input they are asking for. It's a good idea to put unique requirements such as formatting or special characters in the visible label so that errors can be prevented whenever possible.
+Formulierlabels moeten zichtbaar en persistent zijn in de gebruikersinterface en een beschrijving geven van de invoer waar ze om vragen. Het is een goed idee om unieke vereisten, zoals opmaak of speciale tekens, in het zichtbare label te plaatsen, zodat fouten zoveel mogelijk kunnen worden voorkomen.
 
 {{ figure_markup(
-  caption='Sites having all their labels properly associated',
-  content="26.51%",
+  caption='Sites waarop al hun labels correct zijn gekoppeld',
+  content="26,51%",
   classes="big-number",
   sheets_gid="1067352317",
   sql_file="form_labels.sql"
 ) }}
 
-It is important to ensure that form labels have a programmatic association with their respective inputs. It is not sufficient to just display the label visually. We found that only 26.51% of sites have all of their labels properly associated with their respective inputs (achieved with a `for`/`id` relationship or inputs nested inside labels).
+Het is belangrijk ervoor te zorgen dat formulierlabels een programmatische koppeling hebben met hun respectievelijke invoer. Het is niet voldoende om het label alleen visueel weer te geven. We ontdekten dat slechts 26,51% van de sites al hun labels correct heeft gekoppeld aan hun respectievelijke invoer (bereikt met een `for`/`id` relatie of invoer genest in labels).
 
-Groups of form controls such as a set of radio inputs or checkboxes should be nested within a `<fieldset>` element and given a group label via the `<legend>` element within the `<fieldset>`. The individual controls still need to be programmatically associated with their respective visible labels as well.
+Groepen formulierbesturingen zoals een set van radio-inputs of selectievakjes moeten worden genest in een `<fieldset>` -element en een groepslabel krijgen via het `<legend>` -element binnen het `<fieldset>`. De afzonderlijke besturingselementen moeten nog steeds programmatisch worden gekoppeld aan hun respectieve zichtbare labels.
 
-### Placeholder text
+### plaatsaanduidingstekst
 
-Do not rely on placeholder text to act as the label for an input. While some screen readers now have the capability of determining the accessible name from placeholder text, users with cognitive disabilities can be negatively impacted by a reliance on placeholder text because as soon as a user begins to type in the input the placeholder disappears, and the context is gone. Voice control users need more than a placeholder value in order to reliably target an element in the DOM. Additionally placeholder text often fails color contrast requirements, which negatively impacts users with low vision.
+Vertrouw niet op plaatsaanduidingstekst om als label voor een invoer te dienen. Hoewel sommige schermlezers nu de mogelijkheid hebben om de toegankelijke naam te bepalen uit plaatsaanduidingstekst, kunnen gebruikers met cognitieve handicaps negatief worden beïnvloed door te vertrouwen op plaatsaanduidingstekst, omdat zodra een gebruiker de invoer begint te typen, de plaatsaanduiding verdwijnt en de context weg is. Gebruikers van spraakbesturing hebben meer dan een tijdelijke aanduiding nodig om op betrouwbare wijze een element in de DOM te targeten. Bovendien voldoet plaatsaanduidingstekst vaak niet aan de vereisten voor kleurcontrast, wat een negatief effect heeft op gebruikers met slechtziendheid.
 
-Of the sites that have form controls with placeholder text, 73.89% of them have at least one instance where there is no `<label>` element programmatically associated with the control for desktop and 74.52% for mobile.
+Van de sites die formulierbesturingselementen met plaatsaanduidingstekst hebben, heeft 73,89% ten minste één instantie waarbij er geen `<label>` - element programmatisch is gekoppeld aan het besturingselement voor desktop en 74,52% voor mobiel.
 
-## Conclusion
+## Conclusie
 
-This chapter is fittingly included in the User Experience section of this Almanac. As accessibility advocate [Billy Gregory once said](https://twitter.com/thebillygregory/status/552466012713783297?s=20), "when UX doesn't consider ALL users, shouldn't it be known as SOME User Experience, or SUX". Too often accessibility work is seen as an addition, an edge case, or even comparable to technical debt and not core to the success of a website or product as it should be.
+Dit hoofdstuk is passend opgenomen in het gedeelte Gebruikerservaring van deze Almanak. Zoals voorstander van toegankelijkheid <a hreflang="en" href="https://twitter.com/thebillygregory/status/552466012713783297?s=20">Billy Gregory ooit zei</a>, "als UX niet naar ALLE gebruikers kijkt, zou het dan niet bekend moeten staan als SOMMIGE gebruikerservaring, of SUX ". Te vaak wordt toegankelijkheidswerk gezien als een toevoeging, een edge case, of zelfs vergelijkbaar met technische schuld en niet de kern van het succes van een website of product zoals het hoort.
 
-Accessibility is not the sole responsibility of developers to implement. The entire product team and organization have to have it as part of their accountabilities in order to succeed. Accessibility work needs to shift left in the product cycle, meaning it needs to be baked into the research, ideation and design stages before it is developed.
+Toegankelijkheid is niet de exclusieve verantwoordelijkheid van ontwikkelaars om te implementeren. Het hele productteam en de hele organisatie moeten het als onderdeel van hun verantwoordelijkheid hebben om te slagen. Toegankelijkheidswerk moet naar links in de productcyclus verschuiven, wat betekent dat het moet worden ingebakken in de onderzoeks-, ideevormings- en ontwerpfasen voordat het wordt ontwikkeld.
 
-### Potential accessibility responsibilities by role
+### Mogelijke toegankelijkheidsverantwoordelijkheden per rol
 
-This list is not exhaustive and is intended to encourage thought about how all of the roles can work together to achieve accessible websites and applications, like a relay race of accountability.
+Deze lijst is niet uitputtend en is bedoeld om aan te moedigen na te denken over hoe alle rollen kunnen samenwerken om toegankelijke websites en applicaties te realiseren, zoals een estafette van verantwoording.
 
 **Human Resources/People Operations**
-  - Recruiting and hiring people with accessibility skills including disabled practitioners.
-  - Creating an inclusive work environment where people's disabilities are accommodated.
+  - Werven en aannemen van mensen met toegankelijkheidsvaardigheden, waaronder mensen met een handicap.
+  - Een inclusieve werkomgeving creëren waarin rekening wordt gehouden met de handicaps van mensen.
 
-**UX /Product designers**
-  - Considering and talking to people with a range of disabilities in the research and ideation stages.
-  - Annotating wireframes with accessibility information such as intended heading hierarchy, skip links, alternative text suggestions (which could also come from copywriters/content folks) and screen reader only text.
+**UX /Productontwerpers**
+  - Overwegen van en praten met mensen met een scala aan handicaps in de onderzoeks- en ideevormingsfase.
+  - Annoteren van wireframes met toegankelijkheidsinformatie, zoals de beoogde hiërarchie van koppen, skip-links, alternatieve tekstsuggesties (die ook van copywriters/inhoudsmensen kunnen komen) en alleen tekst voor schermlezers.
 
-**UI designers**
-  - Color contrast choices, font selections, spacing and line height considerations.
-  - Animation considerations (determining if they are necessary, supplying static assets for [`prefers-reduced-motion`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) scenarios, designing pause/stop mechanisms).
+**UI ontwerpers**
+  - Keuzes voor kleurcontrast, lettertypeselecties, overwegingen tussen spatiëring en regelhoogte.
+  - Overwegingen bij animaties (bepalen of ze nodig zijn, statische items aanleveren voor [`prefers-reduced-motion`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) scenario's, het ontwerpen van pauze/stop-mechanismen).
 
-**Product managers**
-  - Prioritizing accessibility work in the roadmap, ensuring it does not become technical debt at the end of a backlog.
-  - Creating processes for teams to validate their work such as including accessibility in the definition of done and acceptance criteria.
+**Productmanagers**
+  - Prioriteer toegankelijkheidswerk in de roadmap, zodat het geen technische schuld wordt aan het einde van een achterstand.
+  - Processen creëren voor teams om hun werk te valideren, zoals toegankelijkheid opnemen in de definitie van gedaan en acceptatiecriteria.
 
-**Developers**
-  - Preferring native HTML solutions whenever possible, understanding ARIA and when to use it.
-  - Validating all work with automated and manual testing, evaluating colleagues' pull requests with the same criteria.
+**Ontwikkelaars**
+  - Waar mogelijk de voorkeur geven aan native HTML-oplossingen, ARIA begrijpen en wanneer u het moet gebruiken.
+  - Al het werk valideren met geautomatiseerde en handmatige tests, waarbij de pull requests van collega's met dezelfde criteria worden beoordeeld.
 
-**Quality Assurance**
-  - Including accessibility testing in their workflow.
-  - Advocating for accessibility considerations when contributing to the team's quality strategy and acceptance criteria.
+**Kwaliteitsverzekering**
+  - Toegankelijkheidstesten opnemen in hun workflow.
+  - Pleiten voor toegankelijkheidsoverwegingen bij het bijdragen aan de kwaliteitsstrategie en acceptatiecriteria van het team.
 
-**Leadership/C-Suite**
-  - Giving employees bandwidth to learn and grow their accessibility skillset and hiring practitioners with expertise and lived experiences.
-  - Considering accessibility core to the product outcomes and viewing accessibility excellence as promotable work.
+**Leiderschap/C-Suite**
+  - Werknemers bandbreedte geven om te leren en hun vaardigheden op het gebied van toegankelijkheid te vergroten en vakmensen aan te nemen met expertise en geleefde ervaringen.
+  - Toegankelijkheid als kern beschouwen voor de productresultaten en excellentie op het gebied van toegankelijkheid beschouwen als werk dat gepromoot kan worden.
 
-The tech industry needs to move towards inclusion-driven development. Although this requires some up-front investment, it is much easier and likely less expensive over time to build accessibility into the entire cycle such that it can be baked into the product rather than trying to retrofit sites and apps that were constructed without it in mind.
+De technische industrie moet evolueren naar inclusiegedreven ontwikkeling. Hoewel dit enige investering vooraf vereist, is het in de loop van de tijd veel gemakkelijker en waarschijnlijk goedkoper om toegankelijkheid in de hele cyclus in te bouwen, zodat het in het product kan worden ingebakken, in plaats van sites en apps die zonder het in gedachten zijn gemaakt, achteraf aan te passen. .
 
-The largest investment should come in the form of education and process improvements. Once a UI designer understands the nuances of color contrast requirements, selecting an accessible color palette should be the same effort as an inaccessible palette. Once a developer deeply understands native HTML and ARIA and when to reach for certain techniques and tools, the amount of code they write should be comparable.
+De grootste investering zou moeten komen in de vorm van onderwijs en procesverbeteringen. Zodra een UI-ontwerper de nuances van kleurcontrastvereisten begrijpt, zou het selecteren van een toegankelijk kleurenpalet dezelfde inspanning moeten zijn als een ontoegankelijk palet. Zodra een ontwikkelaar native HTML en ARIA goed begrijpt en wanneer hij bepaalde technieken en hulpmiddelen moet gebruiken, moet de hoeveelheid code die hij schrijft vergelijkbaar zijn.
 
-As an industry it is time that we acknowledge the story told by the numbers in this chapter; we are failing disabled people. We need to do better, and this has to come from a combination of top-down leadership and investment and bottom-up effort to push our practices forward and advocate for the needs, safety and inclusion of disabled people using the web.
+Als branche wordt het tijd dat we het verhaal erkennen dat wordt verteld door de cijfers in dit hoofdstuk; we zijn falende gehandicapten. We moeten het beter doen, en dit moet komen van een combinatie van top-down leiderschap en investeringen en bottom-up inspanningen om onze praktijken vooruit te helpen en te pleiten voor de behoeften, veiligheid en inclusie van mensen met een handicap die het internet gebruiken.
