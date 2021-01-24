@@ -1,5 +1,5 @@
 from server.helpers import get_file_date_info, get_versioned_filename, get_ebook_size_in_mb, \
-    chapter_lang_exists, featured_chapters_exists, get_chapter_nextprev, convert_old_image_path, \
+    chapter_lang_exists, featured_chapters_exists, get_chapter_nextprev, get_chapter_config, convert_old_image_path, \
     add_footnote_links, year_live, strip_accents, accentless_sort, render_template, render_error_template, \
     get_ebook_methodology
 from server.config import get_config, SUPPORTED_LANGUAGES, SUPPORTED_YEARS, get_entries_from_json
@@ -39,7 +39,7 @@ def test_render_template_no_chapter():
 def test_render_template_translation_valid_chapter():
     with app.test_request_context():
         request.full_path = '/es/2019/css'
-        render_call = render_template(template='es/2019/chapters/css.html', lang='es', year='2019')
+        render_call = render_template(template='es/2019/chapters/css.html', lang='es', year='2019', chapter_config='')
         assert len(render_call) > 3000 and '<html lang="es"' in render_call
 
 
@@ -151,6 +151,26 @@ def test_get_chapter_nextprev_unknown_chapter():
     prev_slug = nextprev[0]
     next_slug = nextprev[1]
     assert prev_slug is None and next_slug is None
+
+
+def test_get_valid_chapter_config():
+    chapter_config = get_chapter_config(get_config('2019'), 'javascript')
+    assert chapter_config is not None
+
+
+def test_get_invalid_chapter_config():
+    chapter_config = get_chapter_config(get_config('2019'), 'random')
+    assert chapter_config is None
+
+
+def test_get_chapter_config_no_hero_dir():
+    chapter_config = get_chapter_config(get_config('2020'), 'javascript')
+    assert chapter_config.get('hero_dir') is None
+
+
+def test_get_chapter_config_hero_dir():
+    chapter_config = get_chapter_config(get_config('2020'), 'jamstack')
+    assert chapter_config.get('hero_dir') == '2020'
 
 
 def test_convert_old_image_path_http2():
