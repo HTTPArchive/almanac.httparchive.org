@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block styles %}
-  <link rel="stylesheet" href="{{ get_versioned_filename('/static/css/2019.css') }}">
+  <link rel="stylesheet" href="{{ get_versioned_filename('/static/css/almanac.css') }}">
 {% endblock %}
 
 {% block page_url %}https://almanac.httparchive.org{{ url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}{% endblock %}

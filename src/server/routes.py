@@ -134,3 +134,9 @@ def ebook(lang, year):
 @app.route('/static/images/2019/<regex("[0-2][0-9]_.*"):folder>/<image>')
 def redirect_old_images(folder, image):
     return redirect("/static/images/2019/%s/%s" % (convert_old_image_path(folder), image)), 301
+
+
+# Redirect requests for the old css file to the renamed file
+@app.route('/static/css/2019.css')
+def redirect_old_css():
+    return redirect("/static/css/almanac.css?%s" % request.query_string.decode()), 301
