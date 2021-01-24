@@ -136,6 +136,14 @@ def test_render_old_image_dir_redirect(client):
     assert_route(client, '/static/images/2019/20_HTTP2/random.png', 301, '/static/images/2019/http2/random.png')
 
 
+def test_render_old_hero_image_dir_redirect(client):
+    assert_route(client, '/static/images/2019/jamstack/random.png', 301, '/static/images/2020/jamstack/random.png')
+
+
+def test_rold_css_redirect(client):
+    assert_route(client, '/static/css/2019.css?v=2', 301, '/static/css/almanac.css?v=2')
+
+
 def test_render_en_2020_story(client):
     response = client.get('/en/2020/stories/page-content')
     assert response.status_code == 200 and \

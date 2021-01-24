@@ -60,7 +60,7 @@ The higher the page contrast, the easier it is for people to view text-based con
 {{ figure_markup(
   image="sites-with-sufficient-color-contrast-2019-2020.png",
   caption="Sites with sufficient color contrast.",
-  description="Bar chart showing percentage of sites with sufficient color contrast in 2019 and 2020. 22.04% of sites had sufficient color contrast in 2029 decreasing to 21.06% in 2020, meaning 77.96% had insufficient color contrast in 2019 increasing to 78.94% in 2020.",
+  description="Bar chart showing percentage of sites with sufficient color contrast in 2019 and 2020. 22.04% of sites had sufficient color contrast in 2019 decreasing to 21.06% in 2020, meaning 77.96% had insufficient color contrast in 2019 increasing to 78.94% in 2020.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSjkB_XAYiwkYrMuoXp44mdqMGJVDUkTr_48ELozY72Mdv3OlxeWV9ysbDY9bs6hA7LnJTrHar9aZlM/pubchart?oid=1827221015&format=interactive",
   sheets_gid="1115686547",
   sql_file="color_contrast.sql"
