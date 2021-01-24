@@ -15,7 +15,7 @@ FROM (
   FROM
     `httparchive.almanac.requests`
   JOIN (
-    SELECT DISTINCT
+    SELECT 
       _TABLE_SUFFIX AS client, 
       url AS page
     FROM `httparchive.technologies.2020_08_01_*`
