@@ -20,7 +20,9 @@ JOIN
       _TABLE_SUFFIX)
 USING (_TABLE_SUFFIX)
 WHERE
-  category = 'Ecommerce'
+  category = 'Ecommerce' AND 
+  (app != 'Cart Functionality' AND 
+   app != 'Google Analytics Enhanced eCommerce')
 GROUP BY
   client,
   year,
@@ -48,7 +50,9 @@ JOIN
       _TABLE_SUFFIX)
 USING (_TABLE_SUFFIX)
 WHERE
-  category = 'Ecommerce'
+  category = 'Ecommerce' AND 
+  (app != 'Cart Functionality' AND 
+   app != 'Google Analytics Enhanced eCommerce')
 GROUP BY
   client,
   year,
