@@ -864,7 +864,7 @@ For example, the resource served below on 18 Oct 2020 was last modified on 30 Au
 > Cache-Control: public, max-age=86400
 ```
 
-Overall, 60.7% of resources served on the web have a cache TTL that could be considered too short compared to its content age. Furthermore, the median delta between the TTL and age is 25 days—again, an indication of significant under-caching.
+Overall, 60.2% of mobile resources served on the web have a cache TTL that could be considered too short compared to its content age. Furthermore, the median delta between the TTL and age is 25 days—again, an indication of significant under-caching.
 
 <figure>
   <table>
