@@ -209,7 +209,7 @@ We ontdekten dat 16,95% van alle `alt`-attributen ook een `title`-attribuut beva
 
 De gemiddelde lengte voor zowel desktop- als mobiele `alt`-tekst is 18 tekens. Aangezien de gemiddelde Engelse woordlengte 4,7 tekens is, betekent dit dat de gemiddelde waarde van het alt-attribuut 3-4 woorden lang is. Afhankelijk van de afbeelding kan het nuttig zijn om kort te zijn. Het is echter moeilijk voor te stellen dat 4 woorden voldoende zijn voor een nauwkeurige beschrijving van een afbeelding met enige complexiteit.
 
-De langste `alt`-tekstlengte gevonden voor desktopsites was 15.357.625 tekens. Dat is genoeg om 5 en een halve "War and Peace" -formaat boeken te vullen (ervan uitgaande dat "War and Peace" een gemiddelde woordlengte heeft van 4,7 karakters).
+De langste `alt`-tekstlengte gevonden voor desktopsites was 15.357.625 tekens. Dat is genoeg om 5 en een halve "War and Peace"-formaat boeken te vullen (ervan uitgaande dat "War and Peace" een gemiddelde woordlengte heeft van 4,7 karakters).
 
 ### Video op internet
 
@@ -230,7 +230,7 @@ Bijschriften of transcripties zijn nodig om auditieve informatie over te brengen
   sql_file="video_track_usage.sql"
 ) }}
 
-Van de sites die `<video>` -elementen gebruiken, biedt slechts 0,79% ondertitels, die we aannemen op basis van de aanwezigheid van het `<track>` -element (en die verschillen van open/ingebrande bijschriften). Houd er rekening mee dat sommige websites aangepaste oplossingen hebben voor het leveren van video- en audiobijschriften aan gebruikers, en we konden deze aangepaste oplossingen niet detecteren, dus het percentage sites dat ondertiteling gebruikt, kan hoger zijn, maar dit cijfer is een indicatie van hoe onderondersteunde ondertiteling is ingeschakeld in webvideo-inhoud. We kunnen ook de kwaliteit van de gedetecteerde ondertitels niet beoordelen en of ze de volledige betekenis van de video die ze beschrijven, al dan niet nauwkeurig weergeven.
+Van de sites die `<video>`-elementen gebruiken, biedt slechts 0,79% ondertitels, die we aannemen op basis van de aanwezigheid van het `<track>`-element (en die verschillen van open/ingebrande bijschriften). Houd er rekening mee dat sommige websites aangepaste oplossingen hebben voor het leveren van video- en audiobijschriften aan gebruikers, en we konden deze aangepaste oplossingen niet detecteren, dus het percentage sites dat ondertiteling gebruikt, kan hoger zijn, maar dit cijfer is een indicatie van hoe onderondersteunde ondertiteling is ingeschakeld in webvideo-inhoud. We kunnen ook de kwaliteit van de gedetecteerde ondertitels niet beoordelen en of ze de volledige betekenis van de video die ze beschrijven, al dan niet nauwkeurig weergeven.
 
 #### Video automatisch afspelen
 
@@ -243,7 +243,7 @@ De <span lang="en">Web Content Accessibility Guidelines</span> hebben een criter
 {{ figure_markup(
   image="common-video-attributes.png",
   alt="De meest voorkomende video-attributen.",
-  caption="De meest voorkomende `<video>` -attributen.",
+  caption="De meest voorkomende `<video>`-attributen.",
   description="Staafdiagram met de top 5 attributen op het `<video>` element op desktop met `loop` op 58,43% van de video's, `autoplay` op 56,98%, `muted` op 56,13%,` class` op 51,79% en `preload` op 45,21% van de video's.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSjkB_XAYiwkYrMuoXp44mdqMGJVDUkTr_48ELozY72Mdv3OlxeWV9ysbDY9bs6hA7LnJTrHar9aZlM/pubchart?oid=1226671706&format=interactive",
   sheets_gid="713294916",
@@ -367,7 +367,7 @@ Er zijn <a hreflang="en" href="https://www.w3.org/TR/using-aria/">vijf regels va
 
 Een van de meest gebruikelijke manieren waarop ARIA wordt gebruikt, is door de rol van een element expliciet te definiëren, waardoor het doel ervan wordt doorgegeven aan ondersteunende technologie.
 
-HTML5 introduceerde veel nieuwe native elementen, die allemaal <a hreflang="en" href="https://www.w3.org/TR/wai-aria-1.1/#implicit_semantics">impliciete semantiek</a> hebben, inclusief rollen. Het element `<nav>` heeft bijvoorbeeld een impliciete `role="navigation"` en deze rol hoeft niet expliciet te worden toegevoegd om informatie over het doel over te brengen aan ondersteunende technologie. Momenteel heeft 64,54% van de desktoppagina's ten minste één instantie van een ARIA-`role` -attribuut. De mediaan-site heeft 2 instanties van het kenmerk `role`.
+HTML5 introduceerde veel nieuwe native elementen, die allemaal <a hreflang="en" href="https://www.w3.org/TR/wai-aria-1.1/#implicit_semantics">impliciete semantiek</a> hebben, inclusief rollen. Het element `<nav>` heeft bijvoorbeeld een impliciete `role="navigation"` en deze rol hoeft niet expliciet te worden toegevoegd om informatie over het doel over te brengen aan ondersteunende technologie. Momenteel heeft 64,54% van de desktoppagina's ten minste één instantie van een ARIA-`role`-attribuut. De mediaan-site heeft 2 instanties van het kenmerk `role`.
 
 {{ figure_markup(
   image="common-aria-roles.png",
@@ -385,7 +385,7 @@ We ontdekten dat 25,20% van de desktopsites en 24,50% van de mobiele sites homep
 
 Als niet-interactieve elementen zoals `<div>`s en `<span>`s deze rol hebben gekregen, is de kans groot dat een of meer van de 5 regels van ARIA zijn overtreden.
 
-Het is vrij waarschijnlijk dat een native `<button>` -element een betere keuze zou zijn, volgens de eerste regel van ARIA. Het is ook mogelijk dat de rol is toegevoegd, maar de verwachte toetsenbordondersteuning is niet geleverd, wat de derde regel van ARIA zou overtreden en in strijd zou zijn met <a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-keyboard-operable.html">WCAG 2.1.1, Keyboard</a>.
+Het is vrij waarschijnlijk dat een native `<button>`-element een betere keuze zou zijn, volgens de eerste regel van ARIA. Het is ook mogelijk dat de rol is toegevoegd, maar de verwachte toetsenbordondersteuning is niet geleverd, wat de derde regel van ARIA zou overtreden en in strijd zou zijn met <a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-keyboard-operable.html">WCAG 2.1.1, Keyboard</a>.
 
 {{ figure_markup(
   caption='Mobiele sites die `role="button"` toewijzen aan `<div>` of een `<span>`',
@@ -399,11 +399,11 @@ We ontdekten dat 8,27% van de desktoppagina's en 8,28% van de mobiele pagina's t
 
 We ontdekten dat 15,50% van de desktoppagina's en 14,62% van de mobiele pagina's ten minste één ankerelement bevatten met `role="button"`. Als een rol is toegepast op een element waarvan de impliciete rol moet worden gerespecteerd, zoals het geven van een `role="button"` aan een link (die een impliciete `role="link"` heeft), zou dit de tweede regel van ARIA breken. Het zou ook in strijd zijn met <a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-keyboard-operable.html">WCAG 2.1.1, Keyboard</a> als het juiste toetsenbordgedrag niet is geïmplementeerd (links worden niet geactiveerd met de spatiebalk, terwijl knoppen dat wel zijn).
 
-Nogmaals, in de overgrote meerderheid van deze gevallen zou een beter patroon dan het expliciet definiëren van `role="button"` voor het element in kwestie zijn om gebruik te maken van het native HTML `<button>` -element, aangezien dit wordt geleverd met de verwachte semantiek en gedrag. .
+Nogmaals, in de overgrote meerderheid van deze gevallen zou een beter patroon dan het expliciet definiëren van `role="button"` voor het element in kwestie zijn om gebruik te maken van het native HTML `<button>`-element, aangezien dit wordt geleverd met de verwachte semantiek en gedrag. .
 
 #### Navigatie
 
-We ontdekten dat 22,06% van de desktoppagina's en 21,76% van de mobiele pagina's ten minste één element heeft met `role="navigation"`, wat een belangrijke rol is. Volgens de eerste regel van ARIA zouden ontwikkelaars, in plaats van deze rol aan een element toe te voegen, het HTML5 `<nav>` -element moeten gebruiken dat impliciet met de juiste semantiek wordt geleverd. Het is mogelijk dat deze rol expliciet is toegevoegd aan het `<nav>` -element, wat geen toegankelijkheidsprobleem zou zijn, hoewel het overtollig is.
+We ontdekten dat 22,06% van de desktoppagina's en 21,76% van de mobiele pagina's ten minste één element heeft met `role="navigation"`, wat een belangrijke rol is. Volgens de eerste regel van ARIA zouden ontwikkelaars, in plaats van deze rol aan een element toe te voegen, het HTML5 `<nav>`-element moeten gebruiken dat impliciet met de juiste semantiek wordt geleverd. Het is mogelijk dat deze rol expliciet is toegevoegd aan het `<nav>`-element, wat geen toegankelijkheidsprobleem zou zijn, hoewel het overtollig is.
 
 #### Dialoogmodalen
 
@@ -450,7 +450,7 @@ Voor desktoppagina's heeft 7,00% ten minste één element met een `role="tablist
 
 Wanneer een element een `role="presentation"` heeft gekregen, wordt de semantiek verwijderd, zowel voor het element waaraan het is toegewezen als voor de vereiste onderliggende elementen. Tabellen en lijsten hebben bijvoorbeeld beide vereiste kinderen, dus als de ouder een `role="presentation"` heeft, loopt dit in wezen over naar de onderliggende elementen, waarvan ook de semantiek wordt verwijderd. Het verwijderen van de semantiek van een element betekent dat het niet langer dat element is, in welke hoedanigheid dan ook, behalve zijn visuele uiterlijk. Een lijst met een `role="presentation"` zal bijvoorbeeld geen informatie meer verstrekken aan een schermlezer over de lijststructuur.
 
-Dit kenmerk wordt vaak gebruikt voor `<table>` -elementen die zijn gebruikt voor lay-out in plaats van voor tabelgegevens. We raden af om tabellen op deze manier te gebruiken. Voor de lay-out hebben we tegenwoordig krachtige CSS-hulpmiddelen, zoals Flexbox en CSS Grid. Over het algemeen zijn er maar weinig gevallen waarin `role="presentation"` met name nuttig is voor gebruikers van ondersteunende technologie, gebruik deze rol spaarzaam en bedachtzaam.
+Dit kenmerk wordt vaak gebruikt voor `<table>`-elementen die zijn gebruikt voor lay-out in plaats van voor tabelgegevens. We raden af om tabellen op deze manier te gebruiken. Voor de lay-out hebben we tegenwoordig krachtige CSS-hulpmiddelen, zoals Flexbox en CSS Grid. Over het algemeen zijn er maar weinig gevallen waarin `role="presentation"` met name nuttig is voor gebruikers van ondersteunende technologie, gebruik deze rol spaarzaam en bedachtzaam.
 
 ### ARIA-attributen
 
@@ -474,11 +474,11 @@ De toegankelijke naam kan worden afgeleid van de inhoud van een element (zoals k
 
 We kunnen ARIA ook gebruiken om toegankelijke namen voor elementen op te geven. Er zijn twee ARIA-attributen die dit bewerkstelligen, <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA14.html">`aria-label`</a>, <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA16.html">`aria-labelledby`</a>. Elk van deze kenmerken zal de berekening van de toegankelijke naam "winnen" en de native afgeleide toegankelijke naam overschrijven, dus gebruik ze met de nodige voorzichtigheid en zorg ervoor dat u test met een schermlezer of bekijk de toegankelijkheidsboom om te bevestigen dat de toegankelijke naam is wat werd verwacht. Wanneer u ARIA gebruikt om een element een naam te geven, is het belangrijk om ervoor te zorgen dat de <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html">WCAG 2.5.3, <span lang="en">Label in Name</span></a> criterium niet geschonden is, dat verwacht dat zichtbare labels ten minste een deel van de toegankelijke naam zijn.
 
-Met het `aria-label` -element kan een ontwikkelaar een tekenreekswaarde opgeven en deze wordt gebruikt voor de toegankelijke naam voor het element. We ontdekten dat 40,44% van de desktoppagina's en 38,72% van de mobiele homepagina's ten minste één element had met het kenmerk `aria-label`, waardoor dit het meest populaire ARIA-kenmerk is voor het verstrekken van toegankelijke namen.
+Met het `aria-label`-element kan een ontwikkelaar een tekenreekswaarde opgeven en deze wordt gebruikt voor de toegankelijke naam voor het element. We ontdekten dat 40,44% van de desktoppagina's en 38,72% van de mobiele homepagina's ten minste één element had met het kenmerk `aria-label`, waardoor dit het meest populaire ARIA-kenmerk is voor het verstrekken van toegankelijke namen.
 
 Het `aria-labelledby` attribuut accepteert een `id` referentie als zijn waarde, die het associeert met een ander element in de interface om zijn toegankelijke naam te geven. Het element wordt "gelabeld door" dit andere element dat zijn toegankelijke naam geeft. We ontdekten dat 17,73% van de desktoppagina's en 16,21% van de mobiele pagina's ten minste één element had met het kenmerk `aria-labelledby`.
 
-Nogmaals, de eerste regel van ARIA moet worden gerespecteerd. Als het element zijn toegankelijke naam kan ontlenen zonder ARIA nodig te hebben, verdient dit de voorkeur. Een `<button>`, dat geen grafisch element is, zou bijvoorbeeld zijn toegankelijke naam uit zijn tekst inhoud moeten halen in plaats van een ARIA-attribuut. Formulierelementen moeten waar mogelijk hun toegankelijke namen ontlenen aan correct geassocieerde `<label>` -elementen.
+Nogmaals, de eerste regel van ARIA moet worden gerespecteerd. Als het element zijn toegankelijke naam kan ontlenen zonder ARIA nodig te hebben, verdient dit de voorkeur. Een `<button>`, dat geen grafisch element is, zou bijvoorbeeld zijn toegankelijke naam uit zijn tekst inhoud moeten halen in plaats van een ARIA-attribuut. Formulierelementen moeten waar mogelijk hun toegankelijke namen ontlenen aan correct geassocieerde `<label>`-elementen.
 
 Het <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA1.html">`aria-describedby`</a> attribuut kan gebruikt worden in gevallen waar een meer robuuste beschrijving nodig is voor een element. Het accepteert ook een `id`-referentie als zijn waarde om verbinding te maken met beschrijvende tekst die elders in de interface voorkomt. Het bevat niet de toegankelijke naam, het moet worden gebruikt in combinatie met een toegankelijke naam als aanvulling, niet als vervanging. We ontdekten dat 11,31% van de desktoppagina's en 10,56% van de mobiele pagina's ten minste één element had met het kenmerk `aria-describedby`.
 
@@ -532,13 +532,13 @@ Formulierlabels moeten zichtbaar en persistent zijn in de gebruikersinterface en
 
 Het is belangrijk ervoor te zorgen dat formulierlabels een programmatische koppeling hebben met hun respectievelijke invoer. Het is niet voldoende om het label alleen visueel weer te geven. We ontdekten dat slechts 26,51% van de sites al hun labels correct heeft gekoppeld aan hun respectievelijke invoer (bereikt met een `for`/`id` relatie of invoer genest in labels).
 
-Groepen formulierbesturingen zoals een set van radio-inputs of selectievakjes moeten worden genest in een `<fieldset>` -element en een groepslabel krijgen via het `<legend>` -element binnen het `<fieldset>`. De afzonderlijke besturingselementen moeten nog steeds programmatisch worden gekoppeld aan hun respectieve zichtbare labels.
+Groepen formulierbesturingen zoals een set van radio-inputs of selectievakjes moeten worden genest in een `<fieldset>`-element en een groepslabel krijgen via het `<legend>`-element binnen het `<fieldset>`. De afzonderlijke besturingselementen moeten nog steeds programmatisch worden gekoppeld aan hun respectieve zichtbare labels.
 
 ### plaatsaanduidingstekst
 
 Vertrouw niet op plaatsaanduidingstekst om als label voor een invoer te dienen. Hoewel sommige schermlezers nu de mogelijkheid hebben om de toegankelijke naam te bepalen uit plaatsaanduidingstekst, kunnen gebruikers met cognitieve handicaps negatief worden beïnvloed door te vertrouwen op plaatsaanduidingstekst, omdat zodra een gebruiker de invoer begint te typen, de plaatsaanduiding verdwijnt en de context weg is. Gebruikers van spraakbesturing hebben meer dan een tijdelijke aanduiding nodig om op betrouwbare wijze een element in de DOM te targeten. Bovendien voldoet plaatsaanduidingstekst vaak niet aan de vereisten voor kleurcontrast, wat een negatief effect heeft op gebruikers met slechtziendheid.
 
-Van de sites die formulierbesturingselementen met plaatsaanduidingstekst hebben, heeft 73,89% ten minste één instantie waarbij er geen `<label>` - element programmatisch is gekoppeld aan het besturingselement voor desktop en 74,52% voor mobiel.
+Van de sites die formulierbesturingselementen met plaatsaanduidingstekst hebben, heeft 73,89% ten minste één instantie waarbij er geen `<label>`-element programmatisch is gekoppeld aan het besturingselement voor desktop en 74,52% voor mobiel.
 
 ## Conclusie
 
