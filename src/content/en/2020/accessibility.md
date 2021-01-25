@@ -242,7 +242,7 @@ The Web Content Accessibility Guidelines has a criteria [2.2.2 Pause, Stop, Hide
 
 {{ figure_markup(
   image="common-video-attributes.png",
-  alt="Most common `<video>` attributes.",
+  alt="Most common video attributes.",
   caption="Most common `<video>` attributes.",
   description="Bar chart showing the top 5 attributes on the `<video>` element on desktop with `loop` on 58.43% of videos, `autoplay` on 56.98%, `muted` on 56.13%, `class` on 51.79%, and `preload` on 45.21% of videos.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSjkB_XAYiwkYrMuoXp44mdqMGJVDUkTr_48ELozY72Mdv3OlxeWV9ysbDY9bs6hA7LnJTrHar9aZlM/pubchart?oid=1226671706&format=interactive",
