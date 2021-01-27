@@ -28,10 +28,12 @@ JavaScript has come a long way from its humble origins as the last of the three 
 Developers love us some JavaScript. According to the Markup chapter, the `script` element is the [6th most popular HTML element](./markup) in use (ahead of elements like `p` and `i`, among countless others). We spend around 14 times as many bytes on it as we do on HTML, the building block of the web, and 6 times as many bytes as CSS.
 
 {{ figure_markup(
-  image="page-weight-per-content-type.png",
+  image="../page-weight/bytes-distribution-content-type.png",
   caption="Median page weight per content type.",
   description="Bar chart showing the median page weight for desktop and mobile pages across images, JS, CSS, and HTML. The median amounts of bytes for each content type on mobile pages are: 916 KB of images, 411 KB of JS, 62 KB of CSS, and 25 KB of HTML. Desktop pages tend to have significantly heavier images (about 1000 KB) and slightly higher amounts of JS (about 450 KB).",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQlN4Clqeb8aPc63h0J58WfBxoJluSFT6kXn45JGPghw1LGU28hzabMYAATXNY5st9TtjKrr2HnbfGd/pubchart?oid=1147150650&format=interactive"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQlN4Clqeb8aPc63h0J58WfBxoJluSFT6kXn45JGPghw1LGU28hzabMYAATXNY5st9TtjKrr2HnbfGd/pubchart?oid=1147150650&format=interactive",
+  sheets_gid="https://docs.google.com/spreadsheets/d/1wG4u0LV5PT9aN-XB1hixSFtI8KIDARTOCX0sp7ZT3h0/#378779486",
+  sql_file="../page-weight/bytes_per_type_2020.sql"
 ) }}
 
 But nothing is free, and that's especially true for JavaScript—all that code has a cost. Let's dig in and take a closer look at how much script we use, how we use it, and what the fallout is.
@@ -43,7 +45,7 @@ We mentioned that the `script` tag is the 6th most used HTML element. Let's dig 
 The median site (the 50th percentile) sends 444 KB of JavaScript when loaded on a desktop device, and slightly fewer (411 KB) to a mobile device.
 
 {{ figure_markup(
-  image="page-weight-per-content-type.png",
+  image="bytes-2020.png",
   caption="Distribution of the amount of JavaScript kilobytes loaded per page.",
   description="Bar chart showing the distribution of JavaScript bytes per page by about 10%. Desktop pages consistently load more JavaScript bytes than mobile pages. The 10th, 25th, 50th, 75th, and 90th percentiles for desktop are: 87 KB, 209 KB, 444 KB, 826 KB, and 1,322 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=441749673&format=interactive",
@@ -315,7 +317,7 @@ Minification is a great way to help reduce file size, but compression is even mo
 
 85% of all JavaScript requests have some level of network compression applied. Gzip makes up the majority of that, with 65% of scripts having Gzip compression applied compared to 20% for Brotli (br). While the percentage of Brotli (which is more effective than Gzip) is low compared to its browser support, it's trending in the right direction, increasing by 5 percentage points in the last year.
 
-Once again, this appears to be an area where third-party scripts are actually doing better than first-party scripts. If we break the compression methods out by first- and third-party, we see that 24% of third-party scripts have Brotli applied, compared to only 15% of third-party scripts.
+Once again, this appears to be an area where third-party scripts are actually doing better than first-party scripts. If we break the compression methods out by first- and third-party, we see that 24% of third-party scripts have Brotli applied, compared to only 15% of first-party scripts.
 
 {{ figure_markup(
   image="compression-method-3p.png",
@@ -606,7 +608,7 @@ We get a very similar picture when looking at main thread time for pages where t
   sql_file="main_thread_time_frameworks.sql"
 ) }}
 
-Ember's mobile main thread time jumps out and kind of distorts the graph with how long it takes. Pulling it out makes the picture a bit easier to understand.
+Ember's mobile main thread time jumps out and kind of distorts the graph with how long it takes. I spent some more time looking into this and it appears to be heavily influence [by one particular platform using this framework inefficiently](https://timkadlec.com/remembers/2021-01-26-what-about-ember/), rather than an underlying problem with Ember itself. Pulling it out makes the picture a bit easier to understand.
 
 {{ figure_markup(
   image="frameworks-main-thread-no-ember.png",
