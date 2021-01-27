@@ -119,7 +119,7 @@
     {{ self.table_of_contents_switcher() }}
   </label>
   <select id="table-of-contents-switcher-{{switcher_name}}" data-label="toc-menu-mobile">
-    {% if request.path.endswith("/") %}
+    {% if request.path.endswith("/" + year + "/") %}
       <option selected disabled value="{{ url_for('home', year=year, lang=lang) }}">{{ self.home() }}</option>
     {% else %}
       <option value="{{ url_for('home', year=year, lang=lang) }}">{{ self.home() }}</option>
@@ -200,7 +200,7 @@
   </button>
   <ul class="nav-dropdown-list hidden {{switcher_name}}-list">
 
-    {% if request.path.endswith('/') %}
+    {% if request.path.endswith("/" + year + "/") %}
     <li class="nav-dropdown-list-part nav-dropdown-list-current">
       <span>{{ self.home() }}</span>
     </li>
