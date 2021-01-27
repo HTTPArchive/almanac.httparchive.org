@@ -317,7 +317,7 @@ Minificatie is een geweldige manier om de bestandsgrootte te helpen verkleinen, 
 
 Bij 85% van alle JavaScript-verzoeken is een bepaald niveau van netwerkcompressie toegepast. Gzip maakt het grootste deel daarvan uit, met 65% van de scripts waarop Gzip-compressie is toegepast, vergeleken met 20% voor Brotli (br). Hoewel het percentage van Brotli (dat effectiever is dan Gzip) laag is in vergelijking met de browserondersteuning, gaat het in de goede richting, met een stijging van 5 procentpunten in het afgelopen jaar.
 
-Nogmaals, dit lijkt een gebied te zijn waar scripts van derden het eigenlijk beter doen dan eerste partij scripts. Als we de compressiemethoden uitsplitsen door eerste en derde partij, zien we dat 24% van de scripts van derden Brotli heeft toegepast, vergeleken met slechts 15% van de scripts van eerste.
+Nogmaals, dit lijkt een gebied te zijn waar scripts van derden het eigenlijk beter doen dan eerste partij scripts. Als we de compressiemethoden uitsplitsen door eerste en derde partij, zien we dat 24% van de scripts van derden Brotli heeft toegepast, vergeleken met slechts 15% van de scripts van eersten.
 
 {{ figure_markup(
   image="compression-method-3p.png",
