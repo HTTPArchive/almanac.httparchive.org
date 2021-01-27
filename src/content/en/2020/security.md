@@ -79,7 +79,7 @@ Whilst the high volume of requests is encouraging, these can often be dominated 
 
 ### Protocol versions
 
-As HTTPS is now well and truly the norm, the challenge moves from having any sort of HTTPS, to ensuring that secure versions of the underlying TLS (Transport Layer Security) protocol are being used. TLS needs maintenance as versions become older, vulnerabilities are found and compute increases making attacks more achievable.
+As HTTPS is now well and truly the norm, the challenge moves from having any sort of HTTPS, to ensuring that secure versions of the underlying TLS (Transport Layer Security) protocol are being used. TLS needs maintenance as versions become older, vulnerabilities are found and compute power increases making attacks more achievable.
 
 {{ figure_markup(
   image="security-tls-version-by-site.png",
@@ -97,7 +97,7 @@ These figures are a slight improvement on [last year's protocol analysis](../201
 
 ### Cipher suites
 
-Within TLS there are a number of cipher suites that can be used with varying levels of security. The best ciphers support [forward secrecy](https://en.wikipedia.org/wiki/Forward_secrecy) key exchange, meaning even if the server keys are compromised, old traffic that used those keys cannot be decrypted.
+Within TLS there are a number of cipher suites that can be used with varying levels of security. The best ciphers support [forward secrecy](https://en.wikipedia.org/wiki/Forward_secrecy) key exchange, meaning even if the server's keys are compromised, old traffic that used those keys cannot be decrypted.
 
 In the past, newer versions of TLS added support for newer ciphers but rarely removed older versions. This is one of the reasons TLSv1.3 is more secure as it does a large clear down of older ciphers currently. The popular OpenSSL library only supports five secure ciphers in this version–all of which support forward secrecy. This prevents downgrade attacks where a less secure cipher is forced to be used.
 
@@ -272,11 +272,11 @@ It is encouraging to see that the adoption of the other attributes is growing co
 
 From a security point of view, the automatic inclusion of cookies in cross-site requests can be seen as the main culprit of several classes of vulnerabilities. If a website does not have the adequate protections is place (e.g. requiring a unique token on state-changing requests), they may be susceptible to [Cross-Site Request Forgery](https://owasp.org/www-community/attacks/csrf) (CSRF) attacks. As an example, an attacker may issue a POST request in the background, without the user being aware to, for instance, change the password of an unwitting visitor. If the user is logged in, the browser would normally automatically include the cookies in such a request.
 
-Several other types of attacks rely on the inclusion of cookies in third-party calls, such as [Cross-Site Script Inclusion](https://www.usenix.org/system/files/conference/usenixsecurity15/sec15-paper-lekies.pdf) (XSSI) and various techniques in the [XS-Leaks](https://xsleaks.dev/) vulnerability class. Furthermore, because the authentication of users is often only done through cookies, an attacker could impersonate a user by obtaining their cookies. This could be done in a man-in-the-middle (MITM) attack, tricking the user to make an authenticated over an insecure channel. Alternatively, by exploiting a cross-site scripting (XSS) vulnerability, the attacker could leak the cookies by accessing `document.cookie` through the DOM.
+Several other types of attacks rely on the inclusion of cookies in cross-site requests, such as [Cross-Site Script Inclusion](https://www.usenix.org/system/files/conference/usenixsecurity15/sec15-paper-lekies.pdf) (XSSI) and various techniques in the [XS-Leaks](https://xsleaks.dev/) vulnerability class. Furthermore, because the authentication of users is often only done through cookies, an attacker could impersonate a user by obtaining their cookies. This could be done in a man-in-the-middle (MITM) attack, tricking the user to make an authenticated over an insecure channel. Alternatively, by exploiting a cross-site scripting (XSS) vulnerability, the attacker could leak the cookies by accessing `document.cookie` through the DOM.
 
 To defend against the threats posed by cookies, website developers can make use of three attributes that can be set on [cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies): `HttpOnly`, `Secure` and [`SameSite`](https://web.dev/samesite-cookies-explained/). The first prevents the cookie from being accessed from JavaScript, preventing an adversary from stealing them in an XSS attack. Cookies that have the `Secure` attribute set will only be sent over a secure HTTPS connection, preventing them to be stolen in a MITM attack.
 
-The attribute that was introduced most recently, `SameSite`, can be used to restrict how cookies are sent in a cross-site context. The attribute has three possible values: `None`, `Lax`, and `Strict`. Cookies with `SameSite=None` will be sent in all cross-site requests, whereas cross-site cookies with the attribute set to `Lax` will only be sent in navigational requests, e.g. when the user clicks a link and navigates to a new page. Finally, cookies with the `SameSite=Strict` attribute will only be sent in a first-party context.
+The attribute that was introduced most recently, `SameSite`, can be used to restrict how cookies are sent in a cross-site context. The attribute has three possible values: `None`, `Lax`, and `Strict`. Cookies with `SameSite=None` will be sent in all cross-site requests, whereas cookies with the attribute set to `Lax` will only be sent in navigational requests, e.g. when the user clicks a link and navigates to a new page. Finally, cookies with the `SameSite=Strict` attribute will only be sent in a first-party context.
 
 {{ figure_markup(
   image="security-httponly-secure-samesite-cookie-usage.png",
@@ -314,7 +314,7 @@ Modern web applications include a large variety of third-party components, rangi
 
 ### Content Security Policy
 
-One of the predominant mechanisms to indicate to the browser which origins are allowed to load content, is the [`Content-Security-Policy` (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) response header. Through numerous directives, a website administrator can have fine-grained control over how content can be included. For instance, the `script-src` directive indicates from which origins scripts can be loaded. Overall, we found that a CSP header was present on 7.23% of all page which, while still small, is a notable increase of 53% from last year, when CSP adoption was at 4.73% for mobile pages.
+One of the predominant mechanisms to indicate to the browser which origins are allowed to load content, is the [`Content-Security-Policy` (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) response header. Through numerous directives, a website administrator can have fine-grained control over how content can be included. For instance, the `script-src` directive indicates from which origins scripts can be loaded. Overall, we found that a CSP header was present on 7.23% of all pages which, while still small, is a notable increase of 53% from last year, when CSP adoption was at 4.73% for mobile pages.
 
 <figure>
   <table>
@@ -734,7 +734,7 @@ The [`X-XSS-Protection`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Heade
 
 The remainder of the top five most widely adopted headers is completed by two headers related to a website's TLS implementation. The [`Strict-Transport-Security`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security) header is used to instruct the browser that the website should only be visited over an HTTPS connection for the duration defined in the `max-age` attribute. We explored the configuration of this header in more detail [earlier in this chapter](#transport-security). The `Expect-CT` header will instruct the browser to verify that any certificate that is issued for the current website needs to appear in public [Certificate Transparency](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expect-CT) logs.
 
-Overall, we can see that the adoption of security headers has increased in the last year: the most-widely used security headers show a relative increase of 15 to 35 percent. The growth adoption of the features that were introduced more recently, such as the `Report-To` and `Feature-Policy` headers, is also worth noting—the latter has more than tripled compared to last year. The strongest absolute growth can be seen for the CSP header, with an adoption rate growing from 4.94% to 10.93%.
+Overall, we can see that the adoption of security headers has increased in the last year: the most-widely used security headers show a relative increase of 15 to 35 percent. The growth in adoption of the features that were introduced more recently, such as the `Report-To` and `Feature-Policy` headers, is also worth noting—the latter has more than tripled compared to last year. The strongest absolute growth can be seen for the CSP header, with an adoption rate growing from 4.94% to 10.93%.
 
 ### Preventing XSS attacks through CSP
 
