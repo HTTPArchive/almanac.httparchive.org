@@ -608,7 +608,7 @@ We krijgen een vergelijkbaar beeld als we kijken naar de hoofdthread-tijd voor p
   sql_file="main_thread_time_frameworks.sql"
 ) }}
 
-Ember's mobiele hoofdthread-tijd springt eruit en vervormt de grafiek enigszins met hoe lang het duurt. Ik heb hier wat meer tijd aan besteed en het lijkt sterk te worden beïnvloed door <a hreflang="en" href="https://timkadlec.com/remembers/2021-01-26-what-about-ember/">een bepaald platform dat dit raamwerk inefficiënt gebruikt</a>, in plaats van een onderliggend probleem met Ember zelf. Door het eruit te trekken, wordt de afbeelding een beetje gemakkelijker te begrijpen.
+Ember's mobiele hoofdthread-tijd springt eruit en vervormt de grafiek enigszins met hoe lang het duurt. Ik heb hier wat meer tijd aan besteed en het lijkt sterk te worden beïnvloed door <a hreflang="en" href="https://timkadlec.com/remembers/2021-01-26-what-about-ember/">een bepaald platform dat dit framework inefficiënt gebruikt</a>, in plaats van een onderliggend probleem met Ember zelf. Door het eruit te trekken, wordt de afbeelding een beetje gemakkelijker te begrijpen.
 
 {{ figure_markup(
   image="frameworks-main-thread-no-ember.png",
