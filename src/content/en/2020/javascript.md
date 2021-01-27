@@ -608,7 +608,7 @@ We get a very similar picture when looking at main thread time for pages where t
   sql_file="main_thread_time_frameworks.sql"
 ) }}
 
-Ember's mobile main thread time jumps out and kind of distorts the graph with how long it takes. I spent some more time looking into this and it appears to be heavily influence [by one particular platform using this framework inefficiently](https://timkadlec.com/remembers/2021-01-26-what-about-ember/), rather than an underlying problem with Ember itself. Pulling it out makes the picture a bit easier to understand.
+Ember's mobile main thread time jumps out and kind of distorts the graph with how long it takes. (I spent some more time looking into this and it appears to be heavily influenced [by one particular platform using this framework inefficiently](https://timkadlec.com/remembers/2021-01-26-what-about-ember/), rather than an underlying problem with Ember itself.) Pulling it out makes the picture a bit easier to understand.
 
 {{ figure_markup(
   image="frameworks-main-thread-no-ember.png",
