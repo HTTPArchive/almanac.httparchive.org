@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "ejs": "3.1.5",
-    "fs-extra": "9.0.1",
+    "fs-extra": "9.1.0",
     "jsdom": "16.4.0",
     "prettier": "2.2.1",
     "recursive-readdir": "2.2.2",
