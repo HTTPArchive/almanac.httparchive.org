@@ -667,9 +667,15 @@
     <ul class="figure-dropdown-list nav-dropdown-list floating-card hidden">
       {% if sheets_gid != "" %}
       <li>
+        {% if sheets_gid.startswith("https") %}
+        <a href="{{ sheets_gid }}">
+          {{ self.figure_data() }}
+        </a>
+        {% else %}
         <a href="{{ metadata.get('results') }}#gid={{ sheets_gid }}">
           {{ self.figure_data() }}
         </a>
+        {% endif %}
       </li>
       {% endif %}
       {% if sql_file != "" %}
