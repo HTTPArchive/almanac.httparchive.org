@@ -119,13 +119,17 @@
     {{ self.table_of_contents_switcher() }}
   </label>
   <select id="table-of-contents-switcher-{{switcher_name}}" data-label="toc-menu-mobile">
+    {% if request.path.endswith("/") %}
+      <option selected disabled value="{{ url_for('home', year=year, lang=lang) }}">{{ self.home() }}</option>
+    {% else %}
+      <option value="{{ url_for('home', year=year, lang=lang) }}">{{ self.home() }}</option>
+    {% endif %}
     {% if request.path.endswith("table-of-contents") %}
       <option selected disabled value="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</option>
-      <option disabled value="{{ url_for('table_of_contents', year=year, lang=lang) }}#foreword">{{ self.foreword_title() }}</option>
     {% else %}
       <option value="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</option>
-      <option value="{{ url_for('table_of_contents', year=year, lang=lang) }}#foreword">{{ self.foreword_title() }}</option>
     {% endif %}
+    <option value="{{ url_for('table_of_contents', year=year, lang=lang) }}#foreword">{{ self.foreword_title() }}</option>
     {% for part_config in config.outline %}
     {% for chapter_config in part_config.chapters %}
       {% set title = localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title %}
@@ -196,15 +200,28 @@
   </button>
   <ul class="nav-dropdown-list hidden {{switcher_name}}-list">
 
-    {% if request.path.endswith('table-of-contents') %}
-    <li class="nav-dropdown-list-part foreword nav-dropdown-list-current">
-      <span>{{ self.foreword_title() }}</span>
+    {% if request.path.endswith('/') %}
+    <li class="nav-dropdown-list-part nav-dropdown-list-current">
+      <span>{{ self.home() }}</span>
     </li>
     {% else %}
-    <li class="nav-dropdown-list-part foreword">
-      <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.foreword_title() }}</a>
+    <li class="nav-dropdown-list-part">
+      <a href="{{ url_for('home', year=year, lang=lang) }}">{{ self.home() }}</a>
     </li>
     {% endif %}
+
+    {% if request.path.endswith('table-of-contents') %}
+    <li class="nav-dropdown-list-part nav-dropdown-list-current">
+      <span>{{ self.table_of_contents_title() }}</span>
+    </li>
+    {% else %}
+    <li class="nav-dropdown-list-part">
+      <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a>
+    </li>
+    {% endif %}
+    <li class="nav-dropdown-list-chapter foreword">
+      <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}#foreword">{{ self.foreword_title() }}</a>
+    </li>
 
     {% for part_config in config.outline %}
     <li class="nav-dropdown-list-part">
@@ -650,15 +667,9 @@
     <ul class="figure-dropdown-list nav-dropdown-list floating-card hidden">
       {% if sheets_gid != "" %}
       <li>
-        {% if sheets_gid.startswith("https") %}
-        <a href="{{ sheets_gid }}">
-          {{ self.figure_data() }}
-        </a>
-        {% else %}
         <a href="{{ metadata.get('results') }}#gid={{ sheets_gid }}">
           {{ self.figure_data() }}
         </a>
-        {% endif %}
       </li>
       {% endif %}
       {% if sql_file != "" %}
