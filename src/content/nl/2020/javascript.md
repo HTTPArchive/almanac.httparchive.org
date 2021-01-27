@@ -352,8 +352,6 @@ HTTP Archive gebruikt [Wappalyzer](./methodology#wappalyzer) om technologieën t
 
 De populaire bibliotheken die in gebruik zijn, zijn grotendeels ongewijzigd ten opzichte van vorig jaar, waarbij jQuery het gebruik blijft domineren en slechts één van de 21 beste bibliotheken valt uit (lazy.js, vervangen door <span lang="en">DataTables</span>). Zelfs de percentages van de topbibliotheken zijn nauwelijks veranderd ten opzichte van vorig jaar.
 
-{# TODO(analysts): table? showing rank, library, percentage and last years rank #}
-
 {{ figure_markup(
   image="frameworks-libraries.png",
   caption="Overname van de beste JavaScript-frameworks en -bibliotheken als percentage van de pagina's.",
@@ -375,8 +373,6 @@ In feite wordt de dominantie van jQuery nog verder ondersteund als je bedenkt da
 ### Frameworks
 
 Als we naar de frameworks kijken, zien we ook niet veel van een dramatische verandering in termen van adoptie in de belangrijkste frameworks die vorig jaar naar voren kwamen. Vue.js heeft een aanzienlijke toename gezien en AMP is een beetje gegroeid, maar de meeste zijn min of meer waar ze een jaar geleden waren.
-
-{# TODO(analysts): Compare same frameworks from last year's chapter to this year in bar chart? #}
 
 Het is vermeldenswaard dat het [detectieprobleem dat vorig jaar werd opgemerkt nog steeds van toepassing is](https://github.com/AliasIO/wappalyzer/issues/2450), en nog steeds van invloed is op de resultaten hier. Het is mogelijk dat er een aanzienlijke verandering in populariteit _is_ opgetreden voor nog een paar van deze hulpmddelen, maar we zien het gewoon niet met de manier waarop de gegevens momenteel worden verzameld.
 

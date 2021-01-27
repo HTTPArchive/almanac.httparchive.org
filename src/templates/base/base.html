@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block styles %}
-  <link rel="stylesheet" href="{{ get_versioned_filename('/static/css/2019.css') }}">
+  <link rel="stylesheet" href="{{ get_versioned_filename('/static/css/almanac.css') }}">
 {% endblock %}
 
 {% block page_url %}https://almanac.httparchive.org{{ url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}{% endblock %}
@@ -657,7 +657,7 @@
       {% endif %}
       {% if sql_file != "" %}
       <li>
-        <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/{{ year }}/{{ metadata.get('queries')  }}/{{ sql_file }}">
+        <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/{{ year }}/{{ metadata.get('chapter')  }}/{{ sql_file }}">
           {{ self.figure_sql() }}
         </a>
       </li>

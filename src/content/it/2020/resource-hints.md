@@ -240,8 +240,6 @@ Infine, l'esecuzione dell'audit "<a hreflang="en" href="https://web.dev/uses-rel
 
 Ora festeggiamo il primo anno dell'API <a hreflang="en" href="https://addyosmani.com/blog/lazy-loading/">Native Lazy Loading</a>, che al momento della pubblicazione ha già superato il <a hreflang="en" href="https://caniuse.com/loading-lazy-attr">72%</a> supporto browser. Questa nuova API può essere utilizzata per posticipare il caricamento di iframe e immagini sulla pagina finché l'utente non scorre accanto a essi. Ciò può ridurre l'utilizzo dei dati, l'utilizzo della memoria e velocizzare i contenuti. Attivare il lazy load è semplice come aggiungere `loading = lazy` sugli elementi `<iframe>` o `<img>`.
 
-La percentuale di pagine che utilizzano il Native Lazy Loading.
-
 {{ figure_markup(
   caption="La percentuale di pagine che utilizzano il native lazy loading.",
   content="4.02%",

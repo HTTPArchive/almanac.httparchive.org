@@ -352,8 +352,6 @@ HTTP Archive uses [Wappalyzer](./methodology#wappalyzer) to detect technologies 
 
 The popular libraries in use are largely unchanged from last year, with jQuery continuing to dominate usage and only one of the top 21 libraries falling out (lazy.js, replaced by DataTables). In fact, even the percentages of the top libraries has barely changed from last year.
 
-{# TODO(analysts): table? showing rank, library, percentage and last years rank #}
-
 {{ figure_markup(
   image="frameworks-libraries.png",
   caption="Adoption of the top JavaScript frameworks and libraries as a percent of pages.",
@@ -375,8 +373,6 @@ In fact, the dominance of jQuery is supported even further when you stop to cons
 ### Frameworks
 
 When we look at the frameworks, we also don't see much of a dramatic change in terms of adoption in the main frameworks that were highlighted last year. Vue.js has seen a significant increase, and AMP grew a bit, but most of them are more or less where they were a year ago.
-
-{# TODO(analysts): Compare same frameworks from last year's chapter to this year in bar chart? #}
 
 It's worth noting that the [detection issue that was noted last year still applies](https://github.com/AliasIO/wappalyzer/issues/2450), and still impacts the results here. It's possible that there _has_ been a significant change in popularity for a few more of these tools, but we just don't see it with the way the data is currently collected.
 
