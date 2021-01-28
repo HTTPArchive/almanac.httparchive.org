@@ -50,7 +50,7 @@ Our methodology has the following limitations:
 - Headless ecommerce platforms like [commercetools](https://commercetools.com/) may not get detected as ecommerce platform but if we are able to detect presence of cart on such sites, we will still include sites using such platforms in our overall coverage stats.
 - Technologies which are typically deployed outside homepages (e.g. WebAR on product detail pages) are not detected.
 - Due to our crawl originating from US, there may be some bias towards US specific platforms. For example, if a global business has ecommerce sites built on different platforms for different countries (using country specific domains/sub-domains), it may not show these regional differences in our analysis.
-- It's common for B2B sites to hide the cart functioality behind a login and due to that this study is not a correct represetation of B2B market.
+- It's common for B2B sites to hide the cart functionality behind a login and due to that this study is not a correct representation of B2B market.
 
 ## Ecommerce platforms
 

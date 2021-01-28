@@ -372,7 +372,7 @@ HTML5 introduced many new native elements, all which have [implicit semantics](h
 {{ figure_markup(
   image="common-aria-roles.png",
   caption="Top ten most common ARIA roles.",
-  description="Bar chart showing the top 10 most common ARIA roles on desktop and mobeil with `button` at 25.2% for desktop and 24.5% for mobile, `navigation` at 22.1% and 21.8 respectively, `dialog` at 19.0% and 18.2%, `search` at 17.9% and 17.6%, `presentation` at 17.8% and 16.3%, `main` at 16.0% for both, `banner` at 14.8% for both, `contentinfo` at 12.1% and 11.9%, `img` at 8.5% and 8.0%, and `tablist` at 7.0% and 6.6%.",
+  description="Bar chart showing the top 10 most common ARIA roles on desktop and mobile with `button` at 25.2% for desktop and 24.5% for mobile, `navigation` at 22.1% and 21.8 respectively, `dialog` at 19.0% and 18.2%, `search` at 17.9% and 17.6%, `presentation` at 17.8% and 16.3%, `main` at 16.0% for both, `banner` at 14.8% for both, `contentinfo` at 12.1% and 11.9%, `img` at 8.5% and 8.0%, and `tablist` at 7.0% and 6.6%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSjkB_XAYiwkYrMuoXp44mdqMGJVDUkTr_48ELozY72Mdv3OlxeWV9ysbDY9bs6hA7LnJTrHar9aZlM/pubchart?oid=2002759694&format=interactive",
   sheets_gid="39937976",
   sql_file="common_aria_role.sql"
