@@ -33,11 +33,11 @@ We examine the prominence of the most common types of [third-party](./third-part
 
 ### Third-party trackers
 
-We use [WhoTracksMe](https://whotracks.me/)'s tracker list to determine the percentage of websites that issue a request to a tracker. As shown in the following figure, we have found that at least one tracker is present on roughly 93% of websites.
+We use [WhoTracksMe](https://whotracks.me/)'s tracker list to determine the percentage of websites that issue a request to a potential tracker. As shown in the following figure, we have found that at least one potential tracker is present on roughly 93% of websites.
 
 {{ figure_markup(
   image="privacy-websites-that-load-trackers.png",
-  caption="Websites including at least one tracker",
+  caption="Websites including at least one potential tracker",
   description="Bar chart showing that 92.94% of desktop websites and 92.97% of mobile websites load trackers.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQJMtHv0Y1JcQJkcVyrqBk9dsujZeDtOZEv7uvE0xM2VrQSuTUDFya41TeRlTZDDe2rWmHwDghW3Dev/pubchart?oid=1325818112&format=interactive",
   sheets_gid="1591448294"
@@ -47,29 +47,39 @@ We use [WhoTracksMe](https://whotracks.me/)'s tracker list to determine the perc
 We examined the most widely used trackers and plot the prevalence of the 10 most popular ones.
 
 {{ figure_markup(
-  image="privacy-biggest-third-party-trackers.png",
-  caption="Top 10 Trackers",
-  description="Bar chart showing the prevalence of the 10 most popular trackers used on mobile and desktop clients. There is little difference between desktop and mobile and mobile has 65.9% for google_analytics, 65.5% for googleapis.com, 63.3% for gstatic, 58.3% for google_fonts, 50.0% for doubleclick, 47.6% for google, 42.4% for google_tag_manage, 30.9% for facebook, 19.2% for google_adservices, and 13.1% for cloudflare.",
+  image="privacy-biggest-third-party-potential-trackers.png",
+  caption="Top 10 Potential Trackers",
+  description="Bar chart showing the prevalence of the 10 most popular potential trackers used on mobile and desktop clients. There is little difference between desktop and mobile and mobile has 65.5% for google_analytics, 65.9% for googleapis.com, 63.3% for gstatic, 58.3% for google_fonts, 50.0% for doubleclick, 47.6% for google, 42.4% for google_tag_manager, 30.9% for facebook, 19.2% for google_adservices, and 12.7% for cloudflare.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQJMtHv0Y1JcQJkcVyrqBk9dsujZeDtOZEv7uvE0xM2VrQSuTUDFya41TeRlTZDDe2rWmHwDghW3Dev/pubchart?oid=850649042&format=interactive",
-  sheets_gid="1677398038",
-  sql_file="top100_cookies_set_from_header.sql"
+  sheets_gid="1677398038"
   )
 }}
 
 The largest player on the online tracking market is without doubt Google, with eight of its tracking domains present in the top 10 trackers and prevalent on at least 70% of websites. They are followed are Facebook and Cloudflare–though the latter is probably more reflective of the popularity of them as a hosting site.
 
-WhoTracksMe's tracker list also defines categories that the trackers belong to. The following figure shows the distribution of the different categories for the 100 largest trackers.
+WhoTracksMe's tracker list also defines categories that the trackers belong to. If we remove CDNs and Hosting sites from our statistics, under the assumption they may not track—or at least that that is not their primary function—then you get a slightly different view of the top 10, though not that dissimilar:
+
+{{ figure_markup(
+  image="privacy-biggest-third-party-trackers.png",
+  caption="Top 10 Trackers",
+  description="Bar chart showing the prevalence of the 10 most popular trackers used on mobile and desktop clients. There is little difference between desktop and mobile and mobile has 65.5% for google_analytics, 50.0% for doubleclick, 47.6% for google, 42.4% for google_tag_manager, 30.9% for facebook, 19.2% for google_adservices, 12.7% for youtube, 19.2% for google_syndication, and 6.5% for both twitter and wordpress_stats.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQJMtHv0Y1JcQJkcVyrqBk9dsujZeDtOZEv7uvE0xM2VrQSuTUDFya41TeRlTZDDe2rWmHwDghW3Dev/pubchart?oid=1525236727&format=interactive",
+  sheets_gid="1163050723"
+  )
+}}
+
+Here Google still makes up 70% of the top 10. The following figure shows the distribution of the different categories for the 100 largest potential trackers by category.
 
 {{ figure_markup(
   image="privacy-tracker-categories.png",
-  caption="Categories of the 100 most popular trackers",
-  description="Bar chart showing distribution of the top 100 trackers on the web with 56 for advertising, 11 for cdn, 9 for site_analytics, 6 for both social media and misc, 3 for both essential and customer_help, 2 for both audio and video and 1 for both comments and undefined.",
+  caption="Categories of the 100 most popular potential trackers",
+  description="Bar chart showing distribution of the top 100 potential trackers on the web with 56 for advertising, 11 for cdn, 9 for site_analytics, 6 for both social media and misc, 3 for both essential and customer_help, 2 for both audio and video and 1 for both comments and undefined.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQJMtHv0Y1JcQJkcVyrqBk9dsujZeDtOZEv7uvE0xM2VrQSuTUDFya41TeRlTZDDe2rWmHwDghW3Dev/pubchart?oid=1117413918&format=interactive",
   sheets_gid="1431872451",
   )
 }}
 
-Nearly 60% of the most popular trackers are advertising-related. This could be due to the profitability of the online advertising market.
+Nearly 60% of the most popular trackers are advertising-related. This could be due to the profitability of the online advertising market being perceived to be related to the amount of tracking.
 
 ### Cookies
 
