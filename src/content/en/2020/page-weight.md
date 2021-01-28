@@ -41,7 +41,7 @@ Now, imagine that the same Australian, knowing that at the 75th percentile, his 
 
 In 25 years of modern browsing, the assets and resources have mostly not changed, other than the amount. The HTTP archive modus operandi is "how the web was built", and that was mostly done with HTML, CSS, JavaScript and finally images.
 
-Prior to 1995, the web's page weight was mostly predictable and manageable. But with [RFC 1866](https://tools.ietf.org/html/rfc1866), which introduced HTML 2.0 which introducted inline images via the `<img>` element, page weight would make a dramatic increase—all for the good of web development (adding images was seen as a positive experiment).
+Prior to 1995, the web's page weight was mostly predictable and manageable. But with [RFC 1866](https://tools.ietf.org/html/rfc1866), which introduced HTML 2.0 which introduced inline images via the `<img>` element, page weight would make a dramatic increase—all for the good of web development (adding images was seen as a positive experiment).
 
 For the most part, the rule of thumb has been that images would make up the majority of page weight. It was certainly the case and a concern when in-line images were added to the web then and remains the case today. In a separate scenario, as image data will be the greatest source of page weight, it will also be the greatest source of page weight savings (again, more on that later). This will be achieved from ensuring that the images are sized properly, but also making sure that the images are at the optimization sweet spot - finding the best balance of quality and file size.
 
@@ -51,7 +51,7 @@ Although JavaScript is on average the second most abundant resource on a page, w
 
 The web's journey from the plain, near pedagogical platform, to the innovative, intricate and highly interactive apps that have become the norm, the rudimentary page weight metric hid a bigger story: a ratatouille of resources, each affecting modern metrics, in turn affecting user experience.
 
-Whenever we talk about interactivity, we are talking almost exclusively about JavaScript. Now, though we are not here to discuss interactivity in any depth, we know there are metrics which are focused and dependent on JavaScript content and execution. So the weightier the JavaScript, the likier it is to have a greater impact on interactivity metrics (time to interactive, total blocking time). We have the [JavaScript chapter](./javascript) that dives a pinch more.
+Whenever we talk about interactivity, we are talking almost exclusively about JavaScript. Now, though we are not here to discuss interactivity in any depth, we know there are metrics which are focused and dependent on JavaScript content and execution. So the weightier the JavaScript, the likelier it is to have a greater impact on interactivity metrics (time to interactive, total blocking time). We have the [JavaScript chapter](./javascript) that dives a pinch more.
 
 ## Analysis
 
