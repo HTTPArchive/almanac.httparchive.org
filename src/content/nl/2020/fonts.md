@@ -102,7 +102,7 @@ Het was interessant om de verschillen in snelheid op te merken voor sites die de
   )
 }}
 
-Bij het bekijken van commerciële services zoals Adobe (`use.typekit.net`) of Monotype (`fast.fonts.com`) is het interessant om op te merken dat ze op desktop net zo snel of iets sneller zijn dan Google Fonts, maar merkbaar langzamer op mobiel. De conventionele wijsheid heeft over het algemeen aangenomen dat de trackingscripts die door die services worden gebruikt, ze aanzienlijk vertragen, maar dat is blijkbaar tegenwoordig minder een probleem dan in de afgelopen jaren. Hoewel het waar is dat we de prestaties van de site meten en niet noodzakelijk de prestaties van de font-hoster, hebben deze trackingscripts invloed op het laden van lettertypen op de client, dus het lijkt relevant om deze observaties op te nemen.
+Bij het bekijken van commerciële services zoals Adobe (`use.typekit.net`) of Monotype (`fast.fonts.com`) is het interessant om op te merken dat ze op desktop net zo snel of iets sneller zijn dan Google Fonts, maar merkbaar langzamer op mobiel. De conventionele wijsheid heeft over het algemeen aangenomen dat de trackingscripts die door die services worden gebruikt, ze aanzienlijk vertragen, maar dat is blijkbaar tegenwoordig minder een probleem dan in de afgelopen jaren. Hoewel het waar is dat we de prestaties van de site meten en niet noodzakelijk de prestaties van de font-host, hebben deze trackingscripts invloed op het laden van lettertypen op de client, dus het lijkt relevant om deze observaties op te nemen.
 
 #### Zelfhosting is niet altijd beter
 
