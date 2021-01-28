@@ -56,7 +56,7 @@ The country that uses the most font bytes is South Korea, which is not all that 
 {{ figure_markup(
   image="fonts-web-fonts-usage-top-countries.png",
   caption="Web fonts usage, top countries (desktop).",
-  description="A chart showing the top countries by usage of web fonts, measured as median kilobytes of web font data. At the top is the Republic of Korea with 155 kilobytes followed by Turkey (117), Iran (115), Solvenia (114), Greece (111), Suadia Arabia (109), and then three countries (Australia, United States of America, and Poland) are at the bottom with 108 kilobytes each.",
+  description="A chart showing the top countries by usage of web fonts, measured as median kilobytes of web font data. At the top is the Republic of Korea with 155 kilobytes followed by Turkey (117), Iran (115), Slovenia (114), Greece (111), Saudi Arabia (109), and then three countries (Australia, United States of America, and Poland) are at the bottom with 108 kilobytes each.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=705183861&format=interactive",
   sheets_gid="68624087",
   sql_file="04_02.web_fonts_usage_by_country.sql"
@@ -84,7 +84,7 @@ Another surprise in the data is the rise in fonts being served by [Shopify](http
 {{ figure_markup(
   image="fonts-median-fcp-of-sites-using-hosted-fonts.png",
   caption="Median FCP of sites using hosted fonts.",
-  description="A bar chart showing the median FCP of desktop and mobile sites using various font hosts. `static.parastorage.com` is fastest at 1,443 milliseconds for desktop and 3,060 for mobile, `fonts.shopifycdn.com` is at 1,407 for desktop and 4,426 for mobile, `cdn.shopify.com` is at 1,492 and 4,676 respectively, `cdnjs.cloudflare.com` is at 2,150 and 5,167, `maxcdn.bootstrapcdn.com` is at 2,166 and 5,224, `netdna.bootstrapcdn.com` is at 2,239 and 5,304, `use.fontawesome.com` is at 2,350 and 5,572, `fonts.gstatic.com` is at 2,543 and 5,709, `cdn.jsdelivr.net` is at 2,603 and 6,434, and `use.typekit.net` is at 2,384 and 7,370",
+  description="A bar chart showing the median FCP of desktop and mobile sites using various font hosts. `static.parastorage.com` is fastest at 1,443 milliseconds for desktop and 3,060 for mobile, `fonts.shopifycdn.com` is at 1,407 for desktop and 4,426 for mobile, `cdn.shopify.com` is at 1,492 and 4,676 respectively, `cdnjs.cloudflare.com` is at 2,150 and 5,167, `maxcdn.bootstrapcdn.com` is at 2,166 and 5,224, `netdna.bootstrapcdn.com` is at 2,239 and 5,304, `use.fontawesome.com` is at 2,350 and 5,572, `fonts.gstatic.com` is at 2,543 and 5,709, `cdn.jsdelivr.net` is at 2,603 and 6,434, and `use.typekit.net` is at 2,384 and 7,370.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=919344016&format=interactive",
   sheets_gid="1925210751",
   sql_file="04_05.web_font_usage_breakdown_with_fcp.sql"
@@ -96,7 +96,7 @@ It was interesting to note the differences in speed for sites using the various 
 {{ figure_markup(
   image="fonts-median-lcp-of-sites-using-hosted-fonts.png",
   caption="Median LCP of sites using hosted fonts.",
-  description="A bar chart showing the median FCP of desktop and mobile sites using various font hosts. `cdn.shopify.com` is fastest at 3,335 on desktop and 8,401 on mobile, `fonts.shopifycdn.com` is at 3,224 and 8,531 respectively, `netdna.bootstrapcdn.com` is at 3,910 and 8,183, `maxcdn.bootstrapcdn.com` is at 4,240 and 8,530, `cdnjs.cloudflare.com` is at 4,105 and 8,730, `use.fontawesome.com `is at 4,519 and 9,166, `fonts.gstatic.com` is at 4,878 and 9,558, `cdn.jsdelivr.net` is at 5,368 and 10,646, `static.parastorage.com` is at 4,322 and 11,813, `use.typekit.net` is at 4,700 and 12,552",
+  description="A bar chart showing the median FCP of desktop and mobile sites using various font hosts. `cdn.shopify.com` is fastest at 3,335 on desktop and 8,401 on mobile, `fonts.shopifycdn.com` is at 3,224 and 8,531 respectively, `netdna.bootstrapcdn.com` is at 3,910 and 8,183, `maxcdn.bootstrapcdn.com` is at 4,240 and 8,530, `cdnjs.cloudflare.com` is at 4,105 and 8,730, `use.fontawesome.com `is at 4,519 and 9,166, `fonts.gstatic.com` is at 4,878 and 9,558, `cdn.jsdelivr.net` is at 5,368 and 10,646, `static.parastorage.com` is at 4,322 and 11,813, `use.typekit.net` is at 4,700 and 12,552.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=2012634758&format=interactive",
   sql_file="04_05.web_font_usage_breakdown_with_fcp.sql"
   )
@@ -150,13 +150,13 @@ The [`font-display`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face
   )
 }}
 
-We can analyze the effect of these settings on First Contentful Paint and Largest Contentful Paint. Not surprisingly, the `optional` setting has a major effect on Largest Contentful Paint. There is also an effect on First Contentful Paint, but that might be more correlation than causation, as all of the modes except for `block` display *some* text after an "extremely small block period."#}
+We can analyze the effect of these settings on First Contentful Paint and Largest Contentful Paint. Not surprisingly, the `optional` setting has a major effect on Largest Contentful Paint. There is also an effect on First Contentful Paint, but that might be more correlation than causation, as all of the modes except for `block` display *some* text after an "extremely small block period."
 
 {{ figure_markup(
   image="fonts-font-display-performance-desktop.png",
   alt="font-display performance on desktop.",
   caption="`font-display` performance on desktop.",
-  description="A bar chart showing the desktop median first content paint (FCP) and last content paint (LCP) in milliseconds for different font-display settings: `none` has a median FCP of 2,286 ms and median LCP of 4,028 ms, `optional` has 1,766 ms and 3,055 ms respectively, `swap` has 2,223 ms and 4,176 ms, `fallback` has 2,397 ms and 4,106 ms, `block` has 2,454 ms and 4,696 ms, and `auto has 2,605 ms and 4,883 ms.",
+  description="A bar chart showing the desktop median first content paint (FCP) and last content paint (LCP) in milliseconds for different font-display settings: `none` has a median FCP of 2,286 ms and median LCP of 4,028 ms, `optional` has 1,766 ms and 3,055 ms respectively, `swap` has 2,223 ms and 4,176 ms, `fallback` has 2,397 ms and 4,106 ms, `block` has 2,454 ms and 4,696 ms, and `auto` has 2,605 ms and 4,883 ms.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1618299142&format=interactive",
   sheets_gid="1485693069",
   sql_file="04_06.font_display_with_fcp.sql"
@@ -167,7 +167,7 @@ We can analyze the effect of these settings on First Contentful Paint and Larges
   image="fonts-font-display-performance-mobile.png",
   alt="font-display performance on mobile.",
   caption="`font-display` performance on mobile.",
-  description="A bar chart showing the mobile median first content paint (FCP) and last content paint (LCP) in milliseconds for different font-display settings: `none` has a median FCP of 5,279 ms and median LCP of 8,381 ms, `optional` has 4,733 ms and 6,598 ms respectively, `swap` has 5,268 ms and 8,748 ms, `fallback` has 5,478 ms and 8,706 ms, `block` has 5,739 ms and 9,625 ms, and `auto has 6,181 ms and 10,103 ms.",
+  description="A bar chart showing the mobile median first content paint (FCP) and last content paint (LCP) in milliseconds for different font-display settings: `none` has a median FCP of 5,279 ms and median LCP of 8,381 ms, `optional` has 4,733 ms and 6,598 ms respectively, `swap` has 5,268 ms and 8,748 ms, `fallback` has 5,478 ms and 8,706 ms, `block` has 5,739 ms and 9,625 ms, and `auto` has 6,181 ms and 10,103 ms.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=2135700957&format=interactive",
   sheets_gid="1485693069",
   sql_file="04_06.font_display_with_fcp.sql"
