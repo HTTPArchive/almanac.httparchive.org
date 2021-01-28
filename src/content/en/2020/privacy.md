@@ -55,20 +55,20 @@ We examined the most widely used trackers and plot the prevalence of the 10 most
   )
 }}
 
-The largest player on the online tracking market is without doubt Google, with eight of its tracking domains present in the top 10 trackers and prevalent on at least 70% of websites. They are followed are Facebook and Cloudflare–though the latter is probably more reflective of the popularity of them as a hosting site.
+The largest player on the online tracking market is without doubt Google, with eight of its domains present in the top 10 potential trackers and prevalent on at least 70% of websites. They are followed by Facebook and Cloudflare–though the latter is probably more reflective of the popularity of them as a hosting site.
 
-WhoTracksMe's tracker list also defines categories that the trackers belong to. If we remove CDNs and Hosting sites from our statistics, under the assumption they may not track—or at least that that is not their primary function—then you get a slightly different view of the top 10, though not that dissimilar:
+WhoTracksMe's tracker list also defines categories that the trackers belong to. If we remove CDNs and Hosting sites from our statistics, under the assumption they may not track—or at least that that is not their primary function—then you get a slightly different view of the top 10.
 
 {{ figure_markup(
   image="privacy-biggest-third-party-trackers.png",
   caption="Top 10 Trackers",
   description="Bar chart showing the prevalence of the 10 most popular trackers used on mobile and desktop clients. There is little difference between desktop and mobile and mobile has 65.5% for google_analytics, 50.0% for doubleclick, 47.6% for google, 42.4% for google_tag_manager, 30.9% for facebook, 19.2% for google_adservices, 12.7% for youtube, 19.2% for google_syndication, and 6.5% for both twitter and wordpress_stats.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQJMtHv0Y1JcQJkcVyrqBk9dsujZeDtOZEv7uvE0xM2VrQSuTUDFya41TeRlTZDDe2rWmHwDghW3Dev/pubchart?oid=1525236727&format=interactive",
-  sheets_gid="1163050723"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQJMtHv0Y1JcQJkcVyrqBk9dsujZeDtOZEv7uvE0xM2VrQSuTUDFya41TeRlTZDDe2rWmHwDghW3Dev/pubchart?oid=1831606887&format=interactive",
+  sheets_gid="1677398038"
   )
 }}
 
-Here Google still makes up 70% of the top 10. The following figure shows the distribution of the different categories for the 100 largest potential trackers by category.
+Here Google still makes up seven out of the top 10 domains. The following figure shows the distribution of the different categories for the 100 largest potential trackers by category.
 
 {{ figure_markup(
   image="privacy-tracker-categories.png",
