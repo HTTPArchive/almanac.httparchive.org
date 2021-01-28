@@ -140,6 +140,7 @@ eeeps
 endif
 endlock
 emoji
+ericportis
 ernee
 etportis
 eucookie
@@ -266,6 +267,7 @@ meetups
 meiert
 metadata
 mpeg
+microbrowser
 microbrowsers
 microformat
 microformats
@@ -500,6 +502,7 @@ uncacheable
 uncrawlable
 underserved
 underuse
+unfurlers
 unitless
 unpkg
 unprefixed
