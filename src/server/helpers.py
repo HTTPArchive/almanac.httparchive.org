@@ -115,6 +115,16 @@ def get_chapter_nextprev(config, chapter_slug):
     return prev_chapter, next_chapter
 
 
+def get_chapter_config(config, chapter_slug):
+
+    for part in config['outline']:
+        for chapter in part['chapters']:
+            if chapter.get('slug') == chapter_slug:
+                return chapter
+
+    return None
+
+
 def get_view_args(lang=None, year=None):
     view_args = request.view_args.copy()
     if lang:

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block styles %}
-  <link rel="stylesheet" href="{{ get_versioned_filename('/static/css/2019.css') }}">
+  <link rel="stylesheet" href="{{ get_versioned_filename('/static/css/almanac.css') }}">
 {% endblock %}
 
 {% block page_url %}https://almanac.httparchive.org{{ url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}{% endblock %}
@@ -119,13 +119,17 @@
     {{ self.table_of_contents_switcher() }}
   </label>
   <select id="table-of-contents-switcher-{{switcher_name}}" data-label="toc-menu-mobile">
+    {% if request.path.endswith("/" + year + "/") %}
+      <option selected disabled value="{{ url_for('home', year=year, lang=lang) }}">{{ self.home() }}</option>
+    {% else %}
+      <option value="{{ url_for('home', year=year, lang=lang) }}">{{ self.home() }}</option>
+    {% endif %}
     {% if request.path.endswith("table-of-contents") %}
       <option selected disabled value="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</option>
-      <option disabled value="{{ url_for('table_of_contents', year=year, lang=lang) }}#foreword">{{ self.foreword_title() }}</option>
     {% else %}
       <option value="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</option>
-      <option value="{{ url_for('table_of_contents', year=year, lang=lang) }}#foreword">{{ self.foreword_title() }}</option>
     {% endif %}
+    <option value="{{ url_for('table_of_contents', year=year, lang=lang, _anchor='foreword') }}">{{ self.foreword_title() }}</option>
     {% for part_config in config.outline %}
     {% for chapter_config in part_config.chapters %}
       {% set title = localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title %}
@@ -196,19 +200,32 @@
   </button>
   <ul class="nav-dropdown-list hidden {{switcher_name}}-list">
 
-    {% if request.path.endswith('table-of-contents') %}
-    <li class="nav-dropdown-list-part foreword nav-dropdown-list-current">
-      <span>{{ self.foreword_title() }}</span>
+    {% if request.path.endswith("/" + year + "/") %}
+    <li class="nav-dropdown-list-part nav-dropdown-list-current">
+      <span>{{ self.home() }}</span>
     </li>
     {% else %}
-    <li class="nav-dropdown-list-part foreword">
-      <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.foreword_title() }}</a>
+    <li class="nav-dropdown-list-part">
+      <a href="{{ url_for('home', year=year, lang=lang) }}">{{ self.home() }}</a>
     </li>
     {% endif %}
 
+    {% if request.path.endswith('table-of-contents') %}
+    <li class="nav-dropdown-list-part nav-dropdown-list-current">
+      <span>{{ self.table_of_contents_title() }}</span>
+    </li>
+    {% else %}
+    <li class="nav-dropdown-list-part">
+      <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a>
+    </li>
+    {% endif %}
+    <li class="nav-dropdown-list-chapter foreword">
+      <a href="{{ url_for('table_of_contents', year=year, lang=lang, _anchor='foreword') }}">{{ self.foreword_title() }}</a>
+    </li>
+
     {% for part_config in config.outline %}
     <li class="nav-dropdown-list-part">
-      <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}#part-{{ part_config.part_number }}">{{ self.part() }} {{ localizedPartTitles[part_config.part] if localizedPartTitles[part_config.part]|length else chapter_config.title }}</a>
+      <a href="{{ url_for('table_of_contents', year=year, lang=lang, _anchor='part-' + part_config.part_number) }}">{{ self.part() }} {{ localizedPartTitles[part_config.part] if localizedPartTitles[part_config.part]|length else chapter_config.title }}</a>
     </li>
     {% for chapter_config in part_config.chapters %}
     {% set title = localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title %}
@@ -249,7 +266,7 @@
     {% endfor %}
 
     <li class="nav-dropdown-list-part">
-      <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}#appendices">{{ self.appendices() }}</a>
+      <a href="{{ url_for('table_of_contents', year=year, lang=lang, _anchor='appendices') }}">{{ self.appendices() }}</a>
     </li>
     {% if request.path.endswith("methodology") %}
     <li class="nav-dropdown-list-chapter nav-dropdown-list-current">
@@ -272,7 +289,7 @@
 
     {% if ebook_size_in_mb and ebook_size_in_mb > 0 %}
     <li class="nav-dropdown-list-part">
-      <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}#ebook">{{ self.ebook_title() }}</a>
+      <a href="{{ url_for('table_of_contents', year=year, lang=lang, _anchor='ebook') }}">{{ self.ebook_title() }}</a>
     </li>
     <li class="nav-dropdown-list-chapter ebook">
       <a href="/static/pdfs/web_almanac_{{ year }}_{{ lang }}.pdf" data-event="ebook-click" data-label="toc-menu">{{ self.ebook_download_short() }}</a>
@@ -650,14 +667,20 @@
     <ul class="figure-dropdown-list nav-dropdown-list floating-card hidden">
       {% if sheets_gid != "" %}
       <li>
+        {% if sheets_gid.startswith("https") %}
+        <a href="{{ sheets_gid }}">
+          {{ self.figure_data() }}
+        </a>
+        {% else %}
         <a href="{{ metadata.get('results') }}#gid={{ sheets_gid }}">
           {{ self.figure_data() }}
         </a>
+        {% endif %}
       </li>
       {% endif %}
       {% if sql_file != "" %}
       <li>
-        <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/{{ year }}/{{ metadata.get('queries')  }}/{{ sql_file }}">
+        <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/{{ year }}/{{ metadata.get('chapter')  }}/{{ sql_file }}">
           {{ self.figure_sql() }}
         </a>
       </li>

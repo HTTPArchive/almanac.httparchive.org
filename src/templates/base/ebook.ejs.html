@@ -8,12 +8,12 @@
     <% for (let chapter of part.chapters) { %>
 
     {% set metadata = <%- JSON.stringify(chapter.metadata) %> %}
-    {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
+    {% set chapter_hero_dir = "/static/images/%s/%s/" % ("<%- chapter.hero_dir || '2019' %>", metadata.chapter) %}
     <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
         <div class="body" id="{{ metadata.get('chapter') }}">
 
             <div class="subtitle">
-                {{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}
+                {{ self.part() }} <%- chapter.part %> {{ self.chapter() }} <%- chapter.chapter_number %>
             </div>
             <h1 class="title title-lg">
                 {{ metadata.get('title') }}
@@ -24,13 +24,13 @@
 
             <!-- Show large image for large screens and high density screens and use webp when supported -->
             <picture>
-                <source media="(min-width: 327px)" type="image/webp" srcset="/static/images/2019/{{ metadata.chapter }}/hero_lg.webp" />
-                <source media="(min-width: 327px)" type="image/jpeg" srcset="/static/images/2019/{{ metadata.chapter }}/hero_lg.jpg" />
-                <source type="image/webp" srcset="/static/images/2019/{{ metadata.chapter }}/hero_lg.webp 2x" />
-                <source type="image/jpeg" srcset="/static/images/2019/{{ metadata.chapter }}/hero_lg.jpg 2x" />
-                <source type="image/webp" srcset="/static/images/2019/{{ metadata.chapter }}/hero_sm.webp" />
-                <source type="image/jpeg" srcset="/static/images/2019/{{ metadata.chapter }}/hero_sm.jpg" />
-                <img src="/static/images/2019/{{ metadata.chapter }}/hero_lg.jpg" class="content-banner" alt="" width="866" height="433" />
+                <source media="(min-width: 327px)" type="image/webp" srcset="{{ chapter_hero_dir }}hero_lg.webp" />
+                <source media="(min-width: 327px)" type="image/jpeg" srcset="{{ chapter_hero_dir }}hero_lg.jpg" />
+                <source type="image/webp" srcset="{{ chapter_hero_dir }}hero_lg.webp 2x" />
+                <source type="image/jpeg" srcset="{{ chapter_hero_dir }}hero_lg.jpg 2x" />
+                <source type="image/webp" srcset="{{ chapter_hero_dir }}hero_sm.webp" />
+                <source type="image/jpeg" srcset="{{ chapter_hero_dir }}hero_sm.jpg" />
+                <img src="{{ chapter_hero_dir }}hero_lg.jpg" class="content-banner" alt="" width="866" height="433" />
             </picture>
 
             <div class="byline">{{ self.written_by_before() }}
