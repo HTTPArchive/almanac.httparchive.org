@@ -1,117 +1,117 @@
 ---
 part_number: I
 chapter_number: 4
-title: Fonts
-description: Fonts chapter of the 2020 Web Almanac covering where fonts are loaded from, font formats, font loading performance, variable fonts and color fonts.
+title: Lettertypen
+description: Hoofdstuk over lettertypen van de Web Almanac 2020 waarin wordt beschreven waar lettertypen worden geladen, lettertype-indelingen, laadprestaties voor lettertypen, variabele lettertypen en kleurlettertypen.
 authors: [raphlinus, jpamental]
 reviewers: [RoelN, svgeesus, davelab6, rsheeter, mandymichael]
 analysts: [AbbyTsai]
 editors: [bazzadp]
-translators: []
-jpamental_bio: Designer, tinkerer, typographer. Author of Responsive Typography, Invited Expert to the W3C, and 10yrs+ experience focused on better typography on the web.
-raphlinus_bio: Raph Levien has been working with fonts for over 35 years, including a PhD from UC Berkeley in font design tools. He is rejoining <a href="https://fonts.google.com/">Google Fonts</a> as a font technology researcher, after having co-founded the team in 2010.
+translators: [noah-vdv]
+jpamental_bio: Ontwerper, knutselaar, typograaf. Auteur van Responsive Typography, uitgenodigde expert voor het W3C en 10+ jaar ervaring gericht op betere typografie op internet.
+raphlinus_bio: Raph Levien werkt al meer dan 35 jaar met lettertypen, waaronder een doctoraat aan UC Berkeley in hulpmidelen voor het ontwerpen van lettertypen. Hij voegt zich weer bij <a href="https://fonts.google.com/">Google Fonts</a> als onderzoeker op het gebied van lettertypetechnologie, nadat hij het team in 2010 mede heeft opgericht.
 discuss: 2040
 results: https://docs.google.com/spreadsheets/d/1jjvZqYay5KmTle4atzFWqtbkz9ohw25KFmNtCS-7n3s/
 queries: 04_Fonts
-featured_quote: Web font technology is fairly mature, with incremental improvements in compression and other technical improvements, but new features are arriving. Browser support for variable fonts has become quite good, and this is the feature that's seen the most growth in the previous year.
-featured_stat_1: 70.3%
-featured_stat_label_1: Popularity of Google Fonts amongst font-hosting services
-featured_stat_2: 10.3%
-featured_stat_label_2: Usage of <code>font-display</code> swap
-featured_stat_3: 11.0%
-featured_stat_label_3: Usage of Variable Fonts on mobile sites
+featured_quote: De technologie voor weblettertypen is redelijk volwassen, met stapsgewijze verbeteringen in compressie en andere technische verbeteringen, maar er komen nieuwe functies aan. Browserondersteuning voor variabele lettertypen is redelijk goed geworden, en dit is de functie die het afgelopen jaar de meeste groei heeft gekend.
+featured_stat_1: 70,3%
+featured_stat_label_1: Populariteit van Google Fonts onder font-hostingservices
+featured_stat_2: 10,3%
+featured_stat_label_2: Gebruik van <code>font-display</code> swap
+featured_stat_3: 11,0%
+featured_stat_label_3: Gebruik van variabele lettertypen op mobiele sites
 ---
-## Introduction
+## Introductie
 
-Text is at the heart of most web sites, and typography is the art of presenting that text in a way that's visually appealing and effective. Creating good typography requires choosing the appropriate fonts and designers have a tremendous range of web fonts to choose from. As with all resources, there are performance and compatibility concerns but, done right, the benefit is well worth it. In this chapter, we'll dive into data to show how web fonts are being used, and in particular how they're optimized.
+Tekst vormt de kern van de meeste websites, en typografie is de kunst om die tekst op een visueel aantrekkelijke en effectieve manier te presenteren. Om een goede typografie te maken, moet u de juiste lettertypen kiezen en ontwerpers hebben een enorm scala aan weblettertypen om uit te kiezen. Zoals met alle bronnen, zijn er prestatie- en compatibiliteitsproblemen, maar als het goed wordt gedaan, is het voordeel de moeite waard. In dit hoofdstuk gaan we dieper in op gegevens om te laten zien hoe weblettertypen worden gebruikt, en in het bijzonder hoe ze zijn geoptimaliseerd.
 
-## Where are web fonts being used?
+## Waar worden weblettertypen gebruikt?
 
-Web font usage has been growing steadily over time (it was near zero as late as 2011), with 82% of web pages for desktop using web fonts, and mobile at 80%.
+Het gebruik van weblettertypen is in de loop van de tijd gestaag gegroeid (het was zelfs in 2011 bijna nul), met 82% van de webpagina's voor desktops die weblettertypen gebruiken, en mobiel op 80%.
 
 {{ figure_markup(
   image="fonts-web-fonts-usage.png",
-  caption="Web font usage over time.",
-  description="Scatter plot showing fraction of mobile and desktop web pages containing web fonts, as a function of time. Usage increased roughly linearly from 0% around 2010 to 80% now. Desktop and mobile usage seems similar.",
+  caption="Gebruik van weblettertypen in de loop van de tijd.",
+  description="Spreidingsdiagram toont een fractie van mobiele en desktop-webpagina's met weblettertypen, als een functie van tijd. Het gebruik is ongeveer lineair gestegen van 0% rond 2010 tot 80% nu. Desktop- en mobiel gebruik lijken op elkaar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=666273773&format=interactive",
   sheets_gid="655527383",
   sql_file="04_01.web_fonts_usage.sql"
   )
 }}
 
-Usage of web fonts is fairly consistent around the world, with a few outliers. The charts below are based on the median number of kilobytes of web fonts per web page, which can be an indicator of lots of fonts, large fonts, or both.
+Het gebruik van weblettertypen is redelijk consistent over de hele wereld, met enkele uitschieters. De onderstaande grafieken zijn gebaseerd op het gemiddelde aantal kilobytes weblettertypen per webpagina, wat een indicatie kan zijn van veel lettertypen, grote lettertypen of beide.
 
 {{ figure_markup(
   image="fonts-web-fonts-usage-by-country.png",
-  caption="Web fonts usage by country (desktop).",
-  description='A map of the world showing the amount of web font usage for each country, measured as median kilobytes of web font data. Noteable "hot spots" highlighted with low font usage include Africa, Turkmenistan, Taiwan, Japan and a number of other far eastern countries',
+  caption="Gebruik van weblettertypen per land (desktop).",
+  description='Een kaart van de wereld die de hoeveelheid gebruik van weblettertypen voor elk land toont, gemeten als mediane kilobytes aan weblettertypegegevens. Opvallende "hotspots" die worden gemarkeerd met een laag lettertype-gebruik zijn onder meer Afrika, Turkmenistan, Taiwan, Japan en een aantal andere landen in het Verre Oosten.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=961243485&format=interactive",
   sheets_gid="68624087",
   sql_file="04_02.web_fonts_usage_by_country.sql"
   )
 }}
 
-The country that uses the most font bytes is South Korea, which is not all that surprising given their consistently high internet speeds and low latency and the fact that Korean (Hangul) fonts are almost an order of magnitude larger than Latin. Web font usage in Japan and Chinese-speaking countries is considerably lower, likely because Chinese and Japanese fonts are vastly larger (the median font size can be 1000 times or more larger than the median Latin size). This means web font usage in Japan is very low, and usage in China is effectively zero. Although recent developments in [progressive font enhancement](https://www.w3.org/TR/2020/NOTE-PFE-evaluation-20201015/)–which we will cover more below–may make web fonts usable in both countries within a couple of years. There have been reports that Google Fonts have not been reliably accessible in China and that might also have been a factor holding back adoption.
+Het land dat de meeste lettertypebytes gebruikt, is Zuid-Korea, wat niet zo verwonderlijk is gezien hun constant hoge internetsnelheden en lage latentie en het feit dat Koreaanse (Hangul) lettertypen bijna een orde van grootte groter zijn dan het Latijn. Het gebruik van weblettertypen in Japan en Chineessprekende landen is aanzienlijk lager, waarschijnlijk omdat Chinese en Japanse lettertypen veel groter zijn (de mediane lettergrootte kan 1000 keer of groter zijn dan de gemiddelde Latijnse lettergrootte). Dit betekent dat het gebruik van weblettertypen in Japan erg laag is, en het gebruik in China feitelijk nul. Hoewel recente ontwikkelingen in <a hreflang="en" href="https://www.w3.org/TR/2020/NOTE-PFE-evaluation-20201015/">progressieve lettertypeverbetering</a> - die we hieronder meer zullen behandelen - weblettertypen bruikbaar kunnen maken in beide landen binnen een paar jaar. Er zijn berichten dat Google Fonts niet betrouwbaar toegankelijk zijn geweest in China en dat dit mogelijk ook een factor kan zijn geweest die acceptatie heeft belemmerd.
 
 {{ figure_markup(
   image="fonts-web-fonts-usage-top-countries.png",
-  caption="Web fonts usage, top countries (desktop).",
-  description="A chart showing the top countries by usage of web fonts, measured as median kilobytes of web font data. At the top is the Republic of Korea with 155 kilobytes followed by Turkey (117), Iran (115), Solvenia (114), Greece (111), Suadia Arabia (109), and then three countries (Australia, United States of America, and Poland) are at the bottom with 108 kilobytes each.",
+  caption="Gebruik van weblettertypen, toplanden (desktop).",
+  description="Een grafiek met de toplanden op basis van het gebruik van weblettertypen, gemeten als mediane kilobytes aan weblettertypegegevens. Bovenaan staat de Republiek Korea met 155 kilobytes, gevolgd door Turkije (117), Iran (115), Slovenië (114), Griekenland (111), Saoedi-Arabië (109) en vervolgens drie landen (Australië, de Verenigde Staten en Polen) staan onderaan met elk 108 kilobytes.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=705183861&format=interactive",
   sheets_gid="68624087",
   sql_file="04_02.web_fonts_usage_by_country.sql"
   )
 }}
 
-There's an interesting thread on [web font usage by country](https://discuss.httparchive.org/t/how-does-web-font-usage-vary-by-country/1649) on the HTTP Archive discussion forum that certainly influenced the queries used by this chapter. Given the large number of typefaces produced for Asian languages, it's likely usage will rise in that region as technology for serving those fonts more efficiently becomes available.
+Er is een interessante thread over <a hreflang="en" href="https://discuss.httparchive.org/t/how-does-web-font-usage-vary-by-country/1649">gebruik van weblettertypen per land</a> op het HTTP Archive-discussieforum dat zeker invloed heeft gehad op de zoekopdrachten die in dit hoofdstuk worden gebruikt. Gezien het grote aantal lettertypen dat voor Aziatische talen wordt geproduceerd, zal het gebruik in die regio waarschijnlijk toenemen naarmate technologie beschikbaar komt om die lettertypen efficiënter aan te bieden.
 
-### Serving with a service
+### Dienen met een dienst
 
 {{ figure_markup(
-  caption="Popularity of Google Fonts amongst font-hosting services.",
-  content="70.3%",
+  caption="Populariteit van Google Fonts onder font-hostingservices.",
+  content="70,3%",
   classes="big-number",
   sheets_gid="1925210751",
   sql_file="04_05.web_font_usage_breakdown_with_fcp.sql"
 ) }}
 
-It likely comes as no surprise that [Google Fonts](https://fonts.google.com/) remains by far the most popular platform, but the percentage use has actually dropped almost 5% from 2019 to about 70%. [Adobe Fonts](https://fonts.adobe.com/) (formerly Typekit) has dropped about 3% as well, but [Bootstrap usage](https://getbootstrap.com/) has grown from about 3% to over 6% (in aggregate from several providers). It is worth noting that the largest provider for Bootstrap ([BootstrapCDN](https://www.bootstrapcdn.com/)) also provides icon fonts from [Font Awesome](https://fontawesome.com/), so it may be that it is not Bootstrap itself but rather older versions also referencing icon font files that is behind the rise in that source data.
+Het is waarschijnlijk geen verrassing dat (<a hreflang="en" href="https://fonts.google.com/">Google Fonts</a> verreweg het populairste platform blijft, maar het percentage gebruik is in feite met bijna 5% gedaald van 2019 tot ongeveer 70%. <a hreflang="en" href="https://fonts.adobe.com/">Adobe Fonts</a> (voorheen Typekit) is ook met ongeveer 3% gedaald, maar <a hreflang="en" href="https://getbootstrap.com/">Bootstrap-gebruik</a> is gegroeid van ongeveer 3% tot meer dan 6% (in totaal van verschillende providers). Het is vermeldenswaard dat de grootste provider voor Bootstrap (<a hreflang="en" href="https://www.bootstrapcdn.com/">BootstrapCDN</a>) ook pictogramlettertypen biedt van <a hreflang="en" href="https://fontawesome.com/">Font Awesome</a>, dus het kan zijn dat het niet Bootstrap zelf is, maar eerder oudere versies die ook verwijzen naar pictogramlettertypebestanden die achter de toename van die brongegevens zitten.
 
-Another surprise in the data is the rise in fonts being served by [Shopify](https://www.shopify.com/). Growing from roughly 1.1% in 2019 to about 4% in 2020, there has clearly been a significant uptick in usage of web fonts by sites hosted on that platform. It is unclear if that is due to that service offering more fonts that they host on their CDN, if it is growth in use of their platform, or both. However, the increase in usage of both Shopify and Bootstrap represent the largest amount of growth other than Google Fonts, making it a very noticeable data point.
+Een andere verrassing in de gegevens is de toename van het aantal lettertypen dat wordt bediend door <a hreflang="en" href="https://www.shopify.com/">Shopify</a>. Met een groei van ongeveer 1,1% in 2019 tot ongeveer 4% in 2020, is er duidelijk een aanzienlijke stijging te zien in het gebruik van weblettertypen door sites die op dat platform worden gehost. Het is onduidelijk of dat komt doordat die service meer lettertypen aanbiedt die ze op hun CDN hosten, of het een groei in het gebruik van hun platform is, of beide. De toename van het gebruik van zowel Shopify als Bootstrap vertegenwoordigt echter de grootste hoeveelheid groei, behalve Google Fonts, waardoor het een zeer opvallend gegevenspunt is.
 
-#### Not all services have the same service
+#### Niet alle services hebben dezelfde service
 
 {{ figure_markup(
   image="fonts-median-fcp-of-sites-using-hosted-fonts.png",
-  caption="Median FCP of sites using hosted fonts.",
-  description="A bar chart showing the median FCP of desktop and mobile sites using various font hosts. `static.parastorage.com` is fastest at 1,443 milliseconds for desktop and 3,060 for mobile, `fonts.shopifycdn.com` is at 1,407 for desktop and 4,426 for mobile, `cdn.shopify.com` is at 1,492 and 4,676 respectively, `cdnjs.cloudflare.com` is at 2,150 and 5,167, `maxcdn.bootstrapcdn.com` is at 2,166 and 5,224, `netdna.bootstrapcdn.com` is at 2,239 and 5,304, `use.fontawesome.com` is at 2,350 and 5,572, `fonts.gstatic.com` is at 2,543 and 5,709, `cdn.jsdelivr.net` is at 2,603 and 6,434, and `use.typekit.net` is at 2,384 and 7,370",
+  caption="Mediaan FCP van sites die gehoste lettertypen gebruiken.",
+  description="Een staafdiagram met de gemiddelde FCP van desktop- en mobiele sites met verschillende fonthosts. `static.parastorage.com` is de snelste met 1.443 milliseconden voor desktop en 3.060 voor mobiel, `fonts.shopifycdn.com` staat op 1.407 voor desktop en 4.426 voor mobiel, `cdn.shopify.com` op respectievelijk 1.492 en 4.676, `cdnjs.cloudflare.com` op 2150 en 5167, `maxcdn.bootstrapcdn.com` op 2166 en 5224, `netdna.bootstrapcdn.com` op 2239 en 5.304, `use.fontawesome.com` op 2350 en 5.572, `fonts.gstatic.com` op 2.543 en 5.709, `cdn.jsdelivr.net` op 2.603 en 6.434, en `use.typekit.net` staat op 2.384 en 7.370.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=919344016&format=interactive",
   sheets_gid="1925210751",
   sql_file="04_05.web_font_usage_breakdown_with_fcp.sql"
   )
 }}
 
-It was interesting to note the differences in speed for sites using the various free/open source and commercial services. When looking at First Content Paint (FCP) and Last Content Paint (LCP) times, sites using Google Fonts are roughly in the middle, but generally a bit slower than the median value. The fastest sites in the dataset are Shopify and Wix (serving assets from `parastorage.com`), and it might be presumed they focus on a small number of highly optimized files. Google on the other hand is also serving web fonts globally of widely varying sizes (due to language), likely resulting in slightly slower median times.
+Het was interessant om de verschillen in snelheid op te merken voor sites die de verschillende gratis / open source en commerciële services gebruiken. Als we kijken naar de tijden van First Content Paint (FCP) en Last Content Paint (LCP), bevinden sites die Google Fonts gebruiken ongeveer in het midden, maar over het algemeen iets langzamer dan de mediaan. De snelste sites in de dataset zijn Shopify en Wix (die middelen van `parastorage.com` bedienen), en er mag worden aangenomen dat ze zich richten op een klein aantal sterk geoptimaliseerde bestanden. Aan de andere kant levert Google ook weblettertypen wereldwijd van sterk variërende grootten (vanwege taal), wat waarschijnlijk resulteert in iets langzamere mediane tijden.
 
 {{ figure_markup(
   image="fonts-median-lcp-of-sites-using-hosted-fonts.png",
-  caption="Median LCP of sites using hosted fonts.",
-  description="A bar chart showing the median FCP of desktop and mobile sites using various font hosts. `cdn.shopify.com` is fastest at 3,335 on desktop and 8,401 on mobile, `fonts.shopifycdn.com` is at 3,224 and 8,531 respectively, `netdna.bootstrapcdn.com` is at 3,910 and 8,183, `maxcdn.bootstrapcdn.com` is at 4,240 and 8,530, `cdnjs.cloudflare.com` is at 4,105 and 8,730, `use.fontawesome.com `is at 4,519 and 9,166, `fonts.gstatic.com` is at 4,878 and 9,558, `cdn.jsdelivr.net` is at 5,368 and 10,646, `static.parastorage.com` is at 4,322 and 11,813, `use.typekit.net` is at 4,700 and 12,552",
+  caption="Mediaan LCP van sites die gehoste lettertypen gebruiken.",
+  description="Een staafdiagram met de gemiddelde FCP van desktop- en mobiele sites met verschillende fonthosts. `cdn.shopify.com` is het snelst met 3.335 op desktop en 8.401 op mobiel, `fonts.shopifycdn.com` staat respectievelijk op 3.224 en 8.531, `netdna.bootstrapcdn.com` op 3.910 en 8.183, `maxcdn.bootstrapcdn.com` op 4.240 en 8.530, `cdnjs.cloudflare.com` op 4.105 en 8.730, `use.fontawesome.com` op 4.519 en 9.166, `fonts.gstatic.com` op 4.878 en 9.558, `cdn.jsdelivr.net` op 5.368 en 10.646, `static.parastorage.com` staat op 4.322 en 11.813, `use.typekit.net` staat op 4.700 en 12.552.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=2012634758&format=interactive",
   sql_file="04_05.web_font_usage_breakdown_with_fcp.sql"
   )
 }}
 
-When viewing commercial services such as Adobe (`use.typekit.net`) or Monotype (`fast.fonts.com`) it is interesting to note that on desktop they tend to be as fast or slightly faster than Google Fonts, but are noticeably slower on mobile. Conventional wisdom has generally held that the tracking scripts used by those services substantially slow them down, but that is apparently less an issue today than it has been in years past. While it's true that we are measuring site performance and not necessarily font hoster performance, those tracking scripts impact font loading on the client so it seems relevant to include these observations.
+Bij het bekijken van commerciële services zoals Adobe (`use.typekit.net`) of Monotype (`fast.fonts.com`) is het interessant om op te merken dat ze op desktop net zo snel of iets sneller zijn dan Google Fonts, maar merkbaar langzamer op mobiel. De conventionele wijsheid heeft over het algemeen aangenomen dat de trackingscripts die door die services worden gebruikt, ze aanzienlijk vertragen, maar dat is blijkbaar tegenwoordig minder een probleem dan in de afgelopen jaren. Hoewel het waar is dat we de prestaties van de site meten en niet noodzakelijk de prestaties van de font-hoster, hebben deze trackingscripts invloed op het laden van lettertypen op de client, dus het lijkt relevant om deze observaties op te nemen.
 
-#### Self-hosting isn't always better
+#### Zelfhosting is niet altijd beter
 
-Self-hosting fonts on the same domain as the website can be faster, as [we discovered for this very website](https://www.tunetheweb.com/blog/should-you-self-host-google-fonts/), however this is not always the case as the data shows.
+Zelf-hostende lettertypen op hetzelfde domein als de website kunnen sneller zijn, zoals <a hreflang="en" href="https://www.tunetheweb.com/blog/should-you-self-host-google-fonts/">we ontdekten voor deze website</a>, dit is echter niet altijd het geval, zoals blijkt uit de gegevens.
 
 {{ figure_markup(
   image="fonts-web-hosting-performance-desktop.png",
-  caption="Web font hosting performance, desktop.",
-  description="A bar chart showing the desktop median First Contentful Paint and Last Contentful Paint (in milliseconds) for three different web font hosting strategies: local is 2,426 milliseconds for median FCP and 4,176 for median LCP, external is 2,034 and 3,671 respectively, and both is 2,663 and 5,044 milliseconds respectively.",
+  caption="Hosting van weblettertypen, desktop.",
+  description="Een staafdiagram met de desktopmediaan First Contentful Paint en Last Contentful Paint (in milliseconden) voor drie verschillende hostingstrategieën voor weblettertypen: lokaal is 2.426 milliseconden voor mediaan FCP en 4.176 voor mediaan LCP, extern is respectievelijk 2.034 en 3.671, en beide is 2.663 en 5.044 milliseconden respectievelijk.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=506816237&format=interactive",
   sheets_gid="838326315",
   sql_file="04_04.self_hosted_vs_hosted_with_fcp.sql"
@@ -120,43 +120,43 @@ Self-hosting fonts on the same domain as the website can be faster, as [we disco
 
 {{ figure_markup(
   image="fonts-web-hosting-performance-mobile.png",
-  caption="Web font hosting performance, mobile.",
-  description="A bar chart showing the mobile median First Contentful Paint and Last Contentful Paint (in milliseconds) for three different web font hosting strategies: local is 5,326 milliseconds for median FCP and 8,521 for median LCP,  external is 5,056 and 8,229 respectively, and both is 5,847 and 9,900 milliseconds respectively.",
+  caption="Prestatie van weblettertypen hosting, mobiel.",
+  description="Een staafdiagram met de mobiele mediaan First Contentful Paint en Last Contentful Paint (in milliseconden) voor drie verschillende hostingstrategieën voor weblettertypen: lokaal is 5.326 milliseconden voor mediaan FCP en 8.521 voor mediaan LCP, extern is respectievelijk 5.056 en 8.229 en beide zijn 5.847 en 9.900 milliseconden respectievelijk.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1955186104&format=interactive",
   sheets_gid="838326315",
   sql_file="04_04.self_hosted_vs_hosted_with_fcp.sql"
   )
 }}
 
-It wouldn't be sound to infer causality between hosting strategy from the above data, as there are other variables that may confound the relationship. But, putting that aside, we find that adding the self-hosting fonts doesn't always lead to better performance. Hosted font solutions often perform a number of optimizations (like subsetting, removing OpenType features, and ensuring the smallest possible font format) that may not always be replicated when self-hosting.
+Het zou niet logisch zijn om een causaliteit tussen de hostingstrategie af te leiden uit de bovenstaande gegevens, aangezien er andere variabelen zijn die de relatie kunnen verstoren. Maar afgezien daarvan merken we dat het toevoegen van zelfhosting-lettertypen niet altijd tot betere prestaties leidt. Oplossingen voor gehoste lettertypen voeren vaak een aantal optimalisaties uit (zoals subsetting, het verwijderen van OpenType-functies en het verzekeren van de kleinst mogelijke lettertypeformaat) die bij zelfhosting niet altijd worden gerepliceerd.
 
-#### Local isn't always better
+#### Lokaal is niet altijd beter
 
-Another option from self-hosting fonts on the site's server, is to use the system-installed fonts on the client where they exist through the use of `local` in the `font-face` declaration. The use of `local` is [controversial](https://bramstein.com/writing/web-font-anti-patterns-local-fonts.html), as it can save bytes, but it can also yield bad results if the locally installed version of the font is outdated. As of [November 2020](https://twitter.com/googlefonts/status/1328761547041148929?s=19), Google Fonts has moved to using `local` only for Roboto on mobile platforms, otherwise the font is always fetched over the network.
+Een andere optie van self-hosting fonts op de server van de site, is om de door het systeem geïnstalleerde fonts op de client te gebruiken waar ze bestaan door het gebruik van `local` in de `font-face` declaratie. Het gebruik van `local` is <a hreflang="en" href="https://bramstein.com/writing/web-font-anti-patterns-local-fonts.html">controversieel</a>, omdat het bytes kan besparen, maar het kan ook slechte resultaten opleveren als de lokaal geïnstalleerde versie van het lettertype is verouderd. Vanaf [november 2020](https://twitter.com/googlefonts/status/1328761547041148929?s=19) is Google Fonts overgeschakeld op het gebruik van `local` alleen voor Roboto op mobiele platforms, anders wordt het lettertype altijd opgehaald via de netwerk.
 
-## Racing to first paint
+## Racen naar eerste lak
 
-The biggest performance concern about integrating web fonts is that they may delay the time when the first readable text is displayed. Two optimization techniques can help mitigate those issues: `font-display` and resource hints.
+Het grootste probleem met de prestaties van het integreren van weblettertypen is dat ze de tijd kunnen vertragen waarop de eerste leesbare tekst wordt weergegeven. Twee optimalisatietechnieken kunnen deze problemen helpen verminderen: `font-display` en bron-hints.
 
-The [`font-display`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display) setting controls what happens while waiting for the web font to load and is generally a trade-off between performance and visual richness. The most popular is `swap`, used on about 10% of web pages, which displays using the fallback font if the web font doesn't load quickly, then swaps in the web font when it does load. Other settings include `block`, which delays displaying text at all (minimizing the potential flashing effect), and `fallback`, which is like `swap` but gives up quickly and uses the fallback font if the font doesn't load in a moderate amount of time, and `optional`, which immediately gives up and uses the fallback font; this is used by only 1% of web pages, presumably those most concerned with performance.
+De instelling [`font-display`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display) bepaalt wat er gebeurt tijdens het wachten tot het weblettertype wordt geladen en is over het algemeen een afweging tussen prestatie en visuele rijkdom. De meest populaire is `swap`, gebruikt op ongeveer 10% van de webpagina's, die wordt weergegeven met behulp van het fallback-lettertype als het weblettertype niet snel laadt, en vervolgens het weblettertype verwisselt wanneer het wordt geladen. Andere instellingen zijn onder meer `block`, dat het weergeven van tekst helemaal vertraagt (waardoor het mogelijke knipperende effect wordt geminimaliseerd), en `fallback`, wat lijkt op `swap` maar het snel opgeeft en het fallback-lettertype gebruikt als het lettertype niet wordt geladen in een matige hoeveelheid tijd, en `optional`, die het onmiddellijk opgeeft en het fallback-lettertype gebruikt; dit wordt slechts door 1% van de webpagina's gebruikt, vermoedelijk degenen die zich het meest bezighouden met prestaties.
 
 {{ figure_markup(
   image="fonts-usage-of-font-display.png",
-  caption="Usage of font-display.",
-  description="A bar chart showing the usage of the different font-display settings, on desktop and mobile: `swap` is used by 10.9% of desktop sites and 10.3% of mobile sites, `auto` is used by 5.2% and 5.6% respectively, `block` by 4.1% and 4.2% respectively, `fallback` by 0.9% for both, and finally `optional` is used by 0.3% of desktop sites and 0.1% of mobile sites.",
+  caption="Gebruik van font-display.",
+  description="Een staafdiagram dat het gebruik van de verschillende instellingen voor lettertypeweergave op desktop en mobiel toont: `swap` wordt gebruikt door 10,9% van de desktopsites en 10,3% van de mobiele sites, `auto` wordt gebruikt door respectievelijk 5,2% en 5,6%, `block` met respectievelijk 4,1% en 4,2%, `fallback` met 0,9% voor beide, en tenslotte wordt `optional` gebruikt door 0,3% van de desktopsites en 0,1% van de mobiele sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=654093509&format=interactive",
   sheets_gid="1485693069",
   sql_file="04_06.font_display_with_fcp.sql"
   )
 }}
 
-We can analyze the effect of these settings on First Contentful Paint and Largest Contentful Paint. Not surprisingly, the `optional` setting has a major effect on Largest Contentful Paint. There is also an effect on First Contentful Paint, but that might be more correlation than causation, as all of the modes except for `block` display *some* text after an "extremely small block period."#}
+We kunnen het effect van deze instellingen op First Contentful Paint en Largest Contentful Paint analyseren. Het is niet verrassend dat de `optional` instelling een groot effect heeft op Grootste inhoudelijke verf. Er is ook een effect op First Contentful Paint, maar dat is misschien meer correlatie dan causaliteit, aangezien alle modi behalve `block` *wat* tekst weergeven na een "extreem kleine blokperiode".
 
 {{ figure_markup(
   image="fonts-font-display-performance-desktop.png",
-  alt="font-display performance on desktop.",
-  caption="`font-display` performance on desktop.",
-  description="A bar chart showing the desktop median first content paint (FCP) and last content paint (LCP) in milliseconds for different font-display settings: `none` has a median FCP of 2,286 ms and median LCP of 4,028 ms, `optional` has 1,766 ms and 3,055 ms respectively, `swap` has 2,223 ms and 4,176 ms, `fallback` has 2,397 ms and 4,106 ms, `block` has 2,454 ms and 4,696 ms, and `auto has 2,605 ms and 4,883 ms.",
+  alt="font-display prestatie op desktop.",
+  caption="`font-display` prestatie op desktop.",
+  description="Een staafdiagram met de desktop mediaan first content paint (FCP) en last content paint (LCP) in milliseconden voor verschillende lettertypeweergave-instellingen: `none` heeft een mediaan FCP van 2.286 ms en mediaan LCP van 4.028 ms, `optional` heeft Respectievelijk 1.766 ms en 3.055 ms, `swap` heeft 2.223 ms en 4.176 ms, `fallback` heeft 2.397 ms en 4.106 ms, `block` heeft 2.454 ms en 4.696 ms, en `auto` heeft 2.605 ms en 4.883 ms.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1618299142&format=interactive",
   sheets_gid="1485693069",
   sql_file="04_06.font_display_with_fcp.sql"
@@ -165,47 +165,47 @@ We can analyze the effect of these settings on First Contentful Paint and Larges
 
 {{ figure_markup(
   image="fonts-font-display-performance-mobile.png",
-  alt="font-display performance on mobile.",
-  caption="`font-display` performance on mobile.",
-  description="A bar chart showing the mobile median first content paint (FCP) and last content paint (LCP) in milliseconds for different font-display settings: `none` has a median FCP of 5,279 ms and median LCP of 8,381 ms, `optional` has 4,733 ms and 6,598 ms respectively, `swap` has 5,268 ms and 8,748 ms, `fallback` has 5,478 ms and 8,706 ms, `block` has 5,739 ms and 9,625 ms, and `auto has 6,181 ms and 10,103 ms.",
+  alt="font-display prestatie op mobiel.",
+  caption="`font-display` prestatie op mobiel.",
+  description="Een staafdiagram met de mobiele mediaan first content paint (FCP) en last content paint (LCP) in milliseconden voor verschillende font-weergave-instellingen: `none` heeft een mediaan FCP van 5.279 ms en een mediaan LCP van 8.381 ms, `optional` heeft Respectievelijk 4.733 ms en 6.598 ms, `swap` heeft 5.268 ms en 8.748 ms, `fallback` heeft 5.478 ms en 8.706 ms, `block` heeft 5.739 ms en 9.625 ms, en `auto` heeft 6.181 ms en 10.103 ms.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=2135700957&format=interactive",
   sheets_gid="1485693069",
   sql_file="04_06.font_display_with_fcp.sql"
   )
 }}
 
-There are two other interesting inferences from this data. One might expect the `block` setting to have a significant impact on FCP, especially on mobile, but in practice the effect is not that large. That suggests that waiting for font assets is seldom the limiting factor for the web page performance as a whole, though it would certainly be a major factor in pages without lots of resources such as images. The `auto` setting (which is also what you get if you don't specify it) is up to the browser. It looks a lot like `block` because [the default is blocking in most cases](https://nooshu.github.io/blog/2020/02/23/improving-perceived-performance-with-the-css-font-display-property/).
+Er zijn twee andere interessante gevolgtrekkingen uit deze gegevens. Je zou kunnen verwachten dat de instelling `block` een aanzienlijke impact heeft op FCP, vooral op mobiel, maar in de praktijk is het effect niet zo groot. Dat suggereert dat het wachten op lettertypen zelden de beperkende factor is voor de prestaties van de webpagina als geheel, hoewel het zeker een belangrijke factor zou zijn op pagina's zonder veel bronnen, zoals afbeeldingen. De `auto` instelling (wat je ook krijgt als je het niet specificeert) is aan de browser. Het lijkt veel op `block` omdat <a hreflang="en" href="https://nooshu.github.io/blog/2020/02/23/improving-perceived-performance-with-the-css-font-display-property/">de standaard in de meeste gevallen blokkeren is</a>.
 
-Finally, one justification for using `fallback` is to improve Largest Content Paint times compared to `swap` (which is more likely to respect the designer's visual intent), but the data do not support this case; this performance metric is no better. Perhaps this is why the setting is not popular, used by only about 1% of pages.
+Ten slotte is een rechtvaardiging voor het gebruik van `fallback` het verbeteren van de Largest Content Paint-tijden in vergelijking met `swap` (wat waarschijnlijker de visuele bedoeling van de ontwerper respecteert), maar de gegevens ondersteunen dit geval niet; deze prestatiestatistiek is niet beter. Misschien is dit de reden waarom de instelling niet populair is, die door slechts ongeveer 1% van de pagina's wordt gebruikt.
 
-Google Fonts now recommends `swap` in its suggested integration code. If you're not using it now, adding it might be a way to improve performance, especially for users on slow connections.
+Google Fonts raadt nu `swap` aan in de voorgestelde integratiecode. Als u het nu niet gebruikt, kan het toevoegen ervan een manier zijn om de prestaties te verbeteren, vooral voor gebruikers met langzame verbindingen.
 
-### Resource hints
+### Bron-hints
 
-While `font-display` can speed up the presentation of the page when the fonts are slow to load, resource hints can move the loading of web font assets to earlier in the cascade.
+Hoewel `font-display` de presentatie van de pagina kan versnellen wanneer de lettertypen langzaam worden geladen, kunnen hints voor bronnen het laden van weblettertypen naar eerder in de cascade verplaatsen.
 
-Ordinarily, fetching web fonts is a two-stage process. The first stage is loading the CSS, which contains a reference (in `@font-face` sections) to the actual font binaries.
+Gewoonlijk is het ophalen van weblettertypen een proces in twee fasen. De eerste fase is het laden van de CSS, die een verwijzing bevat (in `@font-face`-secties) naar de daadwerkelijke font-binaries.
 
-This is especially relevant for hosted font solutions. Only after discovering the font is needed, can the connection to that server begin, which further breaks down into the DNS query for the server, and actually initiating a connection (which, these days, usually involves an HTTPS cryptographic handshake).
+Dit is vooral relevant voor gehoste lettertype-oplossingen. Pas nadat ontdekt is dat het lettertype nodig is, kan de verbinding met die server beginnen, die verder wordt afgebroken in de DNS-query voor de server, en daadwerkelijk een verbinding tot stand brengen (die tegenwoordig meestal een cryptografische HTTPS-handshake omvat).
 
 {{ figure_markup(
   image="fonts-resource-hints-use.png",
-  caption="resource-hints use on fonts.",
-  description="A bar chart showing the usage of different resource-hints setting for font data: `dns-prefetch` is used by 32% of both desktop and mobile sites, `preload` by 17% of desktop and 16% of mobile, `preconnect` by 8% of both, `prefetch` by 3% of both, and `prerender` by 0% for both.",
+  caption="bron-hints gebruik op lettertypen.",
+  description="Een staafdiagram toont het gebruik van verschillende bron-hints instellingen voor lettertypegegevens: `dns-prefetch` wordt gebruikt door 32% van zowel desktop- als mobiele sites, `preload` door 17% van desktop en 16% van mobiel, `preconnect` met 8% van beide, `prefetch` met 3% van beide en `prerender` met 0% voor beide.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1880156934&format=interactive",
   sheets_gid="2079638999",
   sql_file="04_07.font_resource_hints_with_fcp.sql"
   )
 }}
 
-Adding a [resource hint element](https://www.w3.org/TR/resource-hints/#resource-hints) in the HTML starts that second connection earlier. The various resource hint settings control how far that gets before having the URL for the actual font resource. The most common (at about 32% of web pages) is `dns-prefetch`, even though in most cases there are better choices.
+Het toevoegen van een <a hrehlang="en" href="https://www.w3.org/TR/resource-hints/#resource-hints">bron-hint element</a> in de HTML start die tweede verbinding eerder. De verschillende instellingen voor bron-hints bepalen hoe ver dat komt voordat de URL voor de daadwerkelijke lettertypebron is. De meest voorkomende (bij ongeveer 32% van de webpagina's) is `dns-prefetch`, hoewel er in de meeste gevallen betere keuzes zijn.
 
-Next we will look at whether these resource hints have an impact on page performance.
+Vervolgens zullen we kijken of deze bron-hints een invloed hebben op de paginaprestaties.
 
 {{ figure_markup(
   image="fonts-resource-hints-performance-desktop.png",
-  caption="resource-hints performance, desktop.",
-  description="A bar chart showing the desktop median first content paint and last content paint (in milliseconds) for different resource-hints settings: `prerender` has a median FCP of 1,658 ms and median LCP of 2,904 ms, `preload` has 2,045 ms and 3,865 ms respectively, `prefetch` has 1,909 ms and 3,702 ms, `preconnect` has 2,069 ms and 4,213 ms, `none` has 2,489 ms and 4,816 ms, and `dns-prefetch` has 2,630 ms and 5,061 ms.",
+  caption="bron-hints prestatie, desktop.",
+  description="Een staafdiagram met de mediaan van de first content paint en de last content paint van de desktop (in milliseconden) voor verschillende instellingen voor bron-hints: `prerender` heeft een mediaan FCP van 1.658 ms en een mediaan LCP van 2.904 ms, `preload` heeft 2.045 ms en 3.865 ms respectievelijk `prefetch` heeft 1.909 ms en 3.702 ms, `preconnect` heeft 2.069 ms en 4.213 ms, `none` heeft 2.489 ms en 4.816 ms, en `dns-prefetch` heeft 2.630 ms en 5.061 ms.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=355239876&format=interactive",
   sheets_gid="2079638999",
   sql_file="04_07.font_resource_hints_with_fcp.sql"
@@ -214,74 +214,74 @@ Next we will look at whether these resource hints have an impact on page perform
 
 {{ figure_markup(
   image="fonts-resource-hints-performance-mobile.png",
-  caption="resource-hints performance, mobile.",
-  description="A bar chart showing the mobile median first content paint and last content paint (in milliseconds) for different resource-hints settings: `prerender` has a median FCP of 3,387 ms and median LCP of 7,362 ms, `preload` has 4,900 ms and 8,222 ms respectively, `prefetch` has 4,942 ms and 8,191 ms, `preconnect` has 4,858 ms and 9,131 ms, `none` has 5,825 ms and 10,027 ms, and `dns-prefetch` has 5,908 ms and 9,962 ms.",
+  caption="bron-hints prestatie, mobiel.",
+  description="Een staafdiagram met de mobiele mediaan van de first content paint en de last content paint (in milliseconden) voor verschillende bron-hints-instellingen: `prerender` heeft een mediaan FCP van 3.387 ms en mediaan LCP van 7.362 ms, `preload` heeft 4.900 ms en 8222 ms respectievelijk, `prefetch` heeft 4.942 ms en 8.191 ms, `preconnect` heeft 4.858 ms en 9.131 ms, `none` heeft 5.825 ms en 10.027 ms, en `dns-prefetch` heeft 5.908 ms en 9.962 ms.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=640692889&format=interactive",
   sheets_gid="2079638999",
   sql_file="04_07.font_resource_hints_with_fcp.sql"
   )
 }}
 
-Analysis of this data suggests that the `dns-prefetch` setting, while the most popular, doesn't improve performance much, if at all. Presumably, the DNS for popular web font servers are likely to be cached anyway. The other settings give a lot more bang for the buck, with `preconnect` being a sweet spot for ease of use, flexibility, and performance improvement. As of March 2020, Google Fonts recommends adding this line to the HTML source, immediately before the CSS link:
+Analyse van deze gegevens suggereert dat de `dns-prefetch`-instelling, hoewel de meest populaire, de prestaties niet veel of helemaal niet verbetert. Vermoedelijk wordt de DNS voor populaire weblettertypeservers waarschijnlijk toch in de cache opgeslagen. De andere instellingen geven veel meer waar voor je geld, waarbij `preconnect` een goede plek is voor gebruiksgemak, flexibiliteit en prestatieverbetering. Vanaf maart 2020 raadt Google Fonts aan om deze regel toe te voegen aan de HTML-bron, direct voor de CSS-link:
 
 ```html
 <link rel="preconnect" href="https://fonts.gstatic.com">
 ```
 
-The use of `preconnect` has grown considerably since last year, now at 8% from 2%, but there's a lot more potential performance still left on the table. Adding this line might be the single best optimization for web pages that use Google Fonts.
+Het gebruik van `preconnect` is aanzienlijk gegroeid sinds vorig jaar, nu 8% van 2%, maar er ligt nog veel meer potentiële prestatie op tafel. Het toevoegen van deze regel is misschien wel de beste optimalisatie voor webpagina's die Google Fonts gebruiken.
 
-It might be tempting to go even farther into the pipeline, preloading or prerendering the font asset, but that potentially conflicts with other optimizations, such as fine-tuning the font for the capabilities of the rendering engine, or the `unicode-range` optimization described below. To preload a resource, you have to know *exactly* what resource to load, and the best resource for the task may depend on information not readily available at HTML authoring time.
+Het kan verleidelijk zijn om nog verder in de pijplijn te gaan en het lettertype-item vooraf te laden of vooraf te renderen, maar dat is mogelijk in strijd met andere optimalisaties, zoals het afstemmen van het lettertype voor de mogelijkheden van de weergave-motor of de optimalisatie van het `unicode-range` hieronder omschreven. Om een bron vooraf te laden, moet u *precies* weten welke bron u moet laden, en de beste bron voor de taak kan afhangen van informatie die niet direct beschikbaar is op het moment van HTML-schrijven.
 
-## Home on the (Unicode) range
+## Home op het (Unicode) range
 
-Fonts increasingly have support for lots and lots of languages. Other fonts can have a large number of glyphs because the writing system (especially CJK) requires it. Either reason can increase the file size. That's unfortunate if the web page is not in fact a multilingual dictionary, and only uses a fraction of the font's capabilities.
+Lettertypen hebben in toenemende mate ondersteuning voor heel veel talen. Andere lettertypen kunnen een groot aantal glyphs hebben omdat het schrijfsysteem (vooral CJK) dit vereist. Beide redenen kunnen de bestandsgrootte vergroten. Dat is jammer als de webpagina in feite geen meertalig woordenboek is en slechts een fractie van de mogelijkheden van het lettertype gebruikt.
 
-One older approach is for the HTML author to explicitly indicate a font subset. However, that requires deeper knowledge of the content, and risks a "ransom note" effect when the content uses characters supported by the font but not by the chosen subset. See the excellent essay [When fonts fall](https://www.figma.com/blog/when-fonts-fall/) by Marcin Wichary for lots more detail about how fallback works.
+Een oudere benadering is dat de HTML-auteur expliciet een lettertypesubset aangeeft. Dat vereist echter een diepere kennis van de inhoud en riskeert een "losgeldbrief"-effect wanneer de inhoud tekens gebruikt die door het lettertype worden ondersteund, maar niet door de gekozen subset. Zie het uitstekende essay <a hreflang="en" href="https://www.figma.com/blog/when-fonts-fall/">When fonts fall</a> van Marcin Wichary voor veel meer details over hoe fallback werkt.
 
-Static subsets, indicated by `unicode-range`, are a better approach to this problem. The font is sliced into subsets, each with a separate `@font-face` rule that indicates the Unicode coverage for that slice with a `unicode-range` descriptor. The browser then analyzes the content as part of its rendering pipeline, and downloads *only* the slices needed to render that content.
+Statische subsets, aangegeven met `unicode-range`, zijn een betere benadering van dit probleem. Het lettertype wordt opgedeeld in subsets, elk met een aparte `@font-face`-regel die de Unicode-range voor dat segment aangeeft met een `unicode-range`-descriptor. De browser analyseert vervolgens de inhoud als onderdeel van zijn weergavepijplijn en downloadt *alleen* de plakjes die nodig zijn om die inhoud weer te geven.
 
-For alphabetic languages, this typically works well although it can result in poor kerning between characters in different subsets. For languages which rely on glyph shaping, such as Arabic, Urdu and many Indic languages, static subsets frequently result in broken text rendering. And for CJK, static subsets based on contiguous Unicode ranges provide almost no benefit because the characters used on a particular page are scattered almost randomly across the various subsets. Because of these issues, correct and performant use of static subsets is tricky, and requires careful analysis and implementation.
+Voor alfabetische talen werkt dit doorgaans goed, hoewel het kan resulteren in slechte tekenspatiëring tussen tekens in verschillende subsets. Voor talen die afhankelijk zijn van glyph-vormgeving, zoals Arabisch, Urdu en veel Indische talen, resulteren statische subsets vaak in een gebroken tekstweergave. En voor CJK bieden statische subsets op basis van aaneengesloten Unicode-range bijna geen voordeel omdat de tekens die op een bepaalde pagina worden gebruikt, bijna willekeurig over de verschillende subsets zijn verspreid. Vanwege deze problemen is een correct en performant gebruik van statische subsets lastig en vereist een zorgvuldige analyse en implementatie.
 
 {{ figure_markup(
   image="fonts-usage-of-unicode-range.png",
-  caption="usage of unicode-range.",
-  description="A bar chart showing the fraction of unicode-range usage in mobile and desktop web pages that use web fonts. On desktop 37.05% of pages use unicode-range while 62.95% do not. On mobile 38.27% of pages use unicode-range while 61.73% do not.",
+  caption="gebruik van unicode-range.",
+  description="Een staafdiagram dat de fractie van het gebruik van het Unicode-range toont op mobiele en desktopwebpagina's die weblettertypen gebruiken. Op desktop gebruikt 37,05% van de pagina's het unicode-range, terwijl 62,95% dat niet doet. Op mobiel gebruikt 38,27% van de pagina's het unicode-range, terwijl 61,73% dat niet doet.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1739264728&format=interactive",
   sheets_gid="640499741",
   sql_file="04_08.font_unicode_range_with_fcp.sql"
   )
 }}
 
-Correctly applying `unicode-range` is tricky, as there's a lot of complexity to the way text layout maps Unicode into glyphs, but Google Fonts does this automatically and transparently. It is only likely to be a win for fonts with large glyph counts. In any case, current usage is 37% on desktop and 38% on mobile.
+Het correct toepassen van `unicode-range` is lastig, aangezien er veel complexiteit is in de manier waarop tekstlay-out Unicode in glyphs omzet, maar Google Fonts doet dit automatisch en transparant. Het is waarschijnlijk alleen een overwinning voor lettertypen met grote glyph-tellingen. In ieder geval is het huidige gebruik 37% op desktop en 38% op mobiel.
 
-## Formats and MIME types
+## Formaten en MIME-typen
 
-WOFF2 is the best compression format and is now [supported](https://caniuse.com/woff2) by effectively all browsers except for versions 11 and earlier of Internet Explorer. It is *almost* possible to serve web fonts using an `@font-face` rule with a WOFF2 source only. This format makes up about 75% of all fonts served.
+WOFF2 is het beste compressieformaat en wordt nu <a hreflang="en" href="https://caniuse.com/woff2">ondersteund</a> door bijna alle browsers behalve versie 11 en eerder van Internet Explorer. Het is *bijna* mogelijk om weblettertypen aan te bieden met behulp van een `@font-face`-regel met alleen een WOFF2-bron. Dit formaat maakt ongeveer 75% uit van alle lettertypen die worden weergegeven.
 
 {{ figure_markup(
   image="fonts-web-font-mime-types.png",
-  caption="Popular web font MIME types.",
-  description="A bar chart showing the breakdown of percentage of different MIME types for serving web fonts: WOFF2 is used by 75.83% of pages using fonts on desktop and 74.32% on mobile, WOFF is used by 11.57% and 11.61% respectively, octet-stream by 6.33% and 6.09%, ttf by 2.54% and 4.42%, and plain by 1.41% and 1.32% respectively.",
+  caption="Populaire MIME-typen voor weblettertypen.",
+  description="Een staafdiagram met de uitsplitsing van het percentage verschillende MIME-typen voor het weergeven van weblettertypen: WOFF2 wordt gebruikt door 75,83% van de pagina's die lettertypen gebruiken op desktop en 74,32% op mobiel, WOFF wordt gebruikt door respectievelijk 11,57% en 11,61%, octet-stream door 6,33% en 6,09%, ttf met 2,54% en 4,42%, en plain met respectievelijk 1,41% en 1,32%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=2028456617&format=interactive",
   sheets_gid="316058576",
   sql_file="04_10.font_formats.sql"
   )
 }}
 
-WOFF is an older, less efficient compression mechanism, but almost universally supported, accounting for an additional 11.6% of fonts served. In almost all cases (Internet Explorer 9-11 being the main exception), serving a font as WOFF is leaving performance on the table, and shows a risk of self-hosting; even if the format choices were optimal at the time of integration, it requires extra effort to update them as browsers improve. Using a hosted service guarantees that the best format is chosen, along with all relevant optimizations.
+WOFF is een ouder, minder efficiënt compressiemechanisme, maar wordt bijna universeel ondersteund, goed voor 11,6% extra lettertypen. In bijna alle gevallen (Internet Explorer 9-11 is de belangrijkste uitzondering), laat het serveren van een lettertype als WOFF de prestaties op tafel liggen en is er een risico op zelfhosting; zelfs als de formaatkeuzes optimaal waren op het moment van integratie, vereist het extra inspanning om ze bij te werken naarmate de browsers verbeteren. Het gebruik van een gehoste service garandeert dat het beste formaat wordt gekozen, samen met alle relevante optimalisaties.
 
-Ancient versions of Internet Explorer (6-8), which still make about 1.5% of global browser share, only support the EOT format. These don't show up in the top 5 MIME formats but are necessary for maximum compatibility.
+Oude versies van Internet Explorer (6-8), die nog steeds ongeveer 1,5% van het wereldwijde browseraandeel uitmaken, ondersteunen alleen het EOT-formaat. Deze verschijnen niet in de top 5 MIME-formaten, maar zijn nodig voor maximale compatibiliteit.
 
-Uncompressed fonts, like OTF and TTF files, are 2-3x larger than compressed, but still make up almost 5% of all fonts served, disproportionately on mobile. If you're serving these, it should be a red flag that optimization is possible.
+Ongecomprimeerde lettertypen, zoals OTF- en TTF-bestanden, zijn 2-3x groter dan gecomprimeerde lettertypen, maar vormen nog steeds bijna 5% van alle lettertypen die worden weergegeven, onevenredig veel op mobiele apparaten. Als u deze bedient, zou het een rode vlag moeten zijn dat optimalisatie mogelijk is.
 
-## Popular fonts
+## Populaire lettertypen
 
-Icon fonts are half of the top 10 most popular web fonts, the rest being clean, robust sans-serif typeface designs (Roboto Slab is at #19 and Playfair Display at #26 in this ranking, for debuts of other styles, though serif designs are well represented in the tail of the distribution).
+Pictogramlettertypen zijn de helft van de top 10 van meest populaire weblettertypen, de rest zijn strakke, robuuste schreefloze letterontwerpen (Roboto Slab staat op #19 en Playfair Display op #26 in deze ranglijst, voor debuten van andere stijlen, hoewel serif-ontwerpen goed vertegenwoordigd zijn in de staart van de distributie).
 
 {{ figure_markup(
   image="fonts-popular-typefaces.png",
-  caption="Popular typefaces.",
-  description="A bar chart showing the 10 most popular web fonts, starting with Font Awesome (35% of desktop and mobile), Open Sans (23% desktop and 25% of mobile), Roboto (17% desktop and 23% mobile), Glyphicons Halflings (16% for both), Lato (11% for both), Montserrat (19% for both), Font Awesome 5 Brands (9% for both), Font Awesome 5 Free (9% desktop and 8% mobile), Raleway (6% for both), and dashicons (6% for both).",
+  caption="Populaire lettertypen.",
+  description="Een staafdiagram met de 10 meest populaire weblettertypen, te beginnen met Font Awesome (35% van desktop en mobiel), Open Sans (23% desktop en 25% van mobiel), Roboto (17% desktop en 23% mobiel), Glyphicons Halflings (16% voor beide), Lato (11% voor beide), Montserrat (19% voor beide), Font Awesome 5 Brands (9% voor beide), Font Awesome 5 Free (9% desktop en 8% mobiel), Raleway (6% voor beide) en dashicons (6% voor beide).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=551344676&format=interactive",
   sheets_gid="179750099",
   sql_file="04_11a.popular_typeface.sql",
@@ -290,72 +290,72 @@ Icon fonts are half of the top 10 most popular web fonts, the rest being clean, 
   )
 }}
 
-A note of caution, in determining the most popular fonts you can get different results depending on measurement methodology. The chart above is based on counting the number of pages that include an `@font-face` rule referencing the named font. That counts multiple styles only once, which arguably weights in favor of single-style fonts.
+Let op: bij het bepalen van de meest populaire lettertypen kunt u verschillende resultaten krijgen, afhankelijk van de meetmethode. Het bovenstaande diagram is gebaseerd op het tellen van het aantal pagina's met een `@font-face`-regel die verwijst naar het genoemde lettertype. Dat telt slechts één keer meerdere stijlen, wat aantoonbaar weegt in het voordeel van lettertypen met één stijl.
 
-## Color fonts
+## Kleur lettertypen
 
-Color fonts, in one form or other, are supported by most modern browsers, but usage is still close to nonexistent (a total of 755 pages total, the majority of which are in SVG format, which is not supported in Chrome). No doubt part of the problem is the diversity of formats, in fact four in widespread use. These come in bitmap and vector flavors. The two bitmap formats are technologically very similar, but SBIX (originally a proprietary Apple format) is not supported in Firefox, while CBDT/CBLC is not supported in Safari.
+Kleurlettertypen, in een of andere vorm, worden ondersteund door de meeste moderne browsers, maar het gebruik is nog steeds bijna onbestaande (in totaal 755 pagina's in totaal, waarvan de meeste in SVG-indeling, die niet wordt ondersteund in Chrome). Een deel van het probleem is ongetwijfeld de diversiteit aan formaten, in feite vier die op grote schaal worden gebruikt. Deze zijn er in bitmap- en vector-smaken. De twee bitmapindelingen lijken technologisch erg op elkaar, maar SBIX (oorspronkelijk een eigen Apple-indeling) wordt niet ondersteund in Firefox, terwijl CBDT / CBLC niet wordt ondersteund in Safari.
 
-The COLR vector format is supported on all major modern browsers, but only fairly recently. The fourth format is embedding SVG in OpenType (not to be confused with SVG fonts), but not supported in Chrome. One drawback of SVG in OpenType is lack of support for font variations, an increasingly important aspect of modern Web design. For this reason, the COLR format is likely to prevail, particularly as support for gradients and clipping is being developed for a future version of COLR. Vector formats are usually much smaller than images, and also scale cleanly to larger sizes, so when COLR arrives with a richer shading model, it could well become popular.
+Het COLR-vectorformaat wordt ondersteund door alle grote moderne browsers, maar pas vrij recent. Het vierde formaat is het insluiten van SVG in OpenType (niet te verwarren met SVG-lettertypen), maar wordt niet ondersteund in Chrome. Een nadeel van SVG in OpenType is het gebrek aan ondersteuning voor lettertypevariaties, een steeds belangrijker aspect van modern webdesign. Om deze reden zal het COLR-formaat waarschijnlijk de overhand krijgen, vooral omdat ondersteuning voor verlopen en knippen wordt ontwikkeld voor een toekomstige versie van COLR. Vectorformaten zijn meestal veel kleiner dan afbeeldingen en kunnen ook netjes worden geschaald naar grotere formaten, dus wanneer COLR arriveert met een rijker arceringmodel, kan het heel goed populair worden.
 
-One reason for the poor support of color fonts on the web is that the colors have to be baked into the font files themselves. If you use the same typeface with three different color combinations, near-identical files have to be downloaded three times and changing a color means reaching for a font editor.
+Een reden voor de slechte ondersteuning van kleurlettertypen op het web is dat de kleuren in de lettertypebestanden zelf moeten worden gebakken. Als u hetzelfde lettertype gebruikt met drie verschillende kleurencombinaties, moeten bijna identieke bestanden drie keer worden gedownload en het wijzigen van een kleur betekent dat u naar een font-editor moet zoeken.
 
-While there is a feature in CSS to [override or replace the color palettes in fonts](https://drafts.csswg.org/css-fonts-4/#font-palette-values), this has not yet been implemented in browsers, which certainly holds back the ease of deploying color web fonts.
+Hoewel er een functie in CSS is om <a hreflang="en" href="https://drafts.csswg.org/css-fonts-4/#font-palette-values">de kleurenpaletten in lettertypen te overschrijven of te vervangen</a>, is dit nog niet geïmplementeerd in browsers, wat het gemak van het implementeren van weblettertypen in kleur zeker in de weg staat.
 
-Probably most usage of color fonts is for emoji, but the capability is general purpose and color fonts offer many design possibilities. While color web fonts haven't taken off yet, the underlying technology is heavily used to deliver system emoji, where file format compatibility is much less of an issue.
+Waarschijnlijk wordt het meeste gebruik van kleurlettertypen voor emoji, maar de mogelijkheid is algemeen en kleurlettertypen bieden veel ontwerpmogelijkheden. Hoewel weblettertypen in kleur nog niet van de grond zijn gekomen, wordt de onderliggende technologie veel gebruikt om systeememoji te leveren, waarbij compatibiliteit van bestandsindelingen veel minder een probleem is.
 
-Browser support is so fragmented that color fonts are not yet tracked by caniuse.com, though there is [an issue open for it](https://github.com/Fyrd/caniuse/issues/1018).
+Browserondersteuning is zo gefragmenteerd dat kleurlettertypen nog niet worden gevolgd door caniuse.com, hoewel er <a hreflang="en" href="https://github.com/Fyrd/caniuse/issues/1018)">een issue voor is</a>.
 
-Lots more information about color fonts, including examples, are available at [colorfonts.wtf](https://www.colorfonts.wtf/).
+Veel meer informatie over kleurlettertypen, inclusief voorbeelden, is beschikbaar op <a hreflang="en" href="https://www.colorfonts.wtf/">colorfonts.wtf</a>.
 
-## Variable fonts
+## Variabele lettertypen
 
 {{ figure_markup(
-  caption="Usage of variable fonts on mobile.",
-  content="11.00%",
+  caption="Gebruik van variabele lettertypen op mobiel.",
+  content="11,00%",
   classes="big-number",
   sheets_gid="91894176",
   sql_file="04_14a.variable_font_comparison_fcp.sql"
 ) }}
 
-Variable fonts are certainly one of the biggest stories this year. They're seen in 10.54% of desktop pages, and 11.00% of mobile. That's up from an average of 1.8% last year, a huge growth factor. It is not hard to see why their popularity is increasing – they offer more design flexibility, and also potentially smaller binary font sizes, especially if multiple styles of the same font are used on the same page.
+Variabele lettertypen zijn zeker een van de grootste verhalen dit jaar. Ze worden gezien op 10,54% van de desktoppagina's en 11,00% van de mobiele apparaten. Dat is gestegen ten opzichte van gemiddeld 1,8% vorig jaar, een enorme groeifactor. Het is niet moeilijk in te zien waarom hun populariteit toeneemt - ze bieden meer ontwerpflexibiliteit en mogelijk ook kleinere binaire lettergroottes, vooral als er meerdere stijlen van hetzelfde lettertype op dezelfde pagina worden gebruikt.
 
-Likely the greatest driver of this increase is due to Google Fonts now serving a number of their more popular offerings as variable fonts when there are enough weights in use on a page and the browser supports them. The ability to 'swap in' variable fonts where a performance gain can be achieved without altering any of the CSS in use or any intervention required of the web author is a remarkable testament to the viability of the technology.
+Waarschijnlijk is de grootste oorzaak van deze toename te wijten aan het feit dat Google Fonts nu een aantal van hun meer populaire aanbiedingen aanbiedt als variabele lettertypen wanneer er voldoende gewichten op een pagina worden gebruikt en de browser deze ondersteunt. De mogelijkheid om variabele lettertypen 'in te wisselen' waar een prestatiewinst kan worden behaald zonder de gebruikte CSS of enige tussenkomst van de webauteur te wijzigen, is een opmerkelijk bewijs van de levensvatbaarheid van de technologie.
 
-The simplest description of the variable font format is a single font file that acts as many: rather than individual font files for every weight and width or even italics, they can all be contained in a single, highly efficient file. That resulting file can render the font at a given combination of axis values via CSS (or other applications that support them). There are a number of standardized, or 'registered', axes plus the ability for font designers to define their own axes and expose them to the user.
+De eenvoudigste beschrijving van het variabele lettertypeformaat is een enkel lettertypebestand dat net zo veel werkt: in plaats van afzonderlijke lettertypebestanden voor elke dikte en breedte of zelfs cursief, kunnen ze allemaal in een enkel, zeer efficiënt bestand worden opgenomen. Dat resulterende bestand kan het lettertype weergeven op een bepaalde combinatie van aswaarden via CSS (of andere toepassingen die deze ondersteunen). Er zijn een aantal gestandaardiseerde of 'geregistreerde' assen plus de mogelijkheid voor lettertypeontwerpers om hun eigen assen te definiëren en deze aan de gebruiker bloot te stellen.
 
-Weight (`wght`) corresponds to the traditional notion of regular or bold or light; width (`wdth`) maps to styles like condensed or extended; slant (`slnt`) refers to an oblique angle of the font; italic (`ital`) usually slants the font and replaces certain glyphs with alternate styles; and optical size (`opsz`) refers to something relatively new to the web, but is actually a revival of a technique common in metal type creation going back hundreds of years. Historically, optical sizing refers to the practice of reducing stroke contrast (thick and thin lines) and open up letter spacing when a font is made at a physically smaller size in order to increase legibility, and conversely to increase that contrast and tighten spacing when a font is displayed at much larger sizes. Enabling this in digital type can allow a single font to look and behave substantially differently when used at very small or large sizes. You can learn more about them and see lots of examples at [variablefonts.io](https://variablefonts.io).
+Gewicht (`wght`) komt overeen met de traditionele notie van normaal of bold of licht; width (`wdth`) wordt toegewezen aan stijlen zoals gecomprimeerd of uitgebreid; schuin (`slnt`) verwijst naar een schuine hoek van het lettertype; cursief (`ital`) laat het lettertype meestal schuin staan ​​en vervangt bepaalde glyphs door alternatieve stijlen; en optische grootte (`opsz`) verwijst naar iets relatief nieuws op het web, maar is in feite een heropleving van een techniek die veel voorkomt bij het maken van metaaltypen die honderden jaren teruggaat. Historisch gezien verwijst optische maatvoering naar de praktijk van het verminderen van lijncontrast (dikke en dunne lijnen) en het vergroten van de letterafstand wanneer een lettertype fysiek kleiner is gemaakt om de leesbaarheid te vergroten, en omgekeerd om dat contrast te vergroten en de afstand te verkleinen wanneer een lettertype wordt gemaakt met een fysiek kleiner formaat en als een lettertype op veel grotere formaten wordt weergegeven. Als u dit in digitale lettertypen inschakelt, kan een enkel lettertype er wezenlijk anders uitzien en zich aanzienlijk anders gedragen bij gebruik in zeer kleine of grote formaten. U kunt er meer over leren en veel voorbeelden bekijken op <a hreflang="en" href="https://variablefonts.io">variablefonts.io</a>.
 
 {{ figure_markup(
   image="fonts-font-variation-settings-usage.png",
-  caption="Usage of font-variation-settings axes.",
-  description="A bar chart showing the usage of the 6 most popular axes for font variation settings, dominated by `wght` at 84.7% for desktop and 90.4% for mobile, with a massive drop off to the remaining ones with `wdth` at 5.6% for desktop and 4.3% for mobile, `opsz` at 3.7% and 1.2% respectively, `slnt` at 1.8% and 1.4%, `fanu` at 0.5% and 0.6%, and `ital` at 0.5% for desktop and 0.4% for mobile.",
+  caption="Gebruik van assen voor lettertype-variatie-instellingen.",
+  description="Een staafdiagram toont het gebruik van de 6 meest populaire assen voor instellingen voor lettertypevariaties, gedomineerd door `wght` met 84,7% voor desktop en 90,4% voor mobiel, met een enorme daling naar de overige met `wdth` van 5,6% voor desktop en 4,3% voor mobiel, `opsz` respectievelijk 3,7% en 1,2%, `slnt` 1,8% en 1,4%, `fanu` 0,5% en 0,6%, en `ital` 0,5% voor desktop en 0,4% voor mobiel.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=635348995&format=interactive",
   sheets_gid="309969915",
   sql_file="04_17.VF_axis_value.sql"
   )
 }}
 
-By far the most commonly used axis is `wght` (which controls weight), at 84.7% desktop and 90.4% mobile. However, `wdth` (width) accounts for approximately 5% of variable font usage. In 2020, Google Fonts began serving 2-axis fonts with both width and weight axes.
+Verreweg de meest gebruikte as is `wght` (die het gewicht regelt), met 84,7% desktop en 90,4% mobiel. Echter, `wdth` (breedte) is verantwoordelijk voor ongeveer 5% van het gebruik van variabele fonts. In 2020 begon Google Fonts met het aanbieden van 2-assige lettertypen met zowel breedte- als gewichtsassen.
 
-It is worth noting that the preferred method is to use `font-weight` and `font-stretch` rather than the lower-level `font-variation-settings` syntax for these two axes as they are completely supported by all browsers that support variable fonts. By setting weight via `font-weight: [number]` and width via `font-stretch: [number]%`, authors provide more appropriate style hints to the browser, which in turn enables better rendering for the end user should the variable font fail to load. This also avoids altering the normal inheritance of styles via the cascade.
+Het is vermeldenswaard dat de voorkeursmethode het gebruik van `font-weight` en `font-stretch` is in plaats van de syntaxis van `font-variation-settings` op een lager niveau voor deze twee assen, aangezien ze volledig worden ondersteund door alle browsers die ondersteuning bieden voor variabele lettertypen. Door het gewicht in te stellen via `font-weight: [number]` en breedte via `font-stretch: [number]%`, geven auteurs meer geschikte stijlhints aan de browser, wat op zijn beurt een betere weergave mogelijk maakt voor de eindgebruiker als de variabele lettertype kan niet worden geladen. Dit voorkomt ook dat de normale overerving van stijlen via de cascade wordt gewijzigd.
 
-The optical size (`opsz`) feature is used for approximately 2% of the variable font usage. This is one to watch, as tuning the appearance of a font to match its intended size of presentation improves the visual refinement in perhaps subtle but very real ways. Usage is also likely to increase once some current cross-browser and cross-platform uncertainties on how the optical sizes are defined are cleared up. One appealing aspect of the optical size feature is that with the `auto` setting, the variation happens automatically, so the developer gets the benefit of that refinement just by using a font with the `opsz` feature.
+De functie optische grootte (`opsz`) wordt gebruikt voor ongeveer 2% van het gebruik van variabele lettertypen. Dit is er een om naar te kijken, aangezien het afstemmen van het uiterlijk van een lettertype op de beoogde presentatiegrootte de visuele verfijning op misschien subtiele maar zeer reële manieren verbetert. Het gebruik zal waarschijnlijk ook toenemen zodra enkele huidige cross-browser en cross-platform onzekerheden over hoe de optische groottes worden gedefinieerd, worden opgehelderd. Een aantrekkelijk aspect van de functie voor optische grootte is dat met de `auto`-instelling de variatie automatisch plaatsvindt, zodat de ontwikkelaar het voordeel van die verfijning krijgt door gewoon een lettertype te gebruiken met de `opsz`-functie.
 
-There are many potential benefits to using variable fonts. While each included axis increases file size, the tipping point seems to be generally if more than two or three weights of a given typeface are in use, a variable version will likely be similar in total file size or smaller. This is supported by the dramatic increase in [variable fonts being served by Google Fonts](https://fonts.google.com/?vfonly=true).
+Het gebruik van variabele lettertypen heeft veel potentiële voordelen. Hoewel elke opgenomen as de bestandsgrootte vergroot, lijkt het omslagpunt in het algemeen te zijn als er meer dan twee of drie gewichten van een bepaald lettertype worden gebruikt, een variabele versie waarschijnlijk vergelijkbaar is in de totale bestandsgrootte of kleiner. Dit wordt ondersteund door de dramatische toename van <a hreflang="en" href="https://fonts.google.com/?vfonly=true">variabele lettertypen die worden bediend door Google Fonts</a>.
 
-Adopting and leveraging variable fonts for more varied design (by using more of the available range of weights and widths) is another. Using a width axis could improve line wrapping on smaller screens, especially with larger headings and longer languages. With the rise in adoption of alternate light modes, making small adjustments to font-weight when switching modes can improve legibility (see [variablefonts.io](https://variablefonts.io) for more on usage and implementation).
+Variabele lettertypen gebruiken en implementeren voor een meer gevarieerd ontwerp (door meer van het beschikbare bereik aan gewichten en breedtes te gebruiken) is een andere. Het gebruik van een breedteas kan de lijnomloop op kleinere schermen verbeteren, vooral bij grotere koppen en langere talen. Met de toenemende acceptatie van alternatieve lichtmodi, kan het maken van kleine aanpassingen aan het lettertype-gewicht bij het wisselen van modus de leesbaarheid verbeteren (zie <a hreflang="en" href="https://variablefonts.io">variablefonts.io</a> voor meer over gebruik en implementatie).
 
-## Conclusion
+## Conclusie
 
-Web font technology is fairly mature, with incremental improvements in compression and other technical improvements, but new features are arriving. Browser support for variable fonts has become quite good, and this is the feature that's seen the most growth in the previous year.
+De technologie voor weblettertypen is redelijk volwassen, met stapsgewijze verbeteringen in compressie en andere technische verbeteringen, maar er komen nieuwe functies aan. Browserondersteuning voor variabele lettertypen is redelijk goed geworden, en dit is de functie die het afgelopen jaar de meeste groei heeft gekend.
 
-The performance landscape is changing somewhat, as the advent of [cache partitioning](https://developers.google.com/web/updates/2020/10/http-cache-partitioning) reduces the performance benefit from sharing the cache of CDN font resources across multiple sites. The trend of hosting more font assets on the same domain as the site, rather than using a CDN, will probably continue. Even so, services such as Google Fonts are highly optimized, and best practices such as use of `swap` and `preconnect` mitigate much of the impact of the additional HTTP connection.
+Het prestatielandschap verandert enigszins, aangezien de komst van <a hreflang="en" href="https://developers.google.com/web/updates/2020/10/http-cache-partitioning">cachepartitionering</a> vermindert het prestatievoordeel van het delen van de cache van CDN lettertypebronnen op meerdere sites. De trend om meer lettertypen te hosten op hetzelfde domein als de site, in plaats van een CDN te gebruiken, zal waarschijnlijk doorzetten. Desalniettemin zijn services zoals Google Fonts in hoge mate geoptimaliseerd, en best practices zoals het gebruik van `swap` en `preconnect` verzachten veel van de impact van de extra HTTP-verbinding.
 
-The use of variable fonts is accelerating greatly, and that trend will no doubt continue, especially as browser and design tool support improve. It is also possible that 2021 will be the year of the color web font; even though the technology has been in place, that certainly hasn't happened yet.
+Het gebruik van variabele lettertypen neemt enorm toe en die trend zal ongetwijfeld doorzetten, vooral nu de ondersteuning van de browser en ontwerptool verbetert. Het is ook mogelijk dat 2021 het jaar wordt van het kleurenweblettertype; ook al is de technologie aanwezig, dat is zeker nog niet gebeurd.
 
-Finally, it is worth mentioning a new concept in web font technology currently being researched by the W3C's Web Font Working Group: Progressive Font Enrichment. PFE is designed as an answer to many of the challenges pointed out in this chapter: addressing performance and user experience when using large glyph count font files (like Arabic or CJK fonts), larger multi-axis or color fonts, or just slow network connectivity environments.
+Ten slotte is het de moeite waard om een nieuw concept in de weblettertypetechnologie te vermelden dat momenteel wordt onderzocht door de W3C's Web Font Working Group: Progressive Font Enrichment. PFE is ontworpen als antwoord op veel van de uitdagingen die in dit hoofdstuk worden genoemd: het aanpakken van prestaties en gebruikerservaring bij het gebruik van lettertypebestanden met een groot aantal glyphs (zoals Arabische of CJK-lettertypen), grotere meerassige lettertypen of kleurlettertypen, of gewoon langzame netwerkverbinding omgevingen.
 
-The concept in its simplest terms is that only a portion of a given font file would need to be downloaded in order to render the content on a given page. Subsequent page loads would then deliver a 'patch' to the font file that includes only the glyphs necessary to render each new page. Thus at no time would the user need to download the whole font file at once.
+Het concept in zijn eenvoudigste bewoordingen is dat slechts een deel van een bepaald lettertypebestand hoeft te worden gedownload om de inhoud op een bepaalde pagina weer te geven. Als de pagina daarna wordt geladen, wordt er een 'patch' aan het lettertypebestand geleverd die alleen de glyphs bevat die nodig zijn om elke nieuwe pagina weer te geven. De gebruiker hoeft dus nooit het hele lettertypebestand in één keer te downloaden.
 
-There are various details to work out, including ones that will help ensure privacy and backwards compatibility—but initial research has been extremely promising, and it is hoped this technology will reach the wider web sometime in the next couple years. You can learn more about it in [this introduction by Jason Pamental](https://rwt.io/typography-tips/progressive-font-enrichment-reinventing-web-font-performance), and read [the full Working Group Evaluation Report](https://www.w3.org/TR/2020/NOTE-PFE-evaluation-20201015/) on the W3C site.
+Er zijn verschillende details die moeten worden uitgewerkt, waaronder gegevens die de privacy en compatibiliteit met eerdere versies zullen helpen waarborgen - maar het eerste onderzoek was buitengewoon veelbelovend en het is te hopen dat deze technologie ergens in de komende jaren het grotere web zal bereiken. Je kunt er meer over leren in <a hreflang="en" href="https://rwt.io/typography-tips/progressive-font-enrichment-reinventing-web-font-performance">deze inleiding door Jason Pamental</a>, en lees <a hreflang="en" href="https://www.w3.org/TR/2020/NOTE-PFE-evaluation-20201015/">de volledige <span lang="en">Working Group Evaluation Report</span></a> op de W3C-site.
