@@ -29,6 +29,7 @@ argyleink
 artice
 arturjanc
 aspnetcdn
+assetlinks
 assistive
 async
 attr
@@ -79,11 +80,14 @@ clickjacking
 cloudflare
 cloudinary
 codebase
+codecs
 codelabs
 colinbendell
 colorfonts
 colorspace
 columnheader
+comis
+commercetools
 conf
 conformant
 const
@@ -106,6 +110,7 @@ csscriptdict
 cufon
 cufontext
 currentcolor
+cybai
 cybersecurity
 cwebp
 darkgray
@@ -131,14 +136,18 @@ dougsillars
 downlink
 ebay
 ecommerce
+eeeps
 endif
 endlock
 emoji
+ericportis
 ernee
+etportis
 eucookie
 eval
 evangelization
 fallback
+fallbacks
 fanu
 favicon
 favicons
@@ -146,11 +155,13 @@ fantasai
 fbevents
 fellowhuman
 fieldset
+figcaption
 filesize
 firebase
 flexbox
 fontawesome
 frameset
+franca
 frontend
 fullscreen
 fullstacktraining
@@ -213,13 +224,15 @@ jimstatic
 jpamental
 jpeg
 jpegs
+jpgs
 jquery
+jrharalson
 jsdelivr
 json
 judgement
 jyrkialakuijala
+karateka
 katiehempenius
-khempenius
 kbytes
 keyframe
 keyframes
@@ -238,6 +251,7 @@ lightgray
 lightgrey
 limespot
 linux
+lockdowns
 lookzook
 lozad
 lyst
@@ -252,6 +266,9 @@ meetup
 meetups
 meiert
 metadata
+mpeg
+microbrowser
+microbrowsers
 microformat
 microformats
 microservices
@@ -378,6 +395,7 @@ roadmaps
 roboto
 rockeynebhwani
 rollout
+romche
 roryhewitt
 roun
 rowheader
@@ -415,6 +433,7 @@ sizeable
 skillset
 skype
 slategray
+slnt
 smartphone
 smartphones
 snuck
@@ -425,7 +444,7 @@ spriting
 spsn
 squarespace
 srcset
-slnt
+srcs
 ssllabs
 stackpath
 staticxx
@@ -437,6 +456,7 @@ subpar
 subresource
 subresources
 subsampling
+subsetting
 svgees
 svgeesus
 tabindex
@@ -444,6 +464,7 @@ tablist
 tabpanel
 tagline
 tailwindcss
+tamas
 tameverts
 tammyeverts
 tawk
@@ -481,6 +502,7 @@ uncacheable
 uncrawlable
 underserved
 underuse
+unfurlers
 unitless
 unpkg
 unprefixed
@@ -498,6 +520,7 @@ viber
 viewport
 viewports
 vidazoo
+vimeo
 viscomi
 vmax
 vmin
@@ -508,6 +531,7 @@ webinars
 webmail
 webm
 webp
+weightage
 wght
 whatsapp
 whitehat

@@ -547,7 +547,7 @@ And if you are going for fanciful color names, why not define your own with CSS 
   image="color-keywords-app.png",
   alt="Interactively explore the color keyword usage data with the app.",
   caption='Interactively explore the color keyword usage data with <a href="https://codepen.io/leaverou/pen/GRjjJwJ">this interactive app</a>!',
-  description="Screenhot of an interactive app which allows you to select colours and see their relative usage in a pie chart. The data for the colours is shown in the next table.",
+  description="Screenhot of an interactive app which allows you to select colors and see their relative usage in a pie chart. The data for the colors is shown in the next table.",
   width=600,
   height=1065
   )

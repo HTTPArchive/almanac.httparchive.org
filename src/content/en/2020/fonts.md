@@ -102,7 +102,7 @@ It was interesting to note the differences in speed for sites using the various 
   )
 }}
 
-When viewing commercial services such as Adobe (`use.typekit.net`) or Monotype (`fast.fonts.com`) it is interesting to note that on desktop they tend to be as fast or slightly faster than Google Fonts, but are noticeably slower on mobile. Conventional wisdom has generally held that the tracking scripts used by those services substantially slow them down, but that is apparently less an issue today than it has been in years past. While it's true that we are measuring site performance and not necessarily font hoster performance, those tracking scripts impact font loading on the client so it seems relevant to include these observations.
+When viewing commercial services such as Adobe (`use.typekit.net`) or Monotype (`fast.fonts.com`) it is interesting to note that on desktop they tend to be as fast or slightly faster than Google Fonts, but are noticeably slower on mobile. Conventional wisdom has generally held that the tracking scripts used by those services substantially slow them down, but that is apparently less an issue today than it has been in years past. While it's true that we are measuring site performance and not necessarily performance of the font host, those tracking scripts impact font loading on the client so it seems relevant to include these observations.
 
 #### Self-hosting isn't always better
 
