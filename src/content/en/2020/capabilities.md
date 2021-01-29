@@ -1,6 +1,5 @@
 ---
-part_number: II
-chapter_number: 13
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Capabilities
 description: Capabilities chapter of the 2020 Web Almanac covering brand-new, powerful web platform APIs.
 authors: [christianliebel]
@@ -10,7 +9,6 @@ editors: [rviscomi]
 translators: []
 discuss: 2049
 results: https://docs.google.com/spreadsheets/d/1N6j1qKv7vc51p1W9z_RrbJX9Se3Pmb-Uersfz4gWqqs/
-queries: 13_Capabilities
 christianliebel_bio: Christian Liebel is a consultant at <a href="https://thinktecture.com">Thinktecture</a>, supporting clients from various business areas in implementing first-class web applications. He is a Microsoft MVP for Developer Technologies, Google GDE for Web/Capabilities and Angular, and participates in the W3C Web Applications Working Group.
 featured_quote: The state of web capabilities in 2020 is healthy, as new powerful APIs regularly ship with new releases of Chromium-based browsers. The first APIs have already made their way into other browsers as well.
 featured_stat_1: 0.0006%

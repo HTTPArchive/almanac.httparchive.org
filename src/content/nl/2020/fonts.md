@@ -1,6 +1,5 @@
 ---
-part_number: I
-chapter_number: 4
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Lettertypen
 description: Hoofdstuk over lettertypen van de Web Almanac 2020 waarin wordt beschreven waar lettertypen worden geladen, lettertype-indelingen, laadprestaties voor lettertypen, variabele lettertypen en kleurlettertypen.
 authors: [raphlinus, jpamental]
@@ -12,7 +11,6 @@ jpamental_bio: Ontwerper, knutselaar, typograaf. Auteur van Responsive Typograph
 raphlinus_bio: Raph Levien werkt al meer dan 35 jaar met lettertypen, waaronder een doctoraat aan UC Berkeley in hulpmidelen voor het ontwerpen van lettertypen. Hij voegt zich weer bij <a hreflang="en" href="https://fonts.google.com/">Google Fonts</a> als onderzoeker op het gebied van lettertypetechnologie, nadat hij het team in 2010 mede heeft opgericht.
 discuss: 2040
 results: https://docs.google.com/spreadsheets/d/1jjvZqYay5KmTle4atzFWqtbkz9ohw25KFmNtCS-7n3s/
-queries: 04_Fonts
 featured_quote: De technologie voor weblettertypen is redelijk volwassen, met stapsgewijze verbeteringen in compressie en andere technische verbeteringen, maar er komen nieuwe functies aan. Browserondersteuning voor variabele lettertypen is redelijk goed geworden, en dit is de functie die het afgelopen jaar de meeste groei heeft gekend.
 featured_stat_1: 70,3%
 featured_stat_label_1: Populariteit van Google Fonts onder font-hostingservices

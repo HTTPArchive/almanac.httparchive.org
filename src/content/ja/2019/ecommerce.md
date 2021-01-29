@@ -1,6 +1,5 @@
 ---
-part_number: III
-chapter_number: 13
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Eコマース
 description: 2019年Web AlmanacのEコマースの章では、Eコマースのプラットフォーム、ペイロード、画像、サードパーティ、パフォーマンス、SEO、PWAをカバーしています。
 authors: [samdutton, alankent]
@@ -10,7 +9,6 @@ editors: [bazzadp]
 translators: [ksakae]
 discuss: 1768
 results: https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/
-queries: 13_Ecommerce
 samdutton_bio: Sam Duttonは2011年からDeveloper AdvocateとしてGoogle Chromeチームで働いています。数々のイベントを企画して発表し、いくつかのウェブ開発コースを作成して教え、PWA、パフォーマンス、メディア、イメージ、「Next Billion Users」イニシアティブをカバーする様々なビデオ、コードラボ、文書化されたガイダンスに取り組んできました。彼は<a href="https://simpl.info">simpl.info</a>を管理しており、HTML、CSS、JavaScriptの最もシンプルな例を提供しています。南オーストラリアで育ち、シドニーの大学に進学し、1986年からロンドンに住んでいます。
 alankent_bio: Alan KentはGoogleのDeveloper Advocateで、Eコマースとコンテンツエコシステムに焦点を当てています。彼は <a href="https://alankent.me">alankent.me</a> でブログを書いており、<a href="https://twitter.com/akent99">@akent99</a> としてツイートしています。
 featured_quote: この調査では、ホームページの10%近くがeコマース・プラットフォーム上にあることが判明しました。<em>eコマースプラットフォーム</em> は、オンラインストアを作成して運営することを可能にするソフトウェア ソフトウェアまたはサービスのセットです。Shopifyなどの有料サービス、Magentoオープンソースなどのソフトウェアプラットフォーム、およびMagento Commerceなどのホスト型プラットフォームなどが含まれます。

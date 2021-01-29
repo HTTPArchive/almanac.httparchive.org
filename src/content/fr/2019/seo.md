@@ -1,6 +1,5 @@
 ---
-part_number: I
-chapter_number: 10
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: SEO
 description: Chapitre SEO du web Almanac 2019. Découvrez des statistiques sur le contenu, les meta tags, l'indexation, les liens, la performance web...
 authors: [ymschaap, rachellcostello, AVGP]
@@ -9,7 +8,6 @@ editors: [rachellcostello]
 translators: [AymenLoukil]
 discuss: 1765
 results: https://docs.google.com/spreadsheets/d/1uARtBWwz9nJOKqKPFinAMbtoDgu5aBtOhsBNmsCoTaA/
-queries: 10_SEO
 ymschaap_bio: Fondateur d’une agence de conseil en SEO technique <a href="https://build.amsterdam/">build.amsterdam</a>. Auparavant, il a fondé plusieurs sociétés Web qui ont atteint plus d’un milliard d’utilisateurs. Il blogue sur ses dernières aventures depuis 2005 sur <a href="https://yvoschaap.com/">yvoschaap.com</a>.
 rachellcostello_bio: Rachel Costello est technical SEO & Content Manager chez <a href="https://www.deepcrawl.com/">DeepCrawl</a> et une conférencière internationale qui passe son temps à rechercher et à communiquer sur les derniers développements dans le SEO. Rachel gère actuellement la production de <a href="https://www.deepcrawl.com/knowledge/white-papers/">livres blancs sur les techniques de référencement </a> et des articles de recherche pour DeepCrawl, et est une chroniqueuse régulière pour <a href="https://www.searchenginejournal.com/author/rachel-costello/">Search Engine Journal</a>.
 AVGP_bio: Martin Splitt est un DevRel au sein de l’équipe Écosystème Web chez Google, où il travaille à garder le Web découvrable.

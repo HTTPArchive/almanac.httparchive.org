@@ -1,6 +1,5 @@
 ---
-part_number: II
-chapter_number: 12
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Mobile Web
 description: Mobile Web chapter of the 2020 Web Almanac covering page loading, textual content, zooming and scaling, buttons and links, and ease of filling out forms.
 authors: [spanicker, mdiblasio]
@@ -12,7 +11,6 @@ spanicker_bio: Shubhie Panicker is the engineering lead for Chrome's engagement 
 mdiblasio_bio: Michael DiBlasio is Web Ecosystems Consultant at Google. He focuses on helping to improve the health of the web ecosystem and to ensure the web is commercially viable for creators and partners. He works closely with strategic retailers to adopt new modern web technologies and improve the quality of existing web experiences. Prior to Google, Michael was a consultant at IBM.
 discuss: 2048
 results: https://docs.google.com/spreadsheets/d/1DGLY7UEWOlDL5_2dtS_j2eqMjiV-Rw5Fe2y6K6-ULvM/
-queries: 12_Mobile_Web
 featured_quote: Mobile Web has grown explosively in the last decade and is now the primary way many people experience the web. In spite of this, engagement and online sales still lag behind desktop. In this chapter, we take a look at recent trends on the mobile web and analyze why user journeys are often difficult to complete.
 featured_stat_1: 41.20%
 featured_stat_label_1: Percent of pages with improperly sized images

@@ -1,6 +1,5 @@
 ---
-part_number: III
-chapter_number: 15
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CMS
 description: CMS-hoofdstuk van de Web Almanac van 2020 over CMS-acceptatie, hoe CMS-suites worden gebouwd, gebruikerservaring van CMS-aangedreven websites en CMS-innovatie.
 authors: [alexdenning]
@@ -11,7 +10,6 @@ translators: [noah-vdv]
 alexdenning_bio: Alex Denning is de oprichter van <a hreflang="en" href="https://getellipsis.com/">Ellipsis Marketing</a>, een marketingbureau voor WordPress-bedrijven. Alex is een WordPress Core-bijdrager en heeft geholpen bij het organiseren van <a hreflang="en" href="https://london.wordcamp.org/">WordCamp London</a>.
 discuss: 2051
 results: https://docs.google.com/spreadsheets/d/1vTf459CcCbBuYeGvgo-RSidppR62SfM-VTkW-dfS3K4/
-queries: 15_CMS
 featured_quote: De term Contentmanagement Systeem (CMS) verwijst naar systemen waarmee individuen en organisaties inhoud kunnen creëren, beheren en publiceren. Een CMS voor webcontent is met name een systeem dat is gericht op het creëren, beheren en publiceren van content die via internet kan worden geconsumeerd en ervaren.
 featured_stat_1: 42%
 featured_stat_label_1: Webpagina's worden aangedreven door een CMS

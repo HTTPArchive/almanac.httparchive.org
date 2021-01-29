@@ -1,6 +1,5 @@
 ---
-part_number: I
-chapter_number: 4
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Fonts
 description: Fonts chapter of the 2020 Web Almanac covering where fonts are loaded from, font formats, font loading performance, variable fonts and color fonts.
 authors: [raphlinus, jpamental]
@@ -12,7 +11,6 @@ jpamental_bio: Designer, tinkerer, typographer. Author of Responsive Typography,
 raphlinus_bio: Raph Levien has been working with fonts for over 35 years, including a PhD from UC Berkeley in font design tools. He is rejoining <a href="https://fonts.google.com/">Google Fonts</a> as a font technology researcher, after having co-founded the team in 2010.
 discuss: 2040
 results: https://docs.google.com/spreadsheets/d/1jjvZqYay5KmTle4atzFWqtbkz9ohw25KFmNtCS-7n3s/
-queries: 04_Fonts
 featured_quote: Web font technology is fairly mature, with incremental improvements in compression and other technical improvements, but new features are arriving. Browser support for variable fonts has become quite good, and this is the feature that's seen the most growth in the previous year.
 featured_stat_1: 70.3%
 featured_stat_label_1: Popularity of Google Fonts amongst font-hosting services
