@@ -1,6 +1,5 @@
 ---
-part_number: II
-chapter_number: 13
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Mogelijkheden
 description: Het hoofdstuk Mogelijkheden van de Web Almanac 2020 met betrekking tot gloednieuwe, krachtige webplatform-API's.
 authors: [christianliebel]
@@ -10,7 +9,6 @@ editors: [rviscomi]
 translators: [noah-vdv]
 discuss: 2049
 results: https://docs.google.com/spreadsheets/d/1N6j1qKv7vc51p1W9z_RrbJX9Se3Pmb-Uersfz4gWqqs/
-queries: 13_Capabilities
 christianliebel_bio: Christian Liebel is consultant bij <a hreflang="en" href="https://thinktecture.com">Thinktecture</a> en ondersteunt klanten uit verschillende bedrijfsgebieden bij het implementeren van eersteklas webapplicaties. Hij is een Microsoft MVP voor Developer Technologies, Google GDE voor Web/Capabilities en Angular, en neemt deel aan de W3C Web Applications Working Group.
 featured_quote: De staat van de webmogelijkheden in 2020 is gezond, aangezien nieuwe krachtige API's regelmatig worden geleverd met nieuwe releases van op Chromium gebaseerde browsers. De eerste API's zijn ook al in andere browsers terechtgekomen.
 featured_stat_1: 0,0006%

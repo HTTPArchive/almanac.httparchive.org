@@ -1,6 +1,5 @@
 ---
-part_number: II
-chapter_number: 9
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: 性能
 description: 2020年 Web 年鉴性能篇，涵盖了网页核心指标、Lighthouse 性能评分、首次内容绘制（FCP）、首字节时间（TTFB）。
 authors: [thefoxis]
@@ -11,7 +10,6 @@ translators: [Zuckjet]
 thefoxis_bio: Karolina 是 <a href="https://calibreapp.com/">Calibre</a> 产品设计主管，致力打造最全面的速度监测平台。她创办了性能期刊，也就是你平时看到的性能简讯的来源。Karolina <a href="https://calibreapp.com/blog/category/web-platform">也经常发表</a>关于性能如何影响用户体验的文章。
 discuss: 2045
 results: https://docs.google.com/spreadsheets/d/164FVuCQ7gPhTWUXJl1av5_hBxjncNi0TK8RnNseNPJQ/
-queries: 09_Performance
 featured_quote: 性能差不仅会导致挫败感或对用户转化产生负面影响，也给现实生活带来障碍。今年的全球疫情使得这些存在的障碍更加明显。
 featured_stat_1: 25%
 featured_stat_label_1: FCP 性能良好的站点

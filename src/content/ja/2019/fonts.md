@@ -1,6 +1,5 @@
 ---
-part_number: I
-chapter_number: 6
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: フォント
 description: フォントがどこから読み込まれるか、フォントのフォーマット、フォントの読み込み性能、可変フォント、カラーフォントを網羅した2019年Web AlmanacのFontsの章。
 authors: [zachleat]
@@ -10,7 +9,6 @@ editors: [bazzadp]
 translators: [ksakae]
 discuss: 1761
 results: https://docs.google.com/spreadsheets/d/108g6LXdC3YVsxmX1CCwrmpZ3-DmbB8G_wwgQHX5pn6Q/
-queries: 06_Fonts
 zachleat_bio: Zachは<a href="https://www.filamentgroup.com/">Filament Group</a>のWeb開発者だ。彼は現在、<a href="https://www.zachleat.com/web/fonts/">web fonts</a>と<a href="https://www.zachleat.com/web/introducing-eleventy/">static site generators</a>に夢中だ。彼の<a href="https://www.zachleat.com/web/speaking/">講演履歴</a>には、JAMstack_conf、Beyond Tellerrand、Smashing Conference、CSSConf、そして<a href="https://www.zachleat.com/web/whitehouse/">The White House</a>のようなイベントでの8カ国での講演が含まれています。また、<a href="http://nejsconf.com/">NEJS CONF</a>や<a href="http://nebraskajs.com">NebraskaJS</a>のミートアップも手伝っている。
 featured_quote: ウェブフォントは、ウェブ上で美しく機能的なタイポグラフィを可能にします。ウェブフォントを使用することは、デザインに力を与えるだけでなく、デザインのサブセットを民主化します。しかし、どんなに良いことがあっても、ウェブフォントが適切に読み込まれていないと、サイトのパフォーマンスに大きな悪影響を及ぼすこともあります。
 featured_stat_1: 74.9%

@@ -1,6 +1,5 @@
 ---
-part_number: II
-chapter_number: 8
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Accessibility
 description: Accessibility chapter of the 2020 Web Almanac covering ease of reading, media, ease of navigation, and compatibility with assistive technologies.
 authors: [oluoluoxenfree, alextait1]
@@ -12,7 +11,6 @@ oluoluoxenfree_bio: Olu Niyi-Awosusi is a software engineer at the FT who loves 
 alextait1_bio: Alex Tait is a developer, consultant and educator whose passion lies in the intersection of accessibility and modern JavaScript within interface architecture and design systems. As a developer, she believes that inclusion driven development practices with accessibility at the forefront lead to better products for everyone. As a consultant and strategist, she believes that less is more, and that new feature scope creep cannot be prioritized over core feature parity for disabled users. As an educator, she believes in removing barriers to information so that tech can become a more diverse, equitable and inclusive industry.
 discuss: 2044
 results: https://docs.google.com/spreadsheets/d/1UjEBhq0TfYxUpdpq5IuxjeHB4yqhJq4NOKEd6Dwwrdk/
-queries: 08_Accessibility
 featured_quote: As an industry it is time that we acknowledge the story told by the numbers in this chapter; we are failing disabled people.
 featured_stat_1: 15,357,625
 featured_stat_label_1: Longest known <code>alt</code> text length
@@ -372,7 +370,7 @@ HTML5 introduced many new native elements, all which have [implicit semantics](h
 {{ figure_markup(
   image="common-aria-roles.png",
   caption="Top ten most common ARIA roles.",
-  description="Bar chart showing the top 10 most common ARIA roles on desktop and mobeil with `button` at 25.2% for desktop and 24.5% for mobile, `navigation` at 22.1% and 21.8 respectively, `dialog` at 19.0% and 18.2%, `search` at 17.9% and 17.6%, `presentation` at 17.8% and 16.3%, `main` at 16.0% for both, `banner` at 14.8% for both, `contentinfo` at 12.1% and 11.9%, `img` at 8.5% and 8.0%, and `tablist` at 7.0% and 6.6%.",
+  description="Bar chart showing the top 10 most common ARIA roles on desktop and mobile with `button` at 25.2% for desktop and 24.5% for mobile, `navigation` at 22.1% and 21.8 respectively, `dialog` at 19.0% and 18.2%, `search` at 17.9% and 17.6%, `presentation` at 17.8% and 16.3%, `main` at 16.0% for both, `banner` at 14.8% for both, `contentinfo` at 12.1% and 11.9%, `img` at 8.5% and 8.0%, and `tablist` at 7.0% and 6.6%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSjkB_XAYiwkYrMuoXp44mdqMGJVDUkTr_48ELozY72Mdv3OlxeWV9ysbDY9bs6hA7LnJTrHar9aZlM/pubchart?oid=2002759694&format=interactive",
   sheets_gid="39937976",
   sql_file="common_aria_role.sql"

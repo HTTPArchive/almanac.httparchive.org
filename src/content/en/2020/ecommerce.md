@@ -1,6 +1,5 @@
 ---
-part_number: III
-chapter_number: 16
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Ecommerce
 description: Ecommerce chapter of the 2020 Web Almanac covering ecommerce platforms, payloads, images, third-parties, performance, SEO, and PWAs.
 authors: [rockeynebhwani, jrharalson]
@@ -12,7 +11,6 @@ rockeynebhwani_bio: Rockey Nebhwani is an independent consultant who has worked 
 #jrharalson_bio: TODO
 discuss: 2052
 results: https://docs.google.com/spreadsheets/d/1Hvsh_ZBKg2vWhouJ8vIzLmp0nLIMzrT2mr6RQbIkxqY/
-queries: 16_Ecommerce
 featured_quote: Covid-19 massively accelerated the growth of ecommerce in 2020 and lot of smaller players had to establish online presence quickly and had to find ways to continue trading during lockdowns. Platforms like WooCommerce / Shopify / Wix / BigCommerce played very important role in bringing more and more small businesses online. Covid-19 also saw launch of D2C (direct to consumer) offerings by brand and this is expected to increase in future.
 featured_stat_1: 21.27%
 featured_stat_label_1: Mobile sizes identified as ecommerce sites
@@ -50,7 +48,7 @@ Our methodology has the following limitations:
 - Headless ecommerce platforms like [commercetools](https://commercetools.com/) may not get detected as ecommerce platform but if we are able to detect presence of cart on such sites, we will still include sites using such platforms in our overall coverage stats.
 - Technologies which are typically deployed outside homepages (e.g. WebAR on product detail pages) are not detected.
 - Due to our crawl originating from US, there may be some bias towards US specific platforms. For example, if a global business has ecommerce sites built on different platforms for different countries (using country specific domains/sub-domains), it may not show these regional differences in our analysis.
-- It's common for B2B sites to hide the cart functioality behind a login and due to that this study is not a correct represetation of B2B market.
+- It's common for B2B sites to hide the cart functionality behind a login and due to that this study is not a correct representation of B2B market.
 
 ## Ecommerce platforms
 
