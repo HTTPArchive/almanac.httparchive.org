@@ -1,6 +1,5 @@
 ---
-part_number: II
-chapter_number: 9
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: 无障碍可访问性
 description: 2019 Web Almanac 网络年鉴的无障碍易访问性章节，涵盖易阅读、媒体、易于导航和与辅助技术的兼容性。
 authors: [nektarios-paisios, obto, kleinab]
@@ -10,7 +9,6 @@ editors: [obto]
 translators: [chengxicn]
 discuss: 1764
 results: https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/
-queries: 09_Accessibility
 nektarios-paisios_bio: Nektarios Paisios 是过去5年致力于Chrome辅助功能的软件工程师。 他主要致力于使Chrome与第三方辅助软件（例如屏幕阅读器和屏幕放大镜）兼容。 在研究Chrome的辅助功能之前，Nektarios曾在公司担任过其他各种职务，例如GSuite辅助功能和展示广告。 Nektarios拥有博士学位。 纽约大学计算机科学专业。
 obto_bio: David Fox 是LookZook的首席可用性研究人员和创始人，LookZook沉迷于发现有关构建满足用户期望的Web体验的所有一切。 他是一位网站心理学家，他深入研究网站不仅要学习用户正在苦苦挣扎的东西，而且要学习为什么以及如何最好地改善他们的体验。 他还是Google Chromium的撰稿人，演讲者以及网络研讨会和UX培训的提供者。
 kleinab_bio: Abigail Klein 是谷歌的软件工程师. 她致力于谷歌文档、表格和幻灯片的web可访问性 她为谷歌幻灯片添加了<a href="https://www.blog.google/outreach-initiatives/accessibility/whats-you-say-present-captions-google-slides/">自动字幕</a>,并改进了屏幕阅读器、盲文、屏幕放大镜和高对比度支持。 她目前致力于谷歌Chrome和ChromeOS的可访问性。她拥有麻省理工学院(MIT)计算机科学学士和硕士学位，在那里她参与创立了一个辅助技术黑客马拉松，她还是该辅助技术课程的实验室助理和客座讲师。

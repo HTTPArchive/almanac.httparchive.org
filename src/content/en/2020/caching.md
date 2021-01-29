@@ -1,7 +1,5 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
-part_number: IV
-chapter_number: 20
 title: Caching
 description: Caching chapter of the 2020 Web Almanac covering cache-control, expires, TTLs, validity, vary, set-cookies, AppCache, Service Workers and opportunities.
 authors: [roryhewitt, raghuramakrishnan71]
@@ -13,7 +11,6 @@ roryhewitt_bio: Enterprise Architect at <a href="https://www.akamai.com/">Akamai
 raghuramakrishnan71_bio: Enterprise architect at <a href="https://www.tcs.com/">Tata Consultancy Services</a>, working on large digital transformation programs in the public sector. A technology enthusiast with a special interest in performance engineering. An avid traveler, intrigued by astronomy, history, biology, and advancements in medicine. A strong follower of the 47th verse, Chapter 2 of Bhagavad Gita "karmaṇy-evādhikāras te mā phaleṣhu kadāchana" meaning "You have a right to perform your prescribed duty, but you are not entitled to the fruits of action."
 discuss: 2056
 results: https://docs.google.com/spreadsheets/d/1fYmpSN3diOiFrscS75NsjfsrKXzxxhUMNcYSqXnQJQU/
-queries: 20_Caching
 featured_quote: Caching provides a significant performance benefit by avoiding costly network requests - it helps both end users (they get their web pages quickly) and the companies serving web pages (reducing the load on their servers). Caching really is a win-win!
 featured_stat_1: 25.6%
 featured_stat_label_1: HTTP responses with no caching information

@@ -1,6 +1,5 @@
 ---
-part_number: IV
-chapter_number: 18
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Page Weight
 description: Page Weight chapter of the 2020 Web Almanac covering why page weight matters, bandwidth, complex pages, page weight over time, page requests, and file formats.
 authors: [henrihelvetica]
@@ -11,7 +10,6 @@ translators: []
 henrihelvetica_bio: Henri is a freelance developer who has turned his interests to a potpourri of performance engineering with pinches of user experience. When not reading the deluge of daily research docs and case studies, or indiscriminately auditing sites in dev tools, Henri can be found contributing back to the community, co-programming meetups including the <a href="https://twitter.com/towebperf">Toronto Web Performance Group</a> or volunteering his time for lunch and learns at various bootcamps. Otherwise, he's tooling with music production software or with near certainty training and focusing on running the fastest 5k possible.
 discuss: 2054
 results: https://docs.google.com/spreadsheets/d/1wG4u0LV5PT9aN-XB1hixSFtI8KIDARTOCX0sp7ZT3h0/
-queries: 18_Page_Weight
 featured_quote: The web's journey from the plain, near pedagogical platform, to the innovative, intricate and highly interactive apps it has become, the rudimentary page weight metric hid a bigger story&colon; a ratatouille of resources, each affecting modern metrics, in turn affecting user experience.
 featured_stat_1: 1,915
 featured_stat_label_1: The median number of mobile page bytes

@@ -1,6 +1,5 @@
 ---
-part_number: IV
-chapter_number: 19
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Resource Hints
 description: Resource Hints chapter of the 2019 Web Almanac covering usage of dns-prefetch, preconnect, preload, prefetch, priority hints, and native lazy loading.
 authors: [khempenius]
@@ -10,7 +9,6 @@ editors: [rviscomi]
 translators: []
 discuss: 1774
 results: https://docs.google.com/spreadsheets/d/14QBP8XGkMRfWRBbWsoHm6oDVPkYhAIIpfxRn4iOkbUU/
-queries: 19_Resource_Hints
 khempenius_bio: Katie Hempenius is an engineer on the Chrome team where she works on making the web faster.
 featured_quote: Resource hints provide <em>hints</em> to the browser about what resources will be needed soon. The action that the browser takes as a result of receiving this hint will vary depending on the type of resource hint; different resource hints kick off different actions. When used correctly, they can improve page performance by giving a head start to important anticipated actions.
 featured_stat_1: 29%

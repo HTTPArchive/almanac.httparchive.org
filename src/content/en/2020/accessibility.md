@@ -1,6 +1,5 @@
 ---
-part_number: II
-chapter_number: 8
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Accessibility
 description: Accessibility chapter of the 2020 Web Almanac covering ease of reading, media, ease of navigation, and compatibility with assistive technologies.
 authors: [oluoluoxenfree, alextait1]
@@ -12,7 +11,6 @@ oluoluoxenfree_bio: Olu Niyi-Awosusi is a software engineer at the FT who loves 
 alextait1_bio: Alex Tait is a developer, consultant and educator whose passion lies in the intersection of accessibility and modern JavaScript within interface architecture and design systems. As a developer, she believes that inclusion driven development practices with accessibility at the forefront lead to better products for everyone. As a consultant and strategist, she believes that less is more, and that new feature scope creep cannot be prioritized over core feature parity for disabled users. As an educator, she believes in removing barriers to information so that tech can become a more diverse, equitable and inclusive industry.
 discuss: 2044
 results: https://docs.google.com/spreadsheets/d/1UjEBhq0TfYxUpdpq5IuxjeHB4yqhJq4NOKEd6Dwwrdk/
-queries: 08_Accessibility
 featured_quote: As an industry it is time that we acknowledge the story told by the numbers in this chapter; we are failing disabled people.
 featured_stat_1: 15,357,625
 featured_stat_label_1: Longest known <code>alt</code> text length

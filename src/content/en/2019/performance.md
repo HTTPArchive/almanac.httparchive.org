@@ -1,6 +1,5 @@
 ---
-part_number: II
-chapter_number: 7
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Performance
 description: Performance chapter of the 2019 Web Almanac covering First Contentful Paint (FCP), Time to First Byte (TTFB), and First Input Delay (FID).
 authors: [rviscomi]
@@ -10,7 +9,6 @@ editors: [rachellcostello]
 translators: []
 discuss: 1762
 results: https://docs.google.com/spreadsheets/d/1zWzFSQ_ygb-gGr1H1BsJCfB7Z89zSIf7GX0UayVEte4/
-queries: 07_Performance
 rviscomi_bio: Rick Viscomi is a Senior Developer Programs Engineer at Google, working on web transparency projects like the HTTP Archive and Chrome UX Report, and studying the intersection of how websites are built and experienced. Rick is the host of <a href="https://www.youtube.com/playlist?list=PLNYkxOF6rcIBGvYSYO-VxOsaYQDw5rifJ">The State of the Web</a> in which experts discuss how the web is trending. Rick is the coauthor of <a href="https://usingwpt.com">Using WebPageTest</a>, a guide for testing web performance, and writes frequently about the web on <a href="https://dev.to/rick_viscomi">dev.to</a> and on Twitter at <a href="https://twitter.com/rick_viscomi">@rick_viscomi</a>.
 featured_quote: Performance is a visceral part of the user experience. For many websites, an improvement to the user experience by speeding up the page load time aligns with an improvement to conversion rates. Conversely, when performance is poor, users don't convert as often and have even been observed to be rage clicking on the page in frustration.
 featured_stat_1: 13%

@@ -1,6 +1,5 @@
 ---
-part_number: II
-chapter_number: 8
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Toegankelijkheid
 description: Toegankelijkheidshoofdstuk van de Web Almanac 2020 over leesgemak, media, navigatiegemak en compatibiliteit met ondersteunende technologieën.
 authors: [oluoluoxenfree, alextait1]
@@ -12,7 +11,6 @@ oluoluoxenfree_bio: Olu Niyi-Awosusi is een software engineer bij de FT die houd
 alextait1_bio: Alex Tait is een ontwikkelaar, consultant en docent wiens passie ligt op het snijvlak van toegankelijkheid en modern JavaScript binnen interfacearchitectuur en ontwerpsystemen. Als ontwikkelaar is ze van mening dat op inclusie gebaseerde ontwikkelingspraktijken met toegankelijkheid voorop leiden tot betere producten voor iedereen. Als consultant en strateeg is ze van mening dat minder meer is, en dat nieuwe functieomvang niet kan worden geprioriteerd boven pariteit van kernfuncties voor gehandicapte gebruikers. Als onderwijzer gelooft ze in het wegnemen van belemmeringen voor informatie, zodat technologie een meer diverse, rechtvaardige en inclusieve industrie kan worden.
 discuss: 2044
 results: https://docs.google.com/spreadsheets/d/1UjEBhq0TfYxUpdpq5IuxjeHB4yqhJq4NOKEd6Dwwrdk/
-queries: 08_Accessibility
 featured_quote: Als industrie wordt het tijd dat we het verhaal erkennen dat wordt verteld door de cijfers in dit hoofdstuk; we zijn gehandicapten in de steek aan het laten.
 featured_stat_1: 15,357,625
 featured_stat_label_1: Langst bekende <code>alt</code> tekstlengte

@@ -1,6 +1,5 @@
 ---
-part_number: II
-chapter_number: 11
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: PWA
 description: Service Worker（登録、インストール可能性、イベント、およびファイルサイズ）、Webアプリマニフェストプロパティ、およびWorkboxを対象とする2019 Web AlmanacのPWAの章。
 authors: [tomayac, jeffposnick]
@@ -10,7 +9,6 @@ editors: [bazzadp]
 translators: [ksakae]
 discuss: 1766
 results: https://docs.google.com/spreadsheets/d/19BI3RQc_vR9bUPPZfVsF_4gpFWLNT6P0pLcAdL-A56c/
-queries: 11_PWA
 tomayac_bio: Thomas SteinerはGoogle HamburgのWeb Developer Advocateで、標準化、ベストプラクティスの作成と共有、研究を通じた Web のより良い場所づくりに焦点を当てています。彼は <a href="https://blog.tomayac.com/">blog.tomayac.com</a> でブログを書いており、<a href="https://twitter.com/tomayac">@tomayac</a> としてツイートしています。
 jeffposnick_bio: Jeff PosnickはGoogleのWeb Developer Relationsチームのメンバーで、ニューヨークに拠点を置いています。彼の関心事は、<a href="https://developers.google.com/web/tools/workbox/">Workbox</a>、プログレッシブウェブアプリのためのサービスワーカーライブラリのセットです。<a href="https://jeffy.info">https://jeffy.info</a> でブログを書いており、<a href="https://twitter.com/jeffposnick">@jeffposnick</a> としてツイートしています。
 featured_quote: プログレッシブウェブアプリ（PWA）は、サービスワーカーAPIのようなプラットフォームプリミティブの上に構築された新しいクラスのウェブアプリケーションです。サービスワーカーは、アプリケーションがネットワークプロキシとして動作し、ウェブアプリの送信要求を傍受し、プログラム的な応答またはキャッシュされた応答で応答することで、ネットワークに依存しないロードをサポートすることを可能にします。

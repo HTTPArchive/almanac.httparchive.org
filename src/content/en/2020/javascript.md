@@ -1,6 +1,5 @@
 ---
-part_number: I
-chapter_number: 2
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: JavaScript
 description: JavaScript chapter of the 2020 Web Almanac covering how much JavaScript we use on the web, compression, libraries and frameworks, loading, and source maps.
 authors: [tkadlec]
@@ -11,7 +10,6 @@ translators: []
 tkadlec_bio: Tim is a web performance consultant and trainer focused on building a web everyone can use. He is the author of High Performance Images (O'Reilly, 2016) and Implementing Responsive Design (New Riders, 2012). He writes about all things web at <a href="https://timkadlec.com/">timkadlec.com</a>. You can find him sharing his thoughts in a briefer format on Twitter at <a href="https://twitter.com/tkadlec">@tkadlec</a>.
 discuss: 2038
 results: https://docs.google.com/spreadsheets/d/1cgXJrFH02SHPKDGD0AelaXAdB3UI7PIb5dlS0dxVtfY/
-queries: 02_JavaScript
 featured_quote: JavaScript has come a long way from its humble origins as the last of the three web cornerstones—alongside CSS and HTML. Today, JavaScript has started to infiltrate a broad spectrum of the technical stack. It is no longer confined to the client-side and it's an increasingly popular choice for build tools and server-side scripting. JavaScript is also creeping its way into the CDN layer as well thanks to edge computing solutions.
 featured_stat_1: 1,897ms
 featured_stat_label_1: Median JS main thread time on mobile

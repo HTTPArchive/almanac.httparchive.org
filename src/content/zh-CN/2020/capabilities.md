@@ -1,6 +1,5 @@
 ---
-part_number: II
-chapter_number: 13
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: 能力
 description: 2020年 Web Almanac网络年鉴中的能力篇，涵盖了全新的、强大的网络平台API。
 authors: [christianliebel]
@@ -10,7 +9,6 @@ editors: [rviscomi]
 translators: [chengxicn]
 discuss: 2049
 results: https://docs.google.com/spreadsheets/d/1N6j1qKv7vc51p1W9z_RrbJX9Se3Pmb-Uersfz4gWqqs/
-queries: 13_Capabilities
 christianliebel_bio: Christian Liebel 是<a href="https://thinktecture.com">Thinktecture</a>, 的顾问，支持来自不同业务领域的客户实现一流的网络应用。他是微软开发者技术的MVP，也是 Web/能力 和 Angular的 Google GDE，并且参加了W3C Web应用工作组。
 featured_quote: 2020年的Web能力（Capability）状态是健康的，因为新的、强大的API定期与基于Chromium的浏览器的新版本一起发布。一些API已经进入了其他非Chromium的浏览器。
 featured_stat_1: 0.0006%

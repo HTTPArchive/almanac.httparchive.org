@@ -1,6 +1,5 @@
 ---
-part_number: I
-chapter_number: 2
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: JavaScript
 description: JavaScript-hoofdstuk van de Web Almanac 2020 waarin wordt beschreven hoeveel JavaScript we gebruiken op het web, compressie, bibliotheken en frameworks, laden en bronkaarten.
 authors: [tkadlec]
@@ -11,7 +10,6 @@ translators: [noah-vdv]
 tkadlec_bio: Tim is een webprestatieadviseur en trainer gericht op het bouwen van een web dat iedereen kan gebruiken. Hij is de auteur van High Performance Images (O'Reilly, 2016) en Implementing Responsive Design (New Riders, 2012). Hij schrijft over alles wat met internet te maken heeft op <a hreflang="en" href="https://timkadlec.com/">timkadlec.com</a>. Je kunt hem vinden op Twitter <a href="https://twitter.com/tkadlec">@tkadlec</a> waar hij zijn gedachten in een beknopter formaat deelt.
 discuss: 2038
 results: https://docs.google.com/spreadsheets/d/1cgXJrFH02SHPKDGD0AelaXAdB3UI7PIb5dlS0dxVtfY/
-queries: 02_JavaScript
 featured_quote: JavaScript heeft een lange weg afgelegd sinds zijn bescheiden oorsprong als de laatste van de drie web-hoekstenen, naast CSS en HTML. Tegenwoordig begint JavaScript een breed spectrum van de technische stack te infiltreren. Het is niet langer beperkt tot de client-side en het wordt een steeds populairdere keuze voor build-tools en server-side scripting. JavaScript sluipt ook zijn weg naar de CDN-laag dankzij edge computing-oplossingen.
 featured_stat_1: 1,897ms
 featured_stat_label_1: Mediane JS-hoofdthread-tijd op mobiel

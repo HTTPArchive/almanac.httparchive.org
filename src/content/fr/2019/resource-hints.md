@@ -1,6 +1,5 @@
 ---
-part_number: IV
-chapter_number: 19
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Indices de Ressources
 description: Chapitre sur les indices de ressources du Web Almanac 2019, couvrant les usages de dns-prefetch, preconnect, preload, prefetch, les indices de priorités et le lazy loading natif.
 authors: [khempenius]
@@ -10,7 +9,6 @@ editors: [rviscomi]
 translators: [borisschapira]
 discuss: 1774
 results: https://docs.google.com/spreadsheets/d/14QBP8XGkMRfWRBbWsoHm6oDVPkYhAIIpfxRn4iOkbUU/
-queries: 19_Resource_Hints
 khempenius_bio: Katie Hempenius est ingénieur dans l’équipe Chrome où elle travaille à rendre le web plus rapide.
 featured_quote: Les indices de ressources fournissent des "suggestions" au navigateur sur les ressources qui seront rapidement nécessaires. L’action que le navigateur entreprend à la suite de cet indice varie selon le type d’indice ; différents indices déclenchent différentes actions. Lorsqu’ils sont utilisés correctement, ils peuvent améliorer les performances de la page en donnant une longueur d'avance aux actions importantes, par anticipation.
 featured_stat_1: 29 %
