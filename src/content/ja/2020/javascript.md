@@ -1,6 +1,5 @@
 ---
-part_number: I
-chapter_number: 2
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: JavaScript
 description: 2020年Web Almanac「JavaScript」の章では、ウェブ上でどれだけJavaScriptを使用しているか、圧縮、ライブラリとフレームワーク、ロード、ソースマップを網羅しています。
 authors: [tkadlec]
