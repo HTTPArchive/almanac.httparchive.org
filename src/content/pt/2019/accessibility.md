@@ -1,6 +1,5 @@
 ---
-part_number: II
-chapter_number: 9
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Acessibilidade
 description: Capítulo de acessibilidade do Web Almanac de 2019 cobrindo facilidade de leitura, mídia, facilidade de navegação e compatibilidade com tecnologias assistivas.
 authors: [nektarios-paisios, obto, kleinab]
@@ -10,7 +9,6 @@ editors: [obto]
 translators: [eduqg]
 discuss: 1764
 results: https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/
-queries: 09_Accessibility
 nektarios-paisios_bio: Nektarios Paisios é um engenheiro de software que trabalha com acessibilidade do Chrome nos últimos 5 anos. Ele se concentra principalmente em tornar o Chrome compatível com software auxiliar de terceiros, como leitores e ampliadores de tela. Antes de trabalhar na acessibilidade do Chrome, Nektarios trabalhou em várias outras funções na empresa, como acessibilidade do GSuite e anúncios gráficos. Nektarios é Ph.D. em Ciência da Computação pela New York University.
 obto_bio: David Fox é o principal pesquisador de usabilidade e fundador da LookZook, uma empresa obcecada em descobrir tudo o que há para saber sobre a construção de experiências na Web que atendem às expectativas do usuário. Ele é um psicólogo de sites que procura sites para aprender não apenas com o que os usuários estão enfrentando, mas por que e como melhorar sua experiência. Ele também é colaborador do Google Chromium, palestrante e fornecedor de seminários on-line e treinamento em UX.
 kleinab_bio: Abigail Klein é engenheira de software do Google. Ela trabalhou na acessibilidade da web do Google Docs, Sheets e Slides, onde adicionou  <a href="https://www.blog.google/outreach-initiatives/accessibility/whats-you-say-present-captions-google-slides/">legendas automáticas para a Apresentações Google</a>, além de melhorar o suporte ao leitor de tela, braille, ampliador de tela e alto contraste. Atualmente, ela trabalha com acessibilidade no Google Chrome e ChromeOS. Ela é bacharel e mestre em ciência da computação pelo MIT, onde co-fundou uma hackathon de tecnologia assistiva e foi assistente de laboratório e palestrante convidada da classe de tecnologia assistida.

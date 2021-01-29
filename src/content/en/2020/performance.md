@@ -1,6 +1,5 @@
 ---
-part_number: II
-chapter_number: 9
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Performance
 description: Performance chapter of the 2020 Web Almanac covering Core Web Vitals, Lighthouse Performance Score, First Contentful Paint (FCP) and Time to First Byte (TTFB).
 authors: [thefoxis]
@@ -11,7 +10,6 @@ translators: []
 thefoxis_bio: Karolina is a Product Design Lead at <a href="https://calibreapp.com/">Calibre</a>, working on creating the most comprehensive speed monitoring platform. She curates <a href="https://perf.email/">Performance Newsletter</a>, your source of performance news and resources. Karolina also <a href="https://calibreapp.com/blog/category/web-platform">frequently writes</a> about how performance affects user experience.
 discuss: 2045
 results: https://docs.google.com/spreadsheets/d/164FVuCQ7gPhTWUXJl1av5_hBxjncNi0TK8RnNseNPJQ/
-queries: 09_Performance
 featured_quote: Poor performance doesn't only cause frustration or negatively affects conversion—it creates real-life barriers to entry. This year's global pandemic made those existing barriers even more apparent.
 featured_stat_1: 25%
 featured_stat_label_1: Sites with good FCP on mobile

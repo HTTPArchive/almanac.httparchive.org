@@ -1,6 +1,5 @@
 ---
-part_number: IV
-chapter_number: 21
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Resource Hints
 description: Capitolo Resource Hints del Web Almanac 2020 che copre l'utilizzo di dns-prefetch, preconnect, preload, prefetch, Priority Hints, and native lazy loading.
 authors: [Zizzamia]
@@ -11,7 +10,6 @@ translators: [chefleo]
 Zizzamia_bio: Leonardo è uno Staff Software Engineer presso <a href="https://www.coinbase.com/">Coinbase</a>, leader nel web performance e iniziative di crescita. È a cura della <a href="https://ngrome.io">conferenza NGRome</a>. Leo gestisce anche la libreria <a href="https://github.com/Zizzamia/perfume.js"> Perfume.js </a>, che aiuta le aziende a stabilire le priorità delle roadmap e a prendere decisioni aziendali migliori attraverso la performance analytics.
 discuss: 2057
 results: https://docs.google.com/spreadsheets/d/1lXjd8ogB7kYfG09eUdGYXUlrMjs4mq1Z7nNldQnvkVA/
-queries: 21_Resource_Hints
 featured_quote: Durante lo scorso anno, le resource hints sono aumentati nell'adozione e sono diventati API essenziali per gli sviluppatori per avere un controllo più granulare su molti aspetti delle priorità delle risorse e, in definitiva, sull'user experience.
 featured_stat_1: 33%
 featured_stat_label_1: Siti che utilizzano <code>dns-prefetch</code>
