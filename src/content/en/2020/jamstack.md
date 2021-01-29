@@ -45,7 +45,7 @@ Our analysis throughout this work looks at desktop and mobile websites. The vast
   )
 }}
 
-Approximately 0.7% of web pages are powered by Jamstack and breaks down to 0.72% on desktop, up from 0.40% in 2019, and 0.68% on mobile, up from 0.27% in 2019.
+Approximately 0.9% of web pages are powered by Jamstack and breaks down to 0.91% on desktop, up from 0.50% in 2019, and 0.84% on mobile, up from 0.34% in 2019.
 
 <figure>
   <table>
