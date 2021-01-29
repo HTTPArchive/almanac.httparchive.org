@@ -1,6 +1,5 @@
 ---
-part_number: I
-chapter_number: 4
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: メディア
 description: 2019年版Web Almanacのメディアの章では、画像ファイルのサイズとフォーマット、レスポンシブ画像、クライアントのヒント、遅延読み込み、アクセシビリティ、動画を取り上げています。
 authors: [colinbendell, dougsillars]
@@ -10,7 +9,6 @@ editors: [bazzadp]
 translators: [ksakae]
 discuss: 1759
 results: https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/
-queries: 04_Media
 colinbendell_bio: Colinは、<a href="https://cloudinary.com/">Cloudinary</a>のCTOオフィスの一員であり、オライリーの本<a href="https://www.oreilly.com/library/view/high-performance-images/9781491925799/">High Performance Images</a>の共著者でもあります。彼は、大容量データ、メディア、ブラウザ、標準の交差点で多くの時間を過ごしています。<a href="https://twitter.com/colinbendell">@colinbendell</a> や <a href="https://bendell.ca/">https://bendell.ca</a> のブログで彼を見つけることができます。
 dougsillars_bio: Doug Sillarsはフリーランスのデジタルノマドで、パフォーマンスとメディアの交差点で活動しています。彼は<a href="https://twitter.com/dougsillars">@dougsillars</a>をツイートし、<a href="https://dougsillars.com">dougsillars.com</a>で定期的にブログを更新しています。
 featured_quote: 画像、アニメーション、動画はウェブ体験の重要な一部です。それらが重要な理由はたくさんあります。ストーリーを伝えたり、視聴者の関心を引きつけたり、他のウェブ技術では簡単には作れないような芸術的な表現を提供したりするのに役立ちます。これらのメディアリソースの重要性は、2つの方法で示すことができます。1つは、1ページのダウンロードに必要なバイト数の多さ、もう1つは、メディアで描かれたピクセル数の多さです。

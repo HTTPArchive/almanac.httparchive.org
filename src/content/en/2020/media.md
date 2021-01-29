@@ -1,7 +1,5 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
-part_number: I
-chapter_number: 5
 title: Media
 description: Media chapter of the 2020 Web Almanac covering image file sizes and formats, responsive images, client hints, lazy loading, accessibility and video.
 authors: [tpiros, bseymour, eeeps]
@@ -14,7 +12,6 @@ bseymour_bio: Ben Seymour is a Dynamic Media & Content Specialist with <a href="
 eeeps_bio: Eric Portis is a Web Platform Advocate at <a href="https://cloudinary.com/">Cloudinary</a>.
 discuss: 2041
 results: https://docs.google.com/spreadsheets/d/1SZGpCsTT0u1MFBrxed7HA9FLAloL1dS8ZIng986LvS8/
-queries: 05_Media
 featured_quote: Images and videos offer us the potential for a most powerful pairing&colon; instant communication, capable of triggering an innate emotional response. However, they require considered implementation techniques to avoid also being a burden to our web pages.
 featured_stat_1: 84.64%
 featured_stat_label_1: Usage of WebP in mobile <code>&lt;Picture&gt;</code> element

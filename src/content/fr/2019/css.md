@@ -1,6 +1,5 @@
 ---
-part_number: I
-chapter_number: 2
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CSS
 description: Chapitre CSS du Web Almanac 2019, couvrant les couleurs, unités, sélecteurs, mises en page, typographies et polices, espacements, décoration, animation et media queries.
 authors: [una, argyleink]
@@ -10,7 +9,6 @@ editors: [rachellcostello]
 translators: [nico3333fr]
 discuss: 1757
 results: https://docs.google.com/spreadsheets/d/1uFlkuSRetjBNEhGKWpkrXo4eEIsgYelxY-qR9Pd7QpM/
-queries: 02_CSS
 una_bio: Una Kravets est une conférencière internationale basée à Brooklyn, rédactrice technique et <i lang="en">Developer Advocate</i> pour <i lang="en">Material Design</i> chez Google. Una anime la série web <a href="https://www.youtube.com/watch?v=YK8GZBx3hpg" lang="en">Designing the Browser</a> et le podcast développeur <a href="https://spec.fm/podcasts/toolsday" lang="en">Toolsday</a>. Suivez-la sur <a href="https://twitter.com/una">Twitter</a> pour découvrir ses réflexions sur les CSS créatifs, les expériences utilisateurs et les meilleures pratiques de développement web.
 argyleink_bio: Adam Argyle est un membre de l’équipe <i lang="en">Google Chrome Developer Relations</i>, spécialisé dans le CSS. C’est un accro du web avec une soif insatiable de super UX & UI. Retrouvez-le sur le web <a href="https://twitter.com/argyleink">@argyleink</a> ou consultez son site <a href="https://nerdy.dev">https://nerdy.dev</a>.
 featured_quote: Les feuilles de style en cascade (CSS) sont utilisées pour peindre, mettre en forme et organiser visuellement le contenu des pages Web. Leurs capacités couvrent des concepts aussi simples que la couleur du texte ou la perspective 3D. Elles disposent également de possibilités pour permettre aux développeurs de gérer différentes tailles d’écran, différents contextes de visualisation, ainsi que l’impression. CSS aide les développeurs et développeuses à gérer le contenu et à s’assurer qu’il s’adapte correctement aux personnes.

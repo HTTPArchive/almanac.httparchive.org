@@ -1,6 +1,5 @@
 ---
-part_number: I
-chapter_number: 3
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Markup
 description: Markup chapter of the 2020 Web Almanac covering general observations, the use of elements and attributes, as well as trivia and trends.
 authors: [j9t, catalinred, iandevlin]
@@ -13,7 +12,6 @@ editors: [rviscomi]
 translators: []
 discuss: 2039
 results: https://docs.google.com/spreadsheets/d/1Ta7amoUeaL4pILhWzH-SCzMX9PsZeb1x_mwrX2C4eY8/
-queries: 03_Markup
 featured_quote: We approach near-complete adoption of living HTML, are quick to prune our pages of fads, and we're fast in adopting and shunning frameworks. And still, there are no signs we exhausted the options HTML gives us.
 featured_stat_1: 85.73%
 featured_stat_label_1: Percentage of pages that use the "living" HTML doctype

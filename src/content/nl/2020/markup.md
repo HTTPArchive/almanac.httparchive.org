@@ -1,6 +1,5 @@
 ---
-part_number: I
-chapter_number: 3
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Opmaak
 description: Opmaakhoofdstuk van de Web Almanac 2020 met algemene observaties, het gebruik van elementen en attributen, maar ook trivia en trends.
 authors: [j9t, catalinred, iandevlin]
@@ -13,7 +12,6 @@ editors: [rviscomi]
 translators: [noah-vdv]
 discuss: 2039
 results: https://docs.google.com/spreadsheets/d/1Ta7amoUeaL4pILhWzH-SCzMX9PsZeb1x_mwrX2C4eY8/
-queries: 03_Markup
 featured_quote: We benaderen een bijna volledige acceptatie van levende HTML, snoeien snel onze pagina's van rages, en we zijn snel in het adopteren en mijden van frameworks. En toch zijn er geen tekenen dat we de opties die HTML ons biedt hebben uitgeput.
 featured_stat_1: 85,73%
 featured_stat_label_1: Percentage pagina's dat het "levende" HTML-doctype gebruikt

@@ -1,6 +1,5 @@
 ---
-part_number: I
-chapter_number: 1
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CSS
 description: CSS chapter of the 2020 Web Almanac covering color, units, selectors, layout, animation, media queries, and Sass usage.
 authors: [LeaVerou, svgeesus, rachelandrew]
@@ -13,7 +12,6 @@ svgeesus_bio: Chris Lilley is a Technical Director at the World Wide Web Consort
 rachelandrew_bio: I'm a web developer, writer, public speaker. Co-founder of <a href="https://grabaperch.com">Perch CMS</a> and <a href="https://noti.st">Notist</a>. Member of the <a href="https://www.w3.org/wiki/CSSWG">CSS Working Group</a>. Editor in Chief of <a href="https://www.smashingmagazine.com/">Smashing Magazine</a>.
 discuss: 2037
 results: https://docs.google.com/spreadsheets/d/1sMWXWjMujqfAREYxNbG_t1fOJKYCA6ASLwtz4pBQVTw/
-queries: 01_CSS
 featured_quote: The web is not a teenager anymore—it is now 30 years old and acts like it. It tends to favor stability over new bling and readability over complexity, occasional guilty pleasures aside.
 featured_stat_1: 72.58%
 featured_stat_label_1: Percentage of <code>&lt;length&gt;</code> values that use the <code>px</code> unit.

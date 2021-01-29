@@ -1,6 +1,5 @@
 ---
-part_number: IV
-chapter_number: 22
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: HTTP/2
 description: HTTP/2 chapter of the 2020 Web Almanac covering adoption and impact of HTTP/2, HTTP/2 Push, HTTP/2 Issues, and HTTP/3.
 authors: [dotjs, rmarx, MikeBishop]
@@ -13,7 +12,6 @@ rmarx_bio: Robin is a web protocol and performance researcher at <a href="https:
 MikeBishop_bio: Editor of HTTP/3 with the <a href="https://quicwg.org/">QUIC Working Group</a>. Architect in <a href="https://www.akamai.com/">Akamai</a>'s Foundry group.
 discuss: 2058
 results: https://docs.google.com/spreadsheets/d/1M1tijxf04wSN3KU0ZUunjPYCrVsaJfxzuRCXUeRQ-YU/
-queries: 22_HTTP_2
 featured_quote: This chapter reviews the current state of HTTP/2 and gQUIC deployment, to establish how well some of the newer features of the protocol, such as prioritization and server push, have been adopted. We then look at the motivations for HTTP/3, describe the major differences between the protocol versions and discuss the potential challenges in upgrading to a UDP-based transport protocol with QUIC.
 featured_stat_1: 64%
 featured_stat_label_1: Requests served over HTTP/2
