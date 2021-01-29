@@ -10,12 +10,12 @@ translators: []
 ahmadawais_bio: Ahmad Awais is an award-winning open-source engineer, Google Developers Expert Dev Advocate, Node.js Community Committee Outreach Lead, WordPress Core Dev, and VP of Engineering DevRel at WGA. He has authored various open-source software tools used by millions of developers worldwide. Like his <a href="https://shadesofpurple.pro/more">Shades of Purple</a> code-theme or projects like the <a href="https://github.com/AhmadAwais/corona-cli">corona-cli</a>. Awais loves to teach. Over 20,000 developers are learning from his <a href="https://AhmadAwais.com/courses">courses</a> i.e. <a href="https://nodecli.com/">Node CLI</a>, <a href="https://vscode.pro/">VSCode.pro</a>, and <a href="https://nextjsbeginner.com/">Next.js Beginner</a>. Awais received FOSS community leadership recognition as one of the <a href="https://ahmadawais.com/github-stars/">12 featured GitHub Stars</a>. He is a member of the Smashing Magazine Experts Panel; featured &amp; published author at CSS-Tricks, Tuts+, Scotch.io, SitePoint. You can mostly find him on Twitter <a href="https://twitter.com/MrAhmadAwais/">@MrAhmadAwais</a> where he tweets his <a href="https://awais.dev/odmt">#OneDevMinute</a> developer tips.
 discuss: 2053
 results: https://docs.google.com/spreadsheets/d/1BCC5Q4tePpTl8TiaGmSxBc9Lh2to7xBfVPMULFOBwvk/
-featured_quote: Stats suggest almost twice as many Jamstack sites exist now than in 2019. Developers enjoy a better development experience by separating the frontend from the backend. But what about the real-user experience of browsing Jamstack sites?
-featured_stat_1: 154%
+featured_quote: Stats suggest over twice as many Jamstack sites exist now than in 2019. Developers enjoy a better development experience by separating the frontend from the backend. But what about the real-user experience of browsing Jamstack sites?
+featured_stat_1: 147%
 featured_stat_label_1: Increase in Jamstack websites in 2020
 featured_stat_2: 1 gram
 featured_stat_label_2: CO2 emitted for median Jamstack on page load
-featured_stat_3: 72.5%
+featured_stat_3: 58.59%
 featured_stat_label_3: Jamstack sites built using Next.js
 ---
 
@@ -38,7 +38,7 @@ Our analysis throughout this work looks at desktop and mobile websites. The vast
 {{ figure_markup(
   image="jamstack-adoption.png",
   caption="Jamstack adoption trend.",
-  description="Bar chart showing the increase in the level of Jamstack adoption in 2019 and 2020. Mobile has increased from 0.40% to 0.72%. Desktop has increased from 0.27% to 0.68%.",
+  description="Bar chart showing the increase in the level of Jamstack adoption in 2019 and 2020. Mobile has increased from 0.50% to 0.91%. Desktop has increased from 0.34% to 0.84%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-zBygubF5NuAXOGScVLhnozB_6Pi_0z4B57cP_I6AfeBuZCGzs3aP_1nPjPp37aNRATRYC6EfOeYX/pubchart?oid=1650360073&format=interactive",
   sheets_gid="908645975",
   sql_file="ssg_compared_to_2019.sql"
@@ -59,27 +59,27 @@ Approximately 0.7% of web pages are powered by Jamstack and breaks down to 0.72%
     <tbody>
       <tr>
         <td>2019</td>
-        <td class="numeric">0.40%</td>
-        <td class="numeric">0.27%</td>
+        <td class="numeric">0.50%</td>
+        <td class="numeric">0.34%</td>
       </tr>
       <tr>
         <td>2020</td>
-        <td class="numeric">0.72%</td>
-        <td class="numeric">0.68%</td>
+        <td class="numeric">0.91%</td>
+        <td class="numeric">0.85%</td>
       </tr>
     </tbody>
     <tfoot>
       <tr>
         <th scope="col">% Change</td>
-        <th scope="col" class="numeric">79%</td>
-        <th scope="col" class="numeric">154%</td>
+        <th scope="col" class="numeric">85%</td>
+        <th scope="col" class="numeric">147%</td>
       </tr>
     </tfoot>
   </table>
   <figcaption>{{ figure_link(caption="Jamstack adoption statistics.", sheets_gid="908645975", sql_file="ssg_compared_to_2019.sql") }}</figcaption>
 </figure>
 
-The increase in desktop web pages powered by a Jamstack framework is 79% from last year. On mobile, this increase is almost two folds, at 154%. This is a significant growth from 2019, especially for mobile pages. We believe this is a sign of the steady growth of the Jamstack community.
+The increase in desktop web pages powered by a Jamstack framework is 85% from last year. On mobile, this increase is almost two and a half times, at 147%. This is a significant growth from 2019, especially for mobile pages. We believe this is a sign of the steady growth of the Jamstack community.
 
 ## Jamstack frameworks
 
