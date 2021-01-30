@@ -352,7 +352,7 @@ Lorsqu’ils sont utilisés ensemble, les navigateurs qui prennent en charge les
 {{ figure_markup(
   image="fig14.png",
   caption="Pourcentage de sites utilisant nomodule.",
-  description="Diagramme à barres montrant que 0,8&nbsp;% des sites sur ordinateurs de bureau utilisent `nomodule`, et 0,5&nbsp;% des sites sur mobile.",
+  description="Diagramme à barres montrant que 0,8&nbsp;% des sites sur ordinateurs de bureau utilisent \"nomodule\", et 0,5&nbsp;% des sites sur mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=781034243&format=interactive"
   )
 }}

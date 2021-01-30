@@ -196,7 +196,7 @@ It's interesting, then, to see what the distribution of these elements looks lik
   link="https://rainy-periwinkle.glitch.me/scatter/html",
   image="element_categories.png",
   caption="Element popularity categorized by standardization.",
-  description='Scatter graph showing HTML, SVG, and Math ML use relatively few tags while non-standard elements (split into "in global ns", "dasherized" and "colon") are much more spread out.',
+  description="Scatter graph showing HTML, SVG, and Math ML use relatively few tags while non-standard elements (split into \"in global ns\", \"dasherized\" and \"colon\") are much more spread out.",
   width=600,
   height=1065
   )
