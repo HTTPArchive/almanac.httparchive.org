@@ -1,6 +1,6 @@
 const smartypants = require('smartypants');
 
-const generate_typographic_punctuation = (body) => {
+const generate_typographic_punctuation_body = (body) => {
 
   // Temporarily comment out any Jinja macros to avoid them being converted
   // as smartypants doesn't recognise those parameters as
@@ -26,7 +26,7 @@ const generate_typographic_punctuation = (body) => {
 
 const generate_typographic_punctuation_metadata = (metadata) => {
 
-  for (item in metadata) {
+  for (const item in metadata) {
     // Double quotes are handled in the meta data by changing to &quot;
     // Temporarily change them back so we can typograph the ones that need it
     metadata[item] = metadata[item].replace(/&quot;/g, '"');
@@ -38,6 +38,6 @@ const generate_typographic_punctuation_metadata = (metadata) => {
 }
 
 module.exports = {
-  generate_typographic_punctuation,
+  generate_typographic_punctuation_body,
   generate_typographic_punctuation_metadata
 };
