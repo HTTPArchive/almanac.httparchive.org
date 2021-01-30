@@ -1,6 +1,5 @@
 ---
-part_number: I
-chapter_number: 1
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: JavaScript
 description: JavaScript chapter of the 2019 Web Almanac covering how much JavaScript we use on the web, compression, libraries and frameworks, loading, and source maps.
 authors: [housseindjirdeh]
@@ -10,7 +9,6 @@ editors: [obto]
 translators: [c-torres]
 discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/
-queries: 01_JavaScript
 housseindjirdeh_bio: <i lang="en">Houssein is a Developer Advocate at Google working on speed, performance and the web framework ecosystem. He tweets at <a href="https://twitter.com/hdjirdeh">@hdjirdeh</a> and blogs at <a href="https://houssein.me/">https://houssein.me/</a>.</i>
 featured_quote: JavaScript es el recurso más costoso que enviamos a los navegadores, ya que tiene que ser descargado, analizado, compilado y finalmente ejecutado. Aunque los navegadores han disminuido significativamente el tiempo que lleva analizar y compilar scripts, la descarga y la ejecución se han convertido en las etapas más costosas cuando JavaScript es procesado por una página web.
 featured_stat_1: 89%
@@ -78,7 +76,7 @@ Aunque estos datos muestran cuánto tiempo puede llevar un dispositivo móvil pr
 {{ figure_markup(
   image="js-processing-reddit.png",
   alt="Tiempos de procesamiento de JavaScript para Reddit.com.",
-  caption='Tiempos de procesamiento de JavaScript para Reddit.com. Tomado de <a href="https://v8.dev/blog/cost-of-javascript-2019\">El costo de JavaScript en 2019</a>.',
+  caption='Tiempos de procesamiento de JavaScript para Reddit.com. Tomado de <a href="https://v8.dev/blog/cost-of-javascript-2019">El costo de JavaScript en 2019</a>.',
   description="Gráfico de barras que muestra 3 dispositivos diferentes: en la parte superior, un Pixel 3, que tiene un tiempo de procesamiento pequeño tanto en el hilo principal como en el hilo worker de menos de 400 ms. Para un Moto G4 es de aproximadamente 900 ms en el subproceso principal y otros 300 ms en el subproceso del worker. Y la barra final es un Alcatel 1X 5059D con más de 2.000 ms en el subproceso principal y más de 500 ms en el subproceso del worker.",
   width=600,
   height=363

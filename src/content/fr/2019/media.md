@@ -1,6 +1,5 @@
 ---
-part_number: I
-chapter_number: 4
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Media
 description: Chapitre Média du Web Almanac 2019 couvrant les tailles et formats des fichiers d’images, les images adaptatives, les Indications Client, le lazy loading, l’accessibilité et la vidéo.
 authors: [colinbendell, dougsillars]
@@ -10,7 +9,6 @@ editors: [bazzadp]
 translators: [borisschapira]
 discuss: 1759
 results: https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/
-queries: 04_Media
 colinbendell_bio: Colin fait partie du <i lang="en">CTO Office</i> de <a href="https://cloudinary.com/">Cloudinary</a> et est co-auteur du livre O’Reilly <a href="https://www.oreilly.com/library/view/high-performance-images/9781491925799/" lang="en">High Performance Images</a>. Il passe une grande partie de son temps à l’intersection des données à haut volume, des médias, des navigateurs et des standards. Vous le trouverez twittant en tant que <a href="https://twitter.com/colinbendell">@colinbendell</a> et sur son blog <a href="https://bendell.ca/">https://bendell.ca</a>.
 dougsillars_bio: Doug Sillars est un nomade numérique indépendant qui travaille à l’intersection de la performance et des médias. Il tweete sous <a href="https://twitter.com/dougsillars">@dougsillars</a>, et blogue régulièrement sur <a href="https://dougsillars.com">dougsillars.com</a>.
 featured_quote: Les images, les animations et les vidéos constituent une partie significative de l’expérience Web. Elles sont importantes pour de nombreuses raisons&nbsp;&colon; elles aident à raconter des histoires, à faire participer le public et à fournir une expression artistique d’une manière qui, souvent, ne peut pas être facilement produite avec d’autres technologies du web. L’importance de ces ressources médias peut être démontrée de deux façons&nbsp;&colon; par le volume d’octets téléchargés pour une page, mais aussi par la quantité de pixels utilisés pour afficher ces médias.
@@ -297,7 +295,7 @@ L’utilité de `srcset` dépend généralement de la précision de la requête 
   image="fig16_top_patterns_of_img_sizes.png",
   alt="Top patterns of img sizes.",
   caption="Principaux modèles de conception de <code><img sizes></code>.",
-  description="Diagramme à barres montrant que 11,3 millions d’images utilisent 'img sizes=\"(max-width: 300px) 100vw, 300px\"', 1,60 million utilisent 'auto', 1,00 million utilisent 'img sizes=\"(max-width : 767px) 89vw...etc.\"', 0,23 million utilisent '100vw' et 0,13 million utilisent '300px'.",
+  description="Diagramme à barres montrant que 11,3 millions d’images utilisent 'img sizes=`(max-width: 300px) 100vw, 300px`', 1,60 million utilisent 'auto', 1,00 million utilisent 'img sizes=`(max-width : 767px) 89vw...etc.`', 0,23 million utilisent '100vw' et 0,13 million utilisent '300px'.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=663985412&format=interactive"
   )
 }}

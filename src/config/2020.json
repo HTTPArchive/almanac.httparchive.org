@@ -1197,6 +1197,13 @@
       "twitter": "rnebhwani",
       "linkedin": "rockeynebhwani"
     },
+    "rsheeter": {
+      "name": "Rod Sheeter",
+      "teams": [
+        "reviewers"
+      ],
+      "github": "rsheeter"
+    },
     "RoelN": {
       "name": "Roel Nieskens",
       "teams": [
@@ -1217,13 +1224,6 @@
       "github": "roryhewitt",
       "twitter": "roryhewitt3",
       "linkedin": "roryhewitt"
-    },
-    "rsheeter": {
-      "name": "rsheeter",
-      "teams": [
-        "reviewers"
-      ],
-      "github": "rsheeter"
     },
     "ksakae": {
       "name": "Sakae Kotaro",
@@ -1349,6 +1349,7 @@
       ],
       "avatar_url": "https://avatars0.githubusercontent.com/u/66536?v=4&s=200",
       "github": "tkadlec",
+      "website": "https://timkadlec.com/",
       "twitter": "tkadlec"
     },
     "tomvangoethem": {

@@ -1,7 +1,5 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
-part_number: IV
-chapter_number: 19
 title: Compression
 description: Compression chapter of the 2020 Web Almanac covering HTTP compression, algorithms, content types, 1st party and 3rd party compression and opportunities.
 authors: [mo271, veluca93, sboukortt, jyrkialakuijala]
@@ -15,7 +13,6 @@ mo271_bio: Moritz Firsching is software engineer at Google Switzerland, where he
 veluca93_bio: Luca Versari is a software engineer at Google, working on <a href="https://gitlab.com/wg1/jpeg-xl">JPEG XL</a>. He's finishing a PhD on graph compression and has a background in mathematics.
 discuss: 2055
 results: https://docs.google.com/spreadsheets/d/1NKbP4AqMkgCNCsVD3yLhO2d0aqIsgZ7AGLEtUDHl9yY/
-queries: 19_Compression
 featured_quote: Using HTTP compression makes a website load faster and therefore guarantees a better user experience.
 featured_stat_1: 23%
 featured_stat_label_1: Compressed responses which use Brotli
@@ -261,7 +258,7 @@ Because the [HTTP Archive runs Lighthouse audits](./methodology#lighthouse) for 
 {{ figure_markup(
   image="text-compression-lighthouse-scores.png",
   caption="Text compression Lighthouse scores.",
-  description="Stacked bar chart breaking down the scores pages receive for the \"enable text compression\" Lighthouse audit. It shows that 7% of sites score less than 10%, 6% of sites are scoring between 10-39%, 10% of sites scoring between 40-79%, 3% of sites scoring between 80-99%, and 74% of sites have a pass with over 100% of text assets being compressed.",
+  description='Stacked bar chart breaking down the scores pages receive for the "enable text compression" Lighthouse audit. It shows that 7% of sites score less than 10%, 6% of sites are scoring between 10-39%, 10% of sites scoring between 40-79%, 3% of sites scoring between 80-99%, and 74% of sites have a pass with over 100% of text assets being compressed.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxUj8-0vKTqPAblIXqekSbiRh1D1lEuA3gVD9w23qwGPtJRE8FbgrURfPAgfFZX2l0t84Wy5ZAGqzR/pubchart?oid=1438276663&format=interactive",
   sheets_gid="1284073179",
   sql_file="19_04.distribution_of_text_compression_lighthouse.sql"

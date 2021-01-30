@@ -1,6 +1,5 @@
 ---
-part_number: IV
-chapter_number: 16
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Mise en cache
 description: Le chapitre sur la mise en cache de Web Almanac couvre la gestion de la mise en cache, sa validité, les TTLs, les headers Vary, les cookies, l'AppCache, les service workers et d'autres possibilités.
 authors: [paulcalvano]
@@ -10,7 +9,6 @@ editors: [bazzadp]
 translators: [allemas]
 discuss: 1771
 results: https://docs.google.com/spreadsheets/d/1mnq03DqrRBwxfDV05uEFETK0_hPbYOynWxZkV3tFgNk/
-queries: 16_Caching
 paulcalvano_bio: Paul Calvano est architecte performance web chez <a href="https://www.akamai.com/">Akamai</a>, où il aide les entreprises à améliorer les performances de leurs sites web. Il est également co-responsable du projet HTTP Archive. Vous pouvez le retrouver en train de tweeter à l’adresse <a href="https://twitter.com/paulcalvano">@paulcalvano</a>, en bloguant sur <a href="https://paulcalvano.com">http://paulcalvano.com</a> et partager ses recherches HTTP Archive à <a href="https://discuss.httparchive.org">https://discuss.httparchive.org</a>.
 featured_quote: La mise en cache est une technique permettant de réutiliser un contenu précédemment téléchargé. Elle offre un avantage significatif en termes de performance en évitant de rejouer de coûteuses requêtes. La mise en cache facilite la montée en charge d'une application, en réduisant le trafic sur le réseau à destination du serveur d'origine. Un vieux dicton dit que "la requête la plus rapide est celle que vous n'avez pas à faire " et la mise en cache est l'un des principaux moyens d'éviter d'avoir à refaire des requêtes.
 featured_stat_1: 27 %
@@ -699,7 +697,7 @@ L'outil [Lighthouse](https://developers.google.com/web/tools/lighthouse) de Goog
 {{ figure_markup(
   image="ch16_fig15_lighthouse_example.jpg",
   caption="Rapport Lighthouse soulignant les améliorations possibles de la politique des caches.",
-  description="Une capture d'écran d'une partie d'un rapport de l'outil Google Lighthouse, avec la section \"Servir des ressources statiques avec une politique de cache efficace\" ouverte où il énumère un certain nombre de ressources, dont les noms ont été masqués, et le TTL du cache par rapport à la taille.",
+  description="Une capture d'écran d'une partie d'un rapport de l'outil Google Lighthouse, avec la section “Servir des ressources statiques avec une politique de cache efficace” ouverte où il énumère un certain nombre de ressources, dont les noms ont été masqués, et le TTL du cache par rapport à la taille.",
   width=600,
   height=459
   )
@@ -709,7 +707,7 @@ Lighthouse calcule un score pour chaque audit, allant de 0 à 100&nbsp;%, et ces
 
 {{ figure_markup(
   image="fig21.png",
-  caption="Distribution des scores Lighthouse pour l'audit \"Définit un long cache TTL\" pour les pages web mobiles.",
+  caption="Distribution des scores Lighthouse pour l'audit “Définit un long cache TTL” pour les pages web mobiles.",
   description="Un diagramme à barres superposées&nbsp;: 38,2&nbsp;% des sites web obtiennent un score de < 10&nbsp;%, 29,0&nbsp;% des sites web obtiennent un score entre 10 et 39&nbsp;%, 18,7&nbsp;% des sites web obtiennent un score de 40 à 79&nbsp;%, 10,7&nbsp;% des sites web obtiennent un score de 80 à 99&nbsp;%, et 3,4&nbsp;% des sites web obtiennent un score de 100&nbsp;%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=827424070&format=interactive"
   )
