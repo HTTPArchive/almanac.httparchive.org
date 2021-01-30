@@ -10,7 +10,6 @@ translators: [ksakae]
 tkadlec_bio: Timは、誰もが使えるWebを構築することに焦点を当てたWebパフォーマンスコンサルタントであり、トレーナーです。著書に『High Performance Images』（O'Reilly, 2016）、『Implementing Responsive Design』（New Riders, 2012）があります。彼は<a href="https://timkadlec.com/">timkadlec.com</a>でウェブ全般について書いています。<a href="https://twitter.com/tkadlec">@tkadlec</a>で、彼の考えを簡潔にまとめてTwitterで紹介しています。
 discuss: 2038
 results: https://docs.google.com/spreadsheets/d/1cgXJrFH02SHPKDGD0AelaXAdB3UI7PIb5dlS0dxVtfY/
-queries: 02_JavaScript
 featured_quote: JavaScriptは、CSS、HTMLと並んでウェブの3つの礎となる最後の礎として、その謙虚な起源から長い道のりを歩んできました。今日では、JavaScriptは技術スタックの幅広い範囲に浸透し始めています。JavaScriptはもはやクライアントサイドに限定されたものではなく、ビルドツールやサーバーサイドのスクリプティングのための選択肢として、ますます人気が高まっています。エッジコンピューティングソリューションのおかげで、JavaScriptはCDNレイヤーにも浸透してきています。
 featured_stat_1: 1,897ms
 featured_stat_label_1: モバイルでのJSメインスレッド時間の中央値
