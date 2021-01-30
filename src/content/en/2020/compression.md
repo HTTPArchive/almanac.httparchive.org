@@ -258,7 +258,7 @@ Because the [HTTP Archive runs Lighthouse audits](./methodology#lighthouse) for 
 {{ figure_markup(
   image="text-compression-lighthouse-scores.png",
   caption="Text compression Lighthouse scores.",
-  description="Stacked bar chart breaking down the scores pages receive for the \"enable text compression\" Lighthouse audit. It shows that 7% of sites score less than 10%, 6% of sites are scoring between 10-39%, 10% of sites scoring between 40-79%, 3% of sites scoring between 80-99%, and 74% of sites have a pass with over 100% of text assets being compressed.",
+  description='Stacked bar chart breaking down the scores pages receive for the "enable text compression" Lighthouse audit. It shows that 7% of sites score less than 10%, 6% of sites are scoring between 10-39%, 10% of sites scoring between 40-79%, 3% of sites scoring between 80-99%, and 74% of sites have a pass with over 100% of text assets being compressed.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxUj8-0vKTqPAblIXqekSbiRh1D1lEuA3gVD9w23qwGPtJRE8FbgrURfPAgfFZX2l0t84Wy5ZAGqzR/pubchart?oid=1438276663&format=interactive",
   sheets_gid="1284073179",
   sql_file="19_04.distribution_of_text_compression_lighthouse.sql"

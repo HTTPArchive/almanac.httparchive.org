@@ -50,7 +50,7 @@ De Async Clipboard API biedt twee methoden voor het lezen van inhoud van het kle
 {{ figure_markup(
   image="async_clipboard_api.png",
   alt="Percentage pagina's dat wordt geladen in Chrome met behulp van de Async Clipboard API",
-  caption='Percentage pagina\'s dat wordt geladen in Chrome met behulp van de Async Clipboard API.<br>(Bronnen: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/2369">Async Clipboard Read</a>, <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/2370">Async Clipboard Write</a>)',
+  caption='Percentage pagina’s dat wordt geladen in Chrome met behulp van de Async Clipboard API.<br>(Bronnen: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/2369">Async Clipboard Read</a>, <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/2370">Async Clipboard Write</a>)',
   description="Grafiek van het gebruik van de Async Clipboard API, gebaseerd op het percentage pagina's dat met deze functie in Chrome wordt geladen. Het vergelijkt het gebruik van de `read`- en `write`-methoden en laat een exponentiële groei zien voor `write` in de loop van 2020, terwijl `read` lineair groeit. In oktober 2020 werd `read` aangeroepen tijdens 0,0003% van alle paginaladingen in Chrome, `write` voor 0,0006%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1740212588&format=interactive",
   sheets_gid="2077755325"
@@ -116,7 +116,7 @@ Op verschillende platforms is het gebruikelijk dat applicaties een badge present
 {{ figure_markup(
   image="badging_api.png",
   alt="Percentage pagina's dat wordt geladen in Chrome met behulp van de Badging-API",
-  caption='Percentage pagina\'s dat wordt geladen in Chrome met behulp van de Badging-API.<br>(Bronnen: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/2726">Badge Set</a>, <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/2727">Badge Clear</a>)',
+  caption='Percentage pagina’s dat wordt geladen in Chrome met behulp van de Badging-API.<br>(Bronnen: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/2726">Badge Set</a>, <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/2727">Badge Clear</a>)',
   description="Grafiek van Badging API-gebruik, gebaseerd op het percentage pagina's dat met deze functie in Chrome wordt geladen. Het vergelijkt de `set` en `clear` methoden. Het gebruik van beide methoden groeit in de loop van de tijd, waarbij de `set` methode over het algemeen vaker wordt aangeroepen. In oktober 2020 is er een plotselinge groei voor beide methoden, met een piek van 0,025% van het laden van pagina's voor de `set` methode en 0,016% voor `clear`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1145004925&format=interactive",
   sheets_gid="1154751352"
@@ -139,7 +139,7 @@ registration.showNotification('Title', {
 {{ figure_markup(
   image="notification_triggers_api.png",
   alt="Percentage pagina's dat wordt geladen in Chrome met behulp van de Notification Triggers API",
-  caption='Percentage pagina\'s dat wordt geladen in Chrome met behulp van de Notification Triggers API.<br>(Bron: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">Notification Triggers</a>)',
+  caption='Percentage pagina’s dat wordt geladen in Chrome met behulp van de Notification Triggers API.<br>(Bron: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">Notification Triggers</a>)',
   description="Diagram met Notification Triggers API-gebruik, gebaseerd op het percentage pagina's dat in Chrome wordt geladen met deze functie. Het vertoont een piek in maart 2020 met ongeveer 0,00003% van de paginaladingen, en daalt tot nul in oktober 2020.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1388597384&format=interactive",
   sheets_gid="1740370570"
@@ -176,7 +176,7 @@ Om dit te doen, biedt de API een nieuwe `IdleDetector` interface op het globale 
 {{ figure_markup(
   image="idle_detection_api.png",
   alt="Percentage pagina's dat wordt geladen in Chrome met behulp van Idle Detection API",
-  caption='Percentage pagina\'s dat wordt geladen in Chrome met behulp van Idle Detection API.<br>(Bron: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">Idle Detection</a>)',
+  caption='Percentage pagina’s dat wordt geladen in Chrome met behulp van Idle Detection API.<br>(Bron: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">Idle Detection</a>)',
   description="Grafiek van API-gebruik voor inactieve detectie, gebaseerd op het percentage pagina's dat met deze functie in Chrome wordt geladen. Er zijn alleen gegevens beschikbaar voor juli en oktober 2020, wat een zeer lage acceptatie van de API aantoont.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=963792757&format=interactive",
   sheets_gid="1324588405"
@@ -260,7 +260,7 @@ De Content Indexing API breidt de Service Worker API uit met een nieuwe `Content
 {{ figure_markup(
   image="content_indexing_api.png",
   alt="Percentage pagina's dat wordt geladen in Chrome met behulp van Content Indexing API",
-  caption='Percentage pagina\'s dat wordt geladen in Chrome met behulp van Content Indexing API.<br>(Bron: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">Content Indexing</a>)',
+  caption='Percentage pagina’s dat wordt geladen in Chrome met behulp van Content Indexing API.<br>(Bron: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">Content Indexing</a>)',
   description="Grafiek van het gebruik van Content Indexing API, gebaseerd op het percentage pagina's dat met deze functie in Chrome wordt geladen. Het vertoont in eerste instantie een relatief laag gebruik, totdat het in oktober 2020 plotseling vertienvoudigt, en wordt gebruikt tijdens 0,0021% van de paginaladingen in Chrome.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=258329620&format=interactive",
   sheets_gid="626752011"
@@ -289,7 +289,7 @@ De WebSocketStream API lost op transparante wijze tegendruk op, aangezien de str
 {{ figure_markup(
   image="websocketstreams.png",
   alt="Percentage pagina's dat in Chrome wordt geladen met WebSocketStreams",
-  caption='Percentage pagina\'s dat in Chrome wordt geladen met WebSocketStreams.<br>(Bron: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3018">WebSocketStream</a>)',
+  caption='Percentage pagina’s dat in Chrome wordt geladen met WebSocketStreams.<br>(Bron: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3018">WebSocketStream</a>)',
   description="Grafiek van het gebruik van WebSocketStreams, gebaseerd op het percentage pagina's dat met deze functie in Chrome wordt geladen. Het vertoont een piek in juni en juli 2020, waar de API werd gebruikt tijdens ongeveer 0,0008% van de paginaladingen.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1714443590&format=interactive",
   sheets_gid="691106754"
@@ -315,7 +315,7 @@ QuicTransport is een geldig alternatief voor WebSockets, omdat het de gebruikssc
 {{ figure_markup(
   image="quic_transport.png",
   alt="Percentage pagina's dat in Chrome wordt geladen met Quic Transport",
-  caption='Percentage pagina\'s dat in Chrome wordt geladen met Quic Transport.<br>(Bron: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3184">QuicTransport</a>)',
+  caption='Percentage pagina’s dat in Chrome wordt geladen met Quic Transport.<br>(Bron: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3184">QuicTransport</a>)',
   description="Grafiek van het gebruik van QuicTransport, gebaseerd op het percentage pagina's dat met deze functie in Chrome wordt geladen. Het vertoont een piek in oktober 2020, waar de API werd gebruikt tijdens ongeveer 0.00089% van de paginaladingen.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1571330893&format=interactive",
   sheets_gid="708893754"

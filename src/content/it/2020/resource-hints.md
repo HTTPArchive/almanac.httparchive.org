@@ -168,7 +168,7 @@ Con `preload` possono essere precaricati molti diversi tipi di contenuto e la <a
 {{ figure_markup(
   image="mobile-as-attribute-values-by-year.png",
   caption="Valori dell'attributo `as` mobile per anno.",
-  description="Un grafico a barre che confronta il tasso di valori dell'attributo `as` sulle pagine mobile del 2019 e del 2020, suddiviso per valore dell'attributo `as`. La maggior parte dei valori `as` sono \"script\" con l'81% di utilizzo nel 2019 e il 64% nel 2020. L'utilizzo di \"script\" è diminuito del 17% anno su anno, mentre tutti gli altri valori sono aumentati. \"non impostato\" aumentato dell'8%, \"font\" aumentato del 5%, \"style\" aumentato del 2%, il resto dei valori notevoli sono dell'1% o meno per entrambi gli anni.",
+  description="Un grafico a barre che confronta il tasso di valori dell'attributo `as` sulle pagine mobile del 2019 e del 2020, suddiviso per valore dell'attributo `as`. La maggior parte dei valori `as` sono `script` con l'81% di utilizzo nel 2019 e il 64% nel 2020. L'utilizzo di `script` è diminuito del 17% anno su anno, mentre tutti gli altri valori sono aumentati. `non impostato` aumentato dell'8%, `font` aumentato del 5%, `style` aumentato del 2%, il resto dei valori notevoli sono dell'1% o meno per entrambi gli anni.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYAbLxN40s6mNR1jo0XDe_V4siN8TAsx2mryMp5IQmlJ-9O9eJxYROz7Rw6ozyFP6hlIZHxxh95GqX/pubchart?oid=903180926&format=interactive",
   sheets_gid="1829901599",
   sql_file="as_attribute_by_year.sql"
@@ -330,7 +330,7 @@ Finora solo lo 0,77% dei siti web ha adottato questo nuovo hint poiché Chrome s
 L'utilizzo maggiore è con elementi di script, il che non sorprende poiché il numero di file JS primari e di terze parti continua a crescere.
 
 {{ figure_markup(
-  caption="La percentuale di risorse nei dispositivi mobile con un hint che utilizza la \"low\" priority.",
+  caption="La percentuale di risorse nei dispositivi mobile con un hint che utilizza la `low` priority.",
   content="16%",
   classes="big-number",
   sheets_gid="1098063134",
