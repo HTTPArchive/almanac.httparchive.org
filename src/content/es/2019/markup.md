@@ -196,7 +196,7 @@ Es interesante, entonces, ver cómo se ve la distribución de estos elementos y 
   link="https://rainy-periwinkle.glitch.me/scatter/html",
   image="element_categories.png",
   caption="Elemento de popularidad categorizado por estandarización.",
-  description='Los gráficos de dispersión que muestran HTML, SVG y Math ML usan relativamente pocas etiquetas, mientras que los elementos no estándar (divididos en "en ns globales", "dasherized" y "dos puntos") están mucho más dispersos.',
+  description="Los gráficos de dispersión que muestran HTML, SVG y Math ML usan relativamente pocas etiquetas, mientras que los elementos no estándar (divididos en \"en ns globales\", \"dasherized\" y \"dos puntos\") están mucho más dispersos.",
   width=600,
   height=1065
   )

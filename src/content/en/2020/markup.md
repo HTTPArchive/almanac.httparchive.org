@@ -1271,7 +1271,7 @@ We can see how `https` and `http` are most dominant, followed by "benign" links 
 ### Links in new windows
 
 {{ figure_markup(
-  caption='Percent of pages having neither `noopener` nor `noreferrer` attributes on `target="_blank"` links.',
+  caption="Percent of pages having neither `noopener` nor `noreferrer` attributes on `target=\"_blank\"` links.",
   content="71.35%",
   classes="big-number",
   sheets_gid="1876528165",

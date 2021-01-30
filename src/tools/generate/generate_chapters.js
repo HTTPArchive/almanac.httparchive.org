@@ -7,7 +7,6 @@ const { find_markdown_files, get_yearly_configs, size_of, parse_array } = requir
 const { generate_table_of_contents } = require('./generate_table_of_contents');
 const { generate_header_links } = require('./generate_header_links');
 const { generate_figure_ids } = require('./generate_figure_ids');
-const { generate_typographic_punctuation } = require('./generate_typographic_punctuation');
 const { generate_featured_chapters, generate_chapter_featured_quote } = require('./generate_featured_chapters');
 const { generate_sitemap } = require('./generate_sitemap');
 const { lazy_load_content } = require('./lazy_load_content');
@@ -151,7 +150,6 @@ const parse_file = async (markdown,chapter) => {
   body = generate_table_figure_dropdowns(body);
   body = lazy_load_content(body);
   body = remove_unnecessary_markup(body);
-  body = generate_typographic_punctuation(body);
   const toc = generate_table_of_contents(body);
 
   const chapter_number = Number(m.chapter_number);
