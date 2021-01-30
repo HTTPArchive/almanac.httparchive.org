@@ -9,11 +9,12 @@
 
     {% set metadata = <%- JSON.stringify(chapter.metadata) %> %}
     {% set chapter_hero_dir = "/static/images/%s/%s/" % ("<%- chapter.hero_dir || '2019' %>", metadata.chapter) %}
+    {% set chapter_config = <%- JSON.stringify(chapter) %> %}
     <section class="chapter" id="chapter-<%- chapter.chapter_number %>">
         <div class="body" id="{{ metadata.get('chapter') }}">
 
             <div class="subtitle">
-                {{ self.part() }} <%- chapter.part %> {{ self.chapter() }} <%- chapter.chapter_number %>
+                {{ self.part() }} {{ chapter_config.part }} {{ self.chapter() }} {{ chapter_config.chapter_number }}
             </div>
             <h1 class="title title-lg">
                 {{ metadata.get('title') }}
