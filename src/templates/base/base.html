@@ -849,7 +849,7 @@
     </a>
     {% if not ebook %}{{ figure_dropdown(metadata, chapter_config, id, sheets_gid, sql_file, image) }}{% endif %}
   </div>
-  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="{{ anchor }}-description" data-show-text="{{ show_description(metadata,chapter_config,id) }}" data-hide-text="{{ hide_description(metadata,id) }}">{{ show_description(metadata,chapter_config,id) }}</button>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="{{ anchor }}-description" data-show-text="{{ show_description(metadata,chapter_config,id) }}" data-hide-text="{{ hide_description(metadata,chapter_config,id) }}">{{ show_description(metadata,chapter_config,id) }}</button>
   <div id="{{ anchor }}-description" class="visually-hidden">{{ description|safe }}</div>
   {%- elif content != "" %}
   <div class="figure-wrapper">
