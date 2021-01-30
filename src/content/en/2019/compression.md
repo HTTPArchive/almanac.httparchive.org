@@ -1,6 +1,5 @@
 ---
-part_number: IV
-chapter_number: 15
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Compression
 description: Compression chapter of the 2019 Web Almanac covering HTTP compression, algorithms, content types, 1st party and 3rd party compression and opportunities.
 authors: [paulcalvano]
@@ -10,7 +9,6 @@ editors: [bazzadp]
 translators: []
 discuss: 1770
 results: https://docs.google.com/spreadsheets/d/1IK9kaScQr_sJUwZnWMiJcmHEYJV292C9DwCfXH6a50o/
-queries: 15_Compression
 paulcalvano_bio: Paul Calvano is a Web Performance Architect at <a href="https://www.akamai.com/">Akamai</a>, where he helps businesses improve the performance of their websites. He's also a co-maintainer of the HTTP Archive project. You can find him tweeting at <a href="https://twitter.com/paulcalvano">@paulcalvano</a>, blogging at <a href="https://paulcalvano.com">http://paulcalvano.com</a> and sharing HTTP Archive research at <a href="https://discuss.httparchive.org">https://discuss.httparchive.org</a>.
 featured_quote: HTTP compression is a technique that allows you to encode information using fewer bits than the original representation. When used for delivering web content, it enables web servers to reduce the amount of data transmitted to clients. This increases the efficiency of the client's available bandwidth, reduces page weight, and improves web performance.
 featured_stat_1: 38%
@@ -338,7 +336,7 @@ Because the [HTTP Archive runs Lighthouse audits](./methodology#lighthouse) for 
 
 {{ figure_markup(
   image="fig11.png",
-  caption="Lighthouse \"enable text compression\" audit scores.",
+  caption='Lighthouse "enable text compression" audit scores.',
   description="Stacked bar chart showing 7.6% are costing less than 10%, 13.2% of sites are scoring between 10-39%, 13.7% of sites scoring between 40-79%, 2.9% of sites scoring between 80-99%, and 62.5% of sites have a pass with over 100% of text assets being compressed.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=2048155673&format=interactive",
   width=760,
@@ -352,7 +350,7 @@ Lighthouse also indicates how many bytes could be saved by enabling text-based c
 
 {{ figure_markup(
   image="fig12.png",
-  caption="Lighthouse \"enable text compression\" audit potential byte savings.",
+  caption='Lighthouse "enable text compression" audit potential byte savings.',
   description="Stacked bar chart showing 82.11% of sites could save less than 1 MB, 15.88% of sites could save 1 - 2 MB and 2% of sites could save > 3 MB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=738657382&format=interactive",
   width=760,

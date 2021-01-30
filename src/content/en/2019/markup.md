@@ -1,15 +1,14 @@
 ---
-part_number: I
-chapter_number: 3
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Markup
 description: Markup chapter of the 2019 Web Almanac covering elements used, custom elements, value, products, and common use cases.
 authors: [bkardell]
 reviewers: [zcorpan, tomhodgins, matthewp]
 analysts: [rviscomi]
-translators: [rviscomi]
+editors: [rviscomi]
+translators: []
 discuss: 1758
 results: https://docs.google.com/spreadsheets/d/1WnDKLar_0Btlt9UgT53Giy2229bpV4IM2D_v6OM_WzA/
-queries: 03_Markup
 bkardell_bio: Brian Kardell is developer advocate at <a href="https://igalia.com">Igalia</a>, standards contributor, <a href="https://bkardell.com">blogger</a>, and is currently the W3C Advisory Committee Representative for the <a href="https://openjsf.org/">Open JS Foundation</a>. He was a founder of the Extensible Web Community Group and co-author of <a href="https://extensiblewebmanifesto.org">The Extensible Web Manifesto</a>.
 featured_quote: As of July 2019, the HTTP Archive has begun collecting all used <em>element</em> names in the DOM for about 4.4 million desktop home pages, and about 5.3 million mobile home pages which we can now begin to research and dissect. This crawl encountered over 5,000 distinct <em>non-standard element names</em> in these pages, so we capped the total distinct number of elements that we count to the 'top' 5,048.
 featured_stat_1: 11
@@ -197,7 +196,7 @@ It's interesting, then, to see what the distribution of these elements looks lik
   link="https://rainy-periwinkle.glitch.me/scatter/html",
   image="element_categories.png",
   caption="Element popularity categorized by standardization.",
-  description="Scatter graph showing HTML, SVG, and Math ML use relatively few tags while non-standard elements (split into \"in global ns\", \"dasherized\" and \"colon\") are much more spread out.",
+  description='Scatter graph showing HTML, SVG, and Math ML use relatively few tags while non-standard elements (split into "in global ns", "dasherized" and "colon") are much more spread out.',
   width=600,
   height=1065
   )

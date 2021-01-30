@@ -1,6 +1,5 @@
 ---
-part_number: II
-chapter_number: 9
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: 效能
 description: 2020 Web Almanac 的效能章節涵蓋了 Core WebVitals、Lighthouse Performance Score、First Contentful Paint (FCP) 以及 Time to First Byte (TTFB)。
 authors: [thefoxis]
@@ -11,7 +10,6 @@ translators: [cybai]
 thefoxis_bio: Karolina 是 <a hreflang="en" href="https://calibreapp.com/">Calibre</a> 的產品設計主管。她主要負責打造最全面的速度監測平台。她同時也是為您蒐集效能相關訊息與資訊的 <a hreflang="en" lang="en" href="https://perf.email/">Performance Newsletter</a> 發起人之一。Karolina 也<a hreflang="en" href="https://calibreapp.com/blog/category/web-platform">時常寫有關於效能如何影響使用者體驗的文章</a>。
 discuss: 2045
 results: https://docs.google.com/spreadsheets/d/164FVuCQ7gPhTWUXJl1av5_hBxjncNi0TK8RnNseNPJQ/
-queries: 09_Performance
 featured_quote: 糟糕的效能並不只是讓使用者挫折或是對業務目標造成負面影響，它還築起了現實生活中人們與網路世界的屏障；今年的全球性疫情更凸顯了那些已經存在的屏障。
 featured_stat_1: 25%
 featured_stat_label_1: 擁有 Good 的 FCP 的手機版網頁

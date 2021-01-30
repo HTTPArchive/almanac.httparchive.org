@@ -1,6 +1,5 @@
 ---
-part_number: IV
-chapter_number: 20
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: HTTP/2
 description: Capítulo de HTTP/2 de 2019 do Web Almanac que cobre a adoção e o impacto do HTTP/2, HTTP/2 Push, Problemas do HTTP/2 e HTTP/3.
 authors: [bazzadp]
@@ -10,7 +9,6 @@ editors: [rachellcostello]
 translators: [elaynelemos]
 discuss: 1775
 results: https://docs.google.com/spreadsheets/d/1z1gdS3YVpe8J9K3g2UdrtdSPhRywVQRBz5kgBeqCnbw/
-queries: 20_HTTP_2
 bazzadp_bio: Barry Pollard é um desenvolvedor de software e autor do livro Manning <a href="https://www.manning.com/books/http2-in-action"><i lang="en">HTTP/2 in Action</i></a>. Ele acha a web incrível, mas quer torná-la ainda melhor. Você pode encontrá-lo twittar <a href="https://twitter.com/tunetheweb">@tunetheweb</a> e bloga em <a href="https://www.tunetheweb.com">www.tunetheweb.com</a>.
 featured_quote: O HTTP/2 foi a primeira grande atualização do principal protocolo de transporte da web em quase 20 anos. Ele chegou com muitas expectativas&colon; prometia um aumento de desempenho gratuito e sem desvantagens. Mais do que isso, poderíamos deixar de lado todos as adaptações e saídas mirabolantes a que o HTTP/1.1 nos forçava, devido às suas ineficiências. Técnicas como bundling, spriting, inlining e até mesmo sharding se tornariam não canônicas em um mundo com HTTP/2, visto que a performance otimizada já seria fornecida por padrão. Este capítulo examina como essa tecnologia relativamente nova se saiu no mundo real.
 featured_stat_1: 95%

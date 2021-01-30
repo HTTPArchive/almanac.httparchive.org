@@ -698,6 +698,7 @@ header .cta {
   appearance: none;
   min-width: 100px;
   min-width: 6.35rem;
+  text-align-last: center;
 }
 
 .table-of-contents-switcher select,

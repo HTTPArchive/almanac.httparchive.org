@@ -1,7 +1,5 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
-part_number: I
-chapter_number: 5
 title: Media
 description: Media chapter of the 2020 Web Almanac covering image file sizes and formats, responsive images, client hints, lazy loading, accessibility and video.
 authors: [tpiros, bseymour, eeeps]
@@ -14,7 +12,6 @@ bseymour_bio: Ben Seymour is a Dynamic Media & Content Specialist with <a href="
 eeeps_bio: Eric Portis is a Web Platform Advocate at <a href="https://cloudinary.com/">Cloudinary</a>.
 discuss: 2041
 results: https://docs.google.com/spreadsheets/d/1SZGpCsTT0u1MFBrxed7HA9FLAloL1dS8ZIng986LvS8/
-queries: 05_Media
 featured_quote: Images and videos offer us the potential for a most powerful pairing&colon; instant communication, capable of triggering an innate emotional response. However, they require considered implementation techniques to avoid also being a burden to our web pages.
 featured_stat_1: 84.64%
 featured_stat_label_1: Usage of WebP in mobile <code>&lt;Picture&gt;</code> element
@@ -259,7 +256,7 @@ While the data shows that only a little under 1% of pages using `<picture>` make
   image="picture-usage-of-orientation.png",
   alt="Picture usage of orientation.",
   caption="`<picture>` usage of orientation.",
-  description="Bar chart showing 0.93% of desktop pages and 0.91% of mobile pages use `<picture>` with orientation. 0.59% of occurences of `<picture>` on desktop and 0.60% on mobile use orientation.",
+  description="Bar chart showing 0.93% of desktop pages and 0.91% of mobile pages use `<picture>` with orientation. 0.59% of occurrences of `<picture>` on desktop and 0.60% on mobile use orientation.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=56906843&format=interactive",
   sheets_gid="283790776",
   sql_file="picture_orientation.sql"
@@ -316,7 +313,7 @@ How common are [progressive JPEGs](https://www.smashingmagazine.com/2018/02/prog
 
 ### Microbrowsers
 
-Let us turn now to the topic of [microbrowsers](https://24ways.org/2019/microbrowsers-are-everywhere/). Also known as "link unfurlers" and "link expanders," these are the user agents that request webpages and grab bits and pieces from them to assemble rich previews when links are shared in messaging or on social media. The *lingua franca* of microbrowsers is Facebook's [Open Graph protocol](https://ogp.me), so we looked at what percentage of webpages are including images and video specifically targeted towards microbrowsers in Open Graph `<meta>` tags.
+Let us turn now to the topic of [microbrowsers](https://24ways.org/2019/microbrowsers-are-everywhere/). Also known as "link unfurlers" and "link expanders," these are the user agents that request web pages and grab bits and pieces from them to assemble rich previews when links are shared in messaging or on social media. The *lingua franca* of microbrowsers is Facebook's [Open Graph protocol](https://ogp.me), so we looked at what percentage of web pages are including images and video specifically targeted towards microbrowsers in Open Graph `<meta>` tags.
 
 {{ figure_markup(
   image="open-graph-image-and-video-usage.png",
@@ -330,7 +327,7 @@ Let us turn now to the topic of [microbrowsers](https://24ways.org/2019/microbro
 
 A third of web pages include images, in Open Graph tags, for microbrowsers. But only around 0.1 percent of pages include microbrowser-specific videos; just about every page that included a video, also included an image.
 
-A third of sampled webpages seems very healthy; the power of relational, word-of-mouth marketing combined with microbrowser-tailored rich previews is clearly worth investing in.
+A third of sampled web pages seems very healthy; the power of relational, word-of-mouth marketing combined with microbrowser-tailored rich previews is clearly worth investing in.
 
 Given that video content is expensive to produce and much less common on the web than images, we understand the comparatively low usage. But the fact that videos are often playable and even autoplay-able from within the link previews themselves, without requiring a trip to a full-on browser, means that this is a big opportunity for boosting engagement.
 
@@ -375,7 +372,7 @@ Analyzing the markup, on desktop we see 7.83% of pages using this, and on mobile
 
 ### Usage of `data:` URLs
 
-Using data URLs (formerly known as data URIs) is a technique that allows developers to embed a base64-encoded image directly in HTML. This ensures that an image will be fully loaded by the time that the HTML has been parsed into a DOM tree, and virtually guarantees that the image will be available for the first paint. However, because they don't compress over the wire as well as binaries, block other—possibly more important resources—from loading, and complicate caching, so base-64'd images [are something of an antipattern](https://calendar.perfplanet.com/2020/the-dangers-of-data-uris/).
+Using data URLs (formerly known as data URIs) is a technique that allows developers to embed a base64-encoded image directly in HTML. This ensures that an image will be fully loaded by the time that the HTML has been parsed into a DOM tree, and virtually guarantees that the image will be available for the first paint. However, because they don't compress over the wire as well as binaries, block other—possibly more important resources—from loading, and complicate caching, so base-64'd images [are something of an anti-pattern](https://calendar.perfplanet.com/2020/the-dangers-of-data-uris/).
 
 {{ figure_markup(
   caption="Mobile pages using data URIs.",

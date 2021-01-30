@@ -1,6 +1,5 @@
 ---
-part_number: I
-chapter_number: 1
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: JavaScript
 description: Chapitre JavaScript du Web Almanac 2019 couvrant la quantité de JavaScript que nous utilisons sur le web, la compression, les bibliothèques et les frameworks, le chargement et les cartographies de code source (source maps).
 authors: [housseindjirdeh]
@@ -10,7 +9,6 @@ editors: [obto]
 translators: [borisschapira]
 discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/
-queries: 01_JavaScript
 housseindjirdeh_bio: Houssein est <i lang="en">Developer Advocate</i> chez Google. Il travaille sur la vitesse, la performance et l’écosystème des frameworks web. Il tweete sur <a href="https://twitter.com/hdjirdeh">@hdjirdeh</a> et blogue sur <a href="https://houssein.me/">https://houssein.me/</a>.
 featured_quote: JavaScript est la ressource la plus consommatrice que nous envoyons aux navigateurs&nbsp;; il doit être téléchargé, analysé, compilé et enfin exécuté. Bien que les navigateurs aient considérablement réduit le temps nécessaire pour analyser et compiler les scripts, le téléchargement et l’exécution sont devenus les étapes les plus coûteuses lorsque JavaScript est traité par une page web.
 featured_stat_1: 89 %
@@ -354,7 +352,7 @@ Lorsqu’ils sont utilisés ensemble, les navigateurs qui prennent en charge les
 {{ figure_markup(
   image="fig14.png",
   caption="Pourcentage de sites utilisant nomodule.",
-  description="Diagramme à barres montrant que 0,8&nbsp;% des sites sur ordinateurs de bureau utilisent \"nomodule\", et 0,5&nbsp;% des sites sur mobile.",
+  description="Diagramme à barres montrant que 0,8&nbsp;% des sites sur ordinateurs de bureau utilisent `nomodule`, et 0,5&nbsp;% des sites sur mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=781034243&format=interactive"
   )
 }}
