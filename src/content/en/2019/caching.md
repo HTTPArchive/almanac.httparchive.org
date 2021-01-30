@@ -707,7 +707,7 @@ Lighthouse computes a score for each audit, ranging from 0% to 100%, and those s
 
 {{ figure_markup(
   image="fig21.png",
-  caption="Distribution of Lighthouse scores for the \"Uses Long Cache TTL\" audit for mobile web pages.",
+  caption='Distribution of Lighthouse scores for the "Uses Long Cache TTL" audit for mobile web pages.',
   description="A stacked bar chart 38.2% of websites get a score of < 10%, 29.0% of websites get a score between 10% and 39%, 18.7% of websites get a score of 40%-79%, 10.7% of websites get a score of 80% - 99%, and 3.4% of websites get a score of 100%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=827424070&format=interactive"
   )
