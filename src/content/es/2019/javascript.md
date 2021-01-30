@@ -76,7 +76,7 @@ Aunque estos datos muestran cuánto tiempo puede llevar un dispositivo móvil pr
 {{ figure_markup(
   image="js-processing-reddit.png",
   alt="Tiempos de procesamiento de JavaScript para Reddit.com.",
-  caption='Tiempos de procesamiento de JavaScript para Reddit.com. Tomado de <a href="https://v8.dev/blog/cost-of-javascript-2019\">El costo de JavaScript en 2019</a>.',
+  caption='Tiempos de procesamiento de JavaScript para Reddit.com. Tomado de <a href="https://v8.dev/blog/cost-of-javascript-2019">El costo de JavaScript en 2019</a>.',
   description="Gráfico de barras que muestra 3 dispositivos diferentes: en la parte superior, un Pixel 3, que tiene un tiempo de procesamiento pequeño tanto en el hilo principal como en el hilo worker de menos de 400 ms. Para un Moto G4 es de aproximadamente 900 ms en el subproceso principal y otros 300 ms en el subproceso del worker. Y la barra final es un Alcatel 1X 5059D con más de 2.000 ms en el subproceso principal y más de 500 ms en el subproceso del worker.",
   width=600,
   height=363

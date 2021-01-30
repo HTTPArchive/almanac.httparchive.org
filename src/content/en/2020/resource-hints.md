@@ -168,7 +168,7 @@ With `preload` many different content-types can be preloaded and the [full list]
 {{ figure_markup(
   image="mobile-as-attribute-values-by-year.png",
   caption="Mobile `as` attribute values by year.",
-  description="A bar chart comparing the rate of `as` attribute values on mobile pages from 2019 and 2020, broken down by `as` attribute value. The majority of `as` values are \"script\" with 81% usage in 2019 and 64% usage in 2020. \"script\" usage fell 17% year over year, while all other values increased in usage. \"not set\" increased 8%, \"font\" increased 5%, \"style\" increased 2%, the rest of the notable values are 1% or less for both years.",
+  description="A bar chart comparing the rate of `as` attribute values on mobile pages from 2019 and 2020, broken down by `as` attribute value. The majority of `as` values are `script` with 81% usage in 2019 and 64% usage in 2020. `script` usage fell 17% year over year, while all other values increased in usage. `not set` increased 8%, `font` increased 5%, `style` increased 2%, the rest of the notable values are 1% or less for both years.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYAbLxN40s6mNR1jo0XDe_V4siN8TAsx2mryMp5IQmlJ-9O9eJxYROz7Rw6ozyFP6hlIZHxxh95GqX/pubchart?oid=903180926&format=interactive",
   sheets_gid="1829901599",
   sql_file="as_attribute_by_year.sql"
@@ -330,7 +330,7 @@ So far only 0.77% websites adopted this new hint as Chrome is still [actively](h
 The largest use is with script elements, which is unsurprising as the number of JS primary and third-party files continues to grow.
 
 {{ figure_markup(
-  caption="The percent of mobile resources with a hint that use the \"low\" priority.",
+  caption="The percent of mobile resources with a hint that use the `low` priority.",
   content="16%",
   classes="big-number",
   sheets_gid="1098063134",

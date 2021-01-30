@@ -350,7 +350,7 @@ Een "goed" LCP wordt beschouwd als minder dan 2,5 seconden. De gemiddelde websit
 {{ figure_markup(
   image="cms-real-user-largest-contentful-paint-experiences.png",
   caption="Largest Contentful Paint-ervaringen door echte gebruikers.",
-  description="Staafdiagram met de top 5 CMS'en en of ze een \"goede\" Largest Contentful Paint-ervaring hebben. WordPress is middelmatig met 33% op desktop en 25% op mobiel, Drupal is de beste met 61% op desktop en 47% op mobiel, Joomla is de tweede beste met 48% op desktop en 28% op mobiel, Squarespace heeft 37% op desktop maar slechts 12% op mobiel en Wix is het laagste met 9% op desktop en 9% op mobiel.",
+  description="Staafdiagram met de top 5 CMS'en en of ze een “goede” Largest Contentful Paint-ervaring hebben. WordPress is middelmatig met 33% op desktop en 25% op mobiel, Drupal is de beste met 61% op desktop en 47% op mobiel, Joomla is de tweede beste met 48% op desktop en 28% op mobiel, Squarespace heeft 37% op desktop maar slechts 12% op mobiel en Wix is het laagste met 9% op desktop en 9% op mobiel.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkUxfuK-FCn3_IYDJiEsKDmdmyKb0TSEhG8dFc0XBIXej1NO2uUOmd-9NCbWuh-MZ3xzMhK_kNT-4u/pubchart?oid=188727692&format=interactive",
   sheets_gid="465267881",
   sql_file="core_web_vitals_distribution.sql"
@@ -368,7 +368,7 @@ FID is erg snel voor de gemiddelde CMS-website op desktop - alleen Wix scoort la
 {{ figure_markup(
   image="cms-real-user-first-input-delay-experiences.png",
   caption="First Input Delay-ervaringen door echte gebruikers.",
-  description="Staafdiagram met de top 5 CMS'en en of ze een \"goede\" ervaring met de eerste invoervertraging hebben. Ze hebben allemaal een ervaringsscore van 100% op desktop, behalve Wix met 87%. Voor mobiel heeft WordPress 88%, Drupal 76%, Joomla 71%, Squarespace 91% en Wix 46%.",
+  description="Staafdiagram met de top 5 CMS'en en of ze een “goede” ervaring met de eerste invoervertraging hebben. Ze hebben allemaal een ervaringsscore van 100% op desktop, behalve Wix met 87%. Voor mobiel heeft WordPress 88%, Drupal 76%, Joomla 71%, Squarespace 91% en Wix 46%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkUxfuK-FCn3_IYDJiEsKDmdmyKb0TSEhG8dFc0XBIXej1NO2uUOmd-9NCbWuh-MZ3xzMhK_kNT-4u/pubchart?oid=893606466&format=interactive",
   sheets_gid="465267881",
   sql_file="core_web_vitals_distribution.sql"
@@ -388,7 +388,7 @@ Een score van 0,1 of lager wordt gemeten als "goed", meer dan 0,25 is "slecht" e
 {{ figure_markup(
   image="cms-real-user-cumulative-layout-shift-experiences.png",
   caption="Cumulatieve Layout Shift-ervaringen door echte gebruikers.",
-  description="Staafdiagram met de top 5 CMS'en en of ze een \"goede\" ervaring hebben met Cumulative Layout Shift. WordPress heeft 47% van de desktopsites met een \"goede ervaring\" en 57% van de mobiele sites. Drupal heeft 58% voor desktop en 70% voor mobiel, Joomla heeft 51% voor desktop en 63% voor mobiel, Squarespace heeft 35% voor desktop en 44% voor mobiel, en Wix heeft 58% voor desktop en 59% voor mobiel.",
+  description="Staafdiagram met de top 5 CMS'en en of ze een “goede” ervaring hebben met Cumulative Layout Shift. WordPress heeft 47% van de desktopsites met een “goede ervaring” en 57% van de mobiele sites. Drupal heeft 58% voor desktop en 70% voor mobiel, Joomla heeft 51% voor desktop en 63% voor mobiel, Squarespace heeft 35% voor desktop en 44% voor mobiel, en Wix heeft 58% voor desktop en 59% voor mobiel.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkUxfuK-FCn3_IYDJiEsKDmdmyKb0TSEhG8dFc0XBIXej1NO2uUOmd-9NCbWuh-MZ3xzMhK_kNT-4u/pubchart?oid=1265001868&format=interactive",
   sheets_gid="465267881",
   sql_file="core_web_vitals_distribution.sql"

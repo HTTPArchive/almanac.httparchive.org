@@ -165,7 +165,7 @@ Bien qu’ils servent 57 % des scripts, les tiers représentent 64 % des octet
 {{ figure_markup(
   image="fig7.png",
   caption="Répartition des octets de ressource par catégorie de tiers.",
-  description="Graphique montrant la répartition des octets pour chaque type de contenu par catégorie de tiers. Les images et les scripts sont répartis de manière relativement égale entre les catégories. 80 % des polices proviennent de CDN. La vidéo provient de tiers spécialisés en \"Contenus\".",
+  description="Graphique montrant la répartition des octets pour chaque type de contenu par catégorie de tiers. Les images et les scripts sont répartis de manière relativement égale entre les catégories. 80 % des polices proviennent de CDN. La vidéo provient de tiers spécialisés en “Contenus”.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=1167032693&format=interactive",
   width=600,
   height=387,

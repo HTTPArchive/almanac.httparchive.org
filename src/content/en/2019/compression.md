@@ -336,7 +336,7 @@ Because the [HTTP Archive runs Lighthouse audits](./methodology#lighthouse) for 
 
 {{ figure_markup(
   image="fig11.png",
-  caption="Lighthouse \"enable text compression\" audit scores.",
+  caption='Lighthouse "enable text compression" audit scores.',
   description="Stacked bar chart showing 7.6% are costing less than 10%, 13.2% of sites are scoring between 10-39%, 13.7% of sites scoring between 40-79%, 2.9% of sites scoring between 80-99%, and 62.5% of sites have a pass with over 100% of text assets being compressed.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=2048155673&format=interactive",
   width=760,
@@ -350,7 +350,7 @@ Lighthouse also indicates how many bytes could be saved by enabling text-based c
 
 {{ figure_markup(
   image="fig12.png",
-  caption="Lighthouse \"enable text compression\" audit potential byte savings.",
+  caption='Lighthouse "enable text compression" audit potential byte savings.',
   description="Stacked bar chart showing 82.11% of sites could save less than 1 MB, 15.88% of sites could save 1 - 2 MB and 2% of sites could save > 3 MB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=738657382&format=interactive",
   width=760,
