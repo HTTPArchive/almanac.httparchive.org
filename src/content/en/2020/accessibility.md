@@ -108,7 +108,7 @@ In 1995, [HTML 2.0](https://www.w3.org/MarkUp/html-spec/html-spec_5.html#SEC5.10
 
 {{ figure_markup(
   caption='Mobiles sites passing the "images with `alt` text" Lighthouse audit.',
-  content="54%.",
+  content="54%",
   classes="big-number",
   sheets_gid="580400436",
   sql_file="lighthouse_a11y_audits.sql"
