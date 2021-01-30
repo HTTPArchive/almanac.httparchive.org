@@ -462,7 +462,7 @@ Los sitios web se sienten como papel digital, ¿verdad? Como usuarios, generalme
 {{ figure_markup(
   image="fig32.png",
   caption="Adopción de las media queries para todos, impresión, pantalla y voz.",
-  description="Gráfico de barras que muestra el 35% de las páginas de escritorio con el tipo de media query \"todos\", el 46% con impresión, el 72% con pantalla y el 0% con voz. La adopción es inferior en aproximadamente 5 puntos porcentuales para el escritorio en comparación con el móvil.",
+  description='Gráfico de barras que muestra el 35% de las páginas de escritorio con el tipo de media query "todos", el 46% con impresión, el 72% con pantalla y el 0% con voz. La adopción es inferior en aproximadamente 5 puntos porcentuales para el escritorio en comparación con el móvil.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=939890574&format=interactive"
   )
 }}
@@ -720,7 +720,7 @@ CSS `@supports` es una forma para que el navegador verifique si una combinación
 {{ figure_markup(
   image="fig38.png",
   caption="Popularidad de las reglas CSS 'arroba'.",
-  description="Gráfico de barras que muestra la popularidad de las reglas @import y @supports \"arroba\". En el escritorio, @import se usa en el 28% de las páginas y @supports se usa en el 31%. Para dispositivos móviles, @import se usa en el 26% de las páginas y @supports se usa en el 29%.",
+  description='Gráfico de barras que muestra la popularidad de las reglas @import y @supports "arroba". En el escritorio, @import se usa en el 28% de las páginas y @supports se usa en el 31%. Para dispositivos móviles, @import se usa en el 26% de las páginas y @supports se usa en el 29%.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1739611283&format=interactive"
   )
 }}

@@ -697,7 +697,7 @@ L'outil [Lighthouse](https://developers.google.com/web/tools/lighthouse) de Goog
 {{ figure_markup(
   image="ch16_fig15_lighthouse_example.jpg",
   caption="Rapport Lighthouse soulignant les améliorations possibles de la politique des caches.",
-  description="Une capture d'écran d'une partie d'un rapport de l'outil Google Lighthouse, avec la section \"Servir des ressources statiques avec une politique de cache efficace\" ouverte où il énumère un certain nombre de ressources, dont les noms ont été masqués, et le TTL du cache par rapport à la taille.",
+  description="Une capture d'écran d'une partie d'un rapport de l'outil Google Lighthouse, avec la section “Servir des ressources statiques avec une politique de cache efficace” ouverte où il énumère un certain nombre de ressources, dont les noms ont été masqués, et le TTL du cache par rapport à la taille.",
   width=600,
   height=459
   )
@@ -707,7 +707,7 @@ Lighthouse calcule un score pour chaque audit, allant de 0 à 100&nbsp;%, et ces
 
 {{ figure_markup(
   image="fig21.png",
-  caption="Distribution des scores Lighthouse pour l'audit \"Définit un long cache TTL\" pour les pages web mobiles.",
+  caption="Distribution des scores Lighthouse pour l'audit “Définit un long cache TTL” pour les pages web mobiles.",
   description="Un diagramme à barres superposées&nbsp;: 38,2&nbsp;% des sites web obtiennent un score de < 10&nbsp;%, 29,0&nbsp;% des sites web obtiennent un score entre 10 et 39&nbsp;%, 18,7&nbsp;% des sites web obtiennent un score de 40 à 79&nbsp;%, 10,7&nbsp;% des sites web obtiennent un score de 80 à 99&nbsp;%, et 3,4&nbsp;% des sites web obtiennent un score de 100&nbsp;%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=827424070&format=interactive"
   )
