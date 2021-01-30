@@ -62,9 +62,9 @@
 {% block open %}Відкрити{% endblock %}
 {% block close %}Закрити{% endblock %}
 
-{% macro figure_text(metadata, id) %}Рис. {{ figure_id(metadata, id) }}.{% endmacro %}
-{% macro show_description(metadata, id) %}Показати пояснення до рис. {{ figure_id(metadata, id) }}{% endmacro %}
-{% macro hide_description(metadata, id) %}Сховати пояснення до рис. {{ figure_id(metadata, id) }}{% endmacro %}
+{% macro figure_text(metadata, chapter_config, id) %}Рис. {{ figure_id(metadata, chapter_config, id) }}.{% endmacro %}
+{% macro show_description(metadata, chapter_config, id) %}Показати пояснення до рис. {{ figure_id(metadata, chapter_config, id) }}{% endmacro %}
+{% macro hide_description(metadata, chapter_config, id) %}Сховати пояснення до рис. {{ figure_id(metadata, chapter_config, id) }}{% endmacro %}
 
 {% block written_by_before %}Автори: {% endblock %}
 {% block reviewed_by_before %}Рецензенти: {% endblock %}

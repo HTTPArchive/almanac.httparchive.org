@@ -62,9 +62,9 @@
 {% block open %}Abrir{% endblock %}
 {% block close %}Cerrar{% endblock %}
 
-{% macro figure_text(metadata, id) %}Figura {{ figure_id(metadata, id) }}.{% endmacro %}
-{% macro show_description(metadata, id) %}Mostrar descripción de la Figura {{ figure_id(metadata, id) }}{% endmacro %}
-{% macro hide_description(metadata, id) %}Ocultar descripción de la Figura {{ figure_id(metadata, id) }}{% endmacro %}
+{% macro figure_text(metadata, chapter_config, id) %}Figura {{ figure_id(metadata, chapter_config, id) }}.{% endmacro %}
+{% macro show_description(metadata, chapter_config, id) %}Mostrar descripción de la Figura {{ figure_id(metadata, chapter_config, id) }}{% endmacro %}
+{% macro hide_description(metadata, chapter_config, id) %}Ocultar descripción de la Figura {{ figure_id(metadata, chapter_config, id) }}{% endmacro %}
 
 {% block written_by_before %}Escrito por{% endblock %}
 {% block reviewed_by_before %}Revisado por{% endblock %}
