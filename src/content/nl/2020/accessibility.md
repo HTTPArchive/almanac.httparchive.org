@@ -89,7 +89,7 @@ We ontdekten dat 29,34% van de desktoppagina's en 30,66% van de mobiele pagina's
 
 {{ figure_markup(
   caption="Desktopsites hebben een geldig kenmerk `lang`.",
-  content="77,67%.",
+  content="77,67%",
   classes="big-number",
   sheets_gid="812908021",
   sql_file="02_05.sql"
@@ -108,7 +108,7 @@ In 1995 introduceerde <a hreflang="en" href="https://www.w3.org/MarkUp/html-spec
 
 {{ figure_markup(
   caption='Mobiele sites passeren de "afbeeldingen met `alt` tekst" Lighthouse audit.',
-  content="54%.",
+  content="54%",
   classes="big-number",
   sheets_gid="580400436",
   sql_file="lighthouse_a11y_audits.sql"
