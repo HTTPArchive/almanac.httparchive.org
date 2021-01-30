@@ -89,7 +89,7 @@ We found that 29.34% of desktop pages and 30.66% of mobile pages attempt to disa
 
 {{ figure_markup(
   caption="Desktop sites have a valid `lang` attribute.",
-  content="77.67%.",
+  content="77.67%",
   classes="big-number",
   sheets_gid="812908021",
   sql_file="02_05.sql"
