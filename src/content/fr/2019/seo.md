@@ -1,9 +1,10 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: SEO
-description: Chapitre SEO du web Almanac 2019. Découvrez des statistiques sur le contenu, les meta tags, l'indexation, les liens, la performance web...
+description: Chapitre SEO du web Almanac 2019. Découvrez des statistiques sur le contenu, les meta tags, l'indexation, les liens, la performance web.
 authors: [ymschaap, rachellcostello, AVGP]
 reviewers: [clarkeclark, andylimn, AymenLoukil, catalinred, mattludwig]
+analysts: [ymschaap]
 editors: [rachellcostello]
 translators: [AymenLoukil]
 discuss: 1765
