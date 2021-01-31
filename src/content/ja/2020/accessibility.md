@@ -85,7 +85,7 @@ featured_stat_label_3: クローズドキャプションを提供する動画
 
 デスクトップページの29.34%とモバイルページの30.66%が、`maximum-scale`を1未満の値に設定するか、`user-scalable`を`0`または`none`に設定することで、スケーリングを無効にしようとしていることがわかった。いくつかのOSでは、HTMLで設定されているズームや拡大縮小の無効化に対応していないものがあります。これに対応しているシステムでは、一部のシステムではページが事実上使えなくなることがあります。ブラウザのズームを無効にするのを避ける理由については、Adrian Roselliの記事[Don't Disable Zoom](https://adrianroselli.com/2015/10/dont-disable-zoom.html) を参照してください。
 
-### Language identification
+### 言語の識別
 
 {{ figure_markup(
   caption="デスクトップサイトは有効な`lang`属性を持っています。",
