@@ -196,7 +196,7 @@ Dit is vooral relevant voor gehoste lettertype-oplossingen. Pas nadat ontdekt is
   )
 }}
 
-Het toevoegen van een <a hrehlang="en" href="https://www.w3.org/TR/resource-hints/#resource-hints">bron-hint element</a> in de HTML start die tweede verbinding eerder. De verschillende instellingen voor bron-hints bepalen hoe ver dat komt voordat de URL voor de daadwerkelijke lettertypebron is. De meest voorkomende (bij ongeveer 32% van de webpagina's) is `dns-prefetch`, hoewel er in de meeste gevallen betere keuzes zijn.
+Het toevoegen van een <a hreflang="en" href="https://www.w3.org/TR/resource-hints/#resource-hints">bron-hint element</a> in de HTML start die tweede verbinding eerder. De verschillende instellingen voor bron-hints bepalen hoe ver dat komt voordat de URL voor de daadwerkelijke lettertypebron is. De meest voorkomende (bij ongeveer 32% van de webpagina's) is `dns-prefetch`, hoewel er in de meeste gevallen betere keuzes zijn.
 
 Vervolgens zullen we kijken of deze bron-hints een invloed hebben op de paginaprestaties.
 
