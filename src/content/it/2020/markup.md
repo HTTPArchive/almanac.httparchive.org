@@ -91,7 +91,7 @@ Il 96.82% delle pagine dichiara un [_doctype_](https://developer.mozilla.org/en-
   <figcaption>{{ figure_link(caption="I 5 doctype più popolari.", sheets_gid="1981441894", sql_file="summary_pages_by_device_and_doctype.sql") }}</figcaption>
 </figure>
 
-Puoi già dire come i numeri diminuiscano un po 'dopo XHTML 1.0, prima di entrare nella coda lunga con alcuni doctype standard, alcuni esoterici e anche fasulli.
+Puoi già dire come i numeri diminuiscano un po' dopo XHTML 1.0, prima di entrare nella coda lunga con alcuni doctype standard, alcuni esoterici e anche fasulli.
 
 Due cose si distinguono da questi risultati:
 
@@ -120,9 +120,9 @@ Come è questa situazione in generale, allora? Il documento mediano pesa 24.65 K
 
 ### Lingua del documento
 
-Abbiamo identificato 2.863 valori diversi per l'attributo `lang` nel tag di inizio `html` (compare that to the [7.117 lingue parlate](https://www.ethnologue.com/guides/how-many-languages) secondo l'Etnologo). Quasi tutti sembrano validi, secondo il capitolo [Accessibilità](./accessibility#language-identification).
+Abbiamo identificato 2.863 valori diversi per l'attributo `lang` nel tag di inizio `html` (confrontandole con le [7.117 lingue parlate](https://www.ethnologue.com/guides/how-many-languages) secondo l'Etnologo). Quasi tutti sembrano validi, secondo il capitolo [Accessibilità](./accessibility#language-identification).
 
-Il 22,36% di tutti i documenti non specifica alcun attributo `lang`. The commonly accepted view is that [dovrebbero](https://www.w3.org/TR/i18n-html-tech-lang/#overall), but ignoring the fact that software could eventually [rilevare automaticamente la lingua](https://meiert.com/en/blog/lang/), la lingua del documento può anche essere specificata [a livello di protocollo](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language), cosa che non abbiamo controllato.
+Il 22,36% di tutti i documenti non specifica alcun attributo `lang`. L'opinione comunemente accettata è che [dovrebbero](https://www.w3.org/TR/i18n-html-tech-lang/#overall), ma ignorano il fatto che il software potrebbe eventualmente [rilevare automaticamente la lingua](https://meiert.com/en/blog/lang/), la lingua del documento può anche essere specificata [a livello di protocollo](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language), cosa che non abbiamo controllato.
 
 Ecco le 10 lingue più popolari (normalizzate) nel nostro campione. È importante notare che l'HTTP Archive esegue la scansione dai data center degli Stati Uniti con le impostazioni della lingua inglese, quindi guardando le pagine della lingua in cui sono scritte, sarà orientato verso l'inglese. Tuttavia presentiamo gli attributi `lang` visti per dare un contesto ai siti analizzati.
 
@@ -156,7 +156,6 @@ Circa l'89% delle pagine contiene almeno un commento HTML, mentre circa il 46% d
   <p>Viene eseguito solo in Internet Explorer 8.</p>
 <![endif]-->
 ```
-
 Quanto sopra è un commento condizionale HTML non standard. Sebbene questi si siano dimostrati utili in passato per affrontare le differenze del browser, sono stati consegnati alla cronologia per un po' di tempo poiché Microsoft [ha rilasciato commenti condizionali](https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/hh801214(v=vs.85)) in Internet Explorer 10.
 
 Tuttavia, agli estremi percentili sopra, abbiamo scoperto che le pagine web utilizzano circa 6 commenti condizionali nel 90° percentile e 1 commento condizionale nel 10° percentile.  La maggior parte delle pagine li include come aiutanti quali [html5shiv](https://github.com/aFarkas/html5shiv), [selectivizr](http://selectivizr.com/), and [respond.js](https://github.com/scottjehl/Respond). Pur essendo pagine decenti e ancora attive, la nostra conclusione è che molte di esse utilizzavano temi CMS obsoleti.
@@ -204,7 +203,7 @@ Il 36.38% di tutti gli script non ha alcun valore di `type` impostato.
 
 ## Elementi
 
-In questa sezione, il focus è sugli elementi: quali elementi vengono utilizzati, con quale frequenza, quali elementi probabilmente appariranno in una data pagina e com'è la situazione rispetto agli elementi personalizzati, obsoleti e proprietari. [_divitis_](https://en.wiktionary.org/wiki/divitis) è ancora una cosa? Sì.
+In questa sezione, ci concentriamo sugli elementi: quali elementi vengono utilizzati, con quale frequenza, quali elementi probabilmente appariranno in una determinata pagina e com'è viene utilizzato in rispetto ad altri elementi personalizzati, obsoleti e proprietari. Ed è la pratica di [_divitis_](https://en.wiktionary.org/wiki/divitis) ancora in uso? Sì.
 
 ### Diversità degli elementi
 
@@ -239,13 +238,12 @@ Come vengono distribuiti questi elementi?
 {{ figure_markup(
   image="distribution-of-elements-per-page.png",
   caption="Distribuzione del numero totale di elementi per pagina.",
-  description="Element distribution in a scatter plot, and even for a trained observer it's hard to parse it; interesting is a large group of about 7,500 pages each using roughly 250 elements, after which fewer and fewer pages get back to more and more elements.",
+  description="Distribuzione degli elementi in un grafico a dispersione e anche per un osservatore esperto è difficile analizzarlo; interessante è un grande gruppo di circa 7.500 pagine ciascuna che utilizza circa 250 elementi, dopodiché sempre meno pagine tornano a un numero sempre maggiore di elementi.",
   sheets_gid="1361520223",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPKzFb574UnGTcfw5mcD1qR7RYHyGjQTc2hiMuYix0QoTH1DPe54Q2JucXL8bfZ6kjRoAfhk3ckudc/pubchart?oid=1468756779&format=interactive",
   sql_file="pages_element_count_by_device_and_element_count.sql"
   )
 }}
-Distribuzione degli elementi in un grafico a dispersione e anche per un osservatore esperto è difficile analizzarlo; interessante è un grande gruppo di circa 7.500 pagine ciascuna che utilizza circa 250 elementi, dopodiché sempre meno pagine tornano a un numero sempre maggiore di elementi.
 
 Non è cambiato molto [rispetto al 2019](../2019/markup#fig-3)!
 
@@ -546,7 +544,7 @@ L'edizione 2019 del Web Almanac ha gestito [elementi personalizzati](../2019/mar
 
 Questi elementi provengono da tre fonti: [Yandex Metrica](https://metrica.yandex.com/about) (`ym-`), una soluzione di analisi che abbiamo visto anche l'anno scorso; [Slider Revolution](https://www.sliderrevolution.com/) (`rs-`), uno slider di WordPress, per cui ci sono più elementi da trovare vicino alla parte superiore del campione; e [Wix](https://www.wix.com/) (`wix-`), un costruttore di siti web.
 
-Altri gruppi che si distinguono includono [AMP markup](https://amp.dev/)c on elementi `amp-` come `amp-img` (11.700 pagine), `amp-analytics` (10.256) e `amp-auto-ads` (7.621), nonché elementi [Angular](https://angular.io/) `app-` come `app-root` (16,314), `app-footer` (6,745) e `app-header` (5,274).
+Altri gruppi che si distinguono includono [AMP markup](https://amp.dev/) su elementi `amp-` come `amp-img` (11.700 pagine), `amp-analytics` (10.256) e `amp-auto-ads` (7.621), nonché elementi [Angular](https://angular.io/) `app-` come `app-root` (16,314), `app-footer` (6,745) e `app-header` (5,274).
 
 ### Elementi obsoleti
 
@@ -678,7 +676,7 @@ Nel nostro insieme di elementi ne abbiamo trovati alcuni che non erano né eleme
   <figcaption>{{ figure_link(caption="Elementi di discutibile eredità.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
 </figure>
 
-La fonte di questi elementi sembra essere mista, poiché in alcuni sono sconosciuti mentre altri possono essere rintracciati.  Il più popolare, `noindex`, è probabilmente dovuto al fatto che [la raccomandazione di Yandex](https://yandex.com/support/webmaster/adding-site/indexing-prohibition.html) proibisce l'indicizzazione delle pagine. `jdiv` è stato annotato in [Web Almanac dell'anno scorso](../2019/markup#products-and-libraries-and-their-custom-markup) ed è di JivoChat.`mediaelementwrapper` proviene dal lettore multimediale MediaElement. Sia "ymaps" che "yatag" sono anch'essi di Yandex. L'elemento `ss` potrebbe provenire da ProStores, un precedente prodotto di e-commerce di eBay, e` olark` potrebbe provenire dal software di chat Olark. "h7" sembra essere un errore. `limespot` è probabilmente correlato al programma di personalizzazione Limespot per l'e-commerce. Nessuno di questi elementi fa parte di uno standard web.
+La fonte di questi elementi sembra essere mista, poiché in alcuni sono sconosciuti mentre altri possono essere rintracciati.  Il più popolare, `noindex`, è probabilmente dovuto al fatto che [la raccomandazione di Yandex](https://yandex.com/support/webmaster/adding-site/indexing-prohibition.html) proibisce l'indicizzazione delle pagine. `jdiv` è stato annotato in [Web Almanac dell'anno scorso](../2019/markup#products-and-libraries-and-their-custom-markup) ed è di JivoChat. `mediaelementwrapper` proviene dal lettore multimediale MediaElement. Sia `ymaps` che `yatag` sono anch'essi di Yandex. L'elemento `ss` potrebbe provenire da ProStores, un precedente prodotto di e-commerce di eBay, e `olark` potrebbe provenire dal software di chat Olark. `h7` sembra essere un errore. `limespot` è probabilmente correlato al programma di personalizzazione Limespot per l'e-commerce. Nessuno di questi elementi fa parte di uno standard web.
 
 ### Le intestazioni
 
@@ -760,7 +758,7 @@ Gli ultimi due non hanno mai fatto parte dell'HTML, ovviamente, e non dovrebbero
 
 ## Attributi
 
-Questa sezione si concentra su come gli attributi vengono usati nei documenti ed esplora i modelli nell'utilizzo di `data- *`. I nostri risultati mostrano che `class` è la regina di tutti gli attributi.
+Questa sezione si concentra su come gli attributi vengono usati nei documenti ed esplora i modelli nell'utilizzo di `data-*`. I nostri risultati mostrano che `class` è la regina di tutti gli attributi.
 
 ### Gli attributi principali
 
@@ -899,9 +897,9 @@ Ci sono attributi che troviamo in ogni documento? Non proprio, ma quasi:
 
 Questi risultati sollevano domande a cui non possiamo rispondere. Ad esempio, `type` viene utilizzato anche su altri elementi, ma perché questa enorme popolarità? Soprattutto dato che di solito non è necessario specificare per fogli di stile o script, con CSS e JavaScript che vengono considerati come predefiniti. Oppure, come andiamo veramente con `alt`? Il 9,25% delle pagine non contiene immagini o è semplicemente inaccessibile?
 
-### Gli attributi "data- *"
+### Gli attributi "data-*"
 
-Secondo le specifiche HTML, [gli attributi `data- *`](https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes) "hanno lo scopo di memorizzare dati personalizzati, stato, annotazioni e simili, privati della pagina o dell'applicazione, per i quali non esistono attributi o elementi più appropriati." Come vengono utilizzati? Quali sono quelli popolari? C'è qualcosa di interessante qui?
+Secondo le specifiche HTML, [gli attributi `data-*`](https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes) "hanno lo scopo di memorizzare dati personalizzati, stato, annotazioni e simili, privati della pagina o dell'applicazione, per i quali non esistono attributi o elementi più appropriati." Come vengono utilizzati? Quali sono quelli popolari? C'è qualcosa di interessante qui?
 
 I due più popolari si distinguono perché sono quasi il doppio di ciascuno degli attributi che sono seguiti (con> 1% di utilizzo):
 
@@ -957,7 +955,7 @@ I due più popolari si distinguono perché sono quasi il doppio di ciascuno degl
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Gli attributi <code> data- * </code> più popolari.", sheets_gid="764700773", sql_file="pages_almanac_by_device_and_data_attribute_name_frequency.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Gli attributi <code> data-* </code> più popolari.", sheets_gid="764700773", sql_file="pages_almanac_by_device_and_data_attribute_name_frequency.sql") }}</figcaption>
 </figure>
 
 Attributi come `data-type`, `data-id` e `data-src` possono avere molteplici usi generici sebbene `data-src` sia usato molto con il lazy image loading tramite JavaScript (ad esempio, Bootstrap 4). [Bootstrap](https://getbootstrap.com/) spiega ancora la presenza di `data-toggle`, dove è usato come uno state styling hook sui pulsanti di toggle. Il [Slick carousel plugin](https://kenwheeler.github.io/slick/) è la fonte di `data-slick-index`, mentre `data-element_type` fa parte del [costruttore di siti Web WordPress di Elementor](https://elementor.com/). Sia `data-requiremodule` che` data-requirecontext`, quindi, fanno parte di [RequireJS](https://requirejs.org/).
@@ -972,7 +970,7 @@ Abbiamo trattato l'uso dell'HTML in generale, nonché l'adozione degli elementi 
 
 Il meta elemento [viewport](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag) viene utilizzato per controllare il layout sui browser mobile. Mentre anni fa, il motto era una specie di "non dimenticare il meta elemento viewport" durante la creazione di una pagina web, alla fine questa divenne una pratica comune e il motto cambiò in "assicurati che lo zoom e il ridimensionamento non siano disabilitati".
 
-Gli utenti dovrebbero essere in grado di ingrandire e ridimensionare il testo [fino al 500%](https://dequeuniversity.com/rules/axe/4.0/meta-viewport-large).Ecco perché i controlli in strumenti popolari come [Lighthouse](https://developers.google.com/web/tools/lighthouse) o [axe](https://www.deque.com/axe/) falliscono quando `user-scalable="no"` è usato all'interno dell'elemento `meta name="viewport"`, e quando il valore dell'attributo `maximum-scale` è minore di `5`.
+Gli utenti dovrebbero essere in grado di ingrandire e ridimensionare il testo [fino al 500%](https://dequeuniversity.com/rules/axe/4.0/meta-viewport-large).Ecco perché i controlli in strumenti popolari come [Lighthouse](https://developers.google.com/web/tools/lighthouse) o [axe](https://www.deque.com/axe/) falliscono quando `user-scalable="no"` è usato all'interno dell'elemento `metaname="viewport"`, e quando il valore dell'attributo `maximum-scale` è minore di `5`.
 
 Abbiamo esaminato i dati e per capire meglio i risultati, li abbiamo normalizzati rimuovendo gli spazi, convertendo tutto in minuscolo e ordinando per virgola dell'attributo `content`.
 
@@ -1021,26 +1019,25 @@ Abbiamo esaminato i dati e per capire meglio i risultati, li abbiamo normalizzat
   <figcaption>{{ figure_link(caption="<code>viewport</code> e la loro mancanza.", sheets_gid="1414206386", sql_file="summary_pages_by_device_and_viewport.sql") }}</figcaption>
 </figure>
 
-The results show that almost half of the pages we analyzed are using the typical viewport `content` value. Still, around 10% of mobile pages are entirely missing a proper `content` value for the viewport meta element, with the rest of them using an improper combination of `maximum-scale`, `minimum-scale`, `user-scalable=no`, or `user-scalable=0`.
 I risultati mostrano che quasi la metà delle pagine che abbiamo analizzato utilizza il valore tipico di viewport `content`. Tuttavia, circa il 10% delle pagine per dispositivi mobile manca del tutto di un valore `content` appropriato per il meta elemento viewport, con il resto di esse che utilizzano una combinazione impropria di `maximum-scale`, `minimum-scale`, `user-scalable=no`, o `user-scalable=0`.
 
 <p class="note">
-  Da un po 'di tempo, il browser mobile Edge consente agli utenti di ingrandire una pagina Web almeno <a href="https://blogs.windows.com/windows-insider/2017/01/12/announcing-windows-10-insider-preview-build-15007-pc-mobile/">fino al 500%</a>, indipendentemente dalle impostazioni di zoom definite da una pagina web che utilizza il meta elemento viewport.
+  Da un po' di tempo, il browser mobile Edge consente agli utenti di ingrandire una pagina Web almeno <a href="https://blogs.windows.com/windows-insider/2017/01/12/announcing-windows-10-insider-preview-build-15007-pc-mobile/">fino al 500%</a>, indipendentemente dalle impostazioni di zoom definite da una pagina web che utilizza il meta elemento viewport.
 </p>
 
-### Favicons
+### I Favicon
 
-The situation around favicons is fascinating. Favicons work with or without markup—some browsers would fall back to [looking at the domain root](https://realfavicongenerator.net/faq#why_icons_in_root)—, accept several image formats, and then also promote several dozen sizes (some tools are reported to generate 45 of them; [realfavicongenerator.net](https://realfavicongenerator.net/) would return _37_ if requested to handle every case). As of this time of writing, there is an [open issue](https://github.com/whatwg/html/issues/4758) for the HTML spec to help improve the situation.
+La situazione intorno alle favicon è affascinante. Le favicon funzionano con o senza markup: alcuni browser tornerebbero a [guardare la root del dominio](https://realfavicongenerator.net/faq#why_icons_in_root)—, accetta diversi formati di immagine, quindi promuove anche diverse dozzine di dimensioni (si dice che alcuni strumenti ne generino 45; [realfavicongenerator.net](https://realfavicongenerator.net/) restituirebbe _37_ se richiesto per gestire ogni caso). Nel momento in cui scrivo, c'è un [open issue](https://github.com/whatwg/html/issues/4758) per le specifiche HTML per aiutare a migliorare la situazione.
 
-When we built our tests we didn't check for the presence of images, but only looked at the markup. That means, when you review the following, note that it's more about _how_ favicons are referenced rather than whether or how often they are used.
+Quando abbiamo creato i nostri test non abbiamo verificato la presenza di immagini, ma abbiamo solo esaminato il markup. Ciò significa che, quando si esamina il seguente, tieni presente che si tratta più di _come_ si fa riferimento alle favicon piuttosto che se o con che frequenza vengono utilizzate.
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th>Favicon format</th>
-        <th>Pages</th>
-        <th>Pages (%)</th>
+        <th>Formato Favicon</th>
+        <th>Pagine</th>
+        <th>Pagine (%)</th>
       </tr>
     </thead>
     <tbody>
@@ -1091,21 +1088,21 @@ When we built our tests we didn't check for the presence of images, but only loo
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Common favicon formats.", sheets_gid="1930085905", sql_file="pages_almanac_by_device_and_favicon_image_type.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Formati favicon comuni.", sheets_gid="1930085905", sql_file="pages_almanac_by_device_and_favicon_image_type.sql") }}</figcaption>
 </figure>
 
-There are a couple of surprises in here:
+Ci sono un paio di sorprese qui:
 
-* Support for other formats is there but ICO is still the go-to format for favicons on the web.
-* JPG is a relatively popular favicon format even though it may not yield the best results (or a comparatively large weight) for many favicon sizes.
-* WebP is twice as popular as SVG! This might change, however, with [SVG favicon support](https://caniuse.com/link-icon-svg) improving.
+* Il supporto per altri formati esiste, ma ICO è ancora il formato preferito per le favicon sul web.
+* JPG è un formato favicon relativamente popolare anche se potrebbe non produrre i migliori risultati (o un peso relativamente grande) per molte dimensioni favicon.
+* WebP è due volte più popolare di SVG! Questo potrebbe cambiare, tuttavia, con il miglioramento di [SVG favicon support](https://caniuse.com/link-icon-svg) improving.
 
-### Button and input types
+### Pulsanti e tipi di input
 
-There has been a lot of [discussion](https://adrianroselli.com/2016/01/links-buttons-submits-and-divs-oh-hell.html) on buttons lately and how often they are misused. We looked into this to present findings on some of the native HTML buttons.
+Ultimamente ci sono state molte [discussioni](https://adrianroselli.com/2016/01/links-buttons-submits-and-divs-oh-hell.html) sui pulsanti e sulla frequenza con cui vengono utilizzati in modo improprio. Abbiamo esaminato questo aspetto per presentare i risultati su alcuni pulsanti HTML nativi.
 
 {{ figure_markup(
-  caption="Percent of pages with button elements.",
+  caption="Percentuale di pagine con elementi pulsante.",
   content="60.56%",
   classes="big-number",
   sheets_gid="410549982",
@@ -1116,9 +1113,9 @@ There has been a lot of [discussion](https://adrianroselli.com/2016/01/links-but
   <table>
     <thead>
       <tr>
-        <th>Button types</th>
-        <th>Occurrences</th>
-        <th>Pages (%)</th>
+        <th>Tipi di pulsanti</th>
+        <th>Occorrenze</th>
+        <th>Pagine (%)</th>
       </tr>
     </thead>
     <tbody>
@@ -1159,17 +1156,17 @@ There has been a lot of [discussion](https://adrianroselli.com/2016/01/links-but
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Adoption of button types.", sheets_gid="410549982", sql_file="pages_markup_by_device.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Adozione di tipi di pulsanti.", sheets_gid="410549982", sql_file="pages_markup_by_device.sql") }}</figcaption>
 </figure>
 
-Our analysis shows that about 60% of pages contain a button element and more than half of those pages (32.43%) have at least one button that fails to specify a `type` attribute. Note that the `button` element has a [default type](https://dev.w3.org/html5/spec-LC/the-button-element.html) of `submit`, so the default behavior of buttons on these 32% of pages is to submit the current form data. To avoid possibly unexpected behavior like this, a best practice is to specify the `type` attribute.
+La nostra analisi mostra che circa il 60% delle pagine contiene un elemento button e più della metà di quelle pagine (32,43%) ha almeno un button che non riesce a specificare un attributo `type`. Nota che l'elemento `button` ha un [tipo predefinito](https://dev.w3.org/html5/spec-LC/the-button-element.html) di `submit`, quindi il comportamento predefinito dei pulsanti su questo 32% delle pagine è di inviare i dati del modulo corrente. Per evitare possibili comportamenti imprevisti come questo, una buona pratica è quella di specificare l'attributo `type`.
 
 <figure>
   <table>
     <thead>
       <tr>
         <th>Percentile</th>
-        <th>Buttons per page</th>
+        <th>Pulsanti per pagina</th>
       </tr>
     </thead>
     <tbody>
@@ -1195,22 +1192,22 @@ Our analysis shows that about 60% of pages contain a button element and more tha
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Distribution of the number of buttons per page.", sheets_gid="309769153", sql_file="pages_markup_by_device_and_percentile.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Distribuzione del numero di pulsanti per pagina.", sheets_gid="309769153", sql_file="pages_markup_by_device_and_percentile.sql") }}</figcaption>
 </figure>
 
-Pages in the 10th and 25th percentiles contain no buttons at all, while a page in the 90th percentile contains 13 native `button` elements. In other words, 10% of pages contain 13 or more buttons.
+Le pagine nel 10° e 25° percentile non contengono alcun pulsante, mentre una pagina nel 90° percentile contiene 13 elementi `button` nativi. In altre parole, il 10% delle pagine contiene 13 o più pulsanti.
 
-### Link targets
+### I target di collegamento
 
-The [anchor element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a), or `a` element, links web resources together. In this section, we analyze the adoption of the protocols included in the respective link targets.
+L'[elemento ancora](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a), o l'elemento `a`, collega insieme le risorse web. In questa sezione si analizza l'adozione dei protocolli inclusi nei rispettivi target di collegamento.
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th>Protocol</th>
-        <th>Occurrences</th>
-        <th>Pages (%)</th>
+        <th>Protocollo</th>
+        <th>Occorrenze</th>
+        <th>Pagine (%)</th>
       </tr>
     </thead>
     <tbody>
@@ -1266,29 +1263,29 @@ The [anchor element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Adoption of link target protocols.", sheets_gid="1963376224", sql_file="pages_wpt_bodies_by_device_and_protocol.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Adozione dei protocolli target di collegamento.", sheets_gid="1963376224", sql_file="pages_wpt_bodies_by_device_and_protocol.sql") }}</figcaption>
 </figure>
 
-We can see how `https` and `http` are most dominant, followed by "benign" links to make writing email, making phone calls, and sending messages easier. `javascript` stands out as a link target that's still very popular even though JavaScript offers native and gracefully degrading options to work with.
+Possiamo vedere come `https` e `http` siano i più dominanti, seguiti da link "benigni" per rendere più facile scrivere e-mail, fare telefonate e inviare messaggi. `javascript` si distingue come target di collegamento che è ancora molto popolare anche se JavaScript offre opzioni native e degradanti con cui lavorare.
 
-### Links in new windows
+### Links in nuove finestre
 
 {{ figure_markup(
-  caption="Percent of pages having neither `noopener` nor `noreferrer` attributes on `target=\"_blank\"` links.",
+  caption="Percentuale di pagine che non hanno attributi `noopener` né `noreferrer` sui link `target=\" _blank\"`.",
   content="71.35%",
   classes="big-number",
   sheets_gid="1876528165",
   sql_file="pages_wpt_bodies_by_device.sql"
 ) }}
 
-Using `target="_blank"` has been known to be a [security vulnerability](https://mathiasbynens.github.io/rel-noopener/) for some time now. Yet 71.35% of pages contain links with `target="_blank"`, without `noopener` or `noreferrer`.
+L'uso di `target="_blank"` è noto come una [vulnerabilità di sicurezza](https://mathiasbynens.github.io/rel-noopener/) da un po'di tempo. Eppure il 7135% delle pagine contiene link con `target="_blank"`, senza `noopener` o `noreferrer`.
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th>Elements</th>
-        <th>Pages</th>
+        <th>Elementi</th>
+        <th>Pagine</th>
       </tr>
     </thead>
     <tbody>
@@ -1306,41 +1303,41 @@ Using `target="_blank"` has been known to be a [security vulnerability](https://
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Blank relationships.", sheets_gid="1876528165", sql_file="pages_wpt_bodies_by_device.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Relazioni vuote.", sheets_gid="1876528165", sql_file="pages_wpt_bodies_by_device.sql") }}</figcaption>
 </figure>
 
-As a rule of thumb and for [usability reasons](https://www.nngroup.com/articles/new-browser-windows-and-tabs/), it is recommended not to use `target="_blank"` in the first place.
+Come regola pratica e per [ragioni di usabilità](https://www.nngroup.com/articles/new-browser-windows-and-tabs/), si raccomanda di non usare `target="_blank"` in primo luogo.
 
-<p class="note">Within the latest Safari and Firefox versions, setting <code>target="_blank"</code> on <code>a</code> elements implicitly provides the same <code>rel</code> behavior as setting <code>rel="noopener"</code>. This is already <a href="https://chromium-review.googlesource.com/c/chromium/src/+/1630010">implemented in Chromium</a> as well and will land in Chrome 88.</p>
+<p class="note">Nelle ultime versioni di Safari e Firefox, l'impostazione di <code>target="_blank"</code> sugli elementi <code>a</code> fornisce implicitamente lo stesso comportamento <code>rel</code> dell'impostazione di <code>rel="noopener"</code>. Questo è già <a href="https://chromium-review.googlesource.com/c/chromium/src/+/1630010">implementato anche in Chromium</a> e arriverà in Chrome 88.</p>
 
-## Conclusion
+## Conclusione
 
-We've touched on some observations throughout the chapter, but as a reflection on the state of markup in 2020, here are some things that stood out for us:
+Abbiamo accennato ad alcune osservazioni nel corso del capitolo, ma come riflessione sullo stato del markup nel 2020, ecco alcune cose che ci hanno colpito:
 
 {{ figure_markup(
-  caption="Percent of pages with a quirky doctype.",
+  caption="Percentuale di pagine con un doctype quirky.",
   content="3.97%",
   classes="big-number",
   sheets_gid="1981441894",
   sql_file="summary_pages_by_device_and_doctype.sql"
 ) }}
 
-Fewer pages land in quirks mode. In 2016, that number was at [around 7.4%](https://discuss.httparchive.org/t/how-many-and-which-pages-are-in-quirks-mode/777). At the end of 2019, we observed [4.85%](https://twitter.com/zcorpan/status/1205242913908838400). And now, we're at about 3.97%. This trend, to paraphrase [Simon Pieters](./contributors#zcorpan) in his review of this chapter, seems clear and encouraging.
+Meno pagine arrivano in modalità quirks. Nel 2016, quel numero era di [circa il 7,4%](https://discuss.httparchive.org/t/how-many-and-which-pages-are-in-quirks-mode/777). Alla fine del 2019, abbiamo osservato [4,85%](https://twitter.com/zcorpan/status/1205242913908838400). E ora siamo al 3,97% circa. Questa tendenza, per parafrasare [Simon Pieters](./contributors#zcorpan) nella sua revisione di questo capitolo, sembra chiaro e incoraggiante.
 
-Although we lack historic data to draw the full development picture, "meaningless" `div`, `span`, and `i` markup has pretty much [replaced](#top-elements) the `table` markup we've observed in the 1990s and early 2000s. While one may question whether `div` and `span` elements are always used without there being a semantically more appropriate alternative, these elements are still preferable to `table` markup, though, as during the heyday of the old web, these were seemingly used for everything but tabular data.
+Sebbene non ci siano dati storici per tracciare il quadro completo dello sviluppo, il markup `div`, `span` e `i` "senza significato" ha praticamente [sostituito](#top-elements) il markup `table` che abbiamo osservato negli anni '90 e nei primi anni 2000. Sebbene ci si possa chiedere se gli elementi `div` e `span` siano sempre usati senza che ci sia un'alternativa semanticamente più appropriata, questi elementi sono ancora preferibili al markup `table`, sebbene, come durante il periodo di massimo splendore del vecchio web, questi erano apparentemente utilizzati per tutto tranne che per i dati tabulari.
 
-Elements per page and element types per page stayed roughly the same, showing [no significant change](#element-diversity) in our HTML writing practice when compared to 2019. Such changes may require more time to manifest.
+Gli elementi per pagina e i tipi di elementi per pagina sono rimasti più o meno gli stessi, mostrando [nessun cambiamento significativo](#element-diversity) nella nostra pratica di scrittura HTML rispetto al 2019. Tali modifiche potrebbero richiedere più tempo per manifestarsi.
 
-Proprietary product-specific elements like `g:plusone` (used on 17,607 pages in the mobile sample) and `fb:like` (11,335) have almost disappeared after still being [among the most popular ones](../2019/markup#products-and-libraries-and-their-custom-markup) last year. However, we observe more [custom elements](#custom-elements) for things like Slider Revolution, AMP, and Angular. Elements like `ym-measure`, `jdiv`, and `ymaps` are also still prevalent. What we imagine we're seeing here is that, under the sea of slowly changing practices, HTML is very much being developed and maintained, as authors toss deprecated markup and embrace new solutions.
+Gli elementi proprietari specifici del prodotto come `g:plusone` (utilizzato su 17.607 pagine nell'esempio mobile) e `fb:like` (11.335) sono quasi scomparsi dopo essere ancora [tra i più popolari](../2019/markup#products-and-libraries-and-their-custom-markup) l'anno scorso. Tuttavia, osserviamo più [elementi personalizzati](#custom-elements) per cose come Slider Revolution, AMP e Angular. Anche elementi come `ym-measure`, `jdiv` e `ymaps` sono ancora prevalenti. Quello che immaginiamo di vedere qui è che, sotto il mare di pratiche che cambiano lentamente, l'HTML è in fase di sviluppo e manutenzione, con autori che rimuovono markup deprecati e adottano nuove soluzioni.
 
-Now, the [2019 Web Almanac Markup chapter](../2019/markup) had 14 years of catch up to do since the last major study on the topic, so you'd think we wouldn't have much to cover in the year since. Yet what we observe with this year's data is that there's a lot of movement at the bottom and near the shore of said sea of HTML. We approach near-complete adoption of living HTML. We are quick to prune our pages of fads like Google and Facebook widgets. We're also fast in adopting and shunning frameworks, as both Angular and AMP (though a "component framework") seem to have significantly lost in popularity, likely for solutions like React and Vue.
+Ora, il [capitolo 2019 Web Almanac Markup](../2019/markup) ha lavorato nel riassumere 14 anni di sviluppo su quest argomento, quindi potresti pensare che non avremmo molto da coprire nell'anno successivo. Tuttavia quello che osserviamo con i dati di quest'anno è che c'è molto movimento sia in superfice che nel fondale del mare dell'HTML. Ci avviciniamo all'adozione quasi completa dell'HTML vivente. Siamo pronti a sfoltire le nostre pagine di mode come i widget di Google e Facebook. Siamo anche veloci nell'adottare ed evitare i framework, poiché sia Angular che AMP (sebbene un "framework di componenti") sembrano aver perso in modo significativo in popolarità, probabilmente per soluzioni come React e Vue.
 
-And still, there are no signs we exhausted the options HTML gives us. The median of 30 different elements used on a given page, which is roughly a quarter of the elements HTML provides us with, suggests a rather one-sided use of HTML. That is supported by the immense popularity of elements like `div` and `span`, and no custom elements to potentially meet the demands that these two elements may represent. Unfortunately, we couldn't validate each document in the sample; however, anecdotally and to be taken with caution, we learned that [79%](https://github.com/HTTPArchive/almanac.httparchive.org/issues/899#issuecomment-717856201) of W3C-tested documents have validation errors. After everything we've seen, it looks like we're still far from mastering the craft of HTML.
+E ancora, non ci sono segni che abbiamo esaurito le opzioni che l'HTML ci offre. La mediana di 30 diversi elementi utilizzati in una data pagina, che è circa un quarto degli elementi forniti dall'HTML, suggerisce un uso piuttosto unilaterale dell'HTML. Ciò è supportato dall'immensa popolarità di elementi come `div` e `span`, e nessun elemento personalizzato per soddisfare potenzialmente le richieste che questi due elementi possono rappresentare. Sfortunatamente, non è stato possibile convalidare ogni documento nel campione; tuttavia, aneddoticamente e da prendere con cautela, abbiamo appreso che il [79%](https://github.com/HTTPArchive/almanac.httparchive.org/issues/899#issuecomment-717856201) dei documenti testati dal W3C presenta errori di convalida. Dopo tutto quello che abbiamo visto, sembra che siamo ancora lontani dal padroneggiare l'arte dell'HTML.
 
-That compels us to close with an appeal: Pay attention to HTML. Focus on HTML. It's important and worthwhile to invest in HTML. HTML is a document language that may not have the charm of a programming language, and yet the web is built on it. Use less HTML and learn what's really needed. Use more appropriate HTML—learn what's available and what it's there for. And [validate](https://validator.w3.org/docs/why.html) your HTML. Anyone can write invalid HTML (just invite the next person you meet to write an HTML document and validate the output) but a professional developer can be expected to produce valid HTML. Writing correct and valid HTML is a craft to take pride in.
+Questo ci obbliga a chiudere con un appello: Fai attenzione all'HTML. Concentrati sull'HTML. È importante e utile investire in HTML. L'HTML è un linguaggio per documenti che potrebbe non avere il fascino di un linguaggio di programmazione, eppure il Web è costruito su di esso. Usa meno HTML e impara cosa serve veramente. Usa un HTML più appropriato: scopri cosa è disponibile e a cosa serve. E [convalida](https://validator.w3.org/docs/why.html) il tuo HTML. Chiunque può scrivere HTML non valido (basta invitare la prossima persona che incontri a scrivere un documento HTML e convalidare l'output) ma ci si può aspettare che uno sviluppatore professionista produca HTML valido. Scrivere HTML corretto e valido è un mestiere di cui essere orgogliosi.
 
-For the next edition of the Web Almanac's chapter, let's prepare to look closer at the craft of writing HTML and, hopefully, how we've been improving on it.
+Per la prossima edizione del capitolo di Web Almanac, prepariamoci a guardare più da vicino l'arte di scrivere HTML e, si spera, come lo abbiamo migliorato.
 
 <p class="note">
-  We're leaving the rest open to you. What are your observations? What has caught your eye? What do you think has taken a turn for the worse, and what has improved? [Leave a comment](https://discuss.httparchive.org/t/2039) to share your thoughts!
+  Stiamo lasciando il resto aperto a te. Quali sono le tue osservazioni? Cosa ha attirato la tua attenzione? Cosa pensi che sia peggiorato e cosa è migliorato? [Lascia un commento](https://discuss.httparchive.org/t/2039) per condividere i tuoi pensieri!
 </p>
