@@ -1,6 +1,4 @@
 ---
-part_number: I
-chapter_number: 2
 title: JavaScript
 description: Capitolo JavaScript del Web Almanac 2020 che copre quanto JavaScript utilizziamo sul Web, compressione, librerie e framework, caricamento e mappe di origine.
 authors: [tkadlec]
@@ -11,7 +9,6 @@ translators: [chefleo]
 tkadlec_bio: Tim è un consulente e formatore di prestazioni web focalizzato sulla creazione di un web che tutti possano utilizzare. È autore di High Performance Images (O'Reilly, 2016) e Implementing Responsive Design (New Riders, 2012). Scrive di tutto ciò che riguarda il Web su <a href="https://timkadlec.com/">timkadlec.com</a>. Puoi trovarlo mentre condivide i suoi pensieri in un formato più breve su Twitter <a href="https://twitter.com/tkadlec">@tkadlec</a>.
 discuss: 2038
 results: https://docs.google.com/spreadsheets/d/1cgXJrFH02SHPKDGD0AelaXAdB3UI7PIb5dlS0dxVtfY/
-queries: 02_JavaScript
 featured_quote: JavaScript ha fatto molta strada dalle sue umili origini come l'ultimo dei tre capisaldi del web, insieme a CSS e HTML. Oggi JavaScript ha iniziato a infiltrarsi in un ampio spettro dello stack tecnico. Non è più limitato al lato client ed è una scelta sempre più popolare per gli strumenti di compilazione e lo scripting lato server. JavaScript si sta facendo strada anche nel livello CDN grazie alle soluzioni di edge computing.
 featured_stat_1: 1,897ms
 featured_stat_label_1: Tempo mediano del thread principale JS su dispositivo mobile
@@ -28,10 +25,12 @@ JavaScript ha fatto molta strada dalle sue umili origini come l'ultimo dei tre c
 Gli sviluppatori adorano un po' di JavaScript. Secondo il capitolo Markup, l'elemento `script` è il [sesto elemento HTML più popolare](./markup) in uso (prima di elementi come `p` e `i`, tra innumerevoli altri). Spendiamo circa 14 volte più byte su HTML rispetto a HTML, l'elemento costitutivo del Web, e 6 volte più byte rispetto a CSS.
 
 {{ figure_markup(
-  image="page-weight-per-content-type.png",
+  image="../page-weight/bytes-distribution-content-type.png",
   caption="Peso medio della pagina per tipo di contenuto.",
   description="Grafico a barre che mostra il peso medio della pagina per le pagine desktop e per dispositivi mobili tra immagini, JS, CSS e HTML. Le quantità mediane di byte per ogni tipo di contenuto sulle pagine per dispositivi mobili sono: 916 KB di immagini, 411 KB di JS, 62 KB di CSS e 25 KB di HTML. Le pagine desktop tendono ad avere immagini molto più pesanti (circa 1000 KB) e quantità leggermente superiori di JS (circa 450 KB).",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQlN4Clqeb8aPc63h0J58WfBxoJluSFT6kXn45JGPghw1LGU28hzabMYAATXNY5st9TtjKrr2HnbfGd/pubchart?oid=1147150650&format=interactive"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQlN4Clqeb8aPc63h0J58WfBxoJluSFT6kXn45JGPghw1LGU28hzabMYAATXNY5st9TtjKrr2HnbfGd/pubchart?oid=1147150650&format=interactive",
+  sheets_gid="https://docs.google.com/spreadsheets/d/1wG4u0LV5PT9aN-XB1hixSFtI8KIDARTOCX0sp7ZT3h0/#378779486",
+  sql_file="../page-weight/bytes_per_type_2020.sql"
 ) }}
 
 Ma niente è gratuito, e questo è particolarmente vero per JavaScript: tutto quel codice ha un costo. Approfondiamo e diamo un'occhiata più da vicino a quanto script usiamo, come lo usiamo e quali sono le conseguenze.
@@ -43,7 +42,7 @@ Abbiamo detto che il tag `script` è il sesto elemento HTML più utilizzato. Ana
 Il sito mediano (il 50° percentile) invia 444 KB di JavaScript quando viene caricato su un dispositivo desktop e leggermente meno (411 KB) a un dispositivo mobile.
 
 {{ figure_markup(
-  image="page-weight-per-content-type.png",
+  image="bytes-2020.png",
   caption="Distribuzione della quantità di kilobyte JavaScript caricati per pagina.",
   description="Grafico a barre che mostra la distribuzione dei byte JavaScript per pagina di circa il 10%. Le pagine desktop caricano costantemente più byte JavaScript rispetto alle pagine mobile. Il 10°, 25°, 50°, 75° e 90° percentile per desktop sono: 87 KB, 209 KB, 444 KB, 826 KB e 1.322 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=441749673&format=interactive",
@@ -352,7 +351,6 @@ HTTP Archive utilizza [Wappalyzer](./methodology#wappalyzer) per rilevare le tec
 
 Le librerie popolari in uso sono sostanzialmente invariate rispetto allo scorso anno, con jQuery che continua a dominare l'utilizzo e solo una delle 21 migliori librerie è caduta (lazy.js, sostituita da DataTables). In effetti, anche le percentuali delle migliori librerie sono cambiate appena rispetto allo scorso anno.
 
-{# TODO(analysts): table? showing rank, library, percentage and last years rank #}
 
 {{ figure_markup(
   image="frameworks-libraries.png",
@@ -376,7 +374,6 @@ In effetti, il predominio di jQuery è ulteriormente supportato se ci si ferma a
 
 Quando guardiamo i framework, non vediamo nemmeno un cambiamento radicale in termini di adozione nei framework principali che sono stati evidenziati lo scorso anno. Vue.js ha visto un aumento significativo e AMP è cresciuto un po', ma la maggior parte di loro sono più o meno dove erano un anno fa.
 
-{# TODO(analysts): Compare same frameworks from last year's chapter to this year in bar chart? #}
 
 Vale la pena notare che il [problema di rilevamento rilevato lo scorso anno è ancora valido](https://github.com/AliasIO/wappalyzer/issues/2450) e ha ancora un impatto sui risultati qui. È possibile che ci sia stato un cambiamento significativo nella popolarità di alcuni di questi strumenti, ma semplicemente non lo vediamo con il modo in cui i dati vengono attualmente raccolti.
 
@@ -610,7 +607,7 @@ Otteniamo un'immagine molto simile quando guardiamo il tempo del thread principa
   sql_file="main_thread_time_frameworks.sql"
 ) }}
 
-Il tempo del thread principale mobile di Ember salta fuori e distorce il grafico con il tempo necessario. Tirarlo fuori rende l'immagine un po' più facile da capire.
+Il tempo del thread principale mobile di Ember salta fuori e distorce il grafico con il tempo necessario. (Ho passato un po' più di tempo a esaminare questo aspetto e sembra essere fortemente influenzato <a hreflang="en" href="https://timkadlec.com/remembers/2021-01-26-what-about-ember/">da una particolare piattaforma che utilizza questo framework in modo inefficiente</a>, piuttosto che da un problema di fondo con Ember stesso.) Tirare fuori l'immagine dal grafico lo rende più facile da capire.
 
 {{ figure_markup(
   image="frameworks-main-thread-no-ember.png",

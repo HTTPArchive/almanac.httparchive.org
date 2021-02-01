@@ -1,6 +1,4 @@
 ---
-part_number: I
-chapter_number: 3
 title: Markup
 description: Capitolo Markup del Web Almanac 2020 che copre le osservazioni generali, l'uso di elementi e attributi, nonché curiosità e tendenze.
 authors: [j9t, catalinred, iandevlin]
@@ -13,7 +11,6 @@ editors: [rviscomi]
 translators: [chefleo]
 discuss: 2039
 results: https://docs.google.com/spreadsheets/d/1Ta7amoUeaL4pILhWzH-SCzMX9PsZeb1x_mwrX2C4eY8/
-queries: 03_Markup
 featured_quote: Ci avviciniamo all'adozione quasi completa dell'HTML vivente, siamo rapidi a sfoltire le nostre pagine dalle mode e siamo veloci nell'adottare ed evitare i framework. E ancora, non ci sono segni che abbiamo esaurito le opzioni che l'HTML ci offre.
 featured_stat_1: 85.73%
 featured_stat_label_1: Percentuale di pagine che utilizzano il doctype HTML "vivente"
@@ -451,7 +448,7 @@ Gli elementi standard sono quelli che fanno o facevano parte della specifica HTM
   <figcaption>{{ figure_link(caption="Scarse probabilità di trovare un dato elemento nelle pagine del campione.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
 </figure>
 
-Includiamo questi elementi per dare un'idea di quali elementi potrebbero perdere di popolarità. Ma mentre `dir` e `basefont` sono stati specificati l'ultima volta in XHTML 1.0 (2000) e non fanno più parte dell'HTML, il raro uso di `rp` (che è stato menzionato [già nel 1998](https://www.w3.org/TR/1998/WD-ruby-19981221/#a2-4) ed è [ancora parte dell'HTML](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element)), potrebbe semplicemente suggerire che il markup di Ruby non è molto popolare.
+Includiamo questi elementi per dare un'idea di quali elementi potrebbero perdere di popolarità. Ma mentre `dir` e `basefont` sono stati specificati l'ultima volta in XHTML 1.0 (2000) e non fanno più parte dell'HTML, il raro uso di `rp` (che è stato menzionato [già nel 1998](https://www.w3.org/TR/1998/WD-ruby-19981221/#a2-4) ed è [ancora parte dell'HTML](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element)), potrebbe semplicemente suggerire che il <a hreflang="en" href="https://www.w3.org/TR/ruby/">markup di Ruby</a> non è molto popolare.
 
 ### Elementi personalizzati
 
@@ -1271,7 +1268,7 @@ Possiamo vedere come `https` e `http` siano i più dominanti, seguiti da link "b
 ### Links in nuove finestre
 
 {{ figure_markup(
-  caption="Percentuale di pagine che non hanno attributi `noopener` né `noreferrer` sui link `target=\" _blank\"`.",
+  caption='Percentuale di pagine che non hanno attributi `noopener` né `noreferrer` sui link `target=" _blank"`.',
   content="71.35%",
   classes="big-number",
   sheets_gid="1876528165",
