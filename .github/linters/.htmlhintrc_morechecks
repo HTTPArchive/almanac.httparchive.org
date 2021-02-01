@@ -16,7 +16,7 @@
   "inline-style-disabled": true,
   "inline-script-disabled": true,
   "space-tab-mixed-disabled": "space",
-  "spec-char-escape": false,
+  "spec-char-escape": true,
   "src-not-empty": true,
   "style-disabled": false,
   "tag-pair": true,
