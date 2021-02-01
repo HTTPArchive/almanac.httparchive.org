@@ -21,7 +21,7 @@ featured_stat_3: 25,24 KB
 featured_stat_label_3: Gewicht van het mediaan document
 ---
 
-## Introductie
+## Inleiding
 
 Het web is gebouwd op HTML. Zonder HTML zijn er geen webpagina's, geen websites, geen webapps. Niets. Er kunnen misschien platte-tekstdocumenten of XML-bomen in een parallel universum zijn die die specifieke uitdaging aangingen. In dit universum vormt HTML de basis van het gebruikersgerichte web. Er zijn veel standaarden waarop het web steunt, maar HTML is zeker een van de belangrijkste.
 

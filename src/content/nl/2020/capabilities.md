@@ -19,7 +19,7 @@ featured_stat_3: 363
 featured_stat_label_3: Sites staan het installeren van gerelateerde apps toe
 ---
 
-## Introductie
+## Inleiding
 
 [Progressive Web Apps](./pwa) (PWA) zijn een platformonafhankelijk applicatiemodel gebaseerd op webtechnologie. Met de hulp van Service Workers draaien deze apps zelfs als de gebruiker offline is. Met het [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) kunnen gebruikers een PWA toevoegen aan hun startscherm of programmalijst. Van daaruit wordt een PWA geopend als een native app. PWA's kunnen echter alleen de functies en mogelijkheden gebruiken die beschikbaar zijn via webplatform-API's. Willekeurige native interfaces kunnen niet worden aangeroepen, waardoor er een gat ontstaat tussen native apps en webapps.
 
