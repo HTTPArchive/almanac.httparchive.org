@@ -1,6 +1,5 @@
 ---
-part_number: II
-chapter_number: 13
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: 機能
 description: 2020年のWeb Almanac「機能」の章では、新しく強力なWebプラットフォームAPIを取り上げます。
 authors: [christianliebel]
@@ -10,7 +9,6 @@ editors: [bazzadp]
 translators: [ksakae]
 discuss: 2049
 results: https://docs.google.com/spreadsheets/d/1N6j1qKv7vc51p1W9z_RrbJX9Se3Pmb-Uersfz4gWqqs/
-queries: 13_Capabilities
 christianliebel_bio: Christian Liebelは、<a href="https://thinktecture.com">Thinktecture</a>のコンサルタントであり、ファーストクラスのWebアプリケーションの実装において、様々なビジネス分野のクライアントをサポートしています。Microsoft MVP for Developer Technologies、Google GDE for Web/Capabilities、Angularを担当し、W3C Web Applications Working Groupに参加しています。
 featured_quote: 2020年のWeb機能の状態は健全で、強力な新しいAPIがChromiumベースのブラウザの新しいリリースに定期的に提供されています。最初のAPIは、すでに他のブラウザにも導入されています。
 featured_stat_1: 0.0006%

@@ -1,6 +1,5 @@
 ---
-part_number: II
-chapter_number: 9
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Prestatie
 description: Prestatiehoofdstuk van de Web Almanac 2020 met betrekking tot Core Web Vitals, Lighthouse Performance Score, First Contentful Paint (FCP) en Time to First Byte (TTFB).
 authors: [thefoxis]
@@ -11,7 +10,6 @@ translators: [noah-vdv]
 thefoxis_bio: Karolina is Product Design Lead bij <a href="https://calibreapp.com/">Calibre</a> en werkt aan het creëren van het meest uitgebreide platform voor snelheidscontrole. Ze beheert de <a href="https://perf.email/" lang="en">Performance Newsletter</a>, uw bron van nieuws over prestaties en bronnen. Karolina <a href="https://calibreapp.com/blog/category/web-platform">schrijft ook regelmatig</a> over hoe prestaties de gebruikerservaring beïnvloeden.
 discuss: 2045
 results: https://docs.google.com/spreadsheets/d/164FVuCQ7gPhTWUXJl1av5_hBxjncNi0TK8RnNseNPJQ/
-queries: 09_Performance
 featured_quote: Slechte prestaties veroorzaken niet alleen frustratie of hebben een negatieve invloed op de conversie, het creëert ook echte toetredingsdrempels. De wereldwijde pandemie van dit jaar heeft die bestaande barrières nog duidelijker gemaakt.
 featured_stat_1: 25%
 featured_stat_label_1: Sites met een goede FCP op mobiel
@@ -21,7 +19,7 @@ featured_stat_3: 4%
 featured_stat_label_3: Sites met ongewijzigde Prestatiescore in LH6
 ---
 
-## Introductie
+## Inleiding
 
 Er is een onbetwistbaar nadelig effect dat lage snelheid heeft op de algehele gebruikerservaring en bijgevolg op conversies. Maar slechte prestaties veroorzaken niet alleen frustratie of hebben een negatieve invloed op de bedrijfsdoelen, het creëert ook echte toetredingsdrempels. De wereldwijde pandemie van dit jaar [maakte die bestaande barrières nog duidelijker](https://www.weforum.org/agenda/2020/04/coronavirus-covid-19-pandemic-digital-divide-internet-data-broadband-mobbile/). Met de verschuiving naar leren op afstand, werken en socializen, werd plotseling ons hele leven online verplaatst. Slechte connectiviteit en gebrek aan toegang tot geschikte apparaten maakten deze verandering op zijn best pijnlijk, zo niet onmogelijk, voor velen. Het is een echte test geweest, waarbij connectiviteit, apparaat- en snelheidsverschillen over de hele wereld naar voren zijn gekomen.
 

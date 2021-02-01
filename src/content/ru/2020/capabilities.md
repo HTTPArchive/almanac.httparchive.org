@@ -1,6 +1,5 @@
 ---
-part_number: II
-chapter_number: 13
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Возможности
 description: Глава "Возможности" издания Web Almanac за 2020 год посвящена совершенно новым, мощным API в веб-платформе.
 authors: [christianliebel]
@@ -10,7 +9,6 @@ editors: [rviscomi]
 translators: [lex111]
 discuss: 2049
 results: https://docs.google.com/spreadsheets/d/1N6j1qKv7vc51p1W9z_RrbJX9Se3Pmb-Uersfz4gWqqs/
-queries: 13_Capabilities
 christianliebel_bio: Кристиан Либел работает консультантом в компании Thinktecture, помогая клиентам из различных сфер бизнеса создавать качественные веб-приложения. Он обладатель награды Microsoft MVP в области технологий для разработчиков, Google GDE для веба/возможностей и Angular, а также участвует в рабочей группе W3C по веб-приложениям.
 featured_quote: Состояние веб-возможностей в 2020 году хорошее, поскольку новые и мощные API регулярно появляются в последних версиях Chromium-браузеров. Некоторые из этих API уже работают в других браузерах.
 featured_stat_1: 0.0006%

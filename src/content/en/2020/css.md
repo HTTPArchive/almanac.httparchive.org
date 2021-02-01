@@ -1,6 +1,5 @@
 ---
-part_number: I
-chapter_number: 1
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CSS
 description: CSS chapter of the 2020 Web Almanac covering color, units, selectors, layout, animation, media queries, and Sass usage.
 authors: [LeaVerou, svgeesus, rachelandrew]
@@ -13,7 +12,6 @@ svgeesus_bio: Chris Lilley is a Technical Director at the World Wide Web Consort
 rachelandrew_bio: I'm a web developer, writer, public speaker. Co-founder of <a href="https://grabaperch.com">Perch CMS</a> and <a href="https://noti.st">Notist</a>. Member of the <a href="https://www.w3.org/wiki/CSSWG">CSS Working Group</a>. Editor in Chief of <a href="https://www.smashingmagazine.com/">Smashing Magazine</a>.
 discuss: 2037
 results: https://docs.google.com/spreadsheets/d/1sMWXWjMujqfAREYxNbG_t1fOJKYCA6ASLwtz4pBQVTw/
-queries: 01_CSS
 featured_quote: The web is not a teenager anymore—it is now 30 years old and acts like it. It tends to favor stability over new bling and readability over complexity, occasional guilty pleasures aside.
 featured_stat_1: 72.58%
 featured_stat_label_1: Percentage of <code>&lt;length&gt;</code> values that use the <code>px</code> unit.
@@ -53,7 +51,7 @@ Custom metrics were also used for part of the [custom properties analysis](#cust
 
 ## Usage
 
-While JavaScript far surpasses CSS in its share of page weight, CSS has certainly grown in size over the years, with the median desktop page loading 62 KB of CSS code, and one in ten pages loading more than 240 KB of CSS code. Mobile pages do use slightly less CSS code across all percentiles, but only by 4 to 7 KB. While this is definitely greater than previous years, it doesn't come close to [JavaScript's whopping median of 444 KB and top 10% of 1.2 MB](./javascript/#how-much-javascript-do-we-use)
+While JavaScript far surpasses CSS in its share of page weight, CSS has certainly grown in size over the years, with the median desktop page loading 62 KB of CSS code, and one in ten pages loading more than 240 KB of CSS code. Mobile pages do use slightly less CSS code across all percentiles, but only by 4 to 7 KB. While this is definitely greater than previous years, it doesn't come close to [JavaScript's whopping median of 444 KB and top 10% of 1.2 MB](./javascript#how-much-javascript-do-we-use)
 
 {{ figure_markup(
   image="stylesheet-size.png",
@@ -547,7 +545,7 @@ And if you are going for fanciful color names, why not define your own with CSS 
   image="color-keywords-app.png",
   alt="Interactively explore the color keyword usage data with the app.",
   caption='Interactively explore the color keyword usage data with <a href="https://codepen.io/leaverou/pen/GRjjJwJ">this interactive app</a>!',
-  description="Screenhot of an interactive app which allows you to select colours and see their relative usage in a pie chart. The data for the colours is shown in the next table.",
+  description="Screenhot of an interactive app which allows you to select colors and see their relative usage in a pie chart. The data for the colors is shown in the next table.",
   width=600,
   height=1065
   )

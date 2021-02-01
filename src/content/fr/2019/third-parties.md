@@ -1,6 +1,5 @@
 ---
-part_number: II
-chapter_number: 5
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Tierces Parties
 description: Le chapitre sur les ressources tierces du Web Almanac 2019, qui aborde les tierces parties utilisées, pourquoi elles le sont et les répercussions de leur usage sur le rendu et la confidentialité.
 authors: [patrickhulce]
@@ -10,7 +9,6 @@ editors: [bazzadp]
 translators: [borisschapira]
 discuss: 1760
 results: https://docs.google.com/spreadsheets/d/1iC4WkdadDdkqkrTY32g7hHKhXs9iHrr3Bva8CuPjVrQ/
-queries: 05_Third_Parties
 patrickhulce_bio: Patrick Hulce est un ancien ingénieur de Chrome, fondateur de <a href="https://eris.ventures/">Eris Ventures</a>, membre de l’équipe principale de <a href="https://github.com/GoogleChrome/lighthouse">Lighthouse</a> et de <a href="https://github.com/GoogleChrome/lighthouse-ci">Lighthouse CI</a>, co-organisateur de la rencontre <a href="https://www.meetup.com/DallasJS/">DallasJS</a> et auteur du projet <a href="https://github.com/patrickhulce/third-party-web">third-party-web</a>.
 featured_quote: Le Web ouvert a été conçu pour être vaste, interconnectable et interopérable. La possibilité d’accéder à de puissantes librairies tierces et de les utiliser sur votre site avec des éléments <code>&lt;link&gt;</code> ou <code>&lt;script&gt;</code> a décuplé la productivité des développeurs et permis de nouvelles et incroyables expériences web ; par contre, l’immense popularité de quelques fournisseurs tiers (3P) pose d’importants problèmes en termes de performances et de confidentialité. Ce chapitre examine la prévalence et l’impact du code tiers sur le Web en 2019, les modèles d’utilisation du Web qui mènent à la popularité des solutions tierces et les répercussions potentielles sur l’avenir des performances Web et de la confidentialité.
 featured_stat_1: 93 %
@@ -154,7 +152,6 @@ Ces données regorgent d’autres faits amusants. Les pixels de suivi (requêtes
 49 % de toutes les requêtes pointent vers des tiers. Avec 51 %, le domaine principal conserve garde donc la tête, puisqu’il héberge la moitié des ressources web. Mais les sites qui utilisent des ressources tierces doivent le faire de manière importante car même si un peu moins de la moitié de toutes les requêtes proviennent de tiers, un petit nombre de pages n’en référencent pas du tout. En détails : aux 75e, 90e et 99e percentiles, la quasi-totalité de la page est constituée de contenu de tiers. En fait, pour certains sites s’appuyant fortement sur des plates-formes WYSIWYG distribuées comme Wix et SquareSpace, le document racine est parfois la seule requête sur le domaine principal !
 
 <!-- insert graphic of metric 05_11 -->
-<!-- {{ figure_markup() }} -->
 
 Le nombre de demandes émises par chaque fournisseur tiers varie aussi considérablement selon la catégorie. Bien que les services de télémétrie soient la catégorie de tiers la plus répandue sur les sites web, ils ne représentent que 7 % de toutes les requêtes réseau vers des tiers. Les publicités, en revanche, se trouvent sur environ 20 % de sites en moins, mais elles représentent 25 % de toutes les requêtes réseau vers des tiers. L’impact disproportionné de leurs ressources par rapport à leur popularité sera un thème que nous ne manquerons pas d’approfondir dans les données restantes.
 
@@ -167,7 +164,7 @@ Bien qu’ils servent 57 % des scripts, les tiers représentent 64 % des octet
 {{ figure_markup(
   image="fig7.png",
   caption="Répartition des octets de ressource par catégorie de tiers.",
-  description="Graphique montrant la répartition des octets pour chaque type de contenu par catégorie de tiers. Les images et les scripts sont répartis de manière relativement égale entre les catégories. 80 % des polices proviennent de CDN. La vidéo provient de tiers spécialisés en \"Contenus\".",
+  description="Graphique montrant la répartition des octets pour chaque type de contenu par catégorie de tiers. Les images et les scripts sont répartis de manière relativement égale entre les catégories. 80 % des polices proviennent de CDN. La vidéo provient de tiers spécialisés en “Contenus”.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=1167032693&format=interactive",
   width=600,
   height=387,
@@ -176,10 +173,7 @@ Bien qu’ils servent 57 % des scripts, les tiers représentent 64 % des octet
   )
 }}
 
-<!--
-
-```<insert graphic of metric 05_12>```
--->
+<!--```<insert graphic of metric 05_12>```-->
 
 En ce qui concerne les fournisseurs tiers spécifiques, on trouve les mêmes poids-lourds en tête du classement du nombre de requêtes, qu’en tête du classement des poids en octets. Les seuls à ne pas respecter cette tendance sont les fournisseurs très médiatiques que sont YouTube, Shopify et Twitter, qui se hissent en tête des tableaux d’impact en poids.
 

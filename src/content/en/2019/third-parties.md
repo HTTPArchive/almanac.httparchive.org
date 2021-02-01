@@ -1,6 +1,5 @@
 ---
-part_number: II
-chapter_number: 5
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Third Parties
 description: Third Parties chapter of the 2019 Web Almanac covering data of what third parties are used, what they are used for, performance impacts and privacy impacts.
 authors: [patrickhulce]
@@ -10,7 +9,6 @@ editors: [bazzadp]
 translators: []
 discuss: 1760
 results: https://docs.google.com/spreadsheets/d/1iC4WkdadDdkqkrTY32g7hHKhXs9iHrr3Bva8CuPjVrQ/
-queries: 05_Third_Parties
 patrickhulce_bio: Patrick Hulce is an ex-Chrome engineer, founder of <a href="https://eris.ventures/">Eris Ventures</a>, core team member of <a href="https://github.com/GoogleChrome/lighthouse">Lighthouse</a> and <a href="https://github.com/GoogleChrome/lighthouse-ci">Lighthouse CI</a>, co-organizer of the <a href="https://www.meetup.com/DallasJS/">DallasJS</a> meetup, and author of the <a href="https://github.com/patrickhulce/third-party-web">third-party-web</a> project.
 featured_quote: The open web is vast, linkable, and interoperable by design. The ability to grab someone else’s complex library and use it on your site with a single <code>&lt;link&gt;</code> or <code>&lt;script&gt;</code> element has supercharged developers’ productivity and enabled awesome new web experiences; on the flip side, the immense popularity of a select few third-party providers raises important performance and privacy concerns. This chapter examines the prevalence and impact of third-party code on the web in 2019, the web usage patterns that lead to the popularity of third-party solutions, and potential repercussions for the future of web performance and privacy.
 featured_stat_1: 93%
@@ -154,7 +152,6 @@ Several other amusing factoids jump out from this data. Tracking pixels (image r
 49% of all requests are third-party. At 51%, first-party can still narrowly hold on to the crown in 2019 of comprising the majority of the web resources. Given that just under half of all the requests are third-party yet a small set of pages do not include any at all, the most active third-party users must be doing quite a bit more than their fair share. Indeed, at the 75th, 90th, and 99th percentiles we see nearly all of the page being comprised of third-party content. In fact, for some sites heavily relying on distributed WYSIWYG platforms like Wix and SquareSpace, the root document might be the sole first-party request!
 
 <!-- insert graphic of metric 05_11 -->
-<!-- {{ figure_markup() }} -->
 
 The number of requests issued by each third-party provider also varies considerably by category. While analytics are the most widespread third-party category across websites, they account for only 7% of all third-party network requests. Ads, on the other hand, are found on nearly 20% fewer sites yet make up 25% of all third-party network requests. Their outsized resource impact compared to their popularity will be a theme we continue to uncover in the remaining data.
 
@@ -176,10 +173,7 @@ Despite serving 57% of scripts, third parties comprise 64% of script bytes. mean
   )
 }}
 
-<!--
-
-```<insert graphic of metric 05_12>```
--->
+<!--```<insert graphic of metric 05_12>```-->
 
 As for specific third-party providers, the same juggernauts topping the request count leaderboards make their appearance in byte weight as well. The only few notable movements are the large, media-heavy providers such as YouTube, Shopify, and Twitter which climb to the top of the byte impact charts.
 

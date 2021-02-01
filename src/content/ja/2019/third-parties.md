@@ -1,6 +1,5 @@
 ---
-part_number: II
-chapter_number: 5
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: サードパーティ
 description: 2019 Web Almanacのサードパーティの章。サードパーティの使用目的、パフォーマンスへの影響、プライバシーへの影響について説明しています。
 authors: [patrickhulce]
@@ -10,7 +9,6 @@ editors: [bazzadp]
 translators: [ksakae]
 discuss: 1760
 results: https://docs.google.com/spreadsheets/d/1iC4WkdadDdkqkrTY32g7hHKhXs9iHrr3Bva8CuPjVrQ/
-queries: 05_Third_Parties
 patrickhulce_bio: Patrick Hulceは元Chromeのエンジニアであり、<a href="https://eris.ventures/">Eris Ventures</a>の創設者であり、<a href="https://github.com/GoogleChrome/lighthouse">Lighthouse</a>のコアチームメンバーであり、<a href="https://github.com/GoogleChrome/lighthouse-ci">Lighthouse CI</a>, <a href="https://www.meetup.com/DallasJS/">DallasJS</a> meetup の共同主催者、<a href="https://github.com/patrickhulce/third-party-web">third-party-web</a> プロジェクトの執筆者。
 featured_quote: オープンウェブは広大で、リンク可能で、相互運用可能な設計になっています。他の誰かの複雑なライブラリを取得し、単一の <code>&lt;link&gt;</code> または <code>&lt;script&gt;</code> 要素を使用して自分のサイトで使用する能力は、開発者の生産性を高め、素晴らしい新しいウェブ体験を可能にしました。本章では、2019年のWebにおけるサードパーティコードの普及と影響、サードパーティソリューションの人気につながるWebの利用パターン、Webのパフォーマンスとプライバシーの将来に対する潜在的な影響を検証します。
 featured_stat_1: 93%
@@ -154,7 +152,6 @@ featured_stat_label_3: サードパーティのバイト数
 全リクエストの49％がサードパーティです。ファーストパーティは2019年にも、51％と、ウェブリソースの大部分を占めるという王座にあと一歩まで迫ることができます。全リクエストの半分弱がサードパーティ製であるにもかかわらず、まったく含まれていないページが少数であることを考えると最もアクティブなサードパーティ製ユーザーは、自分の公平なシェアよりもかなり多くのことをしているに違いありません。実際、75％、90％、99％の割合で、ほぼすべてのページがサードパーティのコンテンツで構成されていることがわかります。実際、WixやSquareSpaceのような分散型WYSIWYGプラットフォームに大きく依存しているサイトでは、ルートドキュメントが唯一のファーストパーティのリクエストになっているかもしれません。
 
 <!-- insert graphic of metric 05_11 -->
-<!-- {{ figure_markup() }} -->
 
 各サードパーティプロバイダーが発行するリクエストの数も、カテゴリーによって大きく異なります。アナリティクスはウェブサイトで最も普及しているサードパーティのカテゴリーですが、サードパーティのネットワークリクエスト全体のわずか7％にすぎません。一方、広告は、サイト数が20％近く少ないにもかかわらず、サードパーティのネットワークリクエスト全体の25％を占めています。彼らの人気に比べてリソースへの影響が桁違いに大きいことは、残りのデータからも明らかにしていくテーマになるでしょう。
 
@@ -176,10 +173,7 @@ featured_stat_label_3: サードパーティのバイト数
   )
 }}
 
-<!--
-
-```<insert graphic of metric 05_12>```
--->
+<!--```<insert graphic of metric 05_12>```-->
 
 具体的なサードパーティプロバイダについては、リクエスト数リーダーボードの上位にいる大手プロバイダがバイト数でも登場しています。注目すべき動きは、YouTube、Shopify、Twitterのようなメディアを中心とした大手プロバイダがバイトインパクトチャートの上位にランクインしていることくらいです。
 

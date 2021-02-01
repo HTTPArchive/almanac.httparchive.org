@@ -62,20 +62,24 @@
 {% block open %}Открыть{% endblock %}
 {% block close %}Закрыть{% endblock %}
 
-{% macro figure_text(metadata, id) %}График {{ figure_id(metadata, id) }}.{% endmacro %}
-{% macro show_description(metadata, id) %}Показать описание графика {{ figure_id(metadata, id) }}{% endmacro %}
-{% macro hide_description(metadata, id) %}Скрыть описание графика {{ figure_id(metadata, id) }}{% endmacro %}
+{% macro figure_text(metadata, chapter_config, id) %}График {{ figure_id(metadata, chapter_config, id) }}.{% endmacro %}
+{% macro show_description(metadata, chapter_config, id) %}Показать описание графика {{ figure_id(metadata, chapter_config, id) }}{% endmacro %}
+{% macro hide_description(metadata, chapter_config, id) %}Скрыть описание графика {{ figure_id(metadata, chapter_config, id) }}{% endmacro %}
 
 {% block written_by_before %}Авторы:{% endblock %}
 {% block reviewed_by_before %}Редакторы:{% endblock %}
 {% block translated_by_before %}Переводчики:{% endblock %}
 {% block analysis_by_before %}Аналитики:{% endblock %}
 {% block edited_by_before %}Под редакцией:{% endblock %}
+{% block reviewed_and_analyzed_by_before %}Редакторы и Аналитики:{% endblock %}
+{% block analysis_and_editing_by_before %}Аналитики и Под редакцией:{% endblock %}
 {% block written_by_after %}{% endblock %}
 {% block reviewed_by_after %}{% endblock %}
 {% block translated_by_after %}{% endblock %}
 {% block analysis_by_after %}{% endblock %}
 {% block edited_by_after %}{% endblock %}
+{% block reviewed_and_analyzed_by_after %}{% endblock %}
+{% block analysis_and_editing_by_after %}{% endblock %}
 
 {% block unedited %}[Неотредактированная версия]{% endblock %}
 

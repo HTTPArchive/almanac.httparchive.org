@@ -1,6 +1,5 @@
 ---
-part_number: II
-chapter_number: 9
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: 效能
 description: 2020 Web Almanac 的效能章節涵蓋了 Core WebVitals、Lighthouse Performance Score、First Contentful Paint (FCP) 以及 Time to First Byte (TTFB)。
 authors: [thefoxis]
@@ -11,7 +10,6 @@ translators: [cybai]
 thefoxis_bio: Karolina 是 <a hreflang="en" href="https://calibreapp.com/">Calibre</a> 的產品設計主管。她主要負責打造最全面的速度監測平台。她同時也是為您蒐集效能相關訊息與資訊的 <a hreflang="en" lang="en" href="https://perf.email/">Performance Newsletter</a> 發起人之一。Karolina 也<a hreflang="en" href="https://calibreapp.com/blog/category/web-platform">時常寫有關於效能如何影響使用者體驗的文章</a>。
 discuss: 2045
 results: https://docs.google.com/spreadsheets/d/164FVuCQ7gPhTWUXJl1av5_hBxjncNi0TK8RnNseNPJQ/
-queries: 09_Performance
 featured_quote: 糟糕的效能並不只是讓使用者挫折或是對業務目標造成負面影響，它還築起了現實生活中人們與網路世界的屏障；今年的全球性疫情更凸顯了那些已經存在的屏障。
 featured_stat_1: 25%
 featured_stat_label_1: 擁有 Good 的 FCP 的手機版網頁
@@ -39,7 +37,7 @@ featured_stat_label_3: 在 Lighthouse 6 時效能分數（Performance Score）�
 
 新的分數演算法調整了新一代的效能衡量標準的優先度：<span lang="en">Core WebVitals</span>，以及降低 <span lang="en">First Contentful Paint</span> (FCP)、<span lang="en">Time to Interactive</span> (TTI) 以及 Speed Index 的優先度並減少他們的分數權重。此演算法現在也會個別強調三個層面的使用者體驗： **互動性**（<span lang="en">Total Blocking Time</span> 及 <span lang="en">Time to Interactive</span>）、**視覺穩定性**（<span lang="en">Cumulative Layout Shift</span>）以及**體感載入速度**（<span lang="en">First Contentful Paint</span>, Speed Index, <span lang="en">Largest Contentful Paint</span>）。
 
-此外，該分數會根據桌機和手機的不同來使用不一樣的參考標準做計算。 實際上來說，這代表對桌機的標準較嚴格（預期較快的網頁）而在手機上標準較寬鬆（因為手機效能比桌機較慢）。你可以透過 [<span lang="en">Lighthouse</span> 分數計算機](https://googlechrome.github.io/lighthouse/scorecalc/)來比較 <span lang="en">Lighthouse</span> 5 及 6 之間的差異。所以，在評分上到底做了什麼變動呢？
+此外，該分數會根據桌機和手機的不同來使用不一樣的參考標準做計算。 實際上來說，這代表對桌機的標準較嚴格（預期較快的網頁）而在手機上標準較寬鬆（因為手機效能比桌機較慢）。你可以透過 [<span lang="en">Lighthouse</span> 分數計算機](https://googlechrome.github.io/lighthouse/scorecalc/)來比較 <span lang="en">Lighthouse</span> 5 及 6 之間的差異。所以，在評分上到底做了什麼變動呢？
 
 {{ figure_markup(
   image="performance-change-in-lighthouse-score.png",
@@ -303,7 +301,7 @@ FID 分數的地理分佈結果證實了上一段綜合裝置圖表的結果。�
 
 與其他衡量標準相同，FCP 同樣也受到連線速度影響。在 3G 網路下，只有 2% 的人感受到 <span lang="en">Good</span> 體驗，而在 4G 則有 31%。雖然這並不是最理想的 FCP 效能，但相較於去年有些地區[已經改善了](../2019/performance#fcp-by-effective-connection-type)，但需要再次強調的是這可能也是受到了 <span lang="en">Good</span> 及 <span lang="en">Poor</span> 的重新分類。我們同樣可以看到 <span lang="en">Good</span> 及 <span lang="en">Poor</span> 增加、中階（<span lang="en">Needs Improvement</span>）網頁減少的趨勢。
 
-這個趨勢更進一步描繪出了數位差距，網路越慢且可能性能越差的裝置條件下的效能體驗越差。 改善慢速連線下的 FCP 與增強 TTFB 有直接關係，我們可以在 [Aggregate TTFB 根據連線方式來分析的 performance chart](#ttfb-by-connection-type) 觀察到 <span lang="en">Poor</span> TTFB = <span lang="en">Poor</span> FCP。
+這個趨勢更進一步描繪出了數位差距，網路越慢且可能性能越差的裝置條件下的效能體驗越差。 改善慢速連線下的 FCP 與增強 TTFB 有直接關係，我們可以在 [Aggregate TTFB 根據連線方式來分析的 performance chart](#ttfb-by-connection-type) 觀察到 <span lang="en">Poor</span> TTFB = <span lang="en">Poor</span> FCP。
 
 對 [hosting provider](https://ismyhostfastyet.com/) 或是 [CDN](https://www.cdnperf.com/) 的選擇對於速度也許會有加乘效果。選擇速度可能最快的服務會幫助改善 FCP 及 TTFB，在網路較慢的情況下更是如此。字體載入時間也深深影響了 FCP，所以[確保 Web Fonts 下載後是看得到的](https://web.dev/font-display/)也是值得一試的策略（特別是在較慢的網路通訊之下，下載這些資源都相當耗時）。
 
@@ -311,7 +309,7 @@ FID 分數的地理分佈結果證實了上一段綜合裝置圖表的結果。�
 
 ## <span lang="en">Time to First Byte</span> {time-to-first-byte}
 
-<span lang="en">Time to First Byte</span> (TTFB) 是計算初始 HTML request 發出到第一個 <span lang="en">byte</span> 被返回到瀏覽器之間的時間。 迅速地處理 <span lang="en">requests</span> 很快的會影響到其他效能衡量標準，因為他們不只會延遲畫面繪製，還會延遲下載資源。
+<span lang="en">Time to First Byte</span> (TTFB) 是計算初始 HTML request 發出到第一個 <span lang="en">byte</span> 被返回到瀏覽器之間的時間。 迅速地處理 <span lang="en">requests</span> 很快的會影響到其他效能衡量標準，因為他們不只會延遲畫面繪製，還會延遲下載資源。
 
 ### 根據不同裝置來分析 TTFB
 
@@ -381,7 +379,7 @@ TTFB 會受到網路延遲時間及網路連線方式的影響。網路延遲時
 
 使用者體驗是一個基於**種種因素**所產生的光譜。為了不能忽視低於效能衡量標準或是無法體驗適當效能的人們，我們一定要設法了解並分析各個面向的數據。每個網頁訪問都述說著各自的故事。我們個人的以及國家層級的經濟狀況也敘述著我們能夠負擔的裝置型態以及網路提供者（<span lang="en">internet provider</span>）。我們生活的地方也深深影響著我們的網路延遲時間（澳洲人時常感受到這個痛苦），而且該國家的經濟也反應了當地行動網路覆蓋率。我們會訪問怎麼樣的網頁呢？我們為什麼想訪問那些網頁呢？了解 context 非常的重要，這不僅僅是為了要分析資料，也是為了能夠開發有足夠同理心、在乎是否容易被訪問且提供了快速的使用者體驗的網頁給所有的使用者。
 
-以粗淺的分析來說，我們可以看到新 <span lang="en">Core WebVitals</span> 效能衡量標準有著樂觀的結果。**如果**我們不將 <span lang="en">Largest Contentful Paint</span> 的數據限縮到 <span lang="en">Poor</span> 體驗以及較慢的網路的話，至少在桌機及手機上，有一半的使用者體驗同時是好的。儘管新的衡量標準現在正有計劃在改善效能問題，但缺少對 FCP (<span lang="en">First Contentful Paint</span>) 以及 TTFB (<span lang="en">Time to First Byte</span>) 的改善方案仍然是個必須面對的嚴重問題。在這裡與 <span lang="en">Largest Contentful Paint</span> 相同網路型態 、快速網路連結以及桌機裝置的最不利。效能分數（<span lang="en">Performance Score</span>）也在速度方面呈現了下降的曲線（抑或是說，這比過去我們所測量過的數據更為準確）。
+以粗淺的分析來說，我們可以看到新 <span lang="en">Core WebVitals</span> 效能衡量標準有著樂觀的結果。**如果**我們不將 <span lang="en">Largest Contentful Paint</span> 的數據限縮到 <span lang="en">Poor</span> 體驗以及較慢的網路的話，至少在桌機及手機上，有一半的使用者體驗同時是好的。儘管新的衡量標準現在正有計劃在改善效能問題，但缺少對 FCP (<span lang="en">First Contentful Paint</span>) 以及 TTFB (<span lang="en">Time to First Byte</span>) 的改善方案仍然是個必須面對的嚴重問題。在這裡與 <span lang="en">Largest Contentful Paint</span> 相同網路型態 、快速網路連結以及桌機裝置的最不利。效能分數（<span lang="en">Performance Score</span>）也在速度方面呈現了下降的曲線（抑或是說，這比過去我們所測量過的數據更為準確）。
 
 根據這些數據所知，可能因為我們養尊處優（中至高收入的國家、高薪水且持有新又性能好的裝置）無法時常體會各式各樣的情境（例如較慢的網路連接速度），我們更應該要花心力來為這各式各樣的情境去改善效能。這同時也替我們強調了，我們在加速初始瀏覽器繪製（LCP 及 FCP）和資源傳送（TTFB）都還有許多未完成的事情。這些效能問題時常聽起來像前端的問題，但其實許多重要的改善是可以透過適當的 <span lang="en">infrastructure</span> 選擇或是在後端做出適當的修改所達成。再次強調，使用者體驗是由各式各樣因素所組成的光譜，所以我們必須一視同仁。
 

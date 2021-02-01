@@ -1,6 +1,5 @@
 ---
-part_number: I
-chapter_number: 2
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: JavaScript
 description: JavaScript chapter of the 2020 Web Almanac covering how much JavaScript we use on the web, compression, libraries and frameworks, loading, and source maps.
 authors: [tkadlec]
@@ -11,7 +10,6 @@ translators: []
 tkadlec_bio: Tim is a web performance consultant and trainer focused on building a web everyone can use. He is the author of High Performance Images (O'Reilly, 2016) and Implementing Responsive Design (New Riders, 2012). He writes about all things web at <a href="https://timkadlec.com/">timkadlec.com</a>. You can find him sharing his thoughts in a briefer format on Twitter at <a href="https://twitter.com/tkadlec">@tkadlec</a>.
 discuss: 2038
 results: https://docs.google.com/spreadsheets/d/1cgXJrFH02SHPKDGD0AelaXAdB3UI7PIb5dlS0dxVtfY/
-queries: 02_JavaScript
 featured_quote: JavaScript has come a long way from its humble origins as the last of the three web cornerstones—alongside CSS and HTML. Today, JavaScript has started to infiltrate a broad spectrum of the technical stack. It is no longer confined to the client-side and it's an increasingly popular choice for build tools and server-side scripting. JavaScript is also creeping its way into the CDN layer as well thanks to edge computing solutions.
 featured_stat_1: 1,897ms
 featured_stat_label_1: Median JS main thread time on mobile
@@ -28,10 +26,12 @@ JavaScript has come a long way from its humble origins as the last of the three 
 Developers love us some JavaScript. According to the Markup chapter, the `script` element is the [6th most popular HTML element](./markup) in use (ahead of elements like `p` and `i`, among countless others). We spend around 14 times as many bytes on it as we do on HTML, the building block of the web, and 6 times as many bytes as CSS.
 
 {{ figure_markup(
-  image="page-weight-per-content-type.png",
+  image="../page-weight/bytes-distribution-content-type.png",
   caption="Median page weight per content type.",
   description="Bar chart showing the median page weight for desktop and mobile pages across images, JS, CSS, and HTML. The median amounts of bytes for each content type on mobile pages are: 916 KB of images, 411 KB of JS, 62 KB of CSS, and 25 KB of HTML. Desktop pages tend to have significantly heavier images (about 1000 KB) and slightly higher amounts of JS (about 450 KB).",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQlN4Clqeb8aPc63h0J58WfBxoJluSFT6kXn45JGPghw1LGU28hzabMYAATXNY5st9TtjKrr2HnbfGd/pubchart?oid=1147150650&format=interactive"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQlN4Clqeb8aPc63h0J58WfBxoJluSFT6kXn45JGPghw1LGU28hzabMYAATXNY5st9TtjKrr2HnbfGd/pubchart?oid=1147150650&format=interactive",
+  sheets_gid="https://docs.google.com/spreadsheets/d/1wG4u0LV5PT9aN-XB1hixSFtI8KIDARTOCX0sp7ZT3h0/#378779486",
+  sql_file="../page-weight/bytes_per_type_2020.sql"
 ) }}
 
 But nothing is free, and that's especially true for JavaScript—all that code has a cost. Let's dig in and take a closer look at how much script we use, how we use it, and what the fallout is.
@@ -43,7 +43,7 @@ We mentioned that the `script` tag is the 6th most used HTML element. Let's dig 
 The median site (the 50th percentile) sends 444 KB of JavaScript when loaded on a desktop device, and slightly fewer (411 KB) to a mobile device.
 
 {{ figure_markup(
-  image="page-weight-per-content-type.png",
+  image="bytes-2020.png",
   caption="Distribution of the amount of JavaScript kilobytes loaded per page.",
   description="Bar chart showing the distribution of JavaScript bytes per page by about 10%. Desktop pages consistently load more JavaScript bytes than mobile pages. The 10th, 25th, 50th, 75th, and 90th percentiles for desktop are: 87 KB, 209 KB, 444 KB, 826 KB, and 1,322 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=441749673&format=interactive",
@@ -226,13 +226,13 @@ Of those external scripts, only 12.2% of them are loaded with the `async` attrib
 
 Considering that `defer` provides us with the best loading performance (by ensuring downloading the script happens in parallel to other work, and execution waits until after the page can be displayed), we would hope to see that percentage a bit higher. In fact, as it is that 6.0% is slightly inflated.
 
-Back when supporting IE8 and IE9 was more common, it was relatively common to use _both_ the `async` and `defer` attributes. With both attributes in place, any browser supporting both will use `async`. IE8 and IE9, which don't support `async` will fall back to defer.
+Back when supporting IE8 and IE9 was more common, it was relatively common to use _both_ the `async` and `defer` attributes. With both attributes in place, any browser supporting both will use `async`. IE8 and IE9, which don't support `async` will fall back to `defer`.
 
 Nowadays, the pattern is unnecessary for the vast majority of sites and any script loaded with the pattern in place will interrupt the HTML parser when it needs to be executed, instead of deferring until the page has loaded. The pattern is still used surprisingly often, with 11.4% of mobile pages serving at least one script with that pattern in place. In other words, at least some of the 6% of scripts that use `defer` aren't getting the full benefits of the `defer` attribute.
 
 There is an encouraging story here, though.
 
-Harry Roberts [tweeted about the antipattern on Twitter](https://twitter.com/csswizardry/status/1331721659498319873), which is what prompted us to check to see how frequently this was occurring in the wild. [Rick Viscomi checked to see who the top culprits were](https://twitter.com/rick_viscomi/status/1331735748060524551), and it turns out "stats.wp.com" was the source of the most common offenders. @Kraft from Automattic replied, and the pattern will now be [removed going forward](https://twitter.com/Kraft/status/1336772912414601224).
+Harry Roberts [tweeted about the anti-pattern on Twitter](https://twitter.com/csswizardry/status/1331721659498319873), which is what prompted us to check to see how frequently this was occurring in the wild. [Rick Viscomi checked to see who the top culprits were](https://twitter.com/rick_viscomi/status/1331735748060524551), and it turns out "stats.wp.com" was the source of the most common offenders. @Kraft from Automattic replied, and the pattern will now be [removed going forward](https://twitter.com/Kraft/status/1336772912414601224).
 
 One of the great things about the openness of the web is how one observation can lead to meaningful change and that's exactly what happened here.
 
@@ -315,7 +315,7 @@ Minification is a great way to help reduce file size, but compression is even mo
 
 85% of all JavaScript requests have some level of network compression applied. Gzip makes up the majority of that, with 65% of scripts having Gzip compression applied compared to 20% for Brotli (br). While the percentage of Brotli (which is more effective than Gzip) is low compared to its browser support, it's trending in the right direction, increasing by 5 percentage points in the last year.
 
-Once again, this appears to be an area where third-party scripts are actually doing better than first-party scripts. If we break the compression methods out by first- and third-party, we see that 24% of third-party scripts have Brotli applied, compared to only 15% of third-party scripts.
+Once again, this appears to be an area where third-party scripts are actually doing better than first-party scripts. If we break the compression methods out by first- and third-party, we see that 24% of third-party scripts have Brotli applied, compared to only 15% of first-party scripts.
 
 {{ figure_markup(
   image="compression-method-3p.png",
@@ -328,7 +328,7 @@ Once again, this appears to be an area where third-party scripts are actually do
 
 Third-party scripts are also least likely to be served without any compression at all: 12% of third-party scripts have neither Gzip nor Brotli applied, compared to 19% of first-party scripts.
 
-It's worth taking a closer look those scripts that _don't_ have compression applied. Compression becomes more efficient in terms of savings the more content it has to work with. In other words, if the file is tiny, sometimes the cost of compressing the file doesn't outweight the miniscule reduction in file size.
+It's worth taking a closer look at those scripts that _don't_ have compression applied. Compression becomes more efficient in terms of savings the more content it has to work with. In other words, if the file is tiny, sometimes the cost of compressing the file doesn't outweight the miniscule reduction in file size.
 
 {{ figure_markup(
   caption="Percent of uncompressed third-party JavaScript requests under 5 KB.",
@@ -352,8 +352,6 @@ HTTP Archive uses [Wappalyzer](./methodology#wappalyzer) to detect technologies 
 
 The popular libraries in use are largely unchanged from last year, with jQuery continuing to dominate usage and only one of the top 21 libraries falling out (lazy.js, replaced by DataTables). In fact, even the percentages of the top libraries has barely changed from last year.
 
-{# TODO(analysts): table? showing rank, library, percentage and last years rank #}
-
 {{ figure_markup(
   image="frameworks-libraries.png",
   caption="Adoption of the top JavaScript frameworks and libraries as a percent of pages.",
@@ -375,8 +373,6 @@ In fact, the dominance of jQuery is supported even further when you stop to cons
 ### Frameworks
 
 When we look at the frameworks, we also don't see much of a dramatic change in terms of adoption in the main frameworks that were highlighted last year. Vue.js has seen a significant increase, and AMP grew a bit, but most of them are more or less where they were a year ago.
-
-{# TODO(analysts): Compare same frameworks from last year's chapter to this year in bar chart? #}
 
 It's worth noting that the [detection issue that was noted last year still applies](https://github.com/AliasIO/wappalyzer/issues/2450), and still impacts the results here. It's possible that there _has_ been a significant change in popularity for a few more of these tools, but we just don't see it with the way the data is currently collected.
 
@@ -610,7 +606,7 @@ We get a very similar picture when looking at main thread time for pages where t
   sql_file="main_thread_time_frameworks.sql"
 ) }}
 
-Ember's mobile main thread time jumps out and kind of distorts the graph with how long it takes. Pulling it out makes the picture a bit easier to understand.
+Ember's mobile main thread time jumps out and kind of distorts the graph with how long it takes. (I spent some more time looking into this and it appears to be heavily influenced [by one particular platform using this framework inefficiently](https://timkadlec.com/remembers/2021-01-26-what-about-ember/), rather than an underlying problem with Ember itself.) Pulling it out makes the picture a bit easier to understand.
 
 {{ figure_markup(
   image="frameworks-main-thread-no-ember.png",

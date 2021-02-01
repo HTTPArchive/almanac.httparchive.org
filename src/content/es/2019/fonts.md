@@ -1,6 +1,5 @@
 ---
-part_number: I
-chapter_number: 6
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Fuentes
 description: Capítulo Fuentes del Almanaque Web de 2019 que cubre desde dónde se cargan las fuentes, formatos de fuente, rendimiento de carga de fuentes, fuentes variables y fuentes de color.
 authors: [zachleat]
@@ -10,7 +9,6 @@ editors: [bazzadp]
 translators: [c-torres]
 discuss: 1761
 results: https://docs.google.com/spreadsheets/d/108g6LXdC3YVsxmX1CCwrmpZ3-DmbB8G_wwgQHX5pn6Q/
-queries: 06_Fonts
 zachleat_bio: <i lang="en">Zach es un Desarrollador Web en <a href="https://www.filamentgroup.com/">Filament Group</a>. Actualmente está obsesionado con <a href="https://www.zachleat.com/web/fonts/">las fuentes web</a> y <a href="https://www.zachleat.com/web/introducing-eleventy/">generadores de sitios estáticos</a>. Su <a href="https://www.zachleat.com/web/speaking/">currículum de expositor</a> incluye charlas en ocho países diferentes en eventos como JAMstack_conf, Beyond Tellerrand, Smashing Conference, CSSConf, y <a href="https://www.zachleat.com/web/whitehouse/">La Casa Blanca</a>. Él también ayuda a organizar <a href="http://nejsconf.com/">NEJS CONF</a> y las reuniones de <a href="http://nebraskajs.com">NebraskaJS</a>.</i>
 featured_quote: Las fuentes web permiten una tipografía hermosa y funcional en la web. El uso de fuentes web no solo fortalece el diseño, sino que democratiza un subconjunto del diseño, ya que permite un acceso más fácil a aquellos que quizás no tengan habilidades de diseño particularmente sólidas. Sin embargo, a pesar de todo lo bueno que pueden hacer, las fuentes web también pueden causar un gran daño al rendimiento de su sitio si no se cargan correctamente.
 featured_stat_1: 74.9%
@@ -548,7 +546,7 @@ Echemos un vistazo a los valores de `font-display` que son populares:
   image="fig11.png",
   alt="Uso de valores font-display.",
   caption="Uso de valores <code>font-display</code>.",
-  description="Gráfico de barras que muestra el uso del estilo font-display. El 2,6% de las páginas móviles configuran este estilo en \"swap\", 1,5% en \"auto\", 0,7% en \"block\", 0,4% en \"fallback\", 0,2% en \"optional\" y 0,1% en \"swap\" entre comillas. que no es válido. La distribución de escritorio es similar, excepto que el uso de \"swap\" es menor en 0.4 puntos porcentuales y el uso \"auto\" es mayor en 0.1 puntos porcentuales.",
+  description="Gráfico de barras que muestra el uso del estilo font-display. El 2,6% de las páginas móviles configuran este estilo en `swap`, 1,5% en `auto`, 0,7% en `block`, 0,4% en `fallback`, 0,2% en `optional` y 0,1% en `swap` entre comillas. que no es válido. La distribución de escritorio es similar, excepto que el uso de `swap` es menor en 0.4 puntos porcentuales y el uso `auto` es mayor en 0.1 puntos porcentuales.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1988783738&format=interactive"
   )
 }}
@@ -652,7 +650,7 @@ Incluso con un 1.8%, esto fue más alto de lo esperado, aunque estoy emocionado 
   image="fig19.png",
   alt="Uso de los ejes font-variation-settings.",
   caption="Uso de los ejes <code>font-variation-settings</code>.",
-  description="Gráfico de barras que muestra el uso de la propiedad font-variation-settings. El 42% de las propiedades en las páginas de escritorio se establecen en el valor \"opsz\", el 32% en \"wght\", el 16% en \"wdth\", el 2% o menos en \"roun\", \"crsb\", \"slnt\", \"inln\" , y más. Las diferencias más notables entre las páginas de escritorio y móviles son el 26% de uso de \"opsz\", el 38% de \"wght\" y el 23% de \"wdth\".",
+  description="Gráfico de barras que muestra el uso de la propiedad font-variation-settings. El 42% de las propiedades en las páginas de escritorio se establecen en el valor `opsz`, el 32% en `wght`, el 16% en `wdth`, el 2% o menos en `roun`, `crsb`, `slnt`, `inln` , y más. Las diferencias más notables entre las páginas de escritorio y móviles son el 26% de uso de `opsz`, el 38% de `wght` y el 23% de `wdth`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=699343351&format=interactive"
   )
 }}

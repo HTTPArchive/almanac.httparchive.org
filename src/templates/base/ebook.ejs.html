@@ -8,12 +8,13 @@
     <% for (let chapter of part.chapters) { %>
 
     {% set metadata = <%- JSON.stringify(chapter.metadata) %> %}
-    {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
-    <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
+    {% set chapter_hero_dir = "/static/images/%s/%s/" % ("<%- chapter.hero_dir || '2019' %>", metadata.chapter) %}
+    {% set chapter_config = <%- JSON.stringify(chapter) %> %}
+    <section class="chapter" id="chapter-<%- chapter.chapter_number %>">
         <div class="body" id="{{ metadata.get('chapter') }}">
 
             <div class="subtitle">
-                {{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}
+                {{ self.part() }} {{ chapter_config.part }} {{ self.chapter() }} {{ chapter_config.chapter_number }}
             </div>
             <h1 class="title title-lg">
                 {{ metadata.get('title') }}
@@ -24,13 +25,13 @@
 
             <!-- Show large image for large screens and high density screens and use webp when supported -->
             <picture>
-                <source media="(min-width: 327px)" type="image/webp" srcset="/static/images/2019/{{ metadata.chapter }}/hero_lg.webp" />
-                <source media="(min-width: 327px)" type="image/jpeg" srcset="/static/images/2019/{{ metadata.chapter }}/hero_lg.jpg" />
-                <source type="image/webp" srcset="/static/images/2019/{{ metadata.chapter }}/hero_lg.webp 2x" />
-                <source type="image/jpeg" srcset="/static/images/2019/{{ metadata.chapter }}/hero_lg.jpg 2x" />
-                <source type="image/webp" srcset="/static/images/2019/{{ metadata.chapter }}/hero_sm.webp" />
-                <source type="image/jpeg" srcset="/static/images/2019/{{ metadata.chapter }}/hero_sm.jpg" />
-                <img src="/static/images/2019/{{ metadata.chapter }}/hero_lg.jpg" class="content-banner" alt="" width="866" height="433" />
+                <source media="(min-width: 327px)" type="image/webp" srcset="{{ chapter_hero_dir }}hero_lg.webp" />
+                <source media="(min-width: 327px)" type="image/jpeg" srcset="{{ chapter_hero_dir }}hero_lg.jpg" />
+                <source type="image/webp" srcset="{{ chapter_hero_dir }}hero_lg.webp 2x" />
+                <source type="image/jpeg" srcset="{{ chapter_hero_dir }}hero_lg.jpg 2x" />
+                <source type="image/webp" srcset="{{ chapter_hero_dir }}hero_sm.webp" />
+                <source type="image/jpeg" srcset="{{ chapter_hero_dir }}hero_sm.jpg" />
+                <img src="{{ chapter_hero_dir }}hero_lg.jpg" class="content-banner" alt="" width="866" height="433" />
             </picture>
 
             <div class="byline">{{ self.written_by_before() }}
@@ -40,23 +41,25 @@
                 {% endfor %}{{ self.written_by_after() }}
             </div>
 
-            <div class="byline reviewers">{{ self.reviewed_by_before() }}
+            {% if metadata.get('reviewers') and metadata.get('reviewers') | length >= 1 %}
+            <div class="byline reviewers">{% if metadata.get('reviewers') == metadata.get('analysts') %}{{ self.reviewed_and_analyzed_by_before() }}{% else %}{{ self.reviewed_by_before() }}{% endif %}
                 {% for reviewer in metadata.get('reviewers') %}
                 <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{% if loop.length > 2 %}{{ self.comma() if loop.index < loop.length - 1 }}{{ self.oxford_comma() if loop.index == loop.length - 1 }}{% endif %}
                 {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %}
-                {% endfor %}{{ self.reviewed_by_after() }}
-            </div>
-
-            {% if metadata.get('analysts') and metadata.get('analysts') | length >= 1 %}
-            <div class="byline analysts">{{ self.analysis_by_before() }}
-                {% for analyst in metadata.get('analysts') %}
-                <a class="analyst" href="#contributors-{{ analyst }}">{{ config.contributors[analyst].name if analyst in config.contributors else analyst }}</a>{% if loop.length > 2 %}{{ self.comma() if loop.index < loop.length - 1 }}{{ self.oxford_comma() if loop.index == loop.length - 1 }}{% endif %}
-                {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %}
-                {% endfor %}{{ self.analysis_by_after() }}
+                {% endfor %}{% if metadata.get('reviewers') == metadata.get('analysts') %}{{ self.reviewed_and_analyzed_by_after() }}{% else %}{{ self.reviewed_by_after() }}{% endif %}
             </div>
             {% endif %}
 
-            {% if metadata.get('editors') and metadata.get('editors') | length >= 1 %}
+            {% if metadata.get('analysts') and metadata.get('analysts') | length >= 1 and metadata.get('analysts') != metadata.get('reviewers') %}
+            <div class="byline analysts">{% if metadata.get('editors') | length >= 1 and metadata.get('analysts') == metadata.get('editors') %}{{ self.analysis_and_editing_by_before() }}{% else %}{{ self.analysis_by_before() }}{% endif %}
+                {% for analyst in metadata.get('analysts') %}
+                <a class="analyst" href="#contributors-{{ analyst }}">{{ config.contributors[analyst].name if analyst in config.contributors else analyst }}</a>{% if loop.length > 2 %}{{ self.comma() if loop.index < loop.length - 1 }}{{ self.oxford_comma() if loop.index == loop.length - 1 }}{% endif %}
+                {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %}
+                {% endfor %}{% if metadata.get('editors') | length >= 1 and metadata.get('analysts') == metadata.get('editors') %}{{ self.analysis_and_editing_by_after() }}{% else %}{{ self.analysis_by_after() }}{% endif %}
+            </div>
+            {% endif %}
+
+            {% if metadata.get('editors') and metadata.get('editors') | length >= 1 and (metadata.get('reviewers') == metadata.get('analysts') or metadata.get('editors') != metadata.get('analysts')) %}
             <div class="byline editors">{{ self.edited_by_before() }}
                 {% for editor in metadata.get('editors') %}
                 <a class="editor" href="#contributors-{{ editor }}">{{ config.contributors[editor].name if editor in config.contributors else editor }}</a>{% if loop.length > 2 %}{{ self.comma() if loop.index < loop.length - 1 }}{{ self.oxford_comma() if loop.index == loop.length - 1 }}{% endif %}

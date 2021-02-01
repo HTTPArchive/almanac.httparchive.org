@@ -1,6 +1,5 @@
 ---
-part_number: II
-chapter_number: 8
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Accessibility
 description: Accessibility chapter of the 2020 Web Almanac covering ease of reading, media, ease of navigation, and compatibility with assistive technologies.
 authors: [oluoluoxenfree, alextait1]
@@ -12,7 +11,6 @@ oluoluoxenfree_bio: Olu Niyi-Awosusi is a software engineer at the FT who loves 
 alextait1_bio: Alex Tait is a developer, consultant and educator whose passion lies in the intersection of accessibility and modern JavaScript within interface architecture and design systems. As a developer, she believes that inclusion driven development practices with accessibility at the forefront lead to better products for everyone. As a consultant and strategist, she believes that less is more, and that new feature scope creep cannot be prioritized over core feature parity for disabled users. As an educator, she believes in removing barriers to information so that tech can become a more diverse, equitable and inclusive industry.
 discuss: 2044
 results: https://docs.google.com/spreadsheets/d/1UjEBhq0TfYxUpdpq5IuxjeHB4yqhJq4NOKEd6Dwwrdk/
-queries: 08_Accessibility
 featured_quote: As an industry it is time that we acknowledge the story told by the numbers in this chapter; we are failing disabled people.
 featured_stat_1: 15,357,625
 featured_stat_label_1: Longest known <code>alt</code> text length
@@ -60,7 +58,7 @@ The higher the page contrast, the easier it is for people to view text-based con
 {{ figure_markup(
   image="sites-with-sufficient-color-contrast-2019-2020.png",
   caption="Sites with sufficient color contrast.",
-  description="Bar chart showing percentage of sites with sufficient color contrast in 2019 and 2020. 22.04% of sites had sufficient color contrast in 2029 decreasing to 21.06% in 2020, meaning 77.96% had insufficient color contrast in 2019 increasing to 78.94% in 2020.",
+  description="Bar chart showing percentage of sites with sufficient color contrast in 2019 and 2020. 22.04% of sites had sufficient color contrast in 2019 decreasing to 21.06% in 2020, meaning 77.96% had insufficient color contrast in 2019 increasing to 78.94% in 2020.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSjkB_XAYiwkYrMuoXp44mdqMGJVDUkTr_48ELozY72Mdv3OlxeWV9ysbDY9bs6hA7LnJTrHar9aZlM/pubchart?oid=1827221015&format=interactive",
   sheets_gid="1115686547",
   sql_file="color_contrast.sql"
@@ -91,7 +89,7 @@ We found that 29.34% of desktop pages and 30.66% of mobile pages attempt to disa
 
 {{ figure_markup(
   caption="Desktop sites have a valid `lang` attribute.",
-  content="77.67%.",
+  content="77.67%",
   classes="big-number",
   sheets_gid="812908021",
   sql_file="02_05.sql"
@@ -110,7 +108,7 @@ In 1995, [HTML 2.0](https://www.w3.org/MarkUp/html-spec/html-spec_5.html#SEC5.10
 
 {{ figure_markup(
   caption='Mobiles sites passing the "images with `alt` text" Lighthouse audit.',
-  content="54%.",
+  content="54%",
   classes="big-number",
   sheets_gid="580400436",
   sql_file="lighthouse_a11y_audits.sql"
@@ -242,7 +240,7 @@ The Web Content Accessibility Guidelines has a criteria [2.2.2 Pause, Stop, Hide
 
 {{ figure_markup(
   image="common-video-attributes.png",
-  alt="Most common `<video>` attributes.",
+  alt="Most common video attributes.",
   caption="Most common `<video>` attributes.",
   description="Bar chart showing the top 5 attributes on the `<video>` element on desktop with `loop` on 58.43% of videos, `autoplay` on 56.98%, `muted` on 56.13%, `class` on 51.79%, and `preload` on 45.21% of videos.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSjkB_XAYiwkYrMuoXp44mdqMGJVDUkTr_48ELozY72Mdv3OlxeWV9ysbDY9bs6hA7LnJTrHar9aZlM/pubchart?oid=1226671706&format=interactive",
@@ -372,7 +370,7 @@ HTML5 introduced many new native elements, all which have [implicit semantics](h
 {{ figure_markup(
   image="common-aria-roles.png",
   caption="Top ten most common ARIA roles.",
-  description="Bar chart showing the top 10 most common ARIA roles on desktop and mobeil with `button` at 25.2% for desktop and 24.5% for mobile, `navigation` at 22.1% and 21.8 respectively, `dialog` at 19.0% and 18.2%, `search` at 17.9% and 17.6%, `presentation` at 17.8% and 16.3%, `main` at 16.0% for both, `banner` at 14.8% for both, `contentinfo` at 12.1% and 11.9%, `img` at 8.5% and 8.0%, and `tablist` at 7.0% and 6.6%.",
+  description="Bar chart showing the top 10 most common ARIA roles on desktop and mobile with `button` at 25.2% for desktop and 24.5% for mobile, `navigation` at 22.1% and 21.8 respectively, `dialog` at 19.0% and 18.2%, `search` at 17.9% and 17.6%, `presentation` at 17.8% and 16.3%, `main` at 16.0% for both, `banner` at 14.8% for both, `contentinfo` at 12.1% and 11.9%, `img` at 8.5% and 8.0%, and `tablist` at 7.0% and 6.6%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSjkB_XAYiwkYrMuoXp44mdqMGJVDUkTr_48ELozY72Mdv3OlxeWV9ysbDY9bs6hA7LnJTrHar9aZlM/pubchart?oid=2002759694&format=interactive",
   sheets_gid="39937976",
   sql_file="common_aria_role.sql"
@@ -407,7 +405,7 @@ We found that 22.06% of desktop pages and 21.76% of mobile pages have at least o
 
 #### Dialog modals
 
-There are many potential accessibility barriers associated with dialog modals. We recommend reading <[Scott O'Hara](https://twitter.com/scottohara)'s article [Having an Open Dialog](https://www.scottohara.me/blog/2019/03/05/open-dialog.html) for more context.
+There are many potential accessibility barriers associated with dialog modals. We recommend reading [Scott O'Hara](https://twitter.com/scottohara)'s article [Having an Open Dialog](https://www.scottohara.me/blog/2019/03/05/open-dialog.html) for more context.
 
 We are pleased to report that 19.01% of desktop pages and 18.21% of mobile pages have at least one occurrence of `role="dialog"` which is up from about 8% in 2019. It is worth noting some of the increase is probably due to changes in how this metric was measured. This could also suggest that more developers are considering accessibility when building dialogs and potentially that frameworks and associated packages may be implementing more accessible dialog patterns as well. However, making a dialog modal accessible requires a lot more than using the `dialog` role. Focus management, proper keyboard support, and screen reader exposure all need to be addressed.
 
@@ -439,7 +437,7 @@ In this pattern, a parent container has a `role="tablist"` with children element
   image="role-tab-panel.png",
   alt="Element with the tabpanel role",
   caption='Element with the `tabpanel` role. ([Source: W3C](https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html))',
-  description='Screenshot showing an example tabpanel tab panel (`role="tabpanel"`) where the content of one one tab is highlighted.',
+  description='Screenshot showing an example tabpanel (`role="tabpanel"`) where the content of one tab is highlighted.',
   width=346,
   height=335
 ) }}
@@ -470,7 +468,7 @@ ARIA attributes can be assigned to HTML elements to enhance the accessibility of
 
 The browser's accessibility tree has a computation system that assigns the accessible name (if there is one) to a control, widget, group, or landmark such that it can be announced by assistive technology. There is a specificity ranking that happens to determine which value is assigned to the accessible name.
 
-The accessible name can be derived from an element's content (such as button text), an attribute (such as an image `alt` text value), or an associated element (such as a programmatically associated label for a form control. For more information about accessible names see Léonie Watson's article, [What is an accessible name?](https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/)
+The accessible name can be derived from an element's content (such as button text), an attribute (such as an image `alt` text value), or an associated element (such as a programmatically associated label for a form control). For more information about accessible names see Léonie Watson's article, [What is an accessible name?](https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/)
 
 We can also use ARIA to provide accessible names for elements. There are two ARIA attributes that accomplish this, [aria-label](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA14.html), [aria-labelledby](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA16.html). Either of these attributes will "win" the accessible name computation and override the natively derived accessible name, so use them with caution and be sure to test with a screen reader or look at the accessibility tree to confirm that the accessible name is what was expected. When using ARIA to name an element, it is important to ensure that the [WCAG 2.5.3, Label in Name](https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html) criterion has not been violated, which expects visible labels to be at least a part of its accessible name.
 
@@ -486,7 +484,7 @@ The [`aria-describedby`](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA1.htm
 
 #### Hiding content
 
-There are several ways to ensure that assistive technology will not discover content. We can leverage CSS `display:none`; or `visibility:hidden;` to omit the elements from the accessibility tree. If an author wishes to hide content from screen readers specifically they can use `aria-hidden="true"`. We found that 48.09% of desktop pages and 48.23% of mobile pages had at least one instance of an element with the `aria-hidden` attribute.
+There are several ways to ensure that assistive technology will not discover content. We can leverage CSS `display:none` or `visibility:hidden` to omit the elements from the accessibility tree. If an author wishes to hide content from screen readers specifically they can use `aria-hidden="true"`. We found that 48.09% of desktop pages and 48.23% of mobile pages had at least one instance of an element with the `aria-hidden` attribute.
 
 These techniques are particularly helpful when something in the visual interface is redundant or unhelpful to assistive technology users. It should be used thoughtfully as it is essential to deliver feature parity for all users. Avoid using it to skip over content that is challenging to make accessible.
 

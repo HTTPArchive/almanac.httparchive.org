@@ -62,20 +62,24 @@ La nostra missione è combinare le statistiche grezze e le tendenze del HTTP Arc
 {% block open %}Apri{% endblock %}
 {% block close %}Chiudi{% endblock %}
 
-{% macro figure_text(metadata, id) %}Figura {{ figure_id(metadata, id) }}.{% endmacro %}
-{% macro show_description(metadata, id) %}Mostra la descrizione della Figura {{ figure_id(metadata, id) }}{% endmacro %}
-{% macro hide_description(metadata, id) %}Nascondi la descrizione della Figura {{ figure_id(metadata, id) }}{% endmacro %}
+{% macro figure_text(metadata, chapter_config, id) %}Figura {{ figure_id(metadata, chapter_config, id) }}.{% endmacro %}
+{% macro show_description(metadata, chapter_config, id) %}Mostra la descrizione della Figura {{ figure_id(metadata, chapter_config, id) }}{% endmacro %}
+{% macro hide_description(metadata, chapter_config, id) %}Nascondi la descrizione della Figura {{ figure_id(metadata, chapter_config, id) }}{% endmacro %}
 
 {% block written_by_before %}Scritta da{% endblock %}
 {% block reviewed_by_before %}Revisionata da{% endblock %}
 {% block translated_by_before %}Tradotta da{% endblock %}
 {% block analysis_by_before %}Analizzata da{% endblock %}
 {% block edited_by_before %}Modificato da{% endblock %}
+{% block reviewed_and_analyzed_by_before %}Revisionata e analizzata da{% endblock %}
+{% block analysis_and_editing_by_before %}Analizzata e modificato da{% endblock %}
 {% block written_by_after %}{% endblock %}
 {% block reviewed_by_after %}{% endblock %}
 {% block translated_by_after %}{% endblock %}
 {% block analysis_by_after %}{% endblock %}
 {% block edited_by_after %}{% endblock %}
+{% block reviewed_and_analyzed_by_after %}{% endblock %}
+{% block analysis_and_editing_by_after %}{% endblock %}
 
 {% block unedited %}[Inedito]{% endblock %}
 

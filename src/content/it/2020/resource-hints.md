@@ -1,6 +1,5 @@
 ---
-part_number: IV
-chapter_number: 21
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Resource Hints
 description: Capitolo Resource Hints del Web Almanac 2020 che copre l'utilizzo di dns-prefetch, preconnect, preload, prefetch, Priority Hints, and native lazy loading.
 authors: [Zizzamia]
@@ -11,7 +10,6 @@ translators: [chefleo]
 Zizzamia_bio: Leonardo è uno Staff Software Engineer presso <a href="https://www.coinbase.com/">Coinbase</a>, leader nel web performance e iniziative di crescita. È a cura della <a href="https://ngrome.io">conferenza NGRome</a>. Leo gestisce anche la libreria <a href="https://github.com/Zizzamia/perfume.js"> Perfume.js </a>, che aiuta le aziende a stabilire le priorità delle roadmap e a prendere decisioni aziendali migliori attraverso la performance analytics.
 discuss: 2057
 results: https://docs.google.com/spreadsheets/d/1lXjd8ogB7kYfG09eUdGYXUlrMjs4mq1Z7nNldQnvkVA/
-queries: 21_Resource_Hints
 featured_quote: Durante lo scorso anno, le resource hints sono aumentati nell'adozione e sono diventati API essenziali per gli sviluppatori per avere un controllo più granulare su molti aspetti delle priorità delle risorse e, in definitiva, sull'user experience.
 featured_stat_1: 33%
 featured_stat_label_1: Siti che utilizzano <code>dns-prefetch</code>
@@ -170,7 +168,7 @@ Con `preload` possono essere precaricati molti diversi tipi di contenuto e la <a
 {{ figure_markup(
   image="mobile-as-attribute-values-by-year.png",
   caption="Valori dell'attributo `as` mobile per anno.",
-  description="Un grafico a barre che confronta il tasso di valori dell'attributo `as` sulle pagine mobile del 2019 e del 2020, suddiviso per valore dell'attributo `as`. La maggior parte dei valori `as` sono \"script\" con l'81% di utilizzo nel 2019 e il 64% nel 2020. L'utilizzo di \"script\" è diminuito del 17% anno su anno, mentre tutti gli altri valori sono aumentati. \"non impostato\" aumentato dell'8%, \"font\" aumentato del 5%, \"style\" aumentato del 2%, il resto dei valori notevoli sono dell'1% o meno per entrambi gli anni.",
+  description="Un grafico a barre che confronta il tasso di valori dell'attributo `as` sulle pagine mobile del 2019 e del 2020, suddiviso per valore dell'attributo `as`. La maggior parte dei valori `as` sono `script` con l'81% di utilizzo nel 2019 e il 64% nel 2020. L'utilizzo di `script` è diminuito del 17% anno su anno, mentre tutti gli altri valori sono aumentati. `non impostato` aumentato dell'8%, `font` aumentato del 5%, `style` aumentato del 2%, il resto dei valori notevoli sono dell'1% o meno per entrambi gli anni.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYAbLxN40s6mNR1jo0XDe_V4siN8TAsx2mryMp5IQmlJ-9O9eJxYROz7Rw6ozyFP6hlIZHxxh95GqX/pubchart?oid=903180926&format=interactive",
   sheets_gid="1829901599",
   sql_file="as_attribute_by_year.sql"
@@ -239,8 +237,6 @@ Infine, l'esecuzione dell'audit "<a hreflang="en" href="https://web.dev/uses-rel
 ### Native Lazy Loading
 
 Ora festeggiamo il primo anno dell'API <a hreflang="en" href="https://addyosmani.com/blog/lazy-loading/">Native Lazy Loading</a>, che al momento della pubblicazione ha già superato il <a hreflang="en" href="https://caniuse.com/loading-lazy-attr">72%</a> supporto browser. Questa nuova API può essere utilizzata per posticipare il caricamento di iframe e immagini sulla pagina finché l'utente non scorre accanto a essi. Ciò può ridurre l'utilizzo dei dati, l'utilizzo della memoria e velocizzare i contenuti. Attivare il lazy load è semplice come aggiungere `loading = lazy` sugli elementi `<iframe>` o `<img>`.
-
-La percentuale di pagine che utilizzano il Native Lazy Loading.
 
 {{ figure_markup(
   caption="La percentuale di pagine che utilizzano il native lazy loading.",
@@ -334,7 +330,7 @@ Finora solo lo 0,77% dei siti web ha adottato questo nuovo hint poiché Chrome s
 L'utilizzo maggiore è con elementi di script, il che non sorprende poiché il numero di file JS primari e di terze parti continua a crescere.
 
 {{ figure_markup(
-  caption="La percentuale di risorse nei dispositivi mobile con un hint che utilizza la \"low\" priority.",
+  caption="La percentuale di risorse nei dispositivi mobile con un hint che utilizza la `low` priority.",
   content="16%",
   classes="big-number",
   sheets_gid="1098063134",

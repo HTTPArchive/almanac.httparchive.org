@@ -1,6 +1,5 @@
 ---
-part_number: II
-chapter_number: 8
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: セキュリティ
 description: トランスポート・レイヤー・セキュリティ(TLS()、混合コンテンツ、セキュリティヘッダ、Cookie、サブリソース完全性を網羅した2019年版Web Almanacのセキュリティの章。
 authors: [ScottHelme, arturjanc]
@@ -10,7 +9,6 @@ editors: [bazzadp]
 translators: [ksakae]
 discuss: 1763
 results: https://docs.google.com/spreadsheets/d/1Zq2tQhPE06YZUcbzryRrBE6rdZgHHlqEp2XcgS37cm8/
-queries: 08_Security
 ScottHelme_bio: Scott Helmeはセキュリティ研究者であり、<a href="https://report-uri.com">report-uri.com</a> と <a href="https://securityheaders.com">securityheaders.com</a> の創設者でもあります。Twitterでは、<a href="https://twitter.com/Scott_Helme">@Scott_Helme</a>でセキュリティの話をしたり、<a href="https://scotthelme.co.uk">scotthelme.co.uk</a>でブログを書いたりしています。
 arturjanc_bio: Artur Jancは Google の情報セキュリティエンジニアで、GoogleとWeb全体のWebプラットフォームのセキュリティメカニズムの設計と採用に取り組んでいます。<a href="https://twitter.com/arturjanc">@arturjanc on Twitter</a>として、インターネット上の人々と議論しています。
 featured_quote: Webの機能が向上し、より多くの機密データへのアクセスが可能になるにつれ、開発者が自社のアプリケーションを保護するためにWebセキュリティ機能を採用することがますます重要になってきています。この章で紹介するセキュリティ機能は、Webプラットフォーム自体に組み込まれた防御機能であり、すべてのWeb制作者が利用できます。

@@ -62,20 +62,24 @@ Notre mission est de combiner les statistiques brutes et les tendances de HTTP A
 {% block open %}Ouvrez{% endblock %}
 {% block close %}Fermez{% endblock %}
 
-{% macro figure_text(metadata, id) %}Figure {{ figure_id(metadata, id) }}.{% endmacro %}
-{% macro show_description(metadata, id) %}Afficher la description de la figure {{ figure_id(metadata, id) }}{% endmacro %}
-{% macro hide_description(metadata, id) %}Masquer la description de la figure  {{ figure_id(metadata, id) }}{% endmacro %}
+{% macro figure_text(metadata, chapter_config, id) %}Figure {{ figure_id(metadata, chapter_config, id) }}.{% endmacro %}
+{% macro show_description(metadata, chapter_config, id) %}Afficher la description de la figure {{ figure_id(metadata, chapter_config, id) }}{% endmacro %}
+{% macro hide_description(metadata, chapter_config, id) %}Masquer la description de la figure  {{ figure_id(metadata, chapter_config, id) }}{% endmacro %}
 
 {% block written_by_before %}Écrit par{% endblock %}
 {% block reviewed_by_before %}Relu par{% endblock %}
 {% block translated_by_before %}Traduit par{% endblock %}
 {% block analysis_by_before %}Analysé par{% endblock %}
 {% block edited_by_before %}Edité par{% endblock %}
+{% block reviewed_and_analyzed_by_before %}Relu et analysé par{% endblock %}
+{% block analysis_and_editing_by_before %}Analysé et edité par{% endblock %}
 {% block written_by_after %}{% endblock %}
 {% block reviewed_by_after %}{% endblock %}
 {% block translated_by_after %}{% endblock %}
 {% block analysis_by_after %}{% endblock %}
 {% block edited_by_after %}{% endblock %}
+{% block reviewed_and_analyzed_by_after %}{% endblock %}
+{% block analysis_and_editing_by_after %}{% endblock %}
 
 {% block unedited %}[non corrigé]{% endblock %}
 
@@ -94,14 +98,14 @@ Notre mission est de combiner les statistiques brutes et les tendances de HTTP A
 {% block accessibility_statement %}Déclaration d’accessibilité{% endblock %}
 
 {% block featured_chapter %}Focus sur le chapitre…{% endblock %}
-{% block featured_chapter_last_year %}Focus sur le chapitre<br />de le {{ year|int-1 }} Web Almanac{% endblock %}
+{% block featured_chapter_last_year %}Focus sur le chapitre<br />du Web Almanac {{ year|int-1 }}{% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
 {% macro read_chapter(chapter) %}Lire le chapitre&nbsp;: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
 {% endif %}
 {% if not read_last_years_chapter %}
-{% macro read_last_years_chapter(chapter) %}Lire le {{ year|int-1 }} chapitre&nbsp;: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
+{% macro read_last_years_chapter(chapter) %}Lire le chapitre {{ year|int-1 }}&nbsp;: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
 {% endif %}
 
 {% block contributors_description %}
@@ -123,9 +127,9 @@ Le Web Almanac a été rendu possible grâce au travail acharné de la communaut
 {% block appendices %}Annexes{% endblock %}
 
 {% block ebook_title %}Ebook{% endblock %}
-{% block ebook_download_short %}Ebook PDF ({{ ebook_size_in_mb }}MB){% endblock %}
-{% block ebook_download %}Download the entire {{ year }} Web Almanac in PDF format ({{ ebook_size_in_mb }}MB){% endblock %}
-{% block ebook_download_note %}(generated with <a href="https://www.princexml.com/">www.princexml.com</a>){% endblock %}
+{% block ebook_download_short %}Ebook PDF ({{ ebook_size_in_mb }}&nbsp;Mo){% endblock %}
+{% block ebook_download %}Télécharget tout le Web Almanac {{ year }} au format PDF ({{ ebook_size_in_mb }}&nbsp;Mo){% endblock %}
+{% block ebook_download_note %}(produit par <a href="https://www.princexml.com/">www.princexml.com</a>){% endblock %}
 
 {%
   set localizedPartTitles = {

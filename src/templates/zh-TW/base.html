@@ -62,20 +62,24 @@
 {% block open %}開啟{% endblock %}
 {% block close %}關閉{% endblock %}
 
-{% macro figure_text(metadata, id) %}圖表 {{ figure_id(metadata, id) }}.{% endmacro %}
-{% macro show_description(metadata, id) %}顯示圖表說明 {{ figure_id(metadata, id) }}{% endmacro %}
-{% macro hide_description(metadata, id) %}隱藏圖表說明 {{ figure_id(metadata, id) }}{% endmacro %}
+{% macro figure_text(metadata, chapter_config, id) %}圖表 {{ figure_id(metadata, chapter_config, id) }}.{% endmacro %}
+{% macro show_description(metadata, chapter_config, id) %}顯示圖表說明 {{ figure_id(metadata, chapter_config, id) }}{% endmacro %}
+{% macro hide_description(metadata, chapter_config, id) %}隱藏圖表說明 {{ figure_id(metadata, chapter_config, id) }}{% endmacro %}
 
 {% block written_by_before %}作者：{% endblock %}
 {% block reviewed_by_before %}審稿者：{% endblock %}
 {% block translated_by_before %}翻譯者：{% endblock %}
 {% block analysis_by_before %}分析者：{% endblock %}
 {% block edited_by_before %}編輯：{% endblock %}
+{% block reviewed_and_analyzed_by_before %}審稿者和分析者：{% endblock %}
+{% block analysis_and_editing_by_before %}分析者和編輯：{% endblock %}
 {% block written_by_after %}{% endblock %}
 {% block reviewed_by_after %}{% endblock %}
 {% block translated_by_after %}{% endblock %}
 {% block analysis_by_after %}{% endblock %}
 {% block edited_by_after %}{% endblock %}
+{% block reviewed_and_analyzed_by_after %}{% endblock %}
+{% block analysis_and_editing_by_after %}{% endblock %}
 
 {% block unedited %}[Unedited]{% endblock %}
 

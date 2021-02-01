@@ -62,20 +62,24 @@
 {% block open %}Open{% endblock %}
 {% block close %}Sluit{% endblock %}
 
-{% macro figure_text(metadata, id) %}Figuur {{ figure_id(metadata, id) }}.{% endmacro %}
-{% macro show_description(metadata, id) %}Toon beschrijving van Figuur {{ figure_id(metadata, id) }}{% endmacro %}
-{% macro hide_description(metadata, id) %}Verberg beschrijving van Figuur {{ figure_id(metadata, id) }}{% endmacro %}
+{% macro figure_text(metadata, chapter_config, id) %}Figuur {{ figure_id(metadata, chapter_config, id) }}.{% endmacro %}
+{% macro show_description(metadata, chapter_config, id) %}Toon beschrijving van Figuur {{ figure_id(metadata, chapter_config, id) }}{% endmacro %}
+{% macro hide_description(metadata, chapter_config, id) %}Verberg beschrijving van Figuur {{ figure_id(metadata, chapter_config, id) }}{% endmacro %}
 
 {% block written_by_before %}Geschreven door{% endblock %}
 {% block reviewed_by_before %}Beoordeeld door{% endblock %}
 {% block translated_by_before %}Vertaald door{% endblock %}
 {% block analysis_by_before %}Geanalyseerd door{% endblock %}
 {% block edited_by_before %}Bewerkt door{% endblock %}
+{% block reviewed_and_analyzed_by_before %}Beoordeeld en geanalyseerd door{% endblock %}
+{% block analysis_and_editing_by_before %}Geanalyseerd en bewerkt door{% endblock %}
 {% block written_by_after %}{% endblock %}
 {% block reviewed_by_after %}{% endblock %}
 {% block translated_by_after %}{% endblock %}
 {% block analysis_by_after %}{% endblock %}
 {% block edited_by_after %}{% endblock %}
+{% block reviewed_and_analyzed_by_after %}{% endblock %}
+{% block analysis_and_editing_by_after %}{% endblock %}
 
 {% block unedited %}[Onuitgegeven]{% endblock %}
 

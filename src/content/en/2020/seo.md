@@ -1,6 +1,5 @@
 ---
-part_number: II
-chapter_number: 7
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: SEO
 description: SEO chapter of the 2020 Web Almanac covering content, meta tags, indexability, linking, speed, structured data, internationalization, SPAs, AMP and security.
 authors: [aleyda, ipullrank, fellowhuman1101]
@@ -13,7 +12,6 @@ ipullrank_bio: An artist and a technologist, all rolled into one, Michael King i
 fellowhuman1101_bio: 100% human & totally not a robot, Jamie Indigo untangles technologies to help humans access useful information and businesses provide valuable digital experiences. She founded <a href="https://not-a-robot.com">Not a Robot</a> to consult with a focus on the human aspects of technical SEO including ethics & inclusion in technology and the search industry.  She can found be learning in public on <a href="https://twitter.com/Jammer_Volts">Twitter</a>.
 discuss: 2043
 results: https://docs.google.com/spreadsheets/d/1ram47FshAjzvbQVJbAQPgxZN7PPOPCKIK67VJZCo92c/
-queries: 07_SEO
 featured_quote: Despite the growing use of mobile devices and Google's move to a Mobile first index, non-trivial disparities were found across mobile versus desktop pages, like the one between mobile and desktop links.
 featured_stat_1: 10.84%
 featured_stat_label_1: Mobile pages are not including the viewport tag
@@ -501,7 +499,6 @@ With meta descriptions continuing to power other snippets such as social and new
 
 The usage of images, particularly using `img` tags, within a page often suggests a focus on visual presentation of content. Although search engine capabilities regarding computer vision have continued to improve, we have no indication that this technology is being used in the ranking of pages. `alt` attributes remain the primary way to explain an image in lieu of a search engine's ability to "see" it. `alt` attributes also support accessibility and clarify the elements on the page for users that are visually impaired.
 
-{# TODO(authors): Why are the growth of bandwidth and ubiquity of smartphones contributors to image heaviness? #}
 The median desktop page includes 21 `img` tags and the median mobile page has 19 `img` tags. The web continues to trend toward image-heaviness with the growth of bandwidth and the ubiquity of smartphones. However, this comes at a cost of performance.
 
 {{ figure_markup(
@@ -514,7 +511,6 @@ The median desktop page includes 21 `img` tags and the median mobile page has 19
   sql_file="pages_markup_by_device_and_percentile.sql"
 ) }}
 
-{# TODO(authors): Add your interpretation of these results. What do you hope readers get from it? #}
 The median web page is missing 2.99% of `alt` attributes on desktop and 2.44% of `alt` attributes on mobile. For more information on the importance of `alt` attributes, see the [Accessibility](./accessibility) chapter.
 
 {{ figure_markup(
@@ -528,7 +524,6 @@ The median web page is missing 2.99% of `alt` attributes on desktop and 2.44% of
   )
 }}
 
-{# TODO(authors, analysts): I don't think the interpretation of these stats was correct, so I edited out anything that I didn't think was accurate. Please double check my edit and feel free to expand on it. Note that this is incompatible with last year's stat because that was a Lighthouse audit checking that all images have alt attributes, while this data was calculated directly from the markup. There's something off if 40+% of pages have perfect alt coverage, but this chart has less than perfect coverage at the 75th percentile. Either coverage got much _worse_ this year or they're measuring different things. For example Lighthouse may be more lenient about which images should have alt attributes. Do you have those audit results based on 2020 data here for better comparison? #}
 We found that the median page contains `alt` attributes on only 51.22% of their images.
 
 {{ figure_markup(
@@ -776,7 +771,6 @@ Desktop websites that have separate mobile versions are recommended to link to t
 
 Having a fast-loading website is fundamental to provide a great user search experience. Because of its importance, it has been taken into consideration as a ranking factor by search engines for years. Google initially announced using site speed as a [ranking factor in 2010](https://webmasters.googleblog.com/2010/04/using-site-speed-in-web-search-ranking.html), and then [in 2018 did the same for mobile searches](https://webmasters.googleblog.com/2018/01/using-page-speed-in-mobile-search.html).
 
-{# NOTE(authors): I've made some ruthless edits to this section to remove everything related to synthetic measurement of CWV, including the entire Lighthouse discussion, which is orthogonal to the real-user aspect of CWV. Please push back if you disagree with any of these edits. #}
 As announced in November 2020, three performance metrics known as [Core Web Vitals](https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html) are on track to be a ranking factor as part of the "page experience" signals in May 2021. Core Web Vitals consist of:
 
 **[Largest Contentful Paint](https://web.dev/lcp/) (LCP)**

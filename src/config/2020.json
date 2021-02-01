@@ -2,7 +2,7 @@
   "settings": [
     {
       "is_live": true,
-      "supported_languages": ["en","es","fr","hi","it","ja","nl","pt","ru","zh-CN","zh-TW"],
+      "supported_languages": ["en","es","fr","hi","it","ja","nl","pt","ru","uk","zh-CN","zh-TW"],
       "ebook_languages": ["en"]
     }
   ],
@@ -13,38 +13,37 @@
       "chapters": [
         {
           "part": "I",
-          "chapter": "1",
+          "chapter_number": "1",
           "title": "CSS",
           "slug": "css"
         },
         {
           "part": "I",
-          "chapter": "2",
+          "chapter_number": "2",
           "title": "JavaScript",
           "slug": "javascript"
         },
         {
           "part": "I",
-          "chapter": "3",
+          "chapter_number": "3",
           "title": "Markup",
           "slug": "markup"
         },
         {
           "part": "I",
-          "chapter": "4",
+          "chapter_number": "4",
           "title": "Fonts",
           "slug": "fonts"
         },
         {
           "part": "I",
-          "chapter": "5",
+          "chapter_number": "5",
           "title": "Media",
-          "slug": "media",
-          "todo": true
+          "slug": "media"
         },
         {
           "part": "I",
-          "chapter": "6",
+          "chapter_number": "6",
           "title": "Third Parties",
           "slug": "third-parties"
         }
@@ -56,49 +55,51 @@
       "chapters": [
         {
           "part": "II",
-          "chapter": "7",
+          "chapter_number": "7",
           "title": "SEO",
           "slug": "seo"
         },
         {
           "part": "II",
-          "chapter": "8",
+          "chapter_number": "8",
           "title": "Accessibility",
           "slug": "accessibility"
         },
         {
           "part": "II",
-          "chapter": "9",
+          "chapter_number": "9",
           "title": "Performance",
           "slug": "performance"
         },
         {
           "part": "II",
-          "chapter": "10",
+          "chapter_number": "10",
           "title": "Privacy",
-          "slug": "privacy"
+          "slug": "privacy",
+          "hero_dir": "2020"
         },
         {
           "part": "II",
-          "chapter": "11",
+          "chapter_number": "11",
           "title": "Security",
           "slug": "security"
         },
         {
           "part": "II",
-          "chapter": "12",
+          "chapter_number": "12",
           "title": "Mobile Web",
           "slug": "mobile-web"
         },
         {
           "part": "II",
-          "chapter": "13",
+          "chapter_number": "13",
           "title": "Capabilities",
-          "slug": "capabilities"
+          "slug": "capabilities",
+          "hero_dir": "2020"
         },
         {
           "part": "II",
-          "chapter": "14",
+          "chapter_number": "14",
           "title": "PWA",
           "slug": "pwa"
         }
@@ -110,22 +111,22 @@
       "chapters": [
         {
           "part": "III",
-          "chapter": "15",
+          "chapter_number": "15",
           "title": "CMS",
           "slug": "cms"
         },
         {
           "part": "III",
-          "chapter": "16",
+          "chapter_number": "16",
           "title": "Ecommerce",
-          "slug": "ecommerce",
-          "todo": true
+          "slug": "ecommerce"
         },
         {
           "part": "III",
-          "chapter": "17",
+          "chapter_number": "17",
           "title": "Jamstack",
-          "slug": "jamstack"
+          "slug": "jamstack",
+          "hero_dir": "2020"
         }
       ]
     },
@@ -135,31 +136,31 @@
       "chapters": [
         {
           "part": "IV",
-          "chapter": "18",
+          "chapter_number": "18",
           "title": "Page Weight",
           "slug": "page-weight"
         },
         {
           "part": "IV",
-          "chapter": "19",
+          "chapter_number": "19",
           "title": "Compression",
           "slug": "compression"
         },
         {
           "part": "IV",
-          "chapter": "20",
+          "chapter_number": "20",
           "title": "Caching",
           "slug": "caching"
         },
         {
           "part": "IV",
-          "chapter": "21",
+          "chapter_number": "21",
           "title": "Resource Hints",
           "slug": "resource-hints"
         },
         {
           "part": "IV",
-          "chapter": "22",
+          "chapter_number": "22",
           "title": "HTTP/2",
           "slug": "http2"
         }
@@ -232,6 +233,16 @@
       "website": "https://AhmadAwais.com",
       "github": "ahmadawais",
       "twitter": "MrAhmadAwais"
+    } ,
+    "alankent": {
+      "name": "Alan Kent",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars0.githubusercontent.com/u/5702163?v=4&s=200",
+      "website": "https://alankent.me",
+      "github": "alankent",
+      "twitter": "akent99"
     },
     "amedina": {
       "name": "Alberto Medina",
@@ -351,7 +362,9 @@
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/6849494?v=4&s=200",
       "website": "https://benseymour.com",
-      "github": "bseymour"
+      "github": "bseymour",
+      "twitter": "bseymour",
+      "linkedin": "benseymour"
     },
     "bharatagsrwal": {
       "name": "Bharat Agarwal",
@@ -515,14 +528,6 @@
       "github": "dougsillars",
       "twitter": "dougsillars"
     },
-    "drewzboto": {
-      "name": "Drewz",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "https://avatars2.githubusercontent.com/u/1111351?v=4&s=200",
-      "github": "drewzboto"
-    },
     "dsadhanala": {
       "name": "Durga Prasad Sadhanala",
       "teams": [
@@ -571,6 +576,16 @@
       "github": "ericwbailey",
       "twitter": "ericwbailey"
     },
+    "eeeps": {
+      "name": "Eric Portis",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/3441390?v=4&s=200",
+      "website": "https://ericportis.com/",
+      "github": "eeeps",
+      "twitter": "etportis"
+    },
     "estelle": {
       "name": "Estelle Weyl",
       "teams": [
@@ -618,7 +633,7 @@
       "github": "gregorywolf"
     },
     "hemanth": {
-      "name": "hemanth.hm",
+      "name": "Hemanth HM",
       "teams": [
         "authors"
       ],
@@ -685,7 +700,7 @@
     "jrharalson": {
       "name": "Jason Haralson",
       "teams": [
-        "reviewers",
+        "authors",
         "analysts"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/7421844?v=4&s=200",
@@ -756,6 +771,15 @@
       "avatar_url": "https://avatars1.githubusercontent.com/u/375731?v=4&s=200",
       "github": "thefoxis",
       "twitter": "fox"
+    },
+    "tymosh": {
+      "name": "Kate Tymoshkina",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars2.githubusercontent.com/u/25080897?v=4&s=200",
+      "github": "tymosh",
+      "linkedin": "tymosh"
     },
     "khempenius": {
       "name": "Katie Hempenius",
@@ -954,6 +978,16 @@
       "avatar_url": "https://avatars1.githubusercontent.com/u/67608345?v=4&s=200",
       "github": "natedame",
       "twitter": "seonate"
+    },
+    "Navaneeth-akam": {
+      "name": "Navaneeth Krishna M P",
+      "teams": [
+        "reviewers"
+       ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/69532755?s=200&v=4",
+      "website": "http://www.nparthas.com/",
+      "github": "Navaneeth-akam",
+      "twitter": "Navanee55755217"
     },
     "phacks": {
       "name": "Nicolas Goutay",
@@ -1155,12 +1189,20 @@
     "rockeynebhwani": {
       "name": "Rockey Nebhwani",
       "teams": [
-        "authors"
+        "authors",
+        "analysts"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/1718757?v=4&s=200",
       "github": "rockeynebhwani",
       "twitter": "rnebhwani",
       "linkedin": "rockeynebhwani"
+    },
+    "rsheeter": {
+      "name": "Rod Sheeter",
+      "teams": [
+        "reviewers"
+      ],
+      "github": "rsheeter"
     },
     "RoelN": {
       "name": "Roel Nieskens",
@@ -1182,13 +1224,6 @@
       "github": "roryhewitt",
       "twitter": "roryhewitt3",
       "linkedin": "roryhewitt"
-    },
-    "rsheeter": {
-      "name": "rsheeter",
-      "teams": [
-        "reviewers"
-      ],
-      "github": "rsheeter"
     },
     "ksakae": {
       "name": "Sakae Kotaro",
@@ -1293,7 +1328,7 @@
         "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/2042718?v=4&s=200",
-      "website": "https://www.fullstacktraining.com",
+      "website": "https://tamas.io",
       "github": "tpiros",
       "twitter": "tpiros"
     },
@@ -1314,6 +1349,7 @@
       ],
       "avatar_url": "https://avatars0.githubusercontent.com/u/66536?v=4&s=200",
       "github": "tkadlec",
+      "website": "https://timkadlec.com/",
       "twitter": "tkadlec"
     },
     "tomvangoethem": {

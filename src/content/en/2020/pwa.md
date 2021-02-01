@@ -1,18 +1,15 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
-part_number: II
-chapter_number: 14
 title: PWA
 description: PWA chapter of the 2020 Web Almanac covering service workers (registrations, installability, events and filesizes), Web App Manifests properties, and Workbox.
 authors: [hemanth]
 reviewers: [thepassle, jadjoubran, pearlbea, gokulkrishh]
 analysts: [bazzadp]
-editors: []
+editors: [bazzadp]
 translators: []
 hemanth_bio: <a href="https://h3manth.com">Hemanth HM</a> is a Computer polyglot, FOSS philosopher, GDE for web and payments domain, DuckDuckGo community member, TC39 delegate and Google Launchpad Accelerator mentor. Loves The WEB && CLI. Hosts <a href="https://TC39er.us">TC39er.us</a> podcast.
 discuss: 2050
 results: https://docs.google.com/spreadsheets/d/1AOqCkb5EggnE8BngpxvxGj_fCfssT9sZ0ElCQKp4pOw/
-queries: 14_PWA
 featured_quote: Web application which progresses into a native-like application can be considered as a PWA.
 featured_stat_1: 16.6%
 featured_stat_label_1: Percentage of page loads using a service worker.
@@ -20,14 +17,13 @@ featured_stat_2: 27.97%
 featured_stat_label_2: Web apps that load fast enough for a PWA.
 featured_stat_3: 25%
 featured_stat_label_3: Percentage of mobile PWA sites using importScripts.
-unedited: true
 ---
 
 ## Introduction
 
-In 1990 we had the first ever browser called the “WorldWideWeb” and ever since the web and the browser have been evolving and for the web to progress itself into a native behavior is a big win especially in this era of mobile domination. URLs and web browsers have provided a ubiquitous way to distribute information and so a technology which provides native app capabilities to the browser is a game changer. Progressive Web Apps provide such advantages for the web to compete with other applications.
+In 1990 the first ever browser called the "WorldWideWeb" was launched and ever since, the web and the browser have been evolving. For the web to progress itself into native application behavior is a big win especially in this era of mobile domination. URLs and web browsers have provided a ubiquitous way to distribute information and so a technology which provides native app capabilities to the browser is a game changer. Progressive Web Apps provide such advantages for the web to compete with other applications.
 
-Simply put, a web application which give native-like application experience can be considered as a PWA,. It is built using common web technologies including HTML, CSS and JavaScript and can operate seamlessly across devices and environments on a standards-compliant browser.
+Simply put, a web application which give native-like application experience can be considered as a PWA. It is built using common web technologies including HTML, CSS and JavaScript and can operate seamlessly across devices and environments on a standards-compliant browser.
 
 The crux of a progressive web app is the _service worker_, which can be thought of as a proxy sitting between the browser and user. A service worker gives the developer total control over the network, rather than the network controlling the application.
 
@@ -37,16 +33,16 @@ In this chapter of Web Almanac we will be looking into each of the components th
 
 ## Service workers
 
-Service workers are at the very center of the progressive web apps and can be thought as a proxy servers between web applications running in browsers and the network. They help developers control the network requests rather than the network requests controlling the application.
+Service workers are at the very center of progressive web apps. They help developers control the network requests.
 
 ### Service worker usage
 
-From the data we gathered it was derived that about **0.88%** desktop sites and **0.87%** mobile sites use a service worker. This was for the month of August 2020 and, to put that into perspective, that equates to 49,305 (out of 5,593,642) desktop sites and 55,019 (out of 6,347,919) mobile sites. While that usage may seem low, it is important that we realize that other measurements equate that to **16.6%** of the [web traffic](https://www.chromestatus.com/metrics/feature/timeline/popularity/990)–the difference being due to high traffic websites tending to use service workers more.
+From the data we gathered we can see that about 0.88% desktop sites and 0.87% mobile sites use a service worker. This was for the month of August 2020 and, to put that into perspective, that equates to 49,305 (out of 5,593,642) desktop sites and 55,019 (out of 6,347,919) mobile sites. While that usage may seem low, it is important that we realize that other measurements equate that to 16.6% of the [web traffic](https://www.chromestatus.com/metrics/feature/timeline/popularity/990)–the difference being due to high traffic websites tending to use service workers more.
 
 {{ figure_markup(
   image="pwa-timeseries-of-service-worker-installations.png",
-  caption="Timeseries of Service Worker installation.",
-  description="Line graph of Service Worker installation starting at 0.03% for desktop, 0.04% for mobile in January 2017 and growing in a roughly linear fashion to 0.88% for desktop and 0.87% for mobile. In general desktop and mobile follow each other closely with mobile outpacing desktop for until mid 2018, what looks like an anomaly for the second half of 2018 and then desktop outpacing mobile from the start of 2019 until now.",
+  caption="Timeseries of service worker installation.",
+  description="Line graph of service worker installation starting at 0.03% for desktop, 0.04% for mobile in January 2017 and growing in a roughly linear fashion to 0.88% for desktop and 0.87% for mobile. In general desktop and mobile follow each other closely with mobile outpacing desktop for until mid 2018, what looks like an anomaly for the second half of 2018 and then desktop outpacing mobile from the start of 2019 until now.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRRpTSA4fsHwUap-ByQ08j95uo7Zm1kY6lTSvA-DZT54g2QZ0guV7db3QyQwQgMPzsKsJ43gbzqfJst/pubchart?oid=1883263914&format=interactive",
   sheets_gid="1626594877",
   sql_file="sw_adoption_over_time.sql"
@@ -55,7 +51,7 @@ From the data we gathered it was derived that about **0.88%** desktop sites and 
 
 ## Lighthouse insights
 
-[Lighthouse](https://github.com/GoogleChrome/lighthouse) provides automated auditing, performance metrics, and best practices for the web and has been instrumental in shaping web’s performance. We looked at the PWA category audits gathered for over 6,811,475 pages and this has given us great insights on a few important touch points.
+[Lighthouse](https://github.com/GoogleChrome/lighthouse) provides automated auditing, performance metrics, and best practices for the web and has been instrumental in shaping web's performance. We looked at the PWA category audits gathered for over 6,782,042 pages and this has given us great insights on a few important touch points.
 
 <figure>
   <table>
@@ -68,72 +64,72 @@ From the data we gathered it was derived that about **0.88%** desktop sites and 
     </thead>
     <tbody>
       <tr>
-        <td>load-fast-enough-for-pwa</td>
+        <td><code>load-fast-enough-for-pwa</code></td>
         <td class="numeric">7</td>
         <td class="numeric">27.97%*</td>
       </tr>
       <tr>
-        <td>works-offline</td>
+        <td><code>works-offline</code></td>
         <td class="numeric">5</td>
         <td class="numeric">0.86%</td>
       </tr>
       <tr>
-        <td>installable-manifest</td>
+        <td><code>installable-manifest</code></td>
         <td class="numeric">2</td>
         <td class="numeric">2.21%</td>
       </tr>
       <tr>
-        <td>is-on-https</td>
+        <td><code>is-on-https</code></td>
         <td class="numeric">2</td>
         <td class="numeric">66.67%</td>
       </tr>
       <tr>
-        <td>redirects-http</td>
+        <td><code>redirects-http</code></td>
         <td class="numeric">2</td>
         <td class="numeric">70.33%</td>
       </tr>
       <tr>
-        <td>viewport</td>
+        <td><code>viewport</code></td>
         <td class="numeric">2</td>
         <td class="numeric">88.43%</td>
       </tr>
       <tr>
-        <td>apple-touch-icon</td>
+        <td><code>apple-touch-icon</code></td>
         <td class="numeric">1</td>
         <td class="numeric">34.75%</td>
       </tr>
       <tr>
-        <td>content-width</td>
+        <td><code>content-width</code></td>
         <td class="numeric">1</td>
         <td class="numeric">79.37%</td>
       </tr>
       <tr>
-        <td>maskable-icon</td>
+        <td><code>maskable-icon</code></td>
         <td class="numeric">1</td>
         <td class="numeric">0.11%</td>
       </tr>
       <tr>
-        <td>offline-start-url</td>
+        <td><code>offline-start-url</code></td>
         <td class="numeric">1</td>
         <td class="numeric">0.75%</td>
       </tr>
       <tr>
-        <td>service-worker</td>
+        <td><code>service-worker</code></td>
         <td class="numeric">1</td>
         <td class="numeric">1.03%</td>
       </tr>
       <tr>
-        <td>splash-screen</td>
+        <td><code>splash-screen</code></td>
         <td class="numeric">1</td>
         <td class="numeric">1.90%</td>
       </tr>
       <tr>
-        <td>themed-omnibox</td>
+        <td><code>themed-omnibox</code></td>
         <td class="numeric">1</td>
         <td class="numeric">4.00%</td>
       </tr>
       <tr>
-        <td>without-javascript</td>
+        <td><code>without-javascript</code></td>
         <td class="numeric">1</td>
         <td class="numeric">97.57%</td>
       </tr>
@@ -142,37 +138,35 @@ From the data we gathered it was derived that about **0.88%** desktop sites and 
   <figcaption>{{ figure_link(caption="Lighthouse PWA audits.", sheets_gid="814184412", sql_file="lighthouse_pwa_audits.sql") }}</figcaption>
 </figure>
 
-<p class="note">Note the Lighthouse performance stats were incorrect for our August crawl so the load-fast-enough-for-pwa stat has been replaced with September results.</p>
+<p class="note">Note the performance statistic for our Lighthouse tests were incorrect for our August crawl so the <code>load-fast-enough-for-pwa</code> result has been replaced with September results.</p>
 
-A [fast page load](https://web.dev/load-fast-enough-for-pwa/) ensures a good mobile user experience, particularly when slower cellular network's are taken into consideration.
+A [fast page load](https://web.dev/load-fast-enough-for-pwa/) ensures a good mobile user experience, particularly when slower cellular networks are taken into consideration. 27.56% of pages loaded fast enough for a PWA. Given how geographically distributed the web is, having a fast load time with lighter pages matter the most of the next billion users of the web, most of whom will be introduced to the internet via a mobile device.
 
-**27.56%** of pages loaded fast enough for a PWA. Given how geographically distributed the web is, having a fast load time with lighter pages matter the most of the next billion users of the web, most of whom will be introduced to the internet via a mobile device.
+If you're building a Progressive Web App, consider using a service worker so that your app can [work offline](https://web.dev/works-offline/) 0.92% of pages were offline ready.
 
-If you're building a Progressive Web App, consider using a service worker so that your app can [work offline](https://web.dev/works-offline/) **0.92%** of pages were offline ready.
+Browsers can proactively prompt users to add your app to their home screen, which can lead to higher engagement. 2.21% of pages had an [installable manifest](https://web.dev/installable-manifest/). Manifest plays an important role in how the application starts, the looks and feel of the icon on the home screen and as an impact on the engagement rate directly.
 
-Browsers can proactively prompt users to add your app to their homescreen, which can lead to higher engagement. **2.21%** of pages had an [Installable manifest](https://web.dev/installable-manifest/). Manifest plays an important role in how the application starts, the looks and feel of the icon on the homescreen and as an impact on the engagement rate directly.
+All sites should be protected with HTTPS, even ones that don't handle sensitive data. This includes avoiding [mixed content](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content), where some resources are loaded over HTTP despite the initial request being served over HTTPS. HTTPS prevents intruders from tampering with or passively listening in on the communications between your app and your users and is a prerequisite for service workers and many new web platform features and APIs like [HTTP/2](./http2). The [is-on-https check](https://web.dev/is-on-https/) shows that 67.27% of sites were on HTTPS without mixed content and it is surprising that we haven't reached higher yet. The [Security](./security#transport-security) chapter shows that 86.91% of sites are using HTTPS, suggesting that mixed content may be the bigger issue now. This number will get better as browsers mandate the applications to be on HTTPS and scrutinize those which are not on HTTPS more.
 
-All sites should be protected with HTTPS, even ones that don't handle sensitive data. This includes avoiding [mixed content](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content), where some resources are loaded over HTTP despite the initial request being served over HTTPS. HTTPS prevents intruders from tampering with or passively listening in on the communications between your app and your users, and is a prerequisite for HTTP/2 and many new web platform APIs. Learn more about [is-on-https check](https://web.dev/is-on-https/). **67.27%** of sites were on HTTPS and it is surprising that we haven’t reached there yet. This number is pretty decent and will get better as browsers mandate the applications to be on HTTPS and scrutinize those which are not on HTTPS.
+If you've already set up HTTPS, make sure that you [redirect all HTTP traffic to HTTPS](https://web.dev/redirects-http/) in order to enable secure connection the users without changing the URL: only 69.92% of the sites pass this audit. Redirecting all the HTTP to HTTPS on your application should be simple steps towards robustness, though the HTTP redirection to HTTPS has a decent number of sites passing, it can do better.
 
-If you've already set up HTTPS, make sure that you [redirect all HTTP traffic to HTTPS](https://web.dev/redirects-http/) in order to enable secure connection the users without changing the URL **69.92%** of the sites redirects HTTP. Redirecting all the HTTP to HTTPS on your application should be simple steps towards robustness, though the HTTP redirection to HTTPS has a decent number, it can do better.
+By adding `<meta name="viewport">` tag you optimize your app for mobile screens. 88.43% of the sites have the [viewport](https://web.dev/viewport/) meta tag. It is not surprising that the usage of viewport meta tag is on the higher side as most developers and tools are aware of viewport optimization.
 
-By adding `<meta name="viewport">` tag to optimize your app for mobile screens. **88.43%** of the sites have the [viewport](https://web.dev/viewport/) meta tag. It is not surprising that the usage of viewport meta tag is on the higher side as most of the applications are aware and getting there in terms of viewport optimization.
+For ideal appearance on iOS, your progressive web app should define an `apple-touch-icon` meta tag. It must point to a non-transparent 192px (or 180px) square PNG. 32.34% of the sites pass the [apple touch icon](https://web.dev/apple-touch-icon/) check.
 
-For ideal appearance on iOS, your progressive web app should define an `apple-touch-icon` meta tag. It must point to a non-transparent 192px (or 180px) square PNG. **32.34%** of the sites use the [apple touch icon](https://web.dev/apple-touch-icon/).
+If the width of your app's content doesn't match the width of the viewport, your app might not be optimized for mobile screens. 79.18% of the sites have the [content-width](https://web.dev/content-width/) set correctly.
 
-If the width of your app's content doesn't match the width of the viewport, your app might not be optimized for mobile screens. **79.18%** of the sites have the [content-width](https://web.dev/content-width/) set.
+A [maskable icon](https://web.dev/maskable-icon-audit/) ensures that the image fills the entire shape without being letterboxed when adding the progressive web app to the home screen. Only 0.11% of sites use this, but given that it is a brand new feature, having any usage here is encouraging. As it has just been introduced we were expecting the numbers to be very low and these should improve in the coming years.
 
-A [maskable icon](https://web.dev/maskable-icon-audit/) ensures that the image fills the entire shape without being letterboxed when adding the progressive web app to the home screen. Only **0.11%** of sites use this, but given that it is a brand new feature, having any usage here is encouraging. As it is a new feature we were expecting the numbers to be very low and are expected to improve in the coming years.
+A service worker enables your web app to be reliable in unpredictable network conditions. 0.77% of sites have an [offline start URL](https://web.dev/offline-start-url/) to allow the app to run even when not connected to the network. This is one of the most important features for a PWA, as flaky networks are the most common issue that the users of web applications face.
 
-A service worker enables your web app to be reliable in unpredictable network conditions. **0.77%** of sites has an [offline start URL](https://web.dev/offline-start-url/).
+The [service worker](https://web.dev/service-worker/) is the feature that enables your app to use many Progressive Web App features, such as offline usage and push notifications. 1.05% of pages have service workers enabled. Given the powerful features that can be addressed with service workers, and that it has been supported for some time now, it is surprising that number is still so low.
 
-The [service worker](https://web.dev/service-worker/) is the feature that enables your app to use many Progressive Web App features, such as offline usage and push notifications. **1.05%** of pages have service workers enabled. Service worker helps to achieve offline support, which is the most important feature for a PWA, as flaky networks are the most common issue that the users of web applications face. Given that this can be addressed with service workers, it is surprising that number is still so low.
+A themed [splash screen](https://web.dev/splash-screen/) ensures a native-like experience when users launch your app from their home screens. 1.95% of pages had splash screens.
 
-A themed [splash screen](https://web.dev/splash-screen/) ensures a native like experience when users launch your app from their homescreens. **1.95%** of pages had splash screens.
+The browser address bar can be themed to match your site. 4.00% of pages had themed [omnibox](https://web.dev/themed-omnibox/).
 
-The browser address bar can be themed to match your site. **3.98%** of pages had themed [omnibox](https://web.dev/themed-omnibox/).
-
-Your app should display some content when JavaScript is disabled, even if it's just a warning to the user that JavaScript is required to use the app. **96.23%** pages can work with JavaScript [disabled](https://web.dev/without-javascript/).
+Your app should display some content when JavaScript is disabled, even if it is just a warning to the user that JavaScript is required to use the app. 97.57% pages show more than just a blank page with JavaScript [disabled](https://web.dev/without-javascript/). Given that we only survey the home pages, it's perhaps more surprising that 3.43% of sites fail this audit!
 
 ## Service worker events
 
@@ -187,6 +181,8 @@ In a service worker one can listen for a number of events:
 7.  `message`, which occurs when a message sent via postMessage() arrives.
 8.  `sync`, which occurs when a background sync event occurs.
 
+We have examined which of these events are being listened to by service workers in our dataset.
+
 {{ figure_markup(
   image="pwa-most-used-service-worker-events.png",
   caption="Most used service worker events.",
@@ -197,11 +193,11 @@ In a service worker one can listen for a number of events:
   )
 }}
 
-We have examined which of these events are being listened to by service workers in our data set. The results for mobile and desktop are very similar with `install`, `fetch`, and `activate` being the three most popular events, followed by `message`, `notification click`, `push` and `sync`. If we interpret these results, offline use cases that service workers enable are the most attractive feature for app developers, far ahead of push notifications. Due to its limited availability, and less common use case, background sync doesn't play a significant role at this time.
+ The results for mobile and desktop are very similar with `install`, `fetch`, and `activate` being the three most popular events, followed by `message`, `notification click`, `push` and `sync`. If we interpret these results, offline use cases that service workers enable are the most attractive feature for app developers, far ahead of push notifications. Due to its limited availability, and less common use case, background sync doesn't play a significant role at this time.
 
 ## Web app manifests
 
-The web app manifest is a JSON-based file that provides developers with a centralized place to put metadata associated with a web application, it dictates how the application should behave on desktop or mobile in terms of the icon, orientation, theme color and likes.
+The web app manifest is a JSON-based file that provides developers with a centralized place to put metadata associated with a web application. It dictates how the application should behave on desktop or mobile in terms of the icon, orientation, theme color and likes.
 
 In order for a PWA to be fruitful it needs to have a manifest and a service worker. It is interesting to note that manifests are used a lot more than service workers. This is due, in large part, to the fact that CMS like WordPress, Drupal and Joomla have manifests by default.
 
@@ -215,11 +211,23 @@ In order for a PWA to be fruitful it needs to have a manifest and a service work
   )
 }}
 
-Having a web app manifest does not necessarily indicate the site is a progressive web app, as they can exist independently of service worker usage. However, as we are interesting PWAs in this chapter, we have investigated only those manifests for sites where a service worker also exists. This is different than the approach taken in [last year's PWA chapter](../2019/pwa#web-app-manifests) which looked at overall manifest usage so you may notice some differences in results this year.
+Having a web app manifest does not necessarily indicate the site is a progressive web app, as they can exist independently of service worker usage. However, as we are interested in PWAs in this chapter, we have investigated only those manifests for sites where a service worker also exists. This is different than the approach taken in [last year's PWA chapter](../2019/pwa#web-app-manifests) which looked at overall manifest usage, so you may notice some differences in results this year.
 
 ### Manifest Properties
 
-Web manifest dictates the applications meta properties. We looked at the different properties defined by the Web App Manifest specification, and also considered non-standard proprietary properties. According to [the spec, the following properties are valid properties](https://w3c.github.io/manifest/#webappmanifest-dictionary):
+Web manifest dictates the applications meta properties. We looked at the different properties defined by the Web App Manifest specification, and also considered non-standard proprietary properties.
+
+{{ figure_markup(
+  image="pwa-manifest-properties-on-service-worker-pages.png",
+  caption="Manifest properties on service worker pages.",
+  description="Bar chart showing the percentage of various manifest properties used on service worker pages by desktop and mobile. The first seven properties (`name`, `display`, `icons`, `short_name`, `start_url`, `theme_color`, and `background_color`) are used by 93 to 98% of both desktop and mobile. After this there is a sharp drop off for the remaining properties with `gcm_sender_id` used by 21.66% of desktop sites and 28.98% of mobile sites, `scope` used by 29.32% of desktop and 28.77% of mobile, `description` used by 23.32% of desktop and 18.84% mobile, `orientation` by 19.45% of desktop and 17.65% of mobile, and finally `lang` used by 12.31% of desktop and 11.01% of mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRRpTSA4fsHwUap-ByQ08j95uo7Zm1kY6lTSvA-DZT54g2QZ0guV7db3QyQwQgMPzsKsJ43gbzqfJst/pubchart?oid=427650634&format=interactive",
+  sheets_gid="887021927",
+  sql_file="top_manifest_properties_sw.sql"
+  )
+}}
+
+According to [the spec, the following properties are valid properties](https://w3c.github.io/manifest/#webappmanifest-dictionary):
 
 - `background_color`
 - `categories`
@@ -242,25 +250,13 @@ Web manifest dictates the applications meta properties. We looked at the differe
 
 There were very little differences between mobile and desktop stats.
 
-The proprietary properties we encountered frequently were `gcm_sender_id` used by Google Cloud Messaging (GCM) service. We also found other interesting attributes like: `browser_action`, `DO_NOT_CHANGE_GCM_SENDER_ID` (which was basically a comment, used as JSON doesn’t allow comments), `scope`, `public path`, `cacheDigest`.
+The proprietary properties we encountered frequently were `gcm_sender_id` used by Google Cloud Messaging (GCM) service. We also found other interesting attributes like: `browser_action`, `DO_NOT_CHANGE_GCM_SENDER_ID` (which was basically a comment, used as JSON doesn't allow comments), `scope`, `public path`, `cacheDigest`.
 
 On both platforms, however, there's a long tail of properties that are not interpreted by browsers yet contain potentially useful metadata.
 
-We also found a non-trivial amount of mistyped properties; our favorite ones being variation of `theme-color`, `Theme_color`, `theme-color`, `Theme_color` and `orientation`.
-
-{{ figure_markup(
-  image="pwa-manifest-properties-on-service-worker-pages.png",
-  caption="Manifest properties on service worker pages.",
-  description="Bar chart showing the percentage of various manifest properties used on service worker pages by desktop and mobile. The first seven properties (`name`, `display`, `icons`, `short_name`, `start_url`, `theme_color`, and `background_color`) are used by 93 to 98% of both desktop and mobile. After this there is a sharp drop off for the remaining properties with `gcm_sender_id` used by 21.66% of desktop sites and 28.98% of mobile sites, `scope` used by 29.32% of desktop and 28.77% of mobile, `description` used by 23.32% of desktop and 18.84% mobile, `orientation` by 19.45% of desktop and 17.65% of mobile, and finally `lang` used by 12.31% of desktop and 11.01% of mobile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRRpTSA4fsHwUap-ByQ08j95uo7Zm1kY6lTSvA-DZT54g2QZ0guV7db3QyQwQgMPzsKsJ43gbzqfJst/pubchart?oid=427650634&format=interactive",
-  sheets_gid="887021927",
-  sql_file="top_manifest_properties_sw.sql"
-  )
-}}
+We also found a non-trivial number of mistyped properties; our favorite ones being variation of `theme-color`, `Theme_color`, `theme-color`, `Theme_color` and `orientation`.
 
 ### Top Manifest display values
-
-Out of the five most common `display` values, `standalone` dominated the list with `86.73%` of desktop and `89.28%` of mobile pages using this. This isn't surprising at all as this mode provides the native app-like feel. Next in the list was `minimal-ui` with `6.30%` of desktop and `5.00%` of mobile sites opting for them. This is similar to `standalone` except for the fact that some browser UI is retained.
 
 {{ figure_markup(
   image="pwa-most-used-display-values-for-service-worker-pages.png",
@@ -273,9 +269,9 @@ Out of the five most common `display` values, `standalone` dominated the list wi
   )
 }}
 
-### Top manifest categories
+Out of the five most common `display` values, `standalone` dominated the list with 86.73% of desktop and 89.28% of mobile pages using this. This isn't surprising at all as this mode provides the native app-like feel. Next in the list was `minimal-ui` with 6.30% of desktop and 5.00% of mobile sites opting for them. This is similar to `standalone` except for the fact that some browser UI is retained.
 
-Out of all the top `categories`, shopping stood at the top at with `13.16%` on the mobile traffic, which is not unexpected as PWAs are e-commerce applications. News was next with `5.26%` on the mobile traffic.
+### Top manifest categories
 
 {{ figure_markup(
   image="pwa-manifest-categories.png",
@@ -287,9 +283,9 @@ Out of all the top `categories`, shopping stood at the top at with `13.16%` on t
   )
 }}
 
-### Manifests preferring native
+Out of all the top `categories`, `shopping` stood at the top at with 13.16% on the mobile traffic, which is not unexpected as PWAs are e-commerce applications. `news` was next with 5.26% on the mobile traffic.
 
-`98.24%` and `98.52%` of mobile sites set the `preferred_related_applications` manifest property to not prefer native apps, but instead use web version where they exist. For the small percentage where this is set to `true` this is a signal that there are many web applications that just have a manifest but aren't really full PWAs yet.
+### Manifests preferring native
 
 {{ figure_markup(
   image="pwa-manifest-preferring-native.png",
@@ -300,6 +296,8 @@ Out of all the top `categories`, shopping stood at the top at with `13.16%` on t
   sql_file="manifests_preferring_native_apps_sw.sql"
   )
 }}
+
+98.24% of desktop PWA sites and 98.52% of mobile PWA sites set the `preferred_related_applications` manifest property to not prefer native apps, but instead use web version where they exist. For the small percentage where this is set to `true` this is a signal that there are many web applications that just have a manifest but aren't really full PWAs yet.
 
 ### Top manifest icon sizes
 
@@ -313,9 +311,19 @@ Out of all the top `categories`, shopping stood at the top at with `13.16%` on t
   )
 }}
 
-Lighthouse requires at least an icon sized 192x192 pixels, but common favicon generation tools create a plethora of other sizes, too. It is always better to use the recommended icon sizes for each device so it is encouraging to see such a wide spread usage of different icon sizes.
+Lighthouse requires at least an icon sized 192x192 pixels, but common favicon generation tools create a plethora of other sizes, too. It is always better to use the recommended icon sizes for each device so it is encouraging to see such a widespread usage of different icon sizes.
 
 ### Top manifest orientations
+
+{{ figure_markup(
+  image="pwa-top-manifest-orientations.png",
+  caption="Top manifest orientations.",
+  description="Bar chart showing the top 5 manifest orientations with `portrait` used by 14.25% of desktop sites and 14.47% of mobile, `any` used by 7.25% of desktop and 6.45% of mobile, `portrait-primary` used by 1.56% of desktop and 1.52% mobile, `natural` used by 0.86% of desktop and 0.79% of mobile, and finally `landscape` is used by 0.53% of desktop and 0.39% of mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRRpTSA4fsHwUap-ByQ08j95uo7Zm1kY6lTSvA-DZT54g2QZ0guV7db3QyQwQgMPzsKsJ43gbzqfJst/pubchart?oid=1217279338&format=interactive",
+  sheets_gid="2070230147",
+  sql_file="top_manifest_orientations_sw.sql"
+  )
+}}
 
 The valid values for the orientation property are defined in the Screen Orientation API [specification](https://www.w3.org/TR/screen-orientation/). Currently, they are:
 
@@ -330,31 +338,21 @@ The valid values for the orientation property are defined in the Screen Orientat
 
 Out of which we noticed that `portrait`, `any` and `portrait-primary` properties took precedence.
 
-{{ figure_markup(
-  image="pwa-top-manifest-orientations.png",
-  caption="Top manifest orientations.",
-  description="Bar chart showing the top 5 manifest orientations with `portrait` used by 14.25% of desktop sites and 14.47% of mobile, `any` used by 7.25% of desktop and 6.45% of mobile, `portrait-primary` used by 1.56% of desktop and 1.52% mobile, `natural` used by 0.86% of desktop and 0.79% of mobile, and finally `landscape` is used by 0.53% of desktop and 0.39% of mobile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRRpTSA4fsHwUap-ByQ08j95uo7Zm1kY6lTSvA-DZT54g2QZ0guV7db3QyQwQgMPzsKsJ43gbzqfJst/pubchart?oid=1217279338&format=interactive",
-  sheets_gid="2070230147",
-  sql_file="top_manifest_orientations_sw.sql"
-  )
-}}
-
 ## Service worker libraries
 
-There are many cases, where the service workers use libraries as dependencies, be it external dependencies or the application's internal dependencies. These are usually fetched to the service worker via `importScripts()` API, in this section we will look into stats on such libraries.
+There are many cases, where the service workers use libraries as dependencies, be it external dependencies or the application's internal dependencies. These are usually fetched to the service worker via the `importScripts()` API. In this section we will look into stats on such libraries.
 
 ### Popular import scripts
 
-The [importScripts() API](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts) of the [WorkerGlobalScope interface](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope) synchronously imports one or more scripts into the worker's scope, the same is used to import external dependencies to the service worker.
+The [importScripts() API](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts) of the [WorkerGlobalScope interface](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope) synchronously imports one or more scripts into the worker's scope. The same is used to import external dependencies to the service worker.
 
 <figure>
 <table>
   <thead>
     <tr>
-      <th>client</th>
-      <th>desktop</th>
-      <th>mobile</th>
+      <th>Script</th>
+      <th>Desktop</th>
+      <th>Mobile</th>
     </tr>
   </thead>
   <tbody>
@@ -418,29 +416,29 @@ The [importScripts() API](https://developer.mozilla.org/en-US/docs/Web/API/Worke
 <figcaption>{{ figure_link(caption="PWA library usage.", sheets_gid="1399126426", sql_file="popular_pwa_libraries.sql") }}</figcaption>
 </figure>
 
-Around **30%** of the desktop and **25%** of mobile sites uses `importScripts()`, of which `workbox`, `sw_toolbox` and `firebase` take the first three positions respectively.
+Around 30% of desktop PWA sites and 25% of mobile PWA sites uses `importScripts()`, of which `workbox`, `sw_toolbox` and `firebase` take the first three positions respectively.
 
 ### Workbox usage
 
-Out of many libraries available, Workbox was the most heavily used with an adoption rate of **12.86%** and **15.29%** of PWA sites on mobile and desktop respectively.
-
-Out of many methods that Workbox provides, we noticed that `strategies` were used by **29.53%** of desktop and **25.71%** on mobile, `routing` followed it with **18.91%** and **15.61%** adoption and finally `precaching` were next most used with **16.54%** and **12.98%** on desktop and mobile respectively.
-
-This indicated that the strategies API, as one of the most complicated requirements for the developers, played a very important role when they decided to code themselves or rely on libraries like Workbox.
+Out of many libraries available, Workbox was the most heavily used with an adoption rate of 12.86% and 15.29% of PWA sites on mobile and desktop respectively.
 
 {{ figure_markup(
   image="pwa-most-used-workbox-packages.png",
   caption="Most used Workbox packages.",
-  description="Bar",
+  description="Bar chart showing the most used Workbox packages in descending order of usage: `strategies` is used by 29.53% of desktop service worker pages, and 25.71% of mobile, `routing` by 18.91% and 15.61% respectively, `precaching` by 16.54% and 12.98%, `core` by 16.28% 12.44%, `expiration` by 7.49% 7.13%,`setConfig` by 6.54% 4.80%, and `skipWaiting` is used by 3.89% of desktop service worker sites and 3.03% of mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRRpTSA4fsHwUap-ByQ08j95uo7Zm1kY6lTSvA-DZT54g2QZ0guV7db3QyQwQgMPzsKsJ43gbzqfJst/pubchart?oid=550366577&format=interactive",
   sheets_gid="1614661441",
   sql_file="workbox_package_methods.sql"
   )
 }}
 
+Out of many methods that Workbox provides, we noticed that `strategies` were used by 29.53% of desktop and 25.71% on mobile, `routing` followed it with 18.91% and 15.61% adoption and finally `precaching` were next most used with 16.54% and 12.98% on desktop and mobile respectively.
+
+This indicated that the strategies API, as one of the most complicated requirements for the developers, played a very important role when they decided to code themselves or rely on libraries like Workbox.
+
+
 ## Conclusion
 
-The stats in this chapter show that PWAs are still continuing to grow in adoption, due to the advantages they give for [performance](./performance) and greater control over [caching](./caching) particularly for [mobile](./mobile-web). With those advantages and ever increasing capabilities, means we still have a lot of potential for growth and when compared to 2019. We expect to see even more progress in 2021!
+The stats in this chapter show that PWAs are still continuing to grow in adoption, due to the advantages they give for [performance](./performance) and greater control over [caching](./caching) particularly for [mobile](./mobile-web). With those advantages and ever increasing [capabilities](./capabilities), means we still have a lot of potential for growth. We expect to see even more progress in 2021!
 
-More and more browsers and platforms are supporting the technologies powering PWAs. This year, we saw that Edge gained support for the Web App Manifest. Depending on your use case and target market, you may find that the majority of your users (close to 96%) have PWA support. That is a great improvement! In all cases, it’s important to approach technologies such as Service Worker, Web App Manifest should be treated as progressive enhancement. Where you can provide an exceptional user experience through these technologies whenever possible.
-With the above stats, we’re excited for another year of PWA growth!
+More and more browsers and platforms are supporting the technologies powering PWAs. This year, we saw that Edge gained support for the Web App Manifest. Depending on your use case and target market, you may find that the majority of your users (close to 96%) have PWA support. That is a great improvement! In all cases, it is important to approach technologies such as service workers and Web App Manifest as progressive enhancements. You can use these technologies to provide an exceptional user experience and, with the above stats, we're excited for another year of PWA growth!
