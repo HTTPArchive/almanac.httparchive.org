@@ -116,6 +116,9 @@ Il Web Almanac è stato reso possibile grazie al duro lavoro della web community
 {% block methodology_stat_1_title %}Siti web testati{% endblock %}
 {% block methodology_stat_2_title %}Dati trattati{% endblock %}
 {% block methodology_link %}Scopri la nostra metodologia{% endblock %}
+{% block methodology_description %}
+Se non diversamente specificato, le metriche in tutti i {{ supported_chapters | length }} capitoli del Web Almanac provengono dal dataset dell'archivio HTTP. HTTP Archive è un progetto gestito dalla comunità che tiene traccia del modo in cui è costruito il Web dal 2010. Utilizzando WebPageTest e Lighthouse "under the hood", i metadati di {{ self.total_websites() }} di siti Web vengono testati mensilmente e inclusi in un database BigQuery pubblico per l'analisi. Il set di dati di {{ self.dataset() }} è stato utilizzato come base per le metriche del Web Almanac. Per ulteriori informazioni, vedere la pagina Methodology.
+{% endblock %}
 
 {% block introduction %}Introduzione{% endblock %}
 
