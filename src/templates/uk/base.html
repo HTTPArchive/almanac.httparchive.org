@@ -116,6 +116,9 @@
 {% block methodology_stat_1_title %}Протестовано сайтів{% endblock %}
 {% block methodology_stat_2_title %}Оброблено даних{% endblock %}
 {% block methodology_link %}Дізнатися про нашу Методологію{% endblock %}
+{% block methodology_description %}
+Якщо не вказано інше, метрики в усіх {{ supported_chapters | length }} розділах Web Almanac взяті з датасету HTTP Archive. HTTP Archive – це громадський проект, що відслідковує, як будується веб з 2010 року. Метадата про {{ self.total_websites() }} вебсайтів тестується щомісяця, використовуючи WebPageTest та Lighthouse, і додається до публічної бази даних BigQuery для аналізу. Для метрик Web Almanac був використаний як базис набір даних від {{ self.dataset() }} року. Більше інформації на сторінці Методологія.
+{% endblock %}
 
 {% block introduction %}Вступ{% endblock %}
 
