@@ -21,7 +21,7 @@ featured_stat_label_3: Video's met ondertiteling
 
 ---
 
-## Introductie
+## Inleiding
 
 In 2020 wordt het, meer dan ooit tevoren, steeds urgenter dat digitale ruimtes inclusief en voor iedereen toegankelijk zijn. Nu de aanhoudende pandemie het voor mensen nog moeilijker maakt om persoonlijk toegang te krijgen tot diensten en voor hele industrieën die online gaan, worden gehandicapten onevenredig zwaar getroffen. Bovendien stijgt het aantal mensen met een handicap als gevolg van de <a hreflang="en" href="https://www.cdc.gov/coronavirus/2019-ncov/long-term-effects.html">langetermijneffecten</a> van de pandemie.
 

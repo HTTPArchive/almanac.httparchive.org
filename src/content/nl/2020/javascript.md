@@ -19,7 +19,7 @@ featured_stat_3: 12,2%
 featured_stat_label_3: Percentage scripts dat asynchroon is geladen
 ---
 
-## Introductie
+## Inleiding
 
 JavaScript heeft een lange weg afgelegd sinds zijn bescheiden oorsprong als de laatste van de drie web-hoekstenen, naast CSS en HTML. Tegenwoordig begint JavaScript een breed spectrum van de technische stack te infiltreren. Het is niet langer beperkt tot de klantzijde en het wordt een steeds populairdere keuze voor <span lang="en">build-tools</span> en <span lang="en">server-side scripting</span>. JavaScript sluipt ook zijn weg naar de CDN-laag dankzij <span lang="en">edge computing</span>-oplossingen.
 

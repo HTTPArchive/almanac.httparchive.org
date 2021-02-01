@@ -19,7 +19,7 @@ featured_stat_label_2: Gebruik van <code>font-display</code> swap
 featured_stat_3: 11,0%
 featured_stat_label_3: Gebruik van variabele lettertypen op mobiele sites
 ---
-## Introductie
+## Inleiding
 
 Tekst vormt de kern van de meeste websites, en typografie is de kunst om die tekst op een visueel aantrekkelijke en effectieve manier te presenteren. Om een goede typografie te maken, moet u de juiste lettertypen kiezen en ontwerpers hebben een enorm scala aan weblettertypen om uit te kiezen. Zoals met alle bronnen, zijn er prestatie- en compatibiliteitsproblemen, maar als het goed wordt gedaan, is het voordeel de moeite waard. In dit hoofdstuk gaan we dieper in op gegevens om te laten zien hoe weblettertypen worden gebruikt, en in het bijzonder hoe ze zijn geoptimaliseerd.
 

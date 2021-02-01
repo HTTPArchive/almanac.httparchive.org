@@ -19,7 +19,7 @@ featured_stat_3: 74%
 featured_stat_label_3: CMS met WordPress (hetzelfde als vorig jaar!)
 ---
 
-## Introductie
+## Inleiding
 
 De term Content Management System (CMS) verwijst naar systemen waarmee individuen en organisaties inhoud kunnen creëren, beheren en publiceren. Een CMS voor webcontent is met name een systeem dat is gericht op het creëren, beheren en publiceren van inhoud die via internet kan worden geconsumeerd en ervaren.
 
