@@ -50,7 +50,7 @@ Il sito mediano (il 50° percentile) invia 444 KB di JavaScript quando viene car
   sql_file="bytes_2020.sql"
 ) }}
 
-È un po' deludente che qui non ci sia un divario maggiore. Sebbene sia pericoloso fare troppe ipotesi sulla rete o sulla potenza di elaborazione in base al fatto che il dispositivo in uso sia un telefono o un desktop (o una via di mezzo), vale la pena notare che [HTTP Archive mobile tests](./methodology#webpagetest) vengono eseguiti emulando un Moto G4 e una rete 3G. In altre parole, se ci fosse del lavoro da fare per adattarsi a circostanze tutt'altro che ideali passando meno codice, questi test dovrebbero mostrarlo.
+È un po' deludente che qui non ci sia un divario maggiore. Sebbene sia pericoloso fare troppe ipotesi sulla rete o sulla potenza di elaborazione in base al fatto che il dispositivo in uso sia un telefono o un desktop (o una via di mezzo), vale la pena notare che [Test mobile di HTTP Archive](./methodology#webpagetest) vengono eseguiti emulando un Moto G4 e una rete 3G. In altre parole, se ci fosse del lavoro da fare per adattarsi a circostanze tutt'altro che ideali passando meno codice, questi test dovrebbero mostrarlo.
 
 La tendenza sembra anche essere a favore dell'utilizzo di più JavaScript, non di meno. Confrontando con [i risultati dell'anno scorso](../2019/javascript#how-much-javascript-do-we-use), alla mediana vediamo un aumento del 13.4% in JavaScript testato su un dispositivo desktop e un 14.4% aumento della quantità di JavaScript inviato a un dispositivo mobile.
 
@@ -667,7 +667,7 @@ Un modo per vedere come questo si traduce in un impatto sull'esperienza utente �
   sql_file="correlations.sql"
 ) }}
 
-Il grafico sopra utilizza il [coefficiente di correlazione di Pearson](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient). C'è una definizione lunga e un po' complessa di cosa significhi precisamente, ma il succo è che stiamo cercando la forza della correlazione tra due numeri diversi. Se troviamo un coefficiente di 1,00, avremmo una correlazione positiva diretta. Una correlazione di 0,00 non mostrerebbe alcuna connessione tra due numeri. Qualunque cosa al di sotto di 0,00 indica una correlazione negativa, in altre parole, quando un numero aumenta, l'altro diminuisce.
+Il grafico sopra utilizza il [coefficiente di correlazione di Pearson](https://it.wikipedia.org/wiki/Indice_di_correlazione_di_Pearson). C'è una definizione lunga e un po' complessa di cosa significhi precisamente, ma il succo è che stiamo cercando la forza della correlazione tra due numeri diversi. Se troviamo un coefficiente di 1,00, avremmo una correlazione positiva diretta. Una correlazione di 0,00 non mostrerebbe alcuna connessione tra due numeri. Qualunque cosa al di sotto di 0,00 indica una correlazione negativa, in altre parole, quando un numero aumenta, l'altro diminuisce.
 
 Innanzitutto, non sembra esserci molta correlazione misurabile tra le nostre metriche JavaScript e il punteggio di accessibilità Lighthouse ("LH A11y" nel grafico) qui. Ciò è in netto contrasto con ciò che è stato trovato altrove, in particolare tramite [la ricerca annuale di WebAim](https://webaim.org/projects/million/#frameworks).
 

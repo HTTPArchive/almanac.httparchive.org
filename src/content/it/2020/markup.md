@@ -1,4 +1,5 @@
 ---
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Markup
 description: Capitolo Markup del Web Almanac 2020 che copre le osservazioni generali, l'uso di elementi e attributi, nonché curiosità e tendenze.
 authors: [j9t, catalinred, iandevlin]
@@ -46,7 +47,7 @@ In questa sezione, tratteremo gli aspetti di livello superiore dell'HTML come i 
   sql_file="summary_pages_by_device_and_doctype.sql"
 ) }}
 
-Il 96.82% delle pagine dichiara un [_doctype_](https://developer.mozilla.org/en-US/docs/Glossary/Doctype). I documenti HTML che dichiarano un doctype sono utili per ragioni storiche, "per evitare di attivare la modalità quirks nei browser", come [ha spiegato Ian Hickson nel 2009](https://lists.w3.org/Archives/Public/public-html-comments/2009Jul/0020.html). Quali sono i valori più popolari?
+Il 96.82% delle pagine dichiara un [_doctype_](https://developer.mozilla.org/it/docs/Glossary/Doctype). I documenti HTML che dichiarano un doctype sono utili per ragioni storiche, "per evitare di attivare la modalità quirks nei browser", come [ha spiegato Ian Hickson nel 2009](https://lists.w3.org/Archives/Public/public-html-comments/2009Jul/0020.html). Quali sono i valori più popolari?
 
 <figure>
   <table>
@@ -153,6 +154,7 @@ Circa l'89% delle pagine contiene almeno un commento HTML, mentre circa il 46% d
   <p>Viene eseguito solo in Internet Explorer 8.</p>
 <![endif]-->
 ```
+
 Quanto sopra è un commento condizionale HTML non standard. Sebbene questi si siano dimostrati utili in passato per affrontare le differenze del browser, sono stati consegnati alla cronologia per un po' di tempo poiché Microsoft [ha rilasciato commenti condizionali](https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/hh801214(v=vs.85)) in Internet Explorer 10.
 
 Tuttavia, agli estremi percentili sopra, abbiamo scoperto che le pagine web utilizzano circa 6 commenti condizionali nel 90° percentile e 1 commento condizionale nel 10° percentile.  La maggior parte delle pagine li include come aiutanti quali [html5shiv](https://github.com/aFarkas/html5shiv), [selectivizr](http://selectivizr.com/), and [respond.js](https://github.com/scottjehl/Respond). Pur essendo pagine decenti e ancora attive, la nostra conclusione è che molte di esse utilizzavano temi CMS obsoleti.
@@ -449,6 +451,7 @@ Gli elementi standard sono quelli che fanno o facevano parte della specifica HTM
 </figure>
 
 Includiamo questi elementi per dare un'idea di quali elementi potrebbero perdere di popolarità. Ma mentre `dir` e `basefont` sono stati specificati l'ultima volta in XHTML 1.0 (2000) e non fanno più parte dell'HTML, il raro uso di `rp` (che è stato menzionato [già nel 1998](https://www.w3.org/TR/1998/WD-ruby-19981221/#a2-4) ed è [ancora parte dell'HTML](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element)), potrebbe semplicemente suggerire che il <a hreflang="en" href="https://www.w3.org/TR/ruby/">markup di Ruby</a> non è molto popolare.
+
 
 ### Elementi personalizzati
 
@@ -965,7 +968,7 @@ Abbiamo trattato l'uso dell'HTML in generale, nonché l'adozione degli elementi 
 
 ### Specifiche di `viewport`
 
-Il meta elemento [viewport](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag) viene utilizzato per controllare il layout sui browser mobile. Mentre anni fa, il motto era una specie di "non dimenticare il meta elemento viewport" durante la creazione di una pagina web, alla fine questa divenne una pratica comune e il motto cambiò in "assicurati che lo zoom e il ridimensionamento non siano disabilitati".
+Il meta elemento [viewport](https://developer.mozilla.org/it/docs/Mozilla/Mobile/Viewport_meta_tag) viene utilizzato per controllare il layout sui browser mobile. Mentre anni fa, il motto era una specie di "non dimenticare il meta elemento viewport" durante la creazione di una pagina web, alla fine questa divenne una pratica comune e il motto cambiò in "assicurati che lo zoom e il ridimensionamento non siano disabilitati".
 
 Gli utenti dovrebbero essere in grado di ingrandire e ridimensionare il testo [fino al 500%](https://dequeuniversity.com/rules/axe/4.0/meta-viewport-large).Ecco perché i controlli in strumenti popolari come [Lighthouse](https://developers.google.com/web/tools/lighthouse) o [axe](https://www.deque.com/axe/) falliscono quando `user-scalable="no"` è usato all'interno dell'elemento `metaname="viewport"`, e quando il valore dell'attributo `maximum-scale` è minore di `5`.
 
@@ -1196,7 +1199,7 @@ Le pagine nel 10° e 25° percentile non contengono alcun pulsante, mentre una p
 
 ### I target di collegamento
 
-L'[elemento ancora](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a), o l'elemento `a`, collega insieme le risorse web. In questa sezione si analizza l'adozione dei protocolli inclusi nei rispettivi target di collegamento.
+L'[elemento ancora](https://developer.mozilla.org/it/docs/Web/HTML/Element/a), o l'elemento `a`, collega insieme le risorse web. In questa sezione si analizza l'adozione dei protocolli inclusi nei rispettivi target di collegamento.
 
 <figure>
   <table>
