@@ -54,7 +54,7 @@ def render_template(template, *args, **kwargs):
     kwargs.update(year=year, lang=lang, language=language, supported_languages=template_supported_languages,
                   supported_years=template_supported_years, all_supported_years=SUPPORTED_YEARS,
                   supported_chapters=supported_chapters, date_published=date_published, date_modified=date_modified,
-                  ebook_size_in_mb=ebook_size_in_mb, get_file_date_info=get_file_date_info, config=config)
+                  ebook_size_in_mb=ebook_size_in_mb, get_file_date_info=get_file_date_info, config=config, plural_ru=plural_ru)
     return flask_render_template(template, *args, **kwargs)
 
 
@@ -230,6 +230,18 @@ def get_versioned_filename(path):
 def get_ebook_size_in_mb(lang, year):
     ebook_file = '/static/pdfs/web_almanac_%s_%s.pdf' % (year, lang)
     return int(get_file_date_info(ebook_file, 'size') or 0)
+
+
+def plural_ru(value, quantitative):
+    # Handle Russian plurals
+    # Based on https://github.com/andrewp-as-is/plural-ru.py
+    if value % 100 in (11, 12, 13, 14):
+        return quantitative[2]
+    if value % 10 == 1:
+        return quantitative[0]
+    if value % 10 in (2, 3, 4):
+        return quantitative[1]
+    return quantitative[2]
 
 
 class RegexConverter(BaseConverter):
