@@ -12,6 +12,7 @@
         "first-cpu-idle": "off",
         "first-meaningful-paint": "off",
         "font-display": "off",
+        "inspector-issues": "off",
         "interactive": "off",
         "largest-contentful-paint": "off",
         "mainthread-work-breakdown": "off",
