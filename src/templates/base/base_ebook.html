@@ -113,10 +113,15 @@
 
 {% set unit = 'mm' %}
 {% set spine = 25 %}
+{% if year == '2020' %}
+{% set spine = 34.5 %}
+{% endif %}
 {% set pageWidth = 148 %}
 {% set pageHeight = 210 %}
 {% if request.args.get('unit') != None %}{% set unit = request.args.get('unit') %}{% endif %}
 {% if request.args.get('spine') != None %}{% set spine = request.args.get('spine')|float %}{% endif %}
+{% set spinePadding = (spine - 25) / 2 %}
+{% if request.args.get('spinePadding') != None %}{% set spinePadding = request.args.get('spinePadding')|float %}{% endif %}
 {% if request.args.get('pageWidth') != None %}{% set pageWidth = request.args.get('pageWidth')|float %}{% endif %}
 {% if request.args.get('pageHeight') != None %}{% set pageHeight = request.args.get('pageHeight')|float %}{% endif %}
 {% set totalWidth = pageWidth + spine + pageWidth %}
@@ -129,18 +134,19 @@
 }
 
 #front-cover .ha-logo-wrapper {
-  max-width: {{ spine }}{{ unit }};
-  height: {{ halfSpine }}{{ unit }};
+  max-width: {{ spine - spinePadding - spinePadding }}{{ unit }};
+  height: {{ halfSpine - spinePadding }}{{ unit }};
 }
 
 #spine {
   left: {{ pageWidth }}{{ unit }};
   width: {{ spine }}{{ unit }};
+  padding: 0 {{ spinePadding }}{{ unit }};
 }
 
 #spine .ha-logo-wrapper {
-  max-width: {{ spine }}{{ unit }};
-  height: {{ halfSpine }}{{ unit }};
+  max-width: {{ spine - spinePadding - spinePadding }}{{ unit }};
+  height: {{ halfSpine - spinePadding }}{{ unit }};
 }
 
 #back-cover {
@@ -148,8 +154,8 @@
 }
 
 #back-cover .ha-logo-wrapper {
-  max-width: {{ spine }}{{ unit }};
-  height: {{ halfSpine }}{{ unit }};
+  max-width: {{ spine - spinePadding - spinePadding }}{{ unit }};
+  height: {{ halfSpine - spinePadding }}{{ unit }};
 }
 
 @prince-pdf {
@@ -432,7 +438,7 @@
     <div id="spine">
 
       <h3 class="spine-author">
-        <svg viewBox="0 0 90 16">
+        <svg viewBox="0 0 65 16">
           <text x="8" y="15">Viscomi</text>
         </svg>
       </h3>
