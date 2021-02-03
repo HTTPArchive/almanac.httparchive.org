@@ -20,7 +20,7 @@
 
 {% block mission %}
 <p>
-Our mission is to combine the raw stats and trends of the HTTP Archive with the expertise of the web community. The Web Almanac is a comprehensive report on the state of the web, backed by real data and trusted web experts. It is comprised of {{ supported_chapters | length }}  chapters spanning aspects of page content, user experience, publishing, and distribution.
+Our mission is to combine the raw stats and trends of the HTTP Archive with the expertise of the web community. The Web Almanac is a comprehensive report on the state of the web, backed by real data and trusted web experts. The {{ year }} edition is comprised of {{ supported_chapters | length }} chapters spanning aspects of page content, user experience, publishing, and distribution.
 </p>
 {% endblock %}
 
@@ -109,7 +109,7 @@ Our mission is to combine the raw stats and trends of the HTTP Archive with the 
 {% endif %}
 
 {% block contributors_description %}
-The Web Almanac has been made possible by the hard work of the web community. {{ self.contributors() }} people have volunteered countless hours in the planning, research, writing and production phases.
+The Web Almanac has been made possible by the hard work of the web community. {{ self.contributors() }} people have volunteered countless hours in the planning, research, writing and production phases of the {{ year }} Web Almanac.
 {% endblock %}
 {% block contributors_link %}See the contributors{% endblock %}
 
@@ -117,7 +117,7 @@ The Web Almanac has been made possible by the hard work of the web community. {{
 {% block methodology_stat_2_title %}Data Processed{% endblock %}
 {% block methodology_link %}Learn about our Methodology{% endblock %}
 {% block methodology_description %}
-Unless otherwise noted, the metrics in all of the {{ supported_chapters | length }} chapters of the Web Almanac are sourced from the HTTP Archive dataset. HTTP Archive is a community-run project that has been tracking how the web is built since 2010. Using WebPageTest and Lighthouse under the hood, metadata about {{ self.total_websites() }} websites are tested monthly and included in a public BigQuery database for analysis. The {{ self.dataset() }} dataset was used as the basis for the Web Almanac&#8217;s metrics. For more information, see the Methodology page.
+Unless otherwise noted, the metrics in all of the {{ supported_chapters | length }} chapters of the {{ year }} Web Almanac are sourced from the HTTP Archive dataset. HTTP Archive is a community-run project that has been tracking how the web is built since 2010. Using WebPageTest and Lighthouse under the hood, metadata about {{ self.total_websites() }} websites are tested monthly and included in a public BigQuery database for analysis. The {{ self.dataset() }} dataset was used as the basis for the {{ year }} Web Almanac&#8217;s metrics. For more information, see the Methodology page.
 {% endblock %}
 
 {% block introduction %}Introduction{% endblock %}

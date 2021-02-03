@@ -20,7 +20,7 @@
 
 {% block mission %}
 <p>
-我们的任务是将HTTP Archive的原始统计数据和趋势与web社区的专业知识结合起来。Web Almanac网络年鉴是一个关于网络状态的综合报告，由真实的数据和可信的网络专家支持。它由{{ supported_chapters | length }}个章节组成，涵盖了页面内容、用户体验、发布和分发的各个方面。
+我们的任务是将HTTP Archive的原始统计数据和趋势与web社区的专业知识结合起来。Web Almanac网络年鉴是一个关于网络状态的综合报告，由真实的数据和可信的网络专家支持。{{ year }}年版包括{{ supported_chapters | length }}个章节组成，涵盖了页面内容、用户体验、发布和分发的各个方面。
 </p>
 {% endblock %}
 
@@ -109,7 +109,7 @@
 {% endif %}
 
 {% block contributors_description %}
-是web社区的辛勤工作才让 Web Almanac 网络年鉴成为可能。 {{ self.contributors() }} 成员在计划、研究、写作和发布阶段奉献投入了难以估量的时间。
+是web社区的辛勤工作才让 Web Almanac 网络年鉴成为可能。 {{ self.contributors() }} 成员在计{{ year }} Web Almanac划、研究、写作和发布阶段奉献投入了难以估量的时间。
 {% endblock %}
 {% block contributors_link %}查看贡献者{% endblock %}
 
@@ -117,7 +117,7 @@
 {% block methodology_stat_2_title %}处理的数据{% endblock %}
 {% block methodology_link %}了解方法论{% endblock %}
 {% block methodology_description %}
-除非另有说明，在所有{{ supported_chapters | length }}章的Web Almanac网络年鉴的指标都来自HTTP Archive数据集。HTTP Archive是一个社区运行的项目，自2010年以来一直在跟踪web是如何构建的。使用WebPageTest和Lighthouse，每月测试{{ self.total_websites() }}网站的元数据，并将其包含在一个公开的BigQuery数据库中进行分析。Web Almanac 网络年鉴使用了{{ self.dataset() }}月的数据集作为度量的基础。有关更多信息，请参见方法论页面。
+除非另有说明，在所有{{ supported_chapters | length }}章的{{ year }} Web Almanac网络年鉴的指标都来自HTTP Archive数据集。HTTP Archive是一个社区运行的项目，自2010年以来一直在跟踪web是如何构建的。使用WebPageTest和Lighthouse，每月测试{{ self.total_websites() }}网站的元数据，并将其包含在一个公开的BigQuery数据库中进行分析。{{ year }} Web Almanac 网络年鉴使用了{{ self.dataset() }}月的数据集作为度量的基础。有关更多信息，请参见方法论页面。
 {% endblock %}
 
 {% block introduction %}介绍{% endblock %}
