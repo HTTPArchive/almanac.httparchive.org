@@ -5,7 +5,7 @@ function removeLazyLoading() {
   //If no Array.from then pretty sure there will be no native lazy-loading support to remove!
   if (Array.from) {
     console.log("Removing lazy loading...");
-    
+
     Array.from(document.querySelectorAll('img[loading], iframe[loading]')).forEach(function(element) {
       element.removeAttribute('loading');
     });
@@ -34,7 +34,7 @@ function isInPrintMode() {
   }
   gtag('event', 'print-mode', { 'event_category': 'user', 'event_label': '' + printMode, 'value': +printMode })
   return printMode;
-  
+
 }
 
 //Check if the screen meets minimum size requirements for Interactive figures
@@ -176,6 +176,7 @@ function upgradeInteractiveFigures() {
           //Set up some default attributes
           iframe.setAttribute('title', fig_img.getAttribute('alt'));
           iframe.setAttribute('class', 'fig-iframe');
+          iframe.setAttribute('tabindex', '-1'); // Google embeds are currently not keyboard interactive so disable tabindex
           if (fig_img.getAttribute('aria-labelledby')) {
             iframe.setAttribute('aria-labelledby', fig_img.getAttribute('aria-labelledby'));
           }
@@ -240,9 +241,9 @@ function setDiscussionCount() {
           }
           var el = document.getElementById('num_comments');
           el.innerText = comments;
-          
+
           document.getElementById(comments === 1 ? 'comment-singular' : 'comment-plural').removeAttribute('data-translation');
-          
+
           gtag('event', 'discussion-count', { 'event_category': 'user', 'event_label': 'enabled', 'value': 1 });
         })
         .catch(function (err) {
@@ -302,7 +303,7 @@ function indexHighlighter() {
   // Create a function to handle highlighting a new index item
   // that will be called by the IntersectionObserver
   function highlightIndexEntry(link) {
-    
+
     var indexLink = document.querySelector('.index-box a[href="#' + link + '"]');
     var oldIndexLink = document.querySelector('.index-box .active');
 
@@ -399,8 +400,49 @@ function addShowDescription() {
 
 }
 
+function addKeyboardScollableRegions() {
+  // If a table or code block is overflowing then should allow keyboard focus
+  // More details - https://adrianroselli.com/2020/11/under-engineered-responsive-tables.html
+
+  // Handle tables that have overflowed
+  var all_table_containers = document.querySelectorAll('.table-wrap-container');
+  for (var index = 0; index < all_table_containers.length; ++index) {
+    var table_container = all_table_containers[index];
+
+    if(table_container.scrollWidth > table_container.clientWidth) {
+      var figure = table_container.parentElement.parentElement;
+      if (figure && figure.nodeName == "FIGURE") {
+        var figid = figure.id;
+        var figcaption = figure.querySelector('figcaption');
+
+        if (figid && figcaption) {
+          figcaption.setAttribute('id',figid+'-caption');
+          table_container.setAttribute('tabindex','0');
+          table_container.setAttribute('role','region');
+          table_container.setAttribute('aria-labelledby', figid+  '-caption');
+        }
+      }
+    }
+  }
+
+  // Handle code blocks that have overflowed
+  var all_pre_elements = document.querySelectorAll('pre');
+  for (var index = 0; index < all_pre_elements.length; ++index) {
+    var pre_element = all_pre_elements[index];
+
+    if(pre_element.scrollWidth > pre_element.clientWidth) {
+      pre_element.setAttribute('tabindex','0');
+      pre_element.setAttribute('role','region');
+      pre_element.setAttribute('aria-label', `Code ${index}`);
+
+    }
+  }
+
+}
+
 indexHighlighter();
 addShowDescription();
 removeLazyLoadingOnPrint();
 upgradeInteractiveFigures();
+addKeyboardScollableRegions();
 setDiscussionCount();
