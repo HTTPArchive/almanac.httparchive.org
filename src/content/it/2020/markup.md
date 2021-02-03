@@ -452,7 +452,6 @@ Gli elementi standard sono quelli che fanno o facevano parte della specifica HTM
 
 Includiamo questi elementi per dare un'idea di quali elementi potrebbero perdere di popolarità. Ma mentre `dir` e `basefont` sono stati specificati l'ultima volta in XHTML 1.0 (2000) e non fanno più parte dell'HTML, il raro uso di `rp` (che è stato menzionato [già nel 1998](https://www.w3.org/TR/1998/WD-ruby-19981221/#a2-4) ed è [ancora parte dell'HTML](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element)), potrebbe semplicemente suggerire che il <a hreflang="en" href="https://www.w3.org/TR/ruby/">markup di Ruby</a> non è molto popolare.
 
-
 ### Elementi personalizzati
 
 L'edizione 2019 del Web Almanac ha gestito [elementi personalizzati](../2019/markup#custom-elements) discutendo diversi elementi non standard. Quest'anno abbiamo ritenuto utile esaminare più da vicino gli elementi personalizzati. Come li abbiamo determinati? Approssimativamente guardando [la loro definizione](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-core-concepts), in particolare il loro uso di un trattino. Concentriamoci sugli elementi principali, in questo caso elementi utilizzati su ≥1% di tutti gli URL nel campione:
