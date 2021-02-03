@@ -54,7 +54,8 @@ def render_template(template, *args, **kwargs):
     kwargs.update(year=year, lang=lang, language=language, supported_languages=template_supported_languages,
                   supported_years=template_supported_years, all_supported_years=SUPPORTED_YEARS,
                   supported_chapters=supported_chapters, date_published=date_published, date_modified=date_modified,
-                  ebook_size_in_mb=ebook_size_in_mb, get_file_date_info=get_file_date_info, config=config, plural_ru=plural_ru)
+                  ebook_size_in_mb=ebook_size_in_mb, get_file_date_info=get_file_date_info, config=config,
+                  plural_ru=plural_ru)
     return flask_render_template(template, *args, **kwargs)
 
 
