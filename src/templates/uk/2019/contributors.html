@@ -2,9 +2,9 @@
 
 {% block title %}Контриб'ютори 2019 року | Web Almanac від HTTP Archive{% endblock %}
 
-{% block description %}{{ config.contributors.items() | length }} неймовірних людей, які долучилися до створення Web Almanac 2019 як аналітики, автори, дизайнери, розробники, рецензенти, керівники, редактори та перекладачі.{% endblock %}
+{% block description %}{{ config.contributors.items() | length }} неймовірних {{ plural_ru(config.contributors.items() | length | int, ["людина", "людини", "людей"]) }}, які долучилися до створення Web Almanac 2019 як аналітики, автори, дизайнери, розробники, рецензенти, керівники, редактори та перекладачі.{% endblock %}
 
-{% block filter_by_team %}Фільтрувати за роллю в команді: <span id="filtered-contributors">{{ self.contributors() }}</span><span id="contributors-total-text" class="hidden"> з <span id="contributors-total">{{ config.contributors.items() | length }}</span></span> контриб'юторів.{% endblock %}
+{% block filter_by_team %}Фільтрувати за роллю в команді: <span id="filtered-contributors">{{ self.contributors() }}</span><span id="contributors-total-text" class="hidden"> з <span id="contributors-total">{{ config.contributors.items() | length }}</span></span> {{ plural_ru(config.contributors.items() | length | int, ["контриб'ютор", "контриб'ютори", "контриб'юторів"]) }}.{% endblock %}
 {% block filter_by %}Фільтрувати за{% endblock %}
 
 {% block join_the_team_title%}Приєднуйся до команди Web Almanac{% endblock %}
