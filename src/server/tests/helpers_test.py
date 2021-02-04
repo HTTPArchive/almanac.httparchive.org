@@ -1,7 +1,7 @@
 from server.helpers import get_file_date_info, get_versioned_filename, get_ebook_size_in_mb, \
     chapter_lang_exists, featured_chapters_exists, get_chapter_nextprev, get_chapter_config, convert_old_image_path, \
     add_footnote_links, year_live, strip_accents, accentless_sort, render_template, render_error_template, \
-    get_ebook_methodology
+    get_ebook_methodology, plural_ru
 from server.config import get_config, SUPPORTED_LANGUAGES, SUPPORTED_YEARS, get_entries_from_json
 from server.language import _Language
 from server import app
@@ -330,3 +330,19 @@ def test_ebook_size_non_existant_year_is_zero():
 
 def test_ebook_size_non_existant_language_and_year_is_zero():
     assert get_ebook_size_in_mb('rubbish', 'rubbish') == 0
+
+
+def test_russian_singlar():
+    assert plural_ru(1, ["участник", "участника", "участников"]) == "участник"
+
+
+def test_russian_ends_in_eleven():
+    assert plural_ru(11, ["участник", "участника", "участников"]) == "участников"
+
+
+def test_russian_two():
+    assert plural_ru(2, ["участник", "участника", "участников"]) == "участника"
+
+
+def test_russian_seven():
+    assert plural_ru(7, ["участник", "участника", "участников"]) == "участников"
