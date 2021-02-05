@@ -20,7 +20,7 @@
 
 {% block mission %}
 <p>
-La nostra missione è combinare le statistiche grezze e le tendenze del HTTP Archive con l'esperienza della comunità web. Il Web Almanac è un rapporto completo sullo stato del web, supportato da dati reali e da esperti web di fiducia. È composto da {{supported_chapters | length}} capitoli che abbracciano aspetti del page content, user experience, publishing e distribution.
+La nostra missione è combinare le statistiche grezze e le tendenze del HTTP Archive con l'esperienza della comunità web. Il Web Almanac è un rapporto completo sullo stato del web, supportato da dati reali e da esperti web di fiducia. L'edizione {{ year }} è composta da {{supported_chapters | length}} capitoli che abbracciano aspetti del page content, user experience, publishing e distribution.
 </p>
 {% endblock %}
 
@@ -109,13 +109,16 @@ La nostra missione è combinare le statistiche grezze e le tendenze del HTTP Arc
 {% endif %}
 
 {% block contributors_description %}
-Il Web Almanac è stato reso possibile grazie al duro lavoro della web community. {{self.contributors() }} persone si sono offerte volontarie per innumerevoli ore nelle fasi di pianificazione, ricerca, scrittura e produzione.
+Il Web Almanac è stato reso possibile grazie al duro lavoro della web community. {{self.contributors() }} persone si sono offerte volontarie per innumerevoli ore nelle fasi di pianificazione, ricerca, scrittura e produzione del Web Almanac {{ year }}.
 {% endblock %}
 {% block contributors_link %}Vedi i collaboratori{% endblock %}
 
 {% block methodology_stat_1_title %}Siti web testati{% endblock %}
 {% block methodology_stat_2_title %}Dati trattati{% endblock %}
 {% block methodology_link %}Scopri la nostra metodologia{% endblock %}
+{% block methodology_description %}
+Se non diversamente specificato, le metriche in tutti i {{ supported_chapters | length }} capitoli del Web Almanac {{ year }} provengono dal dataset dell'archivio HTTP. HTTP Archive è un progetto gestito dalla comunità che tiene traccia del modo in cui è costruito il Web dal 2010. Utilizzando WebPageTest e Lighthouse "under the hood", i metadati di {{ self.total_websites() }} di siti Web vengono testati mensilmente e inclusi in un database BigQuery pubblico per l'analisi. Il set di dati di {{ self.dataset() }} è stato utilizzato come base per le metriche del Web Almanac {{ year }}. Per ulteriori informazioni, vedere la pagina Methodology.
+{% endblock %}
 
 {% block introduction %}Introduzione{% endblock %}
 

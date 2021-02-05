@@ -381,6 +381,7 @@
     var contributors = document.querySelector('.contributors');
     var counter = document.querySelector('#filtered-contributors');
     var totalText = document.querySelector('#contributors-total-text');
+    var totalTextNonFiltered = document.querySelector('#contributors-total-text-non-filtered');
     var totalContributors = document.querySelector('#contributors-total');
     var shadowNode = document.createElement('div');
 
@@ -473,8 +474,10 @@
         counter.innerText = filteredCount;
         if ( counter.innerText ===  totalContributors.innerText ) {
           totalText.classList.add('hidden')
+          if (totalTextNonFiltered) totalTextNonFiltered.classList.remove('hidden')
         } else {
           totalText.classList.remove('hidden')
+          if (totalTextNonFiltered) totalTextNonFiltered.classList.add('hidden')
         }
     }
     window.addEventListener('popstate', handleFilterUrl);

@@ -19,7 +19,7 @@ featured_stat_3: 4%
 featured_stat_label_3: Sites met ongewijzigde Prestatiescore in LH6
 ---
 
-## Introductie
+## Inleiding
 
 Er is een onbetwistbaar nadelig effect dat lage snelheid heeft op de algehele gebruikerservaring en bijgevolg op conversies. Maar slechte prestaties veroorzaken niet alleen frustratie of hebben een negatieve invloed op de bedrijfsdoelen, het creëert ook echte toetredingsdrempels. De wereldwijde pandemie van dit jaar [maakte die bestaande barrières nog duidelijker](https://www.weforum.org/agenda/2020/04/coronavirus-covid-19-pandemic-digital-divide-internet-data-broadband-mobbile/). Met de verschuiving naar leren op afstand, werken en socializen, werd plotseling ons hele leven online verplaatst. Slechte connectiviteit en gebrek aan toegang tot geschikte apparaten maakten deze verandering op zijn best pijnlijk, zo niet onmogelijk, voor velen. Het is een echte test geweest, waarbij connectiviteit, apparaat- en snelheidsverschillen over de hele wereld naar voren zijn gekomen.
 

@@ -452,7 +452,6 @@ Standard elements are those that are or were part of the HTML specification. Whi
 
 We're including these elements to give an idea what elements may have gone out of favor. But while `dir` and `basefont` were last specified in XHTML 1.0 (2000) and are no longer part of HTML, the rare use of `rp` (which was mentioned [as early as 1998](https://www.w3.org/TR/1998/WD-ruby-19981221/#a2-4) and is [still part of HTML](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element)), may just suggest that [ruby markup](https://www.w3.org/TR/ruby/) is not very popular.
 
-
 ### Custom elements
 
 The 2019 edition of the Web Almanac handled [custom elements](../2019/markup#custom-elements) by discussing several non-standard elements. This year, we found it valuable to have a closer look at custom elements. How did we determine these? Roughly by looking at [their definition](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-core-concepts), notably their use of a hyphen. Let's focus on the top elements, in this case elements used on ≥1% of all URLs in the sample:

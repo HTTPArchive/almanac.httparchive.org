@@ -10,7 +10,6 @@ on:
     paths:
       - '**.js'
       - '**.py'
-      - '**.html'
   schedule:
     #        ┌───────────── minute (0 - 59)
     #        │ ┌───────────── hour (0 - 23)
@@ -26,21 +25,29 @@ on:
 
 jobs:
   CodeQL-Build:
-    # CodeQL runs on ubuntu-latest, windows-latest, and macos-latest
-    runs-on: ubuntu-latest
+    # CodeQL runs on ubuntu-20.04, windows-latest, and macos-latest
+    runs-on: ubuntu-20.04
     strategy:
       matrix:
         language: ['javascript', 'python']
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-
-      # Initializes the CodeQL tools for scanning.
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2.2.1
+        with:
+          python-version: '3.8'
+      - name: Install dependencies
+        run: |
+          cd src
+          pip install -r requirements.txt;
+          # Set the `CODEQL-PYTHON` environment variable to the Python executable
+          # that includes the dependencies
+          echo "CODEQL_PYTHON=$(which python)" >> $GITHUB_ENV
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v1
         with:
           queries: +security-and-quality
-
+          setup-python-dependencies: false
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v1

@@ -20,7 +20,7 @@ jobs:
         github.event_name == 'push' ||
         github.event.pull_request.head.repo.full_name != github.repository ||
         startsWith(github.event.pull_request.title,'Bump github/super-linter')
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2.3.3
