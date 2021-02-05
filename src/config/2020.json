@@ -562,7 +562,7 @@
         "reviewers"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/725717?v=4&s=200",
-      "website": "https://fantasai.inkedblade.net/",
+      "website": "http://fantasai.inkedblade.net/",
       "github": "fantasai",
       "twitter": "fantasai"
     },
@@ -1063,8 +1063,9 @@
         "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/3077443?v=4&s=200",
-      "website": "https://www.opentagclosetag.com/",
-      "github": "oluoluoxenfree"
+      "website": "https://olu.online/",
+      "github": "oluoluoxenfree",
+      "twitter": "oluoluoxenfree"
     },
     "swissspidy": {
       "name": "Pascal Birchler",

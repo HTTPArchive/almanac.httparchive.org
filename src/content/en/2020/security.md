@@ -839,7 +839,7 @@ Our results show that the  `Cypto.getRandomValues` function, which allows for ge
 
 ### Utilizing bot protection services
 
-According to [Imperva](http://www.imperva.com/blog/bad-bot-report-2020-bad-bots-strike-back), a serious proportion (37%) of the total web traffic belongs to automated programs (so-called "bots"), and most of them are malicious (24%). Bots can be used for phishing, collecting information, exploiting vulnerabilities, DDoS, and many other purposes. Using bots is a very interesting technique for attackers and especially increases the success rate of massive attacks. That is why protecting against malicious bots can be helpful in defending against large-scale automated attacks. The following figure shows the use of third-party protection services against malicious bots.
+According to [Imperva](https://www.imperva.com/blog/bad-bot-report-2020-bad-bots-strike-back), a serious proportion (37%) of the total web traffic belongs to automated programs (so-called "bots"), and most of them are malicious (24%). Bots can be used for phishing, collecting information, exploiting vulnerabilities, DDoS, and many other purposes. Using bots is a very interesting technique for attackers and especially increases the success rate of massive attacks. That is why protecting against malicious bots can be helpful in defending against large-scale automated attacks. The following figure shows the use of third-party protection services against malicious bots.
 
 <figure>
   <table>
