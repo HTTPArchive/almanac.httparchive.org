@@ -21,7 +21,7 @@ featured_stat_3: 14%
 featured_stat_label_3: Sites die vermijdingslinks gebruiken
 ---
 
-## Introductie
+## Inleiding
 
 Toegankelijkheid op internet is essentieel voor een inclusieve en rechtvaardige samenleving. Naarmate meer van ons sociale en werkleven naar de online wereld verhuizen, wordt het voor mensen met een handicap nog belangrijker om zonder belemmeringen aan alle online interacties te kunnen deelnemen. Net zoals gebouwarchitecten toegankelijkheidsfuncties kunnen creëren of weglaten, zoals rolstoelhellingen, kunnen webontwikkelaars de ondersteunende technologie waar gebruikers op vertrouwen helpen of hinderen.
 

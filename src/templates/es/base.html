@@ -20,7 +20,7 @@
 
 {% block mission %}
 <p>
-  Nuestra misión es combinar las estadísticas y tendencias sin procesar del HTTP Archive con la experiencia de la comunidad web. Web Almanac es un informe exhaustivo sobre el estado de la web, respaldado por datos reales y expertos web de confianza. Se compone de {{ supported_chapters | length }} capítulos que abarcan aspectos del contenido de la página, la experiencia del usuario, la publicación y la distribución.
+  Nuestra misión es combinar las estadísticas y tendencias sin procesar del HTTP Archive con la experiencia de la comunidad web. Web Almanac es un informe exhaustivo sobre el estado de la web, respaldado por datos reales y expertos web de confianza. La edición de {{ year }} consta de {{ supported_chapters | length }} capítulos que abarcan aspectos del contenido de la página, la experiencia del usuario, la publicación y la distribución.
 </p>
 {% endblock %}
 
@@ -109,13 +109,16 @@
 {% endif %}
 
 {% block contributors_description %}
-Web Almanac ha sido posible gracias al arduo trabajo de la comunidad web. {{ self.contributors() }} personas han ofrecido incontables horas en las fases de planificación, investigación, redacción y producción.
+Web Almanac ha sido posible gracias al arduo trabajo de la comunidad web. {{ self.contributors() }} personas han ofrecido incontables horas en las fases de planificación, investigación, redacción y producción del Web Almanac {{ year }}.
 {% endblock %}
 {% block contributors_link %}Ver los contribuidores{% endblock %}
 
 {% block methodology_stat_1_title %}Sitios web analizados{% endblock %}
 {% block methodology_stat_2_title %}Información procesada{% endblock %}
 {% block methodology_link %}Conozca nuestra Metodología{% endblock %}
+{% block methodology_description %}
+A menos que se indique lo contrario, las métricas en los {{ supported_chapters | length }} capítulos del Web Almanac {{ year }} provienen del conjunto de datos del HTTP Archive. HTTP Archive es un proyecto administrado por la comunidad que ha estado rastreando cómo se construye la web desde 2010. Utilizando WebPageTest y Lighthouse bajo el capó, se prueban metadatos de {{ self.total_websites() }} de sitios web mensualmente y se incluyen en una base de datos pública de BigQuery para su análisis. El conjunto de datos de {{ self.dataset() }} se utilizó como base para las métricas de Web Almanac {{ year }}. Para obtener más información, consulte la página de Metodología.
+{% endblock %}
 
 {% block introduction %}Introducción{% endblock %}
 

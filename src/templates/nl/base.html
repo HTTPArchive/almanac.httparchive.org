@@ -20,7 +20,7 @@
 
 {% block mission %}
 <p>
-  Onze missie is om de onbewerkte statistieken en trends van het HTTP Archive te combineren met de expertise van de webgemeenschap. De Web Almanac is een uitgebreid rapport over de staat van het internet, ondersteund door echte gegevens en vertrouwde webexperts. Het bestaat uit {{ supported_chapters | length }} hoofdstukken over aspecten van pagina-inhoud, gebruikerservaring, publicatie en distributie.
+  Onze missie is om de onbewerkte statistieken en trends van het HTTP Archive te combineren met de expertise van de webgemeenschap. De Web Almanac is een uitgebreid rapport over de staat van het internet, ondersteund door echte gegevens en vertrouwde webexperts. De editie van {{ year }} bestaat uit {{ supported_chapters | length }} hoofdstukken over aspecten van pagina-inhoud, gebruikerservaring, publicatie en distributie.
 </p>
 {% endblock %}
 
@@ -109,13 +109,16 @@
 {% endif %}
 
 {% block contributors_description %}
-De Web Almanac is mogelijk gemaakt door het harde werk van de webgemeenschap. {{ self.contributors() }} mensen hebben talloze uren vrijwilligerswerk gestoken in de fasen van planning, onderzoek, schrijven en productie.
+De Web Almanac is mogelijk gemaakt door het harde werk van de webgemeenschap. {{ self.contributors() }} mensen hebben talloze uren vrijwilligerswerk gestoken in de fasen van planning, onderzoek, schrijven en productie van de {{ year }} Web Almanac.
 {% endblock %}
 {% block contributors_link %}Zie de bijdragers{% endblock %}
 
 {% block methodology_stat_1_title %}Websites Getest{% endblock %}
 {% block methodology_stat_2_title %}Verwerkte Gegevens{% endblock %}
 {% block methodology_link %}Lees meer over onze Methodologie{% endblock %}
+{% block methodology_description %}
+Tenzij anders vermeld, zijn de statistieken in alle {{ supported_chapters | length }} hoofdstukken van de {{ year }} Web Almanac afkomstig uit de HTTP Archive-dataset. HTTP Archive is een door de gemeenschap gerund project dat sinds 2010 bijhoudt hoe het web is opgebouwd. Met WebPageTest en Lighthouse onder de motorkap worden maandelijks metagegevens over {{ self.total_websites() }} websites getest en voor analyse opgenomen in een openbare BigQuery-database. De gegevensset van {{ self.dataset() }} werd gebruikt als basis voor de statistieken van de {{ year }} Web Almanac. Zie de Methodologie-pagina voor meer informatie.
+{% endblock %}
 
 {% block introduction %}Introductie{% endblock %}
 

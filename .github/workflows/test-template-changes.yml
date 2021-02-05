@@ -25,7 +25,7 @@ on:
 jobs:
   build:
     name: Build and Test Template Changes
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     if: github.repository == 'HTTPArchive/almanac.httparchive.org'
     steps:
     - name: Checkout Code
@@ -35,7 +35,7 @@ jobs:
     - name: Setup Node.js for use with actions
       uses: actions/setup-node@v2.1.4
       with:
-        node-version: 12.x
+        node-version:  '12'
     - name: Test Template Changes
       run: ./src/tools/scripts/test_template_changes.sh
     - name: 'Comment PR'
