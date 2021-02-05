@@ -20,7 +20,7 @@
 
 {% block mission %}
 <p>
-Notre mission est de combiner les statistiques brutes et les tendances de HTTP Archive avec l’expertise de la communauté web. Le Web Almanac est un rapport complet sur l’état du Web, soutenu par des données réelles et des experts du Web. Il est composé de {{ supported_chapters | length }} chapitres couvrant l’expérience utilisateur, le contenu des pages, leur publication et leur distribution.
+Notre mission est de combiner les statistiques brutes et les tendances de HTTP Archive avec l’expertise de la communauté web. Le Web Almanac est un rapport complet sur l’état du Web, soutenu par des données réelles et des experts du Web. L’édition {{ year }} se compose de {{ supported_chapters | length }} chapitres couvrant l’expérience utilisateur, le contenu des pages, leur publication et leur distribution.
 </p>
 {% endblock %}
 
@@ -62,20 +62,24 @@ Notre mission est de combiner les statistiques brutes et les tendances de HTTP A
 {% block open %}Ouvrez{% endblock %}
 {% block close %}Fermez{% endblock %}
 
-{% macro figure_text(metadata, id) %}Figure {{ figure_id(metadata, id) }}.{% endmacro %}
-{% macro show_description(metadata, id) %}Afficher la description de la figure {{ figure_id(metadata, id) }}{% endmacro %}
-{% macro hide_description(metadata, id) %}Masquer la description de la figure  {{ figure_id(metadata, id) }}{% endmacro %}
+{% macro figure_text(metadata, chapter_config, id) %}Figure {{ figure_id(metadata, chapter_config, id) }}.{% endmacro %}
+{% macro show_description(metadata, chapter_config, id) %}Afficher la description de la figure {{ figure_id(metadata, chapter_config, id) }}{% endmacro %}
+{% macro hide_description(metadata, chapter_config, id) %}Masquer la description de la figure  {{ figure_id(metadata, chapter_config, id) }}{% endmacro %}
 
 {% block written_by_before %}Écrit par{% endblock %}
 {% block reviewed_by_before %}Relu par{% endblock %}
 {% block translated_by_before %}Traduit par{% endblock %}
 {% block analysis_by_before %}Analysé par{% endblock %}
 {% block edited_by_before %}Edité par{% endblock %}
+{% block reviewed_and_analyzed_by_before %}Relu et analysé par{% endblock %}
+{% block analysis_and_editing_by_before %}Analysé et edité par{% endblock %}
 {% block written_by_after %}{% endblock %}
 {% block reviewed_by_after %}{% endblock %}
 {% block translated_by_after %}{% endblock %}
 {% block analysis_by_after %}{% endblock %}
 {% block edited_by_after %}{% endblock %}
+{% block reviewed_and_analyzed_by_after %}{% endblock %}
+{% block analysis_and_editing_by_after %}{% endblock %}
 
 {% block unedited %}[non corrigé]{% endblock %}
 
@@ -105,13 +109,16 @@ Notre mission est de combiner les statistiques brutes et les tendances de HTTP A
 {% endif %}
 
 {% block contributors_description %}
-Le Web Almanac a été rendu possible grâce au travail acharné de la communauté Web. {{ self.contributors() }} personnes ont consacré bénévolement d’innombrables heures à le planifier, faire des recherches, le rédiger et le mettre à votre disposition.
+Le Web Almanac a été rendu possible grâce au travail acharné de la communauté Web. {{ self.contributors() }} personnes ont consacré bénévolement d’innombrables heures à planifier, faire des recherches, rédiger et mettre à votre disposition l'édition {{ year }} du Web Almanac.
 {% endblock %}
 {% block contributors_link %}Voir les contributeurs et contributrices{% endblock %}
 
 {% block methodology_stat_1_title %}Sites Web testés{% endblock %}
 {% block methodology_stat_2_title %}Données traitées{% endblock %}
 {% block methodology_link %}En savoir plus sur la Méthodologie{% endblock %}
+{% block methodology_description %}
+Sauf indication contraire, les statistiques des {{ supported_chapters | length }} chapitres du Web Almanac {{ year }} proviennent du jeu de données HTTP Archive, un projet communautaire qui suit l’évolution de la construction du web depuis 2010. Grâce à WebPageTest et Lighthouse, HTTP Archive collecte chaque mois les métadonnées de {{ self.total_websites() }} de sites Web et les insère dans une base de données publique BigQuery pour les analyser. Le jeu de données de {{ self.dataset() }} a servi de base aux mesures du Web Almanac {{ year }}. Pour plus d’informations, consultez la page Méthodologie.
+{% endblock %}
 
 {% block introduction %}Introduction{% endblock %}
 

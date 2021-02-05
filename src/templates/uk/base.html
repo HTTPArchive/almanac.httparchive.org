@@ -20,7 +20,7 @@
 
 {% block mission %}
 <p>
-Наша місія - поєднати суху статистику і тренди від HTTP Archive з досвідом веб-спільноти. Web Almanac це всеосяжний звіт про стан вебу, підтриманий реальними даними та довіреними веб-експертами. Він складається з {{ supported_chapters | length }} розділів, які охоплюють аспекти контенту сторінки, досвіду користування, публікації та розповсюдження.
+Наша місія - поєднати суху статистику і тренди від HTTP Archive з досвідом веб-спільноти. Web Almanac - це всеосяжний звіт про стан вебу, підтриманий реальними даними та довіреними веб-експертами. Видання {{ year }} року складається з {{ supported_chapters | length }} {{ plural_ru(supported_chapters | length | int, ["розділу", "розділів", "розділів"]) }}, які охоплюють аспекти контенту сторінки, досвіду користування, публікації та розповсюдження.
 </p>
 {% endblock %}
 
@@ -62,20 +62,24 @@
 {% block open %}Відкрити{% endblock %}
 {% block close %}Закрити{% endblock %}
 
-{% macro figure_text(metadata, id) %}Рис. {{ figure_id(metadata, id) }}.{% endmacro %}
-{% macro show_description(metadata, id) %}Показати пояснення до рис. {{ figure_id(metadata, id) }}{% endmacro %}
-{% macro hide_description(metadata, id) %}Сховати пояснення до рис. {{ figure_id(metadata, id) }}{% endmacro %}
+{% macro figure_text(metadata, chapter_config, id) %}Рис. {{ figure_id(metadata, chapter_config, id) }}.{% endmacro %}
+{% macro show_description(metadata, chapter_config, id) %}Показати пояснення до рис. {{ figure_id(metadata, chapter_config, id) }}{% endmacro %}
+{% macro hide_description(metadata, chapter_config, id) %}Сховати пояснення до рис. {{ figure_id(metadata, chapter_config, id) }}{% endmacro %}
 
 {% block written_by_before %}Автори: {% endblock %}
 {% block reviewed_by_before %}Рецензенти: {% endblock %}
 {% block translated_by_before %}Перекладачі: {% endblock %}
 {% block analysis_by_before %}Аналітики: {% endblock %}
 {% block edited_by_before %}Редактори: {% endblock %}
+{% block reviewed_and_analyzed_by_before %}Рецензенти і Аналітики: {% endblock %}
+{% block analysis_and_editing_by_before %}Аналітики і Редактори: {% endblock %}
 {% block written_by_after %}{% endblock %}
 {% block reviewed_by_after %}{% endblock %}
 {% block translated_by_after %}{% endblock %}
 {% block analysis_by_after %}{% endblock %}
 {% block edited_by_after %}{% endblock %}
+{% block reviewed_and_analyzed_by_after %}{% endblock %}
+{% block analysis_and_editing_by_after %}{% endblock %}
 
 {% block unedited %}[Очікує корегування]{% endblock %}
 
@@ -105,13 +109,16 @@
 {% endif %}
 
 {% block contributors_description %}
-Створення Web Almanac стало можливим завдяки важкій роботі веб-спільноти. {{ self.contributors() }} надзвичайних людей вклали безліч години у планування, дослідження, написання та продакшен.
+Створення Web Almanac стало можливим завдяки важкій роботі веб-спільноти. {{ self.contributors() }} надзвичайних людей вклали безліч години у планування, дослідження, написання та продакшен Web Almanac {{ year }}.
 {% endblock %}
 {% block contributors_link %}Переглянути список контриб'юторів{% endblock %}
 
 {% block methodology_stat_1_title %}Протестовано сайтів{% endblock %}
 {% block methodology_stat_2_title %}Оброблено даних{% endblock %}
 {% block methodology_link %}Дізнатися про нашу Методологію{% endblock %}
+{% block methodology_description %}
+Якщо не вказано інше, метрики в усіх {{ supported_chapters | length }} {{ plural_ru(supported_chapters | length | int, ["розділі", "розділах", "розділах"]) }} Web Almanac {{ year }} взяті з датасету HTTP Archive. HTTP Archive – це громадський проект, що відслідковує, як будується веб з 2010 року. Метадата про {{ self.total_websites() }} вебсайтів тестується щомісяця, використовуючи WebPageTest та Lighthouse, і додається до публічної бази даних BigQuery для аналізу. Для метрик Web Almanac {{ year }} був використаний як базис набір даних від {{ self.dataset() }} року. Більше інформації на сторінці Методологія.
+{% endblock %}
 
 {% block introduction %}Вступ{% endblock %}
 

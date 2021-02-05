@@ -653,7 +653,7 @@ Google FontsはそのCSSのほとんど（すべてではないにしても）�
   image="fig19.png",
   alt="font-variation-settings軸の使用法。",
   caption="<code>font-variation-settings</code> 軸の使用法。",
-  description="font-variation-settingsプロパティの使用状況を示す棒グラフ。デスクトップページのプロパティの42%が\"opsz\"の値に設定されており、32%が\"wght\"、16%が\"wdth\"、2%以下が\"roun\"、\"crsb\"、\"slnt\"、\"inln\"などに設定されています。デスクトップページとモバイルページで顕著な違いは、\"opsz\"の使用率が26％、\"wght\"の使用率が38％、\"wdth\"の使用率が23％となっており、\"wght\"の使用率は、\"wght\"の使用率と\"wght\"の使用率の差が大きい。",
+  description="font-variation-settingsプロパティの使用状況を示す棒グラフ。デスクトップページのプロパティの42%が`opsz`の値に設定されており、32%が`wght`、16%が`wdth`、2%以下が`roun`、`crsb`、`slnt`、`inln`などに設定されています。デスクトップページとモバイルページで顕著な違いは、`opsz`の使用率が26％、`wght`の使用率が38％、`wdth`の使用率が23％となっており、`wght`の使用率は、`wght`の使用率と`wght`の使用率の差が大きい。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=699343351&format=interactive"
   )
 }}

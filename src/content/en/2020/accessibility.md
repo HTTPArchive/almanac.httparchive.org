@@ -89,7 +89,7 @@ We found that 29.34% of desktop pages and 30.66% of mobile pages attempt to disa
 
 {{ figure_markup(
   caption="Desktop sites have a valid `lang` attribute.",
-  content="77.67%.",
+  content="77.67%",
   classes="big-number",
   sheets_gid="812908021",
   sql_file="02_05.sql"
@@ -108,7 +108,7 @@ In 1995, [HTML 2.0](https://www.w3.org/MarkUp/html-spec/html-spec_5.html#SEC5.10
 
 {{ figure_markup(
   caption='Mobiles sites passing the "images with `alt` text" Lighthouse audit.',
-  content="54%.",
+  content="54%",
   classes="big-number",
   sheets_gid="580400436",
   sql_file="lighthouse_a11y_audits.sql"

@@ -20,7 +20,7 @@
 
 {% block mission %}
 <p>
-私たちの使命は、HTTP Archiveの生の統計やトレンドを、ウェブコミュニティの専門知識と組み合わせることです。Web Almanacは、実際のデータと信頼できるウェブの専門家に裏付けられた、ウェブの状態に関する包括的なレポートです。ページコンテンツ、ユーザー体験、パブリッシング、配布などの側面を網羅した{{ supported_chapters | length }}の章で構成されています。
+私たちの使命は、HTTP Archiveの生の統計やトレンドを、ウェブコミュニティの専門知識と組み合わせることです。Web Almanacは、実際のデータと信頼できるウェブの専門家に裏付けられた、ウェブの状態に関する包括的なレポートです。{{ year }}年版は、ページコンテンツ、ユーザー体験、パブリッシング、配布などの側面を網羅した{{ supported_chapters | length }}の章で構成されています。
 </p>
 {% endblock %}
 
@@ -62,20 +62,24 @@
 {% block open %}開く{% endblock %}
 {% block close %}閉じる{% endblock %}
 
-{% macro figure_text(metadata, id) %}図{{ figure_id(metadata, id) }}.{% endmacro %}
-{% macro show_description(metadata, id) %}図{{ figure_id(metadata, id) }}の説明を表示{% endmacro %}
-{% macro hide_description(metadata, id) %}図{{ figure_id(metadata, id) }}の説明を非表示{% endmacro %}
+{% macro figure_text(metadata, chapter_config, id) %}図{{ figure_id(metadata, chapter_config, id) }}.{% endmacro %}
+{% macro show_description(metadata, chapter_config, id) %}図{{ figure_id(metadata, chapter_config, id) }}の説明を表示{% endmacro %}
+{% macro hide_description(metadata, chapter_config, id) %}図{{ figure_id(metadata, chapter_config, id) }}の説明を非表示{% endmacro %}
 
 {% block written_by_before %}{% endblock %}
 {% block reviewed_by_before %}{% endblock %}
 {% block translated_by_before %}{% endblock %}
 {% block analysis_by_before %}{% endblock %}
 {% block edited_by_before %}{% endblock %}
+{% block reviewed_and_analyzed_by_before %}{% endblock %}
+{% block analysis_and_editing_by_before %}{% endblock %}
 {% block written_by_after %}によって書かれた。{% endblock %}
 {% block reviewed_by_after %}によってレビュ。{% endblock %}
 {% block translated_by_after %}によって翻訳された。{% endblock %}
 {% block analysis_by_after %}による分析。{% endblock %}
 {% block edited_by_after %}編集。{% endblock %}
+{% block reviewed_and_analyzed_by_after %}によってレビュ と による分析。{% endblock %}
+{% block analysis_and_editing_by_after %}による分析 と 編集。{% endblock %}
 
 {% block unedited %}[未編集]{% endblock %}
 
@@ -104,13 +108,16 @@
 {% endif %}
 
 {% block contributors_description %}
-Web Almanacは、ウェブ・コミュニティの努力によって実現しています。{{ self.contributors() }}人々は、企画、調査、執筆、制作の段階で数え切れないほどの時間をボランティアで費やしてきました。
+Web Almanacは、ウェブ・コミュニティの努力によって実現しています。{{ year }} Web Almanac々は、企画、調査、執筆、制作の段階で{{ self.contributors() }}人が数え切れないほどの時間をボランティアで費やしてきました。
 {% endblock %}
 {% block contributors_link %}投稿者を見る{% endblock %}
 
 {% block methodology_stat_1_title %}テストしたウェブサイト{% endblock %}
 {% block methodology_stat_2_title %}処理されたデータ{% endblock %}
 {% block methodology_link %}方法論についてはこちらをご覧ください。{% endblock %}
+{% block methodology_description %}
+特に断りのない限り、{{ year }} Web Almanacの{{ supported_chapters | length }}章すべてのメトリクスは、HTTP Archiveのデータセットから取得しています。HTTP Archiveは、2010年以来、ウェブの構築方法を追跡してきたコミュニティが運営するプロジェクトです。WebPageTestとLighthouseをアンダーグラウンドに使用して、{{ self.total_websites() }}Webサイトに関するメタデータが毎月テストされ、分析のために公開されているBigQueryデータベースに含まれています。{{ self.dataset() }}月のデータセットは、{{ year }} Web Almanacのメトリクスの基礎として使用されました。詳細については、方法論のページを参照してください。
+{% endblock %}
 
 {% block introduction %}導入{% endblock %}
 

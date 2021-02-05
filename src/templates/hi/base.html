@@ -20,7 +20,7 @@
 
 {% block mission %}
 <p>
-हमारा उद्देश्य वेब समुदाय की विशेषज्ञता के साथ HTTP Archive के कच्चे आँकड़ों और रुझानों को जोड़ना है। Web Almanac वेब की स्थिति पर एक व्यापक रिपोर्ट है, जो वास्तविक डेटा और विश्वसनीय वेब विशेषज्ञों द्वारा समर्थित है। यह पृष्ठ सामग्री, यूजर एक्सपीरियंस, प्रकाशन, और वितरण के पहलुओं को फैलाने वाले {{ supported_chapters | length }} अध्यायों से युक्त है।
+हमारा उद्देश्य वेब समुदाय की विशेषज्ञता के साथ HTTP Archive के कच्चे आँकड़ों और रुझानों को जोड़ना है। Web Almanac वेब की स्थिति पर एक व्यापक रिपोर्ट है, जो वास्तविक डेटा और विश्वसनीय वेब विशेषज्ञों द्वारा समर्थित है। यह पृष्ठ सामग्री, यूजर एक्सपीरियंस, प्रकाशन, {{ year }} संस्करण वितरण के पहलुओं को फैलाने वाले {{ supported_chapters | length }} अध्यायों से युक्त है।
 </p>
 {% endblock %}
 
@@ -62,20 +62,24 @@
 {% block open %}खोलें{% endblock %}
 {% block close %}बंद करें{% endblock %}
 
-{% macro figure_text(metadata, id) %}खंड {{ figure_id(metadata, id) }}.{% endmacro %}
-{% macro show_description(metadata, id) %}खंड का विवरण देखें {{ figure_id(metadata, id) }}{% endmacro %}
-{% macro hide_description(metadata, id) %}खंड का विवरण छिपाएँ {{ figure_id(metadata, id) }}{% endmacro %}
+{% macro figure_text(metadata, chapter_config, id) %}खंड {{ figure_id(metadata, chapter_config, id) }}.{% endmacro %}
+{% macro show_description(metadata, chapter_config, id) %}खंड का विवरण देखें {{ figure_id(metadata, chapter_config, id) }}{% endmacro %}
+{% macro hide_description(metadata, chapter_config, id) %}खंड का विवरण छिपाएँ {{ figure_id(metadata, chapter_config, id) }}{% endmacro %}
 
 {% block written_by_before %}द्वारा लिखित{% endblock %}
 {% block reviewed_by_before %}द्वारा समीक्षित{% endblock %}
 {% block translated_by_before %}द्वारा अनुवादिद्त{% endblock %}
 {% block analysis_by_before %}द्वारा विश्लेषित{% endblock %}
 {% block edited_by_before %}द्वारा संपादित{% endblock %}
+{% block reviewed_and_analyzed_by_before %}द्वारा समीक्षित और विश्लेषित{% endblock %}
+{% block analysis_and_editing_by_before %}द्वारा विश्लेषित और संपादित{% endblock %}
 {% block written_by_after %}{% endblock %}
 {% block reviewed_by_after %}{% endblock %}
 {% block translated_by_after %}{% endblock %}
 {% block analysis_by_after %}{% endblock %}
 {% block edited_by_after %}{% endblock %}
+{% block reviewed_and_analyzed_by_after %}{% endblock %}
+{% block analysis_and_editing_by_after %}{% endblock %}
 
 {% block unedited %}[अप्रकाशित]{% endblock %}
 
@@ -105,14 +109,16 @@
 {% endif %}
 
 {% block contributors_description %}
-Web Almanac वेब समुदाय की मेहनत से संभव हो पाया हैं। {{ self.contributors() }} लोगों ने नियोजन, अनुसंधान, लेखन और उत्पादन चरणों में अनगिनत घंटे काम किए हैं।
+Web Almanac वेब समुदाय की मेहनत से संभव हो पाया हैं। {{ year }} Web Almanac की योजना, अनुसंधान, लेखन और उत्पादन चरणों में {{ self.contributors() }} लोगों ने अनगिनत घंटे काम किए हैं।
 {% endblock %}
 {% block contributors_link %}योगदानकर्ताओं को देखें{% endblock %}
 
 {% block methodology_stat_1_title %}वेबसाइटों का परीक्षण किया गया{% endblock %}
 {% block methodology_stat_2_title %}डेटा संसाधित किया गया{% endblock %}
 {% block methodology_link %}हमारी कार्यप्रणाली के बारे में जानें{% endblock %}
-
+{% block methodology_description %}
+जब तक अन्यथा नोट न किया जाए, {{ year }} Web Almanac के सभी {{ supported_chapters | length }} अध्यायों में मौजूद मेट्रिक्स HTTP Archive के स्रोतों से लिये जाते हैं। HTTP Archive एक समुदाय द्वारा संचालित परियोजना है, जो 2010 के बाद से वेब कैसे बनाया जा रहा है इस पर निगाह रखें हुए हैं। WebPageTest और Lighthouse का अति उत्कृष्ट उपयोग करते हुए, {{ self.total_websites() }} वेबसाइटों के बारे में मेटाडेटा को मासिक रूप से परीक्षण किया जाता है और विश्लेषण के लिए एक सार्वजनिक BigQuery डेटाबेस में शामिल किया जाता है। {{ self.dataset() }} डेटासेट का उपयोग {{ year }} Web Almanac के मैट्रिक्स के आधार के रूप में किया गया था। अधिक जानकारी के लिए, कार्यप्रणाली पृष्ठ देखें।
+{% endblock %}
 {% block introduction %}परिचय{% endblock %}
 
 {% block foreword_title %}प्रस्तावना{% endblock %}

@@ -60,7 +60,7 @@
         </p>
 
         <p>
-          The Web Almanac's mission is to become an annual repository of public knowledge about the state of the web. Our goal is to make the data warehouse of HTTP Archive even more accessible to the web community by having subject matter experts provide contextualized insights.
+          The Web Almanac&#8217;s mission is to become an annual repository of public knowledge about the state of the web. Our goal is to make the data warehouse of HTTP Archive even more accessible to the web community by having subject matter experts provide contextualized insights.
         </p>
 
         <p>
@@ -80,7 +80,7 @@
         </p>
 
         <p class="note">
-          Please note that some of these queries are quite large and can be <a href="https://cloud.google.com/bigquery/pricing">expensive</a> to run yourself, as BigQuery is billed by the terabyte. For help controlling your spending, refer to Tim Kadlec's post <a href="https://timkadlec.com/remembers/2019-12-10-using-bigquery-without-breaking-the-bank/">Using BigQuery Without Breaking the Bank</a>.
+          Please note that some of these queries are quite large and can be <a href="https://cloud.google.com/bigquery/pricing">expensive</a> to run yourself, as BigQuery is billed by the terabyte. For help controlling your spending, refer to Tim Kadlec&#8217;s post <a href="https://timkadlec.com/remembers/2019-12-10-using-bigquery-without-breaking-the-bank/">Using BigQuery Without Breaking the Bank</a>.
         </p>
 
         <p>
@@ -88,8 +88,9 @@
         </p>
 
         <div class="code-block floating-card">
-          {# To generate this markup temporarily add a ```sql code block to a chapter and generate that chapter and you'll get the HTML #}
-          <pre><code class="sql language-sql"><span class="comment">#standardSQL</span>
+          {# To generate this markup temporarily add a ```sql code block to a chapter and generate that chapter and you&#8217;ll get the HTML #}
+          {# Note extra attributes on pre tag to allow keyboard scroll so add them back in #}
+          <pre role="region" aria-label="01_01b.sql" tabindex="0"><code class="sql language-sql"><span class="comment">#standardSQL</span>
 <span class="comment"># 01_01b: Distribution of JS bytes by client</span>
 <span class="keyword">SELECT</span>
   percentile,
@@ -155,7 +156,7 @@
       </p>
 
       <p>
-        Some metrics are completely out of reach. For example, we don't necessarily have the ability to detect the tools used to build a website. If a website is built using create-react-app, we could tell that it uses the React framework, but not necessarily that a particular build tool is used. Unless these tools leave detectible fingerprints in the website's code, we're unable to measure their usage.
+        Some metrics are completely out of reach. For example, we don&#8217;t necessarily have the ability to detect the tools used to build a website. If a website is built using create-react-app, we could tell that it uses the React framework, but not necessarily that a particular build tool is used. Unless these tools leave detectible fingerprints in the website&#8217;s code, we&#8217;re unable to measure their usage.
       </p>
 
       <p>
@@ -239,11 +240,11 @@
       </p>
 
       <p>
-        There are two locations from which tests are run: California and Oregon USA. HTTP Archive maintains its own test agent hardware located in the <a href="https://archive.org">Internet Archive</a> datacenter in California. Additional test agents in <a href="https://cloud.google.com/compute/docs/regions-zones/#locations">Google Cloud Platform</a>'s us-west-1 location in Oregon are added as needed.
+        There are two locations from which tests are run: California and Oregon USA. HTTP Archive maintains its own test agent hardware located in the <a href="https://archive.org">Internet Archive</a> datacenter in California. Additional test agents in <a href="https://cloud.google.com/compute/docs/regions-zones/#locations">Google Cloud Platform</a>&#8217;s us-west-1 location in Oregon are added as needed.
       </p>
 
       <p>
-        HTTP Archive's private instance of WebPageTest is kept in sync with the latest public version and augmented with <a href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">custom metrics</a>. These are snippets of JavaScript that are evaluated on each website at the end of the test. Thanks to the <a href="https://github.com/HTTPArchive/legacy.httparchive.org/commits/master/custom_metrics">contributions</a> of many data analysts, especially the <a href="https://github.com/HTTPArchive/legacy.httparchive.org/pulls?q=is%3Apr+author%3ATiggerito+sort%3Acreated-asc">herculean efforts</a> of <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='Tiggerito') }}">Tony McCreath</a>, the 2020 edition of the Web Almanac greatly expanded the capabilities of HTTP Archive's test infrastructure with over 3,000 lines of new code.
+        HTTP Archive&#8217;s private instance of WebPageTest is kept in sync with the latest public version and augmented with <a href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">custom metrics</a>. These are snippets of JavaScript that are evaluated on each website at the end of the test. Thanks to the <a href="https://github.com/HTTPArchive/legacy.httparchive.org/commits/master/custom_metrics">contributions</a> of many data analysts, especially the <a href="https://github.com/HTTPArchive/legacy.httparchive.org/pulls?q=is%3Apr+author%3ATiggerito+sort%3Acreated-asc">herculean efforts</a> of <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='Tiggerito') }}">Tony McCreath</a>, the 2020 edition of the Web Almanac greatly expanded the capabilities of HTTP Archive&#8217;s test infrastructure with over 3,000 lines of new code.
       </p>
 
       <p>
@@ -255,7 +256,7 @@
       <h3 id="lighthouse"><a href="#lighthouse" class="anchor-link">Lighthouse</a></h3>
 
       <p>
-        <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a> is an automated website quality assurance tool built by Google. It audits web pages to make sure they don't include user experience antipatterns like unoptimized images and inaccessible content.
+        <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a> is an automated website quality assurance tool built by Google. It audits web pages to make sure they don&#8217;t include user experience antipatterns like unoptimized images and inaccessible content.
       </p>
 
       <p>
@@ -323,7 +324,7 @@
       <h3 id="chrome-ux-report"><a href="#chrome-ux-report" class="anchor-link">Chrome UX Report</a></h3>
 
       <p>
-        The <a href="https://developers.google.com/web/tools/chrome-user-experience-report">Chrome UX Report</a> is a public dataset of real-world Chrome user experiences. Experiences are grouped by websites' origin, for example <code>https://www.example.com</code>. The dataset includes distributions of UX metrics like paint, load, interaction, and layout stability. In addition to grouping by month, experiences may also be sliced by dimensions like country-level geography, form factor (desktop, phone, tablet), and effective connection type (4G, 3G, etc.).
+        The <a href="https://developers.google.com/web/tools/chrome-user-experience-report">Chrome UX Report</a> is a public dataset of real-world Chrome user experiences. Experiences are grouped by websites&#8217; origin, for example <code>https://www.example.com</code>. The dataset includes distributions of UX metrics like paint, load, interaction, and layout stability. In addition to grouping by month, experiences may also be sliced by dimensions like country-level geography, form factor (desktop, phone, tablet), and effective connection type (4G, 3G, etc.).
       </p>
 
       <p>
@@ -367,7 +368,7 @@
       <h4 id="rework-utils"><a href="#rework-utils" class="anchor-link">Rework Utils</a></h4>
 
       <p>
-        This year's <a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a> chapter led by <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='LeaVerou') }}">Lea Verou</a> took a significantly more detailed look at the state of CSS, spread over <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2020/01_CSS">100+ queries</a>. For perspective, that's 2.5x more queries than in 2019. To make this scale of analysis feasible, Lea open sourced the <a href="https://github.com/LeaVerou/rework-utils">Rework Utils</a>. These utilities take the JSON data from Rework to the next level by providing helpful scripts to more easily extract CSS insights. Most of the stats you see in the CSS chapter are powered by these scripts.
+        This year&#8217;s <a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a> chapter led by <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='LeaVerou') }}">Lea Verou</a> took a significantly more detailed look at the state of CSS, spread over <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2020/01_CSS">100+ queries</a>. For perspective, that&#8217;s 2.5x more queries than in 2019. To make this scale of analysis feasible, Lea open sourced the <a href="https://github.com/LeaVerou/rework-utils">Rework Utils</a>. These utilities take the JSON data from Rework to the next level by providing helpful scripts to more easily extract CSS insights. Most of the stats you see in the CSS chapter are powered by these scripts.
       </p>
     </section>
 
@@ -395,7 +396,7 @@
       </p>
 
       <p>
-        As we <a href="https://almanac.httparchive.org/en/2019/methodology#brainstorming">stated in last year's Methodology</a>:
+        As we <a href="https://almanac.httparchive.org/en/2019/methodology#brainstorming">stated in last year&#8217;s Methodology</a>:
       </p>
 
       <blockquote>
@@ -403,7 +404,7 @@
       </blockquote>
 
       <p>
-        To that end, this year we've made systematic changes to the way that we seek and select authors:
+        To that end, this year we&#8217;ve made systematic changes to the way that we seek and select authors:
       </p>
 
       <ul>
@@ -470,7 +471,7 @@
       </p>
 
       <p>
-        If you're interested in contributing to the 2021 edition of the Web Almanac, please fill out our <a href="https://forms.gle/VRBFegGAP7d99Bhp7">interest form</a>. Let's work together to track the state of the web!
+        If you&#8217;re interested in contributing to the 2021 edition of the Web Almanac, please fill out our <a href="https://forms.gle/VRBFegGAP7d99Bhp7">interest form</a>. Let's work together to track the state of the web!
       </p>
     </section>
 {% endblock main_content %}

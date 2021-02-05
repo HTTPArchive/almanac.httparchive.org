@@ -19,7 +19,7 @@ featured_stat_3: 12,2%
 featured_stat_label_3: Percentage scripts dat asynchroon is geladen
 ---
 
-## Introductie
+## Inleiding
 
 JavaScript heeft een lange weg afgelegd sinds zijn bescheiden oorsprong als de laatste van de drie web-hoekstenen, naast CSS en HTML. Tegenwoordig begint JavaScript een breed spectrum van de technische stack te infiltreren. Het is niet langer beperkt tot de klantzijde en het wordt een steeds populairdere keuze voor <span lang="en">build-tools</span> en <span lang="en">server-side scripting</span>. JavaScript sluipt ook zijn weg naar de CDN-laag dankzij <span lang="en">edge computing</span>-oplossingen.
 
@@ -355,7 +355,7 @@ De populaire bibliotheken die in gebruik zijn, zijn grotendeels ongewijzigd ten 
 {{ figure_markup(
   image="frameworks-libraries.png",
   caption="Overname van de beste JavaScript-frameworks en -bibliotheken als percentage van de pagina's.",
-  description="Staafdiagram dat de acceptatie van de belangrijkste frameworks en bibliotheken weergeeft als percentage van de pagina's (niet paginaweergaven of npm-downloads). jQuery is de overweldigende leider, te vinden op 83% van de mobiele pagina\'s. Het wordt gevolgd door jQuery migrate op 30%, jQuery UI op 21%, Modernizr op 15%, FancyBox op 7%, Slick en Lightbox op 6%, en de resterende frameworks en bibliotheken op 4% of 3%: Moment.js, Underscore.js, Lodash, React, GSAP, Select2, RequireJS en prettyPhoto.",
+  description="Staafdiagram dat de acceptatie van de belangrijkste frameworks en bibliotheken weergeeft als percentage van de pagina's (niet paginaweergaven of npm-downloads). jQuery is de overweldigende leider, te vinden op 83% van de mobiele pagina's. Het wordt gevolgd door jQuery migrate op 30%, jQuery UI op 21%, Modernizr op 15%, FancyBox op 7%, Slick en Lightbox op 6%, en de resterende frameworks en bibliotheken op 4% of 3%: Moment.js, Underscore.js, Lodash, React, GSAP, Select2, RequireJS en prettyPhoto.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=419887153&format=interactive",
   sheets_gid="1654577118",
   sql_file="frameworks_libraries.sql"

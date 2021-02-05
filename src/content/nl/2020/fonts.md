@@ -19,7 +19,7 @@ featured_stat_label_2: Gebruik van <code>font-display</code> swap
 featured_stat_3: 11,0%
 featured_stat_label_3: Gebruik van variabele lettertypen op mobiele sites
 ---
-## Introductie
+## Inleiding
 
 Tekst vormt de kern van de meeste websites, en typografie is de kunst om die tekst op een visueel aantrekkelijke en effectieve manier te presenteren. Om een goede typografie te maken, moet u de juiste lettertypen kiezen en ontwerpers hebben een enorm scala aan weblettertypen om uit te kiezen. Zoals met alle bronnen, zijn er prestatie- en compatibiliteitsproblemen, maar als het goed wordt gedaan, is het voordeel de moeite waard. In dit hoofdstuk gaan we dieper in op gegevens om te laten zien hoe weblettertypen worden gebruikt, en in het bijzonder hoe ze zijn geoptimaliseerd.
 
@@ -196,7 +196,7 @@ Dit is vooral relevant voor gehoste lettertype-oplossingen. Pas nadat ontdekt is
   )
 }}
 
-Het toevoegen van een <a hrehlang="en" href="https://www.w3.org/TR/resource-hints/#resource-hints">bron-hint element</a> in de HTML start die tweede verbinding eerder. De verschillende instellingen voor bron-hints bepalen hoe ver dat komt voordat de URL voor de daadwerkelijke lettertypebron is. De meest voorkomende (bij ongeveer 32% van de webpagina's) is `dns-prefetch`, hoewel er in de meeste gevallen betere keuzes zijn.
+Het toevoegen van een <a hreflang="en" href="https://www.w3.org/TR/resource-hints/#resource-hints">bron-hint element</a> in de HTML start die tweede verbinding eerder. De verschillende instellingen voor bron-hints bepalen hoe ver dat komt voordat de URL voor de daadwerkelijke lettertypebron is. De meest voorkomende (bij ongeveer 32% van de webpagina's) is `dns-prefetch`, hoewel er in de meeste gevallen betere keuzes zijn.
 
 Vervolgens zullen we kijken of deze bron-hints een invloed hebben op de paginaprestaties.
 

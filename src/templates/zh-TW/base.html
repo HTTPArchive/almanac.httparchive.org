@@ -20,7 +20,7 @@
 
 {% block mission %}
 <p>
-我們的任務是結合網路社群的專業知識共同精萃HTTP Archive的原始數據與趨勢。Web Almanac 網路年鑑是網路狀態的綜合報告，由真實的數據和具信譽的網路專家支持。報告共有{{ supported_chapters | length }}個章節橫跨網頁內容、使用者體驗、網頁發佈、網頁傳遞的各個方面。
+我們的任務是結合網路社群的專業知識共同精萃HTTP Archive的原始數據與趨勢。Web Almanac 網路年鑑是網路狀態的綜合報告，由真實的數據和具信譽的網路專家支持。{{ year }}年版包括{{ supported_chapters | length }}個章節橫跨網頁內容、使用者體驗、網頁發佈、網頁傳遞的各個方面。
 </p>
 {% endblock %}
 
@@ -62,20 +62,24 @@
 {% block open %}開啟{% endblock %}
 {% block close %}關閉{% endblock %}
 
-{% macro figure_text(metadata, id) %}圖表 {{ figure_id(metadata, id) }}.{% endmacro %}
-{% macro show_description(metadata, id) %}顯示圖表說明 {{ figure_id(metadata, id) }}{% endmacro %}
-{% macro hide_description(metadata, id) %}隱藏圖表說明 {{ figure_id(metadata, id) }}{% endmacro %}
+{% macro figure_text(metadata, chapter_config, id) %}圖表 {{ figure_id(metadata, chapter_config, id) }}.{% endmacro %}
+{% macro show_description(metadata, chapter_config, id) %}顯示圖表說明 {{ figure_id(metadata, chapter_config, id) }}{% endmacro %}
+{% macro hide_description(metadata, chapter_config, id) %}隱藏圖表說明 {{ figure_id(metadata, chapter_config, id) }}{% endmacro %}
 
 {% block written_by_before %}作者：{% endblock %}
 {% block reviewed_by_before %}審稿者：{% endblock %}
 {% block translated_by_before %}翻譯者：{% endblock %}
 {% block analysis_by_before %}分析者：{% endblock %}
 {% block edited_by_before %}編輯：{% endblock %}
+{% block reviewed_and_analyzed_by_before %}審稿者和分析者：{% endblock %}
+{% block analysis_and_editing_by_before %}分析者和編輯：{% endblock %}
 {% block written_by_after %}{% endblock %}
 {% block reviewed_by_after %}{% endblock %}
 {% block translated_by_after %}{% endblock %}
 {% block analysis_by_after %}{% endblock %}
 {% block edited_by_after %}{% endblock %}
+{% block reviewed_and_analyzed_by_after %}{% endblock %}
+{% block analysis_and_editing_by_after %}{% endblock %}
 
 {% block unedited %}[Unedited]{% endblock %}
 
@@ -105,13 +109,16 @@
 {% endif %}
 
 {% block contributors_description %}
-Web Almanac 網路年鑑是被熱情的網路社群擁抱而茁壯。 {{ self.contributors() }} 位團隊成員志願挹注難以計數的泉源在規劃、研究、撰寫、發佈的各個階段。
+Web Almanac 網路年鑑是被熱情的網路社群擁抱而茁壯。 {{ self.contributors() }} 位團隊成員志願挹注難以計數的泉源在規劃、研究、撰寫、發佈 {{ year }} Web Almanac 的各個階段。
 {% endblock %}
 {% block contributors_link %}認識貢獻者{% endblock %}
 
 {% block methodology_stat_1_title %}網站測試數{% endblock %}
 {% block methodology_stat_2_title %}數據處理數{% endblock %}
 {% block methodology_link %}瞭解統計方法{% endblock %}
+{% block methodology_description %}
+除另有備註外，{{ year }} Web Almanac 網路年鑑{{ supported_chapters | length }}個章節的統計指標皆萃取自HTTP Archive數據集。HTTP Archive是社群推動的專案，自2010年開始持續追蹤網路如何建置，每月透過WebPageTest和Lighthouse測試將{{ self.total_websites() }}個網站並將資料集公開置於BigQuery供眾分析。{{ year }} Web Almanac網路年鑑的統計指標採用{{ self.dataset() }}月的數據集為基準，更多的資訊請參閱統計方法頁面。
+{% endblock %}
 
 {% block introduction %}介紹{% endblock %}
 
