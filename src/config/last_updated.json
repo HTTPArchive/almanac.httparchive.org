@@ -47,52 +47,52 @@
   "/static/pdfs/web_almanac_2019_en.pdf": {
     "date_published": "2020-05-15T00:00:00.000Z",
     "date_modified": "2021-02-05T00:00:00.000Z",
-    "hash": "e4997bfbc788c3a557f440c94d5b9ce9",
+    "hash": "42f10852aec554d744d70422223808a5",
     "size": 17
   },
   "/static/pdfs/web_almanac_2019_en_cover_A5.pdf": {
     "date_published": "2020-05-15T00:00:00.000Z",
     "date_modified": "2021-02-05T00:00:00.000Z",
-    "hash": "cdeaab03df5f88d74b3a788eb17dccea"
+    "hash": "7d2c277caa1019a96ae7037a7dcfb4ad"
   },
   "/static/pdfs/web_almanac_2019_en_print_A5.pdf": {
     "date_published": "2020-05-15T00:00:00.000Z",
     "date_modified": "2021-02-05T00:00:00.000Z",
-    "hash": "214f94e9960741f77011b7c50a149d57",
+    "hash": "60bfea159e08837788b90edf70830a4c",
     "size": 17
   },
   "/static/pdfs/web_almanac_2019_ja.pdf": {
     "date_published": "2020-05-15T00:00:00.000Z",
     "date_modified": "2021-02-05T00:00:00.000Z",
-    "hash": "ec73a289e5fed310ab3f0f9e24845b19",
+    "hash": "624e4c8ab9ca0e66034c45acb13917f2",
     "size": 18
   },
   "/static/pdfs/web_almanac_2019_ja_cover_A5.pdf": {
     "date_published": "2020-05-15T00:00:00.000Z",
     "date_modified": "2021-02-05T00:00:00.000Z",
-    "hash": "a25d082e2259b872d2068516a7e99aab"
+    "hash": "d1b4faf945feb6cee93dc350ecdf081d"
   },
   "/static/pdfs/web_almanac_2019_ja_print_A5.pdf": {
     "date_published": "2020-05-15T00:00:00.000Z",
     "date_modified": "2021-02-05T00:00:00.000Z",
-    "hash": "d1e9617bdf76657acd3e9977218bc09f",
-    "size": 18
+    "hash": "68b720f8a2470cbdc917e8228e7e0a62",
+    "size": 17
   },
   "/static/pdfs/web_almanac_2020_en.pdf": {
     "date_published": "2020-12-08T00:00:00.000Z",
     "date_modified": "2021-02-05T00:00:00.000Z",
-    "hash": "8bcfc166c9cad69f2f4a876dafa7b853",
+    "hash": "9e77343a2fe8d2927e64995223a6c5ba",
     "size": 25
   },
   "/static/pdfs/web_almanac_2020_en_cover_A5.pdf": {
     "date_published": "2020-12-09T00:00:00.000Z",
     "date_modified": "2021-02-05T00:00:00.000Z",
-    "hash": "8279121362086548d404f5f3e0646408"
+    "hash": "c6d44782c075cf1a8b0c44f6229d72eb"
   },
   "/static/pdfs/web_almanac_2020_en_print_A5.pdf": {
     "date_published": "2020-12-09T00:00:00.000Z",
     "date_modified": "2021-02-05T00:00:00.000Z",
-    "hash": "0412f22785e873f3bc873a47a35ca9df",
+    "hash": "24740718c75e23bb973a08234cd04937",
     "size": 25
   },
   "en/2019/chapters/accessibility.html": {
