@@ -13,7 +13,7 @@ name: Predeploy script
 
 env:
   # Update periodically from https://www.princexml.com/latest/
-  PRINCE_PACKAGE: 'prince_20210108-1_ubuntu20.04_amd64.deb'
+  PRINCE_PACKAGE: 'prince_13.6-1_ubuntu20.04_amd64.deb'
 
 on:
   workflow_dispatch:
@@ -21,7 +21,6 @@ on:
 jobs:
   build:
     name: Update Timestamps and Generate Ebooks
-    # Prince needs ubuntu 20 and ubuntu-latest is only on 18
     runs-on: ubuntu-20.04
     steps:
     - name: Checkout branch
@@ -29,7 +28,7 @@ jobs:
     - name: Setup Node.js for use with actions
       uses: actions/setup-node@v2.1.4
       with:
-        version:  12.x
+        node-version: '12'
     - name: Set up Python 3.8
       uses: actions/setup-python@v2.2.1
       with:

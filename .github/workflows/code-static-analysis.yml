@@ -25,8 +25,8 @@ on:
 
 jobs:
   CodeQL-Build:
-    # CodeQL runs on ubuntu-latest, windows-latest, and macos-latest
-    runs-on: ubuntu-latest
+    # CodeQL runs on ubuntu-20.04, windows-latest, and macos-latest
+    runs-on: ubuntu-20.04
     strategy:
       matrix:
         language: ['javascript', 'python']
