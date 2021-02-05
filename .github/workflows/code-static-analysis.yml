@@ -10,7 +10,6 @@ on:
     paths:
       - '**.js'
       - '**.py'
-      - '**.html'
   schedule:
     #        ┌───────────── minute (0 - 59)
     #        │ ┌───────────── hour (0 - 23)
@@ -31,7 +30,6 @@ jobs:
     strategy:
       matrix:
         language: ['javascript', 'python']
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
