@@ -36,15 +36,15 @@
     "ejs": "3.1.5",
     "fs-extra": "9.1.0",
     "jsdom": "16.4.0",
-    "prettier": "2.2.1",
-    "recursive-readdir": "2.2.2",
-    "showdown": "1.9.1",
-    "web-vitals": "1.1.0",
     "node-fetch": "2.6.1",
-    "xml-js": "1.6.11",
-    "run-script-os": "1.1.5",
     "node-watch": "0.7.1",
+    "prettier": "2.2.1",
     "rainbow-code": "2.1.7",
-    "smartypants": "0.1.1"
+    "recursive-readdir": "2.2.2",
+    "run-script-os": "1.1.5",
+    "showdown": "1.9.1",
+    "smartypants": "0.1.1",
+    "web-vitals": "1.1.0",
+    "xml-js": "1.6.11"
   }
 }
