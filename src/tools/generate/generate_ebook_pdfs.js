@@ -55,17 +55,6 @@ const generate_ebook_pdfs = async () => {
           // the *entire* stdout and stderr (buffered)
           console.log(`stdout: ${stdout}`);
           console.log(`stderr: ${stderr}`);
-          const remove_cover_pages = `pdftk ${printer_pdf_file} cat 3-end output ${printer_pdf_file}.tmp && ${move} ${printer_pdf_file}.tmp ${printer_pdf_file}`;
-          exec (remove_cover_pages, (err, stdout, stderr) => {
-            if (err) {
-              // some err occurred
-              console.error(err)
-            } else {
-              // the *entire* stdout and stderr (buffered)
-              console.log(`stdout: ${stdout}`);
-              console.log(`stderr: ${stderr}`);
-            }
-          });
         }
       });
 
