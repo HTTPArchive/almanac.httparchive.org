@@ -33,6 +33,12 @@
   }
 {% elif request.args.get('cover') == None %}
 
+  {% if request.args.get('printer') != None %}
+  @page :first {
+    background: none;
+  }
+  {% endif %}
+
   @page {
 
     {% if request.args.get('printer') != None %}
