@@ -13,7 +13,7 @@ name: Predeploy script
 
 env:
   # Update periodically from https://www.princexml.com/latest/
-  PRINCE_PACKAGE: 'prince_20200728-1_ubuntu20.04_amd64.deb'
+  PRINCE_PACKAGE: 'prince_13.6-1_ubuntu20.04_amd64.deb'
 
 on:
   workflow_dispatch:
