@@ -21,7 +21,6 @@ on:
 jobs:
   build:
     name: Update Timestamps and Generate Ebooks
-    # Prince needs ubuntu 20 and ubuntu-20.04 is only on 18
     runs-on: ubuntu-20.04
     steps:
     - name: Checkout branch
