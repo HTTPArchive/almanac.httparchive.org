@@ -74,7 +74,7 @@ if [ "${no_promote}" == "1" ]; then
 fi
 
 # Check branch is clean first
-if [ -n "$(git status --porcelain)" ]; then 
+if [ -n "$(git status --porcelain)" ]; then
   check_continue "Your branch is not clean. Do you still want to continue deploying?"
 fi
 
@@ -103,7 +103,7 @@ echo "Please test the site locally"
 
 check_continue "Are you ready to deploy?"
 
-LAST_TAGGED_VERSION=$(git tag -l "v*" | tail -1)
+LAST_TAGGED_VERSION=$(git tag -l "v[0-9]*" | sort -V | tail -1)
 echo "Last tagged version: ${LAST_TAGGED_VERSION}"
 if [[ "${LAST_TAGGED_VERSION}" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
   #Split LAST_TAGGED_VERSION on dots (.) into SEMVER
