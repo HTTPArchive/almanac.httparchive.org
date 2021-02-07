@@ -285,7 +285,7 @@
         {% for id, team in localizedTeamNames.items() | accentless_sort() %}
         {% if id in config.teams %} <!-- note not all team translations may be in this years config -->
         <li>
-          <button class="{{ id }}" type="button" aria-pressed="false" title="{{ self.filter_by() }} {{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}">
+          <button type="button" class="{{ id }}" aria-pressed="false" title="{{ self.filter_by() }} {{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}">
             {{ localizedTeamNames[id] }}
           </button>
         </li>
