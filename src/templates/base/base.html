@@ -200,7 +200,7 @@
 {% set current_title = metadata.get('title') if metadata else None %}
 <a class="nav-dropdown-btn js-hide" href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a>
 <div class="nav-dropdown {{switcher_name}} table-of-contents js-enable hidden">
-  <button class="nav-dropdown-btn" aria-expanded="false" aria-label="{{ self.table_of_contents_title() }}" >
+  <button type="button" class="nav-dropdown-btn" aria-expanded="false" aria-label="{{ self.table_of_contents_title() }}" >
     {{ self.table_of_contents_title() }}
   </button>
   <ul class="nav-dropdown-list hidden {{switcher_name}}-list">
@@ -663,7 +663,7 @@
 {% macro figure_dropdown(metadata, chapter_config, id, sheets_gid="", sql_file="", image="", caption="") %}
   {% if sheets_gid != "" or  sql_file != "" or image != "" %}
   <div class="figure-dropdown nav-dropdown">
-    <button class="nav-dropdown-btn js-enable hidden" disabled aria-expanded="false" title="{{ self.explore_the_results() }}">
+    <button type="button" class="nav-dropdown-btn js-enable hidden" disabled aria-expanded="false" title="{{ self.explore_the_results() }}">
       <span class="visually-hidden">{{ self.explore_the_results() }}</span>
       <svg aria-hidden="true" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
@@ -738,7 +738,7 @@
 
 {% macro styled_lang_dropdown(switcher_name) %}
   <div class="nav-dropdown {{switcher_name}}">
-    <button class="nav-dropdown-btn js-enable" disabled aria-expanded="false" aria-label="{{ self.language_switcher() }}" >{{ language }}</button>
+    <button type="button" class="nav-dropdown-btn js-enable" disabled aria-expanded="false" aria-label="{{ self.language_switcher() }}" >{{ language }}</button>
     <ul class="nav-dropdown-list hidden {{switcher_name}}-list">
       {% for l in supported_languages | sort(attribute='_local_name') %}
         {% if l != language %}
@@ -854,7 +854,7 @@
     </a>
     {% if not ebook %}{{ figure_dropdown(metadata, chapter_config, id, sheets_gid, sql_file, image) }}{% endif %}
   </div>
-  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="{{ anchor }}-description" data-show-text="{{ show_description(metadata,chapter_config,id) }}" data-hide-text="{{ hide_description(metadata,chapter_config,id) }}">{{ show_description(metadata,chapter_config,id) }}</button>
+  <button type="button" hidden="" class="fig-description-button" aria-expanded="false" aria-controls="{{ anchor }}-description" data-show-text="{{ show_description(metadata,chapter_config,id) }}" data-hide-text="{{ hide_description(metadata,chapter_config,id) }}">{{ show_description(metadata,chapter_config,id) }}</button>
   <div id="{{ anchor }}-description" class="visually-hidden">{{ description|safe }}</div>
   {%- elif content != "" %}
   <div class="figure-wrapper">
@@ -900,7 +900,7 @@
 
 {% macro styled_year_dropdown(switcher_name)%}
   <div class="nav-dropdown {{switcher_name}}">
-    <button class="nav-dropdown-btn js-enable" disabled aria-expanded="false" aria-label="{{ self.year_switcher() }}">{{ year }}</button>
+    <button type="button" class="nav-dropdown-btn js-enable" disabled aria-expanded="false" aria-label="{{ self.year_switcher() }}">{{ year }}</button>
     <ul class="nav-dropdown-list hidden {{switcher_name}}-list">
       {% for y in supported_years | sort %}
         {% if y != year %}
