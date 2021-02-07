@@ -20,7 +20,7 @@ handlers:
   script: auto
   secure: always
 
-#Allow python redirects for 2019.css which was renamed alamanac.css
+# Allow python redirects for 2019.css which was renamed alamanac.css
 - url: /static/css/2019.css.*$
   script: auto
   secure: always
@@ -45,7 +45,7 @@ handlers:
     x-content-type-options: nosniff
     vary: Accept-Encoding
 
-# Everything else in static directory is served directly from directory
+# Handler for everything else in static directory
 - url: /static
   static_dir: static
   secure: always
