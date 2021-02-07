@@ -165,16 +165,17 @@ Não conseguimos determinar os níveis de compressão dos diagnósticos obtidos 
 * Se conseguir suportar Brotli mas pre-compressão não é uma opção, então comprima com Brotli nível 5. Este nível irá produzir recursos mais pequenos quando comparados com Gzip, com uma exigência computacional semelhante.
 
 
-## What types of content are we compressing?
+## Que tipos de conteúdos estamos a comprimir?
 
-Most text based resources (such as HTML, CSS, and JavaScript) can benefit from Gzip or Brotli compression. However, it's often not necessary to use these compression techniques on binary resources, such as images, video, and some web fonts because their file formats are already compressed.
+A maior parte dos recursos baseados em texto (como HTML, CSS e Javascript) podem beneficiar de compressão Gzip e Brotli.
+No entanto, normamente não é necessário usar estas técnicas de compressão em recursos binários, como imagens, video e algumas fontes web porque os seus formatos de ficheiro já estão comprimidos.
 
-In the graph below, the top 25 content types are displayed with box sizes representing the relative number of requests. The color of each box represents how many of these resources were served compressed. Most of the media content is shaded orange, which is expected since Gzip and Brotli would have little to no benefit for them.  Most of the text content is shaded blue to indicate that they are being compressed. However, the light blue shading for some content types indicate that they are not compressed as consistently as the others.
+No gráfico abaixo, podemos ver o top 25 de tipos de conteúdo em caixas cujo tamanho representa o número relativo de pedidos. A cor de cada caixa representa a quantidade de recursos servidos com compressão. A maior parte do conteúdo media é mostrado com uma sombra laranja uma vez que, tal como esperado, Gzip e Brotli trariam pouco ou nenhum benefício para os mesmos. A maior parte do conteúdo baseado em texto é sombreado a azul indicando que estão a ser comprimidos. No entanto, o sombreado azul claro para alguns tipos de conteúdo indica que não são comprimidos tão consistentemente como os outros.
 
 {{ figure_markup(
   image="fig3.png",
-  caption="Top 25 compressed content types.",
-  description="Treemap chart showing image/jpeg (167,912,373 requests - 3.23% compressed), application/javascript (121,058,259 requests - 81.29% compressed), image/png (113,530,400 requests - 3.81% compressed), text/css (86,634,570 requests - 81.81% compressed), text/html (81,975,252 requests - 43.44% compressed), image/gif (70,838,761 requests - 3.87% compressed), text/javascript (60,645,767 requests - 89.52% compressed), application/x-javascript (38,816,387 requests - 91.02% compressed), font/woff2 (22,622,918 requests - 3.87% compressed), application/json (16,501,326 requests - 59.02% compressed), image/webp (12,911,688 requests - 1.66% compressed), image/svg+xml (9,862,643 requests - 64.42% compressed), text/plain (6,622,361 requests - 24.72% compressed), application/octet-stream (3,884,287 requests - 6.01% compressed), image/x-icon (3,737,030 requests - 37.60% compressed), application/font-woff2 (3,061,857 requests - 5.90% compressed), application/font-woff (2,117,999 requests - 23.61% compressed), image/vnd.microsoft.icon (1,774,995 requests - 15.55% compressed), video/mp4 (1,472,880 requests - 0.03% compressed), font/woff (1,255,093 requests - 24.33% compressed), font/ttf (1,062,747 requests - 84.27% compressed), application/x-font-woff (1,048,398 requests - 30.77% compressed), image/jpg (951,610 requests - 6.66% compressed), application/ocsp-response (883,603 requests - 0.00% compressed).",
+  caption="Top 25 tipos de conteúdo comprimidos.",
+  description="Gráfico de árvore mostrando  image/jpeg (167,912,373 pedidos - 3.23% comprimidos), application/javascript (121,058,259 pedidos - 81.29% comprimidos), image/png (113,530,400 pedidos - 3.81% comprimidos), text/css (86,634,570 pedidos - 81.81% comprimidos), text/html (81,975,252 pedidos - 43.44% comprimidos), image/gif (70,838,761 pedidos - 3.87% comprimidos), text/javascript (60,645,767 pedidos - 89.52% comprimidos), application/x-javascript (38,816,387 pedidos - 91.02% comprimidos), font/woff2 (22,622,918 pedidos - 3.87% comprimidos), application/json (16,501,326 pedidos - 59.02% comprimidos), image/webp (12,911,688 pedidos - 1.66% comprimidos), image/svg+xml (9,862,643 pedidos - 64.42% comprimidos), text/plain (6,622,361 pedidos - 24.72% comprimidos), application/octet-stream (3,884,287 pedidos - 6.01% comprimidos), image/x-icon (3,737,030 pedidos - 37.60% comprimidos), application/font-woff2 (3,061,857 pedidos - 5.90% comprimidos), application/font-woff (2,117,999 pedidos - 23.61% comprimidos), image/vnd.microsoft.icon (1,774,995 pedidos - 15.55% comprimidos), video/mp4 (1,472,880 pedidos - 0.03% comprimidos), font/woff (1,255,093 pedidos - 24.33% comprimidos), font/ttf (1,062,747 pedidos - 84.27% comprimidos), application/x-font-woff (1,048,398 pedidos - 30.77% comprimidos), image/jpg (951,610 pedidos - 6.66% comprimidos), application/ocsp-response (883,603 pedidos - 0.00% comprimidos).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=1790056981&format=interactive",
   width=780,
   height=482,
@@ -183,12 +184,12 @@ In the graph below, the top 25 content types are displayed with box sizes repres
   )
 }}
 
-Filtering out the eight most popular content types allows us to see the compression stats for the rest of these content types more clearly.
+Excluindo os 8 tipos de conteúdo mais populares permite-nos ver as estatísticas de compressão dos restantes tipos de conteúdo com mais clareza. 
 
 {{ figure_markup(
   image="fig4.png",
-  caption="Compressed content types, excluding top 8.",
-  description="Treemap chart showing font/woff2 (22,622,918 requests - 3.87% compressed), application/json (16,501,326 requests - 59.02% compressed), image/webp (12,911,688 requests - 1.66% compressed), image/svg+xml (9,862,643 requests - 64.42% compressed), text/plain (6,622,361 requests - 24.72% compressed), application/octet-stream (3,884,287 requests - 6.01% compressed), image/x-icon (3,737,030 requests - 37.60% compressed), application/font-woff2 (3,061,857 requests - 5.90% compressed), application/font-woff (2,117,999 requests - 23.61% compressed), image/vnd.microsoft.icon (1,774,995 requests - 15.55% compressed), video/mp4 (1,472,880 requests - 0.03% compressed), font/woff (1,255,093 requests - 24.33% compressed), font/ttf (1,062,747 requests - 84.27% compressed), application/x-font-woff (1,048,398 requests - 30.77% compressed), image/jpg (951,610 requests - 6.66% compressed), application/ocsp-response (883,603 requests - 0.00% compressed)",
+  caption="Tipos de conteúdo comprimidos, excluindo o top 8.",
+  description="Gráfico de árevore mostrando font/woff2 (22,622,918 pedidos - 3.87% comprimidos), application/json (16,501,326 pedidos - 59.02% comprimidos), image/webp (12,911,688 pedidos - 1.66% comprimidos), image/svg+xml (9,862,643 pedidos - 64.42% comprimidos), text/plain (6,622,361 pedidos - 24.72% comprimidos), application/octet-stream (3,884,287 pedidos - 6.01% comprimidos), image/x-icon (3,737,030 pedidos - 37.60% comprimidos), application/font-woff2 (3,061,857 pedidos - 5.90% comprimidos), application/font-woff (2,117,999 pedidos - 23.61% comprimidos), image/vnd.microsoft.icon (1,774,995 pedidos - 15.55% comprimidos), video/mp4 (1,472,880 pedidos - 0.03% comprimidos), font/woff (1,255,093 pedidos - 24.33% comprimidos), font/ttf (1,062,747 pedidos - 84.27% comprimidos), application/x-font-woff (1,048,398 pedidos - 30.77% comprimidos), image/jpg (951,610 pedidos - 6.66% comprimidos), application/ocsp-response (883,603 pedidos - 0.00% comprimidos)",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=495358423&format=interactive",
   width=780,
   height=482,
@@ -197,10 +198,11 @@ Filtering out the eight most popular content types allows us to see the compress
   )
 }}
 
-The `application/json` and `image/svg+xml` content types are compressed less than 65% of the time.
+Os tipos de conteúdo `application/json` e `image/svg+xml` são comprmidos menos de 65% das vezes.
 
-Most of the custom web fonts are served without compression, since they are already in a compressed format. However, `font/ttf` is compressible, but only 84% of TTF font requests are being served with compression so there is still room for improvement here.
+A maior parte das fontes web customizadas são servidas sem compressão uma vez que já são um formato comprimido. No entanto, a fonte `font/ttf` é comprimível apesar de só 84% dos pedidos a fontes TTF serem servidos com compressão mostrando que ainda existe espaço para melhoria.
 
+Os gráficos abaixo ilustram 
 The graphs below illustrate the breakdown of compression techniques used for each content type. Looking at the top three content types, we can see that across both desktop and mobile there are major gaps in compressing some of the most frequently requested content types. 56% of `text/html` as well as 18% of `application/javascript` and `text/css` resources are not being compressed. This presents a significant performance opportunity.
 
 {{ figure_markup(
@@ -253,7 +255,7 @@ The content types with the lowest compression rates include `application/json`, 
   )
 }}
 
-Across all content types, Gzip is the most popular compression algorithm. The newer Brotli compression is used less frequently, and the content types where it appears most are `application/javascript`, `text/css` and `application/x-javascript`. This is likely due to CDNs that automatically apply Brotli compression for traffic that passes through them.
+No universo de tipos de conteúdo, Gzip é o algoritmo de compressão mais popular. A compressão Brotli mais recente é usado com menos frequência e os tipos de conteúdo onde aparece mais são `application/javascript`, `text/css` e `application/x-javascript`. Isto deve-se, provavelmente, à existência de CDNs que aplicam compressão Brotli automaticamente ao tráfego que as atravessa.
 
 ## First-party vs third-party compression
 
