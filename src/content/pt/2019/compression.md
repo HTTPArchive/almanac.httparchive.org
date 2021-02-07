@@ -51,26 +51,26 @@ No exemplo seguinte, o cliente comunica que tem suporte para compressão Gzip, B
 
 O HTTP Archive contém leituras de 5.3 milhões de sites e cada site carregou pelo menos 1 recurso de texto comprimido na sua página de início. Adicionalmente, 81% dos sites reportaram ter recursos comprimidos no seu domínio primário.
 
-## Compression algorithms
+## Algoritmos de compressão
 
-IANA maintains a [list of valid HTTP content encodings](https://www.iana.org/assignments/http-parameters/http-parameters.xml#content-coding) that can be used with the `Accept-Encoding` and `Content-Encoding` headers. These include `gzip`, `deflate`, `br` (Brotli), as well as a few others. Brief descriptions of these algorithms are given below:
+A organização IANA mantém uma [lista de codificação de conteúdos HTTP válidos](https://www.iana.org/assignments/http-parameters/http-parameters.xml#content-coding) que podem ser usados com os cabeçalhos `Accept-Encoding` e `Content-Encoding`. Alguns destes incluem `gzip`, `deflate`, `br` (Brotli) entre outros. Uma breve descrição destes algoritmos é apresentada de seguida:
 
-* [Gzip](https://tools.ietf.org/html/rfc1952) uses the [LZ77](https://en.wikipedia.org/wiki/LZ77_and_LZ78#LZ77) and [Huffman coding](https://en.wikipedia.org/wiki/Huffman_coding) compression techniques, and is older than the web itself. It was originally developed for the UNIX `gzip` program in 1992. An implementation for web delivery has existed since HTTP/1.1, and most web browsers and clients support it.
-* [Deflate](https://tools.ietf.org/html/rfc1951) uses the same algorithm as Gzip, just with a different container. Its use was not widely adopted for the web because of [compatibility issues](https://en.wikipedia.org/wiki/HTTP_compression#Problems_preventing_the_use_of_HTTP_compression) with some servers and browsers.
-* [Brotli](https://tools.ietf.org/html/rfc7932) is a newer compression algorithm that was [invented by Google](https://github.com/google/brotli). It uses the combination of a modern variant of the LZ77 algorithm, Huffman coding, and second order context modeling. Compression via Brotli is more computationally expensive compared to Gzip, but the algorithm is able to reduce files by [15-25%](https://cran.r-project.org/web/packages/brotli/vignettes/brotli-2015-09-22.pdf) more than Gzip compression. Brotli was first used for compressing web content in 2015 and is [supported by all modern web browsers](https://caniuse.com/#feat=brotli).
+* [Gzip](https://tools.ietf.org/html/rfc1952) usa as técnicas de compressão [LZ77](https://en.wikipedia.org/wiki/LZ77_and_LZ78#LZ77) e [Huffman coding](https://en.wikipedia.org/wiki/Huffman_coding) e é mais antigo que a própria web. Foi originalmente desenvolvido para o programa `gzip` do Unix em 1992. Uma implementação para servir conteúdos na web existe desde o HTTP/1.1 e a grande maioria dos browsers e clientes suportam este algoritmo de compressão.
+* [Deflate](https://tools.ietf.org/html/rfc1951) usa o mesmo algoritmo que o Gzip mas com um recipiente diferente. Não foi tão adoptado para a web devido a [problemas de compatibilidade](https://en.wikipedia.org/wiki/HTTP_compression#Problems_preventing_the_use_of_HTTP_compression) com alguns servidores e browsers.
+* [Brotli](https://tools.ietf.org/html/rfc7932) é um novo algoritmo de compressão [criado pela Google](https://github.com/google/brotli). Combina a variante moderna da técnica de compressão LZ77 e Huffman e uma modelação de contexto de segunda ordem. A compressão via Brotli é computacionalmente mais exigente que o Gzip mas o algoritmo é capaz de reduzir o tamanho dos ficheiros em [15-25%](https://cran.r-project.org/web/packages/brotli/vignettes/brotli-2015-09-22.pdf) em relação à compressão Gzip. O Brotli foi inicialmente usado para compressão de conteúdos web em 2015 e é [suportado em todos os browsers modernos](https://caniuse.com/#feat=brotli).
 
-Approximately 38% of HTTP responses are delivered with text-based compression. This may seem like a surprising statistic, but keep in mind that it is based on all HTTP requests in the dataset. Some content, such as images, will not benefit from these compression algorithms. The table below summarizes the percentage of requests served with each content encoding.
+Aproximadamente 38% das respostas HTTP são servidas com compressão baseada em texto. Poderá parecer uma estatística surpreendente mas deve levar em conta que é baseado em todos os pedidos HTTP no dataset. Algum conteúdo, como imagens, não irá beneficiar destes algoritmos de compressão. A tabela abaixo resume a percentagem de pedidos servidos para cada tipo de codificação de contéudo.
 
 <figure>
   <table>
     <thead>
       <tr>
         <td></td>
-        <th scope="colgroup" colspan="2" >Percent of Requests</th>
-        <th scope="colgroup" colspan="2" >Requests</th>
+        <th scope="colgroup" colspan="2" >Percentagem de Pedidos</th>
+        <th scope="colgroup" colspan="2" >Pedidos</th>
       </tr>
       <tr>
-        <th scope="col">Content Encoding</th>
+        <th scope="col">Tipo de codificação de conteúdo</th>
         <th scope="col">Desktop</th>
         <th scope="col">Mobile</th>
         <th scope="col">Desktop</th>
@@ -79,7 +79,7 @@ Approximately 38% of HTTP responses are delivered with text-based compression. T
     </thead>
     <tbody>
       <tr>
-        <td><em>No Text Compression</em></td>
+        <td><em>Sem Compressão de Texto</em></td>
         <td class="numeric">62.87%</td>
         <td class="numeric">61.47%</td>
         <td class="numeric">260,245,106</td>
@@ -107,7 +107,7 @@ Approximately 38% of HTTP responses are delivered with text-based compression. T
         <td class="numeric">70,679</td>
       </tr>
       <tr>
-        <td><em>Other / Invalid</em></td>
+        <td><em>Outro / Inválido</em></td>
         <td class="numeric">0.02%</td>
         <td class="numeric">0.01%</td>
         <td class="numeric">67,527</td>
@@ -143,26 +143,26 @@ Approximately 38% of HTTP responses are delivered with text-based compression. T
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Adoption of compression algorithms.") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Adopção de algoritmos de compressão.") }}</figcaption>
 </figure>
 
-Of the resources that are served compressed, the majority are using either Gzip (80%) or Brotli (20%). The other compression algorithms are infrequently used.
+De todos os recursos servidos com compressão, a maioria usa Gzip (80%) our Brolti (20%). Os restantes algoritmos de compressão raramente são usados.
 
 {{ figure_markup(
   image="fig2.png",
-  caption="Adoption of compression algorithms on desktop pages.",
-  description="Pie chart of the data table in Figure 15.1.",
+  caption="Adopção de algoritmos de compressão em páginas desktop.",
+  description="Gráfico de pizza da tabela de dados da Figura 15.1.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=2052550005&format=interactive"
   )
 }}
 
-Additionally, there are 67k requests that return an invalid `Content-Encoding`, such as "none", "UTF-8", "base64", "text", etc. These resources are likely served uncompressed.
+Adicionalmente, existem 67k pedidos que retornam um `Content-Encoding` inválido, como "none", "UTF-8", "base64", "text", etc. Estes recuros muito provavelmente são servidos sem compressão.
 
-We can't determine the compression levels from any of the diagnostics collected by the HTTP Archive, but the best practice for compressing content is:
+Não conseguimos determinar os níveis de compressão dos diagnósticos obtidos do HTTP Archive mas a melhor prática para comprimir conteúdo é:
 
-* At a minimum, enable Gzip compression level 6 for text based assets. This provides a fair trade-off between computational cost and compression ratio and is the [default for many web servers](https://paulcalvano.com/index.php/2018/07/25/brotli-compression-how-much-will-it-reduce-your-content/)—though [Nginx still defaults to the, often too low, level 1](http://nginx.org/en/docs/http/ngx_http_gzip_module.html#gzip_comp_level).
-* If you can support Brotli and precompress resources, then compress to Brotli level 11.  This is more computationally expensive than Gzip - so precompression is an absolute must to avoid delays.
-* If you can support Brotli and are unable to precompress, then compress to Brotli level 5. This level will result in smaller payloads compared to Gzip, with a similar computational overhead.
+* No mínimo, activar o nível 6 de compressão Gzip para recursos do tipo texto. Este nível representa um bom balanço entre o custo computacional e taxa de compressão sendo a opção [padrão para muitos servidores web](https://paulcalvano.com/index.php/2018/07/25/brotli-compression-how-much-will-it-reduce-your-content/) apesar do [Nginx ainda recorrer a um nível 1, normalmente muito baixo](http://nginx.org/en/docs/http/ngx_http_gzip_module.html#gzip_comp_level).
+* Se conseguir suportar Broti e pre-comprimir esses recursos, então use o nível 11. Este nível é computacionalmente mais exigente que o Gzip - portanto uma pre-compressão é essencial para evitar atrasos. 
+* Se conseguir suportar Brotli mas pre-compressão não é uma opção, então comprima com Brotli nível 5. Este nível irá produzir recursos mais pequenos quando comparados com Gzip, com uma exigência computacional semelhante.
 
 
 ## What types of content are we compressing?
