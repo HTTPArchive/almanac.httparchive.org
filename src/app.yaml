@@ -3,24 +3,58 @@ entrypoint: gunicorn -b :$PORT main:app
 default_expiration: 3h
 
 handlers:
+
+# Add longer caching for fonts
 - url: /static/fonts/(.*\.(woff|woff2))$
   static_files: static/fonts/\1
   upload: static/fonts/.*\.(woff|woff2)$
   secure: always
   expiration: 365d
+  http_headers:
+    strict-transport-security: max-age=31556926; includeSubDomains
+    x-content-type-options: nosniff
+    vary: Accept-Encoding
 
+# Allow python redirects for old hero-images
 - url: /static/images/2019/[0-2][0-9]_.*/.*$
   script: auto
   secure: always
 
+# Allow python redirects for 2019.css which was renamed alamanac.css
 - url: /static/css/2019.css.*$
   script: auto
   secure: always
 
+# Set the UTF-8 charset for CSS and JS files.
+# Makes the assumption that only CSS and JS files existing in the relevant dirs
+# but avoids complex regexes
+- url: /static/css
+  static_dir: static/css
+  secure: always
+  http_headers:
+    content-type: text/css; charset=utf-8
+    strict-transport-security: max-age=31556926; includeSubDomains
+    x-content-type-options: nosniff
+    vary: Accept-Encoding
+- url: /static/js
+  static_dir: static/js
+  secure: always
+  http_headers:
+    content-type: application/javascript; charset=utf-8
+    strict-transport-security: max-age=31556926; includeSubDomains
+    x-content-type-options: nosniff
+    vary: Accept-Encoding
+
+# Handler for everything else in static directory
 - url: /static
   static_dir: static
   secure: always
+  http_headers:
+    strict-transport-security: max-age=31556926; includeSubDomains
+    x-content-type-options: nosniff
+    vary: Accept-Encoding
 
+# Everything else is sent to python server
 - url: /.*
   script: auto
   secure: always
