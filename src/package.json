@@ -33,7 +33,7 @@
     "timestamps": "node ./tools/generate/generate_timestamps"
   },
   "devDependencies": {
-    "ejs": "3.1.5",
+    "ejs": "3.1.6",
     "fs-extra": "9.1.0",
     "jsdom": "16.4.0",
     "node-fetch": "2.6.1",
