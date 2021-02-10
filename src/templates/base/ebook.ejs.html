@@ -9,7 +9,7 @@
 
     {% set metadata = <%- JSON.stringify(chapter.metadata) %> %}
     {% set chapter_hero_dir = "/static/images/%s/%s/" % ("<%- chapter.hero_dir || '2019' %>", metadata.chapter) %}
-    {% set chapter_config = <%- JSON.stringify(chapter) %> %}
+    {% set chapter_config = <%- JSON.stringify({ ...chapter, metadata: undefined, body: undefined, toc: undefined,  }) %> %}
     <section class="chapter" id="chapter-<%- chapter.chapter_number %>">
         <div class="body" id="{{ metadata.get('chapter') }}">
 
