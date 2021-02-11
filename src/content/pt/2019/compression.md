@@ -25,10 +25,10 @@ A compressão HTTP é uma técnica que permite codificar informação usando men
 
 Algoritmos de compressão são muitas vezes categorizados como podendo ter ou não perdas:
 
-* Quando um algoritmo de compressão com perdas é usado, o processo é irreversível, e o ficheiro original não pode ser restaurado através de descompressão. É uma prática comum para comprimir recursos mídia, tal como imagens e vídeo onde perder alguns dados não irá materialmente afectar o recurso.
+* Quando um algoritmo de compressão com perdas é usado, o processo é irreversível, e o ficheiro original não pode ser restaurado através de descompressão. É uma prática comum para comprimir recursos media, tal como imagens e vídeo onde perder alguns dados não irá materialmente afectar o recurso.
 * A compressão sem perdas é um processo totalmente reversível sendo tipicamente usado em recurso do tipo texto, como [HTML](./markup), [JavaScript](./javascript), [CSS](./css), etc.
 
-Neste capítulo, vamos explorar como conteúdo de texto é comprimido na web. Análise de conteúdo não baseado em texto faz parte do capítulo [Mídia](./media)
+Neste capítulo, vamos explorar como conteúdo de texto é comprimido na web. Análise de conteúdo não baseado em texto faz parte do capítulo [Media](./media)
 
 
 ## Como a compressão HTTP funciona
@@ -202,13 +202,12 @@ Os tipos de conteúdo `application/json` e `image/svg+xml` são comprmidos menos
 
 A maior parte das fontes web customizadas são servidas sem compressão uma vez que já são um formato comprimido. No entanto, a fonte `font/ttf` é comprimível apesar de só 84% dos pedidos a fontes TTF serem servidos com compressão mostrando que ainda existe espaço para melhoria.
 
-Os gráficos abaixo ilustram 
-The graphs below illustrate the breakdown of compression techniques used for each content type. Looking at the top three content types, we can see that across both desktop and mobile there are major gaps in compressing some of the most frequently requested content types. 56% of `text/html` as well as 18% of `application/javascript` and `text/css` resources are not being compressed. This presents a significant performance opportunity.
+Os gráficos abaixo ilustram a distribuição de cada técnica de compressão para cada tipo de conteúdo. Olhando os 3 tipos de conteúdo com mais compressão, conseguimos ver que tanto em dekstop como em mobile existem grandes diferenças na compressão em alguns dos tipos de conteúdo mais frequentemente requisitados. 56% dos recursos `text/html` bem como 18% do tipo `application/javascript` e `text/css` não são comprimidos. Isto representa uma oportunidade significativa para melhoria de desempenho.
 
 {{ figure_markup(
   image="fig5.png",
-  caption="Compression by content type for desktop.",
-  description="Stacked bar chart showing application/javascript is 36.18 Million/8.97 Million/10.47 Million by compression type (Gzip/Brotli/None), text/css is 24.29 M/8.31 M/7.20 M, text/html is 11.37 M/4.89 M/20.57 M, text/javascript is 23.21 M/1.72 M/3.03 M, application/x-javascript is 11.86 M/4.97 M/1.66 M, application/json is 4.06 M/0.50 M/3.23 M, image/svg+xml is 2.54 M/0.46 M/1.74 M, text/plain is 0.71 M/0.06 M/2.42 M, and image/x-icon is 0.58 M/0.10 M/1.11 M. Deflate is almost never used by any time and does not register on the chart..",
+  caption="Compressão por tipo de conteúdo para desktop.",
+  description="Gráfico de barras que mostra o tipo de conteúdo application/javascript com 36.18 Milhões/8.97 Milhões/10.47 Milhões por tipo de compressão (Gzip/Brotli/None), text/css com 24.29 M/8.31 M/7.20 M, text/html com 11.37 M/4.89 M/20.57 M, text/javascript com 23.21 M/1.72 M/3.03 M, application/x-javascript com 11.86 M/4.97 M/1.66 M, application/json com 4.06 M/0.50 M/3.23 M, image/svg+xml com 2.54 M/0.46 M/1.74 M, text/plain com 0.71 M/0.06 M/2.42 M, e image/x-icon com 0.58 M/0.10 M/1.11 M. Deflate raramente é usado e como tal não entra no gráfico.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=148811764&format=interactive",
   width=760,
   height=470,
@@ -220,7 +219,7 @@ The graphs below illustrate the breakdown of compression techniques used for eac
 {{ figure_markup(
   image="fig6.png",
   caption="Compression by content type for mobile.",
-  description="Stacked bar chart showing application/javascript is 43.07 Million/10.17 Million/12.19 Million by compression type (Gzip/Brotli/None), text/css is 28.3 M/9.91 M/8.56 M, text/html is 13.86 M/5.48 M/25.79 M, text/javascript is 27.41 M/1.94 M/3.33 M, application/x-javascript is 12.77 M/5.70 M/1.82 M, application/json is 4.67 M/0.50 M/3.53 M, image/svg+xml is 2.91 M/ 0.44 M/1.77 M, text/plain is 0.80 M/0.06 M/1.77 M, and image/x-icon is 0.62 M/0.11 M/1.22M. Deflate is almost never used by any time and does not register on the chart.",
+  description="Gráfico de barras que mostra o tipo de conteúdo application/javascript com 43.07 Milhões/10.17 Milhões/12.19 Milhões por tipo de compressão (Gzip/Brotli/None), text/css com 28.3 M/9.91 M/8.56 M, text/html com 13.86 M/5.48 M/25.79 M, text/javascript com 27.41 M/1.94 M/3.33 M, application/x-javascript com 12.77 M/5.70 M/1.82 M, application/json com 4.67 M/0.50 M/3.53 M, image/svg+xml com 2.91 M/ 0.44 M/1.77 M, text/plain com 0.80 M/0.06 M/1.77 M, e image/x-icon com 0.62 M/0.11 M/1.22M. Deflate raramente é usado e como tal não entra no gráfico.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=2009060762&format=interactive",
   width=760,
   height=470,
@@ -229,12 +228,12 @@ The graphs below illustrate the breakdown of compression techniques used for eac
   )
 }}
 
-The content types with the lowest compression rates include `application/json`, `text/xml`, and `text/plain`. These resources are commonly used for XHR requests to provide data that web applications can use to create rich experiences. Compressing them will likely improve user experience.  Vector graphics such as `image/svg+xml`, and `image/x-icon` are not often thought of as text based, but they are and sites that use them would benefit from compression.
+Os tipos de conteúdo com a taxa de compressão mais baixa incluem `application/json`, `text/xml`, e `text/plain`. Estes recursos são normalmente usados em pedidos XHR para fornecer dados que aplicações web podem usar para criar as melhores experiências. Comprimir esses recursos irá, muito provavelmente, melhorar a experiência com o utilizador. Gráficos de vectores, como `image/svg+xml` e `image/x-icon` não são muitas vezes encarados como baseados em texto, mas na realidade são e sites que os usam iriam beneficiar da compressão. 
 
 {{ figure_markup(
   image="fig7.png",
-  caption="Compression by content type as a percent for desktop.",
-  description="Stacked bar chart showing application/javascript is 65.1%/16.1%/18.8% by compression type (Gzip/Brotli/None), text/css is 61.0%/20.9%/18.1%, text/html is 30.9%/13.3%/55.8%, text/javascript is 83.0%/6.1%/10.8%, application/x-javascript is 64.1%/26.9%/9.0%, application/json is 52.1%/6.4%/41.4%, image/svg+xml is 53.5%/9.8%/36.7%, text/plain is 22.2%/2.0%/75.8%, and image/x-icon is 32.6%/5.3%/62.1%. Deflate is almost never used by any time and does not register on the chart.",
+  caption="Compressão por tipo de conteúdo como percentagem para desktop.",
+  description="Gráfico de barras que mostra application/javascript com 65.1%/16.1%/18.8% por tipo de compressão (Gzip/Brotli/None), text/css com 61.0%/20.9%/18.1%, text/html com 30.9%/13.3%/55.8%, text/javascript com 83.0%/6.1%/10.8%, application/x-javascript com 64.1%/26.9%/9.0%, application/json com 52.1%/6.4%/41.4%, image/svg+xml com 53.5%/9.8%/36.7%, text/plain com 22.2%/2.0%/75.8%, e image/x-icon com 32.6%/5.3%/62.1%. Deflate raramente é usado e como tal não entra no gráfico.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=1923565332&format=interactive",
   width=760,
   height=470,
@@ -245,8 +244,8 @@ The content types with the lowest compression rates include `application/json`, 
 
 {{ figure_markup(
   image="fig8.png",
-  caption="Compression by content type as a percent for mobile.",
-  description="Stacked bar chart showing application/javascript is 65.8%/15.5%/18.6% by compression type (Gzip/Brotli/None), text/css is 60.5%/21.2%/18.3%, text/html is 30.7%/12.1%/57.1%, text/javascript is 83.9%/5.9%/10.2%, application/x-javascript is 62.9%/28.1%/9.0%, application/json is 53.6%/8.6%/34.6%, image/svg+xml is 23.4%/1.8%/74.8%, text/plain is 23.4%/1.8%/74.8%, and image/x-icon is 31.8%/5.5%/62.7%. Deflate is almost never used by any time and does not register on the chart.",
+  caption="Compressão por tipo de conteúdo como percentagem para mobile,",
+  description="Gráfico de barras com application/javascript com 65.8%/15.5%/18.6% por tipo de compressão (Gzip/Brotli/None), text/css com 60.5%/21.2%/18.3%, text/html com 30.7%/12.1%/57.1%, text/javascript com 83.9%/5.9%/10.2%, application/x-javascript com 62.9%/28.1%/9.0%, application/json com 53.6%/8.6%/34.6%, image/svg+xml com 23.4%/1.8%/74.8%, text/plain com 23.4%/1.8%/74.8%, com image/x-icon com 31.8%/5.5%/62.7%. Deflate raramente é usado e como tal não entra no gráfico.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=673629979&format=interactive",
   width=760,
   height=470,
