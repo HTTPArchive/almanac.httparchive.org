@@ -21,19 +21,19 @@ featured_stat_label_3: Respostas HTML sem compressão
 
 ## Introdução
 
-A compressão HTTP é uma técnica que permite codificar informação usando menos bits que a represantação original. Quando é usado para entrega de conteúdo web, isso permite a servidores web reduzir a quantidade de dados transmitodos aos clientes. Isto aumenta a eficiência da largura de banda disponível do ciente, reduz o [peso da página](./page-weight) e melhora o seu [desempenho](./performance).
+A compressão HTTP é uma técnica que permite codificar informação usando menos bits que a represantação original. Quando é usado para entrega de conteúdo web, isso permite a servidores web reduzir a quantidade de dados transmitidos aos clientes. Isto aumenta a eficiência da largura de banda disponível do ciente, reduz o [peso da página](./page-weight) e melhora o seu [desempenho](./performance).
 
 Algoritmos de compressão são muitas vezes categorizados como podendo ter ou não perdas:
 
-* Quando um algoritmo de compressão com perdas é usado, o processo é irreversível, e o ficheiro original não pode ser restaurado através de descompressão. É uma prática comum para comprimir recursos media, tal como imagens e vídeo onde perder alguns dados não irá materialmente afectar o recurso.
-* A compressão sem perdas é um processo totalmente reversível sendo tipicamente usado em recurso do tipo texto, como [HTML](./markup), [JavaScript](./javascript), [CSS](./css), etc.
+* Quando um algoritmo de compressão com perdas é usado, o processo é irreversível e o ficheiro original não pode ser restaurado através de descompressão. É uma prática comum para comprimir recursos mídia, tal como imagens e vídeo onde perder alguns dados não irá materialmente afectar o recurso.
+* A compressão sem perdas é um processo totalmente reversível sendo, tipicamente, usado em recursos do tipo texto, como [HTML](./markup), [JavaScript](./javascript), [CSS](./css), etc.
 
 Neste capítulo, vamos explorar como conteúdo de texto é comprimido na web. Análise de conteúdo não baseado em texto faz parte do capítulo [Media](./media)
 
 
 ## Como a compressão HTTP funciona
 
-Quando um cliente faz um pedido HTTP, frequentemente inclui um cabeçalho [`Accept-Encoding`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Encoding) para comunicar os algoritmos de compressão que é capaz de descodificar. O servidor pode depois seleccionar um dos algoritmos comunicados que suporte e servir uma resposta comprimida. A resposta comprimida incluiria o cabeçalho [`Content-Encoding`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding) para que o cliente esteja ciente que tipo de compressão foi usada. Adicionalmente, um cabeçalho [`Content-Type`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type) é frequentemente usado para indicar o [MIME type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types) do resurso a ser servido.
+Quando um cliente faz um pedido HTTP, frequentemente, inclui um cabeçalho [`Accept-Encoding`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Encoding) para comunicar os algoritmos de compressão que é capaz de descodificar. O servidor pode depois seleccionar um dos algoritmos comunicados que suporte e servir uma resposta comprimida. A resposta comprimida iria por sua vez incluir o cabeçalho [`Content-Encoding`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding) para que o cliente perceba que tipo de compressão foi usada. Adicionalmente, um cabeçalho [`Content-Type`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type) é, frequentemente, usado para indicar o [MIME type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types) do resurso a ser servido.
 
 No exemplo seguinte, o cliente comunica que tem suporte para compressão Gzip, Brotli e Deflate. O servidor decidiu retornar uma resposta comprimida com GZip que contém um documento `text/html`.
 
