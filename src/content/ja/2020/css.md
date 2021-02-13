@@ -137,7 +137,7 @@ IDは、意図的に特異度を下げたり、上げたりするために使う
 
 ###`!important`{important}
 
-代わりに、古くて粗雑な`!important`は、その[よく知られた欠点]にもかかわらず、まだかなり使われています(https://www.impressivewebs.com/everything-you-need-to-know-about-the-important-css-declaration/#post-475:~:text=Drawbacks,-to)。中央値のページでは、宣言のほぼ2％、つまり50分の1で`!important`が使用されています。
+代わりに、古くて粗雑な`!important`は、その[よく知られた欠点](https://www.impressivewebs.com/everything-you-need-to-know-about-the-important-css-declaration/#post-475:~:text=Drawbacks,-to)にもかかわらず、まだかなり使われています。中央値のページでは、宣言のほぼ2％、つまり50分の1で`!important`が使用されています。
 
 
 {{ figure_markup(
