@@ -170,7 +170,6 @@ In media, i siti servono all'incirca lo stesso numero di script di prima parte d
 
 Sebbene la quantità di richieste JavaScript sia simile alla mediana, la dimensione effettiva di quegli script è ponderata (gioco di parole) un po' più pesantemente verso fonti di terze parti. Il sito mediano invia 267 KB di JavaScript da terze parti ai dispositivi desktop, rispetto ai 147 KB delle prime parti. La situazione è molto simile sui dispositivi mobile, dove il sito mediano spedisce 255 KB di script di terze parti rispetto ai 134 KB di script di prima parte.
 
-
 {{ figure_markup(
   image="bytes-by-3p-desktop.png",
   caption="Distribuzione del numero di byte JavaScript per host per desktop.",
@@ -351,7 +350,6 @@ HTTP Archive utilizza [Wappalyzer](./methodology#wappalyzer) per rilevare le tec
 
 Le librerie popolari in uso sono sostanzialmente invariate rispetto allo scorso anno, con jQuery che continua a dominare l'utilizzo e solo una delle 21 migliori librerie è caduta (lazy.js, sostituita da DataTables). In effetti, anche le percentuali delle migliori librerie sono cambiate appena rispetto allo scorso anno.
 
-
 {{ figure_markup(
   image="frameworks-libraries.png",
   caption="Adozione dei principali framework e librerie JavaScript come percentuale delle pagine.",
@@ -373,7 +371,6 @@ In effetti, il predominio di jQuery è ulteriormente supportato se ci si ferma a
 ### I Framework
 
 Quando guardiamo i framework, non vediamo nemmeno un cambiamento radicale in termini di adozione nei framework principali che sono stati evidenziati lo scorso anno. Vue.js ha visto un aumento significativo e AMP è cresciuto un po', ma la maggior parte di loro sono più o meno dove erano un anno fa.
-
 
 Vale la pena notare che il [problema di rilevamento rilevato lo scorso anno è ancora valido](https://github.com/AliasIO/wappalyzer/issues/2450) e ha ancora un impatto sui risultati qui. È possibile che ci sia stato un cambiamento significativo nella popolarità di alcuni di questi strumenti, ma semplicemente non lo vediamo con il modo in cui i dati vengono attualmente raccolti.
 

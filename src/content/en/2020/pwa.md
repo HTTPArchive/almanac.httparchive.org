@@ -436,7 +436,6 @@ Out of many methods that Workbox provides, we noticed that `strategies` were use
 
 This indicated that the strategies API, as one of the most complicated requirements for the developers, played a very important role when they decided to code themselves or rely on libraries like Workbox.
 
-
 ## Conclusion
 
 The stats in this chapter show that PWAs are still continuing to grow in adoption, due to the advantages they give for [performance](./performance) and greater control over [caching](./caching) particularly for [mobile](./mobile-web). With those advantages and ever increasing [capabilities](./capabilities), means we still have a lot of potential for growth. We expect to see even more progress in 2021!

@@ -171,7 +171,6 @@ Right up until the median, sites serve roughly the same number of first-party sc
 
 While the amount of JavaScript requests are similar at the median, the actual size of those scripts is weighted (pun intended) a bit more heavily toward third-party sources. The median site sends 267 KB of JavaScript from third-parties to desktop devices ,compared to 147 KB from first-parties. The situation is very similar on mobile, where the median site ships 255 KB of third-party scripts compared to 134 KB of first-party scripts.
 
-
 {{ figure_markup(
   image="bytes-by-3p-desktop.png",
   caption="Distribution of the number of JavaScript bytes by host for desktop.",
@@ -755,7 +754,6 @@ Of the roughly 5 million or so mobile pages that are tested against, 81% of them
     ) }}
   </figcaption>
 </figure>
-
 
 In other words, if we can get folks to migrate away from those outdated, vulnerable versions of jQuery, we would see the number of sites with known vulnerabilities plummet (at least, until we start finding some in the newer frameworks).
 
