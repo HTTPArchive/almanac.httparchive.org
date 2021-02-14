@@ -91,7 +91,6 @@ When considering what to cache, it is important to understand whether the respon
 
 An example of static content is an image. For instance, a picture of a cat in a cat.jpg file is usually the same regardless of who's requesting it or where the requester is located (of course alternative formats or sizes may be delivered but usually from a different filename).
 
-
 {{ figure_markup(
   image="luna-cat.jpg",
   caption="Yes, we have a picture of a cat.",
@@ -798,7 +797,6 @@ The table below details the cache TTL values for mobile requests by type:
 While most of the median TTLs are high, the lower percentiles highlight some of the missed caching opportunities. For example, the median TTL for images is 720 hours (1 month); however the 25<sup>th</sup> percentile is just 168 hours (1 week) and the 10<sup>th</sup> percentile has dropped to just a few hours. Compare this with fonts, which have a very high TTL of 8,760 hours (1 year) all the way down to the 25th percentile, with even the 10<sup>th</sup> percentile showing a TTL of 1 month.
 
 By exploring the cacheability by content type in more detail in figure below, we can see that while fonts, video and audio, and CSS files are browser cached at close to 100% (which makes sense, since these files are typically very static), approximately one third of all HTML responses are considered non-cacheable.
-
 
 {{ figure_markup(
   image="cacheable-by-resource-type.png",

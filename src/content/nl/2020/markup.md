@@ -452,7 +452,6 @@ Standaardelementen zijn elementen die deel uitmaken van de HTML-specificatie. We
 
 We nemen deze elementen op om een idee te geven welke elementen mogelijk uit de gratie zijn geraakt. Maar hoewel `dir` en` basefont` voor het laatst werden gespecificeerd in XHTML 1.0 (2000) en niet langer deel uitmaken van HTML, het zeldzame gebruik van `rp`, [dat al in 1998 werd genoemd](https://www.w3.org/TR/1998/WD-rubya2-4) en dat [nog steeds deel uitmaakt van HTML](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element), suggereert misschien dat [ruby-opmaak](https://www.w3.org/TR/ruby/) niet erg populair is.
 
-
 ### Aangepaste elementen
 
 De 2019-editie van de Web Almanac behandelde [aangepaste elementen](../2019/markup#custom-elements) door verschillende niet-standaard elementen te bespreken. Dit jaar vonden we het waardevol om aangepaste elementen van naderbij te bekijken. Hoe hebben we deze bepaald? Door te kijken naar [hun definitie](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-core-concepts), met name hun gebruik van een koppelteken. Laten we ons concentreren op de topelementen, in dit geval elementen die worden gebruikt op ≥1% van alle URL's in het voorbeeld:

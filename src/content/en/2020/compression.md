@@ -235,7 +235,6 @@ When we compare compression techniques between first and third parties, we can s
 
 Compared with [last year's results](../2019/compression#first-party-vs-third-party-compression), we can see that there was a significant increase in the use of compression, notably Brotli for first parties, almost to the point that the use of compression is around 40% for both first and third party, and for desktop and mobile. However within the responses that do use compression, for first parties, the ratio of Brotli compression is only 18%, while the ratio for third parties is 27%.
 
-
 ## How to analyze compression on your sites
 
 You can use [Firefox Developer Tools](https://developer.mozilla.org/en-US/docs/Tools) or [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) to quickly figure out what content a website already compresses. To do this, go to the Network tab, right click and activate "Content Encoding" under Response Headers. Hovering over the size of individual files you will see "transferred over network" and "resource size". Aggregated for the entire site one can see size/transferred size for Firefox and  "transferred" and "resources" for Chrome on the bottom left hand side of the Network tab.
@@ -251,7 +250,6 @@ You can use [Firefox Developer Tools](https://developer.mozilla.org/en-US/docs/T
 }}
 
 Another tool to better understand compression on your site is Google's [Lighthouse](https://developers.google.com/web/tools/lighthouse) tool, which enables you to run a series of audits against web pages. The [text compression audit](https://web.dev/uses-text-compression/) evaluates whether a site can benefit from additional text-based compression. It does this by attempting to compress resources and evaluate whether an object's size can be reduced by at least 10% and 1,400 bytes. Depending on the score, you may see a compression recommendation in the results, with a list of specific resources that could be compressed.
-
 
 Because the [HTTP Archive runs Lighthouse audits](./methodology#lighthouse) for each mobile page, we can aggregate the scores across all sites to learn how much opportunity there is to compress more content. Overall, 74% of websites are passing this audit, while almost 13% of websites have scored below a 40. This is a 11.5% improvement when compared to [last year's](../2019/compression#identifying-compression-opportunities) 62.5% of passing scores.
 

@@ -31,7 +31,6 @@ Today, we live in the world of the visual web, where media provides the soul for
 
 Images offer a most powerful pairing: instant communication, capable of triggering an innate emotional response. However, they are also much heavier than text, and require considered implementations to avoid bogging user experiences down. Let's explore how well modern browsers' capabilities are being leveraged.
 
-
 ### Responsive HTML markup for images
 
 While there are myriad approaches to embedding media using JavaScript, we were interested in the ongoing uptake of varying forms of HTML markup. Several *responsive images* approaches including the `<picture>` element, and `srcset` and `sizes` attributes have had growing support since first introduced in 2014.
@@ -131,7 +130,6 @@ For example:
 
 For the 2020 data around 35% of sites using `srcset` did not also combine it with `sizes`. Though the browser will happily fall back to a `sizes="100vw"` default, leaving the attribute off is [technically incorrect](https://alistapart.com/blog/post/article-update-dont-rely-on-default-sizes/), and we regularly encounter instances where this oversight means that the mathematics to determine the most appropriate image candidate are flawed, often leading to unnecessarily-large images being requested.
 
-
 Many people that we have discussed this with express that `sizes` is particularly tricky to implement in a correct, resilient fashion, due to the need to ensure cross-resource alignment between layout (as managed and determined by CSS) and responsive image markup (in HTML).
 
 #### Picture
@@ -202,7 +200,6 @@ Here is an example of the markup syntax that could be used to offer multiple for
   <img src="images/example.jpg" alt="Description" />
 </picture>
 ```
-
 
 The user agent will effectively select the first one that it has a positive match on, and hence the ordering here is important.
 
@@ -414,7 +411,6 @@ The `alt` attribute for images is used to provide a description of the image. It
 }}
 
 Around 96% of all the pages processed had an `<img>` element - 21% of these images were missing an `alt` attribute. 52% of the images had an `alt` attribute, however 26% of these were left blank. Put simply: only around a quarter of images on the web have a non-blank `alt` attribute; presumably even less than that have `alt` text that's usefully descriptive.
-
 
 #### Figure & Figcaption
 

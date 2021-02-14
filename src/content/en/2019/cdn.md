@@ -657,7 +657,6 @@ For resource requests (including same-domain and third-party), the TLS negotiati
   )
 }}
 
-
 TLS handshake performance is impacted by a number of factors. These include RTT, TLS record size, and TLS certificate size. While RTT has the biggest impact on the TLS handshake, the second largest driver for TLS performance is the TLS certificate size.
 
 During the first round trip of the [TLS handshake](https://hpbn.co/transport-layer-security-tls/#tls-handshake), the server attaches its certificate. This certificate is then verified by the client before proceeding. In this certificate exchange, the server might include the certificate chain by which it can be verified. After this certificate exchange, additional keys are established to encrypt the communication. However, the length and size of the certificate can negatively impact the TLS negotiation performance, and in some cases, crash client libraries.
