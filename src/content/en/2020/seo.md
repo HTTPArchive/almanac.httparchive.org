@@ -251,7 +251,6 @@ The primary purpose that both search engines and Search Engine Optimization serv
 
 To understand what search engines are able to effectively extract, we have broken out the components of that content and examined the incidence rate of those features between the mobile and desktop contexts. We also reviewed the disparity between mobile and desktop content. The mobile and desktop disparity is especially valuable because Google has moved to [_mobile-first indexing_](https://developers.google.com/search/blog/2020/03/announcing-mobile-first-indexing-for) (MFI) for all new sites and, as of March of 2021, will move to a _mobile-only index_ wherein content that does not appear within the mobile context will not be evaluated for ranking.
 
-
 #### Rendered versus non-rendered text content
 
 The usage of Single Page Application (SPA) [JavaScript](../javascript) technologies has exploded with the growth of the web. This design pattern introduces difficulties for search engine spiders because both the execution of JavaScript transformations at runtime and user interactions with the page after load can cause additional content to appear or be rendered.
