@@ -139,7 +139,6 @@ IDs can also be used to intentionally reduce or increase specificity. The [speci
 
 Instead, the old, crude `!important` is still used a fair bit despite its [well-known drawbacks](https://www.impressivewebs.com/everything-you-need-to-know-about-the-important-css-declaration/#post-475:~:text=Drawbacks,-to). The median page uses `!important` in nearly 2% of its declarations, or 1 in 50.
 
-
 {{ figure_markup(
   caption="Mobile pages using `!important` in every single declaration!",
   content="2,138",
@@ -175,7 +174,6 @@ What is it that developers are so keen to override? We looked at breakdown by pr
 ### Specificity and classes
 
 Besides keeping `id`s and `!important`s few and far between, there is a trend to circumvent specificity altogether by cramming all the selection criteria of a selector in a single class name, thus forcing all rules to have the same specificity and turning the cascade into a simpler last-one-wins system. BEM is a popular methodology of that type, albeit not the only one. While it is difficult to assess how many websites use BEM-style methodologies exclusively, since following it in every rule is rare (even the [BEM website](https://en.bem.info/) uses multiple classes in many selectors), about 10% of pages had a median specificity of (0,1,0), which may indicate mostly following a BEM-style methodology. On the opposite end of BEM, often developers use [duplicated classes](https://csswizardry.com/2014/07/hacks-for-dealing-with-specificity/#safely-increasing-specificity) to increase specificity and nudge a selector ahead of another one (e.g. `.foo.foo` instead of `.foo`). This kind of specificity hack is actually more popular than BEM, being present in 14% of mobile websites (9% of desktop)! This may indicate that most developers do not actually want to get rid of the cascade altogether, they just need more control over it.
-
 
 <figure markdown>
 Percentile | Desktop | Mobile

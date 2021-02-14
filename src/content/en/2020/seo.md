@@ -579,7 +579,6 @@ The median page has 61 internal links (going to pages within the same site) on d
 
 The median page is linking to external sites 7 times on desktop and 6 times on mobile. This is a decrease from last year, when it was found that the median number of external links per page were 10 in desktop and 8 on mobile. This decrease in external links could suggest that websites are now being more careful when linking to other sites, whether to avoid passing link popularity or referring users to them.
 
-
 {{ figure_markup(
   image="seo-outgoing-links-external.png",
   caption="Distribution of the number of outgoing external links per page.",
@@ -601,7 +600,6 @@ The median web page uses an image as anchor text to link in 9.80% of desktop and
   sheets_gid="775602646",
   sql_file="pages_wpt_bodies_by_device_and_percentile.sql"
 ) }}
-
 
 #### Mobile versus desktop links
 
@@ -632,7 +630,6 @@ Our review of pages indicates that 28.58% of pages include `rel=nofollow` attrib
   sheets_gid="1271677392",
   sql_file="pages_robots_txt_by_device_and_status.sql"
 ) }}
-
 
 ## Advanced
 

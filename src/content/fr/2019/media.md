@@ -398,7 +398,6 @@ Lors de la diffusion de vidéos sur le web, la plupart des vidéos sont livrées
   )
 }}
 
-
 Les attributs les plus courants sont `autoplay`, `muted` et `loop`, suivis par `preload`, `width` et `height`. L’attribut `loop` est utilisé dans les vidéos de fond, et aussi lorsque les vidéos sont utilisées pour remplacer des GIF animés, il n’est donc pas surprenant de voir qu’il est souvent utilisé sur les pages d’accueil des sites web.
 
 Si la plupart des attributs sont utilisés de manière similaire sur les ordinateurs de bureau et les téléphones portables, certains présentent des différences significatives. Les deux attributs qui présentent la plus grande différence entre le mobile et le bureau sont `width` et `height`, avec 4&nbsp;% de sites en moins qui utilisent ces attributs sur le mobile. Il est intéressant de noter une légère augmentation de l’attribut `poster` (placer une image sur la fenêtre vidéo avant la lecture) sur le mobile.

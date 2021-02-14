@@ -30,13 +30,11 @@ Compression algorithms are often categorized as lossy or lossless:
 
 In this chapter, we are going to explore how text-based content is compressed on the web. Analysis of non-text-based content forms part of the [Media](./media) chapter.
 
-
 ## How HTTP compression works
 
 When a client makes an HTTP request, it often includes an [`Accept-Encoding`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Encoding) header to advertise the compression algorithms it is capable of decoding. The server can then select from one of the advertised encodings it supports and serve a compressed response. The compressed response would include a [`Content-Encoding`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding) header so that the client is aware of which compression was used. Additionally, a [`Content-Type`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type) header is often used to indicate the [MIME type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types) of the resource being served.
 
 In the example below, the client advertised support for Gzip, Brotli, and Deflate compression. The server decided to return a Gzip compressed response containing a `text/html` document.
-
 
 ```
     > GET / HTTP/1.1
@@ -48,9 +46,7 @@ In the example below, the client advertised support for Gzip, Brotli, and Deflat
     < Content-encoding: gzip
 ```
 
-
 The HTTP Archive contains measurements for 5.3 million web sites, and each site loaded at least 1 compressed text resource on their home page. Additionally, resources were compressed on the primary domain on 81% of web sites.
-
 
 ## Compression algorithms
 
@@ -164,7 +160,6 @@ We can't determine the compression levels from any of the diagnostics collected 
 * At a minimum, enable Gzip compression level 6 for text based assets. This provides a fair trade-off between computational cost and compression ratio and is the [default for many web servers](https://paulcalvano.com/index.php/2018/07/25/brotli-compression-how-much-will-it-reduce-your-content/)—though [Nginx still defaults to the, often too low, level 1](http://nginx.org/en/docs/http/ngx_http_gzip_module.html#gzip_comp_level).
 * If you can support Brotli and precompress resources, then compress to Brotli level 11.  This is more computationally expensive than Gzip - so precompression is an absolute must to avoid delays.
 * If you can support Brotli and are unable to precompress, then compress to Brotli level 5. This level will result in smaller payloads compared to Gzip, with a similar computational overhead.
-
 
 ## What types of content are we compressing?
 

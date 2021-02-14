@@ -579,7 +579,6 @@ La pagina mediana ha 61 link interni (che vanno a pagine all'interno dello stess
 
 La pagina mediana si collega a siti esterni 7 volte su desktop e 6 volte su dispositivi mobile. Si tratta di una diminuzione rispetto allo scorso anno, quando si è riscontrato che il numero medio di link esterni per pagina erano 10 su desktop e 8 su dispositivi mobile. Questa diminuzione dei link esterni potrebbe suggerire che i siti web stanno ora prestando maggiore attenzione quando si collegano ad altri siti, sia per evitare di passare popolarità di link o di indirizzare gli utenti ad essi.
 
-
 {{ figure_markup(
   image="seo-outgoing-links-external.png",
   caption="Distribuzione del numero di link esterni in uscita per pagina.",
@@ -631,7 +630,6 @@ La nostra revisione delle pagine indica che il 28.58% delle pagine include attri
   sheets_gid="1271677392",
   sql_file="pages_robots_txt_by_device_and_status.sql"
 ) }}
-
 
 ## Avanzate
 

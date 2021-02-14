@@ -74,7 +74,6 @@ HTTP/2には次の重要な概念があります。
 
 私たちの分析は、Chromeブラウザで約500万の上位デスクトップおよびモバイルWebサイトをテストするHTTP Archiveから提供されています。([方法論](./methodology)の詳細をご覧ください。)
 
-
 {{ figure_markup(
   image="ch20_fig2_http2_usage_by_request.png",
   alt="要求によるHTTP/2の使用。(引用: HTTP Archive)",

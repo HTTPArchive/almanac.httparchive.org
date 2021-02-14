@@ -287,7 +287,6 @@ Note the Referrer Policy does not follow the `Referer` header's misspelling [whi
 
 A total of 3.25% of desktop pages and 2.95% of mobile pages issue a `Referrer-Policy` header and below we can see the configurations those pages used.
 
-
 <figure data-markdown="1">
 
 | Configuration                     | Desktop | Mobile |
@@ -435,7 +434,6 @@ Being a recently introduced mechanism, the usage of Same-Site cookies is much lo
 We can see that of those pages already using Same-Site cookies, more than half of them are using it in `strict` mode. This is closely followed by sites using Same-Site in `lax` mode and then a small selection of sites using the value `none`. This last value is used to opt-out of the upcoming change where browser vendors may implement `lax` mode by default.
 
 Because it provides much needed protection against a dangerous attack, there are currently indications that leading browsers could [implement this feature by default](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html) and enable it on cookies even though the value is not set. If this were to happen the SameSite protection would be enabled, though in its weaker setting of `lax` mode and not `strict` mode, as that would likely cause more breakage.
-
 
 ### Prefixes
 Another recent addition to cookies are Cookie Prefixes. These use the name of your cookie to add one of two further protections to those already covered. While the above flags can be accidentally unset on cookies, the name will not change so using the name to define security attributes can more reliably enforce them.

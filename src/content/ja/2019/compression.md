@@ -30,13 +30,11 @@ HTTP圧縮は、元の表現よりも少ないビットを使用して情報を�
 
 この章では、テキストベースのコンテンツがWeb上でどのように圧縮されるかを検討します。非テキストベースのコンテンツの分析は、[メディア](./media)の章の一部を形成します。
 
-
 ## HTTP圧縮の仕組み
 
 クライアントがHTTPリクエストを作成する場合、多くの場合、デコード可能な圧縮アルゴリズムを示す[`Accept-Encoding`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Encoding)ヘッダーが含まれます。サーバーは、示されたエンコードのいずれかを選択してサポートし、圧縮されたレスポンスを提供できます。圧縮されたレスポンスには[`Content-Encoding`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding)ヘッダーが含まれるため、クライアントはどの圧縮が使用されたかを認識できます。また、提供されるリソースの[MIME](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)タイプを示すために、[`Content-Type`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type)ヘッダーがよく使用されます。
 
 以下の例では、クライアントはGzip、Brotli、およびDeflate圧縮のサポートを示してます。サーバーは、`text/html`ドキュメントを含むGzip圧縮された応答を返すことにしました。
-
 
 ```
     > GET / HTTP/1.1
@@ -48,9 +46,7 @@ HTTP圧縮は、元の表現よりも少ないビットを使用して情報を�
     < Content-encoding: gzip
 ```
 
-
 HTTP Archiveには、530万のWebサイトの測定値が含まれており、各サイトには少なくとも1つの圧縮テキストリソースがホームページにロードされています。さらに、リソースはWebサイトの81％のプライマリドメインで圧縮されました。
-
 
 ## 圧縮アルゴリズム
 
@@ -164,7 +160,6 @@ HTTP Archiveによって収集された診断から圧縮レベルを判断す�
 * 少なくとも、テキストベースのアセットに対してGzip圧縮レベル6を有効にします。これは、計算コストと圧縮率の間の公平なトレードオフを提供し、[多くのWebサーバーのデフォルト](https://paulcalvano.com/index.php/2018/07/25/brotli-compression-how-much-will-it-reduce-your-content/)にもかかわらず、[Nginxは依然として低すぎることが多いレベル1のままです](http://nginx.org/en/docs/http/ngx_http_gzip_module.html#gzip_comp_level)。
 * Brotliおよびprecompressリソースをサポートできる場合は、Brotliレベル11に圧縮します。これはGzipよりも計算コストが高くなります。したがって、遅延を避けるためには、事前圧縮が絶対に必要です。
 * Brotliをサポートでき、事前圧縮できない場合は、Brotliレベル5に圧縮します。このレベルでは、Gzipと比較してペイロードが小さくなり、同様の計算オーバーヘッドが発生します。
-
 
 ## どの種類のコンテンツを圧縮していますか？
 
