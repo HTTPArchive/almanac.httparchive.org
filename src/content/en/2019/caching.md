@@ -254,7 +254,6 @@ The same data for mobile is shown below. As can be seen, the cacheability of con
   )
 }}
 
-
 ## `Cache-Control` vs `Expires`
 
 In HTTP/1.0, the `Expires` header was used to indicate the date/time after which the response is considered stale. Its value is a date timestamp, such as:

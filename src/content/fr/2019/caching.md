@@ -254,7 +254,6 @@ Les mêmes données pour le mobile sont présentées ci-dessous. Comme on peut l
   )
 }}
 
-
 ## `Cache-Control` vs `Expires`
 
 Dans HTTP/1.0, l'en-tête `Expires` était utilisé pour indiquer la date/heure après laquelle la réponse était considérée comme périmée. Sa valeur est un horodatage, par exemple&nbsp;:
