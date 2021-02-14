@@ -12,7 +12,6 @@ ipullrank_bio: Artista e tecnologo, tutto in uno, Michael King è il fondatore d
 fellowhuman1101_bio: 100% umano e ovviamente non un robot, Jamie Indigo districa le tecnologie per aiutare gli esseri umani ad accedere a informazioni utili e le aziende forniscono preziose esperienze digitali. Ha fondato <a hreflang="en" href="https://not-a-robot.com">Not a Robot</a> per consultarsi con precisione sugli aspetti umani della SEO tecnica, tra cui l'etica e l'inclusione nella tecnologia e nel settore della ricerca. Può scoprire che sta imparando in pubblico su <a href="https://twitter.com/Jammer_Volts">Twitter</a>.
 discuss: 2043
 results: https://docs.google.com/spreadsheets/d/1ram47FshAjzvbQVJbAQPgxZN7PPOPCKIK67VJZCo92c/
-queries: 07_SEO
 featured_quote: Nonostante il crescente utilizzo di dispositivi mobile e il passaggio di Google a un indice Mobile first, sono state riscontrate disparità non banali tra le pagine mobile e desktop, come quella tra i link mobile e desktop.
 featured_stat_1: 10.84%
 featured_stat_label_1: Le pagine per dispositivi mobile non includono il tag viewport
@@ -770,7 +769,6 @@ Si consiglia ai siti web desktop che hanno versioni mobile separate di collegars
 
 Avere un sito Web veloce è fondamentale per fornire un'ottima esperienza di ricerca utente. Per la sua importanza è da anni considerato come fattore di ranking dai motori di ricerca. Google ha inizialmente annunciato di utilizzare la velocità del sito come [fattore di ranking nel 2010](https://webmasters.googleblog.com/2010/04/using-site-speed-in-web-search-ranking.html), quindi [nel 2018 ha fatto lo stesso per le ricerche su dispositivi mobile](https://webmasters.googleblog.com/2018/01/using-page-speed-in-mobile-search.html).
 
-{# NOTE(authors): I've made some ruthless edits to this section to remove everything related to synthetic measurement of CWV, including the entire Lighthouse discussion, which is orthogonal to the real-user aspect of CWV. Please push back if you disagree with any of these edits. #}
 As announced in November 2020, three performance metrics known as [Core Web Vitals](https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html) are on track to be a ranking factor as part of the "page experience" signals in May 2021. Core Web Vitals consist of:
 
 **[Largest Contentful Paint](https://web.dev/lcp/) (LCP)**
