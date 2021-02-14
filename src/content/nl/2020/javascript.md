@@ -171,7 +171,6 @@ Tot aan de mediaan gebruiken sites ongeveer hetzelfde aantal eerste partij scrip
 
 Hoewel het aantal JavaScript-verzoeken vergelijkbaar is bij de mediaan, wordt de werkelijke grootte van die scripts iets zwaarder gewogen (bedoelde woordspeling) ten opzichte van bronnen van derden. De gemiddelde site stuurt 267 KB JavaScript van derden naar desktopapparaten, vergeleken met 147 KB van eerste partijen. De situatie is vergelijkbaar op mobiele apparaten, waar de mediaan-site 255 KB aan scripts van derden verzendt, vergeleken met 134 KB aan eigen scripts.
 
-
 {{ figure_markup(
   image="bytes-by-3p-desktop.png",
   caption="Verdeling van het aantal JavaScript-bytes per host voor desktop.",
@@ -755,7 +754,6 @@ Van de ongeveer 5 miljoen mobiele pagina's waartegen wordt getest, bevat 81% een
     ) }}
   </figcaption>
 </figure>
-
 
 Met andere woorden, als we mensen zover kunnen krijgen om weg te migreren van die verouderde, kwetsbare versies van jQuery, zouden we het aantal sites met bekende kwetsbaarheden zien dalen (tenminste, totdat we er enkele in de nieuwere frameworks beginnen te vinden).
 
