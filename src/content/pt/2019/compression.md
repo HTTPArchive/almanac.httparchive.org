@@ -25,7 +25,7 @@ A compressão HTTP é uma técnica que permite codificar informação usando men
 
 Algoritmos de compressão são muitas vezes categorizados como podendo ter ou não perdas:
 
-* Quando um algoritmo de compressão com perdas é usado, o processo é irreversível e o ficheiro original não pode ser restaurado através de descompressão. É uma prática comum para comprimir recursos mídia, tal como imagens e vídeo onde perder alguns dados não irá materialmente afectar o recurso.
+* Quando um algoritmo de compressão com perdas é usado, o processo é irreversível e o ficheiro original não pode ser restaurado através de descompressão. É uma prática comum para comprimir recursos media, tal como imagens e vídeo onde perder alguns dados não irá materialmente afectar o recurso.
 * A compressão sem perdas é um processo totalmente reversível sendo, tipicamente, usado em recursos do tipo texto, como [HTML](./markup), [JavaScript](./javascript), [CSS](./css), etc.
 
 Neste capítulo, vamos explorar como conteúdo de texto é comprimido na web. Análise de conteúdo não baseado em texto faz parte do capítulo [Media](./media)
@@ -189,7 +189,7 @@ Excluindo os 8 tipos de conteúdo mais populares permite-nos ver as estatística
 {{ figure_markup(
   image="fig4.png",
   caption="Tipos de conteúdo comprimidos, excluindo o top 8.",
-  description="Gráfico de árevore mostrando font/woff2 (22,622,918 pedidos - 3.87% comprimidos), application/json (16,501,326 pedidos - 59.02% comprimidos), image/webp (12,911,688 pedidos - 1.66% comprimidos), image/svg+xml (9,862,643 pedidos - 64.42% comprimidos), text/plain (6,622,361 pedidos - 24.72% comprimidos), application/octet-stream (3,884,287 pedidos - 6.01% comprimidos), image/x-icon (3,737,030 pedidos - 37.60% comprimidos), application/font-woff2 (3,061,857 pedidos - 5.90% comprimidos), application/font-woff (2,117,999 pedidos - 23.61% comprimidos), image/vnd.microsoft.icon (1,774,995 pedidos - 15.55% comprimidos), video/mp4 (1,472,880 pedidos - 0.03% comprimidos), font/woff (1,255,093 pedidos - 24.33% comprimidos), font/ttf (1,062,747 pedidos - 84.27% comprimidos), application/x-font-woff (1,048,398 pedidos - 30.77% comprimidos), image/jpg (951,610 pedidos - 6.66% comprimidos), application/ocsp-response (883,603 pedidos - 0.00% comprimidos)",
+  description="Gráfico de árvore mostrando font/woff2 (22,622,918 pedidos - 3.87% comprimidos), application/json (16,501,326 pedidos - 59.02% comprimidos), image/webp (12,911,688 pedidos - 1.66% comprimidos), image/svg+xml (9,862,643 pedidos - 64.42% comprimidos), text/plain (6,622,361 pedidos - 24.72% comprimidos), application/octet-stream (3,884,287 pedidos - 6.01% comprimidos), image/x-icon (3,737,030 pedidos - 37.60% comprimidos), application/font-woff2 (3,061,857 pedidos - 5.90% comprimidos), application/font-woff (2,117,999 pedidos - 23.61% comprimidos), image/vnd.microsoft.icon (1,774,995 pedidos - 15.55% comprimidos), video/mp4 (1,472,880 pedidos - 0.03% comprimidos), font/woff (1,255,093 pedidos - 24.33% comprimidos), font/ttf (1,062,747 pedidos - 84.27% comprimidos), application/x-font-woff (1,048,398 pedidos - 30.77% comprimidos), image/jpg (951,610 pedidos - 6.66% comprimidos), application/ocsp-response (883,603 pedidos - 0.00% comprimidos)",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=495358423&format=interactive",
   width=780,
   height=482,
@@ -256,11 +256,11 @@ Os tipos de conteúdo com a taxa de compressão mais baixa incluem `application/
 
 No universo de tipos de conteúdo, Gzip é o algoritmo de compressão mais popular. A compressão Brotli mais recente é usado com menos frequência e os tipos de conteúdo onde aparece mais são `application/javascript`, `text/css` e `application/x-javascript`. Isto deve-se, provavelmente, à existência de CDNs que aplicam compressão Brotli automaticamente ao tráfego que as atravessa.
 
-## First-party vs third-party compression
+## Compressão em conteúdo próprio vs terceiros
 
-In the [Third Parties](./third-parties) chapter, we learned about third parties and their impact on performance. When we compare compression techniques between first and third parties, we can see that third-party content tends to be compressed more than first-party content.
+No capítulo de [Terceiros](./third-parties), aprendemos sobre terceiros e o seu impacto no desempenho. Quando comparamos técnicas de compressão entre conteúdo próprio e terceiro, podemos ver que conteúdo de terceiros tende a ser mais comprimido que o conteúdo próprio.
 
-Additionally, the percentage of Brotli compression is higher for third-party content. This is likely due to the number of resources served from the larger third parties that typically support Brotli, such as Google and Facebook.
+Adicionalmente, a percentage, de compressão Brotli é mais alta para conteúdo de terceiros. Isto deve-se, provavelmente, ao número de recursos servidos por grandes empresas de terceiros que suportam Brotli, tal como a Google e o Facebook.
 
 <figure>
   <table>
@@ -271,16 +271,16 @@ Additionally, the percentage of Brotli compression is higher for third-party con
         <th scope="colgroup" colspan="2">Mobile</th>
       </tr>
       <tr>
-        <th scope="col">Content Encoding</th>
-        <th scope="col">First-Party</th>
-        <th scope="col">Third-Party</th>
-        <th scope="col">First-Party</th>
-        <th scope="col">Third-Party</th>
+        <th scope="col">Codificação de conteúdo</th>
+        <th scope="col">Próprio</th>
+        <th scope="col">Terceiros</th>
+        <th scope="col">Próprio</th>
+        <th scope="col">Terceiros</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><em>No Text Compression</em></td>
+        <td><em>Sem compressão de texto</em></td>
         <td class="numeric">66.23%</td>
         <td class="numeric">59.28%</td>
         <td class="numeric">64.54%</td>
@@ -308,7 +308,7 @@ Additionally, the percentage of Brotli compression is higher for third-party con
         <td class="numeric">0.01%</td>
       </tr>
       <tr>
-        <td><em>Other / Invalid</em></td>
+        <td><em>Outro / Inválido</em></td>
         <td class="numeric">0.01%</td>
         <td class="numeric">0.02%</td>
         <td class="numeric">0.01%</td>
@@ -316,28 +316,28 @@ Additionally, the percentage of Brotli compression is higher for third-party con
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="First-party versus third-party compression by device type.") }}</figcaption>
+  <figcaption>{{ figure_link(caption="COmpressão de conteúdo próprio versus terceiros por tipo de dispositivo.") }}</figcaption>
 </figure>
 
-## Identifying compression opportunities
+## Como identificar oportunidades para compressão
 
-Google's [Lighthouse](https://developers.google.com/web/tools/lighthouse) tool enables users to run a series of audits against web pages. The [text compression audit](https://developers.google.com/web/tools/lighthouse/audits/text-compression) evaluates whether a site can benefit from additional text-based compression. It does this by attempting to compress resources and evaluate whether an object's size can be reduced by at least 10% and 1,400 bytes. Depending on the score, you may see a compression recommendation in the results, with a list of specific resources that could be compressed.
+A ferramenta [Lighthouse](https://developers.google.com/web/tools/lighthouse) da Google permite aos utilizadores correrem uma série de auditorias contra páginas web. A [auditoria de compressão de texto](https://developers.google.com/web/tools/lighthouse/audits/text-compression) avalia se o site pode beneficiar de compressão baseada em texto adicional. Isso é feito através duma tentativa de compressão dos recursos avaliando se o tamanho dos objectos pode ser reduzido pelo menos 10% e 1400 bytes. Dependendo da pontuação, é possível ver uma recomendação para compressão nos resultados, com uma lista dos recursos específicos que podem ser comprimidos. 
 
 {{ figure_markup(
   image="ch15_fig8_lighthouse.jpg",
-  caption="Lighthouse compression suggestions.",
-  description="A screenshot of a Lighthouse report showing a list of resources (with the names redacted) and showing the size and the potential saving. For the first item there is a potentially significant saving from 91 KB to 73 KB, while for other smaller files of 6 KB or less there are smaller savings of 4 KB to 1 KB.",
+  caption="Sugestões de compressão do Lighthouse.",
+  description="A captura dum relatório do Lighthouse que mostra a lista de recursos (com respectivos nomes) e o tamanho do potencial ganho. Para o primeiro elemento há um ganho potencial significativo de 91 KB para 73 KB, enquanto que para outros ficheiros mais pequenos de 6 KB ou menos, encontram-se ganhos menores de 4 KB para 1 KB.",
   width=600,
   height=303
   )
 }}
 
-Because the [HTTP Archive runs Lighthouse audits](./methodology#lighthouse) for each mobile page, we can aggregate the scores across all sites to learn how much opportunity there is to compress more content. Overall, 62% of websites are passing this audit and almost 23% of websites have scored below a 40. This means that over 1.2 million websites could benefit from enabling additional text based compression.
+Devido ao facto do [HTTP Archive correr auditorias Lighthouse](./methodology#lighthouse) para cada página mobile, podemos agregar as pontuações para todos os sites para entender quão mais oportunidade há para comprimir mais conteúdo. No total, 62% dos sites passam esta auditoria e quase 23% têm uma pontuação abaixo de 40. Isto significa que mais de 1.2 milhões de sites poderiam beneficiar com uma compressão baseada em texto adicional.
 
 {{ figure_markup(
   image="fig11.png",
-  caption='Lighthouse "enable text compression" audit scores.',
-  description="Stacked bar chart showing 7.6% are costing less than 10%, 13.2% of sites are scoring between 10-39%, 13.7% of sites scoring between 40-79%, 2.9% of sites scoring between 80-99%, and 62.5% of sites have a pass with over 100% of text assets being compressed.",
+  caption='Pontuações da auditoria de "compressão de texto" do Lighthouse.',
+  description="Gráfico de barras que mostra 7.6% a pontuar menos de 10%, 13.2% dos sites estão a pontuar entre 10-39%, 13.7% dos sites estão a pontuar entre 40-79%, 2.9% dos sites estão a pontuar entre 80-99%, e 62.5% dos sites passam a auditoria com 100% dos recursos de texto comprimidos.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=2048155673&format=interactive",
   width=760,
   height=331,
@@ -346,12 +346,12 @@ Because the [HTTP Archive runs Lighthouse audits](./methodology#lighthouse) for 
   )
 }}
 
-Lighthouse also indicates how many bytes could be saved by enabling text-based compression. Of the sites that could benefit from text compression, 82% of them can reduce their page weight by up to 1 MB!
+O Lighthouse também indica quantos bytes podem ser poupados por ligar a compressão baseada em texto. Dos sites que podem beneficiar de compressão de texto, 82% podem reduzir o peso das suas páginas até 1 MB!
 
 {{ figure_markup(
   image="fig12.png",
-  caption='Lighthouse "enable text compression" audit potential byte savings.',
-  description="Stacked bar chart showing 82.11% of sites could save less than 1 MB, 15.88% of sites could save 1 - 2 MB and 2% of sites could save > 3 MB.",
+  caption='Auditoria de "compressão de texto" do Lighthouse com a potencial poupança de bytes.',
+  description="Gráfico de barras que mostra 82.11% dos sites poderiam poupar menos de 1 MB, 15.88% dos sites poderiam poupar 1 - 2 MB e 2% dos sites poderiam poupar > 3 MB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=738657382&format=interactive",
   width=760,
   height=331,
@@ -360,10 +360,10 @@ Lighthouse also indicates how many bytes could be saved by enabling text-based c
   )
 }}
 
-## Conclusion
+## Conclusão
 
-HTTP compression is a widely used and highly valuable feature for reducing the size of web content. Both Gzip and Brotli compression are the dominant algorithms used, and the amount of compressed content varies by content type. Tools like Lighthouse can help uncover opportunities to compress content.
+Compressão HTTP é extensivamente usada e uma funcionalidade com muito valor para reduzir o tamanho de conteúdo web. Tanto Gzip e Brotli são os algoritmos dominantes e a quantidade de conteúdo comprimido varia por tipo de conteúdo. Ferramentas como o Lighthouse podem ajudar a revelar oportunidades para comprimir conteúdo.
 
-While many sites are making good use of HTTP compression, there is still room for improvement, particularly for the `text/html` format that the web is built upon! Similarly, lesser-understood text formats like `font/ttf`, `application/json`, `text/xml`, `text/plain`, `image/svg+xml`, and `image/x-icon` may take extra configuration that many websites miss.
+Enquanto muitos sites estão a fazer um bom uso da compressão HTTP, ainda existe margem para melhoria, particularmente para o formato `text/html` que é formato em que web é construído! De forma similar, outros formatos menos compreendidos como `font/ttf`, `application/json`, `text/xml`, `text/plain`, `image/svg+xml`, e `image/x-icon` podem exigir configurações extra que muitos sites falham. 
 
-At a minimum, websites should use Gzip compression for all text-based resources, since it is widely supported, easily implemented, and has a low processing overhead. Additional savings can be found with Brotli compression, although compression levels should be chosen carefully based on whether a resource can be precompressed.
+NO mínimo, os sites deviam usar compressão Gzip para todos os recursos baseados em texto, uma vez que é largamente suportado, facilmente implementado, e tem um baixo custo de processamento. Ganhos adicionais podem ser encontrados com compressão Brotli, ainda que os níveis de compressão devam ser escolhidos com cuidado dependendo dos recursos poderem ser pré comprimidos.
