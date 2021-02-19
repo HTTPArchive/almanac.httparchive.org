@@ -891,8 +891,7 @@ Er kunnen veel verschillende factoren zijn die van invloed zijn op de beveiligin
 {{ figure_markup(
   image="security-adoption-of-https-per-country.png",
   caption="Overname van HTTPS per land",
-  description="Staafdiagram met het percentage sites waarop HTTPS is ingeschakeld, voor sites die aan verschillende landen zijn gerelateerd.
-Zwitserland, Nieuw-Zeeland, Ierland, Nigeria en Australië staan met 95% tot 94% in de top vijf. Aan de andere kant staan Thailand, Iran, Zuid-Korea, Taiwan en Japan op 76% tot 72%.",
+  description="Staafdiagram met het percentage sites waarop HTTPS is ingeschakeld, voor sites die aan verschillende landen zijn gerelateerd Zwitserland, Nieuw-Zeeland, Ierland, Nigeria en Australië staan met 95% tot 94% in de top vijf. Aan de andere kant staan Thailand, Iran, Zuid-Korea, Taiwan en Japan op 76% tot 72%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=286219881&format=interactive",
   sheets_gid="446153579",
   sql_file="feature_adoption_by_country.sql"
@@ -941,7 +940,7 @@ Een zeer groot deel van het web is gebouwd met componenten van derden, op versch
 {{ figure_markup(
   image="security-wordpress-version-evolution.png",
   caption="Evolutie van de WordPress-versie.",
-  description="Gestapeld staafdiagram met de evolutie van de versies van WordPress-installaties van november 2019 tot augustus 2020 voor de actief onderhouden takken van WordPress (4.9, 5.1, 5.2, 5.3, 5.4 en 5.5). In het algemeen laat de grafiek zien dat de meeste installaties (ongeveer 75%) het hele jaar door worden bijgewerkt en nu op de nieuwste versies staan",
+  description="Gestapeld staafdiagram met de evolutie van de versies van WordPress-installaties van november 2019 tot augustus 2020 voor de actief onderhouden takken van WordPress (4.9, 5.1, 5.2, 5.3, 5.4 en 5.5). In het algemeen laat de grafiek zien dat de meeste installaties (ongeveer 75%) het hele jaar door worden bijgewerkt en nu op de nieuwste versies staan.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=2139119698&format=interactive",
   sheets_gid="640505800",
   sql_file="feature_adoption_by_technology.sql",
@@ -999,7 +998,7 @@ Tegenwoordig speelt de prestatie van de gebruikte technologieën een bijzonder r
 {{ figure_markup(
   image="security-cryptominer-usage.png",
   caption="Cryptominer-gebruik.",
-  description="Tijdreeksgrafiek die de evolutie van het aantal sites met cryptojackingscripts weergeeft van januari 2019 tot augustus 2020. Er is een neerwaartse trend van 1094 desktop-sites en 1221 mobiele sites aan het begin naar 475 sites op desktop en 659 sites op mobiel aan het einde .",
+  description="Tijdreeksgrafiek die de evolutie van het aantal sites met cryptojackingscripts weergeeft van januari 2019 tot augustus 2020. Er is een neerwaartse trend van 1094 desktop-sites en 1221 mobiele sites aan het begin naar 475 sites op desktop en 659 sites op mobiel aan het einde.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=1746732299&format=interactive",
   sheets_gid="340445160",
   sql_file="cryptominer_usage.sql"
