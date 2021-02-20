@@ -492,7 +492,7 @@ The hash can be computed with three different algorithms: SHA256, SHA384, and SH
 {{ figure_markup(
   image="security-subresource-integrity-coverage-per-page.png",
   caption="Subresource integrity: coverage per page.",
-  description="Bar chart should percentiles of what percentage of scripts on a page are protected with SRI. At 10th percentile it is 2.0% for both desktop and mobile, at the 25th percentile it is 2.9% for both, at the 50th percentile it is 4.2% for both, at the 75th percentile it is 7.1% for desktop and 6.9% for mobile, and at the 90th percentile it is 15.8% for both.",
+  description="Bar chart showing percentiles of what percentage of scripts on a page are protected with SRI. At 10th percentile it is 2.0% for both desktop and mobile, at the 25th percentile it is 2.9% for both, at the 50th percentile it is 4.2% for both, at the 75th percentile it is 7.1% for desktop and 6.9% for mobile, and at the 90th percentile it is 15.8% for both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=1581504207&format=interactive",
   sheets_gid="599225326",
   sql_file="sri_coverage_per_page.sql"
