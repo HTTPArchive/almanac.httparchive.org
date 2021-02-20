@@ -152,6 +152,11 @@ git status
 echo "Checking out main branch"
 git checkout main
 
+if [ "$(pgrep -f 'python main.py')" ]; then
+  echo "Killing server so backgrounded version isn't left there"
+  pkill -9 -f "python main.py"
+fi
+
 echo
 echo -e "${GREEN}Successfully deployed!${RESET_COLOR}"
 echo
