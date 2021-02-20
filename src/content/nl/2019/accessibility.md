@@ -303,7 +303,7 @@ Helaas heeft 34,62% van de sites dubbele `id`'s, wat betekent dat op veel sites 
 
 Dit probleem is zelfs nog meer uitgesproken voor schermlezers, omdat hun gebruikers mogelijk niet visueel kunnen controleren wat er is geselecteerd. Plus, veel ARIA-attributen, zoals [`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-describedby_attribute) en [`aria-labelledby `] (https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute), werken op dezelfde manier als het labelelement dat hierboven is beschreven. Dus om uw site toegankelijk te maken, is het verwijderen van alle dubbele `id`'s een goede eerste stap.
 
-## Conclusie
+## Gevolgtrekking
 
 Mensen met een handicap zijn niet de enigen met toegankelijkheidsbehoeften. Iedereen die een tijdelijke polsblessure heeft opgelopen, heeft bijvoorbeeld de moeilijkheid ervaren om op kleine tikdoelen te tikken. Het gezichtsvermogen neemt vaak af met de leeftijd, waardoor tekst in kleine lettertypen moeilijk leesbaar wordt. De behendigheid van de vingers is niet hetzelfde voor alle leeftijdsgroepen, waardoor het tikken op interactieve bedieningselementen of het vegen door inhoud op mobiele websites moeilijker wordt voor een aanzienlijk percentage van de gebruikers.
 
