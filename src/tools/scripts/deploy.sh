@@ -152,16 +152,10 @@ git status
 echo "Checking out main branch"
 git checkout main
 
-echo "Monitoring templates for changes"
-npm run watch &
-
 if [ "$(pgrep -f 'python main.py')" ]; then
-  echo "Killing server to run a fresh version in debug mode"
+  echo "Killing server so backgrounded version isn't left there"
   pkill -9 -f "python main.py"
 fi
-
-echo "Starting website in foreground mode so it reloads on file changes"
-python main.py
 
 echo
 echo -e "${GREEN}Successfully deployed!${RESET_COLOR}"
