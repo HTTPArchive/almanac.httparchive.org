@@ -1309,7 +1309,7 @@ Als vuistregel en om [gebruiksredenen](https://www.nngroup.com/articles/new-brow
 
 <p class="note">In de nieuwste Safari- en Firefox-versies biedt het instellen van <code>target="_blank"</code> op <code>a</code>-elementen impliciet hetzelfde <code>rel</code>-gedrag als het instellen van <code>rel="noopener"</code>. Dit is ook al <a href="https://chromium-review.googlesource.com/c/chromium/src/+/1630010">geïmplementeerd in Chromium</a> en komt ook in Chrome 88 terecht.</p>
 
-## Conclusie
+## Gevolgtrekking
 
 We hebben in het hele hoofdstuk enkele observaties aangeroerd, maar als reflectie op de staat van opmaak in 2020, zijn hier enkele dingen die ons opvielen:
 
