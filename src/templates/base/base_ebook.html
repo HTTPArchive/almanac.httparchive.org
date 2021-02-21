@@ -293,7 +293,7 @@
                   {{ self.chapter() }} {{ chapter_config.chapter_number }}: {{ localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title }}
                 </a>
                 {% else %}
-                <a href="#chapter-{{ chapter_config.chapter }}">
+                <a href="#chapter-{{ chapter_config.chapter_number }}">
                   {{ self.chapter() }} {{ chapter_config.chapter_number }}: {{ localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title }} <span class="not-translated">({{ self.translation_not_available() }})</span>
                 </a>
                 {% endif %}
