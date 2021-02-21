@@ -79,7 +79,7 @@ We kunnen hieruit echter het volgende vermoeden: we naderen 7MB paginagewicht op
   sql_file="bytes_per_type_2020.sql"
 ) }}
 
-Popping the hood, we can see how things look at the median and average for each resource. One thing again remains: images are the dominant resource and JavaScript is the second most abundant, though a far second.
+Als we de motorkap openen, kunnen we zien hoe de dingen kijken naar de mediaan en het gemiddelde voor elke bron. Nog één ding blijft: afbeeldingen zijn de dominante bron en JavaScript is de tweede meest voorkomende, hoewel een verre tweede.
 
 ### Verzoeken
 
