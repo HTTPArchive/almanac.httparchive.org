@@ -1,105 +1,105 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Jamstack
-description: Jamstack chapter of the 2020 Web Almanac covering the use of Jamstack, the performance of popular Jamstack frameworks, as well as an analysis of real-user experience using the Core Web Vitals metadata.
+description: Jamstack-hoofdstuk van de 2020 Web Almanac over het gebruik van Jamstack, de prestaties van populaire Jamstack-frameworks en een analyse van de echte gebruikerservaring met behulp van de Core Web Vitals-metadata.
 authors: [ahmadawais]
 reviewers: [MaedahBatool, phacks]
 analysts: [denar90, remotesynth]
 editors: [bazzadp]
-translators: []
-ahmadawais_bio: Ahmad Awais is an award-winning open-source engineer, Google Developers Expert Dev Advocate, Node.js Community Committee Outreach Lead, WordPress Core Dev, and VP of Engineering DevRel at WGA. He has authored various open-source software tools used by millions of developers worldwide. Like his <a href="https://shadesofpurple.pro/more">Shades of Purple</a> code-theme or projects like the <a href="https://github.com/AhmadAwais/corona-cli">corona-cli</a>. Awais loves to teach. Over 20,000 developers are learning from his <a href="https://AhmadAwais.com/courses/">courses</a> i.e. <a href="https://nodecli.com/">Node CLI</a>, <a href="https://vscode.pro/">VSCode.pro</a>, and <a href="https://nextjsbeginner.com/">Next.js Beginner</a>. Awais received FOSS community leadership recognition as one of the <a href="https://ahmadawais.com/github-stars/">12 featured GitHub Stars</a>. He is a member of the Smashing Magazine Experts Panel; featured &amp; published author at CSS-Tricks, Tuts+, Scotch.io, SitePoint. You can mostly find him on Twitter <a href="https://twitter.com/MrAhmadAwais/">@MrAhmadAwais</a> where he tweets his <a href="https://awais.dev/odmt">#OneDevMinute</a> developer tips.
+translators: [noah-vdv]
+ahmadawais_bio: Ahmad Awais is een bekroonde open-source ingenieur, Google Developers Expert Dev Voorstander, Node.js Community Committee Outreach Leider, WordPress Core Dev en VP Engineering DevRel bij WGA. Hij heeft verschillende open-source softwaretools geschreven die door miljoenen ontwikkelaars over de hele wereld worden gebruikt. Zoals zijn <a hreflang="en" href="https://shadesofpurple.pro/more">Shades of Purple</a> codethema of projecten zoals de <a hreflang="en" href="https://github.com/AhmadAwais/corona-cli">corona-cli</a>. Awais houdt van lesgeven. Meer dan 20.000 ontwikkelaars leren van zijn <a hreflang="en" href="https://AhmadAwais.com/courses/"> cursussen </a>, dwz <a hreflang="en" href="https://nodecli.com/"> Node CLI </a>, <a hreflang="en" href="https://vscode.pro/">VSCode.pro</a>, en <a hreflang="en" href="https://nextjsbeginner.com/">Next.js Beginner</a>. Awais ontving de erkenning van FOSS-gemeenschapsleiderschap als een van de <a hreflang="en" href="https://ahmadawais.com/github-stars/">12 aanbevolen GitHub-sterren</a>. Hij is lid van het Smashing Magazine Experts Panel; aanbevolen &amp; gepubliceerde auteur bij CSS-Tricks, Tuts+, Scotch.io, SitePoint. Je kunt hem meestal vinden op Twitter <a href="https://twitter.com/MrAhmadAwais/">@MrAhmadAwais</a> waar hij zijn <a href="https://awais.dev/odmt">#OneDevMinute</a> ontwikkelaarstips deelt.
 discuss: 2053
 results: https://docs.google.com/spreadsheets/d/1BCC5Q4tePpTl8TiaGmSxBc9Lh2to7xBfVPMULFOBwvk/
-featured_quote: Stats suggest over twice as many Jamstack sites exist now than in 2019. Developers enjoy a better development experience by separating the frontend from the backend. But what about the real-user experience of browsing Jamstack sites?
+featured_quote: Statistieken suggereren dat er nu meer dan twee keer zoveel Jamstack-sites zijn dan in 2019. Ontwikkelaars genieten van een betere ontwikkelervaring door de frontend van de backend te scheiden. Maar hoe zit het met de echte gebruikerservaring van het browsen op Jamstack-sites?
 featured_stat_1: 147%
-featured_stat_label_1: Increase in Jamstack websites in 2020
+featured_stat_label_1: Toename van Jamstack-websites in 2020
 featured_stat_2: 1 gram
-featured_stat_label_2: CO2 emitted for median Jamstack on page load
-featured_stat_3: 58.59%
-featured_stat_label_3: Jamstack sites built using Next.js
+featured_stat_label_2: CO2 uitgestoten voor mediane Jamstack bij het laden van de pagina
+featured_stat_3: 58,59%
+featured_stat_label_3: Jamstack-sites gebouwd met Next.js
 ---
 
-## Introduction
+## inleiding
 
-Jamstack is a relatively new concept of an architecture designed to make the web faster, more secure, and easier to scale. It builds on many of the tools and workflows which developers love, and which maximizes productivity.
+Jamstack is een relatief nieuw concept van een architectuur die is ontworpen om het web sneller, veiliger en gemakkelijker schaalbaar te maken. Het bouwt voort op veel van de tools en workflows waar ontwikkelaars van houden, en die de productiviteit maximaliseren.
 
-The core principles of Jamstack are pre-rendering your site pages and decoupling the frontend from the backend. It relies on the idea of delivering the frontend content hosted separately on a CDN provider that uses APIs (for example, a headless CMS) as its backend if any.
+De kernprincipes van Jamstack zijn het vooraf renderen van uw sitepagina's en het ontkoppelen van de frontend van de backend. Het is gebaseerd op het idee om de frontend-inhoud afzonderlijk te leveren op een CDN-provider die API's (bijvoorbeeld een headless CMS) gebruikt als eventuele backend.
 
-The [HTTP Archive](https://httparchive.org/) crawls [millions of pages](https://httparchive.org/reports/state-of-the-web#numUrls) every month and runs them through a private instance of [WebPageTest](https://webpagetest.org/) to store key information on every page crawled. You can learn more about this in our [methodology](./methodology) page. In the context of Jamstack, HTTP Archive provides extensive information on the usage of the frameworks and CDNs for the entire web. This chapter consolidates and analyzes many of these trends.
+Het <a hreflang="en" href="https://httparchive.org/">HTTP Archive</a> crawlt elke maand <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#numUrls">miljoenen pagina's</a> en voert ze door een privé instantie van <a hreflang="en" href="https://webpagetest.org/">WebPageTest</a> om belangrijke informatie over elke gecrawlde pagina op te slaan. U kunt hier meer over lezen op onze [methodologie](./methodology) pagina. In de context van Jamstack biedt HTTP Archive uitgebreide informatie over het gebruik van de frameworks en CDN's voor het hele web. In dit hoofdstuk worden veel van deze trends geconsolideerd en geanalyseerd.
 
-The goals of this chapter are to estimate and analyze the growth of the Jamstack sites, the performance of popular Jamstack frameworks, as well as an analysis of real user experience using the Core Web Vitals metrics.
+De doelen van dit hoofdstuk zijn het schatten en analyseren van de groei van de Jamstack-sites, de prestaties van populaire Jamstack-frameworks, evenals een analyse van de echte gebruikerservaring met behulp van de Core Web Vitals-statistieken.
 
-<p class="note">It should be noted that our analysis is limited by those Jamstacks that make themselves easily identifiable using <a href="./methodology#wappalyzer">Wappalyzer</a>. This means our data does not include some popular Jamstacks like <a href="https://github.com/11ty/eleventy/">Eleventy</a> which <a href="https://twitter.com/eleven_ty/status/1334225624110608387?s=20">make a deliberate choice to not make themselves identifiable</a>. While we would ideally include all Jamstacks, we believe there is still plenty of value in analyzing the significant data we do have.</p>
+<p class="note">Opgemerkt moet worden dat onze analyse beperkt is tot die Jamstacks die zichzelf gemakkelijk identificeerbaar maken met behulp van <a href="./methodology#wappalyzer">Wappalyzer</a>. Dit betekent dat onze gegevens geen populaire Jamstacks bevatten, zoals <a hreflang="en" href="https://github.com/11ty/eleventy/">Eleventy</a> die <a href="https://twitter.com/eleven_ty/status/1334225624110608387?s=20">een bewuste keuze maken om zichzelf niet identificeerbaar te maken</a>. Hoewel we idealiter alle Jamstacks zouden opnemen, zijn we van mening dat het nog steeds waardevol is om de significante gegevens die we hebben te analyseren.</p>
 
-## Adoption of Jamstack
+## Adoptie van Jamstack
 
-Our analysis throughout this work looks at desktop and mobile websites. The vast majority of URLs we looked at are in both datasets, but some URLs are only accessed by desktop or mobile devices. This can cause small divergences in the data, and we thus look at desktop and mobile results separately.
+Onze analyse tijdens dit werk kijkt naar desktop- en mobiele websites. De overgrote meerderheid van de URL's die we hebben bekeken, bevindt zich in beide datasets, maar sommige URL's zijn alleen toegankelijk voor desktop- of mobiele apparaten. Hierdoor kunnen kleine verschillen in de data ontstaan en kijken we dus apart naar desktop- en mobiele resultaten.
 
 {{ figure_markup(
   image="jamstack-adoption.png",
-  caption="Jamstack adoption trend.",
-  description="Bar chart showing the increase in the level of Jamstack adoption in 2019 and 2020. Mobile has increased from 0.50% to 0.91%. Desktop has increased from 0.34% to 0.84%.",
+  caption="Acceptatietrend voor Jamstack.",
+  description="Staafdiagram met de toename van het niveau van Jamstack-acceptatie in 2019 en 2020. Mobiel is gestegen van 0,50% naar 0,91%. Desktop is gestegen van 0,34% naar 0,84%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-zBygubF5NuAXOGScVLhnozB_6Pi_0z4B57cP_I6AfeBuZCGzs3aP_1nPjPp37aNRATRYC6EfOeYX/pubchart?oid=1650360073&format=interactive",
   sheets_gid="908645975",
   sql_file="ssg_compared_to_2019.sql"
   )
 }}
 
-Approximately 0.9% of web pages are powered by Jamstack and breaks down to 0.91% on desktop, up from 0.50% in 2019, and 0.84% on mobile, up from 0.34% in 2019.
+Ongeveer 0,9% van de webpagina's wordt mogelijk gemaakt door Jamstack en valt uiteen naar 0,91% op desktop, tegen 0,50% in 2019 en 0,84% op mobiel, tegen 0,34% in 2019.
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th scope="col">Year</th>
+        <th scope="col">Jaar</th>
         <th scope="col">Desktop</th>
-        <th scope="col">Mobile</th>
+        <th scope="col">Mobiel</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>2019</td>
-        <td class="numeric">0.50%</td>
-        <td class="numeric">0.34%</td>
+        <td class="numeric">0,50%</td>
+        <td class="numeric">0,34%</td>
       </tr>
       <tr>
         <td>2020</td>
-        <td class="numeric">0.91%</td>
-        <td class="numeric">0.85%</td>
+        <td class="numeric">0,91%</td>
+        <td class="numeric">0,85%</td>
       </tr>
     </tbody>
     <tfoot>
       <tr>
-        <th scope="col">% Change</td>
+        <th scope="col">% Verandering</td>
         <th scope="col" class="numeric">85%</td>
         <th scope="col" class="numeric">147%</td>
       </tr>
     </tfoot>
   </table>
-  <figcaption>{{ figure_link(caption="Jamstack adoption statistics.", sheets_gid="908645975", sql_file="ssg_compared_to_2019.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Statistieken over de acceptatie van Jamstack.", sheets_gid="908645975", sql_file="ssg_compared_to_2019.sql") }}</figcaption>
 </figure>
 
-The increase in desktop web pages powered by a Jamstack framework is 85% from last year. On mobile, this increase is almost two and a half times, at 147%. This is a significant growth from 2019, especially for mobile pages. We believe this is a sign of the steady growth of the Jamstack community.
+De toename van desktopwebpagina's die worden aangedreven door een Jamstack-framework is 85% ten opzichte van vorig jaar. Op mobiel is deze stijging bijna tweeënhalf keer zo groot, namelijk 147%. Dit is een forse groei ten opzichte van 2019, vooral voor mobiele pagina's. Wij geloven dat dit een teken is van de gestage groei van de Jamstack-community.
 
-## Jamstack frameworks
+## Jamstack-frameworks
 
-Our analysis counted 14 separate Jamstack frameworks. Only six frameworks had more than 1% share: Next.js, Nuxt.js Gatsby, Hugo, Jekyll are the top contenders for the Jamstack market share.
+Onze analyse telde 14 afzonderlijke Jamstack-frameworks. Slechts zes frameworks hadden een aandeel van meer dan 1%: Next.js, Nuxt.js Gatsby, Hugo en Jekyll zijn de belangrijkste kanshebbers voor het Jamstack-marktaandeel.
 
-In 2020, most of the Jamstack market share seems distributed between the top five frameworks. Interestingly, Next.js has 58.65% usage share. This is over three times the share of the next most popular Jamstack framework, Nuxt.js at 18.6%!
+In 2020 lijkt het grootste deel van het Jamstack-marktaandeel verdeeld over de top vijf frameworks. Interessant is dat Next.js een gebruiksaandeel heeft van 58,65%. Dit is meer dan drie keer het aandeel van het op een na populairste Jamstack-framework, Nuxt.js met 18,6%!
 
 {{ figure_markup(
   image="jamstack-adoption-share-2020-pie.png",
-  caption="Jamstack adoption share pie chart 2020.",
-  description="Pie chart showing the adoption of Jamstack frameworks dominated by Next.js taking nearly two third of the share at 58.6% then the next most popular one, Nuxt.js has 18.6% of the share, followed by Gatsby with 12.0% share, Hugo at 5.3%, Jekyll at 3.4% and then smaller wedges not labelled.",
+  caption="Jamstack adoptie aandeel cirkeldiagram 2020.",
+  description="Cirkeldiagram dat de acceptatie van Jamstack-frameworks laat zien, gedomineerd door Next.js, die bijna tweederde van het aandeel van 58,6% innam, en daarna de volgende meest populaire, Nuxt.js heeft 18,6% van het aandeel, gevolgd door Gatsby met 12,0%, Hugo bij 5,3%, Jekyll 3,4% en daarna kleinere wiggen zonder label.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-zBygubF5NuAXOGScVLhnozB_6Pi_0z4B57cP_I6AfeBuZCGzs3aP_1nPjPp37aNRATRYC6EfOeYX/pubchart?oid=239192419&format=interactive",
   sheets_gid="1474840498",
   sql_file="ssg_compared_to_2019.sql"
   )
 }}
 
-### Framework adoption changes
+### Frameworkadoptie veranderingen
 
-Looking at the year on year growth, we see that Next.js has increased its lead over its competitors in the last year:
+Als we naar de jaar-op-jaargroei kijken, zien we dat Next.js zijn voorsprong op zijn concurrenten het afgelopen jaar heeft vergroot:
 
 <figure>
   <table>
@@ -108,251 +108,251 @@ Looking at the year on year growth, we see that Next.js has increased its lead o
         <th>Jamstack</th>
         <th>2019</th>
         <th>2020</th>
-        <th>% change</th>
+        <th>% Verandering</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>Next.js</td>
-        <td class="numeric">47.89%</td>
-        <td class="numeric">58.59%</td>
+        <td class="numeric">47,89%</td>
+        <td class="numeric">58,59%</td>
         <td class="numeric">22%</td>
       </tr>
       <tr>
         <td>Nuxt.js</td>
-        <td class="numeric">20.30%</td>
-        <td class="numeric">18.59%</td>
+        <td class="numeric">20,30%</td>
+        <td class="numeric">18,59%</td>
         <td class="numeric">-8%</td>
       </tr>
       <tr>
         <td>Gatsby</td>
-        <td class="numeric">12.45%</td>
-        <td class="numeric">11.99%</td>
+        <td class="numeric">12,45%</td>
+        <td class="numeric">11,99%</td>
         <td class="numeric">-4%</td>
       </tr>
       <tr>
         <td>Hugo</td>
-        <td class="numeric">9.50%</td>
-        <td class="numeric">5.30%</td>
+        <td class="numeric">9,50%</td>
+        <td class="numeric">5,30%</td>
         <td class="numeric">-44%</td>
       </tr>
       <tr>
         <td>Jekyll</td>
-        <td class="numeric">6.22%</td>
-        <td class="numeric">3.43%</td>
+        <td class="numeric">6,22%</td>
+        <td class="numeric">3,43%</td>
         <td class="numeric">-45%</td>
       </tr>
       <tr>
         <td>Hexo</td>
-        <td class="numeric">1.16%</td>
-        <td class="numeric">0.64%</td>
+        <td class="numeric">1,16%</td>
+        <td class="numeric">0,64%</td>
         <td class="numeric">-45%</td>
       </tr>
       <tr>
         <td>Docusaurus</td>
-        <td class="numeric">1.26%</td>
-        <td class="numeric">0.60%</td>
+        <td class="numeric">1,26%</td>
+        <td class="numeric">0,60%</td>
         <td class="numeric">-52%</td>
       </tr>
       <tr>
         <td>Gridsome</td>
-        <td class="numeric">0.19%</td>
-        <td class="numeric">0.46%</td>
+        <td class="numeric">0,19%</td>
+        <td class="numeric">0,46%</td>
         <td class="numeric">140%</td>
       </tr>
       <tr>
         <td>Octopress</td>
-        <td class="numeric">0.61%</td>
-        <td class="numeric">0.20%</td>
+        <td class="numeric">0,61%</td>
+        <td class="numeric">0,20%</td>
         <td class="numeric">-68%</td>
       </tr>
       <tr>
         <td>Pelican</td>
-        <td class="numeric">0.31%</td>
-        <td class="numeric">0.11%</td>
+        <td class="numeric">0,31%</td>
+        <td class="numeric">0,11%</td>
         <td class="numeric">-64%</td>
       </tr>
       <tr>
         <td>VuePress</td>
         <td class="numeric">&nbsp;</td>
-        <td class="numeric">0.05%</td>
+        <td class="numeric">0,05%</td>
         <td class="numeric">&nbsp;</td>
       </tr>
       <tr>
         <td>Phenomic</td>
-        <td class="numeric">0.10%</td>
-        <td class="numeric">0.02%</td>
+        <td class="numeric">0,10%</td>
+        <td class="numeric">0,02%</td>
         <td class="numeric">-77%</td>
       </tr>
       <tr>
         <td>Saber</td>
         <td class="numeric">&nbsp;</td>
-        <td class="numeric">0.01%</td>
+        <td class="numeric">0,01%</td>
         <td class="numeric">&nbsp;</td>
       </tr>
       <tr>
         <td>Cecil</td>
-        <td class="numeric">0.01%</td>
+        <td class="numeric">0,01%</td>
         <td class="numeric">&nbsp;</td>
         <td class="numeric">-100%</td>
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Relative % adoption of Jamstack frameworks", sheets_gid="1474840498", sql_file="ssg_compared_to_2019.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Relatief % adoptie van Jamstack-frameworks", sheets_gid="1474840498", sql_file="ssg_compared_to_2019.sql") }}</figcaption>
 </figure>
 
-And concentrating on the top 5 Jamstacks further shows Next.js's lead:
+En door zich te concentreren op de top 5 Jamstacks, wordt de voorsprong van Next.js verder getoond:
 
 {{ figure_markup(
   image="jamstack-adoption-share-yoy.png",
-  caption="Jamstack adoption share year on year.",
-  description="Adoption share of the top-five Jamstack frameworks and their change from 2019 to 2020. Next.js has increase from 47.89% to 58.59%. The rest are much smaller, led by Nuxt.JS which has shrunk from 20.30% to 18.59%, Gatsby which has shrunk slightly from 12.45% to 11.99%, followed by Hugo which has nearly halved from 9.50% to 5.30%, and finally Jekyll which has shrunk from 6.22% to 3.43%.",
+  caption="Jaar na jaar adoptie-aandeel van Jamstack.",
+  description="Het adoptieaandeel van de top vijf Jamstack-frameworks en hun wijziging van 2019 naar 2020. Next.js is gestegen van 47,89% naar 58,59%. De rest is veel kleiner, geleid door Nuxt.JS dat is gekrompen van 20,30% naar 18,59%, Gatsby dat licht is gekrompen van 12,45% naar 11,99%, gevolgd door Hugo die bijna is gehalveerd van 9,50% naar 5,30%, en tenslotte Jekyll die is gekrompen van 6,22% naar 3,43%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-zBygubF5NuAXOGScVLhnozB_6Pi_0z4B57cP_I6AfeBuZCGzs3aP_1nPjPp37aNRATRYC6EfOeYX/pubchart?oid=750685917&format=interactive",
   sheets_gid="1474840498",
   sql_file="ssg_compared_to_2019.sql"
   )
 }}
 
-It's worth noting here the fact that Next.js and Nuxt.js websites include a mix of both Static Site Generated (SSG) pages and Server-Side Rendered (SSR) pages. This is due to the lack of our ability to measure them separately. This means that the analysis may include sites that are mostly or partially server-rendered, meaning they do not fall under the traditional definition of a Jamstack site. Nonetheless, it appears that this hybrid nature of Next.js gives it a competitive advantage over other frameworks hence making it more popular.
+Het is vermeldenswaard dat de websites Next.js en Nuxt.js een mix bevatten van zowel Static Site Generated (SSG) -pagina's als Server-Side Rendered (SSR) -pagina's. Dit komt doordat we ze niet afzonderlijk kunnen meten. Dit betekent dat de analyse sites kan omvatten die grotendeels of gedeeltelijk door de server worden weergegeven, wat betekent dat ze niet onder de traditionele definitie van een Jamstack-site vallen. Desalniettemin lijkt het erop dat deze hybride aard van Next.js het een concurrentievoordeel geeft ten opzichte van andere frameworks, waardoor het populairder wordt.
 
-## Environmental impact
+## Milieu-impact
 
-This year we have sought to better understand the impact of Jamstack sites on the environment. [The information and communications technology (ICT) industry accounts for 2% of global carbon emissions](https://www.nature.com/articles/d41586-018-06610-y), and data centers specifically account for 0.3% of global carbon emissions. This puts the ICT industry's carbon footprint equivalent to the aviation industry's emissions from fuel.
+Dit jaar hebben we geprobeerd de impact van Jamstack-sites op het milieu beter te begrijpen. [De informatie- en communicatietechnologie (ICT) -industrie is verantwoordelijk voor 2% van de wereldwijde koolstofemissies](https://www.nature.com/articles/d41586-018-06610-y), en datacentra zijn specifiek verantwoordelijk voor 0,3% van wereldwijde koolstofemissies. Hiermee komt de CO2-voetafdruk van de ICT-industrie overeen met de uitstoot van brandstof door de luchtvaart.
 
-Jamstack is often credited for being mindful of performance. In the next section, we look into the carbon emissions of Jamstack websites.
+Jamstack wordt vaak gecrediteerd voor zijn aandacht voor prestaties. In de volgende sectie kijken we naar de CO2-uitstoot van Jamstack-websites.
 
-### Page weight
+### Paginagewicht
 
-Our research looked at the average Jamstack page weight in KB and mapped this to CO2 emissions using logic from the [Carbon API](https://gitlab.com/wholegrain/carbon-api-2-0/-/blob/master/includes/carbonapi.php#L342). This generated the following results, split by desktop and mobile:
+In ons onderzoek is gekeken naar het gemiddelde paginagewicht van Jamstack in KB en dit in kaart gebracht op de CO2-uitstoot met behulp van logica van de <a hreflang="en" href="https://gitlab.com/wholegrain/carbon-api-2-0/-/blob/master/includes/carbonapi.php#L342">Carbon API</a>. Dit leverde de volgende resultaten op, uitgesplitst naar desktop en mobiel:
 
 {{ figure_markup(
   image="jamstack-carbon-emissions-per-jamstack-page-view.png",
-  caption="Carbon Emissions per Jamstack page view.",
-  description="Bar chart showing the grams of CO2 emissions for Jamstack pages by percentile. At the 10th percentile, it is 0.3 grams for desktop and 0.4 for mobile, at the 25th percentile it is 0.6 grams for both, at the 50% it is 1.2 grams for desktop and 1.0 grams for mobile, at the 75th percentile 2.3 grams for desktop and 1.9 for mobile, and at the 90th percentile it is 4.4 grams for desktop and 3.6 for mobile.",
+  caption="Koolstofemissies per Jamstack-paginaweergave.",
+  description="Staafdiagram met de grammen CO2-uitstoot voor Jamstack-pagina's per percentiel. Bij het 10e percentiel is dit 0,3 gram voor desktopcomputers en 0,4 voor mobiel, bij het 25e percentiel is het 0,6 gram voor beide, bij de 50% is dit 1,2 gram voor desktop en 1,0 gram voor mobiel, bij het 75e percentiel 2,3 gram voor desktop en 1.9 voor mobiel, en in het 90e percentiel is het 4,4 gram voor desktop en 3,6 voor mobiel.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-zBygubF5NuAXOGScVLhnozB_6Pi_0z4B57cP_I6AfeBuZCGzs3aP_1nPjPp37aNRATRYC6EfOeYX/pubchart?oid=1748236124&format=interactive",
   sheets_gid="881269360",
   sql_file="distribution_of_page_weight_requests_and_co2_grams_per_ssg_web_page.sql"
   )
 }}
 
-We found that the median Jamstack page load resulted in the transfer of 1.82 MB of various assets on desktop, and 1.54 MB on mobile, and thus the emission of 1.2 grams and 1.0 grams of CO2 respectively. The most efficient percentile of Jamstack web pages result in the generation of at least one third less CO2 than the median, whilst the least efficient percentile of Jamstack web pages goes the other way, generating around four times more.
+We ontdekten dat de mediane belasting van Jamstack-pagina's resulteerde in de overdracht van 1,82 MB aan verschillende activa op desktop en 1,54 MB op mobiel, en dus in de uitstoot van respectievelijk 1,2 gram en 1,0 gram CO2. Het meest efficiënte percentiel van Jamstack-webpagina's resulteert in het genereren van ten minste een derde minder CO2 dan de mediaan, terwijl het minst efficiënte percentiel van Jamstack-webpagina's de andere kant op gaat, ongeveer vier keer meer.
 
-[Page weights](./page-weight) are important here. The average desktop Jamstack web page loads 1.5 MB of video, image, script, font, CSS, and audio data. 10% of pages, however, load over 4 MB of this data. On mobile devices, the average web page loads 0.28 MB fewer than on desktop, a fact consistent across all percentiles.
+[Paginagewichten](./page-weight) zijn hier belangrijk. De gemiddelde Jamstack-webpagina op de desktop laadt 1,5 MB aan video-, afbeelding-, script-, lettertype-, CSS- en audiogegevens. 10% van de pagina's laadt echter meer dan 4 MB van deze gegevens. Op mobiele apparaten laadt de gemiddelde webpagina 0,28 MB minder dan op een desktop, een feit dat consistent is voor alle percentielen.
 
-### Image formats
+### Afbeeldingsformaten
 
-Popular image formats are PNG, JPG, GIF, SVG, WebP, and ICO. Of these, [WebP is the most efficient in most situations](https://developers.google.com/speed/webp/), with WebP lossless images [26% smaller](https://developers.google.com/speed/webp/docs/webp_lossless_alpha_study#results) than equivalent PNGs and [25-34% smaller](https://developers.google.com/speed/webp/docs/webp_study) than comparable JPGs. We see, however, that WebP is the second least popular image format across all Jamstack pages, where PNG is the most popular both for mobile and desktop. Only slightly less popular is JPG whereas GIF is almost 20% of all the images used on Jamstack sites. An interesting discovery is SVG which is almost twice as popular on mobile sites as desktop sites.
+Populaire afbeeldingsindelingen zijn PNG, JPG, GIF, SVG, WebP en ICO. Hiervan is <a hreflang="en" href="https://developers.google.com/speed/webp/">WebP het meest efficiënt in de meeste situaties</a>, met WebP lossless afbeeldingen <a hreflang="en" href="https://developers.google.com/speed/webp/docs/webp_lossless_alpha_study#results">26% kleiner</a> dan vergelijkbare PNG's en <a hreflang="en" href="https://developers.google.com/speed/webp/docs/webp_study">25-34% kleiner</a> dan vergelijkbare JPG's. We zien echter dat WebP het op één na minst populaire afbeeldingsformaat is op alle Jamstack-pagina's, waar PNG het populairst is voor zowel mobiel als desktop. Alleen iets minder populair is JPG, terwijl GIF bijna 20% uitmaakt van alle afbeeldingen die op Jamstack-sites worden gebruikt. Een interessante ontdekking is SVG, dat op mobiele sites bijna twee keer zo populair is als op desktopsites.
 
 {{ figure_markup(
   image="jamstack-popularity-of-image-formats.png",
-  caption="Popularity of image formats.",
-  description="Bar chart showing the percentage of images by type on Jamstack. PNG is 33% on desktop and 28% on mobile, JPG is 30% on desktop and 26% on mobile, GIF is 18% on desktop and 19% on mobile, SVG is 14% on desktop and 22% on mobile, WebP is 4% on desktop and 3% on mobile, whereas ICO is 2% on both desktop and mobile.",
+  caption="Populariteit van afbeeldingsformaten.",
+  description="Staafdiagram met het percentage afbeeldingen per type op Jamstack. PNG is 33% op desktop en 28% op mobiel, JPG is 30% op desktop en 26% op mobiel, GIF is 18% op desktop en 19% op mobiel, SVG is 14% op desktop en 22% op mobiel, WebP is 4% op desktop en 3% op mobiel, terwijl ICO 2% is op zowel desktop als mobiel.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-zBygubF5NuAXOGScVLhnozB_6Pi_0z4B57cP_I6AfeBuZCGzs3aP_1nPjPp37aNRATRYC6EfOeYX/pubchart?oid=1593285227&format=interactive",
   sheets_gid="1626843605",
   sql_file="adoption_of_image_formats_in_ssgs.sql"
   )
 }}
 
-### Third-party bytes
+### Bytes van derden
 
-Jamstack sites, like most websites, often load [third-party](./third-party) resources, such as external images, videos, scripts, or stylesheets:
+Jamstack-sites laden, net als de meeste websites, vaak bronnen van [derden](./third-party), zoals externe afbeeldingen, video's, scripts of stylesheets:
 
 {{ figure_markup(
   image="jamstack-third-party-bytes.png",
-  caption="Third party bytes.",
-  description="Bar chart showing the amount of third-party bytes (in KB) for each percentile for Jamstack pages. At the 10th percentile it is 45 KB for desktop and 60 KB for mobile, at the 25th percentile it is 149 KB for mobile and 212 KB for mobile, at the 50% it's 470 KB for desktop and 642 KB for mobile, at the 75th percentile 1,219 KB for desktop and 1,788 for mobile and at the 90th percentile it is 2,878 KB for desktop and 3,044 KB for mobile.",
+  caption="Bytes van derden.",
+  description="Staafdiagram met het aantal bytes van derden (in KB) voor elk percentiel voor Jamstack-pagina's. Op het 10e percentiel is dit 45 KB voor desktop en 60 KB voor mobiel, bij het 25e percentiel is het 149 KB voor mobiel en 212 KB voor mobiel, bij de 50% is het 470 KB voor desktop en 642 KB voor mobiel, op het 75e percentiel 1.219 KB voor desktop en 1.788 voor mobiel en bij het 90e percentiel is dit 2.878 KB voor desktop en 3.044 KB voor mobiel.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-zBygubF5NuAXOGScVLhnozB_6Pi_0z4B57cP_I6AfeBuZCGzs3aP_1nPjPp37aNRATRYC6EfOeYX/pubchart?oid=1779247936&format=interactive",
   sheets_gid="1292933800",
   sql_file="third_party_bytes_and_requests_on_ssgs.sql"
   )
 }}
 
-We find that the median desktop Jamstack page has 26 third-party requests with 470 KB of content, with the mobile equivalent generating 38 requests with 642 KB of content. Whereas 10% of the desktop sites have 114 requests with 2.88MB of content which is only superseded by 148 requests on mobile with 3MB of content.
+We zien dat de gemiddelde Jamstack-pagina op de desktop 26 verzoeken van derden heeft met 470 KB inhoud, terwijl het mobiele equivalent 38 verzoeken genereert met 642 KB inhoud. Terwijl 10% van de desktopsites 114 verzoeken heeft met 2,88 MB aan inhoud, die alleen wordt vervangen door 148 verzoeken op mobiele apparaten met 3MB aan inhoud.
 
-## User experience
+## Gebruikerservaring
 
-Jamstack websites are often said to offer a good user experience. It's what the entire concept of separating the frontend from the backend and hosting it on the CDN edge is all about. We aim to shed light on real-world user experience when using Jamstack websites using the recently launched [Core Web Vitals](https://web.dev/learn-web-vitals/).
+Van Jamstack-websites wordt vaak gezegd dat ze een goede gebruikerservaring bieden. Het is waar het hele concept van het scheiden van de frontend van de backend en het hosten op de CDN-edge over gaat. We streven ernaar om licht te werpen op de echte gebruikerservaring bij het gebruik van Jamstack-websites met behulp van de onlangs gelanceerde <a hreflang="en" href="https://web.dev/learn-web-vitals/">Core Web Vitals</a>.
 
-The Core Web Vitals are three important factors which can shed light on our understanding of how users are experiencing Jamstack pages in the wild:
+De Core Web Vitals zijn drie belangrijke factoren die licht kunnen werpen op ons begrip van hoe gebruikers Jamstack-pagina's in het wild ervaren:
 
 - Largest Contentful Paint (LCP)
 - First Input Delay (FID)
 - Cumulative Layout Shift (CLS)
 
-These metrics aim to cover the core elements which are indicative of a great web user experience. Let's we take a look at the real-world Core Web Vitals statistics of the top-five Jamstack frameworks.
+Deze statistieken zijn bedoeld om de kernelementen te dekken die indicatief zijn voor een geweldige webgebruikerservaring. Laten we eens kijken naar de real-world Core Web Vitals-statistieken van de top vijf Jamstack-frameworks.
 
 ### Largest Contentful Paint
 
-Largest Contentful Paint (LCP) measures the point when the page's main content has likely loaded and thus the page is useful to the user. It does this by measuring the render time of the largest image or text block visible within the viewport.
+Largest Contentful Paint (LCP) meet het punt waarop de belangrijkste inhoud van de pagina waarschijnlijk is geladen en dus is de pagina nuttig voor de gebruiker. Het doet dit door de rendertijd te meten van het grootste beeld of tekstblok dat zichtbaar is in de viewport.
 
-This is different from First Contentful Paint (FCP), which measures from page load until content such as text or an image is first displayed. LCP is regarded as a good proxy for measuring when the main content of a page is loaded.
+Dit verschilt van First Contentful Paint (FCP), dat meet vanaf het laden van de pagina totdat inhoud zoals tekst of een afbeelding voor het eerst wordt weergegeven. LCP wordt beschouwd als een goede proxy om te meten wanneer de hoofdinhoud van een pagina wordt geladen.
 
 {{ figure_markup(
   image="jamstack-real-user-largest-contentful-paint-experiences.png",
-  caption="Real-user Largest Contentful Paint experiences.",
-  description='Bar chart showing the top-five Jamstack frameworks and whether they have a "good" Largest Contentful Paint experience. Gatsby has 52% on desktop but only 36% on mobile, Next.js is the lowest with 38% on desktop and 23% on mobile, Nuxt.js is lowest with 31% on desktop and 18% on mobile, Hugo is second best with 85% on desktop and 69% on mobile, and Jekyll is the best with 91% on desktop and 74% on mobile.',
+  caption="Real-user Largest Contentful Paint-ervaringen.",
+  description='Staafdiagram met de top vijf van Jamstack-frameworks en of ze een "goede" Largest Contentful Paint-ervaring hebben. Gatsby heeft 52% op desktop maar slechts 36% op mobiel, Next.js is het laagste met 38% op desktop en 23% op mobiel, Nuxt.js is het laagst met 31% op desktop en 18% op mobiel, Hugo is de tweede beste met 85% op desktop en 69% op mobiel, en Jekyll is de beste met 91% op desktop en 74% op mobiel.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-zBygubF5NuAXOGScVLhnozB_6Pi_0z4B57cP_I6AfeBuZCGzs3aP_1nPjPp37aNRATRYC6EfOeYX/pubchart?oid=125934259&format=interactive",
   sheets_gid="793304891",
   sql_file="core_web_vitals_distribution.sql"
   )
 }}
 
-A "good" LCP is regarded as under 2.5 seconds. Jekyll and Hugo have impressive LCP scores all above 50% with Jekyll and Hugo on desktop at 91% and 85% on desktop respectively. Gatsby, Next.js and Nuxt.js sites lagged — scoring 52%, 38%, and 31% respectively on desktop, and 36%, 23%, and 18% on mobile.
+Een "goed" LCP wordt beschouwd als minder dan 2,5 seconden. Jekyll en Hugo hebben indrukwekkende LCP-scores die allemaal boven de 50% liggen, met Jekyll en Hugo op desktop respectievelijk 91% en 85% op desktop. Gatsby-, Next.js- en Nuxt.js-sites bleven achter - respectievelijk 52%, 38% en 31% op desktop en 36%, 23% en 18% op mobiel.
 
-This might be attributed to the fact that most of the sites built with Gatsby, Next.js and Nuxt.js  have complex layouts and high page weights, in comparison with Hugo and Jekyll which are primarily used to produce static content sites with fewer or no dynamic parts. For what it's worth, you don't have to use React, VueJS or any other JavaScript framework with Hugo or Jekyll.
+Dit kan worden toegeschreven aan het feit dat de meeste sites die zijn gebouwd met Gatsby, Next.js en Nuxt.js een complexe lay-out en een hoog paginagewicht hebben, in vergelijking met Hugo en Jekyll die voornamelijk worden gebruikt om sites met statische inhoud te produceren met minder of geen dynamische onderdelen. Voor wat het waard is, hoef je React, VueJS of enig ander JavaScript-framework niet te gebruiken met Hugo of Jekyll.
 
-As we explored in the section above, high page weights can have a possible impact on the environment. However, this also affects LCP performance, which is either very good or generally bad depending on the Jamstack framework. This can have an impact on the real user experience as well.
+Zoals we in het bovenstaande gedeelte hebben onderzocht, kunnen hoge paginagewichten een mogelijke impact hebben op het milieu. Dit heeft echter ook invloed op de LCP-prestaties, die ofwel erg goed ofwel over het algemeen slecht zijn, afhankelijk van het Jamstack-framework. Dit kan ook een impact hebben op de echte gebruikerservaring.
 
 ### First Input Delay
 
-First Input Delay (FID) measures the time from when a user first interacts with your site (i.e. when they click a link, tap on a button, or use a custom, JavaScript-powered control) to the time when the browser is actually able to respond to that interaction.
+First Input Delay (FID) meet de tijd vanaf het moment waarop een gebruiker voor het eerst interactie heeft met uw site (dwz wanneer ze op een link klikken, op een knop tikken of een aangepast, JavaScript-aangedreven besturingselement gebruiken) tot het moment waarop de browser daadwerkelijk in staat is om op die interactie te reageren.
 
-A "fast" FID from a user's perspective would provide immediate feedback from their actions on a site rather than a stalled experience. This delay is a pain point and could correlate with interference from other aspects of the site loading when the user tries to interact with the site.
+Een "snelle" FID vanuit het perspectief van een gebruiker zou onmiddellijke feedback geven van hun acties op een site in plaats van een vastgelopen ervaring. Deze vertraging is een pijnpunt en kan correleren met interferentie door andere aspecten van het laden van de site wanneer de gebruiker probeert te communiceren met de site.
 
-FID is extremely fast for the average Jamstack website on desktop – most popular frameworks score 100% – and above 80% on mobile.
+FID is extreem snel voor de gemiddelde Jamstack-website op desktop - de meeste populaire frameworks scoren 100% - en boven de 80% op mobiel.
 
 {{ figure_markup(
   image="jamstack-real-user-first-input-delay-experiences.png",
-  caption="Real-user First Input Delay experiences.",
-  description='Bar chart showing the top-five Jamstack and whether they have a "good" First Input Delay experience. All have a 100% experience score on desktop. For mobile Gatsby 89%, Next.js has 87%, Nuxt.js has 86%, Hugo 84%, and Jekyll 82%.',
+  caption="Ervaringen voor First Input Delay door echte gebruikers.",
+  description='Staafdiagram met de top vijf van Jamstack en of ze een "goede" First Input Delay-ervaring hebben. Ze hebben allemaal een ervaringsscore van 100% op desktop. Voor mobiele Gatsby 89% heeft Next.js 87%, Nuxt.js 86%, Hugo 84% en Jekyll 82%.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-zBygubF5NuAXOGScVLhnozB_6Pi_0z4B57cP_I6AfeBuZCGzs3aP_1nPjPp37aNRATRYC6EfOeYX/pubchart?oid=736622498&format=interactive",
   sheets_gid="793304891",
   sql_file="core_web_vitals_distribution.sql"
   )
 }}
 
-There is a small margin of difference between the resources shipped to desktop and mobile versions of a website. The FID scores are generally very good here, but it is interesting this does not translate to similar LCP scores. As suggested, the weight of individual pages on Jamstack sites in addition to mobile connection quality could play a role in the performance gaps that we see here.
+Er is een kleine verschilmarge tussen de bronnen die naar desktopversies en mobiele versies van een website worden verzonden. De FID-scores zijn hier over het algemeen erg goed, maar het is interessant dat dit zich niet vertaalt naar vergelijkbare LCP-scores. Zoals gesuggereerd, zou het gewicht van individuele pagina's op Jamstack-sites naast de kwaliteit van de mobiele verbinding een rol kunnen spelen in de prestatieverschillen die we hier zien.
 
 ### Cumulative Layout Shift
 
-Cumulative Layout Shift (CLS) measures the instability of content on a web page within the first 500ms of user input. CLS measures any layout changes which happen after user input. This is important on mobile in particular, where the user will tap where they want to take an action – such as a search bar – only for the location to move as additional images, ads, or similar load.
+Cumulative Layout Shift (CLS) meet de instabiliteit van inhoud op een webpagina binnen de eerste 500 ms van gebruikersinvoer. CLS meet alle lay-outwijzigingen die optreden na invoer van de gebruiker. Dit is met name belangrijk op mobiele apparaten, waar de gebruiker zal tikken waar hij een actie wil ondernemen, zoals een zoekbalk, alleen om de locatie te verplaatsen als aanvullende afbeeldingen, advertenties of soortgelijke ladingen.
 
-A score of 0.1 or below is good, over 0.25 is poor, and anything in between needs improvement.
+Een score van 0,1 of lager is goed, meer dan 0,25 is slecht en alles daartussenin moet worden verbeterd.
 
 {{ figure_markup(
   image="jamstack-real-user-cumulative-layout-shift-experiences.png",
-  caption="Real-user Cumulative Layout Shift experiences.",
-  description='Bar chart showing the top-five Jamstack and whether they have a "good" Cumulative Layout Shift experience.  Gatsby has a "good experience" at 66% for both desktop and mobile sites, Next.js is 48% desktop and 49% on mobile sites, Nuxt.js is 45% desktop and 46% on mobile sites, Hugo has 74% for desktop and 78% on mobile sites, and Jekyll is 82% for both desktop and mobile sites.',
+  caption="Cumulative Layout Shift-ervaringen voor echte gebruikers.",
+  description='Staafdiagram met de top-vijf Jamstack en of ze een "goede" ervaring hebben met Cumulative Layout Shift. Gatsby heeft een "goede ervaring" met 66% voor zowel desktop- als mobiele sites, Next.js is 48% desktop en 49% op mobiele sites, Nuxt.js is 45% desktop en 46% op mobiele sites, Hugo heeft 74% voor desktop en 78% op mobiele sites, en Jekyll 82% op zowel desktop- als mobiele sites.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-zBygubF5NuAXOGScVLhnozB_6Pi_0z4B57cP_I6AfeBuZCGzs3aP_1nPjPp37aNRATRYC6EfOeYX/pubchart?oid=1984155453&format=interactive",
   sheets_gid="793304891",
   sql_file="core_web_vitals_distribution.sql"
   )
 }}
 
-The top-five Jamstack frameworks do OK here. About 65% of web pages loaded by top-five Jamstack frameworks have a "good" CLS experience, with this figure rising to 82% on mobile. Across all the average desktop and mobile score is 65%. Next.js and Nuxt.js are both under 50% and have work to do here. Educating developers and documenting how to avoid bad CLS scores can go a long way.
+De top-vijf Jamstack-frameworks doen het hier goed. Ongeveer 65% van de webpagina's die worden geladen door de vijf beste Jamstack-frameworks hebben een "goede" CLS-ervaring, en dit cijfer stijgt tot 82% op mobiele apparaten. Over het geheel genomen is de gemiddelde score voor desktop en mobiel 65%. Next.js en Nuxt.js zijn beide onder de 50% en hebben hier werk te doen. Ontwikkelaars opleiden en documenteren hoe ze slechte CLS-scores kunnen voorkomen, kan een lange weg gaan.
 
-## Conclusion
+## Gevolgtrekking
 
-Jamstack, both as a concept and a stack, has picked up importance in the last year. Stats suggest almost twice as many Jamstack sites exist now than in 2019. Developers enjoy a better development experience by separating the frontend from the backend (a headless CMS, serverless functions, or third-party services). But what about the real-user experience of browsing Jamstack sites?
+Jamstack, zowel als concept en als stapel, heeft het afgelopen jaar aan belang gewonnen. Statistieken suggereren dat er nu bijna twee keer zoveel Jamstack-sites zijn dan in 2019. Ontwikkelaars genieten van een betere ontwikkelervaring door de frontend te scheiden van de backend (een headless CMS, serverloze functies of services van derden). Maar hoe zit het met de echte gebruikerservaring van het bladeren door Jamstack-sites?
 
-We've reviewed the adoption of Jamstack, user experience of websites created by these Jamstack frameworks, and for the first time looked at the impact of Jamstack on the environment. We have answered many questions here but leave further questions unanswered.
+We hebben de acceptatie van Jamstack, de gebruikerservaring van websites die met deze Jamstack-frameworks zijn gemaakt, bekeken en voor het eerst gekeken naar de impact van Jamstack op het milieu. We hebben hier veel vragen beantwoord, maar laten verdere vragen onbeantwoord.
 
-There are frameworks like Eleventy which we weren't able to measure or analyze since there is no pattern available to determine the usage of such frameworks, which has an impact on the data presented here. Next.js dominates usage and offers both Static Site Generation and Server-Side Rendering, separating the two in this data is nearly impossible since it also offers incremental Static Generation. Further research building on this chapter will be gratefully received.
+Er zijn frameworks zoals Eleventy die we niet konden meten of analyseren, aangezien er geen patroon beschikbaar is om het gebruik van dergelijke frameworks te bepalen, wat een impact heeft op de hier gepresenteerde gegevens. Next.js domineert het gebruik en biedt zowel statische sitegeneratie als server-side rendering, het scheiden van de twee in deze gegevens is bijna onmogelijk omdat het ook incrementele statische generatie biedt. Verder onderzoek dat voortbouwt op dit hoofdstuk zal dankbaar worden ontvangen.
 
-Moreover, we have highlighted some areas which need attention from the Jamstack community. We hope there will be progress to share in the 2021 report. Different Jamstack frameworks can start to document how to improve real user experience by looking at Core Web Vitals.
+Bovendien hebben we enkele gebieden belicht die aandacht behoeven van de Jamstack-gemeenschap. We hopen dat er vooruitgang zal worden geboekt in het rapport voor 2021. Verschillende Jamstack-frameworks kunnen beginnen met het documenteren hoe de echte gebruikerservaring kan worden verbeterd door naar Core Web Vitals te kijken.
 
-Vercel, one of the CDNs meant to host Jamstack sites, has built an analytics offering called [Real User Experience Score](https://vercel.com/docs/analytics#real-experience-score). While other performance measuring tools like [Lighthouse](https://web.dev/measure/) estimate your user's experience by running a simulation in a lab, Vercel's Real Experience Score is calculated using real data points collected from the devices of the actual users of your application.
+Vercel, een van de CDN's die bedoeld zijn om Jamstack-sites te hosten, heeft een analyse-aanbod gebouwd met de naam <a hreflang="en" href="https://vercel.com/docs/analytics#real-experience-score">Real User Experience Score</a>. Terwijl andere tools voor het meten van prestaties zoals <a hreflang="en" href="https://web.dev/measure/">Lighthouse</a> de gebruikerservaring schatten door een simulatie in een laboratorium uit te voeren, wordt de Real Experience Score van Vercel berekend met behulp van echte gegevenspunten die zijn verzameld van de apparaten van de daadwerkelijke gebruikers van uw applicatie.
 
-It is probably worth noting here that Vercel created and maintains Next.js, since Next.js had low LCP scores. This new offering could mean we can hope to see a marked improvement in those scores next year. This would be extremely helpful information for users and developers alike.
+Het is waarschijnlijk vermeldenswaard dat Vercel Next.js heeft gemaakt en onderhoudt, aangezien Next.js lage LCP-scores had. Dit nieuwe aanbod zou kunnen betekenen dat we kunnen hopen op een duidelijke verbetering van die scores volgend jaar. Dit zou zeer nuttige informatie zijn voor zowel gebruikers als ontwikkelaars.
 
-Jamstack frameworks are improving the developer experience of building sites. Let's work towards continued progress for improving the real-user experience of browsing Jamstack sites.
+Jamstack-frameworks verbeteren de ontwikkelaarservaring van het bouwen van sites. Laten we werken aan voortdurende vooruitgang om de echte gebruikerservaring van het browsen op Jamstack-sites te verbeteren.
