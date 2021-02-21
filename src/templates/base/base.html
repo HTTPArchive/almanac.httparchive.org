@@ -140,27 +140,27 @@
       {% set title = localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title %}
       {% if chapter_config.todo %}
         <option disabled>
-          {{ self.chapter() }} {{ chapter_config.chapter }}: {{title}}
+          {{ self.chapter() }} {{ chapter_config.chapter_number }}: {{title}}
         </option>
       {% else %}
         {% if chapter_lang_exists(lang, year, chapter_config.slug) %}
           {% if current_title == title %}
             <option disabled selected value="{{ url_for('chapter', year=year, lang=lang, chapter=chapter_config.slug) }}">
-              {{ self.chapter() }} {{ chapter_config.chapter }}: {{title}}
+              {{ self.chapter() }} {{ chapter_config.chapter_number }}: {{title}}
             </option>
           {% else %}
             <option value="{{ url_for('chapter', year=year, lang=lang, chapter=chapter_config.slug) }}">
-              {{ self.chapter() }} {{ chapter_config.chapter }}: {{title}}
+              {{ self.chapter() }} {{ chapter_config.chapter_number }}: {{title}}
             </option>
           {% endif %}
         {% else %}
         {% if current_title == title %}
           <option disabled selected value="{{ url_for('chapter', year=year, lang='en', chapter=chapter_config.slug) }}">
-            {{ self.chapter() }} {{ chapter_config.chapter }}: {{title}}
+            {{ self.chapter() }} {{ chapter_config.chapter_number }}: {{title}}
           </option>
         {% else %}
           <option value="{{ url_for('chapter', year=year, lang='en', chapter=chapter_config.slug) }}">
-            {{ self.chapter() }} {{ chapter_config.chapter }}: {{title}}
+            {{ self.chapter() }} {{ chapter_config.chapter_number }}: {{title}}
           </option>
         {% endif %}
         {% endif %}
@@ -237,15 +237,15 @@
     {% if current_title == title %}
     <li class="nav-dropdown-list-chapter nav-dropdown-list-current">
       {% if chapter_config.todo %}
-      <span class="nav-dropdown-list-todo">{{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }}</span>
+      <span class="nav-dropdown-list-todo">{{ self.chapter() }} {{ chapter_config.chapter_number }}: {{ title }}</span>
       {% else %}
           {% if chapter_lang_exists(lang, year, chapter_config.slug) %}
           <span>
-            {{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }}
+            {{ self.chapter() }} {{ chapter_config.chapter_number }}: {{ title }}
           </span>
           {% else %}
           <span>
-            {{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }} <span class="not-translated">({{ self.translation_not_available() }})</span>
+            {{ self.chapter() }} {{ chapter_config.chapter_number }}: {{ title }} <span class="not-translated">({{ self.translation_not_available() }})</span>
           </span>
           {% endif %}
       {% endif %}
@@ -253,15 +253,15 @@
     {% else %}
     <li class="nav-dropdown-list-chapter">
       {% if chapter_config.todo %}
-      <span class="nav-dropdown-list-todo">{{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }}</span>
+      <span class="nav-dropdown-list-todo">{{ self.chapter() }} {{ chapter_config.chapter_number }}: {{ title }}</span>
       {% else %}
         {% if chapter_lang_exists(lang, year, chapter_config.slug) %}
         <a href="{{ url_for('chapter', year=year, lang=lang, chapter=chapter_config.slug) }}">
-          {{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }}
+          {{ self.chapter() }} {{ chapter_config.chapter_number }}: {{ title }}
         </a>
         {% else %}
         <a href="{{ url_for('chapter', year=year, lang='en', chapter=chapter_config.slug) }}">
-          {{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }} <span class="not-translated">({{ self.translation_not_available() }})</span>
+          {{ self.chapter() }} {{ chapter_config.chapter_number }}: {{ title }} <span class="not-translated">({{ self.translation_not_available() }})</span>
         </a>
         {% endif %}
       {% endif %}
