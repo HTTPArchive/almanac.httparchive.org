@@ -517,7 +517,7 @@ Afbeeldingsformaten zijn een mechanisme om afbeeldingen efficiënter te maken. A
 
 We kunnen de vraag naar de impact van CMS'en op het milieu niet volledig beantwoorden, maar we dragen bij aan een antwoord. CMS'en hebben de verantwoordelijkheid om de impact op het milieu serieus te nemen en het verlagen van het gemiddelde paginagewicht is belangrijk werk.
 
-## Conclusie
+## Gevolgtrekking
 
 CMS'en zijn het afgelopen jaar alleen maar belangrijker geworden. Ze zijn essentieel voor de manier waarop inhoud op internet wordt gemaakt en geconsumeerd, en er zijn geen tekenen dat dit in de nabije toekomst zal veranderen. CMS'en zullen elk jaar belangrijker worden.
 

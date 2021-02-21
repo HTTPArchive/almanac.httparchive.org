@@ -538,7 +538,7 @@ Vertrouw niet op plaatsaanduidingstekst om als label voor een invoer te dienen. 
 
 Van de sites die formulierbesturingselementen met plaatsaanduidingstekst hebben, heeft 73,89% ten minste één instantie waarbij er geen `<label>`-element programmatisch is gekoppeld aan het besturingselement voor desktop en 74,52% voor mobiel.
 
-## Conclusie
+## Gevolgtrekking
 
 Dit hoofdstuk is passend opgenomen in het gedeelte Gebruikerservaring van deze Almanak. Zoals voorstander van toegankelijkheid [Billy Gregory ooit zei](https://twitter.com/thebillygregory/status/552466012713783297?s=20), "als UX niet naar ALLE gebruikers kijkt, zou het dan niet bekend moeten staan als SOMMIGE gebruikerservaring, of SUX ". Te vaak wordt toegankelijkheidswerk gezien als een toevoeging, een edge case, of zelfs vergelijkbaar met technische schuld en niet de kern van het succes van een website of product zoals het hoort.
 

@@ -409,7 +409,9 @@ img {
 .container {
   max-width: 1280px;
   padding-left: 20px;
+  padding-left: min(20px, 5vw);
   padding-right: 20px;
+  padding-right: min(20px, 5vw);
   margin: auto;
 }
 
@@ -488,12 +490,12 @@ h2.header {
   border: 1px solid #1a2b49;
   border-radius: 50px;
   padding: 15px 30px;
-  padding: 1.07em 1.875rem;
   background: #1a2b49;
   color: #fff;
   font-size: 14px;
   font-size: 0.875rem;
   text-decoration: none;
+  text-align: center;
 }
 
 .btn:hover,
@@ -550,6 +552,7 @@ h2.header {
   font-weight: 700;
   letter-spacing: 5px;
   font-size: 1.3em;
+  font-size: min(1.3em, 7vw);
   margin-right: -5px; /* fix letter spacing issue for the last letter */
   font-family: 'Poppins', sans-serif;
 }
@@ -605,6 +608,7 @@ footer nav ul {
   align-items: center;
   margin: 0;
   padding-inline-start: 0;
+  flex-wrap: wrap;
 }
 
 header nav li,
@@ -807,6 +811,7 @@ footer .container {
     'hr hr hr hr'
     'copyright copyright ha-logo social-media';
   grid-template-columns: 280px 1fr 1fr 120px 0 0;
+  grid-template-columns: 17.5rem 1fr 1fr 7.5rem 0 0;
 }
 
 footer .home-logo {
@@ -1008,8 +1013,7 @@ p.copyright a {
 #skiptocontent a {
   padding: 6px;
   position: absolute;
-  top: -40px;
-  top: -2.35em;
+  top: -1000px;
   left: 0;
   border-right: 1px solid white;
   border-bottom: 1px solid white;
@@ -1040,6 +1044,7 @@ p.copyright a {
   li {
     font-size: 16px;
     font-size: 1rem;
+    overflow-wrap: break-word;
   }
 
   .title-lg {
@@ -1060,6 +1065,10 @@ p.copyright a {
     padding-bottom: 30px;
   }
 
+  .top-header {
+    flex-wrap: wrap;
+  }
+
   header nav:first-of-type,
   footer nav:first-of-type,
   header .cta {
@@ -1068,7 +1077,17 @@ p.copyright a {
 
   .navigation-logo {
     min-width: auto;
-    max-width: 75vw;
+    max-width: 100%;
+    margin-right: 0;
+    overflow: auto;
+  }
+
+  #menu {
+    margin-left: 40px;
+  }
+
+  #menu .menu {
+    overflow: auto;
   }
 
   header nav > ul > li > * {
@@ -1095,6 +1114,10 @@ p.copyright a {
   }
 
   /* Footer */
+  footer {
+    overflow: auto;
+  }
+
   footer .container {
     grid-template-areas:
       'home-logo'
@@ -1503,6 +1526,13 @@ code {
   background-color: #f7f7f7;
   border: 1px solid #dadce0;
   padding: 1px 2px;
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
+
+pre code {
+  word-break: unset;
+  overflow-wrap: unset;
 }
 
 pre .comment {

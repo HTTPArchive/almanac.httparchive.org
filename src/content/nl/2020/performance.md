@@ -375,7 +375,7 @@ Er zijn tientallen verschillende gebruikersgerichte statistieken die kunnen word
 
 De bovenstaande grafiek laat zien dat Performance Observer wordt gebruikt door 6-7% van de gevolgde sites, afhankelijk van het apparaattype. Die websites zullen de low-level API's gebruiken om aangepaste metrische gegevens te maken, en de Performance Observer API om ze te verzamelen, en deze vervolgens mogelijk gebruiken met andere prestatierapportagetools. Dergelijke acceptatiegraden kunnen wijzen op de neiging om te leunen op vooraf gedefinieerde statistieken (bijvoorbeeld afkomstig van Lighthouse), maar zijn ook indrukwekkend voor een relatief niche-API.
 
-## Conclusie
+## Gevolgtrekking
 
 Gebruikerservaring is niet alleen een spectrum, maar hangt ook af van een groot aantal factoren. Om te proberen de staat van prestaties te begrijpen zonder de ondermaatse, kansarme ervaringen uit te sluiten, moeten we deze intersectie benaderen. Elk websitebezoek vertelt een verhaal. Onze sociaaleconomische status op persoonlijk en landelijk niveau bepaalt het type apparaat en internetprovider dat we ons kunnen veroorloven. De plaats van waar we wonen beïnvloedt de latentie (wij Australiërs voelen deze pijn regelmatig), en de economie dicteert de beschikbare dekking van het mobiele netwerk. Welke websites bezoeken we? Waar bezoeken we ze voor? Context is van cruciaal belang om niet alleen gegevens te analyseren, maar ook om de nodige empathie en zorg te ontwikkelen bij het bouwen van toegankelijke, snelle ervaringen voor iedereen.
 
