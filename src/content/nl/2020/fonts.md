@@ -344,7 +344,7 @@ Het gebruik van variabele lettertypen heeft veel potentiële voordelen. Hoewel e
 
 Variabele lettertypen gebruiken en implementeren voor een meer gevarieerd ontwerp (door meer van het beschikbare bereik aan gewichten en breedtes te gebruiken) is een andere. Het gebruik van een breedteas kan de lijnomloop op kleinere schermen verbeteren, vooral bij grotere koppen en langere talen. Met de toenemende acceptatie van alternatieve lichtmodi, kan het maken van kleine aanpassingen aan het lettertype-gewicht bij het wisselen van modus de leesbaarheid verbeteren (zie <a hreflang="en" href="https://variablefonts.io">variablefonts.io</a> voor meer over gebruik en implementatie).
 
-## Conclusie
+## Gevolgtrekking
 
 De technologie voor weblettertypen is redelijk volwassen, met stapsgewijze verbeteringen in compressie en andere technische verbeteringen, maar er komen nieuwe functies aan. Browserondersteuning voor variabele lettertypen is redelijk goed geworden, en dit is de functie die het afgelopen jaar de meeste groei heeft gekend.
 

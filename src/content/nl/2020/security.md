@@ -1018,7 +1018,7 @@ In de volgende afbeelding laten we het marktaandeel van cryptominer op internet 
   sql_file="cryptominer_share.sql"
 ) }}
 
-## Conclusie
+## Gevolgtrekking
 
 Een van de meest prominente ontwikkelingen op het gebied van webbeveiliging van het afgelopen jaar is de toegenomen acceptatie van beveiligingsheaders op (de lange staart van) het web. Dit betekent niet alleen dat gebruikers over het algemeen beter worden beschermd, maar wat nog belangrijker is, het laat zien dat de beveiligingsprikkel van websitebeheerders is toegenomen. Deze toename in gebruik is te zien voor alle verschillende beveiligingsheaders, zelfs voor degenen die niet triviaal zijn om te implementeren, zoals CSP. Een andere interessante observatie die gemaakt kan worden, is dat we zagen dat websites die één beveiligingsheader gebruiken, ook vaker andere beveiligingsmechanismen zullen gebruiken. Dit toont aan dat webbeveiliging niet alleen als een bijzaak wordt beschouwd, maar eerder als een holistische benadering waarbij ontwikkelaars zich willen verdedigen tegen alle mogelijke bedreigingen.
 

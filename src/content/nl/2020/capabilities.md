@@ -324,7 +324,7 @@ QuicTransport is een geldig alternatief voor WebSockets, omdat het de gebruikssc
 
 Het gebruik van de interface is momenteel nog zo laag dat het nauwelijks meetbaar is. In oktober 2020 is het sterk toegenomen en wordt het nu gebruikt tijdens 0.00089% van de paginaladingen in Chrome.
 
-## Conclusie
+## Gevolgtrekking
 
 De staat van de webmogelijkheden in 2020 is gezond, aangezien nieuwe, krachtige API's regelmatig worden geleverd met nieuwe releases van op Chromium gebaseerde browsers. Sommige interfaces, zoals de Content Indexing API of Idle Detection API, helpen om de laatste hand te leggen aan bepaalde webapplicaties. Andere API's, zoals File System Access en Async Clipboard API, zorgen ervoor dat een geheel nieuwe applicatiecategorie, namelijk productiviteitsapps, eindelijk de overstap naar het web maakt. Sommige API's, zoals Async Clipboard en Web Share API, zijn al in andere, niet-Chromium-browsers terechtgekomen. Safari was zelfs de eerste mobiele browser die de Web Share API implementeerde.
 

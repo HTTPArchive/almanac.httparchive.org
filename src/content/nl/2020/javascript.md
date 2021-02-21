@@ -768,7 +768,7 @@ Het merendeel van de gevonden kwetsbaarheden valt in de categorie "gemiddeld".
   sql_file="lighthouse_vulnerabilities_by_severity.sql"
 ) }}
 
-## Conclusie
+## Gevolgtrekking
 
 JavaScript wordt gestaag populair, en daar is veel positiefs over. Het is ongelooflijk om te bedenken wat we dankzij JavaScript op het internet van vandaag kunnen bereiken, dat zelfs een paar jaar geleden onvoorstelbaar zou zijn geweest.
 
