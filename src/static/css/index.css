@@ -574,7 +574,7 @@ p {
   /* Contributors */
   .contributors-container {
     padding: 0 60px 340px;
-    padding: 0 min(60px, 5vw) min(340px, 30vw);
+    padding: 0 min(60px, 5vw) 21.25rem; /* constraint side padding for browsers that zoom it */
   }
 
   .rectangles {
@@ -641,7 +641,9 @@ p {
   .methodology-info {
     width: initial;
     margin-left: 20px;
+    margin-left: min(20px, 5vw);
     margin-right: 20px;
+    margin-right: min(20px, 5vw);
     text-align: center;
   }
 
