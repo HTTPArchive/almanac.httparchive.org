@@ -19,7 +19,7 @@ featured_stat_3: 58,59%
 featured_stat_label_3: Jamstack-sites gebouwd met Next.js
 ---
 
-## inleiding
+## Inleiding
 
 Jamstack is een relatief nieuw concept van een architectuur die is ontworpen om het web sneller, veiliger en gemakkelijker schaalbaar te maken. Het bouwt voort op veel van de tools en workflows waar ontwikkelaars van houden, en die de productiviteit maximaliseren.
 
