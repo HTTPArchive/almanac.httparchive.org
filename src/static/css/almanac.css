@@ -407,7 +407,7 @@ img {
 
 /* The main wrapper, center aligned */
 .container {
-  max-width: 1280px;
+  max-width: 1500px;
   padding-left: 20px;
   padding-left: min(20px, 5vw);
   padding-right: 20px;
@@ -779,16 +779,6 @@ li {
   line-height: 1.6em;
 }
 
-code {
-  word-break: break-all;
-  overflow-wrap: break-word;
-}
-
-pre code {
-  word-break: unset;
-  overflow-wrap: unset;
-}
-
 hr {
   opacity: 0.2;
 }
@@ -821,6 +811,7 @@ footer .container {
     'hr hr hr hr'
     'copyright copyright ha-logo social-media';
   grid-template-columns: 280px 1fr 1fr 120px 0 0;
+  grid-template-columns: 17.5rem 1fr 1fr 7.5rem 0 0;
 }
 
 footer .home-logo {
@@ -1078,10 +1069,6 @@ p.copyright a {
     flex-wrap: wrap;
   }
 
-  .navigation-logo {
-    overflow: auto;
-  }
-
   header nav:first-of-type,
   footer nav:first-of-type,
   header .cta {
@@ -1092,6 +1079,7 @@ p.copyright a {
     min-width: auto;
     max-width: 100%;
     margin-right: 0;
+    overflow: auto;
   }
 
   #menu {
@@ -1538,6 +1526,13 @@ code {
   background-color: #f7f7f7;
   border: 1px solid #dadce0;
   padding: 1px 2px;
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
+
+pre code {
+  word-break: unset;
+  overflow-wrap: unset;
 }
 
 pre .comment {

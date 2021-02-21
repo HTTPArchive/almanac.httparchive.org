@@ -4,7 +4,7 @@
   grid-template-areas: 'index content';
   -ms-grid-columns: 300px calc(100% - 300px);
   grid-template-columns: 300px auto;
-  grid-template-columns: 18.75rem calc(100% - 18.75rem); /* auto sometimes not set correctly on font zoom */
+  grid-template-columns: min(18.75rem, 20vw) calc(100% - min(18.75rem, 25vw)); /* auto sometimes not set correctly on font zoom */
 }
 
 .table-wrap-container,
@@ -718,6 +718,7 @@ figure .fig-desktop {
     margin: 0 15px;
     margin: 0 0.9375rem;
   }
+
   .figure-dropdown {
     right: -40px;
   }
@@ -759,6 +760,7 @@ figure .fig-desktop {
       'avatar avatar'
       'info info';
   }
+
   .content .authors li .info {
     grid-area: info;
   }
@@ -776,7 +778,6 @@ figure .fig-desktop {
   .content ul li {
     padding: 5px 0;
   }
-
 }
 
 /* Code highlighting */
