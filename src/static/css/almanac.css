@@ -407,7 +407,7 @@ img {
 
 /* The main wrapper, center aligned */
 .container {
-  max-width: 1500px;
+  max-width: 1280px;
   padding-left: 20px;
   padding-left: min(20px, 5vw);
   padding-right: 20px;
