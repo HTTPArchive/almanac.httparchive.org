@@ -84,6 +84,7 @@ p {
   position: relative;
   top: 25.5px;
   fill: #f7f779;
+  font-size: 16px;
 }
 
 .intro-image-wrapper img {
@@ -179,9 +180,11 @@ p {
   justify-content: space-between;
 }
 
+/*
 .contributors .btn {
   white-space: nowrap;
 }
+*/
 
 .people {
   position: relative;
@@ -239,7 +242,9 @@ p {
 .methodology-data {
   display: flex;
   margin: 20px 0 30px 0;
+  margin: 5vw 0 8vw 0;
   padding: 20px 30px;
+  padding: 5vw 8vw;
   border-radius: 5px;
   box-shadow: 0 0 5px 5px #f6f7f9;
 }
@@ -501,6 +506,10 @@ p {
     padding-right: 20px;
   }
 
+  #maincontent {
+    grid-template-columns: 1fr minmax(auto, 100%) 1fr;
+  }
+
   .intro-container {
     grid-template-areas:
       'year'
@@ -522,7 +531,9 @@ p {
 
   .intro p {
     margin-left: 20px;
+    margin-left: 5vw;
     margin-right: 20px;
+    margin-right: 5vw;
   }
 
   .intro button {
@@ -547,7 +558,9 @@ p {
 
   .featured-chapter div {
     margin-left: 20px;
+    margin-left: 5vw;
     margin-right: 20px;
+    margin-right: 5vw;
   }
 
   .featured-chapter-content {
@@ -561,6 +574,8 @@ p {
   /* Contributors */
   .contributors-container {
     padding: 0 60px 340px;
+    padding: 0 60px min(340px, 140vw);
+    padding: 0 min(60px, 5vw) min(340px, 140vw);
   }
 
   .rectangles {
@@ -577,25 +592,31 @@ p {
 
   .contributors div {
     margin-left: 20px;
+    margin-left: 5vw;
     margin-right: 20px;
+    margin-right: 5vw;
   }
 
   .people {
     position: absolute;
     bottom: 0;
     height: auto;
+    max-width: 100%;
   }
 
   .people-number {
     font-size: 220px;
+    font-size: min(220px, 60vw);
     line-height: 220px;
     overflow: visible;
     top: 40px;
+    top: min(40px, 40vw);
     position: relative;
   }
 
   .people .character {
     width: 80px;
+    width: min(80px, 30vw);
   }
 
   #character-markup {
@@ -606,6 +627,7 @@ p {
   #character-star {
     bottom: -20px;
     left: 130px;
+    left: min(130px, 35vw);
   }
 
   #character-hat {
