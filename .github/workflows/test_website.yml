@@ -21,7 +21,7 @@ jobs:
         # Full git history is needed to get a proper list of changed files within `super-linter`
         fetch-depth: 0
     - name: Setup Node.js for use with actions
-      uses: actions/setup-node@v2.1.4
+      uses: actions/setup-node@v2.1.5
       with:
         node-version:  '12'
     - name: Set up Python 3.8
