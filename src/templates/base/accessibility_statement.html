@@ -61,9 +61,3 @@
   </article>
 </main>
 {% endblock %}
-
-{% block scripts %}
-{{ super() }}
-{{ self.index_menu_script() }}
-<script src="{{ get_versioned_filename('/static/js/chapter.js') }}" defer></script>
-{% endblock %}

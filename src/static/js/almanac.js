@@ -1,3 +1,211 @@
+// These are the core menu options
+
+// Language, Year and ToC select switcher (mobile)
+function handleSelectSwitchers() {
+  var languageYearSwitchers = document.querySelectorAll('.language-switcher select, .year-switcher select, .table-of-contents-switcher select');
+  for (var i = 0; i < languageYearSwitchers.length; i++) {
+    languageYearSwitchers[i].addEventListener('change', function (e) {
+
+      var selectedOption = this.options[this.selectedIndex];
+
+      if (e.target.dataset.label && selectedOption.dataset.event) {
+        gtag('event', selectedOption.dataset.event, {
+          'event_category': 'clicks',
+          'event_label': e.target.dataset.label,
+          'transport_type': 'beacon',
+          'value': 1
+        })
+      }
+
+      //Reset the selector back in case user uses Back button
+      var selectedValue = e.target.value;
+      if (selectedValue && selectedValue !== window.location.pathname) {
+        e.target.value = window.location.pathname;
+        window.location = selectedValue;
+      }
+    });
+  }
+}
+
+// Language, Year and ToC menus (desktop)
+function handleNavMenu() {
+
+  function closeAnyOtherOpenDropdown(e) {
+    if (e.target.classList.contains('dropdown-open')) {
+      return
+    };
+    var openDropdownBtn = document.querySelector('.nav-dropdown-btn.dropdown-open');
+    openDropdownBtn && openDropdownBtn.click();
+  }
+
+  function trapFocusInList(e) {
+    var list = e.currentTarget;
+    var isInFooter = list.classList.contains('footer-list');
+    if (e.key === "ArrowDown") {
+      var siblingElem = isInFooter ? e.target.parentElement.previousElementSibling : e.target.parentElement.nextElementSibling;
+      var focusableElem = siblingElem ? siblingElem.querySelector('a') : (isInFooter ? lastFocusableElementInList : firstFocusableElementInList);
+      e.preventDefault();
+      focusableElem.focus();
+    } else if (e.key === "ArrowUp") {
+      var siblingElem = isInFooter ? e.target.parentElement.nextElementSibling : e.target.parentElement.previousElementSibling;
+      var focusableElem = siblingElem ? siblingElem.querySelector('a') : (isInFooter ? firstFocusableElementInList : lastFocusableElementInList);
+      e.preventDefault();
+      focusableElem.focus();
+    } else if (e.key === "Escape") {
+      var navDropDown = e.currentTarget.closest('.nav-dropdown');
+      var navDropDownBtn = navDropDown.querySelector('.nav-dropdown-btn');
+      navDropDownBtn.click();
+      navDropDownBtn.focus();
+    }
+  }
+
+  var firstFocusableElementInList, lastFocusableElementInList;
+  function toggleDropdownVisibility(e) {
+    var dropdownBtn = e.currentTarget;
+    var dropdown = dropdownBtn.closest('.nav-dropdown');
+    var list = dropdown.querySelector('.nav-dropdown-list');
+    var isListVisible = !list.classList.toggle('hidden');
+    var dropdownOpen = dropdownBtn.classList.toggle('dropdown-open');
+    dropdownBtn.setAttribute('aria-expanded', dropdownOpen);
+
+    if (isListVisible) {
+      var btnBoundingRect = dropdownBtn.getBoundingClientRect();
+      var listBoundingRect = list.getBoundingClientRect();
+      if (listBoundingRect.width <= btnBoundingRect.width) {
+        list.classList.add("align-center");
+      } else if (btnBoundingRect.left + listBoundingRect.width > window.innerWidth) {
+        list.classList.add("align-right");
+      }
+      document.body.addEventListener('click', closeAnyOtherOpenDropdown, true);
+      var navItems = list.querySelectorAll('a');
+      firstFocusableElementInList = navItems[0];
+      lastFocusableElementInList = navItems[navItems.length - 1];
+      list.addEventListener('keydown', trapFocusInList);
+    } else {
+      list.removeEventListener('keydown', trapFocusInList);
+      document.body.removeEventListener('click', closeAnyOtherOpenDropdown, true);
+    }
+  }
+
+  // Might need to change menu hanging direction on window resize to avoid overflow
+  function checkNavDropdown() {
+    var list = window.document.querySelector('.dropdown-open ~ .nav-dropdown-list');
+    var dropdownBtn = window.document.querySelector('button.dropdown-open');
+    // If no open menu, then we're done
+    if (!list || !dropdownBtn) {
+      return;
+    }
+    var btnBoundingRect = dropdownBtn.getBoundingClientRect();
+    var listBoundingRect = list.getBoundingClientRect();
+    if (listBoundingRect.width <= btnBoundingRect.width) {
+      list.classList.remove("align-right");
+      list.classList.add("align-center");
+    } else if (btnBoundingRect.left + listBoundingRect.width > window.innerWidth) {
+      list.classList.remove("align-center");
+      list.classList.add("align-right");
+    } else {
+      list.classList.remove("align-center");
+      list.classList.remove("align-right");
+    }
+  }
+  window.onresize = checkNavDropdown;
+
+  function navBtnKeyDownHandler(e) {
+    var dropdownList = e.currentTarget.nextElementSibling;
+    var isDropdownOpen = e.currentTarget.classList.contains('dropdown-open');
+    var isInFooter = dropdownList.classList.contains('footer-list');
+    if (e.key === "Escape") {
+      e.currentTarget.click();
+    } else if (e.key === "ArrowDown") {
+      e.preventDefault();
+      !isDropdownOpen && e.currentTarget.click();
+      (isInFooter ? dropdownList.lastElementChild : dropdownList.firstElementChild).querySelector('a').focus();
+    } else if (isInFooter && e.key === "ArrowUp") {
+      e.preventDefault();
+      !isDropdownOpen && e.currentTarget.click();
+      dropdownList.firstElementChild.querySelector('a').focus();
+    }
+  }
+
+  var navDropdownButtons = document.querySelectorAll('.nav-dropdown-btn');
+  for (var i = 0; i < navDropdownButtons.length; i++) {
+    navDropdownButtons[i].addEventListener('click', toggleDropdownVisibility);
+    navDropdownButtons[i].addEventListener('keydown', navBtnKeyDownHandler);
+  }
+}
+
+// The main mobile hamburger menu
+function handleMobileMenu() {
+  var menuBtn = document.querySelector('.menu-btn');
+  var menuNav = document.querySelector('#menu');
+
+  function toggleNavMenu() {
+    var menuOpen = document.body.classList.toggle('menu-open');
+    menuBtn.classList.toggle("menu-btn--active");
+    menuBtn.setAttribute('aria-expanded', menuOpen);
+    var ariaLabel = menuOpen ? menuBtn.getAttribute('data-close-text') : menuBtn.getAttribute('data-open-text');
+    menuBtn.setAttribute('aria-label', ariaLabel);
+
+    /* When you open the menu, add an event listener to close it when clicking outside the menu area */
+    /* Remove it on closing the menu */
+    if (menuBtn.getAttribute('aria-expanded') === 'true') {
+      document.body.addEventListener('click', toggleNavMenu, false);
+    } else {
+      document.body.removeEventListener('click', toggleNavMenu, false);
+    }
+  }
+
+  menuBtn.addEventListener('click', function (event) {
+    toggleNavMenu();
+    event.stopPropagation();
+  });
+
+  /* Add a click listener to menu so when it's open it swallows click to avoid above click closing it */
+  menuNav.addEventListener('click', function (event) {
+    event.stopPropagation();
+  });
+
+  menuNav.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+      if (menuBtn.getAttribute('aria-expanded') === 'true') {
+        toggleNavMenu();
+        menuBtn.focus();
+      }
+    }
+  });
+}
+
+// We can add click events to elements (e.g. ebook) and get event label from data-event attribute
+function handleDataEvents() {
+  document.querySelectorAll('[data-event]').forEach(trackableElement => {
+    trackableElement.addEventListener('click', function (event) {
+      gtag('event', event.target.dataset.event, {
+        'event_category': 'clicks',
+        'event_label': event.target.dataset.label,
+        'transport_type': 'beacon',
+        'value': 1
+      })
+    });
+  });
+}
+
+// Now we're all set up, activate all the elements that depend on JavaScript.
+// We do this in inline JS in the page after header loads to get those items displaying
+// correctly and avoid the initial CLS (even before above runs which is a bit cheeky to be honest!)
+// but need to do it again as other JS-elements will now have loaded further down the page
+function activateJavaScriptElements() {
+  document.querySelectorAll('.js-hide').forEach(element => {
+    // Don't just hide it - delete it completely to avoid any specifity issues
+    element.parentNode.removeChild(element);
+  });
+  document.querySelectorAll('.js-enable').forEach(element => {
+    element.classList.remove('js-enable');
+    element.classList.remove('hidden');
+    element.disabled = false;
+    element.hidden = false;
+  });
+}
+
 //This function removes the lazy-loading attributes from all img and iframe tags
 //Useful for print view for example (https://bugs.chromium.org/p/chromium/issues/detail?id=875403)
 function removeLazyLoading() {
@@ -161,10 +369,15 @@ function upgradeInteractiveFigures() {
   try {
     if (!isInPrintMode() && bigEnoughForInteractiveFigures() && !dataSaverEnabled() && highBandwidthConnection() && highResolutionCanvasSupported()) {
 
-      console.log('Upgrading to interactive figures');
-
       //Find each image and create the iframe
-      var all_fig_imgs = document.querySelectorAll('figure img');
+      var all_fig_imgs = document.querySelectorAll('figure img[data-iframe]');
+
+      //If no figures with a data-iframe, then we're done
+      if (all_fig_imgs.length == 0) {
+        return;
+      }
+
+      console.log('Upgrading to interactive figures');
 
       for (var index = 0; index < all_fig_imgs.length; ++index) {
         var fig_img = all_fig_imgs[index];
@@ -440,9 +653,59 @@ function addKeyboardScollableRegions() {
 
 }
 
+function addPrevNextEventListers() {
+  document.addEventListener("keyup", function onPress(event) {
+    if (event.key === 'p' || event.key === 'P' || event.key === ',' || event.key === '<') {
+      var previous = document.getElementById('previous-chapter');
+      if (previous) {
+        previous.click();
+      }
+    }
+    if (event.key === 'n' || event.key === 'N' || event.key === '.' || event.key === '>') {
+      var next = document.getElementById('next-chapter');
+      if (next) {
+        next.click();
+      }
+    }
+  });
+}
+
+function indexMenu() {
+  var indexBox = document.querySelector('.index-box');
+  var indexBoxTitle = document.querySelector('.index .index-btn');
+
+  if (!indexBox || !indexBoxTitle) {
+    return;
+  }
+
+  indexBoxTitle.addEventListener('click', function(e) {
+    var indexOpen = indexBox.classList.toggle('show');
+    indexBoxTitle.setAttribute('aria-expanded',indexOpen);
+    var ariaLabel = indexOpen ?  "{{ self.close_the_index() }}" : "{{ self.open_the_index() }}";
+    indexBoxTitle.setAttribute('aria-label',ariaLabel);
+  });
+
+  indexBox.addEventListener("keydown", function onPress(event) {
+    if (event.key === 'Escape') {
+      if (indexBoxTitle.getAttribute('aria-expanded') === 'true') {
+        indexBoxTitle.click();
+        indexBoxTitle.focus();
+      }
+    }
+  });
+}
+
+handleSelectSwitchers();
+handleMobileMenu();
+handleNavMenu();
+handleDataEvents();
+activateJavaScriptElements();
+indexMenu();
 indexHighlighter();
 addShowDescription();
 removeLazyLoadingOnPrint();
 upgradeInteractiveFigures();
 addKeyboardScollableRegions();
 setDiscussionCount();
+addPrevNextEventListers();
+

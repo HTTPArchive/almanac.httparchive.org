@@ -84,26 +84,8 @@
     {% block content %}{% endblock %}
 
     {% block bodyend %}
-    <script defer src="{{ get_versioned_filename('/static/js/web-vitals.js') }}" ></script>
-    <script nonce="{{ csp_nonce() }}">
-        function sendWebVitalsGAEvents(metric) {
-          gtag('event', metric.name, {
-            event_category: 'Web Vitals',
-            value: Math.round(metric.name === 'CLS' ? metric.delta * 1000 : metric.delta),
-            event_label: metric.id,
-            non_interaction: true,
-          });
-        }
-
-        window.addEventListener('load', function() {
-          webVitals.getFCP(sendWebVitalsGAEvents);
-          webVitals.getLCP(sendWebVitalsGAEvents);
-          webVitals.getCLS(sendWebVitalsGAEvents);
-          webVitals.getTTFB(sendWebVitalsGAEvents);
-          webVitals.getFID(sendWebVitalsGAEvents);
-        });
-
-    </script>
+    <script src="{{ get_versioned_filename('/static/js/web-vitals.js') }}"></script>
+    <script src="{{ get_versioned_filename('/static/js/send-web-vitals.js') }}" defer></script>
     {% endblock %}
   </body>
 </html>
