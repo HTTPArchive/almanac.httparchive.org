@@ -26,7 +26,7 @@ jobs:
     - name: Checkout branch
       uses: actions/checkout@v2.3.3
     - name: Setup Node.js for use with actions
-      uses: actions/setup-node@v2.1.4
+      uses: actions/setup-node@v2.1.5
       with:
         node-version: '12'
     - name: Set up Python 3.8
