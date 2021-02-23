@@ -636,7 +636,7 @@ figure .fig-desktop {
   margin-top: 0.625rem;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 56.25em) {
   .main {
     -ms-grid-columns: 1fr;
     grid-template-areas:
@@ -713,7 +713,7 @@ figure .fig-desktop {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 56.25em) {
   figure {
     margin: 0 15px;
     margin: 0 0.9375rem;

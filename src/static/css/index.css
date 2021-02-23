@@ -20,8 +20,8 @@ header.alt-bg {
     '. chapter .'
     'contributors contributors contributors'
     '. methodology .';
-  /* 1280 is same as the .container width */
-  grid-template-columns: 1fr minmax(auto, 1280px) 1fr;
+  /* 80em is same as the .container width */
+  grid-template-columns: 1fr minmax(auto, 80em) 1fr;
 }
 
 .featured-chapter,
@@ -296,7 +296,7 @@ p {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) calc(70% - 1px), rgb(192, 192, 192) calc(50%), rgba(0, 0, 0, 0) calc(70% + 1px));
 }
 
-@media (max-width: 1400px) and (min-width: 901px) {
+@media (max-width: 87.5em) and (min-width: 56.26em) {
   .people {
     height: auto;
   }
@@ -335,7 +335,7 @@ p {
   }
 }
 
-@media (max-width: 900px) and (min-width: 601px) {
+@media (max-width: 56.25em) and (min-width: 37.51em) {
   header.alt-bg {
     padding-bottom: 1800px;
     padding-bottom: 105.88em;
@@ -453,7 +453,7 @@ p {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 56.25em) {
   .intro-year {
     display: block;
     color: #f7f779;
@@ -487,7 +487,7 @@ p {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 37.5em) {
   header.alt-bg {
     background-size: cover;
     padding-bottom: 1650px;

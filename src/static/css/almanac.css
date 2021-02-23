@@ -408,6 +408,7 @@ img {
 /* The main wrapper, center aligned */
 .container {
   max-width: 1280px;
+  max-width: 80em;
   padding-left: 20px;
   padding-left: min(20px, 5vw);
   padding-right: 20px;
@@ -472,7 +473,7 @@ img {
   margin-right: auto;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 56.25em) {
   .title-alt::before {
     margin-left: auto;
     margin-right: auto;
@@ -908,7 +909,7 @@ p.copyright a {
   color: currentColor;
 }
 
-@media (max-width: 900px) and (min-width: 601px) {
+@media (max-width: 56.25em) and (min-width: 37.51em) {
   /* Header */
   .top-header,
   footer {
@@ -1035,7 +1036,7 @@ p.copyright a {
 }
 
 /* Mobile View */
-@media (max-width: 600px) {
+@media (max-width: 37.5em) {
   body,
   p,
   td,
@@ -1205,7 +1206,7 @@ p.copyright a {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 56.25em) {
   #menu,
   #mobile-footer-nav-items {
     display: block;

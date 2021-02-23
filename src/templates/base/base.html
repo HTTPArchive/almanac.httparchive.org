@@ -583,6 +583,30 @@
           }
         }
 
+        // Might need to change menu hanging direction on window resize to avoid overflow
+        function checkNavDropdown()
+        {
+          var list = window.document.querySelector('.dropdown-open ~ .nav-dropdown-list');
+          var dropdownBtn = window.document.querySelector('button.dropdown-open');
+          // If no open menu, then we're done
+          if (!list || !dropdownBtn) {
+            return;
+          }
+          var btnBoundingRect = dropdownBtn.getBoundingClientRect();
+          var listBoundingRect = list.getBoundingClientRect();
+          if (listBoundingRect.width <= btnBoundingRect.width) {
+            list.classList.remove("align-right");
+            list.classList.add("align-center");
+          } else if (btnBoundingRect.left + listBoundingRect.width > window.innerWidth) {
+            list.classList.remove("align-center");
+            list.classList.add("align-right");
+          } else {
+            list.classList.remove("align-center");
+            list.classList.remove("align-right");
+          }
+        }
+        window.onresize = checkNavDropdown;
+
         function navBtnKeyDownHandler(e) {
           var dropdownList = e.currentTarget.nextElementSibling;
           var isDropdownOpen = e.currentTarget.classList.contains('dropdown-open');
