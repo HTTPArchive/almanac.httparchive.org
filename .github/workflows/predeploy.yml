@@ -19,7 +19,7 @@ on:
   workflow_dispatch:
     inputs:
       ebooks:
-        description: "Regenrate Ebooks [Y/N]?"
+        description: "Regenerate Ebooks [Y/N]?"
         required: false
         default: 'Y'
 
