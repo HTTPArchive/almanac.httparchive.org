@@ -1183,6 +1183,16 @@
       "website": "https://zachleat.com/",
       "github": "zachleat",
       "twitter": "zachleat"
+    },
+    "soulcorrosion": {
+      "name": "Manuel Garcia",
+      "teams": [      
+        "translators"
+      ],
+      "avatar_url": "https://avatars2.githubusercontent.com/u/7148510?v=4&s=200",      
+      "github": "soulcorrosion",
+      "linkedin": "manuel-garcia-12b6928",
+      "twitter": "corrosion_pt"
     }
   }
 }
