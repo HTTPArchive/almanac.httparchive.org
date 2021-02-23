@@ -27,6 +27,7 @@
 {% block styles %}
 {{ super() }}
 <link rel="stylesheet" href="{{ get_versioned_filename('/static/css/page.css') }}">
+<link rel="preload" href="{{ get_versioned_filename('/static/css/page.css') }}" as="style" />
 {% endblock %}
 
 {% block scripts %}

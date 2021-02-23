@@ -2,6 +2,7 @@
 
 {% block styles %}
   <link rel="stylesheet" href="{{ get_versioned_filename('/static/css/almanac.css') }}">
+  <link rel="preload" href="{{ get_versioned_filename('/static/css/almanac.css') }}" as="style" />
 {% endblock %}
 
 {% block page_url %}https://almanac.httparchive.org{{ url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}{% endblock %}
@@ -386,6 +387,21 @@
       </div>
     </div>
   </header>
+  <script nonce="{{ csp_nonce() }}">
+    // If JS is enabled then enable menus ASAP to avoid CLS as menu items change from links to buttons
+    (function() {
+      document.querySelectorAll('.js-hide').forEach(element => {
+        // Don't just hide it - delete it completely to avoid any specifity issues
+        element.parentNode.removeChild(element);
+      });
+      document.querySelectorAll('.js-enable').forEach(element => {
+        element.classList.remove('js-enable');
+        element.classList.remove('hidden');
+        element.disabled = false;
+        element.hidden = false;
+      });
+    })();
+  </script>
   {% endblock %}
 
   {% block container %}
@@ -492,6 +508,7 @@
   {% endblock %}
   {% block scripts %}
     <script nonce="{{ csp_nonce() }}">
+      // Did this once before after header but need to do it again after footer as new DOM elements
       (function() {
         document.querySelectorAll('.js-hide').forEach(element => {
           // Don't just hide it - delete it completely to avoid any specifity issues

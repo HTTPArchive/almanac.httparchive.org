@@ -4,10 +4,8 @@
   font-family: 'Lato';
   font-style: italic;
   font-weight: 400;
-  font-display: swap;
+  font-display: block;
   src:
-    local('Lato Italic'),
-    local('Lato-Italic'),
     /* url(https://fonts.gstatic.com/s/lato/v16/S6u8w4BMUTPHjxsAUi-qNiXg7eU0.woff2) */
     url('/static/fonts/Lato-Italic-ext.woff2')
     format('woff2');
@@ -18,10 +16,8 @@
   font-family: 'Lato';
   font-style: italic;
   font-weight: 400;
-  font-display: swap;
+  font-display: block;
   src:
-    local('Lato Italic'),
-    local('Lato-Italic'),
     /* url(https://fonts.gstatic.com/s/lato/v16/S6u8w4BMUTPHjxsAXC-qNiXg7Q.woff2) */
     url('/static/fonts/Lato-Italic.woff2')
     format('woff2');
@@ -32,10 +28,8 @@
   font-family: 'Lato';
   font-style: italic;
   font-weight: 700;
-  font-display: swap;
+  font-display: block;
   src:
-    local('Lato Bold Italic'),
-    local('Lato-BoldItalic'),
     /* url(https://fonts.gstatic.com/s/lato/v16/S6u_w4BMUTPHjxsI5wq_FQftx9897sxZ.woff2) */
     url('/static/fonts/Lato-BoldItalic-ext.woff2')
     format('woff2');
@@ -46,10 +40,8 @@
   font-family: 'Lato';
   font-style: italic;
   font-weight: 700;
-  font-display: swap;
+  font-display: block;
   src:
-    local('Lato Bold Italic'),
-    local('Lato-BoldItalic'),
     /* url(https://fonts.gstatic.com/s/lato/v16/S6u_w4BMUTPHjxsI5wq_Gwftx9897g.woff2) */
     url('/static/fonts/Lato-BoldItalic.woff2')
     format('woff2');
@@ -60,10 +52,8 @@
   font-family: 'Lato';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: block;
   src:
-    local('Lato Regular'),
-    local('Lato-Regular'),
     /* url(https://fonts.gstatic.com/s/lato/v16/S6uyw4BMUTPHjxAwXiWtFCfQ7A.woff2) */
     url('/static/fonts/Lato-Regular-ext.woff2')
     format('woff2');
@@ -74,10 +64,8 @@
   font-family: 'Lato';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: block;
   src:
-    local('Lato Regular'),
-    local('Lato-Regular'),
     /* url(https://fonts.gstatic.com/s/lato/v16/S6uyw4BMUTPHjx4wXiWtFCc.woff2) */
     url('/static/fonts/Lato-Regular.woff2')
     format('woff2');
@@ -88,10 +76,8 @@
   font-family: 'Lato';
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
+  font-display: block;
   src:
-    local('Lato Bold'),
-    local('Lato-Bold'),
     /* url(https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh6UVSwaPGQ3q5d0N7w.woff2) */
     url('/static/fonts/Lato-Bold-ext.woff2')
     format('woff2');
@@ -102,10 +88,8 @@
   font-family: 'Lato';
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
+  font-display: block;
   src:
-    local('Lato Bold'),
-    local('Lato-Bold'),
     /* url(https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2) */
     url('/static/fonts/Lato-Bold.woff2')
     format('woff2');
@@ -116,10 +100,8 @@
   font-family: 'Lato';
   font-style: normal;
   font-weight: 900;
-  font-display: swap;
+  font-display: block;
   src:
-    local('Lato Black'),
-    local('Lato-Black'),
     /* url(https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh50XSwaPGQ3q5d0N7w.woff2) */
     url('/static/fonts/Lato-Black-ext.woff2')
     format('woff2');
@@ -130,10 +112,8 @@
   font-family: 'Lato';
   font-style: normal;
   font-weight: 900;
-  font-display: swap;
+  font-display: block;
   src:
-    local('Lato Black'),
-    local('Lato-Black'),
     /* url(https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh50XSwiPGQ3q5d0.woff2) */
     url('/static/fonts/Lato-Black.woff2')
     format('woff2');
@@ -144,10 +124,8 @@
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 300;
-  font-display: swap;
+  font-display: block;
   src:
-    local('Poppins Light'),
-    local('Poppins-Light'),
     /* url(https://fonts.gstatic.com/s/poppins/v9/pxiByp8kv8JHgFVrLDz8Z11lFd2JQEl8qw.woff2) */
     url('/static/fonts/Poppins-Light-devanagari.woff2')
     format('woff2');
@@ -158,10 +136,8 @@
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 300;
-  font-display: swap;
+  font-display: block;
   src:
-    local('Poppins Light'),
-    local('Poppins-Light'),
     /* url(https://fonts.gstatic.com/s/poppins/v9/pxiByp8kv8JHgFVrLDz8Z1JlFd2JQEl8qw.woff2) */
     url('/static/fonts/Poppins-Light-ext.woff2')
     format('woff2');
@@ -172,10 +148,8 @@
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 300;
-  font-display: swap;
+  font-display: block;
   src:
-    local('Poppins Light'),
-    local('Poppins-Light'),
     /* url(https://fonts.gstatic.com/s/poppins/v9/pxiByp8kv8JHgFVrLDz8Z1xlFd2JQEk.woff2) */
     url('/static/fonts/Poppins-Light.woff2')
     format('woff2');
@@ -186,10 +160,8 @@
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: block;
   src:
-    local('Poppins Regular'),
-    local('Poppins-Regular'),
     /* url(https://fonts.gstatic.com/s/poppins/v9/pxiEyp8kv8JHgFVrJJbecnFHGPezSQ.woff2) */
     url('/static/fonts/Poppins-Regular-devanagari.woff2')
     format('woff2');
@@ -200,10 +172,8 @@
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: block;
   src:
-    local('Poppins Regular'),
-    local('Poppins-Regular'),
     /* url(https://fonts.gstatic.com/s/poppins/v9/pxiEyp8kv8JHgFVrJJnecnFHGPezSQ.woff2) */
     url('/static/fonts/Poppins-Regular-ext.woff2')
     format('woff2');
@@ -214,10 +184,8 @@
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: block;
   src:
-    local('Poppins Regular'),
-    local('Poppins-Regular'),
     /* url(https://fonts.gstatic.com/s/poppins/v9/pxiEyp8kv8JHgFVrJJfecnFHGPc.woff2) */
     url('/static/fonts/Poppins-Regular.woff2')
     format('woff2');
@@ -228,10 +196,8 @@
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
+  font-display: block;
   src:
-    local('Poppins Bold'),
-    local('Poppins-Bold'),
     /* url(https://fonts.gstatic.com/s/poppins/v9/pxiByp8kv8JHgFVrLCz7Z11lFd2JQEl8qw.woff2) */
     url('/static/fonts/Poppins-Bold-devanagari.woff2')
     format('woff2');
@@ -242,10 +208,8 @@
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
+  font-display: block;
   src:
-    local('Poppins Bold'),
-    local('Poppins-Bold'),
     /* url(https://fonts.gstatic.com/s/poppins/v9/pxiByp8kv8JHgFVrLCz7Z1JlFd2JQEl8qw.woff2) */
     url('/static/fonts/Poppins-Bold-ext.woff2')
     format('woff2');
@@ -256,10 +220,8 @@
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
+  font-display: block;
   src:
-    local('Poppins Bold'),
-    local('Poppins-Bold'),
     /* url(https://fonts.gstatic.com/s/poppins/v9/pxiByp8kv8JHgFVrLCz7Z1xlFd2JQEk.woff2) */
     url('/static/fonts/Poppins-Bold.woff2')
     format('woff2');
@@ -270,10 +232,8 @@
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 900;
-  font-display: swap;
+  font-display: block;
   src:
-    local('Poppins Black'),
-    local('Poppins-Black'),
     /* url(https://fonts.gstatic.com/s/poppins/v9/pxiByp8kv8JHgFVrLBT5Z11lFd2JQEl8qw.woff2) */
     url('/static/fonts/Poppins-Black-devanagari.woff2')
     format('woff2');
@@ -284,10 +244,8 @@
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 900;
-  font-display: swap;
+  font-display: block;
   src:
-    local('Poppins Black'),
-    local('Poppins-Black'),
     /* url(https://fonts.gstatic.com/s/poppins/v9/pxiByp8kv8JHgFVrLBT5Z1JlFd2JQEl8qw.woff2) */
     url('/static/fonts/Poppins-Black-ext.woff2')
     format('woff2');
@@ -298,10 +256,8 @@
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 900;
-  font-display: swap;
+  font-display: block;
   src:
-    local('Poppins Black'),
-    local('Poppins-Black'),
     /* url(https://fonts.gstatic.com/s/poppins/v9/pxiByp8kv8JHgFVrLBT5Z1xlFd2JQEk.woff2) */
     url('/static/fonts/Poppins-Black.woff2')
     format('woff2');
@@ -1300,7 +1256,7 @@ p.copyright a {
 }
 
 .nav-dropdown-btn {
-  padding: 20px 45px 20px 20px;
+  padding: 18px 45px 18px 20px;
   font-size: 17px;
   font-size: 1.0625rem;
   text-decoration: none;

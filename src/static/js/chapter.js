@@ -261,7 +261,7 @@ function indexHighlighter() {
 
   // Don't implement this on mobile as won't be used
   // Note: do show on tablet in case needed when rotating into landscape
-  if (window.matchMedia('(max-width: 600px)').matches) {
+  if (window.matchMedia('(max-width: 37.5em)').matches) {
     return;
   }
 
