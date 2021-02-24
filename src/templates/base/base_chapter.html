@@ -259,7 +259,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
     <nav aria-label="{{ self.index_nav_title() }}" class="index">
         <div class="index-box floating-card">
           <h2 class="header">
-            <button type="button" class="index-btn" aria-expanded="false" aria-label="{{ self.open_the_index() }}">{{ self.index_title() }}</button>
+            <button type="button" class="index-btn" aria-expanded="false" aria-label="{{ self.open_the_index() }}" data-close-text="{{ self.close_the_index() }}" data-open-text="{{ self.open_the_index() }}">{{ self.index_title() }}</button>
             <span class="no-button">{{ self.index_title() }}</span>
           </h2>
           {{ self.index() }}

@@ -214,7 +214,7 @@ function removeLazyLoading() {
   if (Array.from) {
     console.log("Removing lazy loading...");
 
-    Array.from(document.querySelectorAll('img[loading], iframe[loading]')).forEach(function(element) {
+    Array.from(document.querySelectorAll('img[loading], iframe[loading]')).forEach(function (element) {
       element.removeAttribute('loading');
     });
   }
@@ -223,7 +223,7 @@ function removeLazyLoading() {
 //Add an event handler to remove LazyLoading when entering print mode
 function removeLazyLoadingOnPrint() {
   if ("onbeforeprint" in window) {
-   window.onbeforeprint = removeLazyLoading;
+    window.onbeforeprint = removeLazyLoading;
   }
 
 }
@@ -237,7 +237,7 @@ function isInPrintMode() {
     printMode = url.searchParams.has('print');
   }
   if (printMode) {
-    console.log ("Print Mode");
+    console.log("Print Mode");
     removeLazyLoading();
   }
   gtag('event', 'print-mode', { 'event_category': 'user', 'event_label': '' + printMode, 'value': +printMode })
@@ -478,8 +478,8 @@ function indexHighlighter() {
     return;
   }
 
-    //Only activate this if IntersectionObserver is supported
-  if(!('IntersectionObserver' in window)) {
+  //Only activate this if IntersectionObserver is supported
+  if (!('IntersectionObserver' in window)) {
     gtag('event', 'index-highlighter', { 'event_category': 'user', 'event_label': 'not-enabled', 'value': 0 });
     return;
   }
@@ -524,7 +524,7 @@ function indexHighlighter() {
       return;
     }
 
-    if(oldIndexLink) {
+    if (oldIndexLink) {
       oldIndexLink.classList.remove('active');
     }
     indexLink.parentNode.classList.add('active');
@@ -554,7 +554,7 @@ function indexHighlighter() {
     rootMargin: "0px 0px -80% 0px",
     threshold: null
   };
-  var observer = new IntersectionObserver(function(entries) {
+  var observer = new IntersectionObserver(function (entries) {
     for (var index = 0; index < entries.length; ++index) {
       var entry = entries[index];
 
@@ -604,7 +604,7 @@ function addShowDescription() {
     desc_button.addEventListener('click', toggleDescription);
     desc_button.hidden = false;
     var description = document.querySelector('#' + desc_button.getAttribute('aria-controls'));
-    if(description) {
+    if (description) {
       description.classList.remove('visually-hidden');
       description.classList.add('fig-description');
       description.hidden = true;
@@ -622,17 +622,17 @@ function addKeyboardScollableRegions() {
   for (var index = 0; index < all_table_containers.length; ++index) {
     var table_container = all_table_containers[index];
 
-    if(table_container.scrollWidth > table_container.clientWidth) {
+    if (table_container.scrollWidth > table_container.clientWidth) {
       var figure = table_container.parentElement.parentElement;
       if (figure && figure.nodeName == "FIGURE") {
         var figid = figure.id;
         var figcaption = figure.querySelector('figcaption');
 
         if (figid && figcaption) {
-          figcaption.setAttribute('id',figid+'-caption');
-          table_container.setAttribute('tabindex','0');
-          table_container.setAttribute('role','region');
-          table_container.setAttribute('aria-labelledby', figid+  '-caption');
+          figcaption.setAttribute('id', figid + '-caption');
+          table_container.setAttribute('tabindex', '0');
+          table_container.setAttribute('role', 'region');
+          table_container.setAttribute('aria-labelledby', figid + '-caption');
         }
       }
     }
@@ -643,9 +643,9 @@ function addKeyboardScollableRegions() {
   for (var index = 0; index < all_pre_elements.length; ++index) {
     var pre_element = all_pre_elements[index];
 
-    if(pre_element.scrollWidth > pre_element.clientWidth) {
-      pre_element.setAttribute('tabindex','0');
-      pre_element.setAttribute('role','region');
+    if (pre_element.scrollWidth > pre_element.clientWidth) {
+      pre_element.setAttribute('tabindex', '0');
+      pre_element.setAttribute('role', 'region');
       pre_element.setAttribute('aria-label', `Code ${index}`);
 
     }
@@ -678,11 +678,11 @@ function indexMenu() {
     return;
   }
 
-  indexBoxTitle.addEventListener('click', function(e) {
+  indexBoxTitle.addEventListener('click', function (e) {
     var indexOpen = indexBox.classList.toggle('show');
-    indexBoxTitle.setAttribute('aria-expanded',indexOpen);
-    var ariaLabel = indexOpen ?  "{{ self.close_the_index() }}" : "{{ self.open_the_index() }}";
-    indexBoxTitle.setAttribute('aria-label',ariaLabel);
+    indexBoxTitle.setAttribute('aria-expanded', indexOpen);
+    var ariaLabel = indexOpen ? indexBoxTitle.getAttribute('data-close-text') : indexBoxTitle.getAttribute('data-open-text');
+    indexBoxTitle.setAttribute('aria-label', ariaLabel);
   });
 
   indexBox.addEventListener("keydown", function onPress(event) {
@@ -708,4 +708,3 @@ upgradeInteractiveFigures();
 addKeyboardScollableRegions();
 setDiscussionCount();
 addPrevNextEventListers();
-
