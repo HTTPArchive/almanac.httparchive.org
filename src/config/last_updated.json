@@ -24,20 +24,10 @@
     "date_modified": "2021-02-23T00:00:00.000Z",
     "hash": "c9cd876cc8c46ecd33af481b57d06e03"
   },
-  "/static/css/print.css": {
-    "date_published": "2020-11-13T00:00:00.000Z",
-    "date_modified": "2020-11-18T00:00:00.000Z",
-    "hash": "c6d4f02d7828e1c9649c68de02099592"
-  },
   "/static/css/splash.css": {
     "date_published": "2020-11-13T00:00:00.000Z",
     "date_modified": "2020-11-13T00:00:00.000Z",
     "hash": "4f330dd8fdc6e5a660c93c7a83734516"
-  },
-  "/static/js/chapter.js": {
-    "date_published": "2020-11-13T00:00:00.000Z",
-    "date_modified": "2021-02-05T00:00:00.000Z",
-    "hash": "733c9880b6fd5de61ad96ba8c100cdc9"
   },
   "/static/js/web-vitals.js": {
     "date_published": "2020-11-13T00:00:00.000Z",
