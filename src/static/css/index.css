@@ -662,11 +662,3 @@ p {
     margin: 0;
   }
 }
-
-@media (max-width: 20em) {
-  .featured-chapter-content-data-item .no-wrap {
-    white-space: initial;
-    word-break: break-all;
-    overflow-wrap: anywhere;
-  }
-}
