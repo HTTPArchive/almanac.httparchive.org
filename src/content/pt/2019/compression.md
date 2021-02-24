@@ -46,7 +46,6 @@ No exemplo seguinte, o cliente comunica que tem suporte para compressão Gzip, B
     < Content-encoding: gzip
 ```
 
-
 O HTTP Archive contém leituras de 5.3 milhões de sites e cada site carregou pelo menos 1 recurso de texto comprimido na sua página de início. Adicionalmente, 81% dos sites reportaram ter recursos comprimidos no seu domínio primário.
 
 ## Algoritmos de compressão
