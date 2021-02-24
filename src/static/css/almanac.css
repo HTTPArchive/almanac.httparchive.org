@@ -1375,6 +1375,20 @@ p.copyright a {
   padding: 8px 8px 16px 16px;
 }
 
+/* Allow more wrapping for extremely small screens (e.g. very zoomed in) */
+@media (max-width: 20em) {
+  .featured-chapter-content-data-item .no-wrap {
+    white-space: initial;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  body {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   ::before,

@@ -504,7 +504,7 @@ figcaption {
 .figure-dropdown button {
   opacity: 0.5;
   border: none;
-  padding: 1em;
+  padding: 0.5rem;
   color: #0b1423;
 }
 
@@ -720,7 +720,7 @@ figure .fig-desktop {
   }
 
   .figure-dropdown {
-    right: -40px;
+    right: -1.75em;
   }
 
   figure .big-number {
