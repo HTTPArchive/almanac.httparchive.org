@@ -229,7 +229,7 @@ p {
 .methodology-container {
   -ms-grid-row: 4;
   grid-area: methodology;
-  padding: 0 60px;
+  padding: 0 min(60px, 5vw);
 }
 
 .methodology {
@@ -535,9 +535,9 @@ p {
 
   .intro p {
     margin-left: 20px;
-    margin-left: 5vw;
+    margin-left: min(20px, 5vw);
     margin-right: 20px;
-    margin-right: 5vw;
+    margin-right: min(20px, 5vw);
   }
 
   .intro button {
@@ -562,9 +562,9 @@ p {
 
   .featured-chapter div {
     margin-left: 20px;
-    margin-left: 5vw;
+    margin-left: min(20px, 5vw);
     margin-right: 20px;
-    margin-right: 5vw;
+    margin-right: min(20px, 5vw);
   }
 
   .featured-chapter-content {
