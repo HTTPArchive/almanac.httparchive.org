@@ -36,7 +36,6 @@ Quando um cliente faz um pedido HTTP, frequentemente, inclui um cabeçalho [`Acc
 
 No exemplo seguinte, o cliente comunica que tem suporte para compressão Gzip, Brotli e Deflate. O servidor decidiu retornar uma resposta comprimida com GZip que contém um documento `text/html`.
 
-
 ```
     > GET / HTTP/1.1
     > Host: httparchive.org
