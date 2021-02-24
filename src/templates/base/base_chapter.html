@@ -27,33 +27,14 @@
 {% block styles %}
 {{ super() }}
 <link rel="stylesheet" href="{{ get_versioned_filename('/static/css/page.css') }}">
+<link rel="preload" href="{{ get_versioned_filename('/static/css/page.css') }}" as="style" />
 {% endblock %}
 
 {% block scripts %}
-{{ super() }}
-{{ self.index_menu_script() }}
 <script nonce="{{ csp_nonce() }}">
-
-document.addEventListener("keyup", function onPress(event) {
-   if (event.key === 'p' || event.key === 'P' || event.key === ',' || event.key === '<') {
-     var previous = document.getElementById('previous-chapter');
-     if (previous) {
-       previous.click();
-     }
-   }
-   if (event.key === 'n' || event.key === 'N' || event.key === '.' || event.key === '>') {
-     var next = document.getElementById('next-chapter');
-     if (next) {
-       next.click();
-     }
-   }
-});
-
 window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}.json";
 </script>
-
-<script src="{{ get_versioned_filename('/static/js/chapter.js') }}" defer></script>
-
+{{ super() }}
 {% endblock %}
 
 {# Calls to action for readers who want to engage more with this chapter. #}
@@ -278,7 +259,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
     <nav aria-label="{{ self.index_nav_title() }}" class="index">
         <div class="index-box floating-card">
           <h2 class="header">
-            <button type="button" class="index-btn" aria-expanded="false" aria-label="{{ self.open_the_index() }}">{{ self.index_title() }}</button>
+            <button type="button" class="index-btn" aria-expanded="false" aria-label="{{ self.open_the_index() }}" data-close-text="{{ self.close_the_index() }}" data-open-text="{{ self.open_the_index() }}">{{ self.index_title() }}</button>
             <span class="no-button">{{ self.index_title() }}</span>
           </h2>
           {{ self.index() }}

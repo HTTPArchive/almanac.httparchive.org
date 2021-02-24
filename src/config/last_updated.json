@@ -1,8 +1,8 @@
 {
   "/static/css/almanac.css": {
     "date_published": "2020-11-13T00:00:00.000Z",
-    "date_modified": "2021-02-23T00:00:00.000Z",
-    "hash": "8bacb74b4ca7f629e5981191589abb79"
+    "date_modified": "2021-02-24T00:00:00.000Z",
+    "hash": "67697149f179df897e6a3ece28b8e906"
   },
   "/static/css/ebook.css": {
     "date_published": "2020-05-15T00:00:00.000Z",
@@ -24,25 +24,25 @@
     "date_modified": "2021-02-23T00:00:00.000Z",
     "hash": "c9cd876cc8c46ecd33af481b57d06e03"
   },
-  "/static/css/print.css": {
-    "date_published": "2020-11-13T00:00:00.000Z",
-    "date_modified": "2020-11-18T00:00:00.000Z",
-    "hash": "c6d4f02d7828e1c9649c68de02099592"
-  },
   "/static/css/splash.css": {
     "date_published": "2020-11-13T00:00:00.000Z",
     "date_modified": "2020-11-13T00:00:00.000Z",
     "hash": "4f330dd8fdc6e5a660c93c7a83734516"
   },
-  "/static/js/chapter.js": {
-    "date_published": "2020-11-13T00:00:00.000Z",
-    "date_modified": "2021-02-05T00:00:00.000Z",
-    "hash": "733c9880b6fd5de61ad96ba8c100cdc9"
+  "/static/js/almanac.js": {
+    "date_published": "2021-02-24T00:00:00.000Z",
+    "date_modified": "2021-02-24T00:00:00.000Z",
+    "hash": "f2a47cb8dc7dfd2e430642ff788daa10"
+  },
+  "/static/js/send-web-vitals.js": {
+    "date_published": "2021-02-24T00:00:00.000Z",
+    "date_modified": "2021-02-24T00:00:00.000Z",
+    "hash": "f176ee2628e8a2a549a6f5f3e122ee22"
   },
   "/static/js/web-vitals.js": {
     "date_published": "2020-11-13T00:00:00.000Z",
-    "date_modified": "2021-01-15T00:00:00.000Z",
-    "hash": "6a7c34fdb9c47c326934731243e96620"
+    "date_modified": "2021-02-24T00:00:00.000Z",
+    "hash": "7e4e7f6708d6e8eead7bc673f32e2052"
   },
   "/static/pdfs/web_almanac_2019_en.pdf": {
     "date_published": "2020-05-15T00:00:00.000Z",
