@@ -163,8 +163,7 @@ Não conseguimos determinar os níveis de compressão dos diagnósticos obtidos 
 
 ## Que tipos de conteúdos estamos a comprimir?
 
-A maior parte dos recursos baseados em texto (como HTML, CSS e Javascript) podem beneficiar de compressão Gzip e Brotli.
-No entanto, normamente não é necessário usar estas técnicas de compressão em recursos binários, como imagens, video e algumas fontes web porque os seus formatos de ficheiro já estão comprimidos.
+A maior parte dos recursos baseados em texto (como HTML, CSS e Javascript) podem beneficiar de compressão Gzip e Brotli. No entanto, normamente não é necessário usar estas técnicas de compressão em recursos binários, como imagens, video e algumas fontes web porque os seus formatos de ficheiro já estão comprimidos.
 
 No gráfico abaixo, podemos ver o top 25 de tipos de conteúdo em caixas cujo tamanho representa o número relativo de pedidos. A cor de cada caixa representa a quantidade de recursos servidos com compressão. A maior parte do conteúdo media é mostrado com uma sombra laranja uma vez que, tal como esperado, Gzip e Brotli trariam pouco ou nenhum benefício para os mesmos. A maior parte do conteúdo baseado em texto é sombreado a azul indicando que estão a ser comprimidos. No entanto, o sombreado azul claro para alguns tipos de conteúdo indica que não são comprimidos tão consistentemente como os outros.
 
