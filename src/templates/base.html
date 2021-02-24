@@ -84,7 +84,7 @@
     {% block content %}{% endblock %}
 
     {% block bodyend %}
-    <script src="{{ get_versioned_filename('/static/js/web-vitals.js') }}"></script>
+    <script src="{{ get_versioned_filename('/static/js/web-vitals.js') }}" defer></script>
     <script src="{{ get_versioned_filename('/static/js/send-web-vitals.js') }}" defer></script>
     {% endblock %}
   </body>
