@@ -331,7 +331,7 @@ Devido ao facto do [HTTP Archive correr auditorias Lighthouse](./methodology#lig
 
 {{ figure_markup(
   image="fig11.png",
-  caption='Pontuações da auditoria de "compressão de texto" do Lighthouse.',
+  caption='Pontuações da auditoria de "ativar compressão de texto" do Lighthouse.',
   description="Gráfico de barras que mostra 7.6% a pontuar menos de 10%, 13.2% dos sites estão a pontuar entre 10-39%, 13.7% dos sites estão a pontuar entre 40-79%, 2.9% dos sites estão a pontuar entre 80-99%, e 62.5% dos sites passam a auditoria com 100% dos recursos de texto comprimidos.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=2048155673&format=interactive",
   width=760,
