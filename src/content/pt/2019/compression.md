@@ -161,7 +161,6 @@ Não conseguimos determinar os níveis de compressão dos diagnósticos obtidos 
 * Se conseguir suportar Brotli e pre-comprimir esses recursos, então use o nível 11. Este nível é computacionalmente mais exigente que o Gzip - portanto uma pre-compressão é essencial para evitar atrasos. 
 * Se conseguir suportar Brotli mas pre-compressão não é uma opção, então comprima com Brotli nível 5. Este nível irá produzir recursos mais pequenos quando comparados com Gzip, com uma exigência computacional semelhante.
 
-
 ## Que tipos de conteúdos estamos a comprimir?
 
 A maior parte dos recursos baseados em texto (como HTML, CSS e Javascript) podem beneficiar de compressão Gzip e Brotli.
