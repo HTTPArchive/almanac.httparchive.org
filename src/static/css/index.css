@@ -62,6 +62,7 @@ p {
   grid-area: intro;
   width: 100%;
   max-width: 550px;
+  max-width: 34.375rem;
   /* match the .container side padding */
   padding-left: 20px;
 }
@@ -77,7 +78,9 @@ p {
   -ms-grid-column: 2;
   grid-area: image;
   max-height: 485px;
+  max-height: 30.3125rem;
   max-width: 485px;
+  max-width: 30.3125rem;
 }
 
 .intro-image-wrapper svg {
@@ -120,6 +123,7 @@ p {
   -ms-grid-row: 2;
   grid-area: chapter;
   padding: 120px 0;
+  padding: 7.5rem 0;
 }
 
 .featured-chapter h1 {
