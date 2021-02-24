@@ -1377,12 +1377,6 @@ p.copyright a {
 
 /* Allow more wrapping for extremely small screens (e.g. very zoomed in) */
 @media (max-width: 20em) {
-  .featured-chapter-content-data-item .no-wrap {
-    white-space: initial;
-    word-break: break-word;
-    overflow-wrap: break-word;
-  }
-
   body {
     word-break: break-word;
     overflow-wrap: break-word;
