@@ -30,7 +30,6 @@ Algoritmos de compressão são muitas vezes categorizados como podendo ter ou n�
 
 Neste capítulo, vamos explorar como conteúdo de texto é comprimido na web. Análise de conteúdo não baseado em texto faz parte do capítulo [Media](./media)
 
-
 ## Como a compressão HTTP funciona
 
 Quando um cliente faz um pedido HTTP, frequentemente, inclui um cabeçalho [`Accept-Encoding`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Encoding) para comunicar os algoritmos de compressão que é capaz de descodificar. O servidor pode depois seleccionar um dos algoritmos comunicados que suporte e servir uma resposta comprimida. A resposta comprimida iria por sua vez incluir o cabeçalho [`Content-Encoding`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding) para que o cliente perceba que tipo de compressão foi usada. Adicionalmente, um cabeçalho [`Content-Type`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type) é, frequentemente, usado para indicar o [MIME type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types) do resurso a ser servido.
