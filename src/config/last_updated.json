@@ -34,11 +34,6 @@
     "date_modified": "2020-11-13T00:00:00.000Z",
     "hash": "4f330dd8fdc6e5a660c93c7a83734516"
   },
-  "/static/js/chapter.js": {
-    "date_published": "2020-11-13T00:00:00.000Z",
-    "date_modified": "2021-02-05T00:00:00.000Z",
-    "hash": "733c9880b6fd5de61ad96ba8c100cdc9"
-  },
   "/static/js/web-vitals.js": {
     "date_published": "2020-11-13T00:00:00.000Z",
     "date_modified": "2021-01-15T00:00:00.000Z",
