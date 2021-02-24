@@ -1375,16 +1375,20 @@ p.copyright a {
   padding: 8px 8px 16px 16px;
 }
 
+.no-wrap {
+  white-space: nowrap;
+}
+
 /* Allow more wrapping for extremely small screens (e.g. very zoomed in) */
 @media (max-width: 20em) {
   body {
-    word-break: break-all;
+    word-break: break-word;
     overflow-wrap: break-word;
   }
 
   .no-wrap {
     white-space: initial;
-    word-break: break-all;
+    word-break: break-word;
     overflow-wrap: break-word;
   }
 }
@@ -1401,10 +1405,6 @@ p.copyright a {
     transition-duration: 0s !important;
     transition-delay: 0s !important;
   }
-}
-
-.no-wrap {
-  white-space: nowrap;
 }
 
 /* Syntax Highlighting */
