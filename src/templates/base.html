@@ -8,25 +8,14 @@
       <link rel="stylesheet" href="{{ get_versioned_filename('/static/css/normalize.css') }}">
       <link rel="preload" href="{{ get_versioned_filename('/static/css/normalize.css') }}" as="style">
       {% block styles %}{% endblock %}
+      <link rel="preload" href="/static/fonts/Lato-Regular.woff2" as="font" type="font/woff2" media="(prefers-reduced-data: no-preference)" crossorigin>
+      <link rel="preload" href="/static/fonts/Poppins-Bold.woff2" as="font" type="font/woff2" media="(prefers-reduced-data: no-preference)" crossorigin>
+      <link rel="preload" href="/static/fonts/Lato-Black.woff2" as="font" type="font/woff2" media="(prefers-reduced-data: no-preference)" crossorigin>
+      <link rel="preload" href="/static/fonts/Lato-Bold.woff2" as="font" type="font/woff2" media="(prefers-reduced-data: no-preference)" crossorigin>
       <link rel="stylesheet" media="print" href="{{ get_versioned_filename('/static/css/print.css') }}">
-      <link rel="preload" href="/static/fonts/Lato-Regular.woff2" as="font" type="font/woff2" crossorigin>
-      <link rel="preload" href="/static/fonts/Poppins-Bold.woff2" as="font" type="font/woff2" crossorigin>
-      <link rel="preload" href="/static/fonts/Lato-Black.woff2" as="font" type="font/woff2" crossorigin>
-      <link rel="preload" href="/static/fonts/Lato-Bold.woff2" as="font" type="font/woff2" crossorigin>
     {% endblock %}
     <link rel="shortcut icon" href="/static/images/favicon.ico">
     <link rel="apple-touch-icon" href="/static/images/apple-touch-icon.png">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-22381566-3"></script>
-    <script nonce="{{ csp_nonce() }}">
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'UA-22381566-3', {
-          'link_attribution': true
-        });
-    </script>
     {%- if request.url_root != "https://almanac.httparchive.org/" %}
     <meta name="robots" content="noindex">
     {%- endif %}
@@ -84,8 +73,19 @@
     {% block content %}{% endblock %}
 
     {% block bodyend %}
-    <script src="{{ get_versioned_filename('/static/js/web-vitals.js') }}" defer></script>
-    <script src="{{ get_versioned_filename('/static/js/send-web-vitals.js') }}" defer></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-22381566-3"></script>
+    <script nonce="{{ csp_nonce() }}">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-22381566-3', {
+          'link_attribution': true
+        });
+    </script>
+    <script defer src="{{ get_versioned_filename('/static/js/web-vitals.js') }}"></script>
+    <script defer src="{{ get_versioned_filename('/static/js/send-web-vitals.js') }}"></script>
     {% endblock %}
   </body>
 </html>
