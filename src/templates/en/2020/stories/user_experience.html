@@ -540,38 +540,39 @@
   </style>
 
   <title>Web Almanac Part II: User Experience - The 2020 Web Almanac</title>
-  <script type="application/ld+json">{
-    "@context": "http://schema.org",
-    "publisher": {
-      "@type": "Organization",
-      "name": "HTTP Archive",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://almanac.httparchive.org/static/images/ha-60px.png",
-        "width": 120,
-        "height": 60
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "publisher": {
+        "@type": "Organization",
+        "name": "HTTP Archive",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://almanac.httparchive.org/static/images/ha-60px.png",
+          "width": 120,
+          "height": 60
+        },
+        "sameas": [
+          "https://httparchive.org",
+          "https://twitter.com/HTTPArchive",
+          "https://github.com/HTTPArchive"
+          ]
       },
-      "sameas": [
-        "https://httparchive.org",
-        "https://twitter.com/HTTPArchive",
-        "https://github.com/HTTPArchive"
-        ]
-    },
-    "@type": "Article",
-    "mainEntityOfPage": "https://almanac.httparchive.org/en/2020/stories/user-experience",
-    "headline": "Web Almanac 2020 Part II: User Experience",
-    "datePublished": "{{ date_published }}",
-    "dateModified": "{{ date_modified }}",
-    "author": {
-      "@type": "Person",
-      "sameas": [
-        "https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}",
-        "https://twitter.com/rick_viscomi",
-        "https://github.com/rviscomi"
-        ],
-      "name": "Rick Viscomi"
-    },
-    "image": [
+      "@type": "Article",
+      "mainEntityOfPage": "https://almanac.httparchive.org/en/2020/stories/user-experience",
+      "headline": "Web Almanac 2020 Part II: User Experience",
+      "datePublished": "{{ date_published }}",
+      "dateModified": "{{ date_modified }}",
+      "author": {
+        "@type": "Person",
+        "sameas": [
+          "https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}",
+          "https://twitter.com/rick_viscomi",
+          "https://github.com/rviscomi"
+          ],
+        "name": "Rick Viscomi"
+      },
+      "image": [
       {
         "@type":"ImageObject",
         "url":"https://almanac.httparchive.org/static/images/home-hero-2020-part-2.png",
