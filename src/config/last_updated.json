@@ -1,8 +1,8 @@
 {
   "/static/css/almanac.css": {
     "date_published": "2020-11-13T00:00:00.000Z",
-    "date_modified": "2021-02-24T00:00:00.000Z",
-    "hash": "67697149f179df897e6a3ece28b8e906"
+    "date_modified": "2021-02-25T00:00:00.000Z",
+    "hash": "0b3671d128ed7c6b9faf069ef7613abb"
   },
   "/static/css/ebook.css": {
     "date_published": "2020-05-15T00:00:00.000Z",
@@ -11,8 +11,8 @@
   },
   "/static/css/index.css": {
     "date_published": "2020-11-13T00:00:00.000Z",
-    "date_modified": "2021-02-24T00:00:00.000Z",
-    "hash": "bce795ad1f1a8e2a312db6ed45e528de"
+    "date_modified": "2021-02-25T00:00:00.000Z",
+    "hash": "02655c51c0a3405f61ca7642388478ba"
   },
   "/static/css/normalize.css": {
     "date_published": "2020-11-13T00:00:00.000Z",
@@ -21,8 +21,8 @@
   },
   "/static/css/page.css": {
     "date_published": "2020-11-13T00:00:00.000Z",
-    "date_modified": "2021-02-23T00:00:00.000Z",
-    "hash": "c9cd876cc8c46ecd33af481b57d06e03"
+    "date_modified": "2021-02-25T00:00:00.000Z",
+    "hash": "368edc8b6785de2028829558115edf24"
   },
   "/static/css/splash.css": {
     "date_published": "2020-11-13T00:00:00.000Z",
