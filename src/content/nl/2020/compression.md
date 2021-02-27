@@ -1,72 +1,72 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
-title: Compression
-description: Compression chapter of the 2020 Web Almanac covering HTTP compression, algorithms, content types, 1st party and 3rd party compression and opportunities.
+title: Compressie
+description: Het hoofdstuk over compressie van de Web Almanac van 2020 behandelt HTTP-compressie, algoritmen, inhoudstypen, compressie van de eerste partij en van derden en mogelijkheden.
 authors: [mo271, veluca93, sboukortt, jyrkialakuijala]
 reviewers: [paulcalvano]
 analysts: [AbbyTsai]
 editors: [exterkamp]
-translators: []
-jyrkialakuijala_bio: Jyrki Alakuijala is an active member of the open source software community, and a data compression researcher. Jyrki works at Google as a Technical Lead/Manager, and his recent published work has been with Zopfli, Butteraugli, Guetzli, Gipfeli, WebP lossless, Brotli, and JPEG XL compression formats and algorithms, and two hashing algorithms, CityHash, and HighwayHash. Before his Google employment he developed software for neurosurgery and radiation therapy treatment planning.
-sboukortt_bio: Sami joined Google after completing his studies in engineering mathematics. After a few years of remote interest in compression, he eventually made it his full-time subject of work in 2018.
-mo271_bio: Moritz Firsching is software engineer at Google Switzerland, where he works on progressive image formats and font compression. Before that Moritz did research as a mathematician studying polytopes.
-veluca93_bio: Luca Versari is a software engineer at Google, working on <a href="https://gitlab.com/wg1/jpeg-xl">JPEG XL</a>. He's finishing a PhD on graph compression and has a background in mathematics.
+translators: [noah-vdv]
+jyrkialakuijala_bio: Jyrki Alakuijala is een actief lid van de open source-softwaregemeenschap en onderzoeker naar datacompressie. Jyrki werkt bij Google als technisch leider/manager, en zijn recent gepubliceerde werk was met Zopfli, Butteraugli, Guetzli, Gipfeli, WebP lossless, Brotli en JPEG XL-compressie-indelingen en -algoritmen, en twee hashing-algoritmen, CityHash en HighwayHash. Voordat hij bij Google ging werken, ontwikkelde hij software voor de planning van neurochirurgie en bestralingstherapie.
+sboukortt_bio: Sami kwam bij Google nadat hij zijn studie technische wiskunde had afgerond. Na een paar jaar verre interesse in compressie, maakte hij er uiteindelijk in 2018 zijn fulltime werkonderwerp van.
+mo271_bio: Moritz Firsching is software-engineer bij Google Zwitserland, waar hij werkt aan progressieve afbeeldingsindelingen en lettertypecompressie. Daarvoor deed Moritz onderzoek als wiskundige die polytopen bestudeerde.
+veluca93_bio: Luca Versari is een software-engineer bij Google en werkt aan <a hreflang="en" href="https://gitlab.com/wg1/jpeg-xl">JPEG XL</a>. Hij is bezig met het afronden van een doctoraat in grafiekcompressie en heeft een achtergrond in wiskunde.
 discuss: 2055
 results: https://docs.google.com/spreadsheets/d/1NKbP4AqMkgCNCsVD3yLhO2d0aqIsgZ7AGLEtUDHl9yY/
-featured_quote: Using HTTP compression makes a website load faster and therefore guarantees a better user experience.
+featured_quote: Door het gebruik van HTTP-compressie laadt een website sneller en is daardoor een betere gebruikerservaring gegarandeerd.
 featured_stat_1: 23%
-featured_stat_label_1: Compressed responses which use Brotli
+featured_stat_label_1: Gecomprimeerde reacties die Brotli gebruiken
 featured_stat_2: 77%
-featured_stat_label_2: Compressed responses which use Gzip
+featured_stat_label_2: Gecomprimeerde reacties die Gzip gebruiken
 featured_stat_3: 74%
-featured_stat_label_3: Websites that pass the Lighthouse audit with maximum score on text compression
+featured_stat_label_3: Websites die de Lighthouse-audit doorstaan met maximale score op tekstcompressie
 ---
 
-## Introduction
+## Inleiding
 
-Using HTTP compression makes a website load faster and therefore guarantees a better user experience. Running no compression on HTTP makes for a worse user experience, may affect the growth rate of the related web service, and affects search rankings.  Effective use of compression can reduce [page weight](./page-weight), improves [web performance](./performance), and therefore is an important part of [search engine optimization](./seo).
+Door het gebruik van HTTP-compressie laadt een website sneller en is daardoor een betere gebruikerservaring gegarandeerd. Het niet uitvoeren van compressie op HTTP zorgt voor een slechtere gebruikerservaring, kan de groeisnelheid van de gerelateerde webservice beïnvloeden en heeft invloed op de zoekresultaten. Effectief gebruik van compressie kan [paginagewicht](./page-weight) verminderen, [webprestaties](./performance) verbeteren, en is daarom een belangrijk onderdeel van [zoekmachineoptimalisatie](./seo).
 
-While lossy compression is often acceptable for images and other [media](./media) types, for text we want to use lossless compression, i.e. recover the exact text after decompression.
+Hoewel compressie met verlies vaak acceptabel is voor afbeeldingen en andere typen [media](./media), willen we voor tekst compressie zonder verlies gebruiken, d.w.z. de exacte tekst herstellen na decompressie.
 
-## What type of content should we compress?
+## Welk type inhoud moeten we comprimeren?
 
-For most text-based assets, such as [HTML](./markup), [CSS](./css), [JavaScript](./javascript), JSON, or SVG, as well as certain non-text formats such as woff, ttf, ico, using compression is recommended.
+Voor de meeste op tekst gebaseerde items, zoals [HTML](./markup), [CSS](./css), [JavaScript](./javascript), JSON of SVG, evenals bepaalde niet-tekstindelingen zoals woff, ttf, ico, wordt het gebruik van compressie aanbevolen.
 
 {{ figure_markup(
   image="compession-methods-by-content-type.png",
-  caption="Compression methods for different content types",
-  description="A stacked bar chart showing the usage rate of different compression algorithms broken down by the content type. The stacked bars divide up the use of Brotli, Gzip, and no compression. `text/html` is the only content type that is compressed less than 50% of the time. `application/json` and `image/svg+xml` are each approximately 64% compressed. `text/css` and `application/javascript` are each approximately 85% compressed. `application/x-javascript` and `text/javascript` are greater than 90% compressed.",
+  caption="Compressiemethoden voor verschillende inhoudstypen",
+  description="Een gestapeld staafdiagram met de gebruikssnelheid van verschillende compressiealgoritmen, uitgesplitst naar het inhoudstype. De gestapelde staven verdelen het gebruik van Brotli, Gzip en geen compressie. `text/html` is het enige inhoudstype dat minder dan 50% van de tijd wordt gecomprimeerd. `application/json` en `image/svg+xml` zijn elk ongeveer 64% gecomprimeerd. `text/css` en `application/javascript` zijn elk ongeveer 85% gecomprimeerd. `application/x-javascript` en `text/javascript` zijn voor meer dan 90% gecomprimeerd.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxUj8-0vKTqPAblIXqekSbiRh1D1lEuA3gVD9w23qwGPtJRE8FbgrURfPAgfFZX2l0t84Wy5ZAGqzR/pubchart?oid=1658254159&format=interactive",
   sheets_gid="107138856",
   sql_file="19_01.type_of_content_encoding.sql"
   )
 }}
 
-The figure shows the percent of responses of a certain content type using either Brotli, Gzip or no text compression.
-It is surprising that while all those content types would profit from compression, the range of percentages varies widely over the different content types:  only 44% use compression for `text/html` against 93% for `application/x-javascript`.
+De afbeelding toont het percentage reacties van een bepaald inhoudstype met Brotli, Gzip of zonder tekstcompressie.
+Het is verrassend dat hoewel al deze inhoudstypen zouden profiteren van compressie, het bereik van de percentages sterk varieert over de verschillende inhoudstypen: slechts 44% gebruikt compressie voor `text/html` tegen 93% voor `application/x-javascript`.
 
-For image-based assets text-based compression is less useful and not widely employed. The data shows that the percent of image responses that employ either Brotli, or Gzip is very low, less than 4%. For more info on non text-based assets, check out the [Media](./media) chapter.
+Voor op afbeeldingen gebaseerde middelen is op tekst gebaseerde compressie minder nuttig en wordt deze niet algemeen toegepast. Uit de gegevens blijkt dat het percentage afbeeldingsreacties dat Brotli of Gzip gebruikt, erg laag is, minder dan 4%. Voor meer informatie over niet op tekst gebaseerde middelen, bekijk het hoofdstuk [Media](./media).
 
 {{ figure_markup(
   image="http-compression-methods-for-image-types.png",
-  caption="Compression methods for image types on desktop.",
-  description="This breaks down what compression methods, if any, are used for all the content types which are images. For all three image types, i.e. jpeg, png and gif, around 96.5% use no compression is used.",
+  caption="Compressiemethoden voor afbeeldingstypen op desktop.",
+  description="Dit geeft aan welke compressiemethoden, indien van toepassing, worden gebruikt voor alle inhoudstypen die afbeeldingen zijn. Voor alle drie de afbeeldingstypen, d.w.z. jpeg, png en gif, wordt ongeveer 96,5% gebruikt, er wordt geen compressie gebruikt.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxUj8-0vKTqPAblIXqekSbiRh1D1lEuA3gVD9w23qwGPtJRE8FbgrURfPAgfFZX2l0t84Wy5ZAGqzR/pubchart?oid=1287110333&format=interactive",
   sheets_gid="449339162",
   sql_file="19_01.type_of_content_encoding.sql"
   )
 }}
 
-## How to use HTTP compression?
+## Hoe gebruik je HTTP-compressie?
 
-To reduce the size of the files that we plan to serve one could first use some minimizers, e.g. [HTMLMinifier](https://github.com/kangax/html-minifier), [CSSNano](https://github.com/ben-eb/cssnano), or [UglifyJS](https://github.com/mishoo/UglifyJS2). However bigger gains are expected from using compression.
+Om de grootte van de bestanden die we willen aanbieden te verkleinen, kan men eerst enkele minimizers gebruiken, bijv. <a hreflang="en" href="https://github.com/kangax/html-minifier">HTMLMinifier</a>, <a hreflang="en" href="https://github.com/ben-eb/cssnano">CSSNano</a> of <a hreflang="en" href="https://github.com/mishoo/UglifyJS2">UglifyJS</a>. Er worden echter grotere voordelen verwacht van het gebruik van compressie.
 
-There are two ways of doing the compression on the server side:
+Er zijn twee manieren om de compressie aan de serverzijde uit te voeren:
 
-  - Precompressed (compress and save assets ahead of time)
-  - Dynamically Compressed (compress assets on-the-fly after a request is made)
+  - Voorgecomprimeerd (middelen van tevoren comprimeren en opslaan)
+  - Dynamisch gecomprimeerd (bestanden on-the-fly comprimeren nadat een verzoek is gedaan)
 
-Since precompression is done beforehand, we can spend more time compressing the assets. For dynamically compressed resources, we need to choose the compression levels such that compression takes less time than the time difference between sending an uncompressed versus a compressed file. This difference is borne out when looking at compression level recommendations for both methods.
+Omdat voorcompressie vooraf wordt gedaan, kunnen we meer tijd besteden aan het comprimeren van de activa. Voor dynamisch gecomprimeerde bronnen moeten we de compressieniveaus zo kiezen dat compressie minder tijd kost dan het tijdsverschil tussen het verzenden van een niet-gecomprimeerd versus een gecomprimeerd bestand. Dit verschil wordt bevestigd als we kijken naar de aanbevelingen voor compressieniveaus voor beide methoden.
 
 <figure>
   <table>
@@ -79,100 +79,100 @@ Since precompression is done beforehand, we can spend more time compressing the 
     </thead>
     <tbody>
       <tr>
-        <td>Precompressed</td>
+        <td>Voorgecomprimeerd</td>
         <td>11</td>
-        <td>9 or Zopfli</td>
+        <td>9 of Zopfli</td>
       </tr>
       <tr>
-        <td>Dynamically compressed</td>
+        <td>Dynamisch gecomprimeerd</td>
         <td>5</td>
         <td>6</td>
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Recommended compression levels to use.") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Aanbevolen compressieniveaus om te gebruiken.") }}</figcaption>
 </figure>
 
-Currently, practically all text compression is done by one of two HTTP content encodings: [Gzip](https://tools.ietf.org/html/rfc1952) and [Brotli](https://github.com/google/brotli). Both are widely supported by browsers: [can I use Brotli](https://caniuse.com/?search=brotli)/[can I use Gzip](https://caniuse.com/?search=gzip)
+Momenteel wordt praktisch alle tekstcompressie uitgevoerd door een van de twee HTTP-inhoudscoderingen: <a hreflang="en" href="https://tools.ietf.org/html/rfc1952">Gzip</a> en <a hreflang="en" href="https://github.com/google/brotli">Brotli</a>. Beide worden breed ondersteund door browsers: <a hreflang="en" href="https://caniuse.com/?search=brotli">kan ik Brotli gebruiken</a>/<a hreflang="en" href="https://caniuse.com/?search=gzip">kan ik Gzip gebruiken</a>
 
-When you want to use Gzip, consider using [Zopfli](https://en.wikipedia.org/wiki/Zopfli), which generates smaller Gzip compatible files. This should be done especially for precompressed resources, since here the greatest [gains are expected](https://cran.r-project.org/web/packages/brotli/vignettes/brotli-2015-09-22.pdf). See this [comparison between Gzip and Zopfli](https://blog.codinghorror.com/zopfli-optimization-literally-free-bandwidth/) that takes into account different compression levels for Gzip.
+Als je Gzip wilt gebruiken, overweeg dan om [Zopfli](https://en.wikipedia.org/wiki/Zopfli) te gebruiken, die kleinere Gzip-compatibele bestanden genereert. Dit moet vooral worden gedaan voor voorgecomprimeerde bronnen, aangezien hier de grootste <a hreflang="en" href="https://cran.r-project.org/web/packages/brotli/vignettes/brotli-2015-09-22.pdf">winst wordt verwacht</a>. Zie deze <a hreflang="en" href="https://blog.codinghorror.com/zopfli-optimization-literally-free-bandwidth/">vergelijking tussen Gzip en Zopfli</a> die rekening houdt met verschillende compressieniveaus voor Gzip.
 
-Many [popular servers](https://en.wikipedia.org/wiki/HTTP_compression#Servers_that_support_HTTP_compression) support dynamically and/or pre-compressed HTTP and many of them support [Brotli](https://en.wikipedia.org/wiki/Brotli).
+Veel [populaire servers](https://en.wikipedia.org/wiki/HTTP_compression#Servers_that_support_HTTP_compression) ondersteunen dynamisch en/of voorgecomprimeerd HTTP en veel van hen ondersteunen [Brotli](https://en.wikipedia.org/wiki/Brotli).
 
-## Current state of HTTP compression
+## Huidige status van HTTP-compressie
 
-Approximately 60% of HTTP responses are delivered with no text-based compression. This may seem like a surprising statistic, but keep in mind that it is based on all HTTP responses in the dataset. Some content, such as images, will not benefit from these compression algorithms and is therefore not often used, as shown in figure 19.2.
+Ongeveer 60% van de HTTP-reacties wordt geleverd zonder tekstgebaseerde compressie. Dit lijkt misschien een verrassende statistiek, maar houd er rekening mee dat deze is gebaseerd op alle HTTP-reacties in de dataset. Sommige inhoud, zoals afbeeldingen, zal niet profiteren van deze compressie-algoritmen en wordt daarom niet vaak gebruikt, zoals weergegeven in figuur 19.2.
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th scope="col">Content Encoding</th>
+        <th scope="col">Inhoud Codering</th>
         <th scope="col">Desktop</th>
-        <th scope="col">Mobile</th>
-        <th scope="col">Combined</th>
+        <th scope="col">Mobiel</th>
+        <th scope="col">Gecombineerd</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><em>No text compression</em></td>
-        <td class="numeric">60.06%</td>
-        <td class="numeric">59.31%</td>
-        <td class="numeric">59.67%</td>
+        <td><em>Geen Tekstcompressie</em></td>
+        <td class="numeric">60,06%</td>
+        <td class="numeric">59,31%</td>
+        <td class="numeric">59,67%</td>
       </tr>
       <tr>
         <td>Gzip</td>
-        <td class="numeric">30.82%</td>
-        <td class="numeric">31.56%</td>
-        <td class="numeric">31.21%</td>
+        <td class="numeric">30,82%</td>
+        <td class="numeric">31,56%</td>
+        <td class="numeric">31,21%</td>
       </tr>
       <tr>
         <td>Brotli</td>
-        <td class="numeric">9.10%</td>
-        <td class="numeric">9.11%</td>
-        <td class="numeric">9.11%</td>
+        <td class="numeric">9,10%</td>
+        <td class="numeric">9,11%</td>
+        <td class="numeric">9,11%</td>
       </tr>
       </tr>
       <tr>
-        <td><em>Other</em></td>
-        <td class="numeric">0.02%</td>
-        <td class="numeric">0.02%</td>
-        <td class="numeric">0.02%</td>
+        <td><em>Andere</em></td>
+        <td class="numeric">0,02%</td>
+        <td class="numeric">0,02%</td>
+        <td class="numeric">0,02%</td>
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Adoption of compression algorithms.", sheets_gid="1365871671", sql_file="19_01.type_of_content_encoding.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Overname van compressie-algoritmen.", sheets_gid="1365871671", sql_file="19_01.type_of_content_encoding.sql") }}</figcaption>
 </figure>
 
-Of the resources that are served compressed, the majority are using either Gzip (77%) or Brotli (23%). The other compression algorithms are used infrequently.
+Van de bronnen die gecomprimeerd worden aangeboden, gebruikt de meerderheid Gzip (77%) of Brotli (23%). De andere compressie-algoritmen worden niet vaak gebruikt.
 
 {{ figure_markup(
   image="compression-algorithms-for-http-responses.png",
-  caption="Compression algorithm for HTTP responses.",
-  description="A bar chart showing the usage rates of different compression algorithms for HTTP responses. 77.39% of HTTP responses that use compression employ the Gzip algorithm, 22.59% use Brotli, and 0.03% use some other method.",
+  caption="Compressie-algoritme voor HTTP-reacties.",
+  description="Een staafdiagram met de gebruikssnelheden van verschillende compressie-algoritmen voor HTTP-reacties. 77,39% van de HTTP-reacties die compressie gebruiken, maakt gebruik van het Gzip-algoritme, 22,59% gebruikt Brotli en 0,03% gebruikt een andere methode.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxUj8-0vKTqPAblIXqekSbiRh1D1lEuA3gVD9w23qwGPtJRE8FbgrURfPAgfFZX2l0t84Wy5ZAGqzR/pubchart?oid=1523202090&format=interactive",
   sheets_gid="1365871671",
   sql_file="19_01.type_of_content_encoding.sql"
   )
 }}
 
-In the graph below, the top 11 content types are displayed with box sizes representing the relative number of responses. The color of each box represents how many of these resources were served compressed, orange indicates a low percentage of compression while blue indicates a high percentage of compression. Most of the media content is shaded orange, which is expected since Gzip and Brotli would have little to no benefit for them.  Most of the text content is shaded blue to indicate that they are being compressed. However, the light blue shading for some content types indicate that they are not compressed as consistently as the others.
+In de onderstaande grafiek worden de top 11 inhoudstypen weergegeven met vakgroottes die het relatieve aantal reacties vertegenwoordigen. De kleur van elk vak geeft aan hoeveel van deze bronnen gecomprimeerd werden bediend, oranje geeft een laag compressiepercentage aan, terwijl blauw een hoog compressiepercentage aangeeft. De meeste media-inhoud is oranje gearceerd, wat wordt verwacht aangezien Gzip en Brotli weinig tot geen voordeel voor hen zouden hebben. De meeste tekstinhoud is blauw gearceerd om aan te geven dat ze worden gecomprimeerd. De lichtblauwe arcering voor sommige inhoudstypen geeft echter aan dat ze niet zo consistent worden gecomprimeerd als de andere.
 
 {{ figure_markup(
   image="compression-algorithms-by-content-type-desktop.png",
-  caption="Compression by type on desktop pages.",
-  description="Treemap chart showing image/jpeg (91,926,198 responses - 3.27% compressed), application/javascript (80,360,676 responses - 84.88% compressed), image/png (66,351,767 responses - 3.7% compressed), text/css (54,104,482 responses - 84.0% compressed), text/html (48,670,006 responses - 44.25% compressed), image/gif (39,390,408 responses - 3.42% compressed), text/javascript (35,491,375 responses - 90.74% compressed), application/x-javascript (22,714,896 responses - 93.14% compressed), application/json (13,453,942 responses - 63.02% compressed), text/plain (4,629,644 responses - 32.89% compressed).",
+  caption="Compressie op type op desktoppagina's.",
+  description="Boomkaart-diagram met afbeelding/jpeg (91.926.198 reacties - 3,27% gecomprimeerd), applicatie/javascript (80.360.676 reacties - 84,88% gecomprimeerd), afbeelding/png (66.351.767 reacties - 3,7% gecomprimeerd), tekst/css (54.104.482 reacties - 84,0% gecomprimeerd), tekst/html (48.670.006 reacties - 44,25% gecomprimeerd), afbeelding/gif (39.390.408 reacties - 3,42% gecomprimeerd), tekst/javascript (35.491.375 reacties - 90,74% gecomprimeerd), applicatie/x-javascript (22.714.896 reacties - 93,14% gecomprimeerd), applicatie/json (13.453.942 reacties - 63,02% gecomprimeerd), tekst/plain (4.629.644 reacties - 32,89% gecomprimeerd).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxUj8-0vKTqPAblIXqekSbiRh1D1lEuA3gVD9w23qwGPtJRE8FbgrURfPAgfFZX2l0t84Wy5ZAGqzR/pubchart?oid=777357707&format=interactive",
   sheets_gid="449339162",
   sql_file="19_01.type_of_content_encoding.sql"
   )
 }}
 
-Figure 19.1 above breaks down the percentage of compression used per content type, in figure 19.6 this percentage is indicated as color. The two figures tell similar stories, non-text based assets are rarely compressed, while text-based assets are often compressed. The rates of compression are also similar for both mobile and desktop.
+In figuur 19.1 hierboven wordt het percentage compressie gebruikt per inhoud-type uitgesplitst, in figuur 19.6 wordt dit percentage aangeduid met kleur. De twee figuren vertellen vergelijkbare verhalen: niet op tekst gebaseerde middelen worden zelden gecomprimeerd, terwijl op tekst gebaseerde middelen vaak worden gecomprimeerd. De compressiesnelheden zijn ook vergelijkbaar voor zowel mobiel als desktop.
 
-## First-party vs third-party compression
+## Eerste-partij versus derden compressie
 
-In the [Third Parties](./third-parties) chapter, we learn about third parties and their impact on performance. Using third parties can also have an impact on compression.
+In het hoofdstuk [Derden](./third-parties) leren we over derden en hun invloed op de prestaties. Het gebruik van derden kan ook gevolgen hebben voor de compressie.
 
 <figure>
   <table>
@@ -180,91 +180,91 @@ In the [Third Parties](./third-parties) chapter, we learn about third parties an
       <tr>
         <td></td>
         <th scope="colgroup" colspan="2">Desktop</th>
-        <th scope="colgroup" colspan="2">Mobile</th>
+        <th scope="colgroup" colspan="2">Mobiel</th>
       </tr>
       <tr>
-        <th scope="col">Content Encoding</th>
-        <th scope="col">First-Party</th>
-        <th scope="col">Third-Party</th>
-        <th scope="col">First-Party</th>
-        <th scope="col">Third-Party</th>
+        <th scope="col">Inhoud Codering</th>
+        <th scope="col">Eerste-Partij</th>
+        <th scope="col">Derden</th>
+        <th scope="col">Eerste-Partij</th>
+        <th scope="col">Derden</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><em>No Text Compression</em></td>
-        <td class="numeric">61.93%</td>
-        <td class="numeric">57.81%</td>
-        <td class="numeric">60.36%</td>
-        <td class="numeric">58.11%</td>
+        <td><em>Geen Tekstcompressie</em></td>
+        <td class="numeric">61,93%</td>
+        <td class="numeric">57,81%</td>
+        <td class="numeric">60,36%</td>
+        <td class="numeric">58,11%</td>
       </tr>
       <tr>
         <td>Gzip</td>
-        <td class="numeric">30.95%</td>
-        <td class="numeric">30.66%</td>
-        <td class="numeric">32.36%</td>
-        <td class="numeric">30.65%</td>
+        <td class="numeric">30,95%</td>
+        <td class="numeric">30,66%</td>
+        <td class="numeric">32,36%</td>
+        <td class="numeric">30,65%</td>
       </tr>
       <tr>
         <td>br</td>
-        <td class="numeric">7.09%</td>
-        <td class="numeric">11.51%</td>
-        <td class="numeric">7.26%</td>
-        <td class="numeric">11.22%</td>
+        <td class="numeric">7,09%</td>
+        <td class="numeric">11,51%</td>
+        <td class="numeric">7,26%</td>
+        <td class="numeric">11,22%</td>
       </tr>
       <tr>
-        <td>deflate</td>
-        <td class="numeric">0.02%</td>
-        <td class="numeric">0.01%</td>
-        <td class="numeric">0.02%</td>
-        <td class="numeric">0.01%</td>
+        <td lang="en">deflate</td>
+        <td class="numeric">0,02%</td>
+        <td class="numeric">0,01%</td>
+        <td class="numeric">0,02%</td>
+        <td class="numeric">0,01%</td>
       </tr>
       <tr>
-        <td><em>Other / Invalid</em></td>
-        <td class="numeric">0.01%</td>
-        <td class="numeric">0.01%</td>
-        <td class="numeric">0.01%</td>
-        <td class="numeric">0.01%</td>
+        <td><em>Anders / ongeldig</em></td>
+        <td class="numeric">0,01%</td>
+        <td class="numeric">0,01%</td>
+        <td class="numeric">0,01%</td>
+        <td class="numeric">0,01%</td>
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="First-party versus third-party compression by device type.", sheets_gid="862864630", sql_file="19_03.party_of_content_encoding.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Eerste-partij versus derden compressie per apparaattype.", sheets_gid="862864630", sql_file="19_03.party_of_content_encoding.sql") }}</figcaption>
 </figure>
 
-When we compare compression techniques between first and third parties, we can see that third-party content tends to be compressed more than first-party content. Additionally, the percentage of Brotli compression is higher for third-party content. This is likely due to the number of resources served from the larger third parties that typically support Brotli, such as Google and Facebook.
+Wanneer we compressietechnieken tussen eerste en derde partijen vergelijken, kunnen we zien dat inhoud van derden de neiging heeft om meer gecomprimeerd te worden dan eerste inhoud. Bovendien is het percentage Brotli-compressie hoger voor inhoud van derden. Dit komt waarschijnlijk door het aantal bronnen dat wordt geleverd door de grotere derde partijen die doorgaans Brotli ondersteunen, zoals Google en Facebook.
 
-Compared with [last year's results](../2019/compression#first-party-vs-third-party-compression), we can see that there was a significant increase in the use of compression, notably Brotli for first parties, almost to the point that the use of compression is around 40% for both first and third party, and for desktop and mobile. However within the responses that do use compression, for first parties, the ratio of Brotli compression is only 18%, while the ratio for third parties is 27%.
+Vergeleken met [de resultaten van vorig jaar](../2019/compression#eerste-partij-versus-derden-compressie), kunnen we zien dat er een aanzienlijke toename was in het gebruik van compressie, met name Brotli voor eerste-partijen, bijna tot het punt dat het gebruik van compressie ongeveer 40% is voor zowel eerste als derde partij, en voor desktop en mobiel. Binnen de reacties die wel compressie gebruiken, is voor eerste partijen de ratio van Brotli-compressie slechts 18%, terwijl de ratio voor derden 27% is.
 
-## How to analyze compression on your sites
+## Hoe u compressie op uw sites kunt analyseren
 
-You can use [Firefox Developer Tools](https://developer.mozilla.org/en-US/docs/Tools) or [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) to quickly figure out what content a website already compresses. To do this, go to the Network tab, right click and activate "Content Encoding" under Response Headers. Hovering over the size of individual files you will see "transferred over network" and "resource size". Aggregated for the entire site one can see size/transferred size for Firefox and  "transferred" and "resources" for Chrome on the bottom left hand side of the Network tab.
+U kunt [Firefox Developer Tools](https://developer.mozilla.org/nl/docs/Tools) of <a hreflang="en" href="https://developers.google.com/web/tools/chrome-devtools">Chrome DevTools</a> gebruiken om snel uit te zoeken welke inhoud een website al comprimeert. Ga hiervoor naar het tabblad Netwerk, klik met de rechtermuisknop en activeer "Content Encoding" onder Response Headers. Als u over de grootte van individuele bestanden zweeft, ziet u "transferred over network" en "resource size". Geaggregeerd voor de hele site kan men de grootte/overgedragen grootte voor Firefox en "transferred" en "resources" voor Chrome linksonder op het tabblad Netwerk zien.
 
 {{ figure_markup(
   image="content-encoding.png",
-  alt="How to check content encoding in DevTools",
-  caption='Use DevTools to check if content encoding is used on your site',
-  description="Image showing how to use DevTools to see if content encoding is used.",
+  alt="Hoe inhoudscodering in DevTools te controleren",
+  caption='Gebruik DevTools om te controleren of er inhoudscodering op uw site wordt gebruikt',
+  description="Afbeelding die laat zien hoe DevTools te gebruiken om te zien of inhoudscodering wordt gebruikt.",
   width=591,
   height=939
   )
 }}
 
-Another tool to better understand compression on your site is Google's [Lighthouse](https://developers.google.com/web/tools/lighthouse) tool, which enables you to run a series of audits against web pages. The [text compression audit](https://web.dev/uses-text-compression/) evaluates whether a site can benefit from additional text-based compression. It does this by attempting to compress resources and evaluate whether an object's size can be reduced by at least 10% and 1,400 bytes. Depending on the score, you may see a compression recommendation in the results, with a list of specific resources that could be compressed.
+Een ander hulpmiddel om compressie op uw site beter te begrijpen, is de Google-hulpmiddel<a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a>, waarmee u een reeks audits op webpagina's kunt uitvoeren. De <a hreflang="en" href="https://web.dev/uses-text-compression/">tekstcompressie-audit</a> evalueert of een site kan profiteren van aanvullende tekstgebaseerde compressie. Het doet dit door te proberen bronnen te comprimeren en te evalueren of de grootte van een object kan worden verminderd met ten minste 10% en 1.400 bytes. Afhankelijk van de score ziet u mogelijk een compressieadvies in de resultaten, met een lijst met specifieke bronnen die kunnen worden gecomprimeerd.
 
-Because the [HTTP Archive runs Lighthouse audits](./methodology#lighthouse) for each mobile page, we can aggregate the scores across all sites to learn how much opportunity there is to compress more content. Overall, 74% of websites are passing this audit, while almost 13% of websites have scored below a 40. This is a 11.5% improvement when compared to [last year's](../2019/compression#identifying-compression-opportunities) 62.5% of passing scores.
+Omdat het [HTTP Archive Lighthouse-audits uitvoert](./methodology#lighthouse) voor elke mobiele pagina, kunnen we de scores van alle sites samenvoegen om te zien hoeveel kans er is om meer inhoud te comprimeren. In totaal slaagt 74% van de websites voor deze audit, terwijl bijna 13% van de websites onder de 40 scoort. Dit is een verbetering van 11,5% in vergelijking met 62,5% van de passerende scores [vorig jaar](../2019/compression#het-identificeren-van-compressiemogelijkheden).
 
 {{ figure_markup(
   image="text-compression-lighthouse-scores.png",
-  caption="Text compression Lighthouse scores.",
-  description='Stacked bar chart breaking down the scores pages receive for the "enable text compression" Lighthouse audit. It shows that 7% of sites score less than 10%, 6% of sites are scoring between 10-39%, 10% of sites scoring between 40-79%, 3% of sites scoring between 80-99%, and 74% of sites have a pass with over 100% of text assets being compressed.',
+  caption="Tekstcompressie Lighthouse scores.",
+  description='Gestapeld staafdiagram waarin de pagina\'s met scores worden opgesplitst die worden ontvangen voor de Lighthouse-audit "tekstcompressie inschakelen". Het laat zien dat 7% van de sites minder dan 10% scoort, 6% van de sites scoort tussen 10-39%, 10% van sites scoort tussen 40-79%, 3% van sites scoort tussen 80-99% en 74% van de sites heeft een pas met meer dan 100% van de tekstitems die worden gecomprimeerd.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxUj8-0vKTqPAblIXqekSbiRh1D1lEuA3gVD9w23qwGPtJRE8FbgrURfPAgfFZX2l0t84Wy5ZAGqzR/pubchart?oid=1438276663&format=interactive",
   sheets_gid="1284073179",
   sql_file="19_04.distribution_of_text_compression_lighthouse.sql"
   )
 }}
 
-## Conclusion
+## Gevolgtrekking
 
-Compared with [last year's Almanac](../2019/compression), there is a clear trend towards using more text compression. The number of responses that don't use any text compression went down a little more than 2%, while at the same time the use of Brotli has increased by almost 2%. The Lighthouse scores have improved significantly.
+In vergelijking met [de Almanac van vorig jaar](../2019/compression) is er een duidelijke trend om meer tekstcompressie te gebruiken. Het aantal reacties dat geen gebruik maakt van tekstcompressie is met iets meer dan 2% gedaald, terwijl het gebruik van Brotli met bijna 2% is toegenomen. De Lighthouse-scores zijn aanzienlijk verbeterd.
 
-Text compression is widely used for the relevant formats, although there is still a significant percentage of HTTP responses that could benefit from additional compression. You can profit from taking a close look at the configuration of your server and set compression methods and levels to your need. A great impact for a more positive user experience could be made by carefully choosing defaults for the most popular HTTP servers.
+Tekstcompressie wordt veel gebruikt voor de relevante indelingen, hoewel er nog steeds een aanzienlijk percentage HTTP-reacties is dat baat zou kunnen hebben bij extra compressie. U kunt profiteren door de configuratie van uw server onder de loep te nemen en de compressiemethoden en -niveaus naar wens in te stellen. Een grote impact voor een positievere gebruikerservaring zou kunnen worden bereikt door zorgvuldig de standaardinstellingen te kiezen voor de meest populaire HTTP-servers.
