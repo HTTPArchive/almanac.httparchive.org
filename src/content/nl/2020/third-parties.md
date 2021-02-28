@@ -1,89 +1,89 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
-title: Third Parties
-description: Third Parties chapter of the 2020 Web Almanac covering data of what third parties are used, what they are used for, performance impacts and privacy impacts.
+title: Derden
+description: Hoofdstuk Derden van de Web Almanac 2020 met informatie over welke derden worden gebruikt, waarvoor ze worden gebruikt, impact op de prestaties en impact op de privacy.
 authors: [simonhearne]
 reviewers: [jzyang, exterkamp]
 analysts: [max-ostapenko, paulcalvano]
 editors: [bazzadp]
-translators: []
-simonhearne_bio: Simon is a web performance architect. He is passionate about helping deliver a faster and more accessible web. You can find him tweeting <a href="https://twitter.com/simonhearne">@SimonHearne</a> and blogging at <a href="https://simonhearne.com">simonhearne.com</a>.
+translators: [noah-vdv]
+simonhearne_bio: Simon is een webprestatie-architect. Hij heeft een passie voor het helpen leveren van een sneller en toegankelijker web. Je kunt hem vinden op twitter<a href="https://twitter.com/simonhearne">@SimonHearne</a> en zijn blog <a hreflang="en" href="https://simonhearne.com">simonhearne.com</a>.
 discuss: 2042
 results: https://docs.google.com/spreadsheets/d/1uW4SMkC45b4EbC4JV1xKAUhwGN2K8j0qFy_jSIYnHhI/
-featured_quote: Third-party content is more prevalent than ever, 94% of pages have at least one third-party resource and the median page has 24. In this chapter we review the prevalence of third-party content, the impact on page weight and browser CPU, then suggest methods to reduce the impact of third-party content on page performance.
-featured_stat_1: 94.1%
-featured_stat_label_1: Pages with third-party content
-featured_stat_2: 21.5%
-featured_stat_label_2: Third-party content delivered as JavaScript
+featured_quote: Inhoud van derden komt vaker dan ooit voor, 94% van de pagina's heeft ten minste één bron van derden en de mediaanpagina heeft 24. In dit hoofdstuk bespreken we de prevalentie van inhoud van derden, de impact op het paginagewicht en de browser-CPU, en stellen vervolgens methoden voor om de impact van inhoud van derden op de paginaprestaties te verminderen.
+featured_stat_1: 94,1%
+featured_stat_label_1: Pagina's met inhoud van derden
+featured_stat_2: 21,5%
+featured_stat_label_2: Inhoud van derden geleverd als JavaScript
 featured_stat_3: 24
-featured_stat_label_3: Third-party requests on the median page
+featured_stat_label_3: Verzoeken van derden op de mediaanpagina
 ---
 
-## Introduction
+## Inleiding
 
-Third-party content is a critical component of most websites today. It powers everything: analytics, live chat, advertising, video sharing and more. Third-party content provides value by taking the heavy lifting off of site owners and allows them to focus on their core competencies.
+Inhoud van derden is tegenwoordig een essentieel onderdeel van de meeste websites. Het ondersteunt alles: analyse, livechat, advertenties, video's delen en meer. Content van derden biedt waarde door het zware werk van site-eigenaren uit handen te nemen en stelt hen in staat zich te concentreren op hun kerncompetenties.
 
-Many think of third-party content as being JavaScript-based, but the data shows that this is only true for 22% of requests. Third-party content comes in all forms, from images (37%) to audio (0.1%).
+Velen beschouwen inhoud van derden als JavaScript-gebaseerd, maar de gegevens laten zien dat dit slechts geldt voor 22% van de verzoeken. Inhoud van derden is er in alle vormen, van afbeeldingen (37%) tot audio (0,1%).
 
-In this chapter we will review the prevalence of third-party content and how this has changed since 2019. We will also review: the impact of third-party content on page weight (a good proxy for overall performance impact), scripts that load early in the page lifecycle, the impact of third-party content on browser CPU time, and how open third-parties are with their performance data.
+In dit hoofdstuk bespreken we de prevalentie van inhoud van derden en hoe dit is veranderd sinds 2019. We zullen ook bekijken: de impact van inhoud van derden op het paginagewicht (een goede proxy voor de algehele impact op de prestaties), scripts die vroeg worden geladen in de paginalevenscyclus, de impact van inhoud van derden op de CPU-tijd van de browser en hoe open derden zijn met hun prestatiegegevens.
 
-## Definitions
+## Definities
 
-Before jumping into the data we should define the terminology used in this chapter.
+Voordat we op de gegevens ingaan, moeten we de terminologie definiëren die in dit hoofdstuk wordt gebruikt.
 
-### "Third Party"
+### "Derde partij"
 
-A third-party resource is an entity outside the primary site-user relationship. It involves the aspects of the site not directly within the control of the site owner but present, with their approval. For example, the Google Analytics script is a common third-party resource.
+Een bron van derden is een entiteit buiten de primaire site-gebruikerrelatie. Het betreft de aspecten van de site die niet rechtstreeks onder de controle van de site-eigenaar vallen, maar aanwezig zijn, met hun goedkeuring. Het Google Analytics-script is bijvoorbeeld een veelgebruikte bron van derden.
 
-We consider third-party resources as those:
+We beschouwen bronnen van derden als:
 
-* Hosted on a _shared_ and _public_ origin
-* Widely used by a variety of sites
-* Uninfluenced by an individual site owner
+* Gehost op een _shared_ en _public_ oorsprong
+* Op grote schaal gebruikt door verschillende sites
+* Niet beïnvloed door een individuele site-eigenaar
 
-To match these goals as closely as possible, the formal definition used throughout this chapter for third-party resources is: a resource that originates from a domain whose resources can be found on at least 50 unique pages in the HTTP Archive dataset.
+Om deze doelen zo goed mogelijk aan te sluiten, is de formele definitie die in dit hoofdstuk wordt gebruikt voor bronnen van derden: een bron die afkomstig is van een domein waarvan de bronnen kunnen worden gevonden op ten minste 50 unieke pagina's in de HTTP Archive-dataset.
 
-Note that using these definitions, third-party content served from a first-party domain is counted as a first-party content. For example: self-hosting Google Fonts or bootstrap.css is counted as _first-party content_.
+Houd er rekening mee dat als u deze definities gebruikt, inhoud van derden die wordt aangeboden vanuit een eerste-partij domein, wordt geteld als een eerste-partij inhoud. Bijvoorbeeld: self-hosting Google Fonts of bootstrap.css wordt geteld als _inhoud van eerste-partijen_.
 
-Similarly, first-party content served from a third-party domain is counted as third-party content. An associated example: First-party images served over a CDN on a third-party domain are considered _third-party content_.
+Evenzo wordt inhoud van derden die wordt aangeboden vanaf een domein van derden, geteld als inhoud van derden. Een bijbehorend voorbeeld: Eerste-partij afbeeldingen die via een CDN op een domein van derden worden weergegeven, worden beschouwd als _inhoud van derden_.
 
-### Provider categories
+### Provider categorieën
 
-This chapter divides third-party providers into different categories. A brief description is included with each of the categories. The mapping of domain to category can be found in the [third-party-web repository](https://github.com/patrickhulce/third-party-web/blob/8afa2d8cadddec8f0db39e7d715c07e85fb0f8ec/data/entities.json5).
+In dit hoofdstuk worden providers van derden in verschillende categorieën onderverdeeld. Bij elk van de categorieën is een korte beschrijving opgenomen. De toewijzing van domein aan categorie kan worden gevonden in de <a lang="en" hreflang="en" href="https://github.com/patrickhulce/third-party-web/blob/8afa2d8cadddec8f0db39e7d715c07e85fb0f8ec/data/entities.json5">third-party-web repository</a>.
 
-* Ad - display and measurement of advertisements
-* Analytics - tracking site visitor behavior
-* CDN - providers that host public shared utilities or private content of their users
-* Content - providers that facilitate publishers and host syndicated content
-* Customer Success - support and customer relationship management functionality
-* Hosting - providers that host the arbitrary content of their users
-* Marketing - sales, lead generation, and email marketing functionality
-* Social - social networks and their affiliated integrations
-* Tag Manager - provider whose sole role is to manage the inclusion of other third parties
-* Utility - code that aids the development objectives of the site owner
-* Video - providers that host the arbitrary video content of their users
-* Other - uncategorized or non-conforming activity
+* Advertentie - weergave en meting van advertenties
+* Analytics - het volgen van het gedrag van sitebezoekers
+* CDN - providers die openbare gedeelde hulpprogramma's of privé-inhoud van hun gebruikers hosten
+* Inhoud - providers die uitgevers faciliteren en gesyndiceerde inhoud hosten
+* Klantsucces - ondersteuning en functionaliteit voor klantrelatiebeheer
+* Hosting - providers die de willekeurige inhoud van hun gebruikers hosten
+* Marketing - verkoop, leadgeneratie en e-mailmarketingfunctionaliteit
+* Sociaal - sociale netwerken en hun aangesloten integraties
+* Tag Manager - provider wiens enige rol is om de opname van andere derde partijen te beheren
+* Utility - code die de ontwikkelingsdoelen van de site-eigenaar ondersteunt
+* Video - providers die de willekeurige video-inhoud van hun gebruikers hosten
+* Overig - niet-gecategoriseerde of niet-conforme activiteit
 
-_Note on CDNs: The CDN category here includes providers that provide resources on public CDN domains (e.g. bootstrapcdn.com, cdnjs.cloudflare.com, etc.) and does not include resources that are simply served over a CDN. i.e. putting Cloudflare in front of a page would not influence its first-party designation according to our criteria._
+_Opmerking over CDN's: de CDN-categorie hier omvat providers die bronnen leveren op openbare CDN-domeinen (bijv. Bootstrapcdn.com, cdnjs.cloudflare.com, enz.) En bevat geen bronnen die eenvoudig via een CDN worden aangeboden. d.w.z. als Cloudflare vóór een pagina wordt geplaatst, heeft dit volgens onze criteria geen invloed op de eerste-partij-aanduiding._
 
-### Caveats
+### Waarschuwingen
 
-* All data presented here is based on a non-interactive, cold load. These values could start to look quite different after user interaction.
-* The pages are tested from servers in the US with no cookies set, so third-parties requested after opt-in are not included. This will especially affect pages hosted and predominantly served to countries in scope for the [General Data Protection Regulation](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation), or other similar legislation.
-* Only the home pages are tested. Other pages may having difference third-party requirements.
-* Roughly 84% of all third-party domains by request volume have been identified and categorized. The remaining 16% fall into the "Other" category.
+* Alle hier gepresenteerde gegevens zijn gebaseerd op een niet-interactieve, koude belasting. Deze waarden kunnen er na gebruikersinteractie behoorlijk anders uitzien.
+* De pagina's worden getest vanaf servers in de VS zonder dat er cookies zijn ingesteld, dus derde partijen die worden aangevraagd na de opt-in zijn niet inbegrepen. Dit heeft met name gevolgen voor pagina's die worden gehost en voornamelijk worden aangeboden aan landen die onder de [Algemene Verordening Gegevensbescherming](https://nl.wikipedia.org/wiki/Algemene_verordening_gegevensbescherming) of andere soortgelijke wetgeving vallen.
+* Alleen de homepagina's worden getest. Andere pagina's kunnen andere vereisten van derden hebben.
+* Ongeveer 84% van alle domeinen van derden op verzoekvolume zijn geïdentificeerd en gecategoriseerd. De overige 16% valt in de categorie "Overig".
 
-Learn more about our [methodology](./methodology).
+Lees meer over onze [methodologie](./methodology).
 
-## Prevalence
+## Prevalentie
 
-A good starting point for this analysis is to confirm the statement that third-party content is a critical component of most websites today. How many websites use third-party content, and how many third-parties do they use?
+Een goed uitgangspunt voor deze analyse is om de stelling te bevestigen dat inhoud van derden tegenwoordig een cruciaal onderdeel van de meeste websites is. Hoeveel websites gebruiken inhoud van derden en hoeveel derden gebruiken ze?
 
 {{ figure_markup(
   image="pages-with-thirdparties.png",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=1149547895&format=interactive",
-  caption="Pages with third-party content",
-  description="Third party content prevalence has grown slightly since 2019. In 2019 93.6% of mobile pages had third-party content, in 2020 this was 94.1%. In 2019 93.6% of desktop pages had third-party content, in 2020 this was 93.9%.",
+  caption="Pagina's met inhoud van derden",
+  description="De prevalentie van inhoud van derden is licht gestegen sinds 2019. In 2019 had 93,6% van de mobiele pagina's inhoud van derden, in 2020 was dit 94,1%. In 2019 had 93,6% van de desktoppagina's inhoud van derden, in 2020 was dit 93,9%.",
   width=600,
   height=371,
   sheets_gid="1477664642",
@@ -91,15 +91,15 @@ A good starting point for this analysis is to confirm the statement that third-p
   )
 }}
 
-These prevalence numbers show a slight increase on [the 2019 results](../2019/third-parties): 93.87% of pages in the desktop crawl had at least one third-party request, the number was slightly higher at 94.10% of pages in the mobile crawl. A brief look into the small number of pages with no third-party content revealed that many were adult sites, some were government domains and some were basic landing / holding pages with little content. It is fair to say that the vast majority of pages have at least one third-party.
+Deze prevalentiecijfers laten een lichte stijging zien ten opzichte van [de resultaten van 2019](../2019/third-parties): 93,87% van de pagina's in de desktopcrawl had ten minste één verzoek van een derde partij, het aantal was iets hoger met 94,10% van pagina's in de mobiele crawl. Een korte blik op het kleine aantal pagina's zonder inhoud van derden onthulde dat veel sites voor volwassenen waren, sommige regeringsdomeinen en sommige eenvoudige bestemmings-/bewaarpagina's met weinig inhoud. Het is eerlijk om te zeggen dat de overgrote meerderheid van de pagina's ten minste één derde partij heeft.
 
-The chart below shows the distribution of pages by third-party count. The 10th percentile page has two third-party requests while the median page has 24. Over 10% of pages have more than 100 third-party requests.
+De onderstaande grafiek toont de verdeling van pagina's op basis van het aantal derden. De 10e percentielpagina heeft twee verzoeken van derden, terwijl de mediaanpagina 24 heeft. Meer dan 10% van de pagina's heeft meer dan 100 verzoeken van derden.
 
 {{ figure_markup(
   image="distribution-of-request-count.png",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=1394563639&format=interactive",
-  caption="Distribution of third-party requests.",
-  description="Percentile chart of pages by third-party requests. The median mobile website has 24 third-party requests (23 on desktop) and it increases exponentially from 2 requests for both at the 10th percentile to 104 requests on mobile and 106 requests on desktop at the 90th percentile.",
+  caption="Verspreiding van verzoeken van derden.",
+  description="Percentieldiagram van pagina's op verzoek van derden. De gemiddelde mobiele website heeft 24 verzoeken van derden (23 op desktop) en stijgt exponentieel van 2 verzoeken voor beide op het 10e percentiel tot 104 verzoeken op mobiel en 106 verzoeken op desktop op het 90e percentiel.",
   width=600,
   height=371,
   sheets_gid="181718921",
@@ -107,15 +107,15 @@ The chart below shows the distribution of pages by third-party count. The 10th p
   )
 }}
 
-### Content-types
+### Inhoudstypen
 
-We can break down third-party requests by their content type. This is the reported [content-type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type) of the resources delivered from third-party domains.
+We kunnen verzoeken van derden opsplitsen op basis van hun inhoudstype. Dit is het gerapporteerde [inhoudstype](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type) van de bronnen die worden geleverd vanuit domeinen van derden.
 
 {{ figure_markup(
   image="thirdparty-by-content-types.png",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=258155228&format=interactive",
-  caption="Third-party content by type",
-  description="Images and JavaScript account for the majority (60%) of third-party content: 37.1% of third-party content is images, 21.9% is JavaScript, 16.1% is unknown or other, 15.4% is HTML",
+  caption="Inhoud van derden op type",
+  description="Afbeeldingen en JavaScript zijn goed voor de meerderheid (60%) van de inhoud van derden: 37,1% van de inhoud van derden zijn afbeeldingen, 21,9% is JavaScript, 16,1% is onbekend of anders, 15,4% is HTML",
   width=600,
   height=371,
   sheets_gid="53929561",
@@ -123,19 +123,19 @@ We can break down third-party requests by their content type. This is the report
   )
 }}
 
-The results show that the major contributors of third-party content are images (38%) and JavaScript (22%), with the next largest contributor being unknown (16%). Unknown is a subset of non-categorized groups such as text/plain as well as responses without a content-type header.
+De resultaten tonen aan dat de belangrijkste bijdragers aan inhoud van derden afbeeldingen (38%) en JavaScript (22%) zijn, waarbij de op een na grootste bijdrage onbekend is (16%). Onbekend is een subset van niet-gecategoriseerde groepen, zoals tekst/plain en reacties zonder een inhoudstype koptekst.
 
-This shows a shift when [compared to 2019](https://almanac.httparchive.org/en/2019/third-parties#resource-types): relative image content has increased from 33% to 38%, whilst JavaScript content has decreased significantly from 32% to 22%. This reduction is likely due to increased adherence to cookie and data protection regulations, reducing third-party execution until after explicit user opt-in which is out of scope for HTTP Archive test runs.
+Dit toont een verschuiving wanneer [vergeleken met 2019](https://almanac.httparchive.org/nl/2019/third-parties#resource-types): relatieve afbeeldingsinhoud is gestegen van 33% naar 38%, terwijl JavaScript-inhoud aanzienlijk afgenomen is van 32% naar 22%. Deze vermindering is waarschijnlijk het gevolg van een betere naleving van de cookie- en gegevensbeschermingsregels, waardoor de uitvoering door derden wordt verminderd tot na de expliciete aanmelding van de gebruiker, wat buiten het bereik valt van HTTP Archive-testruns.
 
-### Third-party domains
+### Domeinen van derden
 
-When we dig further into domains serving third-party content we see that Google Fonts is by far the most common. It is present on more than 7.5% of mobile pages tested. While fonts only account for around 3% of third-party content, almost all of these are delivered by the Google Fonts service. If your page uses Google Fonts, make sure to follow [best practices](https://csswizardry.com/2020/05/the-fastest-google-fonts/) to ensure the best possible user experience.
+Wanneer we dieper ingaan op domeinen die inhoud van derden aanbieden, zien we dat Google Fonts verreweg de meest voorkomende is. Het is aanwezig op meer dan 7,5% van de geteste mobiele pagina's. Hoewel lettertypen slechts ongeveer 3% van de inhoud van derden uitmaken, worden deze bijna allemaal geleverd door de Google Fonts-service. Als uw pagina Google Fonts gebruikt, volg dan de <a hreflang="en" href="https://csswizardry.com/2020/05/the-fastest-google-fonts/">best practices</a> om de best mogelijke gebruikerservaring te garanderen.
 
 {{ figure_markup(
   image="top-domains-by-prevalence.png",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=2082639138&format=interactive",
-  caption="Top domains by prevalence.",
-  description="Bar chart showing the top domains by prevalencThe most prevalent domains are font foundries, advertising, social media and JavaScript CDNs",
+  caption="Topdomeinen op basis van prevalentie.",
+  description="Staafdiagram met de topdomeinen op basis van prevalentie. De meest voorkomende domeinen zijn lettertypegieterijen, advertenties, sociale media en JavaScript-CDN's",
   width=600,
   height=371,
   sheets_gid="583962013",
@@ -143,24 +143,24 @@ When we dig further into domains serving third-party content we see that Google 
   )
 }}
 
-The next four most common domains are all advertising providers. They may not be requested directly by the page but through a complex chain of redirects initiated by another advertising network.
+De volgende vier meest voorkomende domeinen zijn allemaal advertentieproviders. Ze worden mogelijk niet rechtstreeks door de pagina aangevraagd, maar via een complexe reeks omleidingen die worden geïnitieerd door een ander advertentienetwerk.
 
-The sixth most common domain is `digicert.com`. Calls to `digicert.com` are generally OCSP revocation checks due to TLS certificates not having OCSP stapling enabled, or the use of Extended Validation (EV) certificates which prevent pinning of intermediate certificates. This number is exaggerated in HTTP Archive due to all page loads being effectively first-time visitors - OCSP responses are generally cached and valid for seven days in real-world browsing. See [this blog post](https://simonhearne.com/2020/drop-ev-certs/) to read more on this issue.
+Het zesde meest voorkomende domein is `digicert.com`. Aanroepen naar `digicert.com` zijn over het algemeen OCSP-intrekkingscontroles omdat TLS-certificaten OCSP-nieten niet hebben ingeschakeld, of het gebruik van Extended Validation (EV)-certificaten die pinnen van tussenliggende certificaten voorkomen. Dit aantal is overdreven in HTTP Archive omdat alle paginaladingen in feite de eerste keer zijn - OCSP-reacties worden over het algemeen in de cache opgeslagen en zijn zeven dagen geldig tijdens het browsen in de echte wereld. Zie <a hreflang="en" href="https://simonhearne.com/2020/drop-ev-certs/">deze blogpost</a> voor meer informatie over dit probleem.
 
-Further down the list at 2.43% is `ajax.googleapis.com`, Google's [Hosted Libraries project](https://developers.google.com/speed/libraries). Whilst loading a library such as jQuery from a hosted service is easy, the additional cost of a connection to a third-party domain may have a negative impact on performance. It is best to host all critical JavaScript and CSS on the root domain, if possible. There is also now no cache benefit to using a shared CDN resource, as all major browsers [partition caches by page](https://developers.google.com/web/updates/2020/10/http-cache-partitioning). Harry Roberts has written a detailed blog post on [how to host your own static assets](https://csswizardry.com/2019/05/self-host-your-static-assets/).
+Verderop in de lijst met 2,43% staat `ajax.googleapis.com`, het <a hreflang="en" href="https://developers.google.com/speed/libraries">Hosted Libraries-project</a> van Google. Hoewel het laden van een bibliotheek zoals jQuery van een gehoste service eenvoudig is, kunnen de extra kosten van een verbinding met een domein van een derde partij een negatieve invloed hebben op de prestaties. Het is het beste om, indien mogelijk, alle kritieke JavaScript en CSS op het hoofddomein te hosten. Er is nu ook geen cachevoordeel bij het gebruik van een gedeelde CDN-bron, aangezien alle grote browsers <a hreflang="en" href="https://developers.google.com/web/updates/2020/10/http-cache-partitioning">caches per pagina partitioneren</a>. Harry Roberts heeft een gedetailleerde blogpost geschreven over <a hreflang="en" href="https://csswizardry.com/2019/05/self-host-your-static-assets/">hoe u uw eigen statische activa kunt hosten</a>.
 
-## Page weight impact
+## Impact van paginagewicht
 
-Third-parties can have a significant impact on the weight of a page, measured as the number of bytes downloaded by the browser. The [Page Weight chapter](./page-weight) explores this in more detail, here we focus on the third-parties that have the greatest impact on page weight.
-### Heaviest third-parties
+Derden kunnen een aanzienlijke invloed hebben op het gewicht van een pagina, gemeten als het aantal bytes dat door de browser is gedownload. Het [Paginagewicht hoofdstuk](./page-weight) gaat hier meer in detail op in, hier richten we ons op de derde partijen die de grootste impact hebben op het paginagewicht.
+### Zwaarste derde partijen
 
-We can extract the largest third-parties by the median page weight impact, i.e. how many bytes they bring to the pages they are on. The results are interesting as this does not take into account how popular the third-parties are, just their impact in bytes.
+We kunnen de grootste derde partijen extraheren op basis van de gemiddelde impact op het paginagewicht, d.w.z. hoeveel bytes ze meenemen naar de pagina's waarop ze zich bevinden. De resultaten zijn interessant omdat hierbij geen rekening wordt gehouden met hoe populair de derde partijen zijn, maar alleen met hun impact in bytes.
 
 {{ figure_markup(
   image="page-size-by-host.png",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=429818290&format=interactive",
-  caption="Third-party size contribution by host.",
-  description="Chart of third-party hosts and impact on page size, ranging from trailercentral.com at 2.7 MB to contenservice.mc.reyrey.net at 510 KB. Media providers result in the largest contribution to page size. ",
+  caption="Bijdrage van derden door host.",
+  description="Grafiek van hosts van derden en impact op paginaformaat, variërend van trailercentral.com met 2,7MB tot contenservice.mc.reyrey.net met 510KB. Mediaproviders leveren de grootste bijdrage aan paginagrootte.",
   width=600,
   height=371,
   sheets_gid="1423970958",
@@ -168,19 +168,19 @@ We can extract the largest third-parties by the median page weight impact, i.e. 
   )
 }}
 
-The top contributors of page weight are generally media content providers, such as image and video hosting. Vidazoo, for example, results in a median page weight impact of about 2.5MB. The `inventory.vidazoo.com` domain provides video hosting, so a median page with this third-party has an _extra_ 2.5MB of media content!
+De grootste bijdragers aan paginagewicht zijn over het algemeen aanbieders van media-inhoud, zoals het hosten van afbeeldingen en video's. Vidazoo resulteert bijvoorbeeld in een mediaan impact van ongeveer 2,5MB. Het domein `inventory.vidazoo.com` biedt videohosting, dus een mediaanpagina bij deze derde partij heeft _extra_ 2,5MB aan media-inhoud!
 
-A simple method to reduce this impact is to defer video loading until a user interacts with the page, so that the impact is reduced for those visitors that never consume the video.
+Een eenvoudige methode om deze impact te verminderen, is door het laden van video uit te stellen totdat een gebruiker interactie heeft met de pagina, zodat de impact wordt verminderd voor die bezoekers die de video nooit consumeren.
 
-We can take this analysis further to produce a distribution of total page size (in bytes downloaded for all resources) by third-party category presence. This chart shows that the presence of most third-party categories does not have a noticeable impact on total page size: this would be visible as a divergence in the plots. A notable exception to this is Advertising (in black) which shows a very small relationship with page size, indicating that advertisement requests do not add significant weight to pages. This is likely because many of these requests are small redirects, the [median is only 420 bytes](#large-redirects). We see similar low impact for tag managers, and analytics.
+We kunnen deze analyse verder uitvoeren om een verdeling van de totale paginagrootte (in bytes gedownload voor alle bronnen) te produceren op basis van aanwezigheid in categorieën van derden. Deze grafiek laat zien dat de aanwezigheid van de meeste categorieën van derden geen merkbare impact heeft op de totale paginagrootte: dit zou zichtbaar zijn als een divergentie in de plots. Een opmerkelijke uitzondering hierop is Advertising (in het zwart), dat een zeer kleine relatie vertoont met de paginagrootte, wat aangeeft dat advertentieverzoeken geen significant gewicht aan pagina's toevoegen. Dit komt waarschijnlijk omdat veel van deze verzoeken kleine omleidingen zijn, de [mediaan is slechts 420 bytes](#grote-omleidingen). We zien een vergelijkbare lage impact voor tagmanagers en analyses.
 
-On the other end of the spectrum, the categories CDN, Content and Hosting all represent strong relationship with total page weight. This indicates that sites using hosted services are generally larger in page weight.
+Aan de andere kant van het spectrum vertegenwoordigen de categorieën CDN, Inhoud en Hosting allemaal een sterke relatie met het totale paginagewicht. Dit geeft aan dat sites die gehoste services gebruiken over het algemeen een groter paginagewicht hebben.
 
 {{ figure_markup(
   image="page-size-by-category.png",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=1508418357&format=interactive",
-  caption="Page size distributions by third-party category.",
-  description="Distribution of third-party categories and page size showing relationships between presence of third-parties and likelihood for pages to be large. CDN & Hosting show a strong correlation, Analytics shows a weak correlation.",
+  caption="Verdelingen van paginaformaat per categorie van derden.",
+  description="Verdeling van categorieën van derden en paginagrootte die de relaties laat zien tussen de aanwezigheid van derden en de waarschijnlijkheid dat pagina's groot zijn. CDN & Hosting vertonen een sterke correlatie, Analytics laat een zwakke correlatie zien.",
   width=600,
   height=371,
   sheets_gid="727028027",
@@ -188,15 +188,15 @@ On the other end of the spectrum, the categories CDN, Content and Hosting all re
   )
 }}
 
-### Cacheability
+### <span lang="en">Cacheability</span> {cacheability}
 
-Some third-party responses should always be cached. Media such as images and videos served by a third-party, or JavaScript libraries are good candidates. On the other hand, tracking pixels and analytics beacons should never be cached. The results show that overall two-thirds of third-party requests are served with a valid caching header such as `cache-control`.
+Sommige reacties van derden moeten altijd in de cache worden opgeslagen. Media zoals afbeeldingen en video's die door een derde partij worden aangeboden, of JavaScript-bibliotheken zijn goede kandidaten. Aan de andere kant mogen trackingpixels en analysebakens nooit in de cache worden opgeslagen. De resultaten laten zien dat in totaal tweederde van de verzoeken van derden wordt bediend met een geldige caching-header, zoals `cache-control`.
 
 {{ figure_markup(
   image="requests-cached-by-content-type.png",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=299325299&format=interactive",
-  caption="Third-party requests cached by content type.",
-  description="Column chart showing percentage of cacheable requests by content type. Fonts are the highest at 96%, XML is the lowest at 18%",
+  caption="Verzoeken van derden in het cachegeheugen op inhoudstype.",
+  description="Kolomdiagram met het percentage cacheverzoeken per inhoudstype. Lettertypen zijn het hoogst met 96%, XML is het laagst met 18%",
   width=600,
   height=371,
   sheets_gid="1363055589",
@@ -204,17 +204,17 @@ Some third-party responses should always be cached. Media such as images and vid
   )
 }}
 
-Breaking down by response type confirms our assumptions: xml and text responses (as commonly delivered by tracking pixels / analytics beacons) are less likely to be cacheable. Surprisingly, less than two-thirds of images served by third-parties are cacheable. On further inspection, this is due to the use of tracking 'pixels' which are returned as non-cacheable zero-size gif image responses.
+Een opsplitsing naar reactietype bevestigt onze veronderstellingen: xml- en tekstreacties (zoals gewoonlijk geleverd door trackingpixels/analysebakens) zijn minder waarschijnlijk cachebaar. Verrassend genoeg is minder dan tweederde van de afbeeldingen die door derden worden aangeboden cachebaar is. Bij nadere inspectie is dit te wijten aan het gebruik van tracking 'pixels' die worden geretourneerd als niet-cachebare GIF-afbeeldingsreacties met nulgrootte.
 
-### Large redirects
+### Grote omleidingen
 
-Many third-parties result in redirect responses, i.e. HTTP status codes 3XX. These occur due to the use of vanity domains or to share information across domains through request headers. This is especially true for advertising networks. Large redirect responses are an indication of a misconfiguration, as the response should be around 340B for a valid `Location` response header plus overheads. The chart below shows the distribution of body size for all third-party redirects in the HTTP Archive.
+Veel derde partijen resulteren in omleidingsreacties, d.w.z. HTTP-statuscodes 3XX. Deze treden op vanwege het gebruik van ijdel-domeinen of om informatie tussen domeinen te delen via aanvraagheaders. Dit geldt met name voor advertentienetwerken. Grote omleidingsreacties zijn een indicatie van een verkeerde configuratie, aangezien de respons rond de 340B zou moeten zijn voor een geldige `Location` antwoordheader plus overhead. De onderstaande grafiek toont de verdeling van de lichaamsgrootte voor alle omleidingen van derden in het HTTP Archive.
 
 {{ figure_markup(
   image="redirects-body-size.png",
-  caption="Distribution of third-party 3XX body size",
+  caption="Verdeling van 3XX-lichaamsgrootte van derden",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=1145900631&format=interactive",
-  description="Distribution of redirect body sizes showing 90% are under 420 B, 1% are over 30 kB and 0.1% are over 100 kB.",
+  description="Verdeling van omleidingslichaamgroottes waaruit blijkt dat 90% kleiner is dan 420B, 1% groter is dan 30kB en 0,1% groter is dan 100kB.",
   width=600,
   height=371,
   sheets_gid="1056232541",
@@ -222,18 +222,18 @@ Many third-parties result in redirect responses, i.e. HTTP status codes 3XX. The
   )
 }}
 
-The results show that the majority of 3XX responses are small: the 90th percentile is 420 bytes, i.e. 90% of 3XX responses are 420 bytes or smaller. The 95th percentile is 6.5 kB, the 99th is 36 kB and the 99.9th is over 100 kB! Whilst redirects may seem innocuous, 100kB is an unreasonable amount of bytes over the wire for a response that simply leads to another response.
+De resultaten laten zien dat de meerderheid van de 3XX-reacties klein is: het 90e percentiel is 420 bytes, d.w.z. 90% van de 3XX-reacties is 420 bytes of kleiner. Het 95e percentiel is 6,5kB, het 99e is 36kB en het 99.9e is meer dan 100kB! Hoewel omleidingen onschadelijk lijken, is 100kB een onredelijk aantal bytes over de draad voor een reactie die eenvoudigweg tot een andere reactie leidt.
 
-## Early-loaders
+## Vroege laders
 
-Scripts that load late in the page will have an impact on total page load duration and page weight but might have no impact on the user experience. Scripts that load early in the page, however, will potentially cannibalize bandwidth for critical first-party resources and are more likely to interfere with the page load. This can have a detrimental impact on performance metrics and user experience.
+Scripts die laat op de pagina worden geladen, hebben invloed op de totale laadduur van de pagina en het paginagewicht, maar hebben mogelijk geen invloed op de gebruikerservaring. Scripts die vroeg op de pagina worden geladen, zullen echter mogelijk bandbreedte kannibaliseren voor kritieke eerste-partij bronnen en zullen het laden van de pagina waarschijnlijk verstoren. Dit kan een nadelige invloed hebben op prestatiestatistieken en gebruikerservaring.
 
-The chart below shows the percentage of requests that load early, by device type and third-party category. The three stand-out categories are CDN, Hosting and Tag Managers: all of which tend to deliver JavaScript that is requested in the head of a document. Advertising resources are least likely to load early in the page, due to advertisement network requests generally being asynchronous scripts run after page load.
+De onderstaande grafiek toont het percentage verzoeken dat vroeg wordt geladen, per apparaattype en categorie van derden. De drie opvallende categorieën zijn CDN, Hosting en Tag Managers: die allemaal de neiging hebben om JavaScript te leveren dat in de kop van een document wordt gevraagd. Advertentiebronnen worden het minst vroeg op de pagina geladen, omdat advertentienetwerkverzoeken over het algemeen asynchrone scripts zijn die worden uitgevoerd nadat de pagina is geladen.
 
 {{ figure_markup(
   image="requests-before-dom-by-category.png",
-  caption="Early third-party requests by category.",
-  description="Column chart showing percentage of requests loaded before DOM Content Loaded. Public CDN resources are most likely at 50% on desktop, whilst advertising resources are least likely at 7%",
+  caption="Vroege verzoeken van derden per categorie.",
+  description="Kolomdiagram met het percentage verzoeken dat is geladen voordat DOM-inhoud is geladen. Openbare CDN-bronnen zijn hoogstwaarschijnlijk 50% op desktop, terwijl advertentiebronnen het minst waarschijnlijk zijn 7%",
   width=600,
   height=371,
   sheets_gid="2118409936",
@@ -241,17 +241,17 @@ The chart below shows the percentage of requests that load early, by device type
   )
 }}
 
-## CPU impact
+## CPU-impact
 
-Not all bytes on the web are equal: a 500 KB image may be far easier for a browser to process than a 500 KB compressed JavaScript bundle, which inflates to 1.8MB of client-side code! The impact of third-party scripts on CPU time can be far more critical than the additional bytes or time spent on the network.
+Niet alle bytes op het web zijn gelijk: een afbeelding van 500KB is misschien veel gemakkelijker voor een browser om te verwerken dan een gecomprimeerde JavaScript-bundel van 500KB, die oploopt tot 1,8MB aan client-side code! De impact van scripts van derden op de CPU-tijd kan veel kritischer zijn dan de extra bytes of tijd die op het netwerk wordt doorgebracht.
 
-We can correlate the presence of third-party categories with the total CPU time on the page, this allows us to estimate the impact of each third-party category on CPU time.
+We kunnen de aanwezigheid van categorieën van derden correleren met de totale CPU-tijd op de pagina, dit stelt ons in staat om de impact van elke categorie van derden op de CPU-tijd te schatten.
 
 {{ figure_markup(
   image="cpu-time-by-category.png",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=225817673&format=interactive",
-  caption="Distribution of CPU time by categories.",
-  description="Distribution of CPU load time by presence of third-party categories. Most categories follow the same pattern, with advertising the outlier showing higher CPU load time, especially at lower percentiles.",
+  caption="Verdeling van CPU-tijd per categorie.",
+  description="Verdeling van de CPU-laadtijd door de aanwezigheid van categorieën van derden. De meeste categorieën volgen hetzelfde patroon, waarbij reclame voor de uitbijter een hogere CPU-laadtijd laat zien, vooral bij lagere percentielen.",
   width=600,
   height=371,
   sheets_gid="727028027",
@@ -259,17 +259,17 @@ We can correlate the presence of third-party categories with the total CPU time 
   )
 }}
 
-This chart shows the probability density function of total page CPU time by the third-party categories present on each page. The median page is at 50 on the percentile axis. The data shows that all third-party categories follow a similar pattern, with the median page between 400 - 1,000 ms CPU time. The outlier here is advertising (in black): if a page has advertising tags it is much more likely to have high CPU usage during page load. The median page with advertising tags has a CPU load time of 1,500 ms, compared to 500 ms for pages without advertising. The high CPU load time at the lower percentiles indicates that even the fastest sites are impacted significantly by the presence of third-parties categorized as advertising.
+Deze grafiek toont de kansdichtheidsfunctie van de totale CPU-tijd van de pagina door de categorieën van derden die op elke pagina aanwezig zijn. De mediaanpagina staat op 50 op de percentielas. De gegevens laten zien dat alle categorieën van derden een vergelijkbaar patroon volgen, met een gemiddelde pagina tussen de 400 - 1.000 ms CPU-tijd. De uitbijter hier is adverteren (in het zwart): als een pagina reclametags heeft, is de kans veel groter dat het CPU-gebruik tijdens het laden van de pagina wordt verhoogd. De mediaanpagina met reclametags heeft een CPU-laadtijd van 1.500 ms, vergeleken met 500 ms voor pagina's zonder reclame. De hoge CPU-laadtijd bij de lagere percentielen geeft aan dat zelfs de snelste sites aanzienlijk worden beïnvloed door de aanwezigheid van derden die als advertenties worden gecategoriseerd.
 
-## Timing-Allow-Origin prevalence
+## Prevalentie van Timing-Allow-Origin
 
-The [Resource Timing API](https://developer.mozilla.org/en-US/docs/Web/API/Resource_Timing_API/Using_the_Resource_Timing_API) allows website owners to measure the performance of individual resources via JavaScript. This data is, by default, extremely limited for cross-origin resources like third-party content. There are legitimate reasons for not providing this timing information such as responses that vary by authentication state: e.g. a website owner may be able to determine if a visitor is logged into a Facebook by measuring the response size of a widget request. For most third-party content, though, setting the `timing-allow-origin` header is an act of transparency to allow the hosting website to track performance and size of their third-party content.
+Met de [Resource Timing API](https://developer.mozilla.org/en-US/docs/Web/API/Resource_Timing_API/Using_the_Resource_Timing_API) kunnen website-eigenaren de prestaties van individuele bronnen meten via JavaScript. Deze gegevens zijn standaard extreem beperkt voor bronnen van verschillende oorsprong, zoals inhoud van derden. Er zijn legitieme redenen om deze timinginformatie niet te verstrekken, zoals reacties die verschillen per authenticatiestatus: bijv. een website-eigenaar kan mogelijk bepalen of een bezoeker is ingelogd op Facebook door de responsgrootte van een widgetverzoek te meten. Voor de meeste inhoud van derden is het instellen van de `timing-allow-origin`-header echter een daad van transparantie om de hostingwebsite in staat te stellen de prestaties en de grootte van hun inhoud van derden te volgen.
 
 {{ figure_markup(
   image="requests-with-tao.png",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=1886505312&format=interactive",
-  caption="Requests with Timing-Allow-Origin header.",
-  description="Less than 35% of third-party responses are served with a timing-allow-origin header",
+  caption="Verzoeken met de Timing-Allow-Origin koptekst.",
+  description="Minder dan 35% van de reacties van derden wordt weergegeven met een timing-allow-origin-header",
   width=600,
   height=371,
   sheets_gid="1947152286",
@@ -277,22 +277,22 @@ The [Resource Timing API](https://developer.mozilla.org/en-US/docs/Web/API/Resou
   )
 }}
 
-The results in HTTP Archive show that only one third of third-party responses expose detailed size and timing information to the hosting website.
+De resultaten in HTTP Archive laten zien dat slechts een derde van de reacties van derden gedetailleerde informatie over grootte en timing aan de hostingwebsite blootlegt.
 
-## Repercussions
+## Gevolgen
 
-We know that adding arbitrary JavaScript to our sites introduces risks to both site speed and security. Site owners must be diligent to balance the value of the third-party scripts they include with the speed penalty they may bring, and use modern features such as [subresource integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) and [content security policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) to maintain a strong security posture. See the [Security chapter](./security) for more detail on these and other browser security features.
+We weten dat het toevoegen van willekeurig JavaScript aan onze sites risico's met zich meebrengt voor zowel de sitesnelheid als de veiligheid. Site-eigenaren moeten ijverig zijn om de waarde van de scripts van derden die ze bevatten in evenwicht te brengen met de snelheidsbeperking die ze met zich meebrengen, en moderne functies gebruiken, zoals [integriteit van subbronnen](https://developer.mozilla.org/nl/docs/Web/Security/Subresource_Integrity) en [content security policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) om een sterke beveiligingshouding te behouden. Zie het [hoofdstuk Beveiliging](./security) voor meer informatie over deze en andere browserbeveiligingsfuncties.
 
-## Conclusion
+## Gevolgtrekking
 
-One of the surprises in the data from 2020 is the drop in relative JavaScript requests: from 32% of the total to just 22%. It is unlikely that the actual amount of JavaScript on the web has decreased this significantly, it is more likely that websites are implementing consent management - so that most dynamic third-party content is only loaded on user opt-in. This opt-in process could be managed by a Consent Management Platform (CMP) in some cases. The third-party database does not yet have a category for CMPs, but this would be a good analysis for the 2021 Web Almanac and is covered through a different methodology in [the Privacy chapter](./privacy#consent-management-platforms).
+Een van de verrassingen in de data uit 2020 is de daling van de relatieve JavaScript-verzoeken: van 32% van het totaal naar slechts 22%. Het is onwaarschijnlijk dat de werkelijke hoeveelheid JavaScript op internet dit aanzienlijk heeft afgenomen, het is waarschijnlijker dat websites toestemmingsbeheer implementeren, zodat de meeste dynamische inhoud van derden alleen wordt geladen wanneer de gebruiker zich aanmeldt. Dit aanmeldingsproces kan in sommige gevallen worden beheerd door een Platform voor Toestemmingsbeheer (CMP). De database van derden heeft nog geen categorie voor CMP's, maar dit zou een goede analyse zijn voor de 2021 Web Almanac en wordt behandeld via een andere methodologie in [het hoofdstuk Privacy](./privacy#platforms-voor-toestemmingsbeheer) .
 
-Advertising requests appear to have an increased impact on CPU time. The median page with advertising scripts consume three times as much CPU as those without. Interestingly though, advertising scripts are not correlated with increased page weight. This makes it even more important to evaluate the total impact of third-party scripts on the browser, not just request count and size.
+Advertentieverzoeken lijken een grotere impact te hebben op de CPU-tijd. De mediaanpagina met advertentiescripts verbruiken drie keer zoveel CPU als die zonder. Interessant is echter dat advertentiescripts niet gecorreleerd zijn met een verhoogd paginagewicht. Dit maakt het nog belangrijker om de totale impact van scripts van derden op de browser te evalueren, niet alleen het aantal aanvragen en de grootte.
 
-While third-party content is critical to many websites, auditing the impact of each provider is critical to ensure that they do not significantly impact user experience, page weight or CPU utilization. There are often self-hosting options for the top contributors to third-party weight, this is especially worth considering as there is now no caching benefit to using shared assets:
+Hoewel inhoud van derden van cruciaal belang is voor veel websites, is het van cruciaal belang om de impact van elke provider te controleren om ervoor te zorgen dat ze geen significante invloed hebben op de gebruikerservaring, het paginagewicht of het CPU-gebruik. Er zijn vaak self-hosting-opties voor de belangrijkste bijdragers aan het gewicht van derden, dit is vooral het overwegen waard omdat er nu geen cachevoordeel is bij het gebruik van gedeelde activa:
 
-* Google Fonts allows [self-hosting](https://www.tunetheweb.com/blog/should-you-self-host-google-fonts/) the assets
-* JavaScript CDNs can be replaced with self-hosted assets
-* Experimentation scripts can be self-hosted, e.g. [Optimizely](https://help.optimizely.com/Set_Up_Optimizely/Optimizely_self-hosting_for_Akamai_users)
+* Google Fonts staat <a hreflang="en" href="https://www.tunetheweb.com/blog/should-you-self-host-google-fonts/">self-hosting</a> van de items toe
+* JavaScript CDN's kunnen worden vervangen door zelfgehoste middelen
+* Experimentatiescripts kunnen zelf worden gehost, bijv. <a hreflang="en" href="https://help.optimizely.com/Set_Up_Optimizely/Optimizely_self-hosting_for_Akamai_users">Optimizely</a>
 
-In this chapter we have discussed the benefits and costs of third-party content on the web. We have seen that third-parties are integral to almost all websites, and that the impact varies by third-party provider. Before adding a new third-party to your pages, consider the impact that they will have!
+In dit hoofdstuk hebben we de voordelen en kosten van inhoud van derden op internet besproken. We hebben gezien dat derde partijen een integraal onderdeel zijn van bijna alle websites en dat de impact verschilt per externe aanbieder. Voordat u een nieuwe derde partij aan uw pagina's toevoegt, moet u rekening houden met de impact die ze zullen hebben!
