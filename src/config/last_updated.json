@@ -815,6 +815,11 @@
     "date_modified": "2021-02-20T00:00:00.000Z",
     "hash": "a718e5f526e446c3d42ef3801da7bef1"
   },
+  "ja/2020/chapters/security.html": {
+    "date_published": "2021-02-28T00:00:00.000Z",
+    "date_modified": "2021-02-28T00:00:00.000Z",
+    "hash": "f6ad02ab1c0cd0acdb198710cebc4864"
+  },
   "ja/2020/chapters/third-parties.html": {
     "date_published": "2021-02-16T00:00:00.000Z",
     "date_modified": "2021-02-16T00:00:00.000Z",
@@ -884,6 +889,11 @@
     "date_published": "2020-12-22T00:00:00.000Z",
     "date_modified": "2021-02-21T00:00:00.000Z",
     "hash": "5533b052c345f3f5f9fcc1c70940004f"
+  },
+  "nl/2020/chapters/compression.html": {
+    "date_published": "2021-02-28T00:00:00.000Z",
+    "date_modified": "2021-02-28T00:00:00.000Z",
+    "hash": "fcb396178b76740a21b1a92fed2ed0f6"
   },
   "nl/2020/chapters/fonts.html": {
     "date_published": "2021-01-30T00:00:00.000Z",
