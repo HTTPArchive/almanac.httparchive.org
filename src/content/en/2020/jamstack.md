@@ -7,7 +7,7 @@ reviewers: [MaedahBatool, phacks]
 analysts: [denar90, remotesynth]
 editors: [bazzadp]
 translators: []
-ahmadawais_bio: Ahmad Awais is an award-winning open-source engineer, Google Developers Expert Dev Advocate, Node.js Community Committee Outreach Lead, WordPress Core Dev, and VP of Engineering DevRel at WGA. He has authored various open-source software tools used by millions of developers worldwide. Like his <a href="https://shadesofpurple.pro/more">Shades of Purple</a> code-theme or projects like the <a href="https://github.com/AhmadAwais/corona-cli">corona-cli</a>. Awais loves to teach. Over 20,000 developers are learning from his <a href="https://AhmadAwais.com/courses/">courses</a> i.e. <a href="https://nodecli.com/">Node CLI</a>, <a href="https://vscode.pro/">VSCode.pro</a>, and <a href="https://nextjsbeginner.com/">Next.js Beginner</a>. Awais received FOSS community leadership recognition as one of the <a href="https://ahmadawais.com/github-stars/">12 featured GitHub Stars</a>. He is a member of the Smashing Magazine Experts Panel; featured &amp; published author at CSS-Tricks, Tuts+, Scotch.io, SitePoint. You can mostly find him on Twitter <a href="https://twitter.com/MrAhmadAwais/">@MrAhmadAwais</a> where he tweets his <a href="https://awais.dev/odmt">#OneDevMinute</a> developer tips.
+ahmadawais_bio: Ahmad Awais is an award-winning open-source engineer, Google Developers Expert Dev Advocate, Node.js Community Committee Outreach Lead, WordPress Core Dev, and VP of Engineering DevRel at WGA. He has authored various open-source software tools used by millions of developers worldwide. Like his <a hreflang="en" href="https://shadesofpurple.pro/more">Shades of Purple</a> code-theme or projects like the <a hreflang="en" href="https://github.com/AhmadAwais/corona-cli">corona-cli</a>. Awais loves to teach. Over 20,000 developers are learning from his <a hreflang="en" href="https://AhmadAwais.com/courses/">courses</a> i.e. <a hreflang="en" href="https://nodecli.com/">Node CLI</a>, <a hreflang="en" href="https://vscode.pro/">VSCode.pro</a>, and <a hreflang="en" href="https://nextjsbeginner.com/">Next.js Beginner</a>. Awais received FOSS community leadership recognition as one of the <a hreflang="en" href="https://ahmadawais.com/github-stars/">12 featured GitHub Stars</a>. He is a member of the Smashing Magazine Experts Panel; featured &amp; published author at CSS-Tricks, Tuts+, Scotch.io, SitePoint. You can mostly find him on Twitter <a href="https://twitter.com/MrAhmadAwais/">@MrAhmadAwais</a> where he tweets his <a hreflang="en" href="https://awais.dev/odmt">#OneDevMinute</a> developer tips.
 discuss: 2053
 results: https://docs.google.com/spreadsheets/d/1BCC5Q4tePpTl8TiaGmSxBc9Lh2to7xBfVPMULFOBwvk/
 featured_quote: Stats suggest over twice as many Jamstack sites exist now than in 2019. Developers enjoy a better development experience by separating the frontend from the backend. But what about the real-user experience of browsing Jamstack sites?
@@ -25,11 +25,11 @@ Jamstack is a relatively new concept of an architecture designed to make the web
 
 The core principles of Jamstack are pre-rendering your site pages and decoupling the frontend from the backend. It relies on the idea of delivering the frontend content hosted separately on a CDN provider that uses APIs (for example, a headless CMS) as its backend if any.
 
-The [HTTP Archive](https://httparchive.org/) crawls [millions of pages](https://httparchive.org/reports/state-of-the-web#numUrls) every month and runs them through a private instance of [WebPageTest](https://webpagetest.org/) to store key information on every page crawled. You can learn more about this in our [methodology](./methodology) page. In the context of Jamstack, HTTP Archive provides extensive information on the usage of the frameworks and CDNs for the entire web. This chapter consolidates and analyzes many of these trends.
+The <a hreflang="en" href="https://httparchive.org/">HTTP Archive</a> crawls <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#numUrls">millions of pages</a> every month and runs them through a private instance of <a hreflang="en" href="https://webpagetest.org/">WebPageTest</a> to store key information on every page crawled. You can learn more about this in our [methodology](./methodology) page. In the context of Jamstack, HTTP Archive provides extensive information on the usage of the frameworks and CDNs for the entire web. This chapter consolidates and analyzes many of these trends.
 
 The goals of this chapter are to estimate and analyze the growth of the Jamstack sites, the performance of popular Jamstack frameworks, as well as an analysis of real user experience using the Core Web Vitals metrics.
 
-<p class="note">It should be noted that our analysis is limited by those Jamstacks that make themselves easily identifiable using <a href="./methodology#wappalyzer">Wappalyzer</a>. This means our data does not include some popular Jamstacks like <a href="https://github.com/11ty/eleventy/">Eleventy</a> which <a href="https://twitter.com/eleven_ty/status/1334225624110608387?s=20">make a deliberate choice to not make themselves identifiable</a>. While we would ideally include all Jamstacks, we believe there is still plenty of value in analyzing the significant data we do have.</p>
+<p class="note">It should be noted that our analysis is limited by those Jamstacks that make themselves easily identifiable using <a href="./methodology#wappalyzer">Wappalyzer</a>. This means our data does not include some popular Jamstacks like <a hreflang="en" href="https://github.com/11ty/eleventy/">Eleventy</a> which <a href="https://twitter.com/eleven_ty/status/1334225624110608387?s=20">make a deliberate choice to not make themselves identifiable</a>. While we would ideally include all Jamstacks, we believe there is still plenty of value in analyzing the significant data we do have.</p>
 
 ## Adoption of Jamstack
 
@@ -217,13 +217,13 @@ It's worth noting here the fact that Next.js and Nuxt.js websites include a mix 
 
 ## Environmental impact
 
-This year we have sought to better understand the impact of Jamstack sites on the environment. [The information and communications technology (ICT) industry accounts for 2% of global carbon emissions](https://www.nature.com/articles/d41586-018-06610-y), and data centers specifically account for 0.3% of global carbon emissions. This puts the ICT industry's carbon footprint equivalent to the aviation industry's emissions from fuel.
+This year we have sought to better understand the impact of Jamstack sites on the environment. <a hreflang="en" href="https://www.nature.com/articles/d41586-018-06610-y">The information and communications technology (ICT) industry accounts for 2% of global carbon emissions</a>, and data centers specifically account for 0.3% of global carbon emissions. This puts the ICT industry's carbon footprint equivalent to the aviation industry's emissions from fuel.
 
 Jamstack is often credited for being mindful of performance. In the next section, we look into the carbon emissions of Jamstack websites.
 
 ### Page weight
 
-Our research looked at the average Jamstack page weight in KB and mapped this to CO2 emissions using logic from the [Carbon API](https://gitlab.com/wholegrain/carbon-api-2-0/-/blob/master/includes/carbonapi.php#L342). This generated the following results, split by desktop and mobile:
+Our research looked at the average Jamstack page weight in KB and mapped this to CO2 emissions using logic from the <a hreflang="en" href="https://gitlab.com/wholegrain/carbon-api-2-0/-/blob/master/includes/carbonapi.php#L342">Carbon API</a>. This generated the following results, split by desktop and mobile:
 
 {{ figure_markup(
   image="jamstack-carbon-emissions-per-jamstack-page-view.png",
@@ -241,7 +241,7 @@ We found that the median Jamstack page load resulted in the transfer of 1.82 MB 
 
 ### Image formats
 
-Popular image formats are PNG, JPG, GIF, SVG, WebP, and ICO. Of these, [WebP is the most efficient in most situations](https://developers.google.com/speed/webp/), with WebP lossless images [26% smaller](https://developers.google.com/speed/webp/docs/webp_lossless_alpha_study#results) than equivalent PNGs and [25-34% smaller](https://developers.google.com/speed/webp/docs/webp_study) than comparable JPGs. We see, however, that WebP is the second least popular image format across all Jamstack pages, where PNG is the most popular both for mobile and desktop. Only slightly less popular is JPG whereas GIF is almost 20% of all the images used on Jamstack sites. An interesting discovery is SVG which is almost twice as popular on mobile sites as desktop sites.
+Popular image formats are PNG, JPG, GIF, SVG, WebP, and ICO. Of these, <a hreflang="en" href="https://developers.google.com/speed/webp/">WebP is the most efficient in most situations</a>, with WebP lossless images <a hreflang="en" href="https://developers.google.com/speed/webp/docs/webp_lossless_alpha_study#results">26% smaller</a> than equivalent PNGs and <a hreflang="en" href="https://developers.google.com/speed/webp/docs/webp_study">25-34% smaller</a> than comparable JPGs. We see, however, that WebP is the second least popular image format across all Jamstack pages, where PNG is the most popular both for mobile and desktop. Only slightly less popular is JPG whereas GIF is almost 20% of all the images used on Jamstack sites. An interesting discovery is SVG which is almost twice as popular on mobile sites as desktop sites.
 
 {{ figure_markup(
   image="jamstack-popularity-of-image-formats.png",
@@ -271,7 +271,7 @@ We find that the median desktop Jamstack page has 26 third-party requests with 4
 
 ## User experience
 
-Jamstack websites are often said to offer a good user experience. It's what the entire concept of separating the frontend from the backend and hosting it on the CDN edge is all about. We aim to shed light on real-world user experience when using Jamstack websites using the recently launched [Core Web Vitals](https://web.dev/learn-web-vitals/).
+Jamstack websites are often said to offer a good user experience. It's what the entire concept of separating the frontend from the backend and hosting it on the CDN edge is all about. We aim to shed light on real-world user experience when using Jamstack websites using the recently launched <a hreflang="en" href="https://web.dev/learn-web-vitals/">Core Web Vitals</a>.
 
 The Core Web Vitals are three important factors which can shed light on our understanding of how users are experiencing Jamstack pages in the wild:
 
@@ -351,7 +351,7 @@ There are frameworks like Eleventy which we weren't able to measure or analyze s
 
 Moreover, we have highlighted some areas which need attention from the Jamstack community. We hope there will be progress to share in the 2021 report. Different Jamstack frameworks can start to document how to improve real user experience by looking at Core Web Vitals.
 
-Vercel, one of the CDNs meant to host Jamstack sites, has built an analytics offering called [Real User Experience Score](https://vercel.com/docs/analytics#real-experience-score). While other performance measuring tools like [Lighthouse](https://web.dev/measure/) estimate your user's experience by running a simulation in a lab, Vercel's Real Experience Score is calculated using real data points collected from the devices of the actual users of your application.
+Vercel, one of the CDNs meant to host Jamstack sites, has built an analytics offering called <a hreflang="en" href="https://vercel.com/docs/analytics#real-experience-score">Real User Experience Score</a>. While other performance measuring tools like <a hreflang="en" href="https://web.dev/measure/">Lighthouse</a> estimate your user's experience by running a simulation in a lab, Vercel's Real Experience Score is calculated using real data points collected from the devices of the actual users of your application.
 
 It is probably worth noting here that Vercel created and maintains Next.js, since Next.js had low LCP scores. This new offering could mean we can hope to see a marked improvement in those scores next year. This would be extremely helpful information for users and developers alike.
 

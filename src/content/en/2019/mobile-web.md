@@ -25,19 +25,19 @@ Let's step back for a moment, to the year 2007. The "mobile web" is currently ju
 
 In the middle of his presentation, Steve Jobs takes the newly unveiled iPhone, sits down, and begins to surf the web in a way we had only previously dreamed of. A large screen and fully featured browser displaying websites in their full glory. And most importantly, surfing the web using the most intuitive pointer device known to man: our fingers. No more tabbing around with tiny little arrow keys.
 
-Since 2007, the mobile web has grown at an explosive rate. And now, 13 years later, mobile accounts for [59% of all searches](https://www.merkleinc.com/thought-leadership/digital-marketing-report) and 58.7% of all web traffic, according to [Akamai mPulse](https://developer.akamai.com/akamai-mpulse-real-user-monitoring-solution) data in July 2019. It's no longer an afterthought, but the primary way people experience the web. So given how significant mobile is, what kind of experience are we providing our visitors? Where are we falling short? Let's find out.
+Since 2007, the mobile web has grown at an explosive rate. And now, 13 years later, mobile accounts for <a hreflang="en" href="https://www.merkleinc.com/thought-leadership/digital-marketing-report">59% of all searches</a> and 58.7% of all web traffic, according to <a hreflang="en" href="https://developer.akamai.com/akamai-mpulse-real-user-monitoring-solution">Akamai mPulse</a> data in July 2019. It's no longer an afterthought, but the primary way people experience the web. So given how significant mobile is, what kind of experience are we providing our visitors? Where are we falling short? Let's find out.
 
 ## The page loading experience
 
 The first part of the mobile web experience we analyzed is the one we're all most intimately familiar with: *the page loading experience*. But before we start diving into our findings, let's make sure we're all on the same page regarding what the typical mobile user *really* looks like. Because this will not only help you reproduce these results, but understand these users better.
 
-Let's start with what phone the typical mobile user has. The average Android phone [is ~$250](https://web.archive.org/web/20190921115844/https://www.idc.com/getdoc.jsp?containerId=prUS45115119), and one of the [most popular phones](https://web.archive.org/web/20190812221233/https://deviceatlas.com/blog/most-popular-android-smartphones) in that range is a Samsung Galaxy S6. So this is likely the kind of phone they use, which is actually 4x slower than an iPhone 8. This user doesn't have access to a fast 4G connection, but rather a 2G connection ([29%](https://www.gsma.com/r/mobileeconomy/) of the time) or 3G connection ([28%](https://www.gsma.com/r/mobileeconomy/) of the time). And this is what it all adds up to:
+Let's start with what phone the typical mobile user has. The average Android phone <a hreflang="en" href="https://web.archive.org/web/20190921115844/https://www.idc.com/getdoc.jsp?containerId=prUS45115119">is ~$250</a>, and one of the <a hreflang="en" href="https://web.archive.org/web/20190812221233/https://deviceatlas.com/blog/most-popular-android-smartphones">most popular phones</a> in that range is a Samsung Galaxy S6. So this is likely the kind of phone they use, which is actually 4x slower than an iPhone 8. This user doesn't have access to a fast 4G connection, but rather a 2G connection (<a hreflang="en" href="https://www.gsma.com/r/mobileeconomy/">29%</a> of the time) or 3G connection (<a hreflang="en" href="https://www.gsma.com/r/mobileeconomy/">28%</a> of the time). And this is what it all adds up to:
 
 <figure>
   <table>
     <tr>
       <th>Connection type</th>
-      <td><a href="https://www.gsma.com/r/mobileeconomy/">2G or 3G</a></td>
+      <td><a hreflang="en" href="https://www.gsma.com/r/mobileeconomy/">2G or 3G</a></td>
     </tr>
     <tr>
       <th>Latency</th>
@@ -49,7 +49,7 @@ Let's start with what phone the typical mobile user has. The average Android pho
     </tr>
     <tr>
       <th>Phone</th>
-      <td><a href="https://www.gsmarena.com/samsung_galaxy_s6-6849.php">Galaxy S6</a> — <a href="https://www.notebookcheck.net/A11-Bionic-vs-7420-Octa_9250_6662.247596.0.html">4x slower</a> than iPhone 8 (Octane V2 score)</td>
+      <td><a hreflang="en" href="https://www.gsmarena.com/samsung_galaxy_s6-6849.php">Galaxy S6</a> — <a hreflang="en" href="https://www.notebookcheck.net/A11-Bionic-vs-7420-Octa_9250_6662.247596.0.html">4x slower</a> than iPhone 8 (Octane V2 score)</td>
     </tr>
   </table>
   <figcaption>{{ figure_link(caption="Technical profile of a typical mobile user.") }}</figcaption>
@@ -59,9 +59,9 @@ I imagine some of you are surprised by these results. They may be far worse cond
 
 ### Pages bloated with JavaScript
 
-The state of JavaScript on the mobile web is terrifying. According to HTTP Archive's [JavaScript report](https://httparchive.org/reports/state-of-javascript?start=2016_05_15&end=2019_07_01&view=list#bytesJs), the median mobile site requires phones to download 375 KB of JavaScript. Assuming a 70% compression ratio, this means that phones have to parse, compile, and execute 1.25 MB of JavaScript at the median.
+The state of JavaScript on the mobile web is terrifying. According to HTTP Archive's <a hreflang="en" href="https://httparchive.org/reports/state-of-javascript?start=2016_05_15&end=2019_07_01&view=list#bytesJs">JavaScript report</a>, the median mobile site requires phones to download 375 KB of JavaScript. Assuming a 70% compression ratio, this means that phones have to parse, compile, and execute 1.25 MB of JavaScript at the median.
 
-Why is this a problem? Because sites loading this much JS take upwards of [10 seconds](https://httparchive.org/reports/loading-speed?start=earliest&end=2019_07_01&view=list#ttci) to become consistently interactive. Or in other words, your page may appear fully loaded, but when a user clicks any of your buttons or menus, the user may experience some slowdown because the JavaScript hasn't finished executing. In the worst case scenario, users may be forced to keep clicking the button for upwards of 10 seconds, just waiting for that magical moment where something actually happens. Think about how confusing and frustrating that can be.
+Why is this a problem? Because sites loading this much JS take upwards of <a hreflang="en" href="https://httparchive.org/reports/loading-speed?start=earliest&end=2019_07_01&view=list#ttci">10 seconds</a> to become consistently interactive. Or in other words, your page may appear fully loaded, but when a user clicks any of your buttons or menus, the user may experience some slowdown because the JavaScript hasn't finished executing. In the worst case scenario, users may be forced to keep clicking the button for upwards of 10 seconds, just waiting for that magical moment where something actually happens. Think about how confusing and frustrating that can be.
 
 {{ figure_markup(
   video="https://www.youtube.com/embed/Lx1cYJAVnzA",
@@ -75,7 +75,7 @@ Why is this a problem? Because sites loading this much JS take upwards of [10 se
   )
 }}
 
-Let's delve deeper and look at another metric that focuses more on *how well* each page utilizes JavaScript. For example, does it really need as much JavaScript as it's loading? We call this metric the *JavaScript Bloat Score*, based on the [web bloat score](https://www.webbloatscore.com/). The idea behind it is this:
+Let's delve deeper and look at another metric that focuses more on *how well* each page utilizes JavaScript. For example, does it really need as much JavaScript as it's loading? We call this metric the *JavaScript Bloat Score*, based on the <a hreflang="en" href="https://www.webbloatscore.com/">web bloat score</a>. The idea behind it is this:
 
 - JavaScript is often used to both generate and change the page as it loads.
 - It's also delivered as text to the browser. So it compresses well, and should be delivered faster than just a screenshot of the page.
@@ -87,11 +87,11 @@ The results of this? Of the 5+ million websites analyzed, 75.52% were bloated wi
 
 Note that we were not able to capture and measure the screenshots of all 5 million+ sites we analyzed. Instead, we took a random sampling of 1000 sites to find what the median viewport screenshot size is (140 KB), and then compared each site's JavaScript download size to this number.
 
-For a more in-depth breakdown of the effects of JavaScript, check out [The Cost of JavaScript in 2018](https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4) by Addy Osmani.
+For a more in-depth breakdown of the effects of JavaScript, check out <a hreflang="en" href="https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4">The Cost of JavaScript in 2018</a> by Addy Osmani.
 
 ### Service Worker usage
 
-Browsers typically load all pages the same. They prioritize the download of some resources above others, follow the same caching rules, etc. Thanks to [Service Workers](https://developers.google.com/web/fundamentals/primers/service-workers) though, we now have a way to directly control how our resources are handled by the network layer, often times resulting in quite significant improvements to our page load times.
+Browsers typically load all pages the same. They prioritize the download of some resources above others, follow the same caching rules, etc. Thanks to <a hreflang="en" href="https://developers.google.com/web/fundamentals/primers/service-workers">Service Workers</a> though, we now have a way to directly control how our resources are handled by the network layer, often times resulting in quite significant improvements to our page load times.
 
 Despite being available since 2016 and implemented on every major browser, only 0.64% of sites utilize them!
 
@@ -110,11 +110,11 @@ One of the most beautiful parts of the web is how web pages load progressively b
 
 Imagine you're reading an article when all of a sudden, an image loads and pushes the text you're reading way down the screen. You now have to hunt for where you were or just give up on reading the article. Or, perhaps even worse, you begin to click a link right before an ad loads in the same spot, resulting in an accidental click on the ad instead.
 
-So, how do we measure how much our sites shift? In the past it was quite difficult (if not impossible), but thanks to the new [Layout Instability API](https://web.dev/layout-instability-api) we can do this in two steps:
+So, how do we measure how much our sites shift? In the past it was quite difficult (if not impossible), but thanks to the new <a hreflang="en" href="https://web.dev/layout-instability-api">Layout Instability API</a> we can do this in two steps:
 
 1. Via the Layout Instability API, track each shift's impact on the page. This is reported to you as a percentage of how much content in the viewport has shifted.
 
-2. Take all the shifts you've tracked and add them together. The result is what we call the [Cumulative Layout Shift](https://web.dev/layout-instability-api#a-cumulative-layout-shift-score) (CLS) score.
+2. Take all the shifts you've tracked and add them together. The result is what we call the <a hreflang="en" href="https://web.dev/layout-instability-api#a-cumulative-layout-shift-score">Cumulative Layout Shift</a> (CLS) score.
 
 Because every visitor can have a different CLS, in order to analyze this metric across the web with the [Chrome UX Report](./methodology#chrome-ux-report) (CrUX), we combine every experience into three different buckets:
 
@@ -146,7 +146,7 @@ The primary goal of a web page is to deliver content users want to engage with. 
 
 When designing our sites we tend to be in more optimal conditions, and have far better eyes than many of our visitors. Visitors may be colorblind and unable to distinguish between the text and background color. [1 in every 12 men and 1 in 200 women](http://www.cvrl.org/people/stockman/pubs/1999%20Genetics%20chapter%20SSJN.pdf) of European descent are colorblind. Or perhaps visitors are reading the page while the sun is creating glare on their screen, which may similarly impair legibility.
 
-To help us mitigate this problem, there are [accessibility guidelines](https://dequeuniversity.com/rules/axe/2.2/color-contrast) we can follow when choosing our text and background colors. So how are we doing in meeting these baselines? Only 22.04% of sites give all their text sufficient color contrast. This value is actually a lower limit, as we could only analyze text with solid backgrounds. Image and gradient backgrounds were unable to be analyzed.
+To help us mitigate this problem, there are <a hreflang="en" href="https://dequeuniversity.com/rules/axe/2.2/color-contrast">accessibility guidelines</a> we can follow when choosing our text and background colors. So how are we doing in meeting these baselines? Only 22.04% of sites give all their text sufficient color contrast. This value is actually a lower limit, as we could only analyze text with solid backgrounds. Image and gradient backgrounds were unable to be analyzed.
 
 {{ figure_markup(
   image="example-of-good-and-bad-color-contrast-lookzook.svg",
@@ -157,7 +157,7 @@ To help us mitigate this problem, there are [accessibility guidelines](https://d
   )
 }}
 
-For colorblindness stats for other demographics, see [this paper](https://web.archive.org/web/20180304115406/http://www.allpsych.uni-giessen.de/karl/colbook/sharpe.pdf).
+For colorblindness stats for other demographics, see <a hreflang="en" href="https://web.archive.org/web/20180304115406/http://www.allpsych.uni-giessen.de/karl/colbook/sharpe.pdf">this paper</a>.
 
 ### Font size
 
@@ -191,7 +191,7 @@ Because of this, developers are given the ability to disable this feature by set
   )
 }}
 
-However, developers have misused this so much that almost one out of every three sites (32.21%) disable this feature, and Apple (as of iOS 10) no longer allows web developers to disable zooming. Mobile Safari simply [ignores the tag](https://archive.org/details/ios-10-beta-release-notes). All sites, no matter what, can be zoomed and scaled on newer Apple devices, which account for over [11%](https://gs.statcounter.com/) of all web traffic worldwide!
+However, developers have misused this so much that almost one out of every three sites (32.21%) disable this feature, and Apple (as of iOS 10) no longer allows web developers to disable zooming. Mobile Safari simply <a hreflang="en" href="https://archive.org/details/ios-10-beta-release-notes">ignores the tag</a>. All sites, no matter what, can be zoomed and scaled on newer Apple devices, which account for over <a hreflang="en" href="https://gs.statcounter.com/">11%</a> of all web traffic worldwide!
 
 ### Rotating pages
 
@@ -203,7 +203,7 @@ Mobile devices allow users to rotate them so your website can be viewed in the f
 
 We're used to having precise devices like mice while on desktop, but the story is quite different on mobile. On mobile we engage with sites through these large and imprecise tools we call fingers. Because of how imprecise they can be, we constantly "fat finger" links and buttons, tapping on things we never intended.
 
-Designing tap targets appropriately to mitigate this issue can be difficult because of how widely fingers vary in size. However, lots of research has now been done and there are safe [standards](https://developers.google.com/web/tools/lighthouse/audits/tap-targets) for how large buttons should be and how far apart they need to be separated.
+Designing tap targets appropriately to mitigate this issue can be difficult because of how widely fingers vary in size. However, lots of research has now been done and there are safe <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/audits/tap-targets">standards</a> for how large buttons should be and how far apart they need to be separated.
 
 {{ figure_markup(
   image="example-of-easy-to-hit-tap-targets-lookzook.png",
@@ -290,7 +290,7 @@ The mobile web has now been around long enough for there to be an entire generat
 {{ figure_markup(
   image="america-online-1000-hours-free.jpg",
   alt="1000 hours of America Online for free, from archive.org.",
-  caption='1000 hours of America Online for free, from <a href="https://archive.org/details/America_Online_1000_Hours_Free_for_45_Days_Version_7.0_Faster_Than_Ever_AM402R28">archive.org</a>.',
+  caption='1000 hours of America Online for free, from <a hreflang="en" href="https://archive.org/details/America_Online_1000_Hours_Free_for_45_Days_Version_7.0_Faster_Than_Ever_AM402R28">archive.org</a>.',
   description="A photograph of an AOL CD-ROM offering 1,000 hours free.",
   width=300,
   height=285
@@ -301,11 +301,11 @@ The mobile web has now been around long enough for there to be an entire generat
 
 1. We defined sites making a mobile effort as those who adjust their designs for smaller screens. Or rather, those which have at least one CSS breakpoint at 600px or less.
 
-2. Potential users, or the total addressable market, are those who are 15+ years old: [5.7 billion people](https://www.prb.org/international/geography/world).
+2. Potential users, or the total addressable market, are those who are 15+ years old: <a hreflang="en" href="https://www.prb.org/international/geography/world">5.7 billion people</a>.
 
-3. [Desktop search](https://www.merkleinc.com/thought-leadership/digital-marketing-report) and [web traffic share](https://gs.statcounter.com/platform-market-share/desktop-mobile-tablet/worldwide/#monthly-201205-201909) has been on the decline for years
+3. <a hreflang="en" href="https://www.merkleinc.com/thought-leadership/digital-marketing-report">Desktop search</a> and <a hreflang="en" href="https://gs.statcounter.com/platform-market-share/desktop-mobile-tablet/worldwide/#monthly-201205-201909">web traffic share</a> has been on the decline for years
 
-4. The total number of active smartphones was found by totaling the number of active Androids and iPhones (made public by Apple and Google), and a bit of math to account for Chinese internet-connected phones. [More info here](https://www.ben-evans.com/benedictevans/2019/5/28/the-end-of-mobile).
+4. The total number of active smartphones was found by totaling the number of active Androids and iPhones (made public by Apple and Google), and a bit of math to account for Chinese internet-connected phones. <a hreflang="en" href="https://www.ben-evans.com/benedictevans/2019/5/28/the-end-of-mobile">More info here</a>.
 
-5. The 1.6 billion desktops is calculated by numbers made public by [Microsoft](https://web.archive.org/web/20181030132235/https://news.microsoft.com/bythenumbers/en/windowsdevices) and [Apple](https://web.archive.org/web/20190628161024/https://appleinsider.com/articles/18/10/30/apple-passes-100m-active-mac-milestone-thanks-to-high-numbers-of-new-users). It does not include linux PC users.
+5. The 1.6 billion desktops is calculated by numbers made public by <a hreflang="en" href="https://web.archive.org/web/20181030132235/https://news.microsoft.com/bythenumbers/en/windowsdevices">Microsoft</a> and <a hreflang="en" href="https://web.archive.org/web/20190628161024/https://appleinsider.com/articles/18/10/30/apple-passes-100m-active-mac-milestone-thanks-to-high-numbers-of-new-users">Apple</a>. It does not include linux PC users.
 </p>

@@ -9,7 +9,7 @@ editors: [bazzadp]
 translators: [ksakae]
 discuss: 1761
 results: https://docs.google.com/spreadsheets/d/108g6LXdC3YVsxmX1CCwrmpZ3-DmbB8G_wwgQHX5pn6Q/
-zachleat_bio: Zachは<a href="https://www.filamentgroup.com/">Filament Group</a>のWeb開発者だ。彼は現在、<a href="https://www.zachleat.com/web/fonts/">web fonts</a>と<a href="https://www.zachleat.com/web/introducing-eleventy/">static site generators</a>に夢中だ。彼の<a href="https://www.zachleat.com/web/speaking/">講演履歴</a>には、JAMstack_conf、Beyond Tellerrand、Smashing Conference、CSSConf、そして<a href="https://www.zachleat.com/web/whitehouse/">The White House</a>のようなイベントでの8カ国での講演が含まれています。また、<a href="http://nejsconf.com/">NEJS CONF</a>や<a href="http://nebraskajs.com">NebraskaJS</a>のミートアップも手伝っている。
+zachleat_bio: Zachは<a hreflang="en" href="https://www.filamentgroup.com/">Filament Group</a>のWeb開発者だ。彼は現在、<a hreflang="en" href="https://www.zachleat.com/web/fonts/">web fonts</a>と<a hreflang="en" href="https://www.zachleat.com/web/introducing-eleventy/">static site generators</a>に夢中だ。彼の<a hreflang="en" href="https://www.zachleat.com/web/speaking/">講演履歴</a>には、JAMstack_conf、Beyond Tellerrand、Smashing Conference、CSSConf、そして<a hreflang="en" href="https://www.zachleat.com/web/whitehouse/">The White House</a>のようなイベントでの8カ国での講演が含まれています。また、<a hreflang="en" href="http://nejsconf.com/">NEJS CONF</a>や<a hreflang="en" href="http://nebraskajs.com">NebraskaJS</a>のミートアップも手伝っている。
 featured_quote: ウェブフォントは、ウェブ上で美しく機能的なタイポグラフィを可能にします。ウェブフォントを使用することは、デザインに力を与えるだけでなく、デザインのサブセットを民主化します。しかし、どんなに良いことがあっても、ウェブフォントが適切に読み込まれていないと、サイトのパフォーマンスに大きな悪影響を及ぼすこともあります。
 featured_stat_1: 74.9%
 featured_stat_label_1: 3P Googleフォントを使用したフォントリクエスト
@@ -29,7 +29,7 @@ featured_stat_label_3: 1ページでのフォントのリクエストが多い
 
 最初の、そして最も顕著な問題は、パフォーマンスです。[パフォーマンス](./performance)に特化した章がありますが、ここではフォント固有のパフォーマンスの問題について少し掘り下げてみましょう。
 
-ホストされたWebフォントを使用すると、実装やメンテナンスが容易になりますが、セルフホスティングは最高のパフォーマンスを提供します。Webフォントはデフォルトで、Webフォントの読み込み中にテキストを非表示にする（[Flash of Invisible Text](https://css-tricks.com/fout-foit-foft/)、またはFOITとしても知られています）ことを考えると、Webフォントのパフォーマンスは画像のような非ブロッキング資産よりも重要になる可能性があります。
+ホストされたWebフォントを使用すると、実装やメンテナンスが容易になりますが、セルフホスティングは最高のパフォーマンスを提供します。Webフォントはデフォルトで、Webフォントの読み込み中にテキストを非表示にする（<a hreflang="en" href="https://css-tricks.com/fout-foit-foft/">Flash of Invisible Text</a>、またはFOITとしても知られています）ことを考えると、Webフォントのパフォーマンスは画像のような非ブロッキング資産よりも重要になる可能性があります。
 
 ### フォントは同じホストでホストされているのか、それとも別のホストでホストされているのか？
 
@@ -49,7 +49,7 @@ featured_stat_label_3: 1ページでのフォントのリクエストが多い
 
 Googleは`https://fonts.googleapis.com`でホストされているサードパーティのCSSファイルを使ってフォントを提供しています。開発者は、マークアップの`<link>`タグを使ってこれらのスタイルシートにリクエストを追加します。これらのスタイルシートはレンダーブロッキングされていますが、そのサイズは非常に小さいです。しかし、フォントファイルは`https://fonts.gstatic.com`という別のドメインでホストされています。2つの異なるドメインへの2つの別々のホップを必要とするモデルでは、CSSがダウンロードされるまで発見されない2つ目のリクエストには`preconnect`が最適な選択肢となります。
 
-`preload`はリクエストのウォーターフォールの上位にフォントファイルをロードするための素晴らしい追加機能ですが（`preconnect`は接続を設定するもので、ファイルの内容をリクエストするものではないことを覚えておいてください）、`preload`はGoogle Fontsではまだ利用できません。Google Fontsはフォントファイル用のユニークなURLを生成します[これは変更される可能性があります](https://github.com/google/fonts/issues/1067)。
+`preload`はリクエストのウォーターフォールの上位にフォントファイルをロードするための素晴らしい追加機能ですが（`preconnect`は接続を設定するもので、ファイルの内容をリクエストするものではないことを覚えておいてください）、`preload`はGoogle Fontsではまだ利用できません。Google Fontsはフォントファイル用のユニークなURLを生成します<a hreflang="en" href="https://github.com/google/fonts/issues/1067">これは変更される可能性があります</a>。
 
 ### 最も人気のあるサードパーティ製のホストは何ですか？
 
@@ -205,7 +205,7 @@ Google Fontsのドキュメントでは、Google Fonts CSSの`<link>`はペー�
 )
 }}
 
-うわー！　2％未満のページが[`preconnect`](https://web.dev/uses-rel-preconnect)を使用している！　Google Fontsが75％であることを考えると、これはもっと高いはずです！　開発者の皆さん: Google Fontsを使うなら、`preconnect`を使いましょう！　Google Fonts:`preconnect`をもっと宣伝しよう！
+うわー！　2％未満のページが<a hreflang="en" href="https://web.dev/uses-rel-preconnect">`preconnect`</a>を使用している！　Google Fontsが75％であることを考えると、これはもっと高いはずです！　開発者の皆さん: Google Fontsを使うなら、`preconnect`を使いましょう！　Google Fonts:`preconnect`をもっと宣伝しよう！
 
 実際、もしあなたがGoogle Fontsを使っているのであれば、`<head>`にこれを追加してください。
 
@@ -351,11 +351,11 @@ Google Fontsのドキュメントでは、Google Fonts CSSの`<link>`はペー�
   <figcaption>{{ figure_link(caption="全フォント宣言に占める上位20のフォントファミリーの割合。") }}</figcaption>
 </figure>
 
-ここでの上位のエントリが[Google Fontsの人気順フォント一覧](https://fonts.google.com/?sort=popularity)と非常によく似ていることは驚くに値しません。
+ここでの上位のエントリが<a hreflang="en" href="https://fonts.google.com/?sort=popularity">Google Fontsの人気順フォント一覧</a>と非常によく似ていることは驚くに値しません。
 
 ## どのようなフォント形式を使用していますか？
 
-今日のブラウザでは[WOFF2はかなりサポートされています](https://caniuse.com/#feat=woff2)。Google FontsはWOFF2というフォーマットを提供していますが、これは前身のWOFFよりも圧縮率が向上したフォーマットで、それ自体はすでに他の既存のフォントフォーマットよりも改善されていました。
+今日のブラウザでは<a hreflang="en" href="https://caniuse.com/#feat=woff2">WOFF2はかなりサポートされています</a>。Google FontsはWOFF2というフォーマットを提供していますが、これは前身のWOFFよりも圧縮率が向上したフォーマットで、それ自体はすでに他の既存のフォントフォーマットよりも改善されていました。
 
 {{ figure_markup(
   image="fig7.png",
@@ -380,7 +380,7 @@ Google Fontsのドキュメントでは、Google Fonts CSSの`<link>`はペー�
   )
 }}
 
-[SVGフォント](https://caniuse.com/#feat=svg-fonts)が衰退しているのを見て期待していたのですが。バグだらけだし、Safari以外のブラウザでは実装が削除されている。そろそろ捨ててしまおうか。
+<a hreflang="en" href="https://caniuse.com/#feat=svg-fonts">SVGフォント</a>が衰退しているのを見て期待していたのですが。バグだらけだし、Safari以外のブラウザでは実装が削除されている。そろそろ捨ててしまおうか。
 
 ここのSVGデータポイントを見ると、どのMIMEタイプでSVGフォントを提供しているのか気になります。図6.7のどこにも`image/svg+xml`は見当たりません。とにかく、それを修正することは気にしないで、ただそれらを取り除くだけです！
 
@@ -530,7 +530,7 @@ Google Fontsのドキュメントでは、Google Fonts CSSの`<link>`はペー�
 
 デフォルトのWebフォントの読み込み動作である「読み込み中は見えない」(FOITとしても知られています)に対抗するため持っている第一のツールは`font-display`です。`font-display: swap`を`@font-face`ブロックに追加すると、ウェブフォントが読み込まれている間にフォールバックテキストを表示するようにブラウザに指示する簡単な方法です。
 
-[ブラウザ対応](https://caniuse.com/#feat=mdn-css_at-rules_font-face_font-display)もいいですね。Internet ExplorerやChromium以前のEdgeではサポートされていませんが、Webフォントが読み込まれたときにデフォルトでフォールバックテキストをレンダリングしてくれます（ここではFOITは使えません）。Chromeのテストでは、`font-display`はどのくらいの頻度で使われているのでしょうか？
+<a hreflang="en" href="https://caniuse.com/#feat=mdn-css_at-rules_font-face_font-display">ブラウザ対応</a>もいいですね。Internet ExplorerやChromium以前のEdgeではサポートされていませんが、Webフォントが読み込まれたときにデフォルトでフォールバックテキストをレンダリングしてくれます（ここではFOITは使えません）。Chromeのテストでは、`font-display`はどのくらいの頻度で使われているのでしょうか？
 
 {{ figure_markup(
   caption="<code>font-display</code> スタイルを利用しているモバイルページの割合。",
@@ -539,7 +539,7 @@ Google Fontsのドキュメントでは、Google Fonts CSSの`<link>`はペー�
 )
 }}
 
-私はこれが時間の経過とともに忍び寄ってくることを想定しています、特に今は[Google Fontsがすべての新しいコードスニペットに `font-display` を追加しています](https://www.zachleat.com/web/google-fonts-display/)が彼らのサイトからコピーされています。
+私はこれが時間の経過とともに忍び寄ってくることを想定しています、特に今は<a hreflang="en" href="https://www.zachleat.com/web/google-fonts-display/">Google Fontsがすべての新しいコードスニペットに `font-display` を追加しています</a>が彼らのサイトからコピーされています。
 
 Google Fontsを使っているなら、スニペットを更新しよう！　Google Fontsを使っていない場合は、`font-display`を使いましょう！　`font-display`についての詳細は [MDN](https://developer.mozilla.org/ja/docs/Web/CSS/@font-face/font-display) を参照してください。
 
@@ -578,7 +578,7 @@ Google Fontsを使っているなら、スニペットを更新しよう！　Go
   )
 }}
 
-Webフォントのリクエストがデスクトップとモバイルの間でかなり安定しているように見えるというのは非常に興味深いことです。私は、[`@media`クエリの中の`@font-face`ブロックを隠すことを推奨すること](https://css-tricks.com/snippets/css/using-font-face/#article-header-id-6)が流行らなかったのを見てうれしく思います (何も考えないでください)。
+Webフォントのリクエストがデスクトップとモバイルの間でかなり安定しているように見えるというのは非常に興味深いことです。私は、<a hreflang="en" href="https://css-tricks.com/snippets/css/using-font-face/#article-header-id-6">`@media`クエリの中の`@font-face`ブロックを隠すことを推奨すること</a>が流行らなかったのを見てうれしく思います (何も考えないでください)。
 
 しかし、モバイルデバイスでのフォントのリクエストはわずかに多い。ここでの私の勘は、モバイルデバイスで利用できる書体が少ないということはGoogle Fonts CSSでの`local()`のヒット数が少ないということであり、ネットワークからのフォントリクエストに戻ってしまうのではないかと考えています。
 
@@ -621,7 +621,7 @@ Google FontsはそのCSSのほとんど（すべてではないにしても）�
 
 `local()`は`@font-face`、`src`のシステムフォントを参照するための良い方法です。もし `local()`フォントが存在するならば、ウェブフォントを要求する必要は全くありません。これはGoogle Fontsによって広く使われており、論争の的にもなっているのでユーザの土地からパターンを得ようとしているのであれば、これも歪んだデータの一例になるでしょう。
 
-ここでは、私よりも賢い人々(TypeKitのBram Stein氏) が、[インストールされているフォントのバージョンが古くて信頼性は低い場合があるため、`local()`を使うことは予測不可能である可能性がある](https://bramstein.com/writing/web-font-anti-patterns-local-fonts.html)と述べていることにも注目しておきましょう。
+ここでは、私よりも賢い人々(TypeKitのBram Stein氏) が、<a hreflang="en" href="https://bramstein.com/writing/web-font-anti-patterns-local-fonts.html">インストールされているフォントのバージョンが古くて信頼性は低い場合があるため、`local()`を使うことは予測不可能である可能性がある</a>と述べていることにも注目しておきましょう。
 
 ## 縮約されたフォントと`font-stretch`
 
@@ -632,7 +632,7 @@ Google FontsはそのCSSのほとんど（すべてではないにしても）�
 )
 }}
 
-歴史的に、`font-stretch`はブラウザのサポートが悪く、よく知られた`@font-face`プロパティではありませんでした。詳しくは[MDNの`font-stretch`について](https://developer.mozilla.org/ja/docs/Web/CSS/font-stretch) を参照してください。しかし、[ブラウザのサポート](https://caniuse.com/#feat=css-font-stretch)は広がっています。
+歴史的に、`font-stretch`はブラウザのサポートが悪く、よく知られた`@font-face`プロパティではありませんでした。詳しくは[MDNの`font-stretch`について](https://developer.mozilla.org/ja/docs/Web/CSS/font-stretch) を参照してください。しかし、<a hreflang="en" href="https://caniuse.com/#feat=css-font-stretch">ブラウザのサポート</a>は広がっています。
 
 小さいビューポートで凝縮されたフォントを使用することで、より多くのテキストを表示できるようになることが示唆されていますが、このアプローチは一般的には使用されていません。とはいえ、このプロパティがモバイルよりもデスクトップで半パーセントポイント多く使われているというのは予想外で、7％というのは私が予想していたよりもはるかに高いと思えます。
 
@@ -647,7 +647,7 @@ Google FontsはそのCSSのほとんど（すべてではないにしても）�
 )
 }}
 
-1.8％でさえ、これは予想よりも高かったが、これがうまくいくのを見て興奮している。[Google Fonts v2](https://developers.google.com/fonts/docs/css2)には可変フォントのサポートがいくつか含まれています。
+1.8％でさえ、これは予想よりも高かったが、これがうまくいくのを見て興奮している。<a hreflang="en" href="https://developers.google.com/fonts/docs/css2">Google Fonts v2</a>には可変フォントのサポートがいくつか含まれています。
 
 {{ figure_markup(
   image="fig19.png",
@@ -669,7 +669,7 @@ Google FontsはそのCSSのほとんど（すべてではないにしても）�
 )
 }}
 
-これらのここでの使用法は基本的に存在しませんが、詳細については[カラーフォント！　WTF?](https://www.colorfonts.wtf/)という優れたリソースをチェックできます。フォント用のSVGフォーマット(これは良くないし消えていく)に似ていますが(全くそうではありません)、これを使うとOpenTypeファイルの中にSVGを埋め込むことができ、これは素晴らしくクールです。
+これらのここでの使用法は基本的に存在しませんが、詳細については<a hreflang="en" href="https://www.colorfonts.wtf/">カラーフォント！　WTF?</a>という優れたリソースをチェックできます。フォント用のSVGフォーマット(これは良くないし消えていく)に似ていますが(全くそうではありません)、これを使うとOpenTypeファイルの中にSVGを埋め込むことができ、これは素晴らしくクールです。
 
 ## 結論
 

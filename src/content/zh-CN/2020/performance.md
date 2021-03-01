@@ -7,7 +7,7 @@ reviewers: [borisschapira, rviscomi, obto, noamr, Zizzamia, exterkamp]
 analysts: [max-ostapenko, dooman87]
 editors: [bazzadp]
 translators: [Zuckjet]
-thefoxis_bio: Karolina 是 <a href="https://calibreapp.com/">Calibre</a> 产品设计主管，致力打造最全面的速度监测平台。她创办了性能期刊，也就是你平时看到的性能简讯的来源。Karolina <a href="https://calibreapp.com/blog/category/web-platform">也经常发表</a>关于性能如何影响用户体验的文章。
+thefoxis_bio: Karolina 是 <a hreflang="en" href="https://calibreapp.com/">Calibre</a> 产品设计主管，致力打造最全面的速度监测平台。她创办了性能期刊，也就是你平时看到的性能简讯的来源。Karolina <a hreflang="en" href="https://calibreapp.com/blog/category/web-platform">也经常发表</a>关于性能如何影响用户体验的文章。
 discuss: 2045
 results: https://docs.google.com/spreadsheets/d/164FVuCQ7gPhTWUXJl1av5_hBxjncNi0TK8RnNseNPJQ/
 featured_quote: 性能差不仅会导致挫败感或对用户转化产生负面影响，也给现实生活带来障碍。今年的全球疫情使得这些存在的障碍更加明显。
@@ -21,23 +21,23 @@ featured_stat_label_3: Lighthouse v6 评分不变的站点
 
 ## 介绍
 
-毫无疑问，网站加载速度慢会对整体的用户体验有不良影响，进而导致较低的转化率。但性能差不仅会导致挫败感或对业务目标造成不良影响，也给现实生活带来障碍。今年的全球疫情[使得这些存在的障碍更加明显](https://www.weforum.org/agenda/2020/04/coronavirus-covid-19-pandemic-digital-divide-internet-data-broadband-mobbile/)。随着远程学习、工作、社交的转变，我们的整个生活突然转移到了网上。较差的网络连接和缺乏功能齐全的设备使得这一转变极为痛苦，然而对于很多人来说，就连这些条件都不具备。这是一次真正的测试，凸显了全球范围内网络连接、设备以及网速的不平等。
+毫无疑问，网站加载速度慢会对整体的用户体验有不良影响，进而导致较低的转化率。但性能差不仅会导致挫败感或对业务目标造成不良影响，也给现实生活带来障碍。今年的全球疫情<a hreflang="en" href="https://www.weforum.org/agenda/2020/04/coronavirus-covid-19-pandemic-digital-divide-internet-data-broadband-mobbile/">使得这些存在的障碍更加明显</a>。随着远程学习、工作、社交的转变，我们的整个生活突然转移到了网上。较差的网络连接和缺乏功能齐全的设备使得这一转变极为痛苦，然而对于很多人来说，就连这些条件都不具备。这是一次真正的测试，凸显了全球范围内网络连接、设备以及网速的不平等。
 
 性能工具不断发展，以描绘用户体验的各个方面，并使发现潜在问题变得更加容易。自[去年性能章节](../2019/performance)发布后，该领域有许多重大发展，已经改变了我们监控速度的方式。
 
-随着流行的质量审计工具 Lighthouse 6 的重大版本发布，[著名的性能评分算法发生了重大改变](https://calibreapp.com/blog/how-performance-score-works), 因此总评分机制也随之发生了改变。[网页核心指标](https://calibreapp.com/blog/core-web-vitals)，即一系列新的度量标准去描述不同方面的用户体验，也一同发布了。它将来会成为搜索排名的因素之一，这会使得社区开发者的注意力转移到这些新的速度指标。
+随着流行的质量审计工具 Lighthouse 6 的重大版本发布，<a hreflang="en" href="https://calibreapp.com/blog/how-performance-score-works">著名的性能评分算法发生了重大改变</a>, 因此总评分机制也随之发生了改变。<a hreflang="en" href="https://calibreapp.com/blog/core-web-vitals">网页核心指标</a>，即一系列新的度量标准去描述不同方面的用户体验，也一同发布了。它将来会成为搜索排名的因素之一，这会使得社区开发者的注意力转移到这些新的速度指标。
 
-在本章中，我们将通过这些新的发展来查看由[Chrome 用户体验报告 (CrUX)](https://developers.google.com/web/tools/chrome-user-experience-report)提供的真实性能数据，以及分析一些其他相关指标。需要注意的是由于 iOS 的限制，CrUX 移动端统计结果不包含运行苹果移动操作系统的设备。这毫无疑问会影响我们的分析，尤其是在检查每个国家的性能指标时。
+在本章中，我们将通过这些新的发展来查看由<a hreflang="en" href="https://developers.google.com/web/tools/chrome-user-experience-report">Chrome 用户体验报告 (CrUX)</a>提供的真实性能数据，以及分析一些其他相关指标。需要注意的是由于 iOS 的限制，CrUX 移动端统计结果不包含运行苹果移动操作系统的设备。这毫无疑问会影响我们的分析，尤其是在检查每个国家的性能指标时。
 
 让我们继续深入吧。
 
 ## Lighthouse 性能评分
 
-2020年5月，[Lighthouse 6 发布](https://github.com/GoogleChrome/lighthouse/releases/tag/v6.0.0)。这个流行的、新的主要版本性能评审套件，对它的性能评分算法做了显著的改变。性能得分是对站点速度的概况性描述。在 Lighthouse 6 中，分数通过“六不五法则”来测量：首次有意义的绘制和首次 CPU 空闲被移除了，取而代之的是最大内容绘制、总阻塞时间（TBT，等价于实验性的首次输入延迟）和累计布局偏移（CLS）。
+2020年5月，<a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/releases/tag/v6.0.0">Lighthouse 6 发布</a>。这个流行的、新的主要版本性能评审套件，对它的性能评分算法做了显著的改变。性能得分是对站点速度的概况性描述。在 Lighthouse 6 中，分数通过“六不五法则”来测量：首次有意义的绘制和首次 CPU 空闲被移除了，取而代之的是最大内容绘制、总阻塞时间（TBT，等价于实验性的首次输入延迟）和累计布局偏移（CLS）。
 
 新的评分算法优先考虑新一代的性能指标：网页核心指标。与此同时，降低了首次内容绘制、可交互时间以及页面可见区域平均渲染时间的评分权重。该算法明确强调了用户体验的三个方面：*交互性*（总阻塞时间和可交互时间），*视觉稳定性*（累计页面偏移）和*感知性*（首次内容绘制，可见区域渲染平均时间，最大内容渲染）。
 
-另外，该评分机制会对桌面端和移动端应用使用不同的参考标准。这意味着该机制对于桌面应用的要求不会过于宽松、对移动应用的要求不至于太严格（因为移动端 benchmark 性能评分要低于桌面端应用）。你可以比较一下 Lighthouse 5 和 6 在[Lighthouse 计分器](https://googlechrome.github.io/lighthouse/scorecalc/)中分数的不同，看这些分数到底是如何改变的。
+另外，该评分机制会对桌面端和移动端应用使用不同的参考标准。这意味着该机制对于桌面应用的要求不会过于宽松、对移动应用的要求不至于太严格（因为移动端 benchmark 性能评分要低于桌面端应用）。你可以比较一下 Lighthouse 5 和 6 在<a hreflang="en" href="https://googlechrome.github.io/lighthouse/scorecalc/">Lighthouse 计分器</a>中分数的不同，看这些分数到底是如何改变的。
 
 {{ figure_markup(
   image="performance-change-in-lighthouse-score.png",
@@ -67,7 +67,7 @@ featured_stat_label_3: Lighthouse v6 评分不变的站点
 
 ## 页面关键指标：最大内容绘制
 
-最大内容绘制（LCP）是一个具有里程碑意义的基于时间的度量指标，它表明了最大的[页面可见区域元素](https://web.dev/lcp/#what-elements-are-considered)渲染时间。
+最大内容绘制（LCP）是一个具有里程碑意义的基于时间的度量指标，它表明了最大的<a hreflang="en" href="https://web.dev/lcp/#what-elements-are-considered">页面可见区域元素</a>渲染时间。
 
 ### 按设备类型看 FCP
 
@@ -97,9 +97,9 @@ featured_stat_label_3: Lighthouse v6 评分不变的站点
   )
 }}
 
-最高比例的表现良好的 LCP 浏览体验主要集中分布在欧洲和有着76%良好浏览体验的韩国为首的亚洲国家。据[Speedtest Global Index](https://www.speedtest.net/global-index)报导，十月份韩国下载速度高达145Mbps，在移动端的网速一直领先。日本、捷克、台湾、德国和比利时等一些国家的移动端网速也比较快。澳大利亚尽管在移动端网速方面领先，但是在桌面端连接速度慢和延迟令人失望，使得他的排名在上述国家之后。
+最高比例的表现良好的 LCP 浏览体验主要集中分布在欧洲和有着76%良好浏览体验的韩国为首的亚洲国家。据<a hreflang="en" href="https://www.speedtest.net/global-index">Speedtest Global Index</a>报导，十月份韩国下载速度高达145Mbps，在移动端的网速一直领先。日本、捷克、台湾、德国和比利时等一些国家的移动端网速也比较快。澳大利亚尽管在移动端网速方面领先，但是在桌面端连接速度慢和延迟令人失望，使得他的排名在上述国家之后。
 
-在我们的调查数据中，印度依然保持着最后一名，仅有16%的良好体验。尽管新的互联网用户正在持续增长，移动端和桌面端的网速[仍然是个问题](https://www.opensignal.com/reports/2020/04/india/mobile-network-experience)，4G平均下载速度是10Mbps、3G平均下载速度是3Mbps、桌面端下载速度低于50Mbps。
+在我们的调查数据中，印度依然保持着最后一名，仅有16%的良好体验。尽管新的互联网用户正在持续增长，移动端和桌面端的网速<a hreflang="en" href="https://www.opensignal.com/reports/2020/04/india/mobile-network-experience">仍然是个问题</a>，4G平均下载速度是10Mbps、3G平均下载速度是3Mbps、桌面端下载速度低于50Mbps。
 
 ### 按连接类型看 FCP
 
@@ -115,7 +115,7 @@ featured_stat_label_3: Lighthouse v6 评分不变的站点
 
 由于 LCP 指的是最大的首屏元素（包括图片、视频或包含文本的块级元素）渲染出来的时间，因此网速越慢、评测得分越差也就不足为奇了。
 
-网速和更好的 LCP 性能之间有明确的相关性，但即便是4G网络，仍然只有48%的统计结果被归为良好，也就意味着有一半的站点的浏览体验需要改进。自动媒体优化、提供正确的尺寸和格式、同时针对低数据模式的优化，将会帮助我们实现优化目标。更多内容请参见[LCP 优化指南](https://web.dev/optimize-lcp/)
+网速和更好的 LCP 性能之间有明确的相关性，但即便是4G网络，仍然只有48%的统计结果被归为良好，也就意味着有一半的站点的浏览体验需要改进。自动媒体优化、提供正确的尺寸和格式、同时针对低数据模式的优化，将会帮助我们实现优化目标。更多内容请参见<a hreflang="en" href="https://web.dev/optimize-lcp/">LCP 优化指南</a>
 
 ## 网页核心指标：累计布局偏移
 
@@ -153,7 +153,7 @@ featured_stat_label_3: Lighthouse v6 评分不变的站点
 
 CLS 在不同地域的表现总体上是好的，至少有56%的网站获得了良好的评价。对于可感知的视觉稳定性来说，这是一个极好的消息。我们可以观察到类似的国家处于领先地位，正如我们在 LCP 地理分布中看到的那样--韩国、日本、捷克、德国、波兰。
 
-相对于其他指标，比如 LCP，视觉稳定性受地理和延迟的影响较小。排名最好的国家和排名最差的国家之间的百分比差距，在 LCP 指标上达到了61%，在 CLS 指标上达到了13%。中等评分的网站比例在整个网站中相对较低，让位于整个网站中19%-29%的差体验。导致CLS差的因素有很多--在[优化累积布局转移指南](https://web.dev/optimize-cls/)中了解如何解决这些问题。整体而言，中等评分网站的比例最低，甚至低于19%-29的最差用户体验的比例。有许多因素都可能导致较差的CLS，请在[优化累积布局偏移指南](https://web.dev/optimize-cls/)中了解如何解决这些问题。
+相对于其他指标，比如 LCP，视觉稳定性受地理和延迟的影响较小。排名最好的国家和排名最差的国家之间的百分比差距，在 LCP 指标上达到了61%，在 CLS 指标上达到了13%。中等评分的网站比例在整个网站中相对较低，让位于整个网站中19%-29%的差体验。导致CLS差的因素有很多--在<a hreflang="en" href="https://web.dev/optimize-cls/">优化累积布局转移指南</a>中了解如何解决这些问题。整体而言，中等评分网站的比例最低，甚至低于19%-29的最差用户体验的比例。有许多因素都可能导致较差的CLS，请在<a hreflang="en" href="https://web.dev/optimize-cls/">优化累积布局偏移指南</a>中了解如何解决这些问题。
 
 ### 按连接类型查看 CLS
 
@@ -207,7 +207,7 @@ CLS 在不同地域的表现总体上是好的，至少有56%的网站获得了�
 
 FID 评分的地理分布图证实了前面设备汇总图的发现。在最差的情况下，79%的网站有良好的 FID，其中97%的网站排名靠前，韩国再次领先。有趣的是，CLS 和 LCP 排名较好的国家，如捷克、波兰、乌克兰和俄罗斯联邦在这里的排名都掉到了最后。
 
-再次申明，我们可以推测为什么会这样，但需要进一步分析才能真正确定。假设 FID 与 JavaScript 执行能力相关，那么功能更强大的设备价格更高，甚至被作为奢侈品的国家/地区，其 FID 排名可能会更低。波兰就是一个很好的例子，与美国市场相比，波兰是[ iPhone 价格最高的国家之一](https://qz.com/1106603/where-the-iphone-x-is-cheapest-and-most-expensive-in-dollars-pounds-and-yuan/)，再加上[相对较低的工资](https://en.wikipedia.org/wiki/List_of_European_countries_by_average_wage#Net_average_monthly_salary)，单个人的薪资是不足以购买苹果的旗舰产品的。相反，以澳大利亚的[平均薪资](https://www.news.com.au/finance/average-australian-salary-how-much-you-have-to-earn-to-be-better-off-than-most/news-story/6fcdde092e87872b9957d2ab8eda1cbd)，能够以一周的工薪购买一部苹果设备。幸运的是，评分较低的网站的百分比通常为0，只有1-2％的浏览例外，这表明该网站对交互的响应相对较快。幸运的是，评分低的网站比例大多为0，少数例外有1-2%的较差评分，这说明绝大部分网站对交互的响应都很及时。
+再次申明，我们可以推测为什么会这样，但需要进一步分析才能真正确定。假设 FID 与 JavaScript 执行能力相关，那么功能更强大的设备价格更高，甚至被作为奢侈品的国家/地区，其 FID 排名可能会更低。波兰就是一个很好的例子，与美国市场相比，波兰是<a hreflang="en" href="https://qz.com/1106603/where-the-iphone-x-is-cheapest-and-most-expensive-in-dollars-pounds-and-yuan/"> iPhone 价格最高的国家之一</a>，再加上[相对较低的工资](https://en.wikipedia.org/wiki/List_of_European_countries_by_average_wage#Net_average_monthly_salary)，单个人的薪资是不足以购买苹果的旗舰产品的。相反，以澳大利亚的<a hreflang="en" href="https://www.news.com.au/finance/average-australian-salary-how-much-you-have-to-earn-to-be-better-off-than-most/news-story/6fcdde092e87872b9957d2ab8eda1cbd">平均薪资</a>，能够以一周的工薪购买一部苹果设备。幸运的是，评分较低的网站的百分比通常为0，只有1-2％的浏览例外，这表明该网站对交互的响应相对较快。幸运的是，评分低的网站比例大多为0，少数例外有1-2%的较差评分，这说明绝大部分网站对交互的响应都很及时。
 
 ### 按连接类型查看 FID
 
@@ -263,7 +263,7 @@ FID 评分的地理分布图证实了前面设备汇总图的发现。在最差�
 
 逐年比较移动设备上的 FCP，我们发现良好的用户体验较少，而中等或者较差的用户体验居多。 75％的网站的 FCP 低于标准值。我们可以推测，高比例的低于理想 FCP 的站点是造成用户体验下降的原因。
 
-许多因素都会导致浏览器绘制的延迟，比如服务端延迟（通过一些指标来衡量，比如[首字节时间（TTFB）](#time-to-first-byte-ttfb)和 RTT)，阻塞的 JavaScript 请求，或者对自定义字体的不当处理等等。
+许多因素都会导致浏览器绘制的延迟，比如服务端延迟（通过一些指标来衡量，比如[首字节时间（TTFB）](#首字节时间)和 RTT)，阻塞的 JavaScript 请求，或者对自定义字体的不当处理等等。
 
 ### 按地理位置查看 FCP
 
@@ -303,7 +303,7 @@ FID 评分的地理分布图证实了前面设备汇总图的发现。在最差�
 
 这个趋势说明了数字鸿沟在不断加剧，用户体验在较慢的网络和较差性能的设备上会一直恶化。在较慢连接的场景中提高 FCP 和增强 TTFB 是正相关的，这在[通过连接类型汇总 TTFB 性能图标](#ttfb-by-connection-type)中可以观察到，也就是说较差的 TTFB 等同于较差的 FCP。
 
-[主机提供商](https://ismyhostfastyet.com/)或[内容分发网络](https://www.cdnperf.com/)的选择将会对速度有叠加的影响。尽可能选择最快伺服的主机提供商和内容分发网络，将会对提高 FCP 和 TTFB 有帮助，特别是在较慢的网络状况下。字体加载时间也很大程度上影响了 FCP，因此，[确保字体加载过程中页面文本仍然可见](https://web.dev/font-display/)是一个有价值的策略（特别是在连接速度较慢的情况下，这些资源的获取成本很高）。
+<a hreflang="en" href="https://ismyhostfastyet.com/">主机提供商</a>或<a hreflang="en" href="https://www.cdnperf.com/">内容分发网络</a>的选择将会对速度有叠加的影响。尽可能选择最快伺服的主机提供商和内容分发网络，将会对提高 FCP 和 TTFB 有帮助，特别是在较慢的网络状况下。字体加载时间也很大程度上影响了 FCP，因此，<a hreflang="en" href="https://web.dev/font-display/">确保字体加载过程中页面文本仍然可见</a>是一个有价值的策略（特别是在连接速度较慢的情况下，这些资源的获取成本很高）。
 
 查看“离线”统计数据，我们可以推断出大量 FCP 问题也与网络类型不相关。如果这一说法是正确的，我们将不会在这一类别中获得重大收益。似乎渲染并不会因为获取 JavaScript 资源文件而受到较大延迟，但是它受解析和执行的影响。
 
@@ -355,13 +355,13 @@ FID 评分的地理分布图证实了前面设备汇总图的发现。在最差�
 
 TTFB 受网络延迟和连接类型的影响。由上图可知，延迟越高、连接越慢，TTFB 度量值就会越差。即使在被认为快速（4G）的移动端连接上，也只有21%的网站有一个快速的 TTFB。低于4G速度的站点基本上不会被评定为快速。
 
-我们来看看[2018年12月-2019年11月全球移动端网速](https://www.speedtest.net/insights/blog/content/images/2020/02/Ookla_Mobile-Speeds-Poster_2020.png)，可以看出整体上移动端连接网速并不高。那些网速和代表蜂窝网络的技术（比如5G）分布不均，并且最终会影响 TTFB。举个例子，[我们看尼日利亚的网络分布图]，该国大部分区域覆盖的都是2G和3G，极少数区域才有4G网络分布。
+我们来看看<a hreflang="en" href="https://www.speedtest.net/insights/blog/content/images/2020/02/Ookla_Mobile-Speeds-Poster_2020.png">2018年12月-2019年11月全球移动端网速</a>，可以看出整体上移动端连接网速并不高。那些网速和代表蜂窝网络的技术（比如5G）分布不均，并且最终会影响 TTFB。举个例子，[我们看尼日利亚的网络分布图]，该国大部分区域覆盖的都是2G和3G，极少数区域才有4G网络分布。
 
 令人惊讶的是，离线站点和通过4G网络访问的站点有着相同数目的良好的TTFB。通过 service workers，我们可以预期一些 TTFB 问题会得到缓解，但该趋势并未在上图中反映出来。
 
 ## 性能监测的使用
 
-有许多不同的以用户为中心的指标可用于评估网站和应用程序。然而，有时预定义的指标并不完全符合我们的特定场景和需要。[性能监测对象 API](https://developer.mozilla.org/zh-CN/docs/Web/API/PerformanceObserver)允许我们通过[自定义时间测量 API](https://developer.mozilla.org/zh-CN/docs/Web/API/User_Timing_API)、[Long Tasks API](https://developer.mozilla.org/en-US/docs/Web/API/Long_Tasks_API)、[Event Timing API](https://web.dev/custom-metrics/#event-timing-api)和[一些底层 APIs](https://web.dev/custom-metrics/)去获取自定义度量数据。举例来说，在这些 API 的帮助下我们可以记录页面转场时间或者量化服务端渲染应用的客户端激活。
+有许多不同的以用户为中心的指标可用于评估网站和应用程序。然而，有时预定义的指标并不完全符合我们的特定场景和需要。[性能监测对象 API](https://developer.mozilla.org/zh-CN/docs/Web/API/PerformanceObserver)允许我们通过[自定义时间测量 API](https://developer.mozilla.org/zh-CN/docs/Web/API/User_Timing_API)、[Long Tasks API](https://developer.mozilla.org/en-US/docs/Web/API/Long_Tasks_API)、<a hreflang="en" href="https://web.dev/custom-metrics/#event-timing-api">Event Timing API</a>和<a hreflang="en" href="https://web.dev/custom-metrics/">一些底层 APIs</a>去获取自定义度量数据。举例来说，在这些 API 的帮助下我们可以记录页面转场时间或者量化服务端渲染应用的客户端激活。
 
 {{ figure_markup(
   image="performance-performance-observer-usage.png",

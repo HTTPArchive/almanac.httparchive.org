@@ -9,7 +9,7 @@ editors: [obto]
 translators: []
 discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/
-housseindjirdeh_bio: Houssein is a Developer Advocate at Google working on speed, performance and the web framework ecosystem. He tweets at <a href="https://twitter.com/hdjirdeh">@hdjirdeh</a> and blogs at <a href="https://houssein.me/">https://houssein.me/</a>.
+housseindjirdeh_bio: Houssein is a Developer Advocate at Google working on speed, performance and the web framework ecosystem. He tweets at <a href="https://twitter.com/hdjirdeh">@hdjirdeh</a> and blogs at <a hreflang="en" href="https://houssein.me/">https://houssein.me/</a>.
 featured_quote: JavaScript is the most costly resource we send to browsers; having to be downloaded, parsed, compiled, and finally executed. Although browsers have significantly decreased the time it takes to parse and compile scripts, download and execution have become the most expensive stages when JavaScript is processed by a web page.
 featured_stat_1: 89%
 featured_stat_label_1: Sites with more third-party code than first-party
@@ -25,11 +25,11 @@ JavaScript is a scripting language that makes it possible to build interactive a
 
 The language specification itself, along with many community-built libraries and frameworks used by developers around the world, has changed and evolved ever since the language was created in 1995. JavaScript implementations and interpreters have also continued to progress, making the language usable in many environments, not only web browsers.
 
-The [HTTP Archive](https://httparchive.org/) crawls [millions of pages](https://httparchive.org/reports/state-of-the-web#numUrls) every month and runs them through a private instance of [WebPageTest](https://webpagetest.org/) to store key information of every page. (You can learn more about this in our [methodology](./methodology)). In the context of JavaScript, HTTP Archive provides extensive information on the usage of the language for the entire web. This chapter consolidates and analyzes many of these trends.
+The <a hreflang="en" href="https://httparchive.org/">HTTP Archive</a> crawls <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#numUrls">millions of pages</a> every month and runs them through a private instance of <a hreflang="en" href="https://webpagetest.org/">WebPageTest</a> to store key information of every page. (You can learn more about this in our [methodology](./methodology)). In the context of JavaScript, HTTP Archive provides extensive information on the usage of the language for the entire web. This chapter consolidates and analyzes many of these trends.
 
 ## How much JavaScript do we use?
 
-JavaScript is the most costly resource we send to browsers; having to be downloaded, parsed, compiled, and finally executed. Although browsers have significantly decreased the time it takes to parse and compile scripts, [download and execution have become the most expensive stages](https://v8.dev/blog/cost-of-javascript-2019) when JavaScript is processed by a web page.
+JavaScript is the most costly resource we send to browsers; having to be downloaded, parsed, compiled, and finally executed. Although browsers have significantly decreased the time it takes to parse and compile scripts, <a hreflang="en" href="https://v8.dev/blog/cost-of-javascript-2019">download and execution have become the most expensive stages</a> when JavaScript is processed by a web page.
 
 Sending smaller JavaScript bundles to the browser is the best way to reduce download times, and in turn improve page performance. But how much JavaScript do we really use?
 
@@ -76,7 +76,7 @@ Although this data shows how much longer it can take for a mobile device to proc
 {{ figure_markup(
   image="js-processing-reddit.png",
   alt="JavaScript processing times for reddit.com.",
-  caption='JavaScript processing times for reddit.com. From <a href="https://v8.dev/blog/cost-of-javascript-2019">The cost of JavaScript in 2019</a>.',
+  caption='JavaScript processing times for reddit.com. From <a hreflang="en" href="https://v8.dev/blog/cost-of-javascript-2019">The cost of JavaScript in 2019</a>.',
   description="Bar chart showing 3 different devices: at the top a Pixel 3 has small amount on both the main thread and the worker thread of less than 400ms. For a Moto G4 it is approximately 900 ms on main thread and a further 300 ms on worker thread. And the final bar is an Alcatel 1X 5059D with over 2,000 ms on the main thread and over 500 ms on worker thread.",
   width=600,
   height=363
@@ -145,8 +145,8 @@ In the context of browser-server interactions, resource compression refers to co
 
 There are multiple text-compression algorithms, but only two are mostly used for the compression (and decompression) of HTTP network requests:
 
-- [Gzip](https://www.gzip.org/) (`gzip`): The most widely used compression format for server and client interactions
-- [Brotli](https://github.com/google/brotli) (`br`): A newer compression algorithm aiming to further improve compression ratios. [90% of browsers](https://caniuse.com/#feat=brotli) support Brotli encoding.
+- <a hreflang="en" href="https://www.gzip.org/">Gzip</a> (`gzip`): The most widely used compression format for server and client interactions
+- <a hreflang="en" href="https://github.com/google/brotli">Brotli</a> (`br`): A newer compression algorithm aiming to further improve compression ratios. <a hreflang="en" href="https://caniuse.com/#feat=brotli">90% of browsers</a> support Brotli encoding.
 
 Compressed scripts will always need to be uncompressed by the browser once transferred. This means its content remains the same and execution times are not optimized whatsoever. Resource compression, however, will always improve download times which also is one of the most expensive stages of JavaScript processing. Ensuring JavaScript files are compressed correctly can be one of the most significant factors in improving site performance.
 
@@ -166,7 +166,7 @@ For a deeper analysis on compression, refer to the ["Compression"](./compression
 
 ## Open source libraries and frameworks
 
-Open source code, or code with a permissive license that can be accessed, viewed and modified by anyone. From tiny libraries to entire browsers, such as [Chromium](https://www.chromium.org/Home) and [Firefox](https://www.openhub.net/p/firefox), open source code plays a crucial role in the world of web development. In the context of JavaScript, developers rely on open source tooling to include all types of functionality into their web page. Regardless of whether a developer decides to use a small utility library or a massive framework that dictates the architecture of their entire application, relying on open-source packages can make feature development easier and faster. So which JavaScript open-source libraries are used the most?
+Open source code, or code with a permissive license that can be accessed, viewed and modified by anyone. From tiny libraries to entire browsers, such as <a hreflang="en" href="https://www.chromium.org/Home">Chromium</a> and <a hreflang="en" href="https://www.openhub.net/p/firefox">Firefox</a>, open source code plays a crucial role in the world of web development. In the context of JavaScript, developers rely on open source tooling to include all types of functionality into their web page. Regardless of whether a developer decides to use a small utility library or a massive framework that dictates the architecture of their entire application, relying on open-source packages can make feature development easier and faster. So which JavaScript open-source libraries are used the most?
 
 <figure>
    <table>
@@ -288,18 +288,18 @@ Open source code, or code with a permissive license that can be accessed, viewed
    <figcaption>{{ figure_link(caption="Top JavaScript libraries on desktop and mobile.") }}</figcaption>
 </figure>
 
-[jQuery](https://jquery.com/), the most popular JavaScript library ever created, is used in 85.03% of desktop pages and 83.46% of mobile pages. The advent of many Browser APIs and methods, such as [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and [querySelector](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector), standardized much of the functionality provided by the library into a native form. Although the popularity of jQuery may seem to be declining, why is it still used in the vast majority of the web?
+<a hreflang="en" href="https://jquery.com/">jQuery</a>, the most popular JavaScript library ever created, is used in 85.03% of desktop pages and 83.46% of mobile pages. The advent of many Browser APIs and methods, such as [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and [querySelector](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector), standardized much of the functionality provided by the library into a native form. Although the popularity of jQuery may seem to be declining, why is it still used in the vast majority of the web?
 
 There are a number of possible reasons:
 
-- [WordPress](https://wordpress.org/), which is used in more than 30% of sites, includes jQuery by default.
+- <a hreflang="en" href="https://wordpress.org/">WordPress</a>, which is used in more than 30% of sites, includes jQuery by default.
 - Switching from jQuery to a newer client-side library can take time depending on how large an application is, and many sites may consist of jQuery in addition to newer client-side libraries.
 
-Other top used JavaScript libraries include jQuery variants (jQuery migrate, jQuery UI), [Modernizr](https://modernizr.com/), [Moment.js](https://momentjs.com/), [Underscore.js](https://underscorejs.org/) and so on.
+Other top used JavaScript libraries include jQuery variants (jQuery migrate, jQuery UI), <a hreflang="en" href="https://modernizr.com/">Modernizr</a>, <a hreflang="en" href="https://momentjs.com/">Moment.js</a>, <a hreflang="en" href="https://underscorejs.org/">Underscore.js</a> and so on.
 
 ### Frameworks and UI libraries
 
-<p class="note">As mentioned in our <a href="./methodology#wappalyzer">methodology</a>, the third-party detection library used in HTTP Archive (Wappalyzer) has a number of limitations with regards to how it detects certain tools. There is an open issue <a href="https://github.com/AliasIO/wappalyzer/issues/2450">to improve detection of JavaScript libraries and frameworks</a>, which will have impacted the results presented here.</p>
+<p class="note">As mentioned in our <a href="./methodology#wappalyzer">methodology</a>, the third-party detection library used in HTTP Archive (Wappalyzer) has a number of limitations with regards to how it detects certain tools. There is an open issue <a hreflang="en" href="https://github.com/AliasIO/wappalyzer/issues/2450">to improve detection of JavaScript libraries and frameworks</a>, which will have impacted the results presented here.</p>
 
 In the past number of years, the JavaScript ecosystem has seen a rise in open-source libraries and frameworks to make building **single-page applications** (SPAs) easier. A single-page application is characterized as a web page that loads a single HTML page and uses JavaScript to modify the page on user interaction instead of fetching new pages from the server. Although this remains to be the main premise of single-page applications, different server-rendering approaches can still be used to improve the experience of such sites. How many sites use these types of frameworks?
 
@@ -314,14 +314,14 @@ In the past number of years, the JavaScript ecosystem has seen a rise in open-so
 
 Only a subset of popular frameworks are being analyzed here, but it's important to note that all of them either follow one of these two approaches:
 
-- A [model-view-controller](https://developer.chrome.com/apps/app_frameworks) (or model-view-viewmodel) architecture
+- A <a hreflang="en" href="https://developer.chrome.com/apps/app_frameworks">model-view-controller</a> (or model-view-viewmodel) architecture
 - A component-based architecture
 
-Although there has been a shift towards a component-based model, many older frameworks that follow the MVC paradigm ([AngularJS](https://angularjs.org/), [Backbone.js](https://backbonejs.org/), [Ember](https://emberjs.com/)) are still being used in thousands of pages. However, [React](https://reactjs.org/), [Vue](https://vuejs.org/) and [Angular](https://angular.io/) are the most popular component-based frameworks ([Zone.js](https://github.com/angular/zone.js) is a package that is now part of Angular core).
+Although there has been a shift towards a component-based model, many older frameworks that follow the MVC paradigm (<a hreflang="en" href="https://angularjs.org/">AngularJS</a>, <a hreflang="en" href="https://backbonejs.org/">Backbone.js</a>, <a hreflang="en" href="https://emberjs.com/">Ember</a>) are still being used in thousands of pages. However, <a hreflang="en" href="https://reactjs.org/">React</a>, <a hreflang="en" href="https://vuejs.org/">Vue</a> and <a hreflang="en" href="https://angular.io/">Angular</a> are the most popular component-based frameworks (<a hreflang="en" href="https://github.com/angular/zone.js">Zone.js</a> is a package that is now part of Angular core).
 
 ## Differential loading
 
-[JavaScript modules](https://v8.dev/features/modules), or ES modules, are supported in [all major browsers](https://caniuse.com/#feat=es6-module). Modules provide the capability to create scripts that can import and export from other modules. This allows anyone to build their applications architected in a module pattern, importing and exporting wherever necessary, without relying on third-party module loaders.
+<a hreflang="en" href="https://v8.dev/features/modules">JavaScript modules</a>, or ES modules, are supported in <a hreflang="en" href="https://caniuse.com/#feat=es6-module">all major browsers</a>. Modules provide the capability to create scripts that can import and export from other modules. This allows anyone to build their applications architected in a module pattern, importing and exporting wherever necessary, without relying on third-party module loaders.
 
 To declare a script as a module, the script tag must get the `type="module"` attribute:
 
@@ -339,7 +339,7 @@ How many sites use `type="module"` for scripts on their page?
   )
 }}
 
-Browser-level support for modules is still relatively new, and the numbers here show that very few sites currently use `type="module"` for their scripts. Many sites are still relying on module loaders (2.37% of all desktop sites use [RequireJS](https://github.com/requirejs/requirejs) for example) and bundlers ([webpack](https://webpack.js.org/) for example) to define modules within their codebase.
+Browser-level support for modules is still relatively new, and the numbers here show that very few sites currently use `type="module"` for their scripts. Many sites are still relying on module loaders (2.37% of all desktop sites use <a hreflang="en" href="https://github.com/requirejs/requirejs">RequireJS</a> for example) and bundlers (<a hreflang="en" href="https://webpack.js.org/">webpack</a> for example) to define modules within their codebase.
 
 If native modules are used, it's important to ensure that an appropriate fallback script is used for browsers that do not yet support modules. This can be done by including an additional script with a `nomodule` attribute.
 
@@ -347,7 +347,7 @@ If native modules are used, it's important to ensure that an appropriate fallbac
 <script nomodule src="fallback.js"></script>
 ```
 
-When used together, browsers that support modules will completely ignore any scripts containing the `nomodule` attribute. On the other hand, browsers that do not yet support modules will not download any scripts with `type="module"`. Since they do not recognize `nomodule` either, they will download scripts with the attribute normally. Using this approach can allow developers to [send modern code to modern browsers for faster page loads](https://web.dev/serve-modern-code-to-modern-browsers/). So, how many sites use `nomodule` for scripts on their page?
+When used together, browsers that support modules will completely ignore any scripts containing the `nomodule` attribute. On the other hand, browsers that do not yet support modules will not download any scripts with `type="module"`. Since they do not recognize `nomodule` either, they will download scripts with the attribute normally. Using this approach can allow developers to <a hreflang="en" href="https://web.dev/serve-modern-code-to-modern-browsers/">send modern code to modern browsers for faster page loads</a>. So, how many sites use `nomodule` for scripts on their page?
 
 {{ figure_markup(
   image="fig14.png",
@@ -415,11 +415,11 @@ How many sites use the following APIs?
 
 Atomics (0.38%) and SharedArrayBuffer (0.20%) are barely visible on this chart since they are used on such few pages.
 
-It is important to note that the numbers here are approximations and they do not leverage [UseCounter](https://chromium.googlesource.com/chromium/src.git/+/master/docs/use_counter_wiki.md) to measure feature usage.
+It is important to note that the numbers here are approximations and they do not leverage <a hreflang="en" href="https://chromium.googlesource.com/chromium/src.git/+/master/docs/use_counter_wiki.md">UseCounter</a> to measure feature usage.
 
 ## Source maps
 
-In many build systems, JavaScript files undergo minification to minimize its size and transpilation for newer language features that are not yet supported in many browsers. Moreover, language supersets like [TypeScript](https://www.typescriptlang.org/) compile to an output that can look noticeably different from the original source code. For all these reasons, the final code served to the browser can be unreadable and hard to decipher.
+In many build systems, JavaScript files undergo minification to minimize its size and transpilation for newer language features that are not yet supported in many browsers. Moreover, language supersets like <a hreflang="en" href="https://www.typescriptlang.org/">TypeScript</a> compile to an output that can look noticeably different from the original source code. For all these reasons, the final code served to the browser can be unreadable and hard to decipher.
 
 A **source map** is an additional file accompanying a JavaScript file that allows a browser to map the final output to its original source. This can make debugging and analyzing production bundles much simpler.
 
