@@ -31,7 +31,7 @@ Lors de cette collecte, nous avons découvert *plus de 5 000 noms d’élément
 
 ## Méthodologie
 
-Les noms des éléments sur chaque page ont été collectés à partir du <a href="https://fr.wikipedia.org/wiki/Document_Object_Model">DOM</a> lui-même, après l’exécution initiale de JavaScript.
+Les noms des éléments sur chaque page ont été collectés à partir du [DOM](https://fr.wikipedia.org/wiki/Document_Object_Model) lui-même, après l’exécution initiale de JavaScript.
 
 Examiner un nombre de fréquences brut n’est pas particulièrement utile, même pour les éléments standards : environ 25 % des éléments rencontrés sont des `<div>`. Environ 17 % sont des `<a>`, environ 11 % sont des `<span>` – et ce sont les seuls éléments qui comptent pour plus de 10 % des occurrences. C’est un peu comme ça <a hreflang="en" href="https://www.youtube.com/watch?v=fCn8zs912OE">dans toutes les langues</a> ; un petit nombre de termes est surreprésenté en termes de fréquence. D’autant plus que, si nous commençons à examiner l’adoption des éléments non standards, cela peut être très trompeur. Il suffirait qu’un site utilise un certain élément mille fois pour lui conférer artificiellement une grande popularité.
 

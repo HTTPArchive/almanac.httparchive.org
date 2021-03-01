@@ -664,7 +664,7 @@ Un modo per vedere come questo si traduce in un impatto sull'esperienza utente �
   sql_file="correlations.sql"
 ) }}
 
-Il grafico sopra utilizza il <a  href="https://it.wikipedia.org/wiki/Indice_di_correlazione_di_Pearson">coefficiente di correlazione di Pearson</a>. C'è una definizione lunga e un po' complessa di cosa significhi precisamente, ma il succo è che stiamo cercando la forza della correlazione tra due numeri diversi. Se troviamo un coefficiente di 1,00, avremmo una correlazione positiva diretta. Una correlazione di 0,00 non mostrerebbe alcuna connessione tra due numeri. Qualunque cosa al di sotto di 0,00 indica una correlazione negativa, in altre parole, quando un numero aumenta, l'altro diminuisce.
+Il grafico sopra utilizza il [coefficiente di correlazione di Pearson](https://it.wikipedia.org/wiki/Indice_di_correlazione_di_Pearson). C'è una definizione lunga e un po' complessa di cosa significhi precisamente, ma il succo è che stiamo cercando la forza della correlazione tra due numeri diversi. Se troviamo un coefficiente di 1,00, avremmo una correlazione positiva diretta. Una correlazione di 0,00 non mostrerebbe alcuna connessione tra due numeri. Qualunque cosa al di sotto di 0,00 indica una correlazione negativa, in altre parole, quando un numero aumenta, l'altro diminuisce.
 
 Innanzitutto, non sembra esserci molta correlazione misurabile tra le nostre metriche JavaScript e il punteggio di accessibilità Lighthouse ("LH A11y" nel grafico) qui. Ciò è in netto contrasto con ciò che è stato trovato altrove, in particolare tramite <a hreflang="en" href="https://webaim.org/projects/million/#frameworks">la ricerca annuale di WebAim</a>.
 

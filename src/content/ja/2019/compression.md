@@ -52,7 +52,7 @@ HTTP Archiveには、530万のWebサイトの測定値が含まれており、�
 
 IANAは、`Accept-Encoding`および`Content-Encoding`ヘッダーで使用できる有効な<a hreflang="en" href="https://www.iana.org/assignments/http-parameters/http-parameters.xml#content-coding">HTTPコンテンツエンコーディングのリスト</a>を保持しています。これらには、`gzip`、`deflate`、`br`（Brotli）などが含まれます。これらのアルゴリズムの簡単な説明を以下に示します。
 
-* <a hreflang="en" href="https://tools.ietf.org/html/rfc1952">Gzip</a>は、<a  href="https://ja.wikipedia.org/wiki/LZ77">LZ77</a>および<a  href="https://ja.wikipedia.org/wiki/%E3%83%8F%E3%83%95%E3%83%9E%E3%83%B3%E7%AC%A6%E5%8F%B7">ハフマンコーディング</a>圧縮技術を使用しており、Web自体よりも古い。もともと1992年にUNIX `gzip`プログラム用として開発されました。HTTP/ 1.1以降、Web配信の実装が存在し、ほとんどのブラウザーとクライアントがそれをサポートしています。
+* <a hreflang="en" href="https://tools.ietf.org/html/rfc1952">Gzip</a>は、[LZ77](https://ja.wikipedia.org/wiki/LZ77)および[ハフマンコーディング](https://ja.wikipedia.org/wiki/%E3%83%8F%E3%83%95%E3%83%9E%E3%83%B3%E7%AC%A6%E5%8F%B7)圧縮技術を使用しており、Web自体よりも古い。もともと1992年にUNIX `gzip`プログラム用として開発されました。HTTP/ 1.1以降、Web配信の実装が存在し、ほとんどのブラウザーとクライアントがそれをサポートしています。
 * <a hreflang="en" href="https://tools.ietf.org/html/rfc1951">Deflate</a>はGzipと同じアルゴリズムを使用しますが、コンテナは異なります。一部のサーバーおよびブラウザとの互換性の問題のため、Webでの使用は広く採用されていません。
 * <a hreflang="en" href="https://tools.ietf.org/html/rfc7932">Brotli</a>は、<a hreflang="en" href="https://github.com/google/brotli">Googleが発明</a>した新しい圧縮アルゴリズムです。 LZ77アルゴリズムの最新のバリアント、ハフマンコーディング、および2次コンテキストモデリングの組み合わせを使用します。 Brotliを介した圧縮はGzipと比較して計算コストが高くなりますが、アルゴリズムはGzip圧縮よりもファイルを<a hreflang="en" href="https://cran.r-project.org/web/packages/brotli/vignettes/brotli-2015-09-22.pdf">15〜25％</a>削減できます。 Brotliは2015年にWebコンテンツの圧縮に初めて使用され、<a hreflang="en" href="https://caniuse.com/#feat=brotli">すべての最新のWebブラウザーでサポートされています</a>。
 

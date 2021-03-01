@@ -98,7 +98,7 @@ Deze cijfers zijn een lichte verbetering ten opzichte van [de protocolanalyse va
 
 ### Cijferreeksen
 
-Binnen TLS zijn er een aantal coderingssuites die kunnen worden gebruikt met verschillende beveiligingsniveaus. De beste cijfers ondersteunen <a  href="https://nl.wikipedia.org/wiki/Perfect_forward_secrecy">voorwaartse geheimhouding (forward secrecy)</a> sleuteluitwisseling, wat betekent dat zelfs als de serversleutels gecompromitteerd zijn, oud verkeer dat die sleutels gebruikte niet kan worden gedecodeerd.
+Binnen TLS zijn er een aantal coderingssuites die kunnen worden gebruikt met verschillende beveiligingsniveaus. De beste cijfers ondersteunen [voorwaartse geheimhouding (forward secrecy)](https://nl.wikipedia.org/wiki/Perfect_forward_secrecy) sleuteluitwisseling, wat betekent dat zelfs als de serversleutels gecompromitteerd zijn, oud verkeer dat die sleutels gebruikte niet kan worden gedecodeerd.
 
 In het verleden hebben nieuwere versies van TLS ondersteuning voor nieuwere coderingen toegevoegd, maar oudere versies zijn zelden verwijderd. Dit is een van de redenen waarom TLSv1.3 veiliger is omdat het momenteel een groot aantal oudere cijfers opruimt. De populaire OpenSSL-bibliotheek ondersteunt slechts vijf beveiligde coderingen in deze versie, die allemaal voorwaartse geheimhouding ondersteunen. Dit voorkomt downgrade-aanvallen waarbij een minder veilige code moet worden gebruikt.
 

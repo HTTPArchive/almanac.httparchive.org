@@ -633,7 +633,7 @@ Ahora podría preguntarse: si no todo el mundo está usando HTTP/2, ¿por qué n
 
 ### QUIC y HTTP/3
 
-Los intentos anteriores de implementar nuevos protocolos de transporte en Internet han resultado difíciles, por ejemplo, el <a  href="https://es.wikipedia.org/wiki/Stream_Control_Transmission_Protocol">Stream Control Transmission Protocol</a> (SCTP). QUIC es un nuevo protocolo de transporte que se ejecuta sobre UDP. Proporciona características similares a TCP, como entrega en orden confiable  y control de congestión para evitar inundaciones en la red.
+Los intentos anteriores de implementar nuevos protocolos de transporte en Internet han resultado difíciles, por ejemplo, el [Stream Control Transmission Protocol](https://es.wikipedia.org/wiki/Stream_Control_Transmission_Protocol) (SCTP). QUIC es un nuevo protocolo de transporte que se ejecuta sobre UDP. Proporciona características similares a TCP, como entrega en orden confiable  y control de congestión para evitar inundaciones en la red.
 
 Como se discutió en la sección [HTTP/1.0 a HTTP/2](#http10-a-http2), HTTP/2 _multiplexa_ múltiples flujos diferentes encima de una sola conexión. El propio TCP lamentablemente desconoce este hecho, lo que provoca ineficiencias o un impacto en el rendimiento cuando se producen retrasos o pérdidas de paquetes. Más detalles sobre este problema, conocido como _bloqueo de cabecera de línea_ (bloqueo HOL), <a hreflang="en" href="https://github.com/rmarx/holblocking-blogpost">se puede encontrar aquí</a>.
 

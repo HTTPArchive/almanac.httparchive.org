@@ -588,7 +588,7 @@ CDN以外の利用では、HTTP/2の優先順位付けを正しく適用する�
 
 ## より良いプロトコルに到達するために
 
-クライアントとサーバがHTTP/1.1とHTTP/2の両方をサポートしているとしましょう。どちらを使うかはどうやって選ぶのでしょうか？　最も一般的な方法はTLS<a  href="https://ja.wikipedia.org/wiki/Application-Layer_Protocol_Negotiation">Application Layer Protocol Negotiation</a> (ALPN) で、クライアントはサポートするプロトコルのリストをサーバに送信し、サーバはその接続に使用するプロトコルを選択します。 ブラウザはHTTPS接続を設定する際にTLSパラメーターをネゴシエートする必要があるため、同時にHTTPバージョンもネゴシエートできます。HTTP/2とHTTP/1.1の両方が同じTCPポート（443）から提供されるので、ブラウザは接続を開く前にこの選択をする必要はありません。
+クライアントとサーバがHTTP/1.1とHTTP/2の両方をサポートしているとしましょう。どちらを使うかはどうやって選ぶのでしょうか？　最も一般的な方法はTLS[Application Layer Protocol Negotiation](https://ja.wikipedia.org/wiki/Application-Layer_Protocol_Negotiation) (ALPN) で、クライアントはサポートするプロトコルのリストをサーバに送信し、サーバはその接続に使用するプロトコルを選択します。 ブラウザはHTTPS接続を設定する際にTLSパラメーターをネゴシエートする必要があるため、同時にHTTPバージョンもネゴシエートできます。HTTP/2とHTTP/1.1の両方が同じTCPポート（443）から提供されるので、ブラウザは接続を開く前にこの選択をする必要はありません。
 
 プロトコルが同じポートにない場合、異なるトランスポートプロトコルを使用している場合（TCPとQUIC）、あるいはTLSを使用していない場合は、このようなことはできません。これらのシナリオでは、最初に接続したポートで利用可能なものから始めて、他のオプションを見つけます。HTTPには、接続後にオリジンのプロトコルを変更するための2つのメカニズムが定義されています。`Upgrade`と`Alt-SVC`です。
 
@@ -633,7 +633,7 @@ HTTP/2は強力なプロトコルで、わずか数年でかなりの採用が�
 
 ### QUICとHTTP/3
 
-インターネット上に新しいトランスポートプロトコルを展開しようとする過去の試みは、<a  href="https://ja.wikipedia.org/wiki/Stream_Control_Transmission_Protocol">Stream Control Transmission Protocol</a> (SCTP)のように困難であることが証明されています。QUICはUDPの上で動作する新しいトランスポートプロトコルです。QUICは、信頼性の高い順番配信やネットワークへのフラッディングを防ぐ輻輳制御など、TCPと同様の機能を提供します。
+インターネット上に新しいトランスポートプロトコルを展開しようとする過去の試みは、[Stream Control Transmission Protocol](https://ja.wikipedia.org/wiki/Stream_Control_Transmission_Protocol) (SCTP)のように困難であることが証明されています。QUICはUDPの上で動作する新しいトランスポートプロトコルです。QUICは、信頼性の高い順番配信やネットワークへのフラッディングを防ぐ輻輳制御など、TCPと同様の機能を提供します。
 
 [HTTP/1.0とHTTP/2](#http10-to-http2)で説明したように、HTTP/2は1つの接続の上に複数の異なるストリームを _多重化_ しています。TCP自体はこの事実に気付いていないため、パケットロスや遅延が発生したときに非効率やパフォーマンスに影響を与えてしまいます。 _head-of-line blocking_  (HOL blocking)として知られるこの問題の詳細については、こちらを参照してください](https://github.com/rmarx/holblocking-blogpost)。
 

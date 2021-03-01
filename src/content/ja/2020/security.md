@@ -95,7 +95,7 @@ TLSv1.0の使用率はすでに基本的にはゼロであり、パブリック�
 
 ### 暗号スイート
 
-TLSの中には、さまざまなレベルのセキュリティで使用できるいくつかの暗号スイートがあります。最高の暗号化方式は<a  href="https://ja.wikipedia.org/wiki/Forward_secrecy">forward secrecy</a>鍵交換をサポートしています。これはサーバの鍵が漏洩しても、その鍵を使った古いトラフィックは復号化できないことを意味します。
+TLSの中には、さまざまなレベルのセキュリティで使用できるいくつかの暗号スイートがあります。最高の暗号化方式は[forward secrecy](https://ja.wikipedia.org/wiki/Forward_secrecy)鍵交換をサポートしています。これはサーバの鍵が漏洩しても、その鍵を使った古いトラフィックは復号化できないことを意味します。
 
 過去にはTLSの新しいバージョンでは、より新しい暗号のサポートが追加されていましたが、古いバージョンを削除することはほとんどありませんでした。これがTLSv1.3がより安全である理由の1つです。人気のあるOpenSSLライブラリは、このバージョンでは5つの安全な暗号のみをサポートしていますが、そのすべてが前方秘匿をサポートしています。これにより、安全性の低い暗号を強制的に使用されるダウングレード攻撃を防ぐことができます。
 
@@ -110,7 +110,7 @@ TLSの中には、さまざまなレベルのセキュリティで使用でき�
 
 すべてのサイトは本当にforward secrecyを使用すべきであり、デスクトップサイトの98.14％、モバイルサイトの98.03％が前方秘匿暗号を使用しているのは良いことです。
 
-forward secrecyを前提とした場合、暗号化レベルの選択は、鍵サイズが大きいほど破られるまでに時間がかかりますが、その代償として、特に初期接続時の暗号化・復号化にかかる計算量が多くなります。<a  href="https://ja.wikipedia.org/wiki/%E6%9A%97%E5%8F%B7%E5%88%A9%E7%94%A8%E3%83%A2%E3%83%BC%E3%83%89">ブロック暗号モード</a>ではGCMを使用し、<a hreflang="en" href="https://blog.qualys.com/product-tech/2019/04/22/zombie-poodle-and-goldendoodle-vulnerabilities">CBCはパディング攻撃に弱いとされています</a>。
+forward secrecyを前提とした場合、暗号化レベルの選択は、鍵サイズが大きいほど破られるまでに時間がかかりますが、その代償として、特に初期接続時の暗号化・復号化にかかる計算量が多くなります。[ブロック暗号モード](https://ja.wikipedia.org/wiki/%E6%9A%97%E5%8F%B7%E5%88%A9%E7%94%A8%E3%83%A2%E3%83%BC%E3%83%89)ではGCMを使用し、<a hreflang="en" href="https://blog.qualys.com/product-tech/2019/04/22/zombie-poodle-and-goldendoodle-vulnerabilities">CBCはパディング攻撃に弱いとされています</a>。
 
 広く使われているAES(Advanced Encryption Standard)では、128ビットと256ビットの暗号化キーサイズが一般的です。ほとんどのサイトでは128ビットで十分ですが、256ビットの方が望ましいでしょう。
 
@@ -711,7 +711,7 @@ iframeの`sandbox`属性が空の値を持つ場合、これは最も制限の�
 
 幸いなことにブラウザは、潜在的な攻撃の結果を制限することに対して非常に効果的なセキュリティメカニズムの大規模なセットも提供します。 CSPの`script-src`ディレクティブを介して、XSSの脆弱性を悪用することが非常に困難または不可能になる可能性があります。
 
-<a  href="https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%82%B8%E3%83%A3%E3%83%83%E3%82%AD%E3%83%B3%E3%82%B0">クリックジャッキング</a>攻撃を防ぐためには、`X-Frame-Options`ヘッダーが存在しなければならないか、CSPの`frame-ancestors`ディレクティブを使用して、現在の文書を埋め込むことができる信頼されたパーティを示すことができます。
+[クリックジャッキング](https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%82%B8%E3%83%A3%E3%83%83%E3%82%AD%E3%83%B3%E3%82%B0)攻撃を防ぐためには、`X-Frame-Options`ヘッダーが存在しなければならないか、CSPの`frame-ancestors`ディレクティブを使用して、現在の文書を埋め込むことができる信頼されたパーティを示すことができます。
 
 {{ figure_markup(
   image="security-adoption-of-security-headers.png",
