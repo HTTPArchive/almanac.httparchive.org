@@ -261,14 +261,15 @@ _CDNに関する注意事項。ここでのCDNカテゴリには、パブリッ�
 
 このグラフは、各ページに存在するサードパーティのカテゴリ別の総ページCPU時間の確率密度関数を示しています。ページの中央値はパーセンタイル軸で50です。データによると、すべてのサードパーティのカテゴリは同様のパターンで、中央値のページのCPU時間は400～1,000ミリ秒となっています。ここでの外れ値は広告（黒）です：広告タグが付いているページは、ページロード時のCPU使用率が高い可能性が高くなります。広告タグがあるページのCPU負荷時間の中央値は1,500msであるのに対し、広告タグがないページのCPU負荷時間は500msです。低いパーセンタイルでの高いCPU負荷時間は、最速のサイトでも広告として分類されるサードパーティの存在によって大きな影響を受けていることを示しています。
 
-## Timing-Allow-Originの普及率
+## `timing-allow-origin`の普及率
 
 [Resource Timing API](https://developer.mozilla.org/ja/docs/Web/API/Resource_Timing_API/Using_the_Resource_Timing_API)は、ウェブサイトのオーナーがJavaScriptを介して個々のリソースのパフォーマンスを測定することを可能にします。このデータは、サードパーティコンテンツのようなクロスオリジンのリソースに対しては、デフォルトでは非常に制限されています。例えば、ウェブサイトのオーナーは、ウィジェットのリクエストのレスポンスサイズを測定することで、訪問者がFacebookにログインしているかどうかを判断できるかもしれません。しかし、ほとんどのサードパーティコンテンツの場合、`timing-allow-origin`ヘッダーを設定することは、ホスティングウェブサイトがサードパーティコンテンツのパフォーマンスとサイズを追跡できるようにするための透明性の行為です。
 
 {{ figure_markup(
   image="requests-with-tao.png",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=1886505312&format=interactive",
-  caption="Timing-Allow-Originヘッダを持つリクエスト。",
+  alt="Timing-Allow-Originヘッダを持つリクエスト。",
+  caption="`timing-allow-origin`ヘッダを持つリクエスト。",
   description="サードパーティの応答の35%未満がtiming-allow-originヘッダーで提供されています",
   width=600,
   height=371,
