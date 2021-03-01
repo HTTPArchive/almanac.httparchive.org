@@ -7,7 +7,7 @@ reviewers: [ibnesayeed, denar90]
 analysts: [rviscomi, paulcalvano]
 editors: [rviscomi]
 translators: [ksakae]
-tkadlec_bio: Timは、誰もが使えるWebを構築することに焦点を当てたWebパフォーマンスコンサルタントであり、トレーナーです。著書に『High Performance Images』（O'Reilly, 2016）、『Implementing Responsive Design』（New Riders, 2012）があります。彼は<a href="https://timkadlec.com/">timkadlec.com</a>でウェブ全般について書いています。<a href="https://twitter.com/tkadlec">@tkadlec</a>で、彼の考えを簡潔にまとめてTwitterで紹介しています。
+tkadlec_bio: Timは、誰もが使えるWebを構築することに焦点を当てたWebパフォーマンスコンサルタントであり、トレーナーです。著書に『High Performance Images』（O'Reilly, 2016）、『Implementing Responsive Design』（New Riders, 2012）があります。彼は<a hreflang="en" href="https://timkadlec.com/">timkadlec.com</a>でウェブ全般について書いています。<a href="https://twitter.com/tkadlec">@tkadlec</a>で、彼の考えを簡潔にまとめてTwitterで紹介しています。
 discuss: 2038
 results: https://docs.google.com/spreadsheets/d/1cgXJrFH02SHPKDGD0AelaXAdB3UI7PIb5dlS0dxVtfY/
 featured_quote: JavaScriptは、CSS、HTMLと並んでウェブの3つの礎となる最後の礎として、その謙虚な起源から長い道のりを歩んできました。今日では、JavaScriptは技術スタックの幅広い範囲に浸透し始めています。JavaScriptはもはやクライアントサイドに限定されたものではなく、ビルドツールやサーバーサイドのスクリプティングのための選択肢として、ますます人気が高まっています。エッジコンピューティングソリューションのおかげで、JavaScriptはCDNレイヤーにも浸透してきています。
@@ -113,7 +113,7 @@ JavaScriptは、CSSとHTMLと並んでウェブの3つの礎となる最後の�
 その153KBは、モバイルデバイスに送信するスクリプトの総サイズの約37%に相当します。ここには間違いなく改善の余地があります。
 
 ### `module`と`nomodule`
-送信するコードの量を減らす可能性のあるメカニズムの1つとして、 [`module`/`nomodule`パターン](https://web.dev/serve-modern-code-to-modern-browsers/)を利用することがあります。このパターンでは、モダンブラウザ向けのバンドルとレガシーブラウザ向けのバンドルの2つのセットを作成します。モダンブラウザ向けのバンドルは`type=module`、レガシーブラウザ向けのバンドルは`type=nomodule`となります。
+送信するコードの量を減らす可能性のあるメカニズムの1つとして、 <a hreflang="en" href="https://web.dev/serve-modern-code-to-modern-browsers/">`module`/`nomodule`パターン</a>を利用することがあります。このパターンでは、モダンブラウザ向けのバンドルとレガシーブラウザ向けのバンドルの2つのセットを作成します。モダンブラウザ向けのバンドルは`type=module`、レガシーブラウザ向けのバンドルは`type=nomodule`となります。
 
 このアプローチにより、サポートしているブラウザに最適化された最新の構文を持つ小さなバンドルを作成できますが、そうでないブラウザには条件付きで読み込まれたポリフィルと異なる構文を提供します。
 
@@ -121,7 +121,7 @@ JavaScriptは、CSSとHTMLと並んでウェブの3つの礎となる最後の�
 
 ### リクエスト数
 
-私たちがどれだけのJavaScriptを使用しているかを見るもう1つの方法は、各ページでどれだけのJavaScriptリクエストが行われているかを調べることです。HTTP/1.1ではリクエスト数を減らすことがパフォーマンスを維持するための最優先事項でしたが、HTTP/2ではその逆です。JavaScriptを[小さくて個別のファイル](https://web.dev/granular-chunking-nextjs/)に分解することが[通常はパフォーマンスを向上させる]のです(./2019/http2#impact-of-http2)。
+私たちがどれだけのJavaScriptを使用しているかを見るもう1つの方法は、各ページでどれだけのJavaScriptリクエストが行われているかを調べることです。HTTP/1.1ではリクエスト数を減らすことがパフォーマンスを維持するための最優先事項でしたが、HTTP/2ではその逆です。JavaScriptを<a hreflang="en" href="https://web.dev/granular-chunking-nextjs/">小さくて個別のファイル</a>に分解することが[通常はパフォーマンスを向上させる]のです(./2019/http2#impact-of-http2)。
 
 {{ figure_markup(
   image="requests-2020.png",
@@ -373,7 +373,7 @@ HTTP Archiveは[Wappalyzer](./methodology#wappalyzer) を使用して、特定�
 
 フレームワークを見てみると、昨年注目された主要なフレームワークでも、採用率という点であまり劇的な変化は見られません。Vue.jsは大幅に増加し、AMPは少し成長しましたが、ほとんどのフレームワークは1年前とほぼ同じ位置にあります。
 
-昨年指摘された[問題が今も適用されていることは注目に値し](https://github.com/AliasIO/wappalyzer/issues/2450)、ここでも結果に影響を与えます。これらのツールの人気に大きな変化があった可能性はありますが、現在のデータ収集方法ではそれが見られないだけです。
+昨年指摘された<a hreflang="en" href="https://github.com/AliasIO/wappalyzer/issues/2450">問題が今も適用されていることは注目に値し</a>、ここでも結果に影響を与えます。これらのツールの人気に大きな変化があった可能性はありますが、現在のデータ収集方法ではそれが見られないだけです。
 
 ### それが何を意味するのか
 
@@ -605,7 +605,7 @@ ReactやAngular、Emberのようなフレームワークは、クライアント
   sql_file="main_thread_time_frameworks.sql"
 ) }}
 
-Emberのモバイルメインスレッドの時間が飛び出して、どれくらいの時間がかかるかでグラフが歪んでしまいます。（これについてもう少し時間をかけて調べてみましたが、Ember自体に根本的な問題があるというよりも、[このフレームワークを非効率的に使用しているある特定のプラットフォームに大きく影響されている](https://timkadlec.com/remembers/2021-01-26-what-about-ember/)ようです）。それを引き出すことで、絵が少し理解しやすくなります。
+Emberのモバイルメインスレッドの時間が飛び出して、どれくらいの時間がかかるかでグラフが歪んでしまいます。（これについてもう少し時間をかけて調べてみましたが、Ember自体に根本的な問題があるというよりも、<a hreflang="en" href="https://timkadlec.com/remembers/2021-01-26-what-about-ember/">このフレームワークを非効率的に使用しているある特定のプラットフォームに大きく影響されている</a>ようです）。それを引き出すことで、絵が少し理解しやすくなります。
 
 {{ figure_markup(
   image="frameworks-main-thread-no-ember.png",
@@ -665,9 +665,9 @@ ReactやGSAP、RequireJSなどのツールは、デスクトップやモバイ�
   sql_file="correlations.sql"
 ) }}
 
-上のグラフは[ピアソン相関係数](https://ja.wikipedia.org/wiki/%E7%9B%B8%E9%96%A2%E4%BF%82%E6%95%B0)を使用しています。正確には何を意味するのか、長くてちょっと複雑な定義がありますが、要は2つの異なる数字の間の相関の強さを探しているということです。係数が1.00だとすると、正の相関関係があることになります。0.00の相関関係は、2つの数字の間に何の関係もないことを示しています。0.00以下のものは、負の相関関係、つまり、ある数字が上がるともう1つの数字が下がることを示しています。
+上のグラフは<a  href="https://ja.wikipedia.org/wiki/%E7%9B%B8%E9%96%A2%E4%BF%82%E6%95%B0">ピアソン相関係数</a>を使用しています。正確には何を意味するのか、長くてちょっと複雑な定義がありますが、要は2つの異なる数字の間の相関の強さを探しているということです。係数が1.00だとすると、正の相関関係があることになります。0.00の相関関係は、2つの数字の間に何の関係もないことを示しています。0.00以下のものは、負の相関関係、つまり、ある数字が上がるともう1つの数字が下がることを示しています。
 
-まず、JavaScriptのメトリクスとLighthouseのアクセシビリティ（チャートでは「LH A11y」）のスコアの間には、測定可能な相関関係はあまりないようです。これは、特に[WebAimの年次調査](https://webaim.org/projects/million/#frameworks)など、他の場所で発見されていることとは全く対照的です。
+まず、JavaScriptのメトリクスとLighthouseのアクセシビリティ（チャートでは「LH A11y」）のスコアの間には、測定可能な相関関係はあまりないようです。これは、特に<a hreflang="en" href="https://webaim.org/projects/million/#frameworks">WebAimの年次調査</a>など、他の場所で発見されていることとは全く対照的です。
 
 これについて最も可能性の高い説明は、Lighthouseのアクセシビリティテストが、WebAIMのようなアクセシビリティを主眼とした他のツールで利用可能なものほど包括的ではないということです（まだです！）。
 
@@ -679,7 +679,7 @@ JavaScriptのバイト数とLighthouseのパフォーマンススコアの相関
 
 ### セキュリティの脆弱性
 
-Lighthouseが実行するもう1つの有益な監査は、サードパーティのライブラリに既知のセキュリティ脆弱性がないかどうかをチェックすることです。これは、あるページでどのライブラリやフレームワークが使われているか、またそれぞれのバージョンを検出することで行います。次に、[Snyk's open-source vulnerability database](https://snyk.io/vuln?type=npm)をチェックして、特定されたツールにどのような脆弱性が発見されているかを確認します。
+Lighthouseが実行するもう1つの有益な監査は、サードパーティのライブラリに既知のセキュリティ脆弱性がないかどうかをチェックすることです。これは、あるページでどのライブラリやフレームワークが使われているか、またそれぞれのバージョンを検出することで行います。次に、<a hreflang="en" href="https://snyk.io/vuln?type=npm">Snyk's open-source vulnerability database</a>をチェックして、特定されたツールにどのような脆弱性が発見されているかを確認します。
 
 {{ figure_markup(
   caption="モバイルページの割合は、少なくとも1つの脆弱性のあるJavaScriptライブラリを含んでいます。",

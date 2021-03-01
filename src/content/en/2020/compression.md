@@ -10,7 +10,7 @@ translators: []
 jyrkialakuijala_bio: Jyrki Alakuijala is an active member of the open source software community, and a data compression researcher. Jyrki works at Google as a Technical Lead/Manager, and his recent published work has been with Zopfli, Butteraugli, Guetzli, Gipfeli, WebP lossless, Brotli, and JPEG XL compression formats and algorithms, and two hashing algorithms, CityHash, and HighwayHash. Before his Google employment he developed software for neurosurgery and radiation therapy treatment planning.
 sboukortt_bio: Sami joined Google after completing his studies in engineering mathematics. After a few years of remote interest in compression, he eventually made it his full-time subject of work in 2018.
 mo271_bio: Moritz Firsching is software engineer at Google Switzerland, where he works on progressive image formats and font compression. Before that Moritz did research as a mathematician studying polytopes.
-veluca93_bio: Luca Versari is a software engineer at Google, working on <a href="https://gitlab.com/wg1/jpeg-xl">JPEG XL</a>. He's finishing a PhD on graph compression and has a background in mathematics.
+veluca93_bio: Luca Versari is a software engineer at Google, working on <a hreflang="en" href="https://gitlab.com/wg1/jpeg-xl">JPEG XL</a>. He's finishing a PhD on graph compression and has a background in mathematics.
 discuss: 2055
 results: https://docs.google.com/spreadsheets/d/1NKbP4AqMkgCNCsVD3yLhO2d0aqIsgZ7AGLEtUDHl9yY/
 featured_quote: Using HTTP compression makes a website load faster and therefore guarantees a better user experience.
@@ -59,7 +59,7 @@ For image-based assets text-based compression is less useful and not widely empl
 
 ## How to use HTTP compression?
 
-To reduce the size of the files that we plan to serve one could first use some minimizers, e.g. [HTMLMinifier](https://github.com/kangax/html-minifier), [CSSNano](https://github.com/ben-eb/cssnano), or [UglifyJS](https://github.com/mishoo/UglifyJS2). However bigger gains are expected from using compression.
+To reduce the size of the files that we plan to serve one could first use some minimizers, e.g. <a hreflang="en" href="https://github.com/kangax/html-minifier">HTMLMinifier</a>, <a hreflang="en" href="https://github.com/ben-eb/cssnano">CSSNano</a>, or <a hreflang="en" href="https://github.com/mishoo/UglifyJS2">UglifyJS</a>. However bigger gains are expected from using compression.
 
 There are two ways of doing the compression on the server side:
 
@@ -93,9 +93,9 @@ Since precompression is done beforehand, we can spend more time compressing the 
   <figcaption>{{ figure_link(caption="Recommended compression levels to use.") }}</figcaption>
 </figure>
 
-Currently, practically all text compression is done by one of two HTTP content encodings: [Gzip](https://tools.ietf.org/html/rfc1952) and [Brotli](https://github.com/google/brotli). Both are widely supported by browsers: [can I use Brotli](https://caniuse.com/?search=brotli)/[can I use Gzip](https://caniuse.com/?search=gzip)
+Currently, practically all text compression is done by one of two HTTP content encodings: <a hreflang="en" href="https://tools.ietf.org/html/rfc1952">Gzip</a> and <a hreflang="en" href="https://github.com/google/brotli">Brotli</a>. Both are widely supported by browsers: <a hreflang="en" href="https://caniuse.com/?search=brotli">can I use Brotli</a>/<a hreflang="en" href="https://caniuse.com/?search=gzip">can I use Gzip</a>
 
-When you want to use Gzip, consider using [Zopfli](https://en.wikipedia.org/wiki/Zopfli), which generates smaller Gzip compatible files. This should be done especially for precompressed resources, since here the greatest [gains are expected](https://cran.r-project.org/web/packages/brotli/vignettes/brotli-2015-09-22.pdf). See this [comparison between Gzip and Zopfli](https://blog.codinghorror.com/zopfli-optimization-literally-free-bandwidth/) that takes into account different compression levels for Gzip.
+When you want to use Gzip, consider using [Zopfli](https://en.wikipedia.org/wiki/Zopfli), which generates smaller Gzip compatible files. This should be done especially for precompressed resources, since here the greatest <a hreflang="en" href="https://cran.r-project.org/web/packages/brotli/vignettes/brotli-2015-09-22.pdf">gains are expected</a>. See this <a hreflang="en" href="https://blog.codinghorror.com/zopfli-optimization-literally-free-bandwidth/">comparison between Gzip and Zopfli</a> that takes into account different compression levels for Gzip.
 
 Many [popular servers](https://en.wikipedia.org/wiki/HTTP_compression#Servers_that_support_HTTP_compression) support dynamically and/or pre-compressed HTTP and many of them support [Brotli](https://en.wikipedia.org/wiki/Brotli).
 
@@ -237,7 +237,7 @@ Compared with [last year's results](../2019/compression#first-party-vs-third-par
 
 ## How to analyze compression on your sites
 
-You can use [Firefox Developer Tools](https://developer.mozilla.org/en-US/docs/Tools) or [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) to quickly figure out what content a website already compresses. To do this, go to the Network tab, right click and activate "Content Encoding" under Response Headers. Hovering over the size of individual files you will see "transferred over network" and "resource size". Aggregated for the entire site one can see size/transferred size for Firefox and  "transferred" and "resources" for Chrome on the bottom left hand side of the Network tab.
+You can use [Firefox Developer Tools](https://developer.mozilla.org/en-US/docs/Tools) or <a hreflang="en" href="https://developers.google.com/web/tools/chrome-devtools">Chrome DevTools</a> to quickly figure out what content a website already compresses. To do this, go to the Network tab, right click and activate "Content Encoding" under Response Headers. Hovering over the size of individual files you will see "transferred over network" and "resource size". Aggregated for the entire site one can see size/transferred size for Firefox and  "transferred" and "resources" for Chrome on the bottom left hand side of the Network tab.
 
 {{ figure_markup(
   image="content-encoding.png",
@@ -249,7 +249,7 @@ You can use [Firefox Developer Tools](https://developer.mozilla.org/en-US/docs/T
   )
 }}
 
-Another tool to better understand compression on your site is Google's [Lighthouse](https://developers.google.com/web/tools/lighthouse) tool, which enables you to run a series of audits against web pages. The [text compression audit](https://web.dev/uses-text-compression/) evaluates whether a site can benefit from additional text-based compression. It does this by attempting to compress resources and evaluate whether an object's size can be reduced by at least 10% and 1,400 bytes. Depending on the score, you may see a compression recommendation in the results, with a list of specific resources that could be compressed.
+Another tool to better understand compression on your site is Google's <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a> tool, which enables you to run a series of audits against web pages. The <a hreflang="en" href="https://web.dev/uses-text-compression/">text compression audit</a> evaluates whether a site can benefit from additional text-based compression. It does this by attempting to compress resources and evaluate whether an object's size can be reduced by at least 10% and 1,400 bytes. Depending on the score, you may see a compression recommendation in the results, with a list of specific resources that could be compressed.
 
 Because the [HTTP Archive runs Lighthouse audits](./methodology#lighthouse) for each mobile page, we can aggregate the scores across all sites to learn how much opportunity there is to compress more content. Overall, 74% of websites are passing this audit, while almost 13% of websites have scored below a 40. This is a 11.5% improvement when compared to [last year's](../2019/compression#identifying-compression-opportunities) 62.5% of passing scores.
 

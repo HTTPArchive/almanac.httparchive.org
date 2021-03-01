@@ -9,8 +9,8 @@ editors: [bazzadp]
 translators: []
 discuss: 1768
 results: https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/
-samdutton_bio: Sam Dutton has worked with the Google Chrome team as a Developer Advocate since 2011. He has organized and presented at a number of events, created and taught several web development courses, and worked on a range of videos, codelabs and written guidance covering PWA, performance, media, image and 'Next Billion Users' initiatives. He maintains <a href="https://simpl.info">simpl.info</a>, which provides simplest possible examples of HTML, CSS and JavaScript. Sam grew up in South Australia, went to university in Sydney, and has lived since 1986 in London.
-alankent_bio: Alan Kent is a Developer Advocate at Google focusing on e-commerce and content ecosystems. He blogs at <a href="https://alankent.me">alankent.me</a> and tweets as <a href="https://twitter.com/akent99">@akent99</a>.
+samdutton_bio: Sam Dutton has worked with the Google Chrome team as a Developer Advocate since 2011. He has organized and presented at a number of events, created and taught several web development courses, and worked on a range of videos, codelabs and written guidance covering PWA, performance, media, image and 'Next Billion Users' initiatives. He maintains <a hreflang="en" href="https://simpl.info">simpl.info</a>, which provides simplest possible examples of HTML, CSS and JavaScript. Sam grew up in South Australia, went to university in Sydney, and has lived since 1986 in London.
+alankent_bio: Alan Kent is a Developer Advocate at Google focusing on e-commerce and content ecosystems. He blogs at <a hreflang="en" href="https://alankent.me">alankent.me</a> and tweets as <a href="https://twitter.com/akent99">@akent99</a>.
 featured_quote: Nearly 10% of the home pages in this study were found to be on an ecommerce platform. An "ecommerce platform" is a set of software or services that enables you to create and operate an online store, including Paid-for services such as Shopify, software platforms such as Magento Open Source, and Hosted platforms such as Magento Commerce.
 featured_stat_1: 3.98%
 featured_stat_label_1: Sites using WooCommerce the most popular ecommerce platform
@@ -24,9 +24,9 @@ featured_stat_label_3: Median image bytes per mobile ecommerce page
 
 Nearly 10% of the home pages in this study were found to be on an ecommerce platform. An "ecommerce platform" is a set of software or services that enables you to create and operate an online store. There are several types of ecommerce platforms, for example:
 
-- **Paid-for services** such as [Shopify](https://www.shopify.com/) that host your store and help you get started. They provide website hosting, site and page templates, product-data management, shopping carts and payments.
-- **Software platforms** such as [Magento Open Source](https://magento.com/products/magento-open-source) which you set up, host and manage yourself. These platforms can be powerful and flexible, but may be more complex to set up and run than services such as Shopify.
-- **Hosted platforms** such as [Magento Commerce](https://magento.com/products/magento-commerce) that offer the same features as their self-hosted counterparts, except that hosting is managed as a service by a third-party.
+- **Paid-for services** such as <a hreflang="en" href="https://www.shopify.com/">Shopify</a> that host your store and help you get started. They provide website hosting, site and page templates, product-data management, shopping carts and payments.
+- **Software platforms** such as <a hreflang="en" href="https://magento.com/products/magento-open-source">Magento Open Source</a> which you set up, host and manage yourself. These platforms can be powerful and flexible, but may be more complex to set up and run than services such as Shopify.
+- **Hosted platforms** such as <a hreflang="en" href="https://magento.com/products/magento-commerce">Magento Commerce</a> that offer the same features as their self-hosted counterparts, except that hosting is managed as a service by a third-party.
 
 {{ figure_markup(
   caption="Percent of pages on an ecommerce platform.",
@@ -202,7 +202,7 @@ The [page weight](./page-weight) of an ecommerce platform includes all HTML, CSS
   )
 }}
 
-The median desktop ecommerce platform page loads 108 requests and 2.7 MB. The median weight for _all_ desktop pages is 74 requests and [1.9 MB](./page-weight#page-weight). In other words, ecommerce pages make nearly 50% more requests than other web pages, with payloads around 35% larger. By comparison, the [amazon.com](https://amazon.com) home page makes around 300 requests on first load, for a page weight of around 5 MB, and [ebay.com](https://ebay.com) makes around 150 requests for a page weight of approximately 3 MB. The page weight and number of requests for home pages on ecommerce platforms is slightly smaller on mobile at every percentile, but around 10% of all ecommerce home pages load more than 7 MB and make over 200 requests.
+The median desktop ecommerce platform page loads 108 requests and 2.7 MB. The median weight for _all_ desktop pages is 74 requests and [1.9 MB](./page-weight#page-weight). In other words, ecommerce pages make nearly 50% more requests than other web pages, with payloads around 35% larger. By comparison, the <a hreflang="en" href="https://amazon.com">amazon.com</a> home page makes around 300 requests on first load, for a page weight of around 5 MB, and <a hreflang="en" href="https://ebay.com">ebay.com</a> makes around 150 requests for a page weight of approximately 3 MB. The page weight and number of requests for home pages on ecommerce platforms is slightly smaller on mobile at every percentile, but around 10% of all ecommerce home pages load more than 7 MB and make over 200 requests.
 
 This data accounts for home page payload and requests without scrolling. Clearly there are a significant proportion of sites that appear to be retrieving more files (the median is over 100), with a larger total payload, than should be necessary for first load. See also: [Third-party requests and bytes](#third-party-requests-and-bytes) below.
 
@@ -455,7 +455,7 @@ Figures 13.12 and 13.13 above show that the median ecommerce page has 37 images 
 )
 }}
 
-A significant proportion of ecommerce pages have sizable image payloads and make a large number of image requests on first load. See HTTP Archive's [State of Images](https://httparchive.org/reports/state-of-images) report and the [media](./media) and [page weight](./page-weight) chapters for more context.
+A significant proportion of ecommerce pages have sizable image payloads and make a large number of image requests on first load. See HTTP Archive's <a hreflang="en" href="https://httparchive.org/reports/state-of-images">State of Images</a> report and the [media](./media) and [page weight](./page-weight) chapters for more context.
 
 Website owners want their sites to look good on modern devices. As a result, many sites deliver the same high resolution product images to every user _without regard for screen resolution or size_. Developers may not be aware of (or not want to use) responsive techniques that enable efficient delivery of the best possible image to different users. It's worth remembering that high-resolution images may not necessarily increase conversion rates. Conversely, overuse of heavy images is likely to impact page speed and can thereby _reduce_ conversion rates. In the authors' experience from site reviews and events, some developers and other stakeholders have SEO or other concerns about using lazy loading for images.
 
@@ -471,19 +471,19 @@ We need to do more analysis to better understand why some sites are not using re
   )
 }}
 
-<p class="note">Note that some image services or CDNs will automatically deliver WebP (rather than JPEG or PNG) to platforms that support WebP, even for a URL with a `.jpg` or `.png` suffix. For example, <a href="https://res.cloudinary.com/webdotdev/f_auto/w_500/IMG_20190113_113201.jpg">IMG_20190113_113201.jpg</a> returns a WebP image in Chrome. However, the way HTTP Archive <a href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/31a25b9064a365d746d4811a1d6dda516c0e4985/bulktest/batch_lib.inc#L994">detects image formats</a> is to check for keywords in the MIME type first, then fall back to the file extension. This means that the format for images with URLs such as the above will be given as WebP, since WebP is supported by HTTP Archive as a user agent.</p>
+<p class="note">Note that some image services or CDNs will automatically deliver WebP (rather than JPEG or PNG) to platforms that support WebP, even for a URL with a `.jpg` or `.png` suffix. For example, <a hreflang="en" href="https://res.cloudinary.com/webdotdev/f_auto/w_500/IMG_20190113_113201.jpg">IMG_20190113_113201.jpg</a> returns a WebP image in Chrome. However, the way HTTP Archive <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/31a25b9064a365d746d4811a1d6dda516c0e4985/bulktest/batch_lib.inc#L994">detects image formats</a> is to check for keywords in the MIME type first, then fall back to the file extension. This means that the format for images with URLs such as the above will be given as WebP, since WebP is supported by HTTP Archive as a user agent.</p>
 
 ### PNG
 
 One in four images on ecommerce pages are PNG. The high number of PNG requests from pages on ecommerce platforms is probably for product images. Many commerce sites use PNG with photographic images to enable transparency.
 
-Using WebP with a PNG fallback can be a far more efficient alternative, either via a [picture element](http://simpl.info/picturetype) or by using user agent capability detection via an image service such as [Cloudinary](https://res.cloudinary.com/webdotdev/f_auto/w_500/IMG_20190113_113201.jpg).
+Using WebP with a PNG fallback can be a far more efficient alternative, either via a [picture element](http://simpl.info/picturetype) or by using user agent capability detection via an image service such as <a hreflang="en" href="https://res.cloudinary.com/webdotdev/f_auto/w_500/IMG_20190113_113201.jpg">Cloudinary</a>.
 
 ### WebP
 
-Only 1% of images on ecommerce platforms are WebP, which tallies with the authors' experience of site reviews and partner work. WebP is [supported by all modern browsers other than Safari](https://caniuse.com/#feat=webp) and has good fallback mechanisms available. WebP supports transparency and is a far more efficient format than PNG for photographic images (see PNG section above).
+Only 1% of images on ecommerce platforms are WebP, which tallies with the authors' experience of site reviews and partner work. WebP is <a hreflang="en" href="https://caniuse.com/#feat=webp">supported by all modern browsers other than Safari</a> and has good fallback mechanisms available. WebP supports transparency and is a far more efficient format than PNG for photographic images (see PNG section above).
 
-We as a web community can provide better guidance/advocacy for enabling transparency using WebP with a PNG fallback and/or using WebP/JPEG with a solid color background. WebP appears to be rarely used on ecommerce platforms, despite the availability of [guides](https://web.dev/serve-images-webp) and tools (e.g. [Squoosh](https://squoosh.app/) and [cwebp](https://developers.google.com/speed/webp/docs/cwebp)). We need to do further research into why there hasn't been more take-up of WebP, which is now [nearly 10 years old](https://blog.chromium.org/2010/09/webp-new-image-format-for-web.html).
+We as a web community can provide better guidance/advocacy for enabling transparency using WebP with a PNG fallback and/or using WebP/JPEG with a solid color background. WebP appears to be rarely used on ecommerce platforms, despite the availability of <a hreflang="en" href="https://web.dev/serve-images-webp">guides</a> and tools (e.g. <a hreflang="en" href="https://squoosh.app/">Squoosh</a> and <a hreflang="en" href="https://developers.google.com/speed/webp/docs/cwebp">cwebp</a>). We need to do further research into why there hasn't been more take-up of WebP, which is now <a hreflang="en" href="https://blog.chromium.org/2010/09/webp-new-image-format-for-web.html">nearly 10 years old</a>.
 
 ## Image dimensions
 
@@ -552,7 +552,7 @@ We need to do more research into why many sites are (apparently) not delivering 
 
 ## Third-party requests and bytes
 
-Many websites—especially online stores—load a significant amount of code and content from third-parties: for analytics, A/B testing, customer behavior tracking, advertising, and social media support. Third-party content can have a [significant impact on performance](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript). [Patrick Hulce](https://twitter.com/patrickhulce)'s [third-party-web tool](https://github.com/patrickhulce/third-party-web) is used to determine third-party requests for this report, and this is discussed more in the [Third Parties](./third-parties) chapter.
+Many websites—especially online stores—load a significant amount of code and content from third-parties: for analytics, A/B testing, customer behavior tracking, advertising, and social media support. Third-party content can have a <a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript">significant impact on performance</a>. [Patrick Hulce](https://twitter.com/patrickhulce)'s <a hreflang="en" href="https://github.com/patrickhulce/third-party-web">third-party-web tool</a> is used to determine third-party requests for this report, and this is discussed more in the [Third Parties](./third-parties) chapter.
 
 {{ figure_markup(
   image="fig17.png",
@@ -572,7 +572,7 @@ Many websites—especially online stores—load a significant amount of code and
 
 The median ('mid-range') home page on an ecommerce platform makes 17 requests for third-party content on mobile and 19 on desktop. 10% of all home pages on ecommerce platforms make over 50 requests for third-party content, with a total payload of over 1 MB.
 
-[Other studies](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/) have indicated that third-party content can be a major performance bottleneck. This study shows that 17 or more requests (50 or more for the top 10%) is the norm for ecommerce pages.
+<a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/">Other studies</a> have indicated that third-party content can be a major performance bottleneck. This study shows that 17 or more requests (50 or more for the top 10%) is the norm for ecommerce pages.
 
 ## Third-party requests and payload per platform
 
@@ -626,13 +626,13 @@ See also the [PWA chapter](./pwa) for more information on this topic beyond just
   )
 }}
 
-More than 60% of home pages on ecommerce platforms get a [Lighthouse PWA score](https://developers.google.com/web/ilt/pwa/lighthouse-pwa-analysis-tool) between 0.25 and 0.35. Less than 20% of home pages on ecommerce platforms get a score of more than 0.5 and less than 1% of home pages score more than 0.6.
+More than 60% of home pages on ecommerce platforms get a <a hreflang="en" href="https://developers.google.com/web/ilt/pwa/lighthouse-pwa-analysis-tool">Lighthouse PWA score</a> between 0.25 and 0.35. Less than 20% of home pages on ecommerce platforms get a score of more than 0.5 and less than 1% of home pages score more than 0.6.
 
-Lighthouse returns a Progressive Web App (PWA) score between 0 and 1. 0 is the worst possible score, and 1 is the best. The PWA audits are based on the [Baseline PWA Checklist](https://developers.google.com/web/progressive-web-apps/checklist), which lists 14 requirements. Lighthouse has automated audits for 11 of the 14 requirements. The remaining 3 can only be tested manually. Each of the 11 automated PWA audits are weighted equally, so each one contributes approximately 9 points to your PWA score.
+Lighthouse returns a Progressive Web App (PWA) score between 0 and 1. 0 is the worst possible score, and 1 is the best. The PWA audits are based on the <a hreflang="en" href="https://developers.google.com/web/progressive-web-apps/checklist">Baseline PWA Checklist</a>, which lists 14 requirements. Lighthouse has automated audits for 11 of the 14 requirements. The remaining 3 can only be tested manually. Each of the 11 automated PWA audits are weighted equally, so each one contributes approximately 9 points to your PWA score.
 
 If at least one of the PWA audits got a null score, Lighthouse nulls out the score for the entire PWA category. This was the case for 2.32% of mobile pages.
 
-Clearly, the majority of ecommerce pages are failing most [PWA checklist audits](https://developers.google.com/web/progressive-web-apps/checklist). We need to do further analysis to better understand which audits are failing and why.
+Clearly, the majority of ecommerce pages are failing most <a hreflang="en" href="https://developers.google.com/web/progressive-web-apps/checklist">PWA checklist audits</a>. We need to do further analysis to better understand which audits are failing and why.
 
 ## Conclusion
 

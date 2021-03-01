@@ -11,7 +11,7 @@ discuss: 1764
 results: https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/
 nektarios-paisios_bio: Nektarios Paisios é um engenheiro de software que trabalha com acessibilidade do Chrome nos últimos 5 anos. Ele se concentra principalmente em tornar o Chrome compatível com software auxiliar de terceiros, como leitores e ampliadores de tela. Antes de trabalhar na acessibilidade do Chrome, Nektarios trabalhou em várias outras funções na empresa, como acessibilidade do GSuite e anúncios gráficos. Nektarios é Ph.D. em Ciência da Computação pela New York University.
 obto_bio: David Fox é o principal pesquisador de usabilidade e fundador da LookZook, uma empresa obcecada em descobrir tudo o que há para saber sobre a construção de experiências na Web que atendem às expectativas do usuário. Ele é um psicólogo de sites que procura sites para aprender não apenas com o que os usuários estão enfrentando, mas por que e como melhorar sua experiência. Ele também é colaborador do Google Chromium, palestrante e fornecedor de seminários on-line e treinamento em UX.
-kleinab_bio: Abigail Klein é engenheira de software do Google. Ela trabalhou na acessibilidade da web do Google Docs, Sheets e Slides, onde adicionou  <a href="https://www.blog.google/outreach-initiatives/accessibility/whats-you-say-present-captions-google-slides/">legendas automáticas para a Apresentações Google</a>, além de melhorar o suporte ao leitor de tela, braille, ampliador de tela e alto contraste. Atualmente, ela trabalha com acessibilidade no Google Chrome e ChromeOS. Ela é bacharel e mestre em ciência da computação pelo MIT, onde co-fundou uma hackathon de tecnologia assistiva e foi assistente de laboratório e palestrante convidada da classe de tecnologia assistida.
+kleinab_bio: Abigail Klein é engenheira de software do Google. Ela trabalhou na acessibilidade da web do Google Docs, Sheets e Slides, onde adicionou  <a hreflang="en" href="https://www.blog.google/outreach-initiatives/accessibility/whats-you-say-present-captions-google-slides/">legendas automáticas para a Apresentações Google</a>, além de melhorar o suporte ao leitor de tela, braille, ampliador de tela e alto contraste. Atualmente, ela trabalha com acessibilidade no Google Chrome e ChromeOS. Ela é bacharel e mestre em ciência da computação pelo MIT, onde co-fundou uma hackathon de tecnologia assistiva e foi assistente de laboratório e palestrante convidada da classe de tecnologia assistida.
 featured_quote: A acessibilidade na web é essencial para uma sociedade inclusiva e igualitária. À medida que mais de nossas vidas sociais e profissionais mudam para o mundo online, torna-se ainda mais importante para as pessoas com deficiência poderem participar de todas as interações online sem barreiras. Assim como os arquitetos de edifícios podem criar ou não recursos de acessibilidade, como rampas para cadeiras de rodas, os desenvolvedores da web podem ajudar ou atrapalhar com a tecnologia assistiva que usuários dependem.
 featured_stat_1: 22%
 featured_stat_label_1: Sites usando contraste de cor suficient
@@ -29,7 +29,7 @@ Ao pensar sobre usuários com deficiências, devemos lembrar que suas jornadas d
 
 Frequentemente, melhorar a acessibilidade do seu site traz benefícios para todos. Embora normalmente pensamos nas pessoas com deficiência como pessoas com deficiências permanentes, qualquer pessoa pode ter uma deficiência temporária ou situacional. Por exemplo, alguém pode ser cego de forma permanente, ter uma infecção ocular temporária ou, circunstancialmente, estar ao ar livre sob um sol forte. Tudo isso pode explicar por que alguém não consegue ver sua tela. Todos têm deficiências situacionais e, portanto, melhorar a acessibilidade de sua página web irá melhorar a experiência de todos os usuários em qualquer situação.
 
-As [Diretrizes de acessibilidade de conteúdo da Web](https://www.w3.org/WAI/WCAG21/quickref/) (Web Content Accessibility Guidelines - WCAG) aconselham sobre como tornar um site acessível. Essas diretrizes foram usadas como base para nossa análise. No entanto, em muitos casos, é difícil analisar programaticamente a acessibilidade de um site. Por exemplo, a plataforma da web fornece várias maneiras de obter resultados funcionais semelhantes, mas o código que os alimenta pode ser completamente diferente. Portanto, nossa análise é apenas uma aproximação da acessibilidade geral da web.
+As <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/quickref/">Diretrizes de acessibilidade de conteúdo da Web</a> (Web Content Accessibility Guidelines - WCAG) aconselham sobre como tornar um site acessível. Essas diretrizes foram usadas como base para nossa análise. No entanto, em muitos casos, é difícil analisar programaticamente a acessibilidade de um site. Por exemplo, a plataforma da web fornece várias maneiras de obter resultados funcionais semelhantes, mas o código que os alimenta pode ser completamente diferente. Portanto, nossa análise é apenas uma aproximação da acessibilidade geral da web.
 
 Dividimos nossos insights mais interessantes em quatro categorias: facilidade de leitura, mídia na web, facilidade de navegação na página e compatibilidade com tecnologias assistivas.
 
@@ -60,7 +60,7 @@ Apenas 22,04% dos sites deram contraste de cor suficiente a todo o texto. Ou em 
 
 ### Ampliando (zoom) e dimensionando páginas
 
-Usar um [tamanho de fonte legível](https://accessibleweb.com/question-answer/minimum-font-size/) e [tamanho alvo](https://www.w3.org/WAI/WCAG21/quickref/#target-size) ajuda os usuários a ler e interagir com seu site. Mas mesmo os sites que seguem perfeitamente todas essas diretrizes não podem atender às necessidades específicas de cada visitante. É por isso que recursos do dispositivo, como a pinça para aplicar zoom e dimensionamento, são tão importantes: eles permitem que os usuários ajustem suas páginas para que suas necessidades sejam atendidas. Ou, no caso de sites particularmente inacessíveis que usam fontes e botões minúsculos, dá aos usuários a chance de usar o site.
+Usar um <a hreflang="en" href="https://accessibleweb.com/question-answer/minimum-font-size/">tamanho de fonte legível</a> e <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/quickref/#target-size">tamanho alvo</a> ajuda os usuários a ler e interagir com seu site. Mas mesmo os sites que seguem perfeitamente todas essas diretrizes não podem atender às necessidades específicas de cada visitante. É por isso que recursos do dispositivo, como a pinça para aplicar zoom e dimensionamento, são tão importantes: eles permitem que os usuários ajustem suas páginas para que suas necessidades sejam atendidas. Ou, no caso de sites particularmente inacessíveis que usam fontes e botões minúsculos, dá aos usuários a chance de usar o site.
 
 Existem raros casos em que a desativação do escalonamento é aceitável, como quando a página em questão é um jogo baseado na web que usa controles de toque. Se deixado ativado neste caso, os telefones dos jogadores irão aumentar e diminuir o zoom cada vez que o jogador tocar duas vezes no jogo, ironicamente tornando-o inacessível.
 
@@ -70,7 +70,7 @@ Por causa disso, os desenvolvedores têm a capacidade de desativar esse recurso 
 
 2. `maximum-scale` definida como `1`, `1.0`, etc
 
-Infelizmente, os desenvolvedores abusaram tanto disso que quase um em cada três sites no celular (32,21%) desabilita esse recurso e a Apple (a partir do iOS 10) não permite mais que os desenvolvedores da web desabilitem o zoom. O Safari para dispositivos móveis simplesmente [ignora a tag](https://archive.org/details/ios-10-beta-release-notes). Todos os sites, não importa o quê, podem ser ampliados e dimensionados em dispositivos iOS mais recentes.
+Infelizmente, os desenvolvedores abusaram tanto disso que quase um em cada três sites no celular (32,21%) desabilita esse recurso e a Apple (a partir do iOS 10) não permite mais que os desenvolvedores da web desabilitem o zoom. O Safari para dispositivos móveis simplesmente <a hreflang="en" href="https://archive.org/details/ios-10-beta-release-notes">ignora a tag</a>. Todos os sites, não importa o quê, podem ser ampliados e dimensionados em dispositivos iOS mais recentes.
 
 {{ figure_markup(
   image="fig2.png",
@@ -102,7 +102,7 @@ Infelizmente, nossos resultados indicam que animações em loop infinito são ba
 
 ### Texto alternativo nas imagens
 
-As imagens são uma parte essencial da experiência na web. Eles podem contar histórias poderosas, chamar a atenção e provocar emoções. Mas nem todos podem ver essas imagens que utilizamos para contar partes de nossas histórias. Felizmente, em 1995, o HTML 2.0 forneceu uma solução para esse problema: [o atributo alt](https://webaim.org/techniques/alttext/). O atributo alt fornece aos desenvolvedores da web a capacidade de adicionar uma descrição textual às imagens que usamos, de modo que, quando alguém não consegue ver nossas imagens (ou as imagens não carregam), eles podem ler o texto alternativo para uma descrição. O texto alternativo os preenche com a parte da história que, de outra forma, eles teriam perdido.
+As imagens são uma parte essencial da experiência na web. Eles podem contar histórias poderosas, chamar a atenção e provocar emoções. Mas nem todos podem ver essas imagens que utilizamos para contar partes de nossas histórias. Felizmente, em 1995, o HTML 2.0 forneceu uma solução para esse problema: <a hreflang="en" href="https://webaim.org/techniques/alttext/">o atributo alt</a>. O atributo alt fornece aos desenvolvedores da web a capacidade de adicionar uma descrição textual às imagens que usamos, de modo que, quando alguém não consegue ver nossas imagens (ou as imagens não carregam), eles podem ler o texto alternativo para uma descrição. O texto alternativo os preenche com a parte da história que, de outra forma, eles teriam perdido.
 
 Embora os atributos alt existam há 25 anos, 49,91% das páginas ainda não fornecem atributos alt para algumas de suas imagens e 8,68% das páginas nunca os usam.
 
@@ -184,7 +184,7 @@ Muitos leitores de tela populares também permitem que os usuários naveguem pul
 
 ### Skip Links
 
-Um [skip link](https://webaim.org/techniques/skipnav/) é um link colocado na parte superior de uma página que permite que leitores de tela ou usuários apenas com teclado acessem diretamente o conteúdo principal. Ele efetivamente "pula" todos os links de navegação e menus no topo da página. Os links para ignorar são especialmente úteis para usuários de teclado que não usam um leitor de tela, pois esses usuários geralmente não têm acesso a outros modos de navegação rápida (como pontos de referência e títulos). 14,19% das páginas em nossa amostra apresentaram skip links.
+Um <a hreflang="en" href="https://webaim.org/techniques/skipnav/">skip link</a> é um link colocado na parte superior de uma página que permite que leitores de tela ou usuários apenas com teclado acessem diretamente o conteúdo principal. Ele efetivamente "pula" todos os links de navegação e menus no topo da página. Os links para ignorar são especialmente úteis para usuários de teclado que não usam um leitor de tela, pois esses usuários geralmente não têm acesso a outros modos de navegação rápida (como pontos de referência e títulos). 14,19% das páginas em nossa amostra apresentaram skip links.
 
 Se você gostaria de ver um skip link em ação, você pode! Basta fazer uma pesquisa rápida no Google e clicar em "<kbd>tab</kbd>" assim que acessar as páginas de resultados da pesquisa. Você será saudado com um link anteriormente oculto, exatamente como o da Figura 9.7.
 
@@ -197,19 +197,19 @@ Se você gostaria de ver um skip link em ação, você pode! Basta fazer uma pes
   )
 }}
 
-Na verdade, você não precisa nem mesmo sair deste site, pois nós [os usamos aqui também](https://github.com/HTTPArchive/almanac.httparchive.org/pull/645)!
+Na verdade, você não precisa nem mesmo sair deste site, pois nós <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/645">os usamos aqui também</a>!
 
 É difícil determinar com precisão o que é um skip link ao analisar sites. Para esta análise, se encontramos um link âncora (`href=#header1`) dentro dos primeiros 3 links na página, nós o definimos como uma página com um skip link. Portanto, 14,19% é um limite superior estrito.
 
 ### Atalhos
 
-Teclas de atalho definidas por meio de [`aria-keyshortcuts`](https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts) ou [`accesskey`](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Global_attributes/accesskey) podem ser usados ​​de duas maneiras:
+Teclas de atalho definidas por meio de <a hreflang="en" href="https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts">`aria-keyshortcuts`</a> ou [`accesskey`](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Global_attributes/accesskey) podem ser usados ​​de duas maneiras:
 
 1. Ativando um elemento na página, como um link ou botão.
 
 2. Dando um certo elemento ao foco da página. Por exemplo, mudar o foco para uma determinada entrada na página, permitindo que um usuário comece a digitar nela.
 
-A adoção de [`aria-keyshortcuts`](https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts) esteve quase ausente em nossa amostra, sendo usada apenas em 159 sites de mais de 4 milhões analisados. O atributo [`accesskey`](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Global_attributes/accesskey) foi usado com mais frequência, sendo encontrado em 2,47% das páginas da web (1,74% no celular ) Acreditamos que o maior uso de atalhos no desktop deve-se aos desenvolvedores que esperam que os sites móveis sejam acessados ​​apenas por meio de uma tela de toque e não de um teclado.
+A adoção de <a hreflang="en" href="https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts">`aria-keyshortcuts`</a> esteve quase ausente em nossa amostra, sendo usada apenas em 159 sites de mais de 4 milhões analisados. O atributo [`accesskey`](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Global_attributes/accesskey) foi usado com mais frequência, sendo encontrado em 2,47% das páginas da web (1,74% no celular ) Acreditamos que o maior uso de atalhos no desktop deve-se aos desenvolvedores que esperam que os sites móveis sejam acessados ​​apenas por meio de uma tela de toque e não de um teclado.
 
 O que é especialmente surpreendente aqui é que 15,56% dos sites para celular e 13,03% dos sites para desktop que usam teclas de atalho atribuem o mesmo atalho a vários elementos diferentes. Isso significa que os navegadores precisam adivinhar qual elemento deve possuir essa tecla de atalho.
 
@@ -235,7 +235,7 @@ Apesar disso, apenas 4,32% das páginas com tabelas apresentam legendas.
 
 ### O uso de ARIA
 
-Uma das especificações mais populares e amplamente utilizadas para acessibilidade na web é o padrão [Accessible Rich Internet Applications](https://www.w3.org/WAI/standards-guidelines/aria/) (ARIA). Este padrão oferece uma grande variedade de atributos HTML adicionais para ajudar a transmitir o propósito por trás dos elementos visuais (ou seja, seu significado semântico) e de quais tipos de ações eles são capazes.
+Uma das especificações mais populares e amplamente utilizadas para acessibilidade na web é o padrão <a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/aria/">Accessible Rich Internet Applications</a> (ARIA). Este padrão oferece uma grande variedade de atributos HTML adicionais para ajudar a transmitir o propósito por trás dos elementos visuais (ou seja, seu significado semântico) e de quais tipos de ações eles são capazes.
 
 Usar o ARIA de maneira correta e apropriada pode ser desafiador. Por exemplo, das páginas que utilizam atributos ARIA, encontramos 12,31% com valores inválidos aos seus atributos. Isso é problemático porque qualquer erro no uso de um atributo ARIA não tem efeito visual na página. Alguns desses erros podem ser detectados com o uso de uma ferramenta de validação automatizada, mas geralmente exigem o uso prático de software de assistência real (como um leitor de tela). Esta seção examinará como o ARIA é usado na web e, especificamente, quais partes do padrão são mais predominantes.
 
@@ -299,7 +299,7 @@ Também descobrimos que 3,52% dos sites com formulários usam `aria-invalid`. No
 
 Os IDs podem ser usados ​​em HTML para vincular dois elementos. Por exemplo, o elemento [`<label>`](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/label) funciona dessa maneira. Você especifica o ID do campo de entrada que este rótulo está descrevendo e o navegador os vincula. O resultado? Os usuários agora podem clicar neste rótulo para focar no campo de entrada, e os leitores de tela usarão esse rótulo como a descrição.
 
-Infelizmente, 34,62% ​​dos sites têm IDs duplicados, o que significa que em muitos sites a ID especificada pelo usuário pode se referir a várias entradas diferentes. Portanto, quando um usuário clica no rótulo para selecionar um campo, ele pode acabar [selecionando algo diferente](https://www.deque.com/blog/unique-id-attributes-matter/) do que pretendia. Como você pode imaginar, isso pode ter consequências negativas em algo como um carrinho de compras.
+Infelizmente, 34,62% ​​dos sites têm IDs duplicados, o que significa que em muitos sites a ID especificada pelo usuário pode se referir a várias entradas diferentes. Portanto, quando um usuário clica no rótulo para selecionar um campo, ele pode acabar <a hreflang="en" href="https://www.deque.com/blog/unique-id-attributes-matter/">selecionando algo diferente</a> do que pretendia. Como você pode imaginar, isso pode ter consequências negativas em algo como um carrinho de compras.
 
 Esse problema é ainda mais encontrado para leitores de tela porque seus usuários podem não conseguir verificar visualmente o que está selecionado. Além disso, muitos atributos ARIA, como [`aria-describedby`](https://developer.mozilla.org/pt-BR/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-describedby_attribute) e [`aria-labelledby`](https://developer.mozilla.org/pt-BR/docs/Web/Accessibility/ARIA/ARIA_Techniques/Usando_o_atributo_aria-labelledby), funciona de forma semelhante ao elemento de rótulo detalhado acima. Portanto, para tornar seu site acessível, remover todos os IDs duplicados é um bom primeiro passo.
 

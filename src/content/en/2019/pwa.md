@@ -9,8 +9,8 @@ editors: [bazzadp]
 translators: []
 discuss: 1766
 results: https://docs.google.com/spreadsheets/d/19BI3RQc_vR9bUPPZfVsF_4gpFWLNT6P0pLcAdL-A56c/
-tomayac_bio: Thomas Steiner is a Web Developer Advocate at Google Hamburg, focused on making the Web a better place through standardization, creating and sharing best practices, and doing research. He blogs at <a href="https://blog.tomayac.com/">blog.tomayac.com</a> and tweets as <a href="https://twitter.com/tomayac">@tomayac</a>.
-jeffposnick_bio: Jeff Posnick is a member of Google's Web Developer Relations team, based in New York. His focus is on <a href="https://developers.google.com/web/tools/workbox/">Workbox</a>, a set of service worker libraries for Progressive Web Apps. He blogs at <a href="https://jeffy.info">https://jeffy.info</a> and tweets as <a href="https://twitter.com/jeffposnick">@jeffposnick</a>.
+tomayac_bio: Thomas Steiner is a Web Developer Advocate at Google Hamburg, focused on making the Web a better place through standardization, creating and sharing best practices, and doing research. He blogs at <a hreflang="en" href="https://blog.tomayac.com/">blog.tomayac.com</a> and tweets as <a href="https://twitter.com/tomayac">@tomayac</a>.
+jeffposnick_bio: Jeff Posnick is a member of Google's Web Developer Relations team, based in New York. His focus is on <a hreflang="en" href="https://developers.google.com/web/tools/workbox/">Workbox</a>, a set of service worker libraries for Progressive Web Apps. He blogs at <a hreflang="en" href="https://jeffy.info">https://jeffy.info</a> and tweets as <a href="https://twitter.com/jeffposnick">@jeffposnick</a>.
 featured_quote: Progressive Web Apps (PWAs) are a new class of web applications, building on top of platform primitives like the Service Worker APIs. Service workers allow apps to support network-independent loading by acting as a network proxy, intercepting your web app's outgoing requests, and replying with programmatic or cached responses.
 featured_stat_1: 0.44%
 featured_stat_label_1: Sites that register a service worker
@@ -24,7 +24,7 @@ featured_stat_label_3: PWAs that use the <code>standalone</code> <code>display</
 
 Progressive Web Apps (PWAs) are a new class of web applications, building on top of platform primitives like the [Service Worker APIs](https://developer.mozilla.org/en/docs/Web/API/Service_Worker_API). Service workers allow apps to support network-independent loading by acting as a network proxy, intercepting your web app's outgoing requests, and replying with programmatic or cached responses. Service workers can receive push notifications and synchronize data in the background even when the corresponding app is not running. Additionally, service workers, together with [Web App Manifests](https://developer.mozilla.org/en-US/docs/Web/Manifest), allow users to install PWAs to their devices' home screens.
 
-Service workers were [first implemented in Chrome 40](https://blog.chromium.org/2014/12/chrome-40-beta-powerful-offline-and.html), back in December 2014, and the term Progressive Web Apps was [coined by Frances Berriman and Alex Russell](https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/) in 2015. As service workers are now finally [implemented in all major browsers](https://jakearchibald.github.io/isserviceworkerready/), the goal for this chapter is to determine how many PWAs are actually out there, and how they make use of these new technologies. Certain advanced APIs like [Background Sync](https://developers.google.com/web/updates/2015/12/background-sync) are currently still [only available on Chromium-based browsers](https://caniuse.com/#feat=background-sync), so as an additional question, we looked into which features these PWAs actually use.
+Service workers were <a hreflang="en" href="https://blog.chromium.org/2014/12/chrome-40-beta-powerful-offline-and.html">first implemented in Chrome 40</a>, back in December 2014, and the term Progressive Web Apps was <a hreflang="en" href="https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/">coined by Frances Berriman and Alex Russell</a> in 2015. As service workers are now finally <a hreflang="en" href="https://jakearchibald.github.io/isserviceworkerready/">implemented in all major browsers</a>, the goal for this chapter is to determine how many PWAs are actually out there, and how they make use of these new technologies. Certain advanced APIs like <a hreflang="en" href="https://developers.google.com/web/updates/2015/12/background-sync">Background Sync</a> are currently still <a hreflang="en" href="https://caniuse.com/#feat=background-sync">only available on Chromium-based browsers</a>, so as an additional question, we looked into which features these PWAs actually use.
 
 ## Service workers
 
@@ -47,22 +47,22 @@ The first metric we explore are service worker installations. Looking at the dat
   )
 }}
 
-Now this might not look overly impressive, but taking traffic data from Chrome Platform Status into account, we can see that a service worker controls about [15% of all page loads](https://www.chromestatus.com/metrics/feature/timeline/popularity/990), which can be interpreted as popular, high-traffic sites increasingly having started to embrace service workers.
+Now this might not look overly impressive, but taking traffic data from Chrome Platform Status into account, we can see that a service worker controls about <a hreflang="en" href="https://www.chromestatus.com/metrics/feature/timeline/popularity/990">15% of all page loads</a>, which can be interpreted as popular, high-traffic sites increasingly having started to embrace service workers.
 
 {{ figure_markup(
-  caption='Percent of page views on a page that registers a service worker. (Source: <a href="https://www.chromestatus.com/metrics/feature/timeline/popularity/990">Chrome Platform Status</a>)',
+  caption='Percent of page views on a page that registers a service worker. (Source: <a hreflang="en" href="https://www.chromestatus.com/metrics/feature/timeline/popularity/990">Chrome Platform Status</a>)',
   content="15%",
   classes="big-number"
 )
 }}
 
-[Lighthouse](./methodology#lighthouse) checks whether a page is eligible for an [install prompt](https://developers.google.com/web/tools/lighthouse/audits/install-prompt). 1.56% of mobile pages have an [installable manifest](https://web.dev/installable-manifest/).
+[Lighthouse](./methodology#lighthouse) checks whether a page is eligible for an <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/audits/install-prompt">install prompt</a>. 1.56% of mobile pages have an <a hreflang="en" href="https://web.dev/installable-manifest/">installable manifest</a>.
 
-To control the install experience, 0.82% of all desktop and 0.94% of all mobile pages use the [`OnBeforeInstallPrompt` interface](https://w3c.github.io/manifest/#beforeinstallpromptevent-interface). At present [support is limited to Chromium-based browsers](https://caniuse.com/#feat=web-app-manifest).
+To control the install experience, 0.82% of all desktop and 0.94% of all mobile pages use the <a hreflang="en" href="https://w3c.github.io/manifest/#beforeinstallpromptevent-interface">`OnBeforeInstallPrompt` interface</a>. At present <a hreflang="en" href="https://caniuse.com/#feat=web-app-manifest">support is limited to Chromium-based browsers</a>.
 
 ### Service worker events
 
-In a service worker one can [listen for a number of events](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle):
+In a service worker one can <a hreflang="en" href="https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle">listen for a number of events</a>:
 
 - `install`, which occurs upon service worker installation.
 - `activate`, which occurs upon service worker activation.
@@ -103,7 +103,7 @@ The median service worker file on desktop is 895 bytes, whereas on mobile it's 6
 
 The web app manifest is a simple JSON file that tells the browser about a web application and how it should behave when installed on the user's mobile device or desktop. A typical manifest file includes information about the app name, icons it should use, the start URL it should open at when launched, and more. Only 1.54% of all encountered manifests were invalid JSON, and the rest parsed correctly.
 
-We looked at the different properties defined by the [Web App Manifest specification](https://w3c.github.io/manifest/#webappmanifest-dictionary), and also considered non-standard proprietary properties. According to the spec, the following properties are allowed:
+We looked at the different properties defined by the <a hreflang="en" href="https://w3c.github.io/manifest/#webappmanifest-dictionary">Web App Manifest specification</a>, and also considered non-standard proprietary properties. According to the spec, the following properties are allowed:
 
 - `dir`
 - `lang`
@@ -171,7 +171,7 @@ There were not too many manifests that made use of the property, but it is inter
 
 ### Icon sizes
 
-Lighthouse [requires](https://developers.google.com/web/tools/lighthouse/audits/manifest-contains-192px-icon) at least an icon sized 192x192 pixels, but common favicon generation tools create a plethora of other sizes, too.
+Lighthouse <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/audits/manifest-contains-192px-icon">requires</a> at least an icon sized 192x192 pixels, but common favicon generation tools create a plethora of other sizes, too.
 
 {{ figure_markup(
   image="fig9.png",
@@ -181,11 +181,11 @@ Lighthouse [requires](https://developers.google.com/web/tools/lighthouse/audits/
   )
 }}
 
-Lighthouse's rule is probably the culprit for 192 pixels being the most popular choice of icon size on both desktop and mobile, despite [Google's documentation](https://developers.google.com/web/fundamentals/web-app-manifest#icons) explicitly recommending 512x512, which doesn't show as a particularly prominent option.
+Lighthouse's rule is probably the culprit for 192 pixels being the most popular choice of icon size on both desktop and mobile, despite <a hreflang="en" href="https://developers.google.com/web/fundamentals/web-app-manifest#icons">Google's documentation</a> explicitly recommending 512x512, which doesn't show as a particularly prominent option.
 
 ### Orientation values
 
-The valid values for the `orientation` property are defined in the [Screen Orientation API specification](https://www.w3.org/TR/screen-orientation/#dom-orientationlocktype). Currently, they are:
+The valid values for the `orientation` property are defined in the <a hreflang="en" href="https://www.w3.org/TR/screen-orientation/#dom-orientationlocktype">Screen Orientation API specification</a>. Currently, they are:
 
 - `"any"`
 - `"natural"`
@@ -208,9 +208,9 @@ The valid values for the `orientation` property are defined in the [Screen Orien
 
 ## Workbox
 
-[Workbox](https://developers.google.com/web/tools/workbox) is a set of libraries that help with common service worker use cases. For instance, Workbox has tools that can plug in to your build process and generate a manifest of files, which are then precached by your service worker. Workbox includes libraries to handle runtime caching, request routing, cache expiration, background sync, and more.
+<a hreflang="en" href="https://developers.google.com/web/tools/workbox">Workbox</a> is a set of libraries that help with common service worker use cases. For instance, Workbox has tools that can plug in to your build process and generate a manifest of files, which are then precached by your service worker. Workbox includes libraries to handle runtime caching, request routing, cache expiration, background sync, and more.
 
-Given the low-level nature of the service worker APIs, many developers have turned to Workbox as a way of structuring their service worker logic into higher-level, reusable chunks of code. Workbox adoption is also driven by its inclusion as a feature in a number of popular JavaScript framework starter kits, like [`create-react-app`](https://create-react-app.dev/) and [Vue's PWA plugin](https://www.npmjs.com/package/@vue/cli-plugin-pwa).
+Given the low-level nature of the service worker APIs, many developers have turned to Workbox as a way of structuring their service worker logic into higher-level, reusable chunks of code. Workbox adoption is also driven by its inclusion as a feature in a number of popular JavaScript framework starter kits, like <a hreflang="en" href="https://create-react-app.dev/">`create-react-app`</a> and <a hreflang="en" href="https://www.npmjs.com/package/@vue/cli-plugin-pwa">Vue's PWA plugin</a>.
 
 The HTTP Archive shows that 12.71% of websites that register a service worker are using at least one of the Workbox libraries. This percentage is roughly consistent across desktop and mobile, with a slightly lower percentage (11.46%) on mobile compared to desktop (14.36%).
 
@@ -218,6 +218,6 @@ The HTTP Archive shows that 12.71% of websites that register a service worker ar
 
 The stats in this chapter show that PWAs are still only used by a small percentage of sites. However, this relatively small usage is driven by the more popular sites which have a much larger share of traffic, and pages beyond the home page may use this more: we showed that 15% of page loads use a service workers. The advantages they give for [performance](./performance) and greater control over [caching](./caching) particularly for [mobile](./mobile-web) should mean that usage will continue to grow.
 
-PWAs have often been seen as Chrome-driven technology. Other browsers have made great strides recently to implement most of the underlying technologies, although first-class installability lags on some platforms. It's positive to see support becoming more widespread. [Maximiliano Firtman](https://twitter.com/firt) does a great job of tracking this on iOS, including [explaining Safari PWA support](https://medium.com/@firt/iphone-11-ipados-and-ios-13-for-pwas-and-web-development-5d5d9071cc49). Apple doesn't use the term PWA much, and has [explicitly stated that these HTML5 apps are best delivered outside of the App Store](https://developer.apple.com/news/?id=09062019b). Microsoft went the opposite direction, not only [encouraging PWAs in its app store, but even automatically shortlisting PWAs to be added that were found via the Bing web crawler](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/microsoft-store). Google has also provided a method for listing web apps in the Google Play Store, via [Trusted Web Activities](https://developers.google.com/web/updates/2019/02/using-twa).
+PWAs have often been seen as Chrome-driven technology. Other browsers have made great strides recently to implement most of the underlying technologies, although first-class installability lags on some platforms. It's positive to see support becoming more widespread. [Maximiliano Firtman](https://twitter.com/firt) does a great job of tracking this on iOS, including <a hreflang="en" href="https://medium.com/@firt/iphone-11-ipados-and-ios-13-for-pwas-and-web-development-5d5d9071cc49">explaining Safari PWA support</a>. Apple doesn't use the term PWA much, and has <a hreflang="en" href="https://developer.apple.com/news/?id=09062019b">explicitly stated that these HTML5 apps are best delivered outside of the App Store</a>. Microsoft went the opposite direction, not only <a hreflang="en" href="https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/microsoft-store">encouraging PWAs in its app store, but even automatically shortlisting PWAs to be added that were found via the Bing web crawler</a>. Google has also provided a method for listing web apps in the Google Play Store, via <a hreflang="en" href="https://developers.google.com/web/updates/2019/02/using-twa">Trusted Web Activities</a>.
 
 PWAs provide a path forward for developers who would prefer to build and release on the web instead of on native platforms and app stores. Not every operating system and browser offers full parity with native software, but improvements continue, and perhaps 2020 is the year where we see an explosion in deployments?

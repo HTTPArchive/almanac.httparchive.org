@@ -9,8 +9,8 @@ editors: [rachellcostello]
 translators: [MSakamaki]
 discuss: 1765
 results: https://docs.google.com/spreadsheets/d/1uARtBWwz9nJOKqKPFinAMbtoDgu5aBtOhsBNmsCoTaA/
-ymschaap_bio: 技術的なSEOコンサルタント<a href="https://build.amsterdam/">build.amsterdam</a>の創設者。以前は、10億人以上のユーザーに達したいくつかのウェブ会社を設立しました。2005年以来、彼の最新の（広告）ベンチャーについてブログを書いている。
-rachellcostello_bio: Rachel Costelloは、<a href="https://www.deepcrawl.com/">DeepCrawl</a>のテクニカルSEO &コンテンツマネージャーであり、検索の最新動向を研究し、伝えることに時間を費やしている国際会議のスピーカーでもあります。Rachelは現在、<a href="https://www.deepcrawl.com/knowledge/white-papers/">技術的なSEOのホワイトペーパー</a>とDeepCrawlのための研究作品の制作を管理しており、<a href="https://www.searchenginejournal.com/author/rachel-costello/">Search Engine Journal</a>のレギュラーコラムニストでもあります。
+ymschaap_bio: 技術的なSEOコンサルタント<a hreflang="en" href="https://build.amsterdam/">build.amsterdam</a>の創設者。以前は、10億人以上のユーザーに達したいくつかのウェブ会社を設立しました。2005年以来、彼の最新の（広告）ベンチャーについてブログを書いている。
+rachellcostello_bio: Rachel Costelloは、<a hreflang="en" href="https://www.deepcrawl.com/">DeepCrawl</a>のテクニカルSEO &コンテンツマネージャーであり、検索の最新動向を研究し、伝えることに時間を費やしている国際会議のスピーカーでもあります。Rachelは現在、<a hreflang="en" href="https://www.deepcrawl.com/knowledge/white-papers/">技術的なSEOのホワイトペーパー</a>とDeepCrawlのための研究作品の制作を管理しており、<a hreflang="en" href="https://www.searchenginejournal.com/author/rachel-costello/">Search Engine Journal</a>のレギュラーコラムニストでもあります。
 AVGP_bio: Martin SplittはGoogleのウェブエコシステムチームの開発者アドボケートで、ウェブを発見しやすい状態に保つことに取り組んでいます。
 featured_quote: 検索エンジン最適化（SEO）は、デジタルマーケッターの趣味やサイドプロジェクトではなく、ウェブサイトの成功に欠かせないものです。SEOの主な目標は、ウェブサイトが検索エンジンのボットに最適化されていることを確認し、ページをクロールしてインデックスを作成し、ウェブサイトをナビゲートしてコンテンツを消費するユーザーのために最適化することです。SEOは、それを構築している開発者から、新しい潜在的な顧客にそれを促進する必要がありますデジタルマーケッターまで、ウェブサイト上で働くすべての人に影響を与えます。
 featured_stat_1: 346
@@ -25,7 +25,7 @@ featured_stat_label_3: リッチな結果の対象となるサイト
 
 検索エンジン最適化（SEO）はデジタルマーケティングの担当者にとって、単なる趣味やサイドプロジェクトではなくWebサイトを成功に導くための重要な要素です。SEOの主な目標は、Webサイトをクロールする必要のある検索エンジンボットと、Webサイトを操作するコンテンツの消費者向けにWebサイトを最適化することです。SEOはWebサイトを作っている開発者から、新しい潜在顧客に対して宣伝する必要のあるデジタルマーケティング担当者に至るまで、すべてのWebサイトに関わる人に影響を及ぼします。
 
-それでは、SEOの重要性を見ていきましょう。今年のはじめにSEO業界は「困難な年」と言われた後[ASOSが利益の87%減少](https://www.bbc.co.uk/news/business-47877688)を報告したため、その恐ろしさ(と魅力)への注目が集まりました。このブランドの問題は、200以上のマイクロサイトを立ち上げた為に発生した検索エンジンのランキング低下と、Webサイトのナビゲーションの大幅な変更などの技術的変更が原因であると考えられています。驚きです！
+それでは、SEOの重要性を見ていきましょう。今年のはじめにSEO業界は「困難な年」と言われた後<a hreflang="en" href="https://www.bbc.co.uk/news/business-47877688">ASOSが利益の87%減少</a>を報告したため、その恐ろしさ(と魅力)への注目が集まりました。このブランドの問題は、200以上のマイクロサイトを立ち上げた為に発生した検索エンジンのランキング低下と、Webサイトのナビゲーションの大幅な変更などの技術的変更が原因であると考えられています。驚きです！
 
 Web AlmanacのSEOの章の目的は、検索エンジンによるコンテンツのクロールとインデックス付け、そして最終的にWebサイトのパフォーマンスに影響を与えるWebのオンサイト要素を分析することです。この章では、上位のWebサイトがユーザーおよび検索エンジンに優れた体験を提供するためにどれだけ十分な整備がされているか、そしてどのような作業を行うべきかについて見ていきます。
 
@@ -85,7 +85,7 @@ SEOの基本的なベストプラクティスの基準を満たしているWeb�
 
 具体的な見出しの長さを見ると、最初に見つかった`H1`要素の長さの中央値はデスクトップで19文字です。
 
-SEOとアクセシビリティのための`H1`と見出しの処理に関するアドバイスについては、Ask Google Webmastersシリーズの[John Muellerによるこのビデオの回答](https://www.youtube.com/watch?v=zyqJJXWk0gk)をご覧ください。
+SEOとアクセシビリティのための`H1`と見出しの処理に関するアドバイスについては、Ask Google Webmastersシリーズの<a hreflang="en" href="https://www.youtube.com/watch?v=zyqJJXWk0gk">John Muellerによるこのビデオの回答</a>をご覧ください。
 
 ### メタタグ
 
@@ -110,7 +110,7 @@ SEOとアクセシビリティのための`H1`と見出しの処理に関する�
   )
 }}
 
-一般的に[GoogleのSERPはページタイトルの最初の50〜60文字を表示](https://moz.com/learn/seo/title-tag)しますが、`<title>`タグの長さの中央値はモバイルページで21文字、デスクトップページで20文字でした。75パーセンタイルでも、境界を下回っています。これは、一部のSEOとコンテンツの記者が、検索エンジンによって割り当てられたSERPsのホームページを記述するために割り当てられた領域を最大限利用できていないことを示します。
+一般的に<a hreflang="en" href="https://moz.com/learn/seo/title-tag">GoogleのSERPはページタイトルの最初の50〜60文字を表示</a>しますが、`<title>`タグの長さの中央値はモバイルページで21文字、デスクトップページで20文字でした。75パーセンタイルでも、境界を下回っています。これは、一部のSEOとコンテンツの記者が、検索エンジンによって割り当てられたSERPsのホームページを記述するために割り当てられた領域を最大限利用できていないことを示します。
 
 #### メタディスクリプション
 
@@ -124,7 +124,7 @@ SEOとアクセシビリティのための`H1`と見出しの処理に関する�
   )
 }}
 
-メタディスクリプションの長さは[155-160文字が推奨](https://moz.com/learn/seo/meta-description)となっていますが、デスクトップページの中央値ははそれより短い123文字となっています。さらに興味深い事があります、モバイルのSERPはピクセル制限により従来よりも短かくなるにも関わらず、メタディスクリプションは一貫してデスクトップよりもモバイルが長くなっています。この制約は最近拡張されたばかりなので、おそらく多くのWebサイトの所有者がモバイルの結果に対して、より長くて説明的なメタディスクリプションの影響を確認しているのでしょう。
+メタディスクリプションの長さは<a hreflang="en" href="https://moz.com/learn/seo/meta-description">155-160文字が推奨</a>となっていますが、デスクトップページの中央値ははそれより短い123文字となっています。さらに興味深い事があります、モバイルのSERPはピクセル制限により従来よりも短かくなるにも関わらず、メタディスクリプションは一貫してデスクトップよりもモバイルが長くなっています。この制約は最近拡張されたばかりなので、おそらく多くのWebサイトの所有者がモバイルの結果に対して、より長くて説明的なメタディスクリプションの影響を確認しているのでしょう。
 
 #### 画像の`alt`タグ
 
@@ -143,7 +143,7 @@ SERPでユーザーにページのコンテンツを表示するためには検�
 
 検索エンジンにインデックスを付けたい重要なページは常に`200 OK`ステータスコードにしておく事をお勧めします。テストされたページの殆どは検索エンジンにアクセス可能で、デスクトップでは最初のHTML要求の87.03%が`200`ステータスコードを返しました。モバイルの場合は少しだけ低く、82.95%のページだけが`200`となるステータスコードを返しました。
 
-モバイルでは次によく見られるステータスコードは一時的なリダイレクトである`302`となっており、これはモバイルページの10.45%で見つけることができました。この結果はデスクトップよりも多く、デスクトップ用のホームページで`302`ステータスコードを返すのは6.71%しかありませんでした。これは、モバイル用のホームページがレスポンシヴでなく[デバイスごとにWebサイトのバージョンが異なるような](https://developers.google.com/search/mobile-sites/mobile-seo/separate-urls)、デスクトップページの代替が用意されていることに起因している可能性があります。
+モバイルでは次によく見られるステータスコードは一時的なリダイレクトである`302`となっており、これはモバイルページの10.45%で見つけることができました。この結果はデスクトップよりも多く、デスクトップ用のホームページで`302`ステータスコードを返すのは6.71%しかありませんでした。これは、モバイル用のホームページがレスポンシヴでなく<a hreflang="en" href="https://developers.google.com/search/mobile-sites/mobile-seo/separate-urls">デバイスごとにWebサイトのバージョンが異なるような</a>、デスクトップページの代替が用意されていることに起因している可能性があります。
 
 <p class="note">注意：この結果にはステータスコード<code>4xx</code>と<code>5xx</code>は含んでいません。</p>
 
@@ -151,7 +151,7 @@ SERPでユーザーにページのコンテンツを表示するためには検�
 
 `noindex`指示はHTMLの `<head>`もしくはHTTPヘッダーの`X-Robots`指示で使うことができます。`noindex`指示は基本的に検索エンジンにそのページをSERPに含めないように指示しますが、ユーザーがWebサイトを操作しているときでもページはアクセス可能です。一般的に`noindex`指示は、同一コンテンツを提供するページの複製バージョン、またはオーガニック検索からWebサイトにアクセスするユーザーに価値を提供しないであろう低品質のページ(フィルタ、ファセット、内部検索ページなど)に追加されます。
 
-モバイル用ページの96.93%が[Lighthouseのインデックス作成監査に合格しており](https://developers.google.com/web/tools/lighthouse/audits/indexing)、これらのページには`noindex`指示が含まれていませんでした。ただし、これはモバイルホームページの3.07%に`noindex`指示が含まれていたことも意味しています。これは心配の種であり、Googleはこれらのページのインデックスを作成できないことを意味しています。
+モバイル用ページの96.93%が<a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/audits/indexing">Lighthouseのインデックス作成監査に合格しており</a>、これらのページには`noindex`指示が含まれていませんでした。ただし、これはモバイルホームページの3.07%に`noindex`指示が含まれていたことも意味しています。これは心配の種であり、Googleはこれらのページのインデックスを作成できないことを意味しています。
 
 <p class="note">私達の調査に含まれるWebサイトは<a href="./methodology#chrome-ux-report">Chrome UX Report</a>のデータセットから提供されていますが、公開されていないWebサイトは除外されています。これはChromeが非公開であると判断したサイトは分析できないので、バイアスの重要な源です。これについては<a href="./methodology#websites">方法論</a>の詳細を御覧ください。</p>
 
@@ -159,13 +159,13 @@ SERPでユーザーにページのコンテンツを表示するためには検�
 
 canonicalタグを使い重複ページと優先代替ページを指定します。これにより検索エンジンは、グループ内の複数のページに散っているオーソリティを1つのメインページに統合してランキングの結果を上げることができます。
 
-モバイル用ホームページの48.34%でcanonicalタグが使われていることが[検出](https://developers.google.com/web/tools/lighthouse/audits/canonical)されました。自分を指ししめすcanonicalタグは必須でなく、普通は複製されたページにcanonicalタグを必要とします。ホームページがサイトのどこか他の場所に複製されることはめったに無いので、canonicalタグがページ毎で半分未満になっているのは驚くことではありません。
+モバイル用ホームページの48.34%でcanonicalタグが使われていることが<a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/audits/canonical">検出</a>されました。自分を指ししめすcanonicalタグは必須でなく、普通は複製されたページにcanonicalタグを必要とします。ホームページがサイトのどこか他の場所に複製されることはめったに無いので、canonicalタグがページ毎で半分未満になっているのは驚くことではありません。
 
 #### robots.txt
 
-検索エンジンのクロールを制御する最も効果的な方法の1つは、[`robots.txt`ファイル](https://www.deepcrawl.com/knowledge/technical-seo-library/robots-txt/)です。これは、Webサイトのルートドメインに置かれる事で、検索エンジンのクロールに対し許可しないURLとURLパスを指定する事ができるファイルです。
+検索エンジンのクロールを制御する最も効果的な方法の1つは、<a hreflang="en" href="https://www.deepcrawl.com/knowledge/technical-seo-library/robots-txt/">`robots.txt`ファイル</a>です。これは、Webサイトのルートドメインに置かれる事で、検索エンジンのクロールに対し許可しないURLとURLパスを指定する事ができるファイルです。
 
-[Lighthouseの結果](https://developers.google.com/web/tools/lighthouse/audits/robots)からモバイル用サイトの72.16%でしか有効な`robots.txt`を持っていないことがわかりました。見つかった問題の主な内訳は、`robots.txt`ファイルをまったく持たないサイトが22%、無効な`robots.txt`ファイルを提供する約6%で、それぞれ検査に失敗しています。[クロールバジェットの問題](https://webmasters.googleblog.com/2017/01/what-crawl-budget-means-for-googlebot.html)に悩まされないような小規模Webサイトを運営していたりするなど、`robots.txt`ファイルを持たない妥当な理由もあったりしますが、無効な`robots.txt`が有るというのは、それだけで心配の種になります。
+<a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/audits/robots">Lighthouseの結果</a>からモバイル用サイトの72.16%でしか有効な`robots.txt`を持っていないことがわかりました。見つかった問題の主な内訳は、`robots.txt`ファイルをまったく持たないサイトが22%、無効な`robots.txt`ファイルを提供する約6%で、それぞれ検査に失敗しています。<a hreflang="en" href="https://webmasters.googleblog.com/2017/01/what-crawl-budget-means-for-googlebot.html">クロールバジェットの問題</a>に悩まされないような小規模Webサイトを運営していたりするなど、`robots.txt`ファイルを持たない妥当な理由もあったりしますが、無効な`robots.txt`が有るというのは、それだけで心配の種になります。
 
 ### リンク
 
@@ -173,7 +173,7 @@ Webページの最も重要な属性の1つはリンクです。リンクは検�
 
 デスクトップ用のページに含まれる内部と外部リンクの数は、モバイル用のページよりも全ての場合で多くなっています。これは殆どの場合、モバイルのデザインはビューポートが小さく空間が限られているために、リンクが含まれるテキストはデスクトップに比べて少なくなっているためです。
 
-モバイル用のページで内部リンクが少ない場合、Webサイトで[問題が発生する可能性](https://moz.com/blog/internal-linking-mobile-first-crawl-paths)が有るため注意が必要です。新しいWebサイトでGoogleの規定である[モバイルファーストインデックス](https://www.deepcrawl.com/knowledge/white-papers/mobile-first-index-guide/)が適用されると、そのページがデスクトップ用ではリンクされているがモバイル用からリンクが無い時、検索エンジンはそのページを見つけてランク付けするのがとても難しくなってしまいます。
+モバイル用のページで内部リンクが少ない場合、Webサイトで<a hreflang="en" href="https://moz.com/blog/internal-linking-mobile-first-crawl-paths">問題が発生する可能性</a>が有るため注意が必要です。新しいWebサイトでGoogleの規定である<a hreflang="en" href="https://www.deepcrawl.com/knowledge/white-papers/mobile-first-index-guide/">モバイルファーストインデックス</a>が適用されると、そのページがデスクトップ用ではリンクされているがモバイル用からリンクが無い時、検索エンジンはそのページを見つけてランク付けするのがとても難しくなってしまいます。
 
 {{ figure_markup(
   image="fig7.png",
@@ -203,7 +203,7 @@ Webページの最も重要な属性の1つはリンクです。リンクは検�
 
 同一ページの特定スクロール位置にリンクするアンカーリンクはあまり人気が無いようです。ホームページの65%以上でアンカーリンクは使われていません。これはおそらく、一般的なホームページには長文形式のコンテンツが含まれていないからでしょう。
 
-説明的なリンクテキストの測定からは良いニュースが伺えます。モバイル用ページの89.94%が[Lighthouseの説明的なリンクテキストの監査](https://developers.google.com/web/tools/lighthouse/audits/descriptive-link-text)で合格しています。つまり、これらのページは一般的な「ここをクリック」「リンク」「続きを読む」「全文表示」のようなリンクを使わず、より有意義なリンクテキストを使うことで、ユーザーと検索エンジンにページのコンテキストやページ同士のつながりがあることを理解できるようにしています。
+説明的なリンクテキストの測定からは良いニュースが伺えます。モバイル用ページの89.94%が<a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/audits/descriptive-link-text">Lighthouseの説明的なリンクテキストの監査</a>で合格しています。つまり、これらのページは一般的な「ここをクリック」「リンク」「続きを読む」「全文表示」のようなリンクを使わず、より有意義なリンクテキストを使うことで、ユーザーと検索エンジンにページのコンテキストやページ同士のつながりがあることを理解できるようにしています。
 
 ## Advanced
 
@@ -213,7 +213,7 @@ Webサイトのインデックス作成とランク付成功のために重要�
 
 ### Speed
 
-モバイルの読み込み速度は、[2018年にGoogleからランキング要素として初めて発表](https://webmasters.googleblog.com/2018/01/using-page-speed-in-mobile-search.html)されました。しかしGoogleにとって速度は新しい観点ではありません。2010年に既に速度が[ランキングシグナルとして導入されたことが明らか](https://webmasters.googleblog.com/2010/04/using-site-speed-in-web-search-ranking.html)にっています。
+モバイルの読み込み速度は、<a hreflang="en" href="https://webmasters.googleblog.com/2018/01/using-page-speed-in-mobile-search.html">2018年にGoogleからランキング要素として初めて発表</a>されました。しかしGoogleにとって速度は新しい観点ではありません。2010年に既に速度が<a hreflang="en" href="https://webmasters.googleblog.com/2010/04/using-site-speed-in-web-search-ranking.html">ランキングシグナルとして導入されたことが明らか</a>にっています。
 
 Webサイトが高速であることは、優れたユーザー体験のためにも重要です。サイトの読み込みに数秒待たされるユーザは、すぐ離脱してSERPsから別の似たような内容の素早く読み込まれるページを探す傾向があります。
 
@@ -235,13 +235,13 @@ Web全体の読み込み速度の分析に使った指標は [Chrome UX Report](
 
 構造化データを使うことでWebサイトの所有者は、[JSON-LD](https://en.wikipedia.org/wiki/JSON-LD)スニペットや[Microdata](https://developer.mozilla.org/en-US/docs/Web/HTML/Microdata)などを加える事で、Webページに付属的なセマンティックデータを付与できます。検索エンジンはこのデータを解析してこれらのページを深く理解し、マークアップにより検索結果に追加の関連情報を表示も行う事ができます。よく見る構造化データの種類には次のようなものがあります。
 
-- [reviews](https://developers.google.com/search/docs/data-types/review-snippet)
-- [products](https://developers.google.com/search/docs/data-types/product)
-- [businesses](https://developers.google.com/search/docs/data-types/local-business)
-- [movies](https://developers.google.com/search/docs/data-types/movie)
-- [その他](https://developers.google.com/search/docs/guides/search-gallery)
+- <a hreflang="en" href="https://developers.google.com/search/docs/data-types/review-snippet">reviews</a>
+- <a hreflang="en" href="https://developers.google.com/search/docs/data-types/product">products</a>
+- <a hreflang="en" href="https://developers.google.com/search/docs/data-types/local-business">businesses</a>
+- <a hreflang="en" href="https://developers.google.com/search/docs/data-types/movie">movies</a>
+- <a hreflang="en" href="https://developers.google.com/search/docs/guides/search-gallery">その他</a>
 
-構造化データがWebサイトに提供できる[追加の可視性](https://developers.google.com/search/docs/guides/enhance-site)はユーザーがサイトに訪れる機会を増やすのに役立つため、サイトの所有者にとっては魅力的です。たとえば、比較的新しい[FAQスキーマ](https://developers.google.com/search/docs/data-types/faqpage)はスニペットとSERPsの領域を２倍にできます。
+構造化データがWebサイトに提供できる<a hreflang="en" href="https://developers.google.com/search/docs/guides/enhance-site">追加の可視性</a>はユーザーがサイトに訪れる機会を増やすのに役立つため、サイトの所有者にとっては魅力的です。たとえば、比較的新しい<a hreflang="en" href="https://developers.google.com/search/docs/data-types/faqpage">FAQスキーマ</a>はスニペットとSERPsの領域を２倍にできます。
 
 調査の結果、モバイルでリッチな結果を得ることが出来るサイトは14.67%しか無いことが解りました。興味深いことに、デスクトップサイトの適格性はわずかに低くなり12.46%となっています。これはサイト所有者がホームページ検索で表示されるための最適化に対して、もっと出来ることが有ることを示しています。
 
@@ -253,13 +253,13 @@ Web全体の読み込み速度の分析に使った指標は [Chrome UX Report](
 4. `WebPage` (11.58%)
 5. `ImageObject` (5.35%)
 
-興味深いことに、一番良く利用されている検索エンジンの機能をトリガーするデータ型は[サイトリンクの検索ボックス](https://developers.google.com/search/docs/data-types/sitelinks-searchbox)を強化する`SearchAction`です。
+興味深いことに、一番良く利用されている検索エンジンの機能をトリガーするデータ型は<a hreflang="en" href="https://developers.google.com/search/docs/data-types/sitelinks-searchbox">サイトリンクの検索ボックス</a>を強化する`SearchAction`です。
 
 トップ5のマークアップタイプはすべてGoogleの検索結果の可視性を高める物で、これらのタイプの構造化データをさらに採用する理由になるかもしれません。
 
 今回の分析はホームページだけを見ているため、インテリアページも考慮した場合は結果は大きく異なった結果が見えてくる可能性があります。
 
-レビューの星はWebのホームページ上で1.09%だけにしかありません。([AggregateRating](https://schema.org/AggregateRating)より)また、新しく導入された[QAPage](https://schema.org/QAPage)は48の例しかなく、[FAQPage](https://schema.org/FAQPage)は少しだけ高い数が出現して218となっています。この最後の2種類の数については、クロールを更に実行してWeb Almanacの分析を掘り下げていくと、将来増加することが予想されています。
+レビューの星はWebのホームページ上で1.09%だけにしかありません。(<a hreflang="en" href="https://schema.org/AggregateRating">AggregateRating</a>より)また、新しく導入された<a hreflang="en" href="https://schema.org/QAPage">QAPage</a>は48の例しかなく、<a hreflang="en" href="https://schema.org/FAQPage">FAQPage</a>は少しだけ高い数が出現して218となっています。この最後の2種類の数については、クロールを更に実行してWeb Almanacの分析を掘り下げていくと、将来増加することが予想されています。
 
 ### 国際化
 
@@ -409,31 +409,31 @@ HTML lang属性が英語に設定されているデスクトップ用サイト�
 
 英語の次に最もよく見る言語は、フランス語、スペイン語、およびドイツ語です。この後にアメリカ人向けの英語（`en-us`）やアイルランド人向けのスペイン語（`es-ie`）などの不明瞭な組み合わせなどの、特定の地域を対象とした言語が続いています。
 
-この分析では、異なる言語バージョン同士が相互で適切にリンクしているかどうかなどの正しい実装は確認しませんでした。しかし、[推奨にある](https://www.google.com/url?q=https://support.google.com/webmasters/answer/189077?hl%3Den&sa=D&ust=1570627963630000&usg=AFQjCNFwzwglsbysT9au_I-7ZQkwa-QvrA)x-defaultバージョン（デスクトップでは3.77%、モバイルでは1.30%）の採用が少ない点を考慮すると、この要素が複雑で常に正しいとは限らないということを示しています。
+この分析では、異なる言語バージョン同士が相互で適切にリンクしているかどうかなどの正しい実装は確認しませんでした。しかし、<a hreflang="en" href="https://www.google.com/url?q=https://support.google.com/webmasters/answer/189077?hl%3Den&sa=D&ust=1570627963630000&usg=AFQjCNFwzwglsbysT9au_I-7ZQkwa-QvrA">推奨にある</a>x-defaultバージョン（デスクトップでは3.77%、モバイルでは1.30%）の採用が少ない点を考慮すると、この要素が複雑で常に正しいとは限らないということを示しています。
 
 ### SPAのクロールに関する可能性
 
-ReactやVue.jsなどのフレームワークで構築されたシングルページアプリケーション（SPA）には、独特のSEOの複雑さが伴っています。ハッシュを使ったナビゲーションを使用するWebサイトは検索エンジンがクロールして適切にインデックスを作成するのがとても難しくなります。例を上げると、Googleには「AJAXクロールスキーム」という回避策がありましたが、開発者だけでなく検索エンジンにとっても難解であることが判明し、この仕様は[2015年に廃止](https://webmasters.googleblog.com/2015/10/deprecating-our-ajax-crawling-scheme.html)されました。
+ReactやVue.jsなどのフレームワークで構築されたシングルページアプリケーション（SPA）には、独特のSEOの複雑さが伴っています。ハッシュを使ったナビゲーションを使用するWebサイトは検索エンジンがクロールして適切にインデックスを作成するのがとても難しくなります。例を上げると、Googleには「AJAXクロールスキーム」という回避策がありましたが、開発者だけでなく検索エンジンにとっても難解であることが判明し、この仕様は<a hreflang="en" href="https://webmasters.googleblog.com/2015/10/deprecating-our-ajax-crawling-scheme.html">2015年に廃止</a>されました。
 
 ハッシュURLを介して提供されるリンクの数が比較的少なく、Reactモバイルページの13.08%がナビゲーションにハッシュURLを使用し、モバイルVue.jsページで8.15%、モバイルAngularページで2.37%で使用されているという結果になっています。この結果はデスクトップ用ページでも非常に似通った結果でした。ハッシュURLからコンテンツの発見に対する影響を考慮すると、この結果はSEOの観点からは良い状態と言えるでしょう。
 
-特に驚いた点は、ハッシュURLの数がAngularページでは少ないのとは対照的に、ReactページでのハッシュURLの数が多くなっている点です。両方のフレームワークはハッシュURLに依存せず、代わりにリンク時に[History API](https://developer.mozilla.org/en-US/docs/Web/API/History)が標準となっているルーティングパッケージの採用を推奨しています。Vue.jsは`vue-router`パッケージのバージョン3から、[History APIを標準で使うことを検討](https://github.com/vuejs/rfcs/pull/40)しています。
+特に驚いた点は、ハッシュURLの数がAngularページでは少ないのとは対照的に、ReactページでのハッシュURLの数が多くなっている点です。両方のフレームワークはハッシュURLに依存せず、代わりにリンク時に[History API](https://developer.mozilla.org/en-US/docs/Web/API/History)が標準となっているルーティングパッケージの採用を推奨しています。Vue.jsは`vue-router`パッケージのバージョン3から、<a hreflang="en" href="https://github.com/vuejs/rfcs/pull/40">History APIを標準で使うことを検討</a>しています。
 
 ### AMP
 
-AMP（以前は「Accelerated Mobile Pages」として知られていました）は、2015年にGoogleによってオープンソースのHTMLフレームワークとして初めて導入されました。キャッシュ、遅延読み込み、最適化された画像などの最適化手法を使うことで、Webサイトのサイトのコンポーネントと基盤構造を提供することで、ユーザーに高速な体験を提供します。特に、Googleは検索エンジンにもこれを採用し、AMPページも独自のCDNから提供されています。この機能は後に[Signed HTTP Exchanges](https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.html)という名前の標準提案になりました。
+AMP（以前は「Accelerated Mobile Pages」として知られていました）は、2015年にGoogleによってオープンソースのHTMLフレームワークとして初めて導入されました。キャッシュ、遅延読み込み、最適化された画像などの最適化手法を使うことで、Webサイトのサイトのコンポーネントと基盤構造を提供することで、ユーザーに高速な体験を提供します。特に、Googleは検索エンジンにもこれを採用し、AMPページも独自のCDNから提供されています。この機能は後に<a hreflang="en" href="https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.html">Signed HTTP Exchanges</a>という名前の標準提案になりました。
 
 にも関わらず、AMPバージョンへのリンクが含まれるモバイルホームページはわずか0.62%しかありません。このプロジェクトの可視性を考慮しても、これは採用率が比較的低い事が示されています。ただし、今回のホームページに焦点を宛てた分析なので、他のページタイプの採用率は見ていません、記事ページを配信する場合はAMPのほうが有利な場合が多いでしょう。
 
 ### セキュリティ
 
-近年、WebがデフォルトでHTTPSに移行するという強力なオンラインの変化がありました。HTTPSでは、例えばユーザー入力データが安全に送信されないパブリックWi-FiネットワークでもWebサイトのトラフィックが傍受されるのを防ぎます。GoogleはサイトでHTTPSを採用するよう推進しており、[ランキングシグナルとしてHTTPS](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html)を作りました。Chromeはブラウザで非HTTPSページを[非セキュア](https://www.blog.google/products/chrome/milestone-chrome-security-marking-http-not-secure/)としてラベル付けすることでセキュアなページへの移行もサポートしています。
+近年、WebがデフォルトでHTTPSに移行するという強力なオンラインの変化がありました。HTTPSでは、例えばユーザー入力データが安全に送信されないパブリックWi-FiネットワークでもWebサイトのトラフィックが傍受されるのを防ぎます。GoogleはサイトでHTTPSを採用するよう推進しており、<a hreflang="en" href="https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html">ランキングシグナルとしてHTTPS</a>を作りました。Chromeはブラウザで非HTTPSページを<a hreflang="en" href="https://www.blog.google/products/chrome/milestone-chrome-security-marking-http-not-secure/">非セキュア</a>としてラベル付けすることでセキュアなページへの移行もサポートしています。
 
-HTTPSの重要性とその採用方法に関するGoogleの詳細な情報と手引については、[HTTPSが重要な理由](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https)をご覧ください。
+HTTPSの重要性とその採用方法に関するGoogleの詳細な情報と手引については、<a hreflang="en" href="https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https">HTTPSが重要な理由</a>をご覧ください。
 
 現在、デスクトップ用Webサイトの67.06%がHTTPS経由で配信されていますWebサイトの半分以下がまだHTTPSに移行しておらず、ユーザーに安全でないページを提供しています。これはかなりの数です。移行は大変な作業になる場合が多く、そのために採用率が高くない可能性がありますが、HTTPSの移行に必要なのは大抵の場合SSL証明書と`.htaccess`ファイルの簡単な変更です。  HTTPSに切り替えない理由はありません。
 
-[Googleの透明性レポート](https://transparencyreport.google.com/https/overview)では、Google以外の上位100ドメインでhttpsの採用率は90%であると報告されています(これは世界中のWebサイトトラフィックの25%です)。この数字と私たちの数字の違いから、比較的小規模なサイトはゆるやかにHTTPSを採用しているという事実によって説明できます。
+<a hreflang="en" href="https://transparencyreport.google.com/https/overview">Googleの透明性レポート</a>では、Google以外の上位100ドメインでhttpsの採用率は90%であると報告されています(これは世界中のWebサイトトラフィックの25%です)。この数字と私たちの数字の違いから、比較的小規模なサイトはゆるやかにHTTPSを採用しているという事実によって説明できます。
 
 セキュリティの状態の詳細については、[セキュリティ](./security)の章を御覧ください。
 

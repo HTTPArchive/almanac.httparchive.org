@@ -7,7 +7,7 @@ reviewers: [aardrian, ericwbailey, obto]
 analysts: [obto]
 editors: [bazzadp]
 translators: []
-oluoluoxenfree_bio: Olu Niyi-Awosusi is a software engineer at the FT who loves lists, learning new things, Bee and Puppycat, <a href="https://alistapart.com/article/building-the-woke-web/">social justice, accessibility</a> and trying harder every day.
+oluoluoxenfree_bio: Olu Niyi-Awosusi is a software engineer at the FT who loves lists, learning new things, Bee and Puppycat, <a hreflang="en" href="https://alistapart.com/article/building-the-woke-web/">social justice, accessibility</a> and trying harder every day.
 alextait1_bio: Alex Tait is a developer, consultant and educator whose passion lies in the intersection of accessibility and modern JavaScript within interface architecture and design systems. As a developer, she believes that inclusion driven development practices with accessibility at the forefront lead to better products for everyone. As a consultant and strategist, she believes that less is more, and that new feature scope creep cannot be prioritized over core feature parity for disabled users. As an educator, she believes in removing barriers to information so that tech can become a more diverse, equitable and inclusive industry.
 discuss: 2044
 results: https://docs.google.com/spreadsheets/d/1UjEBhq0TfYxUpdpq5IuxjeHB4yqhJq4NOKEd6Dwwrdk/
@@ -23,17 +23,17 @@ featured_stat_label_3: Videos providing closed captions
 
 ## Introduction
 
-In 2020, more than ever before, it is becoming increasingly urgent for digital spaces to be inclusive and accessible to all. With the ongoing pandemic making it even more difficult for folks to access services in-person and entire industries moving online, disabled people are disproportionately impacted. Additionally, the number of disabled people is rising due to the [long-term effects](https://www.cdc.gov/coronavirus/2019-ncov/long-term-effects.html) of the pandemic.
+In 2020, more than ever before, it is becoming increasingly urgent for digital spaces to be inclusive and accessible to all. With the ongoing pandemic making it even more difficult for folks to access services in-person and entire industries moving online, disabled people are disproportionately impacted. Additionally, the number of disabled people is rising due to the <a hreflang="en" href="https://www.cdc.gov/coronavirus/2019-ncov/long-term-effects.html">long-term effects</a> of the pandemic.
 
 Web accessibility is about achieving feature and information parity and giving complete access to all aspects of an interface to disabled people. A digital product or website is simply not complete if it is not usable by everyone. If it excludes certain disabled populations, this is discrimination and potentially grounds for fines and/or lawsuits.
 
-The [Web Content Accessibility Guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/), or WCAG, is an internationally recognized set of standards that needs to be met in all websites and applications that utilize the Internet. They are not laws, but [many laws point to WCAG as their basis](https://www.w3.org/WAI/policies/).
+The <a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/wcag/">Web Content Accessibility Guidelines</a>, or WCAG, is an internationally recognized set of standards that needs to be met in all websites and applications that utilize the Internet. They are not laws, but <a hreflang="en" href="https://www.w3.org/WAI/policies/">many laws point to WCAG as their basis</a>.
 
-These guidelines have had multiple releases over the years and the current standard is WCAG 2.1, with WCAG 2.2 currently being vetted as a [working draft](https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/). Some regional laws point to WCAG 2.0 as the requirement, but as [Adrian Roselli](https://twitter.com/aardrian) covers in his article [WCAG 2.1 is the Current Standard, Not WCAG 2.0 - and WCAG 2.2 is Coming](https://adrianroselli.com/2020/09/wcag-2-1-is-the-current-standard-not-wcag-2-0-and-wcag-2-2-is-coming.html) we need to be meeting WCAG 2.1 standards and considering the new criteria coming in WCAG 2.2 as well.
+These guidelines have had multiple releases over the years and the current standard is WCAG 2.1, with WCAG 2.2 currently being vetted as a <a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/">working draft</a>. Some regional laws point to WCAG 2.0 as the requirement, but as [Adrian Roselli](https://twitter.com/aardrian) covers in his article <a hreflang="en" href="https://adrianroselli.com/2020/09/wcag-2-1-is-the-current-standard-not-wcag-2-0-and-wcag-2-2-is-coming.html">WCAG 2.1 is the Current Standard, Not WCAG 2.0 - and WCAG 2.2 is Coming</a> we need to be meeting WCAG 2.1 standards and considering the new criteria coming in WCAG 2.2 as well.
 
-A dangerous trend that has seen more exposure than ever in 2020 is the use of "accessibility overlays". These widgets promise one step accessibility compliance and more often than not introduce new barriers and make the experience for a disabled user quite challenging. It is important that digital practitioners take ownership over designing and implementing usable interfaces and not try to subvert this process with a quick fix. For more information see Lainey Feingold's article, [Honor the ADA: Avoid Web Accessibility Quick Fix Overlays](https://www.lflegal.com/2020/08/quick-fix/).
+A dangerous trend that has seen more exposure than ever in 2020 is the use of "accessibility overlays". These widgets promise one step accessibility compliance and more often than not introduce new barriers and make the experience for a disabled user quite challenging. It is important that digital practitioners take ownership over designing and implementing usable interfaces and not try to subvert this process with a quick fix. For more information see Lainey Feingold's article, <a hreflang="en" href="https://www.lflegal.com/2020/08/quick-fix/">Honor the ADA: Avoid Web Accessibility Quick Fix Overlays</a>.
 
-Sadly, year over year, we and other teams conducting analysis such as the [WebAIM Million](https://webaim.org/projects/million/) are finding little–and in some cases no–improvement in these metrics. The median overall site score for all [Lighthouse Accessibility](https://web.dev/lighthouse-accessibility/) audit data rose from 73% in 2019 to 80% in 2020. We hope that this 7% increase represents a shift in the right direction. However, these are automated checks and could mean that developers are doing a better job of subverting the rule engine, so we are cautiously optimistic.
+Sadly, year over year, we and other teams conducting analysis such as the <a hreflang="en" href="https://webaim.org/projects/million/">WebAIM Million</a> are finding little–and in some cases no–improvement in these metrics. The median overall site score for all <a hreflang="en" href="https://web.dev/lighthouse-accessibility/">Lighthouse Accessibility</a> audit data rose from 73% in 2019 to 80% in 2020. We hope that this 7% increase represents a shift in the right direction. However, these are automated checks and could mean that developers are doing a better job of subverting the rule engine, so we are cautiously optimistic.
 
 Our analysis is based on automated metrics only. It is important to remember that automated testing captures only a fraction of the accessibility barriers that can be present in an interface. Qualitative analysis, including manual testing and usability testing with disabled people are needed in order to achieve an accessible site or application.
 
@@ -71,7 +71,7 @@ Unfortunately, only 21.06% of sites were found to have sufficient color contrast
 
 It is essential that we allow users to zoom the page or content. There are techniques that can be used to try to disable the ability to scale or zoom the browser. Some operating systems subvert this harmful pattern, but many do not, and it is an anti-pattern that needs to be avoided.
 
-Zooming is particularly useful for users with low vision. According to the [World Health Organization](https://www.who.int/news-room/fact-sheets/detail/blindness-and-visual-impairment), "Globally, 1 billion people have a vision impairment".
+Zooming is particularly useful for users with low vision. According to the <a hreflang="en" href="https://www.who.int/news-room/fact-sheets/detail/blindness-and-visual-impairment">World Health Organization</a>, "Globally, 1 billion people have a vision impairment".
 
 {{ figure_markup(
   image="sites-with-zooming-and-scaling-disabled.png",
@@ -83,7 +83,7 @@ Zooming is particularly useful for users with low vision. According to the [Worl
   )
 }}
 
-We found that 29.34% of desktop pages and 30.66% of mobile pages attempt to disable scaling by setting either `maximum-scale` to a value less than 1, or `user-scalable` `0` or `none`. Some operating systems no longer comply with disabled zoom and scale set in HTML. For systems that do respect it, this can render the page effectively unusable for some. For more information about why to avoid disabling browser zoom see Adrian Roselli's article, [Don't Disable Zoom](https://adrianroselli.com/2015/10/dont-disable-zoom.html).
+We found that 29.34% of desktop pages and 30.66% of mobile pages attempt to disable scaling by setting either `maximum-scale` to a value less than 1, or `user-scalable` `0` or `none`. Some operating systems no longer comply with disabled zoom and scale set in HTML. For systems that do respect it, this can render the page effectively unusable for some. For more information about why to avoid disabling browser zoom see Adrian Roselli's article, <a hreflang="en" href="https://adrianroselli.com/2015/10/dont-disable-zoom.html">Don't Disable Zoom</a>.
 
 ### Language identification
 
@@ -104,7 +104,7 @@ Media is an essential part of the web experience. It can add an enriched context
 
 ### Images and their text alternatives
 
-In 1995, [HTML 2.0](https://www.w3.org/MarkUp/html-spec/html-spec_5.html#SEC5.10) introduced the `alt` attribute, enabling web authors to provide a text alternative for the visual information communicated in an image. A screen reader can convey its visual meaning aurally by announcing the image's alternative text. Additionally if images are unable to load, the alternative text for a description will be displayed.
+In 1995, <a hreflang="en" href="https://www.w3.org/MarkUp/html-spec/html-spec_5.html#SEC5.10">HTML 2.0</a> introduced the `alt` attribute, enabling web authors to provide a text alternative for the visual information communicated in an image. A screen reader can convey its visual meaning aurally by announcing the image's alternative text. Additionally if images are unable to load, the alternative text for a description will be displayed.
 
 {{ figure_markup(
   caption='Mobiles sites passing the "images with `alt` text" Lighthouse audit.',
@@ -115,7 +115,7 @@ In 1995, [HTML 2.0](https://www.w3.org/MarkUp/html-spec/html-spec_5.html#SEC5.10
 )
 }}
 
-The 2020 Lighthouse audit data shows that only 54% of sites pass the [test for images with `alt` text](https://dequeuniversity.com/rules/axe/3.5/image-alt). This test looks for the presence of at least one of the `alt`, `aria-label` and `aria-labelledby` attributes on `img` elements. In most cases using the `alt` attribute is the best choice.
+The 2020 Lighthouse audit data shows that only 54% of sites pass the <a hreflang="en" href="https://dequeuniversity.com/rules/axe/3.5/image-alt">test for images with `alt` text</a>. This test looks for the presence of at least one of the `alt`, `aria-label` and `aria-labelledby` attributes on `img` elements. In most cases using the `alt` attribute is the best choice.
 
 {{ figure_markup(
   image="alt-attribute-lengths.png",
@@ -129,7 +129,7 @@ The 2020 Lighthouse audit data shows that only 54% of sites pass the [test for i
 
 Even though the `alt` attributes have been around for 25 years, we also found that 21.24% of desktop images and 21.38% of mobile images are lacking alternative text. This is one of the easiest automated checks to test for using your accessibility tool of choice and should be low hanging fruit and a relatively straightforward problem to solve.
 
-Screen reader users listen to the ["aural UI" as described by Steve Faulker](https://developer.paciellogroup.com/blog/2015/10/thus-spoke-html/), an aural or sonic experience of the interface wherein the  structure, semantics and relationships of the content are announced. This means that screen reader users consume a lot of textual information. For this reason it is important to assess whether or not an image might not need to be described. This is a helpful [decision tree from the W3C](https://www.w3.org/WAI/tutorials/images/decision-tree/) for deciding how and whether to describe an image. If an image is truly decorative and adds nothing meaningful to the surrounding context, you can assign the `alt` attribute a null value, `alt=""`. It is important to do this explicitly rather than omitting the `alt` attribute altogether, as omitting it could lead to assistive technology announcing the image path, which is a very confusing user experience.
+Screen reader users listen to the <a hreflang="en" href="https://developer.paciellogroup.com/blog/2015/10/thus-spoke-html/">"aural UI" as described by Steve Faulker</a>, an aural or sonic experience of the interface wherein the  structure, semantics and relationships of the content are announced. This means that screen reader users consume a lot of textual information. For this reason it is important to assess whether or not an image might not need to be described. This is a helpful <a hreflang="en" href="https://www.w3.org/WAI/tutorials/images/decision-tree/">decision tree from the W3C</a> for deciding how and whether to describe an image. If an image is truly decorative and adds nothing meaningful to the surrounding context, you can assign the `alt` attribute a null value, `alt=""`. It is important to do this explicitly rather than omitting the `alt` attribute altogether, as omitting it could lead to assistive technology announcing the image path, which is a very confusing user experience.
 
 We found that 26.20% of desktop pages and 26.23% of mobile pages contain `alt` attributes with a null/empty value. We hope this indicates that over a quarter of websites are being developed with consideration for which images are truly meaningful and not as a means of side-stepping automated checks.
 
@@ -191,7 +191,7 @@ The `title` attribute which generates a tooltip that displays text is often mist
 
 > "Relying on the `title` attribute is currently discouraged as many user agents do not expose the attribute in an accessible manner as required by this specification"
 
-Tooltips also introduce a host of other accessibility barriers such as information only being revealed on hover/mouseover, information not being properly communicated to assistive technology, lack of keyboard support, and general poor usability. The history of tooltips and their barriers  are well described by [Sarah Higley](https://twitter.com/codingchaos) in her blog post [Tooltips in the time of WCAG 2.1](https://sarahmhigley.com/writing/tooltips-in-wcag-21/).
+Tooltips also introduce a host of other accessibility barriers such as information only being revealed on hover/mouseover, information not being properly communicated to assistive technology, lack of keyboard support, and general poor usability. The history of tooltips and their barriers  are well described by [Sarah Higley](https://twitter.com/codingchaos) in her blog post <a hreflang="en" href="https://sarahmhigley.com/writing/tooltips-in-wcag-21/">Tooltips in the time of WCAG 2.1</a>.
 
 We found that 16.95% of all `alt` attributes also contain a `title` attribute. Of these instances 73.56% of desktop sites and 72.80% of mobile sites had matching values for both the `alt` and `title` attributes.
 
@@ -211,7 +211,7 @@ The longest `alt` text length found for desktop sites was 15,357,625 characters.
 
 ### Video on the web
 
-Video and other multi-media content can enrich a Web experience, but often is not robustly supported for all users and can pose major accessibility barriers if it is not implemented with support. For more information see the [W3C's Making Audio and Video Accessible](https://www.w3.org/WAI/media/av/).
+Video and other multi-media content can enrich a Web experience, but often is not robustly supported for all users and can pose major accessibility barriers if it is not implemented with support. For more information see the <a hreflang="en" href="https://www.w3.org/WAI/media/av/">W3C's Making Audio and Video Accessible</a>.
 
 #### Captions
 
@@ -236,7 +236,7 @@ It is arguably a disruptive and undesirable user experience to autoplay and loop
 
 For disabled users there are significant barriers caused by autoplaying and looping video. For screen reader users, a video that contains audio will likely disrupt the announcements and lead to confusion. For folks with cognitive disabilities such as ADHD, video can be very distracting and interrupt the user's ability to use and understand the interface. People with vestibular conditions can be dangerously triggered by video as well.
 
-The Web Content Accessibility Guidelines has a criteria [2.2.2 Pause, Stop, Hide](https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html) that requires that any moving, blinking or scrolling content (including video) that plays for longer than 5 seconds have a mechanism to pause, stop, or hide it.
+The Web Content Accessibility Guidelines has a criteria <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html">2.2.2 Pause, Stop, Hide</a> that requires that any moving, blinking or scrolling content (including video) that plays for longer than 5 seconds have a mechanism to pause, stop, or hide it.
 
 {{ figure_markup(
   image="common-video-attributes.png",
@@ -267,13 +267,13 @@ Headings make it easier for screen readers to properly navigate a page by supply
   sql_file="lighthouse_a11y_audits.sql"
 ) }}
 
-Our audits revealed that 58.72% of the sites checked pass the [test for properly ordered headings](https://web.dev/heading-order/) that do not skip levels. These headings convey the semantic structure of the page. Many screen reader users navigate a page through its headings, so having them in the correct order–ascending with no jumps–means that assistive technology users will have the best experience. It is worth noting that we only check pages where these rules are more likely to be followed; home pages are more likely than interior pages to follow this rule.
+Our audits revealed that 58.72% of the sites checked pass the <a hreflang="en" href="https://web.dev/heading-order/">test for properly ordered headings</a> that do not skip levels. These headings convey the semantic structure of the page. Many screen reader users navigate a page through its headings, so having them in the correct order–ascending with no jumps–means that assistive technology users will have the best experience. It is worth noting that we only check pages where these rules are more likely to be followed; home pages are more likely than interior pages to follow this rule.
 
 ### Skip links
 
 Skip links enable a user to skip through any interactive content such as a navigation system and go to another destination, typically the main content of the page. They are typically the first link on a page and can be persistent in the UI or visibly hidden until they have keyboard focus. This prevents keyboard users from needing to potentially tab through an extraneous number of elements to get to the content they are trying to access.
 
-Skip links are considered a bypass for a block. The 2020 Lighthouse audit data revealed that 93.90% of sites pass the [bypass block](https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html) test, meaning they have a `<header>`, skip link or landmark region to allow users to skip repetitive content.
+Skip links are considered a bypass for a block. The 2020 Lighthouse audit data revealed that 93.90% of sites pass the <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html">bypass block</a> test, meaning they have a `<header>`, skip link or landmark region to allow users to skip repetitive content.
 
 ### Tables
 
@@ -332,7 +332,7 @@ The focus order of the page should always be determined by the document flow. Se
 
 ## Assistive technologies on the web
 
-People with varying disabilities use different assistive technologies to help them experience the web. The [Tools and Techniques](https://www.w3.org/WAI/people-use-web/tools-techniques/) article from the Web Accessibility Initiative (WAI) of the W3C covers how users can perceive, understand and interact with the web using different assistive technologies.
+People with varying disabilities use different assistive technologies to help them experience the web. The <a hreflang="en" href="https://www.w3.org/WAI/people-use-web/tools-techniques/">Tools and Techniques</a> article from the Web Accessibility Initiative (WAI) of the W3C covers how users can perceive, understand and interact with the web using different assistive technologies.
 
 Some assistive technologies for the web include:
 
@@ -345,7 +345,7 @@ Screen readers present content audibly, usually by the computer speaking or anno
 
 ### Introduction to ARIA
 
-In 2014 the WAI published Accessible Rich Internet Applications, or ARIA. They [describe ARIA as](https://www.w3.org/WAI/standards-guidelines/aria/):
+In 2014 the WAI published Accessible Rich Internet Applications, or ARIA. They <a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/aria/">describe ARIA as</a>:
 
 > "WAI-ARIA, the Accessible Rich Internet Applications Suite, defines a way to make web content and web applications more accessible to people with disabilities. It especially helps with dynamic content and advanced user interface controls developed with Ajax, HTML, JavaScript, and related technologies."
 
@@ -353,9 +353,9 @@ Most developers think of ARIA as attributes we can add to HTML to make it more u
 
 ### The five rules of ARIA
 
-There are [five rules of ARIA](https://www.w3.org/TR/using-aria/) that we need to understand before  making use of this powerful toolset. This is not an official specification with required conformance, but a guide for understanding and implementing ARIA correctly.
+There are <a hreflang="en" href="https://www.w3.org/TR/using-aria/">five rules of ARIA</a> that we need to understand before  making use of this powerful toolset. This is not an official specification with required conformance, but a guide for understanding and implementing ARIA correctly.
 
-1. If you can use a native HTML element [HTML 5.1](https://www.w3.org/TR/html51/) or attribute with the semantics and behavior you require already built in, instead of repurposing an element and adding an ARIA role, state or property to make it accessible, then do so.
+1. If you can use a native HTML element <a hreflang="en" href="https://www.w3.org/TR/html51/">HTML 5.1</a> or attribute with the semantics and behavior you require already built in, instead of repurposing an element and adding an ARIA role, state or property to make it accessible, then do so.
 2. Do not change native semantics, unless you really have to.
 3. All interactive ARIA controls must be usable with the keyboard.
 4. Do not use `role="presentation"` or `aria-hidden="true"` on a focusable element.
@@ -365,7 +365,7 @@ There are [five rules of ARIA](https://www.w3.org/TR/using-aria/) that we need t
 
 One of the most common ways that ARIA is used is by explicitly defining the role for an element, which communicates its purpose to assistive technology.
 
-HTML5 introduced many new native elements, all which have [implicit semantics](https://www.w3.org/TR/wai-aria-1.1/#implicit_semantics), including roles. For example the `<nav>` element has an implicit `role="navigation"` and does not need to have this role added explicitly in order to convey its purpose information to assistive technology. Currently 64.54% of desktop pages have at least one instance of an ARIA `role` attribute. The median site has 2 instances of the `role` attribute.
+HTML5 introduced many new native elements, all which have <a hreflang="en" href="https://www.w3.org/TR/wai-aria-1.1/#implicit_semantics">implicit semantics</a>, including roles. For example the `<nav>` element has an implicit `role="navigation"` and does not need to have this role added explicitly in order to convey its purpose information to assistive technology. Currently 64.54% of desktop pages have at least one instance of an ARIA `role` attribute. The median site has 2 instances of the `role` attribute.
 
 {{ figure_markup(
   image="common-aria-roles.png",
@@ -383,7 +383,7 @@ We found that 25.20% of desktop sites and 24.50% of mobile sites had homepages w
 
 If non-interactive elements such as `<div>`s and `<span>`s have been given this role, there is a significant chance one or more of the 5 rules of ARIA have been broken.
 
-It is fairly likely that a native `<button>` element would be a better choice, per the first rule of ARIA. It is also possible that the role has been added but the expected keyboard support has not been supplied, which would break the third rule of ARIA and would violate [WCAG 2.1.1, Keyboard](https://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-keyboard-operable.html).
+It is fairly likely that a native `<button>` element would be a better choice, per the first rule of ARIA. It is also possible that the role has been added but the expected keyboard support has not been supplied, which would break the third rule of ARIA and would violate <a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-keyboard-operable.html">WCAG 2.1.1, Keyboard</a>.
 
 {{ figure_markup(
   caption='Mobiles sites assigning `role="button"` to `<div>` or a `<span>`',
@@ -393,9 +393,9 @@ It is fairly likely that a native `<button>` element would be a better choice, p
   sql_file="div_span_with_button_or_link_role.sql"
 ) }}
 
-We found that 8.27% of desktop pages and 8.28% of mobile pages had at least one occurrence of a `<div>` or a `<span>` element with `role="button"` explicitly defined. This act of adding ARIA roles, or a "[role-up](https://adrianroselli.com/2020/02/role-up.html)", is less ideal than using the correct native HTML element.
+We found that 8.27% of desktop pages and 8.28% of mobile pages had at least one occurrence of a `<div>` or a `<span>` element with `role="button"` explicitly defined. This act of adding ARIA roles, or a "<a hreflang="en" href="https://adrianroselli.com/2020/02/role-up.html">role-up</a>", is less ideal than using the correct native HTML element.
 
-We found that 15.50% of desktop pages and 14.62% of mobile pages contained at least one anchor element with `role="button"`. If a role has been applied to an element that should have its implicit role respected, such as giving a `role="button"` to a link (which has an implicit `role="link"`), this would break the second rule of ARIA. It would also violate [WCAG 2.1.1, Keyboard](https://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-keyboard-operable.html) if the correct keyboard behavior has not been implemented (links are not activated with the space key, whereas buttons are).
+We found that 15.50% of desktop pages and 14.62% of mobile pages contained at least one anchor element with `role="button"`. If a role has been applied to an element that should have its implicit role respected, such as giving a `role="button"` to a link (which has an implicit `role="link"`), this would break the second rule of ARIA. It would also violate <a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-keyboard-operable.html">WCAG 2.1.1, Keyboard</a> if the correct keyboard behavior has not been implemented (links are not activated with the space key, whereas buttons are).
 
 Again, in the vast majority of these cases, a better pattern than explicitly defining `role="button"` on the element in question would be to leverage the native HTML `<button>` element as it comes with the expected semantics and behavior.
 
@@ -405,20 +405,20 @@ We found that 22.06% of desktop pages and 21.76% of mobile pages have at least o
 
 #### Dialog modals
 
-There are many potential accessibility barriers associated with dialog modals. We recommend reading [Scott O'Hara](https://twitter.com/scottohara)'s article [Having an Open Dialog](https://www.scottohara.me/blog/2019/03/05/open-dialog.html) for more context.
+There are many potential accessibility barriers associated with dialog modals. We recommend reading [Scott O'Hara](https://twitter.com/scottohara)'s article <a hreflang="en" href="https://www.scottohara.me/blog/2019/03/05/open-dialog.html">Having an Open Dialog</a> for more context.
 
 We are pleased to report that 19.01% of desktop pages and 18.21% of mobile pages have at least one occurrence of `role="dialog"` which is up from about 8% in 2019. It is worth noting some of the increase is probably due to changes in how this metric was measured. This could also suggest that more developers are considering accessibility when building dialogs and potentially that frameworks and associated packages may be implementing more accessible dialog patterns as well. However, making a dialog modal accessible requires a lot more than using the `dialog` role. Focus management, proper keyboard support, and screen reader exposure all need to be addressed.
 
 #### Tabs
 
-Tabs are a common interface widget but present a challenge for many developers to make accessible. A common pattern for accessible implementation comes from  the [WAI-ARIA Authoring Practices Design Patterns](https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel). Please note that the ARIA Authoring Practices document is not a specification and is meant to show idealized ARIA constructs. They should not be used in production without testing with your users.
+Tabs are a common interface widget but present a challenge for many developers to make accessible. A common pattern for accessible implementation comes from  the <a hreflang="en" href="https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel">WAI-ARIA Authoring Practices Design Patterns</a>. Please note that the ARIA Authoring Practices document is not a specification and is meant to show idealized ARIA constructs. They should not be used in production without testing with your users.
 
 In this pattern, a parent container has a `role="tablist"` with children elements that have a `role="tab"`. These tabs are associated with elements that have a `role="tabpanel"`, and contain the content for that tab.
 
 {{ figure_markup(
   image="role-tab-list.png",
   alt="Element with the tablist role",
-  caption='Element with the `tablist` role ([Source: W3C](https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html))',
+  caption='Element with the `tablist` role (<a hreflang="en" href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html">Source: W3C</a>)',
   description='Screenshot showing an example tablist (`role="tablist"`) which contains three tabs. All three tabs are highlighted.',
   width=348,
   height=337
@@ -427,7 +427,7 @@ In this pattern, a parent container has a `role="tablist"` with children element
 {{ figure_markup(
   image="role-tab.png",
   alt="Element with the tab role",
-  caption='Element with the `tab` role. ([Source: W3C](https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html))',
+  caption='Element with the `tab` role. (<a hreflang="en" href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html">Source: W3C</a>)',
   description='Screenshot showing an example tab (`role="tab"`) where only one tab is highlighted.',
   width=346,
   height=335
@@ -436,7 +436,7 @@ In this pattern, a parent container has a `role="tablist"` with children element
 {{ figure_markup(
   image="role-tab-panel.png",
   alt="Element with the tabpanel role",
-  caption='Element with the `tabpanel` role. ([Source: W3C](https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html))',
+  caption='Element with the `tabpanel` role. (<a hreflang="en" href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html">Source: W3C</a>)',
   description='Screenshot showing an example tabpanel (`role="tabpanel"`) where the content of one tab is highlighted.',
   width=346,
   height=335
@@ -468,9 +468,9 @@ ARIA attributes can be assigned to HTML elements to enhance the accessibility of
 
 The browser's accessibility tree has a computation system that assigns the accessible name (if there is one) to a control, widget, group, or landmark such that it can be announced by assistive technology. There is a specificity ranking that happens to determine which value is assigned to the accessible name.
 
-The accessible name can be derived from an element's content (such as button text), an attribute (such as an image `alt` text value), or an associated element (such as a programmatically associated label for a form control). For more information about accessible names see Léonie Watson's article, [What is an accessible name?](https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/)
+The accessible name can be derived from an element's content (such as button text), an attribute (such as an image `alt` text value), or an associated element (such as a programmatically associated label for a form control). For more information about accessible names see Léonie Watson's article, <a hreflang="en" href="https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/">What is an accessible name?</a>
 
-We can also use ARIA to provide accessible names for elements. There are two ARIA attributes that accomplish this, [aria-label](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA14.html), [aria-labelledby](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA16.html). Either of these attributes will "win" the accessible name computation and override the natively derived accessible name, so use them with caution and be sure to test with a screen reader or look at the accessibility tree to confirm that the accessible name is what was expected. When using ARIA to name an element, it is important to ensure that the [WCAG 2.5.3, Label in Name](https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html) criterion has not been violated, which expects visible labels to be at least a part of its accessible name.
+We can also use ARIA to provide accessible names for elements. There are two ARIA attributes that accomplish this, <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA14.html">aria-label</a>, <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA16.html">aria-labelledby</a>. Either of these attributes will "win" the accessible name computation and override the natively derived accessible name, so use them with caution and be sure to test with a screen reader or look at the accessibility tree to confirm that the accessible name is what was expected. When using ARIA to name an element, it is important to ensure that the <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html">WCAG 2.5.3, Label in Name</a> criterion has not been violated, which expects visible labels to be at least a part of its accessible name.
 
 The `aria-label` element allows a developer to provide a string value and this will be used for the accessible name for the element. We found that 40.44% of desktop pages and 38.72% of mobile home pages had at least one element with the `aria-label` attribute, making it the most popular ARIA attribute for providing accessible names.
 
@@ -478,7 +478,7 @@ The `aria-labelledby` attribute accepts an `id` reference as its value, which as
 
 Again, the first rule of ARIA should be respected. If the element can derive its accessible name without needing ARIA, this is preferable. For example a `<button>`, which is not a graphical element, should get its accessible name from its text content rather than an ARIA attribute. Form elements should derive their accessible names from properly associated `<label>` elements whenever possible.
 
-The [`aria-describedby`](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA1.html) attribute can be used in cases where a more robust description is needed for an element. It also accepts an `id` reference as its value to connect with descriptive text that exists elsewhere in the interface. It does not supply the accessible name, it should be used in conjunction with an accessible name as a supplement, not a replacement. We found that 11.31% of desktop pages and 10.56% of mobile pages had at least one element with the `aria-describedby` attribute.
+The <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA1.html">`aria-describedby`</a> attribute can be used in cases where a more robust description is needed for an element. It also accepts an `id` reference as its value to connect with descriptive text that exists elsewhere in the interface. It does not supply the accessible name, it should be used in conjunction with an accessible name as a supplement, not a replacement. We found that 11.31% of desktop pages and 10.56% of mobile pages had at least one element with the `aria-describedby` attribute.
 
 **Fun fact!** We found 3,200 websites with the attribute **aria-labeledby**, which is a misspelling of the `aria-labelledby` attribute! Be sure to run those automated checks to pick up these easily avoidable errors.
 
@@ -512,7 +512,7 @@ It is important to remember that digital accessibility is a civil right and that
 
 ### Form validation
 
-It is very important that any form error handling be communicated to assistive technology. There are a variety of techniques for handling this depending on the validation implementation. Web AIM's [Usable and Accessible Form Validation and Error Recovery](https://webaim.org/techniques/formvalidation/) article is a great resource for learning more about various accessible form validation strategies.
+It is very important that any form error handling be communicated to assistive technology. There are a variety of techniques for handling this depending on the validation implementation. Web AIM's <a hreflang="en" href="https://webaim.org/techniques/formvalidation/">Usable and Accessible Form Validation and Error Recovery</a> article is a great resource for learning more about various accessible form validation strategies.
 
 If a form element is required this also needs to be communicated to assistive technology. For native HTML form elements the [`required` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required) can be used and for customized elements the [`aria-required`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-required_attribute) attribute may be needed. If there is an issue with a form submission, this needs to be conveyed to assistive technology.
 

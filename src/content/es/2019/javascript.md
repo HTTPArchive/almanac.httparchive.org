@@ -9,7 +9,7 @@ editors: [obto]
 translators: [c-torres]
 discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/
-housseindjirdeh_bio: <i lang="en">Houssein is a Developer Advocate at Google working on speed, performance and the web framework ecosystem. He tweets at <a href="https://twitter.com/hdjirdeh">@hdjirdeh</a> and blogs at <a href="https://houssein.me/">https://houssein.me/</a>.</i>
+housseindjirdeh_bio: <i lang="en">Houssein is a Developer Advocate at Google working on speed, performance and the web framework ecosystem. He tweets at <a href="https://twitter.com/hdjirdeh">@hdjirdeh</a> and blogs at <a hreflang="en" href="https://houssein.me/">https://houssein.me/</a>.</i>
 featured_quote: JavaScript es el recurso más costoso que enviamos a los navegadores, ya que tiene que ser descargado, analizado, compilado y finalmente ejecutado. Aunque los navegadores han disminuido significativamente el tiempo que lleva analizar y compilar scripts, la descarga y la ejecución se han convertido en las etapas más costosas cuando JavaScript es procesado por una página web.
 featured_stat_1: 89%
 featured_stat_label_1: Sitios con más código de terceros que de origen
@@ -25,11 +25,11 @@ JavaScript es un lenguaje de script que permite construir experiencias interacti
 
 La especificación del lenguaje en sí, junto con muchas bibliotecas y marcos creados por la comunidad utilizados por desarrolladores de todo el mundo, ha cambiado y evolucionado desde que se creó el lenguaje en 1995. Las implementaciones e intérpretes de JavaScript también han seguido progresando, haciendo que el lenguaje sea utilizable en muchos entornos, no solo navegadores web.
 
-[HTTP Archive](https://httparchive.org/) explora [millones de páginas](https://httparchive.org/reports/state-of-the-web#numUrls) todos los meses y los ejecuta a través de una instancia privada de [WebPageTest](https://webpagetest.org/) para almacenar información clave de cada página. (Puedes aprender más sobre esto en nuestra [metodología](./methodology)). En el context de JavaScript, HTTP Archive proporciona información extensa sobre el uso del lenguaje en toda la web. Este capítulo consolida y analiza muchas de estas tendencias.
+<a hreflang="en" href="https://httparchive.org/">HTTP Archive</a> explora <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#numUrls">millones de páginas</a> todos los meses y los ejecuta a través de una instancia privada de <a hreflang="en" href="https://webpagetest.org/">WebPageTest</a> para almacenar información clave de cada página. (Puedes aprender más sobre esto en nuestra [metodología](./methodology)). En el context de JavaScript, HTTP Archive proporciona información extensa sobre el uso del lenguaje en toda la web. Este capítulo consolida y analiza muchas de estas tendencias.
 
 ## ¿Cuánto JavaScript usamos?
 
-JavaScript es el recurso más costoso que enviamos a los navegadores, ya que tiene que ser descargado, analizado, compilado y finalmente ejecutado. Aunque los navegadores han disminuido significativamente el tiempo que lleva analizar y compilar scripts, [la descarga y la ejecución se han convertido en las etapas más costosas](https://v8.dev/blog/cost-of-javascript-2019) cuando JavaScript es procesado por una página web.
+JavaScript es el recurso más costoso que enviamos a los navegadores, ya que tiene que ser descargado, analizado, compilado y finalmente ejecutado. Aunque los navegadores han disminuido significativamente el tiempo que lleva analizar y compilar scripts, <a hreflang="en" href="https://v8.dev/blog/cost-of-javascript-2019">la descarga y la ejecución se han convertido en las etapas más costosas</a> cuando JavaScript es procesado por una página web.
 
 Enviar paquetes de JavaScript más pequeños al navegador es la mejor manera de reducir los tiempos de descarga y, a su vez, mejorar el rendimiento de la página.**Pero, ¿cuánto JavaScript utilizamos realmente?**
 
@@ -76,7 +76,7 @@ Aunque estos datos muestran cuánto tiempo puede llevar un dispositivo móvil pr
 {{ figure_markup(
   image="js-processing-reddit.png",
   alt="Tiempos de procesamiento de JavaScript para Reddit.com.",
-  caption='Tiempos de procesamiento de JavaScript para Reddit.com. Tomado de <a href="https://v8.dev/blog/cost-of-javascript-2019">El costo de JavaScript en 2019</a>.',
+  caption='Tiempos de procesamiento de JavaScript para Reddit.com. Tomado de <a hreflang="en" href="https://v8.dev/blog/cost-of-javascript-2019">El costo de JavaScript en 2019</a>.',
   description="Gráfico de barras que muestra 3 dispositivos diferentes: en la parte superior, un Pixel 3, que tiene un tiempo de procesamiento pequeño tanto en el hilo principal como en el hilo worker de menos de 400 ms. Para un Moto G4 es de aproximadamente 900 ms en el subproceso principal y otros 300 ms en el subproceso del worker. Y la barra final es un Alcatel 1X 5059D con más de 2.000 ms en el subproceso principal y más de 500 ms en el subproceso del worker.",
   width=600,
   height=363
@@ -85,7 +85,7 @@ Aunque estos datos muestran cuánto tiempo puede llevar un dispositivo móvil pr
 
 ### Número de Solicitudes
 
-Una vía que vale la pena explorar al tratar de analizar la cantidad de JavaScript utilizado por las páginas web es la cantidad de solicitudes enviadas. Con [HTTP/2](https://developers.google.com/web/fundamentals/performance/http2) el envío de múltiples fragmentos más pequeños puede mejorar la carga de la página sobre el envío de un paquete monolítico más grande. Si también lo desglosamos por tipo de dispositivo, **¿cuántas solicitudes se están enviando?**
+Una vía que vale la pena explorar al tratar de analizar la cantidad de JavaScript utilizado por las páginas web es la cantidad de solicitudes enviadas. Con <a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/http2">HTTP/2</a> el envío de múltiples fragmentos más pequeños puede mejorar la carga de la página sobre el envío de un paquete monolítico más grande. Si también lo desglosamos por tipo de dispositivo, **¿cuántas solicitudes se están enviando?**
 
 {{ figure_markup(
   image="fig5.png",
@@ -145,8 +145,8 @@ En el contexto de las interacciones navegador-servidor, la compresión de recurs
 
 Existen varios algoritmos de compresión de texto, pero solo dos se utilizan principalmente para la compresión (y descompresión) de solicitudes de red HTTP:
 
-- [Gzip](https://www.gzip.org/) (`gzip`): El formato de compresión más utilizado para las interacciones de servidor y cliente.
-- [Brotli](https://github.com/google/brotli) (`br`): Un algoritmo de compresión más nuevo que apunta a mejorar aún más las relaciones de compresión. [90% de los navegadores](https://caniuse.com/#feat=brotli) soportan la codificación Brotli.
+- <a hreflang="en" href="https://www.gzip.org/">Gzip</a> (`gzip`): El formato de compresión más utilizado para las interacciones de servidor y cliente.
+- <a hreflang="en" href="https://github.com/google/brotli">Brotli</a> (`br`): Un algoritmo de compresión más nuevo que apunta a mejorar aún más las relaciones de compresión. <a hreflang="en" href="https://caniuse.com/#feat=brotli">90% de los navegadores</a> soportan la codificación Brotli.
 
 Los scripts comprimidos siempre deberán ser descomprimidos por el navegador una vez transferidos. Esto significa que su contenido sigue siendo el mismo y los tiempos de ejecución no están optimizados en absoluto. Sin embargo, la compresión de recursos siempre mejorará los tiempos de descarga, que también es una de las etapas más caras del procesamiento de JavaScript. Asegurarse de que los archivos JavaScript se comprimen correctamente puede ser uno de los factores más importantes para mejorar el rendimiento del sitio.
 
@@ -166,7 +166,7 @@ Para un análisis más profundo sobre la compresión, consulte el capítulo de [
 
 ## Bibliotecas y frameworks de código abierto
 
-Código fuente abierto, o código con una licencia permisiva a la que cualquier persona pueda acceder, ver y modificar. Desde pequeñas bibliotecas hasta navegadores completos, como [Chromium](https://www.chromium.org/Home) y [Firefox](https://www.openhub.net/p/firefox), el código fuente abierto juega un papel crucial en el mundo del desarrollo web. En el contexto de JavaScript, los desarrolladores confían en herramientas de código abierto para incluir todo tipo de funcionalidad en su página web. Independientemente de si un desarrollador decide usar una pequeña biblioteca de utilidades o un framework masivo que dicta la arquitectura de toda su aplicación, confiar en paquetes de código abierto puede hacer que el desarrollo de funciones sea más fácil y rápido. ¿Qué bibliotecas de código abierto de JavaScript se usan más?
+Código fuente abierto, o código con una licencia permisiva a la que cualquier persona pueda acceder, ver y modificar. Desde pequeñas bibliotecas hasta navegadores completos, como <a hreflang="en" href="https://www.chromium.org/Home">Chromium</a> y <a hreflang="en" href="https://www.openhub.net/p/firefox">Firefox</a>, el código fuente abierto juega un papel crucial en el mundo del desarrollo web. En el contexto de JavaScript, los desarrolladores confían en herramientas de código abierto para incluir todo tipo de funcionalidad en su página web. Independientemente de si un desarrollador decide usar una pequeña biblioteca de utilidades o un framework masivo que dicta la arquitectura de toda su aplicación, confiar en paquetes de código abierto puede hacer que el desarrollo de funciones sea más fácil y rápido. ¿Qué bibliotecas de código abierto de JavaScript se usan más?
 
 <figure>
    <table>
@@ -288,14 +288,14 @@ Código fuente abierto, o código con una licencia permisiva a la que cualquier 
    <figcaption>{{ figure_link(caption="Principales bibliotecas de JavaScript en computadoras de escritorio y dispositivos móviles.") }}</figcaption>
 </figure>
 
-[jQuery](https://jquery.com/), la biblioteca JavaScript más popular jamás creada, se utiliza en el 85,03% de las páginas de escritorio y el 83,46% de las páginas móviles. El advenimiento de muchas API y métodos del navegador, tales como [Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) y [querySelector](https://developer.mozilla.org/docs/Web/API/Document/querySelector), estandarizaron gran parte de la funcionalidad proporcionada por la biblioteca en una forma nativa. Aunque la popularidad de jQuery puede parecer estar disminuyendo, ¿por qué todavía se usa en la gran mayoría de la web?
+<a hreflang="en" href="https://jquery.com/">jQuery</a>, la biblioteca JavaScript más popular jamás creada, se utiliza en el 85,03% de las páginas de escritorio y el 83,46% de las páginas móviles. El advenimiento de muchas API y métodos del navegador, tales como [Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) y [querySelector](https://developer.mozilla.org/docs/Web/API/Document/querySelector), estandarizaron gran parte de la funcionalidad proporcionada por la biblioteca en una forma nativa. Aunque la popularidad de jQuery puede parecer estar disminuyendo, ¿por qué todavía se usa en la gran mayoría de la web?
 
 Hay varias razones posibles:
 
-- [WordPress](https://wordpress.org/), que se usa en más del 30% de los sitios, incluye jQuery por defecto.
+- <a hreflang="en" href="https://wordpress.org/">WordPress</a>, que se usa en más del 30% de los sitios, incluye jQuery por defecto.
 - Cambiar de jQuery a una biblioteca más nueva del lado del cliente puede llevar tiempo dependiendo de qué tan grande sea una aplicación, y muchos sitios pueden consistir en jQuery y además bibliotecas más nuevas del lado del cliente.
 
-Otras bibliotecas JavaScript más utilizadas incluyen variantes de jQuery (jQuery migrate, jQuery UI), [Modernizr](https://modernizr.com/), [Moment.js](https://momentjs.com/), [Underscore.js](https://underscorejs.org/), etc.
+Otras bibliotecas JavaScript más utilizadas incluyen variantes de jQuery (jQuery migrate, jQuery UI), <a hreflang="en" href="https://modernizr.com/">Modernizr</a>, <a hreflang="en" href="https://momentjs.com/">Moment.js</a>, <a hreflang="en" href="https://underscorejs.org/">Underscore.js</a>, etc.
 
 ### Frameworks y bibliotecas de UI
 
@@ -312,16 +312,16 @@ En los últimos años, el ecosistema de JavaScript ha visto un aumento en las bi
 
 Aquí solo se analiza un subconjunto de marcos populares, pero es importante tener en cuenta que todos ellos siguen uno de estos dos enfoques:
 
-- Arquitectura [modelo-vista-controlador](https://developer.chrome.com/apps/app_frameworks) (o modelo-vista-modelo de vista)
+- Arquitectura <a hreflang="en" href="https://developer.chrome.com/apps/app_frameworks">modelo-vista-controlador</a> (o modelo-vista-modelo de vista)
 - Arquitectura basada en componentes
 
-Aunque ha habido un cambio hacia un modelo basado en componentes, muchos frameworks más antiguos que siguen el paradigma MVC ([AngularJS](https://angularjs.org/), [Backbone.js](https://backbonejs.org/), [Ember](https://emberjs.com/)) todavía se usan en miles de páginas. Sin embargo, [React](https://reactjs.org/), [Vue](https://vuejs.org/) y [Angular](https://angular.io/) son los frameworks basados en componentes más populares ([Zone.js](https://github.com/angular/zone.js) es un paquete que ahora forma parte del núcleo angular).
+Aunque ha habido un cambio hacia un modelo basado en componentes, muchos frameworks más antiguos que siguen el paradigma MVC (<a hreflang="en" href="https://angularjs.org/">AngularJS</a>, <a hreflang="en" href="https://backbonejs.org/">Backbone.js</a>, <a hreflang="en" href="https://emberjs.com/">Ember</a>) todavía se usan en miles de páginas. Sin embargo, <a hreflang="en" href="https://reactjs.org/">React</a>, <a hreflang="en" href="https://vuejs.org/">Vue</a> y <a hreflang="en" href="https://angular.io/">Angular</a> son los frameworks basados en componentes más populares (<a hreflang="en" href="https://github.com/angular/zone.js">Zone.js</a> es un paquete que ahora forma parte del núcleo angular).
 
-Aunque este análisis es interesante, es importante tener en cuenta que estos resultados se basan en una biblioteca de detección de terceros - [Wappalyzer](https://www.wappalyzer.com). Todos estos números de uso dependen de la precisión de cada uno de los [mecanismos de detección](https://github.com/AliasIO/Wappalyzer/blob/master/src/apps.json).
+Aunque este análisis es interesante, es importante tener en cuenta que estos resultados se basan en una biblioteca de detección de terceros - <a hreflang="en" href="https://www.wappalyzer.com">Wappalyzer</a>. Todos estos números de uso dependen de la precisión de cada uno de los <a hreflang="en" href="https://github.com/AliasIO/Wappalyzer/blob/master/src/apps.json">mecanismos de detección</a>.
 
 ## Carga diferenciada
 
-Los [módulos JavaScript](https://v8.dev/features/modules), o ES modules, son soportados en [todos los navegadores principales](https://caniuse.com/#feat=es6-module). Los módulos proporcionan la capacidad de crear scripts que pueden importar y exportar desde otros módulos. Esto permite a cualquier persona construir sus aplicaciones diseñadas en un patrón de módulo, importando y exportando donde sea necesario, sin depender de cargadores de módulos de terceros.
+Los <a hreflang="en" href="https://v8.dev/features/modules">módulos JavaScript</a>, o ES modules, son soportados en <a hreflang="en" href="https://caniuse.com/#feat=es6-module">todos los navegadores principales</a>. Los módulos proporcionan la capacidad de crear scripts que pueden importar y exportar desde otros módulos. Esto permite a cualquier persona construir sus aplicaciones diseñadas en un patrón de módulo, importando y exportando donde sea necesario, sin depender de cargadores de módulos de terceros.
 
 Para declarar un script como módulo, la etiqueta del script debe tener el código `type="module"`:
 
@@ -339,7 +339,7 @@ Para declarar un script como módulo, la etiqueta del script debe tener el códi
   )
 }}
 
-El soporte a nivel de navegador para módulos todavía es relativamente nuevo, y los números aquí muestran que muy pocos sitios usan actualmente `type="module"` para sus scripts. Muchos sitios todavía dependen de cargadores de módulos (2,37% de todos los sitios de escritorio usan [RequireJS](https://github.com/requirejs/requirejs) por ejemplo) y _bundlers_ ([webpack](https://webpack.js.org/) por ejemplo) para definir módulos dentro de su código fuente.
+El soporte a nivel de navegador para módulos todavía es relativamente nuevo, y los números aquí muestran que muy pocos sitios usan actualmente `type="module"` para sus scripts. Muchos sitios todavía dependen de cargadores de módulos (2,37% de todos los sitios de escritorio usan <a hreflang="en" href="https://github.com/requirejs/requirejs">RequireJS</a> por ejemplo) y _bundlers_ (<a hreflang="en" href="https://webpack.js.org/">webpack</a> por ejemplo) para definir módulos dentro de su código fuente.
 
 Si se usan módulos nativos, es importante asegurarse de que se use un script de respaldo apropiado para los navegadores que aún no admiten módulos. Esto se puede hacer incluyendo un script adicional con un atributo `nomodule`.
 
@@ -347,7 +347,7 @@ Si se usan módulos nativos, es importante asegurarse de que se use un script de
 <script nomodule src="fallback.js"></script>
 ```
 
-Cuando se usan juntos, los navegadores que admiten módulos ignorarán por completo cualquier script que contenga el atributo `nomodule`. Por otro lado, los navegadores que aún no admiten módulos no descargarán ningún script con `type ="module"`. Como tampoco reconocen `nomodule`, normalmente descargarán scripts con el atributo. El uso de este enfoque puede permitir a los desarrolladores [enviar código moderno a navegadores modernos para cargas de página más rápidas](https://web.dev/serve-modern-code-to-modern-browsers/). Así que, **¿Cuántos sitios usan `nomodule` para los scripts en su página?
+Cuando se usan juntos, los navegadores que admiten módulos ignorarán por completo cualquier script que contenga el atributo `nomodule`. Por otro lado, los navegadores que aún no admiten módulos no descargarán ningún script con `type ="module"`. Como tampoco reconocen `nomodule`, normalmente descargarán scripts con el atributo. El uso de este enfoque puede permitir a los desarrolladores <a hreflang="en" href="https://web.dev/serve-modern-code-to-modern-browsers/">enviar código moderno a navegadores modernos para cargas de página más rápidas</a>. Así que, **¿Cuántos sitios usan `nomodule` para los scripts en su página?
 
 {{ figure_markup(
   image="fig14.png",
@@ -415,11 +415,11 @@ Con HTTP Archive, podemos echar un vistazo a cualquier API más nueva que sea co
 
 Atomics (0,38%) y SharedArrayBuffer (0,20%) son apenas visibles en este gráfico ya que se usan en tan pocas páginas.
 
-Es importante tener en cuenta que los números aquí son aproximaciones y no aprovechan [UseCounter](https://chromium.googlesource.com/chromium/src.git/+/master/docs/use_counter_wiki.md) para medir el uso de funciones.
+Es importante tener en cuenta que los números aquí son aproximaciones y no aprovechan <a hreflang="en" href="https://chromium.googlesource.com/chromium/src.git/+/master/docs/use_counter_wiki.md">UseCounter</a> para medir el uso de funciones.
 
 ## Mapas fuente
 
-En muchos sistemas de compilación, los archivos JavaScript sufren una minificación para minimizar su tamaño y transpilación para las nuevas funciones de lenguaje que aún no son compatibles con muchos navegadores. Asimismo, superconjuntos de lenguage como [TypeScript](https://www.typescriptlang.org/) compilan a una salida que pueda verse notablemente diferente del código fuente original. Por todas estas razones, el código final servido al navegador puede ser ilegible y difícil de descifrar.
+En muchos sistemas de compilación, los archivos JavaScript sufren una minificación para minimizar su tamaño y transpilación para las nuevas funciones de lenguaje que aún no son compatibles con muchos navegadores. Asimismo, superconjuntos de lenguage como <a hreflang="en" href="https://www.typescriptlang.org/">TypeScript</a> compilan a una salida que pueda verse notablemente diferente del código fuente original. Por todas estas razones, el código final servido al navegador puede ser ilegible y difícil de descifrar.
 
 Un **mapa fuente** es un archivo adicional que acompaña a un archivo JavaScript que permite que un navegador asigne la salida final a su fuente original. Esto puede hacer que la depuración y el análisis de paquetes de producción sean mucho más simples.
 

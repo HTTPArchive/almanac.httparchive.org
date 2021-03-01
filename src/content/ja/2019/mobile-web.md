@@ -25,19 +25,19 @@ featured_stat_label_3: 十分なサイズのタップターゲットを持つサ
 
 プレゼンの途中、スティーブ・ジョブズは発表されたばかりのiPhoneを手にして座り、それまで夢見ていた方法でウェブサーフィンを始めます。大きな画面とフル機能のブラウザで、ウェブサイトをフルに表示します。そして最も重要なことは、人間に知られている最も直感的なポインターデバイスを使ってウェブサーフィンをすることです：私たちの指。小さな矢印キーを使って、これ以上のタブ操作はありません。
 
-2007年以降、モバイルウェブは爆発的な成長を遂げました。そして13年後の現在、2019年7月の[Akamai mPulse](https://developer.akamai.com/akamai-mpulse-real-user-monitoring-solution)のデータによると、モバイルは[全検索の 59%](https://www.merkleinc.com/thought-leadership/digital-marketing-report)と全ウェブトラフィックの58.7％を占めています。モバイルはもはや余計なものでなく、人々がウェブを体験する主要な方法となっています。モバイルの重要性を考えると、私たちは訪問者にどのような体験を提供しているのでしょうか？　どこが不足しているのか？　それを探ってみましょう。
+2007年以降、モバイルウェブは爆発的な成長を遂げました。そして13年後の現在、2019年7月の<a hreflang="en" href="https://developer.akamai.com/akamai-mpulse-real-user-monitoring-solution">Akamai mPulse</a>のデータによると、モバイルは<a hreflang="en" href="https://www.merkleinc.com/thought-leadership/digital-marketing-report">全検索の 59%</a>と全ウェブトラフィックの58.7％を占めています。モバイルはもはや余計なものでなく、人々がウェブを体験する主要な方法となっています。モバイルの重要性を考えると、私たちは訪問者にどのような体験を提供しているのでしょうか？　どこが不足しているのか？　それを探ってみましょう。
 
 ## ページの読み込み体験
 
 私たちが分析したモバイルウェブ体験の最初の部分は、私たちが最も身近に感じているものです。*ページの読み込み体験*です。しかし、今回の調査結果へ飛び込む前に、典型的なモバイルユーザーが*実際に*どのようなユーザーであるかについて全員が同じ見解を持っていることを確認しておきましょう。これは、これらの結果を再現するのに役立つだけでなく、これらのユーザーをよりよく理解することにもつながるからです。
 
-まずは、典型的なモバイルユーザーがどのような電話を持っているかから始めましょう。平均的なAndroid携帯電話[価格は～250ドル](https://web.archive.org/web/20190921115844/https://www.idc.com/getdoc.jsp?containerId=prUS45115119)で、その範囲内の[最も人気のある携帯電話](https://web.archive.org/web/20190812221233/https://deviceatlas.com/blog/most-popular-android-smartphones)の1つは、サムスンのギャラクシーS6です。だから、これはおそらく典型的なモバイルユーザーが使用している携帯電話の種類であり、実際にはiPhone 8よりも4倍遅いです。このユーザーは、高速な4G接続へのアクセス権を持っていませんが、むしろ2G接続（[29%](https://www.gsma.com/r/mobileeconomy/)時間の）または3G接続（[28%](https://www.gsma.com/r/mobileeconomy/)時間の）を使用しています。そして、これが全ての足し算になります。
+まずは、典型的なモバイルユーザーがどのような電話を持っているかから始めましょう。平均的なAndroid携帯電話<a hreflang="en" href="https://web.archive.org/web/20190921115844/https://www.idc.com/getdoc.jsp?containerId=prUS45115119">価格は～250ドル</a>で、その範囲内の<a hreflang="en" href="https://web.archive.org/web/20190812221233/https://deviceatlas.com/blog/most-popular-android-smartphones">最も人気のある携帯電話</a>の1つは、サムスンのギャラクシーS6です。だから、これはおそらく典型的なモバイルユーザーが使用している携帯電話の種類であり、実際にはiPhone 8よりも4倍遅いです。このユーザーは、高速な4G接続へのアクセス権を持っていませんが、むしろ2G接続（<a hreflang="en" href="https://www.gsma.com/r/mobileeconomy/">29%</a>時間の）または3G接続（<a hreflang="en" href="https://www.gsma.com/r/mobileeconomy/">28%</a>時間の）を使用しています。そして、これが全ての足し算になります。
 
 <figure>
 <table>
   <tr>
     <th>Connection type</th>
-    <td><a href="https://www.gsma.com/r/mobileeconomy/">2G or 3G</a></td>
+    <td><a hreflang="en" href="https://www.gsma.com/r/mobileeconomy/">2G or 3G</a></td>
   </tr>
   <tr>
     <th>Latency</th>
@@ -49,7 +49,7 @@ featured_stat_label_3: 十分なサイズのタップターゲットを持つサ
   </tr>
   <tr>
     <th>Phone</th>
-    <td><a href="https://www.gsmarena.com/samsung_galaxy_s6-6849.php">Galaxy S6</a> — <a href="https://www.notebookcheck.net/A11-Bionic-vs-7420-Octa_9250_6662.247596.0.html">4x slower</a> than iPhone 8 (Octane V2 score)</td>
+    <td><a hreflang="en" href="https://www.gsmarena.com/samsung_galaxy_s6-6849.php">Galaxy S6</a> — <a hreflang="en" href="https://www.notebookcheck.net/A11-Bionic-vs-7420-Octa_9250_6662.247596.0.html">4x slower</a> than iPhone 8 (Octane V2 score)</td>
   </tr>
 </table>
 <figcaption>{{ figure_link(caption="典型的なモバイルユーザーの技術的プロフィール。") }}</figcaption>
@@ -59,9 +59,9 @@ featured_stat_label_3: 十分なサイズのタップターゲットを持つサ
 
 ### JavaScriptで肥大化したページ
 
-モバイルウェブのJavaScriptの状態が恐ろしい。HTTP Archiveの [JavaScript レポート](https://httparchive.org/reports/state-of-javascript?start=2016_05_15&end=2019_07_01&view=list#bytesJs)によると、モバイルサイトの中央値では、携帯電話が375KBのJavaScriptをダウンロードする必要があります。圧縮率を70％と仮定すると、携帯電話は中央値で1.25MBのJavaScriptを解析、コンパイル、実行しなければならないことになります。
+モバイルウェブのJavaScriptの状態が恐ろしい。HTTP Archiveの <a hreflang="en" href="https://httparchive.org/reports/state-of-javascript?start=2016_05_15&end=2019_07_01&view=list#bytesJs">JavaScript レポート</a>によると、モバイルサイトの中央値では、携帯電話が375KBのJavaScriptをダウンロードする必要があります。圧縮率を70％と仮定すると、携帯電話は中央値で1.25MBのJavaScriptを解析、コンパイル、実行しなければならないことになります。
 
-なぜこれが問題なのでしょうか？　なぜなら、これだけの量のJSをロードしているサイトは、一貫してインタラクティブになるまで[10秒](https://httparchive.org/reports/loading-speed?start=earliest&end=2019_07_01&view=list#ttci)以上かかるからです。言い換えればページは完全に読み込まれているように見えるかもしれませんが、ユーザーがボタンやメニューをクリックするとJavaScriptの実行が終了していないために、ユーザーは多少の速度低下を経験するかもしれません。最悪の場合、ユーザーは10秒以上ボタンをクリックし続けなければならず、何かが実際に起こる魔法のような瞬間を待つことになります。それがどれほど混乱し、イライラさせるかを考えてみてください。
+なぜこれが問題なのでしょうか？　なぜなら、これだけの量のJSをロードしているサイトは、一貫してインタラクティブになるまで<a hreflang="en" href="https://httparchive.org/reports/loading-speed?start=earliest&end=2019_07_01&view=list#ttci">10秒</a>以上かかるからです。言い換えればページは完全に読み込まれているように見えるかもしれませんが、ユーザーがボタンやメニューをクリックするとJavaScriptの実行が終了していないために、ユーザーは多少の速度低下を経験するかもしれません。最悪の場合、ユーザーは10秒以上ボタンをクリックし続けなければならず、何かが実際に起こる魔法のような瞬間を待つことになります。それがどれほど混乱し、イライラさせるかを考えてみてください。
 
 {{ figure_markup(
   video="https://www.youtube.com/embed/Lx1cYJAVnzA",
@@ -75,7 +75,7 @@ featured_stat_label_3: 十分なサイズのタップターゲットを持つサ
   )
 }}
 
-さらに深く掘り下げて、各ページがJavaScriptをどの程度利用しているかに焦点を当てた別の指標を見てみましょう。例えば、読み込み中のページは本当に多くのJavaScriptを必要としているのでしょうか？　私たちはこの指標を[Web bloat score](https://www.webbloatscore.com/)に基づいた*JavaScript Bloat Score*と呼んでいます。その背後にある考え方は次のようなものです。
+さらに深く掘り下げて、各ページがJavaScriptをどの程度利用しているかに焦点を当てた別の指標を見てみましょう。例えば、読み込み中のページは本当に多くのJavaScriptを必要としているのでしょうか？　私たちはこの指標を<a hreflang="en" href="https://www.webbloatscore.com/">Web bloat score</a>に基づいた*JavaScript Bloat Score*と呼んでいます。その背後にある考え方は次のようなものです。
 
 - JavaScriptは、ページの読み込みに合わせて生成と変更の両方を行うためによく使われます。
 - また、ブラウザにテキストとして配信されます。そのため、よく圧縮され、ただのページのスクリーンショットよりも速く配信されるはずです。
@@ -87,11 +87,11 @@ featured_stat_label_3: 十分なサイズのタップターゲットを持つサ
 
 分析した500万以上のサイトすべてのスクリーンショットをキャプチャして測定できなかったことに注意してください。代わりに、1000のサイトからランダムにサンプリングして、ビューポートのスクリーンショットサイズの中央値（140KB）を見つけ各サイトのJavaScriptダウンロードサイズをこの数値と比較しました。
 
-JavaScriptの効果をもっと詳しく知りたい方は、Addy Osmaniの[The Cost of JavaScript in 2018](https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4)をチェックしてみてください。
+JavaScriptの効果をもっと詳しく知りたい方は、Addy Osmaniの<a hreflang="en" href="https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4">The Cost of JavaScript in 2018</a>をチェックしてみてください。
 
 ### サービスワーカーの使い方
 
-ブラウザは通常、すべてのページを同じように読み込みます。いくつかのリソースのダウンロードを他のリソースよりも優先したり、同じキャッシュルールに従ったりします。[サービスワーカー](https://developers.google.com/web/fundamentals/primers/service-workers)のおかげで、リソースがネットワーク層によってどのように処理されるかを直接制御できるようになりました。
+ブラウザは通常、すべてのページを同じように読み込みます。いくつかのリソースのダウンロードを他のリソースよりも優先したり、同じキャッシュルールに従ったりします。<a hreflang="en" href="https://developers.google.com/web/fundamentals/primers/service-workers">サービスワーカー</a>のおかげで、リソースがネットワーク層によってどのように処理されるかを直接制御できるようになりました。
 
 2016年から利用可能になり、すべての主要ブラウザに実装されているにもかかわらず、利用しているサイトはわずか0.64％にとどまっています!
 
@@ -110,11 +110,11 @@ JavaScriptの効果をもっと詳しく知りたい方は、Addy Osmaniの[The 
 
 あなたが記事を読んでいるときに突然、画像が読み込まれ、読んでいるテキストが画面の下に押し出されたと想像してみてください。あなたは今、あなたがいた場所を探すか、ちょうど記事を読むことをあきらめなければなりません。または、おそらくさらに悪いことに、同じ場所に広告がロードされる直前にリンクをクリックし始め、代わりに広告を誤ってクリックしてしまうことになります。
 
-では、どのようにしてサイトの移動量を測定するのでしょうか？　以前はかなり困難でしたが（不可能ではないにしても）、新しい [レイアウトの不安定性API](https://web.dev/layout-instability-api) のおかげで、2ステップで測定を行うことができます。
+では、どのようにしてサイトの移動量を測定するのでしょうか？　以前はかなり困難でしたが（不可能ではないにしても）、新しい <a hreflang="en" href="https://web.dev/layout-instability-api">レイアウトの不安定性API</a> のおかげで、2ステップで測定を行うことができます。
 
 1. レイアウトの不安定性APIを使用して、各シフトがページに与える影響を追跡します。これは、ビューポート内のコンテンツがどれだけ移動したかのパーセンテージとして報告されます。
 
-2. あなたが追跡したすべてのシフトを取り、それらを一緒に追加します。その結果が [累積レイアウトシフト](https://web.dev/layout-instability-api#a-cumulative-layout-shift-score)(CLS)スコアと呼ばれるものです。
+2. あなたが追跡したすべてのシフトを取り、それらを一緒に追加します。その結果が <a hreflang="en" href="https://web.dev/layout-instability-api#a-cumulative-layout-shift-score">累積レイアウトシフト</a>(CLS)スコアと呼ばれるものです。
 
 訪問者ごとに異なるCLSを持つことができるため、[Chrome UX Report](./methodology#chrome-ux-report) (./methodology#chrome-UX-report)(CrUX)を使用してウェブ全体でこのメトリックを分析するために、すべての体験を3つの異なるバケットにまとめています。
 
@@ -146,7 +146,7 @@ JavaScriptの効果をもっと詳しく知りたい方は、Addy Osmaniの[The 
 
 サイトをデザインするとき、私たちは最適な状態で、多くの訪問者よりもはるかに優れた目を持っている傾向があります。訪問者は色盲で、テキストと背景色の区別をできない場合があります。ヨーロッパ系の人は、[男性の12人に1人、女性の200人に1人](http://www.cvrl.org/people/stockman/pubs/1999%20Genetics%20chapter%20SSJN.pdf)が色盲です。あるいは、太陽の光が画面にまぶしさを与えている間にページを読んでいる可能性があり、同様に読みやすさが損なわれている可能性があります。
 
-この問題を軽減するために、テキストや背景色を選択する際に従うことのできる[アクセシビリティ・ガイドライン](https://dequeuniversity.com/rules/axe/2.2/color-contrast)があります。では、これらの基準を満たすにはどうすればよいのでしょうか？　すべてのテキストに十分な色のコントラストを与えているサイトは22.04％にすぎません。この値は実際には下限値であり、背景が無地のテキストのみを分析したためです。画像やグラデーションの背景は分析できませんでした。
+この問題を軽減するために、テキストや背景色を選択する際に従うことのできる<a hreflang="en" href="https://dequeuniversity.com/rules/axe/2.2/color-contrast">アクセシビリティ・ガイドライン</a>があります。では、これらの基準を満たすにはどうすればよいのでしょうか？　すべてのテキストに十分な色のコントラストを与えているサイトは22.04％にすぎません。この値は実際には下限値であり、背景が無地のテキストのみを分析したためです。画像やグラデーションの背景は分析できませんでした。
 
 {{ figure_markup(
   image="example-of-good-and-bad-color-contrast-lookzook.svg",
@@ -157,7 +157,7 @@ JavaScriptの効果をもっと詳しく知りたい方は、Addy Osmaniの[The 
   )
 }}
 
-他の人口統計における色覚異常の統計については、[本論文](https://web.archive.org/web/20180304115406/http://www.allpsych.uni-giessen.de/karl/colbook/sharpe.pdf)を参照してください。
+他の人口統計における色覚異常の統計については、<a hreflang="en" href="https://web.archive.org/web/20180304115406/http://www.allpsych.uni-giessen.de/karl/colbook/sharpe.pdf">本論文</a>を参照してください。
 
 ### フォントサイズ
 
@@ -191,7 +191,7 @@ JavaScriptの効果をもっと詳しく知りたい方は、Addy Osmaniの[The 
   )
 }}
 
-しかし開発者はこれを悪用しすぎて、3つのサイトのほぼ1つ(32.21％)がこの機能を無効にしており、Appleは(iOS 10の時点で)ウェブ開発者がズームを無効にすることを許さなくなっています。モバイルSafariは単に[タグを無視する](https://archive.org/details/ios-10-beta-release-notes)。世界中のウェブトラフィックの[11%](https://gs.statcounter.com/)以上を占める新しいアップルのデバイスでは、どんなサイトでもズームや拡大縮小が可能です。
+しかし開発者はこれを悪用しすぎて、3つのサイトのほぼ1つ(32.21％)がこの機能を無効にしており、Appleは(iOS 10の時点で)ウェブ開発者がズームを無効にすることを許さなくなっています。モバイルSafariは単に<a hreflang="en" href="https://archive.org/details/ios-10-beta-release-notes">タグを無視する</a>。世界中のウェブトラフィックの<a hreflang="en" href="https://gs.statcounter.com/">11%</a>以上を占める新しいアップルのデバイスでは、どんなサイトでもズームや拡大縮小が可能です。
 
 ### ページの回転
 
@@ -203,7 +203,7 @@ JavaScriptの効果をもっと詳しく知りたい方は、Addy Osmaniの[The 
 
 デスクトップではマウスのような精密なデバイスを使うことに慣れていますが、モバイルでは全く違います。モバイルでは、私たちは指と呼ばれる大きくて不正確なツールを使ってサイトにアクセスします。その不正確さゆえに、私たちは常にリンクやボタンを「タップミス」して、意図していないものをタップしています。
 
-この問題を軽減するためにタップターゲットを適切に設計することは、指の大きさが大きく異なるために困難な場合があります。しかし現在では多くの研究が行われており、どの程度の大きさのボタンが必要で、どの程度の間隔で離す必要があるかについては安全な[基準](https://developers.google.com/web/tools/lighthouse/audits/tap-targets) があります。
+この問題を軽減するためにタップターゲットを適切に設計することは、指の大きさが大きく異なるために困難な場合があります。しかし現在では多くの研究が行われており、どの程度の大きさのボタンが必要で、どの程度の間隔で離す必要があるかについては安全な<a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/audits/tap-targets">基準</a> があります。
 
 {{ figure_markup(
   image="example-of-easy-to-hit-tap-targets-lookzook.png",
@@ -290,7 +290,7 @@ JavaScriptの効果をもっと詳しく知りたい方は、Addy Osmaniの[The 
 {{ figure_markup(
   image="america-online-1000-hours-free.jpg",
   alt='無料で1000時間の「アメリカオンライン」から。archive.org.',
-  caption='無料で1000時間の「アメリカオンライン」から。<a href="https://archive.org/details/America_Online_1000_Hours_Free_for_45_Days_Version_7.0_Faster_Than_Ever_AM402R28">archive.org</a>.',
+  caption='無料で1000時間の「アメリカオンライン」から。<a hreflang="en" href="https://archive.org/details/America_Online_1000_Hours_Free_for_45_Days_Version_7.0_Faster_Than_Ever_AM402R28">archive.org</a>.',
   description="1,000時間無料で提供しているAOLのCD-ROMの写真。",
   width=300,
   height=285
@@ -301,11 +301,11 @@ JavaScriptの効果をもっと詳しく知りたい方は、Addy Osmaniの[The 
 
 1. モバイルに力を入れているサイトを、より小さな画面に合わせてデザインを調整しているサイトと定義しました。というか、CSSのブレークポイントが600px以下に1つ以上あるサイトを指します。
 
-2. 潜在的なユーザーとは、15歳以上の年齢層を指します。[57億人](https://www.prb.org/international/geography/world)。
+2. 潜在的なユーザーとは、15歳以上の年齢層を指します。<a hreflang="en" href="https://www.prb.org/international/geography/world">57億人</a>。
 
-3. [デスクトップ検索](https://www.merkleinc.com/thought-leadership/digital-marketing-report)と[ウェブトラフィックシェア](https://gs.statcounter.com/platform-market-share/desktop-mobile-tablet/worldwide/#monthly-201205-201909)はここ数年減少傾向にあります。
+3. <a hreflang="en" href="https://www.merkleinc.com/thought-leadership/digital-marketing-report">デスクトップ検索</a>と<a hreflang="en" href="https://gs.statcounter.com/platform-market-share/desktop-mobile-tablet/worldwide/#monthly-201205-201909">ウェブトラフィックシェア</a>はここ数年減少傾向にあります。
 
-4. アクティブなスマートフォンの総数は、アクティブなAndroidsとiPhone（AppleとGoogleが公開している）の数を合計し、中国のネット接続された電話を考慮し少し計算して判明しました。[詳細はこちら](https://www.ben-evans.com/benedictevans/2019/5/28/the-end-of-mobile)。
+4. アクティブなスマートフォンの総数は、アクティブなAndroidsとiPhone（AppleとGoogleが公開している）の数を合計し、中国のネット接続された電話を考慮し少し計算して判明しました。<a hreflang="en" href="https://www.ben-evans.com/benedictevans/2019/5/28/the-end-of-mobile">詳細はこちら</a>。
 
-5. 16億台のデスクトップは、[Microsoft](https://web.archive.org/web/20181030132235/https://news.microsoft.com/bythenumbers/en/windowsdevices)と[Apple](https://web.archive.org/web/20190628161024/https://appleinsider.com/articles/18/10/30/apple-passes-100m-active-mac-milestone-thanks-to-high-numbers-of-new-users)が公開している数字で計算しています。リナックスPCユーザーは含まれていません。
+5. 16億台のデスクトップは、<a hreflang="en" href="https://web.archive.org/web/20181030132235/https://news.microsoft.com/bythenumbers/en/windowsdevices">Microsoft</a>と<a hreflang="en" href="https://web.archive.org/web/20190628161024/https://appleinsider.com/articles/18/10/30/apple-passes-100m-active-mac-milestone-thanks-to-high-numbers-of-new-users">Apple</a>が公開している数字で計算しています。リナックスPCユーザーは含まれていません。
 </p>

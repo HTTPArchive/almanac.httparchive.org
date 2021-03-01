@@ -6,7 +6,7 @@ reviewers: [ibnesayeed, denar90]
 analysts: [rviscomi, paulcalvano]
 editors: [rviscomi]
 translators: [chefleo]
-tkadlec_bio: Tim è un consulente e formatore di prestazioni web focalizzato sulla creazione di un web che tutti possano utilizzare. È autore di High Performance Images (O'Reilly, 2016) e Implementing Responsive Design (New Riders, 2012). Scrive di tutto ciò che riguarda il Web su <a href="https://timkadlec.com/">timkadlec.com</a>. Puoi trovarlo mentre condivide i suoi pensieri in un formato più breve su Twitter <a href="https://twitter.com/tkadlec">@tkadlec</a>.
+tkadlec_bio: Tim è un consulente e formatore di prestazioni web focalizzato sulla creazione di un web che tutti possano utilizzare. È autore di High Performance Images (O'Reilly, 2016) e Implementing Responsive Design (New Riders, 2012). Scrive di tutto ciò che riguarda il Web su <a hreflang="en" href="https://timkadlec.com/">timkadlec.com</a>. Puoi trovarlo mentre condivide i suoi pensieri in un formato più breve su Twitter <a href="https://twitter.com/tkadlec">@tkadlec</a>.
 discuss: 2038
 results: https://docs.google.com/spreadsheets/d/1cgXJrFH02SHPKDGD0AelaXAdB3UI7PIb5dlS0dxVtfY/
 featured_quote: JavaScript ha fatto molta strada dalle sue umili origini come l'ultimo dei tre capisaldi del web, insieme a CSS e HTML. Oggi JavaScript ha iniziato a infiltrarsi in un ampio spettro dello stack tecnico. Non è più limitato al lato client ed è una scelta sempre più popolare per gli strumenti di compilazione e lo scripting lato server. JavaScript si sta facendo strada anche nel livello CDN grazie alle soluzioni di edge computing.
@@ -112,7 +112,7 @@ Come numeri grezzi, quelli possono o meno saltarti fuori a seconda di quanto sei
 Quei 153 KB equivalgono a circa il 37% della dimensione totale dello script che inviamo ai dispositivi mobile. C'è sicuramente un margine di miglioramento qui.
 
 ### `module` e `nomodule`
-Un meccanismo che abbiamo per ridurre potenzialmente la quantità di codice che inviamo è quello di sfruttare il [pattern `module`/`nomodule`](https://web.dev/serve-modern-code-to-modern-browsers/). Con questo pattern, creiamo due set di bundle: un bundle destinato ai browser moderni e uno destinato ai browser legacy. Il bundle destinato ai browser moderni ottiene un `type=module` e il bundle destinato ai browser legacy ottiene un `type=nomodule`.
+Un meccanismo che abbiamo per ridurre potenzialmente la quantità di codice che inviamo è quello di sfruttare il <a hreflang="en" href="https://web.dev/serve-modern-code-to-modern-browsers/">pattern `module`/`nomodule`</a>. Con questo pattern, creiamo due set di bundle: un bundle destinato ai browser moderni e uno destinato ai browser legacy. Il bundle destinato ai browser moderni ottiene un `type=module` e il bundle destinato ai browser legacy ottiene un `type=nomodule`.
 
 Questo approccio ci consente di creare bundle più piccoli con una sintassi moderna ottimizzata per i browser che lo supportano, fornendo al contempo polyfill caricati in modo condizionale e sintassi diversa per i browser che non lo supportano.
 
@@ -120,7 +120,7 @@ Il supporto per `module` e `nomodule` si sta espandendo, ma ancora relativamente
 
 ### Conteggio richieste
 
-Un altro modo per vedere quanto JavaScript utilizziamo è esplorare quante richieste JavaScript vengono effettuate su ogni pagina. Sebbene la riduzione del numero di richieste fosse fondamentale per mantenere buone prestazioni con HTTP/1.1, con HTTP/2 è il caso opposto: suddividere JavaScript in [file singoli più piccoli](https://web.dev/granular-chunking-nextjs/) è [in genere migliore per le prestazioni](../2019/http2#impact-of-http2).
+Un altro modo per vedere quanto JavaScript utilizziamo è esplorare quante richieste JavaScript vengono effettuate su ogni pagina. Sebbene la riduzione del numero di richieste fosse fondamentale per mantenere buone prestazioni con HTTP/1.1, con HTTP/2 è il caso opposto: suddividere JavaScript in <a hreflang="en" href="https://web.dev/granular-chunking-nextjs/">file singoli più piccoli</a> è [in genere migliore per le prestazioni](../2019/http2#impact-of-http2).
 
 {{ figure_markup(
   image="requests-2020.png",
@@ -372,7 +372,7 @@ In effetti, il predominio di jQuery è ulteriormente supportato se ci si ferma a
 
 Quando guardiamo i framework, non vediamo nemmeno un cambiamento radicale in termini di adozione nei framework principali che sono stati evidenziati lo scorso anno. Vue.js ha visto un aumento significativo e AMP è cresciuto un po', ma la maggior parte di loro sono più o meno dove erano un anno fa.
 
-Vale la pena notare che il [problema di rilevamento rilevato lo scorso anno è ancora valido](https://github.com/AliasIO/wappalyzer/issues/2450) e ha ancora un impatto sui risultati qui. È possibile che ci sia stato un cambiamento significativo nella popolarità di alcuni di questi strumenti, ma semplicemente non lo vediamo con il modo in cui i dati vengono attualmente raccolti.
+Vale la pena notare che il <a hreflang="en" href="https://github.com/AliasIO/wappalyzer/issues/2450">problema di rilevamento rilevato lo scorso anno è ancora valido</a> e ha ancora un impatto sui risultati qui. È possibile che ci sia stato un cambiamento significativo nella popolarità di alcuni di questi strumenti, ma semplicemente non lo vediamo con il modo in cui i dati vengono attualmente raccolti.
 
 ### Cosa significa tutto
 
@@ -664,9 +664,9 @@ Un modo per vedere come questo si traduce in un impatto sull'esperienza utente �
   sql_file="correlations.sql"
 ) }}
 
-Il grafico sopra utilizza il [coefficiente di correlazione di Pearson](https://it.wikipedia.org/wiki/Indice_di_correlazione_di_Pearson). C'è una definizione lunga e un po' complessa di cosa significhi precisamente, ma il succo è che stiamo cercando la forza della correlazione tra due numeri diversi. Se troviamo un coefficiente di 1,00, avremmo una correlazione positiva diretta. Una correlazione di 0,00 non mostrerebbe alcuna connessione tra due numeri. Qualunque cosa al di sotto di 0,00 indica una correlazione negativa, in altre parole, quando un numero aumenta, l'altro diminuisce.
+Il grafico sopra utilizza il <a  href="https://it.wikipedia.org/wiki/Indice_di_correlazione_di_Pearson">coefficiente di correlazione di Pearson</a>. C'è una definizione lunga e un po' complessa di cosa significhi precisamente, ma il succo è che stiamo cercando la forza della correlazione tra due numeri diversi. Se troviamo un coefficiente di 1,00, avremmo una correlazione positiva diretta. Una correlazione di 0,00 non mostrerebbe alcuna connessione tra due numeri. Qualunque cosa al di sotto di 0,00 indica una correlazione negativa, in altre parole, quando un numero aumenta, l'altro diminuisce.
 
-Innanzitutto, non sembra esserci molta correlazione misurabile tra le nostre metriche JavaScript e il punteggio di accessibilità Lighthouse ("LH A11y" nel grafico) qui. Ciò è in netto contrasto con ciò che è stato trovato altrove, in particolare tramite [la ricerca annuale di WebAim](https://webaim.org/projects/million/#frameworks).
+Innanzitutto, non sembra esserci molta correlazione misurabile tra le nostre metriche JavaScript e il punteggio di accessibilità Lighthouse ("LH A11y" nel grafico) qui. Ciò è in netto contrasto con ciò che è stato trovato altrove, in particolare tramite <a hreflang="en" href="https://webaim.org/projects/million/#frameworks">la ricerca annuale di WebAim</a>.
 
 La spiegazione più probabile è che i test di accessibilità di Lighthouse non sono così completi (ancora!) come ciò che è disponibile attraverso altri strumenti, come WebAIM, che hanno l'accessibilità come obiettivo principale.
 
@@ -678,7 +678,7 @@ La connessione tra il tempo di blocco totale e i byte JavaScript è ancora più 
 
 ### Vulnerabilità di sicurezza
 
-Un altro controllo utile eseguito da Lighthouse consiste nel verificare la presenza di vulnerabilità di sicurezza note nelle librerie di terze parti. Lo fa rilevando quali librerie e framework vengono utilizzati in una determinata pagina e quale versione viene utilizzata di ciascuno. Quindi controlla [il database delle vulnerabilità open source di Snyk](https://snyk.io/vuln?type=npm) per vedere quali vulnerabilità sono state scoperte negli strumenti identificati.
+Un altro controllo utile eseguito da Lighthouse consiste nel verificare la presenza di vulnerabilità di sicurezza note nelle librerie di terze parti. Lo fa rilevando quali librerie e framework vengono utilizzati in una determinata pagina e quale versione viene utilizzata di ciascuno. Quindi controlla <a hreflang="en" href="https://snyk.io/vuln?type=npm">il database delle vulnerabilità open source di Snyk</a> per vedere quali vulnerabilità sono state scoperte negli strumenti identificati.
 
 {{ figure_markup(
   caption="La percentuale di pagine per dispositivi mobili contiene almeno una libreria JavaScript vulnerabile.",

@@ -9,7 +9,7 @@ editors: [rachellcostello]
 translators: [chengxicn]
 discuss: 1762
 results: https://docs.google.com/spreadsheets/d/1zWzFSQ_ygb-gGr1H1BsJCfB7Z89zSIf7GX0UayVEte4/
-rviscomi_bio: Rick Viscomi 是谷歌的高级开发者项目工程师，从事网络透明度的工作，例如 HTTP Archive 和 Chrome UX Report, 并研究网站建设和体验的交集。Rick 是 <a href="https://www.youtube.com/playlist?list=PLNYkxOF6rcIBGvYSYO-VxOsaYQDw5rifJ">The State of the Web</a>的播主，专家们在其中讨论网络的发展趋势。 Rick 也是网站性能测试指南<a href="https://usingwpt.com">Using WebPageTest</a>的合著者, 他也经常在 <a href="https://dev.to/rick_viscomi">dev.to</a>发表关于Web的文章，他的推特是 <a href="https://twitter.com/rick_viscomi">@rick_viscomi</a>.
+rviscomi_bio: Rick Viscomi 是谷歌的高级开发者项目工程师，从事网络透明度的工作，例如 HTTP Archive 和 Chrome UX Report, 并研究网站建设和体验的交集。Rick 是 <a hreflang="en" href="https://www.youtube.com/playlist?list=PLNYkxOF6rcIBGvYSYO-VxOsaYQDw5rifJ">The State of the Web</a>的播主，专家们在其中讨论网络的发展趋势。 Rick 也是网站性能测试指南<a hreflang="en" href="https://usingwpt.com">Using WebPageTest</a>的合著者, 他也经常在 <a hreflang="en" href="https://dev.to/rick_viscomi">dev.to</a>发表关于Web的文章，他的推特是 <a href="https://twitter.com/rick_viscomi">@rick_viscomi</a>.
 featured_quote: 性能是用户体验的重要组成部分。对于许多网站来说，通过降低页面加载时间来改善用户体验与转化率的提高是一致的。相反，当性能不佳时，用户的转化率就不会像往常那样高，甚至还会在导致沮丧的页面观察到愤怒点击。
 featured_stat_1: 13%
 featured_stat_label_1: 有快速FCP的站点
@@ -21,7 +21,7 @@ featured_stat_label_3: 有快速FID的站点
 
 ## 介绍
 
-性能是用户体验的重要组成部分。对于[许多网站](https://wpostats.com/)来说，通过降低页面加载时间来改善用户体验与转化率的提高是一致的。相反，当性能不佳时，用户的转化率就不会像往常那样高，甚至还会在导致沮丧的页面观察到[愤怒点击](https://blog.fullstory.com/rage-clicks-turn-analytics-into-actionable-insights/)。
+性能是用户体验的重要组成部分。对于<a hreflang="en" href="https://wpostats.com/">许多网站</a>来说，通过降低页面加载时间来改善用户体验与转化率的提高是一致的。相反，当性能不佳时，用户的转化率就不会像往常那样高，甚至还会在导致沮丧的页面观察到<a hreflang="en" href="https://blog.fullstory.com/rage-clicks-turn-analytics-into-actionable-insights/">愤怒点击</a>。
 
 有许多方法可以量化Web性能。最关键的事情是要去量度什么是对用户而言真正重要。然而，`onload` 或者 `DOMContentLoaded` 之类的事件可能不一定反映用户的视觉体验。例如，当加载一个电子邮件客户端，收件箱内容异步加载的时候，它可能会显示一个进度栏。这里的问题在于 `onload` 事件不会等待收件箱异步加载。在这个范例中，对用户而言最重要的加载指标是"收件时间"，而关注`onload`事件可能会产生误导。基于这个原因，本章将研究更现代且普遍适用的绘制，加载和交互性指标，以尝试获得用户对页面的真实体验。
 
@@ -29,7 +29,7 @@ featured_stat_label_3: 有快速FID的站点
 
 ## 性能的状态
 
-几乎所有Web Almanac的章节都是基于[HTTP Archive](https://httparchive.org/)的数据。但是，为了捕获真实用户的Web体验，我们需要一个不同的数据集。在本章中，我们使用[Chrome 用户体验报告](http://bit.ly/chrome-ux-report) (CrUX)，这是一个Google的公共数据集，由与HTTP Archive相同的所有网站组成，汇总了Chrome用户访问这些网站的真实体验。体验分为以下类别：
+几乎所有Web Almanac的章节都是基于<a hreflang="en" href="https://httparchive.org/">HTTP Archive</a>的数据。但是，为了捕获真实用户的Web体验，我们需要一个不同的数据集。在本章中，我们使用[Chrome 用户体验报告](http://bit.ly/chrome-ux-report) (CrUX)，这是一个Google的公共数据集，由与HTTP Archive相同的所有网站组成，汇总了Chrome用户访问这些网站的真实体验。体验分为以下类别：
 
 - 用户设备外形
   - 桌面
@@ -43,7 +43,7 @@ featured_stat_label_3: 有快速FID的站点
   - 4G
 - 用户地理位置
 
-用户体验按月量度，包括绘制、加载和交互性指标。我们要看的第一个度量是[首次有内容的绘制](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint) (FCP)。这个指标是用户等待在屏幕上显示出有用处的页面内容（例如图像或文本）所花费的时间。然后，我们来看一下加载指标[首包时间](https://developer.mozilla.org/zh-CN/docs/Glossary/%E7%AC%AC%E4%B8%80%E5%AD%97%E8%8A%82%E6%97%B6%E9%97%B4) (TTFB)。这是网页从用户导航到接收到响应的第一个字节所花费的时间的指标。最后，我们要看的最后一个真实用户指标是[首次输入延迟](https://developers.google.com/web/updates/2018/05/first-input-delay) (FID)。这是一个相对较新的度量标准，它表示的是用户体验的部分，而不是加载性能。它测量从用户第一次与页面UI交互到浏览器主线程准备好处理事件的时间。
+用户体验按月量度，包括绘制、加载和交互性指标。我们要看的第一个度量是<a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint">首次有内容的绘制</a> (FCP)。这个指标是用户等待在屏幕上显示出有用处的页面内容（例如图像或文本）所花费的时间。然后，我们来看一下加载指标[首包时间](https://developer.mozilla.org/zh-CN/docs/Glossary/%E7%AC%AC%E4%B8%80%E5%AD%97%E8%8A%82%E6%97%B6%E9%97%B4) (TTFB)。这是网页从用户导航到接收到响应的第一个字节所花费的时间的指标。最后，我们要看的最后一个真实用户指标是<a hreflang="en" href="https://developers.google.com/web/updates/2018/05/first-input-delay">首次输入延迟</a> (FID)。这是一个相对较新的度量标准，它表示的是用户体验的部分，而不是加载性能。它测量从用户第一次与页面UI交互到浏览器主线程准备好处理事件的时间。
 
 因此，让我们深入研究看看可以找到哪些见解。
 
@@ -61,7 +61,7 @@ featured_stat_label_3: 有快速FID的站点
 
 <p class="note">注意：当用户的性能下降时，很难说出原因是什么。网站本身可能设计得很差且效率低下。或可能存在其他环境因素，例如用户的连接速度慢，没有缓存等。因此，在查看该现场数据时，我们更倾向于说用户自身的体验缓慢，而不一定是网站。</p>
 
-为了对网站是否足够**快速**进行分类，我们将使用新的[PageSpeed Insights](https://developers.google.com/speed/docs/insights/v5/about#categories) (PSI) 方法，其中至少有75％的网站FCP体验必须快于1秒。同样，一个足够**慢速**的网站具有25％或更多的FCP体验慢于3秒。我们说一个网站不符合以上两个条件时，它们的性能就是**中速**。
+为了对网站是否足够**快速**进行分类，我们将使用新的<a hreflang="en" href="https://developers.google.com/speed/docs/insights/v5/about#categories">PageSpeed Insights</a> (PSI) 方法，其中至少有75％的网站FCP体验必须快于1秒。同样，一个足够**慢速**的网站具有25％或更多的FCP体验慢于3秒。我们说一个网站不符合以上两个条件时，它们的性能就是**中速**。
 
  {{ figure_markup(
   image="fig2.png",
@@ -142,7 +142,7 @@ featured_stat_label_3: 有快速FID的站点
 
 ### 首包时间(TTFB)
 
-[首包时间](https://web.dev/time-to-first-byte) (TTFB)是页面从用户导航到接收到响应的第一个字节为止花费时间的度量。
+<a hreflang="en" href="https://web.dev/time-to-first-byte">首包时间</a> (TTFB)是页面从用户导航到接收到响应的第一个字节为止花费时间的度量。
 
 {{ figure_markup(
   image="nav-timing.png",
@@ -163,7 +163,7 @@ featured_stat_label_3: 有快速FID的站点
   )
 }}
 
-与图7.1中的FCP图表相似，这是按快速TTFB排序的1,000个代表性样本的视图。[快速 TTFB](https://developers.google.com/speed/docs/insights/Server#recommendations)是在0.2秒（200毫秒）内发生的，而慢速TTFB在1秒或更长时间内发生的，两者之间就属于中速。
+与图7.1中的FCP图表相似，这是按快速TTFB排序的1,000个代表性样本的视图。<a hreflang="en" href="https://developers.google.com/speed/docs/insights/Server#recommendations">快速 TTFB</a>是在0.2秒（200毫秒）内发生的，而慢速TTFB在1秒或更长时间内发生的，两者之间就属于中速。
 
 从快速比例的曲线来看，其形状与FCP完全不同。很少有网站的快速TTFB高于75％，而超过一半的网站百分比低于25％。
 
@@ -197,7 +197,7 @@ featured_stat_label_3: 有快速FID的站点
 
 ### 首次输入延迟
 
-我们将要查看的最后一个字段指标是[首次输入延迟](https://developers.google.com/web/updates/2018/05/first-input-delay) (FID)。此度量标准表示从用户第一次与页面UI交互到浏览器主线程准备处理事件的时间。请注意，这不包括应用程序实际花费在处理输入上的时间。最差的情况时，缓慢的FID会导致页面显示无响应，并给用户带来令人沮丧的体验。
+我们将要查看的最后一个字段指标是<a hreflang="en" href="https://developers.google.com/web/updates/2018/05/first-input-delay">首次输入延迟</a> (FID)。此度量标准表示从用户第一次与页面UI交互到浏览器主线程准备处理事件的时间。请注意，这不包括应用程序实际花费在处理输入上的时间。最差的情况时，缓慢的FID会导致页面显示无响应，并给用户带来令人沮丧的体验。
 
 让我们从定义一些阈值开始。根据新的PSI方法，**快速**FID是在100毫秒内发生的。这为应用程序提供了足够的时间来处理输入事件，并在瞬时的感觉时间内向用户提供反馈。一个**慢速**FID在300毫秒或更长时间内发生的。 介于两者之间的一切成为**中速**。
 
@@ -294,6 +294,6 @@ featured_stat_label_3: 有快速FID的站点
 
 本章中提供的数据表明，要实现为快速网站设定的目标仍有大量工作要做。 某些外形尺寸、有效的连接类型和地理位置确实与更好的用户体验相关，但是我们不能忘记组合中性能差的那部分人口统计也在其中。在许多情况下Web平台用于商业，通过提高转化率来赚更多钱会是提升网站速度的巨大驱动力。 归根结底，对于所有网站而言，性能都是要为用户提供积极的体验，而不应阻碍、挫败或激怒用户。
 
-随着网络的年纪又长了一岁，我们衡量用户体验的能力也逐步提高，我期待开发人员能够访问和捕获更多整体用户体验的指标。FCP在向用户展示有用内容上还处于非常初期的阶段，而诸如[最大内容绘制](https://web.dev/largest-contentful-paint) (LCP)之类的新指标正在涌现，提高了我们对页面加载感知的能见度。而[不稳定布局API](https://web.dev/layout-instability-api)也给我们了超越页面加载之外的视角，一窥用户对访问性能的沮丧体验。
+随着网络的年纪又长了一岁，我们衡量用户体验的能力也逐步提高，我期待开发人员能够访问和捕获更多整体用户体验的指标。FCP在向用户展示有用内容上还处于非常初期的阶段，而诸如<a hreflang="en" href="https://web.dev/largest-contentful-paint">最大内容绘制</a> (LCP)之类的新指标正在涌现，提高了我们对页面加载感知的能见度。而<a hreflang="en" href="https://web.dev/layout-instability-api">不稳定布局API</a>也给我们了超越页面加载之外的视角，一窥用户对访问性能的沮丧体验。
 
 配备了这些新指标后，2020年的网络将变得更加透明，更易于理解，并为开发人员创造有利条件来产生更有意义的进步，提升网络性能并为用户带来积极的体验。

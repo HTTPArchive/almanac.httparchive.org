@@ -7,7 +7,7 @@ reviewers: [sirjonathan, ernee, amedina]
 analysts: [GregBrimble, rviscomi]
 editors: [bazzadp]
 translators: []
-alexdenning_bio: Alex Denning is the Founder of <a href="https://getellipsis.com/">Ellipsis Marketing</a>, a marketing agency for WordPress businesses. Alex is a WordPress Core Contributor and has helped organize <a href="https://london.wordcamp.org/">WordCamp London</a>.
+alexdenning_bio: Alex Denning is the Founder of <a hreflang="en" href="https://getellipsis.com/">Ellipsis Marketing</a>, a marketing agency for WordPress businesses. Alex is a WordPress Core Contributor and has helped organize <a hreflang="en" href="https://london.wordcamp.org/">WordCamp London</a>.
 discuss: 2051
 results: https://docs.google.com/spreadsheets/d/1vTf459CcCbBuYeGvgo-RSidppR62SfM-VTkW-dfS3K4/
 featured_quote: The term Content Management System (CMS) refers to systems enabling individuals and organizations to create, manage, and publish content. A CMS for web content, specifically, is a system aimed at creating, managing, and publishing content to be consumed and experienced via the internet.
@@ -89,7 +89,7 @@ More than 42% of web pages are powered by a CMS platform, an increase of over 5%
 
 The increase in desktop web pages powered by a CMS platform is 5.43% from last year. On mobile this increase is roughly a quarter higher, at 6.71%.
 
-As with [last year](../2019/cms#cms-adoption), we see different results from other datasets for tracking market share of CMS platforms, such as [W3Techs](https://w3techs.com/technologies/history_overview/content_management). W3Techs reports at the time of writing that 60.6% of web pages are created by CMSs, up from 56.4% a year ago. This is a 6.4% increase, which broadly matches our findings.
+As with [last year](../2019/cms#cms-adoption), we see different results from other datasets for tracking market share of CMS platforms, such as <a hreflang="en" href="https://w3techs.com/technologies/history_overview/content_management">W3Techs</a>. W3Techs reports at the time of writing that 60.6% of web pages are created by CMSs, up from 56.4% a year ago. This is a 6.4% increase, which broadly matches our findings.
 
 The deviation between our analysis and W3Techs' analysis can be explained by a difference in research methodologies. You can read more about ours on the [Methodology](./methodology) page.
 
@@ -299,7 +299,7 @@ When we look at CMS adoption share relative to other CMSs (thus excluding websit
 
 WordPress dominates this space and thus deserves further discussion.
 
-[WordPress is an open source project](https://wordpress.org/about/) with a mission to "democratize publishing". The CMS is free. While this is likely an important factor in its adoption share, the two next most popular CMSs–Joomla and Drupal–are also free. The WordPress community, contributors, and business ecosystem are likely the major differentiators.
+<a hreflang="en" href="https://wordpress.org/about/">WordPress is an open source project</a> with a mission to "democratize publishing". The CMS is free. While this is likely an important factor in its adoption share, the two next most popular CMSs–Joomla and Drupal–are also free. The WordPress community, contributors, and business ecosystem are likely the major differentiators.
 
 A "core" WordPress community maintains the CMS and services requirements for additional functionality through custom services and products (themes and plugins). This community has an outsized impact, with a relatively small number of people maintaining both the CMS itself and providing the additional functionality which makes WordPress sufficiently powerful and flexible that it can service most types of website. This flexibility is important when explaining the market share.
 
@@ -419,9 +419,9 @@ All of the top 5 CMSs score highly here with median scores of 0.83 or above, wit
 
 #### Accessibility
 
-An accessible website is a site designed and developed so that people with disabilities can use them. Web accessibility also benefits people without disabilities, such as those on slow internet connections. [A full discussion can be seen here](https://www.w3.org/WAI/fundamentals/accessibility-intro/#what), and in our [Accessibility](./accessibility) chapter.
+An accessible website is a site designed and developed so that people with disabilities can use them. Web accessibility also benefits people without disabilities, such as those on slow internet connections. <a hreflang="en" href="https://www.w3.org/WAI/fundamentals/accessibility-intro/#what">A full discussion can be seen here</a>, and in our [Accessibility](./accessibility) chapter.
 
-Lighthouse provides a set of accessibility audits and it returns a weighted average of all of them (see [Scoring Details](https://web.dev/accessibility-scoring/) for a full list of how each audit is weighted).
+Lighthouse provides a set of accessibility audits and it returns a weighted average of all of them (see <a hreflang="en" href="https://web.dev/accessibility-scoring/">Scoring Details</a> for a full list of how each audit is weighted).
 
 Each accessibility audit is either a pass or a fail, but unlike other Lighthouse audits, a page doesn't get points for partially passing an accessibility audit. For example, if some elements have screen reader-friendly names, but others don't, that page gets a 0 for the screen reader-friendly-names audit.
 
@@ -441,9 +441,9 @@ The bar should be higher here, though. An average score of 0.78 across all CMSs 
 
 ## Environmental impact
 
-This year we've sought to better understand the impact of CMSs on the environment. [The information and communications technology (ICT) industry accounts for 2% of global carbon emissions](https://www.nature.com/articles/d41586-018-06610-y), and data centers specifically account for 0.3% of global carbon emissions. This puts the ICT industry's carbon footprint equivalent to the aviation industry's emissions from fuel. We don't have data on the role of CMSs here, but with our research showing 42% of websites use a CMS, it is clear CMSs play an important role in the efficiency of websites and their impact on the environment.
+This year we've sought to better understand the impact of CMSs on the environment. <a hreflang="en" href="https://www.nature.com/articles/d41586-018-06610-y">The information and communications technology (ICT) industry accounts for 2% of global carbon emissions</a>, and data centers specifically account for 0.3% of global carbon emissions. This puts the ICT industry's carbon footprint equivalent to the aviation industry's emissions from fuel. We don't have data on the role of CMSs here, but with our research showing 42% of websites use a CMS, it is clear CMSs play an important role in the efficiency of websites and their impact on the environment.
 
-Our research looked at the average CMS page weight in KB and mapped this to CO2 emissions using logic from [carbonapi](https://gitlab.com/wholegrain/carbon-api-2-0/-/blob/master/includes/carbonapi.php#L342). This generated the following results, split by desktop and mobile:
+Our research looked at the average CMS page weight in KB and mapped this to CO2 emissions using logic from <a hreflang="en" href="https://gitlab.com/wholegrain/carbon-api-2-0/-/blob/master/includes/carbonapi.php#L342">carbonapi</a>. This generated the following results, split by desktop and mobile:
 
 {{ figure_markup(
   image="cms-carbon-emissions-per-cms-page-view.png",
@@ -497,7 +497,7 @@ One of the main ways a CMS can influence its page load size is by supporting and
   )
 }}
 
-Video contributes a larger percentage per resource type here. Making video more efficient, or other mechanisms such as the impact of stopping autoplay, are interesting areas for future research. Here our focus is on images. Popular image formats are JPEG, PNG, GIF, SVG, WebP, and ICO. Of these, [WebP is the most efficient in most situations](https://developers.google.com/speed/webp/), with WebP lossless images [26% smaller](https://developers.google.com/speed/webp/docs/webp_lossless_alpha_study#results) than equivalent PNGs and [25-34% smaller](https://developers.google.com/speed/webp/docs/webp_study) than comparable JPGs. We see, however, that WebP is the second least popular image format across all CMS pages:
+Video contributes a larger percentage per resource type here. Making video more efficient, or other mechanisms such as the impact of stopping autoplay, are interesting areas for future research. Here our focus is on images. Popular image formats are JPEG, PNG, GIF, SVG, WebP, and ICO. Of these, <a hreflang="en" href="https://developers.google.com/speed/webp/">WebP is the most efficient in most situations</a>, with WebP lossless images <a hreflang="en" href="https://developers.google.com/speed/webp/docs/webp_lossless_alpha_study#results">26% smaller</a> than equivalent PNGs and <a hreflang="en" href="https://developers.google.com/speed/webp/docs/webp_study">25-34% smaller</a> than comparable JPGs. We see, however, that WebP is the second least popular image format across all CMS pages:
 
 {{ figure_markup(
   image="cms-popularity-of-image-formats.png",
