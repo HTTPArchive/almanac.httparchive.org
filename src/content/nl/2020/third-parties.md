@@ -37,7 +37,7 @@ Een bron van derden is een entiteit buiten de primaire site-gebruikerrelatie. He
 
 We beschouwen bronnen van derden als:
 
-* Gehost op een _shared_ en _public_ oorsprong
+* Gehost op een _gedeelde_ en _openbare_ oorsprong
 * Op grote schaal gebruikt door verschillende sites
 * Niet beïnvloed door een individuele site-eigenaar
 
@@ -261,14 +261,15 @@ We kunnen de aanwezigheid van categorieën van derden correleren met de totale C
 
 Deze grafiek toont de kansdichtheidsfunctie van de totale CPU-tijd van de pagina door de categorieën van derden die op elke pagina aanwezig zijn. De mediaanpagina staat op 50 op de percentielas. De gegevens laten zien dat alle categorieën van derden een vergelijkbaar patroon volgen, met een gemiddelde pagina tussen de 400 - 1.000 ms CPU-tijd. De uitbijter hier is adverteren (in het zwart): als een pagina reclametags heeft, is de kans veel groter dat het CPU-gebruik tijdens het laden van de pagina wordt verhoogd. De mediaanpagina met reclametags heeft een CPU-laadtijd van 1.500 ms, vergeleken met 500 ms voor pagina's zonder reclame. De hoge CPU-laadtijd bij de lagere percentielen geeft aan dat zelfs de snelste sites aanzienlijk worden beïnvloed door de aanwezigheid van derden die als advertenties worden gecategoriseerd.
 
-## Prevalentie van Timing-Allow-Origin
+## Prevalentie van `timing-allow-origin`
 
 Met de [Resource Timing API](https://developer.mozilla.org/en-US/docs/Web/API/Resource_Timing_API/Using_the_Resource_Timing_API) kunnen website-eigenaren de prestaties van individuele bronnen meten via JavaScript. Deze gegevens zijn standaard extreem beperkt voor bronnen van verschillende oorsprong, zoals inhoud van derden. Er zijn legitieme redenen om deze timinginformatie niet te verstrekken, zoals reacties die verschillen per authenticatiestatus: bijv. een website-eigenaar kan mogelijk bepalen of een bezoeker is ingelogd op Facebook door de responsgrootte van een widgetverzoek te meten. Voor de meeste inhoud van derden is het instellen van de `timing-allow-origin`-header echter een daad van transparantie om de hostingwebsite in staat te stellen de prestaties en de grootte van hun inhoud van derden te volgen.
 
 {{ figure_markup(
   image="requests-with-tao.png",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=1886505312&format=interactive",
-  caption="Verzoeken met de Timing-Allow-Origin koptekst.",
+  alt="Verzoeken met de Timing-Allow-Origin koptekst.",
+  caption="Verzoeken met de `timing-allow-origin` koptekst.",
   description="Minder dan 35% van de reacties van derden wordt weergegeven met een timing-allow-origin-header",
   width=600,
   height=371,
