@@ -10,7 +10,7 @@ analysts: [tomvangoethem, nrllh]
 editors: [bazzadp]
 translators: [noah-vdv]
 tomvangoethem_bio: Tom Van Goethem is onderzoeker bij de <a hreflang="en" href="https://distrinet.cs.kuleuven.be/">DistriNet groep</a> van de universiteit van Leuven, België. Zijn onderzoek is gericht op het ontdekken van nieuwe side-channel aanvallen op het web die tot beveiligings- of privacyproblemen leiden, en op het oplossen van de lekken die deze veroorzaken.
-nrllh_bio: Nurullah Demir is een beveiligingsonderzoeker en PhD-student bij <a hreflang="en" href="https://www.internet-sicherheit.de/"><span>Institute for Internet Security</span></a>. Zijn onderzoek richt zich op robuuste webbeveiligingsmechanismen en vijandige machine learning.
+nrllh_bio: Nurullah Demir is een beveiligingsonderzoeker en PhD-student bij <a hreflang="en" href="https://www.internet-sicherheit.de/en/"><span>Institute for Internet Security</span></a>. Zijn onderzoek richt zich op robuuste webbeveiligingsmechanismen en vijandige machine learning.
 bazzadp_bio: Barry Pollard is een softwareontwikkelaar en auteur van het Manning-boek <a hreflang="en" href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a>. Hij vindt het web geweldig, maar wil het nog beter maken. Je kunt hem vinden op <a href="https://twitter.com/tunetheweb">@tunetheweb</a> en op zijn blog <a hreflang="en" href="https://www.tunetheweb.com">www.tunetheweb.com</a>.
 discuss: 2047
 results: https://docs.google.com/spreadsheets/d/1T7sxPP5BV3uwv-sXhBEZraVk-obd0tDfFrLiD49nZC0/
