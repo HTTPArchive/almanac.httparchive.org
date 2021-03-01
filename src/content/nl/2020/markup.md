@@ -761,7 +761,7 @@ Deze sectie gaat over hoe attributen worden gebruikt in documenten en onderzoekt
 
 ### Topattributen
 
-Vergelijkbaar met de sectie over de meest [populaire elementen](#topelementen), gaat deze sectie in op de meest populaire attributen op internet. Gezien hoe belangrijk het `href`-attribuut is voor het web zelf, of het `alt`-attribuut om informatie [toegankelijk](./accessibility#images-and-their-text-alternatives) te maken, zouden dit dan de meest populaire attributen zijn?
+Vergelijkbaar met de sectie over de meest [populaire elementen](#topelementen), gaat deze sectie in op de meest populaire attributen op internet. Gezien hoe belangrijk het `href`-attribuut is voor het web zelf, of het `alt`-attribuut om informatie [toegankelijk](./accessibility#afbeeldingen-en-hun-tekstalternatieven) te maken, zouden dit dan de meest populaire attributen zijn?
 
 <figure>
   <table>
