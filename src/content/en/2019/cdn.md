@@ -56,7 +56,7 @@ There are many limits to the testing [methodology](./methodology) used for the W
 Most importantly, these results reflect a potential utilization but do not reflect actual impact. YouTube is more popular than "ShoesByColin" yet both will appear as equal value when comparing utilization.
 
 With this in mind, there are a few intentional statistics that were not measured with the context of a CDN:
-* **TTFB**: Measuring the Time to first byte _by CDN_ would be intellectually dishonest without proper knowledge about cacheability and cache effectiveness. If one site uses a CDN for **round trip time** (RTT) management but not for caching, this would create a disadvantage when comparing another site that uses a different CDN vendor but does also caches the content.  _(Note: this does not apply to the TTFB analysis in the [Performance](./performance#time-to-first-byte-ttfb) chapter because it does not draw conclusions about the performance of individual CDNs.)_
+* **TTFB**: Measuring the Time to first byte _by CDN_ would be intellectually dishonest without proper knowledge about cacheability and cache effectiveness. If one site uses a CDN for **round trip time** (RTT) management but not for caching, this would create a disadvantage when comparing another site that uses a different CDN vendor but does also caches the content.  _(Note: this does not apply to the TTFB analysis in the [Performance](./performance#time-to-first-byte) chapter because it does not draw conclusions about the performance of individual CDNs.)_
 * **Cache Hit vs. Cache Miss performance**: As mentioned previously, this is opaque to the testing apparatus and therefore repeat tests to test page performance with a cold cache vs. a hot cache are unreliable.
 
 ### Further stats

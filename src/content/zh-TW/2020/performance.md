@@ -263,7 +263,7 @@ FID 分數的地理分佈結果證實了上一段綜合裝置圖表的結果。�
 
 對比前年同期手機裝置的 FCP 數值的話，我們可以觀察到好的體驗變少了，且中等及不佳的體驗增加了。75% 的網站的 FCP 值低於平均。我們可以推測如此高比例的 FCP 數值低於理想值，必定是造成使用者感到挫折或是使用者體驗下降的原因之一。
 
-還有很多種因素可能造成繪製延遲，例如：<span lang="en">server</span> 延遲時間（以一些衡量標準來評估，例如：[<span lang="en">Time to First Byte</span> (TTFB)](#time-to-first-byte-ttfb) 以及 RTT），阻擋 <span lang="en">JavaScript requests</span> 或是沒被適當處理的客製化字體等等。
+還有很多種因素可能造成繪製延遲，例如：<span lang="en">server</span> 延遲時間（以一些衡量標準來評估，例如：[<span lang="en">Time to First Byte</span> (TTFB)](#time-to-first-byte) 以及 RTT），阻擋 <span lang="en">JavaScript requests</span> 或是沒被適當處理的客製化字體等等。
 
 ### 根據地理位置來分析 FCP
 
