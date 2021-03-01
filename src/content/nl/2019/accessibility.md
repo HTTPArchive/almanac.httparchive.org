@@ -11,7 +11,7 @@ discuss: 1764
 results: https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/
 nektarios-paisios_bio: Nektarios Paisios is een software-engineer die de afgelopen 5 jaar aan de toegankelijkheid van Chrome heeft gewerkt. Hij richt zich voornamelijk op het compatibel maken van Chrome met ondersteunende software van derden, zoals schermlezers en schermvergroters. Voordat Nektarios aan de toegankelijkheid van Chrome werkte, werkte hij in verschillende andere rollen bij het bedrijf, zoals toegankelijkheid voor GSuite en display-advertenties. Nektarios heeft een Ph.D. in Computer Science van de New York University.
 obto_bio: David Fox is de hoofdonderzoeker naar bruikbaarheid en oprichter van LookZook, een bedrijf dat geobsedeerd is door alles te weten te komen over het bouwen van webervaringen die voldoen aan de verwachtingen van gebruikers. Hij is een website-psycholoog die zich verdiept in sites om niet alleen te leren waarmee gebruikers worstelen, maar ook waarom en hoe ze hun ervaring het beste kunnen verbeteren. Hij is ook een Google Chromium-bijdrager, spreker en aanbieder van webinars en UX-trainingen.
-kleinab_bio: Abigail Klein is een Google-software-engineer. Ze werkte aan de webtoegankelijkheid van Google Documenten, Spreadsheets en Presentaties, waar ze <a href="https://www.blog.google/outreach-initiatives/accessibility/whats-you-say-present-captions-google-slides/">automatische ondertiteling voor Google Presentaties toevoegde</a>, evenals verbeterde ondersteuning voor schermlezer, braille, schermvergroting en hoog contrast. Ze werkt momenteel aan de toegankelijkheid van Google Chrome en ChromeOS. Ze heeft een bachelor en master in informatica van MIT, waar ze medeoprichter was van een ondersteunende technologie hackathon en labassistent en gastdocent was van de les ondersteunende technologie.
+kleinab_bio: Abigail Klein is een Google-software-engineer. Ze werkte aan de webtoegankelijkheid van Google Documenten, Spreadsheets en Presentaties, waar ze <a hreflang="en" href="https://www.blog.google/outreach-initiatives/accessibility/whats-you-say-present-captions-google-slides/">automatische ondertiteling voor Google Presentaties toevoegde</a>, evenals verbeterde ondersteuning voor schermlezer, braille, schermvergroting en hoog contrast. Ze werkt momenteel aan de toegankelijkheid van Google Chrome en ChromeOS. Ze heeft een bachelor en master in informatica van MIT, waar ze medeoprichter was van een ondersteunende technologie hackathon en labassistent en gastdocent was van de les ondersteunende technologie.
 featured_quote: Toegankelijkheid op internet is essentieel voor een inclusieve en rechtvaardige samenleving. Naarmate meer van ons sociale en werkleven naar de online wereld verhuizen, wordt het voor mensen met een handicap nog belangrijker om zonder belemmeringen aan alle online interacties te kunnen deelnemen. Net zoals gebouwarchitecten toegankelijkheidsfuncties kunnen creëren of weglaten, zoals rolstoelhellingen, kunnen webontwikkelaars de ondersteunende technologie waar gebruikers op vertrouwen helpen of hinderen.
 featured_stat_1: 22%
 featured_stat_label_1: Sites met voldoende kleurcontrast
@@ -29,7 +29,7 @@ Als we aan gebruikers met een handicap denken, moeten we niet vergeten dat hun g
 
 Vaak heeft het verbeteren van de toegankelijkheid van uw site voordelen voor iedereen. Hoewel we mensen met een handicap doorgaans zien als mensen met een blijvende handicap, kan iedereen een tijdelijke of situationele handicap hebben. Iemand kan bijvoorbeeld permanent blind zijn, een tijdelijke ooginfectie hebben of, in bepaalde situaties, buiten onder een felle zon staan. Dit kan allemaal verklaren waarom iemand zijn scherm niet kan zien. Iedereen heeft situationele handicaps, en dus het verbeteren van de toegankelijkheid van uw webpagina zal de ervaring van alle gebruikers in elke situatie verbeteren.
 
-De [Richtlijnen voor Toegankelijkheid van Webinhoud](https://www.w3.org/WAI/WCAG21/quickref/) (WCAG) adviseren hoe je een website toegankelijk kunt maken. Deze richtlijnen zijn gebruikt als basis voor onze analyse. In veel gevallen is het echter moeilijk om de toegankelijkheid van een website programmatisch te analyseren. Het webplatform biedt bijvoorbeeld verschillende manieren om vergelijkbare functionele resultaten te bereiken, maar de onderliggende code die ze aandrijft, kan compleet anders zijn. Daarom is onze analyse slechts een benadering van de algehele webtoegankelijkheid.
+De <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/quickref/">Richtlijnen voor Toegankelijkheid van Webinhoud</a> (WCAG) adviseren hoe je een website toegankelijk kunt maken. Deze richtlijnen zijn gebruikt als basis voor onze analyse. In veel gevallen is het echter moeilijk om de toegankelijkheid van een website programmatisch te analyseren. Het webplatform biedt bijvoorbeeld verschillende manieren om vergelijkbare functionele resultaten te bereiken, maar de onderliggende code die ze aandrijft, kan compleet anders zijn. Daarom is onze analyse slechts een benadering van de algehele webtoegankelijkheid.
 
 We hebben onze meest interessante inzichten opgedeeld in vier categorieën: leesgemak, media op internet, gemakkelijke paginanavigatie en compatibiliteit met ondersteunende technologieën.
 
@@ -60,7 +60,7 @@ Slechts 22,04% van de sites gaf al hun tekst voldoende kleurcontrast. Of met and
 
 ### Pagina's zoomen en schalen
 
-Het gebruik van een [leesbare lettergrootte](https://accessibleweb.com/question-answer/minimum-font-size/) en [doelgrootte](https://www.w3.org/WAI/WCAG21/quickref/#target-size) helpt gebruikers uw website te lezen en ermee te communiceren. Maar zelfs websites die al deze richtlijnen perfect volgen, kunnen niet voldoen aan de specifieke behoeften van elke bezoeker. Dit is de reden waarom apparaatfuncties zoals knijpen om te zoomen en schalen zo belangrijk zijn: ze stellen gebruikers in staat uw pagina's aan te passen zodat aan hun behoeften wordt voldaan. Of in het geval van bijzonder ontoegankelijke sites die kleine lettertypen en knoppen gebruiken, geeft het gebruikers de kans om de site zelfs te gebruiken.
+Het gebruik van een <a hreflang="en" href="https://accessibleweb.com/question-answer/minimum-font-size/">leesbare lettergrootte</a> en <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/quickref/#target-size">doelgrootte</a> helpt gebruikers uw website te lezen en ermee te communiceren. Maar zelfs websites die al deze richtlijnen perfect volgen, kunnen niet voldoen aan de specifieke behoeften van elke bezoeker. Dit is de reden waarom apparaatfuncties zoals knijpen om te zoomen en schalen zo belangrijk zijn: ze stellen gebruikers in staat uw pagina's aan te passen zodat aan hun behoeften wordt voldaan. Of in het geval van bijzonder ontoegankelijke sites die kleine lettertypen en knoppen gebruiken, geeft het gebruikers de kans om de site zelfs te gebruiken.
 
 Er zijn zeldzame gevallen waarin het uitschakelen van schalen acceptabel is, zoals wanneer de betreffende pagina een webgebaseerd spel is met aanraakbediening. Indien ingeschakeld in dit geval, zullen de telefoons van spelers elke keer dat de speler tweemaal op het spel tikt in- en uitzoomen, waardoor het ironisch genoeg ontoegankelijk wordt.
 
@@ -70,7 +70,7 @@ Daarom krijgen ontwikkelaars de mogelijkheid om deze functie uit te schakelen do
 
 2. `maximum-scale` ingesteld op `1`, `1.0`, enz.
 
-Helaas hebben ontwikkelaars dit zo vaak misbruikt dat bijna één op de drie sites op mobiele apparaten (32,21%) deze functie uitschakelt, en Apple (vanaf iOS 10) webontwikkelaars niet langer toestaat zoomen uit te schakelen. Mobile Safari [negeert gewoon de tag](https://archive.org/details/ios-10-beta-release-notes). Alle sites, wat er ook gebeurt, kunnen worden ingezoomd en geschaald op nieuwere iOS-apparaten.
+Helaas hebben ontwikkelaars dit zo vaak misbruikt dat bijna één op de drie sites op mobiele apparaten (32,21%) deze functie uitschakelt, en Apple (vanaf iOS 10) webontwikkelaars niet langer toestaat zoomen uit te schakelen. Mobile Safari <a hreflang="en" href="https://archive.org/details/ios-10-beta-release-notes">negeert gewoon de tag</a>. Alle sites, wat er ook gebeurt, kunnen worden ingezoomd en geschaald op nieuwere iOS-apparaten.
 
 {{ figure_markup(
   image="fig2.png",
@@ -102,7 +102,7 @@ Het is echter interessant om op te merken dat het grootste deel van dit probleem
 
 ### Alternatieve tekst op afbeeldingen
 
-Afbeeldingen zijn een essentieel onderdeel van de webervaring. Ze kunnen krachtige verhalen vertellen, aandacht trekken en emoties opwekken. Maar niet iedereen kan deze afbeeldingen zien waarop we vertrouwen om delen van onze verhalen te vertellen. Gelukkig bood HTML 2.0 in 1995 een oplossing voor dit probleem: [het `alt`-attribuut](https://webaim.org/techniques/alttext/). Het `alt`-attribuut biedt webontwikkelaars de mogelijkheid om een tekstuele beschrijving toe te voegen aan de afbeeldingen die we gebruiken, zodat wanneer iemand onze afbeeldingen niet kan zien (of de afbeeldingen niet kunnen laden) ze de `alt`-tekst kunnen lezen voor een beschrijving. De `alt`-tekst vult ze in van het deel van het verhaal dat ze anders zouden hebben gemist.
+Afbeeldingen zijn een essentieel onderdeel van de webervaring. Ze kunnen krachtige verhalen vertellen, aandacht trekken en emoties opwekken. Maar niet iedereen kan deze afbeeldingen zien waarop we vertrouwen om delen van onze verhalen te vertellen. Gelukkig bood HTML 2.0 in 1995 een oplossing voor dit probleem: <a hreflang="en" href="https://webaim.org/techniques/alttext/">het `alt`-attribuut</a>. Het `alt`-attribuut biedt webontwikkelaars de mogelijkheid om een tekstuele beschrijving toe te voegen aan de afbeeldingen die we gebruiken, zodat wanneer iemand onze afbeeldingen niet kan zien (of de afbeeldingen niet kunnen laden) ze de `alt`-tekst kunnen lezen voor een beschrijving. De `alt`-tekst vult ze in van het deel van het verhaal dat ze anders zouden hebben gemist.
 
 Hoewel alt-attributen al 25 jaar bestaan, levert 49,91% van de pagina's nog steeds geen alt-attributen voor sommige van hun afbeeldingen en 8,68% van de pagina's gebruikt ze helemaal nooit.
 
@@ -184,7 +184,7 @@ Bij veel populaire schermlezers kunnen gebruikers ook navigeren door snel door k
 
 ### Vermijdingslinks
 
-Een [vermijdingslink](https://webaim.org/techniques/skipnav/) is een link die bovenaan een pagina wordt geplaatst en waarmee schermlezers of gebruikers met alleen toetsenbord direct naar de hoofdinhoud kunnen gaan. Het "slaat" effectief alle navigatielinks en menu's boven aan de pagina over. Vermijdingslinks zijn vooral handig voor toetsenbordgebruikers die geen schermlezer gebruiken, aangezien deze gebruikers gewoonlijk geen toegang hebben tot andere modi voor snelle navigatie (zoals Hoofdinhoudsgebieden en koppen). 14,19% van de pagina's in onze steekproef bleken vermijdingslinks te hebben.
+Een <a hreflang="en" href="https://webaim.org/techniques/skipnav/">vermijdingslink</a> is een link die bovenaan een pagina wordt geplaatst en waarmee schermlezers of gebruikers met alleen toetsenbord direct naar de hoofdinhoud kunnen gaan. Het "slaat" effectief alle navigatielinks en menu's boven aan de pagina over. Vermijdingslinks zijn vooral handig voor toetsenbordgebruikers die geen schermlezer gebruiken, aangezien deze gebruikers gewoonlijk geen toegang hebben tot andere modi voor snelle navigatie (zoals Hoofdinhoudsgebieden en koppen). 14,19% van de pagina's in onze steekproef bleken vermijdingslinks te hebben.
 
 Als je zelf een vermijdingslink in actie wilt zien, dan kan dat! Voer gewoon een snelle Google-zoekopdracht uit en klik op "<kbd>tab</kbd>" zodra u op de pagina's met zoekresultaten terechtkomt. U wordt begroet met een eerder verborgen link, net als die in afbeelding 9.7.
 
@@ -197,19 +197,19 @@ Als je zelf een vermijdingslink in actie wilt zien, dan kan dat! Voer gewoon een
   )
 }}
 
-In feite hoeft u deze site niet eens te verlaten, aangezien we [ze hier ook gebruiken](https://github.com/HTTPArchive/almanac.httparchive.org/pull/645)!
+In feite hoeft u deze site niet eens te verlaten, aangezien we <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/645">ze hier ook gebruiken</a>!
 
 Het is moeilijk om nauwkeurig te bepalen wat een vermijdingslink is bij het analyseren van sites. Als we voor deze analyse een ankerlink (`href=#heading1`) vonden binnen de eerste 3 links op de pagina, hebben we dit gedefinieerd als een pagina met een vermijdingslink. Dus 14,19% is een strikte bovengrens.
 
 ### Snelkoppelingen
 
-Sneltoetsen ingesteld met de [`aria-keyshortcuts`](https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts) of [`accesskey`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey) -attributen kunnen op twee manieren worden gebruikt:
+Sneltoetsen ingesteld met de <a hreflang="en" href="https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts">`aria-keyshortcuts`</a> of [`accesskey`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey) -attributen kunnen op twee manieren worden gebruikt:
 
 1. Een element op de pagina activeren, zoals een link of knop.
 
 2. Een bepaald element op de paginafocus geven. Bijvoorbeeld het verschuiven van de focus naar een bepaalde invoer op de pagina, zodat een gebruiker er vervolgens in kan typen.
 
-Adoptie van [`aria-keyshortcuts`](https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts) was bijna afwezig in onze steekproef, en werd alleen gebruikt op 159 sites van meer dan 4 miljoen geanalyseerd. Het [`accesskey`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey) attribuut werd vaker gebruikt en werd gevonden op 2,47% van de webpagina's (1,74% op mobiele). We zijn van mening dat het hogere gebruik van snelkoppelingen op desktops het gevolg is van het feit dat ontwikkelaars verwachten dat mobiele sites alleen toegankelijk zijn via een touchscreen en niet via een toetsenbord.
+Adoptie van <a hreflang="en" href="https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts">`aria-keyshortcuts`</a> was bijna afwezig in onze steekproef, en werd alleen gebruikt op 159 sites van meer dan 4 miljoen geanalyseerd. Het [`accesskey`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey) attribuut werd vaker gebruikt en werd gevonden op 2,47% van de webpagina's (1,74% op mobiele). We zijn van mening dat het hogere gebruik van snelkoppelingen op desktops het gevolg is van het feit dat ontwikkelaars verwachten dat mobiele sites alleen toegankelijk zijn via een touchscreen en niet via een toetsenbord.
 
 Wat hier vooral verrassend is, is dat 15,56% van de mobiele en 13,03% van de desktopsites die sneltoetsen gebruiken, dezelfde snelkoppeling toewijzen aan meerdere verschillende elementen. Dit betekent dat browsers moeten raden welk element deze sneltoets moet bezitten.
 
@@ -235,7 +235,7 @@ Desondanks bevat slechts 4,32% van de pagina's met tabellen bijschriften.
 
 ### Het gebruik van ARIA
 
-Een van de meest populaire en meest gebruikte specificaties voor toegankelijkheid op internet is de <a href="https://www.w3.org/WAI/standards-guidelines/aria/" lang="en">Accessible Rich Internet Applications</a> (ARIA) -standaard. Deze standaard biedt een groot aantal aanvullende HTML-attributen om het doel achter visuele elementen (d.w.z. hun semantische betekenis) over te brengen en tot wat voor soort acties ze in staat zijn.
+Een van de meest populaire en meest gebruikte specificaties voor toegankelijkheid op internet is de <a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/aria/" lang="en">Accessible Rich Internet Applications</a> (ARIA) -standaard. Deze standaard biedt een groot aantal aanvullende HTML-attributen om het doel achter visuele elementen (d.w.z. hun semantische betekenis) over te brengen en tot wat voor soort acties ze in staat zijn.
 
 Het correct en gepast gebruiken van ARIA kan een uitdaging zijn. Van pagina's die gebruik maken van ARIA-attributen, hebben we bijvoorbeeld vastgesteld dat 12,31% ongeldige waarden heeft toegewezen aan hun attributen. Dit is problematisch omdat elke fout bij het gebruik van een ARIA-attribuut geen visueel effect heeft op de pagina. Sommige van deze fouten kunnen worden opgespoord met behulp van een geautomatiseerde validatietool, maar over het algemeen vereisen ze hands-on gebruik van echte ondersteunende software (zoals een schermlezer). In dit gedeelte wordt onderzocht hoe ARIA op internet wordt gebruikt en welke delen van de standaard het meest voorkomen.
 
@@ -299,7 +299,7 @@ We ontdekten ook dat 3,52% van de sites met formulieren gebruik maken van `aria-
 
 `id`'s kunnen in HTML worden gebruikt om twee elementen aan elkaar te koppelen. Het [`<label>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label) werkt bijvoorbeeld op deze manier. U specificeert de `id` van het invoerveld dat dit label beschrijft en de browser koppelt ze aan elkaar. Het resultaat? Gebruikers kunnen nu op dit label klikken om zich op het invoerveld te concentreren, en schermlezers zullen dit label gebruiken als beschrijving.
 
-Helaas heeft 34,62% van de sites dubbele `id`'s, wat betekent dat op veel sites de door de gebruiker gespecificeerde `id` naar meerdere verschillende ingangen kan verwijzen. Dus als een gebruiker op het label klikt om een veld te selecteren, kan het zijn dat hij [iets anders selecteert](https://www.deque.com/blog/unique-id-attributes-matter/) dan hij van plan was. Zoals u zich wellicht kunt voorstellen, kan dit negatieve gevolgen hebben in bijvoorbeeld een winkelwagentje.
+Helaas heeft 34,62% van de sites dubbele `id`'s, wat betekent dat op veel sites de door de gebruiker gespecificeerde `id` naar meerdere verschillende ingangen kan verwijzen. Dus als een gebruiker op het label klikt om een veld te selecteren, kan het zijn dat hij <a hreflang="en" href="https://www.deque.com/blog/unique-id-attributes-matter/">iets anders selecteert</a> dan hij van plan was. Zoals u zich wellicht kunt voorstellen, kan dit negatieve gevolgen hebben in bijvoorbeeld een winkelwagentje.
 
 Dit probleem is zelfs nog meer uitgesproken voor schermlezers, omdat hun gebruikers mogelijk niet visueel kunnen controleren wat er is geselecteerd. Plus, veel ARIA-attributen, zoals [`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-describedby_attribute) en [`aria-labelledby `] (https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute), werken op dezelfde manier als het labelelement dat hierboven is beschreven. Dus om uw site toegankelijk te maken, is het verwijderen van alle dubbele `id`'s een goede eerste stap.
 

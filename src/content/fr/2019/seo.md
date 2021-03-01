@@ -9,8 +9,8 @@ editors: [rachellcostello]
 translators: [AymenLoukil]
 discuss: 1765
 results: https://docs.google.com/spreadsheets/d/1uARtBWwz9nJOKqKPFinAMbtoDgu5aBtOhsBNmsCoTaA/
-ymschaap_bio: Fondateur d’une agence de conseil en SEO technique <a href="https://build.amsterdam/">build.amsterdam</a>. Auparavant, il a fondé plusieurs sociétés Web qui ont atteint plus d’un milliard d’utilisateurs. Il blogue sur ses dernières aventures depuis 2005 sur <a href="https://yvoschaap.com/">yvoschaap.com</a>.
-rachellcostello_bio: Rachel Costello est technical SEO & Content Manager chez <a href="https://www.deepcrawl.com/">DeepCrawl</a> et une conférencière internationale qui passe son temps à rechercher et à communiquer sur les derniers développements dans le SEO. Rachel gère actuellement la production de <a href="https://www.deepcrawl.com/knowledge/white-papers/">livres blancs sur les techniques de référencement </a> et des articles de recherche pour DeepCrawl, et est une chroniqueuse régulière pour <a href="https://www.searchenginejournal.com/author/rachel-costello/">Search Engine Journal</a>.
+ymschaap_bio: Fondateur d’une agence de conseil en SEO technique <a hreflang="en" href="https://build.amsterdam/">build.amsterdam</a>. Auparavant, il a fondé plusieurs sociétés Web qui ont atteint plus d’un milliard d’utilisateurs. Il blogue sur ses dernières aventures depuis 2005 sur <a hreflang="en" href="https://yvoschaap.com/">yvoschaap.com</a>.
+rachellcostello_bio: Rachel Costello est technical SEO & Content Manager chez <a hreflang="en" href="https://www.deepcrawl.com/">DeepCrawl</a> et une conférencière internationale qui passe son temps à rechercher et à communiquer sur les derniers développements dans le SEO. Rachel gère actuellement la production de <a hreflang="en" href="https://www.deepcrawl.com/knowledge/white-papers/">livres blancs sur les techniques de référencement </a> et des articles de recherche pour DeepCrawl, et est une chroniqueuse régulière pour <a hreflang="en" href="https://www.searchenginejournal.com/author/rachel-costello/">Search Engine Journal</a>.
 AVGP_bio: Martin Splitt est un DevRel au sein de l’équipe Écosystème Web chez Google, où il travaille à garder le Web découvrable.
 featured_quote: L’optimisation pour les moteurs de recherche (SEO) n'est pas seulement un passe-temps ou un projet parallèle pour les spécialistes du marketing digital, ce métier est crucial pour le succès d'un site web. Le but principal du référencement naturel est de s'assurer qu’un site internet est optimisé pour les robots des moteurs de recherche qui ont besoin d’explorer et d'indexer ses pages, ainsi que pour les utilisateurs qui naviguent et consomment des contenus. Le référencement a un impact sur tous ceux qui travaillent sur un site web, du développeur qui le construit au marketeur digital qui en fait la promotion auprès de nouveaux clients potentiels.
 featured_stat_1: 346
@@ -25,7 +25,7 @@ featured_stat_label_3: des sites sont éligibles aux résultats enrichis.
 
 L'optimisation pour les moteurs de recherche (SEO) n'est pas seulement un passe-temps ou un projet parallèle pour les spécialistes du marketing digital, ce métier est crucial pour le succès d'un site web. Le but principal du référencement naturel est de s'assurer qu'un site internet est optimisé pour les robots des moteurs de recherche qui ont besoin d'explorer et d'indexer ses pages, ainsi que pour les utilisateurs qui naviguent et consomment des contenus. Le référencement a un impact sur tous ceux qui travaillent sur un site web, du développeur qui le construit au marketeur digital qui en fait la promotion auprès de nouveaux clients potentiels.
 
-Mettons en perspective l'importance du référencement naturel. En avril 2019, l'industrie du référencement a regardé avec horreur et fascination [ASOS signaler une baisse de revenus de 87 %](https://www.bbc.co.uk/news/business-47877688) après une "année difficile". La marque a attribué ce résultat à une baisse de classement et de visibilité dans les moteurs de recherche survenue après le lancement de plus de 200 microsites et à des changements importants dans la navigation de leur site web, entre autres changements techniques. Ouch.
+Mettons en perspective l'importance du référencement naturel. En avril 2019, l'industrie du référencement a regardé avec horreur et fascination <a hreflang="en" href="https://www.bbc.co.uk/news/business-47877688">ASOS signaler une baisse de revenus de 87 %</a> après une "année difficile". La marque a attribué ce résultat à une baisse de classement et de visibilité dans les moteurs de recherche survenue après le lancement de plus de 200 microsites et à des changements importants dans la navigation de leur site web, entre autres changements techniques. Ouch.
 
 L'objectif du chapitre SEO du web Almanac est d'analyser les éléments des sites web qui ont un impact sur l'exploration et l'indexation des contenus pour les moteurs de recherche et, par conséquence, sur leurs performances. Dans ce chapitre, nous allons voir dans quelle mesure les sites web les plus fréquentés sont prêts à offrir une excellente expérience aux utilisateurs et aux moteurs de recherche, et quels sont ceux qui ont encore du travail à faire.
 
@@ -85,7 +85,7 @@ Le nombre médian d'éléments de titre par page est de 10. Les titres contienne
 
 En termes de longueur de titre spécifique, la longueur médiane du premier élément `H1` trouvé sur le bureau est de 19 caractères.
 
-Pour obtenir des conseils sur la façon de gérer les `H1` et les rubriques pour le référencement et l'accessibilité, jetez un œil à cette [réponse vidéo de John Mueller](https://www.youtube.com/watch?v=zyqJJXWk0gk) dans le Ask Google Série de webmasters.
+Pour obtenir des conseils sur la façon de gérer les `H1` et les rubriques pour le référencement et l'accessibilité, jetez un œil à cette <a hreflang="en" href="https://www.youtube.com/watch?v=zyqJJXWk0gk">réponse vidéo de John Mueller</a> dans le Ask Google Série de webmasters.
 
 ### Balises meta
 
@@ -110,7 +110,7 @@ Les titres de page sont un moyen important de communiquer l'objectif d'une page 
   )
 }}
 
-Même si [Google affiche généralement les 50 à 60 premiers caractères d'un titre de page](https://moz.com/learn/seo/title-tag) dans une page de résultats de recherche. La longueur médiane `title` de la balise ne comportait que 21 caractères pour les pages mobiles et 20 caractères pour les pages de bureau. Même le 75e centile est toujours inférieur à la longueur préconisée. Cela suggère que certains SEO et rédacteurs de contenu ne profitent pas de l'espace qui leur est alloué par les moteurs de recherche pour décrire leurs pages d'accueil dans les SERP.
+Même si <a hreflang="en" href="https://moz.com/learn/seo/title-tag">Google affiche généralement les 50 à 60 premiers caractères d'un titre de page</a> dans une page de résultats de recherche. La longueur médiane `title` de la balise ne comportait que 21 caractères pour les pages mobiles et 20 caractères pour les pages de bureau. Même le 75e centile est toujours inférieur à la longueur préconisée. Cela suggère que certains SEO et rédacteurs de contenu ne profitent pas de l'espace qui leur est alloué par les moteurs de recherche pour décrire leurs pages d'accueil dans les SERP.
 
 #### Meta descriptions
 
@@ -124,7 +124,7 @@ Par rapport à la balise `title`, moins de pages ont implémenté une méta desc
   )
 }}
 
-La longueur médiane de la description de la méta était également inférieure à la [longueur recommandée de 155 à 160 caractères](https://moz.com/learn/seo/meta-description), les pages de bureau ayant des descriptions de 123 caractères. Fait intéressant, les méta descriptions étaient toujours plus longues sur mobile que sur ordinateur, malgré les SERP mobiles ayant traditionnellement une limite de pixels plus courte. Cette limite n'a été étendue que récemment, donc peut-être qu'un plus grand nombre de propriétaires de sites web ont testé l'impact d'avoir des méta descriptions plus longues et plus descriptives pour les résultats mobiles.
+La longueur médiane de la description de la méta était également inférieure à la <a hreflang="en" href="https://moz.com/learn/seo/meta-description">longueur recommandée de 155 à 160 caractères</a>, les pages de bureau ayant des descriptions de 123 caractères. Fait intéressant, les méta descriptions étaient toujours plus longues sur mobile que sur ordinateur, malgré les SERP mobiles ayant traditionnellement une limite de pixels plus courte. Cette limite n'a été étendue que récemment, donc peut-être qu'un plus grand nombre de propriétaires de sites web ont testé l'impact d'avoir des méta descriptions plus longues et plus descriptives pour les résultats mobiles.
 
 #### Attributs Alt pour les images
 
@@ -143,7 +143,7 @@ Pour afficher le contenu d'une page aux utilisateurs dans les SERP, les robots d
 
 Il est recommandé de conserver un code de réponse HTTP `200 OK` pour toutes les pages importantes que vous souhaitez voir indexées par les moteurs de recherche. La majorité des pages testées étaient accessibles aux moteurs de recherche, 87,03 % des demandes HTML initiales sur le bureau renvoyant un code d'état `200`. Les résultats étaient légèrement inférieurs pour les pages mobiles, avec seulement 82,95 % des pages renvoyant un code d'état `200`.
 
-Le code de réponse suivant le plus fréquemment trouvé sur mobile était le `302`, une redirection temporaire, qui a été trouvée sur 10,45 % des pages mobiles. C'était plus élevé que sur le bureau, avec seulement 6,71 % des pages d'accueil du bureau renvoyant un code d'état `302`. Cela pourrait être dû au fait que les [pages d'accueil mobiles étaient des alternatives](https://developers.google.com/search/mobile-sites/mobile-seo/separate-urls) vers une page de bureau équivalente, comme sur des sites non responsive qui ont des versions distinctes du site web pour chaque appareil.
+Le code de réponse suivant le plus fréquemment trouvé sur mobile était le `302`, une redirection temporaire, qui a été trouvée sur 10,45 % des pages mobiles. C'était plus élevé que sur le bureau, avec seulement 6,71 % des pages d'accueil du bureau renvoyant un code d'état `302`. Cela pourrait être dû au fait que les <a hreflang="en" href="https://developers.google.com/search/mobile-sites/mobile-seo/separate-urls">pages d'accueil mobiles étaient des alternatives</a> vers une page de bureau équivalente, comme sur des sites non responsive qui ont des versions distinctes du site web pour chaque appareil.
 
 <p class="note">Remarque&nbsp;: nos résultats n'incluaient pas les codes d'état 4xx ou 5xx.</p>
 
@@ -159,13 +159,13 @@ La directive `noindex` peut être indiquée dans le `HTML` ou bien dans les ent�
 
 Les balises canoniques sont utilisées pour spécifier les pages en double et leurs alternatives préférées, afin que les moteurs de recherche puissent consolider l'autorité qui pourrait être répartie sur plusieurs pages du groupe sur une seule page principale pour un meilleur classement.
 
-48,34 % des pages d'accueil mobiles ont été [détectées](https://developers.google.com/web/tools/lighthouse/audits/canonical) avoir une balise canonique. Les balises canoniques auto-référencées ne sont pas essentielles et les balises canoniques sont généralement requises pour les pages en double. Les pages d'accueil sont rarement dupliquées ailleurs sur le site, il n'est donc pas surprenant de constater que moins de la moitié des pages ont une balise canonique.
+48,34 % des pages d'accueil mobiles ont été <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/audits/canonical">détectées</a> avoir une balise canonique. Les balises canoniques auto-référencées ne sont pas essentielles et les balises canoniques sont généralement requises pour les pages en double. Les pages d'accueil sont rarement dupliquées ailleurs sur le site, il n'est donc pas surprenant de constater que moins de la moitié des pages ont une balise canonique.
 
 #### robots.txt
 
 L'une des méthodes les plus efficaces pour contrôler l'exploration des moteurs de recherche est le fichier [robots.txt]. Il s'agit d'un fichier qui se trouve sur le domaine racine d'un site web et spécifie quelles URL et chemins d'URL doivent être interdits à l'exploration par les moteurs de recherche.
 
-Il était intéressant de constater que seulement 72,16 % des sites mobiles ont un `robots.txt` valide, [selon Lighthouse](https://developers.google.com/web/tools/lighthouse/audits/robots). Les principaux problèmes que nous avons constatés sont répartis entre 22 % des sites n'ayant aucun fichier `robots.txt` et ~ 6 % servant un fichier `robots.txt` non valide, et échouent ainsi à l'audit. Bien qu'il existe de nombreuses raisons valables de ne pas avoir de fichier `robots.txt`, comme avoir un petit site web qui n'a pas [de soucis de budget de crawl](https://webmasters.googleblog.com/2017/01/what-crawl-budget-means-for-googlebot.html), avoir un `robots.txt` invalide peut être problématique surtout avec le Mobile First Index.
+Il était intéressant de constater que seulement 72,16 % des sites mobiles ont un `robots.txt` valide, <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/audits/robots">selon Lighthouse</a>. Les principaux problèmes que nous avons constatés sont répartis entre 22 % des sites n'ayant aucun fichier `robots.txt` et ~ 6 % servant un fichier `robots.txt` non valide, et échouent ainsi à l'audit. Bien qu'il existe de nombreuses raisons valables de ne pas avoir de fichier `robots.txt`, comme avoir un petit site web qui n'a pas <a hreflang="en" href="https://webmasters.googleblog.com/2017/01/what-crawl-budget-means-for-googlebot.html">de soucis de budget de crawl</a>, avoir un `robots.txt` invalide peut être problématique surtout avec le Mobile First Index.
 
 ### Liens
 
@@ -173,7 +173,7 @@ Les liens sont l'un des attributs les plus importants d'une page web. Les liens 
 
 Le nombre de liens internes et externes inclus sur les pages de bureau était constamment supérieur au nombre trouvé sur les pages mobiles. Souvent, un espace limité sur une fenêtre plus petite entraîne moins de liens à inclure dans la conception d'une page mobile par rapport au bureau.
 
-Il est important de garder à l'esprit que moins de liens internes sur la version mobile d'une page [pourraient causer un problème](https://moz.com/blog/internal-linking-mobile-first-crawl-paths) pour votre site web. Avec le Mobile-First index, si une page est uniquement liée à partir de la version bureau, Google ne prendra pas compte de ses liens si le site fait partie de l'index Mobile.
+Il est important de garder à l'esprit que moins de liens internes sur la version mobile d'une page <a hreflang="en" href="https://moz.com/blog/internal-linking-mobile-first-crawl-paths">pourraient causer un problème</a> pour votre site web. Avec le Mobile-First index, si une page est uniquement liée à partir de la version bureau, Google ne prendra pas compte de ses liens si le site fait partie de l'index Mobile.
 
 {{ figure_markup(
   image="fig7.png",
@@ -213,7 +213,7 @@ Certains des aspects les plus complexes sur le plan technique qui ont gagné en 
 
 ### Performance web
 
-La vitesse de chargement des sites mobiles a été d'abord [annoncée comme facteur de positionnement](https://webmasters.googleblog.com/2018/01/using-page-speed-in-mobile-search.html) par Google en 2018. La vitesse n'est pas un nouvel objectif pour Google. En 2010, il a été [révélé que la vitesse avait été introduite comme facteur de classement](https://webmasters.googleblog.com/2010/04/using-site-speed-in-web-search-ranking.html).
+La vitesse de chargement des sites mobiles a été d'abord <a hreflang="en" href="https://webmasters.googleblog.com/2018/01/using-page-speed-in-mobile-search.html">annoncée comme facteur de positionnement</a> par Google en 2018. La vitesse n'est pas un nouvel objectif pour Google. En 2010, il a été <a hreflang="en" href="https://webmasters.googleblog.com/2010/04/using-site-speed-in-web-search-ranking.html">révélé que la vitesse avait été introduite comme facteur de classement</a>.
 
 Un site web à chargement rapide est également essentiel pour une bonne expérience utilisateur. Les utilisateurs qui doivent attendre, même quelques secondes, pour qu'un site se charge ont tendance à rebondir et à essayer un autre résultat de l'un de vos concurrents qui se charge rapidement et répond à leurs attentes de performances.
 
@@ -235,13 +235,13 @@ Bien que les chiffres soient inquiétants pour la vitesse du web, la bonne nouve
 
 Les données structurées permettent aux propriétaires de sites web d'ajouter des données sémantiques supplémentaires à leurs pages web, en ajoutant des extraits de code [JSON-LD](https://en.wikipedia.org/wiki/JSON-LD) ou des [microdonnées](https://developer.mozilla.org/fr/docs/web/HTML/Microdonn%C3%A9es), par exemple. Les moteurs de recherche analysent ces données pour mieux comprendre ces pages et utilisent parfois le balisage pour afficher des informations pertinentes supplémentaires dans les résultats de la recherche. Les types de données structurées les plus courants sont&nbsp;:
 
-- [Review](https://developers.google.com/search/docs/data-types/review-snippet)
-- [Product](https://developers.google.com/search/docs/data-types/product)
-- [Local Bussiness](https://developers.google.com/search/docs/data-types/local-business)
-- [Movie](https://developers.google.com/search/docs/data-types/movie)
-- et [D'autres](https://developers.google.com/search/docs/guides/search-gallery)
+- <a hreflang="en" href="https://developers.google.com/search/docs/data-types/review-snippet">Review</a>
+- <a hreflang="en" href="https://developers.google.com/search/docs/data-types/product">Product</a>
+- <a hreflang="en" href="https://developers.google.com/search/docs/data-types/local-business">Local Bussiness</a>
+- <a hreflang="en" href="https://developers.google.com/search/docs/data-types/movie">Movie</a>
+- et <a hreflang="en" href="https://developers.google.com/search/docs/guides/search-gallery">D'autres</a>
 
-La [visibilité supplémentaire](https://developers.google.com/search/docs/guides/enhance-site) que les données structurées peuvent fournir aux sites web est intéressante pour les propriétaires de sites, car elle peut aider à créer plus d'opportunités de trafic . Par exemple, le [schéma de FAQ] relativement nouveau (https://developers.google.com/search/docs/data-types/faqpage) doublera la taille de votre extrait sur les pages de résultats de recherche.
+La <a hreflang="en" href="https://developers.google.com/search/docs/guides/enhance-site">visibilité supplémentaire</a> que les données structurées peuvent fournir aux sites web est intéressante pour les propriétaires de sites, car elle peut aider à créer plus d'opportunités de trafic . Par exemple, le [schéma de FAQ] relativement nouveau (https://developers.google.com/search/docs/data-types/faqpage) doublera la taille de votre extrait sur les pages de résultats de recherche.
 
 Au cours de nos recherches, nous avons constaté que seuls 14,67 % des sites sont éligibles pour des résultats riches sur mobile. Fait intéressant, l'admissibilité au site de bureau est légèrement inférieure à 12,46 %. Cela suggère que les propriétaires de sites peuvent faire beaucoup plus pour optimiser la façon dont leurs pages d'accueil apparaissent dans la recherche.
 
@@ -253,13 +253,13 @@ Parmi les sites avec un balisage de données structuré, les cinq types les plus
 4. `WebPage` (11,58 %)
 5. `ImageObject` (5,35 %)
 
-Fait intéressant, l'un des types de données les plus populaires qui déclenche une fonctionnalité de moteur de recherche est `SearchAction`, qui alimente la [boîte de recherche des liens annexes](https://developers.google.com/search/docs/data-types/sitelinks-searchbox).
+Fait intéressant, l'un des types de données les plus populaires qui déclenche une fonctionnalité de moteur de recherche est `SearchAction`, qui alimente la <a hreflang="en" href="https://developers.google.com/search/docs/data-types/sitelinks-searchbox">boîte de recherche des liens annexes</a>.
 
 Les cinq principaux types de balisage conduisent tous à une plus grande visibilité dans les résultats de recherche de Google, ce qui pourrait être le facteur d'une adoption plus répandue de ces types de données structurées.
 
 Étant donné que nous n'avons examiné que les pages d'accueil, les résultats pourraient sembler très différents si nous considérions également les pages intérieures.
 
-Les étoiles d'avis ne se trouvent que sur 1,09 % des pages d'accueil du web (via [AggregateRating](https://schema.org/AggregateRating)). En outre, le [QAPage] nouvellement introduit (https://schema.org/QAPage) n'est apparu que dans 48 cas, et le [FAQPage](https://schema.org/FAQPage) à une fréquence légèrement plus élevée de 218 fois. Ces deux derniers décomptes devraient augmenter à l'avenir alors que nous effectuons davantage d'analyses et approfondissons l'analyse Web Almanac.
+Les étoiles d'avis ne se trouvent que sur 1,09 % des pages d'accueil du web (via <a hreflang="en" href="https://schema.org/AggregateRating">AggregateRating</a>). En outre, le [QAPage] nouvellement introduit (https://schema.org/QAPage) n'est apparu que dans 48 cas, et le <a hreflang="en" href="https://schema.org/FAQPage">FAQPage</a> à une fréquence légèrement plus élevée de 218 fois. Ces deux derniers décomptes devraient augmenter à l'avenir alors que nous effectuons davantage d'analyses et approfondissons l'analyse Web Almanac.
 
 ### Internationalisation
 
@@ -409,27 +409,27 @@ Alors que 38,40 % des sites de bureau (33,79 % sur mobile) ont l'attribut HTML
 
 À côté de l'anglais, les langues les plus courantes sont le français, l'espagnol et l'allemand. Ils sont suivis de langues ciblées vers des zones géographiques spécifiques comme l'anglais pour les américains (`en-us`) ou des combinaisons plus obscures comme l'espagnol pour l'irlandais (`es-ie`).
 
-L'analyse n'a pas vérifié la bonne mise en œuvre, par exemple si les différentes versions linguistiques se lient correctement les unes aux autres. Cependant, en examinant la faible adoption d'une version x-default (seulement 3,77 % sur ordinateur et 1,30 % sur mobile), [comme cela est recommandé](https://support.google.com/webmasters/answer/189077?hl=fr), c'est un indicateur que cet élément est complexe et pas toujours facile à bien faire.
+L'analyse n'a pas vérifié la bonne mise en œuvre, par exemple si les différentes versions linguistiques se lient correctement les unes aux autres. Cependant, en examinant la faible adoption d'une version x-default (seulement 3,77 % sur ordinateur et 1,30 % sur mobile), <a href="https://support.google.com/webmasters/answer/189077?hl=fr">comme cela est recommandé</a>, c'est un indicateur que cet élément est complexe et pas toujours facile à bien faire.
 
 ### Exploration des SPA (<i lang="en">Single Page Application</i>) {exploration-des-spa-single-page-application}
 
-Les applications monopages (SPA) construites avec des frameworks comme React et Vue.js ont leur propre complexité SEO. Les sites web utilisant une navigation basée sur le hachage, rendent particulièrement difficile pour les moteurs de recherche de les explorer et de les indexer correctement. Par exemple, Google avait une solution de contournement "AJAX crawling scheme" qui s'est avérée complexe pour les moteurs de recherche ainsi que pour les développeurs, elle a donc été [déconseillée en 2015](https://webmasters.googleblog.com/2015/10/deprecating-notre-ajax-crawling-scheme.html).
+Les applications monopages (SPA) construites avec des frameworks comme React et Vue.js ont leur propre complexité SEO. Les sites web utilisant une navigation basée sur le hachage, rendent particulièrement difficile pour les moteurs de recherche de les explorer et de les indexer correctement. Par exemple, Google avait une solution de contournement "AJAX crawling scheme" qui s'est avérée complexe pour les moteurs de recherche ainsi que pour les développeurs, elle a donc été <a hreflang="en" href="https://webmasters.googleblog.com/2015/10/deprecating-notre-ajax-crawling-scheme.html">déconseillée en 2015</a>.
 
 Le nombre de SPA testés avait un nombre relativement faible de liens servis via des URL de hachage, avec 13,08 % des pages mobiles React utilisant des URL de hachage pour la navigation, 8,15 % des pages mobiles Vue.js les utilisant et 2,37 % des pages angulaires mobiles les utiliser. Ces résultats étaient également très similaires pour les pages de bureau. Cela est positif à voir du point de vue du référencement, compte tenu de l'impact que les URL de hachage peuvent avoir sur la découverte de contenu.
 
-Le nombre plus élevé d'URL de hachage dans les pages React est surprenant, en particulier contrairement au nombre plus faible d'URL de hachage trouvées sur les pages angulaires. Les deux frameworks favorisent l'adoption de packages de routage où [API historique](https://developer.mozilla.org/en-US/docs/web/API/History) est la valeur par défaut pour les liens, au lieu de s'appuyer sur des URL de hachage. Vue.js [envisage de passer à l'utilisation de l'API Historique par défaut](https://github.com/vuejs/rfcs/pull/40) ainsi que dans la version 3 de leur package `vue-router`.
+Le nombre plus élevé d'URL de hachage dans les pages React est surprenant, en particulier contrairement au nombre plus faible d'URL de hachage trouvées sur les pages angulaires. Les deux frameworks favorisent l'adoption de packages de routage où [API historique](https://developer.mozilla.org/en-US/docs/web/API/History) est la valeur par défaut pour les liens, au lieu de s'appuyer sur des URL de hachage. Vue.js <a hreflang="en" href="https://github.com/vuejs/rfcs/pull/40">envisage de passer à l'utilisation de l'API Historique par défaut</a> ainsi que dans la version 3 de leur package `vue-router`.
 
 ### AMP
 
-AMP (<i lang="en">Accelerated Mobile Pages</i>, Pages Mobiles Accélérées en français) a été introduit pour la première fois en 2015 par Google en tant que framework HTML open source. Il fournit des composants et une infrastructure aux sites web pour offrir une expérience plus rapide aux utilisateurs, en utilisant des optimisations telles que la mise en cache, le chargement différé et des images optimisées. Notamment, Google a adopté cela pour son moteur de recherche, où les pages AMP sont également servies à partir de leur propre CDN. Cette fonctionnalité est devenue plus tard une proposition de normes sous le nom [échanges HTTP signés](https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.html).
+AMP (<i lang="en">Accelerated Mobile Pages</i>, Pages Mobiles Accélérées en français) a été introduit pour la première fois en 2015 par Google en tant que framework HTML open source. Il fournit des composants et une infrastructure aux sites web pour offrir une expérience plus rapide aux utilisateurs, en utilisant des optimisations telles que la mise en cache, le chargement différé et des images optimisées. Notamment, Google a adopté cela pour son moteur de recherche, où les pages AMP sont également servies à partir de leur propre CDN. Cette fonctionnalité est devenue plus tard une proposition de normes sous le nom <a hreflang="en" href="https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.html">échanges HTTP signés</a>.
 
 Malgré cela, seulement 0,62 % des pages d'accueil mobiles contiennent un lien vers une version AMP. Compte tenu de la visibilité de ce projet, cela suggère qu'il a été relativement peu adopté. Cependant, AMP peut être plus utile pour diffuser des pages d'articles, de sorte que notre analyse axée sur la page d'accueil ne reflétera pas l'adoption sur d'autres types de page.
 
 ### Securité
 
-Le passage en HTTPS par défaut, était un fort changement sur le web ces dernières années. HTTPS empêche le trafic du site web d'être intercepté sur les réseaux Wi-Fi publics, par exemple, où les données d'entrée des utilisateurs sont ensuite transmises de manière non sécurisée. Google a fait pression pour que les sites adoptent le HTTPS, et a même fait du [HTTPS un signal de classement SEO](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html). Chrome a également pris en charge le passage aux pages sécurisées en étiquetant les pages non HTTPS comme [non sécurisées](https://www.blog.google/products/chrome/milestone-chrome-security-marking-http-not-secure/) dans le navigateur.
+Le passage en HTTPS par défaut, était un fort changement sur le web ces dernières années. HTTPS empêche le trafic du site web d'être intercepté sur les réseaux Wi-Fi publics, par exemple, où les données d'entrée des utilisateurs sont ensuite transmises de manière non sécurisée. Google a fait pression pour que les sites adoptent le HTTPS, et a même fait du <a hreflang="en" href="https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html">HTTPS un signal de classement SEO</a>. Chrome a également pris en charge le passage aux pages sécurisées en étiquetant les pages non HTTPS comme <a hreflang="en" href="https://www.blog.google/products/chrome/milestone-chrome-security-marking-http-not-secure/">non sécurisées</a> dans le navigateur.
 
-Pour plus d'informations et des conseils de Google sur l'importance du HTTPS et comment l'adopter, veuillez consulter [Pourquoi le HTTPS est important](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https).
+Pour plus d'informations et des conseils de Google sur l'importance du HTTPS et comment l'adopter, veuillez consulter <a hreflang="en" href="https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https">Pourquoi le HTTPS est important</a>.
 
 Nous avons constaté que 67,06 % des sites web sur ordinateur sont désormais servis via HTTPS. Un peu moins de la moitié des sites web n'ont toujours pas migré vers HTTPS et fournissent des pages non sécurisées à leurs utilisateurs. C'est un nombre important. Les migrations peuvent être un travail difficile, donc cela pourrait être une raison pour laquelle le taux d'adoption n'est pas plus élevé, mais une migration HTTPS nécessite généralement un certificat SSL et une simple modification du fichier `.htaccess`. Il n'y a aucune vraie raison de ne pas passer en HTTPS.
 

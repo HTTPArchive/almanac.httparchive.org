@@ -51,7 +51,7 @@
         <h2 id="overview"><a href="#overview" class="anchor-link">Vue d’ensemble</a></h2>
 
         <p>
-        Le Web Almanac est un projet élaboré par <a href="https://httparchive.org">HTTP Archive</a>. HTTP Archive a été lancé en 2010 par Steve Souders avec pour mission d’étudier la manière dont le web est construit. Il évalue la composition de millions de pages Web sur une base mensuelle et met à disposition ses téraoctets de métadonnées pour analyse sur <a href="https://httparchive.org/faq#how-do-i-use-bigquery-to-write-custom-queries-over-the-data">BigQuery</a>. En savoir plus <a href="https://httparchive.org/about">à propos de HTTP Archive</a>.
+        Le Web Almanac est un projet élaboré par <a hreflang="en" href="https://httparchive.org">HTTP Archive</a>. HTTP Archive a été lancé en 2010 par Steve Souders avec pour mission d’étudier la manière dont le web est construit. Il évalue la composition de millions de pages Web sur une base mensuelle et met à disposition ses téraoctets de métadonnées pour analyse sur <a hreflang="en" href="https://httparchive.org/faq#how-do-i-use-bigquery-to-write-custom-queries-over-the-data">BigQuery</a>. En savoir plus <a hreflang="en" href="https://httparchive.org/about">à propos de HTTP Archive</a>.
         </p>
 
         <p>
@@ -67,19 +67,19 @@
       <h2 id="dataset"><a href="#dataset" class="anchor-link">À propos du jeu de données</a></h2>
 
         <p>
-        Le jeu de données HTTP Archive est continuellement mis à jour avec de nouvelles données mensuelles. Pour l’édition 2019 du Web Almanac, sauf indication contraire dans le chapitre, tous les paramètres ont été obtenus à partir de l’index de juillet 2019. Ces résultats sont <a href="https://github.com/HTTPArchive/httparchive.org/blob/master/docs/gettingstarted_bigquery.md">publiquement requêtables</a> sur BigQuery dans des tables préfixées par <code>2019_07_01</code>.
+        Le jeu de données HTTP Archive est continuellement mis à jour avec de nouvelles données mensuelles. Pour l’édition 2019 du Web Almanac, sauf indication contraire dans le chapitre, tous les paramètres ont été obtenus à partir de l’index de juillet 2019. Ces résultats sont <a hreflang="en" href="https://github.com/HTTPArchive/httparchive.org/blob/master/docs/gettingstarted_bigquery.md">publiquement requêtables</a> sur BigQuery dans des tables préfixées par <code>2019_07_01</code>.
         </p>
 
         <p>
-        Toutes les statistiques présentées dans le Web Almanac sont reproductibles publiquement à l’aide de l’ensemble de données sur BigQuery. Vous pouvez parcourir les requêtes utilisées par tous les chapitres dans notre <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2019">dépôt GitHub</a>.
+        Toutes les statistiques présentées dans le Web Almanac sont reproductibles publiquement à l’aide de l’ensemble de données sur BigQuery. Vous pouvez parcourir les requêtes utilisées par tous les chapitres dans notre <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2019">dépôt GitHub</a>.
         </p>
 
         <p class="note">
-          Veuillez noter que certaines de ces requêtes sont assez volumineuses et peuvent être <a href="https://cloud.google.com/bigquery/pricing">coûteuses</a> à exécuter par vous-même, dans la mesure où BigQuery facture au téraoctet. Pour vous aider à contrôler vos dépenses, consultez l'article de blog de Tim Kadlec <a href="https://timkadlec.com/remembers/2019-12-10-using-bigquery-without-breaking-the-bank/">Utiliser BigQuery sans faire sauter la banque (en anglais)</a>.
+          Veuillez noter que certaines de ces requêtes sont assez volumineuses et peuvent être <a hreflang="en" href="https://cloud.google.com/bigquery/pricing">coûteuses</a> à exécuter par vous-même, dans la mesure où BigQuery facture au téraoctet. Pour vous aider à contrôler vos dépenses, consultez l'article de blog de Tim Kadlec <a hreflang="en" href="https://timkadlec.com/remembers/2019-12-10-using-bigquery-without-breaking-the-bank/">Utiliser BigQuery sans faire sauter la banque (en anglais)</a>.
         </p>
 
         <p>
-        Par exemple, pour obtenir le nombre médian d’octets de JavaScript servis sur les pages pour ordinateurs de bureau et périphériques mobiles, regardez <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2019/javascript/01_01b.sql">01_01b.sql</a>:
+        Par exemple, pour obtenir le nombre médian d’octets de JavaScript servis sur les pages pour ordinateurs de bureau et périphériques mobiles, regardez <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2019/javascript/01_01b.sql">01_01b.sql</a>:
         </p>
 
         <div class="code-block floating-card">
@@ -167,7 +167,7 @@
       <h3 id="webpagetest"><a href="#webpagetest" class="anchor-link">WebPageTest</a></h3>
 
       <p>
-        <a href="https://www.webpagetest.org/">WebPageTest</a> est un outil de test de performance Web incontournable et l’épine dorsale de HTTP Archive. Nous utilisons une <a href="https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Private%20Instances/README.md">instance privée</a> de WebPageTest avec des agents de test privés, c’est-à-dire de vrais navigateurs testant chaque page web. Les sites pour ordinateurs de bureau et périphériques mobiles sont testés avec différentes configurations&nbsp;:
+        <a hreflang="en" href="https://www.webpagetest.org/">WebPageTest</a> est un outil de test de performance Web incontournable et l’épine dorsale de HTTP Archive. Nous utilisons une <a hreflang="en" href="https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Private%20Instances/README.md">instance privée</a> de WebPageTest avec des agents de test privés, c’est-à-dire de vrais navigateurs testant chaque page web. Les sites pour ordinateurs de bureau et périphériques mobiles sont testés avec différentes configurations&nbsp;:
       </p>
       <div class="table-wrap"><div class="table-wrap-container">
       <table>
@@ -231,11 +231,11 @@
       </p>
 
       <p>
-        Les tests sont effectués depuis deux localisations américaines&nbsp;:  en Californie et en Oregon. HTTP Archive maintient l’ensemble des matériels servant aux tests au sein du datacenter  <a href="https://archive.org">Internet Archive</a> situé en Californie.  Si nécessaire des périphériques de test supplémentaires sont ajoutés depuis  <a href="https://cloud.google.com/compute/docs/regions-zones/#locations">Google Cloud Platform</a>, emplacement us-west-1, en Oregon.
+        Les tests sont effectués depuis deux localisations américaines&nbsp;:  en Californie et en Oregon. HTTP Archive maintient l’ensemble des matériels servant aux tests au sein du datacenter  <a hreflang="en" href="https://archive.org">Internet Archive</a> situé en Californie.  Si nécessaire des périphériques de test supplémentaires sont ajoutés depuis  <a hreflang="en" href="https://cloud.google.com/compute/docs/regions-zones/#locations">Google Cloud Platform</a>, emplacement us-west-1, en Oregon.
       </p>
 
       <p>
-        L’instance privée de WebPageTest de HTTP Archive est synchronisée avec la dernière version publique et complétée par des <a href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">indicateurs personnalisés</a>. Ils sont collectés par des portions de JavaScript qui sont évaluées et exécutées sur chaque site web à la fin du test. Le script sur-mesure  <a href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/almanac.js">almanac.js</a> collecte plusieurs métriques qui sont autrement impossibles à calculer comme, par exemple,  celles qui dépendent de l’état du DOM.
+        L’instance privée de WebPageTest de HTTP Archive est synchronisée avec la dernière version publique et complétée par des <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">indicateurs personnalisés</a>. Ils sont collectés par des portions de JavaScript qui sont évaluées et exécutées sur chaque site web à la fin du test. Le script sur-mesure  <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/almanac.js">almanac.js</a> collecte plusieurs métriques qui sont autrement impossibles à calculer comme, par exemple,  celles qui dépendent de l’état du DOM.
       </p>
 
       <p>
@@ -247,11 +247,11 @@
       <h3 id="lighthouse"><a href="#lighthouse" class="anchor-link">Lighthouse</a></h3>
 
       <p>
-        <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a> est un outil automatisé d’assurance qualité des sites Web construit par Google. Il vérifie les pages Web pour s’assurer qu’elles ne contiennent pas de mauvaises pratiques impactant l’expérience utilisateur comme des images non optimisées et du contenu inaccessible.
+        <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a> est un outil automatisé d’assurance qualité des sites Web construit par Google. Il vérifie les pages Web pour s’assurer qu’elles ne contiennent pas de mauvaises pratiques impactant l’expérience utilisateur comme des images non optimisées et du contenu inaccessible.
       </p>
 
       <p>
-        HTTP Archive utilise la dernière version de Lighthouse pour toutes ses pages Web mobiles –&nbsp;pas pour les pages sur ordinateurs de bureau pour limiter la consommation de ressources. À partir de l’exploration de juillet 2019, HTTP Archive a utilisé la version <a href="https://github.com/GoogleChrome/lighthouse/releases/tag/v5.1.0">5.1.0</a> de Lighthouse.
+        HTTP Archive utilise la dernière version de Lighthouse pour toutes ses pages Web mobiles –&nbsp;pas pour les pages sur ordinateurs de bureau pour limiter la consommation de ressources. À partir de l’exploration de juillet 2019, HTTP Archive a utilisé la version <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/releases/tag/v5.1.0">5.1.0</a> de Lighthouse.
       </p>
 
       <p>
@@ -287,11 +287,11 @@
       </div></div>
 
       <p class="note">
-        * Notez que Lighthouse est normalement configuré pour avoir un ralentissement CPU de 4x, mais en raison d’un <a href="https://github.com/GoogleChrome/lighthouse/issues/9668#issuecomment-535134232">bug</a> dans WebPageTest, il était de 1x au moment des tests.
+        * Notez que Lighthouse est normalement configuré pour avoir un ralentissement CPU de 4x, mais en raison d’un <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/issues/9668#issuecomment-535134232">bug</a> dans WebPageTest, il était de 1x au moment des tests.
       </p>
 
       <p>
-        Pour plus d’informations sur Lighthouse et les audits disponibles dans HTTP Archive, reportez-vous à la section <a href="https://developers.google.com/web/tools/lighthouse/">documentation de Lighthouse relative au développement</a>.
+        Pour plus d’informations sur Lighthouse et les audits disponibles dans HTTP Archive, reportez-vous à la section <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/">documentation de Lighthouse relative au développement</a>.
       </p>
     </section>
 
@@ -299,15 +299,15 @@
       <h3 id="wappalyzer"><a href="#wappalyzer" class="anchor-link">Wappalyzer</a></h3>
 
       <p>
-        <a href="https://www.wappalyzer.com/">Wappalyzer</a> est un outil de détection des technologies utilisées dans les pages Web. Il y a  <a href="https://www.wappalyzer.com/technologies">65 catégories</a> de technologies testées, allant des frameworks JavaScript, aux plates-formes CMS, en passant par les mineurs de cryptomonnaie. Plus de 1&nbsp;200 technologies sont prises en charge.
+        <a hreflang="en" href="https://www.wappalyzer.com/">Wappalyzer</a> est un outil de détection des technologies utilisées dans les pages Web. Il y a  <a hreflang="en" href="https://www.wappalyzer.com/technologies">65 catégories</a> de technologies testées, allant des frameworks JavaScript, aux plates-formes CMS, en passant par les mineurs de cryptomonnaie. Plus de 1&nbsp;200 technologies sont prises en charge.
       </p>
 
       <p>
-        HTTP Archive la dernière version de Wappalyzer sur toutes les pages. En juillet 2019, Web Almanac utilisait la  <a href="https://github.com/AliasIO/Wappalyzer/releases/tag/v5.8.3">version 5.8.3</a> de Wappalyzer.
+        HTTP Archive la dernière version de Wappalyzer sur toutes les pages. En juillet 2019, Web Almanac utilisait la  <a hreflang="en" href="https://github.com/AliasIO/Wappalyzer/releases/tag/v5.8.3">version 5.8.3</a> de Wappalyzer.
       </p>
 
       <p>
-        Wappalyzer fournit des informations que vous retrouverez dans de nombreux chapitres analysant la popularité des outils de développement comme WordPress, Bootstrap, et jQuery. Par exemple, les chapitres <a href="{{ url_for('chapter', year=year, lang=lang, chapter='ecommerce') }}">E-commerce</a> et <a href="{{ url_for('chapter', year=year, lang=lang, chapter='cms') }}">CMS</a> s’appuient fortement sur les catégories de technologies <a href="https://www.wappalyzer.com/categories/ecommerce">E-commerce</a> et <a href="https://www.wappalyzer.com/categories/cms">CMS</a> détectées par Wappalyzer.
+        Wappalyzer fournit des informations que vous retrouverez dans de nombreux chapitres analysant la popularité des outils de développement comme WordPress, Bootstrap, et jQuery. Par exemple, les chapitres <a href="{{ url_for('chapter', year=year, lang=lang, chapter='ecommerce') }}">E-commerce</a> et <a href="{{ url_for('chapter', year=year, lang=lang, chapter='cms') }}">CMS</a> s’appuient fortement sur les catégories de technologies <a hreflang="en" href="https://www.wappalyzer.com/categories/ecommerce">E-commerce</a> et <a hreflang="en" href="https://www.wappalyzer.com/categories/cms">CMS</a> détectées par Wappalyzer.
       </p>
 
       <p>
@@ -319,7 +319,7 @@
       <h3 id="chrome-ux-report"><a href="#chrome-ux-report" class="anchor-link">Chrome UX Report</a></h3>
 
       <p>
-        Le <a href="https://developers.google.com/web/tools/chrome-user-experience-report">Chrome UX Report</a> est un jeu de données publiques sur les expériences réelles des utilisateurs de Chrome. Les expériences sont regroupées selon l’origine des sites Web, par exemple <code>https://www.example.com</code>. Le jeu de données permet d’accéder à la distribution des expériences utilisateur relatives au rendu, au chargement, aux interactions et la stabilité de la disposition des éléments dans la page. En plus du regroupement par mois, les expériences peuvent également être découpées par dimensions comme la géographie du pays, le type de matériel  (ordinateur de bureau, téléphone, tablette) et le type de connexion utilisé (4G, 3G, etc.).
+        Le <a hreflang="en" href="https://developers.google.com/web/tools/chrome-user-experience-report">Chrome UX Report</a> est un jeu de données publiques sur les expériences réelles des utilisateurs de Chrome. Les expériences sont regroupées selon l’origine des sites Web, par exemple <code>https://www.example.com</code>. Le jeu de données permet d’accéder à la distribution des expériences utilisateur relatives au rendu, au chargement, aux interactions et la stabilité de la disposition des éléments dans la page. En plus du regroupement par mois, les expériences peuvent également être découpées par dimensions comme la géographie du pays, le type de matériel  (ordinateur de bureau, téléphone, tablette) et le type de connexion utilisé (4G, 3G, etc.).
       </p>
 
       <p>
@@ -327,7 +327,7 @@
       </p>
 
       <p>
-        Pour en savoir plus sur l’ensemble de données, consultez le guide <a href="https://web.dev/chrome-ux-report-bigquery" lang="en">Using the Chrome UX Report on BigQuery</a> sur <a href="https://web.dev/">web.dev</a>.
+        Pour en savoir plus sur l’ensemble de données, consultez le guide <a hreflang="en" href="https://web.dev/chrome-ux-report-bigquery" lang="en">Using the Chrome UX Report on BigQuery</a> sur <a hreflang="en" href="https://web.dev/">web.dev</a>.
       </p>
     </section>
 
@@ -335,7 +335,7 @@
       <h3 id="third-party-web"><a href="#third-party-web" class="anchor-link">Third Party Web</a></h3>
 
       <p>
-        <a href="https://www.thirdpartyweb.today/">Third Party Web</a> est un projet de recherche de <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='patrickhulce') }}">Patrick Hulce</a>, auteur du chapitre sur les <a href="{{ url_for('chapter', year=year, lang=lang, chapter='third-parties') }}">Tierces Parties</a>, qui utilise les données de HTTP Archive et Lighthouse pour identifier et analyser l’impact des ressources tierces sur le Web.
+        <a hreflang="en" href="https://www.thirdpartyweb.today/">Third Party Web</a> est un projet de recherche de <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='patrickhulce') }}">Patrick Hulce</a>, auteur du chapitre sur les <a href="{{ url_for('chapter', year=year, lang=lang, chapter='third-parties') }}">Tierces Parties</a>, qui utilise les données de HTTP Archive et Lighthouse pour identifier et analyser l’impact des ressources tierces sur le Web.
       </p>
 
       <p>
@@ -351,11 +351,11 @@
       <h3 id="rework-css"><a href="#rework-css" class="anchor-link">Rework CSS</a></h3>
 
       <p>
-        <a href="https://github.com/reworkcss/css">Rework CSS</a> est un analyseur CSS basé sur JavaScript. Il prend en entrées des feuilles de style entières et produit un objet JSON identifiant chaque règle de style, sélecteur, directive et valeur.
+        <a hreflang="en" href="https://github.com/reworkcss/css">Rework CSS</a> est un analyseur CSS basé sur JavaScript. Il prend en entrées des feuilles de style entières et produit un objet JSON identifiant chaque règle de style, sélecteur, directive et valeur.
       </p>
 
       <p>
-        Cet outil dédié à l’analyse CSS a amélioré de manière significative la précision de beaucoup d’indicateurs dans le chapitre <a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a>. Pour rendre l’analyse possible, toutes les feuilles de style externes et les styles en ligne ont été parcourus et analysés. Voir <a href="https://discuss.httparchive.org/t/analyzing-stylesheets-with-a-js-based-parser/1683">ce fil de discussion</a> pour plus d’informations sur la façon dont il a été intégré avec l’ensemble de données HTTP Archive sur BigQuery.
+        Cet outil dédié à l’analyse CSS a amélioré de manière significative la précision de beaucoup d’indicateurs dans le chapitre <a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a>. Pour rendre l’analyse possible, toutes les feuilles de style externes et les styles en ligne ont été parcourus et analysés. Voir <a hreflang="en" href="https://discuss.httparchive.org/t/analyzing-stylesheets-with-a-js-based-parser/1683">ce fil de discussion</a> pour plus d’informations sur la façon dont il a été intégré avec l’ensemble de données HTTP Archive sur BigQuery.
       </p>
     </section>
 
@@ -371,11 +371,11 @@
       <h3 id="brainstorming"><a href="#brainstorming" class="anchor-link">Réflexion préalable</a></h3>
 
       <p>
-        L’idée du Web Almanac en né en janvier 2019 sous la forme d’une <a href="https://discuss.httparchive.org/t/planning-the-web-almanac-2019/1553">publication sur le forum HTTP Archive</a> décrivant l’initiative et appelant aux soutiens. En mars 2019, nous avons créé un <a href="http://bit.ly/web-almanac-brainstorm">document public de réflexion</a> dans lequel n’importe qui dans la communauté web pourrait écrire des idées pour des chapitres ou des métriques. Il s’agissait d’une étape cruciale pour s’assurer que nous nous concentrions sur les choses qui comptent pour la collectivité et que nous incluions un ensemble diversifié de voix dans le processus.
+        L’idée du Web Almanac en né en janvier 2019 sous la forme d’une <a hreflang="en" href="https://discuss.httparchive.org/t/planning-the-web-almanac-2019/1553">publication sur le forum HTTP Archive</a> décrivant l’initiative et appelant aux soutiens. En mars 2019, nous avons créé un <a href="http://bit.ly/web-almanac-brainstorm">document public de réflexion</a> dans lequel n’importe qui dans la communauté web pourrait écrire des idées pour des chapitres ou des métriques. Il s’agissait d’une étape cruciale pour s’assurer que nous nous concentrions sur les choses qui comptent pour la collectivité et que nous incluions un ensemble diversifié de voix dans le processus.
       </p>
 
       <p>
-        À la suite de ce remue-méninge, 20 chapitres ont été confirmés et nous avons commencé à <a href="https://github.com/HTTPArchive/almanac.httparchive.org/issues/2">l’affectation d’expert·e·s et de relecteur·ice·s, ainsi que de pair·e·s pour les relecteurs inhérentes à chaque chapitre</a>. Ce processus comportait un biais inhérent lié à la difficulté  d’amener les bénévoles à s’engager dans un projet de cette envergure.  Ainsi, de nombreux contributeurs et contributrices sont membres des mêmes milieux professionnels. L’un des objectifs explicites des prochaines éditions du Web Almanac est d’encourager encore plus l’inclusion de voix sous-représentées et hétérogènes comme auteurs,  autrices, relecteurs et relectrices.
+        À la suite de ce remue-méninge, 20 chapitres ont été confirmés et nous avons commencé à <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/issues/2">l’affectation d’expert·e·s et de relecteur·ice·s, ainsi que de pair·e·s pour les relecteurs inhérentes à chaque chapitre</a>. Ce processus comportait un biais inhérent lié à la difficulté  d’amener les bénévoles à s’engager dans un projet de cette envergure.  Ainsi, de nombreux contributeurs et contributrices sont membres des mêmes milieux professionnels. L’un des objectifs explicites des prochaines éditions du Web Almanac est d’encourager encore plus l’inclusion de voix sous-représentées et hétérogènes comme auteurs,  autrices, relecteurs et relectrices.
       </p>
 
       <p>
@@ -387,7 +387,7 @@
       <h3 id="analysis"><a href="#analysis" class="anchor-link">Analyse</a></h3>
 
       <p>
-        En juin 2019, une fois obtenue la liste finale des paramètres et chapitres, des analystes ont trié les indicateurs en fonction de leur difficulté d’obtention. Dans certains cas, <a href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/almanac.js">des indicateurs personnalisés</a> devaient être créés pour combler les lacunes de nos capacités analytiques.
+        En juin 2019, une fois obtenue la liste finale des paramètres et chapitres, des analystes ont trié les indicateurs en fonction de leur difficulté d’obtention. Dans certains cas, <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/almanac.js">des indicateurs personnalisés</a> devaient être créés pour combler les lacunes de nos capacités analytiques.
       </p>
 
       <p>
@@ -395,7 +395,7 @@
       </p>
 
       <p>
-        À partir d’août 2019, les analystes ont commencé à rédiger des requêtes pour extraire les résultats pour chaque indicateur. Au total, <strong>431 requêtes</strong> furent écrites à la main&nbsp;! Vous pouvez parcourir toutes les requêtes, chapitre par chapitre, dans le répertoire <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2019">sql/2019</a> du dépôt Github de ce projet.
+        À partir d’août 2019, les analystes ont commencé à rédiger des requêtes pour extraire les résultats pour chaque indicateur. Au total, <strong>431 requêtes</strong> furent écrites à la main&nbsp;! Vous pouvez parcourir toutes les requêtes, chapitre par chapitre, dans le répertoire <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2019">sql/2019</a> du dépôt Github de ce projet.
       </p>
     </section>
 
@@ -423,7 +423,7 @@
       </p>
 
       <p>
-        Si vous souhaitez contribuer à l’édition 2020 du Web Almanac, n’hésitez pas à nous le dire via <a href="https://forms.gle/Qyf3q5pKgdH1cBhq5">ce formulaire</a>. Nous serions ravi·e·s d’entendre vos idées pour rendre ce projet encore meilleur&nbsp;!
+        Si vous souhaitez contribuer à l’édition 2020 du Web Almanac, n’hésitez pas à nous le dire via <a hreflang="en" href="https://forms.gle/Qyf3q5pKgdH1cBhq5">ce formulaire</a>. Nous serions ravi·e·s d’entendre vos idées pour rendre ce projet encore meilleur&nbsp;!
       </p>
     </section>
 {% endblock main_content %}

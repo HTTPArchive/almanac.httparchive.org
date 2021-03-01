@@ -9,7 +9,7 @@ editors: [bazzadp]
 translators: [c-torres]
 discuss: 1761
 results: https://docs.google.com/spreadsheets/d/108g6LXdC3YVsxmX1CCwrmpZ3-DmbB8G_wwgQHX5pn6Q/
-zachleat_bio: <i lang="en">Zach es un Desarrollador Web en <a href="https://www.filamentgroup.com/">Filament Group</a>. Actualmente está obsesionado con <a href="https://www.zachleat.com/web/fonts/">las fuentes web</a> y <a href="https://www.zachleat.com/web/introducing-eleventy/">generadores de sitios estáticos</a>. Su <a href="https://www.zachleat.com/web/speaking/">currículum de expositor</a> incluye charlas en ocho países diferentes en eventos como JAMstack_conf, Beyond Tellerrand, Smashing Conference, CSSConf, y <a href="https://www.zachleat.com/web/whitehouse/">La Casa Blanca</a>. Él también ayuda a organizar <a href="http://nejsconf.com/">NEJS CONF</a> y las reuniones de <a href="http://nebraskajs.com">NebraskaJS</a>.</i>
+zachleat_bio: <i lang="en">Zach es un Desarrollador Web en <a hreflang="en" href="https://www.filamentgroup.com/">Filament Group</a>. Actualmente está obsesionado con <a hreflang="en" href="https://www.zachleat.com/web/fonts/">las fuentes web</a> y <a hreflang="en" href="https://www.zachleat.com/web/introducing-eleventy/">generadores de sitios estáticos</a>. Su <a hreflang="en" href="https://www.zachleat.com/web/speaking/">currículum de expositor</a> incluye charlas en ocho países diferentes en eventos como JAMstack_conf, Beyond Tellerrand, Smashing Conference, CSSConf, y <a hreflang="en" href="https://www.zachleat.com/web/whitehouse/">La Casa Blanca</a>. Él también ayuda a organizar <a hreflang="en" href="http://nejsconf.com/">NEJS CONF</a> y las reuniones de <a hreflang="en" href="http://nebraskajs.com">NebraskaJS</a>.</i>
 featured_quote: Las fuentes web permiten una tipografía hermosa y funcional en la web. El uso de fuentes web no solo fortalece el diseño, sino que democratiza un subconjunto del diseño, ya que permite un acceso más fácil a aquellos que quizás no tengan habilidades de diseño particularmente sólidas. Sin embargo, a pesar de todo lo bueno que pueden hacer, las fuentes web también pueden causar un gran daño al rendimiento de su sitio si no se cargan correctamente.
 featured_stat_1: 74.9%
 featured_stat_label_1: 3P Solicitudes de fuentes que utilizan Google Fonts
@@ -49,7 +49,7 @@ El hecho de que tres cuartas partes estén alojadas tal vez no sea sorprendente 
 
 Google ofrece fuentes que utilizan archivos CSS de terceros alojados en `https://fonts.googleapis.com`. Los desarrolladores agregan solicitudes a estas hojas de estilo usando etiquetas`<link>` en su código. Si bien estas hojas de estilo bloquean el procesamiento, son muy pequeñas. Sin embargo, los archivos de fuentes se alojan en otro dominio, `https://fonts.gstatic.com`. El modelo de requerir dos peticiones separadas a dos dominios diferentes hace que `preconnect` sea una gran opción aquí para la segunda solicitud que no se descubrirá hasta que se descargue el CSS.
 
-Tenga en cuenta que, si bien `preload` sería una buena adición para cargar los archivos de fuentes más arriba en la cascada de solicitudes (recuerde que `preconnect` configura la conexión, no solicita el contenido del archivo), `preload` aún no está disponible con Google Fonts. Google Fonts genera URLs únicas para sus archivos de fuentes [que están sujetos a cambios](https://github.com/google/fonts/issues/1067).
+Tenga en cuenta que, si bien `preload` sería una buena adición para cargar los archivos de fuentes más arriba en la cascada de solicitudes (recuerde que `preconnect` configura la conexión, no solicita el contenido del archivo), `preload` aún no está disponible con Google Fonts. Google Fonts genera URLs únicas para sus archivos de fuentes <a hreflang="en" href="https://github.com/google/fonts/issues/1067">que están sujetos a cambios</a>.
 
 ### ¿Cuáles son los dominios de terceros más populares?
 
@@ -205,7 +205,7 @@ Como se mencionó anteriormente, una manera súper fácil de acelerar las solici
 )
 }}
 
-¡Guauu! ¡Menos del 2% de las páginas están usando [`preconnect`](https://web.dev/uses-rel-preconnect)! Dado que Google Fonts está al 75%, ¡debería ser más alto! Desarrolladores: si usa Google Fonts, use `preconnect`! Google Fonts: ¡proselitice más `preconnect`!
+¡Guauu! ¡Menos del 2% de las páginas están usando <a hreflang="en" href="https://web.dev/uses-rel-preconnect">`preconnect`</a>! Dado que Google Fonts está al 75%, ¡debería ser más alto! Desarrolladores: si usa Google Fonts, use `preconnect`! Google Fonts: ¡proselitice más `preconnect`!
 
 De hecho, si está usando Google Fonts, continúe y agregue esto a su `<head>` si aún no está allí:
 
@@ -349,11 +349,11 @@ De hecho, si está usando Google Fonts, continúe y agregue esto a su `<head>` s
   <figcaption>{{ figure_link(caption="Las 20 familias de fuentes principales como porcentaje de todas las declaraciones de fuentes.") }}</figcaption>
 </figure>
 
-No es sorprendente que las entradas principales aquí parezcan coincidir de manera muy similar a la [lista de fuentes de Google Fonts ordenadas por popularidad](https://fonts.google.com/?sort=popularity).
+No es sorprendente que las entradas principales aquí parezcan coincidir de manera muy similar a la <a hreflang="en" href="https://fonts.google.com/?sort=popularity">lista de fuentes de Google Fonts ordenadas por popularidad</a>.
 
 ## ¿Qué formatos de fuente se están utilizando?
 
-[WOFF2 está bastante bien soportado](https://caniuse.com/#feat=woff2) en los navegadores web hoy. Google Fonts sirve WOFF2, un formato que ofrece una compresión mejorada con respecto a su predecesor WOFF, que en sí mismo ya era una mejora con respecto a otros formatos de fuente existentes.
+<a hreflang="en" href="https://caniuse.com/#feat=woff2">WOFF2 está bastante bien soportado</a> en los navegadores web hoy. Google Fonts sirve WOFF2, un formato que ofrece una compresión mejorada con respecto a su predecesor WOFF, que en sí mismo ya era una mejora con respecto a otros formatos de fuente existentes.
 
 {{ figure_markup(
   image="fig7.png",
@@ -377,7 +377,7 @@ Profundicemos un poco más y veamos los valores `format()` usados en la propieda
   )
 }}
 
-Estaba esperando ver [fuentes SVG](https://caniuse.com/#feat=svg-fonts) en declive. Tienen errores y las implementaciones se han eliminado de todos los navegadores excepto Safari. Es hora de dejarlas a todas.
+Estaba esperando ver <a hreflang="en" href="https://caniuse.com/#feat=svg-fonts">fuentes SVG</a> en declive. Tienen errores y las implementaciones se han eliminado de todos los navegadores excepto Safari. Es hora de dejarlas a todas.
 
 El punto de datos SVG aquí también me hace preguntarme con qué tipo de MIME están sirviendo estas fuentes SVG. No veo `image/svg+xml` en ninguna parte de la Figura 6.7. De todos modos, no se preocupe por arreglar eso, ¡simplemente deshágase de ellas!
 
@@ -527,7 +527,7 @@ Es importante destacar que estos datos en particular no respaldan ni restan mér
 
 La herramienta número uno que tenemos para combatir el comportamiento de carga de fuentes web predeterminado de "invisible durante la carga" (también conocido como FOIT por sus siglas en inglés), es `font-display`. Agregar `font-display: swap` a su bloque `@font-face` es una manera fácil de decirle al navegador que muestre el texto de respaldo mientras se carga la fuente web.
 
-[Soporte de navegador](https://caniuse.com/#feat=mdn-css_at-rules_font-face_font-display) es genial tambien. Internet Explorer y la versión anterior a Chromium Edge no son compatibles, pero también representan el texto de respaldo de forma predeterminada cuando se carga una fuente web (aquí no se permiten FOIT). Para nuestras pruebas de Chrome, ¿con qué frecuencia se usa `font-display`?
+<a hreflang="en" href="https://caniuse.com/#feat=mdn-css_at-rules_font-face_font-display">Soporte de navegador</a> es genial tambien. Internet Explorer y la versión anterior a Chromium Edge no son compatibles, pero también representan el texto de respaldo de forma predeterminada cuando se carga una fuente web (aquí no se permiten FOIT). Para nuestras pruebas de Chrome, ¿con qué frecuencia se usa `font-display`?
 
 {{ figure_markup(
   caption="Porcentaje de páginas móviles que utilizan el estilo <code>font-display</code>.",
@@ -536,7 +536,7 @@ La herramienta número uno que tenemos para combatir el comportamiento de carga 
 )
 }}
 
-Supongo que esto aumentará con el tiempo, especialmente ahora que [Google Fonts está agregando `font-display` a todos los nuevos fragmentos de código](https://www.zachleat.com/web/google-fonts-display/) copiado desde su sitio.
+Supongo que esto aumentará con el tiempo, especialmente ahora que <a hreflang="en" href="https://www.zachleat.com/web/google-fonts-display/">Google Fonts está agregando `font-display` a todos los nuevos fragmentos de código</a> copiado desde su sitio.
 
 Si está utilizando Google Fonts, actualice sus fragmentos. Si no está utilizando Google Fonts, use `font-display`. Lea más sobre `font-display` en [MDN](https://developer.mozilla.org/es/docs/Web/CSS/@font-face/font-display).
 
@@ -575,7 +575,7 @@ La página web mediana realiza tres solicitudes de fuentes web. En el percentil 
   )
 }}
 
-Parece bastante interesante que las solicitudes de fuentes web parezcan ser bastante estables en computadoras de escritorio y dispositivos móviles. Me alegro de ver que la[recomendación de esconder bloques `@font-face` dentro de consultas `@media`](https://css-tricks.com/snippets/css/using-font-face/#article-header-id-6) no fue acogida (ni lo pienses).
+Parece bastante interesante que las solicitudes de fuentes web parezcan ser bastante estables en computadoras de escritorio y dispositivos móviles. Me alegro de ver que la<a hreflang="en" href="https://css-tricks.com/snippets/css/using-font-face/#article-header-id-6">recomendación de esconder bloques `@font-face` dentro de consultas `@media`</a> no fue acogida (ni lo pienses).
 
 Dicho esto, hay un poco más de solicitudes de fuentes realizadas en dispositivos móviles. Mi corazonada aquí es que hay menos tipos de letra disponibles en dispositivos móviles, lo que a su vez significa menos accesos `local()` en Google Fonts CSS, recurriendo a las solicitudes de red para estos.
 
@@ -618,7 +618,7 @@ Esta es otra métrica que espero que esté sesgada por el uso de Google Fonts, y
 
 `local()` es una buena forma de hacer referencia a una fuente del sistema en su `@font-face` `src`. Si la fuente `local()` existe, no necesita solicitar una fuente web en absoluto. Google Fonts usa esto de manera extensa y controvertida, por lo que es probable que sea otro ejemplo de datos sesgados si estamos tratando de obtener patrones de la tierra del usuario.
 
-También debe tenerse en cuenta aquí que personas más inteligentes que yo (Bram Stein de TypeKit) han dicho que [usar `local()` puede ser impredecible ya que las versiones instaladas de las fuentes pueden estar desactualizadas y no ser confiables](https://bramstein.com/writing/web-font-anti-patterns-local-fonts.html).
+También debe tenerse en cuenta aquí que personas más inteligentes que yo (Bram Stein de TypeKit) han dicho que <a hreflang="en" href="https://bramstein.com/writing/web-font-anti-patterns-local-fonts.html">usar `local()` puede ser impredecible ya que las versiones instaladas de las fuentes pueden estar desactualizadas y no ser confiables</a>.
 
 ## Fuentes condensadas y `font-stretch`
 
@@ -629,7 +629,7 @@ También debe tenerse en cuenta aquí que personas más inteligentes que yo (Bra
 )
 }}
 
-Históricamente, `font-stretch` ha sufrido de un soporte deficiente del navegador y no era una prpopiedad `@font-face` conocida. Lee mas sobre [`font-stretch` en MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch). Pero el [soporte de los navegadores](https://caniuse.com/#feat=css-font-stretch) se ha ampliado.
+Históricamente, `font-stretch` ha sufrido de un soporte deficiente del navegador y no era una prpopiedad `@font-face` conocida. Lee mas sobre [`font-stretch` en MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch). Pero el <a hreflang="en" href="https://caniuse.com/#feat=css-font-stretch">soporte de los navegadores</a> se ha ampliado.
 
 Se ha sugerido que el uso de fuentes condensadas en ventanas gráficas más pequeñas permite ver más texto, pero este enfoque no se usa comúnmente. Dicho esto, que esta propiedad se use medio punto porcentual más en computadoras de escritorio que en dispositivos móviles es inesperado, y el 7% parece mucho más alto de lo que hubiera predicho.
 
@@ -644,7 +644,7 @@ Se ha sugerido que el uso de fuentes condensadas en ventanas gráficas más pequ
 )
 }}
 
-Incluso con un 1.8%, esto fue más alto de lo esperado, aunque estoy emocionado de ver esto despegar. [Google Fonts v2](https://developers.google.com/fonts/docs/css2) incluye cierto soporte para fuentes variables.
+Incluso con un 1.8%, esto fue más alto de lo esperado, aunque estoy emocionado de ver esto despegar. <a hreflang="en" href="https://developers.google.com/fonts/docs/css2">Google Fonts v2</a> incluye cierto soporte para fuentes variables.
 
 {{ figure_markup(
   image="fig19.png",
@@ -666,7 +666,7 @@ A través del lente de este gran conjunto de datos, estos son tamaños de muestr
 )
 }}
 
-El uso aquí de estas es básicamente inexistente, pero puede consultar el excelente recurso [Color Fonts! WTF?](https://www.colorfonts.wtf/) para obtener más información. Similar (pero no en absoluto) al formato SVG para fuentes (que es malo y va a desaparecer), esta le permite incrustar SVG dentro de archivos OpenType, lo cual es increíble y genial.
+El uso aquí de estas es básicamente inexistente, pero puede consultar el excelente recurso <a hreflang="en" href="https://www.colorfonts.wtf/">Color Fonts! WTF?</a> para obtener más información. Similar (pero no en absoluto) al formato SVG para fuentes (que es malo y va a desaparecer), esta le permite incrustar SVG dentro de archivos OpenType, lo cual es increíble y genial.
 
 ## Conclusión
 

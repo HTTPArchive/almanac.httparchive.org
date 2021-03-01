@@ -9,7 +9,7 @@ editors: [obto]
 translators: [borisschapira]
 discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/
-housseindjirdeh_bio: Houssein est <i lang="en">Developer Advocate</i> chez Google. Il travaille sur la vitesse, la performance et l’écosystème des frameworks web. Il tweete sur <a href="https://twitter.com/hdjirdeh">@hdjirdeh</a> et blogue sur <a href="https://houssein.me/">https://houssein.me/</a>.
+housseindjirdeh_bio: Houssein est <i lang="en">Developer Advocate</i> chez Google. Il travaille sur la vitesse, la performance et l’écosystème des frameworks web. Il tweete sur <a href="https://twitter.com/hdjirdeh">@hdjirdeh</a> et blogue sur <a hreflang="en" href="https://houssein.me/">https://houssein.me/</a>.
 featured_quote: JavaScript est la ressource la plus consommatrice que nous envoyons aux navigateurs&nbsp;; il doit être téléchargé, analysé, compilé et enfin exécuté. Bien que les navigateurs aient considérablement réduit le temps nécessaire pour analyser et compiler les scripts, le téléchargement et l’exécution sont devenus les étapes les plus coûteuses lorsque JavaScript est traité par une page web.
 featured_stat_1: 89 %
 featured_stat_label_1: des sites ont plus de code tiers que de code maison
@@ -25,11 +25,11 @@ JavaScript est un langage de script qui permet de construire des expériences in
 
 La spécification du langage elle-même, ainsi que les nombreuses bibliothèques et <span lang="en">frameworks</span> communautaires utilisés par les développeurs du monde entier, ont changé et évolué depuis la création du langage en 1995. Les implémentations et les interpréteurs JavaScript ont également continué à progresser, rendant le langage utilisable dans de nombreux environnements, et pas seulement dans les navigateurs web.
 
-[HTTP Archive](https://httparchive.org/) parcourt [des millions de pages](https://httparchive.org/reports/state-of-the-web#numUrls) chaque mois et les soumet à une instance privée de [WebPageTest](https://webpagetest.org/) pour stocker les informations clés de chaque page (vous pouvez en savoir plus à ce sujet dans notre [méthodologie](./methodology)). Dans le contexte de JavaScript, HTTP Archive fournit des informations détaillées sur l’utilisation du langage pour l’ensemble du web. Ce chapitre regroupe et analyse un grand nombre de ces tendances.
+<a hreflang="en" href="https://httparchive.org/">HTTP Archive</a> parcourt <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#numUrls">des millions de pages</a> chaque mois et les soumet à une instance privée de <a hreflang="en" href="https://webpagetest.org/">WebPageTest</a> pour stocker les informations clés de chaque page (vous pouvez en savoir plus à ce sujet dans notre [méthodologie](./methodology)). Dans le contexte de JavaScript, HTTP Archive fournit des informations détaillées sur l’utilisation du langage pour l’ensemble du web. Ce chapitre regroupe et analyse un grand nombre de ces tendances.
 
 ## Combien de JavaScript utilisons-nous&nbsp;? {combien-de-javascript-utilisons-nous}
 
-JavaScript est la ressource la plus consommatrice que nous envoyons aux navigateurs&nbsp;: il doit être téléchargé, analysé, compilé et enfin exécuté. Bien que les navigateurs aient considérablement réduit le temps nécessaire pour analyser et compiler les scripts, [le téléchargement et l’exécution sont devenus les étapes les plus coûteuses](https://v8.dev/blog/cost-of-javascript-2019) lorsque JavaScript est traité par une page web.
+JavaScript est la ressource la plus consommatrice que nous envoyons aux navigateurs&nbsp;: il doit être téléchargé, analysé, compilé et enfin exécuté. Bien que les navigateurs aient considérablement réduit le temps nécessaire pour analyser et compiler les scripts, <a hreflang="en" href="https://v8.dev/blog/cost-of-javascript-2019">le téléchargement et l’exécution sont devenus les étapes les plus coûteuses</a> lorsque JavaScript est traité par une page web.
 
 Envoyer de plus petits paquets de JavaScript au navigateur est le meilleur moyen de réduire les temps de téléchargement et d’améliorer ainsi les performances des pages. Mais quelle quantité de JavaScript utilisons-nous réellement&nbsp;?
 
@@ -76,7 +76,7 @@ Bien que ces données montrent combien de temps il peut falloir à un appareil m
 {{ figure_markup(
   image="js-processing-reddit.png",
   alt="Délais de traitement de JavaScript pour Reddit.com.",
-  caption='Délais de traitement de JavaScript pour Reddit.com, issus de <a href="https://v8.dev/blog/cost-of-javascript-2019"><i lang="en">The cost of JavaScript in 2019</i> (en anglais)</a>.',
+  caption='Délais de traitement de JavaScript pour Reddit.com, issus de <a hreflang="en" href="https://v8.dev/blog/cost-of-javascript-2019"><i lang="en">The cost of JavaScript in 2019</i> (en anglais)</a>.',
   description="Diagramme à barres montrant 3 appareils différents&nbsp;: en haut, un Pixel 3 présentant une petite portion à la fois sur le fil principal et le fil secondaire de moins de 400&nbsp;ms. Dans le cas du Moto G4, cela représente environ 900&nbsp;ms sur le fil principal et 300&nbsp;ms sur le fil secondaire. La dernière barre est celle d’un Alcatel 1X 5059D avec plus de 2&#8239;000&nbsp;ms sur le fil principal et plus de 500&nbsp;ms sur le fil secondaire.",
   width=600,
   height=363
@@ -145,8 +145,8 @@ Dans le contexte des interactions entre navigateur et serveur, la compression de
 
 Il existe de nombreux algorithmes de compression de texte, mais seuls deux sont principalement utilisés pour la compression (et la décompression) des requêtes sur le réseau HTTP&nbsp;:
 
-- [Gzip](https://www.gzip.org/) (`gzip`)&nbsp;: le format de compression le plus utilisé pour les interactions entre serveurs et clients&nbsp;;
-- [Brotli](https://github.com/google/brotli) (`br`)&nbsp;: un algorithme de compression plus récent visant à améliorer encore les taux de compression. [90&nbsp;% des navigateurs](https://caniuse.com/#feat=brotli) supportent la compression Brotli.
+- <a hreflang="en" href="https://www.gzip.org/">Gzip</a> (`gzip`)&nbsp;: le format de compression le plus utilisé pour les interactions entre serveurs et clients&nbsp;;
+- <a hreflang="en" href="https://github.com/google/brotli">Brotli</a> (`br`)&nbsp;: un algorithme de compression plus récent visant à améliorer encore les taux de compression. <a hreflang="en" href="https://caniuse.com/#feat=brotli">90&nbsp;% des navigateurs</a> supportent la compression Brotli.
 
 Les scripts compressés devront toujours être décompressés par le navigateur une fois transférés. Cela signifie que son contenu reste le même et que les temps d’exécution ne sont pas du tout optimisés. Cependant, la compression des ressources améliorera toujours leur temps de téléchargement, qui est également l’une des étapes les plus coûteuses du traitement JavaScript. S’assurer que les fichiers JavaScript sont correctement compressés peut constituer un des principaux facteurs d’amélioration des performances pour un site web.
 
@@ -166,7 +166,7 @@ Pour une analyse plus approfondie sur la compression, reportez-vous au chapitre 
 
 ## Bibliothèques et frameworks ouverts
 
-Parlons ici du code source ouvert (<i lang="en">open source</i>), ou du code sous licence permissive, qui peut être consulté, visualisé et modifié par n’importe qui. Des minuscules bibliothèques aux navigateurs complets, tels que [Chromium](https://www.chromium.org/Home) et [Firefox](https://www.openhub.net/p/firefox), le code source <i lang="en">open source</i> joue un rôle crucial dans le monde du développement web. Dans le contexte de JavaScript, les équipes de développement s’appuient sur des outils <i lang="en">open source</i> pour inclure tous types de fonctionnalités dans leur page web. Qu’un développeur ou une développeuse décide d’utiliser une petite bibliothèque d’utilitaires ou un énorme <i lang="en">framework</i> qui dicte l’architecture de toute son application, le fait de s’appuyer sur du code <i lang="en">open source</i> peut rendre le développement de fonctionnalités plus facile et plus rapide. Quelles sont donc les bibliothèques JavaScript <i lang="en">open source</i> les plus utilisées&nbsp;?
+Parlons ici du code source ouvert (<i lang="en">open source</i>), ou du code sous licence permissive, qui peut être consulté, visualisé et modifié par n’importe qui. Des minuscules bibliothèques aux navigateurs complets, tels que <a hreflang="en" href="https://www.chromium.org/Home">Chromium</a> et <a hreflang="en" href="https://www.openhub.net/p/firefox">Firefox</a>, le code source <i lang="en">open source</i> joue un rôle crucial dans le monde du développement web. Dans le contexte de JavaScript, les équipes de développement s’appuient sur des outils <i lang="en">open source</i> pour inclure tous types de fonctionnalités dans leur page web. Qu’un développeur ou une développeuse décide d’utiliser une petite bibliothèque d’utilitaires ou un énorme <i lang="en">framework</i> qui dicte l’architecture de toute son application, le fait de s’appuyer sur du code <i lang="en">open source</i> peut rendre le développement de fonctionnalités plus facile et plus rapide. Quelles sont donc les bibliothèques JavaScript <i lang="en">open source</i> les plus utilisées&nbsp;?
 
 <figure>
    <table>
@@ -288,18 +288,18 @@ Parlons ici du code source ouvert (<i lang="en">open source</i>), ou du code sou
    <figcaption>{{ figure_link(caption="Principales bibliothèques JavaScript sur ordinateurs de bureau et mobiles.") }}</figcaption>
 </figure>
 
-[jQuery](https://jquery.com/), la bibliothèque JavaScript la plus populaire jamais créée, est utilisée dans 85,03&nbsp;% des pages sur ordinateurs de bureau et 83,46&nbsp;% des pages mobiles. L’avènement de nombreuses API et fonctionnalités de navigateurs, comme [Fetch](https://developer.mozilla.org/fr/docs/Web/API/Fetch_API) et [querySelector](https://developer.mozilla.org/fr/docs/Web/API/Document/querySelector), a standardisé une grande partie des fonctionnalités fournies par la bibliothèque dans une forme native. Bien que la popularité de jQuery semble en déclin, pourquoi est-il encore utilisé dans la grande majorité du web&nbsp;?
+<a hreflang="en" href="https://jquery.com/">jQuery</a>, la bibliothèque JavaScript la plus populaire jamais créée, est utilisée dans 85,03&nbsp;% des pages sur ordinateurs de bureau et 83,46&nbsp;% des pages mobiles. L’avènement de nombreuses API et fonctionnalités de navigateurs, comme [Fetch](https://developer.mozilla.org/fr/docs/Web/API/Fetch_API) et [querySelector](https://developer.mozilla.org/fr/docs/Web/API/Document/querySelector), a standardisé une grande partie des fonctionnalités fournies par la bibliothèque dans une forme native. Bien que la popularité de jQuery semble en déclin, pourquoi est-il encore utilisé dans la grande majorité du web&nbsp;?
 
 Il y a plusieurs raisons possibles&nbsp;:
 
-- [WordPress](https://wordpress.org/), qui est utilisé par plus de 30&nbsp;% des sites, inclut jQuery par défaut.
+- <a hreflang="en" href="https://wordpress.org/">WordPress</a>, qui est utilisé par plus de 30&nbsp;% des sites, inclut jQuery par défaut.
 - Passer de jQuery à une bibliothèque plus récente côté client peut prendre du temps en fonction de la taille de l’application, et de nombreux sites peuvent utiliser jQuery en plus de bibliothèques plus récentes côté client.
 
-Les autres bibliothèques JavaScript les plus utilisées comprennent les variantes de jQuery (jQuery migrate, jQuery UI), [Modernizr](https://modernizr.com/), [Moment.js](https://momentjs.com/), [Underscore.js](https://underscorejs.org/) et ainsi de suite.
+Les autres bibliothèques JavaScript les plus utilisées comprennent les variantes de jQuery (jQuery migrate, jQuery UI), <a hreflang="en" href="https://modernizr.com/">Modernizr</a>, <a hreflang="en" href="https://momentjs.com/">Moment.js</a>, <a hreflang="en" href="https://underscorejs.org/">Underscore.js</a> et ainsi de suite.
 
 ### Frameworks et bibliothèques d'interface
 
-<p class="note">Comme mentionné dans notre <a href="./methodology#wappalyzer">méthodologie</a>, la bibliothèque de détection tierce utilisée dans HTTP Archive (Wappalyzer) a un certain nombre de limitations en ce qui concerne la manière dont elle détecte certains outils. Un ticket est ouvert concernant <a href="https://github.com/AliasIO/wappalyzer/issues/2450">l’amélioration de la détection des bibliothèques et <span lang="en">frameworks</span> JavaScript</a>, ce qui aura eu un impact sur les résultats présentés ici.</p>
+<p class="note">Comme mentionné dans notre <a href="./methodology#wappalyzer">méthodologie</a>, la bibliothèque de détection tierce utilisée dans HTTP Archive (Wappalyzer) a un certain nombre de limitations en ce qui concerne la manière dont elle détecte certains outils. Un ticket est ouvert concernant <a hreflang="en" href="https://github.com/AliasIO/wappalyzer/issues/2450">l’amélioration de la détection des bibliothèques et <span lang="en">frameworks</span> JavaScript</a>, ce qui aura eu un impact sur les résultats présentés ici.</p>
 
 Au cours des dernières années, l’écosystème JavaScript a connu une augmentation du nombre de bibliothèques et <span lang="en">frameworks</span> open-source pour faciliter la création d’applications monopages (SPA). Une application monopage se caractérise par une page web qui charge une seule page HTML et utilise JavaScript pour modifier la page lors de l’interaction avec l’utilisateur au lieu de télécharger de nouvelles pages depuis le serveur. Bien que cela reste la principale prémisse des applications monopages, différentes approches de rendu du serveur peuvent encore être utilisées pour améliorer l’expérience de ces sites. Combien de sites utilisent ces types de <span lang="en">frameworks</span>&nbsp;?
 
@@ -314,14 +314,14 @@ Au cours des dernières années, l’écosystème JavaScript a connu une augment
 
 Seul un sous-ensemble de <span lang="en">frameworks</span> populaires est analysé ici, mais il est important de noter que tous suivent l’une ou l’autre de ces deux approches&nbsp;:
 
-- Une architecture [modèle-vue-contrôleur](https://developer.chrome.com/apps/app_frameworks) (ou modèle-vue-vue/modèle)
+- Une architecture <a hreflang="en" href="https://developer.chrome.com/apps/app_frameworks">modèle-vue-contrôleur</a> (ou modèle-vue-vue/modèle)
 - Une architecture orientée composants
 
-Bien qu’il y ait eu une évolution vers un modèle basé sur les composants, de nombreux <span lang="en">frameworks</span> plus anciens suivent le paradigme MVC. ([AngularJS](https://angularjs.org/), [Backbone.js](https://backbonejs.org/), [Ember](https://emberjs.com/)) sont toujours utilisées dans des milliers de pages. Cependant, [React](https://reactjs.org/), [Vue](https://vuejs.org/) et [Angular](https://angular.io/) sont les <span lang="en">frameworks</span> à base de composants les plus populaires. ([Zone.js](https://github.com/angular/zone.js) est un module qui fait maintenant partie du noyau Angular).
+Bien qu’il y ait eu une évolution vers un modèle basé sur les composants, de nombreux <span lang="en">frameworks</span> plus anciens suivent le paradigme MVC. (<a hreflang="en" href="https://angularjs.org/">AngularJS</a>, <a hreflang="en" href="https://backbonejs.org/">Backbone.js</a>, <a hreflang="en" href="https://emberjs.com/">Ember</a>) sont toujours utilisées dans des milliers de pages. Cependant, <a hreflang="en" href="https://reactjs.org/">React</a>, <a hreflang="en" href="https://vuejs.org/">Vue</a> et <a hreflang="en" href="https://angular.io/">Angular</a> sont les <span lang="en">frameworks</span> à base de composants les plus populaires. (<a hreflang="en" href="https://github.com/angular/zone.js">Zone.js</a> est un module qui fait maintenant partie du noyau Angular).
 
 ## Chargement différentiel
 
-[Les modules JavaScript](https://v8.dev/features/modules), ou modules ES, sont supportés par [tous les navigateurs principaux](https://caniuse.com/#feat=es6-module). Les modules offrent la possibilité de créer des scripts qui peuvent être importés et exportés à partir d’autres modules. Cela permet à quiconque de construire ses applications architecturées de manière modulaire, en les important et en les exportant partout où cela est nécessaire, sans avoir recours à des chargeurs de modules en tierce partie.
+<a hreflang="en" href="https://v8.dev/features/modules">Les modules JavaScript</a>, ou modules ES, sont supportés par <a hreflang="en" href="https://caniuse.com/#feat=es6-module">tous les navigateurs principaux</a>. Les modules offrent la possibilité de créer des scripts qui peuvent être importés et exportés à partir d’autres modules. Cela permet à quiconque de construire ses applications architecturées de manière modulaire, en les important et en les exportant partout où cela est nécessaire, sans avoir recours à des chargeurs de modules en tierce partie.
 
 Pour déclarer un script comme module, la balise script doit avoir l’attribut `type="module"`&nbsp;:
 
@@ -339,7 +339,7 @@ Combien de site utilisent `type="module"` sur des scripts dans leurs pages&nbsp;
   )
 }}
 
-La prise en charge des modules au niveau du navigateur est encore relativement récente, et les chiffres montrent que très peu de sites utilisent actuellement le `type="module"` pour leurs scripts. De nombreux sites s’appuient encore sur des chargeurs de modules (2,37&nbsp;% de tous les sites sur ordinateurs de bureau utilisent [RequireJS](https://github.com/requirejs/requirejs) par exemple) et des <i lang="en">bundlers</i> ([webpack](https://webpack.js.org/) par exemple) pour définir des modules au sein de leur base de code.
+La prise en charge des modules au niveau du navigateur est encore relativement récente, et les chiffres montrent que très peu de sites utilisent actuellement le `type="module"` pour leurs scripts. De nombreux sites s’appuient encore sur des chargeurs de modules (2,37&nbsp;% de tous les sites sur ordinateurs de bureau utilisent <a hreflang="en" href="https://github.com/requirejs/requirejs">RequireJS</a> par exemple) et des <i lang="en">bundlers</i> (<a hreflang="en" href="https://webpack.js.org/">webpack</a> par exemple) pour définir des modules au sein de leur base de code.
 
 Si des modules natifs sont utilisés, il est important de s’assurer qu’un script de recours approprié est utilisé pour les navigateurs qui ne supportent pas encore les modules. Cela peut être fait en incluant un script supplémentaire avec un attribut `nomodule`.
 
@@ -347,7 +347,7 @@ Si des modules natifs sont utilisés, il est important de s’assurer qu’un sc
 <script nomodule src="fallback.js"></script>
 ```
 
-Lorsqu’ils sont utilisés ensemble, les navigateurs qui prennent en charge les modules ignorent complètement tout script contenant l’attribut `nomodule`. En revanche, les navigateurs qui ne supportent pas encore les modules ne téléchargeront aucun script avec l’attribut `type="module"`. Comme ils ne reconnaissent pas non plus `nomodule`, ils téléchargeront normalement les scripts ayant cet attribut. L’utilisation de cette approche peut permettre aux développeurs [d’envoyer du code moderne à des navigateurs modernes pour un chargement plus rapide des pages](https://web.dev/serve-modern-code-to-modern-browsers/). Alors, combien de sites utilisent `nomodule` pour des scripts sur leur page&nbsp;?
+Lorsqu’ils sont utilisés ensemble, les navigateurs qui prennent en charge les modules ignorent complètement tout script contenant l’attribut `nomodule`. En revanche, les navigateurs qui ne supportent pas encore les modules ne téléchargeront aucun script avec l’attribut `type="module"`. Comme ils ne reconnaissent pas non plus `nomodule`, ils téléchargeront normalement les scripts ayant cet attribut. L’utilisation de cette approche peut permettre aux développeurs <a hreflang="en" href="https://web.dev/serve-modern-code-to-modern-browsers/">d’envoyer du code moderne à des navigateurs modernes pour un chargement plus rapide des pages</a>. Alors, combien de sites utilisent `nomodule` pour des scripts sur leur page&nbsp;?
 
 {{ figure_markup(
   image="fig14.png",
@@ -415,11 +415,11 @@ Combien de sites utilisent les API suivantes&nbsp;?
 
 Atomics (0,38&nbsp;%) et SharedArrayBuffer (0,20&nbsp;%) sont à peine visibles sur ce graphique dans la mesure où ils sont utilisés sur un très petit nombre de pages.
 
-Il est important de noter que les chiffres indiqués ici sont des approximations et qu’ils ne s’appuient pas sur [UseCounter](https://chromium.googlesource.com/chromium/src.git/+/master/docs/use_counter_wiki.md) pour mesurer l’utilisation des fonctionnalités.
+Il est important de noter que les chiffres indiqués ici sont des approximations et qu’ils ne s’appuient pas sur <a hreflang="en" href="https://chromium.googlesource.com/chromium/src.git/+/master/docs/use_counter_wiki.md">UseCounter</a> pour mesurer l’utilisation des fonctionnalités.
 
 ## Cartographies de code source (<i lang="en">source maps</i>) {cartographies-de-code-source-source-maps}
 
-Dans de nombreux moteurs de compilation, les fichiers JavaScript subissent une minification afin de minimiser leur taille et une transpilation pour les nouvelles fonctionnalités du langage qui ne sont pas encore prises en charge par de nombreux navigateurs. Par ailleurs, les surensembles de langage comme [TypeScript](https://www.typescriptlang.org/) se compilent en un résultat qui peut être sensiblement différent du code source original. Pour toutes ces raisons, le code final servi au navigateur peut être illisible et difficile à déchiffrer.
+Dans de nombreux moteurs de compilation, les fichiers JavaScript subissent une minification afin de minimiser leur taille et une transpilation pour les nouvelles fonctionnalités du langage qui ne sont pas encore prises en charge par de nombreux navigateurs. Par ailleurs, les surensembles de langage comme <a hreflang="en" href="https://www.typescriptlang.org/">TypeScript</a> se compilent en un résultat qui peut être sensiblement différent du code source original. Pour toutes ces raisons, le code final servi au navigateur peut être illisible et difficile à déchiffrer.
 
 Une cartographie de code source, ou **sourcemap** est un fichier supplémentaire accompagnant un fichier JavaScript qui permet à un navigateur de faire correspondre la version finale à sa source d’origine. Cela peut rendre le débogage et l’analyse des <i lang="en">bundles</i> de production beaucoup plus simples.
 

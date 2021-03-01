@@ -38,7 +38,7 @@ Nonostante la sua complessa natura multidisciplinare, negli ultimi anni il SEO s
 
 L'obiettivo del capitolo SEO di Web Almanac è identificare e valutare gli elementi e le configurazioni principali che giocano un ruolo nell'ottimizzazione della ricerca organica di un sito web. Identificando questi elementi, speriamo che i siti web possano sfruttare i nostri risultati per migliorare la loro capacità di essere scansionati, indicizzati e classificati dai motori di ricerca. In questo capitolo, forniamo un'istantanea del loro stato nel 2020 e un riepilogo di ciò che è cambiato [dal 2019](../2019/seo).
 
-È importante notare che questo capitolo si basa sull'analisi di [Lighthouse](https://developers.google.com/web/tools/lighthouse/) sui siti per dispositivi mobile, [sul rapporto sull'esperienza utente di Chrome](https://developers.google.com/web/tools/chrome-user-experience-report) su dispositivi mobile e desktop, nonché elementi HTML non elaborati e visualizzati dall'[HTTP Archive](https://httparchive.org/) su dispositivi mobile e desktop. Nel caso di HTTP Archive e Lighthouse, è limitato ai dati identificati solo dalle home page dei siti Web, non alle scansioni a livello di sito. Ne abbiamo tenuto conto durante le valutazioni. Questa distinzione è importante quando si traggono conclusioni dai nostri risultati. Puoi saperne di più sulla nostra pagina [Metodologia](./methodology).
+È importante notare che questo capitolo si basa sull'analisi di <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a> sui siti per dispositivi mobile, <a hreflang="en" href="https://developers.google.com/web/tools/chrome-user-experience-report">sul rapporto sull'esperienza utente di Chrome</a> su dispositivi mobile e desktop, nonché elementi HTML non elaborati e visualizzati dall'<a hreflang="en" href="https://httparchive.org/">HTTP Archive</a> su dispositivi mobile e desktop. Nel caso di HTTP Archive e Lighthouse, è limitato ai dati identificati solo dalle home page dei siti Web, non alle scansioni a livello di sito. Ne abbiamo tenuto conto durante le valutazioni. Questa distinzione è importante quando si traggono conclusioni dai nostri risultati. Puoi saperne di più sulla nostra pagina [Metodologia](./methodology).
 
 Esaminiamo i risultati principali dell'ottimizzazione della ricerca organica di quest'anno.
 
@@ -62,13 +62,13 @@ Per i siti web che cercano di ottimizzare la loro visibilità nei risultati di r
 
 Situato alla radice di un sito, un file `robots.txt` è uno strumento efficace per controllare con quali pagine deve interagire un crawler del motore di ricerca, quanto velocemente scansionarle e cosa fare con il contenuto scoperto.
 
-Google ha formalmente proposto di rendere `robots.txt` uno standard Internet ufficiale nel 2019. La [bozza di giugno 2020](https://tools.ietf.org/html/draft-koster-rep-02) include una chiara documentazione sui requisiti tecnici per il file `robots.txt`. Ciò ha richiesto informazioni più dettagliate su come i crawler dei motori di ricerca dovrebbero rispondere a contenuti non standard.
+Google ha formalmente proposto di rendere `robots.txt` uno standard Internet ufficiale nel 2019. La <a hreflang="en" href="https://tools.ietf.org/html/draft-koster-rep-02">bozza di giugno 2020</a> include una chiara documentazione sui requisiti tecnici per il file `robots.txt`. Ciò ha richiesto informazioni più dettagliate su come i crawler dei motori di ricerca dovrebbero rispondere a contenuti non standard.
 
-Un file `robots.txt` deve essere di testo normale, codificato in UTF-8 e rispondere alle richieste con un codice di stato HTTP 200. Un `robots.txt` non valido, una risposta 4XX (errore del client) o più di cinque reindirizzamenti vengono interpretati dai crawler dei motori di ricerca come _full allow_, il che significa che tutti i contenuti possono essere sottoposti a scansione. Una risposta 5XX (errore del server) è intesa come _full disallow_, il che significa che nessun contenuto può essere sottoposto a scansione. Se il file `robots.txt` è irraggiungibile per più di 30 giorni, Google ne utilizzerà l'ultima copia memorizzata nella cache, come descritto nelle [loro specifiche](https://developers.google.com/search/reference/robots_txt#handling-http-result-codes).
+Un file `robots.txt` deve essere di testo normale, codificato in UTF-8 e rispondere alle richieste con un codice di stato HTTP 200. Un `robots.txt` non valido, una risposta 4XX (errore del client) o più di cinque reindirizzamenti vengono interpretati dai crawler dei motori di ricerca come _full allow_, il che significa che tutti i contenuti possono essere sottoposti a scansione. Una risposta 5XX (errore del server) è intesa come _full disallow_, il che significa che nessun contenuto può essere sottoposto a scansione. Se il file `robots.txt` è irraggiungibile per più di 30 giorni, Google ne utilizzerà l'ultima copia memorizzata nella cache, come descritto nelle <a hreflang="en" href="https://developers.google.com/search/reference/robots_txt#handling-http-result-codes">loro specifiche</a>.
 
 Complessivamente, l'80.46% delle pagine per dispositivi mobile ha risposto a `robots.txt` con una risposta 2XX. Di questi, il 25.09% non è stato riconosciuto valido. Questo è leggermente migliorato rispetto al 2019, quando è stato rilevato che [27.84% dei siti per dispositivi mobile aveva un `robots.txt` valido](../2019/seo#robotstxt).
 
-Lighthouse, la fonte di dati per testare la validità di `robots.txt`, ha introdotto un [`robots.txt` audit](https://web.dev/robots-txt/) come parte dell'aggiornamento v6. Questa inclusione evidenzia che una richiesta risolta con successo non significa che il file caposaldo sarà in grado di fornire le direttive necessarie ai web crawler.
+Lighthouse, la fonte di dati per testare la validità di `robots.txt`, ha introdotto un <a hreflang="en" href="https://web.dev/robots-txt/">`robots.txt` audit</a> come parte dell'aggiornamento v6. Questa inclusione evidenzia che una richiesta risolta con successo non significa che il file caposaldo sarà in grado di fornire le direttive necessarie ai web crawler.
 
 <figure>
   <table>
@@ -179,13 +179,13 @@ Le direttive utilizzate più di frequente si concentrano sui motori di ricerca e
 
 Analizzando l'utilizzo dell'istruzione `Disallow` in `robots.txt` utilizzando i dati di oltre 6 milioni di siti basati su Lighthouse, si è riscontrato che il 97.84% di essi era completamente sottoponibile a scansione, con solo l'1.05% che utilizzava un'istruzione `Disallow` .
 
-È stata eseguita anche un'analisi dell'utilizzo dell'istruzione `robots.txt` `Disallow` lungo le direttive [meta robots](https://developers.google.com/search/reference/robots_meta_tag) _indexability_, trovando l'1.02% dei siti tra cui un'istruzione `Disallow` lungo le pagine indicizzabili con una direttiva meta robots `index`, con solo lo 0.03% dei siti che utilizza l'istruzione `Disallow` in `robots.txt` lungo le pagine _noindexed_ tramite la direttiva meta robots `noindex`.
+È stata eseguita anche un'analisi dell'utilizzo dell'istruzione `robots.txt` `Disallow` lungo le direttive <a hreflang="en" href="https://developers.google.com/search/reference/robots_meta_tag">meta robots</a> _indexability_, trovando l'1.02% dei siti tra cui un'istruzione `Disallow` lungo le pagine indicizzabili con una direttiva meta robots `index`, con solo lo 0.03% dei siti che utilizza l'istruzione `Disallow` in `robots.txt` lungo le pagine _noindexed_ tramite la direttiva meta robots `noindex`.
 
-L'utilizzo maggiore dell'istruzione `Disallow` sulle pagine indicizzabili rispetto a quelle noindexed è notevole poiché [la documentazione di Google](https://developers.google.com/search/docs/advanced/robots/intro) afferma che i proprietari dei siti non dovrebbero utilizzare `robots.txt` come mezzo per nascondere le pagine web dalla Google Search, poiché il collegamento interno con testo descrittivo potrebbe comportare l'indicizzazione della pagina senza che un crawler visiti la pagina. Invece, i proprietari dei siti dovrebbero usare altri metodi, come una direttiva `noindex` tramite meta robots.
+L'utilizzo maggiore dell'istruzione `Disallow` sulle pagine indicizzabili rispetto a quelle noindexed è notevole poiché <a hreflang="en" href="https://developers.google.com/search/docs/advanced/robots/intro">la documentazione di Google</a> afferma che i proprietari dei siti non dovrebbero utilizzare `robots.txt` come mezzo per nascondere le pagine web dalla Google Search, poiché il collegamento interno con testo descrittivo potrebbe comportare l'indicizzazione della pagina senza che un crawler visiti la pagina. Invece, i proprietari dei siti dovrebbero usare altri metodi, come una direttiva `noindex` tramite meta robots.
 
 #### I Meta robot
 
-Il meta tag `robots` e l'intestazione HTTP `X-Robots-Tag` sono un'estensione del proposto [Robots Exclusion Protocol](https://webmasters.googleblog.com/2019/07/rep-id.html) (REP), che consente di configurare le direttive a un livello più granulare. Il supporto della direttiva varia a seconda del motore di ricerca poiché REP non è ancora uno standard Internet ufficiale.
+Il meta tag `robots` e l'intestazione HTTP `X-Robots-Tag` sono un'estensione del proposto <a hreflang="en" href="https://webmasters.googleblog.com/2019/07/rep-id.html">Robots Exclusion Protocol</a> (REP), che consente di configurare le direttive a un livello più granulare. Il supporto della direttiva varia a seconda del motore di ricerca poiché REP non è ancora uno standard Internet ufficiale.
 
 I metatag erano il metodo dominante di esecuzione granulare con il 27.70% delle pagine desktop e il 27.96% delle pagine mobile che utilizzavano il tag. Le direttive `X-Robots-Tag` sono state trovate rispettivamente sullo 0.27% e sullo 0.40% di desktop e dispositivi mobile.
 
@@ -202,11 +202,11 @@ Durante l'analisi dell'utilizzo del meta tag robots nei test di Lighthouse, lo 0
 
 La combinazione di `Disallow` all'interno della direttiva `robots.txt` e `noindex` nei meta robots è stata trovata solo nello 0.03% delle pagine. Sebbene questo metodo offra la ridondanza di _belt e suspenders_, una pagina non deve essere bloccata da un file `robots.txt` affinché una direttiva `noindex` sulla pagina sia efficace.
 
-È interessante notare che il rendering ha modificato il tag meta robots nello 0.16% delle pagine. Sebbene non vi siano problemi intrinseci con l'utilizzo di JavaScript per aggiungere un meta tag robots a una pagina o modificarne il contenuto, i SEO dovrebbero essere giudiziosi nell'esecuzione. Se una pagina viene caricata con una direttiva `noindex` nel tag meta robots prima del rendering, [i motori di ricerca non eseguiranno il JavaScript](https://developers.google.com/search/docs/guides/javascript-seo-basics#use-meta-robots-tags-carefully) che modifica il valore del tag o indicizza la pagina.
+È interessante notare che il rendering ha modificato il tag meta robots nello 0.16% delle pagine. Sebbene non vi siano problemi intrinseci con l'utilizzo di JavaScript per aggiungere un meta tag robots a una pagina o modificarne il contenuto, i SEO dovrebbero essere giudiziosi nell'esecuzione. Se una pagina viene caricata con una direttiva `noindex` nel tag meta robots prima del rendering, <a hreflang="en" href="https://developers.google.com/search/docs/guides/javascript-seo-basics#use-meta-robots-tags-carefully">i motori di ricerca non eseguiranno il JavaScript</a> che modifica il valore del tag o indicizza la pagina.
 
 #### Canonicalizzazione
 
-I [tag canonici](https://developers.google.com/search/docs/advanced/crawling/consolidate-duplicate-urls), come descritto da Google, vengono utilizzati per specificare ai motori di ricerca qual è la versione preferita dell'URL canonico per l'indice e ranking per una pagina, quella che è considerata meglio rappresentativa di essa, quando ci sono molti URL che presentano contenuti uguali o molto simili. È importante notare che:
+I <a hreflang="en" href="https://developers.google.com/search/docs/advanced/crawling/consolidate-duplicate-urls">tag canonici</a>, come descritto da Google, vengono utilizzati per specificare ai motori di ricerca qual è la versione preferita dell'URL canonico per l'indice e ranking per una pagina, quella che è considerata meglio rappresentativa di essa, quando ci sono molti URL che presentano contenuti uguali o molto simili. È importante notare che:
 
 - La configurazione del tag canonico viene utilizzata insieme ad altri segnali per selezionare l'URL canonico di una pagina; non è l'unico.
 - Sebbene a volte vengano utilizzati tag canonici autoreferenziali, questi tag non sono un requisito.
@@ -249,7 +249,7 @@ Un conflitto simile può essere trovato con i diversi metodi di implementazione,
 
 Lo scopo principale che servono sia i motori di ricerca che la Search Engine Optimization è dare visibilità ai contenuti di cui gli utenti hanno bisogno. I motori di ricerca estraggono funzionalità dalle pagine per determinare di cosa tratta il contenuto. In questo modo, i due sono simbiotici. Le caratteristiche estratte si allineano con i segnali che indicano la pertinenza e informano la classifica.
 
-Per capire cosa sono in grado di estrarre efficacemente i motori di ricerca, abbiamo suddiviso i componenti di quel contenuto ed esaminato il tasso di incidenza di tali caratteristiche tra i contesti mobile e desktop. Abbiamo anche esaminato la disparità tra i contenuti per dispositivi mobile e desktop. La disparità tra dispositivi mobile e desktop è particolarmente importante perché Google è passato a [_mobile-first indexing_](https://developers.google.com/search/blog/2020/03/announcing-mobile-first-indexing-for) (MFI) per tutti i nuovi siti e, a partire da marzo 2021, passerà a un _mobile-only index_ in cui i contenuti che non vengono visualizzati nel contesto dei dispositivi mobile non verranno valutati per il ranking.
+Per capire cosa sono in grado di estrarre efficacemente i motori di ricerca, abbiamo suddiviso i componenti di quel contenuto ed esaminato il tasso di incidenza di tali caratteristiche tra i contesti mobile e desktop. Abbiamo anche esaminato la disparità tra i contenuti per dispositivi mobile e desktop. La disparità tra dispositivi mobile e desktop è particolarmente importante perché Google è passato a <a hreflang="en" href="https://developers.google.com/search/blog/2020/03/announcing-mobile-first-indexing-for">_mobile-first indexing_</a> (MFI) per tutti i nuovi siti e, a partire da marzo 2021, passerà a un _mobile-only index_ in cui i contenuti che non vengono visualizzati nel contesto dei dispositivi mobile non verranno valutati per il ranking.
 
 #### Contenuto di testo sottoposto a rendering contro  contenuto di testo non sottoposto a rendering
 
@@ -309,7 +309,7 @@ Nel nostro esempio, ci sono disparità nella combinazione di dispositivi mobile/
 
 #### Le intestazioni
 
-Gli elementi di intestazione (`H1`-`H6`) agiscono come un meccanismo per indicare visivamente la struttura nel contenuto di una pagina. Sebbene questi elementi HTML non abbiano il peso che avevano una volta nelle classifiche di ricerca, agiscono strutturando le pagine e segnalando altri elementi nelle pagine dei risultati dei motori di ricerca (SERP) come _featured snippet_ o altri metodi di estrazione che si allineano con [l'indicizzazione dei nuovi passaggi di Google](https://www.blog.google/products/search/search-on/).
+Gli elementi di intestazione (`H1`-`H6`) agiscono come un meccanismo per indicare visivamente la struttura nel contenuto di una pagina. Sebbene questi elementi HTML non abbiano il peso che avevano una volta nelle classifiche di ricerca, agiscono strutturando le pagine e segnalando altri elementi nelle pagine dei risultati dei motori di ricerca (SERP) come _featured snippet_ o altri metodi di estrazione che si allineano con <a hreflang="en" href="https://www.blog.google/products/search/search-on/">l'indicizzazione dei nuovi passaggi di Google</a>.
 
 {{ figure_markup(
   image="seo-presence-of-h-elements.png",
@@ -341,13 +341,13 @@ Puoi saperne di più sull'uso delle intestazioni nel [capitolo Markup](./markup#
 
 #### Dati strutturati
 
-Nel corso dell'ultimo decennio, i motori di ricerca, in particolare Google, hanno continuato a spingere per diventare il livello di presentazione del web. Questi progressi sono in parte guidati dalla loro migliore capacità di estrarre informazioni da contenuti non strutturati (ad esempio, [indicizzazione dei passaggi](https://blog.google/products/search/search-on/)) e dall'adozione del markup semantico nel modulo di _dati strutturati_. I motori di ricerca hanno incoraggiato i creatori di contenuti e gli sviluppatori a implementare dati strutturati per dare maggiore visibilità ai loro contenuti all'interno dei componenti dei risultati di ricerca.
+Nel corso dell'ultimo decennio, i motori di ricerca, in particolare Google, hanno continuato a spingere per diventare il livello di presentazione del web. Questi progressi sono in parte guidati dalla loro migliore capacità di estrarre informazioni da contenuti non strutturati (ad esempio, <a hreflang="en" href="https://blog.google/products/search/search-on/">indicizzazione dei passaggi</a>) e dall'adozione del markup semantico nel modulo di _dati strutturati_. I motori di ricerca hanno incoraggiato i creatori di contenuti e gli sviluppatori a implementare dati strutturati per dare maggiore visibilità ai loro contenuti all'interno dei componenti dei risultati di ricerca.
 
-Nel articolo riguardante ["strings to things"](https://blog.google/products/search/introducing-knowledge-graph-things-not/), i motori di ricerca hanno concordato un ampio vocabolario di oggetti a sostegno della marcatura su una varietà di persone, luoghi e cose all'interno dei contenuti web. Tuttavia, solo un sottoinsieme di quel vocabolario attiva l'inclusione nei componenti dei risultati di ricerca. Google specifica quelli che supportano e come vengono visualizzati nella sua [galleria di ricerca](https://developers.google.com/search/docs/guides/search-gallery) e fornisce [uno strumento](https://search.google.com/test/rich-results) per convalidare il loro supporto e implementazione.
+Nel articolo riguardante <a hreflang="en" href="https://blog.google/products/search/introducing-knowledge-graph-things-not/">"strings to things"</a>, i motori di ricerca hanno concordato un ampio vocabolario di oggetti a sostegno della marcatura su una varietà di persone, luoghi e cose all'interno dei contenuti web. Tuttavia, solo un sottoinsieme di quel vocabolario attiva l'inclusione nei componenti dei risultati di ricerca. Google specifica quelli che supportano e come vengono visualizzati nella sua <a hreflang="en" href="https://developers.google.com/search/docs/guides/search-gallery">galleria di ricerca</a> e fornisce <a hreflang="en" href="https://search.google.com/test/rich-results">uno strumento</a> per convalidare il loro supporto e implementazione.
 
 Man mano che i motori di ricerca si evolvono per riflettere più di questi elementi nei risultati di ricerca, i tassi di incidenza dei diversi vocabolari cambiano nel web.
 
-Come parte del nostro esame, abbiamo esaminato i tassi di incidenza di diversi tipi di markup strutturati. I vocabolari disponibili includono [RDFa](https://www.w3.org/TR/rdfa-primer/) e [schema.org](https://schema.org/), disponibili sia nei microformati che in [JSON-LD](https://www.w3.org/TR/json-ld11/). Google ha recentemente [abbandonato il supporto per il vocabolario dei dati](https://developers.google.com/search/blog/2020/01/data-vocabulary), che è stato utilizzato principalmente per implementare i breadcrumb.
+Come parte del nostro esame, abbiamo esaminato i tassi di incidenza di diversi tipi di markup strutturati. I vocabolari disponibili includono <a hreflang="en" href="https://www.w3.org/TR/rdfa-primer/">RDFa</a> e <a hreflang="en" href="https://schema.org/">schema.org</a>, disponibili sia nei microformati che in <a hreflang="en" href="https://www.w3.org/TR/json-ld11/">JSON-LD</a>. Google ha recentemente <a hreflang="en" href="https://developers.google.com/search/blog/2020/01/data-vocabulary">abbandonato il supporto per il vocabolario dei dati</a>, che è stato utilizzato principalmente per implementare i breadcrumb.
 
 JSON-LD è generalmente considerato l'implementazione più portabile e più facile da gestire e quindi è diventato il formato preferito. Di conseguenza, vediamo che JSON-LD appare sul 29.78% delle pagine mobile e sul 30.60% delle pagine desktop.
 
@@ -416,9 +416,9 @@ Va notato che `WebSite`, `SearchAction` e `Organization` sono tutti tipicamente 
 
 Al contrario, nonostante il fatto che le recensioni non dovrebbero essere associate alle home page, i dati indicano che `AggregateRating` viene utilizzato il 23.9% su dispositivi mobile e il 23.7% su desktop.
 
-È interessante vedere la crescita di [`VideoObject`](https://developers.google.com/search/docs/data-types/video) per annotare i video. Sebbene [i video di YouTube dominino i risultati di ricerca video in Google](https://moz.com/blog/youtube-dominates-google-video-results-in-2020), l'utilizzo di `VideoObject` è cresciuto del 30.11% su desktop e del 27.7 % sul cellulare.
+È interessante vedere la crescita di <a hreflang="en" href="https://developers.google.com/search/docs/data-types/video">`VideoObject`</a> per annotare i video. Sebbene <a hreflang="en" href="https://moz.com/blog/youtube-dominates-google-video-results-in-2020">i video di YouTube dominino i risultati di ricerca video in Google</a>, l'utilizzo di `VideoObject` è cresciuto del 30.11% su desktop e del 27.7 % sul cellulare.
 
-La crescita di questi oggetti è un'indicazione generale di una maggiore adozione di dati strutturati. C'è anche un'indicazione di ciò che Google offre visibilità all'interno delle funzionalità di ricerca aumenta i tassi di incidenza di oggetti meno utilizzati. Google ha annunciato gli oggetti [`FAQPage`](https://developers.google.com/search/docs/data-types/faqpage), [`HowTo`](https://developers.google.com/search/docs/data-types/how-to) e [`QAPage`](https://developers.google.com/search/docs/data-types/qapage) come opportunità di visibilità nel 2019 e hanno sostenuto una crescita significativa di anno in anno:
+La crescita di questi oggetti è un'indicazione generale di una maggiore adozione di dati strutturati. C'è anche un'indicazione di ciò che Google offre visibilità all'interno delle funzionalità di ricerca aumenta i tassi di incidenza di oggetti meno utilizzati. Google ha annunciato gli oggetti <a hreflang="en" href="https://developers.google.com/search/docs/data-types/faqpage">`FAQPage`</a>, <a hreflang="en" href="https://developers.google.com/search/docs/data-types/how-to">`HowTo`</a> e <a hreflang="en" href="https://developers.google.com/search/docs/data-types/qapage">`QAPage`</a> come opportunità di visibilità nel 2019 e hanno sostenuto una crescita significativa di anno in anno:
 
 * Il markup `FAQPage` è cresciuto del 3.261% su desktop e del 3.000% su mobile.
 * Il markup `HowTo` è cresciuto del 605% su desktop e del 623% su dispositivi mobile.
@@ -466,7 +466,7 @@ Il conteggio mediano dei caratteri del titolo della pagina è di 38 caratteri su
 
 ##### Le Meta description
 
-La meta description funge da slogan pubblicitario per una pagina web. Sebbene [uno studio recente](https://www.searchenginejournal.com/google-rewrites-meta-descriptions-over-70-of-the-time/382140/) suggerisca che questo tag venga ignorato e riscritto da Google il 70% delle volte, è un elemento preparato con l'obiettivo di invogliare un utente a fare clic.
+La meta description funge da slogan pubblicitario per una pagina web. Sebbene <a hreflang="en" href="https://www.searchenginejournal.com/google-rewrites-meta-descriptions-over-70-of-the-time/382140/">uno studio recente</a> suggerisca che questo tag venga ignorato e riscritto da Google il 70% delle volte, è un elemento preparato con l'obiettivo di invogliare un utente a fare clic.
 
 Analizzando l'utilizzo delle meta description, abbiamo rilevato che il 68.62% delle pagine desktop e il 68.22% delle pagine mobile ne hanno una. Sebbene possa essere sorprendentemente basso, si tratta di un leggero miglioramento rispetto a [l'anno scorso](../2019/seo#meta-descriptions), quando solo il 64.02% delle pagine mobile aveva una meta description.
 
@@ -549,13 +549,13 @@ La pagina web mediana ha il 10.00% di immagini con attributi `alt` vuoti su desk
 
 ### I Link
 
-I motori di ricerca moderni utilizzano collegamenti ipertestuali (hyperlink) tra le pagine per la scoperta di nuovi contenuti per l'indicizzazione e come indicazione dell'autorità per il posizionamento. Il grafico dei collegamenti è qualcosa che i motori di ricerca controllano attivamente sia algoritmicamente che tramite revisione manuale. Le pagine web passano link equity attraverso i loro siti e ad altri siti attraverso questi collegamenti ipertestuali, quindi è importante assicurarsi che ci sia una grande quantità di link in ogni data pagina, ma anche, come Google menziona nella sua [Guida introduttiva al SEO](https://developers.google.com/search/docs/beginner/seo-starter-guide#use-links-wisely) per creare saggiamente un link.
+I motori di ricerca moderni utilizzano collegamenti ipertestuali (hyperlink) tra le pagine per la scoperta di nuovi contenuti per l'indicizzazione e come indicazione dell'autorità per il posizionamento. Il grafico dei collegamenti è qualcosa che i motori di ricerca controllano attivamente sia algoritmicamente che tramite revisione manuale. Le pagine web passano link equity attraverso i loro siti e ad altri siti attraverso questi collegamenti ipertestuali, quindi è importante assicurarsi che ci sia una grande quantità di link in ogni data pagina, ma anche, come Google menziona nella sua <a hreflang="en" href="https://developers.google.com/search/docs/beginner/seo-starter-guide#use-links-wisely">Guida introduttiva al SEO</a> per creare saggiamente un link.
 
 #### I link in uscita
 
 Nell'ambito di questa analisi siamo in grado di valutare i link in uscita da ciascuna pagina, sia a pagine interne dello stesso dominio, sia a quelle esterne, tuttavia non abbiamo analizzato i link in entrata.
 
-La pagina desktop mediana include 76 link mentre la pagina mobile mediana ne ha 67. Storicamente, la direzione di Google ha suggerito che i link fossero limitati a 100 per pagina. Sebbene tale raccomandazione sia obsoleta sul Web moderno e da allora Google ha affermato che [non ci sono limiti](https://www.seroundtable.com/google-link-unlimited-18468.html), la pagina mediana nel nostro set di dati aderisce ad esso.
+La pagina desktop mediana include 76 link mentre la pagina mobile mediana ne ha 67. Storicamente, la direzione di Google ha suggerito che i link fossero limitati a 100 per pagina. Sebbene tale raccomandazione sia obsoleta sul Web moderno e da allora Google ha affermato che <a hreflang="en" href="https://www.seroundtable.com/google-link-unlimited-18468.html">non ci sono limiti</a>, la pagina mediana nel nostro set di dati aderisce ad esso.
 
 {{ figure_markup(
   image="seo-outgoing-links.png",
@@ -617,7 +617,7 @@ Esiste una disparità nei link tra mobile e desktop che avrà un impatto negativ
 
 #### Utilizzo degli attributi `rel=nofollow`, `ugc` e `sponsored`
 
-Nel settembre del 2019, [Google ha introdotto attributi](https://webmasters.googleblog.com/2019/09/evolving-nofollow-new-ways-to-identify.html) che consentono agli editori di classificare i link come sponsorizzati o generati dagli utenti. Questi attributi sono in aggiunta a `rel=nofollow` che è stato precedentemente [introdotto nel 2005](https://googleblog.blogspot.com/2005/01/preventing-comment-spam.html). I nuovi attributi, `rel=ugc` e `rel=sponsored`, hanno lo scopo di chiarire o qualificare il motivo per cui questi link appaiono su una data pagina web.
+Nel settembre del 2019, <a hreflang="en" href="https://webmasters.googleblog.com/2019/09/evolving-nofollow-new-ways-to-identify.html">Google ha introdotto attributi</a> che consentono agli editori di classificare i link come sponsorizzati o generati dagli utenti. Questi attributi sono in aggiunta a `rel=nofollow` che è stato precedentemente <a hreflang="en" href="https://googleblog.blogspot.com/2005/01/preventing-comment-spam.html">introdotto nel 2005</a>. I nuovi attributi, `rel=ugc` e `rel=sponsored`, hanno lo scopo di chiarire o qualificare il motivo per cui questi link appaiono su una data pagina web.
 
 La nostra revisione delle pagine indica che il 28.58% delle pagine include attributi `rel=nofollow` su desktop e il 30.74% su dispositivi mobile. Tuttavia, l'adozione di `rel=ugc` e `rel=sponsored` è piuttosto bassa con meno dello 0.3% delle pagine (circa 20.000) che ne hanno entrambe. Poiché questi attributi non aggiungono valore a un editore più di `rel=nofollow`, è ragionevole aspettarsi che il tasso di adozione continuerà a essere lento.
 
@@ -637,11 +637,11 @@ Questa sezione esplora le opportunità di ottimizzazione relative alle configura
 
 ### Compatibilità mobile
 
-Con la crescente popolarità dei dispositivi mobile per la navigazione e la ricerca sul Web, i motori di ricerca hanno preso in considerazione l'ottimizzazione per i dispositivi mobile come un [fattore di ranking per diversi anni](https://developers.google.com/search/blog/2015/02/finding-more-mobile-friendly-search).
+Con la crescente popolarità dei dispositivi mobile per la navigazione e la ricerca sul Web, i motori di ricerca hanno preso in considerazione l'ottimizzazione per i dispositivi mobile come un <a hreflang="en" href="https://developers.google.com/search/blog/2015/02/finding-more-mobile-friendly-search">fattore di ranking per diversi anni</a>.
 
-Inoltre, come accennato in precedenza, [dal 2016](https://developers.google.com/search/blog/2016/11/mobile-first-indexing) Google è passata a un indice mobile first, il che significa che il contenuto che viene scansionato, indicizzato e classificato è quello accessibile agli utenti di dispositivi mobile e al [Googlebot per smartphone](https://developers.google.com/search/docs/advanced/crawling/googlebot?hl=en).
+Inoltre, come accennato in precedenza, <a hreflang="en" href="https://developers.google.com/search/blog/2016/11/mobile-first-indexing">dal 2016</a> Google è passata a un indice mobile first, il che significa che il contenuto che viene scansionato, indicizzato e classificato è quello accessibile agli utenti di dispositivi mobile e al <a hreflang="en" href="https://developers.google.com/search/docs/advanced/crawling/googlebot?hl=en">Googlebot per smartphone</a>.
 
-Inoltre, [da luglio 2019](https://developers.google.com/search/blog/2019/05/mobile-first-indexing-by-default-for) Google utilizza l'indice mobile-first per tutti i nuovi siti web e all'inizio di marzo, ha annunciato che [il 70% delle pagine mostrate nei risultati di ricerca è già stato spostato](https://webmasters.googleblog.com/2020/03/announcing-mobile-first-indexing-for.html). Si prevede ora che Google [passi completamente a un indice mobile first nel marzo 2021](https://webmasters.googleblog.com/2020/07/prepare-for-mobile-first-indexing-with.html).
+Inoltre, <a hreflang="en" href="https://developers.google.com/search/blog/2019/05/mobile-first-indexing-by-default-for">da luglio 2019</a> Google utilizza l'indice mobile-first per tutti i nuovi siti web e all'inizio di marzo, ha annunciato che <a hreflang="en" href="https://webmasters.googleblog.com/2020/03/announcing-mobile-first-indexing-for.html">il 70% delle pagine mostrate nei risultati di ricerca è già stato spostato</a>. Si prevede ora che Google <a hreflang="en" href="https://webmasters.googleblog.com/2020/07/prepare-for-mobile-first-indexing-with.html">passi completamente a un indice mobile first nel marzo 2021</a>.
 
 La compatibilità mobile dovrebbe essere fondamentale per qualsiasi sito web che cerca di fornire una buona esperienza di ricerca e, di conseguenza, aumentare i risultati di ricerca.
 
@@ -765,21 +765,21 @@ Si consiglia ai siti web desktop che hanno versioni mobile separate di collegars
 
 ### Prestazioni web
 
-Avere un sito Web veloce è fondamentale per fornire un'ottima esperienza di ricerca utente. Per la sua importanza è da anni considerato come fattore di ranking dai motori di ricerca. Google ha inizialmente annunciato di utilizzare la velocità del sito come [fattore di ranking nel 2010](https://webmasters.googleblog.com/2010/04/using-site-speed-in-web-search-ranking.html), quindi [nel 2018 ha fatto lo stesso per le ricerche su dispositivi mobile](https://webmasters.googleblog.com/2018/01/using-page-speed-in-mobile-search.html).
+Avere un sito Web veloce è fondamentale per fornire un'ottima esperienza di ricerca utente. Per la sua importanza è da anni considerato come fattore di ranking dai motori di ricerca. Google ha inizialmente annunciato di utilizzare la velocità del sito come <a hreflang="en" href="https://webmasters.googleblog.com/2010/04/using-site-speed-in-web-search-ranking.html">fattore di ranking nel 2010</a>, quindi <a hreflang="en" href="https://webmasters.googleblog.com/2018/01/using-page-speed-in-mobile-search.html">nel 2018 ha fatto lo stesso per le ricerche su dispositivi mobile</a>.
 
-As announced in November 2020, three performance metrics known as [Core Web Vitals](https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html) are on track to be a ranking factor as part of the "page experience" signals in May 2021. Core Web Vitals consist of:
+As announced in November 2020, three performance metrics known as <a hreflang="en" href="https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html">Core Web Vitals</a> are on track to be a ranking factor as part of the "page experience" signals in May 2021. Core Web Vitals consist of:
 
-**[Largest Contentful Paint](https://web.dev/lcp/) (LCP)**
+**<a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a> (LCP)**
 - Rappresenta: esperienza di caricamento percepita dall'utente
 - Misurazione: il punto nella sequenza temporale di caricamento della pagina in cui l'immagine o il blocco di testo più grande della pagina è visibile all'interno della visualizzazione
 - Obiettivo: <2,5 secondi
 
-**[First Input Delay](https://web.dev/fid/) (FID)**
+**<a hreflang="en" href="https://web.dev/fid/">First Input Delay</a> (FID)**
 - Rappresenta: reattività all'input dell'utente
 - Misurazione: il tempo da quando un utente interagisce per la prima volta con una pagina al momento in cui il browser è effettivamente in grado di iniziare a elaborare i gestori di eventi in risposta a tale interazione
 - Obiettivo: <300 millisecondi
 
-**[Cumulative Layout Shift](https://web.dev/cls/) (CLS)**
+**<a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a> (CLS)**
 - Rappresenta: stabilità visiva
 - Misurazione: la somma del numero di _punti di spostamento del layout_ che si avvicina alla percentuale del viewport che si è spostato
 - Obiettivo: <0.10
@@ -822,7 +822,7 @@ L'internazionalizzazione copre le configurazioni che i siti web multilingue o mu
 
 Le due configurazioni internazionali che abbiamo analizzato sono il meta tag `content-language` e gli attributi `hreflang`, che possono essere usati per specificare la lingua e il contenuto di ogni pagina. Inoltre, le annotazioni `hreflang` consentono di specificare la lingua alternativa o le versioni nazionali di ciascuna pagina.
 
-Motori di ricerca come [Google](https://support.google.com/webmasters/answer/189077?hl=en) e [Yandex](https://yandex.com/support/webmaster/yandex-indexing/locale-pages.html) usano gli attributi `hreflang` come segnale per determinare la lingua della pagina e il paese di destinazione, e sebbene Google non utilizzi la lingua HTML o il meta tag `content-language`, quest'ultimo ultimo tag viene utilizzato da Bing.
+Motori di ricerca come <a hreflang="en" href="https://support.google.com/webmasters/answer/189077?hl=en">Google</a> e <a hreflang="en" href="https://yandex.com/support/webmaster/yandex-indexing/locale-pages.html">Yandex</a> usano gli attributi `hreflang` come segnale per determinare la lingua della pagina e il paese di destinazione, e sebbene Google non utilizzi la lingua HTML o il meta tag `content-language`, quest'ultimo ultimo tag viene utilizzato da Bing.
 
 #### `hreflang`
 
@@ -1136,7 +1136,7 @@ Il resto della lingua e dei valori nazionali più diffusi può essere visualizza
 
 ### Sicurezza
 
-Google pone uno specifico interesse sulla sicurezza sotto tutti gli aspetti. Il motore di ricerca conserva elenchi di siti che hanno mostrato attività sospette o sono stati compromessi. Search Console affronta questi problemi e agli utenti di Chrome vengono presentati avvisi prima di visitare i siti con questi problemi. Inoltre, Google fornisce un [boost algoritmico](https://developers.google.com/search/blog/2014/08/https-as-ranking-signal) alle pagine servite tramite [HTTPS](https://developers.google.com/search/docs/advanced/security/https) (Hypertext Transfer Protocol Secure). Per un'analisi più approfondita su questo argomento, vedere il capitolo [Sicurezza](./security).
+Google pone uno specifico interesse sulla sicurezza sotto tutti gli aspetti. Il motore di ricerca conserva elenchi di siti che hanno mostrato attività sospette o sono stati compromessi. Search Console affronta questi problemi e agli utenti di Chrome vengono presentati avvisi prima di visitare i siti con questi problemi. Inoltre, Google fornisce un <a hreflang="en" href="https://developers.google.com/search/blog/2014/08/https-as-ranking-signal">boost algoritmico</a> alle pagine servite tramite <a hreflang="en" href="https://developers.google.com/search/docs/advanced/security/https">HTTPS</a> (Hypertext Transfer Protocol Secure). Per un'analisi più approfondita su questo argomento, vedere il capitolo [Sicurezza](./security).
 
 #### Utilizzo di HTTPS
 
@@ -1155,13 +1155,13 @@ Tutte queste cose hanno probabilmente contribuito al tasso di adozione più elev
 
 ### AMP
 
-[AMP](https://amp.dev/) (precedentemente chiamato Accelerated Mobile Pages) è un framework HTML open source che è stato lanciato da Google nel 2015 per aiutare le pagine a caricarsi più rapidamente, soprattutto sui dispositivi mobile. AMP può essere implementato come una versione alternativa di pagine web esistenti o sviluppati da zero utilizzando il framework AMP.
+<a hreflang="en" href="https://amp.dev/">AMP</a> (precedentemente chiamato Accelerated Mobile Pages) è un framework HTML open source che è stato lanciato da Google nel 2015 per aiutare le pagine a caricarsi più rapidamente, soprattutto sui dispositivi mobile. AMP può essere implementato come una versione alternativa di pagine web esistenti o sviluppati da zero utilizzando il framework AMP.
 
 Quando è disponibile una versione AMP per una pagina, verrà mostrata da Google nei risultati di ricerca per dispositivi mobile, insieme al logo AMP.
 
 È anche importante notare che mentre l'utilizzo di AMP non è un fattore di ranking per Google (o per qualsiasi altro motore di ricerca), la velocità web è un fattore di ranking.
 
-Inoltre, al momento della stesura di questo documento, AMP è un requisito per essere incluso nel carosello di Google Top Stories nei risultati di ricerca per dispositivi mobile, che è una caratteristica importante per le pubblicazioni relative alle notizie. Tuttavia, questo cambierà nel maggio 2021, quando i contenuti non AMP diventeranno idonei a condizione che soddisfino le [norme sui contenuti di Google News](https://support.google.com/news/publisher-center/answer/6204050) e fornisce un'ottima [page experience](https://developers.google.com/search/docs/guides/page-experience) come [annunciato da Google a novembre di quest'anno](https://developers.google.com/search/blog/2020/11/timing-for-page-experience).
+Inoltre, al momento della stesura di questo documento, AMP è un requisito per essere incluso nel carosello di Google Top Stories nei risultati di ricerca per dispositivi mobile, che è una caratteristica importante per le pubblicazioni relative alle notizie. Tuttavia, questo cambierà nel maggio 2021, quando i contenuti non AMP diventeranno idonei a condizione che soddisfino le <a hreflang="en" href="https://support.google.com/news/publisher-center/answer/6204050">norme sui contenuti di Google News</a> e fornisce un'ottima <a hreflang="en" href="https://developers.google.com/search/docs/guides/page-experience">page experience</a> come <a hreflang="en" href="https://developers.google.com/search/blog/2020/11/timing-for-page-experience">annunciato da Google a novembre di quest'anno</a>.
 
 Durante il controllo dell'utilizzo di AMP come versione alternativa di una pagina non basata su AMP, abbiamo scoperto che lo 0.69% delle pagine web mobile e lo 0.81% di quelle desktop includevano un tag `amphtml` che puntava a una versione AMP. Sebbene l'adozione sia ancora molto bassa, si tratta di un leggero miglioramento rispetto [ai risultati dello scorso anno](../2019/seo#amp), in cui solo lo 0.62% delle pagine mobile conteneva un link a una versione AMP.
 
@@ -1171,7 +1171,7 @@ D'altra parte, nel valutare l'utilizzo di AMP come framework per lo sviluppo di 
 
 Le applicazioni Single-page (SPA) consentono ai browser di conservare e aggiornare il caricamento di una singola pagina anche se il contenuto della pagina viene aggiornato per soddisfare una richiesta dell'utente. Molteplici tecnologie come framework JavaScript, AJAX e WebSocket vengono utilizzate per eseguire leggeri caricamenti di pagine sequenziali.
 
-Questi framework richiedevano considerazioni SEO speciali, sebbene Google abbia lavorato per mitigare i problemi causati dal rendering lato client con strategie di caching aggressive. In un video dalla [conferenza di Google Webmaster del 2019](https://youtu.be/rq8sFkl0KnI), il Software Engineer Erik Hendriks ha condiviso che Google non fa più affidamento sulle intestazioni `Cache-Control` e cerca invece le intestazioni `ETag` o `Last-Modified` per vedere se il contenuto del file è cambiato.
+Questi framework richiedevano considerazioni SEO speciali, sebbene Google abbia lavorato per mitigare i problemi causati dal rendering lato client con strategie di caching aggressive. In un video dalla <a hreflang="en" href="https://youtu.be/rq8sFkl0KnI">conferenza di Google Webmaster del 2019</a>, il Software Engineer Erik Hendriks ha condiviso che Google non fa più affidamento sulle intestazioni `Cache-Control` e cerca invece le intestazioni `ETag` o `Last-Modified` per vedere se il contenuto del file è cambiato.
 
 Le SPA dovrebbero utilizzare le [Fetch API](https://developer.mozilla.org/it/docs/Web/API/Fetch_API) per il controllo granulare della memorizzazione nella cache. L'API consente il passaggio di oggetti `Request` con specifici override della cache impostati e può essere utilizzata per impostare le intestazioni `If-Modified` e `ETag` necessarie.
 
@@ -1204,7 +1204,7 @@ Tuttavia, non tutto è migliorato nell'ultimo anno. La pagina desktop mediana in
  - Sono state riscontrate disparità non banali tra le pagine mobile e desktop, come quella tra i link mobile e desktop, illustrata nei 62 link sui dispositivi mobili rispetto ai 68 link sul desktop per la pagina web mediana.
  - Il 33.13% dei siti web ha ottenuto _Good_ Core Web Vitals per desktop, mentre solo il 19.96% delle loro controparti mobile ha superato la valutazione Core Web Vitals, suggerendo che il desktop continua ad essere la piattaforma più performante per gli utenti.
 
-Questi risultati potrebbero avere un impatto negativo sui siti poiché Google completa la migrazione a un [indice mobile first nel marzo 2021](https://webmasters.googleblog.com/2020/07/prepare-for-mobile-first-indexing-with.html).
+Questi risultati potrebbero avere un impatto negativo sui siti poiché Google completa la migrazione a un <a hreflang="en" href="https://webmasters.googleblog.com/2020/07/prepare-for-mobile-first-indexing-with.html">indice mobile first nel marzo 2021</a>.
 
 Sono state riscontrate disparità anche tra HTML renderizzato e non renderizzato. Ad esempio, la pagina mobile mediana mostra l'11.5% di parole in più quando è renderizzato rispetto al suo HTML grezzo, indicando che si fa affidamento su JavaScript lato client per mostrare il contenuto.
 

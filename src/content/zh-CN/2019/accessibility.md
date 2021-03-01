@@ -11,7 +11,7 @@ discuss: 1764
 results: https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/
 nektarios-paisios_bio: Nektarios Paisios 是过去5年致力于Chrome辅助功能的软件工程师。 他主要致力于使Chrome与第三方辅助软件（例如屏幕阅读器和屏幕放大镜）兼容。 在研究Chrome的辅助功能之前，Nektarios曾在公司担任过其他各种职务，例如GSuite辅助功能和展示广告。 Nektarios拥有博士学位。 纽约大学计算机科学专业。
 obto_bio: David Fox 是LookZook的首席可用性研究人员和创始人，LookZook沉迷于发现有关构建满足用户期望的Web体验的所有一切。 他是一位网站心理学家，他深入研究网站不仅要学习用户正在苦苦挣扎的东西，而且要学习为什么以及如何最好地改善他们的体验。 他还是Google Chromium的撰稿人，演讲者以及网络研讨会和UX培训的提供者。
-kleinab_bio: Abigail Klein 是谷歌的软件工程师. 她致力于谷歌文档、表格和幻灯片的web可访问性 她为谷歌幻灯片添加了<a href="https://www.blog.google/outreach-initiatives/accessibility/whats-you-say-present-captions-google-slides/">自动字幕</a>,并改进了屏幕阅读器、盲文、屏幕放大镜和高对比度支持。 她目前致力于谷歌Chrome和ChromeOS的可访问性。她拥有麻省理工学院(MIT)计算机科学学士和硕士学位，在那里她参与创立了一个辅助技术黑客马拉松，她还是该辅助技术课程的实验室助理和客座讲师。
+kleinab_bio: Abigail Klein 是谷歌的软件工程师. 她致力于谷歌文档、表格和幻灯片的web可访问性 她为谷歌幻灯片添加了<a hreflang="en" href="https://www.blog.google/outreach-initiatives/accessibility/whats-you-say-present-captions-google-slides/">自动字幕</a>,并改进了屏幕阅读器、盲文、屏幕放大镜和高对比度支持。 她目前致力于谷歌Chrome和ChromeOS的可访问性。她拥有麻省理工学院(MIT)计算机科学学士和硕士学位，在那里她参与创立了一个辅助技术黑客马拉松，她还是该辅助技术课程的实验室助理和客座讲师。
 featured_quote: 互联网的无障碍可访问性对一个包容和公平的社会至关重要。随着我们的社会生活和工作生活越来越多地转移到网络世界，残障人士能够无障碍地参与所有在线互动就变得更加重要了。正如建筑设计师可以创建或省略无障碍功能，例如轮椅坡道，web开发人员可以帮助或阻碍用户依赖的辅助技术。
 featured_stat_1: 22%
 featured_stat_label_1: 使用充分的色彩对比的网站
@@ -29,7 +29,7 @@ featured_stat_label_3: 使用跳过链接的网站
 
 通常，提高站点的可访问性对每个人都有好处。虽然我们通常认为残障人士是永久性残疾，但任何人都可能有暂时的或随着环境变化的残疾。例如失明，有人可能是永久失明，有人是暂时的眼睛感染，而有人在特定的情况下失明，比如在外面强烈的阳光之下。所有这些都可以解释为什么有些人看不见自己的屏幕。每个人都有环境障碍，因此改进web页面的可访问性将改善所有用户在任何情况下的体验。
 
-[网页内容易读性指引](https://www.w3.org/WAI/WCAG21/quickref/) (WCAG) 针对如何使网页容易易阅读提供意见。这些准则被用作我们分析的基础。然而，在许多情况下，很难通过编程来分析网站的可访问性。例如，web平台提供了几种实现类似功能结果的方法，但是支持它们的底层代码可能完全不同。因此，我们的分析只是对整体网页可访问性的一个近似分析。
+<a hreflang="en" href="https://www.w3.org/WAI/WCAG21/quickref/">网页内容易读性指引</a> (WCAG) 针对如何使网页容易易阅读提供意见。这些准则被用作我们分析的基础。然而，在许多情况下，很难通过编程来分析网站的可访问性。例如，web平台提供了几种实现类似功能结果的方法，但是支持它们的底层代码可能完全不同。因此，我们的分析只是对整体网页可访问性的一个近似分析。
 
 我们将最有趣的观点分为四类：阅读的便捷性、网络媒体、页面导航的便捷性以及与辅助技术的兼容性。
 
@@ -60,7 +60,7 @@ featured_stat_label_3: 使用跳过链接的网站
 
 ### 缩放页面
 
-使用 [清晰的字体大小](https://accessibleweb.com/question-answer/minimum-font-size/) 和 [目标大小](https://www.w3.org/WAI/WCAG21/quickref/#target-size) 帮助用户阅读网站以及与你的网站互动。但即使网站完全遵循所有这些准则，也不能满足每个访问者的特定需求。这就是为什么像掐拉缩放这样的设备特性如此重要：它们允许用户调整你的页面以满足他们的需求。在某些使用微小字体和按钮的难以访问的网站上，这些特性甚至给了用户使用该网站的机会。
+使用 <a hreflang="en" href="https://accessibleweb.com/question-answer/minimum-font-size/">清晰的字体大小</a> 和 <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/quickref/#target-size">目标大小</a> 帮助用户阅读网站以及与你的网站互动。但即使网站完全遵循所有这些准则，也不能满足每个访问者的特定需求。这就是为什么像掐拉缩放这样的设备特性如此重要：它们允许用户调整你的页面以满足他们的需求。在某些使用微小字体和按钮的难以访问的网站上，这些特性甚至给了用户使用该网站的机会。
 
 在少数情况下，禁用缩放是可以接受的，比如有问题的页面是一个使用触摸控制的基于web的游戏。如果在这种情况下保持开启状态，玩家的手机游戏会在玩家双击时放大或缩小，讽刺的是，这个功能反而使得游戏无法访问。
 
@@ -70,7 +70,7 @@ featured_stat_label_3: 使用跳过链接的网站
 
 2. `maximum-scale` 设为 `1`， `1.0`，等
 
-遗憾的是，开发者们滥用了这一功能，以至于几乎三分之一(32.21%)的移动版网站禁用了这一功能，而苹果(例如 iOS 10)也不再允许网络开发者禁用缩放功能。移动版Safari直接[忽略了这个标记](https://archive.org/details/ios-10-beta-release-notes)。无论如何设置，所有网站都可以在更新的iOS设备上进行缩放。
+遗憾的是，开发者们滥用了这一功能，以至于几乎三分之一(32.21%)的移动版网站禁用了这一功能，而苹果(例如 iOS 10)也不再允许网络开发者禁用缩放功能。移动版Safari直接<a hreflang="en" href="https://archive.org/details/ios-10-beta-release-notes">忽略了这个标记</a>。无论如何设置，所有网站都可以在更新的iOS设备上进行缩放。
 
  {{ figure_markup(
   image="fig2.png",
@@ -102,7 +102,7 @@ featured_stat_label_3: 使用跳过链接的网站
 
 ### 图像上的替代文本
 
-图片是网络体验的重要组成部分。它们能讲述强有力的故事，吸引注意力，引发情感。但并不是每个人都能看到这些我们用于讲述部分故事的图像。幸运的是，在1995年，HTML 2.0为这个问题提供了一个解决方案：[alt 属性](https://webaim.org/techniques/alttext/)。alt属性为web开发人员提供了向我们使用的图像添加文本描述的功能，这样当有人无法看到我们的图像(或图像无法加载)时，他们可以阅读alt文本以获得描述。alt文本将描述填充到读者可能错过的那部分故事。
+图片是网络体验的重要组成部分。它们能讲述强有力的故事，吸引注意力，引发情感。但并不是每个人都能看到这些我们用于讲述部分故事的图像。幸运的是，在1995年，HTML 2.0为这个问题提供了一个解决方案：<a hreflang="en" href="https://webaim.org/techniques/alttext/">alt 属性</a>。alt属性为web开发人员提供了向我们使用的图像添加文本描述的功能，这样当有人无法看到我们的图像(或图像无法加载)时，他们可以阅读alt文本以获得描述。alt文本将描述填充到读者可能错过的那部分故事。
 
 尽管alt属性已经存在了25年，但是49.91%的页面仍然没有为一些图片提供alt属性，8.68%的页面从来没有使用过。
 
@@ -184,7 +184,7 @@ featured_stat_label_3: 使用跳过链接的网站
 
 ### 跳过链接
 
-[跳过链接](https://webaim.org/techniques/skipnav/) 是放置在页面顶部的链接，允许屏幕阅读器或仅使用键盘的用户直接跳至主要内容。它有效地“跳过”了页面顶部的所有导航链接和菜单。跳过链接对于不使用屏幕阅读器的键盘用户特别有用，因为这些用户通常无法访问其他快速导航模式（例如标志和标题）。我们的样本中有14.19％的页面具有跳过链接。
+<a hreflang="en" href="https://webaim.org/techniques/skipnav/">跳过链接</a> 是放置在页面顶部的链接，允许屏幕阅读器或仅使用键盘的用户直接跳至主要内容。它有效地“跳过”了页面顶部的所有导航链接和菜单。跳过链接对于不使用屏幕阅读器的键盘用户特别有用，因为这些用户通常无法访问其他快速导航模式（例如标志和标题）。我们的样本中有14.19％的页面具有跳过链接。
 
 如果您希望自己看到一个跳过链接，没问题！只需进行一次快速的Google搜索，然后在进入搜索结果页面时敲”<kbd>tab</kbd>"，您将看到一个先前隐藏的链接，如图9.7所示。
 
@@ -197,19 +197,19 @@ featured_stat_label_3: 使用跳过链接的网站
   )
 }}
 
-实际上，您甚至不需要离开此站点，因为我们 [也在这里使用它们](https://github.com/HTTPArchive/almanac.httparchive.org/pull/645)!
+实际上，您甚至不需要离开此站点，因为我们 <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/645">也在这里使用它们</a>!
 
 在分析网站时，很难准确认定什么是跳过链接。对于此分析，如果我们在页面的前3个链接中找到一个锚链接 (`href=#heading1`) ，我们将其定义为带有跳过链接的页面。因此，严格的上限是14.19％。
 
 ### 快捷方式
 
-快捷方式通过[`aria-keyshortcuts`](https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts)或者[`accesskey`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes/accesskey)属性设置， 可以用于以下两种方式之一：
+快捷方式通过<a hreflang="en" href="https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts">`aria-keyshortcuts`</a>或者[`accesskey`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes/accesskey)属性设置， 可以用于以下两种方式之一：
 
 1. 激活页面上的元素，例如链接或按钮。
 
 2. 在页面焦点上赋予特定元素。例如，将焦点转移到页面上的特定输入框，然后允许用户开始在页面上输入内容。
 
-在我们的样本中几乎没有采用 [`aria-keyshortcuts`](https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts) ，在分析的超过400万网站中仅仅有159个站点使用了它。而 [`accesskey`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes/accesskey) 属性的使用频率更高，在2.47％的桌面站点上被找到（移动站点的比例是1.74％）。我们认为，桌面上快捷方式的使用率较高是由于开发人员预计移动网站只能通过触摸屏而非键盘来访问。
+在我们的样本中几乎没有采用 <a hreflang="en" href="https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts">`aria-keyshortcuts`</a> ，在分析的超过400万网站中仅仅有159个站点使用了它。而 [`accesskey`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes/accesskey) 属性的使用频率更高，在2.47％的桌面站点上被找到（移动站点的比例是1.74％）。我们认为，桌面上快捷方式的使用率较高是由于开发人员预计移动网站只能通过触摸屏而非键盘来访问。
 
 尤其令人惊讶的是，使用快捷键的移动站点和桌面站点中有15.56％和13.03％的用户将同一快捷方式分配给多个不同的元素。这意味着浏览器必须猜测哪个元素应拥有此快捷键。
 
@@ -235,7 +235,7 @@ featured_stat_label_3: 使用跳过链接的网站
 
 ### 使用ARIA
 
-关于Web上可访问性的最流行和广泛使用的规范之一是 [Accessible Rich Internet Applications](https://www.w3.org/WAI/standards-guidelines/aria/) (ARIA) 标准。该标准提供了大量其他HTML属性，以帮助传达视觉元素背后的目的（例如它的语义）以及它们能够执行的操作。
+关于Web上可访问性的最流行和广泛使用的规范之一是 <a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/aria/">Accessible Rich Internet Applications</a> (ARIA) 标准。该标准提供了大量其他HTML属性，以帮助传达视觉元素背后的目的（例如它的语义）以及它们能够执行的操作。
 
 正确和适当的使用ARIA可能会遇到挑战。例如，在使用ARIA属性的页面中，我们发现12.31％的属性分配了无效值。这是有问题的，因为任何使用ARIA属性的错误都不会对页面产生视觉影响。这些错误中的一些可以通过使用自动验证工具来检测，但是通常它们需要动手使用真正的辅助软件（例如屏幕阅读器）。本节将研究如何在网络上使用ARIA，特别是该标准的哪些部分最为普遍。
 
@@ -299,7 +299,7 @@ Tab顺序中几乎总是包含按钮和链接，因此具有极高的可见性�
 
 在HTML中 ，ID可以用于将两个元素链接在一起。例如，[`<label>`元素](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/label) 以这种方式工作。您指定此标签描述的输入字段的ID，然后浏览器将它们链接在一起。结果？用户现在可以点击此标签以将焦点放在输入字段上，屏幕阅读器将使用此标签作为说明。
 
-不幸的是，34.62％的站点具有重复的ID，这意味着在许多站点上，用户指定的ID可以引用多个不同的输入。因此，当用户单击标签选择一个字段时，他们可能没有选择他们期望的内容，而是会最终 [选择不同的内容](https://www.deque.com/blog/unique-id-attributes-matter/)。您可能会想到，这也许会对购物车等产生负面影响。
+不幸的是，34.62％的站点具有重复的ID，这意味着在许多站点上，用户指定的ID可以引用多个不同的输入。因此，当用户单击标签选择一个字段时，他们可能没有选择他们期望的内容，而是会最终 <a hreflang="en" href="https://www.deque.com/blog/unique-id-attributes-matter/">选择不同的内容</a>。您可能会想到，这也许会对购物车等产生负面影响。
 
 对于屏幕阅读器来说，这个问题更加明显，因为他们的用户可能无法直观地二次检查所选内容。另外，许多ARIA属性，例如 [`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-describedby_attribute) 和 [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute)与上述标签元素的功能相似。因此，要使您的网站无障碍化，删除所有重复的ID是一个很好的第一步。
 

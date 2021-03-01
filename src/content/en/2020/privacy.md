@@ -21,17 +21,17 @@ featured_stat_label_3: Websites that have a privacy policy.
 
 ## Introduction
 
-This chapter of the Web Almanac gives an overview of the current state of privacy on the web. This topic has been increasing in popularity recently and has raised awareness on the users' side. The need for guidelines has been met with various regulations (such as [GDPR](https://gdpr-info.eu/) in Europe, [LGPD](https://lgpd-brazil.info/) in Brazil, [CCPA](https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?division=3.&part=4.&lawCode=CIV&title=1.81.5) in California to name but a few). These aim to increase the accountability of data processors and their transparency towards users. In this chapter, we discuss the prevalence of online tracking with different techniques and the adoption rate of cookie consent banners and privacy policies by websites.
+This chapter of the Web Almanac gives an overview of the current state of privacy on the web. This topic has been increasing in popularity recently and has raised awareness on the users' side. The need for guidelines has been met with various regulations (such as <a hreflang="en" href="https://gdpr-info.eu/">GDPR</a> in Europe, <a hreflang="en" href="https://lgpd-brazil.info/">LGPD</a> in Brazil, <a hreflang="en" href="https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?division=3.&part=4.&lawCode=CIV&title=1.81.5">CCPA</a> in California to name but a few). These aim to increase the accountability of data processors and their transparency towards users. In this chapter, we discuss the prevalence of online tracking with different techniques and the adoption rate of cookie consent banners and privacy policies by websites.
 
 ## Online tracking
 
-Third-party trackers collect user data to build up profiles of the user's behavior to be monetized for advertising purposes. This raises privacy concerns with users on the web, which resulted in the emergence of various tracking protections. However, as we will see in this section, online tracking is still widely used. Not only does it have a negative impact on privacy, online tracking has a [huge impact on the environment](https://gerrymcgovern.com/calculating-the-pollution-cost-of-website-analytics-part-1/) and avoiding it can lead to [better performance](https://twitter.com/fr3ino/status/1000166112615714816).
+Third-party trackers collect user data to build up profiles of the user's behavior to be monetized for advertising purposes. This raises privacy concerns with users on the web, which resulted in the emergence of various tracking protections. However, as we will see in this section, online tracking is still widely used. Not only does it have a negative impact on privacy, online tracking has a <a hreflang="en" href="https://gerrymcgovern.com/calculating-the-pollution-cost-of-website-analytics-part-1/">huge impact on the environment</a> and avoiding it can lead to [better performance](https://twitter.com/fr3ino/status/1000166112615714816).
 
 We examine the prominence of the most common types of [third-party](./third-party) tracking, namely by means of third-party cookies and the use of fingerprinting. Online tracking is not limited to just these two techniques, new ones keep arising to circumvent existing countermeasures.
 
 ### Third-party trackers
 
-We use [WhoTracksMe](https://whotracks.me/)'s tracker list to determine the percentage of websites that issue a request to a potential tracker. As shown in the following figure, we have found that at least one potential tracker is present on roughly 93% of websites.
+We use <a hreflang="en" href="https://whotracks.me/">WhoTracksMe</a>'s tracker list to determine the percentage of websites that issue a request to a potential tracker. As shown in the following figure, we have found that at least one potential tracker is present on roughly 93% of websites.
 
 {{ figure_markup(
   image="privacy-websites-that-load-trackers.png",
@@ -217,7 +217,7 @@ As you can see, Google's tracking domain "doubleclick.net" sets cookies on rough
 
 ### Fingerprinting
 
-Another widely-used tracking technique is fingerprinting. This consists of collecting different kinds of information about the user with the goal of building a unique "fingerprint" for them. Different types of fingerprinting are used on the web by trackers. Browser fingerprinting use characteristics specific to the browser of the user, relying on the fact that the chance of another user having the exact same browser set-up is fairly small if there are a large enough number of variables to track. In our crawl, we examined the presence of the [FingerprintJS](https://fingerprintjs.com/) library, which provides browser fingerprinting as a service.
+Another widely-used tracking technique is fingerprinting. This consists of collecting different kinds of information about the user with the goal of building a unique "fingerprint" for them. Different types of fingerprinting are used on the web by trackers. Browser fingerprinting use characteristics specific to the browser of the user, relying on the fact that the chance of another user having the exact same browser set-up is fairly small if there are a large enough number of variables to track. In our crawl, we examined the presence of the <a hreflang="en" href="https://fingerprintjs.com/">FingerprintJS</a> library, which provides browser fingerprinting as a service.
 
 {{ figure_markup(
   image="privacy-websites-with-fingerprintjs-library.png",
@@ -259,7 +259,7 @@ When looking at the popularity of the different consent management solutions, we
 
 ### IAB Europe's Transparency Consent Framework
 
-IAB Europe, the Interactive Advertising Bureau, is a European association for digital marketing and advertising. They proposed a [Transparency Consent Framework](https://iabeurope.eu/transparency-consent-framework/) (TCF) as a GDPR-compliant solution to obtain users' consent about their digital advertising preferences. The implementation provides an industry standard for communication between publishers and advertisers about consumer consent.
+IAB Europe, the Interactive Advertising Bureau, is a European association for digital marketing and advertising. They proposed a <a hreflang="en" href="https://iabeurope.eu/transparency-consent-framework/">Transparency Consent Framework</a> (TCF) as a GDPR-compliant solution to obtain users' consent about their digital advertising preferences. The implementation provides an industry standard for communication between publishers and advertisers about consumer consent.
 
 {{ figure_markup(
   image="privacy-adoption-of-the-tcf-banner.png",

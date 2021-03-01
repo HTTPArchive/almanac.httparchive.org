@@ -7,9 +7,9 @@ reviewers: [natedame, catalinred, dsottimano, dwsmart, en3r0, ibnesayeed, bazzad
 analysts: [Tiggerito, antoineeripret]
 editors: [rviscomi]
 translators: []
-aleyda_bio: SEO consultant, author, speaker and entrepreneur. Founder of <a href="https://www.orainti.com/">Orainti</a> (a boutique SEO consultancy working with some of the top Web properties and brands, from SaaS to marketplaces) and co-founder of <a href="https://remoters.net/">Remoters.net</a> (a free remote work hub, featuring remote jobs, tools, events, guides, and more to facilitate remote work). Aleyda enjoys sharing about SEO through her <a href="https://www.aleydasolis.com/en/blog/">blog</a>, the <a href="https://www.aleydasolis.com/en/seo-tips/">#SEOFOMO newsletter</a>, the <a href="https://www.aleydasolis.com/en/crawling-mondays-videos/">Crawling Mondays</a> video and podcast series and over <a href="https://twitter.com/aleyda">Twitter</a>.
-ipullrank_bio: An artist and a technologist, all rolled into one, Michael King is the founder of enterprise digital marketing agency, <a href="https://ipullrank.com">iPullRank</a> and founder of Natural Language Generation app <a href="https://www.copyscience.io">CopyScience</a>. Effortlessly leaning on his background as an independent hip-hop musician, Mr. King is a compelling content creator and an award-winning dynamic speaker who is called upon to contribute to technology and marketing conferences and blogs all over the world. You can find Mike talking trash on <a href="https://twitter.com/ipullrank">Twitter</a>
-fellowhuman1101_bio: 100% human & totally not a robot, Jamie Indigo untangles technologies to help humans access useful information and businesses provide valuable digital experiences. She founded <a href="https://not-a-robot.com">Not a Robot</a> to consult with a focus on the human aspects of technical SEO including ethics & inclusion in technology and the search industry.  She can be found learning in public on <a href="https://twitter.com/Jammer_Volts">Twitter</a>.
+aleyda_bio: SEO consultant, author, speaker and entrepreneur. Founder of <a hreflang="en" href="https://www.orainti.com/">Orainti</a> (a boutique SEO consultancy working with some of the top Web properties and brands, from SaaS to marketplaces) and co-founder of <a hreflang="en" href="https://remoters.net/">Remoters.net</a> (a free remote work hub, featuring remote jobs, tools, events, guides, and more to facilitate remote work). Aleyda enjoys sharing about SEO through her <a hreflang="en" href="https://www.aleydasolis.com/en/blog/">blog</a>, the <a hreflang="en" href="https://www.aleydasolis.com/en/seo-tips/">#SEOFOMO newsletter</a>, the <a hreflang="en" href="https://www.aleydasolis.com/en/crawling-mondays-videos/">Crawling Mondays</a> video and podcast series and over <a href="https://twitter.com/aleyda">Twitter</a>.
+ipullrank_bio: An artist and a technologist, all rolled into one, Michael King is the founder of enterprise digital marketing agency, <a hreflang="en" href="https://ipullrank.com">iPullRank</a> and founder of Natural Language Generation app <a hreflang="en" href="https://www.copyscience.io">CopyScience</a>. Effortlessly leaning on his background as an independent hip-hop musician, Mr. King is a compelling content creator and an award-winning dynamic speaker who is called upon to contribute to technology and marketing conferences and blogs all over the world. You can find Mike talking trash on <a href="https://twitter.com/ipullrank">Twitter</a>
+fellowhuman1101_bio: 100% human & totally not a robot, Jamie Indigo untangles technologies to help humans access useful information and businesses provide valuable digital experiences. She founded <a hreflang="en" href="https://not-a-robot.com">Not a Robot</a> to consult with a focus on the human aspects of technical SEO including ethics & inclusion in technology and the search industry.  She can be found learning in public on <a href="https://twitter.com/Jammer_Volts">Twitter</a>.
 discuss: 2043
 results: https://docs.google.com/spreadsheets/d/1ram47FshAjzvbQVJbAQPgxZN7PPOPCKIK67VJZCo92c/
 featured_quote: Despite the growing use of mobile devices and Google's move to a Mobile first index, non-trivial disparities were found across mobile versus desktop pages, like the one between mobile and desktop links.
@@ -38,7 +38,7 @@ Despite its complex multidisciplinary nature, in recent years SEO has evolved to
 
 The goal of the Web Almanac's SEO chapter is to identify and assess main elements and configurations that play a role in a website's organic search optimization. By identifying these elements, we hope that websites can leverage our findings to improve their ability to be crawled, indexed, and ranked by search engines. In this chapter, we provide a snapshot of their status in 2020 and a summary of what has changed [since 2019](../2019/seo).
 
-It is important to note that this chapter is based on analysis from [Lighthouse](https://developers.google.com/web/tools/lighthouse/) on mobile sites, the [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report) on mobile and desktop, as well as raw and rendered HTML elements from the [HTTP Archive](https://httparchive.org/) on mobile and desktop. In the case of the HTTP Archive and Lighthouse, it is limited to the data identified from websites' home pages only, not site-wide crawls. We have taken this into consideration when doing assessments. Keeping this distinction in mind is important when drawing conclusions from our results. You can learn more about it on our [Methodology](./methodology) page.
+It is important to note that this chapter is based on analysis from <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a> on mobile sites, the <a hreflang="en" href="https://developers.google.com/web/tools/chrome-user-experience-report">Chrome UX Report</a> on mobile and desktop, as well as raw and rendered HTML elements from the <a hreflang="en" href="https://httparchive.org/">HTTP Archive</a> on mobile and desktop. In the case of the HTTP Archive and Lighthouse, it is limited to the data identified from websites' home pages only, not site-wide crawls. We have taken this into consideration when doing assessments. Keeping this distinction in mind is important when drawing conclusions from our results. You can learn more about it on our [Methodology](./methodology) page.
 
 Let's go through this year's organic search optimization main findings.
 
@@ -62,13 +62,13 @@ For websites looking to optimize their visibility in search results, it is impor
 
 Located at the root of a site, a `robots.txt` file is an effective tool in controlling which pages a search engine crawler should interact with, how quickly to crawl them, and what to do with the discovered content.
 
-Google formally proposed making `robots.txt` an official internet standard in 2019. The [June 2020 draft](https://tools.ietf.org/html/draft-koster-rep-02) includes clear documentation on technical requirements for the `robots.txt` file. This has prompted more detailed information about how search engine crawlers should respond to non-standard content.
+Google formally proposed making `robots.txt` an official internet standard in 2019. The <a hreflang="en" href="https://tools.ietf.org/html/draft-koster-rep-02">June 2020 draft</a> includes clear documentation on technical requirements for the `robots.txt` file. This has prompted more detailed information about how search engine crawlers should respond to non-standard content.
 
-A `robots.txt` file must be plain text, encoded in UTF-8, and respond to requests with a 200 HTTP status code. A malformed `robots.txt`, a 4XX (client error) response, or more than five redirects are interpreted by search engine crawlers as a _full allow_, meaning all content may be crawled. A 5XX (server error) response is understood as a _full disallow_, meaning no content may be crawled. If the `robots.txt` is unreachable for more than 30 days, Google will use the last cached copy of it, as described in [their specifications](https://developers.google.com/search/reference/robots_txt#handling-http-result-codes).
+A `robots.txt` file must be plain text, encoded in UTF-8, and respond to requests with a 200 HTTP status code. A malformed `robots.txt`, a 4XX (client error) response, or more than five redirects are interpreted by search engine crawlers as a _full allow_, meaning all content may be crawled. A 5XX (server error) response is understood as a _full disallow_, meaning no content may be crawled. If the `robots.txt` is unreachable for more than 30 days, Google will use the last cached copy of it, as described in <a hreflang="en" href="https://developers.google.com/search/reference/robots_txt#handling-http-result-codes">their specifications</a>.
 
 Overall, 80.46% of mobile pages responded to `robots.txt` with a 2XX response. Of these, 25.09% were not recognized as valid. This has slightly improved over 2019, when it was found that [27.84% of mobile sites had a valid `robots.txt`](../2019/seo#robotstxt).
 
-Lighthouse, the data source for testing `robots.txt` validity, introduced a [`robots.txt` audit](https://web.dev/robots-txt/) as part of the v6 update. This inclusion highlights that a successfully resolved request does not mean that the cornerstone file will be able to provide the necessary directives to web crawlers.
+Lighthouse, the data source for testing `robots.txt` validity, introduced a <a hreflang="en" href="https://web.dev/robots-txt/">`robots.txt` audit</a> as part of the v6 update. This inclusion highlights that a successfully resolved request does not mean that the cornerstone file will be able to provide the necessary directives to web crawlers.
 
 <figure>
   <table>
@@ -179,13 +179,13 @@ The most frequently used directives focused on search engines and their paid mar
 
 When analyzing the usage of the `Disallow` statement in `robots.txt` by using Lighthouse-powered data of over 6 million sites, it was found that 97.84% of them were completely crawlable, with only 1.05% using a `Disallow` statement.
 
-An analysis of the `robots.txt` `Disallow` statement usage along the [meta robots](https://developers.google.com/search/reference/robots_meta_tag) _indexability_ directives was also done, finding 1.02% of the sites including a `Disallow` statement along indexable pages featuring a meta robots `index` directive, with only 0.03% of sites using the `Disallow` statement in `robots.txt` along _noindexed_ pages via the meta robots `noindex` directive.
+An analysis of the `robots.txt` `Disallow` statement usage along the <a hreflang="en" href="https://developers.google.com/search/reference/robots_meta_tag">meta robots</a> _indexability_ directives was also done, finding 1.02% of the sites including a `Disallow` statement along indexable pages featuring a meta robots `index` directive, with only 0.03% of sites using the `Disallow` statement in `robots.txt` along _noindexed_ pages via the meta robots `noindex` directive.
 
-The higher usage of the `Disallow` statement on indexable pages than noindexed ones is notable as [Google documentation](https://developers.google.com/search/docs/advanced/robots/intro) states that site owners should not use `robots.txt` as a means to hide web pages from Google Search, as internal linking with descriptive text could result in the page being indexed without a crawler visiting the page. Instead, site owners should use other methods, like a `noindex` directive via meta robots.
+The higher usage of the `Disallow` statement on indexable pages than noindexed ones is notable as <a hreflang="en" href="https://developers.google.com/search/docs/advanced/robots/intro">Google documentation</a> states that site owners should not use `robots.txt` as a means to hide web pages from Google Search, as internal linking with descriptive text could result in the page being indexed without a crawler visiting the page. Instead, site owners should use other methods, like a `noindex` directive via meta robots.
 
 #### Meta robots
 
-The `robots` meta tag and `X-Robots-Tag` HTTP header are an extension of the proposed [Robots Exclusion Protocol](https://webmasters.googleblog.com/2019/07/rep-id.html) (REP), which allows directives to be configured at a more granular level. Directive support varies by search engine as REP is not yet an official internet standard.
+The `robots` meta tag and `X-Robots-Tag` HTTP header are an extension of the proposed <a hreflang="en" href="https://webmasters.googleblog.com/2019/07/rep-id.html">Robots Exclusion Protocol</a> (REP), which allows directives to be configured at a more granular level. Directive support varies by search engine as REP is not yet an official internet standard.
 
 Meta tags were the dominant method of granular execution with 27.70% of desktop and 27.96% of mobile pages using the tag. `X-Robots-Tag` directives were found on 0.27% and 0.40% of desktop and mobile, respectively.
 
@@ -202,11 +202,11 @@ When analyzing the usage of the meta robots tag in Lighthouse tests, 0.47% of cr
 
 The combination of `Disallow` within `robots.txt` and `noindex` directive in meta robots were found on only 0.03% of pages. While this method offers _belt and suspenders_ redundancy, a page must not be blocked by a `robots.txt` file in order for an on-page `noindex` directive to be effective.
 
-Interestingly, rendering changed the meta robots tag in 0.16% of pages. While there is no inherent issue with using JavaScript to add a meta robots tag to a page or change its content, SEOs should be judicious in execution. If a page loads with a `noindex` directive in the meta robots tag before rendering, [search engines won't run the JavaScript](https://developers.google.com/search/docs/guides/javascript-seo-basics#use-meta-robots-tags-carefully) that changes the tag value or index the page.
+Interestingly, rendering changed the meta robots tag in 0.16% of pages. While there is no inherent issue with using JavaScript to add a meta robots tag to a page or change its content, SEOs should be judicious in execution. If a page loads with a `noindex` directive in the meta robots tag before rendering, <a hreflang="en" href="https://developers.google.com/search/docs/guides/javascript-seo-basics#use-meta-robots-tags-carefully">search engines won't run the JavaScript</a> that changes the tag value or index the page.
 
 #### Canonicalization
 
-[Canonical tags](https://developers.google.com/search/docs/advanced/crawling/consolidate-duplicate-urls), as described by Google, are used to specify to search engines which is the preferred canonical URL version to index and rank for a page—the one that is considered to be better representative of it—when there are many URLs featuring the same or very similar content. It is important to note that:
+<a hreflang="en" href="https://developers.google.com/search/docs/advanced/crawling/consolidate-duplicate-urls">Canonical tags</a>, as described by Google, are used to specify to search engines which is the preferred canonical URL version to index and rank for a page—the one that is considered to be better representative of it—when there are many URLs featuring the same or very similar content. It is important to note that:
 
 - The canonical tag configuration is used along with other signals to select the canonical URL of a page; it is not the only one.
 - Although self-referencing canonical tags are sometimes used, these aren't a requirement.
@@ -249,7 +249,7 @@ A similar conflict can be found with the different implementation methods, with 
 
 The primary purpose that both search engines and Search Engine Optimization serve is to give visibility to content that users need. Search engines extract features from pages to determine what the content is about. In that way, the two are symbiotic. The features extracted align with signals that indicate relevance and inform ranking.
 
-To understand what search engines are able to effectively extract, we have broken out the components of that content and examined the incidence rate of those features between the mobile and desktop contexts. We also reviewed the disparity between mobile and desktop content. The mobile and desktop disparity is especially valuable because Google has moved to [_mobile-first indexing_](https://developers.google.com/search/blog/2020/03/announcing-mobile-first-indexing-for) (MFI) for all new sites and, as of March of 2021, will move to a _mobile-only index_ wherein content that does not appear within the mobile context will not be evaluated for ranking.
+To understand what search engines are able to effectively extract, we have broken out the components of that content and examined the incidence rate of those features between the mobile and desktop contexts. We also reviewed the disparity between mobile and desktop content. The mobile and desktop disparity is especially valuable because Google has moved to <a hreflang="en" href="https://developers.google.com/search/blog/2020/03/announcing-mobile-first-indexing-for">_mobile-first indexing_</a> (MFI) for all new sites and, as of March of 2021, will move to a _mobile-only index_ wherein content that does not appear within the mobile context will not be evaluated for ranking.
 
 #### Rendered versus non-rendered text content
 
@@ -309,7 +309,7 @@ Across our sample set, there are disparities across the combination of mobile/de
 
 #### Headings
 
-Heading elements (`H1`-`H6`) act as a mechanism to visually indicate structure in a page's content. Although these HTML elements don't carry the weight they used to in search rankings, they still act as a valuable way to structure pages and signal other elements in the search engine results pages (SERPs) like _featured snippets_ or other extraction methods that align with [Google's new passage indexing](https://www.blog.google/products/search/search-on/).
+Heading elements (`H1`-`H6`) act as a mechanism to visually indicate structure in a page's content. Although these HTML elements don't carry the weight they used to in search rankings, they still act as a valuable way to structure pages and signal other elements in the search engine results pages (SERPs) like _featured snippets_ or other extraction methods that align with <a hreflang="en" href="https://www.blog.google/products/search/search-on/">Google's new passage indexing</a>.
 
 {{ figure_markup(
   image="seo-presence-of-h-elements.png",
@@ -341,13 +341,13 @@ You can learn more about the usage of headings in the [Markup chapter](./markup#
 
 #### Structured data
 
-Over the course of the past decade, search engines, particularly Google, have continued to push towards becoming the presentation layer of the web. These advancements are partially driven by their improved ability to extract information from unstructured content (e.g., [passage indexing](https://blog.google/products/search/search-on/)) and the adoption of semantic markup in the form of _structured data_. Search engines have encouraged content creators and developers to implement structured data to give more visibility to their content within components of search results.
+Over the course of the past decade, search engines, particularly Google, have continued to push towards becoming the presentation layer of the web. These advancements are partially driven by their improved ability to extract information from unstructured content (e.g., <a hreflang="en" href="https://blog.google/products/search/search-on/">passage indexing</a>) and the adoption of semantic markup in the form of _structured data_. Search engines have encouraged content creators and developers to implement structured data to give more visibility to their content within components of search results.
 
-In a move from ["strings to things"](https://blog.google/products/search/introducing-knowledge-graph-things-not/), search engines have agreed upon a broad vocabulary of objects in support of marking up a variety of people, places, and things within web content. However, only a subset of that vocabulary triggers inclusion within search results components. Google specifies those that they support and how they're displayed in their [search gallery](https://developers.google.com/search/docs/guides/search-gallery), and provides [a tool](https://search.google.com/test/rich-results) to validate their support and implementation.
+In a move from <a hreflang="en" href="https://blog.google/products/search/introducing-knowledge-graph-things-not/">"strings to things"</a>, search engines have agreed upon a broad vocabulary of objects in support of marking up a variety of people, places, and things within web content. However, only a subset of that vocabulary triggers inclusion within search results components. Google specifies those that they support and how they're displayed in their <a hreflang="en" href="https://developers.google.com/search/docs/guides/search-gallery">search gallery</a>, and provides <a hreflang="en" href="https://search.google.com/test/rich-results">a tool</a> to validate their support and implementation.
 
 As search engines evolve to reflect more of these elements in search results, the incidence rates of the different vocabularies change across the web.
 
-As part of our examination, we took a look at the incidence rates of different types of structured markup. The available vocabularies include [RDFa](https://www.w3.org/TR/rdfa-primer/) and [schema.org](https://schema.org/), which come in both the microformats and [JSON-LD](https://www.w3.org/TR/json-ld11/) flavors. Google has recently [dropped the support for data-vocabulary](https://developers.google.com/search/blog/2020/01/data-vocabulary), which was primarily used to implement breadcrumbs.
+As part of our examination, we took a look at the incidence rates of different types of structured markup. The available vocabularies include <a hreflang="en" href="https://www.w3.org/TR/rdfa-primer/">RDFa</a> and <a hreflang="en" href="https://schema.org/">schema.org</a>, which come in both the microformats and <a hreflang="en" href="https://www.w3.org/TR/json-ld11/">JSON-LD</a> flavors. Google has recently <a hreflang="en" href="https://developers.google.com/search/blog/2020/01/data-vocabulary">dropped the support for data-vocabulary</a>, which was primarily used to implement breadcrumbs.
 
 JSON-LD is generally considered to be the more portable and easier to manage implementation and so it has become the preferred format. As a result, we see that JSON-LD appears on 29.78% of mobile pages and 30.60% of desktop pages.
 
@@ -416,9 +416,9 @@ It should be noted that `WebSite`, `SearchAction` and `Organization` are all typ
 
 In contrast, despite the fact that reviews are not supposed to be associated with home pages, the data indicates that `AggregateRating` is used on 23.9% on mobile and 23.7% on desktop.
 
-It's also interesting to see the growth of the [`VideoObject`](https://developers.google.com/search/docs/data-types/video) to annotate videos. Although [YouTube videos dominate video search results in Google](https://moz.com/blog/youtube-dominates-google-video-results-in-2020), the usage of `VideoObject` grew 30.11% on desktop and 27.7% on mobile.
+It's also interesting to see the growth of the <a hreflang="en" href="https://developers.google.com/search/docs/data-types/video">`VideoObject`</a> to annotate videos. Although <a hreflang="en" href="https://moz.com/blog/youtube-dominates-google-video-results-in-2020">YouTube videos dominate video search results in Google</a>, the usage of `VideoObject` grew 30.11% on desktop and 27.7% on mobile.
 
-The growth of these objects is a general indication of increased adoption of structured data. There's also an indication of what Google gives visibility within search features increases the incidence rates of lesser used objects. Google announced the [`FAQPage`](https://developers.google.com/search/docs/data-types/faqpage), [`HowTo`](https://developers.google.com/search/docs/data-types/how-to), and [`QAPage`](https://developers.google.com/search/docs/data-types/qapage) objects as visibility opportunities in 2019 and they sustained significant year-over-year growth:
+The growth of these objects is a general indication of increased adoption of structured data. There's also an indication of what Google gives visibility within search features increases the incidence rates of lesser used objects. Google announced the <a hreflang="en" href="https://developers.google.com/search/docs/data-types/faqpage">`FAQPage`</a>, <a hreflang="en" href="https://developers.google.com/search/docs/data-types/how-to">`HowTo`</a>, and <a hreflang="en" href="https://developers.google.com/search/docs/data-types/qapage">`QAPage`</a> objects as visibility opportunities in 2019 and they sustained significant year-over-year growth:
 
 * `FAQPage` markup grew 3,261% on desktop and 3,000% on mobile.
 * `HowTo` markup grew 605% on desktop and 623% on mobile.
@@ -466,7 +466,7 @@ The median page title character count is 38 characters on both mobile and deskto
 
 ##### Meta descriptions
 
-The meta description acts as the advertising tagline for a web page. Although [a recent study](https://www.searchenginejournal.com/google-rewrites-meta-descriptions-over-70-of-the-time/382140/) suggests that this tag is ignored and rewritten by Google 70% of the time, it is an element that is prepared with the goal of enticing a user to click through.
+The meta description acts as the advertising tagline for a web page. Although <a hreflang="en" href="https://www.searchenginejournal.com/google-rewrites-meta-descriptions-over-70-of-the-time/382140/">a recent study</a> suggests that this tag is ignored and rewritten by Google 70% of the time, it is an element that is prepared with the goal of enticing a user to click through.
 
 When analyzing the usage of meta descriptions, we found that 68.62% of desktop pages and 68.22% of mobile pages have one. Although this may be surprisingly low, it is a slight improvement from [last year](../2019/seo#meta-descriptions), when only 64.02% of mobile pages had a meta description.
 
@@ -549,13 +549,13 @@ The median web page has 10.00% of images with blank `alt` attributes on desktop 
 
 ### Links
 
-Modern search engines use hyperlinks between pages for the discovery of new content for indexing and as an indication of authority for ranking. The link graph is something that search engines actively police both algorithmically and through manual review. Web pages pass link equity through their sites and to other sites through these hyperlinks, therefore it is important to ensure that there is a wealth of links throughout any given page, but also, as Google mentions in its [SEO Starter Guide](https://developers.google.com/search/docs/beginner/seo-starter-guide#use-links-wisely) to link wisely.
+Modern search engines use hyperlinks between pages for the discovery of new content for indexing and as an indication of authority for ranking. The link graph is something that search engines actively police both algorithmically and through manual review. Web pages pass link equity through their sites and to other sites through these hyperlinks, therefore it is important to ensure that there is a wealth of links throughout any given page, but also, as Google mentions in its <a hreflang="en" href="https://developers.google.com/search/docs/beginner/seo-starter-guide#use-links-wisely">SEO Starter Guide</a> to link wisely.
 
 #### Outgoing links
 
 As part of this analysis we are able to assess the outgoing links from each page, whether to internal pages from the same domain, as well as external ones, however, have not analyzed incoming links.
 
-The median desktop page includes 76 links while the median mobile page has 67. Historically, the direction from Google suggested that links be limited to 100 per page. While that recommendation is outdated on the modern web and Google has since then mentioned that [there are no limits](https://www.seroundtable.com/google-link-unlimited-18468.html), the median page in our dataset adheres to it.
+The median desktop page includes 76 links while the median mobile page has 67. Historically, the direction from Google suggested that links be limited to 100 per page. While that recommendation is outdated on the modern web and Google has since then mentioned that <a hreflang="en" href="https://www.seroundtable.com/google-link-unlimited-18468.html">there are no limits</a>, the median page in our dataset adheres to it.
 
 {{ figure_markup(
   image="seo-outgoing-links.png",
@@ -617,7 +617,7 @@ There is a disparity in the links between mobile and desktop that will negativel
 
 #### `rel=nofollow`, `ugc`, and `sponsored` attributes usage
 
-In September of 2019, [Google introduced attributes](https://webmasters.googleblog.com/2019/09/evolving-nofollow-new-ways-to-identify.html) that allow publishers to classify links as being sponsored or user generated content. These attributes are in addition to `rel=nofollow` which was previously [introduced in 2005](https://googleblog.blogspot.com/2005/01/preventing-comment-spam.html). The new attributes, `rel=ugc` and `rel=sponsored`, are meant to clarify or qualify the reason as to why these links are appearing on a given web page.
+In September of 2019, <a hreflang="en" href="https://webmasters.googleblog.com/2019/09/evolving-nofollow-new-ways-to-identify.html">Google introduced attributes</a> that allow publishers to classify links as being sponsored or user generated content. These attributes are in addition to `rel=nofollow` which was previously <a hreflang="en" href="https://googleblog.blogspot.com/2005/01/preventing-comment-spam.html">introduced in 2005</a>. The new attributes, `rel=ugc` and `rel=sponsored`, are meant to clarify or qualify the reason as to why these links are appearing on a given web page.
 
 Our review of pages indicates that 28.58% of pages include `rel=nofollow` attributes on desktop and 30.74% on mobile. However, `rel=ugc` and `rel=sponsored` adoption is quite low with less than 0.3% of pages (about 20,000) having either. Since these attributes don't add any more value to a publisher than `rel=nofollow`, it is reasonable to expect that the rate of adoption will continue to be slow.
 
@@ -637,11 +637,11 @@ This section explores the opportunities for optimization related to web configur
 
 ### Mobile friendliness
 
-With the increasing popularity of mobile devices to browse and search across the web, search engines have been taking mobile friendliness into consideration as a [ranking factor for several years](https://developers.google.com/search/blog/2015/02/finding-more-mobile-friendly-search).
+With the increasing popularity of mobile devices to browse and search across the web, search engines have been taking mobile friendliness into consideration as a <a hreflang="en" href="https://developers.google.com/search/blog/2015/02/finding-more-mobile-friendly-search">ranking factor for several years</a>.
 
-Also, as mentioned before, [since 2016](https://developers.google.com/search/blog/2016/11/mobile-first-indexing) Google has been moving to a mobile-first index, meaning that the content that is crawled, indexed, and ranked is the one accessible to mobile users and the [Smartphone Googlebot](https://developers.google.com/search/docs/advanced/crawling/googlebot?hl=en).
+Also, as mentioned before, <a hreflang="en" href="https://developers.google.com/search/blog/2016/11/mobile-first-indexing">since 2016</a> Google has been moving to a mobile-first index, meaning that the content that is crawled, indexed, and ranked is the one accessible to mobile users and the <a hreflang="en" href="https://developers.google.com/search/docs/advanced/crawling/googlebot?hl=en">Smartphone Googlebot</a>.
 
-Additionally, [since July 2019](https://developers.google.com/search/blog/2019/05/mobile-first-indexing-by-default-for) Google is using the mobile-first index for all new websites and earlier in March, it announced that [70% of pages shown in their search results have already shifted over](https://webmasters.googleblog.com/2020/03/announcing-mobile-first-indexing-for.html). It is now expected that Google [fully switches to a mobile-first index in March 2021](https://webmasters.googleblog.com/2020/07/prepare-for-mobile-first-indexing-with.html).
+Additionally, <a hreflang="en" href="https://developers.google.com/search/blog/2019/05/mobile-first-indexing-by-default-for">since July 2019</a> Google is using the mobile-first index for all new websites and earlier in March, it announced that <a hreflang="en" href="https://webmasters.googleblog.com/2020/03/announcing-mobile-first-indexing-for.html">70% of pages shown in their search results have already shifted over</a>. It is now expected that Google <a hreflang="en" href="https://webmasters.googleblog.com/2020/07/prepare-for-mobile-first-indexing-with.html">fully switches to a mobile-first index in March 2021</a>.
 
 Mobile friendliness should be fundamental for any website looking to provide a good search experience—and as a consequence, grow in search results.
 
@@ -765,21 +765,21 @@ Desktop websites that have separate mobile versions are recommended to link to t
 
 ### Web performance
 
-Having a fast-loading website is fundamental to provide a great user search experience. Because of its importance, it has been taken into consideration as a ranking factor by search engines for years. Google initially announced using site speed as a [ranking factor in 2010](https://webmasters.googleblog.com/2010/04/using-site-speed-in-web-search-ranking.html), and then [in 2018 did the same for mobile searches](https://webmasters.googleblog.com/2018/01/using-page-speed-in-mobile-search.html).
+Having a fast-loading website is fundamental to provide a great user search experience. Because of its importance, it has been taken into consideration as a ranking factor by search engines for years. Google initially announced using site speed as a <a hreflang="en" href="https://webmasters.googleblog.com/2010/04/using-site-speed-in-web-search-ranking.html">ranking factor in 2010</a>, and then <a hreflang="en" href="https://webmasters.googleblog.com/2018/01/using-page-speed-in-mobile-search.html">in 2018 did the same for mobile searches</a>.
 
-As announced in November 2020, three performance metrics known as [Core Web Vitals](https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html) are on track to be a ranking factor as part of the "page experience" signals in May 2021. Core Web Vitals consist of:
+As announced in November 2020, three performance metrics known as <a hreflang="en" href="https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html">Core Web Vitals</a> are on track to be a ranking factor as part of the "page experience" signals in May 2021. Core Web Vitals consist of:
 
-**[Largest Contentful Paint](https://web.dev/lcp/) (LCP)**
+**<a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a> (LCP)**
 - Represents: user-perceived loading experience
 - Measurement: the point in the page load timeline when the page's largest image or text block is visible within the viewport
 - Goal: <2.5 seconds
 
-**[First Input Delay](https://web.dev/fid/) (FID)**
+**<a hreflang="en" href="https://web.dev/fid/">First Input Delay</a> (FID)**
 - Represents: responsiveness to user input
 - Measurement: the time from when a user first interacts with a page to the time when the browser is actually able to begin processing event handlers in response to that interaction
 - Goal: <300 milliseconds
 
-**[Cumulative Layout Shift](https://web.dev/cls/) (CLS)**
+**<a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a> (CLS)**
 - Represents: visual stability
 - Measurement: the sum of the number of _layout shift scores_ approximating the percent of the viewport that shifted
 - Goal: <0.10
@@ -822,7 +822,7 @@ Internationalization covers the configurations that multilingual or multi-countr
 
 The two international configurations that we analyzed are the `content-language` meta tag and the `hreflang` attributes, that can be used to specify the language and the content of each page. Additionally, `hreflang` annotations allow you to specify the alternate language or country versions of each page.
 
-Search engines like [Google](https://support.google.com/webmasters/answer/189077?hl=en) and [Yandex](https://yandex.com/support/webmaster/yandex-indexing/locale-pages.html) use `hreflang` attributes as a signal to determine the page's language and country target, and although Google doesn't use the HTML lang or the `content-language` meta tag, the latter last tag is used by Bing.
+Search engines like <a hreflang="en" href="https://support.google.com/webmasters/answer/189077?hl=en">Google</a> and <a hreflang="en" href="https://yandex.com/support/webmaster/yandex-indexing/locale-pages.html">Yandex</a> use `hreflang` attributes as a signal to determine the page's language and country target, and although Google doesn't use the HTML lang or the `content-language` meta tag, the latter last tag is used by Bing.
 
 #### `hreflang`
 
@@ -1136,7 +1136,7 @@ The rest of the most popular language and country values can be seen in the tabl
 
 ### Security
 
-Google places a specific focus on security in all respects. The search engine maintains lists of sites that have shown suspicious activity or have been hacked. Search Console surfaces these issues and Chrome users are presented with warnings before visiting sites with these problems. Additionally, Google provides an [algorithmic boost](https://developers.google.com/search/blog/2014/08/https-as-ranking-signal) to pages that are served over [HTTPS](https://developers.google.com/search/docs/advanced/security/https) (Hypertext Transfer Protocol Secure). For a more in-depth analysis on this topic, see the [Security](./security) chapter.
+Google places a specific focus on security in all respects. The search engine maintains lists of sites that have shown suspicious activity or have been hacked. Search Console surfaces these issues and Chrome users are presented with warnings before visiting sites with these problems. Additionally, Google provides an <a hreflang="en" href="https://developers.google.com/search/blog/2014/08/https-as-ranking-signal">algorithmic boost</a> to pages that are served over <a hreflang="en" href="https://developers.google.com/search/docs/advanced/security/https">HTTPS</a> (Hypertext Transfer Protocol Secure). For a more in-depth analysis on this topic, see the [Security](./security) chapter.
 
 #### HTTPS usage
 
@@ -1155,13 +1155,13 @@ All of these things have likely contributed to the higher adoption rate year ove
 
 ### AMP
 
-[AMP](https://amp.dev/) (previously called Accelerated Mobile Pages) is an open source HTML framework that was launched by Google in 2015 as a way to help pages load more quickly, especially on mobile devices. AMP can be implemented as an alternate version of existing web pages or developed from scratch using the AMP framework.
+<a hreflang="en" href="https://amp.dev/">AMP</a> (previously called Accelerated Mobile Pages) is an open source HTML framework that was launched by Google in 2015 as a way to help pages load more quickly, especially on mobile devices. AMP can be implemented as an alternate version of existing web pages or developed from scratch using the AMP framework.
 
 When there's an AMP version available for a page, it will be shown by Google in mobile search results, along with the AMP logo.
 
 It is also important to note that while AMP usage is not a ranking factor for Google (or any other search engine), web speed is a ranking factor.
 
-Additionally, as of this writing, AMP is a requirement to be featured in Google's Top Stories carousel in mobile search results, which is an important feature for news-related publications. However, this will change in May 2021, when non-AMP content will become eligible as long as it meets the [Google News content policies](https://support.google.com/news/publisher-center/answer/6204050) and provides a great [page experience](https://developers.google.com/search/docs/guides/page-experience) as [announced by Google in November this year](https://developers.google.com/search/blog/2020/11/timing-for-page-experience).
+Additionally, as of this writing, AMP is a requirement to be featured in Google's Top Stories carousel in mobile search results, which is an important feature for news-related publications. However, this will change in May 2021, when non-AMP content will become eligible as long as it meets the <a hreflang="en" href="https://support.google.com/news/publisher-center/answer/6204050">Google News content policies</a> and provides a great <a hreflang="en" href="https://developers.google.com/search/docs/guides/page-experience">page experience</a> as <a hreflang="en" href="https://developers.google.com/search/blog/2020/11/timing-for-page-experience">announced by Google in November this year</a>.
 
 When checking the usage of AMP as an alternate version of a non-AMP based page, we found that 0.69% of mobile web pages and 0.81% of desktop ones were including an `amphtml` tag pointing to an AMP version. Although the adoption is still very low, this is a slight improvement from [last year's findings](../2019/seo#amp), in which only 0.62% of mobile pages contained a link to an AMP version.
 
@@ -1171,7 +1171,7 @@ On the other hand, when assessing the usage of AMP as a framework to develop web
 
 Single-page applications (SPAs) enable browsers to retain and update a single page load even as the on-page content updates to match a user request. Multiple technologies such as JavaScript frameworks, AJAX, and WebSockets are used to accomplish lightweight subsequent page loads.
 
-These frameworks required special SEO considerations, although Google has worked to mitigate the issues caused by client-side rendering with aggressive caching strategies. In a video from [Google Webmaster's 2019 conference](https://youtu.be/rq8sFkl0KnI), Software Engineer Erik Hendriks shared that Google no longer relies on `Cache-Control` headers and instead looks for `ETag` or `Last-Modified` headers to see if the content of the file has changed.
+These frameworks required special SEO considerations, although Google has worked to mitigate the issues caused by client-side rendering with aggressive caching strategies. In a video from <a hreflang="en" href="https://youtu.be/rq8sFkl0KnI">Google Webmaster's 2019 conference</a>, Software Engineer Erik Hendriks shared that Google no longer relies on `Cache-Control` headers and instead looks for `ETag` or `Last-Modified` headers to see if the content of the file has changed.
 
 SPAs should utilize the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) for granular control of caching. The API allows for the passing of `Request` objects with specific cache overrides set and can be used to set the necessary `If-Modified` and `ETag` headers.
 
@@ -1204,7 +1204,7 @@ It is also important to note how there's still an important opportunity for impr
  - Non-trivial disparities were found across mobile and desktop pages, like the one between mobile and desktop links, illustrated in the 62 links on mobile versus the 68 links on desktop for the median web page.
  - 33.13% of websites scored _Good_ Core Web Vitals for desktop while only 19.96% of their mobile counterparts passed the Core Web Vitals assessment, suggesting that desktop continues to be the more performant platform for users.
 
-These findings could negatively impact sites as Google completes its migration to a [mobile-first index in March 2021](https://webmasters.googleblog.com/2020/07/prepare-for-mobile-first-indexing-with.html).
+These findings could negatively impact sites as Google completes its migration to a <a hreflang="en" href="https://webmasters.googleblog.com/2020/07/prepare-for-mobile-first-indexing-with.html">mobile-first index in March 2021</a>.
 
 Disparities were also found across rendered and non-rendered HTML. For example, the median mobile page displays 11.5% more words when rendered than its raw HTML, indicating a reliance on client-side JavaScript to show content.
 

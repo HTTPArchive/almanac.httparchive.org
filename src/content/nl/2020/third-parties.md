@@ -125,7 +125,7 @@ We kunnen verzoeken van derden opsplitsen op basis van hun inhoudstype. Dit is h
 
 De resultaten tonen aan dat de belangrijkste bijdragers aan inhoud van derden afbeeldingen (38%) en JavaScript (22%) zijn, waarbij de op een na grootste bijdrage onbekend is (16%). Onbekend is een subset van niet-gecategoriseerde groepen, zoals tekst/plain en reacties zonder een inhoudstype koptekst.
 
-Dit toont een verschuiving wanneer [vergeleken met 2019](https://almanac.httparchive.org/nl/2019/third-parties#resource-types): relatieve afbeeldingsinhoud is gestegen van 33% naar 38%, terwijl JavaScript-inhoud aanzienlijk afgenomen is van 32% naar 22%. Deze vermindering is waarschijnlijk het gevolg van een betere naleving van de cookie- en gegevensbeschermingsregels, waardoor de uitvoering door derden wordt verminderd tot na de expliciete aanmelding van de gebruiker, wat buiten het bereik valt van HTTP Archive-testruns.
+Dit toont een verschuiving wanneer [vergeleken met 2019](../2019/third-parties#resource-types): relatieve afbeeldingsinhoud is gestegen van 33% naar 38%, terwijl JavaScript-inhoud aanzienlijk afgenomen is van 32% naar 22%. Deze vermindering is waarschijnlijk het gevolg van een betere naleving van de cookie- en gegevensbeschermingsregels, waardoor de uitvoering door derden wordt verminderd tot na de expliciete aanmelding van de gebruiker, wat buiten het bereik valt van HTTP Archive-testruns.
 
 ### Domeinen van derden
 

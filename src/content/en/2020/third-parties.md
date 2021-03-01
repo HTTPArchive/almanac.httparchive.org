@@ -7,7 +7,7 @@ reviewers: [jzyang, exterkamp]
 analysts: [max-ostapenko, paulcalvano]
 editors: [bazzadp]
 translators: []
-simonhearne_bio: Simon is a web performance architect. He is passionate about helping deliver a faster and more accessible web. You can find him tweeting <a href="https://twitter.com/simonhearne">@SimonHearne</a> and blogging at <a href="https://simonhearne.com">simonhearne.com</a>.
+simonhearne_bio: Simon is a web performance architect. He is passionate about helping deliver a faster and more accessible web. You can find him tweeting <a href="https://twitter.com/simonhearne">@SimonHearne</a> and blogging at <a hreflang="en" href="https://simonhearne.com">simonhearne.com</a>.
 discuss: 2042
 results: https://docs.google.com/spreadsheets/d/1uW4SMkC45b4EbC4JV1xKAUhwGN2K8j0qFy_jSIYnHhI/
 featured_quote: Third-party content is more prevalent than ever, 94% of pages have at least one third-party resource and the median page has 24. In this chapter we review the prevalence of third-party content, the impact on page weight and browser CPU, then suggest methods to reduce the impact of third-party content on page performance.
@@ -49,7 +49,7 @@ Similarly, first-party content served from a third-party domain is counted as th
 
 ### Provider categories
 
-This chapter divides third-party providers into different categories. A brief description is included with each of the categories. The mapping of domain to category can be found in the [third-party-web repository](https://github.com/patrickhulce/third-party-web/blob/8afa2d8cadddec8f0db39e7d715c07e85fb0f8ec/data/entities.json5).
+This chapter divides third-party providers into different categories. A brief description is included with each of the categories. The mapping of domain to category can be found in the <a hreflang="en" href="https://github.com/patrickhulce/third-party-web/blob/8afa2d8cadddec8f0db39e7d715c07e85fb0f8ec/data/entities.json5">third-party-web repository</a>.
 
 * Ad - display and measurement of advertisements
 * Analytics - tracking site visitor behavior
@@ -125,11 +125,11 @@ We can break down third-party requests by their content type. This is the report
 
 The results show that the major contributors of third-party content are images (38%) and JavaScript (22%), with the next largest contributor being unknown (16%). Unknown is a subset of non-categorized groups such as text/plain as well as responses without a content-type header.
 
-This shows a shift when [compared to 2019](https://almanac.httparchive.org/en/2019/third-parties#resource-types): relative image content has increased from 33% to 38%, whilst JavaScript content has decreased significantly from 32% to 22%. This reduction is likely due to increased adherence to cookie and data protection regulations, reducing third-party execution until after explicit user opt-in which is out of scope for HTTP Archive test runs.
+This shows a shift when <a href="../2019/third-parties#resource-types">compared to 2019</a>: relative image content has increased from 33% to 38%, whilst JavaScript content has decreased significantly from 32% to 22%. This reduction is likely due to increased adherence to cookie and data protection regulations, reducing third-party execution until after explicit user opt-in which is out of scope for HTTP Archive test runs.
 
 ### Third-party domains
 
-When we dig further into domains serving third-party content we see that Google Fonts is by far the most common. It is present on more than 7.5% of mobile pages tested. While fonts only account for around 3% of third-party content, almost all of these are delivered by the Google Fonts service. If your page uses Google Fonts, make sure to follow [best practices](https://csswizardry.com/2020/05/the-fastest-google-fonts/) to ensure the best possible user experience.
+When we dig further into domains serving third-party content we see that Google Fonts is by far the most common. It is present on more than 7.5% of mobile pages tested. While fonts only account for around 3% of third-party content, almost all of these are delivered by the Google Fonts service. If your page uses Google Fonts, make sure to follow <a hreflang="en" href="https://csswizardry.com/2020/05/the-fastest-google-fonts/">best practices</a> to ensure the best possible user experience.
 
 {{ figure_markup(
   image="top-domains-by-prevalence.png",
@@ -145,9 +145,9 @@ When we dig further into domains serving third-party content we see that Google 
 
 The next four most common domains are all advertising providers. They may not be requested directly by the page but through a complex chain of redirects initiated by another advertising network.
 
-The sixth most common domain is `digicert.com`. Calls to `digicert.com` are generally OCSP revocation checks due to TLS certificates not having OCSP stapling enabled, or the use of Extended Validation (EV) certificates which prevent pinning of intermediate certificates. This number is exaggerated in HTTP Archive due to all page loads being effectively first-time visitors - OCSP responses are generally cached and valid for seven days in real-world browsing. See [this blog post](https://simonhearne.com/2020/drop-ev-certs/) to read more on this issue.
+The sixth most common domain is `digicert.com`. Calls to `digicert.com` are generally OCSP revocation checks due to TLS certificates not having OCSP stapling enabled, or the use of Extended Validation (EV) certificates which prevent pinning of intermediate certificates. This number is exaggerated in HTTP Archive due to all page loads being effectively first-time visitors - OCSP responses are generally cached and valid for seven days in real-world browsing. See <a hreflang="en" href="https://simonhearne.com/2020/drop-ev-certs/">this blog post</a> to read more on this issue.
 
-Further down the list at 2.43% is `ajax.googleapis.com`, Google's [Hosted Libraries project](https://developers.google.com/speed/libraries). Whilst loading a library such as jQuery from a hosted service is easy, the additional cost of a connection to a third-party domain may have a negative impact on performance. It is best to host all critical JavaScript and CSS on the root domain, if possible. There is also now no cache benefit to using a shared CDN resource, as all major browsers [partition caches by page](https://developers.google.com/web/updates/2020/10/http-cache-partitioning). Harry Roberts has written a detailed blog post on [how to host your own static assets](https://csswizardry.com/2019/05/self-host-your-static-assets/).
+Further down the list at 2.43% is `ajax.googleapis.com`, Google's <a hreflang="en" href="https://developers.google.com/speed/libraries">Hosted Libraries project</a>. Whilst loading a library such as jQuery from a hosted service is easy, the additional cost of a connection to a third-party domain may have a negative impact on performance. It is best to host all critical JavaScript and CSS on the root domain, if possible. There is also now no cache benefit to using a shared CDN resource, as all major browsers <a hreflang="en" href="https://developers.google.com/web/updates/2020/10/http-cache-partitioning">partition caches by page</a>. Harry Roberts has written a detailed blog post on <a hreflang="en" href="https://csswizardry.com/2019/05/self-host-your-static-assets/">how to host your own static assets</a>.
 
 ## Page weight impact
 
@@ -292,8 +292,8 @@ Advertising requests appear to have an increased impact on CPU time. The median 
 
 While third-party content is critical to many websites, auditing the impact of each provider is critical to ensure that they do not significantly impact user experience, page weight or CPU utilization. There are often self-hosting options for the top contributors to third-party weight, this is especially worth considering as there is now no caching benefit to using shared assets:
 
-* Google Fonts allows [self-hosting](https://www.tunetheweb.com/blog/should-you-self-host-google-fonts/) the assets
+* Google Fonts allows <a hreflang="en" href="https://www.tunetheweb.com/blog/should-you-self-host-google-fonts/">self-hosting</a> the assets
 * JavaScript CDNs can be replaced with self-hosted assets
-* Experimentation scripts can be self-hosted, e.g. [Optimizely](https://help.optimizely.com/Set_Up_Optimizely/Optimizely_self-hosting_for_Akamai_users)
+* Experimentation scripts can be self-hosted, e.g. <a hreflang="en" href="https://help.optimizely.com/Set_Up_Optimizely/Optimizely_self-hosting_for_Akamai_users">Optimizely</a>
 
 In this chapter we have discussed the benefits and costs of third-party content on the web. We have seen that third-parties are integral to almost all websites, and that the impact varies by third-party provider. Before adding a new third-party to your pages, consider the impact that they will have!
