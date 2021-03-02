@@ -7,7 +7,7 @@ reviewers: [jessnicolet, pmeenan, giopunt, mgechev, notwillk]
 analysts: [khempenius]
 editors: [exterkamp]
 translators: [chefleo]
-Zizzamia_bio: Leonardo è uno Staff Software Engineer presso <a href="https://www.coinbase.com/">Coinbase</a>, leader nel web performance e iniziative di crescita. È a cura della <a href="https://ngrome.io">conferenza NGRome</a>. Leo gestisce anche la libreria <a href="https://github.com/Zizzamia/perfume.js"> Perfume.js </a>, che aiuta le aziende a stabilire le priorità delle roadmap e a prendere decisioni aziendali migliori attraverso la performance analytics.
+Zizzamia_bio: Leonardo è uno Staff Software Engineer presso <a hreflang="en" href="https://www.coinbase.com/">Coinbase</a>, leader nel web performance e iniziative di crescita. È a cura della <a hreflang="en" href="https://ngrome.io">conferenza NGRome</a>. Leo gestisce anche la libreria <a hreflang="en" href="https://github.com/Zizzamia/perfume.js"> Perfume.js </a>, che aiuta le aziende a stabilire le priorità delle roadmap e a prendere decisioni aziendali migliori attraverso la performance analytics.
 discuss: 2057
 results: https://docs.google.com/spreadsheets/d/1lXjd8ogB7kYfG09eUdGYXUlrMjs4mq1Z7nNldQnvkVA/
 featured_quote: Durante lo scorso anno, le resource hints sono aumentati nell'adozione e sono diventati API essenziali per gli sviluppatori per avere un controllo più granulare su molti aspetti delle priorità delle risorse e, in definitiva, sull'user experience.
@@ -28,10 +28,10 @@ Il precaricamento delle risorse e il fatto che i browser applichino una priorit�
 Negli anni successivi, i fornitori di browser hanno svolto sempre più il grosso del lavoro, ognuno aggiungendo la propria salsa speciale su come dare la priorità alle risorse. Ma è importante capire che da solo il browser ha alcune limitazioni. In qualità di sviluppatori, tuttavia, possiamo superare questi limiti facendo un buon uso delle resource hints e aiutandoci a decidere come assegnare la priorità alle risorse, determinando quali dovrebbero essere fetched o preprocessed per aumentare ulteriormente le prestazioni della pagina.
 
 In particolare possiamo citare alcune vittorie raggiunte/ottenute nell'ultimo anno riguardante le resource hints:
-- [CSS-Tricks](https://www.zachleat.com/web/css-tricks-web-fonts/) web fonts vengono visualizzati più velocemente su un primo rendering 3G.
-- [Wix.com](https://www.youtube.com/watch?v=4QqlGgF8Y2I&t=1469) l'utilizzo delle resource hints ha ottenuto un miglioramento del 10% per FCP.
-- [Ironmongerydirect.co.uk](https://andydavies.me/blog/2019/03/22/improving-perceived-performance-with-a-link-rel-equals-preconnect-http-header/) ha utilizzato la preconnect per migliorare il caricamento dell'immagine del prodotto di 400 ms alla mediana e di oltre 1s al 95° percentile.
-- [Facebook.com](https://engineering.fb.com/2020/05/08/web/facebook-redesign/) preload utilizzato per una navigazione più veloce.
+- <a hreflang="en" href="https://www.zachleat.com/web/css-tricks-web-fonts/">CSS-Tricks</a> web fonts vengono visualizzati più velocemente su un primo rendering 3G.
+- <a hreflang="en" href="https://www.youtube.com/watch?v=4QqlGgF8Y2I&t=1469">Wix.com</a> l'utilizzo delle resource hints ha ottenuto un miglioramento del 10% per FCP.
+- <a hreflang="en" href="https://andydavies.me/blog/2019/03/22/improving-perceived-performance-with-a-link-rel-equals-preconnect-http-header/">Ironmongerydirect.co.uk</a> ha utilizzato la preconnect per migliorare il caricamento dell'immagine del prodotto di 400 ms alla mediana e di oltre 1s al 95° percentile.
+- <a hreflang="en" href="https://engineering.fb.com/2020/05/08/web/facebook-redesign/">Facebook.com</a> preload utilizzato per una navigazione più veloce.
 
 Diamo un'occhiata alle resource hints più predominanti supportati ultimamente dalla maggior parte dei browser: `dns-prefetch`, `preconnect`, `preload`, `prefetch`, e <i lang="en">native lazy loading</i>.
 
@@ -39,13 +39,13 @@ Quando si lavora con ogni singolo hint, consigliamo di misurare sempre l'impatto
 
 ### `dns-prefetch`
 
-<a hreflang="en" href="https://web.dev/preconnect-and-dns-prefetch/">dns-prefetch</a> aiuta a risolvere in anticipo l'indirizzo IP per un determinato dominio. Essendo la più <a href="https://caniuse.com/link-rel-dns-prefetch"> vecchia </a> resource hint disponibile, utilizza CPU e risorse di rete minime rispetto a `preconnect` e aiuta il browser a evitare di sperimentare il "worst-case" delay per la risoluzione DNS, che può essere <a href="https://www.chromium.org/developers/design-documents/dns-prefetching">oltre 1 secondo</a>.
+<a hreflang="en" href="https://web.dev/preconnect-and-dns-prefetch/">dns-prefetch</a> aiuta a risolvere in anticipo l'indirizzo IP per un determinato dominio. Essendo la più <a hreflang="en" href="https://caniuse.com/link-rel-dns-prefetch"> vecchia </a> resource hint disponibile, utilizza CPU e risorse di rete minime rispetto a `preconnect` e aiuta il browser a evitare di sperimentare il "worst-case" delay per la risoluzione DNS, che può essere <a hreflang="en" href="https://www.chromium.org/developers/design-documents/dns-prefetching">oltre 1 secondo</a>.
 
 ```html
 <link rel="dns-prefetch" href="https://www.googletagmanager.com/">
 ```
 
-Fai attenzione quando usi `dns-prefetch` perché anche se sono leggeri da fare è facile esaurire i limiti del browser per il numero di richieste DNS simultanee in volo consentite (Chrome ha ancora un <a href="https://source.chromium.org/chromium/chromium/src/+/master:net/dns/host_resolver_manager.cc;l=353">limite di 6</a>).
+Fai attenzione quando usi `dns-prefetch` perché anche se sono leggeri da fare è facile esaurire i limiti del browser per il numero di richieste DNS simultanee in volo consentite (Chrome ha ancora un <a hreflang="en" href="https://source.chromium.org/chromium/chromium/src/+/master:net/dns/host_resolver_manager.cc;l=353">limite di 6</a>).
 
 ### `preconnect`
 
@@ -61,7 +61,7 @@ Sii consapevole quando usi `preconnect`:
 - Evitare di riscaldare le origini utilizzate troppo tardi nel caricamento iniziale.
 - Usalo per non più di tre origini perché può avere costi di CPU e batteria.
 
-Infine, `preconnect` non è disponibile per <a href="https://caniuse.com/?search=preconnect">Internet Explorer o Firefox</a>, e <a href="https://web.dev/preconnect-and-dns-prefetch/#resolution-domain-name-early-with-reldns-prefetch">usare `dns-prefetch` come fallback</a> è altamente consigliato.
+Infine, `preconnect` non è disponibile per <a hreflang="en" href="https://caniuse.com/?search=preconnect">Internet Explorer o Firefox</a>, e <a hreflang="en" href="https://web.dev/preconnect-and-dns-prefetch/#resolution-domain-name-early-with-reldns-prefetch">usare `dns-prefetch` come fallback</a> è altamente consigliato.
 
 ### `preload`
 
@@ -86,7 +86,7 @@ L'hint <a hreflang="en" href="https://web.dev/link-prefetch/">prefetch</a> ci pe
 
 Esistono diversi modi per implementare la logica di previsione di una risorsa, che potrebbe essere basata su segnali come il movimento del mouse dell'utente, flussi/percorsi comuni degli utenti o anche sulla base di una combinazione di entrambi in aggiunta al machine learning.
 
-Fai attenzione, a seconda della <a href="https://github.com/andydavies/http2-prioritization-issues#current-status">qualità</a> della prioritizzazione HTTP/2 del CDN utilizzato, la prioritizzazione di `prefetch` potrebbe migliorare le prestazioni o renderle più lente, dando priorità alle richieste di `prefetch` e togliendo della larghezza di banda importante per il caricamento iniziale. Assicurati di ricontrollare la CDN che stai utilizzando e adattati per prendere in considerazione alcune delle migliori pratiche condivise di <a hreflang="en" href="https://andydavies.me/blog/2020/07/08/rel-equals-prefetch-and-the-importance-of-effective-http-slash-2-prioritisation/">Andy Davies's</a>.
+Fai attenzione, a seconda della <a hreflang="en" href="https://github.com/andydavies/http2-prioritization-issues#current-status">qualità</a> della prioritizzazione HTTP/2 del CDN utilizzato, la prioritizzazione di `prefetch` potrebbe migliorare le prestazioni o renderle più lente, dando priorità alle richieste di `prefetch` e togliendo della larghezza di banda importante per il caricamento iniziale. Assicurati di ricontrollare la CDN che stai utilizzando e adattati per prendere in considerazione alcune delle migliori pratiche condivise di <a hreflang="en" href="https://andydavies.me/blog/2020/07/08/rel-equals-prefetch-and-the-importance-of-effective-http-slash-2-prioritisation/">Andy Davies's</a>.
 
 ### Native lazy loading
 
@@ -96,7 +96,7 @@ L'hint <a hreflang="en" href="https://web.dev/browser-level-image-lazy-loading/"
 <img src="image.png" loading="lazy" alt="…" width="200" height="200">
 ```
 
-Tieni presente che l'implementazione di Chromium della logica delle soglie di lazy-loading è stata storicamente piuttosto [conservativa](https://web.dev/browser-level-image-lazy-loading/#distance-from-viewport-thresholds), mantenendo il limite offscreen a 3000px. Durante l'ultimo anno il limite è stato attivamente testato e migliorato per allineare meglio le aspettative degli sviluppatori e, infine, spostare le soglie a 1250px. Inoltre, non esiste [nessuno standard nei browser](https://github.com/whatwg/html/issues/5408) e non è ancora possibile per gli sviluppatori web ignorare le soglie predefinite fornite dai browser.
+Tieni presente che l'implementazione di Chromium della logica delle soglie di lazy-loading è stata storicamente piuttosto <a hreflang="en" href="https://web.dev/browser-level-image-lazy-loading/#distance-from-viewport-thresholds">conservativa</a>, mantenendo il limite offscreen a 3000px. Durante l'ultimo anno il limite è stato attivamente testato e migliorato per allineare meglio le aspettative degli sviluppatori e, infine, spostare le soglie a 1250px. Inoltre, non esiste <a hreflang="en" href="https://github.com/whatwg/html/issues/5408">nessuno standard nei browser</a> e non è ancora possibile per gli sviluppatori web ignorare le soglie predefinite fornite dai browser.
 
 ## Resource hints
 
@@ -117,7 +117,7 @@ Sempre più pagine web utilizzano le principali resource hints, e nel 2020 stiam
 
 La relativa popolarità di `dns-prefetch` con il 33% di adozione rispetto ad altre resource hints non sorprende poiché è apparso per la prima volta nel 2009 e ha il supporto più ampio tra tutti le principali resource hints.
 
-Rispetto a <a hreflang="en" href="../2019/resource-hints#resource-hints">2019</a>, `dns-prefetch` ha avuto un aumento del 4% nell'adozione su desktop. Abbiamo visto un aumento simile anche su "preconnect". Uno dei motivi principali per cui questa è stata la crescita più grande tra tutti le hints, è il chiaro e utile consiglio che il <a hreflang="en" href="https://web.dev/uses-rel-preconnect/">Lighthouse audit</a> sta dando su questo argomento. A partire dal rapporto di quest'anno, introduciamo anche come si comporta l'ultimo dataset rispetto alle raccomandazioni di Lighthouse.
+Rispetto a <a href="../2019/resource-hints#resource-hints">2019</a>, `dns-prefetch` ha avuto un aumento del 4% nell'adozione su desktop. Abbiamo visto un aumento simile anche su "preconnect". Uno dei motivi principali per cui questa è stata la crescita più grande tra tutti le hints, è il chiaro e utile consiglio che il <a hreflang="en" href="https://web.dev/uses-rel-preconnect/">Lighthouse audit</a> sta dando su questo argomento. A partire dal rapporto di quest'anno, introduciamo anche come si comporta l'ultimo dataset rispetto alle raccomandazioni di Lighthouse.
 
 {{ figure_markup(
   image="resource-hint-adoption-2019-vs-2020.png",
@@ -134,7 +134,7 @@ L'utilizzo di `preload` ha avuto una crescita più lenta con solo un aumento del
 
 ### Hints per pagina
 
-Gli sviluppatori stanno imparando a usare meglio le resource hints e rispetto al <a hreflang="en" href="../2019/resource-hints#resource-hints">2019</a> abbiamo visto un uso migliorato di `preload`, `prefetch` e `preconnect`. Per operazioni costose come preload e preconnect, l'utilizzo mediano sul desktop è diminuito da 2 a 1. Abbiamo visto l'opposto per caricamento delle risorse future con una priorità inferiore con `prefetch`, con un aumento da 1 a 2 in mediana per pagina.
+Gli sviluppatori stanno imparando a usare meglio le resource hints e rispetto al <a href="../2019/resource-hints#resource-hints">2019</a> abbiamo visto un uso migliorato di `preload`, `prefetch` e `preconnect`. Per operazioni costose come preload e preconnect, l'utilizzo mediano sul desktop è diminuito da 2 a 1. Abbiamo visto l'opposto per caricamento delle risorse future con una priorità inferiore con `prefetch`, con un aumento da 1 a 2 in mediana per pagina.
 
 {{ figure_markup(
   image="median-number-of-hints-per-page.png",
@@ -161,9 +161,9 @@ Man mano che creiamo sempre più automazione con le resource hints, sii cauto qu
 
 ### L'attributo `as`
 
-Con `preload` e `prefetch`, è fondamentale usare l'attributo `as` per aiutare il browser a dare la priorità alla resource in modo più accurato. Ciò consente una corretta memorizzazione nella cache per richieste future, l'applicazione della corretta Content Security Policy (<a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP">CSP</a>) e l'impostazione le headers di richiesta "Accept" corrette.
+Con `preload` e `prefetch`, è fondamentale usare l'attributo `as` per aiutare il browser a dare la priorità alla resource in modo più accurato. Ciò consente una corretta memorizzazione nella cache per richieste future, l'applicazione della corretta Content Security Policy ([CSP](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)) e l'impostazione le headers di richiesta "Accept" corrette.
 
-Con `preload` possono essere precaricati molti diversi tipi di contenuto e la <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#Attributes">lista completa</a> segue i consigli fatti nelle <a href="https://fetch.spec.whatwg.org/#concept-request-destination">specifiche</a> Fetch. Il più popolare è il tipo `script` con il 64% di utilizzo. Ciò è probabilmente correlato a un ampio gruppo di siti creati come Single Page Apps che richiedono il pacchetto principale il prima possibile per avviare il download del resto delle loro dipendenze JS. L'utilizzo successivo proviene dal font all'8%, dallo stile al 5%, dall'immagine all'1% e dal fetch all'1%.
+Con `preload` possono essere precaricati molti diversi tipi di contenuto e la <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#Attributes">lista completa</a> segue i consigli fatti nelle <a hreflang="en" href="https://fetch.spec.whatwg.org/#concept-request-destination">specifiche</a> Fetch. Il più popolare è il tipo `script` con il 64% di utilizzo. Ciò è probabilmente correlato a un ampio gruppo di siti creati come Single Page Apps che richiedono il pacchetto principale il prima possibile per avviare il download del resto delle loro dipendenze JS. L'utilizzo successivo proviene dal font all'8%, dallo stile al 5%, dall'immagine all'1% e dal fetch all'1%.
 
 {{ figure_markup(
   image="mobile-as-attribute-values-by-year.png",
@@ -174,7 +174,7 @@ Con `preload` possono essere precaricati molti diversi tipi di contenuto e la <a
   sql_file="as_attribute_by_year.sql"
 ) }}
 
-Rispetto alla tendenza in <a hreflang="en" href="../2019/resource-hints#the-as-attribute">2019</a>, abbiamo visto una rapida crescita nell'utilizzo di font e style con l'attributo `as`. Ciò è probabilmente correlato agli sviluppatori che aumentano la priorità dei CSS critici e combinano anche i font `preload` con `display:optional` per <a hreflang="en" href="https://web.dev/optimize-cls/#web-fonts-causing-foutfoit">migliorare</a> Cumulative Layout Shift (<a hreflang="en" href="https://web.dev/cls/">CLS</a>).
+Rispetto alla tendenza in <a href="../2019/resource-hints#the-as-attribute">2019</a>, abbiamo visto una rapida crescita nell'utilizzo di font e style con l'attributo `as`. Ciò è probabilmente correlato agli sviluppatori che aumentano la priorità dei CSS critici e combinano anche i font `preload` con `display:optional` per <a hreflang="en" href="https://web.dev/optimize-cls/#web-fonts-causing-foutfoit">migliorare</a> Cumulative Layout Shift (<a hreflang="en" href="https://web.dev/cls/">CLS</a>).
 
 Tieni presente che omettere l'attributo `as` o avere un valore non valido renderà più difficile per il browser determinare la priorità corretta e in alcuni casi, come gli script, può anche causare il fetch della risorsa due volte.
 
@@ -196,7 +196,7 @@ Le ultime tendenze mostrano che il 16,96% degli elementi che `preload` imposta a
 <link rel="preload" href="ComicSans.woff2" as="font" type="font/woff2" crossorigin>
 ```
 
-Tieni presente che i fonts precaricati senza l'attributo `crossorigin` verranno recuperati <a href="https://web.dev/preload-critical-assets/#how-to-implement-relpreload">due volte</a>!
+Tieni presente che i fonts precaricati senza l'attributo `crossorigin` verranno recuperati <a hreflang="en" href="https://web.dev/preload-critical-assets/#how-to-implement-relpreload">due volte</a>!
 
 ### L'attributo `media`
 
@@ -246,7 +246,7 @@ Ora festeggiamo il primo anno dell'API <a hreflang="en" href="https://addyosmani
   sql_file="native_lazy_loading_attrs.sql"
 ) }}
 
-L'adozione è ancora agli inizi, soprattutto con le soglie ufficiali all'inizio di quest'anno troppo conservative e solo di <a href="https://addyosmani.com/blog/better-image-lazy-loading-in-chrome/">recente</a> si allineano con le aspettative degli sviluppatori. Con quasi il 72% dei browser che supportano il lazy loading di image/source, questa è un'altra area di opportunità, specialmente per le pagine che cercano di migliorare l'utilizzo dei dati e le prestazioni sui dispositivi di fascia bassa.
+L'adozione è ancora agli inizi, soprattutto con le soglie ufficiali all'inizio di quest'anno troppo conservative e solo di <a hreflang="en" href="https://addyosmani.com/blog/better-image-lazy-loading-in-chrome/">recente</a> si allineano con le aspettative degli sviluppatori. Con quasi il 72% dei browser che supportano il lazy loading di image/source, questa è un'altra area di opportunità, specialmente per le pagine che cercano di migliorare l'utilizzo dei dati e le prestazioni sui dispositivi di fascia bassa.
 
 L'esecuzione dell'audit "<a hreflang="en" href="https://web.dev/offscreen-images/">Defer offscreen images</a>" di Lighthouse ha portato il 68,65% delle pagine a superare il test. Per queste pagine c'è la possibilità di caricare le immagini dopo che tutte le risorse critiche hanno terminato il caricamento.
 
@@ -264,7 +264,7 @@ Nel complesso, il prefetching predittivo è ancora un territorio inesplorato, ma
 
 ## HTTP/2 Push
 
-<a hreflang="en" href="./http2">HTTP/2</a> ha una feature chiamata "server push" che può potenzialmente migliorare le prestazioni della pagina quando il tuo prodotto ha lunghi Round Trip Times (<a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Glossary/Round_Trip_Time_(RTT)">RTT</a>) o elaborazione server. In breve, invece di aspettare che il client invii una richiesta, il server invia preventivamente una risorsa che prevede che il client richiederà subito dopo.
+<a href="./http2">HTTP/2</a> ha una feature chiamata "server push" che può potenzialmente migliorare le prestazioni della pagina quando il tuo prodotto ha lunghi Round Trip Times ([RTT](https://developer.mozilla.org/en-US/docs/Glossary/Round_Trip_Time_(RTT))) o elaborazione server. In breve, invece di aspettare che il client invii una richiesta, il server invia preventivamente una risorsa che prevede che il client richiederà subito dopo.
 
 {{ figure_markup(
   caption="La percentuale di pagine HTTP/2 Push che utilizzano `preload`/`nopush`.",
@@ -299,7 +299,7 @@ Come accennato in precedenza, il <a hreflang="en" href="https://addyosmani.com/b
 
 ## Futuro
 
-Immergiamoci in un paio di hints sperimentali. Molto vicino al rilascio abbiamo i hint prioritari(Priority hints), che vengono attivamente sperimentati nella comunità web. Abbiamo anche i 103 Early Hints in HTTP/2, che è ancora all'inizio e ci sono alcuni giocatori come <a href="https://www.fastly.com/blog/beyond-server-push-experimenting-with-the-103-early-hints-status-code">Chrome e Fastly che collaborano per i prossimi test di prova</a>.
+Immergiamoci in un paio di hints sperimentali. Molto vicino al rilascio abbiamo i hint prioritari(Priority hints), che vengono attivamente sperimentati nella comunità web. Abbiamo anche i 103 Early Hints in HTTP/2, che è ancora all'inizio e ci sono alcuni giocatori come <a hreflang="en" href="https://www.fastly.com/blog/beyond-server-push-experimenting-with-the-103-early-hints-status-code">Chrome e Fastly che collaborano per i prossimi test di prova</a>.
 
 ### Hints prioritari
 
@@ -325,7 +325,7 @@ Con `preload` e `prefetch`, la priorità è impostata dal browser a seconda del 
   sql_file="priority_hints.sql"
 ) }}
 
-Finora solo lo 0,77% dei siti web ha adottato questo nuovo hint poiché Chrome sta ancora <a href="https://www.chromestatus.com/features/5273474901737472">attivamente</a> sperimentando e al momento del rilascio di questo articolo la feature è in attesa.
+Finora solo lo 0,77% dei siti web ha adottato questo nuovo hint poiché Chrome sta ancora <a hreflang="en" href="https://www.chromestatus.com/features/5273474901737472">attivamente</a> sperimentando e al momento del rilascio di questo articolo la feature è in attesa.
 
 L'utilizzo maggiore è con elementi di script, il che non sorprende poiché il numero di file JS primari e di terze parti continua a crescere.
 

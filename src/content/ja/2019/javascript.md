@@ -9,7 +9,7 @@ editors: [obto]
 translators: [ksakae]
 discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/
-housseindjirdeh_bio: HousseinはGoogleの開発提唱者で、スピード、パフォーマンス、ウェブフレームワークのエコシステムに取り組んでいます。彼は <a href="https://twitter.com/hdjirdeh">@hdjirdeh</a> でツイートし、<a href="https://houssein.me/">https://houssein.me/</a> でブログを書いています。
+housseindjirdeh_bio: HousseinはGoogleの開発提唱者で、スピード、パフォーマンス、ウェブフレームワークのエコシステムに取り組んでいます。彼は <a href="https://twitter.com/hdjirdeh">@hdjirdeh</a> でツイートし、<a hreflang="en" href="https://houssein.me/">https://houssein.me/</a> でブログを書いています。
 featured_quote: JavaScript はブラウザに送信するリソースの中で最もコストのかかるもので、ダウンロード、解析、コンパイル、そして最終的に実行されます。ブラウザはスクリプトの解析とコンパイルにかかる時間を大幅に短縮しましたが、ダウンロードと実行は、JavaScriptがWebページで処理される際に最もコストのかかる段階となっています。
 featured_stat_1: 89%
 featured_stat_label_1: ファーストパーティよりもサードパーティのコードが多いサイト
@@ -25,11 +25,11 @@ JavaScriptはウェブ上で、対話可能で複雑な体験を構築するこ�
 
 言語の仕様自体は、世界中の開発者が利用している多くのコミュニティビルドのライブラリやフレームワークとともに、1995年に言語が作成されて以来、変化と進化を続けてきました。JavaScriptの実装やインタプリタも進歩を続けており、ブラウザだけでなく多くの環境で利用できるようになっています。
 
-[HTTP Archive](https://httparchive.org/)は毎月[数百万ページ](https://httparchive.org/reports/state-of-the-web#numUrls)をクロールし、[WebPageTest](https://webpagetest.org/) のプライベートインスタンスを通して実行し、各ページのキー情報を保存しています（これについての詳細は[方法論](./methodology) で学べます）。JavaScriptのコンテキストでは、HTTP Archiveはウェブ全体の言語の使用法に関する広範な情報を提供しています。この章では、これらの傾向の多くを集約して分析します。
+<a hreflang="en" href="https://httparchive.org/">HTTP Archive</a>は毎月<a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#numUrls">数百万ページ</a>をクロールし、<a hreflang="en" href="https://webpagetest.org/">WebPageTest</a> のプライベートインスタンスを通して実行し、各ページのキー情報を保存しています（これについての詳細は[方法論](./methodology) で学べます）。JavaScriptのコンテキストでは、HTTP Archiveはウェブ全体の言語の使用法に関する広範な情報を提供しています。この章では、これらの傾向の多くを集約して分析します。
 
 ## どのくらいのJavaScriptを使っているのか？
 
-JavaScriptは、私たちがブラウザに送るリソースの中で最もコストのかかるものでダウンロード、解析、コンパイル、そして最終的に実行されなければなりません。ブラウザはスクリプトの解析とコンパイルにかかる時間を大幅に短縮しましたが、WebページでJavaScriptが処理される際には、[ダウンロードと実行が最もコストのかかる段階になっています](https://v8.dev/blog/cost-of-javascript-2019)。
+JavaScriptは、私たちがブラウザに送るリソースの中で最もコストのかかるものでダウンロード、解析、コンパイル、そして最終的に実行されなければなりません。ブラウザはスクリプトの解析とコンパイルにかかる時間を大幅に短縮しましたが、WebページでJavaScriptが処理される際には、<a hreflang="en" href="https://v8.dev/blog/cost-of-javascript-2019">ダウンロードと実行が最もコストのかかる段階になっています</a>。
 
 ブラウザに小さなJavaScriptのバンドルを送ることは、ダウンロード時間を短縮し、ひいてはページパフォーマンスを向上させるための最良の方法です。しかし、実際にどのくらいのJavaScriptを使っているのでしょうか？
 
@@ -76,7 +76,7 @@ V8のメインスレッドの処理時間を異なるパーセンタイルで分
 {{ figure_markup(
   image="js-processing-reddit.png",
   alt="reddit.comのJavaScript処理時間。",
-  caption='reddit.comのJavaScript処理時間。<a href="https://v8.dev/blog/cost-of-javascript-2019">2019年のJavaScriptのコスト</a>より。',
+  caption='reddit.comのJavaScript処理時間。<a hreflang="en" href="https://v8.dev/blog/cost-of-javascript-2019">2019年のJavaScriptのコスト</a>より。',
   description="3つの異なるデバイスを示す棒グラフ: 上部のPixel3は、メインスレッドとワーカースレッドの両方で400ms未満と量が少ないです。Moto G4の場合、メインスレッドで約900ms、ワーカースレッドでさらに300msです。そして最後のバーはAlcatel 1X 5059Dで、メインスレッドで2,000ms以上、ワーカースレッドで500ms以上となっています。",
   width=600,
   height=363
@@ -145,8 +145,8 @@ Webページで使用されているJavaScriptの量を分析しようとする�
 
 テキスト圧縮アルゴリズムは複数ありますが、HTTPネットワークリクエストの圧縮（および解凍）に使われることが多いのはこの2つだけです。
 
-- [Gzip](https://www.gzip.org/) (`gzip`): サーバーとクライアントの相互作用のために最も広く使われている圧縮フォーマット。
-- [Brotli](https://github.com/google/brotli) (`br`): 圧縮率のさらなる向上を目指した新しい圧縮アルゴリズム。[90%のブラウザ](https://caniuse.com/#feat=brotli)がBrotliエンコーディングをサポートしています。
+- <a hreflang="en" href="https://www.gzip.org/">Gzip</a> (`gzip`): サーバーとクライアントの相互作用のために最も広く使われている圧縮フォーマット。
+- <a hreflang="en" href="https://github.com/google/brotli">Brotli</a> (`br`): 圧縮率のさらなる向上を目指した新しい圧縮アルゴリズム。<a hreflang="en" href="https://caniuse.com/#feat=brotli">90%のブラウザ</a>がBrotliエンコーディングをサポートしています。
 
 圧縮されたスクリプトは、一度転送されるとブラウザによって常に解凍される必要があります。これは、コンテンツの内容が変わらないことを意味し、実行時間が最適化されないことを意味します。しかし、リソース圧縮は常にダウンロード時間を改善しますが、これはJavaScriptの処理で最もコストのかかる段階の1つでもあります。JavaScriptファイルが正しく圧縮されていることを確認することは、サイトのパフォーマンスを向上させるための最も重要な要因の1つとなります。
 
@@ -166,7 +166,7 @@ JavaScriptのリソースを圧縮しているサイトはどれくらいある�
 
 ## オープンソースのライブラリとフレームワーク
 
-オープンソースコード、または誰でもアクセス、閲覧、修正が可能な寛容なライセンスを持つコード。小さなライブラリから、[Chromium](https://www.chromium.org/Home)や[Firefox](https://www.openhub.net/p/firefox)のようなブラウザ全体に至るまで、オープンソースコードはウェブ開発の世界で重要な役割を果たしています。JavaScriptの文脈では、開発者はオープンソースのツールに依存して、あらゆるタイプの機能をWebページに組み込んでいます。開発者が小さなユーティリティライブラリを使用するか、アプリケーション全体のアーキテクチャを決定する大規模なフレームワークを使用するかにかかわらずオープンソースのパッケージに依存することで、機能開発をより簡単かつ迅速にできます。では、どのJavaScriptオープンソースライブラリが最もよく使われているのでしょうか？
+オープンソースコード、または誰でもアクセス、閲覧、修正が可能な寛容なライセンスを持つコード。小さなライブラリから、<a hreflang="en" href="https://www.chromium.org/Home">Chromium</a>や<a hreflang="en" href="https://www.openhub.net/p/firefox">Firefox</a>のようなブラウザ全体に至るまで、オープンソースコードはウェブ開発の世界で重要な役割を果たしています。JavaScriptの文脈では、開発者はオープンソースのツールに依存して、あらゆるタイプの機能をWebページに組み込んでいます。開発者が小さなユーティリティライブラリを使用するか、アプリケーション全体のアーキテクチャを決定する大規模なフレームワークを使用するかにかかわらずオープンソースのパッケージに依存することで、機能開発をより簡単かつ迅速にできます。では、どのJavaScriptオープンソースライブラリが最もよく使われているのでしょうか？
 
 <figure>
    <table>
@@ -288,18 +288,18 @@ JavaScriptのリソースを圧縮しているサイトはどれくらいある�
    <figcaption>{{ figure_link(caption="デスクトップとモバイルでのトップ JavaScript ライブラリ") }}</figcaption>
 </figure>
 
-これまでに作成された中で最も人気のあるJavaScriptライブラリである[jQuery](https://jquery.com/)は、デスクトップページの85.03％、モバイルページの83.46％で使用されています。[Fetch](https://developer.mozilla.org/ja/docs/Web/API/Fetch_API)や[querySelector](https://developer.mozilla.org/ja/docs/Web/API/Document/querySelector)など、多くのブラウザAPIやメソッドの出現により、ライブラリが提供する機能の多くがネイティブ形式に標準化されました。jQueryの人気は衰退しているように見えるかもしれませんが、なぜ今でもウェブの大部分で使われているのでしょうか？
+これまでに作成された中で最も人気のあるJavaScriptライブラリである<a hreflang="en" href="https://jquery.com/">jQuery</a>は、デスクトップページの85.03％、モバイルページの83.46％で使用されています。[Fetch](https://developer.mozilla.org/ja/docs/Web/API/Fetch_API)や[querySelector](https://developer.mozilla.org/ja/docs/Web/API/Document/querySelector)など、多くのブラウザAPIやメソッドの出現により、ライブラリが提供する機能の多くがネイティブ形式に標準化されました。jQueryの人気は衰退しているように見えるかもしれませんが、なぜ今でもウェブの大部分で使われているのでしょうか？
 
 理由はいくつか考えられます。
 
-- [WordPress](https://wordpress.org/)は、30％以上のサイトで使用されているため、デフォルトでjQueryが含まれています。
+- <a hreflang="en" href="https://wordpress.org/">WordPress</a>は、30％以上のサイトで使用されているため、デフォルトでjQueryが含まれています。
 - アプリケーションの規模によってはjQueryから新しいクライアントサイドライブラリへの切り替えに時間を要する場合があり、多くのサイトでは新しいクライアントサイドライブラリに加えてjQueryで構成されている場合があります。
 
-他にもjQueryの亜種（jQuery migrate、jQuery UI）、[Modernizr](https://modernizr.com/)、[Moment.js](https://momentjs.com/)、[Underscore.js](https://underscorejs.org/)などがトップで使用されているJavaScriptライブラリです。
+他にもjQueryの亜種（jQuery migrate、jQuery UI）、<a hreflang="en" href="https://modernizr.com/">Modernizr</a>、<a hreflang="en" href="https://momentjs.com/">Moment.js</a>、<a hreflang="en" href="https://underscorejs.org/">Underscore.js</a>などがトップで使用されているJavaScriptライブラリです。
 
 ### フレームワークとUIライブラリ
 
-<p class="note"><a href="./methodology#wappalyzer">方法論</a>で述べたように、HTTP Archive(Wappalyzer)で使用されているサードパーティ製の検出ライブラリには、特定のツールを検出する方法に関して多くの制限があります。<a href="https://github.com/AliasIO/wappalyzer/issues/2450">JavaScriptライブラリやフレームワークの検出を改善するための未解決の問題があります</a>、それがここで紹介した結果に影響を与えています。
+<p class="note"><a href="./methodology#wappalyzer">方法論</a>で述べたように、HTTP Archive(Wappalyzer)で使用されているサードパーティ製の検出ライブラリには、特定のツールを検出する方法に関して多くの制限があります。<a hreflang="en" href="https://github.com/AliasIO/wappalyzer/issues/2450">JavaScriptライブラリやフレームワークの検出を改善するための未解決の問題があります</a>、それがここで紹介した結果に影響を与えています。
 
 過去数年の間に、JavaScriptのエコシステムでは、**シングルページアプリケーション** (SPA) の構築を容易にするオープンソースのライブラリやフレームワークが増えてきました。シングルページアプリケーションとは、単一のHTMLページを読み込み、サーバーから新しいページを取得する代わりにJavaScriptを使用してユーザーの対話に応じてページを修正するWebページのことを指します。これはシングルページアプリケーションの大前提であることに変わりはありませんが、このようなサイトの体験を向上させるために、異なるサーバーレンダリングアプローチを使用できます。これらのタイプのフレームワークを使用しているサイトはどれくらいあるのでしょうか？
 
@@ -314,14 +314,14 @@ JavaScriptのリソースを圧縮しているサイトはどれくらいある�
 
 ここでは人気のあるフレームワークのサブセットのみを分析していますが、これらのフレームワークはすべて、これら2つのアプローチのいずれかに従っていることに注意することが重要です。
 
-- [モデルビューコントローラ](https://developer.chrome.com/apps/app_frameworks)（またはモデルビュービューモデル）アーキテクチャー
+- <a hreflang="en" href="https://developer.chrome.com/apps/app_frameworks">モデルビューコントローラ</a>（またはモデルビュービューモデル）アーキテクチャー
 - コンポーネントベースアーキテクチャ
 
-コンポーネントベースモデルへの移行が進んでいるとはいえ、MVCパラダイムを踏襲した古いフレームワーク（[AngularJS](https://angularjs.org/)、[Backbone.js](https://backbonejs.org/)、[Ember](https://emberjs.com/)）は、いまだに何千ページにもわたって使われています。しかし、[React](https://reactjs.org/)、[Vue](https://vuejs.org/)、[Angular](https://angular.io/)はコンポーネントベースのフレームワークが主流です（[Zone.js](https://github.com/angular/zone.js)は現在Angular coreの一部となっているパッケージです）。
+コンポーネントベースモデルへの移行が進んでいるとはいえ、MVCパラダイムを踏襲した古いフレームワーク（<a hreflang="en" href="https://angularjs.org/">AngularJS</a>、<a hreflang="en" href="https://backbonejs.org/">Backbone.js</a>、<a hreflang="en" href="https://emberjs.com/">Ember</a>）は、いまだに何千ページにもわたって使われています。しかし、<a hreflang="en" href="https://reactjs.org/">React</a>、<a hreflang="en" href="https://vuejs.org/">Vue</a>、<a hreflang="en" href="https://angular.io/">Angular</a>はコンポーネントベースのフレームワークが主流です（<a hreflang="en" href="https://github.com/angular/zone.js">Zone.js</a>は現在Angular coreの一部となっているパッケージです）。
 
 ## 差分ロード
 
-[JavaScriptモジュール](https://v8.dev/features/modules)、またはESモジュールは、[すべての主要ブラウザ](https://caniuse.com/#feat=es6-module)でサポートされています。モジュールは、他のモジュールからインポートおよびエクスポートできるスクリプトを作成する機能を提供します。これにより、サードパーティのモジュールローダーに頼ることなく、必要に応じてインポートとエクスポートを行い、モジュールパターンで構築されたアプリケーションを誰でも構築できます。
+<a hreflang="en" href="https://v8.dev/features/modules">JavaScriptモジュール</a>、またはESモジュールは、<a hreflang="en" href="https://caniuse.com/#feat=es6-module">すべての主要ブラウザ</a>でサポートされています。モジュールは、他のモジュールからインポートおよびエクスポートできるスクリプトを作成する機能を提供します。これにより、サードパーティのモジュールローダーに頼ることなく、必要に応じてインポートとエクスポートを行い、モジュールパターンで構築されたアプリケーションを誰でも構築できます。
 
 スクリプトをモジュールとして宣言するには、スクリプトタグが`type="module"`属性を取得しなければなりません。
 
@@ -339,7 +339,7 @@ JavaScriptのリソースを圧縮しているサイトはどれくらいある�
   )
 }}
 
-ブラウザレベルでのモジュールのサポートはまだ比較的新しく、ここでの数字は、現在スクリプトに`type="module"`を使用しているサイトが非常に少ないことを示しています。多くのサイトでは、コードベース内でモジュールを定義するためにモジュールローダー（全デスクトップサイトの2.37％が[RequireJS](https://github.com/requirejs/requirejs)を使用しています）やバンドラー（[webpack](https://webpack.js.org/)を使用しています）にまだ依存しています。
+ブラウザレベルでのモジュールのサポートはまだ比較的新しく、ここでの数字は、現在スクリプトに`type="module"`を使用しているサイトが非常に少ないことを示しています。多くのサイトでは、コードベース内でモジュールを定義するためにモジュールローダー（全デスクトップサイトの2.37％が<a hreflang="en" href="https://github.com/requirejs/requirejs">RequireJS</a>を使用しています）やバンドラー（<a hreflang="en" href="https://webpack.js.org/">webpack</a>を使用しています）にまだ依存しています。
 
 ネイティブモジュールを使用する場合は、モジュールをサポートしていないブラウザに対して適切なフォールバックスクリプトを使用することが重要です。これは、`nomodule`属性を持つ追加スクリプトを含めることで実現できます。
 
@@ -347,7 +347,7 @@ JavaScriptのリソースを圧縮しているサイトはどれくらいある�
 <script nomodule src="fallback.js"></script>
 ```
 
-併用すると、モジュールをサポートしているブラウザは`nomodule`属性を含むスクリプトを完全に無視します。一方、モジュールをサポートしていないブラウザは ¥`type="module"`属性を持つスクリプトをダウンロードしません。ブラウザは`nomodule`も認識しないので、`type="module"`属性を持つスクリプトを普通にダウンロードします。このアプローチを使うことで、開発者は[最新のコードを最新のブラウザに送信してページ読み込みを高速化する](https://web.dev/serve-modern-code-to-modern-browsers/)できます。では、ページ上のスクリプトに`nomodule`を使っているサイトはどれくらいあるのだろうか。
+併用すると、モジュールをサポートしているブラウザは`nomodule`属性を含むスクリプトを完全に無視します。一方、モジュールをサポートしていないブラウザは ¥`type="module"`属性を持つスクリプトをダウンロードしません。ブラウザは`nomodule`も認識しないので、`type="module"`属性を持つスクリプトを普通にダウンロードします。このアプローチを使うことで、開発者は<a hreflang="en" href="https://web.dev/serve-modern-code-to-modern-browsers/">最新のコードを最新のブラウザに送信してページ読み込みを高速化する</a>できます。では、ページ上のスクリプトに`nomodule`を使っているサイトはどれくらいあるのだろうか。
 
 {{ figure_markup(
   image="fig14.png",
@@ -415,11 +415,11 @@ HTTP Archiveを使用すると、サポートされている（あるいはこ�
 
 Atomics(0.38％)とSharedArrayBuffer(0.20％)は、使用されているページが少ないので、このチャートではほとんど見えません。
 
-ここでの数値は概算であり、機能の使用状況を測定するための[UseCounter](https://chromium.googlesource.com/chromium/src.git/+/master/docs/use_counter_wiki.md) を活用していないことに注意してください。
+ここでの数値は概算であり、機能の使用状況を測定するための<a hreflang="en" href="https://chromium.googlesource.com/chromium/src.git/+/master/docs/use_counter_wiki.md">UseCounter</a> を活用していないことに注意してください。
 
 ## ソースマップ
 
-多くのビルドシステムでは、JavaScriptファイルはサイズを最小化し、多くのブラウザではまだサポートされていない新しい言語機能のためにトランスパイルされるようにミニ化されています。さらに、[TypeScript](https://www.typescriptlang.org/)のような言語スーパーセットは、元のソースコードとは明らかに異なる出力へコンパイルされます。これらの理由から、ブラウザに提供される最終的なコードは読めず、解読が困難なものになることがあります。
+多くのビルドシステムでは、JavaScriptファイルはサイズを最小化し、多くのブラウザではまだサポートされていない新しい言語機能のためにトランスパイルされるようにミニ化されています。さらに、<a hreflang="en" href="https://www.typescriptlang.org/">TypeScript</a>のような言語スーパーセットは、元のソースコードとは明らかに異なる出力へコンパイルされます。これらの理由から、ブラウザに提供される最終的なコードは読めず、解読が困難なものになることがあります。
 
 **ソースマップ**とは、JavaScriptファイルに付随する追加ファイルで、ブラウザが最終的な出力を元のソースにマップできます。これにより、プロダクションバンドルのデバッグや分析をより簡単にできます。
 

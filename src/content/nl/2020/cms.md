@@ -299,7 +299,7 @@ Als we kijken naar het aandeel van CMS-adoptie ten opzichte van andere CMS'en (d
 
 WordPress domineert deze ruimte en verdient daarom verdere discussie.
 
-[WordPress is een open source project](https://nl.wordpress.org/about/) met als missie "publiceren democratiseren". Het CMS is gratis. Hoewel dit waarschijnlijk een belangrijke factor is in het adoptiegedeelte, zijn de twee op één na populairste CMS'en - Joomla en Drupal - ook gratis. De WordPress-gemeenschap, bijdragers en het zakelijke ecosysteem zijn waarschijnlijk de belangrijkste onderscheidende factoren.
+<a href="https://nl.wordpress.org/about/">WordPress is een open source project</a> met als missie "publiceren democratiseren". Het CMS is gratis. Hoewel dit waarschijnlijk een belangrijke factor is in het adoptiegedeelte, zijn de twee op één na populairste CMS'en - Joomla en Drupal - ook gratis. De WordPress-gemeenschap, bijdragers en het zakelijke ecosysteem zijn waarschijnlijk de belangrijkste onderscheidende factoren.
 
 Een "kern" WordPress-gemeenschap handhaaft de CMS- en servicevereisten voor aanvullende functionaliteit door middel van aangepaste services en producten (thema's en plug-ins). Deze gemeenschap heeft een grote impact, met een relatief klein aantal mensen die zowel het CMS zelf onderhouden als de extra functionaliteit bieden die WordPress krachtig en flexibel genoeg maakt om de meeste soorten websites te kunnen bedienen. Deze flexibiliteit is belangrijk bij het uitleggen van het marktaandeel.
 

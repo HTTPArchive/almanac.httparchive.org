@@ -9,8 +9,8 @@ editors: [rachellcostello]
 translators: [nico3333fr]
 discuss: 1757
 results: https://docs.google.com/spreadsheets/d/1uFlkuSRetjBNEhGKWpkrXo4eEIsgYelxY-qR9Pd7QpM/
-una_bio: Una Kravets est une conférencière internationale basée à Brooklyn, rédactrice technique et <i lang="en">Developer Advocate</i> pour <i lang="en">Material Design</i> chez Google. Una anime la série web <a href="https://www.youtube.com/watch?v=YK8GZBx3hpg" lang="en">Designing the Browser</a> et le podcast développeur <a href="https://spec.fm/podcasts/toolsday" lang="en">Toolsday</a>. Suivez-la sur <a href="https://twitter.com/una">Twitter</a> pour découvrir ses réflexions sur les CSS créatifs, les expériences utilisateurs et les meilleures pratiques de développement web.
-argyleink_bio: Adam Argyle est un membre de l’équipe <i lang="en">Google Chrome Developer Relations</i>, spécialisé dans le CSS. C’est un accro du web avec une soif insatiable de super UX & UI. Retrouvez-le sur le web <a href="https://twitter.com/argyleink">@argyleink</a> ou consultez son site <a href="https://nerdy.dev">https://nerdy.dev</a>.
+una_bio: Una Kravets est une conférencière internationale basée à Brooklyn, rédactrice technique et <i lang="en">Developer Advocate</i> pour <i lang="en">Material Design</i> chez Google. Una anime la série web <a hreflang="en" href="https://www.youtube.com/watch?v=YK8GZBx3hpg" lang="en">Designing the Browser</a> et le podcast développeur <a hreflang="en" href="https://spec.fm/podcasts/toolsday" lang="en">Toolsday</a>. Suivez-la sur <a href="https://twitter.com/una">Twitter</a> pour découvrir ses réflexions sur les CSS créatifs, les expériences utilisateurs et les meilleures pratiques de développement web.
+argyleink_bio: Adam Argyle est un membre de l’équipe <i lang="en">Google Chrome Developer Relations</i>, spécialisé dans le CSS. C’est un accro du web avec une soif insatiable de super UX & UI. Retrouvez-le sur le web <a href="https://twitter.com/argyleink">@argyleink</a> ou consultez son site <a hreflang="en" href="https://nerdy.dev">https://nerdy.dev</a>.
 featured_quote: Les feuilles de style en cascade (CSS) sont utilisées pour peindre, mettre en forme et organiser visuellement le contenu des pages Web. Leurs capacités couvrent des concepts aussi simples que la couleur du texte ou la perspective 3D. Elles disposent également de possibilités pour permettre aux développeurs de gérer différentes tailles d’écran, différents contextes de visualisation, ainsi que l’impression. CSS aide les développeurs et développeuses à gérer le contenu et à s’assurer qu’il s’adapte correctement aux personnes.
 featured_stat_1: 5%
 featured_stat_label_1: Pages utilisant les propriétés personnalisées
@@ -36,7 +36,7 @@ La couleur fait partie intégrante du thème et du style sur le Web. Voyons comm
 
 ### Types de couleurs
 
-L’hexadécimal est de loin le moyen le plus populaire de décrire la couleur, avec 93&nbsp;% d’utilisation, suivi par RVB, et enfin HSL. Fait intéressant, les développeurs tirent pleinement parti de la transparence alpha en ce qui concerne ces types de couleurs&nbsp;: HSLA et RGBA sont beaucoup plus populaires que HSL et RGB, avec presque le double d’utilisation&nbsp;! Même si la transparence alpha a été ajoutée plus tard à la spécification Web, HSLA et RGBA sont pris en charge [depuis IE9](https://caniuse.com/#feat=css3-colors), vous pouvez donc continuer et les utiliser également&nbsp;!
+L’hexadécimal est de loin le moyen le plus populaire de décrire la couleur, avec 93&nbsp;% d’utilisation, suivi par RVB, et enfin HSL. Fait intéressant, les développeurs tirent pleinement parti de la transparence alpha en ce qui concerne ces types de couleurs&nbsp;: HSLA et RGBA sont beaucoup plus populaires que HSL et RGB, avec presque le double d’utilisation&nbsp;! Même si la transparence alpha a été ajoutée plus tard à la spécification Web, HSLA et RGBA sont pris en charge <a hreflang="en" href="https://caniuse.com/#feat=css3-colors">depuis IE9</a>, vous pouvez donc continuer et les utiliser également&nbsp;!
 
 {{ figure_markup(
   image="fig1.png",
@@ -48,7 +48,7 @@ L’hexadécimal est de loin le moyen le plus populaire de décrire la couleur, 
 
 ### Sélection de couleurs
 
-Il existe [148 couleurs CSS nommées](https://www.w3.org/TR/css-color-4/#named-colors), sans compter les valeurs spéciales «`transparent`» et «`currentcolor`». Vous pouvez les utiliser par leur nom de chaîne pour un style plus lisible. Les couleurs nommées les plus populaires sont sans surprise «`black`» et «`white`», suivis de «`red`» et «`blue`».
+Il existe <a hreflang="en" href="https://www.w3.org/TR/css-color-4/#named-colors">148 couleurs CSS nommées</a>, sans compter les valeurs spéciales «`transparent`» et «`currentcolor`». Vous pouvez les utiliser par leur nom de chaîne pour un style plus lisible. Les couleurs nommées les plus populaires sont sans surprise «`black`» et «`white`», suivis de «`red`» et «`blue`».
 
 {{ figure_markup(
   image="fig2.png",
@@ -62,7 +62,7 @@ Il existe [148 couleurs CSS nommées](https://www.w3.org/TR/css-color-4/#named-c
   )
 }}
 
-La langue impacte également la couleur. Il y a plus d’exemples du «`gray`» américain que du «`grey`» britannique. Presque toutes les instances de [couleurs grises](https://www.rapidtables.com/web/color/gray-color.html) («`gray`», «`lightgray`», «`darkgray`», «`slategray`», etc.) avaient presque le double de l’utilisation en étant orthographiées avec un «a» au lieu d’un «e». Si les «`gray`»/«`grey`» étaient combinés, ils se classeraient plus haut que le bleu, en quatrième place. Cela pourrait expliquer pourquoi «`silver`» est mieux classé que «`grey`» avec un «e» dans les graphiques&nbsp;!
+La langue impacte également la couleur. Il y a plus d’exemples du «`gray`» américain que du «`grey`» britannique. Presque toutes les instances de <a hreflang="en" href="https://www.rapidtables.com/web/color/gray-color.html">couleurs grises</a> («`gray`», «`lightgray`», «`darkgray`», «`slategray`», etc.) avaient presque le double de l’utilisation en étant orthographiées avec un «a» au lieu d’un «e». Si les «`gray`»/«`grey`» étaient combinés, ils se classeraient plus haut que le bleu, en quatrième place. Cela pourrait expliquer pourquoi «`silver`» est mieux classé que «`grey`» avec un «e» dans les graphiques&nbsp;!
 ### Nombre de couleurs
 
 Combien de différentes couleurs de polices sont utilisées sur le Web&nbsp;? Ce n’est donc pas le nombre total de couleurs uniques&nbsp;; c’est plutôt le nombre de couleurs différentes utilisées uniquement pour le texte. Les chiffres de ce graphique sont assez élevés et, par expérience, nous savons que sans les variables CSS, l’espacement, les tailles et les couleurs peuvent rapidement vous échapper et se fragmenter en de nombreuses valeurs minuscules dans vos styles. Ces chiffres reflètent une difficulté de gestion du style, et nous espérons que cela vous aidera à créer une perspective à rapporter à vos équipes ou projets. Comment pouvez-vous réduire ce nombre à un montant gérable et raisonnable&nbsp;?
@@ -105,7 +105,7 @@ Sans surprise, dans la figure 2.5 ci-dessus, `px` est le type d’unité le plus
 
 En ce qui concerne les unités basées sur l’espace physique, l’unité `cm` (centimètre) est de loin la plus populaire, suivie de `in` (pouces), puis de `Q`. Nous savons que ces types d’unités sont particulièrement utiles pour les feuilles de style d’impression, mais nous ne savions même pas que l’unité `Q` existait avant cette enquête&nbsp;! Et vous&nbsp;?
 
-<p class="note">Une version antérieure de ce chapitre parlait de la popularité inattendue de l’unité <code>Q</code>. Grâce à la <a href="https://discuss.httparchive.org/t/chapter-2-css/1757/6">discussion de la communauté</a> concernant ce chapitre, nous avons identifié qu’il s’agissait d’un bogue dans notre analyse et avons mis à jour la figure 2.5 en conséquence.</p>
+<p class="note">Une version antérieure de ce chapitre parlait de la popularité inattendue de l’unité <code>Q</code>. Grâce à la <a hreflang="en" href="https://discuss.httparchive.org/t/chapter-2-css/1757/6">discussion de la communauté</a> concernant ce chapitre, nous avons identifié qu’il s’agissait d’un bogue dans notre analyse et avons mis à jour la figure 2.5 en conséquence.</p>
 
 ### Unités basées sur la taille de fenêtre (<i lang="en">viewport</i> {unites-basees-sur-la-taille-de-fenetre-viewport}
 
@@ -341,7 +341,7 @@ Les filtres sont un moyen amusant et efficace de modifier les pixels que le navi
 
 Nous avons été ravis de voir que 78&nbsp;% des feuilles de style contiennent la propriété `filter`&nbsp;! Ce nombre était également si élevé qu’il semblait un peu louche, alors nous avons creusé et avons cherché à expliquer le nombre élevé. Parce que, soyons honnêtes, les filtres sont biens, mais ils ne font pas partie de toutes nos applications et projets. Sauf que&nbsp;!
 
-Après une enquête plus approfondie, nous avons découvert que la feuille de style de [FontAwesome](https://fontawesome.com) est livrée avec une utilisation de `filter`, ainsi qu’une intégration [YouTube](https://youtube.com). Par conséquent, nous pensons que `filter` s’est faufilé par la porte arrière en se mêlant à quelques feuilles de style très populaires. Nous pensons également que la présence de `-ms-filter` aurait également pu être incluse, contribuant au pourcentage d’utilisation élevé.
+Après une enquête plus approfondie, nous avons découvert que la feuille de style de <a hreflang="en" href="https://fontawesome.com">FontAwesome</a> est livrée avec une utilisation de `filter`, ainsi qu’une intégration <a hreflang="en" href="https://youtube.com">YouTube</a>. Par conséquent, nous pensons que `filter` s’est faufilé par la porte arrière en se mêlant à quelques feuilles de style très populaires. Nous pensons également que la présence de `-ms-filter` aurait également pu être incluse, contribuant au pourcentage d’utilisation élevé.
 
 ### Modes de fusion
 
@@ -694,7 +694,7 @@ Il est commun, populaire, pratique et puissant d’utiliser une bibliothèque CS
   <figcaption>{{ figure_link(caption="Pourcentage de pages qui incluent une bibliothèque CSS donnée.") }}</figcaption>
 </figure>
 
-Ce graphique suggère que [<span lang="en">Bootstrap</span>](https://getbootstrap.com/) est une bibliothèque précieuse à connaître pour vous aider à trouver un emploi. Regardez toutes les opportunités qui vous sont offertes&nbsp;! Il convient également de noter qu’il ne s’agit que d’un signal positif&nbsp;: les calculs ne totalisent pas 100&nbsp;% car tous les sites n’utilisent pas de bibliothèque CSS. Un peu plus de la moitié de tous les sites _n’utilisent pas_ de bibliothèque CSS connue. Très intéressant, non&nbsp;?!
+Ce graphique suggère que <a hreflang="en" href="https://getbootstrap.com/"><span lang="en">Bootstrap</span></a> est une bibliothèque précieuse à connaître pour vous aider à trouver un emploi. Regardez toutes les opportunités qui vous sont offertes&nbsp;! Il convient également de noter qu’il ne s’agit que d’un signal positif&nbsp;: les calculs ne totalisent pas 100&nbsp;% car tous les sites n’utilisent pas de bibliothèque CSS. Un peu plus de la moitié de tous les sites _n’utilisent pas_ de bibliothèque CSS connue. Très intéressant, non&nbsp;?!
 
 ### Resets CSS
 
@@ -710,7 +710,7 @@ Voyons donc combien de sites en utilisent un&nbsp;! Leur existence semble tout �
   )
 }}
 
-Il s’avère qu’environ un tiers du Web utilise [`normalize.css`](https://necolas.github.io/normalize.css), ce qui pourrait être considéré comme une approche douce, en tout cas plus que celle d’un pur <i lang="en">reset</i> CSS. Nous avons regardé un peu plus en profondeur, et il s’avère que <span lang="en">Bootstrap</span> inclut `normalize.css`, ce qui représente probablement une grande partie de son utilisation. Il convient également de noter que `normalize.css` a plus d’adoption que <span lang="en">Bootstrap</span>, donc il y a beaucoup de gens qui l’utilisent seul.
+Il s’avère qu’environ un tiers du Web utilise <a hreflang="en" href="https://necolas.github.io/normalize.css">`normalize.css`</a>, ce qui pourrait être considéré comme une approche douce, en tout cas plus que celle d’un pur <i lang="en">reset</i> CSS. Nous avons regardé un peu plus en profondeur, et il s’avère que <span lang="en">Bootstrap</span> inclut `normalize.css`, ce qui représente probablement une grande partie de son utilisation. Il convient également de noter que `normalize.css` a plus d’adoption que <span lang="en">Bootstrap</span>, donc il y a beaucoup de gens qui l’utilisent seul.
 
 ### `@supports` et `@import`
 

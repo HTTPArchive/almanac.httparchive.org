@@ -7,8 +7,8 @@ reviewers: [jzyang]
 analysts: [raghuramakrishnan71]
 editors: [bazzadp]
 translators: []
-roryhewitt_bio: Enterprise Architect at <a href="https://www.akamai.com/">Akamai</a>, who is passionate about performance. A British ex-patriate, he has lived in San Francisco for more than twenty years. In his spare time, he's a long-distance adventure motorcyclist, snowboarder and boxer/karateka. He likes being known as a troublemaker. Most importantly, he's a father and husband and the owner of Luna the cat.
-raghuramakrishnan71_bio: Enterprise architect at <a href="https://www.tcs.com/">Tata Consultancy Services</a>, working on large digital transformation programs in the public sector. A technology enthusiast with a special interest in performance engineering. An avid traveler, intrigued by astronomy, history, biology, and advancements in medicine. A strong follower of the 47th verse, Chapter 2 of Bhagavad Gita "karmaṇy-evādhikāras te mā phaleṣhu kadāchana" meaning "You have a right to perform your prescribed duty, but you are not entitled to the fruits of action."
+roryhewitt_bio: Enterprise Architect at <a hreflang="en" href="https://www.akamai.com/">Akamai</a>, who is passionate about performance. A British ex-patriate, he has lived in San Francisco for more than twenty years. In his spare time, he's a long-distance adventure motorcyclist, snowboarder and boxer/karateka. He likes being known as a troublemaker. Most importantly, he's a father and husband and the owner of Luna the cat.
+raghuramakrishnan71_bio: Enterprise architect at <a hreflang="en" href="https://www.tcs.com/">Tata Consultancy Services</a>, working on large digital transformation programs in the public sector. A technology enthusiast with a special interest in performance engineering. An avid traveler, intrigued by astronomy, history, biology, and advancements in medicine. A strong follower of the 47th verse, Chapter 2 of Bhagavad Gita "karmaṇy-evādhikāras te mā phaleṣhu kadāchana" meaning "You have a right to perform your prescribed duty, but you are not entitled to the fruits of action."
 discuss: 2056
 results: https://docs.google.com/spreadsheets/d/1fYmpSN3diOiFrscS75NsjfsrKXzxxhUMNcYSqXnQJQU/
 featured_quote: Caching provides a significant performance benefit by avoiding costly network requests. It helps both end users (they get their web pages quickly) and the companies serving web pages (reducing the load on their servers). Caching really is a win-win!
@@ -42,7 +42,7 @@ Here's a very high-level example:
 
   *Jane is happy. Carlos is happy. The example.com folks are happy. Everyone is happy.*
 
-It should be clear then, that browser caching provides a significant performance benefit by avoiding costly network requests (though [there are always edge cases](https://simonhearne.com/2020/network-faster-than-cache/)). It also helps an application scale by reducing the traffic to a website's origin infrastructure. Server caching also significantly reduces the load on the underlying application.
+It should be clear then, that browser caching provides a significant performance benefit by avoiding costly network requests (though <a hreflang="en" href="https://simonhearne.com/2020/network-faster-than-cache/">there are always edge cases</a>). It also helps an application scale by reducing the traffic to a website's origin infrastructure. Server caching also significantly reduces the load on the underlying application.
 
 Caching benefits both the end users (they get their web pages quickly) and the companies serving the web pages (reducing the load on their servers). Caching really is a win-win!
 
@@ -143,7 +143,7 @@ The two HTTP response headers typically used for specifying freshness are `Cache
 
 Often, both these headers are specified; in that case `Cache-Control` takes precedence.
 
-The full specifications for these caching headers are in [RFC 7234](https://tools.ietf.org/html/rfc7234#section-8), and discussed in sections [4.2 (Freshness)](https://tools.ietf.org/html/rfc7234#section-4.2) and [4.3 (Validation)](https://tools.ietf.org/html/rfc7234#section-4.3), but we will discuss them in more detail below.
+The full specifications for these caching headers are in <a hreflang="en" href="https://tools.ietf.org/html/rfc7234#section-8">RFC 7234</a>, and discussed in sections <a hreflang="en" href="https://tools.ietf.org/html/rfc7234#section-4.2">4.2 (Freshness)</a> and <a hreflang="en" href="https://tools.ietf.org/html/rfc7234#section-4.3">4.3 (Validation)</a>, but we will discuss them in more detail below.
 
 ## `Cache-Control` vs `Expires`
 
@@ -436,9 +436,9 @@ In the same way that the `Cache-Control` header has more power and flexibility t
 
 1. The server can define its own format for the `ETag` header. The example above shows a version string, but it could be a hash, or a random string. By allowing this, versions of an object are not explicitly linked to dates, and this allows a server to create a new version of a file and yet give it the same ETag as the prior version—perhaps if the file change is unimportant.
 
-2. `ETag`'s can be defined as either 'strong' or 'weak', which allows browsers to validate them differently. A full understanding and discussion of this functionality is beyond the scope of this chapter but can be found in [RFC 7232](https://tools.ietf.org/html/rfc7232).
+2. `ETag`'s can be defined as either 'strong' or 'weak', which allows browsers to validate them differently. A full understanding and discussion of this functionality is beyond the scope of this chapter but can be found in <a hreflang="en" href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>.
 
-However, since the `ETag` is often based on last modified time of the server, it may effectively be the same in a lot of implementations, and worse than that various bugs in server implementations (Apache in particular), [can mean it is less effective to use `ETag`'s](https://www.tunetheweb.com/performance/http-performance-headers/etag/#downsides).
+However, since the `ETag` is often based on last modified time of the server, it may effectively be the same in a lot of implementations, and worse than that various bugs in server implementations (Apache in particular), <a hreflang="en" href="https://www.tunetheweb.com/performance/http-performance-headers/etag/#downsides">can mean it is less effective to use `ETag`'s</a>.
 
 {{ figure_markup(
   image="last-modified-and-etag.png",
@@ -492,7 +492,7 @@ Throughout this document, we have discussed several caching-related HTTP headers
 * The `Last-Modified` response header indicates when a resource was last changed on the server.
 * The `Expires` header is used to indicate for how long a resource is cacheable.
 
-All three of these HTTP headers use a date formatted string to represent timestamps. The date-formatted string is defined in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-3.3.1), and must specify a GMT timestamp string.
+All three of these HTTP headers use a date formatted string to represent timestamps. The date-formatted string is defined in <a hreflang="en" href="https://tools.ietf.org/html/rfc2616#section-3.3.1">RFC 2616</a>, and must specify a GMT timestamp string.
 For example:
 
 ```
@@ -583,7 +583,7 @@ When a response is cached, its entire set of response headers are included with 
   )
 }}
 
-But what happens if you have a `Set-Cookie` on a response? According to [RFC 7234 Section 8](https://tools.ietf.org/html/rfc7234#section-8), the presence of a `Set-Cookie` response header does not inhibit caching. This means that a cached entry might contain a `Set-Cookie` response header. The RFC goes on to recommend that you should configure appropriate `Cache-Control` headers to control how responses are cached.
+But what happens if you have a `Set-Cookie` on a response? According to <a hreflang="en" href="https://tools.ietf.org/html/rfc7234#section-8">RFC 7234 Section 8</a>, the presence of a `Set-Cookie` response header does not inhibit caching. This means that a cached entry might contain a `Set-Cookie` response header. The RFC goes on to recommend that you should configure appropriate `Cache-Control` headers to control how responses are cached.
 
 Since we have primarily been talking about browser caching, you may think this isn't a big issue—the `Set-Cookie` response headers that were sent by the server to me in responses to my requests clearly contain my cookies, so there's no problem if my browser caches them. However, if there is a CDN between myself and the server, the server must indicate to the CDN that the response should not be cached in the CDN itself, so that the response meant for me is not cached and then served (including my `Set-Cookie` headers!) to other users.
 
@@ -888,7 +888,7 @@ When we break this out by first-party vs third-party in the above table, we can 
 
 ## Identifying caching opportunities
 
-Google's [Lighthouse](https://developers.google.com/web/tools/lighthouse) tool enables users to run a series of audits against web pages, and the [cache policy audit](https://developers.google.com/web/tools/lighthouse/audits/cache-policy) evaluates whether a site can benefit from additional caching. It does this by comparing the content age (via the `Last-Modified` header) to the cache TTL and estimating the probability that the resource would be served from cache. Depending on the score, you may see a caching recommendation in the results, with a list of specific resources that could be cached.
+Google's <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a> tool enables users to run a series of audits against web pages, and the <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/audits/cache-policy">cache policy audit</a> evaluates whether a site can benefit from additional caching. It does this by comparing the content age (via the `Last-Modified` header) to the cache TTL and estimating the probability that the resource would be served from cache. Depending on the score, you may see a caching recommendation in the results, with a list of specific resources that could be cached.
 
 {{ figure_markup(
   image="lighthouse-caching-audit.png",

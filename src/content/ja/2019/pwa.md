@@ -9,8 +9,8 @@ editors: [bazzadp]
 translators: [ksakae]
 discuss: 1766
 results: https://docs.google.com/spreadsheets/d/19BI3RQc_vR9bUPPZfVsF_4gpFWLNT6P0pLcAdL-A56c/
-tomayac_bio: Thomas SteinerはGoogle HamburgのWeb Developer Advocateで、標準化、ベストプラクティスの作成と共有、研究を通じた Web のより良い場所づくりに焦点を当てています。彼は <a href="https://blog.tomayac.com/">blog.tomayac.com</a> でブログを書いており、<a href="https://twitter.com/tomayac">@tomayac</a> としてツイートしています。
-jeffposnick_bio: Jeff PosnickはGoogleのWeb Developer Relationsチームのメンバーで、ニューヨークに拠点を置いています。彼の関心事は、<a href="https://developers.google.com/web/tools/workbox/">Workbox</a>、プログレッシブウェブアプリのためのサービスワーカーライブラリのセットです。<a href="https://jeffy.info">https://jeffy.info</a> でブログを書いており、<a href="https://twitter.com/jeffposnick">@jeffposnick</a> としてツイートしています。
+tomayac_bio: Thomas SteinerはGoogle HamburgのWeb Developer Advocateで、標準化、ベストプラクティスの作成と共有、研究を通じた Web のより良い場所づくりに焦点を当てています。彼は <a hreflang="en" href="https://blog.tomayac.com/">blog.tomayac.com</a> でブログを書いており、<a href="https://twitter.com/tomayac">@tomayac</a> としてツイートしています。
+jeffposnick_bio: Jeff PosnickはGoogleのWeb Developer Relationsチームのメンバーで、ニューヨークに拠点を置いています。彼の関心事は、<a hreflang="en" href="https://developers.google.com/web/tools/workbox/">Workbox</a>、プログレッシブウェブアプリのためのサービスワーカーライブラリのセットです。<a hreflang="en" href="https://jeffy.info">https://jeffy.info</a> でブログを書いており、<a href="https://twitter.com/jeffposnick">@jeffposnick</a> としてツイートしています。
 featured_quote: プログレッシブウェブアプリ（PWA）は、サービスワーカーAPIのようなプラットフォームプリミティブの上に構築された新しいクラスのウェブアプリケーションです。サービスワーカーは、アプリケーションがネットワークプロキシとして動作し、ウェブアプリの送信要求を傍受し、プログラム的な応答またはキャッシュされた応答で応答することで、ネットワークに依存しないロードをサポートすることを可能にします。
 featured_stat_1: 0.44%
 featured_stat_label_1: サービスワーカーを登録しているサイト
@@ -24,7 +24,7 @@ featured_stat_label_3: <code>standalone</code> <code>display</code>プロパテ�
 
 プログレッシブWebアプリ（PWA）は、[Service Worker API](https://developer.mozilla.org/en/docs/Web/API/Service_Worker_API)などのプラットフォームプリミティブ上に構築される新しいクラスのWebアプリケーションです。Service Workerは、ネットワークプロキシとして機能し、Webアプリの発信要求をインターセプトしプログラムまたはキャッシュされた内容で応答することによりアプリがネットワークに依存しない読み込みをサポートできるようにします。Service Workerは、プッシュ通知を受信し、対応するアプリが実行されていなくてもバックグラウンドでデータを同期できます。さらに、Service Workerは、[Webアプリマニフェスト](https://developer.mozilla.org/en-US/docs/Web/Manifest)と共にユーザーがデバイスのホーム画面にPWAをインストールできるようにします。
 
-Service Workerは2014年12月に[Chrome 40で初めて実装](https://blog.chromium.org/2014/12/chrome-40-beta-powerful-offline-and.html)され、プログレッシブWebアプリという用語は2015年に[Frances BerrimanとAlex Russellによって作られました](https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/)。Service Workerはすべての主要なブラウザでようやく実装されたため、この章の目標は実際に存在するPWAの数と、これらの新しいテクノロジーをどのように利用するかを決定します。[バックグラウンド同期](https://caniuse.com/#feat=background-sync)のような特定の高度なAPIは、現在もChromiumベースのブラウザでのみ利用できるため、追加の質問として、これらのPWAが実際に使用する機能を調べました。
+Service Workerは2014年12月に<a hreflang="en" href="https://blog.chromium.org/2014/12/chrome-40-beta-powerful-offline-and.html">Chrome 40で初めて実装</a>され、プログレッシブWebアプリという用語は2015年に<a hreflang="en" href="https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/">Frances BerrimanとAlex Russellによって作られました</a>。Service Workerはすべての主要なブラウザでようやく実装されたため、この章の目標は実際に存在するPWAの数と、これらの新しいテクノロジーをどのように利用するかを決定します。<a hreflang="en" href="https://caniuse.com/#feat=background-sync">バックグラウンド同期</a>のような特定の高度なAPIは、現在もChromiumベースのブラウザでのみ利用できるため、追加の質問として、これらのPWAが実際に使用する機能を調べました。
 
 ## Service Worker
 
@@ -47,22 +47,22 @@ Service Workerは2014年12月に[Chrome 40で初めて実装](https://blog.chrom
   )
 }}
 
-これはあまり印象的でないかもしれませんが、Chromeプラットフォームステータスからのトラフィックデータを考慮すると、Service Workerが[すべてのページロードの約15％](https://www.chromestatus.com/metrics/feature/timeline/popularity/990)を制御していることがわかります。トラフィックの多いサイトがますますService Workerを受け入れ始めています。
+これはあまり印象的でないかもしれませんが、Chromeプラットフォームステータスからのトラフィックデータを考慮すると、Service Workerが<a hreflang="en" href="https://www.chromestatus.com/metrics/feature/timeline/popularity/990">すべてのページロードの約15％</a>を制御していることがわかります。トラフィックの多いサイトがますますService Workerを受け入れ始めています。
 
 {{ figure_markup(
-  caption='Service Workerを登録するページのページビューの割合。 （出典：Chromeプラットフォームステータス） (出典: <a href="https://www.chromestatus.com/metrics/feature/timeline/popularity/990">Chromeプラットフォームステータス</a>)',
+  caption='Service Workerを登録するページのページビューの割合。 （出典：Chromeプラットフォームステータス） (出典: <a hreflang="en" href="https://www.chromestatus.com/metrics/feature/timeline/popularity/990">Chromeプラットフォームステータス</a>)',
   content="15%",
   classes="big-number"
 )
 }}
 
-[Lighthouse](./methodology#lighthouse)は、ページが[インストールプロンプト](https://developers.google.com/web/tools/lighthouse/audits/install-prompt)の対象かどうかを確認します。モバイルページの1.56％に[インストール可能なマニフェスト](https://web.dev/installable-manifest/)があります。
+[Lighthouse](./methodology#lighthouse)は、ページが<a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/audits/install-prompt">インストールプロンプト</a>の対象かどうかを確認します。モバイルページの1.56％に<a hreflang="en" href="https://web.dev/installable-manifest/">インストール可能なマニフェスト</a>があります。
 
-インストール体験をコントロールするために、全デスクトップの0.82％と全モバイルページの0.94％が[`OnBeforeInstallPrompt`インターフェイス](https://w3c.github.io/manifest/#beforeinstallpromptevent-interface)を使用します。現在、[サポートはChromiumベースのブラウザに限定されています](https://caniuse.com/#feat=web-app-manifest)。
+インストール体験をコントロールするために、全デスクトップの0.82％と全モバイルページの0.94％が<a hreflang="en" href="https://w3c.github.io/manifest/#beforeinstallpromptevent-interface">`OnBeforeInstallPrompt`インターフェイス</a>を使用します。現在、<a hreflang="en" href="https://caniuse.com/#feat=web-app-manifest">サポートはChromiumベースのブラウザに限定されています</a>。
 
 ### Service Workerイベント
 
-Service Workerでは、[いくつかのイベントをリッスンできます](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle)。
+Service Workerでは、<a hreflang="en" href="https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle">いくつかのイベントをリッスンできます</a>。
 
 - `install`, Service Workerのインストール時に発生します。
 - `activate`, Service Workerのアクティベーション時に発生します。
@@ -103,7 +103,7 @@ HTTP Archiveで見つけることのできるService Workerがこれらのイベ
 
 Webアプリマニフェストは、ブラウザーにWebアプリケーションと、ユーザーのモバイルデバイスまたはデスクトップにインストールされたときの動作を通知する単純なJSONファイルです。典型的なマニフェストファイルには、アプリ名、使用するアイコン、起動時に開く開始URLなどに関する情報が含まれています。検出されたすべてのマニフェストの1.54％のみが無効なJSONであり、残りは正しく解析されました。
 
-[Web App Manifest仕様](https://w3c.github.io/manifest/#webappmanifest-dictionary)で定義されているさまざまなプロパティを調べ、非標準の独自プロパティも検討しました。仕様によると、次のプロパティが許可されています。
+<a hreflang="en" href="https://w3c.github.io/manifest/#webappmanifest-dictionary">Web App Manifest仕様</a>で定義されているさまざまなプロパティを調べ、非標準の独自プロパティも検討しました。仕様によると、次のプロパティが許可されています。
 
 - `dir`
 - `lang`
@@ -171,7 +171,7 @@ Webアプリマニフェストは、ブラウザーにWebアプリケーショ�
 
 ### アイコンのサイズ
 
-Lighthouseには少なくとも192X192ピクセルのサイズのアイコンが[必要](https://developers.google.com/web/tools/lighthouse/audits/manifest-contains-192px-icon)ですが、一般的なファビコン生成ツールは他のサイズのアイコンも大量に作成します。
+Lighthouseには少なくとも192X192ピクセルのサイズのアイコンが<a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/audits/manifest-contains-192px-icon">必要</a>ですが、一般的なファビコン生成ツールは他のサイズのアイコンも大量に作成します。
 
 {{ figure_markup(
   image="fig9.png",
@@ -181,11 +181,11 @@ Lighthouseには少なくとも192X192ピクセルのサイズのアイコンが
   )
 }}
 
-Lighthouseのルールが、おそらくアイコンサイズ選択の犯人で、192ピクセルがデスクトップとモバイルの両方で最も人気があります。[Googleのドキュメント](https://developers.google.com/web/fundamentals/web-app-manifest#icons)で512X512を明示的に推奨していますが、これは特に目立つオプションとしては表示されてません。
+Lighthouseのルールが、おそらくアイコンサイズ選択の犯人で、192ピクセルがデスクトップとモバイルの両方で最も人気があります。<a hreflang="en" href="https://developers.google.com/web/fundamentals/web-app-manifest#icons">Googleのドキュメント</a>で512X512を明示的に推奨していますが、これは特に目立つオプションとしては表示されてません。
 
 ### Orientation値
 
-`orientation`プロパティの有効な値は、[画面方向API仕様](https://www.w3.org/TR/screen-orientation/#dom-orientationlocktype)で定義されています。現在、それらは次のとおりです。
+`orientation`プロパティの有効な値は、<a hreflang="en" href="https://www.w3.org/TR/screen-orientation/#dom-orientationlocktype">画面方向API仕様</a>で定義されています。現在、それらは次のとおりです。
 
 - `"any"`
 - `"natural"`
@@ -208,9 +208,9 @@ Lighthouseのルールが、おそらくアイコンサイズ選択の犯人で�
 
 ## Workbox
 
-[Workbox](https://developers.google.com/web/tools/workbox)は、一般的なService Workerのユースケースを支援する一連のライブラリです。たとえばWorkboxには、ビルドプロセスにプラグインしてファイルのマニフェストを生成できるツールがあり、Service Workerによって事前にキャッシュされます。 Workboxには、ランタイムキャッシング、リクエストルーティング、キャッシュの有効期限、バックグラウンド同期などを処理するライブラリが含まれています。
+<a hreflang="en" href="https://developers.google.com/web/tools/workbox">Workbox</a>は、一般的なService Workerのユースケースを支援する一連のライブラリです。たとえばWorkboxには、ビルドプロセスにプラグインしてファイルのマニフェストを生成できるツールがあり、Service Workerによって事前にキャッシュされます。 Workboxには、ランタイムキャッシング、リクエストルーティング、キャッシュの有効期限、バックグラウンド同期などを処理するライブラリが含まれています。
 
-Service Worker APIの低レベルの性質を考慮すると、多くの開発者は、Service Workerロジックをより高レベルで再利用可能なコードの塊に構造化する方法としてWorkboxに注目しています。 Workboxの採用は、[`create-react-app`](https://create-react-app.dev/)や[VueのPWAプラグイン](https://www.npmjs.com/package/@vue/cli-plugin-pwa)など、多くの一般的なJavaScriptフレームワークスターターキットの機能として含まれることによっても促進されます。
+Service Worker APIの低レベルの性質を考慮すると、多くの開発者は、Service Workerロジックをより高レベルで再利用可能なコードの塊に構造化する方法としてWorkboxに注目しています。 Workboxの採用は、<a hreflang="en" href="https://create-react-app.dev/">`create-react-app`</a>や<a hreflang="en" href="https://www.npmjs.com/package/@vue/cli-plugin-pwa">VueのPWAプラグイン</a>など、多くの一般的なJavaScriptフレームワークスターターキットの機能として含まれることによっても促進されます。
 
 HTTP Archiveは、Service Workerを登録するWebサイトの12.71％が少なくとも1つのWorkboxライブラリを使用していることを示しています。この割合は、デスクトップ（14.36％）と比較してモバイルではわずかに低い割合（11.46％）で、デスクトップとモバイルでほぼ一貫しています。
 
@@ -218,6 +218,6 @@ HTTP Archiveは、Service Workerを登録するWebサイトの12.71％が少な�
 
 この章の統計は、PWAがまだごく一部のサイトでしか使用されていないことを示しています。ただし、この比較的少ない使用量はトラフィックのシェアがはるかに大きい人気のあるサイトによってもたらされ、ホームページ以外のページはこれをさらに使用する可能性があります。ページのロードの15％がService Workerを使用することがわかりました。特に[モバイル](./mobile-web)向けの[パフォーマンス](./performance)と[キャッシング](./caching)のより優れた制御に与える利点は、使用が増え続けることを意味するはずです。
 
-PWAは、Chrome主導のテクノロジーと見なされることがよくあります。一部のプラットフォームでは一流のインストール可能性が遅れているものの、他のブラウザは、基盤となるテクノロジーのほとんどを実装するために最近大きく進歩しました。サポートがさらに普及するのを前向きに見る事ができます。 [Maximiliano Firtman](https://twitter.com/firt)は、[Safari PWAサポートの説明](https://medium.com/@firt/iphone-11-ipados-and-ios-13-for-pwas-and-web-development-5d5d9071cc49)など、iOSでこれを追跡する素晴らしい仕事をしています。 AppleはPWAという用語をあまり使用せず、[HTML5アプリはApp Storeの外部に最適配信されると明示的に述べています](https://developer.apple.com/news/?id=09062019b)。Microsoftは逆の方向に進み、[アプリストアでPWAを奨励するだけでなく、Bing Webクローラーを介して検出されたPWAを自動的にショートリストに追加しました](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/microsoft-store)。 Googleは、[信頼できるWebアクティビティ](https://developers.google.com/web/updates/2019/02/using-twa)を介して、Google PlayストアにWebアプリをリストする方法も提供しています。
+PWAは、Chrome主導のテクノロジーと見なされることがよくあります。一部のプラットフォームでは一流のインストール可能性が遅れているものの、他のブラウザは、基盤となるテクノロジーのほとんどを実装するために最近大きく進歩しました。サポートがさらに普及するのを前向きに見る事ができます。 [Maximiliano Firtman](https://twitter.com/firt)は、<a hreflang="en" href="https://medium.com/@firt/iphone-11-ipados-and-ios-13-for-pwas-and-web-development-5d5d9071cc49">Safari PWAサポートの説明</a>など、iOSでこれを追跡する素晴らしい仕事をしています。 AppleはPWAという用語をあまり使用せず、<a hreflang="en" href="https://developer.apple.com/news/?id=09062019b">HTML5アプリはApp Storeの外部に最適配信されると明示的に述べています</a>。Microsoftは逆の方向に進み、<a hreflang="en" href="https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/microsoft-store">アプリストアでPWAを奨励するだけでなく、Bing Webクローラーを介して検出されたPWAを自動的にショートリストに追加しました</a>。 Googleは、<a hreflang="en" href="https://developers.google.com/web/updates/2019/02/using-twa">信頼できるWebアクティビティ</a>を介して、Google PlayストアにWebアプリをリストする方法も提供しています。
 
 PWAは、ネイティブプラットフォームやアプリストアではなくWeb上でビルドおよびリリースすることを希望する開発者に道を提供します。すべてのOSとブラウザがネイティブソフトウェアと完全に同等であるとは限りませんが、改善は継続され、おそらく2020年は展開が爆発的に増加する年になるでしょうか？

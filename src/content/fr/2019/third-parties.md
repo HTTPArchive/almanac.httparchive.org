@@ -9,7 +9,7 @@ editors: [bazzadp]
 translators: [borisschapira]
 discuss: 1760
 results: https://docs.google.com/spreadsheets/d/1iC4WkdadDdkqkrTY32g7hHKhXs9iHrr3Bva8CuPjVrQ/
-patrickhulce_bio: Patrick Hulce est un ancien ingénieur de Chrome, fondateur de <a href="https://eris.ventures/">Eris Ventures</a>, membre de l’équipe principale de <a href="https://github.com/GoogleChrome/lighthouse">Lighthouse</a> et de <a href="https://github.com/GoogleChrome/lighthouse-ci">Lighthouse CI</a>, co-organisateur de la rencontre <a href="https://www.meetup.com/DallasJS/">DallasJS</a> et auteur du projet <a href="https://github.com/patrickhulce/third-party-web">third-party-web</a>.
+patrickhulce_bio: Patrick Hulce est un ancien ingénieur de Chrome, fondateur de <a hreflang="en" href="https://eris.ventures/">Eris Ventures</a>, membre de l’équipe principale de <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse">Lighthouse</a> et de <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse-ci">Lighthouse CI</a>, co-organisateur de la rencontre <a hreflang="en" href="https://www.meetup.com/DallasJS/">DallasJS</a> et auteur du projet <a hreflang="en" href="https://github.com/patrickhulce/third-party-web">third-party-web</a>.
 featured_quote: Le Web ouvert a été conçu pour être vaste, interconnectable et interopérable. La possibilité d’accéder à de puissantes librairies tierces et de les utiliser sur votre site avec des éléments <code>&lt;link&gt;</code> ou <code>&lt;script&gt;</code> a décuplé la productivité des développeurs et permis de nouvelles et incroyables expériences web ; par contre, l’immense popularité de quelques fournisseurs tiers (3P) pose d’importants problèmes en termes de performances et de confidentialité. Ce chapitre examine la prévalence et l’impact du code tiers sur le Web en 2019, les modèles d’utilisation du Web qui mènent à la popularité des solutions tierces et les répercussions potentielles sur l’avenir des performances Web et de la confidentialité.
 featured_stat_1: 93 %
 featured_stat_label_1: pages avec 3P.
@@ -41,7 +41,7 @@ Notez qu’en utilisant ces définitions, le contenu de tiers servi à partir d�
 
 ### Catégories de fournisseurs
 
-Le présent chapitre classe les fournisseurs tiers dans l’une de ces grandes catégories. Une brève description est incluse ci-dessous et la correspondance entre chaque domaine et sa catégorie peut être trouvée dans le [dépôt third-party-web](https://github.com/patrickhulce/third-party-web/blob/8afa2d8cadddec8f0db39e7d715c07e85fb0f8ec/data/entities.json5).
+Le présent chapitre classe les fournisseurs tiers dans l’une de ces grandes catégories. Une brève description est incluse ci-dessous et la correspondance entre chaque domaine et sa catégorie peut être trouvée dans le <a hreflang="en" href="https://github.com/patrickhulce/third-party-web/blob/8afa2d8cadddec8f0db39e7d715c07e85fb0f8ec/data/entities.json5">dépôt third-party-web</a>.
 
 - **Publicité (Ad)** - affichage et mesures relatives aux annonces
 - **Télémétrie (Analytics)** - suivi du comportement des visiteurs du site
@@ -93,7 +93,7 @@ Alors que la publicité pourrait être l’exemple le plus visible de contenus t
 
 Un nombre relativement restreint de fournisseurs dominent le paysage des services tiers : les 100 premiers domaines représentent 30 % des requêtes réseau sur le web. Des moteurs comme Google, Facebook et YouTube sont en tête avec des pourcentages entiers de parts de marché chacun, mais des entités plus petites comme Wix et Shopify représentent aussi une partie substantielle de la popularité des tiers.
 
-Bien que l’on puisse dire beaucoup de choses sur la popularité et l’impact de chaque fournisseur sur la performance, nous laissons au lecteur et à d’autres outils conçus à cet effet, tels que [third-party-web](https://thirdpartyweb.today), le soin de faire faire une analyse plus objective de ces questions.
+Bien que l’on puisse dire beaucoup de choses sur la popularité et l’impact de chaque fournisseur sur la performance, nous laissons au lecteur et à d’autres outils conçus à cet effet, tels que <a hreflang="en" href="https://thirdpartyweb.today">third-party-web</a>, le soin de faire faire une analyse plus objective de ces questions.
 
 <figure markdown>
 Rang | Domaines tiers | Pourcentage des requêtes
@@ -193,7 +193,7 @@ La répartition par catégorie de l’exécution des scripts suit largement cell
 
 <!--```<insert table of metric 05_10>```-->
 
-Bien que l’on puisse dire beaucoup de choses sur la popularité et l’impact sur le rendement de chaque fournisseur, cette analyse plus subjective est laissée à la discrétion du lecteur et d’autres outils conçus à cette fin, comme le [third-party-web](https://thirdpartyweb.today).
+Bien que l’on puisse dire beaucoup de choses sur la popularité et l’impact sur le rendement de chaque fournisseur, cette analyse plus subjective est laissée à la discrétion du lecteur et d’autres outils conçus à cette fin, comme le <a hreflang="en" href="https://thirdpartyweb.today">third-party-web</a>.
 
 ## Types d’utilisation
 
@@ -207,7 +207,7 @@ Mais il y a aussi un revers à la médaille pour les données des utilisateurs 
 
 ### Monétiser le trafic web
 
-Le modèle ouvert du web ne sert pas toujours les intérêts financiers des personnes créatrices de contenu aussi bien qu’elles le souhaiteraient et de nombreux propriétaires de sites ont recours à la publicité pour monétiser leurs sites. Comme l’établissement de relations directes avec les annonceurs et la négociation de contrats de prix est un processus relativement difficile et long, cette responsabilité est en grande partie assumée par des fournisseurs tiers qui se chargent de la publicité ciblée et des appels d’offres en temps réel. L’opinion publique globalement négative, la popularité de la technologie de blocage des publicités et les mesures réglementaires prises sur les principaux marchés mondiaux tels que l’Europe constituent la plus grande menace à la poursuite du recours à des fournisseurs tiers pour la monétisation. Bien qu’il soit peu probable que les propriétaires de sites concluent soudainement leurs propres contrats publicitaires ou construisent des réseaux publicitaires sur mesure, d’autres modèles de monétisation comme les <span lang="en">paywalls</span> et des expériences comme le [<span lang="en">Basic Attention Token</span>](https://basicattentiontoken.org/) du navigateur Brave ont une réelle chance de secouer, à l’avenir, le paysage de la publicité de tiers.
+Le modèle ouvert du web ne sert pas toujours les intérêts financiers des personnes créatrices de contenu aussi bien qu’elles le souhaiteraient et de nombreux propriétaires de sites ont recours à la publicité pour monétiser leurs sites. Comme l’établissement de relations directes avec les annonceurs et la négociation de contrats de prix est un processus relativement difficile et long, cette responsabilité est en grande partie assumée par des fournisseurs tiers qui se chargent de la publicité ciblée et des appels d’offres en temps réel. L’opinion publique globalement négative, la popularité de la technologie de blocage des publicités et les mesures réglementaires prises sur les principaux marchés mondiaux tels que l’Europe constituent la plus grande menace à la poursuite du recours à des fournisseurs tiers pour la monétisation. Bien qu’il soit peu probable que les propriétaires de sites concluent soudainement leurs propres contrats publicitaires ou construisent des réseaux publicitaires sur mesure, d’autres modèles de monétisation comme les <span lang="en">paywalls</span> et des expériences comme le <a hreflang="en" href="https://basicattentiontoken.org/"><span lang="en">Basic Attention Token</span></a> du navigateur Brave ont une réelle chance de secouer, à l’avenir, le paysage de la publicité de tiers.
 
 ### Simplifier le développement
 
@@ -243,9 +243,9 @@ La forte concentration de l’exécution des scripts est excellente au regard de
 
 ### Sécurité
 
-Bien que le sujet de la sécurité soit traité plus en profondeur dans le chapitre [Sécurité](./security), les conséquences de l’introduction de dépendances externes sur votre site en matière de sécurité sont indissociables de la protection de la vie privée. Permettre à des tiers d’exécuter des JavaScript arbitraires leur donne un contrôle total sur votre page. Quand un script peut contrôler le DOM et `window`, il peut tout faire. Même si le code n’a pas de problèmes de sécurité, il peut introduire un point unique de défaillance, [ce qui a été reconnu comme un problème potentiel depuis un certain temps maintenant](https://www.stevesouders.com/blog/2010/06/01/frontend-spof/).
+Bien que le sujet de la sécurité soit traité plus en profondeur dans le chapitre [Sécurité](./security), les conséquences de l’introduction de dépendances externes sur votre site en matière de sécurité sont indissociables de la protection de la vie privée. Permettre à des tiers d’exécuter des JavaScript arbitraires leur donne un contrôle total sur votre page. Quand un script peut contrôler le DOM et `window`, il peut tout faire. Même si le code n’a pas de problèmes de sécurité, il peut introduire un point unique de défaillance, <a hreflang="en" href="https://www.stevesouders.com/blog/2010/06/01/frontend-spof/">ce qui a été reconnu comme un problème potentiel depuis un certain temps maintenant</a>.
 
-[Auto-héberger du contenu de tierces parties](https://csswizardry.com/2019/05/self-host-your-static-assets/) répond à certaines des préoccupations mentionnées ici – et à d’autres. De plus, comme les navigateurs [partitionnement de plus en plus les caches HTTP](https://chromestatus.com/feature/5730772021411840), les avantages du chargement direct à partir de la tierce partie semblent plus que jamais incertains. Cette méthode est peut-être meilleure pour de nombreux cas d’utilisation, même si elle rend la mesure de son impact plus difficile.
+<a hreflang="en" href="https://csswizardry.com/2019/05/self-host-your-static-assets/">Auto-héberger du contenu de tierces parties</a> répond à certaines des préoccupations mentionnées ici – et à d’autres. De plus, comme les navigateurs <a hreflang="en" href="https://chromestatus.com/feature/5730772021411840">partitionnement de plus en plus les caches HTTP</a>, les avantages du chargement direct à partir de la tierce partie semblent plus que jamais incertains. Cette méthode est peut-être meilleure pour de nombreux cas d’utilisation, même si elle rend la mesure de son impact plus difficile.
 
 ## Conclusion
 
