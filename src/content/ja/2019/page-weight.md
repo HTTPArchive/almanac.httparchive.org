@@ -9,7 +9,7 @@ editors: [obto]
 translators: [ksakae]
 discuss: 1773
 results: https://docs.google.com/spreadsheets/d/1nWOo8efqDgzmA0wt1ipplziKhlReAxnVCW1HkjuFAxU/
-tammyeverts_bio: Tammy Evertsは、20年以上にわたってユーザビリティとUXを研究してきました。過去10年間、彼女はウェブパフォーマンスとビジネスのUX交差に焦点を当ててきました。彼女は、<a href="https://speedcurve.com/">SpeedCurve</a>のCXOであり、<a href="https://perfnow.nl/">performance.now()カンファレンス</a>の共同議長であり、O'Reillyの本の著者<em><a href="http://shop.oreilly.com/product/0636920041450.do">時は金なり。パフォーマンスのビジネス価値。</a></em>.
+tammyeverts_bio: Tammy Evertsは、20年以上にわたってユーザビリティとUXを研究してきました。過去10年間、彼女はウェブパフォーマンスとビジネスのUX交差に焦点を当ててきました。彼女は、<a hreflang="en" href="https://speedcurve.com/">SpeedCurve</a>のCXOであり、<a hreflang="en" href="https://perfnow.nl/">performance.now()カンファレンス</a>の共同議長であり、O'Reillyの本の著者<em><a hreflang="en" href="http://shop.oreilly.com/product/0636920041450.do">時は金なり。パフォーマンスのビジネス価値。</a></em>.
 khempenius_bio: Katie HempeniusはChromeチームのエンジニアで、ウェブの高速化に取り組んでいます。
 featured_quote: なぜページサイズはもう重要ではないのかという共通の議論は、高速インターネットとスープアップされたデバイスのおかげで、私たちは一般の人々に大規模で複雑な（そして大規模に複雑な）ページを提供することができるということです。この仮定は、あなたが言った高速インターネットとスープアップデバイスへのアクセスを持っていないインターネットユーザーの広大な範囲を無視して大丈夫だとしている限り、うまく動作します。
 featured_stat_1: 10%
@@ -38,7 +38,7 @@ featured_stat_label_3: ホームページあたりのリクエストの中央値
 
 ### 帯域幅を増やすことは、Webパフォーマンスの魔法の弾丸ではありません
 
-より多くの人がより良いデバイスとより安価な接続にアクセスできたとしても、それは完全なソリューションではありません。帯域幅を2倍にしても、2倍速くなるわけではありません。実際、帯域幅を最大1,233％増やすと、ページが55％速くなるだけであることが[実証](https://developer.akamai.com/blog/2015/06/09/heres-why-more-bandwidth-isnt-magic-bullet-web-performance)されています。
+より多くの人がより良いデバイスとより安価な接続にアクセスできたとしても、それは完全なソリューションではありません。帯域幅を2倍にしても、2倍速くなるわけではありません。実際、帯域幅を最大1,233％増やすと、ページが55％速くなるだけであることが<a hreflang="en" href="https://developer.akamai.com/blog/2015/06/09/heres-why-more-bandwidth-isnt-magic-bullet-web-performance">実証</a>されています。
 
 問題は遅延です。私たちのネットワークプロトコルのほとんどは、多くの往復を必要とし、それらの各往復は遅延ペナルティを課します。遅延がパフォーマンスの問題である限り（つまり、近い将来）パフォーマンスの主な原因は、今日の典型的なWebページには数十の異なるサーバーでホストされている100程度のアセットが含まれていることです。これらのアセットの多くは、最適化されておらず、測定と監視がされていないため予測不能です。
 
@@ -60,7 +60,7 @@ HTTP Archiveが追跡するページ構成メトリックの簡単な用語集�
 
 ### 大きくて複雑なページはビジネスに悪い場合があります
 
-あなたが、あなたのサイト訪問者を気にしない心無いモンスターでないと仮定しましょう。しかしあなたがそうであれば、より大きく、より複雑なページを提供することもあなたを傷つけることを知っておくべきです。これは、小売サイトから100万以上のビーコンに相当する実際のユーザーデータを収集した[Google主導の機械学習](https://www.thinkwithgoogle.com/marketing-resources/experience-design/mobile-page-speed-load-time/)の調査結果の1つでした。
+あなたが、あなたのサイト訪問者を気にしない心無いモンスターでないと仮定しましょう。しかしあなたがそうであれば、より大きく、より複雑なページを提供することもあなたを傷つけることを知っておくべきです。これは、小売サイトから100万以上のビーコンに相当する実際のユーザーデータを収集した<a hreflang="en" href="https://www.thinkwithgoogle.com/marketing-resources/experience-design/mobile-page-speed-load-time/">Google主導の機械学習</a>の調査結果の1つでした。
 
 この研究から、3つの重要なポイントがありました。
 
@@ -350,7 +350,7 @@ HTTP Archiveが追跡するページ構成メトリックの簡単な用語集�
   <figcaption>{{ figure_link(caption="2018年以降のデスクトップページの重みの変化。") }}</figcaption>
 </figure>
 
-ページの重さが時間とともにどのように変化するかについての長期的な視点については、HTTP Archiveから[この時系列グラフ](https://httparchive.org/reports/page-weight#bytesTotal)をご覧ください。ページサイズの中央値は、HTTP Archiveが2010年11月にこのメトリックの追跡を開始して以来ほぼ一定の割合で成長しており、過去1年間に見られたページウェイトの増加はこれと一致しています。
+ページの重さが時間とともにどのように変化するかについての長期的な視点については、HTTP Archiveから<a hreflang="en" href="https://httparchive.org/reports/page-weight#bytesTotal">この時系列グラフ</a>をご覧ください。ページサイズの中央値は、HTTP Archiveが2010年11月にこのメトリックの追跡を開始して以来ほぼ一定の割合で成長しており、過去1年間に見られたページウェイトの増加はこれと一致しています。
 
 ### ページリクエスト
 

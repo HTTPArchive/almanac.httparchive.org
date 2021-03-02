@@ -9,8 +9,8 @@ editors: [bazzadp]
 translators: [JMPerez]
 discuss: 1768
 results: https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/
-samdutton_bio: <i lang="en">Sam Dutton has worked with the Google Chrome team as a Developer Advocate since 2011. He has organized and presented at a number of events, created and taught several web development courses, and worked on a range of videos, codelabs and written guidance covering PWA, performance, media, image and 'Next Billion Users' initiatives. He maintains <a href="https://simpl.info">simpl.info</a>, which provides simplest possible examples of HTML, CSS and JavaScript. Sam grew up in South Australia, went to university in Sydney, and has lived since 1986 in London.</i>
-alankent_bio: <i lang="en">Alan Kent is a Developer Advocate at Google focusing on e-commerce and content ecosystems. He blogs at <a href="https://alankent.me">alankent.me</a> and tweets as <a href="https://twitter.com/akent99">@akent99</a>.</i>
+samdutton_bio: <i lang="en">Sam Dutton has worked with the Google Chrome team as a Developer Advocate since 2011. He has organized and presented at a number of events, created and taught several web development courses, and worked on a range of videos, codelabs and written guidance covering PWA, performance, media, image and 'Next Billion Users' initiatives. He maintains <a hreflang="en" href="https://simpl.info">simpl.info</a>, which provides simplest possible examples of HTML, CSS and JavaScript. Sam grew up in South Australia, went to university in Sydney, and has lived since 1986 in London.</i>
+alankent_bio: <i lang="en">Alan Kent is a Developer Advocate at Google focusing on e-commerce and content ecosystems. He blogs at <a hreflang="en" href="https://alankent.me">alankent.me</a> and tweets as <a href="https://twitter.com/akent99">@akent99</a>.</i>
 featured_quote: Casi el 10% de las páginas de inicio en este estudio resultaron ser parte de una plataforma de comercio electrónico. Una "plataforma de comercio electrónico" es un conjunto de software o servicios que permiten crear y operar una tienda en línea, incluidos los servicios de pago como Shopify, plataformas de software como Magento Open Source y plataformas alojadas como Magento Commerce.
 featured_stat_1: 3.98%
 featured_stat_label_1: Sitios que utilizan WooCommerce, la plataforma de comercio electrónico más popular
@@ -24,9 +24,9 @@ featured_stat_label_3: Mediana de bytes de imagen por página de comercio electr
 
 Casi el 10% de las páginas de inicio en este estudio resultaron ser parte de una plataforma de comercio electrónico. Una "plataforma de comercio electrónico" es un conjunto de software o servicios que permiten crear y operar una tienda en línea. Existen varios tipos de plataformas de comercio electrónico, por ejemplo:
 
-- **Servicios de pago** como [Shopify](https://www.shopify.com/) que alojan su tienda y lo ayuda a comenzar. Proporcionan alojamiento de sitios web, plantillas de sitios y páginas, gestión de datos de productos, carritos de compras y pagos.
-- **Plataformas de software** como [Magento Open Source](https://magento.com/products/magento-open-source) que configura, aloja y administra usted mismo. Estas plataformas pueden ser potentes y flexibles, pero pueden ser más complejas de configurar y ejecutar que servicios como Shopify.
-- **Plataformas _hosted_ o alojadas** como [Magento Commerce](https://magento.com/products/magento-commerce) que ofrecen las mismas funciones que sus homólogos autohospedados, excepto que el alojamiento es administrado como un servicio por un tercero.
+- **Servicios de pago** como <a hreflang="en" href="https://www.shopify.com/">Shopify</a> que alojan su tienda y lo ayuda a comenzar. Proporcionan alojamiento de sitios web, plantillas de sitios y páginas, gestión de datos de productos, carritos de compras y pagos.
+- **Plataformas de software** como <a hreflang="en" href="https://magento.com/products/magento-open-source">Magento Open Source</a> que configura, aloja y administra usted mismo. Estas plataformas pueden ser potentes y flexibles, pero pueden ser más complejas de configurar y ejecutar que servicios como Shopify.
+- **Plataformas _hosted_ o alojadas** como <a hreflang="en" href="https://magento.com/products/magento-commerce">Magento Commerce</a> que ofrecen las mismas funciones que sus homólogos autohospedados, excepto que el alojamiento es administrado como un servicio por un tercero.
 
 {{ figure_markup(
   caption="Porcentaje de páginas servidas por una plataforma de comercio electrónico.",
@@ -202,7 +202,7 @@ El [peso de la página](./page-weight) de una plataforma de comercio electrónic
   )
 }}
 
-La página de una plataforma de comercio electrónico de escritorio situada en la mediana carga 108 peticiones y 2,7 MB. El peso medio para _todas_ páginas de escritorio es 74 peticiones y [1,9 MB] (./page-weight#peso-de-pagina). En otras palabras, las páginas de comercio electrónico realizan casi un 50% más de peticiones que otras páginas web, con _payloads_ aproximadamente un 35% más grandes. En comparación, la página de inicio de [amazon.com](https://amazon.com) realiza alrededor de 300 peticiones en la primera carga, con un peso de página de alrededor de 5 MB, y [ebay.com](https://ebay.com) realiza alrededor de 150 peticiones con un peso de página de aproximadamente 3 MB. El peso de la página y el número de peticiones de páginas de inicio en plataformas de comercio electrónico es ligeramente menor en dispositivos móviles en cada percentil, pero alrededor del 10% de todas las páginas de inicio de comercio electrónico cargan más de 7 MB y realizan más de 200 peticiones.
+La página de una plataforma de comercio electrónico de escritorio situada en la mediana carga 108 peticiones y 2,7 MB. El peso medio para _todas_ páginas de escritorio es 74 peticiones y [1,9 MB] (./page-weight#peso-de-pagina). En otras palabras, las páginas de comercio electrónico realizan casi un 50% más de peticiones que otras páginas web, con _payloads_ aproximadamente un 35% más grandes. En comparación, la página de inicio de <a hreflang="en" href="https://amazon.com">amazon.com</a> realiza alrededor de 300 peticiones en la primera carga, con un peso de página de alrededor de 5 MB, y <a hreflang="en" href="https://ebay.com">ebay.com</a> realiza alrededor de 150 peticiones con un peso de página de aproximadamente 3 MB. El peso de la página y el número de peticiones de páginas de inicio en plataformas de comercio electrónico es ligeramente menor en dispositivos móviles en cada percentil, pero alrededor del 10% de todas las páginas de inicio de comercio electrónico cargan más de 7 MB y realizan más de 200 peticiones.
 
 Estos datos representan el _payload_ y las peticiones sin hacer scroll. Claramente, hay una proporción significativa de sitios que parecen estar haciendo peticiones para más archivos (la mediana es superior a 100), con un _payload_ total mayor que la que debería ser necesaria para la primera carga. Consulte también: [Solicitudes y bytes de terceros] (#solicitudes-y-bytes-de-terceros) más adelante.
 
@@ -455,7 +455,7 @@ Las Figuras 13.12 y 13.13 muestran que la página de comercio electrónico prome
 )
 }}
 
-Una proporción significativa de las páginas de comercio electrónico tienen un _payload_ de imágenes considerable y realizan una gran cantidad de peticiones de imágenes en la primera carga. Consulte el informe [Estado de las imágenes](https://httparchive.org/reports/state-of-images) de HTTP Archive y los capítulos [media](./media) y [peso de página](./page-weight) para más contexto.
+Una proporción significativa de las páginas de comercio electrónico tienen un _payload_ de imágenes considerable y realizan una gran cantidad de peticiones de imágenes en la primera carga. Consulte el informe <a hreflang="en" href="https://httparchive.org/reports/state-of-images">Estado de las imágenes</a> de HTTP Archive y los capítulos [media](./media) y [peso de página](./page-weight) para más contexto.
 
 Los propietarios de sitios web quieren que sus sitios se vean bien en dispositivos modernos. Como resultado, muchos sitios ofrecen las mismas imágenes de productos de alta resolución a todos los usuarios, sin importar la resolución o el tamaño de la pantalla. Es posible que los desarrolladores no estén al tanto (o no quieran usar) técnicas _responsive_ que permitan servir de forma eficiente la mejor imagen posible a diferentes usuarios. Vale la pena recordar que las imágenes de alta resolución no necesariamente aumentan las tasas de conversión. Por el contrario, el uso excesivo de imágenes pesadas puede afectar la velocidad de la página y, por lo tanto, puede reducir las tasas de conversión. En la experiencia de los autores revisando sitios, algunos desarrolladores y otras partes interesadas no adoptan _lazy loading_ de imágenes por preocupaciones sobre SEO entre otros.
 
@@ -471,19 +471,19 @@ Necesitamos hacer más análisis para comprender mejor por qué algunos sitios n
   )
 }}
 
-<p class="note">Tenga en cuenta que algunos servicios de imágenes o CDN entregarán automáticamente WebP (en lugar de JPEG o PNG) a plataformas que admitan WebP, incluso para una URL con el sufijo `.jpg` o` .png`. Por ejemplo, <a href="https://res.cloudinary.com/webdotdev/f_auto/w_500/IMG_20190113_113201.jpg">IMG_20190113_113201.jpg</a> devuelve una imagen WebP en Chrome. Sin embargo, la forma en que HTTP Archive <a href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/31a25b9064a365d746d4811a1d6dda516c0e4985/bulktest/batch_lib.inc#L994">detecta los formatos de imagen</a> es verificar primero las palabras clave en el tipo MIME y usar como alternativa la extensión de archivo. Esto significa que el formato para imágenes con una URL como la anterior se clasifica como WebP, ya que WebP es compatible con HTTP Archive como agente de usuario.</p>
+<p class="note">Tenga en cuenta que algunos servicios de imágenes o CDN entregarán automáticamente WebP (en lugar de JPEG o PNG) a plataformas que admitan WebP, incluso para una URL con el sufijo `.jpg` o` .png`. Por ejemplo, <a hreflang="en" href="https://res.cloudinary.com/webdotdev/f_auto/w_500/IMG_20190113_113201.jpg">IMG_20190113_113201.jpg</a> devuelve una imagen WebP en Chrome. Sin embargo, la forma en que HTTP Archive <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/31a25b9064a365d746d4811a1d6dda516c0e4985/bulktest/batch_lib.inc#L994">detecta los formatos de imagen</a> es verificar primero las palabras clave en el tipo MIME y usar como alternativa la extensión de archivo. Esto significa que el formato para imágenes con una URL como la anterior se clasifica como WebP, ya que WebP es compatible con HTTP Archive como agente de usuario.</p>
 
 ### PNG
 
 Una de cada cuatro imágenes en las páginas de comercio electrónico son PNG. La gran cantidad de peticiones de PNG desde las páginas de plataformas de comercio electrónico es probablemente para imágenes de productos. Muchos sitios de comercio usan PNG con imágenes fotográficas porque soportan transparencia.
 
-El uso de WebP haciendo _fallback_ a PNG puede ser una alternativa mucho más eficiente, ya sea a través de un [elemento de imagen](http://simpl.info/picturetype) o mediante la detección del soporte del agente de usuario a través de un servicio de imágenes como [Cloudinary](https://res.cloudinary.com/webdotdev/f_auto/w_500/IMG_20190113_113201.jpg).
+El uso de WebP haciendo _fallback_ a PNG puede ser una alternativa mucho más eficiente, ya sea a través de un [elemento de imagen](http://simpl.info/picturetype) o mediante la detección del soporte del agente de usuario a través de un servicio de imágenes como <a hreflang="en" href="https://res.cloudinary.com/webdotdev/f_auto/w_500/IMG_20190113_113201.jpg">Cloudinary</a>.
 
 ### WebP
 
-Sólo el 1% de las imágenes en las plataformas de comercio electrónico son WebP, lo que coincide con la experiencia de los autores en las revisiones del sitio. WebP es [compatible con todos los navegadores modernos excepto Safari](https://caniuse.com/#feat=webp) y tiene buenos mecanismos de _fallback_ disponibles. WebP admite transparencia y es un formato mucho más eficiente que PNG para imágenes fotográficas (consulte la sección PNG anterior).
+Sólo el 1% de las imágenes en las plataformas de comercio electrónico son WebP, lo que coincide con la experiencia de los autores en las revisiones del sitio. WebP es <a hreflang="en" href="https://caniuse.com/#feat=webp">compatible con todos los navegadores modernos excepto Safari</a> y tiene buenos mecanismos de _fallback_ disponibles. WebP admite transparencia y es un formato mucho más eficiente que PNG para imágenes fotográficas (consulte la sección PNG anterior).
 
-Nosotros, como comunidad web, podemos abogar por proporcionar transparencia usando WebP con unn _fallback_ a PNG y/o usando WebP/JPEG con un fondo de color sólido. Parece que WebP rara vez se usa en plataformas de comercio electrónico, a pesar de la disponibilidad de [guías](https://web.dev/serve-images-webp) y herramientas (por ejemplo, [Squoosh](https://squoosh.app/) y [cwebp](https://developers.google.com/speed/webp/docs/cwebp)). Necesitamos investigar más sobre por qué no ha habido más aceptación de WebP, que ahora tiene [casi 10 años](https://blog.chromium.org/2010/09/webp-new-image-format-for-web.html).
+Nosotros, como comunidad web, podemos abogar por proporcionar transparencia usando WebP con unn _fallback_ a PNG y/o usando WebP/JPEG con un fondo de color sólido. Parece que WebP rara vez se usa en plataformas de comercio electrónico, a pesar de la disponibilidad de <a hreflang="en" href="https://web.dev/serve-images-webp">guías</a> y herramientas (por ejemplo, <a hreflang="en" href="https://squoosh.app/">Squoosh</a> y <a hreflang="en" href="https://developers.google.com/speed/webp/docs/cwebp">cwebp</a>). Necesitamos investigar más sobre por qué no ha habido más aceptación de WebP, que ahora tiene <a hreflang="en" href="https://blog.chromium.org/2010/09/webp-new-image-format-for-web.html">casi 10 años</a>.
 
 ## Dimensiones de la imagen
 
@@ -552,7 +552,7 @@ Necesitamos investigar más sobre por qué muchos sitios (aparentemente) no ofre
 
 ## Peticiones y bytes de terceros
 
-Muchos sitios web, especialmente las tiendas en línea, cargan una cantidad significativa de código y contenido de terceros: para análisis, pruebas A/B, seguimiento del comportamiento del cliente, publicidad y soporte de redes sociales. El contenido de terceros puede tener un [impacto significativo en el rendimiento](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript). La [herramienta third-party-web](https://github.com/patrickhulce/third-party-web) de [Patrick Hulce](https://twitter.com/patrickhulce) se utiliza para determinar las solicitudes de terceros para este informe, y esto se discute más en el capítulo de [Third Parties](./third-parties).
+Muchos sitios web, especialmente las tiendas en línea, cargan una cantidad significativa de código y contenido de terceros: para análisis, pruebas A/B, seguimiento del comportamiento del cliente, publicidad y soporte de redes sociales. El contenido de terceros puede tener un <a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript">impacto significativo en el rendimiento</a>. La <a hreflang="en" href="https://github.com/patrickhulce/third-party-web">herramienta third-party-web</a> de [Patrick Hulce](https://twitter.com/patrickhulce) se utiliza para determinar las solicitudes de terceros para este informe, y esto se discute más en el capítulo de [Third Parties](./third-parties).
 
 {{ figure_markup(
   image="fig17.png",
@@ -572,7 +572,7 @@ Muchos sitios web, especialmente las tiendas en línea, cargan una cantidad sign
 
 La página de inicio mediana ('rango medio') en una plataforma de comercio electrónico realiza 17 peticiones de contenido de terceros en dispositivos móviles y 19 en escritorio. El 10% de todas las páginas de inicio en plataformas de comercio electrónico realizan más de 50 peticiones de contenido de terceros, lo que supone un total de más de 1 MB.
 
-[Otros estudios](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/) han indicado que el contenido de terceros puede ser un gran cuello de botella en el rendimiento. Este estudio muestra que 17 o más peticiones (50 o más para el 10% superior) es la norma para las páginas de comercio electrónico.
+<a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/">Otros estudios</a> han indicado que el contenido de terceros puede ser un gran cuello de botella en el rendimiento. Este estudio muestra que 17 o más peticiones (50 o más para el 10% superior) es la norma para las páginas de comercio electrónico.
 
 ## Solicitudes de terceros y payload por plataforma
 
@@ -626,13 +626,13 @@ Consulte también el [capítulo de PWA](./pwa) para obtener más información so
   )
 }}
 
-Más del 60% de las páginas de inicio en plataformas de comercio electrónico obtienen una [puntuación de PWA en Lighthouse](https://developers.google.com/web/ilt/pwa/lighthouse-pwa-analysis-tool) de entre 0,25 y 0,35. Menos del 20% de las páginas de inicio en las plataformas de comercio electrónico obtienen una puntuación de más de 0,5 y menos del 1% de las páginas de inicio obtienen una puntuación de más de 0,6.
+Más del 60% de las páginas de inicio en plataformas de comercio electrónico obtienen una <a hreflang="en" href="https://developers.google.com/web/ilt/pwa/lighthouse-pwa-analysis-tool">puntuación de PWA en Lighthouse</a> de entre 0,25 y 0,35. Menos del 20% de las páginas de inicio en las plataformas de comercio electrónico obtienen una puntuación de más de 0,5 y menos del 1% de las páginas de inicio obtienen una puntuación de más de 0,6.
 
-Lighthouse devuelve una puntuación de Progressive Web App (PWA) entre 0 y 1. 0 es la peor puntuación posible y 1 es la mejor. Las auditorías de PWA se basan en la [lista de verificación de PWA de referencia](https://developers.google.com/web/progressive-web-apps/checklist), que enumera 14 requisitos. Lighthouse ha realizado auditorías automatizadas para 11 de los 14 requisitos. Los 3 restantes sólo pueden probarse manualmente. Cada una de las 11 auditorías PWA automatizadas se ponderan por igual, por lo que cada una aporta aproximadamente 9 puntos a su puntuación PWA.
+Lighthouse devuelve una puntuación de Progressive Web App (PWA) entre 0 y 1. 0 es la peor puntuación posible y 1 es la mejor. Las auditorías de PWA se basan en la <a hreflang="en" href="https://developers.google.com/web/progressive-web-apps/checklist">lista de verificación de PWA de referencia</a>, que enumera 14 requisitos. Lighthouse ha realizado auditorías automatizadas para 11 de los 14 requisitos. Los 3 restantes sólo pueden probarse manualmente. Cada una de las 11 auditorías PWA automatizadas se ponderan por igual, por lo que cada una aporta aproximadamente 9 puntos a su puntuación PWA.
 
 Si al menos una de las auditorías de PWA obtuvo una puntuación nula, Lighthouse anula la puntuación para toda la categoría de PWA. Este fue el caso del 2,32% de las páginas móviles.
 
-Claramente, la mayoría de las páginas de comercio electrónico fallan en la mayoría de las [auditorías de la lista de verificación de PWA](https://developers.google.com/web/progressive-web-apps/checklist). Necesitamos hacer más análisis para comprender mejor qué auditorías están fallando y por qué.
+Claramente, la mayoría de las páginas de comercio electrónico fallan en la mayoría de las <a hreflang="en" href="https://developers.google.com/web/progressive-web-apps/checklist">auditorías de la lista de verificación de PWA</a>. Necesitamos hacer más análisis para comprender mejor qué auditorías están fallando y por qué.
 
 ## Conclusión
 

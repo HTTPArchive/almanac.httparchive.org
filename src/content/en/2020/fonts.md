@@ -8,7 +8,7 @@ analysts: [AbbyTsai]
 editors: [bazzadp]
 translators: []
 jpamental_bio: Designer, tinkerer, typographer. Author of Responsive Typography, Invited Expert to the W3C, and 10yrs+ experience focused on better typography on the web.
-raphlinus_bio: Raph Levien has been working with fonts for over 35 years, including a PhD from UC Berkeley in font design tools. He is rejoining <a href="https://fonts.google.com/">Google Fonts</a> as a font technology researcher, after having co-founded the team in 2010.
+raphlinus_bio: Raph Levien has been working with fonts for over 35 years, including a PhD from UC Berkeley in font design tools. He is rejoining <a hreflang="en" href="https://fonts.google.com/">Google Fonts</a> as a font technology researcher, after having co-founded the team in 2010.
 discuss: 2040
 results: https://docs.google.com/spreadsheets/d/1jjvZqYay5KmTle4atzFWqtbkz9ohw25KFmNtCS-7n3s/
 featured_quote: Web font technology is fairly mature, with incremental improvements in compression and other technical improvements, but new features are arriving. Browser support for variable fonts has become quite good, and this is the feature that's seen the most growth in the previous year.
@@ -49,7 +49,7 @@ Usage of web fonts is fairly consistent around the world, with a few outliers. T
   )
 }}
 
-The country that uses the most font bytes is South Korea, which is not all that surprising given their consistently high internet speeds and low latency and the fact that Korean (Hangul) fonts are almost an order of magnitude larger than Latin. Web font usage in Japan and Chinese-speaking countries is considerably lower, likely because Chinese and Japanese fonts are vastly larger (the median font size can be 1000 times or more larger than the median Latin size). This means web font usage in Japan is very low, and usage in China is effectively zero. Although recent developments in [progressive font enhancement](https://www.w3.org/TR/2020/NOTE-PFE-evaluation-20201015/)–which we will cover more below–may make web fonts usable in both countries within a couple of years. There have been reports that Google Fonts have not been reliably accessible in China and that might also have been a factor holding back adoption.
+The country that uses the most font bytes is South Korea, which is not all that surprising given their consistently high internet speeds and low latency and the fact that Korean (Hangul) fonts are almost an order of magnitude larger than Latin. Web font usage in Japan and Chinese-speaking countries is considerably lower, likely because Chinese and Japanese fonts are vastly larger (the median font size can be 1000 times or more larger than the median Latin size). This means web font usage in Japan is very low, and usage in China is effectively zero. Although recent developments in <a hreflang="en" href="https://www.w3.org/TR/2020/NOTE-PFE-evaluation-20201015/">progressive font enhancement</a>–which we will cover more below–may make web fonts usable in both countries within a couple of years. There have been reports that Google Fonts have not been reliably accessible in China and that might also have been a factor holding back adoption.
 
 {{ figure_markup(
   image="fonts-web-fonts-usage-top-countries.png",
@@ -61,7 +61,7 @@ The country that uses the most font bytes is South Korea, which is not all that 
   )
 }}
 
-There's an interesting thread on [web font usage by country](https://discuss.httparchive.org/t/how-does-web-font-usage-vary-by-country/1649) on the HTTP Archive discussion forum that certainly influenced the queries used by this chapter. Given the large number of typefaces produced for Asian languages, it's likely usage will rise in that region as technology for serving those fonts more efficiently becomes available.
+There's an interesting thread on <a hreflang="en" href="https://discuss.httparchive.org/t/how-does-web-font-usage-vary-by-country/1649">web font usage by country</a> on the HTTP Archive discussion forum that certainly influenced the queries used by this chapter. Given the large number of typefaces produced for Asian languages, it's likely usage will rise in that region as technology for serving those fonts more efficiently becomes available.
 
 ### Serving with a service
 
@@ -73,9 +73,9 @@ There's an interesting thread on [web font usage by country](https://discuss.htt
   sql_file="04_05.web_font_usage_breakdown_with_fcp.sql"
 ) }}
 
-It likely comes as no surprise that [Google Fonts](https://fonts.google.com/) remains by far the most popular platform, but the percentage use has actually dropped almost 5% from 2019 to about 70%. [Adobe Fonts](https://fonts.adobe.com/) (formerly Typekit) has dropped about 3% as well, but [Bootstrap usage](https://getbootstrap.com/) has grown from about 3% to over 6% (in aggregate from several providers). It is worth noting that the largest provider for Bootstrap ([BootstrapCDN](https://www.bootstrapcdn.com/)) also provides icon fonts from [Font Awesome](https://fontawesome.com/), so it may be that it is not Bootstrap itself but rather older versions also referencing icon font files that is behind the rise in that source data.
+It likely comes as no surprise that <a hreflang="en" href="https://fonts.google.com/">Google Fonts</a> remains by far the most popular platform, but the percentage use has actually dropped almost 5% from 2019 to about 70%. <a hreflang="en" href="https://fonts.adobe.com/">Adobe Fonts</a> (formerly Typekit) has dropped about 3% as well, but <a hreflang="en" href="https://getbootstrap.com/">Bootstrap usage</a> has grown from about 3% to over 6% (in aggregate from several providers). It is worth noting that the largest provider for Bootstrap (<a hreflang="en" href="https://www.bootstrapcdn.com/">BootstrapCDN</a>) also provides icon fonts from <a hreflang="en" href="https://fontawesome.com/">Font Awesome</a>, so it may be that it is not Bootstrap itself but rather older versions also referencing icon font files that is behind the rise in that source data.
 
-Another surprise in the data is the rise in fonts being served by [Shopify](https://www.shopify.com/). Growing from roughly 1.1% in 2019 to about 4% in 2020, there has clearly been a significant uptick in usage of web fonts by sites hosted on that platform. It is unclear if that is due to that service offering more fonts that they host on their CDN, if it is growth in use of their platform, or both. However, the increase in usage of both Shopify and Bootstrap represent the largest amount of growth other than Google Fonts, making it a very noticeable data point.
+Another surprise in the data is the rise in fonts being served by <a hreflang="en" href="https://www.shopify.com/">Shopify</a>. Growing from roughly 1.1% in 2019 to about 4% in 2020, there has clearly been a significant uptick in usage of web fonts by sites hosted on that platform. It is unclear if that is due to that service offering more fonts that they host on their CDN, if it is growth in use of their platform, or both. However, the increase in usage of both Shopify and Bootstrap represent the largest amount of growth other than Google Fonts, making it a very noticeable data point.
 
 #### Not all services have the same service
 
@@ -104,7 +104,7 @@ When viewing commercial services such as Adobe (`use.typekit.net`) or Monotype (
 
 #### Self-hosting isn't always better
 
-Self-hosting fonts on the same domain as the website can be faster, as [we discovered for this very website](https://www.tunetheweb.com/blog/should-you-self-host-google-fonts/), however this is not always the case as the data shows.
+Self-hosting fonts on the same domain as the website can be faster, as <a hreflang="en" href="https://www.tunetheweb.com/blog/should-you-self-host-google-fonts/">we discovered for this very website</a>, however this is not always the case as the data shows.
 
 {{ figure_markup(
   image="fonts-web-hosting-performance-desktop.png",
@@ -130,7 +130,7 @@ It wouldn't be sound to infer causality between hosting strategy from the above 
 
 #### Local isn't always better
 
-Another option from self-hosting fonts on the site's server, is to use the system-installed fonts on the client where they exist through the use of `local` in the `font-face` declaration. The use of `local` is [controversial](https://bramstein.com/writing/web-font-anti-patterns-local-fonts.html), as it can save bytes, but it can also yield bad results if the locally installed version of the font is outdated. As of [November 2020](https://twitter.com/googlefonts/status/1328761547041148929?s=19), Google Fonts has moved to using `local` only for Roboto on mobile platforms, otherwise the font is always fetched over the network.
+Another option from self-hosting fonts on the site's server, is to use the system-installed fonts on the client where they exist through the use of `local` in the `font-face` declaration. The use of `local` is <a hreflang="en" href="https://bramstein.com/writing/web-font-anti-patterns-local-fonts.html">controversial</a>, as it can save bytes, but it can also yield bad results if the locally installed version of the font is outdated. As of [November 2020](https://twitter.com/googlefonts/status/1328761547041148929?s=19), Google Fonts has moved to using `local` only for Roboto on mobile platforms, otherwise the font is always fetched over the network.
 
 ## Racing to first paint
 
@@ -172,7 +172,7 @@ We can analyze the effect of these settings on First Contentful Paint and Larges
   )
 }}
 
-There are two other interesting inferences from this data. One might expect the `block` setting to have a significant impact on FCP, especially on mobile, but in practice the effect is not that large. That suggests that waiting for font assets is seldom the limiting factor for the web page performance as a whole, though it would certainly be a major factor in pages without lots of resources such as images. The `auto` setting (which is also what you get if you don't specify it) is up to the browser. It looks a lot like `block` because [the default is blocking in most cases](https://nooshu.github.io/blog/2020/02/23/improving-perceived-performance-with-the-css-font-display-property/).
+There are two other interesting inferences from this data. One might expect the `block` setting to have a significant impact on FCP, especially on mobile, but in practice the effect is not that large. That suggests that waiting for font assets is seldom the limiting factor for the web page performance as a whole, though it would certainly be a major factor in pages without lots of resources such as images. The `auto` setting (which is also what you get if you don't specify it) is up to the browser. It looks a lot like `block` because <a hreflang="en" href="https://nooshu.github.io/blog/2020/02/23/improving-perceived-performance-with-the-css-font-display-property/">the default is blocking in most cases</a>.
 
 Finally, one justification for using `fallback` is to improve Largest Content Paint times compared to `swap` (which is more likely to respect the designer's visual intent), but the data do not support this case; this performance metric is no better. Perhaps this is why the setting is not popular, used by only about 1% of pages.
 
@@ -196,7 +196,7 @@ This is especially relevant for hosted font solutions. Only after discovering th
   )
 }}
 
-Adding a [resource hint element](https://www.w3.org/TR/resource-hints/#resource-hints) in the HTML starts that second connection earlier. The various resource hint settings control how far that gets before having the URL for the actual font resource. The most common (at about 32% of web pages) is `dns-prefetch`, even though in most cases there are better choices.
+Adding a <a hreflang="en" href="https://www.w3.org/TR/resource-hints/#resource-hints">resource hint element</a> in the HTML starts that second connection earlier. The various resource hint settings control how far that gets before having the URL for the actual font resource. The most common (at about 32% of web pages) is `dns-prefetch`, even though in most cases there are better choices.
 
 Next we will look at whether these resource hints have an impact on page performance.
 
@@ -234,7 +234,7 @@ It might be tempting to go even farther into the pipeline, preloading or prerend
 
 Fonts increasingly have support for lots and lots of languages. Other fonts can have a large number of glyphs because the writing system (especially CJK) requires it. Either reason can increase the file size. That's unfortunate if the web page is not in fact a multilingual dictionary, and only uses a fraction of the font's capabilities.
 
-One older approach is for the HTML author to explicitly indicate a font subset. However, that requires deeper knowledge of the content, and risks a "ransom note" effect when the content uses characters supported by the font but not by the chosen subset. See the excellent essay [When fonts fall](https://www.figma.com/blog/when-fonts-fall/) by Marcin Wichary for lots more detail about how fallback works.
+One older approach is for the HTML author to explicitly indicate a font subset. However, that requires deeper knowledge of the content, and risks a "ransom note" effect when the content uses characters supported by the font but not by the chosen subset. See the excellent essay <a hreflang="en" href="https://www.figma.com/blog/when-fonts-fall/">When fonts fall</a> by Marcin Wichary for lots more detail about how fallback works.
 
 Static subsets, indicated by `unicode-range`, are a better approach to this problem. The font is sliced into subsets, each with a separate `@font-face` rule that indicates the Unicode coverage for that slice with a `unicode-range` descriptor. The browser then analyzes the content as part of its rendering pipeline, and downloads *only* the slices needed to render that content.
 
@@ -254,7 +254,7 @@ Correctly applying `unicode-range` is tricky, as there's a lot of complexity to 
 
 ## Formats and MIME types
 
-WOFF2 is the best compression format and is now [supported](https://caniuse.com/woff2) by effectively all browsers except for versions 11 and earlier of Internet Explorer. It is *almost* possible to serve web fonts using an `@font-face` rule with a WOFF2 source only. This format makes up about 75% of all fonts served.
+WOFF2 is the best compression format and is now <a hreflang="en" href="https://caniuse.com/woff2">supported</a> by effectively all browsers except for versions 11 and earlier of Internet Explorer. It is *almost* possible to serve web fonts using an `@font-face` rule with a WOFF2 source only. This format makes up about 75% of all fonts served.
 
 {{ figure_markup(
   image="fonts-web-font-mime-types.png",
@@ -298,13 +298,13 @@ The COLR vector format is supported on all major modern browsers, but only fairl
 
 One reason for the poor support of color fonts on the web is that the colors have to be baked into the font files themselves. If you use the same typeface with three different color combinations, near-identical files have to be downloaded three times and changing a color means reaching for a font editor.
 
-While there is a feature in CSS to [override or replace the color palettes in fonts](https://drafts.csswg.org/css-fonts-4/#font-palette-values), this has not yet been implemented in browsers, which certainly holds back the ease of deploying color web fonts.
+While there is a feature in CSS to <a hreflang="en" href="https://drafts.csswg.org/css-fonts-4/#font-palette-values">override or replace the color palettes in fonts</a>, this has not yet been implemented in browsers, which certainly holds back the ease of deploying color web fonts.
 
 Probably most usage of color fonts is for emoji, but the capability is general purpose and color fonts offer many design possibilities. While color web fonts haven't taken off yet, the underlying technology is heavily used to deliver system emoji, where file format compatibility is much less of an issue.
 
-Browser support is so fragmented that color fonts are not yet tracked by caniuse.com, though there is [an issue open for it](https://github.com/Fyrd/caniuse/issues/1018).
+Browser support is so fragmented that color fonts are not yet tracked by caniuse.com, though there is <a hreflang="en" href="https://github.com/Fyrd/caniuse/issues/1018">an issue open for it</a>.
 
-Lots more information about color fonts, including examples, are available at [colorfonts.wtf](https://www.colorfonts.wtf/).
+Lots more information about color fonts, including examples, are available at <a hreflang="en" href="https://www.colorfonts.wtf/">colorfonts.wtf</a>.
 
 ## Variable fonts
 
@@ -322,7 +322,7 @@ Likely the greatest driver of this increase is due to Google Fonts now serving a
 
 The simplest description of the variable font format is a single font file that acts as many: rather than individual font files for every weight and width or even italics, they can all be contained in a single, highly efficient file. That resulting file can render the font at a given combination of axis values via CSS (or other applications that support them). There are a number of standardized, or 'registered', axes plus the ability for font designers to define their own axes and expose them to the user.
 
-Weight (`wght`) corresponds to the traditional notion of regular or bold or light; width (`wdth`) maps to styles like condensed or extended; slant (`slnt`) refers to an oblique angle of the font; italic (`ital`) usually slants the font and replaces certain glyphs with alternate styles; and optical size (`opsz`) refers to something relatively new to the web, but is actually a revival of a technique common in metal type creation going back hundreds of years. Historically, optical sizing refers to the practice of reducing stroke contrast (thick and thin lines) and open up letter spacing when a font is made at a physically smaller size in order to increase legibility, and conversely to increase that contrast and tighten spacing when a font is displayed at much larger sizes. Enabling this in digital type can allow a single font to look and behave substantially differently when used at very small or large sizes. You can learn more about them and see lots of examples at [variablefonts.io](https://variablefonts.io).
+Weight (`wght`) corresponds to the traditional notion of regular or bold or light; width (`wdth`) maps to styles like condensed or extended; slant (`slnt`) refers to an oblique angle of the font; italic (`ital`) usually slants the font and replaces certain glyphs with alternate styles; and optical size (`opsz`) refers to something relatively new to the web, but is actually a revival of a technique common in metal type creation going back hundreds of years. Historically, optical sizing refers to the practice of reducing stroke contrast (thick and thin lines) and open up letter spacing when a font is made at a physically smaller size in order to increase legibility, and conversely to increase that contrast and tighten spacing when a font is displayed at much larger sizes. Enabling this in digital type can allow a single font to look and behave substantially differently when used at very small or large sizes. You can learn more about them and see lots of examples at <a hreflang="en" href="https://variablefonts.io">variablefonts.io</a>.
 
 {{ figure_markup(
   image="fonts-font-variation-settings-usage.png",
@@ -340,15 +340,15 @@ It is worth noting that the preferred method is to use `font-weight` and `font-s
 
 The optical size (`opsz`) feature is used for approximately 2% of the variable font usage. This is one to watch, as tuning the appearance of a font to match its intended size of presentation improves the visual refinement in perhaps subtle but very real ways. Usage is also likely to increase once some current cross-browser and cross-platform uncertainties on how the optical sizes are defined are cleared up. One appealing aspect of the optical size feature is that with the `auto` setting, the variation happens automatically, so the developer gets the benefit of that refinement just by using a font with the `opsz` feature.
 
-There are many potential benefits to using variable fonts. While each included axis increases file size, the tipping point seems to be generally if more than two or three weights of a given typeface are in use, a variable version will likely be similar in total file size or smaller. This is supported by the dramatic increase in [variable fonts being served by Google Fonts](https://fonts.google.com/?vfonly=true).
+There are many potential benefits to using variable fonts. While each included axis increases file size, the tipping point seems to be generally if more than two or three weights of a given typeface are in use, a variable version will likely be similar in total file size or smaller. This is supported by the dramatic increase in <a hreflang="en" href="https://fonts.google.com/?vfonly=true">variable fonts being served by Google Fonts</a>.
 
-Adopting and leveraging variable fonts for more varied design (by using more of the available range of weights and widths) is another. Using a width axis could improve line wrapping on smaller screens, especially with larger headings and longer languages. With the rise in adoption of alternate light modes, making small adjustments to font-weight when switching modes can improve legibility (see [variablefonts.io](https://variablefonts.io) for more on usage and implementation).
+Adopting and leveraging variable fonts for more varied design (by using more of the available range of weights and widths) is another. Using a width axis could improve line wrapping on smaller screens, especially with larger headings and longer languages. With the rise in adoption of alternate light modes, making small adjustments to font-weight when switching modes can improve legibility (see <a hreflang="en" href="https://variablefonts.io">variablefonts.io</a> for more on usage and implementation).
 
 ## Conclusion
 
 Web font technology is fairly mature, with incremental improvements in compression and other technical improvements, but new features are arriving. Browser support for variable fonts has become quite good, and this is the feature that's seen the most growth in the previous year.
 
-The performance landscape is changing somewhat, as the advent of [cache partitioning](https://developers.google.com/web/updates/2020/10/http-cache-partitioning) reduces the performance benefit from sharing the cache of CDN font resources across multiple sites. The trend of hosting more font assets on the same domain as the site, rather than using a CDN, will probably continue. Even so, services such as Google Fonts are highly optimized, and best practices such as use of `swap` and `preconnect` mitigate much of the impact of the additional HTTP connection.
+The performance landscape is changing somewhat, as the advent of <a hreflang="en" href="https://developers.google.com/web/updates/2020/10/http-cache-partitioning">cache partitioning</a> reduces the performance benefit from sharing the cache of CDN font resources across multiple sites. The trend of hosting more font assets on the same domain as the site, rather than using a CDN, will probably continue. Even so, services such as Google Fonts are highly optimized, and best practices such as use of `swap` and `preconnect` mitigate much of the impact of the additional HTTP connection.
 
 The use of variable fonts is accelerating greatly, and that trend will no doubt continue, especially as browser and design tool support improve. It is also possible that 2021 will be the year of the color web font; even though the technology has been in place, that certainly hasn't happened yet.
 
@@ -356,4 +356,4 @@ Finally, it is worth mentioning a new concept in web font technology currently b
 
 The concept in its simplest terms is that only a portion of a given font file would need to be downloaded in order to render the content on a given page. Subsequent page loads would then deliver a 'patch' to the font file that includes only the glyphs necessary to render each new page. Thus at no time would the user need to download the whole font file at once.
 
-There are various details to work out, including ones that will help ensure privacy and backwards compatibility—but initial research has been extremely promising, and it is hoped this technology will reach the wider web sometime in the next couple years. You can learn more about it in [this introduction by Jason Pamental](https://rwt.io/typography-tips/progressive-font-enrichment-reinventing-web-font-performance), and read [the full Working Group Evaluation Report](https://www.w3.org/TR/2020/NOTE-PFE-evaluation-20201015/) on the W3C site.
+There are various details to work out, including ones that will help ensure privacy and backwards compatibility—but initial research has been extremely promising, and it is hoped this technology will reach the wider web sometime in the next couple years. You can learn more about it in <a hreflang="en" href="https://rwt.io/typography-tips/progressive-font-enrichment-reinventing-web-font-performance">this introduction by Jason Pamental</a>, and read <a hreflang="en" href="https://www.w3.org/TR/2020/NOTE-PFE-evaluation-20201015/">the full Working Group Evaluation Report</a> on the W3C site.

@@ -7,7 +7,7 @@ reviewers: [ibnesayeed, denar90]
 analysts: [rviscomi, paulcalvano]
 editors: [rviscomi]
 translators: []
-tkadlec_bio: Tim is a web performance consultant and trainer focused on building a web everyone can use. He is the author of High Performance Images (O'Reilly, 2016) and Implementing Responsive Design (New Riders, 2012). He writes about all things web at <a href="https://timkadlec.com/">timkadlec.com</a>. You can find him sharing his thoughts in a briefer format on Twitter at <a href="https://twitter.com/tkadlec">@tkadlec</a>.
+tkadlec_bio: Tim is a web performance consultant and trainer focused on building a web everyone can use. He is the author of High Performance Images (O'Reilly, 2016) and Implementing Responsive Design (New Riders, 2012). He writes about all things web at <a hreflang="en" href="https://timkadlec.com/">timkadlec.com</a>. You can find him sharing his thoughts in a briefer format on Twitter at <a href="https://twitter.com/tkadlec">@tkadlec</a>.
 discuss: 2038
 results: https://docs.google.com/spreadsheets/d/1cgXJrFH02SHPKDGD0AelaXAdB3UI7PIb5dlS0dxVtfY/
 featured_quote: JavaScript has come a long way from its humble origins as the last of the three web cornerstones—alongside CSS and HTML. Today, JavaScript has started to infiltrate a broad spectrum of the technical stack. It is no longer confined to the client-side and it's an increasingly popular choice for build tools and server-side scripting. JavaScript is also creeping its way into the CDN layer as well thanks to edge computing solutions.
@@ -113,7 +113,7 @@ As raw numbers, those may or may not jump out at you depending on how much of a 
 That 153 KB equates to ~37% of the total script size that we send down to mobile devices. There's definitely some room for improvement here.
 
 ### `module` and `nomodule`
-One mechanism we have to potentially reduce the amount of code we send down is to take advantage of the [`module`/`nomodule` pattern](https://web.dev/serve-modern-code-to-modern-browsers/). With this pattern, we create two sets of bundles: one bundle intended for modern browsers and one intended for legacy browsers. The bundle intended for modern browsers gets a `type=module` and the bundle intended for legacy browsers gets a `type=nomodule`.
+One mechanism we have to potentially reduce the amount of code we send down is to take advantage of the <a hreflang="en" href="https://web.dev/serve-modern-code-to-modern-browsers/">`module`/`nomodule` pattern</a>. With this pattern, we create two sets of bundles: one bundle intended for modern browsers and one intended for legacy browsers. The bundle intended for modern browsers gets a `type=module` and the bundle intended for legacy browsers gets a `type=nomodule`.
 
 This approach lets us create smaller bundles with modern syntax optimized for the browsers that support it, while providing conditionally loaded polyfills and different syntax to the browsers that don't.
 
@@ -121,7 +121,7 @@ Support for `module` and `nomodule` is broadening, but still relatively new. As 
 
 ### Request count
 
-Another way of looking at how much JavaScript we use is to explore how many JavaScript requests are made on each page. While reducing the number of requests was paramount to maintaining good performance with HTTP/1.1, with HTTP/2 the opposite is the case: breaking JavaScript down into [smaller, individual files](https://web.dev/granular-chunking-nextjs/) is [typically better for performance](../2019/http2#impact-of-http2).
+Another way of looking at how much JavaScript we use is to explore how many JavaScript requests are made on each page. While reducing the number of requests was paramount to maintaining good performance with HTTP/1.1, with HTTP/2 the opposite is the case: breaking JavaScript down into <a hreflang="en" href="https://web.dev/granular-chunking-nextjs/">smaller, individual files</a> is [typically better for performance](../2019/http2#impact-of-http2).
 
 {{ figure_markup(
   image="requests-2020.png",
@@ -373,7 +373,7 @@ In fact, the dominance of jQuery is supported even further when you stop to cons
 
 When we look at the frameworks, we also don't see much of a dramatic change in terms of adoption in the main frameworks that were highlighted last year. Vue.js has seen a significant increase, and AMP grew a bit, but most of them are more or less where they were a year ago.
 
-It's worth noting that the [detection issue that was noted last year still applies](https://github.com/AliasIO/wappalyzer/issues/2450), and still impacts the results here. It's possible that there _has_ been a significant change in popularity for a few more of these tools, but we just don't see it with the way the data is currently collected.
+It's worth noting that the <a hreflang="en" href="https://github.com/AliasIO/wappalyzer/issues/2450">detection issue that was noted last year still applies</a>, and still impacts the results here. It's possible that there _has_ been a significant change in popularity for a few more of these tools, but we just don't see it with the way the data is currently collected.
 
 ### What it all means
 
@@ -605,7 +605,7 @@ We get a very similar picture when looking at main thread time for pages where t
   sql_file="main_thread_time_frameworks.sql"
 ) }}
 
-Ember's mobile main thread time jumps out and kind of distorts the graph with how long it takes. (I spent some more time looking into this and it appears to be heavily influenced [by one particular platform using this framework inefficiently](https://timkadlec.com/remembers/2021-01-26-what-about-ember/), rather than an underlying problem with Ember itself.) Pulling it out makes the picture a bit easier to understand.
+Ember's mobile main thread time jumps out and kind of distorts the graph with how long it takes. (I spent some more time looking into this and it appears to be heavily influenced <a hreflang="en" href="https://timkadlec.com/remembers/2021-01-26-what-about-ember/">by one particular platform using this framework inefficiently</a>, rather than an underlying problem with Ember itself.) Pulling it out makes the picture a bit easier to understand.
 
 {{ figure_markup(
   image="frameworks-main-thread-no-ember.png",
@@ -667,7 +667,7 @@ One way of looking at how this translates into impacting the user experience is 
 
 The above chart uses the [Pearson coefficient of correlation](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient). There's a long, kinda complex definition of what that means precisely, but the gist is that we're looking for the strength of the correlation between two different numbers. If we find a coefficient of 1.00, we'd have a direct positive correlation. A correlation of 0.00 would show no connection between two numbers. Anything below 0.00 indicates a negative correlation—in other words, as one number goes up the other one decreases.
 
-First, there doesn't seem to be much of a measurable correlation between our JavaScript metrics and the Lighthouse accessibility ("LH A11y" in the chart) score here. That stands in stark opposition to what's been found elsewhere, notably through [WebAim's annual research](https://webaim.org/projects/million/#frameworks).
+First, there doesn't seem to be much of a measurable correlation between our JavaScript metrics and the Lighthouse accessibility ("LH A11y" in the chart) score here. That stands in stark opposition to what's been found elsewhere, notably through <a hreflang="en" href="https://webaim.org/projects/million/#frameworks">WebAim's annual research</a>.
 
 The most likely explanation for this is that Lighthouse's accessibility tests aren't as comprehensive (yet!) as what is available through other tools, like WebAIM, that have accessibility as their primary focus.
 
@@ -679,7 +679,7 @@ The connection between Total Blocking Time and JavaScript bytes is even more sig
 
 ### Security vulnerabilities
 
-One other helpful audit that Lighthouse runs is to check for known security vulnerabilities in third-party libraries. It does this by detecting which libraries and frameworks are used on a given page, and what version is used of each. Then it checks [Snyk's open-source vulnerability database](https://snyk.io/vuln?type=npm) to see what vulnerabilities have been discovered in the identified tools.
+One other helpful audit that Lighthouse runs is to check for known security vulnerabilities in third-party libraries. It does this by detecting which libraries and frameworks are used on a given page, and what version is used of each. Then it checks <a hreflang="en" href="https://snyk.io/vuln?type=npm">Snyk's open-source vulnerability database</a> to see what vulnerabilities have been discovered in the identified tools.
 
 {{ figure_markup(
   caption="Percent of mobile pages contain at least one vulnerable JavaScript library.",

@@ -9,8 +9,8 @@ editors: [rachellcostello]
 translators: [ksakae]
 discuss: 1757
 results: https://docs.google.com/spreadsheets/d/1uFlkuSRetjBNEhGKWpkrXo4eEIsgYelxY-qR9Pd7QpM/
-una_bio: Una Kravetsは、ブルックリンを拠点とする国際的な講演者であり、テクニカルライターであり、Googleのマテリアルデザインの開発提唱者でもあります。Unaは、<a href="https://www.youtube.com/watch?v=YK8GZBx3hpg">Designing the Browser</a> のウェブシリーズと <a href="https://spec.fm/podcasts/toolsday">Toolsday</a> の開発者向けポッドキャストを主催しています。<a href="https://twitter.com/una">Twitter</a> で彼女をフォローして、クリエイティブなCSS、ユーザー体験、ウェブ開発のベストプラクティスについての彼女の考察を見つけてください。
-argyleink_bio: Adam ArgyleはGoogle Chrome開発者リレーションズのメンバーで、CSSを中心に活動しています。優れたUX & UIを求める飽くなき欲望を持つウェブ中毒者です。<a href="https://twitter.com/argyleink">@argyleink</a> or checkout his website <a href="https://nerdy.dev">https://nerdy.dev</a>。
+una_bio: Una Kravetsは、ブルックリンを拠点とする国際的な講演者であり、テクニカルライターであり、Googleのマテリアルデザインの開発提唱者でもあります。Unaは、<a hreflang="en" href="https://www.youtube.com/watch?v=YK8GZBx3hpg">Designing the Browser</a> のウェブシリーズと <a hreflang="en" href="https://spec.fm/podcasts/toolsday">Toolsday</a> の開発者向けポッドキャストを主催しています。<a href="https://twitter.com/una">Twitter</a> で彼女をフォローして、クリエイティブなCSS、ユーザー体験、ウェブ開発のベストプラクティスについての彼女の考察を見つけてください。
+argyleink_bio: Adam ArgyleはGoogle Chrome開発者リレーションズのメンバーで、CSSを中心に活動しています。優れたUX & UIを求める飽くなき欲望を持つウェブ中毒者です。<a href="https://twitter.com/argyleink">@argyleink</a> or checkout his website <a hreflang="en" href="https://nerdy.dev">https://nerdy.dev</a>。
 featured_quote: Cascading Style Sheets (CSS) は、Web ページのペイント、フォーマット、レイアウトに使用されます。その機能は、テキストの色から3Dパースペクティブと、シンプルな概念にまで及びます。また、さまざまな画面サイズ、表示コンテキスト、および印刷を処理するために開発者に力を与えるフックを持っています。CSS は、開発者がコンテンツを調整し、ユーザーに適切に適応することを確認するのに役立ちます。
 featured_stat_1: 5%
 featured_stat_label_1: カスタムプロパティを使用したページ
@@ -36,7 +36,7 @@ CSSをWebテクノロジーに慣れていない人に説明するときは、CS
 
 ### 色の種類
 
-16進数は、色を説明する最も一般的な方法であり93％の使用率、RGB、HSLが続きます。興味深いことに、開発者はこれらの色の種類に関してアルファ透明度の引数を最大限に活用しています。HSLAとRGBAは、HSLとRGBよりもはるかに人気があり、使用量はほぼ2倍です。アルファ透明度は後でWeb仕様に追加されましたが、HSLAとRGBAは[IE9までさかのぼって](https://caniuse.com/#feat=css3-colors)サポートされているため、先に進んで使用することもできます！
+16進数は、色を説明する最も一般的な方法であり93％の使用率、RGB、HSLが続きます。興味深いことに、開発者はこれらの色の種類に関してアルファ透明度の引数を最大限に活用しています。HSLAとRGBAは、HSLとRGBよりもはるかに人気があり、使用量はほぼ2倍です。アルファ透明度は後でWeb仕様に追加されましたが、HSLAとRGBAは<a hreflang="en" href="https://caniuse.com/#feat=css3-colors">IE9までさかのぼって</a>サポートされているため、先に進んで使用することもできます！
 
 {{ figure_markup(
   image="fig1.png",
@@ -48,7 +48,7 @@ CSSをWebテクノロジーに慣れていない人に説明するときは、CS
 
 ### 色の選択
 
-CSSの[名前付きカラーは148個](https://www.w3.org/TR/css-color-4/#named-colors)あり、`transparent`および`currentcolor`の特別な値は含まれていません。これらを文字列名で使用して、読みやすくできます。最も人気がある名前の付いた色は`黒`と`白`であり、当然のことながら`赤`と`青`が続きます。
+CSSの<a hreflang="en" href="https://www.w3.org/TR/css-color-4/#named-colors">名前付きカラーは148個</a>あり、`transparent`および`currentcolor`の特別な値は含まれていません。これらを文字列名で使用して、読みやすくできます。最も人気がある名前の付いた色は`黒`と`白`であり、当然のことながら`赤`と`青`が続きます。
 
 {{ figure_markup(
   image="fig2.png",
@@ -62,7 +62,7 @@ CSSの[名前付きカラーは148個](https://www.w3.org/TR/css-color-4/#named-
   )
 }}
 
-言語は色によっても興味深いことに推測されます。イギリス式の「grey」よりもアメリカ式の「gray」の例が多くあります。[グレー色](https://www.rapidtables.com/web/color/gray-color.html)（`グレー`、`ライトグレー`、`ダークグレー`、`スレートグレー`など）のほぼすべてのインスタンスは、「e」ではなく「a」で綴ると、使用率がほぼ2倍になりました。 gr [a/e] ysが組み合わされた場合、それらは青よりも上位にランクされ、＃4スポットで固まります。これが、チャートで銀がグレーよりも高いランクになっている理由です。
+言語は色によっても興味深いことに推測されます。イギリス式の「grey」よりもアメリカ式の「gray」の例が多くあります。<a hreflang="en" href="https://www.rapidtables.com/web/color/gray-color.html">グレー色</a>（`グレー`、`ライトグレー`、`ダークグレー`、`スレートグレー`など）のほぼすべてのインスタンスは、「e」ではなく「a」で綴ると、使用率がほぼ2倍になりました。 gr [a/e] ysが組み合わされた場合、それらは青よりも上位にランクされ、＃4スポットで固まります。これが、チャートで銀がグレーよりも高いランクになっている理由です。
 
 ### 色の数
 
@@ -106,7 +106,7 @@ CSSには、異なるユニットタイプ（`rem`、`px`、`em`、`ch`、また
 
 物理的な空間に基づいた単位となると、`cm`（またはセンチメートル）ユニットが最も人気であり、次に`in`（インチ）、`Q`が続きます。これらのタイプのユニットは、印刷スタイルシートに特に役立つことがわかっていますが、この調査まで`Q`ユニットが存在することさえ知りませんでした！　知ってましたか？
 
-<p class="note">この章の以前のバージョンでは、<code>Q</code>ユニットの予想外の人気について説明しました。この章を取り巻く<a href="https://discuss.httparchive.org/t/chapter-2-css/1757/6">コミュニティの議論</a>のおかげで、これは分析のバグであることがわかり、それに応じて図2.5を更新しました。</p>
+<p class="note">この章の以前のバージョンでは、<code>Q</code>ユニットの予想外の人気について説明しました。この章を取り巻く<a hreflang="en" href="https://discuss.httparchive.org/t/chapter-2-css/1757/6">コミュニティの議論</a>のおかげで、これは分析のバグであることがわかり、それに応じて図2.5を更新しました。</p>
 
 ### ビューポートベースのユニット
 
@@ -342,7 +342,7 @@ CSSの`z-index`を使用して、垂直の階層化またはスタックを管�
 
 スタイルシートの78％に`フィルター`プロパティが含まれていることがわかりました。その数も非常に高かったので、少し怪しいように思えたので、私たちは深掘りしてその高い数を説明しようとしました。正直に言って、フィルターはきちんとしていますが、すべてのアプリケーションやプロジェクトに組み込まれているわけではありません。しない限り！
 
-さらなる調査の結果、[FontAwesome](https://fontawesome.com)のスタイルシートには`フィルター`の使用法と[YouTube](https://youtube.com)埋め込みが含まれていることがわかりました。そのため、非常に人気のあるいくつかのスタイルシートに便乗することで、バックドアに`フィルター`が入り込むと考えています。また、`-ms-filter`の存在も含まれている可能性があり、使用率が高くなっていると考えられます。
+さらなる調査の結果、<a hreflang="en" href="https://fontawesome.com">FontAwesome</a>のスタイルシートには`フィルター`の使用法と<a hreflang="en" href="https://youtube.com">YouTube</a>埋め込みが含まれていることがわかりました。そのため、非常に人気のあるいくつかのスタイルシートに便乗することで、バックドアに`フィルター`が入り込むと考えています。また、`-ms-filter`の存在も含まれている可能性があり、使用率が高くなっていると考えられます。
 
 ### ブレンドモード
 
@@ -695,7 +695,7 @@ Webサイトが各コンテンツタイプにロードするバイト数の詳�
   <figcaption>{{ figure_link(caption="特定のCSSライブラリを含むページの割合。") }}</figcaption>
 </figure>
 
-このチャートは、[Bootstrap](https://getbootstrap.com/)がプロジェクトを支援するために知っておくべき貴重なライブラリであることを示唆しています。支援する機会があるすべてを見てください！　すべてのサイトがCSSフレームワークを使用しているわけではないので、これはポジティブなシグナルチャートにすぎないことも注目に値します。100％に達することはありません。すべてのサイトの半分以上が、既知のCSSフレームワークを使用していません。とても面白いですよね！
+このチャートは、<a hreflang="en" href="https://getbootstrap.com/">Bootstrap</a>がプロジェクトを支援するために知っておくべき貴重なライブラリであることを示唆しています。支援する機会があるすべてを見てください！　すべてのサイトがCSSフレームワークを使用しているわけではないので、これはポジティブなシグナルチャートにすぎないことも注目に値します。100％に達することはありません。すべてのサイトの半分以上が、既知のCSSフレームワークを使用していません。とても面白いですよね！
 
 ### リセットユーティリティ
 
@@ -711,7 +711,7 @@ CSSリセットユーティリティは、ネイティブWeb要素のベース�
   )
 }}
 
-Webの約3分の1が[`normalize.css`](https://necolas.github.io/normalize.css)を使用していることがわかります。これは、リセットよりもタスクへのより穏やかなアプローチと考えることができます。少し詳しく見てみると、Bootstrapには`normalize.css`が含まれていることがわかりました。 `normalize.css`がBootstrapよりも多く採用されていることも注目に値するので、それを単独で使用する人がたくさんいます。
+Webの約3分の1が<a hreflang="en" href="https://necolas.github.io/normalize.css">`normalize.css`</a>を使用していることがわかります。これは、リセットよりもタスクへのより穏やかなアプローチと考えることができます。少し詳しく見てみると、Bootstrapには`normalize.css`が含まれていることがわかりました。 `normalize.css`がBootstrapよりも多く採用されていることも注目に値するので、それを単独で使用する人がたくさんいます。
 
 ### `@supports`と`@import`
 

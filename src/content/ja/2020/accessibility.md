@@ -7,7 +7,7 @@ reviewers: [aardrian, ericwbailey, obto]
 analysts: [obto]
 editors: [bazzadp]
 translators: [ksakae]
-oluoluoxenfree_bio: Olu Niyi-AwosusiはFTのソフトウェアエンジニアで、リスト、新しいことを学ぶこと、Bee and Puppycat、<a href="https://alistapart.com/article/building-the-woke-web/">社会正義、アクセシビリティ</a>、そして日々努力することを愛しています。
+oluoluoxenfree_bio: Olu Niyi-AwosusiはFTのソフトウェアエンジニアで、リスト、新しいことを学ぶこと、Bee and Puppycat、<a hreflang="en" href="https://alistapart.com/article/building-the-woke-web/">社会正義、アクセシビリティ</a>、そして日々努力することを愛しています。
 alextait1_bio: Alex Taitは、開発者、コンサルタント、教育者であり、その情熱は、モダンJavaScript内のインターフェイスアーキテクチャとデザインシステム、アクセシビリティにあります。 開発者として、アクセシビリティを前面に出した包括主導の開発手法は、すべての人にとってより良い製品につながると信じています。 コンサルタントであり戦略家でもある彼女は、「少ないことは豊かである」を信条としており、新しい機能の要件変更は、障害のあるユーザーにとってコア機能の等価性よりも優先されるべきものではないと考えています。教育者として、技術がより多様で公平で包括的な産業になるように、情報の障壁を取り除くことを信条としています。
 discuss: 2044
 results: https://docs.google.com/spreadsheets/d/1UjEBhq0TfYxUpdpq5IuxjeHB4yqhJq4NOKEd6Dwwrdk/
@@ -23,17 +23,17 @@ featured_stat_label_3: クローズドキャプションを提供する動画
 
 ## 序章
 
-2020年には、これまで以上にデジタルスペースの包括化とアクセス容易化が急務となっています。現在進行中のパンデミックにより、人々が対面でサービスにアクセスすることがさらに困難になり、産業全体がオンラインに移行しているため、障害者は不釣り合いな影響を受けています。さらに、パンデミックの[長期的な影響](https://www.cdc.gov/coronavirus/2019-ncov/long-term-effects.html)により、障害者の数は増加しています。
+2020年には、これまで以上にデジタルスペースの包括化とアクセス容易化が急務となっています。現在進行中のパンデミックにより、人々が対面でサービスにアクセスすることがさらに困難になり、産業全体がオンラインに移行しているため、障害者は不釣り合いな影響を受けています。さらに、パンデミックの<a hreflang="en" href="https://www.cdc.gov/coronavirus/2019-ncov/long-term-effects.html">長期的な影響</a>により、障害者の数は増加しています。
 
 ウェブアクセシビリティとは、機能と情報の同等性を達成し、障害者がインターフェイスのあらゆる側面に完全にアクセスできるようにすることです。デジタル製品やウェブサイトは、誰もが使えるものでなければ、完全なものではありません。特定の障害者を排除している場合、これは差別であり、罰金や訴訟の根拠となる可能性があります。
 
-[Web Content Accessibility Guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/)、またはWCAGとは、インターネットを利用するすべてのウェブサイトやアプリケーションで満たす必要がある国際的に認められた基準のセットです。これらは法律ではありませんが、[多くの法律がその根拠としてWCAGを指摘しています](https://www.w3.org/WAI/policies/)。
+<a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/wcag/">Web Content Accessibility Guidelines</a>、またはWCAGとは、インターネットを利用するすべてのウェブサイトやアプリケーションで満たす必要がある国際的に認められた基準のセットです。これらは法律ではありませんが、<a hreflang="en" href="https://www.w3.org/WAI/policies/">多くの法律がその根拠としてWCAGを指摘しています</a>。
 
-これらのガイドラインは何年にもわたって何度もリリースされており、現在の標準はWCAG 2.1であり、WCAG 2.2は現在[作業草案](https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/)として審査されています。いくつかの地域の法律ではWCAG 2.0が要件とされていますが、[Adrian Roselli](https://twitter.com/aardrian)が彼の記事[WCAG 2.1 is the Current Standard, Not WCAG 2.0 - and WCAG 2.2 is Coming](https://adrianroselli.com/2020/09/wcag-2-1-is-the-current-standard-not-wcag-2-0-and-wcag-2-2-is-coming.html)で取り上げているように、私たちはWCAG 2.1の基準を満たし、WCAG 2.2で来る新しい基準も考慮しなければなりません。
+これらのガイドラインは何年にもわたって何度もリリースされており、現在の標準はWCAG 2.1であり、WCAG 2.2は現在<a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/">作業草案</a>として審査されています。いくつかの地域の法律ではWCAG 2.0が要件とされていますが、[Adrian Roselli](https://twitter.com/aardrian)が彼の記事<a hreflang="en" href="https://adrianroselli.com/2020/09/wcag-2-1-is-the-current-standard-not-wcag-2-0-and-wcag-2-2-is-coming.html">WCAG 2.1 is the Current Standard, Not WCAG 2.0 - and WCAG 2.2 is Coming</a>で取り上げているように、私たちはWCAG 2.1の基準を満たし、WCAG 2.2で来る新しい基準も考慮しなければなりません。
 
-2020年に向けて、これまで以上に露出が増えている危険な傾向は、「アクセシビリティ・オーバーレイ」の使用です。これらのウィジェットは一歩進んだアクセシビリティの遵守を約束しているが、多くの場合、新たな障壁を導入し、障害のあるユーザーの体験をかなり困難なものにしている。デジタル関係者は、使い勝手の良いインターフェイスの設計と実装に責任を持つことが重要であり、安易な修正でこのプロセスを台無しにしようとしないことが重要です。詳細については、Lainey Feingoldの記事、[Honor the ADA: Avoid Web Accessibility Quick Fix Overlays](https://www.lflegal.com/2020/08/quick-fix/)を参照してください。
+2020年に向けて、これまで以上に露出が増えている危険な傾向は、「アクセシビリティ・オーバーレイ」の使用です。これらのウィジェットは一歩進んだアクセシビリティの遵守を約束しているが、多くの場合、新たな障壁を導入し、障害のあるユーザーの体験をかなり困難なものにしている。デジタル関係者は、使い勝手の良いインターフェイスの設計と実装に責任を持つことが重要であり、安易な修正でこのプロセスを台無しにしようとしないことが重要です。詳細については、Lainey Feingoldの記事、<a hreflang="en" href="https://www.lflegal.com/2020/08/quick-fix/">Honor the ADA: Avoid Web Accessibility Quick Fix Overlays</a>を参照してください。
 
-悲しいことに、私たちや[WebAIM Million](https://webaim.org/projects/million/)のような分析を行っている他のチームは、年々これらの指標にほとんど改善が見られず場合によっては全く改善が見られないことを発見しています。すべての[Lighthouse Accessibility](https://web.dev/lighthouse-accessibility/)監査データのサイト全体のスコアの中央値は、2019年の73%から2020年には80%に上昇しました。この7%の上昇は、正しい方向へのシフトを表していると期待しています。しかし、これらは自動化されたチェックであり、開発者がルールエンジンを裏切る良い仕事をしていることを意味する可能性があるので慎重に楽観視しています。
+悲しいことに、私たちや<a hreflang="en" href="https://webaim.org/projects/million/">WebAIM Million</a>のような分析を行っている他のチームは、年々これらの指標にほとんど改善が見られず場合によっては全く改善が見られないことを発見しています。すべての<a hreflang="en" href="https://web.dev/lighthouse-accessibility/">Lighthouse Accessibility</a>監査データのサイト全体のスコアの中央値は、2019年の73%から2020年には80%に上昇しました。この7%の上昇は、正しい方向へのシフトを表していると期待しています。しかし、これらは自動化されたチェックであり、開発者がルールエンジンを裏切る良い仕事をしていることを意味する可能性があるので慎重に楽観視しています。
 
 当社の分析は、自動化されたメトリクスのみに基づいています。自動化されたテストは、インターフェイスに存在しうるアクセシビリティの障壁のほんの一部を捉えているに過ぎないことを覚えておくことが重要です。アクセシブルなサイトやアプリケーションを実現するためには、手動テストや障害者によるユーザビリティ・テストを含む定性分析が必要です。
 
@@ -71,7 +71,7 @@ featured_stat_label_3: クローズドキャプションを提供する動画
 
 ユーザーがページやコンテンツを拡大表示できるようにすることが不可欠です。ブラウザの拡大縮小やズーム機能を無効にしようとするテクニックがあります。OSによっては、この有害なパターンを回避するものもありますが、多くはそうでなく回避する必要があるアンチパターンです。
 
-特に弱視の方にはズーム機能が便利です。[世界保健機関](https://www.who.int/news-room/fact-sheets/detail/blindness-and-visual-impairment)によると、「世界では10億人が視力障害を抱えている」とされています。
+特に弱視の方にはズーム機能が便利です。<a hreflang="en" href="https://www.who.int/news-room/fact-sheets/detail/blindness-and-visual-impairment">世界保健機関</a>によると、「世界では10億人が視力障害を抱えている」とされています。
 
 {{ figure_markup(
   image="sites-with-zooming-and-scaling-disabled.png",
@@ -83,7 +83,7 @@ featured_stat_label_3: クローズドキャプションを提供する動画
   )
 }}
 
-デスクトップページの29.34%とモバイルページの30.66%が、`maximum-scale`を1未満の値に設定するか、`user-scalable`を`0`または`none`に設定することで、スケーリングを無効にしようとしていることがわかった。いくつかのOSでは、HTMLで設定されているズームや拡大縮小の無効化に対応していないものがあります。これに対応しているシステムでは、一部のシステムではページが事実上使えなくなることがあります。ブラウザのズームを無効にするのを避ける理由については、Adrian Roselliの記事[Don't Disable Zoom](https://adrianroselli.com/2015/10/dont-disable-zoom.html) を参照してください。
+デスクトップページの29.34%とモバイルページの30.66%が、`maximum-scale`を1未満の値に設定するか、`user-scalable`を`0`または`none`に設定することで、スケーリングを無効にしようとしていることがわかった。いくつかのOSでは、HTMLで設定されているズームや拡大縮小の無効化に対応していないものがあります。これに対応しているシステムでは、一部のシステムではページが事実上使えなくなることがあります。ブラウザのズームを無効にするのを避ける理由については、Adrian Roselliの記事<a hreflang="en" href="https://adrianroselli.com/2015/10/dont-disable-zoom.html">Don't Disable Zoom</a> を参照してください。
 
 ### 言語の識別
 
@@ -104,7 +104,7 @@ HTMLの`lang`属性を設定すると、ページを簡単に翻訳でき、ス�
 
 ### 画像とそのテキストの選択肢
 
-1995年、[HTML 2.0](https://www.w3.org/MarkUp/html-spec/html-spec_5.html#SEC5.10)では、`alt`属性が導入され、ウェブ制作者が画像内の視覚情報の代替テキストを提供できるようになりました。スクリーンリーダーは、画像の代替テキストを表示することで、視覚的な意味を聴覚的に伝えることができます。さらに、画像が読み込めない場合は、説明の代替テキストが表示されます。
+1995年、<a hreflang="en" href="https://www.w3.org/MarkUp/html-spec/html-spec_5.html#SEC5.10">HTML 2.0</a>では、`alt`属性が導入され、ウェブ制作者が画像内の視覚情報の代替テキストを提供できるようになりました。スクリーンリーダーは、画像の代替テキストを表示することで、視覚的な意味を聴覚的に伝えることができます。さらに、画像が読み込めない場合は、説明の代替テキストが表示されます。
 
 {{ figure_markup(
   caption='Lighthouse監査で「`alt`の文字が入った画像」を通過した携帯サイト',
@@ -115,7 +115,7 @@ HTMLの`lang`属性を設定すると、ページを簡単に翻訳でき、ス�
 )
 }}
 
-2020年のLighthouse監査データによると、[画像に`alt`テキストがある場合のテスト](https://dequeuniversity.com/rules/axe/3.5/image-alt)に合格したサイトは54%に過ぎません。このテストでは、`img`要素に`alt`,`aria-label`,`aria-labelledby`属性のうち少なくとも1つが存在するかどうかを調べます。ほとんどの場合、`alt`属性を使うのが最良の選択です。
+2020年のLighthouse監査データによると、<a hreflang="en" href="https://dequeuniversity.com/rules/axe/3.5/image-alt">画像に`alt`テキストがある場合のテスト</a>に合格したサイトは54%に過ぎません。このテストでは、`img`要素に`alt`,`aria-label`,`aria-labelledby`属性のうち少なくとも1つが存在するかどうかを調べます。ほとんどの場合、`alt`属性を使うのが最良の選択です。
 
 {{ figure_markup(
   image="alt-attribute-lengths.png",
@@ -129,7 +129,7 @@ HTMLの`lang`属性を設定すると、ページを簡単に翻訳でき、ス�
 
 `alt`属性は25年前から存在していますが、デスクトップ画像の21.24%とモバイル画像の21.38%が代替テキストを欠いていることもわかりました。これは選択したアクセシビリティツールを使用してテストする最も簡単な自動チェックの1つであり、ぶら下がりが少なく、比較的簡単に解決できる問題であるはずです。
 
-スクリーン・リーダーのユーザーは、コンテンツの構造、意味論、関係性が発表されるインターフェイスの聴覚的または音響的な体験である[Steve Faulker氏が説明する"aural UI"](https://developer.paciellogroup.com/blog/2015/10/thus-spoke-html/)に耳を傾ける。これは、スクリーンリーダーのユーザーが多くのテキスト情報を消費することを意味します。このため、画像を記述する必要がないかもしれないかどうかを評価することが重要です。これは画像をどのように記述するか、あるいは記述するかを決定するのに役立つ[W3Cの決定木](https://www.w3.org/WAI/tutorials/images/decision-tree/)です。画像が本当に装飾的で、周囲の文脈に何の意味もない場合は、`alt`属性にヌル値、`alt=""`を代入できます。これは、`alt`属性を完全に省略するのではなく、明示的に行うことが重要です。
+スクリーン・リーダーのユーザーは、コンテンツの構造、意味論、関係性が発表されるインターフェイスの聴覚的または音響的な体験である<a hreflang="en" href="https://developer.paciellogroup.com/blog/2015/10/thus-spoke-html/">Steve Faulker氏が説明する"aural UI"</a>に耳を傾ける。これは、スクリーンリーダーのユーザーが多くのテキスト情報を消費することを意味します。このため、画像を記述する必要がないかもしれないかどうかを評価することが重要です。これは画像をどのように記述するか、あるいは記述するかを決定するのに役立つ<a hreflang="en" href="https://www.w3.org/WAI/tutorials/images/decision-tree/">W3Cの決定木</a>です。画像が本当に装飾的で、周囲の文脈に何の意味もない場合は、`alt`属性にヌル値、`alt=""`を代入できます。これは、`alt`属性を完全に省略するのではなく、明示的に行うことが重要です。
 
 デスクトップページの26.20％、モバイルページの26.23％が、null/空の値を持つ`alt`属性を含んでいることがわかりました。これは、4分の1以上のウェブサイトが、自動チェックを回避するための手段としてではなく、画像が本当に意味のあるものであるかを考慮して開発されていることを示していると期待しています。
 
@@ -191,7 +191,7 @@ HTMLの`lang`属性を設定すると、ページを簡単に翻訳でき、ス�
 
 > "多くのユーザエージェントがこの仕様で要求されているように、アクセス可能な方法で属性を公開していないため、`title`属性に依存することは現在のところ推奨されていません。"
 
-またツールチップは情報がマウスオーバー時にしか表示されない、情報が支援技術に適切に伝達されない、キーボードのサポートがない、一般的な使い勝手の悪さなど他の多くのアクセシビリティの障壁を導入しています。ツールチップの歴史とその障壁については、[Sarah Higley](https://twitter.com/codingchaos)のブログ記事[Tooltips in the time of WCAG 2.1](https://sarahmhigley.com/writing/tooltips-in-wcag-21/)でよく説明されています。
+またツールチップは情報がマウスオーバー時にしか表示されない、情報が支援技術に適切に伝達されない、キーボードのサポートがない、一般的な使い勝手の悪さなど他の多くのアクセシビリティの障壁を導入しています。ツールチップの歴史とその障壁については、[Sarah Higley](https://twitter.com/codingchaos)のブログ記事<a hreflang="en" href="https://sarahmhigley.com/writing/tooltips-in-wcag-21/">Tooltips in the time of WCAG 2.1</a>でよく説明されています。
 
 すべての`alt`属性の16.95%が`title`属性を含んでいることがわかった。このうち、デスクトップサイトでは73.56%、モバイルサイトでは72.80%が`alt`属性と`title`属性の両方に一致する値を持っていました。
 
@@ -211,7 +211,7 @@ HTMLの`lang`属性を設定すると、ページを簡単に翻訳でき、ス�
 
 ### ウェブ上の動画
 
-ビデオやその他のマルチメディアコンテンツは、ウェブ体験を豊かにできますが、多くの場合すべてのユーザーがしっかりとサポートされているわけではなく、サポートが実装されていなければ大きなアクセシビリティの障壁となる可能性があります。詳細については、[W3C's Making Audio and Video Accessible](https://www.w3.org/WAI/media/av/)を参照してください。
+ビデオやその他のマルチメディアコンテンツは、ウェブ体験を豊かにできますが、多くの場合すべてのユーザーがしっかりとサポートされているわけではなく、サポートが実装されていなければ大きなアクセシビリティの障壁となる可能性があります。詳細については、<a hreflang="en" href="https://www.w3.org/WAI/media/av/">W3C's Making Audio and Video Accessible</a>を参照してください。
 
 #### キャプション
 
@@ -236,7 +236,7 @@ HTMLの`lang`属性を設定すると、ページを簡単に翻訳でき、ス�
 
 障害のあるユーザーにとっては、自動再生やループ再生による大きな障壁があります。スクリーンリーダーのユーザーにとって、音声を含むビデオはアナウンスを混乱させ、混乱を招く可能性があります。ADHDなどの認知障害を持つ人にとって、動画は非常に気が散り、ユーザーがインターフェイスを使用して理解する能力を妨げる可能性があります。前庭疾患のある人は、ビデオが危険な引き金になることもあります。
 
-ウェブコンテンツアクセシビリティガイドラインには、5秒以上再生される移動、点滅、スクロールするコンテンツ（動画を含む）には、一時停止、停止、非表示の仕組みがあることを要求する基準[2.2.2 Pause, Stop, Hide](https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html)があります。
+ウェブコンテンツアクセシビリティガイドラインには、5秒以上再生される移動、点滅、スクロールするコンテンツ（動画を含む）には、一時停止、停止、非表示の仕組みがあることを要求する基準<a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html">2.2.2 Pause, Stop, Hide</a>があります。
 
 {{ figure_markup(
   image="common-video-attributes.png",
@@ -267,13 +267,13 @@ HTMLの`lang`属性を設定すると、ページを簡単に翻訳でき、ス�
   sql_file="lighthouse_a11y_audits.sql"
 ) }}
 
-私たちの監査では、チェックされたサイトの58.72%が、レベルをスキップしない[適切に並べられた見出しのテスト](https://web.dev/heading-order/)に合格していることが明らかになりました。これらの見出しは、ページの意味的な構造を伝えます。多くのスクリーン・リーダー・ユーザーは見出しを使ってページをナビゲートしているので、見出しが正しい順序（ジャンプせずに昇順）であることは、支援技術ユーザーに最高の体験を提供することを意味します。このルールが守られる可能性の高いページだけをチェックしていることは注目に値します。
+私たちの監査では、チェックされたサイトの58.72%が、レベルをスキップしない<a hreflang="en" href="https://web.dev/heading-order/">適切に並べられた見出しのテスト</a>に合格していることが明らかになりました。これらの見出しは、ページの意味的な構造を伝えます。多くのスクリーン・リーダー・ユーザーは見出しを使ってページをナビゲートしているので、見出しが正しい順序（ジャンプせずに昇順）であることは、支援技術ユーザーに最高の体験を提供することを意味します。このルールが守られる可能性の高いページだけをチェックしていることは注目に値します。
 
 ### リンクをスキップする
 
 スキップリンクは、ユーザーがナビゲーションシステムなどのインタラクティブなコンテンツをスキップして、別の目的地（通常はページのメインコンテンツ）に移動することを可能にします。スキップリンクは通常、ページ上の最初のリンクであり、UI内で永続的に表示されるか、キーボードフォーカスを持つまで目に見えないようにできます。これにより、キーボードユーザーがアクセスしようとしているコンテンツにたどり着くため、余計な数の要素をタブで移動する必要がなくなります。
 
-スキップリンクはブロックのバイパスとみなされます。2020年のLighthouseの監査データによると、93.90%のサイトが[バイパスブロック](https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html)テストに合格していることが明らかになりました。これは、`<header>`やスキップリンク、ランドマーク領域を設けて、ユーザーが反復的なコンテンツをスキップできるようにしていることを意味しています。
+スキップリンクはブロックのバイパスとみなされます。2020年のLighthouseの監査データによると、93.90%のサイトが<a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html">バイパスブロック</a>テストに合格していることが明らかになりました。これは、`<header>`やスキップリンク、ランドマーク領域を設けて、ユーザーが反復的なコンテンツをスキップできるようにしていることを意味しています。
 
 ### テーブル
 
@@ -332,7 +332,7 @@ HTMLの`lang`属性を設定すると、ページを簡単に翻訳でき、ス�
 
 ## ウェブ上の支援技術
 
-様々な障害を持つ人々は、様々な支援技術を使用してウェブを体験するのを支援しています。W3CのWeb Accessibility Initiative(WAI)の[Tools and Techniques](https://www.w3.org/WAI/people-use-web/tools-techniques/) の記事では様々な支援技術を使用して、ユーザーがどのようにウェブを知覚し、理解し、対話できるかについて説明しています。
+様々な障害を持つ人々は、様々な支援技術を使用してウェブを体験するのを支援しています。W3CのWeb Accessibility Initiative(WAI)の<a hreflang="en" href="https://www.w3.org/WAI/people-use-web/tools-techniques/">Tools and Techniques</a> の記事では様々な支援技術を使用して、ユーザーがどのようにウェブを知覚し、理解し、対話できるかについて説明しています。
 
 ウェブ用の支援技術には、以下のようなものがあります。
 
@@ -345,7 +345,7 @@ HTMLの`lang`属性を設定すると、ページを簡単に翻訳でき、ス�
 
 ### ARIAの紹介
 
-2014年にWAIはAccessible Rich Internet Application（ARIA）を発表しました。彼らは[ARIAを次のように記述しています](https://www.w3.org/WAI/standards-guidelines/aria/)。
+2014年にWAIはAccessible Rich Internet Application（ARIA）を発表しました。彼らは<a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/aria/">ARIAを次のように記述しています</a>。
 
 > "WAI-ARIA（Accessible Rich Internet Applications Suite）は、障害者がウェブコンテンツやウェブアプリケーションをよりアクセスしやすくする方法を定義しています。特に、Ajax、HTML、JavaScriptおよび関連技術を用いて開発された動的コンテンツや高度なユーザーインターフェイスコントロールを支援します。"
 
@@ -353,9 +353,9 @@ HTMLの`lang`属性を設定すると、ページを簡単に翻訳でき、ス�
 
 ### ARIAの5つのルール
 
-この強力なツールセットを利用する前に理解しておかなければならない[ARIAの5つのルール](https://www.w3.org/TR/using-aria/)があります。これは要求される適合性を備えた公式な仕様ではなく、ARIAを正しく理解し、実装するためのガイドです。
+この強力なツールセットを利用する前に理解しておかなければならない<a hreflang="en" href="https://www.w3.org/TR/using-aria/">ARIAの5つのルール</a>があります。これは要求される適合性を備えた公式な仕様ではなく、ARIAを正しく理解し、実装するためのガイドです。
 
-1. 要素を再利用して、アクセス可能にするためのARIAの役割、状態、プロパティを追加するのではなく、必要なセマンティクスや動作がすでに組み込まれているネイティブHTML要素[HTML5.1](https://www.w3.org/TR/html51/)や属性を使用できるのであればそうしてください。
+1. 要素を再利用して、アクセス可能にするためのARIAの役割、状態、プロパティを追加するのではなく、必要なセマンティクスや動作がすでに組み込まれているネイティブHTML要素<a hreflang="en" href="https://www.w3.org/TR/html51/">HTML5.1</a>や属性を使用できるのであればそうしてください。
 2. 本当に必要でない限り、ネイティブセマンティクスを変更しないでください。
 3. すべての対話型ARIAコントロールは、キーボードで使用可能でなければなりません。
 4. フォーカス可能な要素に`role="presentation"`や`aria-hidden="true"`を使用してはいけません。
@@ -365,7 +365,7 @@ HTMLの`lang`属性を設定すると、ページを簡単に翻訳でき、ス�
 
 ARIAが使用される最も一般的な方法の一つは、ある要素の役割を明示的に定義することによって、その目的を支援技術に伝えることです。
 
-HTML5では多くの新しいネイティブ要素が導入されましたが、そのすべてがロールを含む [暗黙のセマンティクス](https://www.w3.org/TR/wai-aria-1.1/#implicit_semantics) を持っています。例えば、`<nav>`要素は暗黙のうちに `role="navigation"`を持っており、支援技術者に目的情報を伝えるためにこのロールを明示的に追加する必要はありません。現在、デスクトップページの64.54%がARIAの`role`属性のインスタンスを少なくとも1つ持っています。中央値のサイトには2つの `role`属性のインスタンスがあります。
+HTML5では多くの新しいネイティブ要素が導入されましたが、そのすべてがロールを含む <a hreflang="en" href="https://www.w3.org/TR/wai-aria-1.1/#implicit_semantics">暗黙のセマンティクス</a> を持っています。例えば、`<nav>`要素は暗黙のうちに `role="navigation"`を持っており、支援技術者に目的情報を伝えるためにこのロールを明示的に追加する必要はありません。現在、デスクトップページの64.54%がARIAの`role`属性のインスタンスを少なくとも1つ持っています。中央値のサイトには2つの `role`属性のインスタンスがあります。
 
 {{ figure_markup(
   image="common-aria-roles.png",
@@ -383,7 +383,7 @@ HTML5では多くの新しいネイティブ要素が導入されましたが、
 
 `<div>`や`<span>`のような非インタラクティブな要素にこの役割が与えられている場合、ARIAの5つのルールのうちの1つ以上が破られている可能性が高いです。
 
-ARIAの第一のルールに従えば、ネイティブの`<button>`要素の方が良い選択である可能性が高いです。また役割が追加されたにもかかわらず、期待されるキーボードのサポートが提供されていない可能性もあり、これはARIAの第三のルールを破り、[WCAG 2.1.1, Keyboard](https://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-keyboard-operable.html)に違反することになります。
+ARIAの第一のルールに従えば、ネイティブの`<button>`要素の方が良い選択である可能性が高いです。また役割が追加されたにもかかわらず、期待されるキーボードのサポートが提供されていない可能性もあり、これはARIAの第三のルールを破り、<a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-keyboard-operable.html">WCAG 2.1.1, Keyboard</a>に違反することになります。
 
 {{ figure_markup(
   caption='携帯サイトでは`role="button"`を`<div>`や`<span>`に割り当てています。',
@@ -393,9 +393,9 @@ ARIAの第一のルールに従えば、ネイティブの`<button>`要素の方
   sql_file="div_span_with_button_or_link_role.sql"
 ) }}
 
-デスクトップページの8.27%とモバイルページの8.28%では、`role="button"`が明示的に定義された`<div>`または`<span>`要素が少なくとも1つ存在していることがわかりました。このようにARIAのロールを追加する行為、つまり「[role-up](https://adrianroselli.com/2020/02/role-up.html)」は、正しいネイティブHTML要素を使用するよりも理想的ではありません。
+デスクトップページの8.27%とモバイルページの8.28%では、`role="button"`が明示的に定義された`<div>`または`<span>`要素が少なくとも1つ存在していることがわかりました。このようにARIAのロールを追加する行為、つまり「<a hreflang="en" href="https://adrianroselli.com/2020/02/role-up.html">role-up</a>」は、正しいネイティブHTML要素を使用するよりも理想的ではありません。
 
-デスクトップページの15.50%とモバイルページの14.62%には、`role="button"`を持つアンカー要素が少なくとも1つ含まれていることがわかりました。例えば、リンク（リンクには暗黙のうちに`role="link"`が設定されている）に`role="button"`を与えるなど、暗黙の役割が尊重されるべき要素にロールが適用されている場合、これはARIAの第2のルールを破ることになります。また、正しいキーボードの動作が実装されていなければ、[WCAG 2.1.1.1, Keyboard](https://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-keyboard-operable.html)に違反することになります（リンクはスペースキーでは有効になりませんが、ボタンは有効になります）。
+デスクトップページの15.50%とモバイルページの14.62%には、`role="button"`を持つアンカー要素が少なくとも1つ含まれていることがわかりました。例えば、リンク（リンクには暗黙のうちに`role="link"`が設定されている）に`role="button"`を与えるなど、暗黙の役割が尊重されるべき要素にロールが適用されている場合、これはARIAの第2のルールを破ることになります。また、正しいキーボードの動作が実装されていなければ、<a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-keyboard-operable.html">WCAG 2.1.1.1, Keyboard</a>に違反することになります（リンクはスペースキーでは有効になりませんが、ボタンは有効になります）。
 
 繰り返しになりますが、これらのケースの大部分では、問題の要素に明示的に`role="button"`を定義するよりも、期待されるセマンティクスと動作を持つネイティブHTMLの`<button>`要素を活用する方が良いパターンです。
 
@@ -405,20 +405,20 @@ ARIAの第一のルールに従えば、ネイティブの`<button>`要素の方
 
 #### ダイアログモーダル
 
-ダイアログ・モーダルには、多くの潜在的なアクセシビリティの障壁があります。より詳しい内容については、[Scott O'Hara](https://twitter.com/scottohara)の記事[Having an Open Dialog](https://www.scottohara.me/blog/2019/03/05/open-dialog.html)をお読みになることをお勧めします。
+ダイアログ・モーダルには、多くの潜在的なアクセシビリティの障壁があります。より詳しい内容については、[Scott O'Hara](https://twitter.com/scottohara)の記事<a hreflang="en" href="https://www.scottohara.me/blog/2019/03/05/open-dialog.html">Having an Open Dialog</a>をお読みになることをお勧めします。
 
 デスクトップページの19.01%、モバイルページの18.21%に少なくとも1つの `role="dialog"`が存在しており、これは2019年の約8%から増加していることを報告します。この増加の一部は、この指標の測定方法が変更されたことによるものと思われます。これは、より多くの開発者がダイアログを構築する際にアクセシビリティを考慮しており、フレームワークや関連パッケージがよりアクセシブルなダイアログパターンを実装している可能性があることを示唆しています。しかし、ダイアログ・モーダルをアクセシブルにするには、`dialog`ロールを使う以上のことが必要です。フォーカス管理、適切なキーボードサポート、スクリーンリーダーの露出など、すべてに対処する必要があります。
 
 #### タブ
 
-タブは一般的なインターフェースのウィジェットですが、多くの開発者にとってアクセシブルにすることが課題となっています。アクセシブルな実装のための一般的なパターンは、[WAI-ARIA Authoring Practices Design Patterns](https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel)から来ています。ARIA Authoring Practicesは仕様書ではなく、理想化されたARIAの構成を示すものであることに注意してください。これらは、ユーザとのテストなしに本番環境で使用すべきではありません。
+タブは一般的なインターフェースのウィジェットですが、多くの開発者にとってアクセシブルにすることが課題となっています。アクセシブルな実装のための一般的なパターンは、<a hreflang="en" href="https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel">WAI-ARIA Authoring Practices Design Patterns</a>から来ています。ARIA Authoring Practicesは仕様書ではなく、理想化されたARIAの構成を示すものであることに注意してください。これらは、ユーザとのテストなしに本番環境で使用すべきではありません。
 
 このパターンでは、親コンテナは`role="tablist"`を持ち、子要素は`role="tab"`を持ちます。これらのタブは`role="tabpanel"`を持つ要素に関連付けられており、そのタブの内容が含まれています。
 
 {{ figure_markup(
   image="role-tab-list.png",
   alt="タブリストの役割を持つ要素",
-  caption='`tablist`の役割を持つ要素 ([出典: W3C](https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html)',
+  caption='`tablist`の役割を持つ要素 (<a hreflang="en" href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html">出典: W3C</a>',
   description='3つのタブを含むタブリスト（`role="tablist"`）の例を示すスクリーンショットです。3つのタブはすべてハイライトされています。',
   width=348,
   height=337
@@ -427,7 +427,7 @@ ARIAの第一のルールに従えば、ネイティブの`<button>`要素の方
 {{ figure_markup(
   image="role-tab.png",
   alt="タブの役割を持つ要素",
-  caption='要素で`tab`の役割を持つ。([出典: W3C](https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html)',
+  caption='要素で`tab`の役割を持つ。(<a hreflang="en" href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html">出典: W3C</a>',
   description='タブ(`role="tab"`)の例を示すスクリーンショットで、1つのタブだけが強調表示されています。',
   width=346,
   height=335
@@ -436,7 +436,7 @@ ARIAの第一のルールに従えば、ネイティブの`<button>`要素の方
 {{ figure_markup(
   image="role-tab-panel.png",
   alt="タブパネルの役割を持つ要素",
-  caption='要素で`tabpanel`の役割を持つ。([出典: W3C](https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html)',
+  caption='要素で`tabpanel`の役割を持つ。(<a hreflang="en" href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html">出典: W3C</a>',
   description='タブパネル(`role="tabpanel"`)の例を示すスクリーンショットです。',
   width=346,
   height=335
@@ -468,9 +468,9 @@ ARIA属性は、インターフェイスのアクセシビリティを強化す�
 
 ブラウザのアクセシビリティ・ツリーには、コントロール、ウィジェット、グループ、またはランドマークにアクセシブルな名前（もしあれば）を割り当てて、支援技術によってアナウンスできるようにする計算システムがあります。アクセシブルな名前にどの値が割り当てられているかを決定するための特異性ランキングがあります。
 
-アクセシブルな名前は要素の内容（ボタンのテキストなど）、属性（画像の`alt`テキスト値など）、または関連する要素（フォームコントロールのためのプログラム的に関連するラベルなど）から派生できます。アクセシブルな名前についての詳細な情報は、Léonie Watsonの記事[What is an accessible name?](https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/)を参照してください。
+アクセシブルな名前は要素の内容（ボタンのテキストなど）、属性（画像の`alt`テキスト値など）、または関連する要素（フォームコントロールのためのプログラム的に関連するラベルなど）から派生できます。アクセシブルな名前についての詳細な情報は、Léonie Watsonの記事<a hreflang="en" href="https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/">What is an accessible name?</a>を参照してください。
 
-また、ARIAを使用して、要素にアクセス可能な名前を提供することもできます。これを実現するARIA属性は、[aria-label](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA14.html)と[aria-labelledby](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA16.html)の2つです。これらの属性のいずれかは、アクセシブル名の計算に「勝ち」、ネイティブに派生したアクセシブル名を上書きしますので注意して使用してください。ARIAを使って要素に名前を付ける場合、[WCAG 2.5.3, Label in Name](https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html) の基準に違反していないことを確認することが重要です。
+また、ARIAを使用して、要素にアクセス可能な名前を提供することもできます。これを実現するARIA属性は、<a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA14.html">aria-label</a>と<a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA16.html">aria-labelledby</a>の2つです。これらの属性のいずれかは、アクセシブル名の計算に「勝ち」、ネイティブに派生したアクセシブル名を上書きしますので注意して使用してください。ARIAを使って要素に名前を付ける場合、<a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html">WCAG 2.5.3, Label in Name</a> の基準に違反していないことを確認することが重要です。
 
 要素の`aria-label`は、開発者が文字列の値を提供することを可能にし、これがその要素のアクセシブルな名前に使用されます。デスクトップページの40.44%、モバイルホームページの38.72%が`aria-label`属性を持つ要素を少なくとも1つ持っていることがわかり、これがアクセシブルな名前を提供するための最も一般的なARIA属性となりました。
 
@@ -478,7 +478,7 @@ ARIA属性は、インターフェイスのアクセシビリティを強化す�
 
 繰り返しになりますが、ARIAの最初のルールが尊重されるべきです。要素がARIAを必要とせずにそのアクセス可能な名前を導出できるならば、これが望ましい。例えば、グラフィカルな要素ではない`<button>`は、ARIA属性ではなく、そのアクセス可能な名前をテキストの内容から取得すべきです。フォーム要素は可能な限り、適切に関連付けられた`<label>`要素からアクセス可能な名前を導き出すべきです。
 
-要素に対してより強固な記述が必要な場合には、[`aria-describedby`](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA1.html)属性を使用できます。また、インターフェイスの他の場所に存在する記述的なテキストと接続するための`id`参照を値として受け入れます。これはアクセシブルな名前を提供しないので、代替ではなく補完としてアクセシブルな名前と一緒に使うべきです。デスクトップページの11.31%とモバイルページの10.56%が`aria-describedby`属性を持つ要素を少なくとも1つ持っていることがわかった。
+要素に対してより強固な記述が必要な場合には、<a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA1.html">`aria-describedby`</a>属性を使用できます。また、インターフェイスの他の場所に存在する記述的なテキストと接続するための`id`参照を値として受け入れます。これはアクセシブルな名前を提供しないので、代替ではなく補完としてアクセシブルな名前と一緒に使うべきです。デスクトップページの11.31%とモバイルページの10.56%が`aria-describedby`属性を持つ要素を少なくとも1つ持っていることがわかった。
 
 **楽しい事実!** 属性**aria-labeledby**を持つ3,200のウェブサイトが見つかりましたが、これは`aria-labelledby`属性のスペルミスです。これらのエラーを簡単に回避するために、自動チェックを必ず実行してください。
 
@@ -512,7 +512,7 @@ ARIA属性は、インターフェイスのアクセシビリティを強化す�
 
 ### フォームの検証
 
-どのようなフォームのエラー処理であっても、支援技術に伝えることは非常に重要です。これを処理するためには、バリデーションの実装に応じてさまざまなテクニックがあります。Web AIMの[Usable and Accessible Form Validation and Error Recovery](https://webaim.org/techniques/formvalidation/) の記事は、様々なアクセシブルなフォームバリデーション戦略について学ぶための素晴らしいリソースです。
+どのようなフォームのエラー処理であっても、支援技術に伝えることは非常に重要です。これを処理するためには、バリデーションの実装に応じてさまざまなテクニックがあります。Web AIMの<a hreflang="en" href="https://webaim.org/techniques/formvalidation/">Usable and Accessible Form Validation and Error Recovery</a> の記事は、様々なアクセシブルなフォームバリデーション戦略について学ぶための素晴らしいリソースです。
 
 フォーム要素が必要とされる場合、これも支援技術に伝える必要があります。ネイティブHTMLフォーム要素には[`required`属性](https://developer.mozilla.org/ja/docs/Web/HTML/Attributes/required) を使用し、カスタマイズされた要素には [`aria-required`](https://developer.mozilla.org/ja/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-required_attribute) 属性が必要になるかもしれません。フォーム送信に問題がある場合は、その旨を支援技術に伝える必要があります。
 

@@ -21,9 +21,9 @@ featured_stat_label_3: Usage of priority hints
 
 ## Introduction
 
-[Resource hints](https://www.w3.org/TR/resource-hints/) provide "hints" to the browser about what resources will be needed soon. The action that the browser takes as a result of receiving this hint will vary depending on the type of resource hint; different resource hints kick off different actions. When used correctly, they can improve page performance by giving a head start to important anticipated actions.
+<a hreflang="en" href="https://www.w3.org/TR/resource-hints/">Resource hints</a> provide "hints" to the browser about what resources will be needed soon. The action that the browser takes as a result of receiving this hint will vary depending on the type of resource hint; different resource hints kick off different actions. When used correctly, they can improve page performance by giving a head start to important anticipated actions.
 
-[Examples](https://youtu.be/YJGCZCaIZkQ?t=1956) of performance improvements as a result of resource hints include:
+<a hreflang="en" href="https://youtu.be/YJGCZCaIZkQ?t=1956">Examples</a> of performance improvements as a result of resource hints include:
 
 * Jabong decreased Time to Interactive by 1.5 seconds by preloading critical scripts.
 * Barefoot Wine decreased Time to Interactive of future pages by 2.7 seconds by prefetching visible links.
@@ -37,15 +37,15 @@ The role of [`dns-prefetch`](https://developer.mozilla.org/en-US/docs/Learn/Perf
 
 ### `preconnect`
 
-[`preconnect`](https://web.dev/uses-rel-preconnect) initiates an early connection, including DNS lookup, TCP handshake, and TLS negotiation. This hint is useful for setting up a connection with a third party. The uses of `preconnect` are very similar to those of `dns-prefetch`, but `preconnect` has less browser support. However, if you don't need IE 11 support, preconnect is probably a better choice.
+<a hreflang="en" href="https://web.dev/uses-rel-preconnect">`preconnect`</a> initiates an early connection, including DNS lookup, TCP handshake, and TLS negotiation. This hint is useful for setting up a connection with a third party. The uses of `preconnect` are very similar to those of `dns-prefetch`, but `preconnect` has less browser support. However, if you don't need IE 11 support, preconnect is probably a better choice.
 
 ### `preload`
 
-The [`preload`](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf) hint initiates an early request. This is useful for loading important resources that would otherwise be discovered late by the parser. For example, if an important image is only discoverable once the browser has received and parsed the stylesheet, it may make sense to preload the image.
+The <a hreflang="en" href="https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf">`preload`</a> hint initiates an early request. This is useful for loading important resources that would otherwise be discovered late by the parser. For example, if an important image is only discoverable once the browser has received and parsed the stylesheet, it may make sense to preload the image.
 
 ### `prefetch`
 
-[`prefetch`](https://calendar.perfplanet.com/2018/all-about-prefetching/) initiates a low-priority request. It's useful for loading resources that will be used on the subsequent (rather than current) page load. A common use of prefetch is loading resources that the application "predicts" will be used on the next page load. These predictions could be based on signals like user mouse movement or common user flows/journeys.
+<a hreflang="en" href="https://calendar.perfplanet.com/2018/all-about-prefetching/">`prefetch`</a> initiates a low-priority request. It's useful for loading resources that will be used on the subsequent (rather than current) page load. A common use of prefetch is loading resources that the application "predicts" will be used on the next page load. These predictions could be based on signals like user mouse movement or common user flows/journeys.
 
 ## Syntax
 
@@ -107,9 +107,9 @@ Because the usage of resource hints in HTTP headers is so low, the remainder of 
   <figcaption>{{ figure_link(caption="Adoption of resource hints.") }}</figcaption>
 </figure>
 
-The relative popularity of `dns-prefetch` is unsurprising; it's a well-established API (it first appeared in [2009](https://caniuse.com/#feat=link-rel-dns-prefetch)), it is supported by all major browsers, and it is the most "inexpensive" of all resource hints. Because `dns-prefetch` only performs DNS lookups, it consumes very little data, and therefore there is very little downside to using it. `dns-prefetch` is most useful in high-latency situations.
+The relative popularity of `dns-prefetch` is unsurprising; it's a well-established API (it first appeared in <a hreflang="en" href="https://caniuse.com/#feat=link-rel-dns-prefetch">2009</a>), it is supported by all major browsers, and it is the most "inexpensive" of all resource hints. Because `dns-prefetch` only performs DNS lookups, it consumes very little data, and therefore there is very little downside to using it. `dns-prefetch` is most useful in high-latency situations.
 
-That being said, if a site does not need to support IE11 and below, switching from `dns-prefetch` to `preconnect` is probably a good idea. In an era where HTTPS is ubiquitous, `preconnect` yields greater [performance](./performance) improvements while still being inexpensive. Note that unlike `dns-prefetch`, `preconnect` not only initiates the DNS lookup, but also the TCP handshake and TLS negotiation. The [certificate chain](https://knowledge.digicert.com/solution/SO16297.html) is downloaded during TLS negotiation and this typically costs a couple of kilobytes.
+That being said, if a site does not need to support IE11 and below, switching from `dns-prefetch` to `preconnect` is probably a good idea. In an era where HTTPS is ubiquitous, `preconnect` yields greater [performance](./performance) improvements while still being inexpensive. Note that unlike `dns-prefetch`, `preconnect` not only initiates the DNS lookup, but also the TCP handshake and TLS negotiation. The <a hreflang="en" href="https://knowledge.digicert.com/solution/SO16297.html">certificate chain</a> is downloaded during TLS negotiation and this typically costs a couple of kilobytes.
 
 `prefetch` is used by 3% of sites, making it the least widely used resource hint. This low usage may be explained by the fact that `prefetch` is useful for improving subsequent—rather than current—page loads. Thus, it will be overlooked if a site is only focused on improving their landing page, or the performance of the first page viewed.
 
@@ -219,7 +219,7 @@ Although other HTML elements support the crossorigin attribute, this analysis on
 
 ## The `as` attribute
 
-`as` is an attribute that should be used with the `preload` resource hint to inform the browser of the type (e.g. image, script, style, etc.) of the requested resource. This helps the browser correctly prioritize the request and apply the correct Content Security Policy ([CSP](https://developers.google.com/web/fundamentals/security/csp)). CSP is a [security](./security) mechanism, expressed via HTTP header, that helps mitigate the impact of XSS and other malicious attacks by declaring a safelist of trusted sources; only content from these sources can be rendered or executed.
+`as` is an attribute that should be used with the `preload` resource hint to inform the browser of the type (e.g. image, script, style, etc.) of the requested resource. This helps the browser correctly prioritize the request and apply the correct Content Security Policy (<a hreflang="en" href="https://developers.google.com/web/fundamentals/security/csp">CSP</a>). CSP is a [security](./security) mechanism, expressed via HTTP header, that helps mitigate the impact of XSS and other malicious attacks by declaring a safelist of trusted sources; only content from these sources can be rendered or executed.
 
 {{ figure_markup(
   caption="The percent of resource hint instances using the <code>as</code> attribute.",
@@ -236,7 +236,7 @@ At the moment, there are no proposals to expand the current set of resource hint
 
 ### Priority Hints
 
-[Priority hints](https://wicg.github.io/priority-hints/) are an API for expressing the fetch priority of a resource: `high`, `low`, or `auto`. They can be used with a wide range of HTML tags: specifically `<image>`, `<link`>, `<script>`, and `<iframe>`.
+<a hreflang="en" href="https://wicg.github.io/priority-hints/">Priority hints</a> are an API for expressing the fetch priority of a resource: `high`, `low`, or `auto`. They can be used with a wide range of HTML tags: specifically `<image>`, `<link`>, `<script>`, and `<iframe>`.
 
 <figure>
 <div class="code-block floating-card">
@@ -257,13 +257,13 @@ For example, if you had an image carousel, priority hints could be used to prior
 )
 }}
 
-Priority hints are [implemented](https://www.chromestatus.com/feature/5273474901737472) and can be tested via a feature flag in Chromium browsers versions 70 and up. Given that it is still an experimental technology, it is unsurprising that it is only used by 0.04% of sites.
+Priority hints are <a hreflang="en" href="https://www.chromestatus.com/feature/5273474901737472">implemented</a> and can be tested via a feature flag in Chromium browsers versions 70 and up. Given that it is still an experimental technology, it is unsurprising that it is only used by 0.04% of sites.
 
 85% of priority hint usage is with `<img>` tags. Priority hints are mostly used to deprioritize resources: 72% of usage is `importance="low"`; 28% of usage is `importance="high"`.
 
 ### Native lazy loading
 
-[Native lazy loading](https://web.dev/native-lazy-loading) is a native API for deferring the load of off-screen images and iframes. This frees up resources during the initial page load and avoids loading assets that are never used. Previously, this technique could only be achieved through third-party [JavaScript](./javascript) libraries.
+<a hreflang="en" href="https://web.dev/native-lazy-loading">Native lazy loading</a> is a native API for deferring the load of off-screen images and iframes. This frees up resources during the initial page load and avoids loading assets that are never used. Previously, this technique could only be achieved through third-party [JavaScript](./javascript) libraries.
 
 The API for native lazy loading looks like this: `<img src="cat.jpg" loading="lazy">`.
 

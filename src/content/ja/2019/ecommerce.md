@@ -9,8 +9,8 @@ editors: [bazzadp]
 translators: [ksakae]
 discuss: 1768
 results: https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/
-samdutton_bio: Sam Duttonは2011年からDeveloper AdvocateとしてGoogle Chromeチームで働いています。数々のイベントを企画して発表し、いくつかのウェブ開発コースを作成して教え、PWA、パフォーマンス、メディア、イメージ、「Next Billion Users」イニシアティブをカバーする様々なビデオ、コードラボ、文書化されたガイダンスに取り組んできました。彼は<a href="https://simpl.info">simpl.info</a>を管理しており、HTML、CSS、JavaScriptの最もシンプルな例を提供しています。南オーストラリアで育ち、シドニーの大学に進学し、1986年からロンドンに住んでいます。
-alankent_bio: Alan KentはGoogleのDeveloper Advocateで、Eコマースとコンテンツエコシステムに焦点を当てています。彼は <a href="https://alankent.me">alankent.me</a> でブログを書いており、<a href="https://twitter.com/akent99">@akent99</a> としてツイートしています。
+samdutton_bio: Sam Duttonは2011年からDeveloper AdvocateとしてGoogle Chromeチームで働いています。数々のイベントを企画して発表し、いくつかのウェブ開発コースを作成して教え、PWA、パフォーマンス、メディア、イメージ、「Next Billion Users」イニシアティブをカバーする様々なビデオ、コードラボ、文書化されたガイダンスに取り組んできました。彼は<a hreflang="en" href="https://simpl.info">simpl.info</a>を管理しており、HTML、CSS、JavaScriptの最もシンプルな例を提供しています。南オーストラリアで育ち、シドニーの大学に進学し、1986年からロンドンに住んでいます。
+alankent_bio: Alan KentはGoogleのDeveloper Advocateで、Eコマースとコンテンツエコシステムに焦点を当てています。彼は <a hreflang="en" href="https://alankent.me">alankent.me</a> でブログを書いており、<a href="https://twitter.com/akent99">@akent99</a> としてツイートしています。
 featured_quote: この調査では、ホームページの10%近くがeコマース・プラットフォーム上にあることが判明しました。<em>eコマースプラットフォーム</em> は、オンラインストアを作成して運営することを可能にするソフトウェア ソフトウェアまたはサービスのセットです。Shopifyなどの有料サービス、Magentoオープンソースなどのソフトウェアプラットフォーム、およびMagento Commerceなどのホスト型プラットフォームなどが含まれます。
 featured_stat_1: 3.98%
 featured_stat_label_1: WooCommerceを使用してサイト最も人気のあるEコマースプラットフォーム
@@ -24,9 +24,9 @@ featured_stat_label_3: モバイルEコマースページあたりの画像バ�
 
 この調査では、ホームページの10％近くがEコマース・プラットフォーム上にあることが判明しました。「Eコマースプラットフォーム」は、オンラインストアを作成し、運営することを可能にするソフトウェアまたはサービスのセットです。Eコマースプラットフォームのいくつかのタイプがあります。
 
-- [Shopify](https://www.shopify.com/)のような**有料サービス**は、あなたのお店をホストし、あなたが始めるのを手助けしてくれます。彼らはウェブサイトのホスティング、サイトやページのテンプレート、商品データの管理、ショッピングカートや支払いを提供しています。
-- [Magento Open Source](https://magento.com/products/magento-open-source)のような**ソフトウェアプラットフォーム**は自分で設定し、ホストし、管理できます。これらのプラットフォームは強力で柔軟性がありますが、Shopifyのようなサービスよりもセットアップや運用が複雑になることがあります。
-- [Magento Commerce](https://magento.com/products/magento-commerce)のような**ホスト付きプラットフォーム**は、ホスティングがサードパーティによってサービスとして管理されていることを除いて、彼らのセルフホスティングされた対応と同じ機能を提供しています。
+- <a hreflang="en" href="https://www.shopify.com/">Shopify</a>のような**有料サービス**は、あなたのお店をホストし、あなたが始めるのを手助けしてくれます。彼らはウェブサイトのホスティング、サイトやページのテンプレート、商品データの管理、ショッピングカートや支払いを提供しています。
+- <a hreflang="en" href="https://magento.com/products/magento-open-source">Magento Open Source</a>のような**ソフトウェアプラットフォーム**は自分で設定し、ホストし、管理できます。これらのプラットフォームは強力で柔軟性がありますが、Shopifyのようなサービスよりもセットアップや運用が複雑になることがあります。
+- <a hreflang="en" href="https://magento.com/products/magento-commerce">Magento Commerce</a>のような**ホスト付きプラットフォーム**は、ホスティングがサードパーティによってサービスとして管理されていることを除いて、彼らのセルフホスティングされた対応と同じ機能を提供しています。
 
 {{ figure_markup(
   caption="Eコマースプラットフォーム上のページの割合。",
@@ -202,7 +202,7 @@ Eコマースプラットフォームの[ページの重さ](./page-weight)は�
   )
 }}
 
-デスクトップEコマースプラットフォームのページの読み込み量の中央値は108リクエストと2.7MBです。すべてのデスクトップページの重量の中央値は74リクエストと[1.9 MB](./page-weight#ページの重さ) です。言い換えれば、Eコマースページは他のウェブページよりも50％近く多くのリクエストを行い、ペイロードは約35％大きくなっています。比較すると、[amazon.com](https://amazon.com)のホームページは、最初のロード時に約5MBのページ重量に対して約300リクエストを行い、[ebay.com](https://ebay.com)は約3MBのページウェイトに対して約150リクエストを行います。Eコマースプラットフォーム上のホームページのページ重量とリクエスト数は、各パーセンタイルでモバイルの方が若干小さくなっていますが、すべてのEコマースのホームページの約10％が7MB以上をロードし200以上のリクエストをしています。
+デスクトップEコマースプラットフォームのページの読み込み量の中央値は108リクエストと2.7MBです。すべてのデスクトップページの重量の中央値は74リクエストと[1.9 MB](./page-weight#ページの重さ) です。言い換えれば、Eコマースページは他のウェブページよりも50％近く多くのリクエストを行い、ペイロードは約35％大きくなっています。比較すると、<a hreflang="en" href="https://amazon.com">amazon.com</a>のホームページは、最初のロード時に約5MBのページ重量に対して約300リクエストを行い、<a hreflang="en" href="https://ebay.com">ebay.com</a>は約3MBのページウェイトに対して約150リクエストを行います。Eコマースプラットフォーム上のホームページのページ重量とリクエスト数は、各パーセンタイルでモバイルの方が若干小さくなっていますが、すべてのEコマースのホームページの約10％が7MB以上をロードし200以上のリクエストをしています。
 
 このデータは、ホームページのペイロードとスクロールなしのリクエストを含んでいます。明らかに、最初のロードに必要なはずのファイル数よりも多くのファイルを取得しているように見えるサイトがかなりの割合で存在しています(中央値は100以上)。以下の[サードパーティのリクエストとバイト数](#サードパーティからのリクエストとバイト)も参照してください。
 
@@ -455,7 +455,7 @@ HTMLペイロードには、外部リンクとして参照されるのではな�
 )
 }}
 
-Eコマースページのかなりの割合で、大きな画像ペイロードを持ち、最初のロード時に大量の画像リクエストを行います。詳細については、HTTP Archiveの[State of Images](https://httparchive.org/reports/state-of-images)レポート、および[media](./media)と[page weight](./page weight)の章を参照してください。
+Eコマースページのかなりの割合で、大きな画像ペイロードを持ち、最初のロード時に大量の画像リクエストを行います。詳細については、HTTP Archiveの<a hreflang="en" href="https://httparchive.org/reports/state-of-images">State of Images</a>レポート、および[media](./media)と[page weight](./page weight)の章を参照してください。
 
 ウェブサイトの所有者は、自分のサイトを最新のデバイスで見栄えの良いものにしたいと考えています。その結果、多くのサイトでは、画面の解像度やサイズに関係なく、すべてのユーザーに同じ高解像度の製品画像を配信しています。開発者は、異なるユーザーに可能な限り最高の画像を効率的に配信できるレスポンシブ技術に気づいていない（または使いたくない）かもしれません。高解像度の画像が必ずしもコンバージョン率を高めるとは限らないことを覚えておきましょう。逆に重い画像の使いすぎは、ページの速度に影響を与える可能性が高く、それによってコンバージョン率を低下させる可能性があります。サイトレビューやイベントでの著者の経験では、開発者やその他の関係者の中には、画像に遅延ローディングを使用することにSEOなどの懸念を持っている人もいます。
 
@@ -471,19 +471,19 @@ Eコマースページのかなりの割合で、大きな画像ペイロード�
   )
 }}
 
-<p class="note">画像サービスやCDNの中には、`.jpg`や`.png`という接尾辞を持つURLであっても、WebPをサポートしているプラットフォームには自動的にWebP(JPEGやPNGではなく)を配信するものがあることに注意してください。たとえば、<a href="https://res.cloudinary.com/webdotdev/f_auto/w_500/IMG_20190113_113201.jpg">IMG_20190113_113201.jpg</a>はChromeでWebP画像を返します。しかし、HTTP Archive<a href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/31a25b9064a365d746d4811a1d6dda516c0e4985/bulktest/batch_lib.inc#L994">画像フォーマットを検出する方法</a>は、最初にMIMEタイプのキーワードをチェックしてから、ファイルの拡張子にフォールバックするというものです。つまり、HTTP ArchiveがユーザーエージェントとしてWebPをサポートしているため、上記のようなURLを持つ画像のフォーマットはWebPとして与えられることになります。</p>
+<p class="note">画像サービスやCDNの中には、`.jpg`や`.png`という接尾辞を持つURLであっても、WebPをサポートしているプラットフォームには自動的にWebP(JPEGやPNGではなく)を配信するものがあることに注意してください。たとえば、<a hreflang="en" href="https://res.cloudinary.com/webdotdev/f_auto/w_500/IMG_20190113_113201.jpg">IMG_20190113_113201.jpg</a>はChromeでWebP画像を返します。しかし、HTTP Archive<a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/31a25b9064a365d746d4811a1d6dda516c0e4985/bulktest/batch_lib.inc#L994">画像フォーマットを検出する方法</a>は、最初にMIMEタイプのキーワードをチェックしてから、ファイルの拡張子にフォールバックするというものです。つまり、HTTP ArchiveがユーザーエージェントとしてWebPをサポートしているため、上記のようなURLを持つ画像のフォーマットはWebPとして与えられることになります。</p>
 
 ### PNG
 
 Eコマースページの4つに1つの画像はPNGです。Eコマースプラットフォーム上のページでPNGのリクエストが多いのは、商品画像のためと思われます。多くのコマースサイトでは、透過性を確保するために写真画像と一緒にPNGを使用しています。
 
-PNGフォールバックでWebPを使用することは、[画像要素](http://simpl.info/picturetype)を介して、または[Cloudinary](https://res.cloudinary.com/webdotdev/f_auto/w_500/IMG_20190113_113201.jpg)のような画像サービスを介してユーザーエージェントの能力検出を使用することで、はるかに効率的な代替手段となります。
+PNGフォールバックでWebPを使用することは、[画像要素](http://simpl.info/picturetype)を介して、または<a hreflang="en" href="https://res.cloudinary.com/webdotdev/f_auto/w_500/IMG_20190113_113201.jpg">Cloudinary</a>のような画像サービスを介してユーザーエージェントの能力検出を使用することで、はるかに効率的な代替手段となります。
 
 ### WebP
 
-Eコマースプラットフォーム上の画像の1％だけがWebPであり、これはサイトレビューやパートナーの仕事での著者の経験と一致しています。WebPは[Safari以外のすべての最新ブラウザでサポートされています](https://caniuse.com/#feat=webp)し、フォールバックの仕組みも充実しています。WebPは透過性をサポートしており、写真画像のためのPNGよりもはるかに効率的なフォーマットです（上記のPNGのセクションを参照してください）。
+Eコマースプラットフォーム上の画像の1％だけがWebPであり、これはサイトレビューやパートナーの仕事での著者の経験と一致しています。WebPは<a hreflang="en" href="https://caniuse.com/#feat=webp">Safari以外のすべての最新ブラウザでサポートされています</a>し、フォールバックの仕組みも充実しています。WebPは透過性をサポートしており、写真画像のためのPNGよりもはるかに効率的なフォーマットです（上記のPNGのセクションを参照してください）。
 
-WebPをPNGのフォールバックで使用したり、無地の色の背景でWebP/JPEGを使用して透明化を可能にするため、Webコミュニティとして、より良いガイダンスや提唱を提供できます。WebPは、[ガイド](https://web.dev/serve-images-webp) やツール (例:[Squoosh](https://squoosh.app/)や[cwebp](https://developers.google.com/speed/webp/docs/cwebp)など)があるにもかかわらず、電子商取引プラットフォームではほとんど使用されていないようです。現在[10年近く経っている](https://blog.chromium.org/2010/09/webp-new-image-format-for-web.html)WebPの利用が増えていない理由をさらに調査する必要があります。
+WebPをPNGのフォールバックで使用したり、無地の色の背景でWebP/JPEGを使用して透明化を可能にするため、Webコミュニティとして、より良いガイダンスや提唱を提供できます。WebPは、<a hreflang="en" href="https://web.dev/serve-images-webp">ガイド</a> やツール (例:<a hreflang="en" href="https://squoosh.app/">Squoosh</a>や<a hreflang="en" href="https://developers.google.com/speed/webp/docs/cwebp">cwebp</a>など)があるにもかかわらず、電子商取引プラットフォームではほとんど使用されていないようです。現在<a hreflang="en" href="https://blog.chromium.org/2010/09/webp-new-image-format-for-web.html">10年近く経っている</a>WebPの利用が増えていない理由をさらに調査する必要があります。
 
 ## 画像の寸法
 
@@ -552,7 +552,7 @@ Eコマースページで要求された画像の中央値（「中間値」）�
 
 ## サードパーティからのリクエストとバイト
 
-多くのウェブサイト、特にオンラインストアでは、分析、A/Bテスト、顧客行動追跡、広告、ソーシャルメディアのサポートなどのためにサードパーティのコードやコンテンツを大量にロードしています。サードパーティのコンテンツは、[パフォーマンスに大きな影響を与える](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript)ことがあります。 [Patrick Hulce](https://twitter.com/patrickhulce)の[サードパーティウェブツール](https://github.com/patrickhulce/third-party-web)は、本レポートのサードパーティのリクエストを判断するために使用されており、これについては[サードパーティ](./third-parties)の章で詳しく説明しています。
+多くのウェブサイト、特にオンラインストアでは、分析、A/Bテスト、顧客行動追跡、広告、ソーシャルメディアのサポートなどのためにサードパーティのコードやコンテンツを大量にロードしています。サードパーティのコンテンツは、<a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript">パフォーマンスに大きな影響を与える</a>ことがあります。 [Patrick Hulce](https://twitter.com/patrickhulce)の<a hreflang="en" href="https://github.com/patrickhulce/third-party-web">サードパーティウェブツール</a>は、本レポートのサードパーティのリクエストを判断するために使用されており、これについては[サードパーティ](./third-parties)の章で詳しく説明しています。
 
 {{ figure_markup(
   image="fig17.png",
@@ -572,7 +572,7 @@ Eコマースページで要求された画像の中央値（「中間値」）�
 
 Eコマースプラットフォーム上の中央値（「中規模」）のホームページでは、サードパーティのコンテンツに対するリクエストは、モバイルで17件、デスクトップで19件となっています。Eコマース・プラットフォーム上のすべてのホームページの10％は、サードパーティのコンテンツに対して50件以上のリクエストを行い、その総ペイロードは1MBを超えています。
 
-[他の研究](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/)で、サードパーティのコンテンツはパフォーマンスの大きなボトルネックになる可能性であることが指摘されています。この調査によると、17以上のリクエスト（上位10％では50以上）がEコマースページの標準となっています。
+<a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/">他の研究</a>で、サードパーティのコンテンツはパフォーマンスの大きなボトルネックになる可能性であることが指摘されています。この調査によると、17以上のリクエスト（上位10％では50以上）がEコマースページの標準となっています。
 
 ## プラットフォームごとのサードパーティリクエストとペイロード
 
@@ -626,13 +626,13 @@ Eコマースサイト以外のこのトピックの詳細については、[PWA
   )
 }}
 
-Eコマースのプラットフォーム上のホームページの60％以上は、0.25と0.35の間に[Lighthouse PWAスコア](https://developers.google.com/web/ilt/pwa/lighthouse-pwa-analysis-tool)を取得します。Eコマースのプラットフォーム上のホームページの20％未満は、0.5以上のスコアを取得し、ホームページの1％未満は0.6以上のスコアを取得します。
+Eコマースのプラットフォーム上のホームページの60％以上は、0.25と0.35の間に<a hreflang="en" href="https://developers.google.com/web/ilt/pwa/lighthouse-pwa-analysis-tool">Lighthouse PWAスコア</a>を取得します。Eコマースのプラットフォーム上のホームページの20％未満は、0.5以上のスコアを取得し、ホームページの1％未満は0.6以上のスコアを取得します。
 
-Lighthouseは、プログレッシブWebアプリ（PWA）のスコアを0から1の間で返します。PWAの監査は、14の要件をリストアップした[Baseline PWA Checklist](https://developers.google.com/web/progressive-web-apps/checklist)に基づいています。Lighthouseは、14の要件のうち11の要件について自動監査を実施しています。残りの3つは手動でしかテストできません。11の自動PWA監査はそれぞれ均等に重み付けされているため、それぞれがPWAスコアに約9ポイント寄与します。
+Lighthouseは、プログレッシブWebアプリ（PWA）のスコアを0から1の間で返します。PWAの監査は、14の要件をリストアップした<a hreflang="en" href="https://developers.google.com/web/progressive-web-apps/checklist">Baseline PWA Checklist</a>に基づいています。Lighthouseは、14の要件のうち11の要件について自動監査を実施しています。残りの3つは手動でしかテストできません。11の自動PWA監査はそれぞれ均等に重み付けされているため、それぞれがPWAスコアに約9ポイント寄与します。
 
 PWA監査のうち少なくとも1つがnullスコアを取得した場合、LighthouseはPWAカテゴリ全体のスコアをnullアウトします。これは、モバイルページの2.32％が該当しました。
 
-明らかに、大多数のEコマースページは、ほとんどの[PWA チェックリスト監査](https://developers.google.com/web/progressive-web-apps/checklist) に失敗しています。どの監査が失敗しているのか、なぜ失敗しているのかをよりよく理解するために、さらに分析を行う必要があります。
+明らかに、大多数のEコマースページは、ほとんどの<a hreflang="en" href="https://developers.google.com/web/progressive-web-apps/checklist">PWA チェックリスト監査</a> に失敗しています。どの監査が失敗しているのか、なぜ失敗しているのかをよりよく理解するために、さらに分析を行う必要があります。
 
 ## 結論
 

@@ -7,7 +7,7 @@ reviewers: [jzyang, exterkamp]
 analysts: [max-ostapenko, paulcalvano]
 editors: [bazzadp]
 translators: [ksakae]
-simonhearne_bio: Simonはウェブパフォーマンスアーキテクトです。彼は、より速く、よりアクセスしやすいウェブを提供することに情熱を注いでいます。<a href="https://twitter.com/simonhearne">@SimonHearne</a>でツイートしたり、<a href="https://simonhearne.com">simonhearne.com</a>でブログを書いています。
+simonhearne_bio: Simonはウェブパフォーマンスアーキテクトです。彼は、より速く、よりアクセスしやすいウェブを提供することに情熱を注いでいます。<a href="https://twitter.com/simonhearne">@SimonHearne</a>でツイートしたり、<a hreflang="en" href="https://simonhearne.com">simonhearne.com</a>でブログを書いています。
 discuss: 2042
 results: https://docs.google.com/spreadsheets/d/1uW4SMkC45b4EbC4JV1xKAUhwGN2K8j0qFy_jSIYnHhI/
 featured_quote: サードパーティコンテンツはかつてないほど普及しており、94%のページに少なくとも1つのサードパーティリソースがあり、ページの中央値では24個のサードパーティリソースがあります。この章では、サードパーティコンテンツの普及率、ページの重さとブラウザのCPUへの影響をレビューした後、サードパーティコンテンツがページパフォーマンスに与える影響を軽減する方法を提案します。
@@ -49,7 +49,7 @@ featured_stat_label_3: ページの中央値でのサードパーティからの
 
 ### プロバイダカテゴリ
 
-この章では、サードパーティプロバイダーをさまざまなカテゴリに分けて説明します。それぞれのカテゴリには、簡単な説明が含まれています。ドメインとカテゴリのマッピングは、[サードパーティのウェブリポジトリ](https://github.com/patrickhulce/third-party-web/blob/8afa2d8cadddec8f0db39e7d715c07e85fb0f8ec/data/entities.json5)にあります。
+この章では、サードパーティプロバイダーをさまざまなカテゴリに分けて説明します。それぞれのカテゴリには、簡単な説明が含まれています。ドメインとカテゴリのマッピングは、<a hreflang="en" href="https://github.com/patrickhulce/third-party-web/blob/8afa2d8cadddec8f0db39e7d715c07e85fb0f8ec/data/entities.json5">サードパーティのウェブリポジトリ</a>にあります。
 
 * 広告 - 広告の表示と測定
 * アナリティクス - サイト訪問者の行動を追跡
@@ -125,11 +125,11 @@ _CDNに関する注意事項。ここでのCDNカテゴリには、パブリッ�
 
 その結果、サードパーティコンテンツの主な貢献者は画像（38%）とJavaScript（22%）で、次に多いのは不明（16%）であることがわかりました。不明は、テキスト/プレーンなどの非カテゴライズグループのサブセットと、コンテンツタイプのヘッダーがないレスポンスです。
 
-これはシフトを示しています[2019年と比較して](https://almanac.httparchive.org/ja/2019/third-parties#%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E3%81%AE%E7%A8%AE%E9%A1%9E)：相対的な画像コンテンツは33%から38%に増加している一方で、JavaScriptコンテンツは32%から22%に大幅に減少しています。この減少は、cookieとデータ保護規制への順守が増え、HTTPアーカイブのテスト実行の範囲外である明示的なユーザーのオプトインの後までサードパーティの実行を減らしたことによるものと思われます。
+これはシフトを示しています<a href="../2019/third-parties#%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E3%81%AE%E7%A8%AE%E9%A1%9E">2019年と比較して</a>：相対的な画像コンテンツは33%から38%に増加している一方で、JavaScriptコンテンツは32%から22%に大幅に減少しています。この減少は、cookieとデータ保護規制への順守が増え、HTTPアーカイブのテスト実行の範囲外である明示的なユーザーのオプトインの後までサードパーティの実行を減らしたことによるものと思われます。
 
 ### サードパーティドメイン
 
-サードパーティのコンテンツを提供しているドメインをさらに掘り下げてみると、Google Fontsが圧倒的に多いことがわかります。テストしたモバイルページの7.5%以上に存在してます。フォントがサードパーティコンテンツの3%程度しか占めていないのに対し、これらのコンテンツのほとんどはGoogle Fontsサービスによって配信されています。あなたのページでGoogle Fontsを使用している場合は、可能な限り最高のユーザーエクスペリエンスを確保するために、[ベストプラクティス](https://csswizardry.com/2020/05/the-fastest-google-fonts/)に必ず従ってください。
+サードパーティのコンテンツを提供しているドメインをさらに掘り下げてみると、Google Fontsが圧倒的に多いことがわかります。テストしたモバイルページの7.5%以上に存在してます。フォントがサードパーティコンテンツの3%程度しか占めていないのに対し、これらのコンテンツのほとんどはGoogle Fontsサービスによって配信されています。あなたのページでGoogle Fontsを使用している場合は、可能な限り最高のユーザーエクスペリエンスを確保するために、<a hreflang="en" href="https://csswizardry.com/2020/05/the-fastest-google-fonts/">ベストプラクティス</a>に必ず従ってください。
 
 {{ figure_markup(
   image="top-domains-by-prevalence.png",
@@ -145,9 +145,9 @@ _CDNに関する注意事項。ここでのCDNカテゴリには、パブリッ�
 
 次の4つの最も一般的なドメインはすべて広告プロバイダです。それらはページから直接要求されるのではなく、別の広告ネットワークによって開始されたリダイレクトの複雑なチェーンを経由している可能性があります。
 
-6番目に多いドメインは`digicert.com`です。`digicert.com`への呼び出しは、TLS証明書がOCSPのステープリングを有効にしていなかったり、中間証明書のピン留めを防ぐExtended Validation(EV)証明書を使用していたりするため、一般的にOCSPの失効チェックが行われます。この数は、すべてのページロードが事実上の初回訪問者であるため、HTTP Archiveでは誇張されています。OCSPレスポンスは一般的にキャッシュされ、実際のブラウジングでは7日間有効です。この問題についての詳細は[このブログ記事](https://simonhearne.com/2020/drop-ev-certs/) を参照してください。
+6番目に多いドメインは`digicert.com`です。`digicert.com`への呼び出しは、TLS証明書がOCSPのステープリングを有効にしていなかったり、中間証明書のピン留めを防ぐExtended Validation(EV)証明書を使用していたりするため、一般的にOCSPの失効チェックが行われます。この数は、すべてのページロードが事実上の初回訪問者であるため、HTTP Archiveでは誇張されています。OCSPレスポンスは一般的にキャッシュされ、実際のブラウジングでは7日間有効です。この問題についての詳細は<a hreflang="en" href="https://simonhearne.com/2020/drop-ev-certs/">このブログ記事</a> を参照してください。
 
-2.43%でさらに下位にランクインしているのは、Googleの[Hosted Libraries project](https://developers.google.com/speed/libraries)の`ajax.googleapis.com`です。ホストされたサービスからjQueryなどのライブラリをロードするのは簡単ですが、サードパーティのドメインに接続するための追加コストがパフォーマンスにマイナスの影響を与える可能性があります。可能であれば、重要なJavaScriptとCSSはすべてルートドメインでホストするのがベストです。また、現在ではすべての主要ブラウザが[ページごとにキャッシュを分割](https://developers.google.com/web/updates/2020/10/http-cache-partitioning)しているため、共有CDNリソースを使用することによるキャッシュのメリットはありません。ハリー・ロバーツ氏は[How to host your own static assets](https://csswizardry.com/2019/05/self-host-your-static-assets/)で詳細なブログ記事を書いています。
+2.43%でさらに下位にランクインしているのは、Googleの<a hreflang="en" href="https://developers.google.com/speed/libraries">Hosted Libraries project</a>の`ajax.googleapis.com`です。ホストされたサービスからjQueryなどのライブラリをロードするのは簡単ですが、サードパーティのドメインに接続するための追加コストがパフォーマンスにマイナスの影響を与える可能性があります。可能であれば、重要なJavaScriptとCSSはすべてルートドメインでホストするのがベストです。また、現在ではすべての主要ブラウザが<a hreflang="en" href="https://developers.google.com/web/updates/2020/10/http-cache-partitioning">ページごとにキャッシュを分割</a>しているため、共有CDNリソースを使用することによるキャッシュのメリットはありません。ハリー・ロバーツ氏は<a hreflang="en" href="https://csswizardry.com/2019/05/self-host-your-static-assets/">How to host your own static assets</a>で詳細なブログ記事を書いています。
 
 ## ページ重量の影響
 
@@ -261,14 +261,15 @@ _CDNに関する注意事項。ここでのCDNカテゴリには、パブリッ�
 
 このグラフは、各ページに存在するサードパーティのカテゴリ別の総ページCPU時間の確率密度関数を示しています。ページの中央値はパーセンタイル軸で50です。データによると、すべてのサードパーティのカテゴリは同様のパターンで、中央値のページのCPU時間は400～1,000ミリ秒となっています。ここでの外れ値は広告（黒）です：広告タグが付いているページは、ページロード時のCPU使用率が高い可能性が高くなります。広告タグがあるページのCPU負荷時間の中央値は1,500msであるのに対し、広告タグがないページのCPU負荷時間は500msです。低いパーセンタイルでの高いCPU負荷時間は、最速のサイトでも広告として分類されるサードパーティの存在によって大きな影響を受けていることを示しています。
 
-## Timing-Allow-Originの普及率
+## `timing-allow-origin`の普及率
 
 [Resource Timing API](https://developer.mozilla.org/ja/docs/Web/API/Resource_Timing_API/Using_the_Resource_Timing_API)は、ウェブサイトのオーナーがJavaScriptを介して個々のリソースのパフォーマンスを測定することを可能にします。このデータは、サードパーティコンテンツのようなクロスオリジンのリソースに対しては、デフォルトでは非常に制限されています。例えば、ウェブサイトのオーナーは、ウィジェットのリクエストのレスポンスサイズを測定することで、訪問者がFacebookにログインしているかどうかを判断できるかもしれません。しかし、ほとんどのサードパーティコンテンツの場合、`timing-allow-origin`ヘッダーを設定することは、ホスティングウェブサイトがサードパーティコンテンツのパフォーマンスとサイズを追跡できるようにするための透明性の行為です。
 
 {{ figure_markup(
   image="requests-with-tao.png",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=1886505312&format=interactive",
-  caption="Timing-Allow-Originヘッダを持つリクエスト。",
+  alt="Timing-Allow-Originヘッダを持つリクエスト。",
+  caption="`timing-allow-origin`ヘッダを持つリクエスト。",
   description="サードパーティの応答の35%未満がtiming-allow-originヘッダーで提供されています",
   width=600,
   height=371,
@@ -291,8 +292,8 @@ HTTP Archiveの結果は、サードパーティのレスポンスの3分の1だ
 
 サードパーティのコンテンツは多くのウェブサイトにとって重要ですが、各プロバイダーの影響を監査することは、ユーザー体験、ページの重さ、またはCPU使用率に大きな影響を与えないようにするために非常に重要です。サードパーティのウェイトに貢献している上位のプロバイダーには、セルフホスティングのオプションがあることが多いですが、共有資産を使用することによるキャッシングのメリットがないため、これは特に検討する価値があります。
 
-* Google Fontsは、[セルフホスティング](https://www.tunetheweb.com/blog/should-you-self-host-google-fonts/)の資産を許可します。
+* Google Fontsは、<a hreflang="en" href="https://www.tunetheweb.com/blog/should-you-self-host-google-fonts/">セルフホスティング</a>の資産を許可します。
 * JavaScriptのCDNをセルフホストのアセットに置き換えることができます。
-* 実験スクリプトは、セルフホスト型にできます。 [Optimizely](https://help.optimizely.com/Set_Up_Optimizely/Optimizely_self-hosting_for_Akamai_users)
+* 実験スクリプトは、セルフホスト型にできます。 <a hreflang="en" href="https://help.optimizely.com/Set_Up_Optimizely/Optimizely_self-hosting_for_Akamai_users">Optimizely</a>
 
 この章では、ウェブ上のサードパーティコンテンツのメリットとコストについて説明してきました。サードパーティはほぼすべてのウェブサイトに不可欠であり、その影響はサードパーティのプロバイダーによって異なることがわかりました。新しいサードパーティをページに追加する前に、サードパーティが与える影響を考えてみてください。

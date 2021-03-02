@@ -7,9 +7,9 @@ reviewers: [nhoizey, colinbendell, dougsillars, Navaneeth-akam]
 analysts: [smatei]
 editors: [bazzadp]
 translators: []
-tpiros_bio: Tamas Piros is a Developer Experience Engineer at <a href="https://cloudinary.com/">Cloudinary</a>, Google Developer Expert and Technical Instructor running <a href="https://fullstacktraining.com">Full Stack Training</a>.
-bseymour_bio: Ben Seymour is a Dynamic Media & Content Specialist with <a href="https://cloudinary.com/">Cloudinary</a>, author of <a href="http://responsiveimag.es/">Practical Responsive Images</a> and co-founder of <a href="https://storyus.life/">Storyus</a> and <a href="https://haktive.com/">Haktive</a>.
-eeeps_bio: Eric Portis is a Web Platform Advocate at <a href="https://cloudinary.com/">Cloudinary</a>.
+tpiros_bio: Tamas Piros is a Developer Experience Engineer at <a hreflang="en" href="https://cloudinary.com/">Cloudinary</a>, Google Developer Expert and Technical Instructor running <a hreflang="en" href="https://fullstacktraining.com">Full Stack Training</a>.
+bseymour_bio: Ben Seymour is a Dynamic Media & Content Specialist with <a hreflang="en" href="https://cloudinary.com/">Cloudinary</a>, author of <a hreflang="en" href="http://responsiveimag.es/">Practical Responsive Images</a> and co-founder of <a hreflang="en" href="https://storyus.life/">Storyus</a> and <a hreflang="en" href="https://haktive.com/">Haktive</a>.
+eeeps_bio: Eric Portis is a Web Platform Advocate at <a hreflang="en" href="https://cloudinary.com/">Cloudinary</a>.
 discuss: 2041
 results: https://docs.google.com/spreadsheets/d/1SZGpCsTT0u1MFBrxed7HA9FLAloL1dS8ZIng986LvS8/
 featured_quote: Images and videos offer us the potential for a most powerful pairing&colon; instant communication, capable of triggering an innate emotional response. However, they require considered implementation techniques to avoid also being a burden to our web pages.
@@ -50,7 +50,7 @@ Around 26.5% of all pages now include `srcset`
 
 The number of images presented to the user agents to choose from has direct implications for two main performance factors:
 
-1. [Image breakpoints](https://cloudfour.com/thinks/responsive-images-101-part-9-image-breakpoints/) (to meet a performance budget)
+1. <a hreflang="en" href="https://cloudfour.com/thinks/responsive-images-101-part-9-image-breakpoints/">Image breakpoints</a> (to meet a performance budget)
 2. Caching efficiencies
 
 The fewer the number of image candidates, the greater the likelihood of the asset being cached, and if a CDN is being used, the greater the likelihood of it being available on a client's nearest edge node. However the greater the difference in media dimensions, the more likely we are to end up serving media which is less-suited to the device and context in question.
@@ -69,7 +69,7 @@ The fewer the number of image candidates, the greater the likelihood of the asse
 
 In addition to the caching inefficiencies already mentioned, a greater number of dimensional variants will typically increase both the complexity of the media pipeline or service in use, and the required media storage.
 
-When looking at this data, note that a few platforms ([such as WordPress](https://make.wordpress.org/core/2015/11/10/responsive-images-in-wordpress-4-4/)) use automated approaches which impact a large number of sites.
+When looking at this data, note that a few platforms (<a hreflang="en" href="https://make.wordpress.org/core/2015/11/10/responsive-images-in-wordpress-4-4/">such as WordPress</a>) use automated approaches which impact a large number of sites.
 
 ##### Srcset: descriptors
 
@@ -104,7 +104,7 @@ Both approaches enable the user agent to mathematically factor in the current de
 
 In the early days of responsive images, some browsers only supported `x` descriptors, but clearly `w` descriptors are currently by far the most favored.
 
-While it can be common to choose image candidates which are spaced by dimension (rendering every image at a set of pre-chosen widths, e.g. 720px, 1200px, and 1800px) there are also approaches to give more linear payload steps (e.g. a series of resources which are 50kb in difference). Tools like the [Responsive Image Breakpoints Generator](https://www.responsivebreakpoints.com/) can be useful in facilitating this.
+While it can be common to choose image candidates which are spaced by dimension (rendering every image at a set of pre-chosen widths, e.g. 720px, 1200px, and 1800px) there are also approaches to give more linear payload steps (e.g. a series of resources which are 50kb in difference). Tools like the <a hreflang="en" href="https://www.responsivebreakpoints.com/">Responsive Image Breakpoints Generator</a> can be useful in facilitating this.
 
 #### Sizes
 
@@ -128,7 +128,7 @@ For example:
   )
 }}
 
-For the 2020 data around 35% of sites using `srcset` did not also combine it with `sizes`. Though the browser will happily fall back to a `sizes="100vw"` default, leaving the attribute off is [technically incorrect](https://alistapart.com/blog/post/article-update-dont-rely-on-default-sizes/), and we regularly encounter instances where this oversight means that the mathematics to determine the most appropriate image candidate are flawed, often leading to unnecessarily-large images being requested.
+For the 2020 data around 35% of sites using `srcset` did not also combine it with `sizes`. Though the browser will happily fall back to a `sizes="100vw"` default, leaving the attribute off is <a hreflang="en" href="https://alistapart.com/blog/post/article-update-dont-rely-on-default-sizes/">technically incorrect</a>, and we regularly encounter instances where this oversight means that the mathematics to determine the most appropriate image candidate are flawed, often leading to unnecessarily-large images being requested.
 
 Many people that we have discussed this with express that `sizes` is particularly tricky to implement in a correct, resilient fashion, due to the need to ensure cross-resource alignment between layout (as managed and determined by CSS) and responsive image markup (in HTML).
 
@@ -207,10 +207,10 @@ Of those pages using `<picture>` for format switching, 83% offer WebP as one of 
 
 Format support across browsers is a movable feast: WebP has now got much broader support.
 
-- WebP: [90% coverage](https://caniuse.com/webp) (Edge, Firefox, Chrome, Opera, Android)
-- JPEG 2000: [18.5% coverage](https://caniuse.com/jpeg2000) (Safari)
-- JPEG XR: [1.7% coverage](https://caniuse.com/jpegxr) (IE)
-- AVIF: [25% coverage](https://caniuse.com/avif) (Chrome, Opera)
+- WebP: <a hreflang="en" href="https://caniuse.com/webp">90% coverage</a> (Edge, Firefox, Chrome, Opera, Android)
+- JPEG 2000: <a hreflang="en" href="https://caniuse.com/jpeg2000">18.5% coverage</a> (Safari)
+- JPEG XR: <a hreflang="en" href="https://caniuse.com/jpegxr">1.7% coverage</a> (IE)
+- AVIF: <a hreflang="en" href="https://caniuse.com/avif">25% coverage</a> (Chrome, Opera)
 
 When constructing a set of fallback formats, authors must consider features, in addition to compression performance. For example, if an image contains transparency, a good "lowest-common denominator" to supply in the `img src` would be PNG. Then, one or more `<source>` elements containing next-generation formats that *also* support transparency – like WebP, JPEG 2000 and AVIF – could be used on top of that.
 
@@ -296,7 +296,7 @@ We have seen further inconsistencies between extensions and MIME types - for exa
 
 #### Progressive JPEGs
 
-How common are [progressive JPEGs](https://www.smashingmagazine.com/2018/02/progressive-image-loading-user-perceived-performance/#back-to-basis-progressive-jpegs)? WebPageTest gives each page a "score," which adds up all of the JPEG bytes that were loaded from progressively-encoded JPEGs and divides it by the total number of JPEG bytes that *could* have been progressively encoded. The majority (57%) of pages served less than 25% of their JPEG-bytes, progressively. This represents a large opportunity for no-downsides compression savings, that's yet to be taken despite years of progressive JPEGs being a best practice and modern encoders like MozJPEG encoding progressively by default.
+How common are <a hreflang="en" href="https://www.smashingmagazine.com/2018/02/progressive-image-loading-user-perceived-performance/#back-to-basis-progressive-jpegs">progressive JPEGs</a>? WebPageTest gives each page a "score," which adds up all of the JPEG bytes that were loaded from progressively-encoded JPEGs and divides it by the total number of JPEG bytes that *could* have been progressively encoded. The majority (57%) of pages served less than 25% of their JPEG-bytes, progressively. This represents a large opportunity for no-downsides compression savings, that's yet to be taken despite years of progressive JPEGs being a best practice and modern encoders like MozJPEG encoding progressively by default.
 
 {{ figure_markup(
   image="progressive-jpeg-score.png",
@@ -310,7 +310,7 @@ How common are [progressive JPEGs](https://www.smashingmagazine.com/2018/02/prog
 
 ### Microbrowsers
 
-Let us turn now to the topic of [microbrowsers](https://24ways.org/2019/microbrowsers-are-everywhere/). Also known as "link unfurlers" and "link expanders," these are the user agents that request web pages and grab bits and pieces from them to assemble rich previews when links are shared in messaging or on social media. The *lingua franca* of microbrowsers is Facebook's [Open Graph protocol](https://ogp.me), so we looked at what percentage of web pages are including images and video specifically targeted towards microbrowsers in Open Graph `<meta>` tags.
+Let us turn now to the topic of <a hreflang="en" href="https://24ways.org/2019/microbrowsers-are-everywhere/">microbrowsers</a>. Also known as "link unfurlers" and "link expanders," these are the user agents that request web pages and grab bits and pieces from them to assemble rich previews when links are shared in messaging or on social media. The *lingua franca* of microbrowsers is Facebook's <a hreflang="en" href="https://ogp.me">Open Graph protocol</a>, so we looked at what percentage of web pages are including images and video specifically targeted towards microbrowsers in Open Graph `<meta>` tags.
 
 {{ figure_markup(
   image="open-graph-image-and-video-usage.png",
@@ -350,7 +350,7 @@ Given that video content is expensive to produce and much less common on the web
 
 The Open Graph protocol only allows for *one* image or video URL to be included; there is none of the context-adaptive flexibility offered by `<picture>` and `srcset`. So, authors tend to be rather conservative when picking formats to send to microbrowsers. Fully half of all microbrowser-specific images are JPEGs; 45 percent are PNGs; a hair under 2 percent are GIFs. WebPs only account for 0.2% of images for microbrowsers.
 
-Likewise, on the video front, the vast majority of resources are sent in the lowest-common-denominator format: MP4. We are  mystified as to why the second most popular format is the [now-depreciated](https://blog.adobe.com/en/publish/2017/07/25/adobe-flash-update.html#gs.my93m2) SWF, and curious whether these are playable in any microbrowser.
+Likewise, on the video front, the vast majority of resources are sent in the lowest-common-denominator format: MP4. We are  mystified as to why the second most popular format is the <a hreflang="en" href="https://blog.adobe.com/en/publish/2017/07/25/adobe-flash-update.html#gs.my93m2">now-depreciated</a> SWF, and curious whether these are playable in any microbrowser.
 
 ### Usage of `rel=preconnect`
 
@@ -369,7 +369,7 @@ Analyzing the markup, on desktop we see 7.83% of pages using this, and on mobile
 
 ### Usage of `data:` URLs
 
-Using data URLs (formerly known as data URIs) is a technique that allows developers to embed a base64-encoded image directly in HTML. This ensures that an image will be fully loaded by the time that the HTML has been parsed into a DOM tree, and virtually guarantees that the image will be available for the first paint. However, because they don't compress over the wire as well as binaries, block other—possibly more important resources—from loading, and complicate caching, so base-64'd images [are something of an anti-pattern](https://calendar.perfplanet.com/2020/the-dangers-of-data-uris/).
+Using data URLs (formerly known as data URIs) is a technique that allows developers to embed a base64-encoded image directly in HTML. This ensures that an image will be fully loaded by the time that the HTML has been parsed into a DOM tree, and virtually guarantees that the image will be available for the first paint. However, because they don't compress over the wire as well as binaries, block other—possibly more important resources—from loading, and complicate caching, so base-64'd images <a hreflang="en" href="https://calendar.perfplanet.com/2020/the-dangers-of-data-uris/">are something of an anti-pattern</a>.
 
 {{ figure_markup(
   caption="Mobile pages using data URIs.",

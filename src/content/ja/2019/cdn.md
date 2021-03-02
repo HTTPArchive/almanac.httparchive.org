@@ -9,8 +9,8 @@ editors: [rviscomi]
 translators: [ksakae]
 discuss: 1772
 results: https://docs.google.com/spreadsheets/d/1Y7kAxjxUl8puuTToe6rL3kqJLX1ftOb0nCcD8m3lZBw/
-andydavies_bio: Andy Daviesはフリーランスのウェブパフォーマンスコンサルタントであり、英国の大手小売業者、新聞社、金融サービス会社のサイトの高速化を支援してきました。彼は『ウェブパフォーマンスのポケットガイド』を執筆し、『Using WebPageTest』の共著者であり、ロンドンのウェブパフォーマンス・ミートアップの主催者でもあります。アンディは Twitter で <a href="https://twitter.com/andydavies">@AndyDavies</a> として活動しており、<a href="https://andydavies.me">https://andydavies.me</a> で時々ブログを更新しています。
-colinbendell_bio: Colinは、<a href="https://cloudinary.com/">Cloudinary</a>のCTOオフィスの一員であり、オライリーの本<a href="https://www.oreilly.com/library/view/high-performance-images/9781491925799/">High Performance Images</a>の共著者でもあります。彼は、大容量データ、メディア、ブラウザ、標準の交差点で多くの時間を過ごしています。<a href="https://twitter.com/colinbendell">@colinbendell</a> や <a href="https://bendell.ca/">https://bendell.ca</a> のブログで彼を見つけることができます。
+andydavies_bio: Andy Daviesはフリーランスのウェブパフォーマンスコンサルタントであり、英国の大手小売業者、新聞社、金融サービス会社のサイトの高速化を支援してきました。彼は『ウェブパフォーマンスのポケットガイド』を執筆し、『Using WebPageTest』の共著者であり、ロンドンのウェブパフォーマンス・ミートアップの主催者でもあります。アンディは Twitter で <a href="https://twitter.com/andydavies">@AndyDavies</a> として活動しており、<a hreflang="en" href="https://andydavies.me">https://andydavies.me</a> で時々ブログを更新しています。
+colinbendell_bio: Colinは、<a hreflang="en" href="https://cloudinary.com/">Cloudinary</a>のCTOオフィスの一員であり、オライリーの本<a hreflang="en" href="https://www.oreilly.com/library/view/high-performance-images/9781491925799/">High Performance Images</a>の共著者でもあります。彼は、大容量データ、メディア、ブラウザ、標準の交差点で多くの時間を過ごしています。<a href="https://twitter.com/colinbendell">@colinbendell</a> や <a hreflang="en" href="https://bendell.ca/">https://bendell.ca</a> のブログで彼を見つけることができます。
 featured_quote: コンテンツデリバリネットワークを使用する&quot;は、Webサイトの読み込みを高速化するためのSteve Soudersのオリジナルの推奨事項の1つです。Web Almanacのこの章では、スティーブの推奨事項がどれだけ広く採用されているか、サイトがどのようにコンテンツデリバリネットワーク(CDN)を使用しているか、そして使用している機能のいくつかを探っていきます。
 featured_stat_1: 20%
 featured_stat_label_1: CDNが提供するホームページ
@@ -48,10 +48,10 @@ CDNは、多くの場合、訪問者の近くで静的コンテンツを保存�
 Web Almanacに使用されるテスト[方法](./methodology)には多くの制限があります。これらには以下が含まれます。
 
 * **シミュレートされたネットワーク遅延**：Web Almanacは、[トラフィックを総合的に形成する](./methodology#webpagetest)専用ネットワーク接続を使用します。
-* **単一の地理的場所**：テストは[単一のデータセンター](https://httparchive.org/faq#how-is-the-data-gathered)から実行されるため、多くのCDNベンダーの地理的分布をテストすることはできません。
+* **単一の地理的場所**：テストは<a hreflang="en" href="https://httparchive.org/faq#how-is-the-data-gathered">単一のデータセンター</a>から実行されるため、多くのCDNベンダーの地理的分布をテストすることはできません。
 * **キャッシュの有効性**：各CDNは独自の技術を使用しており、多くの場合、セキュリティ上の理由により、キャッシュのパフォーマンスは公開されていません。
 * **ローカライゼーションと国際化**：地理的分布と同様に言語、地理固有のドメインの影響もテストに対して不透明です。
-* [CDN検出](https://github.com/WPO-Foundation/wptagent/blob/master/internal/optimization_checks.py#L51)は、主にDNS解決とHTTPヘッダーを介して行われます。ほとんどのCDNは、DNS CNAMEを使用してユーザーを最適なデータセンターにマッピングします。ただし、一部のCDNはAnyCast IPを使用するか、DNSチェインを隠す委任されたドメインからのA+AAAA応答を直接使用します。それ以外の場合、Webページは複数のCDNを使用して、[WebPageTest](./methodology#webpagetest)のシングルリクエストパスから隠されているベンダー間でバランスを取ります。これらはすべて、測定の有効性を制限します。
+* <a hreflang="en" href="https://github.com/WPO-Foundation/wptagent/blob/master/internal/optimization_checks.py#L51">CDN検出</a>は、主にDNS解決とHTTPヘッダーを介して行われます。ほとんどのCDNは、DNS CNAMEを使用してユーザーを最適なデータセンターにマッピングします。ただし、一部のCDNはAnyCast IPを使用するか、DNSチェインを隠す委任されたドメインからのA+AAAA応答を直接使用します。それ以外の場合、Webページは複数のCDNを使用して、[WebPageTest](./methodology#webpagetest)のシングルリクエストパスから隠されているベンダー間でバランスを取ります。これらはすべて、測定の有効性を制限します。
 
 最も重要なことは、これらの結果は潜在的な使用率を反映しているが、実際の影響を反映していないことです。 YouTubeは「ShoesByColin」よりも人気がありますが、使用率を比較するとどちらも同じ値として表示されます。
 
@@ -461,7 +461,7 @@ CDNプロバイダーには、汎用CDNと目的別CDNの2つのカテゴリが�
 
 ## RTTとTLS管理
 
-CDNは、Webサイトのパフォーマンスのために単純なキャッシング以上のものを提供できます。多くのCDNは、コンテンツのキャッシュを禁止する法的要件またはその他のビジネス要件がある場合、動的またはパーソナライズされたコンテンツのパススルーモードもサポートします。 CDNの物理的な配布を利用すると、エンドユーザーのTCP RTTのパフォーマンスが向上します。[他の人が指摘したように](https://www.igvita.com/2012/07/19/latency-the-new-web-performance-bottleneck/)、[RTTを減らすことは、帯域幅を増やすことに比べてWebページのパフォーマンスを向上させる最も効果的な手段です](https://hpbn.co/primer-on-latency-and-bandwidth/)。
+CDNは、Webサイトのパフォーマンスのために単純なキャッシング以上のものを提供できます。多くのCDNは、コンテンツのキャッシュを禁止する法的要件またはその他のビジネス要件がある場合、動的またはパーソナライズされたコンテンツのパススルーモードもサポートします。 CDNの物理的な配布を利用すると、エンドユーザーのTCP RTTのパフォーマンスが向上します。<a hreflang="en" href="https://www.igvita.com/2012/07/19/latency-the-new-web-performance-bottleneck/">他の人が指摘したように</a>、<a hreflang="en" href="https://hpbn.co/primer-on-latency-and-bandwidth/">RTTを減らすことは、帯域幅を増やすことに比べてWebページのパフォーマンスを向上させる最も効果的な手段です</a>。
 
 この方法でCDNを使用すると、次の2つの方法でページのパフォーマンスを改善できます。
 
@@ -659,9 +659,9 @@ TLSネゴシエーションでは、サーバーからデータを送信する�
 
 TLSハンドシェイクのパフォーマンスは、さまざまな要因の影響を受けます。これらには、RTT、TLSレコードサイズ、およびTLS証明書サイズが含まれます。 RTTはTLSハンドシェイクに最大の影響を与えますが、TLSパフォーマンスの2番目に大きな要因はTLS証明書のサイズです。
 
-[TLSハンドシェイク](https://hpbn.co/transport-layer-security-tls/#tls-handshake)の最初のラウンドトリップ中に、サーバーは証明書を添付します。この証明書は、次へ進む前にクライアントによって検証されます。この証明書交換では、サーバーは検証可能な証明書チェインを含む場合があります。この証明書の交換後、通信を暗号化するために追加のキーが確立されます。ただし、証明書の長さとサイズはTLSネゴシエーションのパフォーマンスに悪影響を与え、場合によってはクライアントライブラリをクラッシュさせる可能性があります。
+<a hreflang="en" href="https://hpbn.co/transport-layer-security-tls/#tls-handshake">TLSハンドシェイク</a>の最初のラウンドトリップ中に、サーバーは証明書を添付します。この証明書は、次へ進む前にクライアントによって検証されます。この証明書交換では、サーバーは検証可能な証明書チェインを含む場合があります。この証明書の交換後、通信を暗号化するために追加のキーが確立されます。ただし、証明書の長さとサイズはTLSネゴシエーションのパフォーマンスに悪影響を与え、場合によってはクライアントライブラリをクラッシュさせる可能性があります。
 
-証明書の交換はTLSハンドシェイクの基礎であり、通常、エクスプロイトの攻撃対象領域を最小限に抑えるため、分離されたコードパスによって処理されます。低レベルの性質のため、バッファは通常動的に割り当てられず、固定されます。この方法では、クライアントが無制限のサイズの証明書を処理できると単純に想定することはできません。たとえば、OpenSSL CLIツールとSafariは[`https://10000-sans.badssl.com`](https://10000-sans.badssl.com)に対して正常にネゴシエートできます。ただし、証明書のサイズが原因でChromeとFirefoxは失敗します。
+証明書の交換はTLSハンドシェイクの基礎であり、通常、エクスプロイトの攻撃対象領域を最小限に抑えるため、分離されたコードパスによって処理されます。低レベルの性質のため、バッファは通常動的に割り当てられず、固定されます。この方法では、クライアントが無制限のサイズの証明書を処理できると単純に想定することはできません。たとえば、OpenSSL CLIツールとSafariは<a hreflang="en" href="https://10000-sans.badssl.com">`https://10000-sans.badssl.com`</a>に対して正常にネゴシエートできます。ただし、証明書のサイズが原因でChromeとFirefoxは失敗します。
 
 極端なサイズの証明書は障害を引き起こす可能性がありますが、適度に大きな証明書を送信してもパフォーマンスに影響があります。証明書は、`Subject-Alternative-Name`（SAN）にリストされている1つ以上のホスト名に対して有効です。 SANが多いほど、証明書は大きくなります。パフォーマンスの低下を引き起こすのは、検証中のこれらのSANの処理です。明確にするため、証明書サイズのパフォーマンスはTCPオーバーヘッドに関するものではなく、クライアントの処理パフォーマンスに関するものです。
 
@@ -669,9 +669,9 @@ TLSハンドシェイクのパフォーマンスは、さまざまな要因の�
 
 ただし、多くのCDNは共有TLS証明書に依存しており、証明書のSANの多くの顧客をリストします。これはIPv4アドレスが不足しているため、必要になることがよくあります。エンドユーザーが`Server-Name-Indicator`（SNI）を採用する前は、クライアントはサーバーに接続し証明書を検査した後にのみ、クライアントはユーザーが探しているホスト名を示唆します（HTTPで`Host`ヘッダーを使用する）。これにより、IPアドレスと証明書が1：1で関連付けられます。物理的な場所が多数あるCDNの場合、各場所に専用IPが必要になる可能性があり、IPv4アドレスの枯渇をさらに悪化させます。したがって、SNIをサポートしていないユーザーがまだいるWebサイトにCDNがTLS証明書を提供する最も簡単で効率的な方法は、共有証明書を提供することです。
 
-アカマイによると、SNIの採用はまだ世界的に[100％ではありません](https://datatracker.ietf.org/meeting/101/materials/slides-101-maprg-update-on-tls-sni-and-ipv6-client-adoption-00)。幸いなことに、近年急速な変化がありました。最大の犯人はもはやWindows XPとVistaではなく、Androidアプリ、ボット、および企業アプリケーションです。SNI採用率が99％であっても、インターネット上の35億人のユーザーの残り1％は、Webサイトの所有者が非SNI証明書を要求する非常に魅力的な動機を生み出すことができます。別の言い方をすれば、特定製品、活動に注力してる(pure play)Webサイトは、標準ブラウザ間でほぼ100％SNIを採用できます。それでもアプリ、特にAndroidアプリでAPIまたはWebViewをサポートするためにWebサイトが使用されている場合、この分布は急速に低下する可能性があります。
+アカマイによると、SNIの採用はまだ世界的に<a hreflang="en" href="https://datatracker.ietf.org/meeting/101/materials/slides-101-maprg-update-on-tls-sni-and-ipv6-client-adoption-00">100％ではありません</a>。幸いなことに、近年急速な変化がありました。最大の犯人はもはやWindows XPとVistaではなく、Androidアプリ、ボット、および企業アプリケーションです。SNI採用率が99％であっても、インターネット上の35億人のユーザーの残り1％は、Webサイトの所有者が非SNI証明書を要求する非常に魅力的な動機を生み出すことができます。別の言い方をすれば、特定製品、活動に注力してる(pure play)Webサイトは、標準ブラウザ間でほぼ100％SNIを採用できます。それでもアプリ、特にAndroidアプリでAPIまたはWebViewをサポートするためにWebサイトが使用されている場合、この分布は急速に低下する可能性があります。
 
-ほとんどのCDNは、共有証明書の必要性とパフォーマンスのバランスをとります。ほとんどの場合、SANの数の上限は100〜150です。この制限は多くの場合、証明書プロバイダーに由来します。たとえば、[LetsEncrypt](https://letsencrypt.org/docs/rate-limits/)、[DigiCert](https://www.websecurity.digicert.com/security-topics/san-ssl-certificates)、[GoDaddy](https://www.godaddy.com/web-security/multi-domain-san-ssl-certificate)はすべて、SAN証明書を100個のホスト名に制限しますが、[Comodo](https://comodosslstore.com/comodo-mdc-ssl.aspx)の制限は2,000個です。これにより、一部のCDNがこの制限を超えて、単一の証明書で800を超えるSANを使用できるようになります。 TLSパフォーマンスと証明書のSANの数には強い負の相関があります。
+ほとんどのCDNは、共有証明書の必要性とパフォーマンスのバランスをとります。ほとんどの場合、SANの数の上限は100〜150です。この制限は多くの場合、証明書プロバイダーに由来します。たとえば、<a hreflang="en" href="https://letsencrypt.org/docs/rate-limits/">LetsEncrypt</a>、<a hreflang="en" href="https://www.websecurity.digicert.com/security-topics/san-ssl-certificates">DigiCert</a>、<a hreflang="en" href="https://www.godaddy.com/web-security/multi-domain-san-ssl-certificate">GoDaddy</a>はすべて、SAN証明書を100個のホスト名に制限しますが、<a hreflang="en" href="https://comodosslstore.com/comodo-mdc-ssl.aspx">Comodo</a>の制限は2,000個です。これにより、一部のCDNがこの制限を超えて、単一の証明書で800を超えるSANを使用できるようになります。 TLSパフォーマンスと証明書のSANの数には強い負の相関があります。
 
 {{ figure_markup(
   image="fig11.png",

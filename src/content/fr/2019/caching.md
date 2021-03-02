@@ -9,7 +9,7 @@ editors: [bazzadp]
 translators: [allemas]
 discuss: 1771
 results: https://docs.google.com/spreadsheets/d/1mnq03DqrRBwxfDV05uEFETK0_hPbYOynWxZkV3tFgNk/
-paulcalvano_bio: Paul Calvano est architecte performance web chez <a href="https://www.akamai.com/">Akamai</a>, où il aide les entreprises à améliorer les performances de leurs sites web. Il est également co-responsable du projet HTTP Archive. Vous pouvez le retrouver en train de tweeter à l’adresse <a href="https://twitter.com/paulcalvano">@paulcalvano</a>, en bloguant sur <a href="https://paulcalvano.com">http://paulcalvano.com</a> et partager ses recherches HTTP Archive à <a href="https://discuss.httparchive.org">https://discuss.httparchive.org</a>.
+paulcalvano_bio: Paul Calvano est architecte performance web chez <a hreflang="en" href="https://www.akamai.com/">Akamai</a>, où il aide les entreprises à améliorer les performances de leurs sites web. Il est également co-responsable du projet HTTP Archive. Vous pouvez le retrouver en train de tweeter à l’adresse <a href="https://twitter.com/paulcalvano">@paulcalvano</a>, en bloguant sur <a hreflang="en" href="https://paulcalvano.com">http://paulcalvano.com</a> et partager ses recherches HTTP Archive à <a hreflang="en" href="https://discuss.httparchive.org">https://discuss.httparchive.org</a>.
 featured_quote: La mise en cache est une technique permettant de réutiliser un contenu précédemment téléchargé. Elle offre un avantage significatif en termes de performance en évitant de rejouer de coûteuses requêtes. La mise en cache facilite la montée en charge d'une application, en réduisant le trafic sur le réseau à destination du serveur d'origine. Un vieux dicton dit que "la requête la plus rapide est celle que vous n'avez pas à faire " et la mise en cache est l'un des principaux moyens d'éviter d'avoir à refaire des requêtes.
 featured_stat_1: 27 %
 featured_stat_label_1: des réponses n’utilisent aucun en-tête de cache.
@@ -31,7 +31,7 @@ La mise en cache sur le web s'appuie sur trois principes fondamentaux&nbsp;: met
 
 **Cachez le plus près possible des utilisateurs finaux.** Une mise en cache proche des utilisateurs réduit les temps de téléchargement en réduisant les latences réseau. Par exemple, pour une ressource mise en cache sur le navigateur de l'utilisateur, la requête ne sera jamais envoyée sur le réseau et le temps de téléchargement sera aussi rapide que les I/O de la machine. Pour les premiers visiteurs, ou les visiteurs qui n'ont pas encore leurs données cachées, un CDN est généralement la prochaine localisation d'une ressource cachée. Dans la plupart des cas, il sera plus rapide de récupérer une ressource à partir d'un cache local ou d'un CDN que sur le serveur d'origine.
 
-Les architectures Web impliquent généralement [une mise en cache en plusieurs niveaux](https://blog.yoav.ws/tale-of-four-caches/). Par exemple une requête HTTP peut être mise en cache de différentes manière&nbsp;:
+Les architectures Web impliquent généralement <a hreflang="en" href="https://blog.yoav.ws/tale-of-four-caches/">une mise en cache en plusieurs niveaux</a>. Par exemple une requête HTTP peut être mise en cache de différentes manière&nbsp;:
 
 * dans le cache du navigateur&nbsp;;
 * dans le cache d'un <i lang="en">service worker</i> dans le navigateur&nbsp;;
@@ -49,7 +49,7 @@ Pour qu'un client HTTP mette en cache une ressource, il doit répondre a deux qu
 * "Combien de temps dois-je mettre en cache&nbsp;?"
 * "Comment puis-je valider que le contenu est encore frais&nbsp;?"
 
-Lorsqu'un navigateur Web envoie une réponse à un client, il inclut généralement dans sa réponse des en-têtes qui indiquent si la ressource peut être mise en cache, pour combien de temps et quel est son âge. La RFC 7234 traite plus en détail de ce point dans la section [4.2 (Freshness)](https://tools.ietf.org/html/rfc7234#section-4.2) et [4.3 (Validation)](https://tools.ietf.org/html/rfc7234#section-4.3).
+Lorsqu'un navigateur Web envoie une réponse à un client, il inclut généralement dans sa réponse des en-têtes qui indiquent si la ressource peut être mise en cache, pour combien de temps et quel est son âge. La RFC 7234 traite plus en détail de ce point dans la section <a hreflang="en" href="https://tools.ietf.org/html/rfc7234#section-4.2">4.2 (Freshness)</a> et <a hreflang="en" href="https://tools.ietf.org/html/rfc7234#section-4.3">4.3 (Validation)</a>.
 
 Les en-têtes de réponse HTTP généralement utilisées pour transmettre la durée de vie sont&nbsp;:
 
@@ -85,7 +85,7 @@ L'exemple ci-dessous contient un extrait d'un en-tête requête/réponse du fich
 < ETag: "1566748830.0-3052-3932359948"
 ```
 
-L'outil [RedBot.org](https://redbot.org/) vous permet d'entrer une URL et de voir un rapport détaillé de la façon dont la réponse sera mise en cache en fonction de ses en-têtes. Par exemple,[un test pour l'URL ci-dessus](https://redbot.org/?uri=https%3A%2F%2Fhttparchive.org%2Fstatic%2Fjs%2Fmain.js) produirait ce qui suit&nbsp;:
+L'outil <a hreflang="en" href="https://redbot.org/">RedBot.org</a> vous permet d'entrer une URL et de voir un rapport détaillé de la façon dont la réponse sera mise en cache en fonction de ses en-têtes. Par exemple,<a hreflang="en" href="https://redbot.org/?uri=https%3A%2F%2Fhttparchive.org%2Fstatic%2Fjs%2Fmain.js">un test pour l'URL ci-dessus</a> produirait ce qui suit&nbsp;:
 
 {{ figure_markup(
   image="ch16_fig1_redbot_example.jpg",
@@ -97,7 +97,7 @@ L'outil [RedBot.org](https://redbot.org/) vous permet d'entrer une URL et de voi
   )
 }}
 
-Si aucun en-tête de mise en cache n'est renseigné dans la réponse, alors [l'application peut mettre en cache en suivant une heuristique générique](https://paulcalvano.com/index.php/2018/03/14/http-heuristic-caching-missing-cache-control-and-expires-headers-explained/). La plupart des clients implémentent une variation de l'heuristique suggérée par le RFC, qui est 10&nbsp;% du temps depuis le `Last-Modified`. Toutefois, certains peuvent mettre la réponse en cache indéfiniment. Il est donc important de définir des règles de mise en cache spécifiques pour s'assurer que vous maîtrisez la cachabilité.
+Si aucun en-tête de mise en cache n'est renseigné dans la réponse, alors <a hreflang="en" href="https://paulcalvano.com/index.php/2018/03/14/http-heuristic-caching-missing-cache-control-and-expires-headers-explained/">l'application peut mettre en cache en suivant une heuristique générique</a>. La plupart des clients implémentent une variation de l'heuristique suggérée par le RFC, qui est 10&nbsp;% du temps depuis le `Last-Modified`. Toutefois, certains peuvent mettre la réponse en cache indéfiniment. Il est donc important de définir des règles de mise en cache spécifiques pour s'assurer que vous maîtrisez la cachabilité.
 
 72&nbsp;% des réponses HTTP sont servies avec un en-tête `Cache-Control`, et 56&nbsp;% des réponses sont servies avec un en-tête `Expires`. Cependant, 27&nbsp;% des réponses n'utilisaient ni l'un ni l'autre, et peuvent alors être mises en cache en suivant cette heuristique. C'est un constat partagé par les sites pour ordinateurs de bureau et les sites mobiles.
 
@@ -280,7 +280,7 @@ HTTP/1.1 a introduit l'en-tête `Cache-Control`, et la plupart des clients moder
 
 ## Directives `Cache-Control`
 
-La [specification](https://tools.ietf.org/html/rfc7234#section-5.2.1)  HTTP/1.1 inclut de multiples directives qui peuvent être utilisées dans l'en-tête de réponse `Cache-Control` et sont détaillées ci-dessous. Notez que plusieurs directives peuvent être utilisées dans une seule réponse.
+La <a hreflang="en" href="https://tools.ietf.org/html/rfc7234#section-5.2.1">specification</a>  HTTP/1.1 inclut de multiples directives qui peuvent être utilisées dans l'en-tête de réponse `Cache-Control` et sont détaillées ci-dessous. Notez que plusieurs directives peuvent être utilisées dans une seule réponse.
 
 <figure>
   <table>
@@ -359,9 +359,9 @@ La figure 16.9 ci-dessus illustre les 15 directives `Cache-Control` les plus uti
 
 * `max-age` est utilisé par presque 75&nbsp;% des en-têtes `Cache-Control`, et `no-store` est utilisé par 18&nbsp;%.
 * `public` (publique) est rarement nécessaire car les entrées en cache sont supposées `public` à moins que `private` (privé) ne soit spécifié. Environ 38&nbsp;% des réponses incluent `public`.
-* La directive `immutable` est relativement nouvelle, [introduite en 2017](https://code.facebook.com/posts/557147474482256/this-browser-tweak-saved-60-of-requests-to-facebook) et est [supportée par Firefox et Safari](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#Browser_compatibility). Son utilisation a augmenté à 3,4&nbsp;% et elle est largement utilisée dans [les réponses des tierces parties de Facebook et Google](https://discuss.httparchive.org/t/cache-control-immutable-a-year-later/1195).
+* La directive `immutable` est relativement nouvelle, <a hreflang="en" href="https://code.facebook.com/posts/557147474482256/this-browser-tweak-saved-60-of-requests-to-facebook">introduite en 2017</a> et est [supportée par Firefox et Safari](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#Browser_compatibility). Son utilisation a augmenté à 3,4&nbsp;% et elle est largement utilisée dans <a hreflang="en" href="https://discuss.httparchive.org/t/cache-control-immutable-a-year-later/1195">les réponses des tierces parties de Facebook et Google</a>.
 
-Un autre ensemble intéressant de directives à faire apparaître dans cette liste sont `pre-check` et `post-check`, qui sont utilisées dans 2,2&nbsp;% des en-têtes `Cache-Control` (environ 7,8 millions de réponses). Cette paire d'en-têtes a été [introduite dans Internet Explorer 5 pour fournir une validation en arrière-plan](https://blogs.msdn.microsoft.com/ieinternals/2009/07/20/internet-explorers-cache-control-extensions/) et a rarement été implémentée correctement par les sites web. 99,2&nbsp;% des réponses utilisant ces en-têtes avaient utilisé la combinaison `pre-check=0` et `post-check=0`. Quand ces deux directives sont mises à 0, alors les deux directives sont ignorées. Il semble donc que ces directives n'aient jamais été utilisées correctement&nbsp;!
+Un autre ensemble intéressant de directives à faire apparaître dans cette liste sont `pre-check` et `post-check`, qui sont utilisées dans 2,2&nbsp;% des en-têtes `Cache-Control` (environ 7,8 millions de réponses). Cette paire d'en-têtes a été <a hreflang="en" href="https://blogs.msdn.microsoft.com/ieinternals/2009/07/20/internet-explorers-cache-control-extensions/">introduite dans Internet Explorer 5 pour fournir une validation en arrière-plan</a> et a rarement été implémentée correctement par les sites web. 99,2&nbsp;% des réponses utilisant ces en-têtes avaient utilisé la combinaison `pre-check=0` et `post-check=0`. Quand ces deux directives sont mises à 0, alors les deux directives sont ignorées. Il semble donc que ces directives n'aient jamais été utilisées correctement&nbsp;!
 
 Il y a plus de 1&nbsp;500 directives erronées utilisées dans 0,28&nbsp;% des réponses. Ces directives sont ignorées par les clients, comprennent des erreurs d'orthographe telles que `nocache`, `s-max-age`, `smax-age` et `maxage`. Il y a aussi de nombreuses directives inexistantes comme `max-stale`, `proxy-public`, `subsrogate-control`, etc.
 
@@ -388,7 +388,7 @@ Jusqu'à présent, nous avons parlé de la façon dont les serveurs Web indiquen
 
 Lorsque vous choisissez un cache TTL, demandez-vous&nbsp;: "à quelle fréquence allez-vous mettre à jour ces ressources&nbsp;?" et "quelle est la sensibilité de leur contenu&nbsp;?". Par exemple, si une <i lang="en">Hero Image</i> va être modifiée peu fréquemment, alors cachez-la avec un TTL très long. Si vous vous attendez à ce qu'une ressource JavaScript soit modifiée fréquemment, alors versionnez-la puis mettez-la en cache avec un long TTL ou cachez-la avec un TTL plus court.
 
-Le graphique ci-dessous illustre l'âge relatif des ressources par type de contenu, et vous pouvez lire une [analyse plus détaillée ici](https://discuss.httparchive.org/t/analyzing-resource-age-by-content-type/1659). Le HTML tend à être le type de contenu ayant l'âge le plus court, et un très grand pourcentage des ressources traditionnellement mises en cache ([scripts](./javascript), [CSS](./css), et [polices d'écriture](./fonts)) ont plus d'un an&nbsp;!
+Le graphique ci-dessous illustre l'âge relatif des ressources par type de contenu, et vous pouvez lire une <a hreflang="en" href="https://discuss.httparchive.org/t/analyzing-resource-age-by-content-type/1659">analyse plus détaillée ici</a>. Le HTML tend à être le type de contenu ayant l'âge le plus court, et un très grand pourcentage des ressources traditionnellement mises en cache ([scripts](./javascript), [CSS](./css), et [polices d'écriture](./fonts)) ont plus d'un an&nbsp;!
 
 {{ figure_markup(
   image="ch16_fig8_resource_age.jpg",
@@ -579,7 +579,7 @@ Lorsqu'une réponse est mise en cache, tous ses en-têtes sont également stock�
   )
 }}
 
-Mais que se passe-t-il si vous avez un `Set-Cookie` dans une réponse&nbsp;? Selon la [RFC 7234 Section 8](https://tools.ietf.org/html/rfc7234#section-8), la présence d'un en-tête de réponse `Set-Cookie` n'empêche pas la mise en cache. Cela signifie qu'une entrée mise en cache peut contenir un `Set-Cookie` si elle a été mise en cache avec. La RFC recommande ensuite que vous configuriez des en-têtes `Cache-Control` appropriés pour contrôler la mise en cache des réponses.
+Mais que se passe-t-il si vous avez un `Set-Cookie` dans une réponse&nbsp;? Selon la <a hreflang="en" href="https://tools.ietf.org/html/rfc7234#section-8">RFC 7234 Section 8</a>, la présence d'un en-tête de réponse `Set-Cookie` n'empêche pas la mise en cache. Cela signifie qu'une entrée mise en cache peut contenir un `Set-Cookie` si elle a été mise en cache avec. La RFC recommande ensuite que vous configuriez des en-têtes `Cache-Control` appropriés pour contrôler la mise en cache des réponses.
 
 L'un des risques de la mise en cache avec `Set-Cookie` est que les valeurs des cookies puissent être stockées et servies à des requêtes ultérieures. Suivant l'objectif du cookie, cela pourrait avoir des résultats inquiétants. Par exemple, si un cookie de connexion ou un cookie de session est présent dans un cache partagé, alors ce cookie pourrait être réutilisé par un autre client. Une façon d'éviter cela est d'utiliser la directive `Cache-Control` `private`, qui permet uniquement la mise en cache de la réponse par le navigateur du client.
 
@@ -597,14 +597,14 @@ L'un des risques de la mise en cache avec `Set-Cookie` est que les valeurs des c
 
 ## AppCache et service workers
 
-L'Application Cache ou AppCache est une fonctionnalité de HTML5 qui permet aux développeurs et développeuses de spécifier les ressources que le navigateur doit mettre en cache et mettre à disposition des utilisateurs hors ligne. Cette fonctionnalité a été [dépréciée et supprimée des standards du web](https://html.spec.whatwg.org/multipage/offline.html#offline), et sa prise en charge par les navigateurs a diminué. En fait, lorsque son utilisation est détectée, [Firefox v44+ recommande aux développeurs et développeuses d'utiliser plutôt des service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers). [Chrome 70 limite le cache d'application au seul contexte sécurisé](https://www.chromestatus.com/feature/5714236168732672). Le secteur s'est davantage orienté vers la mise en œuvre de ce type de fonctionnalité avec des service workers - et [la prise en charge des navigateurs](https://caniuse.com/#feat=serviceworkers) a connu une croissance rapide dans ce domaine.
+L'Application Cache ou AppCache est une fonctionnalité de HTML5 qui permet aux développeurs et développeuses de spécifier les ressources que le navigateur doit mettre en cache et mettre à disposition des utilisateurs hors ligne. Cette fonctionnalité a été <a hreflang="en" href="https://html.spec.whatwg.org/multipage/offline.html#offline">dépréciée et supprimée des standards du web</a>, et sa prise en charge par les navigateurs a diminué. En fait, lorsque son utilisation est détectée, [Firefox v44+ recommande aux développeurs et développeuses d'utiliser plutôt des service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers). <a hreflang="en" href="https://www.chromestatus.com/feature/5714236168732672">Chrome 70 limite le cache d'application au seul contexte sécurisé</a>. Le secteur s'est davantage orienté vers la mise en œuvre de ce type de fonctionnalité avec des service workers - et <a hreflang="en" href="https://caniuse.com/#feat=serviceworkers">la prise en charge des navigateurs</a> a connu une croissance rapide dans ce domaine.
 
-En fait, l'un des [rapports de tendance des archives HTTP montre l'adoption des travailleurs des services](https://httparchive.org/reports/progressive-web-apps#swControlledPages) présenté ci-dessous&nbsp;:
+En fait, l'un des <a hreflang="en" href="https://httparchive.org/reports/progressive-web-apps#swControlledPages">rapports de tendance des archives HTTP montre l'adoption des travailleurs des services</a> présenté ci-dessous&nbsp;:
 
 {{ figure_markup(
   image="ch16_fig14_service_worker_adoption.jpg",
   alt="Série chronologique de pages contrôlées par des service workers.",
-  caption='Série chronologique de pages contrôlées par des service workers. (Source&nbsp;: <a href="https://httparchive.org/reports/progressive-web-apps#swControlledPages">HTTP Archive</a>)',
+  caption='Série chronologique de pages contrôlées par des service workers. (Source&nbsp;: <a hreflang="en" href="https://httparchive.org/reports/progressive-web-apps#swControlledPages">HTTP Archive</a>)',
   description="Un graphique de séries chronologiques montre l'utilisation des sites contrôlés par les service worker d'octobre 2016 à juillet 2019. L'utilisation a augmenté régulièrement au fil des ans, tant pour les téléphones portables que pour les ordinateurs de bureau, mais reste inférieure à 0,6&nbsp;% pour les deux.",
   width=600,
   height=311
@@ -691,7 +691,7 @@ Si on fait une comparaison entre HTTP et HTTPS, cela devient encore plus intére
 
 ## Identifier les possibilités de mise en cache
 
-L'outil [Lighthouse](https://developers.google.com/web/tools/lighthouse) de Google permet aux utilisateurs d'effectuer une série d'audits sur les pages web, et [l'audit de la politique de cache](https://developers.google.com/web/tools/lighthouse/audits/cache-policy) évalue si un site peut bénéficier d'une mise en cache supplémentaire. Pour ce faire, il compare l'âge du contenu (via l'en-tête `Last-Modified`) au TTL de la ressource en cache et estime la probabilité que la ressource soit servie à partir du cache. En fonction du score, vous pouvez voir dans les résultats une recommandation de mise en cache, avec une liste de ressources spécifiques qui pourraient être mises en cache.
+L'outil <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a> de Google permet aux utilisateurs d'effectuer une série d'audits sur les pages web, et <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/audits/cache-policy">l'audit de la politique de cache</a> évalue si un site peut bénéficier d'une mise en cache supplémentaire. Pour ce faire, il compare l'âge du contenu (via l'en-tête `Last-Modified`) au TTL de la ressource en cache et estime la probabilité que la ressource soit servie à partir du cache. En fonction du score, vous pouvez voir dans les résultats une recommandation de mise en cache, avec une liste de ressources spécifiques qui pourraient être mises en cache.
 
 {{ figure_markup(
   image="ch16_fig15_lighthouse_example.jpg",
@@ -702,7 +702,7 @@ L'outil [Lighthouse](https://developers.google.com/web/tools/lighthouse) de Goog
   )
 }}
 
-Lighthouse calcule un score pour chaque audit, allant de 0 à 100&nbsp;%, et ces scores sont ensuite pris en compte dans les scores globaux. Le [score de mise en cache](https://developers.google.com/web/tools/lighthouse/audits/cache-policy) est basé sur les économies potentielles d'octets. En examinant les résultats de Lighthouse, on peut se faire une idée du nombre de sites qui réussissent bien avec leur politique de cache.
+Lighthouse calcule un score pour chaque audit, allant de 0 à 100&nbsp;%, et ces scores sont ensuite pris en compte dans les scores globaux. Le <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/audits/cache-policy">score de mise en cache</a> est basé sur les économies potentielles d'octets. En examinant les résultats de Lighthouse, on peut se faire une idée du nombre de sites qui réussissent bien avec leur politique de cache.
 
 {{ figure_markup(
   image="fig21.png",
@@ -728,4 +728,4 @@ Lighthouse indique également combien d'octets pourraient être économisés sur
 
 La mise en cache est une fonction incroyablement puissante qui permet aux navigateurs, aux serveurs de proxy et autres intermédiaires (tels que les CDN) de stocker le contenu du web et de le servir aux utilisateurs finaux. Les avantages en termes de performances sont considérables, puisqu'elle réduit les temps de trajet (aller-retour) et minimise les requêtes coûteuses sur le réseau.
 
-La mise en cache est également un sujet très complexe. Il existe de nombreux en-têtes de réponse HTTP qui peuvent transmettre la fraîcheur ainsi que valider les entrées mises en cache, et les directives `Cache-Control` offrent une très grande souplesse et un très grand contrôle. Cependant, les développeurs et développeuses doivent être prudent·e·s quant aux possibilités supplémentaires d'erreurs que ces directives offrent. Il est recommandé de vérifier régulièrement votre site pour s'assurer que les ressources pouvant être mises en cache le sont correctement, et des outils comme [Lighthouse](https://developers.google.com/web/tools/lighthouse) et [REDbot](https://redbot.org/) font un excellent travail pour aider à simplifier l'analyse.
+La mise en cache est également un sujet très complexe. Il existe de nombreux en-têtes de réponse HTTP qui peuvent transmettre la fraîcheur ainsi que valider les entrées mises en cache, et les directives `Cache-Control` offrent une très grande souplesse et un très grand contrôle. Cependant, les développeurs et développeuses doivent être prudent·e·s quant aux possibilités supplémentaires d'erreurs que ces directives offrent. Il est recommandé de vérifier régulièrement votre site pour s'assurer que les ressources pouvant être mises en cache le sont correctement, et des outils comme <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a> et <a hreflang="en" href="https://redbot.org/">REDbot</a> font un excellent travail pour aider à simplifier l'analyse.
