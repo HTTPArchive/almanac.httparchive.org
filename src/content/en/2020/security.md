@@ -89,7 +89,7 @@ As HTTPS is now well and truly the norm, the challenge moves from having any sor
   )
 }}
 
-TLSv1.0 usage is already basically zero and whilst it may seem encouraging that the public web has embraced more secure protocols so definitively, tit should be noted that all mainstream browsers—including Chrome that our crawl is based upon—block this by default which goes a large way to explaining this.
+TLSv1.0 usage is already basically zero and whilst it may seem encouraging that the public web has embraced more secure protocols so definitively, it should be noted that all mainstream browsers—including Chrome that our crawl is based upon—block this by default which goes a large way to explaining this.
 
 These figures are a slight improvement on [last year's protocol analysis](../2019/security#protocol-versions)  with an approximately 5% increase in TLSv1.3 usage, and the corresponding drop in TLSv1.2. That seems a small increase and it would seem like the high usage of the relatively new TLSv1.3 noted last year was likely due to the initial support from large CDNs. Therefore making more significant progress in TLSv1.3 adoption will likely take a long time as those still using TLSv1.2 are potentially managing this themselves or with a hosting provider that does not yet support this.
 
