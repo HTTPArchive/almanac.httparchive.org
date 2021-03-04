@@ -889,8 +889,7 @@ Er kunnen veel verschillende factoren zijn die van invloed zijn op de beveiligin
 {{ figure_markup(
   image="security-adoption-of-https-per-country.png",
   caption="Overname van HTTPS per land",
-  description="Staafdiagram met het percentage sites waarop HTTPS is ingeschakeld, voor sites die aan verschillende landen zijn gerelateerd.
-Zwitserland, Nieuw-Zeeland, Ierland, Nigeria en Australië staan met 95% tot 94% in de top vijf. Aan de andere kant staan Thailand, Iran, Zuid-Korea, Taiwan en Japan op 76% tot 72%.",
+  description="Staafdiagram met het percentage sites waarop HTTPS is ingeschakeld, voor sites die aan verschillende landen zijn gerelateerd. Zwitserland, Nieuw-Zeeland, Ierland, Nigeria en Australië staan met 95% tot 94% in de top vijf. Aan de andere kant staan Thailand, Iran, Zuid-Korea, Taiwan en Japan op 76% tot 72%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=286219881&format=interactive",
   sheets_gid="446153579",
   sql_file="feature_adoption_by_country.sql"
@@ -901,9 +900,7 @@ Als we kijken naar het percentage homepagina's dat via HTTPS is bezocht, kunnen 
 {{ figure_markup(
   image="security-adoption-of-csp-and-xfo-per-country.png",
   caption="Overname van CSP en XFO per land.",
-  description="Staafdiagram dat laat zien dat Nieuw-Zeeland 16% van de sites heeft die CSP gebruiken en 37% dat XFO gebruikt,
-Australië heeft 16% voor CSP en 35% voor XFO, Ierland heeft 15% voor CSP en 38% voor XFO,
-Canada heeft 15% voor CSP en 30% voor XFO, en de VS heeft 14% voor CSP en 27% voor XFO. Aan de onderkant heeft Wit-Rusland 5% voor CSP en 21% voor XFO, Vietnam heeft 5% voor CSP en 21% voor XFO, Oekraïne heeft 4% voor CSP en 17% voor XFO, Rusland heeft 3% voor CSP en 18% voor XFO, en Japan heeft 3% voor CSP en 16% voor XFO.",
+  description="Staafdiagram dat laat zien dat Nieuw-Zeeland 16% van de sites heeft die CSP gebruiken en 37% dat XFO gebruikt, Australië heeft 16% voor CSP en 35% voor XFO, Ierland heeft 15% voor CSP en 38% voor XFO, Canada heeft 15% voor CSP en 30% voor XFO, en de VS heeft 14% voor CSP en 27% voor XFO. Aan de onderkant heeft Wit-Rusland 5% voor CSP en 21% voor XFO, Vietnam heeft 5% voor CSP en 21% voor XFO, Oekraïne heeft 4% voor CSP en 17% voor XFO, Rusland heeft 3% voor CSP en 18% voor XFO, en Japan heeft 3% voor CSP en 16% voor XFO.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=874462374&format=interactive",
   sheets_gid="446153579",
   sql_file="feature_adoption_by_country.sql"
