@@ -321,7 +321,7 @@ A ferramenta [Lighthouse](https://developers.google.com/web/tools/lighthouse) da
 {{ figure_markup(
   image="ch15_fig8_lighthouse.jpg",
   caption="Sugestões de compressão do Lighthouse.",
-  description="A captura de um relatório do Lighthouse que mostra a lista de recursos (com respetivos nomes) e o tamanho do potencial ganho. Para o primeiro elemento há um ganho potencial significativo de 91 KB para 73 KB, enquanto que para outros arquivos mais pequenos de 6 KB ou menos, encontram-se ganhos menores de 4 KB para 1 KB.",
+  description="A captura de um relatório do Lighthouse que mostra a lista de recursos (com respectivos nomes) e o tamanho do potencial ganho. Para o primeiro elemento há um ganho potencial significativo de 91 KB para 73 KB, enquanto que para outros arquivos mais pequenos de 6 KB ou menos, encontram-se ganhos menores de 4 KB para 1 KB.",
   width=600,
   height=303
   )
