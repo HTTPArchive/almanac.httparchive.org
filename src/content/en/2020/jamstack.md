@@ -228,7 +228,7 @@ Our research looked at the average Jamstack page weight in KB and mapped this to
 {{ figure_markup(
   image="jamstack-carbon-emissions-per-jamstack-page-view.png",
   caption="Carbon Emissions per Jamstack page view.",
-  description="Bar chart showing the grams of CO2 emissions for Jamstack pages by percentile. At the 10th percentile, it is 0.3 grams for desktop and 0.4 for mobile, at the 25th percentile it is 0.6 grams for both, at the 50% it is 1.2 grams for desktop and 1.0 grams for mobile, at the 75th percentile 2.3 grams for desktop and 1.9 for mobile, and at the 90th percentile it is 4.4 grams for desktop and 3.6 for mobile.",
+  description="Bar chart showing the grams of CO2 emissions for Jamstack pages by percentile. At the 10th percentile, it is 0.3 grams for desktop and 0.4 for mobile, at the 25th percentile it is 0.6 grams for both, at the 50th percentile it is 1.2 grams for desktop and 1.0 grams for mobile, at the 75th percentile 2.3 grams for desktop and 1.9 for mobile, and at the 90th percentile it is 4.4 grams for desktop and 3.6 for mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-zBygubF5NuAXOGScVLhnozB_6Pi_0z4B57cP_I6AfeBuZCGzs3aP_1nPjPp37aNRATRYC6EfOeYX/pubchart?oid=1748236124&format=interactive",
   sheets_gid="881269360",
   sql_file="distribution_of_page_weight_requests_and_co2_grams_per_ssg_web_page.sql"
@@ -260,7 +260,7 @@ Jamstack sites, like most websites, often load [third-party](./third-party) reso
 {{ figure_markup(
   image="jamstack-third-party-bytes.png",
   caption="Third party bytes.",
-  description="Bar chart showing the amount of third-party bytes (in KB) for each percentile for Jamstack pages. At the 10th percentile it is 45 KB for desktop and 60 KB for mobile, at the 25th percentile it is 149 KB for mobile and 212 KB for mobile, at the 50% it's 470 KB for desktop and 642 KB for mobile, at the 75th percentile 1,219 KB for desktop and 1,788 for mobile and at the 90th percentile it is 2,878 KB for desktop and 3,044 KB for mobile.",
+  description="Bar chart showing the amount of third-party bytes (in KB) for each percentile for Jamstack pages. At the 10th percentile it is 45 KB for desktop and 60 KB for mobile, at the 25th percentile it is 149 KB for desktop and 212 KB for mobile, at the 50th percentile it's 470 KB for desktop and 642 KB for mobile, at the 75th percentile 1,219 KB for desktop and 1,788 for mobile and at the 90th percentile it is 2,878 KB for desktop and 3,044 KB for mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-zBygubF5NuAXOGScVLhnozB_6Pi_0z4B57cP_I6AfeBuZCGzs3aP_1nPjPp37aNRATRYC6EfOeYX/pubchart?oid=1779247936&format=interactive",
   sheets_gid="1292933800",
   sql_file="third_party_bytes_and_requests_on_ssgs.sql"

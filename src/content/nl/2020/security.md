@@ -1,6 +1,6 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
-title: Veiligheid
+title: Beveiliging
 description: Beveiligingshoofdstuk van de Web Almanac 2020 met informatie over transportlaagbeveiliging, inhoudsbeveiliging (CSP, functiebeleid, SRI), webbeschermingsmechanismen (aanpakken van XSS, XS-Leaks) en updatepraktijken van veelgebruikte technologieën.
 authors: [tomvangoethem, nrllh, bazzadp]
 reviewers: [cqueern, edmondwwchan]
