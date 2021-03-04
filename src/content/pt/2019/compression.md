@@ -9,7 +9,7 @@ editors: [bazzadp]
 translators: [soulcorrosion]
 discuss: 1770
 results: https://docs.google.com/spreadsheets/d/1IK9kaScQr_sJUwZnWMiJcmHEYJV292C9DwCfXH6a50o/
-paulcalvano_bio: Paul Calvano é um arquitecto de Performance Web na <a href="https://www.akamai.com/">Akamai</a>, onde ajuda empresas a melhorar o desempenho dos seus sites. Ele é também umas das pessoas que mantém o projecto HTTP Archive. Podem encontrá-lo no Twitter em <a href="https://twitter.com/paulcalvano">@paulcalvano</a>, a escrever no seu blog <a href="https://paulcalvano.com">http://paulcalvano.com</a> e a partilhar pesquisas do HTTP Archive em <a href="https://discuss.httparchive.org">https://discuss.httparchive.org</a>.
+paulcalvano_bio: Paul Calvano é um arquiteto de Performance Web na <a href="https://www.akamai.com/">Akamai</a>, onde ajuda empresas a melhorarem o desempenho dos seus sites. Ele é também umas das pessoas que mantém o projeto HTTP Archive. Você pode encontrá-lo no Twitter em <a href="https://twitter.com/paulcalvano">@paulcalvano</a>, escrevendo no seu blog <a href="https://paulcalvano.com">http://paulcalvano.com</a> e compartilhando pesquisas do HTTP Archive em <a href="https://discuss.httparchive.org">https://discuss.httparchive.org</a>.
 featured_quote: A compressão HTTP é uma técnica que permite codificar informação usando menos bits que a represantação original. Quando é usado para entrega de conteúdo web, isso permite a servidores web reduzir a quantidade de dados transmitodos aos clientes. Isto aumenta a eficiência da largura de banda disponível do cliente, reduz o peso da página e melhora o seu desempenho.
 featured_stat_1: 38%
 featured_stat_label_1: Respostas HTTP que usam compressão baseada em texto
@@ -25,16 +25,16 @@ A compressão HTTP é uma técnica que permite codificar informação usando men
 
 Algoritmos de compressão são muitas vezes categorizados como podendo ter ou não perdas:
 
-* Quando um algoritmo de compressão com perdas é usado, o processo é irreversível e o ficheiro original não pode ser restaurado através de descompressão. É uma prática comum para comprimir recursos media, tal como imagens e vídeo onde perder alguns dados não irá materialmente afectar o recurso.
+* Quando um algoritmo de compressão com perdas é usado, o processo é irreversível e o arquivo original não pode ser restaurado através de descompressão. É uma prática comum para comprimir recursos mídia, tais como imagens e vídeos onde perder alguns dados não irá materialmente afetar o recurso.
 * A compressão sem perdas é um processo totalmente reversível sendo, tipicamente, usado em recursos do tipo texto, como [HTML](./markup), [JavaScript](./javascript), [CSS](./css), etc.
 
-Neste capítulo, vamos explorar como conteúdo de texto é comprimido na web. Análise de conteúdo não baseado em texto faz parte do capítulo [Media](./media)
+Neste capítulo, vamos explorar como conteúdo de texto é comprimido na web. Análise de conteúdo não baseado em texto faz parte do capítulo [Mídia](./media)
 
 ## Como a compressão HTTP funciona
 
-Quando um cliente faz um pedido HTTP, frequentemente, inclui um cabeçalho [`Accept-Encoding`](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Headers/Accept-Encoding) para comunicar os algoritmos de compressão que é capaz de descodificar. O servidor pode depois seleccionar um dos algoritmos comunicados que suporte e servir uma resposta comprimida. A resposta comprimida iria por sua vez incluir o cabeçalho [`Content-Encoding`](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Headers/Content-Encoding) para que o cliente perceba que tipo de compressão foi usada. Adicionalmente, um cabeçalho [`Content-Type`](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Headers/Content-Type) é, frequentemente, usado para indicar o [MIME type](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Basico_sobre_HTTP/MIME_types) do resurso a ser servido.
+Quando um cliente faz um pedido HTTP, frequentemente, inclui um cabeçalho [`Accept-Encoding`](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Headers/Accept-Encoding) para comunicar os algoritmos de compressão que é capaz de descodificar. O servidor pode depois selecionar um dos algoritmos comunicados que suporte e servir uma resposta comprimida. A resposta comprimida iria por sua vez incluir o cabeçalho [`Content-Encoding`](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Headers/Content-Encoding) para que o cliente perceba que tipo de compressão foi usada. Adicionalmente, um cabeçalho [`Content-Type`](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Headers/Content-Type) é, frequentemente, usado para indicar o [MIME type](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Basico_sobre_HTTP/MIME_types) do resurso a ser servido.
 
-No exemplo seguinte, o cliente comunica que tem suporte para compressão Gzip, Brotli e Deflate. O servidor decidiu retornar uma resposta comprimida com GZip que contém um documento `text/html`.
+No exemplo seguinte, o cliente comunica que tem suporte para compressão Gzip, Brotli e Deflate. O servidor decidiu retornar uma resposta comprimida com Gzip que contém um documento `text/html`.
 
 ```
     > GET / HTTP/1.1
@@ -50,28 +50,28 @@ O HTTP Archive contém leituras de 5.3 milhões de sites e cada site carregou pe
 
 ## Algoritmos de compressão
 
-A organização IANA mantém uma [lista de codificação de conteúdos HTTP válidos](https://www.iana.org/assignments/http-parameters/http-parameters.xml#content-coding) que podem ser usados com os cabeçalhos `Accept-Encoding` e `Content-Encoding`. Alguns destes incluem `gzip`, `deflate`, `br` (Brotli) entre outros. Uma breve descrição destes algoritmos é apresentada de seguida:
+A organização IANA mantém uma [lista de codificação de conteúdos HTTP válidos](https://www.iana.org/assignments/http-parameters/http-parameters.xml#content-coding) que podem ser usados com os cabeçalhos `Accept-Encoding` e `Content-Encoding`. Alguns destes incluem `gzip`, `deflate`, `br` (Brotli) entre outros. Uma breve descrição destes algoritmos é apresentada a seguir:
 
 * [Gzip](https://tools.ietf.org/html/rfc1952) usa as técnicas de compressão [LZ77](https://en.wikipedia.org/wiki/LZ77_and_LZ78#LZ77) e [Huffman coding](https://pt.wikipedia.org/wiki/Codifica%C3%A7%C3%A3o_de_Huffman) e é mais antigo que a própria web. Foi originalmente desenvolvido para o programa `gzip` do Unix em 1992. Uma implementação para servir conteúdos na web existe desde o HTTP/1.1 e a grande maioria dos browsers e clientes suportam este algoritmo de compressão.
-* [Deflate](https://tools.ietf.org/html/rfc1951) usa o mesmo algoritmo que o Gzip mas com um recipiente diferente. Não foi tão adoptado para a web devido a [problemas de compatibilidade](https://en.wikipedia.org/wiki/HTTP_compression#Problems_preventing_the_use_of_HTTP_compression) com alguns servidores e browsers.
-* [Brotli](https://tools.ietf.org/html/rfc7932) é um novo algoritmo de compressão [criado pela Google](https://github.com/google/brotli). Combina a variante moderna da técnica de compressão LZ77 e Huffman e uma modelação de contexto de segunda ordem. A compressão via Brotli é computacionalmente mais exigente que o Gzip mas o algoritmo é capaz de reduzir o tamanho dos ficheiros em [15-25%](https://cran.r-project.org/web/packages/brotli/vignettes/brotli-2015-09-22.pdf) em relação à compressão Gzip. O Brotli foi inicialmente usado para compressão de conteúdos web em 2015 e é [suportado em todos os browsers modernos](https://caniuse.com/#feat=brotli).
+* [Deflate](https://tools.ietf.org/html/rfc1951) usa o mesmo algoritmo que o Gzip mas com um recipiente diferente. Não foi tão amplamente usado na web devido a [problemas de compatibilidade](https://en.wikipedia.org/wiki/HTTP_compression#Problems_preventing_the_use_of_HTTP_compression) com alguns servidores e browsers.
+* [Brotli](https://tools.ietf.org/html/rfc7932) é um novo algoritmo de compressão [criado pela Google](https://github.com/google/brotli). Combina a variante moderna da técnica de compressão LZ77 e Huffman e uma modelação de contexto de segunda ordem. A compressão via Brotli é computacionalmente mais exigente que o Gzip mas o algoritmo é capaz de reduzir o tamanho dos arquivos em [15-25%](https://cran.r-project.org/web/packages/brotli/vignettes/brotli-2015-09-22.pdf) em relação à compressão Gzip. O Brotli foi inicialmente usado para compressão de conteúdos web em 2015 e é [suportado em todos os browsers modernos](https://caniuse.com/#feat=brotli).
 
-Aproximadamente 38% das respostas HTTP são servidas com compressão baseada em texto. Poderá parecer uma estatística surpreendente mas deve levar em conta que é baseado em todos os pedidos HTTP no dataset. Algum conteúdo, como imagens, não irá beneficiar destes algoritmos de compressão. A tabela abaixo resume a percentagem de pedidos servidos para cada tipo de codificação de contéudo.
+Aproximadamente 38% das respostas HTTP são servidas com compressão baseada em texto. Pode parecer uma estatística surpreendente mas deve-se levar em conta que é baseado em todos os pedidos HTTP no dataset. Algum conteúdo, como imagens, não irá beneficiar destes algoritmos de compressão. A tabela abaixo resume a porcentagem de pedidos servidos para cada tipo de codificação de contéudo.
 
 <figure>
   <table>
     <thead>
       <tr>
         <td></td>
-        <th scope="colgroup" colspan="2" >Percentagem de Pedidos</th>
+        <th scope="colgroup" colspan="2" >Porcentagem de Pedidos</th>
         <th scope="colgroup" colspan="2" >Pedidos</th>
       </tr>
       <tr>
         <th scope="col">Tipo de codificação de conteúdo</th>
         <th scope="col">Desktop</th>
-        <th scope="col">Mobile</th>
+        <th scope="col">Celular</th>
         <th scope="col">Desktop</th>
-        <th scope="col">Mobile</th>
+        <th scope="col">Celular</th>
       </tr>
     </thead>
     <tbody>
@@ -140,14 +140,14 @@ Aproximadamente 38% das respostas HTTP são servidas com compressão baseada em 
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Adopção de algoritmos de compressão.") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Adoção de algoritmos de compressão.") }}</figcaption>
 </figure>
 
-De todos os recursos servidos com compressão, a maioria usa Gzip (80%) ou Brotli (20%). Os restantes algoritmos de compressão raramente são usados.
+De todos os recursos servidos com compressão, a maioria usa Gzip (80%) ou Brotli (20%). Os algoritmos restantes de compressão raramente são usados.
 
 {{ figure_markup(
   image="fig2.png",
-  caption="Adopção de algoritmos de compressão em páginas desktop.",
+  caption="Adoção de algoritmos de compressão em páginas desktop.",
   description="Gráfico de pizza da tabela de dados da Figura 15.1.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=2052550005&format=interactive"
   )
@@ -157,15 +157,15 @@ Adicionalmente, existem 67k pedidos que retornam um `Content-Encoding` inválido
 
 Não conseguimos determinar os níveis de compressão dos diagnósticos obtidos do HTTP Archive mas a melhor prática para comprimir conteúdo é:
 
-* No mínimo, activar o nível 6 de compressão Gzip para recursos do tipo texto. Este nível representa um bom balanço entre o custo computacional e taxa de compressão sendo a opção [padrão para muitos servidores web](https://paulcalvano.com/index.php/2018/07/25/brotli-compression-how-much-will-it-reduce-your-content/) apesar do [Nginx ainda recorrer a um nível 1, normalmente muito baixo](http://nginx.org/en/docs/http/ngx_http_gzip_module.html#gzip_comp_level).
+* No mínimo, ativar o nível 6 de compressão Gzip para recursos do tipo texto. Este nível representa um bom balanço entre o custo computacional e taxa de compressão sendo a opção [padrão para muitos servidores web](https://paulcalvano.com/index.php/2018/07/25/brotli-compression-how-much-will-it-reduce-your-content/) apesar do [Nginx ainda recorrer a um nível 1, normalmente muito baixo](http://nginx.org/en/docs/http/ngx_http_gzip_module.html#gzip_comp_level).
 * Se conseguir suportar Brotli e pre-comprimir esses recursos, então use o nível 11. Este nível é computacionalmente mais exigente que o Gzip - portanto uma pre-compressão é essencial para evitar atrasos. 
 * Se conseguir suportar Brotli mas pre-compressão não é uma opção, então comprima com Brotli nível 5. Este nível irá produzir recursos mais pequenos quando comparados com Gzip, com uma exigência computacional semelhante.
 
-## Que tipos de conteúdos estamos a comprimir?
+## Que tipos de conteúdos estamos comprimindo?
 
-A maior parte dos recursos baseados em texto (como HTML, CSS e Javascript) podem beneficiar de compressão Gzip e Brotli. No entanto, normamente não é necessário usar estas técnicas de compressão em recursos binários, como imagens, video e algumas fontes web porque os seus formatos de ficheiro já estão comprimidos.
+A maior parte dos recursos baseados em texto (como HTML, CSS e Javascript) podem se beneficiar de compressão Gzip e Brotli. No entanto, normalmente não é necessário usar estas técnicas de compressão em recursos binários, como imagens, videos e algumas fontes web porque os seus formatos de arquivo já estão comprimidos.
 
-No gráfico abaixo, podemos ver o top 25 de tipos de conteúdo em caixas cujo tamanho representa o número relativo de pedidos. A cor de cada caixa representa a quantidade de recursos servidos com compressão. A maior parte do conteúdo media é mostrado com uma sombra laranja uma vez que, tal como esperado, Gzip e Brotli trariam pouco ou nenhum benefício para os mesmos. A maior parte do conteúdo baseado em texto é sombreado a azul indicando que estão a ser comprimidos. No entanto, o sombreado azul claro para alguns tipos de conteúdo indica que não são comprimidos tão consistentemente como os outros.
+No gráfico abaixo, podemos ver o top 25 de tipos de conteúdo em caixas cujo tamanho representa o número relativo de pedidos. A cor de cada caixa representa a quantidade de recursos servidos com compressão. A maior parte do conteúdo mídia é mostrado com uma sombra laranja uma vez que, tal como esperado, Gzip e Brotli trariam pouco ou nenhum benefício para os mesmos. A maior parte do conteúdo baseado em texto é sombreado a azul indicando que foram comprimidos. No entanto, o sombreado azul claro para alguns tipos de conteúdo indica que não são comprimidos tão consistentemente como os outros.
 
 {{ figure_markup(
   image="fig3.png",
@@ -197,7 +197,7 @@ Os tipos de conteúdo `application/json` e `image/svg+xml` são comprimidos meno
 
 A maior parte das fontes web customizadas são servidas sem compressão uma vez que já são um formato comprimido. No entanto, a fonte `font/ttf` é comprimível apesar de só 84% dos pedidos a fontes TTF serem servidos com compressão, mostrando que ainda existe espaço para melhoria.
 
-Os gráficos abaixo ilustram a distribuição de cada técnica de compressão para cada tipo de conteúdo. Olhando os 3 tipos de conteúdo com mais compressão, conseguimos ver que tanto em dekstop como em mobile existem grandes diferenças na compressão em alguns dos tipos de conteúdo mais frequentemente requisitados. 56% dos recursos `text/html` bem como 18% do tipo `application/javascript` e `text/css` não são comprimidos. Isto representa uma oportunidade significativa para melhoria de desempenho.
+Os gráficos abaixo ilustram a distribuição de cada técnica de compressão para cada tipo de conteúdo. Olhando os 3 tipos de conteúdo com mais compressão, conseguimos ver que tanto em dekstop como em celular existem grandes diferenças na compressão em alguns dos tipos de conteúdo mais frequentemente requisitados. 56% dos recursos `text/html` bem como 18% do tipo `application/javascript` e `text/css` não são comprimidos. Isto representa uma oportunidade significativa para melhoria de desempenho.
 
 {{ figure_markup(
   image="fig5.png",
@@ -213,7 +213,7 @@ Os gráficos abaixo ilustram a distribuição de cada técnica de compressão pa
 
 {{ figure_markup(
   image="fig6.png",
-  caption="Compressão por tipo de conteúdo para mobile.",
+  caption="Compressão por tipo de conteúdo para celular.",
   description="Gráfico de barras que mostra o tipo de conteúdo application/javascript com 43.07 Milhões/10.17 Milhões/12.19 Milhões por tipo de compressão (Gzip/Brotli/None), text/css com 28.3 M/9.91 M/8.56 M, text/html com 13.86 M/5.48 M/25.79 M, text/javascript com 27.41 M/1.94 M/3.33 M, application/x-javascript com 12.77 M/5.70 M/1.82 M, application/json com 4.67 M/0.50 M/3.53 M, image/svg+xml com 2.91 M/ 0.44 M/1.77 M, text/plain com 0.80 M/0.06 M/1.77 M, e image/x-icon com 0.62 M/0.11 M/1.22M. Deflate raramente é usado e como tal não entra no gráfico.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=2009060762&format=interactive",
   width=760,
@@ -223,11 +223,11 @@ Os gráficos abaixo ilustram a distribuição de cada técnica de compressão pa
   )
 }}
 
-Os tipos de conteúdo com a taxa de compressão mais baixa incluem `application/json`, `text/xml`, e `text/plain`. Estes recursos são normalmente usados em pedidos XHR para fornecer dados que aplicações web podem usar para criar as melhores experiências. Comprimir esses recursos irá, muito provavelmente, melhorar a experiência com o utilizador. Gráficos de vectores, como `image/svg+xml` e `image/x-icon` não são muitas vezes encarados como baseados em texto, mas na realidade são e sites que os usam iriam beneficiar da compressão. 
+Os tipos de conteúdo com a taxa de compressão mais baixa incluem `application/json`, `text/xml`, e `text/plain`. Estes recursos são normalmente usados em pedidos XHR para fornecer dados que aplicações web podem usar para criar as melhores experiências. Comprimir esses recursos irá, muito provavelmente, melhorar a experiência do usuário. Gráficos de vetores, como `image/svg+xml` e `image/x-icon` não são muitas vezes encarados como baseados em texto, mas na realidade são e sites que os usam iriam se beneficiar da compressão. 
 
 {{ figure_markup(
   image="fig7.png",
-  caption="Compressão por tipo de conteúdo como percentagem para desktop.",
+  caption="Compressão por tipo de conteúdo como porcentagem para desktop.",
   description="Gráfico de barras que mostra application/javascript com 65.1%/16.1%/18.8% por tipo de compressão (Gzip/Brotli/None), text/css com 61.0%/20.9%/18.1%, text/html com 30.9%/13.3%/55.8%, text/javascript com 83.0%/6.1%/10.8%, application/x-javascript com 64.1%/26.9%/9.0%, application/json com 52.1%/6.4%/41.4%, image/svg+xml com 53.5%/9.8%/36.7%, text/plain com 22.2%/2.0%/75.8%, e image/x-icon com 32.6%/5.3%/62.1%. Deflate raramente é usado e como tal não entra no gráfico.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=1923565332&format=interactive",
   width=760,
@@ -239,7 +239,7 @@ Os tipos de conteúdo com a taxa de compressão mais baixa incluem `application/
 
 {{ figure_markup(
   image="fig8.png",
-  caption="Compressão por tipo de conteúdo como percentagem para mobile.",
+  caption="Compressão por tipo de conteúdo como porcentagem para celular.",
   description="Gráfico de barras com application/javascript com 65.8%/15.5%/18.6% por tipo de compressão (Gzip/Brotli/None), text/css com 60.5%/21.2%/18.3%, text/html com 30.7%/12.1%/57.1%, text/javascript com 83.9%/5.9%/10.2%, application/x-javascript com 62.9%/28.1%/9.0%, application/json com 53.6%/8.6%/34.6%, image/svg+xml com 23.4%/1.8%/74.8%, text/plain com 23.4%/1.8%/74.8%, com image/x-icon com 31.8%/5.5%/62.7%. Deflate raramente é usado e como tal não entra no gráfico.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=673629979&format=interactive",
   width=760,
@@ -255,7 +255,7 @@ No universo de tipos de conteúdo, Gzip é o algoritmo de compressão mais popul
 
 No capítulo de [Terceiros](./third-parties), aprendemos sobre terceiros e o seu impacto no desempenho. Quando comparamos técnicas de compressão entre conteúdo próprio e terceiro, podemos ver que conteúdo de terceiros tende a ser mais comprimido que o conteúdo próprio.
 
-Adicionalmente, a percentagem de compressão Brotli é mais alta para conteúdo de terceiros. Isto deve-se, provavelmente, ao número de recursos servidos por grandes empresas de terceiros que suportam Brotli, tal como a Google e o Facebook.
+Adicionalmente, a porcentagem de compressão Brotli é mais alta para conteúdo de terceiros. Isto deve-se, provavelmente, ao número de recursos servidos por grandes empresas de terceiros que suportam Brotli, tal como a Google e o Facebook.
 
 <figure>
   <table>
@@ -263,7 +263,7 @@ Adicionalmente, a percentagem de compressão Brotli é mais alta para conteúdo 
       <tr>
         <td></td>
         <th scope="colgroup" colspan="2">Desktop</th>
-        <th scope="colgroup" colspan="2">Mobile</th>
+        <th scope="colgroup" colspan="2">Celular</th>
       </tr>
       <tr>
         <th scope="col">Codificação de conteúdo</th>
@@ -316,18 +316,18 @@ Adicionalmente, a percentagem de compressão Brotli é mais alta para conteúdo 
 
 ## Como identificar oportunidades para compressão
 
-A ferramenta [Lighthouse](https://developers.google.com/web/tools/lighthouse) da Google permite aos utilizadores correrem uma série de auditorias contra páginas web. A [auditoria de compressão de texto](https://developers.google.com/web/tools/lighthouse/audits/text-compression) avalia se o site pode beneficiar de compressão baseada em texto adicional. Isso é feito através duma tentativa de compressão dos recursos avaliando se o tamanho dos objectos pode ser reduzido pelo menos 10% e 1400 bytes. Dependendo da pontuação, é possível ver uma recomendação para compressão nos resultados, com uma lista dos recursos específicos que podem ser comprimidos. 
+A ferramenta [Lighthouse](https://developers.google.com/web/tools/lighthouse) da Google permite aos usuários executarem uma série de auditorias para páginas web. A [auditoria de compressão de texto](https://developers.google.com/web/tools/lighthouse/audits/text-compression) avalia se o site pode beneficiar de compressão baseada em texto adicional. Isso é feito através de uma tentativa de compressão dos recursos avaliando se o tamanho dos objetos pode ser reduzido pelo menos 10% e 1400 bytes. Dependendo da pontuação, é possível ver uma recomendação para compressão nos resultados, com uma lista dos recursos específicos que podem ser comprimidos. 
 
 {{ figure_markup(
   image="ch15_fig8_lighthouse.jpg",
   caption="Sugestões de compressão do Lighthouse.",
-  description="A captura dum relatório do Lighthouse que mostra a lista de recursos (com respectivos nomes) e o tamanho do potencial ganho. Para o primeiro elemento há um ganho potencial significativo de 91 KB para 73 KB, enquanto que para outros ficheiros mais pequenos de 6 KB ou menos, encontram-se ganhos menores de 4 KB para 1 KB.",
+  description="A captura de um relatório do Lighthouse que mostra a lista de recursos (com respetivos nomes) e o tamanho do potencial ganho. Para o primeiro elemento há um ganho potencial significativo de 91 KB para 73 KB, enquanto que para outros arquivos mais pequenos de 6 KB ou menos, encontram-se ganhos menores de 4 KB para 1 KB.",
   width=600,
   height=303
   )
 }}
 
-Devido ao facto do [HTTP Archive correr auditorias Lighthouse](./methodology#lighthouse) para cada página mobile, podemos agregar as pontuações para todos os sites para entender que mais oportunidade existem para comprimir mais conteúdo. No total, 62% dos sites passam esta auditoria e quase 23% têm uma pontuação abaixo de 40. Isto significa que mais de 1.2 milhões de sites poderiam beneficiar com uma compressão baseada em texto adicional.
+Devido ao fato do [HTTP Archive executar auditorias Lighthouse](./methodology#lighthouse) para cada página celular, podemos agregar as pontuações para todos os sites para entender que mais oportunidade existem para comprimir mais conteúdo. No total, 62% dos sites passam esta auditoria e quase 23% têm uma pontuação abaixo de 40. Isto significa que mais de 1.2 milhões de sites poderiam beneficiar com uma compressão baseada em texto adicional.
 
 {{ figure_markup(
   image="fig11.png",
@@ -359,6 +359,6 @@ O Lighthouse também indica quantos bytes podem ser poupados por ligar a compres
 
 Compressão HTTP é extensivamente usada e uma funcionalidade com muito valor para reduzir o tamanho de conteúdo web. Tanto Gzip e Brotli são os algoritmos dominantes e a quantidade de conteúdo comprimido varia por tipo de conteúdo. Ferramentas como o Lighthouse podem ajudar a revelar oportunidades para comprimir conteúdo.
 
-Enquanto muitos sites estão a fazer um bom uso da compressão HTTP, ainda existe margem para melhoria, particularmente para o formato `text/html` que é o formato em que a web é construída! De forma similar, outros formatos menos compreendidos como `font/ttf`, `application/json`, `text/xml`, `text/plain`, `image/svg+xml`, e `image/x-icon` podem exigir configurações extra que muitos sites falham. 
+Enquanto muitos sites estão fazendo um bom uso da compressão HTTP, ainda existe margem para melhoria, particularmente para o formato `text/html` que é o formato em que a web é construída! De forma similar, outros formatos menos compreendidos como `font/ttf`, `application/json`, `text/xml`, `text/plain`, `image/svg+xml`, e `image/x-icon` podem exigir configurações extra que muitos sites falham. 
 
 No mínimo, os sites deviam usar compressão Gzip para todos os recursos baseados em texto, uma vez que é largamente suportado, facilmente implementado, e tem um baixo custo de processamento. Ganhos adicionais podem ser encontrados com compressão Brotli, ainda que os níveis de compressão devam ser escolhidos com cuidado dependendo dos recursos poderem ser pré comprimidos.
