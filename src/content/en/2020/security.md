@@ -889,8 +889,7 @@ There can be many different factors that affect security at the level of a count
 {{ figure_markup(
   image="security-adoption-of-https-per-country.png",
   caption="Adoption of HTTPS per country",
-  description="Bar chart showing percentage of sites with HTTPS enabled, for sites related to different countries.
-Switzerland, New Zealand, Ireland, Nigeria and Australia are the top five in order at 95% to 94%. At the other end Thailand, Iran, South Korea, Taiwan, Japan are at 76% to 72%.",
+  description="Bar chart showing percentage of sites with HTTPS enabled, for sites related to different countries. Switzerland, New Zealand, Ireland, Nigeria and Australia are the top five in order at 95% to 94%. At the other end Thailand, Iran, South Korea, Taiwan, Japan are at 76% to 72%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=286219881&format=interactive",
   sheets_gid="446153579",
   sql_file="feature_adoption_by_country.sql"
@@ -901,9 +900,7 @@ Looking at the percentage of homepages that were visited over HTTPS, we can alre
 {{ figure_markup(
   image="security-adoption-of-csp-and-xfo-per-country.png",
   caption="Adoption of CSP and XFO per country.",
-  description="Bar chart showing New Zealand has 16% of sites using CSP and 37% using XFO,
-Australia has 16% for CSP and 35% for XFO, Ireland has 15% for CSP and 38% for XFO,
-Canada has 15% for CSP and 30% for XFO, and USA has 14% for CSP and 27% for XFO. At the bottom end Belarus has 5% for CSP and 21% for XFO, Vietnam has 5% for CSP and 21% for XFO, Ukraine has 4% for CSP and 17% for XFO, Russia has 3% for CSP and 18% for XFO, and Japan has 3% for CSP and 16% for XFO.",
+  description="Bar chart showing New Zealand has 16% of sites using CSP and 37% using XFO, Australia has 16% for CSP and 35% for XFO, Ireland has 15% for CSP and 38% for XFO, Canada has 15% for CSP and 30% for XFO, and USA has 14% for CSP and 27% for XFO. At the bottom end Belarus has 5% for CSP and 21% for XFO, Vietnam has 5% for CSP and 21% for XFO, Ukraine has 4% for CSP and 17% for XFO, Russia has 3% for CSP and 18% for XFO, and Japan has 3% for CSP and 16% for XFO.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=874462374&format=interactive",
   sheets_gid="446153579",
   sql_file="feature_adoption_by_country.sql"
