@@ -317,7 +317,7 @@ Adicionalmente, a porcentagem de compressão Brotli é mais alta para conteúdo 
 
 ## Como identificar oportunidades para compressão
 
-A ferramenta <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a> da Google permite aos usuários executarem uma série de auditorias para páginas web. A <a hreflang=en" href="https://developers.google.com/web/tools/lighthouse/audits/text-compression">auditoria de compressão de texto</a> avalia se o site pode beneficiar de compressão baseada em texto adicional. Isso é feito através de uma tentativa de compressão dos recursos avaliando se o tamanho dos objetos pode ser reduzido pelo menos 10% e 1400 bytes. Dependendo da pontuação, é possível ver uma recomendação para compressão nos resultados, com uma lista dos recursos específicos que podem ser comprimidos. 
+A ferramenta <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a> da Google permite aos usuários executarem uma série de auditorias para páginas web. A <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/audits/text-compression">auditoria de compressão de texto</a> avalia se o site pode beneficiar de compressão baseada em texto adicional. Isso é feito através de uma tentativa de compressão dos recursos avaliando se o tamanho dos objetos pode ser reduzido pelo menos 10% e 1400 bytes. Dependendo da pontuação, é possível ver uma recomendação para compressão nos resultados, com uma lista dos recursos específicos que podem ser comprimidos. 
 
 {{ figure_markup(
   image="ch15_fig8_lighthouse.jpg",
