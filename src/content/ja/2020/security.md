@@ -889,8 +889,7 @@ CORPに関連しているのは [`Cross-Origin-Embedder-Policy`](https://develop
 {{ figure_markup(
   image="security-adoption-of-https-per-country.png",
   caption="国別のHTTPSの採用状況",
-  description="HTTPSを有効にしているサイトの割合を、さまざまな国に関連するサイトについて示した棒グラフ。
-スイス、ニュージーランド、アイルランド、ナイジェリア、オーストラリアが95%から94%の順に上位5位となっています。一方、タイ、イラン、韓国、台湾、日本は76%から72%となっています。",
+  description="HTTPSを有効にしているサイトの割合を、さまざまな国に関連するサイトについて示した棒グラフ。 スイス、ニュージーランド、アイルランド、ナイジェリア、オーストラリアが95%から94%の順に上位5位となっています。一方、タイ、イラン、韓国、台湾、日本は76%から72%となっています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=286219881&format=interactive",
   sheets_gid="446153579",
   sql_file="feature_adoption_by_country.sql"
@@ -901,9 +900,7 @@ HTTPSで訪問されたホームページの割合を見ると、すでに大き
 {{ figure_markup(
   image="security-adoption-of-csp-and-xfo-per-country.png",
   caption="国ごとのCSPとXFOの採用。",
-  description="棒グラフを見ると、ニュージーランドではCSPを使用しているサイトが16％、XFOを使用しているサイトが37％となっています。
-オーストラリアはCSPが16％、XFOが35％、アイルランドはCSPが15％、XFOが38％。
-カナダはCSPが15％、XFOが30％、米国はCSPが14％、XFOが27％である。ボトムエンドのベラルーシはCSPが5%、XFOが21%、ベトナムはCSPが5%、XFOが21%、ウクライナはCSPが4%、XFOが17%、ロシアはCSPが3%、XFOが18%、日本はCSPが3%、XFOが 16%となっている。",
+  description="棒グラフを見ると、ニュージーランドではCSPを使用しているサイトが16％、XFOを使用しているサイトが37％となっています。 オーストラリアはCSPが16％、XFOが35％、アイルランドはCSPが15％、XFOが38％。 カナダはCSPが15％、XFOが30％、米国はCSPが14％、XFOが27％である。ボトムエンドのベラルーシはCSPが5%、XFOが21%、ベトナムはCSPが5%、XFOが21%、ウクライナはCSPが4%、XFOが17%、ロシアはCSPが3%、XFOが18%、日本はCSPが3%、XFOが 16%となっている。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=874462374&format=interactive",
   sheets_gid="446153579",
   sql_file="feature_adoption_by_country.sql"

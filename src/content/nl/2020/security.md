@@ -1,7 +1,5 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
-part_number: II
-chapter_number: 11
 title: Beveiliging
 description: Beveiligingshoofdstuk van de Web Almanac 2020 met informatie over transportlaagbeveiliging, inhoudsbeveiliging (CSP, functiebeleid, SRI), webbeschermingsmechanismen (aanpakken van XSS, XS-Leaks) en updatepraktijken van veelgebruikte technologieën.
 authors: [tomvangoethem, nrllh, bazzadp]
@@ -14,7 +12,6 @@ nrllh_bio: Nurullah Demir is een beveiligingsonderzoeker en PhD-student bij <a h
 bazzadp_bio: Barry Pollard is een softwareontwikkelaar en auteur van het Manning-boek <a hreflang="en" href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a>. Hij vindt het web geweldig, maar wil het nog beter maken. Je kunt hem vinden op <a href="https://twitter.com/tunetheweb">@tunetheweb</a> en op zijn blog <a hreflang="en" href="https://www.tunetheweb.com">www.tunetheweb.com</a>.
 discuss: 2047
 results: https://docs.google.com/spreadsheets/d/1T7sxPP5BV3uwv-sXhBEZraVk-obd0tDfFrLiD49nZC0/
-queries: 11_Security
 featured_quote: In dit hoofdstuk verkennen we de huidige stand van zaken voor beveiliging op het web. Door de acceptatie van verschillende beveiligingsfuncties diepgaand en op grote schaal te analyseren, verzamelen we inzichten over de verschillende manieren waarop website-eigenaren deze beveiligingsmechanismen toepassen, gedreven door de prikkel om hun gebruikers te beschermen.
 featured_stat_1: 86,90%
 featured_stat_label_1: Verzoeken die HTTPS gebruiken op mobiele apparaten.
@@ -892,7 +889,7 @@ Er kunnen veel verschillende factoren zijn die van invloed zijn op de beveiligin
 {{ figure_markup(
   image="security-adoption-of-https-per-country.png",
   caption="Overname van HTTPS per land",
-  description="Staafdiagram met het percentage sites waarop HTTPS is ingeschakeld, voor sites die aan verschillende landen zijn gerelateerd Zwitserland, Nieuw-Zeeland, Ierland, Nigeria en Australië staan met 95% tot 94% in de top vijf. Aan de andere kant staan Thailand, Iran, Zuid-Korea, Taiwan en Japan op 76% tot 72%.",
+  description="Staafdiagram met het percentage sites waarop HTTPS is ingeschakeld, voor sites die aan verschillende landen zijn gerelateerd. Zwitserland, Nieuw-Zeeland, Ierland, Nigeria en Australië staan met 95% tot 94% in de top vijf. Aan de andere kant staan Thailand, Iran, Zuid-Korea, Taiwan en Japan op 76% tot 72%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=286219881&format=interactive",
   sheets_gid="446153579",
   sql_file="feature_adoption_by_country.sql"
