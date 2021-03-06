@@ -267,8 +267,8 @@
   },
   "en/2020/chapters/jamstack.html": {
     "date_published": "2020-12-09T00:00:00.000Z",
-    "date_modified": "2021-03-02T00:00:00.000Z",
-    "hash": "46641c7420ee6db3aa1163219eb2eb5e"
+    "date_modified": "2021-03-06T00:00:00.000Z",
+    "hash": "bbe99860e89c8113c7687f294b6cfc18"
   },
   "en/2020/chapters/javascript.html": {
     "date_published": "2020-12-09T00:00:00.000Z",
@@ -317,8 +317,8 @@
   },
   "en/2020/chapters/security.html": {
     "date_published": "2020-12-09T00:00:00.000Z",
-    "date_modified": "2021-03-03T00:00:00.000Z",
-    "hash": "62deaf3b3aaa16aee88bda253b8717e1"
+    "date_modified": "2021-03-06T00:00:00.000Z",
+    "hash": "cc36ebc5c9bf9d7e36ef2f93c8df4d2a"
   },
   "en/2020/chapters/seo.html": {
     "date_published": "2020-12-09T00:00:00.000Z",
@@ -352,23 +352,23 @@
   },
   "en/2020/stories/content_distribution.html": {
     "date_published": "2021-01-18T00:00:00.000Z",
-    "date_modified": "2021-02-14T00:00:00.000Z",
-    "hash": "556195d271551b15c15f6bd51dbde67c"
+    "date_modified": "2021-03-06T00:00:00.000Z",
+    "hash": "5e6e1b959b2858b43e29d214f3e73fe8"
   },
   "en/2020/stories/content_publishing.html": {
     "date_published": "2021-01-13T00:00:00.000Z",
-    "date_modified": "2021-02-21T00:00:00.000Z",
-    "hash": "a3c66da4083f73ff33ef75095e8ec604"
+    "date_modified": "2021-03-06T00:00:00.000Z",
+    "hash": "0785eb498cadf2f7ddba34ff70f9e458"
   },
   "en/2020/stories/page_content.html": {
     "date_published": "2020-12-22T00:00:00.000Z",
-    "date_modified": "2021-02-24T00:00:00.000Z",
-    "hash": "8a6db8b7bc43a312f7c845083d2f4da4"
+    "date_modified": "2021-03-06T00:00:00.000Z",
+    "hash": "15f557f347b01f9936e46a3adbf7444b"
   },
   "en/2020/stories/user_experience.html": {
     "date_published": "2021-01-07T00:00:00.000Z",
-    "date_modified": "2021-02-24T00:00:00.000Z",
-    "hash": "13f2b6d07da24978bcda757d8d8baf1a"
+    "date_modified": "2021-03-06T00:00:00.000Z",
+    "hash": "9c31bcf23660e2d171b9a2c5bb124a82"
   },
   "en/2020/table_of_contents.html": {
     "date_published": "2020-10-24T00:00:00.000Z",
@@ -805,6 +805,11 @@
     "date_modified": "2021-03-02T00:00:00.000Z",
     "hash": "c2c48b273886e22b98d76b29e5e44a8b"
   },
+  "ja/2020/chapters/jamstack.html": {
+    "date_published": "2021-03-06T00:00:00.000Z",
+    "date_modified": "2021-03-06T00:00:00.000Z",
+    "hash": "b9748dc9b5429050cb1700ad23937e8f"
+  },
   "ja/2020/chapters/javascript.html": {
     "date_published": "2021-01-31T00:00:00.000Z",
     "date_modified": "2021-03-02T00:00:00.000Z",
@@ -817,8 +822,8 @@
   },
   "ja/2020/chapters/security.html": {
     "date_published": "2021-02-28T00:00:00.000Z",
-    "date_modified": "2021-03-02T00:00:00.000Z",
-    "hash": "e357cc809e17f16da8ac25d631b11b85"
+    "date_modified": "2021-03-06T00:00:00.000Z",
+    "hash": "4266fab06e85128d429ee2d7427566d5"
   },
   "ja/2020/chapters/third-parties.html": {
     "date_published": "2021-02-16T00:00:00.000Z",
@@ -867,8 +872,8 @@
   },
   "nl/2019/methodology.html": {
     "date_published": "2020-12-16T00:00:00.000Z",
-    "date_modified": "2021-03-02T00:00:00.000Z",
-    "hash": "3fd8bef39d0afab35cc41b5b3eec8f21"
+    "date_modified": "2021-03-06T00:00:00.000Z",
+    "hash": "d4b0fc3979147b1097eb5bcd02e968c5"
   },
   "nl/2019/table_of_contents.html": {
     "date_published": "2020-12-16T00:00:00.000Z",
@@ -930,10 +935,15 @@
     "date_modified": "2021-03-02T00:00:00.000Z",
     "hash": "cbecc5d80df4f8c3ff4d999f48d1d5a5"
   },
+  "nl/2020/chapters/resource-hints.html": {
+    "date_published": "2021-03-06T00:00:00.000Z",
+    "date_modified": "2021-03-06T00:00:00.000Z",
+    "hash": "30d59b2dcc11237c7c09c96129ea4cbc"
+  },
   "nl/2020/chapters/security.html": {
     "date_published": "2021-02-20T00:00:00.000Z",
-    "date_modified": "2021-03-02T00:00:00.000Z",
-    "hash": "9b19686ce3d46f5149068c260f04dd58"
+    "date_modified": "2021-03-06T00:00:00.000Z",
+    "hash": "ea06d2688110ead4a74cbb27bd568c5f"
   },
   "nl/2020/chapters/third-parties.html": {
     "date_published": "2021-03-02T00:00:00.000Z",
@@ -952,8 +962,8 @@
   },
   "nl/2020/methodology.html": {
     "date_published": "2020-12-16T00:00:00.000Z",
-    "date_modified": "2021-03-02T00:00:00.000Z",
-    "hash": "1656a1b6c33fea4b65c479080b97f848"
+    "date_modified": "2021-03-06T00:00:00.000Z",
+    "hash": "ae7224eb301f57938088e384ae0a25be"
   },
   "nl/2020/table_of_contents.html": {
     "date_published": "2020-12-16T00:00:00.000Z",
@@ -962,13 +972,18 @@
   },
   "nl/accessibility_statement.html": {
     "date_published": "2021-01-27T00:00:00.000Z",
-    "date_modified": "2021-03-02T00:00:00.000Z",
-    "hash": "77ce5c778f239a144690a81dd6ff837b"
+    "date_modified": "2021-03-06T00:00:00.000Z",
+    "hash": "1cb4391c558dd417ac9105372a56e3a5"
   },
   "pt/2019/chapters/accessibility.html": {
     "date_published": "2019-11-11T00:00:00.000Z",
     "date_modified": "2021-03-02T00:00:00.000Z",
     "hash": "67c17961ad089d25173e77e65479ff76"
+  },
+  "pt/2019/chapters/compression.html": {
+    "date_published": "2021-03-06T00:00:00.000Z",
+    "date_modified": "2021-03-06T00:00:00.000Z",
+    "hash": "86fbacae452de138cc3346b576c4109a"
   },
   "pt/2019/chapters/http2.html": {
     "date_published": "2019-11-11T00:00:00.000Z",
