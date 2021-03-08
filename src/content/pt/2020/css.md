@@ -41,7 +41,7 @@ Para este ano, decidimos envolver a comunidade em quais métricas estudar. Come�
 
 Os dados neste capítulo levaram 121 consultas SQL para serem produzidos, totalizando mais de 10K linhas de SQL, incluindo 3K linhas de funções JavaScript no SQL. Isso o torna o maior capítulo da história do Web Almanac.
 
-Muito trabalho de engenharia foi feito para tornar esta escala de análise viável. Como no ano passado, colocamos todo o código CSS por meio de um [CSS parser](https://github.com/reworkcss/css) e armazenamos as [Abstract Syntax Trees](https://en.wikipedia.org/wiki/Abstract_syntax_tree) (AST) para todas as folhas de estilo no corpus, resultando em incríveis 10 TB de dados. Este ano, também desenvolvemos uma [biblioteca de *helpers*](https://github.com/leaverou/rework-utils) que operam neste AST e um [selector parser](https://projects.verou.me/parsel) - ambos lançados como projetos de código aberto separados. A maioria das métricas envolveu [JavaScript](https://github.com/LeaVerou/css-almanac/tree/master/js) para coletar dados de um único AST e [SQL](https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2020/01_CSS) para agregar esses dados em todo o corpus. Curioso para saber como seu próprio CSS se sai em relação às nossas métricas? Fizemos um [playground online](https://projects.verou.me/css-almanac/playground) onde você pode experimentar com os seus próprios sites.
+Muito trabalho de engenharia foi feito para tornar esta escala de análise viável. Como no ano passado, colocamos todo o código CSS por meio de um [CSS parser](https://github.com/reworkcss/css) e armazenamos as [Abstract Syntax Trees](https://pt.wikipedia.org/wiki/%C3%81rvore_sint%C3%A1tica_abstrata) (AST) para todas as folhas de estilo no corpus, resultando em incríveis 10 TB de dados. Este ano, também desenvolvemos uma [biblioteca de *helpers*](https://github.com/leaverou/rework-utils) que operam neste AST e um [selector parser](https://projects.verou.me/parsel) - ambos lançados como projetos de código aberto separados. A maioria das métricas envolveu [JavaScript](https://github.com/LeaVerou/css-almanac/tree/master/js) para coletar dados de um único AST e [SQL](https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2020/01_CSS) para agregar esses dados em todo o corpus. Curioso para saber como seu próprio CSS se sai em relação às nossas métricas? Fizemos um [playground online](https://projects.verou.me/css-almanac/playground) onde você pode experimentar com os seus próprios sites.
 
 Para algumas métricas, olhar para o AST CSS não foi suficiente. Queríamos olhar para o [SCSS](https://sass-lang.com/) onde quer que fosse fornecido por meio de *sourcemaps*, pois mostra o que os desenvolvedores precisam do CSS que ainda não é possível, ao passo que estudar o CSS nos mostra o que os desenvolvedores usam atualmente. Para isso, nós tivemos que usar uma *custom metric* - um código JavaScript que roda no *crawler* quando ele visita uma determinada página. Não podíamos usar um *parser* SCSS adequado, pois isso poderia diminuir muito a velocidade do rastreamento, então tivemos que recorrer a [expressões regulares](https://github.com/LeaVerou/css-almanac/blob/master/runtime/sass.js) (*oh, que horror!*). Apesar da abordagem rude, obtivemos uma [infinidade de insights](#sass)!
 
@@ -122,7 +122,7 @@ Apenas algumas das classes no topo eram de apresentação, com a maioria delas r
 
 Apesar dos IDs serem desencorajados atualmente em alguns círculos devido à sua grande especificidade, a maioria dos sites ainda os utiliza, embora com parcimônia. Menos da metade das páginas utilizava mais de um ID em qualquer um de seus seletores (tinha uma especificidade máxima de (1,x,y) ou menos) e quase todos tinham uma especificidade média que não incluía IDs (0,x,y). Consulte a [especificação de seletores da W3C](https://www.w3.org/TR/selectors/#specificity-rules) para obter mais detalhes de como calcular especificidade e esta notação (a,b,c).
 
-Mas para que os IDs são usados? Acontece que os IDs mais populares são estruturais: `#content`, `#footer`, `#header`, `#main`, embora existam [elementos HTML correspondentes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure#HTML_layout_elements_in_more_detail) que poderiam ser utilizados como seletores ao mesmo tempo em que melhoram a marcação semântica.
+Mas para que os IDs são usados? Acontece que os IDs mais populares são estruturais: `#content`, `#footer`, `#header`, `#main`, embora existam [elementos HTML correspondentes](https://developer.mozilla.org/pt-BR/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure#elementos_de_layout_do_html_em_mais_detalhes) que poderiam ser utilizados como seletores ao mesmo tempo em que melhoram a marcação semântica.
 
 {{ figure_markup(
   image="popular-ids.png",
@@ -138,7 +138,6 @@ IDs também podem ser usados para reduzir ou aumentar intencionalmente a especif
 ### `!important` {important}
 
 Em vez disso, o antigo `!important` ainda é utilizado de forma justa apesar de seus [conhecidos inconvenientes](https://www.impressivewebs.com/everything-you-need-to-know-about-the-important-css-declaration/#post-475:~:text=Drawbacks,-to). A página mediana utiliza `!important` em quase 2% de suas declarações, ou 1 em 50.
-
 
 {{ figure_markup(
   caption="Páginas no celular usando `!important` em cada declaração!",
@@ -175,7 +174,6 @@ O que é que os desenvolvedores estão tão interessados em sobrescrever? Fizemo
 ### Especificidade e classes
 
 Além de manter os `id`s e `!important`s poucos e distantes, há uma tendência de contornar completamente a especificidade, colocando todos os critérios de seleção de um seletor em um único nome de classe, forçando assim todas as regras a terem a mesma especificidade e transformando a cascata em um sistema mais simples em que o último vence. O BEM é uma metodologia popular desse tipo, embora não seja a única. Embora seja difícil avaliar quantos websites usam exclusivamente metodologias no estilo BEM, uma vez que segui-la em cada regra é raro (mesmo o [website BEM](https://en.bem.info/) usa múltiplas classes em muitos seletores), cerca de 10% das páginas tinham uma especificidade mediana de (0,1,0), o que pode indicar que a maioria segue uma metodologia no estilo BEM. No extremo oposto do BEM, muitas vezes os desenvolvedores utilizam [classes duplicadas](https://csswizardry.com/2014/07/hacks-for-dealing-with-specificity/#safely-increasing-specificity) para aumentar a especificidade e empurrar um seletor à frente de outro (por exemplo, `.foo.foo` em vez de `.foo`). Este tipo de hack de especificidade é na verdade mais popular que o BEM, estando presente em 14% dos websites nos celulares (9% no desktop)! Isto pode indicar que a maioria dos desenvolvedores não quer realmente se livrar completamente da cascata, eles só precisam de mais controle sobre ela.
-
 
 <figure markdown>
 Percentíl | Desktop | Celular
@@ -964,7 +962,7 @@ Dicas de interpolação (interpolation hints) (ou como a Adobe, que popularizou 
 
 A maior parte do uso de gradiente é bastante simples, com mais de 75% dos gradientes encontrados em todo o conjunto de dados usando apenas 2 paradas de cor. Na verdade, menos da metade das páginas contém até mesmo um único gradiente com mais de 3 paradas de cor!
 
-O gradiente com mais paradas de cor é [este](https://dabblet.com/gist/4d1637d78c71ef2d8d37952fc6e90ff5) com 646 paradas! Tão lindo! Isso quase certamente é gerado e o código CSS resultante é de 8 KB, então um PNG de 1px de altura provavelmente teria feito o trabalho também, com uma pegada menor (nossa imagem abaixo tem 1,1 KB).
+O gradiente com mais paradas de cor é [este com 646 paradas](https://dabblet.com/gist/4d1637d78c71ef2d8d37952fc6e90ff5)! Tão lindo! Isso quase certamente é gerado e o código CSS resultante é de 8 KB, então um PNG de 1px de altura provavelmente teria feito o trabalho também, com uma pegada menor (nossa imagem abaixo tem 1,1 KB).
 
 {{ figure_markup(
   image="gradient-most-stops.png",
@@ -1384,8 +1382,6 @@ Pode não ser surpresa que `-webkit-` seja de longe o prefixo mais popular, com 
 
 Pseudoclasses prefixadas não são tão comuns quanto as propriedades, com nenhuma delas sendo usada em mais de 10% das páginas. Quase dois terços de todas as pseudoclasses prefixadas em geral são para estilizar placeholders. Em contraste, a pseudo classe padrão `:placeholder-shown` quase não é usada, encontrada em menos de 0,34% das páginas.
 
-The most popular vendor-prefixed pseudo-classes as a percent of pages
-
 {{ figure_markup(
   image="vendor-prefix-pseudo-classes.png",
   caption="As pseudo-classes prefixadas mais populares pela porcentagem de páginas.",
@@ -1645,7 +1641,7 @@ Também examinamos as propriedades inexistentes mais comuns, usando uma lista de
 - 37% deles estavam em uma forma mutilada de uma propriedade prefixada (por exemplo, `webkit-transition` ou `-transition`)
 - 43% eram uma forma não prefixada de uma propriedade que existe apenas com prefixo (por exemplo, `font-smoothing`, que apareceu em 384K sites), provavelmente incluída para compatibilidade sob a suposição incorreta de que é padrão, ou devido ao desejo de que irá se tornar padrão.
 - Um erro de digitação que foi encontrado em uma biblioteca popular. Por meio dessa análise, constatamos que a propriedade `white-wpace` estava presente em 234.027 sites. São sites demais para que o mesmo erro de digitação tenha ocorrido organicamente, então decidimos dar uma olhada nele. E eis que [descobriu-se](https://twitter.com/rick_viscomi/status/1326739379533000704) qie era o widget do Facebook! A correção já existe.
-- E outra estranheza: a propriedade `font-rendering` aparece em 2.575 páginas. No entanto, não podemos encontrar evidências da existência de tal propriedade, com ou sem um prefixo. Existe o não padrão [`-webkit-font-smoothing`](https://medium.com/better-programming/improving-font-rendering-with-css-3383fc358cbc) que é extremamente popular, aparecendo em 3 milhões de sites, ou cerca de 49% das páginas, mas `font-rendering` não é suficientemente próximo para ser um erro de ortografia. Existe [`text-rendering`] (https://developer.mozilla.org/en-US/docs/Web/CSS/text-rendering) que é usado em cerca de 100K de sites, portanto, é concebível que 2,5K e todos os desenvolvedores se lembraram erroneamente e cunharam um portmanteau de `font-smoothing` e `text-rendering`.
+- E outra estranheza: a propriedade `font-rendering` aparece em 2.575 páginas. No entanto, não podemos encontrar evidências da existência de tal propriedade, com ou sem um prefixo. Existe o não padrão [`-webkit-font-smoothing`](https://medium.com/better-programming/improving-font-rendering-with-css-3383fc358cbc) que é extremamente popular, aparecendo em 3 milhões de sites, ou cerca de 49% das páginas, mas `font-rendering` não é suficientemente próximo para ser um erro de ortografia. Existe [`text-rendering`](https://developer.mozilla.org/pt-BR/docs/Web/CSS/text-rendering) que é usado em cerca de 100K de sites, portanto, é concebível que 2,5K e todos os desenvolvedores se lembraram erroneamente e cunharam um portmanteau de `font-smoothing` e `text-rendering`.
 
 {{ figure_markup(
   image="most-popupular-unknown-properties.png",
