@@ -163,7 +163,7 @@ Cos'è che gli sviluppatori sono così desiderosi di sovrascrivere? Abbiamo esam
 
 {{ figure_markup(
   image="important-top-properties.png",
-  alt="Le prime proprietà `!important` in base alla percentuale di pagine.",
+  alt="Le prime proprietà !important in base alla percentuale di pagine.",
   caption="Le prime proprietà `!important` in base alla percentuale di pagine.",
   description="Grafico a barre che mostra le principali 10 proprietà utilizzate con `!important`. Mobile e desktop hanno un utilizzo simile. La proprietà `display` viene utilizzata maggiormente con `!important`, dal 79% delle pagine mobile. In ordine decrescente, le proprietà successive sul 71-58% delle pagine mobile sono: `color`, `width`, `height`, `background`, `padding`, `margin`, `border`, `background-color` e `float`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=257343566&format=interactive",
