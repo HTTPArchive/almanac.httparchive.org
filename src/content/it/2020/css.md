@@ -1023,7 +1023,7 @@ I motivi per scegliere Flexbox su Grid sono spesso citati come supporto del brow
 
 ### Utilizzo di diverse tecniche di layout Grid
 
-La specifica del layout Grid offre diversi modi per descrivere e definire il layout in CSS. L'utilizzo più elementare prevede la disposizione degli elementi <a hreflang="en" href="https://www.smashingmagazine.com/2020/01/understanding-css-grid-lines/">da una grid line all'altra</a>. Che dire delle [linee di denominazione](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Layout_using_Named_Grid_Lines) o dell'uso di `grid-template-areas`?
+La specifica del layout Grid offre diversi modi per descrivere e definire il layout in CSS. L'utilizzo più elementare prevede la disposizione degli elementi [da una grid line all'altra](https://www.smashingmagazine.com/2020/01/understanding-css-grid-lines/). Che dire delle [linee di denominazione](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Layout_using_Named_Grid_Lines) o dell'uso di `grid-template-areas`?
 
 Per le righe con nome, abbiamo verificato la presenza di parentesi quadre in un elenco di tracce. Il nome o i nomi inseriti tra parentesi quadre.
 
