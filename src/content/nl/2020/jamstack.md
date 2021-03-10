@@ -299,7 +299,7 @@ Dit verschilt van First Contentful Paint (FCP), dat meet vanaf het laden van de 
 
 Een "goed" LCP wordt beschouwd als minder dan 2,5 seconden. Jekyll en Hugo hebben indrukwekkende LCP-scores die allemaal boven de 50% liggen, met Jekyll en Hugo op desktop respectievelijk 91% en 85% op desktop. Gatsby-, Next.js- en Nuxt.js-sites bleven achter - respectievelijk 52%, 38% en 31% op desktop en 36%, 23% en 18% op mobiel.
 
-Dit kan worden toegeschreven aan het feit dat de meeste sites die zijn gebouwd met Gatsby, Next.js en Nuxt.js een complexe lay-out en een hoog paginagewicht hebben, in vergelijking met Hugo en Jekyll die voornamelijk worden gebruikt om sites met statische inhoud te produceren met minder of geen dynamische onderdelen. Voor wat het waard is, hoef u React, VueJS of enig ander JavaScript-framework niet te gebruiken met Hugo of Jekyll.
+Dit kan worden toegeschreven aan het feit dat de meeste sites die zijn gebouwd met Gatsby, Next.js en Nuxt.js een complexe lay-out en een hoog paginagewicht hebben, in vergelijking met Hugo en Jekyll die voornamelijk worden gebruikt om sites met statische inhoud te produceren met minder of geen dynamische onderdelen. Voor wat het waard is, hoeft u React, VueJS of enig ander JavaScript-framework niet te gebruiken met Hugo of Jekyll.
 
 Zoals we in het bovenstaande gedeelte hebben onderzocht, kunnen hoge paginagewichten een mogelijke impact hebben op het milieu. Dit heeft echter ook invloed op de LCP-prestaties, die ofwel erg goed ofwel over het algemeen slecht zijn, afhankelijk van het Jamstack-framework. Dit kan ook een impact hebben op de echte gebruikerservaring.
 

@@ -89,7 +89,7 @@ In dit gedeelte behandelen we de aspecten van een hoger niveau van HTML, zoals d
   <figcaption>{{ figure_link(caption="De 5 meest populaire doctypes.", sheets_gid="1981441894", sql_file="summary_pages_by_device_and_doctype.sql") }}</figcaption>
 </figure>
 
-Je kunt al zien hoe de aantallen behoorlijk afnemen na XHTML 1.0, voordat u de lange staart ingaat met een paar standaard, sommige esoterische en ook nep-doctypes.
+U kunt al zien hoe de aantallen behoorlijk afnemen na XHTML 1.0, voordat u de lange staart ingaat met een paar standaard, sommige esoterische en ook nep-doctypes.
 
 Twee dingen onderscheiden zich van deze resultaten:
 
@@ -319,7 +319,7 @@ Er veranderde niets in de Top 7, maar het `optie`-element raakte een beetje uit 
 
 #### `details` en `summary`
 
-Iets anders waar we nieuwsgierig naar waren, was het gebruik van de <a hreflang="en" href="https://html.spec.whatwg.org/multipage/rendering.html#the-details-and-summary-elements">`details` en `summary` elementen</a> , vooral sinds 2020 <a hreflang="en" href="https://caniuse.com/details">brede ondersteuning</a> bracht. Worden ze gebruikt? Zijn ze aantrekkelijk voor - zelfs populair - onder auteurs? Het blijkt dat slechts 0,39% van alle geteste pagina's ze gebruikt, hoewel het moeilijk is in te schatten of ze allemaal op de juiste manier werden gebruikt in precies de situaties waarin u ze nodig hebt, "populair" is het verkeerde woord.
+Iets anders waar we nieuwsgierig naar waren, was het gebruik van de <a hreflang="en" href="https://html.spec.whatwg.org/multipage/rendering.html#the-details-and-summary-elements">`details` en `summary` elementen</a> , vooral sinds 2020 <a hreflang="en" href="https://caniuse.com/details">brede ondersteuning</a> bracht. Worden ze gebruikt? Zijn ze aantrekkelijk voor - zelfs populair - onder auteurs? Het blijkt dat slechts 0,39% van alle geteste pagina's ze gebruikt, hoewel het moeilijk is in te schatten of ze allemaal op de juiste manier werden gebruikt in precies de situaties waarin u ze nodig heeft, "populair" is het verkeerde woord.
 
 Hier is een eenvoudig voorbeeld dat het gebruik van een `summary` in een `details`-element laat zien:
 
