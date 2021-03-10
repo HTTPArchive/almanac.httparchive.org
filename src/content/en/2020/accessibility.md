@@ -460,6 +460,7 @@ ARIA attributes can be assigned to HTML elements to enhance the accessibility of
   caption="Top 10 most used `aria` attributes.",
   description="Bar chart showing the top 10 `aria` attributes use on desktop and mobile showing `aria-hidden` used by 48.1% desktop sites and 48.2% mobile sites, `aria-label` is used by 40.4% and 38.7% respectively, `aria-expanded` by 21.0% and 21.0%, `aria-controls` by 17.4% and 16.9%, `aria-labelledby` by 17.7% and 16.2%, `aria-live` by 16.8% and 15.7%, `aria-haspopup` by 15.9% and 14.0%, `aria-current` by 12.4% and 12.7%, and `aria-describedby` by 11.3% and 10.6%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSjkB_XAYiwkYrMuoXp44mdqMGJVDUkTr_48ELozY72Mdv3OlxeWV9ysbDY9bs6hA7LnJTrHar9aZlM/pubchart?oid=332801232&format=interactive",
+  sheets_gid="1154654622",
   sql_file="common_element_attributes.sql"
   )
 }}
