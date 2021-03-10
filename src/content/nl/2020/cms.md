@@ -403,7 +403,7 @@ De top 5 CMS'en zouden hier kunnen verbeteren. Slechts 50% van de webpagina's di
 
 #### SEO
 
-Zoekmachineoptimalisatie (of SEO) is het optimaliseren van websites om ervoor te zorgen dat de inhoud van uw website gemakkelijker vindbaar is in zoekmachines. Dit wordt dieper behandeld in ons hoofdstuk [SEO](./seo), maar een deel betreft het verzekeren dat de site zo is gecodeerd dat de crawlers van zoekmachines zoveel mogelijk informatie kunnen verstrekken om het hen zo gemakkelijk mogelijk te maken om uw site op de juiste manier weer te geven in de resultaten van zoekmachines. In vergelijking met een op maat gemaakte website, zou je verwachten dat een CMS goede SEO-mogelijkheden biedt, en de Lighthouse-scores in deze categorie laten hoge cijfers zien:
+Zoekmachineoptimalisatie (of SEO) is het optimaliseren van websites om ervoor te zorgen dat de inhoud van uw website gemakkelijker vindbaar is in zoekmachines. Dit wordt dieper behandeld in ons hoofdstuk [SEO](./seo), maar een deel betreft het verzekeren dat de site zo is gecodeerd dat de crawlers van zoekmachines zoveel mogelijk informatie kunnen verstrekken om het hen zo gemakkelijk mogelijk te maken om uw site op de juiste manier weer te geven in de resultaten van zoekmachines. In vergelijking met een op maat gemaakte website, zou u verwachten dat een CMS goede SEO-mogelijkheden biedt, en de Lighthouse-scores in deze categorie laten hoge cijfers zien:
 
 {{ figure_markup(
   image="cms-seo-lighthouse-score.png",

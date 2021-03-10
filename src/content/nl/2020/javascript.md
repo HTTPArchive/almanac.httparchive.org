@@ -7,7 +7,7 @@ reviewers: [ibnesayeed, denar90]
 analysts: [rviscomi, paulcalvano]
 editors: [rviscomi]
 translators: [noah-vdv]
-tkadlec_bio: Tim is een webprestatieadviseur en trainer gericht op het bouwen van een web dat iedereen kan gebruiken. Hij is de auteur van High Performance Images (O'Reilly, 2016) en Implementing Responsive Design (New Riders, 2012). Hij schrijft over alles wat met internet te maken heeft op <a hreflang="en" href="https://timkadlec.com/">timkadlec.com</a>. Je kunt hem vinden op Twitter <a href="https://twitter.com/tkadlec">@tkadlec</a> waar hij zijn gedachten in een beknopter formaat deelt.
+tkadlec_bio: Tim is een webprestatieadviseur en trainer gericht op het bouwen van een web dat iedereen kan gebruiken. Hij is de auteur van High Performance Images (O'Reilly, 2016) en Implementing Responsive Design (New Riders, 2012). Hij schrijft over alles wat met internet te maken heeft op <a hreflang="en" href="https://timkadlec.com/">timkadlec.com</a>. U kunt hem vinden op Twitter <a href="https://twitter.com/tkadlec">@tkadlec</a> waar hij zijn gedachten in een beknopter formaat deelt.
 discuss: 2038
 results: https://docs.google.com/spreadsheets/d/1cgXJrFH02SHPKDGD0AelaXAdB3UI7PIb5dlS0dxVtfY/
 featured_quote: JavaScript heeft een lange weg afgelegd sinds zijn bescheiden oorsprong als de laatste van de drie web-hoekstenen, naast CSS en HTML. Tegenwoordig begint JavaScript een breed spectrum van de technische stack te infiltreren. Het is niet langer beperkt tot de client-side en het wordt een steeds populairdere keuze voor build-tools en server-side scripting. JavaScript sluipt ook zijn weg naar de CDN-laag dankzij edge computing-oplossingen.
@@ -100,7 +100,7 @@ Een deel van dit gewicht lijkt in ieder geval niet nodig te zijn. Als we kijken 
   sql_file="unused_js_bytes_distribution.sql"
 ) }}
 
-Als onbewerkte cijfers, kunnen die al dan niet naar je uitspringen, afhankelijk van hoeveel je van prestatie houdt, maar als je ernaar kijkt als een percentage van het totale JavaScript dat op elke pagina wordt gebruikt, wordt het een beetje gemakkelijker om te zien hoeveel afval we sturen.
+Als onbewerkte cijfers, kunnen die al dan niet naar u uitspringen, afhankelijk van hoeveel u van prestatie houdt, maar als u ernaar kijkt als een percentage van het totale JavaScript dat op elke pagina wordt gebruikt, wordt het een beetje gemakkelijker om te zien hoeveel afval we sturen.
 
 {{ figure_markup(
   caption="Percentage van de mediaan JavaScript-bytes van de mobiele pagina dat niet wordt gebruikt.",
@@ -367,7 +367,7 @@ Vorig jaar stelde [Houssein een paar redenen voor waarom de dominantie van jQuer
 
 Beide zijn zeer goede gissingen, en het lijkt erop dat de situatie op geen van beide fronten veel is veranderd.
 
-In feite wordt de dominantie van jQuery nog verder ondersteund als je bedenkt dat van de top 10 bibliotheken er 6 jQuery zijn of jQuery nodig hebben om te kunnen worden gebruikt: jQuery UI, jQuery <span lang="en">Migrate</span>, <span lang="en">FancyBox, Lightbox</span> en Slick .
+In feite wordt de dominantie van jQuery nog verder ondersteund als u bedenkt dat van de top 10 bibliotheken er 6 jQuery zijn of jQuery nodig hebben om te kunnen worden gebruikt: jQuery UI, jQuery <span lang="en">Migrate</span>, <span lang="en">FancyBox, Lightbox</span> en Slick .
 
 ### Frameworks
 
@@ -629,7 +629,7 @@ De kloof tussen de ervaring die een framework biedt voor desktop en mobiel, is o
   sql_file="main_thread_time_frameworks.sql"
 ) }}
 
-Zoals je zou verwachten, is er een gat voor alle gebruikte hulpmiddelen vanwege de lagere verwerkingskracht van de [geëmuleerde Moto G4](methodology#webpagetest). Ember en Polymer lijken eruit te springen als bijzonder flagrante voorbeelden, terwijl hulpmiddelen zoals RxJS en Mustache slechts in geringe mate variëren van desktop tot mobiel.
+Zoals u zou verwachten, is er een gat voor alle gebruikte hulpmiddelen vanwege de lagere verwerkingskracht van de [geëmuleerde Moto G4](methodology#webpagetest). Ember en Polymer lijken eruit te springen als bijzonder flagrante voorbeelden, terwijl hulpmiddelen zoals RxJS en Mustache slechts in geringe mate variëren van desktop tot mobiel.
 
 ## Wat is de impact?
 
@@ -639,7 +639,7 @@ Het eerste dat we moeten overwegen, is wat er gebeurt met al dat JavaScript nada
 
 Als u zich herinnert, was er slechts een verschil van 30 KB tussen wat naar een mobiel apparaat wordt verzonden en een desktopapparaat. Afhankelijk van uw standpunt, zou het u kunnen worden vergeven dat u niet al te boos bent over het kleine verschil in de hoeveelheid code die naar een desktopbrowser wordt verzonden versus een mobiele browser - wat is tenslotte ongeveer 30 KB extra bij de mediaan?
 
-Het grootste probleem ontstaat wanneer al die code wordt geserveerd op een <span lang="en">low-to-middle-end</span> apparaat, iets minder dan het soort apparaten dat de meeste ontwikkelaars waarschijnlijk hebben, en een beetje meer het soort apparaten dat je zult zien van de meerderheid van de mensen over de hele wereld. Die relatief kleine kloof tussen desktop en mobiel is veel dramatischer als we ernaar kijken in termen van verwerkingstijd.
+Het grootste probleem ontstaat wanneer al die code wordt geserveerd op een <span lang="en">low-to-middle-end</span> apparaat, iets minder dan het soort apparaten dat de meeste ontwikkelaars waarschijnlijk hebben, en een beetje meer het soort apparaten dat u zult zien van de meerderheid van de mensen over de hele wereld. Die relatief kleine kloof tussen desktop en mobiel is veel dramatischer als we ernaar kijken in termen van verwerkingstijd.
 
 De gemiddelde desktopsite besteedt 891 ms aan de hoofdthread van een browser die met al dat JavaScript werkt. De gemiddelde mobiele site besteedt echter 1897 ms, meer dan twee keer de tijd die op de desktop wordt doorgebracht. Het is zelfs nog erger voor de lange staart van sites. Op het 90e percentiel besteden mobiele sites maar liefst 8.921 ms aan hoofdthread-tijd aan JavaScript, vergeleken met 3.838 ms voor desktopsites.
 
@@ -691,7 +691,7 @@ Een andere nuttige audit die Lighthouse uitvoert, is om te controleren op bekend
 
 Volgens de audit gebruikt 83,5% van de mobiele pagina's een JavaScript-bibliotheek of -framework met minstens één bekende beveiligingslek.
 
-Dit is wat we het jQuery-effect noemen. Weet je nog hoe we zagen dat jQuery op maar liefst 83% van de pagina's wordt gebruikt? Verschillende oudere versies van jQuery bevatten bekende kwetsbaarheden, die de overgrote meerderheid van de kwetsbaarheden omvatten die deze audit controleert.
+Dit is wat we het jQuery-effect noemen. Weet u nog hoe we zagen dat jQuery op maar liefst 83% van de pagina's wordt gebruikt? Verschillende oudere versies van jQuery bevatten bekende kwetsbaarheden, die de overgrote meerderheid van de kwetsbaarheden omvatten die deze audit controleert.
 
 Van de ongeveer 5 miljoen mobiele pagina's waartegen wordt getest, bevat 81% een kwetsbare versie van jQuery - een aanzienlijke voorsprong op de tweede meest gevonden kwetsbare bibliotheek - jQuery UI met 15,6%.
 

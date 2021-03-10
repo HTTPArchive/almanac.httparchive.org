@@ -89,7 +89,7 @@ In dit gedeelte behandelen we de aspecten van een hoger niveau van HTML, zoals d
   <figcaption>{{ figure_link(caption="De 5 meest populaire doctypes.", sheets_gid="1981441894", sql_file="summary_pages_by_device_and_doctype.sql") }}</figcaption>
 </figure>
 
-Je kunt al zien hoe de aantallen behoorlijk afnemen na XHTML 1.0, voordat je de lange staart ingaat met een paar standaard, sommige esoterische en ook nep-doctypes.
+Je kunt al zien hoe de aantallen behoorlijk afnemen na XHTML 1.0, voordat u de lange staart ingaat met een paar standaard, sommige esoterische en ook nep-doctypes.
 
 Twee dingen onderscheiden zich van deze resultaten:
 
@@ -319,7 +319,7 @@ Er veranderde niets in de Top 7, maar het `optie`-element raakte een beetje uit 
 
 #### `details` en `summary`
 
-Iets anders waar we nieuwsgierig naar waren, was het gebruik van de <a hreflang="en" href="https://html.spec.whatwg.org/multipage/rendering.html#the-details-and-summary-elements">`details` en `summary` elementen</a> , vooral sinds 2020 <a hreflang="en" href="https://caniuse.com/details">brede ondersteuning</a> bracht. Worden ze gebruikt? Zijn ze aantrekkelijk voor - zelfs populair - onder auteurs? Het blijkt dat slechts 0,39% van alle geteste pagina's ze gebruikt, hoewel het moeilijk is in te schatten of ze allemaal op de juiste manier werden gebruikt in precies de situaties waarin je ze nodig hebt, "populair" is het verkeerde woord.
+Iets anders waar we nieuwsgierig naar waren, was het gebruik van de <a hreflang="en" href="https://html.spec.whatwg.org/multipage/rendering.html#the-details-and-summary-elements">`details` en `summary` elementen</a> , vooral sinds 2020 <a hreflang="en" href="https://caniuse.com/details">brede ondersteuning</a> bracht. Worden ze gebruikt? Zijn ze aantrekkelijk voor - zelfs populair - onder auteurs? Het blijkt dat slechts 0,39% van alle geteste pagina's ze gebruikt, hoewel het moeilijk is in te schatten of ze allemaal op de juiste manier werden gebruikt in precies de situaties waarin u ze nodig hebt, "populair" is het verkeerde woord.
 
 Hier is een eenvoudig voorbeeld dat het gebruik van een `summary` in een `details`-element laat zien:
 
@@ -331,7 +331,7 @@ Hier is een eenvoudig voorbeeld dat het gebruik van een `summary` in een `detail
 </details>
 ```
 
-Een tijdje geleden wees Steve Faulkner [erop](https://twitter.com/stevefaulkner/status/806474286592561152) hoe deze twee elementen in het wild onvoldoende werden gebruikt. Zoals je aan het bovenstaande voorbeeld kunt zien, heb je voor elk `details`-element een `summary`-element nodig dat alleen mag worden gebruikt als het [eerste kind](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary#Usage_notes) van `details`.
+Een tijdje geleden wees Steve Faulkner [erop](https://twitter.com/stevefaulkner/status/806474286592561152) hoe deze twee elementen in het wild onvoldoende werden gebruikt. Zoals u aan het bovenstaande voorbeeld kunt zien, heeft u voor elk `details`-element een `summary`-element nodig dat alleen mag worden gebruikt als het [eerste kind](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary#Usage_notes) van `details`.
 
 Dienovereenkomstig hebben we gekeken naar het aantal `details` en `summary` elementen en het lijkt erop dat ze nog steeds worden misbruikt. Het aantal `summary`-elementen is hoger op zowel mobiel als desktop, met een verhouding van respectievelijk 1,11 `samenvatting`-elementen voor elk `details`-element op mobiel en 1,19 op desktop:
 
@@ -726,7 +726,7 @@ De bron van deze elementen lijkt te zijn gemengd, aangezien sommige onbekend zij
   <figcaption>{{ figure_link(caption="Frequentie en gemiddeld gebruik van standaard kopelementen.", sheets_gid="277662548", sql_file="pages_wpt_bodies_by_device_and_percentile_and_heading_level.sql") }}</figcaption>
 </figure>
 
-Je had misschien verwacht dat je alleen de standaard `<h1>` tot `<h6>` elementen zou zien, maar sommige sites gebruiken eigenlijk meer niveaus:
+U had misschien verwacht dat u alleen de standaard `<h1>` tot `<h6>` elementen zou zien, maar sommige sites gebruiken eigenlijk meer niveaus:
 
 <figure>
   <table>
@@ -1329,7 +1329,7 @@ Elementen per pagina en elementtypes per pagina bleven ongeveer hetzelfde en too
 
 Gepatenteerde productspecifieke elementen zoals `g:plusone` (gebruikt op 17.607 pagina's in het mobiele voorbeeld) en `fb:like` (11.335) zijn bijna verdwenen nadat ze nog steeds [een van de meest populaire](../2019/markup#products-and-libraries-and-their-custom-markup) waren vorig jaar. We zien echter meer [aangepaste elementen](#aangepaste-elementen) voor zaken als Slider Revolution, AMP en Angular. Elementen als `ym-maatregel`, `jdiv` en `ymaps` komen ook nog steeds voor. Wat we ons voorstellen dat we hier zien, is dat, onder de zee van langzaam veranderende praktijken, HTML erg wordt ontwikkeld en onderhouden, terwijl auteurs verouderde markeringen weggooien en nieuwe oplossingen omarmen.
 
-Nu had het [hoofdstuk Web Almanac Opmaak 2019](../2019/markup) 14 jaar inhaalslag te maken sinds de laatste grote studie over het onderwerp, dus je zou denken dat we niet veel te behandelen hebben in de jaar sinds. Maar wat we met de gegevens van dit jaar zien, is dat er veel beweging is op de bodem en nabij de kust van de genoemde zee van HTML. We benaderen een bijna volledige acceptatie van levende HTML. We snoeien onze pagina's snel van rages zoals Google- en Facebook-widgets. We zijn ook snel in het adopteren en mijden van frameworks, aangezien zowel Angular als AMP (hoewel een "component framework") aanzienlijk aan populariteit lijken te hebben verloren, waarschijnlijk voor oplossingen als React en Vue.
+Nu had het [hoofdstuk Web Almanac Opmaak 2019](../2019/markup) 14 jaar inhaalslag te maken sinds de laatste grote studie over het onderwerp, dus u zou denken dat we niet veel te behandelen hebben in de jaar sinds. Maar wat we met de gegevens van dit jaar zien, is dat er veel beweging is op de bodem en nabij de kust van de genoemde zee van HTML. We benaderen een bijna volledige acceptatie van levende HTML. We snoeien onze pagina's snel van rages zoals Google- en Facebook-widgets. We zijn ook snel in het adopteren en mijden van frameworks, aangezien zowel Angular als AMP (hoewel een "component framework") aanzienlijk aan populariteit lijken te hebben verloren, waarschijnlijk voor oplossingen als React en Vue.
 
 En toch zijn er geen tekenen dat we de opties die HTML ons biedt hebben uitgeput. De mediaan van 30 verschillende elementen die op een bepaalde pagina worden gebruikt, wat ongeveer een kwart is van de elementen die HTML ons biedt, suggereert een nogal eenzijdig gebruik van HTML. Dat wordt ondersteund door de immense populariteit van elementen als `div` en `span`, en er zijn geen aangepaste elementen om mogelijk te voldoen aan de eisen die deze twee elementen kunnen vertegenwoordigen. Helaas konden we niet elk document in het voorbeeld valideren; anekdotisch en om voorzichtig te zijn, hebben we echter geleerd dat <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/issues/899#issuecomment-717856201">79%</a> van W3C-geteste documenten validatiefouten bevatten. Na alles wat we hebben gezien, lijkt het erop dat we het ambacht van HTML nog lang niet beheersen.
 
@@ -1338,5 +1338,5 @@ Dat dwingt ons om af te sluiten met een oproep: let op HTML. Focus op HTML. Het 
 Laten we ons voor de volgende editie van het hoofdstuk over de Web Almanac voorbereiden om nader te kijken naar het vak van het schrijven van HTML en, hopelijk, hoe we het hebben verbeterd.
 
 <p class="note">
-  We laten dit voor je open. Wat zijn uw opmerkingen? Wat viel u op? Wat is er volgens u verslechterd, en wat is er verbeterd? <a hreflang="en" href="https://discuss.httparchive.org/t/2039">Laat een reactie achter</a> om uw mening te delen!
+  We laten dit voor u open. Wat zijn uw opmerkingen? Wat viel u op? Wat is er volgens u verslechterd, en wat is er verbeterd? <a hreflang="en" href="https://discuss.httparchive.org/t/2039">Laat een reactie achter</a> om uw mening te delen!
 </p>

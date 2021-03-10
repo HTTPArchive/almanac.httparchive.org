@@ -29,7 +29,7 @@ Als we aan gebruikers met een handicap denken, moeten we niet vergeten dat hun g
 
 Vaak heeft het verbeteren van de toegankelijkheid van uw site voordelen voor iedereen. Hoewel we mensen met een handicap doorgaans zien als mensen met een blijvende handicap, kan iedereen een tijdelijke of situationele handicap hebben. Iemand kan bijvoorbeeld permanent blind zijn, een tijdelijke ooginfectie hebben of, in bepaalde situaties, buiten onder een felle zon staan. Dit kan allemaal verklaren waarom iemand zijn scherm niet kan zien. Iedereen heeft situationele handicaps, en dus het verbeteren van de toegankelijkheid van uw webpagina zal de ervaring van alle gebruikers in elke situatie verbeteren.
 
-De <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/quickref/">Richtlijnen voor Toegankelijkheid van Webinhoud</a> (WCAG) adviseren hoe je een website toegankelijk kunt maken. Deze richtlijnen zijn gebruikt als basis voor onze analyse. In veel gevallen is het echter moeilijk om de toegankelijkheid van een website programmatisch te analyseren. Het webplatform biedt bijvoorbeeld verschillende manieren om vergelijkbare functionele resultaten te bereiken, maar de onderliggende code die ze aandrijft, kan compleet anders zijn. Daarom is onze analyse slechts een benadering van de algehele webtoegankelijkheid.
+De <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/quickref/">Richtlijnen voor Toegankelijkheid van Webinhoud</a> (WCAG) adviseren hoe u een website toegankelijk kunt maken. Deze richtlijnen zijn gebruikt als basis voor onze analyse. In veel gevallen is het echter moeilijk om de toegankelijkheid van een website programmatisch te analyseren. Het webplatform biedt bijvoorbeeld verschillende manieren om vergelijkbare functionele resultaten te bereiken, maar de onderliggende code die ze aandrijft, kan compleet anders zijn. Daarom is onze analyse slechts een benadering van de algehele webtoegankelijkheid.
 
 We hebben onze meest interessante inzichten opgedeeld in vier categorieën: leesgemak, media op internet, gemakkelijke paginanavigatie en compatibiliteit met ondersteunende technologieën.
 
@@ -122,7 +122,7 @@ Hoewel dit uitzonderlijk belangrijk is, moeten we ervoor zorgen dat onze pagina'
 
 Koppen zijn niet alleen visueel nuttig, maar ook voor schermlezers. Ze stellen schermlezers in staat snel van sectie naar sectie te springen en helpen aan te geven waar de ene sectie eindigt en de andere begint.
 
-Om verwarring van gebruikers van schermlezers te voorkomen, moet u ervoor zorgen dat u nooit een kopniveau overslaat. Ga bijvoorbeeld niet rechtstreeks van een `H1` naar een `H3` en sla de `H2` over. Waarom is dit zo belangrijk? Omdat dit een onverwachte wijziging is, waardoor een gebruiker van een schermlezer denkt dat hij een stukje inhoud heeft gemist. Dit kan ertoe leiden dat ze helemaal opnieuw gaan zoeken naar wat ze hebben gemist, zelfs als er niets ontbreekt. Bovendien help je al je lezers door een consistenter ontwerp te behouden.
+Om verwarring van gebruikers van schermlezers te voorkomen, moet u ervoor zorgen dat u nooit een kopniveau overslaat. Ga bijvoorbeeld niet rechtstreeks van een `H1` naar een `H3` en sla de `H2` over. Waarom is dit zo belangrijk? Omdat dit een onverwachte wijziging is, waardoor een gebruiker van een schermlezer denkt dat hij een stukje inhoud heeft gemist. Dit kan ertoe leiden dat ze helemaal opnieuw gaan zoeken naar wat ze hebben gemist, zelfs als er niets ontbreekt. Bovendien help u al uw lezers door een consistenter ontwerp te behouden.
 
 Met dat gezegd zijnde, hier zijn onze resultaten:
 
@@ -186,7 +186,7 @@ Bij veel populaire schermlezers kunnen gebruikers ook navigeren door snel door k
 
 Een <a hreflang="en" href="https://webaim.org/techniques/skipnav/">vermijdingslink</a> is een link die bovenaan een pagina wordt geplaatst en waarmee schermlezers of gebruikers met alleen toetsenbord direct naar de hoofdinhoud kunnen gaan. Het "slaat" effectief alle navigatielinks en menu's boven aan de pagina over. Vermijdingslinks zijn vooral handig voor toetsenbordgebruikers die geen schermlezer gebruiken, aangezien deze gebruikers gewoonlijk geen toegang hebben tot andere modi voor snelle navigatie (zoals Hoofdinhoudsgebieden en koppen). 14,19% van de pagina's in onze steekproef bleken vermijdingslinks te hebben.
 
-Als je zelf een vermijdingslink in actie wilt zien, dan kan dat! Voer gewoon een snelle Google-zoekopdracht uit en klik op "<kbd>tab</kbd>" zodra u op de pagina's met zoekresultaten terechtkomt. U wordt begroet met een eerder verborgen link, net als die in afbeelding 9.7.
+Als u zelf een vermijdingslink in actie wilt zien, dan kan dat! Voer gewoon een snelle Google-zoekopdracht uit en klik op "<kbd>tab</kbd>" zodra u op de pagina's met zoekresultaten terechtkomt. U wordt begroet met een eerder verborgen link, net als die in afbeelding 9.7.
 
 {{ figure_markup(
   image="example-of-a-skip-link-on-google.com.png",
