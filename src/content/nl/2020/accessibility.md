@@ -460,6 +460,7 @@ ARIA-attributen kunnen aan HTML-elementen worden toegewezen om de toegankelijkhe
   caption="Top 10 meest gebruikte `aria` attributen.",
   description="Staafdiagram met de top 10 van `aria`-attributen die worden gebruikt op desktop en mobiel, me `aria-hidden` gebruikt door 48,1% desktopsites en 48,2% mobiele sites, `aria-label` wordt gebruikt door respectievelijk 40,4% en 38,7%, `aria-expanded` met 21,0% en 21,0%, `aria-controls` met 17,4% en 16,9%, `aria-labelledby` met 17,7% en 16,2%, `aria-live` met 16,8% en 15,7%, `aria-haspopup` met 15,9% en 14,0%, `aria-current` met 12,4% en 12,7%, en `aria-describedby` met 11,3% en 10,6%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSjkB_XAYiwkYrMuoXp44mdqMGJVDUkTr_48ELozY72Mdv3OlxeWV9ysbDY9bs6hA7LnJTrHar9aZlM/pubchart?oid=332801232&format=interactive",
+  sheets_gid="1154654622",
   sql_file="common_element_attributes.sql"
   )
 }}

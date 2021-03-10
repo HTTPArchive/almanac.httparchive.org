@@ -460,6 +460,7 @@ ARIA属性は、インターフェイスのアクセシビリティを強化す�
   caption="最もよく使われる`aria`属性のトップ10。",
   description=" デスクトップサイトとモバイルサイトでは、`aria-label`がそれぞれ40.4%と38.7%、`aria-expandeded`が21.0%と21.0%、`aria-controls`が17.4%と16.9%、`aria-labelledby`が17.7%と16.2%、`aria-live`が16.8%と15.7%、`aria-haspopup`が15.9%と14.0%、`aria-current`が12.4%と12.7%、`aria-describedby`が11.3%と10.6%であることがわかります。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSjkB_XAYiwkYrMuoXp44mdqMGJVDUkTr_48ELozY72Mdv3OlxeWV9ysbDY9bs6hA7LnJTrHar9aZlM/pubchart?oid=332801232&format=interactive",
+  sheets_gid="1154654622",
   sql_file="common_element_attributes.sql"
   )
 }}
