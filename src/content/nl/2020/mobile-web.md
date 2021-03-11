@@ -1,213 +1,213 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
-title: Mobile Web
-description: Mobile Web chapter of the 2020 Web Almanac covering page loading, textual content, zooming and scaling, buttons and links, and ease of filling out forms.
+title: Mobiel internet
+description: Het hoofdstuk over Mobiel Internet van de Web Almanac van 2020 behandelt het laden van pagina's, tekstuele inhoud, zoomen en schalen, knoppen en links en het gemak van het invullen van formulieren.
 authors: [spanicker, mdiblasio]
 reviewers: [obto]
 analysts: [obto]
 editors: [exterkamp]
-translators: []
-spanicker_bio: Shubhie Panicker is the engineering lead for Chrome's engagement in the web framework ecosystem, where she collaborates with open source tools, frameworks and communities. As a member of Chrome's Web Platform team she has worked on web standards and chromium's implementation for several web performance APIs. Prior to Chrome, she worked on infrastructure and web frameworks for Google products like Search, Google Photos etc.
-mdiblasio_bio: Michael DiBlasio is Web Ecosystems Consultant at Google. He focuses on helping to improve the health of the web ecosystem and to ensure the web is commercially viable for creators and partners. He works closely with strategic retailers to adopt new modern web technologies and improve the quality of existing web experiences. Prior to Google, Michael was a consultant at IBM.
+translators: [noah-vdv]
+spanicker_bio: Shubhie Panicker is de technische leider voor Chrome's betrokkenheid bij het webframework-ecosysteem, waar ze samenwerkt met open source-hulpmiddelen, frameworks en gemeenschappen. Als lid van Chrome's Web Platform-team heeft ze gewerkt aan webstandaarden en de implementatie van Chromium voor verschillende webprestatie-API's. Voordat ze bij Chrome kwam, werkte ze aan infrastructuur- en webframeworks voor Google-producten zoals Search, Google Photos enz.
+mdiblasio_bio: Michael DiBlasio is Web Ecosystems Consultant bij Google. Hij richt zich op het helpen verbeteren van de gezondheid van het webecosysteem en om ervoor te zorgen dat het web commercieel levensvatbaar is voor videomakers en partners. Hij werkt nauw samen met strategische retailers om nieuwe moderne webtechnologieën toe te passen en de kwaliteit van bestaande webervaringen te verbeteren. Voordat hij bij Google kwam, was Michael consultant bij IBM.
 discuss: 2048
 results: https://docs.google.com/spreadsheets/d/1DGLY7UEWOlDL5_2dtS_j2eqMjiV-Rw5Fe2y6K6-ULvM/
-featured_quote: Mobile Web has grown explosively in the last decade and is now the primary way many people experience the web. In spite of this, engagement and online sales still lag behind desktop. In this chapter, we take a look at recent trends on the mobile web and analyze why user journeys are often difficult to complete.
-featured_stat_1: 41.20%
-featured_stat_label_1: Percent of pages with improperly sized images
-featured_stat_2: 60.1%
-featured_stat_label_2: Percent of eCommerce landing pages that are missing presence of search input
-featured_stat_3: 2.6s
-featured_stat_label_3: 75th percentile LCP for mobile
+featured_quote: Mobiel Internet is het afgelopen decennium explosief gegroeid en is nu de belangrijkste manier waarop veel mensen internet ervaren. Desondanks blijven engagement en online verkoop nog steeds achter bij desktop. In dit hoofdstuk kijken we naar recente trends op het mobiele web en analyseren we waarom gebruikersreis vaak moeilijk te voltooien zijn.
+featured_stat_1: 41,20%
+featured_stat_label_1: Percentage pagina's met afbeeldingen van onjuist formaat
+featured_stat_2: 60,1%
+featured_stat_label_2: Percentage van e-commerce-bestemmingspagina's zonder aanwezigheid van zoekinvoer
+featured_stat_3: 2,6s
+featured_stat_label_3: 75e percentiel LCP voor mobiel
 ---
 
-## Introduction
-Mobile Web has grown explosively in the last decade and is now the primary way many people experience the web. In spite of this, engagement and online sales still lag behind desktop. In this chapter, we take a look at recent trends on the mobile web and analyze why user journeys are often difficult to complete.
+## Inleiding
+Mobiel Internet is het afgelopen decennium explosief gegroeid en is nu de belangrijkste manier waarop veel mensen internet ervaren. Desondanks blijven engagement en online verkoop nog steeds achter bij desktop. In dit hoofdstuk kijken we naar recente trends op het mobiele web en analyseren we waarom gebruikersreis vaak moeilijk te voltooien zijn.
 
-2020 has seen a big surge in <a hreflang="en" href="https://www.nytimes.com/interactive/2020/04/07/technology/coronavirus-internet-use.html">internet usage</a>, on both mobile and desktop, due to the global pandemic. There has been an uptick in visits to news sites, ecommerce and social media sites as people across the globe adjusted to a new lifestyle with stay-at-home orders and social distancing. 2020 has been a significant year in history, for the web and for mobile usage.
+In 2020 is het <a hreflang="en" href="https://www.nytimes.com/interactive/2020/04/07/technology/coronavirus-internet-use.html">internetgebruik</a> enorm gestegen, zowel op mobiel als op desktop, als gevolg van de wereldwijde pandemie. Het aantal bezoeken aan nieuwssites, e-commerce en sociale-mediasites is toegenomen doordat mensen over de hele wereld zich hebben aangepast aan een nieuwe levensstijl met lockdowns en sociale afstand. 2020 was een belangrijk jaar in de geschiedenis, zowel voor internet als voor mobiel gebruik.
 
-### Data sources
-We've used a few different data sources in this chapter:
+### gegevensbronnen
+We hebben in dit hoofdstuk een aantal verschillende gegevensbronnen gebruikt:
 
 * [CrUX](./methodology#chrome-ux-report)
 * [HTTP Archive](./methodology#dataset)
 * [Lighthouse](./methodology#lighthouse)
 
-Please visit the links above to learn more about the methodology and caveats with each data source. It is worth noting that the HTTP Archive and Lighthouse data is limited to the data identified from websites' home pages only, and not site-wide.
+Bezoek de bovenstaande links voor meer informatie over de methodologie en kanttekeningen bij elke gegevensbron. Het is vermeldenswaard dat de HTTP Archive- en Lighthouse-gegevens beperkt zijn tot de gegevens die alleen op de startpagina's van websites worden geïdentificeerd, en niet op de hele site.
 
-In addition to the above, we also used a non-public Chrome data source in the section on page loads in Chrome. For more information on this, read about <a hreflang="en" href="https://chromium.googlesource.com/chromium/src/+/master/services/metrics/ukm_api.md">Chrome's data collection API</a>.
+Naast het bovenstaande hebben we ook een niet-openbare Chrome-gegevensbron gebruikt in het gedeelte over het laden van pagina's in Chrome. Lees voor meer informatie over de <a hreflang="en" href="https://chromium.googlesource.com/chromium/src/+/master/services/metrics/ukm_api.md">gegevensverzamelings-API van Chrome</a>.
 
-While this data is only collected from a subset of (opted in) Chrome users, it does not suffer from being limited to homepages. It is pseudonymous and consists of histograms and events.
+Hoewel deze gegevens alleen worden verzameld van een subset van (aangemelde) Chrome-gebruikers, hebben ze geen last van het feit dat ze beperkt zijn tot homepagina's. Het is pseudoniem en bestaat uit histogrammen en gebeurtenissen.
 
-<p class="note">NOTE: Reporting is enabled if the user has enabled a feature that syncs browser windows, unless they have disabled the "Make searches and browsing better / Sends URLs of pages you visit to Google" setting.</p>
+<p class="note">OPMERKING: Rapportage is ingeschakeld als de gebruiker een functie heeft ingeschakeld die browservensters synchroniseert, tenzij ze de instelling "Zoeken en browsen beter maken/URL's van pagina's die u bezoekt naar Google sturen" hebben uitgeschakeld.</p>
 
-## Mobile web & desktop traffic trends
+## Verkeerstrends voor mobiel internet en desktop
 
-How much are users visiting websites on mobile web and desktop? Are there any patterns in the traffic that websites receive from mobile  versus desktop? In order to examine these questions and what it means for websites, we looked at data from a couple of lenses.
+Hoeveel bezoeken gebruikers websites op mobiel internet en desktop? Zijn er patronen in het verkeer dat websites ontvangen van mobiel versus desktop? Om deze vragen te onderzoeken en wat het betekent voor websites, hebben we gekeken naar gegevens van een paar lenzen.
 
-A <a hreflang="en" href="https://www.perficient.com/insights/research-hub/mobile-vs-desktop-usage-study">report published</a> on perficient.com shows mobile versus desktop traffic trends over several years, using <a hreflang="en" href="https://www.similarweb.com/">similarweb</a> as a data source. While the majority of visits—**58%** of site visits—were from mobile devices, mobile devices made up only 42% of total time spent online. Moreover, the average time spent per visit is roughly twice as much on desktop compared to mobile (11.52 minutes on desktop versus 5.95 minutes on mobile).
+Een <a hreflang="en" href="https://www.perficient.com/insights/research-hub/mobile-vs-desktop-usage-study">rapport</a> dat op perficient.com is gepubliceerd, toont verkeerstrends op mobiel versus desktop over een aantal jaren, met <a hreflang="en" href="https://www.similarweb.com/">similarweb</a> als gegevensbron. Hoewel de meeste bezoeken - **58%** van de sitebezoeken - afkomstig waren van mobiele apparaten, vormden mobiele apparaten slechts 42% van de totale tijd die online werd doorgebracht. Bovendien is de gemiddelde tijd die per bezoek wordt doorgebracht ongeveer twee keer zo veel op desktop als op mobiel (11,52 minuten op desktop versus 5,95 minuten op mobiel).
 
-### Page loads in Chrome (Chrome data source)
+### Paginaladingen in Chrome (Chrome gegevensbron)
 
-Note that this section references stats that have been made available specifically for this chapter from non-public Chrome data source, [see details here](#data-sources). We use this data to assess page loads on Android and Windows—as a proxy for mobile and desktop respectively.
+Merk op dat deze sectie verwijst naar statistieken die specifiek voor dit hoofdstuk beschikbaar zijn gemaakt vanuit de niet-openbare Chrome-gegevensbron, [zie details hier](#gegevensbronnen). We gebruiken deze gegevens om het laden van pagina's op Android en Windows te beoordelen — als een proxy voor respectievelijk mobiel en desktop.
 
-<p class="note">NOTE: we may refer to the data in this section as mobile for Android and desktop for Windows.</p>
+<p class="note">OPMERKING: we verwijzen naar de gegevens in deze sectie als mobiel voor Android en desktop voor Windows.</p>
 
-#### Page loads across origins ranked by popularity
+#### Paginaladingen in verschillende herkomsten, gerangschikt op populariteit
 
-We looked at traffic to origins by popularity—how often are users visiting certain origins, and what does that tell us about the global distribution across the web.
+We keken naar het verkeer naar de herkomst op populariteit: hoe vaak bezoeken gebruikers een bepaalde herkomst, en wat zegt dat ons over de wereldwijde verspreiding op internet?
 
-Rick Byers [tweeted](https://twitter.com/RickByers/status/1195342331588706306) this distribution a year ago, we looked at the latest data. The chart shows us the overall distribution across origins by their popularity, captured by their contribution to % page loads in Chrome.
+Rick Byers [tweette](https://twitter.com/RickByers/status/1195342331588706306) deze distributie een jaar geleden, we keken naar de laatste gegevens. De grafiek toont ons de algehele verdeling over de herkomst op basis van hun populariteit, vastgelegd door hun bijdrage aan het percentage pagina's dat wordt geladen in Chrome.
 
 {{ figure_markup(
   image="page-loads-across-origins-ranked-by-popularity.png",
-  alt="Page loads across origins ranked by popularity (in Chrome)",
-  caption='Page loads across origins ranked by popularity (in Chrome)',
-  description="Chart showing that a small number of origins constitute a large fraction of traffic, for both mobile and desktop. The top 30 origins constitute 25% of aggregate traffic on mobile. The top 200 origins constitute 33% of aggregate traffic on mobile",
+  alt="Paginaladingen in verschillende herkomsten, gerangschikt op populariteit (in Chrome)",
+  caption='Paginaladingen in verschillende herkomsten, gerangschikt op populariteit (in Chrome)',
+  description="Grafiek waaruit blijkt dat een klein aantal herkomsten een groot deel van het verkeer vormt, zowel voor mobiel als voor desktop. De top 30 herkomsten vormen 25% van het totale verkeer op mobiele apparaten. De top 200 herkomsten vormen 33% van het totale verkeer op mobiele apparaten",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=949521302&format=interactive",
   sheets_gid="1301196247"
   )
 }}
 
-Some takeaways:
+Belangrijke punten:
 
-* Usage of Chrome is roughly evenly divided between the top 200 sites, the next 10,000, and all the rest.
-* The web has a **fat head**.
-  * A small number of origins constitute a large fraction of traffic, for both mobile and desktop.
-  * The top 30 origins constitute 25% of aggregate traffic on mobile.
-  * The top 200 origins constitute 33% of aggregate traffic on mobile.
-* The web has a **broad torso**.
- * The top 10k origins constitute roughly two-thirds of traffic: 64% of traffic on mobile.
-* The web has a **long tail**.
- * 3M origins in top 98% on Android versus 1.8M on Windows.
- * The tail is about twice as long on Android as Windows. This is most likely attributable to the larger number of mobile devices and users, compared to desktop.
+* Het gebruik van Chrome is ongeveer gelijk verdeeld over de top 200 sites, de volgende 10.000 en de rest.
+* Het web heeft een **dikke kop**.
+  * Een klein aantal herkomsten vormt een groot deel van het verkeer, zowel voor mobiel als voor desktop.
+  * De top 30 herkomsten vormen 25% van het totale verkeer op mobiele apparaten.
+  * De top 200 herkomsten vormen 33% van het totale verkeer op mobiele apparaten.
+* Het web heeft een **brede romp**.
+ * De top 10k-herkomsten vormen ongeveer tweederde van het verkeer: 64% van het verkeer op mobiele apparaten.
+* Het web heeft een **lange staart**.
+ * 3M herkomsten in de top 98% op Android versus 1,8M op Windows.
+ * De staart is op Android ongeveer twee keer zo lang als op Windows. Dit is hoogstwaarschijnlijk toe te schrijven aan het grotere aantal mobiele apparaten en gebruikers in vergelijking met desktop.
 
-#### Traffic to a site from mobile versus desktop (CrUX)
+#### Verkeer naar een site van mobiel versus desktop (CrUX)
 
-*Could a website reason about their expected mobile versus desktop traffic distribution?*
+*Zou een website kunnen redeneren over de verwachte distributie van mobiel verkeer versus desktop verkeer?*
 
-It's hard to predict, because the distribution between mobile and desktop will vary greatly based on the site. Furthermore, it heavily depends on the industry category (e.g. entertainment, shopping) and whether the site has native apps, and how aggressively native apps are promoted etc.
+Het is moeilijk te voorspellen, omdat de verdeling tussen mobiel en desktop sterk zal variëren per site. Bovendien hangt het sterk af van de branchecategorie (bijv. entertainment, winkelen) en of de site native apps heeft en hoe agressief native apps worden gepromoot, enz.
 
-We looked at the CrUX dataset to assess Chrome traffic to sites from mobile devices vs desktop.
+We hebben de CrUX-dataset bekeken om Chrome-verkeer naar sites vanaf mobiele apparaten versus desktop te beoordelen.
 
 {{ figure_markup(
   image="mobile-traffic-distribution.png",
-  alt="Mobile traffic distribution",
-  caption='Distribution of mobile vs other traffic',
-  description="Chart showing how mobile is the majority of traffic for most websites. 50% of websites analyzed receive 77.61% or more of their traffic from mobile (a slight decrease from 79.93% in 2019).",
+  alt="Distributie van mobiel verkeer",
+  caption='Verdeling van mobiel verkeer versus ander verkeer',
+  description="Grafiek die laat zien hoe mobiel het merendeel van het verkeer is voor de meeste websites. 50% van de geanalyseerde websites ontvangt 77,61% of meer van hun verkeer via mobiele apparaten (een lichte daling ten opzichte van 79,93% in 2019).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=1290224874&format=interactive",
   sheets_gid="2049480794"
   )
 }}
 
-The distribution appears mobile heavy. A reason for that is that there are many (2 million+ in CrUX) sites which, while low in total traffic, only get traffic from mobile. Mobile has a much longer "tail" as we saw in the previous section.
+De distributie lijkt mobiel zwaar. Een reden hiervoor is dat er veel (2 miljoen + in CrUX) sites zijn die, hoewel ze weinig verkeer hebben, alleen verkeer van mobiel ontvangen. Mobiel heeft een veel langere "staart", zoals we in de vorige sectie hebben gezien.
 
-If we put all the websites with CrUX data, in a bucket and randomly choose one, 50% of the time the website you chose would be receiving 77.61% or more of their traffic from mobile (a slight decrease from 79.93% in 2019).
+Als we alle websites met CrUX-gegevens in een emmer plaatsen en er willekeurig een kiezen, zou 50% van de tijd de door u gekozen website 77,61% of meer van hun verkeer van mobiel ontvangen (een lichte daling van 79,93% in 2019).
 
-Note that while this is an interesting observation, it's hard to draw conclusions from CrUX about broad trends for mobile versus desktop because:
-* CrUX is Chrome only data, and missing other browsers, including Safari - a major mobile browser.
-* Even for Chrome, this is a subset from opted-in users, and impacted by opt-in rates and variance across platforms.
+Merk op dat hoewel dit een interessante observatie is, het moeilijk is om conclusies te trekken uit CrUX over brede trends voor mobiel versus desktop, omdat:
+* CrUX bevat alleen gegevens van Chrome en mist andere browsers, waaronder Safari - een belangrijke mobiele browser.
+* Zelfs voor Chrome is dit een subset van aangemelde gebruikers en wordt het beïnvloed door aanmeldingspercentages en variantie tussen platforms.
 
-#### Trend conclusions
+#### Trendconclusies
 
-So what did we learn in terms of reasoning about mobile versus desktop traffic to a website?
+Dus wat hebben we geleerd in termen van redenering over mobiel versus desktopverkeer naar een website?
 
-Traffic distribution from mobile vs desktop is highly specific to a site and dependent on the industry category, and other factors such as presence of native apps. However odds are that for site visits in Chrome, a given website has traffic predominantly from mobile web, in spite of users spending more time on desktop. This is due to a much longer tail for mobile Chrome.
+Verkeersverdeling van mobiel versus desktop is zeer specifiek voor een site en afhankelijk van de branchecategorie en andere factoren, zoals de aanwezigheid van native apps. De kans is echter groot dat voor sitebezoeken in Chrome een bepaalde website voornamelijk verkeer van mobiel internet ontvangt, ondanks dat gebruikers meer tijd op desktop doorbrengen. Dit komt door een veel langere staart voor mobiel Chrome.
 
-While one cannot generalize the expected traffic distribution from mobile versus desktop for individual websites, it is worth comparing your site's distribution to <a hreflang="en" href="https://www.perficient.com/insights/research-hub/mobile-vs-desktop-usage-study">that of the industry category</a>.
+Hoewel men de verwachte verkeersverdeling van mobiel versus desktop voor individuele websites niet kan generaliseren, is het de moeite waard om de distributie van uw site te vergelijken met <a hreflang="en" href="https://www.perficient.com/insights/research-hub/mobile-vs-desktop-usage-study">die van de branchecategorie</a>.
 
-If your website is substantially different from the industry average, it could be worth digging into the reason, for instance poor loading performance could be one reason.
+Als uw website aanzienlijk verschilt van het branchegemiddelde, kan het de moeite waard zijn om naar de reden te graven, bijvoorbeeld een slechte laadprestatie kan een van de redenen zijn.
 
-## The user journey
+## De gebruikersreis
 
-User journeys, including commercial journeys, on the mobile web are often difficult to complete.
+Gebruikersreizen, inclusief commerciële reizen, op het mobiele web zijn vaak moeilijk te voltooien.
 
-While mobile represents 79.6% of time spent amongst retail sites, it only accounts for 32.3% of <a hreflang="en" href="https://www.emarketer.com/content/frictionless-commerce-2020">eCommerce sales</a>. This suggests that users frequently start their journey on mobile, but often finish on desktop. Why might that be?
+Hoewel mobiel 79,6% van de tijd die op winkelsites wordt doorgebracht, vertegenwoordigt, is het slechts goed voor 32,3% van de <a hreflang="en" href="https://www.emarketer.com/content/frictionless-commerce-2020">e-commerceverkopen</a>. Dit suggereert dat gebruikers hun reis vaak op mobiel beginnen, maar vaak eindigen op desktop. Hoe komt dat?
 
-To reason about questions like this, we need to first understand the elements of the user journey.
+Om over dit soort vragen te redeneren, moeten we eerst de elementen van de gebruikersreis begrijpen.
 
-We break down the user journey into 4 phases.
+We splitsen de gebruikersreis op in 4 fasen.
 
-### 1. Acquisition
+### 1. Acquisitie
 
-For a website, acquisition of visitors is a crucial entry phase. Acquisition involves getting visitors to the website, often through search engines, Ad clicks, links from other sites and from social media.
+Voor een website is het werven van bezoekers een cruciale instapfase. Acquisitie houdt in dat bezoekers naar de website worden getrokken, vaak via zoekmachines, advertentieklikken, links van andere sites en van sociale media.
 
 #### SEO
 
-SEO is crucial for the acquisition phase. Search engines are an important source of visitors being sent to websites, embarking on their user journeys. The main goal of SEO is to ensure that a website is optimized for search engines, i.e. search engine bots that need to crawl and index its pages, as well as the users that will be navigating the website and consuming its content.
+SEO is cruciaal voor de acquisitiefase. Zoekmachines zijn een belangrijke bron van bezoekers die naar websites worden gestuurd en aan hun gebruikersreis beginnen. Het belangrijkste doel van SEO is ervoor te zorgen dat een website is geoptimaliseerd voor zoekmachines, d.w.z. zoekmachine-bots die de pagina's moeten crawlen en indexeren, evenals de gebruikers die op de website navigeren en de inhoud ervan consumeren.
 
-A lot of users now start their search on mobile.
+Veel gebruikers beginnen hun zoektocht nu op mobiel.
 
-##### Responsive web design
+##### Responsive webdesign
 
-Due to the popularity of  mobile devices to browse and search the web, Google search moved to a <a hreflang="en" href="https://developers.google.com/search/blog/2016/11/mobile-first-indexing">mobile-first Index</a> a few years ago. This means that search ranking considers pages as seen by mobile users, and mobile friendliness is now a ranking factor. Google will <a hreflang="en" href="https://developers.google.com/search/blog/2020/07/prepare-for-mobile-first-indexing-with">fully switch to a mobile-first index</a>, for all sites, in March 2021.
+Vanwege de populariteit van mobiele apparaten om op internet te browsen en te zoeken, is Google search een paar jaar geleden overgeschakeld naar een <a hreflang="en" href="https://developers.google.com/search/blog/2016/11/mobile-first-indexing">mobiel-eerste Index</a>. Dit betekent dat in de zoekresultaten wordt gekeken naar pagina's zoals die worden gezien door mobiele gebruikers, en dat mobiele vriendelijkheid nu een rankingfactor is. Google schakelt in maart 2021 <a hreflang="en" href="https://developers.google.com/search/blog/2020/07/prepare-for-mobile-first-indexing-with">volledig over op een mobile-first index</a> voor alle sites.
 
-Websites should ensure mobile friendliness for a good search experience and SEO, as this impacts traffic from search users. <a hreflang="en" href="https://developers.google.com/search/mobile-sites/mobile-seo/responsive-design">Responsive web design</a> is the recommended way to achieve this.
+Websites moeten mobielvriendelijkheid garanderen voor een goede zoekervaring en SEO, aangezien dit van invloed is op het verkeer van zoekgebruikers. <a hreflang="en" href="https://developers.google.com/search/mobile-sites/mobile-seo/responsive-design">Responsive webdesign</a> is de aanbevolen manier om dit te bereiken.
 
-Responsive websites use the viewport meta tag as well as CSS media queries to provide a mobile friendly experience. To learn more about these mobile friendliness aspects, head over to the [SEO chapter](./seo#mobile-friendliness).
+Responsieve websites gebruiken de viewport-metatag en CSS-mediaquery's om een mobielvriendelijke ervaring te bieden. Ga voor meer informatie over deze aspecten van mobielvriendelijkheid naar het [hoofdstuk SEO](./seo#mobile-friendliness).
 
-Learn more about <a hreflang="en" href="https://web.dev/responsive-web-design-basics/">responsive web design here</a>.
+Lees hier meer over <a hreflang="en" href="https://web.dev/responsive-web-design-basics/">responsive webdesign</a>.
 
-Beyond organic traffic from search engines, **Ad clicks** could be a key source of visitors being sent to websites. Similar to SEO, optimizing Ads can be important for websites who invest in and receive traffic from Ads.
+Naast organisch verkeer van zoekmachines, kunnen **Advertentieklikken** een belangrijke bron zijn van bezoekers die naar websites worden gestuurd. Net als bij SEO kan het optimaliseren van advertenties belangrijk zijn voor websites die investeren in en verkeer ontvangen van advertenties.
 
-#### Loading performance
+#### Laadprestaties
 
-First impressions matter. Delivering page content in a timely manner is critical for avoiding visitor abandonment and user frustration. Loading performance is a key aspect of the acquisition phase, poor loading performance results in users abandoning this journey.
+De eerste indruk is belangrijk. Het tijdig leveren van pagina-inhoud is van cruciaal belang om te voorkomen dat bezoekers in de steek worden gelaten en gebruikersfrustratie voorkomen. Laadprestaties zijn een belangrijk aspect van de acquisitiefase, slechte laadprestaties leiden ertoe dat gebruikers deze reis verlaten.
 
-A <a hreflang="en" href="https://web.dev/milliseconds-make-millions/">recent study</a> showed that 0.1s mSpeed improvement increased conversion rates by +8.4% for retail sites and +10.1% for travel sites.
+Een <a hreflang="en" href="https://web.dev/milliseconds-make-millions/">recente studie</a> toonde aan dat 0,1s mSpeed verbetering de conversieratio's met +8,4% verhoogde voor winkelsites en +10,1% voor reissites.
 
-Loading performance is a vast topic, so we picked a couple of aspects to cover here.
+Het laden van prestaties is een veelomvattend onderwerp, dus hebben we een aantal aspecten uitgekozen om hier te behandelen.
 
 ##### Largest Contentful Paint
 
-A key aspect of the loading experience is how quickly the main content of a web page loads and is visible to users. This has been difficult to measure, in the past Google recommended performance metrics like <a hreflang="en" href="https://web.dev/first-meaningful-paint/">First Meaningful Paint</a> (FMP) to capture this, but it was hard to explain, and often unable to identify when the main content of the page was visible.
+Een belangrijk aspect van de laadervaring is hoe snel de hoofdinhoud van een webpagina wordt geladen en zichtbaar is voor gebruikers. Dit was moeilijk te meten, in het verleden heeft Google prestatiestatistieken aanbevolen, zoals <a hreflang="en" href="https://web.dev/first-meaningful-paint/">First Meaningful Paint</a> (FMP) om dit vast te leggen, maar het was moeilijk uit te leggen en vaak niet in staat om vast te stellen wanneer de hoofdinhoud van de pagina zichtbaar was.
 
-Sometimes simpler is better. More recently it's been found that a more accurate way to measure when the main content of a page is loaded is to simply look at when the largest element was rendered. <a hreflang="en" href="https://web.dev/largest-contentful-paint">Largest Contentful Paint</a> (LCP) is a timing-based metric that captures this—the time at which the largest above-the-fold element was rendered.
+Soms is eenvoudiger beter. Meer recentelijk is ontdekt dat een nauwkeurigere manier om te meten wanneer de hoofdinhoud van een pagina is geladen, is door simpelweg te kijken naar wanneer het grootste element is weergegeven. <a hreflang="en" href="https://web.dev/largest-contentful-paint">Largest Contentful Paint</a> (LCP) is een op timing gebaseerde statistiek die dit vastlegt: het tijdstip waarop de grootste element boven de vouw is weergegeven.
 
-A good LCP score is 2.5s at p75. We found that the median LCP at p75 is 2.6s on mobile and 2.3s on desktop. Mobile web is especially susceptible to missing the mark on LCP.
+Een goede LCP-score is 2,5s op p75. We ontdekten dat het gemiddelde LCP op p75 2,6s op mobiel en 2,3s op desktop is. Vooral mobiel internet mist het doel op LCP.
 
 {{ figure_markup(
   image="median-p75-lcp-score.png",
-  alt="Median p75 LCP score",
-  caption='Median p75 LCP score',
-  description="A chart showing that the median LCP at p75 is 2.6s on mobile and 2.3s on desktop",
+  alt="Mediane p75 LCP-score",
+  caption='Mediane p75 LCP-score',
+  description="Een grafiek die laat zien dat het gemiddelde LCP op p75 2,6s is op mobiel en 2,3s op desktop",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=964425991&format=interactive",
   sheets_gid="872081120"
   )
 }}
 
-##### Images
+##### Afbeeldingen
 
-While every type of asset, such as font, CSS, JavaScript etc. plays an important role in loading performance, we take a closer look at images.
+Hoewel elk type item, zoals lettertype, CSS, JavaScript, enz. een belangrijke rol speelt bij de laadprestaties, nemen we afbeeldingen onder de loep.
 
-The web continues to move towards image-heavy pages, with the growth of bandwidth and the ubiquity of smartphones. And images impose a cost on loading performance.
+Het internet blijft evolueren naar pagina's met veel afbeeldingen, met de groei van bandbreedte en de alomtegenwoordigheid van smartphones. En afbeeldingen brengen kosten met zich mee voor de laadprestaties.
 
-Improperly sized and unoptimized images are frequent sources for image performance problems. A staggering 41.20% of pages have improperly sized images.
+Afbeeldingen met een onjuist formaat en niet-geoptimaliseerde afbeeldingen zijn frequente bronnen voor problemen met de afbeeldingsprestaties. Maar liefst 41,20% van de pagina's heeft afbeeldingen met een onjuist formaat.
 
 {{ figure_markup(
   image="pages-with-properly-sized-images.png",
-  alt="Pages with properly sized images",
-  caption='Pages with properly sized images',
-  description="A chart showing that 41.20% of mobile pages have improperly sized images.",
+  alt="Pagina's met afbeeldingen van het juiste formaat",
+  caption='Pagina's met afbeeldingen van het juiste formaat',
+  description="Een grafiek die laat zien dat 41,20% van de mobiele pagina's afbeeldingen met een onjuist formaat heeft.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=1030767824&format=interactive",
   sheets_gid="699494809"
   )
 }}
 
-4.1% of pages which have images, use the lazy loading attribute on their images, decent adoption for a relatively new primitive.
+4,1% van de pagina's met afbeeldingen gebruikt het lazy loading-attribuut op hun afbeeldingen, fatsoenlijke acceptatie voor een relatief nieuwe primitief.
 
-### 2. Engagement
+### 2. Betrokkenheid
 
-The next phase of the user journey is engagement of users towards consuming content and fulfilling their intent.
+De volgende fase van de gebruikersreis is het betrekken van gebruikers bij het consumeren van inhoud en het vervullen van hun intentie.
 
-#### Shifting content
+#### Inhoud verschuiven
 
-Shifting content is detrimental to the experience of users engaging with content. Specifically, content that shifts in position as resources load, impedes the user experience. Since browsers download and display content as soon as they are able, it's important to design your site to smooth over the user experience.
-This is especially important for mobile web, as shifting content is more noticeable on small screens.
+Het verschuiven van inhoud is nadelig voor de ervaring van gebruikers die zich bezighouden met inhoud. Met name inhoud die van positie verandert naarmate de bronnen worden geladen, belemmert de gebruikerservaring. Omdat browsers inhoud downloaden en weergeven zodra ze daartoe in staat zijn, is het belangrijk om uw site zo te ontwerpen dat de gebruikerservaring soepeler verloopt.
+Dit is vooral belangrijk voor mobiel internet, omdat verschuivende inhoud meer opvalt op kleine schermen.
 
 {{ figure_markup(
   image="example-of-a-site-shifting-content-while-it-loads-lookzook.gif",
-  caption="Example of shifting content distracting a reader. CLS total of 42.59%. Image courtesy of LookZook",
-  description="A video showing a website progressively load. The text is displayed quickly, but as images continue to load the text gets shifted further and further down the page each time—making it very frustrating to read. The calculated CLS of this example is 42.59%. Image courtesy of LookZook",
+  caption="Voorbeeld van het verschuiven van inhoud die een lezer afleidt. CLS totaal van 42,59%. Afbeelding met dank aan LookZook",
+  description="Een video die laat zien dat een website geleidelijk wordt geladen. De tekst wordt snel weergegeven, maar naarmate de afbeeldingen blijven laden, wordt de tekst elke keer steeds verder op de pagina verschoven, wat het lezen erg frustrerend maakt. De berekende CLS van dit voorbeeld is 42,59%. Afbeelding met dank aan LookZook",
   width=360,
   height=640
   )
@@ -215,203 +215,203 @@ This is especially important for mobile web, as shifting content is more noticea
 
 ##### Cumulative Layout Shift
 
-<a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a> (CLS) is a metric that quantifies how much content within the viewport shifts around, during the user visit.
+<a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a> (CLS) is een metriek die kwantificeert hoeveel inhoud in de viewport verschuift tijdens het bezoek van de gebruiker.
 
-The <a hreflang="en" href="https://web.dev/optimize-cls/">most common causes of a poor CLS</a> are:
+De <a hreflang="en" href="https://web.dev/optimize-cls/">meest voorkomende oorzaken van een slechte CLS</a> zijn:
 
-* Images without dimensions.
-* Ads, embeds, and iframes without dimensions.
-* Dynamically injected content.
-* Web Fonts causing FOIT/FOUT.
-* Actions waiting for a network response before updating DOM.
+* Afbeeldingen zonder afmetingen.
+* Advertenties, embeds en iframes zonder afmetingen.
+* Dynamisch geïnjecteerde inhoud.
+* Web Fonts die FOIT/FOUT veroorzaken.
+* Acties die wachten op een netwerkreactie voordat DOM wordt bijgewerkt.
 
-It's not trivial to identify these causes locally or in a development environment, as it is heavily dependent on how real users experience the page. Third-party content or personalized content often doesn't behave the same in development as it does in production.
+Het is niet triviaal om deze oorzaken lokaal of in een ontwikkelomgeving te identificeren, aangezien het sterk afhankelijk is van hoe echte gebruikers de pagina ervaren. Inhoud van derden of gepersonaliseerde inhoud gedraagt zich bij de ontwikkeling vaak niet hetzelfde als bij de productie.
 
-According to CrUX data, 60% of mobile sites and 54% of desktop sites, have a good CLS.
+Volgens gegevens van CrUX heeft 60% van de mobiele sites en 54% van de desktopsites een goede CLS.
 
 {{ figure_markup(
   image="aggregate-lcp-performance-by-device.png",
-  alt="Aggregate LCP performance by device",
-  caption='Aggregate LCP performance by device',
-  description="A chart showing that 60% of mobile sites and 54% of desktop sites, have a good CLS.",
+  alt="Aggregaat LCP-prestaties per apparaat",
+  caption='Aggregaat LCP-prestaties per apparaat',
+  description="Een grafiek die laat zien dat 60% van de mobiele sites en 54% van de desktopsites een goede CLS heeft.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=277999653&format=interactive",
   sheets_gid="1730986965"
   )
 }}
 
-#### Design elements
+#### Ontwerp elementen
 
-To engage users, it's important to help them quickly find what they're looking for, and fulfill their intention.
+Om gebruikers te betrekken, is het belangrijk om ze te helpen snel te vinden wat ze zoeken en hun intentie te verwezenlijken.
 
-##### Landing pages
+##### Bestemmingspagina's
 
-Simple design tweaks go a long way, for instance a clear call-to-action, and making the value proposition evident to the user, with a few words.
+Eenvoudige ontwerpaanpassingen gaan een lange weg, bijvoorbeeld een duidelijke call-to-action, en de waardepropositie duidelijk maken voor de gebruiker, met een paar woorden.
 
 {{ figure_markup(
   image="landing-page-cta.png",
-  caption='Four key parts of the Pixel phone landing page.<br>(Source: <a hreflang="en" href="https://winonmobile.withgoogle.com">Google</a>)',
-  description="An image breaking down the four parts of the Pixel phone landing page: Value proposition, Call-to-action, No distraction, Main services.",
+  caption='Vier belangrijke onderdelen van de bestemmingspagina van de Pixel-telefoon.<br>(Bron: <a hreflang="en" href="https://winonmobile.withgoogle.com">Google</a>)',
+  description="Een afbeelding die de vier delen van de bestemmingspagina van de Pixel-telefoon opsplitst: waardepropositie, call-to-action, geen afleiding, belangrijkste services.",
   width=1200,
   height=642
   )
 }}
 
-<a hreflang="en" href="https://www.nngroup.com/articles/auto-forwarding/">Research has shown</a> that auto-forwarding carousels are detrimental to the user experience. Auto-forwarding carousels on the homepage should be avoided or their frequency should be decreased.
+<a hreflang="en" href="https://www.nngroup.com/articles/auto-forwarding/">Onderzoek heeft aangetoond</a> dat carrousels met auto-forwarding schadelijk zijn voor de gebruikerservaring. Auto-forwarding carrousels op de homepagina moeten worden vermeden of hun frequentie moet worden verlaagd.
 
-##### Color and contrast
+##### Kleur en contrast
 
-Consider the following examples from <a hreflang="en" href="https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/5-lessons-eastpak-learned-its-mobile-audience/">5 lessons Eastpak learned from its mobile audience</a>:
+Bekijk de volgende voorbeelden van <a hreflang="en" href="https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/5-lessons-eastpak-learned-its-mobile-audience/">5 lessen die Eastpak heeft geleerd van zijn mobiele publiek</a>:
 
 {{ figure_markup(
   image="eastpak-20-ctr.png",
-  caption='Eastpak improving the color contrast of their main call to action lead to a 20% increase in click through rate.<br>(Source: <a hreflang="en" href="https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/5-lessons-eastpak-learned-its-mobile-audience/">Google</a>)',
-  description="An image showing how Eastpak increased their click through rate by 20% by improving the color contrast of their main call to action button",
+  caption='De verbetering door Eastpak van het kleurcontrast van hun belangrijkste call-to-action leidde tot een toename van 20% in klikfrequentie.<br>(Bron: <a hreflang="en" href="https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/5-lessons-eastpak-learned-its-mobile-audience/">Google</a>)',
+  description="Een afbeelding die laat zien hoe Eastpak hun klikfrequentie met 20% verhoogde door het kleurcontrast van hun belangrijkste call-to-action-knop te verbeteren",
   width=1094,
   height=1122
   )
 }}
 
-Here, a simple change from a button that's hard to see, to a button with contrasting colors, improved click through rate on the main call to action by 20%.
+Hier, een simpele verandering van een knop die moeilijk te zien is, naar een knop met contrasterende kleuren, verbeterde de klikfrequentie op de belangrijkste call-to-action met 20%.
 
 {{ figure_markup(
   image="eastpak-12-ctr.png",
-  caption='Eastpak improving the color contrast of their checkout button lead to a 12% increase in conversion rate.<br>(Source: <a hreflang="en" href="https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/5-lessons-eastpak-learned-its-mobile-audience/">Google</a>)',
-  description="An image showing how Eastpak increased their conversion rate by 12% by improving the color contrast of their checkout button",
+  caption='De verbetering door Eastpak van het kleurcontrast van hun afrekenknop leidde tot een stijging van 12% in conversieratio.<br>(Bron: <a hreflang="en" href="https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/5-lessons-eastpak-learned-its-mobile-audience/">Google</a>)',
+  description="Een afbeelding die laat zien hoe Eastpak hun conversieratio met 12% verhoogde door het kleurcontrast van hun afrekenknop te verbeteren",
   width=1166,
   height=1102
   )
 }}
 
-A simple color change on the check out button from black to orange, made it stand out more and increased their conversion rate by 12%.
+Een simpele kleurverandering op de afrekenknop van zwart naar oranje, zorgde ervoor dat het meer opviel en hun conversieratio met 12% verhoogde.
 
-Mckinsey & Company <a hreflang="en" href="https://www.mckinsey.com/business-functions/mckinsey-design/our-insights/the-business-value-of-design#">published a report</a> that shows that companies that are strong at design and UX demonstrate better financial performance. Design and UX focused companies demonstrated stronger revenue growth compared to their industry counterparts.
+Mckinsey & Company <a hreflang="en" href="https://www.mckinsey.com/business-functions/mckinsey-design/our-insights/the-business-value-of-design#">publiceerde een rapport</a> waaruit blijkt dat bedrijven die sterk zijn in ontwerp en UX betere financiële prestaties laten zien. Op design en UX gerichte bedrijven lieten een sterkere omzetgroei zien in vergelijking met hun tegenhangers in de sector.
 
-Text with low contrast ratio is hard to read, for instance, light gray text on a white background. This can reduce reading comprehension and reading speed for users.
+Tekst met een lage contrastverhouding is moeilijk leesbaar, bijvoorbeeld lichtgrijze tekst op een witte achtergrond. Dit kan het begrijpend lezen en de leessnelheid voor gebruikers verminderen.
 
-Lighthouse now <a hreflang="en" href="https://web.dev/color-contrast/">checks for color contrast</a>, we found that 78.94%—a majority of web pages, were lacking sufficient color contrast.
+Lighthouse <a hreflang="en" href="https://web.dev/color-contrast/">controleert nu op kleurcontrast</a>, we ontdekten dat 78,94% - een meerderheid van de webpagina's - onvoldoende kleurcontrast hadden.
 
 {{ figure_markup(
   image="sites-with-sufficient-color-contrast.png",
-  alt="Sites with sufficient color contrast",
-  caption='Sites with sufficient color contrast',
-  description="A chart showing that 78.94%, a majority of web pages, were lacking sufficient color contrast.",
+  alt="Sites met voldoende kleurcontrast",
+  caption='Sites met voldoende kleurcontrast',
+  description="Een grafiek die laat zien dat 78,94%, het merendeel van de webpagina's, onvoldoende kleurcontrast had.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=524145395&format=interactive",
   sheets_gid="1180749800"
   )
 }}
 
-##### Tap targets
+##### Tikdoelen
 
-Mobile user experience is susceptible to "fat fingering", as users engage with sites using their fingers—a rather imprecise tool compared to using a mouse on a desktop.
+De mobiele gebruikerservaring is vatbaar voor "dikke vingerzetting", aangezien gebruikers sites bezoeken met hun vingers - een nogal onnauwkeurig hulpmiddel vergeleken met het gebruik van een muis op een desktop.
 
-Based on research, there are standards for minimum size of buttons and tap targets, as well as the minimum distance they should be spaced apart. <a hreflang="en" href="https://web.dev/tap-targets/">Lighthouse recommends</a> that targets should be no smaller than 48 px by 48 px, and no closer than 8 px apart. We found that  63.69%—a majority of web pages, had improperly sized tap targets. This is a slight improvement over last year, where 65.57% web pages had improperly sized tap targets.
+Op basis van onderzoek zijn er normen voor de minimale grootte van knoppen en tikdoelen, evenals de minimale afstand waarop ze van elkaar moeten worden verwijderd. <a hreflang="en" href="https://web.dev/tap-targets/">Lighthouse raadt aan</a> dat doelen niet kleiner mogen zijn dan 48 x 48 px en niet dichter dan 8 px uit elkaar. We ontdekten dat 63,69%, een meerderheid van de webpagina's, tikdoelen met een onjuist formaat had. Dit is een lichte verbetering ten opzichte van vorig jaar, toen 65,57% van de webpagina's tikdoelen met een onjuist formaat had.
 
 {{ figure_markup(
   image="sites-with-properly-sized-tap-targets.png",
-  alt="Sites with properly sized tap targets",
-  caption='Sites with properly sized tap targets',
-  description="A chart showing that 63.69%, a majority of web pages, had improperly sized tap targets. This is a slight improvement over last year, where 65.57% web pages had improperly sized tap targets.",
+  alt="Sites met tikdoelen van de juiste grootte",
+  caption='Sites met tikdoelen van de juiste grootte',
+  description="Een grafiek die laat zien dat 63,69%, het merendeel van de webpagina's, tikdoelen met een onjuist formaat had. Dit is een lichte verbetering ten opzichte van vorig jaar, toen 65,57% van de webpagina's tikdoelen met een onjuist formaat had.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=1829334180&format=interactive",
   sheets_gid="38974332"
   )
 }}
 
-##### Search input
+##### Zoek invoer
 
-Search input or a search bar is a crucial tool for engaging users, it enables them to quickly find the information they are looking for. It is especially important for mobile devices, as they lack the screen real estate to easily consume large amounts of information.
+Zoekinvoer of een zoekbalk is een cruciaal hulpmiddel om gebruikers te boeien, het stelt hen in staat snel de informatie te vinden waarnaar ze op zoek zijn. Het is vooral belangrijk voor mobiele apparaten, omdat ze niet over voldoende schermruimte beschikken om gemakkelijk grote hoeveelheden informatie te kunnen consumeren.
 
-Search is heavily used in large e-commerce sites, content heavy sites, news sites, and booking sites to help users find information easily. While a small website that has a few pages, does not need a search input, it will be needed as the website grows. For sites with 100+ pages, it is recommended to feature a prominent search bar.
+Search wordt veel gebruikt op grote e-commercesites, sites met veel inhoud, nieuwssites en boekingssites om gebruikers te helpen gemakkelijk informatie te vinden. Hoewel een kleine website met een paar pagina's geen zoekinvoer nodig heeft, zal deze wel nodig zijn naarmate de website groeit. Voor sites met meer dan 100 pagina's wordt het aanbevolen om een prominente zoekbalk te hebben.
 
-A <a hreflang="en" href="https://www.thinkwithgoogle.com/intl/en-cee/marketing-strategies/data-and-measurement/lyst-increases-overall-conversion-rate-25-making-usability-improvements/">case study with fashion website lyst.com</a>, showed that replacing the search icon with a search box enabled users to locate the search function more easily, increasing usage by 43% on desktop, and by 13% on mobile.
+Een <a hreflang="en" href="https://www.thinkwithgoogle.com/intl/en-cee/marketing-strategies/data-and-measurement/lyst-increases-overall-conversion-rate-25-making-usability-improvements/">casestudy met modewebsite lyst.com</a> toonde aan dat het vervangen van het zoekpictogram door een zoekvak gebruikers in staat stelde de zoekfunctie gemakkelijker te vinden, waardoor het gebruik met 43% op desktop en met 13% op mobiel toenam.
 
 {{ figure_markup(
   image="search-input-lyst.png",
-  caption='Replacing the search icon with a search box on lyst.com improved conversion rate by 13% on mobile and 43% on desktop.<br>(Source: <a hreflang="en" href="https://www.thinkwithgoogle.com/intl/en-cee/marketing-strategies/data-and-measurement/lyst-increases-overall-conversion-rate-25-making-usability-improvements/">Google</a>)',
-  description="A graphic showing how lyst.com replaced the search icon on their website with a search box, and as a result saw their conversion rate increase by 13% on mobile and 43% on desktop",
+  caption='Door het zoekpictogram te vervangen door een zoekvak op lyst.com, verbeterde de conversieratio met 13% op mobiel en 43% op desktop.<br>(Bron: <a hreflang="en" href="https://www.thinkwithgoogle.com/intl/en-cee/marketing-strategies/data-and-measurement/lyst-increases-overall-conversion-rate-25-making-usability-improvements/">Google</a>)',
+  description="Een grafiek die laat zien hoe lyst.com het zoekpictogram op hun website heeft vervangen door een zoekvak, en als gevolg daarvan hun conversieratio met 13% op mobiel en 43% op desktop zag stijgen",
   width=1194,
   height=1170
   )
 }}
 
-Search input is used in 17% of all sites using any input. At 60.10%, a majority of ecommerce landing pages are missing the presence of search input.
+Zoekinvoer wordt gebruikt in 17% van alle sites die elke invoer gebruiken. Met 60,10% mist een meerderheid van de bestemmingspagina's van e-commerce de aanwezigheid van zoekinvoer.
 
 {{ figure_markup(
   image="ecommerce-sites-using-a-search-input.png",
-  alt="Ecommerce sites using a search input",
-  caption='Ecommerce sites using a search input',
-  description="A chart showing that 60.10%, a majority of ecommerce landing pages, are missing the presence of search input.",
+  alt="E-commercesites die een zoekinvoer gebruiken",
+  caption='E-commercesites die een zoekinvoer gebruiken',
+  description="Een grafiek die laat zien dat 60,10%, het merendeel van de bestemmingspagina's voor e-commerce, de aanwezigheid van zoekinvoer mist.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=992212527&format=interactive",
   sheets_gid="91645550"
   )
 }}
 
-##### A/B testing
+##### A/B-testen
 
-A/B testing is a crucial tool for making data driven decisions on matters of design and UX. A/B testing enables validating that the UX & design changes measurably improve intended metrics and don't cause unexpected regressions.
+A/B-testen is een cruciaal hulpmiddel voor het nemen van datagestuurde beslissingen over ontwerp- en UX-kwesties. A/B-testen maakt het mogelijk om te valideren dat de UX- en ontwerpwijzigingen de beoogde statistieken meetbaar verbeteren en geen onverwachte regressies veroorzaken.
 
-Here's a sampling of design questions that can be A/B tested:
-* Would changing the color of a button increase the click through rate?
-* Would increasing the size of click targets increase the number of clicks?
-* Would replacing the search icon with a search box increase the number of searches completed?
+Hier is een greep uit de ontwerpvragen die A/B kunnen worden getest:
+* Zou het veranderen van de kleur van een knop de klikfrequentie verhogen?
+* Zou het vergroten van de grootte van klikdoelen het aantal klikken verhogen?
+* Zou het vervangen van het zoekpictogram door een zoekvak het aantal voltooide zoekopdrachten verhogen?
 
-According to <a hreflang="en" href="https://www.thirdpartyweb.today/">thirdpartyweb.today</a>, <a hreflang="en" href="https://www.optimizely.com">Optimizely</a> is the most popular third party product for A/B testing, it is used in over 20,000 pages.
+Volgens <a hreflang="en" href="https://www.thirdpartyweb.today/">thirdpartyweb.today</a>, is <a hreflang="en" href="https: //www.optimizely.com">Optimizely</a> het meest populaire product van derden voor A/B-testen, het wordt gebruikt op meer dan 20.000 pagina's.
 
-### 3. Conversion
+### 3. Conversie
 
-While "conversion" may sound like a concept pertaining to e-commerce sites, a conversion can refer to a successful user transaction, such as signing up for a music streaming service, booking a rental home, writing a review on a travel site, etc.
+Hoewel "conversie" klinkt als een concept dat betrekking heeft op e-commercesites, kan een conversie verwijzen naar een succesvolle gebruikerstransactie, zoals aanmelden voor een muziekstreamingservice, een huurwoning boeken, een recensie schrijven op een reissite, enzovoort.
 
-According to Comscore Media Matrix, traffic from mobile devices account for 79.6% of time spent on US retail sites, but only 32.3% of US eCommerce sales.
+Volgens Comscore Media Matrix vertegenwoordigt het verkeer van mobiele apparaten 79,6% van de tijd die op Amerikaanse winkelsites wordt doorgebracht, maar slechts 32,3% van de Amerikaanse e-commerceverkopen.
 
-Compared to desktop, transacting on mobile devices is error-prone and tedious, as users must input personal information using small keyboards and screen sizes. Checkout flows should be simple and short to avoid user frustration, or worse, abandonment. 27% of users abandon checkout because of a <a hreflang="en" href="https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/">"too long / complicated checkout process"</a>. 35% of users will abandon the checkout if a retailer <a hreflang="en" href="https://baymard.com/blog/ecommerce-checkout-usability-report-and-benchmark">does not offer guest checkout</a>.
+Vergeleken met desktop zijn transacties op mobiele apparaten foutgevoelig en vervelend, aangezien gebruikers persoonlijke informatie moeten invoeren met behulp van kleine toetsenborden en schermformaten. Afrekenstromen moeten eenvoudig en kort zijn om gebruikersfrustratie, of erger nog, verlating te voorkomen. 27% van de gebruikers verlaat het afrekenen vanwege een <a hreflang="en" href="https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/">"te lang / ingewikkeld afrekenproces"</a>. 35% van de gebruikers verlaat het afrekenen als een winkel <a hreflang="en" href="https://baymard.com/blog/ecommerce-checkout-usability-report-and-benchmark">geen gastafrekenen aanbiedt< / a>.
 
-#### Form semantics
+#### Vorm semantiek
 
-Users can more easily enter required information on mobile devices when their keyboard is optimized for the appropriate input type. For example, a numeric keyboard is useful for entering phone numbers, while keyboards displaying the "@" symbol are useful for entering email addresses. Sites can provide browser hints to display the most appropriate keys using the `type` attribute on `input` tags.
+Gebruikers kunnen de vereiste informatie gemakkelijker invoeren op mobiele apparaten als hun toetsenbord is geoptimaliseerd voor het juiste invoertype. Een numeriek toetsenbord is bijvoorbeeld handig voor het invoeren van telefoonnummers, terwijl toetsenborden met het "@"-symbool handig zijn voor het invoeren van e-mailadressen. Sites kunnen browserhints geven om de meest geschikte sleutels weer te geven met behulp van het `type` attribuut op `input` tags.
 
 {{ figure_markup(
   image="sites-with-inputs-using-the-following-input-types.png",
-  alt="Sites (with inputs) using the following input types",
-  caption='Sites (with inputs) using the following input types',
-  description="A chart showing the most commonly used input types on mobile. text: 54.025%; hidden: 37.319%; submit: 29.611%; search: 17.100%; email: 15.164%; checkbox: 14.305%; password: 10.204%; button: 3.442%; radio: 3.391%; image: 2.585%; tel: 2.458%; number: 0.892%; file: 0.668%; range: 0.270%; reset: 0.132%; date: 0.122%; url: 0.104%; input: 0.063%; phone: 0.061%; name: 0.049%; No input type: 0.029%; mail: 0.017%; textbox: 0.016%; username: 0.014%; select: 0.013%; textfield: 0.013%; time: 0.010%; textarea: 0.005%",
+  alt="Sites (met invoer) die de volgende invoertypes gebruiken",
+  caption='Sites (met invoer) die de volgende invoertypes gebruiken',
+  description="Een diagram met de meest gebruikte invoertypen op mobiele apparaten. text: 54,025%; hidden: 37,319%; submit: 29,611%; search: 17,100%; email: 15,164%; checkbox: 14,305%; password: 10,204%; button: 3,442%; radio: 3,391%; image: 2,585%; tel: 2,458%; number: 0,892%; file: 0,668%; range: 0,270%; reset: 0,132%; date: 0,122%; url: 0,104%; input: 0,063%; phone: 0,061%; name: 0,049%; No input type: 0,029%; mail: 0,017%; textbox: 0,016%; username: 0,014%; select: 0,013%; textfield: 0,013%; time: 0,010%; textarea: 0,005%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=1866868829&format=interactive",
   sheets_gid="1443384706"
   )
 }}
 
-#### Sign up, sign in and checkout
+#### Aanmelden, inloggen en afrekenen
 
-Today, browsers can help populate the necessary user information to complete a transaction and help reduce potential input errors. The `autocomplete` attribute can provide browsers hints to populate input elements with the correct user information. Users who successfully use Chrome Autofill to enter their information go through checkout an average of 30% faster <a hreflang="en" href="https://developers.google.com/web/fundamentals/design-and-ux/input/forms#use_metadata_to_enable_auto-complete">than those who don't</a>.
+Tegenwoordig kunnen browsers helpen bij het invullen van de nodige gebruikersinformatie om een transactie te voltooien en mogelijke invoerfouten te verminderen. Het attribuut `autocomplete` kan browsers hints geven om invoerelementen te vullen met de juiste gebruikersinformatie. Gebruikers die Chrome Autofill gebruiken om hun gegevens in te voeren, gaan gemiddeld 30% sneller afrekenen <a hreflang="en" href="https://developers.google.com/web/fundamentals/design-and-ux/input/forms#use_metadata_to_enable_auto-complete">dan degenen die dat niet doen</a>.
 
-Auto-complete can be especially helpful in completing checkout flows that require a user to login and hence remember their password. According to a <a hreflang="en" href="https://www.hypr.com/hypr-password-study-findings/">study by HYPR</a> in 2019, 78% of users forgot and had to reset a password in the past 90 days.
+Auto-complete kan vooral handig zijn bij het voltooien van betalingsstromen waarbij een gebruiker moet inloggen en dus zijn wachtwoord moet onthouden. Volgens een <a hreflang="en" href="https://www.hypr.com/hypr-password-study-findings/">onderzoek door HYPR</a> in 2019, vergat 78% van de gebruikers om een wachtwoord in de afgelopen 90 dagen opnieuw in te stellen.
 
-It's also possible to eliminate some form fields altogether. The Credential Management and Payment Request APIs are standards-based browser APIs that provide a programmatic interface between sites and the browser for seamless sign-in and payments. Only .61% of eCommerce sites are using the Payment Request API and only 0.008% use the Credential Management API. It's worth noting that adoption of the Payment Request API has increased compared to 2019, with a 6x increase in payment completion rate.
+Het is ook mogelijk om sommige formuliervelden helemaal te verwijderen. De API's voor Credential Management en Payment Request zijn op standaarden gebaseerde browser-API's die een programmatische interface bieden tussen sites en de browser voor naadloos inloggen en betalen. Slechts 0,61% van de eCommerce-sites gebruikt de Payment Request API en slechts 0,008% gebruikt de Credential Management API. Het is vermeldenswaard dat de acceptatie van de Payment Request API is toegenomen in vergelijking met 2019, met een 6x hogere voltooiingspercentage van betalingen.
 
-### 4. Retention
+### 4. Retentie
 
-The last phase in the journey is user retention, this means re-engaging the user and making them a returning customer or a loyal visitor.
+De laatste fase in de reis is gebruikersbehoud, dit betekent de gebruiker opnieuw betrekken en van hem een terugkerende klant of een loyale bezoeker maken.
 
-#### Installability with PWA
+#### Installeerbaarheid met PWA
 
-Returning users benefit from a native-app-like experience with a [PWA](./pwa). A key value proposition for user retention is the installability of a PWA. When a PWA is installed, it is available from the places that a mobile user expects to find an app: the homescreen and the app tray. When the user taps and launches the PWA, it loads in full screen and is available in the task switcher, just like a native app.
+Terugkerende gebruikers profiteren van een native app-achtige ervaring met een [PWA](./pwa). Een belangrijk waardevoorstel voor gebruikersbehoud is de installeerbaarheid van een PWA. Wanneer een PWA is geïnstalleerd, is deze beschikbaar vanaf de plaatsen waar een mobiele gebruiker een app verwacht te vinden: het homescherm en de app-lade. Wanneer de gebruiker op de PWA tikt en deze start, wordt deze op volledig scherm geladen en is deze beschikbaar in de taakwisselaar, net als een native app.
 
-Rakuten 24 is an online store provided by Rakuten, one of the largest e-commerce companies in Japan. A recent <a hreflang="en" href="https://web.dev/rakuten-24/">case study with Rakuten 24</a>, showed that making their web app <a hreflang="en" href="https://web.dev/define-install-strategy/">installable</a>, resulted in a whopping 450% jump in visitor retention rate, compared to the previous mobile web flow, over a 1-month timeframe.
+Rakuten 24 is een online winkel van Rakuten, een van de grootste e-commercebedrijven in Japan. Een recente <a hreflang="en" href="https://web.dev/rakuten-24/">casestudy met Rakuten 24</a> toonde aan dat het maken van hun webapp <a hreflang="en" href="https://web.dev/define-install-strategy/">installeerbaar</a>, resulteerde in maar liefst 450% in bezoekersbehoud in vergelijking met de vorige mobiele webstroom, over een periode van 1 maand .
 
-By implementing installability, Rakuten 24 also saw these improvements over a 1-month timeframe:
-* 310%  increase in visit frequency per user, compared to the rest of their web users
-* 150% increase in sales per customer by 150%
-* 200% increase in conversion rate
+Door installeerbaarheid te implementeren, zag Rakuten 24 ook deze verbeteringen over een tijdsbestek van 1 maand:
+* 310% stijging van de bezoekfrequentie per gebruiker, vergeleken met de rest van hun internetgebruikers
+* 150% stijging van de omzet per klant met 150%
+* 200% stijging van de conversieratio
 
-#### A seamless experience across devices
-Finally, providing a seamless experience across devices can unlock deeper user engagement and retention, the signed-in experience powers this.
+#### Een naadloze ervaring op verschillende apparaten
+Ten slotte kan het bieden van een naadloze ervaring op verschillende apparaten een diepere gebruikersbetrokkenheid en -retentie ontgrendelen, de aangemelde ervaring maakt dit mogelijk.
 
-At the start of [the User Journey](#the-user-journey) we mentioned that mobile represents 79.6% of time spent amongst retail sites, but it only accounts for 32.3% of eCommerce sales. This suggests that users often browse on mobile and start the user journey on mobile devices, but they often convert or complete transactions on desktop.
+Aan het begin van [de gebruikersreis](#de-gebruikersreis) zeiden we dat mobiel 79,6% van de tijd tussen winkelsites vertegenwoordigt, maar slechts 32,3% van de e-commerceverkopen. Dit suggereert dat gebruikers vaak op mobiele apparaten browsen en de gebruikersreis op mobiele apparaten starten, maar dat ze transacties vaak op desktop converteren of voltooien.
 
-Hopefully by now we have gained a better understanding to reason about this, for instance reasons may include ease of finding and consuming content, the ease of typing, form filling etc.
+Hopelijk hebben we nu een beter begrip gekregen om hierover te redeneren, bijvoorbeeld redenen kunnen zijn: het gemak van het vinden en consumeren van inhoud, het gemak van typen, het invullen van formulieren enz.
 
-For larger sites, it's often not a question of whether to invest in mobile web *or* desktop, as they both often complement each other.
+Voor grotere sites is het vaak niet de vraag of u moet investeren in mobiel internet *of* desktop, omdat ze elkaar vaak aanvullen.
 
-It helps to consider all the four phases of the user journey to understand the full spectrum of opportunities for engaging the user, as well as the risks and challenges in each phase of the journey.
+Het helpt om alle vier fasen van de gebruikersreis in overweging te nemen om het volledige spectrum van mogelijkheden voor het betrekken van de gebruiker te begrijpen, evenals de risico's en uitdagingen in elke fase van de reis.
 
-## Conclusion
+## Gevolgtrekking
 
-Mobile is now the predominant way of accessing the web, and access to the web has become all the more important in the last year. The needs of mobile are different from those of desktop. Image sizes can, and should, be smaller on mobile due to smaller screens and often limited network but seeing two fifths of improperly sized images show we still have some way to go. Similarly tap targets need to be bigger on mobile since we don;'t have the precision of a mouse but we have shown this is still a problem. In all there is much website owners can do to make the use of mobile web easier but it may often require a different mindset to desktop, but also not flipping the other way entirely and forgetting desktop users either.
+Mobiel is nu de belangrijkste manier om toegang te krijgen tot internet, en toegang tot internet is het afgelopen jaar des te belangrijker geworden. De behoeften van mobiel zijn anders dan die van desktop. Afbeeldingsformaten kunnen en zouden kleiner moeten zijn op mobiele apparaten vanwege kleinere schermen en vaak een beperkt netwerk, maar als we twee vijfde van de afbeeldingen met een onjuist formaat zien, blijkt dat we nog een weg te gaan hebben. Evenzo moeten tikdoelen groter zijn op mobiele apparaten, omdat we niet de precisie van een muis hebben, maar we hebben aangetoond dat dit nog steeds een probleem is. Al met al kunnen website-eigenaren veel doen om het gebruik van mobiel internet gemakkelijker te maken, maar het kan vaak een andere mindset vereisen dan desktop, maar ook niet helemaal de andere kant op gaan en ook desktopgebruikers vergeten.
