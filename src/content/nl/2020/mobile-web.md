@@ -153,7 +153,7 @@ Naast organisch verkeer van zoekmachines, kunnen **Advertentieklikken** een bela
 
 De eerste indruk is belangrijk. Het tijdig leveren van pagina-inhoud is van cruciaal belang om te voorkomen dat bezoekers in de steek worden gelaten en gebruikersfrustratie voorkomen. Laadprestaties zijn een belangrijk aspect van de acquisitiefase, slechte laadprestaties leiden ertoe dat gebruikers deze reis verlaten.
 
-Een <a hreflang="en" href="https://web.dev/milliseconds-make-millions/">recente studie</a> toonde aan dat 0,1s mSpeed verbetering de conversieratio's met +8,4% verhoogde voor winkelsites en +10,1% voor reissites.
+Een <a hreflang="en" href="https://web.dev/milliseconds-make-millions/">recente studie</a> toonde aan dat een verbetering van de mobiele snelheid met 0,1 seconde de conversieratio's met +8,4% voor winkelsites en +10,1% voor reissites verhoogde.
 
 Het laden van prestaties is een veelomvattend onderwerp, dus hebben we een aantal aspecten uitgekozen om hier te behandelen.
 

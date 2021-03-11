@@ -153,7 +153,7 @@ Beyond organic traffic from search engines, **Ad clicks** could be a key source 
 
 First impressions matter. Delivering page content in a timely manner is critical for avoiding visitor abandonment and user frustration. Loading performance is a key aspect of the acquisition phase, poor loading performance results in users abandoning this journey.
 
-A <a hreflang="en" href="https://web.dev/milliseconds-make-millions/">recent study</a> showed that 0.1s mSpeed improvement increased conversion rates by +8.4% for retail sites and +10.1% for travel sites.
+A <a hreflang="en" href="https://web.dev/milliseconds-make-millions/">recent study</a> showed that 0.1s mobile speed improvement increased conversion rates by +8.4% for retail sites and +10.1% for travel sites.
 
 Loading performance is a vast topic, so we picked a couple of aspects to cover here.
 
