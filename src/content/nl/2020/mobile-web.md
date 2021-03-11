@@ -25,7 +25,7 @@ Mobiel Internet is het afgelopen decennium explosief gegroeid en is nu de belang
 
 In 2020 is het <a hreflang="en" href="https://www.nytimes.com/interactive/2020/04/07/technology/coronavirus-internet-use.html">internetgebruik</a> enorm gestegen, zowel op mobiel als op desktop, als gevolg van de wereldwijde pandemie. Het aantal bezoeken aan nieuwssites, e-commerce en sociale-mediasites is toegenomen doordat mensen over de hele wereld zich hebben aangepast aan een nieuwe levensstijl met lockdowns en sociale afstand. 2020 was een belangrijk jaar in de geschiedenis, zowel voor internet als voor mobiel gebruik.
 
-### gegevensbronnen
+### Gegevensbronnen
 We hebben in dit hoofdstuk een aantal verschillende gegevensbronnen gebruikt:
 
 * [CrUX](./methodology#chrome-ux-report)
@@ -185,8 +185,7 @@ Afbeeldingen met een onjuist formaat en niet-geoptimaliseerde afbeeldingen zijn 
 
 {{ figure_markup(
   image="pages-with-properly-sized-images.png",
-  alt="Pagina's met afbeeldingen van het juiste formaat",
-  caption='Pagina's met afbeeldingen van het juiste formaat',
+  caption="Pagina's met afbeeldingen van het juiste formaat",
   description="Een grafiek die laat zien dat 41,20% van de mobiele pagina's afbeeldingen met een onjuist formaat heeft.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=1030767824&format=interactive",
   sheets_gid="699494809"
@@ -354,7 +353,7 @@ Hier is een greep uit de ontwerpvragen die A/B kunnen worden getest:
 * Zou het vergroten van de grootte van klikdoelen het aantal klikken verhogen?
 * Zou het vervangen van het zoekpictogram door een zoekvak het aantal voltooide zoekopdrachten verhogen?
 
-Volgens <a hreflang="en" href="https://www.thirdpartyweb.today/">thirdpartyweb.today</a>, is <a hreflang="en" href="https: //www.optimizely.com">Optimizely</a> het meest populaire product van derden voor A/B-testen, het wordt gebruikt op meer dan 20.000 pagina's.
+Volgens <a hreflang="en" href="https://www.thirdpartyweb.today/">thirdpartyweb.today</a>, is <a hreflang="en" href="https://www.optimizely.com">Optimizely</a> het meest populaire product van derden voor A/B-testen, het wordt gebruikt op meer dan 20.000 pagina's.
 
 ### 3. Conversie
 
@@ -362,7 +361,7 @@ Hoewel "conversie" klinkt als een concept dat betrekking heeft op e-commercesite
 
 Volgens Comscore Media Matrix vertegenwoordigt het verkeer van mobiele apparaten 79,6% van de tijd die op Amerikaanse winkelsites wordt doorgebracht, maar slechts 32,3% van de Amerikaanse e-commerceverkopen.
 
-Vergeleken met desktop zijn transacties op mobiele apparaten foutgevoelig en vervelend, aangezien gebruikers persoonlijke informatie moeten invoeren met behulp van kleine toetsenborden en schermformaten. Afrekenstromen moeten eenvoudig en kort zijn om gebruikersfrustratie, of erger nog, verlating te voorkomen. 27% van de gebruikers verlaat het afrekenen vanwege een <a hreflang="en" href="https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/">"te lang / ingewikkeld afrekenproces"</a>. 35% van de gebruikers verlaat het afrekenen als een winkel <a hreflang="en" href="https://baymard.com/blog/ecommerce-checkout-usability-report-and-benchmark">geen gastafrekenen aanbiedt< / a>.
+Vergeleken met desktop zijn transacties op mobiele apparaten foutgevoelig en vervelend, aangezien gebruikers persoonlijke informatie moeten invoeren met behulp van kleine toetsenborden en schermformaten. Afrekenstromen moeten eenvoudig en kort zijn om gebruikersfrustratie, of erger nog, verlating te voorkomen. 27% van de gebruikers verlaat het afrekenen vanwege een <a hreflang="en" href="https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/">"te lang / ingewikkeld afrekenproces"</a>. 35% van de gebruikers verlaat het afrekenen als een winkel <a hreflang="en" href="https://baymard.com/blog/ecommerce-checkout-usability-report-and-benchmark">geen gastafrekenen aanbiedt</a>.
 
 #### Vorm semantiek
 
