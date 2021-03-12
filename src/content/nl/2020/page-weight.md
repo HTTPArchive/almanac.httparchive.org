@@ -31,9 +31,9 @@ Paginagewicht is een van de eenvoudigere statistieken die beschikbaar zijn. Net 
 
 Toen hem in 2016 werd gevraagd om uit te leggen waarom een Australische toerist met wie ik had gesproken opgetogen was over het Britse internet, had Google's Ilya Grigorik <a hreflang="en" href="https://youtu.be/x4S38hpgxuM?t=89">twee woorden</a>: <span lang="en">physics damn it!</span> (natuurkunde verdomme!) (oeps, dat zijn er drie).
 
-Het punt was simpel: hoewel je misschien profiteert van een grotere bandbreedte, gelden de wetten van de fysica nog steeds. Een Australiër kan niet ontsnappen aan de latentiewetten. In het beste geval, thuis in Sydney, ervoer deze Australiër genoeg latentie dat zijn internet soms als niet-reagerend werd ervaren.
+Het punt was simpel: hoewel u misschien profiteert van een grotere bandbreedte, gelden de wetten van de fysica nog steeds. Een Australiër kan niet ontsnappen aan de latentiewetten. In het beste geval, thuis in Sydney, ervoer deze Australiër genoeg latentie dat zijn internet soms als niet-reagerend werd ervaren.
 
-Stel je nu voor dat dezelfde Australiër, wetende dat zijn pagina op het 75e percentiel ongeveer 108 verzoeken doet (daarover later meer), en we hebben nog steeds geen idee van het netwerkprotocol, de bronnen die worden aangevraagd, het compressieniveau of optimalisatie. U kunt de hoofdstukken [HTTP/2](./http2) en [Compressie](./compression) doornemen voor meer informatie over de levensduur van een modern verzoek.
+Stelt u nu voor dat dezelfde Australiër, wetende dat zijn pagina op het 75e percentiel ongeveer 108 verzoeken doet (daarover later meer), en we hebben nog steeds geen idee van het netwerkprotocol, de bronnen die worden aangevraagd, het compressieniveau of optimalisatie. U kunt de hoofdstukken [HTTP/2](./http2) en [Compressie](./compression) doornemen voor meer informatie over de levensduur van een modern verzoek.
 
 ### Activa
 
@@ -57,7 +57,7 @@ Terwijl we de statistische resultaten posten en ontleden, zijn de gegevens vaak 
 
 ### Paginagewicht
 
-Laten we eens kijken naar het klassieke paginagewicht, zowel op desktop als mobiel. De delta's zijn meestal te wijten aan een paar minder bronnen die op mobiel zijn overgedragen, een waarschijnlijke snuifje mediabeheer, maar je kunt hieronder zien dat bij de mediaan de verschillen niet zo significant zijn tussen de twee cliënten.
+Laten we eens kijken naar het klassieke paginagewicht, zowel op desktop als mobiel. De delta's zijn meestal te wijten aan een paar minder bronnen die op mobiel zijn overgedragen, een waarschijnlijke snuifje mediabeheer, maar u kunt hieronder zien dat bij de mediaan de verschillen niet zo significant zijn tussen de twee cliënten.
 
 {{ figure_markup(
   image="bytes-distribution.png",

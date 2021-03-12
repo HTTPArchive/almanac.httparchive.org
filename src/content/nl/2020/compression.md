@@ -57,7 +57,7 @@ Voor op afbeeldingen gebaseerde middelen is op tekst gebaseerde compressie minde
   )
 }}
 
-## Hoe gebruik je HTTP-compressie?
+## Hoe gebruikt u HTTP-compressie?
 
 Om de grootte van de bestanden die we willen aanbieden te verkleinen, kan men eerst enkele minimizers gebruiken, bijv. <a hreflang="en" href="https://github.com/kangax/html-minifier">HTMLMinifier</a>, <a hreflang="en" href="https://github.com/ben-eb/cssnano">CSSNano</a> of <a hreflang="en" href="https://github.com/mishoo/UglifyJS2">UglifyJS</a>. Er worden echter grotere voordelen verwacht van het gebruik van compressie.
 
@@ -95,7 +95,7 @@ Omdat voorcompressie vooraf wordt gedaan, kunnen we meer tijd besteden aan het c
 
 Momenteel wordt praktisch alle tekstcompressie uitgevoerd door een van de twee HTTP-inhoudscoderingen: <a hreflang="en" href="https://tools.ietf.org/html/rfc1952">Gzip</a> en <a hreflang="en" href="https://github.com/google/brotli">Brotli</a>. Beide worden breed ondersteund door browsers: <a hreflang="en" href="https://caniuse.com/?search=brotli">kan ik Brotli gebruiken</a>/<a hreflang="en" href="https://caniuse.com/?search=gzip">kan ik Gzip gebruiken</a>
 
-Als je Gzip wilt gebruiken, overweeg dan om [Zopfli](https://en.wikipedia.org/wiki/Zopfli) te gebruiken, die kleinere Gzip-compatibele bestanden genereert. Dit moet vooral worden gedaan voor voorgecomprimeerde bronnen, aangezien hier de grootste <a hreflang="en" href="https://cran.r-project.org/web/packages/brotli/vignettes/brotli-2015-09-22.pdf">winst wordt verwacht</a>. Zie deze <a hreflang="en" href="https://blog.codinghorror.com/zopfli-optimization-literally-free-bandwidth/">vergelijking tussen Gzip en Zopfli</a> die rekening houdt met verschillende compressieniveaus voor Gzip.
+Als u Gzip wilt gebruiken, overweeg dan om [Zopfli](https://en.wikipedia.org/wiki/Zopfli) te gebruiken, die kleinere Gzip-compatibele bestanden genereert. Dit moet vooral worden gedaan voor voorgecomprimeerde bronnen, aangezien hier de grootste <a hreflang="en" href="https://cran.r-project.org/web/packages/brotli/vignettes/brotli-2015-09-22.pdf">winst wordt verwacht</a>. Zie deze <a hreflang="en" href="https://blog.codinghorror.com/zopfli-optimization-literally-free-bandwidth/">vergelijking tussen Gzip en Zopfli</a> die rekening houdt met verschillende compressieniveaus voor Gzip.
 
 Veel [populaire servers](https://en.wikipedia.org/wiki/HTTP_compression#Servers_that_support_HTTP_compression) ondersteunen dynamisch en/of voorgecomprimeerd HTTP en veel van hen ondersteunen [Brotli](https://en.wikipedia.org/wiki/Brotli).
 
