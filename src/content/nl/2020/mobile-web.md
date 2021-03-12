@@ -167,8 +167,7 @@ Een goede LCP-score is 2,5s op p75. We ontdekten dat het gemiddelde LCP op p75 2
 
 {{ figure_markup(
   image="median-p75-lcp-score.png",
-  alt="Mediane p75 LCP-score",
-  caption='Mediane p75 LCP-score',
+  caption="Mediane p75 LCP-score",
   description="Een grafiek die laat zien dat het gemiddelde LCP op p75 2,6s is op mobiel en 2,3s op desktop",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=964425991&format=interactive",
   sheets_gid="872081120"
