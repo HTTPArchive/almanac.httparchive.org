@@ -167,8 +167,7 @@ A good LCP score is 2.5s at p75. We found that the median LCP at p75 is 2.6s on 
 
 {{ figure_markup(
   image="median-p75-lcp-score.png",
-  alt="Median p75 LCP score",
-  caption='Median p75 LCP score',
+  caption="Median p75 LCP score",
   description="A chart showing that the median LCP at p75 is 2.6s on mobile and 2.3s on desktop",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=964425991&format=interactive",
   sheets_gid="872081120"
@@ -185,8 +184,7 @@ Improperly sized and unoptimized images are frequent sources for image performan
 
 {{ figure_markup(
   image="pages-with-properly-sized-images.png",
-  alt="Pages with properly sized images",
-  caption='Pages with properly sized images',
+  caption="Pages with properly sized images",
   description="A chart showing that 41.20% of mobile pages have improperly sized images.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=1030767824&format=interactive",
   sheets_gid="699494809"
