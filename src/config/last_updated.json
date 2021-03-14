@@ -282,8 +282,8 @@
   },
   "en/2020/chapters/media.html": {
     "date_published": "2020-12-09T00:00:00.000Z",
-    "date_modified": "2021-03-02T00:00:00.000Z",
-    "hash": "7a25ba578a6bfa8109d865876e183dc0"
+    "date_modified": "2021-03-14T00:00:00.000Z",
+    "hash": "12db1169d0c33fa7d54cd620805fc222"
   },
   "en/2020/chapters/mobile-web.html": {
     "date_published": "2020-12-09T00:00:00.000Z",
@@ -924,6 +924,11 @@
     "date_published": "2020-12-22T00:00:00.000Z",
     "date_modified": "2021-03-12T00:00:00.000Z",
     "hash": "3b12ce753f6b6111cc85296649b8fb6c"
+  },
+  "nl/2020/chapters/media.html": {
+    "date_published": "2021-03-14T00:00:00.000Z",
+    "date_modified": "2021-03-14T00:00:00.000Z",
+    "hash": "42fa1934f8261a2a330f47cf9463341f"
   },
   "nl/2020/chapters/mobile-web.html": {
     "date_published": "2021-03-12T00:00:00.000Z",
