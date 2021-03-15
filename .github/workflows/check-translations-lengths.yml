@@ -46,6 +46,9 @@ jobs:
           fetch-depth: 0
       - name: Test changed translations
         if: github.event_name != 'workflow_dispatch'
+        env:
+          RUN_TYPE: ${{ github.event_name }}
+          COMMIT_SHA: ${{ github.sha }}
         run: |
           echo "BASE_FOLDER=$GITHUB_WORKSPACE/original" >> $GITHUB_ENV
           cd this_run/src
