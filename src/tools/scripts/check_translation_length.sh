@@ -65,7 +65,7 @@ elif [ "${RUN_TYPE}" == "pull_request" ] && [ "${COMMIT_SHA}" != "" ]; then
     git pull --quiet
     git checkout main
     # Then get the changes
-    FILES_TO_CHECK=$(git diff --name-only "main...${COMMIT_SHA}" --diff-filter=d content templates | sed "s/src//" | grep -v "templates/base/" | grep -v "templates/base.html" )
+    FILES_TO_CHECK=$(git diff --name-only "main...${COMMIT_SHA}" --diff-filter=d content templates | sed "s/src\///" | grep -v "templates/base/" | grep -v "templates/base.html" )
 
     echo "Checking the following files:"
     echo "${FILES_TO_CHECK}"
