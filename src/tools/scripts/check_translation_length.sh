@@ -39,10 +39,12 @@ fi
 FAILED_FILES=0
 FILES_TO_CHECK=""
 
-if [ "${BASE_FOLDER}" == "" ]; then
-  BASE_FOLDER="."
-else
+if [ -d "${GITHUB_WORKSPACE}/original" ]; then
+  BASE_FOLDER="${GITHUB_WORKSPACE}/original/src"
   echo "Setting Base folder to: ${BASE_FOLDER}"
+else
+  BASE_FOLDER="."
+  echo "Not using a base folder"
 fi
 
 if [ "${all}" == "1" ]; then
