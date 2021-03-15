@@ -373,6 +373,7 @@ Let's dig a bit deeper and look at the `format()` values used in the `src:` prop
 
 {{ figure_markup(
   image="fig8.png",
+  alt="Popularity of font formats in @font-face declarations.",
   caption="Popularity of font formats in <code>@font-face</code> declarations.",
   description="Bar chart showing the popularity of formats used in font-face declarations. 69% of desktop pages' @font-face declarations specify the WOFF2 format, 11% WOFF, 10% TrueType, 8% SVG, 2% EOT, and fewer than 1% OpenType, TTF, and OTF. The distribution for mobile pages is similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=700778025&format=interactive"
