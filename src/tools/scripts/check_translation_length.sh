@@ -31,6 +31,11 @@ while getopts "ahv?" opt; do
 done
 shift "$((OPTIND-1))" # Discard the options and sentinel --
 
+# This script must be run from src directory
+if [ -d "src" ]; then
+  cd src
+fi
+
 FAILED_FILES=0
 FILES_TO_CHECK=""
 
@@ -41,7 +46,7 @@ fi
 if [ "${all}" == "1" ]; then
 
     # Get the files that need to be translated
-    FILES_TO_CHECK=$(find src/content src/templates -name "*.md" -print -o -name "*.html" -not -name "featured_chapters.html" -not -name "ebook.html" -not -path "src/templates/base.html" -not -path "src/templates/base/*" -not -path "*/chapters/*" -print)
+    FILES_TO_CHECK=$(find content templates -name "*.md" -print -o -name "*.html" -not -name "featured_chapters.html" -not -name "ebook.html" -not -path "templates/base.html" -not -path "templates/base/*" -not -path "*/chapters/*" -print)
 
     if [ "${verbose}" == "1" ]; then
         echo "Comparing the following files:"
@@ -89,9 +94,9 @@ do
 
     if [[ "${FILE_TO_CHECK}" != *"/en/"* ]]; then
       # If it's not the English file then find the English file:
-      ENGLISH_FILE=$(echo "${FILE_TO_CHECK}" | sed "s/src\/\([content\|templates]\)\/[a-zA-Z-]*\//src\/\1\/en\//")
+      ENGLISH_FILE=$(echo "${FILE_TO_CHECK}" | sed "s/\([content\|templates]\)\/[a-zA-Z-]*\//\1\/en\//")
       if [ "${verbose}" == "1" ]; then
-          echo "Comparing ${FILE_TO_CHECK} is a translation of ${ENGLISH_FILE}..."
+          echo "${FILE_TO_CHECK} is a translation of ${ENGLISH_FILE}..."
       fi
 
       # If the English version is already included in the set of files to check,
