@@ -40,7 +40,7 @@ FAILED_FILES=0
 FILES_TO_CHECK=""
 
 if [ -d "${GITHUB_WORKSPACE}/original" ]; then
-  BASE_FOLDER="${GITHUB_WORKSPACE}/original"
+  BASE_FOLDER="${GITHUB_WORKSPACE}/original/src"
   echo "Setting Base folder to: ${BASE_FOLDER}"
 else
   BASE_FOLDER="."
@@ -65,7 +65,7 @@ elif [ "${RUN_TYPE}" == "pull_request" ] && [ "${COMMIT_SHA}" != "" ]; then
     git pull --quiet
     git checkout main
     # Then get the changes
-    FILES_TO_CHECK=$(git diff --name-only "main...${COMMIT_SHA}" --diff-filter=d content templates | grep -v "templates/base/" | grep -v "templates/base.html" )
+    FILES_TO_CHECK=$(git diff --name-only "main...${COMMIT_SHA}" --diff-filter=d content templates | sed "s/src//" | grep -v "templates/base/" | grep -v "templates/base.html" )
 
     echo "Checking the following files:"
     echo "${FILES_TO_CHECK}"
@@ -76,10 +76,6 @@ fi
 function compare_file_lengths {
   FILE_TO_CHECK=$1
   COMPARE_FILE=$2
-
-  # Strip off any initial src
-  #FILE_TO_CHECK=$(echo "${FILE_TO_CHECK}" | sed "s/src//")
-  #COMPARE_FILE=$(echo "${COMPARE_FILE}" | sed "s/src//")
 
   if [ "${verbose}" == "1" ]; then
     echo "Comparing ${FILE_TO_CHECK} to ${COMPARE_FILE}..."
