@@ -31,11 +31,6 @@ while getopts "ahv?" opt; do
 done
 shift "$((OPTIND-1))" # Discard the options and sentinel --
 
-# This script must be run from src directory
-if [ -d "src" ]; then
-  cd src || exit
-fi
-
 FAILED_FILES=0
 FILES_TO_CHECK=""
 
@@ -46,7 +41,7 @@ fi
 if [ "${all}" == "1" ]; then
 
     # Get the files that need to be translated
-    FILES_TO_CHECK=$(find content templates -name "*.md" -print -o -name "*.html" -not -name "featured_chapters.html" -not -name "ebook.html" -not -path "templates/base.html" -not -path "templates/base/*" -not -path "*/chapters/*" -print)
+    FILES_TO_CHECK=$(find src/content src/templates -name "*.md" -print -o -name "*.html" -not -name "featured_chapters.html" -not -name "ebook.html" -not -path "src/templates/base.html" -not -path "src/templates/base/*" -not -path "*/chapters/*" -print)
 
     if [ "${verbose}" == "1" ]; then
         echo "Comparing the following files:"
