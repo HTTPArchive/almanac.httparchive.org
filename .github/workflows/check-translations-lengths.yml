@@ -49,9 +49,9 @@ jobs:
         run: |
           echo "BASE_FOLDER=$GITHUB_WORKSPACE/original" >> $GITHUB_ENV
           cd this_run/src
-          ./tools/scripts/check_translation_length.sh
+          ./tools/scripts/check_translation_length.sh -v
       - name: Test all translations
         if: github.event_name == 'workflow_dispatch' || github.event_name == 'workflow_dispatch'
         run: |
           cd this_run/src
-          ./src/tools/scripts/check_translation_length.sh -a
+          ./src/tools/scripts/check_translation_length.sh -a -v
