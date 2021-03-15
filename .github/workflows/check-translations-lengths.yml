@@ -42,18 +42,16 @@ jobs:
           path: original
           ref: main
           repository: HTTPArchive/almanac.httparchive.org
-          # Full git history is needed to get a proper list of changed files
-          fetch-depth: 0
       - name: Test changed translations
-        if: github.event_name != 'workflow_dispatch'
+        if: github.event_name == 'pull_request'
         env:
           RUN_TYPE: ${{ github.event_name }}
           COMMIT_SHA: ${{ github.sha }}
         run: |
           cd this_run/src
-          ./tools/scripts/check_translation_length.sh -v
+          ./tools/scripts/check_translation_length.sh
       - name: Test all translations
-        if: github.event_name == 'workflow_dispatch' || github.event_name == 'workflow_dispatch'
+        if: github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
         run: |
           cd this_run/src
-          ./tools/scripts/check_translation_length.sh -a -v
+          ./tools/scripts/check_translation_length.sh -a

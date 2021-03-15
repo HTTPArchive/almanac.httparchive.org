@@ -124,11 +124,8 @@ do
       # shellcheck disable=SC2010,SC2086
       TRANSLATION_FILES=$(cd "${BASE_FOLDER}" || exit; ls ${TRANSLATION_FILE_PATTERN} | grep -v "/en/" | grep -v "/base/" | sort -u)
 
-      echo "BARRY: $TRANSLATION_FILES"
-
       for COMPARE_FILE in ${TRANSLATION_FILES}
       do
-        echo "BARRY2: $COMPARE_FILE"
         # Only check files that are not in the list of files (as they will be checked anyway)
         if [[ "${FILES_TO_CHECK}" != *"${COMPARE_FILE}"* ]]; then
           compare_file_lengths "${FILE_TO_CHECK}" "${BASE_FOLDER}/${COMPARE_FILE}"
