@@ -83,9 +83,7 @@ function compare_file_lengths {
   # Get the two file lengths
   FILE_TO_CHECK_LENGTH=$(wc -l "${FILE_TO_CHECK}" | awk '{ print $1}')
   COMPARE_FILE_LENGTH=$(wc -l "${COMPARE_FILE}" | awk '{ print $1}')
-  if [ "${verbose}" == "1" ]; then
-      echo "${FILE_TO_CHECK} ${FILE_TO_CHECK_LENGTH} ${COMPARE_FILE_LENGTH}"
-  fi
+  echo "${FILE_TO_CHECK} ${FILE_TO_CHECK_LENGTH} ${COMPARE_FILE_LENGTH}"
   if [[ "${FILE_TO_CHECK_LENGTH}" != "${COMPARE_FILE_LENGTH}" ]]; then
       FAILED_FILES=$((FAILED_FILES + 1));
       echo "${FILE_TO_CHECK} is ${FILE_TO_CHECK_LENGTH} lines long when ${COMPARE_FILE} is ${COMPARE_FILE_LENGTH}. Please check."
