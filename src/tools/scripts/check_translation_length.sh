@@ -89,7 +89,7 @@ do
 
     if [[ "${FILE_TO_CHECK}" != *"/en/"* ]]; then
       # If it's not the English file then find the English file:
-      ENGLISH_FILE=$(echo "${FILE_TO_CHECK}" | sed "s/\([content\|templates]\)\/[a-zA-Z-]*\//\1\/en\//")
+      ENGLISH_FILE=$(echo "${FILE_TO_CHECK}" | sed "s/src\/\([content\|templates]\)\/[a-zA-Z-]*\//src\/\1\/en\//")
       if [ "${verbose}" == "1" ]; then
           echo "Comparing ${FILE_TO_CHECK} is a translation of ${ENGLISH_FILE}..."
       fi
