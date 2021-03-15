@@ -77,8 +77,8 @@ function compare_file_lengths {
     echo "Comparing ${FILE_TO_CHECK} to ${COMPARE_FILE}..."
   fi
   # Get the two file lengths
-  FILE_TO_CHECK_LENGTH=$(wc -l ${FILE_TO_CHECK} | awk '{ print $1}')
-  COMPARE_FILE_LENGTH=$(wc -l ${COMPARE_FILE} | awk '{ print $1}')
+  FILE_TO_CHECK_LENGTH=$(wc -l "${FILE_TO_CHECK}" | awk '{ print $1}')
+  COMPARE_FILE_LENGTH=$(wc -l "${COMPARE_FILE}" | awk '{ print $1}')
   if [ "${verbose}" == "1" ]; then
       echo "${FILE_TO_CHECK} ${FILE_TO_CHECK_LENGTH} ${COMPARE_FILE_LENGTH}"
   fi
@@ -115,11 +115,16 @@ do
       TRANSLATION_FILE_PATTERN=$(echo "${FILE_TO_CHECK}" | sed "s/\([content\|templates]\)\/en\//\1\/*\//")
 
       # Get a list of files in base folder which match that pattern
-      # (local files will already be covered)
-      TRANSLATION_FILES=$(cd ${BASE_FOLDER}; ls ${TRANSLATION_FILE_PATTERN} ${TRANSLATION_FILE_PATTERN} | grep -v "/en/" | grep -v "/base/" | sort -u)
+      # (local files will already be covered).
+      # Disable some shellcheck checks as this is easiest way and it's safe
+      # shellcheck disable=SC2010,SC2086
+      TRANSLATION_FILES=$(cd "$BASE_FOLDER" || exit; ls ${TRANSLATION_FILE_PATTERN} | grep -v "/en/" | grep -v "/base/" | sort -u)
+
+      echo "BARRY: $TRANSLATION_FILES"
 
       for COMPARE_FILE in ${TRANSLATION_FILES}
       do
+        echo "BARRY2: $COMPARE_FILE"
         # Only check files that are not in the list of files (as they will be checked anyway)
         if [[ "${FILES_TO_CHECK}" != *"${COMPARE_FILE}"* ]]; then
           compare_file_lengths "${FILE_TO_CHECK}" "${BASE_FOLDER}/${COMPARE_FILE}"
