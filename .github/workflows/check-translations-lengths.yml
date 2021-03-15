@@ -46,7 +46,7 @@ jobs:
       - name: Test changed translations
         if: github.event_name != 'workflow_dispatch'
         env: |
-          BASE_FOLDER: "${{ GITHUB_WORKSPACE }}/original"
+          BASE_FOLDER: "$GITHUB_WORKSPACE/original"
         run: |
           cd this_run/src
           ./src/tools/scripts/check_translation_length.sh
