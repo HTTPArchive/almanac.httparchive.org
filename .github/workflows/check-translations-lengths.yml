@@ -49,8 +49,8 @@ jobs:
         env:
           RUN_TYPE: ${{ github.event_name }}
           COMMIT_SHA: ${{ github.sha }}
+          BASE_FOLDER: ${GITHUB_WORKSPACE}/original/src
         run: |
-          echo "BASE_FOLDER=$GITHUB_WORKSPACE/original/src" >> $GITHUB_ENV
           cd this_run/src
           ./tools/scripts/check_translation_length.sh -v
       - name: Test all translations

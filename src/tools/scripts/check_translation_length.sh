@@ -41,6 +41,8 @@ FILES_TO_CHECK=""
 
 if [ "${BASE_FOLDER}" == "" ]; then
   BASE_FOLDER="."
+else
+  echo "Setting Base folder to: ${BASE_FOLDER}"
 fi
 
 if [ "${all}" == "1" ]; then
@@ -94,7 +96,7 @@ do
 
     if [[ "${FILE_TO_CHECK}" != *"/en/"* ]]; then
       # If it's not the English file then find the English file:
-      ENGLISH_FILE=$(echo "${FILE_TO_CHECK}" | sed "s/\([content\|templates]\)\/[a-zA-Z-]*\//\1\/en\//")
+      ENGLISH_FILE=$(echo "${FILE_TO_CHECK}" | sed "s/\(.*\)\([content\|templates]\)\/[a-zA-Z-]*\//\1\2\/en\//")
       if [ "${verbose}" == "1" ]; then
           echo "${FILE_TO_CHECK} is a translation of ${ENGLISH_FILE}..."
       fi
@@ -112,7 +114,7 @@ do
     else
 
       # If it is English then, should compare all the other translations
-      TRANSLATION_FILE_PATTERN=$(echo "${FILE_TO_CHECK}" | sed "s/\([content\|templates]\)\/en\//\1\/*\//")
+      TRANSLATION_FILE_PATTERN=$(echo "${FILE_TO_CHECK}" | sed "s/\(.*\)\\([content\|templates]\)\/en\//\1\2\/*\//")
 
       # Get a list of files in base folder which match that pattern
       # (local files will already be covered).
