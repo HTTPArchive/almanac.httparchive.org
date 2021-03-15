@@ -114,6 +114,8 @@ do
       # If it is English then, should compare all the other translations
       TRANSLATION_FILE_PATTERN=$(echo "${FILE_TO_CHECK}" | sed "s/\([content\|templates]\)\/en\//\1\/*\//")
 
+      # Get a list of files in base folder which match that pattern
+      # (local files will already be covered)
       TRANSLATION_FILES=$(cd ${BASE_FOLDER}; ls ${TRANSLATION_FILE_PATTERN} ${TRANSLATION_FILE_PATTERN} | grep -v "/en/" | grep -v "/base/" | sort -u)
 
       for COMPARE_FILE in ${TRANSLATION_FILES}
