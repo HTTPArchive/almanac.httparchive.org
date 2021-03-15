@@ -45,7 +45,7 @@ fi
 
 if [ "${all}" == "1" ]; then
 
-    # Get the production URLs from the production sitemap (except PDFs and Stories)
+    # Get the files that need to be translated
     FILES_TO_CHECK=$(find content templates -name "*.md" -print -o -name "*.html" -not -name "featured_chapters.html" -not -name "ebook.html" -not -path "templates/base.html" -not -path "templates/base/*" -not -path "*/chapters/*" -print)
 
     if [ "${verbose}" == "1" ]; then
