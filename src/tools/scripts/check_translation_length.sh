@@ -40,7 +40,7 @@ FAILED_FILES=0
 FILES_TO_CHECK=""
 
 if [ -d "${GITHUB_WORKSPACE}/original" ]; then
-  BASE_FOLDER="${GITHUB_WORKSPACE}/original/src"
+  BASE_FOLDER="${GITHUB_WORKSPACE}/original"
   echo "Setting Base folder to: ${BASE_FOLDER}"
 else
   BASE_FOLDER="."
@@ -78,8 +78,8 @@ function compare_file_lengths {
   COMPARE_FILE=$2
 
   # Strip off any initial src
-  FILE_TO_CHECK=$(echo "${FILE_TO_CHECK}" | sed s/src//)
-  COMPARE_FILE=$(echo "${COMPARE_FILE}" | sed s/src//)
+  #FILE_TO_CHECK=$(echo "${FILE_TO_CHECK}" | sed "s/src//")
+  #COMPARE_FILE=$(echo "${COMPARE_FILE}" | sed "s/src//")
 
   if [ "${verbose}" == "1" ]; then
     echo "Comparing ${FILE_TO_CHECK} to ${COMPARE_FILE}..."
