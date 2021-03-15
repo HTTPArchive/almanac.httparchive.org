@@ -9,10 +9,17 @@
 name: Lint Code Base
 on:
   - workflow_dispatch
+  - push
   - pull_request
 jobs:
   lint:
     name: Lint Code Base
+    # Skip duplicate job for local branches
+    # except for linter upgrades (so it can be caught by below check to lint all)
+    if: |
+        github.event_name == 'push' ||
+        github.event.pull_request.head.repo.full_name != github.repository ||
+        startsWith(github.event.pull_request.title,'Bump github/super-linter')
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout Code
