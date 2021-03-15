@@ -199,7 +199,8 @@ C'è qualche differenza nei tipi di contenuto serviti su HTTP/2 o gQUIC? La Figu
 
 {{ figure_markup(
   image="http2-third-party-http2-usage-by-content-type.png",
-  caption="Un grafico a barre che confronta la frazione di richieste HTTP/2 di terze parti in base al tipo di contenuto. Tutte le richieste di terze parti vengono servite su HTTP/2 o gQUIC per il 90% di audio e font, l'80% di css e video, il 70% di html, immagini e testo e il 60% di script.",
+  caption="La frazione di richieste HTTP/2 o gQUIC di terze parti note per tipo di contenuto per sito web.",
+  description="Un grafico a barre che confronta la frazione di richieste HTTP/2 di terze parti in base al tipo di contenuto. Tutte le richieste di terze parti vengono servite su HTTP/2 o gQUIC per il 90% di audio e font, l'80% di css e video, il 70% di html, immagini e testo e il 60% di script.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=1264128523&format=interactive",
   sheets_gid="419557288",
   sql_file="http2_1st_party_vs_3rd_party_by_type.sql"
@@ -211,7 +212,7 @@ Annunci, analisi, risorse della rete di distribuzione dei contenuti (CDN) e <i l
 {{ figure_markup(
   image="http2-third-party-http2-usage-by-category.png",
   caption="La frazione di richieste HTTP/2 o gQUIC di terze parti note per categoria e per sito web.",
-  description="Un grafico a barre che confronta la frazione di richieste HTTP/2 o gQUIC di terze parti per categoria. Tutte le richieste di terze parti per tutti i siti Web vengono servite tramite HTTP/2 o gQUIC per il 95% dei <i lang="en">tag-manager</i>, il 90% di analisi e CDN, l'80% di annunci, social, hosting e utilità, il 40% del marketing e il 30% dei <i lang="en">customer-success</i>.",
+  description='Un grafico a barre che confronta la frazione di richieste HTTP/2 o gQUIC di terze parti per categoria. Tutte le richieste di terze parti per tutti i siti Web vengono servite tramite HTTP/2 o gQUIC per il 95% dei <i lang="en">tag-manager</i>, il 90% di analisi e CDN, l'80% di annunci, social, hosting e utilità, il 40% del marketing e il 30% dei <i lang="en">customer-success</i>.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=1419102835&format=interactive",
   sheets_gid="1059610651",
   sql_file="http2_3rd_party_by_types.sql"
@@ -462,7 +463,6 @@ Come si può vedere dalla Figura 20.17 di seguito, una percentuale molto piccola
 
 Analizzando ulteriormente le distribuzioni per le risorse trasferite nelle Figure 22.18 e 22.19, metà dei siti invia 4 o meno risorse con una dimensione totale di 140 KB su desktop e 3 o meno risorse con una dimensione di 184 KB su dispositivi mobili. Per gQUIC, il desktop è 7 o meno e il dispositivo mobile 2. La pagina più offensiva invia _41 asset_ su gQUIC sul desktop.
 
-
 <figure>
   <table>
     <thead>
@@ -633,7 +633,7 @@ Ora potresti chiederti: se non tutti usano già HTTP/2, perché avremmo bisogno 
 
 ### QUIC e HTTP/3
 
-I tentativi passati di implementare nuovi protocolli di trasporto su Internet si sono rivelati difficili, ad esempio [Stream Control Transmission Protocol](https://en.wikipedia.org/wiki/Stream_Control_Transmission_Protocol) (SCTP). QUIC è un nuovo protocollo di trasporto che viene eseguito su UDP. Fornisce funzionalità simili a TCP, come la consegna in ordine affidabile e il controllo della congestione per prevenire l'inondazione della rete.
+I tentativi passati di implementare nuovi protocolli di trasporto su Internet si sono rivelati difficili, ad esempio [Stream Control Transmission Protocol](https://it.wikipedia.org/wiki/Stream_Control_Transmission_Protocol) (SCTP). QUIC è un nuovo protocollo di trasporto che viene eseguito su UDP. Fornisce funzionalità simili a TCP, come la consegna in ordine affidabile e il controllo della congestione per prevenire l'inondazione della rete.
 
 Come discusso nella sezione [Da HTTP/1.0 a HTTP/2](#http10-to-http2), HTTP/2 _multiplex_ più flussi diversi su una connessione. Il TCP stesso è tristemente inconsapevole di questo fatto, portando a inefficienze o un impatto sulle prestazioni quando si verificano perdite di pacchetti o ritardi. Maggiori dettagli su questo problema, noto come _head-of-line blocking_ (blocco HOL), <a hreflang="en" href="https://github.com/rmarx/holblocking-blogpost">possono essere trovati qui</a>.
 
