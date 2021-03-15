@@ -77,6 +77,10 @@ function compare_file_lengths {
   FILE_TO_CHECK=$1
   COMPARE_FILE=$2
 
+  # Strip off any initial src
+  FILE_TO_CHECK=$(echo "${FILE_TO_CHECK}" | sed s/src//)
+  COMPARE_FILE=$(echo "${COMPARE_FILE}" | sed s/src//)
+
   if [ "${verbose}" == "1" ]; then
     echo "Comparing ${FILE_TO_CHECK} to ${COMPARE_FILE}..."
   fi
@@ -122,7 +126,7 @@ do
       # (local files will already be covered).
       # Disable some shellcheck checks as this is easiest way and it's safe
       # shellcheck disable=SC2010,SC2086
-      TRANSLATION_FILES=$(cd "$BASE_FOLDER" || exit; ls ${TRANSLATION_FILE_PATTERN} | grep -v "/en/" | grep -v "/base/" | sort -u)
+      TRANSLATION_FILES=$(cd "${BASE_FOLDER}" || exit; ls ${TRANSLATION_FILE_PATTERN} | grep -v "/en/" | grep -v "/base/" | sort -u)
 
       echo "BARRY: $TRANSLATION_FILES"
 
