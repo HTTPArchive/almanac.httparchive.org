@@ -212,7 +212,7 @@ Annunci, analisi, risorse della rete di distribuzione dei contenuti (CDN) e <i l
 {{ figure_markup(
   image="http2-third-party-http2-usage-by-category.png",
   caption="La frazione di richieste HTTP/2 o gQUIC di terze parti note per categoria e per sito web.",
-  description='Un grafico a barre che confronta la frazione di richieste HTTP/2 o gQUIC di terze parti per categoria. Tutte le richieste di terze parti per tutti i siti Web vengono servite tramite HTTP/2 o gQUIC per il 95% dei <i lang="en">tag-manager</i>, il 90% di analisi e CDN, l'80% di annunci, social, hosting e utilità, il 40% del marketing e il 30% dei <i lang="en">customer-success</i>.',
+  description='Un grafico a barre che confronta la frazione di richieste HTTP/2 o gQUIC di terze parti per categoria. Tutte le richieste di terze parti per tutti i siti Web vengono servite tramite HTTP/2 o gQUIC per il 95% dei <i lang="en">tag-manager</i>, il 90% di analisi e CDN, l\'80% di annunci, social, hosting e utilità, il 40% del marketing e il 30% dei <i lang="en">customer-success</i>.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=1419102835&format=interactive",
   sheets_gid="1059610651",
   sql_file="http2_3rd_party_by_types.sql"
