@@ -36,6 +36,7 @@
 {% block styles %}
 {{ super() }}
 <link rel="stylesheet" href="{{ get_versioned_filename('/static/css/page.css') }}">
+<link rel="preload" href="{{ get_versioned_filename('/static/css/page.css') }}" as="style">
 {% endblock %}
 
 {# Don't need year switcher for this template so blank it out #}
