@@ -73,6 +73,7 @@
 
     {% block bodyend %}
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-22381566-3"></script>
+    <link rel="preconnect" href="https://www.google-analytics.com">
     <script nonce="{{ csp_nonce() }}">
         window.dataLayer = window.dataLayer || [];
         function gtag() {
