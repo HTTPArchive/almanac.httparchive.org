@@ -23,14 +23,8 @@
                 {% endif %}
             </h1>
 
-            <!-- Show large image for large screens and high density screens and use webp when supported -->
+            <!-- Only use JPG for Ebook as not sure on support for other formats in PDFs -->
             <picture>
-                <source media="(min-width: 327px)" type="image/webp" srcset="{{ chapter_hero_dir }}hero_lg.webp" />
-                <source media="(min-width: 327px)" type="image/jpeg" srcset="{{ chapter_hero_dir }}hero_lg.jpg" />
-                <source type="image/webp" srcset="{{ chapter_hero_dir }}hero_lg.webp 2x" />
-                <source type="image/jpeg" srcset="{{ chapter_hero_dir }}hero_lg.jpg 2x" />
-                <source type="image/webp" srcset="{{ chapter_hero_dir }}hero_sm.webp" />
-                <source type="image/jpeg" srcset="{{ chapter_hero_dir }}hero_sm.jpg" />
                 <img src="{{ chapter_hero_dir }}hero_lg.jpg" class="content-banner" alt="" width="866" height="433" />
             </picture>
 
