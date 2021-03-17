@@ -63,6 +63,7 @@ Il existe <a hreflang="en" href="https://www.w3.org/TR/css-color-4/#named-colors
 }}
 
 La langue impacte également la couleur. Il y a plus d’exemples du «`gray`» américain que du «`grey`» britannique. Presque toutes les instances de <a hreflang="en" href="https://www.rapidtables.com/web/color/gray-color.html">couleurs grises</a> («`gray`», «`lightgray`», «`darkgray`», «`slategray`», etc.) avaient presque le double de l’utilisation en étant orthographiées avec un «a» au lieu d’un «e». Si les «`gray`»/«`grey`» étaient combinés, ils se classeraient plus haut que le bleu, en quatrième place. Cela pourrait expliquer pourquoi «`silver`» est mieux classé que «`grey`» avec un «e» dans les graphiques&nbsp;!
+
 ### Nombre de couleurs
 
 Combien de différentes couleurs de polices sont utilisées sur le Web&nbsp;? Ce n’est donc pas le nombre total de couleurs uniques&nbsp;; c’est plutôt le nombre de couleurs différentes utilisées uniquement pour le texte. Les chiffres de ce graphique sont assez élevés et, par expérience, nous savons que sans les variables CSS, l’espacement, les tailles et les couleurs peuvent rapidement vous échapper et se fragmenter en de nombreuses valeurs minuscules dans vos styles. Ces chiffres reflètent une difficulté de gestion du style, et nous espérons que cela vous aidera à créer une perspective à rapporter à vos équipes ou projets. Comment pouvez-vous réduire ce nombre à un montant gérable et raisonnable&nbsp;?

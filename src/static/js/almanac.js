@@ -653,7 +653,7 @@ function addKeyboardScollableRegions() {
 
 }
 
-function addPrevNextEventListers() {
+function addShortKeyEventListers() {
   document.addEventListener("keyup", function onPress(event) {
     if (event.key === 'p' || event.key === 'P' || event.key === ',' || event.key === '<') {
       var previous = document.getElementById('previous-chapter');
@@ -666,6 +666,11 @@ function addPrevNextEventListers() {
       if (next) {
         next.click();
       }
+    }
+    if (event.key === 'd' || event.key === 'D') {
+      var next = document.querySelectorAll('.fig-description-button').forEach(descButton => {
+        descButton.click();
+      });
     }
   });
 }
@@ -707,4 +712,4 @@ removeLazyLoadingOnPrint();
 upgradeInteractiveFigures();
 addKeyboardScollableRegions();
 setDiscussionCount();
-addPrevNextEventListers();
+addShortKeyEventListers();

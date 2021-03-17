@@ -780,3 +780,12 @@
   <rect x="0" y="0" width="10" height="15" stroke="black" fill="{{ color }}" stroke-width="1" />
 </svg>
 {% endmacro %}
+
+{% block bodyend %}
+{{ super() }}
+{% if request.path.endswith("/" + year + "/") or request.path.endswith("table-of-contents") or request.path.endswith("contributors") %}
+<!-- Let's assume you're going to visit one of the chapters and prefetch the page.css stylesheet -->
+<!-- A small optimisation but hey, every little helps! -->
+<link rel="prefetch" href="{{ get_versioned_filename('/static/css/page.css') }}" as="style" />
+{% endif %}
+{% endblock %}
