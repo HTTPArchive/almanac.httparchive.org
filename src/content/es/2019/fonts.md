@@ -209,7 +209,9 @@ Como se mencionó anteriormente, una manera súper fácil de acelerar las solici
 
 De hecho, si está usando Google Fonts, continúe y agregue esto a su `<head>` si aún no está allí:
 
-```<link rel="preconnect" href="https://fonts.gstatic.com/">```
+```html
+<link rel="preconnect" href="https://fonts.gstatic.com/">
+```
 
 ### Tipos de letra más populares
 
@@ -371,6 +373,7 @@ Profundicemos un poco más y veamos los valores `format()` usados en la propieda
 
 {{ figure_markup(
   image="fig8.png",
+  alt="Popularidad de los formatos de fuente en las declaraciones @font-face.",
   caption="Popularidad de los formatos de fuente en las declaraciones <code>@font-face</code>.",
   description="Gráfico de barras que muestra la popularidad de los formatos utilizados en las declaraciones de fuentes. El 69% de las declaraciones @font-face de las páginas de escritorio especifican el formato WOFF2, 11% WOFF, 10% TrueType, 8% SVG, 2% EOT y menos del 1% OpenType, TTF y OTF. La distribución de las páginas móviles es similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=700778025&format=interactive"

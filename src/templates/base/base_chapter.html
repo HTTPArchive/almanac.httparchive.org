@@ -277,14 +277,14 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
                 <span class="chapter-unedited">{{ self.unedited() }}</span>
                 {% endif %}
             </h1>
-            <!-- Show large image for large screens and high density screens and use webp when supported -->
+            <!-- Show large image for large screens and high density screens and use avif and webp when supported -->
             <picture>
-              <source media="(min-width: 327px)" type="image/webp" srcset="{{ chapter_hero_dir }}hero_lg.webp" />
-              <source media="(min-width: 327px)" type="image/jpeg" srcset="{{ chapter_hero_dir }}hero_lg.jpg" />
-              <source type="image/webp" srcset="{{ chapter_hero_dir }}hero_lg.webp 2x" />
-              <source type="image/jpeg" srcset="{{ chapter_hero_dir }}hero_lg.jpg 2x" />
-              <source type="image/webp" srcset="{{ chapter_hero_dir }}hero_sm.webp" />
-              <source type="image/jpeg" srcset="{{ chapter_hero_dir }}hero_sm.jpg" />
+              <source media="(min-width: 866px)" type="image/avif" srcset="{{ chapter_hero_dir }}hero_lg.avif" />
+              <source media="(min-width: 866px)" type="image/webp" srcset="{{ chapter_hero_dir }}hero_lg.webp" />
+              <source media="(min-width: 866px)" type="image/jpeg" srcset="{{ chapter_hero_dir }}hero_lg.jpg" />
+              <source type="image/avif" srcset="{{ chapter_hero_dir }}hero_sm.avif 1x, {{ chapter_hero_dir }}hero_lg.avif 2x" />
+              <source type="image/webp" srcset="{{ chapter_hero_dir }}hero_sm.webp 1x, {{ chapter_hero_dir }}hero_lg.webp 2x" />
+              <source type="image/jpeg" srcset="{{ chapter_hero_dir }}hero_sm.jpg 1x, {{ chapter_hero_dir }}hero_lg.jpg 2x" />
               <img src="{{ chapter_hero_dir }}hero_lg.jpg" class="content-banner" alt="" width="866" height="433" loading="eager" />
             </picture>
             {{ render_byline() }}
