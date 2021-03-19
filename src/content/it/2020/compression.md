@@ -256,7 +256,7 @@ Poiché [HTTP Archive esegue gli audit Lighthouse](./methodology#lighthouse) per
 {{ figure_markup(
   image="text-compression-lighthouse-scores.png",
   caption="Compressione del testo punteggi Lighthouse.",
-  description='Grafico a barre in pila che suddivide i punteggi ricevuti dalle pagine per l'audit Lighthouse "enable text compression". Mostra che il 7% dei siti ha un punteggio inferiore al 10%, il 6% dei siti ha un punteggio compreso tra il 10 e il 39%, il 10% dei siti ha un punteggio compreso tra il 40 e il 79%, il 3% dei siti ha un punteggio compreso tra l'80 e il 99% e il 74% dei siti è passato con oltre il 100% delle risorse di testo compresse.',
+  description='Grafico a barre in pila che suddivide i punteggi ricevuti dalle pagine per l\'audit Lighthouse "enable text compression". Mostra che il 7% dei siti ha un punteggio inferiore al 10%, il 6% dei siti ha un punteggio compreso tra il 10 e il 39%, il 10% dei siti ha un punteggio compreso tra il 40 e il 79%, il 3% dei siti ha un punteggio compreso tra l\'80 e il 99% e il 74% dei siti è passato con oltre il 100% delle risorse di testo compresse.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxUj8-0vKTqPAblIXqekSbiRh1D1lEuA3gVD9w23qwGPtJRE8FbgrURfPAgfFZX2l0t84Wy5ZAGqzR/pubchart?oid=1438276663&format=interactive",
   sheets_gid="1284073179",
   sql_file="19_04.distribution_of_text_compression_lighthouse.sql"
