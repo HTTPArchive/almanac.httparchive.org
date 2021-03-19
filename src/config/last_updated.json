@@ -625,6 +625,11 @@
     "date_modified": "2021-01-13T00:00:00.000Z",
     "hash": "7bb1ad410889d7750f75cf5ec98d1cf8"
   },
+  "it/2020/chapters/compression.html": {
+    "date_published": "2021-03-19T00:00:00.000Z",
+    "date_modified": "2021-03-19T00:00:00.000Z",
+    "hash": "3c48a5244f47b76c8c5484017c853d3b"
+  },
   "it/2020/chapters/css.html": {
     "date_published": "2021-03-12T00:00:00.000Z",
     "date_modified": "2021-03-12T00:00:00.000Z",
@@ -834,6 +839,11 @@
     "date_published": "2021-02-20T00:00:00.000Z",
     "date_modified": "2021-03-02T00:00:00.000Z",
     "hash": "473e738ce67998f17c2cff03e562d90a"
+  },
+  "ja/2020/chapters/pwa.html": {
+    "date_published": "2021-03-19T00:00:00.000Z",
+    "date_modified": "2021-03-19T00:00:00.000Z",
+    "hash": "a671d8498f928207b6ae4911fb8f221b"
   },
   "ja/2020/chapters/security.html": {
     "date_published": "2021-02-28T00:00:00.000Z",
