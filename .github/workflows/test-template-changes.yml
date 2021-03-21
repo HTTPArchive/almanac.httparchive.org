@@ -38,10 +38,10 @@ jobs:
         node-version:  '12'
     - name: Upgrade npm
       run: |
-        which --all npm
+        which -a npm
         cd src
         npm i npm@latest
-        which --all npm
+        which -a npm
     - name: Test Template Changes
       run: ./src/tools/scripts/test_template_changes.sh
     - name: 'Comment PR'
