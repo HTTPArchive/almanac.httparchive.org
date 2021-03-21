@@ -35,13 +35,7 @@ jobs:
     - name: Setup Node.js for use with actions
       uses: actions/setup-node@v2.1.5
       with:
-        node-version:  '12'
-    - name: Upgrade npm
-      run: |
-        which -a npm
-        cd src
-        npm i npm@latest
-        which -a npm
+        node-version:  '15'
     - name: Test Template Changes
       run: ./src/tools/scripts/test_template_changes.sh
     - name: 'Comment PR'
