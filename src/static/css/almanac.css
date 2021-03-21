@@ -1423,6 +1423,8 @@ th code {
   border-radius: 0;
   background-color: transparent;
   background-color: unset;
+  word-break: unset;
+  overflow-wrap: unset;
 }
 
 code {
@@ -1432,11 +1434,6 @@ code {
   padding: 1px 2px;
   word-break: break-all;
   overflow-wrap: break-word;
-}
-
-pre code {
-  word-break: unset;
-  overflow-wrap: unset;
 }
 
 pre .comment {
