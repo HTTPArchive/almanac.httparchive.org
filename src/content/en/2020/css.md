@@ -706,7 +706,7 @@ Compatibility, right? You don't want things to break? No. In the stylesheets we 
     <thead>
       <tr>
         <th scope="col" colspan="2">sRGB</th>
-        <th scope="col"><code>display-p3</code></th>
+        <th scope="col">display-p3</th>
         <th scope="col">ΔE2000</th>
         <th scope="col" class="no-wrap">In gamut</th>
       </tr>
@@ -715,189 +715,189 @@ Compatibility, right? You don't want things to break? No. In the stylesheets we 
       <tr>
         <td><code>rgba(255,205,63,1)</code></td>
         <td>{{ swatch('rgba(255, 205, 63, 1)') }}</td>
-        <td>color(display-p3 1 0.80 0.25 / 1)</td>
+        <td><code>color(display 1 0.80 0.25 / 1)</code></td>
         <td class="numeric">3.880</td>
         <td>false</td>
       </tr>
       <tr>
         <td><code>rgba(120,0,255,1)</code></td>
         <td>{{ swatch('rgba(120, 0, 255, 1)') }}</td>
-        <td>color(display-p3 0.47 0 1 / 1)</td>
+        <td><code>color(display 0.47 0 1 / 1)</code></td>
         <td class="numeric">1.933</td>
         <td>false</td>
       </tr>
       <tr>
         <td><code>rgba(121,127,132,1)</code></td>
         <td>{{ swatch('rgba(121, 127, 132, 1)') }}</td>
-        <td>color(display-p3 0.48 0.50 0.52 / 1)</td>
+        <td><code class="no-wrap">color(display 0.48 0.50 0.52 / 1)</code></td>
         <td class="numeric">0.391</td>
         <td>true</td>
       </tr>
       <tr>
         <td><code>rgba(200,200,200,1)</code></td>
         <td>{{ swatch('rgba(200, 200, 200, 1)') }}</td>
-        <td>color(display-p3 0.78 0.78 0.78 / 1)</td>
+        <td><code>color(display 0.78 0.78 0.78 / 1)</code></td>
         <td class="numeric">0.274</td>
         <td>true</td>
       </tr>
       <tr>
         <td><code>rgba(97,97,99,1)</code></td>
         <td>{{ swatch('rgba(97, 97, 99, 1)') }}</td>
-        <td>color(display-p3 0.39 0.39 0.39 / 1)</td>
+        <td><code>color(display 0.39 0.39 0.39 / 1)</code></td>
         <td class="numeric">1.474</td>
         <td>true</td>
       </tr>
       <tr>
         <td><code>rgba(0,0,0,1)</code></td>
         <td>{{ swatch('rgba(0, 0, 0, 1)') }}</td>
-        <td>color(display-p3 0 0 0 / 1)</td>
+        <td><code>color(display 0 0 0 / 1)</code></td>
         <td class="numeric">0.000</td>
         <td>true</td>
       </tr>
       <tr>
         <td><code>rgba(255,255,255,1)</code></td>
         <td>{{ swatch('rgba(255, 255, 255, 1)') }}</td>
-        <td>color(display-p3 1 1 1 / 1)</td>
+        <td><code>color(display 1 1 1 / 1)</code></td>
         <td class="numeric">0.015</td>
         <td>false</td>
       </tr>
       <tr>
         <td><code>rgba(84,64,135,1)</code></td>
         <td>{{ swatch('rgba(84, 64, 135, 1)') }}</td>
-        <td>color(display-p3 0.33 0.25 0.53 / 1)</td>
+        <td><code>color(display 0.33 0.25 0.53 / 1)</code></td>
         <td class="numeric">1.326</td>
         <td>true</td>
       </tr>
       <tr>
         <td><code>rgba(131,103,201,1)</code></td>
         <td>{{ swatch('rgba(131, 103, 201, 1)') }}</td>
-        <td>color(display-p3 0.51 0.40 0.78 / 1)</td>
+        <td><code>color(display 0.51 0.40 0.78 / 1)</code></td>
         <td class="numeric">1.348</td>
         <td>true</td>
       </tr>
       <tr>
         <td><code>rgba(68,185,208,1)</code></td>
         <td>{{ swatch('rgba(68, 185, 208, 1)') }}</td>
-        <td>color(display-p3 0.27 0.75 0.82 / 1)</td>
+        <td><code>color(display 0.27 0.75 0.82 / 1)</code></td>
         <td class="numeric">5.591</td>
         <td>false</td>
       </tr>
       <tr>
         <td><code>rgb(255,0,72)</code></td>
         <td>{{ swatch('rgb(255, 0, 72)') }}</td>
-        <td>color(display-p3 1 0 0.2823 / 1)</td>
+        <td><code>color(display 1 0 0.2823 / 1)</code></td>
         <td class="numeric">3.529</td>
         <td>false</td>
       </tr>
       <tr>
         <td><code>rgba(255,205,63,1)</code></td>
         <td>{{ swatch('rgba(255, 205, 63, 1)') }}</td>
-        <td>color(display-p3 1 0.80 0.25 / 1)</td>
+        <td><code>color(display 1 0.80 0.25 / 1)</code></td>
         <td class="numeric">3.880</td>
         <td>false</td>
       </tr>
       <tr>
         <td><code>rgba(241,174,50,1)</code></td>
         <td>{{ swatch('rgba(241, 174, 50, 1)') }}</td>
-        <td>color(display-p3 0.95 0.68 0.17 / 1)</td>
+        <td><code>color(display 0.95 0.68 0.17 / 1)</code></td>
         <td class="numeric">4.701</td>
         <td>false</td>
       </tr>
       <tr>
         <td><code>rgba(245,181,40,1)</code></td>
         <td>{{ swatch('rgba(245, 181, 40, 1)') }}</td>
-        <td>color(display-p3 0.96 0.71 0.16 / 1)</td>
+        <td><code>color(display 0.96 0.71 0.16 / 1)</code></td>
         <td class="numeric">4.218</td>
         <td>false</td>
       </tr>
       <tr>
         <td><code>rgb(147, 83, 255)</code></td>
         <td>{{ swatch('rgb(147, 83, 255)') }}</td>
-        <td>color(display-p3 0.58 0.33 1 / 1)</td>
+        <td><code>color(display 0.58 0.33 1 / 1)</code></td>
         <td class="numeric">2.143</td>
         <td>false</td>
       </tr>
       <tr>
         <td><code>rgba(75,3,161,1)</code></td>
         <td>{{ swatch('rgba(75, 3, 161, 1)') }}</td>
-        <td>color(display-p3 0.29 0.01 0.63 / 1)</td>
+        <td><code>color(display 0.29 0.01 0.63 / 1)</code></td>
         <td class="numeric">1.321</td>
         <td>false</td>
       </tr>
       <tr>
         <td><code>rgba(255,0,0,0.85)</code></td>
         <td>{{ swatch('rgba(255, 0, 0, 0.85)') }}</td>
-        <td>color(display-p3 1 0 0 / 0.85)</td>
+        <td><code>color(display 1 0 0 / 0.85)</code></td>
         <td class="numeric">7.115</td>
         <td>false</td>
       </tr>
       <tr>
         <td><code>rgba(84,64,135,1)</code></td>
         <td>{{ swatch('rgba(84, 64, 135, 1)') }}</td>
-        <td>color(display-p3 0.33 0.25 0.53 / 1)</td>
+        <td><code>color(display 0.33 0.25 0.53 / 1)</code></td>
         <td class="numeric">1.326</td>
         <td>true</td>
       </tr>
       <tr>
         <td><code>rgba(131,103,201,1)</code></td>
         <td>{{ swatch('rgba(131, 103, 201, 1)') }}</td>
-        <td>color(display-p3 0.51 0.40 0.78 / 1)</td>
+        <td><code>color(display 0.51 0.40 0.78 / 1)</code></td>
         <td class="numeric">1.348</td>
         <td>true</td>
       </tr>
       <tr>
         <td><code>rgba(68,185,208,1)</code></td>
         <td>{{ swatch('rgba(68, 185, 208, 1)') }}</td>
-        <td>color(display-p3 0.27 0.75 0.82 / 1)</td>
+        <td><code>color(display 0.27 0.75 0.82 / 1)</code></td>
         <td class="numeric">5.591</td>
         <td>false</td>
       </tr>
       <tr>
         <td><code>#6d3bff</code></td>
         <td>{{ swatch('#6d3bff') }}</td>
-        <td>color(display-p3 .427 .231 1)</td>
+        <td><code>color(display .427 .231 1)</code></td>
         <td class="numeric">1.584</td>
         <td>false</td>
       </tr>
       <tr>
         <td><code>#03d658</code></td>
         <td>{{ swatch('#03d658') }}</td>
-        <td>color(display-p3 .012 .839 .345)</td>
+        <td><code>color(display .012 .839 .345)</code></td>
         <td class="numeric">4.958</td>
         <td>false</td>
       </tr>
       <tr>
         <td><code>#ff3900</code></td>
         <td>{{ swatch('#ff3900') }}</td>
-        <td>color(display-p3 1 .224 0)</td>
+        <td><code>color(display 1 .224 0)</code></td>
         <td class="numeric">7.140</td>
         <td>false</td>
       </tr>
       <tr>
         <td><code>#7cf8b3</code></td>
         <td>{{ swatch('#7cf8b3') }}</td>
-        <td>color(display-p3 .486 .973 .702)</td>
+        <td><code>color(display .486 .973 .702)</code></td>
         <td class="numeric">4.284</td>
         <td>true</td>
       </tr>
       <tr>
         <td><code>#f8f8f8</code></td>
         <td>{{ swatch('#f8f8f8') }}</td>
-        <td>color(display-p3 .973 .973 .973)</td>
+        <td><code>color(display .973 .973 .973)</code></td>
         <td class="numeric">0.028</td>
         <td>true</td>
       </tr>
       <tr>
         <td><code>#e3f5fd</code></td>
         <td>{{ swatch('#e3f5fd') }}</td>
-        <td>color(display-p3 .875 .945 .976)</td>
+        <td><code>color(display .875 .945 .976)</code></td>
         <td class="numeric">1.918</td>
         <td>true</td>
       </tr>
       <tr>
         <td><code>#e74832</code></td>
         <td>{{ swatch('#e74832') }}</td>
-        <td>color( display-p3 .905882353 .282352941 .196078431 / 1 )</td>
+        <td><code>color(display .905882353 .282352941 .196078431 / 1 )</code></td>
         <td class="numeric">3.681</td>
         <td>true</td>
       </tr>
