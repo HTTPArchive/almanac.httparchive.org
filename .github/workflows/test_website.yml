@@ -23,7 +23,7 @@ jobs:
     - name: Setup Node.js for use with actions
       uses: actions/setup-node@v2.1.5
       with:
-        node-version:  '12'
+        node-version:  '15'
     - name: Set up Python 3.8
       uses: actions/setup-python@v2.2.1
       with:
@@ -35,8 +35,10 @@ jobs:
     - name: Use more complete checks for generated HTML linting
       run: cp -f .github/linters/.htmlhintrc_morechecks .github/linters/.htmlhintrc
     - name: Lint Generated HTML
-      #uses: docker://github/super-linter:v3.15.3
-      uses: github/super-linter@v3.15.3
+      # Run older version of super-linter to allow linting of generated files
+      # (see https://github.com/github/super-linter/issues/1289)
+      uses: docker://github/super-linter:v3.14.0
+      #uses: github/super-linter@v3.15.3
       env:
         DEFAULT_BRANCH: main
         FILTER_REGEX_INCLUDE: src/static/html/.*

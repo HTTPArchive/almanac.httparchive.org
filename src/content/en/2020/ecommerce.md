@@ -13,7 +13,7 @@ discuss: 2052
 results: https://docs.google.com/spreadsheets/d/1Hvsh_ZBKg2vWhouJ8vIzLmp0nLIMzrT2mr6RQbIkxqY/
 featured_quote: Covid-19 massively accelerated the growth of ecommerce in 2020 and lot of smaller players had to establish online presence quickly and had to find ways to continue trading during lockdowns. Platforms like WooCommerce / Shopify / Wix / BigCommerce played very important role in bringing more and more small businesses online. Covid-19 also saw launch of D2C (direct to consumer) offerings by brand and this is expected to increase in future.
 featured_stat_1: 21.27%
-featured_stat_label_1: Mobile sizes identified as ecommerce sites
+featured_stat_label_1: Mobile sites identified as ecommerce sites
 featured_stat_2: 5.19%
 featured_stat_label_2: Sites using WooCommerce the most popular ecommerce platform
 featured_stat_3: 30
@@ -102,7 +102,7 @@ Lastly, Oracle Commerce Cloud unfortunately lost a bit of traction between 2019 
 {{ figure_markup(
   image="enterprise-ecommerce-platforms-2019.png",
   caption="Enterprise ecommerce platforms - 2019 desktop",
-  description="A pie chart showing Salesforce Commerce Cloud was used by 33.2% of the enterprise ecommerce market in 2019, HCL WebSphere Commerce by 28.4%, SAP Commerce Cloud by 24.8%, and Oracle Commerce Cloud by 13.7%. ",
+  description="A pie chart showing Salesforce Commerce Cloud was used by 33.2% of the enterprise ecommerce market in 2019, HCL WebSphere Commerce by 28.4%, SAP Commerce Cloud by 24.8%, and Oracle Commerce Cloud by 13.7%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=1864431795&format=interactive",
   sheets_gid="1789086753",
   sql_file="top_vendors.sql"
@@ -250,7 +250,7 @@ This year, in Chrome 85 (released in August 2020), we also saw support for AVIF 
 
 As per the author's experience, there is a lack of awareness in engineering teams about image optimization services offered by CDNs where CDNs can do most of the heavy lifting without touching any code. For example, Adobe Scene7 offers this under their <a hreflang="en" href="https://helpx.adobe.com/uk/experience-manager/6-3/assets/using/imaging-faq.html">Smart Imaging solution</a>. Clients on Salesforce Commerce Cloud using the platform's embedded CDN capability (which uses Cloudflare) can enable this with a simple toggle. By increasing the awareness of such solutions, we can try to move the needle in favor of more efficient formats.
 
-Another point for readers who are interested in improving CRUX metrics with images sizes/formats, currently progressive images provides no weightage towards Largest Contentful Paint despite being helpful for user-perceived performance. There is a fascinating <a hreflang="en" href="https://github.com/WICG/largest-contentful-paint/issues/68">discussion</a> in the community on this topic and in future it is possible that progressive images will contribute towards LCP. There may be renewed interest in the ecommerce community towards formats supporting progressive loading due to this and inclusion of Core Web Vitals in Page Experience signals from May 2021.
+Another point for readers who are interested in improving CRUX metrics with images sizes/formats, currently progressive images provides no weightage towards Largest Contentful Paint despite being helpful for user-perceived performance. There is a fascinating <a hreflang="en" href="https://github.com/WICG/largest-contentful-paint/issues/68">discussion</a> in the community on this topic and in the future it is possible that progressive images will contribute towards LCP. There may be renewed interest in the ecommerce community towards formats supporting progressive loading due to this and inclusion of Core Web Vitals in Page Experience signals from May 2021.
 
 ### Third-party requests and bytes
 
@@ -274,7 +274,7 @@ Ecommerce platforms and sites often make use of [third-party](./third-party) con
   sql_file="pct_3pusage_bydevice.sql"
 ) }}
 
-We see a significant increase in the use of third-party requests and bytes [compared to last year's third-party data](../2019/ecommerce#third-party-requests-and-bytes), but have been unable to identify any particularly causes or any notable change in detection. We'd love to hear <a hreflang="en" href="https://discuss.httparchive.org/t/2052">readers opinions</a> on this as third-party usage seems to have basically doubled in the last year!
+We see a significant increase in the use of third-party requests and bytes [compared to last year's third-party data](../2019/ecommerce#third-party-requests-and-bytes), but have been unable to identify any particular cause or notable change in detection. We'd love to hear <a hreflang="en" href="https://discuss.httparchive.org/t/2052">readers opinions</a> on this as third-party usage seems to have basically doubled in the last year!
 
 ## Ecommerce user experience
 
@@ -505,6 +505,6 @@ Wappalyzer also provides detection of payment solutions (Apple Pay / PayPal / Sh
 
 Covid-19 massively accelerated the growth of ecommerce in 2020 and lot of smaller players had to establish online presence quickly and had to find ways to continue trading during lockdowns. Platforms like WooCommerce/Shopify/Wix/BigCommerce played very important role in bringing more and more small businesses online. Covid-19 also saw launch of D2C (direct to consumer) offerings by brand and this is expected to increase in future. Full impact of Covid-19 may not be visible in this year's Web Almanac as these new businesses need to cross certain traffic threshold first in order to become part of CRUX dataset which we use for our analysis. Due to this reason, we may see continued growth in next year's analysis as well.
 
-Improving core web vitals score will be a priority for ecommerce businesses due to changes announced by Google and marketing teams using Web Push Notifications should keep an eye on their notifications stats using CRUX to not get caught by upcoming abusing notifications changes. Tag Managers still seem to cause lot of friction between marketing and engineering teams and solutions like Google Tag Manager server side tagging will make some inroads but we don't expect a lot to change in 2021 and this will be more like 3-5 years journey but community need to ask their respective third parties to provide compatible solutions to further evolve this ecosystem.
+Improving core web vitals score will be a priority for ecommerce businesses due to changes announced by Google and marketing teams using Web Push Notifications should keep an eye on their notifications stats using CRUX to not get caught by upcoming abusing notifications changes. Tag Managers still seem to cause a lot of friction between marketing and engineering teams and solutions like Google Tag Manager server side tagging will make some inroads but we don't expect a lot to change in 2021 and this will be more like 3-5 years journey but community need to ask their respective third parties to provide compatible solutions to further evolve this ecosystem.
 
 While remembering the limitation that we are looking only homepage data for this analysis, we would like to hear from community what else we should cover in next year's analysis. We have covered some possibilities of further analysis in section above and <a hreflang="en" href="https://discuss.httparchive.org/t/2052">any feedback is greatly appreciated</a>.
