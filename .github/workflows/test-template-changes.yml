@@ -36,6 +36,10 @@ jobs:
       uses: actions/setup-node@v2.1.5
       with:
         node-version:  '12'
+    - name: Upgrade npm
+      run: npm i npm@latest
+    - name: Upgrade npm
+      run: npm i npm@latest
     - name: Test Template Changes
       run: ./src/tools/scripts/test_template_changes.sh
     - name: 'Comment PR'
