@@ -26,8 +26,10 @@ jobs:
         node-version:  '12'
     - name: Upgrade npm
       run: |
+        which --all npm
         cd src
         npm i npm@latest
+        which --all npm
     - name: Set up Python 3.8
       uses: actions/setup-python@v2.2.1
       with:
