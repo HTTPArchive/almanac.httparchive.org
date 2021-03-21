@@ -706,7 +706,7 @@ E ci stiamo ancora perdendo. Nonostante sia stato <a hreflang="en" href="https:/
     <thead>
       <tr>
         <th scope="col" colspan="2">sRGB</th>
-        <th scope="col"><code>display-p3</code></th>
+        <th scope="col">display-p3</th>
         <th scope="col">ΔE2000</th>
         <th scope="col" class="no-wrap">In gamut</th>
       </tr>
