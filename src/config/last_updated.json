@@ -252,8 +252,8 @@
   },
   "en/2020/chapters/ecommerce.html": {
     "date_published": "2020-12-09T00:00:00.000Z",
-    "date_modified": "2021-03-02T00:00:00.000Z",
-    "hash": "aae08d9aed8ff189fe5dfead4325adc8"
+    "date_modified": "2021-03-21T00:00:00.000Z",
+    "hash": "7d4471df4fd91212b0e8f967f38e15f9"
   },
   "en/2020/chapters/fonts.html": {
     "date_published": "2020-12-09T00:00:00.000Z",
@@ -924,6 +924,11 @@
     "date_published": "2021-02-28T00:00:00.000Z",
     "date_modified": "2021-03-12T00:00:00.000Z",
     "hash": "3e07d5618f0e78b8347dc64452421f5b"
+  },
+  "nl/2020/chapters/ecommerce.html": {
+    "date_published": "2021-03-21T00:00:00.000Z",
+    "date_modified": "2021-03-21T00:00:00.000Z",
+    "hash": "3a5783512db509cfeea495d7cb5f53ec"
   },
   "nl/2020/chapters/fonts.html": {
     "date_published": "2021-01-30T00:00:00.000Z",
