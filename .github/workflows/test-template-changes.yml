@@ -35,7 +35,7 @@ jobs:
     - name: Setup Node.js for use with actions
       uses: actions/setup-node@v2.1.5
       with:
-        node-version:  '12'
+        node-version:  '15'
     - name: Test Template Changes
       run: ./src/tools/scripts/test_template_changes.sh
     - name: 'Comment PR'
