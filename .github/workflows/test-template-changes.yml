@@ -37,7 +37,9 @@ jobs:
       with:
         node-version:  '12'
     - name: Upgrade npm
-      run: npm i npm@latest
+      run: |
+        cd src
+        npm i npm@latest
     - name: Upgrade npm
       run: npm i npm@latest
     - name: Test Template Changes
