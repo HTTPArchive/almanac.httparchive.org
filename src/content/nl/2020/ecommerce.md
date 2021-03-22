@@ -30,7 +30,7 @@ Een "e-commerceplatform" is een set van software of services waarmee u een onlin
 
 De analyse van vorig jaar kon alleen sites detecteren die op een e-commerceplatform waren gebouwd. Dit betekent dat de meeste grote online winkels en marktplaatsen, zoals Amazon, JD en eBay of andere e-commercesites die zijn gebouwd met interne platforms (meestal door grotere bedrijven), geen deel uitmaakten van de analyse. Voor de analyse van dit jaar werd deze beperking aangepakt door de detectie van e-commercesites door Wappalyzer te verbeteren. Zie de sectie [Platformdetectie](#platformdetectie) voor meer details.
 
-Also note that the data here is for home pages only: not category, product or other pages. Learn more about our [methodology](./methodology).
+Merk ook op dat de gegevens hier alleen voor startpagina's zijn: niet voor categorie-, product- of andere pagina's. Lees meer over onze [methodologie](./methodology).
 
 ## Platformdetectie
 
