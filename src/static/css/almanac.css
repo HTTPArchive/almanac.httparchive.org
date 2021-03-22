@@ -1228,10 +1228,6 @@ p.copyright a {
   outline: none;
 }
 
-.nav-dropdown-btn:focus-visible {
-  outline: revert;
-}
-
 .nav-dropdown-btn::after,
 .nav-dropdown-list-current::after {
   content: "";
