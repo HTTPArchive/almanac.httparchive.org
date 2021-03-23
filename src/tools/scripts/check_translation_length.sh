@@ -33,7 +33,7 @@ shift "$((OPTIND-1))" # Discard the options and sentinel --
 
 # This script must be run from src directory
 if [ -d "src" ]; then
-  cd src
+  cd src || exit
 fi
 
 FAILED_FILES=0
