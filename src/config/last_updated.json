@@ -1,8 +1,8 @@
 {
   "/static/css/almanac.css": {
     "date_published": "2020-11-13T00:00:00.000Z",
-    "date_modified": "2021-03-21T00:00:00.000Z",
-    "hash": "ffff1d100157f197c3a8b384ee0b8279"
+    "date_modified": "2021-03-24T00:00:00.000Z",
+    "hash": "7dc27d7354c6990b05ad8701c508a136"
   },
   "/static/css/ebook.css": {
     "date_published": "2020-05-15T00:00:00.000Z",
@@ -46,53 +46,53 @@
   },
   "/static/pdfs/web_almanac_2019_en.pdf": {
     "date_published": "2020-05-15T00:00:00.000Z",
-    "date_modified": "2021-03-21T00:00:00.000Z",
-    "hash": "cf7d27e9b274f08ffb3980449945a47e",
+    "date_modified": "2021-03-24T00:00:00.000Z",
+    "hash": "f5de0b6a2b5cbdddf6b86ff64bea7362",
     "size": 17
   },
   "/static/pdfs/web_almanac_2019_en_cover_A5.pdf": {
     "date_published": "2020-05-15T00:00:00.000Z",
-    "date_modified": "2021-03-21T00:00:00.000Z",
-    "hash": "76c6835eda795b709a01d3fb34aca27c"
+    "date_modified": "2021-03-24T00:00:00.000Z",
+    "hash": "bcb6e168e52c669964f010b485f122cb"
   },
   "/static/pdfs/web_almanac_2019_en_print_A5.pdf": {
     "date_published": "2020-05-15T00:00:00.000Z",
-    "date_modified": "2021-03-21T00:00:00.000Z",
-    "hash": "9443426b27738123654ba41d9e322942",
+    "date_modified": "2021-03-24T00:00:00.000Z",
+    "hash": "bb942ac17f4d25b3a71faf1bbf1b3a78",
     "size": 17
   },
   "/static/pdfs/web_almanac_2019_ja.pdf": {
     "date_published": "2020-05-15T00:00:00.000Z",
-    "date_modified": "2021-03-21T00:00:00.000Z",
-    "hash": "0d93bb8f903529f642396a629d002b0d",
+    "date_modified": "2021-03-24T00:00:00.000Z",
+    "hash": "3a42825961494347c0b392efbd3bef1d",
     "size": 18
   },
   "/static/pdfs/web_almanac_2019_ja_cover_A5.pdf": {
     "date_published": "2020-05-15T00:00:00.000Z",
-    "date_modified": "2021-03-21T00:00:00.000Z",
-    "hash": "c298f9f68ca22ed5b30dd8e3ed801ee3"
+    "date_modified": "2021-03-24T00:00:00.000Z",
+    "hash": "d6fef489b25a329a84a3ef760cfd3af8"
   },
   "/static/pdfs/web_almanac_2019_ja_print_A5.pdf": {
     "date_published": "2020-05-15T00:00:00.000Z",
-    "date_modified": "2021-03-21T00:00:00.000Z",
-    "hash": "5526c0cdb56d18734f1f1a0fee0e4ab2",
+    "date_modified": "2021-03-24T00:00:00.000Z",
+    "hash": "11a378b78438609f6edf5391953d00e8",
     "size": 17
   },
   "/static/pdfs/web_almanac_2020_en.pdf": {
     "date_published": "2020-12-08T00:00:00.000Z",
-    "date_modified": "2021-03-21T00:00:00.000Z",
-    "hash": "397c88d90c4409371af3ee7baba66caf",
+    "date_modified": "2021-03-24T00:00:00.000Z",
+    "hash": "75c2d05885b50facabd8695ea5fc62e3",
     "size": 25
   },
   "/static/pdfs/web_almanac_2020_en_cover_A5.pdf": {
     "date_published": "2020-12-09T00:00:00.000Z",
-    "date_modified": "2021-03-21T00:00:00.000Z",
-    "hash": "665e49ca0f6833ad47b6ea8f27fc1900"
+    "date_modified": "2021-03-24T00:00:00.000Z",
+    "hash": "5faa27a3cfb41e12802d0b25bea10fa9"
   },
   "/static/pdfs/web_almanac_2020_en_print_A5.pdf": {
     "date_published": "2020-12-09T00:00:00.000Z",
-    "date_modified": "2021-03-21T00:00:00.000Z",
-    "hash": "f64c5ed9d4fbcb04f659418bc2a1796a",
+    "date_modified": "2021-03-24T00:00:00.000Z",
+    "hash": "b4c44ac0ea00df963c3f2bdc86508aa8",
     "size": 25
   },
   "en/2019/chapters/accessibility.html": {
@@ -277,8 +277,8 @@
   },
   "en/2020/chapters/markup.html": {
     "date_published": "2020-11-01T00:00:00.000Z",
-    "date_modified": "2021-03-02T00:00:00.000Z",
-    "hash": "5ab17429bcbca14244512deb0d7ecf7b"
+    "date_modified": "2021-03-24T00:00:00.000Z",
+    "hash": "cace58483aa04bef89208ddd8ad86419"
   },
   "en/2020/chapters/media.html": {
     "date_published": "2020-12-09T00:00:00.000Z",
@@ -655,6 +655,11 @@
     "date_modified": "2021-03-17T00:00:00.000Z",
     "hash": "95c68a4514f31ec6361c3ea3fb38f41b"
   },
+  "it/2020/chapters/privacy.html": {
+    "date_published": "2021-03-24T00:00:00.000Z",
+    "date_modified": "2021-03-24T00:00:00.000Z",
+    "hash": "781ec1456085d877eafc331f6fc55360"
+  },
   "it/2020/chapters/resource-hints.html": {
     "date_published": "2021-01-13T00:00:00.000Z",
     "date_modified": "2021-03-02T00:00:00.000Z",
@@ -927,8 +932,8 @@
   },
   "nl/2020/chapters/ecommerce.html": {
     "date_published": "2021-03-21T00:00:00.000Z",
-    "date_modified": "2021-03-21T00:00:00.000Z",
-    "hash": "3a5783512db509cfeea495d7cb5f53ec"
+    "date_modified": "2021-03-24T00:00:00.000Z",
+    "hash": "b39d4628b475091898b260a057aa9b64"
   },
   "nl/2020/chapters/fonts.html": {
     "date_published": "2021-01-30T00:00:00.000Z",
