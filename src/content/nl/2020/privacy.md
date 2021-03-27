@@ -1,94 +1,94 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Privacy
-description: Privacy chapter of the 2020 Web Almanac covering online tracking cookies, privacy enhancing technologies (PET) and privacy policies
+description: Privacyhoofdstuk van de Web Almanac 2020 over online trackingcookies, privacyverbeterende technologieën (PET) en privacybeleid
 authors: [ydimova]
 reviewers: [ldevernay]
 analysts: [ydimova, max-ostapenko]
 editors: [bazzadp]
-translators: []
-ydimova_bio:  Yana Dimova is a PhD student at KU Leuven university in Belgium, working on privacy and web security.
+translators: [noah-vdv]
+ydimova_bio:  Yana Dimova is een doctoraatsstudent aan de KU Leuven universiteit in België, waar ze zich bezighoudt met privacy en webbeveiliging.
 discuss: 2046
 results: https://docs.google.com/spreadsheets/d/16bE70rv4qbmKIqbZS1zUiTRpk5eOlgxBXEabL1qiduI/
-featured_quote: Privacy has been increasing in popularity recently and has raised awareness on the users' side. The need for guidelines has been met with various regulations (such as GDPR in Europe, LGPD in Brazil, CCPA in California to name but a few). These aim to increase the accountability of data processors and their transparency towards users. In this chapter, we discuss the prevalence of online tracking with different techniques and the adoption rate of cookie consent banners and privacy policies by websites.
+featured_quote: Privacy is de laatste tijd steeds populairder geworden en heeft de bewustwording bij de gebruikers vergroot. Aan de behoefte aan richtlijnen is voldaan met verschillende regelgeving (zoals GDPR in Europa, LGPD in Brazilië, CCPA in Californië om er maar een paar te noemen). Deze zijn bedoeld om de verantwoordingsplicht van gegevensverwerkers en hun transparantie naar gebruikers te vergroten. In dit hoofdstuk bespreken we de prevalentie van online tracking met verschillende technieken en de acceptatiegraad van cookietoestemmingbanners en het privacybeleid door websites.
 featured_stat_1: 93%
-featured_stat_label_1: Websites that load at least one tracker.
-featured_stat_2: Nine out of ten
-featured_stat_label_2: Top cookie-setting domains owned by Google.
-featured_stat_3: 44.8%
-featured_stat_label_3: Websites that have a privacy policy.
+featured_stat_label_1: Websites die minstens één tracker laden.
+featured_stat_2: Negen van de tien
+featured_stat_label_2: Top domeinen voor het instellen van cookies die eigendom zijn van Google.
+featured_stat_3: 44,8%
+featured_stat_label_3: Websites met een privacybeleid.
 ---
 
-## Introduction
+## Inleiding
 
-This chapter of the Web Almanac gives an overview of the current state of privacy on the web. This topic has been increasing in popularity recently and has raised awareness on the users' side. The need for guidelines has been met with various regulations (such as <a hreflang="en" href="https://gdpr-info.eu/">GDPR</a> in Europe, <a hreflang="en" href="https://lgpd-brazil.info/">LGPD</a> in Brazil, <a hreflang="en" href="https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?division=3.&part=4.&lawCode=CIV&title=1.81.5">CCPA</a> in California to name but a few). These aim to increase the accountability of data processors and their transparency towards users. In this chapter, we discuss the prevalence of online tracking with different techniques and the adoption rate of cookie consent banners and privacy policies by websites.
+Dit hoofdstuk van de Web Almanac geeft een overzicht van de huidige staat van privacy op het web. Dit onderwerp is de laatste tijd steeds populairder geworden en heeft de aandacht van de gebruikers vergroot. Aan de behoefte aan richtlijnen is voldaan met verschillende regelgeving (zoals <a hreflang="en" href="https://gdpr-info.eu/">GDPR</a> in Europa, <a hreflang="en" href="https://lgpd-brazil.info/">LGPD</a> in Brazilië, <a hreflang="en" href="https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?division=3.&part=4.&lawCode=CIV&title=1.81.5">CCPA</a> in Californië om er maar een paar te noemen). Deze zijn bedoeld om de verantwoordingsplicht van gegevensverwerkers en hun transparantie naar gebruikers te vergroten. In dit hoofdstuk bespreken we de prevalentie van online tracking met verschillende technieken en de acceptatiegraad van cookietoestemmingbanners en het privacybeleid door websites.
 
 ## Online tracking
 
-Third-party trackers collect user data to build up profiles of the user's behavior to be monetized for advertising purposes. This raises privacy concerns with users on the web, which resulted in the emergence of various tracking protections. However, as we will see in this section, online tracking is still widely used. Not only does it have a negative impact on privacy, online tracking has a <a hreflang="en" href="https://gerrymcgovern.com/calculating-the-pollution-cost-of-website-analytics-part-1/">huge impact on the environment</a> and avoiding it can lead to [better performance](https://twitter.com/fr3ino/status/1000166112615714816).
+Trackers van derden verzamelen gebruikersgegevens om profielen van het gebruikersgedrag op te bouwen waarmee inkomsten kunnen worden gegenereerd voor advertentiedoeleinden. Dit roept privacyproblemen op bij gebruikers op internet, wat resulteerde in de opkomst van verschillende trackingbeveiligingen. Zoals we in deze sectie zullen zien, wordt online tracking echter nog steeds veel gebruikt. Het heeft niet alleen een negatieve impact op de privacy, online tracking heeft ook een <a hreflang="en" href="https://gerrymcgovern.com/calculating-the-pollution-cost-of-website-analytics-part-1/">enorme impact op het milieu</a> en het vermijden ervan kan leiden tot [betere prestaties](https://twitter.com/fr3ino/status/1000166112615714816).
 
-We examine the prominence of the most common types of [third-party](./third-party) tracking, namely by means of third-party cookies and the use of fingerprinting. Online tracking is not limited to just these two techniques, new ones keep arising to circumvent existing countermeasures.
+We onderzoeken de bekendheid van de meest voorkomende vormen van tracking van [derden](./third-party), namelijk door middel van cookies van derden en het gebruik van fingerprinting. Online tracking is niet beperkt tot alleen deze twee technieken, er blijven nieuwe technieken opduiken om bestaande tegenmaatregelen te omzeilen.
 
-### Third-party trackers
+### Trackers van derden
 
-We use <a hreflang="en" href="https://whotracks.me/">WhoTracksMe</a>'s tracker list to determine the percentage of websites that issue a request to a potential tracker. As shown in the following figure, we have found that at least one potential tracker is present on roughly 93% of websites.
+We gebruiken de trackerlijst van <a hreflang="en" href="https://whotracks.me/">WhoTracksMe</a> om het percentage websites te bepalen dat een verzoek doet aan een potentiële tracker. Zoals te zien is in de volgende afbeelding, hebben we geconstateerd dat op ongeveer 93% van de websites ten minste één potentiële tracker aanwezig is.
 
 {{ figure_markup(
   image="privacy-websites-that-load-trackers.png",
-  caption="Websites including at least one potential tracker",
-  description="Bar chart showing that 92.94% of desktop websites and 92.97% of mobile websites load trackers.",
+  caption="Websites met ten minste één potentiële tracker",
+  description="Staafdiagram waaruit blijkt dat 92,94% van de desktopwebsites en 92,97% van de mobiele websites trackers laadt.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQJMtHv0Y1JcQJkcVyrqBk9dsujZeDtOZEv7uvE0xM2VrQSuTUDFya41TeRlTZDDe2rWmHwDghW3Dev/pubchart?oid=1325818112&format=interactive",
   sheets_gid="1591448294"
   )
 }}
 
-We examined the most widely used trackers and plot the prevalence of the 10 most popular ones.
+We hebben de meest gebruikte trackers onderzocht en de prevalentie van de 10 meest populaire in kaart gebracht.
 
 {{ figure_markup(
   image="privacy-biggest-third-party-potential-trackers.png",
-  caption="Top 10 Potential Trackers",
-  description="Bar chart showing the prevalence of the 10 most popular potential trackers used on mobile and desktop clients. There is little difference between desktop and mobile and mobile has 65.5% for google_analytics, 65.9% for googleapis.com, 63.3% for gstatic, 58.3% for google_fonts, 50.0% for doubleclick, 47.6% for google, 42.4% for google_tag_manager, 30.9% for facebook, 19.2% for google_adservices, and 12.7% for cloudflare.",
+  caption="Top 10 potentiële trackers",
+  description="Staafdiagram met de prevalentie van de 10 meest populaire potentiële trackers die worden gebruikt op mobiele en desktopclients. Er is weinig verschil tussen desktop en mobiel en mobiel heeft 65,5% voor google_analytics, 65,9% voor googleapis.com, 63,3% voor gstatic, 58,3% voor google_fonts, 50,0% voor doubleclick, 47,6% voor google, 42,4% voor google_tag_manager, 30,9% voor Facebook, 19,2% voor google_adservices en 12,7% voor cloudflare.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQJMtHv0Y1JcQJkcVyrqBk9dsujZeDtOZEv7uvE0xM2VrQSuTUDFya41TeRlTZDDe2rWmHwDghW3Dev/pubchart?oid=850649042&format=interactive",
   sheets_gid="1677398038"
   )
 }}
 
-The largest player on the online tracking market is without doubt Google, with eight of its domains present in the top 10 potential trackers and prevalent on at least 70% of websites. They are followed by Facebook and Cloudflare–though the latter is probably more reflective of the popularity of them as a hosting site.
+De grootste speler op de markt voor online tracking is zonder twijfel Google, met acht van zijn domeinen in de top 10 van potentiële trackers en aanwezig op ten minste 70% van de websites. Ze worden gevolgd door Facebook en Cloudflare, hoewel de laatste waarschijnlijk meer een afspiegeling is van de populariteit van hen als hostingsite.
 
-WhoTracksMe's tracker list also defines categories that the trackers belong to. If we remove CDNs and Hosting sites from our statistics, under the assumption they may not track—or at least that that is not their primary function—then you get a slightly different view of the top 10.
+De trackerlijst van WhoTracksMe definieert ook de categorieën waartoe de trackers behoren. Als we CDN's en Hosting-sites uit onze statistieken verwijderen, in de veronderstelling dat ze misschien niet volgen - of tenminste dat dat niet hun primaire functie is - dan krijgt u een iets andere kijk op de top 10.
 
 {{ figure_markup(
   image="privacy-biggest-third-party-trackers.png",
   caption="Top 10 Trackers",
-  description="Bar chart showing the prevalence of the 10 most popular trackers used on mobile and desktop clients. There is little difference between desktop and mobile and mobile has 65.5% for google_analytics, 50.0% for doubleclick, 47.6% for google, 42.4% for google_tag_manager, 30.9% for facebook, 19.2% for google_adservices, 12.7% for youtube, 19.2% for google_syndication, and 6.5% for both twitter and wordpress_stats.",
+  description="Staafdiagram met de prevalentie van de 10 meest populaire trackers die worden gebruikt op mobiele en desktopclients. Er is weinig verschil tussen desktop en mobiel en mobiel heeft 65,5% voor google_analytics, 50,0% voor doubleclick, 47,6% voor google, 42,4% voor google_tag_manager, 30,9% voor facebook, 19,2% voor google_adservices, 12,7% voor youtube, 19,2% voor google_syndication, en 6,5% voor zowel twitter als wordpress_stats.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQJMtHv0Y1JcQJkcVyrqBk9dsujZeDtOZEv7uvE0xM2VrQSuTUDFya41TeRlTZDDe2rWmHwDghW3Dev/pubchart?oid=1831606887&format=interactive",
   sheets_gid="1677398038"
   )
 }}
 
-Here Google still makes up seven out of the top 10 domains. The following figure shows the distribution of the different categories for the 100 largest potential trackers by category.
+Hier maakt Google nog steeds zeven van de top 10 domeinen uit. In onderstaande figuur is de verdeling van de verschillende categorieën voor de 100 grootste potentiële trackers per categorie weergegeven.
 
 {{ figure_markup(
   image="privacy-tracker-categories.png",
-  caption="Categories of the 100 most popular potential trackers",
-  description="Bar chart showing distribution of the top 100 potential trackers on the web with 56 for advertising, 11 for cdn, 9 for site_analytics, 6 for both social media and misc, 3 for both essential and customer_help, 2 for both audio and video and 1 for both comments and undefined.",
+  caption="Categorieën van de 100 meest populaire potentiële trackers",
+  description="Staafdiagram met de verdeling van de top 100 potentiële trackers op internet met 56 voor advertenties, 11 voor cdn, 9 voor site_analytics, 6 voor zowel social media als misc, 3 voor zowel essential als customer_help, 2 voor zowel audio als video en 1 voor zowel comments als undefined.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQJMtHv0Y1JcQJkcVyrqBk9dsujZeDtOZEv7uvE0xM2VrQSuTUDFya41TeRlTZDDe2rWmHwDghW3Dev/pubchart?oid=1117413918&format=interactive",
   sheets_gid="1431872451",
   )
 }}
 
-Nearly 60% of the most popular trackers are advertising-related. This could be due to the profitability of the online advertising market being perceived to be related to the amount of tracking.
+Bijna 60% van de meest populaire trackers is gerelateerd aan advertenties. Dit kan te wijten zijn aan het feit dat de winstgevendheid van de online advertentiemarkt wordt beschouwd als gerelateerd aan de hoeveelheid tracking.
 
 ### Cookies
 
-We looked into the most popular cookies being set on websites in HTTP's response header, according to their name and domain.
+We hebben gekeken naar de meest populaire cookies die op websites worden ingesteld in de HTTP-responsheader, op basis van hun naam en domein.
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th>Domain</th>
-        <th>Cookie Name</th>
+        <th>Domein</th>
+        <th>Cookie naam</th>
         <th>Websites</th>
       </tr>
     </thead>
@@ -120,7 +120,7 @@ We looked into the most popular cookies being set on websites in HTTP's response
       </tr>
       <tr>
         <td>doubleclick.net</td>
-        <td>unknown</td>
+        <td>onbekend</td>
         <td class="numeric">9%</td>
       </tr>
       <tr>
@@ -130,7 +130,7 @@ We looked into the most popular cookies being set on websites in HTTP's response
       </tr>
       <tr>
         <td>doubleclick.net</td>
-        <td>unknown</td>
+        <td>onbekend</td>
         <td class="numeric">8%</td>
       </tr>
       <tr>
@@ -140,20 +140,20 @@ We looked into the most popular cookies being set on websites in HTTP's response
       </tr>
       <tr>
         <td>doubleclick.net</td>
-        <td>unknown</td>
+        <td>onbekend</td>
         <td class="numeric">6%</td>
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Top cookies on desktop sites", sheets_gid="732942035", sql_file="top100_cookies_set_from_header.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Top cookies op desktopsites", sheets_gid="732942035", sql_file="top100_cookies_set_from_header.sql") }}</figcaption>
 </figure>
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th>Domain</th>
-        <th>Cookie Name</th>
+        <th>Domein</th>
+        <th>Cookie Naam</th>
         <th>Websites</th>
       </tr>
     </thead>
@@ -210,35 +210,35 @@ We looked into the most popular cookies being set on websites in HTTP's response
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Top cookies on mobile sites", sheets_gid="732942035", sql_file="top100_cookies_set_from_header.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Top cookies op mobiele sites", sheets_gid="732942035", sql_file="top100_cookies_set_from_header.sql") }}</figcaption>
 </figure>
 
-As you can see, Google's tracking domain "doubleclick.net" sets cookies on roughly a quarter of websites on a mobile client and a third of all websites on a desktop client. Again, nine out of the ten most popular cookies on desktop client and seven out of ten on mobile are set by a Google domain. This is a lower bound for the number of websites the cookie is set on, since we are only counting cookies set via an HTTP header–a large number of tracking cookies are set by using third-party scripts.
+Zoals u kunt zien, plaatst het trackingdomein "doubleclick.net" van Google cookies op ongeveer een kwart van de websites op een mobiele client en op een derde van alle websites op een desktopclient. Nogmaals, negen van de tien meest populaire cookies op de desktopclient en zeven van de tien op mobiel worden ingesteld door een Google-domein. Dit is een ondergrens voor het aantal websites waarop de cookie is ingesteld, aangezien we alleen cookies tellen die zijn ingesteld via een HTTP-header - een groot aantal trackingcookies wordt ingesteld met behulp van scripts van derden.
 
-### Fingerprinting
+### Vingerafdrukken (fingerprinting)
 
-Another widely-used tracking technique is fingerprinting. This consists of collecting different kinds of information about the user with the goal of building a unique "fingerprint" for them. Different types of fingerprinting are used on the web by trackers. Browser fingerprinting use characteristics specific to the browser of the user, relying on the fact that the chance of another user having the exact same browser set-up is fairly small if there are a large enough number of variables to track. In our crawl, we examined the presence of the <a hreflang="en" href="https://fingerprintjs.com/">FingerprintJS</a> library, which provides browser fingerprinting as a service.
+Een andere veelgebruikte volgtechniek is vingerafdrukken. Dit bestaat uit het verzamelen van verschillende soorten informatie over de gebruiker met als doel voor hen een unieke "vingerafdruk" op te bouwen. Trackers gebruiken verschillende soorten vingerafdrukken op internet. Browservingerafdrukken gebruiken kenmerken die specifiek zijn voor de browser van de gebruiker, waarbij wordt vertrouwd op het feit dat de kans dat een andere gebruiker exact dezelfde browserinstellingen heeft vrij klein is als er een voldoende groot aantal variabelen is om bij te houden. Tijdens onze crawl hebben we de aanwezigheid van de <a hreflang="en" href="https://fingerprintjs.com/">FingerprintJS</a>-bibliotheek onderzocht, die browservingerafdrukken als een service biedt.
 
 {{ figure_markup(
   image="privacy-websites-with-fingerprintjs-library.png",
-  caption="Websites using FingerprintJS",
-  description="Barchart showing 0.17% of desktop sites and 0.18% of mobile sites use FingerprintJS.",
+  caption="Websites die FingerprintJS gebruiken",
+  description="Staafdiagram met 0,17% van de desktopsites en 0,18% van de mobiele sites gebruikt FingerprintJS.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQJMtHv0Y1JcQJkcVyrqBk9dsujZeDtOZEv7uvE0xM2VrQSuTUDFya41TeRlTZDDe2rWmHwDghW3Dev/pubchart?oid=1556252953&format=interactive",
   sheets_gid="222110824",
   sql_file="percent_of_websites_with_fingerprinting.sql "
   )
 }}
 
-Although the library is present on only a small percentage of websites, the persistent nature of fingerprinting means even small usage can have a big impact. Furthermore, FingerprintJS is not the only attempt at fingerprinting. Other libraries, tools and native code can also serve this purpose, so this is just one example.
+Hoewel de bibliotheek slechts op een klein percentage van de websites aanwezig is, kan door het aanhoudende karakter van vingerafdrukken zelfs een klein gebruik een grote impact hebben. Bovendien is FingerprintJS niet de enige poging om vingerafdrukken te nemen. Andere bibliotheken, tools en native code kunnen ook voor dit doel dienen, dus dit is slechts een voorbeeld.
 
-## Consent Management Platforms
+## Platforms voor Toestemmingsbeheer
 
-Cookie consent banners have become common now. They increase transparency towards cookies and often allowing users to specify their cookie choices. While a lot of websites opt for using their own implementation of cookie banners, third-party solutions called <em>Consent Management Platforms</em> have recently emerged. The platforms provide an easy way for websites to collect user's consent for different types of cookies. We see that 4.4% of websites use a consent management platform to manage cookie choices on desktop clients, and 4.0% on mobile clients.
+Banners voor het toestaan van cookies zijn inmiddels gemeengoed. Ze vergroten de transparantie ten aanzien van cookies en stellen gebruikers vaak in staat om hun cookiekeuzes te specificeren. Hoewel veel websites ervoor kiezen om hun eigen implementatie van cookiebanners te gebruiken, zijn er recentelijk oplossingen van derden genaamd <em>Platforms voor Toestemmingsbeheer</em> verschenen. De platforms bieden websites een gemakkelijke manier om de toestemming van de gebruiker te verkrijgen voor verschillende soorten cookies. We zien dat 4,4% van de websites een Platform voor Toestemmingsbeheer gebruikt om cookiekeuzes op desktopclients te beheren en 4,0% op mobiele clients.
 
 {{ figure_markup(
   image="privacy-websites-with-consent-management-platform.png",
-  caption="Websites using a consent management platform",
-  description="Bar chart showing 4.4% of desktop sites and 4.0% of mobile sites use a Consent Management Platform.",
+  caption="Websites die een Platform voor Toestemmingsbeheer gebruiken",
+  description="Staafdiagram met 4,4% van de desktopsites en 4,0% van de mobiele sites gebruikt een Platform voor Toestemmingsbeheer.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQJMtHv0Y1JcQJkcVyrqBk9dsujZeDtOZEv7uvE0xM2VrQSuTUDFya41TeRlTZDDe2rWmHwDghW3Dev/pubchart?oid=2025542332&format=interactive",
   sheets_gid="1910033502",
   sql_file="percent_of_websites_with_cmp.sql"
@@ -247,52 +247,52 @@ Cookie consent banners have become common now. They increase transparency toward
 
 {{ figure_markup(
   image="privacy-consent-management-platform-popularity.png",
-  caption="Popularity of consent management platform",
-  description="Bar chart showing popular consent management platforms from Osano at 1.6%, Quantcast Choice at 1.0%, Cookiebot and OneTrust at 0.4%, Iubenda at 0.3%, Crownpeak, Didomi, and TrustArc all at 0.1%, CIVIC, Cookie Script, CookieHub, Termly, Uniconsent, CookieYes, eucookie.eu, Seers, and Metomic all at approximately 0.0%.",
+  caption="Populariteit van het Platform voor Toestemmingsbeheer",
+  description="Staafdiagram met populaire Platforms voor Toestemmingsbeheer van Osano met 1,6%, Quantcast Choice met 1,0%, Cookiebot en OneTrust met 0,4%, Iubenda met 0,3%, Crownpeak, Didomi en TrustArc met 0,1%, CIVIC, Cookie Script, CookieHub, Termly, Uniconsent, CookieYes, eucookie.eu, Seers en Metomic allemaal op ongeveer 0,0%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQJMtHv0Y1JcQJkcVyrqBk9dsujZeDtOZEv7uvE0xM2VrQSuTUDFya41TeRlTZDDe2rWmHwDghW3Dev/pubchart?oid=341496718&format=interactive",
   sheets_gid="1104760876",
   sql_file="percent_of_websites_using_each_cmp.sql"
   )
 }}
 
-When looking at the popularity of the different consent management solutions, we can see that Osano and Quantcast Choice are the leading platforms.
+Als we kijken naar de populariteit van de verschillende oplossingen voor Toestemmingsbeheer, kunnen we zien dat Osano en Quantcast Choice de leidende platforms zijn.
 
-### IAB Europe's Transparency Consent Framework
+### Transparency Consent Framework van IAB Europe
 
-IAB Europe, the Interactive Advertising Bureau, is a European association for digital marketing and advertising. They proposed a <a hreflang="en" href="https://iabeurope.eu/transparency-consent-framework/">Transparency Consent Framework</a> (TCF) as a GDPR-compliant solution to obtain users' consent about their digital advertising preferences. The implementation provides an industry standard for communication between publishers and advertisers about consumer consent.
+IAB Europe, het Interactive Advertising Bureau, is een Europese vereniging voor digitale marketing en reclame. Ze stelden een <a hreflang="en" href="https://iabeurope.eu/transparency-consent-framework/">Transparency Consent Framework</a> (TCF) voor als een AVG-compatibele oplossing om toestemming van gebruikers te verkrijgen over hun digitale advertentievoorkeuren. De implementatie biedt een industriestandaard voor communicatie tussen uitgevers en adverteerders over toestemming van de consument.
 
 {{ figure_markup(
   image="privacy-adoption-of-the-tcf-banner.png",
-  caption="Adoption rate of TCF banner",
-  description="Bar chart showing that 1.5% of desktop sites and 1.4% of mobile sites have implemented IAB Europe's TCF banner.",
+  caption="Aannemingspercentage van TCF-banner",
+  description="Staafdiagram waaruit blijkt dat 1,5% van de desktopsites en 1,4% van de mobiele sites de TCF-banner van IAB Europe heeft geïmplementeerd.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQJMtHv0Y1JcQJkcVyrqBk9dsujZeDtOZEv7uvE0xM2VrQSuTUDFya41TeRlTZDDe2rWmHwDghW3Dev/pubchart?oid=341275612&format=interactive",
   sheets_gid="2077755325",
   sql_file="percent_of_websites_with_iab_tcf_banner.sql"
   )
 }}
 
-While our results show that the TCF banner is not yet the "industry standard", it is a step in the right direction. Considering the main target group of IAB Europe is in fact European publishers, and our crawl is global, having an adoption rate on 1.5% of websites on desktop client and 1.4% on mobile is not too bad.
+Hoewel onze resultaten aantonen dat het TCF-uithangbord nog niet de "industriestandaard" is, is het een stap in de goede richting. Aangezien de belangrijkste doelgroep van IAB Europe in feite Europese uitgevers zijn, en onze crawl wereldwijd is, is een acceptatiegraad op 1,5% van de websites op desktopclient en 1,4% op mobiel niet zo slecht.
 
-## Privacy Policies
+## Privacy beleid
 
-Privacy policies are widely used by websites to meet legal obligations and increase transparency towards users about data collection practices. In our crawl, we searched for keywords indicating the presence of a privacy policy text on each visited website.
+Privacybeleid wordt veel gebruikt door websites om te voldoen aan wettelijke verplichtingen en om de transparantie naar gebruikers over gegevensverzamelingspraktijken te vergroten. Tijdens onze crawl hebben we gezocht naar trefwoorden die de aanwezigheid van een privacybeleidstekst op elke bezochte website aangeven.
 
 {{ figure_markup(
   image="privacy-websites-with-privacy-link.png",
-  caption="Websites that have a privacy policy",
-  description="Bar chart showing that 44.8% of desktop sites and 42.3% of mobile sites have a privacy link.",
+  caption="Websites met een privacybeleid",
+  description="Staafdiagram waaruit blijkt dat 44,8% van de desktopsites en 42,3% van de mobiele sites een privacylink heeft.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQJMtHv0Y1JcQJkcVyrqBk9dsujZeDtOZEv7uvE0xM2VrQSuTUDFya41TeRlTZDDe2rWmHwDghW3Dev/pubchart?oid=329249623&format=interactive",
   sheets_gid="495362514",
   sql_file="percent_of_websites_with_privacy_links.sql "
   )
 }}
 
-The results show that almost half of the websites in the dataset have included a privacy policy, which is positive. However, studies have shown that the majority of internet users do not bother reading privacy policies and when they do, they lack understanding due to the length and complexity of most privacy policy texts. Still having a policy at all is a step in the right direction!
+De resultaten laten zien dat bijna de helft van de websites in de dataset een privacybeleid heeft opgenomen, wat positief is. Studies hebben echter aangetoond dat de meerderheid van de internetgebruikers het privacybeleid niet leest en als ze dat wel doen, ze geen begrip hebben vanwege de lengte en complexiteit van de meeste teksten over het privacybeleid. Toch is het hebben van beleid een stap in de goede richting!
 
-## Conclusion
+## Gevolgtrekking
 
-This chapter has shown that third-party tracking remains prominent on both desktop and mobile clients, with Google tracking the largest percentage of websites. Consent Management Platforms are used on a small percentage of websites; however a lot of websites implement their own cookie consent banners.
+Dit hoofdstuk heeft aangetoond dat tracking door derden prominent blijft op zowel desktop- als mobiele clients, waarbij Google het grootste percentage websites volgt. Platforms voor Toestemmingsbeheer worden gebruikt op een klein percentage websites; Veel websites implementeren echter hun eigen banners voor het toestaan van cookies.
 
-Lastly, roughly half of the websites include a privacy policy, which benefits greatly transparency towards users about data processing practices. This is undoubtedly a step forward but there is a lot still to be done. Outside of this analysis we know that privacy policies are hard to read and understand and cookie consent banners manipulate users into consent.
+Ten slotte bevat ongeveer de helft van de websites een privacybeleid, wat de transparantie naar gebruikers over gegevensverwerkingspraktijken enorm ten goede komt. Dit is ongetwijfeld een stap voorwaarts, maar er moet nog veel gebeuren. Buiten deze analyse weten we dat het privacybeleid moeilijk te lezen en te begrijpen is en dat cookietoestemmingsbanners gebruikers manipuleren om toestemming te geven.
 
-For the web to truly respect users, privacy has to be a part of conception, not an afterthought. Regulation is a good thing in this regards, and it is reassuring to see an increase in privacy regulation worldwide. [Privacy by design](https://en.wikipedia.org/wiki/Privacy_by_design) should be the norm, rather than deploying policies and tools in order to meet minimum legal requirements and avoid financial penalties.
+Voor het web om gebruikers echt te respecteren, moet privacy een onderdeel zijn van de conceptie, niet een bijzaak. Regelgeving is in dit opzicht een goede zaak en het is geruststellend om te zien dat de privacyregelgeving wereldwijd toeneemt. [Privacy by design](https://en.wikipedia.org/wiki/Privacy_by_design) zou de norm moeten zijn, in plaats van beleid en hulpmiddelen in te zetten om aan minimale wettelijke vereisten te voldoen en financiële sancties te vermijden.
