@@ -1,0 +1,184 @@
+{% extends "base/base.html" %}
+
+{% block description %}Web Almanak, web topluluğunun uzmanlığını HTTP Archieve verileri ve eğilimleri ile birleştiren yıllık bir web raporudur{% endblock %}
+
+{% block twitter_image_alt %}{{ year }} Web Almanak{% endblock %}
+
+{% block skip_navigation %}Navigasyonu Atla{% endblock %}
+
+{% block organization %}Web Almanak HTTP Archive&#8217;dan{% endblock %}
+{% block web_almanac_logo %}
+<span class="wa">Web Almanak</span>
+<span class="line-group">
+  <span class="pre">by</span>
+  <span class="ha">HTTP Archive</span>
+</span>
+{% endblock %}
+
+{% block intro_title %}Web Almanak{% endblock %}
+{% block intro_sub_title %}HTTP Archive&#8217;ın yıllık<br> <b>web durumu</b> raporu{% endblock %}
+
+{% block mission %}
+<p>
+Misyonumuz, HTTP Archive&#8217;ın ham istatistiklerini ve eğilimlerini web topluluğunun uzmanlığı ile birleştirmektir. Web Almanak, gerçek veri ve güvenilir web uzmanları tarafından desteklenen, web durumu hakkındaki kapsamlı bir rapordur. {{ year }} baskısı sayfa içeriği, kullanıcı deneyimi, yayınlama ve dağıtım yönlerini kapsayan {{ supported_chapters | length }} bölümden oluşmuştur. 
+</p>
+{% endblock %}
+
+{% block read_last_years_almanac %} {{ year | int - 1 }} Web Almanak&#8217;ı Oku{% endblock %}
+
+{% block http_archive_link %}HTTP Archive Ana Sayfa{% endblock %}
+
+{% block page_navigation %}Sayfa navigasyonu{% endblock %}
+
+{% block help_translate %}Çeviriye Yardımı Edin{% endblock %}
+{% block translation_not_available %}İngilizce - İngilizce olarak mevcut değil{% endblock %}
+{% block language_switcher %}Dil Değiştirici{% endblock %}
+{% block year_switcher %}Yıl Değiştirici{% endblock %}
+{% block table_of_contents_switcher %}İçindekiler Tablosu Değiştiricisi% endblock %}
+
+{% block home %}Ana Sayfa{% endblock %}
+{% block table_of_contents_title %}İçindekiler Tablosu{% endblock %}
+{% block contributors_title %}Katkıda Bulunanlar{% endblock %}
+{% block methodology_title %}Metodoloji{% endblock %}
+
+{% block part %}Kısım{% endblock %}
+{% block chapter %}Bölüm{% endblock %}
+
+{% block start_exploring %}Keşfetmeye başlayın{% endblock %}
+
+{% block menu_title %}Sayfa menüsü{% endblock %}
+{% block open_the_menu %}Menüyü açın{% endblock %}
+{% block close_the_menu %}Menüyü kapatın{% endblock %}
+
+{% block index_nav_title %}İçindekiler tablosu bölümü{% endblock %}
+{% block index_title %}İndeks{% endblock %}
+{% block open_the_index %}İçindekiler Tablosunu Açın{% endblock %}
+{% block close_the_index %}İçindekiler Tablosunu Kapatın{% endblock %}
+
+{% block and %}ve{% endblock %}
+{% block comma %}, {% endblock %}
+{% block oxford_comma %}, {% endblock %}
+
+{% block open %}Açık{% endblock %}
+{% block close %}Kapalı{% endblock %}
+
+{% macro figure_text(metadata, chapter_config, id) %}Figure {{ figure_id(metadata, chapter_config, id) }}.{% endmacro %}
+{% macro show_description(metadata, chapter_config, id) %}Şekil açıklamasını gösterin {{ figure_id(metadata, chapter_config, id) }}{% endmacro %}
+{% macro hide_description(metadata, chapter_config, id) %}Şekil açıklamasını gizleyin {{ figure_id(metadata, chapter_config, id) }}{% endmacro %}
+
+{% block written_by_before %}Yazan{% endblock %}
+{% block reviewed_by_before %}Gözden geçiren{% endblock %}
+{% block translated_by_before %}Çeviren{% endblock %}
+{% block analysis_by_before %}Analiz eden{% endblock %}
+{% block edited_by_before %}Düzenleyen{% endblock %}
+{% block reviewed_and_analyzed_by_before %}Gözden geçiren ve analiz eden{% endblock %}
+{% block analysis_and_editing_by_before %}Analiz eden ve düzenleyen{% endblock %}
+{% block written_by_after %}{% endblock %}
+{% block reviewed_by_after %}{% endblock %}
+{% block translated_by_after %}{% endblock %}
+{% block analysis_by_after %}{% endblock %}
+{% block edited_by_after %}{% endblock %}
+{% block reviewed_and_analyzed_by_after %}{% endblock %}
+{% block analysis_and_editing_by_after %}{% endblock %}
+
+{% block unedited %}[Düzenlenmiş olan]{% endblock %}
+
+{% block author %}Yazar{% endblock %}
+{% block authors %}Yazarlar{% endblock %}
+
+{% macro onTwitter(twitterHandle) %}@{{twitterHandle}}Twitter üzerinde{% endmacro %}
+{% macro onGitHub(gitHubHandle) %}{{gitHubHandle}}GitHub  üzerinde {% endmacro %}
+{% macro onLinkedIn(authorName) %}{{authorName}} LinkedIn  üzerinde {% endmacro %}
+{% macro website(authorName) %}{{authorName}} website{% endmacro %}
+
+{% macro edition(year) %}{{ year }} Baskısı{% endmacro %}
+
+{% block footer_title %}Footer navigasyon{% endblock %}
+{% block copyright %}© Web Almanak. <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0 </a>. altında lisanslanmıştır.{% endblock %}
+{% block accessibility_statement %}Erişilebilirlik Bildirimi{% endblock %}
+
+{% block featured_chapter %}Öne Çıkan Bölüm{% endblock %}
+{% block featured_chapter_last_year %}{{ year|int -1 }} Web Almanak'dan <br/>Öne Çıkan Bölüm{% endblock %}
+
+{# Check if read_chapter already defined in child template as macros can't be overridden #}
+{% if not read_chapter %}
+{% macro read_chapter(chapter) %}<span class="featured-chapter-name">{{ chapter }}</span> Bölümünü Okuyun{% endmacro %}
+{% endif %}
+{% if not read_last_years_chapter %}
+{% macro read_last_years_chapter(chapter) %} {{ year|int-1 }} <span class="featured-chapter-name">{{ chapter }}</span> Bölümünü Okuyun{% endmacro %}
+{% endif %}
+
+{% block contributors_description %}
+Web Almanak, web topluluğunun sıkı çalışmasıyla mümkün olmuştur. {{ self.contributors() }} kişiler {{ year }} Web Almanak'ın planlama, araştırma, yazma ve üretim aşamalarında sayısız saatler gönüllü oldular.
+{% endblock %}
+{% block contributors_link %}Katkıda bulunanları görün{% endblock %}
+
+{% block methodology_stat_1_title %}Test Edilen Web Siteleri{% endblock %}
+{% block methodology_stat_2_title %}İşlenen Veriler{% endblock %}
+{% block methodology_link %}Metodolojimiz hakkında bilgi edinin{% endblock %}
+{% block methodology_description %}
+Aksi belirtilmedikçe, {{ year }} Web Almanak'ın tüm {{ supported_chapters | length }} bölümlerindeki metrikler, HTTP Archive veri kümesinden elde edilir. HTTP Archive, 2010'dan beri web'in nasıl oluşturulduğunu izleyen, topluluk tarafından yürütülen bir projedir. WebPageTest ve Lighthouse örtüsü altında, {{ self.total_websites() }} web siteleri hakkındaki metadata aylık olarak test edilir ve analiz için herkese açık bir BigQuery veritabanına dahil edilir. {{ self.dataset() }} veri kümesi {{ year }} Web Almanak&#8217;ın metrikleri için temel olarak kullanıldı.  Daha fazla bilgi için, Methodoloji sayfasını görün.
+{% endblock %}
+
+{% block introduction %}Giriş{% endblock %}
+
+{% block foreword_title %}Önsöz{% endblock %}
+
+{% block coming_soon %}Yakında geliyor!{% endblock %}
+
+{% block appendix %}Ek{% endblock %}
+{% block appendices %}Ekler{% endblock %}
+
+{% block ebook_title %}Ebook{% endblock %}
+{% block ebook_download_short %}Ebook PDF ({{ ebook_size_in_mb }}MB){% endblock %}
+{% block ebook_download %}Tüm {{ year }} Web Almanak'ı PDF formatında ({{ ebook_size_in_mb }}MB) indirin{% endblock %}
+{% block ebook_download_note %}(generated with <a href="https://www.princexml.com/">www.princexml.com</a>){% endblock %}
+
+{%
+  set localizedPartTitles = {
+    "I. Page Content": "I. Sayfa İçeriği",
+    "II. User Experience": "II. Kullanıcı Deneyimi",
+    "III. Content Publishing": "III. İçerik Yayınlama",
+    "IV. Content Distribution": "IV. İçerik Dağıtımı"
+  }
+%}
+{%
+  set localizedChapterTitles = {
+    "javascript": "JavaScript",
+    "css": "CSS",
+    "markup": "Markup",
+    "media": "Media",
+    "third-parties": "Üçüncü Taraflar",
+    "fonts": "Yazı tipleri",
+    "performance": "Performans",
+    "security": "Güvenlik",
+    "accessibility": "Erişilebilirlik",
+    "seo": "SEO",
+    "pwa": "PWA",
+    "mobile-web": "Mobil Web",
+    "ecommerce": "Eticaret",
+    "cms": "CMS",
+    "compression": "Sıkıştırma",
+    "caching": "Önbelleğe Alma",
+    "cdn": "CDN",
+    "page-weight": "Sayfa Ağırlığı",
+    "resource-hints": "Kaynak İpuçları",
+    "http2": "HTTP/2",
+    "privacy": "Gizlilik",
+    "capabilities": "Yetenekler",
+    "jamstack": "Jamstack"
+  }
+%}
+
+{% set localizedTeamNames = {
+  "analysts": "Analistler",
+  "authors": "Yazarlar",
+  "brainstormers": "Fikir Üretenler",
+  "designers": "Tasarımcılar",
+  "developers": "Geliştiriciler",
+  "editors": "Editorler",
+  "leads": "Proje Liderleri",
+  "reviewers": "Gözden Geçirenler",
+  "translators": "Çevirmenler",
+  }
+%}
