@@ -1,8 +1,8 @@
 {% extends "base/base.html" %}
 
-{% block description %}Web Almanak, web topluluğunun uzmanlığını HTTP Archieve verileri ve eğilimleri ile birleştiren yıllık bir web raporudur{% endblock %}
+{% block description %}Web Almanak, web topluluğunun uzmanlığını HTTP Archieve verileri ve eğilimleri ile birleştiren yıllık bir web raporudur.{% endblock %}
 
-{% block twitter_image_alt %}{{ year }} Web Almanak{% endblock %}
+{% block twitter_image_alt %}{{ year }}Web Almanak{% endblock %}
 
 {% block skip_navigation %}Navigasyonu Atla{% endblock %}
 
@@ -10,8 +10,8 @@
 {% block web_almanac_logo %}
 <span class="wa">Web Almanak</span>
 <span class="line-group">
-  <span class="pre">by</span>
   <span class="ha">HTTP Archive</span>
+  <span class="pre">by</span>
 </span>
 {% endblock %}
 
@@ -87,8 +87,8 @@ Misyonumuz, HTTP Archive&#8217;ın ham istatistiklerini ve eğilimlerini web top
 {% block authors %}Yazarlar{% endblock %}
 
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}}Twitter üzerinde{% endmacro %}
-{% macro onGitHub(gitHubHandle) %}{{gitHubHandle}}GitHub  üzerinde {% endmacro %}
-{% macro onLinkedIn(authorName) %}{{authorName}} LinkedIn  üzerinde {% endmacro %}
+{% macro onGitHub(gitHubHandle) %}{{gitHubHandle}}GitHub üzerinde {% endmacro %}
+{% macro onLinkedIn(authorName) %}{{authorName}} LinkedIn üzerinde {% endmacro %}
 {% macro website(authorName) %}{{authorName}} website{% endmacro %}
 
 {% macro edition(year) %}{{ year }} Baskısı{% endmacro %}
