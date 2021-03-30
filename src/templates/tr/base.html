@@ -1,21 +1,21 @@
 {% extends "base/base.html" %}
 
-{% block description %}Web Almanak, web topluluğunun uzmanlığını HTTP Archieve verileri ve eğilimleri ile birleştiren yıllık bir web raporudur.{% endblock %}
+{% block description %}Web Almanac, web topluluğunun uzmanlığını HTTP Archive verileri ve eğilimleri ile birleştiren yıllık bir web raporudur.{% endblock %}
 
-{% block twitter_image_alt %}{{ year }}Web Almanak{% endblock %}
+{% block twitter_image_alt %}{{ year }}Web Almanac{% endblock %}
 
 {% block skip_navigation %}Navigasyonu Atla{% endblock %}
 
-{% block organization %}Web Almanak HTTP Archive&#8217;dan{% endblock %}
+{% block organization %}HTTP Archive&#8217;dan Web Almanac{% endblock %}
 {% block web_almanac_logo %}
-<span class="wa">Web Almanak</span>
 <span class="line-group">
-  <span class="ha">HTTP Archive</span>
-  <span class="pre">by</span>
+  <span class="ha">HTTP Archive&#8217;</span>
+  <span class="pre">dan</span>
 </span>
+<span class="wa">Web Almanac</span>
 {% endblock %}
 
-{% block intro_title %}Web Almanak{% endblock %}
+{% block intro_title %}Web Almanac{% endblock %}
 {% block intro_sub_title %}HTTP Archive&#8217;ın yıllık<br> <b>web durumu</b> raporu{% endblock %}
 
 {% block mission %}
@@ -24,7 +24,7 @@ Misyonumuz, HTTP Archive&#8217;ın ham istatistiklerini ve eğilimlerini web top
 </p>
 {% endblock %}
 
-{% block read_last_years_almanac %} {{ year | int - 1 }} Web Almanak&#8217;ı Oku{% endblock %}
+{% block read_last_years_almanac %} {{ year | int - 1 }} Web Almanac&#8217;ı Oku{% endblock %}
 
 {% block http_archive_link %}HTTP Archive Ana Sayfa{% endblock %}
 
@@ -94,11 +94,11 @@ Misyonumuz, HTTP Archive&#8217;ın ham istatistiklerini ve eğilimlerini web top
 {% macro edition(year) %}{{ year }} Baskısı{% endmacro %}
 
 {% block footer_title %}Footer navigasyon{% endblock %}
-{% block copyright %}© Web Almanak. <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0 </a>. altında lisanslanmıştır.{% endblock %}
+{% block copyright %}© Web Almanac. <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0 </a>. altında lisanslanmıştır.{% endblock %}
 {% block accessibility_statement %}Erişilebilirlik Bildirimi{% endblock %}
 
 {% block featured_chapter %}Öne Çıkan Bölüm{% endblock %}
-{% block featured_chapter_last_year %}{{ year|int -1 }} Web Almanak'dan <br/>Öne Çıkan Bölüm{% endblock %}
+{% block featured_chapter_last_year %}{{ year|int -1 }} Web Almanac'tan <br/>Öne Çıkan Bölüm{% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
@@ -109,7 +109,7 @@ Misyonumuz, HTTP Archive&#8217;ın ham istatistiklerini ve eğilimlerini web top
 {% endif %}
 
 {% block contributors_description %}
-Web Almanak, web topluluğunun sıkı çalışmasıyla mümkün olmuştur. {{ self.contributors() }} kişiler {{ year }} Web Almanak'ın planlama, araştırma, yazma ve üretim aşamalarında sayısız saatler gönüllü oldular.
+Web Almanac, web topluluğunun sıkı çalışmasıyla mümkün olmuştur. {{ self.contributors() }} kişiler {{ year }} Web Almanak'ın planlama, araştırma, yazma ve üretim aşamalarında sayısız saatler gönüllü oldular.
 {% endblock %}
 {% block contributors_link %}Katkıda bulunanları görün{% endblock %}
 
@@ -117,7 +117,7 @@ Web Almanak, web topluluğunun sıkı çalışmasıyla mümkün olmuştur. {{ se
 {% block methodology_stat_2_title %}İşlenen Veriler{% endblock %}
 {% block methodology_link %}Metodolojimiz hakkında bilgi edinin{% endblock %}
 {% block methodology_description %}
-Aksi belirtilmedikçe, {{ year }} Web Almanak&#8217;ın tüm {{ supported_chapters | length }} bölümlerindeki metrikler, HTTP Archive veri kümesinden elde edilir. HTTP Archive, 2010'dan beri web'in nasıl oluşturulduğunu izleyen, topluluk tarafından yürütülen bir projedir. WebPageTest ve Lighthouse örtüsü altında, {{ self.total_websites() }} web siteleri hakkındaki metadata aylık olarak test edilir ve analiz için herkese açık bir BigQuery veritabanına dahil edilir. {{ self.dataset() }} veri kümesi {{ year }} Web Almanak&#8217;ın metrikleri için temel olarak kullanıldı.  Daha fazla bilgi için, Methodoloji sayfasını görün.
+Aksi belirtilmedikçe, {{ year }} Web Almanac&#8217;ın tüm {{ supported_chapters | length }} bölümlerindeki metrikler, HTTP Archive veri kümesinden elde edilir. HTTP Archive, 2010'dan beri web'in nasıl oluşturulduğunu izleyen, topluluk tarafından yürütülen bir projedir. WebPageTest ve Lighthouse örtüsü altında, {{ self.total_websites() }} web siteleri hakkındaki metadata aylık olarak test edilir ve analiz için herkese açık bir BigQuery veritabanına dahil edilir. {{ self.dataset() }} veri kümesi {{ year }} Web Almanak&#8217;ın metrikleri için temel olarak kullanıldı.  Daha fazla bilgi için, Methodoloji sayfasını görün.
 {% endblock %}
 
 {% block introduction %}Giriş{% endblock %}
@@ -129,10 +129,10 @@ Aksi belirtilmedikçe, {{ year }} Web Almanak&#8217;ın tüm {{ supported_chapte
 {% block appendix %}Ek{% endblock %}
 {% block appendices %}Ekler{% endblock %}
 
-{% block ebook_title %}Ebook{% endblock %}
-{% block ebook_download_short %}Ebook PDF ({{ ebook_size_in_mb }}MB){% endblock %}
-{% block ebook_download %}Tüm {{ year }} Web Almanak&#8217;ı PDF formatında ({{ ebook_size_in_mb }}MB) indirin{% endblock %}
-{% block ebook_download_note %}(generated with <a href="https://www.princexml.com/">www.princexml.com</a>){% endblock %}
+{% block ebook_title %}E-kitap{% endblock %}
+{% block ebook_download_short %}E-kitap PDF ({{ ebook_size_in_mb }}MB){% endblock %}
+{% block ebook_download %}Tüm {{ year }} Web Almanac&#8217;ı PDF formatında ({{ ebook_size_in_mb }}MB) indirin{% endblock %}
+{% block ebook_download_note %}(<a href="https://www.princexml.com/">www.princexml.com</a> ile oluşturulmuştur){% endblock %}
 
 {%
   set localizedPartTitles = {
