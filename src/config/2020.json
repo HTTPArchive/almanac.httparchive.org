@@ -2,7 +2,7 @@
   "settings": [
     {
       "is_live": true,
-      "supported_languages": ["en","es","fr","hi","it","ja","nl","pt","ru","uk","zh-CN","zh-TW"],
+      "supported_languages": ["en","es","fr","hi","it","ja","nl","pt","ru","tr","uk","zh-CN","zh-TW"],
       "ebook_languages": ["en"]
     }
   ],
@@ -606,6 +606,16 @@
       "website": "http://standardista.com/",
       "github": "estelle",
       "twitter": "estellevw"
+    },
+    "fatmabadri": {
+      "name": "Fatma Badri",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/10557131?v=4s=200",
+      "website": "https://fatmabadri.github.io/",
+      "github": "fatmabadri",
+      "linkedin": "fatmabadri"
     },
     "giopunt": {
       "name": "Giovanni Puntil",
