@@ -1,7 +1,7 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Media
-description: Mediahoofdstuk van de Web Almanac 2020 met betrekking tot bestandsgroottes en -indelingen van afbeeldingen, responsieve afbeeldingen, klanthints, lazy loading, toegankelijkheid en video.
+description: Mediahoofdstuk van de Web Almanac 2020 met betrekking tot bestandsgroottes en -indelingen van afbeeldingen, responsieve afbeeldingen, cliënthints, lazy loading, toegankelijkheid en video.
 authors: [tpiros, bseymour, eeeps]
 reviewers: [nhoizey, colinbendell, dougsillars, Navaneeth-akam]
 analysts: [smatei]
@@ -53,7 +53,7 @@ Het aantal afbeeldingen dat aan de user agents wordt gepresenteerd om uit te kie
 1. <a hreflang="en" href="https://cloudfour.com/thinks/responsive-images-101-part-9-image-breakpoints/">Breekpunten van afbeeldingen</a> (om een prestatiebudget te halen)
 2. Caching-efficiëntie
 
-Hoe kleiner het aantal afbeeldingskandidaten, hoe groter de kans dat het item in de cache wordt opgeslagen, en als een CDN wordt gebruikt, hoe groter de kans dat het beschikbaar is op het dichtstbijzijnde edge-knooppunt van een klant. Hoe groter het verschil in media-afmetingen, hoe groter de kans dat we uiteindelijk media gaan aanbieden die minder geschikt zijn voor het apparaat en de context in kwestie.
+Hoe kleiner het aantal afbeeldingskandidaten, hoe groter de kans dat het item in de cache wordt opgeslagen, en als een CDN wordt gebruikt, hoe groter de kans dat het beschikbaar is op het dichtstbijzijnde edge-knooppunt van een cliënt. Hoe groter het verschil in media-afmetingen, hoe groter de kans dat we uiteindelijk media gaan aanbieden die minder geschikt zijn voor het apparaat en de context in kwestie.
 
 ##### Srcset: hoeveelheid beeldkandidaten
 
@@ -178,7 +178,7 @@ Van de pagina's die `<picture>` gebruiken om van formaat te wisselen, biedt onge
 {{ figure_markup(
   image="picture-format-usage-by-type.png",
   caption="Gebruik van beeldformaat op type.",
-  description="Staafdiagram met het gebruik van het beeldformaat per afbeeldingstype. WebP domineert het gebruik dat door 83,29% van de beeldelementen op desktop wordt gebruikt (84,64% op mobiel). De volgende is PNG met 18,18% en 17,46%, gevolgd door JPG gebruikt door respectievelijk 4,84% en 4,83%, en dan Gif met 0,53% en 0,53% en AVIF registreert niet boven 0 voor beide klanten.",
+  description="Staafdiagram met het gebruik van het beeldformaat per afbeeldingstype. WebP domineert het gebruik dat door 83,29% van de beeldelementen op desktop wordt gebruikt (84,64% op mobiel). De volgende is PNG met 18,18% en 17,46%, gevolgd door JPG gebruikt door respectievelijk 4,84% en 4,83%, en dan Gif met 0,53% en 0,53% en AVIF registreert niet boven 0 voor beide cliënten.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=775091522&format=interactive",
   sheets_gid="1719719920",
   sql_file="picture_format_distribution.sql"

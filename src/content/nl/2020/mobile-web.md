@@ -386,7 +386,7 @@ Het is ook mogelijk om sommige formuliervelden helemaal te verwijderen. De API's
 
 ### 4. Retentie
 
-De laatste fase in de reis is gebruikersbehoud, dit betekent de gebruiker opnieuw betrekken en van hem een terugkerende klant of een loyale bezoeker maken.
+De laatste fase in de reis is gebruikersbehoud, dit betekent de gebruiker opnieuw betrekken en van hem een terugkerende cliënt of een loyale bezoeker maken.
 
 #### Installeerbaarheid met PWA
 
@@ -396,7 +396,7 @@ Rakuten 24 is een online winkel van Rakuten, een van de grootste e-commercebedri
 
 Door installeerbaarheid te implementeren, zag Rakuten 24 ook deze verbeteringen over een tijdsbestek van 1 maand:
 * 310% stijging van de bezoekfrequentie per gebruiker, vergeleken met de rest van hun internetgebruikers
-* 150% stijging van de omzet per klant met 150%
+* 150% stijging van de omzet per cliënt met 150%
 * 200% stijging van de conversieratio
 
 #### Een naadloze ervaring op verschillende apparaten

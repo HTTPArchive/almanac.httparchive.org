@@ -121,7 +121,7 @@ Deze cijfers zijn in grote lijnen consistent wanneer ze worden verdeeld over des
 
 {{ figure_markup(
   image="cms-top-5-cms-by-client.png",
-  caption="Top 5 CMS'en per klant.",
+  caption="Top 5 CMS'en per cliënt.",
   description="Staafdiagram dat laat zien dat WordPress domineert met een aandeel van 31,37% op desktop en 31,39% op mobiel vergeleken met minder dan 2,5% voor de andere CMS'en: Drupal heeft 2,32% op desktop en 1,99% op mobiel, Joomla heeft 1,96% op desktop en 2,12% op mobiel, Squarespace heeft 1,08% op desktop en 0,85% op mobiel, en Wiz heeft 1,05% op desktop en 1,24% op mobiel.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkUxfuK-FCn3_IYDJiEsKDmdmyKb0TSEhG8dFc0XBIXej1NO2uUOmd-9NCbWuh-MZ3xzMhK_kNT-4u/pubchart?oid=2098327336&format=interactive",
   sheets_gid="908727245",
