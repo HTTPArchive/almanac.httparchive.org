@@ -144,7 +144,7 @@ De top 5 bestandsextensies die expliciet zijn opgenomen in de `alt`-tekstwaarde 
     <thead>
       <tr>
         <th scope="col">Bestandsextensie</th>
-        <th scope="col">Bureaublad</th>
+        <th scope="col">Desktop</th>
         <th scope="col">Mobiel</th>
       </tr>
     </thead>
@@ -284,7 +284,7 @@ Tabellen zijn een efficiënte manier om gegevens weer te geven met twee assen va
     <thead>
       <tr>
         <th scope="col">Meting</th>
-        <th scope="col">Bureaublad</th>
+        <th scope="col">Desktop</th>
         <th scope="col">Mobiel</th>
       </tr>
     </thead>
