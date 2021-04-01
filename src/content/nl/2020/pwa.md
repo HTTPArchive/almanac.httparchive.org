@@ -166,7 +166,7 @@ Een <a hreflang="en" href="https://web.dev/splash-screen/">opstartscherm</a> met
 
 De adresbalk van de browser kan een thema hebben dat bij uw site past. 4,00% van de pagina's had een <a hreflang="en" href="https://web.dev/themed-omnibox/">omnibox</a> thema.
 
-Uw app zou wat inhoud moeten weergeven wanneer JavaScript is uitgeschakeld, ook al is het slechts een waarschuwing voor de gebruiker dat JavaScript vereist is om de app te gebruiken. 97,57% van de pagina's toont meer dan alleen een lege pagina met JavaScript <a hreflang="en" href="https://web.dev/without-javascript/">uitgeschakeld</a>. Aangezien we alleen de homepagina's onderzoeken, is het misschien meer verrassend dat 3,43% van de sites deze audit niet haalt!
+Uw app zou wat inhoud moeten weergeven wanneer JavaScript is uitgeschakeld, ook al is het slechts een waarschuwing voor de gebruiker dat JavaScript vereist is om de app te gebruiken. 97,57% van de pagina's toont meer dan alleen een lege pagina met JavaScript <a hreflang="en" href="https://web.dev/without-javascript/">uitgeschakeld</a>. Aangezien we alleen de startpagina's onderzoeken, is het misschien meer verrassend dat 3,43% van de sites deze audit niet haalt!
 
 ## Gebeurtenissen voor service workers
 

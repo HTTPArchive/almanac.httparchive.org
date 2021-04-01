@@ -143,7 +143,7 @@ Opmerkingen toevoegen aan code is over het algemeen een goede gewoonte en HTML-o
 <!-- Dit is een commentaar in HTML -->
 ```
 
-Hoewel veel pagina's voor productie zijn ontdaan van opmerkingen, ontdekten we dat homepagina's in het 90e percentiel ongeveer 73 reacties op mobiele apparaten gebruiken, respectievelijk 79 reacties op desktops, terwijl in het 10e percentiel het aantal reacties ongeveer 2 is. Mediaanpagina gebruikt 16 (mobiel) of 17 reacties (desktop).
+Hoewel veel pagina's voor productie zijn ontdaan van opmerkingen, ontdekten we dat startpagina's in het 90e percentiel ongeveer 73 reacties op mobiele apparaten gebruiken, respectievelijk 79 reacties op desktops, terwijl in het 10e percentiel het aantal reacties ongeveer 2 is. Mediaanpagina gebruikt 16 (mobiel) of 17 reacties (desktop).
 
 Ongeveer 89% van de pagina's bevat minstens één HTML-opmerking, terwijl ongeveer 46% een voorwaardelijke opmerking bevat.
 
@@ -611,7 +611,7 @@ In onze mobiele dataset van 6,3 miljoen pagina's bevatten ongeveer 0,9 miljoen p
   <figcaption>{{ figure_link(caption="Verouderde elementen met meer dan 10.000 toepassingen.", sheets_gid="1972617631", sql_file="pages_element_count_by_device_and_obsolete_elements.sql") }}</figcaption>
 </figure>
 
-Zelfs `spacer` wordt nog 1.584 keer gebruikt en staat op elke 5.000ste pagina. We weten dat Google <a hreflang="en" href="https://web.archive.org/web/19981202230410/https://www.google.com/">al 22 jaar</a> een `center`-element op <a hreflang="en" href="https://www.google.com/">hun homepagina</a> gebruikt, maar waarom zijn er zoveel navolgers?
+Zelfs `spacer` wordt nog 1.584 keer gebruikt en staat op elke 5.000ste pagina. We weten dat Google <a hreflang="en" href="https://web.archive.org/web/19981202230410/https://www.google.com/">al 22 jaar</a> een `center`-element op <a hreflang="en" href="https://www.google.com/">hun startpagina</a> gebruikt, maar waarom zijn er zoveel navolgers?
 
 #### `isindex`
 

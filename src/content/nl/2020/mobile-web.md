@@ -36,7 +36,7 @@ Bezoek de bovenstaande links voor meer informatie over de methodologie en kantte
 
 Naast het bovenstaande hebben we ook een niet-openbare Chrome-gegevensbron gebruikt in het gedeelte over het laden van pagina's in Chrome. Lees voor meer informatie over de <a hreflang="en" href="https://chromium.googlesource.com/chromium/src/+/master/services/metrics/ukm_api.md">gegevensverzamelings-API van Chrome</a>.
 
-Hoewel deze gegevens alleen worden verzameld van een subset van (aangemelde) Chrome-gebruikers, hebben ze geen last van het feit dat ze beperkt zijn tot homepagina's. Het is pseudoniem en bestaat uit histogrammen en gebeurtenissen.
+Hoewel deze gegevens alleen worden verzameld van een subset van (aangemelde) Chrome-gebruikers, hebben ze geen last van het feit dat ze beperkt zijn tot startpagina's. Het is pseudoniem en bestaat uit histogrammen en gebeurtenissen.
 
 <p class="note">OPMERKING: Rapportage is ingeschakeld als de gebruiker een functie heeft ingeschakeld die browservensters synchroniseert, tenzij ze de instelling "Zoeken en browsen beter maken/URL's van pagina's die u bezoekt naar Google sturen" hebben uitgeschakeld.</p>
 
@@ -254,7 +254,7 @@ Eenvoudige ontwerpaanpassingen gaan een lange weg, bijvoorbeeld een duidelijke c
   )
 }}
 
-<a hreflang="en" href="https://www.nngroup.com/articles/auto-forwarding/">Onderzoek heeft aangetoond</a> dat carrousels met auto-forwarding schadelijk zijn voor de gebruikerservaring. Auto-forwarding carrousels op de homepagina moeten worden vermeden of hun frequentie moet worden verlaagd.
+<a hreflang="en" href="https://www.nngroup.com/articles/auto-forwarding/">Onderzoek heeft aangetoond</a> dat carrousels met auto-forwarding schadelijk zijn voor de gebruikerservaring. Auto-forwarding carrousels op de startpagina moeten worden vermeden of hun frequentie moet worden verlaagd.
 
 ##### Kleur en contrast
 

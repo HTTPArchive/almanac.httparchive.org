@@ -70,7 +70,7 @@ _Opmerking over CDN's: de CDN-categorie hier omvat providers die bronnen leveren
 
 * Alle hier gepresenteerde gegevens zijn gebaseerd op een niet-interactieve, koude belasting. Deze waarden kunnen er na gebruikersinteractie behoorlijk anders uitzien.
 * De pagina's worden getest vanaf servers in de VS zonder dat er cookies zijn ingesteld, dus derde partijen die worden aangevraagd na de opt-in zijn niet inbegrepen. Dit heeft met name gevolgen voor pagina's die worden gehost en voornamelijk worden aangeboden aan landen die onder de [Algemene Verordening Gegevensbescherming](https://nl.wikipedia.org/wiki/Algemene_verordening_gegevensbescherming) of andere soortgelijke wetgeving vallen.
-* Alleen de homepagina's worden getest. Andere pagina's kunnen andere vereisten van derden hebben.
+* Alleen de startpagina's worden getest. Andere pagina's kunnen andere vereisten van derden hebben.
 * Ongeveer 84% van alle domeinen van derden op verzoekvolume zijn geïdentificeerd en gecategoriseerd. De overige 16% valt in de categorie "Overig".
 
 Lees meer over onze [methodologie](./methodology).
