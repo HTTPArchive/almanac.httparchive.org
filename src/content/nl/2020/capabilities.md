@@ -211,7 +211,7 @@ self.addEventListener('periodicsync', (event) => {
 });
 ```
 
-Op het moment van schrijven implementeren alleen op Chromium gebaseerde browsers deze API. Op deze browsers moet de applicatie eerst worden geïnstalleerd (d.w.z. toegevoegd aan het home scherm) voordat de API kan worden gebruikt. De <a hreflang="en" href="https://www.chromium.org/developers/design-documents/site-engagement">site engagement score</a> van de website bepaalt of en hoe vaak periodieke synchronisatiegebeurtenissen kunnen worden aangeroepen. In de huidige conservatieve implementatie kunnen websites inhoud één keer per dag synchroniseren.
+Op het moment van schrijven implementeren alleen op Chromium gebaseerde browsers deze API. Op deze browsers moet de applicatie eerst worden geïnstalleerd (d.w.z. toegevoegd aan het start scherm) voordat de API kan worden gebruikt. De <a hreflang="en" href="https://www.chromium.org/developers/design-documents/site-engagement">site engagement score</a> van de website bepaalt of en hoe vaak periodieke synchronisatiegebeurtenissen kunnen worden aangeroepen. In de huidige conservatieve implementatie kunnen websites inhoud één keer per dag synchroniseren.
 
 {{ figure_markup(
   image="periodic_background_sync_api.png",

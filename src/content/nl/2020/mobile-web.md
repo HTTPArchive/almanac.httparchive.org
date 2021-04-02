@@ -390,7 +390,7 @@ De laatste fase in de reis is gebruikersbehoud, dit betekent de gebruiker opnieu
 
 #### Installeerbaarheid met PWA
 
-Terugkerende gebruikers profiteren van een native app-achtige ervaring met een [PWA](./pwa). Een belangrijk waardevoorstel voor gebruikersbehoud is de installeerbaarheid van een PWA. Wanneer een PWA is geïnstalleerd, is deze beschikbaar vanaf de plaatsen waar een mobiele gebruiker een app verwacht te vinden: het homescherm en de app-lade. Wanneer de gebruiker op de PWA tikt en deze start, wordt deze op volledig scherm geladen en is deze beschikbaar in de taakwisselaar, net als een native app.
+Terugkerende gebruikers profiteren van een native app-achtige ervaring met een [PWA](./pwa). Een belangrijk waardevoorstel voor gebruikersbehoud is de installeerbaarheid van een PWA. Wanneer een PWA is geïnstalleerd, is deze beschikbaar vanaf de plaatsen waar een mobiele gebruiker een app verwacht te vinden: het startscherm en de app-lade. Wanneer de gebruiker op de PWA tikt en deze start, wordt deze op volledig scherm geladen en is deze beschikbaar in de taakwisselaar, net als een native app.
 
 Rakuten 24 is een online winkel van Rakuten, een van de grootste e-commercebedrijven in Japan. Een recente <a hreflang="en" href="https://web.dev/rakuten-24/">casestudy met Rakuten 24</a> toonde aan dat het maken van hun webapp <a hreflang="en" href="https://web.dev/define-install-strategy/">installeerbaar</a>, resulteerde in maar liefst 450% in bezoekersbehoud in vergelijking met de vorige mobiele webstroom, over een periode van 1 maand .
 

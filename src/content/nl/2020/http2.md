@@ -1,63 +1,63 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: HTTP/2
-description: HTTP/2 chapter of the 2020 Web Almanac covering adoption and impact of HTTP/2, HTTP/2 Push, HTTP/2 Issues, and HTTP/3.
+description: HTTP/2-hoofdstuk van de Web Almanac 2020, dat de acceptatie en impact van HTTP/2, HTTP/2 Push, HTTP/2 Issues en HTTP/3 behandelt.
 authors: [dotjs, rmarx, MikeBishop]
 reviewers: [LPardue, bazzadp, ibnesayeed]
 analysts: [gregorywolf]
 editors: [rviscomi]
-translators: []
-dotjs_bio: Andrew works at <a hreflang="en" href="https://www.cloudflare.com/">Cloudflare</a> helping to make the web faster and more secure. He spends his time deploying, measuring and improving new protocols and asset delivery to improve end-user website performance.
-rmarx_bio: Robin is a web protocol and performance researcher at <a hreflang="en" href="https://www.uhasselt.be/edm">Hasselt University, Belgium</a>. He has been working on getting QUIC and HTTP/3 ready to use by creating tools like <a hreflang="en" href="https://github.com/quiclog">qlog and qvis</a>.
-MikeBishop_bio: Editor of HTTP/3 with the <a hreflang="en" href="https://quicwg.org/">QUIC Working Group</a>. Architect in <a hreflang="en" href="https://www.akamai.com/">Akamai</a>'s Foundry group.
+translators: [noah-vdv]
+dotjs_bio: Andrew werkt bij <a hreflang="en" href="https://www.cloudflare.com/">Cloudflare</a> om het internet sneller en veiliger te maken. Hij besteedt zijn tijd aan het implementeren, meten en verbeteren van nieuwe protocollen en levering van activa om de prestaties van de website van eindgebruikers te verbeteren.
+rmarx_bio: Robin is een webprotocol- en prestatieonderzoeker bij <a href="https://www.uhasselt.be/expertisecentrum-voor-digitale-media">Universiteit Hasselt, België</a>. Hij heeft gewerkt aan het gebruiksklaar maken van QUIC en HTTP/3 door hulpmiddelen te maken zoals <a hreflang="en" href="https://github.com/quiclog">qlog en qvis</a>.
+MikeBishop_bio: Editor van HTTP/3 met de <a hreflang="en" href="https://quicwg.org/">QUIC Working Group</a>. Architect in de Foundry-groep van <a hreflang="en" href="https://www.akamai.com/">Akamai</a>.
 discuss: 2058
 results: https://docs.google.com/spreadsheets/d/1M1tijxf04wSN3KU0ZUunjPYCrVsaJfxzuRCXUeRQ-YU/
-featured_quote: This chapter reviews the current state of HTTP/2 and gQUIC deployment, to establish how well some of the newer features of the protocol, such as prioritization and server push, have been adopted. We then look at the motivations for HTTP/3, describe the major differences between the protocol versions and discuss the potential challenges in upgrading to a UDP-based transport protocol with QUIC.
+featured_quote: Dit hoofdstuk bespreekt de huidige status van de implementatie van HTTP/2 en gQUIC, om vast te stellen hoe goed sommige van de nieuwere functies van het protocol, zoals prioriteitstelling en serverpush, zijn overgenomen. Vervolgens kijken we naar de motivaties voor HTTP/3, beschrijven we de belangrijkste verschillen tussen de protocolversies en bespreken we de mogelijke uitdagingen bij het upgraden naar een UDP-gebaseerd transportprotocol met QUIC.
 featured_stat_1: 64%
-featured_stat_label_1: Requests served over HTTP/2
-featured_stat_2: 31.7%
-featured_stat_label_2: CDN Requests with incorrect HTTP/2 prioritization
+featured_stat_label_1: Verzoeken geleverd via HTTP/2
+featured_stat_2: 31,7%
+featured_stat_label_2: CDN-verzoeken met onjuiste HTTP/2-prioriteitstelling
 featured_stat_3: 80%
-featured_stat_label_3: Pages served over HTTP/2 if a CDN is used, 30% if CDN not used
+featured_stat_label_3: Pagina's die worden bediend via HTTP/2 als een CDN wordt gebruikt, 30% als CDN niet wordt gebruikt
 ---
 
-## Introduction
+## Inleiding
 
-HTTP is an application layer protocol designed to transfer information between networked devices and runs on top of other layers of the network protocol stack. After HTTP/1.x was released, it took over 20 years until the first major update, HTTP/2, was made a standard in 2015.
+HTTP is een applicatielaagprotocol dat is ontworpen om informatie tussen netwerkapparaten uit te wisselen en wordt uitgevoerd bovenop andere lagen van de netwerkprotocolstapel. Nadat HTTP/1.x was uitgebracht, duurde het meer dan 20 jaar voordat de eerste grote update, HTTP/2, in 2015 een standaard werd.
 
-It didn't stop there: over the last four years, HTTP/3 and QUIC (a new latency-reducing, reliable, and secure transport protocol) have been under standards development in the IETF QUIC working group. There are actually two protocols that share the same name: "Google QUIC" ("gQUIC" for short), the original protocol that was designed and used by Google, and the newer IETF standardized version (IETF QUIC/QUIC). IETF QUIC was based on gQUIC, but has grown to be quite different in design and implementation. On October 21, 2020, draft 32 of IETF QUIC reached a significant milestone when it moved to <a hreflang="en" href="https://mailarchive.ietf.org/arch/msg/quic/ye1LeRl7oEz898RxjE6D3koWhn0/">Last Call</a>. This is the part of the standardization process when the working group believes they are almost finished and requests a final review from the wider IETF community.
+Daar bleef het niet bij: de afgelopen vier jaar zijn HTTP/3 en QUIC (een nieuw latentieverminderend, betrouwbaar en veilig transportprotocol) in standaarden ontwikkeld in de IETF QUIC-werkgroep. Er zijn eigenlijk twee protocollen die dezelfde naam hebben: "Google QUIC" (afgekort "gQUIC"), het oorspronkelijke protocol dat is ontworpen en gebruikt door Google, en de nieuwere IETF-gestandaardiseerde versie (IETF QUIC/QUIC). IETF QUIC was gebaseerd op gQUIC, maar is uitgegroeid tot een heel ander ontwerp en implementatie. Op 21 oktober 2020 bereikte concept 32 van IETF QUIC een belangrijke mijlpaal toen het werd verplaatst naar <a hreflang="en" href="https://mailarchive.ietf.org/arch/msg/quic/ye1LeRl7oEz898RxjE6D3koWhn0/">Last Call</a>. Dit is het deel van het standaardisatieproces wanneer de werkgroep denkt dat ze bijna klaar zijn en vraagt om een laatste beoordeling van de bredere IETF-gemeenschap.
 
-This chapter reviews the current state of HTTP/2 and gQUIC deployment. It explores how well some of the newer features of the protocol, such as prioritization and server push, have been adopted. We then look at the motivations for HTTP/3, describe the major differences between the protocol versions, and discuss the potential challenges in upgrading to a UDP-based transport protocol with QUIC.
+In dit hoofdstuk wordt de huidige status van HTTP/2 en gQUIC-implementatie besproken. Het onderzoekt hoe goed sommige van de nieuwere functies van het protocol, zoals prioriteitstelling en server-push, zijn overgenomen. Vervolgens kijken we naar de motivaties voor HTTP/3, beschrijven we de belangrijkste verschillen tussen de protocolversies en bespreken we de mogelijke uitdagingen bij het upgraden naar een UDP-gebaseerd transportprotocol met QUIC.
 
-### HTTP/1.0 to HTTP/2
+### HTTP/1.0 naar HTTP/2
 
-As the HTTP protocol has evolved, the semantics of HTTP have stayed the same; there have been no changes to the HTTP methods (such as GET or POST), status codes (200, or the dreaded 404), URIs, or header fields. Where the HTTP protocol has changed, the differences have been the wire-encoding and the use of features of the underlying transport.
+Terwijl het HTTP-protocol is geëvolueerd, is de semantiek van HTTP hetzelfde gebleven; er zijn geen wijzigingen in de HTTP-methoden (zoals GET of POST), statuscodes (200 of de gevreesde 404), URI's of headervelden. Waar het HTTP-protocol is veranderd, zijn de verschillen de draadcodering en het gebruik van functies van het onderliggende transport.
 
-HTTP/1.0, published in 1996, defined the text-based application protocol, allowing clients and servers to exchange messages in order to request resources. A new TCP connection was required for each request/response, which introduced overhead. TCP connections use a congestion control algorithm to maximize how much data can be in-flight. This process takes time for each new connection. This "slow-start" means that not all the available bandwidth is used immediately.
+HTTP/1.0, gepubliceerd in 1996, definieerde het op tekst gebaseerde applicatieprotocol, waardoor cliënten en servers berichten kunnen uitwisselen om bronnen aan te vragen. Voor elk verzoek/antwoord was een nieuwe TCP-verbinding vereist, waardoor overhead werd geïntroduceerd. TCP-verbindingen gebruiken een algoritme voor congestiecontrole om te maximaliseren hoeveel gegevens er tijdens de vlucht kunnen zijn. Dit proces kost tijd voor elke nieuwe verbinding. Deze "langzame start" betekent dat niet alle beschikbare bandbreedte onmiddellijk wordt gebruikt.
 
-In 1997, HTTP/1.1 was introduced to allow TCP connection reuse by adding "keep-alives", aimed at reducing the total cost of connection start-ups. Over time, increasing website performance expectations led to the need for concurrency of requests. HTTP/1.1 could only request another resource after the previous response had completed. Therefore, additional TCP connections had to be established, reducing the impact of the keep-alive connections and further increasing overhead.
+In 1997 werd HTTP/1.1 geïntroduceerd om hergebruik van TCP-verbindingen mogelijk te maken door <span lang="en">"keep-alives"</span> toe te voegen, gericht op het verlagen van de totale kosten van het opstarten van verbindingen. Na verloop van tijd leidden de toenemende prestatieverwachtingen van de website tot de behoefte aan gelijktijdigheid van verzoeken. HTTP/1.1 kon alleen een andere bron opvragen nadat het vorige antwoord was voltooid. Daarom moesten extra TCP-verbindingen tot stand worden gebracht, waardoor de impact van de keep-alive-verbindingen werd verkleind en de overhead nog groter werd.
 
-HTTP/2, published in 2015, is a binary-based protocol that introduced the concept of bidirectional streams between client and server. Using these streams, a browser can make optimal use of a single TCP connection to _multiplex_ multiple HTTP requests/responses concurrently. HTTP/2 also introduced a prioritization scheme to steer this multiplexing; clients can signal a request priority that allows more important resources to be sent ahead of others.
+HTTP/2, gepubliceerd in 2015, is een binair protocol dat het concept van bidirectionele streams tussen cliënt en server introduceerde. Met behulp van deze streams kan een browser optimaal gebruik maken van een enkele TCP-verbinding om meerdere HTTP-verzoeken/-antwoorden tegelijkertijd te _multiplexen_. HTTP/2 introduceerde ook een prioriteitsschema om deze _multiplexing_ te sturen; cliënten kunnen een verzoekprioriteit aangeven waardoor belangrijkere bronnen vóór anderen kunnen worden verzonden.
 
-## HTTP/2 Adoption
+## HTTP/2-Adoptie
 
-The data used in this chapter is sourced from the HTTP Archive and tests over seven million websites with a Chrome browser.  As with other chapters, the analysis is split by mobile and desktop websites. When the results between desktop and mobile are similar, statistics are presented from the mobile dataset. You can find more details on the [Methodology](./methodology) page. When reviewing this data, please bear in mind that each website will receive equal weight regardless of the number of requests. We suggest you think of this more as investigating the trends across a broad range of active websites.
+De gegevens die in dit hoofdstuk worden gebruikt, zijn afkomstig uit het HTTP Archive en testen meer dan zeven miljoen websites met een Chrome-browser. Net als bij andere hoofdstukken, wordt de analyse opgesplitst in mobiele en desktopwebsites. Wanneer de resultaten tussen desktop en mobiel vergelijkbaar zijn, worden statistieken uit de mobiele dataset gepresenteerd. U kunt meer details vinden op de pagina [Methodologie](./methodology). Houd er bij het bekijken van deze gegevens rekening mee dat elke website evenveel gewicht krijgt, ongeacht het aantal verzoeken. We raden u aan dit meer te zien als het onderzoeken van de trends op een breed scala aan actieve websites.
 
 {{ figure_markup(
   image="http2-h2-usage.png",
-  alt="HTTP/2 usage by request.",
+  alt="HTTP/2-gebruik op verzoek.",
   link="https://httparchive.org/reports/state-of-the-web#h2",
-  caption='HTTP/2 usage by request. (Source: <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#h2">HTTP Archive</a>)',
-  description="Timeseries chart of HTTP/2 usage showing adoption at 64% for both desktop and mobile as of July 2019. The trend is growing steadily at about 15 points per year.",
+  caption='HTTP/2-gebruik op verzoek. (Bron: <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#h2">HTTP Archive</a>)',
+  description="Tijdreeksdiagram van HTTP / 2-gebruik met een acceptatie van 64% voor zowel desktop als mobiel vanaf juli 2019. De trend groeit gestaag met ongeveer 15 punten per jaar.",
   width=600,
   height=321
   )
 }}
 
-Last year's analysis of HTTP Archive data showed that HTTP/2 was used for over 50% of requests and, as can be seen, linear growth has continued in 2020; now in excess of 60% of requests are served over HTTP/2.
+Uit de analyse van HTTP Archive-gegevens vorig jaar bleek dat HTTP/2 werd gebruikt voor meer dan 50% van de verzoeken en, zoals te zien is, is de lineaire groei in 2020 voortgezet; nu wordt meer dan 60% van de verzoeken bediend via HTTP/2.
 
 {{ figure_markup(
-  caption="The percentage of requests that use HTTP/2.",
+  caption="Het percentage verzoeken dat gebruikmaakt van HTTP/2.",
   content="64%",
   classes="big-number",
   sheets_gid="2122693316",
@@ -65,7 +65,7 @@ Last year's analysis of HTTP Archive data showed that HTTP/2 was used for over 5
 )
 }}
 
-When comparing Figure 22.3 with last year's results, there has been a **10% increase in HTTP/2 requests** and a corresponding 10% decrease in HTTP/1.x requests. This is the first year that gQUIC can be seen in the dataset.
+Wanneer Figuur 22.3 wordt vergeleken met de resultaten van vorig jaar, is er een toename van **10% in HTTP/2-verzoeken** en een overeenkomstige afname van 10% in HTTP/1.x-verzoeken. Dit is het eerste jaar dat gQUIC in de dataset te zien is.
 
 <figure>
   <table>
@@ -73,38 +73,38 @@ When comparing Figure 22.3 with last year's results, there has been a **10% incr
       <tr>
         <th>Protocol</th>
         <th>Desktop</th>
-        <th>Mobile</th>
+        <th>Mobiel</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>HTTP/1.1</td>
-        <td class="numeric">**34.47%</td>
-        <td class="numeric">34.11%</td>
+        <td class="numeric">**34,47%</td>
+        <td class="numeric">34,11%</td>
       </tr>
       <tr>
         <td>HTTP/2</td>
-        <td class="numeric">63.70%</td>
-        <td class="numeric">63.80%</td>
+        <td class="numeric">63,70%</td>
+        <td class="numeric">63,80%</td>
       </tr>
       <tr>
         <td>gQUIC</td>
-        <td class="numeric">1.72%</td>
-        <td class="numeric">1.71%</td>
+        <td class="numeric">1,72%</td>
+        <td class="numeric">1,71%</td>
       </tr>
     </tbody>
   </table>
 
-  <figcaption>{{ figure_link(caption="HTTP version usage by request.", sheets_gid="2122693316", sql_file="adoption_of_http_2_by_site_and_requests.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Gebruik van HTTP-versie op verzoek.", sheets_gid="2122693316", sql_file="adoption_of_http_2_by_site_and_requests.sql") }}</figcaption>
 </figure>
 
 <p class="note">
-  ** As with last year's crawl, around 4% of desktop requests did not report a protocol version. Analysis shows these to mostly be HTTP/1.1 and we worked to fix this gap in our statistics for future crawls and analysis. Although we base the data on the August 2020 crawl, we confirmed the fix in the October 2020 data set before publication which did indeed show these were HTTP/1.1 requests and so have added them to that statistic in above table.
+  ** Net als bij de crawl van vorig jaar, meldde ongeveer 4% van de desktopverzoeken geen protocolversie. Analyse toont aan dat dit meestal HTTP/1.1 is en we hebben eraan gewerkt om dit gat in onze statistieken voor toekomstige crawls en analyses te dichten. Hoewel we de gegevens baseren op de crawl van augustus 2020, hebben we de correctie in de gegevensset van oktober 2020 vóór publicatie bevestigd, die inderdaad aantoonde dat dit HTTP/1.1-verzoeken waren en hebben ze daarom aan die statistiek in de bovenstaande tabel toegevoegd.
 </note>
 
-When reviewing the total number of website requests, there will be a bias towards common third-party domains. To get a better understanding of the HTTP/2 adoption by server install, we will look instead at the protocol used to serve the HTML from the home page of a site.
+Bij het beoordelen van het totale aantal websiteverzoeken, zal er een voorkeur zijn voor algemene domeinen van derden. Om een beter begrip te krijgen van de HTTP/2-acceptatie door serverinstallatie, zullen we in plaats daarvan kijken naar het protocol dat wordt gebruikt om de HTML aan te bieden vanaf de startpagina van een site.
 
-Last year around 37% of home pages were served over HTTP/2 and 63% over HTTP/1. This year, combining mobile and desktop, it is a roughly equal split, with slightly more desktop sites being served over HTTP/2 for the first time, as shown in Figure 22.4.
+Vorig jaar werd ongeveer 37% van de startpagina's bediend via HTTP/2 en 63% via HTTP/1. Dit jaar is de combinatie van mobiel en desktop ongeveer gelijk, met iets meer desktopsites die voor het eerst via HTTP/2 worden bediend, zoals weergegeven in figuur 22.4.
 
 <figure>
   <table>
@@ -112,34 +112,34 @@ Last year around 37% of home pages were served over HTTP/2 and 63% over HTTP/1. 
       <tr>
         <th>Protocol</th>
         <th>Desktop</th>
-        <th>Mobile</th>
+        <th>Mobiel</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>HTTP/1.0</td>
-        <td class="numeric">0.06%</td>
-        <td class="numeric">0.05%</td>
+        <td class="numeric">0,06%</td>
+        <td class="numeric">0,05%</td>
       </tr>
       <tr>
         <td>HTTP/1.1</td>
-        <td class="numeric">49.22%</td>
-        <td class="numeric">50.05%</td>
+        <td class="numeric">49,22%</td>
+        <td class="numeric">50,05%</td>
       </tr>
       <tr>
         <td>HTTP/2</td>
-        <td class="numeric">49.97%</td>
-        <td class="numeric">49.28%</td>
+        <td class="numeric">49,97%</td>
+        <td class="numeric">49,28%</td>
       </tr>
     </tbody>
   </table>
 
-  <figcaption>{{ figure_link(caption="HTTP version usage for home pages.", sheets_gid="1447413141", sql_file="measure_of_all_http_versions_for_main_page_of_all_sites.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="HTTP-versiegebruik voor startpagina's.", sheets_gid="1447413141", sql_file="measure_of_all_http_versions_for_main_page_of_all_sites.sql") }}</figcaption>
 </figure>
 
-gQUIC is not seen in the home page data for two reasons. To measure a website over gQUIC, the HTTP Archive crawl would have to perform protocol negotiation via the [alternative services](#alternative-services) header and then use this endpoint to load the site over gQUIC. This was not supported this year, but expect it to be available in next year's Web Almanac. Also, gQUIC is predominantly used for third-party Google tools rather than serving home pages.
+gQUIC wordt om twee redenen niet gezien in de gegevens van de startpagina. Om een website over gQUIC te meten, zou de HTTP Archivecrawl protocolonderhandelingen moeten uitvoeren via de [alternative services](#alternative-services)-header en vervolgens dit eindpunt gebruiken om de site over gQUIC te laden. Dit werd dit jaar niet ondersteund, maar verwacht dat het volgend jaar beschikbaar zal zijn in de Web Almanac. gQUIC wordt ook voornamelijk gebruikt voor Google-tools van derden in plaats van startpagina's weer te geven.
 
-The drive to increase [security](./security) and [privacy](./privacy) on the web has seen requests over TLS increase by <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#pctHttps">over 150% in the last 4 years</a>. Today, over 86% of all requests on mobile and desktop are encrypted. Looking only at home pages, the numbers are still an impressive 78.1% of desktop and 74.7% of mobile. This is important because HTTP/2 is only supported by browsers over TLS. The proportion served over HTTP/2, as shown in Figure 22.5, has also increased by 10 percentage points from [last year](../2019/http2#fig-5), from 55% to 65%.
+De drang om [beveiliging](./security) en [privacy](./privacy) op het web te verbeteren, heeft geleid tot een toename van het aantal verzoeken over TLS met <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#pctHttps">meer dan 150% in de afgelopen 4 jaar</a>. Tegenwoordig is meer dan 86% van alle verzoeken op mobiel en desktop versleuteld. Als we alleen naar startpagina's kijken, zijn de cijfers nog steeds een indrukwekkende 78,1% van de desktop en 74,7% van de mobiele apparaten. Dit is belangrijk omdat HTTP/2 alleen wordt ondersteund door browsers via TLS. Het aandeel dat via HTTP/2 wordt bediend, zoals weergegeven in figuur 22.5, is ook met 10 procentpunten gestegen ten opzichte van [vorig jaar](../2019/http2#fig-5), van 55% naar 65%.
 
 <figure>
   <table>
@@ -147,114 +147,114 @@ The drive to increase [security](./security) and [privacy](./privacy) on the web
       <tr>
         <th>Protocol</th>
         <th>Desktop</th>
-        <th>Mobile</th>
+        <th>Mobiel</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>HTTP/1.1</td>
-        <td class="numeric">36.05%</td>
-        <td class="numeric">34.04%</td>
+        <td class="numeric">36,05%</td>
+        <td class="numeric">34,04%</td>
       </tr>
       <tr>
         <td>HTTP/2</td>
-        <td class="numeric">63.95%</td>
-        <td class="numeric">65.96%</td>
+        <td class="numeric">63,95%</td>
+        <td class="numeric">65,96%</td>
       </tr>
     </tbody>
   </table>
 
-  <figcaption>{{ figure_link(caption="HTTP version usage for HTTPS home pages.", sheets_gid="900140630", sql_file="tls_adoption_by_http_version.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="HTTP-versiegebruik voor HTTPS-startpagina's.", sheets_gid="900140630", sql_file="tls_adoption_by_http_version.sql") }}</figcaption>
 </figure>
 
-With over 60% of websites being served over HTTP/2 or gQUIC, let's look a little deeper into the pattern of protocol distribution for all requests made across individual sites.
+Nu meer dan 60% van de websites wordt bediend via HTTP/2 of gQUIC, gaan we wat dieper kijken naar het patroon van protocoldistributie voor alle verzoeken die op individuele sites worden gedaan.
 
 {{ figure_markup(
   image="http2-h2-or-gquic-requests-per-page.png",
-  caption="Compare the distribution of fraction of HTTP/2 requests per page in 2020 with 2019.",
-  description="A bar chart of the fraction of HTTP/2 requests by page percentile. The median percentage of HTTP/2 or gQUIC requests per page has increased to 76% in 2020 from 46% in 2019. At the 10, 25, 75, and 90th percentiles, the fraction of HTTP/2 or gQUIC requests per page in 2020 is 5%, 24%, 98% and 100% compared to 3%, 15%, 93% and 100% in 2019.",
+  caption="Vergelijk de verdeling van fractie van HTTP/2-aanvragen per pagina in 2020 met 2019.",
+  description="Een staafdiagram van de fractie van HTTP/2-aanvragen per pagina percentage. Het mediane percentage van HTTP/2- of GQUIC-aanvragen per pagina is toegenomen tot 76% in 2020 van 46% in 2019. Op de 10, 25, 75 en 90e percentielen, de fractie van HTTP/2- of GQUIC-aanvragen per pagina in 2020 is 5%, 24%, 98% en 100% vergeleken met 3%, 15%, 93% en 100% in 2019.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=1328744214&format=interactive",
   sheets_gid="152400778",
   sql_file="percentiles_of_resources_loaded_over_HTTP2_or_better_per_site.sql"
   )
 }}
 
-Figure 22.6 compares how much HTTP/2 or gQUIC is used on a website between this year and last year. The most noticeable change is that over half of sites now have 75% or more of their requests served over HTTP/2 or gQUIC compared to 46% last year. Less than 7% of sites make no HTTP/2 or gQUIC requests, while (only) 10% of sites are entirely HTTP/2 or gQUIC requests.
+Figuur 22.6 Vergelijkt hoeveel HTTP/2 of GQUIC wordt gebruikt op een website tussen dit jaar en vorig jaar. De meest opvallende verandering is dat meer dan de helft van de sites nu 75% of meer van hun verzoeken heeft geserveerd via HTTP/2 of GQUIC vergeleken met 46% vorig jaar. Minder dan 7% van de sites maakt geen HTTP/2- of GQUIC-aanvragen, terwijl (alleen) 10% van de sites volledig HTTP/2- of GQUIC-verzoeken is.
 
-What about the breakdown of the page itself? We typically talk about the difference between first-party and third-party content. Third-party is defined as content not within the direct control of the site owner, providing functionality such as advertising, marketing or analytics. The definition of known third parties is taken from the <a hreflang="en" href="https://github.com/patrickhulce/third-party-web/blob/8afa2d8cadddec8f0db39e7d715c07e85fb0f8ec/data/entities.json5">third party web</a> repository.
+Hoe zit het met de uitsplitsing van de pagina zelf? We praten meestal over het verschil tussen inhoud van de eerste partij en derden. Derde-partij wordt gedefinieerd als inhoud die niet binnen de directe controle van de eigenaar van de site, functionaliteit, zoals reclame, marketing of analyse biedt. De definitie van bekende derden is afkomstig van de <a hreflang="en" href="https://github.com/patrickhulce/third-party-web/blob/8afa2d8cadddec8f0db39e7d715c07e85fb0f8ec/data/entities.json5">third party web</a> repository.
 
-Figure 22.7 orders every website by the fraction of HTTP/2 requests for known third parties or first party requests compared to other requests. There is a noticeable difference as over 40% of all sites have no first-party HTTP/2 or gQUIC requests at all. By contrast, even the lowest 5% of pages have 30% of third-party content served over HTTP/2. This indicates that a large part of HTTP/2's broad adoption is driven by the third parties.
+Figuur 22.7 bestelt van elke website door de fractie van HTTP/2-verzoeken voor bekende derden of eerste partijverzoeken in vergelijking met andere verzoeken. Er is een merkbaar verschil als meer dan 40% van alle sites geen HTTP/2 of GQUIC-aanvragen heeft. Daarentegen heeft zelfs de laagste 5% van de pagina's 30% van de inhoud van derden geserveerd via HTTP/2. Dit geeft aan dat een groot deel van de brede goedkeuring van HTTP/2 wordt aangedreven door de derde partijen.
 
 {{ figure_markup(
   image="http2-first-and-third-party-http2-usage.png",
-  caption="The distribution of the fraction of third-party and first-party HTTP/2 requests per page.",
-  description="A line chart comparing the fraction of first-party HTTP/2 requests with third-party HTTP/2 or gQUIC requests. The chart orders the websites by fraction of HTTP/2 requests. 45% of websites have no HTTP/2 first-party requests. Over half of websites serve third-party requests only over HTTP/2 or gQUIC. 80% of websites have 76% or more third-party HTTP/2 or gQUIC requests.",
+  caption="De verdeling van de fractie van derden en eerste-Partij HTTP/2-aanvragen per pagina.",
+  description="Een lijndiagram vergelijkt de fractie van HTTP/2-aanvragen van de eerste partijen met HTTP/2- of GQUIC-verzoeken van derden. De grafiek bestelt de websites per fractie van HTTP/2-aanvragen. 45% van de websites heeft geen HTTP/2 eerste-partij-aanvragen. Meer dan de helft van de websites serveren alleen aanvragen van derden via HTTP/2 of GQUIC. 80% van de websites heeft 76% of meer HTTP/2- of GQUIC-aanvragen van derden.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=1409316276&format=interactive",
   sql_file="http2_1st_party_vs_3rd_party.sql",
   sheets_gid="733872185"
 )
 }}
 
-Is there any difference in which content-types are served over HTTP/2 or gQUIC? Figure 22.8 shows, for example, that 90% of websites serve 100% of third party fonts and audio over HTTP/2 or gQUIC, only 5% over HTTP/1.1 and 5% are a mix. The majority of third-party assets are either scripts or images, and are solely served over HTTP/2 or gQUIC on 60% and 70% of websites respectively.
+Is er een verschil in welke inhoud-typen worden geserveerd via HTTP/2 of GQUIC? Figuur 22.8 toont bijvoorbeeld dat 90% van de websites 100% van de lettertypen van derden en audio via HTTP/2 of GQUIC serveert, slechts 5% boven HTTP/1.1 en 5% zijn een mix. De meerderheid van de activa van derden is scripts of afbeeldingen en worden uitsluitend geserveerd over HTTP/2 of GQUIC op respectievelijk 60% en 70% van de websites.
 
 {{ figure_markup(
   image="http2-third-party-http2-usage-by-content-type.png",
-  caption="The fraction of known third-party HTTP/2 or gQUIC requests by content-type per website.",
-  description="A bar chart comparing the fraction of third-party HTTP/2 requests by content-type. All third-party requests are served over HTTP/2 or gQUIC for 90% of audio and fonts, 80% of css and video, 70% of html, image and text and 60% of scripts.",
+  caption="De fractie van bekende HTTP/2- of GQUIC-verzoeken van derden door inhoudstype per website.",
+  description="Een staafdiagram vergelijken met de fractie van HTTP/2-aanvragen van derden door inhoudstype. Alle vragen van derden worden geserveerd via HTTP/2 of GQUIC voor 90% van audio en lettertypen, 80% van CSS en video, 70% van HTML, beeld en tekst en 60% van de scripts.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=1264128523&format=interactive",
   sheets_gid="419557288",
   sql_file="http2_1st_party_vs_3rd_party_by_type.sql"
 )
 }}
 
-Ads, analytics, content delivery network (CDN) resources, and tag-managers are predominantly served over HTTP/2 or gQUIC as shown in Figure 22.9. Customer-success and marketing content is more likely to be served over HTTP/1.
+Advertenties, Analytics, Content Delivery Network (CDN)-bronnen en tag-managers worden voornamelijk geserveerd via HTTP/2 of GQUIC zoals getoond in Figuur 22.9. Customer-success en Marketing-inhoud wordt waarschijnlijk meer geserveerd via HTTP/1.
 
 {{ figure_markup(
   image="http2-third-party-http2-usage-by-category.png",
-  caption="The fraction of known third-party HTTP/2 or gQUIC requests by category per website.",
-  description="A bar chart comparing the fraction of third-party HTTP/2 or gQUIC requests by category. All third-party requests for all websites are served over HTTP/2 or gQUIC for 95% of tag managers, 90% of analytics and CDN, 80% of ads, social, hosting and utility, 40% of marketing and 30% of customer-success.",
+  caption="De fractie van bekende HTTP/2- of GQUIC-verzoeken van derden per categorie per website.",
+  description="Een staafdiagram die vergelijkt de fractie van HTTP/2- of GQUIC-aanvragen van derden per categorie. Alle vragen van derden voor alle websites worden geserveerd via HTTP / 2 of GQUIC voor 95% van de tagmanagers, 90% van de analyse en CDN, 80% van de advertenties, sociale, hosting en nut, 40% van de marketing en 30% van de klant -succes.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=1419102835&format=interactive",
   sheets_gid="1059610651",
   sql_file="http2_3rd_party_by_types.sql"
 )
 }}
 
-### Server support
+### Serverondersteuning
 
-Browser auto-update mechanisms are a driving factor for client-side adoption of new web standards. It's <a hreflang="en" href="https://caniuse.com/http2">estimated</a> that over 97% of global users support HTTP/2, up slightly from 95% measured last year.
+Browser auto-update-mechanismen zijn een drijffactor voor de aanneming van de klantzijde van nieuwe webnormen. Het is <a hreflang="en" href="https://caniuse.com/http2">geschat</a> dat meer dan 97% van de wereldwijde gebruikers HTTP/2 ondersteunt, enigszins omhoog van 95% gemeten vorig jaar.
 
-Unfortunately, the upgrade path for servers is more difficult, especially with the requirement to support TLS. For mobile and desktop, we can see from Figure 22.10, that the majority of HTTP/2 sites are served by nginx, Cloudflare, and Apache. Almost half of the HTTP/1.1 sites are served by Apache.
+Helaas is het verbeteringspad voor servers moeilijker, vooral met de eis om TLS te ondersteunen. Voor mobiel en desktop kunnen we zien vanaf figuur 22.10, dat de meerderheid van de HTTP/2-sites worden bediend door NGINX, CloudFlare en Apache. Bijna de helft van de HTTP/1.1-sites wordt bediend door Apache.
 
 {{ figure_markup(
   image="http2-server-protocol-usage.png",
-  caption="Server usage by HTTP protocol on mobile",
-  description="A bar chart showing the number of websites served by either HTTP/1.x or HTTP/2 for the most popular servers to mobile clients. Nginx serves 727,181 HTTP/1.1 and 1,023,575 HTTP/2 sites. Cloudflare 59,981 HTTP/1.1 and 679,616 HTTP/2. Apache 1,521,753 HTTP/1.1 and 585,096 HTTP/2. Litespeed 50,502 HTTP/1.1 and 166,721 HTTP/2. Microsoft-IIS 284,047 HTTP/1.1 and 81,490 HTTP/2.",
+  caption="Servergebruik door HTTP-protocol op mobiel",
+  description="Een staafdiagram met het aantal websites dat wordt gediend door HTTP/1.x of HTTP/2 voor de populairste servers naar mobiele klanten. NGINX serveert 727.181 HTTP/1.1 en 1.023.575 HTTP/2 sites. Cloudflare 59.981 HTTP/1.1 en 679.616 HTTP/2. Apache 1.521.753 HTTP/1.1 en 585.096 HTTP/2. Litespeed 50.502 HTTP/1.1 en 166.721 HTTP/2. Microsoft-IIS 284.047 HTTP/1.1 en 81.490 HTTP/2.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=718663369&format=interactive",
   sheets_gid="306338094",
   sql_file="count_of_h2_and_h3_sites_grouped_by_server.sql"
 )
 }}
 
-How has HTTP/2 adoption changed in the last year for each server? Figure 22.11 shows a general HTTP/2 adoption increase of around 10% across all servers since last year. Apache and IIS are still under 25% HTTP/2. This suggests that either new servers tend to be nginx or it is seen as too difficult or not worthwhile to upgrade Apache or IIS to HTTP/2 and/or TLS.
+Hoe wordt HTTP/2-adoptie in het laatste jaar voor elke server gewijzigd? Figuur 22.11 toont een algemene HTTP/2-goedkeuring van ongeveer 10% in alle servers sinds vorig jaar. Apache en IIS zijn nog steeds minder dan 25% HTTP/2. Dit suggereert dat nieuwe servers de neiging hebben NGINX te zijn of het wordt gezien als te moeilijk of niet de moeite waard om Apache of IIS naar HTTP/2 en/of TLS te upgraden.
 
 {{ figure_markup(
   image="http2-h2-usage-by-server.png",
-  caption="Percentage of pages served over HTTP/2 by server",
-  description="A bar chart comparing the percentage of websites served over HTTP/2 between 2019 and 2020. Cloudflare increased to 93.08% from 85.40%. Litespeed increased to 81.91% from 70.80%. Openresty increased to 66.24% from 51.40%. Nginx increased to 60.84% from 49.20%. Apache increased to 27.19% from 18.10% and MIcorsoft-IIS increased to 22.82% from 14.10%.",
+  caption="Percentage pagina's geserveerd via HTTP/2 per server",
+  description="Een staafdiagram die het percentage van websites die geserveerd worden via HTTP/2 tussen 2019 en 2020 vergelijkt. Cloudflare steeg tot 93,08% van 85,40%. Litespeed steeg tot 81,91% van 70,80%. Openstations steeg tot 66,24% van 51,40%. NGINX steeg tot 60,84% van 49,20%. Apache steeg tot 27,19% van 18,10% en MIcorSoft-IIS steeg tot 22,82% van 14,10%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=936321266&format=interactive",
   sheets_gid="306338094",
   sql_file="count_of_h2_and_h3_sites_grouped_by_server.sql"
   )
 }}
 
-A long-term recommendation to improve website performance has been to use a CDN. The benefit is a reduction in latency by both serving content and terminating connections closer to the end user. This helps mitigate the rapid evolution in protocol deployment and the additional complexities in tuning servers and operating systems (see the [Prioritization](#prioritization) section for more details). To utilize the new protocols effectively, using a CDN can be seen as the recommended approach.
+Een aanbeveling op lange termijn om de website-prestaties te verbeteren, is geweest om een CDN te gebruiken. Het voordeel is een vermindering van de latentie door zowel de inhoud en het beëindigen van verbindingen dichter bij de eindgebruiker. Dit helpt de snelle evolutie in Protocol-implementatie en de extra complexiteiten in tuningservers en besturingssystemen te beperken (zie de sectie [Prioritering](#prioritering) voor meer informatie). Om de nieuwe protocollen effectief te gebruiken, kan het gebruik van een CDN worden gezien als de aanbevolen aanpak.
 
-CDNs can be classed in two broad categories: those that serve the home page and/or asset subdomains, and those that are mainly used to serve third-party content. Examples of the first category are the larger generic CDNs (such as Cloudflare, Akamai, or Fastly) and the more specific (such as WordPress or Netlify). Looking at the difference in HTTP/2 adoption rates for home pages served with or without a CDN, we see:
+CDN's kunnen worden geclassificeerd in twee brede categorieën: degenen die de startpagina en/of activa-subdomeinen serveren, en degenen die voornamelijk worden gebruikt om inhoud van derden te dienen. Voorbeelden van de eerste categorie zijn de grotere generieke CDN's (zoals Cloudflare, Akamai of Fastly) en de specifieker (zoals WordPress of Netlify). Kijkend naar het verschil in HTTP/2-goedkeuringscijfers voor startpagina's geserveerd met of zonder een CDN, zien we:
 
-- **80%** of mobile home pages are served over HTTP/2 if a CDN is used
-- **30%** of mobile home pages are served over HTTP/2 if a CDN is not used
+- **80%** van de mobiele startpagina's wordt bediend via HTTP/2 als een CDN wordt gebruikt
+- **30%** van de mobiele startpagina's wordt bediend via HTTP/2 als er geen CDN wordt gebruikt
 
-Figure 22.12 shows the more specific and the modern CDNs serve a higher proportion of traffic over HTTP/2.
+Figuur 22.12 toont de meer specifieke en moderne CDN's die een groter deel van het verkeer bedienen via HTTP/2.
 
 <figure>
   <table>
@@ -287,398 +287,398 @@ Figure 22.12 shows the more specific and the modern CDNs serve a higher proporti
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Percentage of HTTP/2 requests served by the first-party CDNs over mobile.", sheets_gid="781660433", sql_file="cdn_detail_by_cdn.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Percentage HTTP/2-verzoeken dat wordt geleverd door de eerste-partij CDN's via mobiel.", sheets_gid="781660433", sql_file="cdn_detail_by_cdn.sql") }}</figcaption>
 </figure>
 
-Types of content in the second category are typically shared resources (JavaScript or font CDNs), advertisements, or analytics. In all these cases, using a CDN will improve the performance and offload for the various SaaS solutions.
+Typen inhoud in de tweede categorie zijn doorgaans gedeelde bronnen (JavaScript of lettertype-CDN's), advertenties of analyses. In al deze gevallen zal het gebruik van een CDN de prestaties en ontlasting voor de verschillende SaaS-oplossingen verbeteren.
 
 {{ figure_markup(
   image="http2-cdn-http2-usage.png",
-  caption="Comparison of HTTP/2 and gQUIC usage for websites using a CDN.",
-  description="A line chart comparing the fraction of requests served using HTTP/2 or gQUIC for websites that use a CDN compared to sites that do not. The x-axis show the percentiles of web page ordered by percentage of requests. 23% of websites that do not use a CDN have no HTTP/2 or gQUIC usage. In comparison the 60% of websites using a CDN have all HTTP/2 or gQUIC usage. 93% of websites that use a CDN and 47% of non-CDN sites have 50% or more HTTP/2 or gQUIC usage.",
+  caption="Vergelijking van HTTP/2- en gQUIC-gebruik voor websites die een CDN gebruiken.",
+  description="Een lijndiagram dat de fractie van verzoeken die met HTTP/2 of gQUIC worden bediend, voor websites die een CDN gebruiken, vergelijkt met sites die dat niet doen. De x-as toont de percentielen van webpagina's, gesorteerd op percentage verzoeken. 23% van de websites die geen CDN gebruiken, heeft geen HTTP/2- of gQUIC-gebruik. Ter vergelijking: de 60% van de websites die een CDN gebruiken, hebben allemaal HTTP/2- of gQUIC-gebruik. 93% van de websites die een CDN gebruiken en 47% van de niet-CDN-sites hebben 50% of meer HTTP/2- of gQUIC-gebruik.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=1779365083&format=interactive",
   sheets_gid="1457263817",
   sql_file="cdn_summary.sql"
 )
 }}
 
-In Figure 22.13 we can see the stark difference in HTTP/2 and gQUIC adoption when a website is using a CDN. 70% of pages use HTTP/2 for all third-party requests when a CDN is used. Without a CDN, only 25% of pages use HTTP/2 for all third-party requests.
+In figuur 22.13 kunnen we het grote verschil zien in HTTP/2- en gQUIC-acceptatie wanneer een website een CDN gebruikt. 70% van de pagina's gebruikt HTTP/2 voor alle verzoeken van derden wanneer een CDN wordt gebruikt. Zonder CDN gebruikt slechts 25% van de pagina's HTTP/2 voor alle verzoeken van derden.
 
-## HTTP/2 impact
+## HTTP/2-impact
 
-Measuring the impact of how a protocol is performing is difficult with the current HTTP Archive [approach](./methodology). It would be really fascinating to be able to quantify the impact of concurrent connections, the effect of packet loss, and different congestion control mechanisms. To really compare performance, each website would have to be crawled over each protocol over different network conditions. What we can do instead is to look into the impact on the number of connections a website uses.
+Het meten van de impact van hoe een protocol presteert is moeilijk met de huidige HTTP Archive [benadering](./methodology). Het zou echt fascinerend zijn om de impact van gelijktijdige verbindingen, het effect van pakketverlies en verschillende mechanismen voor congestiecontrole te kunnen kwantificeren. Om de prestaties echt te kunnen vergelijken, zou elke website via elk protocol over verschillende netwerkomstandigheden moeten worden gecrawld. Wat we in plaats daarvan kunnen doen, is kijken naar de impact op het aantal verbindingen dat een website gebruikt.
 
-### Reducing connections
+### Verbindingen verminderen
 
-As discussed [earlier](#http10-to-http2), HTTP/1.1 only allows a single request at a time over a TCP connection. Most browsers get around this by allowing six parallel connections per host. The major improvement with HTTP/2 is that multiple requests can be multiplexed over a single TCP connection.  This should reduce the total number of connections—and the associated time and resources—required to load a page.
+Zoals [eerder](#http10-naar-http2) besproken, staat HTTP/1.1 slechts één verzoek per keer via een TCP-verbinding toe. De meeste browsers omzeilen dit door zes parallelle verbindingen per host toe te staan. De belangrijkste verbetering met HTTP/2 is dat meerdere verzoeken via een enkele TCP-verbinding kunnen worden _gemultiplexed_. Dit zou het totale aantal verbindingen - en de bijbehorende tijd en middelen - die nodig zijn om een pagina te laden, moeten verminderen.
 
 {{ figure_markup(
   image="http2-total-number-of-connections-per-page.png",
-  caption="Distribution of total number of connections per page",
-  description="A percentile chart of total connections, comparing 2016 with 2020 on desktop. The median number of connections in 2016 is 23, in 2020 it is 13. At the 10th percentile, 6 connections in 2016, 5 in 2020. At the 25th percentile, 12 connections in 2016, 8 in 2020. At 75th percentile - 43 connections in 2016, 20 in 2020. At 90th percentile 76 connections in 2016 and 33 in 2020.",
+  caption="Verdeling van het totale aantal verbindingen per pagina",
+  description="Een percentielgrafiek van het totale aantal verbindingen, waarin 2016 wordt vergeleken met 2020 op desktop. Het mediane aantal aansluitingen in 2016 is 23, in 2020 13. Op het 10e percentiel, 6 aansluitingen in 2016, 5 in 2020. Op het 25e percentiel, 12 aansluitingen in 2016, 8 in 2020. Op 75e percentiel, 43 aansluitingen in 2016, 20 in 2020. Op 90e percentiel, 76 aansluitingen in 2016 en 33 in 2020.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=17394219&format=interactive",
   sheets_gid="1432183252",
   sql_file="measure_number_of_tcp_connections_per_site.sql"
 )
 }}
 
-Figure 22.15 shows how the number of TCP connections per page has reduced in 2020 compared with 2016. Half of all websites now use 13 or fewer TCP connections in 2020 compared with 23 connections in 2016; a 44% decrease. In the same time period the <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#reqTotal">median number of requests</a> has only dropped from 74 to 73. The median number of requests per TCP connection has increased from 3.2 to 5.6.
+Figuur 22.15 laat zien hoe het aantal TCP-verbindingen per pagina in 2020 is afgenomen ten opzichte van 2016. De helft van alle websites gebruikt nu 13 of minder TCP-verbindingen in 2020 ten opzichte van 23 verbindingen in 2016; een afname van 44%. In dezelfde periode is het <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#reqTotal">mediaan aantal verzoeken</a> slechts gedaald van 74 naar 73. Het mediaan aantal verzoeken per TCP-verbinding is gestegen van 3,2 naar 5,6.
 
-TCP was designed to maintain an average data flow that is both efficient and fair. Imagine a flow control process where each flow both exerts pressure on and is responsive to all other flows, to provide a fair share of the network. In a fair protocol, every TCP session does not crowd out any other session and over time will take 1/N of the path capacity.
+TCP is ontworpen om een gemiddelde gegevensstroom te behouden die zowel efficiënt als eerlijk is. Stelt u een stroomcontroleproces voor waarbij elke stroom zowel druk uitoefent op als reageert op alle andere stromen, om een eerlijk deel van het netwerk te leveren. In een eerlijk protocol verdringt elke TCP-sessie geen enkele andere sessie en zal na verloop van tijd 1/N van de padcapaciteit in beslag nemen.
 
-The majority of websites still open over 15 TCP connections. In HTTP/1.1, the six connections a browser could open to a domain can over time claim six times as much bandwidth as a single HTTP/2 connection. Over low capacity networks, this can slow down the delivery of content from the primary asset domains as the number of contending connections increases and takes bandwidth away from the important requests. This favors websites with a small number of third-party domains.
+De meeste websites openen nog steeds meer dan 15 TCP-verbindingen. In HTTP/1.1 kunnen de zes verbindingen die een browser met een domein zou kunnen openen, na verloop van tijd zes keer zoveel bandbreedte claimen als een enkele HTTP/2-verbinding. Bij netwerken met een lage capaciteit kan dit de levering van inhoud van de primaire activadomeinen vertragen naarmate het aantal concurrerende verbindingen toeneemt en bandbreedte wegneemt van de belangrijke verzoeken. Dit is in het voordeel van websites met een klein aantal domeinen van derden.
 
-HTTP/2 does allow for <a hreflang="en" href="https://tools.ietf.org/html/rfc7540#section-9.1">connection reuse</a> across different, but related domains. For a TLS resource, it requires a certificate that is valid for the host in the URI. This can be used to reduce the number of connections required for domains under the control of the site author.
+HTTP/2 staat <a hreflang="en" href="https://tools.ietf.org/html/rfc7540#section-9.1">hergebruik van verbindingen</a> toe voor verschillende, maar gerelateerde domeinen. Voor een TLS-bron is een certificaat vereist dat geldig is voor de host in de URI. Dit kan worden gebruikt om het aantal verbindingen te verminderen dat nodig is voor domeinen die onder controle staan van de site-auteur.
 
-### Prioritization
+### Prioritering
 
-As HTTP/2 responses can be split into many individual frames, and as frames from multiple streams can be multiplexed, the order in which the frames are interleaved and delivered by the server becomes a critical performance consideration. A typical website consists of many different types of resources: the visible content (HTML, CSS, images), the application logic (JavaScript), ads, analytics for tracking site usage, and marketing tracking beacons. With knowledge of how a browser works, an optimal ordering of the resources can be defined that will result in the fastest user experience. The difference between optimal and non-optimal can be significant—as much as a 50% performance improvement or more!
+Omdat HTTP/2-reacties kunnen worden opgesplitst in veel individuele frames en omdat frames uit meerdere streams kunnen worden _gemultiplexed_, wordt de volgorde waarin de frames worden _interleaved_ en geleverd door de server een kritieke prestatie-overweging. Een typische website bestaat uit veel verschillende soorten bronnen: de zichtbare inhoud (HTML, CSS, afbeeldingen), de applicatielogica (JavaScript), advertenties, analyses voor het volgen van sitegebruik en marketing-trackingbakens. Met kennis van hoe een browser werkt, kan een optimale ordening van de bronnen worden gedefinieerd die zal resulteren in de snelste gebruikerservaring. Het verschil tussen optimaal en niet-optimaal kan aanzienlijk zijn - wel 50% prestatieverbetering of meer!
 
-HTTP/2 introduced the concept of prioritization to help the client communicate to the server how it thinks the multiplexing should be done. Every stream is assigned a weight (how much of the available bandwidth the stream should be allocated) and possibly a parent (another stream which should be delivered first). With the flexibility of HTTP/2's prioritization model, it is not altogether surprising that all of the current browser engines implemented <a hreflang="en" href="https://calendar.perfplanet.com/2018/http2-prioritization/">different prioritization strategies</a>, none of which are <a hreflang="en" href="https://www.youtube.com/watch?v=nH4iRpFnf1c">optimal</a>.
+HTTP/2 introduceerde het concept van prioritering om de cliënt te helpen communiceren met de server hoe hij denkt dat het multiplexen moet worden uitgevoerd. Aan elke stream wordt een gewicht toegekend (hoeveel van de beschikbare bandbreedte de stream zou moeten worden toegewezen) en mogelijk een ouder (een andere stream die als eerste zou moeten worden afgeleverd). Met de flexibiliteit van het prioriteitsmodel van HTTP/2 is het niet helemaal verrassend dat alle huidige browser-engines <a hreflang="en" href="https://calendar.perfplanet.com/2018/http2-prioritization/"> verschillende prioriteitsstrategieën</a> hebben geïmplementeerd, die geen van alle <a hreflang="en" href="https://www.youtube.com/watch?v=nH4iRpFnf1c">optimaal</a> zijn.
 
-There are also problems on the server side, leading to many servers implementing prioritization either poorly or not at all.  In the case of HTTP/1.x, tuning the server-side send buffers to be as big as possible has no downside, other than the increase in memory use (trading off memory for CPU), and is an effective way to increase the throughput of a web server. This is not true for HTTP/2, as data in the TCP send buffer cannot be re-prioritized if a request for a new, more important resource comes in.  For an HTTP/2 server, the optimal send buffer size is thus the minimum amount of data required to fully utilize the available bandwidth. This allows the server to respond immediately if a higher-priority request is received.
+Er zijn ook problemen aan de serverzijde, wat ertoe leidt dat veel servers de prioriteitstelling slecht of helemaal niet implementeren. In het geval van HTTP/1.x heeft het afstemmen van de serverzijde verzendbuffers om zo groot mogelijk te zijn geen nadeel, behalve de toename van het geheugengebruik (inruilen van geheugen voor CPU), en is het een effectieve manier om de doorvoersnelheid van een webserver. Dit geldt niet voor HTTP/2, aangezien gegevens in de TCP-verzendbuffer niet opnieuw geprioriteerd kunnen worden als een verzoek om een nieuwe, belangrijkere bron binnenkomt. Voor een HTTP/2-server is de optimale grootte van de verzendbuffer dus het minimale hoeveelheid data die nodig is om de beschikbare bandbreedte volledig te benutten. Hierdoor kan de server onmiddellijk reageren als een verzoek met een hogere prioriteit wordt ontvangen.
 
-This problem of large buffers messing with (re-)prioritization also exists in the network, where it goes by the name "bufferbloat".  Network equipment would rather buffer packets than drop them when there's a short burst.  However, if the server sends more data than the path to the client can consume, these buffers fill to capacity. These bytes already "stored" on the network limit the server's ability to send a higher-priority response earlier, just as a large send buffer does. To minimize the amount of data held in buffers, <a hreflang="en" href="https://blog.cloudflare.com/http-2-prioritization-with-nginx/">a recent congestion control algorithm such as BBR should be used</a>.
+Dit probleem van grote buffers die knoeien met (her)prioritering bestaat ook in het netwerk, waar het de naam "bufferbloat" draagt. Netwerkapparatuur buffert liever pakketten dan ze te laten vallen als er een korte burst is. Als de server echter meer gegevens verzendt dan het pad naar de cliënt kan verbruiken, worden deze buffers volledig gevuld. Deze bytes die al op het netwerk zijn "opgeslagen", beperken het vermogen van de server om eerder een antwoord met een hogere prioriteit te verzenden, net zoals een grote verzendbuffer dat doet. Om de hoeveelheid gegevens in buffers te minimaliseren, <a hreflang="en" href="https://blog.cloudflare.com/http-2-prioritization-with-nginx/">zou een recent algoritme voor congestiebeheer, zoals BBR gebruikt moeten worden gebruikt</a>.
 
-This <a hreflang="en" href="https://github.com/andydavies/http2-prioritization-issues">test suite</a> maintained by Andy Davies measures and reports how various CDN and cloud hosting services perform. The bad news is that only 9 of the 36 services prioritize correctly. Figure 22.16 shows that for sites using a CDN, around 31.7% do not prioritize correctly. This is up from 26.82% last year, mainly due to the increase in Google CDN usage. Rather than relying on the browser-sent priorities, there are some servers that implement a <a hreflang="en" href="https://blog.cloudflare.com/better-http-2-prioritization-for-a-faster-web/">server side prioritization</a> scheme instead, improving upon the browser's hints with additional logic.
+Deze <a hreflang="en" href="https://github.com/andydavies/http2-prioritization-issues">testsuite</a> die wordt beheerd door Andy Davies, meet en rapporteert hoe verschillende CDN- en cloudhostingservices presteren. Het slechte nieuws is dat slechts 9 van de 36 services de juiste prioriteiten stellen. Figuur 22.16 laat zien dat voor sites die een CDN gebruiken, ongeveer 31,7% niet de juiste prioriteiten stelt. Dit is gestegen van 26,82% vorig jaar, voornamelijk als gevolg van de toename van het Google CDN-gebruik. In plaats van te vertrouwen op de door de browser verzonden prioriteiten, zijn er enkele servers die een <a hreflang="en" href="https://blog.cloudflare.com/better-http-2-prioritization-for-a-faster-web/">prioriteitsschema aan de serverzijde</a> implementeren, waarbij de hints van de browser worden verbeterd met extra logica.
 
 <figure>
   <table>
     <thead>
       <tr>
         <th>CDN</th>
-        <th>Prioritize <br />correctly</th>
+        <th>Prioriteer <br /> correct</th>
         <th>Desktop</th>
-        <th>Mobile</th>
+        <th>Mobiel</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>Not using CDN</td>
-        <td>Unknown</td>
-        <td class="numeric">59.47%</td>
-        <td class="numeric">60.85%</td>
+        <td>Zonder CDN</td>
+        <td>Onbekend</td>
+        <td class="numeric">59,47%</td>
+        <td class="numeric">60,85%</td>
       </tr>
       <tr>
         <td>Cloudflare</td>
         <td>Pass</td>
-        <td class="numeric">22.03%</td>
-        <td class="numeric">21.32%</td>
+        <td class="numeric">22,03%</td>
+        <td class="numeric">21,32%</td>
       </tr>
       <tr>
         <td>Google</td>
         <td>Fail</td>
-        <td class="numeric">8.26%</td>
-        <td class="numeric">8.94%</td>
+        <td class="numeric">8,26%</td>
+        <td class="numeric">8,94%</td>
       </tr>
       <tr>
         <td>Amazon CloudFront</td>
         <td>Fail</td>
-        <td class="numeric">2.64%</td>
-        <td class="numeric">2.27%</td>
+        <td class="numeric">2,64%</td>
+        <td class="numeric">2,27%</td>
       </tr>
       <tr>
         <td>Fastly</td>
         <td>Pass</td>
-        <td class="numeric">2.34%</td>
-        <td class="numeric">1.78%</td>
+        <td class="numeric">2,34%</td>
+        <td class="numeric">1,78%</td>
       </tr>
       <tr>
         <td>Akamai</td>
         <td>Pass</td>
-        <td class="numeric">1.31%</td>
-        <td class="numeric">1.19%</td>
+        <td class="numeric">1,31%</td>
+        <td class="numeric">1,19%</td>
       </tr>
       <tr>
         <td>Automattic</td>
         <td>Pass</td>
-        <td class="numeric">0.93%</td>
-        <td class="numeric">1.05%</td>
+        <td class="numeric">0,93%</td>
+        <td class="numeric">1,05%</td>
       </tr>
       <tr>
         <td>Sucuri Firewall</td>
         <td>Fail</td>
-        <td class="numeric">0.77%</td>
-        <td class="numeric">0.63%</td>
+        <td class="numeric">0,77%</td>
+        <td class="numeric">0,63%</td>
       </tr>
       <tr>
         <td>Incapsula</td>
         <td>Fail</td>
-        <td class="numeric">0.42%</td>
-        <td class="numeric">0.34%</td>
+        <td class="numeric">0,42%</td>
+        <td class="numeric">0,34%</td>
       </tr>
       <tr>
         <td>Netlify</td>
         <td>Fail</td>
-        <td class="numeric">0.27%</td>
-        <td class="numeric">0.20%</td>
+        <td class="numeric">0,27%</td>
+        <td class="numeric">0,20%</td>
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="HTTP/2 prioritization support in common CDNs.", sheets_gid="1152953475", sql_file="percentage_of_h2_and_h3_sites_affected_by_cdn_prioritization.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Ondersteuning voor HTTP/2-prioriteitstelling in veelgebruikte CDN's.", sheets_gid="1152953475", sql_file="percentage_of_h2_and_h3_sites_affected_by_cdn_prioritization.sql") }}</figcaption>
 </figure>
 
-For non-CDN usage, we expect the number of servers that correctly apply HTTP/2 prioritization to be considerably smaller. For example, NodeJS's HTTP/2 implementation [does not support prioritization](https://twitter.com/jasnell/status/1245410283582918657).
+Voor niet-CDN-gebruik verwachten we dat het aantal servers dat correct HTTP/2-prioriteitstelling toepast aanzienlijk kleiner zal zijn. De HTTP/2-implementatie van NodeJS [ondersteunt bijvoorbeeld geen prioritering](https://twitter.com/jasnell/status/1245410283582918657).
 
-### Goodbye server push?
+### Vaarwel server push?
 
-Server push was one of the additional features of HTTP/2 that caused some confusion and complexity to implement in practice. Push seeks to avoid waiting for a browser/client to download a HTML page, parse that page, and only then discover that it requires additional resources (such as a stylesheet), which in turn have to be fetched and parsed to discover even more dependencies (such as fonts). All that work and round trips takes time.  With server push, in theory, the server can just send multiple responses at once, avoiding the extra round trips.
+Server push was een van de extra functies van HTTP/2 die voor enige verwarring en complexiteit zorgde om in de praktijk te implementeren. Push probeert te voorkomen dat een browser/cliënt moet wachten om een HTML-pagina te downloaden, die pagina te parsen en pas dan te ontdekken dat er extra bronnen nodig zijn (zoals een stylesheet), die op hun beurt moeten worden opgehaald en geparseerd om nog meer dependencies te ontdekken (zoals lettertypen). Al dat werk en rondreizen kost tijd. Met server push kan de server in theorie gewoon meerdere reacties tegelijk verzenden, waardoor extra roundtrips worden vermeden.
 
-Unfortunately, with TCP congestion control in play, the data transfer starts off so slowly that <a hreflang="en" href="https://calendar.perfplanet.com/2016/http2-push-the-details/">not all the assets can be pushed</a> until multiple round trips have increased the transfer rate sufficiently. There are also <a hreflang="en" href="https://jakearchibald.com/2017/h2-push-tougher-than-i-thought/">implementation differences</a> between browsers as the client processing model had not been fully agreed. For example, each browser has a different implementation of a _push cache_.
+Helaas, met TCP-congestiecontrole in het spel, begint de gegevensoverdracht zo langzaam dat <a hreflang="en" href="https://calendar.perfplanet.com/2016/http2-push-the-details/">niet alle activa kan worden gepusht</a> totdat meerdere roundtrips de overdrachtssnelheid voldoende hebben verhoogd. Er zijn ook <a hreflang="en" href="https://jakearchibald.com/2017/h2-push-tougher-than-i-thought/">implementatieverschillen</a> tussen browsers als het cliëntverwerkingsmodel niet volledig was overeengekomen. Elke browser heeft bijvoorbeeld een andere implementatie van een _push cache_.
 
-Another issue is that the server is not aware of resources the browser has already cached. When a server tries to push something that is unwanted, the client can send a `RST_STREAM` frame, but by the time this has happened, the server may well have already sent all the data.  This wastes bandwidth and the server has lost the opportunity of immediately sending something that the browser actually did require. There were <a hreflang="en" href="https://tools.ietf.org/html/draft-ietf-httpbis-cache-digest-05">proposals</a> to allow clients to inform the server of their cache status, but these suffered from privacy concerns.
+Een ander probleem is dat de server niet weet welke bronnen de browser al in de cache heeft opgeslagen. Wanneer een server iets probeert te pushen dat ongewenst is, kan de cliënt een `RST_STREAM` frame verzenden, maar tegen de tijd dat dit is gebeurd, heeft de server mogelijk al alle gegevens verzonden. Dit verspilt bandbreedte en de server heeft de mogelijkheid verloren om onmiddellijk iets te verzenden dat de browser echt nodig had. Er waren <a hreflang="en" href="https://tools.ietf.org/html/draft-ietf-httpbis-cache-digest-05">voorstellen</a> om klanten in staat te stellen de server te informeren over hun cachestatus, maar deze leden aan privacyproblemen.
 
-As can be seen from the Figure 20.17 below, a very small percentage of sites use server push.
+Zoals te zien is in figuur 20.17 hieronder, gebruikt een zeer klein percentage van de sites server push.
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th>Client</th>
-        <th>HTTP/2 pages</th>
+        <th>Cliënt</th>
+        <th>HTTP/2 pagina's</th>
         <th>HTTP/2 (%)</th>
-        <th>gQUIC pages</th>
+        <th>gQUIC pagina's</th>
         <th>gQUIC (%)</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>Desktop</td>
-        <td class="numeric">44,257</td>
-        <td class="numeric">0.85%</td>
+        <td class="numeric">44.257</td>
+        <td class="numeric">0,85%</td>
         <td class="numeric">204</td>
-        <td class="numeric">0.04%</td>
+        <td class="numeric">0,04%</td>
       </tr>
       <tr>
-        <td>Mobile</td>
-        <td class="numeric">62,849</td>
-        <td class="numeric">1.06%</td>
+        <td>Mobiel</td>
+        <td class="numeric">62.849</td>
+        <td class="numeric">1,06%</td>
         <td class="numeric">326</td>
-        <td class="numeric">0.06%</td>
+        <td class="numeric">0,06%</td>
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Pages using HTTP/2 or gQUIC server push.", sheets_gid="698874709", sql_file="number_of_h2_and_h3_pushed_resources_and_bytes_transferred.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Pagina's die HTTP/2 of gQUIC server push gebruiken.", sheets_gid="698874709", sql_file="number_of_h2_and_h3_pushed_resources_and_bytes_transferred.sql") }}</figcaption>
 </figure>
 
-Looking further at the distributions for pushed assets in Figures 22.18 and 22.19, half of the sites push 4 or fewer resources with a total size of 140 KB on desktop and 3 or fewer resources with a size of 184 KB on mobile. For gQUIC, desktop is 7 or fewer and mobile 2. The worst offending page pushes _41 assets_ over gQUIC on desktop.
+Als we verder kijken naar de verdelingen voor gepushte activa in figuur 22.18 en 22.19, pusht de helft van de sites 4 of minder bronnen met een totale grootte van 140 KB op desktop en 3 of minder bronnen met een grootte van 184 KB op mobiel. Voor gQUIC is desktop 7 of minder en mobiel 2. De ergste beledigende pagina duwt _41 activa_ over gQUIC op desktop.
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th>Percentile</th>
+        <th>Percentiel</th>
         <th>HTTP/2</th>
-        <th>Size (KB)</th>
+        <th>Grootte (KB)</th>
         <th>gQUIC</th>
-        <th>Size (KB)</th>
+        <th>Grootte (KB)</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td class="numeric">10</td>
         <td class="numeric">1</td>
-        <td class="numeric">3.95</td>
+        <td class="numeric">3,95</td>
         <td class="numeric">1</td>
-        <td class="numeric">15.83</td>
+        <td class="numeric">15,83</td>
       </tr>
       <tr>
         <td class="numeric">25</td>
         <td class="numeric">2</td>
-        <td class="numeric">36.32</td>
+        <td class="numeric">36,32</td>
         <td class="numeric">3</td>
-        <td class="numeric">35.93</td>
+        <td class="numeric">35,93</td>
       </tr>
       <tr>
         <td class="numeric">50</td>
         <td class="numeric">4</td>
-        <td class="numeric">139.58</td>
+        <td class="numeric">139,58</td>
         <td class="numeric">7</td>
-        <td class="numeric">111.96</td>
+        <td class="numeric">111,96</td>
       </tr>
       <tr>
         <td class="numeric">75</td>
         <td class="numeric">8</td>
-        <td class="numeric">346.70</td>
+        <td class="numeric">346,70</td>
         <td class="numeric">21</td>
-        <td class="numeric">203.59</td>
+        <td class="numeric">203,59</td>
       </tr>
       <tr>
         <td class="numeric">90</td>
         <td class="numeric">17</td>
-        <td class="numeric">440.08</td>
+        <td class="numeric">440,08</td>
         <td class="numeric">41</td>
-        <td class="numeric">390.91</td>
+        <td class="numeric">390,91</td>
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Distribution of pushed assets on desktop.", sheets_gid="698874709", sql_file="number_of_h2_and_h3_pushed_resources_and_bytes_transferred.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Distributie van gepushte middelen op desktop.", sheets_gid="698874709", sql_file="number_of_h2_and_h3_pushed_resources_and_bytes_transferred.sql") }}</figcaption>
 </figure>
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th>Percentile</th>
+        <th>Percentiel</th>
         <th>HTTP/2</th>
-        <th>Size (KB)</th>
+        <th>Grootte (KB)</th>
         <th>gQUIC</th>
-        <th>Size (KB)</th>
+        <th>Grootte (KB)</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td class="numeric">10</td>
         <td class="numeric">1</td>
-        <td class="numeric">15.48</td>
+        <td class="numeric">15,48</td>
         <td class="numeric">1</td>
-        <td class="numeric">0.06</td>
+        <td class="numeric">0,06</td>
       </tr>
       <tr>
         <td class="numeric">25</td>
         <td class="numeric">1</td>
-        <td class="numeric">36.34</td>
+        <td class="numeric">36,34</td>
         <td class="numeric">1</td>
-        <td class="numeric">0.06</td>
+        <td class="numeric">0,06</td>
       </tr>
       <tr>
         <td class="numeric">50</td>
         <td class="numeric">3</td>
-        <td class="numeric">183.83</td>
+        <td class="numeric">183,83</td>
         <td class="numeric">2</td>
-        <td class="numeric">24.06</td>
+        <td class="numeric">24,06</td>
       </tr>
       <tr>
         <td class="numeric">75</td>
         <td class="numeric">10</td>
-        <td class="numeric">225.41</td>
+        <td class="numeric">225,41</td>
         <td class="numeric">5</td>
-        <td class="numeric">204.65</td>
+        <td class="numeric">204,65</td>
       </tr>
       <tr>
         <td class="numeric">90</td>
         <td class="numeric">12</td>
-        <td class="numeric">351.05</td>
+        <td class="numeric">351,05</td>
         <td class="numeric">18</td>
-        <td class="numeric">453.57</td>
+        <td class="numeric">453,57</td>
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Distribution of pushed assets on mobile.", sheets_gid="698874709", sql_file="number_of_h2_and_h3_pushed_resources_and_bytes_transferred.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Distributie van gepushte activa op mobiel.", sheets_gid="698874709", sql_file="number_of_h2_and_h3_pushed_resources_and_bytes_transferred.sql") }}</figcaption>
 </figure>
 
-Looking at the frequency of push by content type in Figure 22.20, we see 90% of pages push scripts and 56% push CSS. This makes sense, as these can be small files typically on the critical path to render a page.
+Als we kijken naar de frequentie van push per inhoudstype in figuur 22.20, zien we 90% van de pagina's scripts pushen en 56% CSS. Dit is logisch, aangezien dit kleine bestanden kunnen zijn die zich doorgaans op het kritieke pad bevinden om een pagina weer te geven.
 
 {{ figure_markup(
   image="http2-pushed-content-types.png",
-  caption="Percentage of pages pushing specific content types",
-  description="A bar chart showing for pages that push resources on desktop; 89.1% push scripts, 67.9% css, 6.1% images, 1.3% fonts, 0.7% other and 0.7% html. On mobile 90.29% push scripts, 56.08% css, 3.69% images, 0.97% fonts, 0.36% other and 0.39% html.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=1708672642&format=interactive",
+  caption="Percentage pagina's dat specifieke inhoudstypen pusht",
+  description="Een staafdiagram voor pagina's die bronnen op desktop pushen; pusht 89,1% scripts, 67,9% css, 6,1% afbeeldingen, 1,3% lettertypen, 0,7% overige en 0,7% html. Op mobiel pusht 90,29% scripts, 56,08% css, 3,69% afbeeldingen, 0,97% lettertypen, 0,36% overige en 0,39% html.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOkWXtrbMfTLdhlKbBGDjRU3zKbnCQi3iPhfuKaFs5mj4smEzInDCYEnk63gBdgsJ3GFk2gf4FOKCU/pubchart?oid=1708672642&format=interactive",
   sheets_gid="238923402",
   sql_file="number_of_h2_and_h3_pushed_resources_and_bytes_by_content_type.sql"
 )
 }}
 
-Given the low adoption, and after measuring how few of the pushed resources are actually useful (that is, they match a request that is not already cached), Google has announced the <a hreflang="en" href="https://groups.google.com/a/chromium.org/g/blink-dev/c/K3rYLvmQUBY/m/vOWBKZGoAQAJ">intent to remove push support from Chrome</a> for both HTTP/2 and gQUIC. Chrome has also not implemented push for HTTP/3.
+Gezien de lage acceptatie en na te hebben gemeten hoe weinig van de gepushte bronnen daadwerkelijk nuttig zijn (dat wil zeggen, ze komen overeen met een verzoek dat nog niet in de cache is opgeslagen), heeft Google de <a hreflang="en" href="https://groups.google.com/a/chromium.org/g/blink-dev/c/K3rYLvmQUBY/m/vOWBKZGoAQAJ">intentie om push-ondersteuning van Chrome te verwijderen</a> voor zowel HTTP/2 als gQUIC. Chrome heeft ook geen push geïmplementeerd voor HTTP/3.
 
-Despite all these problems, there are circumstances where server push can provide an improvement. The ideal use case is to be able to send a push promise much earlier than the HTML response itself. A scenario where this can benefit is <a hreflang="en" href="https://medium.com/@ananner/http-2-server-push-performance-a-further-akamai-case-study-7a17573a3317">when a CDN is in use</a>. The "dead time" between the CDN receiving the request and receiving a response from the origin can be used intelligently to warm up the TCP connection and push assets already cached at the CDN.
+Ondanks al deze problemen zijn er omstandigheden waarin server push voor verbetering kan zorgen. De ideale use case is om een pushbelofte veel eerder te kunnen verzenden dan de HTML-respons zelf. Een scenario waarin dit kan profiteren is <a hreflang="en" href="https://medium.com/@ananner/http-2-server-push-performance-a-further-akamai-case-study-7a17573a3317"> wanneer een CDN in gebruik is</a>. De "dode tijd" tussen het CDN dat het verzoek ontvangt en het ontvangen van een antwoord van de oorsprong kan intelligent worden gebruikt om de TCP-verbinding op te warmen en activa te pushen die al in de cache zijn opgeslagen op het CDN.
 
-There was however no standardized method for how to signal to a CDN edge server that an asset should be pushed. Implementations instead reused the preload HTTP link header to indicate this. This simple approach appears elegant, but it does not utilize the dead time before the HTML is generated unless the headers are sent before the actual content is ready. It triggers the edge to push resources as the HTML is received at the edge, which will contend with the delivery of the HTML.
+Er was echter geen gestandaardiseerde methode om aan een CDN-edge-server te signaleren dat een activa moest worden gepusht. Implementaties hebben in plaats daarvan de vooraf geladen HTTP-link-header hergebruikt om dit aan te geven. Deze eenvoudige benadering lijkt elegant, maar maakt geen gebruik van de dode tijd voordat de HTML wordt gegenereerd, tenzij de headers worden verzonden voordat de daadwerkelijke inhoud gereed is. Het triggert de edge om bronnen te pushen wanneer de HTML aan de rand wordt ontvangen, wat zal strijden met de levering van de HTML.
 
-An alternative proposal being tested is <a hreflang="en" href="https://tools.ietf.org/html/rfc8297">RFC 8297</a>, which defines an informative `103 (Early Hints)` response. This permits headers to be sent immediately, without having to wait for the server to generate the full response headers. This can be used by an origin to suggest pushed resources to a CDN, or by a CDN to alert the client to resources that need to be fetched. However, at present, support for this from both a client and server perspective is very low, <a hreflang="en" href="https://www.fastly.com/blog/beyond-server-push-experimenting-with-the-103-early-hints-status-code">but growing</a>.
+Een alternatief voorstel dat wordt getest, is <a hreflang="en" href="https://tools.ietf.org/html/rfc8297">RFC 8297</a>, dat een informatieve `103 (Early Hints)` reactie definieert . Hierdoor kunnen headers onmiddellijk worden verzonden, zonder dat u hoeft te wachten tot de server de volledige responsheaders heeft gegenereerd. Dit kan worden gebruikt door een oorsprong om gepushte bronnen naar een CDN voor te stellen, of door een CDN om de cliënt te waarschuwen voor bronnen die moeten worden opgehaald. Momenteel is de ondersteuning hiervoor vanuit zowel cliënt- als serverperspectief echter erg laag, <a hreflang="en" href="https://www.fastly.com/blog/beyond-server-push-experimenting-with-the-103-early-hints-status-code">maar blijft groeit</a>.
 
-## Getting to a better protocol
+## Op weg naar een beter protocol
 
-Let's say a client and server support both HTTP/1.1 and HTTP/2. How do they choose which one to use? The most common method is TLS [Application Layer Protocol Negotiation](https://en.wikipedia.org/wiki/Application-Layer_Protocol_Negotiation) (ALPN), in which clients send a list of protocols they support to the server, which picks the one it prefers to use for that connection.  Because the browser needs to negotiate the TLS parameters as part of setting up an HTTPS connection, it can also negotiate the HTTP version at the same time. Since both HTTP/2 and HTTP/1.1 can be served from the same TCP port (443), browsers don't need to make this selection before opening a connection.
+Laten we zeggen dat een cliënt en server zowel HTTP/1.1 als HTTP/2 ondersteunen. Hoe kiezen ze welke ze willen gebruiken? De meest gebruikelijke methode is TLS [Application Layer Protocol Negotiation](https://en.wikipedia.org/wiki/Application-Layer_Protocol_Negotiation) (ALPN), waarbij cliënten een lijst met protocollen die ze ondersteunen naar de server sturen, die kiest voor degene die het bij voorkeur gebruikt voor die verbinding. Omdat de browser moet onderhandelen over de TLS-parameters als onderdeel van het opzetten van een HTTPS-verbinding, kan hij tegelijkertijd ook onderhandelen over de HTTP-versie. Omdat zowel HTTP/2 als HTTP/1.1 kunnen worden bediend vanaf dezelfde TCP-poort (443), hoeven browsers deze selectie niet te maken voordat een verbinding wordt geopend.
 
-This doesn't work if the protocols aren't on the same port, use a different transport protocol (TCP versus QUIC), or if you're not using TLS. For those scenarios, you start with whatever is available on the first port you connect to, then discover other options.  HTTP defines two mechanisms to change protocols for an origin after connecting: `Upgrade` and `Alt-Svc`.
+Dit werkt niet als de protocollen zich niet op dezelfde poort bevinden, een ander transportprotocol gebruiken (TCP versus QUIC) of als u geen TLS gebruikt. Voor die scenario's begint u met alles wat beschikbaar is op de eerste poort waarmee u verbinding maakt en ontdekt u vervolgens andere opties. HTTP definieert twee mechanismen om protocollen voor een oorsprong te wijzigen na verbinding: `Upgrade` en `Alt-Svc`.
 
 ### `Upgrade`
 
-The Upgrade header has been part of HTTP for a long time.  In HTTP/1.x, `Upgrade` allows a client to make a request using one protocol, but indicate its support for another protocol (like HTTP/2).  If the server also supports the offered protocol, it responds with a status 101 (`Switching Protocols`) and proceeds to answer the request in the new protocol.  If not, the server answers the request in HTTP/1.x.  Servers can advertise their support of a different protocol using an `Upgrade` header on a response.
+De Upgrade-header maakt al lange tijd deel uit van HTTP. In HTTP/1.x staat `Upgrade` een cliënt toe om een verzoek in te dienen met behulp van één protocol, maar de ondersteuning voor een ander protocol aan te geven (zoals HTTP/2). Als de server ook het aangeboden protocol ondersteunt, reageert deze met status 101 (`Switching Protocols`) en gaat verder met het beantwoorden van het verzoek in het nieuwe protocol. Als dit niet het geval is, beantwoordt de server het verzoek in HTTP/1.x. Servers kunnen hun ondersteuning van een ander protocol adverteren met behulp van een `Upgrade`-header bij een antwoord.
 
-The most common application of `Upgrade` is [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API). HTTP/2 also defines an `Upgrade` path, for use with its unencrypted cleartext mode. There is no support for this capability in web browsers, however. Therefore, it's not surprising that less than 3% of cleartext HTTP/1.1 requests in our dataset received an `Upgrade` header in the response. A very small number of requests using TLS (0.0011% of HTTP/2, 0.064% of HTTP/1.1) also received `Upgrade` headers in response; these are likely cleartext HTTP/1.1 servers behind intermediaries which speak HTTP/2 and/or terminate TLS, but don't properly remove `Upgrade` headers.
+De meest voorkomende toepassing van `Upgrade` is [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API). HTTP/2 definieert ook een `Upgrade`-pad, voor gebruik met zijn niet-versleutelde cleartext-modus. Er is echter geen ondersteuning voor deze mogelijkheid in webbrowsers. Daarom is het niet verwonderlijk dat minder dan 3% van de cleartext HTTP/1.1-verzoeken in onze dataset een `Upgrade`-header in het antwoord ontving. Een zeer klein aantal verzoeken met behulp van TLS (0,0011% van HTTP/2, 0,064% van HTTP/1.1) ontving ook `Upgrade`-headers als reactie; dit zijn waarschijnlijk duidelijke HTTP/1.1-servers achter tussenpersonen die HTTP/2 spreken en/of TLS beëindigen, maar de `Upgrade`-headers niet correct verwijderen.
 
 ### Alternative Services
 
-Alternative Services (`Alt-Svc`) enables an HTTP origin to indicate other endpoints which serve the same content, possibly over different protocols.  Although uncommon, HTTP/2 might be located at a different port or different host from a site's HTTP/1.1 service.  More importantly, since HTTP/3 uses QUIC (hence UDP) where prior versions of HTTP use TCP, HTTP/3 will always be at a different endpoint from the HTTP/1.x and HTTP/2 service.
+Alternative Services (`Alt-Svc`) stelt een HTTP-oorsprong in staat om andere eindpunten aan te duiden die dezelfde inhoud bedienen, mogelijk via verschillende protocollen. Hoewel ongebruikelijk, kan HTTP/2 zich op een andere poort of een andere host bevinden dan de HTTP/1.1-service van een site. Wat nog belangrijker is, aangezien HTTP/3 QUIC gebruikt (vandaar UDP) waar eerdere versies van HTTP TCP gebruiken, zal HTTP/3 zich altijd op een ander eindpunt bevinden dan de HTTP/1.x- en HTTP/2-service.
 
-When using `Alt-Svc`, a client makes requests to the origin as normal.  However, if the server includes a header or sends a frame containing a list of alternatives, the client can make a new connection to the other endpoint and use it for future requests to that origin.
+Bij gebruik van `Alt-Svc`, doet een cliënt zoals normaal verzoeken aan de oorsprong. Als de server echter een header bevat of een frame met een lijst met alternatieven verzendt, kan de cliënt een nieuwe verbinding maken met het andere eindpunt en deze gebruiken voor toekomstige verzoeken naar die oorsprong.
 
-Unsurprisingly, `Alt-Svc` usage is found almost entirely from services using advanced HTTP versions:  12.0% of HTTP/2 requests and 60.1% of gQUIC requests received an `Alt-Svc` header in response, as compared to 0.055% of HTTP/1.x requests. Note that our methodology here only captures `Alt-Svc` headers, not `ALTSVC` frames in HTTP/2, so reality might be slightly understated.
+Het is niet verwonderlijk dat het gebruik van `Alt-Svc` bijna volledig wordt gevonden in services die geavanceerde HTTP-versies gebruiken: 12,0% van de HTTP/2-verzoeken en 60,1% van de gQUIC-verzoeken ontving een `Alt-Svc`-header als reactie, in vergelijking met 0,055% van HTTP/1.x-verzoeken. Merk op dat onze methodologie hier alleen `Alt-Svc`-headers vastlegt, niet `ALTSVC`-frames in HTTP/2, dus de realiteit kan enigszins onderschat zijn.
 
-While `Alt-Svc` can point to an entirely different host, support for this capability varies among browsers. Only 4.71% of `Alt-Svc` headers advertised an endpoint on a different hostname; these were almost universally (99.5%) advertising gQUIC and HTTP/3 support on Google Ads. Google Chrome ignores cross-host `Alt-Svc` advertisements for HTTP/2, so many of the other instances would have been ignored.
+Hoewel `Alt-Svc` naar een geheel andere host kan verwijzen, verschilt de ondersteuning voor deze mogelijkheid per browser. Slechts 4,71% van de `Alt-Svc` headers adverteerde een eindpunt op een andere hostnaam; dit waren bijna universeel (99,5%) advertenties voor gQUIC- en HTTP/3-ondersteuning op Google Ads. Google Chrome negeert cross-host `Alt-Svc`-advertenties voor HTTP/2, dus veel van de andere instanties zouden zijn genegeerd.
 
-Given the rarity of support for cross-host HTTP/2, it's not surprising that there were virtually no (0.007%) advertisements for HTTP/2 endpoints using `Alt-Svc`. `Alt-Svc` was typically used to indicate support for HTTP/3 (74.6% of `Alt-Svc` headers) or gQUIC (38.7% of `Alt-Svc` headers).
+Gezien de zeldzaamheid van ondersteuning voor cross-host HTTP/2, is het niet verwonderlijk dat er vrijwel geen (0,007%) advertenties waren voor HTTP/2-eindpunten met behulp van `Alt-Svc`. `Alt-Svc` werd typisch gebruikt om ondersteuning voor HTTP/3 (74,6% van `Alt-Svc` headers) of gQUIC (38,7% van `Alt-Svc` headers) aan te geven.
 
-## Looking toward the future: HTTP/3
+## Kijkend naar de toekomst: HTTP/3
 
-HTTP/2 is a powerful protocol, which has found considerable adoption in just a few years. However, HTTP/3 over QUIC is already peeking around the corner! Over four years in the making, this next version of HTTP is almost standardized at the IETF (expected in the first half of 2021). At this time, there are already <a hreflang="en" href="https://github.com/quicwg/base-drafts/wiki/Implementations">many QUIC and HTTP/3 implementations available</a>, both for servers and browsers. While these are relatively mature, they can still be said to be in an experimental state.
+HTTP/2 is een krachtig protocol dat in slechts een paar jaar tijd aanzienlijk is toegepast. HTTP/3 over QUIC gluurt echter al om de hoek! Na meer dan vier jaar in de maak is deze volgende versie van HTTP bijna gestandaardiseerd op de IETF (verwacht in de eerste helft van 2021). Op dit moment zijn er al <a hreflang="en" href="https://github.com/quicwg/base-drafts/wiki/Implementations">veel QUIC- en HTTP/3-implementaties beschikbaar</a>, beide voor servers en browsers. Hoewel deze relatief volwassen zijn, kan nog steeds worden gezegd dat ze zich in een experimentele staat bevinden.
 
-This is reflected by the usage numbers in the HTTP Archive data, where no HTTP/3 requests were identified at all. This might seem a bit strange, since <a hreflang="en" href="https://blog.cloudflare.com/experiment-with-http-3-using-nginx-and-quiche/">Cloudflare</a> has had experimental HTTP/3 support for some time, as have Google and Facebook. This is mainly because Chrome hadn't enabled the protocol by default when the data was collected.
+Dit wordt weerspiegeld door de gebruiksnummers in de HTTP Archive-gegevens, waar helemaal geen HTTP/3-verzoeken werden geïdentificeerd. Dit lijkt misschien een beetje vreemd, aangezien <a hreflang="en" href="https://blog.cloudflare.com/experiment-with-http-3-using-nginx-and-quiche/">Cloudflare</a> al enige tijd experimentele HTTP/3-ondersteuning heeft, net als Google en Facebook. Dit komt voornamelijk omdat Chrome het protocol niet standaard had ingeschakeld toen de gegevens werden verzameld.
 
-However, even the numbers for the older gQUIC are relatively modest, accounting for less than 2% of requests overall. This is expected, since gQUIC was mostly deployed by Google and Akamai; other parties were waiting for IETF QUIC. As such, gQUIC is expected to be replaced entirely by HTTP/3 soon.
+Maar zelfs de cijfers voor de oudere gQUIC zijn relatief bescheiden, goed voor minder dan 2% van de verzoeken in totaal. Dit wordt verwacht, aangezien gQUIC grotendeels werd ingezet door Google en Akamai; andere partijen wachtten op IETF QUIC. Als zodanig wordt verwacht dat gQUIC binnenkort volledig wordt vervangen door HTTP/3.
 
 {{ figure_markup(
-  caption="The percentage of requests that use gQUIC on desktop and mobile",
-  content="1.72%",
+  caption="Het percentage verzoeken dat gQUIC gebruikt op desktop en mobiel",
+  content="1,72%",
   classes="big-number",
   sheets_gid="2122693316",
   sql_file="adoption_of_http_2_by_site_and_requests.sql"
 )
 }}
 
-It's important to note that this low adoption only reflects gQUIC and HTTP/3 usage for loading Web pages. For several years already, Facebook has had a much more extensive deployment of IETF QUIC and HTTP/3 for loading data inside of its native applications. <a hreflang="en" href="https://engineering.fb.com/2020/10/21/networking-traffic/how-facebook-is-bringing-quic-to-billions/">QUIC and HTTP/3 already make up over 75% of their total internet traffic</a>. It is clear that HTTP/3 is only just getting started!
+Het is belangrijk op te merken dat deze lage acceptatie alleen het gebruik van gQUIC en HTTP/3 voor het laden van webpagina's weerspiegelt. Facebook heeft al een aantal jaren een veel uitgebreider gebruik van IETF QUIC en HTTP/3 voor het laden van gegevens in zijn eigen applicaties. <a hreflang="en" href="https://engineering.fb.com/2020/10/21/networking-traffic/how-facebook-is-bringing-quic-to-billions/">QUIC en HTTP/3 maken al meer dan 75% van hun totale internetverkeer</a> uit. Het is duidelijk dat HTTP/3 nog maar net is begonnen!
 
-Now you might wonder: if not everyone is already using HTTP/2, why would we need HTTP/3 so soon? What benefits can we expect in practice? Let's take a closer look at its internal mechanisms.
+Nu vraagt u u misschien af: als niet iedereen al HTTP/2 gebruikt, waarom zouden we dan zo snel HTTP/3 nodig hebben? Welke voordelen kunnen we in de praktijk verwachten? Laten we de interne mechanismen eens nader bekijken.
 
-### QUIC and HTTP/3
+### QUIC en HTTP/3
 
-Past attempts to deploy new transport protocols on the internet have proven difficult, for example [Stream Control Transmission Protocol](https://en.wikipedia.org/wiki/Stream_Control_Transmission_Protocol) (SCTP). QUIC is a new transport protocol that runs on top of UDP. It provides similar features to TCP, such as reliable in-order delivery and congestion control to prevent flooding the network.
+Eerdere pogingen om nieuwe transportprotocollen op internet in te zetten zijn moeilijk gebleken, bijvoorbeeld [Stream Control Transmission Protocol](https://nl.wikipedia.org/wiki/Stream_Control_Transmission_Protocol) (SCTP). QUIC is een nieuw transportprotocol dat bovenop UDP draait. Het biedt vergelijkbare functies als TCP, zoals betrouwbare levering op volgorde en congestiecontrole om overstroming van het netwerk te voorkomen.
 
-As discussed in the [HTTP/1.0 to HTTP/2](#http10-to-http2) section, HTTP/2 _multiplexes_ multiple different streams on top of one connection. TCP itself is woefully unaware of this fact, leading to inefficiencies or performance impact when packet loss or delays occur. More details on this problem, known as _head-of-line blocking_ (HOL blocking), <a hreflang="en" href="https://github.com/rmarx/holblocking-blogpost">can be found here</a>.
+Zoals besproken in de sectie [HTTP/1.0 tot HTTP/2](#http10-naar-http2), HTTP/2 _multiplext_ meerdere verschillende streams bovenop één verbinding. TCP zelf is zich hier jammerlijk niet van bewust, wat leidt tot inefficiënties of invloed op de prestaties wanneer pakketverlies of vertragingen optreden. Meer informatie over dit probleem, bekend als _head-of-line blocking_ (HOL-blokkering), <a hreflang="en" href="https://github.com/rmarx/holblocking-blogpost">is hier te vinden</ een>.
 
-QUIC solves the HOL blocking problem by bringing HTTP/2's streams down into the transport layer and performing per-stream loss detection and retransmission. So then we just put HTTP/2 over QUIC, right? Well, we've [already mentioned](#reducing-connections) some of the difficulties arising from having flow control in TCP and HTTP/2. Running two separate and competing streaming systems on top of each other would be an additional problem. Furthermore, because the QUIC streams are independent, it would mess with the strict ordering requirements HTTP/2 requires for several of its systems.
+QUIC lost het HOL-blokkeerprobleem op door HTTP/2-streams naar de transportlaag te brengen en verliesdetectie en hertransmissie per stream uit te voeren. Dus dan zetten we HTTP/2 gewoon over QUIC, toch? Welnu, we hebben enkele van de moeilijkheden die ontstaan door het hebben van flow control in TCP en HTTP/2 [al genoemd](#verbindingen-verminderen). Het zou een bijkomend probleem zijn om twee afzonderlijke en concurrerende streaming-systemen op elkaar te laten draaien. Bovendien, omdat de QUIC-streams onafhankelijk zijn, zou het knoeien met de strikte bestelvereisten die HTTP/2 vereist voor verschillende van zijn systemen.
 
-In the end, it was deemed easier to define a new HTTP version that uses QUIC directly and thus, HTTP/3 was born. Its high-level features are very similar to those we know from HTTP/2, but internal implementation mechanisms are quite different. HPACK header compression is replaced with <a hreflang="en" href="https://tools.ietf.org/html/draft-ietf-quic-qpack-19">QPACK</a>, which allows <a hreflang="en" href="https://blog.litespeedtech.com/tag/quic-header-compression-design-team/">manual tuning</a> of the compression efficiency versus HOL blocking risk tradeoff, and the prioritization system is being <a hreflang="en" href="https://blog.cloudflare.com/adopting-a-new-approach-to-http-prioritization/">replaced by a simpler one</a>. The latter could also be back-ported to HTTP/2, possibly helping resolve the prioritization issues discussed earlier in this article. HTTP/3 continues to provide a server push mechanism, but Chrome, for example, does not implement it.
+Uiteindelijk werd het gemakkelijker geacht om een nieuwe HTTP-versie te definiëren die QUIC direct gebruikt en zo werd HTTP/3 geboren. De functies op hoog niveau lijken erg op die we kennen van HTTP/2, maar de interne implementatiemechanismen zijn behoorlijk verschillend. HPACK-headercompressie is vervangen door <a hreflang="en" href="https://tools.ietf.org/html/draft-ietf-quic-qpack-19">QPACK</a>, waardoor <a hreflang="en" href="https://blog.litespeedtech.com/tag/quic-header-compression-design-team/">handmatige afstemming</a> van de afweging tussen compressie-efficiëntie en HOL-blokkeerrisico, en de prioriteitstelling systeem wordt <a hreflang="en" href="https://blog.cloudflare.com/adopting-a-new-approach-to-http-prioritization/">vervangen door een eenvoudigere</a>. Dit laatste kan ook worden teruggevoerd naar HTTP/2, wat mogelijk helpt bij het oplossen van de prioriteitsproblemen die eerder in dit artikel zijn besproken. HTTP/3 blijft een server-push-mechanisme bieden, maar Chrome implementeert het bijvoorbeeld niet.
 
-Another benefit of QUIC is that it is able to migrate connections and keep them alive even when the underlying network changes. A typical example is the so-called "parking lot problem". Imagine your smartphone is connected to the workplace Wi-Fi network and you've just started downloading a large file. As you leave Wi-Fi range, your phone automatically switches to the fancy new 5G cellular network. With plain old TCP, the connection would break and cause an interruption. But QUIC is smarter; it uses a _connection ID_, which is more robust to network changes, and provides an active _connection migration_ feature for clients to switch without interruption.
+Een ander voordeel van QUIC is dat het in staat is om verbindingen te migreren en ze in leven te houden, zelfs wanneer het onderliggende netwerk verandert. Een typisch voorbeeld is het zogenaamde "parkeerprobleem". Stelt u voor dat uw smartphone is verbonden met het wifi-netwerk op de werkplek en dat u net bent begonnen met het downloaden van een groot bestand. Als u het Wi-Fi-bereik verlaat, schakelt uw telefoon automatisch over naar het mooie nieuwe mobiele 5G-netwerk. Met gewoon oud TCP zou de verbinding verbreken en een onderbreking veroorzaken. Maar QUIC is slimmer; het gebruikt een _connection ID_, die robuuster is voor netwerkveranderingen, en biedt een actieve _connection migratie_ functie voor cliënten om zonder onderbreking te schakelen.
 
-Finally, TLS is already used to protect HTTP/1.1 and HTTP/2. QUIC, however, has a deep integration of TLS 1.3, protecting both HTTP/3 data and QUIC packet metadata, such as packet numbers. Using TLS in this way improves end-user privacy and security and makes continued protocol evolution easier. Combining the transport and cryptographic handshakes means that connection setup takes just a single RTT, compared to TCP's minimum of two and worst case of four. In some cases, QUIC can even go one step further and send HTTP data along with its very first message, which is called _0-RTT_. These fast connection setup times are expected to really help HTTP/3 outperform HTTP/2.
+Ten slotte wordt TLS al gebruikt om HTTP/1.1 en HTTP/2 te beschermen. QUIC heeft echter een diepe integratie van TLS 1.3, waardoor zowel HTTP/3-gegevens als QUIC-pakketmetagegevens, zoals pakketnummers, worden beschermd. Door TLS op deze manier te gebruiken, wordt de privacy en beveiliging van de eindgebruiker verbeterd en wordt de voortdurende evolutie van het protocol eenvoudiger. De combinatie van transport en cryptografische handshakes betekent dat het opzetten van een verbinding slechts één RTT vereist, vergeleken met het minimum van twee van TCP en het slechtste geval van vier. In sommige gevallen kan QUIC zelfs nog een stap verder gaan en HTTP-gegevens verzenden samen met het allereerste bericht, genaamd _0-RTT_. Van deze snelle verbindingstijden wordt verwacht dat ze HTTP/3 echt helpen beter te presteren dan HTTP/2.
 
-**So, will HTTP/3 help?**
+**Dus, zal HTTP/3 helpen?**
 
-On the surface, HTTP/3 is really not all that different from HTTP/2. It doesn't add any major features, but mainly changes how the existing ones work under the surface. The real improvements come from QUIC, which offers faster connection setups, increased robustness, and resilience to packet loss. As such, HTTP/3 is expected to do better than HTTP/2 on worse networks, while offering very similar performance on faster systems. However, that is if the web community can get HTTP/3 working, which can be challenging in practice.
+Op het eerste gezicht verschilt HTTP/3 niet zo heel veel van HTTP/2. Het voegt geen belangrijke functies toe, maar verandert voornamelijk hoe de bestaande onder de oppervlakte werken. De echte verbeteringen zijn afkomstig van QUIC, dat snellere verbindingsopstellingen, grotere robuustheid en veerkracht bij pakketverlies biedt. Als zodanig wordt verwacht dat HTTP/3 het beter doet dan HTTP/2 op slechtere netwerken, terwijl het vergelijkbare prestaties biedt op snellere systemen. Als de webgemeenschap echter HTTP/3 kan laten werken, kan dat in de praktijk een uitdaging zijn.
 
-### Deploying and discovering HTTP/3
+### HTTP/3 implementeren en ontdekken
 
-Since QUIC and HTTP/3 run over UDP, things aren't as simple as with HTTP/1.1 or HTTP/2. Typically, an HTTP/3 client has to first discover that QUIC is available at the server. The recommended method for this is [HTTP Alternative Services](#alternative-services) . On its first visit to a website, a client connects to a server using TCP. It then discovers via `Alt-Svc` that HTTP/3 is available, and can set up a new QUIC connection. The `Alt-Svc` entry can be cached, allowing subsequent visits to avoid the TCP step, but the entry will eventually become stale and need revalidation. This likely will have to be done for each domain separately, which will probably lead to most page loads using a mix of HTTP/1.1, HTTP/2, and HTTP/3.
+Omdat QUIC en HTTP/3 over UDP draaien, is het niet zo eenvoudig als met HTTP/1.1 of HTTP/2. Meestal moet een HTTP/3-cliënt eerst ontdekken dat QUIC beschikbaar is op de server. De aanbevolen methode hiervoor is [HTTP Alternative Services](#alternative-services). Bij het eerste bezoek aan een website maakt een cliënt via TCP verbinding met een server. Het ontdekt dan via `Alt-Svc` dat HTTP/3 beschikbaar is, en kan een nieuwe QUIC-verbinding opzetten. De `Alt-Svc`-vermelding kan in de cache worden opgeslagen, waardoor volgende bezoeken de TCP-stap kunnen vermijden, maar de vermelding zal uiteindelijk verouderd worden en moet opnieuw worden gevalideerd. Dit zal waarschijnlijk voor elk domein afzonderlijk moeten worden gedaan, wat waarschijnlijk zal leiden tot het laden van de meeste pagina's met een combinatie van HTTP/1.1, HTTP/2 en HTTP/3.
 
-However, even if it is known that a server supports QUIC and HTTP/3, the network in between might block it. UDP traffic is commonly used in DDoS attacks and blocked by default in for example many company networks. While exceptions could be made for QUIC, its encryption makes it difficult for firewalls to assess the traffic. There are potential solutions to these issues, but in the meantime it is expected that QUIC is most likely to succeed on well-known ports like 443. And it is entirely possible that it is blocked QUIC altogether. In practice, clients will likely use sophisticated mechanisms to fall back to TCP if QUIC fails. One option is to "race" both a TCP and QUIC connection and use the one that completes first.
+Maar zelfs als bekend is dat een server QUIC en HTTP/3 ondersteunt, kan het netwerk ertussen het blokkeren. UDP-verkeer wordt veel gebruikt bij DDoS-aanvallen en wordt standaard geblokkeerd in bijvoorbeeld veel bedrijfsnetwerken. Hoewel er uitzonderingen kunnen worden gemaakt voor QUIC, maakt de versleuteling ervan het moeilijk voor firewalls om het verkeer te beoordelen. Er zijn mogelijke oplossingen voor deze problemen, maar in de tussentijd wordt verwacht dat QUIC het meest waarschijnlijk zal slagen op bekende poorten zoals 443. En het is heel goed mogelijk dat QUIC helemaal wordt geblokkeerd. In de praktijk zullen klanten waarschijnlijk geavanceerde mechanismen gebruiken om terug te vallen op TCP als QUIC faalt. Een optie is om zowel een TCP- als een QUIC-verbinding te "racen" en degene te gebruiken die het eerst voltooit.
 
-There is ongoing work to define ways to discover HTTP/3 without needing the TCP step. This should be considered an optimization, though, as the UDP blocking issues are likely to mean that TCP-based HTTP sticks around. The <a hreflang="en" href="https://tools.ietf.org/html/draft-ietf-dnsop-svcb-https">HTTPS DNS record</a> is similar to HTTP Alternative Services and some CDNs are already <a hreflang="en" href="https://blog.cloudflare.com/speeding-up-https-and-http-3-negotiation-with-dns/">experimenting with these records</a>.  In the long run, when most servers offer HTTP/3, browsers might switch to attempting that by default; that will take a long time.
+Er wordt gewerkt aan het definiëren van manieren om HTTP/3 te ontdekken zonder dat de TCP-stap nodig is. Dit moet echter als een optimalisatie worden beschouwd, omdat de problemen met het blokkeren van UDP waarschijnlijk betekenen dat op TCP gebaseerde HTTP blijft hangen. De <a hreflang="en" href="https://tools.ietf.org/html/draft-ietf-dnsop-svcb-https">HTTPS DNS-record</a> is vergelijkbaar met HTTP Alternative Services en sommige CDN's zijn al <a hreflang="en" href="https://blog.cloudflare.com/speeding-up-https-and-http-3-negotiation-with-dns/">aan het experimenteren met deze records</a>. Op de lange termijn, wanneer de meeste servers HTTP/3 aanbieden, kunnen browsers overschakelen naar een standaard poging dat te doen; dat zal lang duren.
 
 <figure markdown>
-| TLS version | HTTP/1.x <br /> desktop | HTTP/1.x <br />mobile | HTTP/2 <br />desktop | HTTP/2 <br />mobile |
+| TLS versie | HTTP/1.x <br /> desktop | HTTP/1.x <br />mobiel | HTTP/2 <br />desktop | HTTP/2 <br />mobiel |
 | ------------ | ------ | ------ |  ---- | -----|
-| unknown   |  4.06%	 | 4.03%  | 5.05%	 | 7.28%  |
-| TLS 1.2	   | 26.56%  | 24.75% | 23.12%  | 23.14% |
-| TLS 1.3	   | 5.25%	 | 5.11%  | 35.78%  | 35.54% |
+| onbekend   |  4,06%	 | 4,03%  | 5,05%	 | 7,28%  |
+| TLS 1.2	   | 26,56%  | 24,75% | 23,12%  | 23,14% |
+| TLS 1.3	   | 5,25%	 | 5,11%  | 35,78%  | 35,54% |
 
-<figcaption>{{ figure_link(caption="TLS adoption by HTTP version.", sheets_gid="900140630", sql_file="tls_adoption_by_http_version.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="TLS-acceptatie door HTTP-versie.", sheets_gid="900140630", sql_file="tls_adoption_by_http_version.sql") }}</figcaption>
 </figure>
 
-QUIC is dependent on TLS 1.3, which is used for around 41% of requests, as shown in Figure 22.21. That leaves 59% of requests that will need to update their TLS stack to support HTTP/3.
+QUIC is afhankelijk van TLS 1.3, dat wordt gebruikt voor ongeveer 41% van de verzoeken, zoals weergegeven in figuur 22.21. Dat laat 59% van de verzoeken over die hun TLS-stack moeten bijwerken om HTTP/3 te ondersteunen.
 
-### Is HTTP/3 ready yet?
+### Is HTTP/3 al klaar?
 
-So, when can we start using HTTP/3 and QUIC for real? Not quite yet, but hopefully soon. There is a <a hreflang="en" href="https://github.com/quicwg/base-drafts/wiki/Implementations">large number of mature open source implementations</a> and the major browsers have experimental support. However, most of the typical servers have suffered some delays: nginx is a bit behind other stacks, Apache hasn't announced official support, and NodeJS relies on OpenSSL, which <a hreflang="en" href="https://github.com/openssl/openssl/pull/8797">won't add QUIC support anytime soon</a>. Even so, we expect to see HTTP/3 and QUIC deployments rise throughout 2021.
+Dus, wanneer kunnen we HTTP/3 en QUIC echt gaan gebruiken? Nog niet helemaal, maar hopelijk binnenkort. Er is een <a hreflang="en" href="https://github.com/quicwg/base-drafts/wiki/Implementations">groot aantal volwassen open source-implementaties</a> en de belangrijkste browsers hebben experimentele ondersteuning. De meeste typische servers hebben echter wat vertraging opgelopen: nginx loopt een beetje achter op andere stacks, Apache heeft geen officiële ondersteuning aangekondigd en NodeJS vertrouwt op OpenSSL, dat <a hreflang="en" href="https://github.com/openssl/openssl/pull/8797">binnenkort geen QUIC-ondersteuning zal toevoegen</a>. Toch verwachten we dat het aantal HTTP/3- en QUIC-implementaties in 2021 zal toenemen.
 
-HTTP/3 and QUIC are highly advanced protocols with powerful performance and security features, such as a new HTTP prioritization system, HOL blocking removal, and 0-RTT connection establishment. This sophistication also makes them difficult to deploy and use correctly, as has turned out to be the case for HTTP/2. We predict that early deployments will mainly be done via the early adoption of CDNs such as Cloudflare, Fastly, and Akamai. This will probably mean that a large part of HTTP/2 traffic can and will be upgraded to HTTP/3 automatically in 2021, giving the new protocol a large traffic share almost out of the box. When and if smaller deployments will follow suit is more difficult to answer. Most likely, we will continue to see a healthy mix of HTTP/3, HTTP/2, and even HTTP/1.1 on the web for years to come.
+HTTP/3 en QUIC zijn zeer geavanceerde protocollen met krachtige prestatie- en beveiligingsfuncties, zoals een nieuw HTTP-prioriteitssysteem, verwijdering van HOL-blokkering en het tot stand brengen van 0-RTT-verbindingen. Deze verfijning maakt het ook moeilijk om ze correct te implementeren en te gebruiken, zoals het geval is gebleken voor HTTP/2. We voorspellen dat vroege implementaties voornamelijk zullen plaatsvinden via de vroege acceptatie van CDN's zoals Cloudflare, Fastly en Akamai. Dit zal waarschijnlijk betekenen dat een groot deel van het HTTP/2-verkeer in 2021 automatisch kan en zal worden geüpgraded naar HTTP/3, waardoor het nieuwe protocol bijna uit de doos een groot verkeersaandeel krijgt. Wanneer en of kleinere implementaties zullen volgen, is moeilijker te beantwoorden. Hoogstwaarschijnlijk zullen we de komende jaren een gezonde mix van HTTP/3, HTTP/2 en zelfs HTTP/1.1 op internet blijven zien.
 
-## Conclusion
+## Gevolgtrekking
 
-This year, HTTP/2 has become the dominant protocol, serving 64% of all requests, having grown by 10 percentage points during the year. Home pages have seen a 13% increase in HTTP/2 adoption, leading to an even split of pages served over HTTP/1.1 and HTTP/2. Using a CDN to serve your home page pushes HTTP/2 adoption up to 80%, compared with 30% for non-CDN usage. There remain some older servers, Apache and IIS, that are proving resistant to upgrading to HTTP/2 and TLS. A big success has been the decrease in website connection usage due to HTTP/2 connection multiplexing. The median number of connections in 2016 was 23 compared to 13 in 2020.
+Dit jaar is HTTP/2 het dominante protocol geworden, dat 64% van alle verzoeken bedient, en in de loop van het jaar met 10 procentpunten is gegroeid. Startpagina's hebben een toename van 13% in HTTP/2-acceptatie gezien, wat heeft geleid tot een gelijkmatige opsplitsing van pagina's die worden bediend via HTTP/1.1 en HTTP/2. Het gebruik van een CDN om uw startpagina te bedienen, verhoogt de acceptatie van HTTP/2 tot 80%, vergeleken met 30% voor niet-CDN-gebruik. Er zijn nog enkele oudere servers, Apache en IIS, die resistent blijken te zijn tegen upgraden naar HTTP/2 en TLS. Een groot succes is de afname van het gebruik van websiteverbindingen als gevolg van HTTP/2-verbindingsmultiplexing. Het mediane aantal aansluitingen in 2016 was 23 ten opzichte van 13 in 2020.
 
-HTTP/2 prioritization and server push have turned out to be way more complex to deploy at large. Under certain implementations they show clear performance benefits. There is, however, a significant barrier to deploying and tuning existing servers to use these features effectively. There are still a large proportion of CDNs who do not support prioritization effectively. There have also been issues with consistent browser support.
+HTTP/2-prioriteitstelling en server push zijn veel complexer gebleken om in het algemeen te implementeren. Bij bepaalde implementaties laten ze duidelijke prestatievoordelen zien. Er is echter een aanzienlijke belemmering voor het inzetten en afstemmen van bestaande servers om deze functies effectief te gebruiken. Er is nog steeds een groot deel van de CDN's die het stellen van prioriteiten niet effectief ondersteunen. Er zijn ook problemen met consistente browserondersteuning.
 
-HTTP/3 is just around the corner. It will be fascinating to follow the adoption rate, see how discovery mechanisms evolve, and find out which new features will be deployed successfully. We expect next year's Web Almanac to see some interesting new data.
+HTTP/3 is net om de hoek. Het zal fascinerend zijn om de acceptatiegraad te volgen, te zien hoe ontdekkingsmechanismen evolueren en erachter te komen welke nieuwe functies met succes zullen worden geïmplementeerd. We verwachten dat de Web Almanac van volgend jaar interessante nieuwe gegevens zal bevatten.
