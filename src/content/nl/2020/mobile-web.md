@@ -36,7 +36,7 @@ Bezoek de bovenstaande links voor meer informatie over de methodologie en kantte
 
 Naast het bovenstaande hebben we ook een niet-openbare Chrome-gegevensbron gebruikt in het gedeelte over het laden van pagina's in Chrome. Lees voor meer informatie over de <a hreflang="en" href="https://chromium.googlesource.com/chromium/src/+/master/services/metrics/ukm_api.md">gegevensverzamelings-API van Chrome</a>.
 
-Hoewel deze gegevens alleen worden verzameld van een subset van (aangemelde) Chrome-gebruikers, hebben ze geen last van het feit dat ze beperkt zijn tot homepagina's. Het is pseudoniem en bestaat uit histogrammen en gebeurtenissen.
+Hoewel deze gegevens alleen worden verzameld van een subset van (aangemelde) Chrome-gebruikers, hebben ze geen last van het feit dat ze beperkt zijn tot startpagina's. Het is pseudoniem en bestaat uit histogrammen en gebeurtenissen.
 
 <p class="note">OPMERKING: Rapportage is ingeschakeld als de gebruiker een functie heeft ingeschakeld die browservensters synchroniseert, tenzij ze de instelling "Zoeken en browsen beter maken/URL's van pagina's die u bezoekt naar Google sturen" hebben uitgeschakeld.</p>
 
@@ -254,7 +254,7 @@ Eenvoudige ontwerpaanpassingen gaan een lange weg, bijvoorbeeld een duidelijke c
   )
 }}
 
-<a hreflang="en" href="https://www.nngroup.com/articles/auto-forwarding/">Onderzoek heeft aangetoond</a> dat carrousels met auto-forwarding schadelijk zijn voor de gebruikerservaring. Auto-forwarding carrousels op de homepagina moeten worden vermeden of hun frequentie moet worden verlaagd.
+<a hreflang="en" href="https://www.nngroup.com/articles/auto-forwarding/">Onderzoek heeft aangetoond</a> dat carrousels met auto-forwarding schadelijk zijn voor de gebruikerservaring. Auto-forwarding carrousels op de startpagina moeten worden vermeden of hun frequentie moet worden verlaagd.
 
 ##### Kleur en contrast
 
@@ -386,17 +386,17 @@ Het is ook mogelijk om sommige formuliervelden helemaal te verwijderen. De API's
 
 ### 4. Retentie
 
-De laatste fase in de reis is gebruikersbehoud, dit betekent de gebruiker opnieuw betrekken en van hem een terugkerende klant of een loyale bezoeker maken.
+De laatste fase in de reis is gebruikersbehoud, dit betekent de gebruiker opnieuw betrekken en van hem een terugkerende cliënt of een loyale bezoeker maken.
 
 #### Installeerbaarheid met PWA
 
-Terugkerende gebruikers profiteren van een native app-achtige ervaring met een [PWA](./pwa). Een belangrijk waardevoorstel voor gebruikersbehoud is de installeerbaarheid van een PWA. Wanneer een PWA is geïnstalleerd, is deze beschikbaar vanaf de plaatsen waar een mobiele gebruiker een app verwacht te vinden: het homescherm en de app-lade. Wanneer de gebruiker op de PWA tikt en deze start, wordt deze op volledig scherm geladen en is deze beschikbaar in de taakwisselaar, net als een native app.
+Terugkerende gebruikers profiteren van een native app-achtige ervaring met een [PWA](./pwa). Een belangrijk waardevoorstel voor gebruikersbehoud is de installeerbaarheid van een PWA. Wanneer een PWA is geïnstalleerd, is deze beschikbaar vanaf de plaatsen waar een mobiele gebruiker een app verwacht te vinden: het startscherm en de app-lade. Wanneer de gebruiker op de PWA tikt en deze start, wordt deze op volledig scherm geladen en is deze beschikbaar in de taakwisselaar, net als een native app.
 
 Rakuten 24 is een online winkel van Rakuten, een van de grootste e-commercebedrijven in Japan. Een recente <a hreflang="en" href="https://web.dev/rakuten-24/">casestudy met Rakuten 24</a> toonde aan dat het maken van hun webapp <a hreflang="en" href="https://web.dev/define-install-strategy/">installeerbaar</a>, resulteerde in maar liefst 450% in bezoekersbehoud in vergelijking met de vorige mobiele webstroom, over een periode van 1 maand .
 
 Door installeerbaarheid te implementeren, zag Rakuten 24 ook deze verbeteringen over een tijdsbestek van 1 maand:
 * 310% stijging van de bezoekfrequentie per gebruiker, vergeleken met de rest van hun internetgebruikers
-* 150% stijging van de omzet per klant met 150%
+* 150% stijging van de omzet per cliënt met 150%
 * 200% stijging van de conversieratio
 
 #### Een naadloze ervaring op verschillende apparaten

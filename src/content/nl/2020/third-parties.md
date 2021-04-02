@@ -55,7 +55,7 @@ In dit hoofdstuk worden providers van derden in verschillende categorieën onder
 * Analytics - het volgen van het gedrag van sitebezoekers
 * CDN - providers die openbare gedeelde hulpprogramma's of privé-inhoud van hun gebruikers hosten
 * Inhoud - providers die uitgevers faciliteren en gesyndiceerde inhoud hosten
-* Klantsucces - ondersteuning en functionaliteit voor klantrelatiebeheer
+* Cliëntsucces - ondersteuning en functionaliteit voor cliëntrelatiebeheer
 * Hosting - providers die de willekeurige inhoud van hun gebruikers hosten
 * Marketing - verkoop, leadgeneratie en e-mailmarketingfunctionaliteit
 * Sociaal - sociale netwerken en hun aangesloten integraties
@@ -70,7 +70,7 @@ _Opmerking over CDN's: de CDN-categorie hier omvat providers die bronnen leveren
 
 * Alle hier gepresenteerde gegevens zijn gebaseerd op een niet-interactieve, koude belasting. Deze waarden kunnen er na gebruikersinteractie behoorlijk anders uitzien.
 * De pagina's worden getest vanaf servers in de VS zonder dat er cookies zijn ingesteld, dus derde partijen die worden aangevraagd na de opt-in zijn niet inbegrepen. Dit heeft met name gevolgen voor pagina's die worden gehost en voornamelijk worden aangeboden aan landen die onder de [Algemene Verordening Gegevensbescherming](https://nl.wikipedia.org/wiki/Algemene_verordening_gegevensbescherming) of andere soortgelijke wetgeving vallen.
-* Alleen de homepagina's worden getest. Andere pagina's kunnen andere vereisten van derden hebben.
+* Alleen de startpagina's worden getest. Andere pagina's kunnen andere vereisten van derden hebben.
 * Ongeveer 84% van alle domeinen van derden op verzoekvolume zijn geïdentificeerd en gecategoriseerd. De overige 16% valt in de categorie "Overig".
 
 Lees meer over onze [methodologie](./methodology).
@@ -243,7 +243,7 @@ De onderstaande grafiek toont het percentage verzoeken dat vroeg wordt geladen, 
 
 ## CPU-impact
 
-Niet alle bytes op het web zijn gelijk: een afbeelding van 500KB is misschien veel gemakkelijker voor een browser om te verwerken dan een gecomprimeerde JavaScript-bundel van 500KB, die oploopt tot 1,8MB aan client-side code! De impact van scripts van derden op de CPU-tijd kan veel kritischer zijn dan de extra bytes of tijd die op het netwerk wordt doorgebracht.
+Niet alle bytes op het web zijn gelijk: een afbeelding van 500KB is misschien veel gemakkelijker voor een browser om te verwerken dan een gecomprimeerde JavaScript-bundel van 500KB, die oploopt tot 1,8MB aan cliëntzijde code! De impact van scripts van derden op de CPU-tijd kan veel kritischer zijn dan de extra bytes of tijd die op het netwerk wordt doorgebracht.
 
 We kunnen de aanwezigheid van categorieën van derden correleren met de totale CPU-tijd op de pagina, dit stelt ons in staat om de impact van elke categorie van derden op de CPU-tijd te schatten.
 
