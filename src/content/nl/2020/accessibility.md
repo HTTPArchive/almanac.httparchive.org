@@ -144,7 +144,7 @@ De top 5 bestandsextensies die expliciet zijn opgenomen in de `alt`-tekstwaarde 
     <thead>
       <tr>
         <th scope="col">Bestandsextensie</th>
-        <th scope="col">Bureaublad</th>
+        <th scope="col">Desktop</th>
         <th scope="col">Mobiel</th>
       </tr>
     </thead>
@@ -284,7 +284,7 @@ Tabellen zijn een efficiënte manier om gegevens weer te geven met twee assen va
     <thead>
       <tr>
         <th scope="col">Meting</th>
-        <th scope="col">Bureaublad</th>
+        <th scope="col">Desktop</th>
         <th scope="col">Mobiel</th>
       </tr>
     </thead>
@@ -322,7 +322,7 @@ Als er een absolute behoefte is om naar deze techniek te reiken, moet de rol van
 
 ### Documenttitels
 
-Beschrijvende paginatitels zijn handig voor de context wanneer u met ondersteunende technologie tussen pagina's, tabbladen en vensters wisselt, omdat de wijziging in de context zal worden aangekondigd. Uit onze gegevens blijkt dat 98,98% van de sites een titel heeft, wat een hoopvolle statistiek is. Het spreekt echter vanzelf dat homepagina's een hoger aantal paginatitels kunnen hebben dan minder belangrijke routes.
+Beschrijvende paginatitels zijn handig voor de context wanneer u met ondersteunende technologie tussen pagina's, tabbladen en vensters wisselt, omdat de wijziging in de context zal worden aangekondigd. Uit onze gegevens blijkt dat 98,98% van de sites een titel heeft, wat een hoopvolle statistiek is. Het spreekt echter vanzelf dat startpagina's een hoger aantal paginatitels kunnen hebben dan minder belangrijke routes.
 
 ### Tabindex
 
@@ -379,7 +379,7 @@ HTML5 introduceerde veel nieuwe native elementen, die allemaal <a hreflang="en" 
 
 #### Gebruik gewoon een knop!
 
-We ontdekten dat 25,20% van de desktopsites en 24,50% van de mobiele sites homepagina's had met ten minste één element met een expliciet toegewezen `role="button"`. Dit suggereert dat ongeveer een kwart van de websites de functie `button` op elementen gebruikt om hun semantiek te wijzigen, met uitzondering van knoppen waaraan expliciet de `button`-rol is toegewezen, die overbodig maar ongevaarlijk is.
+We ontdekten dat 25,20% van de desktopsites en 24,50% van de mobiele sites startpagina's had met ten minste één element met een expliciet toegewezen `role="button"`. Dit suggereert dat ongeveer een kwart van de websites de functie `button` op elementen gebruikt om hun semantiek te wijzigen, met uitzondering van knoppen waaraan expliciet de `button`-rol is toegewezen, die overbodig maar ongevaarlijk is.
 
 Als niet-interactieve elementen zoals `<div>`s en `<span>`s deze rol hebben gekregen, is de kans groot dat een of meer van de 5 regels van ARIA zijn overtreden.
 
@@ -473,7 +473,7 @@ De toegankelijke naam kan worden afgeleid van de inhoud van een element (zoals k
 
 We kunnen ARIA ook gebruiken om toegankelijke namen voor elementen op te geven. Er zijn twee ARIA-attributen die dit bewerkstelligen, <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA14.html">`aria-label`</a>, <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA16.html">`aria-labelledby`</a>. Elk van deze kenmerken zal de berekening van de toegankelijke naam "winnen" en de native afgeleide toegankelijke naam overschrijven, dus gebruik ze met de nodige voorzichtigheid en zorg ervoor dat u test met een schermlezer of bekijk de toegankelijkheidsboom om te bevestigen dat de toegankelijke naam is wat werd verwacht. Wanneer u ARIA gebruikt om een element een naam te geven, is het belangrijk om ervoor te zorgen dat de <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html">WCAG 2.5.3, <span lang="en">Label in Name</span></a> criterium niet geschonden is, dat verwacht dat zichtbare labels ten minste een deel van de toegankelijke naam zijn.
 
-Met het `aria-label`-element kan een ontwikkelaar een tekenreekswaarde opgeven en deze wordt gebruikt voor de toegankelijke naam voor het element. We ontdekten dat 40,44% van de desktoppagina's en 38,72% van de mobiele homepagina's ten minste één element had met het kenmerk `aria-label`, waardoor dit het meest populaire ARIA-kenmerk is voor het verstrekken van toegankelijke namen.
+Met het `aria-label`-element kan een ontwikkelaar een tekenreekswaarde opgeven en deze wordt gebruikt voor de toegankelijke naam voor het element. We ontdekten dat 40,44% van de desktoppagina's en 38,72% van de mobiele startpagina's ten minste één element had met het kenmerk `aria-label`, waardoor dit het meest populaire ARIA-kenmerk is voor het verstrekken van toegankelijke namen.
 
 Het `aria-labelledby` attribuut accepteert een `id` referentie als zijn waarde, die het associeert met een ander element in de interface om zijn toegankelijke naam te geven. Het element wordt "gelabeld door" dit andere element dat zijn toegankelijke naam geeft. We ontdekten dat 17,73% van de desktoppagina's en 16,21% van de mobiele pagina's ten minste één element had met het kenmerk `aria-labelledby`.
 

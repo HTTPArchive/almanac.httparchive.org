@@ -10,7 +10,7 @@ translators: [noah-vdv]
 tkadlec_bio: Tim is een webprestatieadviseur en trainer gericht op het bouwen van een web dat iedereen kan gebruiken. Hij is de auteur van High Performance Images (O'Reilly, 2016) en Implementing Responsive Design (New Riders, 2012). Hij schrijft over alles wat met internet te maken heeft op <a hreflang="en" href="https://timkadlec.com/">timkadlec.com</a>. U kunt hem vinden op Twitter <a href="https://twitter.com/tkadlec">@tkadlec</a> waar hij zijn gedachten in een beknopter formaat deelt.
 discuss: 2038
 results: https://docs.google.com/spreadsheets/d/1cgXJrFH02SHPKDGD0AelaXAdB3UI7PIb5dlS0dxVtfY/
-featured_quote: JavaScript heeft een lange weg afgelegd sinds zijn bescheiden oorsprong als de laatste van de drie web-hoekstenen, naast CSS en HTML. Tegenwoordig begint JavaScript een breed spectrum van de technische stack te infiltreren. Het is niet langer beperkt tot de client-side en het wordt een steeds populairdere keuze voor build-tools en server-side scripting. JavaScript sluipt ook zijn weg naar de CDN-laag dankzij edge computing-oplossingen.
+featured_quote: JavaScript heeft een lange weg afgelegd sinds zijn bescheiden oorsprong als de laatste van de drie web-hoekstenen, naast CSS en HTML. Tegenwoordig begint JavaScript een breed spectrum van de technische stack te infiltreren. Het is niet langer beperkt tot de cliëntzijde en het wordt een steeds populairdere keuze voor build-tools en server-side scripting. JavaScript sluipt ook zijn weg naar de CDN-laag dankzij edge computing-oplossingen.
 featured_stat_1: 1,897ms
 featured_stat_label_1: Mediane JS-hoofdthread-tijd op mobiel
 featured_stat_2: 37,22%
@@ -21,7 +21,7 @@ featured_stat_label_3: Percentage scripts dat asynchroon is geladen
 
 ## Inleiding
 
-JavaScript heeft een lange weg afgelegd sinds zijn bescheiden oorsprong als de laatste van de drie web-hoekstenen, naast CSS en HTML. Tegenwoordig begint JavaScript een breed spectrum van de technische stack te infiltreren. Het is niet langer beperkt tot de klantzijde en het wordt een steeds populairdere keuze voor <span lang="en">build-tools</span> en <span lang="en">server-side scripting</span>. JavaScript sluipt ook zijn weg naar de CDN-laag dankzij <span lang="en">edge computing</span>-oplossingen.
+JavaScript heeft een lange weg afgelegd sinds zijn bescheiden oorsprong als de laatste van de drie web-hoekstenen, naast CSS en HTML. Tegenwoordig begint JavaScript een breed spectrum van de technische stack te infiltreren. Het is niet langer beperkt tot de cliëntzijde en het wordt een steeds populairdere keuze voor <span lang="en">build-tools</span> en <span lang="en">server-side scripting</span>. JavaScript sluipt ook zijn weg naar de CDN-laag dankzij <span lang="en">edge computing</span>-oplossingen.
 
 Ontwikkelaars houden van wat JavaScript. Volgens het hoofdstuk Opmaak is het `script` -element het [6e meest populaire HTML-element](./markup) dat in gebruik is (vóór elementen zoals `p` en `i`, naast talloze andere). We besteden er ongeveer 14 keer zoveel bytes aan als aan HTML, de bouwsteen van het web, en 6 keer zoveel bytes als CSS.
 
@@ -59,7 +59,7 @@ De trend lijkt ook in het voordeel te zijn van het gebruik van meer JavaScript, 
   <table>
     <thead>
       <tr>
-        <th>klant</th>
+        <th>cliënt</th>
         <th>2019</th>
         <th>2020</th>
         <th>Verandering</th>
@@ -145,7 +145,7 @@ Bij de mediaan doen pagina's 20 JavaScript-verzoeken. Dat is slechts een kleine 
 
 ## Waar komt het vandaan?
 
-Een trend die waarschijnlijk bijdraagt aan de toename van JavaScript dat op onze pagina's wordt gebruikt, is het schijnbaar steeds groter wordende aantal scripts van derden dat aan pagina's wordt toegevoegd om te helpen met alles, van A/B-tests en analyses aan de klantzijde tot het weergeven van advertenties en omgaan met personalisatie.
+Een trend die waarschijnlijk bijdraagt aan de toename van JavaScript dat op onze pagina's wordt gebruikt, is het schijnbaar steeds groter wordende aantal scripts van derden dat aan pagina's wordt toegevoegd om te helpen met alles, van A/B-tests en analyses aan de cliëntzijde tot het weergeven van advertenties en omgaan met personalisatie.
 
 Laten we daar een beetje op ingaan om te zien hoeveel script van derden we serveren.
 
@@ -363,7 +363,7 @@ De populaire bibliotheken die in gebruik zijn, zijn grotendeels ongewijzigd ten 
 Vorig jaar stelde [Houssein een paar redenen voor waarom de dominantie van jQuery voortduurt](../2019/javascript#open-source-libraries-and-frameworks):
 
 > <span lang="en">WordPress</span>, dat op meer dan 30% van de sites wordt gebruikt, bevat standaard jQuery.
-> Het overschakelen van jQuery naar een nieuwere klantzijde bibliotheek kan enige tijd duren, afhankelijk van hoe groot een applicatie is, en veel sites kunnen bestaan uit jQuery naast nieuwere klantzijde bibliotheken.
+> Het overschakelen van jQuery naar een nieuwere cliëntzijde bibliotheek kan enige tijd duren, afhankelijk van hoe groot een applicatie is, en veel sites kunnen bestaan uit jQuery naast nieuwere cliëntzijde bibliotheken.
 
 Beide zijn zeer goede gissingen, en het lijkt erop dat de situatie op geen van beide fronten veel is veranderd.
 
@@ -579,7 +579,7 @@ Wat nog belangrijker is, al deze hulpmiddelen betekenen doorgaans meer code en m
 
 Als we specifiek naar de gebruikte frameworks kijken, zien we dat de mediaan JavaScript-bytes voor pagina's die deze gebruiken, enorm variëren, afhankelijk van _wat_ wordt gebruikt.
 
-De onderstaande grafiek toont de mediaan bytes voor pagina's waar een van de top 35 meest gedetecteerde frameworks is gevonden, uitgesplitst naar client.
+De onderstaande grafiek toont de mediaan bytes voor pagina's waar een van de top 35 meest gedetecteerde frameworks is gevonden, uitgesplitst naar cliënt.
 
 {{ figure_markup(
   image="frameworks-bytes.png",
@@ -592,7 +592,7 @@ De onderstaande grafiek toont de mediaan bytes voor pagina's waar een van de top
   sql_file="frameworks-bytes-by-framework.sql"
 ) }}
 
-Op één van de spectrums staan frameworks zoals React of Angular of Ember, die de neiging hebben om veel code te verzenden, ongeacht de klant. Aan de andere kant zien we minimalistische frameworks zoals Alpine.js en Svelte veelbelovende resultaten laten zien. Standaarden zijn erg belangrijk, en het lijkt erop dat Svelte en Alpine er allebei in slagen (tot dusver&hellip; is de steekproefomvang vrij klein) om een lichtere set pagina's te creëren door te beginnen met zeer performante standaarden.
+Op één van de spectrums staan frameworks zoals React of Angular of Ember, die de neiging hebben om veel code te verzenden, ongeacht de cliënt. Aan de andere kant zien we minimalistische frameworks zoals Alpine.js en Svelte veelbelovende resultaten laten zien. Standaarden zijn erg belangrijk, en het lijkt erop dat Svelte en Alpine er allebei in slagen (tot dusver&hellip; is de steekproefomvang vrij klein) om een lichtere set pagina's te creëren door te beginnen met zeer performante standaarden.
 
 We krijgen een vergelijkbaar beeld als we kijken naar de hoofdthread-tijd voor pagina's waarop deze hulpmiddelen zijn gedetecteerd.
 
