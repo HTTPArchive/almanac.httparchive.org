@@ -39,7 +39,7 @@ In 1997 werd HTTP/1.1 geïntroduceerd om hergebruik van TCP-verbindingen mogelij
 
 HTTP/2, gepubliceerd in 2015, is een binair protocol dat het concept van bidirectionele streams tussen cliënt en server introduceerde. Met behulp van deze streams kan een browser optimaal gebruik maken van een enkele TCP-verbinding om meerdere HTTP-verzoeken/-antwoorden tegelijkertijd te _multiplexen_. HTTP/2 introduceerde ook een prioriteitsschema om deze _multiplexing_ te sturen; cliënten kunnen een verzoekprioriteit aangeven waardoor belangrijkere bronnen vóór anderen kunnen worden verzonden.
 
-## HTTP/2-Adoptie
+## HTTP/2-adoptie
 
 De gegevens die in dit hoofdstuk worden gebruikt, zijn afkomstig uit het HTTP Archive en testen meer dan zeven miljoen websites met een Chrome-browser. Net als bij andere hoofdstukken, wordt de analyse opgesplitst in mobiele en desktopwebsites. Wanneer de resultaten tussen desktop en mobiel vergelijkbaar zijn, worden statistieken uit de mobiele dataset gepresenteerd. U kunt meer details vinden op de pagina [Methodologie](./methodology). Houd er bij het bekijken van deze gegevens rekening mee dat elke website evenveel gewicht krijgt, ongeacht het aantal verzoeken. We raden u aan dit meer te zien als het onderzoeken van de trends op een breed scala aan actieve websites.
 
