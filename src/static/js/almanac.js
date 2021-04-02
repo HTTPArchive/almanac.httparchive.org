@@ -668,7 +668,7 @@ function addShortKeyEventListers() {
       }
     }
     if (event.key === 'd' || event.key === 'D') {
-      var next = document.querySelectorAll('.fig-description-button').forEach(descButton => {
+      document.querySelectorAll('.fig-description-button').forEach(descButton => {
         descButton.click();
       });
     }
