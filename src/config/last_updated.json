@@ -31,8 +31,8 @@
   },
   "/static/js/almanac.js": {
     "date_published": "2021-02-24T00:00:00.000Z",
-    "date_modified": "2021-03-17T00:00:00.000Z",
-    "hash": "ed783b892bcc24bfac9ca35001acadcb"
+    "date_modified": "2021-04-02T00:00:00.000Z",
+    "hash": "a048e74d864cb071cf57bbec86f4cfdc"
   },
   "/static/js/send-web-vitals.js": {
     "date_published": "2021-02-24T00:00:00.000Z",
@@ -975,6 +975,11 @@
     "date_modified": "2021-03-02T00:00:00.000Z",
     "hash": "b113aba603da02a08f543c60505a93f9"
   },
+  "nl/2020/chapters/privacy.html": {
+    "date_published": "2021-04-02T00:00:00.000Z",
+    "date_modified": "2021-04-02T00:00:00.000Z",
+    "hash": "4a0475aef63276619be7b05abd14a24e"
+  },
   "nl/2020/chapters/pwa.html": {
     "date_published": "2021-03-02T00:00:00.000Z",
     "date_modified": "2021-03-12T00:00:00.000Z",
@@ -982,8 +987,8 @@
   },
   "nl/2020/chapters/resource-hints.html": {
     "date_published": "2021-03-06T00:00:00.000Z",
-    "date_modified": "2021-03-06T00:00:00.000Z",
-    "hash": "30d59b2dcc11237c7c09c96129ea4cbc"
+    "date_modified": "2021-04-02T00:00:00.000Z",
+    "hash": "9e5e5d132fb6f65f42a9da2b8a1ce741"
   },
   "nl/2020/chapters/security.html": {
     "date_published": "2021-02-20T00:00:00.000Z",
@@ -1119,6 +1124,16 @@
     "date_published": "2020-11-21T00:00:00.000Z",
     "date_modified": "2020-11-26T00:00:00.000Z",
     "hash": "e023f4f85899c48ffa00d9b3e1d2b2e4"
+  },
+  "tr/2019/index.html": {
+    "date_published": "2021-04-02T00:00:00.000Z",
+    "date_modified": "2021-04-02T00:00:00.000Z",
+    "hash": "108177d7b9d04bd7ef06de809c066d7d"
+  },
+  "tr/2020/index.html": {
+    "date_published": "2021-04-02T00:00:00.000Z",
+    "date_modified": "2021-04-02T00:00:00.000Z",
+    "hash": "8ecba2f1fec42a01cb68aa91a14712e8"
   },
   "uk/2019/contributors.html": {
     "date_published": "2021-01-17T00:00:00.000Z",

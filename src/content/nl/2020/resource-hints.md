@@ -128,7 +128,7 @@ Vergeleken met [2019](../2019/resource-hints#resource-hints) had de `dns-prefetc
   sql_file="adoption.sql"
 ) }}
 
-Het gebruik van `preload` heeft een langzamere groei doorgemaakt met slechts een stijging van 2% ten opzichte van 2019. Dit zou gedeeltelijk kunnen zijn omdat het wat meer specificatie vereist. Hoewel je alleen het domein nodig hebt om `dns-prefetch` en `preconnect` te gebruiken, moet je de bron specificeren om `preload` te gebruiken. Hoewel `dns-prefetch` en `preconnect` een redelijk laag risico vormen, maar nog steeds kunnen worden misbruikt, heeft `preload` een veel groter potentieel om de prestaties daadwerkelijk te schaden als het onjuist wordt gebruikt.
+Het gebruik van `preload` heeft een langzamere groei doorgemaakt met slechts een stijging van 2% ten opzichte van 2019. Dit zou gedeeltelijk kunnen zijn omdat het wat meer specificatie vereist. Hoewel u alleen het domein nodig hebt om `dns-prefetch` en `preconnect` te gebruiken, moet u de bron specificeren om `preload` te gebruiken. Hoewel `dns-prefetch` en `preconnect` een redelijk laag risico vormen, maar nog steeds kunnen worden misbruikt, heeft `preload` een veel groter potentieel om de prestaties daadwerkelijk te schaden als het onjuist wordt gebruikt.
 
 `prefetch` wordt gebruikt door 3% van de sites op Desktop, waardoor het de minst gebruikte bronhint is. Dit lage gebruik kan worden verklaard door het feit dat `prefetch` nuttig is om volgende, in plaats van huidige, paginaladingen te verbeteren. Het wordt dus over het hoofd gezien als een site alleen is gericht op het verbeteren van de bestemmingspagina of de prestaties van de eerste pagina die wordt bekeken. In de komende jaren met een duidelijkere definitie van wat moet worden gemeten om de volgende pagina-ervaring te verbeteren, kan het teams helpen prioriteit te geven aan `prefetch`-acceptatie met duidelijke prestatiekwaliteitsdoelen om te bereiken.
 
@@ -200,7 +200,7 @@ Houd er rekening mee dat lettertypen die vooraf zijn geladen zonder het attribuu
 
 ### Het `media` attribuut
 
-Wanneer het tijd is om een bron te kiezen voor gebruik met verschillende schermformaten, grijp dan naar het `media`-attribuut met `preload` om je mediaquery's te optimaliseren.
+Wanneer het tijd is om een bron te kiezen voor gebruik met verschillende schermformaten, grijp dan naar het `media`-attribuut met `preload` om uw mediaquery's te optimaliseren.
 
 ```html
 <link rel="preload" href="a.css" as="style" media="only screen and (min-width: 768px)">
@@ -213,7 +213,7 @@ Het zien van meer dan 2100 verschillende combinaties van mediaquery's in de 2020
 
 Het gebruik van bronhints kan soms verwarrend zijn, dus laten we enkele snelle beste praktijken bekijken die we kunnen volgen op basis van de geautomatiseerde audit van Lighthouse.
 
-Om `dns-prefetch` en `preconnect` veilig te implementeren, moet je ervoor zorgen dat ze in aparte link-tags staan.
+Om `dns-prefetch` en `preconnect` veilig te implementeren, moet u ervoor zorgen dat ze in aparte link-tags staan.
 
 ```html
 <link rel="preconnect" href="http://example.com">
@@ -344,13 +344,13 @@ Priority hints hebben een duidelijk voordeel als hulpmiddel om verspillend laden
 ### 103 Early Hints in HTTP/2
 Eerder vermeldden we dat HTTP/2-push daadwerkelijk regressie kan veroorzaken in gevallen waarin activa die worden gepusht zich al in de browsercache bevinden. Het <a hreflang="en" href="https://tools.ietf.org/html/rfc8297">103 Early Hints</a> voorstel beoogt vergelijkbare voordelen te bieden die worden beloofd door HTTP/2-push. Met een architectuur die in potentie 10x eenvoudiger is, pakt het de lange RTT's of serververwerking aan zonder te lijden aan het bekende worst-case-probleem van onnodige rondtrips met server-push.
 
-Vanaf nu kun je het gesprek op Chromium volgen met issues <a hreflang="en" href="https://bugs.chromium.org/p/chromium/issues/detail?id=671310">671310</a>, <a hreflang="en" href="https://bugs.chromium.org/p/chromium/issues/detail?id=1093693">1093693</a>, en <a hreflang="en" href="https://bugs.chromium.org/p/chromium/issues/detail?id=1096414">1096414</a>.
+Vanaf nu kunt u het gesprek op Chromium volgen met issues <a hreflang="en" href="https://bugs.chromium.org/p/chromium/issues/detail?id=671310">671310</a>, <a hreflang="en" href="https://bugs.chromium.org/p/chromium/issues/detail?id=1093693">1093693</a>, en <a hreflang="en" href="https://bugs.chromium.org/p/chromium/issues/detail?id=1096414">1096414</a>.
 
 ## Gevolgtrekking
 
 In het afgelopen jaar zijn bronhints toegenomen in acceptatie, en het zijn essentiële API's geworden voor ontwikkelaars om meer gedetailleerde controle te hebben over veel aspecten van bronnenprioritering en uiteindelijk de gebruikerservaring. Maar laten we niet vergeten dat dit hints zijn, geen instructies en helaas zullen de browser en het netwerk altijd het laatste woord hebben.
 
-Natuurlijk kun je ze op een heleboel elementen plaatsen, en de browser kan doen wat je van hem vraagt. Of het negeert enkele hints en besluit dat de standaardprioriteit de beste keuze is voor de gegeven situatie. Zorg er in ieder geval voor dat je een playbook hebt voor het beste gebruik van deze hints:
+Natuurlijk kunt u ze op een heleboel elementen plaatsen, en de browser kan doen wat u van hem vraagt. Of het negeert enkele hints en besluit dat de standaardprioriteit de beste keuze is voor de gegeven situatie. Zorg er in ieder geval voor dat u een playbook hebt voor het beste gebruik van deze hints:
 
 - Identificeer de belangrijkste pagina's voor de gebruikerservaring.
 - Analyseer de belangrijkste middelen om te optimaliseren.
