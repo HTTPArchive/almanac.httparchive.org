@@ -144,7 +144,7 @@ Een <a hreflang="en" href="https://web.dev/load-fast-enough-for-pwa/">snelle pag
 
 Als u een progressieve web-app bouwt, overweeg dan om een service worker te gebruiken zodat uw app <a hreflang="en" href="https://web.dev/works-offline/">offline kan werken</a>, 0,92% van de pagina's was offline gereed.
 
-Browsers kunnen gebruikers proactief vragen om uw app aan hun startscherm toe te voegen, wat kan leiden tot een grotere betrokkenheid. 2,21% van de pagina's had een <a hreflang="en" href="https://web.dev/installable-manifest/">installeerbaar manifest</a>. Manifest speelt een belangrijke rol bij het starten van de applicatie, het uiterlijk en gevoel van het icoon op het homescherm en als direct impact op de betrokkenheidspercentage.
+Browsers kunnen gebruikers proactief vragen om uw app aan hun startscherm toe te voegen, wat kan leiden tot een grotere betrokkenheid. 2,21% van de pagina's had een <a hreflang="en" href="https://web.dev/installable-manifest/">installeerbaar manifest</a>. Manifest speelt een belangrijke rol bij het starten van de applicatie, het uiterlijk en gevoel van het icoon op het startscherm en als direct impact op de betrokkenheidspercentage.
 
 Alle sites moeten worden beschermd met HTTPS, zelfs sites die geen gevoelige gegevens verwerken. Dit omvat het vermijden van <a hreflang="en" href="https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content">gemengde inhoud</a>, waar sommige bronnen via HTTP worden geladen ondanks dat het eerste verzoek via HTTPS wordt bediend. HTTPS voorkomt dat indringers knoeien met of passief luisteren naar de communicatie tussen uw app en uw gebruikers en is een vereiste voor service workers en veel nieuwe webplatformfuncties en API's zoals [HTTP/2](./http2). De <a hreflang="en" href="https://web.dev/is-on-https/">is-on-https-check</a> laat zien dat 67,27% van de sites op HTTPS was zonder gemengde inhoud en het is verrassend dat we nog niet hoger zijn gekomen. Het hoofdstuk [Beveiliging](./security#transportbeveiliging) laat zien dat 86,91% van de sites HTTPS gebruikt, wat suggereert dat gemengde inhoud nu het grootste probleem kan zijn. Dit aantal wordt beter naarmate browsers de applicaties verplichten op HTTPS te staan ​​en die welke niet op HTTPS staan, meer nauwkeurig te bekijken.
 
@@ -166,7 +166,7 @@ Een <a hreflang="en" href="https://web.dev/splash-screen/">opstartscherm</a> met
 
 De adresbalk van de browser kan een thema hebben dat bij uw site past. 4,00% van de pagina's had een <a hreflang="en" href="https://web.dev/themed-omnibox/">omnibox</a> thema.
 
-Uw app zou wat inhoud moeten weergeven wanneer JavaScript is uitgeschakeld, ook al is het slechts een waarschuwing voor de gebruiker dat JavaScript vereist is om de app te gebruiken. 97,57% van de pagina's toont meer dan alleen een lege pagina met JavaScript <a hreflang="en" href="https://web.dev/without-javascript/">uitgeschakeld</a>. Aangezien we alleen de homepagina's onderzoeken, is het misschien meer verrassend dat 3,43% van de sites deze audit niet haalt!
+Uw app zou wat inhoud moeten weergeven wanneer JavaScript is uitgeschakeld, ook al is het slechts een waarschuwing voor de gebruiker dat JavaScript vereist is om de app te gebruiken. 97,57% van de pagina's toont meer dan alleen een lege pagina met JavaScript <a hreflang="en" href="https://web.dev/without-javascript/">uitgeschakeld</a>. Aangezien we alleen de startpagina's onderzoeken, is het misschien meer verrassend dat 3,43% van de sites deze audit niet haalt!
 
 ## Gebeurtenissen voor service workers
 

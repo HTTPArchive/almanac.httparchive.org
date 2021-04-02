@@ -100,7 +100,7 @@ Het was interessant om de verschillen in snelheid op te merken voor sites die de
   )
 }}
 
-Bij het bekijken van commerciële services zoals Adobe (`use.typekit.net`) of Monotype (`fast.fonts.com`) is het interessant om op te merken dat ze op desktop net zo snel of iets sneller zijn dan Google Fonts, maar merkbaar langzamer op mobiel. De conventionele wijsheid heeft over het algemeen aangenomen dat de trackingscripts die door die services worden gebruikt, ze aanzienlijk vertragen, maar dat is blijkbaar tegenwoordig minder een probleem dan in de afgelopen jaren. Hoewel het waar is dat we de prestaties van de site meten en niet noodzakelijk de prestaties van de font-host, hebben deze trackingscripts invloed op het laden van lettertypen op de client, dus het lijkt relevant om deze observaties op te nemen.
+Bij het bekijken van commerciële services zoals Adobe (`use.typekit.net`) of Monotype (`fast.fonts.com`) is het interessant om op te merken dat ze op desktop net zo snel of iets sneller zijn dan Google Fonts, maar merkbaar langzamer op mobiel. De conventionele wijsheid heeft over het algemeen aangenomen dat de trackingscripts die door die services worden gebruikt, ze aanzienlijk vertragen, maar dat is blijkbaar tegenwoordig minder een probleem dan in de afgelopen jaren. Hoewel het waar is dat we de prestaties van de site meten en niet noodzakelijk de prestaties van de font-host, hebben deze trackingscripts invloed op het laden van lettertypen op de cliënt, dus het lijkt relevant om deze observaties op te nemen.
 
 #### Zelfhosting is niet altijd beter
 
@@ -130,7 +130,7 @@ Het zou niet logisch zijn om een causaliteit tussen de hostingstrategie af te le
 
 #### Lokaal is niet altijd beter
 
-Een andere optie van self-hosting fonts op de server van de site, is om de door het systeem geïnstalleerde fonts op de client te gebruiken waar ze bestaan door het gebruik van `local` in de `font-face` declaratie. Het gebruik van `local` is <a hreflang="en" href="https://bramstein.com/writing/web-font-anti-patterns-local-fonts.html">controversieel</a>, omdat het bytes kan besparen, maar het kan ook slechte resultaten opleveren als de lokaal geïnstalleerde versie van het lettertype is verouderd. Vanaf [november 2020](https://twitter.com/googlefonts/status/1328761547041148929?s=19) is Google Fonts overgeschakeld op het gebruik van `local` alleen voor Roboto op mobiele platforms, anders wordt het lettertype altijd opgehaald via de netwerk.
+Een andere optie van self-hosting fonts op de server van de site, is om de door het systeem geïnstalleerde fonts op de cliënt te gebruiken waar ze bestaan door het gebruik van `local` in de `font-face` declaratie. Het gebruik van `local` is <a hreflang="en" href="https://bramstein.com/writing/web-font-anti-patterns-local-fonts.html">controversieel</a>, omdat het bytes kan besparen, maar het kan ook slechte resultaten opleveren als de lokaal geïnstalleerde versie van het lettertype is verouderd. Vanaf [november 2020](https://twitter.com/googlefonts/status/1328761547041148929?s=19) is Google Fonts overgeschakeld op het gebruik van `local` alleen voor Roboto op mobiele platforms, anders wordt het lettertype altijd opgehaald via de netwerk.
 
 ## Racen naar eerste lak
 
