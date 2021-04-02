@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This script is used to deploy the Web Alamanc to Google Cloud Platform (GCP).
+# This script is used to deploy the Web Almanac to Google Cloud Platform (GCP).
 # Users must have push permissions on the production branch and also release
 # permissions for the Web Almanac on GCP
 
