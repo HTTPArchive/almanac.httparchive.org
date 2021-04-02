@@ -1,7 +1,7 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: HTTP/2
-description: Capítulo sobre HTTP/2 del Web Alamanc de 2020 que cubre la adopción y el impacto  de HTTP/2, <i lang="en">HTTP/2 Push</i>, problemas con HTTP/2, y HTTP/3.
+description: Capítulo sobre HTTP/2 del Web Almanac de 2020 que cubre la adopción y el impacto  de HTTP/2, <i lang="en">HTTP/2 Push</i>, problemas con HTTP/2, y HTTP/3.
 authors: [dotjs, rmarx, MikeBishop]
 reviewers: [LPardue, bazzadp, ibnesayeed]
 analysts: [gregorywolf]
