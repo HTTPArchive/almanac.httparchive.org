@@ -575,7 +575,7 @@ Après avoir plongé dans le code, toutes ces 718 requêtes vont à Google Fonts
 
 Il est ironique qu'un plugin d'optimisation des performances puisse rendre vos performances bien pires !
 
-## More accurate matching with `unicode-range`
+## Une correspondance plus précise avec `unicode-range`.
 
 <figure>
   <div class="big-number">56%</div>
@@ -606,9 +606,10 @@ Il convient également de noter ici que des personnes plus intelligentes que moi
  <code>font-stretch</code>.</figcaption>
 </figure>
 
-Historically, `font-stretch` has suffered from poor browser support and was not a well-known `@font-face` property. Read more about [`font-stretch` on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch). But [browser support](https://caniuse.com/#feat=css-font-stretch) has broadened.
 
-It has been suggested that using condensed fonts on smaller viewports allows more text to be viewable, but this approach isn't commonly used. That being said, that this property is used half a percentage point more on desktop than mobile is unexpected, and 7% seems much higher than I would have predicted.
+Historiquement, `font-stretch` a souffert d'un mauvais support des navigateurs et n'était pas une propriété `@font-face` bien connue. En savoir plus sur [`font-stretch` sur MDN] (https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch). Mais [le support des navigateurs] (https://caniuse.com/#feat=css-font-stretch) s'est élargi.
+
+Il a été suggéré que l'utilisation de polices condensées sur des fenêtres d'affichage plus petites permet d'afficher plus de texte, mais cette approche n'est pas couramment utilisée. Cela dit, le fait que cette propriété soit utilisée un demi-point de pourcentage de plus sur les ordinateurs de bureau que sur les téléphones mobiles est inattendu, et 7 % semble beaucoup plus élevé que ce que j'aurais prédit.
 
 ## Les polices variables sont l'avenir
 
