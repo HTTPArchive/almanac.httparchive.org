@@ -1,21 +1,28 @@
 ---
-part_number: IV
-chapter_number: 18
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Page Weight
 description: Page Weight chapter of the 2019 Web Almanac covering why page weight matters, bandwidth, complex pages, page weight over time, page requests, and file formats.
 authors: [tammyeverts, khempenius]
 reviewers: [paulcalvano]
+analysts: [khempenius]
+editors: [obto]
 translators: []
 discuss: 1773
 results: https://docs.google.com/spreadsheets/d/1nWOo8efqDgzmA0wt1ipplziKhlReAxnVCW1HkjuFAxU/
-queries: 18_PageWeight
-published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-03-01T00:00:00.000Z
+tammyeverts_bio: Tammy Everts has spent more than two decades studying usability and UX. For the past ten years, she's focused on the intersection of UX with web performance and business. She is CXO at <a hreflang="en" href="https://speedcurve.com/">SpeedCurve</a>, co-chair of the <a hreflang="en" href="https://perfnow.nl/">performance.now() conference</a>, and author of the O'Reilly book <em><a hreflang="en" href="http://shop.oreilly.com/product/0636920041450.do">Time Is Money_bio&colon; The Business Value of Performance</a></em>.
+khempenius_bio: Katie Hempenius is an engineer on the Chrome team where she works on making the web faster.
+featured_quote: The common argument as to why page size doesn't matter anymore is that, thanks to high-speed internet and our souped-up devices, we can serve massive, complex (and massively complex) pages to the general population. This assumption works fine, as long as you're okay with ignoring the vast swathe of internet users who don't have access to said high-speed internet and souped-up devices.
+featured_stat_1: 20%
+featured_stat_label_1: Sites sending more than 6 MB of Data
+featured_stat_2: 434 KB
+featured_stat_label_2: Increase in median desktop size in last year
+featured_stat_3: 69
+featured_stat_label_3: Median requests per home page
 ---
 
 ## Introduction
 
-The median web page is around 1900KB in size and contains 74 requests. That doesn't sound too bad, right?
+The median web page is around 1900 KB in size and contains 74 requests. That doesn't sound too bad, right?
 
 Here's the issue with medians: they mask problems. By definition, they focus only on the middle of the distribution. We need to consider percentiles at both extremes to get an understanding of the bigger picture.
 
@@ -27,11 +34,11 @@ The common argument as to why page size doesn't matter anymore is that, thanks t
 
 Yes, you can build large robust pages that feel fast… to some users. But you should care about page bloat in terms of how it affects all your users, especially mobile-only users who deal with bandwidth constraints or data limits.
 
-<p class="note" data-markdown="1">Check out Tim Kadlec's fascinating online calculator, [What Does My Site Cost?](https://whatdoesmysitecost.com/), which calculates the cost—in dollars and Gross National Income per capita—of your pages in countries around the world. It's an eye-opener. For instance, Amazon's home page, which at the time of writing weighs 2.79MB, costs 1.89% of the daily per capita GNI of Mauritania. How global is the world wide web when people in some parts of the world would have to give up a day's wages just to visit a few dozen pages?</p>
+<p class="note" data-markdown="1">Check out Tim Kadlec's fascinating online calculator, <a hreflang="en" href="https://whatdoesmysitecost.com/">What Does My Site Cost?</a>, which calculates the cost—in dollars and Gross National Income per capita—of your pages in countries around the world. It's an eye-opener. For instance, Amazon's home page, which at the time of writing weighs 2.79 MB, costs 1.89% of the daily per capita GNI of Mauritania. How global is the world wide web when people in some parts of the world would have to give up a day's wages just to visit a few dozen pages?</p>
 
 ### More bandwidth isn't a magic bullet for web performance
 
-Even if more people had access to better devices and cheaper connections, that wouldn't be a complete solution. Double the bandwidth doesn't mean twice as fast. In fact, [it has been demonstrated](https://developer.akamai.com/blog/2015/06/09/heres-why-more-bandwidth-isnt-magic-bullet-web-performance) that increasing bandwidth by up to 1,233% only made pages 55% faster.
+Even if more people had access to better devices and cheaper connections, that wouldn't be a complete solution. Double the bandwidth doesn't mean twice as fast. In fact, <a hreflang="en" href="https://developer.akamai.com/blog/2015/06/09/heres-why-more-bandwidth-isnt-magic-bullet-web-performance">it has been demonstrated</a> that increasing bandwidth by up to 1,233% only made pages 55% faster.
 
 The problem is latency. Most of our networking protocols require a lot of round-trips, and each of those round trips imposes a latency penalty. For as long as latency continues to be a performance problem (which is to say, for the foreseeable future), the major performance culprit will continue to be that a typical web page today contains a hundred or so assets hosted on dozens of different servers. Many of these assets are unoptimized, unmeasured, unmonitored—and therefore unpredictable.
 
@@ -53,7 +60,7 @@ Here's a quick glossary of the page composition metrics that the HTTP Archive tr
 
 ### Bigger, complex pages can be bad for your business
 
-Let's assume you're not a heartless monster who doesn't care about your site's visitors. But if you are, you should know that serving bigger, more complex pages hurts you, too. That was one of the findings of a [Google-led machine learning study](https://www.thinkwithgoogle.com/marketing-resources/experience-design/mobile-page-speed-load-time/) that gathered over a million beacons' worth of real user data from retail sites.
+Let's assume you're not a heartless monster who doesn't care about your site's visitors. But if you are, you should know that serving bigger, more complex pages hurts you, too. That was one of the findings of a <a hreflang="en" href="https://www.thinkwithgoogle.com/marketing-resources/experience-design/mobile-page-speed-load-time/">Google-led machine learning study</a> that gathered over a million beacons' worth of real user data from retail sites.
 
 There were three really important takeaways from this research:
 
@@ -61,23 +68,25 @@ There were three really important takeaways from this research:
 
 2. **The number of images on a page was the second greatest predictor of conversions.** Sessions in which users converted had 38% fewer images than in sessions that didn't convert.
 
-<figure>
-  <a href="/static/images/2019/page-weight/ch18_fig1_conversion_difference.png">
-    <img src="/static/images/2019/page-weight/ch18_fig1_conversion_difference.png" alt="Figure 1. Converted sessions vs non-converted sessions." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="432">
-  </a>
-  <div id="fig1-description" class="visually-hidden">Chart showing 19 converted sessions vs. 31 non-converted sessions</div>
-  <figcaption id="fig1-caption">Figure 1. Converted sessions vs non-converted sessions.</figcaption>
-</figure>
+{{ figure_markup(
+  image="ch18_fig1_conversion_difference.png",
+  caption="Converted sessions vs non-converted sessions.",
+  description="Chart showing 19 converted sessions vs. 31 non-converted sessions",
+  width=600,
+  height=432
+  )
+}}
 
 3. **Sessions with more scripts were less likely to convert.** What's really fascinating about this chart isn't just the sharp drop-off in conversion probability after about 240 scripts. It's the long tail that demonstrates how many retail sessions contained up to 1,440 scripts!
 
-<figure>
-  <a href="/static/images/2019/page-weight/ch18_fig2_conversion_graph.jpg">
-    <img src="/static/images/2019/page-weight/ch18_fig2_conversion_graph.jpg" alt="Figure 2. Conversion rate dropping off as scripts increase." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="336">
-  </a>
-  <div id="fig2-description" class="visually-hidden">Chart showing conversion rate climbing up until 80 scripts, and then dropping off as scripts increase up to 1440 scripts.</div>
-  <figcaption id="fig2-caption">Figure 2. Conversion rate dropping off as scripts increase.</figcaption>
-</figure>
+{{ figure_markup(
+  image="ch18_fig2_conversion_graph.jpg",
+  caption="Conversion rate dropping off as scripts increase.",
+  description="Chart showing conversion rate climbing up until 80 scripts, and then dropping off as scripts increase up to 1440 scripts.",
+  width=600,
+  height=336
+  )
+}}
 
 Now that we've covered why page size and complexity matter, let's get into some juicy HTTP Archive stats so we can better understand the current state of the web and the impact of page bloat.
 
@@ -148,7 +157,7 @@ Roughly speaking, mobile sites are about 10% smaller than their desktop counterp
       <td>4</td>
     </tr>
   </table>
-  <figcaption>Figure 3. Page weight on mobile broken down by resource type.</figcaption>
+  <figcaption>{{ figure_link(caption="Page weight on mobile broken down by resource type.") }}</figcaption>
 </figure>
 
 #### Desktop
@@ -210,7 +219,7 @@ Roughly speaking, mobile sites are about 10% smaller than their desktop counterp
       <td>4</td>
     </tr>
   </table>
-  <figcaption>Figure 4. Page weight on desktop broken down by resource type</figcaption>
+  <figcaption>{{ figure_link(caption="Page weight on desktop broken down by resource type") }}</figcaption>
 </figure>
 
 ### Page weight over time
@@ -276,7 +285,7 @@ Over the past year the median size of a desktop site increased by 434 KB, and th
       <td>+1</td>
     </tr>
   </table>
-  <figcaption>Figure 5. Change in mobile page weight since 2018.</figcaption>
+  <figcaption>{{ figure_link(caption="Change in mobile page weight since 2018.") }}</figcaption>
 </figure>
 
 #### Desktop
@@ -338,10 +347,10 @@ Over the past year the median size of a desktop site increased by 434 KB, and th
       <td>+1</td>
     </tr>
   </table>
-  <figcaption>Figure 6. Change in desktop page weight since 2018.</figcaption>
+  <figcaption>{{ figure_link(caption="Change in desktop page weight since 2018.") }}</figcaption>
 </figure>
 
-For a longer-term perspective on how page weight has changed over time, check out [this timeseries graph](https://httparchive.org/reports/page-weight#bytesTotal) from HTTP Archive. Median page size has grown at a fairly constant rate since the HTTP Archive started tracking this metric in November 2010 and the increase in page weight observed over the past year is consistent with this.
+For a longer-term perspective on how page weight has changed over time, check out <a hreflang="en" href="https://httparchive.org/reports/page-weight#bytesTotal">this timeseries graph</a> from HTTP Archive. Median page size has grown at a fairly constant rate since the HTTP Archive started tracking this metric in November 2010 and the increase in page weight observed over the past year is consistent with this.
 
 ### Page requests
 
@@ -406,7 +415,7 @@ The median desktop page makes 74 requests, and the median mobile page makes 69. 
       <td>0</td>
     </tr>
   </table>
-  <figcaption>Figure 7. Mobile page requests broken down by resource type.</figcaption>
+  <figcaption>{{ figure_link(caption="Mobile page requests broken down by resource type.") }}</figcaption>
 </figure>
 
 #### Desktop
@@ -468,7 +477,7 @@ The median desktop page makes 74 requests, and the median mobile page makes 69. 
       <td>0</td>
     </tr>
   </table>
-  <figcaption>Figure 8. Desktop page requests broken down by resource type.</figcaption>
+  <figcaption>{{ figure_link(caption="Desktop page requests broken down by resource type.") }}</figcaption>
 </figure>
 
 ### File formats
@@ -533,7 +542,7 @@ The preceding analysis has focused on analyzing page weight through the lens of 
       <td>78</td>
     </tr>
   </table>
-  <figcaption>Figure 9. Images file sizes on mobile broken down by image format.</figcaption>
+  <figcaption>{{ figure_link(caption="Images file sizes on mobile broken down by image format.") }}</figcaption>
 </figure>
 
 Some of these results, particularly those for GIFs, are really surprising. If GIFs are so small, then why are they being replaced by formats like JPG, PNG, and WEBP?
@@ -542,13 +551,14 @@ The data above obscures the fact that the vast majority of GIFs on the web are a
 
 Further investigation into the data set revealed that 62% of GIFs are 43 bytes or smaller (43 bytes is the size of a transparent, 1x1 pixel GIF) and 84% of GIFs are 1 KB or smaller.
 
-<figure>
-  <a href="/static/images/2019/page-weight/ch18_fig3_gif_cdf.png">
-    <img src="/static/images/2019/page-weight/ch18_fig3_gif_cdf.png" alt="Figure 10. Cumulative distribution function of GIF file sizes." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="330">
-  </a>
-  <div id="fig10-description" class="visually-hidden">Chart showing 25% of GIFs are 35 bytes or smaller (which is the optimal size of a 1x1 white GIF) and 62% of GIFs are 43 bytes or smaller (which is the optimal size of a 1x1 transparent GIF). This increases to just over 75% of GIFs being 100 bytes or less.</div>
-  <figcaption id="fig10-caption">Figure 10. Cumulative distribution function of GIF file sizes.</figcaption>
-</figure>
+{{ figure_markup(
+  image="ch18_fig3_gif_cdf.png",
+  caption="Cumulative distribution function of GIF file sizes.",
+  description="Chart showing 25% of GIFs are 35 bytes or smaller (which is the optimal size of a 1x1 white GIF) and 62% of GIFs are 43 bytes or smaller (which is the optimal size of a 1x1 transparent GIF). This increases to just over 75% of GIFs being 100 bytes or less.",
+  width=600,
+  height=330
+  )
+}}
 
 The tables below show two different approaches to removing these tiny images from the data set: the first one is based on images with a file size greater than 100 bytes, the second is based on images with a file size greater than 1024 bytes.
 
@@ -611,7 +621,7 @@ The tables below show two different approaches to removing these tiny images fro
       <td>76.43</td>
     </tr>
   </table>
-  <figcaption>Figure 11. File size by image format for images > 100 bytes.</figcaption>
+  <figcaption>{{ figure_link(caption="File size by image format for images > 100 bytes.") }}</figcaption>
 </figure>
 
 #### File size by image format for images > 1024 bytes
@@ -673,7 +683,7 @@ The tables below show two different approaches to removing these tiny images fro
       <td>79.53</td>
     </tr>
   </table>
-  <figcaption>Figure 12. File size by image format for images > 1024 bytes.</figcaption>
+  <figcaption>{{ figure_link(caption="File size by image format for images > 1024 bytes.") }}</figcaption>
 </figure>
 
 The low file size of PNG images compared to JPEG images may seem surprising. JPEG uses [lossy compression](https://en.wikipedia.org/wiki/Lossy_compression). Lossy compression results in data loss, which makes it possible to achieve smaller file sizes. Meanwhile, PNG uses [lossless compression](https://en.wikipedia.org/wiki/Lossless_compression). This does not result in data loss, which this produces higher-quality, but larger images. However, this difference in file sizes is probably a reflection of the popularity of PNGs for iconography due to their transparency support, rather than differences in their encoding and compression.
@@ -725,7 +735,7 @@ Unlike some of the other tables in this data set, this one has mostly happy take
       <td>475</td>
     </tr>
   </table>
-  <figcaption>Figure 13. Video size by media format on mobile.</figcaption>
+  <figcaption>{{ figure_link(caption="Video size by media format on mobile.") }}</figcaption>
 </figure>
 
 ##### Desktop
@@ -769,7 +779,7 @@ Unlike some of the other tables in this data set, this one has mostly happy take
       <td>756</td>
     </tr>
   </table>
-  <figcaption>Figure 14. Video size by media format on desktop.</figcaption>
+  <figcaption>{{ figure_link(caption="Video size by media format on desktop.") }}</figcaption>
 </figure>
 
 ## Conclusion

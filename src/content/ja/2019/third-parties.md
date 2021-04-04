@@ -1,16 +1,22 @@
 ---
-part_number: II
-chapter_number: 5
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: サードパーティ
 description: 2019 Web Almanacのサードパーティの章。サードパーティの使用目的、パフォーマンスへの影響、プライバシーへの影響について説明しています。
 authors: [patrickhulce]
 reviewers: [zcorpan, obto, jasti]
+analysts: [patrickhulce]
+editors: [bazzadp]
 translators: [ksakae]
 discuss: 1760
 results: https://docs.google.com/spreadsheets/d/1iC4WkdadDdkqkrTY32g7hHKhXs9iHrr3Bva8CuPjVrQ/
-queries: 05_Third_Parties
-published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-05-14T00:00:00.000Z
+patrickhulce_bio: Patrick Hulceは元Chromeのエンジニアであり、<a hreflang="en" href="https://eris.ventures/">Eris Ventures</a>の創設者であり、<a hreflang="en" href="https://github.com/GoogleChrome/lighthouse">Lighthouse</a>のコアチームメンバーであり、<a hreflang="en" href="https://github.com/GoogleChrome/lighthouse-ci">Lighthouse CI</a>, <a hreflang="en" href="https://www.meetup.com/DallasJS/">DallasJS</a> meetup の共同主催者、<a hreflang="en" href="https://github.com/patrickhulce/third-party-web">third-party-web</a> プロジェクトの執筆者。
+featured_quote: オープンウェブは広大で、リンク可能で、相互運用可能な設計になっています。他の誰かの複雑なライブラリを取得し、単一の <code>&lt;link&gt;</code> または <code>&lt;script&gt;</code> 要素を使用して自分のサイトで使用する能力は、開発者の生産性を高め、素晴らしい新しいウェブ体験を可能にしました。本章では、2019年のWebにおけるサードパーティコードの普及と影響、サードパーティソリューションの人気につながるWebの利用パターン、Webのパフォーマンスとプライバシーの将来に対する潜在的な影響を検証します。
+featured_stat_1: 93%
+featured_stat_label_1: サードパーティを含むページ
+featured_stat_2: 49%
+featured_stat_label_2: サードパーティのリクエスト
+featured_stat_3: 28%
+featured_stat_label_3: サードパーティのバイト数
 ---
 
 ## 導入
@@ -35,7 +41,7 @@ last_updated: 2020-05-14T00:00:00.000Z
 
 ### プロバイダーカテゴリー
 
-この章では、サードパーティプロバイダをこれらの大まかなカテゴリのいずれかに分類しています。以下に簡単な説明を記載し、ドメインとカテゴリのマッピングについては、[サードパーティ・ウェブ・リポジトリ](https://github.com/patrickhulce/third-party-web/blob/8afa2d8cadddec8f0db39e7d715c07e85fb0f8ec/data/entities.json5)を参照してください。
+この章では、サードパーティプロバイダをこれらの大まかなカテゴリのいずれかに分類しています。以下に簡単な説明を記載し、ドメインとカテゴリのマッピングについては、<a hreflang="en" href="https://github.com/patrickhulce/third-party-web/blob/8afa2d8cadddec8f0db39e7d715c07e85fb0f8ec/data/entities.json5">サードパーティ・ウェブ・リポジトリ</a>を参照してください。
 
 - **Ad** - 広告の表示と測定
 - **Analytics** - トラッキングサイト訪問者の行動
@@ -61,17 +67,21 @@ last_updated: 2020-05-14T00:00:00.000Z
 
 ## データ
 
-<figure>
-  <div class="big-number">93.59%</div>
-  <figcaption>図 1. 少なくとも1つのサードパーティ製リソースを含むデスクトップページの割合。</figcaption>
-</figure>
+{{ figure_markup(
+  caption="少なくとも1つのサードパーティ製リソースを含むデスクトップページの割合。",
+  content="93.59%",
+  classes="big-number"
+)
+}}
 
 サードパーティのコードは至る所にあります。ページの93％が少なくとも1つのサードパーティリソースを含み、ページの76％がアナリティクスドメインへのリクエストを発行しています。中央のページでは、ネットワークアクティビティ全体の35％を占める少なくとも9つのユニークサードパーティドメインからコンテンツをリクエストしており、最もアクティブな10％のページでは175以上のサードパーティリクエストを発行しています。サードパーティはウェブの不可欠な部分であると言っても過言ではありません。
 
-<figure>
-  <div class="big-number">55.63%</div>
-  <figcaption>図2. 少なくとも1つの広告リソースを含むデスクトップページの割合。</figcaption>
-</figure>
+{{ figure_markup(
+  caption="少なくとも1つの広告リソースを含むデスクトップページの割合。",
+  content="55.63%",
+  classes="big-number"
+)
+}}
 
 ### カテゴリー
 
@@ -83,7 +93,7 @@ last_updated: 2020-05-14T00:00:00.000Z
 
 プロバイダーの比較的小さなセットがサードパーティの状況を支配しています：トップ100ドメインは、ウェブ全体のネットワーク要求の30％を占めています。Google、Facebook、YouTubeのような大企業は、それぞれのシェアの完全なパーセンテージポイントでここの見出しを作るが、WixやShopifyのような小さな事業体は同様にサードパーティの人気のかなりの部分を指揮します。
 
-個々のプロバイダの人気とパフォーマンスへの影響については、多くのことが言えるかもしれませんが、このより意見の多い分析は読者や[サードパーティ製Web](https://thirdpartyweb.today)のような他の目的のために構築されたツールの練習として残されています。
+個々のプロバイダの人気とパフォーマンスへの影響については、多くのことが言えるかもしれませんが、このより意見の多い分析は読者や<a hreflang="en" href="https://thirdpartyweb.today">サードパーティ製Web</a>のような他の目的のために構築されたツールの練習として残されています。
 
 <figure markdown>
 ランク | サードパーティドメイン | リクエストの割合
@@ -99,7 +109,7 @@ last_updated: 2020-05-14T00:00:00.000Z
 9 | `cdn.shopify.com` | 0.76%
 10 | `maps.googleapis.com` | 0.75%
 
-<figcaption>図3. サードパーティドメインの人気トップ10</figcaption>
+<figcaption>{{ figure_link(caption=" サードパーティドメインの人気トップ10") }}</figcaption>
 </figure>
 
 <figure markdown>
@@ -116,20 +126,24 @@ last_updated: 2020-05-14T00:00:00.000Z
 9 | `https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxK.woff2` | 0.10%
 10 | `https://www.googleadservices.com/pagead/conversion_async.js` | 0.10%
 
-<figcaption>図4. サードパーティからのリクエストが多いトップ10</figcaption>
+<figcaption>{{ figure_link(caption=" サードパーティからのリクエストが多いトップ10") }}</figcaption>
 </figure>
 
 ### リソースの種類
 
 サードパーティコンテンツのリソースタイプの内訳を見ると、サードパーティのコードがWeb全体でどのように使用されているかを知ることができます。ファーストパーティのリクエストが、56％の画像、23％のスクリプト、14％のCSS、4％のHTMLにすぎないのに対し、サードパーティのリクエストはスクリプトとHTMLの割合が高く32％のスクリプト、34％の画像、12％のHTML、6％のCSSとなっています。このことは、サードパーティのコードがデザインを支援するために使用される頻度が低く代わりにファーストパーティのコードよりもインタラクションを促進したり観察したりするために使用される頻度が高いことを示唆していますがパーティの状態別のリソースタイプの内訳を見ると、よりニュアンスのあるストーリーがわかります。CSSと画像がそれぞれ70％、64％と圧倒的にファーストパーティであるのに対し、フォントはほとんどがサードパーティのプロバイダによって提供されており、ファーストパーティのソースから提供されているのは28％ にすぎません。この使用パターンの概念については、この章で後ほど詳しく説明します。
 
-<figure>
-  <a href="/static/images/2019/third-parties/fig5.png">
-    <img src="/static/images/2019/third-parties/fig5.png" alt="図5. カテゴリーとコンテンツタイプ別の第三者リクエストの割合。" aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="387" data-width="600" data-height="387" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=488955458&amp;format=interactive">
-  </a>
-  <div id="fig5-description" class="visually-hidden">サードパーティの各カテゴリのコンテンツタイプの内訳を示すグラフ。画像とスクリプトが各カテゴリのリクエストの大半を占めています。CDNリクエストでは、特にフォントの割合が高いです。</div>
-  <figcaption id="fig5-caption">図5. カテゴリーとコンテンツタイプ別の第三者リクエストの割合。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig5.png",
+  caption="カテゴリーとコンテンツタイプ別の第三者リクエストの割合。",
+  description="サードパーティの各カテゴリのコンテンツタイプの内訳を示すグラフ。画像とスクリプトが各カテゴリのリクエストの大半を占めています。CDNリクエストでは、特にフォントの割合が高いです。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=488955458&format=interactive",
+  width=600,
+  height=387,
+  data_width=600,
+  data_height=387
+  )
+}}
 
 このデータからは、他にもいくつかの興味深い事実が飛び出してきます。トラッキングピクセル（解析ドメインへの画像リクエスト）は全ネットワークリクエストの1.6％を占め、FacebookやTwitterなどのソーシャルネットワークへの動画リクエストの数は、YouTubeやVimeoなどの専用動画プロバイダーの6倍にもなります（YouTubeのデフォルトの埋め込みはHTMLとプレビューサムネイルで構成されていて自動再生動画ではないためと思われます）。
 
@@ -147,18 +161,19 @@ last_updated: 2020-05-14T00:00:00.000Z
 
 スクリプトの57％を提供しているにもかかわらず、サードパーティはスクリプトバイトの64％を占めています。つまり、サードパーティのスクリプトはファーストパーティのスクリプトよりも平均で大きくなっています。これは、次のいくつかのセクションで述べるパフォーマンスへの影響を示す早期警告の兆候です。
 
-<figure id="fig-7">
-  <a href="/static/images/2019/third-parties/fig7.png">
-    <img src="/static/images/2019/third-parties/fig7.png" alt="図7. サードパーティカテゴリ毎のリソースバイトの分布。" aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="387" data-width="600" data-height="387" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=1167032693&amp;format=interactive">
-  </a>
-  <div id="fig7-description" class="visually-hidden">サードパーティのカテゴリ毎でコンテンツタイプ毎のバイト数の内訳を示すグラフ。画像とスクリプトはカテゴリ間で比較的均等に分布しています。フォントの80%はCDNから来ています。動画は「コンテンツ」サードパーティからのものです。</div>
-  <figcaption id="fig7-caption" >図7. サードパーティカテゴリ毎のリソースバイトの分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig7.png",
+  caption="サードパーティカテゴリ毎のリソースバイトの分布。",
+  description="サードパーティのカテゴリ毎でコンテンツタイプ毎のバイト数の内訳を示すグラフ。画像とスクリプトはカテゴリ間で比較的均等に分布しています。フォントの80%はCDNから来ています。動画は「コンテンツ」サードパーティからのものです。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=1167032693&format=interactive",
+  width=600,
+  height=387,
+  data_width=600,
+  data_height=387
+  )
+}}
 
-<!--
-
-```<insert graphic of metric 05_12>```
--->
+<!--```<insert graphic of metric 05_12>```-->
 
 具体的なサードパーティプロバイダについては、リクエスト数リーダーボードの上位にいる大手プロバイダがバイト数でも登場しています。注目すべき動きは、YouTube、Shopify、Twitterのようなメディアを中心とした大手プロバイダがバイトインパクトチャートの上位にランクインしていることくらいです。
 
@@ -178,7 +193,7 @@ last_updated: 2020-05-14T00:00:00.000Z
 
 <!--```<insert table of metric 05_10>```-->
 
-個々のプロバイダの人気とパフォーマンスの影響については、多くのことが言えるかもしれませんが、より意見の多い分析は読者のための演習として残されていますし先に述べた [サードパーティウェブ](https://thirdpartyweb.today) のような他の目的のために構築されたツールもあります。
+個々のプロバイダの人気とパフォーマンスの影響については、多くのことが言えるかもしれませんが、より意見の多い分析は読者のための演習として残されていますし先に述べた <a hreflang="en" href="https://thirdpartyweb.today">サードパーティウェブ</a> のような他の目的のために構築されたツールもあります。
 
 ## 使用パターン
 
@@ -192,7 +207,7 @@ last_updated: 2020-05-14T00:00:00.000Z
 
 ### ウェブトラフィックの収益化
 
-ウェブのオープンモデルは、コンテンツ制作者の金銭的利益を必ずしも満足させるものではなく、多くのサイト所有者は広告でサイトを収益化することに頼っています。広告主との直接の関係を構築し、価格契約を交渉するのは比較的難しく時間のかかるプロセスであるため、この懸念はターゲット広告とリアルタイム入札を行うサードパーティのプロバイダーによって主に処理されています。否定的な世論の広がり、広告ブロッキング技術の普及、ヨーロッパなどの主要な世界市場での規制措置は、収益化のためにサードパーティのプロバイダを継続的に使用する最大の脅威となっています。サイト所有者が突然独自の広告契約を結んだり特注の広告ネットワークを構築したりすることは考えにくいですが、ペイウォールやBraveの[Basic Attention Token](https://basicattentiontoken.org/)のような実験のような代替的なマネタイズモデルは、将来のサードパーティの広告業界を揺るがす可能性を秘めています。
+ウェブのオープンモデルは、コンテンツ制作者の金銭的利益を必ずしも満足させるものではなく、多くのサイト所有者は広告でサイトを収益化することに頼っています。広告主との直接の関係を構築し、価格契約を交渉するのは比較的難しく時間のかかるプロセスであるため、この懸念はターゲット広告とリアルタイム入札を行うサードパーティのプロバイダーによって主に処理されています。否定的な世論の広がり、広告ブロッキング技術の普及、ヨーロッパなどの主要な世界市場での規制措置は、収益化のためにサードパーティのプロバイダを継続的に使用する最大の脅威となっています。サイト所有者が突然独自の広告契約を結んだり特注の広告ネットワークを構築したりすることは考えにくいですが、ペイウォールやBraveの<a hreflang="en" href="https://basicattentiontoken.org/">Basic Attention Token</a>のような実験のような代替的なマネタイズモデルは、将来のサードパーティの広告業界を揺るがす可能性を秘めています。
 
 ### 開発の簡素化
 
@@ -228,9 +243,9 @@ last_updated: 2020-05-14T00:00:00.000Z
 
 ### セキュリティ
 
-セキュリティのトピックについては [セキュリティ](./security) の章で詳しく説明していますが、サイトに外部の依存関係を導入することによるセキュリティへの影響は、プライバシーへの懸念と密接に関連しています。第三者が任意のJavaScriptを実行できるようにすることは、あなたのページを完全に制御できます。スクリプトがDOMと`window`を制御できれば、すべてのことができるようになります。たとえコードにセキュリティ上の懸念がなくても、単一の障害点を導入できます[これは以前から潜在的な問題として認識されていました](https://www.stevesouders.com/blog/2010/06/01/frontend-spof/)。
+セキュリティのトピックについては [セキュリティ](./security) の章で詳しく説明していますが、サイトに外部の依存関係を導入することによるセキュリティへの影響は、プライバシーへの懸念と密接に関連しています。第三者が任意のJavaScriptを実行できるようにすることは、あなたのページを完全に制御できます。スクリプトがDOMと`window`を制御できれば、すべてのことができるようになります。たとえコードにセキュリティ上の懸念がなくても、単一の障害点を導入できます<a hreflang="en" href="https://www.stevesouders.com/blog/2010/06/01/frontend-spof/">これは以前から潜在的な問題として認識されていました</a>。
 
-[サードパーティのコンテンツをセルフホスティングする](https://csswizardry.com/2019/05/self-host-your-static-assets/) は、ここで述べた懸念事項のいくつかとその他の懸念事項に対応しています。さらに、ブラウザが [HTTPキャッシュのパーティショニング](https://chromestatus.com/feature/5730772021411840) を増やしていることから、サードパーティから直接読み込むことのメリットはますます疑問視されています。おそらく多くのユースケースでサードパーティのコンテンツを利用するには、その影響を測定することが難しくなってもこの方法の方が良いでしょう。
+<a hreflang="en" href="https://csswizardry.com/2019/05/self-host-your-static-assets/">サードパーティのコンテンツをセルフホスティングする</a> は、ここで述べた懸念事項のいくつかとその他の懸念事項に対応しています。さらに、ブラウザが <a hreflang="en" href="https://chromestatus.com/feature/5730772021411840">HTTPキャッシュのパーティショニング</a> を増やしていることから、サードパーティから直接読み込むことのメリットはますます疑問視されています。おそらく多くのユースケースでサードパーティのコンテンツを利用するには、その影響を測定することが難しくなってもこの方法の方が良いでしょう。
 
 ## 結論
 

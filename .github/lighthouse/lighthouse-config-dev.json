@@ -1,0 +1,37 @@
+{
+  "ci": {
+    "assert": {
+      "preset": "lighthouse:no-pwa",
+      "assertions": {
+        "bootup-time": "off",
+        "canonical": "off",
+        "dom-size": "off",
+        "first-contentful-paint": "off",
+        "first-cpu-idle": "off",
+        "first-meaningful-paint": "off",
+        "font-display": "off",
+        "inspector-issues": "off",
+        "interactive": "off",
+        "is-crawlable": "off",
+        "is-on-https:": "off",
+        "largest-contentful-paint": "off",
+        "mainthread-work-breakdown": "off",
+        "max-potential-fid": "off",
+        "render-blocking-resources": "off",
+        "server-response-time": "off",
+        "speed-index": "off",
+        "third-party-facades": "off",
+        "unminified-css": "off",
+        "unminified-javascript": "off",
+        "unused-css-rules": "off",
+        "unused-javascript": "off",
+        "uses-long-cache-ttl": "off",
+        "uses-rel-preconnect": "off",
+        "uses-rel-preload": "off",
+        "uses-text-compression": "off",
+        "uses-responsive-images": "off",
+        "uses-webp-images": "off"
+      }
+    }
+  }
+}

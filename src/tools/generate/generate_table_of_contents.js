@@ -20,7 +20,8 @@ const nest_headings = (source, current_level = 1) => {
     // Pull the first item off of the source list.
     const element = source.shift();
     const id = element.id;
-    const title = element.textContent;
+    // Every title should be in an Anchor element, but let's check to be sure
+    const title = element.firstChild && element.firstChild.nodeName === 'A' ? element.firstChild.innerHTML : element.textContent;
     const level = get_level(element);
 
     const heading = {
@@ -58,7 +59,7 @@ const nest_headings = (source, current_level = 1) => {
   return target;
 };
 
-const get_level = (element) => Number(element.localName.match(/\d+/)[0]);
+const get_level = (element) => element && Number(element.localName.match(/\d+/)[0]);
 
 module.exports = {
   generate_table_of_contents

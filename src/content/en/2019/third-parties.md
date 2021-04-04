@@ -1,16 +1,22 @@
 ---
-part_number: II
-chapter_number: 5
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Third Parties
 description: Third Parties chapter of the 2019 Web Almanac covering data of what third parties are used, what they are used for, performance impacts and privacy impacts.
 authors: [patrickhulce]
 reviewers: [zcorpan, obto, jasti]
+analysts: [patrickhulce]
+editors: [bazzadp]
 translators: []
 discuss: 1760
 results: https://docs.google.com/spreadsheets/d/1iC4WkdadDdkqkrTY32g7hHKhXs9iHrr3Bva8CuPjVrQ/
-queries: 05_Third_Parties
-published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-03-02T00:00:00.000Z
+patrickhulce_bio: Patrick Hulce is an ex-Chrome engineer, founder of <a hreflang="en" href="https://eris.ventures/">Eris Ventures</a>, core team member of <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse">Lighthouse</a> and <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse-ci">Lighthouse CI</a>, co-organizer of the <a hreflang="en" href="https://www.meetup.com/DallasJS/">DallasJS</a> meetup, and author of the <a hreflang="en" href="https://github.com/patrickhulce/third-party-web">third-party-web</a> project.
+featured_quote: The open web is vast, linkable, and interoperable by design. The ability to grab someone else’s complex library and use it on your site with a single <code>&lt;link&gt;</code> or <code>&lt;script&gt;</code> element has supercharged developers’ productivity and enabled awesome new web experiences; on the flip side, the immense popularity of a select few third-party providers raises important performance and privacy concerns. This chapter examines the prevalence and impact of third-party code on the web in 2019, the web usage patterns that lead to the popularity of third-party solutions, and potential repercussions for the future of web performance and privacy.
+featured_stat_1: 93%
+featured_stat_label_1: Pages with 3P
+featured_stat_2: 49%
+featured_stat_label_2: 3P requests
+featured_stat_3: 28%
+featured_stat_label_3: 3P bytes
 ---
 
 ## Introduction
@@ -35,7 +41,7 @@ Note that using these definitions, third-party content served from a first-party
 
 ### Provider categories
 
-This chapter divides third-party providers into one of these broad categories. A brief description is included below and the mapping of domain to category can be found in the [third-party-web repository](https://github.com/patrickhulce/third-party-web/blob/8afa2d8cadddec8f0db39e7d715c07e85fb0f8ec/data/entities.json5).
+This chapter divides third-party providers into one of these broad categories. A brief description is included below and the mapping of domain to category can be found in the <a hreflang="en" href="https://github.com/patrickhulce/third-party-web/blob/8afa2d8cadddec8f0db39e7d715c07e85fb0f8ec/data/entities.json5">third-party-web repository</a>.
 
 - **Ad** - display and measurement of advertisements
 - **Analytics** - tracking site visitor behavior
@@ -61,17 +67,21 @@ This chapter divides third-party providers into one of these broad categories. A
 
 ## Data
 
-<figure>
-  <div class="big-number">93.59%</div>
-  <figcaption>Figure 1. Percentage of desktop pages that include at least one third-party resource.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="Percentage of desktop pages that include at least one third-party resource.",
+  content="93.59%",
+  classes="big-number"
+)
+}}
 
 Third-party code is everywhere. 93% of pages include at least one third-party resource, 76% of pages issue a request to an analytics domain, the median page requests content from at least 9 _unique_ third-party domains that represent 35% of their total network activity, and the most active 10% of pages issue a whopping 175 third-party requests or more. It's not a stretch to say that third parties are an integral part of the web.
 
-<figure>
-  <div class="big-number">55.63%</div>
-  <figcaption>Figure 2. Percentage of desktop pages that include at least one ad resource.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="Percentage of desktop pages that include at least one ad resource.",
+  content="55.63%",
+  classes="big-number"
+)
+}}
 
 ### Categories
 
@@ -83,7 +93,7 @@ While advertising might be the most user-visible example of third-party presence
 
 A relatively small set of providers dominate the third-party landscape: the top 100 domains account for 30% of network requests across the web. Powerhouses like Google, Facebook, and YouTube make the headlines here with full percentage points of share each, but smaller entities like Wix and Shopify command a substantial portion of third-party popularity as well.
 
-While much could be said about every individual provider's popularity and performance impact, this more opinionated analysis is left as an exercise for the reader and other purpose-built tools such as [third-party-web](https://thirdpartyweb.today).
+While much could be said about every individual provider's popularity and performance impact, this more opinionated analysis is left as an exercise for the reader and other purpose-built tools such as <a hreflang="en" href="https://thirdpartyweb.today">third-party-web</a>.
 
 <figure markdown>
 Rank | Third party domain | Percent of requests
@@ -99,7 +109,7 @@ Rank | Third party domain | Percent of requests
 9 | `cdn.shopify.com` | 0.76%
 10 | `maps.googleapis.com` | 0.75%
 
-<figcaption>Figure 3. Top 10 most popular third-party domains.</figcaption>
+<figcaption>{{ figure_link(caption="Top 10 most popular third-party domains.") }}</figcaption>
 </figure>
 
 <figure markdown>
@@ -116,20 +126,24 @@ Rank | Third party URL | Percent of requests
 9 | `https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxK.woff2` | 0.10%
 10 | `https://www.googleadservices.com/pagead/conversion_async.js` | 0.10%
 
-<figcaption>Figure 4. Top 10 most popular third-party requests.</figcaption>
+<figcaption>{{ figure_link(caption="Top 10 most popular third-party requests.") }}</figcaption>
 </figure>
 
 ### Resource types
 
 The resource type breakdown of third-party content also lends insight into how third-party code is used across the web. While first-party requests are 56% images, 23% script, 14% CSS, and only 4% HTML, third-party requests skew more heavily toward script and HTML at 32% script, 34% images, 12% HTML, and only 6% CSS. While this suggests that third-party code is less frequently used to aid the design and instead used more frequently to facilitate or observe interactions than first-party code, a breakdown of resource types by party status tells a more nuanced story. While CSS and images are dominantly first-party at 70% and 64% respectively, fonts are largely served by third-party providers with only 28% being served from first-party sources. This concept of usage patterns is explored in more depth later in this chapter.
 
-<figure>
-  <a href="/static/images/2019/third-parties/fig5.png">
-    <img src="/static/images/2019/third-parties/fig5.png" alt="Figure 5. Percent of third-party requests by category and content type." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="387" data-width="600" data-height="387" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=488955458&amp;format=interactive">
-  </a>
-  <div id="fig5-description" class="visually-hidden">Chart showing the breakdown of content types for each third party category. Images and scripts make up the majority of requests for each category. CDN requests have an especially large proportion of fonts.</div>
-  <figcaption id="fig5-caption">Figure 5. Percent of third-party requests by category and content type.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig5.png",
+  caption="Percent of third-party requests by category and content type.",
+  description="Chart showing the breakdown of content types for each third party category. Images and scripts make up the majority of requests for each category. CDN requests have an especially large proportion of fonts.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=488955458&format=interactive",
+  width=600,
+  height=387,
+  data_width=600,
+  data_height=387
+  )
+}}
 
 Several other amusing factoids jump out from this data. Tracking pixels (image requests to analytics domains) make up 1.6% of all network requests, six times as many video requests are to social networks like Facebook and Twitter than dedicated video providers like YouTube and Vimeo (presumably because the default YouTube embed consists of HTML and a preview thumbnail but not an autoplaying video), and there are still more requests for first-party images than all scripts combined.
 
@@ -147,18 +161,19 @@ While 49% of requests are third-party, their share of the web in terms of bytes 
 
 Despite serving 57% of scripts, third parties comprise 64% of script bytes. meaning their scripts are larger on average than first-party scripts. This is an early warning sign for their performance impact to come in the next few sections.
 
-<figure id="fig-7">
-  <a href="/static/images/2019/third-parties/fig7.png">
-    <img src="/static/images/2019/third-parties/fig7.png" alt="Figure 7. Distributions of resource bytes per third-party category." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="387" data-width="600" data-height="387" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=1167032693&amp;format=interactive">
-  </a>
-  <div id="fig7-description" class="visually-hidden">Chart showing the breakdown of bytes for each content type per third party category. Images and scripts are relatively evenly distributed across categories. 80% of fonts come from CDNs. Video comes from "content" third-parties.</div>
-  <figcaption id="fig7-caption">Figure 7. Distributions of resource bytes per third-party category.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig7.png",
+  caption="Distributions of resource bytes per third-party category.",
+  description='Chart showing the breakdown of bytes for each content type per third party category. Images and scripts are relatively evenly distributed across categories. 80% of fonts come from CDNs. Video comes from "content" third-parties.',
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=1167032693&format=interactive",
+  width=600,
+  height=387,
+  data_width=600,
+  data_height=387
+  )
+}}
 
-<!--
-
-```<insert graphic of metric 05_12>```
--->
+<!--```<insert graphic of metric 05_12>```-->
 
 As for specific third-party providers, the same juggernauts topping the request count leaderboards make their appearance in byte weight as well. The only few notable movements are the large, media-heavy providers such as YouTube, Shopify, and Twitter which climb to the top of the byte impact charts.
 
@@ -178,7 +193,7 @@ The category breakdowns among script execution largely follow that of resource c
 
 <!--```<insert table of metric 05_10>```-->
 
-While much could be said about every individual provider's popularity and performance impact, this more opinionated analysis is left as an exercise for the reader and other purpose-built tools such as the previously mentioned [third-party-web](https://thirdpartyweb.today).
+While much could be said about every individual provider's popularity and performance impact, this more opinionated analysis is left as an exercise for the reader and other purpose-built tools such as the previously mentioned <a hreflang="en" href="https://thirdpartyweb.today">third-party-web</a>.
 
 ## Usage patterns
 
@@ -192,7 +207,7 @@ There's also a flip side to user data though: consumption. While analytics is ab
 
 ### Monetize web traffic
 
-The open model of the web does not always serve the financial interests of content creators to their liking and many site owners resort to monetizing their sites with advertising. Because building direct relationships with advertisers and negotiating pricing contracts is a relatively difficult and time-consuming process, this concern is largely handled by third-party providers performing targeted advertising and real-time bidding. Widespread negative public opinion, the popularity of ad blocking technology, and regulatory action in major global markets such as Europe pose the largest threat to the continued use of third-party providers for monetization. While it's unlikely that site owners suddenly strike their own advertising deals or build bespoke ad networks, alternative monetization models like paywalls and experiments like Brave's [Basic Attention Token](https://basicattentiontoken.org/) have a real chance of shaking up the third-party ad landscape of the future.
+The open model of the web does not always serve the financial interests of content creators to their liking and many site owners resort to monetizing their sites with advertising. Because building direct relationships with advertisers and negotiating pricing contracts is a relatively difficult and time-consuming process, this concern is largely handled by third-party providers performing targeted advertising and real-time bidding. Widespread negative public opinion, the popularity of ad blocking technology, and regulatory action in major global markets such as Europe pose the largest threat to the continued use of third-party providers for monetization. While it's unlikely that site owners suddenly strike their own advertising deals or build bespoke ad networks, alternative monetization models like paywalls and experiments like Brave's <a hreflang="en" href="https://basicattentiontoken.org/">Basic Attention Token</a> have a real chance of shaking up the third-party ad landscape of the future.
 
 ### Simplify development
 
@@ -228,9 +243,9 @@ The top-heavy concentration of script execution is great for the potential impac
 
 ### Security
 
-While the topic of security is covered more in-depth in the [Security](./security) chapter, the security implications of introducing external dependencies to your site go hand-in-hand with privacy concerns. Allowing third parties to execute arbitrary JavaScript effectively provides them with complete control over your page. When a script can control the DOM and `window`, it can do everything. Even if code has no security concerns, it can introduce a single point of failure, [which has been recognized as a potential problem for some time now](https://www.stevesouders.com/blog/2010/06/01/frontend-spof/).
+While the topic of security is covered more in-depth in the [Security](./security) chapter, the security implications of introducing external dependencies to your site go hand-in-hand with privacy concerns. Allowing third parties to execute arbitrary JavaScript effectively provides them with complete control over your page. When a script can control the DOM and `window`, it can do everything. Even if code has no security concerns, it can introduce a single point of failure, <a hreflang="en" href="https://www.stevesouders.com/blog/2010/06/01/frontend-spof/">which has been recognized as a potential problem for some time now</a>.
 
-[Self-hosting third-party content](https://csswizardry.com/2019/05/self-host-your-static-assets/) addresses some of the concerns mentioned here - and others. Additionally with browsers increasingly [partitioning HTTP caches](https://chromestatus.com/feature/5730772021411840) the benefits of loading directly from the third-party are increasingly questionable. Perhaps this is a better way to consume third-party content for many use cases, even if it makes measuring its impact more difficult.
+<a hreflang="en" href="https://csswizardry.com/2019/05/self-host-your-static-assets/">Self-hosting third-party content</a> addresses some of the concerns mentioned here - and others. Additionally with browsers increasingly <a hreflang="en" href="https://chromestatus.com/feature/5730772021411840">partitioning HTTP caches</a> the benefits of loading directly from the third-party are increasingly questionable. Perhaps this is a better way to consume third-party content for many use cases, even if it makes measuring its impact more difficult.
 
 ## Conclusion
 

@@ -1,0 +1,184 @@
+{% extends "base/base.html" %}
+
+{% block description %}Web Almanac es un informe anual sobre el estado de la web que combina las estadísticas y tendencias sin procesar del HTTP Archive con la experiencia de la comunidad web.{% endblock %}
+
+{% block twitter_image_alt %}{{ year }} Web Almanac{% endblock %}
+
+{% block skip_navigation %}Saltar navegación{% endblock %}
+
+{% block organization %}Web Almanac por HTTP Archive{% endblock %}
+{% block web_almanac_logo %}
+  <span class="wa">Web Almanac</span>
+  <span class="line-group">
+    <span class="pre">Por</span>
+    <span class="ha">HTTP Archive</span>
+  </span>
+{% endblock %}
+
+{% block intro_title %}Web Almanac{% endblock %}
+{% block intro_sub_title %}HTTP Archive informe del<br><b>estado de la web</b> anual{% endblock %}
+
+{% block mission %}
+<p>
+  Nuestra misión es combinar las estadísticas y tendencias sin procesar del HTTP Archive con la experiencia de la comunidad web. Web Almanac es un informe exhaustivo sobre el estado de la web, respaldado por datos reales y expertos web de confianza. La edición de {{ year }} consta de {{ supported_chapters | length }} capítulos que abarcan aspectos del contenido de la página, la experiencia del usuario, la publicación y la distribución.
+</p>
+{% endblock %}
+
+{% block read_last_years_almanac %}Lea el Web Almanac {{ year | int - 1 }}{% endblock %}
+
+{% block http_archive_link %}Página de inicio HTTP Archive{% endblock %}
+
+{% block page_navigation %}Navegación de página{% endblock %}
+
+{% block help_translate %}Ayuda a traducir{% endblock %}
+{% block translation_not_available %}En inglés - no disponible en español{% endblock %}
+{% block language_switcher %}Selector de idioma{% endblock %}
+{% block year_switcher %}Selector de año{% endblock %}
+{% block table_of_contents_switcher %}Selector de tabla de contenidos{% endblock %}
+
+{% block home %}Página de inicio{% endblock %}
+{% block table_of_contents_title %}Tabla de contenidos{% endblock %}
+{% block contributors_title %}Contribuidores{% endblock %}
+{% block methodology_title %}Metodología{% endblock %}
+
+{% block part %}Parte{% endblock %}
+{% block chapter %}Capítulo{% endblock %}
+
+{% block start_exploring %}Empieza a Explorar{% endblock %}
+
+{% block menu_title %}Menú de página{% endblock %}
+{% block open_the_menu %}Abrir el menú{% endblock %}
+{% block close_the_menu %}Cerrar el menú{% endblock %}
+
+{% block index_nav_title %}Tabla de contenido del capítulo{% endblock %}
+{% block index_title %}Índice{% endblock %}
+{% block open_the_index %}Abrir la tabla de contenido{% endblock %}
+{% block close_the_index %}Cerrar la tabla de contenido{% endblock %}
+
+{% block and %}y{% endblock %}
+{% block comma %}, {% endblock %}
+{% block oxford_comma %} {% endblock %}
+
+{% block open %}Abrir{% endblock %}
+{% block close %}Cerrar{% endblock %}
+
+{% macro figure_text(metadata, chapter_config, id) %}Figura {{ figure_id(metadata, chapter_config, id) }}.{% endmacro %}
+{% macro show_description(metadata, chapter_config, id) %}Mostrar descripción de la Figura {{ figure_id(metadata, chapter_config, id) }}{% endmacro %}
+{% macro hide_description(metadata, chapter_config, id) %}Ocultar descripción de la Figura {{ figure_id(metadata, chapter_config, id) }}{% endmacro %}
+
+{% block written_by_before %}Escrito por{% endblock %}
+{% block reviewed_by_before %}Revisado por{% endblock %}
+{% block translated_by_before %}Traducido por{% endblock %}
+{% block analysis_by_before %}Análisis por{% endblock %}
+{% block edited_by_before %}Editado por{% endblock %}
+{% block reviewed_and_analyzed_by_before %}Revisado y análisis por{% endblock %}
+{% block analysis_and_editing_by_before %}Análisis y editado por{% endblock %}
+{% block written_by_after %}{% endblock %}
+{% block reviewed_by_after %}{% endblock %}
+{% block translated_by_after %}{% endblock %}
+{% block analysis_by_after %}{% endblock %}
+{% block edited_by_after %}{% endblock %}
+{% block reviewed_and_analyzed_by_after %}{% endblock %}
+{% block analysis_and_editing_by_after %}{% endblock %}
+
+{% block unedited %}[no corregido]{% endblock %}
+
+{% block author %}Autor(a){% endblock %}
+{% block authors %}Autores{% endblock %}
+
+{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} en Twitter{% endmacro %}
+{% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} en GitHub{% endmacro %}
+{% macro onLinkedIn(authorName) %}{{authorName}} en LinkedIn{% endmacro %}
+{% macro website(authorName) %}{{authorName}} sitio web{% endmacro %}
+
+{% macro edition(year) %}Edición {{ year }}{% endmacro %}
+
+{% block footer_title %}Navegación de pie de página{% endblock %}
+{% block copyright %}© Web Almanac. Con licencia <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
+{% block accessibility_statement %}Declaración de accesibilidad{% endblock %}
+
+{% block featured_chapter %}Capítulo destacado{% endblock %}
+{% block featured_chapter_last_year %}Capítulo destacado<br/>del Web Almanac {{ year|int -1 }}{% endblock %}
+
+{# Check if read_chapter already defined in child template as macros can't be overridden #}
+{% if not read_chapter %}
+{% macro read_chapter(chapter) %}Lea el Capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
+{% endif %}
+{% if not read_last_years_chapter %}
+{% macro read_last_years_chapter(chapter) %}Lea el {{ year|int -1 }} Capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
+{% endif %}
+
+{% block contributors_description %}
+Web Almanac ha sido posible gracias al arduo trabajo de la comunidad web. {{ self.contributors() }} personas han ofrecido incontables horas en las fases de planificación, investigación, redacción y producción del Web Almanac {{ year }}.
+{% endblock %}
+{% block contributors_link %}Ver los contribuidores{% endblock %}
+
+{% block methodology_stat_1_title %}Sitios web analizados{% endblock %}
+{% block methodology_stat_2_title %}Información procesada{% endblock %}
+{% block methodology_link %}Conozca nuestra Metodología{% endblock %}
+{% block methodology_description %}
+A menos que se indique lo contrario, las métricas en los {{ supported_chapters | length }} capítulos del Web Almanac {{ year }} provienen del conjunto de datos del HTTP Archive. HTTP Archive es un proyecto administrado por la comunidad que ha estado rastreando cómo se construye la web desde 2010. Utilizando WebPageTest y Lighthouse bajo el capó, se prueban metadatos de {{ self.total_websites() }} de sitios web mensualmente y se incluyen en una base de datos pública de BigQuery para su análisis. El conjunto de datos de {{ self.dataset() }} se utilizó como base para las métricas de Web Almanac {{ year }}. Para obtener más información, consulte la página de Metodología.
+{% endblock %}
+
+{% block introduction %}Introducción{% endblock %}
+
+{% block foreword_title %}Prefacio{% endblock %}
+
+{% block coming_soon %}¡Próximamente!{% endblock %}
+
+{% block appendix %}Apéndice{% endblock %}
+{% block appendices %}Apéndices{% endblock %}
+
+{% block ebook_title %}Libro electrónico{% endblock %}
+{% block ebook_download_short %}Libro electrónico PDF ({{ ebook_size_in_mb }}MB){% endblock %}
+{% block ebook_download %}Descargue el Web Almanac {{ year }} completo en formato PDF ({{ ebook_size_in_mb }}MB){% endblock %}
+{% block ebook_download_note %}(Generado con <a href="https://www.princexml.com/">www.princexml.com</a>){% endblock %}
+
+{%
+    set localizedPartTitles = {
+      "I. Page Content": "I. Contenido de las páginas",
+      "II. User Experience": "II. Experiencia de usuario",
+      "III. Content Publishing": "III. Publicación de contenido",
+      "IV. Content Distribution": "IV. Distribución de contenido"
+    }
+  %}
+  {%
+    set localizedChapterTitles = {
+      "javascript": "JavaScript",
+      "css": "CSS",
+      "markup": "Marcado Web",
+      "media": "Media",
+      "third-parties": "Contenido de Terceros",
+      "fonts": "Fuentes",
+      "performance": "Rendimiento",
+      "security": "Seguridad",
+      "accessibility": "Accesibilidad",
+      "seo": "SEO",
+      "pwa": "PWA",
+      "mobile-web": "Web Móvil",
+      "ecommerce": "Comercio electrónico",
+      "cms": "CMS",
+      "compression": "Compresión",
+      "caching": "Almacenamiento en Caché",
+      "cdn": "CDN",
+      "page-weight": "Peso de las Páginas",
+      "resource-hints": "Sugerencias de Recursos",
+      "http2": "HTTP/2",
+      "privacy": "Privacidad",
+      "capabilities": "Capacidades",
+      "jamstack": "Jamstack"
+    }
+  %}
+
+  {% set localizedTeamNames = {
+    "analysts": "Analistas",
+    "authors": "Autores",
+    "brainstormers": "Pensadores",
+    "designers": "Diseñadores",
+    "developers": "Desarrolladores",
+    "editors": "Editores",
+    "leads": "Lideres",
+    "reviewers": "Revisores",
+    "translators": "Traductores",
+    }
+  %}

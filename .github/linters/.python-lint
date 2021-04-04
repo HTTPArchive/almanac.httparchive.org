@@ -250,8 +250,10 @@ ignored-modules=flask,
                 mistune,
                 pandas,
                 scour,
+                werkzeug.exceptions,
                 werkzeug.routing,
-                werkzeug.http
+                werkzeug.http,
+                pytest
 
 # Show a hint with possible names when a member name was not found. The aspect
 # of finding the hint is based on edit distance.

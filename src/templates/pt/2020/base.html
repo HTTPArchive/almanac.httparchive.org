@@ -1,0 +1,26 @@
+{% extends "%s/base.html" % lang %}
+
+{% block methodology_stat_1 %}7.5M{% endblock %}
+{% block methodology_stat_2 %}31.3 TB{% endblock %}
+{% block total_websites %}mais de 7.5 milhões{% endblock %}
+{% block dataset %}agosto de 2020{% endblock %}
+
+{% block foreword %}
+  <p>
+    2020 foi um ano que a maoria de nós gostaria de esquecer. É raro que uma comunidade tão globalizada como a nossa seja afetada por acontecimentos tão abrangentes como a pandemia da COVID-19 e os protestos contra a injustiça racial. Estes eventos quase nos desencorajaram a recomeçar o projeto deste ano com tantas pessoas fisicamente e emocionalmente esgotadas, como poderíamos esperar que alguém <em>quisesse</em> contribuir, quanto mais ter tempo e energia para isso? Nós procedemos com cautela, esperando que ainda houvesse interesse da comunidade.
+  </p>
+
+  <p>
+    O objetivo desta edição do Web Almanac não é esquecer o 2020, mas memorizá-lo. Para o bem e para o mal, este é um capítulo da nossa história. Apesar de todas as pressões externas deste ano, <em>mais de cem <a href="./contributors">contribuidores</a></em> da comunidade web se inscreveram e se voluntariaram inúmeras horas do seu tempo para um projeto dedicado a recordar 2020 e o estado da web. Surpreendentemente, conseguimos <em>expandir</em> o escopo da edição deste ano acrescentando três novos capítulos e perdendo apenas um.
+  </p>
+
+  <p>
+    Quando pergunto aos colaboradores o que mais gostam no projeto, a resposta é quase sempre sobre as pessoas. Trabalhamos juntos como equipes, nos apoiamos uns aos outros, e em apenas cinco meses conseguimos construir o equivalente a um livro de 600 páginas! Foi um enorme desafio, e embora não tenhamos resolvido os problemas do mundo, mostramos o que é possível quando as pessoas optam por trabalhar em conjunto.
+  </p>
+
+  <p>
+    Por favor, aproveite o Web Almanac 2020, o resultado do nosso trabalho de amor pela web. E não deixe de <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/CONTRIBUTING.md">oferecer sua ajuda</a> se você quiser se juntar a time.
+  </p>
+
+  <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>, Editor-chefe do Web Almanac</em></p>
+{% endblock %}

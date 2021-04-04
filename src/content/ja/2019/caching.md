@@ -1,16 +1,22 @@
 ---
-part_number: IV
-chapter_number: 16
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: キャッシング
 description: 2019 Web Almanacのキャッシュの章は、キャッシュコントロール、有効期限、TTL、有効性、変化、Cookieの設定、アプリケーションキャッシュ、Service Worker、および機会について説明します。
 authors: [paulcalvano]
 reviewers: [obto, bkardell]
+analysts: [paulcalvano, obto]
+editors: [bazzadp]
 translators: [ksakae]
 discuss: 1771
 results: https://docs.google.com/spreadsheets/d/1mnq03DqrRBwxfDV05uEFETK0_hPbYOynWxZkV3tFgNk/
-queries: 16_Caching
-published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-07-06T00:00:00.000Z
+paulcalvano_bio: Paul Calvanoは、<a hreflang="en" href="https://www.akamai.com/">アカマイ</a> のウェブパフォーマンス・アーキテクトで、ウェブサイトのパフォーマンス向上を支援しています。また、HTTP Archiveプロジェクトの共同管理者でもあります。<a href="https://twitter.com/paulcalvano">@paulcalvano</a> でツイートしたり、<a hreflang="en" href="https://paulcalvano.com">http://paulcalvano.com</a> でブログを書いたり、<a hreflang="en" href="https://discuss.httparchive.org">https://discuss.httparchive.org</a> でHTTP Archiveの研究を共有したりしています。
+featured_quote: キャッシングは、以前にダウンロードしたコンテンツの再利用を可能にする技術です。高価なネットワークリクエストを回避することでパフォーマンスに大きなメリットがあり、また、ウェブサイトのオリジンインフラストラクチャへのトラフィックを減らすことでアプリケーションの拡張性を高めることができます。古いことわざに「最速のリクエストは、作る必要のないものである」というものがありますが、キャッシングはリクエストをしなくても済むようにするための重要な方法の一つです。
+featured_stat_1: 27%
+featured_stat_label_1: キャッシングヘッダを使用していないレスポンス
+featured_stat_2: 39%
+featured_stat_label_2: <code>Vary</code>ヘッダーを使用したレスポンス
+featured_stat_3: 82%
+featured_stat_label_3: キャッシングを最適化することで1Mbを節約できるサイト
 ---
 
 ## 導入
@@ -25,7 +31,7 @@ Webコンテンツのキャッシュには、3つの基本原則があります�
 
 **エンドユーザーのできるだけ近くでキャッシュする。**エンドユーザーの近くでコンテンツをキャッシュすると、待ち時間がなくなり、ダウンロード時間が短縮されます。たとえば、リソースがエンドユーザーのブラウザにキャッシュされている場合、リクエストはネットワークに送信されず、ダウンロード時間はマシンのI/Oと同じくらい高速です。初めての訪問者、またはキャッシュにエントリがない訪問者の場合、通常、キャッシュされたリソースが返される場所はCDNになります。ほとんどの場合、オリジンサーバーと比較して、ローカルキャッシュかCDNからリソースをフェッチする方が高速です。
 
-通常、Webアーキテクチャには[複数のキャッシュ層](https://blog.yoav.ws/tale-of-four-caches/)が含まれます。たとえば、HTTPリクエストは次の場所にキャッシュされる可能性があります。
+通常、Webアーキテクチャには<a hreflang="en" href="https://blog.yoav.ws/tale-of-four-caches/">複数のキャッシュ層</a>が含まれます。たとえば、HTTPリクエストは次の場所にキャッシュされる可能性があります。
 
 * エンドユーザーのブラウザ
 * ユーザーのブラウザーのService Workerキャッシュ
@@ -43,7 +49,7 @@ HTTPクライアントがリソースをキャッシュするには、2つの情
 * 「これをキャッシュできる期間はどれくらいですか？」
 * 「コンテンツがまだ新しいことを検証するにはどうすればよいですか？」
 
-Webブラウザーがクライアントにレスポンスを送信するとき、通常リソースにキャッシュ可能か、キャッシュする期間、リソースの古さを示すヘッダーが含まれます。 RFC 7234は、これをセクション[4.2（新しさ）](https://tools.ietf.org/html/rfc7234#section-4.2)および[4.3（検証）](https://tools.ietf.org/html/rfc7234#section-4.3)でより詳細にカバーしています。
+Webブラウザーがクライアントにレスポンスを送信するとき、通常リソースにキャッシュ可能か、キャッシュする期間、リソースの古さを示すヘッダーが含まれます。 RFC 7234は、これをセクション<a hreflang="en" href="https://tools.ietf.org/html/rfc7234#section-4.2">4.2（新しさ）</a>および<a hreflang="en" href="https://tools.ietf.org/html/rfc7234#section-4.3">4.3（検証）</a>でより詳細にカバーしています。
 
 通常、有効期間を伝えるために使用されるHTTPレスポンスヘッダーは次のとおりです。
 
@@ -79,27 +85,30 @@ Webブラウザーがクライアントにレスポンスを送信するとき�
 < ETag: "1566748830.0-3052-3932359948"
 ```
 
-[RedBot.org](https://redbot.org/)というツールにURLを入力すると、レスポンスのヘッダーを元としたキャッシュ方法の詳細な説明が表示できます。たとえば、[上記のURLのテスト](https://redbot.org/?uri=https%3A%2F%2Fhttparchive.org%2Fstatic%2Fjs%2Fmain.js)は次のような内容を出力します。
+<a hreflang="en" href="https://redbot.org/">RedBot.org</a>というツールにURLを入力すると、レスポンスのヘッダーを元としたキャッシュ方法の詳細な説明が表示できます。たとえば、<a hreflang="en" href="https://redbot.org/?uri=https%3A%2F%2Fhttparchive.org%2Fstatic%2Fjs%2Fmain.js">上記のURLのテスト</a>は次のような内容を出力します。
 
-<figure>
-  <a href="/static/images/2019/caching/ch16_fig1_redbot_example.jpg">
-    <img alt="図1. RedBotからのCache-Control情報。" src="/static/images/2019/caching/ch16_fig1_redbot_example.jpg" aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="138">
-  </a>
-  <div id="fig1-description" class="visually-hidden">リソースがいつ変更されたか、キャッシュがそれを保存できるかどうか、リソースが新鮮であると見なされる期間、および警告に関する詳細情報を示すRedbotの応答例。</div>
-  <figcaption id="fig1-caption">図1. ロボットからの<code>Cache-Control</code>情報</figcaption>
-</figure>
+{{ figure_markup(
+  image="ch16_fig1_redbot_example.jpg",
+  alt="ロボットからのCache-Control情報",
+  caption="ロボットからの <code>Cache-Control</code> 情報",
+  description="リソースがいつ変更されたか、キャッシュがそれを保存できるかどうか、リソースが新鮮であると見なされる期間、および警告に関する詳細情報を示すRedbotの応答例。",
+  width=600,
+  height=138
+  )
+}}
 
-レスポンスにキャッシュヘッダーが存在しない場合、[クライアントはレスポンスをヒューリスティクスにキャッシュできます](https://paulcalvano.com/index.php/2018/03/14/http-heuristic-caching-missing-cache-control-and-expires-headers-explained/)。ほとんどのクライアントは、RFCの推奨ヒューリスティックバリエーションを実装します。これは、`Last-Modified`から経過した時間の10％です。ただし、レスポンスを無期限にキャッシュする可能性もあります。そのため、特定のキャッシュルールを設定して、キャッシュ可能性を確実に制御することが重要です。
+レスポンスにキャッシュヘッダーが存在しない場合、<a hreflang="en" href="https://paulcalvano.com/index.php/2018/03/14/http-heuristic-caching-missing-cache-control-and-expires-headers-explained/">クライアントはレスポンスをヒューリスティクスにキャッシュできます</a>。ほとんどのクライアントは、RFCの推奨ヒューリスティックバリエーションを実装します。これは、`Last-Modified`から経過した時間の10％です。ただし、レスポンスを無期限にキャッシュする可能性もあります。そのため、特定のキャッシュルールを設定して、キャッシュ可能性を確実に制御することが重要です。
 
 レスポンスの72％は`Cache-Control`ヘッダーで提供され、レスポンスの56％は`Expires`ヘッダーで提供されます。ただし、レスポンスの27％はどちらのヘッダーも使用していないため、ヒューリスティックキャッシュの対象となります。これは、デスクトップとモバイルサイトの両方で一貫しています。
 
-<figure>
-  <a href="/static/images/2019/caching/fig2.png">
-    <img src="/static/images/2019/caching/fig2.png" alt="図2. HTTP Cache-ControlおよびExpiresヘッダーの存在" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1611664016&amp;format=interactive">
-  </a>
-  <div id="fig2-description" class="visually-hidden">リクエストの72％がCache-Controlヘッダーを使用し、56％がExpiresを使用し、27％がどちらも使用しないことを示す、モバイルとデスクトップの棒グラフ。</div>
-  <figcaption id="fig2-caption">図2. HTTP <code>Cache-Control</code>および<code>Expires</code>ヘッダーの存在</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig2.png",
+  alt="HTTP Cache-ControlおよびExpiresヘッダーの存在",
+  caption="HTTP <code>Cache-Control</code> および <code>Expires</code> ヘッダーの存在",
+  description="リクエストの72％がCache-Controlヘッダーを使用し、56％がExpiresを使用し、27％がどちらも使用しないことを示す、モバイルとデスクトップの棒グラフ。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1611664016&format=interactive"
+  )
+}}
 
 ## キャッシュするコンテンツの種類は何ですか？
 
@@ -111,13 +120,13 @@ Webブラウザーがクライアントにレスポンスを送信するとき�
 
 残りのレスポンスは、ブラウザーのキャッシュに保存できません。
 
-<figure>
-  <a href="/static/images/2019/caching/fig3.png">
-    <img src="/static/images/2019/caching/fig3.png" alt="図3.キャッシュ可能なレスポンスの分布。" aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1868559586&amp;format=interactive">
-  </a>
-  <div id="fig3-description" class="visually-hidden">デスクトップレスポンスの20％がキャッシュ不可、47％が0秒以上のキャッシュ、27％がヒューリスティックにキャッシュ、6％が0秒のTTLを示す積み上げ棒グラフ。モバイルの統計は非常に似ています（19％、47％ 、27％および7％）</div>
-  <figcaption id="fig3-caption">図3.キャッシュ可能なレスポンスの分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig3.png",
+  caption="キャッシュ可能なレスポンスの分布。",
+  description="デスクトップレスポンスの20％がキャッシュ不可、47％が0秒以上のキャッシュ、27％がヒューリスティックにキャッシュ、6％が0秒のTTLを示す積み上げ棒グラフ。モバイルの統計は非常に似ています（19％、47％ 、27％および7％）",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1868559586&format=interactive"
+  )
+}}
 
 次の表は、デスクトップリクエストのキャッシュTTL値をタイプ別に詳細に示しています。ほとんどのコンテンツタイプはキャッシュされますが、CSSリソースは高いTTLで一貫してキャッシュされるようです。
 
@@ -220,33 +229,32 @@ Webブラウザーがクライアントにレスポンスを送信するとき�
       </tr>
     </tbody>
   </table>
-  <figcaption>図4.リソースタイプ別のデスクトップキャッシュTTLパーセンタイル。</figcaption>
+  <figcaption>{{ figure_link(caption="リソースタイプ別のデスクトップキャッシュTTLパーセンタイル。") }}</figcaption>
 </figure>
 
 TTLの中央値のほとんどは高いですが、低いパーセンタイルは、見逃されたキャッシングの機会の一部を強調しています。たとえば画像のTTLの中央値は28時間ですが、25パーセンタイルは1〜2時間であり、10パーセンタイルはキャッシュ可能な画像コンテンツの10％が1時間未満キャッシュされることを示します。
 
-以下の図5でコンテンツタイプごとのキャッシュ可能性を詳細に調べると、すべてのHTMLレスポンスの約半分がキャッシュ不可と見なされていることがわかります。さらに、画像とスクリプトの16％はキャッシュ不可です。
+以下の図16.5でコンテンツタイプごとのキャッシュ可能性を詳細に調べると、すべてのHTMLレスポンスの約半分がキャッシュ不可と見なされていることがわかります。さらに、画像とスクリプトの16％はキャッシュ不可です。
 
-<figure>
-  <a href="/static/images/2019/caching/fig5.png">
-    <img src="/static/images/2019/caching/fig5.png" alt="図5.デスクトップのコンテンツタイプごとのキャッシュ可能性の分布。" aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1493610744&amp;format=interactive">
-  </a>
-  <div id="fig5-description" class="visually-hidden">キャッシュ不可、0秒を超えたキャッシュ、デスクトップのタイプごとに0秒だけキャッシュの分割を示す積み上げ棒グラフ。小さいがかなりの割合でキャッシュ不可能でHTMLでは最大50％になり、ほとんどはキャッシュが大きく0で、小さいキャッシュは0 TTLです。</div>
-  <figcaption id="fig5-caption">図5.デスクトップのコンテンツタイプごとのキャッシュ可能性の分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig5.png",
+  caption="デスクトップのコンテンツタイプごとのキャッシュ可能性の分布。",
+  description="キャッシュ不可、0秒を超えたキャッシュ、デスクトップのタイプごとに0秒だけキャッシュの分割を示す積み上げ棒グラフ。小さいがかなりの割合でキャッシュ不可能でHTMLでは最大50％になり、ほとんどはキャッシュが大きく0で、小さいキャッシュは0 TTLです。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1493610744&format=interactive"
+  )
+}}
 
 モバイルの同じデータを以下に示します。ご覧のとおり、コンテンツタイプのキャッシュ可能性はデスクトップとモバイルで一貫しています。
 
-<figure>
-  <a href="/static/images/2019/caching/fig6.png">
-    <img src="/static/images/2019/caching/fig6.png" alt="図6.モバイルのコンテンツタイプ別のキャッシュ可能性の分布。" aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1713903788&amp;format=interactive">
-  </a>
-  <div id="fig6-description" class="visually-hidden">キャッシュ不可、0秒を超えたキャッシュ、デスクトップのタイプごとに0秒だけキャッシュの分割を示す積み上げ棒グラフ。小さいがかなりの割合でキャッシュ不可能でHTMLでは最大50％になり、ほとんどはキャッシュが大きく0で、小さいキャッシュは0 TTLです。</div>
-  <figcaption id="fig6-caption">図6.モバイルのコンテンツタイプ別のキャッシュ可能性の分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig6.png",
+  caption="モバイルのコンテンツタイプ別のキャッシュ可能性の分布。",
+  description="キャッシュ不可、0秒を超えたキャッシュ、デスクトップのタイプごとに0秒だけキャッシュの分割を示す積み上げ棒グラフ。小さいがかなりの割合でキャッシュ不可能でHTMLでは最大50％になり、ほとんどはキャッシュが大きく0で、小さいキャッシュは0 TTLです。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1713903788&format=interactive"
+  )
+}}
 
-
-## Cache-ControlとExpires
+## `Cache-Control`と`Expires`
 
 HTTP/1.0では、`Expires`ヘッダーは、レスポンスが古くなったと見なされる日時を示すために使用されました。その値は、次のような日付のタイムスタンプです。
 
@@ -261,17 +269,18 @@ HTTP/1.1は`Cache-Control`ヘッダーを導入し、最新のクライアント
 
 HTTPレスポンスの53％は、`max-age`ディレクティブを持つ`Cache-Control`ヘッダーが含まれ、54％はExpiresヘッダーが含まれます。ただし、これらのレスポンスの41％のみが両方のヘッダーを使用します。つまり、レスポンスの13％が古い`Expires`ヘッダーのみに基づいてキャッシュされます。
 
-<figure>
-  <a href="/static/images/2019/caching/fig7.png">
-    <img src="/static/images/2019/caching/fig7.png" alt="図7. Cache-ControlとExpiresヘッダーの使用法。" aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1909701542&amp;format=interactive">
-  </a>
-  <div id="fig7-description" class="visually-hidden">レスポンスの53％を示す棒グラフには、「Cache-Control：max-age」、54％-55％が「Expires」、41％-42％が両方を使用し、34％がどちらも使用していません。数字は、デスクトップとモバイルの両方について示されていますが、有効期限の使用率が高いモバイルとほぼ同じです。</div>
-  <figcaption id="fig7-caption">図7. <code>Cache-Control</code>と<code>Expires</code>ヘッダーの使用法。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig7.png",
+  alt="Cache-ControlとExpiresヘッダーの使用法。",
+  caption="<code>Cache-Control</code> と <code>Expires</code> ヘッダーの使用法。",
+  description="レスポンスの53％を示す棒グラフには、「Cache-Control：max-age」、54％-55％が「Expires」、41％-42％が両方を使用し、34％がどちらも使用していません。数字は、デスクトップとモバイルの両方について示されていますが、有効期限の使用率が高いモバイルとほぼ同じです。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1909701542&format=interactive"
+  )
+}}
 
-## Cache-Controlディレクティブ
+## `Cache-Control`ディレクティブ
 
-HTTP/1.1[仕様](https://tools.ietf.org/html/rfc7234#section-5.2.1)には、`Cache-Control`レスポンスヘッダーで使用できる複数のディレクティブが含まれており、以下で詳しく説明します。1つのレスポンスで複数を使用できることに注意してください。
+HTTP/1.1<a hreflang="en" href="https://tools.ietf.org/html/rfc7234#section-5.2.1">仕様</a>には、`Cache-Control`レスポンスヘッダーで使用できる複数のディレクティブが含まれており、以下で詳しく説明します。1つのレスポンスで複数を使用できることに注意してください。
 
 <figure>
   <table>
@@ -328,30 +337,35 @@ HTTP/1.1[仕様](https://tools.ietf.org/html/rfc7234#section-5.2.1)には、`Cac
      <td>新しいレスポンスのチェックが失敗した場合に、クライアントが古いレスポンスを受け入れる意思があることを示します。</td>
     </tr>
   </table>
-  <figcaption>図8. <code>Cache-Control</code> ディレクティブ。</figcaption>
+  <figcaption>{{ figure_link(caption="<code>Cache-Control</code> ディレクティブ。") }}</figcaption>
 </figure>
 
 たとえば、`cache-control：public、max-age = 43200`は、キャッシュされたエントリを43,200秒間保存し、共有キャッシュに保存できることを示します。
 
-<figure>
-  <a href="/static/images/2019/caching/fig9.png">
-    <img src="/static/images/2019/caching/fig9.png" alt="図9.モバイルでのCache-Controlディレクティブの使用。" aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="662" data-width="600" data-height="662" data-seamless data-rameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1054108345&amp;format=interactive">
-  </a>
-  <div id="fig9-description" class="visually-hidden">15のcache-controlディレクティブとその使用量の棒グラフ。74.8％のmax-age、37.8％のpublic、27.8％のno-cache、18％のno-store、14.3％のprivate、3.4％のimmutable、3.3％のno-transform、2.4％のstale-while-revalidate、2.2％のpre-check、2.2％のpost-check、1.9％のs-maxage、1.6％のproxy-revalidate、0.3％set-cookieおよび0.2％のstale-if-error。統計は、デスクトップとモバイルでほぼ同じです。</div>
-  <figcaption id="fig9-caption">図9.モバイルでの<code>Cache-Control</code>ディレクティブの使用。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig9.png",
+  alt="モバイルでのCache-Controlディレクティブの使用。",
+  caption="モバイルでの <code>Cache-Control</code> ディレクティブの使用。",
+  description="15のcache-controlディレクティブとその使用量の棒グラフ。74.8％のmax-age、37.8％のpublic、27.8％のno-cache、18％のno-store、14.3％のprivate、3.4％のimmutable、3.3％のno-transform、2.4％のstale-while-revalidate、2.2％のpre-check、2.2％のpost-check、1.9％のs-maxage、1.6％のproxy-revalidate、0.3％set-cookieおよび0.2％のstale-if-error。統計は、デスクトップとモバイルでほぼ同じです。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1054108345&format=interactive",
+  width=600,
+  height=662,
+  data_width=600,
+  data_height=662
+  )
+}}
 
-上記の図9は、モバイルWebサイトで使用されている上位15の`Cache-Control`ディレクティブを示しています。デスクトップとモバイルの結果は非常に似ています。これらのキャッシュディレクティブの人気について、興味深い観察結果がいくつかあります。
+上記の図16.9は、モバイルWebサイトで使用されている上位15の`Cache-Control`ディレクティブを示しています。デスクトップとモバイルの結果は非常に似ています。これらのキャッシュディレクティブの人気について、興味深い観察結果がいくつかあります。
 
 * `max-age`は`Cache-Control`ヘッダーのほぼ75％で使用され、`no-store`は18％で使用されます。
 * `private`が指定されない限り、キャッシュされたエントリは`public`であると想定されるため、`public`が必要になることはほとんどありません。回答の約38％に`public`が含まれています。
-* `immutable`ディレクティブは比較的新しく、[2017年に導入](https://code.facebook.com/posts/557147474482256/this-browser-tweak-saved-60-of-requests-to-facebook)され、[FirefoxおよびSafariでサポート](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#Browser_compatibility)されています。その使用率は3.4％に拡大し、[Facebook、Googleのサードパーティのレスポンス](https://discuss.httparchive.org/t/cache-control-immutable-a-year-later/1195)で広く使用されています。
+* `immutable`ディレクティブは比較的新しく、<a hreflang="en" href="https://code.facebook.com/posts/557147474482256/this-browser-tweak-saved-60-of-requests-to-facebook">2017年に導入</a>され、[FirefoxおよびSafariでサポート](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#Browser_compatibility)されています。その使用率は3.4％に拡大し、<a hreflang="en" href="https://discuss.httparchive.org/t/cache-control-immutable-a-year-later/1195">Facebook、Googleのサードパーティのレスポンス</a>で広く使用されています。
 
-このリストに表示される別の興味深いディレクティブセットは、`pre-check`と`post-check`です。これらは、`Cache-Control`レスポンスヘッダーの2.2％（約780万件のレスポンス）で使用されます。このヘッダーのペアは、[バックグラウンドで検証を提供するためにInternet Explorer 5で導入された](https://blogs.msdn.microsoft.com/ieinternals/2009/07/20/internet-explorers-cache-control-extensions/)ものですが、Webサイトによって正しく実装されることはほとんどありませんでした。これらのヘッダーを使用したレスポンスの99.2％は、`pre-check=0`と`post-check=0`の組み合わせを使用していました。これらのディレクティブの両方が0に設定されている場合、両方のディレクティブは無視されます。したがって、これらのディレクティブは正しく使用されなかったようです！
+このリストに表示される別の興味深いディレクティブセットは、`pre-check`と`post-check`です。これらは、`Cache-Control`レスポンスヘッダーの2.2％（約780万件のレスポンス）で使用されます。このヘッダーのペアは、<a hreflang="en" href="https://blogs.msdn.microsoft.com/ieinternals/2009/07/20/internet-explorers-cache-control-extensions/">バックグラウンドで検証を提供するためにInternet Explorer 5で導入された</a>ものですが、Webサイトによって正しく実装されることはほとんどありませんでした。これらのヘッダーを使用したレスポンスの99.2％は、`pre-check=0`と`post-check=0`の組み合わせを使用していました。これらのディレクティブの両方が0に設定されている場合、両方のディレクティブは無視されます。したがって、これらのディレクティブは正しく使用されなかったようです！
 
 ロングテールでは、レスポンスの0.28％で1,500を超える間違ったディレクティブが使用されています。これらはクライアントによって無視され、「nocache」「s-max-age」「smax-age」「maxage」などのスペルミスが含まれます。「max-stale」「proxy-public」「surrogate-control」など存在しないディレクティブも多数あります。
 
-## Cache-Control: no-store, no-cache and max-age=0
+## `Cache-Control`: `no-store`, `no-cache` and `max-age=0`
 
 レスポンスがキャッシュ可能でない場合、`Cache-Control` `no-store`ディレクティブを使用する必要があります。このディレクティブを使用しない場合、レスポンスはキャッシュ可能です。
 
@@ -374,15 +388,16 @@ HTTP/1.1[仕様](https://tools.ietf.org/html/rfc7234#section-5.2.1)には、`Cac
 
 キャッシュTTLを選択するときは、「これらのアセットをどのくらいの頻度で更新しますか？」と自問してください。そして「彼らのコンテンツの感度は何ですか？」。たとえば、ヒーローのイメージがたまに更新される場合、非常に長いTTLでキャッシュします。 JavaScriptリソースが頻繁に変更されることが予想される場合は、バージョン管理して長いTTLでキャッシュするか、短いTTLでキャッシュします。
 
-以下のグラフは、コンテンツタイプごとのリソースの相対的な年を示しています。ここで、[より詳細な分析](https://discuss.httparchive.org/t/analyzing-resource-age-by-content-type/1659)を読むことができます。 HTMLは最も短い年齢のコンテンツタイプである傾向があり、伝統的にキャッシュ可能なリソース（[スクリプト](./javascript)、[CSS](./css)、および[フォント](./fonts)）の非常に大きな割合が1年以上古いです！
+以下のグラフは、コンテンツタイプごとのリソースの相対的な年を示しています。ここで、<a hreflang="en" href="https://discuss.httparchive.org/t/analyzing-resource-age-by-content-type/1659">より詳細な分析</a>を読むことができます。 HTMLは最も短い年齢のコンテンツタイプである傾向があり、伝統的にキャッシュ可能なリソース（[スクリプト](./javascript)、[CSS](./css)、および[フォント](./fonts)）の非常に大きな割合が1年以上古いです！
 
-<figure>
-  <a href="/static/images/2019/caching/ch16_fig8_resource_age.jpg">
-    <img src="/static/images/2019/caching/ch16_fig8_resource_age.jpg" alt="図10.コンテンツタイプ別のリソース年分布。" aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="325">
-  </a>
-  <div id="fig10-description" class="visually-hidden">コンテンツの年を示すスタック棒グラフ。0〜52週に分割され、1年以上と2年以上で、nullと負の数字も表示されます。統計は、ファーストパーティとサードパーティに分かれています。値0は、特にファーストパーティのHTML、テキスト、およびxml、およびすべてのアセットタイプのサードパーティリクエストの最大50％に使用されます。中間年を使用し、その後1年と2年の間かなりの使用量を使用するミックスがあります。</div>
-  <figcaption id="fig10-caption">図10.コンテンツタイプ別のリソース年分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="ch16_fig8_resource_age.jpg",
+  caption="コンテンツタイプ別のリソース年分布。",
+  description="コンテンツの年を示すスタック棒グラフ。0〜52週に分割され、1年以上と2年以上で、nullと負の数字も表示されます。統計は、ファーストパーティとサードパーティに分かれています。値0は、特にファーストパーティのHTML、テキスト、およびxml、およびすべてのアセットタイプのサードパーティリクエストの最大50％に使用されます。中間年を使用し、その後1年と2年の間かなりの使用量を使用するミックスがあります。",
+  width=600,
+  height=325
+  )
+}}
 
 リソースのキャッシュ可能性をその経過時間と比較することにより、TTLが適切であるか短すぎるかを判断できます。たとえば、以下のレスポンスによって提供されるリソースは、2019年8月25日に最後の変更がされました。つまり、配信時に49日経過していました。 `Cache-Control`ヘッダーは、43,200秒（12時間）キャッシュできることを示しています。より長いTTLが適切かどうかを調査するのに十分古いものです。
 
@@ -396,7 +411,7 @@ HTTP/1.1[仕様](https://tools.ietf.org/html/rfc7234#section-5.2.1)には、`Cac
 < Last-Modified: Sun, 25 Aug 2019 16:00:30 GMT
 < Cache-Control: public, max-age=43200
 < Expires: Mon, 14 Oct 2019 07:36:57 GMT
-< ETag: "1566748830.0-3052-3932359948" 
+< ETag: "1566748830.0-3052-3932359948"
 ```
 
 全体的に、Webで提供されるリソースの59％のキャッシュTTLは、コンテンツの年齢に比べて短すぎます。さらに、TTLと経過時間のデルタの中央値は25日です。
@@ -424,7 +439,7 @@ HTTP/1.1[仕様](https://tools.ietf.org/html/rfc7234#section-5.2.1)には、`Cac
      <td class="numeric">59.6%</td>
     </tr>
   </table>
-  <figcaption>図11. TTLが短いリクエストの割合。</figcaption>
+  <figcaption>{{ figure_link(caption="TTLが短いリクエストの割合。") }}</figcaption>
 </figure>
 
 ## 鮮度の検証
@@ -468,13 +483,14 @@ HTTP/1.1[仕様](https://tools.ietf.org/html/rfc7234#section-5.2.1)には、`Cac
 
 全体としてレスポンスの65％は`Last-Modified`ヘッダーで、42％は`ETag`で提供され、38％は両方を使用します。ただし、レスポンスの30％には`Last-Modified`ヘッダー、`ETag`ヘッダーは含まれていません。
 
-<figure>
-  <a href="/static/images/2019/caching/fig12.png">
-    <img src="/static/images/2019/caching/fig12.png" alt="図12.デスクトップWebサイトのLast-ModifiedおよびETa`ヘッダーを介した鮮度の検証の採用。" aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=20297100&amp;format=interactive">
-  </a>
-  <div id="fig12-description" class="visually-hidden">デスクトップリクエストの64.4％が最後に変更され、42.8％がETagを持ち、37.9％が両方を持ち、30.7％がどちらも持たないことを示す棒グラフ。モバイルの統計は、最終変更が65.3％、ETagが42.8％、両方が38.0％、どちらも29.9％というほぼ同じです。</div>
-  <figcaption id="fig12-caption">図12.デスクトップWebサイトの<code>Last-Modified</code>および<code>ETag</code>ヘッダーを介した鮮度の検証の採用。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig12.png",
+  alt="デスクトップWebサイトのLast-ModifiedおよびETagヘッダーを介した鮮度の検証の採用。",
+  caption="デスクトップWebサイトの <code>Last-Modified</code> および <code>ETag</code> ヘッダーを介した鮮度の検証の採用。",
+  description="デスクトップリクエストの64.4％が最後に変更され、42.8％がETagを持ち、37.9％が両方を持ち、30.7％がどちらも持たないことを示す棒グラフ。モバイルの統計は、最終変更が65.3％、ETagが42.8％、両方が38.0％、どちらも29.9％というほぼ同じです。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=20297100&format=interactive"
+  )
+}}
 
 ## 日付文字列の有効性
 
@@ -506,13 +522,13 @@ HTTP/1.1[仕様](https://tools.ietf.org/html/rfc7234#section-5.2.1)には、`Cac
 
 通常、`Date` HTTPレスポンスヘッダーは、クライアントにレスポンスを提供するWebサーバーまたはCDNによって生成されます。ヘッダーは通常、サーバーによって自動的に生成されるため、エラーが発生しにくい傾向はあります。これは、無効な`Date`ヘッダーの割合が非常に低いことを反映しています。 `Last-Modified`ヘッダーは非常に類似しており、無効なヘッダーは0.67％のみでした。しかし、驚いたのは、3.64％の`Expires`ヘッダーが無効な日付形式を使用していたことです！
 
-<figure>
-  <a href="/static/images/2019/caching/fig13.png">
-    <img src="/static/images/2019/caching/fig13.png" alt="図13.レスポンスヘッダーの無効な日付形式。" aria-labelledby="fig13-caption" aria-describedby="fig13-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1500819114&amp;format=interactive">
-  </a>
-  <div id="fig13-description" class="visually-hidden">デスクトップレスポンスの0.10％に無効な日付があり、0.67％に無効なLast-Modifiedがあり、3.64％に無効なExpiresがあることを示す棒グラフ。モバイルの統計は非常によく似ており、レスポンスの0.06％に無効な日付があり、0.68％に無効なLast-Modifiedがあり、3.50％に無効な有効期限があります。</div>
-  <figcaption id="fig13-caption">図13.レスポンスヘッダーの無効な日付形式。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig13.png",
+  caption="レスポンスヘッダーの無効な日付形式。",
+  description="デスクトップレスポンスの0.10％に無効な日付があり、0.67％に無効なLast-Modifiedがあり、3.64％に無効なExpiresがあることを示す棒グラフ。モバイルの統計は非常によく似ており、レスポンスの0.06％に無効な日付があり、0.68％に無効なLast-Modifiedがあり、3.50％に無効な有効期限があります。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1500819114&format=interactive"
+  )
+}}
 
 `Expires`ヘッダーの無効な使用の例は次のとおりです。
 
@@ -524,7 +540,7 @@ HTTP/1.1[仕様](https://tools.ietf.org/html/rfc7234#section-5.2.1)には、`Cac
 
 ## ヘッダーを変更
 
-キャッシングで最も重要な手順の1つは、要求されているリソースがキャッシュされているかどうかを判断することです。これは単純に見えるかもしれませんが、多くの場合、URLだけではこれを判断するには不十分です。たとえば同じURLのリクエストは、使用する[圧縮](./compression)（gzip、brotliなど）が異なる場合や、モバイルの訪問者に合わせて変更および調整できます。
+キャッシングで最も重要な手順の1つは、要求されているリソースがキャッシュされているかどうかを判断することです。これは単純に見えるかもしれませんが、多くの場合、URLだけではこれを判断するには不十分です。たとえば同じURLのリクエストは、使用する[圧縮](./compression)（Gzip、Brotliなど）が異なる場合や、モバイルの訪問者に合わせて変更および調整できます。
 
 この問題を解決するために、クライアントはキャッシュされた各リソースに一意の識別子（キャッシュキー）を与えます。デフォルトでは、このキャッシュキーは単にリソースのURLですが、開発者はVaryヘッダーを使用して他の要素（圧縮方法など）を追加できます。
 
@@ -538,53 +554,62 @@ Varyヘッダーは、1つ以上の要求ヘッダー値の値をキャッシュ
 
 以下のグラフは、上位10個の`Vary`ヘッダー値の人気を示しています。 `Accept-Encoding`はVaryの使用の90％を占め、`User-Agent`（11％）、`Origin`（9％）、`Accept`（3％）が残りの大部分を占めています。
 
-<figure>
-  <a href="/static/images/2019/caching/fig14.png">
-    <img src="/static/images/2019/caching/fig14.png" alt="図14.Varyヘッダーの使用率。" aria-labelledby="fig14-caption" aria-describedby="fig14-description" width="600" height="655" data-width="600" data-height="655" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=384675253&amp;format=interactive">
-  </a>
-  <div id="fig14-description" class="visually-hidden">accept-encodingは90％で使用、ユーザーエージェントは10％-11％、オリジンは約7％-8％、acceptは少なく、cookie、x-forward-proto、accept-language、host、x-origin、access-control-request-method、およびaccess-control-request-headersの使用はほとんどありません</div>
-  <figcaption id="fig14-caption">図14.Varyヘッダーの使用率。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig14.png",
+  caption="Varyヘッダーの使用率。",
+  description="accept-encodingは90％で使用、ユーザーエージェントは10％-11％、オリジンは約7％-8％、acceptは少なく、cookie、x-forward-proto、accept-language、host、x-origin、access-control-request-method、およびaccess-control-request-headersの使用はほとんどありません",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=384675253&format=interactive",
+  width=600,
+  height=655,
+  data_width=600,
+  data_height=655
+  )
+}}
 
 ## キャッシュ可能なレスポンスにCookieを設定する
 
 レスポンスがキャッシュされると、そのヘッダー全体もキャッシュにスワップされます。これが、DevToolsを介してキャッシュされたレスポンスを検査するときにレスポンスヘッダーを表示できる理由です。
 
-<figure>
-  <a href="/static/images/2019/caching/ch16_fig12_header_example_with_cookie.jpg">
-    <img src="/static/images/2019/caching/ch16_fig12_header_example_with_cookie.jpg" alt="図15.キャッシュされたリソースのChrome開発ツール。" aria-labelledby="fig15-caption" aria-describedby="fig15-description" width="600" height="359">
-  </a>
-  <div id="fig15-description" class="visually-hidden">キャッシュされたレスポンスのHTTPレスポンスヘッダーを示すChrome開発者ツールのスクリーンショット。</div>
-  <figcaption id="fig15-caption">図15.キャッシュされたリソースのChrome開発ツール。</figcaption>
-</figure>
+{{ figure_markup(
+  image="ch16_fig12_header_example_with_cookie.jpg",
+  caption="キャッシュされたリソースのChrome開発ツール。",
+  description="キャッシュされたレスポンスのHTTPレスポンスヘッダーを示すChrome開発者ツールのスクリーンショット。",
+  width=600,
+  height=359
+  )
+}}
 
-しかし、レスポンスに`Set-Cookie`がある場合はどうなりますか？ [RFC 7234セクション8](https://tools.ietf.org/html/rfc7234#section-8)によると、`Set-Cookie`レスポンスヘッダーはキャッシングを禁止しません。これは、キャッシュされたエントリが`Set-Cookie`でキャッシュされている場合、それが含まれている可能性があることを意味します。 RFCでは、適切な`Cache-Control`ヘッダーを構成して、レスポンスのキャッシュ方法を制御することを推奨しています。
+しかし、レスポンスに`Set-Cookie`がある場合はどうなりますか？ <a hreflang="en" href="https://tools.ietf.org/html/rfc7234#section-8">RFC 7234セクション8</a>によると、`Set-Cookie`レスポンスヘッダーはキャッシングを禁止しません。これは、キャッシュされたエントリが`Set-Cookie`でキャッシュされている場合、それが含まれている可能性があることを意味します。 RFCでは、適切な`Cache-Control`ヘッダーを構成して、レスポンスのキャッシュ方法を制御することを推奨しています。
 
 `Set-Cookie`を使用してレスポンスをキャッシュすることのリスクの1つは、Cookieの値を保存し、後続の要求に提供できることです。 Cookieの目的によっては、心配な結果になる可能性があります。たとえば、ログインCookieまたはセッションCookieが共有キャッシュに存在する場合、そのCookieは別のクライアントによって再利用される可能性があります。これを回避する1つの方法は、`Cache-Control``プライベート`ディレクティブを使用することです。これにより、クライアントブラウザーによるレスポンスのキャッシュのみが許可されます。
 
 キャッシュ可能なレスポンスの3％に`Set-Cookieヘッダー`が含まれています。これらのレスポンスのうち、`プライベート`ディレクティブを使用しているのは18％のみです。残りの82％には、パブリックおよびプライベートキャッシュサーバーでキャッシュできる`Set-Cookie`を含む530万のHTTPレスポンスが含まれています。
 
-<figure>
-  <a href="/static/images/2019/caching/ch16_fig16_cacheable_responses_set_cookie.jpg">
-    <img src="/static/images/2019/caching/ch16_fig16_cacheable_responses_set_cookie.jpg" alt="図16. Set-Cookieレスポンスのキャッシュ可能なレスポンス。" aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" height="567">
-  </a>
-  <div id="fig16-description" class="visually-hidden">レスポンスの97％を示す棒グラフはSet-Cookieを使用せず、3％が使用します。この3％の内、15.3％がプライベート、84.7％がデスクトップ、モバイルは18.4％がパブリック、81.6％がプライベートであるという別の棒グラフに拡大されています。</div>
-  <figcaption id="fig16-caption">図16. <code>Set-Cookie</code>レスポンスのキャッシュ可能なレスポンス。</figcaption>
-</figure>
+{{ figure_markup(
+  image="ch16_fig16_cacheable_responses_set_cookie.jpg",
+  alt="Set-Cookieレスポンスのキャッシュ可能なレスポンス。",
+  caption="<code>Set-Cookie</code> レスポンスのキャッシュ可能なレスポンス。",
+  description="レスポンスの97％を示す棒グラフはSet-Cookieを使用せず、3％が使用します。この3％の内、15.3％がプライベート、84.7％がデスクトップ、モバイルは18.4％がパブリック、81.6％がプライベートであるという別の棒グラフに拡大されています。",
+  width=600,
+  height=567
+  )
+}}
 
 ## AppCacheおよびService Worker
 
-アプリケーションキャッシュまたはAppCacheはHTML5の機能であり、開発者はブラウザがキャッシュするリソースを指定し、オフラインユーザーが利用できるようにできます。この機能は[廃止されており、Web標準からも削除](https://html.spec.whatwg.org/multipage/offline.html#offline)され、ブラウザーのサポートは減少しています。実際、使われているのが見つかった場合、[Firefox v44 +は、開発者に対して代わりにService Workerを使用することを推奨しています](https://developer.mozilla.org/ja-JP/docs/Web/API/Service_Worker_API/Using_Service_Workers)。 [Chrome 70は、アプリケーションキャッシュをセキュリティで保護されたコンテキストのみに制限します](https://www.chromestatus.com/feature/5714236168732672)。業界では、このタイプの機能をService Workerに実装する方向へ移行しており、[ブラウザサポート](https://caniuse.com/#feat=serviceworkers)は急速に成長しています。
+アプリケーションキャッシュまたはAppCacheはHTML5の機能であり、開発者はブラウザがキャッシュするリソースを指定し、オフラインユーザーが利用できるようにできます。この機能は<a hreflang="en" href="https://html.spec.whatwg.org/multipage/offline.html#offline">廃止されており、Web標準からも削除</a>され、ブラウザーのサポートは減少しています。実際、使われているのが見つかった場合、[Firefox v44 +は、開発者に対して代わりにService Workerを使用することを推奨しています](https://developer.mozilla.org/ja-JP/docs/Web/API/Service_Worker_API/Using_Service_Workers)。 <a hreflang="en" href="https://www.chromestatus.com/feature/5714236168732672">Chrome 70は、アプリケーションキャッシュをセキュリティで保護されたコンテキストのみに制限します</a>。業界では、このタイプの機能をService Workerに実装する方向へ移行しており、<a hreflang="en" href="https://caniuse.com/#feat=serviceworkers">ブラウザサポート</a>は急速に成長しています。
 
-実際、[HTTP Archiveトレンドレポートの1つは、以下に示すService Worker](https://httparchive.org/reports/progressive-web-apps#swControlledPages)の採用を示しています。
+実際、<a hreflang="en" href="https://httparchive.org/reports/progressive-web-apps#swControlledPages">HTTP Archiveトレンドレポートの1つは、以下に示すService Worker</a>の採用を示しています。
 
-<figure>
-  <a href="/static/images/2019/caching/ch16_fig14_service_worker_adoption.jpg">
-    <img src="/static/images/2019/caching/ch16_fig14_service_worker_adoption.jpg" alt="図17.Service Workerが制御するページの時系列。" aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" height="311">
-  </a>
-  <div id="fig17-description" class="visually-hidden">2016年10月から2019年7月までのService Workerが制御するサイトの使用状況を示す時系列チャート。モバイルとデスクトップの両方で使用量は年々着実に増加していますが、依然として両方で0.6％未満です。</div>
-  <figcaption id="fig17-caption">図17.Service Workerが制御するページの時系列。 (引用: <a href="https://httparchive.org/reports/progressive-web-apps#swControlledPages">HTTP Archive</a>)</figcaption>
-</figure>
+{{ figure_markup(
+  image="ch16_fig14_service_worker_adoption.jpg",
+  alt='Service Workerが制御するページの時系列。',
+  caption='Service Workerが制御するページの時系列。 (引用: <a hreflang="en" href="https://httparchive.org/reports/progressive-web-apps#swControlledPages">HTTP Archive</a>)',
+  description="2016年10月から2019年7月までのService Workerが制御するサイトの使用状況を示す時系列チャート。モバイルとデスクトップの両方で使用量は年々着実に増加していますが、依然として両方で0.6％未満です。",
+  width=600,
+  height=311
+  )
+}}
 
 採用率はまだウェブサイトの1％を下回っていますが、2017年1月から着実に増加しています。[プログレッシブWebアプリ](./pwa)の章では、人気サイトでの使用によりこのグラフが示唆するよりも多く使用されているという事実を含め、上記のグラフでは1回のみカウントされます。
 
@@ -621,7 +646,7 @@ Varyヘッダーは、1つ以上の要求ヘッダー値の値をキャッシュ
       </tr>
     </tbody>
   </table>
-  <figcaption>図18. AppCacheを使用するWebサイトとService Workerの数。</figcaption>
+  <figcaption>{{ figure_link(caption="AppCacheを使用するWebサイトとService Workerの数。") }}</figcaption>
 </figure>
 
 これをHTTPとHTTPSで分類すると、さらに興味深いものになります。 581のAppCache対応サイトはHTTP経由で提供されます。つまり、Chromeがこの機能を無効にしている可能性があります。 HTTPSはService Workerを使用するための要件ですが、それらを使用するサイトの907はHTTP経由で提供されます。
@@ -661,45 +686,46 @@ Varyヘッダーは、1つ以上の要求ヘッダー値の値をキャッシュ
       </tr>
     </tbody>
   </table>
-  <figcaption>図19. AppCacheを使用するWebサイト数とHTTP/HTTPSによるService Workerの使用量。</figcaption>
+  <figcaption>{{ figure_link(caption="AppCacheを使用するWebサイト数とHTTP/HTTPSによるService Workerの使用量。") }}</figcaption>
 </figure>
 
 ## キャッシングの機会を特定する
 
-Googleの[Lighthouse](https://developers.google.com/web/tools/lighthouse)ツールを使用すると、ユーザーはWebページに対して一連の監査を実行できます。[キャッシュポリシー監査](https://developers.google.com/web/tools/lighthouse/audits/cache-policy)では、サイトが追加のキャッシュの恩恵を受けることができるかどうかを評価します。これは、コンテンツの経過時間（`Last-Modified`ヘッダー経由）をキャッシュTTLと比較し、リソースがキャッシュから提供される可能性を推定することによりこれを行います。スコアに応じて、結果にキャッシュの推奨事項が表示され、キャッシュできる特定のリソースのリストが表示される場合があります。
+Googleの<a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a>ツールを使用すると、ユーザーはWebページに対して一連の監査を実行できます。<a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/audits/cache-policy">キャッシュポリシー監査</a>では、サイトが追加のキャッシュの恩恵を受けることができるかどうかを評価します。これは、コンテンツの経過時間（`Last-Modified`ヘッダー経由）をキャッシュTTLと比較し、リソースがキャッシュから提供される可能性を推定することによりこれを行います。スコアに応じて、結果にキャッシュの推奨事項が表示され、キャッシュできる特定のリソースのリストが表示される場合があります。
 
-<figure>
-  <a href="/static/images/2019/caching/ch16_fig15_lighthouse_example.jpg">
-    <img src="/static/images/2019/caching/ch16_fig15_lighthouse_example.jpg" alt="図20.キャッシュポリシーの改善の可能性を強調したLighthouseレポート。" aria-labelledby="fig20-caption" aria-describedby="fig20-description" width="600" height="459">
-  </a>
-  <div id="fig20-description" class="visually-hidden">Google Lighthouseツールからのレポートの一部のスクリーンショット。「効率的なキャッシュポリシーを使用した静的アセットの提供」セクションが開いており、多数のリソース、名前が編集された人、キャッシュTTLとサイズのリストが表示されます。</div>
-  <figcaption id="fig20-caption">図20.キャッシュポリシーの改善の可能性を強調したLighthouseレポート。</figcaption>
-</figure>
+{{ figure_markup(
+  image="ch16_fig15_lighthouse_example.jpg",
+  caption="キャッシュポリシーの改善の可能性を強調したLighthouseレポート。",
+  description="Google Lighthouseツールからのレポートの一部のスクリーンショット。「効率的なキャッシュポリシーを使用した静的アセットの提供」セクションが開いており、多数のリソース、名前が編集された人、キャッシュTTLとサイズのリストが表示されます。",
+  width=600,
+  height=459
+  )
+}}
 
-Lighthouseは、監査ごとに0％〜100％の範囲のスコアを計算し、それらのスコアは全体のスコアに組み込まれます。[キャッシングスコア](https://developers.google.com/web/tools/lighthouse/audits/cache-policy)は、潜在的なバイト節約に基づいています。 Lighthouseの結果を調べると、キャッシュポリシーでどれだけのサイトがうまく機能しているかを把握できます。
+Lighthouseは、監査ごとに0％〜100％の範囲のスコアを計算し、それらのスコアは全体のスコアに組み込まれます。<a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/audits/cache-policy">キャッシングスコア</a>は、潜在的なバイト節約に基づいています。 Lighthouseの結果を調べると、キャッシュポリシーでどれだけのサイトがうまく機能しているかを把握できます。
 
-<figure>
-  <a href="/static/images/2019/caching/fig21.png">
-    <img src="/static/images/2019/caching/fig21.png" alt="図21.モバイルWebページの「Use Long Cache TTL」監査のLighthouseスコアの分布。" aria-labelledby="fig21-caption" aria-describedby="fig21-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=827424070&amp;format=interactive">
-  </a>
-  <div id="fig21-description" class="visually-hidden">積み上げ棒グラフの38.2％のウェブサイトのスコアは10％未満、29.0％のウェブサイトのスコアは10％〜39％、18.7％のウェブサイトのスコアは40％〜79％、10.7％のウェブサイトは80％から99％のスコア、および3.4​​％のWebサイトが100％のスコアを取得します。</div>
-  <figcaption id="fig21-caption">図21.モバイルWebページの「Use Long Cache TTL」監査のLighthouseスコアの分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig21.png",
+  caption="モバイルWebページの「Use Long Cache TTL」監査のLighthouseスコアの分布。",
+  description="積み上げ棒グラフの38.2％のウェブサイトのスコアは10％未満、29.0％のウェブサイトのスコアは10％〜39％、18.7％のウェブサイトのスコアは40％〜79％、10.7％のウェブサイトは80％から99％のスコア、および3.4​​％のWebサイトが100％のスコアを取得します。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=827424070&format=interactive"
+  )
+}}
 
 100％を獲得したサイトは3.4％のみです。これは、ほとんどのサイトがキャッシュの最適化の恩恵を受けることができることを意味します。サイトの圧倒的多数が40％未満で、38％が10％未満のスコアを記録しています。これに基づいて、Webにはかなりの量のキャッシュの機会があります。
 
 Lighthouseは、より長いキャッシュポリシーを有効にすることで、繰り返しビューで保存できるバイト数も示します。追加のキャッシュの恩恵を受ける可能性のあるサイトのうち、82％がページの重みを最大で1MB削減できます。
 
-<figure>
-  <a href="/static/images/2019/caching/fig22.png">
-    <img src="/static/images/2019/caching/fig22.png" alt="図22. Lighthouseキャッシング監査による潜在的なバイト節約の分布。" aria-labelledby="fig21-caption" aria-describedby="fig21-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1698914500&amp;format=interactive">
-  </a>
-  <div id="fig22-description" class="visually-hidden">Webサイトの56.8％が1MB未満の潜在的なバイト節約を示す積み上げ棒グラフ、22.1％は1〜2MBの節約、8.3％は2〜3MBの節約になります。 4.3％は3〜4MB節約でき、6.0％は4MB以上節約できました。</div>
-  <figcaption id="fig22-caption">図22. Lighthouseキャッシング監査による潜在的なバイト節約の分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig22.png",
+  caption="Lighthouseキャッシング監査による潜在的なバイト節約の分布。",
+  description="Webサイトの56.8％が1MB未満の潜在的なバイト節約を示す積み上げ棒グラフ、22.1％は1〜2MBの節約、8.3％は2〜3MBの節約になります。 4.3％は3〜4MB節約でき、6.0％は4MB以上節約できました。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1698914500&format=interactive"
+  )
+}}
 
 ## 結論
 
 キャッシングは非常に強力な機能であり、ブラウザ、プロキシ、その他の仲介者（CDNなど）がWebコンテンツを保存し、エンドユーザーへ提供できるようにします。これにより、往復時間が短縮され、コストのかかるネットワーク要求が最小限に抑えられるため、パフォーマンス上のメリットは非常に大きくなります。
 
-キャッシュも非常に複雑なトピックです。キャッシュエントリを検証するだけでなく、新鮮さを伝えることができるHTTPレスポンスヘッダーは多数あります。`Cache-Control`ディレクティブは、非常に多くの柔軟性と制御を提供します。ただし、開発者は、それがもたらす間違いの追加の機会に注意する必要があります。キャッシュ可能なリソースが適切にキャッシュされていることを確認するためにサイトを定期的に監査することをお勧めします。[Lighthouse](https://developers.google.com/web/tools/lighthouse)や[REDbot](https://redbot.org/)などのツールは、分析の簡素化に役立ちます。
+キャッシュも非常に複雑なトピックです。キャッシュエントリを検証するだけでなく、新鮮さを伝えることができるHTTPレスポンスヘッダーは多数あります。`Cache-Control`ディレクティブは、非常に多くの柔軟性と制御を提供します。ただし、開発者は、それがもたらす間違いの追加の機会に注意する必要があります。キャッシュ可能なリソースが適切にキャッシュされていることを確認するためにサイトを定期的に監査することをお勧めします。<a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a>や<a hreflang="en" href="https://redbot.org/">REDbot</a>などのツールは、分析の簡素化に役立ちます。

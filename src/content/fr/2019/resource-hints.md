@@ -1,26 +1,32 @@
 ---
-part_number: IV
-chapter_number: 19
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Indices de Ressources
 description: Chapitre sur les indices de ressources du Web Almanac 2019, couvrant les usages de dns-prefetch, preconnect, preload, prefetch, les indices de priorités et le lazy loading natif.
 authors: [khempenius]
 reviewers: [andydavies, bazzadp, yoavweiss]
+analysts: [rviscomi]
+editors: [rviscomi]
 translators: [borisschapira]
 discuss: 1774
 results: https://docs.google.com/spreadsheets/d/14QBP8XGkMRfWRBbWsoHm6oDVPkYhAIIpfxRn4iOkbUU/
-queries: 19_Resource_Hints
-published: 2019-12-24T00:00:00.000Z
-last_updated: 2020-06-30T00:00:00.000Z
+khempenius_bio: Katie Hempenius est ingénieur dans l’équipe Chrome où elle travaille à rendre le web plus rapide.
+featured_quote: Les indices de ressources fournissent des "suggestions" au navigateur sur les ressources qui seront rapidement nécessaires. L’action que le navigateur entreprend à la suite de cet indice varie selon le type d’indice ; différents indices déclenchent différentes actions. Lorsqu’ils sont utilisés correctement, ils peuvent améliorer les performances de la page en donnant une longueur d'avance aux actions importantes, par anticipation.
+featured_stat_1: 29 %
+featured_stat_label_1: des sites utilisent <code>dns-prefetch</code>.
+featured_stat_2: 88 %
+featured_stat_label_2: des indices de ressources utilisent l’attribut <code>as</code>.
+featured_stat_3: 0.04 %
+featured_stat_label_3: des pages utilisent des indices de priorité.
 ---
 
 ## Introduction
 
-Les [indices de ressources](https://www.w3.org/TR/resource-hints/) fournissent des "suggestions" au navigateur sur les ressources qui seront rapidement nécessaires. L'action que le navigateur entreprend à la suite de cet indice varie selon le type d'indice&nbsp;; différents indices déclenchent différentes actions. Lorsqu'ils sont utilisés correctement, ils peuvent améliorer les performances de la page en donnant une longueur d'avance aux actions importantes, par anticipation.
+Les <a hreflang="en" href="https://www.w3.org/TR/resource-hints/">indices de ressources</a> fournissent des "suggestions" au navigateur sur les ressources qui seront rapidement nécessaires. L'action que le navigateur entreprend à la suite de cet indice varie selon le type d'indice&nbsp;; différents indices déclenchent différentes actions. Lorsqu'ils sont utilisés correctement, ils peuvent améliorer les performances de la page en donnant une longueur d'avance aux actions importantes, par anticipation.
 
-[Quelques exemples](https://youtu.be/YJGCZCaIZkQ?t=1956) d'amélioration de performance suite à l'usage d'indices des ressources&nbsp;:
+<a hreflang="en" href="https://youtu.be/YJGCZCaIZkQ?t=1956">Quelques exemples</a> d'amélioration de performance suite à l'usage d'indices des ressources&nbsp;:
 
 * Jabong a réduit son Time To Interactive de 1,5 seconde en préchargeant les scripts critiques.
-* Barefoot Wine a réduit le Time To Interactive des futures pages de 2,7 secondes en préchargeant les liens visibles. 
+* Barefoot Wine a réduit le Time To Interactive des futures pages de 2,7 secondes en préchargeant les liens visibles.
 * Chrome.com a réduit sa latence de 0,7 seconde en se préconnectant à des domaines critiques.
 
 La plupart des navigateurs actuels prennent en charge quatre indices de ressources distincts&nbsp;: `dns-prefetch`, `preconnect`, `preload` et `prefetch`.
@@ -31,24 +37,26 @@ Le rôle de [`dns-prefetch`](https://developer.mozilla.org/en-US/docs/Learn/Perf
 
 ### `preconnect`
 
-[`preconnect`](https://web.dev/uses-rel-preconnect) initie une connexion anticipée, y compris la résolution DNS, la poignée de main TCP et la négociation TLS. Cette fonctionnalité est utile pour établir une connexion avec une tierce partie. Les utilisations de `preconnect` sont très similaires à celles de `dns-prefetch`, mais `preconnect` est moins bien supporté par les navigateurs. Cependant, si vous n'avez pas besoin du support d'IE 11, `preconnect` est probablement un meilleur choix.
+<a hreflang="en" href="https://web.dev/uses-rel-preconnect">`preconnect`</a> initie une connexion anticipée, y compris la résolution DNS, la poignée de main TCP et la négociation TLS. Cette fonctionnalité est utile pour établir une connexion avec une tierce partie. Les utilisations de `preconnect` sont très similaires à celles de `dns-prefetch`, mais `preconnect` est moins bien supporté par les navigateurs. Cependant, si vous n'avez pas besoin du support d'IE 11, `preconnect` est probablement un meilleur choix.
 
 ### `preload`
 
-[`preload`](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf) initie une requête au plus tôt. Il permet de charger des ressources importantes plutôt que d'attendre que l'analyseur les découvre plus tardivement. Par exemple, si une image importante ne peut être découverte qu'une fois que le navigateur a reçu et analysé la feuille de style, il est peut-être judicieux de précharger l'image.
+<a hreflang="en" href="https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf">`preload`</a> initie une requête au plus tôt. Il permet de charger des ressources importantes plutôt que d'attendre que l'analyseur les découvre plus tardivement. Par exemple, si une image importante ne peut être découverte qu'une fois que le navigateur a reçu et analysé la feuille de style, il est peut-être judicieux de précharger l'image.
 
 ### `prefetch`
 
-[`prefetch`](https://calendar.perfplanet.com/2018/all-about-prefetching/) lance une requête de faible priorité. C'est utile pour charger les ressources qui seront utilisées lors du chargement de la page suivante (plutôt que de la page actuelle). Une utilisation courante de `prefetch` est le chargement de ressources dont l'application "prédit" qu'elles seront utilisées lors du chargement de la page suivante. Ces prédictions peuvent être basées sur des signaux tels que le mouvement de la souris de l'utilisateur ou des scénarios&#8239;/&#8239;parcours utilisateurs courants.
+<a hreflang="en" href="https://calendar.perfplanet.com/2018/all-about-prefetching/">`prefetch`</a> lance une requête de faible priorité. C'est utile pour charger les ressources qui seront utilisées lors du chargement de la page suivante (plutôt que de la page actuelle). Une utilisation courante de `prefetch` est le chargement de ressources dont l'application "prédit" qu'elles seront utilisées lors du chargement de la page suivante. Ces prédictions peuvent être basées sur des signaux tels que le mouvement de la souris de l'utilisateur ou des scénarios&#8239;/&#8239;parcours utilisateurs courants.
 
 ## Syntaxe
 
 97&nbsp;% des usages d'indices de ressources sont spécifiés par le tag [`<link>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link). Par exemple&nbsp;:
-```
+
+```html
 <link rel="prefetch" href="shopping-cart.js">
 ```
 
 Seuls 3&nbsp;% des indices de ressources proviennent [d'en-têtes HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link) permettant de les spécifier. Par exemple&nbsp;:
+
 ```
 Link: <https://example.com/shopping-cart.js>; rel=prefetch
 ```
@@ -96,10 +104,10 @@ Comme l'utilisation des indices de ressources dans les en-têtes HTTP est très 
      </td>
     </tr>
   </table>
-  <figcaption>Figure 1. Adoption des indices de ressources.</figcaption>
+  <figcaption>{{ figure_link(caption="Adoption des indices de ressources.") }}</figcaption>
 </figure>
 
-La popularité relative de `dns-prefetch` n'est pas surprenante&nbps;: c'est une API bien connue (elle est apparue pour la première fois en [2009](https://caniuse.com/#feat=link-rel-dns-prefetch)), elle est prise en charge par tous les principaux navigateurs et c'est le moins "coûteux" de tous les indices de ressources. Parce que `dns-prefetch` n'effectue que des recherches DNS, il consomme très peu de données et il y a donc très peu d'inconvénients à l'utiliser. `dns-prefetch` est particulièrement utile dans les situations de latence élevée.
+La popularité relative de `dns-prefetch` n'est pas surprenante&nbps;: c'est une API bien connue (elle est apparue pour la première fois en <a hreflang="en" href="https://caniuse.com/#feat=link-rel-dns-prefetch">2009</a>), elle est prise en charge par tous les principaux navigateurs et c'est le moins "coûteux" de tous les indices de ressources. Parce que `dns-prefetch` n'effectue que des recherches DNS, il consomme très peu de données et il y a donc très peu d'inconvénients à l'utiliser. `dns-prefetch` est particulièrement utile dans les situations de latence élevée.
 
 Cela étant dit, si un site n'a pas besoin de supporter IE11 et les versions inférieures, passer de `dns-prefetch` à `preconnect` est probablement une bonne idée. À une époque où le HTTPS est omniprésent, `preconnect` permet d'améliorer les performances tout en restant peu risqué. Notez que contrairement à `dns-prefetch`, `preconnect` initie non seulement la recherche DNS, mais aussi la poignée de main TCP et la négociation TLS. La [chaîne de certificats] (https://knowledge.digicert.com/solution/SO16297.html) est téléchargée pendant la négociation TLS et cela coûte généralement quelques kilo-octets.
 
@@ -153,10 +161,10 @@ Cela étant dit, si un site n'a pas besoin de supporter IE11 et les versions inf
      </td>
     </tr>
   </table>
-  <figcaption>Figure 2. Médiane en 90e percentile du nombre d'indices de ressources utilisés sur les pages en utilisant au moins un.</figcaption>
+  <figcaption>{{ figure_link(caption="Médiane en 90e percentile du nombre d'indices de ressources utilisés sur les pages en utilisant au moins un.") }}</figcaption>
 </figure>
 
-Les indices de ressources sont plus efficaces lorsqu'ils sont utilisés de manière sélective (_"quand tout est important, rien ne l'est"_). La figure 2 ci-dessus montre le nombre d'indices de ressources sur les pages en utilisant au moins un. Bien qu'il n'existe pas de règle précise pour définir ce qu'est un nombre approprié d'indices de ressources, il semble que la plupart des sites les utilisent de manière appropriée.
+Les indices de ressources sont plus efficaces lorsqu'ils sont utilisés de manière sélective (_"quand tout est important, rien ne l'est"_). La figure 19.2 ci-dessus montre le nombre d'indices de ressources sur les pages en utilisant au moins un. Bien qu'il n'existe pas de règle précise pour définir ce qu'est un nombre approprié d'indices de ressources, il semble que la plupart des sites les utilisent de manière appropriée.
 
 ## L'attribut `crossorigin`
 
@@ -198,11 +206,12 @@ Pour les types de ressources plus récentes (par exemple les polices, les requê
      </td>
     </tr>
   </table>
-  <figcaption>Figure 3. Adoption de l'attribut <code>crossorigin</code> en pourcentage du nombre d'indices de ressources.</figcaption>
+  <figcaption>{{ figure_link(caption="Adoption de l'attribut <code>crossorigin</code> en pourcentage du nombre d'indices de ressources.") }}</figcaption>
 </figure>
 
 Dans le contexte des indices de ressources, l'utilisation de l'attribut `crossorigin` leur permet de correspondre au mode CORS des ressources auxquelles ils sont censés correspondre et indique les références à inclure dans la requête. Par exemple, `anonymous` active le mode CORS et indique qu'aucun identifiant ne doit être inclus pour ces requêtes `cross-origin`&nbsp;:
-```
+
+```html
 <link rel="prefetch" href="https://other-server.com/shopping-cart.css" crossorigin="anonymous">
 ```
 
@@ -210,12 +219,14 @@ Bien que d'autres éléments HTML prennent en charge l'attribut `crossorigin`, c
 
 ## L'attribut `as`
 
-`as` est un attribut qui doit être utilisé avec le indices de ressources `preload` pour informer le navigateur du type (par exemple, image, script, style, etc.) de la ressource demandée. Cela aide le navigateur à classer correctement la requête par ordre de priorité et à appliquer la politique de sécurité du contenu (ou <i lang="en">Content Security Policy</i>, [CSP](https://developers.google.com/web/fundamentals/security/csp)). La CSP est un mécanisme de [sécurité](./security), exprimé par un en-tête HTTP, qui contribue à atténuer l'impact des attaques XSS et d'autres attaques malveillantes en déclarant une liste de sources fiables ; seul le contenu de ces sources peut alors être rendu ou exécuté.
+`as` est un attribut qui doit être utilisé avec le indices de ressources `preload` pour informer le navigateur du type (par exemple, image, script, style, etc.) de la ressource demandée. Cela aide le navigateur à classer correctement la requête par ordre de priorité et à appliquer la politique de sécurité du contenu (ou <i lang="en">Content Security Policy</i>, <a hreflang="en" href="https://developers.google.com/web/fundamentals/security/csp">CSP</a>). La CSP est un mécanisme de [sécurité](./security), exprimé par un en-tête HTTP, qui contribue à atténuer l'impact des attaques XSS et d'autres attaques malveillantes en déclarant une liste de sources fiables ; seul le contenu de ces sources peut alors être rendu ou exécuté.
 
-<figure>
-  <div class="big-number">88&nbsp;%</div>
-  <figcaption>Figure 4. Pourcentage des indices de ressources qui utilisent l'attribut <code>as</code>.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="Pourcentage des indices de ressources qui utilisent l'attribut <code>as</code>.",
+  content="88&nbsp;%",
+  classes="big-number"
+)
+}}
 
 88&nbsp;% des indices de ressources utilisent l'attribut `as`. Quand `as` est spécifié, il est utilisé de façon écrasante pour les scripts : 92&nbsp;% de l'utilisation concerne les scripts, 3&nbsp;% les polices et 3&nbsp;% les styles. Ce n'est pas surprenant étant donné le rôle prépondérant que les scripts jouent dans l'architecture de la plupart des sites ainsi que la fréquence élevée à laquelle les scripts sont utilisés comme vecteurs d'attaque (d'où l'importance particulière de leur appliquer la bonne CSP).
 
@@ -225,7 +236,7 @@ Pour le moment, il n'y a pas de propositions visant à élargir le jeu actuel d'
 
 ### Les indices de priorités
 
-Les [indices de priorités](https://wicg.github.io/priority-hints/) sont une API permettant d'exprimer des priorités dans la récupération de certaines ressources&nbsp;: `high` (haute), `low` (basse), ou `auto`. Ils peuvent être utilisés avec un large éventail de balises HTML&nbsp;: spécifiquement `<image>`, `<link`>, `<script>` et `<iframe>`.
+Les <a hreflang="en" href="https://wicg.github.io/priority-hints/">indices de priorités</a> sont une API permettant d'exprimer des priorités dans la récupération de certaines ressources&nbsp;: `high` (haute), `low` (basse), ou `auto`. Ils peuvent être utilisés avec un large éventail de balises HTML&nbsp;: spécifiquement `<image>`, `<link`>, `<script>` et `<iframe>`.
 
 <figure>
 <div class="code-block floating-card">
@@ -234,23 +245,25 @@ Les [indices de priorités](https://wicg.github.io/priority-hints/) sont une API
   &lt;img src="cat2.jpg" importance="low">
   &lt;img src="cat3.jpg" importance="low">
 &lt;/carousel></code></pre></div>
-<figcaption>Figure 5. Exemple HTML d'utilisation d'indices de priorités sur un carrousel d'images.</figcaption>
+<figcaption>{{ figure_link(caption="Exemple HTML d'utilisation d'indices de priorités sur un carrousel d'images.") }}</figcaption>
 </figure>
 
 Par exemple, si vous disposez d'un carrousel d'images, des indices de priorités pourraient être utilisés pour prioriser l'image que les utilisateurs voient immédiatement et déprioriser les images ultérieures.
 
-<figure>
-  <div class="big-number">0,04&nbsp;%</div>
-  <figcaption>Figure 6. Taux d'adoption des indices de priorités.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="Taux d'adoption des indices de priorités.",
+  content="0,04&nbsp;%",
+  classes="big-number"
+)
+}}
 
-Les indices de priorités sont [mis en œuvre](https://www.chromestatus.com/feature/5273474901737472) et peuvent être testés au moyen d'un drapeau de fonctionnalité dans les versions 70 et supérieures du navigateur Chromium. Étant donné qu'il s'agit encore d'une technologie expérimentale, il n'est pas surprenant qu'elle soit utilisée par 0,04&nbsp;% des sites.
+Les indices de priorités sont <a hreflang="en" href="https://www.chromestatus.com/feature/5273474901737472">mis en œuvre</a> et peuvent être testés au moyen d'un drapeau de fonctionnalité dans les versions 70 et supérieures du navigateur Chromium. Étant donné qu'il s'agit encore d'une technologie expérimentale, il n'est pas surprenant qu'elle soit utilisée par 0,04&nbsp;% des sites.
 
 85 % de l'utilisation des indices de priorités se fait avec les balises `<img>`. Les indices de priorités sont surtout utilisés pour déprioriser des ressources : 72&nbsp;% de l'utilisation est `importance="low"` ; 28&nbsp;% de l'utilisation est `importance="high"`.
 
-### Le lazy loading natif
+### Le <i lang="en">lazy loading</i> natif {le-lazy-loading-natif}
 
-Le [<i lang="en">lazy loading</i> natif](https://web.dev/native-lazy-loading) est une API native permettant de différer le chargement des images et des iframes situées hors écran. Cela permet de libérer des ressources lors du chargement initial de la page et d'éviter de charger des ressources qui ne sont jamais utilisées. Auparavant, cette technique ne pouvait être réalisée qu'à l'aide de bibliothèques [JavaScript](./javascript) tierces.
+Le <a hreflang="en" href="https://web.dev/native-lazy-loading"><i lang="en">lazy loading</i> natif</a> est une API native permettant de différer le chargement des images et des iframes situées hors écran. Cela permet de libérer des ressources lors du chargement initial de la page et d'éviter de charger des ressources qui ne sont jamais utilisées. Auparavant, cette technique ne pouvait être réalisée qu'à l'aide de bibliothèques [JavaScript](./javascript) tierces.
 
 L'API pour le <i lang="en">lazy loading</i> natif se présente comme telle&nbsp;: `<img src="cat.jpg" loading="lazy">`.
 

@@ -2,7 +2,7 @@
   "settings": [
     {
       "is_live": true,
-      "supported_languages": ["en","es","fr","ja","zh-CN"],
+      "supported_languages": ["en","es","fr","hi","it","ja","nl","pt","ru","tr","uk","zh-CN","zh-TW"],
       "ebook_languages": ["en","ja"]
     }
   ],
@@ -13,37 +13,37 @@
       "chapters": [
         {
           "part": "I",
-          "chapter": "1",
+          "chapter_number": "1",
           "title": "JavaScript",
           "slug": "javascript"
         },
         {
           "part": "I",
-          "chapter": "2",
+          "chapter_number": "2",
           "title": "CSS",
           "slug": "css"
         },
         {
           "part": "I",
-          "chapter": "3",
+          "chapter_number": "3",
           "title": "Markup",
           "slug": "markup"
         },
         {
           "part": "I",
-          "chapter": "4",
+          "chapter_number": "4",
           "title": "Media",
           "slug": "media"
         },
         {
           "part": "I",
-          "chapter": "5",
+          "chapter_number": "5",
           "title": "Third Parties",
           "slug": "third-parties"
         },
         {
           "part": "I",
-          "chapter": "6",
+          "chapter_number": "6",
           "title": "Fonts",
           "slug": "fonts"
         }
@@ -55,37 +55,37 @@
       "chapters": [
         {
           "part": "II",
-          "chapter": "7",
+          "chapter_number": "7",
           "title": "Performance",
           "slug": "performance"
         },
         {
           "part": "II",
-          "chapter": "8",
+          "chapter_number": "8",
           "title": "Security",
           "slug": "security"
         },
         {
           "part": "II",
-          "chapter": "9",
+          "chapter_number": "9",
           "title": "Accessibility",
           "slug": "accessibility"
         },
         {
           "part": "II",
-          "chapter": "10",
+          "chapter_number": "10",
           "title": "SEO",
           "slug": "seo"
         },
         {
           "part": "II",
-          "chapter": "11",
+          "chapter_number": "11",
           "title": "PWA",
           "slug": "pwa"
         },
         {
           "part": "II",
-          "chapter": "12",
+          "chapter_number": "12",
           "title": "Mobile Web",
           "slug": "mobile-web"
         }
@@ -97,13 +97,13 @@
       "chapters": [
         {
           "part": "III",
-          "chapter": "13",
+          "chapter_number": "13",
           "title": "Ecommerce",
           "slug": "ecommerce"
         },
         {
           "part": "III",
-          "chapter": "14",
+          "chapter_number": "14",
           "title": "CMS",
           "slug": "cms"
         }
@@ -115,37 +115,37 @@
       "chapters": [
         {
           "part": "IV",
-          "chapter": "15",
+          "chapter_number": "15",
           "title": "Compression",
           "slug": "compression"
         },
         {
           "part": "IV",
-          "chapter": "16",
+          "chapter_number": "16",
           "title": "Caching",
           "slug": "caching"
         },
         {
           "part": "IV",
-          "chapter": "17",
+          "chapter_number": "17",
           "title": "CDN",
           "slug": "cdn"
         },
         {
           "part": "IV",
-          "chapter": "18",
+          "chapter_number": "18",
           "title": "Page Weight",
           "slug": "page-weight"
         },
         {
           "part": "IV",
-          "chapter": "19",
+          "chapter_number": "19",
           "title": "Resource Hints",
           "slug": "resource-hints"
         },
         {
           "part": "IV",
-          "chapter": "20",
+          "chapter_number": "20",
           "title": "HTTP/2",
           "slug": "http2"
         }
@@ -179,6 +179,14 @@
     }
   },
   "contributors": {
+    "AbbyTsai": {
+      "name": "Abby Tsai",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/44442451?v=4&s=200",
+      "github": "AbbyTsai"
+    },
     "kleinab": {
       "name": "Abigail Klein",
       "teams": [
@@ -244,7 +252,8 @@
     "ghedo": {
       "name": "Alessandro Ghedini",
       "teams": [
-        "brainstormers"
+        "brainstormers",
+        "reviewers"
       ],
       "avatar_url": "https://avatars3.githubusercontent.com/u/117643?v=4&s=200",
       "website": "https://ghedini.me/",
@@ -259,6 +268,15 @@
       "website": "http://infrequently.org",
       "github": "slightlyoff",
       "twitter": "slightlylate"
+    },
+    "lex111": {
+      "name": "Alexey Pyltsyn",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/4408379?v=4&s=200",
+      "website": "https://lex111.ru/",
+      "github": "lex111"
     },
     "ndrnmnn": {
       "name": "André Naumann",
@@ -299,7 +317,8 @@
     "andydavies": {
       "name": "Andy Davies",
       "teams": [
-        "authors"
+        "authors",
+        "reviewers"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/427052?v=4&s=200",
       "website": "http://andydavies.me/",
@@ -357,7 +376,8 @@
       "name": "Brian Kardell",
       "teams": [
         "brainstormers",
-        "authors"
+        "authors",
+        "reviewers"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/870501?v=4&s=200",
       "website": "https://bkardell.com",
@@ -408,9 +428,8 @@
     "colinbendell": {
       "name": "Colin Bendell",
       "teams": [
-        "brainstormers",
         "authors",
-        "analysts"
+        "brainstormers"
       ],
       "avatar_url": "https://avatars0.githubusercontent.com/u/1622597?v=4&s=200",
       "github": "colinbendell",
@@ -470,6 +489,24 @@
       "github": "dougsillars",
       "twitter": "dougsillars"
     },
+    "eduqg": {
+      "name": "Eduardo Q. Gomes",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/17773211?v=4&s=200",
+      "website": "https://eduqg.github.io/",
+      "github": "eduqg"
+    },
+    "elaynelemos": {
+      "name": "Elayne Lemos",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars2.githubusercontent.com/u/24370436?v=4&s=200",
+      "github": "elaynelemos",
+      "linkedin": "elaynelemos"
+    },
     "meyerweb": {
       "name": "Eric A. Meyer",
       "teams": [
@@ -494,12 +531,23 @@
     "enygren": {
       "name": "Erik Nygren",
       "teams": [
-        "brainstormers"
+        "brainstormers",
+        "reviewers"
       ],
       "avatar_url": "https://avatars2.githubusercontent.com/u/6840678?v=4&s=200",
       "website": "https://erik.nygren.org/",
       "github": "enygren",
       "twitter": "akanygren"
+    },
+    "fatmabadri": {
+      "name": "Fatma Badri",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/10557131?v=4s=200",
+      "website": "https://fatmabadri.github.io/",
+      "github": "fatmabadri",
+      "linkedin": "fatmabadri"
     },
     "gabriel-de-gennaro": {
       "name": "Gabriel De Gennaro",
@@ -657,6 +705,15 @@
       "github": "KJLarson",
       "twitter": "KaJLa47"
     },
+    "tymosh": {
+      "name": "Kate Tymoshkina",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars2.githubusercontent.com/u/25080897?v=4&s=200",
+      "github": "tymosh",
+      "linkedin": "tymosh"
+    },
     "khempenius": {
       "name": "Katie Hempenius",
       "teams": [
@@ -676,6 +733,16 @@
       "avatar_url": "https://avatars1.githubusercontent.com/u/3392338?v=4&s=200",
       "github": "ljme"
     },
+    "chefleo": {
+      "name": "Leonardo Digiorgio",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/26022943?s=460&u=64b286deddd79f94a2dc8dee0e7610e0dd2a7b34&v=4",
+      "website": "https://chefleo.dev/",
+      "github": "chefleo",
+      "twitter": "simdigiorgio"
+    },
     "MSakamaki": {
       "name": "M.Sakamaki",
       "teams": [
@@ -687,13 +754,15 @@
       "github": "MSakamaki",
       "twitter": "msakamaki2"
     },
-    "hakimelek": {
-      "name": "Malek Hakim",
+    "soulcorrosion": {
+      "name": "Manuel Garcia",
       "teams": [
-        "reviewers"
+        "translators"
       ],
-      "avatar_url": "https://avatars1.githubusercontent.com/u/1974993?v=4&s=200",
-      "github": "hakimelek"
+      "avatar_url": "https://avatars2.githubusercontent.com/u/7148510?v=4&s=200",
+      "github": "soulcorrosion",
+      "linkedin": "manuel-garcia-12b6928",
+      "twitter": "corrosion_pt"
     },
     "mnot": {
       "name": "Mark Nottingham",
@@ -773,12 +842,6 @@
       "github": "mor10",
       "twitter": "mor10"
     },
-    "natasha-kosoglov": {
-      "name": "Natasha Kosoglov",
-      "teams": [
-        "reviewers"
-      ]
-    },
     "nektarios-paisios": {
       "name": "Nektarios Paisios",
       "teams": [
@@ -804,6 +867,15 @@
       "website": "https://www.noahblon.com",
       "github": "noahblon",
       "twitter": "noahblon"
+    },
+    "noah-vdv": {
+      "name": "Noah van der Veer",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/46689362?v=4&s=200",
+      "github": "noah-vdv",
+      "twitter": "noah_aaron_vdv"
     },
     "patrickhulce": {
       "name": "Patrick Hulce",
@@ -834,6 +906,7 @@
         "brainstormers",
         "authors",
         "analysts",
+        "reviewers",
         "developers"
       ],
       "avatar_url": "https://avatars3.githubusercontent.com/u/7459458?v=4&s=200",
@@ -849,6 +922,16 @@
       "avatar_url": "https://avatars3.githubusercontent.com/u/6407114?v=4&s=200",
       "github": "Pavel-Evdokimov",
       "twitter": "Pavel_Evdokimov"
+    },
+    "PraveenPal4232": {
+      "name": "Praveen Pal",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/34737190?v=4&s=200",
+      "website": "https://praveenpal4232.github.io",
+      "github": "PraveenPal4232",
+      "twitter": "PraveenPal4232"
     },
     "rachellcostello": {
       "name": "Rachel Costello",
@@ -1050,11 +1133,21 @@
       "name": "Vincent Terrasi",
       "teams": [
         "brainstormers",
-        "authors"
+        "reviewers"
       ],
       "avatar_url": "https://avatars3.githubusercontent.com/u/2698956?v=4&s=200",
       "website": "https://data-seo.com",
       "github": "voltek62"
+    },
+    "HakaCode": {
+      "name": "William Sandres",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars0.githubusercontent.com/u/33907565?v=4&s=200",
+      "website": "https://hakacode.github.io",
+      "github": "HakaCode",
+      "twitter": "hakacode"
     },
     "yoavweiss": {
       "name": "Yoav Weiss",

@@ -1,16 +1,24 @@
 ---
-part_number: II
-chapter_number: 9
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Accessibilité
 description: Chapitre Accessibilité du web Almanac 2019, couvrant la facilité de lecture, les medias, l’aisance de navigation et la compatibilité avec les technologies d’assistance.
 authors: [nektarios-paisios, obto, kleinab]
 reviewers: [ljme]
+analysts: [dougsillars, rviscomi, obto]
+editors: [obto]
 translators: [nico3333fr]
 discuss: 1764
 results: https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/
-queries: 09_Accessibility
-published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-08-03T00:00:00.000Z
+nektarios-paisios_bio: Nektarios Paisios est un <i lang="en">software engineer</i> travaillant sur l’accessibilité de Chrome depuis 5 ans. Il se concentre principalement sur la compatibilité de Chrome avec les logiciels d’assistance tiers tels que les lecteurs d’écran et les loupes d’écran. Avant de travailler sur l’accessibilité de Chrome, Nektarios a occupé divers autres postes au sein de l’entreprise, tels que l’accessibilité GSuite et les annonces publicitaires. Nektarios est titulaire d’un doctorat en informatique de l’Université de New York.
+obto_bio: David Fox est <i lang="en">lead usability researcher</i> et fondateur de LookZook, une entreprise obsédée par tout ce qu’il y a à savoir sur la création d’expériences Web qui répondent aux attentes des utilisateurs. Il est un psychologue de sites Web qui fouille dans ces derniers pour apprendre non seulement avec quels problèmes les utilisateurs se débattent, mais pourquoi et comment améliorer au mieux leur expérience. Il est également un contributeur, un conférencier et un fournisseur de Google Chromium de webinaires et de formations UX.
+kleinab_bio: Abigail Klein est <i lang="en">Software Engineer</i> chez Google. Elle a travaillé sur l’accessibilité web de Google Docs, Sheets et Slides où elle a ajouté les <a hreflang="en" href="https://www.blog.google/outreach-initiatives/accessibility/whats-you-say-present-captions-google-slides/">légendes automatiques de Google Slides</a>, ainsi que l’amélioration du lecteur d’écran, du braille, de la loupe d’écran et de la prise en charge du contraste élevé. Elle travaille actuellement sur l’accessibilité de Google Chrome et ChromeOS. Elle détient un baccalauréat et une maîtrise en informatique du MIT, où elle a cofondé un hackathon de technologie d’assistance et a été assistante de laboratoire et conférencière invitée de la classe de technologie d’assistance.
+featured_quote: L’accessibilité sur le web est essentielle pour une société inclusive et équitable. Alors que nos vies sociales et professionnelles se déplacent de plus en plus vers le monde en ligne, il devient encore plus important pour les personnes handicapées de pouvoir participer à toutes les interactions en ligne sans barrières. Tout comme les architectes en bâtiment peuvent créer ou omettre des fonctionnalités d’accessibilité telles que des rampes pour fauteuils roulants, les développeurs et développeuses web peuvent aider ou entraver la technologie d’assistance sur laquelle les utilisateurs se basent.
+featured_stat_1: 22 %
+featured_stat_label_1: Sites ayant des contrastes de couleurs insuffisants
+featured_stat_2: 50 %
+featured_stat_label_2: Sites ayant des attributs alt manquants
+featured_stat_3: 14 %
+featured_stat_label_3: Sites utilisant des liens d’évitement
 ---
 
 ## Introduction
@@ -21,7 +29,7 @@ Lorsque nous pensons aux utilisateurs handicapés, nous devons nous rappeler que
 
 Souvent, l’amélioration de l’accessibilité des sites présente des avantages pour tout le monde. Alors que nous considérons généralement les personnes handicapées comme des personnes ayant une incapacité permanente, tout le monde peut avoir une incapacité temporaire ou situationnelle. Par exemple, une personne peut être aveugle en permanence, avoir une infection oculaire temporaire ou, à l’occasion, être à l’extérieur sous un soleil éclatant. Tout cela pourrait expliquer pourquoi quelqu’un ne peut pas voir son écran. Tout le monde a des handicaps situationnels, et donc améliorer l’accessibilité de votre page web améliorera l’expérience de tous les utilisateurs dans toutes les situations.
 
-Les [directives pour l’accessibilité du contenu web](https://www.w3.org/WAI/WCAG21/quickref/) (WCAG) donnent des conseils sur comment rendre un site web accessible. Ces lignes directrices ont servi de base à notre analyse. Cependant, dans de nombreux cas, il est difficile d’analyser programmatiquement l’accessibilité d’un site web. Par exemple, la plate-forme web offre plusieurs façons d’obtenir des résultats fonctionnels similaires, mais le code sous-jacent qui les alimente peut être complètement différent. Par conséquent, notre analyse n’est qu’une approximation de l’accessibilité globale du web.
+Les <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/quickref/">directives pour l’accessibilité du contenu web</a> (WCAG) donnent des conseils sur comment rendre un site web accessible. Ces lignes directrices ont servi de base à notre analyse. Cependant, dans de nombreux cas, il est difficile d’analyser programmatiquement l’accessibilité d’un site web. Par exemple, la plate-forme web offre plusieurs façons d’obtenir des résultats fonctionnels similaires, mais le code sous-jacent qui les alimente peut être complètement différent. Par conséquent, notre analyse n’est qu’une approximation de l’accessibilité globale du web.
 
 Nous avons réparti nos informations les plus intéressantes en quatre catégories&nbsp;: facilité de lecture, médias sur le web, facilité de navigation dans les pages et compatibilité avec les technologies d’assistance.
 
@@ -37,13 +45,14 @@ Il existe de nombreux cas où les visiteurs de votre site peuvent ne pas le voir
 
 Afin de vous assurer que votre site web soit lisible dans ces conditions, un contraste de couleur suffisant entre le texte et son arrière-plan est capital. Il est également important de prendre en compte les contrastes qui seront affichés lorsque les couleurs seront converties en niveaux de gris.
 
-<figure>
-  <a href="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.svg">
-    <img alt="Figure 1. Exemple de texte présentant un contraste de couleurs insuffisant. Gracieusement mis à disposition par LookZook" aria-labelledby="fig1-caption" aria-describedby="fig1-description" src="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.svg" width="568" height="300">
-  </a>
-  <div id="fig1-description" class="visually-hidden">Quatre boîtes colorées de nuances marron et grises avec, par-dessus, du texte blanc à l’intérieur créant deux colonnes. La colonne de gauche indique «&nbsp;Trop légèrement coloré&nbsp;» et a la couleur de fond marron écrite comme `#FCA469`. La colonne de droite indique «&nbsp;Recommandé&nbsp;» et la couleur d’arrière-plan marron est écrite comme `#BD5B0E`. La zone supérieure de chaque colonne a un fond marron avec du texte blanc `#FFFFFF` et la zone inférieure a un fond gris avec du texte blanc `#FFFFFF`. Les équivalents en niveaux de gris sont respectivement <code>#B8B8B8</code> et <code>#707070</code>. Gracieusement mis à disposition par LookZook</div>
-  <figcaption id="fig1-caption">Figure 1. Exemple de texte présentant un contraste de couleurs insuffisant. Gracieusement mis à disposition par LookZook</figcaption>
-</figure>
+{{ figure_markup(
+  image="example-of-good-and-bad-color-contrast-lookzook.svg",
+  caption="Exemple de texte présentant un contraste de couleurs insuffisant. Gracieusement mis à disposition par LookZook",
+  description="Quatre boîtes colorées de nuances marron et grises avec, par-dessus, du texte blanc à l’intérieur créant deux colonnes. La colonne de gauche indique «&nbsp;Trop légèrement coloré&nbsp;» et a la couleur de fond marron écrite comme `#FCA469`. La colonne de droite indique «&nbsp;Recommandé&nbsp;» et la couleur d’arrière-plan marron est écrite comme `#BD5B0E`. La zone supérieure de chaque colonne a un fond marron avec du texte blanc `#FFFFFF` et la zone inférieure a un fond gris avec du texte blanc `#FFFFFF`. Les équivalents en niveaux de gris sont respectivement <code>#B8B8B8</code> et <code>#707070</code>. Gracieusement mis à disposition par LookZook",
+  width=568,
+  height=300
+  )
+}}
 
 Seuls 22,04&nbsp;% des sites ont donné à l’ensemble de leurs textes un contraste de couleurs suffisant. En d’autres termes&nbsp;: 4 sites sur 5 ont un texte qui se confond facilement avec son arrière-plan, le rendant illisible.
 
@@ -51,7 +60,7 @@ Seuls 22,04&nbsp;% des sites ont donné à l’ensemble de leurs textes un contr
 
 ### Zoom et mise à l’échelle des pages
 
-Utiliser une [taille de police lisible](https://accessibleweb.com/question-answer/minimum-font-size/) et [une taille de cible raisonnablement grande](https://www.w3.org/WAI/WCAG21/quickref/#target-size) aide les utilisateurs à lire et à interagir avec votre site web. Mais même les sites web qui suivent parfaitement toutes ces directives ne peuvent pas répondre aux besoins spécifiques de chaque visiteur. C’est pourquoi les fonctionnalités de l’appareil telles que le pincement au zoom et la mise à l’échelle sont si importantes&nbsp;: elles permettent aux utilisateurs de modifier vos pages pour répondre à leurs besoins. Ou dans le cas de sites particulièrement inaccessibles utilisant de minuscules polices et boutons, cela donne aux utilisateurs la possibilité même d’utiliser le site.
+Utiliser une <a hreflang="en" href="https://accessibleweb.com/question-answer/minimum-font-size/">taille de police lisible</a> et <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/quickref/#target-size">une taille de cible raisonnablement grande</a> aide les utilisateurs à lire et à interagir avec votre site web. Mais même les sites web qui suivent parfaitement toutes ces directives ne peuvent pas répondre aux besoins spécifiques de chaque visiteur. C’est pourquoi les fonctionnalités de l’appareil telles que le pincement au zoom et la mise à l’échelle sont si importantes&nbsp;: elles permettent aux utilisateurs de modifier vos pages pour répondre à leurs besoins. Ou dans le cas de sites particulièrement inaccessibles utilisant de minuscules polices et boutons, cela donne aux utilisateurs la possibilité même d’utiliser le site.
 
 Il existe de rares cas où la désactivation de la mise à l’échelle est acceptable, comme lorsque la page en question est un jeu web utilisant des commandes tactiles. Si laissé activé dans ce cas, les téléphones des joueurs et joueuses feront un zoom avant et arrière à chaque fois qu’ils tapoteront deux fois sur le jeu, ce qui —&nbsp;ironiquement&nbsp;— le rendra inaccessible.
 
@@ -61,15 +70,15 @@ De fait, les développeurs et développeuses ont la possibilité de désactiver 
 
 2. `maximum-scale` mis à `1`, `1.0`, etc.
 
-Malheureusement, les développeurs et développeuses web en ont tellement abusé que près d’un site sur trois sur mobile (32,21&nbsp;%) désactive cette fonctionnalité, et Apple (à partir d’iOS 10) ne leur permet plus de désactiver le zoom. Safari mobile [ignore simplement la balise](https://archive.org/details/ios-10-beta-release-notes). Tous les sites, quels qu’ils soient, peuvent être zoomés et mis à l’échelle sur les nouveaux appareils iOS.
+Malheureusement, les développeurs et développeuses web en ont tellement abusé que près d’un site sur trois sur mobile (32,21&nbsp;%) désactive cette fonctionnalité, et Apple (à partir d’iOS 10) ne leur permet plus de désactiver le zoom. Safari mobile <a hreflang="en" href="https://archive.org/details/ios-10-beta-release-notes">ignore simplement la balise</a>. Tous les sites, quels qu’ils soient, peuvent être zoomés et mis à l’échelle sur les nouveaux appareils iOS.
 
-<figure>
-  <a href="/static/images/2019/accessibility/fig2.png">
-    <img src="/static/images/2019/accessibility/fig2.png" alt="Figure 2. Pourcentage de sites qui désactivent le zoom et la mise à l’échelle par rapport au type d’appareil." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=2053904956&amp;format=interactive">
-  </a>
-  <div id="fig2-description" class="visually-hidden">Graphes verticaux en pourcentages, allant de 0 à 80 de 20 en 20, par rapport au type d’appareil, regroupées en ordinateur de bureau et mobile. Bureau activé&nbsp;: 75,46&nbsp;%&nbsp;; Bureau désactivé&nbsp;: 24,54&nbsp;%&nbsp;; Mobile activé&nbsp;: 67,79&nbsp;%&nbsp;; Mobile désactivé&nbsp;: 32,21&nbsp;%.</div>
-  <figcaption id="fig2-caption">Figure 2. Pourcentage de sites qui désactivent le zoom et la mise à l’échelle par rapport au type d’appareil.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig2.png",
+  caption="Pourcentage de sites qui désactivent le zoom et la mise à l’échelle par rapport au type d’appareil.",
+  description="Graphes verticaux en pourcentages, allant de 0 à 80 de 20 en 20, par rapport au type d’appareil, regroupées en ordinateur de bureau et mobile. Bureau activé&nbsp;: 75,46&nbsp;%&nbsp;; Bureau désactivé&nbsp;: 24,54&nbsp;%&nbsp;; Mobile activé&nbsp;: 67,79&nbsp;%&nbsp;; Mobile désactivé&nbsp;: 32,21&nbsp;%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=2053904956&format=interactive"
+  )
+}}
 
 ### Identification de la langue
 
@@ -121,13 +130,13 @@ Cela étant dit, voici nos résultats&nbsp;:
 2. 38,6&nbsp;% des pages sautent des niveaux de titre&nbsp;;
 3. Curieusement, les `h2` se trouvent sur plus de sites que les `h1`.
 
-<figure>
-  <a href="/static/images/2019/accessibility/fig3.png">
-    <img src="/static/images/2019/accessibility/fig3.png" alt="Figure 3. Popularité des en-têtes." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-crolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1123601243&amp;format=interactive">
-  </a>
-  <div id="fig3-description" class="visually-hidden">Graphique à barres verticales mesurant des données de pourcentage, allant de 0 à 80 de 20 en 20, par rapport aux barres représentant chaque niveau de `h1` à `h6`. `h1`&nbsp;: 63,25&nbsp;%&nbsp;; `h2`&nbsp;: 67,86&nbsp;%&nbsp;; `h3`&nbsp;: 58,63&nbsp;%&nbsp;; `h4`&nbsp;: 36,38&nbsp;%&nbsp;; `h5`&nbsp;: 14,64&nbsp;%; `h6`&nbsp;: 6,91&nbsp;%.</div>
-  <figcaption id="fig3-caption">Figure 3. Popularité des en-têtes.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig3.png",
+  caption="Popularité des en-têtes.",
+  description="Graphique à barres verticales mesurant des données de pourcentage, allant de 0 à 80 de 20 en 20, par rapport aux barres représentant chaque niveau de `h1` à `h6`. `h1`&nbsp;: 63,25&nbsp;%&nbsp;; `h2`&nbsp;: 67,86&nbsp;%&nbsp;; `h3`&nbsp;: 58,63&nbsp;%&nbsp;; `h4`&nbsp;: 36,38&nbsp;%&nbsp;; `h5`&nbsp;: 14,64&nbsp;%; `h6`&nbsp;: 6,91&nbsp;%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1123601243&format=interactive"
+  )
+}}
 
 ### Zone de contenu principale
 
@@ -135,13 +144,13 @@ Une [zone de contenu principale <i lang="en">`main`</i>](https://developer.mozil
 
 Nous avons constaté qu’une seule page sur quatre (26,03&nbsp;%) comprend une zone de contenu principale. Et étonnamment, 8,06&nbsp;% des pages contenaient par erreur plus d’une zone de contenu principale, laissant ces utilisateurs deviner laquelle contient le contenu principal réel.
 
-<figure>
-  <a href="/static/images/2019/accessibility/fig4.png">
-    <img src="/static/images/2019/accessibility/fig4.png" alt="Figure 4. Pourcentage des pages selon leur nombre d’éléments «main»" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1420590464&amp;format=interactive">
-  </a>
-  <div id="fig4-description" class="visually-hidden">Graphique à barres verticales affichant des pourcentages de données allant de 0 à 80 de 20 en 20, par rapport à des barres représentant le nombre de repères «&nbsp;principaux&nbsp;» par page de 0 à 4. Source: HTTP Archive (juillet 2019). Zéro&nbsp;: 73,97&nbsp;%&nbsp;; Un&nbsp;: 17,97&nbsp;%&nbsp;; Deux&nbsp;: 7,41&nbsp;%&nbsp;; Trois&nbsp;: 0,15&nbsp;%&nbsp;; 4&nbsp;: 0,06&nbsp;%.</div>
-  <figcaption id="fig4-caption" >Figure 4. Pourcentage des pages selon leur nombre d’éléments `main`.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig4.png",
+  caption="Pourcentage des pages selon leur nombre d’éléments `main`.",
+  description="Graphique à barres verticales affichant des pourcentages de données allant de 0 à 80 de 20 en 20, par rapport à des barres représentant le nombre de repères «&nbsp;principaux&nbsp;» par page de 0 à 4. Source: HTTP Archive (juillet 2019). Zéro&nbsp;: 73,97&nbsp;%&nbsp;; Un&nbsp;: 17,97&nbsp;%&nbsp;; Deux&nbsp;: 7,41&nbsp;%&nbsp;; Trois&nbsp;: 0,15&nbsp;%&nbsp;; 4&nbsp;: 0,06&nbsp;%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1420590464&format=interactive"
+  )
+}}
 
 ### Éléments de section HTML
 
@@ -153,53 +162,54 @@ D’autres comme [`<article>`](https://developer.mozilla.org/fr/docs/Web/HTML/El
 
 Tous ces éléments sont principalement conçus pour la prise en charge de l’accessibilité et n’ont aucun effet visuel, ce qui signifie que vous pouvez remplacer en toute sécurité les éléments existants et ne subir aucune conséquence involontaire.
 
-<figure>
-  <a href="/static/images/2019/accessibility/fig5.png">
-    <img src="/static/images/2019/accessibility/fig5.png" alt="Figure 5. Utilisation de divers éléments sémantiques HTML." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=708035719&amp;format=interactive">
-  </a>
-  <div id="fig5-description" class="visually-hidden">Graphique à barres verticales avec des barres pour chaque type d’élément par rapport au pourcentage de pages allant de 0 à 60 de 20 en 20. `nav`&nbsp;: 53,94&nbsp;%&nbsp;; `header`&nbsp;: 54,82&nbsp;%&nbsp;; `footer`&nbsp;: 55,92&nbsp;%&nbsp;; `main`&nbsp;: 18,47&nbsp;%&nbsp;; `aside`&nbsp;: 16,99&nbsp;%&nbsp;; `article`&nbsp;: 22,59&nbsp;%&nbsp;; `hr`&nbsp;: 19,1&nbsp;%&nbsp;; `section`&nbsp;: 36,55&nbsp;%.</div>
-  <figcaption id="fig5-caption" >Figure 5. Utilisation de divers éléments sémantiques HTML.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig5.png",
+  caption="Utilisation de divers éléments sémantiques HTML.",
+  description="Graphique à barres verticales avec des barres pour chaque type d’élément par rapport au pourcentage de pages allant de 0 à 60 de 20 en 20. `nav`&nbsp;: 53,94&nbsp;%&nbsp;; `header`&nbsp;: 54,82&nbsp;%&nbsp;; `footer`&nbsp;: 55,92&nbsp;%&nbsp;; `main`&nbsp;: 18,47&nbsp;%&nbsp;; `aside`&nbsp;: 16,99&nbsp;%&nbsp;; `article`&nbsp;: 22,59&nbsp;%&nbsp;; `hr`&nbsp;: 19,1&nbsp;%&nbsp;; `section`&nbsp;: 36,55&nbsp;%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=708035719&format=interactive"
+  )
+}}
 
 ### Autres éléments HTML utilisés pour la navigation
 
-De nombreux lecteurs d’écran populaires permettent également aux utilisateurs de naviguer en parcourant rapidement les liens, les listes, les éléments de liste, les iframes et les champs de formulaire tels que les champs d’édition, les boutons et les zones de liste. La figure 6 détaille la fréquence à laquelle nous avons vu des pages utilisant ces éléments.
+De nombreux lecteurs d’écran populaires permettent également aux utilisateurs de naviguer en parcourant rapidement les liens, les listes, les éléments de liste, les iframes et les champs de formulaire tels que les champs d’édition, les boutons et les zones de liste. La figure 9.6 détaille la fréquence à laquelle nous avons vu des pages utilisant ces éléments.
 
-<figure>
-  <a href="/static/images/2019/accessibility/fig6.png">
-    <img src="/static/images/2019/accessibility/fig6.png" alt="Figure 6. Autres éléments HTML utilisés pour la navigation" aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=389034849&amp;format=interactive">
-  </a>
-  <div id="fig6-description" class="visually-hidden">Graphique à barres verticales avec des barres pour chaque type d’élément par rapport au pourcentage de pages allant de 0 à 100 de 25 en 25. `a`&nbsp;: 98,22&nbsp;%&nbsp;; `ul`&nbsp;: 88,62&nbsp;%&nbsp;; `input`: 76,63&nbsp;%&nbsp;; `iframe`: 60,39&nbsp;%&nbsp;; `button`&nbsp;: 56,74&nbsp;%&nbsp;; `select`&nbsp;: 19,68&nbsp;%&nbsp;; `textarea`&nbsp;: 12,03&nbsp;%.</div>
-  <figcaption id="fig6-caption">Figure 6. Autres éléments HTML utilisés pour la navigation</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig6.png",
+  caption="Autres éléments HTML utilisés pour la navigation",
+  description="Graphique à barres verticales avec des barres pour chaque type d’élément par rapport au pourcentage de pages allant de 0 à 100 de 25 en 25. `a`&nbsp;: 98,22&nbsp;%&nbsp;; `ul`&nbsp;: 88,62&nbsp;%&nbsp;; `input`: 76,63&nbsp;%&nbsp;; `iframe`: 60,39&nbsp;%&nbsp;; `button`&nbsp;: 56,74&nbsp;%&nbsp;; `select`&nbsp;: 19,68&nbsp;%&nbsp;; `textarea`&nbsp;: 12,03&nbsp;%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=389034849&format=interactive"
+  )
+}}
 
 ### Liens d’évitement
 
-Un [lien d’évitement](https://webaim.org/techniques/skipnav/) est un lien placé en haut d’une page qui permet aux lecteurs d’écran ou aux utilisateurs de clavier d’accéder directement au contenu principal. Il «&nbsp;saute&nbsp;» efficacement tous les liens et menus de navigation en haut de la page. Les liens d’évitement sont particulièrement utiles aux utilisateurs de clavier qui n’utilisent pas de lecteur d’écran, car ces utilisateurs n’ont généralement pas accès à d’autres modes de navigation rapide (comme les zones de contenus principales et les en-têtes). 14,19&nbsp;% des pages de notre échantillon avaient des liens d’évitement.
+Un <a hreflang="en" href="https://webaim.org/techniques/skipnav/">lien d’évitement</a> est un lien placé en haut d’une page qui permet aux lecteurs d’écran ou aux utilisateurs de clavier d’accéder directement au contenu principal. Il «&nbsp;saute&nbsp;» efficacement tous les liens et menus de navigation en haut de la page. Les liens d’évitement sont particulièrement utiles aux utilisateurs de clavier qui n’utilisent pas de lecteur d’écran, car ces utilisateurs n’ont généralement pas accès à d’autres modes de navigation rapide (comme les zones de contenus principales et les en-têtes). 14,19&nbsp;% des pages de notre échantillon avaient des liens d’évitement.
 
-Si vous souhaitez voir un lien d’évitement en action par vous-même, vous pouvez&nbsp;! Faites simplement une recherche rapide sur Google et tapez sur «&nbsp;<kbd>Tab</kbd>&nbsp;» dès que vous atterrissez sur les pages de résultats de recherche. Vous serez accueilli avec un lien précédemment masqué, comme celui sur la figure 7.
+Si vous souhaitez voir un lien d’évitement en action par vous-même, vous pouvez&nbsp;! Faites simplement une recherche rapide sur Google et tapez sur «&nbsp;<kbd>Tab</kbd>&nbsp;» dès que vous atterrissez sur les pages de résultats de recherche. Vous serez accueilli avec un lien précédemment masqué, comme celui sur la figure 9.7.
 
-<figure>
-  <a href="/static/images/2019/accessibility/example-of-a-skip-link-on-google.com.png">
-    <img alt="Figure 7. Ce à quoi un lien d’évitement ressemble sur google.com." aria-labelledby="fig7-caption" aria-describedby="fig7-description" src="/static/images/2019/accessibility/example-of-a-skip-link-on-google.com.png" width="600" height="333">
-  </a>
-  <div id="fig7-description" class="visually-hidden">Capture d’écran de la page de résultats de recherche Google pour la recherche «&nbsp;http archive&nbsp;». Le lien visible «&nbsp;Passer au contenu principal&nbsp;» est entouré d’un surlignage bleu et une boîte jaune superposée avec une flèche rouge pointant vers le lien de saut indique en anglais «&nbsp;Un lien d’évitement sur google.com&nbsp;».</div>
-  <figcaption id="fig7-caption">Figure 7. Ce à quoi un lien d’évitement ressemble sur google.com.</figcaption>
-</figure>
+{{ figure_markup(
+  image="example-of-a-skip-link-on-google.com.png",
+  caption="Ce à quoi un lien d’évitement ressemble sur google.com.",
+  description="Capture d’écran de la page de résultats de recherche Google pour la recherche «&nbsp;http archive&nbsp;». Le lien visible «&nbsp;Passer au contenu principal&nbsp;» est entouré d’un surlignage bleu et une boîte jaune superposée avec une flèche rouge pointant vers le lien de saut indique en anglais «&nbsp;Un lien d’évitement sur google.com&nbsp;».",
+  width=600,
+  height=333
+  )
+}}
 
-En fait, vous n’avez même pas besoin de quitter ce site, car nous [les utilisons ici aussi](https://github.com/HTTPArchive/almanac.httparchive.org/pull/645)&nbsp;!
+En fait, vous n’avez même pas besoin de quitter ce site, car nous <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/pull/645">les utilisons ici aussi</a>&nbsp;!
 
 Il est difficile de déterminer avec précision ce qu’est un lien d’évitement lors de l’analyse des sites. Pour cette analyse, si nous avons trouvé un lien-ancre (`href=#heading1`) dans les 3 premiers liens de la page, nous l’avons défini comme une page avec un lien d’évitement. Donc, 14,19&nbsp;% est une limite supérieure stricte.
 
 ### Raccourcis
 
-Des raccourcis clavier définis via [`aria-keyshortcuts`](https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts) ou [`accesskey`](https://developer.mozilla.org/fr/docs/Web/HTML/Attributs_universels/accesskey) peuvent être utilisés de deux manières&nbsp;:
+Des raccourcis clavier définis via <a hreflang="en" href="https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts">`aria-keyshortcuts`</a> ou [`accesskey`](https://developer.mozilla.org/fr/docs/Web/HTML/Attributs_universels/accesskey) peuvent être utilisés de deux manières&nbsp;:
 
 1. activer un élément sur la page, comme un lien ou un bouton&nbsp;;
 
 2. donner le focus à un certain élément de la page. Par exemple, déplacer le focus sur un champ de la page, permettant à l’utilisateur ou l’utilisatrice de commencer à taper dedans.
 
-L’adoption de [`aria-keyshortcuts`](https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts) était quasiment absente de notre échantillon, elle n’était utilisée que sur 159 sites sur plus de 4 millions analysés. L’attribut [`accesskey`](https://developer.mozilla.org/fr/docs/Web/HTML/Attributs_universels/accesskey) a été utilisé plus fréquemment, se trouvant sur 2,47&nbsp;% des pages web (1,74&nbsp;% sur les mobiles). Nous pensons que l’utilisation accrue des raccourcis sur le bureau est due au fait que les développeurs et développeuses s’attendent à ce que les sites mobiles ne soient accessibles que via un écran tactile et non un clavier.
+L’adoption de <a hreflang="en" href="https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts">`aria-keyshortcuts`</a> était quasiment absente de notre échantillon, elle n’était utilisée que sur 159 sites sur plus de 4 millions analysés. L’attribut [`accesskey`](https://developer.mozilla.org/fr/docs/Web/HTML/Attributs_universels/accesskey) a été utilisé plus fréquemment, se trouvant sur 2,47&nbsp;% des pages web (1,74&nbsp;% sur les mobiles). Nous pensons que l’utilisation accrue des raccourcis sur le bureau est due au fait que les développeurs et développeuses s’attendent à ce que les sites mobiles ne soient accessibles que via un écran tactile et non un clavier.
 
 Ce qui est particulièrement surprenant ici, c’est que 15,56&nbsp;% des sites mobiles et 13,03&nbsp;% des sites de bureau qui utilisent des touches de raccourci attribuent le même raccourci à plusieurs éléments différents. Cela signifie que les navigateurs doivent deviner à quel élément se rapporte cette touche de raccourci.
 
@@ -225,35 +235,35 @@ Malgré cela, seulement 4,32&nbsp;% des pages avec des tableaux fournissent des 
 
 ### L’utilisation d’ARIA
 
-L’une des spécifications les plus populaires et les plus utilisées pour l’accessibilité sur le web est la norme [Accessible Rich Internet Applications](https://www.w3.org/WAI/standards-guidelines/aria/) (ARIA). Cette norme offre un large éventail d’attributs HTML supplémentaires pour aider à transmettre l’objectif derrière les éléments visuels (c’est-à-dire leur signification sémantique) et les types d’actions dont ils sont capables.
+L’une des spécifications les plus populaires et les plus utilisées pour l’accessibilité sur le web est la norme <a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/aria/">Accessible Rich Internet Applications</a> (ARIA). Cette norme offre un large éventail d’attributs HTML supplémentaires pour aider à transmettre l’objectif derrière les éléments visuels (c’est-à-dire leur signification sémantique) et les types d’actions dont ils sont capables.
 
 L’utilisation correcte et appropriée d’ARIA peut être difficile. Par exemple, sur les pages utilisant des attributs ARIA, 12,31&nbsp;% ont des valeurs non valides en attribut. Cela est problématique car toute erreur dans l’utilisation d’un attribut ARIA n’a aucun effet visuel sur la page. Certaines de ces erreurs peuvent être détectées à l’aide d’un outil de validation automatisé, mais généralement elles nécessitent l’utilisation réelle d’un logiciel d’assistance (comme un lecteur d’écran). Cette section examinera comment ARIA est utilisé sur le web, et en particulier quelles parties de la norme sont les plus répandues.
 
-<figure>
-  <a href="/static/images/2019/accessibility/fig8.png">
-    <img src="/static/images/2019/accessibility/fig8.png" alt="Figure 8. Pourcentage du nombre total de pages par rapport aux attributs ARIA." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=792161340&amp;format=interactive">
-  </a>
-  <div id="fig8-description" class="visually-hidden">Graphique à barres verticales affichant des données en pourcentage, allant de 0 à 25 de 5 en 5, par rapport aux barres représentant chaque attribut. `aria-hidden`&nbsp;: 23,46&nbsp;%, `aria-label`&nbsp;: 17,67&nbsp;%, `aria-expanded`&nbsp;: 8,68&nbsp;%, `aria-current`&nbsp;: 7,76&nbsp;%, `aria-labelledby`&nbsp;: 6,85&nbsp;%, `aria-controls`&nbsp;: 3,56&nbsp;%, `aria-haspopup`&nbsp;: 2,62&nbsp;%, `aria-invalid`&nbsp;: 2,68&nbsp;%, `aria-describedby`&nbsp;: 1,69&nbsp;%, `aria-live`&nbsp;: 1,04&nbsp;%, `aria-required`&nbsp;: 1&nbsp;%</div>
-  <figcaption id="fig8-caption" >Figure 8. Pourcentage du nombre total de pages par rapport aux attributs ARIA.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig8.png",
+  caption="Pourcentage du nombre total de pages par rapport aux attributs ARIA.",
+  description="Graphique à barres verticales affichant des données en pourcentage, allant de 0 à 25 de 5 en 5, par rapport aux barres représentant chaque attribut. `aria-hidden`&nbsp;: 23,46&nbsp;%, `aria-label`&nbsp;: 17,67&nbsp;%, `aria-expanded`&nbsp;: 8,68&nbsp;%, `aria-current`&nbsp;: 7,76&nbsp;%, `aria-labelledby`&nbsp;: 6,85&nbsp;%, `aria-controls`&nbsp;: 3,56&nbsp;%, `aria-haspopup`&nbsp;: 2,62&nbsp;%, `aria-invalid`&nbsp;: 2,68&nbsp;%, `aria-describedby`&nbsp;: 1,69&nbsp;%, `aria-live`&nbsp;: 1,04&nbsp;%, `aria-required`&nbsp;: 1&nbsp;%",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=792161340&format=interactive"
+  )
+}}
 
 #### L’attribut `role`
 
 L’attribut `role` est le plus important de toute la spécification ARIA. Il est utilisé pour informer le navigateur de la finalité d’un élément HTML donné (c’est-à-dire la signification sémantique). Par exemple, un élément `<div>` ayant via CSS le visuel d’un bouton devrait se voir attribuer le rôle ARIA de `button`.
 
-Actuellement, 46,91&nbsp;% des pages utilisent au moins un attribut de rôle ARIA. Dans la figure 9 ci-dessous, nous avons compilé une liste des dix valeurs de rôles ARIA les plus utilisées.
+Actuellement, 46,91&nbsp;% des pages utilisent au moins un attribut de rôle ARIA. Dans la figure 9.9 ci-dessous, nous avons compilé une liste des dix valeurs de rôles ARIA les plus utilisées.
 
-<figure>
-  <a href="/static/images/2019/accessibility/fig9.png">
-    <img src="/static/images/2019/accessibility/fig9.png" alt="Figure 9. Top 10 des rôles ARIA." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=176877741&amp;format=interactive">
-  </a>
-  <div id="fig9-description" class="visually-hidden">Graphique à barres verticales avec des barres pour chaque type de rôle par rapport au pourcentage de sites utilisant de 0 à 25 de 5 en 5. `navigation`&nbsp;: 20,4&nbsp;%&nbsp;; `search`&nbsp;: 15,49&nbsp;%&nbsp;; `main`&nbsp;: 14,39&nbsp;%&nbsp;; `banner`&nbsp;: 13,62&nbsp;%&nbsp;; `contentinfo`&nbsp;: 11,23&nbsp;%&nbsp;; `button`&nbsp;: 10,59&nbsp;%&nbsp;; `dialog`&nbsp;: 7,87&nbsp;%&nbsp;; `complementary`&nbsp;: 6,06&nbsp;%&nbsp;; `menu`&nbsp;: 4,71&nbsp;%&nbsp;; `form`&nbsp;: 3,75&nbsp;%</div>
-  <figcaption id="fig9-caption" >Figure 9. Top 10 des rôles ARIA.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig9.png",
+  caption="Top 10 des rôles ARIA.",
+  description="Graphique à barres verticales avec des barres pour chaque type de rôle par rapport au pourcentage de sites utilisant de 0 à 25 de 5 en 5. `navigation`&nbsp;: 20,4&nbsp;%&nbsp;; `search`&nbsp;: 15,49&nbsp;%&nbsp;; `main`&nbsp;: 14,39&nbsp;%&nbsp;; `banner`&nbsp;: 13,62&nbsp;%&nbsp;; `contentinfo`&nbsp;: 11,23&nbsp;%&nbsp;; `button`&nbsp;: 10,59&nbsp;%&nbsp;; `dialog`&nbsp;: 7,87&nbsp;%&nbsp;; `complementary`&nbsp;: 6,06&nbsp;%&nbsp;; `menu`&nbsp;: 4,71&nbsp;%&nbsp;; `form`&nbsp;: 3,75&nbsp;%",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=176877741&format=interactive"
+  )
+}}
 
-En examinant les résultats de la figure 9, nous avons trouvé deux informations intéressantes&nbsp;: la mise à jour des <i lang="en">frameworks</i> d’interface pourrait avoir un impact profond sur l’accessibilité sur le web, et le nombre impressionnant de sites tentant de rendre les modales accessibles.
+En examinant les résultats de la figure 9.9, nous avons trouvé deux informations intéressantes&nbsp;: la mise à jour des <i lang="en">frameworks</i> d’interface pourrait avoir un impact profond sur l’accessibilité sur le web, et le nombre impressionnant de sites tentant de rendre les modales accessibles.
 
-##### Mettre à jour les <i lang="en">frameworks</i> d’interface pourrait être la voie à suivre pour l’accessibilité du web
+##### Mettre à jour les <i lang="en">frameworks</i> d’interface pourrait être la voie à suivre pour l’accessibilité du web {mettre-à-jour-les-frameworks-d’interface-pourrait-être-la-voie-à-suivre-pour-l’accessibilité-du-web}
 
 Les 5 premiers rôles, tous apparaissant sur 11&nbsp;% des pages ou plus, sont des rôles de type <i lang="en">landmark</i>. Ils sont utilisés pour faciliter la navigation, pas pour décrire les fonctionnalités d’un widget, comme une zone de liste déroulante. C’est un résultat surprenant, car le principal facteur de motivation du développement d’ARIA était justement de donner aux développeurs et développeuses web la possibilité de décrire la fonctionnalité de widgets constitués d’éléments HTML génériques (comme un `<div>`).
 
@@ -289,7 +299,7 @@ Nous avons également constaté que 3,52&nbsp;% des sites avec des formulaires u
 
 Les `id` peuvent être utilisés en HTML pour lier deux éléments ensemble. Par exemple, l’élément [`<label>`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/Label) fonctionne de cette façon. Vous spécifiez l’`id` du champ de saisie que cette étiquette décrit et le navigateur les relie. Le résultat&nbsp;? Les utilisateurs peuvent maintenant cliquer sur cette étiquette pour se concentrer sur le champ de saisie et les lecteurs d’écran utiliseront cette étiquette comme description.
 
-Malheureusement, 34,62&nbsp;% des sites ont des `id` en double, ce qui signifie que sur de nombreux sites, l’`id` spécifié par l'utilisateur peut faire référence à plusieurs entrées différentes. Ainsi, lorsqu’une personne clique sur l’étiquette pour sélectionner un champ, il peut finir par [sélectionner quelque chose de différent](https://www.deque.com/blog/unique-id-attributes-matter/) que ce qui était souhaité. Comme vous pouvez l’imaginer, cela pourrait avoir des conséquences négatives dans un cas comme un panier d’achat.
+Malheureusement, 34,62&nbsp;% des sites ont des `id` en double, ce qui signifie que sur de nombreux sites, l’`id` spécifié par l'utilisateur peut faire référence à plusieurs entrées différentes. Ainsi, lorsqu’une personne clique sur l’étiquette pour sélectionner un champ, il peut finir par <a hreflang="en" href="https://www.deque.com/blog/unique-id-attributes-matter/">sélectionner quelque chose de différent</a> que ce qui était souhaité. Comme vous pouvez l’imaginer, cela pourrait avoir des conséquences négatives dans un cas comme un panier d’achat.
 
 Ce problème est encore plus prononcé pour les lecteurs d’écran, car leurs utilisateurs peuvent ne pas être en mesure de vérifier visuellement ce qui est sélectionné. De plus, de nombreux attributs ARIA, tels que [`aria-describedby`](https://developer.mozilla.org/fr/docs/Accessibilit%C3%A9/ARIA/Techniques_ARIA/Utiliser_l_attribut_aria-describedby) et [`aria-labelledby`](https://developer.mozilla.org/fr/docs/Accessibilit%C3%A9/ARIA/Techniques_ARIA/Utiliser_l_attribut_aria-labelledby),   fonctionnent de manière similaire à l’élément d’étiquette détaillé ci-dessus. Donc, pour rendre votre site accessible, la suppression de tous les `id` en double est une bonne première étape.
 

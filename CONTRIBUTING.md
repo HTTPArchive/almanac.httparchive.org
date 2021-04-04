@@ -1,5 +1,9 @@
 # Contributing
 
+## 2021
+
+Thanks for your interest in contributing to the Web Almanac! We're currently surveying contributors for the 2021 edition, so please fill out [this form](https://forms.gle/M4MxvGRvsEtBcBwr7) and tell us how you'd like to contribute and how to reach you, and you'll get an email from us in mid-2021 when it's time to start planning.
+
 ![star-shaped Almanac character](https://almanac.httparchive.org/static/images/avatars/0.jpg)
 
 There are several ways to contribute to the Web Almanac:

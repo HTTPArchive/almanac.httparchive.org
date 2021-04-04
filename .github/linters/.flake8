@@ -3,3 +3,5 @@ max-line-length = 120
 per-file-ignores =
     # The __init__.py file imports the routes and errors file at bottom
     /github/workspace/src/server/__init__.py:E402,F401
+    /tmp/lint/src/server/__init__.py:E402,F401
+    /tmp/lint/server/__init__.py:E402,F401

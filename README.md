@@ -10,16 +10,23 @@ The Web Almanac is HTTP Archive's annual **state of the web** report.
 
 Our mission is to combine the raw stats and trends of the HTTP Archive with the expertise of the web community. The Web Almanac is a comprehensive report on the state of the web, backed by real data and trusted web experts. It is comprised of 20 chapters spanning aspects of page content, user experience, publishing, and distribution.
 
-The 2019 Web Almanac is available in:
-- [English](https://almanac.httparchive.org/en/2019/)
-- [French](https://almanac.httparchive.org/fr/2019/)
-- [Japanese](https://almanac.httparchive.org/ja/2019/)
-- [Simplified Chinese](https://almanac.httparchive.org/zh-CN/2019/)
-- [Spanish](https://almanac.httparchive.org/es/2019/)
+The Web Almanac is available in the original [English](https://almanac.httparchive.org/en/) but has also been translated (sometimes only partially) to:
+- [Chinese (Simplified)](https://almanac.httparchive.org/zh-CN/)
+- [Chinese (Traditional)](https://almanac.httparchive.org/zh-TW/)
+- [Dutch](https://almanac.httparchive.org/nl/)
+- [French](https://almanac.httparchive.org/fr/)
+- [Hindi](https://almanac.httparchive.org/hi/)
+- [Italian](https://almanac.httparchive.org/it/)
+- [Japanese](https://almanac.httparchive.org/ja/)
+- [Portuguese](https://almanac.httparchive.org/pt/)
+- [Russian](https://almanac.httparchive.org/ru/)
+- [Spanish](https://almanac.httparchive.org/es/)
+- [Turkish](https://almanac.httparchive.org/tr/)
+- [Ukrainian](https://almanac.httparchive.org/uk/)
 
 ## Contributing
 
-See [our contributing guide](CONTRIBUTING.md).
+See [our contributing guide](CONTRIBUTING.md). To run the Web Almanac locally please see [src/README.md](src/README.md).
 
 ## 2020 Timeline
 
@@ -28,7 +35,8 @@ See [our contributing guide](CONTRIBUTING.md).
 - August 2020: Gathering HTTP Archive data
 - September 2020: Analyzing data
 - October 2020: Writing, editing, and translating content
-- November 2020: Publishing the 2020 edition
+- December 2020: Publishing the 2020 edition
+- December 2020 onwards: [Translating the Web Almanac to as many languages as possible](https://github.com/HTTPArchive/almanac.httparchive.org/issues/923).
 
 ## Where to find us
 

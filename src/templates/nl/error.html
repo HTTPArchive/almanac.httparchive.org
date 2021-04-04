@@ -1,0 +1,24 @@
+{% extends "base/error.html" %}
+
+{% block unknown_error %}Onbekende Fout{% endblock %}
+
+{% 
+  set localizedStatusCode = {
+    400: "Foutief Verzoek",
+    404: "Pagina Niet Gevonden",
+    500: "Interne Server Fout",
+    502: "Tijdelijke Serverfout"
+  }
+%}
+{% macro expandedTitle(errorTitle) %}Fout: {{ errorTitle }}{% endmacro %}
+{%
+  set localizedErrorMessage = {
+    "Unsupported year requested": "Niet-ondersteund jaar aangevraagd",
+    "Unsupported chapter requested": "Niet-ondersteund hoofdstuk aangevraagd",
+    "Unsupported language requested": "Niet-ondersteunde taal aangevraagd",
+    "Not Found": "De opgevraagde URL is niet gevonden op de server. Als u de URL handmatig heeft ingevoerd, controleer dan uw spelling en probeer het opnieuw."
+  }
+%}
+{% macro expandedErrorMessage(errorCode, errorDescription, errorMessage) %}
+{{ errorCode }} <i lang="en">{{ errorDescription }}</i>: {{ errorMessage }}
+{% endmacro %}

@@ -20,8 +20,8 @@ header.alt-bg {
     '. chapter .'
     'contributors contributors contributors'
     '. methodology .';
-  /* 1280 is same as the .container width */
-  grid-template-columns: 1fr minmax(auto, 1280px) 1fr;
+  /* 80em is same as the .container width */
+  grid-template-columns: 1fr minmax(auto, 80em) 1fr;
 }
 
 .featured-chapter,
@@ -61,7 +61,8 @@ p {
   -ms-grid-column: 1;
   grid-area: intro;
   width: 100%;
-  max-width: 440px;
+  max-width: 550px;
+  max-width: 34.375rem;
   /* match the .container side padding */
   padding-left: 20px;
 }
@@ -77,13 +78,16 @@ p {
   -ms-grid-column: 2;
   grid-area: image;
   max-height: 485px;
+  max-height: 30.3125rem;
   max-width: 485px;
+  max-width: 30.3125rem;
 }
 
 .intro-image-wrapper svg {
   position: relative;
   top: 25.5px;
   fill: #f7f779;
+  font-size: 16px;
 }
 
 .intro-image-wrapper img {
@@ -119,6 +123,7 @@ p {
   -ms-grid-row: 2;
   grid-area: chapter;
   padding: 120px 0;
+  padding: 7.5rem 0;
 }
 
 .featured-chapter h1 {
@@ -153,13 +158,20 @@ p {
   text-align: center;
 }
 
+.featured-chapter-content-data div {
+  padding: 0 3px;
+}
+
 .featured-chapter-content-data-item div:first-of-type {
   font-size: 2rem;
   font-weight: bold;
+  padding-bottom: 0.5rem;
 }
 
 /* Contributors */
 .contributors-container {
+  padding-left: 180px;
+  padding-left: min(180px, 15vw);
   -ms-grid-row: 3;
   grid-area: contributors;
   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDIiIGhlaWdodD0iMzMwIiB2aWV3Qm94PSIwIDAgMzAyIDMzMCI+CiAgPHBhdGggb3BhY2l0eT0iLjMiIGZpbGw9IiNmN2Y3NzkiIGQ9Ik0tMTcxMiAyNTdIMjI1djczaC0xOTM3eiIvPgogIDxwYXRoIG9wYWNpdHk9Ii45IiBmaWxsPSIjYThjYWJhIiBkPSJNLTE2NDAgMTM2SDI5N3Y3M2gtMTkzN3oiLz4KICA8cGF0aCBvcGFjaXR5PSIuOSIgZmlsbD0iI2Y3Zjc3OSIgZD0iTS0xNjc3IDE2NkgyNjB2NzNoLTE5Mzd6Ii8+CiAgPHBhdGggb3BhY2l0eT0iLjkiIGZpbGw9IiM0YTMyNDQiIGQ9Ik0tMTc3MiAzSDE2NXY3M2gtMTkzN3oiLz4KPC9zdmc+);
@@ -171,10 +183,6 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.contributors .btn {
-  white-space: nowrap;
 }
 
 .people {
@@ -209,6 +217,7 @@ p {
   font-family: 'Poppins', sans-serif;
   color: #fff;
   font-size: 600px;
+  font-size: min(600px, 35vw);
   font-weight: bold;
   pointer-events: none;
   height: 100%;
@@ -220,7 +229,7 @@ p {
 .methodology-container {
   -ms-grid-row: 4;
   grid-area: methodology;
-  padding: 0 60px;
+  padding: 0 min(60px, 5vw);
 }
 
 .methodology {
@@ -233,9 +242,12 @@ p {
 .methodology-data {
   display: flex;
   margin: 20px 0 30px 0;
+  margin: min(20px, 5vw) 0 min(30px, 8vw) 0;
   padding: 20px 30px;
+  padding: min(20px, 5vw) min(30px, 8vw);
   border-radius: 5px;
   box-shadow: 0 0 5px 5px #f6f7f9;
+  flex-wrap: wrap;
 }
 
 .websites-tested {
@@ -288,17 +300,14 @@ p {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) calc(70% - 1px), rgb(192, 192, 192) calc(50%), rgba(0, 0, 0, 0) calc(70% + 1px));
 }
 
-@media (max-width: 1400px) and (min-width: 901px) {
-  .contributors-container {
-    padding-left: 180px;
-  }
-  
+@media (max-width: 87.5em) and (min-width: 56.26em) {
   .people {
     height: auto;
   }
 
   .people-number {
     font-size: 300px;
+    font-size: min(300px, 25vw);
     overflow: visible;
     line-height: 400px;
     top: 50px;
@@ -330,7 +339,7 @@ p {
   }
 }
 
-@media (max-width: 900px) and (min-width: 601px) {
+@media (max-width: 56.25em) and (min-width: 37.51em) {
   header.alt-bg {
     padding-bottom: 1800px;
     padding-bottom: 105.88em;
@@ -350,6 +359,7 @@ p {
     justify-items: center;
     justify-content: center;
     padding: 40px 60px;
+    padding: min(40px, 3vw) min(60px, 4vw);
   }
 
   .intro {
@@ -392,6 +402,7 @@ p {
 
   .people-number {
     font-size: 300px;
+    font-size: min(300px, 25vw);
     overflow: visible;
     line-height: 400px;
     top: 50px;
@@ -446,12 +457,12 @@ p {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 56.25em) {
   .intro-year {
     display: block;
     color: #f7f779;
     font-size: 190px;
-    font-size: min(190px, 40vw);
+    font-size: min(190px, 30vw);
     line-height: 1;
     font-weight: 700;
   }
@@ -480,7 +491,7 @@ p {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 37.5em) {
   header.alt-bg {
     background-size: cover;
     padding-bottom: 1650px;
@@ -499,6 +510,10 @@ p {
     padding-right: 20px;
   }
 
+  #maincontent {
+    grid-template-columns: 1fr minmax(auto, 100%) 1fr;
+  }
+
   .intro-container {
     grid-template-areas:
       'year'
@@ -507,6 +522,7 @@ p {
     justify-items: center;
     justify-content: center;
     overflow: hidden;
+    min-height: 1100px;
   }
 
   .intro {
@@ -519,7 +535,9 @@ p {
 
   .intro p {
     margin-left: 20px;
+    margin-left: min(20px, 5vw);
     margin-right: 20px;
+    margin-right: min(20px, 5vw);
   }
 
   .intro button {
@@ -544,7 +562,9 @@ p {
 
   .featured-chapter div {
     margin-left: 20px;
+    margin-left: min(20px, 5vw);
     margin-right: 20px;
+    margin-right: min(20px, 5vw);
   }
 
   .featured-chapter-content {
@@ -558,6 +578,7 @@ p {
   /* Contributors */
   .contributors-container {
     padding: 0 60px 340px;
+    padding: 0 min(60px, 5vw) 21.25rem; /* constraint side padding for browsers that zoom it */
   }
 
   .rectangles {
@@ -574,7 +595,9 @@ p {
 
   .contributors div {
     margin-left: 20px;
+    margin-left: min(20px, 5vw);
     margin-right: 20px;
+    margin-right: min (20px, 5vw);
   }
 
   .people {
@@ -584,15 +607,18 @@ p {
   }
 
   .people-number {
-    font-size: 240px;
-    line-height: 240px;
+    font-size: 220px;
+    font-size: min(220px, 60vw);
+    line-height: 220px;
     overflow: visible;
     top: 40px;
+    top: min(40px, 40vw);
     position: relative;
   }
 
   .people .character {
     width: 80px;
+    width: min(80px, 30vw);
   }
 
   #character-markup {
@@ -603,6 +629,7 @@ p {
   #character-star {
     bottom: -20px;
     left: 130px;
+    left: min(130px, 35vw);
   }
 
   #character-hat {
@@ -618,11 +645,14 @@ p {
   .methodology-info {
     width: initial;
     margin-left: 20px;
+    margin-left: min(20px, 5vw);
     margin-right: 20px;
+    margin-right: min(20px, 5vw);
     text-align: center;
   }
 
   .methodology-characters {
+    margin-top: 20px;
     width: 350px;
   }
 
