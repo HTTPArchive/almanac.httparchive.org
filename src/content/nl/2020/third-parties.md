@@ -190,7 +190,7 @@ Aan de andere kant van het spectrum vertegenwoordigen de categorieën CDN, Inhou
 
 ### <span lang="en">Cacheability</span> {cacheability}
 
-Sommige reacties van derden moeten altijd in de cache worden opgeslagen. Media zoals afbeeldingen en video's die door een derde partij worden aangeboden, of JavaScript-bibliotheken zijn goede kandidaten. Aan de andere kant mogen trackingpixels en analysebakens nooit in de cache worden opgeslagen. De resultaten laten zien dat in totaal tweederde van de verzoeken van derden wordt bediend met een geldige caching-header, zoals `cache-control`.
+Sommige reacties van derden moeten altijd in de cache worden opgeslagen. Media zoals afbeeldingen en video's die door een derde partij worden aangeboden, of JavaScript-bibliotheken zijn goede kandidaten. Aan de andere kant mogen trackingpixels en analysebakens nooit in de cache worden opgeslagen. De resultaten laten zien dat in totaal tweederde van de verzoeken van derden wordt bediend met een geldige caching-header, zoals `Cache-control`.
 
 {{ figure_markup(
   image="requests-cached-by-content-type.png",
