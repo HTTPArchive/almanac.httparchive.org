@@ -615,7 +615,7 @@ Googleがモバイルファーストインデックスだけでなく、モバ�
   )
 }}
 
-#### rel=nofollow`、`ugc`、`sponsored`属性の使用法
+#### `rel=nofollow`、`ugc`、`sponsored`属性の使用法
 
 2019年9月、<a hreflang="en" href="https://webmasters.googleblog.com/2019/09/evolving-nofollow-new-ways-to-identify.html">Googleが属性を導入しました</a>これにより、パブリッシャーはリンクをスポンサー付きコンテンツまたはユーザー生成コンテンツとして分類できます。 これらの属性は、以前は<a hreflang="en" href="https://googleblog.blogspot.com/2005/01/preventing-comment-spam.html">2005年に導入された`rel=nofollow`へ追加されます</a>。 新しい属性 `rel=ugc`と`rel=sposnsored`は、これらのリンクが特定のWebページに表示される理由を明確化または限定することを目的としています。
 
