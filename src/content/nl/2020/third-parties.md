@@ -129,7 +129,7 @@ Dit toont een verschuiving wanneer [vergeleken met 2019](../2019/third-parties#r
 
 ### Domeinen van derden
 
-Wanneer we dieper ingaan op domeinen die inhoud van derden aanbieden, zien we dat Google Fonts verreweg de meest voorkomende is. Het is aanwezig op meer dan 7,5% van de geteste mobiele pagina's. Hoewel lettertypen slechts ongeveer 3% van de inhoud van derden uitmaken, worden deze bijna allemaal geleverd door de Google Fonts-service. Als uw pagina Google Fonts gebruikt, volg dan de <a hreflang="en" href="https://csswizardry.com/2020/05/the-fastest-google-fonts/">best practices</a> om de best mogelijke gebruikerservaring te garanderen.
+Wanneer we dieper ingaan op domeinen die inhoud van derden aanbieden, zien we dat Google Fonts verreweg de meest voorkomende is. Het is aanwezig op meer dan 7,5% van de geteste mobiele pagina's. Hoewel lettertypen slechts ongeveer 3% van de inhoud van derden uitmaken, worden deze bijna allemaal geleverd door de Google Fonts-service. Als uw pagina Google Fonts gebruikt, volg dan de <a hreflang="en" href="https://csswizardry.com/2020/05/the-fastest-google-fonts/">beste praktijken</a> om de best mogelijke gebruikerservaring te garanderen.
 
 {{ figure_markup(
   image="top-domains-by-prevalence.png",
