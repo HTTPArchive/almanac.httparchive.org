@@ -197,7 +197,7 @@ These statistics are interesting when compared with last years data:
   )
 }}
 
-While we see a slight increase in the use of the `Cache-Control` header (1.8%), we also see a minimal decrease in the use of the older `Expires` header (0.2%). On Desktop we actually see a marginal increase of `Cache-Control` (1.3%), with a smaller increase on `Expiries` (0.8%) Effectively, more desktop sites look to be adding `Cache-Control` header without the `Expires` header.
+While we see a slight increase in the use of the `Cache-Control` header (1.8%), we also see a minimal decrease in the use of the older `Expires` header (0.2%). On Desktop we actually see a marginal increase of `Cache-Control` (1.3%), with a smaller increase on `Expires` (0.8%) Effectively, more desktop sites look to be adding `Cache-Control` header without the `Expires` header.
 
 As we delve into the various directives allowed in the `Cache-Control` header, we will see how its flexibility and power make it a better fit in many cases.
 
