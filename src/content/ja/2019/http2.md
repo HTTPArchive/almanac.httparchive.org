@@ -86,16 +86,50 @@ HTTP/2には次の重要な概念があります。
 
 結果は、HTTP/2の使用が、現在過半数のプロトコルであることを示しています。これは、正式な標準化からわずか4年後の目覚しい偉業です。要求ごとのすべてのHTTPバージョンの内訳を見ると、次のことがわかります。
 
-<figure markdown>
-| Protocol | デスクトップ | モバイル  | 合計   |
-| -------- | ---------- | ------- | ------ |
-|          |      5.60% |   0.57% |  2.97% |
-| HTTP/0.9 |      0.00% |   0.00% |  0.00% |
-| HTTP/1.0 |      0.08% |   0.05% |  0.06% |
-| HTTP/1.1 |     40.36% |  45.01% | 42.79% |
-| HTTP/2   |     53.96% |  54.37% | 54.18% |
-
-<figcaption>{{ figure_link(caption="要求によるHTTPバージョンの使用。") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Protocol</th>
+        <th>デスクトップ</th>
+        <th>モバイル</th>
+        <th>合計</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td class="numeric">5.60%</td>
+        <td class="numeric">0.57%</td>
+        <td class="numeric">2.97%</td>
+      </tr>
+      <tr>
+        <td>HTTP/0.9</td>
+        <td class="numeric">0.00%</td>
+        <td class="numeric">0.00%</td>
+        <td class="numeric">0.00%</td>
+      </tr>
+      <tr>
+        <td>HTTP/1.0</td>
+        <td class="numeric">0.08%</td>
+        <td class="numeric">0.05%</td>
+        <td class="numeric">0.06%</td>
+      </tr>
+      <tr>
+        <td>HTTP/1.1</td>
+        <td class="numeric">40.36%</td>
+        <td class="numeric">45.01%</td>
+        <td class="numeric">42.79%</td>
+      </tr>
+      <tr>
+        <td>HTTP/2</td>
+        <td class="numeric">53.96%</td>
+        <td class="numeric">54.37%</td>
+        <td class="numeric">54.18%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="要求によるHTTPバージョンの使用。") }}</figcaption>
 </figure>
 
 図20.3は、HTTP/1.1およびHTTP/2が、予想どおり大部分の要求で使用されるバージョンであることを示しています。古いHTTP/1.0とHTTP/0.9プロトコルでは、ごく少数のリクエストしかありません。面倒なことに、特にデスクトップでHTTP Archiveクロールによってプロトコルは正しく追跡されなかった割合が大きくなっています。これを掘り下げた結果、さまざまな理由が示され、そのいくつかは説明できますが、いくつかは説明できません。スポットチェックに基づいて、それらは概ねHTTP/1.1リクエストであるように見え、それらを想定するとデスクトップとモバイルの使用は似ています。
@@ -108,30 +142,88 @@ HTTP/2には次の重要な概念があります。
 
 ただし、私たちの調査結果は、Firefoxブラウザーを介した実際の使用状況を調べる<a hreflang="en" href="https://telemetry.mozilla.org/new-pipeline/dist.html#!cumulative=0&measure=HTTP_RESPONSE_VERSION">Mozillaのテレメトリ</a>など、他のソースによって裏付けられています。
 
-<figure markdown>
-| プロトコル | デスクトップ | モバイル  | 合計   |
-| -------- | ---------- | ------- | ------ |
-|          |     0.09%  |   0.08% |  0.08% |
-| HTTP/1.0 |     0.09%  |   0.08% |  0.09% |
-| HTTP/1.1 |    62.36%  |  63.92% | 63.22% |
-| HTTP/2   |    37.46%  |  35.92% | 36.61% |
-
-<figcaption>{{ figure_link(caption="ホームページのHTTPバージョンの使用。") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>プロトコル</th>
+        <th>デスクトップ</th>
+        <th>モバイル</th>
+        <th>合計</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td class="numeric">0.09%</td>
+        <td class="numeric">0.08%</td>
+        <td class="numeric">0.08%</td>
+      </tr>
+      <tr>
+        <td>HTTP/1.0</td>
+        <td class="numeric">0.09%</td>
+        <td class="numeric">0.08%</td>
+        <td class="numeric">0.09%</td>
+      </tr>
+      <tr>
+        <td>HTTP/1.1</td>
+        <td class="numeric">62.36%</td>
+        <td class="numeric">63.92%</td>
+        <td class="numeric">63.22%</td>
+      </tr>
+      <tr>
+        <td>HTTP/2</td>
+        <td class="numeric">37.46%</td>
+        <td class="numeric">35.92%</td>
+        <td class="numeric">36.61%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="ホームページのHTTPバージョンの使用。") }}</figcaption>
 </figure>
 
 ホームページを見て、HTTP/2をサポートするサイト数の大まかな数字を取得するだけでも（少なくともそのホームページで）おもしろいです。図20.4は、全体的な要求よりもサポートが少ないことを示しており、予想どおり約36％です。
 
 HTTP/2は、HTTPSまたは暗号化されていない非HTTPS接続で公式に使用できますが、HTTPS上のブラウザーでのみサポートされます。前述のように、暗号化されたHTTPS接続で新しいプロトコルを非表示にすることで、この新しいプロトコルを理解してないネットワーク機器がその使用を妨げる（拒否する）ことを防ぎます。さらに、HTTPSハンドシェイクにより、クライアントとサーバーがHTTP/2の使用に同意する簡単な方法が可能になります。
 
-<figure markdown>
-| プロトコル | デスクトップ | モバイル  | 合計   |
-| -------- | ---------- | ------- | ------ |
-|          |     0.09%  |   0.10% |  0.09% |
-| HTTP/1.0 |     0.06%  |   0.06% |  0.06% |
-| HTTP/1.1 |    45.81%  |  44.31% | 45.01% |
-| HTTP/2   |    54.04%  |  55.53% | 54.83% |
-
-<figcaption>{{ figure_link(caption=" HTTPSホームページのHTTPバージョンの使用。") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>プロトコル</th>
+        <th>デスクトップ</th>
+        <th>モバイル</th>
+        <th>合計</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td class="numeric">0.09%</td>
+        <td class="numeric">0.10%</td>
+        <td class="numeric">0.09%</td>
+      </tr>
+      <tr>
+        <td>HTTP/1.0</td>
+        <td class="numeric">0.06%</td>
+        <td class="numeric">0.06%</td>
+        <td class="numeric">0.06%</td>
+      </tr>
+      <tr>
+        <td>HTTP/1.1</td>
+        <td class="numeric">45.81%</td>
+        <td class="numeric">44.31%</td>
+        <td class="numeric">45.01%</td>
+      </tr>
+      <tr>
+        <td>HTTP/2</td>
+        <td class="numeric">54.04%</td>
+        <td class="numeric">55.53%</td>
+        <td class="numeric">54.83%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption=" HTTPSホームページのHTTPバージョンの使用。") }}</figcaption>
 </figure>
 
 WebはHTTPSに移行しており、HTTP/2は、HTTPSがパフォーマンスに悪影響を与えるという従来の議論をほぼ完全に覆しています。すべてのサイトがHTTPSに移行しているわけではないため、HTTP/2を利用できないサイトも利用できません。 HTTPSを使用するサイトのみを見ると、図20.5では図20.2の*すべてのリクエスト*の割合と同様に、HTTP/2の採用率が55％前後です。
@@ -140,40 +232,148 @@ HTTP/2のブラウザサポートは強力であり、採用への安全な方�
 
 これは、最新のブラウザとは異なり、サーバーが最新バージョンに自動的にアップグレードしないことが多いため、ブラウザのサポートよりも問題が多くなります。サーバーが定期的に保守され、パッチが適用されている場合でも、多くの場合、HTTP/2のような新機能ではなくセキュリティパッチが適用されます。 HTTP/2をサポートするサイトのサーバーのHTTPヘッダーを最初に見てみましょう。
 
-<figure markdown>
-| サーバー        | デスクトップ | モバイル | 合計   |
-| ------------- | ---------- | -------| ------ |
-| nginx         |     34.04% | 32.48% | 33.19% |
-| cloudflare    |     23.76% | 22.29% | 22.97% |
-| Apache        |     17.31% | 19.11% | 18.28% |
-|               |      4.56% |  5.13% |  4.87% |
-| LiteSpeed     |      4.11% |  4.97% |  4.57% |
-| GSE           |      2.16% |  3.73% |  3.01% |
-| Microsoft-IIS |      3.09% |  2.66% |  2.86% |
-| openresty     |      2.15% |  2.01% |  2.07% |
-| ...           |      ...   |  ...   |  ...   |
-
-<figcaption>{{ figure_link(caption=" HTTP/2に使用されるサーバー。") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>サーバー</th>
+        <th>デスクトップ</th>
+        <th>モバイル</th>
+        <th>合計</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>nginx</td>
+        <td class="numeric">34.04%</td>
+        <td class="numeric">32.48%</td>
+        <td class="numeric">33.19%</td>
+      </tr>
+      <tr>
+        <td>cloudflare</td>
+        <td class="numeric">23.76%</td>
+        <td class="numeric">22.29%</td>
+        <td class="numeric">22.97%</td>
+      </tr>
+      <tr>
+        <td>Apache</td>
+        <td class="numeric">17.31%</td>
+        <td class="numeric">19.11%</td>
+        <td class="numeric">18.28%</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="numeric">4.56%</td>
+        <td class="numeric">5.13%</td>
+        <td class="numeric">4.87%</td>
+      </tr>
+      <tr>
+        <td>LiteSpeed</td>
+        <td class="numeric">4.11%</td>
+        <td class="numeric">4.97%</td>
+        <td class="numeric">4.57%</td>
+      </tr>
+      <tr>
+        <td>GSE</td>
+        <td class="numeric">2.16%</td>
+        <td class="numeric">3.73%</td>
+        <td class="numeric">3.01%</td>
+      </tr>
+      <tr>
+        <td>Microsoft-IIS</td>
+        <td class="numeric">3.09%</td>
+        <td class="numeric">2.66%</td>
+        <td class="numeric">2.86%</td>
+      </tr>
+      <tr>
+        <td>openresty</td>
+        <td class="numeric">2.15%</td>
+        <td class="numeric">2.01%</td>
+        <td class="numeric">2.07%</td>
+      </tr>
+      <tr>
+        <td>…</td>
+        <td class="numeric">…</td>
+        <td class="numeric">…</td>
+        <td class="numeric">…</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption=" HTTP/2に使用されるサーバー。") }}</figcaption>
 </figure>
 
 nginxは、最新バージョンへのインストールまたはアップグレードを容易にするパッケージリポジトリを提供しているため、ここをリードしていることについて驚くことではありません。 cloudflareは最も人気のある[CDN](./cdn)で、デフォルトでHTTP/2を有効にしているため、HTTP/2サイトの大部分をホストしていることについて驚くことはありません。ちなみに、cloudflareは、Webサーバーとして<a hreflang="en" href="https://blog.cloudflare.com/nginx-structural-enhancements-for-http-2-performance/">大幅にカスタマイズ</a>されたバージョンのnginxを使用しています。その後、Apacheの使用率は約20％であり、次に何が隠されているかを選択するサーバー、LiteSpeed、IIS、Google Servlet Engine、nginxベースのopenrestyなどの小さなプレイヤーが続きます。
 
 さらに興味深いのは、HTTP/2をサポート*しない*サーバーです。
 
-<figure markdown>
-| サーバー        | デスクトップ | モバイル | 合計   |
-| ------------- | ---------- | -------| ------ |
-| Apache        |     46.76% | 46.84% | 46.80% |
-| nginx         |     21.12% | 21.33% | 21.24% |
-| Microsoft-IIS |     11.30% |  9.60% | 10.36% |
-|               |      7.96% |  7.59% |  7.75% |
-| GSE           |      1.90% |  3.84% |  2.98% |
-| cloudflare    |      2.44% |  2.48% |  2.46% |
-| LiteSpeed     |      1.02% |  1.63% |  1.36% |
-| openresty     |      1.22% |  1.36% |  1.30% |
-| ...           |      ...   |  ...   |  ...   |
-
-<figcaption>{{ figure_link(caption=" HTTP/1.1以前に使用されるサーバー。") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>サーバー</th>
+        <th>デスクトップ</th>
+        <th>モバイル</th>
+        <th>合計</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Apache</td>
+        <td class="numeric">46.76%</td>
+        <td class="numeric">46.84%</td>
+        <td class="numeric">46.80%</td>
+      </tr>
+      <tr>
+        <td>nginx</td>
+        <td class="numeric">21.12%</td>
+        <td class="numeric">21.33%</td>
+        <td class="numeric">21.24%</td>
+      </tr>
+      <tr>
+        <td>Microsoft-IIS</td>
+        <td class="numeric">11.30%</td>
+        <td class="numeric">9.60%</td>
+        <td class="numeric">10.36%</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="numeric">7.96%</td>
+        <td class="numeric">7.59%</td>
+        <td class="numeric">7.75%</td>
+      </tr>
+      <tr>
+        <td>GSE</td>
+        <td class="numeric">1.90%</td>
+        <td class="numeric">3.84%</td>
+        <td class="numeric">2.98%</td>
+      </tr>
+      <tr>
+        <td>cloudflare</td>
+        <td class="numeric">2.44%</td>
+        <td class="numeric">2.48%</td>
+        <td class="numeric">2.46%</td>
+      </tr>
+      <tr>
+        <td>LiteSpeed</td>
+        <td class="numeric">1.02%</td>
+        <td class="numeric">1.63%</td>
+        <td class="numeric">1.36%</td>
+      </tr>
+      <tr>
+        <td>openresty</td>
+        <td class="numeric">1.22%</td>
+        <td class="numeric">1.36%</td>
+        <td class="numeric">1.30%</td>
+      </tr>
+      <tr>
+        <td>…</td>
+        <td class="numeric">…</td>
+        <td class="numeric">…</td>
+        <td class="numeric">…</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption=" HTTP/1.1以前に使用されるサーバー。") }}</figcaption>
 </figure>
 
 これの一部は、サーバーがHTTP/2をサポートしていてもHTTP/1.1を使用する非HTTPSトラフィックになりますが、より大きな問題はHTTP/2をまったくサポートしないことです。これらの統計では、古いバージョンを実行している可能性が高いApacheとIISのシェアがはるかに大きいことがわかります。
@@ -184,20 +384,64 @@ Linuxディストリビューションの最新バージョン（RHELおよびCe
 
 これら2つの統計をマージすると、サーバーごとのインストールの割合を見ることができます。
 
-<figure markdown>
-| サーバー       | デスクトップ | モバイル |
-| ------------- | ---------- | -------|
-| cloudflare    |     85.40% | 83.46% |
-| LiteSpeed     |     70.80% | 63.08% |
-| openresty     |     51.41% | 45.24% |
-| nginx         |     49.23% | 46.19% |
-| GSE           |     40.54% | 35.25% |
-|               |     25.57% | 27.49% |
-| Apache        |     18.09% | 18.56% |
-| Microsoft-IIS |     14.10% | 13.47% |
-| ...           |      ...   |  ...   |
-
-<figcaption>{{ figure_link(caption=" HTTP/2を提供するために使用される各サーバーのインストールの割合。") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>サーバー</th>
+        <th>デスクトップ</th>
+        <th>モバイル</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>cloudflare</td>
+        <td class="numeric">85.40%</td>
+        <td class="numeric">83.46%</td>
+      </tr>
+      <tr>
+        <td>LiteSpeed</td>
+        <td class="numeric">70.80%</td>
+        <td class="numeric">63.08%</td>
+      </tr>
+      <tr>
+        <td>openresty</td>
+        <td class="numeric">51.41%</td>
+        <td class="numeric">45.24%</td>
+      </tr>
+      <tr>
+        <td>nginx</td>
+        <td class="numeric">49.23%</td>
+        <td class="numeric">46.19%</td>
+      </tr>
+      <tr>
+        <td>GSE</td>
+        <td class="numeric">40.54%</td>
+        <td class="numeric">35.25%</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="numeric">25.57%</td>
+        <td class="numeric">27.49%</td>
+      </tr>
+      <tr>
+        <td>Apache</td>
+        <td class="numeric">18.09%</td>
+        <td class="numeric">18.56%</td>
+      </tr>
+      <tr>
+        <td>Microsoft-IIS</td>
+        <td class="numeric">14.10%</td>
+        <td class="numeric">13.47%</td>
+      </tr>
+      <tr>
+        <td>…</td>
+        <td class="numeric">…</td>
+        <td class="numeric">…</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption=" HTTP/2を提供するために使用される各サーバーのインストールの割合。") }}</figcaption>
 </figure>
 
 ApacheとIISがインストールベースのHTTP/2サポートで1​​8％、14％と遅れを取っていることは明らかです。これは（少なくとも部分的に）アップグレードがより困難であるためです。多くのサーバーがこのサポートを簡単に取得するには、多くの場合、OSの完全なアップグレードが必要です。新しいバージョンのOSが標準になると、これが簡単になることを願っています。
@@ -250,22 +494,54 @@ HTTP/2プッシュは、HTTP/2の大いに宣伝された新機能であるに�
 
 それはさておき、HTTP/2プッシュの使用方法を見てみましょう。
 
-<figure markdown>
-| クライアント  | HTTP/2プッシュを使用するサイト | HTTP/2プッシュを使用するサイト(%) |
-| ----------- | -------------------------- | ----------------------------- |
-| デスクトップ  |  22,581                    | 0.52%                         |
-| モバイル     |  31,452                    | 0.59%                         |
-
-<figcaption>{{ figure_link(caption=" HTTP/2プッシュを使用するサイト。") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>クライアント</th>
+        <th>HTTP/2プッシュを使用するサイト</th>
+        <th>HTTP/2プッシュを使用するサイト(%)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>デスクトップ</td>
+        <td class="numeric">22,581</td>
+        <td class="numeric">0.52%</td>
+      </tr>
+      <tr>
+        <td>モバイル</td>
+        <td class="numeric">31,452</td>
+        <td class="numeric">0.59%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption=" HTTP/2プッシュを使用するサイト。") }}</figcaption>
 </figure>
 
-<figure markdown>
-| クライアント  | プッシュされた平均リクエスト | プッシュされた平均KB |
-| ----------- | ----------------------- | ----------------- |
-| デスクトップ  |  7.86                   | 162.38            |
-| モバイル     |  6.35                   | 122.78            |
-
-<figcaption>{{ figure_link(caption="使用時にプッシュされる量。") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>クライアント</th>
+        <th>プッシュされた平均リクエスト</th>
+        <th>プッシュされた平均KB</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>デスクトップ</td>
+        <td class="numeric">7.86</td>
+        <td class="numeric">162.38</td>
+      </tr>
+      <tr>
+        <td>モバイル</td>
+        <td class="numeric">6.35</td>
+        <td class="numeric">122.78</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="使用時にプッシュされる量。") }}</figcaption>
 </figure>
 
 これらの統計は、HTTP/2プッシュの増加が非常に低いことを示しています。これは、おそらく前述の問題が原因です。ただし、サイトがプッシュを使用する場合、図20.12に示すように1つまたは2つのアセットではなく、プッシュを頻繁に使用する傾向があります。
@@ -305,23 +581,105 @@ HTTP/2には複雑な優先順位付けモデルがあります（非常に複�
 
 [Patrick Meenan](https://twitter.com/patmeenan)は、優先度の高いオンスクリーンイメージを要求する前に、優先度の低いオフスクリーンイメージのロードを意図的にダウンロードしようとする<a hreflang="en" href="https://github.com/pmeenan/http2priorities/tree/master/stand-alone">サンプルテストページ</a>を作成しました。優れたHTTP/2サーバーはこれを認識し、優先度の低い画像を犠牲にして、要求後すぐに優先度の高い画像を送信できるはずです。貧弱なHTTP/2サーバーはリクエストの順番で応答し、優先順位のシグナルを無視します。 [Andy Davies](./contributors#andydavies)には、<a hreflang="en" href="https://github.com/andydavies/http2-prioritization-issues">Patrickのテスト用にさまざまなCDNのステータスを追跡するページ</a>があります。 HTTP Archiveは、クロールの一部としてCDNが使用されるタイミングを識別しこれら2つのデータセットをマージすると、合格または失敗したCDNを使用しているページの割合を知ることができます。
 
-<figure markdown>
-| CDN               | 正しい優先順位付け?       | デスクトップ | モバイル | 合計   |
-| ----------------- | -----------------------| ---------- | ------ | ------ |
-| Not using CDN     | Unknown                | 57.81%     | 60.41% | 59.21% |
-| Cloudflare        | Pass                   | 23.15%     | 21.77% | 22.40% |
-| Google            | Fail                   |  6.67%     |  7.11% |  6.90% |
-| Amazon CloudFront | Fail                   |  2.83%     |  2.38% |  2.59% |
-| Fastly            | Pass                   |  2.40%     |  1.77% |  2.06% |
-| Akamai            | Pass                   |  1.79%     |  1.50% |  1.64% |
-|                   | Unknown                |  1.32%     |  1.58% |  1.46% |
-| WordPress         | Pass                   |  1.12%     |  0.99% |  1.05% |
-| Sucuri Firewall   | Fail                   |  0.88%     |  0.75% |  0.81% |
-| Incapsula         | Fail                   |  0.39%     |  0.34% |  0.36% |
-| Netlify           | Fail                   |  0.23%     |  0.15% |  0.19% |
-| OVH CDN           | Unknown                |  0.19%     |  0.18% |  0.18% |
-
-<figcaption>{{ figure_link(caption="一般的なCDNでのHTTP/2優先順位付けのサポート。") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>CDN</th>
+        <th>正しい優先順位付け</th>
+        <th>デスクトップ</th>
+        <th>モバイル</th>
+        <th>合計</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>CDNを使用しない</td>
+        <td>わからない</td>
+        <td class="numeric">57.81%</td>
+        <td class="numeric">60.41%</td>
+        <td class="numeric">59.21%</td>
+      </tr>
+      <tr>
+        <td>Cloudflare</td>
+        <td>パス</td>
+        <td class="numeric">23.15%</td>
+        <td class="numeric">21.77%</td>
+        <td class="numeric">22.40%</td>
+      </tr>
+      <tr>
+        <td>Google</td>
+        <td>不合格</td>
+        <td class="numeric">6.67%</td>
+        <td class="numeric">7.11%</td>
+        <td class="numeric">6.90%</td>
+      </tr>
+      <tr>
+        <td>Amazon CloudFront</td>
+        <td>不合格</td>
+        <td class="numeric">2.83%</td>
+        <td class="numeric">2.38%</td>
+        <td class="numeric">2.59%</td>
+      </tr>
+      <tr>
+        <td>Fastly</td>
+        <td>パス</td>
+        <td class="numeric">2.40%</td>
+        <td class="numeric">1.77%</td>
+        <td class="numeric">2.06%</td>
+      </tr>
+      <tr>
+        <td>Akamai</td>
+        <td>パス</td>
+        <td class="numeric">1.79%</td>
+        <td class="numeric">1.50%</td>
+        <td class="numeric">1.64%</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>わからない</td>
+        <td class="numeric">1.32%</td>
+        <td class="numeric">1.58%</td>
+        <td class="numeric">1.46%</td>
+      </tr>
+      <tr>
+        <td>WordPress</td>
+        <td>パス</td>
+        <td class="numeric">1.12%</td>
+        <td class="numeric">0.99%</td>
+        <td class="numeric">1.05%</td>
+      </tr>
+      <tr>
+        <td>Sucuri Firewall</td>
+        <td>不合格</td>
+        <td class="numeric">0.88%</td>
+        <td class="numeric">0.75%</td>
+        <td class="numeric">0.81%</td>
+      </tr>
+      <tr>
+        <td>Incapsula</td>
+        <td>不合格</td>
+        <td class="numeric">0.39%</td>
+        <td class="numeric">0.34%</td>
+        <td class="numeric">0.36%</td>
+      </tr>
+      <tr>
+        <td>Netlify</td>
+        <td>不合格</td>
+        <td class="numeric">0.23%</td>
+        <td class="numeric">0.15%</td>
+        <td class="numeric">0.19%</td>
+      </tr>
+      <tr>
+        <td>OVH CDN</td>
+        <td>わからない</td>
+        <td class="numeric">0.19%</td>
+        <td class="numeric">0.18%</td>
+        <td class="numeric">0.18%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="一般的なCDNでのHTTP/2優先順位付けのサポート。") }}</figcaption>
 </figure>
 
 図20.14は、トラフィックのかなりの部分が特定された問題の影響を受けていることを示しており、合計はデスクトップで26.82％、モバイルで27.83％です。これがどの程度の問題であるかは、ページの読み込み方法と、影響を受けるサイトの優先度の高いリソースが遅れて検出されるかどうかによって異なります。
