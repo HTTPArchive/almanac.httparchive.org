@@ -291,27 +291,27 @@ L’utilité de `srcset` dépend généralement de la précision de la requête 
       <tr>
         <td><code>(max-width: 300px) 100vw, 300px</code></td>
         <td class="numeric">1.47</td>
-        <td class="numeric">5%</td>
+        <td class="numeric">5&nbsp;%</td>
       </tr>
       <tr>
         <td><code>(max-width: 150px) 100vw, 150px</code></td>
         <td class="numeric">0.63</td>
-        <td class="numeric">2%</td>
+        <td class="numeric">2&nbsp;%</td>
       </tr>
       <tr>
         <td><code>(max-width: 100px) 100vw, 100px</code></td>
         <td class="numeric">0.37</td>
-        <td class="numeric">1%</td>
+        <td class="numeric">1&nbsp;%</td>
       </tr>
       <tr>
         <td><code>(max-width: 400px) 100vw, 400px</code></td>
         <td class="numeric">0.32</td>
-        <td class="numeric">1%</td>
+        <td class="numeric">1&nbsp;%</td>
       </tr>
       <tr>
         <td><code>(max-width: 80px) 100vw, 80px</code></td>
         <td class="numeric">0.28</td>
-        <td class="numeric">1%</td>
+        <td class="numeric">1&nbsp;%</td>
       </tr>
     </tbody>
   </table>
