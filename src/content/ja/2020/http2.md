@@ -657,14 +657,47 @@ QUICとHTTP/3はUDPで動作するので、HTTP/1.1やHTTP/2のように単純�
 
 TCPステップを必要とせずにHTTP/3を検出する方法を定義するための進行中の作業があります。UDPのブロッキングの問題はTCPベースのHTTPの利用を意味しそうなので、これは最適化と考えるべきでしょう。<a hreflang="en" href="https://tools.ietf.org/html/draft-ietf-dnsop-svcb-https">HTTPS DNSレコード</a> はHTTP Alternative Servicesと似ており、いくつかのCDNはすでに<a hreflang="en" href="https://blog.cloudflare.com/speeding-up-https-and-http-3-negotiation-with-dns/">これらのレコードを使って実験中</a> です。 長期的には、ほとんどのサーバがHTTP/3を提供するようになったら、ブラウザはデフォルトでそれを試みるように切り替えるかもしれません。
 
-<figure markdown>
-| TLSバージョン | HTTP/1.x <br /> デスクトップ | HTTP/1.x <br />モバイル | HTTP/2 <br />デスクトップ | HTTP/2 <br />モバイル |
-| ------------ | ------ | ------ |  ---- | -----|
-| 不明   |  4.06%	 | 4.03%  | 5.05%	 | 7.28%  |
-| TLS 1.2	   | 26.56%  | 24.75% | 23.12%  | 23.14% |
-| TLS 1.3	   | 5.25%	 | 5.11%  | 35.78%  | 35.54% |
-
-<figcaption>{{ figure_link(caption="TLS adoption by HTTP version.", sheets_gid="900140630", sql_file="tls_adoption_by_http_version.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <td></td>
+        <th scope="colgroup" colspan="2">HTTP/1.x</th>
+        <th scope="colgroup" colspan="2">HTTP/2</th>
+      </tr>
+      <tr>
+        <th scope="col">TLSバージョン</th>
+        <th scope="col">デスクトップ</th>
+        <th scope="col">モバイル</th>
+        <th scope="col">デスクトップ</th>
+        <th scope="col">モバイル</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>不明</td>
+        <td class="numeric">4.06%</td>
+        <td class="numeric">4.03%</td>
+        <td class="numeric">5.05%</td>
+        <td class="numeric">7.28%</td>
+      </tr>
+      <tr>
+        <td>TLS 1.2</td>
+        <td class="numeric">26.56%</td>
+        <td class="numeric">24.75%</td>
+        <td class="numeric">23.12%</td>
+        <td class="numeric">23.14%</td>
+      </tr>
+      <tr>
+        <td>TLS 1.3</td>
+        <td class="numeric">5.25%</td>
+        <td class="numeric">5.11%</td>
+        <td class="numeric">35.78%</td>
+        <td class="numeric">35.54%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="TLS adoption by HTTP version.", sheets_gid="900140630", sql_file="tls_adoption_by_http_version.sql") }}</figcaption>
 </figure>
 
 図22.21に示すように、QUICはTLS1.3に依存しており、リクエストの約41%で使用されています。これでは59%のリクエストがHTTP/3をサポートするためにTLSスタックを更新する必要があることになります。

@@ -43,20 +43,59 @@ Instead, as in Hixie's original study,  what we will look at is how many sites i
 
 In 2005, Hixie's survey listed the top few most commonly used elements on pages.  The top 3 were `html`, `head` and `body` which he noted as interesting because they are optional and created by the parser if omitted.  Given that we use the post-parsed DOM,  they'll show up universally in our data.  Thus, we'll begin with the 4th most used element. Below is a comparison of the data from then to now (I've included the frequency comparison here as well just for fun).
 
-<figure data-markdown="1">
-
-2005 (per site) | 2019 (per site) | 2019 (frequency)
--- | -- | --
-title | title | div
-a | meta | a
-img | a | span
-meta | div | li
-br | link | img
-table | script | script
-td | img | p
-tr | span | option
-
-<figcaption>{{ figure_link(caption="Comparison of the top elements from 2005 to 2019.") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>2005 (per site)</th>
+        <th>2019 (per site)</th>
+        <th>2019 (frequency)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>title</td>
+        <td>title</td>
+        <td>div</td>
+      </tr>
+      <tr>
+        <td>a</td>
+        <td>meta</td>
+        <td>a</td>
+      </tr>
+      <tr>
+        <td>img</td>
+        <td>a</td>
+        <td>span</td>
+      </tr>
+      <tr>
+        <td>meta</td>
+        <td>div</td>
+        <td>li</td>
+      </tr>
+      <tr>
+        <td>br</td>
+        <td>link</td>
+        <td>img</td>
+      </tr>
+      <tr>
+        <td>table</td>
+        <td>script</td>
+        <td>script</td>
+      </tr>
+      <tr>
+        <td>td</td>
+        <td>img</td>
+        <td>p</td>
+      </tr>
+      <tr>
+        <td>tr</td>
+        <td>span</td>
+        <td>option</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Comparison of the top elements from 2005 to 2019.") }}</figcaption>
 </figure>
 
 ### Elements per page

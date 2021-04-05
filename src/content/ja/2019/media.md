@@ -278,15 +278,43 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
 * **`<img sizes="(max-width: 300px) 100vw, 300px">`** - これは2番目に人気のあるデザインパターンです。これはWordPressとおそらく他のいくつかのプラットフォームで自動生成されるものです。元の画像サイズ（この場合は300px）に基づいて自動生成されているように見えます。
 * **`<img sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, ...">`** - このパターンは、CSSレスポンシブレイアウトに合わせてカスタムビルドしたデザインパターンです。ブレークポイントごとに使用するサイズの計算が異なります。
 
-<figure markdown>
-`<img sizes>` | 頻度 (百万) | %
--- | -- | --
-(max-width: 300px) 100vw, 300px | 1.47 | 5%
-(max-width: 150px) 100vw, 150px | 0.63 | 2%
-(max-width: 100px) 100vw, 100px | 0.37 | 1%
-(max-width: 400px) 100vw, 400px | 0.32 | 1%
-(max-width: 80px) 100vw, 80px | 0.28 | 1%
-
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th><code>&lt;img sizes&gt;</code></th>
+        <th>頻度 (百万)</th>
+        <th>%</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>(max-width: 300px) 100vw, 300px</code></td>
+        <td class="numeric">1.47</td>
+        <td class="numeric">5%</td>
+      </tr>
+      <tr>
+        <td><code>(max-width: 150px) 100vw, 150px</code></td>
+        <td class="numeric">0.63</td>
+        <td class="numeric">2%</td>
+      </tr>
+      <tr>
+        <td><code>(max-width: 100px) 100vw, 100px</code></td>
+        <td class="numeric">0.37</td>
+        <td class="numeric">1%</td>
+      </tr>
+      <tr>
+        <td><code>(max-width: 400px) 100vw, 400px</code></td>
+        <td class="numeric">0.32</td>
+        <td class="numeric">1%</td>
+      </tr>
+      <tr>
+        <td><code>(max-width: 80px) 100vw, 80px</code></td>
+        <td class="numeric">0.28</td>
+        <td class="numeric">1%</td>
+      </tr>
+    </tbody>
+  </table>
   <figcaption>{{ figure_link(caption="最も人気のある <code>sizes</code> パターンを使用しているページの割合。") }}</figcaption>
 </figure>
 

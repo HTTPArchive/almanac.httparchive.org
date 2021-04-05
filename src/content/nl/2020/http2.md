@@ -657,14 +657,47 @@ Maar zelfs als bekend is dat een server QUIC en HTTP/3 ondersteunt, kan het netw
 
 Er wordt gewerkt aan het definiëren van manieren om HTTP/3 te ontdekken zonder dat de TCP-stap nodig is. Dit moet echter als een optimalisatie worden beschouwd, omdat de problemen met het blokkeren van UDP waarschijnlijk betekenen dat op TCP gebaseerde HTTP blijft hangen. De <a hreflang="en" href="https://tools.ietf.org/html/draft-ietf-dnsop-svcb-https">HTTPS DNS-record</a> is vergelijkbaar met HTTP Alternative Services en sommige CDN's zijn al <a hreflang="en" href="https://blog.cloudflare.com/speeding-up-https-and-http-3-negotiation-with-dns/">aan het experimenteren met deze records</a>. Op de lange termijn, wanneer de meeste servers HTTP/3 aanbieden, kunnen browsers overschakelen naar een standaard poging dat te doen; dat zal lang duren.
 
-<figure markdown>
-| TLS versie | HTTP/1.x <br /> desktop | HTTP/1.x <br />mobiel | HTTP/2 <br />desktop | HTTP/2 <br />mobiel |
-| ------------ | ------ | ------ |  ---- | -----|
-| onbekend   |  4,06%	 | 4,03%  | 5,05%	 | 7,28%  |
-| TLS 1.2	   | 26,56%  | 24,75% | 23,12%  | 23,14% |
-| TLS 1.3	   | 5,25%	 | 5,11%  | 35,78%  | 35,54% |
-
-<figcaption>{{ figure_link(caption="TLS-acceptatie door HTTP-versie.", sheets_gid="900140630", sql_file="tls_adoption_by_http_version.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <td></td>
+        <th scope="colgroup" colspan="2">HTTP/1.x</th>
+        <th scope="colgroup" colspan="2">HTTP/2</th>
+      </tr>
+      <tr>
+        <th scope="col">TLS versie</th>
+        <th scope="col">Desktop</th>
+        <th scope="col">Mobiel</th>
+        <th scope="col">Desktop</th>
+        <th scope="col">Mobiel</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>onbekend</td>
+        <td class="numeric">4.06%</td>
+        <td class="numeric">4.03%</td>
+        <td class="numeric">5.05%</td>
+        <td class="numeric">7.28%</td>
+      </tr>
+      <tr>
+        <td>TLS 1.2</td>
+        <td class="numeric">26.56%</td>
+        <td class="numeric">24.75%</td>
+        <td class="numeric">23.12%</td>
+        <td class="numeric">23.14%</td>
+      </tr>
+      <tr>
+        <td>TLS 1.3</td>
+        <td class="numeric">5.25%</td>
+        <td class="numeric">5.11%</td>
+        <td class="numeric">35.78%</td>
+        <td class="numeric">35.54%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="TLS-acceptatie door HTTP-versie.", sheets_gid="900140630", sql_file="tls_adoption_by_http_version.sql") }}</figcaption>
 </figure>
 
 QUIC is afhankelijk van TLS 1.3, dat wordt gebruikt voor ongeveer 41% van de verzoeken, zoals weergegeven in figuur 22.21. Dat laat 59% van de verzoeken over die hun TLS-stack moeten bijwerken om HTTP/3 te ondersteunen.
