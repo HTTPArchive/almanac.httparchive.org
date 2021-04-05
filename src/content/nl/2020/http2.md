@@ -676,24 +676,24 @@ Er wordt gewerkt aan het definiëren van manieren om HTTP/3 te ontdekken zonder 
     <tbody>
       <tr>
         <td>onbekend</td>
-        <td class="numeric">4.06%</td>
-        <td class="numeric">4.03%</td>
-        <td class="numeric">5.05%</td>
-        <td class="numeric">7.28%</td>
+        <td class="numeric">4,06%</td>
+        <td class="numeric">4,03%</td>
+        <td class="numeric">5,05%</td>
+        <td class="numeric">7,28%</td>
       </tr>
       <tr>
         <td>TLS 1.2</td>
-        <td class="numeric">26.56%</td>
-        <td class="numeric">24.75%</td>
-        <td class="numeric">23.12%</td>
-        <td class="numeric">23.14%</td>
+        <td class="numeric">26,56%</td>
+        <td class="numeric">24,75%</td>
+        <td class="numeric">23,12%</td>
+        <td class="numeric">23,14%</td>
       </tr>
       <tr>
         <td>TLS 1.3</td>
-        <td class="numeric">5.25%</td>
-        <td class="numeric">5.11%</td>
-        <td class="numeric">35.78%</td>
-        <td class="numeric">35.54%</td>
+        <td class="numeric">5,25%</td>
+        <td class="numeric">5,11%</td>
+        <td class="numeric">35,78%</td>
+        <td class="numeric">35,54%</td>
       </tr>
     </tbody>
   </table>
