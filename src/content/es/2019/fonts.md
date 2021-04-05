@@ -215,7 +215,7 @@ De hecho, si está usando Google Fonts, continúe y agregue esto a su `<head>` s
 
 ### Tipos de letra más populares
 
-<figure markdown>
+<figure>
   <table>
       <thead>
         <tr>

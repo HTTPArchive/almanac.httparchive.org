@@ -43,20 +43,59 @@ Au lieu de faire ça, nous allons examiner combien de sites incluent chaque él�
 
 En 2005, l’enquête de Hixie a listé les principaux éléments les plus fréquemment utilisés sur les pages. Les 3 premiers étaient `html`, `head` et `body`, ce qu’il a noté comme intéressant, car ils sont facultatifs et créés par l’analyseur s’ils sont omis. Étant donné que nous utilisons le DOM après interprétation, ils apparaissent universellement dans nos données. C’est pourquoi nous commencerons par le 4<sup>e</sup> élément le plus utilisé. Vous trouverez ci-dessous une comparaison des données collectées à son époque et aujourd’hui (j’ai inclus ici la comparaison en fréquence, pour le plaisir).
 
-<figure data-markdown="1">
-
-2005 (par site) | 2019 (par site) | 2019 (fréquence)
--- | -- | --
-title | title | div
-a | meta | a
-img | a | span
-meta | div | li
-br | link | img
-table | script | script
-td | img | p
-tr | span | option
-
-<figcaption>{{ figure_link(caption="Comparaison des principaux éléments entre 2005 et 2019.") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>2005 (par site)</th>
+        <th>2019 (par site)</th>
+        <th>2019 (fréquence)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>title</td>
+        <td>title</td>
+        <td>div</td>
+      </tr>
+      <tr>
+        <td>a</td>
+        <td>meta</td>
+        <td>a</td>
+      </tr>
+      <tr>
+        <td>img</td>
+        <td>a</td>
+        <td>span</td>
+      </tr>
+      <tr>
+        <td>meta</td>
+        <td>div</td>
+        <td>li</td>
+      </tr>
+      <tr>
+        <td>br</td>
+        <td>link</td>
+        <td>img</td>
+      </tr>
+      <tr>
+        <td>table</td>
+        <td>script</td>
+        <td>script</td>
+      </tr>
+      <tr>
+        <td>td</td>
+        <td>img</td>
+        <td>p</td>
+      </tr>
+      <tr>
+        <td>tr</td>
+        <td>span</td>
+        <td>option</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Comparaison des principaux éléments entre 2005 et 2019.") }}</figcaption>
 </figure>
 
 ### Éléments par page

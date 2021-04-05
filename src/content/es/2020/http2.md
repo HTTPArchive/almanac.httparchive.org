@@ -657,14 +657,47 @@ Sin embargo, incluso si se sabe que un servidor admite QUIC y HTTP/3, la red int
 
 Existe un trabajo en curso para definir formas de descubrir HTTP/3 sin necesidad del paso TCP. Sin embargo, esto debe considerarse una optimización, ya que es probable que los problemas de bloqueo de UDP signifiquen que HTTP basado en TCP se mantiene. El <a hreflang="en" href="https://tools.ietf.org/html/draft-ietf-dnsop-svcb-https">registro DNS de HTTPS</a> es similar a <i lang="en">servicios alternativos</i> de HTTP y algunas CDN ya están <a hreflang="en" href="https://blog.cloudflare.com/speeding-up-https-and-http-3-negotiation-with-dns/">experimentando con estos registros</a>. A largo plazo, cuando la mayoría de los servidores ofrezcan HTTP/3, los navegadores podrán cambiar a intentarlo de forma predeterminada; eso llevará mucho tiempo.
 
-<figure markdown>
-| Versión TLS | HTTP/1.x <br /> escritorio | HTTP/1.x <br />móvil | HTTP/2 <br />escritorio | HTTP/2 <br />móvil |
-| ------------ | ------ | ------ |  ---- | -----|
-| desconocido   |  4.06%	 | 4.03%  | 5.05%	 | 7.28%  |
-| TLS 1.2	   | 26.56%  | 24.75% | 23.12%  | 23.14% |
-| TLS 1.3	   | 5.25%	 | 5.11%  | 35.78%  | 35.54% |
-
-<figcaption>{{ figure_link(caption="Adopción de TLS por versión HTTP.", sheets_gid="900140630", sql_file="tls_adoption_by_http_version.sql") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <td></td>
+        <th scope="colgroup" colspan="2">HTTP/1.x</th>
+        <th scope="colgroup" colspan="2">HTTP/2</th>
+      </tr>
+      <tr>
+        <th scope="col">Versión TLS</th>
+        <th scope="col">Escritorio</th>
+        <th scope="col">Móvil</th>
+        <th scope="col">Escritorio</th>
+        <th scope="col">Móvil</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>desconocido</td>
+        <td class="numeric">4.06%</td>
+        <td class="numeric">4.03%</td>
+        <td class="numeric">5.05%</td>
+        <td class="numeric">7.28%</td>
+      </tr>
+      <tr>
+        <td>TLS 1.2</td>
+        <td class="numeric">26.56%</td>
+        <td class="numeric">24.75%</td>
+        <td class="numeric">23.12%</td>
+        <td class="numeric">23.14%</td>
+      </tr>
+      <tr>
+        <td>TLS 1.3</td>
+        <td class="numeric">5.25%</td>
+        <td class="numeric">5.11%</td>
+        <td class="numeric">35.78%</td>
+        <td class="numeric">35.54%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Adopción de TLS por versión HTTP.", sheets_gid="900140630", sql_file="tls_adoption_by_http_version.sql") }}</figcaption>
 </figure>
 
 QUIC depende de TLS 1.3, que se utiliza para alrededor del 41% de las solicitudes, como se muestra en la Figura 22.21. Eso deja al 59% de las solicitudes que necesitarán actualizar su versión de TLS para admitir HTTP/3.

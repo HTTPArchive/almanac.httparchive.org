@@ -215,7 +215,7 @@ In fact, if you're using Google Fonts go ahead and add this to your `<head>` if 
 
 ### Most popular typefaces
 
-<figure markdown>
+<figure>
   <table>
       <thead>
         <tr>

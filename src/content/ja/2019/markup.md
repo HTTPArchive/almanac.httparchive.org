@@ -43,20 +43,59 @@ featured_stat_label_3: カルーセルのバリエーションが見つかりま
 
 2005年、Hixieはページ中に最もよく使用されていて、頻度の少ない上位要素を調査しました。トップ３は `html`、`head`、`body`でした、これらはオプションなので省略されてもパーサーによって作成されており、彼は興味深いと述べています。パーサーによる解析後のDOMを使って調査すると、データは普遍的に表示されます。なので、４番目に使用頻度の高い要素からはじめました。以下は、その時点から現在までのデータの比較です。(ここでは面白いので出現数を含めました)
 
-<figure data-markdown="1">
-
-2005 (サイト毎) | 2019 (サイト毎) | 2019 (出現数)
--- | -- | --
-title | title | div
-a | meta | a
-img | a | span
-meta | div | li
-br | link | img
-table | script | script
-td | img | p
-tr | span | option
-
-<figcaption>{{ figure_link(caption="2005年から2019年までの上位要素の比較。") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>2005 (サイト毎)</th>
+        <th>2019 (サイト毎)</th>
+        <th>2019 (出現数)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>title</td>
+        <td>title</td>
+        <td>div</td>
+      </tr>
+      <tr>
+        <td>a</td>
+        <td>meta</td>
+        <td>a</td>
+      </tr>
+      <tr>
+        <td>img</td>
+        <td>a</td>
+        <td>span</td>
+      </tr>
+      <tr>
+        <td>meta</td>
+        <td>div</td>
+        <td>li</td>
+      </tr>
+      <tr>
+        <td>br</td>
+        <td>link</td>
+        <td>img</td>
+      </tr>
+      <tr>
+        <td>table</td>
+        <td>script</td>
+        <td>script</td>
+      </tr>
+      <tr>
+        <td>td</td>
+        <td>img</td>
+        <td>p</td>
+      </tr>
+      <tr>
+        <td>tr</td>
+        <td>span</td>
+        <td>option</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="2005年から2019年までの上位要素の比較。") }}</figcaption>
 </figure>
 
 ### ページ毎の要素
