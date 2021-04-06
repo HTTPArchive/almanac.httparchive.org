@@ -38,9 +38,9 @@ const generate_typographic_punctuation_metadata = (metadata) => {
     metadata[item] = smartypants.smartypants(metadata[item]);
     metadata[item] = metadata[item].replace(/"/g, '&quot;');
 
-  // There's a few bugs in SmartyPants where it sometimes leaves an extra "$1" lying around
-  // https://github.com/othree/smartypants.js/issues/9
-  // so let's clean them up:
+    // There's a few bugs in SmartyPants where it sometimes leaves an extra "$1" lying around
+    // https://github.com/othree/smartypants.js/issues/9
+    // so let's clean them up:
     metadata[item] = metadata[item].replace(/\$1&#82/g,'&#82');
   }
 
