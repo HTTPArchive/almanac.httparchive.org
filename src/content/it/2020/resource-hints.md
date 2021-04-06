@@ -12,9 +12,9 @@ discuss: 2057
 results: https://docs.google.com/spreadsheets/d/1lXjd8ogB7kYfG09eUdGYXUlrMjs4mq1Z7nNldQnvkVA/
 featured_quote: Durante lo scorso anno, le resource hints sono aumentati nell'adozione e sono diventati API essenziali per gli sviluppatori per avere un controllo più granulare su molti aspetti delle priorità delle risorse e, in definitiva, sull'user experience.
 featured_stat_1: 33%
-featured_stat_label_1: Siti che utilizzano <code>dns-prefetch</code>
+featured_stat_label_1: Siti che utilizzano `dns-prefetch`
 featured_stat_2: 9%
-featured_stat_label_2: Siti che utilizzano <code>preload</code>
+featured_stat_label_2: Siti che utilizzano `preload`
 featured_stat_3: 4.02%
 featured_stat_label_3: Siti che utilizzano native lazy loading
 ---

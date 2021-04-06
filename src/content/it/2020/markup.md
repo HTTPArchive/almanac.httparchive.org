@@ -16,7 +16,7 @@ featured_quote: Ci avviciniamo all'adozione quasi completa dell'HTML vivente, si
 featured_stat_1: 85.73%
 featured_stat_label_1: Percentuale di pagine che utilizzano il doctype HTML "vivente"
 featured_stat_2: 30,073
-featured_stat_label_2: Numero di elementi <code>h7</code> non standard
+featured_stat_label_2: Numero di elementi `h7` non standard
 featured_stat_3: 25.24 KB
 featured_stat_label_3: Peso del documento mediano
 ---

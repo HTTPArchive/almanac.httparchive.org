@@ -14,7 +14,7 @@ discuss: 2041
 results: https://docs.google.com/spreadsheets/d/1SZGpCsTT0u1MFBrxed7HA9FLAloL1dS8ZIng986LvS8/
 featured_quote: Afbeeldingen en video's bieden ons het potentieel voor een zeer krachtige koppeling&colon; onmiddellijke communicatie, in staat om een aangeboren emotionele reactie teweeg te brengen. Ze vereisen echter weloverwogen implementatietechnieken om ook onze webpagina's niet te belasten.
 featured_stat_1: 84,64%
-featured_stat_label_1: Gebruik van WebP in het mobiele <code>&lt;Picture&gt;</code>-element
+featured_stat_label_1: Gebruik van WebP in het mobiele `<Picture>`-element
 featured_stat_2: 40,26%
 featured_stat_label_2: JPG-afbeeldingen als percentage van alle afbeeldingen
 featured_stat_3: 57,22%

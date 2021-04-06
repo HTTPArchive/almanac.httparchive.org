@@ -1,5 +1,6 @@
 const fs = require('fs-extra');
 const recursive = require('recursive-readdir');
+const showdown = require('showdown');
 const static_pages_lang_year = [
   'index.html',
   'table_of_contents.html',
@@ -13,6 +14,23 @@ const static_pages_lang_year = [
 const static_pages_lang = [
   'accessibility_statement.html'
 ];
+
+
+const simpleConverter = new showdown.Converter();
+simpleConverter.setFlavor('github');
+
+const convertSimpleMarkdown = (text) => {
+  // Showdown replaces & with &amp; so convert those back to avoid escape issues
+  let convertedText = text.replace(/&amp;/g,'&');
+  convertedText = simpleConverter.makeHtml(convertedText);
+  // As we've converted again, need to convert back &amp; again
+  convertedText = convertedText.replace(/&amp;/g,'&');
+  // Strip paragraph tags from beginning and end
+  convertedText = convertedText.replace(/^<p>/,'');
+  convertedText = convertedText.replace(/<\/p>$/,'');
+  return convertedText;
+}
+
 
 const find_template_files = async () => {
   const filter = (file, stats) => {
@@ -146,6 +164,7 @@ const get_static_lang_files = (language_array) => {
 };
 
 module.exports = {
+  convertSimpleMarkdown,
   find_markdown_files,
   find_template_files,
   find_asset_files,
