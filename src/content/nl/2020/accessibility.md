@@ -13,9 +13,9 @@ discuss: 2044
 results: https://docs.google.com/spreadsheets/d/1UjEBhq0TfYxUpdpq5IuxjeHB4yqhJq4NOKEd6Dwwrdk/
 featured_quote: Als industrie wordt het tijd dat we het verhaal erkennen dat wordt verteld door de cijfers in dit hoofdstuk; we zijn gehandicapten in de steek aan het laten.
 featured_stat_1: 15,357,625
-featured_stat_label_1: Langst bekende <code>alt</code> tekstlengte
+featured_stat_label_1: Langst bekende `alt` tekstlengte
 featured_stat_2: 3,200
-featured_stat_label_2: Sites die <code>aria-labelledby</code> verkeerd spellen als <code>aria-labeledby</code>
+featured_stat_label_2: Sites die `aria-labelledby` verkeerd spellen als `aria-labeledby`
 featured_stat_3: 0.79%
 featured_stat_label_3: Video's met ondertiteling
 

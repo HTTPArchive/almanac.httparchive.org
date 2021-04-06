@@ -10,7 +10,7 @@ translators: [borisschapira]
 discuss: 1760
 results: https://docs.google.com/spreadsheets/d/1iC4WkdadDdkqkrTY32g7hHKhXs9iHrr3Bva8CuPjVrQ/
 patrickhulce_bio: Patrick Hulce est un ancien ingénieur de Chrome, fondateur de <a hreflang="en" href="https://eris.ventures/">Eris Ventures</a>, membre de l’équipe principale de <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse">Lighthouse</a> et de <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse-ci">Lighthouse CI</a>, co-organisateur de la rencontre <a hreflang="en" href="https://www.meetup.com/DallasJS/">DallasJS</a> et auteur du projet <a hreflang="en" href="https://github.com/patrickhulce/third-party-web">third-party-web</a>.
-featured_quote: Le Web ouvert a été conçu pour être vaste, interconnectable et interopérable. La possibilité d’accéder à de puissantes librairies tierces et de les utiliser sur votre site avec des éléments <code>&lt;link&gt;</code> ou <code>&lt;script&gt;</code> a décuplé la productivité des développeurs et permis de nouvelles et incroyables expériences web ; par contre, l’immense popularité de quelques fournisseurs tiers (3P) pose d’importants problèmes en termes de performances et de confidentialité. Ce chapitre examine la prévalence et l’impact du code tiers sur le Web en 2019, les modèles d’utilisation du Web qui mènent à la popularité des solutions tierces et les répercussions potentielles sur l’avenir des performances Web et de la confidentialité.
+featured_quote: Le Web ouvert a été conçu pour être vaste, interconnectable et interopérable. La possibilité d’accéder à de puissantes librairies tierces et de les utiliser sur votre site avec des éléments `<link>` ou `<script>` a décuplé la productivité des développeurs et permis de nouvelles et incroyables expériences web ; par contre, l’immense popularité de quelques fournisseurs tiers (3P) pose d’importants problèmes en termes de performances et de confidentialité. Ce chapitre examine la prévalence et l’impact du code tiers sur le Web en 2019, les modèles d’utilisation du Web qui mènent à la popularité des solutions tierces et les répercussions potentielles sur l’avenir des performances Web et de la confidentialité.
 featured_stat_1: 93 %
 featured_stat_label_1: pages avec 3P.
 featured_stat_2: 49 %
@@ -95,38 +95,134 @@ Un nombre relativement restreint de fournisseurs dominent le paysage des service
 
 Bien que l’on puisse dire beaucoup de choses sur la popularité et l’impact de chaque fournisseur sur la performance, nous laissons au lecteur et à d’autres outils conçus à cet effet, tels que <a hreflang="en" href="https://thirdpartyweb.today">third-party-web</a>, le soin de faire faire une analyse plus objective de ces questions.
 
-<figure markdown>
-Rang | Domaines tiers | Pourcentage des requêtes
--- | -- | --
-1 | `fonts.gstatic.com` | 2,53 %
-2 | `www.facebook.com` | 2,38 %
-3 | `www.google-analytics.com` | 1,71 %
-4 | `www.google.com` | 1,17 %
-5 | `fonts.googleapis.com` | 1,05 %
-6 | `www.youtube.com` | 0,99 %
-7 | `connect.facebook.net` | 0,97 %
-8 | `googleads.g.doubleclick.net` | 0,93 %
-9 | `cdn.shopify.com` | 0,76 %
-10 | `maps.googleapis.com` | 0,75 %
-
-<figcaption>{{ figure_link(caption="Top 10 des domaines tiers les plus populaires.") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Rang</th>
+        <th>Domaines tiers</th>
+        <th>Pourcentage des requêtes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td><code>fonts.gstatic.com</code></td>
+        <td class="numeric">2,53 %</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><code>www.facebook.com</code></td>
+        <td class="numeric">2,38 %</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><code>www.google-analytics.com</code></td>
+        <td class="numeric">1,71 %</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td><code>www.google.com</code></td>
+        <td class="numeric">1,17 %</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td><code>fonts.googleapis.com</code></td>
+        <td class="numeric">1,05 %</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td><code>www.youtube.com</code></td>
+        <td class="numeric">0,99 %</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td><code>connect.facebook.net</code></td>
+        <td class="numeric">0,97 %</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td><code>googleads.g.doubleclick.net</code></td>
+        <td class="numeric">0,93 %</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td><code>cdn.shopify.com</code></td>
+        <td class="numeric">0,76 %</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td><code>maps.googleapis.com</code></td>
+        <td class="numeric">0,75 %</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Top 10 des domaines tiers les plus populaires.") }}</figcaption>
 </figure>
 
-<figure markdown>
-Rang | URL de ressource tierce | Pourcentage des requêtes
--- | -- | --
-1 | `https://www.google-analytics.com/analytics.js` | 0,64 %
-2 | `https://connect.facebook.net/en_US/fbevents.js` | 0,20 %
-3 | `https://connect.facebook.net/signals/plugins/inferredEvents.js ?v=2.8.51` | 0,19 %
-4 | `https://staticxx.facebook.com/connect/xd_arbiter.php ?version=44` | 0,16 %
-5 | `https://fonts.gstatic.com/s/opensans/v16/mem8YaGs126MiZpBA-UFVZ0b.woff2` | 0,13 %
-6 | `https://www.googletagservices.com/activeview/js/current/osd.js ?cb=%2Fr20100101` | 0,12 %
-7 | `https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2` | 0,11 %
-8 | `https://googleads.g.doubleclick.net/pagead/id` | 0,11 %
-9 | `https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxK.woff2` | 0,10 %
-10 | `https://www.googleadservices.com/pagead/conversion_async.js` | 0,10 %
-
-<figcaption>{{ figure_link(caption="Top 10 des requêtes les plus populaires.") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Rang</th>
+        <th>URL de ressource tierce</th>
+        <th>Pourcentage des requêtes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td><code>https://www.google-analytics.com/analytics.js</code></td>
+        <td class="numeric">0.64 %</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><code>https://connect.facebook.net/en_US/fbevents.js</code></td>
+        <td class="numeric">0.20 %</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><code>https://connect.facebook.net/signals/plugins/inferredEvents.js?v=2.8.51</code></td>
+        <td class="numeric">0.19 %</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td><code>https://staticxx.facebook.com/connect/xd_arbiter.php?version=44</code></td>
+        <td class="numeric">0.16 %</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td><code>https://fonts.gstatic.com/s/opensans/v16/mem8YaGs126MiZpBA-UFVZ0b.woff2</code></td>
+        <td class="numeric">0.13 %</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td><code>https://www.googletagservices.com/activeview/js/current/osd.js?cb=%2Fr20100101</code></td>
+        <td class="numeric">0.12 %</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td><code>https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2</code></td>
+        <td class="numeric">0.11 %</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td><code>https://googleads.g.doubleclick.net/pagead/id</code></td>
+        <td class="numeric">0.11 %</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td><code>https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxK.woff2</code></td>
+        <td class="numeric">0.10 %</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td><code>https://www.googleadservices.com/pagead/conversion_async.js</code></td>
+        <td class="numeric">0.10 %</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Top 10 des requêtes les plus populaires.") }}</figcaption>
 </figure>
 
 ### Types de ressources

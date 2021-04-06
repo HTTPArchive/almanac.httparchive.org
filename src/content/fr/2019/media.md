@@ -9,7 +9,7 @@ editors: [bazzadp]
 translators: [borisschapira]
 discuss: 1759
 results: https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/
-colinbendell_bio: Colin fait partie du <i lang="en">CTO Office</i> de <a hreflang="en" href="https://cloudinary.com/">Cloudinary</a> et est co-auteur du livre O’Reilly <a hreflang="en" href="https://www.oreilly.com/library/view/high-performance-images/9781491925799/" lang="en">High Performance Images</a>. Il passe une grande partie de son temps à l’intersection des données à haut volume, des médias, des navigateurs et des standards. Vous le trouverez twittant en tant que <a href="https://twitter.com/colinbendell">@colinbendell</a> et sur son blog <a hreflang="en" href="https://bendell.ca/">https://bendell.ca</a>.
+colinbendell_bio: Colin fait partie du <i lang="en">CTO Office</i> de <a hreflang="en" href="https://cloudinary.com/">Cloudinary</a> et est co-auteur du livre O’Reilly <a hreflang="en" lang="en" href="https://www.oreilly.com/library/view/high-performance-images/9781491925799/">High Performance Images</a>. Il passe une grande partie de son temps à l’intersection des données à haut volume, des médias, des navigateurs et des standards. Vous le trouverez twittant en tant que <a href="https://twitter.com/colinbendell">@colinbendell</a> et sur son blog <a hreflang="en" href="https://bendell.ca/">https://bendell.ca</a>.
 dougsillars_bio: Doug Sillars est un nomade numérique indépendant qui travaille à l’intersection de la performance et des médias. Il tweete sous <a href="https://twitter.com/dougsillars">@dougsillars</a>, et blogue régulièrement sur <a hreflang="en" href="https://dougsillars.com">dougsillars.com</a>.
 featured_quote: Les images, les animations et les vidéos constituent une partie significative de l’expérience Web. Elles sont importantes pour de nombreuses raisons&nbsp;&colon; elles aident à raconter des histoires, à faire participer le public et à fournir une expression artistique d’une manière qui, souvent, ne peut pas être facilement produite avec d’autres technologies du web. L’importance de ces ressources médias peut être démontrée de deux façons&nbsp;&colon; par le volume d’octets téléchargés pour une page, mais aussi par la quantité de pixels utilisés pour afficher ces médias.
 featured_stat_1: 1 Mo
@@ -17,7 +17,7 @@ featured_stat_label_1: taille médiane d’une page d’accueil
 featured_stat_2: 60 %
 featured_stat_label_2: des images sont des JPEG
 featured_stat_3: 2 %
-featured_stat_label_3: des pages utilisent l’élément <code>&lt;picture&gt;</code>
+featured_stat_label_3: des pages utilisent l’élément `<picture>`
 ---
 
 ## Introduction
@@ -278,15 +278,43 @@ L’utilité de `srcset` dépend généralement de la précision de la requête 
 * **`<img sizes="(max-width: 300px) 100vw, 300px">`** - c’est le deuxième modèle de conception le plus populaire. C’est celui qui est généré automatiquement par WordPress et probablement par quelques autres plateformes. Il semble être généré automatiquement en fonction de la taille de l’image originale (dans ce cas, 300&nbsp;px).
 * **`<img sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, ...">`** - ce modèle est le modèle de conception sur-mesure qui est aligné avec la mise en page CSS. Chaque point de rupture a un calcul différent pour les tailles à utiliser.
 
-<figure markdown>
-`<img sizes>` | Fréquence (millions) | %
--- | -- | --
-(max-width: 300px) 100vw, 300px | 1.47 | 5&nbsp;%
-(max-width: 150px) 100vw, 150px | 0.63 | 2&nbsp;%
-(max-width: 100px) 100vw, 100px | 0.37 | 1&nbsp;%
-(max-width: 400px) 100vw, 400px | 0.32 | 1&nbsp;%
-(max-width: 80px) 100vw, 80px | 0.28 | 1&nbsp;%
-
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th><code>&lt;img sizes&gt;</code></th>
+        <th>Fréquence (millions)</th>
+        <th>%</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>(max-width: 300px) 100vw, 300px</code></td>
+        <td class="numeric">1.47</td>
+        <td class="numeric">5&nbsp;%</td>
+      </tr>
+      <tr>
+        <td><code>(max-width: 150px) 100vw, 150px</code></td>
+        <td class="numeric">0.63</td>
+        <td class="numeric">2&nbsp;%</td>
+      </tr>
+      <tr>
+        <td><code>(max-width: 100px) 100vw, 100px</code></td>
+        <td class="numeric">0.37</td>
+        <td class="numeric">1&nbsp;%</td>
+      </tr>
+      <tr>
+        <td><code>(max-width: 400px) 100vw, 400px</code></td>
+        <td class="numeric">0.32</td>
+        <td class="numeric">1&nbsp;%</td>
+      </tr>
+      <tr>
+        <td><code>(max-width: 80px) 100vw, 80px</code></td>
+        <td class="numeric">0.28</td>
+        <td class="numeric">1&nbsp;%</td>
+      </tr>
+    </tbody>
+  </table>
   <figcaption>{{ figure_link(caption="Pourcentage de pages utilisant modèle de conception <code>sizes</code> le plus populaire.") }}</figcaption>
 </figure>
 

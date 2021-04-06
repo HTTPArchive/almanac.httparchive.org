@@ -7,7 +7,7 @@ reviewers: [borisschapira, rviscomi, obto, noamr, Zizzamia]
 analysts: [max-ostapenko, dooman87]
 editors: [bazzadp]
 translators: [borisschapira]
-thefoxis_bio: Karolina est <em lang="en">Product Design Lead</em> chez <a hreflang="en" href="https://calibreapp.com/" lang="en">Calibre</a>, travaillant à la création de la plate-forme de surveillance de la vitesse la plus complète. Elle réalise la curation de la <a hreflang="en" href="https://perf.email/" lang="en">Performance Newsletter</a>, votre source d’informations et de ressources sur la performance. Karolina <a hreflang="en" href="https://calibreapp.com/blog/category/web-platform">écrit aussi fréquemment</a> sur la façon dont la performance affecte l’expérience d’utilisation.
+thefoxis_bio: Karolina est <em lang="en">Product Design Lead</em> chez <a hreflang="en" lang="en" href="https://calibreapp.com/">Calibre</a>, travaillant à la création de la plate-forme de surveillance de la vitesse la plus complète. Elle réalise la curation de la <a hreflang="en" lang="en" href="https://perf.email/">Performance Newsletter</a>, votre source d’informations et de ressources sur la performance. Karolina <a hreflang="en" href="https://calibreapp.com/blog/category/web-platform">écrit aussi fréquemment</a> sur la façon dont la performance affecte l’expérience d’utilisation.
 discuss: 2045
 results: https://docs.google.com/spreadsheets/d/164FVuCQ7gPhTWUXJl1av5_hBxjncNi0TK8RnNseNPJQ/
 featured_quote: De mauvaises performances ne se traduisent pas seulement par de la frustration ou des effets négatifs sur les objectifs commerciaux, elles créent de véritable barrières à l’entrée. La pandémie mondiale de cette année a rendu ces obstacles encore plus évidents.

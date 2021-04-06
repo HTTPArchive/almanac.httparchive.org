@@ -14,10 +14,10 @@ discuss: 2037
 results: https://docs.google.com/spreadsheets/d/1sMWXWjMujqfAREYxNbG_t1fOJKYCA6ASLwtz4pBQVTw/
 featured_quote: The web is not a teenager anymore—it is now 30 years old and acts like it. It tends to favor stability over new bling and readability over complexity, occasional guilty pleasures aside.
 featured_stat_1: 72.58%
-featured_stat_label_1: Percentage of <code>&lt;length&gt;</code> values that use the <code>px</code> unit.
+featured_stat_label_1: Percentage of `<length>` values that use the `px` unit.
 featured_stat_2: 91.05%
 featured_stat_label_2: Percent of mobile pages using any vendor prefixed feature
-featured_stat_3: <code>darken()</code>
+featured_stat_3: `darken()`
 featured_stat_label_3: Most popular SCSS function
 ---
 
@@ -175,15 +175,43 @@ What is it that developers are so keen to override? We looked at breakdown by pr
 
 Besides keeping `id`s and `!important`s few and far between, there is a trend to circumvent specificity altogether by cramming all the selection criteria of a selector in a single class name, thus forcing all rules to have the same specificity and turning the cascade into a simpler last-one-wins system. BEM is a popular methodology of that type, albeit not the only one. While it is difficult to assess how many websites use BEM-style methodologies exclusively, since following it in every rule is rare (even the <a hreflang="en" href="https://en.bem.info/">BEM website</a> uses multiple classes in many selectors), about 10% of pages had a median specificity of (0,1,0), which may indicate mostly following a BEM-style methodology. On the opposite end of BEM, often developers use <a hreflang="en" href="https://csswizardry.com/2014/07/hacks-for-dealing-with-specificity/#safely-increasing-specificity">duplicated classes</a> to increase specificity and nudge a selector ahead of another one (e.g. `.foo.foo` instead of `.foo`). This kind of specificity hack is actually more popular than BEM, being present in 14% of mobile websites (9% of desktop)! This may indicate that most developers do not actually want to get rid of the cascade altogether, they just need more control over it.
 
-<figure markdown>
-Percentile | Desktop | Mobile
--- | -- | --
-10 | 0,1,0 | 0,1,0
-25 | 0,2,0 | 0,1,2
-50 | 0,2,0 | 0,2,0
-75 | 0,2,0 | 0,2,0
-90 | 0,3,0 | 0,3,0
-
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Percentile</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>10</td>
+        <td>0,1,0</td>
+        <td>0,1,0</td>
+      </tr>
+      <tr>
+        <td>25</td>
+        <td>0,2,0</td>
+        <td>0,1,2</td>
+      </tr>
+      <tr>
+        <td>50</td>
+        <td>0,2,0</td>
+        <td>0,2,0</td>
+      </tr>
+      <tr>
+        <td>75</td>
+        <td>0,2,0</td>
+        <td>0,2,0</td>
+      </tr>
+      <tr>
+        <td>90</td>
+        <td>0,3,0</td>
+        <td>0,3,0</td>
+      </tr>
+    </tbody>
+  </table>
   <figcaption>
     {{ figure_link(
       caption="Distribution of the median specificity per page.",
@@ -1273,7 +1301,7 @@ The last few years has seen a greater interaction between CSS and JavaScript, be
 
 ### Houdini
 
-You have likely heard of [Houdini](https://developer.mozilla.org/en-US/docs/Web/Houdini) by now. Houdini is a set of low-level APIs that exposes parts of the CSS engine, giving developers the power to extend CSS by hooking into the styling and layout process of a browser’s rendering engine. Since <a hreflang="en" href="https://ishoudinireadyyet.com/">several Houdini specs have shipped in browsers</a>, we figured it is time to see if they are actually used in the wild yet. Short answer: no. And now for the longer answer…
+You have likely heard of [Houdini](https://developer.mozilla.org/en-US/docs/Web/Houdini) by now. Houdini is a set of low-level APIs that exposes parts of the CSS engine, giving developers the power to extend CSS by hooking into the styling and layout process of a browser's rendering engine. Since <a hreflang="en" href="https://ishoudinireadyyet.com/">several Houdini specs have shipped in browsers</a>, we figured it is time to see if they are actually used in the wild yet. Short answer: no. And now for the longer answer…
 
 First, we looked at the [Properties & Values API](https://developer.mozilla.org/en-US/docs/Web/API/CSS/RegisterProperty), which allows developers to register a custom property and give it a type, an initial value, and prevent it from being inherited. One of the primary use cases is being able to animate custom properties, so we also looked at how frequently custom properties are being animated.
 

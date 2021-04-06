@@ -215,7 +215,7 @@ Google Fontsのドキュメントでは、Google Fonts CSSの`<link>`はペー�
 
 ### 最も人気のある書体
 
-<figure markdown>
+<figure>
   <table>
     <thead>
       <tr>

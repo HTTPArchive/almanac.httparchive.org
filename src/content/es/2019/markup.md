@@ -43,20 +43,59 @@ En lugar, como en el estudio original de Hixie, Lo que veremos es cuántos sitio
 
 En 2005, la encuesta de Hixie enumeró los elementos más comunes utilizados en las páginas. Los 3 principales fueron `html`, `head` y `body` lo que señaló como interesante porque son opcionales y creados por el _parser_ si se omiten. Dado que utilizamos el DOM después del _parseo_ , aparecerán universalmente en nuestros datos. Por lo tanto, comenzaremos con el cuarto elemento más utilizado. A continuación se muestra una comparación de los datos de entonces a ahora. (También he incluido la comparación de frecuencias aquí solo por diversión).
 
-<figure data-markdown="1">
-
-2005 (por sitio) | 2019 (por sitio) | 2019 (frecuencia)
--- | -- | --
-title | title | div
-a | meta | a
-img | a | span
-meta | div | li
-br | link | img
-table | script | script
-td | img | p
-tr | span | option
-
-<figcaption>{{ figure_link(caption="Comparación de los principales elementos de 2005 y 2019.") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>2005 (por sitio)</th>
+        <th>2019 (por sitio)</th>
+        <th>2019 (frecuencia)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>title</td>
+        <td>title</td>
+        <td>div</td>
+      </tr>
+      <tr>
+        <td>a</td>
+        <td>meta</td>
+        <td>a</td>
+      </tr>
+      <tr>
+        <td>img</td>
+        <td>a</td>
+        <td>span</td>
+      </tr>
+      <tr>
+        <td>meta</td>
+        <td>div</td>
+        <td>li</td>
+      </tr>
+      <tr>
+        <td>br</td>
+        <td>link</td>
+        <td>img</td>
+      </tr>
+      <tr>
+        <td>table</td>
+        <td>script</td>
+        <td>script</td>
+      </tr>
+      <tr>
+        <td>td</td>
+        <td>img</td>
+        <td>p</td>
+      </tr>
+      <tr>
+        <td>tr</td>
+        <td>span</td>
+        <td>option</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Comparación de los principales elementos de 2005 y 2019.") }}</figcaption>
 </figure>
 
 ### Elementos por página

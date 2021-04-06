@@ -10,7 +10,7 @@ translators: [ksakae]
 discuss: 1760
 results: https://docs.google.com/spreadsheets/d/1iC4WkdadDdkqkrTY32g7hHKhXs9iHrr3Bva8CuPjVrQ/
 patrickhulce_bio: Patrick Hulceは元Chromeのエンジニアであり、<a hreflang="en" href="https://eris.ventures/">Eris Ventures</a>の創設者であり、<a hreflang="en" href="https://github.com/GoogleChrome/lighthouse">Lighthouse</a>のコアチームメンバーであり、<a hreflang="en" href="https://github.com/GoogleChrome/lighthouse-ci">Lighthouse CI</a>, <a hreflang="en" href="https://www.meetup.com/DallasJS/">DallasJS</a> meetup の共同主催者、<a hreflang="en" href="https://github.com/patrickhulce/third-party-web">third-party-web</a> プロジェクトの執筆者。
-featured_quote: オープンウェブは広大で、リンク可能で、相互運用可能な設計になっています。他の誰かの複雑なライブラリを取得し、単一の <code>&lt;link&gt;</code> または <code>&lt;script&gt;</code> 要素を使用して自分のサイトで使用する能力は、開発者の生産性を高め、素晴らしい新しいウェブ体験を可能にしました。本章では、2019年のWebにおけるサードパーティコードの普及と影響、サードパーティソリューションの人気につながるWebの利用パターン、Webのパフォーマンスとプライバシーの将来に対する潜在的な影響を検証します。
+featured_quote: オープンウェブは広大で、リンク可能で、相互運用可能な設計になっています。他の誰かの複雑なライブラリを取得し、単一の `&<link>` または `<script>` 要素を使用して自分のサイトで使用する能力は、開発者の生産性を高め、素晴らしい新しいウェブ体験を可能にしました。本章では、2019年のWebにおけるサードパーティコードの普及と影響、サードパーティソリューションの人気につながるWebの利用パターン、Webのパフォーマンスとプライバシーの将来に対する潜在的な影響を検証します。
 featured_stat_1: 93%
 featured_stat_label_1: サードパーティを含むページ
 featured_stat_2: 49%
@@ -95,38 +95,134 @@ featured_stat_label_3: サードパーティのバイト数
 
 個々のプロバイダの人気とパフォーマンスへの影響については、多くのことが言えるかもしれませんが、このより意見の多い分析は読者や<a hreflang="en" href="https://thirdpartyweb.today">サードパーティ製Web</a>のような他の目的のために構築されたツールの練習として残されています。
 
-<figure markdown>
-ランク | サードパーティドメイン | リクエストの割合
--- | -- | --
-1 | `fonts.gstatic.com` | 2.53%
-2 | `www.facebook.com` | 2.38%
-3 | `www.google-analytics.com` | 1.71%
-4 | `www.google.com` | 1.17%
-5 | `fonts.googleapis.com` | 1.05%
-6 | `www.youtube.com` | 0.99%
-7 | `connect.facebook.net` | 0.97%
-8 | `googleads.g.doubleclick.net` | 0.93%
-9 | `cdn.shopify.com` | 0.76%
-10 | `maps.googleapis.com` | 0.75%
-
-<figcaption>{{ figure_link(caption=" サードパーティドメインの人気トップ10") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>ランク</th>
+        <th>サードパーティドメイン</th>
+        <th>リクエストの割合</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td><code>fonts.gstatic.com</code></td>
+        <td class="numeric">2.53%</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><code>www.facebook.com</code></td>
+        <td class="numeric">2.38%</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><code>www.google-analytics.com</code></td>
+        <td class="numeric">1.71%</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td><code>www.google.com</code></td>
+        <td class="numeric">1.17%</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td><code>fonts.googleapis.com</code></td>
+        <td class="numeric">1.05%</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td><code>www.youtube.com</code></td>
+        <td class="numeric">0.99%</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td><code>connect.facebook.net</code></td>
+        <td class="numeric">0.97%</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td><code>googleads.g.doubleclick.net</code></td>
+        <td class="numeric">0.93%</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td><code>cdn.shopify.com</code></td>
+        <td class="numeric">0.76%</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td><code>maps.googleapis.com</code></td>
+        <td class="numeric">0.75%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption=" サードパーティドメインの人気トップ10") }}</figcaption>
 </figure>
 
-<figure markdown>
-ランク | サードパーティURL | リクエストの割合
--- | -- | --
-1 | `https://www.google-analytics.com/analytics.js` | 0.64%
-2 | `https://connect.facebook.net/en_US/fbevents.js` | 0.20%
-3 | `https://connect.facebook.net/signals/plugins/inferredEvents.js?v=2.8.51` | 0.19%
-4 | `https://staticxx.facebook.com/connect/xd_arbiter.php?version=44` | 0.16%
-5 | `https://fonts.gstatic.com/s/opensans/v16/mem8YaGs126MiZpBA-UFVZ0b.woff2` | 0.13%
-6 | `https://www.googletagservices.com/activeview/js/current/osd.js?cb=%2Fr20100101` | 0.12%
-7 | `https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2` | 0.11%
-8 | `https://googleads.g.doubleclick.net/pagead/id` | 0.11%
-9 | `https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxK.woff2` | 0.10%
-10 | `https://www.googleadservices.com/pagead/conversion_async.js` | 0.10%
-
-<figcaption>{{ figure_link(caption=" サードパーティからのリクエストが多いトップ10") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>ランク</th>
+        <th>サードパーティURL</th>
+        <th>リクエストの割合</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td><code>https://www.google-analytics.com/analytics.js</code></td>
+        <td class="numeric">0.64%</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><code>https://connect.facebook.net/en_US/fbevents.js</code></td>
+        <td class="numeric">0.20%</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><code>https://connect.facebook.net/signals/plugins/inferredEvents.js?v=2.8.51</code></td>
+        <td class="numeric">0.19%</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td><code>https://staticxx.facebook.com/connect/xd_arbiter.php?version=44</code></td>
+        <td class="numeric">0.16%</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td><code>https://fonts.gstatic.com/s/opensans/v16/mem8YaGs126MiZpBA-UFVZ0b.woff2</code></td>
+        <td class="numeric">0.13%</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td><code>https://www.googletagservices.com/activeview/js/current/osd.js?cb=%2Fr20100101</code></td>
+        <td class="numeric">0.12%</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td><code>https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2</code></td>
+        <td class="numeric">0.11%</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td><code>https://googleads.g.doubleclick.net/pagead/id</code></td>
+        <td class="numeric">0.11%</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td><code>https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxK.woff2</code></td>
+        <td class="numeric">0.10%</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td><code>https://www.googleadservices.com/pagead/conversion_async.js</code></td>
+        <td class="numeric">0.10%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption=" サードパーティからのリクエストが多いトップ10") }}</figcaption>
 </figure>
 
 ### リソースの種類

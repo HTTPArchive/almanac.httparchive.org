@@ -14,10 +14,10 @@ discuss: 2037
 results: https://docs.google.com/spreadsheets/d/1sMWXWjMujqfAREYxNbG_t1fOJKYCA6ASLwtz4pBQVTw/
 featured_quote: A web não é mais uma adolescente - agora tem 30 anos e age como tal. Ela tende a favorecer a estabilidade em vez de um novo brilho e a legibilidade em vez da complexidade, deixando de lado os prazeres ocasionais.
 featured_stat_1: 72.58%
-featured_stat_label_1: Porcentagem do <code>&lt;tamanho&gt;</code> dos valores que usam a unidade <code>px</code>.
+featured_stat_label_1: Porcentagem do `<length>` dos valores que usam a unidade `px`.
 featured_stat_2: 91.05%
 featured_stat_label_2: Porcentagem de páginas em dispositivos móveis usando qualquer funcionalidade com vendor prefix
-featured_stat_3: <code>darken()</code>
+featured_stat_3: `darken()`
 featured_stat_label_3: A função SCSS mais popular
 ---
 
@@ -175,15 +175,43 @@ O que é que os desenvolvedores estão tão interessados em sobrescrever? Fizemo
 
 Além de manter os `id`s e `!important`s poucos e distantes, há uma tendência de contornar completamente a especificidade, colocando todos os critérios de seleção de um seletor em um único nome de classe, forçando assim todas as regras a terem a mesma especificidade e transformando a cascata em um sistema mais simples em que o último vence. O BEM é uma metodologia popular desse tipo, embora não seja a única. Embora seja difícil avaliar quantos websites usam exclusivamente metodologias no estilo BEM, uma vez que segui-la em cada regra é raro (mesmo o <a hreflang="en" href="https://en.bem.info/">website BEM</a> usa múltiplas classes em muitos seletores), cerca de 10% das páginas tinham uma especificidade mediana de (0,1,0), o que pode indicar que a maioria segue uma metodologia no estilo BEM. No extremo oposto do BEM, muitas vezes os desenvolvedores utilizam <a hreflang="en" href="https://csswizardry.com/2014/07/hacks-for-dealing-with-specificity/#safely-increasing-specificity">classes duplicadas</a> para aumentar a especificidade e empurrar um seletor à frente de outro (por exemplo, `.foo.foo` em vez de `.foo`). Este tipo de hack de especificidade é na verdade mais popular que o BEM, estando presente em 14% dos websites nos celulares (9% no desktop)! Isto pode indicar que a maioria dos desenvolvedores não quer realmente se livrar completamente da cascata, eles só precisam de mais controle sobre ela.
 
-<figure markdown>
-Percentíl | Desktop | Celular
--- | -- | --
-10 | 0,1,0 | 0,1,0
-25 | 0,2,0 | 0,1,2
-50 | 0,2,0 | 0,2,0
-75 | 0,2,0 | 0,2,0
-90 | 0,3,0 | 0,3,0
-
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Percentíl</th>
+        <th>Desktop</th>
+        <th>Celular</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>10</td>
+        <td>0,1,0</td>
+        <td>0,1,0</td>
+      </tr>
+      <tr>
+        <td>25</td>
+        <td>0,2,0</td>
+        <td>0,1,2</td>
+      </tr>
+      <tr>
+        <td>50</td>
+        <td>0,2,0</td>
+        <td>0,2,0</td>
+      </tr>
+      <tr>
+        <td>75</td>
+        <td>0,2,0</td>
+        <td>0,2,0</td>
+      </tr>
+      <tr>
+        <td>90</td>
+        <td>0,3,0</td>
+        <td>0,3,0</td>
+      </tr>
+    </tbody>
+  </table>
   <figcaption>
     {{ figure_link(
       caption="Distribuição da especificidade média por página.",

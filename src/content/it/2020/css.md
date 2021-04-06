@@ -14,10 +14,10 @@ discuss: 2037
 results: https://docs.google.com/spreadsheets/d/1sMWXWjMujqfAREYxNbG_t1fOJKYCA6ASLwtz4pBQVTw/
 featured_quote: Il web non è più un adolescente, ora ha 30 anni e si comporta così. Tende a dare la priorità alla stabilità e alla leggibilità rispetto alla complessità, a parte i piaceri occasionali.
 featured_stat_1: 72.58%
-featured_stat_label_1: Percentuale di valori <code>&lt;length&gt;</code> che utilizzano l'unità <code>px</code>.
+featured_stat_label_1: Percentuale di valori `<length>` che utilizzano l'unità `px`.
 featured_stat_2: 91.05%
 featured_stat_label_2: Percentuale di pagine per dispositivi mobile che utilizzano una funzione con prefisso del fornitore
-featured_stat_3: <code>darken()</code>
+featured_stat_3: `darken()`
 featured_stat_label_3: La funzione SCSS più popolare
 ---
 
@@ -175,15 +175,43 @@ Cos'è che gli sviluppatori sono così desiderosi di sovrascrivere? Abbiamo esam
 
 Oltre a mantenere gli `id` e le `!important` poche e distanti tra loro, c'è una tendenza ad aggirare del tutto la specificità stipando tutti i criteri di selezione di un selettore in un unico nome di classe, costringendo così tutte le regole ad avere la stessa specificità e trasformare la cascade in un sistema più semplice per chi vince. BEM è una metodologia popolare di quel tipo, anche se non l'unica. Sebbene sia difficile valutare quanti siti web utilizzano esclusivamente metodologie in stile BEM, poiché seguirle in ogni regola è raro (anche il <a hreflang="en" href="https://en.bem.info/">sito web BEM</a> utilizza più classi in molti selettori) , circa il 10% delle pagine presentava una specificità mediana di (0,1,0), che può indicare per lo più seguendo una metodologia in stile BEM. All'estremità opposta di BEM, spesso gli sviluppatori utilizzano <a hreflang="en" href="https://csswizardry.com/2014/07/hacks-for-dealing-with-specificity/#safely-increasing-specificity">classi duplicate</a> per aumentare la specificità e spingere un selettore davanti a un altro (es. `.foo.foo` invece di `.foo`). Questo tipo di hack di specificità è in realtà più popolare del BEM, essendo presente nel 14% dei siti Web mobile (9% dei desktop)! Ciò potrebbe indicare che la maggior parte degli sviluppatori non vuole effettivamente sbarazzarsi del tutto della cascade, ma ha solo bisogno di un maggiore controllo su di essa.
 
-<figure markdown>
-Percentile | Desktop | Mobile
--- | -- | --
-10 | 0,1,0 | 0,1,0
-25 | 0,2,0 | 0,1,2
-50 | 0,2,0 | 0,2,0
-75 | 0,2,0 | 0,2,0
-90 | 0,3,0 | 0,3,0
-
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Percentile</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>10</td>
+        <td>0,1,0</td>
+        <td>0,1,0</td>
+      </tr>
+      <tr>
+        <td>25</td>
+        <td>0,2,0</td>
+        <td>0,1,2</td>
+      </tr>
+      <tr>
+        <td>50</td>
+        <td>0,2,0</td>
+        <td>0,2,0</td>
+      </tr>
+      <tr>
+        <td>75</td>
+        <td>0,2,0</td>
+        <td>0,2,0</td>
+      </tr>
+      <tr>
+        <td>90</td>
+        <td>0,3,0</td>
+        <td>0,3,0</td>
+      </tr>
+    </tbody>
+  </table>
   <figcaption>
     {{ figure_link(
       caption="Distribuzione della specificità mediana per pagina.",

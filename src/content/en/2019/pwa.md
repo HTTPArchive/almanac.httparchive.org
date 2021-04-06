@@ -17,7 +17,7 @@ featured_stat_label_1: Sites that register a service worker
 featured_stat_2: 15%
 featured_stat_label_2: Pageviews that use a Service Worker
 featured_stat_3: 57%
-featured_stat_label_3: PWAs that use the <code>standalone</code> <code>display</code> property
+featured_stat_label_3: PWAs that use the `standalone` `display` property
 ---
 
 ## Introduction
