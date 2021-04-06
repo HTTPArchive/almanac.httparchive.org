@@ -15,7 +15,7 @@ featured_quote: Web font technology is fairly mature, with incremental improveme
 featured_stat_1: 70.3%
 featured_stat_label_1: Popularity of Google Fonts amongst font-hosting services
 featured_stat_2: 10.3%
-featured_stat_label_2: Usage of <code>font-display</code> swap
+featured_stat_label_2: Usage of `font-display` swap
 featured_stat_3: 11.0%
 featured_stat_label_3: Usage of Variable Fonts on mobile sites
 ---

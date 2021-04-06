@@ -15,7 +15,7 @@ featured_quote: De technologie voor weblettertypen is redelijk volwassen, met st
 featured_stat_1: 70,3%
 featured_stat_label_1: Populariteit van Google Fonts onder font-hostingservices
 featured_stat_2: 10,3%
-featured_stat_label_2: Gebruik van <code>font-display</code> swap
+featured_stat_label_2: Gebruik van `font-display` swap
 featured_stat_3: 11,0%
 featured_stat_label_3: Gebruik van variabele lettertypen op mobiele sites
 ---

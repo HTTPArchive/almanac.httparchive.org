@@ -14,10 +14,10 @@ discuss: 2037
 results: https://docs.google.com/spreadsheets/d/1sMWXWjMujqfAREYxNbG_t1fOJKYCA6ASLwtz4pBQVTw/
 featured_quote: The web is not a teenager anymore—it is now 30 years old and acts like it. It tends to favor stability over new bling and readability over complexity, occasional guilty pleasures aside.
 featured_stat_1: 72.58%
-featured_stat_label_1: Percentage of <code>&lt;length&gt;</code> values that use the <code>px</code> unit.
+featured_stat_label_1: Percentage of `<length>` values that use the `px` unit.
 featured_stat_2: 91.05%
 featured_stat_label_2: Percent of mobile pages using any vendor prefixed feature
-featured_stat_3: <code>darken()</code>
+featured_stat_3: `darken()`
 featured_stat_label_3: Most popular SCSS function
 ---
 

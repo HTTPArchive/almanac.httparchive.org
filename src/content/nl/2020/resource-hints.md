@@ -12,9 +12,9 @@ discuss: 2057
 results: https://docs.google.com/spreadsheets/d/1lXjd8ogB7kYfG09eUdGYXUlrMjs4mq1Z7nNldQnvkVA/
 featured_quote: In het afgelopen jaar zijn bronhints toegenomen in acceptatie, en het zijn essentiële API's geworden voor ontwikkelaars om meer gedetailleerde controle te hebben over veel aspecten van bronprioritering en uiteindelijk de gebruikerservaring.
 featured_stat_1: 33%
-featured_stat_label_1: Sites die <code>dns-prefetch</code> gebruiken
+featured_stat_label_1: Sites die `dns-prefetch` gebruiken
 featured_stat_2: 9%
-featured_stat_label_2: Sites die <code>preload</code> gebruiken
+featured_stat_label_2: Sites die `preload` gebruiken
 featured_stat_3: 4,02%
 featured_stat_label_3: Sites die native lazy loading gebruiken
 ---

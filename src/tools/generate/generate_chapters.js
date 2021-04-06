@@ -3,7 +3,7 @@ const showdown = require('showdown');
 const ejs = require('ejs');
 const prettier = require('prettier');
 
-const { find_markdown_files, get_yearly_configs, size_of, parse_array } = require('./shared');
+const { convertSimpleMarkdown, find_markdown_files, get_yearly_configs, size_of, parse_array } = require('./shared');
 const { generate_table_of_contents } = require('./generate_table_of_contents');
 const { generate_header_links } = require('./generate_header_links');
 const { generate_figure_ids } = require('./generate_figure_ids');
@@ -158,6 +158,15 @@ const parse_file = async (markdown,chapter) => {
   const chapter_number = Number(m.chapter_number);
   const authors = parse_array(m.authors);
   const reviewers = parse_array(m.reviewers);
+
+  authors.forEach((author) => {
+    const author_bio_name = author + '_bio';
+    const author_bio_value = m[author_bio_name];
+    if (author_bio_value) {
+      m[author_bio_name] = convertSimpleMarkdown(author_bio_value);
+    }
+  });
+
   let translators;
   if (m.translators) {
     translators = parse_array(m.translators);

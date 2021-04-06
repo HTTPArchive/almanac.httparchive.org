@@ -12,9 +12,9 @@ discuss: 2057
 results: https://docs.google.com/spreadsheets/d/1lXjd8ogB7kYfG09eUdGYXUlrMjs4mq1Z7nNldQnvkVA/
 featured_quote: During the past year resource hints increased in adoption, and they have become essential APIs for developers to have more granular control over many aspects of resource prioritizations and ultimately, user experience.
 featured_stat_1: 33%
-featured_stat_label_1: Sites using <code>dns-prefetch</code>
+featured_stat_label_1: Sites using `dns-prefetch`
 featured_stat_2: 9%
-featured_stat_label_2: Sites using <code>preload</code>
+featured_stat_label_2: Sites using `preload`
 featured_stat_3: 4.02%
 featured_stat_label_3: Sites using native lazy loading
 ---
