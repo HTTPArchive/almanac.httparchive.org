@@ -14,10 +14,10 @@ discuss: 2037
 results: https://docs.google.com/spreadsheets/d/1sMWXWjMujqfAREYxNbG_t1fOJKYCA6ASLwtz4pBQVTw/
 featured_quote: ウェブはもう10代の若者ではなく、30歳になった今、そのように振る舞っています。それは、複雑さよりも安定性や読みやすさを優先する傾向がありますが、たまにある罪悪感はさておき。
 featured_stat_1: 72.58%
-featured_stat_label_1: <code>&lt;length&gt;</code>値のパーセンテージのうち、<code>px</code>単位を使用する割合。
+featured_stat_label_1: `<length>`値のパーセンテージのうち、`px`単位を使用する割合。
 featured_stat_2: 91.05%
 featured_stat_label_2: ベンダーの接頭辞が付いた機能を使用しているモバイルページの割合
-featured_stat_3: <code>darken()</code>
+featured_stat_3: `darken()`
 featured_stat_label_3: 最も人気のあるSCSS機能
 ---
 

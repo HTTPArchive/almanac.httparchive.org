@@ -17,7 +17,7 @@ featured_stat_label_1: taille médiane d’une page d’accueil
 featured_stat_2: 60 %
 featured_stat_label_2: des images sont des JPEG
 featured_stat_3: 2 %
-featured_stat_label_3: des pages utilisent l’élément <code>&lt;picture&gt;</code>
+featured_stat_label_3: des pages utilisent l’élément `<picture>`
 ---
 
 ## Introduction

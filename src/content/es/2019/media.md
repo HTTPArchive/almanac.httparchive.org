@@ -17,7 +17,7 @@ featured_stat_label_1: Tamaño medio de las páginas de inicio
 featured_stat_2: 60%
 featured_stat_label_2: Uso de JPEG entre imágenes
 featured_stat_3: 2%
-featured_stat_label_3: Uso del elemento <code>&lt;picture&gt;</code>
+featured_stat_label_3: Uso del elemento `<picture>`
 ---
 
 ## Introducción
