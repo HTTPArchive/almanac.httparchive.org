@@ -29,8 +29,7 @@ const convertSimpleMarkdown = (text) => {
   convertedText = convertedText.replace(/^<p>/,'');
   convertedText = convertedText.replace(/<\/p>$/,'');
   return convertedText;
-}
-
+};
 
 const find_template_files = async () => {
   const filter = (file, stats) => {
