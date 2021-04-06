@@ -14,7 +14,7 @@ featured_quote: Caching is a technique that enables the reuse of previously down
 featured_stat_1: 27%
 featured_stat_label_1: Responses not using any caching headers
 featured_stat_2: 39%
-featured_stat_label_2: Responses using the <code>Vary</code> header
+featured_stat_label_2: Responses using the `Vary` header
 featured_stat_3: 82%
 featured_stat_label_3: Sites that could save 1 MB by optimizing caching better
 ---

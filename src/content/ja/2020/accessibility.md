@@ -13,9 +13,9 @@ discuss: 2044
 results: https://docs.google.com/spreadsheets/d/1UjEBhq0TfYxUpdpq5IuxjeHB4yqhJq4NOKEd6Dwwrdk/
 featured_quote: 業界として、この章の数字で語られた話を認める時が来ました。 私たちは障害者を失敗させています。
 featured_stat_1: 15,357,625
-featured_stat_label_1: 最も長い既知の<code>alt</code>テキストの長さ
+featured_stat_label_1: 最も長い既知の`alt`テキストの長さ
 featured_stat_2: 3,200
-featured_stat_label_2: <code>aria-labelledby</code>を<code>aria-labeledby</code>と誤表記しているサイト
+featured_stat_label_2: `aria-labelledby`を`aria-labeledby`と誤表記しているサイト
 featured_stat_3: 0.79%
 featured_stat_label_3: クローズドキャプションを提供する動画
 

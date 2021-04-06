@@ -17,7 +17,7 @@ featured_stat_label_1: Median size of home pages
 featured_stat_2: 60%
 featured_stat_label_2: JPEG use amongst images
 featured_stat_3: 2%
-featured_stat_label_3: Use of <code>&lt;picture&gt;</code> element
+featured_stat_label_3: Use of `<picture>` element
 ---
 
 ## Introduction

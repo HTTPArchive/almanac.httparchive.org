@@ -1,10 +1,10 @@
 const fs = require('fs-extra');
 const ejs = require('ejs');
 
-const { size_of } = require('./shared');
+const { convertSimpleMarkdown, size_of } = require('./shared');
 
 const generate_chapter_featured_quote = (metadata) => {
-  let featured_quote = metadata.featured_quote;
+  const featured_quote = convertSimpleMarkdown(metadata.featured_quote);
 
   let featured_quote_obj = {};
   let featured_stats = [];
@@ -14,18 +14,13 @@ const generate_chapter_featured_quote = (metadata) => {
     return {};
   }
 
-  // Showdown replaces & with &amp; so convert those back to avoid escape issues
-  featured_quote = featured_quote.replace(/&amp;/g ,'&');
   featured_quote_obj.quote = featured_quote;
 
   for (let i = 1; i < 4; i++) {
 
-    let featured_stat = metadata["featured_stat_" + i];
-    let featured_stat_label = metadata["featured_stat_label_" + i];
+    const featured_stat = convertSimpleMarkdown(metadata["featured_stat_" + i]);
+    const featured_stat_label = convertSimpleMarkdown(metadata["featured_stat_label_" + i]);
     if (featured_stat && featured_stat_label) {
-      // Showdown replaces & with &amp; so convert those back to avoid escape issues
-      featured_stat = featured_stat.replace(/&amp;/g,'&');
-      featured_stat_label = featured_stat_label.replace(/&amp;/g,'&');
       featured_stats.push ([featured_stat, featured_stat_label]);
     }
   }

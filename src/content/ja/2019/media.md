@@ -17,7 +17,7 @@ featured_stat_label_1: ホームページのサイズの中央値
 featured_stat_2: 60%
 featured_stat_label_2: 画像間でのJPEG利用
 featured_stat_3: 2%
-featured_stat_label_3: <code>&lt;picture&gt;</code>要素の使用
+featured_stat_label_3: `<picture>`要素の使用
 ---
 
 ## 序章

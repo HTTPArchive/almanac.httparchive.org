@@ -16,7 +16,7 @@ featured_quote: We benaderen een bijna volledige acceptatie van levende HTML, sn
 featured_stat_1: 85,73%
 featured_stat_label_1: Percentage pagina's dat het "levende" HTML-doctype gebruikt
 featured_stat_2: 30.073
-featured_stat_label_2: Aantal niet-standaard <code>h7</code>-elementen
+featured_stat_label_2: Aantal niet-standaard `h7`-elementen
 featured_stat_3: 25,24 KB
 featured_stat_label_3: Gewicht van het mediaan document
 ---

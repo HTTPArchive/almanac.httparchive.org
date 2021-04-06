@@ -14,10 +14,10 @@ discuss: 2037
 results: https://docs.google.com/spreadsheets/d/1sMWXWjMujqfAREYxNbG_t1fOJKYCA6ASLwtz4pBQVTw/
 featured_quote: Il web non è più un adolescente, ora ha 30 anni e si comporta così. Tende a dare la priorità alla stabilità e alla leggibilità rispetto alla complessità, a parte i piaceri occasionali.
 featured_stat_1: 72.58%
-featured_stat_label_1: Percentuale di valori <code>&lt;length&gt;</code> che utilizzano l'unità <code>px</code>.
+featured_stat_label_1: Percentuale di valori `<length>` che utilizzano l'unità `px`.
 featured_stat_2: 91.05%
 featured_stat_label_2: Percentuale di pagine per dispositivi mobile che utilizzano una funzione con prefisso del fornitore
-featured_stat_3: <code>darken()</code>
+featured_stat_3: `darken()`
 featured_stat_label_3: La funzione SCSS più popolare
 ---
 

@@ -14,7 +14,7 @@ featured_quote: La mise en cache est une technique permettant de réutiliser un 
 featured_stat_1: 27 %
 featured_stat_label_1: des réponses n’utilisent aucun en-tête de cache.
 featured_stat_2: 39 %
-featured_stat_label_2: des réponses utilisent l’en-tête <code>Vary</code>.
+featured_stat_label_2: des réponses utilisent l’en-tête `Vary`.
 featured_stat_3: 82 %
 featured_stat_label_3: des sites pourraient économiser 1 Mo en optimisant le cache.
 ---
