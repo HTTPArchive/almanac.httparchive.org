@@ -91,7 +91,7 @@ Of course, if we want to use HTTPS on our website then we need a certificate fro
         <td class="numeric">19.68%</td>
       </tr>
       <tr>
-        <td>Let’s Encrypt Authority X3</td>
+        <td>Let's Encrypt Authority X3</td>
         <td class="numeric">10.20%</td>
         <td class="numeric">9.19%</td>
       </tr>

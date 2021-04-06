@@ -7,7 +7,7 @@ reviewers: [borisschapira, rviscomi, obto, noamr, Zizzamia, exterkamp]
 analysts: [max-ostapenko, dooman87]
 editors: [bazzadp]
 translators: [noah-vdv]
-thefoxis_bio: Karolina is Product Design Lead bij <a hreflang="en" href="https://calibreapp.com/">Calibre</a> en werkt aan het creëren van het meest uitgebreide platform voor snelheidscontrole. Ze beheert de <a hreflang="en" href="https://perf.email/" lang="en">Performance Newsletter</a>, uw bron van nieuws over prestaties en bronnen. Karolina <a hreflang="en" href="https://calibreapp.com/blog/category/web-platform">schrijft ook regelmatig</a> over hoe prestaties de gebruikerservaring beïnvloeden.
+thefoxis_bio: Karolina is Product Design Lead bij <a hreflang="en" href="https://calibreapp.com/">Calibre</a> en werkt aan het creëren van het meest uitgebreide platform voor snelheidscontrole. Ze beheert de <a hreflang="en" lang="en" href="https://perf.email/">Performance Newsletter</a>, uw bron van nieuws over prestaties en bronnen. Karolina <a hreflang="en" href="https://calibreapp.com/blog/category/web-platform">schrijft ook regelmatig</a> over hoe prestaties de gebruikerservaring beïnvloeden.
 discuss: 2045
 results: https://docs.google.com/spreadsheets/d/164FVuCQ7gPhTWUXJl1av5_hBxjncNi0TK8RnNseNPJQ/
 featured_quote: Slechte prestaties veroorzaken niet alleen frustratie of hebben een negatieve invloed op de conversie, het creëert ook echte toetredingsdrempels. De wereldwijde pandemie van dit jaar heeft die bestaande barrières nog duidelijker gemaakt.
