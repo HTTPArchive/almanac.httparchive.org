@@ -215,7 +215,7 @@ En fait, si vous utilisez les Google Fonts, allez-y et ajoutez ceci à votre `<h
 
 ### Les polices de caractères les plus populaires
 
-<figure markdown>
+<figure>
   <table>
       <thead>
         <tr>
