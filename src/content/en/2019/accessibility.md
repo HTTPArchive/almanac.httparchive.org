@@ -147,7 +147,7 @@ We found only one in every four pages (26.03%) include a main landmark. And surp
 {{ figure_markup(
   image="fig4.png",
   caption="Percent of pages by their number of 'main' landmarks.",
-  description="Vertical bar chart displaying percentage data, ranging from 0 to 80 in increments of 20, vs. bars representing the number of “main” landmarks per page from 0 to 4. Source: HTTP Archive (July 2019). Zero: 73.97%; One: 17.97%; Two: 7.41%; Three: 0.15%; 4: 0.06%.",
+  description='Vertical bar chart displaying percentage data, ranging from 0 to 80 in increments of 20, vs. bars representing the number of "main" landmarks per page from 0 to 4. Source: HTTP Archive (July 2019). Zero: 73.97%; One: 17.97%; Two: 7.41%; Three: 0.15%; 4: 0.06%.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1420590464&format=interactive"
   )
 }}

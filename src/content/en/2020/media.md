@@ -14,7 +14,7 @@ discuss: 2041
 results: https://docs.google.com/spreadsheets/d/1SZGpCsTT0u1MFBrxed7HA9FLAloL1dS8ZIng986LvS8/
 featured_quote: Images and videos offer us the potential for a most powerful pairing&colon; instant communication, capable of triggering an innate emotional response. However, they require considered implementation techniques to avoid also being a burden to our web pages.
 featured_stat_1: 84.64%
-featured_stat_label_1: Usage of WebP in mobile <code>&lt;Picture&gt;</code> element
+featured_stat_label_1: Usage of WebP in mobile `<Picture>` element
 featured_stat_2: 40.26%
 featured_stat_label_2: JPG images as a percentage of all images
 featured_stat_3: 57.22%
@@ -134,7 +134,7 @@ Many people that we have discussed this with express that `sizes` is particularl
 
 #### Picture
 
-While `srcset` and `sizes` provide us with tooling to help provide browsers with images which are dimensionally more suited for a given viewport, device and layout - the `<picture>` element enables us to provide more sophisticated media strategies, including leveraging more effective image formats and empowering us to explore “art direction”.
+While `srcset` and `sizes` provide us with tooling to help provide browsers with images which are dimensionally more suited for a given viewport, device and layout - the `<picture>` element enables us to provide more sophisticated media strategies, including leveraging more effective image formats and empowering us to explore "art direction".
 
 {{ figure_markup(
   image="use-of-picture.png",

@@ -16,7 +16,7 @@ featured_quote: We benaderen een bijna volledige acceptatie van levende HTML, sn
 featured_stat_1: 85,73%
 featured_stat_label_1: Percentage pagina's dat het "levende" HTML-doctype gebruikt
 featured_stat_2: 30.073
-featured_stat_label_2: Aantal niet-standaard <code>h7</code>-elementen
+featured_stat_label_2: Aantal niet-standaard `h7`-elementen
 featured_stat_3: 25,24 KB
 featured_stat_label_3: Gewicht van het mediaan document
 ---
@@ -675,7 +675,7 @@ In onze verzameling elementen vonden we enkele die noch standaard HTML (noch SVG
   <figcaption>{{ figure_link(caption="Elementen van twijfelachtig erfgoed.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
 </figure>
 
-De bron van deze elementen lijkt te zijn gemengd, aangezien sommige onbekend zijn, terwijl andere kunnen worden getraceerd. De meest populaire, `noindex`, is waarschijnlijk te wijten aan <a hreflang="en" href="https://yandex.com/support/webmaster/adding-site/indexing-prohibition.html">Yandex's aanbeveling</a> ervan om pagina-indexering te verbieden. `jdiv` werd genoteerd in [de Web Almanac van vorig jaar](../2019/markup#products-and-libraries-and-their-custom-markup) en is van JivoChat. `mediaelementwrapper` komt van de MediaElement mediaspeler. Zowel `ymaps` als `yatag` zijn ook van Yandex. Het 'ss'-element kan afkomstig zijn van ProStores, een voormalig e-commerceproduct van eBay, en `olark` kan afkomstig zijn van de Olark-chatsoftware. `h7` lijkt een vergissing te zijn. `limespot` is waarschijnlijk gerelateerd aan het Limespot-personalisatieprogramma voor e-commerce. Geen van deze elementen maakt deel uit van een webstandaard.
+De bron van deze elementen lijkt te zijn gemengd, aangezien sommige onbekend zijn, terwijl andere kunnen worden getraceerd. De meest populaire, `noindex`, is waarschijnlijk te wijten aan <a hreflang="en" href="https://yandex.com/support/webmaster/adding-site/indexing-prohibition.html">Yandex's aanbeveling</a> ervan om pagina-indexering te verbieden. `jdiv` werd genoteerd in [de Web Almanac van vorig jaar](../2019/markup#products-and-libraries-and-their-custom-markup) en is van JivoChat. `mediaelementwrapper` komt van de MediaElement mediaspeler. Zowel `ymaps` als `yatag` zijn ook van Yandex. Het `ss`-element kan afkomstig zijn van ProStores, een voormalig e-commerceproduct van eBay, en `olark` kan afkomstig zijn van de Olark-chatsoftware. `h7` lijkt een vergissing te zijn. `limespot` is waarschijnlijk gerelateerd aan het Limespot-personalisatieprogramma voor e-commerce. Geen van deze elementen maakt deel uit van een webstandaard.
 
 ### Koppen
 

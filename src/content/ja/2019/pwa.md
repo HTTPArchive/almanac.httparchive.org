@@ -17,7 +17,7 @@ featured_stat_label_1: サービスワーカーを登録しているサイト
 featured_stat_2: 15%
 featured_stat_label_2: サービスワーカーを利用したページビュー
 featured_stat_3: 57%
-featured_stat_label_3: <code>standalone</code> <code>display</code>プロパティを使用するPWA
+featured_stat_label_3: `standalone` `display`プロパティを使用するPWA
 ---
 
 ## 導入

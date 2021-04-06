@@ -75,22 +75,69 @@ On the other hand, the [methodology](./methodology) used by the Web Almanac will
 ### Certificate Authorities
 Of course, if we want to use HTTPS on our website then we need a certificate from a Certificate Authority (CA). With the increase in the use of HTTPS comes the increase in use of CAs and their products/services. Here are the top ten certificate issuers based on the volume of TLS requests that use their certificate.
 
-<figure data-markdown="1">
-
-| Issuing Certificate Authority                   | Desktop | Mobile |
-|-------------------------------------------------|---------|--------|
-| Google Internet Authority G3                    | 19.26%  | 19.68% |
-| Let's Encrypt Authority X3                      | 10.20%  |  9.19% |
-| DigiCert SHA2 High Assurance Server CA          |  9.83%  |  9.26% |
-| DigiCert SHA2 Secure Server CA                  |  7.55%  |  8.72% |
-| GTS CA 1O1                                      |  7.87%  |  8.43% |
-| DigiCert SHA2 Secure Server CA                  |  7.55%  |  8.72% |
-| COMODO RSA Domain Validation Secure Server CA   |  6.29%  |  5.79% |
-| Go Daddy Secure Certificate Authority - G2      |  4.84%  |  5.10% |
-| Amazon                                          |  4.71%  |  4.45% |
-| COMODO ECC Domain Validation Secure Server CA 2 |  3.22%  |  2.75% |
-
-<figcaption>{{ figure_link(caption="Top ten Certificate Authority used.") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Issuing Certificate Authority</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Google Internet Authority G3</td>
+        <td class="numeric">19.26%</td>
+        <td class="numeric">19.68%</td>
+      </tr>
+      <tr>
+        <td>Let's Encrypt Authority X3</td>
+        <td class="numeric">10.20%</td>
+        <td class="numeric">9.19%</td>
+      </tr>
+      <tr>
+        <td>DigiCert SHA2 High Assurance Server CA</td>
+        <td class="numeric">9.83%</td>
+        <td class="numeric">9.26%</td>
+      </tr>
+      <tr>
+        <td>DigiCert SHA2 Secure Server CA</td>
+        <td class="numeric">7.55%</td>
+        <td class="numeric">8.72%</td>
+      </tr>
+      <tr>
+        <td>GTS CA 1O1</td>
+        <td class="numeric">7.87%</td>
+        <td class="numeric">8.43%</td>
+      </tr>
+      <tr>
+        <td>DigiCert SHA2 Secure Server CA</td>
+        <td class="numeric">7.55%</td>
+        <td class="numeric">8.72%</td>
+      </tr>
+      <tr>
+        <td>COMODO RSA Domain Validation Secure Server CA</td>
+        <td class="numeric">6.29%</td>
+        <td class="numeric">5.79%</td>
+      </tr>
+      <tr>
+        <td>Go Daddy Secure Certificate Authority - G2</td>
+        <td class="numeric">4.84%</td>
+        <td class="numeric">5.10%</td>
+      </tr>
+      <tr>
+        <td>Amazon</td>
+        <td class="numeric">4.71%</td>
+        <td class="numeric">4.45%</td>
+      </tr>
+      <tr>
+        <td>COMODO ECC Domain Validation Secure Server CA 2</td>
+        <td class="numeric">3.22%</td>
+        <td class="numeric">2.75%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Top ten Certificate Authority used.") }}</figcaption>
 </figure>
 
 As previously discussed, the volume for Google likely reflects repeated use of Google Analytics, Google Adwords, or Google Fonts on other sites.
@@ -105,14 +152,29 @@ Alongside the important requirement to use HTTPS is the requirement to also use 
 
 First of all, we'll look at the keys used for authentication purposes. Traditionally certificates have been issued based on keys using the RSA algorithm, however a newer and better algorithm uses ECDSA (Elliptic Curve Digital Signature Algorithm) which allows the use of smaller keys that demonstrate better performance than their RSA counterparts. Looking at the results of our crawl we still see a large % of the web using RSA.
 
-<figure data-markdown="1">
-
-| Key Type  | Desktop | Mobile |
-|-----------|---------|--------|
-| RSA Keys  | 48.67%  | 58.8%  |
-| ECDA Keys | 21.47%  | 26.41% |
-
-<figcaption>{{ figure_link(caption="Authentication key types used.") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Key Type</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>RSA Keys</td>
+        <td class="numeric">48.67%</td>
+        <td class="numeric">58.8%</td>
+      </tr>
+      <tr>
+        <td>ECDA Keys</td>
+        <td class="numeric">21.47%</td>
+        <td class="numeric">26.41%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Authentication key types used.") }}</figcaption>
 </figure>
 
 Whilst ECDSA keys are stronger, which allows the use of smaller keys and demonstrate better performance than their RSA counterparts, concerns around backwards compatibility, and complications in supporting both in the meantime, do prevent some website operators from migrating.
@@ -125,18 +187,49 @@ Looking at the % of TLS requests that provide Forward Secrecy, we can see that s
 ### Cipher suites
 TLS allows the use of various cipher suites - some newer and more secure, and some older and insecure. Traditionally newer TLS versions have added cipher suites but have been reluctant to remove older cipher suites. TLSv1.3 aims to simplify this by offering a reduced set of ciphers suites and will not permit the older, insecure, cipher suites to be used. Tools like <a hreflang="en" href="https://www.ssllabs.com/">SSL Labs</a> allow the TLS setup of a website (including the cipher suites supported and their preferred order) to be easily seen, which helps drive better configurations. We can see that the majority of cipher suites negotiated for TLS requests were indeed excellent:
 
-<figure data-markdown="1">
-
-| Cipher Suite        | Desktop | Mobile |
-|---------------------|---------|--------|
-| `AES_128_GCM`       | 75.87%  | 76.71% |
-| `AES_256_GCM`       | 19.73%  | 18.49% |
-| `AES_256_CBC`       |  2.22%  |  2.26% |
-| `AES_128_CBC`       |  1.43%  |  1.72% |
-| `CHACHA20_POLY1305` |  0.69%  |  0.79% |
-| `3DES_EDE_CBC`      |  0.06%  |  0.04% |
-
-<figcaption>{{ figure_link(caption="Cipher suite usage used.") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Cipher Suite</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>AES_128_GCM</code></td>
+        <td class="numeric">75.87%</td>
+        <td class="numeric">76.71%</td>
+      </tr>
+      <tr>
+        <td><code>AES_256_GCM</code></td>
+        <td class="numeric">19.73%</td>
+        <td class="numeric">18.49%</td>
+      </tr>
+      <tr>
+        <td><code>AES_256_CBC</code></td>
+        <td class="numeric">2.22%</td>
+        <td class="numeric">2.26%</td>
+      </tr>
+      <tr>
+        <td><code>AES_128_CBC</code></td>
+        <td class="numeric">1.43%</td>
+        <td class="numeric">1.72%</td>
+      </tr>
+      <tr>
+        <td><code>CHACHA20_POLY1305</code></td>
+        <td class="numeric">0.69%</td>
+        <td class="numeric">0.79%</td>
+      </tr>
+      <tr>
+        <td><code>3DES_EDE_CBC</code></td>
+        <td class="numeric">0.06%</td>
+        <td class="numeric">0.04%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Cipher suite usage used.") }}</figcaption>
 </figure>
 
 It is positive to see such wide stream use of GCM ciphers since the older CBC ciphers are less secure. <a hreflang="en" href="https://blog.cloudflare.com/it-takes-two-to-chacha-poly/">CHACHA20_POLY1305</a> is still an niche cipher suite, and we even still have a very small use of the [insecure 3DES ciphers](https://en.wikipedia.org/wiki/Triple_DES#Security).
@@ -146,14 +239,29 @@ It should be noticed that these were the cipher suites used for the crawl using 
 ## Mixed content
 Most sites on the web originally existed as HTTP websites and have had to migrate their site to HTTPS. This 'lift and shift' operation can be difficult and sometimes things get missed or left behind. This results in sites having mixed content, where their pages load over HTTPS but something on the page, perhaps an image or a style, is loaded over HTTP. Mixed content is bad for security and privacy and can be difficult to find and fix.
 
-<figure data-markdown="1">
-
-| Mixed Content Type              | Desktop | Mobile |
-|---------------------------------|---------|--------|
-| Pages with Any Mixed Content    | 16.27%  | 15.37% |
-| Pages with Active Mixed Content |  3.99%  |  4.13% |
-
-<figcaption>{{ figure_link(caption="Mixed content usage.") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Mixed Content Type</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Pages with Any Mixed Content</td>
+        <td class="numeric">16.27%</td>
+        <td class="numeric">15.37%</td>
+      </tr>
+      <tr>
+        <td>Pages with Active Mixed Content</td>
+        <td class="numeric">3.99%</td>
+        <td class="numeric">4.13%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Mixed content usage.") }}</figcaption>
 </figure>
 
 We can see that around 20% of sites across mobile (645,485 sites) and desktop (594,072 sites) present some form of mixed content. Whilst passive mixed content, something like an image, is less dangerous, we can still see that almost a quarter of sites with mixed content have active mixed content. Active mixed content, like JavaScript, is more dangerous as an attacker can insert their own hostile code into a page easily.
@@ -178,15 +286,34 @@ Many new and recent features for site operators to better protect their users ha
 ### HTTP Strict Transport Security
 The <a hreflang="en" href="https://tools.ietf.org/html/rfc6797">HSTS</a> header allows a website to instruct a browser that it should only ever communicate with the site over a secure HTTPS connection. This means that any attempts to use a http:// URL will automatically be converted to https:// before a request is made. Given that over 40% of requests were capable of using TLS, we see a much lower % of requests instructing the browser to require it.
 
-<figure data-markdown="1">
-
-| HSTS Directive      | Desktop | Mobile |
-|---------------------|---------|--------|
-| `max-age`           | 14.80%  | 12.81% |
-| `includeSubDomains` |  3.86%  |  3.29% |
-| `preload`           |  2.27%  |  1.99% |
-
-<figcaption>{{ figure_link(caption="HSTS directive usage.") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>HSTS Directive</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>max-age</code></td>
+        <td class="numeric">14.80%</td>
+        <td class="numeric">12.81%</td>
+      </tr>
+      <tr>
+        <td><code>includeSubDomains</code></td>
+        <td class="numeric">3.86%</td>
+        <td class="numeric">3.29%</td>
+      </tr>
+      <tr>
+        <td><code>preload</code></td>
+        <td class="numeric">2.27%</td>
+        <td class="numeric">1.99%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="HSTS directive usage.") }}</figcaption>
 </figure>
 
 Less than 15% of mobile and desktop pages are issuing a HSTS with a `max-age` directive. This is a minimum requirement for a valid policy. Fewer still are including subdomains in their policy with the `includeSubDomains` directive and even fewer still are HSTS preloading. Looking at the median value for a HSTS `max-age`, for those that do use this, we can see that on both desktop and mobile it is 15768000, a strong configuration representing half a year (60 x 60 x 24 x 365/2).
@@ -207,28 +334,28 @@ Less than 15% of mobile and desktop pages are issuing a HSTS with a `max-age` di
     <tbody>
       <tr>
         <td>10</td>
-        <td>300</td>
-        <td>300</td>
+        <td class="numeric">300</td>
+        <td class="numeric">300</td>
       </tr>
       <tr>
         <td>25</td>
-        <td>7889238</td>
-        <td>7889238</td>
+        <td class="numeric">7889238</td>
+        <td class="numeric">7889238</td>
       </tr>
       <tr>
         <td>50</td>
-        <td>15768000</td>
-        <td>15768000</td>
+        <td class="numeric">15768000</td>
+        <td class="numeric">15768000</td>
       </tr>
       <tr>
         <td>75</td>
-        <td>31536000</td>
-        <td>31536000</td>
+        <td class="numeric">31536000</td>
+        <td class="numeric">31536000</td>
       </tr>
       <tr>
         <td>90</td>
-        <td>63072000</td>
-        <td>63072000</td>
+        <td class="numeric">63072000</td>
+        <td class="numeric">63072000</td>
       </tr>
     </tbody>
   </table>
@@ -287,20 +414,59 @@ Note the Referrer Policy does not follow the `Referer` header's misspelling <a h
 
 A total of 3.25% of desktop pages and 2.95% of mobile pages issue a `Referrer-Policy` header and below we can see the configurations those pages used.
 
-<figure data-markdown="1">
-
-| Configuration                     | Desktop | Mobile |
-|-----------------------------------|---------|--------|
-| `no-referrer-when-downgrade`      | 39.16%  | 41.52% |
-| `strict-origin-when-cross-origin` | 39.16%  | 22.17% |
-| `unsafe-url`                      | 22.17%  | 22.17% |
-| `same-origin`                     |  7.97%  |  7.97% |
-| `origin-when-cross-origin`        |  6.76%  |  6.44% |
-| `no-referrer`                     |  5.65%  |  5.38% |
-| `strict-origin`                   |  4.35%  |  4.14% |
-| `origin`                          |  3.63%  |  3.23% |
-
-<figcaption>{{ figure_link(caption="`Referrer-Policy` configuration option usage.") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Configuration</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>no-referrer-when-downgrade</code></td>
+        <td class="numeric">39.16%</td>
+        <td class="numeric">41.52%</td>
+      </tr>
+      <tr>
+        <td><code>strict-origin-when-cross-origin</code></td>
+        <td class="numeric">39.16%</td>
+        <td class="numeric">22.17%</td>
+      </tr>
+      <tr>
+        <td><code>unsafe-url</code></td>
+        <td class="numeric">22.17%</td>
+        <td class="numeric">22.17%</td>
+      </tr>
+      <tr>
+        <td><code>same-origin</code></td>
+        <td class="numeric">7.97%</td>
+        <td class="numeric">7.97%</td>
+      </tr>
+      <tr>
+        <td><code>origin-when-cross-origin</code></td>
+        <td class="numeric">6.76%</td>
+        <td class="numeric">6.44%</td>
+      </tr>
+      <tr>
+        <td><code>no-referrer</code></td>
+        <td class="numeric">5.65%</td>
+        <td class="numeric">5.38%</td>
+      </tr>
+      <tr>
+        <td><code>strict-origin</code></td>
+        <td class="numeric">4.35%</td>
+        <td class="numeric">4.14%</td>
+      </tr>
+      <tr>
+        <td><code>origin</code></td>
+        <td class="numeric">3.63%</td>
+        <td class="numeric">3.23%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="`Referrer-Policy` configuration option usage.") }}</figcaption>
 </figure>
 
 This table shows the valid values set by pages and that, of the pages which use this header, 99.75% of them on desktop and 96.55% of them on mobile are setting a valid policy. The most popular choice of configuration is `no-referrer-when-downgrade` which will prevent the `Referer` header being sent when a user navigates from a HTTPS page to a HTTP page. The second most popular choice is `strict-origin-when-cross-origin` which prevents any information being sent on a scheme downgrade (HTTPS to HTTP navigation) and when information is sent in the `Referer` it will only contain the origin of the source and not the full URL (for example `https://www.example.com` rather than `https://www.example.com/page/`). Details on the other valid configurations can be found in the <a hreflang="en" href="https://www.w3.org/TR/referrer-policy/#referrer-policies">Referrer Policy specification</a>, though such a high usage of `unsafe-url` warrants further investigation but is likely to be a [third-party](./third-parties) component like analytics or advertisement libraries.
@@ -310,33 +476,91 @@ As the web platform becomes more powerful and feature rich, attackers can abuse 
 
 Here are the 5 most popular features that are controlled with a Feature Policy.
 
-<figure data-markdown="1">
-
-| Feature           | Desktop | Mobile |
-|-------------------|---------|--------|
-| `microphone`      | 10.78%  | 10.98% |
-| `camera`          |  9.95%  | 10.19% |
-| `payment`         |  9.54%  |  9.54% |
-| `geolocation`     |  9.38%  |  9.41% |
-| `gyroscope`       |  7.92%  |  7.90% |
-
-<figcaption>{{ figure_link(caption="Top 5 `Feature-Policy` options used.") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>microphone</code></td>
+        <td class="numeric">10.78%</td>
+        <td class="numeric">10.98%</td>
+      </tr>
+      <tr>
+        <td><code>camera</code></td>
+        <td class="numeric">9.95%</td>
+        <td class="numeric">10.19%</td>
+      </tr>
+      <tr>
+        <td><code>payment</code></td>
+        <td class="numeric">9.54%</td>
+        <td class="numeric">9.54%</td>
+      </tr>
+      <tr>
+        <td><code>geolocation</code></td>
+        <td class="numeric">9.38%</td>
+        <td class="numeric">9.41%</td>
+      </tr>
+      <tr>
+        <td><code>gyroscope</code></td>
+        <td class="numeric">7.92%</td>
+        <td class="numeric">7.90%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Top 5 `Feature-Policy` options used.") }}</figcaption>
 </figure>
 
 We can see that the most popular feature to take control of is the microphone, with almost 11% of desktop and mobile pages issuing a policy that includes it. Delving deeper into the data we can look at what those pages are allowing or blocking.
 
-<figure data-markdown="1">
-
-| Feature      | Configuration | Usage |
-|--------------|---------------|-------|
-| `microphone` | `none`        | 9.09% |
-| `microphone` | `none`        | 8.97% |
-| `microphone` | `self`        | 0.86% |
-| `microphone` | `self`        | 0.85% |
-| `microphone` | `*`           | 0.64% |
-| `microphone` | `*`           | 0.53% |
-
-<figcaption>{{ figure_link(caption="Settings used for `microphone` feature.") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Configuration</th>
+        <th>Usage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>microphone</code></td>
+        <td><code>none</code></td>
+        <td class="numeric">9.09%</td>
+      </tr>
+      <tr>
+        <td><code>microphone</code></td>
+        <td><code>none</code></td>
+        <td class="numeric">8.97%</td>
+      </tr>
+      <tr>
+        <td><code>microphone</code></td>
+        <td><code>self</code></td>
+        <td class="numeric">0.86%</td>
+      </tr>
+      <tr>
+        <td><code>microphone</code></td>
+        <td><code>self</code></td>
+        <td class="numeric">0.85%</td>
+      </tr>
+      <tr>
+        <td><code>microphone</code></td>
+        <td><code>*</code></td>
+        <td class="numeric">0.64%</td>
+      </tr>
+      <tr>
+        <td><code>microphone</code></td>
+        <td><code>*</code></td>
+        <td class="numeric">0.53%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Settings used for `microphone` feature.") }}</figcaption>
 </figure>
 
 By far the most common approach here is to block use of the microphone altogether, with about 9% of pages taking that approach. A small number of pages do allow the use of the microphone by their own origin and interestingly, a small selection of pages intentionally allow use of the microphone by any origin loading content in their page.
@@ -346,15 +570,34 @@ The <a hreflang="en" href="https://tools.ietf.org/html/rfc7034">`X-Frame-Options
 
 We see that the usage of the `X-Frame-Options` header is quite high on both desktop (16.99%) and mobile (14.77%) and can also look more closely at the specific configurations used.
 
-<figure data-markdown="1">
-
-| Configuration | Desktop | Mobile |
-|---------------|---------|--------|
-| `sameorigin`  | 84.92%  | 83.86% |
-| `deny`        | 13.54%  | 14.50% |
-| `allow-from`  |  1.53%  |  1.64% |
-
-<figcaption>{{ figure_link(caption="`X-Frame-Options` configuration used.") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Configuration</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>sameorigin</code></td>
+        <td class="numeric">84.92%</td>
+        <td class="numeric">83.86%</td>
+      </tr>
+      <tr>
+        <td><code>deny</code></td>
+        <td class="numeric">13.54%</td>
+        <td class="numeric">14.50%</td>
+      </tr>
+      <tr>
+        <td><code>allow-from</code></td>
+        <td class="numeric">1.53%</td>
+        <td class="numeric">1.64%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="`X-Frame-Options` configuration used.") }}</figcaption>
 </figure>
 
 It seems that the vast majority of pages restrict framing to only their own origin and the next significant approach is to prevent framing altogether. This is similar to `frame-ancestors` in CSP where these 2 approaches are also the most common. It should also be noted that the `allow-from` option, which in theory allow site owners to list the third-party domains allowed to frame was [never well supported](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options#Browser_compatibility) and has been deprecated.
@@ -369,16 +612,39 @@ The [`X-XSS-Protection`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Heade
 
 14.69% of Desktop requests, and 15.2% of mobile requests used the `X-XSS-Protection` header. Digging into the data we can see what the intention for most site operators was in Figure 8.13.
 
-<figure data-markdown="1">
-
-| Configuration  | Desktop | Mobile |
-|----------------|---------|--------|
-| `1;mode=block` | 91.77%  | 91.46% |
-| `1`            |  5.54%  |  5.35% |
-| `0`            |  2.58%  |  3.11% |
-| `1;report=`    |  0.12%  |  0.09% |
-
-<figcaption>{{ figure_link(caption="`X-XSS-Protection` configuration usage.") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Configuration</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>1;mode=block</code></td>
+        <td class="numeric">91.77%</td>
+        <td class="numeric">91.46%</td>
+      </tr>
+      <tr>
+        <td><code>1</code></td>
+        <td class="numeric">5.54%</td>
+        <td class="numeric">5.35%</td>
+      </tr>
+      <tr>
+        <td><code>0</code></td>
+        <td class="numeric">2.58%</td>
+        <td class="numeric">3.11%</td>
+      </tr>
+      <tr>
+        <td><code>1;report=</code></td>
+        <td class="numeric">0.12%</td>
+        <td class="numeric">0.09%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="`X-XSS-Protection` configuration usage.") }}</figcaption>
 </figure>
 
 The value `1` enables the filter/auditor and `mode=block` sets the protection to the strongest setting (in theory) where any suspected XSS attack would cause the page to not be rendered. The second most common configuration was to simply ensure the auditor/filter was turned on, by presenting a value of `1` and then the 3rd most popular configuration is quite interesting.
@@ -420,15 +686,34 @@ These attacks work by using the fact that browsers will typically include releva
 
 Being a recently introduced mechanism, the usage of Same-Site cookies is much lower as we would expect at 0.1% of requests on both desktop and mobile. There are use cases when a cookie should be sent cross-site. For example, single sign-on sites implicitly work by setting the cookie along with an authentication token.
 
-<figure data-markdown="1">
-
-| Configuration | Desktop | Mobile |
-|---------------|---------|--------|
-| `strict`      | 53.14%  | 50.64% |
-| `lax`         | 45.85%  | 47.42% |
-| `none`        |  0.51%  |  0.41% |
-
-<figcaption>{{ figure_link(caption="SameSite configuration usage.") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Configuration</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>strict</code></td>
+        <td class="numeric">53.14%</td>
+        <td class="numeric">50.64%</td>
+      </tr>
+      <tr>
+        <td><code>lax</code></td>
+        <td class="numeric">45.85%</td>
+        <td class="numeric">47.42%</td>
+      </tr>
+      <tr>
+        <td><code>none</code></td>
+        <td class="numeric">0.51%</td>
+        <td class="numeric">0.41%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="SameSite configuration usage.") }}</figcaption>
 </figure>
 
 We can see that of those pages already using Same-Site cookies, more than half of them are using it in `strict` mode. This is closely followed by sites using Same-Site in `lax` mode and then a small selection of sites using the value `none`. This last value is used to opt-out of the upcoming change where browser vendors may implement `lax` mode by default.
@@ -459,17 +744,17 @@ Currently the name of your cookie can be prefixed with either `__Secure-` or `__
     <tbody>
       <tr>
         <td><code>__Secure-</code></td>
-        <td>640</td>
-        <td>628</td>
-        <td>0.01%</td>
-        <td>0.01%</td>
+        <td class="numeric">640</td>
+        <td class="numeric">628</td>
+        <td class="numeric">0.01%</td>
+        <td class="numeric">0.01%</td>
       </tr>
       <tr>
         <td><code>__Host-</code></td>
-        <td>154</td>
-        <td>157</td>
-        <td>0.00%</td>
-        <td>0.00%</td>
+        <td class="numeric">154</td>
+        <td class="numeric">157</td>
+        <td class="numeric">0.00%</td>
+        <td class="numeric">0.00%</td>
       </tr>
     </tbody>
   </table>

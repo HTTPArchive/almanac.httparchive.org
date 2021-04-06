@@ -17,7 +17,7 @@ featured_stat_label_1: Tamaño medio de las páginas de inicio
 featured_stat_2: 60%
 featured_stat_label_2: Uso de JPEG entre imágenes
 featured_stat_3: 2%
-featured_stat_label_3: Uso del elemento <code>&lt;picture&gt;</code>
+featured_stat_label_3: Uso del elemento `<picture>`
 ---
 
 ## Introducción
@@ -278,16 +278,44 @@ La utilidad de `srcset` normalmente depende de la precisión de la media query `
 * **`<img sizes="(max-width: 300px) 100vw, 300px">`** - este es el segundo patrón de diseño más popular. Es el que se autogenera por WordPress y otro par de plataformas. Aparece autogenerado en base a su tamaño de imagen original (en este caso 300px).
 * **`<img sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, ...">`** - este patrón es el patrón de diseño personalizado que se alinea con el diseño <i lang="en">responsive</i> del CSS. Cada punto de ruptura (<i lang="en">breakpoint</i>) tiene un cálculo diferente para los tamaños a usar.
 
-<figure markdown>
-`<img sizes>` | Frecuencia (millones) | %
--- | -- | --
-(max-width: 300px) 100vw, 300px | 1.47 | 5%
-(max-width: 150px) 100vw, 150px | 0.63 | 2%
-(max-width: 100px) 100vw, 100px | 0.37 | 1%
-(max-width: 400px) 100vw, 400px | 0.32 | 1%
-(max-width: 80px) 100vw, 80px | 0.28 | 1%
-
-<figcaption>{{ figure_link(caption="Porcentaje de páginas que usan los patrones <code>sizes</code> más populares.") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th><code>&lt;img sizes&gt;</code></th>
+        <th>Frecuencia (millones)</th>
+        <th>%</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>(max-width: 300px) 100vw, 300px</code></td>
+        <td class="numeric">1.47</td>
+        <td class="numeric">5%</td>
+      </tr>
+      <tr>
+        <td><code>(max-width: 150px) 100vw, 150px</code></td>
+        <td class="numeric">0.63</td>
+        <td class="numeric">2%</td>
+      </tr>
+      <tr>
+        <td><code>(max-width: 100px) 100vw, 100px</code></td>
+        <td class="numeric">0.37</td>
+        <td class="numeric">1%</td>
+      </tr>
+      <tr>
+        <td><code>(max-width: 400px) 100vw, 400px</code></td>
+        <td class="numeric">0.32</td>
+        <td class="numeric">1%</td>
+      </tr>
+      <tr>
+        <td><code>(max-width: 80px) 100vw, 80px</code></td>
+        <td class="numeric">0.28</td>
+        <td class="numeric">1%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Porcentaje de páginas que usan los patrones <code>sizes</code> más populares.") }}</figcaption>
 </figure>
 
 * **`<img sizes="auto">`** - éste es el que más se usa, aunque en realidad no es standard, sino producto del uso de la librería JavaScript `lazy_sizes`. Ésta usa un código del lado del cliente que inyecta mejores cálculos de `sizes` para el navegador. Su desventaja es que depende de la carga del JavaScript y de que el DOM esté completamente listo, retrasando sustancialmente la carga de las imágenes.

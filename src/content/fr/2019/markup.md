@@ -9,8 +9,8 @@ editors: [rviscomi]
 translators: [borisschapira, SilentJMA]
 discuss: 1758
 results: https://docs.google.com/spreadsheets/d/1WnDKLar_0Btlt9UgT53Giy2229bpV4IM2D_v6OM_WzA/
-bkardell_bio: Brian Kardell est <i lang="en">Developer Advocate</i> chez <a hreflang="en" href="https://igalia.com">Igalia</a>, contributeur des standards du web, <a hreflang="en" href="https://bkardell.com">blogueur</a>, et est actuellement le représentant du comité consultatif du W3C pour la <a hreflang="en" href="https://openjsf.org/" lang="en">Open JS Foundation</a>. Il a fondé <i lang="en">l’Extensible Web Community Group</i> et est co-auteur du <a hreflang="en" href="https://extensiblewebmanifesto.org" lang="en">The Extensible Web Manifesto</a>.
-featured_quote: À partir de juillet 2019, HTTP Archive a commencé à collecter tous les noms de *éléments* utilisés dans le DOM, environ 4,4 millions de pages d’accueil pour ordinateurs de bureau et environ 5,3 millions de pages d’accueil sur mobiles que nous pouvons maintenant commencer à analyser et à disséquer. Lors de cette collecte, nous avons découvert *plus de 5 000 noms d’éléments non standard distincts* dans les pages. Nous avons donc limité le nombre total d’éléments distincts que nous comptons aux 5 048 &quot;premiers&quot;.
+bkardell_bio: Brian Kardell est <i lang="en">Developer Advocate</i> chez <a hreflang="en" href="https://igalia.com">Igalia</a>, contributeur des standards du web, <a hreflang="en" href="https://bkardell.com">blogueur</a>, et est actuellement le représentant du comité consultatif du W3C pour la <a hreflang="en" lang="en" href="https://openjsf.org/">Open JS Foundation</a>. Il a fondé <i lang="en">l’Extensible Web Community Group</i> et est co-auteur du <a hreflang="en" lang="en" href="https://extensiblewebmanifesto.org">The Extensible Web Manifesto</a>.
+featured_quote: À partir de juillet 2019, HTTP Archive a commencé à collecter tous les noms de *éléments* utilisés dans le DOM, environ 4,4 millions de pages d’accueil pour ordinateurs de bureau et environ 5,3 millions de pages d’accueil sur mobiles que nous pouvons maintenant commencer à analyser et à disséquer. Lors de cette collecte, nous avons découvert *plus de 5 000 noms d’éléments non standard distincts* dans les pages. Nous avons donc limité le nombre total d’éléments distincts que nous comptons aux 5 048 "premiers".
 featured_stat_1: 11
 featured_stat_label_1: éléments sont utilisés sur plus de 90 % des pages.
 featured_stat_2: 15 %
@@ -43,20 +43,59 @@ Au lieu de faire ça, nous allons examiner combien de sites incluent chaque él�
 
 En 2005, l’enquête de Hixie a listé les principaux éléments les plus fréquemment utilisés sur les pages. Les 3 premiers étaient `html`, `head` et `body`, ce qu’il a noté comme intéressant, car ils sont facultatifs et créés par l’analyseur s’ils sont omis. Étant donné que nous utilisons le DOM après interprétation, ils apparaissent universellement dans nos données. C’est pourquoi nous commencerons par le 4<sup>e</sup> élément le plus utilisé. Vous trouverez ci-dessous une comparaison des données collectées à son époque et aujourd’hui (j’ai inclus ici la comparaison en fréquence, pour le plaisir).
 
-<figure data-markdown="1">
-
-2005 (par site) | 2019 (par site) | 2019 (fréquence)
--- | -- | --
-title | title | div
-a | meta | a
-img | a | span
-meta | div | li
-br | link | img
-table | script | script
-td | img | p
-tr | span | option
-
-<figcaption>{{ figure_link(caption="Comparaison des principaux éléments entre 2005 et 2019.") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>2005 (par site)</th>
+        <th>2019 (par site)</th>
+        <th>2019 (fréquence)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>title</td>
+        <td>title</td>
+        <td>div</td>
+      </tr>
+      <tr>
+        <td>a</td>
+        <td>meta</td>
+        <td>a</td>
+      </tr>
+      <tr>
+        <td>img</td>
+        <td>a</td>
+        <td>span</td>
+      </tr>
+      <tr>
+        <td>meta</td>
+        <td>div</td>
+        <td>li</td>
+      </tr>
+      <tr>
+        <td>br</td>
+        <td>link</td>
+        <td>img</td>
+      </tr>
+      <tr>
+        <td>table</td>
+        <td>script</td>
+        <td>script</td>
+      </tr>
+      <tr>
+        <td>td</td>
+        <td>img</td>
+        <td>p</td>
+      </tr>
+      <tr>
+        <td>tr</td>
+        <td>span</td>
+        <td>option</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Comparaison des principaux éléments entre 2005 et 2019.") }}</figcaption>
 </figure>
 
 ### Éléments par page

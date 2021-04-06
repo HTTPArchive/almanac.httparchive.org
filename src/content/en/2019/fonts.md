@@ -9,7 +9,7 @@ editors: [bazzadp]
 translators: []
 discuss: 1761
 results: https://docs.google.com/spreadsheets/d/108g6LXdC3YVsxmX1CCwrmpZ3-DmbB8G_wwgQHX5pn6Q/
-zachleat_bio: Zach is a Web Developer with <a hreflang="en" href="https://www.filamentgroup.com/">Filament Group</a>. He’s currently fixated on <a hreflang="en" href="https://www.zachleat.com/web/fonts/">web fonts</a> and <a hreflang="en" href="https://www.zachleat.com/web/introducing-eleventy/">static site generators</a>. His <a hreflang="en" href="https://www.zachleat.com/web/speaking/">public speaking résumé</a> includes talks in eight different countries at events like JAMstack_conf, Beyond Tellerrand, Smashing Conference, CSSConf, and <a hreflang="en" href="https://www.zachleat.com/web/whitehouse/">The White House</a>. He also helps herd <a hreflang="en" href="http://nejsconf.com/">NEJS CONF</a> and the <a hreflang="en" href="http://nebraskajs.com">NebraskaJS</a> meetup.
+zachleat_bio: Zach is a Web Developer with <a hreflang="en" href="https://www.filamentgroup.com/">Filament Group</a>. He's currently fixated on <a hreflang="en" href="https://www.zachleat.com/web/fonts/">web fonts</a> and <a hreflang="en" href="https://www.zachleat.com/web/introducing-eleventy/">static site generators</a>. His <a hreflang="en" href="https://www.zachleat.com/web/speaking/">public speaking résumé</a> includes talks in eight different countries at events like JAMstack_conf, Beyond Tellerrand, Smashing Conference, CSSConf, and <a hreflang="en" href="https://www.zachleat.com/web/whitehouse/">The White House</a>. He also helps herd <a hreflang="en" href="http://nejsconf.com/">NEJS CONF</a> and the <a hreflang="en" href="http://nebraskajs.com">NebraskaJS</a> meetup.
 featured_quote: Web fonts enable beautiful and functional typography on the web. Using web fonts not only empowers design, but it democratizes a subset of design, as it allows easier access to those who might not have particularly strong design skills. However, for all the good they can do, web fonts can also do great harm to your site's performance if they are not loaded properly.
 featured_stat_1: 74.9%
 featured_stat_label_1: 3P Font Requests that use Google Fonts
@@ -49,7 +49,7 @@ The fact that three quarters are hosted is perhaps unsurprising given Google Fon
 
 Google serves fonts using third-party CSS files hosted on `https://fonts.googleapis.com`. Developers add requests to these stylesheets using `<link>` tags in their markup. While these stylesheets are render blocking, they are very small. However, the font files are hosted on yet another domain, `https://fonts.gstatic.com`. The model of requiring two separate hops to two different domains makes `preconnect` a great option here for the second request that will not be discovered until the CSS is downloaded.
 
-Note that while `preload` would be a nice addition to load the font files higher in the request waterfall (remember that `preconnect` sets up the connection, it doesn’t request the file content), `preload` is not yet available with Google Fonts. Google Fonts generates unique URLs for their font files <a hreflang="en" href="https://github.com/google/fonts/issues/1067">which are subject to change</a>.
+Note that while `preload` would be a nice addition to load the font files higher in the request waterfall (remember that `preconnect` sets up the connection, it doesn't request the file content), `preload` is not yet available with Google Fonts. Google Fonts generates unique URLs for their font files <a hreflang="en" href="https://github.com/google/fonts/issues/1067">which are subject to change</a>.
 
 ### What are the most popular third-party hosts?
 
@@ -215,7 +215,7 @@ In fact, if you're using Google Fonts go ahead and add this to your `<head>` if 
 
 ### Most popular typefaces
 
-<figure markdown>
+<figure>
   <table>
       <thead>
         <tr>

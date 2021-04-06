@@ -146,6 +146,10 @@ p {
   align-items: center;
 }
 
+.featured-chapter-content code {
+  white-space: nowrap;
+}
+
 .featured-chapter-content > div,
 .featured-chapter-content button {
   margin-bottom: 40px;
