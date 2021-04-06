@@ -1301,7 +1301,7 @@ The last few years has seen a greater interaction between CSS and JavaScript, be
 
 ### Houdini
 
-You have likely heard of [Houdini](https://developer.mozilla.org/en-US/docs/Web/Houdini) by now. Houdini is a set of low-level APIs that exposes parts of the CSS engine, giving developers the power to extend CSS by hooking into the styling and layout process of a browser’s rendering engine. Since <a hreflang="en" href="https://ishoudinireadyyet.com/">several Houdini specs have shipped in browsers</a>, we figured it is time to see if they are actually used in the wild yet. Short answer: no. And now for the longer answer…
+You have likely heard of [Houdini](https://developer.mozilla.org/en-US/docs/Web/Houdini) by now. Houdini is a set of low-level APIs that exposes parts of the CSS engine, giving developers the power to extend CSS by hooking into the styling and layout process of a browser's rendering engine. Since <a hreflang="en" href="https://ishoudinireadyyet.com/">several Houdini specs have shipped in browsers</a>, we figured it is time to see if they are actually used in the wild yet. Short answer: no. And now for the longer answer…
 
 First, we looked at the [Properties & Values API](https://developer.mozilla.org/en-US/docs/Web/API/CSS/RegisterProperty), which allows developers to register a custom property and give it a type, an initial value, and prevent it from being inherited. One of the primary use cases is being able to animate custom properties, so we also looked at how frequently custom properties are being animated.
 
