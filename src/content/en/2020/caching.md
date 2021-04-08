@@ -291,11 +291,11 @@ As we head out to the long tail, there are a small percentage of invalid directi
 * Misspelled directives such as `nocache` and `s-max-age` and invalid directive syntax, such as using `:` instead of `=` or using `_` instead of `-`.
 * Non-existent directives such as `max-stale`, `proxy-public`, `surrogate-control`.
 
-The most interesting standout in the list of invalid directives is the use of `no-cache="set-cookie"`—even at only 0.2% of all `Cache-Control` header values, it still makes up more than all the other invalid directives combined. In some early discussions on the `Cache-Control` header, this syntax was raised as a possible way to ensure that any `Set-Cookie` response headers (which might be user-specific) would not be cached with the object itself by any intermediate proxies such as CDNs. However, this syntax was not included in the final RFC, Nearly equivalent functionality can be implemented using the `private` directive, and the `no-cache` directive does not allow a value.
+The most interesting standout in the list of invalid directives is the use of `no-cache="set-cookie"`—even at only 0.2% of all `Cache-Control` header values, it still makes up more than all the other invalid directives combined. In some early discussions on the `Cache-Control` header, this syntax was raised as a possible way to ensure that any `Set-Cookie` response headers (which might be user-specific) would not be cached with the object itself by any intermediate proxies such as CDNs. However, this syntax was not included in the final RFC. Nearly equivalent functionality can be implemented using the `private` directive, and the `no-cache` directive does not allow a value.
 
 ## `Cache-Control`: `no-store`, `no-cache` and `max-age=0`
 
-When a response absolutely must not be cached, the `Cache-Control no-store` directive should be used; if this directive is not specified, then the response *is considered cacheable and may be cached*. Note that if `no-store` is specified, it takes precedence over other directives. This makes sense, since serious privacy and security issues could occur if a resource is cached which should not be.
+When a response absolutely must not be cached, the `Cache-Control: no-store` directive should be used; if this directive is not specified, then the response *is considered cacheable and may be cached*. Note that if `no-store` is specified, it takes precedence over other directives. This makes sense, since serious privacy and security issues could occur if a resource is cached which should not be.
 
 We can see a few common errors that are made when attempting to configure a response to be non-cacheable:
 
