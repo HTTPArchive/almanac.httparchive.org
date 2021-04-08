@@ -186,7 +186,7 @@ Bij veel populaire schermlezers kunnen gebruikers ook navigeren door snel door k
 
 Een <a hreflang="en" href="https://webaim.org/techniques/skipnav/">vermijdingslink</a> is een link die bovenaan een pagina wordt geplaatst en waarmee schermlezers of gebruikers met alleen toetsenbord direct naar de hoofdinhoud kunnen gaan. Het "slaat" effectief alle navigatielinks en menu's boven aan de pagina over. Vermijdingslinks zijn vooral handig voor toetsenbordgebruikers die geen schermlezer gebruiken, aangezien deze gebruikers gewoonlijk geen toegang hebben tot andere modi voor snelle navigatie (zoals Hoofdinhoudsgebieden en koppen). 14,19% van de pagina's in onze steekproef bleken vermijdingslinks te hebben.
 
-Als u zelf een vermijdingslink in actie wilt zien, dan kan dat! Voer gewoon een snelle Google-zoekopdracht uit en klik op "<kbd>tab</kbd>" zodra u op de pagina's met zoekresultaten terechtkomt. U wordt begroet met een eerder verborgen link, net als die in afbeelding 9.7.
+Als u zelf een vermijdingslink in actie wilt zien, dan kan dat! Voer gewoon een snelle Google-zoekopdracht uit en klik op <kbd>tab</kbd> zodra u op de pagina's met zoekresultaten terechtkomt. U wordt begroet met een eerder verborgen link, net als die in afbeelding 9.7.
 
 {{ figure_markup(
   image="example-of-a-skip-link-on-google.com.png",

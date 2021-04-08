@@ -186,7 +186,7 @@ Muitos leitores de tela populares também permitem que os usuários naveguem pul
 
 Um <a hreflang="en" href="https://webaim.org/techniques/skipnav/">skip link</a> é um link colocado na parte superior de uma página que permite que leitores de tela ou usuários apenas com teclado acessem diretamente o conteúdo principal. Ele efetivamente "pula" todos os links de navegação e menus no topo da página. Os links para ignorar são especialmente úteis para usuários de teclado que não usam um leitor de tela, pois esses usuários geralmente não têm acesso a outros modos de navegação rápida (como pontos de referência e títulos). 14,19% das páginas em nossa amostra apresentaram skip links.
 
-Se você gostaria de ver um skip link em ação, você pode! Basta fazer uma pesquisa rápida no Google e clicar em "<kbd>tab</kbd>" assim que acessar as páginas de resultados da pesquisa. Você será saudado com um link anteriormente oculto, exatamente como o da Figura 9.7.
+Se você gostaria de ver um skip link em ação, você pode! Basta fazer uma pesquisa rápida no Google e clicar em <kbd>tab</kbd> assim que acessar as páginas de resultados da pesquisa. Você será saudado com um link anteriormente oculto, exatamente como o da Figura 9.7.
 
 {{ figure_markup(
   image="example-of-a-skip-link-on-google.com.png",
