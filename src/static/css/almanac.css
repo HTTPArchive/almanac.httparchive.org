@@ -1423,6 +1423,7 @@ th code {
   overflow-wrap: unset;
 }
 
+kbd,
 code {
   font-size: 1rem;
   background-color: #f7f7f7;

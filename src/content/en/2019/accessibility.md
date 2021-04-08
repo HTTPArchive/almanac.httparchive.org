@@ -186,7 +186,7 @@ Many popular screen readers also allow users to navigate by quickly jumping thro
 
 A <a hreflang="en" href="https://webaim.org/techniques/skipnav/">skip link</a> is a link placed at the top of a page which allows screen readers or keyboard-only users to jump straight to the main content. It effectively "skips" over all navigational links and menus at the top of the page. Skip links are especially useful to keyboard users who don't use a screen reader, as these users don't usually have access to other modes of quick navigation (like landmarks and headings). 14.19% of the pages in our sample were found to have skip links.
 
-If you'd like to see a skip link in action for yourself, you can! Just do a quick Google search and hit "<kbd>tab</kbd>" as soon as you land on the search result pages. You'll be greeted with a previously hidden link just like the one in Figure 9.7.
+If you'd like to see a skip link in action for yourself, you can! Just do a quick Google search and hit <kbd>tab</kbd> as soon as you land on the search result pages. You'll be greeted with a previously hidden link just like the one in Figure 9.7.
 
 {{ figure_markup(
   image="example-of-a-skip-link-on-google.com.png",
