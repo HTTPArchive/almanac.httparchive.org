@@ -1,8 +1,8 @@
 {% extends "base/contributors.html" %}
 
-{% block title %}2019 Katkıda bulunanlar | HTTP Archive&#8217;dan Web Almanac{% endblock %}
+{% block title %}2019 Katkıda bulunanlar | HTTP Archive'dan Web Almanac{% endblock %}
 
-{% block description %}2019 Web Almanac&#8217;a Analistler, Yazarlar, Beyin Takımı, Tasarımcılar, Geliştiriciler, Editörler, İnceleyiciler ve Çevirmenler olarak katkıda bulunan {{ config.contributors.items() | length }} kişi.{% endblock %}
+{% block description %}2019 Web Almanac'a Analistler, Yazarlar, Beyin Takımı, Tasarımcılar, Geliştiriciler, Editörler, İnceleyiciler ve Çevirmenler olarak katkıda bulunan {{ config.contributors.items() | length }} kişi.{% endblock %}
 
 {% block filter_by_team %}Takıma göre filtrele: Katkıda bulunan <span id="contributors-total">{{ config.contributors.items() | length }}</span><span id="contributors-total-text" class="hidden"> kişinin <span id="filtered-contributors">{{ self.contributors() }}</span></span>{% endblock %}
 {% block filter_by %}Filtrele{% endblock %}
