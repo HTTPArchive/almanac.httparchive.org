@@ -541,9 +541,9 @@ Web Almanac2019年版では、いくつかの非標準的な要素を取り上�
   <figcaption>{{ figure_link(caption="人気の高い14種類のカスタム要素", sheets_gid="770933671", sql_file="pages_element_count_by_device_and_custom_dash_elements.sql") }}</figcaption>
 </figure>
 
-これらの要素は3つのソースから来ています。昨年も紹介した分析ソリューションの<a hreflang="en" href="https://metrica.yandex.com/about">Yandex Metrica</a>（`ym-`）、<a hreflang="en" href="https://www.sliderrevolution. com/">Slider Revolution</a> (`rs-`)は、WordPressのスライダーで、サンプルのトップ付近にもっと多くの要素があります。そして、ウェブサイトビルダーの<a hreflang="en" href="https://www.wix.com/">Wix</a> (`wix-`)があります。
+これらの要素は3つのソースから来ています。昨年も紹介した分析ソリューションの<a hreflang="en" href="https://metrica.yandex.com/about">Yandex Metrica</a>（`ym-`）、<a hreflang="en" href="https://www.sliderrevolution.com/">Slider Revolution</a> (`rs-`)は、WordPressのスライダーで、サンプルのトップ付近にもっと多くの要素があります。そして、ウェブサイトビルダーの<a hreflang="en" href="https://www.wix.com/">Wix</a> (`wix-`)があります。
 
-また、<a hreflang="en" href="https://amp.dev/">AMPマークアップ</a>の`amp-img`（11,700ページ）、`amp-analytics`（10,256ページ）、`amp-auto-ads`（7,621ページ）などの`amp-`要素を持つグループや、<a hreflang="en" href="https://angular. io/">Angular</a>の `app-` 要素である `app-root` (16,314)、`app-footer` (6,745)、`app-header` (5,274) なども含まれています。
+また、<a hreflang="en" href="https://amp.dev/">AMPマークアップ</a>の`amp-img`（11,700ページ）、`amp-analytics`（10,256ページ）、`amp-auto-ads`（7,621ページ）などの`amp-`要素を持つグループや、<a hreflang="en" href="https://angular.io/">Angular</a>の `app-` 要素である `app-root` (16,314)、`app-footer` (6,745)、`app-header` (5,274) なども含まれています。
 
 ### 廃止された要素
 
