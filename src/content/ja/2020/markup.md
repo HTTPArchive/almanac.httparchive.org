@@ -14,7 +14,7 @@ discuss: 2039
 results: https://docs.google.com/spreadsheets/d/1Ta7amoUeaL4pILhWzH-SCzMX9PsZeb1x_mwrX2C4eY8/
 featured_quote: 私たちは、生きたHTMLをほぼ完全に採用しようとしており、流行のページはすぐに削除し、フレームワークの採用や廃止も迅速に行っています。しかし、HTMLが与えてくれる選択肢を使い切った形跡はありません。
 featured_stat_1: 85.73%
-featured_stat_label_1: "living" HTML doctypeを使用しているページの割合
+featured_stat_label_1: "生きた" HTML doctypeを使用しているページの割合
 featured_stat_2: 30,073
 featured_stat_label_2: 標準外の`h7`要素の数
 featured_stat_3: 25.24 KB
@@ -35,7 +35,7 @@ HTMLをどのように使うのかでは、どれだけ素晴らしい基盤が�
 
 ## 全般
 
-このセクションではドキュメントタイプやドキュメントのサイズ、さらにはコメントやスクリプトの使用など、HTMLのより高度な側面を取り上げています。"Living HTML "は、まさに生きているのです
+このセクションではドキュメントタイプやドキュメントのサイズ、さらにはコメントやスクリプトの使用など、HTMLのより高度な側面を取り上げています。"生きたHTML "は、まさに生きているのです
 
 ### Doctypes
 
@@ -93,7 +93,7 @@ XHTML1.0以降、数がかなり減り、いくつかの標準的なもの、い
 
 この結果から、2つの点が注目されます。
 
-1. <a hreflang="en" href="https://blog.whatwg.org/html-is-the-new-html5">living HTML</a>（通称「HTML5」）の発表から約10年、living HTMLは明らかに当たり前のものになりました。
+1. <a hreflang="en" href="https://blog.whatwg.org/html-is-the-new-html5">生きた HTML</a>（通称「HTML5」）の発表から約10年、生きた HTMLは明らかに当たり前のものになりました。
 2. 生きたHTML以前のウェブは、XHTML1.0のような、次によく使われるdoctypにまだ見られます。XHTMLです。それらのドキュメントは、おそらくMIMEタイプが`text/html`のHTMLとして配信されていますが、これらの古いdoctypesはまだ死んでいません。
 
 ### ドキュメントサイズ
@@ -140,7 +140,7 @@ XHTML1.0以降、数がかなり減り、いくつかの標準的なもの、い
 コードにコメントを付けることは一般的に良い習慣であり、HTMLコメントはユーザーエージェントによってレンダリングされることなく、HTML文書にメモを付けるためのものです。
 
 ```html
-<!-- This is a comment in HTML -->
+<!-- これは、HTMLのコメントです。 -->
 ```
 
 多くのページでは制作のためにコメントが削除されているでしょうが90パーセンタイルのホームページでは、モバイルでは約73個、デスクトップでは約79個のコメントが使用されており、10パーセンタイルでは約2個のコメントが使用されていることがわかりました。 中央値のページでは、16個（モバイル）または17個（デスクトップ）のコメントが使用されています。
@@ -151,7 +151,7 @@ XHTML1.0以降、数がかなり減り、いくつかの標準的なもの、い
 
 ```html
 <!--[if IE 8]>
-  <p>This renders in Internet Explorer 8 only.</p>
+  <p>これは、Internet Explorer 8でのみ表示されます。</p>
 <![endif]-->
 ```
 
@@ -230,7 +230,7 @@ XHTML1.0以降、数がかなり減り、いくつかの標準的なもの、い
   )
 }}
 
-<a hreflang="en" href="https://html.spec.whatwg.org/multipage/">living HTML</a>が現在112個の要素を持っていることを考えると、90パーセンタイルが41個以上の要素を使用していないということは、ほとんどの文書でHTMLがほとんど使い尽くされていないことを示唆しているかもしれません。しかしHTMLが提供する意味的な豊かさは、すべての文書がそのすべてを必要とすることを意味しないので、これがHTMLとその使用にとって実際に何を意味するかを解釈するのは難しいです。HTMLの要素は、利用可能かどうかではなく、目的（セマンティクス）に応じて使用されるべきです。
+<a hreflang="en" href="https://html.spec.whatwg.org/multipage/">生きたHTML</a>が現在112個の要素を持っていることを考えると、90パーセンタイルが41個以上の要素を使用していないということは、ほとんどの文書でHTMLがほとんど使い尽くされていないことを示唆しているかもしれません。しかしHTMLが提供する意味的な豊かさは、すべての文書がそのすべてを必要とすることを意味しないので、これがHTMLとその使用にとって実際に何を意味するかを解釈するのは難しいです。HTMLの要素は、利用可能かどうかではなく、目的（セマンティクス）に応じて使用されるべきです。
 
 これらの要素はどのように配分されていますか？
 
@@ -325,9 +325,9 @@ XHTML1.0以降、数がかなり減り、いくつかの標準的なもの、い
 
 ```html
 <details>
-  <summary>Status: Operational</summary>
-  <p>Velocity: 12m/s</p>
-  <p>Direction: North</p>
+  <summary>ステータス 動作確認済み</summary>
+  <p>速さ：12m/s</p>
+  <p>方向：北</p>
 </details>
 ```
 
@@ -450,7 +450,7 @@ XHTML1.0以降、数がかなり減り、いくつかの標準的なもの、い
   <figcaption>{{ figure_link(caption="サンプルのページから特定の要素が見つかる確率が低いこと。", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
 </figure>
 
-私たちは、どのような要素が廃れてしまったのかを知るために、これらの要素を含めています。しかし、`dir`と`basefont`はXHTML1.0(2000)で最後に指定され、もはやHTMLの一部ではありませんが、`rp`の稀な使用（これは<a hreflang="en" href="https://www.w3.org/TR/1998/WD-ruby-19981221/#a2-4">1998年の早い段階で</a>、<a hreflang="en" href="https://html. spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element">still part of HTML</a>に言及されており）は、<a hreflang="en" href="https://www.w3.org/TR/ruby/">Rubyマークアップ</a>があまり普及していないことを示唆しているのかもしれない。
+私たちは、どのような要素が廃れてしまったのかを知るために、これらの要素を含めています。しかし、`dir`と`basefont`はXHTML1.0(2000)で最後に指定され、もはやHTMLの一部ではありませんが、`rp`の稀な使用（これは<a hreflang="en" href="https://www.w3.org/TR/1998/WD-ruby-19981221/#a2-4">1998年の早い段階で</a>、<a hreflang="en" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element">still part of HTML</a>に言及されており）は、<a hreflang="en" href="https://www.w3.org/TR/ruby/">Rubyマークアップ</a>があまり普及していないことを示唆しているのかもしれない。
 
 ### カスタム要素
 
@@ -969,7 +969,7 @@ HTML仕様によると、<a hreflang="en" href="https://html.spec.whatwg.org/mul
 
 [viewport](https://developer.mozilla.org/ja/docs/Mozilla/Mobile/Viewport_meta_tag)メタ要素は、モバイルブラウザでのレイアウトを制御するために使用されます。数年前まではWebページを構築する際に「viewport meta要素を忘れないように」というモットーのようなものがありましたが、やがてこれが一般的になり、「ズームやスケーリングが無効になっていないか確認する」というモットーに変わりました。
 
-ユーザーは、テキストを<a hreflanglang="en" href="https://dequeuniversity.com/rules/axe/4.0/meta-viewport-large">最大500%</a>まで拡大・縮小できる必要があります。これが、<a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a>や<a hreflang="en" href="https://www.deque.com/axe/">axe</a>のような人気のあるツールの監査が、`meta name="viewport"`要素内で`user-scalable="no"`が使用され、`maximum-scale`属性値が`5`未満の場合に失敗する理由です。
+ユーザーは、テキストを<a hreflang="en" href="https://dequeuniversity.com/rules/axe/4.0/meta-viewport-large">最大500%</a>まで拡大・縮小できる必要があります。これが、<a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a>や<a hreflang="en" href="https://www.deque.com/axe/">axe</a>のような人気のあるツールの監査が、`meta name="viewport"`要素内で`user-scalable="no"`が使用され、`maximum-scale`属性値が`5`未満の場合に失敗する理由です。
 
 データを見てみると結果をよりよく理解するためにスペースを削除し、すべてを小文字に変換し、`content`属性のコンマ値で、ソートすることでデータを正規化しました。
 
