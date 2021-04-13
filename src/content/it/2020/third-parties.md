@@ -7,7 +7,7 @@ reviewers: [jzyang, exterkamp]
 analysts: [max-ostapenko, paulcalvano]
 editors: [bazzadp]
 translators: [chefleo]
-simonhearne_bio: Simon è un architetto di prestazioni web. È appassionato di aiutare a fornire un Web più veloce e accessibile. Puoi trovarlo twittare <a href="https://twitter.com/simonhearne">@SimonHearne</a> e bloggare su <a hreflang="en" href="https://simonhearne.com">simonhearne.com</a>.
+simonhearne_bio: Simon è un architetto di prestazioni web. È appassionato di aiutare a fornire un Web più veloce e accessibile. Puoi trovarlo twittare <a href="https://twitter.com/simonhearne">@SimonHearne</a> e bloggare su <a hreflang="en" hreflang-"it" href="https://simonhearne.com">simonhearne.com</a>.
 discuss: 2042
 results: https://docs.google.com/spreadsheets/d/1uW4SMkC45b4EbC4JV1xKAUhwGN2K8j0qFy_jSIYnHhI/
 featured_quote: Il contenuto di terze parti è più diffuso che mai, il 94% delle pagine ha almeno una risorsa di terze parti e la pagina mediana ne ha 24. In questo capitolo esaminiamo la prevalenza di contenuti di terze parti, l'impatto sul peso della pagina e sulla CPU del browser, quindi suggerire metodi per ridurre l'impatto dei contenuti di terze parti sulle prestazioni della pagina.
@@ -147,7 +147,7 @@ I prossimi quattro domini più comuni sono tutti provider di pubblicità. Potreb
 
 Il sesto dominio più comune è `digicert.com`. Le chiamate a `digicert.com` sono generalmente controlli di revoca OCSP a causa dei certificati TLS che non hanno la cucitura OCSP abilitata o l'uso di certificati EV (Extended Validation) che impediscono il blocco dei certificati intermedi. Questo numero è esagerato nel HTTP Archive perché tutte le pagine caricate sono effettivamente visitatori per la prima volta: le risposte OCSP sono generalmente memorizzate nella cache e valide per sette giorni nella navigazione nel mondo reale. Consulta <a hreflang="en" href="https://simonhearne.com/2020/drop-ev-certs/">questo post del blog</a> per ulteriori informazioni su questo problema.
 
-Più in basso nell'elenco al 2.43% c'è `ajax.googleapis.com`, il <a hreflang="en" href="https://developers.google.com/speed/libraries">progetto Hosted Libraries</a> di Google. Sebbene caricare una libreria come jQuery da un servizio ospitato sia facile, il costo aggiuntivo di una connessione a un dominio di terze parti potrebbe avere un impatto negativo sulle prestazioni. È meglio ospitare tutti i JavaScript e CSS critici nel dominio principale, se possibile. Inoltre, ora non vi è alcun vantaggio per la cache nell'utilizzo di una risorsa CDN condivisa, poiché tutti i principali browser <a hreflang="en" href="https://developers.google.com/web/updates/2020/10/http-cache-partitioning"> eseguono la partizione della cache per pagina </a>. Harry Roberts ha scritto un post dettagliato sul blog su <a hreflang="en" href="https://csswizardry.com/2019/05/self-host-your-static-assets/">come ospitare le proprie risorse statiche</a>.
+Più in basso nell'elenco al 2.43% c'è `ajax.googleapis.com`, il <a hreflang="en" href="https://developers.google.com/speed/libraries">progetto Hosted Libraries</a> di Google. Sebbene caricare una libreria come jQuery da un servizio ospitato sia facile, il costo aggiuntivo di una connessione a un dominio di terze parti potrebbe avere un impatto negativo sulle prestazioni. È meglio ospitare tutti i JavaScript e CSS critici nel dominio principale, se possibile. Inoltre, ora non vi è alcun vantaggio per la cache nell'utilizzo di una risorsa CDN condivisa, poiché tutti i principali browser <a hreflang="en" href="https://developers.google.com/web/updates/2020/10/http-cache-partitioning">eseguono la partizione della cache per pagina</a>. Harry Roberts ha scritto un post dettagliato sul blog su <a hreflang="en" href="https://csswizardry.com/2019/05/self-host-your-static-assets/">come ospitare le proprie risorse statiche</a>.
 
 ## Impatto del peso della pagina
 
@@ -292,8 +292,8 @@ Le richieste di pubblicità sembrano avere un maggiore impatto sul tempo della C
 
 Sebbene il contenuto di terze parti sia fondamentale per molti siti Web, il controllo dell'impatto di ciascun provider è fondamentale per garantire che non influiscano in modo significativo sull'esperienza utente, sul peso della pagina o sull'utilizzo della CPU. Ci sono spesso opzioni di auto-hosting per i principali contributori al peso di terze parti, questo è particolarmente degno di considerazione poiché ora non vi è alcun vantaggio di memorizzazione nella cache nell'utilizzo di risorse condivise:
 
-* Google Fonts consente <a hreflang="en" href="https://www.tunetheweb.com/blog/should-you-self-host-google-fonts/"> l'hosting autonomo </a> delle risorse
+* Google Fonts consente <a hreflang="en" href="https://www.tunetheweb.com/blog/should-you-self-host-google-fonts/">l'hosting autonomo</a> delle risorse
 * I CDN JavaScript possono essere sostituiti con risorse ospitate autonomamente
-* Gli script di sperimentazione possono essere ospitati autonomamente, ad es. <a hreflang="en" href="https://help.optimizely.com/Set_Up_Optimizely/Optimizely_self-hosting_for_Akamai_users"> Optimizely </a>
+* Gli script di sperimentazione possono essere ospitati autonomamente, ad es. <a hreflang="en" href="https://help.optimizely.com/Set_Up_Optimizely/Optimizely_self-hosting_for_Akamai_users">Optimizely</a>
 
 In questo capitolo abbiamo discusso i vantaggi e i costi dei contenuti di terze parti sul web. Abbiamo visto che le terze parti sono parte integrante di quasi tutti i siti Web e che l'impatto varia a seconda del provider di terze parti. Prima di aggiungere nuove terze parti alle tue pagine, considera l'impatto che avranno!
