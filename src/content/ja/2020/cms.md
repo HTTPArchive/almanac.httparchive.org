@@ -13,7 +13,7 @@ results: https://docs.google.com/spreadsheets/d/1vTf459CcCbBuYeGvgo-RSidppR62SfM
 featured_quote: コンテンツマネジメントシステム（CMS）とは、個人や組織がコンテンツを作成・管理・公開するためのシステムのことを指します。とくにWebコンテンツ用のCMSは、インターネット上で消費・体験されるコンテンツを作成・管理・公開することを目的としたシステムである。
 featured_stat_1: 42%
 featured_stat_label_1: WebページはCMSで動く
-featured_stat_2: 1.5 grams
+featured_stat_2: 1.5グラム
 featured_stat_label_2: CMSのページロードの中央値で排出されるCO2
 featured_stat_3: 74%
 featured_stat_label_3: WordPressを使用したCMS（昨年と同じです！）。
