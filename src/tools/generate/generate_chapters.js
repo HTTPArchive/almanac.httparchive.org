@@ -159,13 +159,15 @@ const parse_file = async (markdown,chapter) => {
   const authors = parse_array(m.authors);
   const reviewers = parse_array(m.reviewers);
 
-  authors.forEach((author) => {
-    const author_bio_name = author + '_bio';
-    const author_bio_value = m[author_bio_name];
-    if (author_bio_value) {
-      m[author_bio_name] = convertSimpleMarkdown(author_bio_value);
-    }
-  });
+  if (authors && authors.length > 0) {
+    authors.forEach((author) => {
+      const author_bio_name = author + '_bio';
+      const author_bio_value = m[author_bio_name];
+      if (author_bio_value) {
+        m[author_bio_name] = convertSimpleMarkdown(author_bio_value);
+      }
+    });
+  }
 
   let translators;
   if (m.translators) {
