@@ -117,27 +117,27 @@ Un mecanismo que tenemos que tiene el potencial de reducir la cantidad de códig
 
 Esta estrategia nos permite crear <i lang="en">bundles</i> más pequeños utilizando sintaxis moderna optimizada para los browsers que son compatibles, mientras tanto, también proveemos <i lang="en">polyfills</i> cargados condicionalmente y una sintaxis diferente para los que no son compatibles.
 
-La compatibilidad con `module` y `nomodule` va en aumento pero aún es una estrategia relativamente nueva. Como resultado, la adopción aún es baja. Solo 3.6% de las páginas móviles usa al menos un script con `type=module` y solo 0.7% de las páginas móviles usa al menos un script con `type=nomodule` para ser compatible con navegadores <i lang="en">legacy</i>.
+La compatibilidad con `module` y `nomodule` va en aumento pero aún es una estrategia relativamente nueva. Como resultado, la adopción aún es baja. Sólo 3.6% de las páginas móviles usa al menos un script con `type=module` y sólo 0.7% de las páginas móviles usa al menos un script con `type=nomodule` para ser compatible con navegadores <i lang="en">legacy</i>.
 
-### Request count
+### Conteo de peticiones
 
-Another way of looking at how much JavaScript we use is to explore how many JavaScript requests are made on each page. While reducing the number of requests was paramount to maintaining good performance with HTTP/1.1, with HTTP/2 the opposite is the case: breaking JavaScript down into <a hreflang="en" href="https://web.dev/granular-chunking-nextjs/">smaller, individual files</a> is [typically better for performance](../2019/http2#impact-of-http2).
+Otra manera de ver cuanto JavaScript usamos es explorar cuantas peticiones de JavaScript son hechas por página. Reducir el número de peticiones era fundamental para tener un buen desempeño usando HTTP/1.1, sin embargo, con HTTP/2 aplica lo contrario: dividir el código en JavaScript en <a hreflang="en" href="https://web.dev/granular-chunking-nextjs/">archivos individuales y más pequeños</a> resulta en [un mejor desempeño en general.](../2019/http2#impact-of-http2).
 
 {{ figure_markup(
   image="requests-2020.png",
-  caption="Distribution of JavaScript requests per page.",
-  description="Bar chart showing the distribution of JavaScript requests per page in 2020. The 10, 25, 50, 75, and 90th percentiles for mobile pages are: 4, 10, 19, 34, and 55. Desktop pages only tend to have 0 or 1 more JavaScript request per page.",
+  caption="Distribución de peticiones de JavaScript por página.",
+  description="Gráfica de barras mostrando la distribución de peticiones de JavaScript por página en 2020. Los percentiles 10, 25, 50, 75 y 90 para páginas móviles son: 4, 10, 19, 34 y 55. Las páginas de escritorio tienden a tener 0 o 1 petición más por página.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=153746548&format=interactive",
   sheets_gid="1804671297",
   sql_file="requests_2020.sql"
 ) }}
 
-At the median, pages make 20 JavaScript requests. That's only a minor increase over last year, when the median page made 19 JavaScript requests.
+En la mediana, las páginas hacen 20 peticiones de JavaScript. Esto es un incremento menor con respecto al año pasado cuando una página en la mediana hacía 19 peticiones de JavaScript.
 
 {{ figure_markup(
   image="requests-2019.png",
-  caption="Distribution of JavaScript requests per page in 2019.",
-  description="Bar chart showing the distribution of JavaScript requests per page in 2019. The 10, 25, 50, 75, and 90th percentiles for mobile pages are: 4, 9, 18, 32, and 52. Similar to the 2020 results, desktop pages only tend to have 0 or 1 more request per page. These results are slightly lower than the 2020 results.",
+  caption="Distribución de peticiones de JavaScript por página en 2019.",
+  description="Gráfica de barras mostrando la distribución de peticiones de JavaScript por página en 2020. Los percentiles 10, 25, 50, 75 y 90 para páginas móviles son: 4, 9, 18, 32 y 52. Los resultados son ligeramente menores a los resultados de 2020.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=528431485&format=interactive",
   sheets_gid="1983394384",
   sql_file="requests_2019.sql"
