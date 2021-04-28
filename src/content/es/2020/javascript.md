@@ -112,12 +112,12 @@ Los números sin procesar pueden o no saltar a tu vista dependiendo de que tan a
 
 Esos 153 KB equivalen a ~37% del tamaño total del código que le enviamos a los dispositivos móviles. Esto definitivamente puede mejorar.
 
-### `module` and `nomodule`
-One mechanism we have to potentially reduce the amount of code we send down is to take advantage of the <a hreflang="en" href="https://web.dev/serve-modern-code-to-modern-browsers/">`module`/`nomodule` pattern</a>. With this pattern, we create two sets of bundles: one bundle intended for modern browsers and one intended for legacy browsers. The bundle intended for modern browsers gets a `type=module` and the bundle intended for legacy browsers gets a `type=nomodule`.
+### `module` y `nomodule`
+Un mecanismo que tenemos que tiene el potencial de reducir la cantidad de código que enviamos es utilizar <a hreflang="en" href="https://web.dev/serve-modern-code-to-modern-browsers/">el patrón `module`/`nomodule`</a>. Con este patrón, creamos dos <i lang="en">bundles</i>: uno para navegadores modernos y otro para navegadores <i lang="en">legacy</i>. Al <i lang="en">bundle</i> para navegadores modernos se le asigna `type=module` y al <i lang="en">bundle</i> para navegadores <i lang="en">legacy</i> se le asigna `type=nomodule`.
 
-This approach lets us create smaller bundles with modern syntax optimized for the browsers that support it, while providing conditionally loaded polyfills and different syntax to the browsers that don't.
+Esta estrategia nos permite crear <i lang="en">bundles</i> más pequeños utilizando sintaxis moderna optimizada para los browsers que son compatibles, mientras tanto, también proveemos <i lang="en">polyfills</i> cargados condicionalmente y una sintaxis diferente para los que no son compatibles.
 
-Support for `module` and `nomodule` is broadening, but still relatively new. As a result, adoption is still a bit low. Only 3.6% of mobile pages use at least one script with `type=module` and only 0.7% of mobile pages use at least one script with `type=nomodule` to support legacy browsers.
+La compatibilidad con `module` y `nomodule` va en aumento pero aún es una estrategia relativamente nueva. Como resultado, la adopción aún es baja. Solo 3.6% de las páginas móviles usa al menos un script con `type=module` y solo 0.7% de las páginas móviles usa al menos un script con `type=nomodule` para ser compatible con navegadores <i lang="en">legacy</i>.
 
 ### Request count
 
