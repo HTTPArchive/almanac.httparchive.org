@@ -28,15 +28,16 @@ The Web Almanac is available in the original [English](https://almanac.httparchi
 
 See [our contributing guide](CONTRIBUTING.md). To run the Web Almanac locally please see [src/README.md](src/README.md).
 
-## 2020 Timeline
+## 2021 Timeline
 
-- June 2020: Nominating and selecting authors for chapters
-- July 2020: Selecting peer reviewers and analysts for chapters, planning content
-- August 2020: Gathering HTTP Archive data
-- September 2020: Analyzing data
-- October 2020: Writing, editing, and translating content
-- December 2020: Publishing the 2020 edition
-- December 2020 onwards: [Translating the Web Almanac to as many languages as possible](https://github.com/HTTPArchive/almanac.httparchive.org/issues/923).
+- April: forming teams
+- May: forming teams / planning content
+- June: final content planning
+- July: HTTP Archive crawl / analysis
+- August: analysis / writing
+- September: analysis / writing
+- October: writing / editing
+- November: editing / launch
 
 ## Where to find us
 
