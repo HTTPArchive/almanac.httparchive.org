@@ -7,7 +7,7 @@ reviewers: [ibnesayeed, denar90]
 analysts: [rviscomi, paulcalvano]
 editors: [rviscomi]
 translators: [alangdm]
-tkadlec_bio: Tim es un consultor y entrenador sobre desempeño web enfocado en crear una web que todos podamos usar. El es autor de <i lang="en">High Performance Images</i> (O'Reilly, 2016) y <i lang="en">Implementing Responsive Design</i> (New Riders, 2012). El escribe sobre la web en general en <a hreflang="en" href="https://timkadlec.com/">timkadlec.com</a>. Puedes encontrarlo compartiendo sus opiniones en un formato más breve en Twitter con el usuario <a href="https://twitter.com/tkadlec">@tkadlec</a>.
+tkadlec_bio: Tim es un consultor y entrenador sobre desempeño web enfocado en crear una web que todos podamos usar. El es autor de <i lang="en">High Performance Images</i> (O'Reilly, 2016) y <i lang="en">Implementing Responsive Design</i> (New Riders, 2012). Él escribe sobre la web en general en <a hreflang="en" href="https://timkadlec.com/">timkadlec.com</a>. Puedes encontrarlo compartiendo sus opiniones en un formato más breve en Twitter con el usuario <a href="https://twitter.com/tkadlec">@tkadlec</a>.
 discuss: 2038
 results: https://docs.google.com/spreadsheets/d/1cgXJrFH02SHPKDGD0AelaXAdB3UI7PIb5dlS0dxVtfY/
 featured_quote: JavaScript ha avanzado mucho desde su origen humilde hasta ser considerado el tercer pilar de la web junto con CSS y HTML. Hoy en día, JavaScript ha comenzado a invadir un amplio espectro del <i lang="en">stack</i> técnico. JavaScript ya no se encuentra limitado al lado del cliente y se ha convertido en una elección cada vez más popular para crear herramientas de construcción y <i lang="en">scripting</i> del lado del servidor. JavaScript también se ha adentrado en la capa de CDN gracias a soluciones de <i lang="en">edge computing</i>.
@@ -23,7 +23,7 @@ featured_stat_label_3: Porcentaje de <i lang="en">scripts</i> cargados asíncron
 
 JavaScript ha avanzado mucho desde su origen humilde hasta ser considerado el tercer pilar de la web junto con CSS y HTML. Hoy en día, JavaScript ha comenzado a invadir un amplio espectro del <i lang="en">stack</i> técnico. JavaScript ya no se encuentra limitado al lado del cliente y se ha convertido en una elección cada vez más popular para crear herramientas de construcción y <i lang="en">scripting</i> del lado del servidor. JavaScript también se ha adentrado en la capa de CDN gracias a soluciones de <i lang="en">edge computing</i>.
 
-Los desarroladores amamos usar JavaScript. De acuerdo con el capítulo de marcado, el elemento `script` es el [6to elemento de HTML más popular](./markup) en uso (por delante de elementos tales como `p` e `i` entre muchos otros). Utilizamos más de 14 veces más bytes de JavaScript de los que usamos de HTML, los bloques para construir la web, y 6 veces más bytes que los que usamos de CSS.
+Los desarrolladores amamos usar JavaScript. De acuerdo con el capítulo de marcado, el elemento `script` es el [6to elemento de HTML más popular](./markup) en uso (por delante de elementos tales como `p` e `i` entre muchos otros). Utilizamos más de 14 veces más bytes de JavaScript de los que usamos de HTML, los bloques para construir la web, y 6 veces más bytes que los que usamos de CSS.
 
 {{ figure_markup(
   image="../page-weight/bytes-distribution-content-type.png",
@@ -34,46 +34,46 @@ Los desarroladores amamos usar JavaScript. De acuerdo con el capítulo de marcad
   sql_file="../page-weight/bytes_per_type_2020.sql"
 ) }}
 
-Pero nada es gratis y esto aplica eespcialmente para Javascript. Todo ese código tiene un costo. Veamos con más detalle cuánto código usamos, cómo lo usamos y cuáles son los efectos secundarios de este.
+Pero nada es gratis y esto aplica especialmente para Javascript. Todo ese código tiene un costo. Veamos con más detalle cuánto código usamos, cómo lo usamos y cuáles son los efectos secundarios de este.
 
-## How much JavaScript do we use?
+## ¿Cuánto JavaScript usamos?
 
-We mentioned that the `script` tag is the 6th most used HTML element. Let's dig in a bit deeper to see just how much JavaScript that actually amounts to.
+Mencionamos que la etiqueta `script` es el 6to elemento de HTML más usado. Entremos más en detalle para ver cuánto JavaScript es contenido ahí.
 
-The median site (the 50th percentile) sends 444 KB of JavaScript when loaded on a desktop device, and slightly fewer (411 KB) to a mobile device.
+Un sitio ubicado en la mediana (percentil 50) envía 444 KB de JavaScript al ser cargado en un dispositivo de escritorio y un poco menos que eso (411 KB) a un dispositivo móvil.
 
 {{ figure_markup(
   image="bytes-2020.png",
-  caption="Distribution of the amount of JavaScript kilobytes loaded per page.",
-  description="Bar chart showing the distribution of JavaScript bytes per page by about 10%. Desktop pages consistently load more JavaScript bytes than mobile pages. The 10th, 25th, 50th, 75th, and 90th percentiles for desktop are: 87 KB, 209 KB, 444 KB, 826 KB, and 1,322 KB.",
+  caption="Distribución de la cantidad de kilobytes cargados por página.",
+  description="Gráfica de barras mostrando la distribución de bytes de JavaScript por página en intervalos de 10%. Las páginas de escritorio consistentemente cargan más bytes de JavaScript que las páginas móviles. Los percentiles 10, 25, 50, 75 y 90 para escritorio son de: 87 KB, 209 KB, 444 KB, 826 KB y 1,322 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=441749673&format=interactive",
   sheets_gid="2139688512",
   sql_file="bytes_2020.sql"
 ) }}
 
-It's a bit disappointing that there isn't a bigger gap here. While it's dangerous to make too many assumptions about network or processing power based on whether the device in use is a phone or a desktop (or somewhere in between), it's worth noting that [HTTP Archive mobile tests](./methodology#webpagetest) are done by emulating a Moto G4 and a 3G network. In other words, if there was any work being done to adapt to less-than-ideal circumstances by passing down less code, these tests should be showing it.
+Es un poco decepcionante no ver una mayor diferencia. Si bien es peligroso hacer muchas suposiciones sobre la red o el poder de procesamiento basados en si el dispositivo es un teléfono o una computadora de escritorio (o algo intermedio), debemos recalcar que las [pruebas en móviles del <i lang="en">HTTP Archive</i>](./methodology#webpagetest) son hechas emulando un Moto G4 en una red 3G. En otras palabras, si existiese algún trabajo para adaptarse a condiciones no ideales y transmitir menos código estas pruebas deberían demostrarlo.
 
-The trend also seems to be in favor of using more JavaScript, not less. Comparing to [last year's results](../2019/javascript#how-much-javascript-do-we-use), at the median we see a 13.4% increase in JavaScript as tested on a desktop device, and a 14.4% increase in the amount of JavaScript sent to a mobile device.
+La tendencia parece estar a favor de usar más JavaScript, no menos. Comparando con [los resultados del año pasado](../2019/javascript#how-much-javascript-do-we-use), vemos un incremento de 13.4% en la mediana de Javascript al probar en un dispositivo de escritorio y un incremento de 14.4% en la cantidad de JavaScript enviado a un dispositivo móvil.
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th>Client</th>
+        <th>Cliente</th>
         <th>2019</th>
         <th>2020</th>
-        <th>Change</th>
+        <th>Cambio</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>Desktop</td>
+        <td>Escritorio</td>
         <td class="numeric">391</td>
         <td class="numeric">444</td>
         <td class="numeric">13.4%</td>
       </tr>
       <tr>
-        <td>Mobile</td>
+        <td>Móvil</td>
         <td class="numeric">359</td>
         <td class="numeric">411</td>
         <td class="numeric">14.4%</td>
@@ -82,35 +82,35 @@ The trend also seems to be in favor of using more JavaScript, not less. Comparin
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Year-over-year change in the median number of JavaScript kilobytes per page.",
+      caption="Cambio año a año en la mediana de kilobytes de JavaScript por página.",
       sheets_gid="86213362",
       sql_file="bytes_2020.sql"
     ) }}
   </figcaption>
 </figure>
 
-At least some of this weight seems to be unnecessary. If we look at a breakdown of how much of that JavaScript is unused on any given page load, we see that the median page is shipping 152 KB of unused JavaScript. That number jumps to 334 KB at the 75th percentile and 567 KB at the 90th percentile.
+Al menos parte de este tamaño parece ser innecesario. Si vemos un desglose de cuanto JavaScript no es usado al cargar una página, podemos ver que una página ubicada en la mediana transmite 152 KB de JavaScript que no es usado. Este número sube a 334 KB en el percentil 75 y a 567 KB en el percentil 90.
 
 {{ figure_markup(
   image="unused-js-bytes-distribution.png",
-  caption="Distribution of the amount of wasted JavaScript bytes per mobile page.",
-  description="Bar chart showing the distribution of amount of wasted JavaScript bytes per page. From the 10, 25, 50, 75, and 90th percentiles, the distribution goes: 0, 57, 153, 335, and 568 KB.",
+  caption="Distribución de la cantidad de bytes de JavaScript desperdiciados por página móvil.",
+  description="Gráfica de barras mostrando la distribución de bytes de JavaScript desperdiciados por página. Para los percentiles 10, 25, 50, 75 y 90 la distribución es: 0, 57, 153, 335 y 568 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=773002950&format=interactive",
   sheets_gid="611267860",
   sql_file="unused_js_bytes_distribution.sql"
 ) }}
 
-As raw numbers, those may or may not jump out at you depending on how much of a performance nut you are, but when you look at it as a percentage of the total JavaScript used on each page, it becomes a bit easier to see just how much waste we're sending.
+Los números sin procesar pueden o no saltar a tu vista dependiendo de que tan aficionado seas a optimizar el desempeño, pero al verlo como un porcentaje del total de JavaScript usado en cada página, se vuelve un poco más fácil ver que tanto código extra se está enviando.
 
 {{ figure_markup(
-  caption="Percent of the median mobile page's JavaScript bytes that are unused.",
+  caption="Porcentaje de los bytes de JavaScript en una página ubicada en la mediana que no son usados.",
   content="37.22%",
   classes="big-number",
   sheets_gid="611267860",
   sql_file="unused_js_bytes_distribution.sql"
 ) }}
 
-That 153 KB equates to ~37% of the total script size that we send down to mobile devices. There's definitely some room for improvement here.
+Esos 153 KB equivalen a ~37% del tamaño total del código que le enviamos a los dispositivos móviles. Esto definitivamente puede mejorar.
 
 ### `module` and `nomodule`
 One mechanism we have to potentially reduce the amount of code we send down is to take advantage of the <a hreflang="en" href="https://web.dev/serve-modern-code-to-modern-browsers/">`module`/`nomodule` pattern</a>. With this pattern, we create two sets of bundles: one bundle intended for modern browsers and one intended for legacy browsers. The bundle intended for modern browsers gets a `type=module` and the bundle intended for legacy browsers gets a `type=nomodule`.
