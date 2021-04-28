@@ -143,18 +143,18 @@ En la mediana, las páginas hacen 20 peticiones de JavaScript. Esto es un increm
   sql_file="requests_2019.sql"
 ) }}
 
-## Where does it come from?
+## ¿De dónde viene el incremento?
 
-One trend that likely contributes to the increase in JavaScript used on our pages is the seemingly ever-increasing amount of third-party scripts that get added to pages to help with everything from client-side A/B testing and analytics, to serving ads and handling personalization.
+Una tendencia que posiblemente contribuye al incremento en la cantidad de JavaScript usado en nuestras páginas es la cantidad cada vez mayor de scripts de terceros que son añadidos a las páginas para ayudar con cosas desde pruebas A/B en el lado del cliente y análiticos hasta commerciales y personalización.
 
-Let's drill into that a bit to see just how much third-party script we're serving up.
+Veamos esto más a detalle para ver cuantos scripts de terceros estamos enviando.
 
-Right up until the median, sites serve roughly the same number of first-party scripts as they do third-party scripts. At the median, 9 scripts per page are first-party, compared to 10 per page from third-parties. From there, the gap widens a bit: the more scripts a site serves in the total, the more likely it is that the majority of those scripts are from third-party sources.
+Justo hasta la mediana, los sitios envían apróximadamente la misma cantidad de scripts propios que de terceros. En la mediana, 9 scripts por página son propios y 10 son de terceros. Desde ese punto, la diferencia crece un poco: mientras más scripts envía un sitio en total, es mayor la probabilidad de que la mayoría de esos scripts sean de terceros.
 
 {{ figure_markup(
   image="requests-by-3p-desktop.png",
-  caption="Distribution of the number of JavaScript requests by host for desktop.",
-  description="Bar chart showing the distribution of JavaScript requests per host for desktop. The 10, 25, 50, 75, and 90th percentiles for first party requests are: 2, 4, 9, 17, and 30 requests per page. The number of third party requests per page is slightly higher in the upper percentiles by 1 to 6 requests.",
+  caption="Distribución del número de peticiones de JavaScript por dominio en escritorio.",
+  description="Gráfica de barras mostrando la distribución de peticiones de JavaScript por dominio para escritorio. Los percentiles 10, 25, 50, 75 y 90 para peticiones propias son de: 2, 4, 9, 17 y 30 peticiones por página. El número de peticiones a terceros es ligeramente mayor en los percentiles altos por desde 1 hasta 6 peticiones.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=1566679225&format=interactive",
   sheets_gid="978380311",
   sql_file="requests_by_3p.sql"
@@ -162,19 +162,19 @@ Right up until the median, sites serve roughly the same number of first-party sc
 
 {{ figure_markup(
   image="requests-by-3p-mobile.png",
-  caption="Distribution of the number of JavaScript requests by host for mobile.",
-  description="Bar chart showing the distribution of JavaScript requests per host for mobile. The 10, 25, 50, 75, and 90th percentiles for first party requests are: 2, 4, 9, 17, and 30 requests per page. This is the same as for desktop. The number of third party requests per page is slightly higher in the upper percentiles by 1 to 5 requests, similar to desktop.",
+  caption="Distribución del número de peticiones de JavaScript por dominio en móviles.",
+  description="Gráfica de barras mostrando la distribución de peticiones de JavaScript por dominio para escritorio. Los percentiles 10, 25, 50, 75 y 90 para peticiones propias son de: 2, 4, 9, 17 y 30 peticiones por página. Estos números son iguales a los de escritorio. El número de peticiones a terceros es ligeramente mayor en los percentiles altos por desde 1 hasta 5 peticiones, una situación similar a la de escritorio.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=1465647946&format=interactive",
   sheets_gid="978380311",
   sql_file="requests_by_3p.sql"
 ) }}
 
-While the amount of JavaScript requests are similar at the median, the actual size of those scripts is weighted (pun intended) a bit more heavily toward third-party sources. The median site sends 267 KB of JavaScript from third-parties to desktop devices ,compared to 147 KB from first-parties. The situation is very similar on mobile, where the median site ships 255 KB of third-party scripts compared to 134 KB of first-party scripts.
+Si bien la cantidad de peticiones de JavaScript es similar en la mediana, el tamaño real de esos scripts está cargado hacia los scripts de terceros. Un sitio en la mediana envía 267 KB de JavaScript de terceros a dispositivos de escritorio, comparado a 147 KB de scripts propios. La situación es similar en móviles, donde un sitio en la mediana envía 255 KB de scripts de terceros contra 134 KB de scripts propios.
 
 {{ figure_markup(
   image="bytes-by-3p-desktop.png",
-  caption="Distribution of the number of JavaScript bytes by host for desktop.",
-  description="Bar chart showing the distribution of JavaScript bytes per host for desktop. The 10, 25, 50, 75, and 90th percentiles for first party bytes are: 21, 67, 147, 296, and 599 KB per page. The number of third party requests per page grows much higher in the upper percentiles by up to 343 KB.",
+  caption="Distribución de la cantidad de bytes de JavaScript por dominio para escritorio.",
+  description="Gráfica de barras mostrando la distribución de la cantidad de bytes de JavaScript por dominio para escritorio. Los percentiles 10, 25, 50, 75 y 90 para scripts propios son: 21, 67, 147, 296 y 599 KB por página. La cantidad de bytes de scripts de terceros por página aumenta en cantidades mucho mayores en percentiles altos por hasta 343 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=1749995505&format=interactive",
   sheets_gid="1145367011",
   sql_file="bytes_by_3p.sql"
@@ -182,8 +182,8 @@ While the amount of JavaScript requests are similar at the median, the actual si
 
 {{ figure_markup(
   image="bytes-by-3p-mobile.png",
-  caption="Distribution of the number of JavaScript bytes by host for mobile.",
-  description="Bar chart showing the distribution of JavaScript bytes per host for mobile. The 10, 25, 50, 75, and 90th percentiles for first party bytes are: 18, 60, 134, 275, and 560 KB. These values are consistently smaller than the desktop values, but only by 10-30 KB. Similar to desktop, the third party bytes are higher than first party, on mobile this difference is not as wide, only up to 328 KB at the 90th percentile.",
+  caption="Distribución de la cantidad de bytes de JavaScript por dominio para móviles.",
+  description="Gráfica de barras mostrando la distribución de la cantidad de bytes de JavaScript por dominio para móviles. Los percentiles 10, 25, 50, 75 y 90 para scripts propios son: 18, 60, 134, 275 y 560 KB por página. Estos números son consistentemente menores que los de escritorio, pero sólo por 10-30 KB. Al igual que en escritorio, la cantidad de bytes de scripts de terceros por página aumenta, en móviles la diferencia no es tan amplia, es de 328 KB en el percentil 90.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=231883913&format=interactive",
   sheets_gid="1145367011",
   sql_file="bytes_by_3p.sql"
