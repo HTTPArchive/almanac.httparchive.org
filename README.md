@@ -8,7 +8,7 @@
 
 The Web Almanac is HTTP Archive's annual **state of the web** report.
 
-Our mission is to combine the raw stats and trends of the HTTP Archive with the expertise of the web community. The Web Almanac is a comprehensive report on the state of the web, backed by real data and trusted web experts. It is comprised of 20 chapters spanning aspects of page content, user experience, publishing, and distribution.
+Our mission is to combine the raw stats and trends of the HTTP Archive with the expertise of the web community. The Web Almanac is a comprehensive report on the state of the web, backed by real data and trusted web experts. It is comprised of 20+ chapters spanning aspects of page content, user experience, publishing, and distribution.
 
 The Web Almanac is available in the original [English](https://almanac.httparchive.org/en/) but has also been translated (sometimes only partially) to:
 - [Chinese (Simplified)](https://almanac.httparchive.org/zh-CN/)
