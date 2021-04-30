@@ -39,7 +39,7 @@ jobs:
             }
 
             const teamMembers = {
-              Leads: {}
+              Leads: {},
               Authors: {},
               Reviewers: {},
               Analysts: {},
