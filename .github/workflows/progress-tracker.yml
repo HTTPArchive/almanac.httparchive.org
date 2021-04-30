@@ -39,9 +39,12 @@ jobs:
             }
 
             const teamMembers = {
+              Leads: {}
               Authors: {},
               Reviewers: {},
               Analysts: {},
+              Editors: {},
+              Coordinators: {},
               All: {}
             }
 
@@ -75,7 +78,7 @@ jobs:
             const calcStats = nums => {
               const size = nums.length
               if (!size) {
-                return [0, 0, 0, 0, 0]
+                return [0, 0, 0, 0, 0, 0, 0, 0, 0]
               }
               nums.sort((a, b) => a - b)
               const sum = nums.reduce((a,b) => a + b, 0)
@@ -130,11 +133,14 @@ jobs:
               const team = {}
               text.split('\n').forEach(line => {
                 if (/\|\s*\[Sheet\]\[~google-sheets\]\s*\|/.test(line)) {
-                  const [, authors, reviewers, analysts] = line.split('|')
+                  const [, leads, authors, reviewers, analysts, editors, coordindators] = line.split('|')
+                  team.Leads = parseUserNames(leads)
                   team.Authors = parseUserNames(authors)
                   team.Reviewers = parseUserNames(reviewers)
                   team.Analysts = parseUserNames(analysts)
-                  team.All = [...new Set([...team.Authors, ...team.Reviewers, ...team.Analysts])]
+                  team.Editors = parseUserNames(editors)
+                  team.Coordinators = parseUserNames(coordinators)
+                  team.All = [...new Set([...team.Leads,...team.Authors, ...team.Reviewers, ...team.Analysts, ...team.Editors, ...team.Coordinators])]
                 }
               })
               return team
@@ -203,7 +209,7 @@ jobs:
             })
 
             const report = [
-              `Chapters | <span title="${Object.entries(icons).map(([k, v]) => `${v} (${k})`).join(', ')}">Links</span> | <span title="${Object.keys(teamMembers).join('+').replace(/\+([^+]*)$/, '≥$1')}">Team</span> | ${trackedTasks.map((v, i) => `<span title="${v}">${i + 1}<span>`).join(' | ')}`,
+              `Chapters | <span title="${Object.entries(icons).map(([k, v]) => `${v} (${k})`).join(', ')}">Links</span> | <span title="${Object.keys(teamMembers).join('+').replace(/\+([^+]*)$/, '≥$1')}">Team</span> | ${trackedTasks.map((v, i) => `<span title="${v}">${i}<span>`).join(' | ')}`,
               `:--------|:------|:----:${'|:-:'.repeat(totalTrackedTasks)}`
             ].concat(chapters.map(formatRow)).join('\n')
 
