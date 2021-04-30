@@ -132,7 +132,7 @@ jobs:
             const parseTeam = text => {
               const team = {}
               text.split('\n').forEach(line => {
-                if (/\|\s*\[Sheet\]\[~google-sheets\]\s*\|/.test(line)) {
+                if (/\|/*[0-9]/s*|/.test(line)) {
                   const [, leads, authors, reviewers, analysts, editors, coordinators] = line.split('|')
                   team.Leads = parseUserNames(leads)
                   team.Authors = parseUserNames(authors)
@@ -175,7 +175,7 @@ jobs:
                 continue
               }
               core.info(`Adding issue #${issue.number} with ${tasksCount} tasks`)
-              const heading = parseHeading(issue.body)
+              const heading = parseHeading(issue.body).replace(/ 20[0-9][0-9]/,'')
               chapters.push({
                 id: issue.number,
                 url: issue.html_url,
