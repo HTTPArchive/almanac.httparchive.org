@@ -129,7 +129,7 @@ jobs:
             const parseTeam = text => {
               const team = {}
               text.split('\n').forEach(line => {
-                if (/\|\s*\[Sheet\]\[~results-sheet\]\s*\|/.test(line)) {
+                if (/\|\s*\[Sheet\]\[~google-sheets\]\s*\|/.test(line)) {
                   const [, authors, reviewers, analysts] = line.split('|')
                   team.Authors = parseUserNames(authors)
                   team.Reviewers = parseUserNames(reviewers)
