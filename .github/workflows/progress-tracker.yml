@@ -2,9 +2,9 @@ name: Progress Tracker
 
 env:
   # Update these environment variables every year
-  FILTER_LABEL: '2020 chapter'
-  TRACKER_ISSUE_NUMBER: 989
-  SQL_BASE_DIR: 'https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2020/'
+  FILTER_LABEL: '2021 chapter'
+  TRACKER_ISSUE_NUMBER: 2179
+  SQL_BASE_DIR: 'https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2021/'
 
 on:
   workflow_dispatch:
