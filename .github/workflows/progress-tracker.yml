@@ -33,9 +33,9 @@ jobs:
             }
 
             const linkMap = {
-              Draft: /^\[~draft-doc\]:\s*(?<link>\S+)/,
-              SQL: /^\[~sql-dir\]:\s*(?<link>\S+)/,
-              Results: /^\[~results-sheet\]:\s*(?<link>\S+)/
+              Draft: /^\[~google-doc\]:\s*(?<link>\S+)/,
+              SQL: /^\[~sql-files\]:\s*(?<link>\S+)/,
+              Results: /^\[~google-sheets\]:\s*(?<link>\S+)/
             }
 
             const teamMembers = {
