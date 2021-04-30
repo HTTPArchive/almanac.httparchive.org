@@ -132,7 +132,7 @@ jobs:
             const parseTeam = text => {
               const team = {}
               text.split('\n').forEach(line => {
-                if (/\|/s*[0-9]/s*\|/.test(line)) {
+                if (/\|\s*[0-9]\s*\|/.test(line)) {
                   const [, leads, authors, reviewers, analysts, editors, coordinators] = line.split('|')
                   team.Leads = parseUserNames(leads)
                   team.Authors = parseUserNames(authors)
