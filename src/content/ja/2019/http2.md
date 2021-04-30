@@ -76,7 +76,6 @@ HTTP/2には次の重要な概念があります。
 
 {{ figure_markup(
   image="ch20_fig2_http2_usage_by_request.png",
-  alt="要求によるHTTP/2の使用。(引用: HTTP Archive)",
   caption='要求によるHTTP/2の使用。(引用: <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#h2">HTTP Archive</a>)',
   description="2019年7月現在、デスクトップとモバイルの両方で55％採用されているHTTP/2使用の時系列チャート。傾向は年間約15ポイントで着実に増加しています。",
   width=600,

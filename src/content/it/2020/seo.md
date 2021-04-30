@@ -502,7 +502,6 @@ La pagina desktop mediana include 21 tag `img` e la pagina mobile mediana ha 19 
 
 {{ figure_markup(
   image="seo-img-elements-per-page.png",
-  alt="Elementi img per pagina",
   caption="Distribuzione del numero di elementi `<img>` per pagina.",
   description="Grafico a barre che mostra il numero di elementi `<img>` per pagina per percentile (10, 25, 50, 75 e 90). La pagina desktop mediana presenta 21 elementi `<img>` e la pagina mobile mediana presenta 19 tag `<<img>`",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=923860709&format=interactive",
@@ -514,7 +513,6 @@ Nella pagina web mediana manca il 2.99% degli attributi `alt` sul desktop e il 2
 
 {{ figure_markup(
   image="seo-percentage-of-missing-img-alt-attribute.png",
-  alt="Percentuale di attributi alt dell'immagine mancanti",
   caption="Distribuzione della percentuale di elementi `<img>` mancanti degli attributi immagine `alt` per pagina.",
   description="Grafico a barre che mostra la percentuale di attributi `alt` mancanti per percentile (10, 25, 50, 75 e 90). Nella pagina web mediana mancano il 2.99% degli attributi `alt` sul desktop e il 2.44% degli attributi `alt` sui dispositivi mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=862590664&format=interactive",
@@ -527,7 +525,6 @@ Abbiamo scoperto che la pagina mediana contiene attributi `alt` solo nel 51.22% 
 
 {{ figure_markup(
   image="seo-percentage-of-img-alt-attributes-present.png",
-  alt="Distribuzione della percentuale di immagini con attributi alt per pagina",
   caption="Distribuzione della percentuale di immagini con attributi `alt` per pagina.",
   description="Grafico a barre che mostra la percentuale di attributi `alt` presenti per percentile (10, 25, 50, 75 e 90). È stato rilevato che solo il 53.86% delle pagine desktop e il 51.22% delle pagine mobile presentavano attributi di immagine `alt`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=827771545&format=interactive",
@@ -539,7 +536,6 @@ La pagina web mediana ha il 10.00% di immagini con attributi `alt` vuoti su desk
 
 {{ figure_markup(
   image="seo-percentage-of-blank-img-alt-attributes.png",
-  alt="Distribuzione della percentuale di immagini con attributi alt vuoti per pagina.",
   caption="Distribuzione della percentuale di immagini con attributi `alt` vuoti per pagina.",
   description="Grafico a barre che mostra la percentuale di attributi vuoti `alt` in primo piano per percentile (10, 25, 50, 75 e 90). La pagina web mediana presenta attributi `alt` vuoti del 10% sul desktop e attributi `alt` vuoti dell'11.11% sui dispositivi mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=378651979&format=interactive",
@@ -623,7 +619,6 @@ La nostra revisione delle pagine indica che il 28.58% delle pagine include attri
 
 {{ figure_markup(
   image="seo-nofollow-ugc-sponsored-attributes.png",
-  alt="Percentuale di pagine con attributi rel=nofollow, rel=ugc e rel=sponsored.",
   caption="Percentuale di pagine con attributi `rel=nofollow`, `rel=ugc` e `rel=sponsored`.",
   description="Grafico a barre che mostra l'utilizzo (in percentuale) degli attributi `rel` su desktop e dispositivi mobili. La nostra recensione indica che il 28.58% delle pagine presenta attributi `nofollow` nelle versioni desktop e il 30.74% nei dispositivi mobili. Tuttavia, l'adozione di `ugc` e `sponsored` è piuttosto bassa con meno dello 0.3% in entrambe le pagine.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1177251312&format=interactive",

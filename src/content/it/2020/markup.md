@@ -126,7 +126,6 @@ Ecco le 10 lingue più popolari (normalizzate) nel nostro campione. È important
 
 {{ figure_markup(
   image="document-language.png",
-  alt="I principali attributi HTML lang.",
   caption="I principali attributi HTML `lang`.",
   description="Grafico a barre che mostra i primi 10 attributi `lang` utilizzati nella nostra scansione con il 22.82% delle pagine desktop e il 22.36% delle pagine mobile che non lo impostano, `en` utilizzato rispettivamente al 20.09% e 18.08%, `ja` al 15.17% e 13.27%, `es` su 4.86% e 4.09%, `pt-br` su 2.65% e 2.84%, `ru` su 2.21% 2.53%, `en-gb` su 2.35% e 2.19%, `de` su 1.50 % e 1.92%, e infine `fr` utilizzato rispettivamente su 1.55% e 1.43%.",
   sheets_gid="2047285366",
@@ -171,7 +170,6 @@ All'estremità opposta dello spettro, i numeri mostrano che circa il 97% delle p
 
 {{ figure_markup(
   image="script-use.png",
-  alt="Utilizzo dell'elemento script.",
   caption="Utilizzo dell'elemento <code> script </code>.",
   description="Le percentuali di pagine (non) contenenti script e gli script sono presenti in quasi tutte le forme su quasi tutte le pagine.",
   sheets_gid="150962402",

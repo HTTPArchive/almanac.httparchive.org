@@ -268,7 +268,6 @@ The [Resource Timing API](https://developer.mozilla.org/en-US/docs/Web/API/Resou
 {{ figure_markup(
   image="requests-with-tao.png",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=1886505312&format=interactive",
-  alt="Requests with Timing-Allow-Origin header.",
   caption="Requests with `timing-allow-origin` header.",
   description="Less than 35% of third-party responses are served with a timing-allow-origin header",
   width=600,

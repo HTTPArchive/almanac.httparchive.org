@@ -76,7 +76,6 @@ Nossa análise é proveniente do HTTP Archive, que testa aproximadamente 5 milh�
 
 {{ figure_markup(
   image="ch20_fig2_http2_usage_by_request.png",
-  alt="Uso do HTTP/2 por requisição.",
   caption='Uso de HTTP/2 por requisição. (Fonte: <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#h2">HTTP Archive</a>)',
   description="Gráfico da série temporal mostrando a adoção de HTTP/2 em 55% para desktops e dispositivos móveis em julho de 2019. A tendência está crescendo continuamente em cerca de 15 pontos por ano.",
   width=600,
@@ -455,7 +454,6 @@ Um impacto que pode ser medido é a mudança no uso de HTTP, agora que estamos e
 
 {{ figure_markup(
   image="ch20_fig9_num_tcp_connections_trend_over_years.png",
-  alt="Conexões TCP por página.",
   caption='Conexões TCP por página. (Fonte: <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#tcp">HTTP Archive</a>)',
   description="Gráfico de série temporal do número de conexões TCP por página, com a página média em desktop tendo 14 conexões e a página média em dispositivos móveis tendo 16 conexões, em julho de 2019.",
   width=600,
@@ -467,7 +465,6 @@ O HTTP Archive mede o número de conexões TCP por página, e isso está caindo 
 
 {{ figure_markup(
   image="ch20_fig10_total_requests_per_page_trend_over_years.png",
-  alt="Requisições totais por página.",
   caption='Requisições totais por página. (Fonte: <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#reqTotal">HTTP Archive</a>)',
   description="Gráfico de série temporal do número de requisições por página, com a página média em desktop tendo 74 requisições e a página média em dispositivos móveis tendo 69 requisições, em julho de 2019. A tendência é relativamente estável.",
   width=600,

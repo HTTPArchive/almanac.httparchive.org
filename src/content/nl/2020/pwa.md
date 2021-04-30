@@ -260,7 +260,6 @@ We vonden ook een niet-triviaal aantal verkeerd getypte eigenschappen; onze favo
 
 {{ figure_markup(
   image="pwa-most-used-display-values-for-service-worker-pages.png",
-  alt="De meest gebruikte display waarden voor pagina's van service workers.",
   caption="De meest gebruikte `display` waarden voor pagina's van service workers.",
   description="Staafdiagram dat het percentage pagina's weergeeft dat de 5 meest voorkomende `display`-waarden gebruikt, gedomineerd door `standalone` dat wordt gebruikt door 86,73% van de desktoppagina's en 89,28% van de mobiele pagina's, `minimal-ui` wordt gebruikt door 6,30% van de desktop- en 5,00% van mobiel, `fullscreen` met 4,80% van desktop en 4,11% van mobiel, 1,15% van desktoppagina's en 0,88% van mobiele pagina's stelt geen `display`-waarde in, en tenslotte 1,00% van desktop en 0,72% van mobiel zet dit op `browser`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRRpTSA4fsHwUap-ByQ08j95uo7Zm1kY6lTSvA-DZT54g2QZ0guV7db3QyQwQgMPzsKsJ43gbzqfJst/pubchart?oid=872942071&format=interactive",

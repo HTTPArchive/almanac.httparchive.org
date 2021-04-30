@@ -152,7 +152,6 @@ We can analyze the effect of these settings on First Contentful Paint and Larges
 
 {{ figure_markup(
   image="fonts-font-display-performance-desktop.png",
-  alt="font-display performance on desktop.",
   caption="`font-display` performance on desktop.",
   description="A bar chart showing the desktop median first content paint (FCP) and last content paint (LCP) in milliseconds for different font-display settings: `none` has a median FCP of 2,286 ms and median LCP of 4,028 ms, `optional` has 1,766 ms and 3,055 ms respectively, `swap` has 2,223 ms and 4,176 ms, `fallback` has 2,397 ms and 4,106 ms, `block` has 2,454 ms and 4,696 ms, and `auto` has 2,605 ms and 4,883 ms.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1618299142&format=interactive",
@@ -163,7 +162,6 @@ We can analyze the effect of these settings on First Contentful Paint and Larges
 
 {{ figure_markup(
   image="fonts-font-display-performance-mobile.png",
-  alt="font-display performance on mobile.",
   caption="`font-display` performance on mobile.",
   description="A bar chart showing the mobile median first content paint (FCP) and last content paint (LCP) in milliseconds for different font-display settings: `none` has a median FCP of 5,279 ms and median LCP of 8,381 ms, `optional` has 4,733 ms and 6,598 ms respectively, `swap` has 5,268 ms and 8,748 ms, `fallback` has 5,478 ms and 8,706 ms, `block` has 5,739 ms and 9,625 ms, and `auto` has 6,181 ms and 10,103 ms.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=2135700957&format=interactive",

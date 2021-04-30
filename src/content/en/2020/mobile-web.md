@@ -60,7 +60,6 @@ Rick Byers [tweeted](https://twitter.com/RickByers/status/1195342331588706306) t
 
 {{ figure_markup(
   image="page-loads-across-origins-ranked-by-popularity.png",
-  alt="Page loads across origins ranked by popularity (in Chrome)",
   caption='Page loads across origins ranked by popularity (in Chrome)',
   description="Chart showing that a small number of origins constitute a large fraction of traffic, for both mobile and desktop. The top 30 origins constitute 25% of aggregate traffic on mobile. The top 200 origins constitute 33% of aggregate traffic on mobile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=949521302&format=interactive",
@@ -91,7 +90,6 @@ We looked at the CrUX dataset to assess Chrome traffic to sites from mobile devi
 
 {{ figure_markup(
   image="mobile-traffic-distribution.png",
-  alt="Mobile traffic distribution",
   caption='Distribution of mobile vs other traffic',
   description="Chart showing how mobile is the majority of traffic for most websites. 50% of websites analyzed receive 77.61% or more of their traffic from mobile (a slight decrease from 79.93% in 2019).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=1290224874&format=interactive",
@@ -229,7 +227,6 @@ According to CrUX data, 60% of mobile sites and 54% of desktop sites, have a goo
 
 {{ figure_markup(
   image="aggregate-lcp-performance-by-device.png",
-  alt="Aggregate LCP performance by device",
   caption='Aggregate LCP performance by device',
   description="A chart showing that 60% of mobile sites and 54% of desktop sites, have a good CLS.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=277999653&format=interactive",
@@ -290,7 +287,6 @@ Lighthouse now <a hreflang="en" href="https://web.dev/color-contrast/">checks fo
 
 {{ figure_markup(
   image="sites-with-sufficient-color-contrast.png",
-  alt="Sites with sufficient color contrast",
   caption='Sites with sufficient color contrast',
   description="A chart showing that 78.94%, a majority of web pages, were lacking sufficient color contrast.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=524145395&format=interactive",
@@ -306,7 +302,6 @@ Based on research, there are standards for minimum size of buttons and tap targe
 
 {{ figure_markup(
   image="sites-with-properly-sized-tap-targets.png",
-  alt="Sites with properly sized tap targets",
   caption='Sites with properly sized tap targets',
   description="A chart showing that 63.69%, a majority of web pages, had improperly sized tap targets. This is a slight improvement over last year, where 65.57% web pages had improperly sized tap targets.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=1829334180&format=interactive",
@@ -335,7 +330,6 @@ Search input is used in 17% of all sites using any input. At 60.10%, a majority 
 
 {{ figure_markup(
   image="ecommerce-sites-using-a-search-input.png",
-  alt="Ecommerce sites using a search input",
   caption='Ecommerce sites using a search input',
   description="A chart showing that 60.10%, a majority of ecommerce landing pages, are missing the presence of search input.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=992212527&format=interactive",
@@ -368,7 +362,6 @@ Users can more easily enter required information on mobile devices when their ke
 
 {{ figure_markup(
   image="sites-with-inputs-using-the-following-input-types.png",
-  alt="Sites (with inputs) using the following input types",
   caption='Sites (with inputs) using the following input types',
   description="A chart showing the most commonly used input types on mobile. text: 54.025%; hidden: 37.319%; submit: 29.611%; search: 17.100%; email: 15.164%; checkbox: 14.305%; password: 10.204%; button: 3.442%; radio: 3.391%; image: 2.585%; tel: 2.458%; number: 0.892%; file: 0.668%; range: 0.270%; reset: 0.132%; date: 0.122%; url: 0.104%; input: 0.063%; phone: 0.061%; name: 0.049%; No input type: 0.029%; mail: 0.017%; textbox: 0.016%; username: 0.014%; select: 0.013%; textfield: 0.013%; time: 0.010%; textarea: 0.005%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=1866868829&format=interactive",

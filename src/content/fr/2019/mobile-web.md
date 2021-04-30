@@ -289,7 +289,6 @@ Le web mobile existe maintenant depuis assez longtemps pour qu’il y ait toute 
 
 {{ figure_markup(
   image="america-online-1000-hours-free.jpg",
-  alt="1000 heures d’AOL gratuites, image issue de archive.org.",
   caption='1000 heures d’AOL gratuites, image issue de <a hreflang="en" href="https://archive.org/details/America_Online_1000_Hours_Free_for_45_Days_Version_7.0_Faster_Than_Ever_AM402R28">archive.org</a>.',
   description="Une photo d’un CD-ROM AOL offrant 1000 heures gratuites.",
   width=300,

@@ -146,7 +146,6 @@ Webアプリマニフェストは、ブラウザーにWebアプリケーショ�
 
 {{ figure_markup(
   image="fig7.png",
-  alt="Webアプリマニフェストの display プロパティの使用法。",
   caption="Webアプリマニフェストの <code>display</code> プロパティの使用法。",
   description="Webアプリマニフェストの表示プロパティがデスクトップおよびモバイルWebサイトでどのように使用されるかを示す棒グラフ。どちらの場合も、57％の時間で「standalone」値が使用されます。マニフェストの38％でプロパティがまったく設定されていません。 「minimal UI」、「browser」、および「fullscreen」の各値は、使用量の1〜2％のみを占めています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=1514793237&format=interactive"

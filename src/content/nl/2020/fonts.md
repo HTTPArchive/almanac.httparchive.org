@@ -152,7 +152,6 @@ We kunnen het effect van deze instellingen op First Contentful Paint en Largest 
 
 {{ figure_markup(
   image="fonts-font-display-performance-desktop.png",
-  alt="font-display prestatie op desktop.",
   caption="`font-display` prestatie op desktop.",
   description="Een staafdiagram met de desktop mediaan first content paint (FCP) en last content paint (LCP) in milliseconden voor verschillende lettertypeweergave-instellingen: `none` heeft een mediaan FCP van 2.286 ms en mediaan LCP van 4.028 ms, `optional` heeft Respectievelijk 1.766 ms en 3.055 ms, `swap` heeft 2.223 ms en 4.176 ms, `fallback` heeft 2.397 ms en 4.106 ms, `block` heeft 2.454 ms en 4.696 ms, en `auto` heeft 2.605 ms en 4.883 ms.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1618299142&format=interactive",
@@ -163,7 +162,6 @@ We kunnen het effect van deze instellingen op First Contentful Paint en Largest 
 
 {{ figure_markup(
   image="fonts-font-display-performance-mobile.png",
-  alt="font-display prestatie op mobiel.",
   caption="`font-display` prestatie op mobiel.",
   description="Een staafdiagram met de mobiele mediaan first content paint (FCP) en last content paint (LCP) in milliseconden voor verschillende font-weergave-instellingen: `none` heeft een mediaan FCP van 5.279 ms en een mediaan LCP van 8.381 ms, `optional` heeft Respectievelijk 4.733 ms en 6.598 ms, `swap` heeft 5.268 ms en 8.748 ms, `fallback` heeft 5.478 ms en 8.706 ms, `block` heeft 5.739 ms en 9.625 ms, en `auto` heeft 6.181 ms en 10.103 ms.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=2135700957&format=interactive",

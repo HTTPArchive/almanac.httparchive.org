@@ -173,7 +173,6 @@ RFC 7234 says that if no caching headers are present in a response, then the bro
 
 {{ figure_markup(
   image="cache-control-and-max-age-and-expires.png",
-  alt="Usage of Cache-Control and Expires headers.",
   caption="Usage of `Cache-Control` and `Expires` headers.",
   description="A bar chart showing the usage of `Cache-Control` and `Expires` headers. In desktop, 73.6% of responses are served with a `Cache-Control` header. 55.5% are served with an `Expires` header, 54.8% use both `Cache-Control` and `Expires` header, and 25.6% did not include either header. In mobile, 73.5% of responses are served with a `Cache-Control` header, 56.2% are served with an `Expires` header, 55.4% use both `Cache-Control` and `Expires` header, and 25.6% did not include either header.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=188448640&format=interactive",
@@ -188,7 +187,6 @@ These statistics are interesting when compared with last years data:
 
 {{ figure_markup(
   image="cache-control-and-max-age-and-expires-2019.png",
-  alt="Usage of Cache-Control and Expires headers in 2019.",
   caption="Usage of `Cache-Control` and `Expires` headers in 2019.",
   description="A bar chart showing the usage of `Cache-Control` and `Expires` headers. In desktop, 72.3% of responses are served with a `Cache-Control` header. 56.3% are served with an `Expires` header, 55.2%	use both `Cache-Control` and `Expires` header, and 26.7% did not include either header. In mobile, 71.7% of responses are served with a `Cache-Control` header, 56.4% are served with an `Expires` header, 55.5% use both `Cache-Control` and `Expires` header, and 27.4% did not include either header.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=651240480&format=interactive",
