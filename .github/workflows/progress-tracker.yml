@@ -133,7 +133,7 @@ jobs:
               const team = {}
               text.split('\n').forEach(line => {
                 if (/\|\s*\[Sheet\]\[~google-sheets\]\s*\|/.test(line)) {
-                  const [, leads, authors, reviewers, analysts, editors, coorddinators] = line.split('|')
+                  const [, leads, authors, reviewers, analysts, editors, coordinators] = line.split('|')
                   team.Leads = parseUserNames(leads)
                   team.Authors = parseUserNames(authors)
                   team.Reviewers = parseUserNames(reviewers)
