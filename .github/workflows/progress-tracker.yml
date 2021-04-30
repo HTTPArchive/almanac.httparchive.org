@@ -175,7 +175,7 @@ jobs:
                 continue
               }
               core.info(`Adding issue #${issue.number} with ${tasksCount} tasks`)
-              const heading = parseHeading(issue.body).replace(/ 20[0-9][0-9]/,'')
+              const heading = parseHeading(issue.body)
               chapters.push({
                 id: issue.number,
                 url: issue.html_url,
