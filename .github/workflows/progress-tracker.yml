@@ -44,7 +44,6 @@ jobs:
               Reviewers: {},
               Analysts: {},
               Editors: {},
-              Coordinators: {},
               All: {}
             }
 
@@ -133,14 +132,13 @@ jobs:
               const team = {}
               text.split('\n').forEach(line => {
                 if (/\|\s*\@[^|]*\s*\|/.test(line)) {
-                  const [, leads, authors, reviewers, analysts, editors, coordinators] = line.split('|')
+                  const [, leads, authors, reviewers, analysts, editors] = line.split('|')
                   team.Leads = parseUserNames(leads)
                   team.Authors = parseUserNames(authors)
                   team.Reviewers = parseUserNames(reviewers)
                   team.Analysts = parseUserNames(analysts)
                   team.Editors = parseUserNames(editors)
-                  team.Coordinators = parseUserNames(coordinators)
-                  team.All = [...new Set([...team.Leads,...team.Authors, ...team.Reviewers, ...team.Analysts, ...team.Editors, ...team.Coordinators])]
+                  team.All = [...new Set([...team.Leads,...team.Authors, ...team.Reviewers, ...team.Analysts, ...team.Editors])]
                 }
               })
               return team
@@ -151,7 +149,7 @@ jobs:
             }
 
             const formatTeam = team => {
-              return Object.entries(team).map(([k, v]) => `<span title="${k}: ${v.length ? v.join(', ') : 'TBD'}">${v.length}</span>`).join('+').replace(/\+([^+]*)$/, '≥$1')
+              return Object.entries(team).map(([k, v]) => `<span title="${k}: ${v.length ? v.join(', ') : 'TBD'}">${v.length}</span>`).join(' ').replace(/\+([^+]*)$/, ' ≥ $1')
             }
 
             const formatRow = chapter => {
