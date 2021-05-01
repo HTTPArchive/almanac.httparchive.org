@@ -1,161 +1,161 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Caching
-description: Caching chapter of the 2020 Web Almanac covering cache-control, expires, TTLs, validity, vary, set-cookies, AppCache, Service Workers and opportunities.
+description: Caching-hoofdstuk van de 2020 Web Almanac over Cache-Control, expires, TTL's, validatie, variëren, set-cookies, AppCache, Service Workers en mogelijkheden.
 authors: [roryhewitt, raghuramakrishnan71]
 reviewers: [jzyang]
 analysts: [raghuramakrishnan71]
 editors: [bazzadp]
-translators: []
-roryhewitt_bio: Enterprise Architect at <a hreflang="en" href="https://www.akamai.com/">Akamai</a>, who is passionate about performance. A British ex-patriate, he has lived in San Francisco for more than twenty years. In his spare time, he's a long-distance adventure motorcyclist, snowboarder and boxer/karateka. He likes being known as a troublemaker. Most importantly, he's a father and husband and the owner of Luna the cat.
-raghuramakrishnan71_bio: Enterprise architect at <a hreflang="en" href="https://www.tcs.com/">Tata Consultancy Services</a>, working on large digital transformation programs in the public sector. A technology enthusiast with a special interest in performance engineering. An avid traveler, intrigued by astronomy, history, biology, and advancements in medicine. A strong follower of the 47th verse, Chapter 2 of Bhagavad Gita "karmaṇy-evādhikāras te mā phaleṣhu kadāchana" meaning "You have a right to perform your prescribed duty, but you are not entitled to the fruits of action."
+translators: [noah-vdv]
+roryhewitt_bio: Enterprise Architect bij <a hreflang="en" href="https://www.akamai.com/">Akamai</a>, met een passie voor prestaties. Hij is een Britse expat en woont al meer dan twintig jaar in San Francisco. In zijn vrije tijd is hij een avontuurlijke motorrijder, snowboarder en bokser/karateka. Hij staat graag bekend als een onruststoker. Het belangrijkste is dat hij een vader en echtgenoot is en de eigenaar van Luna de kat.
+raghuramakrishnan71_bio: Enterprise-architect bij <a hreflang="en" href="https://www.tcs.com/">Tata Consultancy Services</a>, aan het werk voor grote digitale transformatieprogramma's in de publieke sector. Een technologieliefhebber met een bijzondere interesse in prestatie-engineering. Een fervent reiziger, geïntrigeerd door astronomie, geschiedenis, biologie en vooruitgang in de geneeskunde. Een sterke volgeling van vers 47, hoofdstuk 2 van de Bhagavad Gita "karmaṇy-evādhikāras te mā phaleṣhu kadāchana", wat betekent "U heeft het recht om uw voorgeschreven plicht te vervullen, maar u hebt geen recht op de vruchten van actie".
 discuss: 2056
 results: https://docs.google.com/spreadsheets/d/1fYmpSN3diOiFrscS75NsjfsrKXzxxhUMNcYSqXnQJQU/
-featured_quote: Caching provides a significant performance benefit by avoiding costly network requests. It helps both end users (they get their web pages quickly) and the companies serving web pages (reducing the load on their servers). Caching really is a win-win!
-featured_stat_1: 25.6%
-featured_stat_label_1: HTTP responses with no caching information
-featured_stat_2: 21.4%
-featured_stat_label_2: Responses that cannot be revalidated
-featured_stat_3: 21.3%
-featured_stat_label_3: Sites that could save over 2 MB on repeat visits with better caching
+featured_quote: Caching biedt een aanzienlijk prestatievoordeel door dure netwerkverzoeken te vermijden. Het helpt zowel eindgebruikers (ze krijgen hun webpagina's snel) als de bedrijven die webpagina's bedienen (de belasting van hun servers wordt verminderd). Caching is echt een win-win!
+featured_stat_1: 25,6%
+featured_stat_label_1: HTTP-reacties zonder cachegegevens
+featured_stat_2: 21,4%
+featured_stat_label_2: Reacties die niet opnieuw kunnen worden gevalideerd
+featured_stat_3: 21,3%
+featured_stat_label_3: Sites die met betere caching meer dan 2 MB kunnen besparen op herhaalde bezoeken
 ---
 
-## Introduction
+## Inleiding
 
-Caching is a technique that enables the reuse of previously downloaded content. It involves something (a server which builds web pages, a proxy such as a CDN or the browser itself) storing 'content' (web pages, CSS, JS, images, fonts, etc.) and tagging it appropriately, so it can be reused.
+Caching is een techniek die het hergebruiken van eerder gedownloade inhoud mogelijk maakt. Het omvat iets (een server die webpagina's bouwt, een proxy zoals een CDN of de browser zelf) dat 'inhoud' opslaat (webpagina's, CSS, JS, afbeeldingen, lettertypen, enz.) en het op de juiste manier tagt, zodat het kan worden hergebruikt.
 
-Here's a very high-level example:
+Hier is een voorbeeld van zeer hoog niveau:
 
-  *Jane visits the home page of the www.example.com website. Jane lives in Los Angeles, CA, and the example.com server is located in Boston, MA. Jane visiting www.example.com involves a network request which has to travel across the country.*
+  *Jane bezoekt de startpagina van de website www.example.com. Jane woont in Los Angeles, CA, en de server van example.com bevindt zich in Boston, MA. Jane die www.example.com bezoekt, heeft betrekking op een netwerkverzoek dat door het land moet reizen.*
 
-  *On the example.com server (a.k.a. Origin server), the home page is retrieved. The server knows Jane is located in LA and adds dynamic content to the page—a list of upcoming events near her. Then the page is sent back across the country to Jane and displayed on her browser.*
+  *Op de server van example.com (ook bekend als Origin-server) wordt de startpagina opgehaald. De server weet dat Jane in LA is gevestigd en voegt dynamische inhoud toe aan de pagina—een lijst met aankomende evenementen bij haar in de buurt. Vervolgens wordt de pagina door het hele land naar Jane teruggestuurd en in haar browser weergegeven.*
 
-  *If there is no caching, if Carlos in LA also visits www.example.com after Jane, his request must travel across the country to the example.com server. The server has to build the same page, including the LA events list. It will have to send the page back to Carlos.*
+  *Als er geen caching is en Carlos in LA ook www.example.com bezoekt na Jane, dan moet zijn verzoek door het hele land naar de example.com-server gaan. De server moet dezelfde pagina bouwen, inclusief de LA-evenementenlijst. Het zal de pagina terug moeten sturen naar Carlos.*
 
-  *Worse, if Jane revisits the example.com home page, her subsequent requests will act like the first—the request must go across the country and the example.com server must rebuild the home page to send it back to her.*
+  *Erger nog, als Jane de startpagina van example.com opnieuw bezoekt, zullen haar volgende verzoeken zich gedragen als de eerste: het verzoek moet door het hele land gaan en de server van example.com moet de startpagina opnieuw opbouwen om deze naar haar terug te sturen.*
 
-  *So without any caching, the example.com server builds each request from scratch. That's bad for the server because it is more work. Additionally, any communication between either Jane or Carlos and the example.com server requires data to travel across the country. All of this can add up to a slow experience that's bad for both of them.*
+  *Dus zonder enige caching, bouwt de example.com-server elk verzoek helemaal opnieuw op. Dat is slecht voor de server, want het is meer werk. Bovendien vereist elke communicatie tussen Jane of Carlos en de server van example.com gegevens om door het land te reizen. Dit alles kan resulteren in een langzame ervaring die slecht is voor beiden.*
 
-  *However, with server caching, when Jane makes her first request the server builds the LA variant of the home page. It caches the data for reuse by all LA visitors. So when Carlos's request gets to the example.com server, the server checks if it has the LA variant of the home page in its cache. Since that page is in cache as a result of Jane's earlier request, the server saves time by returning the cached page.*
+  *Echter, met server caching, wanneer Jane haar eerste verzoek doet, bouwt de server de LA-variant van de startpagina. Het slaat de gegevens op voor hergebruik door alle LA-bezoekers. Dus wanneer het verzoek van Carlos bij de server van example.com komt, controleert de server of de LA-variant van de startpagina in zijn cache staat. Aangezien die pagina in de cache is als resultaat van Jane's eerdere verzoek, bespaart de server tijd door de in de cache opgeslagen pagina te retourneren.*
 
-  *More importantly, with browser caching, when Jane's browser receives the page from the server for the first request, it caches the page. All of her future requests for the example.com home page will be served from her browser's cache, without a network request. The example.com server also benefits by not having to process or deal with Jane's request.*
+  *Wat nog belangrijker is, met browsercaching, wanneer Jane's browser de pagina van de server voor het eerste verzoek ontvangt, wordt de pagina in het cachegeheugen opgeslagen. Al haar toekomstige verzoeken voor de startpagina van example.com zullen worden weergegeven vanuit de cache van haar browser, zonder een netwerkverzoek. De server van example.com profiteert ook van het niet hoeven verwerken of behandelen van Jane's verzoek.*
 
-  *Jane is happy. Carlos is happy. The example.com folks are happy. Everyone is happy.*
+  *Jane is blij. Carlos is blij. De mensen van example.com zijn blij. Iedereen is blij.*
 
-It should be clear then, that browser caching provides a significant performance benefit by avoiding costly network requests (though <a hreflang="en" href="https://simonhearne.com/2020/network-faster-than-cache/">there are always edge cases</a>). It also helps an application scale by reducing the traffic to a website's origin infrastructure. Server caching also significantly reduces the load on the underlying application.
+Het moge duidelijk zijn dat browsercaching een aanzienlijk prestatievoordeel oplevert door dure netwerkverzoeken te vermijden (hoewel <a hreflang="en" href="https://simonhearne.com/2020/network-faster-than-cache/">er altijd randgevallen zijn</a>). Het helpt ook bij het schalen van applicaties door het verkeer naar de oorspronkelijke infrastructuur van een website te verminderen. Servercaching vermindert ook aanzienlijk de belasting van de onderliggende applicatie.
 
-Caching benefits both the end users (they get their web pages quickly) and the companies serving the web pages (reducing the load on their servers). Caching really is a win-win!
+Caching heeft voordelen voor zowel de eindgebruikers (ze krijgen hun webpagina's snel) als de bedrijven die de webpagina's bedienen (de belasting van hun servers wordt verminderd). Caching is echt een win-win!
 
-Web architectures typically involve multiple tiers of caching. There are four main places or *caching entities* where caching can occur:
+Webarchitecturen omvatten doorgaans meerdere cachinglagen. Er zijn vier hoofdplaatsen of *caching-entiteiten* waar caching kan plaatsvinden:
 
-1. An end user's web browser.
-1. A service worker cache running in the end user's web browser.
-1. A Content Delivery Network (CDN) or similar proxy, which sits between the end user's web browser and the origin server.
-1. The origin server itself.
+1. De webbrowser van een eindgebruiker.
+1. Een cache van een service worker die wordt uitgevoerd in de webbrowser van de eindgebruiker.
+1. Een Content Delivery Network (CDN) of vergelijkbare proxy, die zich tussen de webbrowser van de eindgebruiker en de oorspronkelijke server bevindt.
+1. De Origin-server zelf.
 
-In this chapter, we will primarily be discussing caching within web browsers (1-2), as opposed to caching at the origin server or in a CDN. Nevertheless, many of the specific caching topics discussed in this chapter rely on the relationship between the browser and the server (or CDN, if one is used).
+In dit hoofdstuk zullen we voornamelijk caching binnen webbrowsers (1-2) bespreken, in tegenstelling tot caching op de Oorsprong-server of in een CDN. Desalniettemin zijn veel van de specifieke cachingonderwerpen die in dit hoofdstuk worden besproken, afhankelijk van de relatie tussen de browser en de server (of CDN, als er een wordt gebruikt).
 
-The key to understanding how caching, and the web in general, works is to remember that it all consists of transactions between a requesting entity (e.g. a browser) and a responding entity (e.g. a server). Each transaction consists of two parts:
+De sleutel om te begrijpen hoe caching, en het web in het algemeen, werkt, is te onthouden dat het allemaal bestaat uit transacties tussen een verzoekende entiteit (bijvoorbeeld een browser) en een reagerende entiteit (bijvoorbeeld een server). Elke transactie bestaat uit twee delen:
 
-1. The request from the requesting entity: "*I want object X*".
-2. The response from the responding entity: "*Here is object X*".
+1. Het verzoek van de aanvragende entiteit: "*Ik wil object X*".
+2. De reactie van de reagerende entiteit: "*Hier is object X*".
 
-When we talk about caching, it refers to the object (HTML page, image, etc.) cached by the requesting entity.
+Als we het hebben over caching, verwijst het naar het object (HTML-pagina, afbeelding, enz.) Dat door de aanvragende entiteit in de cache is opgeslagen.
 
-Below figure shows how a typical request/response flow works for an object (e.g. a web page). A CDN sits between the browser and the server. Note that at each point in the browser → CDN → server flow, each of the caching entities first checks whether it has the object in its cache. It returns the cached object to the requester if found, before forwarding the request to the next caching entity in the chain:
+De onderstaande afbeelding laat zien hoe een typische aanvraag-/reactiestroom werkt voor een object (bijv. Een webpagina). Een CDN bevindt zich tussen de browser en de server. Merk op dat op elk punt in de browser → CDN → serverstroom, elk van de caching-entiteiten eerst controleert of het object in zijn cache zit. Het retourneert het gecachte object naar de aanvrager, indien gevonden, voordat het verzoek wordt doorgestuurd naar de volgende caching-entiteit in de keten:
 
 {{ figure_markup(
   image="request-response-flow-with-caching.png",
-  caption="Request/response flow for an object.",
-  description="Sequence diagram showing the usage of cache in a typical request/response flow for an object."
+  caption="Verzoek-/reactiestroom voor een object.",
+  description="Sequentiediagram dat het gebruik van cache toont in een typische aanvraag-/reactiestroom voor een object."
   )
 }}
 
-<p class="note">Note: Unless specified otherwise, all statistics in this chapter are for mobile, on the understanding that desktop statistics are similar. Where mobile and desktop statistics differ significantly, that is called out.
+<p class="note">Opmerking: tenzij anders aangegeven, zijn alle statistieken in dit hoofdstuk voor mobiel, met dien verstande dat desktopstatistieken vergelijkbaar zijn. Waar mobiele statistieken en desktopstatistieken aanzienlijk verschillen, wordt dat genoemd.
 
-Many of the responses used in this chapter are from web servers which use commonly-available server packages. While we may indicate best practices, the practices may not be possible if the software package used has a limited number of cache options.</p>
+Veel van de reacties die in dit hoofdstuk worden gebruikt, zijn afkomstig van webservers die algemeen verkrijgbare serverpakketten gebruiken. Hoewel we beste praktijken kunnen aangeven, is het mogelijk dat de procedures niet mogelijk zijn als het gebruikte softwarepakket een beperkt aantal cache-opties heeft.</p>
 
-## Caching guiding principles
+## Caching leidende principes
 
-There are three guiding principles to caching web content:
+Er zijn drie richtlijnen voor het cachen van webcontent:
 
-* Cache as much as you can
-* Cache for as long as you can
-* Cache as close as you can to end users
+* Cache zo veel mogelijk
+* Cache zo lang als u kunt
+* Cache zo dicht mogelijk bij de eindgebruikers
 
-### Cache as much as you can
+### Cache zo veel mogelijk
 
-When considering what to cache, it is important to understand whether the response content is *static* or *dynamic*.
+Wanneer u bedenkt wat u in het cachegeheugen wilt opslaan, is het belangrijk om te weten of de inhoud van de reactie *statisch* of *dynamisch* is.
 
-#### Static content
+#### Statische inhoud
 
-An example of static content is an image. For instance, a picture of a cat in a cat.jpg file is usually the same regardless of who's requesting it or where the requester is located (of course alternative formats or sizes may be delivered but usually from a different filename).
+Een voorbeeld van statische inhoud is een afbeelding. Een afbeelding van een kat in een cat.jpg-bestand is bijvoorbeeld meestal hetzelfde, ongeacht wie erom vraagt of waar de aanvrager zich bevindt (natuurlijk kunnen alternatieve formaten of maten worden geleverd, maar meestal met een andere bestandsnaam).
 
 {{ figure_markup(
   image="luna-cat.jpg",
-  caption="Yes, we have a picture of a cat.",
-  description="A picture of a cat called Luna."
+  caption="Ja, we hebben een foto van een kat.",
+  description="Een foto van een kat genaamd Luna."
   )
 }}
 
-Static content is typically cacheable and often for long periods of time. It has a one-to-many relationship between the content (one) and the requests (many).
+Statische inhoud kan doorgaans in het cachegeheugen worden opgeslagen en kan vaak gedurende lange tijd worden gebruikt. Het heeft een één-op-veel-relatie tussen de inhoud (één) en de verzoeken (veel).
 
-#### Dynamic content
+#### Dynamische inhoud
 
-An example of dynamic content is a list of events which are specific to a geographic location. The list will be different based on the requester's location.
+Een voorbeeld van dynamische inhoud is een lijst met gebeurtenissen die specifiek zijn voor een geografische locatie. De lijst zal verschillen op basis van de locatie van de aanvrager.
 
-Dynamically generated content can be more nuanced and requires careful consideration. Some dynamic content can be cached, but often for a shorter period of time. The example of a list of upcoming events will change, possibly from day to day. Different variants of the list may also need to be cached and what's cached in a user's browser may be a subset of what's cached on the server or CDN. Nevertheless, it is possible to cache some dynamic contents. It is incorrect to assume that "dynamic" is another word for "uncacheable".
+Dynamisch gegenereerde inhoud kan meer genuanceerd zijn en vereist een zorgvuldige afweging. Sommige dynamische inhoud kan in de cache worden opgeslagen, maar vaak voor een kortere periode. Het voorbeeld van een lijst met aankomende evenementen zal veranderen, mogelijk van dag tot dag. Mogelijk moeten verschillende varianten van de lijst ook in de cache worden opgeslagen en wat in de browser van een gebruiker in de cache is opgeslagen, kan een subset zijn van wat op de server of het CDN in de cache is opgeslagen. Desalniettemin is het mogelijk om bepaalde dynamische inhoud in de cache op te slaan. Het is onjuist om aan te nemen dat "dynamisch" een ander woord is voor "niet-cachebaar".
 
-### Cache for as long as you can
+### Cache zo lang als u kunt
 
-The length of time you would cache a resource is highly dependent on the content's *volatility*, that is the likelihood and/or frequency of change. For example, an image or a versioned JavaScript file could potentially be cached for a very long time. An API response or a non-versioned JavaScript file may need a shorter cache duration to ensure users get the most up-to-date response. Some content might only be cached for a minute or less. And, of course, some content should not be cached at all. This is discussed in more detail in [Identifying caching opportunities](#identifying-caching-opportunities) below.
+De tijdsduur dat u een bron in het cachegeheugen plaatst, is sterk afhankelijk van de *vluchtigheid* van de inhoud, dat wil zeggen de waarschijnlijkheid en/of frequentie van verandering. Een afbeelding of een JavaScript-bestand met versiebeheer kan bijvoorbeeld gedurende een zeer lange tijd in de cache worden opgeslagen. Een API-reactie of een JavaScript-bestand zonder versiebeheer heeft mogelijk een kortere cacheduur nodig om ervoor te zorgen dat gebruikers het meest actuele reactie krijgen. Sommige inhoud wordt mogelijk maar een minuut of minder in de cache opgeslagen. En natuurlijk mag sommige inhoud helemaal niet in de cache worden opgeslagen. Dit wordt hieronder in [Mogelijkheden voor caching identificeren](#mogelijkheden-voor-caching-identificeren) in meer detail besproken.
 
-Another point to bear in mind is that no matter how long you *tell* a browser to cache content for, the browser may evict that content from cache before that point in time. It may do so to make room for other content that is accessed more frequently for example. However, a browser will not use cache content for longer than it is told.
+Een ander punt om in gedachten te houden is dat het niet uitmaakt hoe lang u een browser *vertelt* om inhoud in de cache op te slaan, de browser kan die inhoud vóór dat tijdstip uit de cache verwijderen. Het kan dit doen om bijvoorbeeld ruimte te maken voor andere inhoud die vaker wordt geopend. Een browser zal de cache-inhoud echter niet langer gebruiken dan wordt verteld.
 
-### Cache as close to end users as you can
+### Cache zo dicht mogelijk bij de eindgebruikers
 
-Caching content close to the end user reduces download times by removing latency. For example, if a resource is cached in a user's browser, then the request never goes out to the network and it is available locally every time the user needs it. For visitors that don't have entries in their browser's cache, a CDN would be the next place a cached resource is returned from. In most cases, it will be faster to fetch a resource from a local cache or a CDN compared to an origin server.
+Door inhoud dicht bij de eindgebruiker te cachen, worden de downloadtijden verkort door de latentie te verwijderen. Als een bron bijvoorbeeld in de cache van de browser van een gebruiker is opgeslagen, gaat het verzoek nooit naar het netwerk en is het lokaal beschikbaar elke keer dat de gebruiker het nodig heeft. Voor bezoekers die geen gegevens in de cache van hun browser hebben, is een CDN de volgende plaats waar een bron in de cache wordt geretourneerd. In de meeste gevallen zal het sneller zijn om een bron op te halen uit een lokale cache of een CDN in vergelijking met een Origin-server.
 
-## Some terminology
+## Wat terminologie
 
-*Caching entity*: The hardware or software that is doing the caching. Due to the focus of this chapter, we use "browser" as a synonym for "caching entity" unless otherwise specified.
+*Caching-entiteit*: De hardware of software die de caching uitvoert. Vanwege de focus van dit hoofdstuk, gebruiken we "browser" als synoniem voor "caching-entiteit", tenzij anders aangegeven.
 
-*Time-To-Live (TTL)*: The TTL of a cached object defines how long it can be stored in a cache, typically measured in seconds. After a cached object reaches its TTL, it is marked as 'stale' by the cache. Depending on how it was added to the cache (see the details of the caching headers below), it may be evicted from cache immediately, or it may remain in the cache but marked as a 'stale' object, requiring revalidation before reuse.
+*Time-To-Live (TTL)*: De TTL van een in de cache opgeslagen object bepaalt hoe lang het in een cache kan worden opgeslagen, meestal gemeten in seconden. Nadat een in de cache opgeslagen object de TTL heeft bereikt, wordt het door de cache gemarkeerd als 'verouderd'. Afhankelijk van hoe het aan de cache is toegevoegd (zie de details van de caching-headers hieronder), kan het onmiddellijk uit de cache worden verwijderd, of het kan in de cache blijven maar gemarkeerd als een 'verouderd' object, en moet opnieuw worden gevalideerd voordat het opnieuw kan worden gebruikt.
 
-*Eviction*: The automated process by which an object is actually removed from a cache when/after it reaches its TTL or possibly when the cache is full.
+*Uitzetting*: Het geautomatiseerde proces waarmee een object daadwerkelijk uit een cache wordt verwijderd wanneer/nadat het zijn TTL heeft bereikt of mogelijk wanneer de cache vol is.
 
-*Revalidation*: A cached object that is marked as stale may need to be 'revalidated' with the server before it can be displayed to the user. The browser must first check with the server that the object the browser has in its cache is still up-to-date and valid.
+*Herbevestiging*: een in de cache opgeslagen object dat als verouderd is gemarkeerd, moet mogelijk worden 'herbevestigd' bij de server voordat het aan de gebruiker kan worden weergegeven. De browser moet eerst bij de server controleren of het object dat de browser in zijn cache heeft nog _up-to-date_ en geldig is.
 
-## Overview of browser caching
+## Overzicht van browsercaching
 
-When a browser makes a request for a piece of content (e.g. a web page), it will receive a response which includes not just the content itself (the HTML markup), but also a number of *HTTP response headers* which describe the content, including information about its cacheability.
+Wanneer een browser een verzoek doet om een stuk inhoud (bijv. Een webpagina), ontvangt deze een reactie dat niet alleen de inhoud zelf (de HTML-opmaak) bevat, maar ook een aantal *HTTP-reactieheaders* die de inhoud beschrijven , inclusief informatie over de cachemogelijkheden.
 
-The caching-related headers, or the absence of them, tell the browser three important pieces of information:
+De caching-gerelateerde headers, of de afwezigheid ervan, vertellen de browser drie belangrijke stukjes informatie:
 
-1. **Cacheability**: Is this content cacheable?
-2. **Freshness**: If it is cacheable, how long can it be cached for?
-3. **Validation**: If it is cacheable, how do I subsequently ensure that my cached version is still fresh?
+1. **Cacheerbaar**: is deze inhoud cacheerbaar?
+2. **Versheid**: als het cachebaar is, hoe lang kan het dan in het cachegeheugen worden bewaard?
+3. **Validatie**: Als het cachebaar is, hoe zorg ik er dan voor dat mijn cacheversie nog vers is?
 
-The two HTTP response headers typically used for specifying freshness are `Cache-Control` and `Expires`:
+De twee HTTP-reactieheaders die doorgaans worden gebruikt voor het specificeren van versheid zijn `Cache-Control` en `Expires`:
 
-* `Expires` specifies an explicit expiration date and time (i.e. when exactly the content expires)
-* `Cache-Control` specifies a cache duration (i.e. how long the content can be cached in the browser relative to when it was requested)
+* `Expires` specificeert een expliciete vervaldatum en -tijd (d.w.z. wanneer de inhoud precies verloopt)
+* `Cache-Control` specificeert een cache-duur (d.w.z. hoe lang de inhoud in de browser kan worden gecachet ten opzichte van het moment waarop deze werd aangevraagd)
 
-Often, both these headers are specified; in that case `Cache-Control` takes precedence.
+Vaak worden deze beide headers gespecificeerd; in dat geval heeft `Cache-Control` voorrang.
 
-The full specifications for these caching headers are in <a hreflang="en" href="https://tools.ietf.org/html/rfc7234#section-8">RFC 7234</a>, and discussed in sections <a hreflang="en" href="https://tools.ietf.org/html/rfc7234#section-4.2">4.2 (Freshness)</a> and <a hreflang="en" href="https://tools.ietf.org/html/rfc7234#section-4.3">4.3 (Validation)</a>, but we will discuss them in more detail below.
+De volledige specificaties voor deze caching-headers zijn in <a hreflang="en" href="https://tools.ietf.org/html/rfc7234#section-8">RFC 7234</a>, en besproken in secties <a hreflang="en" href="https://tools.ietf.org/html/rfc7234#section-4.2">4.2 (Freshness)</a> en <a hreflang="en" href="https://tools.ietf.org/html/rfc7234#section-4.3">4.3 (Validation)</a>, maar we zullen ze hieronder in meer detail bespreken.
 
 ## `Cache-Control` vs `Expires`
 
-In the early HTTP/1.0 days of the web, the `Expires` header was the only cache-related response header. As stated above, it is used to indicate the exact date/time after which the response is considered stale. Its value is a date and time, such as:
+In de vroege HTTP/1.0-dagen van het web was de `Expires`-header de enige cache-gerelateerde reactie-header. Zoals hierboven vermeld, wordt het gebruikt om de exacte datum/tijd aan te geven waarna de reactie als verouderd wordt beschouwd. De waarde is een datum en tijd, zoals:
 
 ```
 Expires: Thu, 01 Dec 1994 16:00:00 GMT
 ```
 
-The `Expires` header can be thought of as a blunt instrument. If a relative cache TTL is required, then processing must be done on the server to generate an appropriate value based upon the current date/time.
+De `Expires`-header kan worden gezien als een bot instrument. Als een relatieve cache-TTL vereist is, moet de verwerking op de server worden uitgevoerd om een geschikte waarde te genereren op basis van de huidige datum/tijd.
 
-HTTP/1.1 introduced the `Cache-Control` header, which is supported by all commonly used browsers for a long time. The `Cache-Control` header provides much more extensibility and flexibility than `Expires` via *caching directives*, several of which can be specified together. Details on the various directives are below.
+HTTP/1.1 introduceerde de `Cache-Control`-header, die lange tijd door alle veelgebruikte browsers wordt ondersteund. De `Cache-Control`-header biedt veel meer uitbreidbaarheid en flexibiliteit dan `Expires` via *caching richtlijnen*, waarvan er verschillende samen gespecificeerd kunnen worden. Details over de verschillende richtlijnen staan hieronder.
 
 ```
 > GET /static/js/main.js HTTP/2
@@ -167,165 +167,165 @@ HTTP/1.1 introduced the `Cache-Control` header, which is supported by all common
 < Cache-Control: public, max-age=600
 ```
 
-The simple example above shows a request and response for a JavaScript file though some headers have been removed for clarity. The `Date` header indicates the current date (specifically, the date that the content was served). The `Expires` header indicates that it can be cached for 10 minutes (the difference between the `Expires` and `Date` headers). The `Cache-Control` header specifies the `max-age` directive, which indicates that the resource can be cached for 600 seconds (5 minutes). Since `Cache-Control` takes precedence over `Expires`, the browser will cache the response for 5 minutes, after which it will be marked as stale.
+Het eenvoudige voorbeeld hierboven toont een verzoek en reactie voor een JavaScript-bestand, hoewel sommige kopteksten voor de duidelijkheid zijn verwijderd. De kop `Date` geeft de huidige datum aan (in het bijzonder de datum waarop de inhoud werd geserveerd). De `Expires`-header geeft aan dat het 10 minuten in de cache kan worden bewaard (het verschil tussen de `Expires`- en `Date`-headers). De `Cache-Control`-header specificeert de `max-age`-richtlijn, die aangeeft dat de bron 600 seconden (5 minuten) in de cache kan worden opgeslagen. Aangezien `Cache-Control` voorrang heeft op `Expires`, zal de browser de reactie gedurende 5 minuten in de cache opslaan, waarna het als verouderd wordt gemarkeerd.
 
-RFC 7234 says that if no caching headers are present in a response, then the browser is allowed to *heuristically* cache the response—it suggests a cache duration of 10% of the time since the `Last-Modified` header (if passed). In such cases, most browsers implement a variation of this suggestion, but some may cache the response indefinitely and some may not cache it at all. Because of this variation between browsers, it is important to explicitly set specific caching rules to ensure that you are in control of the cacheability of your content.
+RFC 7234 zegt dat als er geen caching-headers aanwezig zijn in een reactie, de browser de reactie *heuristisch* mag cachen—het suggereert een cacheduur van 10% van de tijd sinds de `Last-Modified`-header (indien geslaagd). In dergelijke gevallen implementeren de meeste browsers een variatie op deze suggestie, maar sommige kunnen de reactie voor onbepaalde tijd cachen en andere helemaal niet. Vanwege deze variatie tussen browsers is het belangrijk om expliciet specifieke cacheregels in te stellen om ervoor te zorgen dat u de controle heeft over de cachemogelijkheden van uw inhoud.
 
 {{ figure_markup(
   image="cache-control-and-max-age-and-expires.png",
-  alt="Usage of Cache-Control and Expires headers.",
-  caption="Usage of `Cache-Control` and `Expires` headers.",
-  description="A bar chart showing the usage of `Cache-Control` and `Expires` headers. In desktop, 73.6% of responses are served with a `Cache-Control` header. 55.5% are served with an `Expires` header, 54.8% use both `Cache-Control` and `Expires` header, and 25.6% did not include either header. In mobile, 73.5% of responses are served with a `Cache-Control` header, 56.2% are served with an `Expires` header, 55.4% use both `Cache-Control` and `Expires` header, and 25.6% did not include either header.",
+  alt="Gebruik van Cache-Control- en Expires-headers.",
+  caption="Gebruik van `Cache-Control`-en `Expires` headers",
+  description="Een staafdiagram dat het gebruik van `Cache-Control`- en `Expires`-headers laat zien. Op desktop wordt 73,6% van de reacties weergegeven met een `Cache-Control`-header. 55,5% wordt bediend met een `Expires`-header, 54,8% gebruikt zowel de `Cache-Control`- als de `Expires`-header en 25,6% heeft geen van beide headers opgenomen. Op mobiele apparaten wordt 73,5% van de reacties weergegeven met een `Cache-Control`-header, 56,2% wordt geserveerd met een `Expires`-header, 55,4% gebruikt zowel de `Cache-Control`- als de `Expires`-header en 25,6% bevat geen een van beide headers.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=188448640&format=interactive",
   sheets_gid="865734542",
   sql_file="cache_control_and_max_age_and_expires.sql"
   )
 }}
 
-As we can see 73.5% of mobile responses are served with a `Cache-Control` header, and 56.2% of responses are served with an `Expires` header and nearly all of those (55.4%) will not be used as the responses include both headers. 25.6% of responses did not include either header and are therefore subject to heuristic caching.
+Zoals we kunnen zien, wordt 73,5% van de mobiele reacties weergegeven met een `Cache-Control`-header, en 56,2% van de reacties met een `Expires`-header en bijna al deze (55,4%) zullen niet worden gebruikt omdat de reacties beide headers bevatten. 25,6% van de reacties bevatte geen header en is daarom onderhevig aan heuristische caching.
 
-These statistics are interesting when compared with last years data:
+Deze statistieken zijn interessant in vergelijking met de gegevens van vorig jaar:
 
 {{ figure_markup(
   image="cache-control-and-max-age-and-expires-2019.png",
-  alt="Usage of Cache-Control and Expires headers in 2019.",
-  caption="Usage of `Cache-Control` and `Expires` headers in 2019.",
-  description="A bar chart showing the usage of `Cache-Control` and `Expires` headers. In desktop, 72.3% of responses are served with a `Cache-Control` header. 56.3% are served with an `Expires` header, 55.2%	use both `Cache-Control` and `Expires` header, and 26.7% did not include either header. In mobile, 71.7% of responses are served with a `Cache-Control` header, 56.4% are served with an `Expires` header, 55.5% use both `Cache-Control` and `Expires` header, and 27.4% did not include either header.",
+  alt="Gebruik van Cache-Control en Expires-headers in 2019.",
+  caption="Gebruik van `Cache-Control` en `Expires`-headers in 2019.",
+  description="Een staafdiagram dat het gebruik van `Cache-Control`- en `Expires`-headers laat zien. Op desktop wordt 72,3% van de reacties weergegeven met een `Cache-Control`-header. 56,3% wordt bediend met een `Expires`-header, 55,2% gebruikt zowel de `Cache-Control`- als de `Expires`-header en 26,7% heeft geen van beide headers opgenomen. Op mobiele apparaten wordt 71,7% van de reacties weergegeven met een `Cache-Control`-header, 56,4% wordt geserveerd met een `Expires`-header, 55,5% gebruikt zowel de `Cache-Control`- als de `Expires`-header en 27,4% bevat geen een van beide headers.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=651240480&format=interactive",
   sheets_gid="664360335",
   sql_file="cache_control_and_max_age_and_expires_2019.sql"
   )
 }}
 
-While we see a slight increase in the use of the `Cache-Control` header (1.8%), we also see a minimal decrease in the use of the older `Expires` header (0.2%). On Desktop we actually see a marginal increase of `Cache-Control` (1.3%), with a smaller increase on `Expiries` (0.8%) Effectively, more desktop sites look to be adding `Cache-Control` header without the `Expires` header.
+Hoewel we een lichte toename zien in het gebruik van de `Cache-Control`-header (1.8%), zien we ook een minimale afname in het gebruik van de oudere `Expires`-header (0.2%). Op Desktop zien we eigenlijk een marginale toename van `Cache-Control` (1,3%), met een kleinere toename bij `Expires` (0,8%). In feite lijken meer desktop-sites de `Cache-Control`-header toe te voegen zonder de `Expires`-header.
 
-As we delve into the various directives allowed in the `Cache-Control` header, we will see how its flexibility and power make it a better fit in many cases.
+Terwijl we verdiepen in de verschillende richtlijnen toegestaan in de `Cache-Control`-header, zullen we zien hoe de flexibiliteit en macht het in veel gevallen beter passen.
 
-## `Cache-Control` directives
+## `Cache-Control`-richtlijnen
 
-When you use the `Cache-Control` header, you specify one or more *directives*—predefined values that indicate specific caching functionality. Multiple directives are separated by commas and can be specified in any order, although some of them 'clash' with one another (e.g. `public` and `private`). Some directives take a value, such as `max-age`.
+Wanneer u de `Cache-Control`-header gebruikt, geeft u een of meer *richtlijnen*—geest gedefinieerde waarden op die specifieke cachingfunctionaliteit aangeven. Meerdere richtlijnen worden gescheiden door komma's en kunnen in elke volgorde worden gespecificeerd, hoewel sommige van hen 'botsen' met elkaar (bijvoorbeeld `public` en `private`). Sommige richtlijnen nemen een waarde, zoals `max-age`.
 
-Below is a table showing the most common `Cache-Control` directives:
+Hieronder staat een tabel met de meest voorkomende `Cache-Control`-richtlijnen:
 
 <figure>
   <table>
     <tr>
-     <th>Directive</th>
-     <th>Description</th>
+     <th>Richtlijn</th>
+     <th>Beschrijving</th>
     </tr>
     <tr>
      <td><code class="no-wrap">max-age</code></td>
-     <td>Indicates the number of seconds that a resource can be cached for, relative to the current time. For example <code>max-age=86400</code>.</td>
+     <td>Geeft het aantal seconden aan waarvoor een bron kan worden opgeslagen, ten opzichte van de huidige tijd. Bijvoorbeeld <code>max-age=86400</code>.</td>
     </tr>
     <tr>
      <td><code class="no-wrap">public</code></td>
-     <td>Any cache may store the response, including the browser, and any proxies between the server and the browser, such as a CDN. This is assumed by default.</td>
+     <td>Elke cache kan de reactie opslaan, inclusief de browser en eventuele proxies tussen de server en de browser, zoals een CDN. Dit wordt standaard verondersteld.</td>
     </tr>
     <tr>
      <td><code class="no-wrap">no-cache</code></td>
-     <td>A cached entry must be revalidated prior to its use, via a conditional request, even if it is not marked as stale.</td>
+     <td>Een cache-invoer moet voorafgaand aan het gebruik worden herlandsideerd, via een voorwaardelijke aanvraag, zelfs als het niet als oud is gemarkeerd.</td>
     </tr>
     <tr>
      <td><code class="no-wrap">must-revalidate</code></td>
-     <td>A stale cached entry must be revalidated prior to its use, via a conditional request.</td>
+     <td>Een verouderde vermelding in de cache moet opnieuw worden gevalideerd voordat deze wordt gebruikt, via een voorwaardelijke aanvraag.</td>
     </tr>
     <tr>
      <td><code class="no-wrap">no-store</code></td>
-     <td>Indicates that the response must not be cached.</td>
+     <td>Geeft aan dat de reactie niet in de cache mag worden opgeslagen.</td>
     </tr>
     <tr>
      <td><code class="no-wrap">private</code></td>
-     <td>The response is intended for a specific user and should not be stored by shared caches such as proxies and CDNs.</td>
+     <td>De reactie is bedoeld voor een specifieke gebruiker en mag niet worden opgeslagen door gedeelde caches zoals proxy's en CDN's.</td>
     </tr>
     <tr>
      <td><code class="no-wrap">proxy-revalidate</code></td>
-     <td>Same as <code>must-revalidate</code> but applies to shared caches.</td>
+     <td>Hetzelfde als <code>must-revalidate</code> maar is van toepassing op gedeelde caches.</td>
     </tr>
     <tr>
      <td><code class="no-wrap">s-maxage</code></td>
-     <td>Same as <code>max-age</code> but applies to shared caches (e.g. CDN's) only.</td>
+     <td>Hetzelfde als <code>max-age</code> maar is alleen van toepassing op gedeelde caches (bijv. CDN's).</td>
     </tr>
     <tr>
      <td><code class="no-wrap">immutable</code></td>
-     <td>Indicates that the cached entry will never change during its TTL, and that revalidation is not necessary.</td>
+     <td>Geeft aan dat de vermelding in de cache nooit zal veranderen tijdens de TTL en dat hernieuwde validatie niet nodig is.</td>
     </tr>
     <tr>
      <td><code class="no-wrap">stale-while-revalidate</code></td>
-     <td>Indicates that the client is willing to accept a stale response while asynchronously checking in the background for a fresh one.</td>
+     <td>Geeft aan dat de cliënt bereid is een verouderde reactie te accepteren terwijl hij op de achtergrond asynchroon controleert op een nieuwe reactie.</td>
     </tr>
     <tr>
      <td><code class="no-wrap">stale-if-error</code></td>
-     <td>Indicates that the client is willing to accept a stale response if the check for a fresh one fails.</td>
+     <td>Geeft aan dat de cliënt bereid is een verouderde reactie te accepteren als de controle op een nieuwe mislukt.</td>
     </tr>
   </table>
-  <figcaption>{{ figure_link(caption="<code>Cache-Control</code> directives.", sheets_gid="1950040019", sql_file="cache_control_directives.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="<code>Cache-Control</code>-richtlijnen.", sheets_gid="1950040019", sql_file="cache_control_directives.sql") }}</figcaption>
 </figure>
 
-The `max-age` directive is the most commonly-found, since it directly defines the TTL, in the same way that the `Expires` header does.
+De `max-age`-richtlijn wordt het meest gevonden, omdat deze direct de TTL definieert, op dezelfde manier als de `Expires`-header dat doet.
 
-Here is an example of a valid Cache-Control header with multiple directives:
+Hier is een voorbeeld van een geldige Cache-Control-header met meerdere richtlijnen:
 
 ```
 Cache-Control: public, max-age=86400, must-revalidate
 ```
 
-This indicates that the object can be cached for 86,400 seconds (1 day) and it can be stored by all caches between the server and the browser, as well as in the browser itself. Once it has reached its TTL and is marked as stale, it can remain in cache, but must be conditionally revalidated before reuse.
+Dit geeft aan dat het object 86.400 seconden (1 dag) in de cache kan worden opgeslagen en dat het kan worden opgeslagen door alle caches tussen de server en de browser, evenals in de browser zelf. Zodra het zijn TTL heeft bereikt en is gemarkeerd als verouderd, kan het in de cache blijven, maar moet het voorwaardelijk opnieuw worden gevalideerd voordat het opnieuw kan worden gebruikt.
 
 {{ figure_markup(
   image="cache-control-directives.png",
-  caption="Distribution of `Cache-Control` directives.",
-  description="A bar chart showing the distribution of 11 `Cache-Control` directives. The usage for desktop ranges from 60.2% for `max-age`, 29.7% for `public`, 14.3% for `no-cache`, 12.1% for `must-revalidate`, 9.2% for `no-store`, 9.1% for `private`, 3.5% for `immutable`, 2.3% for `no-transform`, 2.1% for `stale-while-revalidate`, 1.5% for `s-maxage`, 1.0% for `proxy-revalidate`, and 0.2% for `stale-if-error`. For mobile, the range is, 59.7% for `max-age`, 29.7% for `public`, 15.1% for `no-cache`, 12.5% for `must-revalidate`, 9.6% for `no-store`, 9.7% for `private`, 3.5% for `immutable`, 2.2% for `no-transform`, 2.2% for `stale-while-revalidate`, 1.2% for `s-maxage`, 1.1% for `proxy-revalidate`, and 0.2% for `stale-if-error`.",
+  caption="Verdeling van `Cache-Control`-richtlijnen.",
+  description="Een staafdiagram met de verspreiding van 11 `Cache-Control`-richtlijnen. Het gebruik voor desktop varieert van 60,2% voor `max-age`, 29,7% voor `public`, 14,3% voor `no-cache`, 12,1% voor `must-revalidate`, 9,2% voor `no-store`, 9.1 % voor `private`, 3,5% voor `immutable`, 2,3% voor `no-transform`, 2,1% voor `stale-while-revalidate`, 1,5% voor `s-maxage`, 1,0% voor `proxy-revalidate`, en 0,2% voor `stale-if-error`. Voor mobiel is het bereik, 59,7% voor `max-age`, 29,7% voor `public`, 15,1% voor `no-cache`, 12,5% voor `must-revalidate`, 9,6% voor `no-store`, 9,7% voor `private`, 3,5% voor `immutable`, 2,2% voor `no-transform`, 2,2% voor `stale-while-revalidate`, 1,2% voor `s-maxage`, 1,1% voor `proxy-revalidate`, en 0,2% voor `stale-if-error`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=388795105&format=interactive",
   sheets_gid="1950040019",
   sql_file="cache_control_directives.sql"
   )
 }}
 
-The above figure illustrates the 11 `Cache-Control` directives in use on mobile and desktop websites. There are a few interesting observations about the popularity of these cache directives:
-* `max-age` is used by about 59.66% of mobile `Cache-Control` headers, and `no-store` is used by about 9.64% (see below for some discussion on the meaning and use of the `no-store` directive).
-* Explicitly specifying `public` isn't ever really necessary since cached entries are assumed `public` unless `private` is specified. Nevertheless, almost one third of responses include `public`—a waste of a few header bytes on every response :)
-* The `immutable` directive is relatively new, introduced in 2017 and is only supported on Firefox and Safari—its usage is still only at about 3.47%, but it is widely seen in responses from Facebook, Google, Wix, Shopify and others. It has the potential to greatly improve cacheability for certain types of requests.
+De bovenstaande afbeelding illustreert de 11 `Cache-Control`-richtlijnen die worden gebruikt op mobiele en desktopwebsites. Er zijn een paar interessante opmerkingen over de populariteit van deze cache-richtlijnen:
+* `max-age` wordt gebruikt door ongeveer 59,66% van de mobiele `Cache-Control`-headers, en `no-store` wordt gebruikt door ongeveer 9,64% (zie hieronder voor discussie over de betekenis en het gebruik van de `no-store`-richtlijn).
+* Het expliciet specificeren van `public` is nooit echt nodig, aangezien ingangen in de cache als `public` worden beschouwd, tenzij `private` is gespecificeerd. Desalniettemin bevat bijna een derde van de reacties `public`—een verspilling van een paar headerbytes per reactie :)
+* De `immutable` richtlijn is relatief nieuw, geïntroduceerd in 2017 en wordt alleen ondersteund op Firefox en Safari—het gebruik ervan is nog steeds slechts ongeveer 3,47%, maar wordt algemeen gezien in reacties van Facebook, Google, Wix, Shopify en anderen. Het heeft het potentieel om de cachemogelijkheden voor bepaalde soorten verzoeken aanzienlijk te verbeteren.
 
-As we head out to the long tail, there are a small percentage of invalid directives that can be found; these are ignored by browsers, and just end up wasting header bytes. Broadly they fall into two categories:
+Als we naar de lange staart gaan, is er een klein percentage ongeldige richtlijnen dat kan worden gevonden; deze worden genegeerd door browsers, en uiteindelijk verspillen ze alleen headerbytes. In grote lijnen vallen ze in twee categorieën:
 
-* Misspelled directives such as `nocache` and `s-max-age` and invalid directive syntax, such as using `:` instead of `=` or using `_` instead of `-`.
-* Non-existent directives such as `max-stale`, `proxy-public`, `surrogate-control`.
+* Verkeerd gespelde richtlijnen zoals `nocache` en `s-max-age` en ongeldige richtijnsyntaxis, zoals het gebruik van `:` in plaats van `=` of het gebruik van `_` in plaats van `-`.
+* Niet-bestaande richtlijnen zoals `max-stale`, `proxy-public`, `surrogate-control`.
 
-The most interesting standout in the list of invalid directives is the use of `no-cache="set-cookie"`—even at only 0.2% of all `Cache-Control` header values, it still makes up more than all the other invalid directives combined. In some early discussions on the `Cache-Control` header, this syntax was raised as a possible way to ensure that any `Set-Cookie` response headers (which might be user-specific) would not be cached with the object itself by any intermediate proxies such as CDNs. However, this syntax was not included in the final RFC, Nearly equivalent functionality can be implemented using the `private` directive, and the `no-cache` directive does not allow a value.
+Het meest interessante hoogtepunt in de lijst met ongeldige richtlijnen is het gebruik van `no-cache="set-cookie"`—zelfs met slechts 0,2% van alle `Cache-Control`-headerwaarden, maakt het nog steeds meer uit dan alle andere ongeldige richtlijnen gecombineerd. In sommige vroege discussies over de `Cache-Control`-header, werd deze syntaxis verhoogd als een mogelijke manier om ervoor te zorgen dat `Set-Cookie`-reactieheaders (die gebruikersspecifiek kunnen zijn) niet met het object zelf in de cache zouden worden opgeslagen door tussenliggende proxy's zoals CDN's. Deze syntaxis was echter niet opgenomen in de uiteindelijke RFC. Bijna gelijkwaardige functionaliteit kan worden geïmplementeerd met behulp van de `private`-richtlijn, en de `no-cache`-richtlijn staat geen waarde toe.
 
-## `Cache-Control`: `no-store`, `no-cache` and `max-age=0`
+## `Cache-Control`: `no-store`, `no-cache` en `max-age=0`
 
-When a response absolutely must not be cached, the `Cache-Control no-store` directive should be used; if this directive is not specified, then the response *is considered cacheable and may be cached*. Note that if `no-store` is specified, it takes precedence over other directives. This makes sense, since serious privacy and security issues could occur if a resource is cached which should not be.
+Als een reactie absoluut niet in de cache mag worden opgeslagen, moet de `Cache-Control no-store`-richtlijn worden gebruikt; als deze instructie niet is gespecificeerd, wordt de reactie *als cachebaar beschouwd en kan het in de cache worden opgeslagen*. Merk op dat als `no-store` is gespecificeerd, dit voorrang heeft op andere richtlijnen. Dit is logisch, aangezien ernstige privacy- en beveiligingsproblemen kunnen optreden als een bron in de cache wordt opgeslagen, wat niet zou moeten.
 
-We can see a few common errors that are made when attempting to configure a response to be non-cacheable:
+We kunnen een paar veelvoorkomende fouten zien die worden gemaakt bij het configureren van een reactie dat niet in het cachegeheugen kan worden opgeslagen:
 
-* Specifying `Cache-Control: no-cache` may sound like a directive to not cache the resource. However, as noted above, the `no-cache` directive does allow the resource to be cached—it simply informs the browser to revalidate the resource prior to use and is not the same as stopping the resource from being cached at all.
-* Setting `Cache-Control: max-age=0` sets the TTL to 0 seconds, but again, that is not the same as being non-cacheable. When `max-age=0` is specified, the resource is cached, but is marked as stale, resulting in the browser having to immediately revalidate its freshness.
+* Het specificeren van `Cache-Control: no-cache` klinkt misschien als een richtlijn om de bron niet in de cache te plaatsen. Echter, zoals hierboven opgemerkt, staat de `no-cache`-richtlijn toe dat de bron in de cache wordt opgeslagen—het informeert de browser eenvoudigweg om de bron opnieuw te valideren voorafgaand aan gebruik en is niet hetzelfde als het helemaal stoppen van de bron in de cache.
+* Het instellen van `Cache-Control: max-age=0` stelt de TTL in op 0 seconden, maar nogmaals, dat is niet hetzelfde als niet-cachebaar zijn. Wanneer `max-age=0` gespecificeerd is, wordt de bron in de cache opgeslagen, maar wordt deze gemarkeerd als verouderd, waardoor de browser de versheid onmiddellijk opnieuw moet valideren.
 
-Functionally, `no-cache` and `max-age=0` are similar, since they both require revalidation of a cached resource. The `no-cache` directive can also be used alongside a `max-age` directive that is greater than 0—this results in the object being cached for the specified TTL but being revalidated prior to every use.
+Functioneel gezien zijn `no-cache` en `max-age=0` vergelijkbaar, aangezien ze beide herbevestiging van een gecachte bron vereisen. De `no-cache`-richtlijn kan ook worden gebruikt naast een `max-age`-richtlijn die groter is dan 0—dit heeft tot gevolg dat het object in de cache wordt opgeslagen voor de opgegeven TTL, maar vóór elk gebruik opnieuw wordt gevalideerd.
 
-When looking at the above three discussed directives, 2.7% of responses include the combination of all three `no-store`, `no-cache` and `max-age=0`	directives, 6.7% of responses include both `no-store` and `no-cache`, and a negligible number of responses (< 0.15%) include `no-store` alone.
+Als we kijken naar de drie hierboven besproken richtlijnen, bevat 2,7% van de reacties de combinatie van alle drie de richtlijnen `no-store`, `no-cache` en `max-age=0`. 6,7% van de reacties bevat zowel `no-store` als `no-cache`, en een verwaarloosbaar aantal reacties (<0,15%) omvat alleen `no-store`.
 
-As noted above, where `no-store` is specified with either/both of `no-cache` and `max-age=0`, the no-store directive takes precedence, and the other directives are ignored. Therefore, if you don't want content to be cached anywhere, simply specifying `Cache-Control: no-store` is sufficient and is both simpler and uses the minimum number of header bytes.
+Zoals hierboven opgemerkt, waar `no-store` is gespecificeerd met een/beide van `no-cache` en `max-age=0`, heeft de `no-store`-richtlijn voorrang en worden de andere richtlijnen genegeerd. Daarom, als u niet wilt dat de inhoud ergens in de cache wordt opgeslagen, is het voldoende om `Cache-Control: no-store` te specificeren en dit is ook eenvoudiger en gebruikt het minimum aantal headerbytes.
 
-The `max-age=0` directive is present on less than 2% of responses where `no-store` is not specified. In such cases, the resource will be cached in the browser but will require revalidation as it is immediately marked as stale.
+De `max-age=0`-richtlijn is aanwezig op minder dan 2% van de reacties waarbij `no-store` niet is gespecificeerd. In dergelijke gevallen wordt de bron in de cache opgeslagen in de browser, maar moet deze opnieuw worden gevalideerd omdat deze onmiddellijk als verouderd wordt gemarkeerd.
 
-## Conditional requests and revalidation
+## Voorwaardelijke verzoeken en herbevestiging
 
-There are often cases where a browser has previously requested an object and already has it in its cache but the cache entry has already exceeded its TTL (and is therefore marked as stale) or where the object is defined as one that must be revalidated prior to use.
+Er zijn vaak gevallen waarin een browser eerder een object heeft aangevraagd en het al in de cache heeft, maar de cache-invoer de TTL al heeft overschreden (en daarom is gemarkeerd als verouderd) of waarin het object is gedefinieerd als een object dat opnieuw moet worden gevalideerd voorafgaand aan gebruik.
 
-In these cases, the browser can make a conditional request to the server—effectively saying "*I have object X in my cache—can I use it, or do you have a more recent version I should use instead?*". The server can respond in one of two ways:
+In deze gevallen kan de browser een voorwaardelijk verzoek aan de server doen—in feite zegt het "*Ik heb object X in mijn cache—kan ik het gebruiken of is er een recentere versie die ik in plaats daarvan moet gebruiken?*". De server kan op twee manieren reageren:
 
-* "*Yes, the version of object X you have in cache is fine to use*": In this case the server response consists of a `304 Not Modified` status code and response headers, but no response body
-* "*No, here is a more recent version of object X—use this instead*": In this case the server response consists of a `200 OK` status code, response headers, and a new response body (the actual new version of object X)
+* "*Ja, de versie van object X die in de cache is, is prima om te gebruiken*": In dit geval bestaat de serverreactie uit een `304 Not Modified`-statuscode en reactieheaders, maar geen reactietekst
+* "*Nee, hier is een recentere versie van object X—gebruik dit in plaats daarvan*": in dit geval bestaat het serverreactie uit een `200 OK`-statuscode, reactieheaders en een nieuwe reactietekst (de feitelijke nieuwe versie van object X)
 
-In either case, the server can optionally include updated caching response headers, possibly extending the TTL of the object so the browser can use the object for a further period of time without needing to make more conditional requests.
+In beide gevallen kan de server optioneel bijgewerkte caching-reactieheaders bevatten, waardoor mogelijk de TTL van het object wordt uitgebreid, zodat de browser het object voor een langere periode kan gebruiken zonder meer voorwaardelijke verzoeken te hoeven doen.
 
-The above is known as *revalidation* and if implemented correctly can significantly improve perceived performance since a `304 Not Modified` response consists only of headers, it is much smaller than a `200 OK` response, resulting in reduced bandwidth and a quicker response.
+Het bovenstaande staat bekend als *herbevestiging* en kan, indien correct geïmplementeerd, de waargenomen prestatie aanzienlijk verbeteren, aangezien een `304 Not Modified`-reactie alleen uit headers bestaat, het veel kleiner is dan een `200 OK`-reactie, wat resulteert in een verminderde bandbreedte en een snellere reactie.
 
-So how does the server identify a conditional request from a regular request?
+Dus hoe identificeert de server een voorwaardelijk verzoek van een regulier verzoek?
 
-It actually all comes down to the initial request for the object. When a browser requests an object which it does not already have in its cache, it simply makes a GET request, like this (again, some headers removed for clarity):
+Het komt eigenlijk allemaal neer op de eerste aanvraag voor het object. Wanneer een browser een object opvraagt dat nog niet in de cache is opgeslagen, doet het gewoon een GET-verzoek, zoals dit (nogmaals, sommige headers zijn verwijderd voor de duidelijkheid):
 
 ```
 > GET /index.html HTTP/2
@@ -333,34 +333,34 @@ It actually all comes down to the initial request for the object. When a browser
 > Accept: */*
 ```
 
-If the server wants to allow the browser to make use of conditional requests (this decision is entirely up to the server!), it can include one or both of two response headers which identify the object as being eligible for subsequent conditional requests. The two response headers are:
+Als de server wil dat de browser gebruik maakt van voorwaardelijke verzoeken (deze beslissing is geheel aan de server!), Kan het een of beide van twee reactieheaders bevatten die aangeven dat het object in aanmerking komt voor volgende voorwaardelijke verzoeken. De twee reactieheaders zijn:
 
-* `Last-Modified`: This indicates when the object was last changed. Its value is a date timestamp.
-* `ETag` (Entity Tag): This provides a unique identifier for the content as a quoted string. It can take any format that the server chooses; it is typically a hash of the file contents, but it could be a timestamp or a simple string.
+* `Last-Modified`: Dit geeft aan wanneer het object voor het laatst is gewijzigd. De waarde ervan is een datum-tijdstempel.
+* `ETag` (Entiteit-Tag): Dit biedt een unieke identificatie voor de inhoud als een tekenreeks tussen aanhalingstekens. Het kan elk formaat aannemen dat de server kiest; het is typisch een hash van de inhoud van het bestand, maar het zou een tijdstempel of een simpele tekenreeks kunnen zijn.
 
-If both headers are present, `ETag` takes precedence.
+Als beide headers aanwezig zijn, heeft `ETag` voorrang.
 
 ### `Last-Modified`
 
-When the server receives the request for the file, it can include the date/time that the file was most recently changed as a response header, like this:
+Wanneer de server het verzoek voor het bestand ontvangt, kan het de datum/tijd waarop het bestand voor het laatst is gewijzigd als een reactieheader bevatten, zoals deze:
 
 <pre><code>< HTTP/2 200
 < Date: Thu, 23 Jul 2020 03:04:17 GMT
 < <span class="keyword">Last-Modified: Mon, 20 Jul 2020 11:43:22 GMT</span>
 < Cache-Control: max-age=600
 
-...lots of html here...</code></pre>
+...veel html hier...</code></pre>
 
-The browser will cache this object for 600 seconds (as defined in the `Cache-Control` header), after which it will mark the object as stale. If the browser needs to use the file again, it requests the file from the server just as it did initially, but this time it includes an additional request header, called `If-Modified-Since`, which it sets to the value that was passed in the `Last-Modified` response header in the initial response:
+De browser zal dit object 600 seconden cachen (zoals gedefinieerd in de `Cache-Control`-header), waarna het het object als oud markeert. Als de browser het bestand opnieuw moet gebruiken, vraagt hij het bestand op dezelfde manier aan bij de server als aanvankelijk, maar deze keer bevat het een extra verzoekheader, genaamd `If-Modified-Since`, die wordt ingesteld op de waarde die was doorgegeven in de `Last-Modified`-reactieheader in het eerste reactie:
 
 <pre><code>> GET /index.html HTTP/2
 > Host: www.example.org
 > Accept: */*
 > <span class="keyword">If-Modified-Since: Mon, 20 Jul 2020 11:43:22 GMT</span></code></pre>
 
-When the server receives this request, it can check whether the object has changed by comparing the `If-Modified-Since` header value with the date that it most recently changed the file.
+Wanneer de server dit verzoek ontvangt, kan het controleren of het object is gewijzigd door de headerwaarde `If-Modified-Since` te vergelijken met de datum waarop het bestand voor het laatst is gewijzigd.
 
-If the two values are the same, then the server knows that the browser has the latest version of the file and the server can return a `304 Not Modified` response with just headers (including the same `Last-Modified` header value) and no response body:
+Als de twee waarden hetzelfde zijn, weet de server dat de browser de laatste versie van het bestand heeft en kan de server een `304 Not Modified`-reactie teruggeven met alleen headers (inclusief dezelfde `Last-Modified`-headerwaarde) en geen reactietekst:
 
 ```
 < HTTP/2 304
@@ -369,7 +369,7 @@ If the two values are the same, then the server knows that the browser has the l
 < Cache-Control: max-age=600
 ```
 
-However, if the file on the server has changed since it was last requested by the browser, then the server returns a `200 OK` response consisting of headers (including an updated `Last-Modified` header) and the new version of the file in the body:
+Als het bestand op de server echter is gewijzigd sinds het voor het laatst door de browser is aangevraagd, retourneert de server een `200 OK`-reactie bestaande uit headers (inclusief een bijgewerkte `Last-Modified`-header) en de nieuwe versie van het bestand in het lichaam:
 
 ```
 < HTTP/2 200
@@ -380,15 +380,15 @@ However, if the file on the server has changed since it was last requested by th
 ...lots of html here...
 ```
 
-As you can see, the `Last-Modified` response header and `If-Modified-Since` request header work as a pair.
+Zoals u kunt zien, werken de `Last-Modified`-reactieheader en de `If-Modified-Since`-verzoekheader als een paar.
 
-### Entity Tag (`ETag`)
+### Entiteit-Tag (`ETag`)
 
-The functionality here is almost exactly the same as the date-based `Last-Modified` / `If-Modified-Since` conditional request processing described above.
+De functionaliteit hier is bijna exact hetzelfde als de op datum gebaseerde `Last-Modified` / `If-Modified-Since` voorwaardelijke aanvraagverwerking zoals hierboven beschreven.
 
-However, in this case, the Server sends an `ETag` response header—rather than a date timestamp. An `ETag` is simply a string and is often a hash of the file contents or a version number calculated by the server. The format of this string is entirely up to the server. The only important fact is that the server changes the `ETag` value whenever it changes the file.
+In dit geval stuurt de server echter een `ETag`-reactieheader—in plaats van een datum-tijdstempel. Een `ETag` is gewoon een tekenreeks en is vaak een hash van de bestandsinhoud of een versienummer berekend door de server. Het formaat van deze tekenreeks is geheel aan de server. Het enige belangrijke feit is dat de server de waarde van `ETag` wijzigt wanneer het bestand verandert.
 
-In this example, when the server receives the initial request for the file, it can return the file's version in an `ETag` response header, like this:
+In dit voorbeeld, wanneer de server het eerste verzoek voor het bestand ontvangt, kan het de bestandsversie retourneren in een `ETag`-reactieheader, zoals dit:
 
 ```
 < HTTP/2 200
@@ -399,7 +399,7 @@ In this example, when the server receives the initial request for the file, it c
 ...lots of html here...
 ```
 
-As with the `If-Modified-Since` example above, the browser will cache this object for 600 seconds, as defined in the `Cache-Control` header. When it needs to request the object from the server again, it includes an additional request header, called `If-None-Match`, which has the value passed in the `ETag` response header in the initial response:
+Net als bij het `If-Modified-Since`-voorbeeld hierboven, zal de browser dit object 600 seconden cachen, zoals gedefinieerd in de `Cache-Control`-header. Wanneer het object het object opnieuw van de server moet opvragen, bevat het een extra verzoekheader, genaamd `If-None-Match`, waarvan de waarde is doorgegeven in de `ETag`-reactieheader in het eerste reactie:
 
 ```
 > GET /index.html HTTP/2
@@ -408,9 +408,9 @@ As with the `If-Modified-Since` example above, the browser will cache this objec
 > If-None-Match: "v123.4.01"
 ```
 
-When the server receives this request, it can check whether the object has changed by comparing the `If-None-Match` header value with the current version it has of the file.
+Wanneer de server dit verzoek ontvangt, kan hij controleren of het object is gewijzigd door de headerwaarde `If-None-Match` te vergelijken met de huidige versie die het heeft van het bestand.
 
-If the two values are the same, then the browser has the latest version of the file and the server can return a `304 Not Modified` response with just headers:
+Als de twee waarden hetzelfde zijn, heeft de browser de laatste versie van het bestand en kan de server een `304 Not Modified`-reactie teruggeven met alleen headers:
 
 ```
 < HTTP/2 304
@@ -419,7 +419,7 @@ If the two values are the same, then the browser has the latest version of the f
 < Cache-Control: max-age=600
 ```
 
-However, if the values are different, then the version of the file on the server is more recent than the version that the browser has, so the server returns a `200 OK` response consisting of headers (including an updated `ETag` header) and the new version of the file:
+Als de waarden echter verschillen, is de versie van het bestand op de server recenter dan de versie die de browser heeft, dus retourneert de server een `200 OK`-reactie bestaande uit headers (inclusief een bijgewerkte `ETag`-header) en de nieuwe versie van het bestand:
 
 ```
 < HTTP/2 200
@@ -430,20 +430,20 @@ However, if the values are different, then the version of the file on the server
 ...lots of html here...
 ```
 
-Again, we see a pair of headers being used for this conditional request processing—the `ETag` response header and the `If-None-Match` request header.
+Opnieuw zien we dat er een paar headers wordt gebruikt voor deze voorwaardelijke aanvraagverwerking—de `ETag`-reactieheader en de `If-None-Match`-verzoekheader.
 
-In the same way that the `Cache-Control` header has more power and flexibility than the `Expires` header, the `ETag` header is in many ways an improvement over the `Last-Modified` header. There are two reasons for this:
+Op dezelfde manier dat de `Cache-Control`-header meer kracht en flexibiliteit heeft dan de `Expires` header, is de `ETag`-header in veel opzichten een verbetering ten opzichte van de `Last-Modified`-header. Hiervoor zijn twee redenen:
 
-1. The server can define its own format for the `ETag` header. The example above shows a version string, but it could be a hash, or a random string. By allowing this, versions of an object are not explicitly linked to dates, and this allows a server to create a new version of a file and yet give it the same ETag as the prior version—perhaps if the file change is unimportant.
+1. De server kan zijn eigen formaat definiëren voor de `ETag`-header. Het bovenstaande voorbeeld toont een versiereeks, maar het kan een hash of een willekeurige reeks zijn. Door dit toe te staan, worden versies van een object niet expliciet aan datums gekoppeld, en dit stelt een server in staat om een nieuwe versie van een bestand te maken en deze toch dezelfde ETag te geven als de vorige versie—misschien als de bestandswijziging onbelangrijk is.
 
-2. `ETag`'s can be defined as either 'strong' or 'weak', which allows browsers to validate them differently. A full understanding and discussion of this functionality is beyond the scope of this chapter but can be found in <a hreflang="en" href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>.
+2. `ETag`'s kunnen worden gedefinieerd als 'strong' (sterk) of 'weak' (zwak), waardoor browsers ze anders kunnen valideren. Een volledig begrip en bespreking van deze functionaliteit valt buiten het reikwijdte van dit hoofdstuk, maar is te vinden in <a hreflang="en" href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>.
 
-However, since the `ETag` is often based on last modified time of the server, it may effectively be the same in a lot of implementations, and worse than that various bugs in server implementations (Apache in particular), <a hreflang="en" href="https://www.tunetheweb.com/performance/http-performance-headers/etag/#downsides">can mean it is less effective to use `ETag`'s</a>.
+Echter, aangezien de `ETag` vaak gebaseerd is op de laatst gewijzigde tijd van de server, kan het in feite hetzelfde zijn in veel implementaties, en erger dan dat verschillende bugs in serverimplementaties (Apache in het bijzonder), <a hreflang="en" href="https://www.tunetheweb.com/performance/http-performance-headers/etag/#downsides">kan betekenen dat het minder effectief is om `ETag`'s te gebruiken</a>.
 
 {{ figure_markup(
   image="last-modified-and-etag.png",
-  caption="Adoption of validating freshness via `Last-Modified` and `ETag` headers.",
-  description="A bar chart showing 73.5% of desktop requests have a `Last-Modified`, 47.9% have an `ETag`, 42.8% have both, and 21.4% have neither. The stats for mobile are almost identical at 72.0% for `Last-Modified`, 46.2% for `ETag`, 41.0% for both, and 22.9% for neither.",
+  caption="Overname van validatie van versheid via `Last-Modified`- en `ETag`-headers.",
+  description="Een staafdiagram dat laat zien dat 73,5% van de desktopverzoeken een`Last-Modified` heeft, 47,9% heeft een `ETag`, 42,8% heeft beide en 21,4% heeft geen van beide. De statistieken voor mobiel zijn bijna identiek: 72,0% voor `Last-Modified`, 46,2% voor `ETag`, 41,0% voor beide en 22,9% voor geen van beide.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1171778982&format=interactive",
   sheets_gid="1084825476",
   sql_file="last_modified_and_etag.sql"
@@ -452,48 +452,48 @@ However, since the `ETag` is often based on last modified time of the server, it
 
 {{ figure_markup(
   image="last-modified-and-etag-2019.png",
-  caption="Adoption of validating freshness via `Last-Modified` and `ETag` headers in 2019.",
-  description="A bar chart showing 72.7% of desktop requests have a `Last-Modified`, 48.0% have an `ETag`, 43.1% have both, and 22.4% have neither. The stats for mobile are almost identical at 72.0% for `Last-Modified`, 47.1% for `ETag`, 42.1% for both, and 23.1% for neither.",
+  caption="Overname van validatie van versheid via `Last-Modified`- en `ETag`-headers in 2019.",
+  description="Een staafdiagram dat aangeeft dat 72,7% van de desktopverzoeken een `Last-Modified` heeft, 48,0% heeft een `ETag`, 43,1% heeft beide en 22,4% heeft geen van beide. De statistieken voor mobiel zijn bijna identiek: 72,0% voor `Last-Modified`, 47,1% voor `ETag`, 42,1% voor beide en 23,1% voor geen van beide.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1775409512&format=interactive",
   sheets_gid="1084825476",
   sql_file="last_modified_and_etag_2019.sql"
   )
 }}
 
-We can see 72.0% of mobile responses are served with a `Last-Modified` header. In comparison to 2019, its usage on mobile has remained static, but it has increased marginally (by < 1%) on desktop.
+We kunnen zien dat 72,0% van de mobiele reacties wordt weergegeven met een `Last-Modified`-header. In vergelijking met 2019 is het gebruik op mobiele apparaten statisch gebleven, maar het is marginaal (met < 1%) op desktop gestegen.
 
-Looking at `ETag` headers, 46.2% of responses on mobiles are using this. Out of these responses, 34.38% are *strong*, 9.81% are *weak*, and the remaining 1.98% are invalid. In contrast with `Last-Modified`, the usage of `ETag` headers has marginally decreased (by <1%) in comparison to 2019.
+Kijkend naar `ETag`-headers, 46,2% van de reacties op mobiele telefoons gebruikt dit. Van deze reacties is 34,38% *strong (sterk)*, 9,81% *weak (zwak)* en de overige 1,98% is ongeldig. In tegenstelling tot `Last-Modified` is het gebruik van `ETag`-headers marginaal afgenomen (met <1%) in vergelijking met 2019.
 
-41.0% of mobile responses are served with both headers and, as noted above, the `ETag` header takes precedence in this case. 22.9% of mobile responses include neither a `Last-Modified` or `ETag` header.
+41,0% van de mobiele reacties wordt weergegeven met beide headers en, zoals hierboven vermeld, heeft de `ETag`-header voorrang in dit geval. 22,9% van de mobiele reacties bevat geen `Last-Modified`- of `ETag`-header.
 
-Correctly-implemented revalidation using conditional requests can significantly reduce bandwidth (304 responses are typically much smaller than 200 responses), load on servers (only a small amount of processing is required to compare change dates or hashes) and improve perceived performance (servers respond more quickly with a 304). However, as we can see from the above statistics, more than a fifth of all requests are not using any form of conditional requests.
+Correct geïmplementeerde herbevestiging met behulp van voorwaardelijke verzoeken kan de bandbreedte (304 reacties zijn doorgaans veel kleiner dan 200 reacties), server belasting (slechts een kleine hoeveelheid verwerking is vereist om wijzigingsdatums of hashes te vergelijken) en de waargenomen verbeterde prestaties aanzienlijk verminderen (servers reageren sneller met een 304). Zoals we echter kunnen opmaken uit de bovenstaande statistieken, maakt meer dan een vijfde van alle verzoeken geen gebruik van enige vorm van voorwaardelijke verzoeken.
 
-Only 0.1% of the responses had a `304 Not Modified` status in our crawl, though this is not unexpected as our crawl is using an empty cache and 304 responses are mostly useful for subsequent visits that our [Methodology](./methodology) does not test for. Still we analyzed these to see how the 304 was used.
+Slechts 0,1% van de reacties had de status `304 Not Modified` tijdens onze crawl, hoewel dit niet onverwacht is aangezien onze crawl een lege cache gebruikt en 304 reacties vooral nuttig zijn voor volgende bezoeken die onze [Methodologie](./methodology) niet voor test. Toch hebben we deze geanalyseerd om te zien hoe de 304 werd gebruikt.
 
 {{ figure_markup(
   image="valid-if-none-match-returns-304.png",
-  caption="Distribution of `304 Not Modified` status.",
-  description="Bar chart showing the distribution of `304 Not Modified` status. 20.5% of the desktop responses had no `ETag` header and contained the same `Last-Modified` value, passed in the `If-Modified-Since` header of the corresponding request. Out of these, 86% had a `304 Not Modified` status. 86.1% of the responses contained the same `ETag` value, passed in the `If-None-Match` header of the corresponding request. Out of these, 88.9% had a `304 Not Modified` status. 17.2% of the mobile responses had no `ETag` header and contained the same `Last-Modified` value, passed in the `If-Modified-Since` header of the corresponding request. Out of these, 78.3% had a `304 Not Modified` status. 89.9% of the responses contained the same `ETag` value, passed in the `If-None-Match` header of the corresponding request. Out of these, 90.2% had a `304 Not Modified` status.",
+  caption="Verdeling van de status `304 Not Modified`.",
+  description="Staafdiagram met de verdeling van de status `304 Not Modified`. 20,5% van de desktop reacties had geen `ETag`-header en bevatte dezelfde `Last-Modified`-waarde, doorgegeven in de `If-Modified-Since`-header van het overeenkomstige verzoek. Hiervan had 86% de status `304 Not Modified`. 86,1% van de reacties bevatte dezelfde `ETag`-waarde, doorgegeven in de `If-None-Match`-header van het corresponderende verzoek. Hiervan had 88,9% de status `304 Not Modified`. 17,2% van de mobiele reacties had geen `ETag`-header en bevatte dezelfde `Last-Modified`-waarde, doorgegeven in de `If-Modified-Since`-header van het overeenkomstige verzoek. Hiervan had 78,3% de status `304 Not Modified`. 89,9% van de reacties bevatte dezelfde `ETag`-waarde, doorgegeven in de `If-None-Match`-header van het corresponderende verzoek. Hiervan had 90,2% de status `304 Not Modified`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1530788258&format=interactive",
   sheets_gid="1705717345",
   sql_file="valid_if_none_match_returns_304.sql"
   )
 }}
 
-We see that 17.2% of the mobile responses (20.5% on desktop) had no `ETag` header and contained the same `Last-Modified` value, passed in the `If-Modified-Since` header of the corresponding request. Out of these, 78.3% (86% on desktop) had a `304 Not Modified` status.
+We zien dat 17,2% van de mobiele reacties (20,5% op desktop) geen `ETag`-header had en dezelfde `Last-Modified`-waarde bevatte, doorgegeven in de `If-Modified-Since`-header van het overeenkomstige verzoek. Hiervan had 78,3% (86% op desktop) de status `304 Not Modified`.
 
-89.9% of the mobile responses (86.1% on desktop) contained the same `ETag` value, passed in the `If-None-Match` header of the corresponding request. If the `If-Modified-Since` header is also present, `ETag` takes precedence. Out of these, 90.2% (88.9% on desktop) had a `304 Not Modified` status.
+89,9% van de mobiele reacties (86,1% op desktop) bevatte dezelfde `ETag`-waarde, doorgegeven in de `If-None-Match`-header van het overeenkomstige verzoek. Als de `If-Modified-Since`-header ook aanwezig is, heeft `ETag` voorrang. Hiervan had 90,2% (88,9% op desktop) de status `304 Not Modified`.
 
-## Validity of date strings
+## Geldigheid van datumreeksen
 
-Throughout this document, we have discussed several caching-related HTTP headers used to convey timestamps:
+In dit document hebben we verschillende caching-gerelateerde HTTP-headers besproken die worden gebruikt om tijdstempels over te brengen:
 
-* The `Date` response header indicates when the resource was served to a client.
-* The `Last-Modified` response header indicates when a resource was last changed on the server.
-* The `Expires` header is used to indicate for how long a resource is cacheable.
+* De `Date`-reactieheader geeft aan wanneer de bron aan een cliënt is geleverd.
+* De `Last-Modified`-reactieheader geeft aan wanneer een bron voor het laatst gewijzigd is op de server.
+* De `Expires`-header wordt gebruikt om aan te geven hoe lang een bron in de cache kan worden opgeslagen.
 
-All three of these HTTP headers use a date formatted string to represent timestamps. The date-formatted string is defined in <a hreflang="en" href="https://tools.ietf.org/html/rfc2616#section-3.3.1">RFC 2616</a>, and must specify a GMT timestamp string.
-For example:
+Alle drie deze HTTP-headers gebruiken een tekenreeks met datumopmaak om tijdstempels weer te geven. De op datum opgemaakte tekenreeks is gedefinieerd in <a hreflang="en" href="https://tools.ietf.org/html/rfc2616#section-3.3.1">RFC 2616</a>, en moet een GMT-tijdstempelreeks.
+Bijvoorbeeld:
 
 ```
 > GET /index.html HTTP/2
@@ -506,37 +506,37 @@ For example:
 < Last-Modified: Mon, 20 Jul 2020 11:43:22 GMT
 ```
 
-Invalid date strings are ignored by most browsers, which can affect the cacheability of the response on which they are served. For example, an invalid `Last-Modified` header will result in the browser being unable to subsequently perform a conditional request for the object, since it is cached without that invalid timestamp.
+Ongeldige datumreeksen worden door de meeste browsers genegeerd, wat van invloed kan zijn op de cachemogelijkheden van het antwoord waarop ze worden aangeboden. Een ongeldige `Last-Modified`-header zal er bijvoorbeeld toe leiden dat de browser vervolgens geen voorwaardelijk verzoek voor het object kan uitvoeren, aangezien het in de cache wordt opgeslagen zonder dat ongeldige tijdstempel.
 
 {{ figure_markup(
   image="invalid-last-modified-and-expires-and-date.png",
-  caption="Invalid date formats in response headers.",
-  description="Bar chart showing the distribution of invalid date. 0.1% of desktop responses have an invalid date in `Date`, 0.5% in `Last-Modified` and 2.5% in `Expires`. The stats for mobile are very similar with 0.1% of responses have an invalid date in `Date`, 0.7% in `Last-Modified` and 2.9% in `Expires`.",
+  caption="Ongeldige datumnotaties in antwoord-headers.",
+  description="Staafdiagram met de distributie van ongeldige datum. 0,1% van de desktopreacties heeft een ongeldige datum in `Date`, 0,5% in `Last-Modified` en 2,5% in `Expires`. De statistieken voor mobiel lijken erg op elkaar: 0,1% van de reacties heeft een ongeldige datum in `Date`, 0,7% in `Last-Modified` en 2,9% in `Expires`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=827586570&format=interactive",
   sheets_gid="1338572274",
   sql_file="invalid_last_modified_and_expires_and_date.sql"
   )
 }}
 
-Because the `Date` HTTP response header is almost always generated automatically by the web server, invalid values are extremely rare. Similarly `Last-Modified` headers had a very low percentage (0.75% on mobile and 0.5% on desktop) of invalid values. What was very surprising to see though, was that a relatively high 2.94% of `Expires` headers used an invalid date format (2.5% in desktop).
+Omdat de `Date` HTTP-reactieheader bijna altijd automatisch wordt gegenereerd door de webserver, zijn ongeldige waarden uiterst zeldzaam. Evenzo hadden van `Last-Modified`-headers een zeer laag percentage (0,75% op mobiel en 0,5% op desktop) ongeldige waarden. Wat echter zeer verrassend was, was dat een relatief hoge 2,94% van de `Expires`-headers een ongeldige datumnotatie gebruikte (2,5% op desktop).
 
-Examples of some of the invalid uses of the `Expires` header are:
+Voorbeelden van sommige van de ongeldige toepassingen van de `Expires`-header zijn:
 
-* Valid date formats, but using a time zone other than GMT
-* Numerical values such as 0 or -1
-* Values that would be valid in a `Cache-Control` header
+* Geldige datumnotaties, maar met een andere tijdzone dan GMT
+* Numerieke waarden zoals 0 of -1
+* Waarden die geldig zouden zijn in een `Cache-Control`-header
 
-One large source of invalid `Expires` headers is from assets served from a popular third party, in which a date/time uses the EST time zone, for example `Expires: Tue, 27 Apr 1971 19:44:06 EST`. Note that some browsers may understand and accept this date format, on the principle of robustness, but it should not be assumed that this will be the case.
+Een grote bron van ongeldige '`Expires`-headers is afkomstig van items die worden aangeboden door een populaire derde partij, waarbij een datum/tijd de EST-tijdzone gebruikt, bijvoorbeeld `Expires: Tue, 27 Apr 1971 19:44:06 EST`. Merk op dat sommige browsers dit datumnotatie kunnen begrijpen en accepteren, op basis van het robuustheidsprincipe, maar er mag niet van worden uitgegaan dat dit het geval zal zijn.
 
-## The `Vary` header
+## De `Vary`-header
 
-We have discussed how a caching entity can determine whether a response object is cacheable, and for how long it can be cached. However, one of the most important steps the caching entity must take is determining if the resource being requested is already in its cache. While this may seem simple, many times the URL alone is not enough to determine this. For example, requests with the same URL could vary in what compression they used (Gzip, Brotli, etc.) or could be returned in different encodings (XML, JSON etc.).
+We hebben besproken hoe een caching-entiteit kan bepalen of een reactieobject cacheerbaar is, en hoe lang het in de cache kan worden bewaard. Een van de belangrijkste stappen die de caching-entiteit moet nemen, is echter bepalen of de gevraagde bron zich al in de cache bevindt. Hoewel dit misschien eenvoudig lijkt, is de URL alleen vaak niet voldoende om dit te bepalen. Verzoeken met dezelfde URL kunnen bijvoorbeeld variëren in welke compressie ze gebruiken (Gzip, Brotli, enz.) of kunnen worden geretourneerd in verschillende coderingen (XML, JSON enz.).
 
-To solve this problem, when a caching entity caches an object, it gives the object a unique identifier (a cache key). When it needs to determine whether the object is in its cache, it checks for the existence of the object using the cache key as a lookup. By default, this cache key is simply the URL used to retrieve the object, but servers can tell the caching entity to include other attributes of the response (such as compression method) in the cache key, by including the `Vary` response header. The `Vary` header identifies variants of the object, based on factors other than the URL.
+Om dit probleem op te lossen, geeft een caching-entiteit een object in de cache een unieke identificatie (een cachesleutel). Wanneer het moet bepalen of het object zich in de cache bevindt, controleert het of het object bestaat met behulp van de cachesleutel als zoekactie. Standaard is deze cachesleutel gewoon de URL die wordt gebruikt om het object op te halen, maar servers kunnen de caching-entiteit vertellen om andere attributen van het antwoord (zoals de compressiemethode) op te nemen in de cachesleutel, door de `Vary`-antwoordheader op te nemen. De `Vary`-header identificeert varianten van het object, gebaseerd op andere factoren dan de URL.
 
-The `Vary` response header instructs the browser to add the value of one or more request header values to the cache key. The most common example of this is `Vary: Accept-Encoding`, which will result in the browser caching the same object in different formats, based on the different `Accept-Encoding` request header values (i.e. `gzip`, `br`, `deflate`).
+De `Vary`-antwoordheader instrueert de browser om de waarde van een of meer verzoekheaderwaarden toe te voegen aan de cachesleutel. Het meest voorkomende voorbeeld hiervan is `Vary: Accept-Encoding`, wat ertoe zal leiden dat de browser hetzelfde object in verschillende formaten cachet, gebaseerd op de verschillende `Accept-Encoding` verzoekheader-waarden (bijv. `Gzip`, `br` , `deflate`).
 
-A caching entity sends a request for an HTML file, indicating that it will accept a gzipped response:
+Een caching-entiteit verzendt een verzoek voor een HTML-bestand, waarmee wordt aangegeven dat het een gzip-antwoord accepteert:
 
 ```
 > GET /index.html HTTP/2
@@ -544,7 +544,7 @@ A caching entity sends a request for an HTML file, indicating that it will accep
 > Accept-Encoding: gzip
 ```
 
-The server responds with the object and indicates that the version it is sending should include the value of the `Accept-Encoding` request header.
+De server reageert met het object en geeft aan dat de versie die het verzendt de waarde van de `Accept-Encoding` verzoekheader moet bevatten.
 
 ```
 < HTTP/2 200 OK
@@ -552,59 +552,59 @@ The server responds with the object and indicates that the version it is sending
 < Vary: Accept-Encoding
 ```
 
-In this simplified example, the caching entity would cache the object using a combination of the URL and the `Vary` header.
+In dit vereenvoudigde voorbeeld zou de caching-entiteit het object cachen met behulp van een combinatie van de URL en de `Vary`-header.
 
-Another common value is `Vary: Accept-Encoding, User-Agent`, which instructs the client to include both the `Accept-Encoding` and `User-Agent` values in the cache key. However, when discussing shared proxies and CDNs, using values other than `Accept-Encoding` can be problematic as it dilutes or fragments the cache and can reduce the amount of traffic served from cache. For instance, there are several thousand different varieties of `User-Agent`, so if a CDN attempts to cache many different variants of an object, it may end up filling up the cache with many almost identical (or indeed, identical) cached objects. This is very inefficient and can lead to very sub-optimal caching within the CDN, resulting in fewer cache hits and greater latency.
+Een andere veel voorkomende waarde is `Vary: Accept-Encoding, User-Agent`, die de cliënt instrueert om zowel de waarden `Accept-Encoding` als `User-Agent` in de cachesleutel op te nemen. Bij het bespreken van gedeelde proxy's en CDN's kan het gebruik van andere waarden dan `Accept-Encoding` echter problematisch zijn omdat het de cache verdunt of fragmenteert en de hoeveelheid verkeer die vanuit de cache wordt bediend, kan verminderen. Er zijn bijvoorbeeld duizenden verschillende varianten van `User-Agent`, dus als een CDN probeert om veel verschillende varianten van een object te cachen, kan het uiteindelijk de cache vullen met veel bijna identieke (of zelfs identieke) gecachte objecten. Dit is erg inefficiënt en kan leiden tot een zeer suboptimale caching binnen het CDN, wat resulteert in minder cache-hits en een grotere latentie.
 
-In general, you should only vary the cache if you are serving alternate content to clients based on that header.
+Over het algemeen moet u de cache alleen variëren als u alternatieve inhoud aan cliënten aanbiedt op basis van die header.
 
-The `Vary` header is used on 43.4% of HTTP responses, and 84.2%  of these responses include a `Cache-Control` header.
+De `Vary`-header wordt gebruikt voor 43,4% van de HTTP-reacties, en 84,2% van deze reacties bevat een `Cache-Control`-header.
 
-The graph below details the popularity for the top 10 Vary header values. `Accept-Encoding` accounts for almost 92% of `Vary`'s use, with `User-Agent` at 10.7%, `Origin` (used for CORS processing) at 8%, and Accept at 4.1% making up much of the rest.
+In de onderstaande grafiek wordt de populariteit van de top 10 Vary-headerwaarden weergegeven. `Accept-Encoding` is goed voor bijna 92% van het gebruik van `Vary`, met `User-Agent` voor 10,7%, `Origin` (gebruikt voor CORS-verwerking) voor 8% en `Accept` voor 4,1% voor een groot deel van de rest.
 
 {{ figure_markup(
   image="vary-headers.png",
-  caption="`Vary` header usage.",
-  description="Bar chart showing the distribution of `Vary` header. 91.8% of desktop responses use of `Accept-Encoding`, much smaller values for the rest with 10.7% for `User-Agent`, approximately 8.0% for `Origin`, and 0.5%-4.1% for `Accept`, `Access-Control-Request-Headers`,`Access-Control-Request-Method`, `Cookie`, `X-Forwarded-Proto`, `Accept-Language`, and `Range`. 91.3% of mobile responses use of `Accept-Encoding`, much smaller values for the rest with 11.0% for `User-Agent`, approximately 9.1% for `Origin`, and 0.6%-3.9% for `Accept`, `Access-Control-Request-Headers`, `Access-Control-Request-Method`, `Cookie`, `X-Forwarded-Proto`, `Accept-Language`, and `Range`.",
+  caption="Gebruik van `Vary`-header",
+  description="Staafdiagram met de verdeling van de `Vary`-header. 91,8% van de desktopreacties gebruikt `Accept-Encoding`, veel kleinere waarden voor de rest met 10,7% voor `User-Agent`, ongeveer 8,0% voor `Origin` en 0,5%-4,1% voor `Accept`, `Access-Control-Request-Headers`, `Access-Control-Request-Method`, `Cookie`, `X-Forwarded-Proto`, `Accept-Language`, en `Range`. 91,3% van de mobiele reacties gebruikt `Accept-Encoding`, veel kleinere waarden voor de rest met 11,0% voor `User-Agent`, ongeveer 9,1% voor `Origin` en 0,6%-3,9% voor `Accept`, `Access-Control-Request-Headers`, `Access-Control-Request-Method`, `Cookie`, `X-Forwarded-Proto`, `Accept-Language`, en `Range`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=317375276&format=interactive",
   sheets_gid="1115686547",
   sql_file="vary_headers.sql"
   )
 }}
 
-## Setting cookies on cacheable responses
+## Cookies instellen voor cachebare reacties
 
-When a response is cached, its entire set of response headers are included with the cached object as well. This is why you can see the response headers when inspecting a cached response in Chrome via DevTools:
+Wanneer een reactie in de cache wordt opgeslagen, wordt de volledige set reactie-headers ook bij het in de cache opgeslagen object opgenomen. Dit is de reden waarom u de reactie-headers kunt zien wanneer u een reactie in de cache in Chrome inspecteert via DevTools:
 
 {{ figure_markup(
   image="chrome-dev-tools.png",
-  caption="Chrome Dev Tools for a cached resource.",
-  description="Chrome Dev Tools showing that When a response is cached, its entire set of response headers are included with the cached object as well."
+  caption="Chrome Dev Tools voor een bron in het cachegeheugen.",
+  description="Chrome Dev Tools die laten zien dat wanneer een antwoord in de cache wordt opgeslagen, de volledige set reactie-headers ook bij het in de cache opgeslagen object wordt meegeleverd."
   )
 }}
 
-But what happens if you have a `Set-Cookie` on a response? According to <a hreflang="en" href="https://tools.ietf.org/html/rfc7234#section-8">RFC 7234 Section 8</a>, the presence of a `Set-Cookie` response header does not inhibit caching. This means that a cached entry might contain a `Set-Cookie` response header. The RFC goes on to recommend that you should configure appropriate `Cache-Control` headers to control how responses are cached.
+Maar wat gebeurt er als u een `Set-Cookie` op een reactie krijgt? Volgens <a hreflang="en" href="https://tools.ietf.org/html/rfc7234#section-8">RFC 7234 Sectie 8</a>, remt de aanwezigheid van een `Set-Cookie`-reactie-header de caching niet. Dit betekent dat een item in de cache een `Set-Cookie`-reactie-header kan bevatten. De RFC raadt u verder aan om de juiste `Cache-Control`-headers te configureren om te bepalen hoe reacties in het cachegeheugen worden opgeslagen.
 
-Since we have primarily been talking about browser caching, you may think this isn't a big issue—the `Set-Cookie` response headers that were sent by the server to me in responses to my requests clearly contain my cookies, so there's no problem if my browser caches them. However, if there is a CDN between myself and the server, the server must indicate to the CDN that the response should not be cached in the CDN itself, so that the response meant for me is not cached and then served (including my `Set-Cookie` headers!) to other users.
+Aangezien we het voornamelijk hebben gehad over browsercaching, denk je misschien dat dit geen groot probleem is—de `Set-Cookie`-reactie-headers die door de server naar mij zijn gestuurd in reacties op mijn verzoeken bevatten duidelijk mijn cookies, dus er is geen probleem als mijn browser ze in de cache opslaat. Als er echter een CDN is tussen mij en de server, moet de server aan het CDN aangeven dat het antwoord niet in de cache in het CDN zelf moet worden bewaard, zodat het voor mij bedoelde antwoord niet in de cache wordt opgeslagen en vervolgens wordt geserveerd (inclusief mijn `Set-Cookie`-headers!) aan andere gebruikers.
 
-For example, if a login cookie or a session cookie is present in a CDN's cached object, then that cookie could potentially be reused by another client. The primary way to avoid this is for the server to send the `Cache-Control: private` directive, which tells the CDN not to cache the response, because it may only be cached by the client browser.
+Als er bijvoorbeeld een inlogcookie of een sessiecookie aanwezig is in het gecachte object van een CDN, kan die cookie mogelijk worden hergebruikt door een andere cliënt. De belangrijkste manier om dit te vermijden is dat de server de `Cache-Control: private`-richtlijn verzendt, die het CDN vertelt het antwoord niet in de cache te plaatsen, omdat het alleen door de cliëntbrowser in het cachegeheugen kan worden opgeslagen.
 
 {{ figure_markup(
   image="set-cookie-usage-on-cacheable-responses.png",
-  caption="`Set-Cookie` in cacheable responses.",
-  description="A bar chart showing `Set-Cookie` usage on cacheable responses. 41.4% of cacheable desktop responses and 40.4% of cacheable mobile responses contain a `Set-Cookie` header.",
+  caption="`Set-Cookie` in cachebare reacties.",
+  description="Een staafdiagram dat het gebruik van `Set-Cookie` op cachebare reacties laat zien. 41,4% van de cachebare desktopreacties en 40,4% van de cachebare mobiele reacties bevatten een `Set-Cookie`-header.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1106475158&format=interactive",
   sheets_gid="1263250537",
   sql_file="set_cookie.sql"
   )
 }}
 
-40.4% of cacheable mobile responses contain a `Set-Cookie` header. Of those responses, only 4.9% use the `private` directive. The remaining 95.1% (198.6 million HTTP responses) contain at least one `Set-Cookie` response header and can be cached by both public cache servers, such as CDNs. This is concerning and may indicate a continued lack of understanding about how cacheability and cookies coexist.
+40,4% van de cachebare mobiele reacties bevat een `Set-Cookie`-header. Van die reacties gebruikt slechts 4,9% de `private`-richtlijn. De overige 95,1% (198,6 miljoen HTTP-reacties) bevat ten minste één `Set-Cookie`-reactie-header en kan worden gecached door beide openbare cacheservers, zoals CDN's. Dit is zorgwekkend en kan duiden op een aanhoudend gebrek aan begrip over hoe cachemogelijkheden en cookies naast elkaar bestaan.
 
 {{ figure_markup(
   image="set-cookie-usage-on-private-and-non-private-cacheable-responses.png",
-  caption="`Set-Cookie` in `private` and non-private cacheable responses.",
-  description="A bar chart showing `Set-Cookie` usage in `private` and non-private cacheable responses. Of the desktop responses containing a `Set-Cookie` header, 4.6% use the `private` directive. 95.4% responses can be cached by both private and public cache servers. Of the mobile responses containing a `Set-Cookie` header, 4.9% use the `private` directive. 95.1% responses can be cached by both private and public cache servers.",
+  caption="`Set-Cookie` in `private` en niet-_private_ cachebare reacties.",
+  description="Een staafdiagram dat het gebruik van `Set-Cookie` in `privé` en niet-_private_ cachebare reacties weergeeft. Van de desktopreacties die een `Set-Cookie`-header bevatten, gebruikt 4,6% de `private`-richtlijn. 95,4% van de reacties kan in de cache worden opgeslagen door zowel privé- als openbare cacheservers. Van de mobiele reacties die een `Set-Cookie`-header bevatten, gebruikt 4,9% de `private`-richtlijn. 95,1% van de reacties kan in de cache worden opgeslagen door zowel privé- als openbare cacheservers.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=97044455&format=interactive",
   sheets_gid="1263250537",
   sql_file="set_cookie.sql"
@@ -613,91 +613,91 @@ For example, if a login cookie or a session cookie is present in a CDN's cached 
 
 ## Service workers
 
-Service workers are a feature of HTML5 that allow front-end developers to specify scripts that should run outside the normal request/response flow of web pages, communicating with the web page via messages. Common uses of service workers are for background synchronization and push notifications and, obviously, for caching—and browser support has been rapidly growing for them.
+Service workers zijn een functie van HTML5 waarmee front-endontwikkelaars scripts kunnen specificeren die buiten de normale aanvraag- /reactiestroom van webpagina's moeten worden uitgevoerd en die via berichten met de webpagina moeten communiceren. Veelgebruikte toepassingen van service workers zijn voor synchronisatie op de achtergrond en pushmeldingen en, uiteraard, voor caching—en browserondersteuning is voor hen snel gegroeid.
 
 {{ figure_markup(
   image="service-workers-controlled-pages-2019-2020.png",
-  caption="Growth in service worker controlled pages from 2019.",
-  description="A bar chart showing the growth in service worker controlled pages. The adoption has grown from 0.6% in 2019 to 1.0% in 2020",
+  caption="Groei in door service workers gecontroleerde pagina's vanaf 2019.",
+  description="Een staafdiagram met de groei van pagina's die door service workers worden beheerd. De adoptie is gegroeid van 0,6% in 2019 naar 1,0% in 2020",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=893877591&format=interactive",
   sheets_gid="2082343974",
   sql_file="appcache_and_serviceworkers_2019.sql"
   )
 }}
 
-Adoption is just at 1% of websites, but it has been steadily increasing since July 2019. The [Progressive Web App](./pwa) chapter discusses this more, including the fact that it is used a lot more than this graph suggests due to its usage on popular sites, which are only counted once in the above graph.
+Adoptie is slechts bij 1% van de websites, maar het neemt gestaag toe sinds juli 2019. Het hoofdstuk [Progressieve Web App](./pwa) bespreekt dit meer, inclusief het feit dat het veel meer wordt gebruikt dan deze grafiek doet vermoeden. aan het gebruik ervan op populaire sites, die in de bovenstaande grafiek maar één keer worden meegeteld.
 
 <figure>
   <table>
     <tr>
-     <th>Sites not using service workers</th>
-     <th>Sites using service workers</th>
-     <th>Total sites</th>
+     <th>Sites die geen service workers gebruiken</th>
+     <th>Sites die service workers gebruiken</th>
+     <th>Totaal aantal sites</th>
     </tr>
     <tr>
-     <td class="numeric">6,225,774</td>
-     <td class="numeric">64,373</td>
-     <td class="numeric">6,290,147</td>
+     <td class="numeric">6.225.774</td>
+     <td class="numeric">64.373</td>
+     <td class="numeric">6.290.147</td>
     </tr>
   </table>
-  <figcaption>{{ figure_link(caption="Number of websites using service workers.", sheets_gid="2106765718", sql_file="appcache_and_serviceworkers.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Aantal websites dat service workers gebruikt.", sheets_gid="2106765718", sql_file="appcache_and_serviceworkers.sql") }}</figcaption>
 </figure>
 
-In the table above, you can see that 64,373 site out of a total of 6,290,147 websites have implemented a service worker.
+In de bovenstaande tabel kunt u zien dat 64.373 van de in totaal 6.290.147 websites een service worker hebben geïmplementeerd.
 
 <figure>
   <table>
     <tr>
-     <th>HTTP Sites</th>
-     <th>HTTPS Sites</th>
-     <th>Total Sites</th>
+     <th>HTTP-Sites</th>
+     <th>HTTPS-Sites</th>
+     <th>Totaal aantal sites</th>
     </tr>
     <tr>
-     <td class="numeric">1,469</td>
-     <td class="numeric">62,904</td>
-     <td class="numeric">64,373</td>
+     <td class="numeric">1.469</td>
+     <td class="numeric">62.904</td>
+     <td class="numeric">64.373</td>
     </tr>
   </table>
-  <figcaption>{{ figure_link(caption="Number of websites using service workers by HTTP/HTTPS.", sheets_gid="2106765718", sql_file="appcache_and_serviceworkers.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Aantal websites dat gebruikmaakt van service workers via HTTP/HTTPS.", sheets_gid="2106765718", sql_file="appcache_and_serviceworkers.sql") }}</figcaption>
 </figure>
 
-If we break this out by HTTP vs HTTPS, then this gets even more interesting. Even though HTTPS is a requirement for using service workers, the following table shows that 1,469 of the sites using them are served over HTTP.
+Als we dit doorbreken via HTTP versus HTTPS, wordt dit nog interessanter. Hoewel HTTPS een vereiste is voor het gebruik van service workers, laat de volgende tabel zien dat 1469 van de sites die deze gebruiken, bediend worden via HTTP.
 
-## What type of content are we caching?
+## Welk type inhoud plaatsen we in het cachegeheugen?
 
-As we have seen, a cacheable resource is stored by the browser for a period of time and is available for reuse on subsequent requests.
+Zoals we hebben gezien, wordt een cachebare bron gedurende een bepaalde tijd door de browser opgeslagen en is deze beschikbaar voor hergebruik bij volgende verzoeken.
 
 {{ figure_markup(
   image="cacheable-and-non-cacheable.png",
-  caption="Distribution of cacheable and non-cacheable responses.",
-  description="A bar chart showing proportion of cacheable responses. 9.2% of desktop and 9.6% of mobile responses are cacheable.",
+  caption="Verdeling van cachebare en niet-cachebare responsen.",
+  description="Een staafdiagram met het aandeel van de cachebare reacties. 9,2% van de desktop- en 9,6% van de mobiele reacties kan in het cachegeheugen worden opgeslagen.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=430652203&format=interactive",
   sheets_gid="391853872",
   sql_file="ttl.sql"
   )
 }}
 
- Across all HTTP(S) requests, 90.4% of responses are considered cacheable, meaning that a cache is permitted to store them. The remaining 9.6% of responses are not permitted to be stored in browser caches—typically because of `Cache-Control: no-store`.
+ Bij alle HTTP(S) verzoeken wordt 90,4% van de reacties als cachebaar beschouwd, wat betekent dat een cache ze mag opslaan. De resterende 9,6% van de reacties mag niet worden opgeslagen in browsercaches—meestal vanwege `Cache-Control: no-store`.
 
 {{ figure_markup(
   image="ttl-cachable-responses.png",
-  caption="Distribution of TTL in cacheable responses.",
-  description="A bar chart showing distribution of TTL in cacheable responses. 4.2% of desktop responses have a TTL zero, 59.4% have a TTL greater than zero, and 28.2% use a heuristic TTL. 4.2% of mobile responses have a TTL zero, 58.8% have a TTL greater than zero, and 28.4% use a heuristic TTL.",
+  caption="Verdeling van TTL in cachebare reacties.",
+  description="Een staafdiagram met de verdeling van TTL in cachebare reacties. 4,2% van de desktopreacties heeft een TTL-nul, 59,4% heeft een TTL-waarde die groter is dan nul en 28,2% gebruikt een heuristische TTL. 4,2% van de mobiele reacties heeft een TTL-nul, 58,8% heeft een TTL-waarde die groter is dan nul en 28,4% gebruikt een heuristische TTL.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1365998611&format=interactive",
   sheets_gid="391853872",
   sql_file="ttl.sql"
   )
 }}
 
-Digging a little deeper, we see that 4.1% of requests have a TTL of 0 seconds, which causes the object to be added to cache, but immediately marked as stale, requiring revalidation. 28.4% are cached heuristically because of a lack of either a `Cache-Control` or `Expires` header and 58.8% are cached for more than 0 seconds.
+Als we wat dieper graven, zien we dat 4,1% van de verzoeken een TTL van 0 seconden heeft, waardoor het object wordt toegevoegd aan de cache, maar onmiddellijk wordt gemarkeerd als verouderd en opnieuw moet worden gevalideerd. 28,4% wordt heuristisch gecached vanwege een gebrek aan een `Cache-Control` of `Expires`-header en 58,8% wordt langer dan 0 seconden in de cache geplaatst.
 
-The table below details the cache TTL values for mobile requests by type:
+In de onderstaande tabel worden de cache-TTL-waarden voor mobiele verzoeken per type beschreven:
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th colspan="6" scope="col">Cache TTL percentiles (in hours)</th>
+        <th colspan="6" scope="col">TTL-percentielen in cache (in uren)</th>
       </tr>
       <tr>
         <th scope="col">Type</th>
@@ -715,63 +715,63 @@ The table below details the cache TTL values for mobile requests by type:
         <td class="numeric">6</td>
         <td class="numeric">240</td>
         <td class="numeric">744</td>
-        <td class="numeric">8,760</td>
+        <td class="numeric">8.760</td>
       </tr>
       <tr>
         <td>CSS</td>
         <td class="numeric">24</td>
         <td class="numeric">24</td>
         <td class="numeric">720</td>
-        <td class="numeric">8,760</td>
-        <td class="numeric">8,760</td>
+        <td class="numeric">8.760</td>
+        <td class="numeric">8.760</td>
       </tr>
       <tr>
-        <td>Font</td>
+        <td>Lettertype</td>
         <td class="numeric">720</td>
-        <td class="numeric">8,760</td>
-        <td class="numeric">8,760</td>
-        <td class="numeric">8,760</td>
-        <td class="numeric">8,760</td>
+        <td class="numeric">8.760</td>
+        <td class="numeric">8.760</td>
+        <td class="numeric">8.760</td>
+        <td class="numeric">8.760</td>
       </tr>
       <tr>
         <td>HTML</td>
         <td class="numeric">0</td>
         <td class="numeric">3</td>
         <td class="numeric">336</td>
-        <td class="numeric">8,760</td>
-        <td class="numeric">8,600</td>
+        <td class="numeric">8.760</td>
+        <td class="numeric">8.600</td>
       </tr>
       <tr>
-        <td>Image</td>
+        <td>Afbeelding</td>
         <td class="numeric">6</td>
         <td class="numeric">168</td>
         <td class="numeric">720</td>
-        <td class="numeric">8,760</td>
-        <td class="numeric">8,766</td>
+        <td class="numeric">8.760</td>
+        <td class="numeric">8.766</td>
       </tr>
       <tr>
-        <td>Other</td>
+        <td>Overig</td>
         <td class="numeric">0</td>
         <td class="numeric">3</td>
         <td class="numeric">31</td>
         <td class="numeric">336</td>
-        <td class="numeric">23,557</td>
+        <td class="numeric">23.557</td>
       </tr>
       <tr>
         <td>Script</td>
         <td class="numeric">0</td>
         <td class="numeric">4</td>
         <td class="numeric">720</td>
-        <td class="numeric">8,760</td>
-        <td class="numeric">8,760</td>
+        <td class="numeric">8.760</td>
+        <td class="numeric">8.760</td>
       </tr>
       <tr>
-        <td>Text</td>
+        <td>Tekst</td>
         <td class="numeric">0</td>
         <td class="numeric">1</td>
         <td class="numeric">6</td>
         <td class="numeric">24</td>
-        <td class="numeric">8,760</td>
+        <td class="numeric">8.760</td>
       </tr>
       <tr>
         <td>Video</td>
@@ -779,7 +779,7 @@ The table below details the cache TTL values for mobile requests by type:
         <td class="numeric">336</td>
         <td class="numeric">336</td>
         <td class="numeric">336</td>
-        <td class="numeric">8,674</td>
+        <td class="numeric">8.674</td>
       </tr>
       <tr>
         <td>XML</td>
@@ -791,37 +791,37 @@ The table below details the cache TTL values for mobile requests by type:
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Mobile cache TTL percentiles by resource type.", sheets_gid="676954337", sql_file="ttl_by_resource.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="TTL-percentielen voor mobiele cache per brontype.", sheets_gid="676954337", sql_file="ttl_by_resource.sql") }}</figcaption>
 </figure>
 
-While most of the median TTLs are high, the lower percentiles highlight some of the missed caching opportunities. For example, the median TTL for images is 720 hours (1 month); however the 25<sup>th</sup> percentile is just 168 hours (1 week) and the 10<sup>th</sup> percentile has dropped to just a few hours. Compare this with fonts, which have a very high TTL of 8,760 hours (1 year) all the way down to the 25th percentile, with even the 10<sup>th</sup> percentile showing a TTL of 1 month.
+Hoewel de meeste mediane TTL's hoog zijn, benadrukken de lagere percentielen enkele van de gemiste cachemogelijkheden. De mediane TTL voor afbeeldingen is bijvoorbeeld 720 uur (1 maand); het 25<sup>e</sup> percentiel is echter slechts 168 uur (1 week) en het 10<sup>de</sup> percentiel is gedaald tot slechts een paar uur. Vergelijk dit met lettertypen, die een zeer hoge TTL hebben van 8.760 uur (1 jaar) helemaal tot aan het 25<sup>e</sup> percentiel, waarbij zelfs het 10<sup>de</sup> percentiel een TTL van 1 maand laat zien.
 
-By exploring the cacheability by content type in more detail in figure below, we can see that while fonts, video and audio, and CSS files are browser cached at close to 100% (which makes sense, since these files are typically very static), approximately one third of all HTML responses are considered non-cacheable.
+Door de cachemogelijkheden per inhoudstype in de onderstaande afbeelding gedetailleerder te onderzoeken, kunnen we zien dat hoewel lettertypen, video en audio en CSS-bestanden bijna 100% in de browsercache worden opgeslagen (wat logisch is, aangezien deze bestanden doorgaans erg statisch zijn), ongeveer een derde van alle HTML-reacties wordt als niet-cachebaar beschouwd.
 
 {{ figure_markup(
   image="cacheable-by-resource-type.png",
-  caption="Distribution of cacheability by content type.",
-  description="A bar chart showing distribution of cacheable resource types. In desktop responses, 99.3% of audio, 99.3% of CSS, 99.8% of font, 67.9% of HTML, 91.2% of images, 66.3% of other types, 95.2% of scripts, 78.6% of text, 99.6% of video, and 81.4% of xml is cacheable. In mobile responses, 99.0% of audio, 99.0% of CSS, 99.8% of font, 71.5% of HTML, 89.9.2% of images, 67.9% of other types, 95.1% of scripts, 78.4% of text, 99.7% of video, and 80.6% of xml is cacheable.",
+  caption="Verdeling van cachemogelijkheden per inhoudstype.",
+  description="Een staafdiagram met de verdeling van cachebare brontypen. In desktopreacties, 99,3% van audio, 99,3% van CSS, 99,8% van lettertype, 67,9% van HTML, 91,2% van afbeeldingen, 66,3% van andere typen, 95,2% van scripts, 78,6% van tekst, 99,6% van video, en 81,4% van xml is cacheerbaar. In mobiele reacties, 99,0% van audio, 99,0% van CSS, 99,8% van lettertype, 71,5% van HTML, 89,9% van afbeeldingen, 67,9% van andere typen, 95,1% van scripts, 78,4% van tekst, 99,7% van video, en 80,6% van xml is cacheerbaar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1283939423&format=interactive",
   sheets_gid="220584548",
   sql_file="non_cacheable_by_resource_type.sql"
   )
 }}
 
-Additionally, 10.1% of images and 4.9% scripts on desktop are non-cacheable. There is likely some room for improvement here, since no doubt some of these objects are also static and could be cached at a higher rate—remember: *cache as much as you can for as long as you can!*
+Bovendien zijn 10,1% van de afbeeldingen en 4,9% van de scripts op desktop niet cacheerbaar. Er is hier waarschijnlijk enige ruimte voor verbetering, aangezien sommige van deze objecten ongetwijfeld ook statisch zijn en met een hogere snelheid in de cache kunnen worden opgeslagen—onthoud: *cache zo veel als je kunt zo lang als je kunt!*
 
-## How do cache TTLs compare to resource age?
+## Hoe verhouden cache-TTL's zich tot de leeftijd van bronnen?
 
-So far we've talked about how servers tell a client what is cacheable, and how long it has been cached for. When designing cache rules, it is also important to understand how old the content you are serving is.
+Tot nu toe hebben we gesproken over hoe servers een cliënt vertellen wat cacheerbaar is en hoe lang het in de cache is opgeslagen. Bij het ontwerpen van cacheregels is het ook belangrijk om te begrijpen hoe oud de inhoud die u aanbiedt is.
 
-When you are selecting a cache TTL to specify in response headers to send back to the client, ask yourself: "how often am I updating these assets?" and "what is their content sensitivity?". For example, if a hero image is going to be modified infrequently, then it could be cached with a very long TTL. By contrast, if a JavaScript file will change frequently, then either it should be versioned, for instance with a unique query string, and cached with a long TTL or it should be cached with a much shorter TTL.
+Wanneer u een cache-TTL selecteert om in reactie-headers te specificeren om terug te sturen naar de cliënt, vraag uzelf dan af: "hoe vaak werk ik deze middelen bij?" en "wat is hun inhoudsgevoeligheid?". Als een hero-afbeelding bijvoorbeeld niet vaak wordt gewijzigd, kan deze in de cache worden opgeslagen met een zeer lange TTL. Als een JavaScript-bestand daarentegen vaak verandert, moet het ofwel worden voorzien van een versie, bijvoorbeeld met een unieke queryreeks, en in de cache worden opgeslagen met een lange TTL, of moet het worden gecached met een veel kortere TTL.
 
-The graphs below illustrate the relative age of resources by content type.
+De onderstaande grafieken illustreren de relatieve ouderdom van bronnen per inhoudstype.
 
 {{ figure_markup(
   image="resource-age-party-and-type-wise-groups-1st-party.png",
-  caption="Resource age by Content Type (1st Party).",
-  description="A stack bar chart showing the age of content, split into weeks 0-52, > one year and > two years with null and negative figures shown too. The stats are split into first-party and third-party. The value 0 is used most particularly for first-party HTML, text and xml, and for up to 50% of third-party requests across all assets types. There is a mix using intermediary years and then considerable usage for one year and two year.",
+  caption="Bron leeftijd per inhoudstype (1e Partij).",
+  description="Een gestapeld staafdiagram met de leeftijd van de inhoud, opgesplitst in weken 0-52, > een jaar en > twee jaar met ook nul- en negatieve cijfers. De statistieken zijn opgesplitst in eerste-partij en derde-partij. De waarde 0 wordt vooral gebruikt voor eerste-partij HTML, tekst en xml, en voor maximaal 50% van de verzoeken van derden voor alle activatypen. Er is een mix met tussenjaren en daarna een aanzienlijk gebruik voor één jaar en twee jaar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=2056330432&format=interactive",
   sheets_gid="1889235328",
   sql_file="resource_age_party_and_type_wise_groups.sql"
@@ -830,23 +830,23 @@ The graphs below illustrate the relative age of resources by content type.
 
 {{ figure_markup(
   image="resource-age-party-and-type-wise-groups-3rd-party.png",
-  caption="Resource age by Content Type (3rd Party).",
-  description="A stack bar chart showing the age of content, split into weeks 0-52, > one year and > two years with null and negative figures shown too. The stats are split into first-party and third-party. The value 0 is used most particularly for first-party HTML, text and xml, and for up to 50% of third-party requests across all assets types. There is a mix using intermediary years and then considerable usage for one year and two year.",
+  caption="Bron leeftijd per inhoudstype (derde Partij).",
+  description="Een gestapeld staafdiagram met de leeftijd van de inhoud, opgesplitst in weken 0-52, > een jaar en > twee jaar met ook nul- en negatieve cijfers. De statistieken zijn opgesplitst in eerste-partij en derde-partij. De waarde 0 wordt vooral gebruikt voor eerste-partij HTML, tekst en xml, en voor maximaal 50% van de verzoeken van derden voor alle activatypen. Er is een mix met tussenjaren en daarna een aanzienlijk gebruik voor één jaar en twee jaar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=859132635&format=interactive",
   sheets_gid="1889235328",
   sql_file="resource_age_party_and_type_wise_groups.sql"
   )
 }}
 
-Some of the interesting observations in this data are:
+Enkele van de interessante observaties in deze gegevens zijn:
 
-* First-party HTML is the content type with the shortest age, with 41.1% of the requests having an age less than a week. In most of the other content types, third-party content has a smaller resource age than first party content.
-* Some of the longest aged first-party content on the web, with age eight weeks or more, are the traditionally cacheable objects like images (78.9%), scripts (68.7%), CSS (74.9%), web fonts (80.4%), audio (78.2%) and video (79.3%).
-* There is a significant gap in some first vs. third-party resources having an age of more than a week. 93.4% of first-party CSS are older than one week compared to 48.0% of third-party CSS, which are older than one week.
+* Eerste-partij HTML is het inhoudstype met de kortste leeftijd: 41,1% van de verzoeken heeft een leeftijd van minder dan een week. In de meeste andere inhoudstypen heeft inhoud van derden een kleinere bron-leeftijd dan inhoud van de eerste partij.
+* Enkele van de oudste eerste-partij inhoud op internet, met een leeftijd van acht weken of ouder, zijn de traditioneel cachebare objecten zoals afbeeldingen (78,9%), scripts (68,7%), CSS (74,9%), weblettertypen (80,4%) , audio (78,2%) en video (79,3%).
+* Er is een aanzienlijke kloof tussen sommige bronnen van eerste en derde partijen met een leeftijd van meer dan een week. 93,4% van de eerste-partij CSS is ouder dan een week, vergeleken met 48,0% van de derde-partij CSS, die ouder is dan een week.
 
-By comparing a resource's cacheability to its age, we can determine if the TTL is appropriate or too low.
+Door de cachemogelijkheden van een bron te vergelijken met de leeftijd, kunnen we bepalen of de TTL geschikt of te laag is.
 
-For example, the resource served below on 18 Oct 2020 was last modified on 30 Aug 2020, which means that it was well over a month old at the time of delivery—this indicates that it is an object which does not change frequently. However, the `Cache-Control` header says that the browser can cache it for only 86,400 seconds (one day). This is a case where a longer TTL might be appropriate, to avoid the browser needing to re-request it, even conditionally—especially if the website is one that a user might visit multiple times over the course of several days.
+De bron die hieronder op 18 oktober 2020 wordt weergegeven, is bijvoorbeeld voor het laatst gewijzigd op 30 augustus 2020, wat betekent dat het op het moment van levering ruim een maand oud was—dit geeft aan dat het een object is dat niet vaak verandert. De `Cache-Control`-header zegt echter dat de browser het slechts 86.400 seconden (één dag) kan cachen. Dit is een geval waarin een langere TTL geschikt kan zijn om te voorkomen dat de browser dit opnieuw moet aanvragen, zelfs onder voorwaarden, vooral als de website een website is die een gebruiker in de loop van meerdere dagen meerdere keren zou kunnen bezoeken.
 
 ```
 > HTTP/1.1 200
@@ -858,83 +858,83 @@ For example, the resource served below on 18 Oct 2020 was last modified on 30 Au
 > Cache-Control: public, max-age=86400
 ```
 
-Overall, 60.2% of mobile resources served on the web have a cache TTL that could be considered too short compared to its content age. Furthermore, the median delta between the TTL and age is 25 days—again, an indication of significant under-caching.
+In totaal heeft 60,2% van de mobiele bronnen die op internet worden aangeboden, een cache-TTL die als te kort kan worden beschouwd in vergelijking met de leeftijd van de inhoud. Bovendien is de mediane delta tussen de TTL en de leeftijd 25 dagen—wederom een indicatie van significante ondercaching.
 
 <figure>
   <table>
     <tr>
-     <th>Client</th>
-     <th>1st party</th>
-     <th>3rd party</th>
-     <th>Overall</th>
+     <th>Cliënt</th>
+     <th>1e partij</th>
+     <th>3e partij</th>
+     <th>Globaal</th>
     </tr>
     <tr>
      <td>desktop</td>
-     <td class="numeric">61.6%</td>
-     <td class="numeric">59.3%</td>
-     <td class="numeric">60.7%</td>
+     <td class="numeric">61,6%</td>
+     <td class="numeric">59,3%</td>
+     <td class="numeric">60,7%</td>
     </tr>
     <tr>
-     <td>mobile</td>
-     <td class="numeric">61.8%</td>
-     <td class="numeric">57.9%</td>
-     <td class="numeric">60.2%</td>
+     <td>mobiel</td>
+     <td class="numeric">61,8%</td>
+     <td class="numeric">57,9%</td>
+     <td class="numeric">60,2%</td>
     </tr>
   </table>
-  <figcaption>{{ figure_link(caption="Percent of requests with short TTLs.", sheets_gid="1706274506", sql_file="content_age_older_than_ttl_by_party.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Percentage verzoeken met korte TTL's.", sheets_gid="1706274506", sql_file="content_age_older_than_ttl_by_party.sql") }}</figcaption>
 </figure>
 
-When we break this out by first-party vs third-party in the above table, we can see that almost two-thirds (61.8%) of first-party resources can benefit from a longer TTL. This clearly highlights a need to spend extra attention focusing on what is cacheable, and then ensuring that caching is configured correctly.
+Wanneer we dit uitsplitsen naar eerste-partij versus derde-partij in de bovenstaande tabel, kunnen we zien dat bijna tweederde (61,8%) van de eerste-partij bronnen kan profiteren van een langere TTL. Dit benadrukt duidelijk de noodzaak om extra aandacht te besteden aan wat cachebaar is, en er vervolgens voor te zorgen dat caching correct is geconfigureerd.
 
-## Identifying caching opportunities
+## Mogelijkheden voor caching identificeren
 
-Google's <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a> tool enables users to run a series of audits against web pages, and the <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/audits/cache-policy">cache policy audit</a> evaluates whether a site can benefit from additional caching. It does this by comparing the content age (via the `Last-Modified` header) to the cache TTL and estimating the probability that the resource would be served from cache. Depending on the score, you may see a caching recommendation in the results, with a list of specific resources that could be cached.
+Met de <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a>-hulpmiddel van Google kunnen gebruikers een reeks audits uitvoeren op webpagina's, en de <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/audits/cache-policy">cachebeleidscontrole</a> evalueert of een site kan profiteren van extra caching. Het doet dit door de inhoudsleeftijd (via de `Last-Modified`-header) te vergelijken met de cache-TTL en door de waarschijnlijkheid te schatten dat de bron vanuit de cache wordt bediend. Afhankelijk van de score ziet u mogelijk een aanbeveling voor caching in de resultaten, met een lijst met specifieke bronnen die in de cache kunnen worden opgeslagen.
 
 {{ figure_markup(
   image="lighthouse-caching-audit.png",
-  caption="Lighthouse report highlighting potential cache policy improvements.",
-  description="Extract of the Lighthouse report highlighting potential cache policy improvements. The first and third party URLs, their cache TTL, and size is shown."
+  caption="Lighthouse-rapport met mogelijke verbeteringen van het cachebeleid.",
+  description="Uittreksel uit het Lighthouse-rapport met mogelijke verbeteringen in het cachebeleid. De eerste en derde partij-URL's, hun cache-TTL en grootte worden weergegeven."
   )
 }}
 
-Lighthouse computes a score for each audit, ranging from 0% to 100%, and those scores are then factored into the overall scores. The caching score is based on potential byte savings. When we examine the Lighthouse results, we can get a perspective of how many sites are doing well with their cache policies.
+Lighthouse berekent voor elke audit een score, variërend van 0% tot 100%, en die scores worden vervolgens meegenomen in de totaalscores. De cachingscore is gebaseerd op mogelijke bytebesparingen. Als we de resultaten van Lighthouse bekijken, kunnen we een idee krijgen van hoeveel sites het goed doen met hun cachebeleid.
 
 {{ figure_markup(
   image="cache-ttl-lighthouse-score.png",
-  caption="Distribution of Lighthouse caching TTL score.",
-  description="A bar chart showing the distribution of Lighthouse audit scores for the `uses-long-cache-ttl` for mobile web pages. 37.5% of the responses have a score less than 0.10, 28.8% have a score between 0.10-0.39, 17.7% have a score between 0.40-0.79, and 12.1% have a score between 0.80-0.99. 3.3% have a score of 1 and 0.6% have no score.",
+  caption="Verdeling van de TTL-score van Lighthouse caching.",
+  description="Een staafdiagram dat de verdeling van de Lighthouse-auditscores toont voor de `uses-long-cache-ttl` voor mobiele webpagina's. 37,5% van de reacties heeft een score lager dan 0,10, 28,8% heeft een score tussen 0,10-0,39, 17,7% heeft een score tussen 0,40-0,79 en 12,1% heeft een score tussen 0,80-0,99. 3,3% heeft een score van 1 en 0,6% heeft geen score.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=637059966&format=interactive",
   sheets_gid="1554485361",
   sql_file="cache_ttl_lighthouse_score.sql"
   )
 }}
 
-Only 3.3% of sites scored a 100%, meaning that the vast majority of sites can probably benefit from some cache optimizations. Approximately two-thirds of sites score below 40%, with almost one-third of sites scoring less than 10%. Based on this, there is a significant amount of under-caching, resulting in excess requests and bytes being served across the network.
+Slechts 3,3% van de sites scoorde 100%, wat betekent dat de overgrote meerderheid van de sites waarschijnlijk kan profiteren van enkele cache-optimalisaties. Ongeveer tweederde van de sites scoort onder de 40%, terwijl bijna een derde van de sites minder dan 10% scoort. Op basis hiervan is er een aanzienlijke hoeveelheid ondercaching, wat resulteert in overmatige verzoeken en bytes die via het netwerk worden geserveerd.
 
-Lighthouse also indicates how many bytes could be saved on repeat views by enabling a longer cache policy:
+Lighthouse geeft ook aan hoeveel bytes kunnen worden opgeslagen bij herhaalde weergaven door een langer cachebeleid in te schakelen:
 
 {{ figure_markup(
   image="cache-wasted-bytes-lighthouse.png",
-  caption="Distribution of potential byte savings from the Lighthouse caching audit.",
-  description="A bar chart showing the distribution of potential byte savings from the Lighthouse caching audit for mobile web pages. 57.2% of the responses have a size saving less than 1 MB, 21.58% have a saving between 1-2 MB, 7.8% have a saving between 2-3 MB, and 4.3% have a saving between 3-4 MB. 9.2% have a saving of 4 MB or more.",
+  caption="Verdeling van potentiële byte-besparingen van de Lighthouse caching-audit.",
+  description="Een staafdiagram met de verdeling van mogelijke bytebesparingen van de Lighthouse caching-audit voor mobiele webpagina's. 57,2% van de antwoorden heeft een besparing van minder dan 1 MB, 21,58% heeft een besparing tussen 1-2 MB, 7,8% heeft een besparing tussen 2-3 MB en 4,3% heeft een besparing tussen 3-4 MB. 9,2% heeft een besparing van 4 MB of meer.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=534991851&format=interactive",
   sheets_gid="2140407198",
   sql_file="cache_wastedbytes_lighthouse.sql"
   )
 }}
 
-Of the sites that could benefit from additional caching, more than one-fifth can reduce their page weight by over 2 MB!
+Van de sites die kunnen profiteren van extra caching, kan meer dan een vijfde hun paginagewicht met meer dan 2 MB verminderen!
 
-## Conclusion
+## Gevolgtrekking
 
-Caching is an incredibly powerful feature that allows browsers, proxies and other intermediaries such as CDNs to store web content and serve it to end users. The performance benefits of this are significant, since it reduces round-trip times and minimizes costly network requests.
+Caching is een ongelooflijk krachtige functie waarmee browsers, proxy's en andere tussenpersonen, zoals CDN's, webinhoud kunnen opslaan en aan eindgebruikers kunnen aanbieden. De prestatievoordelen hiervan zijn aanzienlijk, aangezien het de heen-en-terug-tijden verkort en kostbare netwerkverzoeken tot een minimum beperkt.
 
-Caching is also a very complex topic, and one that is often left until late in the development cycle (due to requirements by site developers to see the very latest version of a site while it is still being designed), then being added in at the last minute. Additionally, caching rules are often defined once and then never changed, even as the underlying content on a site changes. Frequently a default value is chosen without careful consideration.
+Caching is ook een zeer complex onderwerp, en een onderwerp dat vaak tot laat in de ontwikkelingscyclus blijft staan (vanwege vereisten van siteontwikkelaars om de allernieuwste versie van een site te zien terwijl deze nog wordt ontworpen), en vervolgens wordt toegevoegd op het laatste minuut. Bovendien worden cacheregels vaak een keer gedefinieerd en daarna nooit gewijzigd, zelfs niet als de onderliggende inhoud op een site verandert. Vaak wordt een standaardwaarde gekozen zonder zorgvuldige afweging.
 
-To correctly cache objects, there are numerous HTTP response headers that can convey freshness as well as validate cached entries, and `Cache-Control` directives provide a tremendous amount of flexibility and control.
+Om objecten correct in de cache te plaatsen, zijn er talloze HTTP-reactie-headers die zowel versheid kunnen overbrengen als ingevoerde gegevens in het cachegeheugen kunnen valideren, en `Cache-Control`-richtlijnen bieden een enorme hoeveelheid flexibiliteit en controle.
 
-Many object types and content that are typically considered to be uncacheable can actually be cached (remember: *cache as much as you can!*) and many objects are cached for too short a period of time, requiring repeated requests and revalidation (remember: *cache for as long as you can!*). However, website developers should be cautious about the additional opportunities for mistakes that come with over-caching content.
+Veel objecttypen en inhoud die doorgaans als niet-cacheerbaar worden beschouwd, kunnen feitelijk in de cache worden opgeslagen (onthoud: *cacheer zoveel mogelijk!*) en veel objecten worden te kort in de cache opgeslagen, waardoor herhaalde verzoeken en opnieuw valideren nodig zijn (onthoud: *cache zo lang als je kunt!*). Website-ontwikkelaars moeten echter voorzichtig zijn met de extra mogelijkheden voor fouten die gepaard gaan met te veel caching van inhoud.
 
-If the site is intended to be served through a CDN, additional opportunities for caching at the CDN to reduce server load and provide faster response to end-users should be considered, along with the related risks of accidentally caching private information, such as cookies.
+Als de site bedoeld is om te worden bediend via een CDN, moet rekening worden gehouden met extra mogelijkheden voor caching bij het CDN om de serverbelasting te verminderen en een snellere reactie aan eindgebruikers te bieden, samen met de gerelateerde risico's van het per ongeluk in de cache opslaan van privé-informatie, zoals cookies.
 
-However, powerful and complex do not necessarily imply difficult. Like most everything else, caching is controlled by rules which can be defined fairly easily to provide the best mix of cacheability and privacy. Regularly auditing your site to ensure that cacheable resources are cached appropriately is recommended, and tools like Lighthouse do an excellent job of helping to simplify such an analysis.
+Krachtig en complex hoeft echter niet per se moeilijk te zijn. Zoals bijna al het andere, wordt caching gecontroleerd door regels die vrij eenvoudig kunnen worden gedefinieerd om de beste combinatie van cachemogelijkheden en privacy te bieden. Het wordt aanbevolen uw site regelmatig te controleren om ervoor te zorgen dat cachebare bronnen op de juiste manier in het cachegeheugen worden opgeslagen, en hulpmiddelen zoals Lighthouse doen uitstekend werk om een dergelijke analyse te vereenvoudigen.
