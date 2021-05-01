@@ -585,7 +585,7 @@ Wanneer een reactie in de cache wordt opgeslagen, wordt de volledige set reactie
 
 Maar wat gebeurt er als u een `Set-Cookie` op een reactie krijgt? Volgens <a hreflang="en" href="https://tools.ietf.org/html/rfc7234#section-8">RFC 7234 Sectie 8</a>, remt de aanwezigheid van een `Set-Cookie`-reactie-header de caching niet. Dit betekent dat een item in de cache een `Set-Cookie`-reactie-header kan bevatten. De RFC raadt u verder aan om de juiste `Cache-Control`-headers te configureren om te bepalen hoe reacties in het cachegeheugen worden opgeslagen.
 
-Aangezien we het voornamelijk hebben gehad over browsercaching, denk je misschien dat dit geen groot probleem is—de `Set-Cookie`-reactie-headers die door de server naar mij zijn gestuurd in reacties op mijn verzoeken bevatten duidelijk mijn cookies, dus er is geen probleem als mijn browser ze in de cache opslaat. Als er echter een CDN is tussen mij en de server, moet de server aan het CDN aangeven dat het antwoord niet in de cache in het CDN zelf moet worden bewaard, zodat het voor mij bedoelde antwoord niet in de cache wordt opgeslagen en vervolgens wordt geserveerd (inclusief mijn `Set-Cookie`-headers!) aan andere gebruikers.
+Aangezien we het voornamelijk hebben gehad over browsercaching, denkt u misschien dat dit geen groot probleem is—de `Set-Cookie`-reactie-headers die door de server naar mij zijn gestuurd in reacties op mijn verzoeken bevatten duidelijk mijn cookies, dus er is geen probleem als mijn browser ze in de cache opslaat. Als er echter een CDN is tussen mij en de server, moet de server aan het CDN aangeven dat het antwoord niet in de cache in het CDN zelf moet worden bewaard, zodat het voor mij bedoelde antwoord niet in de cache wordt opgeslagen en vervolgens wordt geserveerd (inclusief mijn `Set-Cookie`-headers!) aan andere gebruikers.
 
 Als er bijvoorbeeld een inlogcookie of een sessiecookie aanwezig is in het gecachte object van een CDN, kan die cookie mogelijk worden hergebruikt door een andere cliënt. De belangrijkste manier om dit te vermijden is dat de server de `Cache-Control: private`-richtlijn verzendt, die het CDN vertelt het antwoord niet in de cache te plaatsen, omdat het alleen door de cliëntbrowser in het cachegeheugen kan worden opgeslagen.
 
@@ -808,7 +808,7 @@ Door de cachemogelijkheden per inhoudstype in de onderstaande afbeelding gedetai
   )
 }}
 
-Bovendien zijn 10,1% van de afbeeldingen en 4,9% van de scripts op desktop niet cacheerbaar. Er is hier waarschijnlijk enige ruimte voor verbetering, aangezien sommige van deze objecten ongetwijfeld ook statisch zijn en met een hogere snelheid in de cache kunnen worden opgeslagen—onthoud: *cache zo veel als je kunt zo lang als je kunt!*
+Bovendien zijn 10,1% van de afbeeldingen en 4,9% van de scripts op desktop niet cacheerbaar. Er is hier waarschijnlijk enige ruimte voor verbetering, aangezien sommige van deze objecten ongetwijfeld ook statisch zijn en met een hogere snelheid in de cache kunnen worden opgeslagen—onthoud: *cache zo veel als u kunt zo lang als u kunt!*
 
 ## Hoe verhouden cache-TTL's zich tot de leeftijd van bronnen?
 
@@ -933,7 +933,7 @@ Caching is ook een zeer complex onderwerp, en een onderwerp dat vaak tot laat in
 
 Om objecten correct in de cache te plaatsen, zijn er talloze HTTP-reactie-headers die zowel versheid kunnen overbrengen als ingevoerde gegevens in het cachegeheugen kunnen valideren, en `Cache-Control`-richtlijnen bieden een enorme hoeveelheid flexibiliteit en controle.
 
-Veel objecttypen en inhoud die doorgaans als niet-cacheerbaar worden beschouwd, kunnen feitelijk in de cache worden opgeslagen (onthoud: *cacheer zoveel mogelijk!*) en veel objecten worden te kort in de cache opgeslagen, waardoor herhaalde verzoeken en opnieuw valideren nodig zijn (onthoud: *cache zo lang als je kunt!*). Website-ontwikkelaars moeten echter voorzichtig zijn met de extra mogelijkheden voor fouten die gepaard gaan met te veel caching van inhoud.
+Veel objecttypen en inhoud die doorgaans als niet-cacheerbaar worden beschouwd, kunnen feitelijk in de cache worden opgeslagen (onthoud: *cacheer zoveel mogelijk!*) en veel objecten worden te kort in de cache opgeslagen, waardoor herhaalde verzoeken en opnieuw valideren nodig zijn (onthoud: *cache zo lang als u kunt!*). Website-ontwikkelaars moeten echter voorzichtig zijn met de extra mogelijkheden voor fouten die gepaard gaan met te veel caching van inhoud.
 
 Als de site bedoeld is om te worden bediend via een CDN, moet rekening worden gehouden met extra mogelijkheden voor caching bij het CDN om de serverbelasting te verminderen en een snellere reactie aan eindgebruikers te bieden, samen met de gerelateerde risico's van het per ongeluk in de cache opslaan van privé-informatie, zoals cookies.
 
