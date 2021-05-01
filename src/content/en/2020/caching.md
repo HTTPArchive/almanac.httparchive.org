@@ -560,7 +560,7 @@ In general, you should only vary the cache if you are serving alternate content 
 
 The `Vary` header is used on 43.4% of HTTP responses, and 84.2%  of these responses include a `Cache-Control` header.
 
-The graph below details the popularity for the top 10 Vary header values. `Accept-Encoding` accounts for almost 92% of `Vary`'s use, with `User-Agent` at 10.7%, `Origin` (used for CORS processing) at 8%, and Accept at 4.1% making up much of the rest.
+The graph below details the popularity for the top 10 Vary header values. `Accept-Encoding` accounts for almost 92% of `Vary`'s use, with `User-Agent` at 10.7%, `Origin` (used for CORS processing) at 8%, and `Accept` at 4.1% making up much of the rest.
 
 {{ figure_markup(
   image="vary-headers.png",
@@ -794,14 +794,14 @@ The table below details the cache TTL values for mobile requests by type:
   <figcaption>{{ figure_link(caption="Mobile cache TTL percentiles by resource type.", sheets_gid="676954337", sql_file="ttl_by_resource.sql") }}</figcaption>
 </figure>
 
-While most of the median TTLs are high, the lower percentiles highlight some of the missed caching opportunities. For example, the median TTL for images is 720 hours (1 month); however the 25<sup>th</sup> percentile is just 168 hours (1 week) and the 10<sup>th</sup> percentile has dropped to just a few hours. Compare this with fonts, which have a very high TTL of 8,760 hours (1 year) all the way down to the 25th percentile, with even the 10<sup>th</sup> percentile showing a TTL of 1 month.
+While most of the median TTLs are high, the lower percentiles highlight some of the missed caching opportunities. For example, the median TTL for images is 720 hours (1 month); however the 25<sup>th</sup> percentile is just 168 hours (1 week) and the 10<sup>th</sup> percentile has dropped to just a few hours. Compare this with fonts, which have a very high TTL of 8,760 hours (1 year) all the way down to the 25<sup>th</sup> percentile, with even the 10<sup>th</sup> percentile showing a TTL of 1 month.
 
 By exploring the cacheability by content type in more detail in figure below, we can see that while fonts, video and audio, and CSS files are browser cached at close to 100% (which makes sense, since these files are typically very static), approximately one third of all HTML responses are considered non-cacheable.
 
 {{ figure_markup(
   image="cacheable-by-resource-type.png",
   caption="Distribution of cacheability by content type.",
-  description="A bar chart showing distribution of cacheable resource types. In desktop responses, 99.3% of audio, 99.3% of CSS, 99.8% of font, 67.9% of HTML, 91.2% of images, 66.3% of other types, 95.2% of scripts, 78.6% of text, 99.6% of video, and 81.4% of xml is cacheable. In mobile responses, 99.0% of audio, 99.0% of CSS, 99.8% of font, 71.5% of HTML, 89.9.2% of images, 67.9% of other types, 95.1% of scripts, 78.4% of text, 99.7% of video, and 80.6% of xml is cacheable.",
+  description="A bar chart showing distribution of cacheable resource types. In desktop responses, 99.3% of audio, 99.3% of CSS, 99.8% of font, 67.9% of HTML, 91.2% of images, 66.3% of other types, 95.2% of scripts, 78.6% of text, 99.6% of video, and 81.4% of xml is cacheable. In mobile responses, 99.0% of audio, 99.0% of CSS, 99.8% of font, 71.5% of HTML, 89.9% of images, 67.9% of other types, 95.1% of scripts, 78.4% of text, 99.7% of video, and 80.6% of xml is cacheable.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1283939423&format=interactive",
   sheets_gid="220584548",
   sql_file="non_cacheable_by_resource_type.sql"
