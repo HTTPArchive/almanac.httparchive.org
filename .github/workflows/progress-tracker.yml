@@ -177,7 +177,7 @@ jobs:
               chapters.push({
                 id: issue.number,
                 url: issue.html_url,
-                title: heading.title || issue.title.replace(/ 20[0-9][0-9]/,''),
+                title: heading.title || issue.title.replace(/\b20[0-9][0-9]\b/,'').trim(),
                 part: heading.part,
                 number: heading.number,
                 links: parseLinks(issue.body),
@@ -207,7 +207,7 @@ jobs:
             })
 
             const report = [
-              `Chapters | <span title="${Object.entries(icons).map(([k, v]) => `${v} (${k})`).join(', ')}">Links</span> | <span title="${Object.keys(teamMembers).join('+').replace(/\+([^+]*)$/, '≥$1')}">Team</span> | ${trackedTasks.map((v, i) => `<span title="${v}">${i}<span>`).join(' | ')}`,
+              `Chapters | <span title="${Object.entries(icons).map(([k, v]) => `${v} (${k})`).join(', ')}">Links</span> | <span title="${Object.keys(teamMembers).join('+').replace(/\+([^+]*)$/, ' ($1)').replace(/\+/g,' ')}">Team</span> | ${trackedTasks.map((v, i) => `<span title="${v}">${i}<span>`).join(' | ')}`,
               `:--------|:------|:----${'|:-:'.repeat(totalTrackedTasks)}`
             ].concat(chapters.map(formatRow)).join('\n')
 
