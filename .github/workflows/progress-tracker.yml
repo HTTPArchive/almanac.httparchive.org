@@ -177,7 +177,7 @@ jobs:
               chapters.push({
                 id: issue.number,
                 url: issue.html_url,
-                title: heading.title || issue.title.replace(/\b20[0-9][0-9]\b/,'').trim(),
+                title: heading.title || issue.title.replace(/\b20[0-9][0-9]\b/,'').replace(/  /,' ').trim(),
                 part: heading.part,
                 number: heading.number,
                 links: parseLinks(issue.body),
