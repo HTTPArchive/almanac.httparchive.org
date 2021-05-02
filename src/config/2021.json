@@ -1,0 +1,267 @@
+{
+  "settings": [
+    {
+      "is_live": false,
+      "supported_languages": ["en"],
+      "ebook_languages": []
+    }
+  ],
+  "outline": [
+    {
+      "part": "I. Page Content",
+      "part_number": "1",
+      "chapters": [
+        {
+          "part": "I",
+          "chapter_number": "1",
+          "title": "CSS",
+          "slug": "css",
+          "todo": "true"
+        },
+        {
+          "part": "I",
+          "chapter_number": "2",
+          "title": "JavaScript",
+          "slug": "javascript",
+          "todo": "true"
+        },
+        {
+          "part": "I",
+          "chapter_number": "3",
+          "title": "Markup",
+          "slug": "markup",
+          "todo": "true"
+        },
+        {
+          "part": "I",
+          "chapter_number": "4",
+          "title": "Fonts",
+          "slug": "fonts",
+          "todo": "true"
+        },
+        {
+          "part": "I",
+          "chapter_number": "5",
+          "title": "Media",
+          "slug": "media",
+          "todo": "true"
+        },
+        {
+          "part": "I",
+          "chapter_number": "6",
+          "title": "Third Parties",
+          "slug": "third-parties",
+          "todo": "true"
+        }
+      ]
+    },
+    {
+      "part": "II. User Experience",
+      "part_number": "2",
+      "chapters": [
+        {
+          "part": "II",
+          "chapter_number": "7",
+          "title": "SEO",
+          "slug": "seo",
+          "todo": "true"
+        },
+        {
+          "part": "II",
+          "chapter_number": "8",
+          "title": "Accessibility",
+          "slug": "accessibility",
+          "todo": "true"
+        },
+        {
+          "part": "II",
+          "chapter_number": "9",
+          "title": "Performance",
+          "slug": "performance",
+          "todo": "true"
+        },
+        {
+          "part": "II",
+          "chapter_number": "10",
+          "title": "Privacy",
+          "slug": "privacy",
+          "todo": "true",
+          "hero_dir": "2020"
+        },
+        {
+          "part": "II",
+          "chapter_number": "11",
+          "title": "Security",
+          "slug": "security",
+          "todo": "true"
+        },
+        {
+          "part": "II",
+          "chapter_number": "12",
+          "title": "Mobile Web",
+          "slug": "mobile-web",
+          "todo": "true"
+        },
+        {
+          "part": "II",
+          "chapter_number": "13",
+          "title": "Capabilities",
+          "slug": "capabilities",
+          "todo": "true",
+          "hero_dir": "2020"
+        },
+        {
+          "part": "II",
+          "chapter_number": "14",
+          "title": "PWA",
+          "slug": "pwa",
+          "todo": "true"
+        }
+      ]
+    },
+    {
+      "part": "III. Content Publishing",
+      "part_number": "3",
+      "chapters": [
+        {
+          "part": "III",
+          "chapter_number": "15",
+          "title": "CMS",
+          "slug": "cms",
+          "todo": "true"
+        },
+        {
+          "part": "III",
+          "chapter_number": "16",
+          "title": "Ecommerce",
+          "slug": "ecommerce",
+          "todo": "true"
+        },
+        {
+          "part": "III",
+          "chapter_number": "17",
+          "title": "Jamstack",
+          "slug": "jamstack",
+          "todo": "true",
+          "hero_dir": "2020"
+        }
+      ]
+    },
+    {
+      "part": "IV. Content Distribution",
+      "part_number": "4",
+      "chapters": [
+        {
+          "part": "IV",
+          "chapter_number": "18",
+          "title": "Page Weight",
+          "slug": "page-weight",
+          "todo": "true"
+        },
+        {
+          "part": "IV",
+          "chapter_number": "19",
+          "title": "Compression",
+          "slug": "compression",
+          "todo": "true"
+        },
+        {
+          "part": "IV",
+          "chapter_number": "20",
+          "title": "Caching",
+          "slug": "caching",
+          "todo": "true"
+        },
+        {
+          "part": "IV",
+          "chapter_number": "21",
+          "title": "CDN",
+          "slug": "cdn",
+          "todo": "true"
+        },
+        {
+          "part": "IV",
+          "chapter_number": "22",
+          "title": "Resource Hints",
+          "slug": "resource-hints",
+          "todo": "true"
+        },
+        {
+          "part": "IV",
+          "chapter_number": "23",
+          "title": "HTTP/2",
+          "slug": "http2",
+          "todo": "true"
+        }
+      ]
+    }
+  ],
+  "teams": {
+    "analysts": {
+      "name": "Analysts"
+    },
+    "authors": {
+      "name": "Authors"
+    },
+    "designers": {
+      "name": "Designers"
+    },
+    "developers": {
+      "name": "Developers"
+    },
+    "editors": {
+      "name": "Editors"
+    },
+    "leads": {
+      "name": "Leads"
+    },
+    "reviewers": {
+      "name": "Reviewers"
+    },
+    "translators": {
+      "name": "Translators"
+    }
+  },
+  "contributors": {
+    "bazzadp": {
+      "name": "Barry Pollard",
+      "teams": [
+        "leads"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/10931297?v=4&s=200",
+      "website": "https://www.tunetheweb.com",
+      "github": "bazzadp",
+      "linkedin": "barry-pollard-developer",
+      "twitter": "tunetheweb"
+    },
+    "obto": {
+      "name": "David Fox",
+      "teams": [
+        "leads"
+      ],
+      "avatar_url": "https://avatars2.githubusercontent.com/u/684747?v=4&s=200",
+      "website": "https://www.lookzook.com",
+      "github": "obto",
+      "twitter": "theobto"
+    },
+    "paulcalvano": {
+      "name": "Paul Calvano",
+      "teams": [
+        "leads"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/7459458?v=4&s=200",
+      "github": "paulcalvano",
+      "twitter": "paulcalvano",
+      "website": "https://paulcalvano.com"
+    },
+    "rviscomi": {
+      "name": "Rick Viscomi",
+      "teams": [
+        "leads"
+      ],
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1120896?v=4&s=200",
+      "github": "rviscomi",
+      "twitter": "rick_viscomi"
+    }
+  }
+}
