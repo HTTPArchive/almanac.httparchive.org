@@ -149,7 +149,7 @@ jobs:
             }
 
             const formatTeam = team => {
-              return Object.entries(team).map(([k, v]) => `<span title="${k}: ${v.length ? v.join(', ') : 'TBD'}">${v.length}</span>`).join('|').replace(/\|([^|]*)$/, ' ($1)')
+              return Object.entries(team).map(([k, v]) => `<span title="${k}: ${v.length ? v.join(', ') : 'TBD'}">${v.length}</span>`).join(',').replace(/\,([^,]*)$/, ' ($1)')
             }
 
             const formatRow = chapter => {
