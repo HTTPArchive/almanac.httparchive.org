@@ -77,7 +77,7 @@ jobs:
             const calcStats = nums => {
               const size = nums.length
               if (!size) {
-                return [0, 0, 0, 0, 0, 0, 0, 0, 0]
+                return [0, 0, 0, 0, 0, 0, 0]
               }
               nums.sort((a, b) => a - b)
               const sum = nums.reduce((a,b) => a + b, 0)
