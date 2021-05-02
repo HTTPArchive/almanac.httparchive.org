@@ -149,7 +149,7 @@ jobs:
             }
 
             const formatTeam = team => {
-              return Object.entries(team).map(([k, v]) => `<span title="${k}: ${v.length ? v.join(', ') : 'TBD'}">${v.length}</span>`).join('+').replace(/\+([^+]*)$/, ' ≥ $1')
+              return Object.entries(team).map(([k, v]) => `<span title="${k}: ${v.length ? v.join(', ') : 'TBD'}">${v.length}</span>`).join('|').replace(/\|([^|]*)$/, ' ($1)')
             }
 
             const formatRow = chapter => {
@@ -177,7 +177,7 @@ jobs:
               chapters.push({
                 id: issue.number,
                 url: issue.html_url,
-                title: heading.title || issue.title,
+                title: heading.title || issue.title.replace(/ 20[0-9][0-9]/,''),
                 part: heading.part,
                 number: heading.number,
                 links: parseLinks(issue.body),
