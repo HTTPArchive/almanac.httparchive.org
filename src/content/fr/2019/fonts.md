@@ -23,15 +23,15 @@ featured_stat_label_3: Most font requests on a single page
 
 Les polices Web permettent une typographie belle et fonctionnelle sur le web. L'utilisation des polices Web permet non seulement de renforcer le design, mais aussi de démocratiser un sous-ensemble du design, car elle permet un accès plus facile à ceux qui n'ont pas forcément de solides compétences en matière de design. Cependant, malgré tout le bien qu'elles peuvent faire, les polices web peuvent également nuire considérablement aux performances de votre site, si elles ne sont pas chargées correctement.
 
-Sont-elles un atout pour le web ? Offrent-elles plus d'avantages que d'inconvénients ? Les sentiers des standards du web sont-ils suffisamment pavés pour encourager les meilleures pratiques de chargement des polices web par défaut ? Et si ce n'est pas le cas, que faut-il changer ? Voyons si nous pouvons répondre à ces questions en examinant comment les polices de caractères sont utilisées sur le web aujourd'hui.
+Sont-elles un atout pour le web&nbsp;? Offrent-elles plus d'avantages que d'inconvénients&nbsp;? Les sentiers des standards du web sont-ils suffisamment pavés pour encourager les meilleures pratiques de chargement des polices web par défaut&nbsp;? Et si ce n'est pas le cas, que faut-il changer&nbsp;? Voyons si nous pouvons répondre à ces questions en examinant comment les polices de caractères sont utilisées sur le web aujourd'hui.
 
-## Où avez-vous obtenu ces polices de caractères pour le web ?
+## Où avez-vous obtenu ces polices de caractères pour le web&nbsp;?
 
-La première et la plus importante question : la performance. Un chapitre entier est consacré à la [performance](./performance), mais nous allons ici approfondir un peu les questions de performance spécifiques aux polices.
+La première et la plus importante question&nbsp;: la performance. Un chapitre entier est consacré à la [performance](./performance), mais nous allons ici approfondir un peu les questions de performance spécifiques aux polices.
 
-L'utilisation de polices web hébergées permet une mise en œuvre et une maintenance faciles, mais l'auto-hébergement offre les meilleures performances. Étant donné que les polices web par défaut rendent le texte invisible pendant leur chargement (phénomène également connu sous le nom de <a hreflang="en" href="https://css-tricks.com/fout-foit-foft/">Flash of Invisible Text</a>, ou FOIT), les performances des polices web peuvent être plus critiques que celles des éléments non bloquants comme les images.
+L'utilisation de polices web hébergées permet une mise en œuvre et une maintenance faciles, mais l'auto-hébergement offre les meilleures performances. Étant donné que les polices web par défaut rendent le texte invisible pendant leur chargement (phénomène également connu sous le nom de <a hreflang="en" lang="en" href="https://css-tricks.com/fout-foit-foft/">Flash of Invisible Text</a>, ou FOIT), les performances des polices web peuvent être plus critiques que celles des éléments non bloquants comme les images.
 
-### Les polices sont-elles hébergées sur le même serveur ou par un serveur différent ?
+### Les polices sont-elles hébergées sur le même serveur ou par un serveur différent&nbsp;?
 
 La distinction entre l'auto-hébergement et l'hébergement tiers est de plus en plus pertinente dans un monde [HTTP/2](./http2), où l'écart de performance entre un même hôte et une connexion vers un hôte différent peut être plus important. Les requêtes vers un même hôte présentent l'énorme avantage d'un meilleur potentiel de priorisation par rapport aux autres requêtes vers ce même hôte dans la cascade.
 
@@ -51,15 +51,15 @@ Google fournit des polices en utilisant des fichiers CSS tiers hébergés sur ht
 
 Notez que si `preload` pourrait être un ajout intéressant pour charger les fichiers de police plus haut dans la cascade de requêtes (rappelez-vous que `preconnect` établit la connexion, il ne demande pas le contenu du fichier), `preload` n'est pas encore disponible avec Google Fonts. Google Fonts génère des URL uniques pour leurs fichiers de police <a hreflang="en" href="https://github.com/google/fonts/issues/1067">qui sont susceptibles de changer</a>.
 
-### Quels sont les hébergeurs tierces-parties les plus populaires ?
+### Quels sont les hébergeurs tierces-parties les plus populaires&nbsp;?
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th>Hébergeur</th>
-        <th>Ordinateur de bureau</th>
-        <th>Mobile</th>
+        <th scope="col">Hébergeur</th>
+        <th scope="col">Ordinateur de bureau</th>
+        <th scope="col">Mobile</th>
       </tr>
     </thead>
     <tbody>
@@ -177,9 +177,9 @@ La domination de Google Fonts ici était à la fois surprenante et non surprenan
 )
 }}
 
-Si l'utilisation élevée des Google Fonts ici est très impressionnante, il est également à noter que seulement 29% des pages comprenaient un élément Google Fonts `<link>`. Cela pourrait signifier plusieurs choses :
+Si l'utilisation élevée des Google Fonts ici est très impressionnante, il est également à noter que seulement 29% des pages comprenaient un élément Google Fonts `<link>`. Cela pourrait signifier plusieurs choses&nbsp;:
 
-- Lorsque des pages utilisent des Google Fonts, elles utilisent _beaucoup_ de Google Fonts. Elles sont fournies sans coût monétaire, après tout. Peut-être sont-elles utilisées dans un éditeur WYSIWYG populaire ? Cela semble être une explication très probable.
+- Lorsque des pages utilisent des Google Fonts, elles utilisent _beaucoup_ de Google Fonts. Elles sont fournies sans coût monétaire, après tout. Peut-être sont-elles utilisées dans un éditeur WYSIWYG populaire&nbsp;? Cela semble être une explication très probable.
 - Ou il se pourrait de façon plus improbable que beaucoup de gens utilisent les Google Fonts avec `@import` au lieu de `<link>`.
 - Ou, si nous voulons aller plus loin dans des scénarios très improbables, cela pourrait signifier que beaucoup de gens utilisent des polices Google avec un [HTTP `Link:` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link) à la place.
 
@@ -190,7 +190,7 @@ Si l'utilisation élevée des Google Fonts ici est très impressionnante, il est
 )
 }}
 
-La documentation de Google Fonts encourage que le `<link>` pour le CSS Google Fonts soit placé comme premier enfant dans le `<head>` d'une page. C'est une demande forte ! Dans la pratique, ce n'est pas courant car seulement un demi pour cent de toutes les pages (environ 20 000 pages) ont suivi ce conseil.
+La documentation de Google Fonts encourage que le `<link>` pour le CSS Google Fonts soit placé comme premier enfant dans le `<head>` d'une page. C'est une demande forte&nbsp;! Dans la pratique, ce n'est pas courant car seulement un demi pour cent de toutes les pages (environ 20 000 pages) ont suivi ce conseil.
 
 De plus, si une page utilise les éléments `preconnect` ou `dns-prefetch` comme `<link>`, ceux-ci passeront de toute façon avant les polices CSS de Google. Lisez la suite pour en savoir plus sur des indications de ressources.
 
@@ -199,15 +199,15 @@ De plus, si une page utilise les éléments `preconnect` ou `dns-prefetch` comme
 Comme mentionné ci-dessus, un moyen très simple d'accélérer les demandes de polices Web sur un hébergement tierce-partie est d'utiliser la fonction `preconnect` [resource hint](./resource-hints).
 
 {{ figure_markup(
-  caption="Pourcentage des pages mobiles qui se préconnectent à un serveur de web font.",
+  caption="Pourcentage des pages mobiles qui se préconnectent à un serveur de polices web.",
   content="1.7%",
   classes="big-number"
 )
 }}
 
-Ouah ! Moins de 2% des pages utilisent <a hreflang="en" href="https://web.dev/uses-rel-preconnect">`preconnect`</a> ! Etant donné que Google Fonts est à 75%, cela devrait être plus élevé ! Développeurs : si vous utilisez Google Fonts, utilisez `preconnect` ! Google Fonts : faites plus de prosélytisme avec `preconnect` !
+Ouah&nbsp;! Moins de 2% des pages utilisent <a hreflang="en" lang="en" href="https://web.dev/uses-rel-preconnect">`preconnect`</a>&nbsp;! Étant donné que Google Fonts est à 75%, cela devrait être plus élevé&nbsp;! Développeurs&nbsp;: si vous utilisez Google Fonts, utilisez `preconnect`&nbsp;! Google Fonts&nbsp;: faites plus de prosélytisme avec `preconnect`&nbsp;!
 
-En fait, si vous utilisez les Google Fonts, allez-y et ajoutez ceci à votre `<head>` si ce n'est pas déjà fait :
+En fait, si vous utilisez les Google Fonts, allez-y et ajoutez ceci à votre `<head>` si ce n'est pas déjà fait&nbsp;:
 
 ```html
 <link rel="preconnect" href="https://fonts.gstatic.com/">
@@ -353,7 +353,7 @@ En fait, si vous utilisez les Google Fonts, allez-y et ajoutez ceci à votre `<h
 
 Il n'est pas surprenant ici que les principales entrées semblent correspondre de manière très similaire à la <a hreflang="en" href="https://fonts.google.com/?sort=popularity">Liste des Google Fonts classées par popularité</a>.
 
-## Quels sont les formats de police utilisés ?
+## Quels sont les formats de police utilisés&nbsp;?
 
 <a hreflang="en" href="https://caniuse.com/#feat=woff2">WOFF2 est assez bien pris en charge</a> dans les navigateurs web aujourd'hui. Google Fonts sert WOFF2, un format qui offre une meilleure compression que son prédécesseur WOFF, qui était lui-même déjà une amélioration par rapport aux autres formats de police existants.
 
@@ -365,11 +365,11 @@ Il n'est pas surprenant ici que les principales entrées semblent correspondre d
   )
 }}
 
-De mon point de vue, on pourrait argumenter en faveur de l'utilisation exclusive de WOFF2 pour les polices Web après avoir vu les résultats ici. Je me demande d'où vient l'utilisation à deux chiffres de WOFF ? Peut-être que les développeurs continuent de fournir des polices web pour Internet Explorer ?
+De mon point de vue, on pourrait argumenter en faveur de l'utilisation exclusive de WOFF2 pour les polices Web après avoir vu les résultats ici. Je me demande d'où vient l'utilisation à deux chiffres de WOFF&nbsp;? Peut-être que les développeurs continuent de fournir des polices web pour Internet Explorer&nbsp;?
 
 La troisième place `octet-stream` (et `plain` un peu plus bas) semble suggérer que beaucoup de serveurs web sont mal configurés, envoyant un type MIME incorrect avec les requêtes de fichiers de polices web.
 
-Creusons un peu plus loin et regardons les valeurs de `format()` utilisées dans la propriété `src:` des déclarations `@font-face` :
+Creusons un peu plus loin et regardons les valeurs de `format()` utilisées dans la propriété `src:` des déclarations `@font-face`&nbsp;:
 
 {{ figure_markup(
   image="fig8.png",
@@ -382,7 +382,7 @@ Creusons un peu plus loin et regardons les valeurs de `format()` utilisées dans
 
 J'espérais voir <a hreflang="en" href="https://caniuse.com/#feat=svg-fonts">les polices SVG</a> sur le déclin. Elles sont boguées et leur implémentation a été supprimée de tous les navigateurs sauf Safari. Il est temps de les laisser tomber.
 
-Le point de données SVG ici me fait aussi me demander avec quel type MIME vous utilisez ces polices SVG. Je ne vois pas `image/svg+xml` nulle part dans la Figure 6.7. Quoi qu'il en soit, ne vous inquiétez pas pour cela, débarrassez-vous simplement d'elles !
+Le point de données SVG ici me fait aussi me demander avec quel type MIME vous utilisez ces polices SVG. Je ne vois pas `image/svg+xml` nulle part dans la Figure 6.7. Quoi qu'il en soit, ne vous inquiétez pas pour cela, débarrassez-vous simplement d'elles&nbsp;!
 
 ### WOFF2 seulement
 
@@ -528,9 +528,9 @@ Il est important de noter que ces données particulières ne soutiennent ni ne c
 
 ## Lutter contre le texte invisible
 
-Le premier outil dont nous disposons pour lutter contre le comportement par défaut de chargement des polices web soit l'"invisibilité pendant le chargement" (aussi appelé FOIT), est `font-display`. Ajouter `font-display : swap` à votre bloc `@font-face` est un moyen facile de dire au navigateur d'afficher le texte de remplacement pendant le chargement de la police web.
+Le premier outil dont nous disposons pour lutter contre le comportement par défaut de chargement des polices web soit l'invisibilité pendant le chargement (aussi appelé FOIT), est `font-display`. Ajouter `font-display: swap` à votre bloc `@font-face` est un moyen facile de dire au navigateur d'afficher le texte de remplacement pendant le chargement de la police web.
 
-La fonction <a hreflang="en" href="https://caniuse.com/#feat=mdn-css_at-rules_font-face_font-display">Support du navigateur</a> est également très utile. Internet Explorer et les versions antérieures à Chromium Edge ne sont pas pris en charge, mais ils affichent également un texte de remplacement par défaut lors du chargement d'une police Web (les FOIT ne sont pas autorisés ici). Pour nos tests dans Chrome, quelle est la fréquence d'utilisation de la fonction `font-display` ?
+La fonction <a hreflang="en" href="https://caniuse.com/#feat=mdn-css_at-rules_font-face_font-display">Support du navigateur</a> est également très utile. Internet Explorer et les versions antérieures à Chromium Edge ne sont pas pris en charge, mais ils affichent également un texte de remplacement par défaut lors du chargement d'une police Web (les FOIT ne sont pas autorisés ici). Pour nos tests dans Chrome, quelle est la fréquence d'utilisation de la fonction `font-display`&nbsp;?
 
 {{ figure_markup(
   caption="Pourcentage des pages mobiles qui utilisent le style <code>font-display</code>.",
@@ -539,11 +539,11 @@ La fonction <a hreflang="en" href="https://caniuse.com/#feat=mdn-css_at-rules_fo
 )
 }}
 
-Je suppose que cela va augmenter au fil du temps, surtout maintenant que <a hreflang="en" href="https://www.zachleat.com/web/google-fonts-display/">Google Fonts ajoute "font-display" à tous les nouveaux extraits de code</a> copiés de leur site.
+Je suppose que cela va augmenter au fil du temps, surtout maintenant que <a hreflang="en" href="https://www.zachleat.com/web/google-fonts-display/">Google Fonts ajoute `font-display` à tous les nouveaux extraits de code</a> copiés de leur site.
 
-Si vous utilisez les Google Fonts, mettez à jour vos snippets ! Si vous n'utilisez pas les Google Fonts, utilisez `font-display` ! Pour en savoir plus sur l'affichage des polices, consultez le site [MDN](https://developer.mozilla.org/fr/docs/Web/CSS/@font-face/font-display).
+Si vous utilisez les Google Fonts, mettez à jour vos snippets&nbsp;! Si vous n'utilisez pas les Google Fonts, utilisez `font-display`&nbsp;! Pour en savoir plus sur l'affichage des polices, consultez le site [MDN](https://developer.mozilla.org/fr/docs/Web/CSS/@font-face/font-display).
 
-Voyons voir quelles sont les valeurs les plus populaires de `font-display` :
+Voyons voir quelles sont les valeurs les plus populaires de `font-display`&nbsp;:
 
 {{ figure_markup(
   image="fig11.png",
@@ -554,16 +554,16 @@ Voyons voir quelles sont les valeurs les plus populaires de `font-display` :
   )
 }}
 
-Comme moyen facile d'afficher du texte de remplacement pendant le chargement d'une police Web, `font-display : swap` règne en maître et est la valeur la plus courante. `swap` est également la valeur par défaut utilisée par les nouveaux extraits de code de Google Fonts. Je me serais attendu à ce que `optional` (seulement rendu si mis en cache) soit un peu plus utilisé ici car quelques éminents développeurs évangélistes ont fait pression pour cela, mais pas de dés.
+Comme moyen facile d'afficher du texte de remplacement pendant le chargement d'une police Web, `font-display: swap` règne en maître et est la valeur la plus courante. `swap` est également la valeur par défaut utilisée par les nouveaux extraits de code de Google Fonts. Je me serais attendu à ce que `optional` (seulement rendu si mis en cache) soit un peu plus utilisé ici car quelques éminents développeurs évangélistes ont fait pression pour cela, mais pas de dés.
 
-## Combien de polices de caractères pour le web sont trop nombreuses ?
+## Combien de polices de caractères pour le web sont trop nombreuses&nbsp;?
 
-C'est une question qui nécessite une certaine nuance. Comment sont utilisées les polices de caractères ? Pour quelle quantité de contenu sur la page ? Où se trouve ce contenu dans la mise en page ? Comment les polices sont-elles rendues ? Au lieu de la nuance, plongeons dans une analyse générale et approfondie, centrée sur le nombre de demandes.
+C'est une question qui nécessite une certaine nuance. Comment sont utilisées les polices de caractères&nbsp;? Pour quelle quantité de contenu sur la page&nbsp;? Où se trouve ce contenu dans la mise en page&nbsp;? Comment les polices sont-elles rendues&nbsp;? Au lieu de la nuance, plongeons dans une analyse générale et approfondie, centrée sur le nombre de demandes.
 
 {{ figure_markup(
   image="fig12.png",
   caption="Distribution des requêtes de police par page.",
-  description="Graphique à barres indiquant la répartition des demandes de polices par page. Les 10, 25, 50, 75 et 90e percentiles pour le bureau sont : 0, 1, 3, 6 et 9 demandes de polices. La distribution pour les mobiles est identique jusqu'aux 75e et 90e percentiles, où les pages mobiles demandent une police de moins.",
+  description="Graphique à barres indiquant la répartition des demandes de polices par page. Les 10, 25, 50, 75 et 90e percentiles pour le bureau sont&nbsp;: 0, 1, 3, 6 et 9 demandes de polices. La distribution pour les mobiles est identique jusqu'aux 75e et 90e percentiles, où les pages mobiles demandent une police de moins.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=451821825&format=interactive"
   )
 }}
@@ -591,11 +591,11 @@ Cela dit, les requêtes de polices de caractères faites sur les appareils mobil
 )
 }}
 
-Le prix de la page qui demande le plus de polices web est attribué à un site qui a fait **718** requêtes de polices web !
+Le prix de la page qui demande le plus de polices web est attribué à un site qui a fait **718** requêtes de polices web&nbsp;!
 
-Après avoir plongé dans le code, toutes ces 718 requêtes vont à Google Fonts ! Il semble qu'un plugin d'optimisation "Above the Page fold" pour WordPress qui ne fonctionne pas bien soit devenu défectueux sur ce site et demande (DDoS-ing ?) toutes les polices Google !
+Après avoir plongé dans le code, toutes ces 718 requêtes vont à Google Fonts&nbsp;! Il semble qu'un plugin d'optimisation <span lang="en">"Above the Page fold"</span> pour WordPress qui ne fonctionne pas bien soit devenu défectueux sur ce site et demande (DDoS-ing&nbsp;?) toutes les polices Google&nbsp;!
 
-Il est ironique qu'un plugin d'optimisation des performances puisse rendre vos performances bien pires !
+Il est ironique qu'un plugin d'optimisation des performances puisse rendre vos performances bien pires&nbsp;!
 
 ## Une correspondance plus précise avec `unicode-range`.
 
@@ -606,7 +606,7 @@ Il est ironique qu'un plugin d'optimisation des performances puisse rendre vos p
 )
 }}
 
-[`unicode-range`](https://developer.mozilla.org/fr/docs/Web/CSS/%40font-face/unicode-range) est une excellente propriété CSS qui permet au navigateur de savoir précisément quels points de code la page souhaite utiliser dans le fichier de police. Si la déclaration `@font-face` a une "plage de codes"(`unicode-range`), le contenu de la page doit correspondre à l'un des points de code de la plage avant que la police ne soit demandée. C'est une très bonne chose.
+[`unicode-range`](https://developer.mozilla.org/fr/docs/Web/CSS/%40font-face/unicode-range) est une excellente propriété CSS qui permet au navigateur de savoir précisément quels points de code la page souhaite utiliser dans le fichier de police. Si la déclaration `@font-face` a une `unicode-range`, le contenu de la page doit correspondre à l'un des points de code de la plage avant que la police ne soit demandée. C'est une très bonne chose.
 
 C'est une autre mesure qui, je pense, a été faussée par l'utilisation des Google Fonts, car Google Fonts utilise la "plage unicode" (`unicode-range`) dans la plupart (sinon la totalité) de ses CSS. Je m'attendrais à ce que cela soit moins fréquent du côté des utilisateurs, mais peut-être qu'il sera possible de filtrer les demandes de Google Fonts dans la prochaine édition de l'Almanach.
 
@@ -648,11 +648,11 @@ Il a été suggéré que l'utilisation de polices condensées sur des fenêtres 
 )
 }}
 
-Avec 1, 8 %, c'est plus que prévu, encore que je sois enthousiaste de voir ce décollage. <a hreflang="en" href="https://developers.google.com/fonts/docs/css2">Google Fonts v2</a> inclut un certain support pour les polices variables.
+Avec 1,8 %, c'est plus que prévu, encore que je sois enthousiaste de voir ce décollage. <a hreflang="en" href="https://developers.google.com/fonts/docs/css2">Google Fonts v2</a> inclut un certain support pour les polices variables.
 
 {{ figure_markup(
   image="fig19.png",
-  caption="Usage of 'font-variation-settings' axes.",
+  caption="Usage of `font-variation-settings` axes.",
   description="Graphique à barres montrant l'utilisation de la propriété font-variation-settings. 42% des propriétés des pages pour ordinateur de bureau sont réglées sur la valeur `opsz`, 32% sur `wght`, 16% sur `wdth`, 2% ou moins sur `roun`, `crsb`, `slnt`, `inln`, et plus. Les différences les plus notables entre les pages pour ordinateur de bureau et les pages mobiles sont l'utilisation à 26 % de `opsz`, 38 % de `wght` et 23 % de `wdth`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=699343351&format=interactive"
   )
@@ -660,7 +660,7 @@ Avec 1, 8 %, c'est plus que prévu, encore que je sois enthousiaste de voir ce d
 
 Dans l'optique de ce vaste ensemble de données, il s'agit d'échantillons de très petite taille - prenez ces résultats avec des pincettes. Cependant, l'axe `opsz`, qui est le plus courant sur les pages desktop, est notable, avec `wght` et `wdth` à la traîne. D'après mon expérience, les démos d'introduction aux polices variables sont généralement basées sur le poids.
 
-## Les polices de couleur pourraient-elles aussi être l'avenir ?
+## Les polices de couleur pourraient-elles aussi être l'avenir&nbsp;?
 
 {{ figure_markup(
   caption="Nombre de pages pour ordinateurs de bureau incluant une police de couleur.",
@@ -669,13 +669,13 @@ Dans l'optique de ce vaste ensemble de données, il s'agit d'échantillons de tr
 )
 }}
 
-Leur utilisation est pratiquement inexistante ici, mais vous pouvez consulter l'excellente ressource <a hreflang="en" href="https://www.colorfonts.wtf/">Color Fonts ! WTF ?</a> pour plus d'informations. Semblable (mais pas du tout) au format SVG pour les polices (qui est mauvais et qui disparaît), cela vous permet d'intégrer le SVG dans les fichiers OpenType, ce qui est génial et cool.
+Leur utilisation est pratiquement inexistante ici, mais vous pouvez consulter l'excellente ressource <a hreflang="en" lang="en" href="https://www.colorfonts.wtf/">Color Fonts&nbsp;! WTF&nbsp;?</a> pour plus d'informations. Semblable (mais pas du tout) au format SVG pour les polices (qui est mauvais et qui disparaît), cela vous permet d'intégrer le SVG dans les fichiers OpenType, ce qui est génial et cool.
 
 ## Conclusion
 
-Le point le plus important ici est que Google Fonts domine la conversation sur les polices de caractères sur le web. Les approches qu'ils ont adoptées pèsent lourdement sur les données que nous avons enregistrées ici. Les points positifs sont un accès facile aux polices web, de bons formats de police (WOFF2), et des configurations gratuites de `unicode-range`. Les inconvénients sont les défauts de perfomrance liés à l'hébergement par des tiers, les requêtes vers des hôtes différents et l'absence d'accès au `preload`.
+Le point le plus important ici est que Google Fonts domine la conversation sur les polices de caractères sur le web. Les approches qu'ils ont adoptées pèsent lourdement sur les données que nous avons enregistrées ici. Les points positifs sont un accès facile aux polices web, de bons formats de police (WOFF2), et des configurations gratuites de `unicode-range`. Les inconvénients sont les défauts de performance liés à l'hébergement par des tiers, les requêtes vers des hôtes différents et l'absence d'accès au `preload`.
 
-Je suis convaincu que nous assisterons à l'avenir à la "montée en puissance des polices variables". Ce phénomène devrait s'accompagner d'une diminution des demandes de polices sur le web, car les polices variables combinent plusieurs fichiers de polices individuels en un seul fichier de police composite. Mais l'histoire nous a montré que ce qui se passe généralement, est que nous optimisons une chose puis que nous en ajoutons d'autres pour combler le poste vacant.
+Je suis convaincu que nous assisterons à l'avenir à la montée en puissance des polices variables. Ce phénomène devrait s'accompagner d'une diminution des demandes de polices sur le web, car les polices variables combinent plusieurs fichiers de polices individuels en un seul fichier de police composite. Mais l'histoire nous a montré que ce qui se passe généralement, est que nous optimisons une chose puis que nous en ajoutons d'autres pour combler le poste vacant.
 
 Il sera très intéressant de voir si la popularité des polices de couleur augmente. Je pense qu'elles occuperont une place beaucoup plus importante que les polices variables, mais il se peut que l'espace réservé aux polices des icônes soit une bouée de sauvetage.
 
