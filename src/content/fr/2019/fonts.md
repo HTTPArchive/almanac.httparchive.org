@@ -11,9 +11,9 @@ discuss: 1761
 results: https://docs.google.com/spreadsheets/d/108g6LXdC3YVsxmX1CCwrmpZ3-DmbB8G_wwgQHX5pn6Q/
 zachleat_bio: Zach is a Web Developer with <a hreflang="en" href="https://www.filamentgroup.com/">Filament Group</a>. He’s currently fixated on <a hreflang="en" href="https://www.zachleat.com/web/fonts/">web fonts</a> and <a hreflang="en" href="https://www.zachleat.com/web/introducing-eleventy/">static site generators</a>. His <a hreflang="en" href="https://www.zachleat.com/web/speaking/">public speaking résumé</a> includes talks in eight different countries at events like JAMstack_conf, Beyond Tellerrand, Smashing Conference, CSSConf, and <a hreflang="en" href="https://www.zachleat.com/web/whitehouse/">The White House</a>. He also helps herd <a hreflang="en" href="http://nejsconf.com/">NEJS CONF</a> and the <a hreflang="en" href="http://nebraskajs.com">NebraskaJS</a> meetup.
 featured_quote: Web fonts enable beautiful and functional typography on the web. Using web fonts not only empowers design, but it democratizes a subset of design, as it allows easier access to those who might not have particularly strong design skills. However, for all the good they can do, web fonts can also do great harm to your site's performance if they are not loaded properly.
-featured_stat_1: 74.9%
+featured_stat_1: 74,9&nbsp;%
 featured_stat_label_1: 3P Font Requests that use Google Fonts
-featured_stat_2: 29%
+featured_stat_2: 29&nbsp;%
 featured_stat_label_2: Percent of pages that include a Google Fonts stylesheet link
 featured_stat_3: 718
 featured_stat_label_3: Most font requests on a single page
@@ -40,7 +40,7 @@ Les recommandations pour réduire les coûts de performance du chargement des po
 {{ figure_markup(
   image="fig1.png",
   caption="Les stratégies d'hébergement de polices web les plus populaires.",
-  description="Graphique à barres montrant la popularité des stratégies d'hébergement tierces-parties et d'auto-hébergement pour les polices web. 75% des pages web mobiles utilisent des hébergements tierces-parties et 25% des auto-hébergements. Les sites web en version ordinateur de bureau ont une utilisation similaire.",
+  description="Graphique à barres montrant la popularité des stratégies d'hébergement tierces-parties et d'auto-hébergement pour les polices web. 75&nbsp;% des pages web mobiles utilisent des hébergements tierces-parties et 25&nbsp;% des auto-hébergements. Les sites web en version ordinateur de bureau ont une utilisation similaire.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&format=interactive"
   )
 }}
@@ -65,119 +65,119 @@ Notez que si `preload` pourrait être un ajout intéressant pour charger les fic
     <tbody>
       <tr>
         <td>fonts.gstatic.com</td>
-        <td class="numeric">75.4%</td>
-        <td class="numeric">74.9%</td>
+        <td class="numeric">75,4&nbsp;%</td>
+        <td class="numeric">74,9&nbsp;%</td>
       </tr>
       <tr>
         <td>use.typekit.net</td>
-        <td class="numeric">7.2%</td>
-        <td class="numeric">6.6%</td>
+        <td class="numeric">7,2&nbsp;%</td>
+        <td class="numeric">6,6&nbsp;%</td>
       </tr>
       <tr>
         <td>maxcdn.bootstrapcdn.com</td>
-        <td class="numeric">1.8%</td>
-        <td class="numeric">2.0%</td>
+        <td class="numeric">1,8&nbsp;%</td>
+        <td class="numeric">2,0&nbsp;%</td>
       </tr>
       <tr>
         <td>use.fontawesome.com</td>
-        <td class="numeric">1.1%</td>
-        <td class="numeric">1.2%</td>
+        <td class="numeric">1,1&nbsp;%</td>
+        <td class="numeric">1,2&nbsp;%</td>
       </tr>
       <tr>
         <td>static.parastorage.com</td>
-        <td class="numeric">0.8%</td>
-        <td class="numeric">1.2%</td>
+        <td class="numeric">0,8&nbsp;%</td>
+        <td class="numeric">1,2&nbsp;%</td>
       </tr>
       <tr>
         <td>fonts.shopifycdn.com</td>
-        <td class="numeric">0.6%</td>
-        <td class="numeric">0.6%</td>
+        <td class="numeric">0,6&nbsp;%</td>
+        <td class="numeric">0,6&nbsp;%</td>
       </tr>
       <tr>
         <td>cdn.shopify.com</td>
-        <td class="numeric">0.5%</td>
-        <td class="numeric">0.5%</td>
+        <td class="numeric">0,5&nbsp;%</td>
+        <td class="numeric">0,5&nbsp;%</td>
       </tr>
       <tr>
         <td>cdnjs.cloudflare.com</td>
-        <td class="numeric">0.4%</td>
-        <td class="numeric">0.5%</td>
+        <td class="numeric">0,4&nbsp;%</td>
+        <td class="numeric">0,5&nbsp;%</td>
       </tr>
       <tr>
         <td>use.typekit.com</td>
-        <td class="numeric">0.4%</td>
-        <td class="numeric">0.4%</td>
+        <td class="numeric">0,4&nbsp;%</td>
+        <td class="numeric">0,4&nbsp;%</td>
       </tr>
       <tr>
         <td>netdna.bootstrapcdn.com</td>
-        <td class="numeric">0.3%</td>
-        <td class="numeric">0.4%</td>
+        <td class="numeric">0,3&nbsp;%</td>
+        <td class="numeric">0,4&nbsp;%</td>
       </tr>
       <tr>
         <td>fast.fonts.net</td>
-        <td class="numeric">0.3%</td>
-        <td class="numeric">0.3%</td>
+        <td class="numeric">0,3&nbsp;%</td>
+        <td class="numeric">0,3&nbsp;%</td>
       </tr>
       <tr>
         <td>static.dealer.com</td>
-        <td class="numeric">0.2%</td>
-        <td class="numeric">0.2%</td>
+        <td class="numeric">0,2&nbsp;%</td>
+        <td class="numeric">0,2&nbsp;%</td>
       </tr>
       <tr>
         <td>themes.googleusercontent.com</td>
-        <td class="numeric">0.2%</td>
-        <td class="numeric">0.2%</td>
+        <td class="numeric">0,2&nbsp;%</td>
+        <td class="numeric">0,2&nbsp;%</td>
       </tr>
       <tr>
         <td>static-v.tawk.to</td>
-        <td class="numeric">0.1%</td>
-        <td class="numeric">0.3%</td>
+        <td class="numeric">0,1&nbsp;%</td>
+        <td class="numeric">0,3&nbsp;%</td>
       </tr>
       <tr>
         <td>stc.utdstc.com</td>
-        <td class="numeric">0.1%</td>
-        <td class="numeric">0.2%</td>
+        <td class="numeric">0,1&nbsp;%</td>
+        <td class="numeric">0,2&nbsp;%</td>
       </tr>
       <tr>
         <td>cdn.jsdelivr.net</td>
-        <td class="numeric">0.2%</td>
-        <td class="numeric">0.2%</td>
+        <td class="numeric">0,2&nbsp;%</td>
+        <td class="numeric">0,2&nbsp;%</td>
       </tr>
       <tr>
         <td>kit-free.fontawesome.com</td>
-        <td class="numeric">0.2%</td>
-        <td class="numeric">0.2%</td>
+        <td class="numeric">0,2&nbsp;%</td>
+        <td class="numeric">0,2&nbsp;%</td>
       </tr>
       <tr>
         <td>open.scdn.co</td>
-        <td class="numeric">0.1%</td>
-        <td class="numeric">0.1%</td>
+        <td class="numeric">0,1&nbsp;%</td>
+        <td class="numeric">0,1&nbsp;%</td>
       </tr>
       <tr>
         <td>assets.squarespace.com</td>
-        <td class="numeric">0.1%</td>
-        <td class="numeric">0.1%</td>
+        <td class="numeric">0,1&nbsp;%</td>
+        <td class="numeric">0,1&nbsp;%</td>
       </tr>
       <tr>
         <td>fonts.jimstatic.com</td>
-        <td class="numeric">0.1%</td>
-        <td class="numeric">0.2%</td>
+        <td class="numeric">0,1&nbsp;%</td>
+        <td class="numeric">0,2&nbsp;%</td>
       </tr>
     </tbody>
   </table>
   <figcaption>{{ figure_link(caption="Top 20 des hébergements de polices de caractère par requêtes.") }}</figcaption>
 </figure>
 
-La domination de Google Fonts ici était à la fois surprenante et non surprenante. Elle n'était pas surprenante dans la mesure où je m'attendais à ce que le service soit le plus populaire et surprenant par la simple domination de sa popularité. 75 % des demandes de polices c'est étonnant. TypeKit était en deuxième position,avec un pourcentage à un chiffre, la bibliothèque Bootstrap occupant une troisième place encore plus éloignée.
+La domination de Google Fonts ici était à la fois surprenante et non surprenante. Elle n'était pas surprenante dans la mesure où je m'attendais à ce que le service soit le plus populaire et surprenant par la simple domination de sa popularité. 75&nbsp;% des demandes de polices c'est étonnant. TypeKit était en deuxième position,avec un pourcentage à un chiffre, la bibliothèque Bootstrap occupant une troisième place encore plus éloignée.
 
 {{ figure_markup(
   caption="Pourcentage des pages qui incluent un lien vers des feuilles de style Google Fonts dans l'entête (<code><head></code>) du document.",
-  content="29%",
+  content="29&nbsp;%",
   classes="big-number"
 )
 }}
 
-Si l'utilisation élevée des Google Fonts ici est très impressionnante, il est également à noter que seulement 29% des pages comprenaient un élément Google Fonts `<link>`. Cela pourrait signifier plusieurs choses&nbsp;:
+Si l'utilisation élevée des Google Fonts ici est très impressionnante, il est également à noter que seulement 29&nbsp;% des pages comprenaient un élément Google Fonts `<link>`. Cela pourrait signifier plusieurs choses&nbsp;:
 
 - Lorsque des pages utilisent des Google Fonts, elles utilisent _beaucoup_ de Google Fonts. Elles sont fournies sans coût monétaire, après tout. Peut-être sont-elles utilisées dans un éditeur WYSIWYG populaire&nbsp;? Cela semble être une explication très probable.
 - Ou il se pourrait de façon plus improbable que beaucoup de gens utilisent les Google Fonts avec `@import` au lieu de `<link>`.
@@ -185,7 +185,7 @@ Si l'utilisation élevée des Google Fonts ici est très impressionnante, il est
 
 {{ figure_markup(
   caption="Pourcentage des pages qui incluent un lien vers des feuilles de style Google Fonts comme premier noeud dans l'entête du document (<code><head></code>).",
-  content="0.4%",
+  content="0,4&nbsp;%",
   classes="big-number"
 )
 }}
@@ -200,12 +200,12 @@ Comme mentionné ci-dessus, un moyen très simple d'accélérer les demandes de 
 
 {{ figure_markup(
   caption="Pourcentage des pages mobiles qui se préconnectent à un serveur de polices web.",
-  content="1.7%",
+  content="1,7&nbsp;%",
   classes="big-number"
 )
 }}
 
-Ouah&nbsp;! Moins de 2% des pages utilisent <a hreflang="en" lang="en" href="https://web.dev/uses-rel-preconnect">`preconnect`</a>&nbsp;! Étant donné que Google Fonts est à 75%, cela devrait être plus élevé&nbsp;! Développeurs&nbsp;: si vous utilisez Google Fonts, utilisez `preconnect`&nbsp;! Google Fonts&nbsp;: faites plus de prosélytisme avec `preconnect`&nbsp;!
+Ouah&nbsp;! Moins de 2&nbsp;% des pages utilisent <a hreflang="en" lang="en" href="https://web.dev/uses-rel-preconnect">`preconnect`</a>&nbsp;! Étant donné que Google Fonts est à 75&nbsp;%, cela devrait être plus élevé&nbsp;! Développeurs&nbsp;: si vous utilisez Google Fonts, utilisez `preconnect`&nbsp;! Google Fonts&nbsp;: faites plus de prosélytisme avec `preconnect`&nbsp;!
 
 En fait, si vous utilisez les Google Fonts, allez-y et ajoutez ceci à votre `<head>` si ce n'est pas déjà fait&nbsp;:
 
@@ -229,122 +229,122 @@ En fait, si vous utilisez les Google Fonts, allez-y et ajoutez ceci à votre `<h
         <tr>
           <td class="numeric">1</td>
           <td>Open Sans</td>
-          <td class="numeric">24%</td>
-          <td class="numeric">22%</td>
+          <td class="numeric">24&nbsp;%</td>
+          <td class="numeric">22&nbsp;%</td>
         </tr>
         <tr>
           <td class="numeric">2</td>
           <td>Roboto</td>
-          <td class="numeric">15%</td>
-          <td class="numeric">19%</td>
+          <td class="numeric">15&nbsp;%</td>
+          <td class="numeric">19&nbsp;%</td>
         </tr>
         <tr>
           <td class="numeric">3</td>
           <td>Montserrat</td>
-          <td class="numeric">5%</td>
-          <td class="numeric">4%</td>
+          <td class="numeric">5&nbsp;%</td>
+          <td class="numeric">4&nbsp;%</td>
         </tr>
         <tr>
           <td class="numeric">4</td>
           <td>Source Sans Pro</td>
-          <td class="numeric">4%</td>
-          <td class="numeric">3%</td>
+          <td class="numeric">4&nbsp;%</td>
+          <td class="numeric">3&nbsp;%</td>
         </tr>
         <tr>
           <td class="numeric">5</td>
           <td>Noto Sans JP</td>
-          <td class="numeric">3%</td>
-          <td class="numeric">3%</td>
+          <td class="numeric">3&nbsp;%</td>
+          <td class="numeric">3&nbsp;%</td>
         </tr>
         <tr>
           <td class="numeric">6</td>
           <td>Lato</td>
-          <td class="numeric">3%</td>
-          <td class="numeric">3%</td>
+          <td class="numeric">3&nbsp;%</td>
+          <td class="numeric">3&nbsp;%</td>
         </tr>
         <tr>
           <td class="numeric">7</td>
           <td>Nanum Gothic</td>
-          <td class="numeric">4%</td>
-          <td class="numeric">2%</td>
+          <td class="numeric">4&nbsp;%</td>
+          <td class="numeric">2&nbsp;%</td>
         </tr>
         <tr>
           <td class="numeric">8</td>
           <td>Noto Sans KR</td>
-          <td class="numeric">3%</td>
-          <td class="numeric">2%</td>
+          <td class="numeric">3&nbsp;%</td>
+          <td class="numeric">2&nbsp;%</td>
         </tr>
         <tr>
           <td class="numeric">9</td>
           <td>Roboto Condensed</td>
-          <td class="numeric">2%</td>
-          <td class="numeric">2%</td>
+          <td class="numeric">2&nbsp;%</td>
+          <td class="numeric">2&nbsp;%</td>
         </tr>
         <tr>
           <td class="numeric">10</td>
           <td>Raleway</td>
-          <td class="numeric">2%</td>
-          <td class="numeric">2%</td>
+          <td class="numeric">2&nbsp;%</td>
+          <td class="numeric">2&nbsp;%</td>
         </tr>
         <tr>
           <td class="numeric">11</td>
           <td>FontAwesome</td>
-          <td class="numeric">1%</td>
-          <td class="numeric">1%</td>
+          <td class="numeric">1&nbsp;%</td>
+          <td class="numeric">1&nbsp;%</td>
         </tr>
         <tr>
           <td class="numeric">12</td>
           <td>Roboto Slab</td>
-          <td class="numeric">1%</td>
-          <td class="numeric">1%</td>
+          <td class="numeric">1&nbsp;%</td>
+          <td class="numeric">1&nbsp;%</td>
         </tr>
         <tr>
           <td class="numeric">13</td>
           <td>Noto Sans TC</td>
-          <td class="numeric">1%</td>
-          <td class="numeric">1%</td>
+          <td class="numeric">1&nbsp;%</td>
+          <td class="numeric">1&nbsp;%</td>
         </tr>
         <tr>
           <td class="numeric">14</td>
           <td>Poppins</td>
-          <td class="numeric">1%</td>
-          <td class="numeric">1%</td>
+          <td class="numeric">1&nbsp;%</td>
+          <td class="numeric">1&nbsp;%</td>
         </tr>
         <tr>
           <td class="numeric">15</td>
           <td>Ubuntu</td>
-          <td class="numeric">1%</td>
-          <td class="numeric">1%</td>
+          <td class="numeric">1&nbsp;%</td>
+          <td class="numeric">1&nbsp;%</td>
         </tr>
         <tr>
           <td class="numeric">16</td>
           <td>Oswald</td>
-          <td class="numeric">1%</td>
-          <td class="numeric">1%</td>
+          <td class="numeric">1&nbsp;%</td>
+          <td class="numeric">1&nbsp;%</td>
         </tr>
         <tr>
           <td class="numeric">17</td>
           <td>Merriweather</td>
-          <td class="numeric">1%</td>
-          <td class="numeric">1%</td>
+          <td class="numeric">1&nbsp;%</td>
+          <td class="numeric">1&nbsp;%</td>
         </tr>
         <tr>
           <td class="numeric">18</td>
           <td>PT Sans</td>
-          <td class="numeric">1%</td>
-          <td class="numeric">1%</td>
+          <td class="numeric">1&nbsp;%</td>
+          <td class="numeric">1&nbsp;%</td>
         </tr>
         <tr>
           <td class="numeric">19</td>
           <td>Playfair Display</td>
-          <td class="numeric">1%</td>
-          <td class="numeric">1%</td>
+          <td class="numeric">1&nbsp;%</td>
+          <td class="numeric">1&nbsp;%</td>
         </tr>
         <tr>
           <td class="numeric">20</td>
           <td>Noto Sans</td>
-          <td class="numeric">1%</td>
-          <td class="numeric">1%</td>
+          <td class="numeric">1&nbsp;%</td>
+          <td class="numeric">1&nbsp;%</td>
         </tr>
       </tbody>
     </table>
@@ -360,7 +360,7 @@ Il n'est pas surprenant ici que les principales entrées semblent correspondre d
 {{ figure_markup(
   image="fig7.png",
   caption="Popularité des types MIME de polices web.",
-  description="Graphique à barres indiquant la popularité des types de police MIME pour le web. WOFF2 est utilisé pour 74% des polices, suivi de WOFF avec 13%, octet-stream à 6% , TTF pour 3% , plain 2% , HTML 1% , SFNT 1% , et moins de 1% pour tous les autres types. Les ordinateurs de bureau et les téléphones mobiles ont des distributions similaires.",
+  description="Graphique à barres indiquant la popularité des types de police MIME pour le web. WOFF2 est utilisé pour 74&nbsp;% des polices, suivi de WOFF avec 13&nbsp;%, octet-stream à 6&nbsp;% , TTF pour 3&nbsp;% , plain 2&nbsp;% , HTML 1&nbsp;% , SFNT 1&nbsp;% , et moins de 1&nbsp;% pour tous les autres types. Les ordinateurs de bureau et les téléphones mobiles ont des distributions similaires.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=998584594&format=interactive"
   )
 }}
@@ -375,7 +375,7 @@ Creusons un peu plus loin et regardons les valeurs de `format()` utilisées dans
   image="fig8.png",
   alt="Popularité des formats de police dans les déclarations @font-face.",
   caption="Popularité des formats de police dans les déclarations <code>@font-face</code>.",
-  description="Diagramme à barres indiquant la popularité des types de police MIME pour le web. WOFF2 est utilisé pour 74% des polices, suivi de WOFF avec 13%, octet-stream à 6% , TTF pour 3% , plain 2% , HTML 1% , SFNT 1% , et moins de 1% pour tous les autres types. Les ordinateurs de bureau et les téléphones mobiles ont des distributions similaires.",
+  description="Diagramme à barres indiquant la popularité des types de police MIME pour le web. WOFF2 est utilisé pour 74&nbsp;% des polices, suivi de WOFF avec 13&nbsp;%, octet-stream à 6&nbsp;% , TTF pour 3&nbsp;% , plain 2&nbsp;% , HTML 1&nbsp;% , SFNT 1&nbsp;% , et moins de 1&nbsp;% pour tous les autres types. Les ordinateurs de bureau et les téléphones mobiles ont des distributions similaires.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=700778025&format=interactive"
   )
 }}
@@ -400,122 +400,122 @@ Le point de données SVG ici me fait aussi me demander avec quel type MIME vous 
       <tr>
         <td class="numeric">1</td>
         <td>woff2</td>
-        <td class="numeric">84.0%</td>
-        <td class="numeric">81.9%</td>
+        <td class="numeric">84,0&nbsp;%</td>
+        <td class="numeric">81,9&nbsp;%</td>
       </tr>
       <tr>
         <td class="numeric">2</td>
         <td>svg, truetype, woff</td>
-        <td class="numeric">4.3%</td>
-        <td class="numeric">4.0%</td>
+        <td class="numeric">4,3&nbsp;%</td>
+        <td class="numeric">4,0&nbsp;%</td>
       </tr>
       <tr>
         <td class="numeric">3</td>
         <td>svg, truetype, woff, woff2</td>
-        <td class="numeric">3.5%</td>
-        <td class="numeric">3.2%</td>
+        <td class="numeric">3,5&nbsp;%</td>
+        <td class="numeric">3,2&nbsp;%</td>
       </tr>
       <tr>
         <td class="numeric">4</td>
         <td>eot, svg, truetype, woff</td>
-        <td class="numeric">1.3%</td>
-        <td class="numeric">2.9%</td>
+        <td class="numeric">1,3&nbsp;%</td>
+        <td class="numeric">2,9&nbsp;%</td>
       </tr>
       <tr>
         <td class="numeric">5</td>
         <td>woff, woff2</td>
-        <td class="numeric">1.8%</td>
-        <td class="numeric">1.8%</td>
+        <td class="numeric">1,8&nbsp;%</td>
+        <td class="numeric">1,8&nbsp;%</td>
       </tr>
       <tr>
         <td class="numeric">6</td>
         <td>eot, svg, truetype, woff, woff2</td>
-        <td class="numeric">1.2%</td>
-        <td class="numeric">2.1%</td>
+        <td class="numeric">1,2&nbsp;%</td>
+        <td class="numeric">2,1&nbsp;%</td>
       </tr>
       <tr>
         <td class="numeric">7</td>
         <td>truetype, woff</td>
-        <td class="numeric">0.9%</td>
-        <td class="numeric">1.1%</td>
+        <td class="numeric">0,9&nbsp;%</td>
+        <td class="numeric">1,1&nbsp;%</td>
       </tr>
       <tr>
         <td class="numeric">8</td>
         <td>woff</td>
-        <td class="numeric">0.7%</td>
-        <td class="numeric">0.8%</td>
+        <td class="numeric">0,7&nbsp;%</td>
+        <td class="numeric">0,8&nbsp;%</td>
       </tr>
       <tr>
         <td class="numeric">9</td>
         <td>truetype</td>
-        <td class="numeric">0.6%</td>
-        <td class="numeric">0.7%</td>
+        <td class="numeric">0,6&nbsp;%</td>
+        <td class="numeric">0,7&nbsp;%</td>
       </tr>
       <tr>
         <td class="numeric">10</td>
         <td>truetype, woff, woff2</td>
-        <td class="numeric">0.6%</td>
-        <td class="numeric">0.6%</td>
+        <td class="numeric">0,6&nbsp;%</td>
+        <td class="numeric">0,6&nbsp;%</td>
       </tr>
       <tr>
         <td class="numeric">11</td>
         <td>opentype, woff, woff2</td>
-        <td class="numeric">0.3%</td>
-        <td class="numeric">0.2%</td>
+        <td class="numeric">0,3&nbsp;%</td>
+        <td class="numeric">0,2&nbsp;%</td>
       </tr>
       <tr>
         <td class="numeric">12</td>
         <td>svg</td>
-        <td class="numeric">0.2%</td>
-        <td class="numeric">0.2%</td>
+        <td class="numeric">0,2&nbsp;%</td>
+        <td class="numeric">0,2&nbsp;%</td>
       </tr>
       <tr>
         <td class="numeric">13</td>
         <td>eot, truetype, woff</td>
-        <td class="numeric">0.1%</td>
-        <td class="numeric">0.2%</td>
+        <td class="numeric">0,1&nbsp;%</td>
+        <td class="numeric">0,2&nbsp;%</td>
       </tr>
       <tr>
         <td class="numeric">14</td>
         <td>opentype, woff</td>
-        <td class="numeric">0.1%</td>
-        <td class="numeric">0.1%</td>
+        <td class="numeric">0,1&nbsp;%</td>
+        <td class="numeric">0,1&nbsp;%</td>
       </tr>
       <tr>
         <td class="numeric">15</td>
         <td>opentype</td>
-        <td class="numeric">0.1%</td>
-        <td class="numeric">0.1%</td>
+        <td class="numeric">0,1&nbsp;%</td>
+        <td class="numeric">0,1&nbsp;%</td>
       </tr>
       <tr>
         <td class="numeric">16</td>
         <td>eot</td>
-        <td class="numeric">0.1%</td>
-        <td class="numeric">0.1%</td>
+        <td class="numeric">0,1&nbsp;%</td>
+        <td class="numeric">0,1&nbsp;%</td>
       </tr>
       <tr>
         <td class="numeric">17</td>
         <td>opentype, svg, truetype, woff</td>
-        <td class="numeric">0.1%</td>
-        <td class="numeric">0.0%</td>
+        <td class="numeric">0,1&nbsp;%</td>
+        <td class="numeric">0,0&nbsp;%</td>
       </tr>
       <tr>
         <td class="numeric">18</td>
         <td>opentype, truetype, woff, woff2</td>
-        <td class="numeric">0.0%</td>
-        <td class="numeric">0.0%</td>
+        <td class="numeric">0,0&nbsp;%</td>
+        <td class="numeric">0,0&nbsp;%</td>
       </tr>
       <tr>
         <td class="numeric">19</td>
         <td>eot, truetype, woff, woff2</td>
-        <td class="numeric">0.0%</td>
-        <td class="numeric">0.0%</td>
+        <td class="numeric">0,0&nbsp;%</td>
+        <td class="numeric">0,0&nbsp;%</td>
       </tr>
       <tr>
         <td class="numeric">20</td>
         <td>svg, woff</td>
-        <td class="numeric">0.0%</td>
-        <td class="numeric">0.0%</td>
+        <td class="numeric">0,0&nbsp;%</td>
+        <td class="numeric">0,0&nbsp;%</td>
       </tr>
     </tbody>
   </table>
@@ -534,7 +534,7 @@ La fonction <a hreflang="en" href="https://caniuse.com/#feat=mdn-css_at-rules_fo
 
 {{ figure_markup(
   caption="Pourcentage des pages mobiles qui utilisent le style <code>font-display</code>.",
-  content="26%",
+  content="26&nbsp;%",
   classes="big-number"
 )
 }}
@@ -549,7 +549,7 @@ Voyons voir quelles sont les valeurs les plus populaires de `font-display`&nbsp;
   image="fig11.png",
   alt="Valeurs de l'utilisation de font-display",
   caption="Valeurs de l'utilisation de <code>font-display</code>",
-  description="Diagramme à barres montrant l'utilisation du style d'affichage des polices. 2,6 % des pages mobiles définissent ce style comme `swap`, 1,5 % comme `auto`, 0,7 % comme `block`, 0,4 % comme `fallback`, 0,2 % comme optionnel et 0,1 % comme `swap` entre guillemets, ce qui n'est pas valide. La distribution des ordinateurs de bureau est similaire, sauf que l'utilisation de `swap` est inférieure de 0,4 point de pourcentage et que l'utilisation de `auto` est supérieure de 0,1 point de pourcentage.",
+  description="Diagramme à barres montrant l'utilisation du style d'affichage des polices. 2,6&nbsp;% des pages mobiles définissent ce style comme `swap`, 1,5&nbsp;% comme `auto`, 0,7&nbsp;% comme `block`, 0,4&nbsp;% comme `fallback`, 0,2&nbsp;% comme optionnel et 0,1&nbsp;% comme `swap` entre guillemets, ce qui n'est pas valide. La distribution des ordinateurs de bureau est similaire, sauf que l'utilisation de `swap` est inférieure de 0,4 point de pourcentage et que l'utilisation de `auto` est supérieure de 0,1 point de pourcentage.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1988783738&format=interactive"
   )
 }}
@@ -573,7 +573,7 @@ La page web médiane fait trois demandes de polices de caractères web. Au 90e p
 {{ figure_markup(
   image="fig13.png",
   caption="Histogram of web fonts requested per page.",
-  description="Histogramme montrant la répartition du nombre de demandes de polices par page. Le nombre de demandes de polices le plus répandu est 0 pour 22 % des pages pour ordinateur de bureau. La distribution tombe à 9 % des pages ayant une police, puis atteint un maximum de 10 % pour 2 à 4 polices avant de diminuer à mesure que le nombre de polices augmente. Les distributions pour les ordinateurs de bureau et les téléphones mobiles sont similaires, bien que la distribution pour les téléphones mobiles penche légèrement vers une réduction du nombre de polices par page.",
+  description="Histogramme montrant la répartition du nombre de demandes de polices par page. Le nombre de demandes de polices le plus répandu est 0 pour 22&nbsp;% des pages pour ordinateur de bureau. La distribution tombe à 9&nbsp;% des pages ayant une police, puis atteint un maximum de 10&nbsp;% pour 2 à 4 polices avant de diminuer à mesure que le nombre de polices augmente. Les distributions pour les ordinateurs de bureau et les téléphones mobiles sont similaires, bien que la distribution pour les téléphones mobiles penche légèrement vers une réduction du nombre de polices par page.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1755200484&format=interactive"
   )
 }}
@@ -601,7 +601,7 @@ Il est ironique qu'un plugin d'optimisation des performances puisse rendre vos p
 
 {{ figure_markup(
   caption="Pourcentage des pages mobiles qui déclarent une police web avec la propriété <code>unicode-range</code>.",
-  content="56%",
+  content="56&nbsp;%",
   classes="big-number"
 )
 }}
@@ -614,7 +614,7 @@ C'est une autre mesure qui, je pense, a été faussée par l'utilisation des Goo
 
 {{ figure_markup(
   caption="Pourcentage de pages mobile qui déclarent une police web avec la propriété <code>local()</code>.",
-  content="59%",
+  content="59&nbsp;%",
   classes="big-number"
 )
 }}
@@ -627,7 +627,7 @@ Il convient également de noter ici que des personnes plus intelligentes que moi
 
 {{ figure_markup(
   caption="Pourcentage des pages pour ordinateurs de bureau et pour mobile qui comportent un style avec la propriété <code>font-stretch</code>.",
-  content="7%",
+  content="7&nbsp;%",
   classes="big-number"
 )
 }}
@@ -635,7 +635,7 @@ Il convient également de noter ici que des personnes plus intelligentes que moi
 
 Historiquement, `font-stretch` a souffert d'un mauvais support des navigateurs et n'était pas une propriété `@font-face` bien connue. En savoir plus sur [`font-stretch` sur MDN](https://developer.mozilla.org/fr/docs/Web/CSS/font-stretch). Mais <a hreflang="en" href="https://caniuse.com/#feat=css-font-stretch">le support des navigateurs</a> s'est élargi.
 
-Il a été suggéré que l'utilisation de polices condensées sur des fenêtres d'affichage plus petites permet d'afficher plus de texte, mais cette approche n'est pas couramment utilisée. Cela dit, le fait que cette propriété soit utilisée un demi-point de pourcentage de plus sur les ordinateurs de bureau que sur les téléphones mobiles est inattendu, et 7 % semble beaucoup plus élevé que ce que j'aurais prédit.
+Il a été suggéré que l'utilisation de polices condensées sur des fenêtres d'affichage plus petites permet d'afficher plus de texte, mais cette approche n'est pas couramment utilisée. Cela dit, le fait que cette propriété soit utilisée un demi-point de pourcentage de plus sur les ordinateurs de bureau que sur les téléphones mobiles est inattendu, et 7&nbsp;% semble beaucoup plus élevé que ce que j'aurais prédit.
 
 ## Les polices variables sont l'avenir
 
@@ -643,17 +643,17 @@ Il a été suggéré que l'utilisation de polices condensées sur des fenêtres 
 
 {{ figure_markup(
   caption="Pourcentage des pages qui incluent une police variable.",
-  content="1.8%",
+  content="1,8&nbsp;%",
   classes="big-number"
 )
 }}
 
-Avec 1,8 %, c'est plus que prévu, encore que je sois enthousiaste de voir ce décollage. <a hreflang="en" href="https://developers.google.com/fonts/docs/css2">Google Fonts v2</a> inclut un certain support pour les polices variables.
+Avec 1,8&nbsp;%, c'est plus que prévu, encore que je sois enthousiaste de voir ce décollage. <a hreflang="en" href="https://developers.google.com/fonts/docs/css2">Google Fonts v2</a> inclut un certain support pour les polices variables.
 
 {{ figure_markup(
   image="fig19.png",
   caption="Usage of `font-variation-settings` axes.",
-  description="Graphique à barres montrant l'utilisation de la propriété font-variation-settings. 42% des propriétés des pages pour ordinateur de bureau sont réglées sur la valeur `opsz`, 32% sur `wght`, 16% sur `wdth`, 2% ou moins sur `roun`, `crsb`, `slnt`, `inln`, et plus. Les différences les plus notables entre les pages pour ordinateur de bureau et les pages mobiles sont l'utilisation à 26 % de `opsz`, 38 % de `wght` et 23 % de `wdth`.",
+  description="Graphique à barres montrant l'utilisation de la propriété font-variation-settings. 42&nbsp;% des propriétés des pages pour ordinateur de bureau sont réglées sur la valeur `opsz`, 32&nbsp;% sur `wght`, 16&nbsp;% sur `wdth`, 2&nbsp;% ou moins sur `roun`, `crsb`, `slnt`, `inln`, et plus. Les différences les plus notables entre les pages pour ordinateur de bureau et les pages mobiles sont l'utilisation à 26&nbsp;% de `opsz`, 38&nbsp;% de `wght` et 23&nbsp;% de `wdth`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=699343351&format=interactive"
   )
 }}
