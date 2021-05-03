@@ -2,9 +2,9 @@ name: Progress Tracker
 
 env:
   # Update these environment variables every year
-  FILTER_LABEL: '2020 chapter'
-  TRACKER_ISSUE_NUMBER: 989
-  SQL_BASE_DIR: 'https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2020/'
+  FILTER_LABEL: '2021 chapter'
+  TRACKER_ISSUE_NUMBER: 2179
+  SQL_BASE_DIR: 'https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2021/'
 
 on:
   workflow_dispatch:
@@ -33,15 +33,17 @@ jobs:
             }
 
             const linkMap = {
-              Draft: /^\[~draft-doc\]:\s*(?<link>\S+)/,
-              SQL: /^\[~sql-dir\]:\s*(?<link>\S+)/,
-              Results: /^\[~results-sheet\]:\s*(?<link>\S+)/
+              Draft: /^\[~google-doc\]:\s*(?<link>\S+)/,
+              SQL: /^\[~sql-files\]:\s*(?<link>\S+)/,
+              Results: /^\[~google-sheets\]:\s*(?<link>\S+)/
             }
 
             const teamMembers = {
+              Leads: {},
               Authors: {},
               Reviewers: {},
               Analysts: {},
+              Editors: {},
               All: {}
             }
 
@@ -75,7 +77,7 @@ jobs:
             const calcStats = nums => {
               const size = nums.length
               if (!size) {
-                return [0, 0, 0, 0, 0]
+                return [0, 0, 0, 0, 0, 0, 0]
               }
               nums.sort((a, b) => a - b)
               const sum = nums.reduce((a,b) => a + b, 0)
@@ -129,12 +131,14 @@ jobs:
             const parseTeam = text => {
               const team = {}
               text.split('\n').forEach(line => {
-                if (/\|\s*\[Sheet\]\[~results-sheet\]\s*\|/.test(line)) {
-                  const [, authors, reviewers, analysts] = line.split('|')
+                if (/\|\s*\@[^|]*\s*\|/.test(line)) {
+                  const [, leads, authors, reviewers, analysts, editors] = line.split('|')
+                  team.Leads = parseUserNames(leads)
                   team.Authors = parseUserNames(authors)
                   team.Reviewers = parseUserNames(reviewers)
                   team.Analysts = parseUserNames(analysts)
-                  team.All = [...new Set([...team.Authors, ...team.Reviewers, ...team.Analysts])]
+                  team.Editors = parseUserNames(editors)
+                  team.All = [...new Set([...team.Leads,...team.Authors, ...team.Reviewers, ...team.Analysts, ...team.Editors])]
                 }
               })
               return team
@@ -145,7 +149,7 @@ jobs:
             }
 
             const formatTeam = team => {
-              return Object.entries(team).map(([k, v]) => `<span title="${k}: ${v.length ? v.join(', ') : 'TBD'}">${v.length}</span>`).join('+').replace(/\+([^+]*)$/, '≥$1')
+              return Object.entries(team).map(([k, v]) => `<span title="${k}: ${v.length ? v.join(', ') : 'TBD'}">${v.length}</span>`).join('+').replace(/\+([^+]*)$/, ' ($1)').replace(/\+/g,' ')
             }
 
             const formatRow = chapter => {
@@ -173,7 +177,7 @@ jobs:
               chapters.push({
                 id: issue.number,
                 url: issue.html_url,
-                title: heading.title || issue.title,
+                title: heading.title || issue.title.replace(/\b20[0-9][0-9]\b/,'').replace(/  /,' ').trim(),
                 part: heading.part,
                 number: heading.number,
                 links: parseLinks(issue.body),
@@ -203,8 +207,8 @@ jobs:
             })
 
             const report = [
-              `Chapters | <span title="${Object.entries(icons).map(([k, v]) => `${v} (${k})`).join(', ')}">Links</span> | <span title="${Object.keys(teamMembers).join('+').replace(/\+([^+]*)$/, '≥$1')}">Team</span> | ${trackedTasks.map((v, i) => `<span title="${v}">${i + 1}<span>`).join(' | ')}`,
-              `:--------|:------|:----:${'|:-:'.repeat(totalTrackedTasks)}`
+              `Chapters | <span title="${Object.entries(icons).map(([k, v]) => `${v} (${k})`).join(', ')}">Links</span> | <span title="${Object.keys(teamMembers).join('+').replace(/\+([^+]*)$/, ' ($1)').replace(/\+/g,' ')}">Team</span> | ${trackedTasks.map((v, i) => `<span title="${v}">${i}<span>`).join(' | ')}`,
+              `:--------|:------|:----${'|:-:'.repeat(totalTrackedTasks)}`
             ].concat(chapters.map(formatRow)).join('\n')
 
             const stats = [
