@@ -152,7 +152,6 @@ Webフォントを統合する際のパフォーマンス上の最大の懸念�
 
 {{ figure_markup(
   image="fonts-font-display-performance-desktop.png",
-  alt="デスクトップでのフォント表示のパフォーマンスが向上しました。",
   caption="デスクトップでの`font-display`のパフォーマンスを改善しました。",
   description="フォント表示の設定を変えたときの、デスクトップの最初のコンテンツ描画（FCP）と最後のコンテンツ描画（LCP）の中央値をミリ秒単位で表した棒グラフです。`none`はFCPの中央値が2,286ミリ秒、LCPの中央値が4,028ミリ秒、`optional`はそれぞれ1,766ミリ秒、3,055ミリ秒、`swap`は2,223ミリ秒、4,176ミリ秒、`fallback`は2,397ミリ秒、4,106ミリ秒、`block`は2,454ミリ秒、4,696ミリ秒、`auto`は2,605ミリ秒、4,883ミリ秒です。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1618299142&format=interactive",
@@ -163,7 +162,6 @@ Webフォントを統合する際のパフォーマンス上の最大の懸念�
 
 {{ figure_markup(
   image="fonts-font-display-performance-mobile.png",
-  alt="モバイルでのフォント・ディスプレイのパフォーマンスを向上させます。",
   caption="モバイルでの`font-display`のパフォーマンスを向上させました。",
   description="フォント表示の設定を変えたときの、モバイルの最初のコンテンツ描画（FCP）と最後のコンテンツ描画（LCP）の中央値をミリ秒単位で表した棒グラフです。`none`はFCPの中央値が5,279ms、LCPの中央値が8,381ms、`optional`はそれぞれ4,733msと6,598ms、`swap `は5,268msと8,748ms、`fallback`は5,478msと8,706ms、`block`は5,739msと9,625ms、`auto`は6,181msと10,103msとなっています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=2135700957&format=interactive",

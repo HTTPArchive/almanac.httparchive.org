@@ -268,7 +268,6 @@ _CDNに関する注意事項。ここでのCDNカテゴリには、パブリッ�
 {{ figure_markup(
   image="requests-with-tao.png",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=1886505312&format=interactive",
-  alt="Timing-Allow-Originヘッダを持つリクエスト。",
   caption="`timing-allow-origin`ヘッダを持つリクエスト。",
   description="サードパーティの応答の35%未満がtiming-allow-originヘッダーで提供されています",
   width=600,

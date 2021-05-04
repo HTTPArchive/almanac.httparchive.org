@@ -76,7 +76,6 @@ Our analysis is sourced from the HTTP Archive, which tests approximately 5 milli
 
 {{ figure_markup(
   image="ch20_fig2_http2_usage_by_request.png",
-  alt="HTTP/2 usage by request.",
   caption='HTTP/2 usage by request. (Source: <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#h2">HTTP Archive</a>)',
   description="Timeseries chart of HTTP/2 usage showing adoption at 55% for both desktop and mobile as of July 2019. The trend is growing steadily at about 15 points per year.",
   width=600,
@@ -455,7 +454,6 @@ One impact that can be measured is in the changing use of HTTP now that we are i
 
 {{ figure_markup(
   image="ch20_fig9_num_tcp_connections_trend_over_years.png",
-  alt="TCP connections per page.",
   caption='TCP connections per page. (Source: <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#tcp">HTTP Archive</a>)',
   description="Timeseries chart of the number of TCP connections per page, with the median desktop page having 14 connections and the median mobile page having 16 connections as of July 2019.",
   width=600,
@@ -467,7 +465,6 @@ HTTP Archive measures the number of TCP connections per page, and that is droppi
 
 {{ figure_markup(
   image="ch20_fig10_total_requests_per_page_trend_over_years.png",
-  alt="Total requests per page.",
   caption='Total requests per page. (Source: <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#reqTotal">HTTP Archive</a>)',
   description="Timeseries chart of the number of requests per page, with the median desktop page having 74 requests and the median mobile page having 69 requests as of July 2019. The trend is relatively flat.",
   width=600,

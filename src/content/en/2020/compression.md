@@ -241,7 +241,6 @@ You can use [Firefox Developer Tools](https://developer.mozilla.org/en-US/docs/T
 
 {{ figure_markup(
   image="content-encoding.png",
-  alt="How to check content encoding in DevTools",
   caption='Use DevTools to check if content encoding is used on your site',
   description="Image showing how to use DevTools to see if content encoding is used.",
   width=591,

@@ -60,7 +60,6 @@ Rick Byersが1年前にこの分布を[ツィート](https://twitter.com/RickBye
 
 {{ figure_markup(
   image="page-loads-across-origins-ranked-by-popularity.png",
-  alt="オリジン間のページロードを人気順に並べたもの（Chromeの場合）",
   caption='オリジン間のページロードを人気順に並べたもの（Chromeの場合）',
   description="モバイルとデスクトップの両方で、少数のオリジンがトラフィックの大部分を占めていることを示すグラフ。上位30のオリジンがモバイルの総トラフィックの25％を占める。上位200のオリジンがモバイルの総トラフィックの33％を占める。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=949521302&format=interactive",
@@ -91,7 +90,6 @@ CrUXデータセットを利用して、モバイルデバイスとデスクト�
 
 {{ figure_markup(
   image="mobile-traffic-distribution.png",
-  alt="モバイルトラフィックの分布",
   caption='モバイルとその他のトラフィックの分布',
   description="ほとんどのウェブサイトのトラフィックの大半がモバイルであることを示すグラフ。分析したウェブサイトの50％が、トラフィックの77.61％以上をモバイルから受け取っています（2019年の79.93％からわずかに減少しています）。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=1290224874&format=interactive",
@@ -229,7 +227,6 @@ CrUXのデータによると、モバイルサイトの60％、デスクトッ�
 
 {{ figure_markup(
   image="aggregate-lcp-performance-by-device.png",
-  alt="デバイス別のLCPパフォーマンスを集計",
   caption='デバイス別のLCPパフォーマンスを集計',
   description="モバイルサイトの60％、デスクトップサイトの54％が良いCLSを持っていることを示すグラフです。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=277999653&format=interactive",
@@ -290,7 +287,6 @@ Lighthouseでは、<a hreflang="en" href="https://web.dev/color-contrast/">色�
 
 {{ figure_markup(
   image="sites-with-sufficient-color-contrast.png",
-  alt="十分な色のコントラストがあるサイト",
   caption='十分な色のコントラストがあるサイト',
   description="78.94％と過半数のWebページで色のコントラストが不足していることを示すグラフです。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=524145395&format=interactive",
@@ -306,7 +302,6 @@ Lighthouseでは、<a hreflang="en" href="https://web.dev/color-contrast/">色�
 
 {{ figure_markup(
   image="sites-with-properly-sized-tap-targets.png",
-  alt="適切なサイズのタップターゲットがあるサイト",
   caption='適切なサイズのタップターゲットがあるサイト',
   description="63.69％と過半数のウェブページで、タップターゲットのサイズが、適切でないことがわかりました。昨年は65.57％のWebページが不適切なサイズのタップターゲットを持っていましたが、今年はわずかに改善されています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=1829334180&format=interactive",
@@ -335,7 +330,6 @@ Lighthouseでは、<a hreflang="en" href="https://web.dev/color-contrast/">色�
 
 {{ figure_markup(
   image="ecommerce-sites-using-a-search-input.png",
-  alt="検索入力を利用したECサイト",
   caption='検索入力を利用したECサイト',
   description="ECサイトのランディングページの過半数である60.10％が、検索入力の存在を見落としているというグラフです。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=992212527&format=interactive",
@@ -368,7 +362,6 @@ Comscore Media Matrix社によると、モバイル機器からのトラフィ�
 
 {{ figure_markup(
   image="sites-with-inputs-using-the-following-input-types.png",
-  alt="以下の入力タイプを使用するサイト（入力あり）。",
   caption='以下の入力タイプを使用するサイト（入力あり）。',
   description="モバイルでもっともよく使われている入力タイプを示したグラフ。 text: 54.025％; hidden: 37.319％; submit: 29.611％; search: 17.100％; email: 15.164％; checkbox: 14.305％; password: 10.204％; button: 3.442％; radio: 3.391％; image: 2.585％; tel: 2.458％; number: 0.892％; file: 0.668％; range: 0.270％; reset: 0.132％; date: 0.122％; url: 0.104％; input: 0.063％; phone: 0.061％; name: 0.049％; No input type: 0.029％; mail: 0.017％; textbox: 0.016％; username: 0.014％; select: 0.013％; textfield: 0.013％; time: 0.010％; textarea: 0.005％です。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNyVui4x9yanLKpp8Zz92IJ9c2NKCN_2g7SH-vRoelqT3nABB_uTQnXXScCUo6D-Uis1_wDzwcdGzx/pubchart?oid=1866868829&format=interactive",

@@ -163,7 +163,6 @@ O que é que os desenvolvedores estão tão interessados em sobrescrever? Fizemo
 
 {{ figure_markup(
   image="important-top-properties.png",
-  alt="O topo de propriedades com !important pela porcentagem de páginas.",
   caption="O topo de propriedades com `!important` pela porcentagem de páginas.",
   description="Gráfico de barras mostrando as 10 propriedades que mais usam `!important`. Páginas para celular e desktop tem um uso similar. A propriedade `display` é a mais usada com `!important`, em 79% das páginas para celular. Em ordem decrescente, as propriedades subsequentes em 71-58% das páginas para celular são: `color`, `width`, `height`, `background`, `padding`, `margin`, `border`, `background-color`, e `float`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=257343566&format=interactive",
@@ -240,7 +239,6 @@ Há sempre muita inércia quando mudamos algo na plataforma web depois que ela e
 
 {{ figure_markup(
   image="selector-pseudo-classes.png",
-  alt="Uso da sintaxe legada :pseudo-class como ::pseudo-elements pela porcentagem das páginas para celular.",
   caption="Uso da sintaxe legada `:pseudo-class` como `::pseudo-elements` pela porcentagem das páginas para celular.",
   description="Gráfico de barras mostrando a porcentagem de páginas que usam a sintaxe de pseudo-classe (prefixada por um cólon) versus a sintaxe de pseudo-elementos (dois cólons) para pseudo-elementos. O pseudo-elemento `before` é usado com a sintaxe pseud-classe em 71% páginas para celular e sintaxe pseudo-elemento em 33% das páginas para celular. O pseudo-elemento `after` é usado com sintaxe de classe e elemento em 68% e 30% das páginas para celular, `first-letter` em 7% e 1% das páginas para celular, e `first-line` em 1% e 0% das páginas para celular.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=227968207&format=interactive",
@@ -481,7 +479,6 @@ Parece que a maior parte desse uso é para subtrair pixels das porcentagens, com
 
 {{ figure_markup(
   image="calc-units.png",
-  alt="Popularidade relativa de unidades que usam calc() pela porcentagem das ocorrências.",
   caption="Popularidade relativa de unidades que usam `calc()` pela porcentagem das ocorrências.",
   description="Gráfico de barras mostrando a popularidade relativa de propriedades que usam a função calc pela porcentagem de ocorrências. Desktop e celular apresentam resultados semelhantes. A função calc é usada com mais frequência na propriedade `width`, 59% das ocorrências calc em páginas para celular. É usado na propriedade `left` 11% do tempo,` top` 5%, `max-width` 4%,` height` 4% e as propriedades restantes estão diminuindo em 2% e 1%: `min-height`, `margin-left`, `flex-basis`, `margin-right`, `max-height` (1%), `right`, `padding-bottom`, `padding-left`, `font-size`, e `padding-right`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=477094785&format=interactive",
@@ -491,7 +488,6 @@ Parece que a maior parte desse uso é para subtrair pixels das porcentagens, com
 
 {{ figure_markup(
   image="calc-operators.png",
-  alt="Popularidade relativa de operadores que usam calc() pela porcentagem das ocorrências.",
   caption="Popularidade relativa de operadores que usam `calc()` pela porcentagem das ocorrências.",
   description="Gráfico de barras mostrando a popularidade relativa de operadores que usam a função calc pelo percentual de ocorrências. Desktop e celular apresentam resultados semelhantes. A função calc é usada com mais frequência com o operador de subtração (sinal de menos), 64% dos casos de calc em páginas para celular, seguido por divisão (barra) 20%, adição (sinal de mais) 11%, e multiplicação (asterisco) 5%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1909242522&format=interactive",
@@ -503,7 +499,6 @@ A maioria dos cálculos são muito simples, com 99,5% dos cálculos envolvendo a
 
 {{ figure_markup(
   image="calc-complexity-units.png",
-  alt="Distribuição do número de unidades por ocorrência de calc().",
   caption="Distribuição do número de unidades por ocorrência de `calc()`.",
   description="Gráfico de barras mostrando a distribuição do número de unidades por ocorrência da função calc. Desktop e celular apresentam resultados semelhantes. Calc é usado com uma unidade 11% do tempo em páginas para celular, duas vezes 89% do tempo, e 3 ou mais vezes aproximadamente 0% do tempo.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=695698141&format=interactive",
@@ -569,7 +564,6 @@ E se você está procurando nomes de cores fantásticos, por que não definir os
 {{ figure_markup(
   link="https://codepen.io/leaverou/pen/GRjjJwJ",
   image="color-keywords-app.png",
-  alt="Explore interativamente os dados de uso de palavras-chave de cores com a aplicação.",
   caption='Explore interativamente os dados de uso de palavras-chave de cores com <a hreflang="en" href="https://codepen.io/leaverou/pen/GRjjJwJ"> esta aplicação interativa </a>!',
   description="Captura de tela de uma aplicação que permite selecionar cores e ver seu uso relativo em um gráfico de pizza. Os dados para as cores são mostrados na próxima tabela.",
   width=600,
@@ -997,7 +991,6 @@ O gradiente com mais paradas de cor é <a hreflang="en" href="https://dabblet.co
   classes="height-16vw-122px",
   caption="O gradiente com mais paradas de cor, 646.",
   description="Uma captura de tela do gradiente com mais interrupções de cor, que é uma série de listras multicoloridas intrincadas de tons variados.",
-  alt="Uma captura de tela do gradiente com mais interrupções de cor, que é uma série de listras multicoloridas intrincadas de tons variados.",
   width=600,
   height=122
 ) }}
@@ -1078,7 +1071,6 @@ A especificação de [layout multi-coluna](https://developer.mozilla.org/en-US/d
 
 {{ figure_markup(
   image="box-sizing.png",
-  alt="Distribuição do número de declarações border-box por página.",
   caption="Distribuição do número de declarações `border-box` por página.",
   description="Gráfico de barras mostrando a distribuição do número de declarações `border-box` por página para desktop e celular. A distribuição no celular lidera a de desktop em 0 a 11 declarações por página, crescendo nos percentis mais altos. Os percentis 10, 25, 50, 75 e 90 da distribuição no celular são: 0, 4, 17, 46 e 96 declarações 'border-box' por página.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1626960751&format=interactive",
@@ -1202,7 +1194,6 @@ O breakpoint mais comum em uso em dispositivos móveis e desktop é o `min-width
 
 {{ figure_markup(
   image="breakpoints.png",
-  alt="Os breakpoints para min-width e max-width mais populares pela porcentagem de páginas.",
   caption="Os breakpoints para `min-width` e `max-width` mais populares pela porcentagem de páginas.",
   description="Os breakpoints para min-width e max-width mais populares pela porcentagem de páginas. `480px` é usado como min-width em 21% das páginas para celular e como `max-width` em 35%. `600px` em 27% e 37% para min e max widths respectivamente, `767px` e 8% e 50%, `768px` e 54% e 35%, `800px` em 8% e 24%, `991px` em 3% e 30%, `992px` em 37% e 11%, `1024px` em 13% e 23%, `1199px` em apenas 31% como `max-width`, e `1200px` em 40% e 19%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=502128948&format=interactive",
@@ -1484,7 +1475,6 @@ Um número pequeno, mas notável de páginas (cerca de 3.000 ou 0,05%) estava es
 
 {{ figure_markup(
   image="supports-criteria.png",
-  alt="Popularidade relativa dos recursos consultados com @supports pela porcentagem de ocorrências.",
   caption="Popularidade relativa dos recursos consultados com `@supports` pela porcentagem de ocorrências.",
   description="Gráfico de barras da popularidade relativa dos recursos consultados com `@supports` pela porcentagem de ocorrências. O recurso mais popular consultado é `sticky` em 49% das ocorrências em páginas para dispositivos móveis, seguido por `ime-align` em 24%, `mask-image` em 12%, `overflow-scrolling` em 5%, `grid` a 2%, propriedades personalizadas, `transform-style`, `max()` e `object-fit` todos em 1% e `appearance` em aproximadamente 0%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1901533222&format=interactive",

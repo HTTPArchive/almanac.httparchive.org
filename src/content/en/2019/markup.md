@@ -180,7 +180,6 @@ In order to discuss numbers about the use of elements (standard, deprecated or c
 
 {{ figure_markup(
   image="fig7_full.png",
-  alt="Top 150 elements.",
   caption='Top 150 elements (<a hreflang="en" href="/static/images/2019/markup/fig7_full.png">full detail</a>).',
   description="Bar chart showing a decreasing used of elements in descending order: html, head, body, title at above 99% usage, meta, a, div above 98% usage, link, script, img, span above 90% usage, ul, li , p, style, input, br, form above 70% usage, h2, h1, iframe, h3, button, footer, header, nav above 50% usage and other less well-known tags trailing down from below 50% to almost 0% usage.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1694360298&format=interactive",
