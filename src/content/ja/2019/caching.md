@@ -597,7 +597,6 @@ Varyヘッダーは、1つ以上の要求ヘッダー値の値をキャッシュ
 
 {{ figure_markup(
   image="ch16_fig14_service_worker_adoption.jpg",
-  alt='Service Workerが制御するページの時系列。',
   caption='Service Workerが制御するページの時系列。 (引用: <a hreflang="en" href="https://httparchive.org/reports/progressive-web-apps#swControlledPages">HTTP Archive</a>)',
   description="2016年10月から2019年7月までのService Workerが制御するサイトの使用状況を示す時系列チャート。モバイルとデスクトップの両方で使用量は年々着実に増加していますが、依然として両方で0.6％未満です。",
   width=600,

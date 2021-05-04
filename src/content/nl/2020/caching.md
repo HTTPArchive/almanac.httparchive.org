@@ -173,8 +173,7 @@ RFC 7234 zegt dat als er geen caching-headers aanwezig zijn in een reactie, de b
 
 {{ figure_markup(
   image="cache-control-and-max-age-and-expires.png",
-  alt="Gebruik van Cache-Control- en Expires-headers.",
-  caption="Gebruik van `Cache-Control`-en `Expires` headers",
+  caption="Gebruik van `Cache-Control` en `Expires` headers",
   description="Een staafdiagram dat het gebruik van `Cache-Control`- en `Expires`-headers laat zien. Op desktop wordt 73,6% van de reacties weergegeven met een `Cache-Control`-header. 55,5% wordt bediend met een `Expires`-header, 54,8% gebruikt zowel de `Cache-Control`- als de `Expires`-header en 25,6% heeft geen van beide headers opgenomen. Op mobiele apparaten wordt 73,5% van de reacties weergegeven met een `Cache-Control`-header, 56,2% wordt geserveerd met een `Expires`-header, 55,4% gebruikt zowel de `Cache-Control`- als de `Expires`-header en 25,6% bevat geen een van beide headers.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=188448640&format=interactive",
   sheets_gid="865734542",
@@ -188,7 +187,6 @@ Deze statistieken zijn interessant in vergelijking met de gegevens van vorig jaa
 
 {{ figure_markup(
   image="cache-control-and-max-age-and-expires-2019.png",
-  alt="Gebruik van Cache-Control en Expires-headers in 2019.",
   caption="Gebruik van `Cache-Control` en `Expires`-headers in 2019.",
   description="Een staafdiagram dat het gebruik van `Cache-Control`- en `Expires`-headers laat zien. Op desktop wordt 72,3% van de reacties weergegeven met een `Cache-Control`-header. 56,3% wordt bediend met een `Expires`-header, 55,2% gebruikt zowel de `Cache-Control`- als de `Expires`-header en 26,7% heeft geen van beide headers opgenomen. Op mobiele apparaten wordt 71,7% van de reacties weergegeven met een `Cache-Control`-header, 56,4% wordt geserveerd met een `Expires`-header, 55,5% gebruikt zowel de `Cache-Control`- als de `Expires`-header en 27,4% bevat geen een van beide headers.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=651240480&format=interactive",

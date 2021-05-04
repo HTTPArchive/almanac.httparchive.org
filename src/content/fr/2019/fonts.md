@@ -373,7 +373,6 @@ Creusons un peu plus loin et regardons les valeurs de `format()` utilisées dans
 
 {{ figure_markup(
   image="fig8.png",
-  alt="Popularité des formats de police dans les déclarations @font-face.",
   caption="Popularité des formats de police dans les déclarations <code>@font-face</code>.",
   description="Diagramme à barres indiquant la popularité des types de police MIME pour le web. WOFF2 est utilisé pour 74&nbsp;% des polices, suivi de WOFF avec 13&nbsp;%, octet-stream à 6&nbsp;% , TTF pour 3&nbsp;% , plain 2&nbsp;% , HTML 1&nbsp;% , SFNT 1&nbsp;% , et moins de 1&nbsp;% pour tous les autres types. Les ordinateurs de bureau et les téléphones mobiles ont des distributions similaires.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=700778025&format=interactive"
@@ -547,7 +546,6 @@ Voyons voir quelles sont les valeurs les plus populaires de `font-display`&nbsp;
 
 {{ figure_markup(
   image="fig11.png",
-  alt="Valeurs de l'utilisation de font-display",
   caption="Valeurs de l'utilisation de <code>font-display</code>",
   description="Diagramme à barres montrant l'utilisation du style d'affichage des polices. 2,6&nbsp;% des pages mobiles définissent ce style comme `swap`, 1,5&nbsp;% comme `auto`, 0,7&nbsp;% comme `block`, 0,4&nbsp;% comme `fallback`, 0,2&nbsp;% comme optionnel et 0,1&nbsp;% comme `swap` entre guillemets, ce qui n'est pas valide. La distribution des ordinateurs de bureau est similaire, sauf que l'utilisation de `swap` est inférieure de 0,4 point de pourcentage et que l'utilisation de `auto` est supérieure de 0,1 point de pourcentage.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1988783738&format=interactive"
