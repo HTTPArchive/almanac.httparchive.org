@@ -272,7 +272,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
                 {{ self.part() }} {{ chapter_config.part }} {{ self.chapter() }} {{ chapter_config.chapter_number }}
             </div>
             <h1 class="title title-lg">
-                {{ metadata.get('title') }}
+                {{ metadata.get('title')|safe }}
                 {% if metadata.get('unedited', false) %}
                 <span class="chapter-unedited">{{ self.unedited() }}</span>
                 {% endif %}

@@ -190,7 +190,7 @@ On the other end of the spectrum, the categories CDN, Content and Hosting all re
 
 ### Cacheability
 
-Some third-party responses should always be cached. Media such as images and videos served by a third-party, or JavaScript libraries are good candidates. On the other hand, tracking pixels and analytics beacons should never be cached. The results show that overall two-thirds of third-party requests are served with a valid caching header such as `cache-control`.
+Some third-party responses should always be cached. Media such as images and videos served by a third-party, or JavaScript libraries are good candidates. On the other hand, tracking pixels and analytics beacons should never be cached. The results show that overall two-thirds of third-party requests are served with a valid caching header such as `Cache-Control`.
 
 {{ figure_markup(
   image="requests-cached-by-content-type.png",

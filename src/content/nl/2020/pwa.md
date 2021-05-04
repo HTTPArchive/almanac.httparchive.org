@@ -21,13 +21,13 @@ featured_stat_label_3: Percentage mobiele PWA-sites dat importScripts gebruikt.
 
 ## Inleiding
 
-In 1990 werd de allereerste browser met de naam "WorldWideWeb" gelanceerd en sindsdien hebben het web en de browser zich ontwikkeld. Dat het web zichzelf ontwikkelt tot native applicatiegedrag, is een grote overwinning, vooral in dit tijdperk van mobiele dominantie. URL's en webbrowsers hebben gezorgd voor een alomtegenwoordige manier om informatie te verspreiden en daarom is een technologie die native app-mogelijkheden voor de browser biedt een game-wisselaar. Progressive Web Apps bieden zulke voordelen voor het web om te concurreren met andere applicaties.
+In 1990 werd de allereerste browser met de naam "WorldWideWeb" gelanceerd en sindsdien hebben het web en de browser zich ontwikkeld. Dat het web zichzelf ontwikkelt tot native applicatiegedrag, is een grote overwinning, vooral in dit tijdperk van mobiele dominantie. URL's en webbrowsers hebben gezorgd voor een alomtegenwoordige manier om informatie te verspreiden en daarom is een technologie die native app-mogelijkheden voor de browser biedt een game-wisselaar. Progressieve Web Apps bieden zulke voordelen voor het web om te concurreren met andere applicaties.
 
 Simpel gezegd, een webapplicatie die native-achtige applicatie-ervaring biedt, kan worden beschouwd als een PWA. Het is gebouwd met behulp van veelgebruikte webtechnologieën, waaronder HTML, CSS en JavaScript, en kan naadloos werken op verschillende apparaten en omgevingen in een browser die aan de standaarden voldoet.
 
 De crux van een progressieve webapp is de _service worker_, die kan worden gezien als een proxy die zich tussen de browser en de gebruiker bevindt. Een service worker geeft de ontwikkelaar volledige controle over het netwerk, in plaats van dat het netwerk de applicatie bestuurt.
 
-Zoals [het hoofdstuk van vorig jaar](../2019/pwa) al zei, begon het in december 2014 toen Chrome 40 voor het eerst het vlees implementeerde van wat nu bekend staat als Progressive Web Apps (PWA). Dit was een gezamenlijke inspanning van de instantie voor webstandaarden en de term PWA werd bedacht door <a hreflang="en" href="https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/">Frances Berriman en Alex Russell</a> in 2015.
+Zoals [het hoofdstuk van vorig jaar](../2019/pwa) al zei, begon het in december 2014 toen Chrome 40 voor het eerst het vlees implementeerde van wat nu bekend staat als Progressieve Web Apps (PWA). Dit was een gezamenlijke inspanning van de instantie voor webstandaarden en de term PWA werd bedacht door <a hreflang="en" href="https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/">Frances Berriman en Alex Russell</a> in 2015.
 
 In dit hoofdstuk van Web Almanac zullen we elk van de componenten bekijken die PWA maken tot wat het is, vanuit een datagestuurd perspectief.
 
@@ -160,7 +160,7 @@ Een <a hreflang="en" href="https://web.dev/maskable-icon-audit/">maskeerbaar pic
 
 Een service worker zorgt ervoor dat uw web-app betrouwbaar is in onvoorspelbare netwerkomstandigheden. 0,77% van de sites heeft een <a hreflang="en" href="https://web.dev/offline-start-url/">offline start-URL</a> zodat de app kan worden uitgevoerd, zelfs als deze niet met het netwerk is verbonden. Dit is een van de belangrijkste kenmerken van een PWA, aangezien slechte netwerken het meest voorkomende probleem zijn waarmee gebruikers van web-apps worden geconfronteerd.
 
-De <a hreflang="en" href="https://web.dev/service-worker/">service worker</a> is de functie waarmee uw app veel Progressive Web App-functies kan gebruiken, zoals offline gebruik en pushmeldingen. Op 1,05% van de pagina's zijn service wookers ingeschakeld. Gezien de krachtige functies die kunnen worden aangepakt met service workers, en dat deze al enige tijd wordt ondersteund, is het verrassend dat het aantal nog steeds zo laag is.
+De <a hreflang="en" href="https://web.dev/service-worker/">service worker</a> is de functie waarmee uw app veel Progressieve Web App-functies kan gebruiken, zoals offline gebruik en pushmeldingen. Op 1,05% van de pagina's zijn service wookers ingeschakeld. Gezien de krachtige functies die kunnen worden aangepakt met service workers, en dat deze al enige tijd wordt ondersteund, is het verrassend dat het aantal nog steeds zo laag is.
 
 Een <a hreflang="en" href="https://web.dev/splash-screen/">opstartscherm</a> met een thema zorgt voor een native-achtige ervaring wanneer gebruikers uw app starten vanaf hun startscherm. 1,95% van de pagina's had opstartschermen.
 
