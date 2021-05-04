@@ -630,7 +630,6 @@ Il convient également de noter ici que des personnes plus intelligentes que moi
 )
 }}
 
-
 Historiquement, `font-stretch` a souffert d'un mauvais support des navigateurs et n'était pas une propriété `@font-face` bien connue. En savoir plus sur [`font-stretch` sur MDN](https://developer.mozilla.org/fr/docs/Web/CSS/font-stretch). Mais <a hreflang="en" href="https://caniuse.com/#feat=css-font-stretch">le support des navigateurs</a> s'est élargi.
 
 Il a été suggéré que l'utilisation de polices condensées sur des fenêtres d'affichage plus petites permet d'afficher plus de texte, mais cette approche n'est pas couramment utilisée. Cela dit, le fait que cette propriété soit utilisée un demi-point de pourcentage de plus sur les ordinateurs de bureau que sur les téléphones mobiles est inattendu, et 7&nbsp;% semble beaucoup plus élevé que ce que j'aurais prédit.
