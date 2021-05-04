@@ -9,14 +9,14 @@ editors: [bazzadp]
 translators: [arigaud-ca]
 discuss: 1761
 results: https://docs.google.com/spreadsheets/d/108g6LXdC3YVsxmX1CCwrmpZ3-DmbB8G_wwgQHX5pn6Q/
-zachleat_bio: Zach is a Web Developer with <a hreflang="en" href="https://www.filamentgroup.com/">Filament Group</a>. He’s currently fixated on <a hreflang="en" href="https://www.zachleat.com/web/fonts/">web fonts</a> and <a hreflang="en" href="https://www.zachleat.com/web/introducing-eleventy/">static site generators</a>. His <a hreflang="en" href="https://www.zachleat.com/web/speaking/">public speaking résumé</a> includes talks in eight different countries at events like JAMstack_conf, Beyond Tellerrand, Smashing Conference, CSSConf, and <a hreflang="en" href="https://www.zachleat.com/web/whitehouse/">The White House</a>. He also helps herd <a hreflang="en" href="http://nejsconf.com/">NEJS CONF</a> and the <a hreflang="en" href="http://nebraskajs.com">NebraskaJS</a> meetup.
-featured_quote: Web fonts enable beautiful and functional typography on the web. Using web fonts not only empowers design, but it democratizes a subset of design, as it allows easier access to those who might not have particularly strong design skills. However, for all the good they can do, web fonts can also do great harm to your site's performance if they are not loaded properly.
+zachleat_bio: Zach est Développeur Web au <a hreflang="en" href="https://www.filamentgroup.com/">Filament Group</a>. Il est actuellement obsédé par les <a hreflang="en" href="https://www.zachleat.com/web/fonts/">polices Web</a> et les <a hreflang="en" href="https://www.zachleat.com/web/introducing-eleventy/">générateurs de sites statiques</a>. Son <a hreflang="en" href="https://www.zachleat.com/web/speaking/">CV d'orateur</a> comprend des conférences dans huit pays différents lors d'événements tels que <span lang="en">JAMstack_conf</span>, <span lang="en">Beyond Tellerrand</span>, <span lang="en">Smashing Conference</span>, <span lang="en">CSSConf</span> et <a hreflang="en" href="https://www.zachleat.com/web/whitehouse/">La Maison Blanche</a>. Il aide également la troupe <a hreflang="en" href="http://nejsconf.com/" lang="en">NEJS CONF</a> et le <a hreflang="en" href="http://nebraskajs.com" lang="en">Meetup NebraskaJS</a>.
+featured_quote: Les polices Web permettent une typographie belle et fonctionnelle sur le Web. L'utilisation de polices web renforce non seulement la conception, mais démocratise un sous-ensemble de la conception, car elle permet un accès plus facile à ceux qui n'ont peut-être pas de compétences en conception particulièrement solides. Cependant, malgré tout le bien qu'elles peuvent faire, les polices Web peuvent également nuire gravement aux performances de votre site si elles ne sont pas chargées correctement.
 featured_stat_1: 74,9&nbsp;%
-featured_stat_label_1: 3P Font Requests that use Google Fonts
+featured_stat_label_1: Requêtes de polices qui utilisent Google fonts
 featured_stat_2: 29&nbsp;%
-featured_stat_label_2: Percent of pages that include a Google Fonts stylesheet link
+featured_stat_label_2: Pourcentage de pages contenant un lien vers une feuille de style Google Fonts
 featured_stat_3: 718
-featured_stat_label_3: Most font requests on a single page
+featured_stat_label_3: Requêtes principales de polices depuis une unique page
 ---
 
 ## Introduction
@@ -619,7 +619,7 @@ C'est une autre mesure qui, je pense, a été faussée par l'utilisation des Goo
 )
 }}
 
-`local()` est une belle façon de référencer une police système dans votre `@font-face` `src`. Si la police `local()` existe, il n'est pas du tout nécessaire de faire une requête pour une police web. Cette propriété est utilisée de manière extensive et controversée par Google Fonts, et il s'agit donc probablement d'un autre exemple de données biaisées si nous essayons de glaner des modèles à partir du terrain des utilisateurs. - du côté des utilisateurs
+`local()` est une belle façon de référencer une police système dans votre `@font-face` `src`. Si la police `local()` existe, il n'est pas du tout nécessaire de faire une requête pour une police web. Cette propriété est utilisée de manière extensive et controversée par Google Fonts, et il s'agit donc probablement d'un autre exemple de données biaisées si nous essayons de glaner des modèles du côté des utilisateurs.
 
 Il convient également de noter ici que des personnes plus intelligentes que moi (Bram Stein de TypeKit) ont déclaré que <a hreflang="en" href="https://bramstein.com/writing/web-font-anti-patterns-local-fonts.html">l'utilisation de `local()` peut être imprévisible car les versions de polices installées peuvent être obsolètes et peu fiables</a>.
 
