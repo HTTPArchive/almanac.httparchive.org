@@ -240,7 +240,6 @@ HTMLの`lang`属性を設定すると、ページを簡単に翻訳でき、ス�
 
 {{ figure_markup(
   image="common-video-attributes.png",
-  alt="最も一般的な動画属性。",
   caption="最も一般的な`<video>`属性。",
   description="デスクトップの`<video>`要素の上位5つの属性を示す棒グラフで、動画の58.43%が`loop`、56.98%が`autoplay`、56.13% が`muted`、51.79% が`class`、45.21%が`preload`となっています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSjkB_XAYiwkYrMuoXp44mdqMGJVDUkTr_48ELozY72Mdv3OlxeWV9ysbDY9bs6hA7LnJTrHar9aZlM/pubchart?oid=1226671706&format=interactive",
@@ -417,7 +416,6 @@ ARIAの第一のルールに従えば、ネイティブの`<button>`要素の方
 
 {{ figure_markup(
   image="role-tab-list.png",
-  alt="タブリストの役割を持つ要素",
   caption='`tablist`の役割を持つ要素 (<a hreflang="en" href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html">出典: W3C</a>',
   description='3つのタブを含むタブリスト（`role="tablist"`）の例を示すスクリーンショットです。3つのタブはすべてハイライトされています。',
   width=348,
@@ -426,7 +424,6 @@ ARIAの第一のルールに従えば、ネイティブの`<button>`要素の方
 
 {{ figure_markup(
   image="role-tab.png",
-  alt="タブの役割を持つ要素",
   caption='要素で`tab`の役割を持つ。(<a hreflang="en" href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html">出典: W3C</a>',
   description='タブ(`role="tab"`)の例を示すスクリーンショットで、1つのタブだけが強調表示されています。',
   width=346,
@@ -435,7 +432,6 @@ ARIAの第一のルールに従えば、ネイティブの`<button>`要素の方
 
 {{ figure_markup(
   image="role-tab-panel.png",
-  alt="タブパネルの役割を持つ要素",
   caption='要素で`tabpanel`の役割を持つ。(<a hreflang="en" href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html">出典: W3C</a>',
   description='タブパネル(`role="tabpanel"`)の例を示すスクリーンショットです。',
   width=346,
@@ -456,7 +452,6 @@ ARIA属性は、インターフェイスのアクセシビリティを強化す�
 
 {{ figure_markup(
   image="most-used-aria-attributes.png",
-  alt="aria属性の使用頻度が高いトップ10",
   caption="最もよく使われる`aria`属性のトップ10。",
   description=" デスクトップサイトとモバイルサイトでは、`aria-label`がそれぞれ40.4%と38.7%、`aria-expandeded`が21.0%と21.0%、`aria-controls`が17.4%と16.9%、`aria-labelledby`が17.7%と16.2%、`aria-live`が16.8%と15.7%、`aria-haspopup`が15.9%と14.0%、`aria-current`が12.4%と12.7%、`aria-describedby`が11.3%と10.6%であることがわかります。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSjkB_XAYiwkYrMuoXp44mdqMGJVDUkTr_48ELozY72Mdv3OlxeWV9ysbDY9bs6hA7LnJTrHar9aZlM/pubchart?oid=332801232&format=interactive",

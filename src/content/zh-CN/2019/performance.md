@@ -79,7 +79,6 @@ featured_stat_label_3: 有快速FID的站点
 
  {{ figure_markup(
   image="fig3.png",
-  alt="桌面站点的快速，中速和慢速的FCP性能分布。",
   caption="<em>桌面</em> 站点的快速，中速和慢速的FCP性能分布。",
   description="1,000个桌面站点的快速，中速和慢速的FCP性能分布。快速FCP的分布从100％到0％呈线性关系，中间略有凸起。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1231764008&format=interactive"
@@ -88,7 +87,6 @@ featured_stat_label_3: 有快速FID的站点
 
  {{ figure_markup(
   image="fig4.png",
-  alt="移动站点的快速，中速和慢速的FCP性能分布。",
   caption="<em>移动</em> 站点的快速，中速和慢速的FCP性能分布。",
   description="1,000个移动站点的快速，中速和慢速的FCP性能分布。快速FCP的分布从100％到0％呈线性关系，而没有出现与桌面站点相同的中间凸起。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=167423587&format=interactive"
@@ -113,7 +111,6 @@ featured_stat_label_3: 有快速FID的站点
 
  {{ figure_markup(
   image="fig6.png",
-  alt="被标记为具有快速、中速或慢速FCP的网站分布，按ECT分类。",
   caption='被标记为具有快速、中速或慢速FCP的网站分布，按 <abbr title="effective connection type">ECT</abbr> 分类。',
   description="每个有效连接类型的FCP分布条形图。4G 快速, 中速, 慢速: 14%, 67%以及19%。 3G: 1%, 38%以及61%. 2G: 0%, 9%, 90%. 慢速 2G: 0%, 1%, 99%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1987967547&format=interactive"
@@ -227,7 +224,6 @@ featured_stat_label_3: 有快速FID的站点
 
  {{ figure_markup(
   image="fig14.png",
-  alt="快速，中度和慢速FID性能桌面站点的分布",
   caption="快速，中度和慢速FID性能 <em>桌面</em> 站点的分布",
   description="1,000个桌面网站的快速，中速和慢速FID分布。对于最快的四分之三的网站，快速FID的分布非常缓慢地从100％降低到90％。之后，快速FID会略微降低到75％。几乎所有桌面网站都拥有超过75％的快速FID体验。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=16379508&format=interactive"
@@ -236,7 +232,6 @@ featured_stat_label_3: 有快速FID的站点
 
  {{ figure_markup(
   image="fig15.png",
-  alt="移动网站的快速，中速和慢速FID性能分布。",
   caption="<em>移动</em> 网站的快速，中速和慢速FID性能分布。",
   description="1,000个移动网站的快速，中速和慢速FID分布。 快速FID的分布稳定下降，但比桌面快得多。在四分之三的网站中，它的速度达到75％，然后迅速下降到0％。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=519511409&format=interactive"
@@ -259,7 +254,6 @@ featured_stat_label_3: 有快速FID的站点
 
  {{ figure_markup(
   image="fig17.png",
-  alt="按ECT划分为具有快速，中速或慢速FID的网站分布。",
   caption='按 <abbr title="effective connection type">ECT</abbr> 划分为具有快速，中速或慢速FID的网站分布。',
   description="每个有效连接类型FID分布的条形图。4G的快速，中速，慢速分别为：41%，45%，15%。3G：22%，52%，26%。2G：19%，58%，23%。慢速2G：15%，58%，27%。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1173039776&format=interactive"

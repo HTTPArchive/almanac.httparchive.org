@@ -268,7 +268,6 @@ Met de [Resource Timing API](https://developer.mozilla.org/en-US/docs/Web/API/Re
 {{ figure_markup(
   image="requests-with-tao.png",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=1886505312&format=interactive",
-  alt="Verzoeken met de Timing-Allow-Origin koptekst.",
   caption="Verzoeken met de `timing-allow-origin` koptekst.",
   description="Minder dan 35% van de reacties van derden wordt weergegeven met een timing-allow-origin-header",
   width=600,

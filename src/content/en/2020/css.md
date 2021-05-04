@@ -163,7 +163,6 @@ What is it that developers are so keen to override? We looked at breakdown by pr
 
 {{ figure_markup(
   image="important-top-properties.png",
-  alt="The top !important properties by the percent of pages.",
   caption="The top `!important` properties by the percent of pages.",
   description="Bar chart showing the top 10 properties used with `!important`. Mobile and desktop have similar usage. The `display` property is used with `!important` the most, by 79% of mobile pages. In decreasing order, the subsequent properties on 71-58% of mobile pages are: `color`, `width`, `height`, `background`, `padding`, `margin`, `border`, `background-color`, and `float`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=257343566&format=interactive",
@@ -240,7 +239,6 @@ There is always a lot of inertia when we change something in the web platform af
 
 {{ figure_markup(
   image="selector-pseudo-classes.png",
-  alt="Usage of legacy :pseudo-class syntax for ::pseudo-elements as a percent of mobile pages.",
   caption="Usage of legacy `:pseudo-class` syntax for `::pseudo-elements` as a percent of mobile pages.",
   description="Bar chart showing the percent of pages that use pseudo-class syntax (prefixed by one colon) versus pseudo-element syntax (two colons) for pseudo-elements. The `before` pseudo-element is used with pseudo-class syntax on 71% of mobile pages and pseudo-element syntax on 33% of mobile pages. The `after` pseudo-element is used with class and element syntax on 68% and 30% of mobile pages, `first-letter` on 7% and 1% of mobile pages, and `first-line` on 1% and 0% of mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=227968207&format=interactive",
@@ -481,7 +479,6 @@ It appears that most of this usage is to subtract pixels from percentages, as ev
 
 {{ figure_markup(
   image="calc-units.png",
-  alt="Relative popularity of units that use calc() as a percent of occurrences.",
   caption="Relative popularity of units that use `calc()` as a percent of occurrences.",
   description="Bar chart showing the relative popularity of properties that use the calc function as a percent of occurrences. Desktop and mobile have similar results. The calc function is used most often on the `width` property, 59% of calc occurrences on mobile pages. it is used on the `left` property 11% of the time, `top` 5%, `max-width` 4%, `height` 4%, and the remaining properties are decreasing at 2% and 1%: `min-height`, `margin-left`, `flex-basis`, `margin-right`, `max-height` (1%), `right`, `padding-bottom`, `padding-left`, `font-size`, and `padding-right`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=477094785&format=interactive",
@@ -491,7 +488,6 @@ It appears that most of this usage is to subtract pixels from percentages, as ev
 
 {{ figure_markup(
   image="calc-operators.png",
-  alt="Relative popularity of operators that use calc() as a percent of occurrences.",
   caption="Relative popularity of operators that use `calc()` as a percent of occurrences.",
   description="Bar chart showing the relative popularity of operators that use the calc function as a percent of occurrences. Desktop and mobile have similar results. The calc function is used most often with the subtraction operator (minus sign), 64% of calc instances on mobile pages, followed by division (forward slash) 20%, addition (plus sign) 11%, and multiplication (asterisk) 5%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1909242522&format=interactive",
@@ -503,7 +499,6 @@ Most calculations are very simple, with 99.5% of calculations involving up to 2 
 
 {{ figure_markup(
   image="calc-complexity-units.png",
-  alt="Distribution of the number of units per calc() occurrence.",
   caption="Distribution of the number of units per `calc()` occurrence.",
   description="Bar chart showing the distribution of the number of units per calc function occurrence. Desktop and mobile have similar results. Calc is used with one unit 11% of the time on mobile pages, twice 89% of the time, and 3 or more times approximately 0% of the time.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=695698141&format=interactive",
@@ -569,7 +564,6 @@ And if you are going for fanciful color names, why not define your own with CSS 
 {{ figure_markup(
   link="https://codepen.io/leaverou/pen/GRjjJwJ",
   image="color-keywords-app.png",
-  alt="Interactively explore the color keyword usage data with the app.",
   caption='Interactively explore the color keyword usage data with <a hreflang="en" href="https://codepen.io/leaverou/pen/GRjjJwJ">this interactive app</a>!',
   description="Screenhot of an interactive app which allows you to select colors and see their relative usage in a pie chart. The data for the colors is shown in the next table.",
   width=600,
@@ -997,7 +991,6 @@ The gradient with the most color stops is <a hreflang="en" href="https://dabblet
   classes="height-16vw-122px",
   caption="The gradient with the most color stops, 646.",
   description="A screenshot of the gradient with the most color stops, which is a series of intricate multicolor stripes of varying hues.",
-  alt="A screenshot of the gradient with the most color stops, which is a series of intricate multicolor stripes of varying hues.",
   width=600,
   height=122
 ) }}
@@ -1078,7 +1071,6 @@ It is useful to know how big the boxes on your page are going to be, but with th
 
 {{ figure_markup(
   image="box-sizing.png",
-  alt="Distribution of the number of border-box declarations per page.",
   caption="Distribution of the number of `border-box` declarations per page.",
   description="Bar chart showing the distribution of the number of `box-sizing` declarations per page for desktop and mobile. The mobile distribution leads desktop by 0 to 11 declarations per page, growing in the higher percentiles. The mobile distribution's 10, 25, 50, 75, and 90th percentiles are: 0, 4, 17, 46, and 96 `border-box` declarations per page.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1626960751&format=interactive",
@@ -1202,7 +1194,6 @@ The most common breakpoint in use across desktop and mobile devices is a `min-wi
 
 {{ figure_markup(
   image="breakpoints.png",
-  alt="The most popular breakpoints by min-width and max-width as a percent of mobile pages.",
   caption="The most popular breakpoints by `min-width` and `max-width` as a percent of mobile pages.",
   description="The most popular breakpoints by `min-width` and `max-width` as a percent of mobile pages. `480px` is used as a min-width on 21% of mobile pages and as a `max-width` on 35%. `600px` on 27% and 37% for min and max widths respectively, `767px` on 8% and 50%, `768px` on 54% and 35%, `800px` on 8% and 24%, `991px` on 3% and 30%, `992px` on 37% and 11%, `1024px` on 13% and 23%, `1199px` on just 31% as a `max-width`, and `1200px` on 40% and 19%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=502128948&format=interactive",
@@ -1484,7 +1475,6 @@ A small but notable number of pages (around 3000 or 0.05%) were oddly using `@su
 
 {{ figure_markup(
   image="supports-criteria.png",
-  alt="Relative popularity of @supports features queried as a percent of occurrences.",
   caption="Relative popularity of `@supports` features queried as a percent of occurrences.",
   description="Bar chart of the relative popularity of @supports features queried as a percent of occurrences. The most popular feature queried is `sticky` at 49% of occurrences on mobile pages, followed by `ime-align` at 24%, `mask-image` at 12%, `overflow-scrolling` at 5%, `grid` at 2%, custom properties, `transform-style`, `max()`, and `object-fit `all at 1%, and `appearance` at approximately 0%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1901533222&format=interactive",

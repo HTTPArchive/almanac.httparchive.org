@@ -79,7 +79,6 @@ Para ayudarnos a comprender cómo los usuarios experimentan FCP en diferentes di
 
 {{ figure_markup(
   image="fig3.png",
-  alt="Distribución del rendimiento en sitios de escritorio según su FCP, entre rápidos, moderados y lentos.",
   caption="Distribución del rendimiento en sitios <em>de escritorio</em> según su FCP, entre rápidos, moderados y lentos.",
   description="Distribution of 1,000 desktop websites' fast, moderate, and slow FCP. The distribution of fast FCP appears to be linear from 100% to 0% with a slight bulge in the middle.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1231764008&format=interactive"
@@ -88,7 +87,6 @@ Para ayudarnos a comprender cómo los usuarios experimentan FCP en diferentes di
 
 {{ figure_markup(
   image="fig4.png",
-  alt="Distribución del rendimiento en sitios móviles según su FCP, entre rápidos, moderados y lentos.",
   caption="Distribución del rendimiento en sitios <em>móviles</em> según su FCP, entre rápidos, moderados y lentos.",
   description="Distribution of 1,000 mobile websites' fast, moderate, and slow FCP. The distribution of fast FCP appears to be linear from 100% to 0% without the same middle bulge seen for desktop websites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=167423587&format=interactive"
@@ -113,7 +111,6 @@ Según la clasificación de PSI, el 17% de los sitios web tienen experiencias r�
 
 {{ figure_markup(
   image="fig6.png",
-  alt='Distribución de sitios web etiquetados como que tienen FCP rápido, moderado o lento, desglosados por ECT (effective connection type).',
   caption='Distribución de sitios web etiquetados como que tienen FCP rápido, moderado o lento, desglosados por <abbr title="effective connection type">ECT</abbr>.',
   description="Bar chart of FCP distributions per effective connection type. 4G fast, moderate, slow: 14%, 67%, and 19% respectively. 3G: 1%, 38%, and 61%. 2G: 0%, 9%, 90%. Slow 2G: 0%, 1%, 99%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1987967547&format=interactive"
@@ -227,7 +224,6 @@ En comparación con las métricas anteriores, la distribución del rendimiento a
 
 {{ figure_markup(
   image="fig14.png",
-  alt="Distribución de sitios web de escritorio según si su rendimiento de FID es rápido, moderado o lento.",
   caption="Distribución de sitios web de <em>escritorio</em> según si su rendimiento de FID es rápido, moderado o lento.",
   description="Distribution of 1,000 desktop websites' fast, moderate, and slow FID. The distribution of fast FID decreases very slowly from 100% to 90% for the fastest three quarters of websites. After that, fast FID decreases slightly to 75%. Nearly all desktop websites have more than 75% fast FID experiences.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=16379508&format=interactive"
@@ -236,7 +232,6 @@ En comparación con las métricas anteriores, la distribución del rendimiento a
 
 {{ figure_markup(
   image="fig15.png",
-  alt="Distribución de sitios web móviles según si su rendimiento de FID es rápido, moderado o lento.",
   caption="Distribución de sitios web <em>móviles</em> según si su rendimiento de FID es rápido, moderado o lento.",
   description="Distribution of 1,000 mobile websites' fast, moderate, and slow FID. The distribution of fast FID declines steadily but much more quickly than desktop. It reaches 75% fast for at three quarters of websites then quickly drops to 0%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=519511409&format=interactive"
@@ -259,7 +254,6 @@ Cuando aplicamos el etiquetado PSI a las experiencias de escritorio y móvil, la
 
 {{ figure_markup(
   image="fig17.png",
-  alt='Distribución de sitios web etiquetados como que tienen un FID rápido, moderado o lento, desglosados por ECT (effective connection type).',
   caption='Distribución de sitios web etiquetados como que tienen un FID rápido, moderado o lento, desglosados por <abbr title="effective connection type">ECT</abbr>.',
   description="Bar chart of FID distributions per effective connection type. 4G fast, moderate, slow: 41%, 45%, and 15% respectively. 3G: 22%, 52%, and 26%. 2G: 19%, 58%, 23%. Slow 2G: 15%, 58%, 27%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1173039776&format=interactive"
