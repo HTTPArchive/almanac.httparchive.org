@@ -240,7 +240,6 @@ The savings in this AB Lighthouse test is not just about potential byte savings,
 
  {{ figure_markup(
   image="fig13_project_perf_improvements_image_optimization.png",
-  alt="Projected page performance improvements from image optimization from Lighthouse.",
   caption="Projected page performance improvements from image optimization from Lighthouse.",
   description="Bar chart showing in the 10th percentile 0 ms could be sized, same in 25th percentile, in the 50th percentile 150 ms could be saved, in the 75th percentile 1,460 ms could be saved and in the 90th percentile 5,720 ms could be saved.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=167590779"
@@ -322,7 +321,6 @@ The utility of `srcset` is usually dependent on the precision of the `sizes` med
 
  {{ figure_markup(
   image="fig16_top_patterns_of_img_sizes.png",
-  alt="Top patterns of img sizes.",
   caption="Top patterns of <code><img sizes></code>.",
   description="Bar chart showing 11.3 million images use 'img sizes=`(max-width: 300px) 100vw, 300px`', 1.60 million use 'auto', 1.00 million use 'img sizes=`(max-width: 767px) 89vw...etc.`', 0.23 million use '100vw' and 0.13 million use '300px'",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=663985412&format=interactive"
@@ -337,7 +335,6 @@ To enable Client Hints, the web page must signal to the browser using either an 
 
 {{ figure_markup(
   image="fig17_usage_of_accept-ch_http_v_html.png",
-  alt="Usage of the Accept-CH header versus the equivalent meta tag.",
   caption="Usage of the <code>Accept-CH</code> header versus the equivalent <code><meta></code> tag.",
   description="Bar chart showing 71% use the 'meta http-equiv', 30% use the 'Accept-CH' HTTP header and 1% use both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=284657706&format=interactive"
@@ -366,7 +363,6 @@ Earlier, in [Figure 4.5](#fig-5), we showed that the volume of image content at 
 
 {{ figure_markup(
   image="fig19_lighthouse_audit_offscreen.png",
-  alt="Lighthouse audit: Offscreen.",
   caption="Lighthouse audit: Offscreen.",
   description="A bar chart showing in the 10th percentile 0% of images are offscreen, in the 25th percentile 2% are offscreen, in the 50th percentile, 27% are offscreen, in the 75th percentile 64% are offscreen, and in the 90th percentile 84% of images are offscreen.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2123391693&format=interactive"

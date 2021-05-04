@@ -45,7 +45,6 @@ De gegevens die in dit hoofdstuk worden gebruikt, zijn afkomstig uit het HTTP Ar
 
 {{ figure_markup(
   image="http2-h2-usage.png",
-  alt="HTTP/2-gebruik op verzoek.",
   link="https://httparchive.org/reports/state-of-the-web#h2",
   caption='HTTP/2-gebruik op verzoek. (Bron: <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#h2">HTTP Archive</a>)',
   description="Tijdreeksdiagram van HTTP / 2-gebruik met een acceptatie van 64% voor zowel desktop als mobiel vanaf juli 2019. De trend groeit gestaag met ongeveer 15 punten per jaar.",

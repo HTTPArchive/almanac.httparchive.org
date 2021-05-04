@@ -240,7 +240,6 @@ Les gains obtenus dans ce test A/B <span lang="en">Lighthouse</span> ne concerne
 
 {{ figure_markup(
   image="fig13_project_perf_improvements_image_optimization.png",
-  alt="Projection que fait Lighthouse de l’amélioration des performances des pages grâce à l’optimisation des images.",
   caption='Projection que fait <span lang="en">Lighthouse</span> de l’amélioration des performances des pages grâce à l’optimisation des images.',
   description="Diagramme à barres montrant qu’au 10e percentile, 0&nbsp;ms pourrait être sauvée, de même au 25e percentile. Au 50e percentile, 150&nbsp;ms pourraient être sauvées. Au 75e percentile, 1460&nbsp;ms pourraient être sauvées et 90e percentile, 5720&nbsp;ms pourraient être sauvées.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=167590779"
@@ -322,7 +321,6 @@ L’utilité de `srcset` dépend généralement de la précision de la requête 
 
 {{ figure_markup(
   image="fig16_top_patterns_of_img_sizes.png",
-  alt="Top patterns of img sizes.",
   caption="Principaux modèles de conception de <code><img sizes></code>.",
   description="Diagramme à barres montrant que 11,3 millions d’images utilisent 'img sizes=`(max-width: 300px) 100vw, 300px`', 1,60 million utilisent 'auto', 1,00 million utilisent 'img sizes=`(max-width : 767px) 89vw...etc.`', 0,23 million utilisent '100vw' et 0,13 million utilisent '300px'.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=663985412&format=interactive"
@@ -337,7 +335,6 @@ Pour activer les Indications Client, la page web doit envoyer un signal au navig
 
 {{ figure_markup(
   image="fig17_usage_of_accept-ch_http_v_html.png",
-  alt="Utilisation de l’en-tête Accept-CH comparé à son équivalent meta tag.",
   caption="Utilisation de l’en-tête <code>Accept-CH</code> comparé à son équivalent <code><meta></code> tag.",
   description="Graphique en barres montrant que 71&nbsp;% utilisent le `meta http-equiv`, 30&nbsp;% utilisent l’en-tête HTTP `Accept-CH` et 1&nbsp;% utilisent les deux.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=284657706&format=interactive"
@@ -366,7 +363,6 @@ Plus tôt, dans la <a hreflang="en" href="#fig-5">Figure 5</a>, nous avons montr
 
 {{ figure_markup(
   image="fig19_lighthouse_audit_offscreen.png",
-  alt="Audit Lighthouse : Hors-Écran.",
   caption='Audit <span lang="en">Lighthouse</span>&nbsp;: Hors-Écran.',
   description="Un diagramme à barres montrant qu’au 10e percentile, 0&nbsp;% des images sont hors champ, au 25e percentile, 2&nbsp;% sont hors champ, au 50e percentile, 27&nbsp;% sont hors champ, au 75e percentile, 64&nbsp;% sont hors champ et au 90e percentile, 84&nbsp;% des images sont hors champ.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2123391693&format=interactive"

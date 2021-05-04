@@ -138,7 +138,6 @@ Terwijl `srcset` en `sizes` ons hulpmiddelen bieden om browsers te helpen met af
 
 {{ figure_markup(
   image="use-of-picture.png",
-  alt="Gebruik van picture.",
   caption="Gebruik van `<picture>`.",
   description="Gestapeld staafdiagram dat laat zien dat 19,30% van de pagina's `<picture>` op desktop gebruikt en 80,70% niet. Op mobiel is het vergelijkbaar: 18,54% wel en 81,46% niet.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=416496535&format=interactive",
@@ -164,7 +163,6 @@ Opsplitsend in het aantal aangeboden formaten:
 
 {{ figure_markup(
   image="picture-number-of-formats.png",
-  alt="picture aantal formaten.",
   caption="`<picture>` aantal formaten.",
   description="Staafdiagram met het aantal formaten in beeldgebruik. 68,01% van de pagina's op desktop (68,03% op mobiel) gebruikt 1 formaat. 2 formaten is respectievelijk 23,78% en 23,78%, 3 formaten is 7,00% en 6,97% en 4+ formaten worden alleen gebruikt op respectievelijk 1,21% en 1,22% pagina's.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=1963933588&format=interactive",
@@ -251,7 +249,6 @@ Hoewel uit de gegevens blijkt dat slechts iets minder dan 1% van de pagina's die
 
 {{ figure_markup(
   image="picture-usage-of-orientation.png",
-  alt="Picture gebruik van oriëntatie.",
   caption="`<picture>` gebruik van oriëntatie.",
   description="Staafdiagram dat laat zien dat 0,93% van de desktoppagina's en 0,91% van de mobiele pagina's `<picture>` met oriëntatie gebruikt. 0,59% van de gevallen van `<picture>` op desktop en 0,60% bij mobiel gebruik.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=56906843&format=interactive",

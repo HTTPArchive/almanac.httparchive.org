@@ -53,7 +53,6 @@ De inspanning werpt zijn vruchten af en we zien nu dat 87,70% van de verzoeken o
 
 {{ figure_markup(
   image="security-https-request-growth.png",
-  alt="Percentage verzoeken dat HTTPS gebruikt",
   caption='Percentage verzoeken dat HTTPS gebruikt.<br>(Bron: <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#pctHttps">HTTP Archive</a>)',
   description="Tijdreeksdiagram van HTTPS-verzoeken van 1 januari 2017 tot 1 augustus 2020. Het gebruik van mobiele telefoons en desktopcomputers is bijna identiek en begint bij 35,70% van de verzoeken voor desktop en 35,20% voor mobiel en stijgt helemaal tot 87,70% voor desktop en 86,90% voor mobiel met een lichte afname aan het einde.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=1353660053&format=interactive",
@@ -213,7 +212,6 @@ De eerste is HTTP Strict Transport Security (HSTS), die eenvoudig kan worden ing
 
 {{ figure_markup(
   image="security-hsts-max-age-values-in-days.png",
-  alt="HSTS max-age waarden (in dagen).",
   caption="HSTS `max-age` waarden (in dagen).",
   description="Staafdiagram met percentielen van waarden in het kenmerk `max-age`, geconverteerd naar dagen. In het 10e percentiel is desktop 30 dagen en mobiel 91, in het 25e percentiel zijn beide 182 dagen, in het 50e percentiel zijn beide 365 dagen, het 75e percentiel is hetzelfde op 365 dagen voor beide en het 90e percentiel heeft 730 dagen voor beide.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=1208109634&format=interactive",

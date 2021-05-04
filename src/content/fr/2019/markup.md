@@ -180,7 +180,6 @@ Afin de discuter des chiffres sur l’utilisation d’éléments (standards, obs
 
 {{ figure_markup(
   image="fig7_full.png",
-  alt="150 premiers éléments",
   caption='150 premiers éléments (<a hreflang="en" href="/static/images/2019/markup/fig7_full.png">détail complet</a>).',
   description="Diagramme à barres illustrant une décroissance des éléments par ordre descendant : html, head, body, title au dessus de 99 % d’utilisation, meta, a, div plus de 98 % d’utilisation, link, script, img, span plus de 90 % d’utilisation, ul, li , p, style, input, br, form plus de 70 % d’utilisation, h2, h1, iframe, h3, button, footer, header, nav plus de 50 % d’utilisation et d’autres tags moins connus passant de moins de 50 % à presque 0 %.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1694360298&format=interactive",

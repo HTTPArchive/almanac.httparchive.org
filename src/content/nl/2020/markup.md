@@ -126,7 +126,6 @@ Hier zijn de 10 meest populaire (genormaliseerde) talen in ons voorbeeld. Het is
 
 {{ figure_markup(
   image="document-language.png",
-  alt="De belangrijkste HTML-`lang` attributen.",
   caption="De top HTML `lang` attributen.",
   description="Staafdiagram met de top 10 `lang` attributen die in onze crawl worden gebruikt, waarbij 22,82% van de desktoppagina's en 22,36% van de mobiele pagina's dit niet instellen, `en` wordt gebruikt op respectievelijk 20,09% en 18,08%, `ja` op 15,17% en 13,27 %, `es` op 4,86% en 4,09%, `pt-br` op 2,65% en 2,84%, `ru` op 2,21% 2,53%, `en-gb` op 2,35% en 2,19%, `de` op 1,50 % en 1,92%, en tenslotte wordt `fr` gebruikt op respectievelijk 1,55% en 1,43%.",
   sheets_gid="2047285366",
@@ -171,7 +170,6 @@ Aan de andere kant van het spectrum laten de cijfers zien dat ongeveer 97% van d
 
 {{ figure_markup(
   image="script-use.png",
-  alt="Gebruik van het script element",
   caption="Gebruik van het <code>script</code> -element.",
   description="Percentages pagina's die (geen) scripts bevatten, en scripts zijn in bijna elke vorm op bijna elke pagina aanwezig.",
   sheets_gid="150962402",

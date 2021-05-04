@@ -45,7 +45,6 @@ HTTPプロトコルが進化しても、HTTPのセマンティクスは変わり
 
 {{ figure_markup(
   image="http2-h2-usage.png",
-  alt="リクエストによるHTTP/2の使用状況。",
   link="https://httparchive.org/reports/state-of-the-web#h2",
   caption='リクエスト別のHTTP/2の使用状況。(提供元: <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#h2">HTTP Archive</a>)',
   description="2019年7月時点でデスクトップ、モバイルともに64％の採用率を示すHTTP/2利用状況の時系列図。この傾向は年15ポイント程度で順調に伸びています。",

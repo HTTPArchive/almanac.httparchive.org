@@ -163,7 +163,6 @@ IDは、意図的に特異度を下げたり、上げたりするために使う
 
 {{ figure_markup(
   image="important-top-properties.png",
-  alt="ページの割合で上位の「!importantプロパティ」を表示します。",
   caption="ページの割合で上位の`!important`プロパティを表示します。",
   description="`!important`で使われているプロパティのトップ10を示す棒グラフ。モバイルとデスクトップでは、使用方法が似ています。`display`プロパティは`!important`で最も多く使用されており、モバイルページの79%で使用されています。それに続くプロパティは、モバイルページの71-58%で、順に以下のようになっています。`color`,`width`,`height`,`background`,`padding`,`margin`,`border`,`background-color`,`float`です。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=257343566&format=interactive",
@@ -240,7 +239,6 @@ IDは、意図的に特異度を下げたり、上げたりするために使う
 
 {{ figure_markup(
   image="selector-pseudo-classes.png",
-  alt="モバイルページのパーセンテージとしての::pseudo-elementsのためのレガシー:pseudo-class構文の使用法。",
   caption="レガシーの`:pseudo-class`構文を`::pseudo-elements`のモバイルページの割合として使用します。",
   description="棒グラフは、擬似クラス構文(前に1コロン)と擬似要素構文(2コロン)を擬似要素に使用しているページの割合を示しています。前の`before`擬似要素は、モバイルページの71%で擬似クラス構文を使用し、33%で擬似要素構文を使用しています。擬似要素の`after`は、クラスと要素の構文でモバイルページの68%と30%、`first-letter`でモバイルページの7%と1%、`first-line`でモバイルページの1%と0%で使用されている。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=227968207&format=interactive",
@@ -481,7 +479,6 @@ CSSで異なる単位間の計算を行うために[`calc()`](https://developer.
 
 {{ figure_markup(
   image="calc-units.png",
-  alt="calc() を使用する単位の相対的な人気度。",
   caption="`calc()`を使用する単位の相対的な人気度を、出現率の割合で示します。",
   description="calc関数を使用するプロパティの相対的な人気度を、出現率として示した棒グラフ。デスクトップとモバイルでも同様の結果が得られています。calc関数は`width`プロパティで最も頻繁に使用されており、モバイルページでのcalc発生の59%を占めています。calc関数は`left`プロパティ11%、`top`プロパティ5%、`max-width`プロパティ4%、`height`プロパティ4%の割合で使用されており、残りのプロパティは2%と1%で減少しています:`min-height`,`margin-left`,`flex-basis`,`margin-right`,`max-height`(1%),`right`,`padding-bottom`,`padding-left`,`font-size`,`padding-right`です。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=477094785&format=interactive",
@@ -491,7 +488,6 @@ CSSで異なる単位間の計算を行うために[`calc()`](https://developer.
 
 {{ figure_markup(
   image="calc-operators.png",
-  alt="calc()を使用する演算子の相対的な人気度。",
   caption="`calc()`を使用する演算子の相対的な人気度を、出現回数の割合で示します。",
   description="calc関数を使用しているオペレーターの相対的な人気度を発生率として示した棒グラフ。デスクトップとモバイルでも同様の結果が得られています。モバイルページのcalcインスタンスの64%が減算演算子（マイナス記号）でcalc関数を最もよく使用しており、次いで除算（フォワードスラッシュ）20%、加算（プラス記号）11%、乗算（アスタリスク）5%となっています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1909242522&format=interactive",
@@ -503,7 +499,6 @@ CSSで異なる単位間の計算を行うために[`calc()`](https://developer.
 
 {{ figure_markup(
   image="calc-complexity-units.png",
-  alt="calc()の発生あたりの単位数の分布。",
   caption="`calc()`の発生ごとの単位数の分布。",
   description="calc関数の1回の発生あたりの単位数の分布を示す棒グラフ。デスクトップとモバイルでは似たような結果となっています。モバイルページでは、Calcの使用頻度は1回が11％、2回が89％、3回以上が約0％となっています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=695698141&format=interactive",
@@ -569,7 +564,6 @@ HSLは<a hreflang="en" href="https://drafts.csswg.org/css-color-4/#the-hsl-notat
 {{ figure_markup(
   link="https://codepen.io/leaverou/pen/GRjjJwJ",
   image="color-keywords-app.png",
-  alt="カラーキーワードの利用データをアプリでインタラクティブに探ります。",
   caption='<a hreflang="en" href="https://codepen.io/leaverou/pen/GRjjJwJ">このインタラクティブなアプリ</a>を使って、カラーキーワードの使用データをインタラクティブに探ってみましょう！',
   description="色を選択し、円グラフで色の相対的な使用状況を確認できるインタラクティブなアプリのスクリーンショット。色のデータは次の表のようになっています。",
   width=600,
@@ -997,7 +991,6 @@ display-p3カラー（他にもオプションはあるが、野生で見つけ�
   classes="height-16vw-122px",
   caption="最も色が止まっているグラデーション、646。",
   description="色相の異なる複雑な多色のストライプが連続している、最も色が止まっているグラデーションのスクリーンショット。",
-  alt="色相の異なる複雑な多色のストライプが連続している、最も色が止まっているグラデーションのスクリーンショット。",
   width=600,
   height=122
 ) }}
@@ -1078,7 +1071,6 @@ GridではなくFlexboxを選択した理由は、Gridレイアウトが<a hrefl
 
 {{ figure_markup(
   image="box-sizing.png",
-  alt="1ページあたりのボーダーボックス宣言数の分布。",
   caption="1ページあたりの`border-box`宣言の数の分布。",
   description="1ページあたりの`box-sizing`宣言数の分布をデスクトップとモバイルで示した棒グラフ。モバイルの分布は、1ページあたりの宣言数が0～11でデスクトップをリードしており、高いパーセンタイルになるほど増加しています。モバイルの分布の10、25、50、75、90パーセントは以下の通りです。1ページあたりの`border-box`宣言数は0、4、17、46、96です。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1626960751&format=interactive",
@@ -1202,7 +1194,6 @@ FlexboxやGridのような柔軟で応答性の高い新しいレイアウト手
 
 {{ figure_markup(
   image="breakpoints.png",
-  alt="モバイルページに占める最小幅と最大幅の割合で最も人気のあるブレイクポイント。",
   caption="モバイルページに占める割合として、`min-width`と`max-width`による最も人気のあるブレークポイントを示します。",
   description="モバイルページに占める`min-width`と`max-width`の割合で最も人気のあるブレークポイントを示します。モバイルページのうち、最小幅として使われているのは21%、最大幅として使われているのは35%で、`480px`が使われています。600pxは最小幅が27%と最大幅が37%で、`767px`は8%と50%で、`768px`は54%と35%で、`800px`は8%と24%である。`991px`は3%と30% 、`992px`は37%と11%、`1024px`は13%と23% 、`1199px`は31%、`1200px`は40%と19%となっています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=502128948&format=interactive",
@@ -1484,7 +1475,6 @@ ChromeやSafariの方がずっとプレフィックスを好むようになっ�
 
 {{ figure_markup(
   image="supports-criteria.png",
-  alt="サポート機能の相対的な人気度を、出現率として問い合わせました。",
   caption="サポート機能の相対的な人気度を、出現率として問い合わせました。",
   description="引用された@supportsの機能の相対的な人気度を、出現率で示した棒グラフです。最も人気のある機能は`sticky`でモバイルページの49%で、次いで`ime-align`が24%、`mask-image`が12%、`overflow-scrolling`が5%、`grid`が2%、カスタムプロパティ、`transform-style`、`max()`、`object-fit`は全て1%で、`appearance`が約0%となっています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1901533222&format=interactive",

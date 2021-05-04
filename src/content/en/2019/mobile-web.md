@@ -289,7 +289,6 @@ The mobile web has now been around long enough for there to be an entire generat
 
 {{ figure_markup(
   image="america-online-1000-hours-free.jpg",
-  alt="1000 hours of America Online for free, from archive.org.",
   caption='1000 hours of America Online for free, from <a hreflang="en" href="https://archive.org/details/America_Online_1000_Hours_Free_for_45_Days_Version_7.0_Faster_Than_Ever_AM402R28">archive.org</a>.',
   description="A photograph of an AOL CD-ROM offering 1,000 hours free.",
   width=300,

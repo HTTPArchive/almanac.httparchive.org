@@ -240,7 +240,6 @@ De <span lang="en">Web Content Accessibility Guidelines</span> hebben een criter
 
 {{ figure_markup(
   image="common-video-attributes.png",
-  alt="De meest voorkomende video-attributen.",
   caption="De meest voorkomende `<video>`-attributen.",
   description="Staafdiagram met de top 5 attributen op het `<video>` element op desktop met `loop` op 58,43% van de video's, `autoplay` op 56,98%, `muted` op 56,13%,` class` op 51,79% en `preload` op 45,21% van de video's.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSjkB_XAYiwkYrMuoXp44mdqMGJVDUkTr_48ELozY72Mdv3OlxeWV9ysbDY9bs6hA7LnJTrHar9aZlM/pubchart?oid=1226671706&format=interactive",
@@ -417,7 +416,6 @@ In dit patroon heeft een bovenliggende container een `role="tablist"` met onderl
 
 {{ figure_markup(
   image="role-tab-list.png",
-  alt="Element met de rol tablist",
   caption='Element met de rol `tablist` (<a hreflang="en" href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html">Bron: W3C</a>)',
   description='Schermafbeelding met een voorbeeld van een tablijst (`role="tablist"`) die drie tabbladen bevat. Alle drie de tabbladen zijn gemarkeerd.',
   width=348,
@@ -426,7 +424,6 @@ In dit patroon heeft een bovenliggende container een `role="tablist"` met onderl
 
 {{ figure_markup(
   image="role-tab.png",
-  alt="Element met de rol tab",
   caption='Element met de rol `tab`. (<a hreflang="en" href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html">Bron: W3C</a>)',
   description='Schermafbeelding met een voorbeeldtabblad (`role="tab"`) waar slechts één tabblad is gemarkeerd.',
   width=346,
@@ -435,7 +432,6 @@ In dit patroon heeft een bovenliggende container een `role="tablist"` met onderl
 
 {{ figure_markup(
   image="role-tab-panel.png",
-  alt="Element met de rol tabpanel",
   caption='Element met de rol `tabpanel`. (<a hreflang="en" href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html">Bron: W3C</a>)',
   description='Schermafbeelding met een voorbeeld van een tabpanel (`role=" tabpanel"`) waar de inhoud van één tabblad is gemarkeerd.',
   width=346,
@@ -456,7 +452,6 @@ ARIA-attributen kunnen aan HTML-elementen worden toegewezen om de toegankelijkhe
 
 {{ figure_markup(
   image="most-used-aria-attributes.png",
-  alt="Top 10 meest gebruikte aria attributen.",
   caption="Top 10 meest gebruikte `aria` attributen.",
   description="Staafdiagram met de top 10 van `aria`-attributen die worden gebruikt op desktop en mobiel, me `aria-hidden` gebruikt door 48,1% desktopsites en 48,2% mobiele sites, `aria-label` wordt gebruikt door respectievelijk 40,4% en 38,7%, `aria-expanded` met 21,0% en 21,0%, `aria-controls` met 17,4% en 16,9%, `aria-labelledby` met 17,7% en 16,2%, `aria-live` met 16,8% en 15,7%, `aria-haspopup` met 15,9% en 14,0%, `aria-current` met 12,4% en 12,7%, en `aria-describedby` met 11,3% en 10,6%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSjkB_XAYiwkYrMuoXp44mdqMGJVDUkTr_48ELozY72Mdv3OlxeWV9ysbDY9bs6hA7LnJTrHar9aZlM/pubchart?oid=332801232&format=interactive",
