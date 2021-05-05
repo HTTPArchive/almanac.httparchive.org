@@ -8,6 +8,7 @@
 
 {% block meta %}
     {{ super() }}
+    {% if lang == "en" %}
     <meta name="citation_title" content="{{ self.citation_title() }}">
     {% for author in metadata.get('authors') %}
     {%- set authordata = config.contributors[author] if author in config.contributors else None -%}
@@ -17,8 +18,10 @@
     <meta name="citation_publication_date" content="{{ date_published[0:4] }}/{{ date_published[5:7] }}/{{ date_published[8:10] }}">
     {% endif -%}
     <meta name="citation_journal_title" content="{{ self.citation_journal_title() }}">
-    <meta name="citation_volume" content="{{ year }}-{{ language }}">
+    <meta name="citation_volume" content="{{ year|int - 2018 }}">
+    <meta name="citation_issue" content="{{ chapter_config.chapter_number }}">
     <meta name="citation_technical_report_institution" content="HTTP Archive">
+    {% endif %}
 {% endblock %}
 
 {% block author_structured_data %}
