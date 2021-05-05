@@ -1,6 +1,8 @@
 {% extends "base/base_chapter.html" %}
 
 {% block title %}{{ metadata.get('title') }} | {{ year }} | Web Almanac від HTTP Archive{% endblock %}
+{% block citation_title %}Web Almanac {{ year }}: Розділ {{ metadata.get('title') }}{% endblock %}
+{% block citation_journal_title %}Web Almanac {{ year }}{% endblock %}
 
 {% block description %}'Розділ ' + metadata.get('description',metadata.get('title')) + ' у Web Almanac ' + year + ' досліджує, як використовується ' + metadata.get('description',metadata.get('title')) + ' у вебі.'{% endblock %}
 

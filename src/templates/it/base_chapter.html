@@ -1,6 +1,8 @@
 {% extends "base/base_chapter.html" %}
 
 {% block title %}{{ metadata.get('title') }} | {{ year }} | Il Web Almanac di HTTP Archive{% endblock %}
+{% block citation_title %}Il Web Almanac {{ year }}: {{ metadata.get('title') }} Capitolo{% endblock %}
+{% block citation_journal_title %}Il Web Almanac {{ year }}{% endblock %}
 
 {% block description %}{{ metadata.get('description','Capitolo' + metadata.get('title') + ' del Web Almanac ' + year + ' esamina l\'uso di ' + metadata.get('description',metadata.get('title')) + ' sul web.') }}{% endblock %}
 
