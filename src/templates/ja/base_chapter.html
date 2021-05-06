@@ -1,6 +1,8 @@
 {% extends "base/base_chapter.html" %}
 
 {% block title %}{{ metadata.get('title') }} | {{ year }} | HTTP ArchiveによるWeb Almanac{% endblock %}
+{% block citation_title %}{{ year }} Web Almanac: {{ metadata.get('title') }}{% endblock %}
+{% block citation_journal_title %}{{ year }} Web Almanac{% endblock %}
 
 {% block description %}{{ metadata.get('description',metadata.get('title') + ' の章 ' + year + ' Web Almanacの使用状況を調べる ' + metadata.get('description',metadata.get('title')) + ' をウェブ上で公開しています。') }}{% endblock %}
 

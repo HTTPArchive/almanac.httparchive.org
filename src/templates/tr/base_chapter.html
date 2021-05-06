@@ -1,6 +1,8 @@
 {% extends "base/base_chapter.html" %}
 
 {% block title %}{{ metadata.get('title') }} | {{ year }} | Web Almanac HTTP Archive&#8217;dan {% endblock %}
+{% block citation_title %}{{ year }} Web Almanac: {{ metadata.get('title') }}{% endblock %}
+{% block citation_journal_title %}{{ year }} Web Almanac{% endblock %}
 
 {% block description %}{{ metadata.get('description', + year + ' Web Almanac&#8217;ın' + metadata.get('title') + ' bölümü '  + ' web üzerinde ' + metadata.get('description',metadata.get('title'))&#8217;ın + kullanımını araştırır.') }}{% endblock %}
 
