@@ -20,7 +20,10 @@
     <meta name="citation_journal_title" content="{{ self.citation_journal_title() }}">
     <meta name="citation_volume" content="{{ year|int - 2018 }}">
     <meta name="citation_issue" content="{{ chapter_config.chapter_number }}">
+    <meta name="citation_publisher" content="HTTP Archive">
     <meta name="citation_technical_report_institution" content="HTTP Archive">
+    <meta name="citation_language" content="{{ language }}">
+    <meta name="citation_fulltext_html_url" content="https://almanac.httparchive.org{{ url_for(request.endpoint, **get_view_args(lang=language.lang_code)) }}">
     {% endif %}
 {% endblock %}
 

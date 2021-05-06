@@ -1,7 +1,7 @@
 {% extends "base//base_chapter.html" %}
 
 {% block title %}{{ metadata.get('title') }} | {{ year }} | Web Almanac от HTTP Archive{% endblock %}
-{% block citation_title %}Глава "{{ metadata.get('title') }}" издания Web Almanac за {{ year }}{% endblock %}
+{% block citation_title %}Web Almanac за {{ year }} год: {{ metadata.get('title') }}{% endblock %}
 {% block citation_journal_title %}Web Almanac за {{ year }} год{% endblock %}
 
 {% block description %}{{ 'Глава ' + metadata.get('description',metadata.get('title') + ' в Web Almanac за ' + year + ' год разбирает использование ' + metadata.get('description',metadata.get('title')) + ' в вебе.') }}{% endblock %}

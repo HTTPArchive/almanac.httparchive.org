@@ -1,7 +1,7 @@
 {% extends "base/base_chapter.html" %}
 
 {% block title %}{{ metadata.get('title') }} | {{ year }} | De Web Almanac door HTTP Archive{% endblock %}
-{% block citation_title %}De {{ year }} Web Almanac: {{ metadata.get('title') }} hoofdstuk{% endblock %}
+{% block citation_title %}De {{ year }} Web Almanac: {{ metadata.get('title') }}{% endblock %}
 {% block citation_journal_title %}De {{ year }} Web Almanac{% endblock %}
 
 {% block description %}{{ metadata.get('description',metadata.get('title') + ' hoofdstuk van de ' + year + ' Web Almanac waarin het gebruik van ' + metadata.get('description',metadata.get('title')) + ' op internet wordt onderzocht.') }}{% endblock %}
