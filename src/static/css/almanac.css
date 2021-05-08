@@ -378,7 +378,6 @@ h2.header {
 }
 
 .btn {
-  border: 1px solid #1a2b49;
   border-radius: 50px;
   padding: 15px 30px;
   background: #1a2b49;
@@ -387,6 +386,37 @@ h2.header {
   font-size: 0.875rem;
   text-decoration: none;
   text-align: center;
+  box-shadow:2px 2px 3px 3px lightgray;
+}
+
+.alt.btn.cta>svg {
+  margin-right:0px;
+}
+
+ .alt.btn.cta {
+  position: fixed;
+  padding:10px 15px; 
+  opacity:0.9;
+  text-decoration: none;
+  z-index:1;
+}
+
+.alt.btn.cta:nth-child(2) {
+  bottom:8.5em;
+  right:0.125em;
+}
+.alt.btn.cta:nth-child(3) {
+  bottom:4.5em;
+  right:0.125em;
+}
+
+.alt.btn.cta:nth-child(4) {
+  bottom:0.6em;
+  right:0.125em;
+}
+
+.alt.btn.cta > span:nth-child(2) {
+  margin-left:0.35em;
 }
 
 .btn:hover,
@@ -484,6 +514,7 @@ footer.alt-bg a:focus {
 footer {
   padding-top: 40px;
   padding-bottom: 40px;
+  z-index:2;
 }
 
 .top-header,
@@ -810,7 +841,8 @@ p.copyright a {
 
   header nav:first-of-type,
   footer nav:first-of-type,
-  header .cta {
+  header .cta,
+  .alt.btn.cta > span {
     display: none;
   }
 
@@ -962,7 +994,8 @@ p.copyright a {
 
   header nav:first-of-type,
   footer nav:first-of-type,
-  header .cta {
+  header .cta,
+  .alt.btn.cta > span {
     display: none;
   }
 
@@ -1097,7 +1130,7 @@ p.copyright a {
 
 @media (max-width: 56.25em) {
   #menu,
-  #mobile-footer-nav-items {
+  #mobile-footer-nav-items{
     display: block;
   }
 
