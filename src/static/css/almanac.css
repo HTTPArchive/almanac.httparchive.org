@@ -393,7 +393,7 @@ h2.header {
   margin-right: 0px;
 }
 
- .alt.btn.cta {
+.alt.btn.cta {
   position: fixed;
   padding: 10px 15px;
   opacity: 0.9;
@@ -405,6 +405,7 @@ h2.header {
   bottom: 8.5em;
   right: 0.125em;
 }
+
 .alt.btn.cta:nth-child(3) {
   bottom: 4.5em;
   right: 0.125em;
