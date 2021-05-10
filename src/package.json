@@ -38,7 +38,7 @@
     "jsdom": "16.5.3",
     "node-fetch": "2.6.1",
     "node-watch": "0.7.1",
-    "prettier": "2.2.1",
+    "prettier": "2.3.0",
     "rainbow-code": "2.1.7",
     "recursive-readdir": "2.2.2",
     "run-script-os": "1.1.6",
