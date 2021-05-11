@@ -65,25 +65,27 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
       {{ self.explore_the_results() }}
     </a>
   </h2>
-  <a class="alt btn cta" href="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}">
+  <a class="alt btn chapter-cta comment-cta" href="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}">
     <svg width="22" height="22" role="img">
       <title>{{ self.discuss_this_chapter() }}</title>
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#comment"></use>
     </svg>
-    <span id="num_comments">{{ self.comments_fallback() }}</span> <span data-translation id="comment-singular">{{ self.comment() }}</span>
-    <span data-translation id="comment-plural">{{ self.comments() }}</span>
+    <span id="num_comments" aria-hidden="true">{{ self.comments_fallback() }}</span> <span data-translation id="comment-singular">{{ self.comment() }}</span>
+    <span data-translation id="comment-plural" aria-hidden="true">{{ self.comments() }}</span>
   </a>
-  <a class="alt btn cta" href="https://github.com/HTTPArchive/almanac.httparchive.org/issues/new?assignees=&labels=bug%2C+writing&template=2020-content-issue.md&title=Issue+with+the+2020+%5BCHAPTER%5D+chapter">
+  <a class="alt btn chapter-cta suggest-edit-cta" href="https://github.com/HTTPArchive/almanac.httparchive.org/issues/new?assignees=&labels=bug%2C+writing&template=2020-content-issue.md&title=Issue+with+the+2020+%5BCHAPTER%5D+chapter">
     <svg width="22" height="22" role="img">
+      <title>GitHub: Suggest Edit</title>
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
     </svg>
-    <span>Suggest Edit</span>
+    <span aria-hidden="true">Suggest Edit</span>
   </a>
-  <a class="alt btn cta" href="https://github.com/HTTPArchive/almanac.httparchive.org/issues/923">
+  <a class="alt btn chapter-cta help-translate-cta" href="https://github.com/HTTPArchive/almanac.httparchive.org/issues/923">
     <svg width="22" height="22" role="img">
+      <title>GitHub: Help Translate</title>
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
     </svg>
-    <span>Help Translate</span>
+    <span aria-hidden="false">Help Translate</span>
   </a>
   <a class="alt btn" href="{{ metadata.get('results') }}">
     <svg width="18" height="18" role="img" aria-hidden="true">
