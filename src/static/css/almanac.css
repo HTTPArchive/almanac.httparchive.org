@@ -395,7 +395,7 @@ h2.header {
 
 .chapter-cta {
   position: fixed;
-  border:none;
+  border: none;
   box-shadow: 2px 2px 3px 3px lightgray;
   padding: 10px 15px;
   opacity: 0.9;
