@@ -241,7 +241,6 @@ U kunt [Firefox Developer Tools](https://developer.mozilla.org/nl/docs/Tools) of
 
 {{ figure_markup(
   image="content-encoding.png",
-  alt="Hoe inhoudscodering in DevTools te controleren",
   caption='Gebruik DevTools om te controleren of er inhoudscodering op uw site wordt gebruikt',
   description="Afbeelding die laat zien hoe DevTools te gebruiken om te zien of inhoudscodering wordt gebruikt.",
   width=591,

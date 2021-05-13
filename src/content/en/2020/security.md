@@ -53,7 +53,6 @@ The effort is paying off and we are now seeing 87.70% of requests on desktop and
 
 {{ figure_markup(
   image="security-https-request-growth.png",
-  alt="Percentage of requests using HTTPS",
   caption='Percentage of requests using HTTPS.<br>(Source: <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#pctHttps">HTTP Archive</a>)',
   description="Time series chart of HTTPS request from 1st January 2017 until the 1st August 2020. Mobile and desktop usage is almost identical and starts at 35.70% of requests for desktop and 35.20% for mobile and increases all the way up to 87.70% for desktop and 86.90% for mobile with a slight tailing off at the end.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=1353660053&format=interactive",
@@ -213,7 +212,6 @@ The first one is HTTP Strict Transport Security (HSTS), which can easily be enab
 
 {{ figure_markup(
   image="security-hsts-max-age-values-in-days.png",
-  alt="HSTS max-age values (in days).",
   caption="HSTS `max-age` values (in days).",
   description="Bar chart of percentiles of values in the `max-age` attribute, converted to days. In the 10th percentile desktop is 30 days and mobile is 91, in the 25th percentile both are 182 days, in the 50th percentile both are 365 days, the 75th percentile is the same at 365 days for both and the 90th percentile has 730 days for both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=1208109634&format=interactive",

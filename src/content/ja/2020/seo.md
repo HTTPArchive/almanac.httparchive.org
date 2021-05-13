@@ -502,7 +502,6 @@ meta descriptionは、Webページの広告キャッチフレーズの役割を�
 
 {{ figure_markup(
   image="seo-img-elements-per-page.png",
-  alt="ページあたりのimg要素",
   caption="ページあたりの`<img>`要素数の分布。",
   description="ページあたりの`<img>`要素の数をパーセンタイル（10、25、50、75、90）で表した棒グラフです。デスクトップページの中央値には21個の`<img>`要素が、モバイルページの中央値には19個の`<img>`タグが配置されていることがわかります。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=923860709&format=interactive",
@@ -514,7 +513,6 @@ meta descriptionは、Webページの広告キャッチフレーズの役割を�
 
 {{ figure_markup(
   image="seo-percentage-of-missing-img-alt-attribute.png",
-  alt="画像のalt属性がない割合",
   caption="イメージの`alt`属性を欠く`<img>`要素のページあたりの割合の分布。",
   description="パーセンタイル（10、25、50、75、90）ごとに欠落している`alt`属性の割合を示す棒グラフ。中央値のWebページでは、デスクトップで2.99%の`alt`属性が欠落しており、モバイルでは2.44%の`alt`属性が欠落しています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=862590664&format=interactive",
@@ -527,7 +525,6 @@ meta descriptionは、Webページの広告キャッチフレーズの役割を�
 
 {{ figure_markup(
   image="seo-percentage-of-img-alt-attributes-present.png",
-  alt="ページごとのalt属性を持つ画像の割合の分布",
   caption="ページごとの`alt`属性を持つ画像の割合の分布。",
   description="パーセンタイル（10、25、50、75、90）ごとに存在する`alt`属性の割合を示す棒グラフ。デスクトップでは53.86％、モバイルでは51.22％のページにしか画像の`alt`属性が表示されていないことがわかりました。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=827771545&format=interactive",
@@ -539,7 +536,6 @@ meta descriptionは、Webページの広告キャッチフレーズの役割を�
 
 {{ figure_markup(
   image="seo-percentage-of-blank-img-alt-attributes.png",
-  alt="ページごとに、空白のalt属性を持つ画像の割合の分布。",
   caption="空白の`alt`属性を持つイメージのページごとの割合の分布。",
   description="パーセンタイル（10、25、50、75、90）ごとに、フィーチャーされた`alt`のブランク属性の割合を示す棒グラフ。ウェブページの中央値は、デスクトップでは10％、モバイルでは11.11％の空白の`alt`属性が表示されます。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=378651979&format=interactive",
@@ -623,7 +619,6 @@ Googleがモバイルファーストインデックスだけでなく、モバ�
 
 {{ figure_markup(
   image="seo-nofollow-ugc-sponsored-attributes.png",
-  alt="rel=nofollow、rel=ugc、およびrel=sponsored属性を持つページの割合。",
   caption="`rel=nofollow`、`rel=ugc`、`rel=sponsored`の属性を持つページの割合です。",
   description="デスクトップとモバイルにおける`rel`属性の使用率（%）を示す棒グラフ。我々の調査によると、デスクトップ版で28.58%、モバイル版では30.74%のページが `nofollow`属性を採用しています。しかし、`ugc`と`sponsored`の採用率は非常に低く、0.3%以下のページしか採用されていません。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1177251312&format=interactive",

@@ -163,7 +163,6 @@ Cos'è che gli sviluppatori sono così desiderosi di sovrascrivere? Abbiamo esam
 
 {{ figure_markup(
   image="important-top-properties.png",
-  alt="Le prime proprietà !important in base alla percentuale di pagine.",
   caption="Le prime proprietà `!important` in base alla percentuale di pagine.",
   description="Grafico a barre che mostra le principali 10 proprietà utilizzate con `!important`. Mobile e desktop hanno un utilizzo simile. La proprietà `display` viene utilizzata maggiormente con `!important`, dal 79% delle pagine mobile. In ordine decrescente, le proprietà successive sul 71-58% delle pagine mobile sono: `color`, `width`, `height`, `background`, `padding`, `margin`, `border`, `background-color` e `float`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=257343566&format=interactive",
@@ -240,7 +239,6 @@ C'è sempre molta inerzia quando cambiamo qualcosa nella piattaforma web dopo ch
 
 {{ figure_markup(
   image="selector-pseudo-classes.png",
-  alt="Utilizzo della sintassi legacy :pseudo-class per ::pseudo-elements come percentuale delle pagine mobile.",
   caption="Uso della sintassi legacy `:pseudo-class` per `::pseudo-elements` come percentuale delle pagine mobile.",
   description="Grafico a barre che mostra la percentuale di pagine che utilizzano la sintassi della pseudo-class (preceduta da un due punti) rispetto alla sintassi degli pseudo-element (due punti) per gli pseudo-elements. Lo pseudo-element `before` viene utilizzato con la sintassi della pseudo-class sul 71% delle pagine mobile e la sintassi dello pseudo-element sul 33% delle pagine mobile. Lo pseudo-element `after` viene utilizzato con la sintassi di classe ed elemento sul 68% e 30% delle pagine mobile,`first-letter` sul 7% e 1% delle pagine mobile e `first-line` sull'1% e 0 % di pagine per dispositivi mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=227968207&format=interactive",
@@ -481,7 +479,6 @@ Sembra che la maggior parte di questo utilizzo sia quello di sottrarre pixel dal
 
 {{ figure_markup(
   image="calc-units.png",
-  alt="Popolarità relativa delle unità che utilizzano calc() come percentuale di occorrenze.",
   caption="Popolarità relativa delle unità che usano `calc()` come percentuale di occorrenze.",
   description="Grafico a barre che mostra la popolarità relativa delle proprietà che utilizzano la funzione calc come percentuale di occorrenze. Desktop e mobile hanno risultati simili. La funzione calc viene utilizzata spesso nella proprietà `width`, il 59% delle occorrenze di calc su pagine mobile. Viene usato sulla proprietà `left` l'11% delle volte, `top` 5%, `max-width` 4%, `height` 4% e le restanti proprietà stanno diminuendo al 2% e all'1%: `min-height`, `margin-left`, `flex-basis`, `margin-right`, `max-height` (1%), `right`, `padding-bottom`, `padding-left`, `font-size`, and `padding-right`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=477094785&format=interactive",
@@ -491,7 +488,6 @@ Sembra che la maggior parte di questo utilizzo sia quello di sottrarre pixel dal
 
 {{ figure_markup(
   image="calc-operators.png",
-  alt="Popolarità relativa degli operatori che utilizzano calc() come percentuale di occorrenze.",
   caption="Popolarità relativa degli operatori che usano `calc()` come percentuale di occorrenze.",
   description="Grafico a barre che mostra la popolarità relativa degli operatori che utilizzano la funzione calc come percentuale di occorrenze. Desktop e mobile hanno risultati simili. La funzione calc viene utilizzata più spesso con l'operatore di sottrazione (segno meno), 64% delle istanze di calc su pagine mobili, seguito da divisione (barra in avanti) 20%, addizione (segno più) 11% e moltiplicazione (asterisco) 5%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1909242522&format=interactive",
@@ -503,7 +499,6 @@ La maggior parte dei calcoli è molto semplice, con il 99.5% dei calcoli che coi
 
 {{ figure_markup(
   image="calc-complexity-units.png",
-  alt="Distribuzione del numero di unità per occorrenza calc().",
   caption="Distribuzione del numero di unità per occorrenza `calc()`.",
   description="Grafico a barre che mostra la distribuzione del numero di unità per occorrenza della funzione di calc. Desktop e mobile hanno risultati simili. Calc viene utilizzato con un'unità per l'11% delle volte sulle pagine mobile, due volte l'89% delle volte e 3 o più volte circa lo 0% delle volte.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=695698141&format=interactive",
@@ -569,7 +564,6 @@ E se stai cercando nomi di colori fantasiosi, perché non definirne uno tuo con 
 {{ figure_markup(
   link="https://codepen.io/leaverou/pen/GRjjJwJ",
   image="color-keywords-app.png",
-  alt="Esplora in modo interattivo i dati sull'utilizzo delle parole chiave del colore con l'app.",
   caption='Esplora in modo interattivo i dati sull\`utilizzo delle parole chiave a colori con <a hreflang="en" href="https://codepen.io/leaverou/pen/GRjjJwJ">questa app interattiva</a>!',
   description="Screenshot di un'app interattiva che ti consente di selezionare i colori e vedere il loro utilizzo relativo in un grafico a torta. I dati per i colori sono mostrati nella tabella successiva.",
   width=600,
@@ -997,7 +991,6 @@ Il gradiente con il maggior numero di interruzioni di colore è <a hreflang="en"
   classes="height-16vw-122px",
   caption="Il gradiente con il maggior numero di interruzioni di colore, 646.",
   description="Uno screenshot del gradiente con il maggior numero di interruzioni di colore, che è una serie di intricate strisce multicolori di varie tonalità.",
-  alt="Uno screenshot del gradiente con il maggior numero di interruzioni di colore, che è una serie di intricate strisce multicolori di varie tonalità.",
   width=600,
   height=122
 ) }}
@@ -1078,7 +1071,6 @@ Il [layout a più colonne](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_
 
 {{ figure_markup(
   image="box-sizing.png",
-  alt="Distribuzione del numero di dichiarazioni border-box per pagina.",
   caption="Distribuzione del numero di dichiarazioni `border-box` per pagina.",
   description="Grafico a barre che mostra la distribuzione del numero di dichiarazioni `box-sizing` per pagina per desktop e mobile. La distribuzione mobile porta i desktop da 0 a 11 dichiarazioni per pagina, crescendo nei percentili più alti. I 10, 25, 50, 75 e 90° percentile della distribuzione mobile sono: 0, 4, 17, 46 e 96 dichiarazioni `border-box` per pagina.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1626960751&format=interactive",
@@ -1202,7 +1194,6 @@ Il breakpoint più comune in uso tra desktop e mobile è un `min-width` di 768px
 
 {{ figure_markup(
   image="breakpoints.png",
-  alt="I breakpoint più popolari per min-width e max-width come percentuale delle pagine per dispositivi mobile.",
   caption="I breakpoint più popolari per `min-width` e `max-width` come percentuale delle pagine per dispositivi mobile",
   description="I breakpoint più popolari di `min-width` e `max-width` come percentuale delle pagine mobile. `480px` viene utilizzato come min-width sul 21% delle pagine per dispositivi mobile e come `max-width` sul 35%. `600px` su 27% e 37% rispettivamente per larghezze min e max, `767px` su 8% e 50%, `768px` su 54% e 35%,` 800px` su 8% e 24%, `991px` su 3% e 30%, `992px` su 37% e 11%, `1024px` su 13% e 23%, `1199px` su solo 31% come `max-width` e `1200px` su 40% e 19%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=502128948&format=interactive",
@@ -1484,7 +1475,6 @@ Un piccolo ma notevole numero di pagine (circa 3000 o 0.05%) utilizzava straname
 
 {{ figure_markup(
   image="supports-criteria.png",
-  alt="Popolarità relativa delle funzionalità delle query @supports come percentuale di occorrenze.",
   caption="Popolarità relativa delle funzionalità delle query @supports come percentuale di occorrenze.",
   description="Grafico a barre della popolarità relativa delle funzionalità delle query @supports come percentuale di occorrenze. La funzionalità più popolare è `sticky` al 49% delle occorrenze su pagine mobile, seguita da `ime-align` al 24%, `mask-image` al 12%, `overflow-scrolling` al 5%, `grid` al 2%, proprietà personalizzate, `transform-style`, `max()` e `object-fit` tutto all'1% e `appearance` a circa 0%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1901533222&format=interactive",

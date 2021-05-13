@@ -180,7 +180,6 @@ Para discutir números sobre el uso de elementos (estándar, obsoleto o personal
 
 {{ figure_markup(
   image="fig7_full.png",
-  alt="Principales 150 elementos",
   caption='Principales 150 elementos (<a hreflang="en" href="fig7_full.png">detalle completo</a>).',
   description="Gráfico de barras que muestra un uso decreciente de elementos en orden descendente: html, head, body, title por encima del 99% de uso, meta, a, div por encima del 98% de uso, link, script, img, span por encima del 90% de uso, ul, li , p, style, input, br, form por encima del 70% de uso, h2, h1, iframe, h3, button, footer, header, nav por encima del 50% de uso y otras etiquetas menos conocidas que descienden desde menos del 50% hasta casi 0 % de uso.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1694360298&format=interactive",

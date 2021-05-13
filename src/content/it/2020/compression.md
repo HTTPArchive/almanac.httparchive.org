@@ -241,7 +241,6 @@ Puoi utilizzare [Firefox Developer Tools](https://developer.mozilla.org/it/docs/
 
 {{ figure_markup(
   image="content-encoding.png",
-  alt="Come controllare la content encoding in DevTools",
   caption='Utilizza DevTools per verificare se content encoding viene utilizzata sul tuo sito',
   description="Immagine che mostra come utilizzare DevTools per vedere se viene utilizzata content encoding.",
   width=591,

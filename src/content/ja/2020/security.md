@@ -53,7 +53,6 @@ WebトラフィックをHTTPSに移行し、最終的には<a hreflang="en" href
 
 {{ figure_markup(
   image="security-https-request-growth.png",
-  alt="HTTPSを使用するリクエストの割合",
   caption='HTTPSを使用したリクエストの割合<br>(出典。<a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#pctHttps">HTTP Archive</a>)',
   description="2017年1月1日から2020年8月1日までのHTTPSリクエストの時系列図。モバイルとデスクトップの利用状況はほぼ同じで、デスクトップが35.70％、モバイルが35.20％のリクエストから始まり、最後は少し尾を引いてデスクトップが87.70％、モバイルが86.90％までずっと増加しています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=1353660053&format=interactive",
@@ -213,7 +212,6 @@ Let's Encryptが首位に立っているのを見ても不思議ではありま�
 
 {{ figure_markup(
   image="security-hsts-max-age-values-in-days.png",
-  alt="HSTSのmax-age値（日）。",
   caption="HSTSの`max-age`の値（日）。",
   description="`max-age`属性の値のパーセンタイルを日数に換算した棒グラフです。パーセンタイルではデスクトップが30日、モバイルが91日、25パーセンタイルではどちらも182日、50パーセンタイルではどちらも365日、75パーセンタイルではどちらも同じ365日、90パーセンタイルではどちらも730日となっています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=1208109634&format=interactive",

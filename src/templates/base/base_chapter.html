@@ -6,6 +6,27 @@
 {% block image_height %}433{% endblock %}
 {% block image_width %}866{% endblock %}
 
+{% block meta %}
+    {{ super() }}
+    {% if lang == "en" %}
+    <meta name="citation_title" content="{{ self.citation_title() }}">
+    {% for author in metadata.get('authors') %}
+    {%- set authordata = config.contributors[author] if author in config.contributors else None -%}
+    <meta name="citation_author" content="{{ authordata.name if authordata.name else author }}">
+    {% endfor -%}
+    {% if date_published and date_published|length > 10 -%}
+    <meta name="citation_publication_date" content="{{ date_published[0:4] }}/{{ date_published[5:7] }}/{{ date_published[8:10] }}">
+    {% endif -%}
+    <meta name="citation_journal_title" content="{{ self.citation_journal_title() }}">
+    <meta name="citation_volume" content="{{ year|int - 2018 }}">
+    <meta name="citation_issue" content="{{ chapter_config.chapter_number }}">
+    <meta name="citation_publisher" content="HTTP Archive">
+    <meta name="citation_technical_report_institution" content="HTTP Archive">
+    <meta name="citation_language" content="{{ language }}">
+    <meta name="citation_fulltext_html_url" content="https://almanac.httparchive.org{{ url_for(request.endpoint, **get_view_args(lang=language.lang_code)) }}">
+    {% endif %}
+{% endblock %}
+
 {% block author_structured_data %}
       {% for author in metadata.get('authors') %}{% if loop.length > 1 and loop.index == 1 %}[{% endif -%}
       {% set authordata = config.contributors[author] if author in config.contributors else None -%}
@@ -272,7 +293,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
                 {{ self.part() }} {{ chapter_config.part }} {{ self.chapter() }} {{ chapter_config.chapter_number }}
             </div>
             <h1 class="title title-lg">
-                {{ metadata.get('title') }}
+                {{ metadata.get('title')|safe }}
                 {% if metadata.get('unedited', false) %}
                 <span class="chapter-unedited">{{ self.unedited() }}</span>
                 {% endif %}

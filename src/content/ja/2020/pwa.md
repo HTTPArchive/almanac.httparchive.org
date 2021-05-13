@@ -260,7 +260,6 @@ Google Cloud Messaging(GCM)サービスで使用されている`gcm_sender_id`�
 
 {{ figure_markup(
   image="pwa-most-used-display-values-for-service-worker-pages.png",
-  alt="サービスワーカーのページでもっとも使用される表示値です。",
   caption="サービスワーカーのページでもっとも使用される`display`の値です。",
   description="もっとも一般的な5つの`display`値を使用しているページの割合を示す棒グラフで、デスクトップページの86.73%、モバイルページの89.28%が使用している`standalone`が圧倒的に多く、`minimal-ui`はデスクトップの6.30%、モバイルの5.00%で使用され、デスクトップページの1.15%、モバイルページの0.88%が`display`値を設定しておらず、最後にデスクトップの1.00%、モバイルの0.72%が`browser`に設定しています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRRpTSA4fsHwUap-ByQ08j95uo7Zm1kY6lTSvA-DZT54g2QZ0guV7db3QyQwQgMPzsKsJ43gbzqfJst/pubchart?oid=872942071&format=interactive",
