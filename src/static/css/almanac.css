@@ -390,32 +390,24 @@ h2.header {
 }
 
 .btn.chapter-cta > svg {
-  margin: 0px 5px;
+  margin: -6px 3px;
 }
 
-.chapter-cta {
-  position: fixed;
-  border: none;
-  box-shadow: 2px 2px 3px 3px lightgray;
-  padding: 10px 15px;
-  opacity: 0.9;
-  text-decoration: none;
+#cta-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: sticky;
+  top: 63vh;
   z-index: 1;
 }
 
-.comment-cta {
-  bottom: 8.5em;
-  right: 0.125em;
-}
-
-.suggest-edit-cta {
-  bottom: 4.5em;
-  right: 0.125em;
-}
-
-.help-translate-cta {
-  bottom: 0.6em;
-  right: 0.125em;
+.chapter-cta {
+  border: none;
+  box-shadow: 0 0 1rem 0 rgba(78, 85, 100, 0.2);
+  padding: 10px 12px;
+  opacity: 0.8;
+  margin-top: 1em;
 }
 
 .btn:hover,
