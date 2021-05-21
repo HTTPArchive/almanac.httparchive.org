@@ -21,19 +21,19 @@ featured_stat_3: `darken()`
 featured_stat_label_3: Самая популярная функция в SCSS
 ---
 
-## Введение
+## Введение {introduction}
 
-Cascading Stylesheets (CSS) is a language used to lay out, format, and paint web pages and other media. It is one of the three main languages for building websites—the other two being HTML, used for structure, and JavaScript, used to specify behavior.
+Каскадные таблицы стилей (CSS) — язык, применяемый для раскладки, форматирования и рисования веб-страниц и другого медиа-контента. Это один из трёх главных языков для построения веб-сайтов. Другие два — HTML, применяемый для структурирования, и JavaScript, применяемый для описания поведения.
 
-In [last year's inaugural Web Almanac](../2019/), we looked at [a variety of CSS metrics](../2019/css) measured through 41 SQL queries over the HTTP Archive corpus, to assess the state of the technology in 2019. This year, we went a lot deeper, to measure not only how many pages use a given CSS feature, but also *how* they use it.
+[В прошлогоднем самом первом издании Web Almanac](../2019/) мы смотрели на [разнообразие CSS-метрик](../2019/css), полученных при помощи 41 SQL-запроса в хранилища HTTP Archive, чтобы получить доступ к состоянию технологии в 2019. В этом году мы погрузились намного глубже, чтобы измерить не только то, сколько страниц используют ту или иную возможность CSS, но также *как* они её используют.
 
 Overall, what we observed was a web in two different gears when it comes to CSS adoption. In our blog posts and Twitter bubbles, we tend to mostly discuss the newest and shiniest, however, there are still millions of sites using decade-old code. Things like [vendor prefixes from a bygone era](#vendor-prefixes), [proprietary IE filters](#filters), and [floats for layout](#layout), in all their [clearfix](#class-names) glory. But we also observed impressive adoption of many new features—even features that only got support across the board this very year, like [`min()` and `max()`](#feature-queries). However, there is generally an inverse correlation between how cool something is perceived to be and how much it is actually used; for example, cutting-edge [Houdini](#houdini) features were practically nonexistent.
 
 Similarly, in our conference talks, we often tend to focus on complicated, elaborate use cases that make heads explode and Twitter feeds fill with "CSS can do *that*?!". However, it turns out most CSS usage in the wild is fairly simple. [CSS Variables are mostly used as constants](#complexity) and rarely refer to other variables, `calc()` is [mostly used with two terms](#calculations), gradients [mostly have two stops](#gradients) and so on.
 
-The web is not a teenager anymore—it is now 30 years old and acts like it. It tends to favor stability over new bling and readability over complexity, occasional guilty pleasures aside.
+Веб больше не подросток — ему уже 30 лет и ведёт он себя соответствующе. Он всё больше отдаёт предпочтение стабильности, а не новизне, и удобству чтения, а не сложности, оставляя в стороне случайные удовольствия.
 
-## Методология
+## Методология {methodology}
 
 The <a hreflang="en" href="https://httparchive.org/">HTTP Archive</a> crawls <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#numUrls">millions of pages</a> every month and runs them through a private instance of <a hreflang="en" href="https://webpagetest.org/">WebPageTest</a> to store key information of every page. (You can learn more about this in our [methodology](./methodology)).
 
@@ -49,7 +49,7 @@ Custom metrics were also used for part of the [custom properties analysis](#cust
 
 <p class="note">We crawl our pages in both desktop and mobile mode but for a lot of the data they give similar results so, unless otherwise noted, stats presented in this chapter refer to the set of mobile pages.</p>
 
-## Применение
+## Применение {usage}
 
 While JavaScript far surpasses CSS in its share of page weight, CSS has certainly grown in size over the years, with the median desktop page loading 62 KB of CSS code, and one in ten pages loading more than 240 KB of CSS code. Mobile pages do use slightly less CSS code across all percentiles, but only by 4 to 7 KB. While this is definitely greater than previous years, it doesn't come close to [JavaScript's whopping median of 444 KB and top 10% of 1.2 MB](./javascript#how-much-javascript-do-we-use)
 
@@ -97,11 +97,11 @@ Another metric of size is the number of rules. The median page carries a total o
   sql_file="selectors.sql"
 ) }}
 
-## Селекторы и каскад
+## Селекторы и каскад {selectors-and-the-cascade}
 
 CSS offers a number of ways of apply styles to page, from classes, ids and using the all-important cascade to avoid duplicating styles. So how are developers applying their styling to their pages?
 
-### Имена классов
+### Имена классов {class-names}
 
 What do developers use class names for these days? To answer this question, we looked at the most popular class names. The list was dominated by <a hreflang="en" href="https://fontawesome.com/">Font Awesome</a> classes, with 192 out of 198 being `fa` or `fa-*`! The only thing that initial exploration could tell us was that Font Awesome is exceedingly popular and is used by almost one third of websites!
 
@@ -118,7 +118,7 @@ Only a few of the top classes were presentational, with most of those being eith
   sql_file="top_selector_classes_wp_fa_prefixes.sql"
 ) }}
 
-### Идентификаторы
+### Идентификаторы {ids}
 
 Despite IDs being discouraged these days in some circles due to their much higher specificity, most websites still use them, albeit sparingly. Fewer than half of pages used more than one ID in any of their selectors (had a max specificity of (1,x,y) or less) and nearly all had a median specificity that did not include IDs (0,x,y). See the <a hreflang="en" href="https://www.w3.org/TR/selectors/#specificity-rules">selectors specification</a> for more details calculating specificity and this (a,b,c) notation.
 
@@ -170,7 +170,7 @@ What is it that developers are so keen to override? We looked at breakdown by pr
   sql_file="meta_important_properties.sql"
 ) }}
 
-### Специфичность и классы
+### Специфичность и классы {specificity-and-classes}
 
 Besides keeping `id`s and `!important`s few and far between, there is a trend to circumvent specificity altogether by cramming all the selection criteria of a selector in a single class name, thus forcing all rules to have the same specificity and turning the cascade into a simpler last-one-wins system. BEM is a popular methodology of that type, albeit not the only one. While it is difficult to assess how many websites use BEM-style methodologies exclusively, since following it in every rule is rare (even the <a hreflang="en" href="https://en.bem.info/">BEM website</a> uses multiple classes in many selectors), about 10% of pages had a median specificity of (0,1,0), which may indicate mostly following a BEM-style methodology. On the opposite end of BEM, often developers use <a hreflang="en" href="https://csswizardry.com/2014/07/hacks-for-dealing-with-specificity/#safely-increasing-specificity">duplicated classes</a> to increase specificity and nudge a selector ahead of another one (e.g. `.foo.foo` instead of `.foo`). This kind of specificity hack is actually more popular than BEM, being present in 14% of mobile websites (9% of desktop)! This may indicate that most developers do not actually want to get rid of the cascade altogether, they just need more control over it.
 
@@ -220,7 +220,7 @@ Besides keeping `id`s and `!important`s few and far between, there is a trend to
   </figcaption>
 </figure>
 
-### Селекторы по атрибутам
+### Селекторы по атрибутам {attribute-selectors}
 
 The most popular attribute selector, by far, is on the `type` attribute, used in 45% of pages, likely to style inputs of different types, e.g. to style textual inputs differently from radios, checkboxes, sliders, file upload controls etc.
 
@@ -233,7 +233,7 @@ The most popular attribute selector, by far, is on the `type` attribute, used in
   sql_file="top_selector_attributes.sql"
 ) }}
 
-### Псевдо-классы и псевдо-элементы
+### Псевдо-классы и псевдо-элементы {pseudo-classes-and-pseudo-elements}
 
 There is always a lot of inertia when we change something in the web platform after it is long established. As an example, the web has still largely not caught up with pseudo-elements having separate syntax compared to pseudo-classes, even though this was a change that happened over a decade ago. All pseudo-elements that are also available with a pseudo-class syntax for legacy reasons are vastly more widespread (2.5x to 5x!) with the pseudo-class syntax.
 
@@ -272,11 +272,11 @@ When it comes to pseudo-elements, after the usual suspects `::before` and `::aft
   height=500
 ) }}
 
-## Значения и единицы измерения
+## Значения и единицы измерения {values-and-units}
 
 CSS provides a number of ways of specifying values and units, either in set lengths or calculations or based on global keywords.
 
-### Размеры
+### Размеры {lengths}
 
 The humble `px` unit has gotten a lot of negative press over the years. At first, because it didn't play nicely with old Internet Explorer's zoom functionality, and, more recently, because there are better units for most tasks that scale based on another design factor, such as viewport size, element font size, or root font size, reducing maintenance effort by making implicit design relationships explicit. The main selling point of `px`—its correspondence to one device pixel giving designers full control—is also gone now, as a pixel is not a device pixel anymore with the modern high pixel density screens. Despite all this, CSS pixels still nearly ubiquitously drive the web's designs.
 
@@ -458,7 +458,7 @@ Lengths are the only types of CSS values for which we can omit the unit when the
   sql_file="units_zero.sql"
 ) }}
 
-### Вычисления
+### Вычисления {calculations}
 
 When the [`calc()`](https://developer.mozilla.org/en-US/docs/Web/CSS/calc()) function was introduced for performing calculations between different units in CSS, it was a revolution. Previously, only preprocessors were able to accommodate such calculations, but the results were limited to static values and unreliable, since they were missing the dynamic context that is often necessary.
 
@@ -507,7 +507,7 @@ Most calculations are very simple, with 99.5% of calculations involving up to 2 
 )
 }}
 
-### Общие ключевые слова и `all`
+### Общие ключевые слова и `all` {global-keywords-and-all}
 
 For a long time, CSS only supported one global keyword: [`inherit`](https://developer.mozilla.org/en-US/docs/Web/CSS/inherit), which enables the resetting of an inheritable property to its inherited value or reusing the parent's value for a given non-inheritable property. It turns out the former is far more common than the latter, with 81.37% of `inherit` usage being found on inheritable properties. The rest is mostly to inherit backgrounds, borders, or dimensions. The latter likely indicates layout struggles, as with the proper layout mode one rarely needs to force `width` and `height` to inherit.
 
@@ -530,7 +530,7 @@ The last global keyword, `unset`, is essentially a hybrid of `initial` and `inhe
 
 The `all` property was <a hreflang="en" href="https://www.w3.org/TR/2013/WD-css3-cascade-20130103/#all-shorthand">introduced in 2013</a> and gained <a hreflang="en" href="https://caniuse.com/css-all">near-universal support in 2016 (except Edge) and universal support earlier this year</a>. It is a shorthand of nearly every property in CSS (except custom properties, `direction`, and `unicode-bidi`), and only accepts the <a hreflang="en" href="https://drafts.csswg.org/css-cascade-4/#defaulting-keywords">four global keywords</a> (`initial`, `inherit`, `unset`, and `revert`) as values. It was envisioned as a one liner CSS reset, either as `all: unset` or `all: revert`, depending on what kind of reset we wanted. However, adoption is still very low: we only found `all` on 477 pages (0.01% of all pages), and only used with the `revert` keyword.
 
-## Цвет
+## Цвет {color}
 
 They say the old jokes are the best, and that goes for colors too. The original, cryptic, `#rrggbb` hex syntax remains the most popular way to specify a color in CSS in 2020: Half of all colors are written that way. The next most popular format is the somewhat shorter `#rgb` three-digit hex format at 26%. While it is shorter, it is also able to express *way* fewer colors; only 4096, out of the 16.7 million sRGB values.
 
@@ -951,7 +951,7 @@ It will be interesting to see how the use of display-p3 color (other options exi
 
 Because *wide color gamut* (WCG) is only the beginning. The TV and movie industry has already moved past P3 to an even wider gamut, [*Rec. 2020*](https://en.wikipedia.org/wiki/Rec._2020); and also a wider range of lightness, from blinding reflections to deepest shadows. *High Dynamic Range* (HDR) has already arrived in the home, especially on games, streaming TV and movies. The web has a bunch of catching up to do.
 
-## Градиенты
+## Градиенты {gradients}
 
 Despite minimalism and flat design being all the rage, CSS gradients are used in 75% of pages. As expected, nearly all gradients are used in backgrounds. 74.45% of pages specify gradients in backgrounds, but only 7% in any other property.
 
@@ -996,11 +996,11 @@ The gradient with the most color stops is <a hreflang="en" href="https://dabblet
   height=122
 ) }}
 
-## Раскладка
+## Раскладка {layout}
 
 CSS now has a number of layout options—a far cry from the days when tables had to be used for layouts. Flexbox, Grid and Multiple-column layouts are now well supported in most browsers so let's look at how these are being used.
 
-### Принятие флексов и гридов
+### Принятие флексов и гридов {flexbox-and-grid-adoption}
 
 In the [2019 edition](../2019/css#flexbox), 41% of pages across mobile and desktop were reported as containing [Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox) properties. In 2020, this number has grown to 63% for mobile and 65% for desktop. With the number of legacy sites developed before Flexbox was a viable tool still in existence, we can safely say there is wide adoption of this layout method.
 
@@ -1043,7 +1043,7 @@ Given that Flexbox was usable in browsers earlier than Grid layout, it is likely
 
 The reasons for choosing Flexbox over Grid are frequently cited as browser support, given that Grid layout was <a hreflang="en" href="https://caniuse.com/css-grid">not supported in Internet Explorer</a>. In addition, some authors may well not have learned Grid layout yet or are using a framework with a Flexbox-based grid system. The <a hreflang="en" href="https://getbootstrap.com/docs/4.5/layout/grid/">Bootstrap</a> framework currently uses a Flexbox-based grid, in common with several other popular framework choices.
 
-### Применение различных раскладок на гридах
+### Применение различных раскладок на гридах {usage-of-different-grid-layout-techniques}
 
 The Grid layout specification gives a number of ways to describe and define layout in CSS. The most basic usage involves laying items out <a hreflang="en" href="https://www.smashingmagazine.com/2020/01/understanding-css-grid-lines/">from one grid line to another</a>. What about [naming lines](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Layout_using_Named_Grid_Lines), or use of `grid-template-areas`?
 
@@ -1062,11 +1062,11 @@ The [Grid template areas](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_G
 
 These results show that not only is Grid layout usage still relatively low on production websites, but the usage of it is also relatively simple. Authors are choosing to use the simple line-based placement over methods which would allow them to name lines and areas. While there is nothing wrong in choosing to do so, I wonder if slow adoption of Grid layout is partly due to the fact that authors haven't yet realized the power of these features. If Grid layout is seen as essentially Flexbox with poor browser support, this would certainly make it a less compelling choice.
 
-### Мультиколоночная раскладка
+### Мультиколоночная раскладка {multiple-column-layout}
 
 The [multiple-column layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Columns/Basic_Concepts_of_Multicol), or *multicol*, specification enables laying out of content in columns, much as in a newspaper. While popular in CSS as used for print, it is less useful on the web due to the risk of creating a situation where a reader needs to scroll up and down to read the content. Based on the data, however, there are significantly more pages using multicol than Grid layout with 15.33% on the desktop and 14.95% on mobile. While basic multicol properties are well supported, more complex usage and controlling column breaks with <a hreflang="en" href="https://www.smashingmagazine.com/2019/02/css-fragmentation/">fragmentation</a> has <a hreflang="en" href="https://caniuse.com/multicolumn">patchy support</a>. Considering this, it was quite surprising to see how much usage there is.
 
-### Размеры блока
+### Размеры блока {box-sizing}
 
 It is useful to know how big the boxes on your page are going to be, but with the [standard CSS box model](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model#What_is_the_CSS_box_model) adding padding and border onto the size of the content-box, the size you gave your box is smaller than the box rendered on your page. While we can't change history, the `box-sizing` property allows authors to switch to applying the specified size to the `border-box`, so the size you set is the size you see rendered. How many sites are using the `box-sizing` property? Most of them! The `box-sizing` property appears in 83.79% of desktop CSS and 86.39% on mobile.
 
@@ -1081,7 +1081,7 @@ It is useful to know how big the boxes on your page are going to be, but with th
 
 The median desktop page has 14 `box-sizing` declarations. Mobile has 17. Perhaps due to component systems inserting the declaration per component, rather than globally as a rule for all elements in the stylesheet.
 
-## Переходы и анимации
+## Переходы и анимации {transitions-and-animations}
 
 Transitions and animations have overall become very popular with the `transition` property being used on 81% of all pages and `animation` on 73% of mobile pages and 70% of desktop pages. It is somewhat surprising that usage is not lower on mobile, where one would expect that <a hreflang="en" href="https://css-tricks.com/how-web-content-can-affect-power-usage/">conserving battery power</a> would be a priority. On the other hand, CSS animations are far more battery efficient than JS animation, especially the majority of them that just animate transforms and opacity (see next section).
 
@@ -1129,15 +1129,15 @@ A major driver of animation adoption seems to be Font Awesome, as evidenced by t
   sql_file="transition_animation_names.sql"
 ) }}
 
-## Визуальные эффекты
+## Визуальные эффекты {visual-effects}
 
 CSS also offers a huge variety of visual effects giving designers access to advanced design techniques built into browsers that can be accessed with small amounts of code.
 
-### Режимы смешивания
+### Режимы смешивания {blend-modes}
 
 Last year, 8% of pages were using blend modes. This year, adoption has increased significantly, with 13% of pages using blend modes on elements (`mix-blend-mode`), and 2% in backgrounds (`background-blend-mode`).
 
-### Фильтры
+### Фильтры {filters}
 
 Adoption of filters has remained high, with the `filter` property making an appearance in 79.43% of pages. While at first this was quite exciting, a lot of it is likely to be old [IE DX filters](https://developer.mozilla.org/en-US/docs/Archive/Web/CSS/-ms-filter), which shared the same property name. When we only took into account valid CSS filters that Blink recognizes, usage drops to 22% for mobile and 20% for desktop, with `blur()` being the most popular filter type, appearing in 4% of pages.
 
@@ -1145,7 +1145,7 @@ Another filter property, `backdrop-filter`, allows us to apply filters to only t
 
 The `filter()` function allows us to apply a filter only on a particular image, which can be extremely useful for backgrounds. Sadly, it is <a hreflang="en" href="https://caniuse.com/css-filter-function">currently only supported by Safari</a>. We did not find any usage of `filter()`.
 
-### Маски
+### Маски {masks}
 
 A decade ago, we got masks in Safari with `-webkit-mask-image` and it was exciting. Everyone and their dog were using them. We eventually got <a hreflang="en" href="https://www.w3.org/TR/css-masking-1/">a spec</a> and a set of unprefixed properties closely modeled after the WebKit prototype, and it seemed a matter of time until masking became standard, with a consistent syntax across all browsers. Fast forward 10 years later, and the unprefixed syntax is <a hreflang="en" href="https://caniuse.com/css-masks">still not supported in Chrome or Safari, meaning its available on less than 5% of users' browsers worldwide</a>. It is therefore no surprise that `-webkit-mask-image` is still more popular than its standard counterpart, being found in 22% of pages. However, despite its very poor support, `mask-image` is found on 19% of pages. We see a similar pattern across most other masking properties with the unprefixed versions appearing in almost as many pages as the `-webkit-` ones. Overall, despite them falling out of hype, masks are still found in nearly a quarter of the web, indicating that the use cases are still there, despite lack of implementer interest (hint, hint!).
 
@@ -1160,15 +1160,15 @@ A decade ago, we got masks in Safari with `-webkit-mask-image` and it was exciti
   sql_file="all_properties.sql"
 ) }}
 
-### Контуры обрезки
+### Контуры обрезки {clipping-paths}
 
 Around the same time masks got popular, another similar but simpler property (originally from SVG) started making the rounds: `clip-path`. However, unlike masks, it had a brighter fate. It got standardized fairly quickly, and got support across the board relatively fast, with the last holdout being Safari which dropped the prefix in 2016. Today, it is found on 19% of pages unprefixed and 13% with the `-webkit-` prefix.
 
-## Отзывчивый дизайн
+## Отзывчивый дизайн {responsive-design}
 
 Making sites that cope with the many different screen sizes and devices that browse the web has become somewhat easier with the built-in flexible and responsive new layout methods such as Flexbox and Grid. These layout methods are usually further enhanced with the use of media queries. The data shows that 80% of desktop sites and 83% of mobile sites use media queries that are associated with responsive design, such as `min-width`.
 
-### Какие медиафичи используют люди?
+### Какие медиафичи используют люди? {which-media-features-are-people-using}
 
 As you might expect, the most common media features in use are the viewport size features which have been in use since the early days of responsive web design. The percentage of sites checking for `max-width` is 78% for both desktop and mobile. A check for `min-width` features on 75% of mobile and 73% of desktop sites.
 
@@ -1189,7 +1189,7 @@ In other good news, newer features from the <a hreflang="en" href="https://www.w
   sql_file="media_query_features.sql"
 ) }}
 
-### Распространённые контрольные точки
+### Распространённые контрольные точки {common-breakpoints}
 
 The most common breakpoint in use across desktop and mobile devices is a `min-width` of 768px. 54% of sites use this breakpoint, closely followed by a `max-width` of 767px at 50%. <a hreflang="en" href="https://getbootstrap.com/docs/4.1/layout/overview/">The Bootstrap framework</a> uses a `min-width` of 768px as its "Medium" size, so this may be the source of much of the usage. The other two high-ranking `min-width` values of 1200px (40%) and 992px (37%) are also found in Bootstrap.
 
@@ -1204,7 +1204,7 @@ The most common breakpoint in use across desktop and mobile devices is a `min-wi
 
 Pixels are very much the unit that is used for breakpoints. There are a few instances of `em`s a long way down the list, however setting breakpoints in pixels appears to be the popular choice. There are probably many reasons for this. Legacy: all of the early articles on responsive design use pixels, and many people still think about targeting particular devices when creating responsive designs. Sizing: <a hreflang="en" href="https://zellwk.com/blog/media-query-units/">using `em`s</a> involves considering the size of the content rather than the device, and this is a newer way of thinking about web design, perhaps one yet to fully be taken advantage of along with intrinsic sizing methods for layout.
 
-### Свойства внутри медиавыражений
+### Свойства внутри медиавыражений {properties-used-inside-media-queries}
 
 On mobile devices 79% and on desktop 77% of media queries are used to change the `display` property. Perhaps indicating that people are testing before switching to a Flex or Grid formatting context. Again, this may be linked frameworks, for example the <a hreflang="en" href="https://getbootstrap.com/docs/4.1/utilities/display/">Bootstrap responsive utilities</a>. 78% of authors change the `width` property inside media queries, `margin`, `padding` and `font-size` all rank highly for changed properties.
 
@@ -1217,13 +1217,13 @@ On mobile devices 79% and on desktop 77% of media queries are used to change the
   sql_file="media_query_properties.sql"
 ) }}
 
-## Кастомные свойства
+## Кастомные свойства {custom-properties}
 
 Last year, only 5% of websites were using custom properties. This year, adoption has skyrocketed. Using last year's query (which only counted declarations that set custom properties), usage has quadrupled on mobile (19.29%) and tripled on desktop (14.47%). However, when we look at values that reference custom properties via `var()`, we get an even better picture: 27% of mobile pages and 22% of desktop pages were using the `var()` function at least once, which indicates there is a sizeable number of pages only using `var()` to offer customization hooks, without ever setting a custom property.
 
 While at first glance this is impressive adoption, it appears that a major driver is WordPress, as evidenced by the most popular custom property names, the top 4 of which ship with WordPress.
 
-### Именование
+### Именование {naming}
 
 {{ figure_markup(
   image="custom-property-names.png",
@@ -1236,7 +1236,7 @@ While at first glance this is impressive adoption, it appears that a major drive
 
 Out of the 1,000 top property names, fewer than 13 are "custom", as in made up by individual web developers. The vast majority are associated with popular software, such as WordPress, Elementor, and Avada. To determine this, we took into account not only which custom properties appear in what software (by searching on GitHub), but also which properties appear in groups with similar frequencies. This does not necessarily mean that the main way a custom property ends up on a website is through usage of that software (people do still copy and paste!), but it does indicate there aren't many organic commonalities between the custom properties that developers define. The only custom property names that seem to have organically made the list of top 1000 are `--height`, `--primary-color`, and `--caption-color`.
 
-### Применение по типу
+### Применение по типу {usage-by-type}
 
 The biggest usage of custom properties appears to be naming colors and keeping colors consistent throughout. Approximately 1 in 5 desktop pages and 1 in 6 mobile pages uses custom properties in `background-color`, and the top 11 properties that contain `var()` references are either color properties or shorthands that contain colors. Lengths is the second biggest usage, with `width` and `height` being used with `var()` in 7% of mobile pages (interestingly, only around 3% of desktop pages). This is also confirmed by the types of most popular values, with color values accounting for 52% of all custom property declarations. Dimensions (a number + a unit, e.g. lengths, angles, times etc.) were the second more popular type, higher than unitless numbers (12%). This is despite guidance to prefer the latter, since numbers can be converted to dimensions via `calc()` and multiplication, but dimensions cannot be converted to numbers as dividing with dimensions is not supported yet.
 
@@ -1262,7 +1262,7 @@ In preprocessors, color variables are often manipulated to generate color variat
   sql_file="custom_property_functions.sql"
 ) }}
 
-### Сложность
+### Сложность {complexity}
 
 Next, we looked at how complex custom property usage is. One way to assess code complexity in software engineering is the shape of the dependency graph. We first looked at the *depth* of each custom property. A custom property set to a literal value like e.g. `#fff` has a depth of 0, whereas a property referencing that via var() would have a depth of 1 and so on. For example:
 
@@ -1287,11 +1287,11 @@ Next, we looked at how complex custom property usage is. One way to assess code 
 
 Examining the selectors on which custom properties are declared further confirms that most custom property usage in the wild is fairly basic. Two out of three custom property declarations are on the root element, indicating that they are used essentially as global constants. It is important to note that many popular polyfills have required them to be global in this vein, so developers using said polyfills may not have had a choice.
 
-## CSS и JS
+## CSS и JS {css-and-js}
 
 The last few years has seen a greater interaction between CSS and JavaScript, beyond the simple setting of CSS classes and styles or off. So how much are we using technologies like Houdini and techniques like CSS-in-JS?
 
-### Houdini
+### <span lang="en">Houdini</span> {houdini}
 
 You have likely heard of [Houdini](https://developer.mozilla.org/en-US/docs/Web/Houdini) by now. Houdini is a set of low-level APIs that exposes parts of the CSS engine, giving developers the power to extend CSS by hooking into the styling and layout process of a browser's rendering engine. Since <a hreflang="en" href="https://ishoudinireadyyet.com/">several Houdini specs have shipped in browsers</a>, we figured it is time to see if they are actually used in the wild yet. Short answer: no. And now for the longer answer…
 
@@ -1303,7 +1303,7 @@ The [Paint API](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Painting_AP
 
 <a hreflang="en" href="https://github.com/w3c/css-houdini-drafts/blob/master/css-typed-om/README.md">Typed OM</a>, another Houdini specification, allows access to structured values instead of the strings of the classic CSS OM. It appears to have considerably higher adoption compared to other Houdini specs, though still low overall. It is used in 9,864 desktop pages (0.18%) and 6,391 mobile ones (0.1%). While this may seem low, to put it in perspective, these are similar numbers to the adoption of `<input type="date">`! Note that unlike most stats in this chapter, these numbers reflect actual usage, and not just inclusion in a website's assets.
 
-### CSS-in-JS
+### <span lang="en">CSS-in-JS</span> {css-in-js}
 
 There is so much discussion (or argument) about CSS-in-JS that one could assume everyone and their dog is using it.
 
@@ -1327,11 +1327,11 @@ However, when we looked at usage of various CSS-in-JS libraries, it turned out t
   sql_file="css_in_js.sql"
 ) }}
 
-## Интернационализация
+## Интернационализация {internationalization}
 
 English, like many languages, is written in horizontal lines and the characters are laid out from left to right. But some languages (such as Arabic and Hebrew) are mostly written right to left and then there are languages which may be written in vertical lines, from top to bottom. Not to mention quotations from other languages. So things can get quite complicated. Both HTML and CSS have ways to handle this.
 
-### Направление чтения
+### Направление чтения {direction}
 
 When text is presented in horizontal lines, most writing systems display characters from left to right. Urdu, Arabic and Hebrew display characters from right to left, except for numbers, which are written from left to right; they are bidirectional. Some characters—such as brackets, quote marks, punctuation—could be used in either a left to right or a right to left context and are said to be directionally neutral. Things get more complex when text strings of different languages are nested in one another—English text containing a short quote in Hebrew which contains some English words, for example. The Unicode bidirectional algorithm defines how to lay out paragraphs of mixed-direction text, but it needs to know the base direction of the paragraph.
 
@@ -1341,7 +1341,7 @@ Only 12.14% of pages on mobile (and a similar 10.76% on desktop) set the `dir` a
 
 Why set direction using HTML attributes rather than CSS styling? One reason is separation of concerns: direction has to do with content which is the purview of HTML. It is also the <a hreflang="en" href="https://www.w3.org/International/tutorials/bidi-xhtml/index.en">recommended practice</a>: <q>Avoid using CSS or Unicode control codes for managing direction where you can use markup</q>. After all, the stylesheet might not load, and the text still needs to be readable.
 
-### Логические или физические свойства
+### Логические или физические свойства {logical-vs-physical-properties}
 
 Many of the first properties we are taught when we learn CSS, things like `width`, `height`, `margin-left`, `padding-bottom`, `right` and so on are grounded on a specific physical direction. However, when content needs to be presented in multiple languages with different directionality characteristics, these physical directions are often language dependent, e.g. `margin-left` often needs to become `margin-right` in a right-to-left language such as Arabic. Directionality is a 2D characteristic. For example, `height` may need to become `width` when we are presenting content in vertical writing (such as traditional Chinese).
 
@@ -1349,11 +1349,11 @@ In the past, the only solution to these problems was a separate stylesheet with 
 
 While these properties are fairly <a hreflang="en" href="https://caniuse.com/css-logical-props">well supported</a> (with some exceptions), they are not used very much outside of user agent stylesheets. None of the logical properties were used on more than 0.6% of pages. Most usage was to specify margins and paddings. Logical keywords for `text-align` were used on 2.25% of pages, but apart from that, none of the other keywords were even encountered at all. This is by large driven by browser support: `text-align: start` and `end` have <a hreflang="en" href="https://caniuse.com/mdn-css_properties_text-align_flow_relative_values_start_and_end">fairly good browser support</a> whereas logical keywords for `clear` and `float` are only supported in Firefox.
 
-## Браузерная поддержка
+## Браузерная поддержка {browser-support}
 
 A perennial problem with the web platform is how to introduce new features and extend the platform. CSS has seen us moving from vendor prefixes to feature queries as a better way of introducing change so we wanted to look at how those two techniques were being used.
 
-### Вендорные префиксы
+### Вендорные префиксы {vendor-prefixes}
 
 {{ figure_markup(
   caption="Percent of mobile pages using any vendor prefixed feature.",
@@ -1462,7 +1462,7 @@ Overall, `-*-min-pixel-ratio` comprises three quarters of prefixed media feature
   sql_file="vendor_prefix_media.sql"
 ) }}
 
-### Директива `@supports`
+### Директива поддержки фичей {feature-queries}
 
 Feature queries ([@supports](https://developer.mozilla.org/en-US/docs/Web/CSS/@supports)) have been steadily gaining traction for the past few years, and were used in 39% of pages, a notable increase from last year's 30%.
 
@@ -1483,11 +1483,11 @@ A small but notable number of pages (around 3000 or 0.05%) were oddly using `@su
   sql_file="supports_criteria.sql"
 ) }}
 
-## Мета
+## Мета {meta}
 
 Up until now we've looked at what CSS developers have used, but in this section we want to look more about _how_ they are using it.
 
-### Повторные объявления
+### Повторные объявления {declaration-repetition}
 
 To tell how efficient and maintainable a stylesheet is, one rough factor is declaration repetition, that is, the ratio between unique (different) and total number of declarations. The factor is a rough one because it is not trivial to normalize declarations (`border: none`, `border: 0`, even `border-width: 0`—plus a few more—are all different but say the same thing), and also because there are levels for the repetition: media query (most useful but harder to measure), stylesheet, or data set level as with the Almanac's overall metrics.
 
@@ -1527,11 +1527,11 @@ We did look at declaration repetition and found that the median web page, on mob
 
 These ratios are better, then, than what we know from scarce previous data. In 2017, Jens Oliver Meiert <a hreflang="en" href="https://meiert.com/en/blog/70-percent-css-repetition/">sampled 220 popular websites</a> and came out with the following averages: 6,121 declarations, of which 1,698 were unique, and a unique/total ratio of 28% (median 34%). The topic could need further investigation, but from the little we know so far, declaration repetition is tangible—and may have either improved or be more of a problem for the more popular and likely larger sites.
 
-### Сокращения и полные свойства
+### Сокращения и полные свойства {shorthands-and-longhands}
 
 Some shorthands are more successful than others. Sometimes the shorthand is sufficiently easy to use and its syntax memorable, that we end up only using the longhands intentionally, when we want to override certain values independently. And then there are these shorthands that are hardly ever used because their syntax is too confusing.
 
-#### Сокращения перед полными свойствами
+#### Сокращения перед полными свойствами {shorthands-before-longhands}
 
 Some shorthands are more successful than others. Sometimes the shorthand is sufficiently easy to use and its syntax memorable, that we end up only using the longhands intentionally, when we want to override certain values independently. And then there are these shorthands that are hardly ever used because their syntax is too confusing. Using a shorthand and overriding it with a few longhands in the same rule is a good strategy for a variety of reasons:
 
@@ -1576,7 +1576,7 @@ So how frequently does this occur? Very, as it turns out. 88% of pages use this 
   height="429"
 ) }}
 
-#### font
+#### <span lang="en">font</span> {font}
 
 The `font` shorthand is fairly popular (used 49 million times on 80% of pages) but used far less than most of its longhands (except `font-variant` and `font-stretch`). This indicates that most developers are comfortable using it (since it appears on so many websites). Developers often need to override specific typographic aspects on descendant rules, which likely explains why the longhands are used so much more.
 
@@ -1589,7 +1589,7 @@ The `font` shorthand is fairly popular (used 49 million times on 80% of pages) b
   sql_file="all_properties.sql"
 ) }}
 
-#### background
+#### <span lang="en">background</span> {background}
 
 As one of the oldest shorthands, `background` is also highly used, appearing 1 billion times in 92% of pages. it is used more frequently than any of its longhands except `background-color`, which is used 1.5 billion times, in roughly the same number of pages. However, this doesn't mean developers are fully comfortable with all of its syntax: nearly all (>90%) of `background` usage is very simple, with one or two values, most likely colors and images or images and positions. For anything further, the longhands are seen as more self-explanatory.
 
@@ -1604,7 +1604,7 @@ As one of the oldest shorthands, `background` is also highly used, appearing 1 b
   height="429"
 ) }}
 
-#### Маржины и паддинги
+#### Маржины и паддинги {margins-and-paddings}
 
 Both the `margin` and `padding` shorthands, as well as their longhands were some of the most highly used CSS properties. Padding is considerably more likely to be specified as a shorthand (1.5B uses for `padding` vs 300-400M for each shorthand), whereas there is less of a difference for margin (1.1B uses of `margin` vs 500-800M for each of its longhands). Given the initial confusion of many CSS developers about the clockwise order of values in these shorthands and the repetition rule for 2 or 3 values, we expected that most of these uses of the shorthands would be simple (1 value), however we saw the entire range of 1,2,3 or 4 values. Obviously 1 or 2 values were more common, but 3 or 4 were not at all uncommon, occurring in over 25% of `margin` uses and over 10% of `padding` usage.
 
@@ -1617,7 +1617,7 @@ Both the `margin` and `padding` shorthands, as well as their longhands were some
   sql_file="all_properties.sql"
 ) }}
 
-#### flex
+#### <span lang="en">flex</span> {flex}
 
 Nearly all `flex`, `flex-*` properties are very highly used, appearing in 30-60% of pages. However, both `flex-wrap` and `flex-direction` are used far more than their shorthand, `flex-flow`. When `flex-flow` is used, it is used with two values, i.e. as a shorter way to set both of its longhands. Despite the [elaborate sensible defaults](https://developer.mozilla.org/en-US/docs/Web/CSS/flex#Syntax:~:text=The%20flex%20property%20may%20be%20specified%20using%20one%2C%20two%2C%20or%20three%20values) for using `flex` with one or two values, around 90% of usage consists of the 3 value syntax, explicitly setting all three of its longhands.
 
@@ -1630,7 +1630,7 @@ Nearly all `flex`, `flex-*` properties are very highly used, appearing in 30-60%
   sql_file="all_properties.sql"
 ) }}
 
-#### grid
+#### <span lang="en">grid</span> {grid}
 
 Did you know that `grid-template-columns`, `grid-template-rows`, and `grid-template-areas` are actually shorthands of `grid-template`? Did you know that there's a `grid` property and all of those are some of its longhands? No? Well, you're in good company: neither do most developers. The `grid` property was only used in 5,279 websites (0.08%) and `grid-template` on 8,215 websites (0.13%). In comparison, `grid-template-columns` is used in 1.7 million websites, over 200 times more!
 
@@ -1645,15 +1645,15 @@ Did you know that `grid-template-columns`, `grid-template-rows`, and `grid-templ
   height="575"
 ) }}
 
-### Ошибки в CSS
+### Ошибки в CSS {css-mistakes}
 
 As with any complex, evolving platform not everything is done correctly. So let's look at some of the mistakes developers are making out there.
 
-#### Синтаксические ошибки
+#### Синтаксические ошибки {syntax-errors}
 
 For most of the metrics in this chapter, we used <a hreflang="en" href="https://github.com/reworkcss/css">Rework</a>, a CSS parser. While this helps dramatically improve accuracy, it also means we could be less forgiving of syntax errors compared to a browser. Even if one declaration in the entire stylesheet has a syntax error, parsing would fail, and that stylesheet would be left out of the analysis. But how many stylesheets do contain such syntax errors? Quite substantially more on desktop than mobile it turns out! More specifically, nearly 10% of stylesheets found on desktop pages included at least one unrecoverable syntax error, whereas only 2% of mobile. Do note that these are essentially lower bounds for syntax errors, since not all syntax errors actually cause parsing to fail. For example, a missing semicolon would just result in the next declaration being parsed as part of the value (e.g. `{property: "color", value: "red background: yellow"}`), it would not cause the parser to fail.
 
-#### Несуществующие свойства
+#### Несуществующие свойства {nonexistent-properties}
 
 We also looked at most common nonexistent properties, by using a list of known properties. We excluded prefixed properties from this part of the analysis, and manually excluded unprefixed proprietary properties (e.g. Internet Explorer's `behavior`, which oddly still appears on 200K websites). Out of the remaining nonexistent properties:
 
@@ -1673,7 +1673,7 @@ We also looked at most common nonexistent properties, by using a list of known p
   height="401"
 ) }}
 
-#### Полные свойства перед сокращениями
+#### Полные свойства перед сокращениями {longhands-before-shorthands}
 
 Using longhands after shorthands is a nice way to use the defaults and override a few properties. It is especially useful with list-valued properties, where using a longhand helps us avoid repeating the same value multiple times. The opposite on the other hand—using longhands before shorthands—is always a mistake, since the shorthand will overwrite the longhand. For example, take a look at this:
 
@@ -1699,7 +1699,7 @@ This kind of confusion seems to happen way more with the `background` shorthand 
   sql_file="meta_longhand_first_properties.sql"
 ) }}
 
-## Sass
+## <span lang="en">Sass</span> {sass}
 
 While analyzing CSS code tells us what CSS developers are doing, looking at preprocessor code can tell us a bit about what CSS developers want to be doing, but can't, which in some ways is more interesting. Sass consists of two syntaxes: Sass, which is more minimal, and SCSS, which is closer to CSS. The former is falling out of favor and is not used very much today, so we only looked at the latter. We used CSS files with sourcemaps to extract and analyze SCSS stylesheets in the wild. We chose to look at SCSS because it is the most popular preprocessing syntax, based on our analysis of sourcemaps.
 
@@ -1740,7 +1740,7 @@ Another future spec that is currently worked on is <a hreflang="en" href="https:
   sql_file="sass_nesting.sql"
 ) }}
 
-## Вывод
+## Вывод {conclusion}
 
 Whew! That was a lot of data! We hope you have found it as interesting as we did, and perhaps even formed your own insights about some of them.
 
