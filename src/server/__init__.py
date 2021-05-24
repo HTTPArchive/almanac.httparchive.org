@@ -7,7 +7,6 @@ from .helpers import get_view_args, chapter_lang_exists, featured_chapters_exist
 from .config import TEMPLATES_DIR, STATIC_DIR
 from . import csp, feature_policy
 import logging
-import os
 
 
 logging.basicConfig(level=logging.DEBUG)
@@ -18,7 +17,7 @@ logging.basicConfig(level=logging.DEBUG)
 class WebAlmanacServer(Flask):
     def get_send_file_max_age(self, name):
         if name:
-            if os.fspath(name).lower().endswith('.woff') or os.fspath(name).lower().endswith('.woff2'):
+            if name.lower().endswith('.woff') or name.lower().endswith('.woff2'):
                 return 31536000
         return Flask.get_send_file_max_age(self, name)
 
