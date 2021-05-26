@@ -206,6 +206,39 @@
   font-weight: normal;
 }
 
+/* Spacer for the floating CTA to rest on */
+.spacer {
+  min-height: 30px;
+}
+
+.btn.chapter-cta > svg {
+  margin: -6px 3px;
+}
+
+#cta-container {
+  display: flex;
+  height: 0;
+  flex-direction: row;
+  align-items: flex-end;
+  position: sticky;
+  top: calc(100vh - 1em);
+  z-index: 1;
+  justify-content: flex-end;
+}
+
+.chapter-cta {
+  border: none;
+  box-shadow: 0 0 1rem 0 rgba(78, 85, 100, 0.2);
+  padding: 10px 12px;
+  margin-top: 1em;
+  margin-left: 1em;
+}
+
+/* Reverse spacer space so there is no change */
+.chapter_links {
+  margin-top: -30px;
+}
+
 .chapter_links .btn {
   display: inline-block;
   margin: 10px;

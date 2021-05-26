@@ -325,16 +325,17 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
                   <title>{{ self.discuss_this_chapter() }}</title>
                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#comment"></use>
                 </svg>
-                <span class="num_comments" aria-hidden="true"><span class="not_mobile">{{ self.comments_fallback() }}</span></span> <span data-translation class="comment-singular not_mobile">{{ self.comment() }}</span>
-                <span data-translation class="comment-plural not_mobile" aria-hidden="true">{{ self.comments() }}</span>
+                <span class="num_comments"><span class="not_mobile">{{ self.comments_fallback() }}</span></span> <span data-translation class="comment-singular visually-hidden-mobile">{{ self.comment() }}</span>
+                <span data-translation class="comment-plural visually-hidden-mobile">{{ self.comments() }}</span>
               </a>
             </div>
             {{ render_byline() }}
             {{ self.main_content() }}
-            <div class="chapter_links">
-              {{ render_actions() }}
-            </div>
+            <div class="spacer"></div>
         </article>
+        <div class="chapter_links">
+          {{ render_actions() }}
+        </div>
         <section class="authors">
             {{ render_authors() }}
         </section>
