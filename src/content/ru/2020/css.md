@@ -1131,19 +1131,19 @@ A major driver of animation adoption seems to be Font Awesome, as evidenced by t
 
 ## Визуальные эффекты {visual-effects}
 
-CSS also offers a huge variety of visual effects giving designers access to advanced design techniques built into browsers that can be accessed with small amounts of code.
+CSS также предлагает огромное разнообразие визуальных эффектов, давая дизайнерам доступ к продвинутым дизайн-техникам, встроенным в браузеры, которые можно получить небольшим количеством кода.
 
 ### Режимы смешивания {blend-modes}
 
-Last year, 8% of pages were using blend modes. This year, adoption has increased significantly, with 13% of pages using blend modes on elements (`mix-blend-mode`), and 2% in backgrounds (`background-blend-mode`).
+В прошлом году 8% страниц использовали режимы смешивания. В этом году применение выросло значительно: 13% страниц применяют режимы смешивания на элементах (`mix-blend-mode`) и 2% на фонах (`background-blend-mode`).
 
 ### Фильтры {filters}
 
-Adoption of filters has remained high, with the `filter` property making an appearance in 79.43% of pages. While at first this was quite exciting, a lot of it is likely to be old [IE DX filters](https://developer.mozilla.org/en-US/docs/Archive/Web/CSS/-ms-filter), which shared the same property name. When we only took into account valid CSS filters that Blink recognizes, usage drops to 22% for mobile and 20% for desktop, with `blur()` being the most popular filter type, appearing in 4% of pages.
+Применение фильтров осталось на высоком уровне, свойство `filter` появляется на 79,43% страниц. Хотя сначала это было довольно интересно, многие их них, скорее всего, старые [фильтры IE DX](https://developer.mozilla.org/en-US/docs/Archive/Web/CSS/-ms-filter), которые используют такое же имя свойства. Как только мы приняли во внимание валидные CSS-фильтры, которые распознаются движком Blink, статистика использования упала до 22% на мобильных и 20% на десктопах, с самым популярным фильтром `blur()`, появляющимся на 4% страниц.
 
-Another filter property, `backdrop-filter`, allows us to apply filters to only the area behind an element, which is incredibly useful for improving contrast on translucent backgrounds, and creating the elegant <a hreflang="en" href="https://css-tricks.com/backdrop-filter-effect-with-css/">"frosted glass" effect</a> we've come to know from many native UIs. While not nearly as popular as `filter`, we found `backdrop-filter` in 6% of pages.
+Другой фильтр, `backdrop-filter`, позволяет нам применять фильтры только к области позади элемента, что крайне полезно для улучшения контраста на полупрозрачном фоне и создания элегантного <a hreflang="en" href="https://css-tricks.com/backdrop-filter-effect-with-css/">эффекта «матового стекла»</a>, пришедшего из многих нативных интерфейсов. И хоть он не настолько популярен, как `filter`, мы нашли `backdrop-filter` на 6% страниц.
 
-The `filter()` function allows us to apply a filter only on a particular image, which can be extremely useful for backgrounds. Sadly, it is <a hreflang="en" href="https://caniuse.com/css-filter-function">currently only supported by Safari</a>. We did not find any usage of `filter()`.
+Функция `filter()` позволяет нам применить фильтр только на конкретном изображении, что чрезвычайно полезно для фонов. К сожалению, <a hreflang="en" href="https://caniuse.com/css-filter-function">сейчас она поддержана только в Safari</a>. Мы нигде не нашли применения `filter()`.
 
 ### Маски {masks}
 
