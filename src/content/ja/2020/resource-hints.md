@@ -308,10 +308,10 @@ HTTP/2 Pushは、正しく使用しないとパフォーマンスを損なう可
 この新しいヒントは、HTMLタグとして、またはHTML属性と同じ値を取る`importance`オプションを使ってフェッチリクエストの優先順位を変更することで使用できます。
 
 ```html
-<!-- We want to initiate an early fetch for a resource, but also deprioritize it -->
+<!-- リソースの早期取得を開始したいが、同時に優先順位を下げたい -->
 <link rel="preload" href="/js/script.js" as="script" importance="low">
 
-<!-- An image the browser assigns "High" priority, but we don't actually want that. -->
+<!-- ブラウザが「高」の優先順位をつけている画像ですが、実際にはそれを望んでいません。 -->
 <img src="/img/in_view_but_not_important.svg" importance="low" alt="I'm not important!">
 ```
 
