@@ -112,6 +112,7 @@ def get_chapter_nextprev(config, chapter_slug):
 
     if not found:
         return (None, None)
+
     return prev_chapter, next_chapter
 
 
