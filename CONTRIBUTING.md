@@ -2,7 +2,7 @@
 
 ## 2021
 
-Thanks for your interest in contributing to the Web Almanac! We're currently surveying contributors for the 2021 edition, so please fill out [this form](https://forms.gle/M4MxvGRvsEtBcBwr7) and tell us how you'd like to contribute and how to reach you, and you'll get an email from us in mid-2021 when it's time to start planning.
+Thanks for your interest in contributing to the Web Almanac! We're currently developing the 2021 edition and actively looking for contributors! If you'd like to contribute to a specific chapter, please see [the list of open chapters](https://github.com/HTTPArchive/almanac.httparchive.org/issues/2167). We're also looking for contributors to join the [translators](https://github.com/HTTPArchive/almanac.httparchive.org/issues/923), [developers](https://github.com/HTTPArchive/almanac.httparchive.org/issues/2172), and [designers](https://github.com/HTTPArchive/almanac.httparchive.org/issues/2173) teams.
 
 ![star-shaped Almanac character](https://almanac.httparchive.org/static/images/avatars/0.jpg)
 

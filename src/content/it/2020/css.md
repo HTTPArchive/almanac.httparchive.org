@@ -529,6 +529,7 @@ L'ultima parola chiave globale, `unset`, è essenzialmente un ibrido di `initial
 ) }}
 
 La proprietà `all` è stata <a hreflang="en" href="https://www.w3.org/TR/2013/WD-css3-cascade-20130103/#all-shorthand">introdotta nel 2013</a> e ha ottenuto <a hreflang="en" href="https://caniuse.com/css-all">supporto quasi universale nel 2016 (tranne Edge) e il supporto universale all'inizio di quest'anno</a>. È una shorthand di quasi tutte le proprietà in CSS (eccetto le proprietà personalizzate, `direction` e `unicode-bidi`), e accetta solo le <a hreflang="en" href="https://drafts.csswg.org/css-cascade-4/#defaulting-keywords">quattro parole chiave globali</a> (`initial`, `inherit`, `unset`, e `revert`) come valori. È stato concepito come un ripristino CSS di una riga, come `all: unset` o `all: revert`, a seconda del tipo di ripristino che volevamo. Tuttavia, l'adozione è ancora molto bassa: abbiamo trovato solo `all` su 477 pagine (0.01% di tutte le pagine) e utilizzato solo con la parola chiave `revert`.
+
 ## Colore
 
 Dicono che le vecchie barzellette siano le migliori, e questo vale anche per i colori. La sintassi esadecimale originale, criptica, `#rrggbb` rimane il modo più popolare per specificare un colore in CSS nel 2020: la metà di tutti i colori è scritta in questo modo. Il prossimo formato più popolare è il formato esadecimale a tre cifre `#rgb` un po' più corto al 26%. Sebbene sia più corto, è anche in grado di esprimere *molti* meno colori; solo 4096, su 16,7 milioni di valori sRGB.

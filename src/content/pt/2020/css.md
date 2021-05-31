@@ -529,6 +529,7 @@ A última palavra-chave global, `unset`, é essencialmente um híbrido de `initi
 ) }}
 
 A propriedade `all` foi <a hreflang="en" href="https://www.w3.org/TR/2013/WD-css3-cascade-20130103/#all-shorthand">introduzida em 2013</a> e ganhou <a hreflang="en" href="https://caniuse.com/css-all">suporte quase universal em 2016 (exceto Edge) e suporte universal no início deste ano</a>. É uma abreviação de quase todas as propriedades em CSS (exceto propriedades personalizadas, `direction` e `unicode-bidi`), e só aceita as <a hreflang="en" href="https://drafts.csswg.org/css-cascade-4/#defaulting-keywords">quatro palavras-chave globais</a> (`initial`,` inherit`, `unset` e` revert`) como valores. Ele foi concebido como um reset de CSS de uma linha, seja como `all: unset` ou `all: revert`, dependendo do tipo de reset que desejamos. No entanto, a adoção ainda é muito baixa: encontramos apenas `all` em 477 páginas (0,01% de todas as páginas), e apenas usado com a palavra-chave `revert`.
+
 ## Cor
 
 Dizem que as piadas antigas são as melhores, e isso vale também para as cores. A sintaxe hexadecimal original, enigmática, `#rrggbb` permanece como a forma mais popular de especificar uma cor em CSS em 2020: Metade de todas as cores são escritas dessa forma. O próximo formato mais popular é o formato hexadecimal de três dígitos `#rgb` um pouco mais curto, com 26%. Embora seja mais curto, também é capaz de *expressar* muito menos cores; apenas 4.096, dos 16,7 milhões de valores de sRGB.

@@ -529,6 +529,7 @@ CSSで異なる単位間の計算を行うために[`calc()`](https://developer.
 ) }}
 
 `all`プロパティは<a hreflang="en" href="https://www.w3.org/TR/2013/WD-css3-cascade-20130103/#all-shorthand">2013年に導入</a> され、<a hreflang="en" href="https://caniuse.com/css-all">2016年にはほぼユニバーサルに近い形でサポートされ(Edgeを除く)、今年初めにはユニバーサルに対応</a> しました。これは、CSSのほぼすべてのプロパティ（カスタムプロパティ、`direction`、`unicode-bidi`を除く）の短縮形であり、<a hreflang="en" href="https://drafts.csswg.org/css-cascade-4/#defaulting-keywords">4つのグローバルキーワード</a>（`initial`、`inherit`、`unset`、`revert`）のみを値として受け入れます。これは、どのようなリセットをしたいかに応じて`all: unset`や`all: revert`のように、CSSのリセットを一本化することを想定していました。しかし、まだ採用率は非常に低く、`all`が見つかったのは477ページ（全ページの0.01%）で、`revert`キーワードと一緒に使われただけでした。
+
 ## カラー
 
 古いジョークは最高だと言われますが、それは色にも当てはまります。オリジナルの暗号的な`#rrggbb`16進法は、2020年のCSSで色を指定するための最も一般的な方法であり続けています。全色の半分はこの方法で書かれています。次に人気のある形式は、やや短めの`#rgb`3桁の16進数形式で、26%となっています。これはより短いとはいえ、表現できる色数はかなり少なく、1670万個のsRGB値のうちわずか4096個です。
