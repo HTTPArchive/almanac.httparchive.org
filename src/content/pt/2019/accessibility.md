@@ -242,7 +242,7 @@ Usar o ARIA de maneira correta e apropriada pode ser desafiador. Por exemplo, da
 {{ figure_markup(
   image="fig8.png",
   caption="Porcentagem do total de páginas vs atributo ARIA.",
-  description="Gráfico de barras verticais exibindo dados de porcentagem, variando de 0 a 25 em incrementos de 5, vs. barras que representam cada atributo. Aria-hidden: 23.46%, aria-label: 17.67%, aria-expanded: 8.68%, aria-current: 7.76%, aria-labelledby: 6.85%, aria-controls: 3.56%, aria-haspopup: 2.62%, aria-invalid: 2.68%, aria-describedby: 1.69%, aria-live: 1.04%, aria-required: 1%",
+  description="Gráfico de barras verticais exibindo dados de porcentagem, variando de 0 a 25 em incrementos de 5, vs. barras que representam cada atributo. `aria-hidden`: 23.46%, `aria-label`: 17.67%, `aria-expanded`: 8.68%, `aria-current`: 7.76%, `aria-labelledby`: 6.85%, `aria-controls`: 3.56%, `aria-haspopup`: 2.62%, `aria-invalid`: 2.68%, `aria-describedby`: 1.69%, `aria-live`: 1.04%, `aria-required`: 1%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=792161340&format=interactive"
   )
 }}

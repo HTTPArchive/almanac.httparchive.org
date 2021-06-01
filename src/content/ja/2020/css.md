@@ -1636,7 +1636,7 @@ background-clip: border-box;
 
 {{ figure_markup(
   image="usage-of-grid-properties.png",
-  caption="gridの短縮形とその通常の記載の使い方比較",
+  caption="Gridの短縮形とその通常の記載の使い方比較",
   description="バーチャートを見ると、`grid-template-columns`はデスクトップで27%、モバイルで26%、`grid-template-rows`はそれぞれ24%と24%、`grid-column`は20%と20%となっています。`grid-row`は20%と19%、`grid-area`は6%と6%、`grid-template-areas`は6%と6%、`grid-gap`は4%と5%、`grid-column-gap`は4%と3%、`grid-row-gap`は3%と3%である。`grid-column-end`は3%と2%で、`grid-column-start`は3%と2%で、`grid-row-start`は3%と2%で、`grid-row-end`は2%と2%で、`grid-auto-columns`は2%と2%で、`grid-auto-rows`は1%と1%である。`grid-auto-flow`は1%と1%、`grid-template`は0%と0%、`grid`は0%と0%、`grid-column-span`は0%と0%、`grid-columns`は0%と0%、`grid-rows`は0%と0%の順である。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=290183398&format=interactive",
   sheets_gid="1513860089",
