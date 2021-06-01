@@ -235,24 +235,24 @@ Harry Roberts [hizo un _tweet_ sobre este antipatrón en Twitter](https://twitte
 
 Una de las grandes ventajas sobre lo abierta que es la web es que una observación puede llevar a un cambio significativo como el que vimos aquí.
 
-### Resource hints
+### _Resource hints_
 
-Another tool we have at our disposal for offsetting some of the network costs of loading JavaScript are [resource hints](./resource-hints), specifically, `prefetch` and `preload`.
+Otra herramienta que tenemos a nuestra disposición para compensar algunos de los costos de cargar JavaScript son los [_resource hints_](./resource-hints), específicamente `prefetch` y `preload`.
 
-The `prefetch` hint lets developers signify that a resource will be used on the next page navigation, therefore the browser should try to download it when the browser is idle.
+El _hint_ de `prefetch` permite a los desarrolladores indicar que un recurso será utilizado en la siguiente navegación de página, por ende el navegador deberá intentar descargarlo una vez que se encuentre desocupado.
 
-The `preload` hint signifies that a resource will be used on the current page and that the browser should download it right away at a higher priority.
+El _hint_ de `preload` indica que un recurso será utilizado en la página actual y que el browser lo debería tratar de descargar cuanto antes posible.
 
-Overall, we see 16.7% of mobile pages using at least one of the two resource hints to load JavaScript more proactively.
+Globalmente, 16.7% de las páginas móviles usa al menos uno de estos dos _resource hints_ para cargar JavaScript proactivamente.
 
-Of those, nearly all of the usage is coming from `preload`. While 16.6% of mobile pages use at least one `preload` hint to load JavaScript, only 0.4% of mobile pages use at least one `prefetch` hint.
+De ese 16.7%, casi todo el uso viene de usar `preload`. Mientras que el 16.6% de las páginas móviles usa al menos un _hint_ de preload para cargar JavaScript, sólo el 0.4% de las páginas móviles usan al menos un _hint_ de `prefetch`.
 
-There's a risk, particularly with `preload`, of using too many hints and reducing their effectiveness, so it's worth looking at the pages that do use these hints to see how many they're using.
+Existe un riesgo, en particular con `preload`, al usar demasiados _hints_ pues se reduce su eficacia, así que vale la pena analizar las páginas que usan estos _hints_ para ver cuantos usan.
 
 {{ figure_markup(
   image="prefetch-distribution.png",
-  caption="Distribution of the number `prefetch` hints per page with any `prefetch` hints.",
-  description="Bar chart showing the distribution of prefetch hints per page with any prefetch hints. The 10, 25 and 50th percentiles for desktop and mobile pages is 1, 2, and 3 prefetch hints per page. At the 75th percentile for desktop pages it's 6 and 4 for mobile. At the 90th percentile, desktop pages use 14 prefetch hints per page and 12 for mobile pages.",
+  caption="Distribución del número de _hints_ de `prefetch` por página que tiene dichos _hints_.",
+  description="Gráfica de barras mostrando la distribución de _hints_ de prefetch por página que tiene dichos _hints_. Los percentiles 10, 25 y 50 para páginas de escritorio y móviles es de 1, 2 y 3 _hints_ de prefecth por página. En el percentil 75 el número es 6 para páginas de escritorio y 4 para móviles. En el percentil 90 las páginas de escritorio usan 14 _hints_ de prefetch por página y 12 en páginas móviles.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=1874381460&format=interactive",
   sheets_gid="1910228743",
   sql_file="resource-hints-preload-prefetch-distribution.sql"
@@ -260,14 +260,14 @@ There's a risk, particularly with `preload`, of using too many hints and reducin
 
 {{ figure_markup(
   image="preload-distribution.png",
-  caption="Distribution of the number `preload` hints per page with any `preload` hints.",
-  description="Bar chart showing the distribution of preload hints per page with any preload hints. 75% of desktop and mobile pages that use preload hints use it exactly once. The 90th percentile is 5 preload hints per page for desktop and 7 for mobile.",
+  caption="Distribución del número de _hints_ de `preload` por página que tiene dichos _hints_.",
+  description="Gráfica de barras mostrando la distribución de _hints_ de preload por página que tiene dichos _hints_. 75% de las páginas de escritorio y móviles que usan _hints_ de preload los usan exactamente una vez. En el percentil 90 hay 5 _hints_ de preload por página de escritorio y 7 por página móvil.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=320533828&format=interactive",
   sheets_gid="1910228743",
   sql_file="resource-hints-preload-prefetch-distribution.sql"
 ) }}
 
-At the median, pages that use a `prefetch` hint to load JavaScript use three, while pages that use a `preload` hint only use one. The long tail gets a bit more interesting, with 12 `prefetch` hints used at the 90th percentile and 7 `preload` hints used on the 90th as well. For more detail on resource hints, check out this year's [Resource Hints](./resource-hints) chapter.
+En la mediana, las páginas que usan _hints_ de `prefetch` para cargar JavaScript los usan 3 veces, mientras que las páginas que usan `preload` lo usan sólo una vez. La cola se pone un poco más interesante, en el percentil 90 se usan 12 _hints_ de `prefetch` y 7 _hints_ de `preload`. Para mayor detalle acerca de _resource hints_ vaya al capítulo de [_Resource Hints_](./resource-hints) de este año.
 
 ## How do we serve JavaScript?
 
