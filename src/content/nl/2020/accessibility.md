@@ -476,7 +476,7 @@ Nogmaals, de eerste regel van ARIA moet worden gerespecteerd. Als het element zi
 
 Het <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA1.html">`aria-describedby`</a> attribuut kan gebruikt worden in gevallen waar een meer robuuste beschrijving nodig is voor een element. Het accepteert ook een `id`-referentie als zijn waarde om verbinding te maken met beschrijvende tekst die elders in de interface voorkomt. Het bevat niet de toegankelijke naam, het moet worden gebruikt in combinatie met een toegankelijke naam als aanvulling, niet als vervanging. We ontdekten dat 11,31% van de desktoppagina's en 10,56% van de mobiele pagina's ten minste één element had met het kenmerk `aria-describedby`.
 
-**Leuk feit!** We hebben 3.200 websites gevonden met het attribuut **aria-labeledby**, wat een verkeerde spelling is van het attribuut `aria-labelledby`! Zorg ervoor dat u die geautomatiseerde controles uitvoert om deze gemakkelijk te vermijden fouten op te sporen.
+**Leuk feit!** We hebben 3.200 websites gevonden met het attribuut **`aria-labeledby`**, wat een verkeerde spelling is van het attribuut `aria-labelledby`! Zorg ervoor dat u die geautomatiseerde controles uitvoert om deze gemakkelijk te vermijden fouten op te sporen.
 
 #### Inhoud verbergen
 
