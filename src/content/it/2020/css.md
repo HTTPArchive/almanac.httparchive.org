@@ -937,7 +937,7 @@ E ci stiamo ancora perdendo. Nonostante sia stato <a hreflang="en" href="https:/
 {{ figure_markup(
   image="p3-chromaticity-big.svg",
   object="p3-chromaticity-big.svg",
-  caption="cromaticità UV dei colori display-p3 specificati e i loro fallback.",
+  caption="Cromaticità UV dei colori display-p3 specificati e i loro fallback.",
   description="Questo diagramma u'v del 1976 mostra la cromaticità dei colori (appiattita in 2D, quindi la luminosità non viene mostrata). La forma curva esterna rappresenta lo spettro delle lunghezze d'onda singole pure; non ci sono colori visibili al di fuori di questo. La linea retta è porpora, una miscela di rosso e viola. Il triangolo più piccolo, grigio, è la gamma sRGB, mentre il triangolo più grande e più scuro è la gamma display-p3. Vengono mostrati i 23 colori unici del display-p3 attualmente in uso sul web nel 2020; per ogni coppia di colori il cerchio più grande è il fallback sRGB mentre il cerchio più piccolo è il colore del display-p3. Se è all'interno della gamma sRGB, quei cerchi mostrano il colore corretto. In caso contrario, un cerchio bianco con un bordo rosso indica colori fuori gamma sRGB.",
   width=600,
   height=600
@@ -1733,7 +1733,7 @@ Un'altra specifica futura su cui si sta attualmente lavorando è <a hreflang="en
 
 {{ figure_markup(
   image="usage-of-explicit-nesting-in-scss.png",
-  caption="usage-of-explicit-nesting-in-scss.",
+  caption="Utilizzo della nidificazione esplicita in SCSS.",
   description="Il grafico a barre che mostra `Total` è utilizzato dall'85% su desktop e dall'85% su dispositivi mobile, `&:pseudo-class` è rispettivamente dell'83% e dell'83%, `&.class` è dell'80% e dell'80%, `&::pseudo-element` è 66% e 66%, `& (by itself)` è 62% e 62%, `&[attr]` è 57% e 57%, `& >` 24% e 23%, `& +` 21% e 20%, `& descendant` è 16% e 15% e `&#id` è 6% su desktop e 6% su dispositivo mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=370242263&format=interactive",
   sheets_gid="1872903377",

@@ -240,7 +240,7 @@ HTMLに<a hreflang="en" href="https://www.w3.org/TR/resource-hints/#resource-hin
 
 {{ figure_markup(
   image="fonts-usage-of-unicode-range.png",
-  caption="unicode-rangeの使い方。",
+  caption="`unicode-range`の使い方。",
   description="ウェブフォントを使用しているモバイルおよびデスクトップのウェブページにおけるユニコードレンジの使用率を示す棒グラフ。デスクトップでは、37.05%のページがユニコードレンジを使用し、62.95%のページが使用していません。モバイルでは、38.27%のページがユニコードレンジを使用しており、61.73%が使用していません。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1739264728&format=interactive",
   sheets_gid="640499741",

@@ -242,7 +242,7 @@ Using ARIA correctly and appropriately can be challenging. For example, of pages
 {{ figure_markup(
   image="fig8.png",
   caption="Percent of total pages vs ARIA attribute.",
-  description="Vertical bar chart displaying percentage data, ranging from 0 to 25 in increments of 5, vs. bars representing each attribute. Aria-hidden: 23.46%, aria-label: 17.67%, aria-expanded: 8.68%, aria-current: 7.76%, aria-labelledby: 6.85%, aria-controls: 3.56%, aria-haspopup: 2.62%, aria-invalid: 2.68%, aria-describedby: 1.69%, aria-live: 1.04%, aria-required: 1%",
+  description="Vertical bar chart displaying percentage data, ranging from 0 to 25 in increments of 5, vs. bars representing each attribute. `aria-hidden`: 23.46%, `aria-label`: 17.67%, `aria-expanded`: 8.68%, `aria-current`: 7.76%, `aria-labelledby`: 6.85%, `aria-controls`: 3.56%, `aria-haspopup`: 2.62%, `aria-invalid`: 2.68%, `aria-describedby`: 1.69%, `aria-live`: 1.04%, `aria-required`: 1%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=792161340&format=interactive"
   )
 }}
@@ -255,7 +255,7 @@ Currently, 46.91% of pages use at least one ARIA role attribute. In Figure 9.9 b
 
 {{ figure_markup(
   image="fig9.png",
-  caption="Top 10 aria roles.",
+  caption="Top 10 ARIA roles.",
   description="Vertical bar chart with bars for each role type vs percent of sites using ranging from 0 to 25 in increments of 5. Navigation: 20.4%; search: 15.49%; main: 14.39%; banner: 13.62%; contentinfo: 11.23%; button: 10.59%; dialog: 7.87%; complementary: 6.06%; menu: 4.71%; form: 3.75%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=176877741&format=interactive"
   )
