@@ -2,14 +2,14 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: セキュリティ
 description: 2020年版Web Almanacのセキュリティの章では、トランスポート層のセキュリティ、コンテンツセキュリティ（CSP、機能ポリシー、SRI）、Web防御メカニズム（XSS、XS-Leaksへの取り組み）、広く使用されている技術の更新方法をカバーしています。
-authors: [tomvangoethem, nrllh, bazzadp]
+authors: [tomvangoethem, nrllh, tunetheweb]
 reviewers: [cqueern, edmondwwchan]
 analysts: [tomvangoethem, nrllh]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [ksakae]
 tomvangoethem_bio: Tom Van Goethemは、ベルギーのルーベン大学の<a hreflang="en" href="https://distrinet.cs.kuleuven.be/">DistriNetグループ</a> の研究者です。彼の研究は、セキュリティやプライバシーの問題につながるウェブ上の新たなサイドチャネル攻撃を発見し、その原因となる漏洩をパッチで修正する方法を見出すことに重点を置いています。
 nrllh_bio: Nurulullah Demirは、<a hreflang="en" href="https://www.internet-sicherheit.de/en/">Institute for Internet Security</a>のセキュリティ研究者であり、博士課程の学生です。彼の研究は、屈強なWebセキュリティメカニズムと敵対的な機械学習に焦点を当てています。
-bazzadp_bio: Barry Pollardはソフトウェア開発者であり、Manningの本<a hreflang="en" href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a> の著者でもあります。彼はウェブは素晴らしいと思っていますが、それをもっと良くしたいと思っています。<a href="https://twitter.com/tunetheweb">@tunetheweb</a> でつぶやき、<a hreflang="en" href="https://www.tunetheweb.com">www.tunetheweb.com</a> でブログを書いています。
+tunetheweb_bio: Barry Pollardはソフトウェア開発者であり、Manningの本<a hreflang="en" href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a> の著者でもあります。彼はウェブは素晴らしいと思っていますが、それをもっと良くしたいと思っています。<a href="https://twitter.com/tunetheweb">@tunetheweb</a> でつぶやき、<a hreflang="en" href="https://www.tunetheweb.com">www.tunetheweb.com</a> でブログを書いています。
 discuss: 2047
 results: https://docs.google.com/spreadsheets/d/1T7sxPP5BV3uwv-sXhBEZraVk-obd0tDfFrLiD49nZC0/
 featured_quote: 本章では、ウェブ上のセキュリティの現状を探ります。様々なセキュリティ機能の採用を詳細かつ大規模に分析することで、ユーザーを守りたいという動機から、ウェブサイトの所有者がこれらのセキュリティメカニズムを適用する様々な方法についての洞察を得ます。

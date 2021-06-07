@@ -5,7 +5,7 @@ description: 2020年 Web 年鉴性能篇，涵盖了网页核心指标、Lightho
 authors: [thefoxis]
 reviewers: [borisschapira, rviscomi, obto, noamr, Zizzamia, exterkamp]
 analysts: [max-ostapenko, dooman87]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [Zuckjet]
 thefoxis_bio: Karolina 是 <a hreflang="en" href="https://calibreapp.com/">Calibre</a> 产品设计主管，致力打造最全面的速度监测平台。她创办了性能期刊，也就是你平时看到的性能简讯的来源。Karolina <a hreflang="en" href="https://calibreapp.com/blog/category/web-platform">也经常发表</a>关于性能如何影响用户体验的文章。
 discuss: 2045

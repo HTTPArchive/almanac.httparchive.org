@@ -4,8 +4,8 @@ title: PWA
 description: PWA-hoofdstuk van de Web Almanac van 2020 met betrekking tot service workers (registraties, installeerbaarheid, gebeurtenissen en bestandsgroottes), eigenschappen van Web App Manifesten en Workbox.
 authors: [hemanth]
 reviewers: [thepassle, jadjoubran, pearlbea, gokulkrishh]
-analysts: [bazzadp]
-editors: [bazzadp]
+analysts: [tunetheweb]
+editors: [tunetheweb]
 translators: [noah-vdv]
 hemanth_bio: <a hreflang="en" href="https://h3manth.com">Hemanth HM</a> is een computer-polyglot, FOSS-filosoof, GDE voor web- en betalingsdomein, DuckDuckGo-communitylid, TC39-afgevaardigde en Google Launchpad Accelerator-mentor. Houdt van de WEB && CLI. Host de podcast <a hreflang="en" href="https://TC39er.us">TC39er.us</a>.
 discuss: 2050

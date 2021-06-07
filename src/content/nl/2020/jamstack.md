@@ -5,7 +5,7 @@ description: Jamstack-hoofdstuk van de 2020 Web Almanac over het gebruik van Jam
 authors: [ahmadawais]
 reviewers: [MaedahBatool, phacks]
 analysts: [denar90, remotesynth]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [noah-vdv]
 ahmadawais_bio: Ahmad Awais is een bekroonde open-source ingenieur, Google Developers Expert Dev Voorstander, Node.js Community Committee Outreach Leider, WordPress Core Dev en VP Engineering DevRel bij WGA. Hij heeft verschillende open-source softwaretools geschreven die door miljoenen ontwikkelaars over de hele wereld worden gebruikt. Zoals zijn <a hreflang="en" href="https://shadesofpurple.pro/more">Shades of Purple</a> codethema of projecten zoals de <a hreflang="en" href="https://github.com/AhmadAwais/corona-cli">corona-cli</a>. Awais houdt van lesgeven. Meer dan 20.000 ontwikkelaars leren van zijn <a hreflang="en" href="https://AhmadAwais.com/courses/">cursussen</a>, dwz <a hreflang="en" href="https://nodecli.com/">Node CLI</a>, <a hreflang="en" href="https://vscode.pro/">VSCode.pro</a>, en <a hreflang="en" href="https://nextjsbeginner.com/">Next.js Beginner</a>. Awais ontving de erkenning van FOSS-gemeenschapsleiderschap als een van de <a hreflang="en" href="https://ahmadawais.com/github-stars/">12 aanbevolen GitHub-sterren</a>. Hij is lid van het Smashing Magazine Experts Panel; aanbevolen &amp; gepubliceerde auteur bij CSS-Tricks, Tuts+, Scotch.io, SitePoint. U kunt hem meestal vinden op Twitter <a href="https://twitter.com/MrAhmadAwais/">@MrAhmadAwais</a> waar hij zijn <a hreflang="en" href="https://awais.dev/odmt">#OneDevMinute</a> ontwikkelaarstips deelt.
 discuss: 2053
