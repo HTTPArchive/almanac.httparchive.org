@@ -5,7 +5,7 @@ description: 2020年版Web Almanacのキャッシングの章では、キャッ�
 authors: [roryhewitt, raghuramakrishnan71]
 reviewers: [jzyang]
 analysts: [raghuramakrishnan71]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [ksakae]
 roryhewitt_bio: <a hreflang="en" href="https://www.akamai.com/">Akamai</a>のエンタープライズアーキテクトで、パフォーマンスに情熱を注いでいます。イギリスからの帰国子女で、サンフランシスコに20年以上住んでいます。余暇には、長距離アドベンチャーバイク、スノーボーダー、ボクサー/カラテカとして活躍しています。彼はトラブルメーカーとして知られていることが好きです。そして何より、父親であり、夫であり、猫のルナの飼い主でもあるのです。
 raghuramakrishnan71_bio: <a hreflang="en" href="https://www.tcs.com/">Tata Consultancy Services</a>のエンタープライズアーキテクトで、公共部門の大規模なデジタルトランスフォーメーションプログラムに従事しています。テクノロジーに興味があり、特にパフォーマンスエンジニアリングに関心があります。旅行好きで、天文学、歴史、生物学、医学の進歩に興味を持っています。バガヴァッド・ギーターの第2章47節 "karmaṇy-evādhikāras te mā phaleṣhu kadāchana "を強く信奉している。

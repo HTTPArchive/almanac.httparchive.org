@@ -5,7 +5,7 @@ description: Hoofdstuk over lettertypen van de Web Almanac 2020 waarin wordt bes
 authors: [raphlinus, jpamental]
 reviewers: [RoelN, svgeesus, davelab6, rsheeter, mandymichael]
 analysts: [AbbyTsai]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [noah-vdv]
 jpamental_bio: Ontwerper, knutselaar, typograaf. Auteur van Responsive Typography, uitgenodigde expert voor het W3C en 10+ jaar ervaring gericht op betere typografie op internet.
 raphlinus_bio: Raph Levien werkt al meer dan 35 jaar met lettertypen, waaronder een doctoraat aan UC Berkeley in hulpmidelen voor het ontwerpen van lettertypen. Hij voegt zich weer bij <a hreflang="en" href="https://fonts.google.com/">Google Fonts</a> als onderzoeker op het gebied van lettertypetechnologie, nadat hij het team in 2010 mede heeft opgericht.

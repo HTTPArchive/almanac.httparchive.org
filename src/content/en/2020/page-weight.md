@@ -5,7 +5,7 @@ description: Page Weight chapter of the 2020 Web Almanac covering why page weigh
 authors: [henrihelvetica]
 reviewers: [paulcalvano]
 analysts: [paulcalvano]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: []
 henrihelvetica_bio: Henri is a freelance developer who has turned his interests to a potpourri of performance engineering with pinches of user experience. When not reading the deluge of daily research docs and case studies, or indiscriminately auditing sites in dev tools, Henri can be found contributing back to the community, co-programming meetups including the <a href="https://twitter.com/towebperf">Toronto Web Performance Group</a> or volunteering his time for lunch and learns at various bootcamps. Otherwise, he's tooling with music production software or with near certainty training and focusing on running the fastest 5k possible.
 discuss: 2054

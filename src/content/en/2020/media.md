@@ -5,7 +5,7 @@ description: Media chapter of the 2020 Web Almanac covering image file sizes and
 authors: [tpiros, bseymour, eeeps]
 reviewers: [nhoizey, colinbendell, dougsillars, Navaneeth-akam]
 analysts: [smatei]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: []
 tpiros_bio: Tamas Piros is a Developer Experience Engineer at <a hreflang="en" href="https://cloudinary.com/">Cloudinary</a>, Google Developer Expert and Technical Instructor running <a hreflang="en" href="https://fullstacktraining.com">Full Stack Training</a>.
 bseymour_bio: Ben Seymour is a Dynamic Media & Content Specialist with <a hreflang="en" href="https://cloudinary.com/">Cloudinary</a>, author of <a hreflang="en" href="http://responsiveimag.es/">Practical Responsive Images</a> and co-founder of <a hreflang="en" href="https://storyus.life/">Storyus</a> and <a hreflang="en" href="https://haktive.com/">Haktive</a>.

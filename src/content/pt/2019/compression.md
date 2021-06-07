@@ -5,7 +5,7 @@ description: Capítulo de compressão do Web Almanac de 2019 acerca de compress�
 authors: [paulcalvano]
 reviewers: [obto, yoavweiss]
 analysts: [paulcalvano]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [soulcorrosion]
 discuss: 1770
 results: https://docs.google.com/spreadsheets/d/1IK9kaScQr_sJUwZnWMiJcmHEYJV292C9DwCfXH6a50o/
@@ -158,7 +158,7 @@ Adicionalmente, existem 67k pedidos que retornam um `Content-Encoding` inválido
 Não conseguimos determinar os níveis de compressão dos diagnósticos obtidos do HTTP Archive mas a melhor prática para comprimir conteúdo é:
 
 * No mínimo, ativar o nível 6 de compressão Gzip para recursos do tipo texto. Este nível representa um bom balanço entre o custo computacional e taxa de compressão sendo a opção <a hreflang="en" href="https://paulcalvano.com/index.php/2018/07/25/brotli-compression-how-much-will-it-reduce-your-content/">padrão para muitos servidores web</a> apesar do [Nginx ainda recorrer a um nível 1, normalmente muito baixo](http://nginx.org/en/docs/http/ngx_http_gzip_module.html#gzip_comp_level).
-* Se conseguir suportar Brotli e pre-comprimir esses recursos, então use o nível 11. Este nível é computacionalmente mais exigente que o Gzip - portanto uma pre-compressão é essencial para evitar atrasos. 
+* Se conseguir suportar Brotli e pre-comprimir esses recursos, então use o nível 11. Este nível é computacionalmente mais exigente que o Gzip - portanto uma pre-compressão é essencial para evitar atrasos.
 * Se conseguir suportar Brotli mas pre-compressão não é uma opção, então comprima com Brotli nível 5. Este nível irá produzir recursos mais pequenos quando comparados com Gzip, com uma exigência computacional semelhante.
 
 ## Que tipos de conteúdos estamos comprimindo?
@@ -179,7 +179,7 @@ No gráfico abaixo, podemos ver o top 25 de tipos de conteúdo em caixas cujo ta
   )
 }}
 
-Excluindo os 8 tipos de conteúdo mais populares permite-nos ver as estatísticas de compressão dos restantes tipos de conteúdo com mais clareza. 
+Excluindo os 8 tipos de conteúdo mais populares permite-nos ver as estatísticas de compressão dos restantes tipos de conteúdo com mais clareza.
 
 {{ figure_markup(
   image="fig4.png",
@@ -223,7 +223,7 @@ Os gráficos abaixo ilustram a distribuição de cada técnica de compressão pa
   )
 }}
 
-Os tipos de conteúdo com a taxa de compressão mais baixa incluem `application/json`, `text/xml`, e `text/plain`. Estes recursos são normalmente usados em pedidos XHR para fornecer dados que aplicações web podem usar para criar as melhores experiências. Comprimir esses recursos irá, muito provavelmente, melhorar a experiência do usuário. Gráficos de vetores, como `image/svg+xml` e `image/x-icon` não são muitas vezes encarados como baseados em texto, mas na realidade são e sites que os usam iriam se beneficiar da compressão. 
+Os tipos de conteúdo com a taxa de compressão mais baixa incluem `application/json`, `text/xml`, e `text/plain`. Estes recursos são normalmente usados em pedidos XHR para fornecer dados que aplicações web podem usar para criar as melhores experiências. Comprimir esses recursos irá, muito provavelmente, melhorar a experiência do usuário. Gráficos de vetores, como `image/svg+xml` e `image/x-icon` não são muitas vezes encarados como baseados em texto, mas na realidade são e sites que os usam iriam se beneficiar da compressão.
 
 {{ figure_markup(
   image="fig7.png",
@@ -316,7 +316,7 @@ Adicionalmente, a porcentagem de compressão Brotli é mais alta para conteúdo 
 
 ## Como identificar oportunidades para compressão
 
-A ferramenta <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a> da Google permite aos usuários executarem uma série de auditorias para páginas web. A <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/audits/text-compression">auditoria de compressão de texto</a> avalia se o site pode beneficiar de compressão baseada em texto adicional. Isso é feito através de uma tentativa de compressão dos recursos avaliando se o tamanho dos objetos pode ser reduzido pelo menos 10% e 1400 bytes. Dependendo da pontuação, é possível ver uma recomendação para compressão nos resultados, com uma lista dos recursos específicos que podem ser comprimidos. 
+A ferramenta <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a> da Google permite aos usuários executarem uma série de auditorias para páginas web. A <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/audits/text-compression">auditoria de compressão de texto</a> avalia se o site pode beneficiar de compressão baseada em texto adicional. Isso é feito através de uma tentativa de compressão dos recursos avaliando se o tamanho dos objetos pode ser reduzido pelo menos 10% e 1400 bytes. Dependendo da pontuação, é possível ver uma recomendação para compressão nos resultados, com uma lista dos recursos específicos que podem ser comprimidos.
 
 {{ figure_markup(
   image="ch15_fig8_lighthouse.jpg",
@@ -359,6 +359,6 @@ O Lighthouse também indica quantos bytes podem ser poupados por ligar a compres
 
 Compressão HTTP é extensivamente usada e uma funcionalidade com muito valor para reduzir o tamanho de conteúdo web. Tanto Gzip e Brotli são os algoritmos dominantes e a quantidade de conteúdo comprimido varia por tipo de conteúdo. Ferramentas como o Lighthouse podem ajudar a revelar oportunidades para comprimir conteúdo.
 
-Enquanto muitos sites estão fazendo um bom uso da compressão HTTP, ainda existe margem para melhoria, particularmente para o formato `text/html` que é o formato em que a web é construída! De forma similar, outros formatos menos compreendidos como `font/ttf`, `application/json`, `text/xml`, `text/plain`, `image/svg+xml`, e `image/x-icon` podem exigir configurações extra que muitos sites falham. 
+Enquanto muitos sites estão fazendo um bom uso da compressão HTTP, ainda existe margem para melhoria, particularmente para o formato `text/html` que é o formato em que a web é construída! De forma similar, outros formatos menos compreendidos como `font/ttf`, `application/json`, `text/xml`, `text/plain`, `image/svg+xml`, e `image/x-icon` podem exigir configurações extra que muitos sites falham.
 
 No mínimo, os sites deviam usar compressão Gzip para todos os recursos baseados em texto, uma vez que é largamente suportado, facilmente implementado, e tem um baixo custo de processamento. Ganhos adicionais podem ser encontrados com compressão Brotli, ainda que os níveis de compressão devam ser escolhidos com cuidado dependendo dos recursos poderem ser pré comprimidos.
