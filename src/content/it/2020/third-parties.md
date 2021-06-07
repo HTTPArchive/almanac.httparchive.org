@@ -5,7 +5,7 @@ description: Capitolo Terze parti del 2020 Web Almanac che copre i dati di cosa 
 authors: [simonhearne]
 reviewers: [jzyang, exterkamp]
 analysts: [max-ostapenko, paulcalvano]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [chefleo]
 simonhearne_bio: Simon è un architetto di prestazioni web. È appassionato di aiutare a fornire un Web più veloce e accessibile. Puoi trovarlo twittare <a href="https://twitter.com/simonhearne">@SimonHearne</a> e bloggare su <a hreflang="en" href="https://simonhearne.com">simonhearne.com</a>.
 discuss: 2042

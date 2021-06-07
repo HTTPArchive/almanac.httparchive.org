@@ -5,7 +5,7 @@ description: Chapitre Performance du Web Almanac 2020 couvrant les Signaux Web E
 authors: [thefoxis]
 reviewers: [borisschapira, rviscomi, obto, noamr, Zizzamia]
 analysts: [max-ostapenko, dooman87]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [borisschapira]
 thefoxis_bio: Karolina est <em lang="en">Product Design Lead</em> chez <a hreflang="en" lang="en" href="https://calibreapp.com/">Calibre</a>, travaillant à la création de la plate-forme de surveillance de la vitesse la plus complète. Elle réalise la curation de la <a hreflang="en" lang="en" href="https://perf.email/">Performance Newsletter</a>, votre source d’informations et de ressources sur la performance. Karolina <a hreflang="en" href="https://calibreapp.com/blog/category/web-platform">écrit aussi fréquemment</a> sur la façon dont la performance affecte l’expérience d’utilisation.
 discuss: 2045
