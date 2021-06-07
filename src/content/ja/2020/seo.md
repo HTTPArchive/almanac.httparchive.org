@@ -3,7 +3,7 @@
 title: SEO
 description: コンテンツ、METAタグ、インデックス性、リンク、スピード、構造化データ、国際化、SPA、AMP、セキュリティを網羅した2020年Web AlmanacのSEO編。
 authors: [aleyda, ipullrank, fellowhuman1101]
-reviewers: [natedame, catalinred, dsottimano, dwsmart, en3r0, ibnesayeed, bazzadp]
+reviewers: [natedame, catalinred, dsottimano, dwsmart, en3r0, ibnesayeed, tunetheweb]
 analysts: [Tiggerito, antoineeripret]
 editors: [rviscomi]
 translators: [ksakae]

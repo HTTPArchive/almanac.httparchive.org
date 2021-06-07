@@ -5,7 +5,7 @@ description: PWA chapter of the 2019 Web Almanac covering service workers (regis
 authors: [tomayac, jeffposnick]
 reviewers: [hyperpress, ahmadawais]
 analysts: [jrharalson]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: []
 discuss: 1766
 results: https://docs.google.com/spreadsheets/d/19BI3RQc_vR9bUPPZfVsF_4gpFWLNT6P0pLcAdL-A56c/

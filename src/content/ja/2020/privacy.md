@@ -5,7 +5,7 @@ description: 2020年版Web Almanacのプライバシーの章では、オンラ�
 authors: [ydimova]
 reviewers: [ldevernay]
 analysts: [ydimova, max-ostapenko]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [ksakae]
 ydimova_bio:  Yana Dimovaは、ベルギーのKUルーヴェン大学の博士課程に在籍し、プライバシーとウェブセキュリティの研究を行っています。
 discuss: 2046

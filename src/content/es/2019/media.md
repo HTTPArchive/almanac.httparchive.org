@@ -5,7 +5,7 @@ description: Capítulo Multimedia del 2019 Web Almanac que cubre los tamaños y 
 authors: [colinbendell, dougsillars]
 reviewers: [ahmadawais, eeeps]
 analysts: [dougsillars, rviscomi]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [garcaplay]
 discuss: 1759
 results: https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/

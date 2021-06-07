@@ -5,7 +5,7 @@ description: Hoofdstuk Derden van de Web Almanac 2020 met informatie over welke 
 authors: [simonhearne]
 reviewers: [jzyang, exterkamp]
 analysts: [max-ostapenko, paulcalvano]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [noah-vdv]
 simonhearne_bio: Simon is een webprestatie-architect. Hij heeft een passie voor het helpen leveren van een sneller en toegankelijker web. U kunt hem vinden op twitter<a href="https://twitter.com/simonhearne">@SimonHearne</a> en zijn blog <a hreflang="en" href="https://simonhearne.com">simonhearne.com</a>.
 discuss: 2042

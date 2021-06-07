@@ -3,7 +3,7 @@
 title: HTTP/2
 description: HTTP/2-hoofdstuk van de Web Almanac 2020, dat de acceptatie en impact van HTTP/2, HTTP/2 Push, HTTP/2 Issues en HTTP/3 behandelt.
 authors: [dotjs, rmarx, MikeBishop]
-reviewers: [LPardue, bazzadp, ibnesayeed]
+reviewers: [LPardue, tunetheweb, ibnesayeed]
 analysts: [gregorywolf]
 editors: [rviscomi]
 translators: [noah-vdv]

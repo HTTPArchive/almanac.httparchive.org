@@ -5,7 +5,7 @@ description: Ecommerce chapter of the 2019 Web Almanac covering ecommerce platfo
 authors: [samdutton, alankent]
 reviewers: [voltek62]
 analysts: [rviscomi]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: []
 discuss: 1768
 results: https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/

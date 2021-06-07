@@ -4,8 +4,8 @@ title: PWA
 description: サービスワーカー（登録、インストール性、イベント、ファイルサイズ）、Web App Manifestsのプロパティ、Workboxをカバーする2020年Web AlmanacのPWAの章。
 authors: [hemanth]
 reviewers: [thepassle, jadjoubran, pearlbea, gokulkrishh]
-analysts: [bazzadp]
-editors: [bazzadp]
+analysts: [tunetheweb]
+editors: [tunetheweb]
 translators: [ksakae]
 hemanth_bio: <a hreflang="en" href="https://h3manth.com">Hemanth HM</a>は、コンピュータポリグロット、FOSS哲学者、Webと決済ドメインのためのGDE、DuckDuckGoコミュニティメンバー、TC39代表者、Google Launchpad Acceleratorメンター。WEB & CLIが大好き。<a hreflang="en" href="https://TC39er.us">TC39er.us</a>ポッドキャストを主催。
 discuss: 2050
