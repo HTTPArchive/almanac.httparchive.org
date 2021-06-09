@@ -51,23 +51,23 @@ featured_stat_label_3: Самая популярная функция в SCSS
 
 ## Применение {usage}
 
-While JavaScript far surpasses CSS in its share of page weight, CSS has certainly grown in size over the years, with the median desktop page loading 62 KB of CSS code, and one in ten pages loading more than 240 KB of CSS code. Mobile pages do use slightly less CSS code across all percentiles, but only by 4 to 7 KB. While this is definitely greater than previous years, it doesn't come close to [JavaScript's whopping median of 444 KB and top 10% of 1.2 MB](./javascript#how-much-javascript-do-we-use)
+Хотя JavaScript намного превосходит CSS по своей доле в общем весе страницы, CSS определённо за годы вырос в размерах: медианная страница для десктопа загружает 62 КБ CSS-кода, а каждая десятая страница загружает более 240 КБ CSS. Мобильные страницы используют немного меньше CSS-кода на всех перцентилях, но всего на 4–7 КБ. И хотя такие значения определённо больше, чем в предыдущие годы, это даже не близко к [колоссальным значениям для JavaScript в 444 КБ на медиане и в 1,2 МБ для верхних 10%](./javascript#how-much-javascript-do-we-use).
 
 {{ figure_markup(
   image="stylesheet-size.png",
-  caption="Distribution of the stylesheet transfer size per page.",
-  description="Bar chart showing the distribution of stylesheet transfer size per page, which includes compression when enabled. Desktop tends to have slightly more stylesheet bytes per page by about 10 KB. The 10, 25, 50, 75, and 90th percentiles for mobile are: 5, 22, 56, 122, and 234 KB.",
+  caption="Распределение передаваемого размера таблиц стилей на страницу.",
+  description="Гистограмма, показывающая распределение передаваемого размера таблиц стилей на страницу, учитывающая сжатие, если оно включено. Десктоп имеет тенденцию включать немного больше байт стилей на страницу примерно на 10 КБ. 10, 25, 50, 75 и 90 перцентили для мобильных устройств: 5, 22, 56, 122 и 234 КБ.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=762340058&format=interactive",
   sheets_gid="314594173",
   sql_file="stylesheet_kbytes.sql"
 ) }}
 
-It would be reasonable to assume that a lot of this CSS is generated via preprocessors or other build tools, however only about 15% included sourcemaps. It is unclear whether this says more about sourcemap adoption or build tool usage. Of those, the overwhelming majority (45%) came from other CSS files, indicating usage of build processes that operate on CSS files, such as minification, <a hreflang="en" href="https://autoprefixer.github.io/">autoprefixer</a>, and/or <a hreflang="en" href="https://postcss.org/">PostCSS</a>. <a hreflang="en" href="https://sass-lang.com/">Sass</a> was far more popular than <a hreflang="en" href="https://lesscss.org/">Less</a> (34% of stylesheets with sourcemaps vs 21%), with SCSS being the more popular dialect (33% for .scss vs 1% for .sass).
+Было бы разумно предположить, что большая часть этого CSS генерируется препроцессорами или другими сборщиками, однако только для 15% включены карты кода. Неясно, говорит ли это больше об использовании карт кода или применении сборщиков. Из них подавляющее большинство (45%) пришло из других файлов CSS, что указывает на использование таких процессов сборки, работающих с CSS-файлами, как минификация, <a hreflang="en" href="https://autoprefixer.github.io/">автопрефиксер</a> и/или <a hreflang="en" href="https://postcss.org/">PostCSS</a>. <a hreflang="en" href="https://sass-lang.com/">Sass</a> был намного более популярным, чем <a hreflang="en" href="https://lesscss.org/">Less</a> (34% таблиц стилей с картами кода против 21%), с SCSS как самым популярным диалектом (33% для .scss против 1% для .sass).
 
-All these kilobytes of code are typically distributed across multiple files and `<style>` elements; only about 7% of pages concentrate all their CSS code in one remote stylesheet, as we are often taught to do. In fact, the median page contains 3 `<style>` elements and 6 remote stylesheets, with 10% of them carrying over 14 `<style>` elements and over 20 remote CSS files! While this is suboptimal on desktop, it really kills [performance](./performance) on mobile, where round-trip latency is more important than raw download speed.
+Все эти килобайты кода обычно распределены по множеству файлов и элементам `<style>`; только около 7% страниц концентрируют весь свой CSS-код в одной удалённой таблице стилей, как нас часто учат делать. Фактически, медианная страница содержит 3 элемента `<style>` и 6 удалённых таблиц стилей, а 10% страниц содержат больше 14 элементов `<style>` и больше 20 удалённых CSS-файлов! И если для десктопов это приемлемо, такая ситуация на самом деле убивает [производительность](./performance) на мобильных, где задержка приёма-передачи важнее, чем скорость загрузки.
 
 {{ figure_markup(
-  caption="The largest number of stylesheets loaded by a page.",
+  caption="Самое большое количество таблиц стилей, загруженных на странице.",
   content="1,379",
   classes="big-number",
   sheets_gid="1111507751",
@@ -75,23 +75,23 @@ All these kilobytes of code are typically distributed across multiple files and 
 )
 }}
 
-Shockingly, the maximum number of stylesheets per page is an incredible 26,777 `<style>` elements and 1,379 remote ones! I'd definitely want to avoid loading that page!
+Поразительно, максимальное количество таблиц стилей на странице составляет 26777 элементов `<style>` и 1379 удалённых файлов! Я опредёленно не хочу загружать эту страницу!
 
 {{ figure_markup(
   image="stylesheet-count.png",
-  caption="Distribution of the number of stylesheets per page.",
-  description="Bar chart showing the distribution of stylesheets per page. Desktop and mobile are nearly equal throughout the distribution. The 10, 25, 50, 75, and 90th percentiles for mobile are: 1, 3, 6, 12, and 21 stylesheets per page.",
+  caption="Распределение количества таблиц стилей на страницу.",
+  description="Гистограмма, показывающая распределение таблиц стилей на страницу. Десктопные и мобильные страницы практически одинаковы на всём распределении. 10, 25, 50, 75 и 90 перцентили для мобильных устройств: 1, 3, 6, 12 и 21 таблица стилей на страницу.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=163217622&format=interactive",
   sheets_gid="1111507751",
   sql_file="stylesheet_count.sql"
 ) }}
 
-Another metric of size is the number of rules. The median page carries a total of 448 rules and 5,454 declarations. Interestingly, 10% of pages contain a tiny amount of CSS: fewer than 13 rules! Despite mobile having slightly smaller stylesheets, it also has slightly more rules, indicating smaller rules overall (as it tends to happen with media queries).
+Другая метрика размера — количество правил. Медианная страница включает 448 правил и 5454 объявления. Что интересно, 10% страниц включают крошечное количество CSS: меньше 13 правил! Несмотря на то, что мобильные страницы имеют слегка меньшие таблицы стилей, в них также немного больше правил, что указывает на меньшие правила в целом (как это обычно бывает с медиа-выражениями).
 
 {{ figure_markup(
   image="rules.png",
-  caption="Distribution of the total number of style rules per page.",
-  description="Bar chart showing the distribution of style rules per page. Mobile tends to have slightly more rules than desktop. The 10, 25, 50, 75, and 90th percentiles for mobile are: 13, 140, 479, 1,074, and 1,831 rules per page.",
+  caption="Распределение общего количества стилевых правил на страницу.",
+  description="Гистограмма, показывающая распределение общего количества стилевых правил на страницу. Мобильные страницы имеют тенденцию включать немного больше правил, чем десктопные. 10, 25, 50, 75 и 90 перцентили для мобильных: 13, 140, 479, 1074 и 1831 правило на страницу.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1918103300&format=interactive",
   sheets_gid="42376523",
   sql_file="selectors.sql"
