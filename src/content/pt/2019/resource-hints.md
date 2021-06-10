@@ -10,7 +10,7 @@ translators: [HakaCode]
 discuss: 1774
 results: https://docs.google.com/spreadsheets/d/14QBP8XGkMRfWRBbWsoHm6oDVPkYhAIIpfxRn4iOkbUU/
 khempenius_bio: Katie Hempenius é engenheira da equipe do Chrome, onde trabalha para tornar a web mais rápida.
-featured_quote: As dicas de recursos fornecem <em>dicas</em> ao navegador sobre quais recursos serão necessários em breve. A ação que o navegador executa ao receber essa dica irá variar dependendo do tipo de dica de recurso; diferentes dicas de recursos dão início a diferentes ações. Quando usados corretamente, eles podem melhorar o desempenho da página, dando uma vantagem inicial para ações antecipadas importantes.
+featured_quote: As dicas de recursos fornecem <em>dicas</em> ao navegador sobre quais recursos serão necessários em breve. A ação que o navegador executa ao receber essa dica irá variar dependendo do tipo de dica de recurso; diferentes dicas de recursos dão início a diferentes ações. Quando usados corretamente, eles podem melhorar o desempenho da página, dando uma vantagem inicial para importantes ações antecipadas.
 featured_stat_1: 29%
 featured_stat_label_1: Sites using `dns-prefetch`
 featured_stat_2: 88%
@@ -21,7 +21,7 @@ featured_stat_label_3: Usage of priority hints
 
 ## Introdução
 
-<a hreflang="en" href="https://www.w3.org/TR/resource-hints/">As dicas de recursos</a> fornecem "dicas" ao navegador sobre quais recursos serão necessários em breve. A ação que o navegador executa ao receber essa dica irá variar dependendo do tipo de dica de recurso; diferentes dicas de recursos dão início a diferentes ações. Quando usados ​​corretamente, eles podem melhorar o desempenho da página, dando uma vantagem inicial para ações antecipadas importantes.
+<a hreflang="en" href="https://www.w3.org/TR/resource-hints/">As dicas de recursos</a> fornecem "dicas" ao navegador sobre quais recursos serão necessários em breve. A ação que o navegador executa ao receber essa dica irá variar dependendo do tipo de dica de recurso; diferentes dicas de recursos dão início a diferentes ações. Quando usados ​​corretamente, eles podem melhorar o desempenho da página, dando uma vantagem inicial para importantes ações antecipadas.
 
 <a hreflang="en" href="https://youtu.be/YJGCZCaIZkQ?t=1956">Exemplos</a> de melhorias de desempenho como resultado de dicas de recursos incluem:
 
@@ -37,7 +37,7 @@ A função de [`dns-prefetch`](https://developer.mozilla.org/en-US/docs/Learn/Pe
 
 ### `preconnect`
 
-<a hreflang="en" href="https://web.dev/uses-rel-preconnect">`preconnect`</a> inicia uma conexão antecipada, incluindo pesquisa DNS, handshake TCP e negociação TLS. Esta dica é útil para estabelecer uma conexão com terceiros. Os usos de `preconnect` são muito semelhantes aos de `dns-prefetch`, mas `preconnect` tem menos suporte para navegador. No entanto, se você não precisa do suporte do IE 11, a pré-conexão provavelmente é uma escolha melhor.
+<a hreflang="en" href="https://web.dev/uses-rel-preconnect">`preconnect`</a> inicia uma conexão antecipada, incluindo pesquisa DNS, handshake TCP e negociação TLS. Esta dica é útil para estabelecer uma conexão com terceiros. Os usos de `preconnect` são muito semelhantes aos de `dns-prefetch`, mas `preconnect` tem menos suporte entre os navegadores. No entanto, se você não precisa do suporte do IE 11, a pré-conexão provavelmente é uma escolha melhor.
 
 ### `preload`
 
@@ -168,7 +168,7 @@ As dicas de recursos são mais eficazes quando usadas seletivamente (_"quando tu
 
 ## O atributo `crossorigin`
 
-A maioria dos recursos "tradicionais" obtidos na web ([images](./media), [stylesheets](./css), and [scripts](./javascript)) são obtidos sem a opção de Compartilhamento de recursos entre origens ([CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)). Isso significa que se esses recursos forem obtidos de um servidor de cross-origin, por padrão, seu conteúdo não pode ser lido de volta pela página, devido à política de mesma origem.
+A maioria dos recursos "tradicionais" obtidos na web ([images](./media), [stylesheets](./css), e [scripts](./javascript)) são obtidos sem a opção de Compartilhamento de recursos entre origens ([CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)). Isso significa que se esses recursos forem obtidos de um servidor de cross-origin, por padrão, seu conteúdo não pode ser lido de volta pela página, devido à política de mesma origem.
 
 Em alguns casos, a página pode optar por buscar o recurso usando CORS se precisar ler seu conteúdo. O CORS permite que o navegador "peça permissão" e obtenha acesso a esses recursos de origem cruzada.
 
@@ -219,7 +219,7 @@ Embora outros elementos HTML suportem o atributo crossorigin, esta análise apen
 
 ## O atributo `as`
 
-`as` é um atributo que deve ser usado com a dica do recurso `preload` para informar ao navegador do tipo (por exemplo, imagem, script, estilo, etc.) do recurso solicitado. Isso ajuda o navegador a priorizar corretamente a solicitação e a aplicar a Política de Segurança de Conteúdo (<a hreflang="en" href="https://developers.google.com/web/fundamentals/security/csp">CSP</a>). CSP é um mecanismo de [security](./security), expresso via cabeçalho HTTP, que ajuda a mitigar o impacto de XSS e outros ataques maliciosos, declarando uma lista segura de fontes confiáveis; apenas o conteúdo dessas fontes pode ser processado ou executado.
+`as` é um atributo que deve ser usado com a dica do recurso `preload` para informar ao navegador o tipo (por exemplo, imagem, script, estilo, etc.) de recurso solicitado. Isso ajuda o navegador a priorizar corretamente a solicitação e a aplicar a Política de Segurança de Conteúdo (<a hreflang="en" href="https://developers.google.com/web/fundamentals/security/csp">CSP</a>). CSP é um mecanismo de [segurança](./security), expresso via cabeçalho HTTP, que ajuda a mitigar o impacto de XSS e outros ataques maliciosos, declarando uma lista segura de fontes confiáveis; apenas o conteúdo dessas fontes pode ser processado ou executado.
 
 {{ figure_markup(
   caption="A porcentagem de instâncias de dicas de recursos usando o atributo <code>as</code>.",
@@ -228,15 +228,15 @@ Embora outros elementos HTML suportem o atributo crossorigin, esta análise apen
 )
 }}
 
-88% das instâncias de dicas de recursos usam o atributo `as`. Quando `as` especificado, é predominantemente usado para scripts: 92% do uso é para scripts, 3% para fontes e 3% para estilos. Isso não é surpreendente, dado o papel proeminente que os scripts desempenham na arquitetura da maioria dos sites, bem como a alta frequência com que os scripts são usados ​​como vetores de ataque (tornando, portanto, particularmente importante que os scripts obtenham o CSP correto aplicado a eles).
+88% das instâncias de dicas de recursos usam o atributo `as`. Quando `as` é especificado, é predominantemente usado para scripts: 92% do uso é para scripts, 3% para fontes e 3% para estilos. Isso não é surpreendente, dado o papel proeminente que os scripts desempenham na arquitetura da maioria dos sites, bem como a alta frequência com que os scripts são usados ​​como vetores de ataque (tornando, portanto, particularmente importante que os scripts obtenham o CSP correto aplicado a eles).
 
 ## O futuro
 
 No momento, não há propostas para expandir o conjunto atual de dicas de recursos. No entanto, dicas de prioridade e carregamento lento nativo são duas tecnologias propostas que são semelhantes em espírito às dicas de recursos, pois fornecem APIs para otimizar o processo de carregamento.
 
-### Dicas de prioridade
+### Sugestões prioritárias
 
-<a hreflang="en" href="https://wicg.github.io/priority-hints/">Sugestões prioritárias</a> são uma API para expressar a prioridade buscar de um recurso: `high`, `low`, ou `auto`. Eles podem ser usados ​​com uma ampla variedade de tags HTML: especificamente `<image>`, `<link`>, `<script>`, e `<iframe>`.
+<a hreflang="en" href="https://wicg.github.io/priority-hints/">Sugestões prioritárias</a> são uma API para expressar a prioridade de busca de um recurso: `high`, `low`, ou `auto`. Eles podem ser usados ​​com uma ampla variedade de tags HTML: especificamente `<image>`, `<link`>, `<script>`, e `<iframe>`.
 
 <figure>
 <div class="code-block floating-card">
