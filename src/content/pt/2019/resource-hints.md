@@ -234,7 +234,7 @@ Embora outros elementos HTML suportem o atributo crossorigin, esta análise apen
 
 No momento, não há propostas para expandir o conjunto atual de dicas de recursos. No entanto, dicas de prioridade e carregamento lento nativo são duas tecnologias propostas que são semelhantes em espírito às dicas de recursos, pois fornecem APIs para otimizar o processo de carregamento.
 
-### Sugestões prioritárias
+### Dicas de prioridade
 
 <a hreflang="en" href="https://wicg.github.io/priority-hints/">Sugestões prioritárias</a> são uma API para expressar a prioridade de busca de um recurso: `high`, `low`, ou `auto`. Eles podem ser usados ​​com uma ampla variedade de tags HTML: especificamente `<image>`, `<link`>, `<script>`, e `<iframe>`.
 
