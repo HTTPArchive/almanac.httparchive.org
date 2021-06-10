@@ -145,7 +145,7 @@ Existem 110 plataformas de comércio eletrônico, cada uma com menos de 0,1% dos
 {{ figure_markup(
   image="fig5.png",
   caption="Adoção combinada das seis principais plataformas de comércio eletrônico em comparação com as outras 110 plataformas.",
-  description="The top six ecommerce platforms make up 8% of all websites. The rest of the 110 platforms only make up 1.5% of websites. The results for desktop and mobile are similar.",
+  description="As seis principais plataformas de comércio eletrônico representam 8% de todos os sites. O restante das 110 plataformas representam apenas 1,5% dos sites. Os resultados para desktop e celular são semelhantes.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=2093212206&format=interactive",
   width=600,
   height=361,
@@ -163,7 +163,7 @@ No total, 9,7% das páginas para desktop e 9,5% das páginas para celular usaram
 {{ figure_markup(
   image="fig6.png",
   caption="Porcentagem de páginas que usam qualquer plataforma de comércio eletrônico.",
-  description="9.7% of desktop pages use an ecommerce platform and 9.5% of mobile pages use an ecommerce platform.",
+  description="9,7% das páginas para desktop usam uma plataforma de comércio eletrônico e 9,5% das páginas para celular usam uma plataforma de comércio eletrônico.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1360307171&format=interactive",
   width=600,
   height=363,
@@ -181,7 +181,7 @@ O [peso da página](./page-weight) de uma plataforma de comércio eletrônico in
 {{ figure_markup(
   image="fig7.png",
   caption="Distribuição do peso da página de comércio eletrônico.",
-  description="Distribution of the 10, 25, 50, 75, and 90th percentiles of ecommerce page weight. The median desktop ecommerce page loads 2.7 MB. The 10th percentile is 1.0 MB, 25th 1.6 MB, 75th 4.5 MB, and 90th 7.6 MB. Desktop websites are slightly higher than mobile by tenths of a megabyte.",
+  description="Distribuição dos percentis 10, 25, 50, 75 e 90 do peso da página de comércio eletrônico. A página média de comércio eletrônico em computadores carrega 2,7 MB. O 10º percentil é 1,0 MB, 25º 1,6 MB, 75º 4,5 MB e 90 7,6 MB. Os sites para desktop são ligeiramente mais altos do que para dispositivos móveis em décimos de megabyte.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=448248428&format=interactive",
   width=600,
   height=363,
@@ -193,7 +193,7 @@ O [peso da página](./page-weight) de uma plataforma de comércio eletrônico in
 {{ figure_markup(
   image="fig8.png",
   caption="Distribuição de solicitações por página de comércio eletrônico.",
-  description="Distribution of the 10, 25, 50, 75, and 90th percentiles of requests per ecommerce page. The median desktop ecommerce page makes 108 requests. The 10th percentile is 53 requests, 25th 76, 75th 153, and 90th 210. Desktop websites are slightly higher than mobile by about 10 requests.",
+  description="Distribuição dos percentis 10, 25, 50, 75 e 90 das solicitações por página de comércio eletrônico. A página média de comércio eletrônico para desktop faz 108 solicitações. O 10º percentil é 53 solicitações, 25º 76, 75º 153 e 90º 210. Os sites para desktop são ligeiramente mais elevados do que para celular em cerca de 10 solicitações.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1968521689&format=interactive",
   width=600,
   height=363,
@@ -417,7 +417,7 @@ O número de solicitações de [JavaScript](./javascript) indica que um melhor e
 {{ figure_markup(
   image="fig11.png",
   caption="Distribuição de bytes HTML (em KB) por página de comércio eletrônico.",
-  description="Distribution of the 10, 25, 50, 75, and 90th percentiles of HTML bytes per ecommerce page. The median desktop ecommerce page has 36 KB of HTML. The 10th percentile is 12 KB, 25th 20, 75th 66, and 90th 118. Desktop websites have slightly more HTML bytes than mobile by 1 or 2 KB.",
+  description="Distribuição dos percentis 10, 25, 50, 75 e 90 de bytes HTML por página de comércio eletrônico. A página média de comércio eletrônico para desktop tem 36 KB de HTML. O 10º percentil é 12 KB, 25º 20, 75º 66 e 90º 118. Os sites para desktop têm um pouco mais de bytes HTML do que para dispositivos móveis em 1 ou 2 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=908924961&format=interactive"
   )
 }}
@@ -439,7 +439,7 @@ Os tamanhos da carga útil do HTML móvel não são muito diferentes dos do desk
 {{ figure_markup(
   image="fig13.png",
   caption="Distribuição de solicitações de imagem por página de comércio eletrônico.",
-  description="Distribution of the 10, 25, 50, 75, and 90th percentiles of image requests per ecommerce page. The median desktop ecommerce page makes 40 image requests. The 10th percentile is 16 requests, 25th 25, 75th 62, and 90th 97. The desktop distribution is slightly higher than mobile by 2-10 requests at each percentile.",
+  description="Distribuição dos percentis 10, 25, 50, 75 e 90 das solicitações de imagem por página de comércio eletrônico. A página média de comércio eletrônico para desktop faz 40 solicitações de imagem. O 10º percentil é 16 solicitações, 25º 25, 75º 62 e 90º 97. A distribuição de desktop é ligeiramente maior do que a de celular em 2 a 10 solicitações em cada percentil.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1483037371&format=interactive"
   )
 }}
@@ -466,7 +466,7 @@ Precisamos fazer mais análises para entender melhor por que alguns sites não e
 {{ figure_markup(
   image="fig15.png",
   caption="Formatos de imagem populares.",
-  description="Bar chart showing the popularity of various image formats. JPEG is the most popular format at 54% of images on desktop ecommerce pages. Next are PNG at 27%, GIF at 14%, SVG at 2%, and WebP and ICO at 1% each.",
+  description="Gráfico de barras mostrando a popularidade de vários formatos de imagem. JPEG é o formato mais popular com 54% das imagens em páginas de comércio eletrônico de desktop. Em seguida estão PNG em 27%, GIF em 14%, SVG em 2% e WebP e ICO em 1% cada.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=2108999644&format=interactive"
   )
 }}
@@ -557,7 +557,7 @@ Muitos sites - especialmente lojas online - carregam uma quantidade significativ
 {{ figure_markup(
   image="fig17.png",
   caption="Distribuição de solicitações de terceiros por página de comércio eletrônico.",
-  description="Distribution of the 10, 25, 50, 75, and 90th percentiles of third-party requests per ecommerce page. The median number of third-party requests on desktop is 19. The 10, 25, 75, and 90th percentiles are: 4, 9, 34, and 54. The desktop distribution is higher at each percentile than mobile by only 1-2 requests.",
+  description="Distribuição dos percentis 10, 25, 50, 75 e 90 de solicitações de terceiros por página de comércio eletrônico. O número médio de solicitações de terceiros em computadores é 19. Os percentis 10, 25, 75 e 90 são: 4, 9, 34 e 54. A distribuição em computadores é maior em cada percentil do que em dispositivos móveis em apenas 1-2 solicitações.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=865791628&format=interactive"
   )
 }}
@@ -565,7 +565,7 @@ Muitos sites - especialmente lojas online - carregam uma quantidade significativ
 {{ figure_markup(
   image="fig18.png",
   caption="Distribuição de bytes de terceiros por página de comércio eletrônico.",
-  description="Distribution of the 10, 25, 50, 75, and 90th percentiles of third-party bytes per ecommerce page. The median number of third-party bytes on desktop is 320 KB. The 10, 25, 75, and 90th percentiles are: 42, 129, 651, and 1,071. The desktop distribution is higher at each percentile than mobile by 10-30 KB.",
+  description="Distribuição dos percentis 10, 25, 50, 75 e 90 de bytes de terceiros por página de comércio eletrônico. O número médio de bytes de terceiros no desktop é 320 KB. Os percentis 10, 25, 75 e 90 são: 42, 129, 651 e 1.071. A distribuição da área de trabalho é maior em cada percentil do que a móvel em 10-30 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=164264869&format=interactive"
   )
 }}
@@ -581,7 +581,7 @@ Observe que os gráficos e tabelas abaixo mostram dados apenas para dispositivos
 {{ figure_markup(
   image="fig19.png",
   caption="Distribuição de solicitações de terceiros por página móvel para cada plataforma de comércio eletrônico.",
-  description="Distribution of the 10, 25, 50, 75, and 90th percentiles of third-party requests per ecommerce page for each platform. Shopify and Bigcommerce load the most third-party requests across the distributions by about 40 requests at the median.",
+  description="Distribuição dos percentis 10, 25, 50, 75 e 90 de solicitações de terceiros por página de comércio eletrônico para cada plataforma. Shopify e Bigcommerce carregam a maioria das solicitações de terceiros nas distribuições em cerca de 40 solicitações na média.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1242665725&format=interactive"
   )
 }}
@@ -589,7 +589,7 @@ Observe que os gráficos e tabelas abaixo mostram dados apenas para dispositivos
 {{ figure_markup(
   image="fig20.png",
   caption="Distribuição de bytes de terceiros (KB) por página móvel para cada plataforma de comércio eletrônico.",
-  description="Distribution of the 10, 25, 50, 75, and 90th percentiles of third-party bytes (KB) per ecommerce page for each platform. Shopify and Bigcommerce load the most third-party bytes across the distributions by more than 1,000 KB at the median.",
+  description="Distribuição dos percentis 10, 25, 50, 75 e 90 de bytes de terceiros (KB) por página de comércio eletrônico para cada plataforma. Shopify e Bigcommerce carregam a maioria dos bytes de terceiros nas distribuições em mais de 1.000 KB na mediana.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1017068803&format=interactive"
   )
 }}
@@ -603,7 +603,7 @@ Claramente, as páginas em algumas plataformas de comércio eletrônico fazem ma
 {{ figure_markup(
   image="fig21.png",
   caption="Distribuição média de experiências FCP por plataforma de comércio eletrônico.",
-  description="Bar chart of the average distribution of FCP experiences for the top six ecommerce platforms. WooCommerce has the highest density of slow FCP experiences at 43%. Shopify has the highest density of fast FCP experiences at 47%.",
+  description="Gráfico de barras da distribuição média de experiências FCP para as seis principais plataformas de comércio eletrônico. WooCommerce tem a maior densidade de experiências lentas de FCP com 43%. O Shopify tem a maior densidade de experiências de FCP rápido com 47%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1341906463&format=interactive"
   )
 }}
@@ -621,7 +621,7 @@ Consulte também o [Capítulo sobre PWA](./pwa) para obter mais informações so
 {{ figure_markup(
   image="fig22.png",
   caption="Distribution of Lighthouse PWA category scores for mobile ecommerce pages.",
-  description="Distribution of Lighthouse's PWA category scores for ecommerce pages. On a scale of 0 (failing) to 1 (perfect), 40% of pages get a score of 0.33. 1% of pages get a score above 0.6.",
+  description="Distribuição das pontuações da categoria PWA do Lighthouse para páginas de comércio eletrônico. Em uma escala de 0 (reprovação) a 1 (perfeito), 40% das páginas obtêm uma pontuação de 0.33. 1% das páginas obtém uma pontuação acima de 0.6.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1148584930&format=interactive"
   )
 }}
