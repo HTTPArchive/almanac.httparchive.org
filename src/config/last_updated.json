@@ -1220,6 +1220,11 @@
     "date_modified": "2021-06-07T00:00:00.000Z",
     "hash": "7c505cbab97fee3daf3a38d8dea61508"
   },
+  "pt/2019/chapters/ecommerce.html": {
+    "date_published": "2021-06-10T00:00:00.000Z",
+    "date_modified": "2021-06-10T00:00:00.000Z",
+    "hash": "b5d36514d6c11e08f0b499375f83b343"
+  },
   "pt/2019/chapters/http2.html": {
     "date_published": "2019-11-11T00:00:00.000Z",
     "date_modified": "2021-06-07T00:00:00.000Z",
@@ -1229,6 +1234,11 @@
     "date_published": "2019-11-11T00:00:00.000Z",
     "date_modified": "2021-05-04T00:00:00.000Z",
     "hash": "95dd8d50dff1012d79435bb49ed878cc"
+  },
+  "pt/2019/chapters/resource-hints.html": {
+    "date_published": "2021-06-10T00:00:00.000Z",
+    "date_modified": "2021-06-10T00:00:00.000Z",
+    "hash": "3191ce623856fa48dbcf4f883cc39737"
   },
   "pt/2019/contributors.html": {
     "date_published": "2019-11-04T00:00:00.000Z",
