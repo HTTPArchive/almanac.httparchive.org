@@ -457,7 +457,7 @@ As Figuras 13.12 e 13.13 acima mostram que a página média de comércio eletrô
 
 Uma proporção significativa de páginas de comércio eletrônico tem cargas úteis de imagem consideráveis ​​e faz um grande número de solicitações de imagem no primeiro carregamento. Consulte o relatório de <a hreflang="en" href="https://httparchive.org/reports/state-of-images">estado de imagens</a> do HTTP Archive's e os capítulos de [mídia](./media) e [peso de página](./page-weight) para obter mais contexto.
 
-Os proprietários de sites desejam que seus sites tenham uma boa aparência em dispositivos modernos. Como resultado, muitos sites oferecem as mesmas imagens de produtos de alta resolução para todos os usuários, _ndependentemente da resolução ou do tamanho da tela_. Os desenvolvedores podem não estar cientes (ou não querer usar) técnicas responsivas que permitem a entrega eficiente da melhor imagem possível para diferentes usuários. Vale lembrar que imagens de alta resolução podem não necessariamente aumentar as taxas de conversão. Por outro lado, o uso excessivo de imagens pesadas pode afetar a velocidade da página e, portanto, _reduzir_ as taxas de conversão. Na experiência dos autores em análises e eventos de sites, alguns desenvolvedores e outras partes interessadas têm SEO ou outras preocupações sobre o uso de carregamento lento para imagens.
+Os proprietários de sites desejam que seus sites tenham uma boa aparência em dispositivos modernos. Como resultado, muitos sites oferecem as mesmas imagens de produtos de alta resolução para todos os usuários, _independentemente da resolução ou do tamanho da tela_. Os desenvolvedores podem não estar cientes (ou não querem usar) técnicas responsivas que permitem a entrega eficiente da melhor imagem possível para diferentes usuários. Vale lembrar que imagens de alta resolução podem não necessariamente aumentar as taxas de conversão. Por outro lado, o uso excessivo de imagens pesadas pode afetar a velocidade da página e, portanto, _reduzir_ as taxas de conversão. Na experiência dos autores em análises e eventos de sites, alguns desenvolvedores e outras partes interessadas têm SEO ou outras preocupações sobre o uso de carregamento lento para imagens.
 
 Precisamos fazer mais análises para entender melhor por que alguns sites não estão usando técnicas de imagem responsiva ou carregamento lento. Também precisamos fornecer orientação que ajude as plataformas de comércio eletrônico a entregar belas imagens de maneira confiável para aqueles com dispositivos de última geração e boa conectividade, ao mesmo tempo em que fornece a melhor experiência possível para dispositivos de baixo custo e com conectividade ruim.
 
@@ -471,7 +471,7 @@ Precisamos fazer mais análises para entender melhor por que alguns sites não e
   )
 }}
 
-<p class="note">Observe que alguns serviços de imagem ou CDNs entregarão automaticamente WebP (em vez de JPEG ou PNG) para plataformas que suportam WebP, mesmo para uma URL com sufixo `.jpg` ou `.png`. Por exemplo, <a hreflang="en" href="https://res.cloudinary.com/webdotdev/f_auto/w_500/IMG_20190113_113201.jpg">IMG_20190113_113201.jpg</a> retorna uma imagem WebP no Chrome. No entanto, a maneira como o HTTP Archive <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/31a25b9064a365d746d4811a1d6dda516c0e4985/bulktest/batch_lib.inc#L994">é verificar primeiro as palavras-chave no tipo MIME e, em seguida, recorrer à extensão do arquivo. Isso significa que o formato para imagens com URLs como o acima será fornecido como WebP, uma vez que WebP é suportado pelo HTTP Archive como um agente de usuário.</p>
+<p class="note">Observe que alguns serviços de imagem ou CDNs entregarão automaticamente WebP (em vez de JPEG ou PNG) para plataformas que suportam WebP, mesmo para uma URL com sufixo `.jpg` ou `.png`. Por exemplo, <a hreflang="en" href="https://res.cloudinary.com/webdotdev/f_auto/w_500/IMG_20190113_113201.jpg">IMG_20190113_113201.jpg</a> retorna uma imagem WebP no Chrome. No entanto, a maneira como o HTTP Archive <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/31a25b9064a365d746d4811a1d6dda516c0e4985/bulktest/batch_lib.inc#L994"></a> é verificar primeiro as palavras-chave no tipo MIME e, em seguida, recorrer à extensão do arquivo. Isso significa que o formato para imagens com URLs como o acima será fornecido como WebP, uma vez que WebP é suportado pelo HTTP Archive como um agente de usuário.</p>
 
 ### PNG
 
@@ -616,7 +616,7 @@ Precisamos estabelecer por que o FCP é pior no celular do que no desktop. Quais
 
 ## Pontuações do Progressive Web App (PWA)
 
-Consulte também o [capítulo PWA](./pwa) para obter mais informações sobre este tópico, além de apenas sites de comércio eletrônico.
+Consulte também o [Capítulo sobre PWA](./pwa) para obter mais informações sobre este tópico, além de apenas sites de comércio eletrônico.
 
 {{ figure_markup(
   image="fig22.png",
@@ -628,7 +628,7 @@ Consulte também o [capítulo PWA](./pwa) para obter mais informações sobre es
 
 Mais de 60% das páginas iniciais em plataformas de comércio eletrônico obtêm uma <a hreflang="en" href="https://developers.google.com/web/ilt/pwa/lighthouse-pwa-analysis-tool">pontuação Lighthouse PWA</a> entre 0.25 e 0.35. Menos de 20% das páginas iniciais em plataformas de comércio eletrônico obtêm uma pontuação de mais de 0.5 e menos de 1% das páginas iniciais obtêm uma pontuação superior a 0.6.
 
-O Lighthouse retorna uma pontuação do Progressive Web App (PWA) entre 0 e 1. 0 é a pior pontuação possível e 1 é a melhor. As auditorias do PWA são baseadas na <a hreflang="en" href="https://developers.google.com/web/progressive-web-apps/checklist"> Lista de Verificação de Base do PWA</a>, which lists 14 requirements. que lista 14 requisitos. O Lighthouse automatizou auditorias para 11 dos 14 requisitos. Os 3 restantes só podem ser testados manualmente. Cada uma das 11 auditorias PWA automatizadas são ponderadas igualmente, de modo que cada uma contribui com aproximadamente 9 pontos para sua pontuação PWA.
+O Lighthouse retorna uma pontuação do Progressive Web App (PWA) entre 0 e 1. 0 é a pior pontuação possível e 1 é a melhor. As auditorias do PWA são baseadas na <a hreflang="en" href="https://developers.google.com/web/progressive-web-apps/checklist"> Lista de Verificação de Base do PWA</a>, que lista 14 requisitos. O Lighthouse automatizou auditorias para 11 dos 14 requisitos. Os 3 restantes só podem ser testados manualmente. Cada uma das 11 auditorias PWA automatizadas são ponderadas igualmente, de modo que cada uma contribui com aproximadamente 9 pontos para sua pontuação PWA.
 
 Se pelo menos uma das auditorias PWA obtiver uma pontuação nula, o Lighthouse anula a pontuação de toda a categoria PWA. Esse foi o caso de 2,32% das páginas móveis.
 
