@@ -131,7 +131,7 @@ A Figura 13.3 acima mostra que o WooCommerce tem a maior adoção em cerca de 4%
 {{ figure_markup(
   image="fig4.png",
   caption="Adoção das principais plataformas de comércio eletrônico.",
-  description="Bar chart of the adoption of top 20 ecommerce platforms. Refer to Figure 13.3 above for a data table of adoption of the top six platforms.",
+  description="Gráfico de barras da adoção das 20 principais plataformas de comércio eletrônico. Consulte a Figura 13.3 acima para obter uma tabela de dados de adoção das seis principais plataformas.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1565776696&format=interactive",
   width=600,
   height=414,
