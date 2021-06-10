@@ -431,7 +431,7 @@ Os tamanhos da carga útil do HTML móvel não são muito diferentes dos do desk
 {{ figure_markup(
   image="fig12.png",
   caption="Distribuição de bytes de imagem (em KB) por página de comércio eletrônico.",
-  description="Distribution of the 10, 25, 50, 75, and 90th percentiles of image bytes per ecommerce page. The median mobile ecommerce page has 1,517 KB of images. The 10th percentile is 318 KB, 25th 703, 75th 3,132, and 90th 5,881. Desktop and mobile websites have similar distributions.",
+  description="Distribuição dos percentis 10, 25, 50, 75 e 90 de bytes de imagem por página de comércio eletrônico. A página média de comércio eletrônico para celular tem 1.517 KB de imagens. O 10º percentil é 318 KB, 25º 703, 75º 3.132 e 90º 5.881. Os sites para computadores e dispositivos móveis têm distribuições semelhantes.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=323146848&format=interactive"
   )
 }}
