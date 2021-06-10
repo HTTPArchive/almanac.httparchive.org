@@ -12,11 +12,11 @@ results: https://docs.google.com/spreadsheets/d/14QBP8XGkMRfWRBbWsoHm6oDVPkYhAII
 khempenius_bio: Katie Hempenius é engenheira da equipe do Chrome, onde trabalha para tornar a web mais rápida.
 featured_quote: As dicas de recursos fornecem <em>dicas</em> ao navegador sobre quais recursos serão necessários em breve. A ação que o navegador executa ao receber essa dica irá variar dependendo do tipo de dica de recurso; diferentes dicas de recursos dão início a diferentes ações. Quando usados corretamente, eles podem melhorar o desempenho da página, dando uma vantagem inicial para importantes ações antecipadas.
 featured_stat_1: 29%
-featured_stat_label_1: Sites using `dns-prefetch`
+featured_stat_label_1: Sites usando `dns-prefetch`
 featured_stat_2: 88%
-featured_stat_label_2: Resource hints using the `as` attribute
+featured_stat_label_2: Recursos usando o atributo `as`
 featured_stat_3: 0.04%
-featured_stat_label_3: Usage of priority hints
+featured_stat_label_3: Uso de dicas de prioridade
 ---
 
 ## Introdução
