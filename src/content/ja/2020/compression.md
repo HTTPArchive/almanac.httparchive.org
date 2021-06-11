@@ -93,9 +93,9 @@ HTTP圧縮を使用すると、ウェブサイトの読み込みが速くなる�
   <figcaption>{{ figure_link(caption="使用する推奨圧縮レベル") }}</figcaption>
 </figure>
 
-現在、実質的にすべてのテキスト圧縮は、2つのHTTPコンテンツエンコーディングのいずれかによって行われています。<a hreflang="en" href="https://tools.ietf.org/html/rfc1952">Gzip</a>と<a hreflang="en" href="https://github.com/google/brotli">Brotli</a>です。どちらもブラウザで広くサポートされています。<a hreflang="en" href="https://caniuse.com/?search=brotli">Brotliを使用できます</a>/<a hreflang="en" href="https://caniuse.com/?search=gzip">Gzipを使用できます</a
+現在、実質的にすべてのテキスト圧縮は、2つのHTTPコンテンツエンコーディングのいずれかによって行われています。<a hreflang="en" href="https://tools.ietf.org/html/rfc1952">Gzip</a>と<a hreflang="en" href="https://github.com/google/brotli">Brotli</a>です。どちらもブラウザで広くサポートされています。<a hreflang="en" href="https://caniuse.com/?search=brotli">Brotliを使用できます</a>/<a hreflang="en" href="https://caniuse.com/?search=gzip">Gzipを使用できます</a>
 
-Gzipを使用したい場合は、より小さいGzip互換ファイルを生成する[Zopfli](https://en.wikipedia.org/wiki/Zopfli)の使用を検討してください。これは、とくに圧縮済みのリソースに対して行うべきです。なぜなら、ここでは最大の<a hreflang="en" href="https://cran.r-project.org/web/packages/brotli/vignettes/brotli-2015-09-22.pdf">利益が期待できるからです</a>。Gzipの異なる圧縮レベルを考慮した <a hreflang="en" href="https://blog.codinghorror.com/zopfli-optimization-literally-free-bandwidth/">GzipとZopfliの比較</a>を参照してください。
+Gzipを使用したい場合は、より小さいGzip互換ファイルを生成する[Zopfli](https://ja.wikipedia.org/wiki/Zopfli)の使用を検討してください。これは、とくに圧縮済みのリソースに対して行うべきです。なぜなら、ここでは最大の<a hreflang="en" href="https://cran.r-project.org/web/packages/brotli/vignettes/brotli-2015-09-22.pdf">利益が期待できるからです</a>。Gzipの異なる圧縮レベルを考慮した <a hreflang="en" href="https://blog.codinghorror.com/zopfli-optimization-literally-free-bandwidth/">GzipとZopfliの比較</a>を参照してください。
 
 多くの[一般的なサーバ](https://en.wikipedia.org/wiki/HTTP_compression#Servers_that_support_HTTP_compression)は、動的および/または事前に圧縮されたHTTPをサポートしており、その多くが[Brotli](https://en.wikipedia.org/wiki/Brotli)をサポートしています。
 
