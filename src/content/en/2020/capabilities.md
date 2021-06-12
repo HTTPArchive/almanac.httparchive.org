@@ -222,7 +222,7 @@ The use of the interface is currently very low. Over 2020, only one or two pages
 
 PWAs are a versatile application model. However, in some cases, it may still make sense to offer a separate native application: for example, if the app needs to use features that are not available on the web, or based on the programming experience of the app developer team. When the user already has a native app installed, apps might not want to send notifications twice or promote the installation of a corresponding PWA.
 
-To detect if the user already has a related native application or PWA on the system, developers can use the <a hreflang="en" href="https://web.dev/get-installed-related-apps/">getInstalledRelatedApps() method</a> (<a hreflang="en" href="https://wicg.github.io/get-installed-related-apps/spec/">WICG Draft Community Group Report</a>) on the `navigator` object. This method is currently provided by Chromium-based browsers and works for both Android and Universal Windows Platform (UWP) apps. Developers need to adjust the native app bundles to refer to the website and add information about the native app(s) to the Web App Manifest of the PWA. Calling the `getInstalledRelatedApps()` method will then return the list of apps installed on the user's device:
+To detect if the user already has a related native application or PWA on the system, developers can use the <a hreflang="en" href="https://web.dev/get-installed-related-apps/">`getInstalledRelatedApps()` method</a> (<a hreflang="en" href="https://wicg.github.io/get-installed-related-apps/spec/">WICG Draft Community Group Report</a>) on the `navigator` object. This method is currently provided by Chromium-based browsers and works for both Android and Universal Windows Platform (UWP) apps. Developers need to adjust the native app bundles to refer to the website and add information about the native app(s) to the Web App Manifest of the PWA. Calling the `getInstalledRelatedApps()` method will then return the list of apps installed on the user's device:
 
 ```js
 const relatedApps = await navigator.getInstalledRelatedApps();
@@ -233,8 +233,8 @@ relatedApps.forEach((app) => {
 
 {{ figure_markup(
   image="get_installed_related_apps.png",
-  caption="Number of pages using getInstalledRelatedApps().",
-  description="Chart of getInstalledRelatedApps() usage, based on the number of pages monitored by HTTP Archive. It compares the usage on mobile and desktop devices. It shows a steady growth for mobile devices, peaking at 363 pages in October 2020 compared to 44 desktop pages.",
+  caption="Number of pages using `getInstalledRelatedApps()`.",
+  description="Chart of `getInstalledRelatedApps()` usage, based on the number of pages monitored by HTTP Archive. It compares the usage on mobile and desktop devices. It shows a steady growth for mobile devices, peaking at 363 pages in October 2020 compared to 44 desktop pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1774881171&format=interactive",
   sheets_gid="860146688",
   sql_file="get_installed_related_apps_usage.sql"
