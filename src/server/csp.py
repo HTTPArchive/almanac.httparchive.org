@@ -34,7 +34,7 @@ csp = {
         'www.youtube.com'
     ],
     'object-src': [
-        '\'none\''
+        '\'self\''
     ],
     'base-uri': [
         '\'none\''
