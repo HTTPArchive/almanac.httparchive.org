@@ -5,8 +5,10 @@ csp = {
     ],
     'script-src': [
         '\'self\'',
+        '\'strict-dynamic\'',
         'www.google-analytics.com',
-        'www.googletagmanager.com'
+        'www.googletagmanager.com',
+        'unsafe-inline'
     ],
     'font-src': [
         '\'self\''
@@ -30,5 +32,11 @@ csp = {
         '\'self\'',
         'docs.google.com',
         'www.youtube.com'
+    ],
+    'object-src': [
+        '\'none\''
+    ],
+    'base-uri': [
+        '\'none\''
     ]
 }
