@@ -8,7 +8,7 @@ csp = {
         '\'strict-dynamic\'',
         'www.google-analytics.com',
         'www.googletagmanager.com',
-        'unsafe-inline'
+        '\'unsafe-inline\''
     ],
     'font-src': [
         '\'self\''
