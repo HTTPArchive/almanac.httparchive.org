@@ -229,11 +229,6 @@
   margin-left: 1em;
 }
 
-/* Reverse spacer space so there is no change */
-.chapter_links {
-  margin-top: -30px;
-}
-
 .chapter_links .btn {
   display: inline-block;
   margin: 10px;
