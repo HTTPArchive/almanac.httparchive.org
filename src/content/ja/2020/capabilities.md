@@ -5,7 +5,7 @@ description: 2020年のWeb Almanac「機能」の章では、新しく強力なW
 authors: [christianliebel]
 reviewers: [tomayac]
 analysts: [tomayac]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [ksakae]
 discuss: 2049
 results: https://docs.google.com/spreadsheets/d/1N6j1qKv7vc51p1W9z_RrbJX9Se3Pmb-Uersfz4gWqqs/
@@ -233,7 +233,7 @@ relatedApps.forEach((app) => {
 
 {{ figure_markup(
   image="get_installed_related_apps.png",
-  caption="getInstalledRelatedApps()を使用しているページ数",
+  caption="`getInstalledRelatedApps()`を使用しているページ数",
   description="HTTP Archiveで監視しているページ数に基づくgetInstalledRelatedApps()の使用状況のグラフです。モバイルデバイスとデスクトップデバイスでの使用状況を比較しています。モバイルデバイスでは着実な成長を示しており、2020年10月にはデスクトップの44ページに対して363ページとピークを迎えています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1774881171&format=interactive",
   sheets_gid="860146688",

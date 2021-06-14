@@ -5,7 +5,7 @@ description: Capítulo sobre CSS do Web Almanac de 2020 que cobre cores, unidade
 authors: [LeaVerou, svgeesus, rachelandrew]
 reviewers: [estelle, fantasai, j9t, mirisuzanne, catalinred, hankchizljaw]
 analysts: [rviscomi, LeaVerou, dooman87]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [emanuelgsouza]
 LeaVerou_bio: Lea <a hreflang="en" href="https://designftw.mit.edu">ensina HCI & programação</a> e <a hreflang="en" href="https://mavo.io">pesquisa sobre como tornar a web mais fácil</a> no <a hreflang="en" href="https://mit.edu">MIT</a>. Ela é uma <a hreflang="en" href="https://www.amazon.com/CSS-Secrets-Lea-Verou/dp/1449372635?tag=leaverou-20">autora</a> bestselling técnica e experiente <a hreflang="en" href="https://lea.verou.me/speaking">palestrante</a>. Ela é apaixonada por padrões abertos da web e é membro do <a hreflang="en" href="https://www.w3.org/Style/CSS/members.en.php3">CSS Working Group</a> de longa data. Lea começou <a hreflang="en" href="https://github.com/leaverou">inúmeros projetos open source populares e aplicações web</a>, tais como <a hreflang="en" href="https://prismjs.com">Prism</a>, e <a hreflang="en" href="https://github.com/leaverou/awesomplete">Awesomplete</a>. Seu Twitter é <a href="https://twitter.com/leaverou">@leaverou</a> e blog <a hreflang="en" href="https://lea.verou.me">lea.verou.me</a>.
 svgeesus_bio: Chris Lilley é Diretor Técnico do World Wide Web Consortium (W3C). Considerado "o pai do SVG", ele também foi coautor do PNG, foi co-editor do CSS2, presidiu o grupo que desenvolveu o <code>@font-face</code> e co-desenvolveu o WOFF. Ex Technical Architecture Group. Chris ainda está tentando obter o Gerenciamento de Cores na web, suspiro. Atualmente trabalhando no níveis CSS 3/4/5 (não, realmente), Web Audio e WOFF2.
@@ -529,6 +529,7 @@ A última palavra-chave global, `unset`, é essencialmente um híbrido de `initi
 ) }}
 
 A propriedade `all` foi <a hreflang="en" href="https://www.w3.org/TR/2013/WD-css3-cascade-20130103/#all-shorthand">introduzida em 2013</a> e ganhou <a hreflang="en" href="https://caniuse.com/css-all">suporte quase universal em 2016 (exceto Edge) e suporte universal no início deste ano</a>. É uma abreviação de quase todas as propriedades em CSS (exceto propriedades personalizadas, `direction` e `unicode-bidi`), e só aceita as <a hreflang="en" href="https://drafts.csswg.org/css-cascade-4/#defaulting-keywords">quatro palavras-chave globais</a> (`initial`,` inherit`, `unset` e` revert`) como valores. Ele foi concebido como um reset de CSS de uma linha, seja como `all: unset` ou `all: revert`, dependendo do tipo de reset que desejamos. No entanto, a adoção ainda é muito baixa: encontramos apenas `all` em 477 páginas (0,01% de todas as páginas), e apenas usado com a palavra-chave `revert`.
+
 ## Cor
 
 Dizem que as piadas antigas são as melhores, e isso vale também para as cores. A sintaxe hexadecimal original, enigmática, `#rrggbb` permanece como a forma mais popular de especificar uma cor em CSS em 2020: Metade de todas as cores são escritas dessa forma. O próximo formato mais popular é o formato hexadecimal de três dígitos `#rgb` um pouco mais curto, com 26%. Embora seja mais curto, também é capaz de *expressar* muito menos cores; apenas 4.096, dos 16,7 milhões de valores de sRGB.
@@ -936,7 +937,7 @@ Compatibilidade, certo? Você não quer que as coisas quebrem? Não. Nas folhas 
 {{ figure_markup(
   image="p3-chromaticity-big.svg",
   object="p3-chromaticity-big.svg",
-  caption="cromaticidade uv especificada de cores p3 de exibição e seus fallbacks.",
+  caption="Cromaticidade uv especificada de cores p3 de exibição e seus fallbacks.",
   description="Este diagrama u'v' de 1976 mostra a cromaticidade das cores (achatadas em 2D, portanto a luminosidade não é mostrada). A forma curva externa representa o espectro de comprimentos de onda simples e puros; não há cores visíveis fora disso. A linha reta é roxa, uma mistura de vermelho e violeta. O triângulo menor e cinza é a gama sRGB, enquanto o triângulo maior e mais escuro é a gama display-p3. São mostradas as 23 cores de display-p3 exclusivas realmente em uso na web em 2020; para cada par de cores, o círculo maior é o fallback em sRGB, enquanto o círculo menor é a cor display-p3. Se estiver dentro da gama sRGB, esses círculos mostram a cor correta. Caso contrário, um círculo branco com uma borda vermelha indica cores fora da gama sRGB.",
   width=600,
   height=600

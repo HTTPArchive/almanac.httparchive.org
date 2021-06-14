@@ -5,7 +5,7 @@ description: Jamstack chapter of the 2020 Web Almanac covering the use of Jamsta
 authors: [ahmadawais]
 reviewers: [MaedahBatool, phacks]
 analysts: [denar90, remotesynth]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: []
 ahmadawais_bio: Ahmad Awais is an award-winning open-source engineer, Google Developers Expert Dev Advocate, Node.js Community Committee Outreach Lead, WordPress Core Dev, and VP of Engineering DevRel at WGA. He has authored various open-source software tools used by millions of developers worldwide. Like his <a hreflang="en" href="https://shadesofpurple.pro/more">Shades of Purple</a> code-theme or projects like the <a hreflang="en" href="https://github.com/AhmadAwais/corona-cli">corona-cli</a>. Awais loves to teach. Over 20,000 developers are learning from his <a hreflang="en" href="https://AhmadAwais.com/courses/">courses</a> i.e. <a hreflang="en" href="https://nodecli.com/">Node CLI</a>, <a hreflang="en" href="https://vscode.pro/">VSCode.pro</a>, and <a hreflang="en" href="https://nextjsbeginner.com/">Next.js Beginner</a>. Awais received FOSS community leadership recognition as one of the <a hreflang="en" href="https://ahmadawais.com/github-stars/">12 featured GitHub Stars</a>. He is a member of the Smashing Magazine Experts Panel; featured & published author at CSS-Tricks, Tuts+, Scotch.io, SitePoint. You can mostly find him on Twitter <a href="https://twitter.com/MrAhmadAwais/">@MrAhmadAwais</a> where he tweets his <a hreflang="en" href="https://awais.dev/odmt">#OneDevMinute</a> developer tips.
 discuss: 2053

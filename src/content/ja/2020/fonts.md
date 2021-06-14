@@ -5,7 +5,7 @@ description: 2020年版Web Almanacのフォントの章では、フォントが�
 authors: [raphlinus, jpamental]
 reviewers: [RoelN, svgeesus, davelab6, rsheeter, mandymichael]
 analysts: [AbbyTsai]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [ksakae]
 jpamental_bio: デザイナー、試行錯誤する人、タイポグラファー。 レスポンシブタイポグラフィの作家は、W3Cの専門家、そしてWeb上のタイポグラフィに焦点を当てた10年以上の経験を述べました。
 raphlinus_bio: Raph Levienは、カリフォルニア大学バークレー校でフォントデザインツールに関する博士号を取得するなど、35年以上にわたってフォントに携わってきました。2010年にチームを共同設立した後、フォント技術研究者として<a hreflang="en" href="https://fonts.google.com/">Google Fonts</a>に再参加しています。
@@ -240,7 +240,7 @@ HTMLに<a hreflang="en" href="https://www.w3.org/TR/resource-hints/#resource-hin
 
 {{ figure_markup(
   image="fonts-usage-of-unicode-range.png",
-  caption="unicode-rangeの使い方。",
+  caption="`unicode-range`の使い方。",
   description="ウェブフォントを使用しているモバイルおよびデスクトップのウェブページにおけるユニコードレンジの使用率を示す棒グラフ。デスクトップでは、37.05%のページがユニコードレンジを使用し、62.95%のページが使用していません。モバイルでは、38.27%のページがユニコードレンジを使用しており、61.73%が使用していません。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1739264728&format=interactive",
   sheets_gid="640499741",

@@ -1388,13 +1388,11 @@ p.copyright a {
 /* Allow more wrapping for extremely small screens (e.g. very zoomed in) */
 @media (max-width: 20em) {
   body {
-    word-break: break-word;
     overflow-wrap: break-word;
   }
 
   .no-wrap {
     white-space: initial;
-    word-break: break-word;
     overflow-wrap: break-word;
   }
 }
@@ -1430,7 +1428,6 @@ th code {
   border-radius: 0;
   background-color: transparent;
   background-color: unset;
-  word-break: unset;
   overflow-wrap: unset;
 }
 
@@ -1440,7 +1437,6 @@ code {
   background-color: #f7f7f7;
   border: 1px solid #dadce0;
   padding: 1px 2px;
-  word-break: break-all;
   overflow-wrap: break-word;
 }
 

@@ -2,14 +2,14 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Security
 description: Security chapter of the 2020 Web Almanac covering transport layer security, content security (CSP, feature policy, SRI), web defense mechanisms (tackling XSS, XS-Leaks), and update practices of widely used technologies.
-authors: [tomvangoethem, nrllh, bazzadp]
+authors: [tomvangoethem, nrllh, tunetheweb]
 reviewers: [cqueern, edmondwwchan]
 analysts: [tomvangoethem, nrllh]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: []
 tomvangoethem_bio: Tom Van Goethem is a researcher at the <a hreflang="en" href="https://distrinet.cs.kuleuven.be/">DistriNet group</a> of the university of Leuven, Belgium. His research is focused on discovering new side-channel attacks on the web that lead to security or privacy issues and figuring out how to patch the leaks that cause them.
 nrllh_bio: Nurullah Demir is a security researcher and PhD Student at <a hreflang="en" href="https://www.internet-sicherheit.de/en/">Institute for Internet Security</a>. His research focuses on robust web security mechanisms and adversarial machine learning.
-bazzadp_bio: Barry Pollard is a software developer and author of the Manning book <a hreflang="en" href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a>. He thinks the web is amazing but wants to make it even better. You can find him tweeting <a href="https://twitter.com/tunetheweb">@tunetheweb</a> and blogging at <a hreflang="en" href="https://www.tunetheweb.com">www.tunetheweb.com</a>.
+tunetheweb_bio: Barry Pollard is a software developer and author of the Manning book <a hreflang="en" href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a>. He thinks the web is amazing but wants to make it even better. You can find him tweeting <a href="https://twitter.com/tunetheweb">@tunetheweb</a> and blogging at <a hreflang="en" href="https://www.tunetheweb.com">www.tunetheweb.com</a>.
 discuss: 2047
 results: https://docs.google.com/spreadsheets/d/1T7sxPP5BV3uwv-sXhBEZraVk-obd0tDfFrLiD49nZC0/
 featured_quote: In this chapter, we explore the current state-of-practice for security on the Web. By analyzing the adoption of various security features in depth and at a large scale we gather insights on the different ways that website owners apply these security mechanisms, driven by the incentive to protect their users.

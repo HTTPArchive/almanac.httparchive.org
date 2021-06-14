@@ -5,7 +5,7 @@ description: Fonts chapter of the 2020 Web Almanac covering where fonts are load
 authors: [raphlinus, jpamental]
 reviewers: [RoelN, svgeesus, davelab6, rsheeter, mandymichael]
 analysts: [AbbyTsai]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: []
 jpamental_bio: Designer, tinkerer, typographer. Author of Responsive Typography, Invited Expert to the W3C, and 10yrs+ experience focused on better typography on the web.
 raphlinus_bio: Raph Levien has been working with fonts for over 35 years, including a PhD from UC Berkeley in font design tools. He is rejoining <a hreflang="en" href="https://fonts.google.com/">Google Fonts</a> as a font technology researcher, after having co-founded the team in 2010.
@@ -186,8 +186,8 @@ This is especially relevant for hosted font solutions. Only after discovering th
 
 {{ figure_markup(
   image="fonts-resource-hints-use.png",
-  caption="resource-hints use on fonts.",
-  description="A bar chart showing the usage of different resource-hints setting for font data: `dns-prefetch` is used by 32% of both desktop and mobile sites, `preload` by 17% of desktop and 16% of mobile, `preconnect` by 8% of both, `prefetch` by 3% of both, and `prerender` by 0% for both.",
+  caption="Resource hints use on fonts.",
+  description="A bar chart showing the usage of different resource hints setting for font data: `dns-prefetch` is used by 32% of both desktop and mobile sites, `preload` by 17% of desktop and 16% of mobile, `preconnect` by 8% of both, `prefetch` by 3% of both, and `prerender` by 0% for both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1880156934&format=interactive",
   sheets_gid="2079638999",
   sql_file="04_07.font_resource_hints_with_fcp.sql"
@@ -200,8 +200,8 @@ Next we will look at whether these resource hints have an impact on page perform
 
 {{ figure_markup(
   image="fonts-resource-hints-performance-desktop.png",
-  caption="resource-hints performance, desktop.",
-  description="A bar chart showing the desktop median first content paint and last content paint (in milliseconds) for different resource-hints settings: `prerender` has a median FCP of 1,658 ms and median LCP of 2,904 ms, `preload` has 2,045 ms and 3,865 ms respectively, `prefetch` has 1,909 ms and 3,702 ms, `preconnect` has 2,069 ms and 4,213 ms, `none` has 2,489 ms and 4,816 ms, and `dns-prefetch` has 2,630 ms and 5,061 ms.",
+  caption="Resource hints performance, desktop.",
+  description="A bar chart showing the desktop median first content paint and last content paint (in milliseconds) for different resource hints settings: `prerender` has a median FCP of 1,658 ms and median LCP of 2,904 ms, `preload` has 2,045 ms and 3,865 ms respectively, `prefetch` has 1,909 ms and 3,702 ms, `preconnect` has 2,069 ms and 4,213 ms, `none` has 2,489 ms and 4,816 ms, and `dns-prefetch` has 2,630 ms and 5,061 ms.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=355239876&format=interactive",
   sheets_gid="2079638999",
   sql_file="04_07.font_resource_hints_with_fcp.sql"
@@ -210,8 +210,8 @@ Next we will look at whether these resource hints have an impact on page perform
 
 {{ figure_markup(
   image="fonts-resource-hints-performance-mobile.png",
-  caption="resource-hints performance, mobile.",
-  description="A bar chart showing the mobile median first content paint and last content paint (in milliseconds) for different resource-hints settings: `prerender` has a median FCP of 3,387 ms and median LCP of 7,362 ms, `preload` has 4,900 ms and 8,222 ms respectively, `prefetch` has 4,942 ms and 8,191 ms, `preconnect` has 4,858 ms and 9,131 ms, `none` has 5,825 ms and 10,027 ms, and `dns-prefetch` has 5,908 ms and 9,962 ms.",
+  caption="Resource hints performance, mobile.",
+  description="A bar chart showing the mobile median first content paint and last content paint (in milliseconds) for different resource hints settings: `prerender` has a median FCP of 3,387 ms and median LCP of 7,362 ms, `preload` has 4,900 ms and 8,222 ms respectively, `prefetch` has 4,942 ms and 8,191 ms, `preconnect` has 4,858 ms and 9,131 ms, `none` has 5,825 ms and 10,027 ms, and `dns-prefetch` has 5,908 ms and 9,962 ms.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=640692889&format=interactive",
   sheets_gid="2079638999",
   sql_file="04_07.font_resource_hints_with_fcp.sql"
@@ -240,8 +240,8 @@ For alphabetic languages, this typically works well although it can result in po
 
 {{ figure_markup(
   image="fonts-usage-of-unicode-range.png",
-  caption="usage of unicode-range.",
-  description="A bar chart showing the fraction of unicode-range usage in mobile and desktop web pages that use web fonts. On desktop 37.05% of pages use unicode-range while 62.95% do not. On mobile 38.27% of pages use unicode-range while 61.73% do not.",
+  caption="Usage of `unicode-range`.",
+  description="A bar chart showing the fraction of `unicode-range` usage in mobile and desktop web pages that use web fonts. On desktop 37.05% of pages use unicode-range while 62.95% do not. On mobile 38.27% of pages use unicode-range while 61.73% do not.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1739264728&format=interactive",
   sheets_gid="640499741",
   sql_file="04_08.font_unicode_range_with_fcp.sql"

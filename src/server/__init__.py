@@ -16,8 +16,9 @@ logging.basicConfig(level=logging.DEBUG)
 # Note this requires similar set up in app.yaml for Google App Engine
 class WebAlmanacServer(Flask):
     def get_send_file_max_age(self, name):
-        if name.lower().endswith('.woff') or name.lower().endswith('.woff2'):
-            return 31536000
+        if name:
+            if name.lower().endswith('.woff') or name.lower().endswith('.woff2'):
+                return 31536000
         return Flask.get_send_file_max_age(self, name)
 
 

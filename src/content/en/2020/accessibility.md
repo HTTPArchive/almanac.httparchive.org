@@ -5,7 +5,7 @@ description: Accessibility chapter of the 2020 Web Almanac covering ease of read
 authors: [oluoluoxenfree, alextait1]
 reviewers: [aardrian, ericwbailey, obto]
 analysts: [obto]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: []
 oluoluoxenfree_bio: Olu Niyi-Awosusi is a software engineer at the FT who loves lists, learning new things, Bee and Puppycat, <a hreflang="en" href="https://alistapart.com/article/building-the-woke-web/">social justice, accessibility</a> and trying harder every day.
 alextait1_bio: Alex Tait is a developer, consultant and educator whose passion lies in the intersection of accessibility and modern JavaScript within interface architecture and design systems. As a developer, she believes that inclusion driven development practices with accessibility at the forefront lead to better products for everyone. As a consultant and strategist, she believes that less is more, and that new feature scope creep cannot be prioritized over core feature parity for disabled users. As an educator, she believes in removing barriers to information so that tech can become a more diverse, equitable and inclusive industry.
@@ -466,7 +466,7 @@ The browser's accessibility tree has a computation system that assigns the acces
 
 The accessible name can be derived from an element's content (such as button text), an attribute (such as an image `alt` text value), or an associated element (such as a programmatically associated label for a form control). For more information about accessible names see Léonie Watson's article, <a hreflang="en" href="https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/">What is an accessible name?</a>
 
-We can also use ARIA to provide accessible names for elements. There are two ARIA attributes that accomplish this, <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA14.html">aria-label</a>, <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA16.html">aria-labelledby</a>. Either of these attributes will "win" the accessible name computation and override the natively derived accessible name, so use them with caution and be sure to test with a screen reader or look at the accessibility tree to confirm that the accessible name is what was expected. When using ARIA to name an element, it is important to ensure that the <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html">WCAG 2.5.3, Label in Name</a> criterion has not been violated, which expects visible labels to be at least a part of its accessible name.
+We can also use ARIA to provide accessible names for elements. There are two ARIA attributes that accomplish this, <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA14.html">`aria-label`</a>, <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA16.html">`aria-labelledby`</a>. Either of these attributes will "win" the accessible name computation and override the natively derived accessible name, so use them with caution and be sure to test with a screen reader or look at the accessibility tree to confirm that the accessible name is what was expected. When using ARIA to name an element, it is important to ensure that the <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html">WCAG 2.5.3, Label in Name</a> criterion has not been violated, which expects visible labels to be at least a part of its accessible name.
 
 The `aria-label` element allows a developer to provide a string value and this will be used for the accessible name for the element. We found that 40.44% of desktop pages and 38.72% of mobile home pages had at least one element with the `aria-label` attribute, making it the most popular ARIA attribute for providing accessible names.
 
@@ -476,7 +476,7 @@ Again, the first rule of ARIA should be respected. If the element can derive its
 
 The <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA1.html">`aria-describedby`</a> attribute can be used in cases where a more robust description is needed for an element. It also accepts an `id` reference as its value to connect with descriptive text that exists elsewhere in the interface. It does not supply the accessible name, it should be used in conjunction with an accessible name as a supplement, not a replacement. We found that 11.31% of desktop pages and 10.56% of mobile pages had at least one element with the `aria-describedby` attribute.
 
-**Fun fact!** We found 3,200 websites with the attribute **aria-labeledby**, which is a misspelling of the `aria-labelledby` attribute! Be sure to run those automated checks to pick up these easily avoidable errors.
+**Fun fact!** We found 3,200 websites with the attribute **`aria-labeledby`**, which is a misspelling of the `aria-labelledby` attribute! Be sure to run those automated checks to pick up these easily avoidable errors.
 
 #### Hiding content
 

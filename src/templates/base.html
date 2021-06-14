@@ -72,7 +72,7 @@
     {% block content %}{% endblock %}
 
     {% block bodyend %}
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-22381566-3"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-22381566-3" nonce="{{ csp_nonce() }}"></script>
     <link rel="preconnect" href="https://www.google-analytics.com">
     <script nonce="{{ csp_nonce() }}">
         window.dataLayer = window.dataLayer || [];
@@ -84,8 +84,8 @@
           'link_attribution': true
         });
     </script>
-    <script defer src="{{ get_versioned_filename('/static/js/web-vitals.js') }}"></script>
-    <script defer src="{{ get_versioned_filename('/static/js/send-web-vitals.js') }}"></script>
+    <script defer src="{{ get_versioned_filename('/static/js/web-vitals.js') }}" nonce="{{ csp_nonce() }}"></script>
+    <script defer src="{{ get_versioned_filename('/static/js/send-web-vitals.js') }}" nonce="{{ csp_nonce() }}"></script>
     {% endblock %}
   </body>
 </html>

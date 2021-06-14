@@ -5,7 +5,7 @@ description: 2020年のWeb AlmanacのCSSの章では、カラー、ユニット�
 authors: [LeaVerou, svgeesus, rachelandrew]
 reviewers: [estelle, fantasai, j9t, mirisuzanne, catalinred, hankchizljaw]
 analysts: [rviscomi, LeaVerou, dooman87]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [ksakae]
 LeaVerou_bio: Lea <a hreflang="en" href="https://designftw.mit.edu">HCIとウェブプログラミングの講師</a>、<a hreflang="en" href="https://mavo.io">ウェブプログラミングをより簡単にする方法</a>を<a hreflang="en" href="https://mit.edu">MIT</a>で研究しています。彼女はベストセラーの技術系<a hreflang="en" href="https://www.amazon.com/CSS-Secrets-Lea-Verou/dp/1449372635?tag=leaverou-20">著者</a>であり、経験豊富な<a hreflang="en" href="https://lea.verou.me/speaking">講演者</a>でもあります。彼女はオープンなウェブ標準に情熱を注いでおり、<a hreflang="en" href="https://www.w3.org/Style/CSS/members.en.php3">CSSワーキンググループ</a>の長年のメンバーでもあります。Leaは、<a hreflang="en" href="https://github.com/leaverou">人気のあるオープンソースプロジェクトやウェブアプリケーション</a>、<a hreflang="en" href="https://prismjs.com">Prism</a>、<a hreflang="en" href="https://github.com/leaverou/awesomplete">Awesomplete</a>などを立ち上げています。彼女は<a href="https://twitter.com/leaverou">@leaverou</a>でツイートし、<a hreflang="en" href="https://lea.verou.me">lea.verou.me</a>でブログを書いています。
 svgeesus_bio: Chris LilleyはWorld Wide Web Consortium(W3C)のテクニカルディレクターです。「SVGの父」と呼ばれ、PNGの共著、CSS2の共同編集者、<code>@font-face</code> を開発したグループの議長、WOFFの共同開発者でもあります。元テクニカルアーキテクチャグループ。ChrisはまだWeb上でColor Managementを使おうとしています、ため息。現在はCSSレベル3/4/5 (いや、本当に)、Web Audio、そしてWOFF2に取り組んでいます。
@@ -529,6 +529,7 @@ CSSで異なる単位間の計算を行うために[`calc()`](https://developer.
 ) }}
 
 `all`プロパティは<a hreflang="en" href="https://www.w3.org/TR/2013/WD-css3-cascade-20130103/#all-shorthand">2013年に導入</a> され、<a hreflang="en" href="https://caniuse.com/css-all">2016年にはほぼユニバーサルに近い形でサポートされ(Edgeを除く)、今年初めにはユニバーサルに対応</a> しました。これは、CSSのほぼすべてのプロパティ（カスタムプロパティ、`direction`、`unicode-bidi`を除く）の短縮形であり、<a hreflang="en" href="https://drafts.csswg.org/css-cascade-4/#defaulting-keywords">4つのグローバルキーワード</a>（`initial`、`inherit`、`unset`、`revert`）のみを値として受け入れます。これは、どのようなリセットをしたいかに応じて`all: unset`や`all: revert`のように、CSSのリセットを一本化することを想定していました。しかし、まだ採用率は非常に低く、`all`が見つかったのは477ページ（全ページの0.01%）で、`revert`キーワードと一緒に使われただけでした。
+
 ## カラー
 
 古いジョークは最高だと言われますが、それは色にも当てはまります。オリジナルの暗号的な`#rrggbb`16進法は、2020年のCSSで色を指定するための最も一般的な方法であり続けています。全色の半分はこの方法で書かれています。次に人気のある形式は、やや短めの`#rgb`3桁の16進数形式で、26%となっています。これはより短いとはいえ、表現できる色数はかなり少なく、1670万個のsRGB値のうちわずか4096個です。
@@ -1635,7 +1636,7 @@ background-clip: border-box;
 
 {{ figure_markup(
   image="usage-of-grid-properties.png",
-  caption="gridの短縮形とその通常の記載の使い方比較",
+  caption="Gridの短縮形とその通常の記載の使い方比較",
   description="バーチャートを見ると、`grid-template-columns`はデスクトップで27%、モバイルで26%、`grid-template-rows`はそれぞれ24%と24%、`grid-column`は20%と20%となっています。`grid-row`は20%と19%、`grid-area`は6%と6%、`grid-template-areas`は6%と6%、`grid-gap`は4%と5%、`grid-column-gap`は4%と3%、`grid-row-gap`は3%と3%である。`grid-column-end`は3%と2%で、`grid-column-start`は3%と2%で、`grid-row-start`は3%と2%で、`grid-row-end`は2%と2%で、`grid-auto-columns`は2%と2%で、`grid-auto-rows`は1%と1%である。`grid-auto-flow`は1%と1%、`grid-template`は0%と0%、`grid`は0%と0%、`grid-column-span`は0%と0%、`grid-columns`は0%と0%、`grid-rows`は0%と0%の順である。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=290183398&format=interactive",
   sheets_gid="1513860089",

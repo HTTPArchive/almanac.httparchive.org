@@ -5,7 +5,7 @@ description: CSS chapter of the 2020 Web Almanac covering color, units, selector
 authors: [LeaVerou, svgeesus, rachelandrew]
 reviewers: [estelle, fantasai, j9t, mirisuzanne, catalinred, hankchizljaw]
 analysts: [rviscomi, LeaVerou, dooman87]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: []
 LeaVerou_bio: Lea <a hreflang="en" href="https://designftw.mit.edu">teaches HCI & web programming</a> and <a hreflang="en" href="https://mavo.io">researches how to make web programming easier</a> at <a hreflang="en" href="https://mit.edu">MIT</a>. She is a bestselling technical <a hreflang="en" href="https://www.amazon.com/CSS-Secrets-Lea-Verou/dp/1449372635?tag=leaverou-20">author</a> and experienced <a hreflang="en" href="https://lea.verou.me/speaking">speaker</a>. She is passionate about open web standards and is a longtime <a hreflang="en" href="https://www.w3.org/Style/CSS/members.en.php3">CSS Working Group</a> member. Lea has started <a hreflang="en" href="https://github.com/leaverou">several popular open source projects and web applications</a>, such as <a hreflang="en" href="https://prismjs.com">Prism</a>, and <a hreflang="en" href="https://github.com/leaverou/awesomplete">Awesomplete</a>. She tweets <a href="https://twitter.com/leaverou">@leaverou</a> and blogs at <a hreflang="en" href="https://lea.verou.me">lea.verou.me</a>.
 svgeesus_bio: Chris Lilley is a Technical Director at the World Wide Web Consortium (W3C). Considered "the father of SVG", he also co-authored PNG, was co-editor of CSS2, chaired the group that developed <code>@font-face</code>, and co-developed WOFF. Ex Technical Architecture Group. Chris is still trying to get Color Management on the web, sigh. Currently working on CSS levels 3/4/5 (no, really), Web Audio, and WOFF2.
@@ -529,6 +529,7 @@ The last global keyword, `unset`, is essentially a hybrid of `initial` and `inhe
 ) }}
 
 The `all` property was <a hreflang="en" href="https://www.w3.org/TR/2013/WD-css3-cascade-20130103/#all-shorthand">introduced in 2013</a> and gained <a hreflang="en" href="https://caniuse.com/css-all">near-universal support in 2016 (except Edge) and universal support earlier this year</a>. It is a shorthand of nearly every property in CSS (except custom properties, `direction`, and `unicode-bidi`), and only accepts the <a hreflang="en" href="https://drafts.csswg.org/css-cascade-4/#defaulting-keywords">four global keywords</a> (`initial`, `inherit`, `unset`, and `revert`) as values. It was envisioned as a one liner CSS reset, either as `all: unset` or `all: revert`, depending on what kind of reset we wanted. However, adoption is still very low: we only found `all` on 477 pages (0.01% of all pages), and only used with the `revert` keyword.
+
 ## Color
 
 They say the old jokes are the best, and that goes for colors too. The original, cryptic, `#rrggbb` hex syntax remains the most popular way to specify a color in CSS in 2020: Half of all colors are written that way. The next most popular format is the somewhat shorter `#rgb` three-digit hex format at 26%. While it is shorter, it is also able to express *way* fewer colors; only 4096, out of the 16.7 million sRGB values.
@@ -1732,7 +1733,7 @@ Another future spec that is currently worked on is <a hreflang="en" href="https:
 
 {{ figure_markup(
   image="usage-of-explicit-nesting-in-scss.png",
-  caption="usage-of-explicit-nesting-in-scss.",
+  caption="Usage of explicit nesting in SCSS.",
   description="Bar chart showing `Total` is used by 85% on desktop and 85% on mobile, `&:pseudo-class` is 83% and 83% respectively, `&.class` is 80% and 80%, `&::pseudo-element` is 66% and 66%, `& (by itself)` is 62% and 62%, `&[attr]` is 57% and 57%, `& >`	24% and 23%, `& +`	21% and 20%, `& descendant` is 16% and 15%, and `&#id` is 6% on desktop and 6% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=370242263&format=interactive",
   sheets_gid="1872903377",

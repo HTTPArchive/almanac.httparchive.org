@@ -3,7 +3,7 @@
 title: リソースヒント
 description: 2019年のWeb Almanacのリソースヒントの章では、dns-prefetch、preconnect、preload、prefetch、priority hints、ネイティブの遅延ローディングの使用法をカバーしています。
 authors: [khempenius]
-reviewers: [andydavies, bazzadp, yoavweiss]
+reviewers: [andydavies, tunetheweb, yoavweiss]
 analysts: [rviscomi]
 editors: [rviscomi]
 translators: [ksakae]
