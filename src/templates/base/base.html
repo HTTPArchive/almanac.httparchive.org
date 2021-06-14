@@ -507,7 +507,7 @@
     </footer>
   {% endblock %}
   {% block scripts %}
-  <script async src="{{ get_versioned_filename('/static/js/almanac.js') }}"></script>
+  <script async src="{{ get_versioned_filename('/static/js/almanac.js') }}" nonce="{{ csp_nonce() }}"></script>
   {% endblock %}
 {% endblock %}
 
