@@ -481,6 +481,7 @@ figcaption {
   margin: 8px auto 0;
   margin: 0.5rem auto 0;
   text-align: center;
+  max-width: 100%;
 }
 
 .figure-wrapper {
