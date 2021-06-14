@@ -269,7 +269,7 @@
   font-size: 1.0625rem;
 }
 
-.authors {
+.content .authors {
   margin-bottom: 64px;
   margin-bottom: 4rem;
 }
@@ -350,8 +350,8 @@
 }
 
 #chapter-navigation {
-  padding: 0 36px 50px 36px;
-  padding: 0 2.25rem 3.125rem 2.25rem;
+  padding: 16px 36px 50px 36px;
+  padding: 1rem 2.25rem 3.125rem 2.25rem;
   border: 1px solid #1a2b490a;
   margin: 20px 0;
   margin: 1.25rem 0;
