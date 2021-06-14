@@ -99,20 +99,20 @@ featured_stat_label_3: Самая популярная функция в SCSS
 
 ## Селекторы и каскад {selectors-and-the-cascade}
 
-CSS offers a number of ways of apply styles to page, from classes, ids and using the all-important cascade to avoid duplicating styles. So how are developers applying their styling to their pages?
+CSS предлагает множество способов применить стили к странице, от классов, идентификаторов и использования исключительно важного каскада для избегания дублирования стилей. Так как же разработчики применяют стили к своим страницам?
 
 ### Имена классов {class-names}
 
-What do developers use class names for these days? To answer this question, we looked at the most popular class names. The list was dominated by <a hreflang="en" href="https://fontawesome.com/">Font Awesome</a> classes, with 192 out of 198 being `fa` or `fa-*`! The only thing that initial exploration could tell us was that Font Awesome is exceedingly popular and is used by almost one third of websites!
+Для чего разработчики используют имена классов в наши дни? Чтобы ответить на этот вопрос, мы посмотрели на самые популярные имена классов. В списке преобладали классы из <a hreflang="en" href="https://fontawesome.com/">Font Awesome</a>, причём 192 из 198 — это `fa` или `fa-*`! Единственное, о чём могло нам рассказать начальное исследование, это то, что Font Awesome чрезвычайно популярен и используется почти на трети веб-сайтов!
 
-However, once we collapsed `fa-*` and then `wp-*` classes (which come from <a hreflang="en" href="https://wordpress.com/">WordPress</a>, another exceedingly popular piece of software), we got more meaningful results. Omitting these, state-related classes seem to be most popular, with `.active` occurring in nearly half of websites, and `.selected` and `.disabled` following soon after.
+Тем не менее, когда мы выкинули классы `fa-*`, а затем `wp-*` (которые приходят из <a hreflang="en" href="https://wordpress.com/">WordPress</a>, другого крайне популярного ПО), то получили более значимые результаты. Если пренебречь этими классами, классы про состояния выглядят самыми популярными: `.active` встречается почти на половине веб-сайтов, а `.selected` и `.disabled` — где-то следом за ним.
 
-Only a few of the top classes were presentational, with most of those being either alignment related (`pull-right` and `pull-left` from older <a hreflang="en" href="https://getbootstrap.com/">Bootstrap</a>, `alignright`, `alignleft` etc.) or `clearfix`—which still occurs in 22% of websites, despite floats being superseded as a layout method by the more modern Grid and Flexbox modules.
+Только несколько классов из топ-списка были презентационными, большая часть из которых либо про выравнивание (`pull-right` и `pull-left` из старых версий <a hreflang="en" href="https://getbootstrap.com/">Bootstrap</a>, `alignright`, `alignleft` и т.д.), либо `clearfix`, который всё ещё встречается на 22% веб-сайтов, несмотря на то, что вёрстка флоатами для раскладки вытесняется более современными гридами и флексбоксами.
 
 {{ figure_markup(
   image="popular-class-names.png",
-  caption="The most popular class names by the percent of pages.",
-  description="Bar chart showing the top 14 most popular class names for desktop and mobile pages. The active class is found on 40% of pages. The rest of the classes are found on 20-30% of pages and are, in decreasing order: `fa`, `fa-*;`, `pull-right`, `pull-left`, `selected`, `disabled`, `clearfix`, `button`, `title`, `wp-*;`, `btn`, `container`, and `sr-only`.",
+  caption="Самые популярные имена классов по проценту страниц.",
+  description="Гистограмма показывает 14 самых популярных имён классов для десктопных и мобильных страниц. Класс `active` найден на 40% страниц. Остальные классы найдены на 20–30% страниц, в порядке убывания: `fa`, `fa-*;`, `pull-right`, `pull-left`, `selected`, `disabled`, `clearfix`, `button`, `title`, `wp-*;`, `btn`, `container` и `sr-only`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1187401149&format=interactive",
   sheets_gid="863628849",
   sql_file="top_selector_classes_wp_fa_prefixes.sql"
@@ -120,27 +120,27 @@ Only a few of the top classes were presentational, with most of those being eith
 
 ### Идентификаторы {ids}
 
-Despite IDs being discouraged these days in some circles due to their much higher specificity, most websites still use them, albeit sparingly. Fewer than half of pages used more than one ID in any of their selectors (had a max specificity of (1,x,y) or less) and nearly all had a median specificity that did not include IDs (0,x,y). See the <a hreflang="en" href="https://www.w3.org/TR/selectors/#specificity-rules">selectors specification</a> for more details calculating specificity and this (a,b,c) notation.
+Несмотря на то, что использование идентификаторов в некоторых кругах не приветствуется из-за их гораздо большей специфичности, большинство веб-сайтов всё ещё используют их, хоть и скудно. Меньше половины страницы использовали более одного идентификатора в любом из своих селекторов (с максимальной специфичностью (1,x,y) или меньше) и почти все имели медианную специфичность (0,x,y), которая не включает идентификаторы. Смотрите <a hreflang="en" href="https://www.w3.org/TR/selectors/#specificity-rules">спецификацию по селекторам</a> для подробностей о вычислении специфичности и её нотации (a,b,c).
 
-But what are these IDs used for? It turns out that the most popular IDs are structural: `#content`, `#footer`, `#header`, `#main`, despite [corresponding HTML elements](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure#HTML_layout_elements_in_more_detail) existing that could be used as selectors while also improving the semantic markup.
+Но для чего эти идентификаторы используются? Оказывается, самые популярные идентификаторы — структурные: `#content`, `#footer`, `#header`, `#main`, несмотря на существование [соответствующих элементов HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure#HTML_layout_elements_in_more_detail), которые могли бы быть использованы в качестве селекторов, попутно улучшая семантическую разметку.
 
 {{ figure_markup(
   image="popular-ids.png",
-  caption="The most popular IDs by the percent of pages.",
-  description="Bar chart showing the top 10 most popular IDs for desktop and mobile pages. The most popular ID is `content` at 14% of pages. The `footer` and `header` IDs have slightly smaller adoption. The `logo`, `main`, `respond`, `comments`, `fancybox-loading`, `wrapper`, and `submit` IDs have between 5 and 10% adoption on pages. The only notable difference between desktop and mobile is the `comments` ID used on about 8% of mobile pages but only 5% of desktop pages.",
+  caption="Самые популярные идентификаторы по проценту страниц.",
+  description="Гистограмма показывает 10 самых популярных идентификаторов для десктопных и мобильных страниц. Самый популярный идентификатор `content` встречается на 14% страниц. Идентификаторы `footer` и `header` имеют немного меньшее распространение. Идентификаторы `logo`, `main`, `respond`, `comments`, `fancybox-loading`, `wrapper` и `submit` имеют распространение от 5% до 10%. Единственное заметное отличие между десктопами и мобильными: идентификатор `comments` применяется приблизительно на 8% мобильных страниц, но только на 5% десктопных страниц.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=141873739&format=interactive",
   sheets_gid="734822190",
   sql_file="top_selector_ids.sql"
 ) }}
 
-IDs can also be used to intentionally reduce or increase specificity. The <a hreflang="en" href="https://csswizardry.com/2014/07/hacks-for-dealing-with-specificity/">specificity hack of writing an ID selector as an attribute selector</a> (`[id="foo"]` instead of `#foo` to reduce specificity) was surprisingly rare, with only 0.3% of pages using it at least once. Another ID-related specificity hack, using a negation + descendant selector like `:not(#nonexistent) .foo` instead of `.foo` to increase specificity, was also very rare, appearing in only 0.1% of pages.
+Идентификаторы также могут использоваться для намеренного уменьшения или увеличения специфичности. <a hreflang="en" href="https://csswizardry.com/2014/07/hacks-for-dealing-with-specificity/">Хак над специфичностью с написанием селектора по идентификатору как селектора по атрибуту</a> (`[id="foo"]` вместо `#foo` для уменьшения специфичности) применяется на удивление редко: только 0,3% страниц используют его хотя бы один раз. Другой ID-специфичный хак — применение отрицания и селектора потомка вроде `:not(#nonexistent) .foo` вместо `.foo` для увеличения специфичности — также встречается крайне редко: всего на 0,1% страниц.
 
 ### `!important` {important}
 
-Instead, the old, crude `!important` is still used a fair bit despite its <a hreflang="en" href="https://www.impressivewebs.com/everything-you-need-to-know-about-the-important-css-declaration/#post-475:~:text=Drawbacks,-to">well-known drawbacks</a>. The median page uses `!important` in nearly 2% of its declarations, or 1 in 50.
+А вот старый и грубый `!important` всё ещё используется довольно часто, несмотря на его <a hreflang="en" href="https://www.impressivewebs.com/everything-you-need-to-know-about-the-important-css-declaration/#post-475:~:text=Drawbacks,-to">хорошо известные недостатки</a>. Медианная страница использует `!important` в около 2% объявлений, или в 1 из 50.
 
 {{ figure_markup(
-  caption="Mobile pages using `!important` in every single declaration!",
+  caption="Мобильные страницы, использующие `!important` в каждом объявлении!",
   content="2,138",
   classes="big-number",
   sheets_gid="1743048352",
@@ -148,23 +148,23 @@ Instead, the old, crude `!important` is still used a fair bit despite its <a hre
 )
 }}
 
-Some developers literally cannot get enough of it: we found 2304 desktop pages and 2138 mobile ones that use `!important` in every single declaration!
+Некоторые разработчики буквально не могут им насытиться: мы нашли 2304 десктопные страницы и 2138 мобильных страниц, которые используют `!important` в каждом объявлении!
 
 {{ figure_markup(
   image="important-properties.png",
-  caption="Distribution of the percent of `!important` properties per page.",
-  description="Bar chart showing the distribution of the percent of !important properties per page. Desktop pages tend to use !important on slightly more properties than mobile. The 10, 25, 50, 75, and 90th percentiles for mobile are: 0, 1, 2, 4, and 7% of properties having !important.",
+  caption="Распределение процента свойств с `!important` на страницу.",
+  description="Гистограмма показывает распределение процента свойств с `!important` на страницу. Десктопные страницы имеют тенденцию использовать `!important` на слегка большем числе свойств, чем мобильные. 10, 25, 50, 75 и 90 перцентили для мобильных: 0, 1, 2, 4 и 7% свойств с `!important`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=768784205&format=interactive",
   sheets_gid="1743048352",
   sql_file="meta_important_adoption.sql"
 ) }}
 
-What is it that developers are so keen to override? We looked at breakdown by property and found that nearly 80% of pages use `!important` with the `display` property. It is a common strategy to apply `display: none !important` to hide content in helper classes to override existing CSS that uses `display` to define a layout mode. This is a side effect of what, in hindsight, was a flaw in CSS. It combined three orthogonal characteristics into one: internal layout mode, flow behavior, and visibility status are all controlled by the `display` property. There are efforts to separate out these values into separate `display` keywords so that they can be tweaked independently via custom properties, but <a hreflang="en" href="https://caniuse.com/mdn-css_properties_display_multi-keyword_values">browser support is virtually nonexistent</a> for the time being.
+Что же разработчики так старательно перезаписывают? Мы посмотрели на разбивку по свойствам и обнаружили, что почти 80% страниц используют `!important` со свойством `display`. Распространённой практикой является применять `display: none !important` для прятания контента в классах-хелперах, чтобы перезаписать существующий CSS, который использует `display` для определения режима раскладки. Это побочный эффект того, что в ретроспективе было упущением в CSS. Он объединил три ортогональные характеристики в одну: внутренний режим раскладки, поведение потока и состояние видимости — всё это контролируется свойством `display`. Предпринимаются попытки разделить эти значения на отдельные ключевые слова `display`, чтобы их можно было настраивать независимо через кастомные свойства, но <a hreflang="en" href="https://caniuse.com/mdn-css_properties_display_multi-keyword_values">браузерная поддержка</a> на данный момент практически отсутствует.
 
 {{ figure_markup(
   image="important-top-properties.png",
-  caption="The top `!important` properties by the percent of pages.",
-  description="Bar chart showing the top 10 properties used with `!important`. Mobile and desktop have similar usage. The `display` property is used with `!important` the most, by 79% of mobile pages. In decreasing order, the subsequent properties on 71-58% of mobile pages are: `color`, `width`, `height`, `background`, `padding`, `margin`, `border`, `background-color`, and `float`.",
+  caption="Топ свойств с `!important` по проценту страниц.",
+  description="Гистограмма показывает 10 самых используемых свойств с `!important`. Мобильные и десктопные страницы имеют одинаковое использование. Свойство `display` используется с `!important` больше всего, на 79% мобильных страниц. В порядке убывания, подмножество свойств на 71–58% мобильных страниц: `color`, `width`, `height`, `background`, `padding`, `margin`, `border`, `background-color` и `float`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=257343566&format=interactive",
   sheets_gid="1222608982",
   sql_file="meta_important_properties.sql"
@@ -172,15 +172,15 @@ What is it that developers are so keen to override? We looked at breakdown by pr
 
 ### Специфичность и классы {specificity-and-classes}
 
-Besides keeping `id`s and `!important`s few and far between, there is a trend to circumvent specificity altogether by cramming all the selection criteria of a selector in a single class name, thus forcing all rules to have the same specificity and turning the cascade into a simpler last-one-wins system. BEM is a popular methodology of that type, albeit not the only one. While it is difficult to assess how many websites use BEM-style methodologies exclusively, since following it in every rule is rare (even the <a hreflang="en" href="https://en.bem.info/">BEM website</a> uses multiple classes in many selectors), about 10% of pages had a median specificity of (0,1,0), which may indicate mostly following a BEM-style methodology. On the opposite end of BEM, often developers use <a hreflang="en" href="https://csswizardry.com/2014/07/hacks-for-dealing-with-specificity/#safely-increasing-specificity">duplicated classes</a> to increase specificity and nudge a selector ahead of another one (e.g. `.foo.foo` instead of `.foo`). This kind of specificity hack is actually more popular than BEM, being present in 14% of mobile websites (9% of desktop)! This may indicate that most developers do not actually want to get rid of the cascade altogether, they just need more control over it.
+Кроме того, что идентификаторы и `!important` можно по пальцам сосчитать, существует тренд на то, чтобы полностью обмануть специфичность, втиснув все критерии выбора селектора в одно имя класса, тем самым вынуждая все правила иметь одинаковую специфичность и превращая каскад в более простую систему «последний выигрывает».  БЭМ — популярная, но не единственная методология подобного типа. И хотя трудно оценить, сколько веб-сайтов применяют исключительно БЭМ-подобные методологии, так как доскональное следование им крайне редкое (даже <a hreflang="en" href="https://en.bem.info/">веб-сайт БЭМ</a> во многих селекторах использует несколько классов), около 10% страниц имеют медианную специфичность (0,1,0), что может свидетельствовать в основном о следовании БЭМ-подобной методологии. На противолоположном конце от БЭМ разработчики часто применяют <a hreflang="en" href="https://csswizardry.com/2014/07/hacks-for-dealing-with-specificity/#safely-increasing-specificity">дублирование классов</a> для увеличения специфичности и проталкивания селектора вперёд другого (например, `.foo.foo` вместо `.foo`). Хаки специфичности такого типа в действительности более популярны, чем БЭМ, будучи представлены на 14% мобильных веб-сайтов (9% для десктопов)! Это может указывать на то, что большинство разработчиков на самом деле не хотят полностью избавляться от каскада, им просто нужно больше контроля над ним.
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th>Percentile</th>
-        <th>Desktop</th>
-        <th>Mobile</th>
+        <th>Перцентиль</th>
+        <th>Десктоп</th>
+        <th>Мобильные</th>
       </tr>
     </thead>
     <tbody>
@@ -213,7 +213,7 @@ Besides keeping `id`s and `!important`s few and far between, there is a trend to
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Distribution of the median specificity per page.",
+      caption="Распределение медианной специфичности на страницу.",
       sheets_gid="1213836297",
       sql_file="specificity.sql"
     ) }}
@@ -222,49 +222,49 @@ Besides keeping `id`s and `!important`s few and far between, there is a trend to
 
 ### Селекторы по атрибутам {attribute-selectors}
 
-The most popular attribute selector, by far, is on the `type` attribute, used in 45% of pages, likely to style inputs of different types, e.g. to style textual inputs differently from radios, checkboxes, sliders, file upload controls etc.
+Самый популярный селектор по атрибуту, безусловно, по атрибуту `type` — применяется на 45% страниц, вероятно, для стилизации инпутов различных видов: например, для стилизации текстовых инпутов отдельно от радио-кнопок, чекбоксов, слайдеров, элементов загрузки файлов и так далее.
 
 {{ figure_markup(
   image="attribute-selectors.png",
-  caption="The most popular attribute selectors by the percent of pages.",
-  description="Bar chart showing the top attribute selectors by the percent of pages. Mobile and desktop have similar usage. The most popular attribute selector by far is `type`, used on 46% of mobile pages. Next, the `class` attribute selector is used on 30% of mobile pages. The following attribute selectors are used on between 17 and 3% in descending order: `disabled`, `dir`, `title`, `hidden`, `controls`, `data-type`, `data-align`, `href`, `poster`, `role`, `style`, `xmlns`, `aria-disabled`, `src`, `id`, `name`, `lang`, and `multiple`.",
+  caption="Самые популярные селекторы по атрибутам по процентам страниц.",
+  description="Гистограмма показывает топ селекторов по атрибутам по процентам страниц. Мобильные и десктопные страницы имеют одинаковое применение. Самый популярный селектор — по атрибуту `type`, используется на 46% мобильных страниц. Следующий — по атрибуту `class`, используется на 30% мобильных страниц. Следующие селекторы по атрибутам используются между 17% и 3% в порядке убывания: `disabled`, `dir`, `title`, `hidden`, `controls`, `data-type`, `data-align`, `href`, `poster`, `role`, `style`, `xmlns`, `aria-disabled`, `src`, `id`, `name`, `lang` и `multiple`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=320159317&format=interactive",
   sheets_gid="1926527049",
   sql_file="top_selector_attributes.sql"
 ) }}
 
-### Псевдо-классы и псевдо-элементы {pseudo-classes-and-pseudo-elements}
+### Псевдоклассы и псевдоэлементы {pseudo-classes-and-pseudo-elements}
 
-There is always a lot of inertia when we change something in the web platform after it is long established. As an example, the web has still largely not caught up with pseudo-elements having separate syntax compared to pseudo-classes, even though this was a change that happened over a decade ago. All pseudo-elements that are also available with a pseudo-class syntax for legacy reasons are vastly more widespread (2.5x to 5x!) with the pseudo-class syntax.
+Когда мы что-то меняем в веб-платформе после того, как она уже давно устоялась, всегда возникает большая инерция. Как пример, веб всё ещё по большей части не осознал псевдоэлементы с синтаксисом, отличным от псевдоклассов, несмотря на то, что это изменение произошло более десяти лет назад. Все псевдоэлементы, которые доступны с синтаксисом псевдокласса по легаси-причинам, гораздо чаще встречаются (в 2,5–5 раз!) с синтаксисом псевдокласса.
 
 {{ figure_markup(
   image="selector-pseudo-classes.png",
-  caption="Usage of legacy `:pseudo-class` syntax for `::pseudo-elements` as a percent of mobile pages.",
-  description="Bar chart showing the percent of pages that use pseudo-class syntax (prefixed by one colon) versus pseudo-element syntax (two colons) for pseudo-elements. The `before` pseudo-element is used with pseudo-class syntax on 71% of mobile pages and pseudo-element syntax on 33% of mobile pages. The `after` pseudo-element is used with class and element syntax on 68% and 30% of mobile pages, `first-letter` on 7% and 1% of mobile pages, and `first-line` on 1% and 0% of mobile pages.",
+  caption="Применение устаревшего синтаксиса `:псевдокласс` для `::псевдоэлементов` как процент от мобильных страниц.",
+  description="Гистограмма показывает процент страниц, которые используют синтаксис псевдоклассов (с одним двоеточием в начале) против синтаксиса псевдоэлементов (два двоеточия) для псевдоэлементов. Псевдоэлемент `before` используется с синтаксисом псевдоклассов на 71% мобильных страниц и синтаксисом псевдоэлемента на 33% мобильных страниц. Псевдоэлемент `after` используется с синтаксисом псевдоклассов и псевдоэлементов на 68% и 30% мобильных страниц соответственно, `first-letter` — на 7% и 1% мобильных страниц, `first-line` — на 1% и 0% мобильных страниц.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=227968207&format=interactive",
   sheets_gid="2029589646",
   sql_file="top_selector_pseudo_classes.sql"
 ) }}
 
-By far the most popular pseudo-classes are user action ones, with `:hover`, `:focus`, and `:active` at the top of the list, all used in over two thirds of pages, indicating that developers like the convenience of specifying declarative UI interactions.
+Безусловно, самые популярные псевдоклассы — взаимодействия с пользователем: `:hover`, `:focus`, and `:active` в верху списка, все они используются более чем на двух третях страниц, что указывает на то, что разработчикам нравится удобство декларативного описания взаимодействий с пользовательским интерфейсом.
 
-`:root` seems far more popular than is justified by its function, used in one third of pages. In HTML content, it just selects the `<html>` element, so why didn't developers just use `html`? A possible answer may lie in a common practice related to defining custom properties, [which are also highly used](#custom-properties), on the `:root` pseudo-class. Another answer may lie in specificity: `:root`, being a pseudo-class, has a higher specificity than `html`: (0, 1, 0) vs (0, 0, 1). It is a common hack to increase specificity of a selector by prepending it with `:root`, e.g. `:root .foo` has a specificity of (0, 2, 0) compared to just (0, 1, 0) for `.foo`. This is often all that is needed to nudge a selector slightly over another one in the cascade race and avoid the sledgehammer that is `!important`. To test this hypothesis, we also measured exactly that: how many pages use `:root` at the start of a descendant selector? The results verified our hypothesis: a remarkable 29% of pages use `:root` that way! Furthermore, 14% of desktop pages and 19% of mobile pages use `html` at the start of a descendant selector, possibly to give the selector an even smaller specificity boost. The popularity of these specificity hacks strongly indicates that developers need more fine grained control to tweak specificity than what is afforded to them via `!important`. Thankfully, this is coming soon with [`:where()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:where), which is already <a hreflang="en" href="https://caniuse.com/mdn-css_selectors_where">implemented across the board</a> (albeit behind a flag in Chrome for now).
+`:root`, кажущийся гораздо более популярным, чем это оправдано его функциональностью, используется на трети страниц. В HTML-контенте он всего лишь выбирает элемент `<html>`, так почему же разработчики не использовали просто `html`? Возможно, ответ заключается в распространённой практике определения кастомных свойств, [которые также широко используются](#custom-properties), на псевдоклассе `:root`. Другой ответ может заключаться в специфичности: `:root`, будучи псевдоклассом, имеет более высокую специфичность, чем `html`: (0,1,0) против (0,0,1). Распространенным способом повышения специфичности селектора является добавление к нему `:root`, например, `:root .foo` имеет специфичность (0,2,0) по сравнению с просто (0,1,0) для `.foo`. Часто этого достаточно, чтобы слегка подтолкнуть один селектор рядом с другим в гонке каскада и избежать кувалды по имени `!important`. Чтобы проверить эту гипотезу, мы также измерили вот что: сколько страниц используют `:root` в начале селектора потомка? Результаты подтвердили нашу гипотезу: 29% страниц используют `:root` именно таким образом! Более того, 14% десктопных страниц и 19% мобильных страниц используют `html` в начале селектора потомка, возможно, чтобы придать селектору ещё меньший прирост специфичности. Популярность этих хаков специфичности убедительно указывает на то, что разработчикам нужен более точечный контроль над настройками специфичности, чем тот, что им предоставляется через `!important`. К счастью, он скоро появится с [`:where()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:where), который уже <a hreflang="en" href="https://caniuse.com/mdn-css_selectors_where">много где реализован</a> (хотя в Chrome пока что только за флагом).
 
 {{ figure_markup(
   image="popular-selector-pseudo-classes.png",
-  caption="The most popular pseudo-classes as a percent of pages.",
-  description="Bar chart showing the most popular pseudo-classes as a percent of pages for desktop and mobile. Desktop and mobile are mostly similar, with mobile tending to have slightly higher adoption. The most popular pseudo-class is `hover`, used on 84% of pages. The following pseudo-classes decrease in popularity from 71% to 12% almost linearly: `before`, `after`, `focus`, `active`, `first-child`, `last-child`, `visited`, `not`, `root`, `nth-child`, `link`, `disabled`, `empty`, `nth-of-type`.",
+  caption="Самые популярные псевдоклассы как процент от страниц.",
+  description="Гистограмма показывает самые популярные псевдоклассы как процент от десктопных и мобильных страниц. Десктопные и мобильные страницы по большей части одинаковые, на мобильных есть тенденция к немного большему применению. Самый популярный псевдокласс — `hover`, применяется на 84% страниц. Следующие псевдоклассы уменьшаются по популярности от 71% до 12% почти линейно: `before`, `after`, `focus`, `active`, `first-child`, `last-child`, `visited`, `not`, `root`, `nth-child`, `link`, `disabled`, `empty`, `nth-of-type`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1363774711&format=interactive",
   sheets_gid="2029589646",
   sql_file="top_selector_pseudo_classes.sql"
 ) }}
 
-When it comes to pseudo-elements, after the usual suspects `::before` and `::after`, nearly all popular pseudo-elements were browser extensions for styling form controls and other built-in UI, strongly echoing the developer need for more fine-grained control over styling of built in UI. Styling of focus rings, placeholders, search inputs, spinners, selection, scrollbars, media controls was especially popular.
+Что касается псевдоэлементов, после привычно подозреваемых `::before` и `::after` почти все популярные псевдоэлементы — браузерные расширения для стилизации элементов форм и другого нативного UI, что сильно вторит потребности разработчика в более точечном контроле над нативными стилями UI. Самые популярные: стилизация кольца фокуса, плейсхолдеров, инпутов поиска, спиннеров, выделения, полос прокрутки, кнопок управления мультимедиа.
 
 {{ figure_markup(
   image="popular-selector-pseudo-elements.png",
-  caption="The most popular pseudo-elements as a percent of pages.",
-  description="Bar chart showing the most popular pseudo-elements as a percent of pages for desktop and mobile. Desktop and mobile are mostly similar, with mobile tending to have slightly higher adoption. The most popular pseudo-element is `before`, used on 33% of mobile pages. The `after` pseudo-element is used on 30% of mobile pages. `-moz-focus-inner` is used on 24% of pages. The popularity drops after those from 17% to 4% in decreasing order: `-webkit-input-placeholder`, `-moz-placeholder`, `-webkit-search-decoration`, `-webkit-search-cancel-button`, `-webkit-inner-spin-button`, `-webkit-outer-spin-button`, `-webkit-scrollbar` (7%), `selection`, `-ms-clear`, `-moz-selection`, `-webkit-media-controls`, and `-webkit-scrollbar-thumb`.",
+  caption="Самые популярные псевдоэлементы как процент от страниц.",
+  description="Гистограмма показывает самые популярные псевдоэлементы как процент от десктопных и мобильных страниц. Десктопные и мобильные страницы по большей части одинаковые, на мобильных есть тенденция к немного большему применению. Самый популярный псевдоэлемент — `before`, применяется на 33% мобильных страниц. Псевдоэлемент `after` применяется на 30% мобильных страниц. `-moz-focus-inner` применяется на 24% страниц. После популярность падает с 17% до 4% в порядке убывания: `-webkit-input-placeholder`, `-moz-placeholder`, `-webkit-search-decoration`, `-webkit-search-cancel-button`, `-webkit-inner-spin-button`, `-webkit-outer-spin-button`, `-webkit-scrollbar` (7%), `selection`, `-ms-clear`, `-moz-selection`, `-webkit-media-controls` и `-webkit-scrollbar-thumb`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1417577353&format=interactive",
   sheets_gid="1972610663",
   sql_file="top_selector_pseudo_elements.sql",
