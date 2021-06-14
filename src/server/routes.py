@@ -72,11 +72,6 @@ def accessibility_statement(lang):
     content_security_policy_nonce_in=['script-src']
 )
 def sitemap():
-    # Flask-Talisman doesn't allow override of content_security_policy_nonce_in
-    # per route yet
-    # https://github.com/GoogleCloudPlatform/flask-talisman/issues/62
-    # So remove Nonce value from request object for now which has same effect
-    delattr(request, 'csp_nonce')
     xml = render_template('sitemap.xml')
     resp = app.make_response(xml)
     resp.mimetype = "text/xml"
@@ -92,11 +87,6 @@ def sitemap():
     frame_options=None
 )
 def stories(lang, year, story):
-    # Flask-Talisman doesn't allow override of content_security_policy_nonce_in
-    # per route yet
-    # https://github.com/GoogleCloudPlatform/flask-talisman/issues/62
-    # So remove Nonce value from request object for now which has same effect
-    delattr(request, 'csp_nonce')
     return render_template('%s/%s/stories/%s.html' % (lang, year, story.replace('-', '_')))
 
 
