@@ -206,11 +206,6 @@
   font-weight: normal;
 }
 
-/* Spacer for the floating CTA to rest on */
-.spacer {
-  min-height: 30px;
-}
-
 .btn.chapter-cta > svg {
   margin: -6px 3px;
 }
@@ -221,7 +216,7 @@
   flex-direction: row;
   align-items: flex-end;
   position: sticky;
-  top: calc(100vh - 1em);
+  bottom: 1.25rem;
   z-index: 1;
   justify-content: flex-end;
 }
@@ -272,6 +267,11 @@
   border-bottom: 1px solid #1a2b490a;
   font-size: 17px;
   font-size: 1.0625rem;
+}
+
+.authors {
+  margin-bottom: 64px;
+  margin-bottom: 4rem;
 }
 
 .content .authors ul {
@@ -350,8 +350,8 @@
 }
 
 #chapter-navigation {
-  padding: 50px 36px;
-  padding: 3.125rem 2.25rem;
+  padding: 0 36px 50px 36px;
+  padding: 0 2.25rem 3.125rem 2.25rem;
   border: 1px solid #1a2b490a;
   margin: 20px 0;
   margin: 1.25rem 0;

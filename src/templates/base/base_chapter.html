@@ -319,19 +319,8 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
               <source type="image/jpeg" srcset="{{ chapter_hero_dir }}hero_sm.jpg 1x, {{ chapter_hero_dir }}hero_lg.jpg 2x" />
               <img src="{{ chapter_hero_dir }}hero_lg.jpg" class="content-banner" alt="" width="866" height="433" loading="eager" />
             </picture>
-            <div id="cta-container">
-              <a class="alt btn chapter-cta comment-cta" href="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}">
-                <svg width="22" height="22" role="img">
-                  <title>{{ self.discuss_this_chapter() }}</title>
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#comment"></use>
-                </svg>
-                <span class="num_comments"><span class="not_mobile">{{ self.comments_fallback() }}</span></span> <span data-translation class="comment-singular visually-hidden-mobile">{{ self.comment() }}</span>
-                <span data-translation class="comment-plural visually-hidden-mobile">{{ self.comments() }}</span>
-              </a>
-            </div>
             {{ render_byline() }}
             {{ self.main_content() }}
-            <div class="spacer"></div>
         </article>
         <div class="chapter_links">
           {{ render_actions() }}
@@ -339,6 +328,16 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
         <section class="authors">
             {{ render_authors() }}
         </section>
+        <div id="cta-container">
+          <a class="alt btn chapter-cta comment-cta" href="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}">
+            <svg width="22" height="22" role="img">
+              <title>{{ self.discuss_this_chapter() }}</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#comment"></use>
+            </svg>
+            <span class="num_comments"><span class="not_mobile">{{ self.comments_fallback() }}</span></span> <span data-translation class="comment-singular visually-hidden-mobile">{{ self.comment() }}</span>
+            <span data-translation class="comment-plural visually-hidden-mobile">{{ self.comments() }}</span>
+          </a>
+        </div>
         <nav aria-label="{{ self.prev_next_title() }}" id="chapter-navigation">
             {{ render_prevnext() }}
         </nav>
