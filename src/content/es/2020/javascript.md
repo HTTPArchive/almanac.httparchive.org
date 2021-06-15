@@ -34,7 +34,7 @@ Los desarrolladores amamos usar JavaScript. De acuerdo con el capítulo de marca
   sql_file="../page-weight/bytes_per_type_2020.sql"
 ) }}
 
-Pero nada es gratis y esto aplica especialmente para Javascript. Todo ese código tiene un costo. Veamos con más detalle cuánto código usamos, cómo lo usamos y cuáles son los efectos secundarios de este.
+Pero nada es gratis y esto aplica especialmente para JavaScript. Todo ese código tiene un costo. Veamos con más detalle cuánto código usamos, cómo lo usamos y cuáles son los efectos secundarios de este.
 
 ## ¿Cuánto JavaScript usamos?
 
@@ -53,7 +53,7 @@ Un sitio ubicado en la mediana (percentil 50) envía 444 KB de JavaScript al ser
 
 Es un poco decepcionante no ver una mayor diferencia. Si bien es peligroso hacer muchas suposiciones sobre la red o el poder de procesamiento basados en si el dispositivo es un teléfono o una computadora de escritorio (o algo intermedio), debemos recalcar que las [pruebas en móviles del <i lang="en">HTTP Archive</i>](./methodology#webpagetest) son hechas emulando un Moto G4 en una red 3G. En otras palabras, si existiese algún trabajo para adaptarse a condiciones no ideales y transmitir menos código estas pruebas deberían demostrarlo.
 
-La tendencia parece estar a favor de usar más JavaScript, no menos. Comparando con [los resultados del año pasado](../2019/javascript#how-much-javascript-do-we-use), vemos un incremento de 13.4% en la mediana de Javascript al probar en un dispositivo de escritorio y un incremento de 14.4% en la cantidad de JavaScript enviado a un dispositivo móvil.
+La tendencia parece estar a favor de usar más JavaScript, no menos. Comparando con [los resultados del año pasado](../2019/javascript#how-much-javascript-do-we-use), vemos un incremento de 13.4% en la mediana de JavaScript al probar en un dispositivo de escritorio y un incremento de 14.4% en la cantidad de JavaScript enviado a un dispositivo móvil.
 
 <figure>
   <table>
@@ -319,7 +319,7 @@ Una vez más, esta parece ser un área donde los scripts de terceros están haci
 {{ figure_markup(
   image="compression-method-3p.png",
   caption="Distribución del porcentaje de peticiones de JavaScript en móviles por método de compresión y host.",
-  description="Gráfica de barras mostrando la distribución del porcentaje de peticiones de JavaScript en móviles por método de compresión y host. 66% de las peticiones de Javascript propias y 64% de las de terceros usan Gzip. 15% de las peticiones de scripts propios y 24% de las de terceros usan Brotli. Y el 19% de los scripts propios y el 12% de los de terceros no usan ningún método de compresión.",
+  description="Gráfica de barras mostrando la distribución del porcentaje de peticiones de JavaScript en móviles por método de compresión y host. 66% de las peticiones de JavaScript propias y 64% de las de terceros usan Gzip. 15% de las peticiones de scripts propios y 24% de las de terceros usan Brotli. Y el 19% de los scripts propios y el 12% de los de terceros no usan ningún método de compresión.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=1402692197&format=interactive",
   sheets_gid="564760060",
   sql_file="compression_method_by_3p.sql"
