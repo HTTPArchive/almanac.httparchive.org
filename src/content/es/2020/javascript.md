@@ -299,45 +299,45 @@ Algo interesante es que, si bien hemos sido quisquillosos con las peticiones a t
   sql_file="lighthouse_unminified_js_by_3p.sql"
 ) }}
 
-### Compression
+### Compresión
 
-Minification is a great way to help reduce file size, but compression is even more effective and, therefore, more important—it provides the bulk of network savings more often than not.
+Minimizar los scripts es una buena manera de reducir el tamaño de los archivos, pero la compresión es aún más efectiva y por ende más importante. La compresión provee la mayor parte del ahorro en transmisión con mayor frecuencia.
 
 {{ figure_markup(
   image="compression-method-request.png",
-  caption="Distribution of the percent of JavaScript requests by compression method.",
-  description="Bar chart showing the distribution of the percent of JavaScript requests by compression method. Desktop and mobile values are very similar. 65% of JavaScript requests use Gzip compression, 20% use br (Brotli), 15% don't use any compression, and deflate, UTF-8, identity, and none appear as having 0%",
+  caption="Distribución del porcentaje de peticiones de JavaScript por método de compresión.",
+  description="Gráfica de barras mostrando la distribución del porcentaje de peticiones de JavaScript por método de compresión. Los valores en escritorio y móviles son muy similares. 65% de las peticiones de JavaScript usan compresión Gzip, 20% usan br (Brotli), 15% no usan compresión y deflate, UTF-8 y ninguno aparecen con un 0%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=263239275&format=interactive",
   sheets_gid="1270710983",
   sql_file="compression_method.sql"
 ) }}
 
-85% of all JavaScript requests have some level of network compression applied. Gzip makes up the majority of that, with 65% of scripts having Gzip compression applied compared to 20% for Brotli (br). While the percentage of Brotli (which is more effective than Gzip) is low compared to its browser support, it's trending in the right direction, increasing by 5 percentage points in the last year.
+85% de todas las peticiones de JavaScript usan algún tipo de compresion. Gzip ocupa la mayoría de ese porcentaje, con 65% de los scripts siendo comprimidos usando Gzip en comparación a un 20% para Brotli (br). Mientras que el porcentaje de Brotli (qué es más efectivo que Gzip) es bajo tomando en cuenta el soporte que tiene en los navegadores, la tendencia va en la dirección correcta, pues subió 5 puntos porcentuales comparado con el año pasado.
 
-Once again, this appears to be an area where third-party scripts are actually doing better than first-party scripts. If we break the compression methods out by first- and third-party, we see that 24% of third-party scripts have Brotli applied, compared to only 15% of first-party scripts.
+Una vez más, esta parece ser un área donde los scripts de terceros están haciendo un mejor trabajo que los propios. Si hacemos la comparativa entre los métodos de compresión entre scripts propios y de terceros, podemos ver que el 24% de los scripts de terceros son comprimidos usando Brotli en comparación con un 15% en scripts propios.
 
 {{ figure_markup(
   image="compression-method-3p.png",
-  caption="Distribution of the percent of mobile JavaScript requests by compression method and host.",
-  description="Bar chart showing the distribution of the percent of mobile JavaScript requests by compression method and host. 66% and 64% of first and third party JavaScript requests use Gzip. 15% of first party and 24% of third party scripts requests use Brotli. And 19% of first party and 12% of third party scripts do not have a compression method set.",
+  caption="Distribución del porcentaje de peticiones de JavaScript en móviles por método de compresión y host.",
+  description="Gráfica de barras mostrando la distribución del porcentaje de peticiones de JavaScript en móviles por método de compresión y host. 66% de las peticiones de Javascript propias y 64% de las de terceros usan Gzip. 15% de las peticiones de scripts propios y 24% de las de terceros usan Brotli. Y el 19% de los scripts propios y el 12% de los de terceros no usan ningún método de compresión.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=1402692197&format=interactive",
   sheets_gid="564760060",
   sql_file="compression_method_by_3p.sql"
 ) }}
 
-Third-party scripts are also least likely to be served without any compression at all: 12% of third-party scripts have neither Gzip nor Brotli applied, compared to 19% of first-party scripts.
+Los scripts de terceros también son menos propensos a ser servidos sin ningún tipo de compresión: 12% de los scripts de terceros no usan ni Gzip ni Brotli comparado al 19% de scripts propios.
 
-It's worth taking a closer look at those scripts that _don't_ have compression applied. Compression becomes more efficient in terms of savings the more content it has to work with. In other words, if the file is tiny, sometimes the cost of compressing the file doesn't outweight the miniscule reduction in file size.
+Vale la pena ver más de cerca a los scripts que _no_ usan compresión. La compresión se vuelve más eficiente en términos de ahorros mientras más contenido tiene que comprimir. En otras palabras, si el archivo es pequeño, a veces el costo de compresión no sobrepasa la minúscula reducción al tamaño del archivo.
 
 {{ figure_markup(
-  caption="Percent of uncompressed third-party JavaScript requests under 5 KB.",
+  caption="Porcentaje de peticiones de JavaScript de terceros sin comprimir cuyo tamaño es menor a 5 KB.",
   content="90.25%",
   classes="big-number",
   sheets_gid="347926930",
   sql_file="compression_none_by_bytes.sql"
 ) }}
 
-Thankfully, that's exactly what we see, particularly in third-party scripts where 90% of uncompressed scripts are less than 5 KB in size. On the other hand, 49% of uncompressed first-party scripts are less than 5 KB and 37% of uncompressed first-party scripts are over 10 KB. So while we do see a lot of small uncompressed first-party scripts, there are still quite a few that would benefit from some compression.
+Por fortuna, eso es exactamente lo que podemos observar, en paricular para los scripts de terceros donde el 90% de los scripts sin comprimir tiene un tamaño menor a 5 KB. Por otro lado, 49% de los scripts propios son de menos de 5 KB y 37% de los scripts propios sin comprimir son de más de 10 KB. Así que mientras que si vemos una gran cantidad de scripts propios pequeños sin comprimir, aún existen muchos que podrían beneficiarse de la compresión.
 
 ## What do we use?
 
