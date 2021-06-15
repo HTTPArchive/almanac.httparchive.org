@@ -331,10 +331,10 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
         <div id="cta-container">
           <a class="alt btn chapter-cta comment-cta" href="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}">
             <svg width="22" height="22" role="img">
-              <title>{{ self.discuss_this_chapter() }}</title>
+              <title>{{ self.discuss_this_chapter() }}:</title>
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#comment"></use>
             </svg>
-            <span class="num_comments"><span class="not_mobile">{{ self.comments_fallback() }}</span></span> <span data-translation class="comment-singular visually-hidden-mobile">{{ self.comment() }}</span>
+            <span class="num_comments"><span class="not-mobile">{{ self.comments_fallback() }}</span></span> <span data-translation class="comment-singular visually-hidden-mobile">{{ self.comment() }}</span>
             <span data-translation class="comment-plural visually-hidden-mobile">{{ self.comments() }}</span>
           </a>
         </div>

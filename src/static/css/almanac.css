@@ -972,8 +972,7 @@ p.copyright a {
 
   header nav:first-of-type,
   footer nav:first-of-type,
-  header .cta,
-  .not_mobile {
+  header .cta {
     display: none;
   }
 
