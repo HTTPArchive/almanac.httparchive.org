@@ -269,31 +269,31 @@ Existe un riesgo, en particular con `preload`, al usar demasiados _hints_ pues s
 
 En la mediana, las páginas que usan _hints_ de `prefetch` para cargar JavaScript los usan 3 veces, mientras que las páginas que usan `preload` lo usan sólo una vez. La cola se pone un poco más interesante, en el percentil 90 se usan 12 _hints_ de `prefetch` y 7 _hints_ de `preload`. Para mayor detalle acerca de _resource hints_ vaya al capítulo de [_Resource Hints_](./resource-hints) de este año.
 
-## How do we serve JavaScript?
+## ¿Cómo servimos JavaScript?
 
-As with any text-based resource on the web, we can save a significant number of bytes through minimization and compression. Neither of these are new optimizations—they've been around for quite awhile—so we should expect to see them applied in more cases than not.
+Al igual que con otros recursos basados en texto en la web, podemos ahorrar una cantidad significativa de bytes a través de minimización y compresión. Ninguna de estas optimizaciones son nuevas, llevan siendo usadas por mucho tiempo, así que deberíamos verlas usadas frecuentemente.
 
-One of the audits in [Lighthouse](./methodology#lighthouse) checks for unminified JavaScript, and provides a score (0.00 being the worst, 1.00 being the best) based on the findings.
+Una de las auditorías en _[Lighthouse](./methodology#lighthouse)_ revisa si el JavaScript no ha sido minimizado y provee una calificación (0.00 siendo la mínima calificación y 1.00 siendo la máxima) basado en lo que encuentra.
 
 {{ figure_markup(
   image="lighthouse-unminified-js.png",
-  caption="Distribution of unminified JavaScript Lighthouse audit scores per mobile page.",
-  description="Bar chart showing 0% of mobile pages getting unminified JavaScript Lighthouse audit scores under 0.25, 4% of pages getting a score between 0.25 and 0.5, 10% of pages between 0.5 and 0.75, 8% of pages between 0.75 and 0.9, and 77% of pages between 0.9 and 1.0.",
+  caption="Distribución de las calificaciones de la auditoría de Lighthouse para JavaScript por página móvil.",
+  description="Gráfica de barras mostrando que 0% de las páginas móviles obtienen una calificación de minimización de JavaScript en Lighthouse por debajo de 0.25, 4% de las páginas obtienen una calificación de entre 0.25 y 0.5, 10% de las páginas están entre 0.5 y 0.75, 8% de las páginas están entre 0.75  y 0.9 y 77% de las páginas están entre 0.9 y 1.0.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=158284816&format=interactive",
   sheets_gid="362705605",
   sql_file="lighthouse_unminified_js.sql"
 ) }}
 
-The chart above shows that most pages tested (77%) get a score of 0.90 or above, meaning that few unminified scripts are found.
+La gráfica anterior muestra que la mayor parte de las páginas evaludadas (77%) tienen una calificación de 0.90 o superior, lo que significa que pocos scripts sin minización han sido encontrados.
 
-Overall, only 4.5% of the JavaScript requests recorded are unminified.
+En general, sólo el 4.5% de las peticiones de JavaScript medidas no están minimizadas.
 
-Interestingly, while we've picked on third-party requests a bit, this is one area where third-party scripts are doing better than first-party scripts. 82% of the average mobile page's unminified JavaScript bytes come from first-party code.
+Algo interesante es que, si bien hemos sido quisquillosos con las peticiones a terceros, esta es un área donde los scripts de terceros tienen un mejor resultado que los scripts propios. En la página móvil promedio, el 82% de los bytes de JavaScript sin minimizar vienen de código propio.
 
 {{ figure_markup(
   image="lighthouse-unminified-js-by-3p.png",
-  caption="Average distribution of unminified JavaScript bytes by host.",
-  description="Pie chart showing that 17.7% of unminified JS bytes are third party scripts and 82.3% are first party scripts.",
+  caption="Distribución promedio de los bytes de JavaScript sin minimizar por host.",
+  description="Gráfica de pie mostrando que el 17.7% de los bytes de JS sin minimizar son de scripts de terceros y el 82.3% son de scripts propios.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=2073491355&format=interactive",
   sheets_gid="1169731612",
   sql_file="lighthouse_unminified_js_by_3p.sql"
