@@ -339,35 +339,35 @@ Vale la pena ver más de cerca a los scripts que _no_ usan compresión. La compr
 
 Por fortuna, eso es exactamente lo que podemos observar, en paricular para los scripts de terceros donde el 90% de los scripts sin comprimir tiene un tamaño menor a 5 KB. Por otro lado, 49% de los scripts propios son de menos de 5 KB y 37% de los scripts propios sin comprimir son de más de 10 KB. Así que mientras que si vemos una gran cantidad de scripts propios pequeños sin comprimir, aún existen muchos que podrían beneficiarse de la compresión.
 
-## What do we use?
+## ¿Qué usamos?
 
-As we've increasingly used more JavaScript to power our sites and applications, there has also been an increasing demand for open-source libraries and frameworks to help with improving developer productivity and overall code maintainability. Sites that _don't_ wield one of these tools are definitely the minority on today's web—jQuery alone is found on nearly 85% of the mobile pages tracked by HTTP Archive.
+Mientras usamos cada vez más JavaScript para crear nuestros sitios y aplicaciones también se ha incrementado la demanda por librerías y _frameworks open source_ que ayuden a mejorar la productividad de los desarrolladores y hacer más mantenible el código. Los sitios que _no_ usan una de estas librerías son una minoría, solamente jQuery se encuentra en el 85% de las páginas móviles medidas por el HTTP Archive.
 
-It's important that we think critically about the tools we use to build the web and what the trade-offs are, so it makes sense to look closely at what we see in use today.
+Es importante que seamos críticos acerca de las herramientas que usamos al construir la web y cuales son sus pros y contras. Por lo que tiene sentido analizar más de cerca qué usamos hoy en día.
 
-### Libraries
+### Librerías
 
-HTTP Archive uses [Wappalyzer](./methodology#wappalyzer) to detect technologies in use on a given page. Wappalazyer tracks both JavaScript libraries (think of these as a collection of snippets or helper functions to ease development, like jQuery) and JavaScript frameworks (these are more likely scaffolding and provide templating and structure, like React).
+El HTTP Archive usa [Wappalyzer](./methodology#wappalyzer) para detectar las tecnologías usadas en una página. Wappalyzer revisa tanto las librerías de JavaScript (estas son una colección de fragmentos de código y funciones útiles para hacer facilitar el desarrollo como jQuery) y _frameworks_ de JavaScript (estos son más _scaffolding_ y proveen plantillas y estructuras como React).
 
-The popular libraries in use are largely unchanged from last year, with jQuery continuing to dominate usage and only one of the top 21 libraries falling out (lazy.js, replaced by DataTables). In fact, even the percentages of the top libraries has barely changed from last year.
+Las librerías más populares no cambiaron mucho respecto al año pasado, con jQuery manteniendo un dominio en el uso y sólo una de las librerías en el top 21 bajando posiciones (lazy,js siendo reemplazado por DataTables). De hecho, el porcentaje de las librerías más comunes prácticamente no cambio con respecto al año pasado.
 
 {{ figure_markup(
   image="frameworks-libraries.png",
-  caption="Adoption of the top JavaScript frameworks and libraries as a percent of pages.",
-  description="Bar chart showing the adoption of the top frameworks and libraries as a percent of pages (not page views or npm downloads). jQuery is the overwhelming leader, found on 83% of mobile pages. It's followed by jQuery migrate on 30%, jQuery UI on 21%, Modernizr on 15%, FancyBox on 7%, Slick and Lightbox on 6%, and the remaining frameworks and libraries on 4% or 3%: Moment.js, Underscore.js, Lodash, React, GSAP, Select2, RequireJS, and prettyPhoto.",
+  caption="Uso de los frameworks y librerías de JavaScript más comunes en porcentaje de páginas.",
+  description="Gráfica de barras mostrando el uso de los frameworks y librerías de JavaScript más comunes en porcentaje de páginas (no número de vistas o descargas de npm). jQuery es el líder dominante, se encuentra en 83% de las páginas móviles. Lo siguen jQuery migrate con un 30%, jQuery UI con 21%, Modernizr con 15%, FancyBox con 7%, Slick y Lightbox con 6% y el resto de los frameworks y librerías con 4% o 3%: Moment.js, Underscore.js, Lodash, React, GSAP, Select2, RequireJS y prettyPhoto.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=419887153&format=interactive",
   sheets_gid="1654577118",
   sql_file="frameworks_libraries.sql"
 ) }}
 
-Last year, [Houssein posited a few reasons for why jQuery's dominance continues](../2019/javascript#open-source-libraries-and-frameworks):
+El año pasado [Houssein listó algunas de las razones por las cuales la dominación de jQuery continúa](../2019/javascript#open-source-libraries-and-frameworks):
 
-> WordPress, which is used in more than 30% of sites, includes jQuery by default.
-> Switching from jQuery to a newer client-side library can take time depending on how large an application is, and many sites may consist of jQuery in addition to newer client-side libraries.
+> WordPress, que es usado en más del 30% de los sitios e incluye jQuery por defecto.
+> Migrar de jQuery a una librería del lado del cliente más nueva puede tomar tiempo dependiendo de que tan grande es la aplicación y muchos sitios consisten de jQuery en conjunto con alguna librería más nueva.
 
-Both are very sound guesses, and it seems the situation hasn't changed much on either front.
+Ambas son suposiciones bastante sólidas y parece que la situación no ha cambiado mucho en ninguno de los casos.
 
-In fact, the dominance of jQuery is supported even further when you stop to consider that, of the top 10 libraries, 6 of them are either jQuery or require jQuery in order to be used: jQuery UI, jQuery Migrate, FancyBox, Lightbox and Slick.
+De hecho, la dominación de jQuery tiene un mayor respaldo si consideramos que, de las librerías en el top 10, 6 son ya sea jQuery o requieren de jQuery para ser usadas: jQuery UI, jQuery Migrate, FancyBox, Lightbox y Slick.
 
 ### Frameworks
 
