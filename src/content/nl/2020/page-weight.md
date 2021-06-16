@@ -5,7 +5,7 @@ description: Het hoofdstuk Paginagewicht van de Web Almanac 2020 behandelt waaro
 authors: [henrihelvetica]
 reviewers: [paulcalvano]
 analysts: [paulcalvano]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [noah-vdv]
 henrihelvetica_bio: Henri is een freelance ontwikkelaar die zijn interesses heeft omgezet in een potpourri van prestatie-engineering met een vleugje gebruikerservaring. Wanneer hij niet de stortvloed aan dagelijkse onderzoeksdocumenten en casestudy's leest, of lukraak sites controleert in dev-tools, kan Henri worden aangetroffen die bijdraagt aan de gemeenschap door meetups mee te programmeren, waaronder de <a href="https://twitter.com/towebperf">Toronto Web Performance Group</a> of vrijwilligerswerk doen voor de lunch en lessen bij verschillende bootcamps. Anders werkt hij met muziekproductiesoftware of met bijna zekerheidstraining en concentreert hij zich op het rennen van de snelst mogelijke 5k.
 discuss: 2054

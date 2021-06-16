@@ -5,7 +5,7 @@ description: Chapitre Média du Web Almanac 2019 couvrant les tailles et formats
 authors: [colinbendell, dougsillars]
 reviewers: [ahmadawais, eeeps]
 analysts: [dougsillars, rviscomi]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [borisschapira]
 discuss: 1759
 results: https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/

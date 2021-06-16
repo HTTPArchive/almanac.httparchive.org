@@ -2,14 +2,14 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Beveiliging
 description: Beveiligingshoofdstuk van de Web Almanac 2020 met informatie over transportlaagbeveiliging, inhoudsbeveiliging (CSP, functiebeleid, SRI), webbeschermingsmechanismen (aanpakken van XSS, XS-Leaks) en updatepraktijken van veelgebruikte technologieën.
-authors: [tomvangoethem, nrllh, bazzadp]
+authors: [tomvangoethem, nrllh, tunetheweb]
 reviewers: [cqueern, edmondwwchan]
 analysts: [tomvangoethem, nrllh]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [noah-vdv]
 tomvangoethem_bio: Tom Van Goethem is onderzoeker bij de <a hreflang="en" href="https://distrinet.cs.kuleuven.be/">DistriNet groep</a> van de universiteit van Leuven, België. Zijn onderzoek is gericht op het ontdekken van nieuwe side-channel aanvallen op het web die tot beveiligings- of privacyproblemen leiden, en op het oplossen van de lekken die deze veroorzaken.
 nrllh_bio: Nurullah Demir is een beveiligingsonderzoeker en PhD-student bij <a hreflang="en" href="https://www.internet-sicherheit.de/en/"><span>Institute for Internet Security</span></a>. Zijn onderzoek richt zich op robuuste webbeveiligingsmechanismen en vijandige machine learning.
-bazzadp_bio: Barry Pollard is een softwareontwikkelaar en auteur van het Manning-boek <a hreflang="en" href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a>. Hij vindt het web geweldig, maar wil het nog beter maken. U kunt hem vinden op <a href="https://twitter.com/tunetheweb">@tunetheweb</a> en op zijn blog <a hreflang="en" href="https://www.tunetheweb.com">www.tunetheweb.com</a>.
+tunetheweb_bio: Barry Pollard is een softwareontwikkelaar en auteur van het Manning-boek <a hreflang="en" href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a>. Hij vindt het web geweldig, maar wil het nog beter maken. U kunt hem vinden op <a href="https://twitter.com/tunetheweb">@tunetheweb</a> en op zijn blog <a hreflang="en" href="https://www.tunetheweb.com">www.tunetheweb.com</a>.
 discuss: 2047
 results: https://docs.google.com/spreadsheets/d/1T7sxPP5BV3uwv-sXhBEZraVk-obd0tDfFrLiD49nZC0/
 featured_quote: In dit hoofdstuk verkennen we de huidige stand van zaken voor beveiliging op het web. Door de acceptatie van verschillende beveiligingsfuncties diepgaand en op grote schaal te analyseren, verzamelen we inzichten over de verschillende manieren waarop website-eigenaren deze beveiligingsmechanismen toepassen, gedreven door de prikkel om hun gebruikers te beschermen.

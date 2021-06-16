@@ -5,7 +5,7 @@ description: Toegankelijkheidshoofdstuk van de Web Almanac 2020 over leesgemak, 
 authors: [oluoluoxenfree, alextait1]
 reviewers: [aardrian, ericwbailey, obto]
 analysts: [obto]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [noah-vdv]
 oluoluoxenfree_bio: Olu Niyi-Awosusi is een software engineer bij de FT die houdt van lijsten, nieuwe dingen leren, Bee en Puppycat, <a hreflang="en" href="https://alistapart.com/article/building-the-woke-web/">sociale rechtvaardigheid, toegankelijkheid</a> en elke dag harder proberen.
 alextait1_bio: Alex Tait is een ontwikkelaar, consultant en docent wiens passie ligt op het snijvlak van toegankelijkheid en modern JavaScript binnen interfacearchitectuur en ontwerpsystemen. Als ontwikkelaar is ze van mening dat op inclusie gebaseerde ontwikkelingspraktijken met toegankelijkheid voorop leiden tot betere producten voor iedereen. Als consultant en strateeg is ze van mening dat minder meer is, en dat nieuwe functieomvang niet kan worden geprioriteerd boven pariteit van kernfuncties voor gehandicapte gebruikers. Als onderwijzer gelooft ze in het wegnemen van belemmeringen voor informatie, zodat technologie een meer diverse, rechtvaardige en inclusieve industrie kan worden.

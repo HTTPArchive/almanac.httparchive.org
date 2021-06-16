@@ -206,6 +206,29 @@
   font-weight: normal;
 }
 
+.btn.chapter-cta > svg {
+  margin: -6px 3px;
+}
+
+#cta-container {
+  display: flex;
+  height: 0;
+  flex-direction: row;
+  align-items: flex-end;
+  position: sticky;
+  bottom: 1.25rem;
+  z-index: 1;
+  justify-content: flex-end;
+}
+
+.chapter-cta {
+  border: none;
+  box-shadow: 0 0 1rem 0 rgba(78, 85, 100, 0.2);
+  padding: 10px 12px;
+  margin-top: 1em;
+  margin-left: 1em;
+}
+
 .chapter_links .btn {
   display: inline-block;
   margin: 10px;
@@ -239,6 +262,11 @@
   border-bottom: 1px solid #1a2b490a;
   font-size: 17px;
   font-size: 1.0625rem;
+}
+
+.content .authors {
+  margin-bottom: 64px;
+  margin-bottom: 4rem;
 }
 
 .content .authors ul {
@@ -317,8 +345,8 @@
 }
 
 #chapter-navigation {
-  padding: 50px 36px;
-  padding: 3.125rem 2.25rem;
+  padding: 16px 36px 50px 36px;
+  padding: 1rem 2.25rem 3.125rem 2.25rem;
   border: 1px solid #1a2b490a;
   margin: 20px 0;
   margin: 1.25rem 0;
@@ -481,6 +509,7 @@ figcaption {
   margin: 8px auto 0;
   margin: 0.5rem auto 0;
   text-align: center;
+  max-width: 100%;
 }
 
 .figure-wrapper {

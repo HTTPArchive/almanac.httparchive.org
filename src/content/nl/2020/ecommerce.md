@@ -5,7 +5,7 @@ description: E-commerce hoofdstuk van de Web Almanac 2020 met betrekking tot e-c
 authors: [rockeynebhwani, jrharalson]
 reviewers: [alankent]
 analysts: [jrharalson, rockeynebhwani]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [noah-vdv]
 rockeynebhwani_bio: Rockey Nebhwani is een onafhankelijke consultant die sinds 2001 in retail en e-commerce heeft gewerkt en uitgebreide ervaring heeft in de branche door samen te werken met retailers zoals Amazon, Wal-Mart, Tesco, M&S, Safeway enz. in de VS en het VK. Rockey is een occasionele spreker op e-commerce evenementen en tweet ook op <a href="https://twitter.com/rnebhwani">@rnebhwani</a>.
 #jrharalson_bio: TODO

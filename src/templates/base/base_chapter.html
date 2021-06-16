@@ -66,12 +66,12 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
     </a>
   </h2>
   <a class="alt btn" href="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}">
-    <svg width="18" height="18" role="img">
-      <title>{{ self.discuss_this_chapter() }}</title>
+    <svg width="18" height="18" role="img" aria-labelledby="discuss-this-chapter">
+      <title id="discuss-this-chapter">{{ self.discuss_this_chapter() }}:</title>
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#comment"></use>
     </svg>
-    <span id="num_comments">{{ self.comments_fallback() }}</span> <span data-translation id="comment-singular">{{ self.comment() }}</span>
-    <span data-translation id="comment-plural">{{ self.comments() }}</span>
+    <span class="num_comments">{{ self.comments_fallback() }}</span> <span data-translation class="comment-singular">{{ self.comment() }}</span>
+    <span data-translation class="comment-plural">{{ self.comments() }}</span>
   </a>
   <a class="alt btn" href="{{ metadata.get('results') }}">
     <svg width="18" height="18" role="img" aria-hidden="true">
@@ -84,6 +84,18 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sql"></use>
     </svg>
     {{ self.queries() }}
+  </a>
+  <a class="alt btn" href="https://github.com/HTTPArchive/almanac.httparchive.org/issues/new?assignees=&labels=bug%2C+writing&template=2020-content-issue.md&title=Issue+with+the+2020+%5BCHAPTER%5D+chapter">
+    <svg width="18" height="18" role="img" aria-hidden="true">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+    </svg>
+    {{ self.suggest_edit() }}
+  </a>
+  <a class="alt btn" href="https://github.com/HTTPArchive/almanac.httparchive.org/issues/923/">
+    <svg width="18" height="18" role="img" aria-hidden="true">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+    </svg>
+    {{ self.help_translate() }}
   </a>
 {% endmacro %}
 
@@ -317,7 +329,16 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
         <section class="authors">
             {{ render_authors() }}
         </section>
-
+        <div id="cta-container">
+          <a class="alt btn chapter-cta comment-cta" href="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}">
+            <svg width="22" height="22" role="img" aria-labelledby="discuss-this-chapter-cta">
+              <title id="discuss-this-chapter-cta">{{ self.discuss_this_chapter() }}:</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#comment"></use>
+            </svg>
+            <span class="num_comments"><span class="not-mobile">{{ self.comments_fallback() }}</span></span> <span data-translation class="comment-singular visually-hidden-mobile">{{ self.comment() }}</span>
+            <span data-translation class="comment-plural visually-hidden-mobile">{{ self.comments() }}</span>
+          </a>
+        </div>
         <nav aria-label="{{ self.prev_next_title() }}" id="chapter-navigation">
             {{ render_prevnext() }}
         </nav>

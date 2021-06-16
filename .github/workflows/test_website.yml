@@ -35,15 +35,13 @@ jobs:
     - name: Use more complete checks for generated HTML linting
       run: cp -f .github/linters/.htmlhintrc_morechecks .github/linters/.htmlhintrc
     - name: Lint Generated HTML
-      # Run older version of super-linter to allow linting of generated files
-      # (see https://github.com/github/super-linter/issues/1289)
-      uses: docker://github/super-linter:v3.14.0
-      #uses: github/super-linter@v3.15.3
+      uses: github/super-linter@v4.2.2
       env:
         DEFAULT_BRANCH: main
         FILTER_REGEX_INCLUDE: src/static/html/.*
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         VALIDATE_HTML: true
+        USE_FIND_ALGORITHM: true
     - name: Set the list of URLs for Lighthouse to check
       env:
         RUN_TYPE: ${{ github.event_name }}
