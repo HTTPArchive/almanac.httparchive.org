@@ -371,24 +371,24 @@ De hecho, la dominación de jQuery tiene un mayor respaldo si consideramos que, 
 
 ### Frameworks
 
-When we look at the frameworks, we also don't see much of a dramatic change in terms of adoption in the main frameworks that were highlighted last year. Vue.js has seen a significant increase, and AMP grew a bit, but most of them are more or less where they were a year ago.
+Cuando tomamos un vistazo a los frameworks, no vemos un cambio dramático en términos de uso en los frameworks principales que fueron destacados el año pasado. Vue.js ha incrementado su uso significativamente y AMP creció un poco, pero la mayoría siguen más o menos donde estaban el año pasado.
 
-It's worth noting that the <a hreflang="en" href="https://github.com/AliasIO/wappalyzer/issues/2450">detection issue that was noted last year still applies</a>, and still impacts the results here. It's possible that there _has_ been a significant change in popularity for a few more of these tools, but we just don't see it with the way the data is currently collected.
+Vale la pena mencionar que <a hreflang="en" href="https://github.com/AliasIO/wappalyzer/issues/2450">el problema de detección que fue notado el año pasado aún aplica</a> e impacta los resultados aquí. Es posible que _haya_ habido un cambio significativo en la popularidad de más de estas herramientas pero no podemos notarla con la manera en la que estos datos son recolectados en este momento.
 
-### What it all means
+### Qué significa todo esto
 
-More interesting to us than the popularity of the tools themselves is the impact they have on the things we build.
+Nos interesa más el impacto que tienen estas herramientas en las cosas que construimos que su popularidad.
 
-First, it's worth noting that while we may think of the usage of one tool versus another, in reality, we rarely only use a single library or framework in production. Only 21% of pages analyzed report only one library or framework. Two or three frameworks are pretty common, and the long-tail gets very long, very quickly.
+Para empezar, es importante notar que mientras podemos pensar en el uso de una herramienta contra el de otra, en realidad, pocas veces usamos sólo una librería o framework en producción. Sólo el 21% de las páginas analizadas usaban sólo una librería o _framework_. Dos o tres _frameworks_ era algo común y la cola se vuelve larga muy rápidamente.
 
-When we look at the common combinations that we see in production, most of them are to be expected. Knowing jQuery's dominance, it's unsurprising that most of the popular combinations include jQuery and any number of jQuery-related plugins.
+Cuando observamos las combinaciones más comunes en producción, la mayoría son esperadas. Sabiendo el dominio de jQuery, no sorprende ver que la mayoría de las combinaciones populares incluyen jQuery y algún número de _plugins_ relacionados a jQuery.
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th>Combinations</th>
-        <th>Pages</th>
+        <th>Combinaciones</th>
+        <th>Páginas</th>
         <th>(%)</th>
       </tr>
     </thead>
@@ -498,22 +498,22 @@ When we look at the common combinations that we see in production, most of them 
 
   <figcaption>
     {{ figure_link(
-      caption="The most popular combinations of libraries and frameworks on mobile pages.",
+      caption="Las combinaciones más populares de librerías y frameworks en páginas móviles.",
       sheets_gid="795160444",
       sql_file="frameworks_libraries_combos.sql"
     ) }}
   </figcaption>
 </figure>
 
-We do also see a fair amount of more "modern" frameworks like React, Vue, and Angular paired with jQuery, for example as a result of migration or inclusion by third-parties.
+Tambien podemos ver una cantidad relativamente alta de _frameworks_ "modernos" como React, Vue y Angular usados en conjunto con jQuery, por ejemplo como resultado de una migración o inclusión por terceros.
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th scope="col">Combination</th>
-        <th scope="col">Without jQuery</th>
-        <th scope="col">With jQuery</th>
+        <th scope="col">Combinación</th>
+        <th scope="col">Sin jQuery</th>
+        <th scope="col">Con jQuery</th>
       </tr>
     </thead>
     <tbody>
@@ -560,7 +560,7 @@ We do also see a fair amount of more "modern" frameworks like React, Vue, and An
     </tbody>
     <tfoot>
       <tr>
-        <th scope="col">Grand Total</th>
+        <th scope="col">Total</th>
         <th scope="col" class="numeric">1.7%</th>
         <th scope="col" class="numeric">1.4%</th>
       </tr>
@@ -568,23 +568,23 @@ We do also see a fair amount of more "modern" frameworks like React, Vue, and An
   </table>
   <figcaption>
     {{ figure_link(
-      caption="The most popular combinations of React, Angular, and Vue with and without jQuery.",
+      caption="Las combinaciones más populares de React, Angular y vue con y sin jQuery.",
       sheets_gid="795160444",
       sql_file="frameworks_libraries_combos.sql"
     ) }}
   </figcaption>
 </figure>
 
-More importantly, all these tools typically mean more code and more processing time.
+Es más importante notar que todas estas herramientas usualmente derivan en más código y más tiempo de procesamiento.
 
-Looking specifically at the frameworks in use, we see that the median JavaScript bytes for pages using them varies dramatically depending on _what_ is being used.
+Revisando específicamente los _frameworks_ en uso, vemos que la mediana de bytes de JavaScript por páginas usándolos varía dramáticamente dependiendo de _qué_ está siendo usado.
 
-The graph below shows the median bytes for pages where any of the top 35 most commonly detected frameworks were found, broken down by client.
+La gráfica sigueiente muestra la mediana de bytes por páginas donde cualquiera de los 35 frameworks más comunes fueron encontrados dividido por tipo de cliente.
 
 {{ figure_markup(
   image="frameworks-bytes.png",
-  caption="The median number of JavaScript kilobytes per page by JavaScript framework.",
-  description="Bar chart showing the median number of JavaScript kilobytes per page broken down and sorted by JavaScript framework popularity. The most popular framework, React, has a median amount of JS at 1,328 on mobile pages. Other frameworks like RequireJS and Angular have high numbers of median JS bytes per page. Pages with MooTools, Prototype, AMP, RightJS, Alpine.js, and Svelte have medians under 500 KB per mobile page. Ember.js has an outlier of about 1,800 KB of median JS per mobile page.",
+  caption="La mediana de kilobytes de JavaScript por página por framework de JavaScript.",
+  description="Gráfica de barras mostrando la mediana de kilobytes de JavaScript por página dividida y ordenada por popularidad de los frameworks de JavaScript. El framework más popular, React, tiene una mediana de 1,328 en páginas móviles. Otros frameworks como RequireJS y Angular tienen números altos de bytes de JS por página. Páginas con MooTools, Prototype, AMP, RightJS, Alpine.js y Svelte tienen medianas de menos de 500KB por página móvil. Ember.js es un caso aparte con alrededor de 1,800 KB de JS por página móvil.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=955720480&format=interactive",
   sheets_gid="1206934500",
   width="600",
