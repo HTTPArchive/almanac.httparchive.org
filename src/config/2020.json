@@ -1421,6 +1421,16 @@
       "avatar_url": "https://avatars1.githubusercontent.com/u/17976139?v=4&s=460",
       "github": "Zuckjet",
       "twitter": "Zuckjet"
+    },
+    "carloscastromx": {
+      "name": "Carlos Castro",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/62315048?v=4&s=200",
+      "website": "https://carloscm.me/en/",
+      "github": "carloscastromx",
+      "twitter": "mxcarloscastro"
     }
   }
 }
