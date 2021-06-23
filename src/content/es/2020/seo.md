@@ -513,7 +513,6 @@ La página web promedio no tiene 2.99% de los atributos `alt` en escritorio y 2.
 
 {{ figure_markup(
   image="seo-percentage-of-missing-img-alt-attribute.png",
-  alt="Porcentaje de atributos alt faltantes en imágenes",
   caption="Distribución porcentual de los elementos `<img>` con atributo `alt` faltante por página.",
   description="Gráfico de barras que muestra el porcentaje de atributos `alt` faltantes por percentil (10, 25, 50, 75, y 90). En promedio, 2.99% de las páginas de escritorio no tienen atributos `alt` faltantes y 2.44% de atributos `alt` faltantes en móvil.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=862590664&format=interactive",
