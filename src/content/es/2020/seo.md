@@ -619,7 +619,6 @@ Nuestra revisión indica que 28.58% de las páginas incluyen el atributo `rel=no
 
 {{ figure_markup(
   image="seo-nofollow-ugc-sponsored-attributes.png",
-  alt="Porcentaje de páginas con atributos rel=nofollow, rel=ugc, y rel=sponsored.",
   caption="Porcentaje de páginas con atributos `rel=nofollow`, `rel=ugc`, y `rel=sponsored`.",
   description="Gráfico de barras que muestra el uso (en porcentaje) de los atributos `rel` en escritorio y móvil. Nuestra revisión indica que 28.58% de las páginas usan el atributo `nofollow` en sus versiones de escritorio y 30.74% en móvil. Sin embargo, la adopción de `ugc` y `sponsored` es bastante baja con menos del 0.3% de las páginas usando cualquiera de ellos.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1177251312&format=interactive",
