@@ -504,7 +504,7 @@ The median desktop page includes 21 `img` tags and the median mobile page has 19
   image="seo-img-elements-per-page.png",
   alt="img elements per page",
   caption="Distribution of the number of `<img>` elements per page.",
-  description="Bar chart showing the number of `<img>` elements per page per percentile (10, 25, 50, 75, and 90). The median desktop page features 21 `<img>` elements and the median mobile page features 19 `<img>` tags.",
+  description="Bar chart showing the number of `<img>` elements per page per percentile (10, 25, 50, 75, and 90). The median desktop page features 21 `<img>` elements and the median mobile page features 19 `<img>` elements.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=923860709&format=interactive",
   sheets_gid="1317352222",
   sql_file="pages_markup_by_device_and_percentile.sql"
