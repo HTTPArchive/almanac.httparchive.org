@@ -502,7 +502,6 @@ En promedio, las páginas de escritorio incluyen 21 etiquetas `img` y el promedi
 
 {{ figure_markup(
   image="seo-img-elements-per-page.png",
-  alt="Elementos img por página",
   caption="Distribución del número de elementos `<img>` por página.",
   description="Gráfico de barras que muestra el número de elementos `<img>` por página por percentil (10, 25, 50, 75, y 90). En promedio, las páginas de escritorio incluyen 21 elementos `<img>` y las página móviles incluyen 19 etiquetas `<img>`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=923860709&format=interactive",
