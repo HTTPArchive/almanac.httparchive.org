@@ -377,7 +377,7 @@ JSON-LD is generally considered to be the more portable and easier to manage imp
         <td class="numeric">1.63%</td>
       </tr>
       <tr>
-        <td>Microformats</td>
+        <td>Microformats2</td>
         <td class="numeric">0.10%</td>
         <td class="numeric">0.10%</td>
       </tr>
