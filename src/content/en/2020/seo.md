@@ -643,7 +643,7 @@ Also, as mentioned before, <a hreflang="en" href="https://developers.google.com/
 
 Additionally, <a hreflang="en" href="https://developers.google.com/search/blog/2019/05/mobile-first-indexing-by-default-for">since July 2019</a> Google is using the mobile-first index for all new websites and earlier in March, it announced that <a hreflang="en" href="https://webmasters.googleblog.com/2020/03/announcing-mobile-first-indexing-for.html">70% of pages shown in their search results have already shifted over</a>. It is now expected that Google <a hreflang="en" href="https://webmasters.googleblog.com/2020/07/prepare-for-mobile-first-indexing-with.html">fully switches to a mobile-first index in March 2021</a>.
 
-Mobile friendliness should be fundamental for any website looking to provide a good search experience,and as a consequence, grow in search results.
+Mobile friendliness should be fundamental for any website looking to provide a good search experience, and as a consequence, grow in search results.
 
 A mobile-friendly website can be implemented through different configurations: by using a responsive web design, with dynamic serving, or via a separate mobile web version. However, maintaining a separate mobile web version is not recommended anymore by Google, who endorse responsive web design instead.
 
