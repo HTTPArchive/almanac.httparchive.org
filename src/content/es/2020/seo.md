@@ -3,7 +3,7 @@
 title: SEO
 description: Capítulo sobre SEO del Web Almanac 2020 que cubre contenido, meta etiquetas, indexabilidad, enlazado, velocidad de carga, datos estructurados, internacionalización, SPAs, AMP y seguridad.
 authors: [aleyda, ipullrank, fellowhuman1101]
-reviewers: [natedame, catalinred, dsottimano, dwsmart, en3r0, ibnesayeed, bazzadp]
+reviewers: [natedame, catalinred, dsottimano, dwsmart, en3r0, ibnesayeed, tunetheweb]
 analysts: [Tiggerito, antoineeripret]
 editors: [rviscomi]
 translators: [carloscastromx]
