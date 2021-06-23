@@ -5,7 +5,7 @@ description: PWA chapter of the 2019 Web Almanac covering service workers (regis
 authors: [tomayac, jeffposnick]
 reviewers: [hyperpress, ahmadawais]
 analysts: [jrharalson]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: []
 discuss: 1766
 results: https://docs.google.com/spreadsheets/d/19BI3RQc_vR9bUPPZfVsF_4gpFWLNT6P0pLcAdL-A56c/
@@ -146,7 +146,6 @@ Looking at the values developers set for the `display` property, it becomes imme
 
 {{ figure_markup(
   image="fig7.png",
-  alt="Usage of web app manifest display properties.",
   caption="Usage of web app manifest <code>display</code> properties.",
   description='Bar chart showing how the display property of web app manifests is used by desktop and mobile websites. In both cases, the "standalone" value is used 57% of the time. The property is not set at all in 38% of manifests. The "minimal UI", "browser", and "fullscreen" values each make up only 1 or 2% of usage.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=1514793237&format=interactive"

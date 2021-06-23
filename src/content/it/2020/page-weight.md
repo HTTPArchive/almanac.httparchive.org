@@ -5,7 +5,7 @@ description: Capitolo Page Weight (Peso della pagina) del Web Almanac 2020 che s
 authors: [henrihelvetica]
 reviewers: [paulcalvano]
 analysts: [paulcalvano]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [chefleo]
 henrihelvetica_bio: Henri è uno sviluppatore freelance che ha trasformato i suoi interessi in un pot-pourri di ingegneria delle prestazioni con pizzichi di esperienza utente. Quando non si legge il diluvio di documenti di ricerca quotidiana e casi di studio, o non si controlla indiscriminatamente i siti di auditing nei dev tools, Henri può essere trovato a contribuire alla comunità, co-programmando meetup tra cui <a href="https://twitter.com/towebperf">Toronto Web Performance Group</a> o offre volontariamente il suo tempo per pranzo e impara in vari bootcamp. Altrimenti, si sta attrezzando con software di produzione musicale o con una formazione quasi certa e si concentra sul correre 5k il più veloce possibile.
 discuss: 2054

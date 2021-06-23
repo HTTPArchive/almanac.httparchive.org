@@ -5,7 +5,7 @@ description: Chapitre sur la compression par Web Almanac 2019, les algorithmes, 
 authors: [paulcalvano]
 reviewers: [obto, yoavweiss]
 analysts: [paulcalvano]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [allemas]
 discuss: 1770
 results: https://docs.google.com/spreadsheets/d/1IK9kaScQr_sJUwZnWMiJcmHEYJV292C9DwCfXH6a50o/

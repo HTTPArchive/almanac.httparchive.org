@@ -5,7 +5,7 @@ description: 2020年Web Almanacのサードパーティの章では、サード�
 authors: [simonhearne]
 reviewers: [jzyang, exterkamp]
 analysts: [max-ostapenko, paulcalvano]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [ksakae]
 simonhearne_bio: Simonはウェブパフォーマンスアーキテクトです。彼は、より速く、よりアクセスしやすいウェブを提供することに情熱を注いでいます。<a href="https://twitter.com/simonhearne">@SimonHearne</a>でツイートしたり、<a hreflang="en" href="https://simonhearne.com">simonhearne.com</a>でブログを書いています。
 discuss: 2042
@@ -268,7 +268,6 @@ _CDNに関する注意事項。ここでのCDNカテゴリには、パブリッ�
 {{ figure_markup(
   image="requests-with-tao.png",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=1886505312&format=interactive",
-  alt="Timing-Allow-Originヘッダを持つリクエスト。",
   caption="`timing-allow-origin`ヘッダを持つリクエスト。",
   description="サードパーティの応答の35%未満がtiming-allow-originヘッダーで提供されています",
   width=600,

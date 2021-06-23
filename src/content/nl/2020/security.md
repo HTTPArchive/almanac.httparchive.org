@@ -2,14 +2,14 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Beveiliging
 description: Beveiligingshoofdstuk van de Web Almanac 2020 met informatie over transportlaagbeveiliging, inhoudsbeveiliging (CSP, functiebeleid, SRI), webbeschermingsmechanismen (aanpakken van XSS, XS-Leaks) en updatepraktijken van veelgebruikte technologieën.
-authors: [tomvangoethem, nrllh, bazzadp]
+authors: [tomvangoethem, nrllh, tunetheweb]
 reviewers: [cqueern, edmondwwchan]
 analysts: [tomvangoethem, nrllh]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [noah-vdv]
 tomvangoethem_bio: Tom Van Goethem is onderzoeker bij de <a hreflang="en" href="https://distrinet.cs.kuleuven.be/">DistriNet groep</a> van de universiteit van Leuven, België. Zijn onderzoek is gericht op het ontdekken van nieuwe side-channel aanvallen op het web die tot beveiligings- of privacyproblemen leiden, en op het oplossen van de lekken die deze veroorzaken.
 nrllh_bio: Nurullah Demir is een beveiligingsonderzoeker en PhD-student bij <a hreflang="en" href="https://www.internet-sicherheit.de/en/"><span>Institute for Internet Security</span></a>. Zijn onderzoek richt zich op robuuste webbeveiligingsmechanismen en vijandige machine learning.
-bazzadp_bio: Barry Pollard is een softwareontwikkelaar en auteur van het Manning-boek <a hreflang="en" href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a>. Hij vindt het web geweldig, maar wil het nog beter maken. U kunt hem vinden op <a href="https://twitter.com/tunetheweb">@tunetheweb</a> en op zijn blog <a hreflang="en" href="https://www.tunetheweb.com">www.tunetheweb.com</a>.
+tunetheweb_bio: Barry Pollard is een softwareontwikkelaar en auteur van het Manning-boek <a hreflang="en" href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a>. Hij vindt het web geweldig, maar wil het nog beter maken. U kunt hem vinden op <a href="https://twitter.com/tunetheweb">@tunetheweb</a> en op zijn blog <a hreflang="en" href="https://www.tunetheweb.com">www.tunetheweb.com</a>.
 discuss: 2047
 results: https://docs.google.com/spreadsheets/d/1T7sxPP5BV3uwv-sXhBEZraVk-obd0tDfFrLiD49nZC0/
 featured_quote: In dit hoofdstuk verkennen we de huidige stand van zaken voor beveiliging op het web. Door de acceptatie van verschillende beveiligingsfuncties diepgaand en op grote schaal te analyseren, verzamelen we inzichten over de verschillende manieren waarop website-eigenaren deze beveiligingsmechanismen toepassen, gedreven door de prikkel om hun gebruikers te beschermen.
@@ -53,7 +53,6 @@ De inspanning werpt zijn vruchten af en we zien nu dat 87,70% van de verzoeken o
 
 {{ figure_markup(
   image="security-https-request-growth.png",
-  alt="Percentage verzoeken dat HTTPS gebruikt",
   caption='Percentage verzoeken dat HTTPS gebruikt.<br>(Bron: <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#pctHttps">HTTP Archive</a>)',
   description="Tijdreeksdiagram van HTTPS-verzoeken van 1 januari 2017 tot 1 augustus 2020. Het gebruik van mobiele telefoons en desktopcomputers is bijna identiek en begint bij 35,70% van de verzoeken voor desktop en 35,20% voor mobiel en stijgt helemaal tot 87,70% voor desktop en 86,90% voor mobiel met een lichte afname aan het einde.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=1353660053&format=interactive",
@@ -213,7 +212,6 @@ De eerste is HTTP Strict Transport Security (HSTS), die eenvoudig kan worden ing
 
 {{ figure_markup(
   image="security-hsts-max-age-values-in-days.png",
-  alt="HSTS max-age waarden (in dagen).",
   caption="HSTS `max-age` waarden (in dagen).",
   description="Staafdiagram met percentielen van waarden in het kenmerk `max-age`, geconverteerd naar dagen. In het 10e percentiel is desktop 30 dagen en mobiel 91, in het 25e percentiel zijn beide 182 dagen, in het 50e percentiel zijn beide 365 dagen, het 75e percentiel is hetzelfde op 365 dagen voor beide en het 90e percentiel heeft 730 dagen voor beide.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=1208109634&format=interactive",

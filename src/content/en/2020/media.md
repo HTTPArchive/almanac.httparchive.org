@@ -5,7 +5,7 @@ description: Media chapter of the 2020 Web Almanac covering image file sizes and
 authors: [tpiros, bseymour, eeeps]
 reviewers: [nhoizey, colinbendell, dougsillars, Navaneeth-akam]
 analysts: [smatei]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: []
 tpiros_bio: Tamas Piros is a Developer Experience Engineer at <a hreflang="en" href="https://cloudinary.com/">Cloudinary</a>, Google Developer Expert and Technical Instructor running <a hreflang="en" href="https://fullstacktraining.com">Full Stack Training</a>.
 bseymour_bio: Ben Seymour is a Dynamic Media & Content Specialist with <a hreflang="en" href="https://cloudinary.com/">Cloudinary</a>, author of <a hreflang="en" href="http://responsiveimag.es/">Practical Responsive Images</a> and co-founder of <a hreflang="en" href="https://storyus.life/">Storyus</a> and <a hreflang="en" href="https://haktive.com/">Haktive</a>.
@@ -138,7 +138,6 @@ While `srcset` and `sizes` provide us with tooling to help provide browsers with
 
 {{ figure_markup(
   image="use-of-picture.png",
-  alt="Use of picture.",
   caption="Use of `<picture>`.",
   description="Stacked bar chart showing 19.30% of pages use `<picture>` on desktop and 80.70% do not. On mobile it is similar with 18.54% using and 81.46% not using.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=416496535&format=interactive",
@@ -164,7 +163,6 @@ Breaking this down into the number of formats offered:
 
 {{ figure_markup(
   image="picture-number-of-formats.png",
-  alt="picture number of formats.",
   caption="`<picture>` number of formats.",
   description="Bar chart showing number of formats in picture usage. 68.01% of pages on desktop (68.03% on mobile) use 1 format. 2 formats is 23.78% and 23.78% respectively, 3 formats is 7.00% and 6.97% and 4+ formats is only used on 1.21% and 1.22% pages respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=1963933588&format=interactive",
@@ -251,7 +249,6 @@ While the data shows that only a little under 1% of pages using `<picture>` make
 
 {{ figure_markup(
   image="picture-usage-of-orientation.png",
-  alt="Picture usage of orientation.",
   caption="`<picture>` usage of orientation.",
   description="Bar chart showing 0.93% of desktop pages and 0.91% of mobile pages use `<picture>` with orientation. 0.59% of occurrences of `<picture>` on desktop and 0.60% on mobile use orientation.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLNnD9VNqXNxMu60VovxIEp_L6vmNo1oWt8-C18DOetXB3qIkee_-KjZwYYPIkkIM-7So-5wBwQ4QY/pubchart?oid=56906843&format=interactive",

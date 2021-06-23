@@ -3,7 +3,7 @@
 title: HTTP/2
 description: HTTP/2 chapter of the 2020 Web Almanac covering adoption and impact of HTTP/2, HTTP/2 Push, HTTP/2 Issues, and HTTP/3.
 authors: [dotjs, rmarx, MikeBishop]
-reviewers: [LPardue, bazzadp, ibnesayeed]
+reviewers: [LPardue, tunetheweb, ibnesayeed]
 analysts: [gregorywolf]
 editors: [rviscomi]
 translators: []
@@ -45,7 +45,6 @@ The data used in this chapter is sourced from the HTTP Archive and tests over se
 
 {{ figure_markup(
   image="http2-h2-usage.png",
-  alt="HTTP/2 usage by request.",
   link="https://httparchive.org/reports/state-of-the-web#h2",
   caption='HTTP/2 usage by request. (Source: <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#h2">HTTP Archive</a>)',
   description="Timeseries chart of HTTP/2 usage showing adoption at 64% for both desktop and mobile as of July 2019. The trend is growing steadily at about 15 points per year.",

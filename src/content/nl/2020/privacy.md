@@ -5,7 +5,7 @@ description: Privacyhoofdstuk van de Web Almanac 2020 over online trackingcookie
 authors: [ydimova]
 reviewers: [ldevernay]
 analysts: [ydimova, max-ostapenko]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [noah-vdv]
 ydimova_bio:  Yana Dimova is een doctoraatsstudent aan de KU Leuven universiteit in België, waar ze zich bezighoudt met privacy en webbeveiliging.
 discuss: 2046

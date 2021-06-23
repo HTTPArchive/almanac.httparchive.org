@@ -5,7 +5,7 @@ description: Fonts chapter of the 2019 Web Almanac covering where fonts are load
 authors: [zachleat]
 reviewers: [hyperpress, AymenLoukil]
 analysts: [tjmonsi, rviscomi]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: []
 discuss: 1761
 results: https://docs.google.com/spreadsheets/d/108g6LXdC3YVsxmX1CCwrmpZ3-DmbB8G_wwgQHX5pn6Q/
@@ -373,7 +373,6 @@ Let's dig a bit deeper and look at the `format()` values used in the `src:` prop
 
 {{ figure_markup(
   image="fig8.png",
-  alt="Popularity of font formats in @font-face declarations.",
   caption="Popularity of font formats in <code>@font-face</code> declarations.",
   description="Bar chart showing the popularity of formats used in font-face declarations. 69% of desktop pages' @font-face declarations specify the WOFF2 format, 11% WOFF, 10% TrueType, 8% SVG, 2% EOT, and fewer than 1% OpenType, TTF, and OTF. The distribution for mobile pages is similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=700778025&format=interactive"
@@ -547,7 +546,6 @@ Let's have a look at what `font-display` values are popular:
 
 {{ figure_markup(
   image="fig11.png",
-  alt="Usage of font-display values.",
   caption="Usage of <code>font-display</code> values.",
   description="Bar chart showing the usage of the font-display style. 2.6% of mobile pages set this style to `swap`, 1.5% to `auto`, 0.7% to `block`, 0.4% to `fallback`, 0.2% to optional, and 0.1% to `swap` enclosed in quotes, which is invalid. The desktop distribution is similar except `swap` usage is lower by 0.4 percentage points and `auto` usage is higher by 0.1 percentage points.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1988783738&format=interactive"
@@ -651,7 +649,6 @@ Even at 1.8% this was higher than expected, although I am excited to see this ta
 
 {{ figure_markup(
   image="fig19.png",
-  alt="Usage of font-variation-settings axes.",
   caption="Usage of <code>font-variation-settings</code> axes.",
   description="Bar chart showing the usage of the font-variation-settings property. 42% of properties on desktop pages are set to the `opsz` value, 32% to `wght`, 16% to `wdth`, 2% or fewer to `roun`, `crsb`, `slnt`, `inln`, and more. The most notable differences between desktop and mobile pages are 26% usage of `opsz`, 38% of `wght`, and 23% of `wdth`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=699343351&format=interactive"

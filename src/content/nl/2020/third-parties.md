@@ -5,7 +5,7 @@ description: Hoofdstuk Derden van de Web Almanac 2020 met informatie over welke 
 authors: [simonhearne]
 reviewers: [jzyang, exterkamp]
 analysts: [max-ostapenko, paulcalvano]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [noah-vdv]
 simonhearne_bio: Simon is een webprestatie-architect. Hij heeft een passie voor het helpen leveren van een sneller en toegankelijker web. U kunt hem vinden op twitter<a href="https://twitter.com/simonhearne">@SimonHearne</a> en zijn blog <a hreflang="en" href="https://simonhearne.com">simonhearne.com</a>.
 discuss: 2042
@@ -129,7 +129,7 @@ Dit toont een verschuiving wanneer [vergeleken met 2019](../2019/third-parties#r
 
 ### Domeinen van derden
 
-Wanneer we dieper ingaan op domeinen die inhoud van derden aanbieden, zien we dat Google Fonts verreweg de meest voorkomende is. Het is aanwezig op meer dan 7,5% van de geteste mobiele pagina's. Hoewel lettertypen slechts ongeveer 3% van de inhoud van derden uitmaken, worden deze bijna allemaal geleverd door de Google Fonts-service. Als uw pagina Google Fonts gebruikt, volg dan de <a hreflang="en" href="https://csswizardry.com/2020/05/the-fastest-google-fonts/">best practices</a> om de best mogelijke gebruikerservaring te garanderen.
+Wanneer we dieper ingaan op domeinen die inhoud van derden aanbieden, zien we dat Google Fonts verreweg de meest voorkomende is. Het is aanwezig op meer dan 7,5% van de geteste mobiele pagina's. Hoewel lettertypen slechts ongeveer 3% van de inhoud van derden uitmaken, worden deze bijna allemaal geleverd door de Google Fonts-service. Als uw pagina Google Fonts gebruikt, volg dan de <a hreflang="en" href="https://csswizardry.com/2020/05/the-fastest-google-fonts/">beste praktijken</a> om de best mogelijke gebruikerservaring te garanderen.
 
 {{ figure_markup(
   image="top-domains-by-prevalence.png",
@@ -190,7 +190,7 @@ Aan de andere kant van het spectrum vertegenwoordigen de categorieën CDN, Inhou
 
 ### <span lang="en">Cacheability</span> {cacheability}
 
-Sommige reacties van derden moeten altijd in de cache worden opgeslagen. Media zoals afbeeldingen en video's die door een derde partij worden aangeboden, of JavaScript-bibliotheken zijn goede kandidaten. Aan de andere kant mogen trackingpixels en analysebakens nooit in de cache worden opgeslagen. De resultaten laten zien dat in totaal tweederde van de verzoeken van derden wordt bediend met een geldige caching-header, zoals `cache-control`.
+Sommige reacties van derden moeten altijd in de cache worden opgeslagen. Media zoals afbeeldingen en video's die door een derde partij worden aangeboden, of JavaScript-bibliotheken zijn goede kandidaten. Aan de andere kant mogen trackingpixels en analysebakens nooit in de cache worden opgeslagen. De resultaten laten zien dat in totaal tweederde van de verzoeken van derden wordt bediend met een geldige caching-header, zoals `Cache-Control`.
 
 {{ figure_markup(
   image="requests-cached-by-content-type.png",
@@ -268,7 +268,6 @@ Met de [Resource Timing API](https://developer.mozilla.org/en-US/docs/Web/API/Re
 {{ figure_markup(
   image="requests-with-tao.png",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=1886505312&format=interactive",
-  alt="Verzoeken met de Timing-Allow-Origin koptekst.",
   caption="Verzoeken met de `timing-allow-origin` koptekst.",
   description="Minder dan 35% van de reacties van derden wordt weergegeven met een timing-allow-origin-header",
   width=600,

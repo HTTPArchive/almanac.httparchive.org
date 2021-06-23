@@ -3,7 +3,7 @@
 title: HTTP/2
 description: Capitolo HTTP/2 del 2020 Web Almanac che copre l'adozione e l'impatto di HTTP/2, HTTP/2 Push, problemi HTTP/2 e HTTP/3.
 authors: [dotjs, rmarx, MikeBishop]
-reviewers: [LPardue, bazzadp, ibnesayeed]
+reviewers: [LPardue, tunetheweb, ibnesayeed]
 analysts: [gregorywolf]
 editors: [rviscomi]
 translators: [chefleo]
@@ -45,7 +45,6 @@ I dati utilizzati in questo capitolo provengono dal HTTP Archive e testano oltre
 
 {{ figure_markup(
   image="http2-h2-usage.png",
-  alt="Utilizzo di HTTP/2 su richiesta.",
   link="https://httparchive.org/reports/state-of-the-web#h2",
   caption='Utilizzo di HTTP/2 su richiesta. (Fonte: <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#h2">HTTP Archive</a>)',
   description="Grafico della serie temporale dell'utilizzo di HTTP/2 che mostra l'adozione al 64% sia per desktop che per dispositivi mobile a luglio 2019. La tendenza è in costante crescita a circa 15 punti all'anno.",

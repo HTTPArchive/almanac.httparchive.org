@@ -938,6 +938,16 @@ p.copyright a {
     overflow-wrap: break-word;
   }
 
+  .visually-hidden-mobile {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap; /* added line */
+  }
+
   .title-lg {
     font-size: 40px;
     font-size: 2.5rem;
@@ -1377,13 +1387,11 @@ p.copyright a {
 /* Allow more wrapping for extremely small screens (e.g. very zoomed in) */
 @media (max-width: 20em) {
   body {
-    word-break: break-word;
     overflow-wrap: break-word;
   }
 
   .no-wrap {
     white-space: initial;
-    word-break: break-word;
     overflow-wrap: break-word;
   }
 }
@@ -1419,7 +1427,6 @@ th code {
   border-radius: 0;
   background-color: transparent;
   background-color: unset;
-  word-break: unset;
   overflow-wrap: unset;
 }
 
@@ -1429,7 +1436,6 @@ code {
   background-color: #f7f7f7;
   border: 1px solid #dadce0;
   padding: 1px 2px;
-  word-break: break-all;
   overflow-wrap: break-word;
 }
 

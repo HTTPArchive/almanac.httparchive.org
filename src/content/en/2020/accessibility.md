@@ -5,7 +5,7 @@ description: Accessibility chapter of the 2020 Web Almanac covering ease of read
 authors: [oluoluoxenfree, alextait1]
 reviewers: [aardrian, ericwbailey, obto]
 analysts: [obto]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: []
 oluoluoxenfree_bio: Olu Niyi-Awosusi is a software engineer at the FT who loves lists, learning new things, Bee and Puppycat, <a hreflang="en" href="https://alistapart.com/article/building-the-woke-web/">social justice, accessibility</a> and trying harder every day.
 alextait1_bio: Alex Tait is a developer, consultant and educator whose passion lies in the intersection of accessibility and modern JavaScript within interface architecture and design systems. As a developer, she believes that inclusion driven development practices with accessibility at the forefront lead to better products for everyone. As a consultant and strategist, she believes that less is more, and that new feature scope creep cannot be prioritized over core feature parity for disabled users. As an educator, she believes in removing barriers to information so that tech can become a more diverse, equitable and inclusive industry.
@@ -240,7 +240,6 @@ The Web Content Accessibility Guidelines has a criteria <a hreflang="en" href="h
 
 {{ figure_markup(
   image="common-video-attributes.png",
-  alt="Most common video attributes.",
   caption="Most common `<video>` attributes.",
   description="Bar chart showing the top 5 attributes on the `<video>` element on desktop with `loop` on 58.43% of videos, `autoplay` on 56.98%, `muted` on 56.13%, `class` on 51.79%, and `preload` on 45.21% of videos.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSjkB_XAYiwkYrMuoXp44mdqMGJVDUkTr_48ELozY72Mdv3OlxeWV9ysbDY9bs6hA7LnJTrHar9aZlM/pubchart?oid=1226671706&format=interactive",
@@ -417,7 +416,6 @@ In this pattern, a parent container has a `role="tablist"` with children element
 
 {{ figure_markup(
   image="role-tab-list.png",
-  alt="Element with the tablist role",
   caption='Element with the `tablist` role (<a hreflang="en" href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html">Source: W3C</a>)',
   description='Screenshot showing an example tablist (`role="tablist"`) which contains three tabs. All three tabs are highlighted.',
   width=348,
@@ -426,7 +424,6 @@ In this pattern, a parent container has a `role="tablist"` with children element
 
 {{ figure_markup(
   image="role-tab.png",
-  alt="Element with the tab role",
   caption='Element with the `tab` role. (<a hreflang="en" href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html">Source: W3C</a>)',
   description='Screenshot showing an example tab (`role="tab"`) where only one tab is highlighted.',
   width=346,
@@ -435,7 +432,6 @@ In this pattern, a parent container has a `role="tablist"` with children element
 
 {{ figure_markup(
   image="role-tab-panel.png",
-  alt="Element with the tabpanel role",
   caption='Element with the `tabpanel` role. (<a hreflang="en" href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html">Source: W3C</a>)',
   description='Screenshot showing an example tabpanel (`role="tabpanel"`) where the content of one tab is highlighted.',
   width=346,
@@ -456,7 +452,6 @@ ARIA attributes can be assigned to HTML elements to enhance the accessibility of
 
 {{ figure_markup(
   image="most-used-aria-attributes.png",
-  alt="Top 10 most used aria attributes.",
   caption="Top 10 most used `aria` attributes.",
   description="Bar chart showing the top 10 `aria` attributes use on desktop and mobile showing `aria-hidden` used by 48.1% desktop sites and 48.2% mobile sites, `aria-label` is used by 40.4% and 38.7% respectively, `aria-expanded` by 21.0% and 21.0%, `aria-controls` by 17.4% and 16.9%, `aria-labelledby` by 17.7% and 16.2%, `aria-live` by 16.8% and 15.7%, `aria-haspopup` by 15.9% and 14.0%, `aria-current` by 12.4% and 12.7%, and `aria-describedby` by 11.3% and 10.6%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSjkB_XAYiwkYrMuoXp44mdqMGJVDUkTr_48ELozY72Mdv3OlxeWV9ysbDY9bs6hA7LnJTrHar9aZlM/pubchart?oid=332801232&format=interactive",
@@ -471,7 +466,7 @@ The browser's accessibility tree has a computation system that assigns the acces
 
 The accessible name can be derived from an element's content (such as button text), an attribute (such as an image `alt` text value), or an associated element (such as a programmatically associated label for a form control). For more information about accessible names see Léonie Watson's article, <a hreflang="en" href="https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/">What is an accessible name?</a>
 
-We can also use ARIA to provide accessible names for elements. There are two ARIA attributes that accomplish this, <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA14.html">aria-label</a>, <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA16.html">aria-labelledby</a>. Either of these attributes will "win" the accessible name computation and override the natively derived accessible name, so use them with caution and be sure to test with a screen reader or look at the accessibility tree to confirm that the accessible name is what was expected. When using ARIA to name an element, it is important to ensure that the <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html">WCAG 2.5.3, Label in Name</a> criterion has not been violated, which expects visible labels to be at least a part of its accessible name.
+We can also use ARIA to provide accessible names for elements. There are two ARIA attributes that accomplish this, <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA14.html">`aria-label`</a>, <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA16.html">`aria-labelledby`</a>. Either of these attributes will "win" the accessible name computation and override the natively derived accessible name, so use them with caution and be sure to test with a screen reader or look at the accessibility tree to confirm that the accessible name is what was expected. When using ARIA to name an element, it is important to ensure that the <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html">WCAG 2.5.3, Label in Name</a> criterion has not been violated, which expects visible labels to be at least a part of its accessible name.
 
 The `aria-label` element allows a developer to provide a string value and this will be used for the accessible name for the element. We found that 40.44% of desktop pages and 38.72% of mobile home pages had at least one element with the `aria-label` attribute, making it the most popular ARIA attribute for providing accessible names.
 
@@ -481,7 +476,7 @@ Again, the first rule of ARIA should be respected. If the element can derive its
 
 The <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA1.html">`aria-describedby`</a> attribute can be used in cases where a more robust description is needed for an element. It also accepts an `id` reference as its value to connect with descriptive text that exists elsewhere in the interface. It does not supply the accessible name, it should be used in conjunction with an accessible name as a supplement, not a replacement. We found that 11.31% of desktop pages and 10.56% of mobile pages had at least one element with the `aria-describedby` attribute.
 
-**Fun fact!** We found 3,200 websites with the attribute **aria-labeledby**, which is a misspelling of the `aria-labelledby` attribute! Be sure to run those automated checks to pick up these easily avoidable errors.
+**Fun fact!** We found 3,200 websites with the attribute **`aria-labeledby`**, which is a misspelling of the `aria-labelledby` attribute! Be sure to run those automated checks to pick up these easily avoidable errors.
 
 #### Hiding content
 

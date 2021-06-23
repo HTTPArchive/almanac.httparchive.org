@@ -5,7 +5,7 @@ description: 2020年のWeb Almanac「機能」の章では、新しく強力なW
 authors: [christianliebel]
 reviewers: [tomayac]
 analysts: [tomayac]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [ksakae]
 discuss: 2049
 results: https://docs.google.com/spreadsheets/d/1N6j1qKv7vc51p1W9z_RrbJX9Se3Pmb-Uersfz4gWqqs/
@@ -49,7 +49,6 @@ featured_stat_label_3: 関連アプリのインストールを許可している
 
 {{ figure_markup(
   image="async_clipboard_api.png",
-  alt="非同期クリップボードAPIを使用したChromeでのページロードの割合",
   caption='非同期クリップボードAPIを使用したChromeでのページロードの割合<br>(ソース。<a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/2369">非同期クリップボード読み取り</a>, <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/2370">非同期クリップボード書き込み</a>)',
   description="この機能を使用しているChromeのページロードの割合に基づく、非同期クリップボードAPIの使用状況のグラフです。これは読み取りと書き込みの使用状況を比較したもので、2020年の間に書き込みでは指数関数的に増加しているのに対し、読み取りは直線的に増加していることを示しています。2020年10月には、Chromeで全ページロードの0.0003%の間に読み取りが呼び出され、0.0006%の間に書き込みが呼び出されています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1740212588&format=interactive",
@@ -77,7 +76,6 @@ featured_stat_label_3: 関連アプリのインストールを許可している
 
 {{ figure_markup(
   image="storage_manager_api_estimate.png",
-  alt="StorageManager APIの推定方法を利用したページ数の推移",
   caption='<span lang="en">StorageManager API</span>の推定方法を利用したページ数の推移',
   description="HTTP Archiveで監視しているページ数をもとに、StorageManager APIの推定方法の利用状況をグラフ化したものです。モバイル デバイスとデスクトップ デバイスでの使用状況を比較しています。デスクトップでは直線的な伸びを示していますが、モバイルではホッケーのような伸びを示しています。10月はモバイルサイトが約34,000件、デスクトップサイトが約27,000件利用しています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1853644024&format=interactive",
@@ -94,7 +92,6 @@ Storage Manager APIは2016年からChrome、2017年からFirefox、そして新�
 
 {{ figure_markup(
   image="storage_manager_api_persist.png",
-  alt="StorageManager APIのpersistメソッドの使用ページ数。",
   caption='<span lang="en">StorageManager API</span>の<span lang="en">persist</span>メソッドの使用ページ数。',
   description='HTTP Archiveで監視しているページ数をもとに、<span lang="en">StorageManager API</span>の<span lang="en">persist</span>メソッドの使用状況をグラフ化したものです。モバイルデバイスとデスクトップデバイスでの使用状況を比較しています。デスクトップページでは利用状況はほぼ安定していますが、モバイル端末では変動が大きくなっています。2020年10月には、デスクトップページで25ページ、モバイルページで176ページがAPIを利用しています。',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=644836316&format=interactive",
@@ -115,7 +112,6 @@ Storage Manager APIは2016年からChrome、2017年からFirefox、そして新�
 
 {{ figure_markup(
   image="badging_api.png",
-  alt="バッジAPIを使用したChromeでのページ読み込みの割合",
   caption='ChromeでバッジAPIを使用したページロードの割合<br>(ソース。<a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/2726">バッジセット</a>, <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/2727">バッジクリア</a>)',
   description="この機能を使用してChromeでページが読み込まれる割合に基づく、バッジAPIの使用状況のグラフです。セットメソッドとクリアメソッドを比較しています。両メソッドの使用量は時間の経過とともに増加しており、一般的にはセットメソッドの方が呼び出される頻度は高くなっています。2020年10月には、両方のメソッドの使用率が急上昇しており、ピークはセットメソッドがページロードの0.025％、クリアが0.016％となっています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1145004925&format=interactive",
@@ -138,7 +134,6 @@ registration.showNotification('Title', {
 
 {{ figure_markup(
   image="notification_triggers_api.png",
-  alt="Notification Triggers APIを使用したChromeでのページロードの割合",
   caption='Notification Triggers APIを使用したChromeでのページ読み込みの割合<br>（出典 <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">通知トリガー</a>）',
   description="この機能を使用しているChromeでのページ読み込みの割合に基づいた通知トリガーAPIの使用状況のグラフです。ページロードの約0.00003%で2020年3月にピークを迎え、2020年10月にはゼロになることを示しています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1388597384&format=interactive",
@@ -156,7 +151,6 @@ registration.showNotification('Title', {
 
 {{ figure_markup(
   image="screen_wake_lock_api.png",
-  alt="Screen Wake Lock APIを利用しているページ数",
   caption='<span lang="en">Screen Wake Lock API</span>を利用しているページ数',
   description='HTTP Archiveで監視しているページ数に基づいて、デスクトップページとモバイルページを比較した<span lang="en">Screen Wake Lock API</span>の利用状況のグラフです。2020年10月時点では、デスクトップ10ページ、モバイル5ページでAPIが利用されています。',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=718278185&format=interactive",
@@ -175,7 +169,6 @@ registration.showNotification('Title', {
 
 {{ figure_markup(
   image="idle_detection_api.png",
-  alt="アイドル検出APIを使用したChromeでのページロードの割合",
   caption='アイドル検出APIを使用したChromeでのページロードの割合<br>(出典. <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">アイドル検出</a>。)',
   description="この機能を使用してChromeでページを読み込んだ割合に基づく、アイドル検出APIの使用状況のグラフです。利用可能なデータは2020年7月と10月のみで、APIの採用率は非常に低いことを示しています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=963792757&format=interactive",
@@ -215,7 +208,6 @@ self.addEventListener('periodicsync', (event) => {
 
 {{ figure_markup(
   image="periodic_background_sync_api.png",
-  alt="周期的バックグラウンド同期APIを使用しているページ数。",
   caption="周期的バックグラウンド同期APIを使用しているページ数。",
   description="HTTP Archiveで監視しているページ数に基づいた周期的バックグラウンド同期APIの使用状況のグラフです。モバイル端末とデスクトップ端末での利用状況を比較しています。2020年4月以降、デスクトップとモバイルでは1～2ページでAPIが利用されています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1444904371&format=interactive",
@@ -241,7 +233,7 @@ relatedApps.forEach((app) => {
 
 {{ figure_markup(
   image="get_installed_related_apps.png",
-  caption="getInstalledRelatedApps()を使用しているページ数",
+  caption="`getInstalledRelatedApps()`を使用しているページ数",
   description="HTTP Archiveで監視しているページ数に基づくgetInstalledRelatedApps()の使用状況のグラフです。モバイルデバイスとデスクトップデバイスでの使用状況を比較しています。モバイルデバイスでは着実な成長を示しており、2020年10月にはデスクトップの44ページに対して363ページとピークを迎えています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1774881171&format=interactive",
   sheets_gid="860146688",
@@ -259,7 +251,6 @@ Webアプリは、キャッシュストレージやインデックスDBなど、
 
 {{ figure_markup(
   image="content_indexing_api.png",
-  alt="コンテンツインデックスAPIを使用したChromeでのページロードの割合",
   caption='コンテンツインデックスAPIを使用したChromeでのページロードの割合<br>（出典 <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">コンテンツインデックス</a>)',
   description="Chromeでこの機能を使用しているページロードの割合に基づく、コンテンツインデックスAPIの使用状況のグラフです。最初は比較的低い使用率を示していますが、2020年10月になると突然10倍に増え、Chromeでのページロードの0.0021%で使用されています",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=258329620&format=interactive",
@@ -288,7 +279,6 @@ WebSocketStream APIは、ストリームのリーダーとライターが安全�
 
 {{ figure_markup(
   image="websocketstreams.png",
-  alt="WebSocketStreamsを使用したChromeでのページロードの割合",
   caption='WebSocketStreamsを使用したChromeでのページ読み込みの割合<br>（出典 <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3018">WebSocketStream</a>)',
   description="この機能を使用してChromeでのページロードの割合に基づくWebSocketStreamsの使用状況のグラフです。2020年6月と7月にピークを迎え、約0.0008%のページロード中にAPIが使用されたことを示しています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1714443590&format=interactive",
@@ -314,7 +304,6 @@ QuicTransportは、WebSocket APIのユースケースをサポートし、信頼
 
 {{ figure_markup(
   image="quic_transport.png",
-  alt="QuicTransportを使ったChromeでのページ読み込みの割合",
   caption='QuicTransport<br>を使ったChromeでのページ読み込みの割合（出典 <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3184">QuicTransport</a>）',
   description="この機能を使用してChromeでのページロードの割合に基づくQuicTransportの使用状況のグラフです。2020年10月にピークを迎え、ページロードの約0.00089%の間にAPIが使用されたことを示しています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1571330893&format=interactive",

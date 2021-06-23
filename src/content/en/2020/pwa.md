@@ -4,8 +4,8 @@ title: PWA
 description: PWA chapter of the 2020 Web Almanac covering service workers (registrations, installability, events and filesizes), Web App Manifests properties, and Workbox.
 authors: [hemanth]
 reviewers: [thepassle, jadjoubran, pearlbea, gokulkrishh]
-analysts: [bazzadp]
-editors: [bazzadp]
+analysts: [tunetheweb]
+editors: [tunetheweb]
 translators: []
 hemanth_bio: <a hreflang="en" href="https://h3manth.com">Hemanth HM</a> is a Computer polyglot, FOSS philosopher, GDE for web and payments domain, DuckDuckGo community member, TC39 delegate and Google Launchpad Accelerator mentor. Loves The WEB && CLI. Hosts <a hreflang="en" href="https://TC39er.us">TC39er.us</a> podcast.
 discuss: 2050
@@ -37,7 +37,7 @@ Service workers are at the very center of progressive web apps. They help develo
 
 ### Service worker usage
 
-From the data we gathered we can see that about 0.88% desktop sites and 0.87% mobile sites use a service worker. This was for the month of August 2020 and, to put that into perspective, that equates to 49,305 (out of 5,593,642) desktop sites and 55,019 (out of 6,347,919) mobile sites. While that usage may seem low, it is important that we realize that other measurements equate that to 16.6% of the <a hreflang="en" href="https://www.chromestatus.com/metrics/feature/timeline/popularity/990">web traffic</a>–the difference being due to high traffic websites tending to use service workers more.
+From the data we gathered we can see that about 0.88% desktop sites and 0.87% mobile sites use a service worker. This was for the month of August 2020 and, to put that into perspective, that equates to 49,305 (out of 5,593,642) desktop sites and 55,019 (out of 6,347,919) mobile sites.
 
 {{ figure_markup(
   image="pwa-timeseries-of-service-worker-installations.png",
@@ -48,6 +48,8 @@ From the data we gathered we can see that about 0.88% desktop sites and 0.87% mo
   sql_file="sw_adoption_over_time.sql"
   )
 }}
+
+While that usage may seem low, it is important that we realize that other measurements equate that to 16.6% of the <a hreflang="en" href="https://www.chromestatus.com/metrics/feature/timeline/popularity/990">web traffic</a>–the difference being due to high traffic websites tending to use service workers more.
 
 ## Lighthouse insights
 
@@ -260,7 +262,6 @@ We also found a non-trivial number of mistyped properties; our favorite ones bei
 
 {{ figure_markup(
   image="pwa-most-used-display-values-for-service-worker-pages.png",
-  alt="Most used display values for service worker pages.",
   caption="Most used `display` values for service worker pages.",
   description="Bar chart showing the percentage of pages using the 5 most common `display` values, dominated by `standalone` which is used by 86.73% of desktop and 89.28% of mobile pages, `minimal-ui` is used by 6.30% of desktop and 5.00% of mobile, `fullscreen` by 4.80% of desktop and 4.11% of mobile, 1.15% of desktop pages and 0.88% of mobile pages do not set a `display` value, and finally 1.00% of desktop and 0.72% of mobile set this to `browser`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRRpTSA4fsHwUap-ByQ08j95uo7Zm1kY6lTSvA-DZT54g2QZ0guV7db3QyQwQgMPzsKsJ43gbzqfJst/pubchart?oid=872942071&format=interactive",

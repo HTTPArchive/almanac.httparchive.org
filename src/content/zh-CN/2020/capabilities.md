@@ -49,7 +49,6 @@ featured_stat_label_3: 网站允许安装相关应用程序
 
 {{ figure_markup(
   image="async_clipboard_api.png",
-  alt="使用异步剪贴板 API的Chrome浏览器的页面加载百分比",
   caption='在Chrome中使用异步剪贴板 API的页面加载百分比。<br>(来源: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/2369">异步剪贴板读</a>, <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/2370">异步剪贴板写</a>)',
   description="异步剪贴板 API使用情况图，基于Chrome浏览器中使用该功能的页面加载百分比。它比较了读和写方法的使用情况，显示在2020年期间，写的使用量呈指数级增长，而读的使用量则呈线性增长。在2020年10月，在Chrome浏览器所有页面加载过程中，0.0003%的页面加载过程中调用了读，0.0006%的页面加载过程中调用了写。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1740212588&format=interactive",
@@ -77,7 +76,6 @@ Web浏览器允许用户以不同的方式在用户系统上存储数据，如Co
 
 {{ figure_markup(
   image="storage_manager_api_estimate.png",
-  alt="使用存储管理 API的预估方法的页数。",
   caption="使用存储管理 API的预估方法的页数。",
   description="根据HTTPArchive监控的页面数量，存储管理 API的预估方法的使用情况图。它比较了移动设备和桌面设备上的使用情况。它显示了桌面上的线性增长，而它同时显示了移动设备的爆炸性增长。在10月份，大约有34000个移动网站和27000个桌面网站利用它。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1853644024&format=interactive",
@@ -94,7 +92,6 @@ Web存储有两类。"尽力"和 "持久"，第一种是默认的。当设备的
 
 {{ figure_markup(
   image="storage_manager_api_persist.png",
-  alt="使用存储管理 API的持久方法的页面数。",
   caption="使用存储管理 API的持久方法的页面数。",
   description="根据HTTPArchive监控的页面数量，存储管理 API的持久化方法的使用情况图。它比较了移动设备和桌面设备上的使用情况。在桌面页面上，使用量几乎是稳定的，而在移动设备上则有更多的波动。在2020年10月，有25个桌面页面和176个移动页面利用该API。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=644836316&format=interactive",
@@ -115,7 +112,6 @@ Web存储有两类。"尽力"和 "持久"，第一种是默认的。当设备的
 
 {{ figure_markup(
   image="badging_api.png",
-  alt="使用角标 API的Chrome浏览器的页面加载百分比",
   caption='在Chrome浏览器中使用角标 API的页面加载百分比。<br>(来源: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/2726">角标设置</a>, <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/2727">角标清除</a>)',
   description="角标 API 使用情况的图表，基于 Chrome 浏览器中使用该功能的页面加载百分比。它比较了设置方法和清除方法。随着时间的推移，两种方法的使用量都在增长，一般来说，设置方法的调用频率更高。在2020年10月，这两种方法都会有一个突飞猛进的增长，最高峰时，设置方法占页面加载的0.025%，清除方法占页面加载的0.016%。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1145004925&format=interactive",
@@ -138,7 +134,6 @@ registration.showNotification('Title', {
 
 {{ figure_markup(
   image="notification_triggers_api.png",
-  alt="在Chrome浏览器中使用通知触发器API的页面加载百分比",
   caption='在Chrome浏览器中使用通知触发器API的页面加载百分比。<br>(来源: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">通知触发器</a>)',
   description="通知触发器API使用情况的图表，基于使用该功能的Chrome浏览器中页面加载的百分比。它显示了2020年3月的峰值，约占页面加载的0.00003%，在2020年10月下降到零。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1388597384&format=interactive",
@@ -156,7 +151,6 @@ registration.showNotification('Title', {
 
 {{ figure_markup(
   image="screen_wake_lock_api.png",
-  alt="使用屏幕唤醒锁定 API的页面数量。",
   caption="使用屏幕唤醒锁定 API的页面数量。",
   description="屏幕唤醒锁定API使用情况图，基于HTTP Archive监控的页面数量，对比桌面和移动页面。在2020年10月，该API被10个桌面页面和5个移动页面使用。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=718278185&format=interactive",
@@ -175,7 +169,6 @@ BettyCrocker.com是美国一家很受欢迎的烹饪网站，在屏幕唤醒锁�
 
 {{ figure_markup(
   image="idle_detection_api.png",
-  alt="使用空闲检测API的Chrome浏览器的页面加载百分比",
   caption='使用空闲检测 API 的 Chrome 浏览器中页面加载的百分比。<br>(Source: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">空闲检测</a>)',
   description="空闲检测API使用情况图，基于Chrome中使用该功能的页面加载百分比。只有2020年7月和10月的数据，显示该API的采用率非常低。.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=963792757&format=interactive",
@@ -215,7 +208,6 @@ self.addEventListener('periodicsync', (event) => {
 
 {{ figure_markup(
   image="periodic_background_sync_api.png",
-  alt="使用周期性后台同步 API的页面数量。",
   caption="使用周期性后台同步 API的页面数量。",
   description="基于HTTPArchive监控的页面数量的周期性后台同步 API使用情况图。它比较了移动和桌面设备上的使用情况。自2020年4月以来，该API被一到两个桌面和移动页面使用。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1444904371&format=interactive",
@@ -259,7 +251,6 @@ Web应用可以使用各种方式离线存储内容，比如Cache Storage，或�
 
 {{ figure_markup(
   image="content_indexing_api.png",
-  alt="在Chrome浏览器中使用内容索引API的页面加载百分比",
   caption='在Chrome浏览器中使用内容索引API的页面加载百分比。<br>(来源: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">内容索引</a>)',
   description="内容索引 API 使用情况图，基于 Chrome 中使用该功能的页面加载百分比。它显示出一开始的使用率相对较低，直到2020年10月突然增长了十倍，在Chrome浏览器中0.0021%的页面加载中使用。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=258329620&format=interactive",
@@ -288,7 +279,6 @@ WebSocketStream API透明地解决了背压问题，因为流读取器和写入�
 
 {{ figure_markup(
   image="websocketstreams.png",
-  alt="使用 WebSocketStreams 的 Chrome 浏览器中的页面加载百分比",
   caption='使用 WebSocketStreams 的 Chrome 浏览器中页面加载的百分比。<br>(来源: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3018">WebSocketStream</a>)',
   description="WebSocketStreams 使用情况图，基于使用该功能的 Chrome 浏览器中页面加载的百分比。它显示了2020年6月和7月的峰值，其中API在大约0.0008%的页面加载中被使用。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1714443590&format=interactive",
@@ -314,7 +304,6 @@ QuicTransport 是 WebSockets 的有效替代方案，因为它支持 WebSocket A
 
 {{ figure_markup(
   image="quic_transport.png",
-  alt="使用QuicTransport的Chrome浏览器的页面加载百分比",
   caption='使用QuicTransport的Chrome浏览器的页面加载百分比。<br>(Source: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3184">QuicTransport</a>)',
   description="QuicTransport使用情况图表，基于使用该功能的Chrome浏览器中页面加载的百分比。它显示了2020年10月的峰值，其中API在大约0.00089%的页面加载中被使用。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1571330893&format=interactive",

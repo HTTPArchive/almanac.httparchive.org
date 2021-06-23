@@ -2,14 +2,14 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: HTTP/2
 description: HTTP/2、HTTP/2プッシュ、HTTP/2の問題、およびHTTP/3の採用と影響をカバーするWeb Almanac 2019のHTTP/2章
-authors: [bazzadp]
+authors: [tunetheweb]
 reviewers: [bagder, rmarx, dotjs]
 analysts: [paulcalvano]
 editors: [rachellcostello]
 translators: [ksakae]
 discuss: 1775
 results: https://docs.google.com/spreadsheets/d/1z1gdS3YVpe8J9K3g2UdrtdSPhRywVQRBz5kgBeqCnbw/
-bazzadp_bio: Barry Pollardはソフトウェア開発者であり、Manningの本 <a hreflang="en" href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a> の著者でもあります。彼はウェブは素晴らしいと思っていますが、それをさらに良くしたいと思っています。<a href="https://twitter.com/tunetheweb">@tunetheweb</a> でツイートしたり、<a hreflang="en" href="https://www.tunetheweb.com">www.tunetheweb.com</a> でブログを書いたりしています。
+tunetheweb_bio: Barry Pollardはソフトウェア開発者であり、Manningの本 <a hreflang="en" href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a> の著者でもあります。彼はウェブは素晴らしいと思っていますが、それをさらに良くしたいと思っています。<a href="https://twitter.com/tunetheweb">@tunetheweb</a> でツイートしたり、<a hreflang="en" href="https://www.tunetheweb.com">www.tunetheweb.com</a> でブログを書いたりしています。
 featured_quote: HTTP/2は、ほぼ20年ぶりになるWebのメイン送信プロトコルの初となるメジャーアップデートでした。それは多くの期待を持って到来し、欠点なしで無料のパフォーマンス向上を約束しました。それ以上に、HTTP/1.1が非効率なため強制されていたすべてのハックや回避策をやめることができました。デフォルトでパフォーマンスが向上するため、ドメインのバンドル、分割、インライン化、さらにはシャーディングなどはすべてHTTP/2の世界でアンチパターンになります。
 featured_stat_1: 95%
 featured_stat_label_1: HTTP/2を使用できるグローバルユーザーの割合。
@@ -76,7 +76,6 @@ HTTP/2には次の重要な概念があります。
 
 {{ figure_markup(
   image="ch20_fig2_http2_usage_by_request.png",
-  alt="要求によるHTTP/2の使用。(引用: HTTP Archive)",
   caption='要求によるHTTP/2の使用。(引用: <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#h2">HTTP Archive</a>)',
   description="2019年7月現在、デスクトップとモバイルの両方で55％採用されているHTTP/2使用の時系列チャート。傾向は年間約15ポイントで着実に増加しています。",
   width=600,
@@ -455,7 +454,6 @@ HTTP/2の影響は、特にHTTP Archive[方法論](./methodology)を使用して
 
 {{ figure_markup(
   image="ch20_fig9_num_tcp_connections_trend_over_years.png",
-  alt='ページごとのTCP接続。  ',
   caption='ページごとのTCP接続。 (引用: <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#tcp">HTTP Archive</a>)',
   description="ページあたりのTCP接続数の時系列グラフ。2019年7月現在、デスクトップページの中央値には14の接続があり、モバイルページの中央値には16の接続があります。",
   width=600,
@@ -467,7 +465,6 @@ HTTP Archiveは、ページあたりのTCP接続数を測定します。これ�
 
 {{ figure_markup(
   image="ch20_fig10_total_requests_per_page_trend_over_years.png",
-  alt='ページごとの合計リクエスト。',
   caption='ページごとの合計リクエスト。 (引用: <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#reqTotal">HTTP Archive</a>)',
   description="ページあたりのリクエスト数の時系列チャート。2019年7月現在、デスクトップページの中央値は74リクエスト、モバイルページの中央値は69リクエストです。傾向は比較的横ばいです。",
   width=600,

@@ -5,7 +5,7 @@ description: Hoofdstuk over lettertypen van de Web Almanac 2020 waarin wordt bes
 authors: [raphlinus, jpamental]
 reviewers: [RoelN, svgeesus, davelab6, rsheeter, mandymichael]
 analysts: [AbbyTsai]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [noah-vdv]
 jpamental_bio: Ontwerper, knutselaar, typograaf. Auteur van Responsive Typography, uitgenodigde expert voor het W3C en 10+ jaar ervaring gericht op betere typografie op internet.
 raphlinus_bio: Raph Levien werkt al meer dan 35 jaar met lettertypen, waaronder een doctoraat aan UC Berkeley in hulpmidelen voor het ontwerpen van lettertypen. Hij voegt zich weer bij <a hreflang="en" href="https://fonts.google.com/">Google Fonts</a> als onderzoeker op het gebied van lettertypetechnologie, nadat hij het team in 2010 mede heeft opgericht.
@@ -134,7 +134,7 @@ Een andere optie van self-hosting fonts op de server van de site, is om de door 
 
 ## Racen naar eerste lak
 
-Het grootste probleem met de prestaties van het integreren van weblettertypen is dat ze de tijd kunnen vertragen waarop de eerste leesbare tekst wordt weergegeven. Twee optimalisatietechnieken kunnen deze problemen helpen verminderen: `font-display` en bron-hints.
+Het grootste probleem met de prestaties van het integreren van weblettertypen is dat ze de tijd kunnen vertragen waarop de eerste leesbare tekst wordt weergegeven. Twee optimalisatietechnieken kunnen deze problemen helpen verminderen: `font-display` en bron hints.
 
 De instelling [`font-display`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display) bepaalt wat er gebeurt tijdens het wachten tot het weblettertype wordt geladen en is over het algemeen een afweging tussen prestatie en visuele rijkdom. De meest populaire is `swap`, gebruikt op ongeveer 10% van de webpagina's, die wordt weergegeven met behulp van het fallback-lettertype als het weblettertype niet snel laadt, en vervolgens het weblettertype verwisselt wanneer het wordt geladen. Andere instellingen zijn onder meer `block`, dat het weergeven van tekst helemaal vertraagt (waardoor het mogelijke knipperende effect wordt geminimaliseerd), en `fallback`, wat lijkt op `swap` maar het snel opgeeft en het fallback-lettertype gebruikt als het lettertype niet wordt geladen in een matige hoeveelheid tijd, en `optional`, die het onmiddellijk opgeeft en het fallback-lettertype gebruikt; dit wordt slechts door 1% van de webpagina's gebruikt, vermoedelijk degenen die zich het meest bezighouden met prestaties.
 
@@ -152,7 +152,6 @@ We kunnen het effect van deze instellingen op First Contentful Paint en Largest 
 
 {{ figure_markup(
   image="fonts-font-display-performance-desktop.png",
-  alt="font-display prestatie op desktop.",
   caption="`font-display` prestatie op desktop.",
   description="Een staafdiagram met de desktop mediaan first content paint (FCP) en last content paint (LCP) in milliseconden voor verschillende lettertypeweergave-instellingen: `none` heeft een mediaan FCP van 2.286 ms en mediaan LCP van 4.028 ms, `optional` heeft Respectievelijk 1.766 ms en 3.055 ms, `swap` heeft 2.223 ms en 4.176 ms, `fallback` heeft 2.397 ms en 4.106 ms, `block` heeft 2.454 ms en 4.696 ms, en `auto` heeft 2.605 ms en 4.883 ms.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1618299142&format=interactive",
@@ -163,7 +162,6 @@ We kunnen het effect van deze instellingen op First Contentful Paint en Largest 
 
 {{ figure_markup(
   image="fonts-font-display-performance-mobile.png",
-  alt="font-display prestatie op mobiel.",
   caption="`font-display` prestatie op mobiel.",
   description="Een staafdiagram met de mobiele mediaan first content paint (FCP) en last content paint (LCP) in milliseconden voor verschillende font-weergave-instellingen: `none` heeft een mediaan FCP van 5.279 ms en een mediaan LCP van 8.381 ms, `optional` heeft Respectievelijk 4.733 ms en 6.598 ms, `swap` heeft 5.268 ms en 8.748 ms, `fallback` heeft 5.478 ms en 8.706 ms, `block` heeft 5.739 ms en 9.625 ms, en `auto` heeft 6.181 ms en 10.103 ms.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=2135700957&format=interactive",
@@ -178,7 +176,7 @@ Ten slotte is een rechtvaardiging voor het gebruik van `fallback` het verbeteren
 
 Google Fonts raadt nu `swap` aan in de voorgestelde integratiecode. Als u het nu niet gebruikt, kan het toevoegen ervan een manier zijn om de prestaties te verbeteren, vooral voor gebruikers met langzame verbindingen.
 
-### Bron-hints
+### Bron hints
 
 Hoewel `font-display` de presentatie van de pagina kan versnellen wanneer de lettertypen langzaam worden geladen, kunnen hints voor bronnen het laden van weblettertypen naar eerder in de cascade verplaatsen.
 
@@ -188,22 +186,22 @@ Dit is vooral relevant voor gehoste lettertype-oplossingen. Pas nadat ontdekt is
 
 {{ figure_markup(
   image="fonts-resource-hints-use.png",
-  caption="bron-hints gebruik op lettertypen.",
-  description="Een staafdiagram toont het gebruik van verschillende bron-hints instellingen voor lettertypegegevens: `dns-prefetch` wordt gebruikt door 32% van zowel desktop- als mobiele sites, `preload` door 17% van desktop en 16% van mobiel, `preconnect` met 8% van beide, `prefetch` met 3% van beide en `prerender` met 0% voor beide.",
+  caption="Bron hints gebruik op lettertypen.",
+  description="Een staafdiagram toont het gebruik van verschillende bron hints instellingen voor lettertypegegevens: `dns-prefetch` wordt gebruikt door 32% van zowel desktop- als mobiele sites, `preload` door 17% van desktop en 16% van mobiel, `preconnect` met 8% van beide, `prefetch` met 3% van beide en `prerender` met 0% voor beide.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=1880156934&format=interactive",
   sheets_gid="2079638999",
   sql_file="04_07.font_resource_hints_with_fcp.sql"
   )
 }}
 
-Het toevoegen van een <a hreflang="en" href="https://www.w3.org/TR/resource-hints/#resource-hints">bron-hint element</a> in de HTML start die tweede verbinding eerder. De verschillende instellingen voor bron-hints bepalen hoe ver dat komt voordat de URL voor de daadwerkelijke lettertypebron is. De meest voorkomende (bij ongeveer 32% van de webpagina's) is `dns-prefetch`, hoewel er in de meeste gevallen betere keuzes zijn.
+Het toevoegen van een <a hreflang="en" href="https://www.w3.org/TR/resource-hints/#resource-hints">bron hint element</a> in de HTML start die tweede verbinding eerder. De verschillende instellingen voor bron hints bepalen hoe ver dat komt voordat de URL voor de daadwerkelijke lettertypebron is. De meest voorkomende (bij ongeveer 32% van de webpagina's) is `dns-prefetch`, hoewel er in de meeste gevallen betere keuzes zijn.
 
-Vervolgens zullen we kijken of deze bron-hints een invloed hebben op de paginaprestaties.
+Vervolgens zullen we kijken of deze bron hints een invloed hebben op de paginaprestaties.
 
 {{ figure_markup(
   image="fonts-resource-hints-performance-desktop.png",
-  caption="bron-hints prestatie, desktop.",
-  description="Een staafdiagram met de mediaan van de first content paint en de last content paint van de desktop (in milliseconden) voor verschillende instellingen voor bron-hints: `prerender` heeft een mediaan FCP van 1.658 ms en een mediaan LCP van 2.904 ms, `preload` heeft 2.045 ms en 3.865 ms respectievelijk `prefetch` heeft 1.909 ms en 3.702 ms, `preconnect` heeft 2.069 ms en 4.213 ms, `none` heeft 2.489 ms en 4.816 ms, en `dns-prefetch` heeft 2.630 ms en 5.061 ms.",
+  caption="Bron hints prestatie, desktop.",
+  description="Een staafdiagram met de mediaan van de first content paint en de last content paint van de desktop (in milliseconden) voor verschillende instellingen voor bron hints: `prerender` heeft een mediaan FCP van 1.658 ms en een mediaan LCP van 2.904 ms, `preload` heeft 2.045 ms en 3.865 ms respectievelijk `prefetch` heeft 1.909 ms en 3.702 ms, `preconnect` heeft 2.069 ms en 4.213 ms, `none` heeft 2.489 ms en 4.816 ms, en `dns-prefetch` heeft 2.630 ms en 5.061 ms.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=355239876&format=interactive",
   sheets_gid="2079638999",
   sql_file="04_07.font_resource_hints_with_fcp.sql"
@@ -212,8 +210,8 @@ Vervolgens zullen we kijken of deze bron-hints een invloed hebben op de paginapr
 
 {{ figure_markup(
   image="fonts-resource-hints-performance-mobile.png",
-  caption="bron-hints prestatie, mobiel.",
-  description="Een staafdiagram met de mobiele mediaan van de first content paint en de last content paint (in milliseconden) voor verschillende bron-hints-instellingen: `prerender` heeft een mediaan FCP van 3.387 ms en mediaan LCP van 7.362 ms, `preload` heeft 4.900 ms en 8222 ms respectievelijk, `prefetch` heeft 4.942 ms en 8.191 ms, `preconnect` heeft 4.858 ms en 9.131 ms, `none` heeft 5.825 ms en 10.027 ms, en `dns-prefetch` heeft 5.908 ms en 9.962 ms.",
+  caption="Bron hints prestatie, mobiel.",
+  description="Een staafdiagram met de mobiele mediaan van de first content paint en de last content paint (in milliseconden) voor verschillende bron hints-instellingen: `prerender` heeft een mediaan FCP van 3.387 ms en mediaan LCP van 7.362 ms, `preload` heeft 4.900 ms en 8222 ms respectievelijk, `prefetch` heeft 4.942 ms en 8.191 ms, `preconnect` heeft 4.858 ms en 9.131 ms, `none` heeft 5.825 ms en 10.027 ms, en `dns-prefetch` heeft 5.908 ms en 9.962 ms.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT2Q4hcDGGdclJH2ym0Pp_f8JWvYur_OQFQNkuScJyO7_ZCR1KPZsewL-mEZhxcuRFcde_Mxio8z_8P/pubchart?oid=640692889&format=interactive",
   sheets_gid="2079638999",
   sql_file="04_07.font_resource_hints_with_fcp.sql"
@@ -348,7 +346,7 @@ Variabele lettertypen gebruiken en implementeren voor een meer gevarieerd ontwer
 
 De technologie voor weblettertypen is redelijk volwassen, met stapsgewijze verbeteringen in compressie en andere technische verbeteringen, maar er komen nieuwe functies aan. Browserondersteuning voor variabele lettertypen is redelijk goed geworden, en dit is de functie die het afgelopen jaar de meeste groei heeft gekend.
 
-Het prestatielandschap verandert enigszins, aangezien de komst van <a hreflang="en" href="https://developers.google.com/web/updates/2020/10/http-cache-partitioning">cachepartitionering</a> vermindert het prestatievoordeel van het delen van de cache van CDN lettertypebronnen op meerdere sites. De trend om meer lettertypen te hosten op hetzelfde domein als de site, in plaats van een CDN te gebruiken, zal waarschijnlijk doorzetten. Desalniettemin zijn services zoals Google Fonts in hoge mate geoptimaliseerd, en best practices zoals het gebruik van `swap` en `preconnect` verzachten veel van de impact van de extra HTTP-verbinding.
+Het prestatielandschap verandert enigszins, aangezien de komst van <a hreflang="en" href="https://developers.google.com/web/updates/2020/10/http-cache-partitioning">cachepartitionering</a> vermindert het prestatievoordeel van het delen van de cache van CDN lettertypebronnen op meerdere sites. De trend om meer lettertypen te hosten op hetzelfde domein als de site, in plaats van een CDN te gebruiken, zal waarschijnlijk doorzetten. Desalniettemin zijn services zoals Google Fonts in hoge mate geoptimaliseerd, en beste praktijken zoals het gebruik van `swap` en `preconnect` verzachten veel van de impact van de extra HTTP-verbinding.
 
 Het gebruik van variabele lettertypen neemt enorm toe en die trend zal ongetwijfeld doorzetten, vooral nu de ondersteuning van de browser en ontwerptool verbetert. Het is ook mogelijk dat 2021 het jaar wordt van het kleurenweblettertype; ook al is de technologie aanwezig, dat is zeker nog niet gebeurd.
 

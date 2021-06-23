@@ -3,7 +3,7 @@
 title: SEO
 description: SEO chapter of the 2020 Web Almanac covering content, meta tags, indexability, linking, speed, structured data, internationalization, SPAs, AMP and security.
 authors: [aleyda, ipullrank, fellowhuman1101]
-reviewers: [natedame, catalinred, dsottimano, dwsmart, en3r0, ibnesayeed, bazzadp]
+reviewers: [natedame, catalinred, dsottimano, dwsmart, en3r0, ibnesayeed, tunetheweb]
 analysts: [Tiggerito, antoineeripret]
 editors: [rviscomi]
 translators: []
@@ -502,7 +502,6 @@ The median desktop page includes 21 `img` tags and the median mobile page has 19
 
 {{ figure_markup(
   image="seo-img-elements-per-page.png",
-  alt="img elements per page",
   caption="Distribution of the number of `<img>` elements per page.",
   description="Bar chart showing the number of `<img>` elements per page per percentile (10, 25, 50, 75, and 90). The median desktop page features 21 `<img>` elements and the median mobile page features 19 `<img>` elements.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=923860709&format=interactive",
@@ -514,7 +513,6 @@ The median web page is missing 2.99% of `alt` attributes on desktop and 2.44% of
 
 {{ figure_markup(
   image="seo-percentage-of-missing-img-alt-attribute.png",
-  alt="Percent of missing image alt attributes",
   caption="Distribution of the percent of `<img>` elements missing image `alt` attributes per page.",
   description="Bar chart showing the percent of missing `alt` attributes per percentile (10, 25, 50, 75, and 90). The median web page is missing 2.99% `alt` attributes on desktop and 2.44% of `alt` attributes on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=862590664&format=interactive",
@@ -527,7 +525,6 @@ We found that the median page contains `alt` attributes on only 51.22% of their 
 
 {{ figure_markup(
   image="seo-percentage-of-img-alt-attributes-present.png",
-  alt="Distribution of the percent of images having alt attributes per page",
   caption="Distribution of the percent of images having `alt` attributes per page.",
   description="Bar chart showing the percentage of `alt` attributes present per percentile (10, 25, 50, 75, and 90). It was found that only 53.86% of desktop and 51.22% of mobile pages featured image `alt` attributes.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=827771545&format=interactive",
@@ -539,7 +536,6 @@ The median web page has 10.00% of images with blank `alt` attributes on desktop 
 
 {{ figure_markup(
   image="seo-percentage-of-blank-img-alt-attributes.png",
-  alt="Distribution of the percent of images having blank alt attributes per page.",
   caption="Distribution of the percent of images having blank `alt` attributes per page.",
   description="Bar chart showing the percent of featured `alt` blank attributes per percentile (10, 25, 50, 75, and 90). The median web page features 10% blank `alt` attributes on desktop and 11.11% blank `alt` attributes on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=378651979&format=interactive",
@@ -623,7 +619,6 @@ Our review of pages indicates that 28.58% of pages include `rel=nofollow` attrib
 
 {{ figure_markup(
   image="seo-nofollow-ugc-sponsored-attributes.png",
-  alt="Percent of pages having rel=nofollow, rel=ugc, and rel=sponsored attributes.",
   caption="Percent of pages having `rel=nofollow`, `rel=ugc`, and `rel=sponsored` attributes.",
   description="Bar chart showing the usage (in percent) of `rel` attributes on desktop and mobile. Our review indicates that 28.58% of pages feature `nofollow` attributes on their desktop versions and 30.74% on mobile. However, `ugc` and `sponsored` adoption is quite low with less than 0.3% pages featuring either. ",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1177251312&format=interactive",

@@ -49,7 +49,6 @@ The Async Clipboard API provides two methods for reading content from the clipbo
 
 {{ figure_markup(
   image="async_clipboard_api.png",
-  alt="Percentage of page loads in Chrome using Async Clipboard API",
   caption='Percentage of page loads in Chrome using Async Clipboard API.<br>(Sources: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/2369">Async Clipboard Read</a>, <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/2370">Async Clipboard Write</a>)',
   description="Chart of Async Clipboard API usage, based on the percentage of page loads in Chrome using this feature. It compares the usage of the read and write methods, showing an exponential growth for write over the course of 2020, while read grows linear. In October 2020, read was called during 0.0003% of all page loads in Chrome, write for 0.0006%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1740212588&format=interactive",
@@ -77,7 +76,6 @@ Developers can estimate the available storage by calling `navigator.storage.esti
 
 {{ figure_markup(
   image="storage_manager_api_estimate.png",
-  alt="Number of pages using the estimate method of the StorageManager API.",
   caption="Number of pages using the estimate method of the StorageManager API.",
   description="Chart of the usage of StorageManager API's estimate method, based on the number of pages monitored by HTTP Archive. It compares the usage on mobile and desktop devices. It shows a linear growth on the desktop, while it shows a hockey stick growth for mobile devices. In October, approximately 34,000 mobile sites and 27,000 desktop sites make use of it.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1853644024&format=interactive",
@@ -94,7 +92,6 @@ There are two categories of web storage: "Best Effort" and "Persistent", with th
 
 {{ figure_markup(
   image="storage_manager_api_persist.png",
-  alt="Number of pages using the persist method of the StorageManager API.",
   caption="Number of pages using the persist method of the StorageManager API.",
   description="Chart of the usage of StorageManager API's persist method, based on the number of pages monitored by HTTP Archive. It compares the usage on mobile and desktop devices. On desktop pages, the usage is almost steady, while there's more fluctuation on mobile devices. In October 2020, 25 desktop pages and 176 mobile pages make use of the API.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=644836316&format=interactive",
@@ -115,7 +112,6 @@ On several platforms, it's common for applications to present a badge on the app
 
 {{ figure_markup(
   image="badging_api.png",
-  alt="Percentage of page loads in Chrome using Badging API",
   caption='Percentage of page loads in Chrome using Badging API.<br>(Sources: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/2726">Badge Set</a>, <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/2727">Badge Clear</a>)',
   description="Chart of Badging API usage, based on the percentage of page loads in Chrome using this feature. It compares the set and clear methods. The usage of both methods is growing over time, with the set method generally being called more often. In October 2020, there's a sudden growth for both methods, peaking at 0.025% of page loads for the set method and 0.016% for clear.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1145004925&format=interactive",
@@ -138,7 +134,6 @@ registration.showNotification('Title', {
 
 {{ figure_markup(
   image="notification_triggers_api.png",
-  alt="Percentage of page loads in Chrome using Notification Triggers API",
   caption='Percentage of page loads in Chrome using Notification Triggers API.<br>(Source: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">Notification Triggers</a>)',
   description="Chart of Notification Triggers API usage, based on the percentage of page loads in Chrome using this feature. It shows a peak in March 2020 with approximately 0.00003% of page loads, dropping to zero in October 2020.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1388597384&format=interactive",
@@ -156,7 +151,6 @@ The `navigator.wakeLock.request()` method creates a wake lock. This method takes
 
 {{ figure_markup(
   image="screen_wake_lock_api.png",
-  alt="Numbers of pages using Screen Wake Lock API.",
   caption="Numbers of pages using Screen Wake Lock API.",
   description="Chart of Screen Wake Lock API usage, based on the number of pages monitored by the HTTP Archive, comparing desktop and mobile pages. In October 2020, the API is used by 10 desktop and 5 mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=718278185&format=interactive",
@@ -175,7 +169,6 @@ To do so, the API provides a new `IdleDetector` interface on the global `window`
 
 {{ figure_markup(
   image="idle_detection_api.png",
-  alt="Percentage of page loads in Chrome using Idle Detection API",
   caption='Percentage of page loads in Chrome using Idle Detection API.<br>(Source: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">Idle Detection</a>)',
   description="Chart of Idle Detection API usage, based on the percentage of page loads in Chrome using this feature. There's only data available for July and October 2020, showing a very low adoption of the API.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=963792757&format=interactive",
@@ -215,7 +208,6 @@ At the time of this writing, only Chromium-based browsers implement this API. On
 
 {{ figure_markup(
   image="periodic_background_sync_api.png",
-  alt="Number of pages using Periodic Background Sync API.",
   caption="Number of pages using Periodic Background Sync API.",
   description="Chart of Periodic Background Sync API usage, based on the number of pages monitored by HTTP Archive. It compares the usage on mobile and desktop devices. Since April 2020, the API is used by one to two desktop and mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1444904371&format=interactive",
@@ -230,7 +222,7 @@ The use of the interface is currently very low. Over 2020, only one or two pages
 
 PWAs are a versatile application model. However, in some cases, it may still make sense to offer a separate native application: for example, if the app needs to use features that are not available on the web, or based on the programming experience of the app developer team. When the user already has a native app installed, apps might not want to send notifications twice or promote the installation of a corresponding PWA.
 
-To detect if the user already has a related native application or PWA on the system, developers can use the <a hreflang="en" href="https://web.dev/get-installed-related-apps/">getInstalledRelatedApps() method</a> (<a hreflang="en" href="https://wicg.github.io/get-installed-related-apps/spec/">WICG Draft Community Group Report</a>) on the `navigator` object. This method is currently provided by Chromium-based browsers and works for both Android and Universal Windows Platform (UWP) apps. Developers need to adjust the native app bundles to refer to the website and add information about the native app(s) to the Web App Manifest of the PWA. Calling the `getInstalledRelatedApps()` method will then return the list of apps installed on the user's device:
+To detect if the user already has a related native application or PWA on the system, developers can use the <a hreflang="en" href="https://web.dev/get-installed-related-apps/">`getInstalledRelatedApps()` method</a> (<a hreflang="en" href="https://wicg.github.io/get-installed-related-apps/spec/">WICG Draft Community Group Report</a>) on the `navigator` object. This method is currently provided by Chromium-based browsers and works for both Android and Universal Windows Platform (UWP) apps. Developers need to adjust the native app bundles to refer to the website and add information about the native app(s) to the Web App Manifest of the PWA. Calling the `getInstalledRelatedApps()` method will then return the list of apps installed on the user's device:
 
 ```js
 const relatedApps = await navigator.getInstalledRelatedApps();
@@ -241,8 +233,8 @@ relatedApps.forEach((app) => {
 
 {{ figure_markup(
   image="get_installed_related_apps.png",
-  caption="Number of pages using getInstalledRelatedApps().",
-  description="Chart of getInstalledRelatedApps() usage, based on the number of pages monitored by HTTP Archive. It compares the usage on mobile and desktop devices. It shows a steady growth for mobile devices, peaking at 363 pages in October 2020 compared to 44 desktop pages.",
+  caption="Number of pages using `getInstalledRelatedApps()`.",
+  description="Chart of `getInstalledRelatedApps()` usage, based on the number of pages monitored by HTTP Archive. It compares the usage on mobile and desktop devices. It shows a steady growth for mobile devices, peaking at 363 pages in October 2020 compared to 44 desktop pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1774881171&format=interactive",
   sheets_gid="860146688",
   sql_file="get_installed_related_apps_usage.sql"
@@ -259,7 +251,6 @@ The Content Indexing API extends the Service Worker API by providing a new `Cont
 
 {{ figure_markup(
   image="content_indexing_api.png",
-  alt="Percentage of page loads in Chrome using Content Indexing API",
   caption='Percentage of page loads in Chrome using Content Indexing API.<br>(Source: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">Content Indexing</a>)',
   description="Chart of Content Indexing API usage, based on the percentage of page loads in Chrome using this feature. It shows a relatively low usage at first, until it suddenly grows tenfold in October 2020, being used during 0.0021% of page loads in Chrome.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=258329620&format=interactive",
@@ -288,7 +279,6 @@ The WebSocketStream API transparently solves backpressure, as the stream readers
 
 {{ figure_markup(
   image="websocketstreams.png",
-  alt="Percentage of page loads in Chrome using WebSocketStreams",
   caption='Percentage of page loads in Chrome using WebSocketStreams.<br>(Source: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3018">WebSocketStream</a>)',
   description="Chart of WebSocketStreams usage, based on the percentage of page loads in Chrome using this feature. It shows a peak in June and July 2020, where the API was used during approximately 0.0008% of page loads.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1714443590&format=interactive",
@@ -314,7 +304,6 @@ QuicTransport is a valid alternative to WebSockets, as it supports the use cases
 
 {{ figure_markup(
   image="quic_transport.png",
-  alt="Percentage of page loads in Chrome using QuicTransport",
   caption='Percentage of page loads in Chrome using QuicTransport.<br>(Source: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3184">QuicTransport</a>)',
   description="Chart of QuicTransport usage, based on the percentage of page loads in Chrome using this feature. It shows a peak in October 2020, where the API was used during approximately 0.00089% of page loads.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1571330893&format=interactive",

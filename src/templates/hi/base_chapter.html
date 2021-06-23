@@ -1,6 +1,8 @@
 {% extends "base/base_chapter.html" %}
 
 {% block title %}{{ metadata.get('title') }} | {{ year }} | HTTP Archive द्वारा Web Almanac{% endblock %}
+{% block citation_title %}{{ year }} Web Almanac: {{ metadata.get('title') }}{% endblock %}
+{% block citation_journal_title %}{{ year }} Web Almanac{% endblock %}
 
 {% block description %}{{ 'Web Almanac ' + year + ' के ' metadata.get('description',metadata.get('title') + ' अध्याय में ' + metadata.get('description',metadata.get('title')) + ' को कवर किया गया है!') }}{% endblock %}
 
@@ -15,6 +17,7 @@
 {% block comments_fallback %}टिप्पणियाँ{% endblock %}
 {% block queries %}सवाल देखें{% endblock %}
 {% block results %}परिणाम देखें{% endblock %}
+{% block suggest_edit %}सुझाव संपादित करें{% endblock %}
 {% block figure_sql %}सवाल देखें{% endblock %}
 {% block figure_data %}डेटा देखें{% endblock %}
 {% block figure_image %}छवि देखें{% endblock %}

@@ -1,6 +1,8 @@
 {% extends "base/base_chapter.html" %}
 
 {% block title %}{{ metadata.get('title') }} | {{ year }} | Web Almanac por HTTP Archive{% endblock %}
+{% block citation_title %}Web Almanac {{ year }}: {{ metadata.get('title') }}{% endblock %}
+{% block citation_journal_title %}Web Almanac {{ year }}{% endblock %}
 
 {% block description %}{{ metadata.get('description','Capítulo' + metadata.get('title') + ' del Web Almanac '+ year + " explorando el uso de " + metadata.get('description',metadata.get('title')) + ' en la web.') }}{% endblock %}
 
@@ -15,6 +17,7 @@
 {% block comments_fallback %}Comentarios{% endblock %}
 {% block queries %}Ver consultas{% endblock %}
 {% block results %}Ver resultados{% endblock %}
+{% block suggest_edit %}Sugerir editar{% endblock %}
 {% block figure_sql %}Ver consulta{% endblock %}
 {% block figure_data %}Ver datos{% endblock %}
 {% block figure_image %}Ver imagen{% endblock %}

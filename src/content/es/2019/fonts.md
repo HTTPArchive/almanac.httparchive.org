@@ -5,7 +5,7 @@ description: Capítulo Fuentes del Almanaque Web de 2019 que cubre desde dónde 
 authors: [zachleat]
 reviewers: [hyperpress, AymenLoukil]
 analysts: [tjmonsi, rviscomi]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [c-torres]
 discuss: 1761
 results: https://docs.google.com/spreadsheets/d/108g6LXdC3YVsxmX1CCwrmpZ3-DmbB8G_wwgQHX5pn6Q/
@@ -373,7 +373,6 @@ Profundicemos un poco más y veamos los valores `format()` usados en la propieda
 
 {{ figure_markup(
   image="fig8.png",
-  alt="Popularidad de los formatos de fuente en las declaraciones @font-face.",
   caption="Popularidad de los formatos de fuente en las declaraciones <code>@font-face</code>.",
   description="Gráfico de barras que muestra la popularidad de los formatos utilizados en las declaraciones de fuentes. El 69% de las declaraciones @font-face de las páginas de escritorio especifican el formato WOFF2, 11% WOFF, 10% TrueType, 8% SVG, 2% EOT y menos del 1% OpenType, TTF y OTF. La distribución de las páginas móviles es similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=700778025&format=interactive"
@@ -547,7 +546,6 @@ Echemos un vistazo a los valores de `font-display` que son populares:
 
 {{ figure_markup(
   image="fig11.png",
-  alt="Uso de valores font-display.",
   caption="Uso de valores <code>font-display</code>.",
   description="Gráfico de barras que muestra el uso del estilo font-display. El 2,6% de las páginas móviles configuran este estilo en `swap`, 1,5% en `auto`, 0,7% en `block`, 0,4% en `fallback`, 0,2% en `optional` y 0,1% en `swap` entre comillas. que no es válido. La distribución de escritorio es similar, excepto que el uso de `swap` es menor en 0.4 puntos porcentuales y el uso `auto` es mayor en 0.1 puntos porcentuales.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1988783738&format=interactive"
@@ -651,7 +649,6 @@ Incluso con un 1.8%, esto fue más alto de lo esperado, aunque estoy emocionado 
 
 {{ figure_markup(
   image="fig19.png",
-  alt="Uso de los ejes font-variation-settings.",
   caption="Uso de los ejes <code>font-variation-settings</code>.",
   description="Gráfico de barras que muestra el uso de la propiedad font-variation-settings. El 42% de las propiedades en las páginas de escritorio se establecen en el valor `opsz`, el 32% en `wght`, el 16% en `wdth`, el 2% o menos en `roun`, `crsb`, `slnt`, `inln` , y más. Las diferencias más notables entre las páginas de escritorio y móviles son el 26% de uso de `opsz`, el 38% de `wght` y el 23% de `wdth`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=699343351&format=interactive"

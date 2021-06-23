@@ -452,10 +452,19 @@ function setDiscussionCount() {
           if (isNaN(comments)) {
             return;
           }
-          var el = document.getElementById('num_comments');
-          el.innerText = comments;
+          document.querySelectorAll('.num_comments').forEach(el => {
+            el.innerText = comments;
+          });
 
-          document.getElementById(comments === 1 ? 'comment-singular' : 'comment-plural').removeAttribute('data-translation');
+          if (comments === 1) {
+            document.querySelectorAll('.comment-singular').forEach(el => {
+              el.removeAttribute('data-translation');
+            });
+          } else {
+            document.querySelectorAll('.comment-plural').forEach(el => {
+              el.removeAttribute('data-translation');
+            });
+          }
 
           gtag('event', 'discussion-count', { 'event_category': 'user', 'event_label': 'enabled', 'value': 1 });
         })

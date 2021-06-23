@@ -242,7 +242,7 @@ featured_stat_label_3: 使用跳过链接的网站
  {{ figure_markup(
   image="fig8.png",
   caption="页面总数与ARIA属性的百分比。",
-  description="垂直条形图显示百分比数据，范围从0到25，以5为增量，条形图代表每个属性。Aria-hidden：23.46%，aria-label：17.67%，aria-expanded：8.68%，aria-current：7.76%，aria-labelledby：6.85%，aria-controls：3.56%，aria-haspopup：2.62%，aria-invalid：2.68%，aria-describedby：1.69%，aria-live：1.04%，aria-required：1%",
+  description="垂直条形图显示百分比数据，范围从0到25，以5为增量，条形图代表每个属性。`aria-hidden`：23.46%，`aria-label`：17.67%，`aria-expanded`：8.68%，`aria-current`：7.76%，`aria-labelledby`：6.85%，`aria-controls`：3.56%，`aria-haspopup`：2.62%，`aria-invalid`：2.68%，`aria-describedby`：1.69%，`aria-live`：1.04%，`aria-required`：1%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=792161340&format=interactive"
   )
 }}

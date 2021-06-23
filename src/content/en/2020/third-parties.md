@@ -5,7 +5,7 @@ description: Third Parties chapter of the 2020 Web Almanac covering data of what
 authors: [simonhearne]
 reviewers: [jzyang, exterkamp]
 analysts: [max-ostapenko, paulcalvano]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: []
 simonhearne_bio: Simon is a web performance architect. He is passionate about helping deliver a faster and more accessible web. You can find him tweeting <a href="https://twitter.com/simonhearne">@SimonHearne</a> and blogging at <a hreflang="en" href="https://simonhearne.com">simonhearne.com</a>.
 discuss: 2042
@@ -190,7 +190,7 @@ On the other end of the spectrum, the categories CDN, Content and Hosting all re
 
 ### Cacheability
 
-Some third-party responses should always be cached. Media such as images and videos served by a third-party, or JavaScript libraries are good candidates. On the other hand, tracking pixels and analytics beacons should never be cached. The results show that overall two-thirds of third-party requests are served with a valid caching header such as `cache-control`.
+Some third-party responses should always be cached. Media such as images and videos served by a third-party, or JavaScript libraries are good candidates. On the other hand, tracking pixels and analytics beacons should never be cached. The results show that overall two-thirds of third-party requests are served with a valid caching header such as `Cache-Control`.
 
 {{ figure_markup(
   image="requests-cached-by-content-type.png",
@@ -268,7 +268,6 @@ The [Resource Timing API](https://developer.mozilla.org/en-US/docs/Web/API/Resou
 {{ figure_markup(
   image="requests-with-tao.png",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNXusoFJKi8Z1i_yuG_5umUCJOZwBMaZaECq4T8lU5zIQuLR7UHfZOJmXsXzPWQTJFnFa3dcOEPJgy/pubchart?oid=1886505312&format=interactive",
-  alt="Requests with Timing-Allow-Origin header.",
   caption="Requests with `timing-allow-origin` header.",
   description="Less than 35% of third-party responses are served with a timing-allow-origin header",
   width=600,

@@ -5,7 +5,7 @@ description: 2020年Web Almanacのアクセシビリティの章では、読み�
 authors: [oluoluoxenfree, alextait1]
 reviewers: [aardrian, ericwbailey, obto]
 analysts: [obto]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [ksakae]
 oluoluoxenfree_bio: Olu Niyi-AwosusiはFTのソフトウェアエンジニアで、リスト、新しいことを学ぶこと、Bee and Puppycat、<a hreflang="en" href="https://alistapart.com/article/building-the-woke-web/">社会正義、アクセシビリティ</a>、そして日々努力することを愛しています。
 alextait1_bio: Alex Taitは、開発者、コンサルタント、教育者であり、その情熱は、モダンJavaScript内のインターフェイスアーキテクチャとデザインシステム、アクセシビリティにあります。 開発者として、アクセシビリティを前面に出した包括主導の開発手法は、すべての人にとってより良い製品につながると信じています。 コンサルタントであり戦略家でもある彼女は、「少ないことは豊かである」を信条としており、新しい機能の要件変更は、障害のあるユーザーにとってコア機能の等価性よりも優先されるべきものではないと考えています。教育者として、技術がより多様で公平で包括的な産業になるように、情報の障壁を取り除くことを信条としています。
@@ -240,7 +240,6 @@ HTMLの`lang`属性を設定すると、ページを簡単に翻訳でき、ス�
 
 {{ figure_markup(
   image="common-video-attributes.png",
-  alt="最も一般的な動画属性。",
   caption="最も一般的な`<video>`属性。",
   description="デスクトップの`<video>`要素の上位5つの属性を示す棒グラフで、動画の58.43%が`loop`、56.98%が`autoplay`、56.13% が`muted`、51.79% が`class`、45.21%が`preload`となっています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSjkB_XAYiwkYrMuoXp44mdqMGJVDUkTr_48ELozY72Mdv3OlxeWV9ysbDY9bs6hA7LnJTrHar9aZlM/pubchart?oid=1226671706&format=interactive",
@@ -417,7 +416,6 @@ ARIAの第一のルールに従えば、ネイティブの`<button>`要素の方
 
 {{ figure_markup(
   image="role-tab-list.png",
-  alt="タブリストの役割を持つ要素",
   caption='`tablist`の役割を持つ要素 (<a hreflang="en" href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html">出典: W3C</a>',
   description='3つのタブを含むタブリスト（`role="tablist"`）の例を示すスクリーンショットです。3つのタブはすべてハイライトされています。',
   width=348,
@@ -426,7 +424,6 @@ ARIAの第一のルールに従えば、ネイティブの`<button>`要素の方
 
 {{ figure_markup(
   image="role-tab.png",
-  alt="タブの役割を持つ要素",
   caption='要素で`tab`の役割を持つ。(<a hreflang="en" href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html">出典: W3C</a>',
   description='タブ(`role="tab"`)の例を示すスクリーンショットで、1つのタブだけが強調表示されています。',
   width=346,
@@ -435,7 +432,6 @@ ARIAの第一のルールに従えば、ネイティブの`<button>`要素の方
 
 {{ figure_markup(
   image="role-tab-panel.png",
-  alt="タブパネルの役割を持つ要素",
   caption='要素で`tabpanel`の役割を持つ。(<a hreflang="en" href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html">出典: W3C</a>',
   description='タブパネル(`role="tabpanel"`)の例を示すスクリーンショットです。',
   width=346,
@@ -456,7 +452,6 @@ ARIA属性は、インターフェイスのアクセシビリティを強化す�
 
 {{ figure_markup(
   image="most-used-aria-attributes.png",
-  alt="aria属性の使用頻度が高いトップ10",
   caption="最もよく使われる`aria`属性のトップ10。",
   description=" デスクトップサイトとモバイルサイトでは、`aria-label`がそれぞれ40.4%と38.7%、`aria-expandeded`が21.0%と21.0%、`aria-controls`が17.4%と16.9%、`aria-labelledby`が17.7%と16.2%、`aria-live`が16.8%と15.7%、`aria-haspopup`が15.9%と14.0%、`aria-current`が12.4%と12.7%、`aria-describedby`が11.3%と10.6%であることがわかります。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSjkB_XAYiwkYrMuoXp44mdqMGJVDUkTr_48ELozY72Mdv3OlxeWV9ysbDY9bs6hA7LnJTrHar9aZlM/pubchart?oid=332801232&format=interactive",
@@ -471,7 +466,7 @@ ARIA属性は、インターフェイスのアクセシビリティを強化す�
 
 アクセシブルな名前は要素の内容（ボタンのテキストなど）、属性（画像の`alt`テキスト値など）、または関連する要素（フォームコントロールのためのプログラム的に関連するラベルなど）から派生できます。アクセシブルな名前についての詳細な情報は、Léonie Watsonの記事<a hreflang="en" href="https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/">What is an accessible name?</a>を参照してください。
 
-また、ARIAを使用して、要素にアクセス可能な名前を提供することもできます。これを実現するARIA属性は、<a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA14.html">aria-label</a>と<a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA16.html">aria-labelledby</a>の2つです。これらの属性のいずれかは、アクセシブル名の計算に「勝ち」、ネイティブに派生したアクセシブル名を上書きしますので注意して使用してください。ARIAを使って要素に名前を付ける場合、<a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html">WCAG 2.5.3, Label in Name</a> の基準に違反していないことを確認することが重要です。
+また、ARIAを使用して、要素にアクセス可能な名前を提供することもできます。これを実現するARIA属性は、<a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA14.html">`aria-label`</a>と<a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA16.html">`aria-labelledby`</a>の2つです。これらの属性のいずれかは、アクセシブル名の計算に「勝ち」、ネイティブに派生したアクセシブル名を上書きしますので注意して使用してください。ARIAを使って要素に名前を付ける場合、<a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html">WCAG 2.5.3, Label in Name</a> の基準に違反していないことを確認することが重要です。
 
 要素の`aria-label`は、開発者が文字列の値を提供することを可能にし、これがその要素のアクセシブルな名前に使用されます。デスクトップページの40.44%、モバイルホームページの38.72%が`aria-label`属性を持つ要素を少なくとも1つ持っていることがわかり、これがアクセシブルな名前を提供するための最も一般的なARIA属性となりました。
 
@@ -481,7 +476,7 @@ ARIA属性は、インターフェイスのアクセシビリティを強化す�
 
 要素に対してより強固な記述が必要な場合には、<a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA1.html">`aria-describedby`</a>属性を使用できます。また、インターフェイスの他の場所に存在する記述的なテキストと接続するための`id`参照を値として受け入れます。これはアクセシブルな名前を提供しないので、代替ではなく補完としてアクセシブルな名前と一緒に使うべきです。デスクトップページの11.31%とモバイルページの10.56%が`aria-describedby`属性を持つ要素を少なくとも1つ持っていることがわかった。
 
-**楽しい事実!** 属性**aria-labeledby**を持つ3,200のウェブサイトが見つかりましたが、これは`aria-labelledby`属性のスペルミスです。これらのエラーを簡単に回避するために、自動チェックを必ず実行してください。
+**楽しい事実!** 属性**`aria-labeledby`**を持つ3,200のウェブサイトが見つかりましたが、これは`aria-labelledby`属性のスペルミスです。これらのエラーを簡単に回避するために、自動チェックを必ず実行してください。
 
 #### コンテンツを隠す
 

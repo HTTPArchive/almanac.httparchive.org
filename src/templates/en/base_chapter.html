@@ -1,6 +1,8 @@
 {% extends "base/base_chapter.html" %}
 
 {% block title %}{{ metadata.get('title') }} | {{ year }} | The Web Almanac by HTTP Archive{% endblock %}
+{% block citation_title %}The {{ year }} Web Almanac: {{ metadata.get('title') }}{% endblock %}
+{% block citation_journal_title %}The {{ year }} Web Almanac{% endblock %}
 
 {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac probing into the use of ' + metadata.get('description',metadata.get('title')) + ' on the web.') }}{% endblock %}
 
@@ -15,6 +17,7 @@
 {% block comments_fallback %}Comments{% endblock %}
 {% block queries %}View queries{% endblock %}
 {% block results %}View results{% endblock %}
+{% block suggest_edit %}Suggest edit{% endblock %}
 {% block figure_sql %}View query{% endblock %}
 {% block figure_data %}View data{% endblock %}
 {% block figure_image %}View image{% endblock %}

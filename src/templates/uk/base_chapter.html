@@ -1,6 +1,8 @@
 {% extends "base/base_chapter.html" %}
 
 {% block title %}{{ metadata.get('title') }} | {{ year }} | Web Almanac від HTTP Archive{% endblock %}
+{% block citation_title %}Web Almanac {{ year }}: {{ metadata.get('title') }}{% endblock %}
+{% block citation_journal_title %}Web Almanac {{ year }}{% endblock %}
 
 {% block description %}'Розділ ' + metadata.get('description',metadata.get('title')) + ' у Web Almanac ' + year + ' досліджує, як використовується ' + metadata.get('description',metadata.get('title')) + ' у вебі.'{% endblock %}
 
@@ -15,6 +17,7 @@
 {% block comments_fallback %}Коментарі{% endblock %}
 {% block queries %}Запити{% endblock %}
 {% block results %}Результати{% endblock %}
+{% block suggest_edit %}Запропонувати редагувати{% endblock %}
 {% block figure_sql %}Переглянути запит{% endblock %}
 {% block figure_data %}Переглянути дані{% endblock %}
 {% block figure_image %}Переглянути зображення{% endblock %}

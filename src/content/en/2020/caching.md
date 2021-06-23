@@ -5,7 +5,7 @@ description: Caching chapter of the 2020 Web Almanac covering cache-control, exp
 authors: [roryhewitt, raghuramakrishnan71]
 reviewers: [jzyang]
 analysts: [raghuramakrishnan71]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: []
 roryhewitt_bio: Enterprise Architect at <a hreflang="en" href="https://www.akamai.com/">Akamai</a>, who is passionate about performance. A British ex-patriate, he has lived in San Francisco for more than twenty years. In his spare time, he's a long-distance adventure motorcyclist, snowboarder and boxer/karateka. He likes being known as a troublemaker. Most importantly, he's a father and husband and the owner of Luna the cat.
 raghuramakrishnan71_bio: Enterprise architect at <a hreflang="en" href="https://www.tcs.com/">Tata Consultancy Services</a>, working on large digital transformation programs in the public sector. A technology enthusiast with a special interest in performance engineering. An avid traveler, intrigued by astronomy, history, biology, and advancements in medicine. A strong follower of the 47th verse, Chapter 2 of Bhagavad Gita "karmaṇy-evādhikāras te mā phaleṣhu kadāchana" meaning "You have a right to perform your prescribed duty, but you are not entitled to the fruits of action."
@@ -173,7 +173,6 @@ RFC 7234 says that if no caching headers are present in a response, then the bro
 
 {{ figure_markup(
   image="cache-control-and-max-age-and-expires.png",
-  alt="Usage of Cache-Control and Expires headers.",
   caption="Usage of `Cache-Control` and `Expires` headers.",
   description="A bar chart showing the usage of `Cache-Control` and `Expires` headers. In desktop, 73.6% of responses are served with a `Cache-Control` header. 55.5% are served with an `Expires` header, 54.8% use both `Cache-Control` and `Expires` header, and 25.6% did not include either header. In mobile, 73.5% of responses are served with a `Cache-Control` header, 56.2% are served with an `Expires` header, 55.4% use both `Cache-Control` and `Expires` header, and 25.6% did not include either header.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=188448640&format=interactive",
@@ -188,7 +187,6 @@ These statistics are interesting when compared with last years data:
 
 {{ figure_markup(
   image="cache-control-and-max-age-and-expires-2019.png",
-  alt="Usage of Cache-Control and Expires headers in 2019.",
   caption="Usage of `Cache-Control` and `Expires` headers in 2019.",
   description="A bar chart showing the usage of `Cache-Control` and `Expires` headers. In desktop, 72.3% of responses are served with a `Cache-Control` header. 56.3% are served with an `Expires` header, 55.2%	use both `Cache-Control` and `Expires` header, and 26.7% did not include either header. In mobile, 71.7% of responses are served with a `Cache-Control` header, 56.4% are served with an `Expires` header, 55.5% use both `Cache-Control` and `Expires` header, and 27.4% did not include either header.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=651240480&format=interactive",
@@ -197,7 +195,7 @@ These statistics are interesting when compared with last years data:
   )
 }}
 
-While we see a slight increase in the use of the `Cache-Control` header (1.8%), we also see a minimal decrease in the use of the older `Expires` header (0.2%). On Desktop we actually see a marginal increase of `Cache-Control` (1.3%), with a smaller increase on `Expiries` (0.8%) Effectively, more desktop sites look to be adding `Cache-Control` header without the `Expires` header.
+While we see a slight increase in the use of the `Cache-Control` header (1.8%), we also see a minimal decrease in the use of the older `Expires` header (0.2%). On Desktop we actually see a marginal increase of `Cache-Control` (1.3%), with a smaller increase on `Expires` (0.8%) Effectively, more desktop sites look to be adding `Cache-Control` header without the `Expires` header.
 
 As we delve into the various directives allowed in the `Cache-Control` header, we will see how its flexibility and power make it a better fit in many cases.
 
@@ -291,11 +289,11 @@ As we head out to the long tail, there are a small percentage of invalid directi
 * Misspelled directives such as `nocache` and `s-max-age` and invalid directive syntax, such as using `:` instead of `=` or using `_` instead of `-`.
 * Non-existent directives such as `max-stale`, `proxy-public`, `surrogate-control`.
 
-The most interesting standout in the list of invalid directives is the use of `no-cache="set-cookie"`—even at only 0.2% of all `Cache-Control` header values, it still makes up more than all the other invalid directives combined. In some early discussions on the `Cache-Control` header, this syntax was raised as a possible way to ensure that any `Set-Cookie` response headers (which might be user-specific) would not be cached with the object itself by any intermediate proxies such as CDNs. However, this syntax was not included in the final RFC, Nearly equivalent functionality can be implemented using the `private` directive, and the `no-cache` directive does not allow a value.
+The most interesting standout in the list of invalid directives is the use of `no-cache="set-cookie"`—even at only 0.2% of all `Cache-Control` header values, it still makes up more than all the other invalid directives combined. In some early discussions on the `Cache-Control` header, this syntax was raised as a possible way to ensure that any `Set-Cookie` response headers (which might be user-specific) would not be cached with the object itself by any intermediate proxies such as CDNs. However, this syntax was not included in the final RFC. Nearly equivalent functionality can be implemented using the `private` directive, and the `no-cache` directive does not allow a value.
 
 ## `Cache-Control`: `no-store`, `no-cache` and `max-age=0`
 
-When a response absolutely must not be cached, the `Cache-Control no-store` directive should be used; if this directive is not specified, then the response *is considered cacheable and may be cached*. Note that if `no-store` is specified, it takes precedence over other directives. This makes sense, since serious privacy and security issues could occur if a resource is cached which should not be.
+When a response absolutely must not be cached, the `Cache-Control: no-store` directive should be used; if this directive is not specified, then the response *is considered cacheable and may be cached*. Note that if `no-store` is specified, it takes precedence over other directives. This makes sense, since serious privacy and security issues could occur if a resource is cached which should not be.
 
 We can see a few common errors that are made when attempting to configure a response to be non-cacheable:
 
@@ -560,7 +558,7 @@ In general, you should only vary the cache if you are serving alternate content 
 
 The `Vary` header is used on 43.4% of HTTP responses, and 84.2%  of these responses include a `Cache-Control` header.
 
-The graph below details the popularity for the top 10 Vary header values. `Accept-Encoding` accounts for almost 92% of `Vary`'s use, with `User-Agent` at 10.7%, `Origin` (used for CORS processing) at 8%, and Accept at 4.1% making up much of the rest.
+The graph below details the popularity for the top 10 Vary header values. `Accept-Encoding` accounts for almost 92% of `Vary`'s use, with `User-Agent` at 10.7%, `Origin` (used for CORS processing) at 8%, and `Accept` at 4.1% making up much of the rest.
 
 {{ figure_markup(
   image="vary-headers.png",
@@ -794,14 +792,14 @@ The table below details the cache TTL values for mobile requests by type:
   <figcaption>{{ figure_link(caption="Mobile cache TTL percentiles by resource type.", sheets_gid="676954337", sql_file="ttl_by_resource.sql") }}</figcaption>
 </figure>
 
-While most of the median TTLs are high, the lower percentiles highlight some of the missed caching opportunities. For example, the median TTL for images is 720 hours (1 month); however the 25<sup>th</sup> percentile is just 168 hours (1 week) and the 10<sup>th</sup> percentile has dropped to just a few hours. Compare this with fonts, which have a very high TTL of 8,760 hours (1 year) all the way down to the 25th percentile, with even the 10<sup>th</sup> percentile showing a TTL of 1 month.
+While most of the median TTLs are high, the lower percentiles highlight some of the missed caching opportunities. For example, the median TTL for images is 720 hours (1 month); however the 25<sup>th</sup> percentile is just 168 hours (1 week) and the 10<sup>th</sup> percentile has dropped to just a few hours. Compare this with fonts, which have a very high TTL of 8,760 hours (1 year) all the way down to the 25<sup>th</sup> percentile, with even the 10<sup>th</sup> percentile showing a TTL of 1 month.
 
 By exploring the cacheability by content type in more detail in figure below, we can see that while fonts, video and audio, and CSS files are browser cached at close to 100% (which makes sense, since these files are typically very static), approximately one third of all HTML responses are considered non-cacheable.
 
 {{ figure_markup(
   image="cacheable-by-resource-type.png",
   caption="Distribution of cacheability by content type.",
-  description="A bar chart showing distribution of cacheable resource types. In desktop responses, 99.3% of audio, 99.3% of CSS, 99.8% of font, 67.9% of HTML, 91.2% of images, 66.3% of other types, 95.2% of scripts, 78.6% of text, 99.6% of video, and 81.4% of xml is cacheable. In mobile responses, 99.0% of audio, 99.0% of CSS, 99.8% of font, 71.5% of HTML, 89.9.2% of images, 67.9% of other types, 95.1% of scripts, 78.4% of text, 99.7% of video, and 80.6% of xml is cacheable.",
+  description="A bar chart showing distribution of cacheable resource types. In desktop responses, 99.3% of audio, 99.3% of CSS, 99.8% of font, 67.9% of HTML, 91.2% of images, 66.3% of other types, 95.2% of scripts, 78.6% of text, 99.6% of video, and 81.4% of xml is cacheable. In mobile responses, 99.0% of audio, 99.0% of CSS, 99.8% of font, 71.5% of HTML, 89.9% of images, 67.9% of other types, 95.1% of scripts, 78.4% of text, 99.7% of video, and 80.6% of xml is cacheable.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1283939423&format=interactive",
   sheets_gid="220584548",
   sql_file="non_cacheable_by_resource_type.sql"

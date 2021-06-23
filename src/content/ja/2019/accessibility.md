@@ -255,7 +255,7 @@ ARIAを適切かつ正しく使うのは難しい場合があります。例え�
 
 {{ figure_markup(
   image="fig9.png",
-  caption="ariaロールトップ10。",
+  caption="ARIAロールトップ10。",
   description="0から25までの範囲で5ずつ増加サイトの割合と各ロールタイプのバーを備えた垂直棒グラフ。Navigation：20.4％。 search：15.49％; main：14.39％; banner：13.62％; contentinfo：11.23％; button：10.59％; dialog：7.87％; complementary：6.06％; menu：4.71％; form：3.75％",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=176877741&format=interactive"
   )

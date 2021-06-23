@@ -1,6 +1,8 @@
 {% extends "base/base_chapter.html" %}
 
 {% block title %}{{ metadata.get('title') }} | {{ year }} | De Web Almanac door HTTP Archive{% endblock %}
+{% block citation_title %}De {{ year }} Web Almanac: {{ metadata.get('title') }}{% endblock %}
+{% block citation_journal_title %}De {{ year }} Web Almanac{% endblock %}
 
 {% block description %}{{ metadata.get('description',metadata.get('title') + ' hoofdstuk van de ' + year + ' Web Almanac waarin het gebruik van ' + metadata.get('description',metadata.get('title')) + ' op internet wordt onderzocht.') }}{% endblock %}
 
@@ -15,6 +17,7 @@
 {% block comments_fallback %}opmerkingen{% endblock %}
 {% block queries %}Bekijk vragen{% endblock %}
 {% block results %}Bekijk resultaten{% endblock %}
+{% block suggest_edit %}Bewerken voorstellen{% endblock %}
 {% block figure_sql %}Bekijk vraag{% endblock %}
 {% block figure_data %}Bekijk gegevens{% endblock %}
 {% block figure_image %}Bekijk beeld{% endblock %}

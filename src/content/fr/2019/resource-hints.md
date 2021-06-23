@@ -3,7 +3,7 @@
 title: Indices de Ressources
 description: Chapitre sur les indices de ressources du Web Almanac 2019, couvrant les usages de dns-prefetch, preconnect, preload, prefetch, les indices de priorités et le lazy loading natif.
 authors: [khempenius]
-reviewers: [andydavies, bazzadp, yoavweiss]
+reviewers: [andydavies, tunetheweb, yoavweiss]
 analysts: [rviscomi]
 editors: [rviscomi]
 translators: [borisschapira]

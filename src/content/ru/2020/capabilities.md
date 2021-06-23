@@ -49,7 +49,6 @@ featured_stat_label_3: Сайта, поддерживающих устанавл
 
 {{ figure_markup(
   image="async_clipboard_api.png",
-  alt="Процент загрузок страниц в Chrome, использующих Async Clipboard API",
   caption='Процент загрузок страниц в Chrome, использующих <span lang="en">Async Clipboard API</span>.<br>(источники: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/2369">Async Clipboard Read</a>, <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/2370">Async Clipboard Write</a>)',
   description='График использования <span lang="en">API Async Clipboard</span> в процентном соотношении от количества загрузок страниц в Chrome. Оценивается использование методов чтения и записи, на графике виден экспоненциальный рост метода записи в течение 2020 года, когда как метод чтения используется линейно. В октябре 2020 года метод чтения вызывался на 0,0003% загрузок страниц в Chrome, метод записи — на 0,0006%.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1740212588&format=interactive",
@@ -77,7 +76,6 @@ featured_stat_label_3: Сайта, поддерживающих устанавл
 
 {{ figure_markup(
   image="storage_manager_api_estimate.png",
-  alt="Количество страниц, использующих estimate-метод из StorageManager API.",
   caption='Количество страниц, использующих estimate-метод из <span lang="en">StorageManager API</span>.',
   description='График использования estimate-метода в <span lang="en">StorageManager API</span> от количества страниц, отслеживаемых HTTP Archive. Сравнение как по мобильным, так и обычным веб-страницам. Наблюдается линейный рост у обычных веб-страниц, и резкий рост у мобильных. В октябре 2020 года этот API вызывался примерно на 34,000 мобильных и 27,000 обычных сайтах.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1853644024&format=interactive",
@@ -94,7 +92,6 @@ featured_stat_label_3: Сайта, поддерживающих устанавл
 
 {{ figure_markup(
   image="storage_manager_api_persist.png",
-  alt="Количество страниц в Chrome, использующих persist-метод из StorageManager API.",
   caption='Количество страниц в Chrome, использующих persist-метод из <span lang="en">StorageManager API</span>.',
   description='График использования persist-метода в <span lang="en">StorageManager API</span> от количества страниц, отслеживаемых HTTP Archive. Сравнение как по мобильным, так и обычным веб-страницам. На обычных страницах использование почти неизменно, в то время как на мобильных наблюдается небольшие изменения. В октябре 2020 года этот API вызывался на 25 обычных веб-страниц и 176 мобильных страницах.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=644836316&format=interactive",
@@ -115,7 +112,6 @@ API-метод `persist()` используется реже, чем метод 
 
 {{ figure_markup(
   image="badging_api.png",
-  alt="Процент загрузок страниц в Chrome, использующих Badging API",
   caption='Процент загрузок страниц в Chrome, использующих <span lang="en">Badging API</span>.<br>(источники: <a lang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/2726">Badge Set</a>, <a lang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/2727">Badge Clear</a>)',
   description='График использования <span lang="en">Badging API</span> в процентном соотношении от количества загрузок страниц в Chrome. Сравнивает методы set и clear. Использование обоих методов растёт, при этом set-метод, как правило, вызывается чаще. В октябре 2020 года у обоих методов наблюдается резкий рост, наиболее использование метода set составило 0,025%, а clear — 0,016%.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1145004925&format=interactive",
@@ -138,7 +134,6 @@ registration.showNotification('Title', {
 
 {{ figure_markup(
   image="notification_triggers_api.png",
-  alt="Процент загрузок страниц в Chrome, использующих Notification Triggers API",
   caption='Процент загрузок страниц в Chrome, использующих <span lang="en">Notification Triggers API</span>.<br>(источник: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">Notification Triggers</a>)',
   description='График использования <span lang="en">Notification Triggers API</span> в процентном соотношении от количества загрузок страниц в Chrome. Он показывает пик в 0.00003% загрузок страниц в марте 2020 года, который в октябре 2020 года упадёт до нуля.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1388597384&format=interactive",
@@ -156,7 +151,6 @@ registration.showNotification('Title', {
 
 {{ figure_markup(
   image="screen_wake_lock_api.png",
-  alt="Количество страниц, использующих Screen Wake Lock API.",
   caption='Количество страниц, использующих <span lang="en">Screen Wake Lock API</span>.',
   description='График использования <span lang="en">API Screen Wake Lock</span> по количеству страниц (десктоп и веб), отслеживаемых HTTP Archive. В октябре 2020 года API замечен на 10 обычных и 5 мобильных страниц.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=718278185&format=interactive",
@@ -175,7 +169,6 @@ BettyCrocker.com — популярный кулинарный сайт в СШ�
 
 {{ figure_markup(
   image="idle_detection_api.png",
-  alt="Процент загрузок страниц в Chrome, использующих Idle Detection API",
   caption='Процент загрузок страниц в Chrome, использующих <span lang="en">Idle Detection API</span>.<br>(источник: <a lang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">Idle Detection</a>)',
   description='График использования <span lang="en">Idle Detection API</span> в процентном соотношении от количества загрузок страниц в Chrome. Доступны данные только за июль и октябрь 2020 года, которые говорят об очень низком уровне использования API.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=963792757&format=interactive",
@@ -215,7 +208,6 @@ self.addEventListener('periodicsync', (event) => {
 
 {{ figure_markup(
   image="periodic_background_sync_api.png",
-  alt="Процент загрузок страниц в Chrome, использующих Periodic Background Sync API.",
   caption='Процент загрузок страниц в Chrome, использующих <span lang="en">Periodic Background Sync API</span>.',
   description='График использования <span lang="en">Periodic Background Sync API</span> в процентном соотношении от количества отслеживаемых страниц в HTTP Archive. Сравнение по как мобильным, так и обычным веб-страницам. С апреля 2020 года использование API колеблется от одной до двух страниц (для десктопа и мобильных устройств).',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1444904371&format=interactive",
@@ -259,7 +251,6 @@ relatedApps.forEach((app) => {
 
 {{ figure_markup(
   image="content_indexing_api.png",
-  alt="Процент загрузок страниц в Chrome, использующих  Content Indexing API",
   caption='Процент загрузки страниц в Chrome с использованием <span lang="en">Content Indexing API</span>.<br>(источник: <a lang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3017">Content Indexing</a>)',
   description='График использования <span lang="en">Content Indexing API</span> в процентном соотношении от количества загрузок страниц в Chrome. Поначалу наблюдается сравнительно низкий уровень использования, пока в октябре 2020 года он резко возрастает в десять раз, и вызывается на 0.0021% загрузок страниц в Chrome.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=258329620&format=interactive",
@@ -288,7 +279,6 @@ const writer = writable.getWriter();
 
 {{ figure_markup(
   image="websocketstreams.png",
-  alt="Процент загрузок страниц в Chrome, использующих WebSocketStreams",
   caption='Процент загрузки страниц в Chrome с использованием <span lang="en">WebSocketStreams</span>.<br>(источник: <a lang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3018">WebSocketStream</a>)',
   description='График использования <span lang="en">WebSocketStreams</span> в процентном соотношении от количества загрузок страниц в Chrome. Он показывает пик в июне и июле 2020 года, когда API использовался примерно на 0,0008% загрузок страниц.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1714443590&format=interactive",
@@ -314,7 +304,6 @@ const stream = await transport.createSendStream();
 
 {{ figure_markup(
   image="quic_transport.png",
-  alt="Процент загрузок страниц в Chrome, использующих QuicTransport.",
   caption='Процент загрузки страниц в Chrome с использованием <span lang="en">QuicTransport</span>.<br>(источник: <a lang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3184">QuicTransport</a>)',
   description='График использования <span lang="en">QuicTransport</span> в процентном соотношении от количества загрузок страниц в Chrome. Он показывает пик в октябре 2020 года, когда API использовался примерно на 0,00089% загрузок страниц.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxqot9ALgxcgOVJntkzIKnkpo3idIPy-tL0t_nzC5BwFuq0ThgK5OXOYVVOpama4vB2EyggX813d33/pubchart?oid=1571330893&format=interactive",

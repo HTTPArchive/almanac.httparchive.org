@@ -325,6 +325,15 @@
       "github": "andydavies",
       "twitter": "AndyDavies"
     },
+    "arigaud-ca": {
+      "name": "Arthur Rigaud",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars2.githubusercontent.com/u/50932885?v=4&s=200",
+      "github": "arigaud-ca",
+      "twitter": "arigaud_ca"
+    },
     "arturjanc": {
       "name": "Artur Janc",
       "teams": [
@@ -346,7 +355,7 @@
       "github": "AymenLoukil",
       "twitter": "LoukilAymen"
     },
-    "bazzadp": {
+    "tunetheweb": {
       "name": "Barry Pollard",
       "teams": [
         "brainstormers",
@@ -357,8 +366,8 @@
       ],
       "avatar_url": "https://avatars3.githubusercontent.com/u/10931297?v=4&s=200",
       "website": "https://www.tunetheweb.com",
-      "github": "bazzadp",
-      "linkedin": "barry-pollard-developer",
+      "github": "tunetheweb",
+      "linkedin": "tunetheweb",
       "twitter": "tunetheweb"
     },
     "borisschapira": {

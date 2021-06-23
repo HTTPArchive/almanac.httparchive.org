@@ -2,14 +2,14 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Security
 description: Security chapter of the 2020 Web Almanac covering transport layer security, content security (CSP, feature policy, SRI), web defense mechanisms (tackling XSS, XS-Leaks), and update practices of widely used technologies.
-authors: [tomvangoethem, nrllh, bazzadp]
+authors: [tomvangoethem, nrllh, tunetheweb]
 reviewers: [cqueern, edmondwwchan]
 analysts: [tomvangoethem, nrllh]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: []
 tomvangoethem_bio: Tom Van Goethem is a researcher at the <a hreflang="en" href="https://distrinet.cs.kuleuven.be/">DistriNet group</a> of the university of Leuven, Belgium. His research is focused on discovering new side-channel attacks on the web that lead to security or privacy issues and figuring out how to patch the leaks that cause them.
 nrllh_bio: Nurullah Demir is a security researcher and PhD Student at <a hreflang="en" href="https://www.internet-sicherheit.de/en/">Institute for Internet Security</a>. His research focuses on robust web security mechanisms and adversarial machine learning.
-bazzadp_bio: Barry Pollard is a software developer and author of the Manning book <a hreflang="en" href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a>. He thinks the web is amazing but wants to make it even better. You can find him tweeting <a href="https://twitter.com/tunetheweb">@tunetheweb</a> and blogging at <a hreflang="en" href="https://www.tunetheweb.com">www.tunetheweb.com</a>.
+tunetheweb_bio: Barry Pollard is a software developer and author of the Manning book <a hreflang="en" href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a>. He thinks the web is amazing but wants to make it even better. You can find him tweeting <a href="https://twitter.com/tunetheweb">@tunetheweb</a> and blogging at <a hreflang="en" href="https://www.tunetheweb.com">www.tunetheweb.com</a>.
 discuss: 2047
 results: https://docs.google.com/spreadsheets/d/1T7sxPP5BV3uwv-sXhBEZraVk-obd0tDfFrLiD49nZC0/
 featured_quote: In this chapter, we explore the current state-of-practice for security on the Web. By analyzing the adoption of various security features in depth and at a large scale we gather insights on the different ways that website owners apply these security mechanisms, driven by the incentive to protect their users.
@@ -53,7 +53,6 @@ The effort is paying off and we are now seeing 87.70% of requests on desktop and
 
 {{ figure_markup(
   image="security-https-request-growth.png",
-  alt="Percentage of requests using HTTPS",
   caption='Percentage of requests using HTTPS.<br>(Source: <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#pctHttps">HTTP Archive</a>)',
   description="Time series chart of HTTPS request from 1st January 2017 until the 1st August 2020. Mobile and desktop usage is almost identical and starts at 35.70% of requests for desktop and 35.20% for mobile and increases all the way up to 87.70% for desktop and 86.90% for mobile with a slight tailing off at the end.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=1353660053&format=interactive",
@@ -213,7 +212,6 @@ The first one is HTTP Strict Transport Security (HSTS), which can easily be enab
 
 {{ figure_markup(
   image="security-hsts-max-age-values-in-days.png",
-  alt="HSTS max-age values (in days).",
   caption="HSTS `max-age` values (in days).",
   description="Bar chart of percentiles of values in the `max-age` attribute, converted to days. In the 10th percentile desktop is 30 days and mobile is 91, in the 25th percentile both are 182 days, in the 50th percentile both are 365 days, the 75th percentile is the same at 365 days for both and the 90th percentile has 730 days for both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTb4PkXuhnxNc-X_Jovx0970pV22ucCnNloa2g8KPMLJmp39E62oSE4XvBlAVSGL0oEEHZa71_bgsV4/pubchart?oid=1208109634&format=interactive",

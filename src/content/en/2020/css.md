@@ -5,7 +5,7 @@ description: CSS chapter of the 2020 Web Almanac covering color, units, selector
 authors: [LeaVerou, svgeesus, rachelandrew]
 reviewers: [estelle, fantasai, j9t, mirisuzanne, catalinred, hankchizljaw]
 analysts: [rviscomi, LeaVerou, dooman87]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: []
 LeaVerou_bio: Lea <a hreflang="en" href="https://designftw.mit.edu">teaches HCI & web programming</a> and <a hreflang="en" href="https://mavo.io">researches how to make web programming easier</a> at <a hreflang="en" href="https://mit.edu">MIT</a>. She is a bestselling technical <a hreflang="en" href="https://www.amazon.com/CSS-Secrets-Lea-Verou/dp/1449372635?tag=leaverou-20">author</a> and experienced <a hreflang="en" href="https://lea.verou.me/speaking">speaker</a>. She is passionate about open web standards and is a longtime <a hreflang="en" href="https://www.w3.org/Style/CSS/members.en.php3">CSS Working Group</a> member. Lea has started <a hreflang="en" href="https://github.com/leaverou">several popular open source projects and web applications</a>, such as <a hreflang="en" href="https://prismjs.com">Prism</a>, and <a hreflang="en" href="https://github.com/leaverou/awesomplete">Awesomplete</a>. She tweets <a href="https://twitter.com/leaverou">@leaverou</a> and blogs at <a hreflang="en" href="https://lea.verou.me">lea.verou.me</a>.
 svgeesus_bio: Chris Lilley is a Technical Director at the World Wide Web Consortium (W3C). Considered "the father of SVG", he also co-authored PNG, was co-editor of CSS2, chaired the group that developed <code>@font-face</code>, and co-developed WOFF. Ex Technical Architecture Group. Chris is still trying to get Color Management on the web, sigh. Currently working on CSS levels 3/4/5 (no, really), Web Audio, and WOFF2.
@@ -163,7 +163,6 @@ What is it that developers are so keen to override? We looked at breakdown by pr
 
 {{ figure_markup(
   image="important-top-properties.png",
-  alt="The top !important properties by the percent of pages.",
   caption="The top `!important` properties by the percent of pages.",
   description="Bar chart showing the top 10 properties used with `!important`. Mobile and desktop have similar usage. The `display` property is used with `!important` the most, by 79% of mobile pages. In decreasing order, the subsequent properties on 71-58% of mobile pages are: `color`, `width`, `height`, `background`, `padding`, `margin`, `border`, `background-color`, and `float`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=257343566&format=interactive",
@@ -240,7 +239,6 @@ There is always a lot of inertia when we change something in the web platform af
 
 {{ figure_markup(
   image="selector-pseudo-classes.png",
-  alt="Usage of legacy :pseudo-class syntax for ::pseudo-elements as a percent of mobile pages.",
   caption="Usage of legacy `:pseudo-class` syntax for `::pseudo-elements` as a percent of mobile pages.",
   description="Bar chart showing the percent of pages that use pseudo-class syntax (prefixed by one colon) versus pseudo-element syntax (two colons) for pseudo-elements. The `before` pseudo-element is used with pseudo-class syntax on 71% of mobile pages and pseudo-element syntax on 33% of mobile pages. The `after` pseudo-element is used with class and element syntax on 68% and 30% of mobile pages, `first-letter` on 7% and 1% of mobile pages, and `first-line` on 1% and 0% of mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=227968207&format=interactive",
@@ -481,7 +479,6 @@ It appears that most of this usage is to subtract pixels from percentages, as ev
 
 {{ figure_markup(
   image="calc-units.png",
-  alt="Relative popularity of units that use calc() as a percent of occurrences.",
   caption="Relative popularity of units that use `calc()` as a percent of occurrences.",
   description="Bar chart showing the relative popularity of properties that use the calc function as a percent of occurrences. Desktop and mobile have similar results. The calc function is used most often on the `width` property, 59% of calc occurrences on mobile pages. it is used on the `left` property 11% of the time, `top` 5%, `max-width` 4%, `height` 4%, and the remaining properties are decreasing at 2% and 1%: `min-height`, `margin-left`, `flex-basis`, `margin-right`, `max-height` (1%), `right`, `padding-bottom`, `padding-left`, `font-size`, and `padding-right`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=477094785&format=interactive",
@@ -491,7 +488,6 @@ It appears that most of this usage is to subtract pixels from percentages, as ev
 
 {{ figure_markup(
   image="calc-operators.png",
-  alt="Relative popularity of operators that use calc() as a percent of occurrences.",
   caption="Relative popularity of operators that use `calc()` as a percent of occurrences.",
   description="Bar chart showing the relative popularity of operators that use the calc function as a percent of occurrences. Desktop and mobile have similar results. The calc function is used most often with the subtraction operator (minus sign), 64% of calc instances on mobile pages, followed by division (forward slash) 20%, addition (plus sign) 11%, and multiplication (asterisk) 5%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1909242522&format=interactive",
@@ -503,7 +499,6 @@ Most calculations are very simple, with 99.5% of calculations involving up to 2 
 
 {{ figure_markup(
   image="calc-complexity-units.png",
-  alt="Distribution of the number of units per calc() occurrence.",
   caption="Distribution of the number of units per `calc()` occurrence.",
   description="Bar chart showing the distribution of the number of units per calc function occurrence. Desktop and mobile have similar results. Calc is used with one unit 11% of the time on mobile pages, twice 89% of the time, and 3 or more times approximately 0% of the time.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=695698141&format=interactive",
@@ -534,6 +529,7 @@ The last global keyword, `unset`, is essentially a hybrid of `initial` and `inhe
 ) }}
 
 The `all` property was <a hreflang="en" href="https://www.w3.org/TR/2013/WD-css3-cascade-20130103/#all-shorthand">introduced in 2013</a> and gained <a hreflang="en" href="https://caniuse.com/css-all">near-universal support in 2016 (except Edge) and universal support earlier this year</a>. It is a shorthand of nearly every property in CSS (except custom properties, `direction`, and `unicode-bidi`), and only accepts the <a hreflang="en" href="https://drafts.csswg.org/css-cascade-4/#defaulting-keywords">four global keywords</a> (`initial`, `inherit`, `unset`, and `revert`) as values. It was envisioned as a one liner CSS reset, either as `all: unset` or `all: revert`, depending on what kind of reset we wanted. However, adoption is still very low: we only found `all` on 477 pages (0.01% of all pages), and only used with the `revert` keyword.
+
 ## Color
 
 They say the old jokes are the best, and that goes for colors too. The original, cryptic, `#rrggbb` hex syntax remains the most popular way to specify a color in CSS in 2020: Half of all colors are written that way. The next most popular format is the somewhat shorter `#rgb` three-digit hex format at 26%. While it is shorter, it is also able to express *way* fewer colors; only 4096, out of the 16.7 million sRGB values.
@@ -569,7 +565,6 @@ And if you are going for fanciful color names, why not define your own with CSS 
 {{ figure_markup(
   link="https://codepen.io/leaverou/pen/GRjjJwJ",
   image="color-keywords-app.png",
-  alt="Interactively explore the color keyword usage data with the app.",
   caption='Interactively explore the color keyword usage data with <a hreflang="en" href="https://codepen.io/leaverou/pen/GRjjJwJ">this interactive app</a>!',
   description="Screenhot of an interactive app which allows you to select colors and see their relative usage in a pie chart. The data for the colors is shown in the next table.",
   width=600,
@@ -997,7 +992,6 @@ The gradient with the most color stops is <a hreflang="en" href="https://dabblet
   classes="height-16vw-122px",
   caption="The gradient with the most color stops, 646.",
   description="A screenshot of the gradient with the most color stops, which is a series of intricate multicolor stripes of varying hues.",
-  alt="A screenshot of the gradient with the most color stops, which is a series of intricate multicolor stripes of varying hues.",
   width=600,
   height=122
 ) }}
@@ -1078,7 +1072,6 @@ It is useful to know how big the boxes on your page are going to be, but with th
 
 {{ figure_markup(
   image="box-sizing.png",
-  alt="Distribution of the number of border-box declarations per page.",
   caption="Distribution of the number of `border-box` declarations per page.",
   description="Bar chart showing the distribution of the number of `box-sizing` declarations per page for desktop and mobile. The mobile distribution leads desktop by 0 to 11 declarations per page, growing in the higher percentiles. The mobile distribution's 10, 25, 50, 75, and 90th percentiles are: 0, 4, 17, 46, and 96 `border-box` declarations per page.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1626960751&format=interactive",
@@ -1202,7 +1195,6 @@ The most common breakpoint in use across desktop and mobile devices is a `min-wi
 
 {{ figure_markup(
   image="breakpoints.png",
-  alt="The most popular breakpoints by min-width and max-width as a percent of mobile pages.",
   caption="The most popular breakpoints by `min-width` and `max-width` as a percent of mobile pages.",
   description="The most popular breakpoints by `min-width` and `max-width` as a percent of mobile pages. `480px` is used as a min-width on 21% of mobile pages and as a `max-width` on 35%. `600px` on 27% and 37% for min and max widths respectively, `767px` on 8% and 50%, `768px` on 54% and 35%, `800px` on 8% and 24%, `991px` on 3% and 30%, `992px` on 37% and 11%, `1024px` on 13% and 23%, `1199px` on just 31% as a `max-width`, and `1200px` on 40% and 19%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=502128948&format=interactive",
@@ -1484,7 +1476,6 @@ A small but notable number of pages (around 3000 or 0.05%) were oddly using `@su
 
 {{ figure_markup(
   image="supports-criteria.png",
-  alt="Relative popularity of @supports features queried as a percent of occurrences.",
   caption="Relative popularity of `@supports` features queried as a percent of occurrences.",
   description="Bar chart of the relative popularity of @supports features queried as a percent of occurrences. The most popular feature queried is `sticky` at 49% of occurrences on mobile pages, followed by `ime-align` at 24%, `mask-image` at 12%, `overflow-scrolling` at 5%, `grid` at 2%, custom properties, `transform-style`, `max()`, and `object-fit `all at 1%, and `appearance` at approximately 0%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1901533222&format=interactive",
@@ -1742,7 +1733,7 @@ Another future spec that is currently worked on is <a hreflang="en" href="https:
 
 {{ figure_markup(
   image="usage-of-explicit-nesting-in-scss.png",
-  caption="usage-of-explicit-nesting-in-scss.",
+  caption="Usage of explicit nesting in SCSS.",
   description="Bar chart showing `Total` is used by 85% on desktop and 85% on mobile, `&:pseudo-class` is 83% and 83% respectively, `&.class` is 80% and 80%, `&::pseudo-element` is 66% and 66%, `& (by itself)` is 62% and 62%, `&[attr]` is 57% and 57%, `& >`	24% and 23%, `& +`	21% and 20%, `& descendant` is 16% and 15%, and `&#id` is 6% on desktop and 6% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=370242263&format=interactive",
   sheets_gid="1872903377",
