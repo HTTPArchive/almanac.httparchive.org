@@ -525,7 +525,6 @@ Encontramos que, en promedio, las páginas incluyen atributos `alt` en solo 51.2
 
 {{ figure_markup(
   image="seo-percentage-of-img-alt-attributes-present.png",
-  alt="Distribución porcentual de imágenes con atributo alt por página",
   caption="Distribución porcentual de imágenes que tienen el atributo `alt` por página.",
   description="Gráfico de barras mostrando el porcentaje de atributos `alt` presentes por percentil (10, 25, 50, 75, y 90). Se encontró que solo 53.86% de las páginas de escritorio y 51.22% de las páginas móviles incluyen imágenes con atributos `alt`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=827771545&format=interactive",
