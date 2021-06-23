@@ -536,7 +536,6 @@ En promedio, las páginas web tienen 10.00% de imágenes con un atributo `alt` v
 
 {{ figure_markup(
   image="seo-percentage-of-blank-img-alt-attributes.png",
-  alt="Distribución porcentual de las imágenes con atributos alt vacíos por página.",
   caption="Distribución porcentual de las imágenes con atributos `alt` vacíos por página.",
   description="Gráfico de barras que muestra el porcentaje de atributos `alt` incluidos por percentil (10, 25, 50, 75, y 90). En promedio, las páginas de escritorio incluyen 10% de atributos `alt` vacíos y las páginas móviles incluyen 11.11% de atributos `alt` vacíos.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=378651979&format=interactive",
