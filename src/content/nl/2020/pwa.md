@@ -37,7 +37,7 @@ Service workers staan centraal in progressieve webapps. Ze helpen ontwikkelaars 
 
 ### Gebruik van service workers
 
-Uit de gegevens die we hebben verzameld, kunnen we zien dat ongeveer 0,88% desktopsites en 0,87% mobiele sites een service worker gebruiken. Dit was voor de maand augustus 2020 en, om dat in perspectief te plaatsen, dat komt neer op 49.305 (van de 5.593.642) desktopsites en 55.019 (van de 6.347.919) mobiele sites. Hoewel dat gebruik misschien laag lijkt, is het belangrijk dat we ons realiseren dat andere metingen dat gelijkstellen aan 16,6% van het <a hreflang="en" href="https://www.chromestatus.com/metrics/feature/timeline/popularity/990">webverkeer</a> - dit verschil is te wijten aan websites met veel verkeer die vaker service workers gebruiken.
+Uit de gegevens die we hebben verzameld, kunnen we zien dat ongeveer 0,88% desktopsites en 0,87% mobiele sites een service worker gebruiken. Dit was voor de maand augustus 2020 en, om dat in perspectief te plaatsen, dat komt neer op 49.305 (van de 5.593.642) desktopsites en 55.019 (van de 6.347.919) mobiele sites.
 
 {{ figure_markup(
   image="pwa-timeseries-of-service-worker-installations.png",
@@ -48,6 +48,8 @@ Uit de gegevens die we hebben verzameld, kunnen we zien dat ongeveer 0,88% deskt
   sql_file="sw_adoption_over_time.sql"
   )
 }}
+
+Hoewel dat gebruik misschien laag lijkt, is het belangrijk dat we ons realiseren dat andere metingen dat gelijkstellen aan 16,6% van het <a hreflang="en" href="https://www.chromestatus.com/metrics/feature/timeline/popularity/990">webverkeer</a> - dit verschil is te wijten aan websites met veel verkeer die vaker service workers gebruiken.
 
 ## Lighthouse inzichten
 
