@@ -632,22 +632,22 @@ También vale la pena indagar en el intervalo que existe entre la experiencia qu
 
 Como era de esperarse, existe un intervalo para todas las herramientas usadas debido al bajo poder de procesamiento del [Moto G4 emulado](methodology#webpagetest). Ember y Polymer parecen ser ejemplos particularmente atroces, mientras que RxJS y Mustache varían muy poco entre escritorio y móvil.
 
-## What's the impact?
+## ¿Cuál es el impacto?
 
-We have a pretty good picture now of how much JavaScript we use, where it comes from, and what we use it for. While that's interesting enough on its own, the real kicker is the "so what?" What impact does all this script actually have on the experience of our pages?
+Ahora tenemos una buena idea de cuanto JavaScript usamos, de donde viene y para que lo usamos. Eso es interesante por su cuenta pero la verdadera pregunta aquí es el "¿Y eso qué?" ¿Qué impacto tiene todo este script que usamos en la experiencia de nuestras páginas?
 
-The first thing we should consider is what happens with all that JavaScript once its been downloaded. Downloading is only the first part of the JavaScript journey. The browser still has to parse all that script, compile it, and eventually execute it. While browsers are constantly on the lookout for ways to offload some of that cost to other threads, much of that work still happens on the main thread, blocking the browser from being able to do layout or paint-related work, as well as from being able to respond to user interaction.
+La primera cosa que debemos considerar es qué ocurre con todo ese JavaScript una vez que ha sido descargado. La descarga es sólo la primera parte del viaje del JavaScript. El navegador aún tiene que analizar ese script, compilarlo y eventualmente ejecutarlo. Mientras que los browsers están en una constante búsqueda de maneras de mover parte de ese costo a otros hilos, mucho de ese trabajo aún ocurre en el hilo principal, lo que impide al navegador realizar trabajo de _layout_ o pintado, así como de responder a interacciones del usuario.
 
-If you recall, there was only a 30 KB difference between what is shipped to a mobile device versus a desktop device. Depending on your point of view, you could be forgiven for not getting too upset about the small gap in the amount of code sent to a desktop browser versus a mobile one—after all, what's an extra 30 KB or so at the median, right?
+Como mencionamos antes, sólo existe una diferencia de 30KB entre lo que se le envía a dispositivos móviles y de escritorio. Dependiendo de tu punto de vista, es entendible si no te molesta mucho la pequeña diferencia entre la cantidad de código enviado a un navegador de escritorio contra uno móvil—después de todo, ¿Qué son 30KB, no?
 
-The biggest problem comes when all of that code gets served to a low-to-middle-end device, something a bit less like the kind of devices most developers are likely to have, and a bit more like the kind of devices you'll see from the majority of people across the world. That relatively small gap between desktop and mobile is much more dramatic when we look at it in terms of processing time.
+El mayor problema viene cuando todo ese código llega a un dispositivo de gama media o baja, algo poco parecido a los dispositivos que la mayoría de los desarrolladores tienden a usar, y un poco más parecido al tipo de dispositivos usados por la mayoría de las personas en el mundo. Esa diferencia relativamente pequeña entre escritorio y móvil es mucho más notoria cuando la medimos en términos de tiempo de procesamiento.
 
-The median desktop site spends 891 ms on the main thread of a browser working with all that JavaScript. The median mobile site, however, spends 1,897 ms—over two times the time spent on the desktop. It's even worse for the long tail of sites. At the 90th percentile, mobile sites spend a staggering 8,921 ms of main thread time dealing with JavaScript, compared to 3,838 ms for desktop sites.
+Un sitio de escritorio en la mediana pasa 891 ms en lo que el navegador ejecuta todo ese JavaScript en el hilo principal. Mientras tanto, un sitio móvil en la mediana pasa 1,897 ms—más del doble de tiempo que en escritorio. Esto es aún peor para el resto de los sitios. En el percentil 90, los sitios móviles tienen un tiempo de ejecución del hilo principal de JavaScript abrumador de 8,921 ms, comparado con 3,838 ms en sitios de escritorio.
 
 {{ figure_markup(
   image="main-thread-time.png",
-  caption="Distribution of main thread time.",
-  description="Bar chart showing the distribution of main thread time for desktop and mobile. Mobile is 2-3 times higher throughout the distribution. The 10, 25, 50, 75, and 90th percentiles for desktop are: 137, 356, 891, 1,988, and 3,838 milliseconds.",
+  caption="Distribución del tiempo de ejecución del hilo principal.",
+  description="Gráfica de barras mostrando la distribución del tiempo de ejecución del hilo principal en escritorio y móvil. El tiempo en móvil es 2-3 veces más alto a lo largo de la distribución. Los percentiles 10, 25, 50, 75 y 90 de escritorio son de: 137, 356, 891, 1,988 y 3,838 milisegundos.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=740020507&format=interactive",
   sheets_gid="2039579122",
   sql_file="main_thread_time.sql"
