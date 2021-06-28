@@ -592,44 +592,45 @@ La gráfica sigueiente muestra la mediana de bytes por páginas donde cualquiera
   sql_file="frameworks-bytes-by-framework.sql"
 ) }}
 
-On one of the spectrum are frameworks like React or Angular or Ember, which tend to ship a lot of code regardless of the client. On the other end, we see minimalist frameworks like Alpine.js and Svelte showing very promising results. Defaults are very important, and it seems that by starting with highly performant defaults, Svelte and Alpine are both succeeding (so far&hellip; the sample size is pretty small) in creating a lighter set of pages.
+En un lado del espectro están _frameworks_ como React, Angular o Ember, que tienden a resultar en mucho código sin importar el cliente. Por otro lado, observamos que _frameworks_ minimalistas como Alpine.js y Svelte muestran resultados muy prometedores. La configuracíón por defecto es muy importante, y parece ser que, al empezar con una base con un alto desempeño, Svelte y Alpine están teniendo éxito (hasta ahora&hellip; la muestra es bastante pequeña) en crear páginas más ligeras.
 
-We get a very similar picture when looking at main thread time for pages where these tools were detected.
+La situación es muy similar cuando tomamos un vistazo al tiempo de ejecución del hilo principal para páginas donde estas herramientas fueron detectadas.
 
 {{ figure_markup(
   image="frameworks-main-thread.png",
-  caption="The median main thread time per page by JavaScript framework.",
-  description="Bar chart showing the median main thread time by framework. It's hard to notice anything other than Ember.js, whose median mobile main thread time is over 20,000 milliseconds (20 seconds). The rest of the frameworks are tiny by comparison.",
+  caption="La mediana de tiempo de ejecución del hilo principal por página por framework de JavaScript.",
+  description="Gráfica de barras mostrando la mediana de tiempo de ejecución del hilo principal por framework. Es difícil notar algo que no sea Ember.js, cuya mediana de tiempo de ejecución del hilo principal en móviles es de más de 20,000 milisegundos (20 segundos). El resto de los frameworks tienen números pequeños en comparación.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=691531699&format=interactive",
   sheets_gid="160832134",
   sql_file="main_thread_time_frameworks.sql"
 ) }}
 
-Ember's mobile main thread time jumps out and kind of distorts the graph with how long it takes. (I spent some more time looking into this and it appears to be heavily influenced <a hreflang="en" href="https://timkadlec.com/remembers/2021-01-26-what-about-ember/">by one particular platform using this framework inefficiently</a>, rather than an underlying problem with Ember itself.) Pulling it out makes the picture a bit easier to understand.
+El tiempo de ejecución del hilo principal de Ember destaca tanto que distorsiona la gráfica por tanto tiempo que tarda en ejecutarse. (Pasé algo de tiempo extra investigando esto y parece haber una gran influencia <a hreflang="en" href="https://timkadlec.com/remembers/2021-01-26-what-about-ember/">de una cierta plataforma usando este _framework_ de manera poco eficiente</a> en vez de ser un problema con Ember en sí.) Quitar Ember de la gráfica la hace un poco más fácil de entender.
 
 {{ figure_markup(
   image="frameworks-main-thread-no-ember.png",
-  caption="The median main thread time per page by JavaScript framework, excluding Ember.js.",
-  description="Bar chart showing the median main thread time by framework, excluding Ember.js. Mobile main thread times are all higher due to the testing methodology of using slower CPU speeds for mobile. The most popular frameworks like React, GSAP, and RequireJS have high main thread times around 2-3 seconds for desktop and 5-7 seconds for mobile. Polymer also sticks out further down the popularity list. MooToos, Prototype, Alpine.js, and Svelte tend to have lower main thread times, under 2 seconds.",
+  caption="La mediana de tiempo de ejecución del hilo principal por página por framework de JavaScript, sin contar a Ember.js.",
+  description="Gráfica de barras mostrando la mediana de tiempo de ejecución del hilo principal por framework, sin contar Ember.js. Los tiempos de ejecución del hilo principal son todos altos debido a que en la metodología de pruebas se usaron velocidades bajas de CPU para móviles. Los frameworks más populares como React, GSAP y RequireJS tienen tiempos de ejecución de hilo principal altos de alrededor de 2-3 segundos en escritorio y 5-7 segundos en móviles. Polymer también sobresale en la parte baja de la lista de popularidad. MooToos, Prototype, Alpine.js y Svelte tienden a tener tiempos de ejecución de hilo principal más bajos, por debajo de los 2 segundos.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=77448759&format=interactive",
   sheets_gid="160832134",
   sql_file="main_thread_time_frameworks.sql"
 ) }}
 
-Tools like React, GSAP, and RequireJS tend to spend a lot of time on the main thread of the browser, regardless of whether it's a desktop or mobile page view. The same tools that tend to lead to less code overall—tools like Alpine and Svelte—also tend to lead to lower impact on the main thread.
+Herramientas como React, GSAP y RequireJS tiended a ocupar mucho del tiempo de ejecución del hilo principal del browser, sin importar si es una página de escritorio o móvil. Las mismas herramientas que dan como resultado una menor cantidad de código—herramientas como Alpine o Svelte—también tienden a tener un menor impacto en el hilo principal.
 
-The gap between the experience a framework provides for desktop and mobile is also worth digging into. Mobile traffic is becoming increasingly dominant, and it's critical that our tools perform as well as possible for mobile pageviews. The bigger the gap we see between desktop and mobile performance for a framework, the bigger the red flag.
+También vale la pena indagar en el intervalo que existe entre la experiencia que un _framework_ provee en escritorio y móvil. El tráfico de dispositivos móviles cada vez se vuelve más dominante y es crítico que nuestras herramientas se desempeñen tan bien como sea posible en móviles. Una gran diferencia en el desempeño en móviles de un _framework_ es una gran alerta roja.
+
 
 {{ figure_markup(
   image="frameworks-main-thread-no-ember-diff.png",
-  caption="Difference between desktop and mobile median main thread time per page by JavaScript framework, excluding Ember.js.",
-  description="Bar chart showing the absolute and relative differences between desktop and mobile's median main thread time per page by JavaScript framework, excluding Ember.js. Polymer jumps out later in the popularity list as having a high difference: about 5 seconds and 250% slower median main thread time on mobile pages than desktop pages. Other frameworks that stand out are GSAP and RequireJS has having a 4 second or 150% difference. Frameworks with the lowest difference are Mustache and RxJS, which are only about 20-30% slower on mobile.",
+  caption="Diferencia entre la mediana del tiempo de ejecución del hilo principal por página por framework de JavaScript, sin contar Ember.js.",
+  description="Gráfica de barras mostrando la diferencia absoluta y relativa entre la mediana del tiempo de ejecución del hilo principal por página por framework de JavaScript entre escritorio y móvil, sin contar Ember.js. Polymer destaca hacia el final de la lista de popularidad teniendo una gran diferencia: alrededor de 5 segundos y un tiempo de ejecución del hilo principal 250% más lento en páginas móviles que en páginas de escritorio. Otros frameworks que saltan a la vista son GSAP y RequireJS teniendo una diferencia de 4 segundos o 150%. Los frameworks con menor diferencia son Mustache y RxJS que sólo son 20-30% más lentos en móviles.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=1758266664&format=interactive",
   sheets_gid="160832134",
   sql_file="main_thread_time_frameworks.sql"
 ) }}
 
-As you would expect, there's a gap for all tools in use due to the lower processing power of the [emulated Moto G4](methodology#webpagetest). Ember and Polymer seem to jump out as particularly egregious examples, while tools like RxJS and Mustache vary only minorly from desktop to mobile.
+Como era de esperarse, existe un intervalo para todas las herramientas usadas debido al bajo poder de procesamiento del [Moto G4 emulado](methodology#webpagetest). Ember y Polymer parecen ser ejemplos particularmente atroces, mientras que RxJS y Mustache varían muy poco entre escritorio y móvil.
 
 ## What's the impact?
 
