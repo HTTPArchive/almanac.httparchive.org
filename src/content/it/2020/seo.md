@@ -503,7 +503,7 @@ La pagina desktop mediana include 21 tag `img` e la pagina mobile mediana ha 19 
 {{ figure_markup(
   image="seo-img-elements-per-page.png",
   caption="Distribuzione del numero di elementi `<img>` per pagina.",
-  description="Grafico a barre che mostra il numero di elementi `<img>` per pagina per percentile (10, 25, 50, 75 e 90). La pagina desktop mediana presenta 21 elementi `<img>` e la pagina mobile mediana presenta 19 tag `<<img>`",
+  description="Grafico a barre che mostra il numero di elementi `<img>` per pagina per percentile (10, 25, 50, 75 e 90). La pagina desktop mediana presenta 21 elementi `<img>` e la pagina mobile mediana presenta 19 elementi `<img>`",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=923860709&format=interactive",
   sheets_gid="1317352222",
   sql_file="pages_markup_by_device_and_percentile.sql"
@@ -604,7 +604,7 @@ Esiste una disparità nei link tra mobile e desktop che avrà un impatto negativ
 {{ figure_markup(
   image="seo-text-links.png",
   caption="Distribuzione del numero di link testuali per pagina.",
-  description="Grafico a barre che mostra il numero di link di testo per percentile (19, 25, 50, 75 e 90). C'è una disparità nei link tra mobile e desktop (62 link su cellulare contro 68 link su desktop).",
+  description="Grafico a barre che mostra il numero di link di testo per percentile (10, 25, 50, 75 e 90). C'è una disparità nei link tra mobile e desktop (62 link su cellulare contro 68 link su desktop).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1588324966&format=interactive",
   sheets_gid="775602646",
   sql_file="pages_wpt_bodies_by_device_and_percentile.sql"
