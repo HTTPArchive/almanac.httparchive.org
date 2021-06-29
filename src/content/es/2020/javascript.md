@@ -768,10 +768,10 @@ La mayor parte de las vulnerabilidades encontradas cae en la categoría de sever
   sql_file="lighthouse_vulnerabilities_by_severity.sql"
 ) }}
 
-## Conclusion
+## Conclusión
 
-JavaScript is steadily rising in popularity, and there's a lot that's positive about that. It's incredible to consider what we're able to accomplish on today's web thanks to JavaScript that, even a few years ago, would have been unimaginable.
+La popularidad de JavaScript está aumentando contínuamente y eso tiene muchos lados positivos. Es increíble considerar todo lo que podemos lograr con la web de hoy gracias a JavaScript que, hasta hace unos años, sería inimaginable.
 
-But it's clear we've also got to tread carefully. The amount of JavaScript consistently rises each year (if the stock market were that predictable, we'd all be incredibly wealthy), and that comes with trade-offs. More JavaScript is connected to an increase in processing time which negatively impacts key metrics like Total Blocking Time. And, if we let those libraries languish without keeping them updated, they carry the risk of exposing users through known security vulnerabilities.
+Pero es claro que también debemos andar con cuidado. La cantidad de JavaScript aumenta de manera consistente cada año (si el mercado accionario fuera así de predecible todos seríamos increíblemente ricos) y eso tiene sus contras. Mayores cantidades de JavaScript están conectadas a un incremento en el tiempo de procesamiento lo cual afecta negativamente métricas clave como el Tiempo Total de Bloqueo. Y, si descuidamos todas esas librerías sin actualizarlas, corremos el riesgo de exponer a los usuarios a vulnerabilidades de seguridad conocidas.
 
-Carefully weighing the cost of the scripts we add to our pages and being willing to place a critical eye on our tools and ask more of them are our best bets for ensuring that we build a web that is accessible, performant, and safe.
+Nuestras mejores apuestas para asegurar que construyamos una web accesible, con buen desempeño y segura son medir cuidadosamente el costo de los scripts que agregamos a nuestras páginas y estas dispuestos a ver con un ojo crítico a las herramientas que usamos y pedirles que sean mejores.
