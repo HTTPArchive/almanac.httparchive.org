@@ -678,30 +678,30 @@ La correlación entre los bytes de JavaScript y las calificaciones de desempeño
 
 La conexión entre el Tiempo Total de Bloqueo y los bytes de JavaScript es aún más significativa (0.55 para bytes totales y 0.48 para bytes de terceros). Esto no es sorpresivo debido a que conocemos todo el trabajo extra que los navegadores deben hacer para hacer que el código JavaScript corra en una página—más bytes significa más tiempo.
 
-### Security vulnerabilities
+### Vulnerabilidades de seguridad
 
-One other helpful audit that Lighthouse runs is to check for known security vulnerabilities in third-party libraries. It does this by detecting which libraries and frameworks are used on a given page, and what version is used of each. Then it checks <a hreflang="en" href="https://snyk.io/vuln?type=npm">Snyk's open-source vulnerability database</a> to see what vulnerabilities have been discovered in the identified tools.
+Otra auditoría útil que Lighthouse corre es revisar si existen vulnerabilidades de seguridad conocidas en librerías de terceros. Hace esto detectando que librerías y _frameworks_ y que versiones son usadas en una página. Después revisa la <a hreflang="en" href="https://snyk.io/vuln?type=npm">base de datos _open source_ de Snyk</a> para ver si alguna vulnerabilidad ha sido descubierta en las herramientas detectadas.
 
 {{ figure_markup(
-  caption="Percent of mobile pages contain at least one vulnerable JavaScript library.",
+  caption="Porcentaje de páginas móviles con al menos una librería de JavaScript vulnerable.",
   content="83.50%",
   classes="big-number",
   sheets_gid="1326928130",
   sql_file="lighthouse_vulnerabilities.sql"
 ) }}
 
-According to the audit, 83.5% of mobile pages use a JavaScript library or framework with at least one known security vulnerability.
+De acuerdo a la auditoría, 83.5% de las páginas móviles usan una librería o _framework_ con al menos una vulnerabilidad de seguridad conocida.
 
-This is what we call the jQuery effect. Remember how we saw that jQuery is used on a whopping 83% of pages? Several older versions of jQuery contain known vulnerabilities, which comprises the vast majority of the vulnerabilities this audit checks.
+Esto es a lo que llamamos el efecto jQuery. Anteriormente vismo como jQuery es usado en un 83% de las páginas. Múltiples versiones viejas de jQuery contienen vulnerabilidades conocidas, lo cual constituye la vasta mayoría de las vulnerabilidades que esta auditoría revisó.
 
-Of the roughly 5 million or so mobile pages that are tested against, 81% of them contain a vulnerable version of jQuery—a sizeable lead over the second most commonly found vulnerable library—jQuery UI at 15.6%.
+De las casi 5 millones de páginas móviles que fueron probadas, 81% de ellas contiene una versión vulnerable de jQuery—una delantera considerable contra la segunda librería vulnerable más común—jQuery UI con un 15.6%.
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th>Library</th>
-        <th>Vulnerable pages</th>
+        <th>Librería</th>
+        <th>Páginas vulnerables</th>
       </tr>
     </thead>
     <tbody>
@@ -749,21 +749,20 @@ Of the roughly 5 million or so mobile pages that are tested against, 81% of them
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Top 10 libraries contributing to the highest numbers of vulnerable mobile pages according to Lighthouse.",
+      caption="Top 10 de librerías que contribuyen la mayor cantidad de páginas móviles vulnerables de acuerdo a Lighthouse.",
       sheets_gid="1803013938",
       sql_file="lighthouse_vulnerable_libraries.sql"
     ) }}
   </figcaption>
 </figure>
 
-In other words, if we can get folks to migrate away from those outdated, vulnerable versions of jQuery, we would see the number of sites with known vulnerabilities plummet (at least, until we start finding some in the newer frameworks).
+En otras palabras, si podemos hacer que se haga una migración de esas versiones viejas y vulnerables de jQuery, veríamos el número de sitios con vulnerabilidades conocidas desplomarse (al menos hasta que encontremos vulnerabilidades en los _frameworks_ más nuevos).
 
-The bulk of the vulnerabilities found fall into the "medium" severity category.
-
+La mayor parte de las vulnerabilidades encontradas cae en la categoría de severidad "media".
 {{ figure_markup(
   image="vulnerabilities-by-severity.png",
-  caption="Distribution of the percent of mobile pages having JavaScript vulnerabilities by severity.",
-  description="Pie chart showing 13.7% of mobile pages having no JavaScript vulnerabilities, 0.7% having low severity vulnerabilities, 69.1% having medium severity, and 16.4% having high severity.",
+  caption="Distribución del porcentaje de páginas móviles que tienen vulnerabilidades en JavaScript por severidad.",
+  description="Gráfica de pie mostrando que 13.7% de las páginas móviles no tienen vulnerabilidades de JavaScript, 0.7 tienen vulnerabilidades de baja severidad, 69.1% tienen vulnerabilidades de media severidad y 16.4% tienen alta severidad.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=1932740277&format=interactive",
   sheets_gid="1409147642",
   sql_file="lighthouse_vulnerabilities_by_severity.sql"
