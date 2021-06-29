@@ -653,30 +653,30 @@ Un sitio de escritorio en la mediana pasa 891 ms en lo que el navegador ejecuta 
   sql_file="main_thread_time.sql"
 ) }}
 
-### Correlating JavaScript use to Lighthouse scoring
+### La correlación entre el uso de JavaScript y la calificación de Lighthouse
 
-One way of looking at how this translates into impacting the user experience is to try to correlate some of the JavaScript metrics we've identified earlier with Lighthouse scores for different metrics and categories.
+Una manera de ver como todo esto se traduce en un impacto en la experiencia de usuario es intentar encontrar una correlación entre algunas de las métricas de JavaScript que identificamos anteriomente con las calificaciones de Lighthouse para diferentes métricas y categorías.
 
 {{ figure_markup(
   image="correlations.png",
-  caption="Correlations of JavaScript on various aspects of user experience.",
-  description="Bar chart showing the Pearson coefficient of correlation for various aspects of user experience. The correlation of bytes to the Lighthouse performance score has a coefficient of correlation of -0.47. Bytes and Lighthouse accessibility score: 0.08. Bytes and Total Blocking Time (TBT): 0.55. Third party bytes and Lighthouse performance score: -0.37. Third party bytes and the Lighthouse accessibility score: 0.00. Third party bytes and TBT: 0.48. The number of async scripts per page and Lighthouse performance score: -0.19. Async scripts and Lighthouse accessibility score: 0.08. Async scripts and TBT: 0.36.",
+  caption="Correlaciones de JavaScript en varios aspectos de la experiencia de usuario.",
+  description="Gráfica de barras mostrando el coeficiente de correlación de Pearson para varios aspectos de la experiencia de usuario. La correlación de bytes con la calificación de desempeño de Lighthouse tiene un coeficiente de correlación de -0.47. De bytes con la calificación de Lighthouse de accesibilidad: 0.08. De bytes y el Tiempo Total de Bloqueo (TBT): 0.55. De bytes de terceros y la calificación de desempeño de Lighthouse: -0.37. De bytes de terceros y la calificación de Lighthouse de accesibilidad: 0.00. De bytes de terceros y TBT: 0.48. Del número de scripts async por página y la calificación de desempeño de Lighthouse: -0.19. Scripts async y la calificación de Lighthouse de accesibilidad: 0.08. Scripts async y TBT: 0.36.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=649523941&format=interactive",
   sheets_gid="2035770638",
   sql_file="correlations.sql"
 ) }}
 
-The above chart uses the [Pearson coefficient of correlation](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient). There's a long, kinda complex definition of what that means precisely, but the gist is that we're looking for the strength of the correlation between two different numbers. If we find a coefficient of 1.00, we'd have a direct positive correlation. A correlation of 0.00 would show no connection between two numbers. Anything below 0.00 indicates a negative correlation—in other words, as one number goes up the other one decreases.
+La gráfica anterior utiliza el [coeficiente de correlación de Pearson](https://es.wikipedia.org/wiki/Coeficiente_de_correlaci%C3%B3n_de_Pearson). Hay una larga y relativamente compleja explicación de lo que eso significa, pero en pocas palabras significa que estamos buscando el grado de correlación entre dos números diferentes. Si encontramos un coeficiente de 1.00, tenemos una correlación directa positiva. Una correlación de 0.00 mostraría que no hay conexión entre ambos números. Cualquier cosa menor a 0.00 idica que hay una correlación negativa—en otras palabras, si un número aumenta el otro disminuye.
 
-First, there doesn't seem to be much of a measurable correlation between our JavaScript metrics and the Lighthouse accessibility ("LH A11y" in the chart) score here. That stands in stark opposition to what's been found elsewhere, notably through <a hreflang="en" href="https://webaim.org/projects/million/#frameworks">WebAim's annual research</a>.
+Para empezar, no parece haber una correlación medible entre nuestras métricas de JavaScript y la calificación de accessibilidad de Lighthouse ("LH A11y" en la gráfica). Esto es completamente opuesto a lo que se encontró en otros estudios, especialmente en el <a hreflang="en" href="https://webaim.org/projects/million/#frameworks">estudio anual de WebAIM</a>.
 
-The most likely explanation for this is that Lighthouse's accessibility tests aren't as comprehensive (yet!) as what is available through other tools, like WebAIM, that have accessibility as their primary focus.
+La explicación más probable para esto es que las pruebas de accesibilidad de Lighthouse (aún) no son tan completas comparadas con otras herramientas enfocadas en accesibilidad, como WebAIM.
 
-Where we do see a strong correlation is between the amount of JavaScript bytes ("Bytes") and both the overall Lighthouse performance ("LH Perf") score and Total Blocking Time ("TBT").
+Donde si vemos una correlación fuerte es entre la cantidad de bytes de JavaScript ("Bytes") y tanto la calificación general de desempeño de Lighthouse ("LH Perf") como el Tiempo Total de Bloqueo ("TBT").
 
-The correlation between JavaScript bytes and Lighthouse performance scores is -0.47. In other words, as JS bytes increase, Lighthouse performance scores decrease. The overall bytes has a stronger correlation than the amount of third-party bytes ("3P bytes"), hinting that while they certainly play a role, we can't place all the blame on third-parties.
+La correlación entre los bytes de JavaScript y las calificaciones de desempeño de Lighthouse es de -0.47. En otras palabras, mientras la cantidad de bytes de JS aumenta, la calificación de Lighthouse de desempeño disminuye. La cantidad total de bytes tiene una correlación más fuerte que la cantidad de bytes de terceros ("3P bytes"), lo cual sugiere que si bien los scripts de terceros fungen un rol, no podemos echarles toda la culpa a ellos.
 
-The connection between Total Blocking Time and JavaScript bytes is even more significant (0.55 for overall bytes, 0.48 for third-party bytes). That's not too surprising given what we know about all the work browsers have to do to get JavaScript to run in a page—more bytes means more time.
+La conexión entre el Tiempo Total de Bloqueo y los bytes de JavaScript es aún más significativa (0.55 para bytes totales y 0.48 para bytes de terceros). Esto no es sorpresivo debido a que conocemos todo el trabajo extra que los navegadores deben hacer para hacer que el código JavaScript corra en una página—más bytes significa más tiempo.
 
 ### Security vulnerabilities
 
