@@ -38,7 +38,7 @@ Pero nada es gratis y esto aplica especialmente para JavaScript. Todo ese códig
 
 ## ¿Cuánto JavaScript usamos?
 
-Mencionamos que la etiqueta `script` es el 6to elemento de HTML más usado. Entremos más en detalle para ver cuánto JavaScript es contenido ahí.
+Mencionamos que la etiqueta `script` es el 6to elemento de HTML más usado. Entremos más en detalle para ver cuánto JavaScript está contenido ahí.
 
 Un sitio ubicado en la mediana (percentil 50) envía 444 KB de JavaScript al ser cargado en un dispositivo de escritorio y un poco menos que eso (411 KB) a un dispositivo móvil.
 
@@ -110,7 +110,7 @@ Los números sin procesar pueden o no saltar a tu vista dependiendo de que tan a
   sql_file="unused_js_bytes_distribution.sql"
 ) }}
 
-Esos 153 KB equivalen a ~37% del tamaño total del código que le enviamos a los dispositivos móviles. Esto definitivamente puede mejorar.
+Esos 153 KB equivalen a alrededor de 37% del tamaño total del código que le enviamos a los dispositivos móviles. Esto definitivamente puede mejorar.
 
 ### `module` y `nomodule`
 Un mecanismo que tenemos que tiene el potencial de reducir la cantidad de código que enviamos es utilizar <a hreflang="en" href="https://web.dev/serve-modern-code-to-modern-browsers/">el patrón `module`/`nomodule`</a>. Con este patrón, creamos dos <i lang="en">bundles</i>: uno para navegadores modernos y otro para navegadores <i lang="en">legacy</i>. Al <i lang="en">bundle</i> para navegadores modernos se le asigna `type=module` y al <i lang="en">bundle</i> para navegadores <i lang="en">legacy</i> se le asigna `type=nomodule`.
@@ -121,7 +121,7 @@ La compatibilidad con `module` y `nomodule` va en aumento pero aún es una estra
 
 ### Conteo de peticiones
 
-Otra manera de ver cuanto JavaScript usamos es explorar cuantas peticiones de JavaScript son hechas por página. Reducir el número de peticiones era fundamental para tener un buen desempeño usando HTTP/1.1, sin embargo, con HTTP/2 aplica lo contrario: dividir el código en JavaScript en <a hreflang="en" href="https://web.dev/granular-chunking-nextjs/">archivos individuales y más pequeños</a> resulta en [un mejor desempeño en general.](../2019/http2#impact-of-http2).
+Otra manera de ver cuánto JavaScript usamos es explorar cuantas peticiones de JavaScript son hechas por página. Reducir el número de peticiones era fundamental para tener un buen desempeño usando HTTP/1.1, sin embargo, con HTTP/2 aplica lo contrario: dividir el código en JavaScript en <a hreflang="en" href="https://web.dev/granular-chunking-nextjs/">archivos individuales y más pequeños</a> resulta en [un mejor desempeño en general.](../2019/http2#impact-of-http2).
 
 {{ figure_markup(
   image="requests-2020.png",
@@ -149,7 +149,7 @@ Una tendencia que posiblemente contribuye al incremento en la cantidad de JavaSc
 
 Veamos esto más a detalle para ver cuantos scripts de terceros estamos enviando.
 
-Justo hasta la mediana, los sitios envían apróximadamente la misma cantidad de scripts propios que de terceros. En la mediana, 9 scripts por página son propios y 10 son de terceros. Desde ese punto, la diferencia crece un poco: mientras más scripts envía un sitio en total, es mayor la probabilidad de que la mayoría de esos scripts sean de terceros.
+Justo hasta la mediana, los sitios envían aproximadamente la misma cantidad de scripts propios que de terceros. En la mediana, 9 scripts por página son propios y 10 son de terceros. Desde ese punto, la diferencia crece un poco: mientras más scripts envía un sitio en total, es mayor la probabilidad de que la mayoría de esos scripts sean de terceros.
 
 {{ figure_markup(
   image="requests-by-3p-desktop.png",
@@ -195,12 +195,12 @@ La manera en la que cargamos JavaScript tiene un impacto significativo en la exp
 
 JavaScript _bloquea al analizador sintáctico_ por defecto. En otras palabras, cuando el navegador encuentra un elemento `script`, debe pausar el análisis del HTML hasta que el script haya sido descargado, analizado y ejecutado. Esto es un cuello de botella significativo y es una causa común de que las páginas se muestren lentamente.
 
-Podemos comenzar a compensar el costo de cargar JavaScript haciendo que los scripts se descarguen asíncronamente (usando el atributo `async`), este atributo sólo detiene el analizador de HTML durante las fases de análisis y ejecución de JavaScript y no durante la de descarga, o diferidamente (usando el atributo `defer`), este atributo no detiene al analizador de HTML nunca. Ambos atributos solo pueden aplicarse a scripts externos, no se pueden aplicar a scripts _inline_.
+Podemos comenzar a compensar el costo de cargar JavaScript haciendo que los scripts se descarguen asíncronamente (usando el atributo `async`), este atributo sólo detiene el analizador de HTML durante las fases de análisis y ejecución de JavaScript y no durante la de descarga, o diferidamente (usando el atributo `defer`), este atributo no detiene al analizador de HTML nunca. Ambos atributos sólo pueden aplicarse a scripts externos, no se pueden aplicar a scripts _inline_.
 
 En móviles, los scripts externos representan el 59.0% de todos los scripts encontrados.
 
 <p class="note">
-  Como nota, cuando hablamos anteriormente acerca de cuanto JavaScript es cargado en una página, ese total no tomaba en cuenta el tamaño de los scripts _inline_. Debido a que son parte del documento HTML, se cuentan como parte del tamaño de marcado. Esto significa que cargamos aún más scripts de lo que los números muestran.
+  Como nota, cuando hablamos anteriormente acerca de cuánto JavaScript es cargado en una página, ese total no tomaba en cuenta el tamaño de los scripts _inline_. Debido a que son parte del documento HTML, se cuentan como parte del tamaño de marcado. Esto significa que cargamos aún más scripts de lo que los números muestran.
 </p>
 
 {{ figure_markup(
@@ -212,7 +212,7 @@ En móviles, los scripts externos representan el 59.0% de todos los scripts enco
   sql_file="breakdown_of_scripts_using_async_defer_module_nomodule.sql"
 ) }}
 
-De los scripts externos, solo el 12.2% son cargados con el atributo `async` y 6.0% son cargados con el atributo `defer`.
+De los scripts externos, sólo el 12.2% son cargados con el atributo `async` y 6.0% son cargados con el atributo `defer`.
 
 {{ figure_markup(
   image="async-defer-mobile.png",
@@ -223,11 +223,11 @@ De los scripts externos, solo el 12.2% son cargados con el atributo `async` y 6.
   sql_file="breakdown_of_scripts_using_async_defer_module_nomodule.sql"
 ) }}
 
-Tomando en consideración que `defer` provee el mejor desempeño al cargar (ya que se asegura que la descarga del script ocurre en paralelo a otras tareas y la execución se realiza hasta después de que la página pueda ser mostrada), desearíamos que el porcentaje de uso fuera mayor. De hecho, el 6.0% anterior esta un poco inflado.
+Tomando en consideración que `defer` provee el mejor desempeño al cargar (ya que se asegura que la descarga del script ocurre en paralelo a otras tareas y la ejecución se realiza hasta después de que la página pueda ser mostrada), desearíamos que el porcentaje de uso fuera mayor. De hecho, el 6.0% anterior está un poco inflado.
 
 Cuando el soporte para IE8 e IE9 era más común, era relativamente común usar _ambos atributos_. Cuando ambos están presentes, cualquier navegador que soporte ambos usará `async`. IE8 e IE9 no soportan `async` entonces usarán `defer`.
 
-En días recientes, este patrón no es necesario para la mayoría de los sitios y cualquier script cargado con este patrón interrumpirá al analizador de HTML cuando debe ser ejecutado, en lugar de diferir hasta que la página haya cargado. Este patrón tiene un uso soprendentement frecuente, 11.4% de las páginas móviles tienen al menos un script con este patrón. En otras palabras, al menos una parte del 6% de scripts que usan `defer` no están obteniendo los beneficios del atributo `defer`.
+En días recientes, este patrón no es necesario para la mayoría de los sitios y cualquier script cargado con este patrón interrumpirá al analizador de HTML cuando debe ser ejecutado, en lugar de diferir hasta que la página haya cargado. Este patrón tiene un uso sorprendentemente frecuente, 11.4% de las páginas móviles tienen al menos un script con este patrón. En otras palabras, al menos una parte del 6% de scripts que usan `defer` no están obteniendo los beneficios del atributo `defer`.
 
 Pero hay una historia alentadora sobre esto.
 
@@ -247,7 +247,7 @@ Globalmente, 16.7% de las páginas móviles usa al menos uno de estos dos _resou
 
 De ese 16.7%, casi todo el uso viene de usar `preload`. Mientras que el 16.6% de las páginas móviles usa al menos un _hint_ de preload para cargar JavaScript, sólo el 0.4% de las páginas móviles usan al menos un _hint_ de `prefetch`.
 
-Existe un riesgo, en particular con `preload`, al usar demasiados _hints_ pues se reduce su eficacia, así que vale la pena analizar las páginas que usan estos _hints_ para ver cuantos usan.
+Existe un riesgo, en particular con `preload`, al usar demasiados _hints_ pues se reduce su eficacia, así que vale la pena analizar las páginas que usan estos _hints_ para ver cuántos usan.
 
 {{ figure_markup(
   image="prefetch-distribution.png",
@@ -273,7 +273,7 @@ En la mediana, las páginas que usan _hints_ de `prefetch` para cargar JavaScrip
 
 Al igual que con otros recursos basados en texto en la web, podemos ahorrar una cantidad significativa de bytes a través de minimización y compresión. Ninguna de estas optimizaciones son nuevas, llevan siendo usadas por mucho tiempo, así que deberíamos verlas usadas frecuentemente.
 
-Una de las auditorías en _[Lighthouse](./methodology#lighthouse)_ revisa si el JavaScript no ha sido minimizado y provee una calificación (0.00 siendo la mínima calificación y 1.00 siendo la máxima) basado en lo que encuentra.
+Una de las auditorías en [Lighthouse](./methodology#lighthouse) revisa si el JavaScript no ha sido minimizado y provee una calificación (0.00 siendo la mínima calificación y 1.00 siendo la máxima) basado en lo que encuentra.
 
 {{ figure_markup(
   image="lighthouse-unminified-js.png",
@@ -284,11 +284,11 @@ Una de las auditorías en _[Lighthouse](./methodology#lighthouse)_ revisa si el 
   sql_file="lighthouse_unminified_js.sql"
 ) }}
 
-La gráfica anterior muestra que la mayor parte de las páginas evaludadas (77%) tienen una calificación de 0.90 o superior, lo que significa que pocos scripts sin minización han sido encontrados.
+La gráfica anterior muestra que la mayor parte de las páginas evaluadas (77%) tienen una calificación de 0.90 o superior, lo que significa que pocos scripts sin minimización han sido encontrados.
 
 En general, sólo el 4.5% de las peticiones de JavaScript medidas no están minimizadas.
 
-Algo interesante es que, si bien hemos sido quisquillosos con las peticiones a terceros, esta es un área donde los scripts de terceros tienen un mejor resultado que los scripts propios. En la página móvil promedio, el 82% de los bytes de JavaScript sin minimizar vienen de código propio.
+Algo interesante es que, si bien hemos sido quisquillosos con las peticiones a terceros, esta es un área donde los scripts de terceros tienen un mejor resultado que los propios. En la página móvil promedio, el 82% de los bytes de JavaScript sin minimizar vienen de código propio.
 
 {{ figure_markup(
   image="lighthouse-unminified-js-by-3p.png",
@@ -312,7 +312,7 @@ Minimizar los scripts es una buena manera de reducir el tamaño de los archivos,
   sql_file="compression_method.sql"
 ) }}
 
-85% de todas las peticiones de JavaScript usan algún tipo de compresion. Gzip ocupa la mayoría de ese porcentaje, con 65% de los scripts siendo comprimidos usando Gzip en comparación a un 20% para Brotli (br). Mientras que el porcentaje de Brotli (qué es más efectivo que Gzip) es bajo tomando en cuenta el soporte que tiene en los navegadores, la tendencia va en la dirección correcta, pues subió 5 puntos porcentuales comparado con el año pasado.
+85% de todas las peticiones de JavaScript usan algún tipo de compresión. Gzip ocupa la mayoría de ese porcentaje, con 65% de los scripts siendo comprimidos usando Gzip en comparación a un 20% para Brotli (br). Mientras que el porcentaje de Brotli (qué es más efectivo que Gzip) es bajo tomando en cuenta el soporte que tiene en los navegadores, la tendencia va en la dirección correcta, pues subió 5 puntos porcentuales comparado con el año pasado.
 
 Una vez más, esta parece ser un área donde los scripts de terceros están haciendo un mejor trabajo que los propios. Si hacemos la comparativa entre los métodos de compresión entre scripts propios y de terceros, podemos ver que el 24% de los scripts de terceros son comprimidos usando Brotli en comparación con un 15% en scripts propios.
 
@@ -337,19 +337,19 @@ Vale la pena ver más de cerca a los scripts que _no_ usan compresión. La compr
   sql_file="compression_none_by_bytes.sql"
 ) }}
 
-Por fortuna, eso es exactamente lo que podemos observar, en paricular para los scripts de terceros donde el 90% de los scripts sin comprimir tiene un tamaño menor a 5 KB. Por otro lado, 49% de los scripts propios son de menos de 5 KB y 37% de los scripts propios sin comprimir son de más de 10 KB. Así que mientras que si vemos una gran cantidad de scripts propios pequeños sin comprimir, aún existen muchos que podrían beneficiarse de la compresión.
+Por fortuna, eso es exactamente lo que podemos observar, en particular para los scripts de terceros donde el 90% de los scripts sin comprimir tiene un tamaño menor a 5 KB. Por otro lado, 49% de los scripts propios son de menos de 5 KB y 37% de los scripts propios sin comprimir son de más de 10 KB. Así que mientras que si vemos una gran cantidad de scripts propios pequeños sin comprimir, aún existen muchos que podrían beneficiarse de la compresión.
 
 ## ¿Qué usamos?
 
 Mientras usamos cada vez más JavaScript para crear nuestros sitios y aplicaciones también se ha incrementado la demanda por librerías y _frameworks open source_ que ayuden a mejorar la productividad de los desarrolladores y hacer más mantenible el código. Los sitios que _no_ usan una de estas librerías son una minoría, solamente jQuery se encuentra en el 85% de las páginas móviles medidas por el HTTP Archive.
 
-Es importante que seamos críticos acerca de las herramientas que usamos al construir la web y cuales son sus pros y contras. Por lo que tiene sentido analizar más de cerca qué usamos hoy en día.
+Es importante que seamos críticos acerca de las herramientas que usamos al construir la web y cuáles son sus pros y contras. Por lo que tiene sentido analizar más de cerca qué usamos hoy en día.
 
 ### Librerías
 
 El HTTP Archive usa [Wappalyzer](./methodology#wappalyzer) para detectar las tecnologías usadas en una página. Wappalyzer revisa tanto las librerías de JavaScript (estas son una colección de fragmentos de código y funciones útiles para hacer facilitar el desarrollo como jQuery) y _frameworks_ de JavaScript (estos son más _scaffolding_ y proveen plantillas y estructuras como React).
 
-Las librerías más populares no cambiaron mucho respecto al año pasado, con jQuery manteniendo un dominio en el uso y sólo una de las librerías en el top 21 bajando posiciones (lazy,js siendo reemplazado por DataTables). De hecho, el porcentaje de las librerías más comunes prácticamente no cambio con respecto al año pasado.
+Las librerías más populares no cambiaron mucho respecto al año pasado, con jQuery manteniendo un dominio en el uso y sólo una de las librerías en el top 21 bajando posiciones (lazy,js siendo reemplazado por DataTables). De hecho, el porcentaje de las librerías más comunes prácticamente no cambió con respecto al año pasado.
 
 {{ figure_markup(
   image="frameworks-libraries.png",
@@ -363,7 +363,7 @@ Las librerías más populares no cambiaron mucho respecto al año pasado, con jQ
 El año pasado [Houssein listó algunas de las razones por las cuales la dominación de jQuery continúa](../2019/javascript#open-source-libraries-and-frameworks):
 
 > WordPress, que es usado en más del 30% de los sitios e incluye jQuery por defecto.
-> Migrar de jQuery a una librería del lado del cliente más nueva puede tomar tiempo dependiendo de que tan grande es la aplicación y muchos sitios consisten de jQuery en conjunto con alguna librería más nueva.
+> Migrar de jQuery a una librería del lado del cliente más nueva puede tomar tiempo dependiendo de qué tan grande es la aplicación y muchos sitios consisten de jQuery en conjunto con alguna librería más nueva.
 
 Ambas son suposiciones bastante sólidas y parece que la situación no ha cambiado mucho en ninguno de los casos.
 
@@ -505,7 +505,7 @@ Cuando observamos las combinaciones más comunes en producción, la mayoría son
   </figcaption>
 </figure>
 
-Tambien podemos ver una cantidad relativamente alta de _frameworks_ "modernos" como React, Vue y Angular usados en conjunto con jQuery, por ejemplo como resultado de una migración o inclusión por terceros.
+También podemos ver una cantidad relativamente alta de _frameworks_ "modernos" como React, Vue y Angular usados en conjunto con jQuery, por ejemplo como resultado de una migración o inclusión por terceros.
 
 <figure>
   <table>
@@ -579,12 +579,12 @@ Es más importante notar que todas estas herramientas usualmente derivan en más
 
 Revisando específicamente los _frameworks_ en uso, vemos que la mediana de bytes de JavaScript por páginas usándolos varía dramáticamente dependiendo de _qué_ está siendo usado.
 
-La gráfica sigueiente muestra la mediana de bytes por páginas donde cualquiera de los 35 frameworks más comunes fueron encontrados dividido por tipo de cliente.
+La gráfica siguiente muestra la mediana de bytes por páginas donde cualquiera de los 35 frameworks más comunes fueron encontrados divididos por tipo de cliente.
 
 {{ figure_markup(
   image="frameworks-bytes.png",
   caption="La mediana de kilobytes de JavaScript por página por framework de JavaScript.",
-  description="Gráfica de barras mostrando la mediana de kilobytes de JavaScript por página dividida y ordenada por popularidad de los frameworks de JavaScript. El framework más popular, React, tiene una mediana de 1,328 en páginas móviles. Otros frameworks como RequireJS y Angular tienen números altos de bytes de JS por página. Páginas con MooTools, Prototype, AMP, RightJS, Alpine.js y Svelte tienen medianas de menos de 500KB por página móvil. Ember.js es un caso aparte con alrededor de 1,800 KB de JS por página móvil.",
+  description="Gráfica de barras mostrando la mediana de kilobytes de JavaScript por página dividida y ordenada por popularidad de los frameworks de JavaScript. El framework más popular, React, tiene una mediana de 1,328 en páginas móviles. Otros frameworks como RequireJS y Angular tienen números altos de bytes de JS por página. Páginas con MooTools, Prototype, AMP, RightJS, Alpine.js y Svelte tienen medianas de menos de 500 KB por página móvil. Ember.js es un caso aparte con alrededor de 1,800 KB de JS por página móvil.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRn1IaMxnTl0jhdC-C-vC5VLN_boJfLAaOfGJ968IalK1vPc8-dz0OkVmNY0LjMxZ6BIwSRB7xtRmIE/pubchart?oid=955720480&format=interactive",
   sheets_gid="1206934500",
   width="600",
@@ -592,7 +592,7 @@ La gráfica sigueiente muestra la mediana de bytes por páginas donde cualquiera
   sql_file="frameworks-bytes-by-framework.sql"
 ) }}
 
-En un lado del espectro están _frameworks_ como React, Angular o Ember, que tienden a resultar en mucho código sin importar el cliente. Por otro lado, observamos que _frameworks_ minimalistas como Alpine.js y Svelte muestran resultados muy prometedores. La configuracíón por defecto es muy importante, y parece ser que, al empezar con una base con un alto desempeño, Svelte y Alpine están teniendo éxito (hasta ahora&hellip; la muestra es bastante pequeña) en crear páginas más ligeras.
+En un lado del espectro están _frameworks_ como React, Angular o Ember, que tienden a resultar en mucho código sin importar el cliente. Por otro lado, observamos que _frameworks_ minimalistas como Alpine.js y Svelte muestran resultados muy prometedores. La configuración por defecto es muy importante, y parece ser que, al empezar con una base con un alto desempeño, Svelte y Alpine están teniendo éxito (hasta ahora&hellip; la muestra es bastante pequeña) en crear páginas más ligeras.
 
 La situación es muy similar cuando tomamos un vistazo al tiempo de ejecución del hilo principal para páginas donde estas herramientas fueron detectadas.
 
@@ -616,7 +616,7 @@ El tiempo de ejecución del hilo principal de Ember destaca tanto que distorsion
   sql_file="main_thread_time_frameworks.sql"
 ) }}
 
-Herramientas como React, GSAP y RequireJS tiended a ocupar mucho del tiempo de ejecución del hilo principal del browser, sin importar si es una página de escritorio o móvil. Las mismas herramientas que dan como resultado una menor cantidad de código—herramientas como Alpine o Svelte—también tienden a tener un menor impacto en el hilo principal.
+Herramientas como React, GSAP y RequireJS tienden a ocupar mucho del tiempo de ejecución del hilo principal del browser, sin importar si es una página de escritorio o móvil. Las mismas herramientas que dan como resultado una menor cantidad de código—herramientas como Alpine o Svelte—también tienden a tener un menor impacto en el hilo principal.
 
 También vale la pena indagar en el intervalo que existe entre la experiencia que un _framework_ provee en escritorio y móvil. El tráfico de dispositivos móviles cada vez se vuelve más dominante y es crítico que nuestras herramientas se desempeñen tan bien como sea posible en móviles. Una gran diferencia en el desempeño en móviles de un _framework_ es una gran alerta roja.
 
@@ -655,7 +655,7 @@ Un sitio de escritorio en la mediana pasa 891 ms en lo que el navegador ejecuta 
 
 ### La correlación entre el uso de JavaScript y la calificación de Lighthouse
 
-Una manera de ver como todo esto se traduce en un impacto en la experiencia de usuario es intentar encontrar una correlación entre algunas de las métricas de JavaScript que identificamos anteriomente con las calificaciones de Lighthouse para diferentes métricas y categorías.
+Una manera de ver cómo todo esto se traduce en un impacto en la experiencia de usuario es intentar encontrar una correlación entre algunas de las métricas de JavaScript que identificamos anteriormente con las calificaciones de Lighthouse para diferentes métricas y categorías.
 
 {{ figure_markup(
   image="correlations.png",
@@ -666,13 +666,13 @@ Una manera de ver como todo esto se traduce en un impacto en la experiencia de u
   sql_file="correlations.sql"
 ) }}
 
-La gráfica anterior utiliza el [coeficiente de correlación de Pearson](https://es.wikipedia.org/wiki/Coeficiente_de_correlaci%C3%B3n_de_Pearson). Hay una larga y relativamente compleja explicación de lo que eso significa, pero en pocas palabras significa que estamos buscando el grado de correlación entre dos números diferentes. Si encontramos un coeficiente de 1.00, tenemos una correlación directa positiva. Una correlación de 0.00 mostraría que no hay conexión entre ambos números. Cualquier cosa menor a 0.00 idica que hay una correlación negativa—en otras palabras, si un número aumenta el otro disminuye.
+La gráfica anterior utiliza el [coeficiente de correlación de Pearson](https://es.wikipedia.org/wiki/Coeficiente_de_correlaci%C3%B3n_de_Pearson). Hay una larga y relativamente compleja explicación de lo que eso significa, pero en pocas palabras significa que estamos buscando el grado de correlación entre dos números diferentes. Si encontramos un coeficiente de 1.00, tenemos una correlación directa positiva. Una correlación de 0.00 mostraría que no hay conexión entre ambos números. Cualquier cosa menor a 0.00 indica que hay una correlación negativa—en otras palabras, si un número aumenta el otro disminuye.
 
-Para empezar, no parece haber una correlación medible entre nuestras métricas de JavaScript y la calificación de accessibilidad de Lighthouse ("LH A11y" en la gráfica). Esto es completamente opuesto a lo que se encontró en otros estudios, especialmente en el <a hreflang="en" href="https://webaim.org/projects/million/#frameworks">estudio anual de WebAIM</a>.
+Para empezar, no parece haber una correlación medible entre nuestras métricas de JavaScript y la calificación de accesibilidad de Lighthouse ("LH A11y" en la gráfica). Esto es completamente opuesto a lo que se encontró en otros estudios, especialmente en el <a hreflang="en" href="https://webaim.org/projects/million/#frameworks">estudio anual de WebAIM</a>.
 
 La explicación más probable para esto es que las pruebas de accesibilidad de Lighthouse (aún) no son tan completas comparadas con otras herramientas enfocadas en accesibilidad, como WebAIM.
 
-Donde si vemos una correlación fuerte es entre la cantidad de bytes de JavaScript ("Bytes") y tanto la calificación general de desempeño de Lighthouse ("LH Perf") como el Tiempo Total de Bloqueo ("TBT").
+Donde sí vemos una correlación fuerte es entre la cantidad de bytes de JavaScript ("Bytes") y tanto la calificación general de desempeño de Lighthouse ("LH Perf") como el Tiempo Total de Bloqueo ("TBT").
 
 La correlación entre los bytes de JavaScript y las calificaciones de desempeño de Lighthouse es de -0.47. En otras palabras, mientras la cantidad de bytes de JS aumenta, la calificación de Lighthouse de desempeño disminuye. La cantidad total de bytes tiene una correlación más fuerte que la cantidad de bytes de terceros ("3P bytes"), lo cual sugiere que si bien los scripts de terceros fungen un rol, no podemos echarles toda la culpa a ellos.
 
@@ -692,7 +692,7 @@ Otra auditoría útil que Lighthouse corre es revisar si existen vulnerabilidade
 
 De acuerdo a la auditoría, 83.5% de las páginas móviles usan una librería o _framework_ con al menos una vulnerabilidad de seguridad conocida.
 
-Esto es a lo que llamamos el efecto jQuery. Anteriormente vismo como jQuery es usado en un 83% de las páginas. Múltiples versiones viejas de jQuery contienen vulnerabilidades conocidas, lo cual constituye la vasta mayoría de las vulnerabilidades que esta auditoría revisó.
+Esto es a lo que llamamos el efecto jQuery. Anteriormente vimos como jQuery es usado en un 83% de las páginas. Múltiples versiones viejas de jQuery contienen vulnerabilidades conocidas, lo cual constituye la vasta mayoría de las vulnerabilidades que esta auditoría revisó.
 
 De las casi 5 millones de páginas móviles que fueron probadas, 81% de ellas contiene una versión vulnerable de jQuery—una delantera considerable contra la segunda librería vulnerable más común—jQuery UI con un 15.6%.
 
@@ -770,8 +770,8 @@ La mayor parte de las vulnerabilidades encontradas cae en la categoría de sever
 
 ## Conclusión
 
-La popularidad de JavaScript está aumentando contínuamente y eso tiene muchos lados positivos. Es increíble considerar todo lo que podemos lograr con la web de hoy gracias a JavaScript que, hasta hace unos años, sería inimaginable.
+La popularidad de JavaScript está aumentando continuamente y eso tiene muchos lados positivos. Es increíble considerar todo lo que podemos lograr con la web de hoy gracias a JavaScript que, hasta hace unos años, sería inimaginable.
 
 Pero es claro que también debemos andar con cuidado. La cantidad de JavaScript aumenta de manera consistente cada año (si el mercado accionario fuera así de predecible todos seríamos increíblemente ricos) y eso tiene sus contras. Mayores cantidades de JavaScript están conectadas a un incremento en el tiempo de procesamiento lo cual afecta negativamente métricas clave como el Tiempo Total de Bloqueo. Y, si descuidamos todas esas librerías sin actualizarlas, corremos el riesgo de exponer a los usuarios a vulnerabilidades de seguridad conocidas.
 
-Nuestras mejores apuestas para asegurar que construyamos una web accesible, con buen desempeño y segura son medir cuidadosamente el costo de los scripts que agregamos a nuestras páginas y estas dispuestos a ver con un ojo crítico a las herramientas que usamos y pedirles que sean mejores.
+Nuestras mejores apuestas para asegurar que construyamos una web accesible, con buen desempeño y segura son medir cuidadosamente el costo de los scripts que agregamos a nuestras páginas y estar dispuestos a ver con un ojo crítico a las herramientas que usamos y pedirles que sean mejores.
