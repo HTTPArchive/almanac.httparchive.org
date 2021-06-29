@@ -233,7 +233,16 @@
       "website": "https://AhmadAwais.com",
       "github": "ahmadawais",
       "twitter": "MrAhmadAwais"
-    } ,
+    },
+    "alangdm": {
+      "name": "Alan Dávalos",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/6799159?v=4&s=200",
+      "github": "alangdm",
+      "twitter": "AlanGDavalos"
+    },
     "alankent": {
       "name": "Alan Kent",
       "teams": [
