@@ -8,3 +8,9 @@
 
   Analysts: if helpful, you can use this README to give additional info about the queries.
 -->
+
+Resources:
+
+- [Planning doc](https://docs.google.com/document/d/1x7iV0Tv3hxaruwlNHdhduPpzwZc9dnqMOZW1q9nGKjI/edit)
+- [2020 chapter](https://almanac.httparchive.org/en/2020/markup)
+- [2019 chapter](https://almanac.httparchive.org/en/2019/markup)
