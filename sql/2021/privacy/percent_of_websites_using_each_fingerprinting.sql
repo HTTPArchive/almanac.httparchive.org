@@ -1,5 +1,5 @@
 #standardSQL
-# Percent of websites using a specific CMP (Based on wappalyzer 'Cookie compliance' category)
+# Percent of websites using a fingerprinting library (Based on wappalyzer 'Browser fingerprinting' category)
 # Alternatively, `core_web_vitals.technologies` could be used, but then we do not have
 #  access to the total number of websites
 
@@ -7,36 +7,36 @@ WITH apps AS (
   SELECT
     _TABLE_SUFFIX AS client,
     url,
-    IF(category = "Cookie compliance", app, "") AS cmp_app
+    IF(category = "Browser fingerprinting", app, "") AS fingerprinting_app
   FROM `httparchive.technologies.2021_08_01_*`
   GROUP BY
     client,
     url,
-    cmp_app
+    fingerprinting_app
 ), base AS (
   SELECT
     client,
     url,
-    cmp_app,
+    fingerprinting_app,
     COUNT(DISTINCT url) OVER (PARTITION BY client) AS total_pages,
-    COUNT(DISTINCT url) / COUNT(DISTINCT url) OVER () AS pct_pages_with_cmp,
+    COUNT(DISTINCT url) / COUNT(DISTINCT url) OVER () AS pct_pages_with_fingerprinting,
   FROM
     apps
   GROUP BY
     client,
     url,
-    cmp_app
+    fingerprinting_app
 )
 
 SELECT
   client,
-  cmp_app,
+  fingerprinting_app,
   ANY_VALUE(total_pages) AS total_pages,
-  COUNT(DISTINCT url) / ANY_VALUE(total_pages) AS pct_pages_with_cmp,
+  COUNT(DISTINCT url) / ANY_VALUE(total_pages) AS pct_pages_with_fingerprinting,
 FROM
   base
 WHERE
-  cmp_app != ""
+  fingerprinting_app != ""
 GROUP BY
   client,
-  cmp_app
+  fingerprinting_app
