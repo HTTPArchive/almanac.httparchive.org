@@ -12,11 +12,11 @@ WITH pages_privacy AS (
 , pages_iab_usp AS (
   SELECT 
     client, 
-    JSON_EXTRACT(metrics, "$.iab_usp.privacy_string") AS metrics
+    JSON_QUERY(metrics, "$.iab_usp.privacy_string") AS metrics
   FROM
     pages_privacy
   WHERE 
-    JSON_EXTRACT(metrics, "$.iab_usp.privacy_string") is not null
+    JSON_QUERY(metrics, "$.iab_usp.privacy_string") is not null
 )
 
 SELECT 

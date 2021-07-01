@@ -15,11 +15,11 @@ WITH pages_privacy AS (
 , pages_iab_tcf_v2 AS (
   SELECT 
     client, 
-    JSON_EXTRACT(metrics, "$.iab_tcf_v2.data") AS metrics
+    JSON_QUERY(metrics, "$.iab_tcf_v2.data") AS metrics
   FROM
     pages_privacy
   WHERE 
-    JSON_EXTRACT(metrics, "$.iab_tcf_v2.data") is not null
+    JSON_QUERY(metrics, "$.iab_tcf_v2.data") is not null
 )
 
 SELECT 
