@@ -23,7 +23,7 @@ WITH request_headers AS (
     _TABLE_SUFFIX AS client,
     page,
     NET.REG_DOMAIN(url) AS domain,
-    cookieNames(JSON_EXTRACT(payload, '$.response.headers')) AS cookie_names,
+    cookieNames(JSON_QUERY(payload, '$.response.headers')) AS cookie_names,
     COUNT(0) OVER (PARTITION BY _TABLE_SUFFIX) AS websites_per_client
   FROM
     `httparchive.sample_data.requests_desktop_*` #requests.2021_05_01_*

@@ -4,7 +4,7 @@
 WITH pages_privacy AS (
   SELECT
     _TABLE_SUFFIX AS client,
-    JSON_EXTRACT_SCALAR(payload, "$._privacy") AS metrics
+    JSON_VALUE(payload, "$._privacy") AS metrics
   FROM
     `httparchive.pages.2021_08_01_*`
 )
@@ -20,14 +20,14 @@ FROM (
   SELECT 
     client,
     COUNT(0) AS nb_websites,
-    COUNTIF(JSON_EXTRACT_SCALAR(metrics, "$.iab_tcf_v1") = 1) AS nb_websites_with_iab_tcf_v1,
-    COUNTIF(JSON_EXTRACT(metrics, "$.iab_tcf_v2") is not null) AS nb_websites_with_iab_tcf_v2,
-    COUNTIF((JSON_EXTRACT_SCALAR(metrics, "$.iab_tcf_v1") = 1) OR 
-            (JSON_EXTRACT(metrics, "$.iab_tcf_v2") is not null)) AS nb_websites_with_iab_tcf_any,
-    COUNTIF(JSON_EXTRACT(metrics, "$.iab_usp") is not null) AS nb_websites_with_iab_usp,
-    COUNTIF((JSON_EXTRACT_SCALAR(metrics, "$.iab_tcf_v1") = 1) OR 
-            (JSON_EXTRACT(metrics, "$.iab_tcf_v2") is not null) OR 
-            (JSON_EXTRACT(metrics, "$.iab_usp") is not null)) AS nb_websites_with_iab_any,
+    COUNTIF(JSON_VALUE(metrics, "$.iab_tcf_v1.present") = "true") AS nb_websites_with_iab_tcf_v1,
+    COUNTIF(JSON_VALUE(metrics, "$.iab_tcf_v2.present") = "true") AS nb_websites_with_iab_tcf_v2,
+    COUNTIF(JSON_VALUE(metrics, "$.iab_tcf_v1.present") = "true" OR 
+            JSON_VALUE(metrics, "$.iab_tcf_v2.present") = "true") AS nb_websites_with_iab_tcf_any,
+    COUNTIF(JSON_VALUE(metrics, "$.iab_usp.present") = "true") AS nb_websites_with_iab_usp,
+    COUNTIF(JSON_VALUE(metrics, "$.iab_tcf_v1.present") = "true" OR 
+            JSON_VALUE(metrics, "$.iab_tcf_v2.present") = "true" OR
+            JSON_VALUE(metrics, "$.iab_usp.present") = "true") AS nb_websites_with_iab_any,
   FROM
     pages_privacy
   GROUP BY

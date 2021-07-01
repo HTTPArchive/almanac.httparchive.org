@@ -5,28 +5,28 @@
 WITH pages_privacy AS (
   SELECT
     _TABLE_SUFFIX AS client,
-    JSON_EXTRACT_SCALAR(payload, "$._privacy") AS metrics
+    JSON_VALUE(payload, "$._privacy") AS metrics
   FROM
     `httparchive.pages.2021_08_01_*`
 )
 , pages_iab_usp AS (
   SELECT 
     client, 
-    JSON_EXTRACT(metrics, "$.iab_usp") AS metrics
+    JSON_EXTRACT(metrics, "$.iab_usp.privacy_string") AS metrics
   FROM
     pages_privacy
   WHERE 
-    JSON_EXTRACT(metrics, "$.iab_usp") is not null
+    JSON_EXTRACT(metrics, "$.iab_usp.privacy_string") is not null
 )
 
 SELECT 
   client,
-  JSON_EXTRACT_SCALAR(metrics, '$.uspString') uspString,
+  JSON_VALUE(metrics, '$.uspString') uspString,
   COUNT(0) AS nb_websites,
   COUNT(0) / (SELECT COUNT(0) FROM pages_iab_usp) pct_websites
 FROM
   pages_iab_usp
 WHERE
-  JSON_EXTRACT_SCALAR(metrics, '$.uspString') is not null
+  JSON_VALUE(metrics, '$.uspString') is not null
 GROUP BY
   1, 2
