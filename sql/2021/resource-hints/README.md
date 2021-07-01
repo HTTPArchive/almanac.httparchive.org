@@ -13,5 +13,5 @@ Resources:
 
 - [Planning doc](https://docs.google.com/document/d/1zIKdkS65X9u3rGZOn1kG0rk9YveFb0zhdORBFOoIgQQ/edit?usp=sharing)
 - [2019 chapter](https://almanac.httparchive.org/en/2019/resource-hints)
-- [2018 chapter](https://almanac.httparchive.org/en/2018/resource-hints)
+- [2020 chapter](https://almanac.httparchive.org/en/2020/resource-hints)
 
