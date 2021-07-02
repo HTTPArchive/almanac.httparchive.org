@@ -35,12 +35,12 @@ with open("data_breaches_pwned_websites_per_class_and_date.csv", "w") as of1:
         for data_class in total_nb_affected_accounts_per_data_class_and_date:
             for breach_date in total_nb_affected_accounts_per_data_class_and_date[data_class]:
                 csvw_cd.writerow([
-                    data_class, 
-                    breach_date, 
+                    data_class,
+                    breach_date,
                     total_nb_affected_accounts_per_data_class_and_date[data_class][breach_date]
                 ])
             csvw_c.writerow([
-                data_class, 
+                data_class,
                 sum(total_nb_affected_accounts_per_data_class_and_date[data_class].values())
             ])
 with open("data_breaches_pwned_websites_sensitive_breaches_per_date.csv", "w") as of3:
