@@ -620,7 +620,6 @@ Herramientas como React, GSAP y RequireJS tienden a ocupar mucho del tiempo de e
 
 También vale la pena indagar en el intervalo que existe entre la experiencia que un _framework_ provee en escritorio y móvil. El tráfico de dispositivos móviles cada vez se vuelve más dominante y es crítico que nuestras herramientas se desempeñen tan bien como sea posible en móviles. Una gran diferencia en el desempeño en móviles de un _framework_ es una gran alerta roja.
 
-
 {{ figure_markup(
   image="frameworks-main-thread-no-ember-diff.png",
   caption="Diferencia entre la mediana del tiempo de ejecución del hilo principal por página por framework de JavaScript, sin contar Ember.js.",
@@ -759,6 +758,7 @@ De las casi 5 millones de páginas móviles que fueron probadas, 81% de ellas co
 En otras palabras, si podemos hacer que se haga una migración de esas versiones viejas y vulnerables de jQuery, veríamos el número de sitios con vulnerabilidades conocidas desplomarse (al menos hasta que encontremos vulnerabilidades en los _frameworks_ más nuevos).
 
 La mayor parte de las vulnerabilidades encontradas cae en la categoría de severidad "media".
+
 {{ figure_markup(
   image="vulnerabilities-by-severity.png",
   caption="Distribución del porcentaje de páginas móviles que tienen vulnerabilidades en JavaScript por severidad.",
