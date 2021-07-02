@@ -2,7 +2,7 @@
 
 # helper to create percent fields
 CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
-  ROUND(SAFE_DIVIDE(freq, total), 4)
+    ROUND(SAFE_DIVIDE(freq, total), 4)
 );
 
 # retruns the number of redundant font downloads
@@ -23,6 +23,11 @@ try {
         // return would be of the form, roboto-regular.woff2
         return filePathParts[filePathParts.length - 1]
     });
+    
+    // only include sites which preload at least one font file
+    if (fontFiles.length === 0) {
+        return -1;
+    }
     
     var fontsWithExt = {} // {"woff2": Set( 'font1', 'font2' ), "ttf": Set( 'font2' )}
     for(var i = 0; i < fontFiles.length; i++) {
@@ -54,7 +59,7 @@ SELECT
     client,
     rd as redundantDownloads,
     count(0) as freq,
-    AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct_m405
+    AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct
 FROM (
     SELECT 
         _TABLE_SUFFIX AS client,
@@ -63,11 +68,10 @@ FROM (
     FROM
         `httparchive.sample_data.pages*`
 )
-# We are only interested in cases when the number of redundant downloads is greater than 0
-WHERE
-    rd > 0 
-AND
-  almanac IS NOT NULL
+WHERE 
+    rd > -1
 GROUP BY
-  client,
-  rd
+    client,
+    rd
+ORDER BY
+    rd DESC

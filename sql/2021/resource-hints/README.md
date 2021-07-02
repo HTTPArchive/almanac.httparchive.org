@@ -15,3 +15,6 @@ Resources:
 - [2019 chapter](https://almanac.httparchive.org/en/2019/resource-hints)
 - [2020 chapter](https://almanac.httparchive.org/en/2020/resource-hints)
 
+## File Naming
+
+File names start with the table being queried. Next is the custom metric if appropriate. Then "by" followed by how the query is grouped. Finally anything more specific needed.
