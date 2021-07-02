@@ -41,8 +41,8 @@
   },
   "/static/js/web-vitals.js": {
     "date_published": "2020-11-13T00:00:00.000Z",
-    "date_modified": "2021-06-04T00:00:00.000Z",
-    "hash": "d4fcd756958a7d4371c37fe1e400dcee"
+    "date_modified": "2021-07-02T00:00:00.000Z",
+    "hash": "12282d9f0577af53119267cc8d81dc64"
   },
   "/static/pdfs/web_almanac_2019_en.pdf": {
     "date_published": "2020-05-15T00:00:00.000Z",
@@ -559,6 +559,11 @@
     "date_published": "2021-01-03T00:00:00.000Z",
     "date_modified": "2021-06-07T00:00:00.000Z",
     "hash": "6aaa51188b6f2ffa0b2c7fe42558913e"
+  },
+  "es/2020/chapters/javascript.html": {
+    "date_published": "2021-07-02T00:00:00.000Z",
+    "date_modified": "2021-07-02T00:00:00.000Z",
+    "hash": "43ee70a9515625b575fc0d9ca2dbc2e7"
   },
   "es/2020/chapters/seo.html": {
     "date_published": "2021-06-25T00:00:00.000Z",

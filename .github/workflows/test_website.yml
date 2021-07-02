@@ -9,6 +9,8 @@ name: Test Website
 on:
   workflow_dispatch:
   pull_request:
+    paths-ignore:
+      - 'sql/**'
 jobs:
   build:
     name: Build and Test Website
@@ -21,7 +23,7 @@ jobs:
         # Full git history is needed to get a proper list of changed files within `super-linter`
         fetch-depth: 0
     - name: Setup Node.js for use with actions
-      uses: actions/setup-node@v2.1.5
+      uses: actions/setup-node@v2.2.0
       with:
         node-version:  '15'
     - name: Set up Python 3.8
