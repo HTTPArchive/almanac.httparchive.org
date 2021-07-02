@@ -65,7 +65,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
       {{ self.explore_the_results() }}
     </a>
   </h2>
-  <a class="alt btn" href="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}">
+  <a class="alt btn" hreflang="en" href="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}">
     <svg width="18" height="18" role="img" aria-labelledby="discuss-this-chapter">
       <title id="discuss-this-chapter">{{ self.discuss_this_chapter() }}:</title>
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#comment"></use>
@@ -73,25 +73,25 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
     <span class="num_comments">{{ self.comments_fallback() }}</span> <span data-translation class="comment-singular">{{ self.comment() }}</span>
     <span data-translation class="comment-plural">{{ self.comments() }}</span>
   </a>
-  <a class="alt btn" href="{{ metadata.get('results') }}">
+  <a class="alt btn" hreflang="en" href="{{ metadata.get('results') }}">
     <svg width="18" height="18" role="img" aria-hidden="true">
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bar-chart"></use>
     </svg>
     {{ self.results() }}
   </a>
-  <a class="alt btn" href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/{{ year }}/{{ metadata.get('chapter')  }}/">
+  <a class="alt btn" hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/{{ year }}/{{ metadata.get('chapter')  }}/">
     <svg width="18" height="18" role="img" aria-hidden="true">
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sql"></use>
     </svg>
     {{ self.queries() }}
   </a>
-  <a class="alt btn" href="https://github.com/HTTPArchive/almanac.httparchive.org/issues/new?assignees=&labels=bug%2C+writing&template=2020-content-issue.md&title=Issue+with+the+2020+%5BCHAPTER%5D+chapter">
+  <a class="alt btn" hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/issues/new?assignees=&labels=bug%2C+writing&template=2020-content-issue.md&title=Issue+with+the+2020+%5BCHAPTER%5D+chapter">
     <svg width="18" height="18" role="img" aria-hidden="true">
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
     </svg>
     {{ self.suggest_edit() }}
   </a>
-  <a class="alt btn" href="https://github.com/HTTPArchive/almanac.httparchive.org/issues/923/">
+  <a class="alt btn" hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/issues/923/">
     <svg width="18" height="18" role="img" aria-hidden="true">
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
     </svg>
@@ -330,7 +330,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
             {{ render_authors() }}
         </section>
         <div id="cta-container">
-          <a class="alt btn chapter-cta comment-cta" href="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}">
+          <a class="alt btn chapter-cta comment-cta" hreflang="en" href="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}">
             <svg width="22" height="22" role="img" aria-labelledby="discuss-this-chapter-cta">
               <title id="discuss-this-chapter-cta">{{ self.discuss_this_chapter() }}:</title>
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#comment"></use>
