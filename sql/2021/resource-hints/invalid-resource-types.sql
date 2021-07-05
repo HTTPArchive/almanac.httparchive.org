@@ -19,9 +19,11 @@ try {
       "worker",
       "video",
     ];
+    
     var almanac = JSON.parse(almanac_string);
-    if (Array.isArray(almanac) || typeof almanac != "object") return [];
-    var nodes = almanac["link-nodes"]["nodes"];
+    if (almanac === null || Array.isArray(almanac) || typeof almanac !== "object") return [];
+
+    var nodes = almanac["link-nodes"] ? almanac["link-nodes"]["nodes"] : [];
     nodes = typeof nodes == "string" ? JSON.parse(nodes) : nodes;
 
     var validTypesCnt = 0;
@@ -29,15 +31,15 @@ try {
     var invalidTypes = {};
 
     for (var node of nodes) {
-      if (node["rel"].toLowerCase() === "preload") {
-        if (validResourceTypes.indexOf(node["as"].toLowerCase()) >= 0) {
+      if (node["rel"] && node["rel"].toLowerCase() === "preload") {
+        if (!node["as"]){
+          invalidTypes["missing_as"] = ++invalidTypes["missing_as"] || 1;
+          invalidTypesCnt += 1;
+        }
+        else if (validResourceTypes.indexOf(node["as"].toLowerCase()) >= 0) {
           validTypesCnt += 1;
         } else {
-          if (node["as"].toLowerCase() in invalidTypes) {
-            invalidTypes[node["as"].toLowerCase()] += 1;
-          } else {
-            invalidTypes[node["as"].toLowerCase()] = 1;
-          }
+          invalidTypes[node["as"].toLowerCase()] = ++invalidTypes[node["as"].toLowerCase()] || 1
           invalidTypesCnt += 1;
         }
       }
@@ -55,8 +57,8 @@ try {
       });
     }
     return result;
-} catch {
-    return ["ERROR"]
+} catch (error) {
+    return [{type: "ERROR: " + error, num_occurrences: 1}]
 }
 ''';
 
@@ -71,6 +73,7 @@ FROM
         rd.type,
         rd.num_occurrences
     FROM
+        # `httparchive.sample_data.pages*`,
         `httparchive.pages.2021_06_01_*`,
         UNNEST(getInvalidTypes(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS rd
     WHERE
