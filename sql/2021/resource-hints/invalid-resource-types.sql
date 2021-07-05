@@ -46,8 +46,8 @@ try {
     }
 
     var result = [
-      { type: "validTypesCnt", num_occurrences: validTypesCnt },
-      { type: "invalidTypesCnt", num_occurrences: invalidTypesCnt },
+      { type: "valid", num_occurrences: validTypesCnt },
+      { type: "invalid", num_occurrences: invalidTypesCnt },
     ];
 
     for (var type in invalidTypes) {
