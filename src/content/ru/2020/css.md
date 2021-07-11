@@ -68,14 +68,14 @@ featured_stat_label_3: Самая популярная функция в SCSS
 
 {{ figure_markup(
   caption="Самое большое количество таблиц стилей, загруженных на странице.",
-  content="1,379",
+  content="1 379",
   classes="big-number",
   sheets_gid="1111507751",
   sql_file="stylesheet_count.sql"
 )
 }}
 
-Поразительно, максимальное количество таблиц стилей на странице составляет 26777 элементов `<style>` и 1379 удалённых файлов! Я опредёленно не хочу загружать эту страницу!
+Поразительно, максимальное количество таблиц стилей на странице составляет 26 777 элементов `<style>` и 1 379 удалённых файлов! Я опредёленно не хочу загружать эту страницу!
 
 {{ figure_markup(
   image="stylesheet-count.png",
@@ -86,12 +86,12 @@ featured_stat_label_3: Самая популярная функция в SCSS
   sql_file="stylesheet_count.sql"
 ) }}
 
-Другая метрика размера — количество правил. Медианная страница включает 448 правил и 5454 объявления. Что интересно, 10% страниц включают крошечное количество CSS: меньше 13 правил! Несмотря на то, что мобильные страницы имеют слегка меньшие таблицы стилей, в них также немного больше правил, что указывает на меньшие правила в целом (как это обычно бывает с медиа-выражениями).
+Другая метрика размера — количество правил. Медианная страница включает 448 правил и 5 454 объявления. Что интересно, 10% страниц включают крошечное количество CSS: меньше 13 правил! Несмотря на то, что мобильные страницы имеют слегка меньшие таблицы стилей, в них также немного больше правил, что указывает на меньшие правила в целом (как это обычно бывает с медиа-выражениями).
 
 {{ figure_markup(
   image="rules.png",
   caption="Распределение общего количества стилевых правил на страницу.",
-  description="Гистограмма, показывающая распределение общего количества стилевых правил на страницу. Мобильные страницы имеют тенденцию включать немного больше правил, чем десктопные. 10, 25, 50, 75 и 90 перцентили для мобильных: 13, 140, 479, 1074 и 1831 правило на страницу.",
+  description="Гистограмма, показывающая распределение общего количества стилевых правил на страницу. Мобильные страницы имеют тенденцию включать немного больше правил, чем десктопные. 10, 25, 50, 75 и 90 перцентили для мобильных: 13, 140, 479, 1 074 и 1 831 правило на страницу.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1918103300&format=interactive",
   sheets_gid="42376523",
   sql_file="selectors.sql"
@@ -141,14 +141,14 @@ CSS предлагает множество способов применить 
 
 {{ figure_markup(
   caption="Мобильные страницы, использующие `!important` в каждом объявлении!",
-  content="2,138",
+  content="2 138",
   classes="big-number",
   sheets_gid="1743048352",
   sql_file="meta_important_adoption.sql"
 )
 }}
 
-Некоторые разработчики буквально не могут им насытиться: мы нашли 2304 десктопные страницы и 2138 мобильных страниц, которые используют `!important` в каждом объявлении!
+Некоторые разработчики буквально не могут им насытиться: мы нашли 2 304 десктопные страницы и 2 138 мобильных страниц, которые используют `!important` в каждом объявлении!
 
 {{ figure_markup(
   image="important-properties.png",
@@ -274,42 +274,42 @@ CSS предлагает множество способов применить 
 
 ## Значения и единицы измерения {values-and-units}
 
-CSS provides a number of ways of specifying values and units, either in set lengths or calculations or based on global keywords.
+CSS предоставляет несколько способов указания значений и единиц измерения: либо в виде задания длины, либо вычислениями, либо на основе глобальных ключевых слов.
 
 ### Размеры {lengths}
 
-The humble `px` unit has gotten a lot of negative press over the years. At first, because it didn't play nicely with old Internet Explorer's zoom functionality, and, more recently, because there are better units for most tasks that scale based on another design factor, such as viewport size, element font size, or root font size, reducing maintenance effort by making implicit design relationships explicit. The main selling point of `px`—its correspondence to one device pixel giving designers full control—is also gone now, as a pixel is not a device pixel anymore with the modern high pixel density screens. Despite all this, CSS pixels still nearly ubiquitously drive the web's designs.
+Скромная единица измерения `px` за эти годы множество раз была под негативным давлением. Сначала из-за того, что она не очень хорошо сочеталась со старыми функциями масштабирования в Internet Explorer, а в последнее время из-за того, что для большинства задач существуют более подходящие единицы измерения, которые масштабируются на основании других дизайн-факторов, таких как размер вьюпорта, размер шрифта элемента или корневой размер шрифта, сокращая усилия на поддержку, делая неявные связи в дизайне явными. Главный продающий аргумент в пользу `px` — его соответствие одному пикселю устройства, дающее дизайнерам полный контроль — также исчез, поскольку пиксель больше не является пикселем устройства для современных экранов с высокой плотностью пикселей. Несмотря на всё это, CSS-пиксели по-прежнему почти повсеместно управляют дизайнами в вебе.
 
 {{ figure_markup(
-  caption="Percentage of `<length>` values that use the `px` unit.",
-  content="72.58%",
+  caption="Процент значений `<length>`, которые используют единицу измерения `px`.",
+  content="72,58%",
   classes="big-number",
   sheets_gid="1221511608",
   sql_file="units_frequency.sql"
 ) }}
 
-The `px` unit is still going strong as the most popular length unit overall, with a whopping 72.58% of all length values across all style sheets using `px`! And if we exclude percentages (since they are not really a unit) the share of `px` increases even more, to 84.14%.
+Единица измерения `px` всё ещё сильна как самая популярная единица длины в целом, с колоссальными 72,58% всех значений длины во всех таблицах стилей, использующих `px`! А если исключить проценты (поскольку они на самом деле не являются единицей измерения), доля `px` вырастает до ещё больших 84,14%.
 
 {{ figure_markup(
   image="length-units.png",
-  caption="The most popular `<length>` units as a percent of occurrences.",
-  description="Bar chart showing the most popular length units as a percent of occurrences (the frequency that the units appear in all stylesheets). The px unit is by far the most popular, used 73% of the time in mobile stylesheets. The next most popular unit is `%` (percent sign), at 17%, followed by `em` at 9%, and `rem` at 1%. The following units all have usage so low that they round to 0%: `pt`, `vw`, `vh`, `ch`, `ex`, `cm`, `mm`, `in`, `vmin`, `pc`, and `vmax`.",
+  caption="Самые популярные единицы измерения `<length>` как процент появлений.",
+  description="Гистограмма показывает самые популярные единицы измерения длины как процент появлений (частота появления единиц измерения во всех таблицах стилей). Единица измерения `px`, безусловно, самая популярная, используется в 73% случаев в таблицах стилей для мобильных. Следующая по популярности единица измерения `%` (знак процента) — 17%, следом `em` — 9%, и `rem` — 1%. Следующие единицы измерения применяются так редко, что процент их использования можно округлить до 0%: `pt`, `vw`, `vh`, `ch`, `ex`, `cm`, `mm`, `in`, `vmin`, `pc` и `vmax`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=2095127496&format=interactive",
   sheets_gid="1221511608",
   sql_file="units_frequency.sql"
 ) }}
 
-How are these `px` distributed across properties? Is there any difference depending on the property? Most definitely. For example, as one might expect, `px` is far more popular in borders (80-90%) compared to font-related metrics such as `font-size`, `line-height` or `text-indent`. However, even for those, `px` usage vastly outnumbers any other unit. In fact, the only properties for which another unit (*any* other unit) is more used than `px` are `vertical-align` (55% `em`), `mask-position` (50% `em`), `padding-inline-start` (62% `em`), `margin-block-start` and `margin-block-end` (65% `em`), and the brand new `gap` with 62% `rem`.
+Как эти `px` распределены по свойствам? Есть какая-нибудь разница в зависимости от свойства? Определённо. Например, как и следовало ожидать, `px` намного более популярен для задания границ (80–90%) в сравнении с относящимися к шрифтам метрикам вроде `font-size`, `line-height` или `text-indent`. Тем не менее, даже для них использование `px` значительно превосходит использование любых других единиц измерения. Фактически, единственные свойства, для которых другая единица измерения (*любая* другая) используется чаще, чем `px`, это `vertical-align` (55% `em`), `mask-position` (50% `em`), `padding-inline-start` (62% `em`), `margin-block-start` и `margin-block-end` (65% `em`), а также совершенно новый `gap` с 62% `rem`.
 
-One could easily argue that a lot of this content is just old, written before authors were more enlightened about using relative units to make their designs more adaptable and save themselves time down the line. However, this is easily debunked by looking at more recent properties such as `grid-gap` (62% `px`).
+Можно легко возразить, что большая часть этого контента банально устарела, была написана до того, как авторы научились использовать относительные единицы измерения, чтобы делать свои проекты более адаптируемыми и экономить себе время в будущем. Однако это легко опровергнуть, взглянув на более свежие свойства, такие как `grid-gap` (62%` px`).
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th>Property</th>
+        <th>Свойство</th>
         <th><code>px</code></th>
-        <th><code>&lt;number&gt;</code></th>
+        <th><code>&lt;число&gt;</code></th>
         <th><code>em</code></th>
         <th><code>%</code></th>
         <th><code>rem</code></th>
@@ -429,30 +429,30 @@ One could easily argue that a lot of this content is just old, written before au
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Unit usage by property.",
+      caption="Использование единиц измерения внутри свойства.",
       sheets_gid="1200981062",
       sql_file="units_properties.sql"
     ) }}
   </figcaption>
 </figure>
 
-Similarly, despite the much touted advantages of `rem` vs `em` for many use cases, and its universal browser support <a hreflang="en" href="https://caniuse.com/rem">for years</a>, the web has still largely not caught up with it: the trusty `em` accounts for 87% of all font-relative units usage and `rem` trails far behind with 12%. We did see some usage of `ch` (width of the '0' glyph) and `ex` (x-height of the font in use) in the wild, but very small (only 0.37% and 0.19% of all font-relative units).
+Аналогично, несмотря на широко разрекламированные преимущества `rem` перед `em` во многих случаях и его всеобщую браузерную поддержку <a hreflang="en" href="https://caniuse.com/rem">в течение многих лет</a>, веб всё ещё в значительной степени не втянулся в `rem`: надёжный `em` составляет 87% от всех используемых относительных шрифту единиц измерения, а `rem` сильно отстаёт с его 12%. Мы действительно видели некоторое использование `ch` (ширина символа '0') и `ex` (высота символа 'x' применяемого шрифта) в дикой природе, но очень мало (всего 0,37% и 0,19% от всех относительных шрифту единиц измерения).
 
 {{ figure_markup(
   image="font-units.png",
-  caption="Relative share of font-relative units",
-  description="Bar chart showing the relative popularity of different font-based units. `em` is used overwhelmingly on 87.3% of instances, followed by `rem` at 12.2, `ch` at 0.4%, and `ex` at 0.2% of instances on mobile pages.",
+  caption="Относительная доля шрифтовых единиц измерения",
+  description="Гистограмма показывает относительную популярность различных единиц измерения, основанных на размере шрифта. `em` используется в подавляющем большинстве случаев в 87,3% случаев, следом `rem` с 12,2%, `ch` с 0,4% и `ex` с 0,2% случаев на мобильных страницах.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=166603845&format=interactive",
   sheets_gid="1221511608",
   sql_file="units_frequency.sql"
 ) }}
 
-Lengths are the only types of CSS values for which we can omit the unit when the value is zero, i.e. we can write `0` instead of `0px` or `0em` etc. Developers (or CSS minifiers?) are taking advantage of this extensively: Out of all `0` values, 89% were unitless.
+Длина — это единственный тип значения в CSS, для которого мы можем опустить единицу измерения, когда значение равно нулю, то есть мы можем написать `0` вместо `0px` или `0em` и т.д. Разработчики (или CSS-минификаторы?) активно пользуются преимуществом от этого: из всех значений `0` 89% были безразмерными.
 
 {{ figure_markup(
   image="zero-lengths.png",
-  caption="Relative popularity of 0 lengths by unit as a percent of occurrences on mobile pages.",
-  description="Pie chart showing 0 lengths with no unit (AKA unitless) used 88.7% of the time on mobile pages, the `px` unit at 10.7%, and other units on 0.5% of instances.",
+  caption="Относительная популярность длины 0 на единицу измерения в процентах появления на мобильных страницах.",
+  description="Круговая диаграмма показывает, что длина 0 без единиц измерения (безразмерная) использовалась в 88,7% случаев на мобильных страницах, с единицей измерения `px` — в 10,7%, с другими единицами измерения — в 0,5% случаев.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1935151776&format=interactive",
   sheets_gid="313150061",
   sql_file="units_zero.sql"
@@ -532,7 +532,7 @@ The `all` property was <a hreflang="en" href="https://www.w3.org/TR/2013/WD-css3
 
 ## Цвет {color}
 
-They say the old jokes are the best, and that goes for colors too. The original, cryptic, `#rrggbb` hex syntax remains the most popular way to specify a color in CSS in 2020: Half of all colors are written that way. The next most popular format is the somewhat shorter `#rgb` three-digit hex format at 26%. While it is shorter, it is also able to express *way* fewer colors; only 4096, out of the 16.7 million sRGB values.
+They say the old jokes are the best, and that goes for colors too. The original, cryptic, `#rrggbb` hex syntax remains the most popular way to specify a color in CSS in 2020: Half of all colors are written that way. The next most popular format is the somewhat shorter `#rgb` three-digit hex format at 26%. While it is shorter, it is also able to express *way* fewer colors; only 4 096, out of the 16.7 million sRGB values.
 
 {{ figure_markup(
   image="popular-color-formats.png",
@@ -1357,7 +1357,7 @@ A perennial problem with the web platform is how to introduce new features and e
 
 {{ figure_markup(
   caption="Percent of mobile pages using any vendor prefixed feature.",
-  content="91.05%",
+  content="91,05%",
   classes="big-number",
   sheets_gid="1944012653",
   sql_file="vendor_prefix_summary.sql"
@@ -1443,7 +1443,7 @@ Nearly all usage of prefixed functions (98%) is to specify gradients, even thoug
 
 {{ figure_markup(
   caption="Percent of gradient functions across all occurrences of vendor-prefixed functions in mobile pages",
-  content="98.22%",
+  content="98,22%",
   classes="big-number",
   sheets_gid="1586213539",
   sql_file="vendor_prefix_functions.sql"
