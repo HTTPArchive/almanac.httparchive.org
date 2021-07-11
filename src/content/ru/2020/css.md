@@ -1219,22 +1219,22 @@ On mobile devices 79% and on desktop 77% of media queries are used to change the
 
 ## Кастомные свойства {custom-properties}
 
-Last year, only 5% of websites were using custom properties. This year, adoption has skyrocketed. Using last year's query (which only counted declarations that set custom properties), usage has quadrupled on mobile (19.29%) and tripled on desktop (14.47%). However, when we look at values that reference custom properties via `var()`, we get an even better picture: 27% of mobile pages and 22% of desktop pages were using the `var()` function at least once, which indicates there is a sizeable number of pages only using `var()` to offer customization hooks, without ever setting a custom property.
+В прошлом году только 5% веб-сайтов использовали кастомные свойства. В этом году количество использований взлетело до небес. Согласно прошлогоднему запросу (в котором учитывались только объявления, устанавливающие значения для кастомных свойств), использование увеличилось в четыре раза на мобильных устройствах (19,29%) и в три раза на десктопах (14,47%). Однако, когда мы смотрим на значения, которые ссылаются на кастомные свойства через `var()`, мы получаем ещё лучшую картину: 27% мобильных страниц и 22% десктопных страниц использовали функцию `var()` по крайней мере один раз, что указывает на то, что существует значительное количество страниц, использующих `var()`, только чтобы предложить хуки для настройки, без какой-либо установки значения кастомного свойства.
 
-While at first glance this is impressive adoption, it appears that a major driver is WordPress, as evidenced by the most popular custom property names, the top 4 of which ship with WordPress.
+Хотя на первый взгляд это впечатляющее внедрение, похоже, что основным его двигателем является WordPress, о чём свидетельствуют самые популярные имена кастомных свойств, четыре из которых поставляются с WordPress.
 
 ### Именование {naming}
 
 {{ figure_markup(
   image="custom-property-names.png",
-  caption="Relative popularity of custom property names per software entity as a percent of occurrences on mobile pages.",
-  description="Pie chart of the relative popularity of custom property names per software entity responsible for creating those properties, as a percent of occurrences on mobile pages. 35% of occurrences of custom property names on mobile pages can be traced back to Avada, 31% to Bootstrap, 16% to Elementor, 13% to WordPress, and 3% to an old version of Multirange.",
+  caption="Относительная популярность имён кастомных свойств для каждой программной сущности в процентах от их появления на мобильных страницах.",
+  description="Круговая диаграмма относительной популярности имён кастомных свойств для каждой программной сущности, ответственной за создание этих свойств, как процент вхождений на мобильных страницах. 35% случаев появления имён кастомных свойств на мобильных страницах ведут к Avada, 31% — к Bootstrap, 16% — к Elementor, 13% — к WordPress и 3% — к старой версии Multirange.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1627287194&format=interactive",
   sheets_gid="1043074687",
   sql_file="custom_property_names.sql"
 ) }}
 
-Out of the 1,000 top property names, fewer than 13 are "custom", as in made up by individual web developers. The vast majority are associated with popular software, such as WordPress, Elementor, and Avada. To determine this, we took into account not only which custom properties appear in what software (by searching on GitHub), but also which properties appear in groups with similar frequencies. This does not necessarily mean that the main way a custom property ends up on a website is through usage of that software (people do still copy and paste!), but it does indicate there aren't many organic commonalities between the custom properties that developers define. The only custom property names that seem to have organically made the list of top 1000 are `--height`, `--primary-color`, and `--caption-color`.
+Из 1 000 самых популярных имён свойств менее 13 являются «кастомными», как если бы они были придуманы отдельными веб-разработчиками. Подавляющее большинство из них связано с популярным программным обеспечением, таким как WordPress, Elementor и Avada. Чтобы определить это, мы приняли во внимание не только то, какие кастомные свойства появляются в каком программном обеспечении (путём поиска по GitHub), но также и то, какие свойства появляются группами с одинаковой частотой. Это не обязательно означает, что основной способ попадания кастомного свойства на веб-сайт — использование этого программного обеспечения (люди всё ещё копипастят!), но это указывает на то, что у кастомных свойств, определяемых разработчиками, не так много органических общих черт. Единственные имена кастомных свойств, которые, кажется, органически вписались в топ-1000, — это `--height`, `--primary-color` и `--caption-color`.
 
 ### Применение по типу {usage-by-type}
 
