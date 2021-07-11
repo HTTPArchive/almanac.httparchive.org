@@ -460,27 +460,27 @@ CSS предоставляет несколько способов указан�
 
 ### Вычисления {calculations}
 
-When the [`calc()`](https://developer.mozilla.org/en-US/docs/Web/CSS/calc()) function was introduced for performing calculations between different units in CSS, it was a revolution. Previously, only preprocessors were able to accommodate such calculations, but the results were limited to static values and unreliable, since they were missing the dynamic context that is often necessary.
+Когда [функция `calc()`](https://developer.mozilla.org/en-US/docs/Web/CSS/calc()) была представлена для выполнений вычисления между различными единицами измерения в CSS, это была революция. До этого только препроцессоры могли выполнять такие вычисления, но результаты были ограничены статическими значениями и были ненадежными, поскольку им не хватало динамического контекста, который зачастую необходим.
 
-Today, `calc()` has been <a hreflang="en" href="https://caniuse.com/calc">supported by every browser</a> for nine years already, so it comes as no surprise that it has been widely adopted with 60% of pages using it at least once. If anything, we expected even higher adoption than this.
+Сегодня `calc()` <a hreflang="en" href="https://caniuse.com/calc">поддерживается каждым браузером</a> на протяжении уже девяти лет, поэтому неудивительно, что он получил такое широкое распространение: 60% страниц использовали его хотя бы один раз. Во всяком случае, мы ожидали даже более широкого распространения, чем это.
 
-`calc()` is primarily used for lengths, with 96% of its usage being concentrated in properties that accept `<length>` values, and 60% of that (58% of total usage) on the `width` property!
+`calc()` прежде всего используется для размеров, 96% его применения сконцентрировано в свойствах, которые принимают значения типа `<length>`, причём 60% от этого (58% от общего применения) — в свойстве `width`!
 
 {{ figure_markup(
   image="calc-properties.png",
-  caption="Relative popularity of properties that use `calc()` as a percent of occurrences.",
-  description="Bar chart showing the relative popularity of properties that use the calc function as a percent of occurrences. Desktop and mobile have similar results. The calc function is used most often on the width property, 59% of calc occurrences on mobile pages. it is used on the left property 11% of the time, top 5%, max-width 4%, height 4%, and the remaining properties are decreasing at 2% and 1%: min-height, margin-left, flex-basis, margin-right, max-height (1%), right, padding-bottom, padding-left, font-size, and padding-right.",
+  caption="Относительная популярность свойств, использующих `calc()`, в процентах случаев.",
+  description="Гистограмма, показывающая относительную популярность свойств, использующих функцию calc, в процентах случаев. Десктопные и мобильные устройства имеют схожие результаты. Функция calc чаще всего используется в свойстве `width`, 59% появлений на мобильных страницах. Она применяется в свойстве `left` в 11% случаев, `top` — в 5%, `max-width` — в 4%, `height` — в 4%, остальные свойства снижаются до 2% и 1%: `min-height`, `margin-left`, `flex-basis`, `margin-right`, `max-height` (1%), `right`, `padding-bottom`, `padding-left`, `font-size` и `padding-right`",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=722318406&format=interactive",
   sheets_gid="1661677319",
   sql_file="calc_properties.sql"
 ) }}
 
-It appears that most of this usage is to subtract pixels from percentages, as evidenced by the fact that the most common units in `calc()` are `px` (51% of `calc()` usage) and `%` (42% of `calc()` usage), and that 64% of `calc()` usage involves subtraction. Interestingly, the most popular length units with `calc()` are different than the most popular length units overall (e.g. `rem` is more popular than `em`, followed by viewport units), most likely due to the fact that code using `calc()` is newer.
+Похоже, что большая часть этого использования заключается в вычитании пикселей из процентов, о чём свидетельствует тот факт, что наиболее распространёнными единицами измерения в `calc()` являются `px` (51% использования `calc()`) и `%` (42% использования `calc()`), и что 64% использования `calc()` содержат вычитание. Интересно, что самые популярные единицы длины с `calc()` отличаются от самых популярных единиц длины в целом (например, `rem` более популярна, чем` em`, за ними следуют единицы измерения размера вьюпорта), скорее всего из-за того, что код, использующий `calc()`, более новый.
 
 {{ figure_markup(
   image="calc-units.png",
-  caption="Relative popularity of units that use `calc()` as a percent of occurrences.",
-  description="Bar chart showing the relative popularity of properties that use the calc function as a percent of occurrences. Desktop and mobile have similar results. The calc function is used most often on the `width` property, 59% of calc occurrences on mobile pages. it is used on the `left` property 11% of the time, `top` 5%, `max-width` 4%, `height` 4%, and the remaining properties are decreasing at 2% and 1%: `min-height`, `margin-left`, `flex-basis`, `margin-right`, `max-height` (1%), `right`, `padding-bottom`, `padding-left`, `font-size`, and `padding-right`.",
+  caption="Относительная популярность единиц измерения, использующихся внутри `calc()`, в процентах случаев.",
+  description="Гистограмма, показывающая относительную популярность единиц измерения, использующихся внутри функции calc, в процентах случаев. Десктопные и мобильные устройства имеют схожие результаты. `px` встречается на 51% страниц, `%` — на 42%. `rem`, `em`, `vw` — на 2% страниц, `vh` — на 1% страниц.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=477094785&format=interactive",
   sheets_gid="769910871",
   sql_file="calc_units.sql"
@@ -488,19 +488,19 @@ It appears that most of this usage is to subtract pixels from percentages, as ev
 
 {{ figure_markup(
   image="calc-operators.png",
-  caption="Relative popularity of operators that use `calc()` as a percent of occurrences.",
-  description="Bar chart showing the relative popularity of operators that use the calc function as a percent of occurrences. Desktop and mobile have similar results. The calc function is used most often with the subtraction operator (minus sign), 64% of calc instances on mobile pages, followed by division (forward slash) 20%, addition (plus sign) 11%, and multiplication (asterisk) 5%.",
+  caption="Относительная популярность операторов, использующихся в `calc()`, в процентах случаев.",
+  description="Гистограмма, показывающая относительную популярность операторов, использующихся внутри функции calc, в процентах случаев. Десктопные и мобильные устройства дают схожие результаты. Функция calc чаще всего используется с оператором вычитания (знак минус) — 64% появлений calc на мобильных страницах, за которыми следует деление (прямой слеш) — 20%, сложение (знак плюс) — 11%, и умножение (звездочка) — 5%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1909242522&format=interactive",
   sheets_gid="2077258816",
   sql_file="calc_operators.sql"
 ) }}
 
-Most calculations are very simple, with 99.5% of calculations involving up to 2 different units, 88.5% of calculations involving up to 2 operators and 99.4% of calculations involving one set of parentheses or fewer (3 out of 4 calculations include no parentheses at all).
+Большинство вычислений очень просты: 99,5% вычислений включают до 2 различных единиц измерения, 88,5% вычислений включают до 2 операторов и 99,4% вычислений включают один набор скобок или меньше (3 из 4 вычислений не содержат скобок вообще).
 
 {{ figure_markup(
   image="calc-complexity-units.png",
-  caption="Distribution of the number of units per `calc()` occurrence.",
-  description="Bar chart showing the distribution of the number of units per calc function occurrence. Desktop and mobile have similar results. Calc is used with one unit 11% of the time on mobile pages, twice 89% of the time, and 3 or more times approximately 0% of the time.",
+  caption="Распределение количества единиц измерения на вхождение `calc()`.",
+  description="Гистограмма, показывающая распределение количества единиц измерения на вхождение функции calc. Десктопные и мобильные устройства дают схожие результаты. Calc используется с одной единицей измерения в 11% случаев на мобильных страницах, с двумя — в 89% случаев, с 3 или более — примерно в 0% случаев.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=695698141&format=interactive",
   sheets_gid="1493602565",
   sql_file="calc_complexity_units.sql"
