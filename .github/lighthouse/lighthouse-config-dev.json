@@ -17,6 +17,7 @@
         "largest-contentful-paint": "off",
         "mainthread-work-breakdown": "off",
         "max-potential-fid": "off",
+        "no-unload-listeners": "off",
         "render-blocking-resources": "off",
         "server-response-time": "off",
         "speed-index": "off",
