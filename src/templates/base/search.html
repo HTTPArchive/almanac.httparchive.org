@@ -28,7 +28,7 @@
 
   <script src="https://cse.google.com/cse.js?cx=ffb208d5eae47b5bf" nonce="{{ csp_nonce() }}" ></script>
   <div id="search-area">
-  <div class="gcse-search" data-lr="lang_{{ lang }}" data-noResultsString="self.no_results" data-hl="{{ lang }}"></div>
+  <div class="gcse-search" data-lr="lang_{{ lang }}" data-noresultsstring="{{ self.no_results() }}" data-hl="{{ lang }}"></div>
   </div>
   {% if lang != "en" %}
   <div class="en-btn">
