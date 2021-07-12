@@ -107,6 +107,7 @@
 {% block non_chapter_nav_links %}
 <li><a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a></li>
 <li><a href="{{ url_for('methodology', year=year, lang=lang) }}">{{ self.methodology_title() }}</a></li>
+<li><a href="{{ url_for('search', lang=lang) }}">{{ self.search_title() }}</a></li>
 {% endblock %}
 
 {% macro nav_table_of_contents(switcher_name) %}

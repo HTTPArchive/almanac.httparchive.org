@@ -1,0 +1,39 @@
+{% extends "%s/%s/base.html" % (lang, year) %}
+
+{% block image_url %}https://almanac.httparchive.org/static/images/methodology-characters-bg.png{% endblock %}
+{% block image_height %}354{% endblock %}
+{% block image_width %}984{% endblock %}
+
+{% block head %}
+{{ super() }}
+<meta name="robots" content="noindex">
+{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<style nonce="{{ csp_nonce() }}">
+  #search-area {
+    min-height: 100px;
+  }
+  .en-btn {
+    margin: 2rem auto 2rem;
+    text-align: center;
+  }
+</style>
+{% endblock %}
+
+{% block main %}
+<main id="maincontent" class="main">
+  <h1 class="title title-lg">{{ self.search_title() }}</h1>
+
+  <script src="https://cse.google.com/cse.js?cx=ffb208d5eae47b5bf" nonce="{{ csp_nonce() }}" ></script>
+  <div id="search-area">
+  <div class="gcse-search" data-lr="lang_{{ lang }}" data-noResultsString="self.no_results" data-hl="{{ lang }}"></div>
+  </div>
+  {% if lang != "en" %}
+  <div class="en-btn">
+    <a href="/en/search" class="alt btn">{{ self.search_in_english() }}</a>
+  </div>
+  {% endif %}
+</main>
+{% endblock %}
