@@ -2,12 +2,10 @@
 # Get summary of all lighthouse scores for a category for PWA pages (i.e. those with a service worker and a manifest file)
 # Note scores, weightings, groups and descriptions may be off in mixed months when new versions of Lighthouse roles out
 
-CREATE TEMPORARY FUNCTION getAudits(report STRING, category STRING)
+CREATE TEMPORARY FUNCTION getAudits(auditRefs STRING, audits STRING)
 RETURNS ARRAY<STRUCT<id STRING, weight INT64, audit_group STRING, title STRING, description STRING, score INT64>> LANGUAGE js AS '''
-var $ = JSON.parse(report);
-var auditrefs = $.categories[category].auditRefs;
-var audits = $.audits;
-$ = null;
+var auditrefs = JSON.parse(auditRefs);
+var audits = JSON.parse(audits);
 var results = [];
 for (auditref of auditrefs) {
   results.push({
@@ -31,12 +29,9 @@ SELECT
   MAX(audits.audit_group) AS audit_group,
   MAX(audits.description) AS description
 FROM
-  `httparchive.lighthouse.2021_07_01_mobile`
-JOIN
-  `httparchive.pages.2021_07_01_mobile`
-USING (url),
-  UNNEST(getAudits(report, "pwa")) AS audits
-WHERE
+  --`httparchive.lighthouse.2021_07_01_mobile`,
+  `httparchive.sample_data.lighthouse_mobile_10k`,
+  UNNEST(getAudits(JSON_EXTRACT(report, '$.categories.pwa.auditRefs'),JSON_EXTRACT(report, '$.audits'))) AS audits
   JSON_EXTRACT(payload, '$._pwa') != "[]" AND
   JSON_EXTRACT(payload, '$._pwa.serviceWorkers') != "[]" AND
   JSON_EXTRACT(payload, '$._pwa.manifests') != "[]" AND

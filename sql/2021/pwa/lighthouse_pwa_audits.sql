@@ -2,12 +2,10 @@
 # Get summary of all lighthouse scores for a category
 # Note scores, weightings, groups and descriptions may be off in mixed months when new versions of Lighthouse roles out
 
-CREATE TEMPORARY FUNCTION getAudits(report STRING, category STRING)
+CREATE TEMPORARY FUNCTION getAudits(auditRefs STRING, audits STRING)
 RETURNS ARRAY<STRUCT<id STRING, weight INT64, audit_group STRING, title STRING, description STRING, score INT64>> LANGUAGE js AS '''
-var $ = JSON.parse(report);
-var auditrefs = $.categories[category].auditRefs;
-var audits = $.audits;
-$ = null;
+var auditrefs = JSON.parse(auditRefs);
+var audits = JSON.parse(audits);
 var results = [];
 for (auditref of auditrefs) {
   results.push({
@@ -31,10 +29,9 @@ SELECT
   MAX(audits.audit_group) AS audit_group,
   MAX(audits.description) AS description
 FROM
-  `httparchive.lighthouse.2021_07_01_mobile`,
-  UNNEST(getAudits(report, "pwa")) AS audits
-WHERE
-  LENGTH(report) < 20000000  # necessary to avoid out of memory issues. Excludes 16 very large results
+  --`httparchive.lighthouse.2021_07_01_mobile`,
+  `httparchive.sample_data.lighthouse_mobile_10k`,
+  UNNEST(getAudits(JSON_EXTRACT(report, '$.categories.pwa.auditRefs'),JSON_EXTRACT(report, '$.audits'))) AS audits
 GROUP BY
   audits.id
 ORDER BY
