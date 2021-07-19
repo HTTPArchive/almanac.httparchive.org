@@ -5,6 +5,7 @@
       "assertions": {
         "bootup-time": "off",
         "canonical": "off",
+        "csp-xss": "off",
         "dom-size": "off",
         "first-contentful-paint": "off",
         "first-cpu-idle": "off",
