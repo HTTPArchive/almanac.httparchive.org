@@ -106,8 +106,7 @@ def test_render_en_accessibility_statement_slash(client):
 
 def test_render_search(client):
     response = client.get('/en/search')
-    assert response.status_code == 200 and \
-        'cse.google.com' in response.headers.get('Content-Security-Policy')
+    assert response.status_code == 200
 
 
 def test_render_search_slash(client):

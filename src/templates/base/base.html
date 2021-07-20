@@ -107,8 +107,27 @@
 {% block non_chapter_nav_links %}
 <li><a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a></li>
 <li><a href="{{ url_for('methodology', year=year, lang=lang) }}">{{ self.methodology_title() }}</a></li>
-<li><a href="{{ url_for('search', lang=lang) }}">{{ self.search_title() }}</a></li>
 {% endblock %}
+
+{% macro nav_search(switcher_name) %}
+  {% if switcher_name == "mobile" or switcher_name == "mobile-footer" %}
+  <div class="search-nav">
+    <div class="gcse-searchbox-only" data-enableHistory="true" data-autoCompleteMaxCompletions="5" data-autoCompleteMatchType='any' data-queryParameterName="q" data-resultsUrl="/{{ lang }}/search"></div>
+  </div>
+  {% else %}
+  <a class="nav-dropdown-btn js-hide" href="{{ url_for('search', year=year, lang=lang) }}">{{ self.search_title() }}</a>
+  <div class="nav-dropdown {{switcher_name}} search-nav js-enable hidden">
+    <button type="button" class="nav-dropdown-btn" aria-expanded="false" aria-label="{{ self.search_title() }}" >
+      {{ self.search_title() }}
+    </button>
+    <ul class="nav-dropdown-list align-right hidden {{switcher_name}}-search">
+      <li class="nav-dropdown-list-part">
+        <div class="gcse-searchbox-only" data-enableHistory="true" data-autoCompleteMaxCompletions="5" data-autoCompleteMatchType='any' data-queryParameterName="q" data-resultsUrl="/{{ lang }}/search"></div>
+      </li>
+    </ul>
+  </div>
+  {% endif %}
+{% endmacro %}
 
 {% macro nav_table_of_contents(switcher_name) %}
   {% if switcher_name == "mobile" or switcher_name == "mobile-footer" %}
@@ -186,6 +205,16 @@
     {% else %}
     <option value="{{ url_for('contributors', year=year, lang=lang) }}">
       {{ self.contributors_title() }}
+    </option>
+    {% endif %}
+
+    {% if request.path.endswith("search") %}
+    <option selected disabled value="{{ url_for('search', year=year, lang=lang) }}">
+      {{ self.search_title() }}
+    </option>
+    {% else %}
+    <option value="{{ url_for('search', year=year, lang=lang) }}">
+      {{ self.search_title() }}
     </option>
     {% endif %}
 
@@ -294,6 +323,16 @@
     </li>
     {% endif %}
 
+    {% if request.path.endswith("search") %}
+    <li class="nav-dropdown-list-part nav-dropdown-list-current">
+      <span>{{ self.search_title() }}</span>
+    </li>
+    {% else %}
+    <li class="nav-dropdown-list-part">
+      <a href="{{ url_for('search', year=year, lang=lang) }}">{{ self.search_title() }}</a>
+    </li>
+    {% endif %}
+
     {% if ebook_size_in_mb and ebook_size_in_mb > 0 %}
     <li class="nav-dropdown-list-part">
       <a href="{{ url_for('table_of_contents', year=year, lang=lang, _anchor='ebook') }}">{{ self.ebook_title() }}</a>
@@ -319,6 +358,9 @@
           <ul>
             {{ self.non_chapter_nav_links() }}
             <li>
+              {{ nav_search('header') }}
+            </li>
+            <li>
               {{ nav_table_of_contents('header') }}
             </li>
             <li>
@@ -342,6 +384,9 @@
           </button>
           <ul class="menu">
             {{ self.non_chapter_nav_links() }}
+            <li>
+              {{ nav_search('mobile') }}
+            </li>
             <li>
               {{ nav_table_of_contents('mobile') }}
             </li>
@@ -424,6 +469,9 @@
           <ul>
             {{ self.non_chapter_nav_links() }}
             <li>
+              {{ nav_search('footer') }}
+            </li>
+            <li>
               {{ nav_table_of_contents('footer') }}
             </li>
             <li>
@@ -437,6 +485,9 @@
         <nav id="mobile-footer-nav-items" aria-label="{{ self.footer_title() }}" class="nav-items">
           <ul>
             {{ self.non_chapter_nav_links() }}
+            <li>
+              {{ nav_search('mobile-footer') }}
+            </li>
             <li>
               {{ nav_table_of_contents('mobile-footer') }}
             </li>
@@ -509,6 +560,7 @@
   {% endblock %}
   {% block scripts %}
   <script async src="{{ get_versioned_filename('/static/js/almanac.js') }}" nonce="{{ csp_nonce() }}"></script>
+  <script defer src="https://cse.google.com/cse.js?cx=ffb208d5eae47b5bf" nonce="{{ csp_nonce() }}"></script>
   {% endblock %}
 {% endblock %}
 

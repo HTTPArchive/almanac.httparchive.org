@@ -27,14 +27,19 @@ function handleSelectSwitchers() {
   }
 }
 
-// Language, Year and ToC menus (desktop)
+// Search, Language, Year and ToC menus (desktop)
 function handleNavMenu() {
 
   function closeAnyOtherOpenDropdown(e) {
+
     if (e.target.classList.contains('dropdown-open')) {
       return
     };
+    if (document.querySelector('.search-nav ul:not(hidden)').contains(e.target)) {
+        return
+    }
     var openDropdownBtn = document.querySelector('.nav-dropdown-btn.dropdown-open');
+    console.log('closing all the menus')
     openDropdownBtn && openDropdownBtn.click();
   }
 

@@ -499,14 +499,21 @@ footer nav ul {
   align-items: center;
   margin: 0;
   padding-inline-start: 0;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 header nav li,
 footer nav li {
   display: flex;
   line-height: 1.4em;
+  text-align: center;
 }
+
+header nav li li,
+footer nav li li {
+  text-align: left;
+}
+
 
 header nav .menu li .year-switcher,
 header nav .menu li .table-of-contents-switcher,
@@ -521,7 +528,7 @@ header nav {
 }
 
 header nav > ul > li > * {
-  margin-right: 2vw;
+  margin-right: 1.5em;
 }
 
 header nav > ul > li:last-child > * {
@@ -548,6 +555,10 @@ header .cta {
   position: relative;
   font-size: 14px;
   font-size: 0.875rem;
+}
+
+.search-nav input {
+  min-width: 400px;
 }
 
 .table-of-contents-switcher:hover,
@@ -799,7 +810,7 @@ p.copyright a {
   color: currentColor;
 }
 
-@media (max-width: 56.25em) and (min-width: 37.51em) {
+@media (max-width: 72em) and (min-width: 37.51em) {
   /* Header */
   .top-header,
   footer {
@@ -818,12 +829,17 @@ p.copyright a {
     margin: 0;
   }
 
-  header nav > ul > li > a {
+  header nav > ul > li > a,
+  header nav > ul > li > .search-nav {
     margin-bottom: 50px;
     margin-bottom: 3.125rem;
     font-size: 16px;
     font-size: 1rem;
     line-height: 1.4em;
+  }
+
+  .search-nav input {
+    min-width: 200px;
   }
 
   header nav > ul > li:last-child {
@@ -994,11 +1010,16 @@ p.copyright a {
     margin: 0;
   }
 
-  header nav > ul > li > a {
+  header nav > ul > li > a,
+  header nav > ul > li > .search-nav {
     margin-bottom: 50px;
     font-size: 16px;
     font-size: 1rem;
     line-height: 1.4em;
+  }
+
+  .search-nav input {
+    min-width: 200px;
   }
 
   header nav > ul > li:last-child {
@@ -1105,7 +1126,7 @@ p.copyright a {
   }
 }
 
-@media (max-width: 56.25em) {
+@media (max-width: 72em) {
   #menu,
   #mobile-footer-nav-items {
     display: block;
@@ -1264,6 +1285,7 @@ p.copyright a {
   margin-top: -9px;
 }
 
+.search-nav .nav-dropdown-btn.dropdown-open::after,
 .table-of-contents .nav-dropdown-btn.dropdown-open::after {
   height: 7px;
   width: 7px;
