@@ -115,7 +115,7 @@
     <div class="gcse-searchbox-only" data-enablehistory="true" data-autocompletemaxcompletions="5" data-autocompletematchtype="any" data-queryparametername="q" data-resultsurl="/{{ lang }}/search"></div>
   </div>
   {% else %}
-  <a class="nav-dropdown-btn js-hide" href="{{ url_for('search', year=year, lang=lang) }}">{{ self.search_title() }}</a>
+  <a class="nav-dropdown-btn js-hide" href="{{ url_for('search', lang=lang) }}">{{ self.search_title() }}</a>
   <div class="nav-dropdown {{switcher_name}} search-nav js-enable hidden">
     <button type="button" class="nav-dropdown-btn" aria-expanded="false" aria-label="{{ self.search_title() }}" >
       {{ self.search_title() }}
@@ -209,11 +209,11 @@
     {% endif %}
 
     {% if request.path.endswith("search") %}
-    <option selected disabled value="{{ url_for('search', year=year, lang=lang) }}">
+    <option selected disabled value="{{ url_for('search', lang=lang) }}">
       {{ self.search_title() }}
     </option>
     {% else %}
-    <option value="{{ url_for('search', year=year, lang=lang) }}">
+    <option value="{{ url_for('search', lang=lang) }}">
       {{ self.search_title() }}
     </option>
     {% endif %}
@@ -329,7 +329,7 @@
     </li>
     {% else %}
     <li class="nav-dropdown-list-part">
-      <a href="{{ url_for('search', year=year, lang=lang) }}">{{ self.search_title() }}</a>
+      <a href="{{ url_for('search', lang=lang) }}">{{ self.search_title() }}</a>
     </li>
     {% endif %}
 
