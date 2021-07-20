@@ -500,6 +500,10 @@ figure iframe {
   margin: 0 auto;
 }
 
+.figure-block {
+  display: block;
+}
+
 figure .code-block {
   margin: 10px auto;
   margin: 0.625rem auto;
