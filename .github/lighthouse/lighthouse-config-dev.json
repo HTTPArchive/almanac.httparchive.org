@@ -1,7 +1,7 @@
 {
   "ci": {
     "assert": {
-      "preset": "lighthouse:no-pwa",
+      "preset": "lighthouse:recommended",
       "assertions": {
         "bootup-time": "off",
         "canonical": "off",
@@ -12,15 +12,20 @@
         "first-meaningful-paint": "off",
         "font-display": "off",
         "inspector-issues": "off",
+        "installable-manifest": "off",
         "interactive": "off",
         "is-crawlable": "off",
         "is-on-https:": "off",
         "largest-contentful-paint": "off",
         "mainthread-work-breakdown": "off",
+        "maskable-icon": "off",
         "max-potential-fid": "off",
         "render-blocking-resources": "off",
         "server-response-time": "off",
+        "service-worker": "off",
         "speed-index": "off",
+        "splash-screen": "off",
+        "themed-omnibox": "off",
         "third-party-facades": "off",
         "unminified-css": "off",
         "unminified-javascript": "off",
