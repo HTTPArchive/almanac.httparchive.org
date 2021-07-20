@@ -238,9 +238,9 @@ Pour le moment, il n'y a pas de propositions visant à élargir le jeu actuel d'
 
 Les <a hreflang="en" href="https://wicg.github.io/priority-hints/">indices de priorités</a> sont une API permettant d'exprimer des priorités dans la récupération de certaines ressources&nbsp;: `high` (haute), `low` (basse), ou `auto`. Ils peuvent être utilisés avec un large éventail de balises HTML&nbsp;: spécifiquement `<image>`, `<link`>, `<script>` et `<iframe>`.
 
-<figure>
+<figure class="figure-block">
 <div class="code-block floating-card">
-  <pre><code>&lt;carousel>
+  <pre role="region" aria-label="Code 0" tabindex="0"><code>&lt;carousel>
   &lt;img src="cat1.jpg" importance="high">
   &lt;img src="cat2.jpg" importance="low">
   &lt;img src="cat3.jpg" importance="low">
