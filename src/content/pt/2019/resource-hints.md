@@ -238,9 +238,9 @@ No momento, não há propostas para expandir o conjunto atual de dicas de recurs
 
 <a hreflang="en" href="https://wicg.github.io/priority-hints/">Sugestões prioritárias</a> são uma API para expressar a prioridade de busca de um recurso: `high`, `low`, ou `auto`. Eles podem ser usados ​​com uma ampla variedade de tags HTML: especificamente `<image>`, `<link`>, `<script>`, e `<iframe>`.
 
-<figure>
+<figure class="figure-block">
 <div class="code-block floating-card">
-  <pre><code>&lt;carousel>
+  <pre role="region" aria-label="Code 0" tabindex="0"><code>&lt;carousel>
   &lt;img src="cat1.jpg" importance="high">
   &lt;img src="cat2.jpg" importance="low">
   &lt;img src="cat3.jpg" importance="low">
