@@ -21,11 +21,7 @@ csp = {
     ],
     'img-src': [
         '\'self\'',
-        'www.google-analytics.com',
-        'www.googletagmanager.com',
-        '*.githubusercontent.com',
-        '*.google.com',
-        'ssl.gstatic.com',
+        'https:',
         'data:'
     ],
     'frame-src': [
