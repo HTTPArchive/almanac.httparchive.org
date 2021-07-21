@@ -27,8 +27,8 @@
   <h1 class="title title-lg">{{ self.search_title() }}</h1>
 
   <div id="search-area">
-    <div class="gcse-searchbox" data-enablehistory="true" data-autocompletemaxcompletions="5" data-autocompletematchtype="any" data-queryparametername="q"></div>
-    <div class="gcse-searchresults" data-lr="lang_{{ lang }}" data-noresultsstring="{{ self.no_results() }}" data-hl="{{ lang }}"></div>
+    <div class="gcse-searchbox" data-enablehistory="true" data-autocompletemaxcompletions="5" data-autocompletematchtype="any" data-queryparametername="q" data-mobilelayout="disabled"></div>
+    <div class="gcse-searchresults" data-lr="lang_{{ lang }}" data-noresultsstring="{{ self.no_results() }}" data-hl="lang_{{ lang }}"></div>
   </div>
   {% if lang != "en" %}
   <div class="en-btn">

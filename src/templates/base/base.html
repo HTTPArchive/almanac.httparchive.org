@@ -112,7 +112,7 @@
 {% macro nav_search(switcher_name) %}
   {% if switcher_name == "mobile" or switcher_name == "mobile-footer" %}
   <div class="search-nav">
-    <div class="gcse-searchbox-only" data-enablehistory="true" data-autocompletemaxcompletions="5" data-autocompletematchtype="any" data-queryparametername="q" data-resultsurl="/{{ lang }}/search">Search Loading...</div>
+    <div class="gcse-searchbox-only" data-enablehistory="true" data-autocompletemaxcompletions="5" data-autocompletematchtype="any" data-queryparametername="q" data-mobilelayout="disabled" data-resultsurl="/{{ lang }}/search">Search Loading...</div>
   </div>
   {% else %}
   <a class="nav-dropdown-btn js-hide" href="{{ url_for('search', lang=lang) }}">{{ self.search_title() }}</a>
@@ -122,7 +122,7 @@
     </button>
     <ul class="nav-dropdown-list align-right hidden {{switcher_name}}-search">
       <li class="nav-dropdown-list-part">
-        <div class="gcse-searchbox-only" data-enablehistory="true" data-autocompletemaxcompletions="5" data-autocompletematchtype="any" data-queryparametername="q" data-resultsurl="/{{ lang }}/search">Search Loading...</div>
+        <div class="gcse-searchbox-only" data-enablehistory="true" data-autocompletemaxcompletions="5" data-autocompletematchtype="any" data-queryparametername="q" data-mobilelayout="disabled" data-resultsurl="/{{ lang }}/search">Search Loading...</div>
       </li>
     </ul>
   </div>
