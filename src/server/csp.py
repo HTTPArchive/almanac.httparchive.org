@@ -22,7 +22,6 @@ csp = {
     'img-src': [
         '\'self\'',
         'https:',
-        '*.google.com',
         'data:'
     ],
     'frame-src': [

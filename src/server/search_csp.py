@@ -42,5 +42,11 @@ csp = {
     ],
     'base-uri': [
         '\'none\''
+    ],
+    'report-uri': [
+        'https://httparchive.report-uri.com/r/d/csp/enforce'
+    ],
+    'report-to': [
+        'https://httparchive.report-uri.com/r/d/csp/enforce'
     ]
 }
