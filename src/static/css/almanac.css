@@ -577,10 +577,8 @@ header .cta {
   background-color: #f7f779;
   padding: 6px 27px;
   width: auto;
-  vertical-align: middle;
   border: 1px solid #666;
   border-radius: 2px;
-  margin-top: -4px;
 }
 
 .search-button svg {

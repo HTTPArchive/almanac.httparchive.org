@@ -21,9 +21,13 @@
     text-align: center;
   }
 
+  #main-search-form {
+    text-align: center;
+  }
+
   #main-search-box {
     width: 80%;
-    width: calc(90% - 50px);
+    width: calc(100% - 80px);
     border: 1px solid #939393;
     padding: 0px 5px;
     line-height: 1.85;
@@ -40,7 +44,7 @@
   <h1 class="title title-lg">{{ self.search_title() }}</h1>
 
   <div id="search-area">
-    <form action="/{{ lang}}/search">
+    <form id="main-search-form" action="/{{ lang}}/search">
       <label for="main-search-box" class="visually-hidden">{{ self.search_title() }}</label>
       <input id="main-search-box" type="search" name="q" class="search-input" placeholder="{{ self.search_title() }}" title="{{ self.search_title() }}" aria-label="{{ self.search_title() }}">
       <button class="search-button main-search-button" aria-labelledby="main-search-icon" type="submit">
