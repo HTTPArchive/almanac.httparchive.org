@@ -121,7 +121,6 @@ def test_render_search_year_slash(client):
     assert_route(client, '/en/2020/search/', 301, '/en/search')
 
 
-
 def test_render_sitemap(client):
     assert_route(client, '/sitemap.xml', 200)
 
