@@ -560,6 +560,14 @@ header .cta {
   min-width: 400px;
 }
 
+.header-search{
+  padding: 5px;
+}
+
+.footer-search {
+  padding: 10px 5px 0;
+}
+
 .table-of-contents-switcher:hover,
 .language-switcher:hover,
 .year-switcher:hover {
@@ -838,7 +846,7 @@ p.copyright a {
   }
 
   .search-nav input {
-    min-width: 200px;
+    min-width: 400px;
   }
 
   header nav > ul > li:last-child {
@@ -1316,7 +1324,7 @@ p.copyright a {
 }
 
 .footer .nav-dropdown-list {
-  bottom: 60px;
+  bottom: 56px;
   border-radius: 29px 29px 29px 0;
   flex-direction: column-reverse;
 }
