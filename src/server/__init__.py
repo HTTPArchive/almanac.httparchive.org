@@ -67,7 +67,7 @@ app.jinja_env.filters['accentless_sort'] = accentless_sort
 
 talisman = Talisman(app,
                     content_security_policy=csp.csp,
-                    content_security_policy_nonce_in=['script-src','style-src'],
+                    content_security_policy_nonce_in=['script-src', 'style-src'],
                     feature_policy=feature_policy.feature_policy)
 
 
