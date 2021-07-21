@@ -24,6 +24,9 @@
   #main-search-box {
     width: 80%;
     width: calc(90% - 50px);
+    border: 1px solid #939393;
+    padding: 0px 5px;
+    line-height: 1.85;
   }
 
   .main-search-button {
@@ -38,7 +41,7 @@
 
   <div id="search-area">
     <form action="/{{ lang}}/search">
-      <label for="main-search-box" hidden>{{ self.search_title() }}</label>
+      <label for="main-search-box" class="visually-hidden">{{ self.search_title() }}</label>
       <input id="main-search-box" type="search" name="q" class="search-input" placeholder="{{ self.search_title() }}" title="{{ self.search_title() }}" aria-label="{{ self.search_title() }}">
       <button class="search-button main-search-button" aria-labelledby="main-search-icon" type="submit">
         <svg width="13" height="13" role="img" aria-labelledby="main-search-icon">

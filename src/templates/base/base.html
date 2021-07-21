@@ -112,7 +112,7 @@
 {% macro nav_search(switcher_name) %}
   {% if switcher_name == "mobile" or switcher_name == "mobile-footer" %}
   <form class="search-nav" action="/{{ lang}}/search">
-    <label for="{{ switcher_name }}-search-box" hidden>{{ self.search_title() }}</label>
+    <label for="{{ switcher_name }}-search-box" class="visually-hidden">{{ self.search_title() }}</label>
     <input id="{{ switcher_name }}-search-box" class="search-input" type="search" name="q" placeholder="{{ self.search_title() }}" title="{{ self.search_title() }}" aria-label="{{ self.search_title() }}">
     <button class="search-button" type="submit">
       <svg width="13" height="13" role="img" aria-labelledby="{{ switcher_name }}-search-icon">
@@ -130,7 +130,7 @@
     <ul class="nav-dropdown-list align-right hidden {{switcher_name}}-search">
       <li class="nav-dropdown-list-part">
         <form action="/{{ lang}}/search">
-          <label for="{{ switcher_name }}-search-box" hidden>{{ self.search_title() }}</label>
+          <label for="{{ switcher_name }}-search-box" class="visually-hidden">{{ self.search_title() }}</label>
           <input id="{{ switcher_name }}-search-box" class="search-input" type="search" name="q" placeholder="{{ self.search_title() }}" title="{{ self.search_title() }}" aria-label="{{ self.search_title() }}">
           <button class="search-button" type="submit">
             <svg width="13" height="13" role="img" aria-labelledby="{{ switcher_name }}-search-icon">
