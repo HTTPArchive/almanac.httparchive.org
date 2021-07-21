@@ -1,10 +1,7 @@
 csp = {
     'default-src': '\'self\'',
     'style-src': [
-        '\'self\'',
-        '\'unsafe-inline\'',
-        'cse.google.com',
-        'www.google.com'
+        '\'self\''
     ],
     'script-src': [
         '\'self\'',

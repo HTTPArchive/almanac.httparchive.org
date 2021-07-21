@@ -15,9 +15,19 @@
   #search-area {
     min-height: 100px;
   }
+
   .en-btn {
     margin: 2rem auto 2rem;
     text-align: center;
+  }
+
+  #main-search-box {
+    width: 80%;
+    width: calc(90% - 50px);
+  }
+
+  .main-search-button {
+    padding: 6px 27px;
   }
 </style>
 {% endblock %}
@@ -27,13 +37,42 @@
   <h1 class="title title-lg">{{ self.search_title() }}</h1>
 
   <div id="search-area">
-    <div class="gcse-searchbox" data-enablehistory="true" data-autocompletemaxcompletions="5" data-autocompletematchtype="any" data-queryparametername="q" data-mobilelayout="disabled"></div>
-    <div class="gcse-searchresults" data-lr="lang_{{ lang }}" data-noresultsstring="{{ self.no_results() }}" data-hl="lang_{{ lang }}"></div>
+    <form action="/{{ lang}}/search">
+      <input id="main-search-box" type="search" name="q" class="search-input" placeholder="{{ self.search_title() }}">
+      <button class="search-button main-search-button">
+        <svg width="13" height="13" role="img" aria-labelledby="main-search-icon">
+          <title id="main-search-icon">{{ self.search_title() }}</title>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use>
+        </svg>
+      </button>
+    </form>
+    <div class="gcse-searchresults-only" data-lr="lang_{{ lang }}" data-noresultsstring="{{ self.no_results() }}" data-hl="lang_{{ lang }}"></div>
   </div>
   {% if lang != "en" %}
   <div class="en-btn">
-    <a href="/en/search" class="alt btn">{{ self.search_in_english() }}</a>
+    <a href="/en/search" class="alt btn" id="english-search-link">{{ self.search_in_english() }}</a>
   </div>
   {% endif %}
 </main>
+
+<script nonce="{{ csp_nonce() }}">
+  if (window.URLSearchParams) {
+    var searchParams = new URLSearchParams(window.location.search);
+    q = searchParams.get("q");
+    if (q != undefined) {
+      if (q != "") {
+        var x = document.getElementById("main-search-box");
+        if (x != undefined) {
+          x.value = q;
+        }
+        var x = document.getElementById("english-search-link");
+        if (x != undefined) {
+          x.href = "/en/search?q=" + q;
+        }
+      }
+    }
+  }
+</script>
+<script defer src="https://cse.google.com/cse.js?cx=ffb208d5eae47b5bf" nonce="{{ csp_nonce() }}"></script>
+
 {% endblock %}

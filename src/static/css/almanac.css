@@ -568,6 +568,25 @@ header .cta {
   padding: 10px 5px 0;
 }
 
+.search-input {
+  line-height: 1.65;
+}
+
+.search-button {
+  border-color: #000;
+  background-color: #F7F779;
+  padding: 6px 27px;
+  width: auto;
+  vertical-align: middle;
+  border: 1px solid #666;
+  border-radius: 2px;
+  margin-top: -4px;
+}
+
+.search-button svg {
+  fill: #000;
+}
+
 .table-of-contents-switcher:hover,
 .language-switcher:hover,
 .year-switcher:hover {

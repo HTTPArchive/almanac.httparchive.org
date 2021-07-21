@@ -111,18 +111,32 @@
 
 {% macro nav_search(switcher_name) %}
   {% if switcher_name == "mobile" or switcher_name == "mobile-footer" %}
-  <div class="search-nav">
-    <div class="gcse-searchbox-only" data-enablehistory="true" data-autocompletemaxcompletions="5" data-autocompletematchtype="any" data-queryparametername="q" data-mobilelayout="disabled" data-resultsurl="/{{ lang }}/search">Search Loading...</div>
-  </div>
+  <form class="search-nav" action="/{{ lang}}/search">
+    <input id="{{ switcher_name }}-search-box" class="search-input" type="search" name="q" placeholder="{{ self.search_title() }}">
+    <button class="search-button">
+      <svg width="13" height="13" role="img" aria-labelledby="{{ switcher_name }}-search-icon">
+        <title id="{{ switcher_name }}-search-icon">{{ self.search_title() }}</title>
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use>
+      </svg>
+    </button>
+  </form>
   {% else %}
   <a class="nav-dropdown-btn js-hide" href="{{ url_for('search', lang=lang) }}">{{ self.search_title() }}</a>
   <div class="nav-dropdown {{switcher_name}} search-nav js-enable hidden">
-    <button type="button" class="nav-dropdown-btn" aria-expanded="false" aria-label="{{ self.search_title() }}" >
+    <button type="button" class="nav-dropdown-btn" aria-expanded="false" aria-labelledby="{{ self.search_title() }}" >
       {{ self.search_title() }}
     </button>
     <ul class="nav-dropdown-list align-right hidden {{switcher_name}}-search">
       <li class="nav-dropdown-list-part">
-        <div class="gcse-searchbox-only" data-enablehistory="true" data-autocompletemaxcompletions="5" data-autocompletematchtype="any" data-queryparametername="q" data-mobilelayout="disabled" data-resultsurl="/{{ lang }}/search">Search Loading...</div>
+        <form action="/{{ lang}}/search">
+          <input id="switcher_name-search-box" type="search" name="q" placeholder="{{ self.search_title() }}">
+          <button class="search-button">
+            <svg width="13" height="13" role="img" aria-label="{{ switcher_name }}-search-icon">
+              <title id="{{ switcher_name }}-search-icon">{{ self.search_title() }}</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use>
+            </svg>
+          </button>
+        </form>
       </li>
     </ul>
   </div>
@@ -560,7 +574,6 @@
   {% endblock %}
   {% block scripts %}
   <script async src="{{ get_versioned_filename('/static/js/almanac.js') }}" nonce="{{ csp_nonce() }}"></script>
-  <script defer src="https://cse.google.com/cse.js?cx=ffb208d5eae47b5bf" nonce="{{ csp_nonce() }}"></script>
   {% endblock %}
 {% endblock %}
 
