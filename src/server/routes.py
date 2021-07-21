@@ -77,9 +77,16 @@ def accessibility_statement(lang):
 def search(lang):
 
     if request.base_url[-1] == "/":
-        return redirect("/%s/search" % (lang)), 301
+        return redirect("/%s/search" % lang), 301
     else:
-        return render_template('%s/search.html' % (lang))
+        return render_template('%s/search.html' % lang)
+
+
+# Redirect search by year
+@app.route('/<lang>/<year>/search', strict_slashes=False)
+@validate
+def search_year(lang, year):
+    return redirect("/%s/search" % lang), 301
 
 
 @app.route('/sitemap.xml')
