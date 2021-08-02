@@ -20,7 +20,7 @@
         "mainthread-work-breakdown": "off",
         "maskable-icon": "off",
         "max-potential-fid": "off",
-        "no-unload-listeners": "off",
+        "modern-image-formats": "off",
         "render-blocking-resources": "off",
         "server-response-time": "off",
         "service-worker": "off",
