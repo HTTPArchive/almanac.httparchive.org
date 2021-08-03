@@ -826,20 +826,21 @@
     <button type="button" class="nav-dropdown-btn js-enable" disabled aria-expanded="false" aria-label="{{ self.year_switcher() }}">{{ year }}</button>
     <ul class="nav-dropdown-list hidden {{switcher_name}}-list">
       {% for y in supported_years | sort(reverse=true) %}
+        {#- Only show different years in drop down and for future years only show the year for the home page #}
         {% if y != year and (y <= DEFAULT_YEAR or request.path.endswith("/" + year + "/")) %}
           <li>
             <a href="{{ url_for(request.endpoint, **get_view_args(lang=lang,year=y)) }}">{{y}}</a>
           </li>
         {% endif %}
       {% endfor %}
-      {# If the current page doesn't support a year, then show a home link for that year #}
-        {% for y in all_supported_years | sort(reverse=true)%}
-          {% if y not in supported_years or (y > DEFAULT_YEAR and not request.path.endswith("/" + year + "/")) %}
-            <li class="unsupported-year">
-              <a href="{{ url_for('home', lang=lang,year=y) }}">{{ y }} {{ self.home() }}</a>
-            </li>
-          {% endif %}
-        {% endfor %}
+      {#- If the current page doesn't support a year, then show a home link for that year, including all pages not the home page for future years #}
+      {% for y in all_supported_years | sort(reverse=true)%}
+        {% if y not in supported_years or (y > DEFAULT_YEAR and not request.path.endswith("/" + year + "/")) %}
+          <li class="unsupported-year">
+            <a href="{{ url_for('home', lang=lang,year=y) }}">{{ y }} {{ self.home() }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
     </ul>
   </div>
 {% endmacro %}
