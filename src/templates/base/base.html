@@ -789,56 +789,76 @@
 </figure>
 {%- endmacro %}
 
+{# The year drop down is a bit complicated because we want to handle a few cases: #}
+{# - When chapter is not translated for a year (show link to English)             #}
+{# - When chapter is not available in English for a year (show link to home page) #}
+{# - When chapter is for a future year (show link to home page)                   #}
 {% macro native_year_dropdown(switcher_name)%}
   <div class="year-switcher js-show">
     <label for="year-switcher-{{switcher_name}}" class="visually-hidden">{{ self.year_switcher() }}</label>
     <select id="year-switcher-{{switcher_name}}">
-      {% for y in supported_years | sort(reverse=true) %}
-        {% if y == year %}
-          <option selected="selected" value="{{ url_for(request.endpoint, **get_view_args(lang=lang,year=y)) }}">
-            {{ y }}
-          </option>
-        {% else %}
-          <option value="{{ url_for(request.endpoint, **get_view_args(lang=lang,year=y)) }}">
-            {{ y }}
-          </option>
-        {% endif %}
-      {% endfor %}
-      {# If the current page doesn't support a year, then show a home link for that year #}
-      {% if supported_years|length < all_supported_years|length %}
-        <option disabled="disabled" aria-hidden="true">
-          ────
-        </option>
-        {% for y in all_supported_years | sort(reverse=true) %}
-          {% if y not in supported_years or year > DEFAULT_YEAR %}
-            <option value="{{ url_for('home', lang=lang,year=y) }}">
+      {% for y in all_supported_years | sort(reverse=true)%}
+        {% if y in supported_years %}
+          {% if y == year %}
+            <option selected="selected" value="{{ url_for(request.endpoint, **get_view_args(lang=lang, year=y)) }}">
+              {{ y }}
+            </option>
+          {% elif y <= DEFAULT_YEAR or request.path.endswith("/" + year + "/") %}
+            <option value="{{ url_for(request.endpoint, **get_view_args(lang=lang, year=y)) }}">
+              {{ y }}
+            </option>
+          {% elif y > DEFAULT_YEAR %}
+            <option value="{{ url_for('home', lang=lang, year=y) }}">
               {{ y }} {{ self.home() }}
             </option>
           {% endif %}
-        {% endfor %}
-      {% endif %}
+        {% else %}
+          {% if y in en_supported_years and y <= DEFAULT_YEAR %}
+          <option value="{{ url_for(request.endpoint, **get_view_args(lang='en', year=y)) }}">
+            {{ y }} {{ self.in_english() }}
+          </option>
+          {% else %}
+          <option value="{{ url_for('home', lang=lang, year=y) }}">
+            {{ y }} {{ self.home() }}
+          </option>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
     </select>
   </div>
 {% endmacro %}
 
+{# The year drop down is a bit complicated because we want to handle a few cases: #}
+{# - When chapter is not translated for a year (show link to English)             #}
+{# - When chapter is not available in English for a year (show link to home page) #}
+{# - When chapter is for a future year (show link to home page)                   #}
 {% macro styled_year_dropdown(switcher_name)%}
   <div class="nav-dropdown {{switcher_name}}">
     <button type="button" class="nav-dropdown-btn js-enable" disabled aria-expanded="false" aria-label="{{ self.year_switcher() }}">{{ year }}</button>
     <ul class="nav-dropdown-list hidden {{switcher_name}}-list">
-      {% for y in supported_years | sort(reverse=true) %}
-        {#- Only show different years in drop down and for future years only show the year for the home page #}
-        {% if y != year and (y <= DEFAULT_YEAR or request.path.endswith("/" + year + "/")) %}
-          <li>
-            <a href="{{ url_for(request.endpoint, **get_view_args(lang=lang,year=y)) }}">{{y}}</a>
+      {% for y in all_supported_years | sort(reverse=true) %}
+        {% if y in supported_years %}
+          {% if y != year %}
+            {% if y <= DEFAULT_YEAR or request.path.endswith("/" + year + "/") %}
+            <li>
+              <a href="{{ url_for(request.endpoint, **get_view_args(lang=lang, year=y)) }}">{{ y }}</a>
+            </li>
+          {% else %}
+            <li>
+              <a href="{{ url_for('home', lang=lang,year=y) }}">{{ y }} {{ self.home() }}</a>
+            </li>
+            {% endif %}
+          {% endif %}
+        {% else %}
+          {% if y in en_supported_years and y <= DEFAULT_YEAR %}
+          <li class="unsupported-year">
+            <a href="{{ url_for(request.endpoint, **get_view_args(lang='en', year=y)) }}">{{ y }} {{ self.translation_not_available() }}</a>
           </li>
-        {% endif %}
-      {% endfor %}
-      {#- If the current page doesn't support a year, then show a home link for that year, including all pages not the home page for future years #}
-      {% for y in all_supported_years | sort(reverse=true)%}
-        {% if y not in supported_years or (y > DEFAULT_YEAR and not request.path.endswith("/" + year + "/")) %}
+          {% else %}
           <li class="unsupported-year">
             <a href="{{ url_for('home', lang=lang,year=y) }}">{{ y }} {{ self.home() }}</a>
           </li>
+          {% endif %}
         {% endif %}
       {% endfor %}
     </ul>
