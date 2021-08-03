@@ -104,6 +104,23 @@ def test_render_en_accessibility_statement_slash(client):
     assert_route(client, '/en/accessibility-statement/', 301, '/en/accessibility-statement')
 
 
+def test_render_search(client):
+    response = client.get('/en/search')
+    assert response.status_code == 200
+
+
+def test_render_search_slash(client):
+    assert_route(client, '/en/search/', 301, '/en/search')
+
+
+def test_render_search_year(client):
+    assert_route(client, '/en/2020/search', 301, '/en/search')
+
+
+def test_render_search_year_slash(client):
+    assert_route(client, '/en/2020/search/', 301, '/en/search')
+
+
 def test_render_sitemap(client):
     assert_route(client, '/sitemap.xml', 200)
 
