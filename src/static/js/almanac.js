@@ -27,13 +27,22 @@ function handleSelectSwitchers() {
   }
 }
 
-// Language, Year and ToC menus (desktop)
+// Search, Language, Year and ToC menus (desktop)
 function handleNavMenu() {
 
   function closeAnyOtherOpenDropdown(e) {
+
+    // If the click was in a menu that's already open then ignore as just been opened.
     if (e.target.classList.contains('dropdown-open')) {
       return
     };
+
+    // If the click was in search nav, then ignore as don't want to close search menu.
+    if (document.querySelector('.search-nav ul:not(hidden)').contains(e.target)) {
+        return
+    }
+
+    // Else a click elsewhere so close all the menus
     var openDropdownBtn = document.querySelector('.nav-dropdown-btn.dropdown-open');
     openDropdownBtn && openDropdownBtn.click();
   }
