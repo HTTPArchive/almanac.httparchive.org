@@ -152,7 +152,7 @@ try {
 } catch (e) {
   return 0;
 }
-'''
+''' -- noqa: PRS
 OPTIONS (library="gs://httparchive/lib/css-utils.js");
 
 SELECT

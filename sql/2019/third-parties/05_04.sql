@@ -5,7 +5,7 @@ SELECT
   thirdPartyCategory,
   contentType,
   SUM(requestBytes) AS totalBytes,
-  ROUND(SUM(requestBytes) * 100 / SUM(SUM(requestBytes)) OVER (), 4) AS percentBytes
+  ROUND(SUM(requestBytes) * 100 / SUM(SUM(requestBytes)) OVER (PARTITION BY 0), 4) AS percentBytes
 FROM (
   SELECT
       client,

@@ -8,7 +8,7 @@ try {
 } catch (e) {
   return null;
 }
-'''
+''' -- noqa: PRS
 OPTIONS (library="gs://httparchive/lib/css-utils.js");
 
 SELECT

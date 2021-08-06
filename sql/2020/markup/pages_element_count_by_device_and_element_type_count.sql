@@ -11,7 +11,7 @@ try {
 
     if (Array.isArray(element_count) || typeof element_count != 'object') return null;
 
-    return Object.keys(element_count).length;  
+    return Object.keys(element_count).length;
 
 } catch (e) {}
 return null;
@@ -21,7 +21,7 @@ SELECT
   _TABLE_SUFFIX AS client,
   get_element_type_count(JSON_EXTRACT_SCALAR(payload, '$._element_count')) AS element_types,
   COUNT(0) AS freq
-FROM 
+FROM
   `httparchive.pages.2020_08_01_*`
 GROUP BY
   element_types,

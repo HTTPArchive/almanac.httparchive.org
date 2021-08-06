@@ -65,6 +65,6 @@ USING
     page)
 GROUP BY
   client,
-  font_display 
+  font_display
 ORDER BY
   pages DESC

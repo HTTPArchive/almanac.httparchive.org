@@ -12,7 +12,7 @@ FROM (
     IFNULL(JSON_EXTRACT_SCALAR(payload, '$._tls_version'), JSON_EXTRACT_SCALAR(payload, '$._securityDetails.protocol')) AS tls_version
   FROM
     `httparchive.almanac.requests`
-  WHERE 
+  WHERE
     date = '2020-08-01' AND
     STARTS_WITH(url, 'https') AND
     firstHtml = true)

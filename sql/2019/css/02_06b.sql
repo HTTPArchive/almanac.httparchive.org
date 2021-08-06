@@ -12,7 +12,7 @@ try {
     if (!('declarations' in rule)) {
       return values;
     }
-    
+
     return values.concat(rule.declarations.filter(d => re.test(d.value)).map(d => d.value.match(re)[0].toLowerCase()));
   };
   var $ = JSON.parse(css);

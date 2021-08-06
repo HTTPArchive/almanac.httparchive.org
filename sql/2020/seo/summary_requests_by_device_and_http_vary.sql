@@ -12,7 +12,7 @@ SELECT
   AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX)) AS pct
 FROM
    `httparchive.summary_requests.2020_08_01_*`
-WHERE 
+WHERE
    firstHtml = True
 GROUP BY
   client,

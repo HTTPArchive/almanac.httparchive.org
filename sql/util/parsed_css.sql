@@ -6,7 +6,7 @@ RETURNS STRING LANGUAGE js AS '''
   } catch (e) {
     '';
   }
-'''
+''' -- noqa: PRS
 OPTIONS (library="gs://httparchive/lib/parse-css.js");
 
 SELECT

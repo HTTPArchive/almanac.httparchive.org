@@ -1,6 +1,6 @@
 # standardSQL
 # Percentage of H2 and H3 sites affected by CDN prioritization issues
-SELECT 
+SELECT
   client,
   http_version,
   IF(pages.cdn = "", "Not using CDN", pages.cdn) AS CDN,
@@ -11,20 +11,20 @@ FROM (
     SELECT
       date,
       client,
-      JSON_EXTRACT_SCALAR(payload, '$._protocol') as http_version,
+      JSON_EXTRACT_SCALAR(payload, '$._protocol') AS http_version,
       url,
-      _cdn_provider as cdn
-    FROM 
-      `httparchive.almanac.requests` 
-    WHERE 
+      _cdn_provider AS cdn
+    FROM
+      `httparchive.almanac.requests`
+    WHERE
       date = '2020-08-01' AND
       firstHtml AND
       (LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) LIKE "http/2" OR
        LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) LIKE "%quic%" OR
        LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) LIKE "h3%" OR
-       LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) LIKE "http/3%")  
+       LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) LIKE "http/3%")
     ) AS pages
-LEFT JOIN 
+LEFT JOIN
   `httparchive.almanac.h2_prioritization_cdns` AS h2_pri
 USING (cdn, date)
 GROUP BY
@@ -32,5 +32,5 @@ GROUP BY
   http_version,
   CDN,
   prioritizes_correctly
-ORDER BY 
+ORDER BY
   num_pages DESC

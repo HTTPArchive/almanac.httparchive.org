@@ -1,4 +1,4 @@
-SELECT
+SELECT -- noqa: L044
   DATE('2020-08-01') AS date,
   *
 FROM

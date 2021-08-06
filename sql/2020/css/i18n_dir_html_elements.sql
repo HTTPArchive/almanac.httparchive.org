@@ -17,7 +17,7 @@ try {
       value: value.trim().toLowerCase()
     });
   });
-  
+
   return result;
 } catch (e) {
   return [];

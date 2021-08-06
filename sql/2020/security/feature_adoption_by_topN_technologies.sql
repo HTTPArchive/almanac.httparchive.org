@@ -1,10 +1,10 @@
 #standardSQL
 # Determines to what extent the top-N technology drivers are responsible for the global adoption of different security features
 -- from https://stackoverflow.com/a/54835472
-CREATE TEMP FUNCTION array_slice(arr ARRAY<STRING>, start INT64, finish INT64) 
+CREATE TEMP FUNCTION array_slice(arr ARRAY<STRING>, start INT64, finish INT64)
 RETURNS ARRAY<STRING> AS (
   ARRAY(
-    SELECT part FROM UNNEST(arr) part WITH OFFSET index 
+    SELECT part FROM UNNEST(arr) part WITH OFFSET index
     WHERE index BETWEEN start AND finish ORDER BY index
   )
 );
@@ -19,7 +19,7 @@ WITH app_headers AS (
     t.url AS url
   FROM
     `httparchive.summary_requests.2020_08_01_*` AS r
-  INNER JOIN 
+  INNER JOIN
     `httparchive.technologies.2020_08_01_*` AS t
   ON
     r._TABLE_SUFFIX = t._TABLE_SUFFIX AND

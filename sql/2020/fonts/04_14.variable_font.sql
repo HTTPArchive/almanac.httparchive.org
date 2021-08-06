@@ -38,7 +38,7 @@ JOIN (
   FROM
     `httparchive.pages.2020_09_01_*`
   GROUP BY
-    _TABLE_SUFFIX, url, payload) 
+    _TABLE_SUFFIX, url, payload)
 USING
   (client, page)
 WHERE

@@ -7,12 +7,12 @@ SELECT
   COUNTIF(NOT uses_no_store AND uses_max_age AND exp_age = 0) AS total_exp_age_zero,
   COUNTIF(NOT uses_no_store AND uses_max_age AND exp_age > 0) AS total_exp_age_gt_zero,
   COUNTIF(uses_no_store) AS total_not_cacheable,
-  COUNTIF(NOT uses_no_store) AS total_cacheable,  
+  COUNTIF(NOT uses_no_store) AS total_cacheable,
   COUNTIF(NOT uses_cache_control AND NOT uses_expires) / COUNTIF(NOT uses_no_store) AS pct_using_neither,
   COUNTIF(NOT uses_no_store AND uses_max_age AND exp_age = 0) / COUNTIF(NOT uses_no_store) AS pct_using_exp_age_zero,
   COUNTIF(NOT uses_no_store AND uses_max_age AND exp_age > 0) / COUNTIF(NOT uses_no_store) AS pct_using_exp_age_gt_zero,
   COUNTIF(uses_no_store) / COUNT(0) AS pct_not_cacheable,
-  COUNTIF(NOT uses_no_store) / COUNT(0) AS pct_cacheable  
+  COUNTIF(NOT uses_no_store) / COUNT(0) AS pct_cacheable
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,

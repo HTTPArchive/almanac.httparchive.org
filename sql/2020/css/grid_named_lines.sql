@@ -7,7 +7,7 @@ try {
 } catch (e) {
   return false;
 }
-'''
+''' -- noqa: PRS
 OPTIONS (library="gs://httparchive/lib/css-utils.js");
 
 SELECT
@@ -16,7 +16,7 @@ SELECT
   total,
   COUNTIF(grid_named_lines) / total AS pct
 FROM (
-  SELECT DISTINCT
+  SELECT
     client,
     page,
     COUNTIF(hasGridNamedLines(css)) > 0 AS grid_named_lines

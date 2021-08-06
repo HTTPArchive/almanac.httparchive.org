@@ -25,7 +25,7 @@ FROM (
     client,
     country,
     font_family,
-    COUNT(0) as freq,
+    COUNT(0) AS freq,
     SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
     COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct,
     ROW_NUMBER() OVER (PARTITION BY client, country ORDER BY COUNT(0) DESC) AS sort_row,
@@ -33,7 +33,7 @@ FROM (
     `httparchive.almanac.parsed_css`,
     UNNEST(getFontFamilies(css)) AS font_family
   JOIN (
-    SELECT DISTINCT  
+    SELECT DISTINCT
       origin, device,
       `chrome-ux-report`.experimental.GET_COUNTRY(country_code) AS country
     FROM

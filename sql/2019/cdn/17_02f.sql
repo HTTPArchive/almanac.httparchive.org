@@ -3,15 +3,15 @@
 
 SELECT
   client,
-  countif(jscdnHits > 0 ) hasJSCDNHits,
+  countIF(jscdnHits > 0 ) hasJSCDNHits,
   count(0) hits,
-  round(100*countif(jscdnHits > 0 ) / count(0), 2) pct
+  round(100*countIF(jscdnHits > 0 ) / count(0), 2) pct
 FROM
 (
   SELECT
     client,
     page,
-    countif(
+    countIF(
       NET.HOST(url) in ('unpkg.com',
         'www.jsdelivr.net',
         'cdnjs.cloudflare.com',

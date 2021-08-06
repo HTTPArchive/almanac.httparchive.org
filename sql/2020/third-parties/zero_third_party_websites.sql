@@ -1,7 +1,7 @@
 #standardSQL
 # Websites with no third party requests
 
-# Provides incorrect information in some cases, e.g. pageid = 140607555 
+# Provides incorrect information in some cases, e.g. pageid = 140607555
 
 WITH requests AS (
   SELECT

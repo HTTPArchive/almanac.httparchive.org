@@ -50,7 +50,7 @@ try {
       for (let match of haystack.matchAll(needle)) {
         ret++;
       }
-      
+
       return ret;
     }
 
@@ -147,7 +147,7 @@ try {
 } catch (e) {
   return [];
 }
-'''
+''' -- noqa: PRS
 OPTIONS (library="gs://httparchive/lib/css-utils.js");
 
 SELECT

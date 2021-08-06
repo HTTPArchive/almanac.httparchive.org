@@ -21,7 +21,7 @@ base AS (
   SELECT
     canonicalDomain,
     COUNT(DISTINCT page) AS total_pages,
-    COUNT(DISTINCT page) / COUNT(DISTINCT page) OVER () AS pct_pages
+    COUNT(DISTINCT page) / COUNT(DISTINCT page) OVER (PARTITION BY 0) AS pct_pages
   FROM
     requests
   LEFT JOIN

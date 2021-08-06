@@ -8,7 +8,7 @@ try {
 			if (!property.startsWith("--")) { // Custom props are case sensitive
 				property = property.toLowerCase();
 			}
-			
+
 			incrementByKey(ret, property);
 		});
 
@@ -24,7 +24,7 @@ try {
 catch (e) {
 	return [];
 }
-'''
+''' -- noqa: PRS
 OPTIONS (library="gs://httparchive/lib/css-utils.js");
 
 SELECT

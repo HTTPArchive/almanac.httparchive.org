@@ -15,9 +15,9 @@ try {
 
     if (Array.isArray(element_count) || typeof element_count != 'object') return result;
 
-    result.elements_count = Object.values(element_count).reduce((total, freq) => total + (parseInt(freq, 10) || 0), 0);  
+    result.elements_count = Object.values(element_count).reduce((total, freq) => total + (parseInt(freq, 10) || 0), 0);
 
-    result.types_count = Object.keys(element_count).length;  
+    result.types_count = Object.keys(element_count).length;
 
 } catch (e) {}
 return result;
@@ -35,7 +35,7 @@ SELECT
   APPROX_QUANTILES(element_count_info.types_count, 1000)[OFFSET(percentile * 10)] AS types_count,
 
 FROM (
-  SELECT 
+  SELECT
     _TABLE_SUFFIX AS client,
     percentile,
     url,

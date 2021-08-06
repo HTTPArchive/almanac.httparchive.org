@@ -133,7 +133,7 @@ try {
 } catch (e) {
   return [];
 }
-'''
+''' -- noqa: PRS
 OPTIONS (library="gs://httparchive/lib/css-utils.js");
 
 SELECT DISTINCT

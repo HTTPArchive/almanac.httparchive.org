@@ -11,7 +11,7 @@ FROM (
  SELECT
     client,
     page,
-    JSON_EXTRACT_SCALAR(payload, '$._protocol') as http_version,
+    JSON_EXTRACT_SCALAR(payload, '$._protocol') AS http_version,
     SUM(CAST(JSON_EXTRACT_SCALAR(payload, '$._bytesIn') AS INT64) / 1024) AS kb_transfered,
     COUNT(0) AS num_requests
   FROM
@@ -22,7 +22,7 @@ FROM (
     (LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) LIKE "http/2" OR
      LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) LIKE "%quic%" OR
      LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) LIKE "h3%" OR
-     LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) LIKE "http/3%")   
+     LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) LIKE "http/3%")
   GROUP BY
     client,
     http_version,

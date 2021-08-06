@@ -4,11 +4,11 @@
 SELECT
   client,
   webImageType AS imageType,
-  count(0) as pageCount,
-  countif(hits > 0) as frequencyCount,
-  round(100*countif(hits > 0) / count(0), 2) as pct,
-  sum(hits) as totalHits,
-  sum(bytes) as totalBytes,
+  count(0) AS pageCount,
+  countif(hits > 0) AS frequencyCount,
+  round(100*countif(hits > 0) / count(0), 2) AS pct,
+  sum(hits) AS totalHits,
+  sum(bytes) AS totalBytes,
   APPROX_QUANTILES(hits, 1000)[OFFSET(100)] AS hits_p10,
   APPROX_QUANTILES(hits, 1000)[OFFSET(250)] AS hits_p25,
   APPROX_QUANTILES(hits, 1000)[OFFSET(500)] AS hits_p50,
@@ -34,7 +34,7 @@ FROM
     SELECT
       client,
       page,
-      nullif(if(regexp_contains(mimetype, r'(?i)^application|^applicaton|^binary|^image$|^multipart|^media|^$|^text/html|^text/plain|\d|array|unknown|undefined|\*|string|^img|^images|^text|\%2f|\(|ipg$|jpe$|jfif'), format, lower(regexp_replace(regexp_replace(mimetype, r'(?is).*image[/\\](?:x-)?|[\."]|[ +,;]+.*$', ''), r'(?i)pjpeg|jpeg', 'jpg'))), '') as imageType,
+      nullif(if(regexp_contains(mimetype, r'(?i)^application|^applicaton|^binary|^image$|^multipart|^media|^$|^text/html|^text/plain|\d|array|unknown|undefined|\*|string|^img|^images|^text|\%2f|\(|ipg$|jpe$|jfif'), format, lower(regexp_replace(regexp_replace(mimetype, r'(?is).*image[/\\](?:x-)?|[\."]|[ +,;]+.*$', ''), r'(?i)pjpeg|jpeg', 'jpg'))), '') AS imageType,
       count(0) hits,
       sum(respSize) bytes
     FROM `httparchive.almanac.requests3`

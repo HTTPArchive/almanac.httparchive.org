@@ -13,20 +13,20 @@ try {
     if (Array.isArray(almanac) || typeof almanac != 'object') return [];
 
     if (almanac.attributes_used_on_elements) {
-      return Object.entries(almanac.attributes_used_on_elements).map(([name, freq]) => ({name, freq})); 
+      return Object.entries(almanac.attributes_used_on_elements).map(([name, freq]) => ({name, freq}));
     }
-    
+
 } catch (e) {
-    
+
 }
-return []; 
+return [];
 ''';
 
 SELECT
   _TABLE_SUFFIX AS client,
   almanac_attribute_info.name,
   SUM(almanac_attribute_info.freq) AS freq, # total count from all pages
-  AS_PERCENT(SUM(almanac_attribute_info.freq), SUM(SUM(almanac_attribute_info.freq)) OVER (PARTITION BY _TABLE_SUFFIX)) AS pct_m400 
+  AS_PERCENT(SUM(almanac_attribute_info.freq), SUM(SUM(almanac_attribute_info.freq)) OVER (PARTITION BY _TABLE_SUFFIX)) AS pct_m400
 FROM
   `httparchive.pages.2020_08_01_*`,
   UNNEST(get_almanac_attribute_info(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS almanac_attribute_info

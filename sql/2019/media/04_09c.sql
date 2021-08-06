@@ -28,7 +28,7 @@ FROM
     chHTML,
     chHeader
 )
-cross join unnest(split(lower(acceptCH), ',')) as ch
+cross join unnest(split(lower(acceptCH), ',')) AS ch
 GROUP BY
   client,
   ch

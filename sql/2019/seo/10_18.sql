@@ -2,7 +2,7 @@
 # 10_18: Zero count words and headers
 SELECT
   client,
-  ROUND(COUNTIF(words_count  = 0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) as word_count_zero,
+  ROUND(COUNTIF(words_count  = 0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS word_count_zero,
   ROUND(COUNTIF(header_elements  = 0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2)as header_count_zero
 FROM (
   SELECT

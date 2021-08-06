@@ -31,7 +31,7 @@ SELECT
   APPROX_QUANTILES(total, 1000)[OFFSET(percentile * 10)] AS heading_count
 
 FROM (
-  SELECT 
+  SELECT
     _TABLE_SUFFIX AS client,
     percentile,
     heading_info.heading AS heading,

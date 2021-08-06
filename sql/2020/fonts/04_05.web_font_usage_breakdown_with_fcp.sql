@@ -2,12 +2,12 @@
 #web_font_usage_breakdown_with_fcp
 SELECT
   client,
-  NET.HOST(url) AS host,  
+  NET.HOST(url) AS host,
   COUNT(DISTINCT page) AS pages,
   SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total,
   COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct,
   APPROX_QUANTILES(fcp, 1000)[OFFSET(500)] AS median_fcp,
-  APPROX_QUANTILES(lcp, 1000)[OFFSET(500)] AS median_lcp 
+  APPROX_QUANTILES(lcp, 1000)[OFFSET(500)] AS median_lcp
 FROM (
   SELECT
     client,

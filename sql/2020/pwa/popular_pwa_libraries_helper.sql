@@ -23,7 +23,7 @@ WHERE
   LOWER(ImportScript) NOT LIKE '%najva%' AND
   LOWER(ImportScript) NOT LIKE '%upush%' AND
   LOWER(ImportScript) NOT LIKE '%ache-polyfill%' AND
-  LOWER(ImportScript) NOT LIKE '%analytics-helper%'  
+  LOWER(ImportScript) NOT LIKE '%analytics-helper%'
 GROUP BY
   client,
   importscript,

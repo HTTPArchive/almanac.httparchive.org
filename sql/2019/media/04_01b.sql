@@ -2,7 +2,7 @@
 # 04_01: Lighthouse media scores for offscreen images
 
 SELECT
-  count(0) as PageCount,
+  count(0) AS PageCount,
   APPROX_QUANTILES(offScreenImagesCount, 1000)[OFFSET(100)] AS count_p10,
   APPROX_QUANTILES(offScreenImagesCount, 1000)[OFFSET(250)] AS count_p25,
   APPROX_QUANTILES(offScreenImagesCount, 1000)[OFFSET(500)] AS count_p50,

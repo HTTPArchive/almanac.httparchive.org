@@ -8,9 +8,9 @@ CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS
   ROUND(SAFE_DIVIDE(freq, total), 4)
 );
 
-CREATE TEMPORARY FUNCTION isCrawlableDetails(report STRING) 
+CREATE TEMPORARY FUNCTION isCrawlableDetails(report STRING)
 RETURNS STRUCT<
-disallow BOOL, 
+disallow BOOL,
 noindex BOOL,
 both BOOL,
 neither BOOL
@@ -38,7 +38,7 @@ SELECT
     COUNTIF(has_meta_description) AS has_meta_description,
     AS_PERCENT(COUNTIF(has_meta_description), COUNT(0)) AS pct_has_meta_description,
 
-    COUNTIF(has_title AND has_meta_description) AS has_title_and_meta_description, 
+    COUNTIF(has_title AND has_meta_description) AS has_title_and_meta_description,
     AS_PERCENT(COUNTIF(has_title AND has_meta_description), COUNT(0)) AS pct_has_title_and_meta_description,
 
     COUNTIF(img_alt_on_all) AS img_alt_on_all,
@@ -54,13 +54,13 @@ SELECT
     AS_PERCENT(COUNTIF(is_crawlable), COUNT(0)) AS pct_is_crawlable,
 
     COUNTIF(is_crawlable_details.noindex) AS noindex,
-    AS_PERCENT(COUNTIF(is_crawlable_details.noindex), COUNT(0)) AS pct_noindex,  
+    AS_PERCENT(COUNTIF(is_crawlable_details.noindex), COUNT(0)) AS pct_noindex,
 
     COUNTIF(is_crawlable_details.disallow) AS disallow,
-    AS_PERCENT(COUNTIF(is_crawlable_details.disallow), COUNT(0)) AS pct_disallow,  
+    AS_PERCENT(COUNTIF(is_crawlable_details.disallow), COUNT(0)) AS pct_disallow,
 
     COUNTIF(is_crawlable_details.disallow AND is_crawlable_details.noindex) AS disallow_noindex,
-    AS_PERCENT(COUNTIF(is_crawlable_details.disallow AND is_crawlable_details.noindex), COUNT(0)) AS pct_disallow_noindex,  
+    AS_PERCENT(COUNTIF(is_crawlable_details.disallow AND is_crawlable_details.noindex), COUNT(0)) AS pct_disallow_noindex,
 
     COUNTIF(NOT(is_crawlable_details.disallow) AND NOT(is_crawlable_details.noindex)) AS allow_index,
     AS_PERCENT(COUNTIF(NOT(is_crawlable_details.disallow) AND NOT(is_crawlable_details.noindex)), COUNT(0)) AS pct_allow_index,

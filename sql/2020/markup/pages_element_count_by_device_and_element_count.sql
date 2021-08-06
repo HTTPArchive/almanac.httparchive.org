@@ -11,7 +11,7 @@ try {
 
     if (Array.isArray(element_count) || typeof element_count != 'object') return null;
 
-    return Object.values(element_count).reduce((total, freq) => total + (parseInt(freq, 10) || 0), 0);  
+    return Object.values(element_count).reduce((total, freq) => total + (parseInt(freq, 10) || 0), 0);
 
 } catch (e) {}
 return null;
@@ -21,12 +21,12 @@ SELECT
   _TABLE_SUFFIX AS client,
   get_element_count(JSON_EXTRACT_SCALAR(payload, '$._element_count')) AS elements,
   COUNT(0) AS freq
-FROM 
+FROM
   `httparchive.pages.2020_08_01_*`
 GROUP BY
   elements,
   client
-HAVING 
+HAVING
   elements <= 2000
 ORDER BY
   elements,

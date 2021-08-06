@@ -1,6 +1,6 @@
 #standardSQL
 # Percent of third-party requests with "Timing-Allow-Origin" headers
-# Header reference: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Timing-Allow-Origin 
+# Header reference: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Timing-Allow-Origin
 
 CREATE TEMP FUNCTION get_tao(headers STRING)
 RETURNS STRING LANGUAGE js AS '''

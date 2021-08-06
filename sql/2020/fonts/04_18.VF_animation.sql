@@ -2,12 +2,12 @@
 # pages that animate variable font axes
 CREATE TEMPORARY FUNCTION animatesVariableFonts(css STRING) RETURNS BOOLEAN LANGUAGE js AS '''
 try {
-  var ast = JSON.parse(css);  
+  var ast = JSON.parse(css);
   return countDeclarations(ast.stylesheet.rules, {properties: 'transition', values: /font-variation-settings/}) > 0;
 } catch (e) {
   return false;
 }
-'''
+''' -- noqa: PRS
 OPTIONS (library="gs://httparchive/lib/css-utils.js");
 SELECT
   client,

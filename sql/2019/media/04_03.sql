@@ -6,8 +6,8 @@ SELECT
   # we need to normalize the image filetype. However, content-type often lies, but WPO uses extensions.
   # without running `identify` on each image bytes, we are going to try a sanitize approach and fall back to WPOs file extension match
   # I found this less problematic than trying to do the inverse by selecting only image/ results and falling back to WPO. It's a mess either way
-  nullif(if(regexp_contains(mimetype, r'(?i)^application|^applicaton|^binary|^image$|^multipart|^media|^$|^text/html|^text/plain|\d|array|unknown|undefined|\*|string|^img|^images|^text|\%2f|\(|ipg$|jpe$|jfif'), format, lower(regexp_replace(regexp_replace(mimetype, r'(?is).*image[/\\](?:x-)?|[\."]|[ +,;]+.*$', ''), r'(?i)pjpeg|jpeg', 'jpg'))), '') as imageType,
-  --   nullif(if(regexp_contains(mimetype, r'(?is)^image/'), lower(regexp_replace(regexp_replace(mimetype, r'(?i)^image[/\\](?:x-)?|[\."]|[ +,;].*$', ''), r'(?i)pjpeg|jpeg', 'jpg')), format), '') as imageType,
+  nullif(if(regexp_contains(mimetype, r'(?i)^application|^applicaton|^binary|^image$|^multipart|^media|^$|^text/html|^text/plain|\d|array|unknown|undefined|\*|string|^img|^images|^text|\%2f|\(|ipg$|jpe$|jfif'), format, lower(regexp_replace(regexp_replace(mimetype, r'(?is).*image[/\\](?:x-)?|[\."]|[ +,;]+.*$', ''), r'(?i)pjpeg|jpeg', 'jpg'))), '') AS imageType,
+  --   nullif(if(regexp_contains(mimetype, r'(?is)^image/'), lower(regexp_replace(regexp_replace(mimetype, r'(?i)^image[/\\](?:x-)?|[\."]|[ +,;].*$', ''), r'(?i)pjpeg|jpeg', 'jpg')), format), '') AS imageType,
 
   # A future iteration could try and use the initator_type. however again WPO is very inconsistent with results and I dont' have time to debug
   -- json_extract_scalar(payload, '$._initiator_type'),

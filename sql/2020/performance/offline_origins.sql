@@ -1,7 +1,7 @@
 #standardSQL
 # Offline origins
 
-SELECT 
+SELECT
   total_origins,
   offline_origins,
   offline_origins/total_origins AS pct_offline_origins

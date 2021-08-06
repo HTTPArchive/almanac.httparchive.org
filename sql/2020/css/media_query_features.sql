@@ -12,7 +12,7 @@ try {
 
       if (features) {
         features = features.map(s => s.slice(1));
-        
+
         for (let feature of features) {
           incrementByKey(ret, feature);
         }
@@ -28,7 +28,7 @@ try {
 } catch (e) {
   return [];
 }
-'''
+''' -- noqa: PRS
 OPTIONS (library="gs://httparchive/lib/css-utils.js");
 
 SELECT

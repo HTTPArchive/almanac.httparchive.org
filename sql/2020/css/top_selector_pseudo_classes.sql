@@ -52,7 +52,7 @@ try {
 } catch (e) {
   return null;
 }
-'''
+''' -- noqa: PRS
 OPTIONS (library="gs://httparchive/lib/css-utils.js");
 
 SELECT
@@ -74,7 +74,7 @@ FROM (
       FROM
         `httparchive.almanac.parsed_css`
       LEFT JOIN
-        UNNEST(getSelectorParts(css).pseudo_class) AS pseudo_class
+        UNNEST(getSelectorParts(css).pseudo_class) AS pseudo_class -- noqa: PRS
       WHERE
         date = '2020-08-01' AND
         # Limit the size of the CSS to avoid OOM crashes.

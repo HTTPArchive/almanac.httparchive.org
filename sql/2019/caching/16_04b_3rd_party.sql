@@ -20,7 +20,7 @@ FROM
     SELECT
       client,
       IF (STRPOS(NET.HOST(url), REGEXP_EXTRACT(NET.REG_DOMAIN(page), r'([\w-]+)')) > 0, 1, 3) AS party,
-      ROUND((expAge - (startedDateTime - toTimestamp(resp_last_modified))) / 86400, 2)  AS diff_in_days
+      ROUND((expAge - (startedDateTime - toTimestamp(resp_last_modified))) / 86400, 2) AS diff_in_days
     FROM
       `httparchive.almanac.requests`
     WHERE

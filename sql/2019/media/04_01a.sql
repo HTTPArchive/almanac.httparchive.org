@@ -67,7 +67,7 @@ FROM
   # it's important to remember that each of the results is mutually exclusive and should not imply addition
   # that is, you cannot assume that image + video at the p75 and image at p75 are the same webpages being collected
   # if we wanted to do more advanced percentile based on page size, we would need a different statistics engine (eg: R)
-  CROSS JOIN UNNEST(['image', 'image+video']) as type
+  CROSS JOIN UNNEST(['image', 'image+video']) AS type
 )
 GROUP BY
   type

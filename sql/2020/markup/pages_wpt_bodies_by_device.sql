@@ -19,26 +19,26 @@ RETURNS STRUCT<
   target_blank_noreferrer_total INT64,
   target_blank_neither_total INT64,
 
-  n_h1 INT64, 
-  n_h2 INT64, 
-  n_h3 INT64, 
-  n_h4 INT64, 
-  n_h5 INT64, 
-  n_h6 INT64, 
-  n_h7 INT64, 
+  n_h1 INT64,
+  n_h2 INT64,
+  n_h3 INT64,
+  n_h4 INT64,
+  n_h5 INT64,
+  n_h6 INT64,
+  n_h7 INT64,
   n_h8 INT64,
-  n_non_empty_h1 INT64, 
-  n_non_empty_h2 INT64, 
-  n_non_empty_h3 INT64, 
+  n_non_empty_h1 INT64,
+  n_non_empty_h2 INT64,
+  n_non_empty_h3 INT64,
   n_non_empty_h4 INT64,
-  n_non_empty_h5 INT64, 
-  n_non_empty_h6 INT64, 
-  n_non_empty_h7 INT64, 
+  n_non_empty_h5 INT64,
+  n_non_empty_h6 INT64,
+  n_non_empty_h7 INT64,
   n_non_empty_h8 INT64
 > LANGUAGE js AS '''
 var result = {};
 try {
-    var wpt_bodies = JSON.parse(wpt_bodies_string); 
+    var wpt_bodies = JSON.parse(wpt_bodies_string);
 
     if (Array.isArray(wpt_bodies) || typeof wpt_bodies != 'object') return result;
 
@@ -162,13 +162,12 @@ SELECT
   SUM(wpt_bodies_info.n_h8) AS freq_h8,
 
   FROM
-    ( 
-      SELECT 
+    (
+      SELECT
         _TABLE_SUFFIX AS client,
-        get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info      
+        get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
       FROM
        `httparchive.pages.2020_08_01_*`
     )
 GROUP BY
   client
-  

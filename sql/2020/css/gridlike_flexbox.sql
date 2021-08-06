@@ -14,7 +14,7 @@ try {
 } catch (e) {
   return false;
 }
-'''
+''' -- noqa: PRS
 OPTIONS (library="gs://httparchive/lib/css-utils.js");
 
 SELECT
@@ -23,7 +23,7 @@ SELECT
   total,
   COUNTIF(gridlike_flexbox) / total AS pct
 FROM (
-  SELECT DISTINCT
+  SELECT
     client,
     page,
     COUNTIF(hasGridlikeFlexbox(css)) > 0 AS gridlike_flexbox

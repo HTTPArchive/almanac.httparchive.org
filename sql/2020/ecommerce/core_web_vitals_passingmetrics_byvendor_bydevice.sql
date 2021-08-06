@@ -48,17 +48,17 @@ JOIN (
   FROM
     `httparchive.technologies.2020_08_01_*`
   WHERE
-    category = 'Ecommerce' AND 
-    (app != 'Cart Functionality' AND 
+    category = 'Ecommerce' AND
+    (app != 'Cart Functionality' AND
     app != 'Google Analytics Enhanced eCommerce'))
 ON
   CONCAT(origin, '/') = url AND
   IF(device = 'desktop', 'desktop', 'mobile') = client
 WHERE
-  date = '2020-08-01'
+  date = '202008-01'
 GROUP BY
   client,
   ecomm
 ORDER BY
-  origins DESC 
-   
+  origins DESC
+
