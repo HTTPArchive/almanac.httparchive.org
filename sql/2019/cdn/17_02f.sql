@@ -12,7 +12,7 @@ FROM
     client,
     page,
     countIF(
-      NET.HOST(url) in ('unpkg.com',
+      NET.HOST(url) IN ('unpkg.com',
         'www.jsdelivr.net',
         'cdnjs.cloudflare.com',
         'ajax.aspnetcdn.com',

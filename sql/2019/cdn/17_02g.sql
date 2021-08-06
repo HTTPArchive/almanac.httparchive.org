@@ -7,14 +7,14 @@ FROM
 (
   SELECT
     client,
-    IF(respBodySize > 0  AND  regexp_contains(resp_content_type, r'javascript|css|font'), NET.HOST(url), NULL) AS host,
-    count(distinct page) AS pageUseCount,
+    IF(respBodySize > 0 AND regexp_contains(resp_content_type, r'javascript|css|font'), NET.HOST(url), NULL) AS host,
+    COUNT(DISTINCT page) AS pageUseCount,
     SUM(countIF(firstHtml)) OVER (PARTITION BY client) AS totalPagesCount
     FROM `httparchive.almanac.requests3`
   GROUP BY
     client,
     host
-) resp_content_type
+)
 WHERE host IS NOT NULL AND pageUseCount > 1000
 ORDER BY
   client DESC,

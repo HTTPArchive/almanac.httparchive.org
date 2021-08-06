@@ -3,14 +3,14 @@
 SELECT
     client,
     COUNTIF(firstHtml) AS htmlHits,
-    COUNTIF(NOT firstHtml  AND  sameHost) AS domainHits,
-    COUNTIF(NOT sameHost  AND  sameDomain) AS subdomainHits,
-    COUNTIF(NOT sameHost  AND  NOT sameDomain) AS thirdPartyHits,
+    COUNTIF(NOT firstHtml AND sameHost) AS domainHits,
+    COUNTIF(NOT sameHost AND sameDomain) AS subdomainHits,
+    COUNTIF(NOT sameHost AND NOT sameDomain) AS thirdPartyHits,
     COUNT(0) AS hits,
     SUM(IF(firstHtml, respBodySize, 0)) AS htmlBytes,
-    SUM(IF(NOT firstHtml  AND  sameHost, respBodySize, 0)) AS domainBytes,
-    SUM(IF(NOT sameHost  AND  sameDomain, respBodySize, 0)) AS subdomainBytes,
-    SUM(IF(NOT sameHost  AND  NOT sameDomain, respBodySize, 0)) AS thirdPartyBytes,
+    SUM(IF(NOT firstHtml AND sameHost, respBodySize, 0)) AS domainBytes,
+    SUM(IF(NOT sameHost AND sameDomain, respBodySize, 0)) AS subdomainBytes,
+    SUM(IF(NOT sameHost AND NOT sameDomain, respBodySize, 0)) AS thirdPartyBytes,
     SUM(respBodySize) AS bytes,
 
     COUNTIF(cdn != 'ORIGIN') AS cdnHits,
@@ -22,11 +22,11 @@ SELECT
       SELECT
         client, page, url, firstHtml, respBodySize,
         IFNULL(NULLIF(REGEXP_EXTRACT(_cdn_provider, r'^([^,]*).*'), ''), 'ORIGIN') AS cdn,
-        CASE WHEN NET.HOST(url) = NET.HOST(page) THEN true ELSE false END sameHost,
-        CASE WHEN NET.HOST(url) = NET.HOST(page) OR NET.REG_DOMAIN(url) = NET.REG_DOMAIN(page) THEN true ELSE false END sameDomain # if toplevel reg_domain will return NULL so we group this as sameDomain
+        CASE WHEN NET.HOST(url) = NET.HOST(page) THEN TRUE ELSE FALSE END sameHost,
+        CASE WHEN NET.HOST(url) = NET.HOST(page) OR NET.REG_DOMAIN(url) = NET.REG_DOMAIN(page) THEN TRUE ELSE FALSE END sameDomain # if toplevel reg_domain will return NULL so we group this as sameDomain
       FROM `httparchive.almanac.requests3`
       --GROUP BY client, pageid, requestid, page, url, firstHtml, _cdn_provider, respBodySize
     )
   GROUP BY
-    client DESC,
-    hits DESC
+    client,
+    hits

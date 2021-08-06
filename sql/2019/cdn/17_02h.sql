@@ -8,7 +8,7 @@ FROM
 (
   SELECT
     client,
-    IF(NET.HOST(url) in ('unpkg.com',
+    IF(NET.HOST(url) IN ('unpkg.com',
         'cdn.jsdelivr.net',
         'cdnjs.cloudflare.com',
         'ajax.aspnetcdn.com',
@@ -18,8 +18,8 @@ FROM
         'use.fontawesome.com',
         'code.jquery.com',
         'fonts.googleapis.com'), NET.HOST(url), 'OTHER') jsCDN,
-    count(distinct page) AS pageUseCount,
-    SUM(countIF(firstHtml)) OVER (PARTITION BY client) AS totalPagesCount
+    COUNT(DISTINCT page) AS pageUseCount,
+    SUM(COUNTIF(firstHtml)) OVER (PARTITION BY client) AS totalPagesCount
     FROM `httparchive.almanac.requests3`
   GROUP BY
     client,
