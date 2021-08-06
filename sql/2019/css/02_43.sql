@@ -1,6 +1,6 @@
 #standardSQL
 # 02_43: % of sites that use [id="foo"] selectors
-CREATE TEMPORARY FUNCTION getAttributeSelectorType(css STRING)
+CREATE TEMPORARY FUNCTION getAttributeSelectorType(css STRING) -- noqa: PRS
 RETURNS STRUCT<`=` BOOLEAN, `*=` BOOLEAN, `^=` BOOLEAN, `$=` BOOLEAN, `~=` BOOLEAN> LANGUAGE js AS '''
 try {
   var reduceValues = (values, rule) => {
