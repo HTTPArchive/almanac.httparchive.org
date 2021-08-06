@@ -2,18 +2,18 @@
 # 17_19: Percentage of HTTPS responses by protocol
 SELECT
   client, cdn, firstHtml,
-  countIF(IFNULL(a.protocol, b.protocol) = 'HTTP/0.9') AS http09,
-  countIF(IFNULL(a.protocol, b.protocol) = 'HTTP/1.0') AS http10,
-  countIF(IFNULL(a.protocol, b.protocol) = 'HTTP/1.1') AS http11,
-  countIF(IFNULL(a.protocol, b.protocol) = 'HTTP/2') AS http2,
-  countIF(IFNULL(a.protocol, b.protocol) NOT IN ('HTTP/0.9', 'HTTP/1.0', 'HTTP/1.1', 'HTTP/2')) AS http_other,
-  countIF(isSecure OR IFNULL(a.protocol, b.protocol) = 'HTTP/2') AS tls_total,
-  round(100*countIF(IFNULL(a.protocol, b.protocol) = 'HTTP/0.9')/count(0), 2) AS http09_pct,
-  round(100*countIF(IFNULL(a.protocol, b.protocol) = 'HTTP/1.0')/count(0), 2) AS http10_pct,
-  round(100*countIF(IFNULL(a.protocol, b.protocol) = 'HTTP/1.1')/count(0), 2) AS http11_pct,
-  round(100*countIF(IFNULL(a.protocol, b.protocol) = 'HTTP/2')/count(0), 2) AS http2_pct,
-  round(100*countIF(IFNULL(a.protocol, b.protocol) NOT IN ('HTTP/0.9', 'HTTP/1.0', 'HTTP/1.1', 'HTTP/2')) /count(0), 2) AS http_other_pct,
-  round(100*countIF(isSecure OR IFNULL(a.protocol, b.protocol) = 'HTTP/2')/count(0), 2) AS tls_pct,
+  COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/0.9') AS http09,
+  COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/1.0') AS http10,
+  COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/1.1') AS http11,
+  COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/2') AS http2,
+  COUNTIF(IFNULL(a.protocol, b.protocol) NOT IN ('HTTP/0.9', 'HTTP/1.0', 'HTTP/1.1', 'HTTP/2')) AS http_other,
+  COUNTIF(isSecure OR IFNULL(a.protocol, b.protocol) = 'HTTP/2') AS tls_total,
+  round(100*COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/0.9')/count(0), 2) AS http09_pct,
+  round(100*COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/1.0')/count(0), 2) AS http10_pct,
+  round(100*COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/1.1')/count(0), 2) AS http11_pct,
+  round(100*COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/2')/count(0), 2) AS http2_pct,
+  round(100*COUNTIF(IFNULL(a.protocol, b.protocol) NOT IN ('HTTP/0.9', 'HTTP/1.0', 'HTTP/1.1', 'HTTP/2')) /count(0), 2) AS http_other_pct,
+  round(100*COUNTIF(isSecure OR IFNULL(a.protocol, b.protocol) = 'HTTP/2')/count(0), 2) AS tls_pct,
   count(0) AS total
 FROM
 (

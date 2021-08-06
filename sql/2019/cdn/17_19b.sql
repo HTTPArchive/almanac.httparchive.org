@@ -2,14 +2,14 @@
 # 17_19: Percentage of HTTPS responses by protocol
 SELECT
   client, cdn, firstHtml,
-  countIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.0') AS tls10,
-  countIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.1') AS tls11,
-  countIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.2') AS tls12,
-  countIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.3') AS tls13,
-  round(100*countIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.0')/count(0), 2) AS tls10_pct,
-  round(100*countIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.1')/count(0), 2) AS tls11_pct,
-  round(100*countIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.2')/count(0), 2) AS tls12_pct,
-  round(100*countIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.3')/count(0), 2) AS tls13_pct,
+  COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.0') AS tls10,
+  COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.1') AS tls11,
+  COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.2') AS tls12,
+  COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.3') AS tls13,
+  round(100*COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.0')/count(0), 2) AS tls10_pct,
+  round(100*COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.1')/count(0), 2) AS tls11_pct,
+  round(100*COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.2')/count(0), 2) AS tls12_pct,
+  round(100*COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.3')/count(0), 2) AS tls13_pct,
   count(0) AS total
 FROM
 (
