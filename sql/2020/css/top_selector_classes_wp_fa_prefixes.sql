@@ -76,6 +76,7 @@ FROM (
       FROM
         `httparchive.almanac.parsed_css`
       LEFT JOIN
+        -- SQL Linter can't handle STRUCTs fields so noqa next line
         UNNEST(getSelectorParts(css).class) AS class -- noqa: PRS
       WHERE
         date = '2020-08-01' AND

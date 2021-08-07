@@ -1,7 +1,10 @@
 #standardSQL
 # 02_43: % of sites that use [id="foo"] selectors
 CREATE TEMPORARY FUNCTION getAttributeSelectorType(css STRING) -- noqa: PRS
-RETURNS STRUCT<`=` BOOLEAN, `*=` BOOLEAN, `^=` BOOLEAN, `$=` BOOLEAN, `~=` BOOLEAN> LANGUAGE js AS '''
+-- SQL Linter cannot handle complex STRUCTs so needs noqa ignore command on previous line
+RETURNS STRUCT<`=` BOOLEAN, `*=` BOOLEAN, `^=` BOOLEAN, `$=` BOOLEAN, `~=` BOOLEAN>
+LANGUAGE js
+AS '''
 try {
   var reduceValues = (values, rule) => {
     if ('rules' in rule) {
