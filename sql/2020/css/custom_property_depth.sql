@@ -1,7 +1,6 @@
 #standardSQL
 CREATE TEMPORARY FUNCTION getCustomPropertyLengths(payload STRING)
-RETURNS
-ARRAY<STRUCT<depth INT64, freq INT64>> 
+RETURNS ARRAY<STRUCT<depth INT64, freq INT64>>
 LANGUAGE js
 OPTIONS (library="gs://httparchive/lib/css-utils.js")
 AS '''

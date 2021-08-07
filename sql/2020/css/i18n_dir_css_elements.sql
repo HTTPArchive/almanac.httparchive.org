@@ -1,7 +1,6 @@
 #standardSQL
 CREATE TEMPORARY FUNCTION getDirValues(css STRING)
-RETURNS
-ARRAY<STRUCT<element STRING, value STRING, freq INT64>> 
+RETURNS ARRAY<STRUCT<element STRING, value STRING, freq INT64>>
 LANGUAGE js
 OPTIONS (library="gs://httparchive/lib/css-utils.js")
 AS '''

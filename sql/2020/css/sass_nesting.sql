@@ -1,7 +1,6 @@
 #standardSQL
 CREATE TEMPORARY FUNCTION getNestedUsage(payload STRING)
-RETURNS
-ARRAY<STRUCT<nested STRING, freq INT64>> 
+RETURNS ARRAY<STRUCT<nested STRING, freq INT64>>
 LANGUAGE js
 OPTIONS (library="gs://httparchive/lib/css-utils.js")
 AS '''

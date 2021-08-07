@@ -1,7 +1,6 @@
 #standardSQL
 CREATE TEMPORARY FUNCTION getPhysicalProperties(css STRING)
-RETURNS
-ARRAY<STRUCT<property STRING, freq INT64>> 
+RETURNS ARRAY<STRUCT<property STRING, freq INT64>>
 LANGUAGE js
 OPTIONS (library="gs://httparchive/lib/css-utils.js")
 AS '''
