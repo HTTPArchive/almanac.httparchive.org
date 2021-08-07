@@ -9,8 +9,8 @@ SELECT
 FROM
   `httparchive.summary_pages.*`
 WHERE
-  reqFont IS NOT NULL
-  AND bytesFont IS NOT NULL
+  reqFont IS NOT NULL AND
+  bytesFont IS NOT NULL
 GROUP BY
   client,
   date

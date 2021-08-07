@@ -6,8 +6,8 @@ CREATE TEMP FUNCTION IS_GOOD (good FLOAT64, needs_improvement FLOAT64, poor FLOA
 );
 
 CREATE TEMP FUNCTION IS_NI (good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
-  good / (good + needs_improvement + poor) < 0.75
-  AND poor / (good + needs_improvement + poor) < 0.25
+  good / (good + needs_improvement + poor) < 0.75 AND
+  poor / (good + needs_improvement + poor) < 0.25
 );
 
 CREATE TEMP FUNCTION IS_POOR (good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
@@ -48,8 +48,8 @@ WITH
   FROM
     `chrome-ux-report.materialized.device_summary`
   WHERE
-    device IN ('desktop','phone')
-    AND date IN ('2019-08-01', '2020-08-01')
+    device IN ('desktop','phone') AND
+    date IN ('2019-08-01', '2020-08-01')
 )
 
 SELECT

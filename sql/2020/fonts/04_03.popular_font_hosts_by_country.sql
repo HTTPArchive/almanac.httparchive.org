@@ -31,9 +31,9 @@ FROM
     CONCAT(origin, '/')=page AND
     IF(device='desktop','desktop','mobile')=client
   WHERE
-    type='font'
-    AND NET.HOST(url)!=NET.HOST(page)
-    AND date='2020-08-01'
+    type='font' AND
+    NET.HOST(url)!=NET.HOST(page) AND
+    date='2020-08-01'
   GROUP BY
     client,
     country,

@@ -33,6 +33,6 @@ FROM (
 CROSS JOIN
   UNNEST(link_headers) AS link_header
 WHERE
-  link_header LIKE '%preload%'
-  AND link_header LIKE '%nopush%'
+  link_header LIKE '%preload%' AND
+  link_header LIKE '%nopush%'
 GROUP BY client, firstHtml

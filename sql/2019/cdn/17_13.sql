@@ -24,8 +24,8 @@ FROM (
     GROUP BY client, requestid, page, url, firstHtml, cdn, tlstime, sanLength
 )
 WHERE
-  tlstime != -1
- AND sanLength IS NOT NULL
+  tlstime != -1 AND
+  sanLength IS NOT NULL
 GROUP BY
  client,
  cdn,
