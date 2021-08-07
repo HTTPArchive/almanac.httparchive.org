@@ -162,7 +162,8 @@ granular_metrics AS (
   LEFT JOIN
     ttfb
   USING
-    (origin, network))
+    (origin, network)
+)
 
 SELECT
   network,
