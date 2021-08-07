@@ -9,13 +9,16 @@ CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS
 );
 
 CREATE TEMPORARY FUNCTION isCrawlableDetails(report STRING) -- noqa: PRS
--- SQL Linter cannot handle complex STRUCTs so needs noqa ignore command on previous line
+-- SQL Linter cannot handle DETERMINISTIC keyword so needs noqa ignore command on previous line
 RETURNS STRUCT<
 disallow BOOL,
 noindex BOOL,
 both BOOL,
 neither BOOL
-> DETERMINISTIC LANGUAGE js AS '''
+>
+DETERMINISTIC
+LANGUAGE js
+AS '''
 var result = {disallow: false, noindex: false};
 try {
     var $ = JSON.parse(report);

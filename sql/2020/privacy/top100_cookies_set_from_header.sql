@@ -1,10 +1,11 @@
 #standardSQL
 # Top100 popular cookies and their origins
 
-CREATE TEMPORARY FUNCTION -- noqa: PRS
-  cookieNames(headers STRING)
-  RETURNS ARRAY<STRING> DETERMINISTIC
-  LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION cookieNames(headers STRING) -- noqa: PRS
+-- SQL Linter cannot handle DETERMINISTIC keyword so needs noqa ignore command on previous line
+RETURNS ARRAY<STRING>
+DETERMINISTIC
+LANGUAGE js AS '''
 try {
   var headers = JSON.parse(headers);
   let cookies = headers.filter(h => h.name.match(/^set-cookie$/i));

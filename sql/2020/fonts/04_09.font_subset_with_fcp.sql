@@ -1,9 +1,9 @@
 #standardSQL
 #font_subset_with_fcp
-CREATE TEMPORARY FUNCTION
-  getFont(css STRING)
-  RETURNS ARRAY<STRING>
-  LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getFont(css STRING)
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
     var reduceValues = (values, rule) => {
         if ('rules' in rule) {

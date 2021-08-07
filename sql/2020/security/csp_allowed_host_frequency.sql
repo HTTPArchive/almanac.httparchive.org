@@ -2,7 +2,8 @@
 # CSP on home pages: most prevalent allowed hosts
 CREATE TEMPORARY FUNCTION getHeader(headers STRING, headername STRING) -- noqa: PRS
 -- SQL Linter cannot handle DETERMINISTIC keyword so needs noqa ignore command on previous line
-RETURNS STRING DETERMINISTIC
+RETURNS STRING
+DETERMINISTIC
 LANGUAGE js AS '''
   const parsed_headers = JSON.parse(headers);
   const matching_headers = parsed_headers.filter(h => h.name.toLowerCase() == headername.toLowerCase());
