@@ -1,6 +1,10 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION getImportantProperties(css STRING) RETURNS
-ARRAY<STRUCT<property STRING, freq INT64>> LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getImportantProperties(css STRING)
+RETURNS
+ARRAY<STRUCT<property STRING, freq INT64>> 
+LANGUAGE js
+OPTIONS (library="gs://httparchive/lib/css-utils.js")
+AS '''
 try {
   var ast = JSON.parse(css);
   let ret = {
@@ -26,8 +30,7 @@ try {
 } catch (e) {
   return [];
 }
-''' -- noqa: PRS
-OPTIONS (library="gs://httparchive/lib/css-utils.js");
+''';
 
 SELECT
   client,

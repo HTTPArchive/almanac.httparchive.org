@@ -6,7 +6,10 @@ RETURNS STRUCT<
   attribute ARRAY<STRING>,
   pseudo_class ARRAY<STRING>,
   pseudo_element ARRAY<STRING>
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+OPTIONS (library="gs://httparchive/lib/css-utils.js")
+AS '''
 try {
   function compute(ast) {
     let ret = {
@@ -52,8 +55,7 @@ try {
 } catch (e) {
   return null;
 }
-''' -- noqa: PRS
-OPTIONS (library="gs://httparchive/lib/css-utils.js");
+''';
 
 SELECT
   client,

@@ -1,6 +1,8 @@
 #standardSQL
 CREATE TEMPORARY FUNCTION getMarkupDirs(payload STRING)
-RETURNS ARRAY<STRUCT<element STRING, value STRING>> LANGUAGE js AS '''
+RETURNS ARRAY<STRUCT<element STRING, value STRING>>
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(payload);
   var dirs = JSON.parse($._markup).dirs;

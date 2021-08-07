@@ -1,6 +1,10 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION getCustomPropertyUsage(payload STRING) RETURNS
-ARRAY<STRUCT<name STRING, freq INT64>> LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getCustomPropertyUsage(payload STRING)
+RETURNS
+ARRAY<STRUCT<name STRING, freq INT64>> 
+LANGUAGE js
+OPTIONS (library="gs://httparchive/lib/css-utils.js")
+AS '''
 try {
   function compute(vars) {
     let ret = {
@@ -34,8 +38,7 @@ try {
 } catch (e) {
   return null;
 }
-''' -- noqa: PRS
-OPTIONS (library="gs://httparchive/lib/css-utils.js");
+''';
 
 SELECT
   client,
