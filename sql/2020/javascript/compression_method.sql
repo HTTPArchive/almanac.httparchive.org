@@ -1,5 +1,5 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION getHeader(headers STRING, headername STRING)
+CREATE TEMPORARY FUNCTION getHeader(headers STRING, headername STRING) -- noqa: PRS
   RETURNS STRING DETERMINISTIC
   LANGUAGE js AS '''
   const parsed_headers = JSON.parse(headers);

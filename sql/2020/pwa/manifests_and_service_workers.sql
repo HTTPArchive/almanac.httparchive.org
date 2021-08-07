@@ -31,7 +31,7 @@ JOIN
     (SELECT
         date,
         client,
-        count(DISTINCT page) AS total
+        COUNT(DISTINCT page) AS total
     FROM
         `httparchive.almanac.summary_requests`
     GROUP BY

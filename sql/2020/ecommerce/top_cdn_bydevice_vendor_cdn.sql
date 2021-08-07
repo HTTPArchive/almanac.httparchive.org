@@ -29,6 +29,6 @@ GROUP BY
 HAVING
  Cdnfreq > 0
 ORDER BY
-  total desc,
+  total DESC,
   Vendor,
-  CdnFreq desc
+  CdnFreq DESC

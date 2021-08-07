@@ -29,6 +29,6 @@ GROUP BY
 HAVING
  CDNPlatfromFreq > 0
 ORDER BY
-  total desc,
+  total DESC,
   Vendor,
-  CDNPlatfromFreq desc
+  CDNPlatfromFreq DESC

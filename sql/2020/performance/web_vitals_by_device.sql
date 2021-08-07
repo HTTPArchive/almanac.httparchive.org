@@ -22,7 +22,7 @@ WITH
   base AS (
   SELECT
     date,
-    origin,
+    origin,
     device,
 
     fast_fid,
@@ -54,7 +54,7 @@ WITH
 
 SELECT
   date,
-  device,
+  device,
 
   COUNT(DISTINCT origin) AS total_origins,
 
@@ -152,4 +152,4 @@ FROM
   base
 GROUP BY
   date,
-  device
+  device

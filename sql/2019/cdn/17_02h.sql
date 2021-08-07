@@ -3,7 +3,7 @@
 
 SELECT
   *,
-  round(100*pageUseCount/ totalPagesCount,2) AS Pct
+  ROUND(100*pageUseCount/ totalPagesCount,2) AS Pct
 FROM
 (
   SELECT

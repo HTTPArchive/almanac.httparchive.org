@@ -4,10 +4,10 @@
 SELECT
   client, firstHtml, vary,
   IF(_cdn_provider != '', 'CDN', 'Origin') AS source,
-  count(0) AS total
+  COUNT(0) AS total
 FROM
   `httparchive.almanac.requests`,
-  UNNEST(split(REGEXP_REPLACE(REGEXP_REPLACE(lower(resp_vary), '\"', ''), '[, ]+|\\\\0', ','), ',')) AS vary
+  UNNEST(split(REGEXP_REPLACE(REGEXP_REPLACE(LOWER(resp_vary), '\"', ''), '[, ]+|\\\\0', ','), ',')) AS vary
 WHERE
   date = '2019-07-01'
 GROUP BY

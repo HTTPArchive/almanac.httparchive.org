@@ -9,6 +9,7 @@ WITH requests AS (
   FROM
     `httparchive.requests.2020_08_01_*`
 ),
+
 base AS(
   SELECT
     client,

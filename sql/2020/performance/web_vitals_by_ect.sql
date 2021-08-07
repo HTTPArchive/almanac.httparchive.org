@@ -21,7 +21,7 @@ CREATE TEMP FUNCTION IS_NON_ZERO (good FLOAT64, needs_improvement FLOAT64, poor 
 WITH
   base AS (
   SELECT
-    origin,
+    origin,
     effective_connection_type.name AS network,
     layout_instability,
     largest_contentful_paint,
@@ -83,14 +83,14 @@ WITH
   SELECT
     origin,
     network,
-    SUM(IF(bin.start < 1500, bin.density, 0)) AS fast,
-    SUM(IF(bin.start >= 1500 AND bin.start < 2500, bin.density, 0)) AS avg,
-    SUM(IF(bin.start >= 2500, bin.density, 0)) AS slow,
+    SUM(IF(bin.start < 1500, bin.density, 0)) AS fast,
+    SUM(IF(bin.start >= 1500 AND bin.start < 2500, bin.density, 0)) AS avg,
+    SUM(IF(bin.start >= 2500, bin.density, 0)) AS slow,
     `chrome-ux-report`.experimental.PERCENTILE(ARRAY_AGG(bin), 75) AS p75
   FROM
-    base
+    base
   LEFT JOIN
-    UNNEST(first_contentful_paint.histogram.bin) AS bin
+    UNNEST(first_contentful_paint.histogram.bin) AS bin
   GROUP BY
     origin,
     network
@@ -99,14 +99,14 @@ WITH
   SELECT
     origin,
     network,
-    SUM(IF(bin.start < 500, bin.density, 0)) AS fast,
-    SUM(IF(bin.start >= 500 AND bin.start < 1500, bin.density, 0)) AS avg,
-    SUM(IF(bin.start >= 1500, bin.density, 0)) AS slow,
+    SUM(IF(bin.start < 500, bin.density, 0)) AS fast,
+    SUM(IF(bin.start >= 500 AND bin.start < 1500, bin.density, 0)) AS avg,
+    SUM(IF(bin.start >= 1500, bin.density, 0)) AS slow,
     `chrome-ux-report`.experimental.PERCENTILE(ARRAY_AGG(bin), 75) AS p75
   FROM
       base
   LEFT JOIN
-    UNNEST(time_to_first_byte.histogram.bin) AS bin
+    UNNEST(time_to_first_byte.histogram.bin) AS bin
   GROUP BY
     origin,
     network

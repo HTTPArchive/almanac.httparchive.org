@@ -13,7 +13,7 @@ SELECT
 FROM
    `httparchive.summary_requests.2020_08_01_*`
 WHERE
-   firstHtml = True
+   firstHtml
 GROUP BY
   client,
   resp_vary_user_agent

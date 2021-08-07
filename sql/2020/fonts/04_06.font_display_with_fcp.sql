@@ -36,8 +36,8 @@ SELECT
   APPROX_QUANTILES(fcp, 1000)[OFFSET(500)] AS median_fcp,
   APPROX_QUANTILES(lcp, 1000)[OFFSET(500)] AS median_lcp
 FROM (
-  SELECT
-    DISTINCT client,
+  SELECT DISTINCT
+    client,
     page,
     font_display
   FROM

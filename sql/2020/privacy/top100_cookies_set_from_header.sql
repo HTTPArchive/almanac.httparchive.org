@@ -1,7 +1,7 @@
 #standardSQL
 # Top100 popular cookies and their origins
 
-CREATE TEMPORARY FUNCTION
+CREATE TEMPORARY FUNCTION -- noqa: PRS
   cookieNames(headers STRING)
   RETURNS ARRAY<STRING> DETERMINISTIC
   LANGUAGE js AS '''
@@ -32,7 +32,9 @@ WITH request_headers AS (
     page,
     url,
     payload
-), cookies AS (
+),
+
+cookies AS (
   SELECT
     client,
     request,
@@ -40,7 +42,7 @@ WITH request_headers AS (
     COUNT(DISTINCT page) AS websites_count,
     COUNT(DISTINCT page) / ANY_VALUE(websites_per_client) AS pct_websites
   FROM request_headers,
-    UNNEST (cookie_names) AS cookie
+    UNNEST(cookie_names) AS cookie
   WHERE
     cookie IS NOT NULL
     AND cookie != ""

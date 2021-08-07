@@ -12,6 +12,7 @@ WITH requests AS (
   FROM
     `httparchive.summary_requests.2020_08_01_*`
 ),
+
 pages AS (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -23,9 +24,10 @@ pages AS (
   FROM
     `httparchive.summary_pages.2020_08_01_*`
 ),
+
 base AS (
   SELECT
-    LOGICAL_AND(NET.HOST(host) = NET.HOST(url)) zero_third_party,
+    LOGICAL_AND (NET.HOST(host) = NET.HOST(url)) zero_third_party,
     url,
     requests.crawlid AS requests_crawl,
     pages.crawlid AS pages_crawl,

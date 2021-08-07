@@ -23,6 +23,7 @@ WITH requests AS (
   FROM
     `httparchive.summary_requests.2020_08_01_*`
 ),
+
 pages AS (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -31,6 +32,7 @@ pages AS (
   FROM
     `httparchive.summary_pages.2020_08_01_*`
 ),
+
 third_party AS (
   SELECT
     category,
@@ -40,6 +42,7 @@ third_party AS (
   WHERE
     date = '2020-08-01'
 ),
+
 headers AS (
   SELECT
     requests.client AS client,
@@ -53,6 +56,7 @@ headers AS (
   INNER JOIN third_party
   ON NET.HOST(requests.origin) = NET.HOST(third_party.domain)
 ),
+
 base AS (
     SELECT
       client,

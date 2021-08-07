@@ -13,7 +13,7 @@ return null;
 SELECT
   a.client,
   imageType,
-  count(0) AS count,
+  COUNT(0) AS count,
   APPROX_QUANTILES(if(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 1000)[OFFSET(100)] AS pixels_p10,
   APPROX_QUANTILES(if(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 1000)[OFFSET(250)] AS pixels_p25,
   APPROX_QUANTILES(if(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 1000)[OFFSET(500)] AS pixels_p50,
@@ -24,11 +24,11 @@ SELECT
   APPROX_QUANTILES(bytes, 1000)[OFFSET(500)] AS bytes_p50,
   APPROX_QUANTILES(bytes, 1000)[OFFSET(750)] AS bytes_p75,
   APPROX_QUANTILES(bytes, 1000)[OFFSET(900)] AS bytes_p90,
-  APPROX_QUANTILES(round(bytes/if(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 4), 1000)[OFFSET(100)] AS bpp_p10,
-  APPROX_QUANTILES(round(bytes/if(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 4), 1000)[OFFSET(250)] AS bpp_p25,
-  APPROX_QUANTILES(round(bytes/if(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 4), 1000)[OFFSET(500)] AS bpp_p50,
-  APPROX_QUANTILES(round(bytes/if(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 4), 1000)[OFFSET(750)] AS bpp_p75,
-  APPROX_QUANTILES(round(bytes/if(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 4), 1000)[OFFSET(900)] AS bpp_p90
+  APPROX_QUANTILES(ROUND(bytes/if(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 4), 1000)[OFFSET(100)] AS bpp_p10,
+  APPROX_QUANTILES(ROUND(bytes/if(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 4), 1000)[OFFSET(250)] AS bpp_p25,
+  APPROX_QUANTILES(ROUND(bytes/if(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 4), 1000)[OFFSET(500)] AS bpp_p50,
+  APPROX_QUANTILES(ROUND(bytes/if(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 4), 1000)[OFFSET(750)] AS bpp_p75,
+  APPROX_QUANTILES(ROUND(bytes/if(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 4), 1000)[OFFSET(900)] AS bpp_p90
 FROM
 (
   SELECT
@@ -54,7 +54,7 @@ LEFT JOIN
       client,
       page,
       url,
-      NULLIF(if(REGEXP_CONTAINS(mimetype, r'(?i)^application|^applicaton|^binary|^image$|^multipart|^media|^$|^text/html|^text/plain|\d|array|unknown|undefined|\*|string|^img|^images|^text|\%2f|\(|ipg$|jpe$|jfif'), format, LOWER(regexp_replace(regexp_replace(mimetype, r'(?is).*image[/\\](?:x-)?|[\."]|[ +,;]+.*$', ''), r'(?i)pjpeg|jpeg', 'jpg'))), '') AS imageType,
+      NULLIF(if(REGEXP_CONTAINS(mimetype, r'(?i)^application|^applicaton|^binary|^image$|^multipart|^media|^$|^text/html|^text/plain|\d|array|unknown|undefined|\*|string|^img|^images|^text|\%2f|\(|ipg$|jpe$|jfif'), format, LOWER(REGEXP_REPLACE(REGEXP_REPLACE(mimetype, r'(?is).*image[/\\](?:x-)?|[\."]|[ +,;]+.*$', ''), r'(?i)pjpeg|jpeg', 'jpg'))), '') AS imageType,
       respSize AS bytes
     FROM `httparchive.almanac.requests`
 

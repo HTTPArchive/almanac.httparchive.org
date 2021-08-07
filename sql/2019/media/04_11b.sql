@@ -22,7 +22,7 @@ return null;
 
 SELECT
   client,
-  count(0) AS count,
+  COUNT(0) AS count,
   any_value(viewportHeight) viewportHeight,
   any_value(viewportWidth) viewportWidth,
   any_value(dpr) dpr,
@@ -69,4 +69,4 @@ WHERE
 GROUP BY
   client
 ORDER BY
-  client desc
+  client DESC

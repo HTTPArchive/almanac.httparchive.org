@@ -14,7 +14,7 @@ SELECT
     SUM(respBodySize) AS bytes,
 
     COUNTIF(cdn != 'ORIGIN') AS cdnHits,
-    ROUND((COUNTIF(cdn != 'ORIGIN') * 100) / count(0), 2) AS hitsPct,
+    ROUND((COUNTIF(cdn != 'ORIGIN') * 100) / COUNT(0), 2) AS hitsPct,
     SUM(CASE WHEN cdn != 'ORIGIN' THEN respBodySize ELSE 0 END) AS cdnBytes,
     ROUND((SUM(CASE WHEN _cdn_provider != '' THEN respBodySize ELSE 0 END) * 100) / SUM(respBodySize), 2) AS bytesPct
   FROM

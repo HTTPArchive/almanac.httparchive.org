@@ -8,13 +8,13 @@ SELECT
   COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/2') AS http2,
   COUNTIF(IFNULL(a.protocol, b.protocol) NOT IN ('HTTP/0.9', 'HTTP/1.0', 'HTTP/1.1', 'HTTP/2')) AS http_other,
   COUNTIF(isSecure OR IFNULL(a.protocol, b.protocol) = 'HTTP/2') AS tls_total,
-  round(100*COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/0.9')/count(0), 2) AS http09_pct,
-  round(100*COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/1.0')/count(0), 2) AS http10_pct,
-  round(100*COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/1.1')/count(0), 2) AS http11_pct,
-  round(100*COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/2')/count(0), 2) AS http2_pct,
-  round(100*COUNTIF(IFNULL(a.protocol, b.protocol) NOT IN ('HTTP/0.9', 'HTTP/1.0', 'HTTP/1.1', 'HTTP/2')) /count(0), 2) AS http_other_pct,
-  round(100*COUNTIF(isSecure OR IFNULL(a.protocol, b.protocol) = 'HTTP/2')/count(0), 2) AS tls_pct,
-  count(0) AS total
+  ROUND(100*COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/0.9')/COUNT(0), 2) AS http09_pct,
+  ROUND(100*COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/1.0')/COUNT(0), 2) AS http10_pct,
+  ROUND(100*COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/1.1')/COUNT(0), 2) AS http11_pct,
+  ROUND(100*COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/2')/COUNT(0), 2) AS http2_pct,
+  ROUND(100*COUNTIF(IFNULL(a.protocol, b.protocol) NOT IN ('HTTP/0.9', 'HTTP/1.0', 'HTTP/1.1', 'HTTP/2')) /COUNT(0), 2) AS http_other_pct,
+  ROUND(100*COUNTIF(isSecure OR IFNULL(a.protocol, b.protocol) = 'HTTP/2')/COUNT(0), 2) AS tls_pct,
+  COUNT(0) AS total
 FROM
 (
   SELECT

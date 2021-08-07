@@ -21,7 +21,7 @@ CREATE TEMP FUNCTION IS_NON_ZERO (good FLOAT64, needs_improvement FLOAT64, poor 
 WITH
   base AS (
   SELECT
-    origin,
+    origin,
     country_code,
 
     SUM(fast_fid) / SUM(fast_fid + avg_fid + slow_fid) AS fast_fid,
@@ -54,7 +54,7 @@ WITH
   )
 
 SELECT
-  `chrome-ux-report`.experimental.GET_COUNTRY(country_code) AS country,
+  `chrome-ux-report`.experimental.GET_COUNTRY(country_code) AS country,
 
   COUNT(DISTINCT origin) AS total_origins,
 
@@ -151,4 +151,4 @@ SELECT
 FROM
   base
 GROUP BY
-  country
+  country

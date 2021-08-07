@@ -25,7 +25,7 @@ return '';
 SELECT
   client,
   COUNT(0) AS freq,
-  almanac_html_lang as html_lang,
+  almanac_html_lang AS html_lang,
 
   AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct_m405
 

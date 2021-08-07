@@ -1,13 +1,13 @@
 #standardSQL
 # 04_09c: Top Client Hints
 SELECT
-  client, ch, sum(hits) hits
+  client, ch, SUM(hits) hits
 FROM
 (
   SELECT
     client,
-    regexp_replace(concat(ifnull(chHTML, ''), ',', ifnull(chHeader, '')), r'^,|,$| ', '') acceptCH,
-    count(0) hits
+    REGEXP_REPLACE(concat(IFNULL(chHTML, ''), ',', IFNULL(chHeader, '')), r'^,|,$| ', '') acceptCH,
+    COUNT(0) hits
   FROM
   (
     SELECT
@@ -20,15 +20,15 @@ FROM
     WHERE
       date = '2019-07-01' AND
       firstHtml AND
-      ( regexp_contains(body, r'(?im)<meta[^><]*Accept-CH\b') OR
-        regexp_contains(respOtherHeaders, r'(?im)Accept-CH = ') )
+      ( REGEXP_CONTAINS(body, r'(?im)<meta[^><]*Accept-CH\b') OR
+        REGEXP_CONTAINS(respOtherHeaders, r'(?im)Accept-CH = ') )
   )
   GROUP BY
     client,
     chHTML,
     chHeader
 )
-cross join unnest(split(lower(acceptCH), ',')) AS ch
+cross join unnest(split(LOWER(acceptCH), ',')) AS ch
 GROUP BY
   client,
   ch

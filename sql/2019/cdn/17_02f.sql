@@ -4,8 +4,8 @@
 SELECT
   client,
   COUNTIF(jscdnHits > 0 ) hasJSCDNHits,
-  count(0) hits,
-  round(100*COUNTIF(jscdnHits > 0 ) / count(0), 2) pct
+  COUNT(0) hits,
+  ROUND(100*COUNTIF(jscdnHits > 0 ) / COUNT(0), 2) pct
 FROM
 (
   SELECT

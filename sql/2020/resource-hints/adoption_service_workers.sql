@@ -1,6 +1,6 @@
 #standardSQL
 # 21_16: Usage of resource hints by service-worker controlled pages
-CREATE TEMPORARY FUNCTION getResourceHints(payload STRING)
+CREATE TEMPORARY FUNCTION getResourceHints(payload STRING) -- noqa: PRS
 RETURNS STRUCT<preload BOOLEAN, prefetch BOOLEAN, preconnect BOOLEAN, prerender BOOLEAN, `dns-prefetch` BOOLEAN>
 LANGUAGE js AS '''
 var hints = ['preload', 'prefetch', 'preconnect', 'prerender', 'dns-prefetch'];

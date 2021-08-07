@@ -4,7 +4,7 @@ SELECT
   client,
   chHTML,
   chHeader,
-  count(0) hits
+  COUNT(0) hits
 FROM
 (
   SELECT
@@ -16,8 +16,8 @@ FROM
   WHERE
     date = '2019-07-01' AND
     firstHtml AND
-    ( regexp_contains(body, r'(?is)<meta[^><]*Accept-CH\b') OR
-      regexp_contains(respOtherHeaders, r'(?is)Accept-CH = ') )
+    ( REGEXP_CONTAINS(body, r'(?is)<meta[^><]*Accept-CH\b') OR
+      REGEXP_CONTAINS(respOtherHeaders, r'(?is)Accept-CH = ') )
 )
 GROUP BY
   client,

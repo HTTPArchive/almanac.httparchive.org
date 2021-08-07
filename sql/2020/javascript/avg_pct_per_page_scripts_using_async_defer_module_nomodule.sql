@@ -11,9 +11,9 @@ FROM (
     client,
     page,
     COUNT(0) AS external_scripts,
-    COUNTIF(REGEXP_CONTAINS(script, r'\basync\b'))    / COUNT(0) AS pct_external_async,
-    COUNTIF(REGEXP_CONTAINS(script, r'\bdefer\b'))    / COUNT(0) AS pct_external_defer,
-    COUNTIF(REGEXP_CONTAINS(script, r'\bmodule\b'))   / COUNT(0) AS pct_external_module,
+    COUNTIF(REGEXP_CONTAINS(script, r'\basync\b')) / COUNT(0) AS pct_external_async,
+    COUNTIF(REGEXP_CONTAINS(script, r'\bdefer\b')) / COUNT(0) AS pct_external_defer,
+    COUNTIF(REGEXP_CONTAINS(script, r'\bmodule\b')) / COUNT(0) AS pct_external_module,
     COUNTIF(REGEXP_CONTAINS(script, r'\bnomodule\b')) / COUNT(0) AS pct_external_nomodule
   FROM (
     SELECT

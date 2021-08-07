@@ -29,5 +29,5 @@ GROUP BY
   importscript,
   total
 ORDER BY
-  pct desc,
+  pct DESC,
   client

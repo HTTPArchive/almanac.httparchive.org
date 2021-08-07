@@ -11,7 +11,9 @@ WITH apps AS (
     client,
     url,
     cmp_app
-), base AS (
+),
+
+base AS (
   SELECT
     client,
     url,

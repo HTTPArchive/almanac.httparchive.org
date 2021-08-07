@@ -63,7 +63,6 @@ FROM (
       USING
         (_TABLE_SUFFIX)
     ),
-UNNEST
-  (markup_info.loading) AS loading
+UNNEST(markup_info.loading) AS loading
 GROUP BY
   total, loading, client

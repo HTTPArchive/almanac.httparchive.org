@@ -2,7 +2,7 @@
 # frequency of the number of element used on a page
 
 # returns all the data we need from _element_count
-CREATE TEMPORARY FUNCTION get_element_count(element_count_string STRING)
+CREATE TEMPORARY FUNCTION get_element_COUNT(element_count_string STRING)
 RETURNS INT64 LANGUAGE js AS '''
 try {
     if (!element_count_string) return null;
@@ -19,7 +19,7 @@ return null;
 
 SELECT
   _TABLE_SUFFIX AS client,
-  get_element_count(JSON_EXTRACT_SCALAR(payload, '$._element_count')) AS elements,
+  get_element_COUNT(JSON_EXTRACT_SCALAR(payload, '$._element_count')) AS elements,
   COUNT(0) AS freq
 FROM
   `httparchive.pages.2020_08_01_*`

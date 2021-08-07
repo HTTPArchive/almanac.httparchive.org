@@ -28,7 +28,7 @@ JOIN
 USING
  (client)
 WHERE
- ARRAY_LENGTH(checksSupports(css))>0 AND date='2020-08-01' OR url LIKE '%fontawesome%' OR url LIKE '%icomoon%' OR LIKE '%fontello%' OR LIKE '%iconic%'
+ ARRAY_LENGTH(checksSupports(css))>0 AND date='2020-08-01' OR url LIKE '%fontawesome%' OR url LIKE '%icomoon%' OR url LIKE '%fontello%' OR url LIKE '%iconic%'
 GROUP BY
  client, url, total_page
 ORDER BY

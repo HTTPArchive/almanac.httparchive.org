@@ -138,7 +138,7 @@ try {
         incrementByKey(usage, match[0].toLowerCase());
       }
     }, {
-      properties: /^--|color$|^border|^background(-image)?$|\\-shadow$|filter$/
+      properties: /^--|color$|^border|^backgROUND(-image)?$|\\-shadow$|filter$/
     });
 
     usage.keywords = sortObject(usage.keywords);

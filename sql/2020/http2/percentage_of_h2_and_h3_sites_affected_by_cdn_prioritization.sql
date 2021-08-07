@@ -25,7 +25,7 @@ FROM (
        LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) LIKE "http/3%")
     ) AS pages
 LEFT JOIN
-  `httparchive.almanac.h2_prioritization_cdns` AS h2_pri
+  `httparchive.almanac.h2_prioritization_cdns`
 USING (cdn, date)
 GROUP BY
   client,

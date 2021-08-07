@@ -31,7 +31,8 @@ WITH
   WHERE
     device IN ('desktop','phone') AND
     date = '2020-08-01'
-  ),
+),
+
 fid AS (
   SELECT
     device,
@@ -54,6 +55,7 @@ fid AS (
   WHERE
     MOD(row, CAST(FLOOR(n / 1000) AS INT64)) = 0
 ),
+
 lcp AS (
   SELECT
     device,
@@ -76,6 +78,7 @@ lcp AS (
   WHERE
     MOD(row, CAST(FLOOR(n / 1000) AS INT64)) = 0
 ),
+
 cls AS (
   SELECT
     device,
@@ -98,6 +101,7 @@ cls AS (
   WHERE
     MOD(row, CAST(FLOOR(n / 1000) AS INT64)) = 0
 ),
+
 fcp AS (
   SELECT
     device,
@@ -120,6 +124,7 @@ fcp AS (
   WHERE
     MOD(row, CAST(FLOOR(n / 1000) AS INT64)) = 0
 ),
+
 ttfb AS (
   SELECT
     device,

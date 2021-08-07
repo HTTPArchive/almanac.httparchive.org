@@ -49,5 +49,5 @@ GROUP BY
   total_page
 HAVING
   freq_vf > 100
-Order BY
+ORDER BY
   freq_vf DESC

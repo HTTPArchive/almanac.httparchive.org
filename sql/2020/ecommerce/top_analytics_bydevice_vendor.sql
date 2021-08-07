@@ -31,7 +31,7 @@ USING
   (client)
 WHERE
     `httparchive.almanac.summary_requests`.date = '2020-08-01' AND
-    lower(category) = 'analytics'
+    LOWER(category) = 'analytics'
 GROUP BY
   client,
   total,

@@ -27,6 +27,6 @@ GROUP BY
 HAVING
  AdPlatfromFreq > 0
 ORDER BY
-  total desc,
+  total DESC,
   Vendor,
-  AdPlatfromFreq desc
+  AdPlatfromFreq DESC

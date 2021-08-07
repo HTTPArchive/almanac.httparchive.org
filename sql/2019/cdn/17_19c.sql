@@ -3,7 +3,7 @@
 SELECT
   a.client, firstHtml,IFNULL(a.protocol, b.protocol) AS protocol,IFNULL(a.tlsVersion, b.tlsVersion) AS tlsVersion,
   isSecure,
-  count(0) AS total
+  COUNT(0) AS total
 FROM
 (
   SELECT

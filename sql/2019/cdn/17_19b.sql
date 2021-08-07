@@ -6,11 +6,11 @@ SELECT
   COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.1') AS tls11,
   COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.2') AS tls12,
   COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.3') AS tls13,
-  round(100*COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.0')/count(0), 2) AS tls10_pct,
-  round(100*COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.1')/count(0), 2) AS tls11_pct,
-  round(100*COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.2')/count(0), 2) AS tls12_pct,
-  round(100*COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.3')/count(0), 2) AS tls13_pct,
-  count(0) AS total
+  ROUND(100*COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.0')/COUNT(0), 2) AS tls10_pct,
+  ROUND(100*COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.1')/COUNT(0), 2) AS tls11_pct,
+  ROUND(100*COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.2')/COUNT(0), 2) AS tls12_pct,
+  ROUND(100*COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.3')/COUNT(0), 2) AS tls13_pct,
+  COUNT(0) AS total
 FROM
 (
   SELECT

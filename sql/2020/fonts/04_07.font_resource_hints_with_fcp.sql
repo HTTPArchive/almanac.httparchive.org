@@ -29,8 +29,8 @@ SELECT
   APPROX_QUANTILES(fcp, 1000)[OFFSET(500)] AS median_fcp,
   APPROX_QUANTILES(lcp, 1000)[OFFSET(500)] AS median_lcp
 FROM (
-  SELECT
-    DISTINCT _TABLE_SUFFIX AS client,
+  SELECT DISTINCT
+    _TABLE_SUFFIX AS client,
     url AS page,
     hint.name,
     CAST(JSON_EXTRACT_SCALAR(payload,
