@@ -4,8 +4,8 @@
 WITH requests AS (
   SELECT
     _TABLE_SUFFIX AS client,
-    pageid as page,
-    req_host as host
+    pageid AS page,
+    req_host AS host
   FROM
     `httparchive.summary_requests.2020_08_01_*`
 ),

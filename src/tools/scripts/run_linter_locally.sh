@@ -36,6 +36,7 @@ if [ "$#" -gt 0 ]; then
   # Copy linter config files
   mkdir /tmp/lint/.github
   cp -r ../.github/linters /tmp/lint/.github
+  cp -r ../sql/.sqlfluff /tmp/lint/
   # Copy files provided
   for FILES in "$@"
   do
