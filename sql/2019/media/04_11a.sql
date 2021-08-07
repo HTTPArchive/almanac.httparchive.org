@@ -56,7 +56,7 @@ LEFT JOIN
       page,
       url,
       NULLIF(IF(REGEX_CONTAINS(mimetype, r'(?i)^application|^applicaton|^binary|^image$|^multipart|^media|^$|^text/html|^text/plain|\d|array|unknown|undefined|\*|string|^img|^images|^text|\%2f|\(|ipg$|jpe$|jfif'), format, LOWER(REGEXP_REPLACE(REGEXP_REPLACE(mimetype, r'(?is).*image[/\\](?:x-)?|[\."]|[ +,;]+.*$', ''), r'(?i)pjpeg|jpeg', 'jpg'))), '') AS imageType,
-      respSize as bytes
+      respSize AS bytes
     FROM `httparchive.almanac.requests3`
 
     WHERE
@@ -65,16 +65,16 @@ LEFT JOIN
 
       # we are trying to catch images. WPO populates the format for media but it uses a file extension guess.
       #So we exclude mimetypes that aren't image or where the format couldn't be guessed by WPO
-      and (format <> '' OR mimetype LIKE 'image%')
+      AND (format <> '' OR mimetype LIKE 'image%')
 
       # many image/gifs are really beacons with 1x1 pixel, but svgs can get caught in the mix
-      and (respSize > 1500 OR REGEXP_CONTAINS(mimetype, r'svg'))
+      AND (respSize > 1500 OR REGEXP_CONTAINS(mimetype, r'svg'))
 
       # strip favicon requests
-      and format <> 'ico'
+      AND format <> 'ico'
 
       # strip video mimetypes and other favicons
-      and not REGEXP_CONTAINS(mimetype, r'video|ico')
+      AND NOT REGEXP_CONTAINS(mimetype, r'video|ico')
 -- limit 1000
 )
 ON (b.client = a.client AND a.page = b.page AND a.url = b.url)
@@ -82,7 +82,7 @@ ON (b.client = a.client AND a.page = b.page AND a.url = b.url)
 WHERE
   naturalPixels > 0
   AND bytes > 0
-  AND imageType in ('jpg', 'png', 'webp', 'gif', 'svg')
+  AND imageType IN ('jpg', 'png', 'webp', 'gif', 'svg')
 GROUP BY
   client,
   imageType

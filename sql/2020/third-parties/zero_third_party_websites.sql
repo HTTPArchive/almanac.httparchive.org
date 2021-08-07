@@ -27,7 +27,7 @@ pages AS (
 
 base AS (
   SELECT
-    LOGICAL_AND (NET.HOST(host) = NET.HOST(url)) zero_third_party,
+    LOGICAL_AND(NET.HOST(host) = NET.HOST(url)) zero_third_party,
     url,
     requests.crawlid AS requests_crawl,
     pages.crawlid AS pages_crawl,

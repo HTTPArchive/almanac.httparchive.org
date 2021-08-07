@@ -10,7 +10,7 @@ WITH requests AS (
     `httparchive.requests.2020_08_01_*`
 ),
 
-base AS(
+base AS (
   SELECT
     client,
     COUNT(DISTINCT page) AS total_pages,

@@ -50,7 +50,7 @@ WITH
   WHERE
     device IN ('desktop','phone')
     AND date IN ('2019-08-01', '2020-08-01')
-  )
+)
 
 SELECT
   date,

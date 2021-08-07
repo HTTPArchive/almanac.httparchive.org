@@ -51,7 +51,7 @@ WITH
   GROUP BY
     origin,
     country_code
-  )
+)
 
 SELECT
   `chrome-ux-report`.experimental.GET_COUNTRY(country_code) AS country,

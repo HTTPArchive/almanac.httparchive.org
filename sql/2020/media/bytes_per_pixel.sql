@@ -11,7 +11,7 @@ return null;
 ''';
 
 SELECT
-  a.client,
+  client,
   imageType,
   COUNT(0) AS count,
   APPROX_QUANTILES(if(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 1000)[OFFSET(100)] AS pixels_p10,
@@ -47,7 +47,7 @@ FROM
   WHERE
     image.naturalHeight > 0 AND
     image.naturalWidth > 0
-) a
+)
 LEFT JOIN
 (
     SELECT
@@ -74,9 +74,8 @@ LEFT JOIN
 
       # strip video mimetypes and other favicons
       NOT REGEXP_CONTAINS(mimetype, r'video|ico')
-) b
-ON (b.client = a.client AND a.page = b.page AND a.url = b.url)
-
+)
+USING (client, page, url)
 WHERE
   naturalPixels > 0 AND
   bytes > 0 AND
@@ -85,5 +84,5 @@ GROUP BY
   client,
   imageType
 ORDER BY
-  client DESC
-  imageType DESC;
+  client DESC,
+  imageType DESC

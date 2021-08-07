@@ -16,7 +16,7 @@ FROM
         COUNT(DISTINCT m.page) AS manifests,
         COUNT(DISTINCT sw.page) AS serviceworkers,
         COUNT(DISTINCT IFNULL(m.page, sw.page)) AS either,
-        COUNT(DISTINCT (m.page || sw.page)) AS both
+        COUNT(DISTINCT m.page || sw.page) AS both
     FROM
         `httparchive.almanac.manifests` m
     FULL OUTER JOIN

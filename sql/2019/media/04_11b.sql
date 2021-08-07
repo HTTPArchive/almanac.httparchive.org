@@ -46,7 +46,7 @@ FROM
 (
   SELECT
     _TABLE_SUFFIX AS client,
-    url as page,
+    url AS page,
     getCssPixels(json_extract_scalar(payload, '$._Images')) AS cssPixels,
     getNaturalPixels(json_extract_scalar(payload, '$._Images')) AS naturalPixels,
     CAST(json_extract_scalar(payload, '$._smallImageCount') AS Int64) AS smallImageCount,

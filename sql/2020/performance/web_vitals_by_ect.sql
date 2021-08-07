@@ -19,7 +19,7 @@ CREATE TEMP FUNCTION IS_NON_ZERO (good FLOAT64, needs_improvement FLOAT64, poor 
 );
 
 WITH
-  base AS (
+base AS (
   SELECT
     origin,
     effective_connection_type.name AS network,
@@ -30,8 +30,9 @@ WITH
     experimental.time_to_first_byte AS time_to_first_byte
   FROM
     `chrome-ux-report.all.202008`
-  ),
-  cls AS (
+),
+
+cls AS (
   SELECT
     origin,
     network,
@@ -46,8 +47,9 @@ WITH
   GROUP BY
     origin,
     network
-  ),
-  lcp AS (
+),
+
+lcp AS (
   SELECT
     origin,
     network,
@@ -62,8 +64,9 @@ WITH
   GROUP BY
     origin,
     network
-  ),
-  fid AS (
+),
+
+fid AS (
   SELECT
     origin,
     network,
@@ -78,8 +81,9 @@ WITH
   GROUP BY
     origin,
     network
-  ),
-  fcp AS (
+),
+
+fcp AS (
   SELECT
     origin,
     network,
@@ -94,8 +98,9 @@ WITH
   GROUP BY
     origin,
     network
-  ),
-  ttfb AS (
+),
+
+ttfb AS (
   SELECT
     origin,
     network,
@@ -110,8 +115,9 @@ WITH
   GROUP BY
     origin,
     network
-  ),
-  granular_metrics AS (
+),
+
+granular_metrics AS (
   SELECT
     origin,
     network,
