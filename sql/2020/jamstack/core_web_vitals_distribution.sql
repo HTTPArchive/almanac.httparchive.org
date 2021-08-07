@@ -43,6 +43,7 @@ JOIN (
       WHEN _cdn_provider = 'Amazon CloudFront' THEN 'AWS'
       WHEN _cdn_provider = 'Akamai' THEN 'Akamai'
       WHEN _cdn_provider = 'Cloudflare' THEN 'Cloudflare'
+      ELSE NULL
     END AS CDN,
     client,
     page AS url
