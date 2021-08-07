@@ -2,7 +2,7 @@
 # 1. Distribution of the number of occurrences of box-sizing:border-box per page.
 # 2. Percent of pages with that style.
 CREATE TEMPORARY FUNCTION countBorderBoxDeclarations(css STRING)
-RETURNS NUMERIC 
+RETURNS NUMERIC
 LANGUAGE js
 OPTIONS (library="gs://httparchive/lib/css-utils.js")
 AS '''

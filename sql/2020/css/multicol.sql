@@ -1,6 +1,6 @@
 #standardSQL
 CREATE TEMPORARY FUNCTION hasMulticol(css STRING)
-RETURNS BOOLEAN 
+RETURNS BOOLEAN
 LANGUAGE js
 OPTIONS (library="gs://httparchive/lib/css-utils.js")
 AS '''

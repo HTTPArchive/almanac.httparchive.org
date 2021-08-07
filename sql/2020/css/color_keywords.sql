@@ -1,6 +1,6 @@
 #standardSQL
 CREATE TEMPORARY FUNCTION getColorKeywords(css STRING)
-RETURNS ARRAY<STRUCT<name STRING, value INT64>> 
+RETURNS ARRAY<STRUCT<name STRING, value INT64>>
 LANGUAGE js
 OPTIONS (library="gs://httparchive/lib/css-utils.js")
 AS '''

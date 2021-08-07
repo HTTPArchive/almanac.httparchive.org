@@ -1,6 +1,6 @@
 #standardSQL
 CREATE TEMPORARY FUNCTION getCustomPropertyCycles(payload STRING)
-RETURNS INT64 
+RETURNS INT64
 LANGUAGE js
 OPTIONS (library="gs://httparchive/lib/css-utils.js")
 AS '''

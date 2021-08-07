@@ -1,6 +1,6 @@
 #standardSQL
 CREATE TEMPORARY FUNCTION getVendorPrefixPseudoClasses(css STRING)
-RETURNS ARRAY<STRING> 
+RETURNS ARRAY<STRING>
 LANGUAGE js
 OPTIONS (library="gs://httparchive/lib/css-utils.js")
 AS '''

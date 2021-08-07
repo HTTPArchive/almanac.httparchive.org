@@ -1,6 +1,6 @@
 #standardSQL
 CREATE TEMPORARY FUNCTION getColorArgComma(css STRING)
-RETURNS STRUCT<commas INT64, nocommas INT64> 
+RETURNS STRUCT<commas INT64, nocommas INT64>
 LANGUAGE js
 OPTIONS (library="gs://httparchive/lib/css-utils.js")
 AS '''
