@@ -1,5 +1,5 @@
 CREATE TEMPORARY FUNCTION getSummary(payload STRING) -- noqa: PRS
--- SQL Linter cannot handle complex STRUCTs so needs noqa ignore command on previous line
+-- SQL Linter expects STRUCT field names to beging with a-z or A-Z so needs noqa ignore command on previous line
 RETURNS STRUCT<requestId STRING, startedDateTime INT64, time INT64, method STRING, urlShort STRING, redirectUrl STRING, firstReq BOOLEAN, firstHtml BOOLEAN, reqHttpVersion STRING, reqHeadersSize INT64,
 reqBodySize INT64, reqCookieLen INT64, reqOtherHeaders STRING, status INT64, respHttpVersion STRING, respHeadersSize INT64, respBodySize INT64, respSize INT64, respCookieLen INT64, expAge NUMERIC, mimeType STRING, respOtherHeaders STRING,
 req_accept STRING, req_accept_charset STRING, req_accept_encoding STRING, req_accept_language STRING, req_connection STRING, req_host STRING, req_if_modified_since STRING, req_if_none_match STRING, req_referer STRING, req_user_agent STRING,
