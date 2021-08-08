@@ -532,41 +532,41 @@ CSS предоставляет несколько способов указан�
 
 ## Цвет {color}
 
-They say the old jokes are the best, and that goes for colors too. The original, cryptic, `#rrggbb` hex syntax remains the most popular way to specify a color in CSS in 2020: Half of all colors are written that way. The next most popular format is the somewhat shorter `#rgb` three-digit hex format at 26%. While it is shorter, it is also able to express *way* fewer colors; only 4 096, out of the 16.7 million sRGB values.
+Говорят, старые шутки самые лучшие, и это также касается цветов. Оригинальный, криптографический, шестнадцатеричный синтаксис `#rrggbb` остаётся самым популярным способом указать цвет в CSS в 2020 году: половина всех цветов написана таким образом. Следующим по популярности форматом является несколько более короткий трёхзначный шестнадцатеричный формат `#rgb` с 26%. Хоть он и короче, в то же время он может выражать *намного* меньше цветов — всего 4 096 из 16,7 миллионов возможных значений sRGB.
 
 {{ figure_markup(
   image="popular-color-formats.png",
-  caption="Relative popularity of color formats as a percent of occurrences.",
-  description="Bar chart showing the relative popularity of color formats as a percent of occurrences. The `#rrggbb` color format is used in 50% of occurrences on mobile pages, with desktop slightly higher at 52%. The `#rgb` format is used in 25% of occurrences, followed by `rgba()` at 14%, `transparent` at 8%, a named color (like `red`) at 1%, and the remaining color formats all have approximately 0% relative popularity on mobile pages: `#rrggbbaa`, `rbg()`, `hsla()`, `currentColor`, `#rgba`, a system color, `hsl()`, and `color()`.",
+  caption="Относительная популярность цветовых форматов в процентах случаев.",
+  description="Гистограмма, показывающая относительную популярность цветовых форматов в процентах случаев. Цветовой формат `#rrggbb` используется в 50% случаев на мобильных страницах, на десктопах немного выше — в 52%. Формат `#rgb` используется в 25% случаев, за ним следует `rgba()` — в 14%, `transparent` — в 8%, именованный цвет (например, `red`) — в 1%, все остальные цветовые форматы имеют примерно 0% относительной популярности на мобильных страницах: `#rrggbbaa`, `rbg()`, `hsla()`, `currentColor`, `#rgba`, системный цвет, `hsl()` и `color()`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=65722098&format=interactive",
   sheets_gid="366025718",
   sql_file="color_formats.sql"
 ) }}
 
-Similarly, 99.89% of functionally specified sRGB colors are using the since-forever legacy format with commas `rgb(127, 255, 84)` rather than the new comma-less form `rgb(127 255 84)`. Because, despite all modern browsers accepting the new syntax, changing offers zero advantage to developers.
+Также 99,89% функционально определённых цветов sRGB используют устаревший формат с запятыми `rgb(127, 255, 84)`, а не новую форму без запятых `rgb(127 255 84)`. Потому что, несмотря на то, что все современные браузеры принимают новый синтаксис, изменение не даёт разработчикам никаких преимуществ.
 
-So why do people stray from these tried and true formats? To express alpha transparency. This is clear when you look at `rgba()`, which is used 40 times more than `rgb()` (13.82% vs 0.34% of all colors) and `hsla()`, which is used 30 times more than `hsl()` (0.25% vs 0.01% of all colors).
+Так почему же люди отклоняются от этих проверенных временем форматов? Для задания альфа-прозрачности. Это становится очевидно, если посмотреть на `rgba()`, который используется в 40 раз чаще, чем `rgb()` (13,82% против 0,34% от всех цветов), и `hsla()`, который используется в 30 раз чаще, чем `hsl()` (0,25% против 0,01% от всех цветов).
 
-HSL is supposed to be <a hreflang="en" href="https://drafts.csswg.org/css-color-4/#the-hsl-notation">easy to understand and easy to modify</a>. But these numbers show that in practice, HSL is used in stylesheets far less than RGB, likely because those advantages are <a hreflang="en" href="https://drafts.csswg.org/css-color-4/#ex-hsl-sucks">greatly over-stated</a>.
+HSL должен быть <a hreflang="en" href="https://drafts.csswg.org/css-color-4/#the-hsl-notation">простым для понимания и легко изменяемым</a>. Но эти числа показывают, что на практике HSL используется в таблицах стилей гораздо реже, чем RGB, вероятно, потому, что эти преимущества <a hreflang="en" href="https://drafts.csswg.org/css-color-4/#ex-hsl-sucks">сильно преувеличены</a>.
 
 {{ figure_markup(
   image="color-formats-alpha.png",
-  caption="Relative popularity of color formats grouped by alpha support as a percent of occurrences on mobile pages (excluding `#rrggbb` and `#rgb`).",
-  description="Bar chart showing the relative popularity of color formats grouped by alpha support as a percent of occurrences on mobile pages, excluding `#rrggbb` and `#rgb`. Color formats that support alpha add up to about 23% of occurrences, while color formats that do not support alpha add up to only 2% of occurrences on mobile pages.",
+  caption="Относительная популярность цветовых форматов, сгруппированных по поддержке прозрачности, в процентах от их появления на мобильных страницах (исключая `#rrggbb` и `#rgb`).",
+  description="Гистограмма показывает относительную популярность цветовых форматов, сгруппированных по поддержке прозрачности, в процентах от их появления на мобильных страницах (исключая `#rrggbb` и `#rgb`). Цветовые форматы, поддерживающие альфа-канал, составляют около 23% случаев, в то время как цветовые форматы, не поддерживающие альфа-канал, составляют только 2% случаев на мобильных страницах.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1861989753&format=interactive",
   sheets_gid="366025718",
   sql_file="color_formats.sql"
 ) }}
 
-What about named colors? The keyword `transparent`, which is just another way to say `rgb(0 0 0 / 0)`, is most popular, at 8.25% of all sRGB values (66% of all named-color usage); followed by all the named (X11) colors—I'm looking at you, `papayawhip`—at 1.48%. The most popular of these were the easily understood names like `white`, `black`, `red`, `gray`, `blue`. `whitesmoke` was the most common of the non-ordinary names (sure, we can visualize whitesmoke, right) while the likes of `gainsboro`, `lightCoral` and `burlywood` were used way less. We can understand why—you need to look them up to see what they actually mean!
+А как насчёт именованных цветов? Ключевое слово `transparent`, которое просто другой способ сказать `rgb(0 0 0 / 0)`, является самым популярным — 8,25% всех значений sRGB (66% всего использования именованных цветов); за ним следуют все именованные (X11) цвета — я смотрю на тебя, `papayawhip` — 1,48%. Самыми популярными из них были понятные имена, такие как `white`, `black`, `red`, `gray`, `blue`. `whitesmoke` был наиболее распространённым из необычных имен (конечно, мы можем визуализировать белый дым, ага), в то время как `gainsboro`, `lightCoral` и `burlywood` использовались гораздо реже. Мы можем понять почему — вам нужно сначала найти их, чтобы понять, что они на самом деле означают!
 
-And if you are going for fanciful color names, why not define your own with CSS [Custom properties](#custom-properties)? `--intensePurple` and `--corporateBlue` mean whatever you need them to mean. This probably explains why [50% of Custom Properties](#usage-by-type) are used for colors.
+И если уж вы собираетесь использовать причудливые названия цветов, почему бы не определить свои собственные с помощью [кастомных свойств](#custom-properties) в CSS? `--intensePurple` и `--corporateBlue` обозначают всё, что вы хотите, чтобы они обозначали. Это, вероятно, объясняет, почему [50% кастомных свойств](#usage-by-type) используются для цветов.
 
 {{ figure_markup(
   link="https://codepen.io/leaverou/pen/GRjjJwJ",
   image="color-keywords-app.png",
-  caption='Interactively explore the color keyword usage data with <a hreflang="en" href="https://codepen.io/leaverou/pen/GRjjJwJ">this interactive app</a>!',
-  description="Screenhot of an interactive app which allows you to select colors and see their relative usage in a pie chart. The data for the colors is shown in the next table.",
+  caption='Исследуйте данные о применении именованных цветов с помощью <a hreflang="en" href="https://codepen.io/leaverou/pen/GRjjJwJ">этого интерактивного приложения</a>!',
+  description="Скриншот интерактивного приложения, которое позволяет вам выбирать цвета и смотреть их относительное применение на круговой диаграмме. Данные для цветов отображены в следующей таблице.",
   width=600,
   height=1065
   )
@@ -577,152 +577,152 @@ And if you are going for fanciful color names, why not define your own with CSS 
     <thead>
       <tr>
         <td></td>
-        <th scope="col">Keyword</th>
-        <th scope="col">Desktop</th>
-        <th scope="col">Mobile</th>
+        <th scope="col">Ключевое слово</th>
+        <th scope="col">Десктоп</th>
+        <th scope="col">Мобильные</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>{{ swatch('transparent') }}</span></td>
         <td>transparent</td>
-        <td class="numeric">84.04%</td>
-        <td class="numeric">83.51%</td>
+        <td class="numeric">84,04%</td>
+        <td class="numeric">83,51%</td>
       </tr>
       <tr>
         <td>{{ swatch('white') }}</td>
         <td>white</td>
-        <td class="numeric">6.82%</td>
-        <td class="numeric">7.34%</td>
+        <td class="numeric">6,82%</td>
+        <td class="numeric">7,34%</td>
       </tr>
       <tr>
         <td>{{ swatch('black') }}</span></td>
         <td>black</td>
-        <td class="numeric">2.32%</td>
-        <td class="numeric">2.42%</td>
+        <td class="numeric">2,32%</td>
+        <td class="numeric">2,42%</td>
       </tr>
       <tr>
         <td>{{ swatch('red') }}</td>
         <td>red</td>
-        <td class="numeric">2.03%</td>
-        <td class="numeric">2.01%</td>
+        <td class="numeric">2,03%</td>
+        <td class="numeric">2,01%</td>
       </tr>
       <tr>
         <td>{{ swatch('currentColor') }}</span></td>
         <td>currentColor</td>
-        <td class="numeric">1.43%</td>
-        <td class="numeric">1.43%</td>
+        <td class="numeric">1,43%</td>
+        <td class="numeric">1,43%</td>
       </tr>
       <tr>
         <td>{{ swatch('gray') }}</span></td>
         <td>gray</td>
-        <td class="numeric">0.75%</td>
-        <td class="numeric">0.79%</td>
+        <td class="numeric">0,75%</td>
+        <td class="numeric">0,79%</td>
       </tr>
       <tr>
         <td>{{ swatch('silver') }}</span></td>
         <td>silver</td>
-        <td class="numeric">0.66%</td>
-        <td class="numeric">0.58%</td>
+        <td class="numeric">0,66%</td>
+        <td class="numeric">0,58%</td>
       </tr>
       <tr>
         <td>{{ swatch('grey') }}</span></td>
         <td>grey</td>
-        <td class="numeric">0.35%</td>
-        <td class="numeric">0.31%</td>
+        <td class="numeric">0,35%</td>
+        <td class="numeric">0,31%</td>
       </tr>
       <tr>
         <td>{{ swatch('green') }}</span></td>
         <td>green</td>
-        <td class="numeric">0.36%</td>
-        <td class="numeric">0.30%</td>
+        <td class="numeric">0,36%</td>
+        <td class="numeric">0,30%</td>
       </tr>
       <tr>
         <td>{{ swatch('magenta') }}</span></td>
         <td>magenta</td>
-        <td class="numeric">0.00%</td>
-        <td class="numeric">0.13%</td>
+        <td class="numeric">0,00%</td>
+        <td class="numeric">0,13%</td>
       </tr>
       <tr>
         <td>{{ swatch('blue') }}</span></td>
         <td>blue</td>
-        <td class="numeric">0.16%</td>
-        <td class="numeric">0.13%</td>
+        <td class="numeric">0,16%</td>
+        <td class="numeric">0,13%</td>
       </tr>
       <tr>
         <td>{{ swatch('whitesmoke') }}</span></td>
         <td>whitesmoke</td>
-        <td class="numeric">0.17%</td>
-        <td class="numeric">0.12%</td>
+        <td class="numeric">0,17%</td>
+        <td class="numeric">0,12%</td>
       </tr>
       <tr>
         <td>{{ swatch('lightgray') }}</span></td>
         <td>lightgray</td>
-        <td class="numeric">0.06%</td>
-        <td class="numeric">0.11%</td>
+        <td class="numeric">0,06%</td>
+        <td class="numeric">0,11%</td>
       </tr>
       <tr>
         <td>{{ swatch('orange') }}</span></td>
         <td>orange</td>
-        <td class="numeric">0.12%</td>
-        <td class="numeric">0.10%</td>
+        <td class="numeric">0,12%</td>
+        <td class="numeric">0,10%</td>
       </tr>
       <tr>
         <td>{{ swatch('lightgrey') }}</span></td>
         <td>lightgrey</td>
-        <td class="numeric">0.04%</td>
-        <td class="numeric">0.10%</td>
+        <td class="numeric">0,04%</td>
+        <td class="numeric">0,10%</td>
       </tr>
       <tr>
         <td>{{ swatch('yellow') }}</span></td>
         <td>yellow</td>
-        <td class="numeric">0.08%</td>
-        <td class="numeric">0.06%</td>
+        <td class="numeric">0,08%</td>
+        <td class="numeric">0,06%</td>
       </tr>
       <tr>
         <td>{{ swatch('Highlight') }}</span></td>
         <td>Highlight</td>
-        <td class="numeric">0.01%</td>
-        <td class="numeric">0.04%</td>
+        <td class="numeric">0,01%</td>
+        <td class="numeric">0,04%</td>
       </tr>
       <tr>
         <td>{{ swatch('gold') }}</span></td>
         <td>gold</td>
-        <td class="numeric">0.04%</td>
-        <td class="numeric">0.04%</td>
+        <td class="numeric">0,04%</td>
+        <td class="numeric">0,04%</td>
       </tr>
       <tr>
         <td>{{ swatch('pink') }}</span></td>
         <td>pink</td>
-        <td class="numeric">0.03%</td>
-        <td class="numeric">0.03%</td>
+        <td class="numeric">0,03%</td>
+        <td class="numeric">0,03%</td>
       </tr>
       <tr>
         <td>{{ swatch('teal') }}</span></td>
         <td>teal</td>
-        <td class="numeric">0.03%</td>
-        <td class="numeric">0.02%</td>
+        <td class="numeric">0,03%</td>
+        <td class="numeric">0,02%</td>
       </tr>
     </tbody>
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Relative popularity of color keywords as a percent of occurrences.",
+      caption="Относительная популярность именованных цветов в процентах случаев.",
       sheets_gid="1429541094",
       sql_file="color_keywords.sql"
     ) }}
   </figcaption>
 </figure>
 
-And, lastly, the once-deprecated—now partially un-deprecated—system colors like `Canvas` and `ThreeDDarkShadow`: these were a terrible idea, introduced to emulate the typical user interface of things like Java or Windows 95, and already unable to keep up with Windows 98, they soon fell by the wayside. Some sites use these system colors to try and fingerprint you, a loophole that <a hreflang="en" href="https://github.com/w3c/csswg-drafts/issues/5710">we are trying to close as we speak</a>. There are few good reasons to use them, and most websites (99.99%) don't, so we are all good.
+И, наконец, некогда устаревшие, а теперь частично не рекомендуемые системные цвета вроде `Canvas` и `ThreeDDarkShadow` — это была ужасная идея, введённая для эмуляции типичного пользовательского интерфейса таких вещей, как Java или Windows 95, и уже не способная угнаться даже за Windows 98 — вскоре оказались на обочине. Некоторые сайты используют эти системные цвета, чтобы попытаться составить ваш цифровой отпечаток — лазейка, которую <a hreflang="en" href="https://github.com/w3c/csswg-drafts/issues/5710">мы пытаемся закрыть, как мы говорим</a>. Есть несколько веских причин для их использования, а большинство веб-сайтов (99,99%) их не поддерживают, так что всё в порядке.
 
-The <a hreflang="en" href="https://css-tricks.com/currentcolor/">rather useful value `currentColor`</a>, surprisingly, trailed at 0.14% of all sRGB colors (1.62% of all named colors).
+Как ни странно, <a hreflang="en" href="https://css-tricks.com/currentcolor/">довольно полезное значение `currentColor`</a> составляет всего 0,14% от всех sRGB цветов (1,62% от всех именованных цветов).
 
-All the colors we discussed so far have one thing in common: sRGB, the standard color space for the web (and for High Definition TV, which is where it came from). Why is that so bad? Because it can only display a limited range of colors: your phone, your TV, and probably your laptop are able to display much more vivid colors due to advances in display technology. Displays with wide color gamut, which used to be reserved for well-paid professional photographers and graphic designers, are now available to everyone. Native apps use this capability, as do digital movies and streaming TV services, but until recently the web was missing out.
+Все цвета, которые мы обсуждали до сих пор, имеют одну общую черту: sRGB, стандартное цветовое пространство для веба (и для HD-телевидения, откуда оно пришло). Почему это так плохо? Потому что оно может отображать только ограниченный диапазон цветов: ваш телефон, ваш телевизор и, возможно, ваш ноутбук могут отображать гораздо более яркие цвета, благодаря достижениям в технологиях отображения. Дисплеи с широкой цветовой гаммой, которые раньше предназначались для высокооплачиваемых профессиональных фотографов и графических дизайнеров, теперь доступны каждому. Эту возможность используют нативные приложения, сервисы цифровых фильмов и потокового вещания, но до недавнего времени веб что-то упускал.
 
-And we are still missing out. Despite being <a hreflang="en" href="https://webkit.org/blog/6682/improving-color-on-the-web/">implemented in Safari in 2016</a>, the use of display-p3 color in web pages is vanishingly small. Our crawl of the web found only 29 mobile and 36 desktop pages using it! (And more than half of those were syntax errors, mistakes, or attempts to use the never-implemented `color-mod()` function). We were curious why.
+И мы всё ещё что-то упускаем. Несмотря на <a hreflang="en" href="https://webkit.org/blog/6682/improving-color-on-the-web/">реализацию в Safari в 2016 году</a>, применение цветов пространства display-p3 на веб-страницах ничтожно малое. Наш краулинг веба нашёл всего 29 мобильных и 36 десктопных страниц, использующих его! (Причем более половины из них — синтаксические ошибки, описки или попытки использовать нигде не реализованную функцию `color-mod()`). Нам было любопытно, почему.
 
-Compatibility, right? You don't want things to break? No. In the stylesheets we examined, we found solid use of fallback: with document order, the cascade, `@supports`, the `color-gamut` media query, all that good stuff. So in a stylesheet we would see the color the designer wanted, expressed in display-p3, and also a fallback sRGB color. We computed the visible difference (a calculation called <a hreflang="en" href="https://zschuessler.github.io/DeltaE/learn/">ΔE2000</a>) between the desired and fallback color and this was typically quite modest. A small tweak. A careful exploration. In fact, 37.6% of the time, the color specified in display-p3 actually fell inside the range of colors (the gamut) that sRGB can manage. It seems people are just cautiously experimenting with this at the moment rather than to get real gains, but more is surely to come in this space, so one to watch.
+Совместимость, так? Вы же не хотите, чтобы всё ломалось? Не хотите. В исследованных нами таблицах стилей мы нашли надёжное использование фолбэков: с порядком в документе, каскадом, `@supports`, медиа-запросом `color-gamut` и всякими подобными хорошими штуками. Так что в таблице стилей мы увидим тот цвет, который хотел дизайнер, записанный в display-p3, а также фолбэчный цвет в sRGB. Мы вычислили видимую разницу (расчёт называется <a hreflang="en" href="https://zschuessler.github.io/DeltaE/learn/">ΔE2000</a>) между желаемым и фолбэчным цветом, и она была, как правило, довольно скромной. Небольшая поправка. Тщательное исследование. Фактически, в 37,6% случаев цвет, указанный в display-p3, фактически попадал в диапазон цветов (гамму), с которым может справиться sRGB. Кажется, сейчас люди скорее осторожно экспериментируют с этим, чем пытаются получить реальную выгоду, но в этом пространстве наверняка появятся новые возможности, так что за ними стоит следить.
 
 <figure>
   <table class="large-table">
@@ -731,7 +731,7 @@ Compatibility, right? You don't want things to break? No. In the stylesheets we 
         <th scope="col" colspan="2">sRGB</th>
         <th scope="col">display-p3</th>
         <th scope="col">ΔE2000</th>
-        <th scope="col" class="no-wrap">In gamut</th>
+        <th scope="col" class="no-wrap">В гамме</th>
       </tr>
     </thead>
     <tbody>
@@ -739,196 +739,196 @@ Compatibility, right? You don't want things to break? No. In the stylesheets we 
         <td><code>rgba(255,205,63,1)</code></td>
         <td>{{ swatch('rgba(255, 205, 63, 1)') }}</td>
         <td><code>color(display 1 0.80 0.25 / 1)</code></td>
-        <td class="numeric">3.880</td>
-        <td>false</td>
+        <td class="numeric">3,880</td>
+        <td>нет</td>
       </tr>
       <tr>
         <td><code>rgba(120,0,255,1)</code></td>
         <td>{{ swatch('rgba(120, 0, 255, 1)') }}</td>
         <td><code>color(display 0.47 0 1 / 1)</code></td>
-        <td class="numeric">1.933</td>
-        <td>false</td>
+        <td class="numeric">1,933</td>
+        <td>нет</td>
       </tr>
       <tr>
         <td><code>rgba(121,127,132,1)</code></td>
         <td>{{ swatch('rgba(121, 127, 132, 1)') }}</td>
         <td><code class="no-wrap">color(display 0.48 0.50 0.52 / 1)</code></td>
-        <td class="numeric">0.391</td>
-        <td>true</td>
+        <td class="numeric">0,391</td>
+        <td>да</td>
       </tr>
       <tr>
         <td><code>rgba(200,200,200,1)</code></td>
         <td>{{ swatch('rgba(200, 200, 200, 1)') }}</td>
         <td><code>color(display 0.78 0.78 0.78 / 1)</code></td>
-        <td class="numeric">0.274</td>
-        <td>true</td>
+        <td class="numeric">0,274</td>
+        <td>да</td>
       </tr>
       <tr>
         <td><code>rgba(97,97,99,1)</code></td>
         <td>{{ swatch('rgba(97, 97, 99, 1)') }}</td>
         <td><code>color(display 0.39 0.39 0.39 / 1)</code></td>
-        <td class="numeric">1.474</td>
-        <td>true</td>
+        <td class="numeric">1,474</td>
+        <td>да</td>
       </tr>
       <tr>
         <td><code>rgba(0,0,0,1)</code></td>
         <td>{{ swatch('rgba(0, 0, 0, 1)') }}</td>
         <td><code>color(display 0 0 0 / 1)</code></td>
-        <td class="numeric">0.000</td>
-        <td>true</td>
+        <td class="numeric">0,000</td>
+        <td>да</td>
       </tr>
       <tr>
         <td><code>rgba(255,255,255,1)</code></td>
         <td>{{ swatch('rgba(255, 255, 255, 1)') }}</td>
         <td><code>color(display 1 1 1 / 1)</code></td>
-        <td class="numeric">0.015</td>
-        <td>false</td>
+        <td class="numeric">0,015</td>
+        <td>нет</td>
       </tr>
       <tr>
         <td><code>rgba(84,64,135,1)</code></td>
         <td>{{ swatch('rgba(84, 64, 135, 1)') }}</td>
         <td><code>color(display 0.33 0.25 0.53 / 1)</code></td>
-        <td class="numeric">1.326</td>
-        <td>true</td>
+        <td class="numeric">1,326</td>
+        <td>да</td>
       </tr>
       <tr>
         <td><code>rgba(131,103,201,1)</code></td>
         <td>{{ swatch('rgba(131, 103, 201, 1)') }}</td>
         <td><code>color(display 0.51 0.40 0.78 / 1)</code></td>
-        <td class="numeric">1.348</td>
-        <td>true</td>
+        <td class="numeric">1,348</td>
+        <td>да</td>
       </tr>
       <tr>
         <td><code>rgba(68,185,208,1)</code></td>
         <td>{{ swatch('rgba(68, 185, 208, 1)') }}</td>
         <td><code>color(display 0.27 0.75 0.82 / 1)</code></td>
-        <td class="numeric">5.591</td>
-        <td>false</td>
+        <td class="numeric">5,591</td>
+        <td>нет</td>
       </tr>
       <tr>
         <td><code>rgb(255,0,72)</code></td>
         <td>{{ swatch('rgb(255, 0, 72)') }}</td>
         <td><code>color(display 1 0 0.2823 / 1)</code></td>
-        <td class="numeric">3.529</td>
-        <td>false</td>
+        <td class="numeric">3,529</td>
+        <td>нет</td>
       </tr>
       <tr>
         <td><code>rgba(255,205,63,1)</code></td>
         <td>{{ swatch('rgba(255, 205, 63, 1)') }}</td>
         <td><code>color(display 1 0.80 0.25 / 1)</code></td>
-        <td class="numeric">3.880</td>
-        <td>false</td>
+        <td class="numeric">3,880</td>
+        <td>нет</td>
       </tr>
       <tr>
         <td><code>rgba(241,174,50,1)</code></td>
         <td>{{ swatch('rgba(241, 174, 50, 1)') }}</td>
         <td><code>color(display 0.95 0.68 0.17 / 1)</code></td>
-        <td class="numeric">4.701</td>
-        <td>false</td>
+        <td class="numeric">4,701</td>
+        <td>нет</td>
       </tr>
       <tr>
         <td><code>rgba(245,181,40,1)</code></td>
         <td>{{ swatch('rgba(245, 181, 40, 1)') }}</td>
         <td><code>color(display 0.96 0.71 0.16 / 1)</code></td>
-        <td class="numeric">4.218</td>
-        <td>false</td>
+        <td class="numeric">4,218</td>
+        <td>нет</td>
       </tr>
       <tr>
         <td><code>rgb(147, 83, 255)</code></td>
         <td>{{ swatch('rgb(147, 83, 255)') }}</td>
         <td><code>color(display 0.58 0.33 1 / 1)</code></td>
-        <td class="numeric">2.143</td>
-        <td>false</td>
+        <td class="numeric">2,143</td>
+        <td>нет</td>
       </tr>
       <tr>
         <td><code>rgba(75,3,161,1)</code></td>
         <td>{{ swatch('rgba(75, 3, 161, 1)') }}</td>
         <td><code>color(display 0.29 0.01 0.63 / 1)</code></td>
-        <td class="numeric">1.321</td>
-        <td>false</td>
+        <td class="numeric">1,321</td>
+        <td>нет</td>
       </tr>
       <tr>
         <td><code>rgba(255,0,0,0.85)</code></td>
         <td>{{ swatch('rgba(255, 0, 0, 0.85)') }}</td>
         <td><code>color(display 1 0 0 / 0.85)</code></td>
-        <td class="numeric">7.115</td>
-        <td>false</td>
+        <td class="numeric">7,115</td>
+        <td>нет</td>
       </tr>
       <tr>
         <td><code>rgba(84,64,135,1)</code></td>
         <td>{{ swatch('rgba(84, 64, 135, 1)') }}</td>
         <td><code>color(display 0.33 0.25 0.53 / 1)</code></td>
-        <td class="numeric">1.326</td>
-        <td>true</td>
+        <td class="numeric">1,326</td>
+        <td>да</td>
       </tr>
       <tr>
         <td><code>rgba(131,103,201,1)</code></td>
         <td>{{ swatch('rgba(131, 103, 201, 1)') }}</td>
         <td><code>color(display 0.51 0.40 0.78 / 1)</code></td>
-        <td class="numeric">1.348</td>
-        <td>true</td>
+        <td class="numeric">1,348</td>
+        <td>да</td>
       </tr>
       <tr>
         <td><code>rgba(68,185,208,1)</code></td>
         <td>{{ swatch('rgba(68, 185, 208, 1)') }}</td>
         <td><code>color(display 0.27 0.75 0.82 / 1)</code></td>
-        <td class="numeric">5.591</td>
-        <td>false</td>
+        <td class="numeric">5,591</td>
+        <td>нет</td>
       </tr>
       <tr>
         <td><code>#6d3bff</code></td>
         <td>{{ swatch('#6d3bff') }}</td>
         <td><code>color(display .427 .231 1)</code></td>
-        <td class="numeric">1.584</td>
-        <td>false</td>
+        <td class="numeric">1,584</td>
+        <td>нет</td>
       </tr>
       <tr>
         <td><code>#03d658</code></td>
         <td>{{ swatch('#03d658') }}</td>
         <td><code>color(display .012 .839 .345)</code></td>
-        <td class="numeric">4.958</td>
-        <td>false</td>
+        <td class="numeric">4,958</td>
+        <td>нет</td>
       </tr>
       <tr>
         <td><code>#ff3900</code></td>
         <td>{{ swatch('#ff3900') }}</td>
         <td><code>color(display 1 .224 0)</code></td>
-        <td class="numeric">7.140</td>
-        <td>false</td>
+        <td class="numeric">7,140</td>
+        <td>нет</td>
       </tr>
       <tr>
         <td><code>#7cf8b3</code></td>
         <td>{{ swatch('#7cf8b3') }}</td>
         <td><code>color(display .486 .973 .702)</code></td>
-        <td class="numeric">4.284</td>
-        <td>true</td>
+        <td class="numeric">4,284</td>
+        <td>да</td>
       </tr>
       <tr>
         <td><code>#f8f8f8</code></td>
         <td>{{ swatch('#f8f8f8') }}</td>
         <td><code>color(display .973 .973 .973)</code></td>
-        <td class="numeric">0.028</td>
-        <td>true</td>
+        <td class="numeric">0,028</td>
+        <td>да</td>
       </tr>
       <tr>
         <td><code>#e3f5fd</code></td>
         <td>{{ swatch('#e3f5fd') }}</td>
         <td><code>color(display .875 .945 .976)</code></td>
-        <td class="numeric">1.918</td>
-        <td>true</td>
+        <td class="numeric">1,918</td>
+        <td>да</td>
       </tr>
       <tr>
         <td><code>#e74832</code></td>
         <td>{{ swatch('#e74832') }}</td>
-        <td><code>color(display .905882353 .282352941 .196078431 / 1 )</code></td>
-        <td class="numeric">3.681</td>
-        <td>true</td>
+        <td><code>color(display .905882353 .282352941 .196078431 / 1)</code></td>
+        <td class="numeric">3,681</td>
+        <td>да</td>
       </tr>
     </tbody>
   </table>
   <figcaption>
     {{ figure_link(
-      caption='This table shows the fallback sRGB colors, then the display-p3 colors. A color difference (ΔE2000) of 1 is barely visible, while 5 is clearly distinct. This is a summary table (<a hreflang="en" href="https://docs.google.com/spreadsheets/d/1sMWXWjMujqfAREYxNbG_t1fOJKYCA6ASLwtz4pBQVTw/#gid=264429000">see full table</a>).',
+      caption='В этой таблице показаны фолбэчные цвета sRGB, а затем цвета display-p3. Разница в цвете (ΔE2000): 1 — едва заметна, 5 — отчётливо видна. Это сводная таблица (<a hreflang="en" href="https://docs.google.com/spreadsheets/d/1sMWXWjMujqfAREYxNbG_t1fOJKYCA6ASLwtz4pBQVTw/#gid=264429000">смотри полную таблицу</a>).',
       sheets_gid="1370141402"
     ) }}
   </figcaption>
@@ -937,19 +937,19 @@ Compatibility, right? You don't want things to break? No. In the stylesheets we 
 {{ figure_markup(
   image="p3-chromaticity-big.svg",
   object="p3-chromaticity-big.svg",
-  caption="uv chromaticity of specified display-p3 colors and their fallbacks.",
-  description="This 1976 u'v' diagram shows the chromaticity of colors (flattened to 2D, so lightness is not shown). The outer curved shape represents the spectrum of pure single wavelengths; there are no visible colors outside this. The straight line is purple, a mixture of red and violet. The smaller, grey, triangle is the sRGB gamut while the larger, darker triangle is the display-p3 gamut. The 23 unique display-p3 colors actually in use on the web in 2020 are shown; for each pair of colors the larger circle is the sRGB fallback while the smaller circle is the display-p3 color. If it is inside the sRGB gamut, those circles show the correct color. Otherwise, a white circle with a red edge indicates out of sRGB-gamut colors.",
+  caption="УФ-цветность указанных display-p3 цветов и их фолбэков.",
+  description="Эта УФ-диаграмма 1976 года показывает качество цветов (сведена к 2D, поэтому яркость не показана). Внешняя изогнутая форма представляет собой спектр чистых одиночных длин волн; вне этой формы нет видимых цветов. Прямая линия пурпурная — смесь красного и фиолетового цветов. Меньший серый треугольник — это гамма sRGB, а большой более тёмный треугольник — гамма display-p3. Показаны 23 уникальных цвета display-p3, фактически используемых в Интернете в 2020 году; для каждой пары цветов больший кружок является резервным sRGB, а меньший кружок — цветом display-p3. Если он находится в пределах гаммы sRGB, эти круги показывают правильный цвет. В противном случае белый кружок с красной границей указывает на то, что цвета находятся вне диапазона sRGB.",
   width=600,
   height=600
 ) }}
 
-The purplish colors are similar in sRGB and display-p3, perhaps because both those color spaces have the same blue primary. Various reds, orange-yellows, and greens are near the sRGB gamut boundary (nearly as saturated as possible) and map to analogous points near the display-p3 gamut boundary.
+Пурпурные цвета похожи в sRGB и display-p3, возможно, потому, что оба этих цветовых пространства имеют один и тот же базовый синий цвет. Различные красные, оранжево-жёлтые и зеленые цвета находятся рядом с границей гаммы sRGB (почти настолько насыщенные, насколько это возможно) и соответствуют аналогичным точкам около границы гаммы display-p3.
 
-There seem to be two reasons why the web is still trapped in sRGB land. The first is lack of tools, lack of good color pickers, lack of understanding of what more vivid colors are available. But the major reason, we think, is that to date Safari is the only browser to implement it. This is changing, rapidly—Chrome and Firefox are both implementing right now—but until that support ships, probably using display-p3 is too much effort for too little gain because <a hreflang="en" href="https://gs.statcounter.com/browser-market-share">only 17% of viewers</a> will see those colors. Most people will see the fallback. So current usage is a subtle shift in color vibrancy, rather than a big difference.
+Кажется, есть две причины, по которым веб застрял в sRGB. Первая — отсутствие инструментов, отсутствие хороших палитр, недостаток понимания того, насколько более яркие цвета доступны. Но основная причина, по нашему мнению, заключается в том, что на сегодняшний день Safari является единственным браузером, в котором это реализовано. Ситуация быстро меняется — Chrome и Firefox в процессе реализации прямо сейчас — но до тех пор, пока эта поддержка не появится в стабильных версиях, вероятно, использование display-p3 требует слишком много усилий и приносит слишком мало пользы, потому что <a hreflang="en" href="https://gs.statcounter.com/browser-market-share">только 17% пользователей</a> увидят такие цвета. Большинство людей увидят фолбэк. Таким образом, текущее применение — скорее тонкий сдвиг в яркости цвета, чем большая разница.
 
-It will be interesting to see how the use of display-p3 color (other options exist, but this is the only one we found in the wild) changes over the next year or two.
+Будет интересно посмотреть, как использование цветов display-p3 (существуют и другие варианты, но это единственный, который мы нашли в дикой природе) изменится в течение следующего года или двух.
 
-Because *wide color gamut* (WCG) is only the beginning. The TV and movie industry has already moved past P3 to an even wider gamut, [*Rec. 2020*](https://en.wikipedia.org/wiki/Rec._2020); and also a wider range of lightness, from blinding reflections to deepest shadows. *High Dynamic Range* (HDR) has already arrived in the home, especially on games, streaming TV and movies. The web has a bunch of catching up to do.
+Потому что *широкая цветовая гамма* (wide color gamut, WCG) — это только начало. Теле- и киноиндустрия уже перешли от P3 к ещё более широкому диапазону [*Rec. 2020*](https://en.wikipedia.org/wiki/Rec._2020); а также к более широкому диапазону яркости: от ослепляющих отражений до самых глубоких теней. *Расширенный динамический диапазон* (High Dynamic Range, HDR) уже доступен в домашних условиях, особенно в играх, потоковом телевидении и фильмах. Интернету есть где навёрстывать упущенное.
 
 ## Градиенты {gradients}
 
