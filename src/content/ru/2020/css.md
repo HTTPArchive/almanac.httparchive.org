@@ -1743,12 +1743,12 @@ background: linear-gradient(white, transparent); /* сокращение */
 
 ## Вывод {conclusion}
 
-Whew! That was a lot of data! We hope you have found it as interesting as we did, and perhaps even formed your own insights about some of them.
+Ух! Очень много данных! Мы надеемся, что вы нашли их такими же интересными, как и мы, и, возможно, даже сформировали собственное мнение о некоторых из них.
 
-One of our takeaways was that popular libraries such as WordPress, Bootstrap, and Font Awesome are primary drivers behind adoption of new features, while individual developers tend to be more conservative.
+Один из наших выводов заключался в том, что популярные библиотеки, такие как WordPress, Bootstrap и Font Awesome, являются основными драйверами внедрения новых функций, в то время как отдельные разработчики, как правило, более консервативны.
 
-Another observation is that there is more old code on the web than new code. The web in practice spans a huge range, from code that could have been written 20 years ago to bleeding edge tech that only works in the latest browsers. What this study showed us, though, is that there are powerful features that are often misunderstood and underused, despite good interoperability.
+Ещё одно наблюдение: старого кода в вебе больше, чем нового. Веб на практике охватывает огромный диапазон: от кода, который мог быть написан 20 лет назад, до новейших технологий, которые работают только в последних версиях браузеров. Однако это исследование показало нам, что существуют мощные фичи, которые зачастую недопоняты и недоиспользуемы, несмотря на хорошую совместимость.
 
-It also showed us some of the ways that developers want to use CSS but can't and gave us some insight on what they find confusing. Some of this data will be brought back to the CSS WG to help drive CSS's evolution, because data-driven decisions are the best kind of decisions.
+Оно также показало нам некоторые способы, как разработчики хотят, но не могут использовать CSS, и дало нам некоторое представление о том, что их сбивает с толку. Некоторые данные будут переданы в рабочую группу CSS, чтобы помочь стимулировать развитие CSS, потому что решения, основанные на данных, — лучший вид решений.
 
-We are excited about the ways that this analysis could have further impact in the way we develop websites and looking forward to seeing how these metrics develop over time!
+Мы вдохновлены тем, как этот анализ может ещё больше повлиять на то, как мы разрабатываем веб-сайты, и с нетерпением ждём возможности увидеть, как эти метрики будут развиваться с течением времени!
