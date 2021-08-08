@@ -1550,7 +1550,6 @@ margin-bottom: 0;
 background: url("one.png"), url("two.png"), url("three.png");
 background-repeat: no-repeat;
 ```
-
 В-третьих, в тех случаях, когда части синтаксиса сокращений выглядят слишком странно, полные свойства могут улучшить читаемость:
 
 ```css
