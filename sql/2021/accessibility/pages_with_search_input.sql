@@ -1,7 +1,7 @@
 #standardSQL
 # Pages with search input
 CREATE TEMPORARY FUNCTION hasSearchInput(payload STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS BOOLEAN LANGUAGE js AS '''
   try {
     const almanac = JSON.parse(payload);
     return almanac.input_elements.nodes.some((node) => {
