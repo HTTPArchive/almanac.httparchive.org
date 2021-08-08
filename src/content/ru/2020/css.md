@@ -953,18 +953,18 @@ HSL должен быть <a hreflang="en" href="https://drafts.csswg.org/css-co
 
 ## Градиенты {gradients}
 
-Despite minimalism and flat design being all the rage, CSS gradients are used in 75% of pages. As expected, nearly all gradients are used in backgrounds. 74.45% of pages specify gradients in backgrounds, but only 7% in any other property.
+Несмотря на моду на минимализм и плоский дизайн, CSS-градиенты применяются на 75% страниц. Как и ожидалось, почти все градиенты используются в фонах. 74,45% страниц задают градиент для фона, и только 7% — для любых других свойств.
 
-Linear gradients are 5 times more popular than radial ones, appearing in almost 73% of pages, compared to 15% for radial gradients. The difference in popularity is so staggering, that even `-ms-linear-gradient()`, which was never needed (Internet Explorer 10 supported gradients both with and without the `-ms-` prefix), is more popular than `radial-gradient()`! The <a hreflang="en" href="https://caniuse.com/css-conic-gradients">newly supported</a> `conic-gradient()` is even more underutilized, appearing in only 652 desktop pages (0.01%) and 848 mobile pages (0.01%), which is expected, since Firefox has only just shipped its implementation to the stable channel.
+Линейные градиенты в 5 раз популярнее радиальных: они появляются почти на 73% страниц в сравнении с 15% для радиальных градиентов. Разница в популярности настолько ошеломляющая, что даже `-ms-linear-gradient()`, который никогда не был нужен (Internet Explorer 10 поддерживал градиенты как с префиксом `-ms-`, так и без него), более популярен, чем `radial-gradient()`! <a hreflang="en" href="https://caniuse.com/css-conic-gradients">Недавно поддержанный</a> `conic-gradient()` применяется ещё меньше: он появляется всего на 652 десктопных страницах (0,01%) и 848 мобильных страницах (0,01%), что ожидаемо, поскольку Firefox только-только зарелизил свою реализацию в стабильной версии.
 
-Repeating gradients of all types are fairly underused too, with `repeating-linear-gradient()` appearing in only 3% of pages and the others trailing behind even more (`repeating-conic-gradient()` is only used in 21 pages!).
+Повторяющиеся градиенты всех типов также довольно недоиспользуются: `repeating-linear-gradient()` появляется только на 3% страниц, а остальные отстают ещё больше (`repeating-conic-gradient()` используется всего на 21 странице!).
 
-Prefixed gradients are also still very common, even though prefixes haven't been needed in gradients since 2013. It is notable that -webkit-gradient() is still used in half of all websites, even though it <a hreflang="en" href="https://caniuse.com/css-gradients">hasn't been needed since 2011</a>. And `-webkit-linear-gradient()` is still the second most used gradient function of all, appearing in 57% of websites, with the other prefixed forms also being used in a third to half of pages.
+Градиенты с префиксами также всё ещё очень распространены, хотя нет нужды в префиксах для градиентов с 2013 года. Примечательно, что `-webkit-gradient()` по-прежнему используется на половине всех веб-сайтов, хотя он <a hreflang="en" href="https://caniuse.com/css-gradients">не нужен с 2011 года</a>. А `-webkit-linear-gradient()` по-прежнему является второй наиболее часто используемой градиентной функцией из всех, появляясь на 57% веб-сайтов, при этом также используются другие префиксные формы — их содержат от трети до половины страниц.
 
 {{ figure_markup(
   image="gradient-functions.png",
-  caption="The most popular gradient functions as a percent of pages.",
-  description="Bar chart showing the most popular gradient functions as a percent of desktop and mobile pages. Gradient functions tend to be more popular on mobile pages. The most popular gradient function is `linear-gradient`, used on 73% of mobile pages. Followed by `-webkit-linear-gradient` on 57%, `-webkit-gradient` and `-linear-gradient` on 50%, `-moz-linear-gradient` on 49%, `-ms-linear-gradient` on 33%, `radial-gradient` on 15%, `-webkit-radial-gradient` on 9%, and `repeating-linear-gradient` and `-moz-radial-gradient` used on 3% of mobile pages.",
+  caption="Наиболее популярные градиентные функции как процент от страниц.",
+  description="Гистограмма, показывающая наиболее популярные градиентные функции как процент от десктопных и мобильных страниц. Градиентные функции, как правило, более популярны на мобильных страницах. Самая популярная функция — `linear-gradient` (73% мобильных страниц). Следом идут `-webkit-linear-gradient` на 57% страниц, `-webkit-gradient` и `-linear-gradient` на 50%, `-moz-linear-gradient` на 49%, `-ms-linear-gradient` на 33%, `radial-gradient` на 15%, `-webkit-radial-gradient` на 9%, и `repeating-linear-gradient` и `-moz-radial-gradient`, применяемые на 3% мобильных страниц.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1552177796&format=interactive",
   sheets_gid="397884589",
   sql_file="gradient_functions.sql"
@@ -972,26 +972,26 @@ Prefixed gradients are also still very common, even though prefixes haven't been
 
 {{ figure_markup(
   image="gradient-functions-unprefixed.png",
-  caption="The most popular gradient functions as a percent of pages, omitting vendor prefixes.",
-  description="Bar chart showing the most popular gradient functions as a percent of desktop and mobile pages, omitting vendor prefixes. Desktop adoption is slightly behind mobile. Variations of `linear-gradient` are used on 72.57% of mobile pages, `radial-gradient` on 15.13%, `repeating-linear-gradient` on 2.99%, `repeating-radial-gradient` on 0.07%, `conic-gradient` on 0.01%, and `repeating-conic-gradient` on approximately 0.00% of mobile pages.",
+  caption="Наиболее популярные градиентные функции как процент от страниц, исключая вендорные префиксы",
+  description="Гистограмма, показывающая наиболее популярные градиентные функции как процент от десктопных и мобильных страниц, исключая вендорные префиксы. Распространение на десктопах немного отстает от мобильных. Вариации `linear-gradient` используются на 72,57% мобильных страниц, `radial-gradient` на 15,13%, `repeating-linear-gradient` на 2,99%, `repeating-radial-gradient` на 0,07%, `conic-gradient` на 0,01% и `repeating-conic-gradient` на приблизительно 0,00% мобильных страниц.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1676879657&format=interactive",
   sheets_gid="397884589",
   sql_file="gradient_functions.sql"
 ) }}
 
-Using color stops with different colors in the same position (hard stops) to create stripes and other patterns is a technique <a hreflang="en" href="https://lea.verou.me/2010/12/checkered-stripes-other-background-patterns-with-css3-gradients/">first popularized by Lea Verou in 2010</a>, which by now has many interesting variations, including <a hreflang="en" href="https://bennettfeely.com/gradients/">some really cool ones with blend modes</a>. While it may seem like a hack, hard stops are found in 50% of pages, indicating a strong developer need for lightweight graphics from within CSS without resorting to image editors or external SVG.
+Использование цветовых остановок с разными цветами в одной и той же позиции (резкие переходы) для создания полос и других узоров — техника, <a hreflang="en" href="https://lea.verou.me/2010/12/checkered-stripes-other-background-patterns-with-css3-gradients/">впервые популяризированная Лией Веру в 2010 году</a>, которая к настоящему времени имеет множество интересных вариаций, в том числе <a hreflang="en" href="https://bennettfeely.com/gradients/">некоторые действительно крутые с режимами наложения</a>. Хоть это и может выглядеть хаком, резкие переходы обнаруживаются на 50% страниц, что указывает на сильную потребность разработчиков в легковесной графике на CSS, чтобы не прибегать к редакторам изображений или внешним SVG-файлам.
 
- Interpolation hints (or as Adobe, who popularized the technique, calls them: "midpoints") are found on only 22% of pages, despite <a hreflang="en" href="https://caniuse.com/mdn-css_types_image_gradient_linear-gradient_interpolation_hints">near universal browser support since 2015</a>. Which is a shame, because without them, the color stops are connected by straight-lines in the color space, rather than smooth curves. This low usage probably reflects a misunderstanding of what they do, or how to use them; contrast this with CSS transitions and animations, where easing functions (which do much the same thing, i.e. connect the keyframes with curves rather than jerky straight lines) are much more commonly used ([80% of transitions](#transitions-and-animations)). "Midpoints" is not a very understandable description, and "interpolation hint" sounds like you are helping the browser to do simple arithmetic.
+Подсказки для интерполяции (или, как называет их Adobe, популяризировавший эту технику, «промежуточные точки») встречаются только на 22% страниц, несмотря на <a hreflang="en" href="https://caniuse.com/mdn-css_types_image_gradient_linear-gradient_interpolation_hints">почти универсальную поддержку браузеров с 2015 года</a>. Что позорно, потому что без них цветовые остановки соединяются прямыми линиями в цветовом пространстве, а не плавными кривыми. Такое малое использование, вероятно, отражает неправильное понимание того, что они делают или как их использовать. Сравните это с переходами и анимациями в CSS, где функции плавности (которые делают почти то же самое, т.е. соединяют ключевые кадры кривыми, а не резкими прямыми линиями) используются гораздо чаще ([80% переходов](#transitions-and-animations)). «Промежуточные точки» — не очень понятное описание, а «подсказка для интерполяции» звучит так, будто вы помогаете браузеру выполнять простую арифметику.
 
-Most gradient usage is rather simple, with over 75% of gradients found across the entire dataset only using 2 color stops. In fact, fewer than half of pages contain even a single gradient with more than 3 color stops!
+В большинстве случаев использование градиентов довольно простое: более 75% градиентов, обнаруженных во всём наборе данных, используют всего 2 цветовые остановки. Фактически, чуть менее половины страниц содержат всего один градиент с более чем тремя цветовыми остановками!
 
-The gradient with the most color stops is <a hreflang="en" href="https://dabblet.com/gist/4d1637d78c71ef2d8d37952fc6e90ff5">this one</a> with 646 stops! So pretty! This is almost certainly generated, and the resulting CSS code is 8KB, so a 1px tall PNG would likely have done the job as well, with a smaller footprint (our image below is 1.1 KB).
+Градиент с наибольшим количеством цветовых остановок — <a hreflang="en" href="https://dabblet.com/gist/4d1637d78c71ef2d8d37952fc6e90ff5">вот этот</a> с 646 остановками! Такой красивый! Он почти наверняка сгенерирован, а его результирующий CSS-код составляет 8 КБ, так что PNG высотой в 1 пиксель, вероятно, также справился бы с этой задачей, ещё и с меньшим размером (наше изображение ниже — 1,1 КБ).
 
 {{ figure_markup(
   image="gradient-most-stops.png",
   classes="height-16vw-122px",
-  caption="The gradient with the most color stops, 646.",
-  description="A screenshot of the gradient with the most color stops, which is a series of intricate multicolor stripes of varying hues.",
+  caption="Градиент с самым большим количеством цветовых остановок, 646.",
+  description="Скриншот градиента с наибольшим количеством цветовых остановок, который представляет собой серию замысловатых разноцветных полос разных оттенков.",
   width=600,
   height=122
 ) }}
