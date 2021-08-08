@@ -1485,90 +1485,91 @@ A small but notable number of pages (around 3000 or 0.05%) were oddly using `@su
 
 ## Мета {meta}
 
-Up until now we've looked at what CSS developers have used, but in this section we want to look more about _how_ they are using it.
+До сих пор мы смотрели на то, что использовали CSS-разработчики, но в этом разделе мы хотим узнать больше о том, _как_ они это используют.
 
 ### Повторные объявления {declaration-repetition}
 
-To tell how efficient and maintainable a stylesheet is, one rough factor is declaration repetition, that is, the ratio between unique (different) and total number of declarations. The factor is a rough one because it is not trivial to normalize declarations (`border: none`, `border: 0`, even `border-width: 0`—plus a few more—are all different but say the same thing), and also because there are levels for the repetition: media query (most useful but harder to measure), stylesheet, or data set level as with the Almanac's overall metrics.
+Для определения того, насколько эффективна и удобна в поддержке таблица стилей, одним из грубых факторов является повторение объявлений, то есть соотношение между количеством уникальных (разных) объявлений и общим количеством объявлений. Фактор является приблизительным, потому что нормализовать объявления сложно (`border: none`, `border: 0`, даже `border-width: 0`, плюс ещё несколько — все разные, но говорят одно и то же), а также потому, что существуют уровни повторения: медиа-запрос (самый полезный, но трудный для измерения), таблица стилей или уровень набора данных, как с общими метриками Альманаха.
 
-We did look at declaration repetition and found that the median web page, on mobile, uses a total of 5,454 declarations, of which 2,398 are unique. The median ratio (which is based on the data set, not these two values) comes out at 45.43%. What this means is that on the median page, each declaration is used roughly two times.
+Мы изучили повторение объявлений и обнаружили, что медианная веб-страница на мобильных устройствах использует в общей сложности 5 454 объявлений, из которых 2 398 являются уникальными. Медианное соотношение (которое основано на наборе данных, а не на этих двух значениях) составляет 45,43%. Это означает, что на медианной странице каждое объявление используется примерно два раза.
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th>Percentile</th>
-        <th>Unique / Total</th>
+        <th>Перцентиль</th>
+        <th>Уникальных / Всего</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>10</td>
-        <td class="numeric">30.97%</td>
+        <td class="numeric">30,97%</td>
       </tr>
       <tr>
         <td>50</td>
-        <td class="numeric">45.43%</td>
+        <td class="numeric">45,43%</td>
       </tr>
       <tr>
         <td>90</td>
-        <td class="numeric">63.67%</td>
+        <td class="numeric">63,67%</td>
       </tr>
     </tbody>
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Distribution of repetition ratios on mobile pages.",
+      caption="Распределение соотношения повторений на мобильных страницах.",
       sheets_gid="2124098640",
       sql_file="repetition.sql"
     ) }}
   </figcaption>
 </figure>
 
-These ratios are better, then, than what we know from scarce previous data. In 2017, Jens Oliver Meiert <a hreflang="en" href="https://meiert.com/en/blog/70-percent-css-repetition/">sampled 220 popular websites</a> and came out with the following averages: 6,121 declarations, of which 1,698 were unique, and a unique/total ratio of 28% (median 34%). The topic could need further investigation, but from the little we know so far, declaration repetition is tangible—and may have either improved or be more of a problem for the more popular and likely larger sites.
+Таким образом, эти соотношения лучше, чем те, что мы знаем из скудных предыдущих данных. В 2017 году Дженс Оливер Мейерт <a hreflang="en" href="https://meiert.com/en/blog/70-percent-css-repetition/">проанализировал 220 популярных веб-сайтов</a> и опубликовал следующие средние значения: 6 121 объявление, из которых 1 698 были уникальными, а соотношение уникальных/всего — 28% (медианное — 34%). Эта тема может потребовать дальнейшего изучения, но, судя по тому немногому, что нам известно на данный момент, повторение объявлений ощутимо — и, возможно, оно либо улучшилось, либо стало более серьёзной задачей для более популярных и, вероятно, более крупных сайтов.
 
 ### Сокращения и полные свойства {shorthands-and-longhands}
 
-Some shorthands are more successful than others. Sometimes the shorthand is sufficiently easy to use and its syntax memorable, that we end up only using the longhands intentionally, when we want to override certain values independently. And then there are these shorthands that are hardly ever used because their syntax is too confusing.
+Некоторые сокращения более успешны, чем другие. Иногда сокращённая форма достаточно проста в использовании, а её синтаксис запоминается, поэтому мы в конечном итоге используем полные свойства только намеренно, когда хотим независимо переопределить конкретные значения. Однако есть и такие сокращения, которые почти никогда не используются, потому что их синтаксис слишком запутанный.
 
 #### Сокращения перед полными свойствами {shorthands-before-longhands}
 
-Some shorthands are more successful than others. Sometimes the shorthand is sufficiently easy to use and its syntax memorable, that we end up only using the longhands intentionally, when we want to override certain values independently. And then there are these shorthands that are hardly ever used because their syntax is too confusing. Using a shorthand and overriding it with a few longhands in the same rule is a good strategy for a variety of reasons:
+Использование сокращения и его переопределение несколькими полными свойствами в одном правиле — хорошая стратегия по разным причинам.
 
-First, it is good defensive coding. The shorthand resets all its longhands to their initial values if they have not been explicitly specified. This prevents rogue values coming in through the cascade.
+Во-первых, это хорошее защищающее кодирование. Сокращение сбрасывает все свои полные свойства до их начальных значений, если они не были явно указаны. Это предотвращает появление в каскаде значений-проказников.
 
-Second, it is good for maintainability, to avoid repetition of values when the shorthand has smart defaults. For example, instead of `margin: 1em 1em 0 1em` we can write:
+Во-вторых, это хорошо для поддержки кода, чтобы избежать повторения значений, когда в сокращении есть умные значения по умолчанию. Например, вместо `margin: 1em 1em 0 1em` мы можем написать:
 
 ```css
 margin: 1em;
 margin-bottom: 0;
 ```
 
-Similarly, for list-valued properties, longhands can help us reduce repetition when a value is the same across all list values:
+Точно так же для свойств со списковыми значениями полные свойства могут помочь нам уменьшить количество повторений, когда значение одинаково для всех значений списка:
 
 ```css
 background: url("one.png"), url("two.png"), url("three.png");
 background-repeat: no-repeat;
 ```
-Third, for cases where parts of the shorthand's syntax are too weird, longhands can help improve readability:
+
+В-третьих, в тех случаях, когда части синтаксиса сокращений выглядят слишком странно, полные свойства могут улучшить читаемость:
 
 ```css
-/* Instead of: */
+/* Вместо: */
 background: url("one.svg") center / 50% 50% content-box border-box;
 
-/* This is more readable: */
+/* Так более читаемо: */
 background: url("one.svg") center;
 background-size: 50% 50%;
 background-origin: content-box;
 background-clip: border-box;
 ```
 
-So how frequently does this occur? Very, as it turns out. 88% of pages use this strategy at least once. By far, the most frequent longhand this happens with is `background-size`, accounting for 40% of all longhands that come after their shorthand, indicating that the slash syntax for `background-size` in `background` may not have been the most readable or memorable syntax we could have come up with. No other longhand comes close to this frequency. The remaining 60% is a long tail spread across many other properties evenly.
+Так как часто это происходит? Оказывается, очень часто. 88% страниц используют такую стратегию хотя бы один раз. Безусловно, самое частое свойство, с которым такое происходит, — `background-size`, составляющее 40% от всех полных свойств, которые идут после своих сокращений, что указывает на то, что синтаксис с косой чертой для `background-size` в `background`, возможно, был не самым читаемым или запоминающимся из тех, которые мы могли придумать. Ни одно другое полное свойство не приближается к этой частоте. Остальные 60% — длинный хвост, равномерно распределённый по многим другим свойствам.
 
 {{ figure_markup(
   image="most-popular-longhand-after-shorthand.png",
-  caption="Most popular longhands that come after their shorthands in the same rule.",
-  description="Bar chart showing `background-size` at 15% for desktop and 41% for mobile, `background-image` at 8% and 6% respectively, `margin-bottom` at 6% and 4%, `margin-top` at 6% and 4%, `border-bottom-color` at 5% and 3%, `font-size` at 4% and 3%, `border-top-color` at 4% and 3%, `background-color` at 4% and 2%, `padding-left` at 3% and 2%, and finally `margin-left` at 3% and 2%.",
+  caption="Самые популярные полные свойства, которые идут после сокращений в том же правиле.",
+  description="Гистограмма, показывающая `background-size` на 15% десктопных и 41% мобильных страниц, `background-image` на 8% и 6% соответственно, `margin-bottom` на 6% и 4%, `margin-top` на 6% и 4%, `border-bottom-color` на 5% и 3%, `font-size` на 4% и 3%, `border-top-color` на 4% и 3%, `background-color` на 4% и 2%, `padding-left` на 3% и 2% и, наконец, `margin-left` на 3% и 2%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=176504610&format=interactive",
   sheets_gid="17890636",
   sql_file="meta_shorthand_first_properties.sql",
@@ -1578,12 +1579,12 @@ So how frequently does this occur? Very, as it turns out. 88% of pages use this 
 
 #### <span lang="en">font</span> {font}
 
-The `font` shorthand is fairly popular (used 49 million times on 80% of pages) but used far less than most of its longhands (except `font-variant` and `font-stretch`). This indicates that most developers are comfortable using it (since it appears on so many websites). Developers often need to override specific typographic aspects on descendant rules, which likely explains why the longhands are used so much more.
+Сокращение `font` — довольно популярное (используется 49 миллионов раз на 80% страниц), но применяется гораздо реже, чем большинство его полных свойств (кроме `font-variant` и `font-stretch`). Это указывает на то, что большинству разработчиков удобно его использовать (поскольку оно появляется на очень многих веб-сайтах). Разработчикам часто приходится переопределять определенные аспекты типографики для правил у потомков, что, вероятно, объясняет, почему полные свойства используются гораздо чаще.
 
 {{ figure_markup(
   image="font-shorthands.png",
-  caption="Adoption of `font` shorthand and longhand properties.",
-  description="Bar chart showing the adoption of font shorthand and longhand properties. The most used properties are longhands ranging from 95% to 92% of mobile pages in descending order: font-weight, font-family, font-size, line-height, and font-style. The font shorthand is used on 80% of mobile pages. Lesser used font longhands are font-variant at 43% and font-stretch at 8%. Adoption is similar across desktop and mobile.",
+  caption="Распространение сокращения `font` и его полных свойств.",
+  description="Гистограмма, показывающая распространение сокращения `font` и его полных свойств. Наиболее часто используемые свойства — полные, от 95% до 92% мобильных страниц в порядке убывания: `font-weight`, `font-family`, `font-size`, `line-height` и `font-style`. Сокращение `font` используется на 80% мобильных страниц. Менее используемые полные свойства `font` — `font-variant` на 43% и `font-stretch` на 8%. Распространение одинаково для десктопных и мобильных устройств.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1455030576&format=interactive",
   sheets_gid="1513860089",
   sql_file="all_properties.sql"
@@ -1591,12 +1592,12 @@ The `font` shorthand is fairly popular (used 49 million times on 80% of pages) b
 
 #### <span lang="en">background</span> {background}
 
-As one of the oldest shorthands, `background` is also highly used, appearing 1 billion times in 92% of pages. it is used more frequently than any of its longhands except `background-color`, which is used 1.5 billion times, in roughly the same number of pages. However, this doesn't mean developers are fully comfortable with all of its syntax: nearly all (>90%) of `background` usage is very simple, with one or two values, most likely colors and images or images and positions. For anything further, the longhands are seen as more self-explanatory.
+Как одно из самых старых, сокращение `background` также очень широко используется — оно встречается 1 миллиард раз на 92% страниц. Оно используется чаще, чем любое из его полных свойств, кроме `background-color`, которое используется 1,5 миллиарда раз примерно на том же количестве страниц. Однако это не означает, что разработчики полностью довольны его полным синтаксисом: почти всё (>90%) использование `background` очень простое, с одним или двумя значениями, скорее всего, цветами и изображениями или изображениями и позиционированием. Для всего остального полные свойства выглядят более самоочевидными.
 
 {{ figure_markup(
   image="background-shorthand-versus-longhand.png",
-  caption="Usage comparison of the `background` shorthand and its longhands.",
-  description="Bar chart showing `background` is 91% on desktop and 92% on mobile, `background-color` is 91% and 92% respectively, `background-image` is 85% and 87%, `background-position` is 84% and 85%, `background-repeat` is 82% and 84%, `background-size` is 77% and 79%, `background-clip` is 48% and 53%, `background-attachment` is 37% and 38%, `background-origin` is 5% on desktop and 12% on mobile.",
+  caption="Сравнение использования сокращения `background` и его полных свойств.",
+  description="Гистограмма, показывающая `background` на 91% десктопных и 92% мобильных страниц, `background-color` на 91% и 92% соответственно, `background-image` на 85% и 87%, `background-position` на 84% и 85%, `background-repeat` на 82% и 84%, `background-size` на 77% и 79%, `background-clip` на 48% и 53%, `background-attachment` на 37% и 38%, `background-origin` на 5% десктопных и 12% мобильных страниц.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=2014923335&format=interactive",
   sheets_gid="1513860089",
   sql_file="all_properties.sql",
@@ -1606,12 +1607,12 @@ As one of the oldest shorthands, `background` is also highly used, appearing 1 b
 
 #### Маржины и паддинги {margins-and-paddings}
 
-Both the `margin` and `padding` shorthands, as well as their longhands were some of the most highly used CSS properties. Padding is considerably more likely to be specified as a shorthand (1.5B uses for `padding` vs 300-400M for each shorthand), whereas there is less of a difference for margin (1.1B uses of `margin` vs 500-800M for each of its longhands). Given the initial confusion of many CSS developers about the clockwise order of values in these shorthands and the repetition rule for 2 or 3 values, we expected that most of these uses of the shorthands would be simple (1 value), however we saw the entire range of 1,2,3 or 4 values. Obviously 1 or 2 values were more common, but 3 or 4 were not at all uncommon, occurring in over 25% of `margin` uses and over 10% of `padding` usage.
+Сокращения `margin` и `padding`, а также их полные свойства, были одними из наиболее часто используемых CSS-свойств. Паддинг с большей вероятностью будет указываться как сокращение (1,5 миллиарда использований для `padding` против 300–400 миллионов для каждого полного свойства), тогда как для маржина разница меньше (1,1 миллиарда использований `margin` против 500–800 миллионов для каждого из его полных свойств). Учитывая первоначальное замешательство многих CSS-разработчиков относительно порядка значений по часовой стрелке в этих сокращениях и правил повторения для двух или трёх значений, мы ожидали, что большинство из этих вариантов использования сокращений будет простым (одно значение), однако мы увидели полный диапазон из одного, двух, трёх или четырёх значений. Очевидно, одно или два значения были более распространенными, но три или четыре были вовсе не редкостью, встречаясь более чем в 25% случаев применения `margin` и более чем в 10% случаев применения `padding`.
 
 {{ figure_markup(
   image="margin-padding-shorthand-vs-longhand.png",
-  caption="Usage comparison of the `margin` & `padding` shorthands and their longhands.",
-  description="Bar chart showing `padding` is 93% on desktop, 94% on mobile, `margin` is 93% and 93% respectively, `margin-left` is 91% and 92%, `margin-top` is 90% and 91%, `margin-right` is 90% and 91%, `margin-bottom` is 90% and 91%, `padding-left` is 90% and 90%, `padding-top` is 88% and 89%, `padding-bottom` is 88% and 89%, and `padding-right` is 87% and 88%.",
+  caption="Сравнение использования сокращений `margin` и `padding` и их полных свойств.",
+  description="Гистограмма, показывающая `padding` на 93% десктопных и 94% мобильных страниц, `margin` на 93% и 93% соответственно, `margin-left` на 91% и 92%, `margin-top` на 90% и 91%, `margin-right` на 90% и 91%, `margin-bottom` на 90% и 91%, `padding-left` на 90% и 90%, `padding-top` на 88% и 89%, `padding-bottom` на 88% и 89%, `padding-right` на 87% и 88%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=804317202&format=interactive",
   sheets_gid="1513860089",
   sql_file="all_properties.sql"
@@ -1619,12 +1620,12 @@ Both the `margin` and `padding` shorthands, as well as their longhands were some
 
 #### <span lang="en">flex</span> {flex}
 
-Nearly all `flex`, `flex-*` properties are very highly used, appearing in 30-60% of pages. However, both `flex-wrap` and `flex-direction` are used far more than their shorthand, `flex-flow`. When `flex-flow` is used, it is used with two values, i.e. as a shorter way to set both of its longhands. Despite the [elaborate sensible defaults](https://developer.mozilla.org/en-US/docs/Web/CSS/flex#Syntax:~:text=The%20flex%20property%20may%20be%20specified%20using%20one%2C%20two%2C%20or%20three%20values) for using `flex` with one or two values, around 90% of usage consists of the 3 value syntax, explicitly setting all three of its longhands.
+Почти все свойства `flex`, `flex-*` очень широко применяются, появляясь на 30–60% страниц. Тем не менее, и `flex-wrap`, и `flex-direction` применяются гораздо чаще, чем их сокращение. Свойство `flex-flow`, как правило, применяется с двумя значениями, то есть как более короткий способ задать оба его полных свойства. Несмотря на [тщательно продуманные и здравые значения по умолчанию](https://developer.mozilla.org/en-US/docs/Web/CSS/flex#Syntax:~:text=The%20flex%20property%20may%20be%20specified%20using%20one%2C%20two%2C%20or%20three%20values) для использования `flex` с одним или двумя значениями, около 90% применений состоит из синтаксиса с тремя значениями, явно задавая все три его полных свойства.
 
 {{ figure_markup(
   image="flex-shorthand-vs-longhand.png",
-  caption="Usage comparison of the flex shorthands and their longhands.",
-  description="Bar chart showing `flex-direction` is 55% on desktop and 60% on mobile, `flex-wrap` is 55% and 58% respectively,`flex` is 52% and 56%, `flex-grow` is 44% and 52%,`flex-basis` is 40% and 44%,`flex-shrink` is 28% and 37%, `flex-flow` is 27% and 30%.",
+  caption="Сравнение использования сокращений `flex` и их полных свойств.",
+  description="Гистограмма, показывающая `flex-direction` на 55% десктопных и 60% мобильных страниц, `flex-wrap` на 55% и 58% соответственно,`flex` на 52% и 56%, `flex-grow` на 44% и 52%,`flex-basis` на 40% и 44%,`flex-shrink` на 28% и 37%, `flex-flow` на 27% и 30%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=930720666&format=interactive",
   sheets_gid="1513860089",
   sql_file="all_properties.sql"
@@ -1632,12 +1633,12 @@ Nearly all `flex`, `flex-*` properties are very highly used, appearing in 30-60%
 
 #### <span lang="en">grid</span> {grid}
 
-Did you know that `grid-template-columns`, `grid-template-rows`, and `grid-template-areas` are actually shorthands of `grid-template`? Did you know that there's a `grid` property and all of those are some of its longhands? No? Well, you're in good company: neither do most developers. The `grid` property was only used in 5,279 websites (0.08%) and `grid-template` on 8,215 websites (0.13%). In comparison, `grid-template-columns` is used in 1.7 million websites, over 200 times more!
+Вы знали, что `grid-template-columns`, `grid-template-rows` и `grid-template-areas` имеют сокращение `grid-template`? Вы знали, что есть свойство `grid`, и всё это некоторые из его полных свойств? Нет? Что ж, вы в хорошей компании: большинство разработчиков не знало. Свойство `grid` применялось всего на 5 279 сайтов (0,08%), а `grid-template` — на 8 215 сайтов (0,13%). Для сравнения, свойство `grid-template-columns` использовалось на 1,7 миллиона сайтов, почти в 200 раз больше!
 
 {{ figure_markup(
   image="usage-of-grid-properties.png",
-  caption="Usage comparison of the grid shorthands and their longhands.",
-  description="Bar chart showing `grid-template-columns` is 27% on desktop and 26% on mobile, `grid-template-rows` is 24% and 24% respectively, `grid-column` is 20% and 20%, `grid-row` is 20% and 19%, `grid-area` is 6% and 6%, `grid-template-areas` is 6% and 6%, `grid-gap` is 4% and 5%, `grid-column-gap` is 4% and 3%, `grid-row-gap` is 3% and 3%, `grid-column-end` is 3% and 2%, `grid-column-start` is 3% and 2%, `grid-row-start` is 3% and 2%, `grid-row-end` is 2% and 2%, `grid-auto-columns` is 2% and 2%, `grid-auto-rows` is 1% and 1%, `grid-auto-flow` is 1% and 1%, `grid-template` is 0% and 0%, `grid` is 0% and 0%, `grid-column-span` is 0% and 0%, `grid-columns` is 0% and 0%, and `grid-rows` is 0% and 0%.",
+  caption="Сравнение использования сокращений `grid` и их полных свойств.",
+  description="Гистограмма, показывающая `grid-template-columns` на 27% десктопных и 26% мобильных страниц, `grid-template-rows` на 24% и 24% соответственно, `grid-column` на 20% и 20%, `grid-row` на 20% и 19%, `grid-area` на 6% и 6%, `grid-template-areas` на 6% и 6%, `grid-gap` на 4% и 5%, `grid-column-gap` на 4% и 3%, `grid-row-gap` на 3% и 3%, `grid-column-end` на 3% и 2%, `grid-column-start` на 3% и 2%, `grid-row-start` на 3% и 2%, `grid-row-end` на 2% и 2%, `grid-auto-columns` на 2% и 2%, `grid-auto-rows` на 1% и 1%, `grid-auto-flow` на 1% и 1%, `grid-template` на 0% и 0%, `grid` на 0% и 0%, `grid-column-span` на 0% и 0%, `grid-columns` на 0% и 0%, `grid-rows` на 0% и 0%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=290183398&format=interactive",
   sheets_gid="1513860089",
   sql_file="all_properties.sql",
