@@ -1633,7 +1633,7 @@ background-clip: border-box;
 
 #### <span lang="en">grid</span> {grid}
 
-Вы знали, что `grid-template-columns`, `grid-template-rows` и `grid-template-areas` имеют сокращение `grid-template`? Вы знали, что есть свойство `grid`, и всё это некоторые из его полных свойств? Нет? Что ж, вы в хорошей компании: большинство разработчиков не знало. Свойство `grid` применялось всего на 5 279 сайтов (0,08%), а `grid-template` — на 8 215 сайтов (0,13%). Для сравнения, свойство `grid-template-columns` использовалось на 1,7 миллиона сайтов, почти в 200 раз больше!
+Вы знали, что `grid-template-columns`, `grid-template-rows` и `grid-template-areas` имеют сокращение `grid-template`? Вы знали, что есть свойство `grid`, и всё это некоторые из его полных свойств? Нет? Что ж, вы в хорошей компании: большинство разработчиков не знало. Свойство `grid` применялось всего на 5 279 сайтах (0,08%), а `grid-template` — на 8 215 сайтах (0,13%). Для сравнения, свойство `grid-template-columns` использовалось на 1,7 миллиона сайтов, почти в 200 раз больше!
 
 {{ figure_markup(
   image="usage-of-grid-properties.png",
@@ -1648,25 +1648,25 @@ background-clip: border-box;
 
 ### Ошибки в CSS {css-mistakes}
 
-As with any complex, evolving platform not everything is done correctly. So let's look at some of the mistakes developers are making out there.
+Как и в случае с любой сложной, развивающейся платформой, не всё сделано правильно. Итак, давайте посмотрим на некоторые ошибки, которые допускают разработчики.
 
 #### Синтаксические ошибки {syntax-errors}
 
-For most of the metrics in this chapter, we used <a hreflang="en" href="https://github.com/reworkcss/css">Rework</a>, a CSS parser. While this helps dramatically improve accuracy, it also means we could be less forgiving of syntax errors compared to a browser. Even if one declaration in the entire stylesheet has a syntax error, parsing would fail, and that stylesheet would be left out of the analysis. But how many stylesheets do contain such syntax errors? Quite substantially more on desktop than mobile it turns out! More specifically, nearly 10% of stylesheets found on desktop pages included at least one unrecoverable syntax error, whereas only 2% of mobile. Do note that these are essentially lower bounds for syntax errors, since not all syntax errors actually cause parsing to fail. For example, a missing semicolon would just result in the next declaration being parsed as part of the value (e.g. `{property: "color", value: "red background: yellow"}`), it would not cause the parser to fail.
+Для большинства метрик в этой главе мы использовали CSS-парсер <a hreflang="en" href="https://github.com/reworkcss/css">Rework</a>. Это помогает значительно повысить точность, но также означает, что мы менее толерантны к синтаксическим ошибкам по сравнению с браузером. Даже если одно объявление во всей таблице стилей содержит синтаксическую ошибку, парсинг завершится неудачно, а эта таблица стилей будет исключена из анализа. Но сколько таблиц стилей содержат такие синтаксические ошибки? На десктопных страница гораздо больше, чем на мобильных! В частности, почти 10% таблиц стилей, обнаруженных на десктопных страницах, содержали по крайней мере одну неустранимую синтаксическую ошибку, тогда как для мобильных — только 2% таблиц. Заметьте, что это, по сути, нижние границы для синтаксических ошибок, поскольку не все синтаксические ошибки приводят к ошибке парсинга. Например, пропущенная точка с запятой просто приведёт к тому, что следующее объявление будет распаршено как часть значения (например, `{property: "color", value: "red background: yellow"}`), это не приведёт к ошибке парсинга.
 
 #### Несуществующие свойства {nonexistent-properties}
 
-We also looked at most common nonexistent properties, by using a list of known properties. We excluded prefixed properties from this part of the analysis, and manually excluded unprefixed proprietary properties (e.g. Internet Explorer's `behavior`, which oddly still appears on 200K websites). Out of the remaining nonexistent properties:
+Мы также рассмотрели наиболее распространённые несуществующие свойства, используя список известных свойств. Мы исключили из этой части анализа свойства с префиксом и вручную убрали проприетарные свойства без префикса (например, `behavior` для Internet Explorer, которое, как ни странно, всё ещё появляется на 200 000 веб-сайтов). Из оставшихся несуществующих свойств:
 
-- 37% of them were a mangled form of a prefixed property (e.g. `webkit-transition` or `-transition`)
-- 43% were an unprefixed form of a property that only exists only prefixed (e.g. `font-smoothing`, which appeared on 384K websites), probably included for compatibility under the incorrect assumption that it is standard, or due to wishful thinking that it will become standard.
-- A typo that has found its way to a popular library. Through this analysis, we found that the property `white-wpace` was present in 234,027 websites. This is way too many websites for the same typo to have occurred organically, so we decided to look into it. And lo and behold, it [turns out](https://twitter.com/rick_viscomi/status/1326739379533000704) it was the Facebook widget! The fix is already in.
-- And another oddity: The property `font-rendering` appears on 2,575 pages. However, we cannot find evidence of such a property existing, with or without a prefix. There is the nonstandard <a hreflang="en" href="https://medium.com/better-programming/improving-font-rendering-with-css-3383fc358cbc">`-webkit-font-smoothing`</a> which is wildly popular, appearing in 3 million websites, or about 49% of pages, but `font-rendering` is not sufficiently close to be a misspelling. There is [`text-rendering`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-rendering) which is used in about 100K of websites, so it is conceivable that 2.5K developers all misremembered and coined a portmanteau of `font-smoothing` and `text-rendering`.
+- 37% были сломанной формой свойства с префиксом (например, `webkit-transition` или `-transition`).
+- 43% — свойство без префикса, которое существует только с префиксом (например, `font-smoothing`, которое появилось на 384 000 веб-сайтов), вероятно, включённое для совместимости из-за неправильного предположения, что оно есть в стандарте, или из-за принятия желаемого за действительное, что оно появится в стандарте.
+- Опечатка, которая попала в популярную библиотеку. В ходе этого анализа мы обнаружили, что свойство `white-wpace` присутствует на 234 027 веб-сайтах. Это слишком много, чтобы одна и та же опечатка произошла естественным путём, поэтому мы решили разобраться в ней. И о чудо, [оказывается](https://twitter.com/rick_viscomi/status/1326739379533000704), это был виджет Facebook! Фикс уже сделан.
+- И ещё одна странность: свойство `font-rendering` появляется на 2 575 страницах. Однако мы не можем найти свидетельств существования такого свойства, с префиксом или без него. Существует нестандартный <a hreflang="en" href="https://medium.com/better-programming/improving-font-rendering-with-css-3383fc358cbc">`-webkit-font-smoothing`</a>, который очень популярен и встречается на 3 миллионах веб-сайтов, или примерно на 49% страниц, но `font-rendering` не настолько близок к тому, чтобы быть орфографической ошибкой. Существует [`text-rendering`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-rendering), который используется примерно на 100 тысячах веб-сайтов, поэтому вполне возможно, что 2 500 разработчиков неправильно запомнили и cложили в одно `font-smoothing` и `text-rendering`.
 
 {{ figure_markup(
   image="most-popupular-unknown-properties.png",
-  caption="Most popular unknown properties.",
-  description="Bar chart showing `webkit-transition` is 15% on desktop and 14% on mobile, `font-smoothing` is 13% and 12% respectively, `user-drag` is 12% on mobile, `white-wpace` is 10% on mobile, `tap-highlight-color` is 10% and 10%, `webkit-box-shadow` is 4% and 4%, `ms-transform` is 2% and 2%, `-transition` is 1% and 1%, `font-rendering` is 0% and 0%, `webkit-border-radius` is 2% on desktop, and `moz-border-radius` is 2% on desktop.",
+  caption="Самые частые неизвестные свойства.",
+  description="Гистограмма, показывающая `webkit-transition` на 15% десктопных и 14% мобильных страниц, `font-smoothing` на 13% и 12% соответственно, `user-drag` на 12% мобильных страниц, `white-wpace` на 10% мобильных страниц, `tap-highlight-color` на 10% и 10%, `webkit-box-shadow` на 4% и 4%, `ms-transform` на 2% и 2%, `-transition` на 1% и 1%, `font-rendering` на 0% и 0%, `webkit-border-radius` на 2% десктопных страниц и `moz-border-radius` на 2% десктопных страниц.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1166982997&format=interactive",
   sheets_gid="84286607",
   sql_file="meta_unknown_properties.sql",
@@ -1676,25 +1676,25 @@ We also looked at most common nonexistent properties, by using a list of known p
 
 #### Полные свойства перед сокращениями {longhands-before-shorthands}
 
-Using longhands after shorthands is a nice way to use the defaults and override a few properties. It is especially useful with list-valued properties, where using a longhand helps us avoid repeating the same value multiple times. The opposite on the other hand—using longhands before shorthands—is always a mistake, since the shorthand will overwrite the longhand. For example, take a look at this:
+Использование полных свойств после сокращений — хороший способ использовать значения по умолчанию и переопределить несколько свойств. Это особенно полезно для свойств со списком значений, где использование полного свойства помогает нам избежать повторения одного и того же значения несколько раз. С другой стороны, противоположное — использование полного свойства перед сокращением — всегда ошибка, так как сокращённая запись перезапишет полную. Например, взгляните на это:
 
 ```css
-background-color: rebeccapurple; /* longhand */
-background: linear-gradient(white, transparent); /* shorthand */
+background-color: rebeccapurple; /* полное свойство */
+background: linear-gradient(white, transparent); /* сокращение */
 ```
 
-This will not produce a gradient from `white` to `rebeccapurple`, but from `white` to `transparent`. The `rebeccapurple` background color will be overwritten by the `background` shorthand that comes after it that resets all its longhands to their initial values.
+Такая запись создаст градиент не от `white` к `rebeccapurple`, а от `white` к `transparent`. Цвет фона `rebeccapurple` будет перезаписан сокращением `background`, которое следует после него и сбрасывает все его полные свойства до их начальных значений.
 
-There are two main reasons that developers make this kind of mistake: either a misunderstanding about how shorthands work and which longhand is reset by which shorthand, or simply leftover cruft from moving declarations around.
+Есть две основные причины, по которым разработчики совершают такую ошибку: либо недопонимание того, как работают сокращения и какое полное свойство от какого сокращения сбрасывается, либо просто оставшийся мусор после перемещения объявлений в коде.
 
-So how common is this mistake? Surely, it cannot be that common in the top 6 million websites, right? Wrong! It turns out, it is exceedingly common, occurring at least once in 54% of websites!
+Так насколько часто встречается эта ошибка? Это же не может быть распространённой ошибкой среди 6 миллионов лучших веб-сайтов, правильно? Неправильно! Оказывается, это чрезвычайно частая ошибка, которая встречается хотя бы один раз на 54% веб-сайтов!
 
-This kind of confusion seems to happen way more with the `background` shorthand than any other shorthand: over half (55%) of these mistakes involve putting `background-*` longhands before `background`. In this case, this may actually not be a mistake at all, but good progressive enhancement: Browsers that don't support a feature -- such as linear gradients -- will render the previously defined longhand values, in this case, a background color. Browsers that do understand the shorthand override the longhand value, either implicitly or explicitly.
+Подобного рода путаница, кажется, происходит с сокращением `background` чаще, чем с любым другим сокращением: более половины (55%) этих ошибок связаны с помещением полных свойств `background-*` перед `background`. В таком случае это может быть вовсе не ошибкой, а хорошим прогрессивным улучшением: браузеры, которые не поддерживают фичу (вроде линейных градиентов) отрендерят определённые ранее полные значения, в данном случае цвет фона. Браузеры, которые понимают сокращённое свойство, явно или неявно переопределяют полное свойство.
 
 {{ figure_markup(
   image="most-popupular-shorthands-after-longhands.png",
-  caption="Most popular shorthands after longhands.",
-  description="Bar chart showing `background` is 56.46% of desktop and 55.17% of mobile, `margin` is 12.51% and 12.18% respectively, `font` is 10.15% and 10.31%, `padding` is 8.36% and 7.87%, `border-radius` is 1.08% and 3.14%, `animation` is 3.18% and 3.05%, `list-style` is 2.09% and 2.00%, and `transition` is 1.09% and 0.98%.",
+  caption="Самые частые сокращения после полных свойств.",
+  description="Гистограмма, показывающая `background` на 56,46% десктопных и 55,17% мобильных страниц, `margin` на 12,51% и 12,18% соответственно, `font` на 10,15% и 10,31%, `padding` на 8,36% и 7,87%, `border-radius` на 1,08% и 3,14%, `animation` на 3,18% и 3,05%, `list-style` на 2,09% и 2,00% и `transition` на 1,09% и 0,98%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1389278729&format=interactive",
   sheets_gid="1143644053",
   sql_file="meta_longhand_first_properties.sql"
