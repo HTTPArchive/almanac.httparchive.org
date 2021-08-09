@@ -48,7 +48,7 @@ WITH
   FROM
     `chrome-ux-report.materialized.device_summary`
   WHERE
-    device IN ('desktop','phone') AND
+    device IN ('desktop', 'phone') AND
     date IN ('2019-08-01', '2020-08-01')
 )
 
