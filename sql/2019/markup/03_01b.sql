@@ -12,21 +12,21 @@ try {
 }
 ''';
 
-CREATE TEMPORARY FUNCTION isDeprecated(element STRING) AS (
-  element IN ("applet", "acronym", "bgsound", "dir", "frame", "frameset", "noframes", "isindex", "keygen", "listing", "menuitem", "nextid", "noembed", "plaintext", "rb", "rtc", "strike", "xmp", "basefont", "big", "blink", "center", "font", "marquee", "multicol", "nobr", "spacer", "tt")
+CREATE TEMPORARY FUNCTION isDeprecated(htmlelement STRING) AS (
+  htmlelement IN ("applet", "acronym", "bgsound", "dir", "frame", "frameset", "noframes", "isindex", "keygen", "listing", "menuitem", "nextid", "noembed", "plaintext", "rb", "rtc", "strike", "xmp", "basefont", "big", "blink", "center", "font", "marquee", "multicol", "nobr", "spacer", "tt")
 );
 
 SELECT
   _TABLE_SUFFIX AS client,
-  element AS deprecated,
+  htmlelement AS deprecated,
   COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS total,
   ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX), 2) AS pct
 FROM
   `httparchive.pages.2019_07_01_*`,
-  UNNEST(getElements(payload)) AS element
+  UNNEST(getElements(payload)) AS htmlelement
 WHERE
-  isDeprecated(element)
+  isDeprecated(htmlelement)
 GROUP BY
   client,
   deprecated

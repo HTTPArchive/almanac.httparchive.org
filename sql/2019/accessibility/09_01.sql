@@ -14,7 +14,7 @@ try {
 
 SELECT
   _TABLE_SUFFIX AS client,
-  element,
+  htmlelement,
   COUNT(DISTINCT url) AS pages,
   total,
   ROUND(COUNT(DISTINCT url) * 100 / total, 2) AS pct
@@ -23,13 +23,13 @@ FROM
 JOIN
   (SELECT _TABLE_SUFFIX, COUNT(0) AS total FROM `httparchive.pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)
 USING (_TABLE_SUFFIX),
-  UNNEST(getElements(payload)) AS element
+  UNNEST(getElements(payload)) AS htmlelement
 WHERE
-  element IN ('h1', 'h2', 'h3', 'h4', 'h5', 'h6')
+  htmlelement IN ('h1', 'h2', 'h3', 'h4', 'h5', 'h6')
 GROUP BY
   client,
   total,
-  element
+  htmlelement
 ORDER BY
   pages / total DESC,
   client
