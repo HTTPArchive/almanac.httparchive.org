@@ -21,7 +21,7 @@ try {
                 props.stretch = d.value;
             } else if (d.property.toLowerCase() == 'font-style') {
                 props.style = d.value;
-            }  
+            }
         });
          {
             values.push(props);

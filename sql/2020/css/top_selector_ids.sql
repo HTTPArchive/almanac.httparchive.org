@@ -6,7 +6,10 @@ RETURNS STRUCT<
   attribute ARRAY<STRING>,
   pseudo_class ARRAY<STRING>,
   pseudo_element ARRAY<STRING>
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
+AS '''
 try {
   function compute(ast) {
     let ret = {
@@ -52,8 +55,7 @@ try {
 } catch (e) {
   return null;
 }
-'''
-OPTIONS (library="gs://httparchive/lib/css-utils.js");
+''';
 
 SELECT
   client,
@@ -74,7 +76,8 @@ FROM (
       FROM
         `httparchive.almanac.parsed_css`
       LEFT JOIN
-        UNNEST(getSelectorParts(css).id) AS id
+        -- SQL Linter can't handle STRUCTs fields so noqa next line
+        UNNEST(getSelectorParts(css).id) AS id -- noqa: PRS
       WHERE
         date = '2020-08-01' AND
         # Limit the size of the CSS to avoid OOM crashes.

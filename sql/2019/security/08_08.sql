@@ -33,7 +33,7 @@ SELECT
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
-    COUNT(0) total,
+    COUNT(0) AS total,
     COUNTIF(isModern(FORMAT("%'x", CAST(JSON_EXTRACT(payload, '$._tls_cipher_suite') AS INT64)))) AS modern_cipher_count
   FROM
      `httparchive.requests.2019_07_01_*`

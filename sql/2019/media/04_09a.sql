@@ -1,22 +1,22 @@
 #standardSQL
 # 04_09a: Client Hints
 SELECT client,
-  countif(chHTML) chHTMLCount,
-  countif(chHeader) chHeaderCount,
-  countif(chHTML AND chHeader) chBothCount,
-  countif(chHTML OR chHeader) chEitherCount,
-  count(0) as total,
-  round(100*countif(chHTML) / count(0), 2) chHTMLPct,
-  round(100*countif(chHeader) / count(0), 2) chHeaderPct,
-  round(100*countif(chHTML AND chHeader) / count(0), 2) chBothPct,
-  round(100*countif(chHTML OR chHeader) / count(0), 2) chEitherPct
+  COUNTIF(chHTML) AS chHTMLCount,
+  COUNTIF(chHeader) AS chHeaderCount,
+  COUNTIF(chHTML AND chHeader) AS chBothCount,
+  COUNTIF(chHTML OR chHeader) AS chEitherCount,
+  COUNT(0) AS total,
+  ROUND(100 * COUNTIF( chHTML) / COUNT(0), 2) AS chHTMLPct,
+  ROUND(100 * COUNTIF( chHeader) / COUNT(0), 2) AS chHeaderPct,
+  ROUND(100 * COUNTIF( chHTML AND chHeader) / COUNT(0), 2) AS chBothPct,
+  ROUND(100 * COUNTIF( chHTML OR chHeader) / COUNT(0), 2) AS chEitherPct
 FROM
 (
   SELECT
     client,
     page,
-    regexp_contains(body, r'(?is)<meta[^><]*Accept-CH\b') chHTML,
-    regexp_contains(respOtherHeaders, r'(?is)Accept-CH = ') chHeader
+    REGEXP_CONTAINS(body, r'(?is)<meta[^><]*Accept-CH\b') AS chHTML,
+    REGEXP_CONTAINS(respOtherHeaders, r'(?is)Accept-CH = ') AS chHeader
   FROM
     `httparchive.almanac.summary_response_bodies`
   WHERE

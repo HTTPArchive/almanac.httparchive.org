@@ -36,8 +36,8 @@ SELECT
   APPROX_QUANTILES(fcp, 1000)[OFFSET(500)] AS median_fcp,
   APPROX_QUANTILES(lcp, 1000)[OFFSET(500)] AS median_lcp
 FROM (
-  SELECT
-    DISTINCT client,
+  SELECT DISTINCT
+    client,
     page,
     font_display
   FROM
@@ -45,7 +45,7 @@ FROM (
   LEFT JOIN
     UNNEST(getFontDisplay(css)) AS font_display
   WHERE
-    date='2020-08-01')
+    date = '2020-08-01')
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -53,7 +53,7 @@ JOIN (
     CAST(JSON_EXTRACT_SCALAR(payload,
         "$['_chromeUserTiming.firstContentfulPaint']") AS INT64) AS fcp,
     CAST(JSON_EXTRACT_SCALAR(payload,
-        "$['_chromeUserTiming.LargestContentfulPaint']") AS INT64) AS lcp,
+        "$['_chromeUserTiming.LargestContentfulPaint']") AS INT64) AS lcp
   FROM
     `httparchive.pages.2020_08_01_*`
   GROUP BY
@@ -65,6 +65,6 @@ USING
     page)
 GROUP BY
   client,
-  font_display 
+  font_display
 ORDER BY
   pages DESC

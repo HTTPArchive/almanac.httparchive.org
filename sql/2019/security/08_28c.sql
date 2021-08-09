@@ -17,9 +17,9 @@ try {
 SELECT
   client,
   SPLIT(TRIM(directive), ' ')[SAFE_OFFSET(0)] AS feature,
-  COUNT(0) as freq,
+  COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-  ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) as pct
+  ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct
 FROM
   `httparchive.almanac.requests`,
   UNNEST(SPLIT(extractHeader(payload, 'Feature-Policy'), ';')) AS directive

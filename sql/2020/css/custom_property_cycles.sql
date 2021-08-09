@@ -1,5 +1,9 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION getCustomPropertyCycles(payload STRING) RETURNS INT64 LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getCustomPropertyCycles(payload STRING)
+RETURNS INT64
+LANGUAGE js
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
+AS '''
 try {
   function compute(vars) {
     function walkElements(node, callback, parent) {
@@ -80,8 +84,7 @@ try {
 } catch (e) {
   return null;
 }
-'''
-OPTIONS (library="gs://httparchive/lib/css-utils.js");
+''';
 
 SELECT
   client,

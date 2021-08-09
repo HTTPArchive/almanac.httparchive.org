@@ -20,9 +20,9 @@ SELECT
   SAFE_DIVIDE(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername, ' ')) AND REGEXP_CONTAINS(respOtherHeaders, '(?i)Strict-Transport-Security ')), COUNTIF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername, ' ')))) AS pct_header_and_hsts,
   SAFE_DIVIDE(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername, ' ')) AND REGEXP_CONTAINS(respOtherHeaders, '(?i)X-Content-Type-Options ')), COUNTIF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername, ' ')))) AS pct_header_and_xcto,
   SAFE_DIVIDE(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername, ' ')) AND REGEXP_CONTAINS(respOtherHeaders, '(?i)X-Frame-Options ')), COUNTIF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername, ' ')))) AS pct_header_and_xfo,
-  SAFE_DIVIDE(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername, ' ')) AND REGEXP_CONTAINS(respOtherHeaders, '(?i)X-XSS-Protection ')), COUNTIF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername, ' ')))) AS pct_header_and_xss,
+  SAFE_DIVIDE(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername, ' ')) AND REGEXP_CONTAINS(respOtherHeaders, '(?i)X-XSS-Protection ')), COUNTIF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername, ' ')))) AS pct_header_and_xss
 FROM
-  `httparchive.summary_requests.2020_08_01_*` AS r,
+  `httparchive.summary_requests.2020_08_01_*`,
 UNNEST(['Content-Security-Policy', 'Content-Security-Policy-Report-Only', 'Cross-Origin-Embedder-Policy', 'Cross-Origin-Opener-Policy', 'Cross-Origin-Resource-Policy', 'Expect-CT', 'Feature-Policy', 'Permissions-Policy', 'Referrer-Policy', 'Report-To', 'Strict-Transport-Security', 'X-Content-Type-Options', 'X-Frame-Options', 'X-XSS-Protection']) AS headername
 WHERE
   firstHtml

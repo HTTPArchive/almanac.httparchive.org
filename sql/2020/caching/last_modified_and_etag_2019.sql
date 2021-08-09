@@ -32,4 +32,4 @@ FROM (
 )
 GROUP BY
   client
-  
+

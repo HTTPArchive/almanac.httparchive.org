@@ -10,7 +10,7 @@ FROM (
   SELECT
     client,
     page,
-    JSON_EXTRACT_SCALAR(payload, '$._protocol') AS protocol,
+    JSON_EXTRACT_SCALAR(payload, '$._protocol') AS protocol
   FROM
     `httparchive.almanac.requests`
   WHERE
@@ -20,7 +20,7 @@ JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
     url AS page,
-    _connections,
+    _connections
   FROM
     `httparchive.summary_pages.2020_08_01_*`)
 USING

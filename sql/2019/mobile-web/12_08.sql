@@ -6,8 +6,8 @@ SELECT
     COUNT(0) AS total_pages,
     COUNTIF(password_score IS NOT NULL) AS applicable_pages,
 
-    COUNTIF(CAST(password_score as NUMERIC) = 1) AS total_allowing,
-    ROUND(COUNTIF(CAST(password_score as NUMERIC) = 1) * 100 / COUNTIF(password_score IS NOT NULL), 2) as perc_allowing
+    COUNTIF(CAST(password_score AS NUMERIC) = 1) AS total_allowing,
+    ROUND(COUNTIF(CAST(password_score AS NUMERIC) = 1) * 100 / COUNTIF(password_score IS NOT NULL), 2) AS perc_allowing
 FROM (
     SELECT
         url,

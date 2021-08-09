@@ -2,7 +2,7 @@
 # 18_02b: Distribution of requests by resource type and client (2019)
 SELECT
   percentile,
-  _TABLE_SUFFIX as client,
+  _TABLE_SUFFIX AS client,
   APPROX_QUANTILES(reqTotal, 1000)[OFFSET(percentile * 10)] AS total_req,
   APPROX_QUANTILES(reqHtml, 1000)[OFFSET(percentile * 10)] AS html_req,
   APPROX_QUANTILES(reqJS, 1000)[OFFSET(percentile * 10)] AS js_req,

@@ -13,7 +13,7 @@ RETURNS STRUCT<
 > LANGUAGE js AS '''
 var result = {};
 try {
-    var robots_txt = JSON.parse(robots_txt_string); 
+    var robots_txt = JSON.parse(robots_txt_string);
 
     if (Array.isArray(robots_txt) || typeof robots_txt != 'object') return result;
 
@@ -34,10 +34,10 @@ SELECT
   AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct
 
   FROM
-    ( 
-      SELECT 
+    (
+      SELECT
         _TABLE_SUFFIX AS client,
-        get_robots_txt_info(JSON_EXTRACT_SCALAR(payload, '$._robots_txt')) AS robots_txt_info      
+        get_robots_txt_info(JSON_EXTRACT_SCALAR(payload, '$._robots_txt')) AS robots_txt_info
       FROM
         `httparchive.pages.2020_08_01_*`
     )
@@ -45,4 +45,4 @@ GROUP BY
   client,
   status_code
 ORDER BY total DESC
-  
+

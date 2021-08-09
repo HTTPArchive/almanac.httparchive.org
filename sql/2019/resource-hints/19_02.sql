@@ -1,6 +1,7 @@
 #standardSQL
 # 19_02: Distribution of number of times each hint is used per site.
-CREATE TEMPORARY FUNCTION getResourceHints(payload STRING)
+CREATE TEMPORARY FUNCTION getResourceHints(payload STRING) -- noqa: PRS
+-- SQL Linter expects STRUCT field names to beging with a-z or A-Z so needs noqa ignore command on previous line
 RETURNS STRUCT<preload INT64, prefetch INT64, preconnect INT64, prerender INT64, `dns-prefetch` INT64>
 LANGUAGE js AS '''
 var hints = ['preload', 'prefetch', 'preconnect', 'prerender', 'dns-prefetch'];
@@ -23,16 +24,16 @@ try {
 
 SELECT
   client,
-  APPROX_QUANTILES(hints.preload, 1000)[OFFSET(500)] median_preload,
-  APPROX_QUANTILES(hints.prefetch, 1000)[OFFSET(500)] median_prefetch,
-  APPROX_QUANTILES(hints.preconnect, 1000)[OFFSET(500)] median_preconnect,
-  APPROX_QUANTILES(hints.prerender, 1000)[OFFSET(500)] median_prerender,
-  APPROX_QUANTILES(hints.`dns-prefetch`, 1000)[OFFSET(500)] median_dns_prefetch,
-  APPROX_QUANTILES(hints.preload, 1000)[OFFSET(900)] p90_preload,
-  APPROX_QUANTILES(hints.prefetch, 1000)[OFFSET(900)] p90_prefetch,
-  APPROX_QUANTILES(hints.preconnect, 1000)[OFFSET(900)] p90_preconnect,
-  APPROX_QUANTILES(hints.prerender, 1000)[OFFSET(900)] p90_prerender,
-  APPROX_QUANTILES(hints.`dns-prefetch`, 1000)[OFFSET(900)] p90_dns_prefetch
+  APPROX_QUANTILES(hints.preload, 1000)[OFFSET(500)] AS median_preload,
+  APPROX_QUANTILES(hints.prefetch, 1000)[OFFSET(500)] AS median_prefetch,
+  APPROX_QUANTILES(hints.preconnect, 1000)[OFFSET(500)] AS median_preconnect,
+  APPROX_QUANTILES(hints.prerender, 1000)[OFFSET(500)] AS median_prerender,
+  APPROX_QUANTILES(hints.`dns-prefetch`, 1000)[OFFSET(500)] AS median_dns_prefetch,
+  APPROX_QUANTILES(hints.preload, 1000)[OFFSET(900)] AS p90_preload,
+  APPROX_QUANTILES(hints.prefetch, 1000)[OFFSET(900)] AS p90_prefetch,
+  APPROX_QUANTILES(hints.preconnect, 1000)[OFFSET(900)] AS p90_preconnect,
+  APPROX_QUANTILES(hints.prerender, 1000)[OFFSET(900)] AS p90_prerender,
+  APPROX_QUANTILES(hints.`dns-prefetch`, 1000)[OFFSET(900)] AS p90_dns_prefetch
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
