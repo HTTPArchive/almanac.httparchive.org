@@ -3,8 +3,8 @@
 SELECT
   score,
   COUNT(0) AS pages,
-  SUM(COUNT(0)) OVER () AS total,
-  COUNT(0) / SUM(COUNT(0)) OVER () AS pct
+  SUM(COUNT(0)) OVER (PARTITION BY 0) AS total,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY 0) AS pct
 FROM (
   SELECT
     JSON_EXTRACT_SCALAR(report, "$.audits['unminified-javascript'].score") AS score

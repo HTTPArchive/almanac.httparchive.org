@@ -2,7 +2,7 @@
 # 17_20: Percentage of responses with s-maxage directive
 SELECT
   _TABLE_SUFFIX AS client,
-  ifnull(nullif(REGEXP_EXTRACT(_cdn_provider, r'^([^,]*).*'), ''), 'ORIGIN') as cdn,
+  IFNULL(NULLIF(REGEXP_EXTRACT(_cdn_provider, r'^([^,]*).*'), ''), 'ORIGIN') AS cdn,
   COUNTIF(LOWER(resp_cache_control) LIKE "%s-maxage%") AS freq,
   COUNTIF(firstHTML AND LOWER(resp_cache_control) LIKE "%s-maxage%") AS firstHtmlFreq,
   COUNTIF(NOT firstHtml AND LOWER(resp_cache_control) LIKE "%s-maxage%") AS resourceFreq,

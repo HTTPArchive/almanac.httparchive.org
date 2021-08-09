@@ -3,7 +3,7 @@
 # Based on 07_24: Percentiles of lighthouse performance score
 # This metric comes from Lighthouse only and is only available in mobile in HTTP Archive dataset
 SELECT
-  '2019_07_01' as date,
+  '2019_07_01' AS date,
   percentile,
   APPROX_QUANTILES(score, 1000)[OFFSET(percentile * 10)] AS score
 FROM (
@@ -17,7 +17,7 @@ GROUP BY
   percentile
 UNION ALL
 SELECT
-  '2020_08_01' as date,
+  '2020_08_01' AS date,
   percentile,
   APPROX_QUANTILES(score, 1000)[OFFSET(percentile * 10)] AS score
 FROM (

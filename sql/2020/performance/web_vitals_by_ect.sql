@@ -6,7 +6,7 @@ CREATE TEMP FUNCTION IS_GOOD (good FLOAT64, needs_improvement FLOAT64, poor FLOA
 );
 
 CREATE TEMP FUNCTION IS_NI (good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
-  SAFE_DIVIDE(good, (good + needs_improvement + poor)) < 0.75 AND 
+  SAFE_DIVIDE(good, (good + needs_improvement + poor)) < 0.75 AND
   SAFE_DIVIDE(poor, (good + needs_improvement + poor)) < 0.25
 );
 
@@ -19,9 +19,9 @@ CREATE TEMP FUNCTION IS_NON_ZERO (good FLOAT64, needs_improvement FLOAT64, poor 
 );
 
 WITH
-  base AS (
+base AS (
   SELECT
-    origin,
+    origin,
     effective_connection_type.name AS network,
     layout_instability,
     largest_contentful_paint,
@@ -30,8 +30,9 @@ WITH
     experimental.time_to_first_byte AS time_to_first_byte
   FROM
     `chrome-ux-report.all.202008`
-  ),
-  cls AS (
+),
+
+cls AS (
   SELECT
     origin,
     network,
@@ -46,8 +47,9 @@ WITH
   GROUP BY
     origin,
     network
-  ),
-  lcp AS (
+),
+
+lcp AS (
   SELECT
     origin,
     network,
@@ -62,8 +64,9 @@ WITH
   GROUP BY
     origin,
     network
-  ),
-  fid AS (
+),
+
+fid AS (
   SELECT
     origin,
     network,
@@ -78,40 +81,43 @@ WITH
   GROUP BY
     origin,
     network
-  ),
-  fcp AS (
+),
+
+fcp AS (
   SELECT
     origin,
     network,
-    SUM(IF(bin.start < 1500, bin.density, 0)) AS fast,
-    SUM(IF(bin.start >= 1500 AND bin.start < 2500, bin.density, 0)) AS avg,
-    SUM(IF(bin.start >= 2500, bin.density, 0)) AS slow,
+    SUM(IF(bin.start < 1500, bin.density, 0)) AS fast,
+    SUM(IF(bin.start >= 1500 AND bin.start < 2500, bin.density, 0)) AS avg,
+    SUM(IF(bin.start >= 2500, bin.density, 0)) AS slow,
     `chrome-ux-report`.experimental.PERCENTILE(ARRAY_AGG(bin), 75) AS p75
   FROM
-    base
+    base
   LEFT JOIN
-    UNNEST(first_contentful_paint.histogram.bin) AS bin
+    UNNEST(first_contentful_paint.histogram.bin) AS bin
   GROUP BY
     origin,
     network
-  ),
-  ttfb AS (
+),
+
+ttfb AS (
   SELECT
     origin,
     network,
-    SUM(IF(bin.start < 500, bin.density, 0)) AS fast,
-    SUM(IF(bin.start >= 500 AND bin.start < 1500, bin.density, 0)) AS avg,
-    SUM(IF(bin.start >= 1500, bin.density, 0)) AS slow,
+    SUM(IF(bin.start < 500, bin.density, 0)) AS fast,
+    SUM(IF(bin.start >= 500 AND bin.start < 1500, bin.density, 0)) AS avg,
+    SUM(IF(bin.start >= 1500, bin.density, 0)) AS slow,
     `chrome-ux-report`.experimental.PERCENTILE(ARRAY_AGG(bin), 75) AS p75
   FROM
       base
   LEFT JOIN
-    UNNEST(time_to_first_byte.histogram.bin) AS bin
+    UNNEST(time_to_first_byte.histogram.bin) AS bin
   GROUP BY
     origin,
     network
-  ),
-  granular_metrics AS (
+),
+
+granular_metrics AS (
   SELECT
     origin,
     network,
@@ -138,7 +144,7 @@ WITH
     ttfb.fast AS fast_ttfb,
     ttfb.avg AS avg_ttfb,
     ttfb.slow AS slow_ttfb,
-    ttfb.p75 AS p75_ttfb,
+    ttfb.p75 AS p75_ttfb
   FROM
     cls
   LEFT JOIN
@@ -156,13 +162,14 @@ WITH
   LEFT JOIN
     ttfb
   USING
-    (origin, network))
+    (origin, network)
+)
 
 SELECT
   network,
-  
+
   COUNT(DISTINCT origin) AS total_origins,
-  
+
   SAFE_DIVIDE(
       COUNT(DISTINCT IF(
           IS_GOOD(fast_fid, avg_fid, slow_fid) AND
@@ -172,87 +179,87 @@ SELECT
           IS_NON_ZERO(fast_fid, avg_fid, slow_fid) AND
           IS_NON_ZERO(fast_lcp, avg_lcp, slow_lcp) AND
           IS_NON_ZERO(small_cls, medium_cls, large_cls), origin, NULL))) AS pct_cwv_good,
-  
+
   SAFE_DIVIDE(
       COUNT(DISTINCT IF(
-          IS_GOOD(fast_lcp, avg_lcp, slow_lcp), origin, NULL)), 
+          IS_GOOD(fast_lcp, avg_lcp, slow_lcp), origin, NULL)),
       COUNT(DISTINCT IF(
           IS_NON_ZERO(fast_lcp, avg_lcp, slow_lcp), origin, NULL))) AS pct_lcp_good,
   SAFE_DIVIDE(
       COUNT(DISTINCT IF(
-          IS_NI(fast_lcp, avg_lcp, slow_lcp), origin, NULL)), 
+          IS_NI(fast_lcp, avg_lcp, slow_lcp), origin, NULL)),
       COUNT(DISTINCT IF(
           IS_NON_ZERO(fast_lcp, avg_lcp, slow_lcp), origin, NULL))) AS pct_lcp_ni,
   SAFE_DIVIDE(
       COUNT(DISTINCT IF(
-          IS_POOR(fast_lcp, avg_lcp, slow_lcp), origin, NULL)), 
+          IS_POOR(fast_lcp, avg_lcp, slow_lcp), origin, NULL)),
       COUNT(DISTINCT IF(
           IS_NON_ZERO(fast_lcp, avg_lcp, slow_lcp), origin, NULL))) AS pct_lcp_poor,
-  
+
   SAFE_DIVIDE(
       COUNT(DISTINCT IF(
-          IS_GOOD(fast_fid, avg_fid, slow_fid), origin, NULL)), 
+          IS_GOOD(fast_fid, avg_fid, slow_fid), origin, NULL)),
       COUNT(DISTINCT IF(
           IS_NON_ZERO(fast_fid, avg_fid, slow_fid), origin, NULL))) AS pct_fid_good,
   SAFE_DIVIDE(
       COUNT(DISTINCT IF(
-          IS_NI(fast_fid, avg_fid, slow_fid), origin, NULL)), 
+          IS_NI(fast_fid, avg_fid, slow_fid), origin, NULL)),
       COUNT(DISTINCT IF(
           IS_NON_ZERO(fast_fid, avg_fid, slow_fid), origin, NULL))) AS pct_fid_ni,
   SAFE_DIVIDE(
       COUNT(DISTINCT IF(
-          IS_POOR(fast_fid, avg_fid, slow_fid), origin, NULL)), 
+          IS_POOR(fast_fid, avg_fid, slow_fid), origin, NULL)),
       COUNT(DISTINCT IF(
           IS_NON_ZERO(fast_fid, avg_fid, slow_fid), origin, NULL))) AS pct_fid_poor,
-  
+
   SAFE_DIVIDE(
       COUNT(DISTINCT IF(
-          IS_GOOD(small_cls, medium_cls, large_cls), origin, NULL)), 
+          IS_GOOD(small_cls, medium_cls, large_cls), origin, NULL)),
       COUNT(DISTINCT IF(
           IS_NON_ZERO(small_cls, medium_cls, large_cls), origin, NULL))) AS pct_cls_good,
   SAFE_DIVIDE(
       COUNT(DISTINCT IF(
-          IS_NI(small_cls, medium_cls, large_cls), origin, NULL)), 
+          IS_NI(small_cls, medium_cls, large_cls), origin, NULL)),
       COUNT(DISTINCT IF(
           IS_NON_ZERO(small_cls, medium_cls, large_cls), origin, NULL))) AS pct_cls_ni,
   SAFE_DIVIDE(
       COUNT(DISTINCT IF(
-          IS_POOR(small_cls, medium_cls, large_cls), origin, NULL)), 
+          IS_POOR(small_cls, medium_cls, large_cls), origin, NULL)),
       COUNT(DISTINCT IF(
           IS_NON_ZERO(small_cls, medium_cls, large_cls), origin, NULL))) AS pct_cls_poor,
 
   SAFE_DIVIDE(
       COUNT(DISTINCT IF(
-          IS_GOOD(fast_fcp, avg_fcp, slow_fcp), origin, NULL)), 
+          IS_GOOD(fast_fcp, avg_fcp, slow_fcp), origin, NULL)),
       COUNT(DISTINCT IF(
           IS_NON_ZERO(fast_fcp, avg_fcp, slow_fcp), origin, NULL))) AS pct_fcp_good,
   SAFE_DIVIDE(
       COUNT(DISTINCT IF(
-          IS_NI(fast_fcp, avg_fcp, slow_fcp), origin, NULL)), 
+          IS_NI(fast_fcp, avg_fcp, slow_fcp), origin, NULL)),
       COUNT(DISTINCT IF(
           IS_NON_ZERO(fast_fcp, avg_fcp, slow_fcp), origin, NULL))) AS pct_fcp_ni,
   SAFE_DIVIDE(
       COUNT(DISTINCT IF(
-          IS_POOR(fast_fcp, avg_fcp, slow_fcp), origin, NULL)), 
+          IS_POOR(fast_fcp, avg_fcp, slow_fcp), origin, NULL)),
       COUNT(DISTINCT IF(
           IS_NON_ZERO(fast_fcp, avg_fcp, slow_fcp), origin, NULL))) AS pct_fcp_poor,
 
   SAFE_DIVIDE(
       COUNT(DISTINCT IF(
-          IS_GOOD(fast_ttfb, avg_ttfb, slow_ttfb), origin, NULL)), 
+          IS_GOOD(fast_ttfb, avg_ttfb, slow_ttfb), origin, NULL)),
       COUNT(DISTINCT IF(
           IS_NON_ZERO(fast_ttfb, avg_ttfb, slow_ttfb), origin, NULL))) AS pct_ttfb_good,
   SAFE_DIVIDE(
       COUNT(DISTINCT IF(
-          IS_NI(fast_ttfb, avg_ttfb, slow_ttfb), origin, NULL)), 
+          IS_NI(fast_ttfb, avg_ttfb, slow_ttfb), origin, NULL)),
       COUNT(DISTINCT IF(
           IS_NON_ZERO(fast_ttfb, avg_ttfb, slow_ttfb), origin, NULL))) AS pct_ttfb_ni,
   SAFE_DIVIDE(
       COUNT(DISTINCT IF(
-          IS_POOR(fast_ttfb, avg_ttfb, slow_ttfb), origin, NULL)), 
+          IS_POOR(fast_ttfb, avg_ttfb, slow_ttfb), origin, NULL)),
       COUNT(DISTINCT IF(
-          IS_NON_ZERO(fast_ttfb, avg_ttfb, slow_ttfb), origin, NULL))) AS pct_ttfb_poor,
-  
+          IS_NON_ZERO(fast_ttfb, avg_ttfb, slow_ttfb), origin, NULL))) AS pct_ttfb_poor
+
 FROM
   granular_metrics
 GROUP BY

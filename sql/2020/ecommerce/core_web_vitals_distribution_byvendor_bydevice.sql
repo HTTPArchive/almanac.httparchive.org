@@ -18,7 +18,7 @@ SELECT
 
   SUM(small_cls) / (SUM(small_cls) + SUM(medium_cls) + SUM(large_cls)) AS good_cls,
   SUM(medium_cls) / (SUM(small_cls) + SUM(medium_cls) + SUM(large_cls)) AS ni_cls,
-  SUM(large_cls) / (SUM(small_cls) + SUM(medium_cls) + SUM(large_cls)) AS poor_cls,
+  SUM(large_cls) / (SUM(small_cls) + SUM(medium_cls) + SUM(large_cls)) AS poor_cls
 FROM
   `chrome-ux-report.materialized.device_summary`
 JOIN (
@@ -29,8 +29,8 @@ JOIN (
   FROM
     `httparchive.technologies.2020_08_01_*`
   WHERE
-  category = 'Ecommerce' AND 
-  (app != 'Cart Functionality' AND 
+  category = 'Ecommerce' AND
+  (app != 'Cart Functionality' AND
    app != 'Google Analytics Enhanced eCommerce'))
 ON
   CONCAT(origin, '/') = url AND

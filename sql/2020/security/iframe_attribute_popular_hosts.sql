@@ -1,8 +1,11 @@
 #standardSQL
 # most common hostnames of iframes that have the allow or sandbox attribute
-CREATE TEMP FUNCTION hasPolicy(attr STRING, policy_type STRING)
-  RETURNS BOOL DETERMINISTIC
-  LANGUAGE js AS '''
+CREATE TEMP FUNCTION hasPolicy(attr STRING, policy_type STRING) -- noqa: PRS
+-- SQL Linter cannot handle DETERMINISTIC keyword so needs noqa ignore command on previous line
+RETURNS BOOL
+DETERMINISTIC
+LANGUAGE js
+AS '''
   const $ = JSON.parse(attr);
   return $[policy_type] !== null;
 ''';

@@ -1,6 +1,9 @@
 #standardSQL
 CREATE TEMPORARY FUNCTION getColorArgComma(css STRING)
-RETURNS STRUCT<commas INT64, nocommas INT64> LANGUAGE js AS '''
+RETURNS STRUCT<commas INT64, nocommas INT64>
+LANGUAGE js
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
+AS '''
 try {
   function compute(ast) {
     let usage = {
@@ -50,7 +53,7 @@ try {
       for (let match of haystack.matchAll(needle)) {
         ret++;
       }
-      
+
       return ret;
     }
 
@@ -147,8 +150,7 @@ try {
 } catch (e) {
   return null;
 }
-'''
-OPTIONS (library="gs://httparchive/lib/css-utils.js");
+''';
 
 SELECT
   client,

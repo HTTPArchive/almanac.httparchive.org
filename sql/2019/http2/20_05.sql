@@ -6,7 +6,7 @@ LANGUAGE js AS """
   try {
     var $ = JSON.parse(payload);
     var headers = $.response.headers;
-    var st = headers.find(function(e) { 
+    var st = headers.find(function(e) {
       return e['name'].toLowerCase() === 'upgrade'
     });
     return st['value'];
@@ -15,11 +15,11 @@ LANGUAGE js AS """
   }
 """;
 
-SELECT 
+SELECT
   client,
-  firstHtml,  
+  firstHtml,
   COUNT(0) AS num_requests
-FROM 
+FROM
   `httparchive.almanac.requests`
 WHERE
   date = '2019-07-01' AND

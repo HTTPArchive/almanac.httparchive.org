@@ -16,9 +16,9 @@ try {
 
 SELECT
   client,
-  COUNTIF('track' in UNNEST(media_elements)) AS freq,
+  COUNTIF('track' IN UNNEST(media_elements)) AS freq,
   COUNT(0) AS total,
-  ROUND(COUNTIF('track' in UNNEST(media_elements)) * 100 / COUNT(0), 2) AS pct
+  ROUND(COUNTIF('track' IN UNNEST(media_elements)) * 100 / COUNT(0), 2) AS pct
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,

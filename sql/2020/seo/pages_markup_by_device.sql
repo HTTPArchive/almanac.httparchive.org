@@ -9,12 +9,12 @@ CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS
 # returns all the data we need from _markup
 CREATE TEMPORARY FUNCTION get_markup_info(markup_string STRING)
 RETURNS STRUCT<
-  images_img_total INT64, 
+  images_img_total INT64,
   images_alt_missing_total INT64,
   images_alt_blank_total INT64,
   images_alt_present_total INT64,
 
-  has_html_amp_attribute BOOL, 
+  has_html_amp_attribute BOOL,
   has_rel_amphtml_tag BOOL,
   has_html_amp_emoji_attribute BOOL
 > LANGUAGE js AS '''
@@ -23,7 +23,7 @@ var result = {
   images_alt_missing_total: 0,
   images_alt_blank_total: 0,
   images_alt_present_total: 0,
-  has_html_amp_attribute: false, 
+  has_html_amp_attribute: false,
   has_rel_amphtml_tag: false,
   has_html_amp_emoji_attribute: false
 };
@@ -36,7 +36,7 @@ try {
       if (markup.images.img) {
         var img = markup.images.img;
         result.images_img_total = img.total;
-   
+
         if (img.alt) {
           var alt = img.alt;
             result.images_alt_missing_total = alt.missing;
@@ -70,7 +70,7 @@ SELECT
   AS_PERCENT(SUM(markup_info.images_alt_missing_total), SUM(markup_info.images_img_total)) AS pct_images_with_img_alt_missing,
   AS_PERCENT(SUM(markup_info.images_alt_present_total), SUM(markup_info.images_img_total)) AS pct_images_with_img_alt_present, # present does not include blank
   AS_PERCENT(SUM(markup_info.images_alt_blank_total), SUM(markup_info.images_img_total)) AS pct_images_with_img_alt_blank,
-  AS_PERCENT(SUM(markup_info.images_alt_blank_total)+SUM(markup_info.images_alt_present_total), SUM(markup_info.images_img_total)) AS pct_images_with_img_alt_blank_or_present,
+  AS_PERCENT(SUM(markup_info.images_alt_blank_total) + SUM(markup_info.images_alt_present_total), SUM(markup_info.images_img_total)) AS pct_images_with_img_alt_blank_or_present,
 
   # Pages with <html amp> tag
   COUNTIF(markup_info.has_html_amp_attribute) AS has_html_amp_attribute,
@@ -83,13 +83,12 @@ SELECT
   AS_PERCENT(COUNTIF(markup_info.has_rel_amphtml_tag), COUNT(0)) AS pct_has_rel_amphtml_tag
 
   FROM
-    ( 
-      SELECT 
+    (
+      SELECT
         _TABLE_SUFFIX AS client,
-        get_markup_info(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info      
+        get_markup_info(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info
       FROM
         `httparchive.pages.2020_08_01_*`
     )
 GROUP BY
   client
-  

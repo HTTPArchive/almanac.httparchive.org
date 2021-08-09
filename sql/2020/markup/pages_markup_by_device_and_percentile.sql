@@ -27,7 +27,7 @@ RETURNS STRUCT<
 > LANGUAGE js AS '''
 var result = {};
 try {
-    var markup = JSON.parse(markup_string); 
+    var markup = JSON.parse(markup_string);
 
     if (Array.isArray(markup) || typeof markup != 'object') return result;
 
@@ -64,7 +64,7 @@ try {
     if (markup.audios) {
 
       var autoplay_count = Object.entries(markup.audios.autoplay)
-        //.filter(([key, value]) => key == "" || key == "autoplay") // should check, but lets just include all values 
+        //.filter(([key, value]) => key == "" || key == "autoplay") // should check, but lets just include all values
         .reduce((total, [key, value]) => total + value, 0);
 
       result.contains_audios_with_autoplay = autoplay_count > 0;
@@ -75,7 +75,7 @@ try {
       result.inputs_types_image_total = Object.entries(markup.inputs.types)
         .filter(([key, value]) => key.trim().toLowerCase() == "image")
         .reduce((total, [key, value]) => total + value, 0);
-        
+
       result.inputs_types_button_total = Object.entries(markup.inputs.types)
         .filter(([key, value]) => key.trim().toLowerCase() == "button")
         .reduce((total, [key, value]) => total + value, 0);
@@ -122,16 +122,16 @@ SELECT
   # inputs
   APPROX_QUANTILES(markup_info.inputs_types_image_total, 1000)[OFFSET(percentile * 10)] AS inputs_types_image_count_m305,
   APPROX_QUANTILES(markup_info.inputs_types_button_total, 1000)[OFFSET(percentile * 10)] AS inputs_types_button_count_m306,
-  APPROX_QUANTILES(markup_info.inputs_types_submit_total, 1000)[OFFSET(percentile * 10)] AS inputs_types_submit_count_m307,
+  APPROX_QUANTILES(markup_info.inputs_types_submit_total, 1000)[OFFSET(percentile * 10)] AS inputs_types_submit_count_m307
 
 FROM (
-  SELECT 
+  SELECT
     _TABLE_SUFFIX AS client,
     percentile,
     url,
     get_markup_info(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info
   FROM
-  `httparchive.pages.2020_08_01_*`, 
+  `httparchive.pages.2020_08_01_*`,
   UNNEST([10, 25, 50, 75, 90, 95, 96, 97, 98, 99]) AS percentile
 )
 GROUP BY

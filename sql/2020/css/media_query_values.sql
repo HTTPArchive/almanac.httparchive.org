@@ -1,6 +1,9 @@
 #standardSQL
 CREATE TEMPORARY FUNCTION getMediaQueryValues(css STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
+AS '''
 try {
   function compute(ast) {
     let ret = {};
@@ -26,8 +29,7 @@ try {
 } catch (e) {
   return [];
 }
-'''
-OPTIONS (library="gs://httparchive/lib/css-utils.js");
+''';
 
 SELECT
   client,

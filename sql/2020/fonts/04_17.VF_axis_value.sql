@@ -25,15 +25,15 @@ SELECT
  COUNT(DISTINCT page) AS pages,
  SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total,
  COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct
-FROM 
+FROM
  `httparchive.almanac.parsed_css`,
  UNNEST(getFontVariationSettings(css)) AS value,
  UNNEST(SPLIT(value, ',')) AS values
-WHERE 
- date='2020-08-01'
-GROUP BY 
+WHERE
+ date = '2020-08-01'
+GROUP BY
  client, axis, num_axis
-HAVING 
+HAVING
  axis IS NOT NULL
-ORDER BY  
+ORDER BY
  pages DESC

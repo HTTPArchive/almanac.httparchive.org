@@ -1,8 +1,10 @@
 #standardSQL
 # CSP on home pages: popularity of different directives
-CREATE TEMPORARY FUNCTION getHeader(headers STRING, headername STRING)
-  RETURNS STRING DETERMINISTIC
-  LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getHeader(headers STRING, headername STRING) -- noqa: PRS
+-- SQL Linter cannot handle DETERMINISTIC keyword so needs noqa ignore command on previous line
+RETURNS STRING
+DETERMINISTIC
+LANGUAGE js AS '''
   const parsed_headers = JSON.parse(headers);
   const matching_headers = parsed_headers.filter(h => h.name.toLowerCase() == headername.toLowerCase());
   if (matching_headers.length > 0) {
@@ -16,7 +18,7 @@ SELECT
   directive,
   COUNT(0) AS total_csp_headers,
   COUNTIF(REGEXP_CONTAINS(CONCAT(' ', csp_header, ' '), CONCAT(r'(?i)\W', directive, r'\W'))) AS num_with_directive,
-  COUNTIF(REGEXP_CONTAINS(CONCAT(' ', csp_header, ' '), CONCAT(r'(?i)\W', directive, r'\W'))) / COUNT(0) AS pct_with_directive,
+  COUNTIF(REGEXP_CONTAINS(CONCAT(' ', csp_header, ' '), CONCAT(r'(?i)\W', directive, r'\W'))) / COUNT(0) AS pct_with_directive
 FROM (
   SELECT
     client,

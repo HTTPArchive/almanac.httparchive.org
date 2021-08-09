@@ -21,14 +21,14 @@ FROM (
     COUNTIF(IF(tls13,
       getHexCert(cert) LIKE "%2a864886f70d010101%",
       REGEXP_CONTAINS(key_exchange, r'RSA')
-    )) is_rsa,
-    COUNT(0) total
+    )) AS is_rsa,
+    COUNT(0) AS total
   FROM (
     SELECT
       _TABLE_SUFFIX AS client,
       JSON_EXTRACT_SCALAR(payload, '$._certificates[0]') AS cert,
       JSON_EXTRACT(payload, '$._securityDetails.keyExchange') AS key_exchange,
-      JSON_EXTRACT_SCALAR(payload, '$._securityDetails.protocol') = 'TLS 1.3' tls13
+      JSON_EXTRACT_SCALAR(payload, '$._securityDetails.protocol') = 'TLS 1.3' AS tls13
     FROM
      `httparchive.requests.2019_07_01_*`)
   WHERE
