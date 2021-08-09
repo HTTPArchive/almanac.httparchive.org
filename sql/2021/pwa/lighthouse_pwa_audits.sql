@@ -31,7 +31,7 @@ SELECT
 FROM
   --`httparchive.lighthouse.2021_07_01_mobile`,
   `httparchive.sample_data.lighthouse_mobile_10k`,
-  UNNEST(getAudits(JSON_EXTRACT(report, '$.categories.pwa.auditRefs'),JSON_EXTRACT(report, '$.audits'))) AS audits
+  UNNEST(getAudits(JSON_EXTRACT(report, '$.categories.pwa.auditRefs'), JSON_EXTRACT(report, '$.audits'))) AS audits
 GROUP BY
   audits.id
 ORDER BY

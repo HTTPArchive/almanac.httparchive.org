@@ -19,7 +19,7 @@ SELECT
   getOrientation(JSON_EXTRACT(payload, '$._pwa.manifests')) AS orientation,
   COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS total,
-  COUNT(0)/SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS pct
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS pct
 FROM
   `httparchive.sample_data.pages_*`
   --`httparchive.pages.2021_07_01_*`
@@ -30,6 +30,6 @@ GROUP BY
   client,
   orientation
 ORDER BY
-  freq/total DESC,
+  freq / total DESC,
   orientation,
   client

@@ -37,7 +37,7 @@ SELECT
     LOWER(body) NOT LIKE '%analytics-helper.js%') AS none_of_the_above
 FROM
   (
-    SELECT DISTINCT
+    SELECT
       date,
       client,
       page,
