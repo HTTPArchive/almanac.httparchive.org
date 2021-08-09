@@ -14,7 +14,7 @@ try {
     if (Array.isArray(wpt_bodies) || typeof wpt_bodies != 'object') return result;
 
     if (wpt_bodies.headings && wpt_bodies.headings.rendered) {
-      ["h1","h2","h3","h4","h5","h6","h7","h8"].forEach(h => {
+      ["h1", "h2", "h3", "h4", "h5", "h6", "h7", "h8"].forEach(h => {
         if (wpt_bodies.headings.rendered[h]) result.push({heading: h, total: wpt_bodies.headings.rendered[h].total});
       });
     }

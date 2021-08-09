@@ -118,7 +118,7 @@ LANGUAGE js AS """
     var ext = getExt($.request.url);
     var prettyType = prettyType(mimeType, ext);
     var reqHeaders = ["accept", "accept-charset", "accept-encoding", "accept-language", "connection", "host", "if-modified-since", "if-none-match", "referer", "user-agent", "cookie"];
-    var respHeaders = ["accept-ranges","age","cache-control","connection","content-encoding","content-language","content-length","content-location","content-type","date","etag","expires","keep-alive","last-modified","location","pragma","server","transfer-encoding","vary","via","x-powered-by","set-cookie"];
+    var respHeaders = ["accept-ranges", "age", "cache-control", "connection", "content-encoding", "content-language", "content-length", "content-location", "content-type", "date", "etag", "expires", "keep-alive", "last-modified", "location", "pragma", "server", "transfer-encoding", "vary", "via", "x-powered-by", "set-cookie"];
     var startedDateTime = new Date($.startedDateTime).getTime();
     return {
 requestId: $._request_id,

@@ -4,7 +4,7 @@
 SELECT
   total_origins,
   offline_origins,
-  offline_origins/total_origins AS pct_offline_origins
+  offline_origins / total_origins AS pct_offline_origins
 FROM (
   SELECT
     COUNT(DISTINCT origin) AS total_origins,

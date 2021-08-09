@@ -26,7 +26,7 @@ try {
     result.contains_details_element = Object.keys(element_count).filter(e => e ==='details').length > 0;
     result.contains_summary_element = Object.keys(element_count).filter(e => e ==='summary').length > 0;
 
-    var obsoleteElements = new Set(["applet","acronym","bgsound","dir","frame","frameset","noframes","isindex","keygen","listing","menuitem","nextid","noembed","plaintext","rb","rtc","strike","xmp","basefont","big","blink","center","font","marquee","multicol","nobr","spacer","tt"]);
+    var obsoleteElements = new Set(["applet", "acronym", "bgsound", "dir", "frame", "frameset", "noframes", "isindex", "keygen", "listing", "menuitem", "nextid", "noembed", "plaintext", "rb", "rtc", "strike", "xmp", "basefont", "big", "blink", "center", "font", "marquee", "multicol", "nobr", "spacer", "tt"]);
 
     result.contains_obsolete_element = !!Object.keys(element_count).find(e => {
         return obsoleteElements.has(e);

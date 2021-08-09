@@ -13,14 +13,14 @@ FROM
     client,
     page,
     COUNT(*) AS external_scripts,
-    SUM(IF(script LIKE "%async%",1,0)) AS async,
-    SUM(IF(script LIKE "%defer%",1,0)) AS defer,
-    SUM(IF(script LIKE "%module%",1,0)) AS module,
-    SUM(IF(script LIKE "%nomodule%",1,0)) AS nomodule,
-    SUM(IF(script LIKE "%async%",1,0)) / COUNT(*) AS pct_external_async,
-    SUM(IF(script LIKE "%defer%",1,0)) / COUNT(*) AS pct_external_defer,
-    SUM(IF(script LIKE "%module%",1,0)) / COUNT(*) AS pct_external_module,
-    SUM(IF(script LIKE "%nomodule%",1,0)) / COUNT(*) AS pct_external_nomodule
+    SUM(IF(script LIKE "%async%", 1, 0)) AS async,
+    SUM(IF(script LIKE "%defer%", 1, 0)) AS defer,
+    SUM(IF(script LIKE "%module%", 1, 0)) AS module,
+    SUM(IF(script LIKE "%nomodule%", 1, 0)) AS nomodule,
+    SUM(IF(script LIKE "%async%", 1, 0)) / COUNT(*) AS pct_external_async,
+    SUM(IF(script LIKE "%defer%", 1, 0)) / COUNT(*) AS pct_external_defer,
+    SUM(IF(script LIKE "%module%", 1, 0)) / COUNT(*) AS pct_external_module,
+    SUM(IF(script LIKE "%nomodule%", 1, 0)) / COUNT(*) AS pct_external_nomodule
   FROM
   (
     SELECT

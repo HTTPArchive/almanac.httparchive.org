@@ -14,21 +14,21 @@ SELECT
   client,
   imageType,
   COUNT(0) AS count,
-  APPROX_QUANTILES(if(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 1000)[OFFSET(100)] AS pixels_p10,
-  APPROX_QUANTILES(if(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 1000)[OFFSET(250)] AS pixels_p25,
-  APPROX_QUANTILES(if(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 1000)[OFFSET(500)] AS pixels_p50,
-  APPROX_QUANTILES(if(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 1000)[OFFSET(750)] AS pixels_p75,
-  APPROX_QUANTILES(if(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 1000)[OFFSET(900)] AS pixels_p90,
+  APPROX_QUANTILES(IF(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 1000)[OFFSET(100)] AS pixels_p10,
+  APPROX_QUANTILES(IF(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 1000)[OFFSET(250)] AS pixels_p25,
+  APPROX_QUANTILES(IF(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 1000)[OFFSET(500)] AS pixels_p50,
+  APPROX_QUANTILES(IF(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 1000)[OFFSET(750)] AS pixels_p75,
+  APPROX_QUANTILES(IF(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 1000)[OFFSET(900)] AS pixels_p90,
   APPROX_QUANTILES(bytes, 1000)[OFFSET(100)] AS bytes_p10,
   APPROX_QUANTILES(bytes, 1000)[OFFSET(250)] AS bytes_p25,
   APPROX_QUANTILES(bytes, 1000)[OFFSET(500)] AS bytes_p50,
   APPROX_QUANTILES(bytes, 1000)[OFFSET(750)] AS bytes_p75,
   APPROX_QUANTILES(bytes, 1000)[OFFSET(900)] AS bytes_p90,
-  APPROX_QUANTILES(ROUND(bytes/if(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 4), 1000)[OFFSET(100)] AS bpp_p10,
-  APPROX_QUANTILES(ROUND(bytes/if(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 4), 1000)[OFFSET(250)] AS bpp_p25,
-  APPROX_QUANTILES(ROUND(bytes/if(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 4), 1000)[OFFSET(500)] AS bpp_p50,
-  APPROX_QUANTILES(ROUND(bytes/if(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 4), 1000)[OFFSET(750)] AS bpp_p75,
-  APPROX_QUANTILES(ROUND(bytes/if(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 4), 1000)[OFFSET(900)] AS bpp_p90
+  APPROX_QUANTILES(ROUND(bytes / IF(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 4), 1000)[OFFSET(100)] AS bpp_p10,
+  APPROX_QUANTILES(ROUND(bytes / IF(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 4), 1000)[OFFSET(250)] AS bpp_p25,
+  APPROX_QUANTILES(ROUND(bytes / IF(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 4), 1000)[OFFSET(500)] AS bpp_p50,
+  APPROX_QUANTILES(ROUND(bytes / IF(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 4), 1000)[OFFSET(750)] AS bpp_p75,
+  APPROX_QUANTILES(ROUND(bytes / IF(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 4), 1000)[OFFSET(900)] AS bpp_p90
 FROM
 (
   SELECT
