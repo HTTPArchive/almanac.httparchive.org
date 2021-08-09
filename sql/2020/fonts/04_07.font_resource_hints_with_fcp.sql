@@ -36,7 +36,7 @@ FROM (
     CAST(JSON_EXTRACT_SCALAR(payload,
         "$['_chromeUserTiming.firstContentfulPaint']") AS INT64) AS fcp,
     CAST(JSON_EXTRACT_SCALAR(payload,
-        "$['_chromeUserTiming.LargestContentfulPaint']") AS INT64) AS lcp,
+        "$['_chromeUserTiming.LargestContentfulPaint']") AS INT64) AS lcp
   FROM
     `httparchive.pages.2020_08_01_*`
   LEFT JOIN
@@ -49,7 +49,7 @@ LEFT JOIN (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date='2020-08-01')
+    date = '2020-08-01')
 USING
   (client, page)
 WHERE

@@ -23,7 +23,7 @@ base AS (
   SELECT
     client,
     contentType,
-    COUNT(0) OVER (PARTITION BY client) AS total_requests,
+    COUNT(0) OVER (PARTITION BY client) AS total_requests
   FROM
     requests
   LEFT JOIN

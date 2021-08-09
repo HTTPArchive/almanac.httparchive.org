@@ -23,7 +23,7 @@ headers AS (
   SELECT
     requests.origin AS req_origin,
     LOWER(respOtherHeaders) AS respOtherHeaders,
-    third_party.category AS req_category,
+    third_party.category AS req_category
   FROM requests
   INNER JOIN third_party
   ON NET.HOST(requests.origin) = NET.HOST(third_party.domain)

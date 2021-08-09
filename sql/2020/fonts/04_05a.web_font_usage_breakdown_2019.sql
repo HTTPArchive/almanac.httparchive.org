@@ -5,7 +5,7 @@ SELECT
   NET.HOST(url) AS host,
   COUNT(DISTINCT page) AS pages,
   SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total,
-  COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct,
+  COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct
 FROM
     `httparchive.almanac.requests`
 WHERE

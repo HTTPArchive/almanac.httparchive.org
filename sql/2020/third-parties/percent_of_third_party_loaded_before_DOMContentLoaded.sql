@@ -35,7 +35,7 @@ base AS (
     requests.client AS client,
     third_party.domain AS request_domain,
     IF(requests.load_end < pages.onContentLoaded, 1, 0) AS early_request,
-    third_party.category AS request_category,
+    third_party.category AS request_category
   FROM requests
   INNER JOIN third_party
   ON NET.HOST(requests.url) = NET.HOST(third_party.domain)

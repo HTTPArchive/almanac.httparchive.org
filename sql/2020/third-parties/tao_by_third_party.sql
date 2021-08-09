@@ -49,7 +49,7 @@ headers AS (
     requests.origin AS req_origin,
     pages.origin AS page_origin,
     get_tao(LOWER(respOtherHeaders)) AS timing_allow_origin,
-    third_party.category AS req_category,
+    third_party.category AS req_category
   FROM requests
   LEFT JOIN pages
   USING (client, pageid)

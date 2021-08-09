@@ -39,7 +39,7 @@ fid AS (
     fast_fid,
     avg_fid,
     slow_fid,
-    ROW_NUMBER() OVER (PARTITION BY device ORDER BY fast_fid DESC) AS row,
+    ROW_NUMBER() OVER (PARTITION BY device ORDER BY fast_fid DESC) AS row
   FROM (
     SELECT
       device,
@@ -62,7 +62,7 @@ lcp AS (
     fast_lcp,
     avg_lcp,
     slow_lcp,
-    ROW_NUMBER() OVER (PARTITION BY device ORDER BY fast_lcp DESC) AS row,
+    ROW_NUMBER() OVER (PARTITION BY device ORDER BY fast_lcp DESC) AS row
   FROM (
     SELECT
       device,
@@ -85,7 +85,7 @@ cls AS (
     small_cls,
     medium_cls,
     large_cls,
-    ROW_NUMBER() OVER (PARTITION BY device ORDER BY small_cls DESC) AS row,
+    ROW_NUMBER() OVER (PARTITION BY device ORDER BY small_cls DESC) AS row
   FROM (
     SELECT
       device,
@@ -108,7 +108,7 @@ fcp AS (
     fast_fcp,
     avg_fcp,
     slow_fcp,
-    ROW_NUMBER() OVER (PARTITION BY device ORDER BY fast_fcp DESC) AS row,
+    ROW_NUMBER() OVER (PARTITION BY device ORDER BY fast_fcp DESC) AS row
   FROM (
     SELECT
       device,
@@ -131,7 +131,7 @@ ttfb AS (
     fast_ttfb,
     avg_ttfb,
     slow_ttfb,
-    ROW_NUMBER() OVER (PARTITION BY device ORDER BY fast_ttfb DESC) AS row,
+    ROW_NUMBER() OVER (PARTITION BY device ORDER BY fast_ttfb DESC) AS row
   FROM (
     SELECT
       device,

@@ -14,7 +14,7 @@ base AS (
   SELECT
     client,
     COUNT(DISTINCT page) AS total_pages,
-    COUNT(DISTINCT IF(url LIKE "%fingerprint2.min.js%" OR url LIKE "%fingerprintjs2%", page, NULL)) AS fingerprint_pages,
+    COUNT(DISTINCT IF(url LIKE "%fingerprint2.min.js%" OR url LIKE "%fingerprintjs2%", page, NULL)) AS fingerprint_pages
   FROM
     requests
   GROUP BY

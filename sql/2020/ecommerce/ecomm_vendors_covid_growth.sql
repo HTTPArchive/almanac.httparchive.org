@@ -9,7 +9,7 @@ SELECT
   total,
   COUNT(DISTINCT url) / total AS pct,
   LEFT(_TABLE_SUFFIX, 4) AS year,
-  SUBSTR(_TABLE_SUFFIX, 6, 2) AS month,
+  SUBSTR(_TABLE_SUFFIX, 6, 2) AS month
 FROM
   `httparchive.technologies.*`
 JOIN

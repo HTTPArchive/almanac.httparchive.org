@@ -30,7 +30,7 @@ FROM
  UNNEST(getFontVariationSettings(css)) AS value,
  UNNEST(SPLIT(value, ',')) AS values
 WHERE
- date='2020-08-01'
+ date = '2020-08-01'
 GROUP BY
  client, axis, num_axis
 HAVING

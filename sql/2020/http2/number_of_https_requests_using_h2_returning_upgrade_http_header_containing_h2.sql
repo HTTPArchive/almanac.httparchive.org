@@ -24,7 +24,7 @@ SELECT
 FROM
   `httparchive.almanac.requests`
 WHERE
-  date='2020-08-01' AND
+  date = '2020-08-01' AND
   url LIKE "https://%" AND
   JSON_EXTRACT_SCALAR(payload, "$._protocol") = "HTTP/2"
 GROUP BY

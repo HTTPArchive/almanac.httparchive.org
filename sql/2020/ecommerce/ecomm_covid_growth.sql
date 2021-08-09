@@ -7,7 +7,7 @@ SELECT
   total,
   COUNT(DISTINCT url) / total AS pct,
   2020 AS year,
-  LEFT(_TABLE_SUFFIX, 2) AS month,
+  LEFT(_TABLE_SUFFIX, 2) AS month
 FROM
   `httparchive.technologies.2020_*`
 JOIN
@@ -35,7 +35,7 @@ SELECT
   total,
   COUNT(DISTINCT url) / total AS pct,
   2019 AS year,
-  LEFT(_TABLE_SUFFIX, 2) AS month,
+  LEFT(_TABLE_SUFFIX, 2) AS month
 FROM
   `httparchive.technologies.2019_*`
 JOIN

@@ -52,7 +52,7 @@ FROM (
     SUM(value) AS freq,
     SUM(SUM(value)) OVER (PARTITION BY client) AS total,
     SUM(value) / SUM(SUM(value)) OVER (PARTITION BY client) AS pct,
-    COUNT(DISTINCT page) AS pages,
+    COUNT(DISTINCT page) AS pages
   FROM (
     SELECT
       client,

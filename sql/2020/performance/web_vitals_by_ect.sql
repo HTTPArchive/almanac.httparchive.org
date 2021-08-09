@@ -144,7 +144,7 @@ granular_metrics AS (
     ttfb.fast AS fast_ttfb,
     ttfb.avg AS avg_ttfb,
     ttfb.slow AS slow_ttfb,
-    ttfb.p75 AS p75_ttfb,
+    ttfb.p75 AS p75_ttfb
   FROM
     cls
   LEFT JOIN

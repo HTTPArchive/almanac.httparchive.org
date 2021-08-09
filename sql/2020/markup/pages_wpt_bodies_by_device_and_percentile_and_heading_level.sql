@@ -36,7 +36,7 @@ FROM (
     percentile,
     heading_info.heading AS heading,
     heading_info.total AS total,
-    url,
+    url
   FROM
   `httparchive.pages.2020_08_01_*`,
   UNNEST([10, 25, 50, 75, 90]) AS percentile,
