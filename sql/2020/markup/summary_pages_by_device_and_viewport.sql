@@ -24,7 +24,7 @@ SELECT
   _TABLE_SUFFIX AS client,
   normalise(meta_viewport) AS meta_viewport,
   COUNT(0) AS freq,
-  AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX)) AS pct_m219 
+  AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX)) AS pct_m219
 FROM
   `httparchive.summary_pages.2020_08_01_*`
 GROUP BY

@@ -43,7 +43,8 @@ UNION ALL
     2019 AS year,
     payload
   FROM
-    `httparchive.pages.2019_07_01_*`)
+    `httparchive.pages.2019_07_01_*`
+)
 
 SELECT
   year,

@@ -31,29 +31,29 @@ return result;
 SELECT
 client,
 NORMALIZE_AND_CASEFOLD(hreflang) AS hreflang,
-total, 
+total,
 COUNT(0) AS count,
 AS_PERCENT(COUNT(0), total) AS pct
 
 FROM
-    ( 
-      SELECT 
+    (
+      SELECT
         _TABLE_SUFFIX AS client,
         total,
-        get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info,        
+        get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
       FROM
         `httparchive.pages.2020_08_01_*`
         JOIN
-  (SELECT _TABLE_SUFFIX, COUNT(0) AS total 
-  FROM 
+  (SELECT _TABLE_SUFFIX, COUNT(0) AS total
+  FROM
   `httparchive.pages.2020_08_01_*`
   GROUP BY _TABLE_SUFFIX) # to get an accurate total of pages per device. also seems fast
 USING (_TABLE_SUFFIX)
     ), UNNEST(wpt_bodies_info.hreflangs) AS hreflang
-GROUP BY 
-total, 
-hreflang, 
+GROUP BY
+total,
+hreflang,
 client
-ORDER BY 
-count DESC, 
+ORDER BY
+count DESC,
 client DESC

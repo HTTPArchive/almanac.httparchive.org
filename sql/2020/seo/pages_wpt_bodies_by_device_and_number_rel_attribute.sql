@@ -27,7 +27,7 @@ function getKey(dict){
 }
 
 try {
-    var wpt_bodies = JSON.parse(wpt_bodies_string); 
+    var wpt_bodies = JSON.parse(wpt_bodies_string);
 
     if (Array.isArray(wpt_bodies) || typeof wpt_bodies != 'object') return result;
 
@@ -42,27 +42,27 @@ return result;
 SELECT
 client,
 rel,
-total, 
+total,
 COUNT(0) AS count,
 AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct
 FROM
-( 
-    SELECT 
+(
+    SELECT
         _TABLE_SUFFIX AS client,
         total,
-        get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info       
+        get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
     FROM
         `httparchive.pages.2020_08_01_*`
     JOIN
     (
         # to get an accurate total of pages per device. also seems fast
-        SELECT _TABLE_SUFFIX, COUNT(0) AS total 
-        FROM 
+        SELECT _TABLE_SUFFIX, COUNT(0) AS total
+        FROM
         `httparchive.pages.2020_08_01_*`
         GROUP BY _TABLE_SUFFIX
-    ) 
+    )
     USING (_TABLE_SUFFIX)
 ),
-UNNEST(wpt_bodies_info.rel) as rel
+UNNEST(wpt_bodies_info.rel) AS rel
 GROUP BY total, rel, client
 ORDER BY count DESC

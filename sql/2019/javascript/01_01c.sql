@@ -8,7 +8,7 @@ SELECT
 FROM (
   SELECT
     *,
-    volume / SUM(volume) OVER () AS pdf
+    volume / SUM(volume) OVER (PARTITION BY 0) AS pdf
   FROM (
     SELECT
       COUNT(0) AS volume,

@@ -1,9 +1,9 @@
-# Guide 
+# Guide
 
 ## file naming
 file names start with the table being queried. Next is the custom metric if appropriate. Then "_by_" followed by how the query is grouped. Finally anything more specific needed.
 
-Queries contain one or more metrics that match the queries grouping structure. 
+Queries contain one or more metrics that match the queries grouping structure.
 
 ## general
 
@@ -44,7 +44,7 @@ For speed the json string for the custom metric (not payload) should be passed i
 CREATE TEMPORARY FUNCTION get_element_count_info(element_count_string STRING)
 RETURNS STRUCT<
   count INT64,
-  contains_custom_element BOOL, 
+  contains_custom_element BOOL,
   contains_obsolete_element BOOL,
   contains_details_element BOOL,
   contains_summary_element BOOL
@@ -60,7 +60,7 @@ try {
     // fill result with all the values
 
     result.count = Object.values(element_count).reduce((total, freq) => total + (parseInt(freq, 10) || 0), 0);
-    
+
     //...
 
 } catch (e) {}
@@ -90,8 +90,8 @@ SELECT
   #...
 
   FROM
-    ( 
-      SELECT 
+    (
+      SELECT
         _TABLE_SUFFIX AS client,
         get_element_count_info(JSON_EXTRACT_SCALAR(payload, '$._element_count')) AS element_count_info # LIVE
       FROM
@@ -105,7 +105,7 @@ GROUP BY
 
 Example: pages_markup_by_device_and_percentile.sql
 
-This would typically use the exact same function to extract the data. The select adds in the percentiles and uses a standard field definition to extract the data 
+This would typically use the exact same function to extract the data. The select adds in the percentiles and uses a standard field definition to extract the data
 
 ```
 SELECT
@@ -119,7 +119,7 @@ SELECT
   #...
 
 FROM (
-  SELECT 
+  SELECT
     _TABLE_SUFFIX AS client,
     percentile,
     url,

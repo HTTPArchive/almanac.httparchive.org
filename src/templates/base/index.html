@@ -6,6 +6,25 @@
 
 {% set year_with_chapters = featured_chapters_exists(lang, year) or featured_chapters_exists('en', year) %}
 
+{% block structured_data %}
+{{ super() }}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://almanac.httparchive.org/{{ lang }}/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://almanac.httparchive.org/{{ lang }}/search?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  }
+</script>
+{% endblock %}
+
 {% block breadcrumb %}
 <script type="application/ld+json">
   {

@@ -9,7 +9,7 @@ SELECT
 FROM (
   SELECT
     client,
-    JSON_EXTRACT_SCALAR(payload, '$._securityDetails.cipher') AS cipher,
+    JSON_EXTRACT_SCALAR(payload, '$._securityDetails.cipher') AS cipher
   FROM
     `httparchive.almanac.requests`
   WHERE

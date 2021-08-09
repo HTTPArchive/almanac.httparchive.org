@@ -1,0 +1,96 @@
+[sqlfluff]
+verbose = 0
+nocolor = False
+dialect = bigquery
+templater = jinja
+rules = None
+exclude_rules = L003,L007,L011,L014,L016,L020,L026,L027,L028,L029,L030,L031,L032,L034,L035,L036,L037,L042,L043,L048
+# L003 - We don't agree wiht their UNION alignment. Revisit on next release thanks to https://github.com/sqlfluff/sqlfluff/pull/1257
+# L007 - We like our ANDs at the end. Revisit on next release if https://github.com/sqlfluff/sqlfluff/issues/1261 is resolved
+# L011 - We don't always alias tables with AS ("FROM table1 AS tb1" instead of "FROM table1 tb1"). Do for columns but not for tables.
+# L014 - Unquoted identifiers (e.g. column names) will be mixed case so don't enforce case
+# L016 - We allow longer lines as some of our queries are complex. Maybe should limit in future?
+# L020 - Asks for unique table aliases meaning it complains if selecting from two 2021_07_01 tables as implicit alias is table name (not fully qualified) so same.
+# L026 - BigQuery uses arrays and functions which looks like incorrect references
+# L027 - Asks for qualified columns for ambiguous. Really should enable this but a lot to clean up. TODO
+# L028 - Insists on references in column names even if not ambiguous. Bit OTT.
+# L029 - Avoids keywords as identifiers but has some common ones we use (e.g. count, element).
+# L030 - Function names will be mixed case so don't enforce case
+# L031 - Avoid aliases in from and join - why?
+# L032 - Uses joins instead of USING - why?
+# L034 - Inisits on wildcards (*) in certain SELECT order - why?
+# L035 - Do not use ELSE NULL as redudant. But it's clearer!?
+# L036 - Select targets should be on new lines but sub clauses don't always obey this. Maybe revisit in future?
+# L037 - if using DESC in one ORDER BY column, then insist on ASC/DESC for all.
+# L042 - Use CTEs instead of subqueries. We don't use this consistently and big rewrite to do that.
+# L043 - Use coalesce instead of case if you can. But it's clearer!?
+# L048 - Doesn't work with "AS '''" that we use in our LANGUAGE declarations
+recurse = 0
+output_line_length = 80
+runaway_limit = 10
+ignore_templated_areas = True
+encoding = autodetect
+# Comma separated list of file extensions to lint.
+
+# NB: This config will only apply in the root folder.
+sql_file_exts = .sql,.sql.j2,.dml,.ddl
+
+[sqlfluff:indentation]
+indented_joins = False
+template_blocks_indent = True
+
+[sqlfluff:templater]
+unwrap_wrapped_queries = True
+
+[sqlfluff:templater:jinja]
+apply_dbt_builtins = True
+
+[sqlfluff:templater:jinja:macros]
+# Macros provided as builtins for dbt projects
+dbt_ref = {% macro ref(model_ref) %}{{model_ref}}{% endmacro %}
+dbt_source = {% macro source(source_name, table) %}{{source_name}}_{{table}}{% endmacro %}
+dbt_config = {% macro config() %}{% for k in kwargs %}{% endfor %}{% endmacro %}
+dbt_var = {% macro var(variable) %}item{% endmacro %}
+dbt_is_incremental = {% macro is_incremental() %}True{% endmacro %}
+
+# Some rules can be configured directly from the config common to other rules.
+[sqlfluff:rules]
+tab_space_size = 2
+max_line_length = 80
+indent_unit = space
+comma_style = trailing
+allow_scalar = True
+single_table_references = consistent
+unquoted_identifiers_policy = all
+
+# Some rules have their own specific config.
+[sqlfluff:rules:L003]
+lint_templated_tokens = True
+
+[sqlfluff:rules:L010]  # Keywords
+capitalisation_policy = upper
+
+[sqlfluff:rules:L014]  # Unquoted identifiers
+#extended_capitalisation_policy = pascal
+
+[sqlfluff:rules:L016]
+ignore_comment_lines = False
+
+[sqlfluff:rules:L029]  # Keyword identifiers
+unquoted_identifiers_policy = aliases
+
+[sqlfluff:rules:L030]  # Function names
+#capitalisation_policy = consistent
+
+[sqlfluff:rules:L038]
+select_clause_trailing_comma = forbid
+
+[sqlfluff:rules:L040]  # Null & Boolean Literals
+capitalisation_policy = consistent
+
+[sqlfluff:rules:L042]
+# By default, allow subqueries in from clauses, but not join clauses.
+forbid_subquery_in = join
+
+[sqlfluff:rules:L047]  # Consistent syntax to count all rows
+prefer_count_1 = False

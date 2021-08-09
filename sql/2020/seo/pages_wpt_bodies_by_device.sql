@@ -9,18 +9,18 @@ CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS
 # returns all the data we need from _wpt_bodies
 CREATE TEMPORARY FUNCTION get_wpt_bodies_info(wpt_bodies_string STRING)
 RETURNS STRUCT<
-  
+
   # tags
   n_titles INT64,
-  title_words INT64, 
+  title_words INT64,
   n_meta_descriptions INT64,
-  n_h1 INT64, 
-  n_h2 INT64, 
-  n_h3 INT64, 
-  n_h4 INT64, 
-  n_non_empty_h1 INT64, 
-  n_non_empty_h2 INT64, 
-  n_non_empty_h3 INT64, 
+  n_h1 INT64,
+  n_h2 INT64,
+  n_h3 INT64,
+  n_h4 INT64,
+  n_non_empty_h1 INT64,
+  n_non_empty_h2 INT64,
+  n_non_empty_h3 INT64,
   n_non_empty_h4 INT64,
   has_same_h1_title BOOL,
 
@@ -30,18 +30,18 @@ RETURNS STRUCT<
   rendering_changed_robots_meta_tag BOOL,
 
   # canonical
-  has_canonicals BOOL, 
-  has_self_canonical BOOL, 
+  has_canonicals BOOL,
+  has_self_canonical BOOL,
   is_canonicalized BOOL,
-  has_http_canonical BOOL, 
-  has_rendered_canonical BOOL, 
-  has_raw_canonical BOOL, 
-  has_canonical_mismatch BOOL, 
-  rendering_changed_canonical BOOL, 
+  has_http_canonical BOOL,
+  has_rendered_canonical BOOL,
+  has_raw_canonical BOOL,
+  has_canonical_mismatch BOOL,
+  rendering_changed_canonical BOOL,
   http_header_changed_canonical BOOL,
 
   # hreflang
-  rendering_changed_hreflang BOOL, 
+  rendering_changed_hreflang BOOL,
   has_hreflang BOOL,
   has_http_hreflang BOOL,
   has_rendered_hreflang BOOL,
@@ -52,7 +52,7 @@ RETURNS STRUCT<
   has_rendered_jsonld_or_microdata BOOL,
   rendering_changes_structured_data BOOL,
 
-  # meta robots 
+  # meta robots
   rendered_otherbot_status_index BOOL,
   rendered_otherbot_status_follow BOOL,
   rendered_otherbot_noarchive BOOL,
@@ -98,8 +98,8 @@ try {
   // checks if two string arrays contain the same strings
   function compareStringArrays(array1, array2) {
       if (!array1 && !array2) return true; // both missing
-      if (!array1 && array2.length > 0) return false; 
-      if (!array2 && array1.length > 0) return false; 
+      if (!array1 && array2.length > 0) return false;
+      if (!array2 && array1.length > 0) return false;
       if (array1.length != array2.length) return false;
 
       array1 = array1.slice();
@@ -132,7 +132,7 @@ try {
 
   var meta_description = wpt_bodies.meta_description;
   if (meta_description) {
-    
+
     if (meta_description.rendered) {
       //If the webpage has a meta description
       result.n_meta_descriptions = meta_description.rendered.total;
@@ -201,7 +201,7 @@ try {
       {
         result.rendering_changed_robots_meta_tag = true;
       }
-      else 
+      else
       {
         result.rendering_changed_robots_meta_tag = false;
       }
@@ -261,17 +261,17 @@ try {
       result.is_canonicalized = canonicals.other_canonical;
     }
 
-    if (canonicals.http_header_link_canoncials) {     
+    if (canonicals.http_header_link_canoncials) {
       result.has_http_canonical = canonicals.http_header_link_canoncials.length > 0;
     }
 
     result.has_rendered_canonical = false; // used in a NOT so must be set for a simple query to work
-    if (canonicals.rendered && canonicals.rendered.html_link_canoncials) {     
+    if (canonicals.rendered && canonicals.rendered.html_link_canoncials) {
       result.has_rendered_canonical = canonicals.rendered.html_link_canoncials.length > 0;
     }
 
     result.has_raw_canonical = false; // used in a NOT so must be set for a simple query to work
-    if (canonicals.raw && canonicals.raw.html_link_canoncials) {     
+    if (canonicals.raw && canonicals.raw.html_link_canoncials) {
       result.has_raw_canonical = canonicals.raw.html_link_canoncials.length > 0;
     }
 
@@ -304,12 +304,12 @@ try {
     }
 
     result.has_rendered_hreflang = false; // used in a NOT so must be set for a simple query to work
-    if (hreflangs.rendered && hreflangs.rendered.values) {     
+    if (hreflangs.rendered && hreflangs.rendered.values) {
       result.has_rendered_hreflang = hreflangs.rendered.values.length > 0;
     }
 
     result.has_raw_hreflang = false; // used in a NOT so must be set for a simple query to work
-    if (hreflangs.raw && hreflangs.raw.values) {     
+    if (hreflangs.raw && hreflangs.raw.values) {
       result.has_raw_hreflang = hreflangs.raw.values.length > 0;
     }
   }
@@ -385,32 +385,32 @@ SELECT
   # Pages canonicalized
   AS_PERCENT(COUNTIF(wpt_bodies_info.is_canonicalized), COUNT(0)) AS pct_is_canonicalized,
 
-  # Pages with canonical in HTTP header 
+  # Pages with canonical in HTTP header
   AS_PERCENT(COUNTIF(wpt_bodies_info.has_http_canonical), COUNT(0)) AS pct_http_canonical,
 
-  # Pages with canonical in raw html 
+  # Pages with canonical in raw html
   AS_PERCENT(COUNTIF(wpt_bodies_info.has_raw_canonical), COUNT(0)) AS pct_has_raw_canonical,
 
-  # Pages with canonical in rendered html 
+  # Pages with canonical in rendered html
   AS_PERCENT(COUNTIF(wpt_bodies_info.has_rendered_canonical), COUNT(0)) AS pct_has_rendered_canonical,
 
-  # Pages with canonical in rendered but not raw html 
+  # Pages with canonical in rendered but not raw html
   AS_PERCENT(COUNTIF(wpt_bodies_info.has_rendered_canonical AND NOT wpt_bodies_info.has_raw_canonical), COUNT(0)) AS pct_has_rendered_but_not_raw_canonical,
 
   # Pages with canonical mismatch
   AS_PERCENT(COUNTIF(wpt_bodies_info.has_canonical_mismatch), COUNT(0)) AS pct_has_canonical_mismatch,
 
-  # Pages with canonical conflict between raw and rendered 
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendering_changed_canonical), COUNT(0)) AS pct_has_conflict_rendering_changed_canonical, 
+  # Pages with canonical conflict between raw and rendered
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendering_changed_canonical), COUNT(0)) AS pct_has_conflict_rendering_changed_canonical,
 
-  # Pages with canonical conflict between raw and http header 
+  # Pages with canonical conflict between raw and http header
   AS_PERCENT(COUNTIF(wpt_bodies_info.http_header_changed_canonical), COUNT(0)) AS pct_has_conflict_http_header_changed_canonical,
 
-  # Pages with canonical conflict between raw and http header 
+  # Pages with canonical conflict between raw and http header
   AS_PERCENT(COUNTIF(wpt_bodies_info.http_header_changed_canonical OR wpt_bodies_info.rendering_changed_canonical), COUNT(0)) AS pct_has_conflict_http_header_or_rendering_changed_canonical,
 
-  # Pages with hreflang conflict between raw and rendered 
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendering_changed_hreflang), COUNT(0)) AS pct_has_conflict_raw_rendered_hreflang, 
+  # Pages with hreflang conflict between raw and rendered
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendering_changed_hreflang), COUNT(0)) AS pct_has_conflict_raw_rendered_hreflang,
 
   # Pages with hreflang
   AS_PERCENT(COUNTIF(wpt_bodies_info.has_hreflang), COUNT(0)) AS pct_has_hreflang,
@@ -424,7 +424,7 @@ SELECT
   # Pages with raw hreflang
   AS_PERCENT(COUNTIF(wpt_bodies_info.has_raw_hreflang), COUNT(0)) AS pct_has_raw_hreflang,
 
-  # Pages with hreflang in rendered but not raw html 
+  # Pages with hreflang in rendered but not raw html
   AS_PERCENT(COUNTIF(wpt_bodies_info.has_rendered_hreflang AND NOT wpt_bodies_info.has_raw_hreflang), COUNT(0)) AS pct_has_rendered_but_not_raw_hreflang,
 
   # Pages with raw jsonld or microdata
@@ -475,13 +475,13 @@ SELECT
   AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_news_max_video_preview), COUNT(0)) AS pct_rendered_googlebot_news_max_video_preview,
   AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_news_notranslate), COUNT(0)) AS pct_rendered_googlebot_news_notranslate,
   AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_news_noimageindex), COUNT(0)) AS pct_rendered_googlebot_news_noimageindex,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_news_nocache), COUNT(0)) AS pct_rendered_googlebot_news_nocache,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_news_nocache), COUNT(0)) AS pct_rendered_googlebot_news_nocache
 
-FROM ( 
-      SELECT 
+FROM (
+      SELECT
         _TABLE_SUFFIX AS client,
-        SPLIT(url, ":")[OFFSET(0)] as protocol,
-        get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info      
+        SPLIT(url, ":")[OFFSET(0)] AS protocol,
+        get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
       FROM
         `httparchive.pages.2020_08_01_*`
     )

@@ -1,6 +1,6 @@
 #standardSQL
 # List of Vary directive names.
-SELECT 
+SELECT
   client,
   total_requests,
   total_using_vary,
@@ -12,7 +12,7 @@ SELECT
   total_using_vary / total_requests AS pct_using_vary
 FROM
 (
-  ( 
+  (
      SELECT
       "desktop" AS client,
       total_requests,
@@ -23,7 +23,7 @@ FROM
       COUNT(0) / total_using_vary AS pct_of_vary,
       COUNT(0) / total_requests AS pct_of_total_requests
     FROM
-      `httparchive.summary_requests.2020_08_01_desktop`, 
+      `httparchive.summary_requests.2020_08_01_desktop`,
       UNNEST(REGEXP_EXTRACT_ALL(LOWER(resp_vary), r'([a-z][^,\s="\']*)')) AS vary_header
     CROSS JOIN (
       SELECT
@@ -52,7 +52,7 @@ FROM
       COUNT(0) / total_using_vary AS pct_of_vary,
       COUNT(0) / total_requests AS pct_of_total_requests
     FROM
-      `httparchive.summary_requests.2020_08_01_mobile`, 
+      `httparchive.summary_requests.2020_08_01_mobile`,
       UNNEST(REGEXP_EXTRACT_ALL(LOWER(resp_vary), r'([a-z][^,\s="\']*)')) AS vary_header
     CROSS JOIN (
       SELECT

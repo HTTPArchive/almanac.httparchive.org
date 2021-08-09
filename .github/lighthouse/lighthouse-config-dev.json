@@ -21,6 +21,7 @@
         "maskable-icon": "off",
         "max-potential-fid": "off",
         "modern-image-formats": "off",
+        "no-unload-listeners": "off",
         "render-blocking-resources": "off",
         "server-response-time": "off",
         "service-worker": "off",
