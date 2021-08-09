@@ -11,7 +11,7 @@ SELECT
           OR STRPOS(LOWER(policy), 'samesite=none') > 1 )
         THEN LENGTH(policy)
       WHEN STRPOS(policy, '=') > 1
-        THEN STRPOS(LOWER(policy), '=')-1
+        THEN STRPOS(LOWER(policy), '=') - 1
       ELSE LENGTH(policy)
     END
   )) AS substr_policy,
