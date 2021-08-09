@@ -24,7 +24,7 @@ WITH
 
     fast_ttfb,
     avg_ttfb,
-    slow_ttfb,
+    slow_ttfb
 
   FROM
     `chrome-ux-report.materialized.device_summary`

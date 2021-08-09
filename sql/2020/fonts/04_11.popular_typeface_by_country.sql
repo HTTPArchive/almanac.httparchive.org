@@ -39,10 +39,10 @@ FROM (
     FROM
       `chrome-ux-report.materialized.country_summary`
     WHERE
-      yyyymm=202008)
+      yyyymm = 202008)
   ON
-    CONCAT(origin, '/')=page AND
-    IF(device='desktop', 'desktop', 'mobile')=client
+    CONCAT(origin, '/') = page AND
+    IF(device='desktop', 'desktop', 'mobile') = client
   WHERE
     date = '2020-08-01'
   GROUP BY

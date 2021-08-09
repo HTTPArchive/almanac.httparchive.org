@@ -40,8 +40,7 @@ FROM (
     _TABLE_SUFFIX AS client,
     url AS page,
     COUNTIF(hint.name = 'prefetch' AND hint.value = 'script') AS prefetch_hint,
-    COUNTIF(hint.name = 'preload' AND hint.value = 'script') AS preload_hint,
-
+    COUNTIF(hint.name = 'preload' AND hint.value = 'script') AS preload_hint
   FROM
     `httparchive.pages.2020_08_01_*`
   LEFT JOIN

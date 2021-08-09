@@ -42,7 +42,7 @@ WITH
 
     SUM(fast_ttfb) / SUM(fast_ttfb + avg_ttfb + slow_ttfb) AS fast_ttfb,
     SUM(avg_ttfb) / SUM(fast_ttfb + avg_ttfb + slow_ttfb) AS avg_ttfb,
-    SUM(slow_ttfb) / SUM(fast_ttfb + avg_ttfb + slow_ttfb) AS slow_ttfb,
+    SUM(slow_ttfb) / SUM(fast_ttfb + avg_ttfb + slow_ttfb) AS slow_ttfb
 
   FROM
     `chrome-ux-report.materialized.country_summary`

@@ -53,7 +53,7 @@ LEFT JOIN (
 USING
   (client, page)
 WHERE
-  type='font'
+  type = 'font'
 GROUP BY
   client,
   name,

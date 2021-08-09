@@ -47,9 +47,9 @@ SELECT
   AS_PERCENT(COUNTIF(element_count_info.contains_custom_element), COUNT(0)) AS pct_contains_custom_element_m242,
 
   # % of pages with details and summary elements M214
-  AS_PERCENT(COUNTIF(element_count_info.contains_details_element AND element_count_info.contains_summary_element), COUNT(0)) AS pct_contains_details_and_summary_element_m214,
+  AS_PERCENT(COUNTIF(element_count_info.contains_details_element AND element_count_info.contains_summary_element), COUNT(0)) AS pct_contains_details_and_summary_element_m214
 
-  FROM
+FROM
     (
       SELECT
         _TABLE_SUFFIX AS client,

@@ -166,9 +166,9 @@ SELECT
   AS_PERCENT(COUNTIF(markup_info.dirs_html_dir = "auto"), COUNT(0)) AS pct_html_dir_auto_m413,
 
   # pages with dir on other elements M414
-  AS_PERCENT(COUNTIF(markup_info.dirs_body_nodes_dir_total > 0), COUNT(0)) AS pct_body_nodes_dir_set_m414,
+  AS_PERCENT(COUNTIF(markup_info.dirs_body_nodes_dir_total > 0), COUNT(0)) AS pct_body_nodes_dir_set_m414
 
-  FROM
+FROM
     (
       SELECT
         _TABLE_SUFFIX AS client,

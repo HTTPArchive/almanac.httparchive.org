@@ -159,9 +159,9 @@ SELECT
   SUM(wpt_bodies_info.n_h5) AS freq_h5,
   SUM(wpt_bodies_info.n_h6) AS freq_h6,
   SUM(wpt_bodies_info.n_h7) AS freq_h7,
-  SUM(wpt_bodies_info.n_h8) AS freq_h8,
+  SUM(wpt_bodies_info.n_h8) AS freq_h8
 
-  FROM
+FROM
     (
       SELECT
         _TABLE_SUFFIX AS client,
