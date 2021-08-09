@@ -18,7 +18,7 @@ SELECT
   directive,
   COUNT(0) AS total_csp_headers,
   COUNTIF(REGEXP_CONTAINS(CONCAT(' ', csp_header, ' '), CONCAT(r'(?i)\W', directive, r'\W'))) AS num_with_directive,
-  COUNTIF(REGEXP_CONTAINS(CONCAT(' ', csp_header, ' '), CONCAT(r'(?i)\W', directive, r'\W'))) / COUNT(0) AS pct_with_directive,
+  COUNTIF(REGEXP_CONTAINS(CONCAT(' ', csp_header, ' '), CONCAT(r'(?i)\W', directive, r'\W'))) / COUNT(0) AS pct_with_directive
 FROM (
   SELECT
     client,

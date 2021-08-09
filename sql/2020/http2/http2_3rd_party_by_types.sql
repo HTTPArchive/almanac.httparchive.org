@@ -17,7 +17,7 @@ FROM (
     page,
     url,
     category,
-    JSON_EXTRACT_SCALAR(payload, '$._protocol') AS http_version,
+    JSON_EXTRACT_SCALAR(payload, '$._protocol') AS http_version
 FROM
   `httparchive.almanac.requests` r,
   `httparchive.almanac.third_parties` tp

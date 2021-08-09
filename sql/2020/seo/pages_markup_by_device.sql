@@ -70,7 +70,7 @@ SELECT
   AS_PERCENT(SUM(markup_info.images_alt_missing_total), SUM(markup_info.images_img_total)) AS pct_images_with_img_alt_missing,
   AS_PERCENT(SUM(markup_info.images_alt_present_total), SUM(markup_info.images_img_total)) AS pct_images_with_img_alt_present, # present does not include blank
   AS_PERCENT(SUM(markup_info.images_alt_blank_total), SUM(markup_info.images_img_total)) AS pct_images_with_img_alt_blank,
-  AS_PERCENT(SUM(markup_info.images_alt_blank_total)+SUM(markup_info.images_alt_present_total), SUM(markup_info.images_img_total)) AS pct_images_with_img_alt_blank_or_present,
+  AS_PERCENT(SUM(markup_info.images_alt_blank_total) + SUM(markup_info.images_alt_present_total), SUM(markup_info.images_img_total)) AS pct_images_with_img_alt_blank_or_present,
 
   # Pages with <html amp> tag
   COUNTIF(markup_info.has_html_amp_attribute) AS has_html_amp_attribute,

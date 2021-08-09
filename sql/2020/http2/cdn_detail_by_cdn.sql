@@ -18,7 +18,7 @@ FROM (
      client,
      page,
      firstHTML,
-     IFNULL(REGEXP_EXTRACT(_cdn_provider, r'^([^,]*).*'),'') AS CDN,
+     IFNULL(REGEXP_EXTRACT(_cdn_provider, r'^([^,]*).*'), '') AS CDN,
      url,
      JSON_EXTRACT_SCALAR(payload, '$._protocol') AS http_version
 FROM

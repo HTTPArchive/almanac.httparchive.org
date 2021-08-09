@@ -43,7 +43,7 @@ SELECT
   APPROX_QUANTILES(almanac_info.inline_scripts_total, 1000)[OFFSET(percentile * 10)] AS inline_scripts_count_m207,
 
   # src scripts
-  APPROX_QUANTILES(almanac_info.src_scripts_total, 1000)[OFFSET(percentile * 10)] AS src_scripts_count_m209,
+  APPROX_QUANTILES(almanac_info.src_scripts_total, 1000)[OFFSET(percentile * 10)] AS src_scripts_count_m209
 
 FROM (
   SELECT

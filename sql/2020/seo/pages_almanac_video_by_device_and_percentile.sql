@@ -27,7 +27,7 @@ SELECT
   COUNT(DISTINCT url) AS total,
 
   # videos per page
-  APPROX_QUANTILES(almanac_info.videos_total, 1000)[OFFSET(percentile * 10)] AS videos_count,
+  APPROX_QUANTILES(almanac_info.videos_total, 1000)[OFFSET(percentile * 10)] AS videos_count
 
 FROM (
   SELECT

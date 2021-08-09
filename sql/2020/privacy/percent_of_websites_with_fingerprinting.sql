@@ -25,6 +25,6 @@ SELECT
   client,
   total_pages,
   fingerprint_pages,
-  fingerprint_pages / total_pages AS pct_fingerprint_pages,
+  fingerprint_pages / total_pages AS pct_fingerprint_pages
 FROM
   base

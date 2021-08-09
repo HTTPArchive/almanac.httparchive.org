@@ -7,14 +7,14 @@ SELECT
   type,
   COUNT(DISTINCT page) AS num_pages,
   APPROX_QUANTILES(num_requests, 1000)[OFFSET(percentile * 10)] AS pushed_requests,
-  APPROX_QUANTILES(kb_transfered, 1000)[OFFSET(percentile * 10)] AS kb_transfered,
+  APPROX_QUANTILES(kb_transfered, 1000)[OFFSET(percentile * 10)] AS kb_transfered
 FROM (
   SELECT
     client,
     page,
     JSON_EXTRACT_SCALAR(payload, '$._protocol') AS http_version,
     type,
-    SUM(CAST(JSON_EXTRACT_SCALAR(payload, "$._bytesIn") AS INT64)/1024) AS kb_transfered,
+    SUM(CAST(JSON_EXTRACT_SCALAR(payload, "$._bytesIn") AS INT64) / 1024) AS kb_transfered,
     COUNT(0) AS num_requests
   FROM
     `httparchive.almanac.requests`

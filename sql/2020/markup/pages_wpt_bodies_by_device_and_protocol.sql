@@ -30,7 +30,7 @@ SELECT
   total,
   protocol,
 
-  AS_PERCENT(COUNT(DISTINCT url), total) AS pct,
+  AS_PERCENT(COUNT(DISTINCT url), total) AS pct
 
 FROM
     `httparchive.pages.2020_08_01_*`

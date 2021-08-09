@@ -1,7 +1,7 @@
 CREATE TEMP FUNCTION parseCSS(stylesheet STRING)
 RETURNS STRING
 LANGUAGE js
-OPTIONS (library="gs://httparchive/lib/parse-css.js")
+OPTIONS (library = "gs://httparchive/lib/parse-css.js")
 AS '''
   try {
    var css = parse(stylesheet)

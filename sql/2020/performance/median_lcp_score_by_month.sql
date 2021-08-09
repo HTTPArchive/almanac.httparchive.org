@@ -4,7 +4,7 @@
 SELECT
   device,
   date,
-  APPROX_QUANTILES(p75_lcp, 1000 RESPECT NULLS)[OFFSET(500)] AS median_p75_lcp,
+  APPROX_QUANTILES(p75_lcp, 1000 RESPECT NULLS)[OFFSET(500)] AS median_p75_lcp
 FROM
   `chrome-ux-report.materialized.device_summary`
 WHERE

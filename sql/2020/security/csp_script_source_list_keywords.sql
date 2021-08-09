@@ -29,7 +29,7 @@ SELECT
   SAFE_DIVIDE(freq_unsafe_inline, freq_default_script_src) AS pct_unsafe_inline_over_csp_with_src,
   freq_unsafe_eval,
   SAFE_DIVIDE(freq_unsafe_eval, freq_csp) AS pct_unsafe_eval_over_csp,
-  SAFE_DIVIDE(freq_unsafe_eval, freq_default_script_src) AS pct_unsafe_eval_over_csp_with_src,
+  SAFE_DIVIDE(freq_unsafe_eval, freq_default_script_src) AS pct_unsafe_eval_over_csp_with_src
 FROM (
   SELECT
     client,

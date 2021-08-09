@@ -258,7 +258,7 @@ SELECT
       COUNT(DISTINCT IF(
           IS_POOR(fast_ttfb, avg_ttfb, slow_ttfb), origin, NULL)),
       COUNT(DISTINCT IF(
-          IS_NON_ZERO(fast_ttfb, avg_ttfb, slow_ttfb), origin, NULL))) AS pct_ttfb_poor,
+          IS_NON_ZERO(fast_ttfb, avg_ttfb, slow_ttfb), origin, NULL))) AS pct_ttfb_poor
 
 FROM
   granular_metrics

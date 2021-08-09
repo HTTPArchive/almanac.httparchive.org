@@ -32,7 +32,7 @@ SELECT
   client,
   cmp_app,
   ANY_VALUE(total_pages) AS total_pages,
-  COUNT(DISTINCT url) / ANY_VALUE(total_pages) AS pct_pages_with_cmp,
+  COUNT(DISTINCT url) / ANY_VALUE(total_pages) AS pct_pages_with_cmp
 FROM
   base
 WHERE

@@ -47,7 +47,7 @@ fid AS (
       SAFE_DIVIDE(avg_fid, fast_fid + avg_fid + slow_fid) AS avg_fid,
       SAFE_DIVIDE(slow_fid, fast_fid + avg_fid + slow_fid) AS slow_fid,
       ROW_NUMBER() OVER (PARTITION BY device ORDER BY fast_fid DESC) AS row,
-      COUNT(0) OVER (PARTITION BY device) AS n,
+      COUNT(0) OVER (PARTITION BY device) AS n
     FROM
       base
     WHERE
@@ -70,7 +70,7 @@ lcp AS (
       SAFE_DIVIDE(avg_lcp, fast_lcp + avg_lcp + slow_lcp) AS avg_lcp,
       SAFE_DIVIDE(slow_lcp, fast_lcp + avg_lcp + slow_lcp) AS slow_lcp,
       ROW_NUMBER() OVER (PARTITION BY device ORDER BY fast_lcp DESC) AS row,
-      COUNT(0) OVER (PARTITION BY device) AS n,
+      COUNT(0) OVER (PARTITION BY device) AS n
     FROM
       base
     WHERE
@@ -93,7 +93,7 @@ cls AS (
       SAFE_DIVIDE(medium_cls, small_cls + medium_cls + large_cls) AS medium_cls,
       SAFE_DIVIDE(large_cls, small_cls + medium_cls + large_cls) AS large_cls,
       ROW_NUMBER() OVER (PARTITION BY device ORDER BY small_cls DESC) AS row,
-      COUNT(0) OVER (PARTITION BY device) AS n,
+      COUNT(0) OVER (PARTITION BY device) AS n
     FROM
       base
     WHERE
@@ -116,7 +116,7 @@ fcp AS (
       SAFE_DIVIDE(avg_fcp, fast_fcp + avg_fcp + slow_fcp) AS avg_fcp,
       SAFE_DIVIDE(slow_fcp, fast_fcp + avg_fcp + slow_fcp) AS slow_fcp,
       ROW_NUMBER() OVER (PARTITION BY device ORDER BY fast_fcp DESC) AS row,
-      COUNT(0) OVER (PARTITION BY device) AS n,
+      COUNT(0) OVER (PARTITION BY device) AS n
     FROM
       base
     WHERE
@@ -139,7 +139,7 @@ ttfb AS (
       SAFE_DIVIDE(avg_ttfb, fast_ttfb + avg_ttfb + slow_ttfb) AS avg_ttfb,
       SAFE_DIVIDE(slow_ttfb, fast_ttfb + avg_ttfb + slow_ttfb) AS slow_ttfb,
       ROW_NUMBER() OVER (PARTITION BY device ORDER BY fast_ttfb DESC) AS row,
-      COUNT(0) OVER (PARTITION BY device) AS n,
+      COUNT(0) OVER (PARTITION BY device) AS n
     FROM
       base
     WHERE
@@ -170,7 +170,7 @@ SELECT
 
   fast_ttfb,
   avg_ttfb,
-  slow_ttfb,
+  slow_ttfb
 FROM
   fid
 FULL JOIN

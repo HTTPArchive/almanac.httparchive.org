@@ -61,7 +61,7 @@ SELECT
   APPROX_QUANTILES(markup_info.images_with_alt_blank, 1000)[OFFSET(percentile * 10)] AS images_with_alt_blank,
 
   # number of images without an alt attribute
-  APPROX_QUANTILES(markup_info.images_with_alt_missing, 1000)[OFFSET(percentile * 10)] AS images_with_alt_missing,
+  APPROX_QUANTILES(markup_info.images_with_alt_missing, 1000)[OFFSET(percentile * 10)] AS images_with_alt_missing
 
 FROM (
   SELECT

@@ -28,7 +28,7 @@ base AS (
     category,
     canonicalDomain,
     APPROX_QUANTILES(body_size, 1000)[OFFSET(500)] / 1024 AS median_body_size_kb,
-    APPROX_QUANTILES(time, 1000)[OFFSET(500)] /1000 AS median_time_s
+    APPROX_QUANTILES(time, 1000)[OFFSET(500)] / 1000 AS median_time_s
   FROM
     requests
   INNER JOIN
@@ -69,7 +69,7 @@ FROM (
   )
 )
 WHERE
-  rank<=100
+  rank <= 100
 ORDER BY
   ranking,
   client,

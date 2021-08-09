@@ -122,7 +122,7 @@ SELECT
   # inputs
   APPROX_QUANTILES(markup_info.inputs_types_image_total, 1000)[OFFSET(percentile * 10)] AS inputs_types_image_count_m305,
   APPROX_QUANTILES(markup_info.inputs_types_button_total, 1000)[OFFSET(percentile * 10)] AS inputs_types_button_count_m306,
-  APPROX_QUANTILES(markup_info.inputs_types_submit_total, 1000)[OFFSET(percentile * 10)] AS inputs_types_submit_count_m307,
+  APPROX_QUANTILES(markup_info.inputs_types_submit_total, 1000)[OFFSET(percentile * 10)] AS inputs_types_submit_count_m307
 
 FROM (
   SELECT

@@ -18,7 +18,7 @@ SELECT
   name,
   COUNT(DISTINCT page) AS freq_vf,
   total_page,
-  COUNT(DISTINCT page) / total_page AS pct_vf,
+  COUNT(DISTINCT page) / total_page AS pct_vf
 FROM (
   SELECT
     client,

@@ -52,7 +52,7 @@ FROM
       SELECT
         _TABLE_SUFFIX AS client,
         total,
-        get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info,
+        get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
       FROM
         `httparchive.pages.2020_08_01_*`
         JOIN
