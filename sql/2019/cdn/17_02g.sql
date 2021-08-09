@@ -2,7 +2,7 @@
 # 17_02g: % of Pages using a JS CDN Host
 SELECT
   *,
-  ROUND(100*pageUseCount/ totalPagesCount,2) AS Pct # doing the Pct calc causes memory problems with bigquery
+  ROUND(100 * pageUseCount / totalPagesCount, 2) AS Pct # doing the Pct calc causes memory problems with bigquery
 FROM
 (
   SELECT

@@ -1,7 +1,7 @@
 #standardSQL
 # 17_19: Percentage of HTTPS responses by protocol
 SELECT
-  a.client, firstHtml,IFNULL(a.protocol, b.protocol) AS protocol,IFNULL(a.tlsVersion, b.tlsVersion) AS tlsVersion,
+  a.client, firstHtml, IFNULL(a.protocol, b.protocol) AS protocol, IFNULL(a.tlsVersion, b.tlsVersion) AS tlsVersion,
   isSecure,
   COUNT(0) AS total
 FROM
@@ -30,7 +30,7 @@ LEFT JOIN (
     client, page,
     CAST(jSON_EXTRACT(payload, "$._socket") AS INT64) AS socket,
     ANY_VALUE(upper(IFNULL(JSON_EXTRACT_SCALAR(payload, '$._protocol'), IFNULL(NULLIF(JSON_EXTRACT_SCALAR(payload, '$._tls_next_proto'), 'unknown'), NULLIF(concat("HTTP/", JSON_EXTRACT_SCALAR(payload, '$.response.httpVersion')), 'HTTP/'))))) AS protocol,
-    ANY_VALUE(JSON_EXTRACT_SCALAR(payload, '$._tls_version')) tlsVersion
+    ANY_VALUE(JSON_EXTRACT_SCALAR(payload, '$._tls_version')) AS tlsVersion
   FROM `httparchive.almanac.requests3`
     WHERE
     JSON_EXTRACT_SCALAR(payload, '$._tls_version') IS NOT NULL AND
@@ -40,6 +40,10 @@ LEFT JOIN (
 ) b ON (a.client = b.client AND a.page = b.page AND a.socket = b.socket)
 
 GROUP BY
-  client,protocol,tlsVersion,firstHtml,isSecure
+  client,
+  protocol,
+  tlsVersion,
+  firstHtml,
+  isSecure
 ORDER BY
   total DESC

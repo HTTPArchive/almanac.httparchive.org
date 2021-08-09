@@ -38,28 +38,28 @@ SELECT
   APPROX_QUANTILES(resourceBytes, 1000)[OFFSET(750)] AS bytes_p75,
   APPROX_QUANTILES(resourceBytes, 1000)[OFFSET(900)] AS bytes_p90,
   APPROX_QUANTILES(resourceBytes, 1000)[OFFSET(990)] AS bytes_p99,
-  APPROX_QUANTILES(ROUND(100*resourceBytes/IFNULL(NULLIF(pageBytes, 0), 0.1), 2), 1000)[OFFSET(100)] AS pct_p10,
-  APPROX_QUANTILES(ROUND(100*resourceBytes/IFNULL(NULLIF(pageBytes, 0), 0.1), 2), 1000)[OFFSET(250)] AS pct_p25,
-  APPROX_QUANTILES(ROUND(100*resourceBytes/IFNULL(NULLIF(pageBytes, 0), 0.1), 2), 1000)[OFFSET(500)] AS pct_p50,
-  APPROX_QUANTILES(ROUND(100*resourceBytes/IFNULL(NULLIF(pageBytes, 0), 0.1), 2), 1000)[OFFSET(750)] AS pct_p75,
-  APPROX_QUANTILES(ROUND(100*resourceBytes/IFNULL(NULLIF(pageBytes, 0), 0.1), 2), 1000)[OFFSET(990)] AS pct_p99,
-  APPROX_QUANTILES(ROUND(100*resourceBytes/IFNULL(NULLIF(pageBytes, 0), 0.1), 2), 1000)[OFFSET(900)] AS pct_p90
+  APPROX_QUANTILES(ROUND(100 * resourceBytes / IFNULL(NULLIF(pageBytes, 0), 0.1), 2), 1000)[OFFSET(100)] AS pct_p10,
+  APPROX_QUANTILES(ROUND(100 * resourceBytes / IFNULL(NULLIF(pageBytes, 0), 0.1), 2), 1000)[OFFSET(250)] AS pct_p25,
+  APPROX_QUANTILES(ROUND(100 * resourceBytes / IFNULL(NULLIF(pageBytes, 0), 0.1), 2), 1000)[OFFSET(500)] AS pct_p50,
+  APPROX_QUANTILES(ROUND(100 * resourceBytes / IFNULL(NULLIF(pageBytes, 0), 0.1), 2), 1000)[OFFSET(750)] AS pct_p75,
+  APPROX_QUANTILES(ROUND(100 * resourceBytes / IFNULL(NULLIF(pageBytes, 0), 0.1), 2), 1000)[OFFSET(990)] AS pct_p99,
+  APPROX_QUANTILES(ROUND(100 * resourceBytes / IFNULL(NULLIF(pageBytes, 0), 0.1), 2), 1000)[OFFSET(900)] AS pct_p90
 FROM
 (
   SELECT
     type,
     pageBytes,
-    IF(type = 'image', totalImageCount, totalImageCount + totalVideoCount) resourceCount,
-    IF(type = 'image', totalImageBytes, totalImageBytes + totalVideoBytes) resourceBytes
+    IF(type = 'image', totalImageCount, totalImageCount + totalVideoCount) AS resourceCount,
+    IF(type = 'image', totalImageBytes, totalImageBytes + totalVideoBytes) AS resourceBytes
   FROM
   (
     SELECT
       url,
-      CAST(JSON_EXTRACT_SCALAR(report, '$.audits.resource-summary.details.items[0].size') AS INT64) pageBytes,
-      CAST(JSON_EXTRACT_SCALAR(report, '$.audits.resource-summary.details.items[1].size') AS INT64) totalImageBytes,
-      CAST(JSON_EXTRACT_SCALAR(report, '$.audits.resource-summary.details.items[1].requestCount') AS INT64) totalImageCount,
-      getVideoBytes(report) totalVideoBytes,
-      getVideoCount(report) totalVideoCount
+      CAST(JSON_EXTRACT_SCALAR(report, '$.audits.resource-summary.details.items[0].size') AS INT64) AS pageBytes,
+      CAST(JSON_EXTRACT_SCALAR(report, '$.audits.resource-summary.details.items[1].size') AS INT64) AS totalImageBytes,
+      CAST(JSON_EXTRACT_SCALAR(report, '$.audits.resource-summary.details.items[1].requestCount') AS INT64) AS totalImageCount,
+      getVideoBytes(report) AS totalVideoBytes,
+      getVideoCount(report) AS totalVideoCount
     FROM
       `httparchive.lighthouse.2019_07_01_mobile`
   )

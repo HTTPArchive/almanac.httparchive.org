@@ -19,7 +19,7 @@ SELECT
   client,
   firstHtml,
   JSON_EXTRACT_SCALAR(payload, "$._protocol") AS protocol,
-  IF(url LIKE "https://%","https","http") AS http_or_https,
+  IF(url LIKE "https://%", "https", "http") AS http_or_https,
   getUpgradeHeader(payload) AS upgrade,
   COUNT(0) AS num_requests
 FROM

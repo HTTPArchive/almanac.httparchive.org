@@ -13,9 +13,9 @@ SELECT
   -- json_extract_scalar(payload, '$._initiator_type'),
   # ideally we would use a normalized mimeType from `identify` or other magic byte tool
   -- mimetype,
-  COUNT(0) hits,
+  COUNT(0) AS hits,
   ROUND((COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client)), 2) AS hits_pct,
-  SUM(respsize) bytes,
+  SUM(respsize) AS bytes,
   ROUND((SUM(respsize) * 100 / SUM(SUM(respsize)) OVER (PARTITION BY client)), 2) AS bytes_pct,
   APPROX_QUANTILES(respSize, 1000)[OFFSET(100)] AS size_p10,
   APPROX_QUANTILES(respSize, 1000)[OFFSET(250)] AS size_p25,

@@ -8,12 +8,12 @@ SELECT
   COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/2') AS http2,
   COUNTIF(IFNULL(a.protocol, b.protocol) NOT IN ('HTTP/0.9', 'HTTP/1.0', 'HTTP/1.1', 'HTTP/2')) AS http_other,
   COUNTIF(isSecure OR IFNULL(a.protocol, b.protocol) = 'HTTP/2') AS tls_total,
-  ROUND(100*COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/0.9')/COUNT(0), 2) AS http09_pct,
-  ROUND(100*COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/1.0')/COUNT(0), 2) AS http10_pct,
-  ROUND(100*COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/1.1')/COUNT(0), 2) AS http11_pct,
-  ROUND(100*COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/2')/COUNT(0), 2) AS http2_pct,
-  ROUND(100*COUNTIF(IFNULL(a.protocol, b.protocol) NOT IN ('HTTP/0.9', 'HTTP/1.0', 'HTTP/1.1', 'HTTP/2')) /COUNT(0), 2) AS http_other_pct,
-  ROUND(100*COUNTIF(isSecure OR IFNULL(a.protocol, b.protocol) = 'HTTP/2')/COUNT(0), 2) AS tls_pct,
+  ROUND(100 * COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/0.9') / COUNT(0), 2) AS http09_pct,
+  ROUND(100 * COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/1.0') / COUNT(0), 2) AS http10_pct,
+  ROUND(100 * COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/1.1') / COUNT(0), 2) AS http11_pct,
+  ROUND(100 * COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/2') / COUNT(0), 2) AS http2_pct,
+  ROUND(100 * COUNTIF(IFNULL(a.protocol, b.protocol) NOT IN ('HTTP/0.9', 'HTTP/1.0', 'HTTP/1.1', 'HTTP/2')) / COUNT(0), 2) AS http_other_pct,
+  ROUND(100 * COUNTIF(isSecure OR IFNULL(a.protocol, b.protocol) = 'HTTP/2') / COUNT(0), 2) AS tls_pct,
   COUNT(0) AS total
 FROM
 (
@@ -41,7 +41,7 @@ LEFT JOIN (
     client, page,
     CAST(jSON_EXTRACT(payload, "$._socket") AS INT64) AS socket,
     ANY_VALUE(upper(IFNULL(JSON_EXTRACT_SCALAR(payload, '$._protocol'), IFNULL(NULLIF(JSON_EXTRACT_SCALAR(payload, '$._tls_next_proto'), 'unknown'), NULLIF(concat("HTTP/", JSON_EXTRACT_SCALAR(payload, '$.response.httpVersion')), 'HTTP/'))))) AS protocol,
-    ANY_VALUE(JSON_EXTRACT_SCALAR(payload, '$._tls_version')) tlsVersion
+    ANY_VALUE(JSON_EXTRACT_SCALAR(payload, '$._tls_version')) AS tlsVersion
   FROM
     `httparchive.almanac.requests3`
   WHERE
@@ -52,7 +52,9 @@ LEFT JOIN (
 ) b ON (a.client = b.client AND a.page = b.page AND a.socket = b.socket)
 
 GROUP BY
-  client,cdn,firstHtml
+  client,
+  cdn,
+  firstHtml
 ORDER BY
   client DESC,
   total DESC

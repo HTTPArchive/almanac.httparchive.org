@@ -3,7 +3,7 @@
 CREATE TEMPORARY FUNCTION getLayoutUsage(css STRING)
 RETURNS ARRAY<STRUCT<name STRING, value INT64>>
 LANGUAGE js
-OPTIONS (library="gs://httparchive/lib/css-utils.js")
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
 AS '''
 try {
   const ast = JSON.parse(css);

@@ -4,7 +4,27 @@ nocolor = False
 dialect = bigquery
 templater = jinja
 rules = None
-exclude_rules = L003,L006,L007,L008,L011,L012,L014,L016,L020,L026,L027,L028,L029,L030,L031,L032,L034,L035,L036,L037,L038,L042,L043,L048
+exclude_rules = L003,L007,L011,L014,L016,L020,L026,L027,L028,L029,L030,L031,L032,L034,L035,L036,L037,L042,L043,L048
+# L003 - We don't agree wiht their UNION alignment. Revisit on next release thanks to https://github.com/sqlfluff/sqlfluff/pull/1257
+# L007 - We like our ANDs at the end. Revisit on next release if https://github.com/sqlfluff/sqlfluff/issues/1261 is resolved
+# L011 - We don't always alias tables with AS ("FROM table1 AS tb1" instead of "FROM table1 tb1")
+# L014 - Unquoted identifiers (e.g. column names) will be mixed case so don't enforce case
+# L016 - We allow longer lines as some of our queries are complex. Maybe should limit in future?
+# L020 - Asks for unique table aliases meaning it complains if selecting from two 2021_07_01 tables as implicit alias is table name.
+# L026 - BigQuery uses arrays and functions which looks like incorrect references
+# L027 - Asks for qualified columns for ambiguous. Really should enable this but a lot ot clean up. TODO
+# L028 - Insists on refrences in column names even if not ambiguous. Bit OTT.
+# L029 - Avoids keywords as identifiers but has some weird choices (e.g. element). To revisit.
+# L030 - Function names will be mixed case so don't enforce case
+# L031 - Avoid aliases in from and join - why?
+# L032 - Uses joins instead of USING - why?
+# L034 - Inisits on wildcards (*) in certain SELECT order - why?
+# L035 - Do not use ELSE NULL as redudant. But it's clearer!?
+# L036 - Select targets should be on new lines but sub clauses don't always obey this. Maybe revisit in future?
+# L037 - if using DESC in one ORDER BY column, then insist on ASC/DESC for all.
+# L042 - Use CTEs instead of subqueries. We don't use this consistently and big rewrite to do that.
+# L043 - Use coalesce instead of case if you can. But it's clearer!?
+# L048 - Doesn't work with "AS '''" that we use in our LANGUAGE declarations
 recurse = 0
 output_line_length = 80
 runaway_limit = 10

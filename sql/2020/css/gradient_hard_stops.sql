@@ -2,7 +2,7 @@
 CREATE TEMPORARY FUNCTION getGradientHardStops(css STRING)
 RETURNS INT64
 LANGUAGE js
-OPTIONS (library="gs://httparchive/lib/css-utils.js")
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
 AS '''
 try {
   function compute(ast) {

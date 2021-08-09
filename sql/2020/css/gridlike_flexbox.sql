@@ -2,7 +2,7 @@
 CREATE TEMPORARY FUNCTION hasGridlikeFlexbox(css STRING)
 RETURNS BOOLEAN
 LANGUAGE js
-OPTIONS (library="gs://httparchive/lib/css-utils.js")
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
 AS '''
 try {
   const ast = JSON.parse(css);

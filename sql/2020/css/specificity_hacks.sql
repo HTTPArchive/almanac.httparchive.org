@@ -9,7 +9,7 @@ RETURNS STRUCT<
   not_id_descendant NUMERIC
 >
 LANGUAGE js
-OPTIONS (library="gs://httparchive/lib/css-utils.js")
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
 AS '''
 try {
 

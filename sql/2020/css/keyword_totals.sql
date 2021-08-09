@@ -2,7 +2,7 @@
 CREATE TEMPORARY FUNCTION getGlobalKeywords(css STRING)
 RETURNS ARRAY<STRUCT<property STRING, keyword STRING, freq INT64>>
 LANGUAGE js
-OPTIONS (library="gs://httparchive/lib/css-utils.js")
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
 AS '''
 try {
   function compute(ast) {

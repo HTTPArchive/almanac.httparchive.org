@@ -3,9 +3,9 @@
 
 SELECT
   client,
-  COUNTIF(jscdnHits > 0 ) hasJSCDNHits,
-  COUNT(0) hits,
-  ROUND(100*COUNTIF(jscdnHits > 0 ) / COUNT(0), 2) pct
+  COUNTIF(jscdnHits > 0 ) AS hasJSCDNHits,
+  COUNT(0) AS hits,
+  ROUND(100 * COUNTIF(jscdnHits > 0 ) / COUNT(0), 2) AS pct
 FROM
 (
   SELECT
@@ -22,7 +22,7 @@ FROM
         'use.fontawesome.com',
         'code.jquery.com',
         'fonts.googleapis.com')
-        ) jscdnHits
+        ) AS jscdnHits
   FROM `httparchive.almanac.requests3`
   GROUP BY
     client,

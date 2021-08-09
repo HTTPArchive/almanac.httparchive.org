@@ -2,7 +2,7 @@
 CREATE TEMPORARY FUNCTION getPaintWorklets(css STRING)
 RETURNS ARRAY<STRUCT<name STRING, freq INT64>>
 LANGUAGE js
-OPTIONS (library="gs://httparchive/lib/css-utils.js")
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
 AS '''
 try {
   var ast = JSON.parse(css);

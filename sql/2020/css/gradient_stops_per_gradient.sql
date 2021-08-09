@@ -2,7 +2,7 @@
 CREATE TEMPORARY FUNCTION getColorStops(css STRING)
 RETURNS ARRAY<INT64>
 LANGUAGE js
-OPTIONS (library="gs://httparchive/lib/css-utils.js")
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
 AS '''
 try {
   function compute(ast) {

@@ -2,7 +2,7 @@
 CREATE TEMPORARY FUNCTION getCustomPropertyValueTypes(payload STRING)
 RETURNS ARRAY<STRUCT<type STRING, freq INT64>>
 LANGUAGE js
-OPTIONS (library="gs://httparchive/lib/css-utils.js")
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
 AS '''
 try {
   function compute(vars) {

@@ -2,7 +2,7 @@
 CREATE TEMPORARY FUNCTION getCustomPropertyMaxCycles(payload STRING)
 RETURNS INT64
 LANGUAGE js
-OPTIONS (library="gs://httparchive/lib/css-utils.js")
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
 AS '''
 try {
   function compute(vars) {

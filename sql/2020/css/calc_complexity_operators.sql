@@ -2,7 +2,7 @@
 CREATE TEMPORARY FUNCTION getCalcOperatorComplexity(css STRING)
 RETURNS ARRAY<STRUCT<num INT64, freq INT64>>
 LANGUAGE js
-OPTIONS (library="gs://httparchive/lib/css-utils.js")
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
 AS '''
 try {
   function compute(ast) {

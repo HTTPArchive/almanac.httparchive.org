@@ -22,8 +22,8 @@ SELECT
       SELECT
         client, page, url, firstHtml, respBodySize,
         IFNULL(NULLIF(REGEXP_EXTRACT(_cdn_provider, r'^([^,]*).*'), ''), 'ORIGIN') AS cdn,
-        CASE WHEN NET.HOST(url) = NET.HOST(page) THEN TRUE ELSE FALSE END sameHost,
-        CASE WHEN NET.HOST(url) = NET.HOST(page) OR NET.REG_DOMAIN(url) = NET.REG_DOMAIN(page) THEN TRUE ELSE FALSE END sameDomain # if toplevel reg_domain will return NULL so we group this as sameDomain
+        CASE WHEN NET.HOST(url) = NET.HOST(page) THEN TRUE ELSE FALSE END AS sameHost,
+        CASE WHEN NET.HOST(url) = NET.HOST(page) OR NET.REG_DOMAIN(url) = NET.REG_DOMAIN(page) THEN TRUE ELSE FALSE END AS sameDomain # if toplevel reg_domain will return NULL so we group this as sameDomain
       FROM `httparchive.almanac.requests3`
       --GROUP BY client, pageid, requestid, page, url, firstHtml, _cdn_provider, respBodySize
     )

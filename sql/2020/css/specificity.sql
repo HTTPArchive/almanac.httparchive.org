@@ -6,7 +6,7 @@ RETURNS STRUCT<
   distribution ARRAY<STRUCT<specificity STRING, specificity_cmp STRING, freq INT64>>
 >
 LANGUAGE js
-OPTIONS (library="gs://httparchive/lib/css-utils.js")
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
 AS '''
 try {
   function extractSpecificity(ast) {

@@ -3,7 +3,7 @@
 
 SELECT
   *,
-  ROUND(100*pageUseCount/ totalPagesCount,2) AS Pct
+  ROUND(100 * pageUseCount / totalPagesCount, 2) AS Pct
 FROM
 (
   SELECT
@@ -17,7 +17,7 @@ FROM
         'maxcdn.bootstrapcdn.com',
         'use.fontawesome.com',
         'code.jquery.com',
-        'fonts.googleapis.com'), NET.HOST(url), 'OTHER') jsCDN,
+        'fonts.googleapis.com'), NET.HOST(url), 'OTHER') AS jsCDN,
     COUNT(DISTINCT page) AS pageUseCount,
     SUM(COUNTIF(firstHtml)) OVER (PARTITION BY client) AS totalPagesCount
     FROM `httparchive.almanac.requests3`

@@ -3,14 +3,14 @@
 SELECT
   client,
   COUNT(DISTINCT page) AS num_pages,
-  ROUND(AVG(num_requests),2) AS avg_pushed_requests,
-  ROUND(AVG(kb_transfered),2) AS avg_kb_transfered
+  ROUND(AVG(num_requests), 2) AS avg_pushed_requests,
+  ROUND(AVG(kb_transfered), 2) AS avg_kb_transfered
 FROM (
 
 SELECT
     client,
     page,
-    SUM(CAST(JSON_EXTRACT_SCALAR(payload, "$._bytesIn") AS INT64)/1024) AS kb_transfered,
+    SUM(CAST(JSON_EXTRACT_SCALAR(payload, "$._bytesIn") AS INT64) / 1024) AS kb_transfered,
     COUNT(0) AS num_requests
   FROM
     `httparchive.almanac.requests`

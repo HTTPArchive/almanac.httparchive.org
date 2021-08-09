@@ -6,10 +6,10 @@ SELECT
   COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.1') AS tls11,
   COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.2') AS tls12,
   COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.3') AS tls13,
-  ROUND(100*COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.0')/COUNT(0), 2) AS tls10_pct,
-  ROUND(100*COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.1')/COUNT(0), 2) AS tls11_pct,
-  ROUND(100*COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.2')/COUNT(0), 2) AS tls12_pct,
-  ROUND(100*COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.3')/COUNT(0), 2) AS tls13_pct,
+  ROUND(100 * COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.0') / COUNT(0), 2) AS tls10_pct,
+  ROUND(100 * COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.1') / COUNT(0), 2) AS tls11_pct,
+  ROUND(100 * COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.2') / COUNT(0), 2) AS tls12_pct,
+  ROUND(100 * COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.3') / COUNT(0), 2) AS tls13_pct,
   COUNT(0) AS total
 FROM
 (
@@ -37,7 +37,7 @@ LEFT JOIN (
     client, page,
     CAST(jSON_EXTRACT(payload, "$._socket") AS INT64) AS socket,
     ANY_VALUE(upper(IFNULL(JSON_EXTRACT_SCALAR(payload, '$._protocol'), IFNULL(NULLIF(JSON_EXTRACT_SCALAR(payload, '$._tls_next_proto'), 'unknown'), NULLIF(concat("TLS ", JSON_EXTRACT_SCALAR(payload, '$.response.httpVersion')), 'TLS '))))) AS protocol,
-    ANY_VALUE(JSON_EXTRACT_SCALAR(payload, '$._tls_version')) tlsVersion
+    ANY_VALUE(JSON_EXTRACT_SCALAR(payload, '$._tls_version')) AS tlsVersion
   FROM `httparchive.almanac.requests3`
     WHERE
     JSON_EXTRACT_SCALAR(payload, '$._tls_version') IS NOT NULL AND
@@ -47,7 +47,9 @@ LEFT JOIN (
 ) b ON (a.client = b.client AND a.page = b.page AND a.socket = b.socket)
 
 GROUP BY
-  client,cdn,firstHtml
+  client,
+  cdn,
+  firstHtml
 ORDER BY
   client DESC,
   total DESC

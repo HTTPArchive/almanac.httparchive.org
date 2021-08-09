@@ -2,7 +2,7 @@
 CREATE TEMPORARY FUNCTION getMediaQueryFeatures(css STRING)
 RETURNS ARRAY<STRING>
 LANGUAGE js
-OPTIONS (library="gs://httparchive/lib/css-utils.js")
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
 AS '''
 try {
   function compute(ast) {

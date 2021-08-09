@@ -6,7 +6,7 @@ SELECT
   webImageType AS imageType,
   COUNT(0) AS pageCount,
   COUNTIF(hits > 0) AS frequencyCount,
-  ROUND(100*COUNTIF(hits > 0) / COUNT(0), 2) AS pct,
+  ROUND(100 * COUNTIF(hits > 0) / COUNT(0), 2) AS pct,
   SUM(hits) AS totalHits,
   SUM(bytes) AS totalBytes,
   APPROX_QUANTILES(hits, 1000)[OFFSET(100)] AS hits_p10,
@@ -27,16 +27,16 @@ FROM
     client,
     page,
     webImageType,
-    SUM(IF(LOWER(imageType) = LOWER(webImageType), hits, 0)) hits,
-    SUM(IF(LOWER(webImageType) = LOWER(imageType), bytes, 0)) bytes
+    SUM(IF(LOWER(imageType) = LOWER(webImageType), hits, 0)) AS hits,
+    SUM(IF(LOWER(webImageType) = LOWER(imageType), bytes, 0)) AS bytes
   FROM
   (
     SELECT
       client,
       page,
       NULLIF(IF(REGEX_CONTAINS(mimetype, r'(?i)^application|^applicaton|^binary|^image$|^multipart|^media|^$|^text/html|^text/plain|\d|array|unknown|undefined|\*|string|^img|^images|^text|\%2f|\(|ipg$|jpe$|jfif'), format, LOWER(REGEXP_REPLACE(REGEXP_REPLACE(mimetype, r'(?is).*image[/\\](?:x-)?|[\."]|[ +,;]+.*$', ''), r'(?i)pjpeg|jpeg', 'jpg'))), '') AS imageType,
-      COUNT(0) hits,
-      SUM(respSize) bytes
+      COUNT(0) AS hits,
+      SUM(respSize) AS bytes
     FROM `httparchive.almanac.requests3`
 
     WHERE

@@ -1,20 +1,20 @@
 #standardSQL
 # 04_09c: Top Client Hints
 SELECT
-  client, ch, SUM(hits) hits
+  client, ch, SUM(hits) AS hits
 FROM
 (
   SELECT
     client,
-    REGEXP_REPLACE(concat(IFNULL(chHTML, ''), ',', IFNULL(chHeader, '')), r'^,|,$| ', '') acceptCH,
-    COUNT(0) hits
+    REGEXP_REPLACE(concat(IFNULL(chHTML, ''), ',', IFNULL(chHeader, '')), r'^,|,$| ', '') AS acceptCH,
+    COUNT(0) AS hits
   FROM
   (
     SELECT
       client,
       page,
-      replace(regexp_extract(regexp_extract(body, r'(?is)<meta[^><]*Accept-CH\b[^><]*'), r'(?im).*content=[&quot;#32"\']*([^\'"><]*)'), "&#32;", '') chHTML,
-      regexp_extract(regexp_extract(respOtherHeaders, r'(?is)Accept-CH = (.*)'), r'(?im)^([^=]*?)(?:, [a-z-]+ = .*)') chHeader
+      replace(regexp_extract(regexp_extract(body, r'(?is)<meta[^><]*Accept-CH\b[^><]*'), r'(?im).*content=[&quot;#32"\']*([^\'"><]*)'), "&#32;", '') AS chHTML,
+      regexp_extract(regexp_extract(respOtherHeaders, r'(?is)Accept-CH = (.*)'), r'(?im)^([^=]*?)(?:, [a-z-]+ = .*)') AS chHeader
     FROM
       `httparchive.almanac.summary_response_bodies`
     WHERE

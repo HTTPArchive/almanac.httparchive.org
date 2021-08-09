@@ -2,7 +2,7 @@
 CREATE TEMPORARY FUNCTION getPropertyUnits(css STRING)
 RETURNS ARRAY<STRUCT<property STRING, unit STRING, freq INT64>>
 LANGUAGE js
-OPTIONS (library="gs://httparchive/lib/css-utils.js")
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
 AS '''
 try {
   function compute(ast) {

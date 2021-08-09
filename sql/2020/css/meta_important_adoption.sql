@@ -2,7 +2,7 @@
 CREATE TEMPORARY FUNCTION getImportantProperties(css STRING)
 RETURNS STRUCT<total INT64, important INT64>
 LANGUAGE js
-OPTIONS (library="gs://httparchive/lib/css-utils.js")
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
 AS '''
 try {
   var ast = JSON.parse(css);

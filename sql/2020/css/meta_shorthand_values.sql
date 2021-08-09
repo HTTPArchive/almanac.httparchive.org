@@ -2,7 +2,7 @@
 CREATE TEMPORARY FUNCTION getShorthandValueCounts(css STRING)
 RETURNS ARRAY<STRUCT<property STRING, values ARRAY<INT64>>>
 LANGUAGE js
-OPTIONS (library="gs://httparchive/lib/css-utils.js")
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
 AS '''
 try {
   function compute(ast) {

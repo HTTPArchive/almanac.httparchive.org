@@ -4,14 +4,14 @@ SELECT
   client,
   chHTML,
   chHeader,
-  COUNT(0) hits
+  COUNT(0) AS hits
 FROM
 (
   SELECT
     client,
     page,
-    replace(regexp_extract(regexp_extract(body, r'(?is)<meta[^><]*Accept-CH\b[^><]*'), r'(?im).*content=[&quot;#32"\']*([^\'"><]*)'), "#32;", '') chHTML,
-    regexp_extract(regexp_extract(respOtherHeaders, r'(?is)Accept-CH = (.*)'), r'(?im)^([^=]*?)(?:, [a-z-]+ = .*)') chHeader
+    replace(regexp_extract(regexp_extract(body, r'(?is)<meta[^><]*Accept-CH\b[^><]*'), r'(?im).*content=[&quot;#32"\']*([^\'"><]*)'), "#32;", '') AS chHTML,
+    regexp_extract(regexp_extract(respOtherHeaders, r'(?is)Accept-CH = (.*)'), r'(?im)^([^=]*?)(?:, [a-z-]+ = .*)') AS chHeader
   FROM `httparchive.almanac.summary_response_bodies`
   WHERE
     date = '2019-07-01' AND

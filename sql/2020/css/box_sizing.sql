@@ -4,7 +4,7 @@
 CREATE TEMPORARY FUNCTION countBorderBoxDeclarations(css STRING)
 RETURNS NUMERIC
 LANGUAGE js
-OPTIONS (library="gs://httparchive/lib/css-utils.js")
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
 AS '''
 try {
   const ast = JSON.parse(css);

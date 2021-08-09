@@ -2,7 +2,7 @@
 CREATE TEMPORARY FUNCTION getMaxColorStops(css STRING)
 RETURNS STRING
 LANGUAGE js
-OPTIONS (library="gs://httparchive/lib/css-utils.js")
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
 AS '''
 try {
   function compute(ast) {
